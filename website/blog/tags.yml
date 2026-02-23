@@ -107,3 +107,13 @@ thermodynamics:
   label: Термодинамика
   permalink: /thermodynamics
   description: Термодинамические аспекты голономной динамики
+
+psychopathology:
+  label: Психопатология
+  permalink: /psychopathology
+  description: Патологические состояния как деформации Gap-профиля
+
+Gap:
+  label: Gap-оператор
+  permalink: /gap
+  description: Мера зазора и Gap-профили когерентности
