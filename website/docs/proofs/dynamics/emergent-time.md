@@ -223,11 +223,11 @@ $$
 **Определение (Темпоральная логика):**
 
 $$
-\Diamond \phi := \exists \tau' > \tau_{now}. \phi(\tau') \quad \text{(«когда-нибудь в будущем»)}
+\Diamond \phi := \exists \tau' > \tau_{now}. \phi(\tau') \quad \text{(когда-нибудь в будущем)}
 $$
 
 $$
-\Box \phi := \forall \tau' > \tau_{now}. \phi(\tau') \quad \text{(«всегда в будущем»)}
+\Box \phi := \forall \tau' > \tau_{now}. \phi(\tau') \quad \text{(всегда в будущем)}
 $$
 
 **Связь с ▷:**

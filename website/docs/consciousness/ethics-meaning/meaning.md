@@ -38,7 +38,7 @@ $$
 Переживание «глубокого смысла» коррелирует с высокой когерентностью $\gamma_{OE}$ и $\gamma_{OU}$ — связью опыта и единства с [измерением Основания](/docs/core/structure/dimension-o):
 
 $$
-\text{«Осмысленность»} \sim |\gamma_{OE}| \cdot |\gamma_{OU}|
+\text{Осмысленность} \sim |\gamma_{OE}| \cdot |\gamma_{OU}|
 $$
 
 Экзистенциальный кризис ($\gamma_{OE} \to 0$) — потеря связи опыта с источником. См. [патология сознания](/docs/consciousness/states/pathological).

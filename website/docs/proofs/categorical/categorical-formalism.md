@@ -934,7 +934,7 @@ $$
 Можно определить тензорное произведение:
 
 $$
-\mathcal{Q}_1 \otimes \mathcal{Q}_2 := \text{«совместный опыт»}
+\mathcal{Q}_1 \otimes \mathcal{Q}_2 := \text{совместный опыт}
 $$
 
 через тензорное произведение матриц плотности:
@@ -1982,7 +1982,7 @@ $$
 **Определение 13.4 (∞-топос Голономов):**
 
 $$
-\mathcal{T}_H := \mathbf{Sh}_\infty(\mathcal{G}_h, \tau_{ét})
+\mathcal{T}_H := \mathbf{Sh}_\infty(\mathcal{G}_h, \tau_{\acute{e}t})
 $$
 
 ∞-категория ∞-пучков на категории Голономов с этальной топологией.
@@ -2149,7 +2149,7 @@ $$
 **Разрешение в ∞-топосе:**
 
 $$
-\text{«единственный»} \xrightarrow{\text{∞-интерпретация}} \text{«стягиваемое пространство путей»}
+\text{единственный} \xrightarrow{\infty\text{-интерпретация}} \text{стягиваемое пространство путей}
 $$
 
 Формально:
@@ -2221,7 +2221,7 @@ $$
 **Связь с внутренней логикой:**
 
 $$
-\triangleright: \Omega \to \Omega, \quad \triangleright(\chi) = \text{«χ истинно в следующий момент»}
+\triangleright: \Omega \to \Omega, \quad \triangleright(\chi) = \chi\text{ истинно в следующий момент}
 $$
 
 Эволюция предикатов χ ∈ L под действием ▷ **есть** динамика системы. См. [внутренняя логика Ω](/docs/core/foundations/axiom-omega#внутренняя-логика).
@@ -2487,11 +2487,11 @@ graph TD
 **Определение.** Функтор эволюции:
 
 $$
-\mathcal{E}_\tau^{(\mathrm{УГМ})}: \mathbf{AutHol} \to \mathbf{AutHol}
+\mathcal{E}_\tau^{(\text{УГМ})}: \mathbf{AutHol} \to \mathbf{AutHol}
 $$
 
 $$
-\mathcal{E}_\tau^{(\mathrm{УГМ})}(A, \Gamma_A) := (A, \Gamma_A(\tau))
+\mathcal{E}_\tau^{(\text{УГМ})}(A, \Gamma_A) := (A, \Gamma_A(\tau))
 $$
 
 где $\Gamma_A(\tau)$ определяется полным уравнением эволюции (включая $\mathcal{R}$).
@@ -2509,7 +2509,7 @@ $$
 является **естественной трансформацией** от составного функтора эволюции к локальному:
 
 $$
-\mathrm{Tr}_A \circ \mathcal{E}_\tau^{(\mathrm{УГМ}), A \otimes B} = \mathcal{E}_\tau^{(\mathrm{УГМ}), B} \circ \mathrm{Tr}_A
+\mathrm{Tr}_A \circ \mathcal{E}_\tau^{(\text{УГМ}), A \otimes B} = \mathcal{E}_\tau^{(\text{УГМ}), B} \circ \mathrm{Tr}_A
 $$
 :::
 
