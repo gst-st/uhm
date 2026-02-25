@@ -117,3 +117,18 @@ Gap:
   label: Gap-оператор
   permalink: /gap
   description: Мера зазора и Gap-профили когерентности
+
+death:
+  label: Смерть
+  permalink: /death
+  description: Смерть как декогеренция и пересечение порога жизнеспособности
+
+time:
+  label: Время
+  permalink: /time
+  description: Субъективное и эмерджентное время
+
+viability:
+  label: Жизнеспособность
+  permalink: /viability
+  description: Критический порог P_crit = 2/7 и область устойчивости

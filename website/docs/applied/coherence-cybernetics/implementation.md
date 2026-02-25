@@ -598,8 +598,8 @@ def compute_stress_tensor(gamma: np.ndarray, environment) -> np.ndarray:
     # σ_S: Структура
     sigma[1] = compute_structural_complexity(gamma) / THETA_S
 
-    # σ_D: Динамика
-    sigma[2] = compute_computational_load() / C_MAX
+    # σ_D: Динамика (каноническая формула: 1 − N·γ_DD)
+    sigma[2] = 1.0 - N * gamma[2, 2]
 
     # σ_L: Логика
     sigma[3] = compute_viability_uncertainty(gamma) / THETA_L
