@@ -12,7 +12,7 @@ slug: /consciousness/subjects/pre-linguistic
 - $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
 - $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
 - $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$ **[Т]**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[О]**
+- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[Т]** (T-129)
 - $\gamma_{LL}$ — населённость [измерения Логики (L)](/docs/core/structure/dimension-l)
 - L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
 - K1–K5 — [когнитивные уровни](/docs/consciousness/comparative/cognitive-hierarchy)

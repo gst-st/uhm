@@ -217,7 +217,7 @@ graph TB
 **Пороги ([статусы порогов](../foundations/axiom-septicity#пороги-l2-строгий-вывод)):**
 - $P_{\text{crit}} = 2/7$ — [Т] [Теорема о критической чистоте](../../proofs/dynamics/theorem-purity-critical)
 - $R_{\text{th}} = 1/3$ — [Т] [Порог рефлексии](../foundations/axiom-septicity#теорема-порог-рефлексии) ($K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
-- $\Phi_{\text{th}} = 1$ — [О] [Порог интеграции](../foundations/axiom-septicity#теорема-порог-интеграции) (когерентная доминация)
+- $\Phi_{\text{th}} = 1$ — [Т] [Порог интеграции](../foundations/axiom-septicity#теорема-порог-интеграции) (T-129)
 
 См. [Иерархия конфигураций Γ](../foundations/consequences#6-иерархия-конфигураций-γ).
 

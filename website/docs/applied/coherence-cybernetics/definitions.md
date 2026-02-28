@@ -107,7 +107,7 @@ $$
 |---------|---------|---------------|
 | L0 | $\exists \rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | — |
 | L1 | $\mathrm{rank}(\rho_E) > 1$ | — |
-| L2 | $R \geq R_{\text{th}} = 1/3$, $\Phi \geq \Phi_{\text{th}} = 1$, $D_{\text{diff}} \geq 2$ | $R_{\text{th}}$ **[Т]** ($K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)), $\Phi_{\text{th}}$ **[О]**, $D_{\min}$ **[С]** |
+| L2 | $R \geq R_{\text{th}} = 1/3$, $\Phi \geq \Phi_{\text{th}} = 1$, $D_{\text{diff}} \geq 2$ | $R_{\text{th}}$ **[Т]** ($K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)), $\Phi_{\text{th}}$ **[Т]** (T-129), $D_{\min}$ **[Т]** (T-151) |
 | L3 | $R^{(2)} \geq 1/4$ | **[Т]** |
 | L4 | $\lim_n R^{(n)} > 0$, $P > 6/7$ | **[Т]** |
 

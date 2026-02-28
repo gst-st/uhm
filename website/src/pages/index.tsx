@@ -434,7 +434,7 @@ function MatrixSection() {
             <ul className={styles.matrixProperties}>
               <li><strong>Чистота P = Tr(Γ²)</strong> — мера целостности</li>
               <li><strong>Критический порог P_crit = 2/7</strong> — условие жизнеспособности</li>
-              <li><strong>Сознание C = Φ × D_diff × R</strong> — три компоненты</li>
+              <li><strong>Сознание C = Φ × R ≥ 1/3</strong> — интеграция × рефлексия [Т]</li>
               <li><strong>Пять уровней L0→L4</strong> — от интериорности до единства</li>
             </ul>
           </div>
@@ -518,7 +518,7 @@ const docSections: DocSection[] = [
     title: 'Доказательства',
     description: 'Формальные теоремы',
     link: '/docs/proofs/minimality/theorem-minimality-7',
-    items: ['Минимальность 7 измерений (Трек A)', 'Пять путей к P_crit = 2/7', 'Категорный формализм и лакс-2-функтор'],
+    items: ['Минимальность 7 измерений (Трек A)', '157 теорем: от P_crit = 2/7 до субстрат-независимости', 'Категорный формализм и лакс-2-функтор'],
   },
   {
     title: 'Когерентная Кибернетика',

@@ -14,7 +14,7 @@ slug: /consciousness/subjects/collective-consciousness
 - $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
 - $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/core/dynamics/viability#критическая-чистота), статус **[Т]**
 - $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$ **[Т]**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[О]**
+- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[Т]** (T-129)
 - $\mathrm{Gap}_{AB}(i,j)$ — [межсистемный Gap](/docs/core/dynamics/composite-systems#межсистемный-gap)
 - $\mathcal{E}_{\mathrm{Gap}}$ — [Gap-запутанность](/docs/core/dynamics/composite-systems#gap-запутанность)
 - L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)

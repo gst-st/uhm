@@ -507,7 +507,7 @@ graph TB
 |---|---|---|
 | $P > P_{\text{crit}} = 2/7$ | **[Т]** | [Теорема о критической чистоте](../../proofs/dynamics/theorem-purity-critical) |
 | $R \geq R_{\text{th}} = 1/3$ | **[Т]** | [Байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) + $K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) |
-| $\Phi \geq \Phi_{\text{th}} = 1$ | **[О]** | [Когерентная доминация](./axiom-septicity#теорема-порог-интеграции) |
+| $\Phi \geq \Phi_{\text{th}} = 1$ | **[Т]** | [Теорема T-129](./axiom-septicity#теорема-порог-интеграции) ([доказательство](/docs/proofs/consciousness/operationalization#t-129)) |
 
 **Потенциальные L2-системы** (эмпирический вопрос):
 - Индивидуальные организмы (люди, животные)

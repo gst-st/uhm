@@ -149,8 +149,8 @@ description: Определения основных терминов теори
 | Термин | Определение |
 |--------|-------------|
 | **$R_{\text{th}}$** | Порог рефлексии $= 1/3$ **[Т]** ($K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)) |
-| **$\Phi_{\text{th}}$** | Порог интеграции $= 1$ **[О]** (определение по соглашению) — [когерентная доминация](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| **$D_{\min}$** | Минимальная дифференциация $= 2$ **[С]** (зависит от $\Phi_{\text{th}}$) — минимум 1 бит информации для L2; [определение](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |
+| **$\Phi_{\text{th}}$** | Порог интеграции $= 1$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)) — единственное самосогласованное значение при $P_{\text{crit}} = 2/7$; [когерентная доминация](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| **$D_{\min}$** | Минимальная дифференциация $= 2$ **[Т]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — безусловное следствие $\Phi_{\text{th}} = 1$ [Т]; [определение](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |
 | **$C_{\text{th}}$** | Порог сознательности $= \Phi_{\text{th}} \times D_{\min} \times R_{\text{th}} = 1 \times 2 \times 1/3 \approx 0.67$ |
 | **$\varphi$ (оператор)** | [Оператор самомоделирования](/docs/proofs/categorical/formalization-phi); $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ |
 | **$K_m$** | Операторы Крауса; $\sum_m K_m^\dagger K_m = I$ |

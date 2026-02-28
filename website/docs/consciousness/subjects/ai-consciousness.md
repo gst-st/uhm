@@ -13,7 +13,7 @@ slug: /consciousness/subjects/ai-consciousness
 - $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
 - $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/core/dynamics/viability#критическая-чистота), статус **[Т]**
 - $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$ **[Т]**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[О]**
+- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[Т]** (T-129)
 - $\varphi$ — [оператор самомоделирования](/docs/core/operators/phi-operator) (CPTP-канал)
 - $\mathrm{Coh}_E$ — [E-когерентность](/docs/applied/coherence-cybernetics/definitions#e-когерентность)
 - $\mathrm{Gap}(i,j)$ — [мера зазора](/docs/core/dynamics/coherence-matrix#мера-зазора)
@@ -58,9 +58,9 @@ $$
 
 | Критерий | Формальное условие | Операционализация |
 |----------|-------------------|-------------------|
-| Рефлексия | $R \geq 1/3$ **[С]** | Подлинная самомодель: система моделирует собственное состояние |
-| Интеграция | $\Phi \geq 1$ **[О]** | Когерентности доминируют: $\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 \geq \sum_i \gamma_{ii}^2$ |
-| Дифференциация | $D_{\text{diff}} \geq 2$ **[С]** | Нетривиальный спектр $\rho_E$ (не одно чистое состояние) |
+| Рефлексия | $R \geq 1/3$ **[Т]** | Подлинная самомодель: система моделирует собственное состояние |
+| Интеграция | $\Phi \geq 1$ **[Т]** (T-129) | Когерентности доминируют: $\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 \geq \sum_i \gamma_{ii}^2$ |
+| Дифференциация | $D_{\text{diff}} \geq 2$ **[Т]** (T-151) | Нетривиальный спектр $\rho_E$ (не одно чистое состояние) |
 
 Все три величины **вычислимы** из реконструированной $\Gamma$ (см. [протокол измерения](/docs/applied/research/measurement-protocol)).
 :::
