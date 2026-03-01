@@ -564,7 +564,7 @@ $$
 n_{\mathrm{opt}} = \max(19, 1, 1) = 19
 $$
 
-С учётом генезиса: $n_{\mathrm{total}} \leq 9 + 19 = 28$.
+С учётом генезиса ($n_{\mathrm{genesis}} \leq \lceil 7\ln 7 \rceil = 14$): $n_{\mathrm{total}} \leq 14 + 19 = 33$.
 
 **Зашумлённый сценарий** ($\varepsilon = 0.3$, SNR $= 0.3$, $\delta\tau = 1$):
 

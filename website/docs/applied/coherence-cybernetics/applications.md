@@ -226,14 +226,15 @@ $$
 ### Организационное сознание
 
 $$
-C(\mathbb{H}_{\text{org}}) = \Phi_{\text{org}} \times D_{\text{diff}}^{\text{org}} \times R_{\text{org}}
+C(\mathbb{H}_{\text{org}}) = \Phi_{\text{org}} \times R_{\text{org}}
 $$
 
 | Компонент | Определение | Интерпретация | Индикаторы |
 |-----------|-------------|---------------|------------|
 | $\Phi_{\text{org}}$ | [Интеграция](/docs/core/structure/dimension-u#мера-интеграции-φ) | Связность | Координация, коммуникация |
-| $D_{\text{diff}}^{\text{org}}$ | [Дифференциация](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | Разнообразие | Специализация, роли |
 | $R_{\text{org}}$ | [Рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Самопознание | Культура, стратегия |
+
+Отдельное условие жизнеспособности: $D_{\text{diff}}^{\text{org}} \geq 2$ ([Дифференциация](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — разнообразие ролей и специализации).
 
 **Следствие:** Интегрированные организации (высокое $\Phi$) более [сознательны](/docs/consciousness/foundations/self-observation#мера-сознательности-c) и адаптивны.
 

@@ -1160,6 +1160,12 @@ $$d_{ij} = \frac{\gamma}{N} \sum_k \bigl[\ell_i^{(k)} \ell_j^{(k)} - \tfrac{1}{2
 - $\lambda_{\text{gap}}(\mathcal{L}_0) \ll \lambda_{\text{deco}}$ [определяется популяционной релаксацией]
 - $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [код корректен]
 
+:::info Численная верификация (SYNARC)
+$\kappa_{\text{bootstrap}} = \omega_0/7 = 1/7$ подтверждён до точности $10^{-10}$
+в интеграционных тестах (mvp_int_2 G5). Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
+также совпадает с имплементацией `effective_kappa()` в `density7.rs`.
+:::
+
 :::caution Ретрактировано (T-59 v1)
 Предыдущая формулировка «$\kappa_{\text{bootstrap}} \geq \lambda_{\text{gap}}/7 \geq 2/9$» содержала:
 1. Арифметическую ошибку: $(2/3)/7 = 2/21 \neq 2/9$

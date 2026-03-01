@@ -47,7 +47,7 @@ $$
 | Интеграция $\Phi$ | $\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $[0, +\infty)$ | [Измерение U](/docs/core/structure/dimension-u#мера-интеграции-φ) |
 | Дифференциация $D_{\text{diff}}$ | $\exp(S_{vN}(\rho_E))$ | $[1, 7]$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 | Рефлексия $R$ | $1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ | $[0, 1]$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) |
-| Сознательность $C$ | $\Phi \times D_{\text{diff}} \times R$ | $[0, +\infty)$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
+| Сознательность $C$ | $\Phi \times R$ **[Т]** (T-140); $D_{\text{diff}} \geq 2$ — отдельное условие | $[0, +\infty)$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |
 
 ## E-когерентность {#e-когерентность}
 

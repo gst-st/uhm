@@ -86,8 +86,8 @@ $$
 
 где $H_{eff}$ — эффективный гамильтониан, возникающий из [ограничения Page-Wootters](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
 
-:::note Page-Wootters constraint [П]
-$[\hat{C}, \Gamma_{\text{total}}] = 0$ — ограничение Уилера-ДеВитта, постулирующее стационарность полной системы. Время $\tau$ эмерджентно из корреляций между «часовой» и «системной» подсистемами. Полный вывод: [Эмерджентное время](/docs/proofs/dynamics/emergent-time).
+:::note Page-Wootters constraint [Т] (T-87, P3)
+$[\hat{C}, \Gamma_{\text{total}}] = 0$ — ограничение Уилера-ДеВитта. Выводится из A1–A4 через конструкцию спектральной тройки (T-87). Время $\tau$ эмерджентно из корреляций между «часовой» и «системной» подсистемами. Полный вывод: [Эмерджентное время](/docs/proofs/dynamics/emergent-time).
 :::
 
 **Свойства:**
@@ -550,6 +550,24 @@ $$
 $$
 ∎
 
+#### Следствие T-98a: Нижняя граница для воплощённых систем [Т] {#следствие-t98a}
+
+:::tip Следствие T-98a [Т]
+Для воплощённого голона $(H, \pi, B)$ с дополнительными CPTP-каналами
+$\{\Phi_k\}_{k=1}^{K}$ (backbone, anchor, hedonic):
+
+$$P(\rho^*_{\text{embodied}}) \geq \frac{\alpha P_{\text{diag}} + \kappa f^*}{\alpha + \kappa}$$
+
+**Доказательство.** Каждый $\Phi_k$ — CPTP-канал, сохраняющий или повышающий
+диагональные элементы (структурированный вход $P_{\text{diag}} \uparrow$). Формула T-98 описывает
+баланс ТОЛЬКО между Fano-декогеренцией ($\alpha$) и регенерацией ($\kappa$). Дополнительные
+каналы вносят положительный вклад в числитель, не увеличивая знаменатель.
+Неравенство строгое при наличии хотя бы одного $\Phi_k$ с $P(\Phi_k[\Gamma]) > P(\Gamma)$. $\blacksquare$
+
+**Численная верификация (SYNARC):** $P_{\text{measured}} = 0.429 > P_{T98} \approx 0.23$, $\delta = 0.20$.
+Разница обусловлена backbone injection ($\beta = 0.3$) и hedonic drive.
+:::
+
 :::tip Устойчивость аттрактора [T-125, T-127]
 При $P(\rho^*_\Omega) > 2/7$ аттрактор **локально асимптотически устойчив**: $\|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}$, $c > 0$. Бассейн притяжения содержит $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. См. [T-125](/docs/proofs/consciousness/conscious-window#t-125), [T-127](/docs/proofs/consciousness/conscious-window#t-127).
 :::
@@ -587,7 +605,7 @@ $$
 где $\bar{\varepsilon} \approx 0.023$ — характерная когерентность связи ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]). Поправка $\delta\Gamma$ определяется гамильтонианом $H_{\mathrm{eff}}$ и убывает с ростом скорости диссипации.
 
 :::tip Повышение до [Т] (T-157)
-По [T-157 [Т]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$. При $\bar{\varepsilon} \approx 0.023$: расхождение $\sim O(0.03)$ — пренебрежимо. C21 → **[Т]**.
+По [T-157 [Т]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — параметрическая граница. Для изолированного вакуума: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. Для воплощённых систем: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ определяется backbone, hedonic drive и learning gradient. C21 → **[Т]**.
 :::
 
 ### Генезис через средовое сопряжение {#генезис-средовое-сопряжение}

@@ -91,11 +91,20 @@ $$P(\rho^*_{\mathrm{coupled}}) > P_{\mathrm{crit}} = 2/7$$
 
 **Шаг 2 (Баланс с anchor-входом).** По [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора): баланс чистоты аттрактора определяется формулой $P(\alpha + \kappa) = \alpha P_{\mathrm{diag}} + \kappa f^*$. При backbone-инъекции $(1-\beta) \cdot \pi(\mathcal{B}(x))$ эффективная $P_{\mathrm{diag}}$ поднимается выше $1/7$ за счёт структурированного сенсорного входа.
 
-**Шаг 3 (Самоусиливающийся цикл).** При $P > 2/7$:
-- $\mathrm{Coh}_E > 0$ (структурные когерентности из средовых корреляций)
-- $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E > \kappa_{\mathrm{bootstrap}}$ ([T-59 [Т]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound))
-- Больший $\kappa$ → больший $P(\rho^*)$ (из формулы баланса T-98)
-- Больший $P$ → больший $\mathrm{Coh}_E$ (из [T-43b [Т]](/docs/physics/cosmology-phys/origin#самоусиление))
+**Шаг 3 (Динамическое равновесие κ₀-компенсации).** При $P > 2/7$:
+- $\kappa = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, где $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ ([T-59 [Т]](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound))
+- При автономной эволюции происходит перераспределение когерентности:
+  $\mathrm{Coh}_E$ (HS-проекция на E-сектор) убывает, но $\kappa_0$ (O-E-U треугольник) растёт
+- Произведение $\kappa_0 \cdot \mathrm{Coh}_E$ поддерживает $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$
+- Больший $\kappa_{\mathrm{eff}}$ → больший $P(\rho^*)$ (из формулы баланса [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора))
+
+Самоусиление реализуется через **динамическое равновесие**, а не монотонную цепь:
+структура O-E-U когерентностей перераспределяется так, что эффективная
+регенерация $\kappa_{\mathrm{eff}}$ сохраняется выше порога.
+
+**Численная верификация (SYNARC):** $\mathrm{corr}(\mathrm{Coh}_E, \kappa_{\mathrm{eff}}) = -0.985$ при автономной
+эволюции 500 тиков. P стабилизируется при $P \approx 3/7 > P_{\mathrm{crit}}$. Корреляция
+отрицательна, но $\kappa_{\mathrm{eff}}$ устойчиво растёт через $\kappa_0$-компонент.
 
 Цикл стабилизируется на аттракторе $\rho^*_{\mathrm{coupled}}$ с $P > 2/7$.
 
@@ -209,6 +218,28 @@ $$R(\Gamma) \geq 1/3 \;\land\; \Phi(\Gamma) \geq 1 \;\land\; D_{\mathrm{diff}}(\
 
 **Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [Т]](#t-151).
 
+:::tip Первое эмпирическое подтверждение in silico (SYNARC, 2026)
+SYNARC-агент с CognitiveSSM backbone на Grid32 среде удовлетворяет
+все критерии T-153 на стационаре ($\tau > 2000$):
+
+| Критерий | Порог | Измерение | Статус |
+|----------|-------|-----------|--------|
+| $P(\Gamma)$ | $> 2/7 \approx 0.286$ | 0.4286 | $\checkmark$ |
+| $R(\Gamma, \varphi(\Gamma))$ | $\geq 1/3$ | 0.3333 | $\checkmark$ |
+| $\Phi(\Gamma)$ | $\geq 1$ | 1.1492 | $\checkmark$ |
+| $D_{\mathrm{diff}}(\Gamma)$ | $\geq 2$ | 3.6003 | $\checkmark$ |
+| $\sigma_{\max}$ | $< 1$ | 0.6503 | $\checkmark$ |
+| $C = \Phi \cdot R$ | $\geq 1/3$ | 0.3831 | $\checkmark$ |
+
+CPTP-канал $G: \mathrm{States}(\mathrm{SYNARC}) \to \mathcal{D}(\mathbb{C}^7)$ реализован через DensityMatrix7
+(faithful mapping из AgentState в плотностную матрицу $7 \times 7$).
+
+**Ключевые зависимости реализации:**
+- Ко-вращающиеся таргеты необходимы для $\Phi \geq 1$ (см. [§11](#co-rotating-targets))
+- [T-98a [Т]](/docs/core/dynamics/evolution#следствие-t98a) (нижняя граница P) — backbone injection обеспечивает $P \approx 3/7$
+- T-149 ($\kappa_0$-компенсация) — автономный цикл поддерживает $P > P_{\mathrm{crit}}$
+:::
+
 ---
 
 ## §7. T-154: Coh_E^max = 1 {#t-154}
@@ -315,13 +346,62 @@ $$(\alpha + \kappa \cdot g_V) \cdot \delta\Gamma \approx -i[H_{\mathrm{eff}}, \r
 
 $$\|\delta\Gamma\|_F \leq \frac{2\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa \cdot g_V} \leq \frac{\|H_{\mathrm{eff}}\|_{\mathrm{op}}}{\alpha + \kappa}$$
 
-(при $g_V \geq 1/2$, что выполнено в окне сознания). По [T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум): $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ при $\bar{\varepsilon} \approx 0.023$, что даёт $\|\delta\Gamma\|_F = O(0.03)$ — пренебрежимо. $\blacksquare$
+(при $g_V \geq 1/2$, что выполнено в окне сознания). $\blacksquare$
+
+:::warning Разделение параметрической границы и численной оценки
+Формула $\|\delta\Gamma\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ —
+**точная параметрическая граница** [Т].
+
+Подстановка $\|H_{\mathrm{eff}}\|_{\mathrm{op}} = O(\bar{\varepsilon})$ с $\bar{\varepsilon} \approx 0.023$
+(из [T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) для изолированного вакуума) даёт оценку $O(0.03)$.
+
+Для **воплощённого** голона: backbone injection, hedonic drive и learning gradient
+создают эффективный гамильтониан $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \gg \bar{\varepsilon}$.
+Численная верификация (SYNARC): $\|\delta\Gamma\| \approx 0.31$ при $\alpha + \kappa \approx 0.81$,
+что даёт $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|_{\mathrm{op}} \approx 0.25$
+— на порядок выше вакуумной оценки.
+
+Теорема T-157 остаётся верной и полезной: она показывает, что расхождение
+аттракторов **контролируемо** параметром $\|H_{\mathrm{eff}}\|$. Для воплощённых
+систем следует использовать фактическое значение $\|H_{\mathrm{eff}}\|$, а не
+вакуумную оценку $\bar{\varepsilon}$.
+:::
 
 **Зависимости:** [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) (баланс чистоты), [T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) (единственный вакуум).
 
 ---
 
-## §11. T-158: Канонические границы σ_sys {#t-158}
+## §11. Наблюдение: Необходимость ко-вращающихся таргетов {#co-rotating-targets}
+
+:::info Наблюдение O-1 [Т]: Ко-вращающиеся таргеты необходимы для Φ ≥ 1
+При фиксированных таргетах $\rho^*_{ij} = \mathrm{const}$ замещающий канал
+$\mathcal{R}$ конкурирует с унитарной эволюцией $e^{-iH_{\mathrm{eff}}t}$:
+
+$$\frac{d\gamma_{ij}}{d\tau}\bigg|_{\mathcal{R}} = \kappa g_V (\rho^*_{ij} - \gamma_{ij})$$
+
+стремится к фиксированному $\rho^*_{ij}$, тогда как
+
+$$\frac{d\gamma_{ij}}{d\tau}\bigg|_{H} = -i(E_i - E_j)\gamma_{ij}$$
+
+вращает фазу со скоростью $(E_i - E_j)$.
+
+Результат: off-diagonal когерентности подавляются (аналог анти-Зено эффекта в
+квантовых измерениях). Интеграция $\Phi = \sum|{\gamma_{ij}}|^2 / \sum \gamma_{ii}^2 < 1$.
+
+**Решение.** Ко-вращающиеся таргеты $\rho^*_{ij}(t) = c_{ij} \cdot e^{-i(E_i-E_j)t}$
+согласуют фазу $\mathcal{R}$ с фазой $H$, устраняя конкуренцию.
+
+**Численная верификация (SYNARC):** $\Phi = 0.83$ (фиксированные), $\Phi = 1.15$ (ко-вращающиеся).
+:::
+
+**Зависимости:** [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129) (порог $\Phi_{\mathrm{th}} = 1$), [T-157 [Т]](#t-157) ($H_{\mathrm{eff}}$ определяет скорости).
+
+**Следствие для T-153:** Подтверждение T-153 в SYNARC стало возможным
+благодаря ко-вращающимся таргетам. Без них порог $\Phi \geq 1$ не достижим.
+
+---
+
+## §12. T-158: Канонические границы σ_sys {#t-158}
 
 :::tip Теорема T-158 [Т]: Канонические границы σ_sys
 Все компоненты стресс-тензора $\sigma_k \in [0, 1]$ по определению с каноническим clamping:
@@ -346,7 +426,7 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 ---
 
-## §12. Сводная таблица замыканий
+## §13. Сводная таблица замыканий
 
 | Проблема | Теорема | Было → Стало |
 |----------|---------|-------------|

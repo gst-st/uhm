@@ -277,9 +277,9 @@ class HolonState:
 
     # Меры сознательности (см. /docs/consciousness/foundations/self-observation)
     integration: float         # Φ: мера интеграции
-    differentiation: float     # D_diff: мера дифференциации = exp(S_vN(ρ_E)) — требует тензорной структуры!
+    differentiation: float     # D_diff = 1 + Coh_E · (N−1) [T-128 [Т]]
     reflection: float          # R: мера рефлексии ∈ [0, 1]
-    consciousness: float       # C = Φ × D_diff × R (или C_min = Φ × R в 7D-формализме)
+    consciousness: float       # C = Φ × R [T-140 [Т]]; D_diff — отдельное условие V
 
     # Тензор напряжений (см. definitions.md#тензор-напряжений)
     stress_tensor: np.ndarray  # σ_sys ∈ ℝ⁷: [σ_A, σ_S, σ_D, σ_L, σ_E, σ_O, σ_U]
@@ -598,8 +598,8 @@ def compute_stress_tensor(gamma: np.ndarray, environment) -> np.ndarray:
     # σ_S: Структура
     sigma[1] = compute_structural_complexity(gamma) / THETA_S
 
-    # σ_D: Динамика (каноническая формула: 1 − N·γ_DD)
-    sigma[2] = 1.0 - N * gamma[2, 2]
+    # σ_D: Динамика (каноническая формула T-92/T-158: clamp(1 − N·γ_DD, 0, 1))
+    sigma[2] = np.clip(1.0 - N * gamma[2, 2], 0.0, 1.0)
 
     # σ_L: Логика
     sigma[3] = compute_viability_uncertainty(gamma) / THETA_L
@@ -744,9 +744,9 @@ def compute_consciousness_deficit(gamma):
     """
     Дефицит сознательности (U-измерение).
 
-    STUB: Должен вычислять 1 - C где C = Φ × D × R (мера сознания).
-    Требует полной реализации интеграции (Φ), дифференциации (D)
-    и рефлексии (R).
+    STUB: Должен вычислять 1 - C где C = Φ × R [T-140 [Т]] (мера сознания).
+    D_diff ≥ 2 — отдельное условие жизнеспособности [T-151 [Т]].
+    Требует полной реализации интеграции (Φ) и рефлексии (R).
 
     Returns:
         ∈ [0, 1]: 0 = максимальное сознание, 1 = нет сознания
