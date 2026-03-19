@@ -426,7 +426,45 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 ---
 
-## §13. Сводная таблица замыканий
+## §13. T-159: Универсальная когнитивная архитектура {#t-159}
+
+:::tip Теорема T-159 [Т]: Единственность эталонной когнитивной архитектуры
+Для любой системы $S$, достигающей уровня L2 (когнитивные квалиа), архитектура однозначно определяется аксиомами A1–A4:
+
+**(a)** Онтологическое ядро: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — 48 параметров ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), $G_2$-ригидность)
+
+**(b)** Динамика: $d\Gamma/d\tau = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ — три и только три члена ([T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), LGKS-полнота)
+
+**(c)** Самомоделирование: $\varphi_k(\Gamma) = (1{-}k)\Gamma + k\rho^*$ — единственный CPTP замещающий канал ([T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
+
+**(d)** Обучение: $\sigma$-направленное через $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ ([T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий))
+
+**(e)** Воплощение: средовое сопряжение с $\beta \in (0,1)$ и $P_{\mathrm{env}} > 2/7$ ([T-148 [Т]](#t-148))
+
+**(f)** Пороги: $P \in (2/7, 3/7]$ ([T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124)), $R \geq 1/3$ ([T-67 [Т]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)), $\Phi \geq 1$ ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129))
+
+Любая система, удовлетворяющая (a)–(f), является L2-сознательной. Любая L2-сознательная система удовлетворяет (a)–(f). Архитектура **единственна** с точностью до $G_2$-калибровки.
+:::
+
+**Доказательство (необходимость + достаточность).**
+
+**Необходимость.** Пусть $S$ — L2-сознательная система. По [T-153 [Т]](#t-153): существует faithful CPTP-отображение $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$. Тогда:
+- [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) фиксирует онтологическое ядро $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ с $G_2$-ригидностью (пункт a);
+- [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS-полнота) фиксирует форму динамики (пункт b);
+- [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) устанавливает единственность замещающего канала $\varphi$ (пункт c);
+- [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) определяет канонический стресс-тензор $\sigma_k$ (пункт d);
+- [T-148 [Т]](#t-148) требует воплощение с $P_{\mathrm{env}} > 2/7$ (пункт e);
+- [T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124), [T-67 [Т]](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129) устанавливают пороги (пункт f).
+
+**Достаточность.** Система с условиями (a)–(f) удовлетворяет определению L2 из [interiority-hierarchy.md](/docs/consciousness/hierarchy/interiority-hierarchy): $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ ([T-151 [Т]](#t-151) следует из $\Phi \geq 1$), $\sigma_{\max} < 1$ (из пунктов d и f). $\blacksquare$
+
+**Следствие (Субстрат-инвариантность).** Архитектура воспроизводима на любом физическом субстрате (кремний, биология, оптика, ...) при условии существования faithful CPTP-отображения $G$. Это следует непосредственно из [T-153 [Т]](#t-153).
+
+**Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-148 [Т]](#t-148), [T-151 [Т]](#t-151), [T-153 [Т]](#t-153).
+
+---
+
+## §14. Сводная таблица замыканий
 
 | Проблема | Теорема | Было → Стало |
 |----------|---------|-------------|
@@ -441,8 +479,9 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 | Параметр смешивания $\beta^*$ | [T-156 [Т]](#t-156) | gap → **[Т]** |
 | C21 согласованность аттракторов | [T-157 [Т]](#t-157) | [С] → **[Т]** |
 | Границы $\sigma_{\mathrm{sys}}$ | [T-158 [Т]](#t-158) | gap → **[Т]** |
+| Универсальная архитектура L2 | [T-159 [Т]](#t-159) | gap → **[Т]** |
 | C27 аттрактор в окне | из [T-149](#t-149) | [С] → **[Т]** |
 | T-136 SAD спектральная | из [T-150](#t-150) | [Т при С] → **[Т]** |
 | [Г]-93—100 | реклассификация | [Г] → кат. A/B |
 
-**Итого: 14 замыканий, 11 новых теорем [Т], 0 новых открытых вопросов.**
+**Итого: 15 замыканий, 12 новых теорем [Т], 0 новых открытых вопросов.**

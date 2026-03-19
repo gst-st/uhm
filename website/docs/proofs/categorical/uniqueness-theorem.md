@@ -86,11 +86,13 @@ $$
 
 ### P1. Примитивность $\mathcal{L}_0$ (линейная часть) [Т] {#p1-примитивность}
 
-Линейная часть Лиувиллиана $\mathcal{L}_0$ [примитивна](/docs/core/operators/lindblad-operators#примитивность-ℒω) (T-39a): существует **единственное** стационарное состояние $\rho_* \in \mathcal{D}(\mathbb{C}^7)$, и для любого начального $\rho_0$:
+Линейная часть Лиувиллиана $\mathcal{L}_0$ [примитивна](/docs/core/operators/lindblad-operators#примитивность-ℒω) (T-39a): существует **единственное** стационарное состояние $I/7 \in \mathcal{D}(\mathbb{C}^7)$ для $\mathcal{L}_0$, и для любого начального $\rho_0$:
 
 $$
-\lim_{\tau \to \infty} e^{\tau\mathcal{L}_\Omega}[\rho_0] = \rho_*
+\lim_{\tau \to \infty} e^{\tau\mathcal{L}_0}[\rho_0] = I/7
 $$
+
+Полный нелинейный оператор $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ имеет **единственный нетривиальный аттрактор** $\rho_* \neq I/7$ с $P > 1/7$ (T-96 [Т]).
 
 Спектр $\mathcal{L}_\Omega$ на пространстве $\mathrm{Herm}_0(\mathbb{C}^7)$ (бесследовые эрмитовы матрицы, $\dim_\mathbb{R} = 48$):
 

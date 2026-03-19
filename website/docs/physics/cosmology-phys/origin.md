@@ -112,6 +112,8 @@ $$
 
 **(III) Результат.** Расстояние от $\Gamma_{\odot}$ растёт монотонно:
 
+Из шагов I–II получаем $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ для всех $\tau > 0$. Поскольку $d_B(\Gamma_1, \Gamma_2) > 0 \Leftrightarrow \Gamma_1 \neq \Gamma_2$ (метрика Бюреса невырождена), из $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ следует:
+
 $$
 d_B(\Gamma(\tau), \Gamma_{\odot}) > 0 \quad \forall \tau > 0
 $$

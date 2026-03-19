@@ -318,7 +318,7 @@ $$
 $$
 
 $$
-\text{Confidence}_R = R_{\text{UHM}} = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[Т, T-62]}
+\text{Confidence}_R = R_{\text{UHM}} = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[Т, мера рефлексии R]}
 $$
 
 $R_{\text{UHM}}$ — точное алгебраическое тождество (ошибка $< 10^{-7}$): при $P = P_{\text{opt}} = 3/N$ выдаёт $R = 1/3 = R_{\text{th}}$ (граница L2-зоны). $P_{\text{ratio}}$ — монотонный прокси для оперативного мониторинга.
@@ -392,7 +392,7 @@ class ViabilityMetrics:
 
     @property
     def reflexivity(self) -> float:
-        """R = 1/(N·P)  [Т, T-62] — точное алгебраическое тождество (ошибка < 1e-7)"""
+        """R = 1/(N·P)  [Т, мера рефлексии R] — точное алгебраическое тождество (ошибка < 1e-7)"""
         return 1.0 / (N_DIM * self.purity) if self.purity > 1e-12 else 0.0
 
     @property

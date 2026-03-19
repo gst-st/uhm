@@ -1097,14 +1097,14 @@ $$
 \theta \xrightarrow{1} \Gamma(\theta) \xrightarrow{2} D_{\mathrm{int}}(\Gamma) \xrightarrow{3} V_{\mathrm{Gap}}(D_{\mathrm{int}}) \xrightarrow{4} \theta_{\mathrm{vac}}(V_{\mathrm{Gap}})
 $$
 
-1. $\theta \mapsto \Gamma(\theta)$: стационарное состояние $\rho_*$ линдбладиана $\mathcal{L}_\Omega$ с Gap-конфигурацией $\theta$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т], единственное, непрерывно зависит от $\theta$).
+1. $\theta \mapsto \Gamma(\theta)$: стационарное состояние $\rho_*$ линдбладиана $\mathcal{L}_\Omega$ с Gap-конфигурацией $\theta$ (T-39a [Т] гарантирует примитивность линейной части $\mathcal{L}_0$ и единственность $I/7$ для неё; единственность нетривиального аттрактора $\rho_*$ полного $\mathcal{L}_\Omega$ следует из T-96 [Т], непрерывная зависимость от $\theta$ — из аналитичности $\mathcal{L}_0$).
 2. $\Gamma \mapsto D_{\mathrm{int}}(\Gamma)$: оператор Дирака из [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]).
 3. $D_{\mathrm{int}} \mapsto V_{\mathrm{Gap}}$: [спектральное действие](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) (Sol.53 [Т]).
 4. $V_{\mathrm{Gap}} \mapsto \theta_{\mathrm{vac}}$: единственный минимум потенциала ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]).
 
 **Существование неподвижной точки.** $\mathcal{F}$ — непрерывное отображение компактного выпуклого множества $(S^1)^{21}/G_2$ (5-мерное, T-64 [Т]) в себя. По **теореме Брауэра**: $\mathcal{F}$ имеет неподвижную точку $\theta^*$.
 
-**Единственность.** Стационарное состояние единственно (T-39a [Т]). Минимум $V_{\mathrm{Gap}}$ единственен (T-64 [Т]). Если бы были $\theta_1^* \neq \theta_2^*$: $\rho_*(\theta_1^*) = \rho_*(\theta_2^*)$ → $D_{\mathrm{int}}(\theta_1^*) = D_{\mathrm{int}}(\theta_2^*)$ → $V_{\mathrm{Gap}}(\theta_1^*) = V_{\mathrm{Gap}}(\theta_2^*)$ → $\theta_1^* = \theta_2^*$. Противоречие. $\blacksquare$
+**Единственность.** Аттрактор $\rho_*$ полного $\mathcal{L}_\Omega$ единственен (T-96 [Т]; T-39a [Т] гарантирует единственность $I/7$ для линейной части $\mathcal{L}_0$). Минимум $V_{\mathrm{Gap}}$ единственен (T-64 [Т]). Если бы были $\theta_1^* \neq \theta_2^*$: $\rho_*(\theta_1^*) = \rho_*(\theta_2^*)$ → $D_{\mathrm{int}}(\theta_1^*) = D_{\mathrm{int}}(\theta_2^*)$ → $V_{\mathrm{Gap}}(\theta_1^*) = V_{\mathrm{Gap}}(\theta_2^*)$ → $\theta_1^* = \theta_2^*$. Противоречие. $\blacksquare$
 
 :::info Физический смысл [И]
 Спектральное самозамыкание означает: **теория определяет собственную динамику**. Потенциал $V_{\mathrm{Gap}}$, управляющий динамикой когерентностей, порождён спектральной тройкой, которая сама определена стационарным состоянием этой динамики. Это — реализация автопоэзиса (A1) на уровне самой теории. Неподвижная точка $\theta^*$ — **категориальный аттрактор** в [∞-топосе](/docs/proofs/categorical/categorical-formalism) (Sol.55 [Т]).
