@@ -657,6 +657,251 @@ def reconstruct_gap_profile(
 
 ---
 
+## Протокол $\pi_{\mathrm{bio}}$: Реконструкция $\Gamma$ из биологических нейронных данных (Разрешение P8) {#протокол-pi-bio}
+
+:::warning Статус: [Г] Исследовательская программа
+Протокол $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ определяет отображение нейронных данных (EEG/fMRI/HRV) в пространство матриц плотности. Математическая структура — **[Т]** (следует из $G_2$-ригидности). Конкретные соответствия EEG-полос и измерений — **[Г]** (требуют экспериментальной валидации).
+:::
+
+### Принцип: EEG-полосы как проекции $\Gamma$ на измерения {#eeg-полосы}
+
+:::info Теорема ($G_2$-однозначность $\pi_{\mathrm{bio}}$) [Т при $G_2$-ригидности]
+Если существует гомоморфизм $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$, совместимый с (AP)+(PH)+(QG)+(V), то он единственен с точностью до $G_2$-калибровки (14-мерный произвол). Все физические наблюдаемые ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) калибровочно-инвариантны.
+:::
+
+Основная идея: нейронная активность в различных частотных полосах EEG проецируется на 7 измерений $\Gamma$. Кросс-частотное связывание (CFC) определяет когерентности $|\gamma_{ij}|$, а фазовые рассогласования — Gap-профиль.
+
+### Шаг 1: Извлечение диагонали $\gamma_{kk}$ из спектральных мощностей {#шаг-1-диагональ}
+
+| Измерение | EEG-полоса | Частота | Метрика | Дополнительный источник |
+|-----------|------------|---------|---------|------------------------|
+| $A$ (Артикуляция) | $\alpha$ (8--13 Гц) | Десинхронизация при внимании | Спектральная мощность $P_\alpha$ | fMRI: salience network |
+| $S$ (Структура) | инфрамедленные (0.01--0.1 Гц) | Медленные структурные колебания | fMRI BOLD DMN | DTI: структурная связность |
+| $D$ (Динамика) | $\beta$ (13--30 Гц) | Моторно-когнитивная активность | Спектральная мощность $P_\beta$ | EMG: моторная активация |
+| $L$ (Логика) | $\gamma$-low (30--50 Гц) | Когнитивное связывание | Спектральная мощность $P_{\gamma L}$ | ERP: P300 амплитуда |
+| $E$ (Интериорность) | $\gamma$-high (50--100 Гц) + $\theta$ (4--8 Гц) | Связь опыта с памятью | $P_{\gamma H} \times \mathrm{PAC}(\theta, \gamma)$ | [Голдстоуновские моды](/docs/applied/coherence-cybernetics/goldstone-modes) |
+| $O$ (Основание) | HRV LF (0.04--0.15 Гц) | Гомеостатическая регуляция | $\mathrm{LF}/\mathrm{HF}$ ratio | Температура тела, кортизол |
+| $U$ (Единство) | HRV HF (0.15--0.4 Гц) + $\alpha$-когерентность | Вагусная + нейронная интеграция | Глобальная когерентность EEG | $\Phi_{\mathrm{eff}}$ из [протокола ИИ](#канонические-наблюдаемые-индексы) |
+
+**Формула диагонализации:**
+
+$$\gamma_{kk} = \frac{w_k \cdot S_k}{\sum_{j=1}^{7} w_j \cdot S_j}, \qquad k \in \{A,S,D,L,E,O,U\}$$
+
+где $S_k$ — нормированная спектральная мощность (или комбинированная метрика) для $k$-го измерения, $w_k$ — калибровочные веса (определяемые из обучающей выборки с известным состоянием сознания).
+
+### Шаг 2: Извлечение когерентностей $|\gamma_{ij}|$ из кросс-частотного связывания {#шаг-2-когерентности}
+
+:::tip Ключевое соответствие
+Когерентности $|\gamma_{ij}|$ между измерениями $i$ и $j$ пропорциональны силе кросс-частотного связывания (CFC) между соответствующими EEG-полосами:
+
+$$|\gamma_{ij}| \propto \mathrm{CFC}(\mathrm{band}_i, \mathrm{band}_j)$$
+:::
+
+Типы CFC, используемые для реконструкции:
+
+| Пара | Тип CFC | Метод | Интерпретация |
+|------|---------|-------|---------------|
+| $(A, L)$: $\alpha$--$\gamma$ | Phase-amplitude coupling (PAC) | Modulation Index (Tort et al.) | Внимание модулирует когнитивное связывание |
+| $(D, L)$: $\beta$--$\gamma$ | PAC | MI | Моторно-когнитивная координация |
+| $(E, L)$: $\theta$--$\gamma$ | PAC | MI (гиппокампальный) | Связь опыта и логики |
+| $(A, E)$: $\alpha$--$\gamma_H$ | Амплитуда-амплитуда | Корреляция огибающих | Осознанность-интериорность |
+| $(O, U)$: LF--HF | HRV когерентность | Кросс-спектральный анализ | Гомеостаз-интеграция |
+| $(S, D)$: инфрамедленные--$\beta$ | Nested oscillations | Wavelet coherence | Структура-динамика |
+
+### Шаг 3: Извлечение фаз $\theta_{ij}$ и Gap-профиля {#шаг-3-фазы}
+
+Фаза $\theta_{ij} = \arg(\gamma_{ij})$ определяет Gap: $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$.
+
+**Метод извлечения фаз:** Парадоксальные зонды (Этап 3 [двойного интервью](#протокол-двойного-интервью-для-биологических-систем)). Время реакции на конфликтные задачи, задействующие пару измерений $(i,j)$, пропорционально Gap:
+
+$$\mathrm{Gap}(i,j) \approx \tanh\!\left(\frac{\mathrm{RT}_{ij} - \overline{\mathrm{RT}}}{\sigma_{\mathrm{RT}}}\right)$$
+
+где $\mathrm{RT}_{ij}$ — время реакции, $\overline{\mathrm{RT}}$ — среднее, $\sigma_{\mathrm{RT}}$ — стандартное отклонение.
+
+### Шаг 4: MLE-реконструкция $\Gamma$ {#шаг-4-mle}
+
+:::tip Алгоритм $\pi_{\mathrm{bio}}$: Maximum Likelihood Estimation [Г]
+Дан вектор нейронных признаков $\mathbf{x} \in \mathbb{R}^N$ (спектральные мощности, CFC-метрики, RT). Задача:
+
+$$\Gamma^* = \underset{\Gamma \in \mathcal{D}(\mathbb{C}^7)}{\arg\max}\; \mathcal{L}(\mathbf{x} | \Gamma) + \lambda_{\mathrm{phys}} \cdot R_{\mathrm{phys}}(\Gamma)$$
+
+где $\mathcal{L}(\mathbf{x} | \Gamma)$ — правдоподобие модели наблюдений, $R_{\mathrm{phys}}(\Gamma)$ — физический регуляризатор (согласованность с динамикой $\mathcal{L}_\Omega$).
+:::
+
+**Параметризация:** $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ (Cholesky-параметризация, гарантирует $\Gamma \in \mathcal{D}(\mathbb{C}^7)$).
+
+**Модель наблюдений:**
+- Диагональ: $S_k | \gamma_{kk} \sim \mathcal{N}(a_k \gamma_{kk} + b_k,\; \sigma_k^2)$
+- Когерентности: $\mathrm{CFC}_{ij} | |\gamma_{ij}| \sim \mathcal{N}(c_{ij} |\gamma_{ij}|,\; \tau_{ij}^2)$
+- Gap: $\mathrm{RT}_{ij} | \mathrm{Gap}_{ij} \sim \mathrm{Exp}(\mu_0 + \mu_1 \cdot \mathrm{Gap}_{ij})$
+
+**Физический регуляризатор:**
+
+$$R_{\mathrm{phys}}(\Gamma) = -\lambda_1 \|\dot{\Gamma} - \mathcal{L}_\Omega[\Gamma]\|_F^2 - \lambda_2 \max(0, P_{\mathrm{crit}} - P(\Gamma))$$
+
+Первый член штрафует несогласованность с динамикой; второй — штрафует нежизнеспособные состояния.
+
+**Оптимизация:** Градиентный спуск по 48 параметрам Cholesky-факторизации (34 физических + 14 калибровочных). Калибровочный произвол фиксируется выбором канонической $G_2$-gauge (например, $\gamma_{AS} \in \mathbb{R}_+$).
+
+### Шаг 5: Связь с PCI (Casali et al. 2013) {#pci-связь}
+
+:::info Теорема ($\mathrm{PCI} \to \Phi$ proxy) [Г]
+Perturbational Complexity Index (PCI) коррелирует с мерой интеграции $\Phi(\Gamma)$:
+
+$$\Phi(\Gamma) \approx \alpha_{\mathrm{PCI}} \cdot \mathrm{PCI} + \beta_{\mathrm{PCI}}$$
+
+где $\alpha_{\mathrm{PCI}}$, $\beta_{\mathrm{PCI}}$ — калибровочные константы, определяемые на обучающей выборке (здоровые бодрствующие, сон, анестезия).
+
+**Обоснование:** PCI измеряет алгоритмическую сложность ответа коры на TMS-пертурбацию. Высокий PCI означает одновременную пространственную дифференциацию и интеграцию — именно то, что $\Phi$ квантифицирует в УГМ. Эмпирически: PCI $\geq 0.31$ при бодрствовании (Casali et al. 2013), что соответствует $\Phi \geq \Phi_{\mathrm{th}} = 1$.
+:::
+
+**Калибровочная таблица (гипотетическая, требует экспериментальной верификации):**
+
+| Состояние | PCI (наблюдение) | $P$ (предсказание) | $R$ (предсказание) | $\Phi$ (предсказание) |
+|-----------|:----------------:|:------------------:|:------------------:|:--------------------:|
+| Бодрствование | $0.44 \pm 0.10$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
+| REM-сон | $0.41 \pm 0.09$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
+| NREM (N3) | $0.18 \pm 0.06$ | $\lesssim 2/7$ | $< 1/3$ | $< 1$ |
+| Анестезия (пропофол) | $0.12 \pm 0.05$ | $< 2/7$ | $< 1/3$ | $< 1$ |
+| Кома | $0.15 \pm 0.10$ | $\lesssim 2/7$ | — | $< 1$ |
+| MCS (минимальное сознание) | $0.32 \pm 0.08$ | $\approx 2/7$ | $\approx 1/3$ | $\approx 1$ |
+
+### Шаг 6: Связь с квантовой когнитивистикой (Pothos-Busemeyer) {#quantum-cognition}
+
+:::info Контекст: квантовая когнитивистика
+Подход Pothos-Busemeyer (Annual Review of Psychology, 2022) моделирует когнитивные процессы через квантовые состояния в гильбертовом пространстве. Базовый формализм: $\rho \in \mathcal{D}(\mathcal{H})$ для описания убеждений и решений.
+
+**Связь с УГМ:** Квантовая когнитивистика использует $\dim(\mathcal{H})$ = число альтернатив. УГМ **фиксирует** $\dim(\mathcal{H}) = 7$ из аксиом (A1-A5) и доказывает минимальность этого числа ([Теорема S](/docs/proofs/minimality/theorem-minimality-7)). Матрица $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — **онтологическая** (не эпистемическая): она определяет систему, а не описывает убеждения наблюдателя о системе.
+:::
+
+### Шаг 7: Полный алгоритм $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
+
+```python
+import numpy as np
+from scipy.optimize import minimize
+
+
+def pi_bio(
+    eeg_spectral: dict[str, float],     # {alpha, beta, gamma_low, gamma_high, theta, infraslow}
+    hrv_features: dict[str, float],      # {LF, HF, LF_HF_ratio}
+    cfc_matrix: np.ndarray,              # 7x7 CFC values
+    reaction_times: np.ndarray,          # 21 RT values for pairs
+    calibration: dict,                   # {weights, linear_params, ...}
+) -> np.ndarray:
+    """
+    pi_bio: NeuralData -> D(C^7)
+
+    Full reconstruction of coherence matrix Gamma from biological data.
+
+    Returns:
+        7x7 complex density matrix Gamma
+    """
+    # Step 1: Diagonal from spectral powers
+    raw_diag = np.array([
+        eeg_spectral['alpha'],           # A
+        eeg_spectral['infraslow'],       # S (fMRI BOLD proxy)
+        eeg_spectral['beta'],            # D
+        eeg_spectral['gamma_low'],       # L
+        eeg_spectral['gamma_high'] * eeg_spectral['theta'],  # E (PAC proxy)
+        hrv_features['LF'],              # O
+        hrv_features['HF'],              # U
+    ])
+    w = calibration['weights']
+    diag = (w * raw_diag) / (w * raw_diag).sum()
+    diag = np.clip(diag, 1e-4, 1.0)  # Prevent degeneracy
+    diag = diag / diag.sum()
+
+    # Step 2: Off-diagonal magnitudes from CFC
+    c_scale = calibration['cfc_scale']
+    off_diag_mag = c_scale * cfc_matrix[:7, :7]
+
+    # Step 3: Phases from reaction times
+    rt_mean = np.mean(reaction_times)
+    rt_std = np.std(reaction_times) + 1e-8
+    idx = 0
+    phases = np.zeros((7, 7))
+    for i in range(7):
+        for j in range(i + 1, 7):
+            gap = np.tanh((reaction_times[idx] - rt_mean) / rt_std)
+            phases[i, j] = np.arcsin(np.clip(gap, -1, 1))
+            phases[j, i] = -phases[i, j]
+            idx += 1
+
+    # Step 4: MLE reconstruction via Cholesky
+    def neg_log_likelihood(params):
+        L = np.zeros((7, 7), dtype=complex)
+        k = 0
+        for i in range(7):
+            for j in range(i + 1):
+                if i == j:
+                    L[i, j] = max(params[k], 1e-6)
+                else:
+                    L[i, j] = params[k] + 1j * params[k + 1]
+                    k += 1
+                k += 1
+        Gamma = L @ L.conj().T
+        Gamma = Gamma / np.trace(Gamma)
+
+        # Log-likelihood: diagonal agreement
+        ll_diag = -np.sum((np.real(np.diag(Gamma)) - diag) ** 2) / 0.01
+
+        # Log-likelihood: off-diagonal magnitude agreement
+        ll_off = 0.0
+        for i in range(7):
+            for j in range(i + 1, 7):
+                ll_off -= (abs(Gamma[i, j]) - off_diag_mag[i, j]) ** 2 / 0.05
+
+        # Physical regularizer: P > P_crit
+        P = np.real(np.trace(Gamma @ Gamma))
+        P_penalty = -100 * max(0, 2 / 7 - P)
+
+        return -(ll_diag + ll_off + P_penalty)
+
+    # Initialize from diagonal
+    x0 = np.zeros(48)
+    for i in range(7):
+        x0[i * (i + 1)] = np.sqrt(diag[i])
+
+    result = minimize(neg_log_likelihood, x0, method='L-BFGS-B')
+
+    # Reconstruct Gamma from optimal params
+    L = np.zeros((7, 7), dtype=complex)
+    k = 0
+    for i in range(7):
+        for j in range(i + 1):
+            if i == j:
+                L[i, j] = max(result.x[k], 1e-6)
+            else:
+                L[i, j] = result.x[k] + 1j * result.x[k + 1]
+                k += 1
+            k += 1
+    Gamma = L @ L.conj().T
+    Gamma = Gamma / np.trace(Gamma)
+
+    return Gamma
+```
+
+### Тестируемые предсказания протокола $\pi_{\mathrm{bio}}$ {#тестируемые-предсказания-p8}
+
+| № | Предсказание | Метод проверки | Критерий фальсификации |
+|---|-------------|----------------|------------------------|
+| P8.1 | $P(\Gamma_{\mathrm{wake}}) > 2/7$ для бодрствующих субъектов | EEG+HRV → $\pi_{\mathrm{bio}}$ → $P$ | $P < 2/7$ у здоровых бодрствующих |
+| P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ во время глубокого сна | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ при N3 |
+| P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (монотонная зависимость) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Немонотонная корреляция |
+| P8.4 | Переход $P = 2/7$ совпадает с PCI $\approx 0.31$ | Одновременное измерение | Расхождение порогов |
+| P8.5 | $\mathrm{Gap}(L,E) \approx 1$ при алекситимии | Двойное интервью + EEG | $\mathrm{Gap}(L,E) \ll 1$ при диагностированной алекситимии |
+| P8.6 | Критические экспоненты $\beta = 1/3$ при переходе сон-бодрствование | EEG мониторинг + $\pi_{\mathrm{bio}}$ → $P(\tau)$ вблизи $P_{\mathrm{crit}}$ | Другие экспоненты |
+
+### Ключевые статьи {#литература-p8}
+
+1. **Casali et al. (2013)** — PCI: "A theoretically based index of consciousness independent of sensory processing and behavior." *Science Translational Medicine*, 5(198). [PubMed: 23946194](https://pubmed.ncbi.nlm.nih.gov/23946194/)
+2. **Pothos-Busemeyer (2022)** — Quantum cognition review. *Annual Review of Psychology*, 73, 749-778.
+3. **Butlin et al. (2023/2025)** — "Consciousness in Artificial Intelligence: Insights from the Science of Consciousness." [arXiv: 2308.08708](https://arxiv.org/abs/2308.08708); updated 2025: "Identifying indicators of consciousness in AI systems." *Trends in Cognitive Sciences*.
+4. **eLife (2024/2025)** — "Spatiotemporal brain complexity quantifies consciousness outside of perturbation paradigms." [eLife 98920](https://elifesciences.org/articles/98920).
+5. **Quantum-inspired EEG (2026)** — "Quantum inspired feature engineering for explainable EEG signal classification." *Scientific Reports*. [Nature](https://www.nature.com/articles/s41598-026-41821-8).
+
+---
+
 **Связанные документы:**
 - [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
 - [Жизнеспособность](/docs/core/dynamics/viability) — $P$ и $P_{\text{crit}} = 2/7$

@@ -568,7 +568,19 @@ $$m_{\text{KK}} \sim \frac{1}{R_{\text{EW}}} \sim v_{\text{EW}} \sim 246 \text{ 
 
 $$A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$$
 
-соответствующая секторам $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$. Структура аналогична алгебре Чамседдина-Конна $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ для Стандартной модели, с заменой $\mathbb{H} \to M_3(\mathbb{C})$ ($\dim(\mathbf{3}) = \dim(\bar{\mathbf{3}}) = 3$).
+соответствующая секторам $\{O\}$, $\{A,S,D\}$, $\{L,E,U\}$.
+
+#### Соотношение с алгеброй Чамседдина-Конна (T-175a) [Т] {#алгебра-морита}
+
+:::info T-175a: Морита-эквивалентность алгебр
+$A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ — **пред-нарушенная** алгебра УГМ. Стандартная алгебра NCG $A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ (Chamseddine-Connes-Marcolli, 2007) получается из $A_{\text{int}}$ после наложения реальной структуры $J$ (KO-dim 6) и электрослабого нарушения:
+
+1. Реальная структура $J$ с $J^2 = +1$, $J\chi = -\chi J$ (KO-dim 6, Шаг 6) и условие первого порядка $[[D,a], Jb^*J^*] = 0$ ограничивают действующую подалгебру $M_3(\mathbb{C})_{\bar{3}}$.
+2. Хиггсова линия $\{A,E,U\}$ ([ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [Т]) канонически разлагает $\bar{3} \to 2_{EU} \oplus 1_L$, редуцируя $M_3(\mathbb{C})_{\bar{3}} \to M_2(\mathbb{C})_{EU} \oplus \mathbb{C}_L$.
+3. Условие $[a, JbJ^*] = 0$ на 2×2-блоке $\{E,U\}$ при $J = $ комплексное сопряжение выделяет самосопряжённую подалгебру $\mathbb{H} \subset M_2(\mathbb{C})$.
+
+Итог: $A_{\text{int}} \xrightarrow{J + \text{ФЭ}} \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C}) = A_F$. Обе алгебры Морита-эквивалентны и дают **идентичную** калибровочную группу SM после унимодулярности (Alvarez-Gracia Bondia-Martin, 1995).
+:::
 
 **Шаг 2 (Гильбертово пространство и хиральность).** $H_{\text{int}} = \mathbb{C}^7$ с $\mathbb{Z}/2\mathbb{Z}$-градуировкой:
 

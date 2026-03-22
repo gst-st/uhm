@@ -200,6 +200,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'proofs/physics/physics-correspondence',
         'proofs/physics/emergent-manifold',
+        'proofs/physics/toe-embeddings',
       ],
     },
     {
