@@ -167,3 +167,13 @@ Lawvere:
   label: Ловер
   permalink: /lawvere
   description: Неполнота Ловера и самореференция
+
+superintelligence:
+  label: Суперинтеллект
+  permalink: /superintelligence
+  description: Математические ограничения и структура суперинтеллекта
+
+AI-safety:
+  label: AI Safety
+  permalink: /ai-safety
+  description: Безопасность искусственного интеллекта
