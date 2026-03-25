@@ -671,3 +671,12 @@ $$\boxed{\varepsilon_{\mathrm{eff}} = \frac{4 N_{33}^{(\mathrm{Fano})}}{9|\bar{\
 - **Секторная иерархия $\varepsilon$:** $\varepsilon_\text{eff} \sim 0.06$ как секторное среднее, самосогласованное вакуумное уравнение → [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)
 - **Сектор Хиггса:** Единственная Хиггсова линия $\{A,E,U\}$ → [Сектор Хиггса](./higgs-sector.md)
 - **NCG**: Chamseddine-Connes спектральное действие → [arXiv: 1208.1030](https://arxiv.org/abs/1208.1030); Devastato-Lizzi-Martinetti → [arXiv: 1403.7567](https://arxiv.org/abs/1403.7567)
+
+
+---
+
+**Связанные документы:**
+- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Поколения фермионов](/docs/physics/particle-physics/fermion-generations)
+- [Матрица CKM](/docs/physics/particle-physics/ckm-matrix)
+- [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)

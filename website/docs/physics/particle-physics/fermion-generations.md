@@ -792,3 +792,12 @@ $$J \approx 3.5 \times 10^{-5} \times \frac{\sin(64°)}{\sin(51.4°)} \approx 3.
 - **Сектор Хиггса:** Единственная Фано-Хиггсова линия $\{A,E,U\}$ → [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)
 - **Октонионная структура:** Вывод Фано-плоскости из $\mathbb{O}$ → [Октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation)
 - **G₂-структура и калибровочная симметрия:** $G_2$-голономия и SM → [G₂-структура](/docs/physics/gauge-symmetry/g2-structure)
+
+
+---
+
+**Связанные документы:**
+- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Матрица CKM](/docs/physics/particle-physics/ckm-matrix)
+- [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)

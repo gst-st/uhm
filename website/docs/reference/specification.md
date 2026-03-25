@@ -25,6 +25,7 @@ $$
 
 ## Матрица когерентности
 
+<!-- DRY: Каноническое определение Γ в /docs/core/dynamics/coherence-matrix -->
 См. [Матрица когерентности](/docs/core/dynamics/coherence-matrix) для полного определения.
 
 $$
@@ -74,6 +75,7 @@ $$
 
 ## Уравнение эволюции
 
+<!-- DRY: Каноническое определение уравнения эволюции в /docs/core/dynamics/evolution -->
 См. [Эволюция](/docs/core/dynamics/evolution) для полного описания. Время τ — [эмерджентное внутреннее время](/docs/proofs/dynamics/emergent-time).
 
 $$
@@ -91,6 +93,7 @@ $$
 
 ## Мера жизнеспособности (Чистота)
 
+<!-- DRY: Каноническое определение P = Tr(Γ²) в /docs/core/dynamics/viability#определение-чистоты -->
 См. [Жизнеспособность](/docs/core/dynamics/viability) для полного описания.
 
 $$
@@ -102,6 +105,7 @@ $$
 
 ### Условие жизнеспособности
 
+<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
 [Голоном](/docs/core/structure/holon) жизнеспособен, если:
 
 $$
@@ -350,13 +354,14 @@ $$
 
 ### Мера рефлексии
 
+<!-- DRY: Каноническое определение R в /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
 См. [Самонаблюдение: Мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
 $$
-R(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|_F^2}{\|\Gamma\|_F^2} \in [0, 1]
+R(\Gamma) := \frac{1}{7P(\Gamma)}, \quad P = \mathrm{Tr}(\Gamma^2)
 $$
 
-где $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi), $\|\cdot\|_F$ — норма Фробениуса.
+Эквивалентная форма через норму Фробениуса: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / \|\Gamma\|_F^2$, где $\rho^*_{\mathrm{diss}} = I/7$ — диссипативный аттрактор (не $\varphi(\Gamma)$). Вывод: [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
 ### Рефлексия высших порядков $R^{(n)}$
 
@@ -401,6 +406,7 @@ $$
 
 ### Мера интеграции
 
+<!-- DRY: Каноническое определение Φ в /docs/core/structure/dimension-u#мера-интеграции-φ -->
 См. [Измерение Единства: Мера интеграции Φ](/docs/core/structure/dimension-u#мера-интеграции-φ).
 
 $$

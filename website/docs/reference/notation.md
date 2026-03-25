@@ -35,9 +35,11 @@ description: Математические обозначения теории У
 | Символ | Значение | Определение |
 |--------|----------|-------------|
 | $\mathcal{C}$ | [Примитивная категория](/docs/core/foundations/axiom-omega#примитив) | Малая категория с конечным числом объектов — **единственный примитив** |
+<!-- DRY: Каноническое определение Γ в /docs/core/dynamics/coherence-matrix -->
 | $\Gamma$ | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | $\Gamma \in \mathcal{L}(\mathcal{H})$, $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
 | $\mathbb{H}$ | [Голоном](/docs/core/structure/holon) | Минимальная самодостаточная единица реальности |
 | $\mathcal{H}$ | Гильбертово пространство | $\mathcal{H} = \mathbb{C}^7$ — см. [Семь измерений](/docs/core/structure/dimensions) |
+<!-- DRY: Каноническое определение P = Tr(Γ²) в /docs/core/dynamics/viability#определение-чистоты -->
 | $P$ | [Чистота](/docs/core/dynamics/viability#определение-чистоты) | $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$ |
 | $S_{vN}$ | Энтропия фон Неймана | $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) \in [0, \log 7]$ |
 | $\tau$ | [Внутреннее время](/docs/proofs/dynamics/emergent-time) | Параметр эволюции, выведенный из структуры $\mathcal{C}$; $\tau \in \mathbb{Z}_7$ для 7D |
@@ -97,6 +99,7 @@ $$
 
 ## Уравнение эволюции
 
+<!-- DRY: Каноническое определение уравнения эволюции в /docs/core/dynamics/evolution -->
 Полное [уравнение эволюции](/docs/core/dynamics/evolution) с [эмерджентным внутренним временем](/docs/proofs/dynamics/emergent-time) τ:
 
 $$
@@ -161,7 +164,7 @@ $$
 |------|---------|----------|
 | [Интеграция $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ) | $\Phi(\Gamma) = \dfrac{\sum_{i \neq j} \lvert\gamma_{ij}\rvert^2}{\sum_i \gamma_{ii}^2}$ | $[0, +\infty)$ |
 | [Дифференциация $D_{\text{diff}}$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
-| [Рефлексия $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = 1 - \dfrac{\|\Gamma - \varphi(\Gamma)\|_F^2}{\|\Gamma\|_F^2}$ | $[0, 1]$ |
+| [Рефлексия $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = \dfrac{1}{7P(\Gamma)}$, где $P = \mathrm{Tr}(\Gamma^2)$; эквивалентно $1 - \dfrac{\|\Gamma - I/7\|_F^2}{P}$ | $[0, 1]$ |
 | [Сознательность $C$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times R$ **[Т]** (T-140); $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности | $[0, +\infty)$ |
 | Свобода воли $\mathrm{Freedom}(\Gamma)$ **[Т]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [конечномерное определение](/docs/core/foundations/consequences#freedom-конечномерное). ∞-категорная мотивация: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$ | $\{1, \ldots, 7\}$ |
 | Энтропия свободы $S_{\text{freedom}}$ | $S_{\text{freedom}} = \log(\text{Freedom}(\Gamma))$ | $[0, \log 7]$ |
@@ -208,6 +211,7 @@ $$
 
 ## Тензор напряжений
 
+<!-- DRY: Каноническое определение σ_k в /docs/applied/coherence-cybernetics/theorems (T-92) -->
 См. [Жизнеспособность](/docs/core/dynamics/viability) для полного описания.
 
 $$
@@ -287,8 +291,10 @@ $$
 | $\mathrm{Coh}_E$ | E-когерентность (HS-проекция $\pi_E$) **[Т]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
 | ПИР | Принцип Информационной Различимости **[О]** (T16) — [определение](/docs/core/foundations/axiom-septicity#формулировка-пир), встроенное в A1+A2: различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости |
 | $\varphi_{\text{coh}}$ | Когерентно-сохраняющее самомоделирование — обобщённый оператор φ, сохраняющий когерентности ([Фано-канал](/docs/proofs/gap/fano-channel)) |
+<!-- DRY: Каноническое определение κ(Γ) в /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
 | $\kappa(\Gamma)$ | Коэффициент регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
 | $D_{\text{diff}}$ | Дифференцировочная размерность — число измерений, в которых $\Gamma$ отклоняется от $I/N$ |
+<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
 | $P_{\text{crit}}$ | Критическая чистота $= 2/N = 2/7$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
 | $d_B^{chord}$ | Хордальная форма метрики Бюреса: $d_B^{chord} = \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ |
 | (AP), (PH), (QG), (V) | Четыре условия определения Голонома: автопоэзис, феноменальность, квантовая геометрия, жизнеспособность |
@@ -322,7 +328,8 @@ $$
 | $\Omega$ | [Классификатор подобъектов](/docs/core/foundations/axiom-omega#внутренняя-логика) — единый источник L, L_k, τ |
 | $\chi_S$ | [Характеристический морфизм](/docs/core/structure/dimension-l#категориальное-определение) подобъекта S: $\chi_S: \Gamma \to \Omega$ |
 | $L_k$ | [Операторы Линдблада](/docs/core/dynamics/evolution#логический-лиувиллиан): $L_k = P_k = \lvert k\rangle\langle k\rvert$ — операторные представители характеристических морфизмов атомов Ω ([вывод](/docs/core/foundations/axiom-omega#lk-из-omega)). Запись $L_k = \sqrt{\chi_{S_k}}$ — конвенция ($\sqrt{P} = P$ для проекторов) |
-| $\mathcal{L}_\Omega$ | [Логический Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан): $\mathcal{L}_\Omega[\Gamma] = -i[H_{\text{eff}}, \Gamma] + \sum_k (L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\})$ |
+| $\mathcal{L}_0$ | Линейный лиувиллиан (без регенерации): $\mathcal{L}_0 = -i[H_{\text{eff}},\cdot] + \sum_k D_{L_k}$. Примитивность [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω); единственный аттрактор $I/7$ |
+| $\mathcal{L}_\Omega$ | [Полный логический лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан): $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (с регенерацией). Нетривиальный аттрактор $\rho^*_\Omega \neq I/7$ [Т] (T-96) |
 | $\triangleright$ | [Темпоральная модальность](/docs/proofs/dynamics/emergent-time#время-из-модальности) на Ω; $\tau_n = \triangleright^n(\mathrm{now})$ |
 | $\mathcal{D}_\Omega \dashv \mathcal{R}$ | [Сопряжение диссипации-регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0); $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ |
 | **(МП)** | **Принцип минимального представления** (историческое условие, теперь **[Т]** T11–T13): среди эквивалентных BIBD$(7,3,\lambda)$-каналов выбирается $\lambda = 1$ — минимальное число операторов ($b=7$). Доказан как теорема из (AP)+(PH)+(QG)+(V); мост к P1+P2 полностью замкнут **[Т]**. [Мост к P1+P2](/docs/core/foundations/axiom-septicity#мост-p1p2) |
@@ -336,8 +343,9 @@ $$
 |-------------|----------|
 | $\mathcal{V}$ | [Область жизнеспособности](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Тензор целостности жизнеспособности (Viability Integrity Tensor) |
-| $\kappa(\Gamma)$ | Скорость регенерации (функция состояния) |
-| $\kappa_0$ | Базовая скорость регенерации: $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa_{\text{bootstrap}}$ | Минимальная скорость регенерации: $\kappa_{\text{bootstrap}} = \omega_0/7$ **[О]** масштаб; разрешает bootstrap-парадокс |
+| $\kappa_0$ | Категориальная норма: $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **[Т]** — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa(\Gamma)$ | Эффективная скорость регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **[Т]** |
 | $\mathrm{Coh}_E$ | $E$-когерентность (HS-проекция) **[Т]**: $\mathrm{Coh}_E(\Gamma) = \dfrac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \dfrac{\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2}{\mathrm{Tr}(\Gamma^2)}$ — **каноническая формула** ([мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection)) |
 | $P_E$ | Чистота E-сектора (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **теоретическая конструкция**, определена только в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$). Формальная эквивалентность $\mathrm{Coh}_E \approx P_E$ — **структурная гипотеза [Г]** ([подробнее](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |
 | $P_{\text{crit}}$ | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
@@ -397,6 +405,7 @@ $$
 
 ## Gap-динамика и Фано-структура
 
+<!-- DRY: Каноническое определение Gap-оператора в /docs/core/dynamics/gap-operator -->
 Символы, связанные с [Gap-оператором](/docs/core/dynamics/gap-dynamics), [термодинамикой Gap](/docs/core/dynamics/gap-thermodynamics) и [правилами отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules).
 
 | Обозначение | Значение |

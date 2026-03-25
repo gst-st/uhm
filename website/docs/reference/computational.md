@@ -44,7 +44,7 @@ description: Python-реализация Голонома
 | Норма Фробениуса $\|\Gamma\|_F$ | $O(N^2)$ | $\sqrt{\sum_{ij} \|\gamma_{ij}\|^2}$ | Сумма квадратов элементов |
 | Энтропия $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma)$ | $O(N^3)$ | Диагонализация | Собственные значения |
 | Оператор $\varphi(\Gamma)$ | $O(M \cdot N^3)$ | $\sum_m K_m \Gamma K_m^\dagger$ | $M$ операторов Крауса |
-| Рефлексия $R$ | $O(M \cdot N^3)$ | $1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ | Доминирует $\varphi(\Gamma)$ |
+| Рефлексия $R$ | $O(N^3)$ | $1/(7P)$, где $P = \mathrm{Tr}(\Gamma^2)$; $\rho^*_{\mathrm{diss}} = I/7$ | Доминирует $\Gamma^2$ |
 | Интеграция $\Phi$ | $O(N^2)$ | $\sum_{i \neq j} \|\gamma_{ij}\|^2 / \sum_i \gamma_{ii}^2$ | Суммы по элементам |
 | Дифференциация $D_{\text{diff}}$ | $O(N^3)$ | $\exp(S_{vN}(\rho_E))$ | Требует энтропии |
 | Сознательность $C = \Phi \cdot R$ | $O(M \cdot N^3)$ | Композиция; $D_{\text{diff}} \geq 2$ — отдельное условие | Доминирует $R$ |

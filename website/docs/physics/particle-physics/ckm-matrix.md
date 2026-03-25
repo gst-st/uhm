@@ -540,3 +540,12 @@ $$\frac{\sin(64.5°)}{\sin(69°)} = \frac{0.903}{0.934} = 0.967$$
 - **Три поколения:** Единственность триплета $(1,2,4)$ → [Три поколения фермионов](./fermion-generations.md)
 - **Массовая иерархия:** Юкавские связи, порождающие текстуру → [Иерархия масс Юкавы](./yukawa-hierarchy.md)
 - **Хиггсовый сектор:** Механизм электрослабого нарушения → [Сектор Хиггса](./higgs-sector.md)
+
+
+---
+
+**Связанные документы:**
+- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Нейтринные массы](/docs/physics/particle-physics/neutrino-masses)
+- [Поколения фермионов](/docs/physics/particle-physics/fermion-generations)

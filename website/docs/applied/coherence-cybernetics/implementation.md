@@ -1503,3 +1503,12 @@ $\Gamma$ перестаёт быть эрмитовой: $\Gamma \neq \Gamma^\da
 - [Методология измерений](./measurement) — от кода к эксперименту
 - [Междисциплинарный мост](./interdisciplinary) — как код соотносится с реальными системами
 - [Упражнения](./exercises) — практические задачи с использованием кода
+
+
+---
+
+**Связанные документы:**
+- [Определения](/docs/applied/coherence-cybernetics/definitions)
+- [Аксиоматика](/docs/applied/coherence-cybernetics/axiomatics)
+- [Теоремы](/docs/applied/coherence-cybernetics/theorems)
+- [Инженерные выводы](/docs/applied/research/engineering-insights)

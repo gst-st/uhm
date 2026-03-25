@@ -41,7 +41,7 @@ $P_\text{crit}^{(n)}$ формула [Т] (§3.5, T-142). SAD_MAX = 3 [Т] (§3.
 
 ## 1. Проблема: самоосознание не число {#проблема}
 
-Мера рефлексии $R$ ([канонический мастер-объект](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) — формально $R = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2/\|\Gamma\|_F^2$, при $\rho^* = I/7$ упрощается до $R = 1/(7P)$ — измеряет **качество** самомодели на уровне матрицы когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
+Мера рефлексии $R$ ([канонический мастер-объект](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) — каноническая формула $R = 1/(7P)$ **[Т]** (Sol.77), эквивалентно $R = 1 - \|\Gamma - I/7\|_F^2/P$, где $\rho^*_{\mathrm{diss}} = I/7$ — измеряет нормированную близость к диссипативному аттрактору на уровне матрицы когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
 
 Но одного числа недостаточно:
 
@@ -492,7 +492,7 @@ $$\Delta F^{(k)} \geq k_B \cdot T_\text{eff} \cdot \ln(2) \cdot k$$
 
 ### 7.4 Социальная глубина [С] {#социальная-глубина}
 
-Мультиагентные башни масштабируются через [КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68 [С], зависит от C20) и [КК-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]:
+Мультиагентные башни масштабируются через [КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (T-68: нетривиальность [Т], жизнеспособность [Т для воплощённых] по T-149) и [КК-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]:
 
 Из T-68 (фрактальное замыкание): $\mathbb{H}_A$ viable $\land$ $\mathbb{H}_B$ viable $\Rightarrow$ $\mathbb{H}_A \otimes \mathbb{H}_B$ viable. Глубина композита:
 

@@ -872,3 +872,11 @@ $$
 - [Космологическая постоянная](/docs/physics/gravity/cosmological-constant) — бюджет $\Lambda$ и механизмы подавления
 - [Berry-фаза](/docs/physics/cosmology-phys/berry-phase) — топологический член из $G_2$-голономии (проблема М-3)
 - [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) — полная таблица строгих и гипотетических вкладов
+
+
+---
+
+**Связанные документы:**
+- [Gap-семантика: 49 элементов](/docs/physics/dual-aspect/gap-semantics)
+- [Космологическая постоянная](/docs/physics/gravity/cosmological-constant)
+- [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure)

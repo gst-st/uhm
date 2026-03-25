@@ -889,10 +889,10 @@ $$
 **Определение 4.1 ([Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
 
 $$
-R(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}
+R(\Gamma) := \frac{1}{7P(\Gamma)}, \quad P = \mathrm{Tr}(\Gamma^2)
 $$
 
-где $\|\Gamma\|_F = \sqrt{\mathrm{Tr}(\Gamma^2)} = \sqrt{P}$ (корень из [чистоты](/docs/core/dynamics/viability#определение-чистоты)).
+Эквивалентная форма: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, где $\rho^*_{\mathrm{diss}} = I/7$, $\|\Gamma\|_F = \sqrt{P}$ (корень из [чистоты](/docs/core/dynamics/viability#определение-чистоты)).
 
 ### 4.2 Сходимость R при приближении к неподвижной точке
 
@@ -917,7 +917,7 @@ $$
 Следовательно:
 
 $$
-R(\Gamma) = 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F} \to 1 - \frac{0}{\|\Gamma^*\|^2_F} = 1
+R(\Gamma) = \frac{1}{7P(\Gamma)} \to 1 \quad \text{(при } P(\Gamma^*) = 1/7 \text{, т.е. } \Gamma^* = I/7\text{)}
 $$
 
 (Предполагаем $\Gamma^* \neq 0$, что выполнено для любой матрицы плотности: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
@@ -1438,11 +1438,11 @@ $$
 [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R$ и регенеративный член $\mathcal{R}$ связаны:
 
 $$
-1 - R(\Gamma) = \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{P(\Gamma)}
+1 - R(\Gamma) = \frac{\|\Gamma - I/7\|^2_F}{P(\Gamma)} = 1 - \frac{1}{7P}
 $$
 
 $$
-\|\mathcal{R}[\Gamma, E]\| \propto \|\rho_* - \Gamma\| = \|\varphi(\Gamma) - \Gamma\| = \sqrt{P \cdot (1 - R)}
+\|\mathcal{R}[\Gamma, E]\| \propto \|\rho^*_{\mathrm{diss}} - \Gamma\| = \|I/7 - \Gamma\| = \sqrt{P \cdot (1 - R)}
 $$
 
 **Интерпретация:**

@@ -713,3 +713,12 @@ $$M_H^{(\text{tree})} \approx \frac{M_t}{\sqrt{2}} \approx \frac{173}{\sqrt{2}} 
 - **Спектральная тройка:** Конечная $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ с KO-размерностью 6 → [Пространство-время](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]
 - **Спектральное действие:** $S = \mathrm{Tr}(f(D/\Lambda))$, определяет $\lambda_4$ → [Квантовая гравитация](/docs/physics/gravity/quantum-gravity)
 - **Единственный вакуум:** Секторные значения $\varepsilon$ из T-61 → [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]
+
+
+---
+
+**Связанные документы:**
+- [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)
+- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Суперсимметрия из G₂](/docs/physics/particle-physics/susy)

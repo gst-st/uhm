@@ -562,7 +562,7 @@ E-когерентность $\mathrm{Coh}_E$ зависит от $|\gamma_{Ei}|
 
 1. $\mathrm{Gap}(S,E) = 1$ $\Rightarrow$ S-измерение «не видит» E-измерение
 2. Оператор самомоделирования $\varphi$ теряет доступ к E-данным через S-канал
-3. Рефлексия $R = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ падает
+3. Рефлексия $R = 1/(7P)$ падает (при росте $P$)
 4. Неоптимальность $\varphi$ $\Rightarrow$ диссипация превышает регенерацию
 5. $P$ дрейфует к $P_{\text{crit}} = 2/7$
 
@@ -1072,3 +1072,12 @@ Gap = 0 ──┤       ├── Gap ≠ 0
 - [Реализация](./implementation) — вычислительный код для моделей
 - [Упражнения](./exercises) — задачи на модельные системы
 - [Методология измерений](./measurement) — от модели к эксперименту
+
+
+---
+
+**Связанные документы:**
+- [Теория моделей](/docs/applied/coherence-cybernetics/model-theory)
+- [Определения](/docs/applied/coherence-cybernetics/definitions)
+- [Диагностика](/docs/applied/coherence-cybernetics/diagnostics)
+- [Области применения](/docs/applied/coherence-cybernetics/applications)
