@@ -88,7 +88,7 @@ $$
 - $-i[H_{eff}, \Gamma]$ — унитарная (гамильтонова) эволюция
 - $\mathcal{D}[\Gamma]$ — диссипативный член ([декогеренция](/docs/core/dynamics/evolution#логический-лиувиллиан))
 - $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $L_k$ — операторы Линдблада
+- $L_k = L_k^{\text{atom}} = \lvert k\rangle\langle k\rvert$ — [операторы Линдблада](/docs/core/operators/lindblad-operators), выведенные из атомов классификатора $\Omega$ (проекторы; историческая запись $L_k = \sqrt{\chi_{S_k}}$ — конвенция)
 - $\gamma_k \geq 0$ — скорости декогеренции
 
 ## Мера жизнеспособности (Чистота)
@@ -363,6 +363,10 @@ $$
 
 Эквивалентная форма через норму Фробениуса: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / \|\Gamma\|_F^2$, где $\rho^*_{\mathrm{diss}} = I/7$ — диссипативный аттрактор (не $\varphi(\Gamma)$). Вывод: [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
+:::note Различение $R_{\text{canonical}}$ и $Q_\varphi$
+$R = R_{\text{canonical}} := 1/(7P)$ — **каноническое определение**, используемое во всех порогах ($R_{\text{th}} = 1/3$). Это мера близости к максимально смешанному состоянию $I/7$. Мера качества самомоделирования определяется отдельно: $Q_\varphi(\Gamma) := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$. Подробнее: [Формализация φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4).
+:::
+
 ### Рефлексия высших порядков $R^{(n)}$
 
 См. [Рефлексия высших порядков](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) и [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy).
@@ -481,4 +485,5 @@ $$
 - [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
 - [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид $\mathbf{Exp}_\infty$
 - [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4 и n-усечения ∞-группоида
+- [Бимодульная конструкция](/docs/proofs/physics/bimodule-construction) — SM-представления из бимодулей спектральной тройки (T-178–T-181)
 - [Вычислительная реализация](./computational) — Python-код
