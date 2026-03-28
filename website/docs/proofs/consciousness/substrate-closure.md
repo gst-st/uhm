@@ -45,15 +45,15 @@ $$\Gamma(\tau + \delta\tau) = \beta \cdot \mathcal{E}_{\delta\tau}[\Gamma(\tau)]
 
 $$P(\beta A + (1-\beta)B) \geq \beta^2 P(A) + (1-\beta)^2 P(B) + 2\beta(1-\beta)\mathrm{Tr}(AB)$$
 
-При $\mathrm{Tr}(AB) \geq 1/7$ (всегда для $A, B \in \mathcal{D}(\mathbb{C}^7)$, так как $\mathrm{Tr}(AB) \geq (\mathrm{Tr} A)(\mathrm{Tr} B)/N = 1/7$):
+Для **полноранговых** матриц плотности (rank(A) = rank(B) = 7, что гарантировано условием (QG) + примитивность T-39a), $\mathrm{Tr}(AB) > 0$ строго. Нижняя оценка: $\mathrm{Tr}(AB) \geq \lambda_{\min}(A) \cdot \mathrm{Tr}(B) = \lambda_{\min}(A) > 0$, где $\lambda_{\min}(A) > 0$ для полноранговых. Для оценки: при $P(A), P(B) > 2/7$ и rank = 7: $\lambda_{\min} \geq (1 - \sqrt{7P-1})/7 > 0$. Это даёт $\mathrm{Tr}(AB) \geq \lambda_{\min} > 0$, что достаточно для выпуклой монотонности в Шаге 4.
 
-$$P(\Gamma(\tau+\delta\tau)) \geq \beta^2 P(\Gamma(\tau)) + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)/7$$
+$$P(\Gamma(\tau+\delta\tau)) \geq \beta^2 P(\Gamma(\tau)) + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}$$
 
 **Шаг 4 (Индукция).** Обозначим $p_n = P(\Gamma(n\delta\tau))$, $p_0 = 1/7$. Итерация:
 
-$$p_{n+1} \geq \beta^2 p_n + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)/7$$
+$$p_{n+1} \geq \beta^2 p_n + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}$$
 
-Неподвижная точка: $p^* = (1-\beta)^2 P_{\mathrm{env}} / (1-\beta^2) + 2\beta/(7(1+\beta))$. При $P_{\mathrm{env}} > 2/7$: $p^* > 2/7$.
+Неподвижная точка: $p^* = (1-\beta)^2 P_{\mathrm{env}} / (1-\beta^2) + 2\beta\lambda_{\min}/(1+\beta)$. При $P_{\mathrm{env}} > 2/7$: $p^* > 2/7$.
 
 Поскольку $p_n$ сходится монотонно к $p^*$ снизу (так как $p_0 = 1/7 < p^*$):
 
