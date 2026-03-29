@@ -340,34 +340,34 @@ import itertools
 # ---------------------------------------------------------------------------
 
 def estimate_mutual_info(x: np.ndarray, y: np.ndarray) -> float:
-    """Взаимная информация I(x;y). TODO: реализовать."""
+    """Взаимная информация I(x;y). Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
 def compute_jacobian(model, input_batch: np.ndarray) -> np.ndarray:
-    """Якобиан модели ∂f/∂x. TODO: реализовать."""
+    """Якобиан модели ∂f/∂x. Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
 def estimate_lyapunov(model, input_batch: np.ndarray) -> float:
-    """Максимальный ляпуновский экспонент. TODO: реализовать."""
+    """Максимальный ляпуновский экспонент. Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
 def layer_commutator_norm(
     model, i: int, j: int, input_batch: np.ndarray
 ) -> float:
-    """Норма коммутатора слоёв ||[f_i, f_j]||. TODO: реализовать."""
+    """Норма коммутатора слоёв ||[f_i, f_j]||. Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
 def von_neumann_entropy(attention_weights: np.ndarray) -> float:
-    """Энтропия фон Неймана S_vN(ρ). TODO: реализовать."""
+    """Энтропия фон Неймана S_vN(ρ). Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
 def build_attention_graph(attention_weights: np.ndarray) -> np.ndarray:
-    """Граф внимания из весов attention. TODO: реализовать."""
+    """Граф внимания из весов attention. Требует реализации для конкретной архитектуры."""
     raise NotImplementedError
 
 
