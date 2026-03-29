@@ -302,7 +302,7 @@ $$\varphi_k(\Gamma) = \Gamma - k(\Gamma - \rho^*) = \Gamma - k \cdot \varepsilon
 | Predictive Processing | Формальный аналог в КК | Статус |
 |---|---|---|
 | Prediction error $\varepsilon$ | $\Gamma - \varphi(\Gamma)$ | **[Т]** (T-62) |
-| Precision $\pi$ | $k = 1 - R$ | **[Т]** (Sol.77) |
+| Precision $\pi$ | $k = 1 - R$ | **[Т]** (T-77) |
 | Prior | $\rho^* = \varphi(\Gamma)$ | **[Т]** (категориальная самомодель) |
 | Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[Т]** (замещающий канал) |
 | Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ | **[Т]** (Теорема 3.1) |

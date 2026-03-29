@@ -435,7 +435,7 @@ $$
 P(\rho_*^{(12)}) = P(\rho_{\mathrm{diag}}) + 2\|\gamma_{\mathrm{cross}}\|_F^2 > P(\rho_{\mathrm{diag}})
 $$
 
-где $\rho_{\mathrm{diag}}$ — блочно-диагональная часть $\rho_*^{(12)}$ (без межсистемных когерентностей), а $\|\gamma_{\mathrm{cross}}\|_F^2 = \sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2 > 0$ — норма кросс-когерентностей ([Sol.56](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]).
+где $\rho_{\mathrm{diag}}$ — блочно-диагональная часть $\rho_*^{(12)}$ (без межсистемных когерентностей), а $\|\gamma_{\mathrm{cross}}\|_F^2 = \sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2 > 0$ — норма кросс-когерентностей ([эмерджентность](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]).
 :::
 
 **Доказательство.** Для любой эрмитовой матрицы $A$: $\mathrm{Tr}(A^2) = \sum_i A_{ii}^2 + 2\sum_{i<j} |A_{ij}|^2$. Разделяя элементы $\rho_*^{(12)}$ на внутриблочные и кросс-блочные:

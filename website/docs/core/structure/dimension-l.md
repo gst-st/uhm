@@ -210,7 +210,7 @@ $$
 \sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}
 $$
 
-:::info CPTP из представления Краусса (Sol.58) [Т]
+:::info CPTP из представления Краусса [Т]
 [Фано-операторы](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ определяют CPTP-канал в представлении Краусса. По [теореме Хои](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): канал в форме Краусса $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ **вполне положителен** автоматически. Сохранение следа: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (каждое измерение принадлежит ровно 3 Фано-линиям, T-41b [Т]). Полная положительность **не зависит** от стратификации.
 :::
 
