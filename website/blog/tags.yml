@@ -177,3 +177,18 @@ AI-safety:
   label: AI Safety
   permalink: /ai-safety
   description: Безопасность искусственного интеллекта
+
+incompleteness:
+  label: Неполнота
+  permalink: /incompleteness
+  description: Теоремы о неполноте и самореференциальные ограничения
+
+Godel:
+  label: Гёдель
+  permalink: /godel
+  description: Теоремы Гёделя и их связь с УГМ
+
+category-theory:
+  label: Теория категорий
+  permalink: /category-theory
+  description: Категорный формализм и ∞-топосы
