@@ -127,16 +127,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Субъекты сознания',
-      items: [
-        'consciousness/subjects/pre-linguistic',
-        'consciousness/subjects/animal-consciousness',
-        'consciousness/subjects/ai-consciousness',
-        'consciousness/subjects/collective-consciousness',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Сравнение теорий',
       items: [
         'consciousness/comparative/consciousness-theories',
@@ -144,6 +134,16 @@ const sidebars: SidebarsConfig = {
         'consciousness/comparative/cognitive-hierarchy',
         'consciousness/comparative/cognitome-anokhin',
         'consciousness/comparative/general-systems-theory',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Субъекты сознания',
+      items: [
+        'consciousness/subjects/pre-linguistic',
+        'consciousness/subjects/animal-consciousness',
+        'consciousness/subjects/ai-consciousness',
+        'consciousness/subjects/collective-consciousness',
       ],
     },
     {
