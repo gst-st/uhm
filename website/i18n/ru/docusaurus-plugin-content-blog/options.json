@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Блог УГМ",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "Новости и статьи о развитии Унитарного Голономного Монизма",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "Публикации",
+    "description": "The label for the left sidebar"
+  }
+}

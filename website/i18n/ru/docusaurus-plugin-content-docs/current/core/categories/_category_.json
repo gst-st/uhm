@@ -1,0 +1,8 @@
+{
+  "label": "Категорный формализм",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Категорная структура УГМ: функтор F, категории Exp и Hol"
+  }
+}

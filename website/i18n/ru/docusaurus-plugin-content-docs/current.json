@@ -1,50 +1,150 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "Текущая",
     "description": "The label for version current"
   },
-  "sidebar.theory.category.Основания": {
+  "sidebar.theory.category.Foundations": {
     "message": "Основания",
-    "description": "The label for category 'Основания' in sidebar 'theory'"
+    "description": "The label for category 'Foundations' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Структура реальности": {
+  "sidebar.theory.category.Structure of Reality": {
     "message": "Структура реальности",
-    "description": "The label for category 'Структура реальности' in sidebar 'theory'"
+    "description": "The label for category 'Structure of Reality' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Семь измерений": {
+  "sidebar.theory.category.Seven Dimensions": {
     "message": "Семь измерений",
-    "description": "The label for category 'Семь измерений' in sidebar 'theory'"
+    "description": "The label for category 'Seven Dimensions' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Динамика": {
+  "sidebar.theory.category.Dynamics": {
     "message": "Динамика",
-    "description": "The label for category 'Динамика' in sidebar 'theory'"
+    "description": "The label for category 'Dynamics' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Сознание": {
-    "message": "Сознание",
-    "description": "The label for category 'Сознание' in sidebar 'theory'"
+  "sidebar.theory.category.Operators": {
+    "message": "Операторы",
+    "description": "The label for category 'Operators' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Космология": {
-    "message": "Космология",
-    "description": "The label for category 'Космология' in sidebar 'theory'"
+  "sidebar.theory.category.Categorical Formalism": {
+    "message": "Категорный формализм",
+    "description": "The label for category 'Categorical Formalism' in sidebar 'theory'"
   },
-  "sidebar.theory.category.Этика и смысл": {
+  "sidebar.consciousness.category.Mathematical Foundations": {
+    "message": "Математические основания",
+    "description": "The label for category 'Mathematical Foundations' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.Hierarchy L0→L4": {
+    "message": "Иерархия L0→L4",
+    "description": "The label for category 'Hierarchy L0→L4' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.Structure of Experience": {
+    "message": "Структура опыта",
+    "description": "The label for category 'Structure of Experience' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.States of Consciousness": {
+    "message": "Состояния сознания",
+    "description": "The label for category 'States of Consciousness' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.Theory Comparison": {
+    "message": "Сравнение теорий",
+    "description": "The label for category 'Theory Comparison' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.Subjects of Consciousness": {
+    "message": "Субъекты сознания",
+    "description": "The label for category 'Subjects of Consciousness' in sidebar 'consciousness'"
+  },
+  "sidebar.consciousness.category.Ethics & Meaning": {
     "message": "Этика и смысл",
-    "description": "The label for category 'Этика и смысл' in sidebar 'theory'"
+    "description": "The label for category 'Ethics & Meaning' in sidebar 'consciousness'"
   },
-  "sidebar.proofs.category.Формальные доказательства": {
-    "message": "Формальные доказательства",
-    "description": "The label for category 'Формальные доказательства' in sidebar 'proofs'"
+  "sidebar.proofs.category.Minimality": {
+    "message": "Минимальность",
+    "description": "The label for category 'Minimality' in sidebar 'proofs'"
   },
-  "sidebar.proofs.category.Формальная спецификация": {
-    "message": "Формальная спецификация",
-    "description": "The label for category 'Формальная спецификация' in sidebar 'proofs'"
+  "sidebar.proofs.category.Dynamics": {
+    "message": "Динамика",
+    "description": "The label for category 'Dynamics' in sidebar 'proofs'"
   },
-  "sidebar.applied.category.Когерентная кибернетика": {
-    "message": "Когерентная кибернетика",
-    "description": "The label for category 'Когерентная кибернетика' in sidebar 'applied'"
+  "sidebar.proofs.category.Categorical Proofs": {
+    "message": "Категорные доказательства",
+    "description": "The label for category 'Categorical Proofs' in sidebar 'proofs'"
   },
-  "sidebar.applied.category.Исследования": {
-    "message": "Исследования",
-    "description": "The label for category 'Исследования' in sidebar 'applied'"
+  "sidebar.proofs.category.Consciousness": {
+    "message": "Сознание",
+    "description": "The label for category 'Consciousness' in sidebar 'proofs'"
+  },
+  "sidebar.proofs.category.Physics": {
+    "message": "Физика",
+    "description": "The label for category 'Physics' in sidebar 'proofs'"
+  },
+  "sidebar.proofs.category.Gap": {
+    "message": "Gap",
+    "description": "The label for category 'Gap' in sidebar 'proofs'"
+  },
+  "sidebar.physics.category.Quantum Mechanics": {
+    "message": "Квантовая механика",
+    "description": "The label for category 'Quantum Mechanics' in sidebar 'physics'"
+  },
+  "sidebar.physics.category.Gauge Symmetries": {
+    "message": "Калибровочные симметрии",
+    "description": "The label for category 'Gauge Symmetries' in sidebar 'physics'"
+  },
+  "sidebar.physics.category.Particle Physics": {
+    "message": "Физика частиц",
+    "description": "The label for category 'Particle Physics' in sidebar 'physics'"
+  },
+  "sidebar.physics.category.Gravity": {
+    "message": "Гравитация",
+    "description": "The label for category 'Gravity' in sidebar 'physics'"
+  },
+  "sidebar.physics.category.Cosmology": {
+    "message": "Космология",
+    "description": "The label for category 'Cosmology' in sidebar 'physics'"
+  },
+  "sidebar.physics.category.Dual Aspect": {
+    "message": "Дуальный аспект",
+    "description": "The label for category 'Dual Aspect' in sidebar 'physics'"
+  },
+  "sidebar.cybernetics.category.Formal Foundations": {
+    "message": "Формальные основания",
+    "description": "The label for category 'Formal Foundations' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Gap Operator Algebra": {
+    "message": "Алгебра Gap-оператора",
+    "description": "The label for category 'Gap Operator Algebra' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Variational Structure": {
+    "message": "Вариационная структура",
+    "description": "The label for category 'Variational Structure' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Topological Protection": {
+    "message": "Топологическая защита",
+    "description": "The label for category 'Topological Protection' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Context & Comparison": {
+    "message": "Контекст и сравнение",
+    "description": "The label for category 'Context & Comparison' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Sensorimotor Theory & Stability": {
+    "message": "Сенсомоторная теория и стабильность",
+    "description": "The label for category 'Sensorimotor Theory & Stability' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Predictions & Programs": {
+    "message": "Предсказания и программы",
+    "description": "The label for category 'Predictions & Programs' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.category.Applications & Implementation": {
+    "message": "Приложения и реализация",
+    "description": "The label for category 'Applications & Implementation' in sidebar 'cybernetics'"
+  },
+  "sidebar.cybernetics.link.→ Consciousness Theories": {
+    "message": "→ Теории сознания",
+    "description": "The label for link '→ Consciousness Theories' in sidebar 'cybernetics', linking to '/docs/consciousness/comparative/consciousness-theories'"
+  },
+  "sidebar.cybernetics.link.→ Panpsychism": {
+    "message": "→ Панпсихизм",
+    "description": "The label for link '→ Panpsychism' in sidebar 'cybernetics', linking to '/docs/consciousness/comparative/panpsychism-analysis'"
+  },
+  "sidebar.cybernetics.link.→ Cognitive Hierarchy": {
+    "message": "→ Когнитивная иерархия",
+    "description": "The label for link '→ Cognitive Hierarchy' in sidebar 'cybernetics', linking to '/docs/consciousness/comparative/cognitive-hierarchy'"
   }
 }

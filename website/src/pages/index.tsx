@@ -5,6 +5,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Translate, {translate} from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
@@ -294,35 +295,35 @@ function CoherenceVisualization() {
 // Интерпретации элементов матрицы когерентности
 const matrixInfo: Record<string, { name: string; desc: string }> = {
   // Диагональ (населённости)
-  AA: { name: 'Артикуляция', desc: 'Активность различения' },
-  SS: { name: 'Структура', desc: 'Устойчивость формы' },
-  DD: { name: 'Динамика', desc: 'Активность процессов' },
-  LL: { name: 'Логика', desc: 'Внутренняя согласованность' },
-  EE: { name: 'Интериорность', desc: 'Интенсивность интериорных состояний' },
-  OO: { name: 'Основание', desc: 'Связь с источником' },
-  UU: { name: 'Единство', desc: 'Интегрированность' },
-  // Когерентности (21 пара)
-  AS: { name: 'Морфогенез', desc: 'Различия → устойчивые формы' },
-  AD: { name: 'Актуализация', desc: 'Различение → актуальный процесс' },
-  AL: { name: 'Предикация', desc: 'Различение → логический предикат' },
-  AE: { name: 'Апперцепция', desc: 'Различение → интериорность' },
-  AO: { name: 'Спонтанность', desc: 'Различения из основания' },
-  AU: { name: 'Дифференциация', desc: 'Различение в целом' },
-  SD: { name: 'Персистенция', desc: 'Форма через процесс' },
-  SL: { name: 'Номос', desc: 'Структура с необходимостью' },
-  SE: { name: 'Репрезентация', desc: 'Структура в интериорности' },
-  SO: { name: 'Архетип', desc: 'Формы из основания' },
-  SU: { name: 'Симметрия', desc: 'Структурное единство' },
-  DL: { name: 'Регуляция', desc: 'Логически управляемый процесс' },
-  DE: { name: 'Аффекция', desc: 'Процесс → интериорность' },
-  DO: { name: 'Генезис', desc: 'Порождение из основания' },
-  DU: { name: 'Телеология', desc: 'Направленное изменение' },
-  LE: { name: 'Эвиденция', desc: 'Логика в интериорности' },
-  LO: { name: 'Фундирование', desc: 'Логика из основания' },
-  LU: { name: 'Консистентность', desc: 'Непротиворечивость целого' },
-  EO: { name: 'Имманентность', desc: 'Основание в интериорности' },
-  EU: { name: 'Синтез', desc: 'Интеграция в целое' },
-  OU: { name: 'Полнота', desc: 'Источник ≡ целое' },
+  AA: { name: 'Articulation', desc: 'Distinguishing activity' },
+  SS: { name: 'Structure', desc: 'Form stability' },
+  DD: { name: 'Dynamics', desc: 'Process activity' },
+  LL: { name: 'Logic', desc: 'Internal consistency' },
+  EE: { name: 'Interiority', desc: 'Intensity of interior states' },
+  OO: { name: 'Ground', desc: 'Connection to source' },
+  UU: { name: 'Unity', desc: 'Integration' },
+  // Coherences (21 pairs)
+  AS: { name: 'Morphogenesis', desc: 'Distinctions → stable forms' },
+  AD: { name: 'Actualization', desc: 'Distinction → actual process' },
+  AL: { name: 'Predication', desc: 'Distinction → logical predicate' },
+  AE: { name: 'Apperception', desc: 'Distinction → interiority' },
+  AO: { name: 'Spontaneity', desc: 'Distinctions from ground' },
+  AU: { name: 'Differentiation', desc: 'Distinction within the whole' },
+  SD: { name: 'Persistence', desc: 'Form through process' },
+  SL: { name: 'Nomos', desc: 'Structure with necessity' },
+  SE: { name: 'Representation', desc: 'Structure in interiority' },
+  SO: { name: 'Archetype', desc: 'Forms from ground' },
+  SU: { name: 'Symmetry', desc: 'Structural unity' },
+  DL: { name: 'Regulation', desc: 'Logically governed process' },
+  DE: { name: 'Affection', desc: 'Process → interiority' },
+  DO: { name: 'Genesis', desc: 'Generation from ground' },
+  DU: { name: 'Teleology', desc: 'Directed change' },
+  LE: { name: 'Evidence', desc: 'Logic in interiority' },
+  LO: { name: 'Foundation', desc: 'Logic from ground' },
+  LU: { name: 'Consistency', desc: 'Non-contradiction of the whole' },
+  EO: { name: 'Immanence', desc: 'Ground in interiority' },
+  EU: { name: 'Synthesis', desc: 'Integration into whole' },
+  OU: { name: 'Plenitude', desc: 'Source ≡ whole' },
 };
 
 // Матрица когерентности Γ
@@ -383,7 +384,7 @@ function CoherenceMatrixVisualization() {
         </div>
       )}
       <div className={styles.matrixCaption}>
-        Матрица Когерентности Γ ∈ ℂ⁷ˣ⁷
+        Coherence Matrix Γ ∈ ℂ⁷ˣ⁷
       </div>
     </div>
   );
@@ -395,21 +396,17 @@ function HomepageHeader() {
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <Heading as="h1" className={styles.heroTitle}>
-            Унитарный Голономный Монизм
+            <Translate id="homepage.hero.title">Unitary Holonomic Monism</Translate>
           </Heading>
           <p className={styles.heroSubtitle}>
-            Что если у реальности есть единственная математическая структура?
+            <Translate id="homepage.hero.subtitle">What if reality has a single mathematical structure?</Translate>
           </p>
           <p className={styles.heroDescription}>
-            Пять аксиом порождают ∞-топос, из которого неизбежно
-            следуют семь измерений, время, пространство и квантовая механика —
-            без единого произвольного параметра.
-            Внутренний аспект системы оказывается не побочным продуктом,
-            а необходимым условием её существования.
+            <Translate id="homepage.hero.description">Five axioms generate an ∞-topos from which seven dimensions, time, space, and quantum mechanics inevitably follow — without a single arbitrary parameter. The inner aspect of a system turns out to be not a byproduct, but a necessary condition for its existence.</Translate>
           </p>
           <div className={styles.heroButtons}>
             <Link className="button button--primary button--lg" to="/docs/intro">
-              Введение
+              <Translate id="homepage.hero.cta">Introduction</Translate>
             </Link>
           </div>
         </div>
@@ -427,17 +424,15 @@ function MatrixSection() {
       <div className="container">
         <div className={styles.matrixLayout}>
           <div className={styles.matrixInfo}>
-            <Heading as="h2">Матрица Когерентности</Heading>
+            <Heading as="h2"><Translate id="homepage.matrix.title">Coherence Matrix</Translate></Heading>
             <p>
-              Центральный математический объект — эрмитова матрица 7×7.
-              Диагональ — населённости измерений (A, S, D, L, E, O, U).
-              Внедиагональные элементы — когерентности между ними.
+              <Translate id="homepage.matrix.description">The central mathematical object — a 7×7 Hermitian matrix. Diagonal — populations of dimensions (A, S, D, L, E, O, U). Off-diagonal elements — coherences between them.</Translate>
             </p>
             <ul className={styles.matrixProperties}>
-              <li><strong>Чистота P = Tr(Γ²)</strong> — мера целостности</li>
-              <li><strong>Критический порог P_crit = 2/7</strong> — условие жизнеспособности</li>
-              <li><strong>Сознание C = Φ × R</strong> — интеграция × рефлексия</li>
-              <li><strong>Пять уровней L0→L4</strong> — от интериорности до единства</li>
+              <li><strong>Purity P = Tr(Γ²)</strong> — <Translate id="homepage.matrix.purity">measure of integrity</Translate></li>
+              <li><strong>P_crit = 2/7</strong> — <Translate id="homepage.matrix.threshold">viability condition</Translate></li>
+              <li><strong>C = Φ × R</strong> — <Translate id="homepage.matrix.consciousness">integration × reflexion</Translate></li>
+              <li><strong>L0→L4</strong> — <Translate id="homepage.matrix.levels">from interiority to unity</Translate></li>
             </ul>
           </div>
           <div className={styles.matrixVisual}>
@@ -446,7 +441,7 @@ function MatrixSection() {
         </div>
         <div className={styles.matrixButton}>
           <Link className="button button--secondary" to="/docs/core/dynamics/coherence-matrix">
-            Формальное определение
+            <Translate id="homepage.matrix.cta">Formal Definition</Translate>
           </Link>
         </div>
       </div>
@@ -463,76 +458,76 @@ type DocSection = {
 
 const docSections: DocSection[] = [
   {
-    title: 'Единственный примитив',
-    description: 'Пять аксиом Ω⁷',
+    title: 'The Single Primitive',
+    description: 'Five Axioms Ω⁷',
     link: '/docs/core/foundations/axiom-omega',
-    items: ['∞-топос Sh∞(𝒞) — всё остальное выводится', 'Логика, время и пространство — следствия', 'Принцип информационной различимости'],
+    items: ['∞-topos Sh∞(𝒞) — everything else is derived', 'Logic, time and space are consequences', 'Principle of informational distinguishability'],
   },
   {
-    title: 'Структура',
-    description: 'Семь измерений Голонома',
+    title: 'Structure',
+    description: 'Seven Dimensions of the Holon',
     link: '/docs/core/structure/holon',
-    items: ['Голоном — целостная единица бытия', 'Семь измерений: A, S, D, L, E, O, U', 'Матрица когерентности Γ ∈ ℂ⁷ˣ⁷'],
+    items: ['Holon — integral unit of being', 'Seven dimensions: A, S, D, L, E, O, U', 'Coherence matrix Γ ∈ ℂ⁷ˣ⁷'],
   },
   {
-    title: 'Октонионный фундамент',
-    description: 'Почему именно 7',
+    title: 'Octonionic Foundation',
+    description: 'Why Exactly 7',
     link: '/docs/proofs/minimality/theorem-octonionic-derivation',
-    items: ['P1 + P2 → 𝕆 → dim(Im(𝕆)) = 7', 'Плоскость Фано и G₂-симметрия', 'Код Хэмминга H(7,4) и граница Кэли-Диксона'],
+    items: ['P1 + P2 → 𝕆 → dim(Im(𝕆)) = 7', 'Fano plane and G₂ symmetry', 'Hamming code H(7,4) and Cayley-Dickson boundary'],
   },
   {
-    title: 'Динамика',
-    description: 'Уравнение эволюции',
+    title: 'Dynamics',
+    description: 'Evolution Equation',
     link: '/docs/core/dynamics/evolution',
-    items: ['dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]', 'Диссипация из декогеренции, регенерация из интериорности', 'Глобальный аттрактор'],
+    items: ['dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]', 'Dissipation from decoherence, regeneration from interiority', 'Global attractor'],
   },
   {
-    title: 'Эмерджентное время',
-    description: 'Время из структуры',
+    title: 'Emergent Time',
+    description: 'Time from Structure',
     link: '/docs/proofs/dynamics/emergent-time',
-    items: ['Время не постулируется — выводится', 'O-измерение как внутренние часы', 'Дискретность τ ∈ ℤ₇ и стрела времени'],
+    items: ['Time is not postulated — it is derived', 'O-dimension as internal clock', 'Discreteness τ ∈ ℤ₇ and arrow of time'],
   },
   {
-    title: 'Жизнеспособность',
-    description: 'Условия существования',
+    title: 'Viability',
+    description: 'Conditions of Existence',
     link: '/docs/core/dynamics/viability',
-    items: ['Чистота P — мера целостности', 'P_crit = 2/7 (теорема, пять путей)', 'Область устойчивости'],
+    items: ['Purity P — measure of integrity', 'P_crit = 2/7 (theorem, five paths)', 'Domain of stability'],
   },
   {
-    title: 'Gap-семантика',
-    description: 'Интериорность / экстериорность',
+    title: 'Gap Semantics',
+    description: 'Interiority / Exteriority',
     link: '/docs/core/dynamics/gap-operator',
-    items: ['Gap(i,j) = |sin(arg(γᵢⱼ))| — двойственность', 'Фано-канал: диссипация по PG(2,2)', 'Фазовая диаграмма когерентных состояний'],
+    items: ['Gap(i,j) = |sin(arg(γᵢⱼ))| — duality', 'Fano channel: dissipation via PG(2,2)', 'Phase diagram of coherent states'],
   },
   {
-    title: 'Сознание',
-    description: 'От квалиа до коллективного разума',
+    title: 'Consciousness',
+    description: 'From Qualia to Collective Mind',
     link: '/docs/consciousness/overview',
-    items: ['21-парная таксономия квалиа из Γ', 'Эмоции, внимание, память — из формализма', 'ИИ-сознание: операциональные критерии'],
+    items: ['21-pair qualia taxonomy from Γ', 'Emotions, attention, memory — from formalism', 'AI consciousness: operational criteria'],
   },
   {
-    title: 'Физическое соответствие',
-    description: 'От Γ к Стандартной Модели',
+    title: 'Physical Correspondence',
+    description: 'From Γ to the Standard Model',
     link: '/docs/physics/overview',
-    items: ['G₂-калибровочная симметрия и поколения', 'Юкавская иерархия из текстур Фано', 'Космологическая постоянная: Λ-бюджет'],
+    items: ['G₂ gauge symmetry and generations', 'Yukawa hierarchy from Fano textures', 'Cosmological constant: Λ budget'],
   },
   {
-    title: 'Доказательства',
-    description: 'Формальные теоремы',
+    title: 'Proofs',
+    description: 'Formal Theorems',
     link: '/docs/proofs/minimality/theorem-minimality-7',
-    items: ['Минимальность 7 измерений (Трек A)', '142 результата: от P_crit = 2/7 до субстрат-независимости', 'Категорный формализм и лакс-2-функтор'],
+    items: ['Minimality of 7 dimensions (Track A)', '180+ results: from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
   },
   {
-    title: 'Когерентная Кибернетика',
-    description: 'Инженерные приложения',
+    title: 'Coherence Cybernetics',
+    description: 'Engineering Applications',
     link: '/docs/applied/coherence-cybernetics/introduction',
-    items: ['Протокол измерения Γ для ИИ', 'Условная теорема «Нет зомби»', 'Панинтериоризм ≠ панпсихизм'],
+    items: ['Measurement protocol for Γ in AI', 'Conditional No-Zombie theorem', 'Paninteriorism ≠ panpsychism'],
   },
   {
-    title: 'Справочник',
-    description: 'Верификация и нотация',
+    title: 'Reference',
+    description: 'Verification & Notation',
     link: '/docs/reference/falsifiability',
-    items: ['Фальсифицируемые предсказания теории', 'Реестр статусов [Т]/[С]/[О]/[И]/[Г]/[П]', 'Глоссарий, нотация, спецификация'],
+    items: ['Falsifiable predictions of the theory', 'Status registry [Т]/[С]/[О]/[И]/[Г]/[П]', 'Glossary, notation, specification'],
   },
 ];
 
@@ -561,8 +556,8 @@ function DocumentationSection() {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="Формальная теория реальности"
-      description="Унитарный Голономный Монизм — аксиоматическая теория на основе ∞-топоса Sh∞(𝒞). Время, структура и сознание выводятся как следствия пяти аксиом. Автор: Максим Середа.">
+      title={translate({id: 'homepage.layout.title', message: 'A Formal Theory of Reality'})}
+      description={translate({id: 'homepage.layout.description', message: 'Unitary Holonomic Monism — an axiomatic theory based on the ∞-topos Sh∞(𝒞). Time, structure and consciousness are derived as consequences of five axioms.'})}>
       <HomepageHeader />
       <main>
         <MatrixSection />

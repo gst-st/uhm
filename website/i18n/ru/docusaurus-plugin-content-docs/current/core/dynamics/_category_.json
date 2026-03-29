@@ -1,0 +1,8 @@
+{
+  "label": "Динамика",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Матрица когерентности и законы эволюции"
+  }
+}

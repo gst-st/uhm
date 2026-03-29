@@ -360,5 +360,44 @@
   "theme.tags.tagsPageTitle": {
     "message": "Теги",
     "description": "The title of the tag list page"
+  },
+  "homepage.hero.title": {
+    "message": "Унитарный Голономный Монизм"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Что если у реальности есть единственная математическая структура?"
+  },
+  "homepage.hero.description": {
+    "message": "Пять аксиом порождают ∞-топос, из которого неизбежно следуют семь измерений, время, пространство и квантовая механика — без единого произвольного параметра. Внутренний аспект системы оказывается не побочным продуктом, а необходимым условием её существования."
+  },
+  "homepage.hero.cta": {
+    "message": "Введение"
+  },
+  "homepage.matrix.title": {
+    "message": "Матрица Когерентности"
+  },
+  "homepage.matrix.description": {
+    "message": "Центральный математический объект — эрмитова матрица 7×7. Диагональ — населённости измерений (A, S, D, L, E, O, U). Внедиагональные элементы — когерентности между ними."
+  },
+  "homepage.matrix.purity": {
+    "message": "мера целостности"
+  },
+  "homepage.matrix.threshold": {
+    "message": "условие жизнеспособности"
+  },
+  "homepage.matrix.consciousness": {
+    "message": "интеграция × рефлексия"
+  },
+  "homepage.matrix.levels": {
+    "message": "от интериорности до единства"
+  },
+  "homepage.matrix.cta": {
+    "message": "Формальное определение"
+  },
+  "homepage.layout.title": {
+    "message": "Формальная теория реальности"
+  },
+  "homepage.layout.description": {
+    "message": "Унитарный Голономный Монизм — аксиоматическая теория на основе ∞-топоса Sh∞(𝒞). Время, структура и сознание выводятся как следствия пяти аксиом."
   }
 }

@@ -1,78 +1,130 @@
 {
-  "link.title.Теория": {
+  "link.title.Theory": {
     "message": "Теория",
-    "description": "The title of the footer links column with title=Теория in the footer"
+    "description": "The title of the footer links column with title=Theory in the footer"
   },
-  "link.title.Формализация": {
-    "message": "Формализация",
-    "description": "The title of the footer links column with title=Формализация in the footer"
-  },
-  "link.title.Приложения": {
-    "message": "Приложения",
-    "description": "The title of the footer links column with title=Приложения in the footer"
-  },
-  "link.title.Справочник": {
-    "message": "Справочник",
-    "description": "The title of the footer links column with title=Справочник in the footer"
-  },
-  "link.item.label.Введение": {
-    "message": "Введение",
-    "description": "The label of footer link with label=Введение linking to /docs/intro"
-  },
-  "link.item.label.Аксиома Ω": {
-    "message": "Аксиома Ω",
-    "description": "The label of footer link with label=Аксиома Ω linking to /docs/core/foundations/axiom-omega"
-  },
-  "link.item.label.Голоном и 7 измерений": {
-    "message": "Голоном и 7 измерений",
-    "description": "The label of footer link with label=Голоном и 7 измерений linking to /docs/core/structure/holon"
-  },
-  "link.item.label.Динамика": {
-    "message": "Динамика",
-    "description": "The label of footer link with label=Динамика linking to /docs/core/dynamics/evolution"
-  },
-  "link.item.label.Сознание": {
+  "link.title.Consciousness": {
     "message": "Сознание",
-    "description": "The label of footer link with label=Сознание linking to /docs/core/consciousness/qualia"
+    "description": "The title of the footer links column with title=Consciousness in the footer"
   },
-  "link.item.label.Минимальность dim=7": {
-    "message": "Минимальность dim=7",
-    "description": "The label of footer link with label=Минимальность dim=7 linking to /docs/proofs/theorem-minimality-7"
+  "link.title.Proofs": {
+    "message": "Доказательства",
+    "description": "The title of the footer links column with title=Proofs in the footer"
   },
-  "link.item.label.Категорный формализм": {
+  "link.title.Physics": {
+    "message": "Физика",
+    "description": "The title of the footer links column with title=Physics in the footer"
+  },
+  "link.title.Cybernetics": {
+    "message": "Кибернетика",
+    "description": "The title of the footer links column with title=Cybernetics in the footer"
+  },
+  "link.title.Reference": {
+    "message": "Справочник",
+    "description": "The title of the footer links column with title=Reference in the footer"
+  },
+  "link.item.label.Introduction": {
+    "message": "Введение",
+    "description": "The label of footer link with label=Introduction linking to /docs/intro"
+  },
+  "link.item.label.Axiom Ω⁷": {
+    "message": "Аксиома Ω⁷",
+    "description": "The label of footer link with label=Axiom Ω⁷ linking to /docs/core/foundations/axiom-omega"
+  },
+  "link.item.label.Holon & Seven Dimensions": {
+    "message": "Голоном и семь измерений",
+    "description": "The label of footer link with label=Holon & Seven Dimensions linking to /docs/core/structure/holon"
+  },
+  "link.item.label.Coherence Matrix Γ": {
+    "message": "Матрица когерентности Γ",
+    "description": "The label of footer link with label=Coherence Matrix Γ linking to /docs/core/dynamics/coherence-matrix"
+  },
+  "link.item.label.Gap Operator": {
+    "message": "Gap-оператор",
+    "description": "The label of footer link with label=Gap Operator linking to /docs/core/dynamics/gap-operator"
+  },
+  "link.item.label.Overview": {
+    "message": "Обзор",
+    "description": "The label of footer link with label=Overview linking to /docs/consciousness/overview"
+  },
+  "link.item.label.Self-Observation": {
+    "message": "Самонаблюдение",
+    "description": "The label of footer link with label=Self-Observation linking to /docs/consciousness/foundations/self-observation"
+  },
+  "link.item.label.Hierarchy L0→L4": {
+    "message": "Иерархия L0→L4",
+    "description": "The label of footer link with label=Hierarchy L0→L4 linking to /docs/consciousness/hierarchy/interiority-hierarchy"
+  },
+  "link.item.label.Qualia Structure": {
+    "message": "Структура квалиа",
+    "description": "The label of footer link with label=Qualia Structure linking to /docs/consciousness/phenomenology/qualia-structure"
+  },
+  "link.item.label.States of Consciousness": {
+    "message": "Состояния сознания",
+    "description": "The label of footer link with label=States of Consciousness linking to /docs/consciousness/states/altered-states"
+  },
+  "link.item.label.Minimality dim = 7": {
+    "message": "Минимальность dim = 7",
+    "description": "The label of footer link with label=Minimality dim = 7 linking to /docs/proofs/minimality/theorem-minimality-7"
+  },
+  "link.item.label.Categorical Formalism": {
     "message": "Категорный формализм",
-    "description": "The label of footer link with label=Категорный формализм linking to /docs/proofs/categorical-formalism"
+    "description": "The label of footer link with label=Categorical Formalism linking to /docs/proofs/categorical/categorical-formalism"
   },
-  "link.item.label.Формализация φ": {
-    "message": "Формализация φ",
-    "description": "The label of footer link with label=Формализация φ linking to /docs/proofs/formalization-phi"
+  "link.item.label.Operator φ": {
+    "message": "Оператор φ",
+    "description": "The label of footer link with label=Operator φ linking to /docs/proofs/categorical/formalization-phi"
   },
-  "link.item.label.Спецификация": {
-    "message": "Спецификация",
-    "description": "The label of footer link with label=Спецификация linking to /docs/formal/specification"
+  "link.item.label.Emergent Time": {
+    "message": "Эмерджентное время",
+    "description": "The label of footer link with label=Emergent Time linking to /docs/proofs/dynamics/emergent-time"
   },
-  "link.item.label.Когерентная Кибернетика": {
-    "message": "Когерентная Кибернетика",
-    "description": "The label of footer link with label=Когерентная Кибернетика linking to /docs/applied/coherence-cybernetics/axiomatics"
+  "link.item.label.Fano Channel": {
+    "message": "Фано-канал",
+    "description": "The label of footer link with label=Fano Channel linking to /docs/proofs/gap/fano-channel"
   },
-  "link.item.label.Модельная теория": {
-    "message": "Модельная теория",
-    "description": "The label of footer link with label=Модельная теория linking to /docs/applied/coherence-cybernetics/model-theory"
+  "link.item.label.Correspondences": {
+    "message": "Обзор соответствий",
+    "description": "The label of footer link with label=Correspondences linking to /docs/physics/overview"
   },
-  "link.item.label.Исследования": {
-    "message": "Исследования",
-    "description": "The label of footer link with label=Исследования linking to /docs/applied/research/poincare-perelman"
+  "link.item.label.G₂ Structure": {
+    "message": "G₂-структура",
+    "description": "The label of footer link with label=G₂ Structure linking to /docs/physics/gauge-symmetry/g2-structure"
   },
-  "link.item.label.Глоссарий": {
-    "message": "Глоссарий",
-    "description": "The label of footer link with label=Глоссарий linking to /docs/reference/glossary"
+  "link.item.label.Particle Physics": {
+    "message": "Физика частиц",
+    "description": "The label of footer link with label=Particle Physics linking to /docs/physics/particle-physics/fermion-generations"
   },
-  "link.item.label.Нотация": {
-    "message": "Нотация",
-    "description": "The label of footer link with label=Нотация linking to /docs/reference/notation"
+  "link.item.label.Gravity": {
+    "message": "Гравитация",
+    "description": "The label of footer link with label=Gravity linking to /docs/physics/gravity/emergent-geometry"
   },
-  "link.item.label.Фальсифицируемость": {
+  "link.item.label.Cosmological Constant": {
+    "message": "Космологическая постоянная",
+    "description": "The label of footer link with label=Cosmological Constant linking to /docs/physics/gravity/cosmological-constant"
+  },
+  "link.item.label.Coherence Cybernetics": {
+    "message": "Когерентная кибернетика",
+    "description": "The label of footer link with label=Coherence Cybernetics linking to /docs/applied/coherence-cybernetics/introduction"
+  },
+  "link.item.label.Measurement Protocol": {
+    "message": "Протокол измерения Γ",
+    "description": "The label of footer link with label=Measurement Protocol linking to /docs/applied/research/measurement-protocol"
+  },
+  "link.item.label.Falsifiability": {
     "message": "Фальсифицируемость",
-    "description": "The label of footer link with label=Фальсифицируемость linking to /docs/reference/falsifiability"
+    "description": "The label of footer link with label=Falsifiability linking to /docs/reference/falsifiability"
+  },
+  "link.item.label.Status Registry": {
+    "message": "Реестр статусов",
+    "description": "The label of footer link with label=Status Registry linking to /docs/reference/status-registry"
+  },
+  "link.item.label.Glossary": {
+    "message": "Глоссарий",
+    "description": "The label of footer link with label=Glossary linking to /docs/reference/glossary"
+  },
+  "copyright": {
+    "message": "© 2024-2026 UHM Theory · Макс Середа. Теория: CC BY-NC-SA 4.0 | Код: MIT",
+    "description": "The footer copyright"
   }
 }

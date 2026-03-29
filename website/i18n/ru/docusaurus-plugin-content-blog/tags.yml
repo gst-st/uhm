@@ -1,0 +1,194 @@
+philosophy:
+  label: Философия
+  permalink: /philosophy
+  description: Философские основания теории
+
+consciousness:
+  label: Сознание
+  permalink: /consciousness
+  description: Теория сознания и интериорности
+
+paninteriorism:
+  label: Панинтериоризм
+  permalink: /paninteriorism
+  description: Когерентный категорный панинтериоризм
+
+holonomy:
+  label: Голономия
+  permalink: /holonomy
+  description: Голономная структура и геометрия теории
+
+theory:
+  label: Теория
+  permalink: /theory
+  description: Теоретические основы УГМ
+
+mathematics:
+  label: Математика
+  permalink: /mathematics
+  description: Математический аппарат теории
+
+applications:
+  label: Приложения
+  permalink: /applications
+  description: Практические приложения теории
+
+qualia:
+  label: Квалиа
+  permalink: /qualia
+  description: Феноменальные качества переживания
+
+phenomenology:
+  label: Феноменология
+  permalink: /phenomenology
+  description: Структура субъективного опыта
+
+Fano:
+  label: Плоскость Фано
+  permalink: /fano
+  description: Плоскость Фано PG(2,2) и октонионная структура
+
+Hamming:
+  label: Код Хэмминга
+  permalink: /hamming
+  description: Совершенный код H(7,4) и помехоустойчивость
+
+freedom:
+  label: Свобода воли
+  permalink: /freedom
+  description: Свобода воли как теорема ∞-категорного формализма
+
+infinity-categories:
+  label: ∞-категории
+  permalink: /infinity-categories
+  description: ∞-категории и гомотопическая теория типов
+
+homotopy:
+  label: Гомотопия
+  permalink: /homotopy
+  description: Гомотопическая структура пространства путей
+
+ethics:
+  label: Этика
+  permalink: /ethics
+  description: Этические следствия из формализма УГМ
+
+dynamics:
+  label: Динамика
+  permalink: /dynamics
+  description: Уравнение эволюции и динамика матрицы когерентности
+
+spacetime:
+  label: Пространство-время
+  permalink: /spacetime
+  description: Эмерджентное пространство-время из секторной декомпозиции
+
+dimensions:
+  label: Измерения
+  permalink: /dimensions
+  description: Семь измерений голонома и их физическая интерпретация
+
+spectral-triple:
+  label: Спектральная тройка
+  permalink: /spectral-triple
+  description: Конечная спектральная тройка и некоммутативная геометрия
+
+physics:
+  label: Физика
+  permalink: /physics
+  description: Физические предсказания и следствия теории УГМ
+
+Lindblad:
+  label: Линдблад
+  permalink: /lindblad
+  description: Операторы Линдблада и диссипативная динамика
+
+thermodynamics:
+  label: Термодинамика
+  permalink: /thermodynamics
+  description: Термодинамические аспекты голономной динамики
+
+psychopathology:
+  label: Психопатология
+  permalink: /psychopathology
+  description: Патологические состояния как деформации Gap-профиля
+
+Gap:
+  label: Gap-оператор
+  permalink: /gap
+  description: Мера зазора и Gap-профили когерентности
+
+death:
+  label: Смерть
+  permalink: /death
+  description: Смерть как декогеренция и пересечение порога жизнеспособности
+
+time:
+  label: Время
+  permalink: /time
+  description: Субъективное и эмерджентное время
+
+viability:
+  label: Жизнеспособность
+  permalink: /viability
+  description: Критический порог P_crit = 2/7 и область устойчивости
+
+minimality:
+  label: Минимальность
+  permalink: /minimality
+  description: Теорема о минимальности 7 измерений
+
+octonions:
+  label: Октонионы
+  permalink: /octonions
+  description: Октонионная алгебра и структура N=7
+
+Hurwitz:
+  label: Гурвиц
+  permalink: /hurwitz
+  description: Теорема Гурвица о нормированных алгебрах с делением
+
+G2:
+  label: G₂
+  permalink: /g2
+  description: Группа G₂ = Aut(𝕆) и калибровочная симметрия
+
+cosmology:
+  label: Космология
+  permalink: /cosmology
+  description: Космологические следствия теории УГМ
+
+vacuum:
+  label: Вакуум
+  permalink: /vacuum
+  description: Вакуумная энергия и космологическая постоянная
+
+Lawvere:
+  label: Ловер
+  permalink: /lawvere
+  description: Неполнота Ловера и самореференция
+
+superintelligence:
+  label: Суперинтеллект
+  permalink: /superintelligence
+  description: Математические ограничения и структура суперинтеллекта
+
+AI-safety:
+  label: AI Safety
+  permalink: /ai-safety
+  description: Безопасность искусственного интеллекта
+
+incompleteness:
+  label: Неполнота
+  permalink: /incompleteness
+  description: Теоремы о неполноте и самореференциальные ограничения
+
+Godel:
+  label: Гёдель
+  permalink: /godel
+  description: Теоремы Гёделя и их связь с УГМ
+
+category-theory:
+  label: Теория категорий
+  permalink: /category-theory
+  description: Категорный формализм и ∞-топосы

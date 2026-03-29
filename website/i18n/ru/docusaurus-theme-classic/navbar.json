@@ -3,20 +3,36 @@
     "message": "UHM Theory Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Теория": {
+  "item.label.Theory": {
     "message": "Теория",
-    "description": "Navbar item with label Теория"
+    "description": "Navbar item with label Theory"
   },
-  "item.label.Доказательства": {
+  "item.label.Proofs": {
     "message": "Доказательства",
-    "description": "Navbar item with label Доказательства"
+    "description": "Navbar item with label Proofs"
   },
-  "item.label.Приложения": {
-    "message": "Приложения",
-    "description": "Navbar item with label Приложения"
+  "item.label.Physics": {
+    "message": "Физика",
+    "description": "Navbar item with label Physics"
   },
-  "item.label.Справочник": {
+  "item.label.Consciousness": {
+    "message": "Сознание",
+    "description": "Navbar item with label Consciousness"
+  },
+  "item.label.Cybernetics": {
+    "message": "Кибернетика",
+    "description": "Navbar item with label Cybernetics"
+  },
+  "item.label.Research": {
+    "message": "Исследования",
+    "description": "Navbar item with label Research"
+  },
+  "item.label.Reference": {
     "message": "Справочник",
-    "description": "Navbar item with label Справочник"
+    "description": "Navbar item with label Reference"
+  },
+  "item.label.Blog": {
+    "message": "Блог",
+    "description": "Navbar item with label Blog"
   }
 }

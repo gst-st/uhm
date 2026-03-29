@@ -1,0 +1,8 @@
+{
+  "label": "Физика",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "Доказательства физических соответствий: редукция к КМ, no-signaling"
+  }
+}

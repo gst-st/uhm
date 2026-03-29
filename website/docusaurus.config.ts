@@ -33,12 +33,16 @@ const config: Config = {
   onBrokenLinks: 'throw',
 
   i18n: {
-    defaultLocale: 'ru',
-    locales: ['ru'],
+    defaultLocale: 'en',
+    locales: ['en', 'ru'],
     localeConfigs: {
       ru: {
         label: 'Русский',
         htmlLang: 'ru-RU',
+      },
+      en: {
+        label: 'English',
+        htmlLang: 'en-US',
       },
     },
   },
@@ -56,10 +60,10 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
-          blogTitle: 'Блог УГМ',
-          blogDescription: 'Новости и статьи о развитии Унитарного Голономного Монизма',
+          blogTitle: 'UHM Blog',
+          blogDescription: 'News and articles on the development of Unitary Holonomic Monism',
           postsPerPage: 10,
-          blogSidebarTitle: 'Публикации',
+          blogSidebarTitle: 'Posts',
           blogSidebarCount: 'ALL',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -90,7 +94,7 @@ const config: Config = {
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
-        language: ['ru'],
+        language: ['en', 'ru'],
         highlightSearchTermsOnTargetPage: true,
         explicitSearchResultPath: true,
         docsRouteBasePath: '/docs',
@@ -141,48 +145,52 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'theory',
           position: 'left',
-          label: 'Теория',
+          label: 'Theory',
         },
         {
           type: 'docSidebar',
           sidebarId: 'proofs',
           position: 'left',
-          label: 'Доказательства',
+          label: 'Proofs',
         },
         {
           type: 'docSidebar',
           sidebarId: 'physics',
           position: 'left',
-          label: 'Физика',
+          label: 'Physics',
         },
         {
           type: 'docSidebar',
           sidebarId: 'consciousness',
           position: 'left',
-          label: 'Сознание',
+          label: 'Consciousness',
         },
         {
           type: 'docSidebar',
           sidebarId: 'cybernetics',
           position: 'left',
-          label: 'Кибернетика',
+          label: 'Cybernetics',
         },
         {
           type: 'docSidebar',
           sidebarId: 'research',
           position: 'left',
-          label: 'Исследования',
+          label: 'Research',
         },
         {
           type: 'docSidebar',
           sidebarId: 'reference',
           position: 'left',
-          label: 'Справочник',
+          label: 'Reference',
         },
         {
           to: '/blog',
-          label: 'Блог',
+          label: 'Blog',
           position: 'left',
+        },
+        {
+          type: 'localeDropdown',
+          position: 'right',
         },
       ],
     },
@@ -190,137 +198,62 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Теория',
+          title: 'Theory',
           items: [
-            {
-              label: 'Введение',
-              to: '/docs/intro',
-            },
-            {
-              label: 'Аксиома Ω⁷',
-              to: '/docs/core/foundations/axiom-omega',
-            },
-            {
-              label: 'Голоном и семь измерений',
-              to: '/docs/core/structure/holon',
-            },
-            {
-              label: 'Матрица когерентности Γ',
-              to: '/docs/core/dynamics/coherence-matrix',
-            },
-            {
-              label: 'Gap-оператор',
-              to: '/docs/core/dynamics/gap-operator',
-            },
+            { label: 'Introduction', to: '/docs/intro' },
+            { label: 'Axiom Ω⁷', to: '/docs/core/foundations/axiom-omega' },
+            { label: 'Holon & Seven Dimensions', to: '/docs/core/structure/holon' },
+            { label: 'Coherence Matrix Γ', to: '/docs/core/dynamics/coherence-matrix' },
+            { label: 'Gap Operator', to: '/docs/core/dynamics/gap-operator' },
           ],
         },
         {
-          title: 'Сознание',
+          title: 'Consciousness',
           items: [
-            {
-              label: 'Обзор',
-              to: '/docs/consciousness/overview',
-            },
-            {
-              label: 'Самонаблюдение',
-              to: '/docs/consciousness/foundations/self-observation',
-            },
-            {
-              label: 'Иерархия L0→L4',
-              to: '/docs/consciousness/hierarchy/interiority-hierarchy',
-            },
-            {
-              label: 'Структура квалиа',
-              to: '/docs/consciousness/phenomenology/qualia-structure',
-            },
-            {
-              label: 'Состояния сознания',
-              to: '/docs/consciousness/states/altered-states',
-            },
+            { label: 'Overview', to: '/docs/consciousness/overview' },
+            { label: 'Self-Observation', to: '/docs/consciousness/foundations/self-observation' },
+            { label: 'Hierarchy L0→L4', to: '/docs/consciousness/hierarchy/interiority-hierarchy' },
+            { label: 'Qualia Structure', to: '/docs/consciousness/phenomenology/qualia-structure' },
+            { label: 'States of Consciousness', to: '/docs/consciousness/states/altered-states' },
           ],
         },
         {
-          title: 'Доказательства',
+          title: 'Proofs',
           items: [
-            {
-              label: 'Минимальность dim = 7',
-              to: '/docs/proofs/minimality/theorem-minimality-7',
-            },
-            {
-              label: 'Категорный формализм',
-              to: '/docs/proofs/categorical/categorical-formalism',
-            },
-            {
-              label: 'Оператор φ',
-              to: '/docs/proofs/categorical/formalization-phi',
-            },
-            {
-              label: 'Эмерджентное время',
-              to: '/docs/proofs/dynamics/emergent-time',
-            },
-            {
-              label: 'Фано-канал',
-              to: '/docs/proofs/gap/fano-channel',
-            },
+            { label: 'Minimality dim = 7', to: '/docs/proofs/minimality/theorem-minimality-7' },
+            { label: 'Categorical Formalism', to: '/docs/proofs/categorical/categorical-formalism' },
+            { label: 'Operator φ', to: '/docs/proofs/categorical/formalization-phi' },
+            { label: 'Emergent Time', to: '/docs/proofs/dynamics/emergent-time' },
+            { label: 'Fano Channel', to: '/docs/proofs/gap/fano-channel' },
           ],
         },
         {
-          title: 'Физика',
+          title: 'Physics',
           items: [
-            {
-              label: 'Обзор соответствий',
-              to: '/docs/physics/overview',
-            },
-            {
-              label: 'G₂-структура',
-              to: '/docs/physics/gauge-symmetry/g2-structure',
-            },
-            {
-              label: 'Физика частиц',
-              to: '/docs/physics/particle-physics/fermion-generations',
-            },
-            {
-              label: 'Гравитация',
-              to: '/docs/physics/gravity/emergent-geometry',
-            },
-            {
-              label: 'Космологическая постоянная',
-              to: '/docs/physics/gravity/cosmological-constant',
-            },
+            { label: 'Correspondences', to: '/docs/physics/overview' },
+            { label: 'G₂ Structure', to: '/docs/physics/gauge-symmetry/g2-structure' },
+            { label: 'Particle Physics', to: '/docs/physics/particle-physics/fermion-generations' },
+            { label: 'Gravity', to: '/docs/physics/gravity/emergent-geometry' },
+            { label: 'Cosmological Constant', to: '/docs/physics/gravity/cosmological-constant' },
           ],
         },
         {
-          title: 'Кибернетика',
+          title: 'Cybernetics',
           items: [
-            {
-              label: 'Когерентная кибернетика',
-              to: '/docs/applied/coherence-cybernetics/introduction',
-            },
-            {
-              label: 'Протокол измерения Γ',
-              to: '/docs/applied/research/measurement-protocol',
-            },
+            { label: 'Coherence Cybernetics', to: '/docs/applied/coherence-cybernetics/introduction' },
+            { label: 'Measurement Protocol', to: '/docs/applied/research/measurement-protocol' },
           ],
         },
         {
-          title: 'Справочник',
+          title: 'Reference',
           items: [
-            {
-              label: 'Фальсифицируемость',
-              to: '/docs/reference/falsifiability',
-            },
-            {
-              label: 'Реестр статусов',
-              to: '/docs/reference/status-registry',
-            },
-            {
-              label: 'Глоссарий',
-              to: '/docs/reference/glossary',
-            },
+            { label: 'Falsifiability', to: '/docs/reference/falsifiability' },
+            { label: 'Status Registry', to: '/docs/reference/status-registry' },
+            { label: 'Glossary', to: '/docs/reference/glossary' },
           ],
         },
       ],
-      copyright: `© 2024-${new Date().getFullYear()} UHM Theory · Max Sereda. Теория: CC BY-NC-SA 4.0 | Код: MIT`,
+      copyright: `© 2024-${new Date().getFullYear()} UHM Theory · Max Sereda. Theory: CC BY-NC-SA 4.0 | Code: MIT`,
     },
     prism: {
       theme: prismThemes.github,
