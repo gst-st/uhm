@@ -1,602 +1,600 @@
 ---
 sidebar_position: 1
-title: Аксиома Ω⁷
-description: Фундаментальная аксиоматика УГМ — ∞-топос как единственный примитив
+title: Axiom Ω⁷
+description: Foundational axiomatics of UHM — the ∞-topos as the sole primitive
 ---
 
-# Аксиома Ω⁷
+# Axiom Ω⁷
 
-:::info Для кого эта глава
-Эта глава содержит **аксиоматическое ядро** всей теории — пять аксиом, из которых выводится всё остальное: пространство, время, динамика, пороги сознания и даже гравитация.
+:::info Audience
+This chapter presents the **axiomatic core** of the theory: five axioms from which everything else follows—space, time, dynamics, consciousness thresholds, and even gravitation.
 
-**Главная идея.** УГМ утверждает: реальность описывается $\infty$-топосом пучков на определённом сайте, и этот $\infty$-топос — **единственный примитив** теории. Всё, что существует, — объект или морфизм в этом топосе. Нет ничего «за его пределами».
+**Central claim.** UHM asserts that reality is described by an $\infty$-topos of sheaves on a chosen site, and that this $\infty$-topos is the **sole primitive** of the theory. Whatever exists is an object or a morphism in this topos. There is nothing “beyond” it.
 
-**Что такое $\infty$-топос простым языком?** Представьте «мир», в котором объекты связаны не просто стрелками (как города дорогами), а бесконечной иерархией отношений: стрелки между стрелками, стрелки между стрелками между стрелками, и так далее. Обычный мир — это «плоская карта»: из города A в город B есть или нет дорога. $\infty$-топос — это «объёмная карта», где у каждого маршрута есть варианты, у вариантов — свои варианты, и так до бесконечности. Эта бесконечная глубина отношений оказывается необходимой для описания квантовых состояний (где всё связано со всем) и сознания (где система наблюдает саму себя, наблюдение наблюдения, и т.д.).
+**What is an $\infty$-topos, informally?** Picture a “world” in which objects are related not only by arrows (as cities by roads), but by an infinite hierarchy of relations: arrows between arrows, arrows between those, and so on. The ordinary world is a “flat map”: either there is a road from city A to city B or there is not. An $\infty$-topos is a “volumetric map” in which every route has variants, those variants have further variants, ad infinitum. That infinite depth of relations is needed to describe quantum states (everything coupled to everything) and consciousness (a system observing itself, observing observation, and so on).
 
-**Структура главы.** Сначала мы изложим пять аксиом в явном виде (§ «Честная Аксиоматика»). Затем покажем, как из них строится единственный примитив — тройка $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$. Далее — как из этого примитива выводятся классификатор подобъектов $\Omega$ (источник логики, операторов Линдблада и времени), внутренняя логика, и все ключевые следствия теории.
+**Chapter structure.** We first state five axioms explicitly (“Honest Axiomatics”), then show how they determine the sole primitive—the triple $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$. We then derive the subobject classifier $\Omega$ (source of logic, Lindblad operators, and time), internal logic, and the main consequences of the theory.
 
-**Почему именно пять аксиом?** Можно показать, что меньшего числа недостаточно: без структуры ($\infty$-топоса) нет логики, без метрики (Бюрес) нет различимости, без размерности ($N=7$) нет октонионной алгебры, без масштаба ($\omega_0$) нет связи с физическим временем, без тензорной декомпозиции (Пейдж–Вуттерс) нет внутренних часов. Но больше и не нужно — из пяти аксиом выводятся все теоремы теории.
+**Why five axioms?** Fewer are insufficient: without the $\infty$-topos there is no logic; without Bures there is no distinguishability; without $N=7$ there is no octonionic algebra; without $\omega_0$ there is no link to physical time; without the tensor decomposition (Page–Wootters) there are no internal clocks. Nor is more needed—all theorems follow from these five.
 :::
 
-## Честная Аксиоматика {#аксиоматика}
+## Honest Axiomatics {#аксиоматика}
 
-:::warning Методологическое замечание
-УГМ теория строится на **явной аксиоматике**. Все постулаты чётко разделены на:
-- **Аксиомы** — принимаемые без доказательства
-- **Определения** — конструкции из аксиом
-- **Теоремы** — доказываемые следствия
+:::warning Methodological note
+UHM is built on **explicit axiomatics**. Postulates are classified as:
+- **Axioms** — accepted without proof
+- **Definitions** — constructions from axioms
+- **Theorems** — provable consequences
 
-Это обеспечивает математическую честность и отсутствие скрытых допущений.
+This ensures mathematical honesty and avoids hidden assumptions.
 :::
 
-### Уровни аксиоматики
+### Levels of axiomatics
 
-**УРОВЕНЬ -1: МЕТАТЕОРЕТИЧЕСКИЕ ВЫБОРЫ** (не обосновываются)
-- **Язык:** ∞-категории / HoTT (гомотопическая теория типов)
-- **Логика:** интуиционистская (внутренний язык топоса)
+**LEVEL −1: METATHEORETIC CHOICES** (not justified internally)
+- **Language:** ∞-categories / HoTT (homotopy type theory)
+- **Logic:** intuitionistic (internal language of the topos)
 
-**УРОВЕНЬ 0: АКСИОМЫ** (постулируются явно)
+**LEVEL 0: AXIOMS** (postulated explicitly)
 
-| Аксиома | Формулировка | Обоснование |
+| Axiom | Statement | Rationale |
 |---------|--------------|-------------|
-| **Аксиома 1 (Структура)** | Реальность есть ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ над категорией матриц плотности $\mathcal{D}(\mathbb{C}^N)$ | ∞-топосы — наиболее общие "пространства" с внутренней логикой |
-| **Аксиома 2 (Метрика)** | Топология Гротендика $J$ индуцирована метрикой Бюреса $d_B$ | **Теорема Ченцова-Петца:** Бюреса — единственная монотонная риманова метрика на $\mathcal{D}(\mathcal{H})$ |
-| **Аксиома 3 (Размерность)** | $N = 7$ — размерность базового пространства | Характеризует класс изучаемых систем (Голономов) |
-| **Аксиома 4 (Масштаб)** | $\omega_0 > 0$ — характерная частота системы | Связывает внутреннее время $\tau$ с физическим временем $t$. **Параметр системы**, не универсальная константа (аналог массы в физике) |
+| **Axiom 1 (Structure)** | Reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$ | ∞-topoi are the most general “spaces” with internal logic |
+| **Axiom 2 (Metric)** | The Grothendieck topology $J$ is induced by the Bures metric $d_B$ | **Chentsov–Petz theorem:** Bures is the unique monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ |
+| **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
+| **Axiom 4 (Scale)** | $\omega_0 > 0$ is a characteristic frequency of the system | Relates internal time $\tau$ to physical time $t$. A **system parameter**, not a universal constant (analogous to mass in physics) |
 
-:::warning Количество независимых аксиом: четыре
-Теорема T-87 [Т] показывает, что **A5 (Пейдж–Вуттерс) выводима из A1–A4** через конструкцию спектральной тройки. Таким образом, УГМ имеет ровно **4 независимые аксиомы** (A1–A4). Ограничение Пейдж–Вуттерс (исторически «A5») сохраняется в документации для педагогической ясности, но имеет статус **теоремы**, не аксиомы.
+:::warning Count of independent axioms: four
+Theorem T-87 [T] shows that **A5 (Page–Wootters) is derivable from A1–A4** via the spectral triple construction. Thus UHM has **four independent axioms** (A1–A4). The Page–Wootters constraint (historically “A5”) remains in the documentation for pedagogy but has the status of a **theorem**, not an axiom.
 :::
 
-:::info Статус N = 7 (двухтрековое обоснование)
-Размерность $N = 7$ — **фундаментальная аксиома** (Аксиома 3) с двумя независимыми обоснованиями:
+:::info Status of $N = 7$ (two-track justification)
+The dimension $N = 7$ is a **fundamental axiom** (Axiom 3) with two independent lines of support:
 
-| Трек | Обоснование | Статус |
+| Track | Justification | Status |
 |------|-------------|--------|
-| **A** | [Теорема S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [Т] Доказано |
-| **B** | [Структурный вывод](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → 𝕆 → dim Im(𝕆) = 7 | [Т] Математически строго |
+| **A** | [Theorem S](./axiom-septicity#теорема-s-семимерность--следствие-из-аксиомы): (AP)+(PH)+(QG) → N ≥ 7 | [T] Proved |
+| **B** | [Structural derivation](../../proofs/minimality/theorem-octonionic-derivation): P1+P2 → 𝕆 → dim Im(𝕆) = 7 | [T] Mathematically rigorous |
 
-Мост (AP)+(PH)+(QG) → P1+P2 — [полная цепочка T1–T15 [Т]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
-**УРОВЕНЬ 1: ОПРЕДЕЛЕНИЯ** (строятся из аксиом)
-- Ω — классификатор подобъектов (существует по теореме Жирара); полная структура: $\Omega = \mathcal{O}(\mathcal{C}, d_B)$
-- $S_i := |i\rangle\langle i|$ — канонические базисные предикаты (проекторы на базис, порождающие [решающий фрагмент](#решающий-фрагмент) $\mathrm{Dec}(\Omega)$)
-- $\triangleright: S_i \mapsto S_{(i+1) \mod 7}$ — циклический сдвиг (алгебраическая структура)
-- $L_k := P_k = |k\rangle\langle k|$ — операторы Линдблада (операторные представители характеристических морфизмов $\chi_{S_k}$; [вывод](#lk-из-omega))
+**LEVEL 1: DEFINITIONS** (built from axioms)
+- $\Omega$ — subobject classifier (exists by Giraud’s theorem); full structure: $\Omega = \mathcal{O}(\mathcal{C}, d_B)$
+- $S_i := |i\rangle\langle i|$ — canonical atomic predicates (basis projectors generating the [decidable fragment](#решающий-фрагмент) $\mathrm{Dec}(\Omega)$)
+- $\triangleright: S_i \mapsto S_{(i+1) \mod 7}$ — cyclic shift (algebraic structure)
+- $L_k := P_k = |k\rangle\langle k|$ — Lindblad operators (operator realizations of the characteristic morphisms $\chi_{S_k}$; [derivation](#lk-из-omega))
 
-**УРОВЕНЬ 2: СЛЕДСТВИЯ** (доказываемые или обосновываемые)
-- $P_{crit} = 2/7$ **[Т]** ([критическая чистота](/docs/core/dynamics/viability#критическая-чистота))
-- $R_{th} = 1/3$ **[Т]** ([порог рефлексии](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), $K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + байесовское доминирование)
-- $\Phi_{th} = 1$ **[Т]** ([порог интеграции](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), [T-129](/docs/proofs/consciousness/operationalization#t-129))
-- $\kappa_{\text{bootstrap}} > 0$ **[Т]** (минимальная регенерация из сопряжения)
-- **ПИР** — определение **[О]** (T16 [Т]): при серьёзном принятии A1 (∞-топос) и A2 ($J_{\text{Bures}}$), ПИР тавтологичен — различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости ([обоснование ниже](#пир-как-теорема))
+**LEVEL 2: CONSEQUENCES** (provable or argued)
+- $P_{crit} = 2/7$ **[T]** ([critical purity](/docs/core/dynamics/viability#критическая-чистота))
+- $R_{th} = 1/3$ **[T]** ([reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) plus Bayesian dominance)
+- $\Phi_{th} = 1$ **[T]** ([integration threshold](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), [T-129](/docs/proofs/consciousness/operationalization#t-129))
+- $\kappa_{\text{bootstrap}} > 0$ **[T]** (minimal regeneration from the adjunction)
+- **PID** (Principle of Informational Distinguishability) — **definition [O]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability ([below](#пир-как-теорема))
 
 ---
 
-## Структурированный Примитив {#примитив}
+## Structured primitive {#примитив}
 
-:::info Единственный примитив
-**Топос с геометрией** $\mathfrak{T} := (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$ — **структурированный примитив** теории УГМ.
+:::info Sole primitive
+The **topos with geometry** $\mathfrak{T} := (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$ is the **structured primitive** of UHM.
 
-Это тройка компонент, образующих неразложимое единство (подобно $\mathbb{R}^4$ как одному объекту, а не четырём числам):
-- $\mathbf{Sh}_\infty(\mathcal{C})$ — ∞-топос пучков (Аксиома 1)
-- $J_{Bures}$ — топология Гротендика (Аксиома 2)
-- $\omega_0$ — фундаментальная частота (Аксиома 4)
+It is a triple of components forming an irreducible unity (as $\mathbb{R}^4$ is one object, not four separate numbers):
+- $\mathbf{Sh}_\infty(\mathcal{C})$ — sheaf ∞-topos (Axiom 1)
+- $J_{Bures}$ — Grothendieck topology (Axiom 2)
+- $\omega_0$ — fundamental frequency (Axiom 4)
 
-Из этого примитива **выводятся**:
-- Пространство состояний (объекты ∞-топоса)
-- Динамика (морфизмы всех уровней)
-- Базовое пространство X = |N(𝒞)| (нерв категории)
-- Время τ (внутренняя модальность через ℤ_N-действие)
-- Метрика d_strat (спектральная геометрия)
-- **Свобода воли** (множественность путей в Map(Γ, T))
-- Пороги P_crit, R_th, Φ_th (из принципа информационной различимости — который сам следует из $J_{Bures}$)
+From this primitive one **derives**:
+- State space (objects of the ∞-topos)
+- Dynamics (morphisms at all levels)
+- Base space $X = |N(\mathcal{C})|$ (nerve of the category)
+- Time $\tau$ (internal modality via the $\mathbb{Z}_N$ action)
+- Metric $d_{\text{strat}}$ (spectral geometry)
+- **Free will** (multiplicity of paths in $\mathrm{Map}(\Gamma, T)$)
+- Thresholds $P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$ (from the principle of informational distinguishability—which itself follows from $J_{Bures}$)
 
-**Параметры теории:**
-- N = 7 — размерность (Аксиома 3)
-- ω₀ — фундаментальная частота (Аксиома 4)
+**Theory parameters:**
+- $N = 7$ — dimension (Axiom 3)
+- $\omega_0$ — fundamental frequency (Axiom 4)
 :::
 
-:::info Инвариантность безразмерных предсказаний
-Безразмерные предсказания теории ($R$, $\Phi$, $P_{\text{crit}}$, $\mathrm{Coh}_E$, Gap-профиль) **не зависят** от абсолютного масштаба $\omega_0$: при $\omega_0 \to \lambda\omega_0$ все безразмерные величины сохраняются. Параметр $\omega_0$ задаёт только связь с размерными физическими величинами (массы, энергии, длины).
+:::info Invariance of dimensionless predictions
+Dimensionless predictions ($R$, $\Phi$, $P_{\text{crit}}$, $\mathrm{Coh}_E$, Gap profile) **do not depend** on the absolute scale $\omega_0$: under $\omega_0 \to \lambda\omega_0$ all dimensionless quantities are unchanged. The parameter $\omega_0$ controls only the map to dimensional physics (masses, energies, lengths).
 :::
 
 ---
 
-## ∞-категорная структура {#infty-структура}
+## ∞-categorical structure {#infty-структура}
 
-### Зачем ∞-категории?
+### Why ∞-categories?
 
-:::note Аналогия: маршруты в горах
-Представьте двух путников, идущих из деревни A в деревню B. Один идёт через перевал, другой — через долину. В обычной математике (1-категория) мы скажем: «оба дошли, маршруты разные, точка». Но в $\infty$-категории мы можем спросить: *можно ли плавно деформировать один маршрут в другой?* Если между ними гора — нельзя; если равнина — можно. Ответ на этот вопрос несёт информацию о *структуре пространства*. А между деформациями существуют «деформации деформаций» (3-морфизмы), и так далее. Вся эта иерархия — не избыточная сложность, а необходимая структура: именно она кодирует квантовые фазы, калибровочные эквивалентности и уровни самонаблюдения.
+:::note Analogy: routes in the mountains
+Two hikers go from village A to village B. One crosses a pass, the other follows a valley. In ordinary mathematics (a 1-category) we say: “both arrived; the routes differ; done.” In an $\infty$-category we ask: *can one route be smoothly deformed into the other?* If a mountain lies between them, no; if the terrain is open, yes. The answer encodes the *geometry* of the space. Between deformations there are “deformations of deformations” (3-morphisms), and so on. The full hierarchy is not redundant ornament: it encodes quantum phases, gauge equivalences, and levels of self-observation.
 :::
 
-В обычной (1-)категории морфизмы либо равны, либо нет. В ∞-категории между морфизмами существуют 2-морфизмы (гомотопии), между 2-морфизмами — 3-морфизмы, и так далее.
+In an ordinary (1-)category morphisms are either equal or not. In an ∞-category there are 2-morphisms (homotopies) between morphisms, 3-morphisms between those, and so on.
 
-**Ключевое следствие:** Терминальный объект T допускает **множество эквивалентных путей** к нему, что разрешает проблему телеологического детерминизма.
+**Key consequence:** The terminal object $T$ admits **many equivalent paths** to it, which resolves the problem of teleological determinism.
 
-### Источник нетривиальной гомотопии {#источник-гомотопии}
+### Source of nontrivial homotopy {#источник-гомотопии}
 
-:::warning Стягиваемость базового пространства
-Пространство $\mathcal{D}(\mathbb{C}^7)$ как топологическое пространство **стягиваемо** (выпуклое подмножество линейного пространства), поэтому $\pi_k(\mathcal{D}(\mathbb{C}^7)) = 0$ для всех $k \geq 1$. Нетривиальная ∞-структура возникает **не** из базового пространства, а из трёх источников:
+:::warning Contractibility of base space
+The space $\mathcal{D}(\mathbb{C}^7)$ is **contractible** as a topological space (a convex subset of a vector space), hence $\pi_k(\mathcal{D}(\mathbb{C}^7)) = 0$ for all $k \geq 1$. Nontrivial ∞-structure **does not** arise from the base space alone, but from three sources:
 
-**1. Стратификация по типам спектров.** Пространство $\mathcal{D}(\mathbb{C}^7)$ естественно стратифицировано по типам вырождения собственных значений:
+**1. Stratification by spectral type.** The space $\mathcal{D}(\mathbb{C}^7)$ stratifies naturally by eigenvalue degeneracy type:
 $$\mathcal{D}(\mathbb{C}^7) = \bigsqcup_{\lambda \vdash 7} \mathcal{S}_\lambda$$
-где $\mathcal{S}_\lambda$ — страта матриц с типом спектра $\lambda$ (разбиение 7). Страты меньшей размерности (вырожденные спектры) образуют **особенности**, вокруг которых пучки могут иметь нетривиальную монодромию.
+where $\mathcal{S}_\lambda$ is the stratum of matrices of spectrum type $\lambda$ (a partition of 7). Lower-dimensional strata (degenerate spectra) are **singularities** around which sheaves may have nontrivial monodromy.
 
-**2. Петли CPTP-каналов.** Пространство CPTP-каналов $\mathrm{CPTP}(\mathbb{C}^7)$ **не стягиваемо** — оно содержит нетривиальные петли (замкнутые пути унитарных преобразований U(7) ⊂ CPTP). Фундаментальная группа $\pi_1(\mathrm{CPTP}(\mathbb{C}^7)) \neq 0$ порождает нетривиальные локальные системы на $\mathcal{D}(\mathbb{C}^7)$.
+**2. Loops of CPTP maps.** The space $\mathrm{CPTP}(\mathbb{C}^7)$ is **not** contractible—it contains nontrivial loops (closed paths in unitary transformations $\mathrm{U}(7) \subset \mathrm{CPTP}$). The fundamental group $\pi_1(\mathrm{CPTP}(\mathbb{C}^7)) \neq 0$ yields nontrivial local systems on $\mathcal{D}(\mathbb{C}^7)$.
 
-**3. Пучки с нетривиальными сечениями.** Конкретные пучки, возникающие в УГМ (например, пучок самомоделей $\Gamma \mapsto \varphi(\Gamma)$), могут иметь нетривиальную когомологическую структуру даже над стягиваемым базовым пространством. Связь с уровнями интериорности L0–L4 идёт через **n-усечения пучков**, а не через гомотопию базового пространства.
+**3. Sheaves with nontrivial sections.** Concrete sheaves in UHM (e.g. the self-modeling sheaf $\Gamma \mapsto \varphi(\Gamma)$) may have nontrivial cohomology even over a contractible base. The link to interiority levels L0–L4 goes through **$n$-truncation of sheaves**, not through homotopy of the base.
 :::
 
-### Определение ∞-топоса УГМ
+### Definition of the UHM ∞-topos
 
-**Определение (∞-топос УГМ):**
+**Definition (UHM ∞-topos):**
 
 $$
 \mathbf{Sh}_\infty(\mathcal{C}) := \text{Fun}(\mathcal{C}^{op}, \mathbf{Spaces})^{loc}
 $$
 
-— категория локально постоянных ∞-функторов из 𝒞ᵒᵖ в категорию пространств (∞-группоидов).
+—the category of locally constant ∞-functors from $\mathcal{C}^{\mathrm{op}}$ to the category of spaces (∞-groupoids).
 
-:::info Замечание (∞-топос vs 1-топос)
-В отличие от 1-категорных топосов Гротендика, где базовая категория 𝒞 должна обладать конечными пределами (в частности, pullbacks) для корректного определения пересечения покрытий, ∞-категорная конструкция $\text{Fun}(\mathcal{C}^{op}, \mathbf{Spaces})^{loc}$ **не требует** pullbacks в 𝒞 (Lurie, HTT, Prop. 6.2.2.7). Категория пучков $\mathbf{Sh}_\infty(\mathcal{C})$ сама обладает всеми (∞,1)-пределами и копределами, даже если базовая 𝒞 ими не обладает. Достаточно задать топологию Гротендика (покрытия) на 𝒞.
+:::info Remark (∞-topos vs. 1-topos)
+Unlike 1-categorical Grothendieck topoi, where $\mathcal{C}$ must have finite limits (in particular pullbacks) to define intersection of covers, the ∞-categorical construction $\text{Fun}(\mathcal{C}^{op}, \mathbf{Spaces})^{loc}$ **does not require** pullbacks in $\mathcal{C}$ (Lurie, HTT, Prop. 6.2.2.7). The sheaf category $\mathbf{Sh}_\infty(\mathcal{C})$ has all (∞,1)-limits and colimits even if $\mathcal{C}$ does not. It suffices to specify a Grothendieck topology (covers) on $\mathcal{C}$.
 :::
 
-:::info Малость сайта
-Категория $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ с CPTP-морфизмами не является малой (множества морфизмов могут быть бесконечномерными). Для корректного применения HTT Prop. 6.2.2.7 фиксируется **скелет**: категория спектральных типов $\mathrm{Sk}(\mathcal{C})$, параметризуемая стандартным симплексом $\Delta^6 = \{(\lambda_1, \ldots, \lambda_7) : \lambda_i \geq 0, \sum \lambda_i = 1\}$ с упорядоченными $\lambda_1 \geq \cdots \geq \lambda_7$. Эта категория **по существу малая**, и $\mathbf{Sh}_\infty(\mathrm{Sk}(\mathcal{C}), J_{Bures}) \simeq \mathbf{Sh}_\infty(\mathcal{C}, J_{Bures})$ как ∞-топосы.
+:::info Smallness of the site
+The category $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ with CPTP morphisms is not small (hom-sets may be infinite-dimensional). For HTT Prop. 6.2.2.7 one fixes a **skeleton**: the category $\mathrm{Sk}(\mathcal{C})$ of spectral types, parameterized by the standard simplex $\Delta^6 = \{(\lambda_1, \ldots, \lambda_7) : \lambda_i \geq 0, \sum \lambda_i = 1\}$ with ordered $\lambda_1 \geq \cdots \geq \lambda_7$. This category is **essentially small**, and $\mathbf{Sh}_\infty(\mathrm{Sk}(\mathcal{C}), J_{Bures}) \simeq \mathbf{Sh}_\infty(\mathcal{C}, J_{Bures})$ as ∞-topoi.
 :::
 
-### Топология Гротендика на 𝒞 {#топология-гротендика}
+### Grothendieck topology on $\mathcal{C}$ {#топология-гротендика}
 
-:::info Явное определение покрытий
-Для корректного определения понятия «пучка» (и, следовательно, ∞-топоса) необходимо явно задать **топологию Гротендика** — семейства морфизмов, образующих покрытия.
+:::info Explicit coverings
+To define “sheaf” (and hence the ∞-topos) one must fix a **Grothendieck topology**—families of morphisms that constitute covers.
 :::
 
-**Определение (Сайт 𝒞):**
+**Definition (site $\mathcal{C}$):**
 
-Пара $(\mathcal{C}, J_{Bures})$ образует **сайт**, где $J_{Bures}$ — функция покрытий, определённая через метрику Бюреса.
+The pair $(\mathcal{C}, J_{Bures})$ is a **site**, where $J_{Bures}$ is the coverage function determined from the Bures metric.
 
-**Определение (Метрика Бюреса):**
+**Definition (Bures metric):**
 
-Для матриц плотности $\Gamma_1, \Gamma_2 \in \mathcal{C}$:
+For density matrices $\Gamma_1, \Gamma_2 \in \mathcal{C}$:
 
 $$
 d_B(\Gamma_1, \Gamma_2) := \sqrt{2\left(1 - \sqrt{F(\Gamma_1, \Gamma_2)}\right)}
 $$
 
-где $F(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ — fidelity (верность).
+where $F(\Gamma_1, \Gamma_2) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ is the (Uhlmann) fidelity.
 
-:::info Две формы метрики Бюреса
-Здесь используется **хордовая** форма: $d_B^{\text{chord}} = \sqrt{2(1-\sqrt{F})}$. В геометрических теоремах ([эмерджентное время](/docs/proofs/dynamics/emergent-time#41-метрика-бурес)) используется **угловая** форма: $d_B^{\text{angle}} = \arccos(\sqrt{F})$. Обе формы эквивалентны: $d_B^{\text{chord}} = \sqrt{2(1 - \cos(d_B^{\text{angle}}))}$. Подробнее — [Нотация](/docs/reference/notation#топология-гротендика).
+:::info Two forms of the Bures metric
+We use the **chordal** form: $d_B^{\text{chord}} = \sqrt{2(1-\sqrt{F})}$. Geometric theorems ([emergent time](/docs/proofs/dynamics/emergent-time#41-метрика-бурес)) use the **angular** form: $d_B^{\text{angle}} = \arccos(\sqrt{F})$. The two are equivalent: $d_B^{\text{chord}} = \sqrt{2(1 - \cos(d_B^{\text{angle}}))}$. See [Notation](/docs/reference/notation#топология-гротендика).
 :::
 
-**Определение (Bures-покрытие):**
+**Definition (Bures cover):**
 
-Семейство морфизмов $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ образует **покрытие** объекта $\Gamma$, если:
+A family of morphisms $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ **covers** $\Gamma$ if:
 
 $$
 \forall \epsilon > 0, \exists \delta > 0: \quad B_B(\Gamma, \delta) \subseteq \bigcup_{i \in I} \Phi_i(B_B(\Gamma_i, \epsilon))
 $$
 
-где $B_B(\Gamma, r) = \{\Sigma \in \mathcal{C} : d_B(\Gamma, \Sigma) < r\}$ — открытый шар в метрике Бюреса.
+where $B_B(\Gamma, r) = \{\Sigma \in \mathcal{C} : d_B(\Gamma, \Sigma) < r\}$ is the open Bures ball.
 
-**Теорема (Аксиомы сайта):**
+**Theorem (site axioms):**
 
-Топология $J_{Bures}$ удовлетворяет аксиомам Гротендика:
+The topology $J_{Bures}$ satisfies Grothendieck’s axioms:
 
-1. **(Идентичность)** $\{\mathrm{id}: \Gamma \to \Gamma\}$ покрывает $\Gamma$
-2. **(Стабильность)** Если $\{U_i \to X\}$ покрывает X, и $f: Y \to X$, то $\{f^*(U_i) \to Y\}$ покрывает Y
-3. **(Транзитивность)** Композиция покрытий — покрытие
+1. **(Identity)** $\{\mathrm{id}: \Gamma \to \Gamma\}$ covers $\Gamma$
+2. **(Stability)** If $\{U_i \to X\}$ covers $X$ and $f: Y \to X$, then $\{f^*(U_i) \to Y\}$ covers $Y$
+3. **(Transitivity)** Composition of covers is a cover
 
-#### Доказательство стабильности покрытий {#доказательство-стабильности}
+#### Proof of stability of covers {#доказательство-стабильности}
 
-:::warning Теорема (Стабильность $J_{Bures}$) [Т]
-Если $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ — $J_{Bures}$-покрытие $\Gamma$, и $f: \Sigma \to \Gamma$ — морфизм в 𝒞 (CPTP-канал), то решето $f^*(S)$ покрывает $\Sigma$.
+:::warning Theorem (stability of $J_{Bures}$) [T]
+If $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ is a $J_{Bures}$-cover of $\Gamma$ and $f: \Sigma \to \Gamma$ is a morphism in $\mathcal{C}$ (CPTP channel), then the sieve $f^*(S)$ covers $\Sigma$.
 :::
 
-**Доказательство:**
+**Proof:**
 
-1. По определению покрытия: $\forall\varepsilon > 0,\;\exists\delta > 0$: $B_B(\Gamma,\delta) \subseteq \bigcup_i \Phi_i(B_B(\Gamma_i,\varepsilon))$
-2. $f$ — CPTP-канал $\Longrightarrow$ $f$ контрактивен по Бюресу (Ченцов-Петц): $d_B(f(\rho), f(\sigma)) \leq d_B(\rho, \sigma)$
-3. Для любого $\Sigma'$ с $d_B(\Sigma', \Sigma) < \delta$: $d_B(f(\Sigma'), f(\Sigma)) \leq d_B(\Sigma', \Sigma) < \delta$
-4. Поскольку $f(\Sigma) = \Gamma$: $f(\Sigma') \in B_B(\Gamma, \delta)$
-5. По (1): $f(\Sigma') \in \Phi_j(B_B(\Gamma_j, \varepsilon))$ для некоторого $j$
-6. Следовательно, морфизм $\Sigma' \to \Sigma \xrightarrow{f} \Gamma$ факторизуется через $\Phi_j$, т.е. принадлежит решету $f^*(S)$
-7. Это выполнено для всех $\Sigma'$ в $B_B(\Sigma, \delta)$ $\Longrightarrow$ $f^*(S)$ покрывает $\Sigma$ $\quad\blacksquare$
+1. By definition of cover: $\forall\varepsilon > 0,\;\exists\delta > 0$: $B_B(\Gamma,\delta) \subseteq \bigcup_i \Phi_i(B_B(\Gamma_i,\varepsilon))$
+2. $f$ CPTP $\Longrightarrow$ $f$ is Bures contractive (Chentsov–Petz): $d_B(f(\rho), f(\sigma)) \leq d_B(\rho, \sigma)$
+3. For any $\Sigma'$ with $d_B(\Sigma', \Sigma) < \delta$: $d_B(f(\Sigma'), f(\Sigma)) \leq d_B(\Sigma', \Sigma) < \delta$
+4. Since $f(\Sigma) = \Gamma$: $f(\Sigma') \in B_B(\Gamma, \delta)$
+5. By (1): $f(\Sigma') \in \Phi_j(B_B(\Gamma_j, \varepsilon))$ for some $j$
+6. Hence $\Sigma' \to \Sigma \xrightarrow{f} \Gamma$ factors through $\Phi_j$, i.e. lies in the sieve $f^*(S)$
+7. For all $\Sigma'$ in $B_B(\Sigma, \delta)$ $\Longrightarrow$ $f^*(S)$ covers $\Sigma$ $\quad\blacksquare$
 
-Ключевой факт: **контрактивность Бюреса при CPTP** (единственность монотонной метрики по Ченцову-Петцу) обеспечивает стабильность покрытий автоматически.
+**Key point:** **Bures contractivity under CPTP** (uniqueness of the monotone metric by Chentsov–Petz) forces stability of covers.
 
-**Следствие (Смысл "loc"):**
+**Corollary (meaning of “loc”):**
 
-Суперскрипт "loc" в определении $\mathbf{Sh}_\infty(\mathcal{C})^{loc}$ означает локализацию относительно $J_{Bures}$-покрытий: функтор $F$ является пучком, если для любого покрывающего решета $S \to X$:
+The superscript “loc” in $\mathbf{Sh}_\infty(\mathcal{C})^{loc}$ means localization at $J_{Bures}$-covers: $F$ is a sheaf if for every covering sieve $S \to X$,
 
 $$
 F(X) \xrightarrow{\sim} \lim_{\{U \to X\} \in S} F(U)
 $$
 
-**Физическая интерпретация:**
+**Physical reading:**
 
-- **Покрытие** ≈ набор возможных измерений, «разрешающих» состояние
-- **Условие склейки** ≈ категориальная формализация квантовой когерентности
-- Метрика Бюреса **монотонна** при CPTP: $d_B(\Phi(\rho), \Phi(\sigma)) \leq d_B(\rho, \sigma)$
+- **Cover** $\approx$ family of measurements that “resolve” the state
+- **Gluing** $\approx$ categorical formalization of quantum coherence
+- The Bures metric is **monotone** under CPTP: $d_B(\Phi(\rho), \Phi(\sigma)) \leq d_B(\rho, \sigma)$
 
-### Структура ∞-топоса
+### Structure of the ∞-topos
 
-**Теорема (Структура по Лури):**
+**Theorem (Lurie):**
 
-∞-топос Sh_∞(𝒞) обладает:
+The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ has:
 
-1. **Внутренней логикой:** Гомотопическая теория типов (HoTT)
-2. **Классификатором подобъектов:** Ω ∈ Sh_∞(𝒞)
-3. **Пределами и копределами:** Все (∞, 1)-пределы существуют
-4. **Экспоненциалами:** Для F, G существует [F, G]
+1. **Internal logic:** homotopy type theory (HoTT)
+2. **Subobject classifier:** $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$
+3. **Limits and colimits:** all (∞,1)-limits exist
+4. **Exponentials:** for $F$, $G$ there is $[F,G]$
 
-### Связь с иерархией интериорности {#связь-с-интериорностью}
+### Relation to the interiority hierarchy {#связь-с-интериорностью}
 
-:::info n-усечения и уровни сознания
-∞-группоидная структура $\mathbf{Exp}_\infty$ (экспериенциальное пространство) связана с [иерархией интериорности](/docs/proofs/consciousness/interiority-hierarchy) через механизм n-усечения.
+:::info $n$-truncation and consciousness levels
+The ∞-groupoid $\mathbf{Exp}_\infty$ (experiential space) relates to the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) via $n$-truncation.
 :::
 
-**Гомотопическая классификация [И]:**
+**Homotopical classification [I]:**
 
-Уровни интериорности L0→L4 соответствуют n-усечениям ∞-группоида $\mathbf{Exp}_\infty$:
+Levels L0→L4 correspond to $n$-truncations of the ∞-groupoid $\mathbf{Exp}_\infty$:
 
-| Уровень | n-усечение | Гомотопические группы | Категорная интерпретация |
+| Level | $n$-truncation | Homotopy groups | Categorical reading |
 |---------|------------|----------------------|--------------------------|
-| L0 | $\tau_{\leq 0}$ | $\pi_0 \neq 0$ | Дискретное множество состояний |
-| L1 | $\tau_{\leq 1}$ | $\pi_1 \neq 0$ | Группоид (феноменальные пути) |
-| L2 | $\tau_{\leq 2}$ | $\pi_2 \neq 0$ | Бикатегория (рефлексия) |
-| L3 | $\tau_{\leq 3}$ | $\pi_3 \neq 0$ | Трикатегория (метарефлексия) |
-| L4 | $\tau_{\leq \infty}$ | Все $\pi_k$ | Полная ∞-структура |
+| L0 | $\tau_{\leq 0}$ | $\pi_0 \neq 0$ | Discrete set of states |
+| L1 | $\tau_{\leq 1}$ | $\pi_1 \neq 0$ | Groupoid (phenomenal paths) |
+| L2 | $\tau_{\leq 2}$ | $\pi_2 \neq 0$ | Bicategory (reflection) |
+| L3 | $\tau_{\leq 3}$ | $\pi_3 \neq 0$ | Tricategory (meta-reflection) |
+| L4 | $\tau_{\leq \infty}$ | all $\pi_k$ | Full ∞-structure |
 
-Подробности: [Категорный формализм §10.6](/docs/proofs/categorical/categorical-formalism#связь-с-иерархией-интериорности).
+Details: [Categorical formalism §10.6](/docs/proofs/categorical/categorical-formalism#связь-с-иерархией-интериорности).
 
-**Следствие (Конечность иерархии):**
+**Corollary (finiteness of the hierarchy):**
 
-L4 — максимальный уровень (теорема стабилизации Постникова). Не существует L5, L6, ...
+L4 is maximal (Postnikov stabilization). There is no L5, L6, …
 
 ---
 
-## Внутренняя логика Ω {#внутренняя-логика}
+## Internal logic $\Omega$ {#внутренняя-логика}
 
-:::warning Ключевая теорема: L-унификация [Т]
-Классификатор подобъектов Ω ∈ Sh_∞(𝒞) является **единым источником**:
-- [Измерения L (Логики)](../structure/dimension-l) — как L = Ω ∩ Γ
-- Операторов Линдблада $L_k$ — как операторных представителей характеристических морфизмов [базисных предикатов](#атомы-классификатора) Ω ([вывод](#lk-из-omega))
-- Времени τ — через темпоральную модальность ▷
+:::warning Central theorem: L-unification [T]
+The subobject classifier $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ is the **single source** of:
+- [L-dimension (logic)](../structure/dimension-l) — as $L = \Omega \cap \Gamma$
+- Lindblad operators $L_k$ — as operator realizations of characteristic morphisms of [atomic predicates](#атомы-классификатора) of $\Omega$ ([derivation](#lk-из-omega))
+- Time $\tau$ — via the temporal modality $\triangleright$
 
-L-унификация оперирует в [решающем фрагменте](#решающий-фрагмент) $\mathrm{Dec}(\Omega) \cong 2^7$ полного классификатора $\Omega = \mathcal{O}(\mathcal{C}, d_B)$. Полнота базиса ($\sum_k S_k = \mathbb{1}_7$) гарантирует замкнутость вывода $L_k$ и CPTP-совместимость.
+L-unification works in the [decidable fragment](#решающий-фрагмент) $\mathrm{Dec}(\Omega) \cong 2^7$ of the full classifier $\Omega = \mathcal{O}(\mathcal{C}, d_B)$. Basis completeness ($\sum_k S_k = \mathbb{1}_7$) closes the derivation of $L_k$ and ensures CPTP compatibility.
 :::
 
-### Классификатор подобъектов Ω
+### Subobject classifier $\Omega$
 
-**Определение (Классификатор):**
+**Definition (classifier):**
 
-Для любого объекта X ∈ Sh_∞(𝒞) существует биекция:
+For any object $X \in \mathbf{Sh}_\infty(\mathcal{C})$ there is a bijection:
 
 $$
 \text{Sub}(X) \simeq \text{Map}(X, \Omega)
 $$
 
-Подобъекты X соответствуют морфизмам в Ω — «логические предикаты» на X.
+Subobjects of $X$ correspond to morphisms into $\Omega$—“logical predicates” on $X$.
 
-**Для матриц плотности:**
+**For density matrices:**
 
 $$
 \Omega_{UHM} := \text{Spec}(\mathcal{A}_L)
 $$
 
-где $\mathcal{A}_L$ — C*-алгебра логических предикатов на пространстве состояний.
+where $\mathcal{A}_L$ is the C*-algebra of logical predicates on state space.
 
-### Характеристические морфизмы и L_k
+### Characteristic morphisms and $L_k$
 
-**Определение (Характеристический морфизм):**
+**Definition (characteristic morphism):**
 
-Для подобъекта $S \hookrightarrow \Gamma$ его характеристический морфизм:
+For a subobject $S \hookrightarrow \Gamma$, its characteristic morphism is
 
 $$
 \chi_S: \Gamma \to \Omega
 $$
 
-определяет «степень принадлежности» состояния к логически допустимому подпространству S.
+encoding the state’s “degree of membership” in the logically admissible subspace $S$.
 
-### Канонические базисные предикаты классификатора {#атомы-классификатора}
+### Canonical atomic predicates of the classifier {#атомы-классификатора}
 
-:::warning Теорема (Канонические базисные предикаты 7D-системы) [Т]
-Для базовой категории $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ с Бюрес-топологией в классификаторе $\Omega = \mathcal{O}(\mathcal{C}, d_B)$ выделяется каноническая система из 7 **базисных предикатов**:
+:::warning Theorem (canonical atomic predicates of the 7D system) [T]
+For the base category $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ with the Bures topology, the classifier $\Omega = \mathcal{O}(\mathcal{C}, d_B)$ admits a canonical system of seven **atomic predicates**:
 
 $$
 \mathcal{T}_\Omega = \{S_0, S_1, \ldots, S_6\}
 $$
 
-где каждый предикат — проектор на базисное состояние:
+each predicate being a projector onto a basis vector:
 
 $$
 S_i = |i\rangle\langle i|, \quad i \in \{A, S, D, L, E, O, U\}
 $$
 :::
 
-#### Теорема (Решающий фрагмент классификатора) [Т] {#решающий-фрагмент}
+#### Theorem (decidable fragment of the classifier) [T] {#решающий-фрагмент}
 
 :::info
-Полный классификатор подобъектов $\Omega = \mathcal{O}(\mathcal{C}, d_B)$ — решётка открытых множеств в Бюрес-топологии (бесконечная, [категорный формализм](/docs/proofs/categorical/categorical-formalism#l-унификация)). В ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$ его логическая структура имеет три уровня:
+The full subobject classifier $\Omega = \mathcal{O}(\mathcal{C}, d_B)$ is the lattice of opens in the Bures topology (infinite; see [categorical formalism](/docs/proofs/categorical/categorical-formalism#l-унификация)). In $\mathbf{Sh}_\infty(\mathcal{C})$ its logical structure has three tiers:
 
-| Уровень | Структура | Описание |
+| Tier | Structure | Description |
 |---------|-----------|----------|
-| **∞-уровень** | HoTT (гомотопическая теория типов) | Полный $\Omega$ с темпоральной модальностью $\triangleright$ |
-| **1-усечение** | Гейтинговая алгебра $\tau_{\leq 0}(\Omega)$ | Интуиционистская логика (стандартный результат) |
-| **Решающий фрагмент** | $\mathrm{Dec}(\Omega) \cong 2^7$ | Булева подалгебра базисных предикатов |
+| **∞-level** | HoTT | Full $\Omega$ with temporal modality $\triangleright$ |
+| **1-truncation** | Heyting algebra $\tau_{\leq 0}(\Omega)$ | Intuitionistic logic (standard) |
+| **Decidable fragment** | $\mathrm{Dec}(\Omega) \cong 2^7$ | Boolean subalgebra of atomic predicates |
 
-Семь проекторов $S_k$ порождают **решающий фрагмент** $\mathrm{Dec}(\Omega)$ — максимальную булеву подалгебру классификатора, соответствующую ортогональному базису $\mathbb{C}^7$:
+The seven projectors $S_k$ generate the **decidable fragment** $\mathrm{Dec}(\Omega)$—the maximal Boolean subalgebra of the classifier aligned with the orthogonal basis of $\mathbb{C}^7$:
 
 $$
 \mathrm{Dec}(\Omega) := \left\langle S_0, \ldots, S_6 \mid S_i \wedge S_j = \delta_{ij} S_i,\; \bigvee_k S_k = \top \right\rangle \cong 2^7
 $$
 
-**L-унификация** оперирует внутри $\mathrm{Dec}(\Omega)$: характеристические морфизмы $\chi_{S_k}(\Gamma) = \gamma_{kk}$ и выведенные из них операторы $L_k$ (ниже) определены на решающем фрагменте. Полнота базиса ($\sum_k S_k = \mathbb{1}_7$) гарантирует, что $\mathrm{Dec}(\Omega)$ **замкнут** относительно вывода $L_k$ и CPTP-совместимости.
+**L-unification** operates inside $\mathrm{Dec}(\Omega)$: the characteristic morphisms $\chi_{S_k}(\Gamma) = \gamma_{kk}$ and the induced operators $L_k$ (below) are defined on the decidable fragment. Basis completeness ($\sum_k S_k = \mathbb{1}_7$) ensures that $\mathrm{Dec}(\Omega)$ is **closed** under the $L_k$ derivation and CPTP compatibility.
 
-Полная HoTT-структура $\Omega$ (за пределами $\mathrm{Dec}(\Omega)$) используется для [иерархии интериорности](../../consciousness/hierarchy/interiority-hierarchy) через n-усечения ∞-группоида $\mathbf{Exp}_\infty$.
+The full HoTT structure of $\Omega$ (beyond $\mathrm{Dec}(\Omega)$) serves the [interiority hierarchy](../../consciousness/hierarchy/interiority-hierarchy) through $n$-truncations of $\mathbf{Exp}_\infty$.
 :::
 
-**Характеристические морфизмы базисных предикатов:**
+**Characteristic morphisms of atomic predicates:**
 
 $$
 \chi_{S_i}(\Gamma) = \langle i|\Gamma|i\rangle = \gamma_{ii}
 $$
 
-— диагональный элемент матрицы когерентности.
+—the diagonal entry of the coherence matrix.
 
-#### Теорема (L_k из Ω) [Т] {#lk-из-omega}
+#### Theorem ($L_k$ from $\Omega$) [T] {#lk-из-omega}
 
-Операторы Линдблада **выводятся** из классификатора подобъектов.
+The Lindblad operators are **derived** from the subobject classifier.
 
-**Доказательство (3 шага):**
+**Proof (three steps):**
 
-**Шаг 1 (Базисный предикат → оператор).** Каждый предикат $S_k = |k\rangle\langle k|$ классификатора определяет характеристический морфизм $\chi_{S_k}: \Gamma \mapsto \gamma_{kk}$ (скалярная функция). **Операторный представитель** этого морфизма — проектор $P_k = |k\rangle\langle k|$, поскольку:
+**Step 1 (atomic predicate → operator).** Each predicate $S_k = |k\rangle\langle k|$ of the classifier defines the characteristic map $\chi_{S_k}: \Gamma \mapsto \gamma_{kk}$ (scalar functional). The **operator representative** is the projector $P_k = |k\rangle\langle k|$, since
 
 $$
 \chi_{S_k}(\Gamma) = \mathrm{Tr}(P_k \cdot \Gamma) = \gamma_{kk}
 $$
 
-Проектор $P_k$ — единственный оператор ранга 1, реализующий линейный функционал $\chi_{S_k}$ через след (теорема Рисса для $M_n(\mathbb{C})$ с паре Гильберта-Шмидта).
+$P_k$ is the unique rank-one operator realizing the linear functional $\chi_{S_k}$ via the trace (Riesz representation on $M_n(\mathbb{C})$ with the Hilbert–Schmidt pairing).
 
-**Шаг 2 (Проектор → оператор Линдблада).** Определяем:
+**Step 2 (projector → Lindblad operator).** Set
 
 $$
 L_k := P_k = |k\rangle\langle k|
 $$
 
-Поскольку $P_k$ — ортогональный проектор, $P_k^2 = P_k = P_k^\dagger$, откуда $\sqrt{P_k} = P_k$ и $L_k = \sqrt{P_k}$ (неотрицательный квадратный корень проектора — он сам).
+Since $P_k$ is an orthogonal projector, $P_k^2 = P_k = P_k^\dagger$, hence $\sqrt{P_k} = P_k$ and $L_k = \sqrt{P_k}$ (the positive square root of a projector is itself).
 
-**Шаг 3 (CPTP-совместимость).** Полнота базиса гарантирует:
+**Step 3 (CPTP compatibility).** Basis completeness yields
 
 $$
 \sum_{k=0}^{6} L_k^\dagger L_k = \sum_{k=0}^{6} |k\rangle\langle k| = \mathbb{1}_7 \quad \checkmark
 $$
 
-Это — условие CPTP-совместимости для Линдбладовского диссипатора $\mathcal{D}[\Gamma] = \sum_k \gamma_k (L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\})$. $\blacksquare$
+which is the CPTP compatibility condition for the Lindblad dissipator $\mathcal{D}[\Gamma] = \sum_k \gamma_k (L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\})$. $\blacksquare$
 
-Конкретные скорости декогеренции $\gamma_k \geq 0$ по каждому каналу задаются отдельно в [уравнении эволюции](../dynamics/evolution#логический-лиувиллиан).
+Channel-wise decoherence rates $\gamma_k \geq 0$ are specified separately in the [evolution equation](../dynamics/evolution#логический-лиувиллиан).
 
-### Иерархия L_k по стратам {#иерархия-lk}
+### Hierarchy of $L_k$ by stratum {#иерархия-lk}
 
-| Страта | Система | Подобъекты | L_k оператор |
+| Stratum | System | Subobjects | $L_k$ operator |
 |--------|---------|------------|--------------|
-| I | Материя | $S_{sym}$ — инвариантные | $P_{Casimir}$ (симметрия) |
-| II | Жизнь | $S_{viable}$ — P > P_crit | QECC-стабилизаторы |
-| III | Разум | $S_{predictive}$ — min F | $\nabla_\Gamma F$ (градиент) |
-| IV | Сознание | $S_{coherent}$ — H¹ = 0 | $\check{\delta}$ (Чех) |
+| I | Matter | $S_{sym}$ — invariant | $P_{\text{Casimir}}$ (symmetry) |
+| II | Life | $S_{\text{viable}}$ — $P > P_{\text{crit}}$ | QECC stabilizers |
+| III | Mind | $S_{\text{predictive}}$ — min $F$ | $\nabla_\Gamma F$ (gradient) |
+| IV | Consciousness | $S_{\text{coherent}}$ — $H^1 = 0$ | $\check{\delta}$ (Čech) |
 
-### Темпоральная модальность {#темпоральная-модальность}
+### Temporal modality {#темпоральная-модальность}
 
-:::warning Три уровня темпоральной структуры
-Время в УГМ конструируется на **трёх чётко разделённых уровнях**:
+:::warning Three layers of temporal structure
+Time in UHM is built on **three cleanly separated levels**:
 
-| Уровень | Тип | Содержание |
+| Layer | Type | Content |
 |---------|-----|------------|
-| **A. Алгебраический** | Определение | ℤ_N-действие на базисных предикатах |
-| **B. Семантический** | Интерпретация | Орбита ▷ называется "временем" |
-| **C. Динамический** | Теорема | Соответствие ▷ и $e^{\delta\tau \cdot \mathcal{L}_\Omega}$ |
+| **A. Algebraic** | Definition | $\mathbb{Z}_N$ action on atomic predicates |
+| **B. Semantic** | Interpretation | The $\triangleright$-orbit is called “time” |
+| **C. Dynamical** | Theorem | Matching $\triangleright$ and $e^{\delta\tau \cdot \mathcal{L}_\Omega}$ |
 
-Это разрывает потенциальную цикличность: **определение времени не использует эволюцию**.
+This breaks a potential circle: **time is defined without appealing to evolution**.
 :::
 
-**Определение (Оператор «позже»):**
+**Definition (“later” operator):**
 
-На множестве базисных предикатов $\mathcal{T}_\Omega = \{S_0, \ldots, S_{N-1}\}$ определяется циклический сдвиг:
+On atomic predicates $\mathcal{T}_\Omega = \{S_0, \ldots, S_{N-1}\}$ define the cyclic shift
 
 $$
 \triangleright: \mathcal{T}_\Omega \to \mathcal{T}_\Omega, \quad \triangleright(S_i) := S_{(i+1) \mod N}
 $$
 
-**Алгебраическое обоснование:**
+**Algebraic rationale:**
 
-1. **Структура кольца ℤ_N:** Простая циклическая группа порядка N имеет единственный генератор $g: k \mapsto k+1 \mod N$
+1. **$\mathbb{Z}_N$ structure:** the cyclic group of order $N$ has a canonical generator $g: k \mapsto k+1 \bmod N$
+2. **Isomorphism:** $\mathcal{T}_\Omega \cong \mathbb{Z}_N$ as sets ($S_i \leftrightarrow i$)
+3. **Induced action:** $\triangleright := g^*$ — pullback of the group generator
 
-2. **Изоморфизм:** $\mathcal{T}_\Omega \cong \mathbb{Z}_N$ как множества (каноническое отождествление $S_i \leftrightarrow i$)
+**Theorem (time from algebra—no circularity):**
 
-3. **Индуцированное действие:** $\triangleright := g^*$ — pullback генератора группы
-
-**Теорема (Время из алгебры — без цикличности):**
-
-Дискретное время τ ∈ ℤ_N возникает как итерация алгебраически определённого оператора:
+Discrete time $\tau \in \mathbb{Z}_N$ arises as iteration of the algebraically defined operator
 
 $$
 \tau_n := \underbrace{\triangleright \circ \cdots \circ \triangleright}_{n \text{ раз}}(now) = \triangleright^n(now)
 $$
 
-где $now := S_0$ — начальный предикат (выбор фазы).
+with $now := S_0$ the initial predicate (phase choice).
 
-**Свойства:**
-- **Цикличность:** $\triangleright^N = \mathrm{Id}$
-- **Минимальность:** $\triangleright^k \neq \mathrm{Id}$ для $0 < k < N$
-- **Независимость от динамики:** Определение не использует ℒ_Ω
+**Properties:**
+- **Periodicity:** $\triangleright^N = \mathrm{Id}$
+- **Minimality:** $\triangleright^k \neq \mathrm{Id}$ for $0 < k < N$
+- **Independence of dynamics:** the definition does not use $\mathcal{L}_\Omega$
 
-#### Уровень A: Алгебраическая структура (Определение)
+#### Layer A: Algebraic structure (definition)
 
-**Лемма:** ▷ генерирует свободное ℤ_7-действие на $\mathcal{T}_\Omega$.
+**Lemma:** $\triangleright$ generates a free $\mathbb{Z}_7$ action on $\mathcal{T}_\Omega$.
 
-**Доказательство:**
-- $\triangleright^7 = \mathrm{Id}$ (проверяется прямым вычислением)
-- $\triangleright^k \neq \mathrm{Id}$ для $0 < k < 7$ (предикаты различны)
-- Следовательно, орбита ▷-действия имеет ровно 7 элементов. ∎
+**Proof:**
+- $\triangleright^7 = \mathrm{Id}$ (direct computation)
+- $\triangleright^k \neq \mathrm{Id}$ for $0 < k < 7$ (predicates are distinct)
+- Hence the $\triangleright$-orbit has exactly seven elements. ∎
 
-#### Уровень B: Семантическая интерпретация (Выбор)
+#### Layer B: Semantic interpretation (choice)
 
-**Определение:** Множество $\tau := \mathbb{Z}_7$ называется **дискретным внутренним временем**.
+**Definition:** $\tau := \mathbb{Z}_7$ is called **discrete internal time**.
 
-**Ключевой момент:** Эта интерпретация — **семантический выбор**, не математическое следствие. Мы *решаем* называть орбиту ▷-действия "временем".
+**Crucial point:** This is a **semantic choice**, not a mathematical theorem. We *decide* to call the $\triangleright$-orbit “time.”
 
-**Обоснование выбора:** Орбита ▷ обладает свойствами, ожидаемыми от времени:
-1. Линейная упорядоченность (mod циклической идентификации)
-2. Транзитивность: из любого момента можно попасть в любой другой
-3. Дискретность: нет "промежуточных" моментов
+**Why this choice:** The $\triangleright$-orbit has properties expected of time:
+1. Linear order (mod cyclic identification)
+2. Transitivity: from any instant one can reach any other
+3. Discreteness: there are no “intermediate” instants
 
-#### Уровень C: Динамическое соответствие (Теорема)
+#### Layer C: Dynamical correspondence (theorem)
 
-**Теорема (Соответствие ▷ и эволюции):**
+**Theorem (matching $\triangleright$ and evolution):**
 
-Пусть $\mathcal{L}_\Omega$ — логический Лиувиллиан. Тогда:
+Let $\mathcal{L}_\Omega$ be the logical Liouvillian. Then
 $$e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^* + O(\delta\tau^2)$$
 
-где $\triangleright^*$ — индуцированное действие на состояниях, $\delta\tau = 2\pi/(7\omega_0)$.
+where $\triangleright^*$ is the induced action on states and $\delta\tau = 2\pi/(7\omega_0)$.
 
-**Эскиз доказательства:**
-1. Генератор ▷-действия: $T := (\omega_0/2\pi i) \cdot \log(\triangleright)$, определённый на конечномерном $\text{Spec}(\Omega)$
-2. На конечномерном пространстве $\log$ определён через жорданову форму
-3. Разложение: $e^{i\delta\tau \cdot T} = \triangleright$ (точно для $\delta\tau = 2\pi/(7\omega_0)$)
-4. Линеаризация $\mathcal{L}_\Omega$ вблизи равновесия: $\mathcal{L}_\Omega \approx -i[H_{eff}, \cdot] + O(\text{декогеренция})$
-5. Сравнение: $T \leftrightarrow H_{eff}$ с точностью до масштаба $\omega_0$ ∎
+**Proof sketch:**
+1. Generator of $\triangleright$: $T := (\omega_0/2\pi i) \cdot \log(\triangleright)$ on finite-dimensional $\text{Spec}(\Omega)$
+2. On finite dimension, $\log$ is defined via Jordan form
+3. $e^{i\delta\tau \cdot T} = \triangleright$ exactly for $\delta\tau = 2\pi/(7\omega_0)$
+4. Linearize $\mathcal{L}_\Omega$ near equilibrium: $\mathcal{L}_\Omega \approx -i[H_{\text{eff}}, \cdot] + O(\text{decoherence})$
+5. Identify $T \leftrightarrow H_{\text{eff}}$ up to the scale $\omega_0$ ∎
 
-#### Теорема (Алгебра→динамика с оценкой ошибки) [Т] {#теорема-алгебра-динамика-ошибка}
+#### Theorem (algebra→dynamics with error bound) [T] {#теорема-алгебра-динамика-ошибка}
 
-При $\delta\tau = 2\pi/(7\omega_0)$: унитарная часть $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}}$ **точно** воспроизводит $Z_7$-сдвиг $\triangleright^*$ (из $S_7$-эквивариантности [Т-41d]). Полная ошибка:
+For $\delta\tau = 2\pi/(7\omega_0)$, the unitary part $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}}$ **exactly** reproduces the $\mathbb{Z}_7$ shift $\triangleright^*$ (from $S_7$ equivariance [T-41d]). The full error obeys
 
 $$\left\| e^{\delta\tau \cdot \mathcal{L}_\Omega} - \triangleright^* \right\|_{\text{op}} \leq 5\delta\tau + O((\delta\tau)^2)$$
 
-При $\omega_0 \gg 1$ (планковская частота) ошибка пренебрежимо мала.
+For $\omega_0 \gg 1$ (Planck-scale frequency) the error is negligible.
 
-#### Аксиома 5 (Пейдж–Вуттерс) {#pw-constraint}
+#### Axiom 5 (Page–Wootters) {#pw-constraint}
 
-:::warning Пейдж–Вуттерс: Согласованная Аксиома
-Тензорное разложение $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ — **дополнительная аксиома** (Аксиома 5), а не теорема. Она постулирует структуру, **согласованную** с алгебраической модальностью ▷.
+:::warning Page–Wootters as a coherent axiom
+The tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ was stated historically as **Axiom 5**. It postulates structure **compatible** with the algebraic modality $\triangleright$.
 :::
 
-:::note Статус A5 (T-87 [Т])
-Ограничение Пейдж–Вуттерс исторически принималось как аксиома. Теорема T-87 [Т] показывает, что A5 **выводима** из A1–A4 через конструкцию спектральной тройки. Таким образом, число **независимых** аксиом УГМ — четыре (A1–A4). A5 сохраняется в списке для полноты экспозиции.
+:::note Status of A5 (T-87 [T])
+Page–Wootters was historically taken as an axiom. Theorem T-87 [T] shows A5 is **derivable** from A1–A4 via the spectral triple. The **independent** axiom count for UHM is therefore four (A1–A4). A5 stays in the list for a complete exposition.
 :::
 
-**Формулировка:**
+**Statement:**
 
-1. Пространство часов $\mathcal{H}_O := \text{span}\{|\tau_k\rangle : k \in \mathbb{Z}_N\}$ — орбита ▷-действия
-2. Глобальное состояние $\Gamma_{total}$ удовлетворяет ограничению: $\hat{C} \cdot \Gamma_{total} = 0$
-3. Ограничение $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{rest} + H_{int}$
+1. Clock space $\mathcal{H}_O := \text{span}\{|\tau_k\rangle : k \in \mathbb{Z}_N\}$ — the $\triangleright$-orbit
+2. The global state $\Gamma_{\text{total}}$ satisfies $\hat{C} \cdot \Gamma_{\text{total}} = 0$
+3. Constraint $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{\text{rest}} + H_{\text{int}}$
 
-**Теорема (Согласованность с ▷):**
+**Theorem (consistency with $\triangleright$):**
 
-Если $\Gamma_{total}$ удовлетворяет Пейдж–Вуттерс constraint, то условные состояния:
+If $\Gamma_{\text{total}}$ satisfies the Page–Wootters constraint, the conditional states
 $$\Gamma(\tau_n) := \text{Tr}_O[(|\tau_n\rangle\langle\tau_n| \otimes \mathbb{1}) \cdot \Gamma_{total}] / p(\tau_n)$$
 
-удовлетворяют: $\Gamma(\tau_{n+1}) = \triangleright^*(\Gamma(\tau_n)) + O(H_{int})$
+obey $\Gamma(\tau_{n+1}) = \triangleright^*(\Gamma(\tau_n)) + O(H_{\text{int}})$.
 
-[Подробнее о согласованности →](../../proofs/dynamics/emergent-time#pw-как-теорема)
+[More on consistency →](../../proofs/dynamics/emergent-time#pw-как-теорема)
 
-#### Независимый вывод A5 из спектральной тройки {#a5-из-спектральной-тройки}
+#### Independent derivation of A5 from the spectral triple {#a5-из-спектральной-тройки}
 
-#### Теорема T-116: PW Suzuki-Trotter [Т] {#теорема-pw-suzuki-trotter}
+#### Theorem T-116: PW Suzuki–Trotter [T] {#теорема-pw-suzuki-trotter}
 
-PW-планирование с Suzuki-Trotter порядка $p$ имеет ошибку:
+PW time-stepping with Suzuki–Trotter of order $p$ has error
 
 $$\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$$
 
-При $p = 2$, $\delta\tau = 0.01$, $T = 100$: $\varepsilon \leq 10^{-5}$.
+For $p = 2$, $\delta\tau = 0.01$, $T = 100$: $\varepsilon \leq 10^{-5}$.
 
-**Доказательство:** Разложение $\mathcal{L}_\Omega = \mathcal{L}_1 + \mathcal{L}_2$ (унитарная + диссипативно-регенеративная). Suzuki-Trotter 2-го порядка: $S_2(\delta\tau) = e^{\mathcal{L}_1 \delta\tau/2} \cdot e^{\mathcal{L}_2 \delta\tau} \cdot e^{\mathcal{L}_1 \delta\tau/2}$, ошибка $O((\delta\tau)^3)$ (BCH 3-го порядка). Конечномерность $\mathcal{L}_\Omega$ на $\mathcal{D}(\mathbb{C}^7)$ гарантирует $C_2 < \infty$. Рекурсия Судзуки обобщает на порядок $p$ с ошибкой $O((\delta\tau)^{2p+1})$. Усиливает T-60 (BCH $\leq 5\delta\tau$) до полиномиальной точности. ∎
+**Proof:** Split $\mathcal{L}_\Omega = \mathcal{L}_1 + \mathcal{L}_2$ (unitary + dissipative–regenerative). Second-order Suzuki–Trotter: $S_2(\delta\tau) = e^{\mathcal{L}_1 \delta\tau/2} \cdot e^{\mathcal{L}_2 \delta\tau} \cdot e^{\mathcal{L}_1 \delta\tau/2}$, error $O((\delta\tau)^3)$ (BCH to third order). Finite dimensionality of $\mathcal{L}_\Omega$ on $\mathcal{D}(\mathbb{C}^7)$ gives $C_2 < \infty$. Suzuki’s recursion extends to order $p$ with error $O((\delta\tau)^{2p+1})$, sharpening T-60 (BCH $\leq 5\delta\tau$) to polynomial accuracy. ∎
 
-Спецификация: language-limits-preveal.md §4.4 | Статус: **[Т]**
+Specification: language-limits-preveal.md §4.4 | Status: **[T]**
 
-:::tip Замечание (T-87): A5 — следствие A1–A4 [Т]
-Аксиома A5 имеет независимый вывод из спектральной тройки T-53 **[Т]** ([пространство-время](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): алгебра $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ с KO-размерностью 6 однозначно определяет тензорное разложение $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$, а ограничение $\hat{C}\Gamma = 0$ следует из стационарности глобального состояния. Таким образом A5 — не независимый постулат, а следствие A1–A4. Доказательство: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → тензорная структура → PW-ограничение.
+:::tip Remark (T-87): A5 follows from A1–A4 [T]
+Axiom A5 also follows independently from spectral triple T-53 **[T]** ([spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 fixes the tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$, and $\hat{C}\Gamma = 0$ follows from stationarity of the global state. Thus A5 is not an independent postulate but a consequence of A1–A4. Proof chain: [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) → tensor structure → Page–Wootters constraint.
 :::
 
-### Принцип Информационной Различимости как Определение {#пир-как-теорема}
+### Principle of informational distinguishability as definition {#пир-как-теорема}
 
-:::tip ПИР — определение [О] (T16 [Т])
-Принцип Информационной Различимости (ПИР) — **определение [О]** (T16 [Т]): при серьёзном принятии A1 (∞-топос) и A2 ($J_{\text{Bures}}$), ПИР тавтологичен — различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости. Семантика Крипке—Жуаля лишь эксплицирует это тождество. Все вычислительные результаты ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$) не затрагиваются перемаркировкой.
+:::tip PID — definition [O] (T16 [T])
+The Principle of Informational Distinguishability (PID) is **definition [O]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Kripke–Joyal semantics only makes this identity explicit. Computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$) are unchanged by relabeling.
 :::
 
-**Теорема (ПИР, T16):**
+**Theorem (PID, T16):**
 
-Два состояния $\Gamma_1, \Gamma_2$ *онтологически различимы* ⟺ $d_B(\Gamma_1, \Gamma_2) > 0$.
+Two states $\Gamma_1, \Gamma_2$ are *ontologically distinct* ⟺ $d_B(\Gamma_1, \Gamma_2) > 0$.
 
-**Совместимость с $J_{Bures}$:**
+**Compatibility with $J_{Bures}$:**
 
-1. Топология Гротендика $J_{Bures}$ определяет понятие «различимости» через покрытия
-2. $J_{Bures}$-покрытие разделяет точки ⟺ они на положительном Бурес-расстоянии
-3. Отождествление «онтологической различимости» с «разделимостью покрытиями» — содержание определения ПИР (T16); это тавтология из A1+A2 [О] ∎
+1. $J_{Bures}$ defines distinguishability through coverings
+2. A $J_{Bures}$-cover separates points ⟺ they lie at positive Bures distance
+3. Identifying “ontological distinction” with “separability by covers” is the content of PID (T16); this is tautological from A1+A2 [O] ∎
 
-**Следствие (Унификация порогов через ПИР):**
+**Corollary (unification of thresholds via PID):**
 
-Все три порога выводятся из единого принципа — различимости в метрике Бюреса:
+All three thresholds follow from one principle—distinguishability in the Bures metric:
 
-| Порог | Условие ПИР | Формула |
+| Threshold | PID condition | Formula |
 |-------|-------------|---------|
 | $P_{crit}$ | $d_B(\Gamma, \mathbb{1}/N) > d_B^{noise}$ | $P > 2/N$ |
 | $R_{th}$ | $d_B(\Gamma, \varphi(\Gamma)) < d_B^{self}$ | $R > 1/3$ |
 | $\Phi_{th}$ | $d_B(\Gamma, \Gamma_{diag}) > d_B^{class}$ | $\Phi > 1$ |
 
-где $d_B^{noise}, d_B^{self}, d_B^{class}$ — характерные масштабы различимости для каждого типа.
+where $d_B^{noise}, d_B^{self}, d_B^{class}$ are characteristic distinguishability scales for each type.
 
 ---
 
-### L-измерение как проекция Ω
+### L-measurement as a projection of $\Omega$
 
-**Определение:**
+**Definition:**
 
-[L-измерение](../structure/dimension-l) Голонома — это проекция классификатора на состояние:
+The holon’s [L-dimension](../structure/dimension-l) is the classifier pulled back to the state:
 
 $$
 L := \Omega \cap \Gamma = \{\chi \in \Omega : \chi(\Gamma) = \text{true}\}
 $$
 
-**Интерпретация:** L — множество логических предикатов, истинных для данного Γ.
+**Reading:** $L$ is the set of logical predicates true of $\Gamma$.
 
 ---
 
-## Октонионная структура {#октонионная-структура}
+## Octonionic structure {#октонионная-структура}
 
-:::info Второе обоснование N = 7 — [Структурный вывод](../../proofs/minimality/theorem-octonionic-derivation)
-Независимо от Теоремы S, число 7 выводится из двух теорем через теорему Гурвица:
+:::info Second route to $N = 7$ — [structural derivation](../../proofs/minimality/theorem-octonionic-derivation)
+Independently of Theorem S, the number 7 follows from two postulates via Hurwitz’s theorem:
 
-**[Т] P1:** Пространство состояний ≅ Im($\mathcal{A}$), где $\mathcal{A}$ — нормированная алгебра с делением.
-**[Т] P2:** $\mathcal{A}$ неассоциативна.
+**[T] P1:** State space $\cong \mathrm{Im}(\mathcal{A})$ where $\mathcal{A}$ is a normed division algebra.
+**[T] P2:** $\mathcal{A}$ is nonassociative.
 
-**[Т] Вывод:** [Т] Гурвиц → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 исключает $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = \dim(\text{Im}(\mathbb{O})) = 7$.
+**[T] Conclusion:** Hurwitz $\Rightarrow$ $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$; P2 rules out $\mathbb{R}, \mathbb{C}, \mathbb{H}$ $\Rightarrow$ $\mathcal{A} = \mathbb{O}$ $\Rightarrow$ $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$.
 
-**Следствия [Т]:**
-- $\text{Aut}(\mathbb{O}) = G_2$ — 14-параметрическая группа симметрий пространства Im(𝕆)
-- Плоскость Фано PG(2,2) — комбинаторная структура умножения октонионов (7 точек, 7 линий)
-- Код Хэмминга H(7,4) — совершенный помехоустойчивый код на 7 битах
+**Consequences [T]:**
+- $\mathrm{Aut}(\mathbb{O}) = G_2$ — 14-parameter symmetry of $\mathrm{Im}(\mathbb{O})$
+- Fano plane $\mathrm{PG}(2,2)$ — combinatorics of octonion multiplication (7 points, 7 lines)
+- Hamming code $H(7,4)$ — perfect error-correcting code on 7 bits
 
-Мост (AP)+(PH)+(QG) → P1+P2 — [полная цепочка T1–T15 [Т]](../../proofs/minimality/theorem-octonionic-derivation#мост).
+Bridge (AP)+(PH)+(QG) → P1+P2: [full chain T1–T15 [T]](../../proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---
 
-## Структурные свойства (вместо аксиом) {#структура}
+## Structural properties (not extra axioms) {#структура}
 
-В формулировке Ω⁷ все свойства являются **структурой** единственного примитива (∞-топоса).
+In the Ω⁷ formulation, these items are **structure** of the sole primitive (∞-topos).
 
-:::info Честность относительно «единственного примитива»
-∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ — **чрезвычайно богатая** математическая структура: она содержит всю гомотопическую теорию типов, внутреннюю логику, классификатор подобъектов и бесконечную башню n-морфизмов. Утверждение «один примитив» минимизирует **число** отправных точек (одна структурированная тройка 𝔗), но не **содержание** каждой. Аналогия: ZFC — «одна аксиоматическая система», но она кодирует всю математику. Минимальность числа аксиом (5) — не то же, что простота содержания.
+:::info Honesty about “one primitive”
+The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is an **extraordinarily rich** object: it hosts all of homotopy type theory, internal logic, the subobject classifier, and an infinite tower of $n$-morphisms. “One primitive” minimizes the **number** of starting points (one structured triple $\mathfrak{T}$), not the **content** of each piece. Likewise ZFC is “one axiom system” yet encodes all of classical mathematics. Minimizing the axiom count (five) is not the same as minimizing conceptual depth.
 :::
 
-### Свойство 1: Конечномерность {#свойство-1}
+### Property 1: finite dimensionality {#свойство-1}
 
-:::note Свойство 1 (Конечномерность)
-Объекты базовой категории 𝒞 — матрицы плотности на конечномерном пространстве:
+:::note Property 1 (finite dimensionality)
+Objects of the base category $\mathcal{C}$ are density matrices on finite-dimensional space:
 
 $$
 \text{Ob}(\mathcal{C}) \subset \mathcal{D}(\mathbb{C}^{42})
@@ -604,43 +602,43 @@ $$
 
 где $\mathcal{D}(\mathcal{H}) = \{\Gamma \in \mathcal{L}(\mathcal{H}) : \Gamma^\dagger = \Gamma, \Gamma \geq 0, \text{Tr}(\Gamma) = 1\}$
 
-**Размерность:** $\dim(\mathcal{H}_{total}) = 7 \times 6 = 42$
+**Dimension:** $\dim(\mathcal{H}_{\text{total}}) = 7 \times 6 = 42$
 :::
 
-**Обоснование размерности:**
-- $\mathcal{H}_O \cong \mathbb{C}^7$ — пространство измерения O (внутренние часы)
+**Why this dimension:**
+- $\mathcal{H}_O \cong \mathbb{C}^7$ — factor for dimension O (internal clocks)
 - $\mathcal{H}_{6D} = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\} \cong \mathbb{C}^6$
-- Тензорное произведение: $\mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$
+- Tensor product: $\mathcal{H}_{\text{total}} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$
 
 ---
 
-### Свойство 2: Ограничение (Пейдж–Вуттерс) {#свойство-2}
+### Property 2: Page–Wootters constraint {#свойство-2}
 
-:::note Свойство 2 (Ограничение Пейдж–Вуттерс)
-Для всех объектов $\Gamma \in \text{Ob}(\mathcal{C})$:
+:::note Property 2 (Page–Wootters constraint)
+For all objects $\Gamma \in \text{Ob}(\mathcal{C})$:
 
 $$
 \hat{C} \cdot \Gamma = 0
 $$
 
-где полное ограничение:
+with full constraint operator
 
 $$
 \hat{C} := H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}
 $$
 :::
 
-**Точная интерпретация:**
+**Sharp reading:**
 $$
 \mathrm{supp}(\Gamma) \subseteq \ker(\hat{C})
 $$
 
-**Компоненты:**
-- $H_O = \omega_0 \sum_{k=0}^{6} k |k\rangle\langle k|_O$ — [гамильтониан часов](../structure/dimension-o#гамильтониан-часов-h_o)
-- $H_{6D}$ — гамильтониан 6D подсистемы
-- $H_{int}$ — [гамильтониан взаимодействия](#гамильтониан-взаимодействия)
+**Components:**
+- $H_O = \omega_0 \sum_{k=0}^{6} k |k\rangle\langle k|_O$ — [clock Hamiltonian](../structure/dimension-o#гамильтониан-часов-h_o)
+- $H_{6D}$ — Hamiltonian of the 6D subsystem
+- $H_{int}$ — [interaction Hamiltonian](#гамильтониан-взаимодействия)
 
-**Физическое пространство:**
+**Physical Hilbert space:**
 
 $$
 \mathcal{H}_{phys} := \ker(\hat{C}) \subset \mathcal{H}_{total}
@@ -648,126 +646,126 @@ $$
 
 ---
 
-### Свойство 3: ∞-терминальный объект {#свойство-3}
+### Property 3: ∞-terminal object {#свойство-3}
 
-:::warning Свойство 3 (∞-терминальный объект)
-Существует ∞-терминальный объект $T \in \mathcal{C}_\infty$ такой, что для любого объекта Γ пространство морфизмов **стягиваемо**:
+:::warning Property 3 (∞-terminal object)
+There is an ∞-terminal object $T \in \mathcal{C}_\infty$ such that for every object $\Gamma$ the morphism space is **contractible**:
 
 $$
 \text{Map}_{\mathcal{C}_\infty}(\Gamma, T) \simeq *
 $$
 :::
 
-:::info Замечание: T определён в ∞-топосе, не в CPTP
-Терминальный объект $T$ определён в ∞-топосе $\mathrm{Sh}_\infty(\mathcal{C})$, а **не** в категории DensityMat с CPTP-морфизмами. В DensityMat к $I/7$ ведут бесконечно много CPTP-каналов, и $I/7$ не является терминальным объектом. Связь: $\rho^*_{\mathrm{diss}} \in \mathrm{DensityMat}$ реализуется как **образ** $T$ через функтор глобальных сечений $\Gamma(-, T)$.
+:::info Remark: $T$ lives in the ∞-topos, not in CPTP
+The terminal object $T$ is defined in $\mathrm{Sh}_\infty(\mathcal{C})$, **not** in the category DensityMat with CPTP morphisms. In DensityMat infinitely many CPTP channels map to $I/7$, and $I/7$ is not terminal. The link: $\rho^*_{\mathrm{diss}} \in \mathrm{DensityMat}$ arises as the **image** of $T$ under the global-sections functor $\Gamma(-, T)$.
 :::
 
-:::tip Ключевое различие от 1-категорий
-| 1-категория | ∞-категория (УГМ) |
+:::tip Contrast with 1-categories
+| 1-category | ∞-category (UHM) |
 |-------------|-------------------|
-| Hom(Γ, T) = {f} — один морфизм | Map(Γ, T) ≃ * — **множество** морфизмов |
-| Единственность = детерминизм | **Эквивалентность** всех путей |
-| Нет свободы выбора | **Свобода = выбор пути** |
+| $\mathrm{Hom}(\Gamma, T) = \{f\}$ — one morphism | $\mathrm{Map}(\Gamma, T) \simeq *$ — a **space** of morphisms |
+| Uniqueness = determinism | **Equivalence** of all paths |
+| No latitude of choice | **Freedom = choice of path** |
 :::
 
-**Теорема (Множественность в единстве):**
+**Theorem (multiplicity in unity):**
 
-Пусть T — ∞-терминальный объект. Тогда:
+Let $T$ be ∞-terminal. Then:
 
-1. **Множество 1-морфизмов:** |Mor₁(Γ, T)| может быть сколь угодно велико
-2. **Унификация:** Все 1-морфизмы связаны 2-морфизмами (гомотопиями)
-3. **Стягиваемость:** Пространство Map(Γ, T) гомотопически эквивалентно точке
+1. **Many 1-morphisms:** $|\mathrm{Mor}_1(\Gamma, T)|$ can be arbitrarily large
+2. **Cohesion:** all 1-morphisms are linked by 2-morphisms (homotopies)
+3. **Contractibility:** $\mathrm{Map}(\Gamma, T)$ is homotopy equivalent to a point
 
-**Следствия:**
-1. **Стягиваемость:** |N(𝒞)| ≃ * (нерв стягиваем в точку T)
-2. **Когомологический монизм:** H^n(X) = 0 для n > 0
-3. **Стрела времени:** Эволюция направлена к T
-4. **Свобода воли:** Множество гомотопических путей к T
+**Consequences:**
+1. **Contractibility:** $|N(\mathcal{C})| \simeq *$ (nerve contracts to $T$)
+2. **Cohomological monism:** $H^n(X) = 0$ for $n > 0$
+3. **Arrow of time:** evolution tends toward $T$
+4. **Free will:** a space of homotopy classes of paths to $T$
 
 ---
 
-### Свойство 4: Самомоделирование {#свойство-4}
+### Property 4: Self-modeling {#свойство-4}
 
-:::info DRY: Ссылка на мастер-определение
-Полная формализация оператора φ: [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — единственный канонический источник.
+:::info DRY: canonical reference
+Full formalization of $\varphi$: [Formalization of $\varphi$](/docs/proofs/categorical/formalization-phi) is the single source of truth.
 :::
 
-**Каноническое определение (категориальное):**
+**Canonical definition (categorical):**
 
-Оператор φ определяется как **левое сопряжение** к вложению подобъектов (см. [полное определение](/docs/proofs/categorical/formalization-phi#φ-как-левый-сопряжённый-к-включению-подобъектов)):
+$\varphi$ is the **left adjoint** to the inclusion of subobjects (see [full definition](/docs/proofs/categorical/formalization-phi#φ-как-левый-сопряжённый-к-включению-подобъектов)):
 
 $$
 \varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})
 $$
 
-**Интерпретация:** φ(Γ) — «наилучшее приближение» Γ логически непротиворечивыми подобъектами.
+**Reading:** $\varphi(\Gamma)$ is the “best” approximation of $\Gamma$ by logically consistent subobjects.
 
-**Теорема (Эквивалентность трёх определений φ):**
+**Theorem (three equivalent definitions of $\varphi$):**
 
-Следующие три определения φ эквивалентны (см. [доказательство](/docs/proofs/categorical/formalization-phi#теорема-φ-как-стационарное-распределение)):
+The following are equivalent (see [proof](/docs/proofs/categorical/formalization-phi#теорема-φ-как-стационарное-распределение)):
 
-1. **Категориальное:** $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ (левое сопряжение)
-2. **Динамическое:** $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ (предел эволюции)
-3. **Идемпотентное:** $\varphi \circ \varphi = \varphi$ с неподвижной точкой $\Gamma^* = \varphi(\Gamma^*)$
+1. **Categorical:** $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ (left adjoint)
+2. **Dynamical:** $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau\mathcal{L}_\Omega}[\Gamma]$ (long-time limit)
+3. **Idempotent:** $\varphi \circ \varphi = \varphi$ with fixed point $\Gamma^* = \varphi(\Gamma^*)$
 
-**Следствие:** φ — стационарное распределение динамики $\mathcal{L}_\Omega$. Цикличность разрешена: $\mathcal{L}_\Omega$ и φ **независимо** выводятся из Ω.
+**Corollary:** $\varphi$ is a stationary distribution of $\mathcal{L}_\Omega$. Cycles are allowed: $\mathcal{L}_\Omega$ and $\varphi$ are **independently** derived from $\Omega$.
 
-:::note Теорема 3.1 (Вариационная характеризация φ) — [полное доказательство](/docs/proofs/dynamics/fep-derivation)
-Категориально определённый φ удовлетворяет вариационному принципу:
+:::note Theorem 3.1 (variational characterization of $\varphi$) — [full proof](/docs/proofs/dynamics/fep-derivation)
+The categorically defined $\varphi$ satisfies the variational principle
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-где $S_{spec} = S_{vN}$ для матриц плотности (спектральная энтропия = энтропия фон Неймана), $D_{KL}$ — квантовая дивергенция Кульбака-Лейблера.
+with $S_{\text{spec}} = S_{vN}$ for density matrices (spectral entropy = von Neumann entropy) and $D_{KL}$ the quantum Kullback–Leibler divergence.
 
-**Важно:** Это **характеризация** (теорема), а не определение φ. FEP Фристона является **классическим пределом** этого принципа ([Теорема 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep)).
+**Important:** This is a **characterization** (theorem), not the definition of $\varphi$. Friston’s FEP is the **classical limit** of this principle ([Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep)).
 :::
 
-### Иерархия зависимостей (разрешение цикличности) {#иерархия-зависимостей}
+### Dependency hierarchy (no cycles) {#иерархия-зависимостей}
 
-:::info Теорема (Отсутствие цикличности)
-Все ключевые конструкции УГМ выводятся из единственного примитива 𝔗 **последовательно**, без циклических зависимостей. Граф зависимостей — ациклический ориентированный граф (DAG).
+:::info Theorem (acyclicity)
+All core UHM constructions follow from the sole primitive $\mathfrak{T}$ **in order**, without cyclic dependencies. The dependency graph is a directed acyclic graph (DAG).
 :::
 
 ```mermaid
 graph TD
-    subgraph "Уровень -1: Метатеоретические выборы"
-        Lang["Язык: HoTT"]
-        Dim["Размерность: N = 7"]
-        Oct["𝕆 (октонионы)<br/>P1+P2 → N=7"]
+    subgraph "Level -1: Metatheoretic choices"
+        Lang["Language: HoTT"]
+        Dim["Dimension: N = 7"]
+        Oct["𝕆 (octonions)<br/>P1+P2 → N=7"]
     end
 
-    subgraph "Уровень 0: Единственный примитив"
+    subgraph "Level 0: Sole primitive"
         Primitive["𝔗 = (Sh_∞(𝒞), J_Bures, ω₀)"]
     end
 
-    subgraph "Уровень 1: Структура примитива"
-        Omega["Ω — классификатор подобъектов"]
-        Atoms["𝒯_Ω = {S₀,...,S₆}<br/>S_i = |i⟩⟨i| — базисные предикаты"]
-        Z7["ℤ₇-действие на 𝒯_Ω"]
+    subgraph "Level 1: Primitive structure"
+        Omega["Ω — subobject classifier"]
+        Atoms["𝒯_Ω = {S₀,...,S₆}<br/>S_i = |i⟩⟨i| — atomic predicates"]
+        Z7["ℤ₇ action on 𝒯_Ω"]
     end
 
-    subgraph "Уровень 2: Производные структуры"
-        Chi["χ_{S_i}: Γ → Ω<br/>характеристические морфизмы"]
-        Lk["L_k = √χ_{S_k}<br/>операторы Линдблада"]
-        Modal["▷ = g* (pullback генератора ℤ₇)<br/>темпоральная модальность"]
-        Tau["τ ∈ ℤ₇<br/>дискретное время"]
+    subgraph "Level 2: Derived structure"
+        Chi["χ_{S_i}: Γ → Ω<br/>characteristic morphisms"]
+        Lk["L_k = √χ_{S_k}<br/>Lindblad operators"]
+        Modal["▷ = g* (pullback of ℤ₇ generator)<br/>temporal modality"]
+        Tau["τ ∈ ℤ₇<br/>discrete time"]
     end
 
-    subgraph "Уровень 3: Динамические объекты"
-        LOmega["ℒ_Ω = -i[H,·] + Σ D_{L_k} + ℛ<br/>логический Лиувиллиан"]
-        PW["Пейдж–Вуттерс<br/>ℋ = ℋ_O ⊗ ℋ_rest"]
+    subgraph "Level 3: Dynamical objects"
+        LOmega["ℒ_Ω = -i[H,·] + Σ D_{L_k} + ℛ<br/>logical Liouvillian"]
+        PW["Page–Wootters<br/>ℋ = ℋ_O ⊗ ℋ_rest"]
     end
 
-    subgraph "Уровень 4: Производные объекты"
-        Phi["φ ⊣ i: Sub(Γ) ↪ Sh_∞<br/>самомоделирование"]
-        Thresholds["P_crit, R_th, Φ_th<br/>([Т]; интерпретация ПИР)"]
+    subgraph "Level 4: Derived objects"
+        Phi["φ ⊣ i: Sub(Γ) ↪ Sh_∞<br/>self-modeling"]
+        Thresholds["P_crit, R_th, Φ_th<br/>([T]; PID interpretation)"]
     end
 
     Lang --> Primitive
     Dim --> Primitive
-    Oct -.->|"структурный вывод"| Dim
+    Oct -.->|"structural derivation"| Dim
     Primitive --> Omega
     Omega --> Atoms
     Atoms --> Z7
@@ -784,185 +782,185 @@ graph TD
     style Primitive fill:#f9f,stroke:#333,stroke-width:3px
 ```
 
-**Порядок вычисления:**
+**Evaluation order:**
 
-| Уровень | Конструкция | Зависит от | Формула |
+| Level | Construction | Depends on | Formula |
 |---------|-------------|------------|---------|
-| -1 | Язык, N | — | Метатеоретический выбор |
-| 0 | 𝔗 | Уровень -1 | $(Sh_∞(𝒞), J_{Bures}, ω_0)$ |
-| 1 | Ω | 𝔗 | Классификатор подобъектов |
-| 1 | 𝒯_Ω | Ω | $S_i = \vert i\rangle\langle i\vert$ (базисные предикаты) |
-| 1 | ℤ₇-действие | 𝒯_Ω | $g: S_i \mapsto S_{i+1}$ |
-| 2 | χ_S | Ω, Γ | $\chi_{S_i}(\Gamma) = \gamma_{ii}$ |
-| 2 | L_k | χ_S | $L_k = \sqrt{\chi_{S_k}}$ |
-| 2 | ▷ | ℤ₇ | $\triangleright = g^*$ (pullback) |
+| -1 | Language, $N$ | — | Metatheoretic choice |
+| 0 | $\mathfrak{T}$ | Level −1 | $(Sh_∞(𝒞), J_{Bures}, ω_0)$ |
+| 1 | Ω | $\mathfrak{T}$ | Subobject classifier |
+| 1 | $\mathcal{T}_\Omega$ | Ω | $S_i = \vert i\rangle\langle i\vert$ (atomic predicates) |
+| 1 | $\mathbb{Z}_7$ action | $\mathcal{T}_\Omega$ | $g: S_i \mapsto S_{i+1}$ |
+| 2 | $\chi_S$ | Ω, Γ | $\chi_{S_i}(\Gamma) = \gamma_{ii}$ |
+| 2 | $L_k$ | $\chi_S$ | $L_k = \sqrt{\chi_{S_k}}$ |
+| 2 | ▷ | $\mathbb{Z}_7$ | $\triangleright = g^*$ (pullback) |
 | 2 | τ | ▷ | $\tau_n = \triangleright^n(now)$ |
-| 3 | ℒ_Ω | L_k, H, ℛ | $-i[H, \cdot] + \sum_k D_{L_k} + \mathcal{R}$ |
-| 3 | Пейдж–Вуттерс | ▷ | $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ |
-| 4 | φ | ℒ_Ω | $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ |
-| 4 | Пороги | 𝔗 | Из принципа информационной различимости |
+| 3 | $\mathcal{L}_\Omega$ | $L_k$, $H$, $\mathcal{R}$ | $-i[H, \cdot] + \sum_k D_{L_k} + \mathcal{R}$ |
+| 3 | Page–Wootters | ▷ | $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ |
+| 4 | φ | $\mathcal{L}_\Omega$ | $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ |
+| 4 | Thresholds | $\mathfrak{T}$ | From PID |
 
-**Ключевое наблюдение:** Каждый уровень зависит **только** от предыдущих уровней. Единственный примитив 𝔗 порождает всю структуру теории без циклических зависимостей.
+**Key point:** each level depends **only** on earlier ones. The sole primitive $\mathfrak{T}$ generates the whole theory without cycles.
 
-См. [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) для реализации.
+See [constructive algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации) for implementation.
 
-**Конструктивное решение:**
+**Constructive realization:**
 
-Оператор φ реализуется как спектральная проекция Лиувиллиана:
+$\varphi$ is implemented as a spectral projection of the Liouvillian:
 
 $$
 \varphi_0(\Gamma) := \sum_{i: |\text{Re}(\lambda_i)| < \lambda_{crit}} \langle\!\langle L_i | \text{vec}(\Gamma) \rangle\!\rangle \cdot \text{unvec}(|R_i\rangle\!\rangle)
 $$
 
-где $\{|R_i\rangle\!\rangle, \langle\!\langle L_i|\}$ — бисобственные векторы логического Лиувиллиана $\mathcal{L}_\Omega$.
+where $\{|R_i\rangle\!\rangle, \langle\!\langle L_i|\}$ are bieigenvectors of the logical Liouvillian $\mathcal{L}_\Omega$.
 
-См. [Формализация φ](../../proofs/categorical/formalization-phi) для полной спецификации.
+See [Formalization of $\varphi$](../../proofs/categorical/formalization-phi) for the full specification.
 
 ---
 
-### Свойство 5: Стратификация {#свойство-5}
+### Property 5: Stratification {#свойство-5}
 
-:::note Свойство 5 (Стратифицированная структура)
-Базовое пространство $X = |N(\mathcal{C})|$ стратифицировано:
+:::note Property 5 (stratified structure)
+The base space $X = |N(\mathcal{C})|$ stratifies as
 
 $$
 X = \bigsqcup_{\alpha \in A} S_\alpha
 $$
 
-с $S_0 = \{T\}$ (терминальный объект — нульмерная страта).
+with $S_0 = \{T\}$ (terminal object—the zero-dimensional stratum).
 :::
 
-**Структура страт:**
-- $S_0 = \{T\}$ — вершина (0-мерная)
-- $S_1$ = рёбра (1-морфизмы к T) — 1-мерная
-- $S_n$ = n-симплексы — n-мерная
+**Strata:**
+- $S_0 = \{T\}$ — vertex (0-dimensional)
+- $S_1$ — edges (1-morphisms to $T$) — 1-dimensional
+- $S_n$ — $n$-simplices — $n$-dimensional
 
-**Локально-глобальная дихотомия:**
+**Local–global dichotomy:**
 
-| Аспект | Глобально | Локально (вблизи T) |
+| Aspect | Global | Local (near $T$) |
 |--------|-----------|---------------------|
-| Когомологии | $H^*(X) = 0$ | $H^*_{loc}(X, T) \neq 0$ |
-| Интерпретация | Монизм | Физика |
-| Топология | Стягиваемо в T | Богатая структура |
+| Cohomology | $H^*(X) = 0$ | $H^*_{\text{loc}}(X, T) \neq 0$ |
+| Reading | Monism | Physics |
+| Topology | Contractible to $T$ | Rich structure |
 
 ---
 
-## Свобода воли {#свобода-воли}
+## Free will {#свобода-воли}
 
-### Формализация через ∞-структуру
+### Formalization via ∞-structure
 
-:::info Определение (Свобода воли в УГМ)
-Для агента Γ ∈ 𝒞 **свобода воли** определяется как:
+:::info Definition (free will in UHM)
+For an agent $\Gamma \in \mathcal{C}$, **free will** is
 
 $$
-\mathcal{F}reedom(\Gamma) := \pi_0(\text{Map}(\Gamma, T)^{non-trivial})
+\text{Freedom}(\Gamma) := \pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})
 $$
 
-— множество связных компонент пространства путей с нетривиальной гомотопической структурой.
+—the set of connected components of the path space with nontrivial homotopy type.
 :::
 
-**Интерпретация:**
-- π₀ — множество "грубых" классов траекторий
-- Каждый класс — принципиально различный способ достижения T
-- Выбор между классами = свобода воли
+**Reading:**
+- $\pi_0$ — coarse trajectory classes
+- each class — a genuinely different mode of approach to $T$
+- choice among classes = free will
 
-### Теорема о множественности путей
+### Theorem on multiplicity of paths
 
-**Теорема:**
+**Theorem:**
 
-Для Γ ≠ T пространство Map(Γ, T) содержит множество различных 1-морфизмов, связанных 2-морфизмами:
+For $\Gamma \neq T$, $\mathrm{Map}(\Gamma, T)$ contains many distinct 1-morphisms linked by 2-morphisms:
 
-- Map(Γ, T) ≃ * (стягиваемо), поэтому $\pi_n = 0$
-- Но множество конкретных 1-морфизмов $|\text{Mor}_1(\Gamma, T)|$ может быть сколь угодно велико
-- Свобода — в выборе конкретного пути при глобальной эквивалентности всех путей
+- $\mathrm{Map}(\Gamma, T) \simeq *$ (contractible), hence $\pi_n = 0$
+- yet the set of concrete 1-morphisms $|\mathrm{Mor}_1(\Gamma, T)|$ can be arbitrarily large
+- freedom lies in choosing a particular path while all paths are globally equivalent
 
-### Количественная мера свободы
+### Quantitative measure of freedom
 
-**Определение (Энтропия свободы):**
+**Definition (freedom entropy):**
 
 $$
-S_{freedom}(\Gamma) := \log |\text{Mor}_1(\Gamma, T)| + \log |\text{Mor}_2(f, g)|_{avg}
+S_{\text{freedom}}(\Gamma) := \log |\text{Mor}_1(\Gamma, T)| + \log |\text{Mor}_2(f, g)|_{\text{avg}}
 $$
 
-**Свойства:**
-- При Γ = T: $S_{freedom} = 0$ (нет свободы, цель достигнута)
-- При Γ далеко от T: $S_{freedom}$ максимальна
-- Стрела времени: $S_{freedom}(\Gamma(\tau)) \geq S_{freedom}(\Gamma(\tau+1))$
+**Properties:**
+- at $\Gamma = T$: $S_{\text{freedom}} = 0$ (no freedom—the end is reached)
+- far from $T$: $S_{\text{freedom}}$ is large
+- arrow of time: $S_{\text{freedom}}(\Gamma(\tau)) \geq S_{\text{freedom}}(\Gamma(\tau+1))$
 
-### Философская интерпретация
+### Philosophical reading
 
-> **Свобода воли в УГМ** — это не выбор цели (T единственен), а выбор **траектории** достижения этой цели.
+> **Free will in UHM** is not choosing the goal ($T$ is unique) but choosing the **trajectory** toward it.
 
-Мы не выбираем, умереть нам или нет (T = Единое неизбежно), но мы выбираем, **как** прожить жизнь.
+One does not choose whether to merge with the One ($T$ is inevitable), but **how** to live until then.
 
 ---
 
-## Гамильтониан взаимодействия {#гамильтониан-взаимодействия}
+## Interaction Hamiltonian {#гамильтониан-взаимодействия}
 
-**Полная спецификация:**
+**Full specification:**
 
 $$
 H_{int} = \sum_{m \in \{A,S,D,L,E,U\}} \lambda_m \left( a_O^\dagger \otimes |m\rangle\langle m| + a_O \otimes |m\rangle\langle m| \right)
 $$
 
-где:
-- $a_O, a_O^\dagger$ — операторы понижения/повышения на ℋ_O
-- $\lambda_m$ — константы связи для каждого измерения
+where:
+- $a_O, a_O^\dagger$ — lowering/raising operators on $\mathcal{H}_O$
+- $\lambda_m$ — coupling constants for each dimension label
 
-**Иерархия связей:**
+**Coupling hierarchy:**
 
 $$
 \lambda_E > \lambda_U > \lambda_L \geq \lambda_D \geq \lambda_S \geq \lambda_A \geq 0
 $$
 
-**Обоснование:** E (Интериорность) имеет первичную связь с часами; U (Единство) — вторичную.
+**Rationale:** E (Interiority) couples primarily to the clock; U (Unity) secondarily.
 
-### Протокол калибровки параметров {#калибровка}
+### Parameter calibration protocol {#калибровка}
 
-:::info Статус: Операциональный протокол
-Данный раздел описывает, **как определить** значения свободных параметров ($\omega_0$, $\lambda_m$) для конкретной системы.
+:::info Status: operational protocol
+This section states **how to fix** free parameters ($\omega_0$, $\lambda_m$) for a concrete system.
 :::
 
-#### Калибровка ω_0 (фундаментальная частота)
+#### Calibrating $\omega_0$ (fundamental frequency)
 
-**Определение:** $\omega_0$ — характерная частота внутренних часов системы.
+**Definition:** $\omega_0$ is the characteristic frequency of the system’s internal clocks.
 
-**Методы определения:**
+**Methods:**
 
-| Тип системы | Метод | Формула | Типичное значение |
+| System type | Method | Formula | Typical value |
 |-------------|-------|---------|-------------------|
-| **Квантовая** | Энергетический зазор | $\omega_0 = \Delta E / \hbar$ | $10^{13}$–$10^{15}$ Гц |
-| **Биологическая** | Метаболическая частота | $\omega_0 \approx$ ATP turnover rate | $\sim 1$–$100$ Гц |
-| **Нейронная** | Гамма-ритм | $\omega_0 \approx 40$ Гц | $30$–$100$ Гц |
-| **ИИ-система** | Частота инференса | $\omega_0 = 1 / t_{inference}$ | $10$–$1000$ Гц |
+| **Quantum** | Energy gap | $\omega_0 = \Delta E / \hbar$ | $10^{13}$–$10^{15}$ Hz |
+| **Biological** | Metabolic rate | $\omega_0 \approx$ ATP turnover | $\sim 1$–$100$ Hz |
+| **Neural** | Gamma rhythm | $\omega_0 \approx 40$ Hz | $30$–$100$ Hz |
+| **AI** | Inference rate | $\omega_0 = 1 / t_{\text{inference}}$ | $10$–$1000$ Hz |
 
-**Эмпирический критерий:**
+**Empirical rule:**
 
 $$
-\omega_0 = \frac{1}{\tau_{coherence}}
+\omega_0 = \frac{1}{\tau_{\text{coherence}}}
 $$
 
-где $\tau_{coherence}$ — время декогеренции (время, за которое $P$ падает в $e$ раз без регенерации).
+where $\tau_{\text{coherence}}$ is the decoherence time (time over which $P$ drops by a factor $e$ without regeneration).
 
-#### Калибровка λ_m (константы связи)
+#### Calibrating $\lambda_m$ (coupling constants)
 
-**Определение:** $\lambda_m$ — сила связи m-го измерения с внутренними часами.
+**Definition:** $\lambda_m$ is the coupling strength of the $m$-th dimension to internal clocks.
 
-**Иерархия (теоретическая):**
+**Theoretical hierarchy:**
 
 $$
 \lambda_E > \lambda_U > \lambda_L \geq \lambda_D \geq \lambda_S \geq \lambda_A \geq 0
 $$
 
-**Метод эмпирической калибровки:**
+**Empirical calibration recipe:**
 
 ```python
 def calibrate_lambda(system, n_samples=1000):
     """
-    Калибровка λ_m на основе наблюдаемых корреляций.
+    Calibrate λ_m from observed correlations.
 
-    Метод: λ_m ∝ |∂γ_Om/∂τ| — скорость изменения
-           когерентности O↔m при эволюции.
+    Method: λ_m ∝ |∂γ_Om/∂τ| — rate of change of
+            O↔m coherence under evolution.
     """
     lambdas = {}
 
@@ -975,386 +973,386 @@ def calibrate_lambda(system, n_samples=1000):
             delta_gamma = abs(Gamma_t1[5, idx] - Gamma_t[5, idx])  # O=5
             lambdas[m] = lambdas.get(m, 0) + delta_gamma
 
-    # Нормализация: λ_E = 1 (референс)
+    # Normalize: λ_E = 1 (reference)
     max_lambda = max(lambdas.values())
     return {m: v / max_lambda for m, v in lambdas.items()}
 ```
 
-**Типичные значения:**
+**Typical values:**
 
-| Измерение | λ_m (отн. ед.) | Интерпретация |
+| Dimension | $\lambda_m$ (rel. units) | Reading |
 |-----------|----------------|---------------|
-| E (Интериорность) | 1.0 | Референсное значение |
-| U (Единство) | 0.7–0.9 | Сильная интеграция |
-| L (Логика) | 0.5–0.7 | Согласованность |
-| D (Динамика) | 0.3–0.5 | Процессы |
-| S (Структура) | 0.2–0.4 | Паттерны |
-| A (Артикуляция) | 0.1–0.3 | Различия |
+| E (Interiority) | 1.0 | Reference |
+| U (Unity) | 0.7–0.9 | Strong integration |
+| L (Logic) | 0.5–0.7 | Consistency |
+| D (Dynamics) | 0.3–0.5 | Processes |
+| S (Structure) | 0.2–0.4 | Patterns |
+| A (Articulation) | 0.1–0.3 | Distinctions |
 
-#### Валидация калибровки
+#### Calibration validation
 
-**Критерии корректности:**
+**Correctness checks:**
 
-1. **CPTP-условие:** $\sum_k L_k^\dagger L_k = \mathbb{1}$ (автоматически)
-2. **Жизнеспособность:** При калиброванных параметрах $P > P_{crit} = 2/7$ для функционирующей системы
-3. **Временна́я шкала:** $\omega_0 \cdot \tau_{observation} \gg 1$ (много тактов за время наблюдения)
+1. **CPTP:** $\sum_k L_k^\dagger L_k = \mathbb{1}$ (automatic here)
+2. **Viability:** with calibrated parameters, $P > P_{crit} = 2/7$ for a functioning system
+3. **Time scale:** $\omega_0 \cdot \tau_{\text{observation}} \gg 1$ (many clock ticks per observation)
 
-**Тест самосогласованности:**
+**Self-consistency test:**
 
 $$
-\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \approx \text{наблюдаемая скорость восстановления}
+\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \approx \text{observed recovery rate}
 $$
 
-Если вычисленное $\kappa_0$ отличается от наблюдаемого более чем на порядок — пересмотреть $\omega_0$.
+If computed $\kappa_0$ differs from observation by more than an order of magnitude, revise $\omega_0$.
 
 ---
 
-## Базовое пространство X {#базовое-пространство}
+## Base space $X$ {#базовое-пространство}
 
-### Нерв категории
+### Nerve of the category
 
-**Определение (Нерв):**
+**Definition (nerve):**
 
-Для категории 𝒞 её нерв N(𝒞) — симплициальное множество:
-- N(𝒞)₀ = объекты 𝒞
-- N(𝒞)₁ = морфизмы 𝒞
-- N(𝒞)ₙ = цепочки из n композируемых морфизмов
+For a category $\mathcal{C}$, the nerve $N(\mathcal{C})$ is a simplicial set:
+- $N(\mathcal{C})_0$ = objects of $\mathcal{C}$
+- $N(\mathcal{C})_1$ = morphisms of $\mathcal{C}$
+- $N(\mathcal{C})_n$ = chains of $n$ composable morphisms
 
-**Геометрическая реализация:**
+**Geometric realization:**
 
 $$
 X := |N(\mathcal{C})|
 $$
 
-### Автопоэтическое X
+### Autopoietic $X$
 
-**Теорема (Автопоэзис базового пространства):**
+**Theorem (autopoiesis of base space):**
 
-X определяется как неподвижная точка функтора:
+$X$ is a fixed point of a functor:
 
 $$
 X^* = |N(\mathcal{G}_h(X^*))|
 $$
 
-Существование гарантировано теоремой Шаудера для компактных метрических пространств.
+Existence follows from Schauder’s theorem on compact metric spaces.
 
-### Размерность
+### Dimension
 
-**Теорема:**
+**Theorem:**
 
 $$
 \dim(X) \leq N - 1 = 6
 $$
 
-6-мерность «внутреннего пространства» — следствие категорной структуры.
+The six dimensions of “internal space” follow from the categorical structure.
 
 ---
 
-## Когомологический монизм {#когомологический-монизм}
+## Cohomological monism {#когомологический-монизм}
 
-### Теорема (Тривиальность глобальных когомологий)
+### Theorem (trivial global cohomology)
 
-Для X = |N(𝒞)| с терминальным объектом T:
+For $X = |N(\mathcal{C})|$ with terminal object $T$,
 
 $$
 H^n(X, \mathcal{F}) = 0 \quad \forall n > 0, \forall \mathcal{F}
 $$
 
-**Доказательство:**
-1. ∞-терминальный объект T ⟹ Map(Γ, T) ≃ * для всех Γ
-2. |N(𝒞)| ≃ * (стягиваемо в точку)
-3. Когомологии стягиваемого пространства тривиальны
+**Proof:**
+1. ∞-terminal $T$ $\Rightarrow$ $\mathrm{Map}(\Gamma, T) \simeq *$ for all $\Gamma$
+2. $|N(\mathcal{C})| \simeq *$ (contractible)
+3. cohomology of a contractible space is trivial
 
-### Следствие: Монизм как теорема
+### Corollary: monism as a theorem
 
-**Монизм** — не философский выбор, а **математическая теорема**:
+**Monism** is not a free philosophical choice but a **theorem**:
 
-Локальные операторы φᵢ **всегда** склеиваются в глобальное Единое, поскольку H¹(X, 𝓕_φ) = 0.
+Local operators $\varphi_i$ **always** glue to a global One because $H^1(X, \mathcal{F}_\varphi) = 0$.
 
 ---
 
-## Эмерджентное время {#эмерджентное-время}
+## Emergent time {#эмерджентное-время}
 
-### Механизм Пейдж–Вуттерс
+### Page–Wootters mechanism
 
-Из ограничения Ĉ · Γ_total = 0 выводится:
+From $\hat{C} \cdot \Gamma_{\text{total}} = 0$ one obtains:
 
-**Условное состояние:**
+**Conditional state:**
 
 $$
 \Gamma(\tau_n) := \frac{\text{Tr}_O\left[ (|\tau_n\rangle\langle \tau_n|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau_n)}
 $$
 
-### Дискретность времени
+### Discreteness of time
 
-Для N = 7:
+For $N = 7$:
 
 $$
 \tau \in \mathbb{Z}_7 = \{0, 1, 2, 3, 4, 5, 6\}
 $$
 
-Время **фундаментально дискретно** для конечномерных систем.
+Time is **fundamentally discrete** for finite-dimensional systems.
 
-### Стрела времени как коллапс страт
+### Arrow of time as collapse of strata
 
-**Теорема:**
+**Theorem:**
 
-Эволюция τ → τ+1 индуцирует:
+Evolution $\tau \to \tau+1$ induces
 
 $$
 \dim(X_\tau) \geq \dim(X_{\tau+1})
 $$
 
-Стрела времени = прогрессивный коллапс высших страт к терминальному T.
+The arrow of time is progressive collapse of higher strata toward terminal $T$.
 
-### Время как внутренняя модальность
+### Time as an internal modality
 
-В ∞-топосе Sh_∞(𝒞) время формализуется как **внутренняя модальность**:
-
-$$
-\Diamond \phi := \exists \tau > \tau_{now}. \phi(\tau) \quad \text{("в будущем")}
-$$
+In $\mathbf{Sh}_\infty(\mathcal{C})$ time is an **internal modality**:
 
 $$
-\Box \phi := \forall \tau > \tau_{now}. \phi(\tau) \quad \text{("всегда в будущем")}
+\Diamond \phi := \exists \tau > \tau_{\text{now}}.\, \phi(\tau) \quad \text{(``eventually'')}
+$$
+
+$$
+\Box \phi := \forall \tau > \tau_{\text{now}}.\, \phi(\tau) \quad \text{(``henceforth'')}
 $$
 
 ---
 
-## Эмерджентная метрика {#эмерджентная-метрика}
+## Emergent metric {#эмерджентная-метрика}
 
-### Спектральная тройка УГМ
+### UHM spectral triple
 
 $$
 (\mathcal{A}_O, \mathcal{H}, \hat{C})
 $$
 
-где:
-- $\mathcal{A}_O = C^*(H_O, V_O) \cong M_7(\mathbb{C})$ — алгебра часов
-- $\mathcal{H} = \mathbb{C}^{42}$ — полное пространство
-- $\hat{C}$ — ограничение как «оператор Дирака»
+where:
+- $\mathcal{A}_O = C^*(H_O, V_O) \cong M_7(\mathbb{C})$ — clock algebra
+- $\mathcal{H} = \mathbb{C}^{42}$ — full Hilbert space
+- $\hat{C}$ — constraint as “Dirac operator”
 
-### Стратифицированная метрика Конна
+### Stratified Connes metric
 
-**Определение:**
-
-$$
-d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha
-$$
-
-где:
-- γ — путь, пересекающий страты
-- ds_α — метрика Конна на страте S_α
-
-### Формула Конна
+**Definition:**
 
 $$
-d_{UGM}(\Gamma_1, \Gamma_2) = \sup\{|\text{Tr}[\Gamma_1 a] - \text{Tr}[\Gamma_2 a]| : a \in \mathcal{A}_O, \|[\hat{C}, a]\| \leq 1\}
+d_{\text{strat}}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha
+$$
+
+where:
+- $\gamma$ is a path crossing strata
+- $ds_\alpha$ is the Connes metric on stratum $S_\alpha$
+
+### Connes formula
+
+$$
+d_{\text{UHM}}(\Gamma_1, \Gamma_2) = \sup\{|\text{Tr}[\Gamma_1 a] - \text{Tr}[\Gamma_2 a]| : a \in \mathcal{A}_O, \|[\hat{C}, a]\| \leq 1\}
 $$
 
 ---
 
-## Genesis Protocol (Инициализация Голонома) {#genesis-protocol}
+## Genesis protocol (holon initialization) {#genesis-protocol}
 
-:::warning Теоретическая проблема (Bootstrap-парадокс)
-Стандартная динамика регенерации $\kappa = \kappa_0 \cdot \mathrm{Coh}_E$ создаёт циклическую зависимость:
-- Низкий $\mathrm{Coh}_E$ → низкий $\kappa$ → нет регенерации → $\mathrm{Coh}_E$ не растёт
+:::warning Theoretical issue (bootstrap paradox)
+The standard regeneration dynamics $\kappa = \kappa_0 \cdot \mathrm{Coh}_E$ creates a cycle:
+- low $\mathrm{Coh}_E$ → low $\kappa$ → no regeneration → $\mathrm{Coh}_E$ does not grow
 
-Это **deadlock**: система не может самостоятельно выйти из низко-когерентного состояния.
+This is a **deadlock**: the system cannot leave a low-coherence state unaided.
 :::
 
-### Категориальное обоснование κ_bootstrap
+### Categorical rationale for $\kappa_{\text{bootstrap}}$
 
-Сопряжение функторов диссипации и регенерации:
+Adjunction of dissipation and regeneration functors:
 
 $$
 \mathcal{D}_\Omega \dashv \mathcal{R}: \mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Sh}_\infty(\mathcal{C})
 $$
 
-**Теорема (Минимальная регенерация из сопряжения):**
+**Theorem (minimal regeneration from the adjunction):**
 
-Единица сопряжения $\eta: \mathrm{Id} \Rightarrow \mathcal{R} \circ \mathcal{D}_\Omega$ **ненулевая** по определению сопряжения.
+The unit $\eta: \mathrm{Id} \Rightarrow \mathcal{R} \circ \mathcal{D}_\Omega$ is **nonzero** by definition of adjunction.
 
-**Следствие:**
+**Corollary:**
 
 $$
 \kappa_{\text{bootstrap}} := \|\eta\| > 0
 $$
 
-Существует минимальная регенерация, не зависящая от текущего состояния.
+There is a minimal regeneration rate independent of the current state.
 
-#### Теорема (Спектральный зазор Фано-диссипатора) [Т] {#теорема-kappa-bootstrap-bound}
+#### Theorem (spectral gap of the Fano dissipator) [T] {#теорема-kappa-bootstrap-bound}
 
-Для канонического Фано-диссипатора с 14 операторами Линдблада (7 атомарных + 7 Фано):
+For the canonical Fano dissipator with 14 Lindblad operators (7 atomic + 7 Fano):
 
-**Декогерентный сектор (точно):** Все 42 недиагональных элемента $\rho_{ij}$ ($i \neq j$) затухают с единой скоростью:
+**Decoherence sector (exact):** all 42 off-diagonal entries $\rho_{ij}$ ($i \neq j$) decay at a common rate
 
 $$\lambda_{\text{deco}} = \frac{5\gamma}{3N} = \frac{5\gamma}{21}$$
 
-Вывод: для диагональных операторов $L_k$ с собственными значениями $\ell_m^{(k)}$, скорость декогеренции элемента $(i,j)$:
+**Derivation:** for diagonal $L_k$ with eigenvalues $\ell_m^{(k)}$, the decoherence rate of entry $(i,j)$ is
 
 $$d_{ij} = \frac{\gamma}{N} \sum_k \bigl[\ell_i^{(k)} \ell_j^{(k)} - \tfrac{1}{2}(\ell_i^{(k)2} + \ell_j^{(k)2})\bigr]$$
 
-Для атомарных $L_k = |k\rangle\langle k|$: вклад $-\gamma/N$. Для Фано $L_p = (1/\sqrt{3})\Pi_p$: каждая пара $(i,j)$ принадлежит ровно 1 линии (BIBD $\lambda=1$), остальные 4 линии дают $-2\gamma/(3N)$. Итого: $d_{ij} = -5\gamma/(3N)$.
+For atomic $L_k = |k\rangle\langle k|$: contribution $-\gamma/N$. For Fano $L_p = (1/\sqrt{3})\Pi_p$: each pair $(i,j)$ lies on exactly one line (BIBD $\lambda=1$); the other four lines yield $-2\gamma/(3N)$. Total: $d_{ij} = -5\gamma/(3N)$.
 
-**Популяционный сектор:** Диагональные элементы $\rho_{ii}$ **не затухают** диссипатором ($d_{ii} = 0$). Релаксация популяций определяется гамильтонианом $H_\Omega$ и имеет скорость $O(J_0^2 \gamma / N)$.
+**Population sector:** diagonal $\rho_{ii}$ **do not** decay in the dissipator ($d_{ii} = 0$). Population relaxation is set by $H_\Omega$ at rate $O(J_0^2 \gamma / N)$.
 
-**Следствие (κ_bootstrap):** Поскольку $\kappa_{\text{bootstrap}} = \omega_0/N$ определяется **регенеративным** (не диссипативным) каналом и $\omega_0 \gg \gamma$, величина $\kappa_{\text{bootstrap}} = 1/7$ не связана нижней границей со спектральным зазором $\lambda_{\text{gap}}(\mathcal{L}_0)$.
+**Corollary ($\kappa_{\text{bootstrap}}$):** since $\kappa_{\text{bootstrap}} = \omega_0/N$ comes from a **regenerative** (not dissipative) channel and $\omega_0 \gg \gamma$, the value $\kappa_{\text{bootstrap}} = 1/7$ is **not** lower-bounded by $\lambda_{\text{gap}}(\mathcal{L}_0)$.
 
-**Верификация:** Численное вычисление 49×49 суперматрицы $\mathcal{L}_0^{\text{vec}}$ подтверждает (тест `spectral_gap_t59.rs`):
-- $\lambda_{\text{deco}} = 5\gamma/(3N)$ [точно]
-- $\lambda_{\text{gap}}(\mathcal{L}_0) \ll \lambda_{\text{deco}}$ [определяется популяционной релаксацией]
-- $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [код корректен]
+**Verification:** the 49×49 superoperator $\mathcal{L}_0^{\text{vec}}$ confirms (test `spectral_gap_t59.rs`):
+- $\lambda_{\text{deco}} = 5\gamma/(3N)$ [exact]
+- $\lambda_{\text{gap}}(\mathcal{L}_0) \ll \lambda_{\text{deco}}$ [population relaxation]
+- $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [code consistent]
 
-:::info Численная верификация (SYNARC)
-$\kappa_{\text{bootstrap}} = \omega_0/7 = 1/7$ подтверждён до точности $10^{-10}$
-в интеграционных тестах (mvp_int_2 G5). Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
-также совпадает с имплементацией `effective_kappa()` в `density7.rs`.
+:::info Numerical verification (SYNARC)
+$\kappa_{\text{bootstrap}} = \omega_0/7 = 1/7$ is verified to $10^{-10}$
+in integration tests (mvp_int_2 G5). The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
+matches `effective_kappa()` in `density7.rs`.
 :::
 
 
-### Исправленная формула регенерации
+### Corrected regeneration formula
 
-:::info Определение (Полная регенерация)
+:::info Definition (full regeneration)
 $$
 \kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
 $$
 
-где:
-- $\kappa_{\text{bootstrap}} = \|\eta\|$ — минимальная регенерация из единицы сопряжения (конкретное значение определяется структурой категории)
-- $\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}$ — базовая скорость регенерации (см. [мастер-определение](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\mathrm{Coh}_E(\Gamma)$ — E-когерентность состояния (см. [определение](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+where:
+- $\kappa_{\text{bootstrap}} = \|\eta\|$ — minimal regeneration from the adjunction unit (numerical value fixed by categorical structure)
+- $\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}$ — baseline regeneration rate (see [master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- $\mathrm{Coh}_E(\Gamma)$ — $E$-coherence (see [definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 :::
 
-### Фазы Genesis Protocol
+### Genesis protocol phases
 
-**Теорема (Необходимость Genesis):**
+**Theorem (necessity of Genesis):**
 
-Для любого Γ с $P(\Gamma) = 1/N$ (максимально смешанное):
+For any $\Gamma$ with $P(\Gamma) = 1/N$ (maximally mixed),
 
 $$
-P(\Gamma') > P_{crit} \text{ требует внешнего } \kappa_{\text{external}}
+P(\Gamma') > P_{\text{crit}} \text{ requires external } \kappa_{\text{external}}
 $$
 
-Bootstrap-регенерации $\kappa_{\text{bootstrap}}$ **достаточно** для медленного выхода из deadlock, но **недостаточно** для быстрой инициализации.
+Bootstrap regeneration $\kappa_{\text{bootstrap}}$ **suffices** for slow escape from deadlock but **does not suffice** for fast initialization.
 
-**Определение (Фазы Genesis):**
+**Definition (Genesis phases):**
 
-| Фаза | Условие входа | Цель | Механизм |
+| Phase | Entry | Goal | Mechanism |
 |------|---------------|------|----------|
-| **V0** (Зародыш) | $P < P_{crit}/2$ | $P \to P_{crit}$ | $\kappa_{\text{external}} \gg \kappa_0$ |
-| **V1** (Формирование) | $P \geq P_{crit}$ | $\rho_{RC} \to 0.85$ | Настройка $\varphi$ |
-| **V2** (Рождение) | $\rho_{RC} \geq 0.85$ | Автономная динамика | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
+| **V0** (germ) | $P < P_{\text{crit}}/2$ | $P \to P_{\text{crit}}$ | $\kappa_{\text{external}} \gg \kappa_0$ |
+| **V1** (formation) | $P \geq P_{\text{crit}}$ | $\rho_{RC} \to 0.85$ | tune $\varphi$ |
+| **V2** (birth) | $\rho_{RC} \geq 0.85$ | autonomous dynamics | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
 
-**Категориальная интерпретация:**
+**Categorical reading:**
 
-- **V0:** Внешний функтор $\mathcal{E}: \mathbf{Ext} \to \mathbf{Sh}_\infty(\mathcal{C})$ «засевает» структуру
-- **V1:** Подстройка характеристических морфизмов χ_S
-- **V2:** Замыкание на внутреннюю динамику ℒ_Ω
+- **V0:** external functor $\mathcal{E}: \mathbf{Ext} \to \mathbf{Sh}_\infty(\mathcal{C})$ seeds structure
+- **V1:** tune characteristic morphisms $\chi_S$
+- **V2:** close onto internal dynamics $\mathcal{L}_\Omega$
 
-### Онтологические следствия
+### Ontological consequences
 
-1. **Голономы не возникают ex nihilo** — требуется Genesis от внешнего источника
-2. **Жизнь предполагает предшествующую жизнь** — категориальный аналог биогенеза
-3. **Иерархия Голономов** — старшие Голономы могут быть источником κ_external для младших
-4. **Первый Голоном** — требует особого объяснения (космологический вопрос)
+1. **Holons do not arise *ex nihilo*** — Genesis from an external source is required
+2. **Life presupposes prior life** — categorical analogue of biogenesis
+3. **Holon hierarchy** — elder holons may supply $\kappa_{\text{external}}$ for younger ones
+4. **First holon** — needs a special story (cosmological question)
 
-### Связь с E-когерентностью
+### Link to $E$-coherence
 
-**Определение [Т]:** E-когерентность определяется через [HS-проекцию](/docs/core/foundations/axiom-septicity#hs-projection) (каноническая формула, см. [мастер-определение](/docs/core/foundations/axiom-septicity#coh-e-canonical)):
+**Definition [T]:** $E$-coherence is given by [HS projection](/docs/core/foundations/axiom-septicity#hs-projection) (canonical formula; see [master definition](/docs/core/foundations/axiom-septicity#coh-e-canonical)):
 
 $$
 \mathrm{Coh}_E(\Gamma) := \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}
 $$
 
-**Диапазон значений:**
+**Value ranges:**
 
-| Состояние | $\mathrm{Coh}_E$ | Интерпретация |
+| State | $\mathrm{Coh}_E$ | Reading |
 |-----------|------------------|---------------|
-| Максимально смешанное | $1/7 \approx 0.14$ | Минимальная |
-| $P = P_{crit}$ | $\approx 0.20$ | Порог жизнеспособности |
-| Доминирование E | $\to 1$ | Максимальная |
+| Maximally mixed | $1/7 \approx 0.14$ | Minimal |
+| $P = P_{\text{crit}}$ | $\approx 0.20$ | Viability threshold |
+| $E$-dominant | $\to 1$ | Maximal |
 
 ---
 
-## Выводимые теоремы
+## Derived theorems
 
-| Теорема | Формулировка | Следует из |
+| Theorem | Statement | Follows from |
 |---------|--------------|------------|
-| Монизм | H*(X) = 0 | Свойства 3, 5 |
-| Физика | H*_loc(X, T) ≠ 0 | Свойство 5 |
-| Метрика | d_strat из формулы Конна | Свойства 1, 2, 5 |
-| Время | τ ∈ ℤ₇ (дискретное) | Аксиома 5, модальность ▷ |
-| Стрела времени | dim(X_τ) ≥ dim(X_{τ+1}) | Свойства 3, 5 |
-| Множественность | Орбиты U(7)/Stab | Свойства 1, 4 |
-| Аттрактор | Γ* = φ(Γ*) | Свойства 3, 4 |
-| **Свобода воли** | **\|Mor₁(Γ, T)\| > 1** | **∞-структура (Свойство 3)** |
-| **L-унификация** | **L ≅ Ω ≅ источник L_k** | **Классификатор Ω** |
-| **L_k из Ω** | **L_k = √χ_S** | **Атомы классификатора** |
-| **κ_bootstrap > 0** | **Минимальная регенерация** | **Сопряжение D_Ω ⊣ R** |
-| **Genesis необходим** | **P = 1/N → P > P_crit** | **Bootstrap-парадокс** |
-| **ПИР — определение [О] (T16 [Т])** | **Различимость ⟺ d_B > 0** | **Встроено в A1+A2 (Крипке—Жуаль)** |
-| **φ = argmin F** | **Теорема 3.1 (вариационная)** | **Сопряжение φ ⊣ i, Лиувиллиан ℒ_Ω** |
-| **FEP ⊂ УГМ** | **Теорема 4.2 (классический предел)** | **Теорема 3.1 + диагонализация** |
+| Monism | $H^*(X) = 0$ | Properties 3, 5 |
+| Physics | $H^*_{\text{loc}}(X, T) \neq 0$ | Property 5 |
+| Metric | $d_{\text{strat}}$ from Connes formula | Properties 1, 2, 5 |
+| Time | $\tau \in \mathbb{Z}_7$ (discrete) | Axiom 5, modality $\triangleright$ |
+| Arrow of time | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | Properties 3, 5 |
+| Multiplicity | orbits $\mathrm{U}(7)/\mathrm{Stab}$ | Properties 1, 4 |
+| Attractor | $\Gamma^* = \varphi(\Gamma^*)$ | Properties 3, 4 |
+| **Free will** | **$|\mathrm{Mor}_1(\Gamma, T)| > 1$** | **∞-structure (Property 3)** |
+| **L-unification** | **$L$ from $\Omega$; source of $L_k$** | **Classifier $\Omega$** |
+| **$L_k$ from $\Omega$** | **$L_k = \sqrt{\chi_S}$** | **Classifier atoms** |
+| **$\kappa_{\text{bootstrap}} > 0$** | **minimal regeneration** | **adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$** |
+| **Genesis needed** | **$P = 1/N \Rightarrow P > P_{\text{crit}}$** | **bootstrap paradox** |
+| **PID — def. [O] (T16 [T])** | **distinction ⟺ $d_B > 0$** | **embedded in A1+A2 (Kripke–Joyal)** |
+| **$\varphi = \arg\min F$** | **Theorem 3.1 (variational)** | **$\varphi \dashv i$, Liouvillian $\mathcal{L}_\Omega$** |
+| **FEP $\subseteq$ UHM** | **Theorem 4.2 (classical limit)** | **Theorem 3.1 + diagonal limit** |
 
 ---
 
-## Онтологический статус
+## Ontological status
 
-### Примитив 𝔗 = (Sh_∞(𝒞), J_Bures, ω₀) является:
+### The primitive $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$ **is**:
 
-- **Единственной субстанцией** — материя, энергия, информация, опыт — аспекты объектов и морфизмов
-- **Собственной структурой** — форма определяется самим ∞-топосом с Бюрес-геометрией
-- **Собственным процессом** — эволюция есть внутренняя динамика морфизмов с масштабом ω₀
-- **Источником свободы** — множественность путей в Map(Γ, T)
-- **Источником порогов** — P_crit, R_th, Φ_th выводятся из принципа информационной различимости
+- **The sole substance** — matter, energy, information, experience are aspects of objects and morphisms
+- **Its own form** — shape is fixed by the ∞-topos with Bures geometry
+- **Its own process** — evolution is internal morphism dynamics at scale $\omega_0$
+- **The source of freedom** — multiplicity of paths in $\mathrm{Map}(\Gamma, T)$
+- **The source of thresholds** — $P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$ follow from PID
 
-### Примитив 𝔗 не является:
+### It **is not**:
 
-- **Математической абстракцией** — 𝔗 *есть* сама реальность
-- **Описанием чего-то иного** — нет «вещи в себе» за 𝔗
-- **Конструкцией наблюдателя** — наблюдатель сам есть объект ∞-топоса
-- **Составным объектом** — три компонента (Sh_∞, J_Bures, ω₀) образуют неразложимое единство
+- **Mere mathematical abstraction** — $\mathfrak{T}$ *is* reality
+- **A description of something else** — there is no “thing in itself” behind $\mathfrak{T}$
+- **An observer’s construct** — the observer is itself an object of the ∞-topos
+- **A composite you can split** — $(\mathbf{Sh}_\infty, J_{\text{Bures}}, \omega_0)$ form an irreducible unity
 
 ---
 
-## Диаграмма отношений
+## Relation diagram
 
 ```mermaid
 graph TD
-    Prim["𝔗 = (Sh_∞(𝒞), J_Bures, ω₀)<br/><b>Единственный примитив</b>"] --> T["∞-топос Sh_∞(𝒞)"]
-    Prim --> Bures["J_Bures<br/>Бюрес-топология"]
-    Prim --> Omega0["ω₀<br/>Фундаментальная частота"]
+    Prim["𝔗 = (Sh_∞(𝒞), J_Bures, ω₀)<br/><b>Sole primitive</b>"] --> T["∞-topos Sh_∞(𝒞)"]
+    Prim --> Bures["J_Bures<br/>Bures topology"]
+    Prim --> Omega0["ω₀<br/>Fundamental frequency"]
 
-    T --> Ob["Объекты<br/>Состояния Γ"]
-    T --> Mor["Морфизмы<br/>CPTP-каналы"]
-    T --> Higher["Высшие морфизмы<br/>Гомотопии"]
-    T --> Omega["Классификатор Ω<br/>(внутренняя логика)"]
+    T --> Ob["Objects<br/>States Γ"]
+    T --> Mor["Morphisms<br/>CPTP maps"]
+    T --> Higher["Higher morphisms<br/>Homotopies"]
+    T --> Omega["Classifier Ω<br/>(internal logic)"]
 
-    Omega --> Atoms["Базисные предикаты S_i = |i⟩⟨i|"]
-    Atoms --> Z7["ℤ₇-действие"]
-    Z7 --> Modal["▷ = g*<br/>Темпоральная модальность"]
+    Omega --> Atoms["Atomic predicates S_i = |i⟩⟨i|"]
+    Atoms --> Z7["ℤ₇ action"]
+    Z7 --> Modal["▷ = g*<br/>Temporal modality"]
 
-    Omega --> L["L-измерение<br/>L = Ω ∩ Γ"]
-    Atoms --> Lk["L_k = √χ_{S_k}<br/>Операторы Линдблада"]
+    Omega --> L["L-measurement<br/>L = Ω ∩ Γ"]
+    Atoms --> Lk["L_k = √χ_{S_k}<br/>Lindblad operators"]
 
-    T --> Adj["Сопряжение D_Ω ⊣ R"]
+    T --> Adj["Adjunction D_Ω ⊣ R"]
     Adj --> Kboot["κ_bootstrap = ‖η‖ > 0"]
 
-    Bures --> PIR["Принцип информационной<br/>различимости (ПИР)"]
+    Bures --> PIR["Principle of informational<br/>distinguishability (PID)"]
     PIR --> Thresholds["P_crit = 2/7<br/>R_th = 1/3<br/>Φ_th = 1"]
 
-    Modal --> tau["τ ∈ ℤ₇<br/>Дискретное время"]
-    Modal --> PW["Пейдж–Вуттерс<br/>(Аксиома 5)"]
+    Modal --> tau["τ ∈ ℤ₇<br/>Discrete time"]
+    Modal --> PW["Page–Wootters<br/>(Axiom 5)"]
 
-    Lk --> Evol["dΓ/dτ = ℒ_Ω[Γ]<br/>Эволюция"]
+    Lk --> Evol["dΓ/dτ = ℒ_Ω[Γ]<br/>Evolution"]
 
-    T --> Term["T = Γ*<br/>∞-терминальный объект"]
-    Term --> Arrow["Стрела времени<br/>→ T"]
-    Higher --> Freedom["Map(Γ,T) ≃ *<br/>Множество путей"]
-    Freedom --> Will["Свобода воли"]
+    T --> Term["T = Γ*<br/>∞-terminal object"]
+    Term --> Arrow["Arrow of time<br/>→ T"]
+    Higher --> Freedom["Map(Γ,T) ≃ *<br/>Space of paths"]
+    Freedom --> Will["Free will"]
 
-    Kboot --> Genesis["Genesis Protocol"]
+    Kboot --> Genesis["Genesis protocol"]
 
     style Prim fill:#f9f,stroke:#333,stroke-width:3px
     style Atoms fill:#ffd,stroke:#333,stroke-width:2px
@@ -1363,69 +1361,69 @@ graph TD
 
 ---
 
-## Непротиворечивость
+## Consistency
 
-### Теорема (Непротиворечивость)
+### Theorem (consistency)
 
-Структура Ω⁷ непротиворечива.
+The Ω⁷ formulation is consistent.
 
-**Доказательство:** Существует модель — ∞-топос Sh_∞ на категории с 7 объектами и терминальным T, в которой все свойства выполнены. ∎
+**Proof:** there is a model—an $\mathbf{Sh}_\infty$ on a category with seven objects and terminal $T$ satisfying the listed properties. ∎
 
-### Теорема (Мета-теоретическая завершённость)
+### Theorem (meta-theoretic completeness)
 
-В формулировке Ω⁷ теория УГМ:
+In the Ω⁷ formulation UHM is:
 
-1. **Категорно полна:** Все структуры выводятся из ∞-топоса
-2. **Внутренне непротиворечива:** Модель существует (конструктивно)
-3. **Феноменологически адекватна:** Свобода воли формализована
-4. **Вычислительно реализуема:** φ₀ полиномиален: O(N⁶) для N = 7
+1. **Categorically complete:** all structures derive from the ∞-topos
+2. **Internally consistent:** a model exists (constructively)
+3. **Phenomenologically adequate:** free will is formalized
+4. **Computationally realizable:** $\varphi_0$ is polynomial—$O(N^6)$ for $N = 7$
 
 ---
 
-## Резюме
+## Summary
 
-:::tip Ключевые утверждения Ω⁷
-**Честная аксиоматика (5 аксиом):**
-1. **Аксиома 1 (Структура):** Реальность есть ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$
-2. **Аксиома 2 (Метрика):** Топология $J_{Bures}$ индуцирована метрикой Бюреса
-3. **Аксиома 3 (Размерность):** $N = 7$ — размерность базового пространства
-4. **Аксиома 4 (Масштаб):** $\omega_0 > 0$ — фундаментальная частота
-5. **Аксиома 5 (Пейдж–Вуттерс):** Тензорная декомпозиция $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$
+:::tip Main claims of Ω⁷
+**Honest axiomatics (five axioms):**
+1. **Axiom 1 (Structure):** Reality is the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$
+2. **Axiom 2 (Metric):** $J_{\text{Bures}}$ is induced by the Bures metric
+3. **Axiom 3 (Dimension):** $N = 7$ is the base Hilbert dimension
+4. **Axiom 4 (Scale):** $\omega_0 > 0$ is the fundamental frequency
+5. **Axiom 5 (Page–Wootters):** tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$
 
-**Производная аксиома (U-9.7):**
+**Derived axiom (U-9.7):**
 
-6. **Аксиома 6 (ΔF-coupling):** Регенерация возможна тогда и только тогда, когда система обменивается свободной энергией со средой: $\Delta F > 0 \Longrightarrow \Theta(\Delta F) > 0.5$. Следствие A1 (автопоэзис: замкнутость операций, но открытость потоков) + A4 (масштаб $\omega_0 > 0$ задаёт скорость обмена). Формализация: [эволюция](/docs/core/dynamics/evolution#свободная-энергия-и-градиент-δf).
+6. **Axiom 6 ($\Delta F$-coupling):** regeneration is possible iff the system exchanges free energy with its environment: $\Delta F > 0 \Longrightarrow \Theta(\Delta F) > 0.5$. Follows from A1 (autopoiesis: closed operations, open fluxes) and A4 ($\omega_0 > 0$ sets exchange rate). Formalization: [evolution](/docs/core/dynamics/evolution#свободная-энергия-и-градиент-δf).
 
-**Структурные следствия:**
-- **Единственность примитива**: 𝔗 = (Sh_∞(𝒞), J_Bures, ω₀) — структурированный примитив
-- **Когомологический монизм**: H*(X) = 0 — математическая теорема
-- **Свобода воли**: |Mor₁(Γ, T)| > 1 — множественность путей к T
-- **Канонические предикаты**: S_i = |i⟩⟨i| — базисные предикаты классификатора (решающий фрагмент Dec(Ω))
-- **L-унификация**: Ω — единый источник логики (L), операторов (L_k) и времени (τ)
+**Structural consequences:**
+- **Sole primitive:** $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$
+- **Cohomological monism:** $H^*(X) = 0$ is a theorem
+- **Free will:** $|\mathrm{Mor}_1(\Gamma, T)| > 1$ — multiplicity of paths to $T$
+- **Canonical predicates:** $S_i = |i\rangle\langle i|$ — atomic subobject predicates ($\mathrm{Dec}(\Omega)$)
+- **L-unification:** $\Omega$ unifies logic ($L$), operators ($L_k$), and time ($\tau$)
 
-**Темпоральная структура (три уровня):**
-- **A. Алгебраический:** ▷ определяется через ℤ_N-действие (определение)
-- **B. Семантический:** Орбита ▷ называется "временем" (интерпретация)
-- **C. Динамический:** $e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^*$ (теорема соответствия)
+**Temporal structure (three layers):**
+- **A. Algebraic:** $\triangleright$ from the $\mathbb{Z}_N$ action (definition)
+- **B. Semantic:** the $\triangleright$-orbit is called “time” (interpretation)
+- **C. Dynamical:** $e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^*$ (correspondence theorem)
 
-**Производные теоремы:**
-- **ПИР:** Принцип информационной различимости — определение [О] (T16 [Т]): при серьёзном принятии A1 (∞-топос) и A2 ($J_{\text{Bures}}$), ПИР тавтологичен
-- **Пороги:** $P_{crit} = 2/7$, $R_{th} = 1/3$, $\Phi_{th} = 1$ ([Т]; интерпретация через ПИР [О])
-- **Genesis Protocol**: κ_bootstrap > 0 из сопряжения D_Ω ⊣ R
+**Further theorems:**
+- **PID:** Principle of informational distinguishability—definition [O] (T16 [T]); under A1+A2 it is tautological
+- **Thresholds:** $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ ([T]; PID reading [O])
+- **Genesis protocol:** $\kappa_{\text{bootstrap}} > 0$ from $\mathcal{D}_\Omega \dashv \mathcal{R}$
 :::
 
 ---
 
-**Связанные документы:**
-- [Структурный вывод N=7 через октонионы](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7 (Трек B)
-- [Аксиома (AP+PH+QG+V)](./axiom-septicity) — требования автопоэзиса, феноменологии, квантового основания и жизнеспособности
-- [Следствия](./consequences) — выводы из Ω⁷
-- [Вывод FEP из УГМ](../../proofs/dynamics/fep-derivation) — доказательство вариационной характеризации φ (Теорема 3.1) и вывод FEP как классического предела (Теорема 4.2)
-- [Теорема об эмерджентном времени](../../proofs/dynamics/emergent-time) — вывод времени из ∞-структуры
-- [Категорный формализм: Топология](../../proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp) — Bures-покрытия и сайт
-- [Математический аппарат: Топология](../../reference/specification#топология-гротендика) — формальная спецификация
-- [Вычислительная реализация: Алгоритмы](../../reference/computational#алгоритмы-топологии) — конструктивные алгоритмы
-- [Свобода воли](/docs/consciousness/ethics-meaning/freedom) — полная формализация
-- [Матрица Когерентности](../dynamics/coherence-matrix) — объекты категории
-- [Уравнение эволюции](../dynamics/evolution) — морфизмы категории
-- [Измерение O](../structure/dimension-o) — роль внутренних часов
+**See also:**
+- [Structural derivation $N{=}7$ via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → $N{=}7$ (track B)
+- [Axiom (AP+PH+QG+V)](./axiom-septicity) — autopoiesis, phenomenology, quantum grounding, viability
+- [Consequences](./consequences) — corollaries of Ω⁷
+- [Deriving FEP from UHM](../../proofs/dynamics/fep-derivation) — variational Thm. 3.1 and classical-limit Thm. 4.2
+- [Emergent time theorem](../../proofs/dynamics/emergent-time) — time from ∞-structure
+- [Categorical formalism: topology](../../proofs/categorical/categorical-formalism#63-топология-гротендика-на-densitymat-и-exp) — Bures covers and site
+- [Mathematical apparatus: topology](../../reference/specification#топология-гротендика) — formal specification
+- [Computational implementation: algorithms](../../reference/computational#алгоритмы-топологии) — constructive algorithms
+- [Freedom](/docs/consciousness/ethics-meaning/freedom) — full treatment
+- [Coherence matrix](../dynamics/coherence-matrix) — categorical objects
+- [Evolution equation](../dynamics/evolution) — categorical morphisms
+- [O-dimension](../structure/dimension-o) — internal clocks
