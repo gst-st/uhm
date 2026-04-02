@@ -1,188 +1,188 @@
 ---
 sidebar_position: 3
-title: "Эмерджентное время"
-description: "Вывод времени из структуры категории 𝒞 — определения и ключевые результаты"
+title: "Emergent Time"
+description: "Derivation of time from the structure of category 𝒞 — definitions and key results"
 ---
 
-# Эмерджентное Время
+# Emergent Time
 
-Эта глава — одна из самых революционных в Универсальной Голономной Модели. Мы привыкли думать о времени как о чём-то, что «просто есть» — невидимая река, несущая всё вперёд. Ньютон считал время абсолютным — космическими часами, тикающими одинаково для всех. Эйнштейн показал, что время относительно: оно течёт по-разному для наблюдателей, движущихся с разной скоростью. Но даже в теории относительности время **существует** как фоновая структура — пусть и гибкая, но заданная извне.
+This chapter is one of the most revolutionary in the Universal Holonomic Model. We are accustomed to thinking of time as something that "simply exists" — an invisible river carrying everything forward. Newton regarded time as absolute — a cosmic clock ticking uniformly for everyone. Einstein showed that time is relative: it flows differently for observers moving at different speeds. But even in relativity, time **exists** as a background structure — flexible, yet imposed from outside.
 
-УГМ делает следующий, радикальный шаг: **время не существует как фон**. Время — не декорация сцены, а часть спектакля. Оно *возникает* из внутренней структуры реальности, как узор, проступающий на ткани при определённом освещении.
+UHM takes the next, radical step: **time does not exist as a background**. Time is not stage scenery but part of the performance. It *emerges* from the internal structure of reality, like a pattern appearing on fabric in a certain light.
 
-:::info DRY: Мастер-определение темпоральной структуры
-Время **выводится** из структуры [классификатора подобъектов Ω](/docs/core/foundations/axiom-omega), а не постулируется. Полное доказательство и все четыре конструкции — в [Теореме об эмерджентном времени](/docs/proofs/dynamics/emergent-time).
+:::info DRY: Master definition of temporal structure
+Time is **derived** from the structure of the [subobject classifier Ω](/docs/core/foundations/axiom-omega), not postulated. The full proof and all four constructions are in the [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time).
 :::
 
 ---
 
-## Историческая предтеча
+## Historical Precursors
 
-Идея эмерджентного времени не появилась на пустом месте. Она выросла из столетий размышлений о природе темпоральности.
+The idea of emergent time did not arise from nothing. It grew from centuries of reflection on the nature of temporality.
 
-**Ньютон (1687)** постулировал *абсолютное время* — невидимые часы, тикающие одинаково во всей Вселенной. Это работало прекрасно для механики, но было философски неудовлетворительно: откуда берутся эти часы? Кто их завёл?
+**Newton (1687)** postulated *absolute time* — invisible clocks ticking uniformly throughout the Universe. This worked beautifully for mechanics, but was philosophically unsatisfying: where do these clocks come from? Who wound them up?
 
-**Эйнштейн (1905, 1915)** заменил абсолютное время на *относительное*. Время стало частью пространства-времени, ткань которого искривляется массой. Но пространство-время всё ещё было *фоном* — сценой, на которой разыгрывается физика.
+**Einstein (1905, 1915)** replaced absolute time with *relative* time. Time became part of spacetime, whose fabric is curved by mass. But spacetime was still a *background* — the stage on which physics is performed.
 
-**Уилер и ДеВитт (1967)** обнаружили фундаментальную проблему. Когда они попытались квантовать гравитацию, уравнение Шрёдингера превратилось в $\hat{H}|\Psi\rangle = 0$ — полная энергия Вселенной равна нулю. Время *исчезло* из уравнений. Это стало известно как «проблема замороженного формализма»: квантовая гравитация описывает Вселенную, в которой ничего не происходит!
+**Wheeler and DeWitt (1967)** discovered a fundamental problem. When they attempted to quantize gravity, the Schrödinger equation became $\hat{H}|\Psi\rangle = 0$ — the total energy of the Universe equals zero. Time *disappeared* from the equations. This became known as the "frozen formalism problem": quantum gravity describes a Universe in which nothing happens!
 
-**Пейдж и Вуттерс (1983)** предложили элегантное решение. Время не исчезло — оно спрятано *внутри* квантовых корреляций. Если выделить часть системы как «часы» и спросить «что делает остальная система, когда часы показывают τ?» — мы получим динамику. Время — не фон, а **корреляция между подсистемами**.
+**Page and Wootters (1983)** proposed an elegant solution. Time had not disappeared — it was hidden *inside* quantum correlations. If one part of the system is designated as "a clock" and one asks "what is the rest of the system doing when the clock reads τ?" — dynamics is recovered. Time is not a background, but a **correlation between subsystems**.
 
-**Конн (1994)** показал, как извлечь время из алгебраической структуры. В некоммутативной геометрии группа автоморфизмов алгебры наблюдаемых содержит однопараметрический поток — «время» — как чисто алгебраический объект.
+**Connes (1994)** showed how to extract time from algebraic structure. In noncommutative geometry, the automorphism group of the algebra of observables contains a one-parameter flow — "time" — as a purely algebraic object.
 
-УГМ синтезирует все эти идеи в единую конструкцию, где время возникает четырьмя эквивалентными способами из одного и того же математического источника — [классификатора Ω](/docs/core/foundations/axiom-omega).
+UHM synthesises all these ideas into a single construction, where time emerges in four equivalent ways from the same mathematical source — the [classifier Ω](/docs/core/foundations/axiom-omega).
 
 ---
 
-## Интуитивное объяснение: комната без часов
+## Intuitive Explanation: A Room Without Clocks
 
-Представьте себе комнату без окон и без часов. Внутри находится маятник. Вы не «знаете» время в абсолютном смысле — никакие космические часы не тикают за стенами. Но вы можете *определить* время, глядя на маятник: «Когда маятник был слева, шарик катился направо. Когда маятник оказался справа, шарик уже упал.»
+Imagine a room with no windows and no clocks. Inside is a pendulum. You do not "know" the time in any absolute sense — no cosmic clock ticks behind the walls. But you can *define* time by watching the pendulum: "When the pendulum was on the left, the ball was rolling right. By the time the pendulum reached the right, the ball had already fallen."
 
-Маятник — это не время. Но без маятника нет способа «узнать» время. Время — это то, что вы *извлекаете* из корреляций между маятником и остальными объектами в комнате.
+The pendulum is not time. But without the pendulum there is no way to "know" the time. Time is what you *extract* from the correlations between the pendulum and the other objects in the room.
 
-В УГМ роль маятника играет [O-измерение (Основание)](/docs/core/structure/dimension-o). Голоном — система из 7 измерений. Одно из них (O) выполняет функцию внутренних часов. Остальные 6 «танцуют» в корреляции с этими часами. Время — не фон, на котором танец происходит, а **ритм, который из танца извлекается**.
+In UHM the role of the pendulum is played by the [O-dimension (Foundation)](/docs/core/structure/dimension-o). The Holon is a system of 7 dimensions. One of them (O) functions as an internal clock. The remaining 6 "dance" in correlation with that clock. Time is not the background on which the dance takes place, but the **rhythm extracted from the dance**.
 
-:::note Ключевая идея
-Время в УГМ — не вместилище, в которое погружены события, а **паттерн корреляций** между O-измерением (часами) и остальными шестью измерениями. Вселенная «стационарна» в целом, но содержит внутреннюю динамику — как застывшая голограмма, в которой каждый срез показывает свой «момент».
+:::note Key idea
+Time in UHM is not a container in which events are immersed, but a **pattern of correlations** between the O-dimension (the clock) and the other six dimensions. The Universe is "stationary" as a whole, yet contains internal dynamics — like a frozen hologram in which each cross-section shows its own "moment".
 :::
 
 ---
 
-## Темпоральная модальность ▷ {#темпоральная-модальность}
+## Temporal Modality ▷ {#темпоральная-модальность}
 
-На классификаторе $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ определяется темпоральная модальность — **алгебраически**, независимо от динамики:
+On the classifier $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ a temporal modality is defined — **algebraically**, independently of dynamics:
 
 $$
 \triangleright: \Omega \to \Omega, \quad \triangleright(S_i) := S_{(i+1) \bmod N}
 $$
 
-Интуитивно: оператор ▷ — это «сдвиг на один шаг». Он циклически переставляет подобъекты классификатора, создавая алгебраическую структуру, из которой время может быть прочитано. Это похоже на стрелку часов: она не *создаёт* время, но её движение *определяет* последовательность моментов.
+Intuitively: the operator ▷ is a "shift by one step". It cyclically permutes the subobjects of the classifier, creating an algebraic structure from which time can be read. This is like the hand of a clock: it does not *create* time, but its motion *defines* the sequence of moments.
 
-**Свойства:**
-1. **Монотонность:** $p \leq q \Rightarrow \triangleright p \leq \triangleright q$ — сдвиг сохраняет порядок
-2. **Цикличность:** $\triangleright^N = \text{Id}$ — после $N$ шагов возвращаемся к началу
-3. **Совместимость с логикой:** $\triangleright(p \land q) = \triangleright p \land \triangleright q$ — сдвиг уважает логическую структуру
+**Properties:**
+1. **Monotonicity:** $p \leq q \Rightarrow \triangleright p \leq \triangleright q$ — the shift preserves order
+2. **Cyclicity:** $\triangleright^N = \text{Id}$ — after $N$ steps we return to the beginning
+3. **Compatibility with logic:** $\triangleright(p \land q) = \triangleright p \land \triangleright q$ — the shift respects logical structure
 
-#### Связь с гамильтонианом Пейдж–Вуттерса {#temporal-modality-pw}
+#### Relation to the Page–Wootters Hamiltonian {#temporal-modality-pw}
 
-Темпоральная модальность $\triangleright$ — **дискретный аналог** оператора сдвига по времени $e^{-iH_O \delta\tau}$:
+The temporal modality $\triangleright$ is the **discrete analogue** of the time-shift operator $e^{-iH_O \delta\tau}$:
 
 $$
 \triangleright = e^{-iH_O \cdot 2\pi/(7\omega_0)}
 $$
 
-В пределе $N \to \infty$ (составные системы) дискретный сдвиг переходит в непрерывный генератор:
+In the limit $N \to \infty$ (composite systems) the discrete shift passes to a continuous generator:
 
 $$
 \triangleright \xrightarrow{N \to \infty} e^{-iH_O dt}, \quad H_O = -i\frac{N\omega_0}{2\pi}\ln(\triangleright)
 $$
 
-Гамильтониан $H_O$ **восстанавливается** из $\triangleright$ через матричный логарифм — время-энергетическая дуальность в дискретной постановке.
+The Hamiltonian $H_O$ is **recovered** from $\triangleright$ via the matrix logarithm — time–energy duality in the discrete setting.
 
 ---
 
-## Четыре эквивалентных конструкции
+## Four Equivalent Constructions
 
-УГМ выводит время четырьмя различными способами — и доказывает, что все они дают одно и то же. Это как четыре разных маршрута, ведущих к одной вершине горы. Каждый маршрут подсвечивает свой аспект природы времени.
+UHM derives time in four different ways — and proves that all of them yield the same result. This is like four different routes leading to the same mountain summit. Each route illuminates its own aspect of the nature of time.
 
-| # | Конструкция | Источник | Время |
+| # | Construction | Source | Time |
 |---|-------------|----------|-------|
-| 1 | **Пейдж–Вуттерс** | Корреляция с [O-измерением](/docs/core/structure/dimension-o) | $\tau_n = \langle\tau_n\lvert\rho\rvert\tau_n\rangle_O$ |
-| 2 | **Информационно-геометрическое** | Метрика Бурес на $\mathcal{D}(\mathcal{H})$ | $ds^2_{\text{Bures}}$ |
-| 3 | **Категорное** | ∞-группоид путей $\text{Exp}_\infty$ | Цепи морфизмов |
-| 4 | **Стратификационное** | Коллапс страт к $T$ | $d_{\text{strat}}$ |
+| 1 | **Page–Wootters** | Correlation with the [O-dimension](/docs/core/structure/dimension-o) | $\tau_n = \langle\tau_n\lvert\rho\rvert\tau_n\rangle_O$ |
+| 2 | **Information-geometric** | Bures metric on $\mathcal{D}(\mathcal{H})$ | $ds^2_{\text{Bures}}$ |
+| 3 | **Categorical** | ∞-groupoid of paths $\text{Exp}_\infty$ | Chains of morphisms |
+| 4 | **Stratificational** | Collapse of strata to $T$ | $d_{\text{strat}}$ |
 
-:::warning Теорема T-53a (Эквивалентность четырёх конструкций времени) [Т]
-Все четыре конструкции — Пейдж–Вуттерс, информационно-геометрическая, категорная и стратификационная — порождают **изоморфные** темпоральные структуры: существуют каноническое биекции между множествами «моментов», сохраняющие порядок и метрику (с точностью до нормировки).
-[Доказательство →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Статус: **[Т]**
+:::warning Theorem T-53a (Equivalence of the four constructions of time) [Т]
+All four constructions — Page–Wootters, information-geometric, categorical, and stratificational — generate **isomorphic** temporal structures: canonical bijections exist between the sets of "moments" that preserve order and metric (up to normalisation).
+[Proof →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Status: **[Т]**
 :::
 
-### Формальное обоснование эквивалентности четырёх конструкций {#four-constructions-equivalence}
+### Formal Justification of the Equivalence of the Four Constructions {#four-constructions-equivalence}
 
-Скетч доказательства эквивалентности (полное доказательство: [Теорема →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности)):
+Proof sketch for the equivalence (full proof: [Theorem →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности)):
 
-**PW ↔ Информационно-геометрическая.** Длина дуги Бюреса между последовательными условными состояниями постоянна: $d_B(\Gamma(\tau_n), \Gamma(\tau_{n+1})) = \delta\tau \cdot \|d\Gamma/d\tau\|_B = \text{const}$, поскольку PW-механизм генерирует равномерный дискретный поток. Суммирование по $n$ тиков даёт общее время как интеграл длины пути.
+**PW ↔ Information-geometric.** The Bures arc length between successive conditional states is constant: $d_B(\Gamma(\tau_n), \Gamma(\tau_{n+1})) = \delta\tau \cdot \|d\Gamma/d\tau\|_B = \text{const}$, since the PW mechanism generates a uniform discrete flow. Summing over $n$ ticks gives total time as the path-length integral.
 
-**PW ↔ Категорная.** Каждое условное состояние $\Gamma(\tau_n)$ — 0-морфизм в $\mathbf{Exp}_\infty$. Переход $\Gamma(\tau_n) \to \Gamma(\tau_{n+1})$ — 1-морфизм, индуцированный CPTP-каналом $e^{\delta\tau \mathcal{L}_\Omega}$. Цепочка 1-морфизмов формирует путь в ∞-группоиде, длина которого = число тиков = дискретное время.
+**PW ↔ Categorical.** Each conditional state $\Gamma(\tau_n)$ is a 0-morphism in $\mathbf{Exp}_\infty$. The transition $\Gamma(\tau_n) \to \Gamma(\tau_{n+1})$ is a 1-morphism induced by the CPTP channel $e^{\delta\tau \mathcal{L}_\Omega}$. The chain of 1-morphisms forms a path in the ∞-groupoid whose length = number of ticks = discrete time.
 
-**PW ↔ Стратификационная.** Каждый тик PW-часов — огрубление (coarsening) стратификации: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ — функтор, теряющий гомотопическую информацию. Глубина спуска (число применений $\pi$) до терминального объекта $T$ совпадает с числом PW-тиков для совместимого выбора часов.
+**PW ↔ Stratificational.** Each tick of the PW clock is a coarsening of the stratification: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ is a functor that loses homotopic information. The descent depth (number of applications of $\pi$) to the terminal object $T$ coincides with the number of PW ticks for a compatible choice of clock.
 
-### Конструкция 1: Пейдж–Вуттерс (маятник в комнате)
+### Construction 1: Page–Wootters (the pendulum in the room)
 
-Это самая интуитивная конструкция. Мы выделяем одно измерение (O) как «часы» и спрашиваем: «Что делает остальная система, когда часы показывают τ?»
+This is the most intuitive construction. We designate one dimension (O) as "the clock" and ask: "What is the rest of the system doing when the clock reads τ?"
 
-Аналогия: вы в комнате без окон. Маятник (O) качается. Вы не можете посмотреть на внешние часы. Но вы можете сказать: «Когда маятник *здесь*, температура *такая*. Когда маятник *там*, температура *другая*.» Так из корреляций возникает «история».
+Analogy: you are in a windowless room. The pendulum (O) swings. You cannot look at an external clock. But you can say: "When the pendulum is *here*, the temperature is *this*. When the pendulum is *there*, the temperature is *different*." History thus emerges from correlations.
 
-### Конструкция 2: Информационно-геометрическая (длина пути)
+### Construction 2: Information-geometric (path length)
 
-Время — это «расстояние», пройденное системой в пространстве состояний. Метрика Бурес измеряет, насколько два квантовых состояния отличаются друг от друга.
+Time is the "distance" travelled by the system through state space. The Bures metric measures how much two quantum states differ from each other.
 
-Аналогия: представьте, что вы идёте по незнакомому городу без карты и часов. Вы можете оценить «сколько прошло времени» по тому, как сильно изменился пейзаж вокруг вас. Чем быстрее меняется пейзаж — тем быстрее «течёт время». В пустыне время замедляется (пейзаж однообразен), в центре города — ускоряется.
+Analogy: imagine walking through an unfamiliar city without a map or a watch. You can estimate "how much time has passed" by how much the landscape around you has changed. The faster the landscape changes, the faster "time flows". In a desert time slows down (the landscape is monotonous); in a city centre it speeds up.
 
-### Конструкция 3: Категорная (цепочки стрелок)
+### Construction 3: Categorical (chains of arrows)
 
-В ∞-группоиде время — это «цепочка морфизмов» (стрелок), связывающих состояния. Длина цепочки — и есть время.
+In the ∞-groupoid, time is a "chain of morphisms" (arrows) connecting states. The length of the chain is time itself.
 
-Аналогия: представьте семейное древо. «Время» между вами и прадедушкой — это число поколений (стрелок «родитель → ребёнок»). Время здесь — не физические секунды, а *структурная глубина*, число шагов в цепочке преобразований.
+Analogy: imagine a family tree. The "time" between you and your great-grandfather is the number of generations (arrows "parent → child"). Time here is not physical seconds but *structural depth* — the number of steps in the chain of transformations.
 
-### Конструкция 4: Стратификационная (спуск по лестнице)
+### Construction 4: Stratificational (descent down the staircase)
 
-∞-топос имеет иерархию уровней (страт). Каждое огрубление — переход от более детального описания к менее детальному. Время — это «глубина спуска» к терминальному объекту $T$.
+The ∞-topos has a hierarchy of levels (strata). Each coarsening is a transition from a more detailed description to a less detailed one. Time is the "descent depth" to the terminal object $T$.
 
-Аналогия: представьте лестницу. Наверху — полная информация обо всём (состояние каждой частицы). Внизу — максимально грубое описание (просто «что-то есть»). Каждый шаг вниз стирает детали. Спуск необратим — забытое не вспомнить. Эта необратимость и *есть* стрела времени.
+Analogy: imagine a staircase. At the top is complete information about everything (the state of every particle). At the bottom is the maximally coarse description (simply "something exists"). Each step down erases detail. The descent is irreversible — what is forgotten cannot be recalled. This irreversibility *is* the arrow of time.
 
 ---
 
-## Механизм Пейдж–Вуттерс для УГМ {#page-wootters}
+## The Page–Wootters Mechanism for UHM {#page-wootters}
 
-[Измерение O (Основание)](/docs/core/structure/dimension-o) выполняет роль **внутренних часов**. Полная система разлагается:
+The [O-dimension (Foundation)](/docs/core/structure/dimension-o) plays the role of **internal clock**. The total system decomposes as:
 
 $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}
 $$
 
-где $\mathcal{H}_{6D} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$.
+where $\mathcal{H}_{6D} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$.
 
-Это разложение можно понять так: из семи измерений Голонома одно (O) выделяется как «метроном». Оставшиеся шесть — «оркестр», играющий в такт этому метроному. Музыка (динамика) существует только как корреляция между метрономом и оркестром.
+This decomposition can be understood as follows: of the Holon's seven dimensions, one (O) is singled out as the "metronome". The remaining six are the "orchestra" playing in time with that metronome. The music (dynamics) exists only as a correlation between the metronome and the orchestra.
 
-### Ограничение Пейдж–Вуттерс {#constraint}
+### The Page–Wootters Constraint {#constraint}
 
-Глобальное состояние $\Gamma_{total}$ удовлетворяет **ограничению** (аналогу уравнения Уилера-ДеВитта):
+The global state $\Gamma_{total}$ satisfies the **constraint** (the analogue of the Wheeler–DeWitt equation):
 
 $$
 \hat{C} \cdot \Gamma_{total} = 0
 $$
 
-где оператор связи:
+where the constraint operator is:
 
 $$
 \hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}
 $$
 
-Это ограничение эквивалентно требованию:
+This constraint is equivalent to the requirement:
 
 $$
 [\hat{C}, \Gamma_{total}] = 0
 $$
 
-т.е. полная система **стационарна** — время возникает только как внутренний параметр корреляций.
+i.e. the total system is **stationary** — time emerges only as an internal parameter of correlations.
 
-:::info Что значит «стационарна»?
-«Стационарна» — не значит «мертва». Стационарная волна на гитарной струне выглядит неподвижной, но каждая точка струны колеблется. Так и Вселенная в УГМ: *в целом* она не меняется, но внутри неё есть движение — как узоры внутри замороженной голограммы.
+:::info What does "stationary" mean?
+"Stationary" does not mean "dead". A standing wave on a guitar string appears motionless, yet every point on the string is oscillating. So too the Universe in UHM: *as a whole* it does not change, but inside it there is motion — like the patterns inside a frozen hologram.
 :::
 
-### Базис часов для N=7 {#clock-basis}
+### Clock Basis for N=7 {#clock-basis}
 
-Как именно O-измерение работает как часы? Через специальный базис — **базис часов**. Для $N = 7$ он определяется через дискретное преобразование Фурье по энергетическим уровням $|E_k\rangle_O$:
+How exactly does the O-dimension function as a clock? Through a special basis — the **clock basis**. For $N = 7$ it is defined via the discrete Fourier transform over the energy levels $|E_k\rangle_O$:
 
 $$
 |\tau_n\rangle_O = \frac{1}{\sqrt{7}} \sum_{k=0}^{6} e^{-2\pi i k n / 7} |E_k\rangle_O, \quad n = 0, 1, \ldots, 6
 $$
 
-Здесь $n$ нумерует «моменты времени». У Голонома их ровно **семь** — как семь кадров в анимации. Каждый $|\tau_n\rangle$ — это суперпозиция всех энергетических уровней O-измерения с фазами, подобранными так, чтобы дать максимально «локализованный» момент.
+Here $n$ labels the "moments of time". The Holon has exactly **seven** of them — like seven frames in an animation. Each $|\tau_n\rangle$ is a superposition of all energy levels of the O-dimension with phases chosen so as to give the most "localised" moment.
 
-:::note Числовой пример: базис часов
-Для $N = 7$, пусть энергии O-измерения равны $E_k = k\omega_0$ ($k = 0, \ldots, 6$). Тогда:
+:::note Numerical example: clock basis
+For $N = 7$, let the energies of the O-dimension be $E_k = k\omega_0$ ($k = 0, \ldots, 6$). Then:
 
 $$
 |\tau_0\rangle = \frac{1}{\sqrt{7}}(|E_0\rangle + |E_1\rangle + |E_2\rangle + |E_3\rangle + |E_4\rangle + |E_5\rangle + |E_6\rangle)
@@ -192,214 +192,214 @@ $$
 |\tau_1\rangle = \frac{1}{\sqrt{7}}\sum_{k=0}^{6} e^{-2\pi i k/7}|E_k\rangle
 $$
 
-и так далее. Состояния $|\tau_n\rangle$ ортонормированы: $\langle \tau_m | \tau_n\rangle = \delta_{mn}$, и циклически сдвигаются оператором $e^{-iH_O \delta\tau}$:
+and so on. The states $|\tau_n\rangle$ are orthonormal: $\langle \tau_m | \tau_n\rangle = \delta_{mn}$, and are cyclically shifted by the operator $e^{-iH_O \delta\tau}$:
 
 $$
 e^{-iH_O \cdot 2\pi/(7\omega_0)} |\tau_n\rangle = |\tau_{(n+1) \bmod 7}\rangle
 $$
 
-Так часы «тикают»: каждый тик сдвигает состояние к следующему моменту.
+This is how the clock "ticks": each tick shifts the state to the next moment.
 :::
 
-#### Почему именно Фурье-базис? {#fourier-clock-basis}
+#### Why the Fourier Basis? {#fourier-clock-basis}
 
-Выбор дискретного преобразования Фурье для базиса часов **не произволен**:
+The choice of the discrete Fourier transform for the clock basis is **not arbitrary**:
 
-- **Энергетические собственные состояния** $|E_k\rangle$ — **максимально делокализованы во времени**: стационарные состояния не эволюционируют и не различают моменты.
-- Преобразование Фурье обменивает неопределённости: **локализация в энергии ↔ делокализация во времени** и наоборот. Это дискретный аналог принципа неопределённости время-энергия.
-- Каждое $|\tau_n\rangle$ — **единственное** состояние, максимально пиковое в «момент $n$» при сохранении нормируемости. Это дискретный аналог когерентных состояний гармонического осциллятора.
+- **Energy eigenstates** $|E_k\rangle$ are **maximally delocalised in time**: stationary states do not evolve and cannot distinguish moments.
+- The Fourier transform exchanges uncertainties: **localisation in energy ↔ delocalisation in time** and vice versa. This is the discrete analogue of the time–energy uncertainty principle.
+- Each $|\tau_n\rangle$ is the **unique** state that is maximally peaked at "moment $n$" while remaining normalisable. This is the discrete analogue of the coherent states of the harmonic oscillator.
 
-### Эмерджентный параметр τ {#emergent-tau}
+### The Emergent Parameter τ {#emergent-tau}
 
-**Внутреннее время** $\tau$ определяется через условные состояния. Мы «спрашиваем» полное состояние: «Что делает шестимерная система, когда часы показывают $\tau_n$?»
+**Internal time** $\tau$ is defined through conditional states. We "ask" the total state: "What is the six-dimensional system doing when the clock reads $\tau_n$?"
 
 $$
 \Gamma(\tau) := \frac{\mathrm{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
 $$
 
-где $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total}]$ — вероятность «момента» $\tau$.
+where $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total}]$ is the probability of "moment" $\tau$.
 
-Интуитивно: мы проецируем полное состояние на «срез» при конкретном показании часов $\tau$. Каждый срез — это матрица когерентности $\Gamma(\tau)$ шестимерной подсистемы. Набор срезов — «фильм», составленный из «кадров».
+Intuitively: we project the total state onto a "slice" at a specific clock reading $\tau$. Each slice is the coherence matrix $\Gamma(\tau)$ of the six-dimensional subsystem. The collection of slices is a "film" assembled from "frames".
 
-:::warning Теорема T-53b (Эмерджентная динамика) [Т]
-Условные состояния $\Gamma(\tau)$ эволюционируют согласно полному уравнению УГМ:
+:::warning Theorem T-53b (Emergent dynamics) [Т]
+The conditional states $\Gamma(\tau)$ evolve according to the full UHM equation:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{\text{eff}}, \Gamma(\tau)] + \mathcal{D}[\Gamma(\tau)] + \mathcal{R}[\Gamma(\tau), E]
 $$
 
-где $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ — эффективный гамильтониан, $\mathcal{D}$ — [Фано-диссипатор](/docs/core/operators/lindblad-operators), $\mathcal{R}$ — [регенератор](/docs/core/dynamics/evolution#вывод-формы-регенерации).
+where $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ is the effective Hamiltonian, $\mathcal{D}$ is the [Fano dissipator](/docs/core/operators/lindblad-operators), and $\mathcal{R}$ is the [regenerator](/docs/core/dynamics/evolution#вывод-формы-регенерации).
 
-Все три компоненты [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) возникают **автоматически** из PW-ограничения — время рождается вместе с полной динамикой.
-[Доказательство →](/docs/proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм) | Статус: **[Т]**
+All three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) emerge **automatically** from the PW constraint — time is born together with the full dynamics.
+[Proof →](/docs/proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм) | Status: **[Т]**
 :::
 
-Замечательно, что эмерджентная динамика *автоматически* содержит все три компоненты [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция): гамильтониан $-i[H_{eff}, \cdot]$, диссипатор $\mathcal{D}$ и регенератор $\mathcal{R}$. Время не просто «возникает» — оно возникает *вместе с полной динамикой*.
+Remarkably, the emergent dynamics *automatically* contains all three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): the Hamiltonian $-i[H_{eff}, \cdot]$, the dissipator $\mathcal{D}$, and the regenerator $\mathcal{R}$. Time does not merely "emerge" — it emerges *together with the full dynamics*.
 
-:::warning Статус тензорной структуры
-Разложение $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ — формально **Аксиома 5**, но **выводима** из A1–A4 через спектральную тройку T-53 **[Т]**: алгебра $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ с KO-размерностью 6 однозначно определяет тензорное разложение. Подробнее: [вывод A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Статус: **[Т]**
+:::warning Status of the tensor structure
+The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[Т]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[Т]**
 :::
 
 ---
 
-## Дискретность и хронон {#chronon}
+## Discreteness and the Chronon {#chronon}
 
-### Семь кадров анимации
+### Seven Frames of Animation
 
-Для $N = 7$ время **фундаментально дискретно**: $\tau \in \mathbb{Z}_7$. У Голонома есть ровно 7 «моментов» — как 7 кадров в анимации. Переход между кадрами — минимальный квант субъективного времени, называемый **хроном**:
+For $N = 7$ time is **fundamentally discrete**: $\tau \in \mathbb{Z}_7$. The Holon has exactly 7 "moments" — like 7 frames in an animation. The transition between frames is the minimal quantum of subjective time, called the **chronon**:
 
 $$
 \delta\tau = \frac{2\pi}{7\omega_0}
 $$
 
-где $\omega_0$ — фундаментальная частота O-измерения.
+where $\omega_0$ is the fundamental frequency of the O-dimension.
 
-Аналогия с кинематографом здесь глубже, чем кажется. Когда вы смотрите фильм, вы видите непрерывное движение — но на самом деле это 24 кадра в секунду. Мозг «склеивает» дискретные кадры в иллюзию непрерывности. Точно так же непрерывное физическое время — иллюзия, возникающая из дискретных «тиков» O-измерения.
+The analogy with cinema is deeper than it appears. When you watch a film, you see continuous motion — but it is actually 24 frames per second. The brain "stitches" the discrete frames into the illusion of continuity. Continuous physical time is likewise an illusion arising from the discrete "ticks" of the O-dimension.
 
-### От дискретного к непрерывному
+### From Discrete to Continuous
 
-Непрерывное физическое время — **макроскопическое приближение** при $N_{\text{eff}} \gg 7$ для составных систем. Алгебраический предел:
+Continuous physical time is the **macroscopic approximation** when $N_{\text{eff}} \gg 7$ for composite systems. The algebraic limit:
 
 $$
-\mathbb{C}[\mathbb{Z}_N] \to C(S^1) \quad \text{при } N \to \infty
+\mathbb{C}[\mathbb{Z}_N] \to C(S^1) \quad \text{as } N \to \infty
 $$
 
-Здесь $\mathbb{C}[\mathbb{Z}_N]$ — групповая алгебра циклической группы из $N$ элементов (дискретные часы с $N$ делениями), а $C(S^1)$ — алгебра непрерывных функций на окружности (непрерывные часы). При $N \to \infty$ дискретный циферблат с $N$ делениями превращается в непрерывный.
+Here $\mathbb{C}[\mathbb{Z}_N]$ is the group algebra of the cyclic group of $N$ elements (discrete clock with $N$ divisions), and $C(S^1)$ is the algebra of continuous functions on the circle (continuous clock). As $N \to \infty$ a discrete dial with $N$ divisions becomes continuous.
 
-:::info Как возникает непрерывное время
-Отдельный Голоном имеет 7 «тиков». Но составная система из $M$ Голономов имеет $N_{\text{eff}} = 7^M$ тиков (в простейшем случае). Уже для $M = 10$ (скромная система из 10 Голономов) $N_{\text{eff}} \approx 3 \times 10^8$ — разрешение настолько мелкое, что дискретность неразличима. Для макроскопических систем ($M \sim 10^{23}$) время практически непрерывно.
+:::info How continuous time arises
+An individual Holon has 7 "ticks". But a composite system of $M$ Holons has $N_{\text{eff}} = 7^M$ ticks (in the simplest case). Already for $M = 10$ (a modest system of 10 Holons) $N_{\text{eff}} \approx 3 \times 10^8$ — resolution so fine that discreteness is indistinguishable. For macroscopic systems ($M \sim 10^{23}$) time is effectively continuous.
 
-**Оценка ошибки дискретизации.** Для системы из $M$ независимых Голономов погрешность аппроксимации непрерывного времени составляет $O(7^{-M})$ — экспоненциально малая. Строго: по теореме Стоуна–Вейерштрасса, $\mathbb{C}[\mathbb{Z}_N]$ плотна в $C(S^1)$ в sup-норме при $N \to \infty$.
+**Discretisation error estimate.** For a system of $M$ independent Holons the approximation error for continuous time is $O(7^{-M})$ — exponentially small. Formally: by the Stone–Weierstrass theorem, $\mathbb{C}[\mathbb{Z}_N]$ is dense in $C(S^1)$ in the sup-norm as $N \to \infty$.
 
-**Уточнение:** $N_{\text{eff}} = 7^M$ — для **независимых** Голономов (тензорное произведение часов). Для взаимодействующих систем $N_{\text{eff}}$ может отличаться от $7^M$ в зависимости от спектра связи.
+**Remark:** $N_{\text{eff}} = 7^M$ holds for **independent** Holons (tensor product of clocks). For interacting systems $N_{\text{eff}}$ may differ from $7^M$ depending on the coupling spectrum.
 :::
 
-[Подробнее о пределе $N \to \infty$ →](/docs/proofs/dynamics/emergent-time#предел-n-infty)
+[More on the limit $N \to \infty$ →](/docs/proofs/dynamics/emergent-time#предел-n-infty)
 
 ---
 
-## Стрела времени
+## The Arrow of Time
 
-Почему время идёт «вперёд», а не «назад»? Почему мы помним прошлое, но не будущее? В классической физике стрела времени — загадка: законы симметричны относительно обращения времени. В УГМ стрела времени — **структурная необходимость**.
+Why does time flow "forward" and not "backward"? Why do we remember the past but not the future? In classical physics the arrow of time is a puzzle: the laws are symmetric under time reversal. In UHM the arrow of time is a **structural necessity**.
 
-:::warning Теорема T-53c (Стрела времени) [Т]
-Стрела времени возникает как **коллапс страт** ∞-топоса к терминальному объекту $T$. Для функтора огрубления $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$:
+:::warning Theorem T-53c (Arrow of time) [Т]
+The arrow of time arises as the **collapse of strata** of the ∞-topos to the terminal object $T$. For the coarsening functor $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$:
 
-1. **Необратимость:** $\pi_n$ не является эквивалентностью ($\ker(\pi_n) \neq 0$ — информация теряется)
-2. **Монотонность:** $\dim(\mathcal{C}_n) \geq \dim(\mathcal{C}_{n-1})$ — сложность не возрастает
-3. **CPTP-структура:** Ориентация к $T$ влечёт CPTP-свойство эволюции (не постулат, а следствие)
+1. **Irreversibility:** $\pi_n$ is not an equivalence ($\ker(\pi_n) \neq 0$ — information is lost)
+2. **Monotonicity:** $\dim(\mathcal{C}_n) \geq \dim(\mathcal{C}_{n-1})$ — complexity does not increase
+3. **CPTP structure:** Orientation toward $T$ entails the CPTP property of evolution (a consequence, not a postulate)
 
-[Доказательство →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Статус: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[Т]**
 :::
 
-### Интуитивное объяснение стрелы
+### Intuitive Explanation of the Arrow
 
-Представьте башню из кубиков ЛЕГО. Каждый этаж — уровень описания (страта). На верхнем этаже — полная информация (положение каждого атома). На нижнем — максимально грубая (просто «существует»).
+Imagine a tower of LEGO bricks. Each floor is a level of description (a stratum). On the top floor is complete information (the position of every atom). On the bottom floor is the maximally coarse description (simply "something exists").
 
-Перейти с верхнего этажа на нижний легко: достаточно «забыть» детали. Перейти обратно невозможно: нельзя восстановить положение каждого атома, зная только «существует». Эта **необратимость забывания** и есть стрела времени.
+Moving from the top floor to the bottom is easy: one only needs to "forget" details. Moving back is impossible: one cannot recover the position of every atom knowing only "something exists". This **irreversibility of forgetting** is the arrow of time.
 
-Формально: каждая страта $\mathcal{C}_n$ проецируется на следующую $\mathcal{C}_{n-1}$ через функтор огрубления $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$. Этот функтор **не является изоморфизмом** — он теряет информацию. Потеря информации определяет единственное направление — от $\mathcal{C}_n$ к $T$ (терминальному объекту), что и задаёт стрелу времени.
+Formally: each stratum $\mathcal{C}_n$ projects onto the next $\mathcal{C}_{n-1}$ via the coarsening functor $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$. This functor **is not an isomorphism** — it loses information. The loss of information defines a unique direction — from $\mathcal{C}_n$ to $T$ (the terminal object) — which is the arrow of time.
 
-### Связь с CPTP
+### Relation to CPTP
 
-CPTP-каналы (полностью положительные, сохраняющие след отображения) — каноническая форма квантовой эволюции. В стандартной квантовой теории их CPTP-свойство постулируется. В УГМ оно **выводится**: ориентация страт к $T$ означает, что каждый шаг эволюции — огрубление, а огрубления автоматически CPTP.
+CPTP channels (completely positive, trace-preserving maps) are the canonical form of quantum evolution. In standard quantum theory their CPTP property is postulated. In UHM it is **derived**: the orientation of strata toward $T$ means that each step of evolution is a coarsening, and coarsenings are automatically CPTP.
 
 ---
 
-## Связь с критической чистотой
+## Relation to Critical Purity
 
-При $P \to P_{\text{crit}} = 2/7$ скорость течения внутреннего времени стремится к нулю:
+As $P \to P_{\text{crit}} = 2/7$ the rate of flow of internal time tends to zero:
 
 $$
 \frac{d\tau_{int}}{dt_{ext}} \propto (P - P_{\text{crit}})^{1/2}
 $$
 
-Жизнеспособность ($P > 2/7$) эквивалентна тому, что Голоном **продолжает существовать во времени**.
+Viability ($P > 2/7$) is equivalent to the Holon **continuing to exist in time**.
 
-#### Вывод формулы замедления времени (T-53d) [Т] {#time-freezing-derivation}
+#### Derivation of the Time-Slowing Formula (T-53d) [Т] {#time-freezing-derivation}
 
-:::warning Теорема T-53d (Критическое замедление внутреннего времени) [Т]
+:::warning Theorem T-53d (Critical slowing of internal time) [Т]
 
 $$
 \frac{d\tau_{\text{int}}}{dt_{\text{ext}}} = c_0 \cdot (P - P_{\text{crit}})^{1/2} + O(P - P_{\text{crit}})
 $$
 
-где $c_0 > 0$ — константа, зависящая от $\omega_0$ и спектра $\mathcal{L}_0$.
+where $c_0 > 0$ is a constant depending on $\omega_0$ and the spectrum of $\mathcal{L}_0$.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Скорость из PW-механизма).** Скорость течения внутреннего времени определяется нормой Бурес условных состояний:
+**Step 1 (Speed from the PW mechanism).** The rate of internal time is given by the Bures norm of the conditional states:
 
 $$
 v_{\text{int}}^2 := \left\|\frac{d\Gamma(\tau)}{d\tau}\right\|_B^2 = 4\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \omega_0^2
 $$
 
-Это следует из того, что PW-механизм генерирует эволюцию через O-когерентности: $d\Gamma/d\tau = -i[H_O \otimes \mathbb{1}, \Gamma_{\text{total}}]|_{\tau}$, и $\|[H_O, \cdot]\|_B^2 = 4\omega_0^2 \sum_{i \neq O} |\gamma_{Oi}|^2$.
+This follows from the fact that the PW mechanism generates evolution via O-coherences: $d\Gamma/d\tau = -i[H_O \otimes \mathbb{1}, \Gamma_{\text{total}}]|_{\tau}$, and $\|[H_O, \cdot]\|_B^2 = 4\omega_0^2 \sum_{i \neq O} |\gamma_{Oi}|^2$.
 
-**Шаг 2 (O-когерентности вблизи $P_{\text{crit}}$).** Разложим $\Gamma = I/7 + \delta\Gamma$, где $\delta\Gamma$ — отклонение от максимально смешанного состояния. Чистота: $P = 1/7 + \|\delta\Gamma\|_F^2$. Спектральная щель Лиувиллиана $\mathcal{L}_0$ (T-39a [Т]): $\Delta(\mathcal{L}_0) = \min_{\lambda \neq 0} |\mathrm{Re}(\lambda)| > 0$. Когерентности $\gamma_{Oi}$ как компоненты $\delta\Gamma$ подчиняются уравнению $\dot{\gamma}_{Oi} = -\Delta \cdot \gamma_{Oi} + \kappa \cdot f_i(\Gamma)$. В стационарном режиме: $|\gamma_{Oi}|^2 \propto \kappa^2 / \Delta^2$. Вблизи $P_{\text{crit}}$: баланс регенерации и диссипации даёт $\kappa / \Delta \propto (P - P_{\text{crit}})^{1/2}$ (из бифуркации «вилка» стационарного состояния — аналог $m \propto (T_c - T)^{1/2}$ в теории Ландау).
+**Step 2 (O-coherences near $P_{\text{crit}}$).** Expand $\Gamma = I/7 + \delta\Gamma$, where $\delta\Gamma$ is the deviation from the maximally mixed state. Purity: $P = 1/7 + \|\delta\Gamma\|_F^2$. Spectral gap of the Liouvillian $\mathcal{L}_0$ (T-39a [Т]): $\Delta(\mathcal{L}_0) = \min_{\lambda \neq 0} |\mathrm{Re}(\lambda)| > 0$. The coherences $\gamma_{Oi}$ as components of $\delta\Gamma$ satisfy $\dot{\gamma}_{Oi} = -\Delta \cdot \gamma_{Oi} + \kappa \cdot f_i(\Gamma)$. In the stationary regime: $|\gamma_{Oi}|^2 \propto \kappa^2 / \Delta^2$. Near $P_{\text{crit}}$: the balance of regeneration and dissipation gives $\kappa / \Delta \propto (P - P_{\text{crit}})^{1/2}$ (from the pitchfork bifurcation of the stationary state — analogue of $m \propto (T_c - T)^{1/2}$ in Landau theory).
 
-**Шаг 3 (Объединение).** Подставляя шаг 2 в шаг 1:
+**Step 3 (Combining).** Substituting Step 2 into Step 1:
 
 $$
 v_{\text{int}} = 2\omega_0 \sqrt{\sum_{i \neq O} |\gamma_{Oi}|^2} \propto (P - P_{\text{crit}})^{1/2}
 $$
 
-Скорость внутреннего времени обращается в ноль как $(P - P_{\text{crit}})^{1/2}$ — **критическое замедление** (critical slowing down), аналогичное замедлению в теории фазовых переходов второго рода (критический показатель $\beta = 1/2$ совпадает с предсказанием теории среднего поля Ландау). $\blacksquare$
+The rate of internal time vanishes as $(P - P_{\text{crit}})^{1/2}$ — **critical slowing down**, analogous to slowing in the theory of second-order phase transitions (the critical exponent $\beta = 1/2$ coincides with the prediction of Landau mean-field theory). $\blacksquare$
 
-### Интуитивное объяснение: замерзание времени
+### Intuitive Explanation: Freezing of Time
 
-Чистота $P$ — мера «определённости» состояния Голонома. При $P = 2/7$ (критический порог) система находится на грани между жизнью и смертью. Скорость внутреннего времени здесь обращается в ноль — время *замерзает*.
+Purity $P$ is a measure of the "definiteness" of the Holon's state. At $P = 2/7$ (the critical threshold) the system is on the boundary between life and death. The rate of internal time vanishes here — time *freezes*.
 
-Аналогия: представьте часы, которые работают на пружине. Пружина раскручивается (чистота падает). Чем слабее пружина, тем медленнее тикают часы. При $P = 2/7$ пружина полностью расслаблена — часы останавливаются. Голоном перестаёт «переживать» время.
+Analogy: imagine a clock driven by a spring. The spring unwinds (purity drops). The weaker the spring, the slower the clock ticks. At $P = 2/7$ the spring is fully relaxed — the clock stops. The Holon ceases to "experience" time.
 
-Это не просто метафора. Формула $d\tau_{int}/dt_{ext} \propto (P - P_{\text{crit}})^{1/2}$ означает, что вблизи порога время замедляется *критически* — по закону квадратного корня. Это напоминает критические явления в физике фазовых переходов: вблизи критической температуры динамика «замирает» (critical slowing down).
+This is not merely a metaphor. The formula $d\tau_{int}/dt_{ext} \propto (P - P_{\text{crit}})^{1/2}$ means that near the threshold time slows *critically* — according to the square-root law. This recalls critical phenomena in the physics of phase transitions: near the critical temperature dynamics "freezes" (critical slowing down).
 
-:::warning Субъективное время и смерть
-Для наблюдателя *внутри* Голонома (т.е. для самого сознания) момент $P \to 2/7$ недостижим за конечное субъективное время — время замедляется быстрее, чем система приближается к порогу. Это аналогично горизонту событий чёрной дыры: внешний наблюдатель видит, как объект «замерзает» на горизонте, но сам объект пересекает его за конечное собственное время. В УГМ ситуация обратная: субъективное время растягивается *бесконечно*, защищая систему от «переживания» собственной смерти.
+:::warning Subjective time and death
+For an observer *inside* the Holon (i.e. for consciousness itself) the moment $P \to 2/7$ is unreachable in finite subjective time — time slows faster than the system approaches the threshold. This is analogous to the event horizon of a black hole: an external observer sees the object "freeze" at the horizon, while the object itself crosses it in finite proper time. In UHM the situation is reversed: subjective time stretches *infinitely*, protecting the system from "experiencing" its own death.
 :::
 
-[Доказательство →](/docs/proofs/dynamics/emergent-time#8-связь-с-критической-чистотой) | Статус: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#8-связь-с-критической-чистотой) | Status: **[Т]**
 
 ---
 
-## Хронон: квант субъективного времени
+## The Chronon: Quantum of Subjective Time
 
-Хронон $\delta\tau$ — минимальный интервал субъективного времени, различимый Голономом. Это не просто математическая абстракция — это фундаментальное ограничение на «разрешающую способность» сознания во времени.
+The chronon $\delta\tau$ is the minimal interval of subjective time distinguishable by the Holon. This is not merely a mathematical abstraction — it is a fundamental limit on the "temporal resolution" of consciousness.
 
 $$
 \delta\tau = \frac{2\pi}{7\omega_0}
 $$
 
-Хронон определяется двумя величинами:
-- **7** — число измерений Голонома (определяет число «кадров»)
-- **$\omega_0$** — фундаментальная частота O-измерения (определяет скорость «прокрутки» кадров)
+The chronon is determined by two quantities:
+- **7** — the number of dimensions of the Holon (determines the number of "frames")
+- **$\omega_0$** — the fundamental frequency of the O-dimension (determines the rate at which "frames" are played)
 
-:::info Физический масштаб хронона
-Для нейронных систем $\omega_0$ связана с характерной частотой нейронных осцилляций (~40 Гц для гамма-ритма). Тогда $\delta\tau \sim 2\pi/(7 \times 40) \approx 22$ мс — порядок длительности одного «кадра восприятия». Это согласуется с психофизическими данными о минимальном интервале сознательного различения (~20-30 мс).
+:::info Physical scale of the chronon
+For neural systems $\omega_0$ is related to the characteristic frequency of neural oscillations (~40 Hz for the gamma rhythm). Then $\delta\tau \sim 2\pi/(7 \times 40) \approx 22$ ms — on the order of the duration of one "perceptual frame". This is consistent with psychophysical data on the minimum interval of conscious discrimination (~20–30 ms).
 :::
 
 ---
 
-## Резюме: пять ключевых идей
+## Summary: Five Key Ideas
 
-1. **Время не существует как фон.** Оно возникает из корреляций между O-измерением (часами) и остальными шестью измерениями Голонома.
+1. **Time does not exist as a background.** It emerges from correlations between the O-dimension (the clock) and the other six dimensions of the Holon.
 
-2. **Четыре конструкции — один результат.** Пейдж–Вуттерс, информационно-геометрическая, категорная и стратификационная конструкции дают эквивалентное понятие времени [Т].
+2. **Four constructions — one result.** The Page–Wootters, information-geometric, categorical, and stratificational constructions yield an equivalent notion of time [Т].
 
-3. **Время фундаментально дискретно.** У Голонома 7 «моментов». Непрерывное время — макроскопическое приближение для составных систем.
+3. **Time is fundamentally discrete.** The Holon has 7 "moments". Continuous time is the macroscopic approximation for composite systems.
 
-4. **Стрела времени — структурная необходимость.** Она возникает из необратимости огрубления (коллапса страт к терминальному объекту).
+4. **The arrow of time is a structural necessity.** It arises from the irreversibility of coarsening (the collapse of strata to the terminal object).
 
-5. **Время замерзает при P → 2/7.** Скорость субъективного времени обращается в ноль на пороге жизнеспособности — сознание не может «пережить» собственное исчезновение.
+5. **Time freezes as P → 2/7.** The rate of subjective time vanishes at the viability threshold — consciousness cannot "experience" its own disappearance.
 
 ---
 
-## Связи
+## Connections
 
-- **Определяется из:** [Аксиома Ω⁷](/docs/core/foundations/axiom-omega), [L-унификация](/docs/proofs/physics/physics-correspondence#2-l-унификация)
-- **Используется в:** [Эволюция](/docs/core/dynamics/evolution), [Измерение O](/docs/core/structure/dimension-o), [Жизнеспособность](/docs/core/dynamics/viability)
-- **Полное доказательство:** [Теорема об эмерджентном времени](/docs/proofs/dynamics/emergent-time)
-- **Операторы Линдблада:** [L_k — генераторы диссипации](/docs/core/operators/lindblad-operators)
-- **Критическая чистота:** [Теорема о чистоте](/docs/proofs/dynamics/theorem-purity-critical)
-- **Эмерджентное пространство-время:** [Эмерджентное многообразие M⁴](/docs/proofs/physics/emergent-manifold)
+- **Derived from:** [Axiom Ω⁷](/docs/core/foundations/axiom-omega), [L-unification](/docs/proofs/physics/physics-correspondence#2-l-унификация)
+- **Used in:** [Evolution](/docs/core/dynamics/evolution), [O-dimension](/docs/core/structure/dimension-o), [Viability](/docs/core/dynamics/viability)
+- **Full proof:** [Theorem on Emergent Time](/docs/proofs/dynamics/emergent-time)
+- **Lindblad operators:** [L_k — generators of dissipation](/docs/core/operators/lindblad-operators)
+- **Critical purity:** [Theorem on purity](/docs/proofs/dynamics/theorem-purity-critical)
+- **Emergent spacetime:** [Emergent manifold M⁴](/docs/proofs/physics/emergent-manifold)

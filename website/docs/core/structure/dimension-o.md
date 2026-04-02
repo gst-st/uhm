@@ -1,473 +1,473 @@
 ---
 sidebar_position: 8
-title: Основание (O)
-description: Измерение VI — связь с источником
+title: Ground (O)
+description: Dimension VI — connection with the source
 ---
 
-# Измерение VI: Основание (O)
+# Dimension VI: Ground (O)
 
-## О чём эта глава
+## What this chapter is about
 
-Эта глава посвящена шестому измерению Голонома — **Основанию**. Вы узнаете:
+This chapter is devoted to the sixth dimension of the Holon — the **Ground**. You will learn:
 
-- Почему у каждой системы должен быть **источник энергии**, и как философы от Аристотеля до Хайдеггера искали «основу всего»;
-- Как одно и то же измерение выполняет **две функции** одновременно — питает систему и задаёт ей внутренние часы;
-- Что такое механизм **Пейдж–Вуттерс** и почему время — не фон, а свойство самого Голонома;
-- Как формула регенерации $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ связывает три измерения в один узел;
-- Что происходит при **потере связи** с Основанием — от физического истощения до экзистенциального кризиса.
+- Why every system must have a **source of energy**, and how philosophers from Aristotle to Heidegger searched for "the foundation of everything";
+- How one and the same dimension performs **two functions** simultaneously — feeding the system and setting its internal clock;
+- What the **Page–Wootters** mechanism is and why time is not a backdrop but a property of the Holon itself;
+- How the regeneration formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ties three dimensions into a single node;
+- What happens when **connection with the Ground is lost** — from physical exhaustion to existential crisis.
 
-:::info Для кого эта глава
-Если вы впервые читаете об УГМ — начните с [обзора измерений](./dimensions). Если вы уже знакомы с семью измерениями и хотите понять, откуда Голоном берёт энергию и время — вы по адресу.
+:::info Who this chapter is for
+If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you are already familiar with the seven dimensions and want to understand where the Holon gets its energy and time — you are in the right place.
 :::
 
-## Функция
+## Function
 
-**Поддерживать существование, питать, связывать с Источником, параметризовать внутреннее время.**
+**To sustain existence, to feed, to connect with the Source, to parameterise internal time.**
 
-## Историческая предтеча {#историческая-предтеча}
+## Historical precursor {#историческая-предтеча}
 
-Вопрос «на чём всё держится?» возникал во всех культурах и эпохах.
+The question "what holds everything together?" has arisen in all cultures and epochs.
 
-**Аристотель** (IV в. до н.э.) в «Метафизике» ввёл понятие **первопричины** (causa prima) — того, что существует «само по себе» и даёт существование всему остальному. Без первопричины цепочка причин уходит в бесконечность, и ничто не имеет основания. Аристотель настаивал: должно быть нечто, что **движет**, не будучи движимым, — «неподвижный двигатель». В УГМ эта роль отводится измерению $O$: оно обеспечивает свободную энергию ($\Delta F > 0$), не «расходуя» себя полностью.
+**Aristotle** (4th century BCE) in the *Metaphysics* introduced the concept of the **first cause** (causa prima) — that which exists "in its own right" and gives existence to everything else. Without a first cause the chain of causes recedes to infinity and nothing has a foundation. Aristotle insisted: there must be something that **moves** without being moved — the "unmoved mover". In UHM this role is assigned to dimension $O$: it provides free energy ($\Delta F > 0$) without "spending" itself completely.
 
-**Мартин Хайдеггер** (1927) в «Бытии и времени» различил **сущее** (то, что есть) и **бытие** (то, *благодаря чему* сущее есть). Бытие — не ещё одна вещь среди вещей, а **основание** всех вещей. Хайдеггер также показал, что бытие и время неразрывно связаны: быть — значит быть *во* времени, и понимание бытия всегда временно`. В УГМ эта связь реализуется буквально: измерение $O$ одновременно является источником энергии *и* внутренними часами.
+**Martin Heidegger** (1927) in *Being and Time* distinguished **beings** (what is) from **Being** (that *by virtue of which* beings are). Being is not yet another thing among things, but the **ground** of all things. Heidegger also showed that being and time are inseparable: to be means to be *in* time, and the understanding of being is always temporal. In UHM this connection is realised literally: dimension $O$ is simultaneously the source of energy *and* the internal clock.
 
-**Дон Пейдж и Уильям Вуттерс** (1983) предложили радикальное решение «проблемы времени» в квантовой гравитации. Вселенная в целом описывается стационарным состоянием ($H|\Psi\rangle = 0$) — в ней **нет** внешнего времени. Но если выделить одну подсистему в качестве «часов» и посмотреть на остальное *условно* (через частичный след) — возникает динамика, неотличимая от обычного квантовомеханического движения. Время — **не фон**, а параметр корреляций между часами и наблюдателем. В УГМ роль часов играет именно измерение $O$.
+**Don Page and William Wootters** (1983) proposed a radical solution to the "problem of time" in quantum gravity. The universe as a whole is described by a stationary state ($H|\Psi\rangle = 0$) — there is **no** external time in it. But if one subsystem is singled out as the "clock" and the rest is viewed *conditionally* (via partial trace) — dynamics emerges that is indistinguishable from ordinary quantum-mechanical motion. Time is **not a backdrop** but a parameter of the correlations between the clock and the observer. In UHM the role of the clock is played precisely by dimension $O$.
 
-**Людвиг Больцман** (XIX в.) показал, что все процессы в природе приводятся в движение **градиентом свободной энергии** $\Delta F$. Без свободной энергии нет работы, нет упорядоченности, нет жизни. Второй закон термодинамики — стрела времени — направлен от порядка к хаосу. Живые системы временно **обращают** эту стрелу, импортируя свободную энергию извне. В УГМ это формализуется через регенеративный член $\mathcal{R}$, питаемый измерением $O$.
+**Ludwig Boltzmann** (19th century) showed that all processes in nature are driven by the **free-energy gradient** $\Delta F$. Without free energy there is no work, no order, no life. The second law of thermodynamics — the arrow of time — points from order to chaos. Living systems temporarily **reverse** this arrow by importing free energy from outside. In UHM this is formalised through the regenerative term $\mathcal{R}$, fed by dimension $O$.
 
-В УГМ-теории все эти идеи объединяются в одном измерении: **Основание ($O$)** — первопричина Аристотеля, бытие-основание Хайдеггера, часы Пейджа–Вуттерса и источник свободной энергии Больцмана.
+In UHM theory all these ideas converge in a single dimension: **Ground ($O$)** — Aristotle's first cause, Heidegger's Being-as-ground, the Page–Wootters clock, and Boltzmann's source of free energy.
 
-## Описание
+## Description
 
-Основание — это измерение **бытийной глубины**. Оно связывает каждый Голоном с полнотой $\Gamma$, обеспечивает источник свободной энергии для регенерации когерентности и выполняет роль **внутренних часов**.
+The Ground is the dimension of **ontological depth**. It connects each Holon to the fullness of $\Gamma$, provides the source of free energy for the regeneration of coherence, and serves as the **internal clock**.
 
-### Интуитивное объяснение {#интуитивное-объяснение}
+### Intuitive explanation {#интуитивное-объяснение}
 
-Представьте дерево. Его крона — видимая часть: листья (различения, $A$), ветви (структура, $S$), рост (динамика, $D$). Но всё это питается через **корни** — невидимую подземную часть, которая черпает воду и минералы из почвы. Измерение $O$ — это корни Голонома.
+Imagine a tree. Its crown is the visible part: leaves (distinctions, $A$), branches (structure, $S$), growth (dynamics, $D$). But all of this is nourished through the **roots** — the invisible underground part that draws water and minerals from the soil. Dimension $O$ is the roots of the Holon.
 
-Но корни делают ещё кое-что: они задают **ритм роста**. Весной корни начинают активно поглощать воду — и дерево «просыпается». Осенью корневая активность снижается — и дерево «засыпает». Корни — это и источник питания, и внутренние часы. Точно так же измерение $O$ одновременно обеспечивает энергию ($\Delta F > 0$) и параметризует внутреннее время ($\tau$).
+But roots do something else: they set the **rhythm of growth**. In spring the roots begin actively absorbing water — and the tree "awakens". In autumn root activity decreases — and the tree "falls asleep". The roots are both the source of nourishment and the internal clock. In exactly the same way, dimension $O$ simultaneously provides energy ($\Delta F > 0$) and parameterises internal time ($\tau$).
 
-:::warning Двойная роль измерения O
-Согласно [теореме об эмерджентном времени](../../proofs/dynamics/emergent-time), измерение O выполняет две фундаментальные функции:
-1. **Источник энергии:** Обеспечивает $\Delta F > 0$ для регенерации
-2. **Внутренние часы:** Параметризует внутреннее время τ через механизм Пейдж–Вуттерс
+:::warning Dual role of dimension O
+According to the [emergent-time theorem](../../proofs/dynamics/emergent-time), dimension O performs two fundamental functions:
+1. **Energy source:** Provides $\Delta F > 0$ for regeneration
+2. **Internal clock:** Parameterises internal time τ via the Page–Wootters mechanism
 :::
 
-### Почему одно измерение — две функции? {#двойная-роль}
+### Why one dimension — two functions? {#двойная-роль}
 
-Это не совпадение, а математическая необходимость. Рассмотрим формулу регенерации:
+This is not a coincidence but a mathematical necessity. Consider the regeneration formula:
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
 $$
 
-В этой формуле $\omega_0$ — фундаментальная частота часов, а $\gamma_{OO}$ — населённость Основания. Числитель содержит когерентности $O$ с Интериорностью ($E$) и Единством ($U$): регенерация требует, чтобы Основание было **связано** с внутренним миром и с целостностью системы. Если выделить функцию «часов» в отдельное измерение, оно не будет связано с $E$ и $U$ нужным образом — формула $\kappa_0$ потеряет структуру. Если выделить функцию «источника энергии» — пропадёт $\omega_0$.
+In this formula $\omega_0$ is the fundamental clock frequency and $\gamma_{OO}$ is the population of the Ground. The numerator contains the coherences of $O$ with Interiority ($E$) and Unity ($U$): regeneration requires that the Ground be **connected** to the inner world and to the integrity of the system. If the "clock" function were assigned to a separate dimension, that dimension would not be connected to $E$ and $U$ in the required way — the formula $\kappa_0$ would lose its structure. If the "energy source" function were separated out — $\omega_0$ would disappear.
 
-**Двойная роль O — следствие формулы $\kappa_0$:** единственный способ обеспечить и частоту ($\omega_0$), и энергетические связи ($|\gamma_{OE}|$, $|\gamma_{OU}|$) — это одно и то же измерение.
+**The dual role of O is a consequence of the $\kappa_0$ formula:** the only way to provide both the frequency ($\omega_0$) and the energetic connections ($|\gamma_{OE}|$, $|\gamma_{OU}|$) is through one and the same dimension.
 
-:::info Онтологический статус
-Основание — **аспект** конфигурации $\Gamma$, не отдельная сущность. «Голоном укоренён» означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|O\rangle$, и ненулевая вакуумная энергия $\langle 0|H|0\rangle \neq 0$.
+:::info Ontological status
+The Ground is an **aspect** of configuration $\Gamma$, not a separate entity. "The Holon is grounded" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|O\rangle$ is active, and the vacuum energy is non-zero: $\langle 0|H|0\rangle \neq 0$.
 :::
 
-:::tip Функциональная единственность O [Т]
-Измерение $O$ **необходимо и функционально единственно** по четырём независимым аргументам:
+:::tip Functional uniqueness of O [Т]
+Dimension $O$ is **necessary and functionally unique** by four independent arguments:
 
-1. **Из формы ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ требует источника с $\Delta F > 0$ для $g_V > 0$. [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-o)
-2. **Категориальный (κ₀):** Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) требует $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. При удалении O: κ₀ не определён, сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ теряет структуру.
-3. **Из Page—Wootters (A5):** O — выделенное измерение для тензорной факторизации $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Без O: внутреннее время τ не определено.
-4. **Функциональная независимость [Т]:** Ни один другой математический объект (проектор, наблюдаемая, унитарный оператор, коммутатор, матрица плотности, след) не может выполнять функцию O (источника/часов).
+1. **From the form of ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ loses its structure.
+3. **From Page–Wootters (A5):** O is the distinguished dimension for the tensor factorisation $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined.
+4. **Functional independence [Т]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
 
-Статус: **[Т]** | [Полное доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+Status: **[Т]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 :::
 
-## Математическое представление
+## Mathematical representation
 
-### Населённость O {#населённость-o}
+### Population of O {#населённость-o}
 
-Диагональный элемент матрицы когерентности:
+The diagonal element of the coherence matrix:
 
 $$
 \gamma_{OO} = \langle O|\Gamma|O\rangle > 0
 $$
 
-Условие $\gamma_{OO} > 0$ означает, что измерение Основания активно в конфигурации $\Gamma$. Населённость $\gamma_{OO}$ — «запас корней»: чем больше ресурсов вложено в Основание, тем устойчивее система.
+The condition $\gamma_{OO} > 0$ means that the Ground dimension is active in configuration $\Gamma$. The population $\gamma_{OO}$ is the "root reserve": the more resources invested in the Ground, the more stable the system.
 
-**Типичные значения:**
+**Typical values:**
 
-| Система | $\gamma_{OO}$ | Интерпретация |
-|---------|---------------|---------------|
-| Вакуумные флуктуации | $\sim 1/7$ | Равномерное распределение |
-| Здоровый организм | $\sim 0.12$ | Стабильный энергетический запас |
-| Истощённая система | $\sim 0.05$ | Дефицит основания |
-| Медитативное состояние | $\sim 0.20$ | Усиленная связь с основанием |
+| System | $\gamma_{OO}$ | Interpretation |
+|--------|---------------|----------------|
+| Vacuum fluctuations | $\sim 1/7$ | Uniform distribution |
+| Healthy organism | $\sim 0.12$ | Stable energy reserve |
+| Depleted system | $\sim 0.05$ | Ground deficit |
+| Meditative state | $\sim 0.20$ | Enhanced connection with the ground |
 
-### Стресс по каналу O
+### Stress in the O channel
 
 $$
 \sigma_O = \mathrm{clamp}(1 - 7\gamma_{OO},\; 0,\; 1) \quad \text{[Т] (T-92)}
 $$
 
-- $\sigma_O = 0$: основание обеспечено ($\gamma_{OO} \geq 1/7$)
-- $\sigma_O = 1$: критический дефицит основания ($\gamma_{OO} \to 0$) — система теряет источник энергии
+- $\sigma_O = 0$: ground is provided ($\gamma_{OO} \geq 1/7$)
+- $\sigma_O = 1$: critical ground deficit ($\gamma_{OO} \to 0$) — the system loses its energy source
 
-### Связь с вакуумным состоянием
+### Connection with the vacuum state
 
 $$
 \langle 0|H|0\rangle \neq 0
 $$
 
-где $H$ — [Гамильтониан системы](../../reference/specification#гамильтониан), $|0\rangle$ — вакуумное состояние.
+where $H$ is the [system Hamiltonian](../../reference/specification#гамильтониан) and $|0\rangle$ is the vacuum state.
 
-**Интерпретация:** Ненулевая вакуумная энергия означает, что система имеет связь с квантовым вакуумом — источником флуктуаций и свободной энергии. Даже «пустое» пространство содержит энергию (это подтверждено экспериментально через эффект Казимира). Измерение $O$ формализует эту связь.
+**Interpretation:** Non-zero vacuum energy means that the system has a connection with the quantum vacuum — the source of fluctuations and free energy. Even "empty" space contains energy (confirmed experimentally via the Casimir effect). Dimension $O$ formalises this connection.
 
-## Роль в регенерации {#роль-в-регенерации}
+## Role in regeneration {#роль-в-регенерации}
 
-Основание обеспечивает источник свободной энергии для **регенеративного члена** [Т] [уравнения эволюции](/docs/core/dynamics/evolution#3-регенеративный-член):
+The Ground provides the source of free energy for the **regenerative term** [Т] of the [evolution equation](/docs/core/dynamics/evolution#3-регенеративный-член):
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где:
-- $\kappa(\Gamma) > 0$ — скорость регенерации [Т] ([категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
-- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] ([вывод](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
-- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — градиент свободной энергии (необходимое условие: $g_V > 0 \Rightarrow \Delta F > 0$)
+where:
+- $\kappa(\Gamma) > 0$ — regeneration rate [Т] ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([operator φ](/docs/core/operators/phi-operator))
+- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — free-energy gradient (necessary condition: $g_V > 0 \Rightarrow \Delta F > 0$)
 
-Полная форма $\mathcal{R}$ [выведена из аксиом](/docs/core/dynamics/evolution#вывод-формы-регенерации) — ни один компонент не постулируется.
+The full form of $\mathcal{R}$ is [derived from axioms](/docs/core/dynamics/evolution#вывод-формы-регенерации) — no component is postulated.
 
-**Интуитивное объяснение.** Представьте костёр. Он горит (система живёт), пока в него подбрасывают дрова ($\Delta F > 0$). Скорость горения ($\kappa$) зависит не только от количества дров, но и от **связи** огня с воздухом (когерентность $\gamma_{OE}$) и целостности конструкции костра (когерентность $\gamma_{OU}$). Если дрова есть, но нет тяги (воздух отрезан) — костёр гаснет. Формула $\kappa_0$ формализует именно это.
+**Intuitive explanation.** Imagine a campfire. It burns (the system lives) as long as wood is added ($\Delta F > 0$). The rate of burning ($\kappa$) depends not only on the amount of wood, but also on the **connection** of the fire with the air (coherence $\gamma_{OE}$) and the structural integrity of the fire (coherence $\gamma_{OU}$). If wood is available but there is no draught (air is cut off) — the fire goes out. The formula $\kappa_0$ formalises precisely this.
 
-:::note О нотации
-$\mathcal{R}$ (каллиграфическое) — регенеративный член. Не путать с $R$ — мерой рефлексии. См. [нотацию](../../reference/specification#уравнение-эволюции).
+:::note On notation
+$\mathcal{R}$ (calligraphic) — the regenerative term. Not to be confused with $R$ — the reflection measure. See [notation](../../reference/specification#уравнение-эволюции).
 :::
 
-**Условие регенерации:** $\mathcal{R}[\Gamma, E] \neq 0$ только при $\Delta F > 0$ (система импортирует свободную энергию из среды).
+**Regeneration condition:** $\mathcal{R}[\Gamma, E] \neq 0$ only when $\Delta F > 0$ (the system imports free energy from the environment).
 
-:::note Сохранение положительности
-Несмотря на нелинейную зависимость $\kappa(\Gamma)$, регенеративный член сохраняет положительность $\Gamma \geq 0$ благодаря [интерполяционной формулировке](../dynamics/evolution#сохранение-положительности) как CPTP-канала.
+:::note Preservation of positivity
+Despite the nonlinear dependence of $\kappa(\Gamma)$, the regenerative term preserves the positivity $\Gamma \geq 0$ through the [interpolation formulation](../dynamics/evolution#сохранение-положительности) as a CPTP channel.
 :::
 
-## Термодинамика основания
+## Thermodynamics of the Ground
 
-Регенерация когерентности подчиняется термодинамическим ограничениям:
+Regeneration of coherence obeys thermodynamic constraints:
 
 $$
 \frac{dP}{d\tau} \leq \frac{1}{k_B T} \cdot \frac{dF}{d\tau}
 $$
 
-где:
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](../dynamics/viability#определение-чистоты)
-- $k_B$ — постоянная Больцмана
-- $T$ — температура
-- $F$ — свободная энергия
+where:
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](../dynamics/viability#определение-чистоты)
+- $k_B$ — Boltzmann constant
+- $T$ — temperature
+- $F$ — free energy
 
-**Живые системы** — открытые системы, которые:
-1. Импортируют свободную энергию ($dF_{\text{in}} > 0$)
-2. Экспортируют энтропию ($dS_{\text{out}} > 0$)
-3. Поддерживают $P > P_{\text{crit}}$, где $P_{\text{crit}} = 2/7 \approx 0.286$ — [критическая чистота](../dynamics/viability#критическая-чистота)
+**Living systems** are open systems that:
+1. Import free energy ($dF_{\text{in}} > 0$)
+2. Export entropy ($dS_{\text{out}} > 0$)
+3. Maintain $P > P_{\text{crit}}$, where $P_{\text{crit}} = 2/7 \approx 0.286$ — [critical purity](../dynamics/viability#критическая-чистота)
 
-**Пример.** Человек потребляет пищу (импорт свободной энергии), выделяет тепло и отходы (экспорт энтропии) и поддерживает упорядоченность организма ($P > 2/7$). Если прекратить есть — $\Delta F \to 0$, регенерация останавливается, $P$ падает ниже $P_{\text{crit}}$ — необратимый распад.
+**Example.** A person consumes food (import of free energy), dissipates heat and waste (export of entropy), and maintains the orderliness of the organism ($P > 2/7$). If eating stops — $\Delta F \to 0$, regeneration halts, $P$ falls below $P_{\text{crit}}$ — irreversible collapse.
 
-## Роль внутренних часов (Пейдж–Вуттерс) {#роль-часов}
+## Role as internal clock (Page–Wootters) {#роль-часов}
 
-:::info Теорема (O как внутренние часы)
-Измерение O выполняет роль **внутренних часов** в механизме Пейдж–Вуттерс. Время возникает как параметр условных состояний:
+:::info Theorem (O as internal clock)
+Dimension O serves as the **internal clock** in the Page–Wootters mechanism. Time emerges as the parameter of conditional states:
 
 $$
 \Gamma(\tau) := \frac{\text{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
 $$
 
-где $|\tau\rangle_O$ — базис собственных состояний часов.
+where $|\tau\rangle_O$ is the basis of clock eigenstates.
 
-[Полное доказательство →](../../proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм)
+[Full proof →](../../proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм)
 :::
 
-### Интуитивное объяснение механизма часов {#интуиция-часов}
+### Intuitive explanation of the clock mechanism {#интуиция-часов}
 
-Представьте, что вы заперты в комнате **без окон и часов**. У вас нет внешнего времени. Но если в комнате есть маятник — вы можете **определить время через маятник**: «прошло 5 качаний». Время для вас — не нечто внешнее, а параметр корреляции между маятником и вашим состоянием.
+Imagine being locked in a room **with no windows and no clock**. You have no external time. But if the room contains a pendulum — you can **determine time through the pendulum**: "5 swings have passed". Time for you is not something external, but a parameter of the correlation between the pendulum and your state.
 
-Механизм Пейдж–Вуттерса работает точно так же. Вселенная в целом — «комната без часов» (глобальный Гамильтониан $H|\Psi\rangle = 0$, нет внешнего времени). Но внутри есть подсистема-часы (измерение $O$), и остальная система ($\bar{O}$). Время $\tau$ — параметр корреляций между $O$ и $\bar{O}$. Когда мы говорим «Голоном в момент $\tau$», мы имеем в виду: «состояние Голонома при условии, что часы показывают $\tau$».
+The Page–Wootters mechanism works in exactly the same way. The universe as a whole is "a room without a clock" (global Hamiltonian $H|\Psi\rangle = 0$, no external time). But inside there is a clock subsystem (dimension $O$) and the rest of the system ($\bar{O}$). Time $\tau$ is the parameter of the correlations between $O$ and $\bar{O}$. When we say "the Holon at moment $\tau$", we mean: "the state of the Holon given that the clock reads $\tau$".
 
-### Почему O — естественные часы?
+### Why is O the natural clock?
 
-| Свойство O | Роль в механизме часов |
-|------------|----------------------|
-| Связь с вакуумом | Стабильный источник флуктуаций — «маятник не останавливается» |
-| Участие в регенерации | «Расходование» O → стрела времени (необратимость) |
-| Квантовая природа | Дискретный спектр → квантование времени |
-| Связь со всеми измерениями | Часы «видят» всю систему через $\gamma_{Oi}$ |
+| Property of O | Role in the clock mechanism |
+|---------------|-----------------------------|
+| Connection with the vacuum | Stable source of fluctuations — "the pendulum does not stop" |
+| Participation in regeneration | "Expenditure" of O → arrow of time (irreversibility) |
+| Quantum nature | Discrete spectrum → quantisation of time |
+| Connection with all dimensions | The clock "sees" the whole system through $\gamma_{Oi}$ |
 
-### Базис часов для 7D
+### Clock basis for 7D
 
-Для $\dim(\mathcal{H}_O) = 7$ базис собственных состояний часов:
+For $\dim(\mathcal{H}_O) = 7$ the basis of clock eigenstates is:
 
 $$
 |\tau_n\rangle = \frac{1}{\sqrt{7}} \sum_{k=0}^6 e^{-2\pi i k n / 7} |E_k\rangle, \quad n = 0, 1, \ldots, 6
 $$
 
-Это дискретное преобразование Фурье: состояния $|E_k\rangle$ — «тики» часов с определённой энергией, а $|\tau_n\rangle$ — состояния с определённым «временем». Энергия и время — дуальные величины (как в обычной квантовой механике), и их невозможно знать одновременно с произвольной точностью.
+This is a discrete Fourier transform: states $|E_k\rangle$ are clock "ticks" with a definite energy, and $|\tau_n\rangle$ are states with a definite "time". Energy and time are dual quantities (as in ordinary quantum mechanics) and cannot be known simultaneously with arbitrary precision.
 
-### Связь регенерации и времени
+### Connection between regeneration and time
 
-Регенерация «потребляет» когерентность O. Скорость регенерации определяется [категориальным выводом κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0):
+Regeneration "consumes" the coherence of O. The regeneration rate is determined by the [categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0):
 
 $$
 \kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|
 $$
 
-где $\mathcal{D}_\Omega \dashv \mathcal{R}$ — сопряжение диссипации-регенерации.
+where $\mathcal{D}_\Omega \dashv \mathcal{R}$ is the dissipation-regeneration adjunction.
 
-:::note Категориальное происхождение κ₀
-Параметр $\kappa_0$ **выводится** категориально из сопряжения диссипативного и регенеративного функторов. Точная формула **[Т]** (T-88): $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — единственная через теорему Ченцова–Петца. Полное обоснование см. в [Аксиоме Септичности → Категориальный вывод κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+:::note Categorical origin of κ₀
+The parameter $\kappa_0$ is **derived** categorically from the adjunction of the dissipative and regenerative functors. The exact formula **[Т]** (T-88): $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — unique via the Čencov–Petz theorem. Full justification in [Axiom of Septicity → Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
 :::
 
-:::note DRY: Единое определение
-Мастер-определение κ₀ с категориальным выводом и вычислительным приближением находится в [Аксиома Септичности → Категориальный вывод κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+:::note DRY: Single definition
+The master definition of κ₀ with categorical derivation and computational approximation is in [Axiom of Septicity → Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
 :::
 
-**Следствие:** Направление времени = направление «расходования» O. При $\gamma_{Oi} \to 0$ время «останавливается» для данного Голонома. Это не метафора: если все когерентности $O$ с другими измерениями обнуляются, условные состояния $\Gamma(\tau)$ перестают зависеть от $\tau$ — динамика замирает.
+**Corollary:** The direction of time = the direction of "expenditure" of O. When $\gamma_{Oi} \to 0$ time "stops" for the given Holon. This is not a metaphor: if all coherences of $O$ with other dimensions go to zero, the conditional states $\Gamma(\tau)$ cease to depend on $\tau$ — dynamics freezes.
 
-## Алгебра часов (Clock Algebra) {#алгебра-часов}
+## Clock Algebra {#алгебра-часов}
 
-:::info Статус: Формализовано
-Данный раздел содержит **мастер-определения** операторов часовой алгебры для механизма Пейдж–Вуттерс. Все остальные документы должны ссылаться на эти определения.
+:::info Status: Formalised
+This section contains the **master definitions** of clock-algebra operators for the Page–Wootters mechanism. All other documents should reference these definitions.
 :::
 
-### Гамильтониан часов $H_O$ {#гамильтониан-часов-h_o}
+### Clock Hamiltonian $H_O$ {#гамильтониан-часов-h_o}
 
-**Определение (Гамильтониан часов):**
+**Definition (Clock Hamiltonian):**
 
 $$
 H_O := \omega_0 \sum_{k=0}^{N-1} k |k\rangle\langle k|_O
 $$
 
-где:
-- $N = 7$ — размерность пространства $\mathcal{H}_O$
-- $\omega_0 > 0$ — фундаментальная (базовая) частота часов
-- $|k\rangle_O$ — вычислительный базис измерения O
+where:
+- $N = 7$ — dimension of the space $\mathcal{H}_O$
+- $\omega_0 > 0$ — fundamental (base) clock frequency
+- $|k\rangle_O$ — computational basis of dimension O
 
-**Интуитивное объяснение.** $H_O$ — это «метроном» Голонома. Он задаёт 7 «позиций» метронома ($|0\rangle, |1\rangle, \ldots, |6\rangle$), каждая с энергией $E_k = k\omega_0$. Как метроном отсчитывает такты в музыке, $H_O$ отсчитывает «тики» внутреннего времени. Частота $\omega_0$ — «темп» метронома.
+**Intuitive explanation.** $H_O$ is the Holon's "metronome". It defines 7 "positions" of the metronome ($|0\rangle, |1\rangle, \ldots, |6\rangle$), each with energy $E_k = k\omega_0$. Just as a metronome counts beats in music, $H_O$ counts the "ticks" of internal time. The frequency $\omega_0$ is the metronome's "tempo".
 
-**Свойства:**
-- Спектр эквидистантен: $E_k = k \omega_0$, $k = 0, 1, \ldots, 6$
-- Собственные состояния $|k\rangle_O$ — «тики» часов
+**Properties:**
+- The spectrum is equidistant: $E_k = k \omega_0$, $k = 0, 1, \ldots, 6$
+- Eigenstates $|k\rangle_O$ are clock "ticks"
 - $\mathrm{Tr}(H_O) = \omega_0 \cdot \sum_{k=0}^{6} k = 21\omega_0$
 
-### Оператор сдвига времени $V_O$ {#оператор-сдвига-v_o}
+### Time-shift operator $V_O$ {#оператор-сдвига-v_o}
 
-**Определение (Оператор сдвига):**
+**Definition (Shift operator):**
 
 $$
 V_O := \sum_{k=0}^{N-2} |k+1\rangle\langle k|_O + |0\rangle\langle N-1|_O
 $$
 
-Для $N = 7$:
+For $N = 7$:
 
 $$
 V_O = |1\rangle\langle 0| + |2\rangle\langle 1| + |3\rangle\langle 2| + |4\rangle\langle 3| + |5\rangle\langle 4| + |6\rangle\langle 5| + |0\rangle\langle 6|
 $$
 
-**Интуитивное объяснение.** $V_O$ — это «тик-так»: он переводит часы из одного состояния в следующее. После $|0\rangle$ идёт $|1\rangle$, после $|1\rangle$ — $|2\rangle$, и так далее. А после $|6\rangle$ — снова $|0\rangle$ (цикл замыкается). Это как стрелка часов, которая, дойдя до 12, возвращается к 1. Каждое применение $V_O$ — один «тик» времени.
+**Intuitive explanation.** $V_O$ is the "tick-tock": it moves the clock from one state to the next. After $|0\rangle$ comes $|1\rangle$, after $|1\rangle$ — $|2\rangle$, and so on. And after $|6\rangle$ — back to $|0\rangle$ (the cycle closes). This is like a clock hand that, upon reaching 12, returns to 1. Each application of $V_O$ is one "tick" of time.
 
-**Свойства:**
+**Properties:**
 
-| Свойство | Формула | Интерпретация |
-|----------|---------|---------------|
-| Периодичность | $V_O^N = \mathbb{1}$ | Цикличность времени с периодом N |
-| Унитарность | $V_O^\dagger V_O = V_O V_O^\dagger = \mathbb{1}$ | Сохраняет норму |
-| Каноническое соотношение | $V_O H_O V_O^\dagger = H_O + \omega_0 \mathbb{1}$ (mod $N\omega_0$) | Сдвиг энергии на квант |
+| Property | Formula | Interpretation |
+|----------|---------|----------------|
+| Periodicity | $V_O^N = \mathbb{1}$ | Cyclicity of time with period N |
+| Unitarity | $V_O^\dagger V_O = V_O V_O^\dagger = \mathbb{1}$ | Preserves norm |
+| Canonical relation | $V_O H_O V_O^\dagger = H_O + \omega_0 \mathbb{1}$ (mod $N\omega_0$) | Energy shift by one quantum |
 
-**Собственные состояния $V_O$:** Базис часов (собственные состояния оператора сдвига):
+**Eigenstates of $V_O$:** Clock basis (eigenstates of the shift operator):
 
 $$
 |\tau_n\rangle = \frac{1}{\sqrt{N}} \sum_{k=0}^{N-1} e^{-2\pi i k n / N} |k\rangle_O, \quad n = 0, 1, \ldots, N-1
 $$
 
-Собственные значения: $V_O |\tau_n\rangle = e^{2\pi i n/N} |\tau_n\rangle$
+Eigenvalues: $V_O |\tau_n\rangle = e^{2\pi i n/N} |\tau_n\rangle$
 
-### C*-алгебра часов $\mathcal{A}_O$ {#c-алгебра-часов-a_o}
+### C*-algebra of the clock $\mathcal{A}_O$ {#c-алгебра-часов-a_o}
 
-**Определение (C*-алгебра часов):**
+**Definition (C*-algebra of the clock):**
 
 $$
 \mathcal{A}_O := C^*(H_O, V_O) \cong M_N(\mathbb{C})
 $$
 
-где $C^*(H_O, V_O)$ — C*-алгебра, порождённая операторами $H_O$ и $V_O$.
+where $C^*(H_O, V_O)$ is the C*-algebra generated by operators $H_O$ and $V_O$.
 
-**Теорема (Изоморфизм):** $\mathcal{A}_O \cong M_7(\mathbb{C})$ — полная матричная алгебра $7 \times 7$ комплексных матриц.
+**Theorem (Isomorphism):** $\mathcal{A}_O \cong M_7(\mathbb{C})$ — the full matrix algebra of $7 \times 7$ complex matrices.
 
-**Интуитивное объяснение.** Из метронома ($H_O$) и тик-така ($V_O$) можно «собрать» любой оператор на пространстве часов. Это как конструктор Лего: двух базовых деталей достаточно, чтобы построить всё. Математически: $H_O$ и $V_O$ порождают **все** $7 \times 7$ матрицы, поэтому алгебра часов — максимально богатая.
+**Intuitive explanation.** From the metronome ($H_O$) and the tick-tock ($V_O$) one can "assemble" any operator on the clock space. This is like a Lego set: two basic pieces are enough to build everything. Mathematically: $H_O$ and $V_O$ generate **all** $7 \times 7$ matrices, so the clock algebra is maximally rich.
 
-**Доказательство:** Операторы $H_O$ и $V_O$ вместе порождают все матричные единицы $|i\rangle\langle j|$ через:
-- $|k\rangle\langle k| = \frac{1}{N}\sum_{n=0}^{N-1} e^{2\pi i kn/N} V_O^n$ (проекторы из сдвигов)
-- Все матричные единицы получаются комбинациями проекторов и сдвигов
+**Proof:** The operators $H_O$ and $V_O$ together generate all matrix units $|i\rangle\langle j|$ via:
+- $|k\rangle\langle k| = \frac{1}{N}\sum_{n=0}^{N-1} e^{2\pi i kn/N} V_O^n$ (projectors from shifts)
+- All matrix units are obtained from combinations of projectors and shifts
 
 ∎
 
-### Дискретность времени {#дискретность-времени-часы}
+### Discreteness of time {#дискретность-времени-часы}
 
-Для конечномерной системы ($N = 7$) время **фундаментально дискретно**:
+For a finite-dimensional system ($N = 7$) time is **fundamentally discrete**:
 
 $$
 \tau \in \mathbb{Z}_7 = \{0, 1, 2, 3, 4, 5, 6\}
 $$
 
-| Свойство | Дискретное ($N = 7$) | Непрерывное ($N \to \infty$) |
-|----------|---------------------|------------------------------|
-| Пространство времени | $\mathbb{Z}_7$ (циклическое) | $\mathbb{R}$ или $S^1$ |
-| Базис часов | 7 состояний $\lvert\tau_n\rangle$ | Континуум |
-| Хронон | $\delta\tau_{min} = 2\pi/(7\omega_0)$ | $\to 0$ |
+| Property | Discrete ($N = 7$) | Continuous ($N \to \infty$) |
+|----------|--------------------|-----------------------------|
+| Time space | $\mathbb{Z}_7$ (cyclic) | $\mathbb{R}$ or $S^1$ |
+| Clock basis | 7 states $\lvert\tau_n\rangle$ | Continuum |
+| Chronon | $\delta\tau_{min} = 2\pi/(7\omega_0)$ | $\to 0$ |
 
-**Следствие:** Непрерывное время — **приближение**, справедливое только в пределе $N \to \infty$. Для 7D системы УГМ время квантовано с 7 различимыми «моментами». Это как кадры в кинофильме: при достаточном количестве кадров в секунду движение кажется непрерывным, но в реальности оно дискретно.
+**Corollary:** Continuous time is an **approximation**, valid only in the limit $N \to \infty$. For the 7D UHM system, time is quantised with 7 distinguishable "moments". This is like frames in a film: with a sufficient number of frames per second motion appears continuous, but in reality it is discrete.
 
-:::note Связь с Пейдж–Вуттерс
-Полная конструкция ограничения $\hat{C}$ и вывод эффективной динамики см. в [Свойство 2 Ω⁷](../foundations/axiom-omega#свойство-2) и [Эволюция](../dynamics/evolution#вывод-h_eff).
+:::note Connection with Page–Wootters
+For the full construction of the constraint $\hat{C}$ and derivation of the effective dynamics, see [Property 2 of Ω⁷](../foundations/axiom-omega#свойство-2) and [Evolution](../dynamics/evolution#вывод-h_eff).
 :::
 
-## Формула κ₀: три измерения в одном узле {#формула-kappa0}
+## The κ₀ formula: three dimensions in one node {#формула-kappa0}
 
-Формула регенерации — одна из центральных в УГМ:
+The regeneration formula is one of the central formulas in UHM:
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
 $$
 
-Разберём каждый компонент:
+Let us break down each component:
 
-| Компонент | Значение | Интуиция |
-|-----------|----------|----------|
-| $\omega_0$ | Базовая частота часов | «Темп метронома» — как часто система «тикает» |
-| $|\gamma_{OE}|$ | Когерентность O с Интериорностью | «Насколько корни связаны с листьями» — питание внутреннего мира |
-| $|\gamma_{OU}|$ | Когерентность O с Единством | «Насколько корни связаны со стволом» — питание целостности |
-| $\gamma_{OO}$ | Населённость Основания | «Размер корневой системы» — собственные ресурсы O |
+| Component | Meaning | Intuition |
+|-----------|---------|-----------|
+| $\omega_0$ | Base clock frequency | "Metronome tempo" — how often the system "ticks" |
+| $|\gamma_{OE}|$ | Coherence of O with Interiority | "How connected the roots are to the leaves" — feeding the inner world |
+| $|\gamma_{OU}|$ | Coherence of O with Unity | "How connected the roots are to the trunk" — feeding wholeness |
+| $\gamma_{OO}$ | Population of the Ground | "Size of the root system" — O's own resources |
 
-**Почему именно эти три когерентности?** Регенерация — это восстановление когерентности Голонома. Для этого нужны:
-1. **Энергия** ($\omega_0$, $\gamma_{OO}$) — без энергии нечем восстанавливать;
-2. **Связь с внутренним миром** ($\gamma_{OE}$) — нужно «знать», что восстанавливать;
-3. **Связь с целостностью** ($\gamma_{OU}$) — нужен «план» восстановления (к чему стремиться).
+**Why exactly these three coherences?** Regeneration is the restoration of the Holon's coherence. This requires:
+1. **Energy** ($\omega_0$, $\gamma_{OO}$) — without energy there is nothing to restore with;
+2. **Connection with the inner world** ($\gamma_{OE}$) — one must "know" what to restore;
+3. **Connection with wholeness** ($\gamma_{OU}$) — a "blueprint" for restoration is needed (what to strive towards).
 
-Формула **не постулируется**, а выводится из теоремы Ченцова–Петца как единственная метрика, совместимая с квантовой статистикой. Подробнее: [категориальный вывод κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+The formula is **not postulated** but derived from the Čencov–Petz theorem as the unique metric compatible with quantum statistics. Details: [categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
 
-## Связь с Источником
+## Connection with the Source
 
-Измерение $O$ связывает каждый Голоном с изначальным состоянием реальности — [Источником (☉)](/docs/physics/cosmology-phys/origin#источник):
+Dimension $O$ connects each Holon to the primordial state of reality — the [Source (☉)](/docs/physics/cosmology-phys/origin#источник):
 
 $$
 \Gamma_{\odot} = |\psi_{\odot}\rangle\langle\psi_{\odot}|, \quad |\psi_{\odot}\rangle = \frac{1}{\sqrt{7}} \sum_{i \in \{A,S,D,L,E,O,U\}} |i\rangle
 $$
 
-Через измерение $O$ Голоном сохраняет связь с этим недифференцированным Источником. Это похоже на пуповину: даже после «рождения» (дифференциации из Источника) связь сохраняется через $\gamma_{OO} > 0$.
+Through dimension $O$ the Holon maintains its connection with this undifferentiated Source. This is like an umbilical cord: even after "birth" (differentiation from the Source) the connection is preserved through $\gamma_{OO} > 0$.
 
-## Стрела времени и необратимость {#стрела-времени}
+## Arrow of time and irreversibility {#стрела-времени}
 
-Почему время идёт «вперёд», а не «назад»? В обычной физике ответ — второй закон термодинамики (энтропия растёт). В УГМ стрела времени имеет **более глубокое** объяснение через измерение $O$.
+Why does time move "forward" and not "backward"? In ordinary physics the answer is the second law of thermodynamics (entropy increases). In UHM the arrow of time has a **deeper** explanation through dimension $O$.
 
-Регенерация «потребляет» когерентность $O$: при каждом «тике» часов часть ресурсов $O$ расходуется на поддержание когерентности остальных измерений. Это создаёт **асимметрию**: состояние «до тика» ($\gamma_{OO}$ выше) отличается от состояния «после тика» ($\gamma_{OO}$ ниже, если $\Delta F$ не компенсирует расход). Асимметрия — это и есть стрела времени.
+Regeneration "consumes" the coherence of $O$: at each "tick" of the clock, part of O's resources is spent on maintaining the coherence of the other dimensions. This creates an **asymmetry**: the state "before the tick" ($\gamma_{OO}$ higher) differs from the state "after the tick" ($\gamma_{OO}$ lower, if $\Delta F$ does not compensate the expenditure). This asymmetry is precisely the arrow of time.
 
-**Если** система импортирует достаточно свободной энергии ($\Delta F > 0$), расход компенсируется — и система может существовать неопределённо долго (как живой организм). **Если** $\Delta F = 0$ — ресурсы $O$ истощаются, когерентности падают, и Голоном «умирает». Смерть — это остановка внутренних часов.
+**If** the system imports sufficient free energy ($\Delta F > 0$), the expenditure is compensated — and the system can exist indefinitely (like a living organism). **If** $\Delta F = 0$ — O's resources are depleted, coherences fall, and the Holon "dies". Death is the stopping of the internal clock.
 
-:::note Связь с космологией
-В масштабах Вселенной стрела времени связана с расширением из начального состояния Источника $\Gamma_\odot$ (максимальная когерентность) к равновесию (максимальная энтропия). Подробнее: [Происхождение](/docs/physics/cosmology-phys/origin).
+:::note Connection with cosmology
+At the scale of the universe, the arrow of time is connected to the expansion from the initial state of the Source $\Gamma_\odot$ (maximum coherence) towards equilibrium (maximum entropy). Details: [Origin](/docs/physics/cosmology-phys/origin).
 :::
 
-## Примеры {#примеры}
+## Examples {#примеры}
 
-### Физический уровень
+### Physical level
 
-| Система | $\gamma_{OO}$ | Описание |
-|---------|---------------|----------|
-| Вакуумные флуктуации | $\sim 1/7$ | Квантовая энергия пустого пространства — нулевые колебания |
-| Квантовый осциллятор | — | Минимальная энергия: $E_0 = \frac{1}{2}\hbar\omega$ |
-| Эффект Казимира | — | Проявление вакуумной энергии: две пластины притягиваются |
+| System | $\gamma_{OO}$ | Description |
+|--------|---------------|-------------|
+| Vacuum fluctuations | $\sim 1/7$ | Quantum energy of empty space — zero-point oscillations |
+| Quantum oscillator | — | Minimum energy: $E_0 = \frac{1}{2}\hbar\omega$ |
+| Casimir effect | — | Manifestation of vacuum energy: two plates attract |
 
-### Биологический уровень
+### Biological level
 
-| Система | Проявление O | Описание |
-|---------|-------------|----------|
-| Метаболизм | $\Delta F > 0$ | Импорт свободной энергии из пищи |
-| Гомеостаз | $\kappa > 0$ | Поддержание внутренней среды против энтропии |
-| Регенерация тканей | $\mathcal{R} > 0$ | Восстановление структуры за счёт энергии |
-| Циркадные ритмы | $\omega_0$ | Внутренние часы с периодом ~24 часа |
+| System | Manifestation of O | Description |
+|--------|--------------------|-------------|
+| Metabolism | $\Delta F > 0$ | Import of free energy from food |
+| Homeostasis | $\kappa > 0$ | Maintaining the internal environment against entropy |
+| Tissue regeneration | $\mathcal{R} > 0$ | Restoration of structure at the cost of energy |
+| Circadian rhythms | $\omega_0$ | Internal clock with period ~24 hours |
 
-### Когнитивный уровень
+### Cognitive level
 
-| Система | Проявление O | Описание |
-|---------|-------------|----------|
-| Воля к жизни | $\gamma_{OO} \gg 0$ | Фундаментальный импульс к существованию |
-| Базовое доверие | $\gamma_{OE} > 0$ | Ощущение укоренённости в бытии |
-| Витальность | $\kappa(\Gamma) > 0$ | Переживание жизненной силы |
-| Ощущение времени | $H_O$ | Субъективное переживание длительности |
+| System | Manifestation of O | Description |
+|--------|--------------------|-------------|
+| Will to live | $\gamma_{OO} \gg 0$ | Fundamental impulse towards existence |
+| Basic trust | $\gamma_{OE} > 0$ | Sense of being rooted in being |
+| Vitality | $\kappa(\Gamma) > 0$ | Experience of vital force |
+| Sense of time | $H_O$ | Subjective experience of duration |
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    O[O — Основание] --> A[A — источник энергии различения]
-    O --> S[S — питает устойчивость структуры]
-    O --> D[D — обеспечивает энергию процессов]
-    O --> L[L — фундамент логической согласованности]
-    O --> E[E — глубина интериорных состояний]
-    O --> U[U — основание целостности]
+    O[O — Ground] --> A[A — energy source for distinctions]
+    O --> S[S — feeds structural stability]
+    O --> D[D — provides energy for processes]
+    O --> L[L — foundation of logical consistency]
+    O --> E[E — depth of interior states]
+    O --> U[U — ground of wholeness]
 ```
 
-**Ключевые связи:**
+**Key connections:**
 
-- **O ↔ E (Имманентность):** Через $\gamma_{OE}$ Основание питает Интериорность. Без этой связи — интериорность «гаснет» (экзистенциальный вакуум). $\gamma_{OE}$ входит в числитель $\kappa_0$.
+- **O ↔ E (Immanence):** Through $\gamma_{OE}$ the Ground feeds Interiority. Without this connection — interiority "fades" (existential vacuum). $\gamma_{OE}$ enters the numerator of $\kappa_0$.
 
-- **O ↔ U (Связь с целостностью):** Через $\gamma_{OU}$ Основание поддерживает Единство. Без этой связи — система теряет целостность (фрагментация). $\gamma_{OU}$ также входит в числитель $\kappa_0$.
+- **O ↔ U (Connection with wholeness):** Through $\gamma_{OU}$ the Ground sustains Unity. Without this connection — the system loses integrity (fragmentation). $\gamma_{OU}$ also enters the numerator of $\kappa_0$.
 
-- **O ↔ D (Динамическая энергия):** Через $\gamma_{OD}$ Основание обеспечивает энергию процессов. При $\gamma_{OD} \to 0$ — процессы замедляются (истощение, burnout).
+- **O ↔ D (Dynamic energy):** Through $\gamma_{OD}$ the Ground provides energy for processes. When $\gamma_{OD} \to 0$ — processes slow down (exhaustion, burnout).
 
-## Когерентность с O
+## Coherence with O
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{OA}$ | Энергетическая поддержка различений |
-| $\gamma_{OS}$ | Энергетическая устойчивость структуры |
-| $\gamma_{OD}$ | Источник динамической энергии |
-| $\gamma_{OL}$ | Энергия поддержания согласованности |
-| $\gamma_{OE}$ | Имманентность (основание внутри интериорности) |
-| $\gamma_{OU}$ | Связь целостности с источником |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{OA}$ | Energetic support of distinctions |
+| $\gamma_{OS}$ | Energetic stability of structure |
+| $\gamma_{OD}$ | Source of dynamic energy |
+| $\gamma_{OL}$ | Energy for maintaining consistency |
+| $\gamma_{OE}$ | Immanence (ground within interiority) |
+| $\gamma_{OU}$ | Connection of wholeness with the source |
 
-## Потеря связи с O {#потеря-связи}
+## Loss of connection with O {#потеря-связи}
 
-При $\gamma_{Oi} \to 0$ для всех $i$:
+When $\gamma_{Oi} \to 0$ for all $i$:
 
-1. Система теряет источник регенерации: $\mathcal{R}[\Gamma, E] \to 0$
-2. Диссипация превышает восстановление: $\mathcal{D}[\Gamma] > \mathcal{R}[\Gamma, E]$
-3. Чистота падает: $P \to P_{\text{crit}}$
-4. При $P < P_{\text{crit}}$ — необратимый распад (смерть Голонома)
+1. The system loses its regeneration source: $\mathcal{R}[\Gamma, E] \to 0$
+2. Dissipation exceeds restoration: $\mathcal{D}[\Gamma] > \mathcal{R}[\Gamma, E]$
+3. Purity falls: $P \to P_{\text{crit}}$
+4. When $P < P_{\text{crit}}$ — irreversible collapse (death of the Holon)
 
-**Интуитивное объяснение.** Потеря связи с Основанием — как дерево с подрубленными корнями. Крона ещё зелёная (система ещё функционирует), но питание прекращено. Через некоторое время листья начинают желтеть ($P$ снижается), ветви сохнут (когерентности падают), и дерево гибнет ($P < P_{\text{crit}}$). Скорость гибели зависит от накопленных резервов ($\gamma_{OO}$ в момент разрыва) и интенсивности диссипации ($\mathcal{D}$).
+**Intuitive explanation.** Loss of connection with the Ground is like a tree with severed roots. The crown is still green (the system still functions), but nourishment has ceased. After some time the leaves begin to yellow ($P$ decreases), the branches dry out (coherences fall), and the tree dies ($P < P_{\text{crit}}$). The rate of death depends on accumulated reserves ($\gamma_{OO}$ at the moment of severance) and the intensity of dissipation ($\mathcal{D}$).
 
-### Клинические аналогии (развёрнутые)
+### Clinical analogies (expanded)
 
-| Состояние | Снижается | Механизм | Проявления |
-|-----------|-----------|----------|------------|
-| **Физическое истощение (burnout)** | $\gamma_{OD}$ | Энергия процессов иссякает | Хроническая усталость, невозможность действовать; как мотор без топлива |
-| **Тяжёлый ожог** | $\gamma_{OO}$ глобально | Массивная потеря ресурсов | Организм не справляется с регенерацией тканей; $\mathcal{R} < \mathcal{D}$ |
-| **Клиническая депрессия** | $\gamma_{OE}$ | Основание теряет связь с интериорностью | «Всё серое», потеря интереса; внутренний мир не подпитывается |
-| **Экзистенциальный вакуум** | $\gamma_{OE}$, $\gamma_{OU}$ | Потеря и имманентности, и целостности | «Зачем всё это?»; по Франклу — потеря смысла |
-| **Потеря смысла** | $\gamma_{OU}$ | Целостность теряет основание | Фрагментация жизненного проекта; «я не вижу картину целиком» |
+| Condition | What decreases | Mechanism | Manifestations |
+|-----------|----------------|-----------|----------------|
+| **Physical exhaustion (burnout)** | $\gamma_{OD}$ | Process energy runs out | Chronic fatigue, inability to act; like an engine without fuel |
+| **Severe burn** | $\gamma_{OO}$ globally | Massive loss of resources | The organism cannot cope with tissue regeneration; $\mathcal{R} < \mathcal{D}$ |
+| **Clinical depression** | $\gamma_{OE}$ | Ground loses connection with interiority | "Everything is grey", loss of interest; the inner world is no longer nourished |
+| **Existential vacuum** | $\gamma_{OE}$, $\gamma_{OU}$ | Loss of both immanence and wholeness | "What's the point?"; by Frankl — loss of meaning |
+| **Loss of meaning** | $\gamma_{OU}$ | Wholeness loses its ground | Fragmentation of the life project; "I cannot see the whole picture" |
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_7 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_7 \in \mathrm{Im}(\mathbb{O})$. Details, $G_2$-caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---
 
-**Связанные документы:**
-- [Интериорность (E)](./dimension-e) — предыдущее измерение
-- [Единство (U)](./dimension-u) — следующее измерение
-- [Теорема об эмерджентном времени](../../proofs/dynamics/emergent-time) — O как внутренние часы
-- [Аксиома Ω⁷](../foundations/axiom-omega) — пять аксиом с Пейдж–Вуттерс
-- [Происхождение](/docs/physics/cosmology-phys/origin) — Источник и космогенез
-- [Жизнеспособность](../dynamics/viability) — условия существования
-- [Пространство-время](../foundations/spacetime) — эмерджентная геометрия
-- [Математический аппарат](../../reference/specification) — формальные определения
-- [Категориальный вывод κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0) — формула регенерации
+**Related documents:**
+- [Interiority (E)](./dimension-e) — previous dimension
+- [Unity (U)](./dimension-u) — next dimension
+- [Emergent-time theorem](../../proofs/dynamics/emergent-time) — O as internal clock
+- [Axiom Ω⁷](../foundations/axiom-omega) — five axioms with Page–Wootters
+- [Origin](/docs/physics/cosmology-phys/origin) — Source and cosmogenesis
+- [Viability](../dynamics/viability) — conditions of existence
+- [Spacetime](../foundations/spacetime) — emergent geometry
+- [Mathematical apparatus](../../reference/specification) — formal definitions
+- [Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0) — regeneration formula

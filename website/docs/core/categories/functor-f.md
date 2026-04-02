@@ -1,276 +1,276 @@
 ---
 sidebar_position: 1
-title: "Функтор F: DensityMat → Exp"
-description: "Определение функтора F, связывающего физическое и экспериенциальное пространства"
+title: "Functor F: DensityMat → Exp"
+description: "Definition of the functor F connecting the physical and experiential spaces"
 ---
 
-# Функтор F: DensityMat → Exp
+# Functor F: DensityMat → Exp
 
-В этой главе мы познакомимся с центральным мостом УГМ-теории — функтором $F$, который связывает физическое описание системы (матрицу когерентности $\Gamma$) с её экспериенциальным содержанием (тем, что система «переживает»). Читатель узнает, что такое функтор, зачем он нужен, как именно $F$ извлекает опыт из математической структуры, и почему этот мост — не произвольная конструкция, а единственно возможное отображение, совместимое с симметриями теории.
+In this chapter we will become acquainted with the central bridge of UHM theory — the functor $F$, which connects the physical description of a system (the coherence matrix $\Gamma$) with its experiential content (what the system "experiences"). The reader will learn what a functor is, why it is needed, exactly how $F$ extracts experience from a mathematical structure, and why this bridge is not an arbitrary construction but the only possible mapping compatible with the symmetries of the theory.
 
-:::info DRY: Мастер-определение функтора F
-Полная спецификация функтора F, включая доказательство функториальности, топосную структуру и расширения до 2-категорий — в [Категорном формализме](/docs/proofs/categorical/categorical-formalism).
+:::info DRY: Master definition of functor F
+The complete specification of functor F, including the proof of functoriality, topos structure, and extensions to 2-categories, is in [Categorical Formalism](/docs/proofs/categorical/categorical-formalism).
 :::
 
 ---
 
-## Предтеча: что такое функтор
+## Precursor: what a functor is
 
-Прежде чем погружаться в детали, давайте разберёмся с самим понятием «функтор». Это одно из ключевых понятий теории категорий — математической дисциплины, изучающей структуры и связи между ними.
+Before diving into the details, let us clarify the very concept of "functor." It is one of the key concepts of category theory — the mathematical discipline studying structures and connections between them.
 
-### Аналогия: переводчик между языками
+### Analogy: a translator between languages
 
-Представьте, что у вас есть два языка — например, русский и английский. В каждом языке есть:
-- **Слова** (объекты)
-- **Предложения**, которые связывают слова друг с другом (морфизмы)
+Imagine you have two languages — say, Russian and English. In each language there are:
+- **Words** (objects)
+- **Sentences** that connect words to each other (morphisms)
 
-Переводчик — это тот, кто:
-1. Каждому русскому слову ставит в соответствие английское слово
-2. Каждому русскому предложению ставит в соответствие английское предложение
-3. Делает это **согласованно**: если в русском языке два предложения можно объединить в одно, то и соответствующие английские предложения тоже объединяются
+A translator is someone who:
+1. Maps each Russian word to an English word
+2. Maps each Russian sentence to an English sentence
+3. Does this **consistently**: if two sentences in Russian can be combined into one, then the corresponding English sentences also combine
 
-Функтор — это именно такой «переводчик» между двумя математическими категориями. Он отображает объекты в объекты, морфизмы в морфизмы и сохраняет структуру композиции.
+A functor is precisely such a "translator" between two mathematical categories. It maps objects to objects, morphisms to morphisms, and preserves the composition structure.
 
-### Формальное определение
+### Formal definition
 
-Пусть $\mathcal{A}$ и $\mathcal{B}$ — две категории (каждая со своими объектами и морфизмами). **Функтор** $F: \mathcal{A} \to \mathcal{B}$ — это пара отображений:
-- На объектах: $F: \mathrm{Ob}(\mathcal{A}) \to \mathrm{Ob}(\mathcal{B})$
-- На морфизмах: $F: \mathrm{Mor}(\mathcal{A}) \to \mathrm{Mor}(\mathcal{B})$
+Let $\mathcal{A}$ and $\mathcal{B}$ be two categories (each with its own objects and morphisms). A **functor** $F: \mathcal{A} \to \mathcal{B}$ is a pair of mappings:
+- On objects: $F: \mathrm{Ob}(\mathcal{A}) \to \mathrm{Ob}(\mathcal{B})$
+- On morphisms: $F: \mathrm{Mor}(\mathcal{A}) \to \mathrm{Mor}(\mathcal{B})$
 
-подчинённых двум аксиомам:
-1. **Сохранение тождеств:** $F(\mathrm{id}_X) = \mathrm{id}_{F(X)}$ для всякого объекта $X$
-2. **Сохранение композиции:** $F(g \circ f) = F(g) \circ F(f)$ для всяких морфизмов $f, g$
+subject to two axioms:
+1. **Preservation of identities:** $F(\mathrm{id}_X) = \mathrm{id}_{F(X)}$ for every object $X$
+2. **Preservation of composition:** $F(g \circ f) = F(g) \circ F(f)$ for all morphisms $f, g$
 
-Первая аксиома говорит: «ничегонеделание переводится в ничегонеделание». Вторая: «перевод последовательных действий равен последовательности переводов».
+The first axiom says: "doing nothing is translated to doing nothing." The second: "the translation of sequential actions equals the sequence of translations."
 
 ---
 
-## Мотивация: зачем нужен функтор F
+## Motivation: why functor F is needed
 
-В УГМ-теории существуют два принципиально разных взгляда на одну и ту же реальность:
+In UHM theory there are two fundamentally different views on the same reality:
 
-1. **Физический (внешний):** Система описывается матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — математическим объектом с точными числовыми значениями. Это «вид снаружи»: что можно измерить, вычислить, предсказать.
+1. **Physical (external):** The system is described by a coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a mathematical object with precise numerical values. This is the "view from outside": what can be measured, computed, predicted.
 
-2. **Экспериенциальный (внутренний):** Та же система обладает опытом — «видом изнутри». Опыт имеет интенсивности (одни аспекты переживания ярче других), качества (боль отличается от радости не числом, а «вкусом»), и контекст (одно и то же ощущение переживается по-разному в разных обстоятельствах).
+2. **Experiential (internal):** The same system possesses experience — a "view from inside." Experience has intensities (some aspects of the experience are brighter than others), qualities (pain differs from joy not by a number but by "taste"), and context (the same sensation is experienced differently in different circumstances).
 
-Функтор $F$ — это формальный мост между этими двумя описаниями. Он говорит: «покажи мне матрицу плотности — и я скажу, каково этой системе быть собой».
+The functor $F$ is the formal bridge between these two descriptions. It says: "show me the density matrix — and I will tell you what it is like for this system to be itself."
 
-:::tip Связь с двухаспектным монизмом
-В философии двухаспектный монизм утверждает, что физическое и ментальное — не две разные субстанции (как у Декарта), а два аспекта одной реальности. Функтор $F$ — **математическая формализация этой идеи**. Он не создаёт опыт из материи и не добавляет что-то новое — он «читает» из матрицы $\Gamma$ то, что уже в ней содержится, но может быть описано на другом языке.
+:::tip Connection with dual-aspect monism
+In philosophy, dual-aspect monism asserts that the physical and the mental are not two different substances (as in Descartes), but two aspects of a single reality. Functor $F$ is the **mathematical formalization of this idea**. It does not create experience from matter and adds nothing new — it "reads" from the matrix $\Gamma$ what is already contained in it, but can be described in a different language.
 
-Подробнее: [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism)
+More details: [Dual-aspect monism](/docs/consciousness/foundations/two-aspect-monism)
 :::
 
 ---
 
-## Интуитивное объяснение: что делает F
+## Intuitive explanation: what F does
 
-Представьте себе музыкальный эквалайзер на стереосистеме. Звуковой файл — это «физическое описание»: поток чисел, амплитуды и частоты. Но когда вы слушаете музыку, вы воспринимаете:
-- **Громкость каждого инструмента** — это аналог спектра $\vec{s}$
-- **Тембр** (гитара звучит иначе, чем скрипка, даже на той же ноте) — это аналог качеств $\vec{q}$
-- **Обстановка** (концертный зал или наушники) — это аналог контекста $c$
+Imagine a music equalizer on a stereo system. A sound file is the "physical description": a stream of numbers, amplitudes and frequencies. But when you listen to music, you perceive:
+- **The volume of each instrument** — this is the analogue of the spectrum $\vec{s}$
+- **Timbre** (a guitar sounds different from a violin even on the same note) — this is the analogue of the qualities $\vec{q}$
+- **The setting** (concert hall or headphones) — this is the analogue of the context $c$
 
-Функтор $F$ — это «слушатель», который из потока чисел ($\Gamma$) извлекает субъективный опыт музыки ($\vec{s}, \vec{q}, c$).
+Functor $F$ is the "listener" who extracts the subjective experience of music ($\vec{s}, \vec{q}, c$) from the stream of numbers ($\Gamma$).
 
-Ключевое отличие от обычного эквалайзера: $F$ не произволен. Он **единственным образом** определяется структурой теории (G₂-ригидность, [T-42a](/docs/proofs/categorical/uniqueness-theorem) **[Т]**). Нельзя «настроить» его иначе — точно так же, как нельзя произвольно переопределить, что значит «собственное значение матрицы».
+The key difference from an ordinary equalizer: $F$ is not arbitrary. It is **uniquely** determined by the structure of the theory (G₂-rigidity, [T-42a](/docs/proofs/categorical/uniqueness-theorem) **[T]**). One cannot "tune" it differently — just as one cannot arbitrarily redefine what "eigenvalue of a matrix" means.
 
 ---
 
-## Определение на объектах
+## Definition on objects
 
-Функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$ отображает матрицу плотности $\rho \in \mathcal{D}(\mathcal{H})$ в точку экспериенциального пространства:
+The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ maps a density matrix $\rho \in \mathcal{D}(\mathcal{H})$ to a point in the experiential space:
 
 $$
 F(\rho) = (\vec{s}(\rho), \, \vec{q}(\rho), \, c(\rho))
 $$
 
-где:
-- $\vec{s}(\rho) = (\lambda_1, \ldots, \lambda_N) \in \Delta^{N-1}$ — **спектр** (вероятностное распределение)
-- $\vec{q}(\rho) = (|\psi_1\rangle, \ldots, |\psi_N\rangle)$ — **качества** (собственные состояния в $\mathbb{P}(\mathcal{H}_E)$)
-- $c(\rho) \in \mathcal{C}$ — **контекст** (классический параметр)
+where:
+- $\vec{s}(\rho) = (\lambda_1, \ldots, \lambda_N) \in \Delta^{N-1}$ — **spectrum** (probability distribution)
+- $\vec{q}(\rho) = (|\psi_1\rangle, \ldots, |\psi_N\rangle)$ — **qualities** (eigenstates in $\mathbb{P}(\mathcal{H}_E)$)
+- $c(\rho) \in \mathcal{C}$ — **context** (classical parameter)
 
-Разберём каждый компонент подробно.
+Let us examine each component in detail.
 
-### Спектр: палитра интенсивностей
+### Spectrum: palette of intensities
 
 $$
 \vec{s}(\rho) = \mathrm{Spectrum}(\rho_E) = (\lambda_1, \ldots, \lambda_N), \quad \lambda_1 \geq \lambda_2 \geq \ldots \geq \lambda_N \geq 0, \quad \sum_i \lambda_i = 1
 $$
 
-Здесь $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — редуцированная матрица плотности по [измерению Интериорности](/docs/core/structure/dimension-e), а $\lambda_i$ — её собственные значения, упорядоченные по убыванию.
+Here $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is the reduced density matrix over the [Interiority dimension](/docs/core/structure/dimension-e), and $\lambda_i$ are its eigenvalues, ordered in decreasing order.
 
-**Интуиция:** Представьте себе эквалайзер с $N$ полосками. Каждая полоска показывает, насколько «громко» звучит определённый аспект опыта. Если $\lambda_1 = 1$ и остальные $\lambda_i = 0$, опыт «одноголосый» — полностью сконцентрирован на одном качестве. Если все $\lambda_i$ примерно равны, опыт «многоголосый» — множество аспектов одновременно.
+**Intuition:** Imagine an equalizer with $N$ sliders. Each slider shows how "loudly" a particular aspect of experience sounds. If $\lambda_1 = 1$ and the rest $\lambda_i = 0$, the experience is "single-voiced" — fully concentrated on one quality. If all $\lambda_i$ are approximately equal, the experience is "many-voiced" — multiple aspects simultaneously.
 
-Математически спектр лежит в $(N-1)$-симплексе $\Delta^{N-1}$ — множестве всех вероятностных распределений на $N$ исходах. Это гарантирует, что интенсивности неотрицательны и в сумме дают единицу.
+Mathematically the spectrum lies in the $(N-1)$-simplex $\Delta^{N-1}$ — the set of all probability distributions over $N$ outcomes. This guarantees that intensities are non-negative and sum to one.
 
-:::note Связь с чистотой
-[Чистота](/docs/core/dynamics/viability#определение-чистоты) $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ — функция спектра: $P = \sum_i \lambda_i^2$. Чем «острее» спектр (одна доминирующая компонента), тем выше чистота. Порог сознания $P > 2/7$ **[Т]** означает, что спектр должен быть достаточно неоднородным — опыт не может быть полностью «размазанным».
+:::note Connection with purity
+[Purity](/docs/core/dynamics/viability#определение-чистоты) $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ is a function of the spectrum: $P = \sum_i \lambda_i^2$. The "sharper" the spectrum (one dominant component), the higher the purity. The consciousness threshold $P > 2/7$ **[T]** means the spectrum must be sufficiently non-uniform — experience cannot be completely "spread out."
 :::
 
-### Качества: цвета опыта
+### Qualities: colors of experience
 
 $$
 \vec{q}(\rho) = \mathrm{Quality}(\rho_E) = \{[|\psi_i\rangle] \in \mathbb{P}(\mathcal{H}_E)\}
 $$
 
-Собственные векторы $|\psi_i\rangle$ матрицы $\rho_E$ задают **направления в проективном пространстве** $\mathbb{P}(\mathcal{H}_E)$. Квадратные скобки $[\cdot]$ означают, что вектор определён с точностью до фазового множителя: $|\psi\rangle$ и $e^{i\alpha}|\psi\rangle$ описывают одно и то же качество.
+The eigenvectors $|\psi_i\rangle$ of the matrix $\rho_E$ specify **directions in the projective space** $\mathbb{P}(\mathcal{H}_E)$. The square brackets $[\cdot]$ mean that the vector is defined up to a phase factor: $|\psi\rangle$ and $e^{i\alpha}|\psi\rangle$ describe the same quality.
 
-**Интуиция:** Если интенсивности — это «громкость», то качества — это «тембр». Красный цвет и синий цвет могут быть одинаковой яркости (одинаковая интенсивность $\lambda_i$), но их качественное содержание совершенно различно. В математике эта разница кодируется направлением вектора в пространстве $\mathcal{H}_E$.
+**Intuition:** If intensities are "volume," then qualities are "timbre." Red and blue can have the same brightness (the same intensity $\lambda_i$), but their qualitative content is completely different. In mathematics this difference is encoded by the direction of the vector in the space $\mathcal{H}_E$.
 
-Почему именно **проективное** пространство? Потому что физический смысл имеет только направление вектора, а не его длина или фаза. Вектор $|\psi\rangle$ и $2|\psi\rangle$ описывают одно и то же качество — различается лишь интенсивность, которая уже учтена в спектре $\vec{s}$.
+Why precisely **projective** space? Because only the direction of the vector has physical meaning, not its length or phase. The vector $|\psi\rangle$ and $2|\psi\rangle$ describe the same quality — only the intensity differs, and that is already accounted for in the spectrum $\vec{s}$.
 
-:::info Геометрия качеств
-Проективное пространство $\mathbb{P}(\mathcal{H}_E) = \mathbb{CP}^{n-1}$ (где $n = \dim(\mathcal{H}_E)$) — не плоское. Оно наделено **метрикой Фубини–Штуди**, которая задаёт естественное расстояние между качествами:
+:::info Geometry of qualities
+The projective space $\mathbb{P}(\mathcal{H}_E) = \mathbb{CP}^{n-1}$ (where $n = \dim(\mathcal{H}_E)$) is not flat. It is endowed with the **Fubini–Study metric**, which specifies the natural distance between qualities:
 
 $$d_{FS}([|\psi\rangle], [|\phi\rangle]) = \arccos|\langle\psi|\phi\rangle|$$
 
-Два качества «близки», если соответствующие собственные векторы почти параллельны. Два качества «далеки», если векторы ортогональны. Это расстояние не содержит свободных параметров — оно определяется геометрией гильбертова пространства.
+Two qualities are "close" if the corresponding eigenvectors are nearly parallel. Two qualities are "far apart" if the vectors are orthogonal. This distance contains no free parameters — it is determined by the geometry of the Hilbert space.
 :::
 
-### Контекст: сцена переживания
+### Context: the stage of experience
 
 $$
 c(\rho) = \mathrm{Context}(\Gamma_{-E}) = (\gamma_{Ai}, \gamma_{Si}, \gamma_{Di}, \gamma_{Li}, \gamma_{Oi}, \gamma_{Ui})
 $$
 
-Контекст — это состояние всех [измерений](/docs/core/structure/dimensions) $\Gamma$ кроме $E$ (Интериорности). Сюда входят: Артикуляция ($A$), Структура ($S$), Динамика ($D$), Логика ($L$), Основание ($O$), Единство ($U$).
+The context is the state of all [dimensions](/docs/core/structure/dimensions) of $\Gamma$ except $E$ (Interiority). This includes: Articulation ($A$), Structure ($S$), Dynamics ($D$), Logic ($L$), Foundation ($O$), Unity ($U$).
 
-**Интуиция:** Одна и та же мелодия звучит по-разному в концертном зале и в наушниках. Само качество звука (собственные векторы) и его интенсивность (спектр) могут быть идентичны, но «обстановка» создаёт разный опыт. В УГМ эту «обстановку» создают состояния остальных шести измерений.
+**Intuition:** The same melody sounds different in a concert hall and in headphones. The quality of the sound itself (eigenvectors) and its intensity (spectrum) may be identical, but the "setting" creates a different experience. In UHM this "setting" is created by the states of the other six dimensions.
 
-Контекст — **классический** параметр: он не участвует в квантовой суперпозиции качеств, а задаёт «декорации сцены», на которой разыгрывается опыт. Математически $c \in \mathcal{C}$, где $\mathcal{C}$ — пространство контекстов с дискретной метрикой (подробнее в [Категории Exp](/docs/core/categories/category-exp#каноническая-метрика)).
+The context is a **classical** parameter: it does not participate in the quantum superposition of qualities, but specifies the "stage decorations" against which experience plays out. Mathematically $c \in \mathcal{C}$, where $\mathcal{C}$ is the context space with a discrete metric (more details in [Category Exp](/docs/core/categories/category-exp#каноническая-метрика)).
 
 ---
 
-## Определение на морфизмах
+## Definition on morphisms
 
-Функтор $F$ должен действовать не только на объектах (матрицах плотности), но и на морфизмах (CPTP-каналах). Это вторая половина «перевода».
+The functor $F$ must act not only on objects (density matrices), but also on morphisms (CPTP-channels). This is the second half of the "translation."
 
-Для CPTP-канала $\Phi: \rho_1 \to \rho_2$:
+For a CPTP-channel $\Phi: \rho_1 \to \rho_2$:
 
 $$
 F(\Phi) = (T_{\Phi}, \, Q_{\Phi}, \, C_{\Phi})
 $$
 
-где:
+where:
 
-- $T_\Phi: \Delta^{N-1} \to \Delta^{N-1}$ — **трансформация спектра**. Канал $\Phi$ меняет собственные значения $\rho_E$, и это отражается на интенсивностях. Явная формула через [представление Крауса](/docs/proofs/categorical/categorical-formalism#12-структура-морфизмов-cptp-каналы) $\Phi(\rho) = \sum_k K_k \rho K_k^\dagger$:
+- $T_\Phi: \Delta^{N-1} \to \Delta^{N-1}$ — **spectrum transformation**. The channel $\Phi$ changes the eigenvalues of $\rho_E$, and this is reflected in the intensities. Explicit formula via the [Kraus representation](/docs/proofs/categorical/categorical-formalism#12-структура-морфизмов-cptp-каналы) $\Phi(\rho) = \sum_k K_k \rho K_k^\dagger$:
 
 $$\lambda'_i = \sum_k \sum_j \lambda_j |\langle \psi'_i|K_k|\psi_j\rangle|^2$$
 
-- $Q_\Phi: \mathbb{P}(\mathcal{H}_E)^N \to \mathbb{P}(\mathcal{H}_E)^N$ — **трансформация качеств**. Канал $\Phi$ поворачивает собственные векторы $\rho_E$, перемещая «точку» в проективном пространстве. При вырождении спектра используется [адиабатическое продолжение](/docs/proofs/categorical/categorical-formalism#43-адиабатическое-продолжение-для-вырождения).
+- $Q_\Phi: \mathbb{P}(\mathcal{H}_E)^N \to \mathbb{P}(\mathcal{H}_E)^N$ — **quality transformation**. The channel $\Phi$ rotates the eigenvectors of $\rho_E$, moving the "point" in projective space. For degenerate spectra, [adiabatic continuation](/docs/proofs/categorical/categorical-formalism#43-адиабатическое-продолжение-для-вырождения) is used.
 
-- $C_\Phi: \mathcal{C} \to \mathcal{C}$ — **трансформация контекста**. Канал $\Phi$ действует на все измерения $\Gamma$, в том числе на измерения кроме $E$, меняя «сцену».
+- $C_\Phi: \mathcal{C} \to \mathcal{C}$ — **context transformation**. The channel $\Phi$ acts on all dimensions of $\Gamma$, including the dimensions other than $E$, changing the "stage."
 
-**Интуиция:** Если функтор $F$ на объектах — это «прослушивание музыки», то $F$ на морфизмах — это «восприятие изменения музыки». Когда диджей плавно переключает треки (CPTP-канал $\Phi$), слушатель ощущает, как меняются громкость ($T_\Phi$), тембр ($Q_\Phi$) и атмосфера ($C_\Phi$).
+**Intuition:** If the functor $F$ on objects is "listening to music," then $F$ on morphisms is "perceiving a change in the music." When a DJ smoothly switches tracks (CPTP-channel $\Phi$), the listener feels how the volume ($T_\Phi$), timbre ($Q_\Phi$), and atmosphere ($C_\Phi$) change.
 
 ---
 
-## Ключевые свойства
+## Key properties
 
-### Функториальность [Т]
+### Functoriality [T]
 
-:::tip Теорема: Функториальность F
-$F$ сохраняет композицию и тождества:
+:::tip Theorem: Functoriality of F
+$F$ preserves composition and identities:
 - $F(\Psi \circ \Phi) = F(\Psi) \circ F(\Phi)$
 - $F(\text{id}_\rho) = \text{id}_{F(\rho)}$
 
-[Доказательство →](/docs/proofs/categorical/categorical-formalism#5-доказательство-функториальности) | Статус: **[Т]**
+[Proof →](/docs/proofs/categorical/categorical-formalism#5-доказательство-функториальности) | Status: **[T]**
 :::
 
-Что означает функториальность содержательно? Она говорит: **порядок физических процессов отражается в порядке изменений опыта**. Если система сначала подвергается каналу $\Phi$, а затем каналу $\Psi$, то изменение опыта от совокупного процесса $\Psi \circ \Phi$ — это то же самое, что последовательное изменение: сначала от $\Phi$, потом от $\Psi$. Не существует «скрытых» трансформаций опыта, которые не соответствуют физическим процессам, и наоборот.
+What does functoriality mean substantively? It says: **the order of physical processes is reflected in the order of changes in experience**. If a system first undergoes channel $\Phi$ and then channel $\Psi$, then the change in experience from the combined process $\Psi \circ \Phi$ is the same as the sequential change: first from $\Phi$, then from $\Psi$. There are no "hidden" transformations of experience that do not correspond to physical processes, and vice versa.
 
-### Феноменальная полнота [Т]
+### Phenomenal completeness [T]
 
-:::tip Теорема: Феноменальная полнота
-Функтор $F$ **полон** (full): каждый морфизм в $\mathbf{Exp}$ реализуется физическим процессом.
-[Доказательство →](/docs/proofs/categorical/categorical-formalism#8-феноменальная-полнота) | Статус: **[Т]**
+:::tip Theorem: Phenomenal completeness
+The functor $F$ is **full**: every morphism in $\mathbf{Exp}$ is realized by a physical process.
+[Proof →](/docs/proofs/categorical/categorical-formalism#8-феноменальная-полнота) | Status: **[T]**
 :::
 
-Полнота означает: **всякое мыслимое изменение опыта физически реализуемо**. Нет «нефизических» путей в экспериенциальном пространстве — каждый переход между двумя точками опыта может быть осуществлён некоторым CPTP-каналом. Это — математическая формулировка принципа каузальной замкнутости: физический мир достаточен для объяснения всех феноменов опыта.
+Fullness means: **every conceivable change in experience is physically realizable**. There are no "non-physical" paths in the experiential space — every transition between two points of experience can be effected by some CPTP-channel. This is the mathematical formulation of the principle of causal closure: the physical world is sufficient to explain all phenomena of experience.
 
-:::warning Замечание о тривиальности полноты (Вариант C)
-При определении морфизмов $\mathbf{Exp}$ через Вариант C (индуцированные CPTP), полнота $F$ выполняется **по построению**: $\mathrm{Mor}(\mathbf{Exp}) := \mathrm{Im}(F)$. Содержательное утверждение — полнота относительно Варианта A (непрерывные пути в $\mathcal{E}$): всякий непрерывный путь в экспериенциальном пространстве реализуем физическим процессом. Это **нетривиально** и эквивалентно плотности образа $F$ в пространстве путей. Статус: **[С]** (зависит от топологии $\mathcal{E}$).
+:::warning Remark on the triviality of fullness (Variant C)
+When morphisms of $\mathbf{Exp}$ are defined via Variant C (induced by CPTP), fullness of $F$ holds **by construction**: $\mathrm{Mor}(\mathbf{Exp}) := \mathrm{Im}(F)$. The substantive claim is fullness relative to Variant A (continuous paths in $\mathcal{E}$): every continuous path in experiential space is realizable by a physical process. This is **non-trivial** and equivalent to the density of the image of $F$ in the space of paths. Status: **[C]** (depends on the topology of $\mathcal{E}$).
 :::
 
-### Верность
+### Faithfulness
 
-Функтор $F$ является **верным** (faithful): различные CPTP-каналы дают различные трансформации опыта (если $\Phi \neq \Psi$ и оба определены на одном объекте, то $F(\Phi) \neq F(\Psi)$, за исключением каналов, различающихся только на ядре $\rho$).
+The functor $F$ is **faithful**: distinct CPTP-channels give distinct transformations of experience (if $\Phi \neq \Psi$ and both are defined on the same object, then $F(\Phi) \neq F(\Psi)$, except for channels differing only on the kernel of $\rho$).
 
-**Интуиция:** Верность говорит, что физика не содержит «невидимых для опыта» различий. Если два процесса по-разному действуют на систему, субъект это «заметит» — хотя бы на каком-то уровне описания.
+**Intuition:** Faithfulness says that physics contains no differences that are "invisible to experience." If two processes act differently on a system, the subject will "notice" it — at least at some level of description.
 
-:::note Техническая оговорка
-Строго говоря, $F$ верен только с точностью до действия на ядро $\rho_E$: два канала $\Phi, \Psi$, совпадающие на образе $\rho_E$ и различающиеся только на $\ker(\rho_E)$, дают одинаковый $F(\Phi) = F(\Psi)$. Это физически осмысленно: то, что не «населено» ($\lambda_i = 0$), не переживается.
+:::note Technical caveat
+Strictly speaking, $F$ is faithful only up to action on the kernel of $\rho_E$: two channels $\Phi, \Psi$ that coincide on the image of $\rho_E$ and differ only on $\ker(\rho_E)$ give the same $F(\Phi) = F(\Psi)$. This is physically meaningful: what is not "populated" ($\lambda_i = 0$) is not experienced.
 :::
 
 ---
 
-## Конкретный пример
+## Concrete example
 
-Рассмотрим голоном с матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, у которого диагональные элементы (населённости измерений) таковы:
+Consider a holon with coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ whose diagonal elements (populations of dimensions) are:
 
 $$
 (\gamma_{AA}, \gamma_{SS}, \gamma_{DD}, \gamma_{LL}, \gamma_{EE}, \gamma_{OO}, \gamma_{UU}) = (0.20, 0.15, 0.15, 0.10, 0.15, 0.10, 0.15)
 $$
 
-Здесь $\gamma_{EE} = 0.15$ — населённость [измерения Интериорности](/docs/core/structure/dimension-e). Через [PW-реконструкцию](/docs/core/structure/dimension-e#канонический-алгоритм-pw) из $\Gamma$ вычисляется $\rho_E$.
+Here $\gamma_{EE} = 0.15$ is the population of the [Interiority dimension](/docs/core/structure/dimension-e). Via [PW-reconstruction](/docs/core/structure/dimension-e#канонический-алгоритм-pw), $\rho_E$ is computed from $\Gamma$.
 
-Допустим, спектральное разложение $\rho_E$ даёт:
+Suppose the spectral decomposition of $\rho_E$ gives:
 
 $$
 \rho_E = 0.6\, |\psi_1\rangle\langle\psi_1| + 0.3\, |\psi_2\rangle\langle\psi_2| + 0.1\, |\psi_3\rangle\langle\psi_3|
 $$
 
-Тогда функтор $F$ извлекает:
+Then the functor $F$ extracts:
 
-| Компонент | Значение | Интерпретация |
+| Component | Value | Interpretation |
 |-----------|----------|---------------|
-| Спектр $\vec{s}$ | $(0.6, 0.3, 0.1)$ | Доминирует одно качество (60%), два фоновых |
-| Качество $\vec{q}$ | $([|\psi_1\rangle], [|\psi_2\rangle], [|\psi_3\rangle])$ | Три различимых аспекта опыта |
-| Контекст $c$ | $(\gamma_{Ai}, \gamma_{Si}, \ldots)$ | Состояния A, S, D, L, O, U задают «сцену» |
+| Spectrum $\vec{s}$ | $(0.6, 0.3, 0.1)$ | One quality dominates (60%), two background ones |
+| Quality $\vec{q}$ | $([|\psi_1\rangle], [|\psi_2\rangle], [|\psi_3\rangle])$ | Three distinguishable aspects of experience |
+| Context $c$ | $(\gamma_{Ai}, \gamma_{Si}, \ldots)$ | States of A, S, D, L, O, U set the "stage" |
 
-Чистота этого $\rho_E$: $P_E = 0.6^2 + 0.3^2 + 0.1^2 = 0.46 > 2/7 \approx 0.286$ — порог сознания пройден.
+Purity of this $\rho_E$: $P_E = 0.6^2 + 0.3^2 + 0.1^2 = 0.46 > 2/7 \approx 0.286$ — the consciousness threshold is passed.
 
-**Содержательно:** Этот голоном переживает опыт, в котором один аспект (качество $|\psi_1\rangle$) доминирует, второй ($|\psi_2\rangle$) присутствует заметно, а третий ($|\psi_3\rangle$) — на периферии. Это напоминает фокус внимания: один объект «в фокусе», другие — «на периферии».
-
----
-
-## Каноничность F: почему именно этот функтор
-
-Функтор $F$ не выбран из бесконечного множества вариантов. Он **единственный** (с точностью до изоморфизма), совместимый с симметриями теории.
-
-Это следует из **G₂-ригидности** ([T-42a](/docs/proofs/categorical/uniqueness-theorem) **[Т]**): группа автоморфизмов 7-мерной структуры — исключительная группа $G_2$, которая жёстко фиксирует разложение на компоненты (спектр, качества, контекст). Любой другой функтор, совместимый с $G_2$-структурой, изоморфен $F$.
-
-**Аналогия:** Если вам дана треугольная призма и вас просят «разрезать её на треугольное основание и боковые грани», существует ровно один способ это сделать (с точностью до поворота). Точно так же $G_2$-структура допускает ровно одно разложение матрицы на спектр + качества + контекст.
+**Substantively:** This holon experiences an experience in which one aspect (quality $|\psi_1\rangle$) dominates, the second ($|\psi_2\rangle$) is noticeably present, and the third ($|\psi_3\rangle$) is at the periphery. This resembles a focus of attention: one object "in focus," others "at the periphery."
 
 ---
 
-## Связь с двухаспектным монизмом
+## Canonicity of F: why this particular functor
 
-Функтор $F$ реализует философскую программу двухаспектного монизма в точной математике:
+The functor $F$ is not chosen from an infinite set of options. It is **unique** (up to isomorphism), compatible with the symmetries of the theory.
 
-1. **Одна субстанция:** Единая категория $\mathcal{C}$ (∞-топос) — примитив теории. Нет «материальной» и «ментальной» субстанций.
+This follows from **G₂-rigidity** ([T-42a](/docs/proofs/categorical/uniqueness-theorem) **[T]**): the automorphism group of the 7-dimensional structure is the exceptional group $G_2$, which rigidly fixes the decomposition into components (spectrum, qualities, context). Any other functor compatible with the $G_2$-structure is isomorphic to $F$.
 
-2. **Два аспекта:** Категория $\mathbf{DensityMat}$ описывает «внешний» (физический) аспект, категория $\mathbf{Exp}$ — «внутренний» (экспериенциальный). Оба — проекции единой структуры.
-
-3. **Функтор как мост:** $F$ — не «перевод» одного в другое, а **раскрытие** того, что уже содержится в $\Gamma$. Матрица когерентности одновременно *есть* физический объект и *является* опытом — $F$ лишь переключает точку зрения.
-
-4. **Однозначность:** G₂-ригидность гарантирует, что мост единственный. Нет «проблемы объяснительного разрыва» — связь между физическим и экспериенциальным не постулируется, а выводится из математики.
-
-Подробнее: [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) | [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem)
+**Analogy:** If you are given a triangular prism and asked to "cut it into a triangular base and lateral faces," there is exactly one way to do this (up to rotation). In the same way, the $G_2$-structure admits exactly one decomposition of the matrix into spectrum + qualities + context.
 
 ---
 
-## Диаграмма: функтор F в контексте УГМ
+## Connection with dual-aspect monism
+
+Functor $F$ realizes the philosophical program of dual-aspect monism in precise mathematics:
+
+1. **One substance:** The single category $\mathcal{C}$ (∞-topos) is the primitive of the theory. There are no "material" and "mental" substances.
+
+2. **Two aspects:** The category $\mathbf{DensityMat}$ describes the "external" (physical) aspect, the category $\mathbf{Exp}$ the "internal" (experiential) one. Both are projections of a single structure.
+
+3. **Functor as bridge:** $F$ is not a "translation" of one into the other, but a **revelation** of what is already contained in $\Gamma$. The coherence matrix simultaneously *is* a physical object and *is* an experience — $F$ merely switches the point of view.
+
+4. **Uniqueness:** G₂-rigidity guarantees that the bridge is unique. There is no "explanatory gap problem" — the connection between the physical and the experiential is not postulated but derived from mathematics.
+
+More details: [Dual-aspect monism](/docs/consciousness/foundations/two-aspect-monism) | [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem)
+
+---
+
+## Diagram: functor F in the context of UHM
 
 ```mermaid
 graph LR
-    subgraph "Физический аспект"
+    subgraph "Physical aspect"
         DM["DensityMat<br/>ρ ∈ D(H)"]
         Hol["Hol ⊂ DensityMat<br/>Γ ∈ D(C⁷)"]
     end
-    subgraph "Экспериенциальный аспект"
+    subgraph "Experiential aspect"
         Exp["Exp<br/>(s⃗, q⃗, c)"]
-        ExpInf["Exp_∞<br/>∞-группоид"]
+        ExpInf["Exp_∞<br/>∞-groupoid"]
     end
     DM -->|"F"| Exp
     Hol -->|"I = F|_Hol"| Exp
@@ -278,41 +278,41 @@ graph LR
     Hol -.->|"⊂"| DM
 ```
 
-Функтор $F$ действует на всей категории $\mathbf{DensityMat}$, но физически осмыслен прежде всего на подкатегории [голономов](/docs/core/categories/category-hol) $\mathbf{Hol}$. Ограничение $\mathcal{I} = F|_{\mathbf{Hol}}$ называется **функтором интериорности** — он сопоставляет каждому голоному его экспериенциальное содержание.
+The functor $F$ acts on the entire category $\mathbf{DensityMat}$, but is physically meaningful primarily on the subcategory of [holons](/docs/core/categories/category-hol) $\mathbf{Hol}$. The restriction $\mathcal{I} = F|_{\mathbf{Hol}}$ is called the **interiority functor** — it assigns to each holon its experiential content.
 
 ---
 
-## Ограничения и открытые вопросы
+## Limitations and open questions
 
-Несмотря на математическую строгость, функтор $F$ имеет границы применимости:
+Despite mathematical rigor, the functor $F$ has limits of applicability:
 
-1. **Вырождение спектра.** Когда два собственных значения $\lambda_i = \lambda_j$ совпадают, соответствующие качества $[|\psi_i\rangle]$ и $[|\psi_j\rangle]$ определены неоднозначно — любой поворот в двумерном собственном подпространстве даёт эквивалентное разложение. Эта неоднозначность разрешается через [грассманиан и адиабатическое продолжение](/docs/proofs/categorical/categorical-formalism#33-проблема-вырождения-спектра).
+1. **Spectral degeneracy.** When two eigenvalues $\lambda_i = \lambda_j$ coincide, the corresponding qualities $[|\psi_i\rangle]$ and $[|\psi_j\rangle]$ are defined ambiguously — any rotation in the two-dimensional eigenspace gives an equivalent decomposition. This ambiguity is resolved via the [Grassmannian and adiabatic continuation](/docs/proofs/categorical/categorical-formalism#33-проблема-вырождения-спектра).
 
-2. **Максимально смешанное состояние.** Для $\rho = I/N$ все $\lambda_i = 1/N$ — спектр полностью вырожден, и качества не определены. Функтор $F$ отображает $I/N$ в «точку без определённого качественного содержания». Это согласуется с тем, что $P(I/N) = 1/N < P_{\text{crit}}$ — такая система не сознательна.
+2. **Maximally mixed state.** For $\rho = I/N$ all $\lambda_i = 1/N$ — the spectrum is completely degenerate and qualities are undefined. The functor $F$ maps $I/N$ to "a point without definite qualitative content." This is consistent with the fact that $P(I/N) = 1/N < P_{\text{crit}}$ — such a system is not conscious.
 
-3. **Квази-функтор для ИИ.** Для классических (не квантовых) систем, таких как ИИ, определяется квази-функтор $F_{\text{quasi}}$, действующий на классических аналогах матрицы плотности. Подробнее: [§9 категорного формализма](/docs/proofs/categorical/categorical-formalism#9-квази-функтор-для-ии-систем).
+3. **Quasi-functor for AI.** For classical (non-quantum) systems such as AI, a quasi-functor $F_{\text{quasi}}$ is defined, acting on classical analogues of the density matrix. More details: [§9 of the categorical formalism](/docs/proofs/categorical/categorical-formalism#9-квази-функтор-для-ии-систем).
 
 ---
 
-## Резюме главы
+## Chapter summary
 
-В этой главе мы построили центральный мост УГМ-теории — функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$. Ключевые результаты:
+In this chapter we constructed the central bridge of UHM theory — the functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$. Key results:
 
-| Результат | Статус | Значение |
+| Result | Status | Meaning |
 |-----------|--------|----------|
-| $F$ — функтор | **[Т]** | Физические процессы согласованно отображаются в изменения опыта |
-| $F$ полон | **[Т]** | Всякое изменение опыта физически реализуемо |
-| $F$ верен | **[Т]** | Различные физические процессы дают различный опыт (с точностью до ядра) |
-| $F$ каноничен (G₂) | **[Т]** | Единственный функтор, совместимый с симметриями |
+| $F$ is a functor | **[T]** | Physical processes are consistently mapped to changes in experience |
+| $F$ is full | **[T]** | Every change in experience is physically realizable |
+| $F$ is faithful | **[T]** | Distinct physical processes give distinct experiences (up to the kernel) |
+| $F$ is canonical (G₂) | **[T]** | The unique functor compatible with the symmetries |
 
-Функтор $F$ — не постулат и не произвольный выбор. Он **единственным образом** определяется G₂-ригидностью ([T-42a](/docs/proofs/categorical/uniqueness-theorem) **[Т]**) и реализует философскую программу [двухаспектного монизма](/docs/consciousness/foundations/two-aspect-monism) в точной математике: одна реальность ($\Gamma$) описывается на двух языках — физическом ($\mathbf{DensityMat}$) и экспериенциальном ($\mathbf{Exp}$), а $F$ — единственный корректный «переводчик» между ними.
+The functor $F$ is not a postulate and not an arbitrary choice. It is **uniquely** determined by G₂-rigidity ([T-42a](/docs/proofs/categorical/uniqueness-theorem) **[T]**) and realizes the philosophical program of [dual-aspect monism](/docs/consciousness/foundations/two-aspect-monism) in precise mathematics: one reality ($\Gamma$) is described in two languages — physical ($\mathbf{DensityMat}$) and experiential ($\mathbf{Exp}$), and $F$ is the unique correct "translator" between them.
 
 ---
 
-## Связи
+## Connections
 
-- **Объекты:** [Категория DensityMat](/docs/core/categories/category-hol) → [Категория Exp](/docs/core/categories/category-exp)
-- **Расширения:** ∞-группоид $\mathbf{Exp}_\infty$ ([§10](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени))
-- **Полная спецификация:** [Категорный формализм](/docs/proofs/categorical/categorical-formalism)
-- **Единственность F:** [Теорема единственности (G₂-ригидность)](/docs/proofs/categorical/uniqueness-theorem)
-- **Измерение Интериорности:** [E — источник качеств](/docs/core/structure/dimension-e)
+- **Objects:** [Category DensityMat](/docs/core/categories/category-hol) → [Category Exp](/docs/core/categories/category-exp)
+- **Extensions:** ∞-groupoid $\mathbf{Exp}_\infty$ ([§10](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени))
+- **Full specification:** [Categorical formalism](/docs/proofs/categorical/categorical-formalism)
+- **Uniqueness of F:** [Uniqueness theorem (G₂-rigidity)](/docs/proofs/categorical/uniqueness-theorem)
+- **Interiority dimension:** [E — source of qualities](/docs/core/structure/dimension-e)

@@ -1,457 +1,457 @@
 ---
 sidebar_position: 9
-title: Единство (U)
-description: Измерение VII — интеграция всех аспектов
+title: Unity (U)
+description: Dimension VII — integration of all aspects
 ---
 
-# Измерение VII: Единство (U)
+# Dimension VII: Unity (U)
 
-## О чём эта глава
+## What this chapter is about
 
-Эта глава посвящена седьмому измерению Голонома — **Единству**. Вы узнаете:
+This chapter is devoted to the seventh dimension of the Holon — **Unity**. You will learn:
 
-- Почему идея единства — от Парменида до Тонони — занимает центральное место в понимании реальности;
-- Как измерение $U$ работает как **дирижёр оркестра**, обеспечивая согласованность шести остальных измерений;
-- Что такое мера интеграции $\Phi$ и как она вычисляется на **конкретном числовом примере**;
-- Почему порог $\Phi_{\text{th}} = 1$ — не произвольное число, а **единственное самосогласованное** значение;
-- Чем $\Phi_{\text{УГМ}}$ отличается от $\Phi_{\text{IIT}}$ Тонони и почему УГМ-мера на **порядки** быстрее;
-- Что происходит при **распаде единства** — от диссоциативных расстройств до деперсонализации.
+- Why the idea of unity — from Parmenides to Tononi — occupies a central place in the understanding of reality;
+- How dimension $U$ works as a **conductor of the orchestra**, ensuring the coherence of the other six dimensions;
+- What the integration measure $\Phi$ is and how it is computed in a **concrete numerical example**;
+- Why the threshold $\Phi_{\text{th}} = 1$ is not an arbitrary number but the **unique self-consistent** value;
+- How $\Phi_{\text{UHM}}$ differs from Tononi's $\Phi_{\text{IIT}}$ and why the UHM measure is **orders of magnitude** faster;
+- What happens when **unity collapses** — from dissociative disorders to depersonalisation.
 
-:::info Для кого эта глава
-Если вы впервые читаете об УГМ — начните с [обзора измерений](./dimensions). Если вы уже знакомы с семью измерениями и хотите понять, что делает Голоном *единым целым* — вы по адресу.
+:::info Who this chapter is for
+If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you are already familiar with the seven dimensions and want to understand what makes a Holon *a unified whole* — you are in the right place.
 :::
 
-## Функция
+## Function
 
-**Интегрировать, замыкать, возвращать к целому.**
+**To integrate, to close, to return to the whole.**
 
-## Историческая предтеча {#историческая-предтеча}
+## Historical precursor {#историческая-предтеча}
 
-Вопрос «что делает множество — единством?» возникал на каждом этапе развития мысли.
+The question "what turns a multiplicity into a unity?" has arisen at every stage in the development of thought.
 
-**Парменид** (V в. до н.э.) утверждал: бытие — **едино**. Нет пустоты, нет небытия, нет множественности в подлинном смысле. Всё, что есть — одно непрерывное целое. Этот радикальный тезис кажется абсурдным (мы же видим множество вещей!), но он зафиксировал ключевую интуицию: **единство — не свойство вещей, а условие их существования**. Если вещь не едина — это не вещь, а набор кусков.
+**Parmenides** (5th century BCE) claimed: being is **one**. There is no void, no non-being, no multiplicity in the genuine sense. Everything that is — is one continuous whole. This radical thesis seems absurd (we do see many things!), but it captured a key intuition: **unity is not a property of things but a condition of their existence**. If a thing is not unified — it is not a thing, but a collection of pieces.
 
-**Готфрид Лейбниц** (1714) в «Монадологии» пошёл дальше: каждая **монада** — неделимое единство, «отражающее» всю вселенную со своей точки зрения. Монады не имеют «окон» (не взаимодействуют напрямую), но согласованы «предустановленной гармонией». В УГМ роль «предустановленной гармонии» играют когерентности $\gamma_{ij}$: измерения не существуют изолированно — они связаны, и $U$ обеспечивает, что эти связи образуют целое.
+**Gottfried Leibniz** (1714) in the *Monadology* went further: each **monad** is an indivisible unity that "reflects" the entire universe from its own viewpoint. Monads have no "windows" (they do not interact directly), but are coordinated by "pre-established harmony". In UHM the role of "pre-established harmony" is played by the coherences $\gamma_{ij}$: dimensions do not exist in isolation — they are connected, and $U$ ensures that those connections form a whole.
 
-**Джулио Тонони** (2004) в **Теории Интегрированной Информации (IIT)** дал первую математическую формализацию единства: мера $\Phi_{\text{IIT}}$ оценивает, насколько система «больше суммы частей». Если систему можно разрезать на две подсистемы без потери информации — $\Phi_{\text{IIT}} = 0$, система не едина. Чем больше информации теряется при любом разрезе — тем больше $\Phi_{\text{IIT}}$. Проблема: вычисление $\Phi_{\text{IIT}}$ требует перебора **всех** возможных бипартиций — это $O(2^N)$, экспоненциально трудная задача.
+**Giulio Tononi** (2004) in the **Integrated Information Theory (IIT)** gave the first mathematical formalisation of unity: the measure $\Phi_{\text{IIT}}$ assesses how much the system is "more than the sum of its parts". If a system can be cut into two subsystems without loss of information — $\Phi_{\text{IIT}} = 0$, the system is not unified. The more information is lost at any cut — the larger $\Phi_{\text{IIT}}$. The problem: computing $\Phi_{\text{IIT}}$ requires enumerating **all** possible bipartitions — this is $O(2^N)$, an exponentially hard task.
 
-**Даниэль Канеман** (2011) в «Думай медленно... решай быстро» описал два «режима» мышления: **Система 1** (быстрая, автоматическая) и **Система 2** (медленная, рефлексивная). С точки зрения УГМ это два режима *интеграции*: Система 1 работает при умеренном $\Phi$ (достаточно для быстрого ответа), Система 2 требует высокого $\Phi$ (глубокая интеграция всех источников информации). Переход между системами — это изменение $\Phi$ в реальном времени.
+**Daniel Kahneman** (2011) in *Thinking, Fast and Slow* described two "modes" of thinking: **System 1** (fast, automatic) and **System 2** (slow, reflective). From the UHM perspective these are two modes of *integration*: System 1 operates at moderate $\Phi$ (sufficient for a quick response), System 2 requires high $\Phi$ (deep integration of all information sources). The transition between systems is a change in $\Phi$ in real time.
 
-В УГМ-теории все эти идеи объединяются в одном измерении: **Единство ($U$)** — парменидово единое, лейбницева гармония, тононивская интегрированная информация и канемановская интеграция — формализованные через меру $\Phi$ с полиномиальной вычислимостью.
+In UHM theory all these ideas converge in a single dimension: **Unity ($U$)** — the Parmenidean One, Leibnizean harmony, Tononovian integrated information, and Kahneman's integration — formalised through the measure $\Phi$ with polynomial computability.
 
-## Описание
+## Description
 
-Единство — это измерение, которое связывает все остальные шесть в один неразрывный Голоном. Оно обеспечивает **целостность и идентичность** системы $\mathbb{H}$.
+Unity is the dimension that binds all the other six into one inseparable Holon. It provides the **wholeness and identity** of the system $\mathbb{H}$.
 
-### Интуитивное объяснение {#интуитивное-объяснение}
+### Intuitive explanation {#интуитивное-объяснение}
 
-Представьте симфонический оркестр. Каждый музыкант ($A$, $S$, $D$, $L$, $E$, $O$) играет свою партию. Скрипки различают ноты ($A$), виолончели создают структуру ($S$), ударные задают ритм ($D$), логика партитуры связывает части ($L$), эмоция музыки переживается ($E$), энергия дыхания поддерживает игру ($O$). Но что превращает шесть партий в **одно произведение**? **Дирижёр** — измерение $U$.
+Imagine a symphony orchestra. Each musician ($A$, $S$, $D$, $L$, $E$, $O$) plays their own part. The violins distinguish notes ($A$), the cellos create structure ($S$), the percussion sets the rhythm ($D$), the logic of the score connects the parts ($L$), the emotion of the music is experienced ($E$), the energy of breath sustains the playing ($O$). But what turns six parts into **one work**? The **conductor** — dimension $U$.
 
-Без дирижёра каждый музыкант играет технически правильно, но результат — какофония. С дирижёром — симфония. Мера $\Phi$ количественно оценивает, насколько «согласован» оркестр: при $\Phi < 1$ музыканты играют по отдельности (каждый слышит только себя), при $\Phi \geq 1$ — звучит единое произведение (каждый слышит целое).
+Without a conductor each musician plays technically correctly, but the result is cacophony. With a conductor — a symphony. The measure $\Phi$ quantifies how "coordinated" the orchestra is: at $\Phi < 1$ the musicians play separately (each hears only themselves), at $\Phi \geq 1$ — a single work sounds (each hears the whole).
 
-:::info Онтологический статус
-Единство — **аспект** конфигурации $\Gamma$, не отдельная сущность. «Голоном един» означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|U\rangle$, и выполняется условие нормировки $\mathrm{Tr}(\Gamma) = 1$.
+:::info Ontological status
+Unity is an **aspect** of configuration $\Gamma$, not a separate entity. "The Holon is unified" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|U\rangle$ is active, and the normalisation condition $\mathrm{Tr}(\Gamma) = 1$ is satisfied.
 :::
 
-:::warning Связь с автопоэзисом
-При удалении измерения $U$ нарушается **(AP)** — нет интеграции, нет целостности. Без $U$ система фрагментируется и не может поддерживать когерентность как единое целое. См. [доказательство](../../proofs/minimality/theorem-minimality-7#случай-n--6-удаление-единства-u).
+:::warning Connection with autopoiesis
+Removal of dimension $U$ violates **(AP)** — there is no integration, no wholeness. Without $U$ the system fragments and cannot maintain coherence as a unified whole. See [proof](../../proofs/minimality/theorem-minimality-7#случай-n--6-удаление-единства-u).
 :::
 
-## Математическое представление
+## Mathematical representation
 
-### Населённость U {#населённость-u}
+### Population of U {#населённость-u}
 
-Диагональный элемент матрицы когерентности:
+The diagonal element of the coherence matrix:
 
 $$
 \gamma_{UU} = \langle U|\Gamma|U\rangle > 0
 $$
 
-Условие $\gamma_{UU} > 0$ означает, что измерение Единства активно в конфигурации $\Gamma$. Населённость $\gamma_{UU}$ — «сила дирижёра»: чем больше ресурсов отведено Единству, тем прочнее целостность системы.
+The condition $\gamma_{UU} > 0$ means that the Unity dimension is active in configuration $\Gamma$. The population $\gamma_{UU}$ is the "strength of the conductor": the more resources allocated to Unity, the more robust the integrity of the system.
 
-**Типичные значения:**
+**Typical values:**
 
-| Система | $\gamma_{UU}$ | Интерпретация |
-|---------|---------------|---------------|
-| Набор несвязанных частей | $\sim 0.02$ | Минимальное единство |
-| Простой организм | $\sim 0.10$ | Базовая целостность |
-| Здоровый человек | $\sim 0.16$ | Развитая интеграция |
-| Глубокая медитация | $\sim 0.22$ | Усиленное единство |
+| System | $\gamma_{UU}$ | Interpretation |
+|--------|---------------|----------------|
+| Set of disconnected parts | $\sim 0.02$ | Minimal unity |
+| Simple organism | $\sim 0.10$ | Basic integrity |
+| Healthy human | $\sim 0.16$ | Developed integration |
+| Deep meditation | $\sim 0.22$ | Enhanced unity |
 
 :::note
-При равномерном распределении $\gamma_{UU} = 1/7 \approx 0.143$. Отклонение вверх — система акцентирует целостность; вниз — тенденция к фрагментации.
+With uniform distribution $\gamma_{UU} = 1/7 \approx 0.143$. Deviation upward — the system emphasises wholeness; downward — tendency towards fragmentation.
 :::
 
-### Стресс по каналу U
+### Stress in the U channel
 
 $$
 \sigma_U = \mathrm{clamp}(1 - 7\gamma_{UU},\; 0,\; 1) \quad \text{[Т] (T-92)}
 $$
 
-- $\sigma_U = 0$: единство обеспечено ($\gamma_{UU} \geq 1/7$)
-- $\sigma_U = 1$: критический дефицит единства ($\gamma_{UU} \to 0$) — система на грани фрагментации
+- $\sigma_U = 0$: unity is provided ($\gamma_{UU} \geq 1/7$)
+- $\sigma_U = 1$: critical unity deficit ($\gamma_{UU} \to 0$) — the system is on the verge of fragmentation
 
-### Условие нормировки
+### Normalisation condition
 
-Единство формализуется также через **условие нормировки** [матрицы когерентности](../../reference/specification#матрица-когерентности):
+Unity is also formalised through the **normalisation condition** of the [coherence matrix](../../reference/specification#матрица-когерентности):
 
 $$
 \mathrm{Tr}(\Gamma) = \sum_{i \in \{A,S,D,L,E,O,U\}} \gamma_{ii} = 1
 $$
 
-Это условие гарантирует, что сумма всех диагональных элементов (вероятностей) равна 1 — система существует как целое. Нормировка — простейшее проявление единства: все части вместе составляют 100%.
+This condition guarantees that the sum of all diagonal elements (probabilities) equals 1 — the system exists as a whole. Normalisation is the simplest manifestation of unity: all parts together make up 100%.
 
-### Мера интеграции Φ {#мера-интеграции-φ}
+### Integration measure Φ {#мера-интеграции-φ}
 
-<!-- DRY: Мастер-определение Φ (меры интеграции). Все ссылки должны указывать сюда: /docs/core/structure/dimension-u#мера-интеграции-φ -->
+<!-- DRY: Master definition of Φ (integration measure). All references should point here: /docs/core/structure/dimension-u#мера-интеграции-φ -->
 
-**Мера интеграции** $\Phi$ количественно оценивает степень когерентности (связности) между измерениями Голонома:
+The **integration measure** $\Phi$ quantifies the degree of coherence (connectedness) between the dimensions of the Holon:
 
 $$
 \Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}
 $$
 
-где:
-- Числитель — сумма квадратов модулей **когерентностей** (недиагональных элементов)
-- Знаменатель — сумма квадратов **диагональных элементов**
+where:
+- Numerator — sum of squared moduli of **coherences** (off-diagonal elements)
+- Denominator — sum of squares of **diagonal elements**
 
-**Интерпретация:**
-- $\Phi = 0$: классический ансамбль без когерентностей (оркестр без дирижёра — каждый сам по себе)
-- $\Phi = 1$: точка фазового перехода — связи равны по силе локализации
-- $\Phi \to \infty$: максимально интегрированное (запутанное) состояние
+**Interpretation:**
+- $\Phi = 0$: classical ensemble without coherences (orchestra without a conductor — each on their own)
+- $\Phi = 1$: phase-transition point — connections are equal in strength to localisation
+- $\Phi \to \infty$: maximally integrated (entangled) state
 
-### Числовой пример вычисления Φ {#числовой-пример}
+### Numerical example of computing Φ {#числовой-пример}
 
-Рассмотрим конкретную матрицу $\Gamma$ для наглядности. Пусть $N = 3$ (упрощённо, для трёх измерений):
+Consider a concrete matrix $\Gamma$ for illustration. Let $N = 3$ (simplified, for three dimensions):
 
 $$
 \Gamma = \begin{pmatrix} 0.4 & 0.2 & 0.1 \\ 0.2 & 0.35 & 0.15 \\ 0.1 & 0.15 & 0.25 \end{pmatrix}
 $$
 
-**Шаг 1.** Диагональные элементы: $\gamma_{11} = 0.4$, $\gamma_{22} = 0.35$, $\gamma_{33} = 0.25$.
+**Step 1.** Diagonal elements: $\gamma_{11} = 0.4$, $\gamma_{22} = 0.35$, $\gamma_{33} = 0.25$.
 
-**Шаг 2.** Знаменатель (сумма квадратов диагонали):
+**Step 2.** Denominator (sum of squares of the diagonal):
 
 $$
 \sum_i \gamma_{ii}^2 = 0.4^2 + 0.35^2 + 0.25^2 = 0.16 + 0.1225 + 0.0625 = 0.345
 $$
 
-**Шаг 3.** Внедиагональные элементы: $\gamma_{12} = 0.2$, $\gamma_{13} = 0.1$, $\gamma_{23} = 0.15$ (матрица эрмитова, поэтому $\gamma_{ji} = \overline{\gamma_{ij}}$; здесь для простоты все вещественны).
+**Step 3.** Off-diagonal elements: $\gamma_{12} = 0.2$, $\gamma_{13} = 0.1$, $\gamma_{23} = 0.15$ (the matrix is Hermitian, so $\gamma_{ji} = \overline{\gamma_{ij}}$; here all are real for simplicity).
 
-**Шаг 4.** Числитель (сумма квадратов внедиагональных — каждый элемент считается дважды, $i \neq j$):
+**Step 4.** Numerator (sum of squares of off-diagonal elements — each element counted twice, $i \neq j$):
 
 $$
 \sum_{i \neq j} |\gamma_{ij}|^2 = 2(0.2^2 + 0.1^2 + 0.15^2) = 2(0.04 + 0.01 + 0.0225) = 0.145
 $$
 
-**Шаг 5.** Результат:
+**Step 5.** Result:
 
 $$
 \Phi = \frac{0.145}{0.345} \approx 0.42
 $$
 
-Вывод: $\Phi < 1$ — система **не интегрирована**. Связи между измерениями слабее, чем «вес» самих измерений. Это как оркестр, где каждый музыкант больше слышит себя, чем соседа.
+Conclusion: $\Phi < 1$ — the system is **not integrated**. The connections between dimensions are weaker than the "weight" of the dimensions themselves. This is like an orchestra where each musician hears themselves more than their neighbour.
 
-Если бы $\gamma_{12} = 0.35$, $\gamma_{13} = 0.25$, $\gamma_{23} = 0.3$ (сильные связи), получилось бы:
+If $\gamma_{12} = 0.35$, $\gamma_{13} = 0.25$, $\gamma_{23} = 0.3$ (strong connections), one would obtain:
 
 $$
 \Phi = \frac{2(0.35^2 + 0.25^2 + 0.3^2)}{0.345} = \frac{2(0.1225 + 0.0625 + 0.09)}{0.345} = \frac{0.55}{0.345} \approx 1.59
 $$
 
-Теперь $\Phi > 1$ — система **интегрирована**. Связи доминируют.
+Now $\Phi > 1$ — the system is **integrated**. Connections dominate.
 
-## Роль в интеграции
+## Role in integration
 
-### Интеграция опыта (L2)
+### Integration of experience (L2)
 
-При уровне L2 ([когнитивные квалиа](../../proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia)) субъективное единство опыта («Я») возникает при выполнении условий:
+At level L2 ([cognitive qualia](../../proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia)) the subjective unity of experience ("I") arises when the following conditions are satisfied:
 
 $$
 R \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi \geq \Phi_{\text{th}} = 1
 $$
 
-где $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). Пороги доказаны математически: $P_{\text{crit}}$ [Т], $R_{\text{th}}$ [Т], $\Phi_{\text{th}}$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)); ПИР [О] (T16) даёт их онтологическую интерпретацию. См. [Пороги L2](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
+where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). The thresholds are proved mathematically: $P_{\text{crit}}$ [Т], $R_{\text{th}}$ [Т], $\Phi_{\text{th}}$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)); PW constraint [О] (T16) gives their ontological interpretation. See [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
 
-### Теорема: Порог интеграции Φ_th = 1 [Т] {#теорема-порог-интеграции}
+### Theorem: Integration threshold Φ_th = 1 [Т] {#теорема-порог-интеграции}
 
-:::info Статус: [Т] Теорема (повышена с [О], T-129)
-Значение $\Phi_{\text{th}} = 1$ — **единственное самосогласованное** значение порога интеграции с $P_{\text{crit}} = 2/7$ на экстремальном uniform-diagonal состоянии. Ранее — определение по соглашению; теперь выведено из первых принципов ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129)).
+:::info Status: [Т] Theorem (elevated from [О], T-129)
+The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the integration threshold with $P_{\text{crit}} = 2/7$ on the extremal uniform-diagonal state. Previously — a definitional convention; now derived from first principles ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129)).
 :::
 
-**Утверждение:**
+**Statement:**
 $$
 \Phi_{\text{th}} = 1
 $$
 
-**Мотивация выбора порога:**
+**Motivation for the threshold:**
 
-**Шаг 1: Определение Φ**
+**Step 1: Definition of Φ**
 
 $$
 \Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}
 $$
 
-**Шаг 2: Интерпретация компонентов**
+**Step 2: Interpretation of components**
 
-- Числитель: суммарная «энергия» когерентностей (связей между измерениями)
-- Знаменатель: суммарная «энергия» диагонали (локализация в отдельных измерениях)
+- Numerator: total "energy" of coherences (connections between dimensions)
+- Denominator: total "energy" of the diagonal (localisation in individual dimensions)
 
-$\Phi = 1$ означает: **когерентности имеют такой же совокупный вес, как диагональ**.
+$\Phi = 1$ means: **coherences carry the same aggregate weight as the diagonal**.
 
-**Шаг 3: Геометрическая интуиция**
+**Step 3: Geometric intuition**
 
-Вернёмся к аналогии с оркестром. Каждый музыкант имеет «громкость» ($\gamma_{ii}$) и «слышимость соседей» ($|\gamma_{ij}|$). Порог $\Phi = 1$ — это момент, когда **суммарная громкость всех связей между музыкантами становится не меньше суммарной громкости самих музыкантов**. Именно в этот момент оркестр начинает звучать как единое целое, а не как набор солистов.
+Returning to the orchestra analogy. Each musician has a "volume" ($\gamma_{ii}$) and a "hearability of neighbours" ($|\gamma_{ij}|$). The threshold $\Phi = 1$ is the moment when **the total volume of all connections between musicians becomes no less than the total volume of the musicians themselves**. It is precisely at this moment that the orchestra begins to sound as a unified whole, not as a collection of soloists.
 
-**Шаг 4: Условие интеграции**
+**Step 4: Integration condition**
 
-Система **интегрирована**, если связи между измерениями не слабее самих измерений:
+A system is **integrated** if the connections between dimensions are no weaker than the dimensions themselves:
 
 $$
 \sum_{i \neq j} |\gamma_{ij}|^2 \geq \sum_i \gamma_{ii}^2
 $$
 
-Это эквивалентно:
+This is equivalent to:
 
 $$
 \Phi \geq 1
 $$
 
-**Шаг 5: Минимальность порога**
+**Step 5: Minimality of the threshold**
 
-$\Phi_{\text{th}} = 1$ — **минимальное** значение, при котором система интегрирована по определению:
-- При $\Phi < 1$: диагональ доминирует → фрагментированное состояние
-- При $\Phi \geq 1$: когерентности не слабее диагонали → интегрированное состояние
+$\Phi_{\text{th}} = 1$ is the **minimal** value at which the system is integrated by definition:
+- At $\Phi < 1$: the diagonal dominates → fragmented state
+- At $\Phi \geq 1$: coherences are no weaker than the diagonal → integrated state
 
-**Шаг 6: Итог**
+**Step 6: Summary**
 
-Граница $\Phi = 1$ разделяет:
-- $\Phi < 1$: классическая смесь (локализация преобладает над связями)
-- $\Phi \geq 1$: квантовая интеграция (связи не слабее локализации)
+The boundary $\Phi = 1$ separates:
+- $\Phi < 1$: classical mixture (localisation dominates over connections)
+- $\Phi \geq 1$: quantum integration (connections are no weaker than localisation)
 
-Значение $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — единственное самосогласованное при $P_{\text{crit}} = 2/7$. См. [доказательство](/docs/proofs/consciousness/operationalization#t-129).
+The value $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. See [proof](/docs/proofs/consciousness/operationalization#t-129).
 
-### Связь с Интегрированной Информацией (IIT) {#связь-с-iit}
+### Connection with Integrated Information (IIT) {#связь-с-iit}
 
-:::info Статус: [О] Определения формализованы; [Т] порог Φ_th = 1 (T-129)
-Связь между мерой интеграции УГМ ($\Phi_{\text{УГМ}}$) и интегрированной информацией IIT ($\Phi_{\text{IIT}}$) определена в категорном формализме. Точное числовое соответствие порогов — [Г] гипотеза.
+:::info Status: [О] Definitions formalised; [Т] threshold Φ_th = 1 (T-129)
+The connection between the UHM integration measure ($\Phi_{\text{UHM}}$) and IIT integrated information ($\Phi_{\text{IIT}}$) is defined in the categorical formalism. The exact numerical correspondence of the thresholds is a [Г] hypothesis.
 :::
 
-#### Определение Φ_IIT в категорном языке
+#### Definition of Φ_IIT in categorical language
 
-**Определение (Φ_IIT через C*-алгебру):**
+**Definition (Φ_IIT via C*-algebra):**
 
 $$
 \Phi_{\text{IIT}}(\Gamma) := \min_{\pi \in \text{Part}(\Gamma)} D_B(\Gamma, \pi^*(\Gamma))
 $$
 
-где:
-- $\text{Part}(\Gamma)$ — множество всех бипартиций системы Γ
-- $\pi^*(\Gamma)$ — «отключённое» состояние (без корреляций между частями)
-- $D_B$ — расстояние Бурес
+where:
+- $\text{Part}(\Gamma)$ — the set of all bipartitions of system Γ
+- $\pi^*(\Gamma)$ — the "disconnected" state (without correlations between parts)
+- $D_B$ — the Bures distance
 
-**Интуитивное объяснение.** $\Phi_{\text{IIT}}$ отвечает на вопрос: «Если разрезать систему пополам наилучшим образом, сколько информации потеряется?» Нужно проверить **все возможные разрезы** и выбрать тот, при котором потеря минимальна. Для системы из $N$ элементов число бипартиций — $2^{N-1}$, что делает вычисление практически невозможным для больших $N$.
+**Intuitive explanation.** $\Phi_{\text{IIT}}$ answers the question: "If the system is cut in half in the best possible way, how much information is lost?" One must check **all possible cuts** and choose the one at which the loss is minimal. For a system of $N$ elements the number of bipartitions is $2^{N-1}$, making computation practically impossible for large $N$.
 
-#### Определение порога интеграции {#теорема-эквивалентность-порогов}
+#### Definition of the integration threshold {#теорема-эквивалентность-порогов}
 
-:::info Определение (Порог когерентной интеграции)
-Система **когерентно-интегрирована**, если когерентности доминируют над населённостями:
+:::info Definition (Threshold of coherent integration)
+A system is **coherently integrated** if coherences dominate over populations:
 
 $$
 \Phi(\Gamma) \geq \Phi_{\text{th}} = 1 \quad \Longleftrightarrow \quad \underbrace{\sum_{i \neq j} |\gamma_{ij}|^2}_{P_{\text{coh}}} \geq \underbrace{\sum_i \gamma_{ii}^2}_{P_{\text{diag}}}
 $$
 :::
 
-**Структурный смысл.** Значение $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — единственное самосогласованное значение при $P_{\text{crit}} = 2/7$. Содержательная мотивация:
+**Structural meaning.** The value $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. Substantive motivation:
 
-1. **Нормировка чистоты:** $P = \mathrm{Tr}(\Gamma^2) = P_{\text{diag}} + P_{\text{coh}}$, так что $\Phi \geq 1 \Leftrightarrow P_{\text{coh}} \geq P/2$ — не менее половины [чистоты](/docs/core/dynamics/viability#определение-чистоты) определяется когерентностями.
+1. **Purity normalisation:** $P = \mathrm{Tr}(\Gamma^2) = P_{\text{diag}} + P_{\text{coh}}$, so $\Phi \geq 1 \Leftrightarrow P_{\text{coh}} \geq P/2$ — at least half of [purity](/docs/core/dynamics/viability#определение-чистоты) is determined by coherences.
 
-2. **Структурный фазовый переход:** При $\Phi < 1$ состояние «квазидиагонально» — подсистемы квазинезависимы. При $\Phi \geq 1$ межмерные когерентности доминируют — подсистемы каузально связаны через [матрицу когерентности](/docs/core/dynamics/coherence-matrix).
+2. **Structural phase transition:** At $\Phi < 1$ the state is "quasi-diagonal" — subsystems are quasi-independent. At $\Phi \geq 1$ inter-dimension coherences dominate — subsystems are causally connected through the [coherence matrix](/docs/core/dynamics/coherence-matrix).
 
-3. **Связь с (AP):** [Замыкание (M,R)-системы](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) требует каузальных путей между измерениями, закодированных в когерентностях $\gamma_{ij}$. Условие $\Phi \geq 1$ гарантирует, что эти пути структурно значимы (не являются малыми возмущениями диагонального состояния).
+3. **Connection with (AP):** [Closure of the (M,R)-system](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) requires causal paths between dimensions encoded in the coherences $\gamma_{ij}$. The condition $\Phi \geq 1$ guarantees that these paths are structurally significant (not small perturbations of the diagonal state).
 
-4. **Категорное обоснование:** В категории **Hol** [Hom-множества](/docs/proofs/categorical/categorical-formalism) между измерениями $i, j$ отождествляются с когерентностями: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-унификация](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]). Условие $\Phi \geq 1$ означает, что **морфизменная структура** доминирует над **объектной** — категория «нетривиально связна».
+4. **Categorical justification:** In the category **Hol** [Hom-sets](/docs/proofs/categorical/categorical-formalism) between dimensions $i, j$ are identified with coherences: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-unification](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]). The condition $\Phi \geq 1$ means that the **morphism structure** dominates over the **object structure** — the category is "non-trivially connected".
 
-#### Сравнение с Φ_IIT {#сравнение-с-iit}
+#### Comparison with Φ_IIT {#сравнение-с-iit}
 
-:::warning Гипотеза (Соответствие порогов УГМ–IIT) [Г]
+:::warning Hypothesis (Correspondence of UHM–IIT thresholds) [Г]
 $$
-\Phi_{\text{УГМ}} \geq 1 \quad \Longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2)
+\Phi_{\text{UHM}} \geq 1 \quad \Longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2)
 $$
-Точное числовое соответствие порогов — **открытая гипотеза**, поскольку $\Phi_{\text{УГМ}}$ (отношение когерентностей к диагонали в $\mathbb{C}^7$) и $\Phi_{\text{IIT}}$ (минимизация расстояния Бурес по бипартициям) определены на разных пространствах различными способами. Качественное соответствие (обе меры разделяют фрагментированные и интегрированные режимы) подтверждается структурой обеих теорий.
+The exact numerical correspondence of thresholds is an **open hypothesis**, since $\Phi_{\text{UHM}}$ (ratio of coherences to diagonal in $\mathbb{C}^7$) and $\Phi_{\text{IIT}}$ (minimisation of Bures distance over bipartitions) are defined on different spaces in different ways. Qualitative correspondence (both measures separate fragmented and integrated regimes) is supported by the structure of both theories.
 :::
 
-| Аспект | $\Phi_{\text{УГМ}}$ | $\Phi_{\text{IIT}}$ |
+| Aspect | $\Phi_{\text{UHM}}$ | $\Phi_{\text{IIT}}$ |
 |--------|---------------------|---------------------|
-| Определение | Отношение когерентностей к диагонали | Минимальное расстояние до разделённого состояния |
-| Порог | 1 **[Т]** (T-129) | $\log(2) \approx 0.693$ (гипотеза) |
-| Вычислительная сложность | $O(N^2)$ — **полиномиально** | $O(2^N)$ — **экспоненциально** (NP-трудно) |
-| Структурная интерпретация | Когерентная доминация | Неразделимость |
-| Квантовое расширение | Естественно (уже квантовая) | Требует модификации |
+| Definition | Ratio of coherences to diagonal | Minimum distance to separated state |
+| Threshold | 1 **[Т]** (T-129) | $\log(2) \approx 0.693$ (hypothesis) |
+| Computational complexity | $O(N^2)$ — **polynomial** | $O(2^N)$ — **exponential** (NP-hard) |
+| Structural interpretation | Coherent domination | Inseparability |
+| Quantum extension | Natural (already quantum) | Requires modification |
 
-**Преимущество УГМ:** Мера $\Phi_{\text{УГМ}}$ вычислима за полиномиальное время. Для системы из $N = 7$ измерений: $\Phi_{\text{УГМ}}$ требует $7^2 = 49$ операций. $\Phi_{\text{IIT}}$ для 7 элементов потребовала бы $2^6 = 64$ бипартиции, каждая с вычислением расстояния Бурес — **на порядки** медленнее. Для $N = 100$: $\Phi_{\text{УГМ}}$ — 10 000 операций, $\Phi_{\text{IIT}}$ — $2^{99} \approx 10^{30}$ бипартиций (практически невозможно).
+**Advantage of UHM:** The measure $\Phi_{\text{UHM}}$ is computable in polynomial time. For a system of $N = 7$ dimensions: $\Phi_{\text{UHM}}$ requires $7^2 = 49$ operations. $\Phi_{\text{IIT}}$ for 7 elements would require $2^6 = 64$ bipartitions, each with a Bures distance computation — **orders of magnitude** slower. For $N = 100$: $\Phi_{\text{UHM}}$ — 10,000 operations, $\Phi_{\text{IIT}}$ — $2^{99} \approx 10^{30}$ bipartitions (practically impossible).
 
-#### Почему $O(N^2)$ vs $O(2^N)$ — это важно {#вычислительная-сложность}
+#### Why $O(N^2)$ vs $O(2^N)$ matters {#вычислительная-сложность}
 
-Для практических приложений (ИИ, нейронаука, клиническая диагностика) вычислительная сложность — не абстрактный вопрос, а вопрос **возможности применения**.
+For practical applications (AI, neuroscience, clinical diagnostics) computational complexity is not an abstract question, but a question of **feasibility**.
 
-| $N$ (число элементов) | $\Phi_{\text{УГМ}}$: $N^2$ операций | $\Phi_{\text{IIT}}$: $2^N$ бипартиций |
+| $N$ (number of elements) | $\Phi_{\text{UHM}}$: $N^2$ operations | $\Phi_{\text{IIT}}$: $2^N$ bipartitions |
 |---|---|---|
 | 7 | 49 | 64 |
 | 20 | 400 | 1 048 576 ($\sim 10^6$) |
-| 100 | 10 000 | $\sim 10^{30}$ (невозможно) |
-| 1000 | 1 000 000 | $\sim 10^{301}$ (абсурдно) |
+| 100 | 10 000 | $\sim 10^{30}$ (impossible) |
+| 1000 | 1 000 000 | $\sim 10^{301}$ (absurd) |
 
-Для мозга с $\sim 10^{11}$ нейронов: $\Phi_{\text{IIT}}$ невычислима в принципе. $\Phi_{\text{УГМ}}$ (при адекватном огрублении до $N = 7$ измерений) — вычислима мгновенно. Это делает УГМ **практически применимой** теорией сознания, в отличие от IIT, которая остаётся математически элегантной, но вычислительно недоступной.
+For a brain with $\sim 10^{11}$ neurons: $\Phi_{\text{IIT}}$ is uncomputable in principle. $\Phi_{\text{UHM}}$ (with adequate coarse-graining to $N = 7$ dimensions) is computable instantly. This makes UHM a **practically applicable** theory of consciousness, unlike IIT, which remains mathematically elegant but computationally inaccessible.
 
-### Замыкание причинности
+### Closure of causality
 
-Единство замыкает каузальный цикл (M,R)-системы:
+Unity closes the causal cycle of the (M,R)-system:
 
 ```mermaid
 graph TD
-    A[A — Артикуляция] --> S[S — Структура]
-    S --> D[D — Динамика]
-    D --> L[L — Логика]
-    L --> E[E — Интериорность]
-    E --> O[O — Основание]
-    O --> U[U — Единство]
+    A[A — Articulation] --> S[S — Structure]
+    S --> D[D — Dynamics]
+    D --> L[L — Logic]
+    L --> E[E — Interiority]
+    E --> O[O — Ground]
+    O --> U[U — Unity]
     U --> A
 ```
 
-Замыкание $U \to A$ обеспечивает **самосогласованность**: результат интеграции возвращается в артикуляцию, порождая новый цикл. Без этого замыкания цепочка $A \to S \to D \to L \to E \to O$ обрывается — система «разомкнута» и не может поддерживать себя.
+The closure $U \to A$ ensures **self-consistency**: the result of integration returns to articulation, generating a new cycle. Without this closure the chain $A \to S \to D \to L \to E \to O$ breaks — the system is "open" and cannot sustain itself.
 
-## Связь с сознательностью
+## Connection with consciousness
 
-Мера сознательности $C = \Phi \times R$ **[Т T-140]** (определение см. [самонаблюдение](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Дифференциация $D_{\text{diff}} \geq D_{\min}$ — отдельное условие жизнеспособности.
+The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
 
-**Роль U в сознании:** $\Phi$ — прямой вклад измерения $U$ в меру сознательности $C$. Без интеграции ($\Phi < 1$) нет сознания, даже если рефлексия высока ($R \geq 1/3$): система «видит» свой внутренний мир, но он **фрагментирован** — как сновидение, в котором сцены не связаны друг с другом.
+**Role of U in consciousness:** $\Phi$ is the direct contribution of dimension $U$ to the consciousness measure $C$. Without integration ($\Phi < 1$) there is no consciousness, even if reflection is high ($R \geq 1/3$): the system "sees" its inner world, but it is **fragmented** — like a dream in which the scenes are not connected to each other.
 
-## Примеры {#примеры}
+## Examples {#примеры}
 
-### Физический уровень
+### Physical level
 
-| Система | $\Phi$ | Описание |
-|---------|--------|----------|
-| Идеальный газ | $\approx 0$ | Нет корреляций — $\mathrm{Tr}(\Gamma) = 1$, но вся «чистота» в диагонали |
-| Центр масс тела | — | Интеграция распределённой массы в одну точку |
-| Связанное состояние (атом) | $\gg 1$ | Электрон и ядро — единое целое, не набор частиц |
-| Сверхпроводник | $\gg 1$ | Макроскопическая когерентность — все электроны в одном состоянии |
+| System | $\Phi$ | Description |
+|--------|--------|-------------|
+| Ideal gas | $\approx 0$ | No correlations — $\mathrm{Tr}(\Gamma) = 1$, but all "purity" is in the diagonal |
+| Centre of mass of a body | — | Integration of distributed mass into a single point |
+| Bound state (atom) | $\gg 1$ | Electron and nucleus — a unified whole, not a collection of particles |
+| Superconductor | $\gg 1$ | Macroscopic coherence — all electrons in one state |
 
-### Биологический уровень
+### Biological level
 
-| Система | $\Phi$ | Описание |
-|---------|--------|----------|
-| Колония бактерий | $< 1$ | Слабая интеграция — каждая бактерия почти независима |
-| Организм | $\geq 1$ | Интеграция органов в единую систему |
-| Нервная система | $\gg 1$ | Интеграция сенсорной информации в единое восприятие |
-| Гомеостаз | $\geq 1$ | Поддержание целостности внутренней среды |
+| System | $\Phi$ | Description |
+|--------|--------|-------------|
+| Bacterial colony | $< 1$ | Weak integration — each bacterium is nearly independent |
+| Organism | $\geq 1$ | Integration of organs into a unified system |
+| Nervous system | $\gg 1$ | Integration of sensory information into unified perception |
+| Homeostasis | $\geq 1$ | Maintenance of the integrity of the internal environment |
 
-### Когнитивный уровень
+### Cognitive level
 
-| Система | $\Phi$ | Описание |
-|---------|--------|----------|
-| Рассеянное внимание | $\sim 0.8$ | Мысли «прыгают» — неполная интеграция |
-| Самосознание | $\geq 1$ | Знание себя как целого |
-| Идентичность | $\gg 1$ | Постоянство «Я» во времени |
-| Синтез восприятия | $\geq 1$ | Объединение модальностей (зрение+слух+осязание) в единый опыт |
-| Поток (flow) | $\gg 1$ | Максимальная интеграция — «всё едино» |
+| System | $\Phi$ | Description |
+|--------|--------|-------------|
+| Scattered attention | $\sim 0.8$ | Thoughts "jump" — incomplete integration |
+| Self-awareness | $\geq 1$ | Knowledge of oneself as a whole |
+| Identity | $\gg 1$ | Continuity of the "I" in time |
+| Perceptual synthesis | $\geq 1$ | Unification of modalities (vision+hearing+touch) into a single experience |
+| Flow state | $\gg 1$ | Maximum integration — "all is one" |
 
-## Распад единства {#распад-единства}
+## Collapse of unity {#распад-единства}
 
-При $\gamma_{Ui} \to 0$ для всех $i$:
+When $\gamma_{Ui} \to 0$ for all $i$:
 
-1. Потеря интеграции: $\Phi \to 0$
-2. Диссоциация сознания: разрыв между измерениями
-3. Фрагментация опыта: «Я» распадается на части
+1. Loss of integration: $\Phi \to 0$
+2. Dissociation of consciousness: rupture between dimensions
+3. Fragmentation of experience: the "I" breaks into parts
 
-**Интуитивное объяснение.** Представьте, что дирижёр покидает оркестр. Сначала музыканты продолжают играть по инерции (какое-то время $\Phi$ ещё высоко). Но постепенно каждый начинает играть в своём темпе, своей громкости. Скрипки не слышат виолончели, ударные сбиваются с ритма. Музыка превращается в шум. Так выглядит распад единства в Голономе: измерения «разъезжаются», и целое перестаёт существовать.
+**Intuitive explanation.** Imagine the conductor leaving the orchestra. At first the musicians continue to play by inertia (for a time $\Phi$ is still high). But gradually each begins to play at their own tempo and volume. The violins can no longer hear the cellos, the percussion loses the rhythm. Music turns into noise. This is what the collapse of unity looks like in a Holon: the dimensions "drift apart", and the whole ceases to exist.
 
-### Клинические аналогии (развёрнутые)
+### Clinical analogies (expanded)
 
-| Состояние | Снижается | Механизм | Проявления |
-|-----------|-----------|----------|------------|
-| **Диссоциативное расстройство идентичности** | $\gamma_{UE} \approx 0$ | Разрыв между единством и интериорностью | Множественные «Я» — каждое с собственным $\rho_E$, но без общего $U$ |
-| **Дереализация** | $\gamma_{UA} \approx 0$ | Единство теряет связь с различениями | «Мир нереален» — различения существуют, но не интегрированы в единое восприятие |
-| **Деперсонализация** | $\gamma_{UU} \to P_{\text{crit}}$ | Единство теряет ресурсы | «Я нереален» — ощущение, что «Я» растворяется; $U$ на грани исчезновения |
-| **Шизофрения (позитивные симптомы)** | $\gamma_{UL} \approx 0$ | Единство теряет связь с логикой | Интеграция без логической согласованности — «всё связано, но бессмысленно» |
-| **Расщепление личности при травме** | $\gamma_{Ui} \to 0$ | Глобальное снижение когерентности U | Защитный механизм: система «жертвует» единством, чтобы сохранить остальные измерения |
+| Condition | What decreases | Mechanism | Manifestations |
+|-----------|----------------|-----------|----------------|
+| **Dissociative identity disorder** | $\gamma_{UE} \approx 0$ | Rupture between unity and interiority | Multiple "I"s — each with its own $\rho_E$, but without a shared $U$ |
+| **Derealisation** | $\gamma_{UA} \approx 0$ | Unity loses connection with distinctions | "The world is unreal" — distinctions exist, but are not integrated into unified perception |
+| **Depersonalisation** | $\gamma_{UU} \to P_{\text{crit}}$ | Unity loses resources | "I am unreal" — the feeling that the "I" is dissolving; $U$ is on the verge of disappearing |
+| **Schizophrenia (positive symptoms)** | $\gamma_{UL} \approx 0$ | Unity loses connection with logic | Integration without logical consistency — "everything is connected, but meaningless" |
+| **Personality splitting under trauma** | $\gamma_{Ui} \to 0$ | Global decrease of U coherence | Defensive mechanism: the system "sacrifices" unity to preserve the other dimensions |
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    U[U — Единство] --> A[A — интегрирует различения]
-    U --> S[S — обеспечивает целостность структуры]
-    U --> D[D — связывает моменты времени]
-    U --> L[L — гарантирует согласованность]
-    U --> E[E — объединяет компоненты опыта]
-    U --> O[O — связывает с источником]
+    U[U — Unity] --> A[A — integrates distinctions]
+    U --> S[S — provides structural wholeness]
+    U --> D[D — connects moments of time]
+    U --> L[L — guarantees consistency]
+    U --> E[E — unifies components of experience]
+    U --> O[O — connects with the source]
 ```
 
-**Ключевые связи:**
+**Key connections:**
 
-- **U ↔ E (Синтез):** Через $\gamma_{UE}$ Единство интегрирует компоненты опыта в единое переживание. Без этой связи — диссоциация (множественные «Я»).
+- **U ↔ E (Synthesis):** Through $\gamma_{UE}$ Unity integrates the components of experience into a single experience. Without this connection — dissociation (multiple "I"s).
 
-- **U ↔ O (Связь с источником):** Через $\gamma_{UO}$ Единство получает энергию от Основания. Когерентность $\gamma_{OU}$ входит в числитель $\kappa_0$ — целостность буквально «питается» от источника. Без этой связи — экзистенциальная фрагментация.
+- **U ↔ O (Connection with the source):** Through $\gamma_{UO}$ Unity receives energy from the Ground. The coherence $\gamma_{OU}$ enters the numerator of $\kappa_0$ — wholeness literally "feeds" from the source. Without this connection — existential fragmentation.
 
-- **U ↔ A (Замыкание цикла):** Через $\gamma_{UA}$ Единство возвращает интегрированный результат обратно в Артикуляцию, замыкая (M,R)-цикл. Без этой связи — дереализация.
+- **U ↔ A (Cycle closure):** Through $\gamma_{UA}$ Unity returns the integrated result back to Articulation, closing the (M,R)-cycle. Without this connection — derealisation.
 
-- **U ↔ L (Логическая когерентность):** Через $\gamma_{UL}$ единство обеспечивает, что интеграция **логически согласована**. Без этой связи — бредовые связи (как при шизофрении: «всё со всем связано», но нелогично).
+- **U ↔ L (Logical coherence):** Through $\gamma_{UL}$ unity ensures that integration is **logically consistent**. Without this connection — delusional connections (as in schizophrenia: "everything is connected to everything", but illogically).
 
-## Когерентность с U
+## Coherence with U
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{UA}$ | Интегрированность различений |
-| $\gamma_{US}$ | Целостность структуры |
-| $\gamma_{UD}$ | Непрерывность бытия во времени |
-| $\gamma_{UL}$ | Логическая согласованность целого |
-| $\gamma_{UE}$ | Синтез (интеграция интериорного содержания в целое) |
-| $\gamma_{UO}$ | Связь целостности с источником |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{UA}$ | Integration of distinctions |
+| $\gamma_{US}$ | Wholeness of structure |
+| $\gamma_{UD}$ | Continuity of being in time |
+| $\gamma_{UL}$ | Logical consistency of the whole |
+| $\gamma_{UE}$ | Synthesis (integration of interior content into the whole) |
+| $\gamma_{UO}$ | Connection of wholeness with the source |
 
-## Φ и фазовые переходы {#фазовые-переходы}
+## Φ and phase transitions {#фазовые-переходы}
 
-Переход через $\Phi = 1$ — это **фазовый переход** в конфигурации Голонома, аналогичный фазовым переходам в физике.
+The transition through $\Phi = 1$ is a **phase transition** in the configuration of the Holon, analogous to phase transitions in physics.
 
-| Физический аналог | $\Phi < 1$ (фрагментированное) | $\Phi \geq 1$ (интегрированное) |
-|---|---|---|
-| Вода | Пар (молекулы независимы) | Жидкость (молекулы когерентны) |
-| Магнит | Парамагнетик (спины хаотичны) | Ферромагнетик (спины выстроены) |
-| Оркестр | Разминка (каждый сам) | Концерт (единое произведение) |
-| Сознание | Глубокий наркоз | Бодрствование |
+| Physical analogue | $\Phi < 1$ (fragmented) | $\Phi \geq 1$ (integrated) |
+|-------------------|------------------------|---------------------------|
+| Water | Steam (molecules independent) | Liquid (molecules coherent) |
+| Magnet | Paramagnet (spins chaotic) | Ferromagnet (spins aligned) |
+| Orchestra | Warm-up (each on their own) | Concert (single work) |
+| Consciousness | Deep anaesthesia | Wakefulness |
 
-В физике фазовые переходы сопровождаются **качественным** изменением свойств: вода-пар выглядит совершенно иначе, чем вода-жидкость. Точно так же переход через $\Phi = 1$ — качественное изменение: система перестаёт быть «набором частей» и становится «целым».
+In physics, phase transitions are accompanied by a **qualitative** change in properties: water-as-steam looks completely different from water-as-liquid. In exactly the same way, the transition through $\Phi = 1$ is a qualitative change: the system ceases to be a "collection of parts" and becomes a "whole".
 
-:::note Связь с порогом сознания
-Фазовый переход $\Phi = 1$ — одно из двух необходимых условий для L2 (сознание). Второе — $R \geq 1/3$ (рефлексия). Только при выполнении обоих условий возникает сознательный опыт. Подробнее: [пороги L2](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
+:::note Connection with the consciousness threshold
+The phase transition $\Phi = 1$ is one of the two necessary conditions for L2 (consciousness). The second is $R \geq 1/3$ (reflection). Only when both conditions are satisfied does conscious experience arise. Details: [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
 :::
 
-## Связь с чистотой
+## Connection with purity
 
-[Чистота](../dynamics/viability#определение-чистоты) $P$ связана с когерентностями:
+[Purity](../dynamics/viability#определение-чистоты) $P$ is connected to coherences:
 
 $$
 P = \mathrm{Tr}(\Gamma^2) = \sum_{i} \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2
 $$
 
-Высокая когерентность с $U$ (большие $|\gamma_{Ui}|$) коррелирует с высокой общей чистотой $P$, поскольку когерентности вносят положительный вклад в $P$.
+High coherence with $U$ (large $|\gamma_{Ui}|$) correlates with high overall purity $P$, since coherences make a positive contribution to $P$.
 
-**Следствие:** Единство не только «соединяет» измерения, но и **повышает общую упорядоченность** системы. Связанный оркестр играет «чище» (выше $P$), чем несвязанный.
+**Corollary:** Unity not only "connects" the dimensions, but also **raises the overall orderliness** of the system. A connected orchestra plays "more cleanly" (higher $P$) than a disconnected one.
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_6 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. Details, $G_2$-caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиома Септичности](../foundations/axiom-septicity) — теорема о $\Phi_{\text{th}} = 1$
-- [Основание (O)](./dimension-o) — предыдущее измерение
-- [Семь измерений](./dimensions) — обзор всех измерений
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — связь с сознанием
-- [Жизнеспособность](../dynamics/viability) — условия существования
-- [Иерархия интериорности](../../proofs/consciousness/interiority-hierarchy) — формальные определения
-- [Теория интегрированной информации (сравнение)](/docs/consciousness/comparative/consciousness-theories) — УГМ vs IIT
-- [Операционализация](/docs/proofs/consciousness/operationalization) — вывод T-129
+**Related documents:**
+- [Axiom of Septicity](../foundations/axiom-septicity) — theorem on $\Phi_{\text{th}} = 1$
+- [Ground (O)](./dimension-o) — previous dimension
+- [Seven dimensions](./dimensions) — overview of all dimensions
+- [Self-observation](/docs/consciousness/foundations/self-observation) — connection with consciousness
+- [Viability](../dynamics/viability) — conditions of existence
+- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) — formal definitions
+- [Integrated Information Theory (comparison)](/docs/consciousness/comparative/consciousness-theories) — UHM vs IIT
+- [Operationalisation](/docs/proofs/consciousness/operationalization) — derivation of T-129

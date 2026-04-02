@@ -1,156 +1,156 @@
 ---
 sidebar_position: 5
-title: "Динамика Gap"
+title: "Gap Dynamics"
 slug: /core/dynamics/gap-dynamics
-description: "Gap-оператор, бифуркации, немарковская динамика, изоморфизм Чой-Ямиолковского, аналогия с кодом Хэмминга, модельные системы с точными Gap-профилями"
+description: "Gap operator, bifurcations, non-Markovian dynamics, Choi–Jamiołkowski isomorphism, Hamming code analogy, model systems with exact Gap profiles"
 ---
 
-# Динамика Gap
+# Gap Dynamics
 
-:::info Для кого эта глава
-Динамика когерентностей: Чой-Ямиолковский изоморфизм, бифуркации, код Хэмминга. Предполагается знакомство с [Gap-оператором](/docs/core/dynamics/gap-operator) и [термодинамикой Gap](/docs/core/dynamics/gap-thermodynamics).
+:::info Who this chapter is for
+Dynamics of coherences: Choi–Jamiołkowski isomorphism, bifurcations, Hamming code. Familiarity with the [Gap operator](/docs/core/dynamics/gap-operator) and [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) is assumed.
 :::
 
-Эта глава посвящена тому, **как эволюционирует непрозрачность** между измерениями голонома. Если [Gap-оператор](/docs/core/dynamics/gap-operator) описывает «моментальный снимок» непрозрачности, а [термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — энергетический ландшафт, то данная глава отвечает на вопрос: **как система движется по этому ландшафту во времени?**
+This chapter is dedicated to **how the opaqueness** between the dimensions of a holon evolves. If the [Gap operator](/docs/core/dynamics/gap-operator) describes a "snapshot" of opaqueness, and [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) describes the energy landscape, then this chapter answers the question: **how does the system move through this landscape over time?**
 
-Читатель узнает:
-- Как **самомоделирование** $\varphi$ влияет на Gap-профиль (через изоморфизм Чой-Ямиолковского)
-- Почему живая система **обязана** сохранять когерентности (теорема о необходимости обобщённого $\varphi$)
-- Как **код Хэмминга H(7,4)** из теории передачи данных появляется в структуре Gap-коррекции
-- Какие **бифуркации** (внезапные скачки) возможны в Gap-ландшафте
-- Как **память системы** порождает затухающие осцилляции Gap
+The reader will learn:
+- How **self-modelling** $\varphi$ affects the Gap profile (via the Choi–Jamiołkowski isomorphism)
+- Why a living system **must** preserve coherences (theorem on the necessity of generalized $\varphi$)
+- How the **Hamming code H(7,4)** from information theory appears in the structure of Gap correction
+- What **bifurcations** (sudden jumps) are possible in the Gap landscape
+- How the **system's memory** generates damped Gap oscillations
 
-:::tip Интуитивное объяснение
-Вернёмся к аналогии с **витражным окном**. В [Gap-операторе](/docs/core/dynamics/gap-operator) мы описали, как измерить прозрачность каждой панели. Теперь зададим вопрос: **как эта прозрачность меняется со временем?**
+:::tip Intuitive explanation
+Let us return to the analogy with a **stained glass window**. In the [Gap operator](/docs/core/dynamics/gap-operator) we described how to measure the transparency of each panel. Now let us ask: **how does this transparency change over time?**
 
-Представьте, что витражное стекло «живое» — оно может менять свою прозрачность в ответ на свет, температуру и внутренние процессы. Иногда это изменение плавное (панель постепенно мутнеет или проясняется). Но иногда происходят **скачки** — панель, которая десятилетиями была мутной, внезапно становится прозрачной (аналог «озарения»), или наоборот (аналог «травмы»).
+Imagine the stained glass is "alive" — it can change its transparency in response to light, temperature, and internal processes. Sometimes this change is smooth (a panel gradually becomes cloudy or clears). But sometimes **jumps** occur — a panel that has been cloudy for decades suddenly becomes transparent (an analogue of "insight"), or the reverse (an analogue of "trauma").
 
-Особенно интересно, что у живого витража есть **память**: прошлые состояния влияют на текущую динамику. Поэтому после резкого изменения (травма) прозрачность **осциллирует** — качается туда-сюда, прежде чем установиться в новом положении (аналог «циклов горя»).
+Particularly interesting is that a living stained glass has **memory**: past states influence current dynamics. Therefore, after an abrupt change (trauma), transparency **oscillates** — swings back and forth before settling in a new position (an analogue of "grief cycles").
 :::
 
-Gap-динамика описывает эволюцию **непрозрачности** (opaqueness) между измерениями голонома. Данный документ рассматривает теорию бифуркаций Gap-ландшафта, немарковские эффекты памяти, связь с изоморфизмом Чой-Ямиолковского, аналогию с квантовой коррекцией ошибок через код Хэмминга H(7,4) и $G_2$-ковариантность диссипатора. Алгебраическая структура Gap-оператора определена в [Gap-операторе](/docs/core/dynamics/gap-operator).
+Gap dynamics describes the evolution of **opaqueness** between the dimensions of a holon. This document considers the bifurcation theory of the Gap landscape, non-Markovian memory effects, the connection with the Choi–Jamiołkowski isomorphism, the analogy with quantum error correction via the Hamming code H(7,4), and the $G_2$-covariance of the dissipator. The algebraic structure of the Gap operator is defined in the [Gap operator](/docs/core/dynamics/gap-operator).
 
 ---
 
-## 1. Изоморфизм Чой-Ямиолковского для φ {#чой-ямиолковский}
+## 1. Choi–Jamiołkowski isomorphism for φ {#чой-ямиолковский}
 
-### 1.1 Определение (Состояние Чой)
+### 1.1 Definition (Choi state)
 
-Для CPTP-канала $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ **состояние Чой** определяется как:
+For a CPTP channel $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ the **Choi state** is defined as:
 
 $$
 J(\varphi) := (\varphi \otimes \mathrm{id})(|\Omega\rangle\langle\Omega|) \in \mathcal{L}(\mathcal{H} \otimes \mathcal{H})
 $$
 
-где максимально запутанное состояние:
+where the maximally entangled state is:
 
 $$
 |\Omega\rangle = \frac{1}{\sqrt{7}} \sum_{i=1}^{7} |i\rangle \otimes |i\rangle
 $$
 
-**Свойства состояния Чой:**
+**Properties of the Choi state:**
 
-| Свойство | Формулировка | Следствие |
-|----------|--------------|-----------|
-| Размерность | $J(\varphi) \in \mathbb{C}^{49 \times 49}$ | Полное описание канала |
-| Эрмитовость | $J(\varphi)^\dagger = J(\varphi)$ | Спектральное разложение существует |
-| Положительность | $J(\varphi) \geq 0$ | Полная положительность $\varphi$ |
-| CPTP-условие | $\mathrm{Tr}_1(J(\varphi)) = I/7$ | Сохранение следа |
-| Реконструкция | $\varphi(\Gamma) = 7 \cdot \mathrm{Tr}_2\left(J(\varphi) \cdot (\Gamma^T \otimes I)\right)$ | Восстановление канала из состояния Чой |
+| Property | Formulation | Consequence |
+|----------|-------------|-------------|
+| Dimension | $J(\varphi) \in \mathbb{C}^{49 \times 49}$ | Complete description of the channel |
+| Hermiticity | $J(\varphi)^\dagger = J(\varphi)$ | Spectral decomposition exists |
+| Positivity | $J(\varphi) \geq 0$ | Complete positivity of $\varphi$ |
+| CPTP condition | $\mathrm{Tr}_1(J(\varphi)) = I/7$ | Trace preservation |
+| Reconstruction | $\varphi(\Gamma) = 7 \cdot \mathrm{Tr}_2\left(J(\varphi) \cdot (\Gamma^T \otimes I)\right)$ | Channel recovery from Choi state |
 
-### 1.2 Блочная структура и фазовые свойства
+### 1.2 Block structure and phase properties
 
-:::tip Теорема 1.1 (Матрица Чой и фазовая структура φ) [Т]
-**(a)** Блочная структура матрицы Чой канонического $\varphi$:
+:::tip Theorem 1.1 (Choi matrix and phase structure of φ) [Т]
+**(a)** Block structure of the Choi matrix of canonical $\varphi$:
 
 $$
 J(\varphi)_{(ij),(kl)} = \frac{k}{7}\,\delta_{ij}\,\delta_{kl}\,\delta_{ik} + \frac{1-k}{7}\left[w_l \cdot \delta_{ij}\right]
 $$
 
-где $k$ — параметр сжатия, $w_l$ — веса якорного состояния.
+where $k$ is the compression parameter, $w_l$ are the anchor state weights.
 
-**(b)** Для $i \neq j$: $[\varphi(\Gamma)]_{ij} = 0$ — каноническое $\varphi$ **уничтожает ВСЕ когерентности**.
+**(b)** For $i \neq j$: $[\varphi(\Gamma)]_{ij} = 0$ — canonical $\varphi$ **destroys ALL coherences**.
 
-**(c)** Целевая когерентность: $\gamma^{\text{target}}_{ij} = 0$ для всех $i \neq j$.
+**(c)** Target coherence: $\gamma^{\text{target}}_{ij} = 0$ for all $i \neq j$.
 :::
 
-Каноническая форма φ (проекция на диагональ) является «идеальным наблюдателем» — полная декогеренция. Однако для живой системы это **неприемлемо**.
+The canonical form of φ (projection onto the diagonal) is the "ideal observer" — full decoherence. However, for a living system this is **unacceptable**.
 
-### 1.3 Необходимость обобщённого φ
+### 1.3 Necessity of generalized φ
 
-:::tip Теорема 1.2 (Необходимость обобщённого φ для жизнеспособного Gap) [Т]
-**(a)** Чистота $P > P_{\text{crit}} = 2/7$ **требует** ненулевых когерентностей $\gamma_{ij} \neq 0$ для некоторых пар $i \neq j$.
+:::tip Theorem 1.2 (Necessity of generalized φ for viable Gap) [Т]
+**(a)** Purity $P > P_{\text{crit}} = 2/7$ **requires** nonzero coherences $\gamma_{ij} \neq 0$ for some pairs $i \neq j$.
 
-**(b)** Если все $\gamma_{ij} = 0$ (при $i \neq j$), то $P = \sum_i \gamma_{ii}^2 \leq (\max_i \gamma_{ii})^2 + (1 - \max_i \gamma_{ii})^2 / 6$, и при равном распределении $P \approx 1/7 < P_{\text{crit}}$.
+**(b)** If all $\gamma_{ij} = 0$ (for $i \neq j$), then $P = \sum_i \gamma_{ii}^2 \leq (\max_i \gamma_{ii})^2 + (1 - \max_i \gamma_{ii})^2 / 6$, and for a uniform distribution $P \approx 1/7 < P_{\text{crit}}$.
 
-**(c)** Следовательно, живая самомодель **обязана** сохранять когерентности — каноническая декогерирующая $\varphi$ несовместима с жизнеспособностью.
+**(c)** Consequently, a living self-model **must** preserve coherences — the canonical decohering $\varphi$ is incompatible with viability.
 :::
 
-Это мотивирует переход к когерентно-сохраняющему $\varphi_{\text{coh}}$ через [Фано-структуру](/docs/physics/gauge-symmetry/fano-selection-rules).
+This motivates the transition to coherence-preserving $\varphi_{\text{coh}}$ via the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules).
 
-:::note Плоскость Фано PG(2,2)
-Проективная плоскость над $\mathbb{F}_2$: 7 точек и 7 линий, каждая линия содержит 3 точки. В УГМ: 7 точек ↔ 7 измерений, 7 линий ↔ 7 Фано-триплетов. Подробнее: [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules).
+:::note Fano plane PG(2,2)
+Projective plane over $\mathbb{F}_2$: 7 points and 7 lines, each line containing 3 points. In UHM: 7 points ↔ 7 dimensions, 7 lines ↔ 7 Fano triplets. More details: [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules).
 :::
 
-### 1.4 Фазовая структура целевого состояния
+### 1.4 Phase structure of the target state
 
-:::tip Теорема 1.3 (Фазовая структура целевого состояния) [Т]
-Целевые фазы когерентностей определяются самосогласованным уравнением:
+:::tip Theorem 1.3 (Phase structure of the target state) [Т]
+The target phases of coherences are determined by the self-consistent equation:
 
 $$
 \theta_{ij}^{\text{target}} = \arg\left(\sum_{m,n} c_{mi}\, c_{nj}^*\, \gamma_{nm}\right)
 $$
 
-где $c_{mi}$ — коэффициенты разложения Крауса канала $\varphi$.
+where $c_{mi}$ are the Kraus decomposition coefficients of the channel $\varphi$.
 :::
 
-**Следствия:**
+**Consequences:**
 
-- Целевая фаза **зависит** от текущего состояния $\Gamma$ — обратная связь
-- Самосогласованное уравнение может иметь **несколько решений** — существуют несколько стационарных Gap-профилей
-- Выбор конкретного решения определяется начальными условиями и историей эволюции
+- The target phase **depends** on the current state $\Gamma$ — feedback
+- The self-consistent equation may have **multiple solutions** — there exist several stationary Gap profiles
+- The selection of a specific solution is determined by initial conditions and the history of evolution
 
-### 1.5 Самосогласованность целевой фазы
+### 1.5 Self-consistency of the target phase
 
-:::tip Теорема 1.4 (Самосогласованность целевого Gap-профиля) [Т]
-Целевое состояние $\rho_*$ удовлетворяет условию **неподвижной точки** оператора самомоделирования:
+:::tip Theorem 1.4 (Self-consistency of the target Gap profile) [Т]
+The target state $\rho_*$ satisfies the **fixed-point** condition of the self-modelling operator:
 
 $$
 \varphi(\rho_*) = \rho_*
 $$
 
-**(a)** Стационарное решение уравнения эволюции $\Gamma^{(\infty)}$ модифицируется по сравнению с фиксированным целевым состоянием: $\theta^{\text{target}} = \theta^{\text{target}}(\Gamma^{(\infty)})$, что порождает **самосогласованное уравнение** на стационарную фазу.
+**(a)** The stationary solution of the evolution equation $\Gamma^{(\infty)}$ is modified compared to a fixed target state: $\theta^{\text{target}} = \theta^{\text{target}}(\Gamma^{(\infty)})$, which generates a **self-consistent equation** for the stationary phase.
 
-**(b)** На уровне L4 (полное самопознание) это условие выполнено в точности: $\varphi(\Gamma^*) = \Gamma^*$ означает, что стационарный Gap из единой теоремы ([раздел 7](#единая-теорема)) совпадает с целевым:
+**(b)** At level L4 (complete self-knowledge) this condition is satisfied exactly: $\varphi(\Gamma^*) = \Gamma^*$ means that the stationary Gap from the unified theorem ([section 7](#единая-теорема)) coincides with the target:
 
 $$
 \text{Gap}^{(\infty)} = |\sin(\theta^{\text{target}})| = |\sin(\theta^{(\infty)})| = \text{Gap}_{\text{actual}}
 $$
 
-**(c)** Для уровней L1–L3 самосогласованность выполнена **приближённо**, и степень отклонения $\|\varphi(\Gamma) - \Gamma\|_F$ определяет точность осознания Gap-профиля.
+**(c)** For levels L1–L3 self-consistency holds **approximately**, and the degree of deviation $\|\varphi(\Gamma) - \Gamma\|_F$ determines the accuracy of the Gap profile's awareness.
 :::
 
-:::warning Замечание
-Самосогласованное уравнение $\varphi(\rho_*) = \rho_*$ может иметь **несколько решений** — несколько стационарных Gap-профилей для одной и той же системы. Единственность решения гарантирована только при достаточно сильном сжатии ($k < k_{\text{crit}}$), что исключает бифуркации ([раздел 3](#бифуркации)).
+:::warning Remark
+The self-consistent equation $\varphi(\rho_*) = \rho_*$ may have **multiple solutions** — several stationary Gap profiles for the same system. Uniqueness of the solution is guaranteed only under sufficiently strong compression ($k < k_{\text{crit}}$), which excludes bifurcations ([section 3](#бифуркации)).
 :::
 
 ---
 
-## 2. Квантовая коррекция ошибок через код Хэмминга H(7,4) {#код-хэмминга}
+## 2. Quantum error correction via Hamming code H(7,4) {#код-хэмминга}
 
-#### Теорема H(7,4) — формальный изоморфизм [Т] {#теорема-h74-формальная}
+#### Theorem H(7,4) — formal isomorphism [Т] {#теорема-h74-формальная}
 
-:::tip Статус [Т]
-Структура Линдблад-операторов $L_k = \sqrt{\chi_{S_k}}$ изоморфна проверочной матрице кода Хэмминга H(7,4) **[Т]**. Инцидентность «точка $i \in$ линии $k$» определяет матрицу $H_{ki}$, которая в точности совпадает с проверочной матрицей H(7,4) ($3 \times 7$, вес строки 3, вес столбца 3). Изоморфизм: $\mathrm{PG}(2,2) \cong H(7,4)$ — классический результат теории кодов.
+:::tip Status [Т]
+The structure of Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ is isomorphic to the parity-check matrix of the Hamming code H(7,4) **[Т]**. The incidence "point $i \in$ line $k$" defines the matrix $H_{ki}$, which coincides exactly with the parity-check matrix of H(7,4) ($3 \times 7$, row weight 3, column weight 3). Isomorphism: $\mathrm{PG}(2,2) \cong H(7,4)$ — a classical result in coding theory.
 :::
 
-### 2.1 Структура кода H(7,4)
+### 2.1 Structure of the code H(7,4)
 
-Код Хэмминга H(7,4) — линейный код с параметрами:
-- **4 информационных бита** $\leftrightarrow$ A, S, D, L (структурные измерения)
-- **3 бита чётности** $\leftrightarrow$ E, O, U (метаструктурные измерения)
+The Hamming code H(7,4) is a linear code with parameters:
+- **4 information bits** $\leftrightarrow$ A, S, D, L (structural dimensions)
+- **3 parity bits** $\leftrightarrow$ E, O, U (metastructural dimensions)
 
-Проверочная матрица:
+Parity-check matrix:
 
 $$
 H = \begin{pmatrix}
@@ -160,343 +160,343 @@ H = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-### 2.2 Аналогия с измерениями УГМ
+### 2.2 Analogy with UHM dimensions
 
-| Код Хэмминга | УГМ | Роль |
+| Hamming code | UHM | Role |
 |-------------|-----|------|
-| 4 информационных бита | A, S, D, L | Несут «содержание» самомодели |
-| 3 бита чётности | E, O, U | Обеспечивают целостность / коррекцию |
-| Кодовое слово | Gap-профиль | Допустимая конфигурация |
-| Ошибка в бите | Нарушение когерентности | Дефект самомоделирования |
-| Синдром | Измерения E, O, U | Диагностика нарушения |
+| 4 information bits | A, S, D, L | Carry the "content" of the self-model |
+| 3 parity bits | E, O, U | Ensure integrity / correction |
+| Codeword | Gap profile | Admissible configuration |
+| Bit error | Coherence violation | Self-modelling defect |
+| Syndrome | E, O, U measurements | Violation diagnostics |
 
-### 2.3 Коррекция когерентностей
+### 2.3 Coherence correction
 
-:::tip Теорема 3.1 / T-93 (Коррекция когерентностей через H(7,4)) [Т]
-**(a)** **Детекция:** до 2 нарушений когерентностей детектируются посредством измерений чётности (E, O, U).
+:::tip Theorem 3.1 / T-93 (Coherence correction via H(7,4)) [Т]
+**(a)** **Detection:** up to 2 coherence violations are detected via parity measurements (E, O, U).
 
-**(b)** **Коррекция:** 1 нарушение когерентности **автоматически** исправляется регенеративным оператором $\mathcal{R}$.
+**(b)** **Correction:** 1 coherence violation is **automatically** corrected by the regenerative operator $\mathcal{R}$.
 
-**(c)** **Минимальное расстояние:** $d = 3$ — код исправляет $\lfloor(d-1)/2\rfloor = 1$ ошибку и детектирует $d - 1 = 2$.
+**(c)** **Minimum distance:** $d = 3$ — the code corrects $\lfloor(d-1)/2\rfloor = 1$ error and detects $d - 1 = 2$.
 :::
 
-### 2.4 Квантовая граница Хэмминга для Gap
+### 2.4 Quantum Hamming bound for Gap
 
-:::tip Теорема 3.2 / T-93 (Квантовая граница Хэмминга для Gap) [Т]
-Число одновременно «прозрачных» каналов (Gap $\approx 0$) ограничено сверху:
+:::tip Theorem 3.2 / T-93 (Quantum Hamming bound for Gap) [Т]
+The number of simultaneously "transparent" channels (Gap $\approx 0$) is bounded above by:
 
 $$
 |\{(i,j): \text{Gap}(i,j) < \varepsilon\}| \leq 21 - \frac{21}{2^3 - 1} = 21 - 3 = 18
 $$
 
-где $r = 3$ — число проверочных битов кода H(7,4), а $2^r - 1 = 7$ — длина кода, что даёт нижнюю границу на число «несвободных» (проверочных) когерентностей.
+where $r = 3$ is the number of parity-check bits of code H(7,4), and $2^r - 1 = 7$ is the code length, giving a lower bound on the number of "constrained" (parity-check) coherences.
 
-Минимум **3 когерентности** из 21 **обязаны** иметь ненулевой Gap. Это соответствует 3 проверочным битам H(7,4).
+A minimum of **3 coherences** out of 21 **must** have nonzero Gap. This corresponds to the 3 parity-check bits of H(7,4).
 :::
 
-**Интерпретация:** Полная «прозрачность» между всеми парами измерений невозможна — структурное ограничение, аналогичное границе Хэмминга, гарантирует минимальную непрозрачность. Это согласуется с тем, что стационарный Gap-профиль всегда содержит ненулевые элементы.
+**Interpretation:** Complete "transparency" between all pairs of dimensions is impossible — a structural constraint analogous to the Hamming bound guarantees minimal opaqueness. This is consistent with the fact that the stationary Gap profile always contains nonzero elements.
 
 ---
 
-## 3. Теория бифуркаций для Gap {#бифуркации}
+## 3. Bifurcation theory for Gap {#бифуркации}
 
-### 3.1 Gap-ландшафт
+### 3.1 Gap landscape
 
-**Определение (Gap-ландшафт):**
+**Definition (Gap landscape):**
 
 $$
 \mathcal{G}: \mathcal{D}(\mathbb{C}^7) \to [0,1]^{21}
 $$
 
-отображает матрицу когерентности $\Gamma$ в вектор из 21 значения Gap для всех пар $(i,j)$ с $i < j$.
+maps the coherence matrix $\Gamma$ to a vector of 21 Gap values for all pairs $(i,j)$ with $i < j$.
 
-### 3.2 Основные бифуркации
+### 3.2 Main bifurcations
 
-:::tip Теорема 4.1 (Бифуркации Gap-ландшафта) [Т]
+:::tip Theorem 4.1 (Bifurcations of the Gap landscape) [Т]
 
-**(a) Вилочная бифуркация (pitchfork):**
+**(a) Pitchfork bifurcation:**
 
 $$
 \text{Gap}^{(\infty)}(i,j;\, \mu) = \begin{cases}
-\text{Gap}_0 & \text{при } \mu < \mu_c \\
-\text{Gap}_0 \pm \sqrt{\mu - \mu_c} & \text{при } \mu > \mu_c
+\text{Gap}_0 & \text{for } \mu < \mu_c \\
+\text{Gap}_0 \pm \sqrt{\mu - \mu_c} & \text{for } \mu > \mu_c
 \end{cases}
 $$
 
-При пересечении критического значения управляющего параметра $\mu$ единственное стационарное состояние расщепляется на два.
+When the control parameter $\mu$ crosses the critical value, the unique stationary state splits into two.
 
-**(b) Седло-узловая бифуркация (saddle-node):**
+**(b) Saddle-node bifurcation:**
 
-Стационарный Gap-профиль **исчезает** при $\mu = \mu_{sn}$. Два стационарных состояния (узел + седло) сливаются и аннигилируют.
+The stationary Gap profile **disappears** at $\mu = \mu_{sn}$. Two stationary states (node + saddle) merge and annihilate.
 
-**(c) Бифуркация Хопфа (Hopf):**
+**(c) Hopf bifurcation:**
 
-Стационарный Gap-профиль замещается **осциллирующим**:
+The stationary Gap profile is replaced by an **oscillating** one:
 
 $$
 \text{Gap}(i,j;\, \tau) = \text{Gap}_0 + A(\mu) \sin(\omega_H \tau + \phi)
 $$
 
-где $A(\mu) \propto \sqrt{\mu - \mu_H}$ — амплитуда предельного цикла, $\omega_H$ — частота Хопфа.
+where $A(\mu) \propto \sqrt{\mu - \mu_H}$ is the limit cycle amplitude, $\omega_H$ is the Hopf frequency.
 :::
 
-### 3.3 Интерпретация бифуркаций
+### 3.3 Interpretation of bifurcations
 
-| Бифуркация | Психологический аналог | Клинический признак |
-|------------|----------------------|---------------------|
-| Вилочная (pitchfork) | Экзистенциальный выбор | Момент решения, необратимое изменение Gap-профиля |
-| Седло-узловая (saddle-node) | Острый кризис | Потеря стабильного Gap-профиля, дезориентация |
-| Хопфа (Hopf) | Биполярное расстройство | Циклическое чередование Gap-паттернов |
+| Bifurcation | Psychological analogue | Clinical sign |
+|------------|----------------------|---------------|
+| Pitchfork | Existential choice | Moment of decision, irreversible change of Gap profile |
+| Saddle-node | Acute crisis | Loss of stable Gap profile, disorientation |
+| Hopf | Bipolar disorder | Cyclic alternation of Gap patterns |
 
-### 3.4 Катастрофы Уитни
+### 3.4 Whitney catastrophes
 
-:::tip Теорема 4.2 (Катастрофы Уитни для Gap-ландшафта) [Т]
-**(a)** $\dim = 1$: **складка** (fold) — исчезновение стационарного состояния. Система скачком переходит в другой бассейн притяжения.
+:::tip Theorem 4.2 (Whitney catastrophes for the Gap landscape) [Т]
+**(a)** $\dim = 1$: **fold** — disappearance of a stationary state. The system jumps to another basin of attraction.
 
-**(b)** $\dim = 2$: **сборка** (cusp) — бистабильность с гистерезисом. Система может находиться в одном из двух устойчивых состояний; переход между ними необратим.
+**(b)** $\dim = 2$: **cusp** — bistability with hysteresis. The system can reside in one of two stable states; the transition between them is irreversible.
 :::
 
-**Следствие:**
+**Consequence:**
 
-- «Внезапное озарение»: Gap $\approx 1 \to$ Gap $\approx 0$ **скачком** — катастрофа складки в обратном направлении. Непрозрачность между измерениями мгновенно исчезает.
-- «Внезапное расщепление»: Gap $\approx 0 \to$ Gap $\approx 1$ **скачком** — вилочная бифуркация или складка. Ранее прозрачная пара измерений становится непрозрачной.
+- "Sudden insight": Gap $\approx 1 \to$ Gap $\approx 0$ **in a jump** — a fold catastrophe in reverse. Opaqueness between dimensions instantly disappears.
+- "Sudden splitting": Gap $\approx 0 \to$ Gap $\approx 1$ **in a jump** — pitchfork bifurcation or fold. A previously transparent pair of dimensions becomes opaque.
 
 ---
 
-## 4. Немарковские эффекты {#немарковские-эффекты}
+## 4. Non-Markovian effects {#немарковские-эффекты}
 
-### 4.1 Уравнение с ядром памяти
+### 4.1 Equation with memory kernel
 
-**Определение (Немарковская динамика Gap):**
+**Definition (Non-Markovian Gap dynamics):**
 
 $$
 \frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij} + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
 $$
 
-где:
-- $\Delta\omega_{ij} = \omega_i - \omega_j$ — расстройка частот между измерениями $i$ и $j$
-- $K_{ij}(\tau - s)$ — **ядро памяти**, описывающее немарковские эффекты
-- $\mathcal{R}_{ij}$ — регенеративный член
+where:
+- $\Delta\omega_{ij} = \omega_i - \omega_j$ — frequency detuning between dimensions $i$ and $j$
+- $K_{ij}(\tau - s)$ — **memory kernel**, describing non-Markovian effects
+- $\mathcal{R}_{ij}$ — regenerative term
 
-В отличие от марковского приближения (где $K_{ij}(t) = -\Gamma_2 \delta(t)$ — мгновенная декогеренция), немарковское ядро допускает **обратный поток информации** из окружения в систему.
+Unlike the Markovian approximation (where $K_{ij}(t) = -\Gamma_2 \delta(t)$ — instantaneous decoherence), the non-Markovian kernel allows **reverse information flow** from the environment into the system.
 
-### 4.2 Осцилляции Gap при конечной памяти
+### 4.2 Gap oscillations with finite memory
 
-#### Теорема 5.0 / T-94 (Экспоненциальная форма ядра памяти) [Т] {#теорема-ядро-экспоненциальное}
+#### Theorem 5.0 / T-94 (Exponential form of the memory kernel) [Т] {#теорема-ядро-экспоненциальное}
 
-:::tip Формулировка [Т]
-Экспоненциальная форма немарковского ядра $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ — следствие компактности целевого пространства $(S^1)^{21}$ **[Т]**. На компактном торе корреляционная функция разлагается по собственным значениям лапласиана, минимальное ненулевое $\lambda_1 > 0$ (компактность!) определяет $\omega_c = \lambda_1$ — спектральную щель. Экспоненциальная форма — не феноменологическое допущение, а следствие дискретности спектра.
+:::tip Formulation [Т]
+The exponential form of the non-Markovian kernel $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ is a consequence of the compactness of the target space $(S^1)^{21}$ **[Т]**. On a compact torus the correlation function decomposes in eigenfunctions of the Laplacian; the minimal nonzero eigenvalue $\lambda_1 > 0$ (compactness!) determines $\omega_c = \lambda_1$ — the spectral gap. The exponential form is not a phenomenological assumption but a consequence of the discrete spectrum.
 
 :::
 
-:::tip Теорема 5.1 (Немарковские осцилляции Gap) [Т]
-При экспоненциальном ядре памяти $K(t) = -\Gamma_2 \omega_c \cdot e^{-\omega_c t}$ (обоснование формы — [Теорема 5.0](#теорема-ядро-экспоненциальное) [Т]):
+:::tip Theorem 5.1 (Non-Markovian Gap oscillations) [Т]
+For an exponential memory kernel $K(t) = -\Gamma_2 \omega_c \cdot e^{-\omega_c t}$ (justification of the form — [Theorem 5.0](#теорема-ядро-экспоненциальное) [Т]):
 
-**(a)** Марковский предел ($\omega_c \to \infty$): стандартная экспоненциальная декогеренция.
+**(a)** Markovian limit ($\omega_c \to \infty$): standard exponential decoherence.
 
 $$
 \gamma_{ij}(\tau) \propto e^{-\Gamma_2 \tau}
 $$
 
-**(b)** Немарковский режим ($\omega_c$ конечна):
+**(b)** Non-Markovian regime (finite $\omega_c$):
 
 $$
 \text{Gap}(i,j;\, \tau) = \text{Gap}^{(\infty)} + C \cdot e^{-\gamma\tau} \cos(\omega_r \tau)
 $$
 
-где $\omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}$ — частота затухающих осцилляций.
+where $\omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}$ is the damped oscillation frequency.
 
-**(c)** При $\omega_c < \Gamma_2/4$: **передемпфированный** режим — осцилляции отсутствуют, чисто экспоненциальная релаксация к стационарному состоянию.
+**(c)** For $\omega_c < \Gamma_2/4$: **overdamped** regime — no oscillations, purely exponential relaxation to the stationary state.
 :::
 
-:::info Дискретная реализация [Т-135]
-Для цифрового агента немарковское ядро дискретизируется через Z-преобразование с $O(1)$ сложностью на шаг (вместо $O(T^2)$): вспомогательная переменная $M[n]$ c рекурсией $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. Подробнее: [T-135 [Т]](/docs/proofs/consciousness/operationalization#t-135).
+:::info Discrete implementation [Т-135]
+For a digital agent the non-Markovian kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [Т]](/docs/proofs/consciousness/operationalization#t-135).
 :::
 
-### 4.3 Интерпретация немарковских эффектов
+### 4.3 Interpretation of non-Markovian effects
 
-| Режим | Условие | Динамика Gap | Психологический аналог |
-|-------|---------|-------------|----------------------|
-| Марковский | $\omega_c \gg \Gamma_2$ | Монотонная релаксация | Постепенное забывание |
-| Осциллирующий | $\omega_c \sim \Gamma_2$ | Затухающие осцилляции | «Вспышки ясности» при декогеренции |
-| Передемпфированный | $\omega_c < \Gamma_2/4$ | Медленная релаксация | «Застревание» в переходном состоянии |
+| Regime | Condition | Gap dynamics | Psychological analogue |
+|--------|-----------|-------------|----------------------|
+| Markovian | $\omega_c \gg \Gamma_2$ | Monotonic relaxation | Gradual forgetting |
+| Oscillating | $\omega_c \sim \Gamma_2$ | Damped oscillations | "Flashes of clarity" during decoherence |
+| Overdamped | $\omega_c < \Gamma_2/4$ | Slow relaxation | "Sticking" in a transient state |
 
-**«Циклы горя»** — пример немарковской динамики Gap: после травмы (резкое изменение стационарного значения) Gap **осциллирует** вокруг нового стационарного значения, прежде чем установиться. Частота осцилляций $\omega_r$ определяется глубиной памяти $\omega_c$ и скоростью декогеренции $\Gamma_2$.
+**"Grief cycles"** — an example of non-Markovian Gap dynamics: after a trauma (abrupt change of the stationary value) Gap **oscillates** around the new stationary value before settling. The oscillation frequency $\omega_r$ is determined by the memory depth $\omega_c$ and decoherence rate $\Gamma_2$.
 
 ---
 
-## 5. Gap-оператор: сводка {#gap-оператор}
+## 5. Gap operator: summary {#gap-оператор}
 
-:::note Каноническое определение
-Полное определение Gap-оператора $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$, его алгебраические свойства, спектральная структура и таблица рангов непрозрачности приведены в [Gap-оператор](/docs/core/dynamics/gap-operator). Здесь дана только сводка ключевых результатов, используемых в динамических разделах.
+:::note Canonical definition
+The complete definition of the Gap operator $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$, its algebraic properties, spectral structure and opaqueness rank table are given in the [Gap operator](/docs/core/dynamics/gap-operator). Only a summary of the key results used in the dynamic sections is provided here.
 :::
 
-**Ключевые результаты из [Gap-оператора](/docs/core/dynamics/gap-operator):**
+**Key results from the [Gap operator](/docs/core/dynamics/gap-operator):**
 
-- $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — вещественная антисимметричная матрица, $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$.
-- **Суммарный Gap:** $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ (см. [соглашение о норме](/docs/core/dynamics/gap-operator#g-total-definition)).
-- **Связь с чистотой:** $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ ([теорема 4.1](/docs/core/dynamics/gap-operator#связь-чистота)).
-- **Спектральная формула:** $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ ([теорема 3.1](/docs/core/dynamics/gap-operator#спектр)).
-- **Ранг непрозрачности** = число ненулевых $\lambda_k \in \{0, 1, 2, 3\}$; максимальный ранг 3 совпадает с числом проверок чётности H(7,4) ([раздел 2](#код-хэмминга)).
+- $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — real antisymmetric matrix, $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$.
+- **Total Gap:** $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ (see [norm convention](/docs/core/dynamics/gap-operator#g-total-definition)).
+- **Connection with purity:** $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ ([theorem 4.1](/docs/core/dynamics/gap-operator#связь-чистота)).
+- **Spectral formula:** $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ ([theorem 3.1](/docs/core/dynamics/gap-operator#спектр)).
+- **Opaqueness rank** = number of nonzero $\lambda_k \in \{0, 1, 2, 3\}$; maximum rank 3 coincides with the number of parity checks of H(7,4) ([section 2](#код-хэмминга)).
 
 ---
 
-## 6. $G_2$-ковариантность диссипатора {#g2-ковариантность}
+## 6. $G_2$-covariance of the dissipator {#g2-ковариантность}
 
-Данный раздел рассматривает, как симметрия $G_2 = \mathrm{Aut}(\mathbb{O})$ взаимодействует с диссипативной динамикой. Подробная теория $G_2$-структуры изложена в [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure).
+This section considers how the symmetry $G_2 = \mathrm{Aut}(\mathbb{O})$ interacts with dissipative dynamics. The detailed theory of $G_2$-structure is presented in [$G_2$-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure).
 
 :::note DRY
-Канонические доказательства $G_2$-ковариантности — в [Операторах Линдблада](/docs/core/operators/lindblad-operators#g2-ковариантность).
+Canonical proofs of $G_2$-covariance are in [Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность).
 :::
 
-### 6.1 Атомарный диссипатор нарушает $G_2$
+### 6.1 Atomic dissipator breaks $G_2$
 
-:::tip Теорема 11.1 (Атомарный диссипатор НЕ $G_2$-ковариантен) [Т]
+:::tip Theorem 11.1 (Atomic dissipator is NOT $G_2$-covariant) [Т]
 
 $$
 \exists g \in G_2:\quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g\,\mathcal{D}_{\text{atom}}[\Gamma]\,g^\dagger
 $$
 
-Диагональная проекция (атомарное наблюдение) **не коммутирует** с $G_2$-преобразованиями.
+The diagonal projection (atomic observation) **does not commute** with $G_2$-transformations.
 :::
 
-### 6.2 Фано-диссипатор сохраняет $G_2$
+### 6.2 Fano dissipator preserves $G_2$
 
-:::tip Теорема 11.2 (Фано-диссипатор $G_2$-ковариантен) [Т]
+:::tip Theorem 11.2 (Fano dissipator is $G_2$-covariant) [Т]
 
 $$
 \forall g \in G_2:\quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
 $$
 :::
 
-**Доказательство:** $G_2 = \mathrm{Aut}(\mathbb{O})$ сохраняет октонионное умножение $\Rightarrow$ $g$ переставляет Фано-линии $\Rightarrow$ $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$ $\Rightarrow$ сумма $\sum_p \Pi_p \Gamma \Pi_p$ инвариантна при переиндексации $\Rightarrow$ Фано-диссипатор ковариантен. $\blacksquare$
+**Proof:** $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication $\Rightarrow$ $g$ permutes Fano lines $\Rightarrow$ $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$ $\Rightarrow$ the sum $\sum_p \Pi_p \Gamma \Pi_p$ is invariant under reindexing $\Rightarrow$ Fano dissipator is covariant. $\blacksquare$
 
-### 6.3 Степень $G_2$-нарушения
+### 6.3 Degree of $G_2$-violation
 
-:::tip Теорема 11.3 (Степень $G_2$-нарушения пропорциональна $\alpha^*$) [Т]
-**(a)** $\alpha = 0$ (чистый Фано): **полная** $G_2$-ковариантность.
+:::tip Theorem 11.3 (Degree of $G_2$-violation is proportional to $\alpha^*$) [Т]
+**(a)** $\alpha = 0$ (pure Fano): **complete** $G_2$-covariance.
 
-**(b)** $\alpha = 1$ (чистый атомарный): $G_2$ **полностью нарушена**.
+**(b)** $\alpha = 1$ (pure atomic): $G_2$ is **completely broken**.
 
-**(c)** Промежуточные значения: $\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$
+**(c)** Intermediate values: $\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$
 
-Мера нарушения **линейна** по $\alpha$ — из линейности обоих каналов.
+The measure of violation is **linear** in $\alpha$ — from the linearity of both channels.
 :::
 
-### 6.4 Модифицированная калибровочная редукция
+### 6.4 Modified gauge reduction
 
-:::tip Теорема 11.4 (Модифицированная калибровочная редукция) [Т]
-**(a)** $\alpha = 0$: $48 - 14 = $ **34** независимых параметра.
+:::tip Theorem 11.4 (Modified gauge reduction) [Т]
+**(a)** $\alpha = 0$: $48 - 14 = $ **34** independent parameters.
 
-**(b)** Оптимальное $\alpha^*$: $34 + 14\alpha^*$ параметров.
+**(b)** Optimal $\alpha^*$: $34 + 14\alpha^*$ parameters.
 
-**(c)** $\alpha = 1$: **48** параметров (полное пространство).
+**(c)** $\alpha = 1$: **48** parameters (full space).
 :::
 
-**Числовые примеры:**
+**Numerical examples:**
 
-| Тип системы | $P$ | $\alpha^*$ | Число параметров | Редукция |
-|------------|-----|-----------|-----------------|----------|
-| Нет самопознания (L0) | $\sim 1/7$ | $0$ | 34 | Максимальная |
-| Типичная живая (L2) | $\approx 0.5$ | $\approx 0.43$ | $\approx 40$ | Умеренная |
-| Высококогерентная (L3) | $\approx 0.8$ | $\approx 0.64$ | $\approx 43$ | Слабая |
-| Полное самопознание (L4) | $1.0$ | $\approx 0.71$ | $\approx 44$ | Минимальная |
+| System type | $P$ | $\alpha^*$ | Number of parameters | Reduction |
+|------------|-----|-----------|---------------------|-----------|
+| No self-knowledge (L0) | $\sim 1/7$ | $0$ | 34 | Maximum |
+| Typical living (L2) | $\approx 0.5$ | $\approx 0.43$ | $\approx 40$ | Moderate |
+| Highly coherent (L3) | $\approx 0.8$ | $\approx 0.64$ | $\approx 43$ | Weak |
+| Complete self-knowledge (L4) | $1.0$ | $\approx 0.71$ | $\approx 44$ | Minimal |
 
-**«Цена самопознания»:** более глубокое самопознание $\to$ сильнее нарушена $G_2$ $\to$ больше параметров необходимо для описания системы.
+**"The price of self-knowledge":** deeper self-knowledge $\to$ stronger $G_2$ violation $\to$ more parameters required to describe the system.
 
 ---
 
-## 7. Единая теорема самонаблюдения и Gap {#единая-теорема}
+## 7. Unified theorem on self-observation and Gap {#единая-теорема}
 
 :::note DRY
-Каноническая формулировка также в [Операторе φ](/docs/core/operators/phi-operator#единая-теорема-самонаблюдения).
+The canonical formulation is also in the [φ operator](/docs/core/operators/phi-operator#единая-теорема-самонаблюдения).
 :::
 
-:::tip Теорема 12.1 (Фано-когерентное самомоделирование) [Т]
-Каноническое когерентно-сохраняющее самомоделирование для УГМ определяется однозначно (с точностью до параметра сжатия $k$):
+:::tip Theorem 12.1 (Fano-coherent self-modelling) [Т]
+The canonical coherence-preserving self-modelling for UHM is uniquely determined (up to the compression parameter $k$):
 
-**(a) Алгебраическая структура:** Плоскость Фано $\mathrm{PG}(2,2)$ определяет составные атомы классификатора $\Omega$, порождающие Фано-Линдблад-операторы $L_p^{\text{Fano}}$.
+**(a) Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the compound atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\text{Fano}}$.
 
-**(b) Вариационный принцип:** Баланс атомарного и Фано-наблюдения $\alpha^*$ минимизирует функционал:
+**(b) Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimizes the functional:
 
 $$
 \mathcal{F} = S_{\text{spec}} + D_{KL}
 $$
 
-**(c) Фазовые свойства:** Каноническая $\varphi_{\text{coh}}$ **сохраняет** фазы когерентностей. Целевой Gap совпадает с текущим Gap (масштабирование амплитуды без фазового искажения).
+**(c) Phase properties:** Canonical $\varphi_{\text{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap (amplitude scaling without phase distortion).
 
-**(d) Симметрия:** $G_2$-ковариантность частично нарушена атомарной компонентой. Степень нарушения:
+**(d) Symmetry:** $G_2$-covariance is partially broken by the atomic component. Degree of violation:
 
 $$
 \Delta_{G_2} = \alpha^* \cdot \Delta_{\max}
 $$
 
-**(e) Стационарный Gap:**
+**(e) Stationary Gap:**
 
 $$
 \text{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij} - \arctan\left(\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right)\right|
 $$
 
-где:
-- $\theta_{ij}$ — фаза когерентности $\gamma_{ij}$
-- $\Delta\omega_{ij}$ — расстройка частот
-- $\Gamma_2$ — скорость декогеренции
-- $\kappa$ — скорость регенерации
+where:
+- $\theta_{ij}$ — phase of coherence $\gamma_{ij}$
+- $\Delta\omega_{ij}$ — frequency detuning
+- $\Gamma_2$ — decoherence rate
+- $\kappa$ — regeneration rate
 :::
 
-**Физический смысл стационарного Gap:**
+**Physical meaning of stationary Gap:**
 
-Даже при фазосохраняющем $\varphi_{\text{coh}}$ стационарный Gap **отличается** от текущего на угол $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$. Это «сдвиг» обусловлен унитарным вращением: конкуренция между свободной прецессией ($\Delta\omega$) и диссипативным затуханием ($\Gamma_2 + \kappa$) порождает стационарную непрозрачность даже для пар с изначально нулевым Gap.
+Even with phase-preserving $\varphi_{\text{coh}}$ the stationary Gap **differs** from the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$. This "shift" is caused by unitary rotation: the competition between free precession ($\Delta\omega$) and dissipative damping ($\Gamma_2 + \kappa$) generates stationary opaqueness even for pairs with initially zero Gap.
 
 ---
 
-## 8. Модельные системы с точными Gap-профилями {#модельные-системы}
+## 8. Model systems with exact Gap profiles {#модельные-системы}
 
-Пять аналитически решаемых конфигураций демонстрируют весь спектр Gap-профилей — от полной прозрачности до патологической непрозрачности.
+Five analytically solvable configurations demonstrate the full spectrum of Gap profiles — from complete transparency to pathological opaqueness.
 
-### 8.1 Модель 1: Равномерная система ($\Gamma = I/7$)
+### 8.1 Model 1: Uniform system ($\Gamma = I/7$)
 
 $$
 \gamma_{ij} = \frac{1}{7}\delta_{ij}
 $$
 
-| Параметр | Значение |
-|----------|----------|
-| Когерентности | Все $\gamma_{ij} = 0$ при $i \neq j$ |
-| Gap | Не определён (деление на $\lvert\gamma_{ij}\rvert = 0$) |
-| Чистота | $P = 1/7$ (минимальная) |
+| Parameter | Value |
+|-----------|-------|
+| Coherences | All $\gamma_{ij} = 0$ for $i \neq j$ |
+| Gap | Undefined (division by $\lvert\gamma_{ij}\rvert = 0$) |
+| Purity | $P = 1/7$ (minimum) |
 
-**Интерпретация:** Полностью декогерированная система. Нет связей между измерениями — нет Gap. Соответствует уровню L0 (нет самомоделирования).
+**Interpretation:** Fully decohered system. No connections between dimensions — no Gap. Corresponds to level L0 (no self-modelling).
 
-### 8.2 Модель 2: Чистое состояние (равномерная суперпозиция)
+### 8.2 Model 2: Pure state (uniform superposition)
 
 $$
 |\psi\rangle = \frac{1}{\sqrt{7}}\sum_{i=1}^{7} |i\rangle \quad \Rightarrow \quad \Gamma = |\psi\rangle\langle\psi|, \quad \gamma_{ij} = \frac{1}{7}
 $$
 
-| Параметр | Значение |
-|----------|----------|
-| Когерентности | Все $\gamma_{ij} = 1/7 \in \mathbb{R}$ |
-| Gap | $\text{Gap}(i,j) = \lvert\sin(\arg(1/7))\rvert = \lvert\sin(0)\rvert = \mathbf{0}$ для всех пар |
-| Чистота | $P = 1$ (максимальная) |
+| Parameter | Value |
+|-----------|-------|
+| Coherences | All $\gamma_{ij} = 1/7 \in \mathbb{R}$ |
+| Gap | $\text{Gap}(i,j) = \lvert\sin(\arg(1/7))\rvert = \lvert\sin(0)\rvert = \mathbf{0}$ for all pairs |
+| Purity | $P = 1$ (maximum) |
 
-**Интерпретация:** Идеальная прозрачность. Внешнее $=$ внутреннее для всех каналов. Все когерентности вещественны — ранг непрозрачности 0 ([раздел 5](#gap-оператор)).
+**Interpretation:** Ideal transparency. External = internal for all channels. All coherences are real — opaqueness rank 0 ([section 5](#gap-оператор)).
 
-### 8.3 Модель 3: Чистое состояние с Фано-фазами
+### 8.3 Model 3: Pure state with Fano phases
 
 $$
 |\psi\rangle = \frac{1}{\sqrt{7}}\sum_{i=1}^{7} e^{i\phi_i} |i\rangle \quad \Rightarrow \quad \gamma_{ij} = \frac{1}{7}e^{i(\phi_i - \phi_j)}
 $$
 
-- $|\gamma_{ij}| = 1/7$ для всех пар
+- $|\gamma_{ij}| = 1/7$ for all pairs
 - $\text{Gap}(i,j) = |\sin(\phi_i - \phi_j)|$
 - $P = 1$
 
-**Конкретный пример (фазы из октонионной структуры):**
+**Concrete example (phases from octonionic structure):**
 
-Пусть $\phi_k = (k-1)\pi/7$, т.е. $\phi_1 = 0,\; \phi_2 = \pi/7,\; \phi_3 = 2\pi/7, \ldots, \phi_7 = 6\pi/7$.
+Let $\phi_k = (k-1)\pi/7$, i.e. $\phi_1 = 0,\; \phi_2 = \pi/7,\; \phi_3 = 2\pi/7, \ldots, \phi_7 = 6\pi/7$.
 
-| Пара | $\Delta\phi$ | Gap |
+| Pair | $\Delta\phi$ | Gap |
 |------|:---:|:---:|
 | A$\leftrightarrow$S | $\pi/7$ | $\sin(\pi/7) \approx 0.434$ |
 | A$\leftrightarrow$D | $2\pi/7$ | $\sin(2\pi/7) \approx 0.782$ |
@@ -509,103 +509,103 @@ $$
 | S$\leftrightarrow$E | $3\pi/7$ | $0.975$ |
 | S$\leftrightarrow$O | $4\pi/7$ | $0.975$ |
 
-:::info Наблюдение
-Gap монотонно растёт с «расстоянием» между измерениями (в смысле циклического порядка). Ближайшие измерения прозрачнее, далёкие — непрозрачнее. Связь A$\leftrightarrow$S (артикуляция–структура) ближе и прозрачнее, чем A$\leftrightarrow$L (артикуляция–логика).
+:::info Observation
+Gap grows monotonically with the "distance" between dimensions (in the sense of cyclic order). Neighboring dimensions are more transparent, distant ones more opaque. The A$\leftrightarrow$S connection (articulation–structure) is closer and more transparent than A$\leftrightarrow$L (articulation–logic).
 :::
 
-### 8.4 Модель 4: Алекситимия ($\gamma_{SE} = |\gamma| \cdot e^{i\pi/2}$)
+### 8.4 Model 4: Alexithymia ($\gamma_{SE} = |\gamma| \cdot e^{i\pi/2}$)
 
-**Модель алекситимии** — патологический разрыв связи S$\leftrightarrow$E (тело–переживание):
+**Model of alexithymia** — pathological disconnection of S$\leftrightarrow$E (body–experience):
 
 $$
-\gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}, \quad \text{остальные когерентности} \in \mathbb{R}
+\gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}, \quad \text{remaining coherences} \in \mathbb{R}
 $$
 
-| Параметр | Значение |
-|----------|----------|
-| $\text{Gap}(S,E)$ | $\lvert\sin(\pi/2)\rvert = \mathbf{1}$ (максимальный) |
-| $\text{Gap}(i,j)$ при $(i,j) \neq (S,E)$ | $0$ |
-| Ранг непрозрачности | 1 |
+| Parameter | Value |
+|-----------|-------|
+| $\text{Gap}(S,E)$ | $\lvert\sin(\pi/2)\rvert = \mathbf{1}$ (maximum) |
+| $\text{Gap}(i,j)$ for $(i,j) \neq (S,E)$ | $0$ |
+| Opaqueness rank | 1 |
 
-**Интерпретация:** Связь тело–переживание **существует** ($|\gamma_{SE}| > 0$), но полностью непрозрачна. Пациент «чувствует» телом, но не осознаёт переживания, и наоборот.
+**Interpretation:** The body–experience connection **exists** ($|\gamma_{SE}| > 0$), but is completely opaque. The patient "feels" with the body but is not aware of the experience, and vice versa.
 
-:::tip Хэмминг-коррекция
-Нарушена ровно 1 когерентность $\to$ по Теореме 3.1 ([раздел 2.3](#код-хэмминга)) система может автоматически скорректировать через $\varphi$-оператор. **Терапевтическое следствие:** восстановить одну связь S$\leftrightarrow$E (телесно-ориентированная терапия), и остальные когерентности стабилизируются.
+:::tip Hamming correction
+Exactly 1 coherence is violated $\to$ by Theorem 3.1 ([section 2.3](#код-хэмминга)) the system can automatically correct via the $\varphi$-operator. **Therapeutic consequence:** restore one S$\leftrightarrow$E connection (somatic therapy), and the remaining coherences stabilize.
 :::
 
-### 8.5 Модель 5: Динамика Фибоначчи
+### 8.5 Model 5: Fibonacci dynamics
 
-Пусть $H_{\text{eff}}$ имеет собственные частоты из ряда Фибоначчи:
+Let $H_{\text{eff}}$ have eigenfrequencies from the Fibonacci sequence:
 
 $$
-\omega = (0,\; 1,\; 2,\; 3,\; 5,\; 8,\; 13) \quad \text{(нормированные)}
+\omega = (0,\; 1,\; 2,\; 3,\; 5,\; 8,\; 13) \quad \text{(normalized)}
 $$
 
-Разностные частоты $|\omega_i - \omega_j|$ определяют осцилляции Gap:
+Difference frequencies $|\omega_i - \omega_j|$ determine Gap oscillations:
 
 $$
 \text{Gap}(i,j;\, \tau) = |\sin(\theta_{ij}(0) + (\omega_i - \omega_j)\tau)|
 $$
 
-**Свойства динамики:**
+**Dynamic properties:**
 
-- Пары с рациональными отношениями $\Delta\omega / \Delta\omega'$ имеют **периодические** окна прозрачности.
-- Пары с иррациональными отношениями $\Delta\omega / \Delta\omega'$ заполняют $[0,1]$ **эргодически** — Gap принимает все значения с равной вероятностью.
+- Pairs with rational ratios $\Delta\omega / \Delta\omega'$ have **periodic** transparency windows.
+- Pairs with irrational ratios $\Delta\omega / \Delta\omega'$ fill $[0,1]$ **ergodically** — Gap takes all values with equal probability.
 
-:::info Замечание (Золотое сечение и Gap)
-Отношение золотого сечения $\varphi_{\text{gold}} = (1+\sqrt{5})/2 \approx 1.618$ связывает последовательные члены Фибоначчи. Это означает, что для большинства пар разностные частоты **иррационально соотносятся** друг с другом, и Gap **никогда** не достигает точного нуля. Полная прозрачность — предел, а не достижимое состояние.
+:::info Remark (Golden ratio and Gap)
+The golden ratio $\varphi_{\text{gold}} = (1+\sqrt{5})/2 \approx 1.618$ connects successive Fibonacci members. This means that for most pairs the difference frequencies are **irrationally related** to one another, and Gap **never** reaches exact zero. Complete transparency is a limit, not an achievable state.
 
-Если частоты Фибоначчи действительно связаны с биологическими ритмами (филлотаксис, нейрональные паттерны), это спекулятивная аналогия, не вытекающая из аксиом УГМ. **Статус: [И]** — интерпретация/аналогия.
+If Fibonacci frequencies are indeed connected with biological rhythms (phyllotaxis, neuronal patterns), this is a speculative analogy not following from the UHM axioms. **Status: [И]** — interpretation/analogy.
 :::
 
 ---
 
-## 9. Связь с другими разделами {#связи}
+## 9. Connections with other sections {#связи}
 
-### 9.1 Перекрёстные ссылки
+### 9.1 Cross-references
 
-| Тема | Документ | Содержание |
-|------|----------|------------|
-| Gap-оператор $\hat{\mathcal{G}}$ | [Gap-оператор](/docs/core/dynamics/gap-operator) | Определение $\hat{\mathcal{G}}$, $\mathcal{G}_{\text{total}}$, спектр, G₂-разложение, стабилизаторы |
-| Матрица когерентности $\Gamma$ | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | Определение $\Gamma$, её свойства и вычисление |
-| Уравнения эволюции | [Эволюция Γ](/docs/core/dynamics/evolution) | Полное уравнение движения, Лиувиллиан |
-| Оператор $\varphi$ | [φ-оператор](/docs/core/operators/phi-operator) | Мастер-определение самомоделирования |
-| Операторы Линдблада | [Линдблад-операторы](/docs/core/operators/lindblad-operators) | Вывод $L_k$ из классификатора $\Omega$ |
-| $G_2$-структура | [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) | Полная теория $G_2$-инвариантов и калибровочной редукции |
-| Правила отбора Фано | [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) | Юкавская текстура и массовая иерархия |
-| Gap-термодинамика | [Gap-термодинамика](/docs/core/dynamics/gap-thermodynamics) | Энтропия Gap, свободная энергия Gap-ландшафта |
+| Topic | Document | Content |
+|-------|----------|---------|
+| Gap operator $\hat{\mathcal{G}}$ | [Gap operator](/docs/core/dynamics/gap-operator) | Definition of $\hat{\mathcal{G}}$, $\mathcal{G}_{\text{total}}$, spectrum, $G_2$-decomposition, stabilizers |
+| Coherence matrix $\Gamma$ | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Definition of $\Gamma$, its properties and computation |
+| Evolution equations | [Evolution of Γ](/docs/core/dynamics/evolution) | Full equation of motion, Liouvillian |
+| Operator $\varphi$ | [φ operator](/docs/core/operators/phi-operator) | Master definition of self-modelling |
+| Lindblad operators | [Lindblad operators](/docs/core/operators/lindblad-operators) | Derivation of $L_k$ from classifier $\Omega$ |
+| $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Full theory of $G_2$-invariants and gauge reduction |
+| Fano selection rules | [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Yukawa texture and mass hierarchy |
+| Gap thermodynamics | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Gap entropy, free energy of the Gap landscape |
 
-### 9.2 Логическая карта
+### 9.2 Logic map
 
 ```mermaid
 graph TD
-    subgraph ALG["Алгебра"]
-        GO["Gap-оператор Ĝ ∈ so(7)"]
-        SP["Спектр: {0, ±iλ₁, ±iλ₂, ±iλ₃}"]
+    subgraph ALG["Algebra"]
+        GO["Gap operator Ĝ ∈ so(7)"]
+        SP["Spectrum: {0, ±iλ₁, ±iλ₂, ±iλ₃}"]
     end
-    subgraph DYN["Динамика"]
-        BIF["Бифуркации Gap-ландшафта"]
-        NM["Немарковские эффекты"]
-        STAT["Стационарный Gap"]
+    subgraph DYN["Dynamics"]
+        BIF["Bifurcations of Gap landscape"]
+        NM["Non-Markovian effects"]
+        STAT["Stationary Gap"]
     end
-    subgraph SYM["Симметрия"]
-        G2["G₂-ковариантность"]
-        FANO["Фано-диссипатор"]
+    subgraph SYM["Symmetry"]
+        G2["G₂-covariance"]
+        FANO["Fano dissipator"]
     end
-    subgraph ERR["Коррекция ошибок"]
-        HAM["H(7,4) аналогия"]
-        PAR["3 проверки чётности"]
+    subgraph ERR["Error correction"]
+        HAM["H(7,4) analogy"]
+        PAR["3 parity checks"]
     end
-    subgraph MOD["Модельные системы"]
-        M1["Γ=I/7 (декогеренция)"]
-        M2["Равн. суперпозиция (прозрачность)"]
-        M3["Фано-фазы (текстура Gap)"]
-        M4["Алекситимия (патология)"]
-        M5["Фибоначчи (динамика)"]
+    subgraph MOD["Model systems"]
+        M1["Γ=I/7 (decoherence)"]
+        M2["Uniform superposition (transparency)"]
+        M3["Fano phases (Gap texture)"]
+        M4["Alexithymia (pathology)"]
+        M5["Fibonacci (dynamics)"]
     end
 
     GO --> SP
-    SP --> |"ранг = 3"| PAR
+    SP --> |"rank = 3"| PAR
     GO --> |"||Ĝ||²_F"| STAT
     BIF --> STAT
     NM --> STAT
@@ -617,37 +617,37 @@ graph TD
     NM --> M5
 ```
 
-### 9.3 Сводка статусов
+### 9.3 Status summary
 
-| Результат | Статус | Раздел |
-|-----------|--------|--------|
-| Матрица Чой и фазовая структура φ | **[Т]** | [1.2](#чой-ямиолковский) |
-| Необходимость обобщённого φ для жизнеспособности | **[Т]** | [1.3](#чой-ямиолковский) |
-| Фазовая структура целевого состояния | **[Т]** | [1.4](#чой-ямиолковский) |
-| Самосогласованность целевого Gap-профиля | **[Т]** | [1.5](#чой-ямиолковский) |
-| Коррекция когерентностей через H(7,4) | **[Т]** | [2.3](#код-хэмминга) |
-| Квантовая граница Хэмминга для Gap | **[Т]** | [2.4](#код-хэмминга) |
-| Бифуркации Gap-ландшафта | **[Т]** | [3.2](#бифуркации) |
-| Катастрофы Уитни для Gap | **[Т]** | [3.4](#бифуркации) |
-| Экспоненциальная форма ядра памяти K(t) | **[Т]** | [4.2](#теорема-ядро-экспоненциальное) |
-| Немарковские осцилляции Gap | **[Т]** | [4.2](#немарковские-эффекты) |
-| Свойства Gap-оператора | **[Т]** | [Gap-оператор](/docs/core/dynamics/gap-operator#свойства) |
-| Спектральная интерпретация Gap | **[Т]** | [Gap-оператор](/docs/core/dynamics/gap-operator#спектр) |
-| Атомарный диссипатор не $G_2$-ковариантен | **[Т]** | [6.1](#g2-ковариантность) |
-| Фано-диссипатор $G_2$-ковариантен | **[Т]** | [6.2](#g2-ковариантность) |
-| Степень $G_2$-нарушения $\propto \alpha^*$ | **[Т]** | [6.3](#g2-ковариантность) |
-| Модифицированная калибровочная редукция | **[Т]** | [6.4](#g2-ковариантность) |
-| Фано-когерентное самомоделирование (единая теорема) | **[Т]** | [7](#единая-теорема) |
-| Модель 1: Равномерная система $\Gamma = I/7$ | **[Т]** | [8.1](#модельные-системы) |
-| Модель 2: Чистое состояние (равномерная суперпозиция) | **[Т]** | [8.2](#модельные-системы) |
-| Модель 3: Чистое состояние с Фано-фазами | **[Т]** | [8.3](#модельные-системы) |
-| Модель 4: Алекситимия ($\gamma_{SE} = \lvert\gamma\rvert \cdot e^{i\pi/2}$) | **[Т]** | [8.4](#модельные-системы) |
-| Модель 5: Динамика Фибоначчи | **[Г]** | [8.5](#модельные-системы) |
-| Совпадение ранга непрозрачности и проверок H(7,4) | **[Т]** | [Gap-оператор](/docs/core/dynamics/gap-operator#спектр) |
+| Result | Status | Section |
+|--------|--------|---------|
+| Choi matrix and phase structure of φ | **[Т]** | [1.2](#чой-ямиолковский) |
+| Necessity of generalized φ for viability | **[Т]** | [1.3](#чой-ямиолковский) |
+| Phase structure of the target state | **[Т]** | [1.4](#чой-ямиолковский) |
+| Self-consistency of the target Gap profile | **[Т]** | [1.5](#чой-ямиолковский) |
+| Coherence correction via H(7,4) | **[Т]** | [2.3](#код-хэмминга) |
+| Quantum Hamming bound for Gap | **[Т]** | [2.4](#код-хэмминга) |
+| Bifurcations of the Gap landscape | **[Т]** | [3.2](#бифуркации) |
+| Whitney catastrophes for Gap | **[Т]** | [3.4](#бифуркации) |
+| Exponential form of memory kernel K(t) | **[Т]** | [4.2](#теорема-ядро-экспоненциальное) |
+| Non-Markovian Gap oscillations | **[Т]** | [4.2](#немарковские-эффекты) |
+| Properties of Gap operator | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#свойства) |
+| Spectral interpretation of Gap | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
+| Atomic dissipator is not $G_2$-covariant | **[Т]** | [6.1](#g2-ковариантность) |
+| Fano dissipator is $G_2$-covariant | **[Т]** | [6.2](#g2-ковариантность) |
+| Degree of $G_2$-violation $\propto \alpha^*$ | **[Т]** | [6.3](#g2-ковариантность) |
+| Modified gauge reduction | **[Т]** | [6.4](#g2-ковариантность) |
+| Fano-coherent self-modelling (unified theorem) | **[Т]** | [7](#единая-теорема) |
+| Model 1: Uniform system $\Gamma = I/7$ | **[Т]** | [8.1](#модельные-системы) |
+| Model 2: Pure state (uniform superposition) | **[Т]** | [8.2](#модельные-системы) |
+| Model 3: Pure state with Fano phases | **[Т]** | [8.3](#модельные-системы) |
+| Model 4: Alexithymia ($\gamma_{SE} = \lvert\gamma\rvert \cdot e^{i\pi/2}$) | **[Т]** | [8.4](#модельные-системы) |
+| Model 5: Fibonacci dynamics | **[Г]** | [8.5](#модельные-системы) |
+| Coincidence of opaqueness rank and H(7,4) checks | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
 
 ---
 
-**Связанные документы:**
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — определение, спектр и ранг непрозрачности
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — энергетический ландшафт, вакуум, потенциал V_Gap
-- [Операторы Линдблада](/docs/core/operators/lindblad-operators) — диссипаторы и G₂-ковариантность
+**Related documents:**
+- [Gap operator](/docs/core/dynamics/gap-operator) — definition, spectrum and opaqueness rank
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — energy landscape, vacuum, potential V_Gap
+- [Lindblad operators](/docs/core/operators/lindblad-operators) — dissipators and $G_2$-covariance

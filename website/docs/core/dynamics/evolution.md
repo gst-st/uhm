@@ -1,216 +1,216 @@
 ---
 sidebar_position: 2
-title: Эволюция Γ
-description: Уравнения движения, терминальный объект и режимы эволюции
+title: Evolution of Γ
+description: Equations of motion, terminal object and evolution regimes
 ---
 
-# Эволюция Матрицы Когерентности
+# Evolution of the Coherence Matrix
 
-:::info Для кого эта глава
-Полное уравнение эволюции Γ: унитарный, диссипативный и регенеративный члены. Предполагается знакомство с [матрицей когерентности](./coherence-matrix) и [аксиомой Ω⁷](/docs/core/foundations/axiom-omega).
+:::info Who this chapter is for
+The complete evolution equation for Γ: unitary, dissipative and regenerative terms. Familiarity with the [coherence matrix](./coherence-matrix) and the [Axiom Ω⁷](/docs/core/foundations/axiom-omega) is assumed.
 :::
 
-Эта глава — самая объёмная и, возможно, самая важная в разделе «Динамика». Она отвечает на вопрос: **как меняется состояние голонома со временем?** Если [матрица когерентности](./coherence-matrix) $\Gamma$ — это «фотография» системы в данный момент, то уравнение эволюции — это «правила кинематографа», описывающие, как кадры сменяют друг друга.
+This chapter is the longest and possibly the most important in the "Dynamics" section. It answers the question: **how does the state of a holon change over time?** If the [coherence matrix](./coherence-matrix) $\Gamma$ is a "snapshot" of the system at a given moment, then the evolution equation is the "rules of cinema", describing how frames succeed one another.
 
-Читатель узнает:
-- Что такое **логический Лиувиллиан** $\mathcal{L}_\Omega$ и почему он не постулируется, а выводится из аксиом
-- Три силы, управляющие эволюцией: **унитарная** (сохраняет когерентность), **диссипативная** (разрушает) и **регенеративная** (восстанавливает)
-- Почему система всегда стремится к **терминальному объекту** $T$ (глобальному аттрактору)
-- Как гарантируется **сохранение положительности** — состояние остаётся физическим при любой эволюции
+The reader will learn:
+- What the **logical Liouvillian** $\mathcal{L}_\Omega$ is and why it is not postulated but derived from the axioms
+- Three forces governing evolution: **unitary** (preserves coherence), **dissipative** (destroys), and **regenerative** (restores)
+- Why the system always tends toward the **terminal object** $T$ (global attractor)
+- How **positivity preservation** is guaranteed — the state remains physical under any evolution
 
-:::tip Интуитивное объяснение трёх сил
-Представьте ледяную скульптуру на солнце:
-- **Унитарная часть** $-i[H, \Gamma]$ — скульптор, который **вращает** скульптуру, меняя ракурс, но не форму. Чистота $P$ не меняется.
-- **Диссипация** $\mathcal{D}[\Gamma]$ — **солнце**, которое плавит скульптуру, стирая детали. Чистота $P$ падает.
-- **Регенерация** $\mathcal{R}[\Gamma, E]$ — **морозильник**, который подмораживает скульптуру, восстанавливая форму. Чистота $P$ может расти (если есть свободная энергия $\Delta F > 0$).
+:::tip Intuitive explanation of three forces
+Think of an ice sculpture in the sun:
+- **Unitary part** $-i[H, \Gamma]$ — the sculptor who **rotates** the sculpture, changing the angle but not the shape. Purity $P$ does not change.
+- **Dissipation** $\mathcal{D}[\Gamma]$ — the **sun**, melting the sculpture, erasing detail. Purity $P$ falls.
+- **Regeneration** $\mathcal{R}[\Gamma, E]$ — the **freezer**, re-freezing the sculpture, restoring the shape. Purity $P$ can grow (if free energy $\Delta F > 0$ is available).
 
-Жизнь — это динамическое равновесие: солнце плавит, морозильник подмораживает. Если морозильник выключается ($\Delta F \leq 0$), скульптура неизбежно тает ($P \to 1/7$) — система умирает.
+Life is a dynamic equilibrium: the sun melts, the freezer re-freezes. If the freezer is switched off ($\Delta F \leq 0$), the sculpture inevitably melts ($P \to 1/7$) — the system dies.
 :::
 
-## Терминальный объект T (глобальный аттрактор) {#терминальный-объект}
+## Terminal Object T (global attractor) {#терминальный-объект}
 
-:::warning Свойство 3 (Терминальный объект)
-Существует единственный терминальный объект $T \in \mathcal{C}$:
+:::warning Property 3 (Terminal Object)
+There exists a unique terminal object $T \in \mathcal{C}$:
 
 $$\forall \Gamma \in \mathcal{C}, \exists! f: \Gamma \to T$$
 
-где $T = \Gamma^*$ — глобальный аттрактор (равновесное состояние).
+where $T = \Gamma^*$ — the global attractor (equilibrium state).
 :::
 
-### Свойства терминального объекта {#свойства-t}
+### Properties of the terminal object {#свойства-t}
 
-| Свойство | Формулировка | Следствие |
-|----------|--------------|-----------|
-| Единственность | $\exists! T$ | Уникальное равновесие |
-| Универсальность | $\forall \Gamma, \exists! f: \Gamma \to T$ | Все пути ведут к T |
-| Стягиваемость | $X = \lVert N(\mathcal{C})\rVert \simeq *$ | Монизм доказан |
-| Неподвижная точка | $\varphi(T) = T$ | T — фиксированная точка самомоделирования |
+| Property | Formulation | Consequence |
+|----------|-------------|-------------|
+| Uniqueness | $\exists! T$ | Unique equilibrium |
+| Universality | $\forall \Gamma, \exists! f: \Gamma \to T$ | All paths lead to T |
+| Contractibility | $X = \lVert N(\mathcal{C})\rVert \simeq *$ | Monism proved |
+| Fixed point | $\varphi(T) = T$ | T is a fixed point of self-modelling |
 
-### Стрела времени как конвергенция к T {#стрела-времени-эволюция}
+### Arrow of time as convergence to T {#стрела-времени-эволюция}
 
-**Теорема (Стрела времени):**
+**Theorem (Arrow of time):**
 
 $$\lim_{\tau \to \infty} \Gamma(\tau) = T$$
 
-при условии $\Delta F > 0$ (система не изолирована).
+provided $\Delta F > 0$ (system is not isolated).
 
-**Геометрическая формулировка:**
+**Geometric formulation:**
 
 $$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
 
-Стрела времени — **прогрессивный коллапс высших страт** к терминальному T.
+The arrow of time is the **progressive collapse of higher strata** toward terminal T.
 
 ---
 
-## Полное уравнение движения
+## Full equation of motion
 
-:::info Эмерджентное время
-Время τ **выводится** из структуры категории $\mathcal{C}$ через механизм Пейдж–Вуттерс, а не постулируется как внешний параметр. См. [Теорема об эмерджентном времени](../../proofs/dynamics/emergent-time).
+:::info Emergent time
+Time τ is **derived** from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism, not postulated as an external parameter. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
 :::
 
-Эволюция $\Gamma$ описывается **логическим Лиувиллианом**:
+The evolution of $\Gamma$ is described by the **logical Liouvillian**:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = \mathcal{L}_\Omega[\Gamma(\tau)]
 $$
 
-где **логический Лиувиллиан** $\mathcal{L}_\Omega$ **выводится** из [классификатора подобъектов Ω](../foundations/axiom-omega#внутренняя-логика):
+where the **logical Liouvillian** $\mathcal{L}_\Omega$ is **derived** from the [subobject classifier Ω](../foundations/axiom-omega#внутренняя-логика):
 
 $$
 \mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-где:
-- τ — внутреннее время (параметр условных состояний относительно [O](../structure/dimension-o))
-- $H_{eff}$ — эффективный гамильтониан из ограничения Пейдж–Вуттерс
-- $-i[H_{eff}, \Gamma]$ — унитарная эволюция (сохраняет $P$)
-- $\mathcal{D}_\Omega[\Gamma]$ — **логическая диссипация** (операторы L_k из Ω)
-- $\mathcal{R}[\Gamma, E]$ — регенерация (сопряжённый функтор к диссипации)
+where:
+- τ — internal time (parameter of conditional states relative to [O](../structure/dimension-o))
+- $H_{eff}$ — effective Hamiltonian from the Page–Wootters constraint
+- $-i[H_{eff}, \Gamma]$ — unitary evolution (preserves $P$)
+- $\mathcal{D}_\Omega[\Gamma]$ — **logical dissipation** (operators L_k from Ω)
+- $\mathcal{R}[\Gamma, E]$ — regeneration (adjoint functor to dissipation)
 
-:::warning Ключевое отличие от стандартной формулировки
-Операторы Линдблада L_k **не постулируются** произвольно — они **выводятся** из атомов классификатора Ω. Это устраняет неопределённость "L_k зависят от системы".
+:::warning Key difference from the standard formulation
+The Lindblad operators L_k are **not postulated** arbitrarily — they are **derived** from the atoms of the classifier Ω. This eliminates the ambiguity "L_k depend on the system".
 :::
 
-:::note О нотации
-- $\mathcal{D}$ (каллиграфическое) — **диссипативный** член
-- $\mathcal{R}$ (каллиграфическое) — **регенеративный** член
-- $R$ (обычное) — мера **рефлексии** (качество самомоделирования), см. [самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+:::note On notation
+- $\mathcal{D}$ (calligraphic) — **dissipative** term
+- $\mathcal{R}$ (calligraphic) — **regenerative** term
+- $R$ (regular) — measure of **reflection** (quality of self-modelling), see [self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
 :::
 
-#### Итеративная схема: снятие цикличности ℒ_Ω и φ {#итеративная-схема}
+#### Iterative scheme: resolving the apparent circularity of ℒ_Ω and φ {#итеративная-схема}
 
-:::info Итеративная схема
-Полное уравнение $\mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ содержит регенерацию $\mathcal{R}$, использующую $\rho^* = \varphi(\Gamma)$ — категориальную самомодель. При этом $\varphi$ формально определена через динамику $\mathcal{L}_\Omega$. Эта кажущаяся цикличность разрешается через **итеративную (fixed-point) схему**:
+:::info Iterative scheme
+The full equation $\mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ contains regeneration $\mathcal{R}$, which uses $\rho^* = \varphi(\Gamma)$ — the categorical self-model. At the same time, $\varphi$ is formally defined through the dynamics $\mathcal{L}_\Omega$. This apparent circularity is resolved through an **iterative (fixed-point) scheme**:
 
-1. **Линейная часть** $\mathcal{L}_0 = -i[H_{eff}, \cdot] + \mathcal{D}_\Omega$ имеет единственный аттрактор $\rho^*_{\mathrm{diss}} = I/7$ [Т-39a] — **без зависимости от φ**
-2. **Нулевая итерация**: $\varphi^{(0)}(\Gamma) := \rho^*_{\mathrm{diss}} = I/7$
-3. **n-я итерация**: $\varphi^{(n+1)}(\Gamma) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(n)})[\Gamma]$, где $\mathcal{R}^{(n)}$ использует $\varphi^{(n)}$
-4. **Сходимость**: при $\kappa < \kappa_{max}$ (T-96), последовательность $\{\varphi^{(n)}\}$ сходится по норме Фробениуса
+1. **Linear part** $\mathcal{L}_0 = -i[H_{eff}, \cdot] + \mathcal{D}_\Omega$ has a unique attractor $\rho^*_{\mathrm{diss}} = I/7$ [Т-39a] — **without dependence on φ**
+2. **Zeroth iteration**: $\varphi^{(0)}(\Gamma) := \rho^*_{\mathrm{diss}} = I/7$
+3. **n-th iteration**: $\varphi^{(n+1)}(\Gamma) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(n)})[\Gamma]$, where $\mathcal{R}^{(n)}$ uses $\varphi^{(n)}$
+4. **Convergence**: for $\kappa < \kappa_{max}$ (T-96), the sequence $\{\varphi^{(n)}\}$ converges in Frobenius norm
 
-Мера рефлексии $R = 1/(7P)$ определена через $\rho^*_{\mathrm{diss}} = I/7$ (уровень 0 итерации) и **не зависит** от полного $\varphi$.
+The reflection measure $R = 1/(7P)$ is defined through $\rho^*_{\mathrm{diss}} = I/7$ (iteration level 0) and **does not depend** on the full $\varphi$.
 :::
 
-:::info Метод расщепления (split-step): разрешение кажущейся цикличности
-Нелинейность $\mathcal{R}$ (зависимость от $\varphi(\Gamma)$) разрешается **расщеплением шага** (Lie–Trotter):
+:::info Split-step method: resolving apparent circularity
+The nonlinearity $\mathcal{R}$ (dependence on $\varphi(\Gamma)$) is resolved by **step splitting** (Lie–Trotter):
 
-1. **Линейный шаг:** $\Gamma' = e^{\Delta\tau \cdot \mathcal{L}_0}[\Gamma]$ — применяется линейная часть (гамильтониан + диссипатор), **не зависящая от φ**
-2. **Нелинейный шаг:** $\Gamma'' = (1-\alpha)\Gamma' + \alpha\,\varphi(\Gamma')$ — регенерация с φ, вычисленной от *предыдущего* состояния $\Gamma'$
+1. **Linear step:** $\Gamma' = e^{\Delta\tau \cdot \mathcal{L}_0}[\Gamma]$ — the linear part is applied (Hamiltonian + dissipator), **not depending on φ**
+2. **Nonlinear step:** $\Gamma'' = (1-\alpha)\Gamma' + \alpha\,\varphi(\Gamma')$ — regeneration with φ computed from the *previous* state $\Gamma'$
 
-Схема сходится к неподвижной точке по теореме Банаха, поскольку φ — сжимающее отображение с коэффициентом $k = 1 - R < 1$. Аналог: операторное расщепление в численных PDE.
+The scheme converges to the fixed point by the Banach theorem, since φ is a contracting map with coefficient $k = 1 - R < 1$. Analogue: operator splitting in numerical PDE.
 :::
 
-## Компоненты уравнения
+## Components of the equation
 
-### 1. Унитарный член
+### 1. Unitary term
 
 $$
 -i[H_{eff}, \Gamma(\tau)] = -i(H_{eff}\Gamma - \Gamma H_{eff})
 $$
 
-где $H_{eff}$ — эффективный гамильтониан, возникающий из [ограничения Пейдж–Вуттерс](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
+where $H_{eff}$ is the effective Hamiltonian arising from the [Page–Wootters constraint](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
 
-:::note Пейдж–Вуттерс constraint [Т] (T-87, P3)
-$[\hat{C}, \Gamma_{\text{total}}] = 0$ — ограничение Уилера-ДеВитта. Выводится из A1–A4 через конструкцию спектральной тройки (T-87). Время $\tau$ эмерджентно из корреляций между «часовой» и «системной» подсистемами. Полный вывод: [Эмерджентное время](/docs/proofs/dynamics/emergent-time).
+:::note Page–Wootters constraint [Т] (T-87, P3)
+$[\hat{C}, \Gamma_{\text{total}}] = 0$ — Wheeler–DeWitt constraint. Derived from A1–A4 via the spectral triple construction (T-87). Time $\tau$ is emergent from correlations between the "clock" and "system" subsystems. Full derivation: [Emergent time](/docs/proofs/dynamics/emergent-time).
 :::
 
-**Определение [О] (Ограничение Уилера-ДеВитта).** {#ограничение-wdw}
+**Definition [О] (Wheeler–DeWitt constraint).** {#ограничение-wdw}
 
 $$\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\mathrm{int}}$$
 
-— полный энергетический оператор. Физические состояния удовлетворяют $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$ ([T-87 [Т]](/docs/core/operators/emergent-time)). Из этого ограничения следует эмерджентное время $\tau$ через механизм Пейдж–Вуттерс.
+— the full energy operator. Physical states satisfy $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$ ([T-87 [Т]](/docs/core/operators/emergent-time)). Emergent time $\tau$ follows from this constraint via the Page–Wootters mechanism.
 
-#### Вывод ограничения из аксиомы A5 {#вывод-wdw}
+#### Derivation of the constraint from axiom A5 {#вывод-wdw}
 
-Ограничение Пейдж–Вуттерса (аналог уравнения Уилера–ДеВитта) **выводится** из A5:
+The Page–Wootters constraint (analogue of the Wheeler–DeWitt equation) is **derived** from A5:
 
-**Шаг 1.** A5 устанавливает: $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ с оператором связи $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{\text{rest}} + H_{\text{int}}$.
+**Step 1.** A5 establishes: $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ with coupling operator $\hat{C} = H_O \otimes \mathbb{1} + \mathbb{1} \otimes H_{\text{rest}} + H_{\text{int}}$.
 
-**Шаг 2.** Глобальная стационарность: $[\hat{C}, \Gamma_{\text{total}}] = 0$ — Вселенная *целиком* не эволюционирует.
+**Step 2.** Global stationarity: $[\hat{C}, \Gamma_{\text{total}}] = 0$ — the Universe *as a whole* does not evolve.
 
-**Шаг 3.** Частичный след по O: условное состояние $\Gamma(\tau) = \mathrm{Tr}_O[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}) \cdot \Gamma_{\text{total}}] / p(\tau)$ удовлетворяет $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, где $H_{\text{eff}}(\tau) = H_{\text{rest}} + \langle\tau|H_{\text{int}}|\tau\rangle_O$.
+**Step 3.** Partial trace over O: the conditional state $\Gamma(\tau) = \mathrm{Tr}_O[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}) \cdot \Gamma_{\text{total}}] / p(\tau)$ satisfies $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, where $H_{\text{eff}}(\tau) = H_{\text{rest}} + \langle\tau|H_{\text{int}}|\tau\rangle_O$.
 
-Эмерджентная динамика — **следствие** статической структуры $\Gamma_{\text{total}}$. Статус: **[Т]**
+Emergent dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$. Status: **[Т]**
 
-**Свойства:**
-- Сохраняет $\mathrm{Tr}(\Gamma) = 1$
-- Сохраняет $P = \mathrm{Tr}(\Gamma^2)$
-- Детерминистическая (обратимая) эволюция
+**Properties:**
+- Preserves $\mathrm{Tr}(\Gamma) = 1$
+- Preserves $P = \mathrm{Tr}(\Gamma^2)$
+- Deterministic (reversible) evolution
 
-### 1.1 Вывод $H_{eff}$ из ограничения Пейдж–Вуттерс {#вывод-h_eff}
+### 1.1 Derivation of $H_{eff}$ from the Page–Wootters constraint {#вывод-h_eff}
 
-:::info Мастер-определение
-Данный раздел содержит **вывод** эффективного гамильтониана из фундаментального ограничения. Все ссылки на $H_{eff}$ должны указывать сюда.
+:::info Master definition
+This section contains the **derivation** of the effective Hamiltonian from the fundamental constraint. All references to $H_{eff}$ should point here.
 :::
 
-**Теорема (Эффективная динамика):**
-Пусть $\Gamma_{total} \in \mathcal{H}_{phys} = \ker(\hat{C})$ удовлетворяет ограничению $[\hat{C}, \Gamma_{total}] = 0$ (для чистых проекторов $\Gamma = |\Psi\rangle\langle\Psi|$ это сводится к стандартному $\hat{C}|\Psi\rangle = 0$). Тогда условное состояние:
+**Theorem (Effective dynamics):**
+Let $\Gamma_{total} \in \mathcal{H}_{phys} = \ker(\hat{C})$ satisfy the constraint $[\hat{C}, \Gamma_{total}] = 0$ (for pure projectors $\Gamma = |\Psi\rangle\langle\Psi|$ this reduces to the standard $\hat{C}|\Psi\rangle = 0$). Then the conditional state:
 
 $$
 \Gamma(\tau) = \frac{\mathrm{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
 $$
 
-эволюционирует согласно:
+evolves according to:
 
 $$
 i\frac{\partial}{\partial\tau}\Gamma(\tau) = [H_{eff}(\tau), \Gamma(\tau)]
 $$
 
-где **эффективный гамильтониан**:
+where the **effective Hamiltonian**:
 
 $$
 H_{eff}(\tau) = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O
 $$
 
-где:
-- $H_{6D} \in \mathcal{L}(\mathcal{H}_{6D})$ — гамильтониан 6D-подсистемы (без часов O), действует на $\mathcal{H}_{6D} \cong \mathbb{C}^6$
-- $H_{int}$ — гамильтониан взаимодействия часов O с остальными измерениями, см. [Свойство 2 Ω⁷](../foundations/axiom-omega#свойство-2)
-- $\langle\tau|H_{int}|\tau\rangle_O$ — матричный элемент в базисе времени (скаляр по O, оператор по 6D)
+where:
+- $H_{6D} \in \mathcal{L}(\mathcal{H}_{6D})$ — Hamiltonian of the 6D subsystem (excluding clock O), acts on $\mathcal{H}_{6D} \cong \mathbb{C}^6$
+- $H_{int}$ — interaction Hamiltonian of clock O with the remaining dimensions, see [Property 2 of Ω⁷](../foundations/axiom-omega#свойство-2)
+- $\langle\tau|H_{int}|\tau\rangle_O$ — matrix element in the time basis (scalar over O, operator over 6D)
 
-**Вывод:**
+**Derivation:**
 
-**Шаг 1.** Применим $\frac{\partial}{\partial\tau}$ к определению условного состояния. Параметр $\tau$ входит через базис часов $|\tau\rangle_O$.
+**Step 1.** Apply $\frac{\partial}{\partial\tau}$ to the definition of the conditional state. The parameter $\tau$ enters through the clock basis $|\tau\rangle_O$.
 
-**Шаг 2.** Используем связь между $|\tau\rangle_O$ и $|k\rangle_O$ (собственными состояниями $H_O$):
+**Step 2.** Use the relation between $|\tau\rangle_O$ and $|k\rangle_O$ (eigenstates of $H_O$):
 
 $$
 |\tau_n\rangle = \frac{1}{\sqrt{7}} \sum_{k=0}^{6} e^{-2\pi i k n / 7} |k\rangle_O
 $$
 
-Преобразование — стандартное дискретное преобразование Фурье на ℤ₇, полнота и ортонормированность которого гарантированы конечномерностью [Т].
+The transformation is the standard discrete Fourier transform on ℤ₇, whose completeness and orthonormality are guaranteed by finite-dimensionality [Т].
 
-**Шаг 3.** Из ограничения $[\hat{C}, \Gamma_{total}] = 0$ имеем:
+**Step 3.** From the constraint $[\hat{C}, \Gamma_{total}] = 0$ we have:
 
 $$
 [(H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{int}), \Gamma_{total}] = 0
 $$
 
-**Шаг 4.** Проектируя на $|\tau\rangle\langle\tau|_O$ и вычисляя частичный след, получаем:
+**Step 4.** Projecting onto $|\tau\rangle\langle\tau|_O$ and computing the partial trace, we obtain:
 
 $$
 i\frac{\partial}{\partial\tau}\Gamma(\tau) = [H_{6D}, \Gamma(\tau)] + [\langle\tau|H_{int}|\tau\rangle_O, \Gamma(\tau)]
 $$
 
-**Шаг 5.** Объединяя слагаемые:
+**Step 5.** Combining the terms:
 
 $$
 H_{eff}(\tau) = H_{6D} + \langle\tau|H_{int}|\tau\rangle_O
@@ -218,1084 +218,1084 @@ $$
 
 ∎
 
-**Следствия:**
+**Corollaries:**
 
-| Режим | Условие | $H_{eff}$ |
-|-------|---------|-----------|
-| Слабая связь | $\lambda_E, \lambda_U \to 0$ | $H_{eff} \to H_{6D}$ (стандартная КМ) |
-| Сильная связь | $\lVert H_{int}\rVert \sim \lVert H_{6D}\rVert$ | $H_{eff}(\tau)$ существенно зависит от $\tau$ |
-| Резонанс | $\omega_0 \sim \varepsilon_E$ | Особые эффекты синхронизации |
+| Regime | Condition | $H_{eff}$ |
+|--------|-----------|-----------|
+| Weak coupling | $\lambda_E, \lambda_U \to 0$ | $H_{eff} \to H_{6D}$ (standard QM) |
+| Strong coupling | $\lVert H_{int}\rVert \sim \lVert H_{6D}\rVert$ | $H_{eff}(\tau)$ essentially depends on $\tau$ |
+| Resonance | $\omega_0 \sim \varepsilon_E$ | Special synchronization effects |
 
-:::note Связь с исходной динамикой
-При $\lambda_E, \lambda_U \to 0$ эффективная динамика совпадает со стандартным уравнением фон Неймана. Стандартная квантовая механика — **предел слабой связи** с внутренними часами.
+:::note Connection with original dynamics
+For $\lambda_E, \lambda_U \to 0$ the effective dynamics coincides with the standard von Neumann equation. Standard quantum mechanics is the **weak coupling limit** with the internal clock.
 
-Полное определение [ограничения $\hat{C}$](../foundations/axiom-omega#свойство-2) и [операторов часов](../structure/dimension-o#алгебра-часов) см. в соответствующих документах.
+Full definition of [the constraint $\hat{C}$](../foundations/axiom-omega#свойство-2) and [clock operators](../structure/dimension-o#алгебра-часов) can be found in the respective documents.
 :::
 
-:::warning Связь 7D-формализма и 6D-условных состояний
-Основное уравнение движения (§«Полное уравнение движения») записано в **минимальном 7D-формализме**, где $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ и все 7 измерений {A,S,D,L,E,O,U} входят на равных основаниях. Вывод $H_{eff}$ выше использует **расширенный Пейдж–Вуттерс формализм**, в котором условное состояние $\Gamma(\tau) \in \mathcal{D}(\mathbb{C}^6)$ — матрица $6 \times 6$.
+:::warning Relation between 7D formalism and 6D conditional states
+The main equation of motion (§ "Full equation of motion") is written in the **minimal 7D formalism**, where $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and all 7 dimensions {A,S,D,L,E,O,U} enter on equal footing. The derivation of $H_{eff}$ above uses the **extended Page–Wootters formalism**, in which the conditional state $\Gamma(\tau) \in \mathcal{D}(\mathbb{C}^6)$ is a $6 \times 6$ matrix.
 
-Согласование: в минимальном формализме $H_{eff}$ интерпретируется как $7 \times 7$ оператор, тривиально действующий на $O$-компоненту ($H_{eff}|_O = 0$). Пейдж–Вуттерс вывод **обосновывает** форму $H_{eff}$ через проекцию полной $42 \times 42$ динамики на 6D-условное состояние. После обоснования результат «поднимается» обратно в 7D, где O-строка/столбец эволюционируют отдельно. Подробнее о двух уровнях формализации: [Матрица когерентности → Два уровня](/docs/core/dynamics/coherence-matrix#два-уровня-формализации).
+Reconciliation: in the minimal formalism $H_{eff}$ is interpreted as a $7 \times 7$ operator acting trivially on the $O$-component ($H_{eff}|_O = 0$). The Page–Wootters derivation **justifies** the form of $H_{eff}$ via projection of the full $42 \times 42$ dynamics onto the 6D conditional state. After justification, the result is "lifted" back to 7D, where the O-row/column evolves separately. More on the two levels of formalization: [Coherence matrix → Two levels](/docs/core/dynamics/coherence-matrix#два-уровня-формализации).
 :::
 
-### 2. Диссипативный член (логическая диссипация) {#логический-лиувиллиан}
+### 2. Dissipative term (logical dissipation) {#логический-лиувиллиан}
 
 $$
 \mathcal{D}_\Omega[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-где:
-- $L_k$ — операторы Линдблада, **выведенные из классификатора Ω**
-- $\gamma_k \geq 0$ — скорости декогеренции по каналу $k$
-- $\{A, B\} = AB + BA$ — антикоммутатор
+where:
+- $L_k$ — Lindblad operators, **derived from the classifier Ω**
+- $\gamma_k \geq 0$ — decoherence rates along channel $k$
+- $\{A, B\} = AB + BA$ — anticommutator
 
-#### Вывод L_k из классификатора Ω
+#### Derivation of L_k from classifier Ω
 
-:::info Теорема (L_k из Ω) [Т]
-Атомарные операторы Линдблада определяются через атомы [классификатора подобъектов](../foundations/axiom-omega#внутренняя-логика):
+:::info Theorem (L_k from Ω) [Т]
+The atomic Lindblad operators are defined through the atoms of the [subobject classifier](../foundations/axiom-omega#внутренняя-логика):
 
 $$
 L_k^{\text{atom}} := |k\rangle\langle k|, \quad k = 0, \ldots, 6
 $$
 
-Каноническая форма (с учётом [Фано-структуры](/docs/core/operators/lindblad-operators#фано-операторы)) комбинирует атомарные и Фано-операторы: $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$, где $\Pi_p$ — проекторы на Фано-линии PG(2,2). Мастер-определение: [Операторы Линдблада](/docs/core/operators/lindblad-operators).
+The canonical form (taking into account the [Fano structure](/docs/core/operators/lindblad-operators#фано-операторы)) combines atomic and Fano operators: $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$, where $\Pi_p$ are projectors onto Fano lines PG(2,2). Master definition: [Lindblad operators](/docs/core/operators/lindblad-operators).
 :::
 
-**CPTP-условие:**
+**CPTP condition:**
 
 $$
 \sum_{k=0}^{6} (L_k^{\text{atom}})^\dagger L_k^{\text{atom}} = \sum_k |k\rangle\langle k| = \mathbb{1}
 $$
 
-— автоматически выполнено (разрешение единицы в базисе).
+— automatically satisfied (resolution of unity in the basis).
 
-#### Иерархия L_k по стратам
+#### Hierarchy of L_k by strata
 
-| Страта | Тип системы | L_k оператор | Интерпретация |
-|--------|-------------|--------------|---------------|
-| I | Материя | $P_{Casimir}^{(k)}$ | Проекторы симметрии (группа G) |
-| II | Жизнь | $\sum_j R_j P_j$ | Квантовая коррекция ошибок |
-| III | Разум | $\nabla_{\Gamma_k} F$ | Градиент свободной энергии |
-| IV | Сознание | $\check{\delta}^k$ | Кограничный оператор Чеха |
+| Stratum | System type | L_k operator | Interpretation |
+|---------|-------------|--------------|----------------|
+| I | Matter | $P_{Casimir}^{(k)}$ | Symmetry projectors (group G) |
+| II | Life | $\sum_j R_j P_j$ | Quantum error correction |
+| III | Mind | $\nabla_{\Gamma_k} F$ | Free energy gradient |
+| IV | Consciousness | $\check{\delta}^k$ | Čech coboundary operator |
 
-**Следствие:** L_k **не произвольны** — они определяются стратой базового пространства X, на которой находится система.
+**Consequence:** L_k are **not arbitrary** — they are determined by the stratum of the base space X on which the system resides.
 
-**Свойства:**
-- Сохраняет $\mathrm{Tr}(\Gamma) = 1$
-- Уменьшает $P$: $\frac{dP}{d\tau}\big|_{\mathcal{D}} \leq 0$
-- Переводит чистые состояния в смешанные (декогеренция)
+**Properties:**
+- Preserves $\mathrm{Tr}(\Gamma) = 1$
+- Decreases $P$: $\frac{dP}{d\tau}\big|_{\mathcal{D}} \leq 0$
+- Converts pure states to mixed (decoherence)
 
-**Конкретные примеры по стратам:**
+**Concrete examples by stratum:**
 
-| Страта | Оператор | Физический процесс |
-|--------|----------|-------------------|
-| I | $P_{l,m} = \vert l,m\rangle\langle l,m\vert$ | Проекция на (l,m)-подпространство спина |
-| II | $L = \vert j\rangle\langle i\vert$ | Переход из состояния $i$ в $j$ (восстановление) |
-| III | $L = e^{-\beta E_k/2}\vert k\rangle\langle k\vert$ | Термализация к минимуму F |
-| IV | $L = \check{\delta}: C^k \to C^{k+1}$ | Склейка локальных модальностей |
+| Stratum | Operator | Physical process |
+|---------|----------|-----------------|
+| I | $P_{l,m} = \vert l,m\rangle\langle l,m\vert$ | Projection onto the (l,m)-spin subspace |
+| II | $L = \vert j\rangle\langle i\vert$ | Transition from state $i$ to $j$ (recovery) |
+| III | $L = e^{-\beta E_k/2}\vert k\rangle\langle k\vert$ | Thermalization to minimum F |
+| IV | $L = \check{\delta}: C^k \to C^{k+1}$ | Gluing of local modalities |
 
-### 3. Регенеративный член [Т] {#3-регенеративный-член}
+### 3. Regenerative term [Т] {#3-регенеративный-член}
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где:
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации [Т] (сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$, см. [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator), [формализация](/docs/proofs/categorical/formalization-phi))
-- $(\rho_* - \Gamma)$ — направление релаксации [Т] (единственная CPTP-интерполяция + бюресова оптимальность, см. [§ Вывод формы регенерации](#вывод-формы-регенерации))
-- $g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}},\; 0,\; 1\right)$ — V-preserving gate [Т] (см. [§ Теорема V-preservation](#теорема-v-preservation-gate))
+where:
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [Т] (adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$, see [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator), [formalization](/docs/proofs/categorical/formalization-phi))
+- $(\rho_* - \Gamma)$ — relaxation direction [Т] (unique CPTP interpolation + Bures optimality, see [§ Derivation of the regeneration form](#вывод-формы-регенерации))
+- $g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}},\; 0,\; 1\right)$ — V-preserving gate [Т] (see [§ Theorem V-preservation](#теорема-v-preservation-gate))
 
-:::tip Форма ℛ полностью выведена из аксиом [Т]
-Все компоненты регенеративного члена **строго выводятся** из аксиом A1–A5, примитивности линейной части $\mathcal{L}_0$ и стандартной термодинамики:
+:::tip Form of ℛ fully derived from axioms [Т]
+All components of the regenerative term are **strictly derived** from axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$, and standard thermodynamics:
 
-| Компонент | Статус | Источник |
-|-----------|:------:|---------|
-| $\kappa(\Gamma)$ | [Т] | Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ ([κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)) |
-| $\rho_* = \varphi(\Gamma)$ (самомодель) | [Т] | Категориальное определение φ ([оператор φ](/docs/core/operators/phi-operator)) |
-| $(\rho_* - \Gamma)$ (направление) | [Т] | CPTP-единственность замещающего канала + бюресов градиентный спуск |
-| $g_V(P)$ (затвор) | [Т] | V-preservation + Ландауэр ([§ Теорема V-preservation](#теорема-v-preservation-gate)) |
+| Component | Status | Source |
+|-----------|:------:|--------|
+| $\kappa(\Gamma)$ | [Т] | Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ ([κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)) |
+| $\rho_* = \varphi(\Gamma)$ (self-model) | [Т] | Categorical definition of φ ([φ operator](/docs/core/operators/phi-operator)) |
+| $(\rho_* - \Gamma)$ (direction) | [Т] | CPTP uniqueness of replacement channel + Bures gradient descent |
+| $g_V(P)$ (gate) | [Т] | V-preservation + Landauer ([§ Theorem V-preservation](#теорема-v-preservation-gate)) |
 
-Полный вывод: [§ Вывод формы регенерации](#вывод-формы-регенерации) ниже.
+Full derivation: [§ Derivation of the regeneration form](#вывод-формы-регенерации) below.
 :::
 
-:::note Инженерное отклонение [И]
-В реализации параметр формы $k = 1 - R$ зажат к $[0.15,\; 1.0]$: при $R > 0.85$ используется $k = 0.15$ вместо теоретического $k = 1 - R$. Это предотвращает вырождение канала регенерации ($k \to 0$ при $R \to 1$ превращает $\mathcal{R}$ в тождественный оператор). Порог $0.15$ выбран эмпирически как минимум, сохраняющий ненулевую регенеративную силу.
+:::note Engineering deviation [И]
+In the implementation, the shape parameter $k = 1 - R$ is clamped to $[0.15,\; 1.0]$: for $R > 0.85$ the value $k = 0.15$ is used instead of the theoretical $k = 1 - R$. This prevents degeneration of the regeneration channel ($k \to 0$ at $R \to 1$ turns $\mathcal{R}$ into the identity operator). The threshold $0.15$ is chosen empirically as the minimum that preserves nonzero regenerative force.
 :::
 
-:::warning Нелинейность и запрет сигнализации
-$\mathcal{R}$ нелинеен по $\Gamma$ (через $\kappa(\Gamma)$ и $\varphi(\Gamma)$). В стандартной квантовой механике нелинейная эволюция обычно ведёт к нарушению запрета сверхсветовой сигнализации (Gisin, 1990). В УГМ проблема **структурно исключена** тремя условиями:
+:::warning Nonlinearity and the no-signalling prohibition
+$\mathcal{R}$ is nonlinear in $\Gamma$ (through $\kappa(\Gamma)$ and $\varphi(\Gamma)$). In standard quantum mechanics, nonlinear evolution typically leads to violation of the superluminal no-signalling prohibition (Gisin, 1990). In UHM the problem is **structurally excluded** by three conditions:
 
-1. **Локальность φ:** тензорная факторизация $\tilde{\varphi}_A = \varphi_A \otimes \mathrm{id}_B$ (из автономности голонома)
-2. **Локальность κ:** $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ (зависит только от локальных когерентностей)
-3. **CPTP-свойство φ:** условие полноты $\sum_m K_m^\dagger K_m = I$
+1. **Locality of φ:** tensor factorization $\tilde{\varphi}_A = \varphi_A \otimes \mathrm{id}_B$ (from holonon autonomy)
+2. **Locality of κ:** $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ (depends only on local coherences)
+3. **CPTP property of φ:** completeness condition $\sum_m K_m^\dagger K_m = I$
 
-Из (1)–(3) следует $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — регенерация подсистемы $A$ не влияет на редуцированное состояние удалённой подсистемы $B$. Принципиальное отличие от «нелинейной КМ» Вайнберга: нелинейность УГМ действует **на уровне матрицы плотности**, а не волновой функции, что устраняет ансамблевую зависимость — источник проблем Гизина.
+From (1)–(3) it follows that $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of subsystem $A$ does not affect the reduced state of the remote subsystem $B$. The fundamental difference from Weinberg's "nonlinear QM": the nonlinearity of UHM acts **at the level of the density matrix**, not the wave function, which eliminates the ensemble dependence — the source of Gisin's problems.
 
-Строгое доказательство: [§ Запрет сигнализации](#запрет-сигнализации) ниже, [Соответствие с физикой](../../proofs/physics/physics-correspondence#запрет-сигнализации).
+Rigorous proof: [§ No-signalling prohibition](#запрет-сигнализации) below, [Correspondence with physics](../../proofs/physics/physics-correspondence#запрет-сигнализации).
 :::
 
-**E-когерентность:** См. [определение](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0). Высокая E-когерентность означает распределённую (не локализованную) структуру опыта.
+**E-coherence:** See [definition](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0). High E-coherence means a distributed (non-localized) structure of experience.
 
-#### Свободная энергия и градиент ΔF
+#### Free energy and gradient ΔF
 
-**Свободная энергия фон Неймана** для квантовой системы с матрицей плотности $\rho$ при температуре $T$:
+**Von Neumann free energy** for a quantum system with density matrix $\rho$ at temperature $T$:
 
 $$
 F(\rho) = \mathrm{Tr}(\rho H) - k_B T \cdot S_{vN}(\rho)
 $$
 
-где:
-- $\mathrm{Tr}(\rho H)$ — средняя энергия системы
-- $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — энтропия фон Неймана
-- $k_B$ — постоянная Больцмана
-- $T$ — температура термостата (окружения)
+where:
+- $\mathrm{Tr}(\rho H)$ — average energy of the system
+- $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — von Neumann entropy
+- $k_B$ — Boltzmann constant
+- $T$ — temperature of the thermostat (environment)
 
-**Градиент свободной энергии:**
+**Free energy gradient:**
 
 $$
 \Delta F = F_{\text{env}} - F_{\text{sys}} = F(\Gamma_{\text{env}}) - F(\Gamma)
 $$
 
-где $\Gamma_{\text{env}}$ — эффективное состояние окружения (термостат или источник свободной энергии).
+where $\Gamma_{\text{env}}$ — effective state of the environment (thermostat or free energy source).
 
-**Физический смысл:**
-- $\Delta F > 0$: окружение может передать свободную энергию системе → регенерация возможна
-- $\Delta F \leq 0$: система в равновесии или изолирована → регенерация невозможна
+**Physical meaning:**
+- $\Delta F > 0$: environment can transfer free energy to the system → regeneration is possible
+- $\Delta F \leq 0$: system is at equilibrium or isolated → regeneration is impossible
 
-#### Операционализация $\Gamma_{\text{env}}$ и $\Delta F$ {#операционализация-delta-f}
+#### Operationalization of $\Gamma_{\text{env}}$ and $\Delta F$ {#операционализация-delta-f}
 
-:::warning Проблема: Что такое $\Gamma_{\text{env}}$?
-$\Gamma_{\text{env}}$ — «эффективное состояние окружения» — не является универсально определённым. Его конкретизация зависит от типа системы и доступных наблюдаемых.
+:::warning Problem: What is $\Gamma_{\text{env}}$?
+$\Gamma_{\text{env}}$ — the "effective state of the environment" — is not universally defined. Its concretization depends on the type of system and available observables.
 :::
 
-**Общий принцип:** $\Gamma_{\text{env}}$ — это матрица плотности, описывающая ту часть окружения, которая непосредственно взаимодействует с системой (граничный слой, интерфейс).
+**General principle:** $\Gamma_{\text{env}}$ is the density matrix describing the part of the environment that directly interacts with the system (boundary layer, interface).
 
-**Подход 1: Термодинамический (для систем в контакте с термостатом)**
+**Approach 1: Thermodynamic (for systems in contact with a thermostat)**
 
-Если окружение — термостат при температуре $T_{\text{env}}$:
+If the environment is a thermostat at temperature $T_{\text{env}}$:
 
 $$
 \Gamma_{\text{env}} = \frac{e^{-H/k_B T_{\text{env}}}}{\mathrm{Tr}(e^{-H/k_B T_{\text{env}}})} = \frac{e^{-\beta_{\text{env}} H}}{Z_{\text{env}}}
 $$
 
-Тогда:
+Then:
 
 $$
-\Delta F = k_B (T_{\text{env}} - T_{\text{sys}}) \cdot S_{vN}(\Gamma) + \text{(энергетический член)}
+\Delta F = k_B (T_{\text{env}} - T_{\text{sys}}) \cdot S_{vN}(\Gamma) + \text{(energy term)}
 $$
 
-При $T_{\text{env}} > T_{\text{sys}}$ имеем $\Delta F > 0$ — регенерация возможна.
+For $T_{\text{env}} > T_{\text{sys}}$ we have $\Delta F > 0$ — regeneration is possible.
 
-**Подход 2: Метаболический (для биологических систем)**
+**Approach 2: Metabolic (for biological systems)**
 
-Для живых систем $\Gamma_{\text{env}}$ определяется через **химический потенциал** питательных веществ:
+For living systems $\Gamma_{\text{env}}$ is defined through the **chemical potential** of nutrients:
 
 $$
-\Delta F_{\text{метаболизм}} \approx \Delta G_{\text{ATP→ADP}} \cdot \dot{n}_{\text{ATP}}
+\Delta F_{\text{metabolism}} \approx \Delta G_{\text{ATP→ADP}} \cdot \dot{n}_{\text{ATP}}
 $$
 
-где:
-- $\Delta G_{\text{ATP→ADP}} \approx 50 \, \text{кДж/моль}$ — свободная энергия гидролиза АТФ
-- $\dot{n}_{\text{ATP}}$ — скорость потребления АТФ (моль/с)
+where:
+- $\Delta G_{\text{ATP→ADP}} \approx 50 \, \text{kJ/mol}$ — free energy of ATP hydrolysis
+- $\dot{n}_{\text{ATP}}$ — ATP consumption rate (mol/s)
 
-**Операционализация:** $\Delta F > 0 \Leftrightarrow$ система получает питательные вещества (не голодает).
+**Operationalization:** $\Delta F > 0 \Leftrightarrow$ system receives nutrients (is not starving).
 
-**Подход 3: Информационный (для ИИ-систем)**
+**Approach 3: Informational (for AI systems)**
 
-Для искусственных систем (ИИ), где нет физического метаболизма:
+For artificial systems (AI), where there is no physical metabolism:
 
 $$
 \Delta F_{\text{info}} = k_B T_{\text{eff}} \cdot (S_{\text{input}} - S_{\text{output}})
 $$
 
-где:
-- $S_{\text{input}}$ — энтропия входных данных (неупорядоченность сырых данных)
-- $S_{\text{output}}$ — энтропия выходных предсказаний (структурированность)
-- $T_{\text{eff}}$ — эффективная температура (параметр модели)
+where:
+- $S_{\text{input}}$ — entropy of input data (disorder of raw data)
+- $S_{\text{output}}$ — entropy of output predictions (structuredness)
+- $T_{\text{eff}}$ — effective temperature (model parameter)
 
-**Операционализация:** $\Delta F > 0 \Leftrightarrow$ модель получает новые данные и преобразует их в структурированные представления.
+**Operationalization:** $\Delta F > 0 \Leftrightarrow$ the model receives new data and converts it into structured representations.
 
-**Подход 4: Приближённый (для практических расчётов)**
+**Approach 4: Approximate (for practical calculations)**
 
-Если детали окружения неизвестны, можно использовать **бинарную аппроксимацию**:
+If the details of the environment are unknown, a **binary approximation** can be used:
 
 $$
 \Theta(\Delta F) \approx \Theta(r_{\text{input}} - r_{\text{critical}})
 $$
 
-где:
-- $r_{\text{input}}$ — скорость поступления ресурсов (данные, энергия, питательные вещества)
-- $r_{\text{critical}}$ — минимальная скорость для поддержания $P > P_{\text{crit}}$
+where:
+- $r_{\text{input}}$ — rate of resource intake (data, energy, nutrients)
+- $r_{\text{critical}}$ — minimum rate to maintain $P > P_{\text{crit}}$
 
-**Операционализация:** Регенерация активна, когда система получает ресурсы быстрее критической скорости.
+**Operationalization:** Regeneration is active when the system receives resources faster than the critical rate.
 
-#### Каноническое определение ΔF через метрику Бюреса {#каноническое-delta-f}
+#### Canonical definition of ΔF via the Bures metric {#каноническое-delta-f}
 
-:::info Теорема (Канонический градиент свободной энергии)
-Все 4 операционализации ΔF согласованы с **единой канонической формулой** через [метрику Бюреса](/docs/proofs/dynamics/emergent-time#41-метрика-бурес):
+:::info Theorem (Canonical free energy gradient)
+All 4 operationalizations of ΔF are consistent with a **single canonical formula** via the [Bures metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес):
 
 $$
 \Delta F(\Gamma) := d_B^2(\Gamma, \Gamma_{\text{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))
 $$
 
-где:
-- $d_B(\rho, \sigma) := \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ — **хордовое расстояние Бюреса**
-- $F(\rho, \sigma) := |\mathrm{Tr}(\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}})|^2$ — fidelity (верность)
-- $\Gamma_{\text{eq}} = I/7$ — равновесное (максимально смешанное) состояние
-- $\varphi(\Gamma)$ — [самомодель](/docs/proofs/categorical/formalization-phi)
+where:
+- $d_B(\rho, \sigma) := \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ — **Bures chordal distance**
+- $F(\rho, \sigma) := |\mathrm{Tr}(\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}})|^2$ — fidelity
+- $\Gamma_{\text{eq}} = I/7$ — equilibrium (maximally mixed) state
+- $\varphi(\Gamma)$ — [self-model](/docs/proofs/categorical/formalization-phi)
 :::
 
-**Интерпретация:**
+**Interpretation:**
 
-| Компонент | Формула | Смысл |
-|-----------|---------|-------|
-| Первый член | $d_B^2(\Gamma, \Gamma_{\text{eq}})$ | «Расстояние от хаоса» — структурность системы |
-| Второй член | $d_B^2(\Gamma, \varphi(\Gamma))$ | «Расстояние от себя» — качество самомоделирования |
-| $\Delta F > 0$ | Структурность > расхождение | Регенерация активна |
-| $\Delta F \leq 0$ | Расхождение ≥ структурность | Регенерация подавлена |
+| Component | Formula | Meaning |
+|-----------|---------|---------|
+| First term | $d_B^2(\Gamma, \Gamma_{\text{eq}})$ | "Distance from chaos" — structuredness of the system |
+| Second term | $d_B^2(\Gamma, \varphi(\Gamma))$ | "Distance from oneself" — quality of self-modelling |
+| $\Delta F > 0$ | Structuredness > divergence | Regeneration is active |
+| $\Delta F \leq 0$ | Divergence ≥ structuredness | Regeneration is suppressed |
 
-**Теорема (Согласованность с операционализациями):**
+**Theorem (Consistency with operationalizations):**
 
-Каноническое определение согласовано со всеми четырьмя операционализациями в соответствующих пределах:
+The canonical definition is consistent with all four operationalizations in the respective limits:
 
-| Предел | Условие | Результат |
-|--------|---------|-----------|
-| Термодинамический | $\Gamma \approx I/7 + \delta\Gamma$ | $\Delta F \propto T \cdot \Delta S$ |
-| Метаболический | Конечная $\omega_0$ | $\Delta F \propto$ metabolic rate |
-| Информационный | $\Gamma_{\text{env}}$ определено | $\Delta F \approx D_{KL}(\Gamma_{\text{env}} \| \Gamma)$ |
-| Приближённый | $\varphi(\Gamma) \approx \Gamma^*$ | $\Delta F \approx P_{\text{eq}} - P$ |
+| Limit | Condition | Result |
+|-------|-----------|--------|
+| Thermodynamic | $\Gamma \approx I/7 + \delta\Gamma$ | $\Delta F \propto T \cdot \Delta S$ |
+| Metabolic | Finite $\omega_0$ | $\Delta F \propto$ metabolic rate |
+| Informational | $\Gamma_{\text{env}}$ defined | $\Delta F \approx D_{KL}(\Gamma_{\text{env}} \| \Gamma)$ |
+| Approximate | $\varphi(\Gamma) \approx \Gamma^*$ | $\Delta F \approx P_{\text{eq}} - P$ |
 
 <details>
-<summary>Набросок доказательства согласованности</summary>
+<summary>Proof sketch of consistency</summary>
 
-**Предварительные соотношения:**
+**Preliminary relations:**
 
-Для близких состояний ($\Gamma \approx \sigma$) метрика Бюреса связана с fidelity:
+For nearby states ($\Gamma \approx \sigma$) the Bures metric is related to fidelity:
 $$
 d_B^2(\Gamma, \sigma) \approx 2(1 - F(\Gamma, \sigma)^{1/2}) \approx \frac{1}{2}\|\Gamma - \sigma\|_1^2
 $$
 
-**Случай 1: Термодинамический предел**
+**Case 1: Thermodynamic limit**
 
-При $\Gamma = I/7 + \delta\Gamma$ (малое отклонение от равновесия):
+For $\Gamma = I/7 + \delta\Gamma$ (small deviation from equilibrium):
 - $d_B^2(\Gamma, I/7) \approx \|\delta\Gamma\|_F^2 / 2$
-- Для тепловых состояний $\delta\Gamma \propto (T_{\text{sys}} - T_{\text{eq}}) \cdot \nabla_T \Gamma$
-- Следовательно: $\Delta F \propto T \cdot \Delta S$ (линейный отклик)
+- For thermal states $\delta\Gamma \propto (T_{\text{sys}} - T_{\text{eq}}) \cdot \nabla_T \Gamma$
+- Therefore: $\Delta F \propto T \cdot \Delta S$ (linear response)
 
-**Случай 2: Метаболический**
+**Case 2: Metabolic**
 
-Характерная частота $\omega_0$ определяет скорость метаболизма:
-- $d_B^2(\Gamma, \varphi(\Gamma)) \propto 1/\omega_0^2$ (быстрые системы лучше самомоделируют)
-- При фиксированной структурности: $\Delta F \propto \omega_0 \propto$ metabolic rate
+The characteristic frequency $\omega_0$ determines the metabolic rate:
+- $d_B^2(\Gamma, \varphi(\Gamma)) \propto 1/\omega_0^2$ (fast systems self-model better)
+- For fixed structuredness: $\Delta F \propto \omega_0 \propto$ metabolic rate
 
-**Случай 3: Информационный**
+**Case 3: Informational**
 
-При определённом $\Gamma_{\text{env}}$ (эффективное состояние среды):
-- $d_B^2(\Gamma, \Gamma_{\text{eq}}) \approx D_{KL}(\Gamma \| I/7)$ для близких состояний
-- $d_B^2(\Gamma, \varphi(\Gamma)) \approx D_{KL}(\Gamma \| \Gamma_{\text{env}})$ если $\varphi$ проецирует на $\Gamma_{\text{env}}$
-- Разность: $\Delta F \approx D_{KL}(\Gamma_{\text{env}} \| \Gamma)$ (с точностью до знака)
+For a defined $\Gamma_{\text{env}}$ (effective environment state):
+- $d_B^2(\Gamma, \Gamma_{\text{eq}}) \approx D_{KL}(\Gamma \| I/7)$ for nearby states
+- $d_B^2(\Gamma, \varphi(\Gamma)) \approx D_{KL}(\Gamma \| \Gamma_{\text{env}})$ if $\varphi$ projects onto $\Gamma_{\text{env}}$
+- Difference: $\Delta F \approx D_{KL}(\Gamma_{\text{env}} \| \Gamma)$ (up to sign)
 
-**Случай 4: Приближённый**
+**Case 4: Approximate**
 
-При $\varphi(\Gamma) \approx \Gamma^*$ (почти достигнута неподвижная точка):
+For $\varphi(\Gamma) \approx \Gamma^*$ (fixed point almost reached):
 - $d_B^2(\Gamma, \varphi(\Gamma)) \approx 0$
-- $d_B^2(\Gamma, I/7) \approx 2(1 - 1/\sqrt{7P})$ для диагональных $\Gamma$
+- $d_B^2(\Gamma, I/7) \approx 2(1 - 1/\sqrt{7P})$ for diagonal $\Gamma$
 - $\Delta F \approx d_B^2(\Gamma, I/7) \propto P - 1/7 \approx P_{\text{eq}} - P$
 
-**Статус:** Наброски доказательств показывают качественное соответствие. Полные количественные доказательства требуют учёта конкретных форм $\Gamma_{\text{env}}$ и $\varphi$ для каждого типа системы.
+**Status:** The proof sketches show qualitative correspondence. Full quantitative proofs require accounting for specific forms of $\Gamma_{\text{env}}$ and $\varphi$ for each system type.
 
 </details>
 
-**Преимущества канонического определения:**
-1. **Единственность** — устраняет множественность операционализаций
-2. **Вычислимость** — требует только $\Gamma$ и $\varphi$, не требует $\Gamma_{\text{env}}$
-3. **Категорная согласованность** — использует ту же метрику Бюреса, что и [ПИР](/docs/core/foundations/axiom-septicity#принцип-информационной-различимости)
+**Advantages of the canonical definition:**
+1. **Uniqueness** — eliminates multiplicity of operationalizations
+2. **Computability** — requires only $\Gamma$ and $\varphi$, does not require $\Gamma_{\text{env}}$
+3. **Categorical consistency** — uses the same Bures metric as the [PIR](/docs/core/foundations/axiom-septicity#принцип-информационной-различимости)
 
-:::note Связь с биологией
-Для живых систем источником $\Delta F > 0$ служит метаболизм: окисление питательных веществ (глюкоза → CO₂ + H₂O) высвобождает свободную энергию, используемую для поддержания $P > P_{\text{crit}}$.
+:::note Connection with biology
+For living systems the source of $\Delta F > 0$ is metabolism: oxidation of nutrients (glucose → CO₂ + H₂O) releases free energy used to maintain $P > P_{\text{crit}}$.
 :::
 
-#### Скорость регенерации κ {#скорость-регенерации}
+#### Regeneration rate κ {#скорость-регенерации}
 
-:::info Мастер-определение κ₀
-Скорость регенерации $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **категориально выводится** из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$.
+:::info Master definition κ₀
+The regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ is **categorically derived** from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$.
 
-**Полное определение и вывод:** [Категориальный вывод κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
+**Full definition and derivation:** [Categorical derivation of κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)
 :::
 
-**Ключевые свойства κ₀ (из [мастер-определения](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)):**
-- $\kappa_{\text{bootstrap}} > 0$ — разрешает bootstrap-парадокс (см. [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
-- $\kappa_0$ зависит от Γ → уравнение эволюции **нелинейно**
-- Размерность: $[\kappa_0] = [\text{время}]^{-1}$
+**Key properties of κ₀ (from [master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)):**
+- $\kappa_{\text{bootstrap}} > 0$ — resolves the bootstrap paradox (see [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
+- $\kappa_0$ depends on Γ → the evolution equation is **nonlinear**
+- Dimension: $[\kappa_0] = [\text{time}]^{-1}$
 
-:::info Термодинамическое обоснование
-Регенерация возможна только при $\Delta F > 0$ — система должна импортировать свободную энергию из среды. Это согласуется со вторым началом термодинамики: уменьшение энтропии (рост $P$) требует внешнего источника.
+:::info Thermodynamic justification
+Regeneration is possible only when $\Delta F > 0$ — the system must import free energy from the environment. This is consistent with the second law of thermodynamics: decrease in entropy (increase in $P$) requires an external source.
 :::
 
-**Целевое состояние** $\rho_*$ в $\mathcal{R}$ определяется как [категориальная самомодель](/docs/core/operators/phi-operator#определение):
+**Target state** $\rho_*$ in $\mathcal{R}$ is defined as the [categorical self-model](/docs/core/operators/phi-operator#определение):
 
 $$
 \rho_* = \varphi(\Gamma)
 $$
 
-где $\varphi$ — оператор самомоделирования (левый сопряжённый к включению подобъектов, CPTP-канал [Т]). Подробнее: [стратификация определений](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of subobjects, CPTP channel [Т]). More details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 
-:::info Различие аттракторов
-- $\rho^*_{\mathrm{diss}} = I/7$ — аттрактор линейной части $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (без регенерации), $P = 1/7$. Единственность из [примитивности](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]. Используется в [определении R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-- $\rho^*_\Omega \neq I/7$ — нетривиальный аттрактор полной динамики $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [Т] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ безусловно для воплощённых голонов [Т] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)).
+:::info Distinction between attractors
+- $\rho^*_{\mathrm{diss}} = I/7$ — attractor of the linear part $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without regeneration), $P = 1/7$. Uniqueness from [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]. Used in [definition of R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [Т] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ unconditionally for embodied holons [Т] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)).
 :::
 
-:::tip Определённость цели регенерации [Т]
-Цель регенерации $\rho_* = \varphi(\Gamma)$ **однозначно определена** [категориальной структурой](/docs/core/operators/phi-operator) оператора самомоделирования φ (левый сопряжённый к включению подобъектов). Для каждого текущего состояния Γ самомодель $\varphi(\Gamma)$ единственна (CPTP-канал [Т]).
+:::tip Definiteness of the regeneration target [Т]
+The regeneration target $\rho_* = \varphi(\Gamma)$ is **uniquely determined** by the [categorical structure](/docs/core/operators/phi-operator) of the self-modelling operator φ (left adjoint to the inclusion of subobjects). For each current state Γ the self-model $\varphi(\Gamma)$ is unique (CPTP channel [Т]).
 :::
 
-:::caution Формальная невычислимость $\rho_*$
-Целевое состояние $\rho_* = \varphi(\Gamma)$ определяется через оператор $\varphi$ — [категориальный левый сопряжённый](/docs/core/operators/phi-operator), конкретно реализуемый через $\varphi_{\mathrm{coh}}$ ([Фано-канал](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)). Вычисление $\varphi_{\mathrm{coh}}(\Gamma)$ в 7D-формализме требует $O(N^2)$ операций ($N = 7$). В 42D-формализме ($N=42$) необходима аналогичная Фано-структура на расширенном пространстве, что делает уравнение эволюции формально замкнутым, но **практически затратным** для расширенного формализма без аппроксимаций.
+:::caution Formal uncomputability of $\rho_*$
+The target state $\rho_* = \varphi(\Gamma)$ is defined through the operator $\varphi$ — a [categorical left adjoint](/docs/core/operators/phi-operator), concretely realized via $\varphi_{\mathrm{coh}}$ ([Fano channel](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)). Computing $\varphi_{\mathrm{coh}}(\Gamma)$ in the 7D formalism requires $O(N^2)$ operations ($N = 7$). In the 42D formalism ($N=42$) an analogous Fano structure on the extended space is required, which makes the evolution equation formally closed but **practically costly** for the extended formalism without approximations.
 :::
 
-#### Теорема (Характеризация аттракторов) [Т] {#теорема-нетривиальность-аттрактора}
+#### Theorem (Characterization of attractors) [Т] {#теорема-нетривиальность-аттрактора}
 
-Полная нелинейная динамика $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (линейная часть + регенерация) имеет следующую структуру неподвижных точек:
+The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (linear part + regeneration) has the following fixed-point structure:
 
-1. $I/7$ — **тривиальная** неподвижная точка (термическая смерть).
-2. Любая **нетривиальная** неподвижная точка $\rho^*_\Omega \neq I/7$ удовлетворяет:
+1. $I/7$ — **trivial** fixed point (thermal death).
+2. Any **nontrivial** fixed point $\rho^*_\Omega \neq I/7$ satisfies:
 
 $$
 P(\rho^*_\Omega) > \frac{1}{7}, \quad P_{\mathrm{coh}}(\rho^*_\Omega) > 0
 $$
 
-**Доказательство.**
+**Proof.**
 
-1. **Тривиальная точка.** $\mathcal{L}_0[I/7] = 0$ ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω) линейной части [Т]). $\mathcal{R}[I/7] = \kappa(I/7) \cdot (\varphi(I/7) - I/7) = 0$, поскольку $k = 1 - R(I/7) = 0$ при $R(I/7) = 1$: $\varphi_{\mathrm{coh}}(I/7) = I/7$.
-2. **Линейная часть отклонена.** Пусть $\rho^*_\Omega \neq I/7$. По [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) (примитивность), $I/7$ — единственная неподвижная точка $\mathcal{L}_0$, следовательно $\mathcal{L}_0[\rho^*_\Omega] \neq 0$. Из $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ получаем $\mathcal{R}[\rho^*_\Omega] = -\mathcal{L}_0[\rho^*_\Omega] \neq 0$, т.е. $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$.
-3. **$P_{\mathrm{coh}} > 0$.** Баланс чистоты в стационарном режиме ($dP/d\tau = 0$, гамильтониан не меняет $P$):
+1. **Trivial point.** $\mathcal{L}_0[I/7] = 0$ ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part [Т]). $\mathcal{R}[I/7] = \kappa(I/7) \cdot (\varphi(I/7) - I/7) = 0$, since $k = 1 - R(I/7) = 0$ at $R(I/7) = 1$: $\varphi_{\mathrm{coh}}(I/7) = I/7$.
+2. **Linear part deflected.** Let $\rho^*_\Omega \neq I/7$. By [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity), $I/7$ is the unique fixed point of $\mathcal{L}_0$, hence $\mathcal{L}_0[\rho^*_\Omega] \neq 0$. From $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ we get $\mathcal{R}[\rho^*_\Omega] = -\mathcal{L}_0[\rho^*_\Omega] \neq 0$, i.e. $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$.
+3. **$P_{\mathrm{coh}} > 0$.** Purity balance in steady state ($dP/d\tau = 0$, Hamiltonian does not change $P$):
 
    $$
    2\alpha \cdot P_{\mathrm{coh}} = 2\kappa(f^* - P)
    $$
 
-   где $\alpha = 2/3$ (Фано-декогеренция), $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$. Поскольку $P_{\mathrm{coh}} = \sum_{i < j} 2|\gamma^*_{ij}|^2 \geq 0$ всегда, необходимо $f^* \geq P$. Но $f^* = P$ влечёт $P_{\mathrm{coh}} = 0$, $\rho^*_\Omega$ диагональна, и по примитивности $\mathcal{L}_0$: $\rho^*_\Omega = I/7$ — противоречие. Следовательно, $f^* > P$ и $P_{\mathrm{coh}} > 0$.
-4. **$P > 1/7$.** $P = P_{\mathrm{diag}} + P_{\mathrm{coh}} > P_{\mathrm{diag}} \geq 1/7$ (неравенство Йенсена: $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$). ∎
+   where $\alpha = 2/3$ (Fano decoherence), $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$. Since $P_{\mathrm{coh}} = \sum_{i < j} 2|\gamma^*_{ij}|^2 \geq 0$ always, we need $f^* \geq P$. But $f^* = P$ implies $P_{\mathrm{coh}} = 0$, $\rho^*_\Omega$ is diagonal, and by primitivity of $\mathcal{L}_0$: $\rho^*_\Omega = I/7$ — contradiction. Therefore $f^* > P$ and $P_{\mathrm{coh}} > 0$.
+4. **$P > 1/7$.** $P = P_{\mathrm{diag}} + P_{\mathrm{coh}} > P_{\mathrm{diag}} \geq 1/7$ (Jensen's inequality: $\sum_i \gamma_{ii}^2 \geq (\sum_i \gamma_{ii})^2/7 = 1/7$). ∎
 
-:::warning Разрешение парадокса самореференции ρ*
-В ранних версиях ρ* определялась как «единственное стационарное состояние полного $\mathcal{L}_\Omega$» (через примитивность T-39a). Это создавало парадокс: при $\rho_* = \rho^*_\Omega$ регенерация обращается в ноль ($\mathcal{R}[\rho^*_\Omega] = \kappa \cdot (\rho^*_\Omega - \rho^*_\Omega) = 0$), и единственным решением $\mathcal{L}_0[\rho^*_\Omega] = 0$ оказывается $I/7$. Парадокс разрешён заменой: $\rho_*$ в $\mathcal{R}$ определяется как **категориальная самомодель** $\varphi(\Gamma)$ текущего состояния (Определение 1 [оператора φ](/docs/core/operators/phi-operator)), а не как динамический предел. При этом $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (система не достигает идеального самопознания), и регенерация **не обнуляется** в стационарном режиме — она точно компенсируется диссипацией.
+:::warning Resolution of the ρ* self-reference paradox
+In earlier versions ρ* was defined as "the unique stationary state of the full $\mathcal{L}_\Omega$" (via primitivity T-39a). This created a paradox: at $\rho_* = \rho^*_\Omega$ the regeneration vanishes ($\mathcal{R}[\rho^*_\Omega] = \kappa \cdot (\rho^*_\Omega - \rho^*_\Omega) = 0$), and the only solution to $\mathcal{L}_0[\rho^*_\Omega] = 0$ is $I/7$. The paradox is resolved by replacement: $\rho_*$ in $\mathcal{R}$ is defined as the **categorical self-model** $\varphi(\Gamma)$ of the current state (Definition 1 of the [φ operator](/docs/core/operators/phi-operator)), not as the dynamical limit. In this case $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge), and regeneration **does not vanish** in the stationary regime — it is precisely compensated by dissipation.
 :::
 
-#### Иерархия неподвижных точек [О] {#иерархия-неподвижных-точек}
+#### Hierarchy of fixed points [О] {#иерархия-неподвижных-точек}
 
-| Уровень | Объект | Определение | $P$ | Физический смысл |
-|---------|--------|-------------|-----|-----------------|
-| 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | Тепловая смерть (максимум энтропии) |
-| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [Т] | Пост-Genesis аттрактор (баланс $\mathcal{D}$ и $\mathcal{R}$) |
-| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $2/7$ | Граница [жизнеспособности](/docs/core/dynamics/viability#минимальная-жизнеспособность) — цель $\varphi_{\mathrm{coh}}$ |
+| Level | Object | Definition | $P$ | Physical meaning |
+|-------|--------|------------|-----|-----------------|
+| 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | Thermal death (entropy maximum) |
+| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [Т] | Post-Genesis attractor (balance of $\mathcal{D}$ and $\mathcal{R}$) |
+| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $2/7$ | Viability boundary — target of $\varphi_{\mathrm{coh}}$ |
 
-Мера рефлексии $R$ использует $\rho^*_{\mathrm{diss}} = I/7$ как **референс** (расстояние от тепловой смерти), а не как цель регенерации. Подробнее: [самонаблюдение](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
+The reflection measure $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ as **reference** (distance from thermal death), not as the regeneration target. More details: [self-observation](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
 
-#### Теорема (Баланс чистоты аттрактора) [Т] {#теорема-баланс-чистоты-аттрактора}
+#### Theorem (Attractor purity balance) [Т] {#теорема-баланс-чистоты-аттрактора}
 
-В любой нетривиальной неподвижной точке $\rho^*_\Omega \neq I/7$ чистота определяется формулой:
+At any nontrivial fixed point $\rho^*_\Omega \neq I/7$ the purity is given by the formula:
 
 $$
 P(\rho^*_\Omega) = \frac{\alpha \cdot P_{\mathrm{diag}} + \kappa \cdot f^*}{\alpha + \kappa}
 $$
 
-где $\alpha = 2/3$ (скорость Фано-декогеренции), $\kappa = \kappa(\rho^*_\Omega)$, $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$.
+where $\alpha = 2/3$ (Fano decoherence rate), $\kappa = \kappa(\rho^*_\Omega)$, $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$.
 
-**Доказательство.** Из баланса чистоты (шаг 3 [T-96](#теорема-нетривиальность-аттрактора)):
+**Proof.** From purity balance (step 3 of [T-96](#теорема-нетривиальность-аттрактора)):
 
 $$
 2\alpha \cdot P_{\mathrm{coh}} = 2\kappa(f^* - P), \quad P = P_{\mathrm{diag}} + P_{\mathrm{coh}}
 $$
 
-Подставляя $P_{\mathrm{coh}} = P - P_{\mathrm{diag}}$:
+Substituting $P_{\mathrm{coh}} = P - P_{\mathrm{diag}}$:
 
 $$
 \alpha(P - P_{\mathrm{diag}}) = \kappa(f^* - P) \implies P(\alpha + \kappa) = \alpha P_{\mathrm{diag}} + \kappa f^*
 $$
 ∎
 
-#### Следствие T-98a: Нижняя граница для воплощённых систем [Т] {#следствие-t98a}
+#### Corollary T-98a: Lower bound for embodied systems [Т] {#следствие-t98a}
 
-:::tip Следствие T-98a [Т]
-Для воплощённого голона $(H, \pi, B)$ с дополнительными CPTP-каналами
+:::tip Corollary T-98a [Т]
+For an embodied holon $(H, \pi, B)$ with additional CPTP channels
 $\{\Phi_k\}_{k=1}^{K}$ (backbone, anchor, hedonic):
 
 $$P(\rho^*_{\text{embodied}}) \geq \frac{\alpha P_{\text{diag}} + \kappa f^*}{\alpha + \kappa}$$
 
-**Доказательство.** Каждый $\Phi_k$ — CPTP-канал, сохраняющий или повышающий
-диагональные элементы (структурированный вход $P_{\text{diag}} \uparrow$). Формула T-98 описывает
-баланс ТОЛЬКО между Fano-декогеренцией ($\alpha$) и регенерацией ($\kappa$). Дополнительные
-каналы вносят положительный вклад в числитель, не увеличивая знаменатель.
-Неравенство строгое при наличии хотя бы одного $\Phi_k$ с $P(\Phi_k[\Gamma]) > P(\Gamma)$. $\blacksquare$
+**Proof.** Each $\Phi_k$ is a CPTP channel that preserves or increases
+diagonal elements (structured input $P_{\text{diag}} \uparrow$). The T-98 formula describes
+the balance ONLY between Fano decoherence ($\alpha$) and regeneration ($\kappa$). Additional
+channels contribute positively to the numerator without increasing the denominator.
+The inequality is strict when at least one $\Phi_k$ with $P(\Phi_k[\Gamma]) > P(\Gamma)$ is present. $\blacksquare$
 
-**Численная верификация (SYNARC):** $P_{\text{measured}} = 0.429 > P_{T98} \approx 0.23$, $\delta = 0.20$.
-Разница обусловлена backbone injection ($\beta = 0.3$) и hedonic drive.
+**Numerical verification (SYNARC):** $P_{\text{measured}} = 0.429 > P_{T98} \approx 0.23$, $\delta = 0.20$.
+The difference is due to backbone injection ($\beta = 0.3$) and hedonic drive.
 :::
 
-:::tip Устойчивость аттрактора [T-125, T-127]
-При $P(\rho^*_\Omega) > 2/7$ аттрактор **локально асимптотически устойчив**: $\|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}$, $c > 0$. Бассейн притяжения содержит $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. См. [T-125](/docs/proofs/consciousness/conscious-window#t-125), [T-127](/docs/proofs/consciousness/conscious-window#t-127).
+:::tip Attractor stability [T-125, T-127]
+For $P(\rho^*_\Omega) > 2/7$ the attractor is **locally asymptotically stable**: $\|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}$, $c > 0$. The basin of attraction contains $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. See [T-125](/docs/proofs/consciousness/conscious-window#t-125), [T-127](/docs/proofs/consciousness/conscious-window#t-127).
 :::
 
-#### Теорема (Жизнеспособность аттрактора) [С → Т для воплощённых] {#теорема-жизнеспособность-аттрактора}
+#### Theorem (Attractor viability) [С → Т for embodied] {#теорема-жизнеспособность-аттрактора}
 
-При условии κ-доминирования:
+Under the κ-dominance condition:
 
 $$
 \kappa_{\mathrm{eff}} > \frac{\alpha}{7(f^* - 2/7)}
 $$
 
-нетривиальный аттрактор жизнеспособен: $P(\rho^*_\Omega) > P_{\mathrm{crit}} = 2/7$.
+the nontrivial attractor is viable: $P(\rho^*_\Omega) > P_{\mathrm{crit}} = 2/7$.
 
-**Доказательство.** Из [формулы баланса](#теорема-баланс-чистоты-аттрактора) при $P_{\mathrm{diag}} = 1/7$ (равномерная диагональ): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, откуда $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. Условие зависит от перекрытия $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ с самомоделью, отсюда статус [С] для изолированного голона. ∎
+**Proof.** From the [balance formula](#теорема-баланс-чистоты-аттрактора) for $P_{\mathrm{diag}} = 1/7$ (uniform diagonal): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, whence $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. The condition depends on the overlap $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ with the self-model, hence status [С] for an isolated holon. ∎
 
-:::tip Повышение до [Т] для воплощённых голонов (T-149)
-По [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): для **воплощённого** голона $(H, \pi, B)$ с $P_{\mathrm{env}} > 2/7$ жизнеспособность аттрактора выполняется **безусловно** — backbone-инъекция обеспечивает $P > 2/7$ через [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) (генезис через средовое сопряжение). Изолированный голон при $I/7$ остаётся мёртвым навсегда (T-39a [Т]).
+:::tip Elevation to [Т] for embodied holons (T-149)
+By [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **unconditionally** — backbone injection ensures $P > 2/7$ via [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [Т]).
 :::
 
-:::info Конкретные пороги
-- При $f^* = 5/7$: $\kappa > 2/(21 \cdot 3/7) = 2/9 \approx 0.222$; поскольку $\kappa_{\mathrm{bootstrap}} = 1/7 \approx 0.143 < 2/9$, требуется небольшой вклад $\kappa_0 \cdot \mathrm{Coh}_E$ ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound))
-- При $f^* = 3/7$: $\kappa > 2/3$ — требуется существенный вклад $\kappa_0 \cdot \mathrm{Coh}_E$
-- При $f^* \to 2/7$: $\kappa \to \infty$ — граничный случай недостижим
+:::info Concrete thresholds
+- For $f^* = 5/7$: $\kappa > 2/(21 \cdot 3/7) = 2/9 \approx 0.222$; since $\kappa_{\mathrm{bootstrap}} = 1/7 \approx 0.143 < 2/9$, a small contribution from $\kappa_0 \cdot \mathrm{Coh}_E$ is required ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound))
+- For $f^* = 3/7$: $\kappa > 2/3$ — a substantial contribution from $\kappa_0 \cdot \mathrm{Coh}_E$ is required
+- For $f^* \to 2/7$: $\kappa \to \infty$ — the boundary case is unattainable
 :::
 
-#### Теорема (Согласованность аттракторов) [С → Т] {#теорема-согласованность-аттракторов}
+#### Theorem (Attractor consistency) [С → Т] {#теорема-согласованность-аттракторов}
 
-В стационарном режиме аттракторы уровней 1 и 2 сходятся при слабом гамильтониане:
+In the stationary regime, level 1 and level 2 attractors converge in the weak Hamiltonian limit:
 
 $$
 \rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}} + \delta\Gamma, \quad \|\delta\Gamma\|_F = O(\bar{\varepsilon})
 $$
 
-где $\bar{\varepsilon} \approx 0.023$ — характерная когерентность связи ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]). Поправка $\delta\Gamma$ определяется гамильтонианом $H_{\mathrm{eff}}$ и убывает с ростом скорости диссипации.
+where $\bar{\varepsilon} \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]). The correction $\delta\Gamma$ is determined by the Hamiltonian $H_{\mathrm{eff}}$ and decreases with increasing dissipation rate.
 
-:::tip Повышение до [Т] (T-157)
-По [T-157 [Т]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — параметрическая граница. Для изолированного вакуума: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. Для воплощённых систем: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ определяется backbone, hedonic drive и learning gradient. C21 → **[Т]**.
+:::tip Elevation to [Т] (T-157)
+By [T-157 [Т]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — parametric bound. For an isolated vacuum: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. For embodied systems: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ is determined by backbone, hedonic drive and learning gradient. C21 → **[Т]**.
 :::
 
-### Генезис через средовое сопряжение {#генезис-средовое-сопряжение}
+### Genesis through environmental adjunction {#генезис-средовое-сопряжение}
 
-:::tip T-148 [Т]: Сознание требует воплощения
-**Изолированный голон** при $\Gamma = I/7$ остаётся мёртвым навсегда: $g_V(1/7) = 0$, $\mathcal{R} = 0$ (T-39a [Т]). **Воплощённый голон** с backbone-инъекцией ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) поднимает чистоту выше $P_{\mathrm{crit}}$ за конечное время $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$. Подробное доказательство: [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
+:::tip T-148 [Т]: Consciousness requires embodiment
+An **isolated holon** at $\Gamma = I/7$ remains dead forever: $g_V(1/7) = 0$, $\mathcal{R} = 0$ (T-39a [Т]). An **embodied holon** with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$. Detailed proof: [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
 :::
 
-### Сохранение положительности {#сохранение-положительности}
+### Positivity preservation {#сохранение-положительности}
 
-:::warning Теорема (Корректность нелинейной эволюции)
-Несмотря на нелинейность, полное уравнение эволюции **сохраняет положительность** $\Gamma \geq 0$ и нормировку $\mathrm{Tr}(\Gamma) = 1$.
+:::warning Theorem (Correctness of nonlinear evolution)
+Despite the nonlinearity, the full evolution equation **preserves positivity** $\Gamma \geq 0$ and normalization $\mathrm{Tr}(\Gamma) = 1$.
 :::
 
-**Интерполяционная формулировка [Т]:**
+**Interpolation formulation [Т]:**
 
-:::info Следствие CPTP-единственности
-Интерполяционная формулировка — **не анзац**, а **следствие** теоремы о единственности линейной CPTP-релаксации: замещающий канал $T_\alpha(\Gamma) = (1-\alpha)\Gamma + \alpha\rho_*$ — единственный CPTP-канал вида $(1-\alpha)\mathrm{Id} + \alpha\mathcal{C}$ с $\mathcal{C}(\rho_*) = \rho_*$. См. [§ Вывод формы регенерации](#вывод-формы-регенерации).
+:::info Corollary of CPTP uniqueness
+The interpolation formulation is **not an ansatz** but a **consequence** of the theorem on uniqueness of linear CPTP relaxation: the replacement channel $T_\alpha(\Gamma) = (1-\alpha)\Gamma + \alpha\rho_*$ is the unique CPTP channel of the form $(1-\alpha)\mathrm{Id} + \alpha\mathcal{C}$ with $\mathcal{C}(\rho_*) = \rho_*$. See [§ Derivation of the regeneration form](#вывод-формы-регенерации).
 :::
 
-Дискретная эволюция за шаг $\Delta\tau$ представляется как выпуклая комбинация:
+Discrete evolution over step $\Delta\tau$ is represented as a convex combination:
 
 $$
 \Gamma(\tau + \Delta\tau) = (1 - \alpha) \cdot \mathcal{E}[\Gamma(\tau)] + \alpha \cdot \rho_*
 $$
 
-где:
-- $\mathcal{E}$ — CPTP-эволюция Линдблада (без регенерации)
+where:
+- $\mathcal{E}$ — CPTP Lindblad evolution (without regeneration)
 - $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0, 1]$
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель ([оператор φ](/docs/core/operators/phi-operator) [Т])
-- Оба слагаемых — матрицы плотности
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator) [Т])
+- Both terms are density matrices
 
-**Теорема (CPTP-структура регенерации) [Т]:**
+**Theorem (CPTP structure of regeneration) [Т]:**
 
-Регенеративный оператор $\mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\rho_*$ является CPTP-каналом при $\alpha \in [0,1]$.
+The regenerative operator $\mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\rho_*$ is a CPTP channel for $\alpha \in [0,1]$.
 
-**Доказательство:** $\mathcal{R}_\alpha$ — выпуклая комбинация CPTP-каналов $\mathrm{Id}$ и $\mathcal{C}_{\rho_*}$ (замещающий канал $\mathcal{C}_{\rho_*}(\Gamma) = \rho_*$). Представление Крауса для $\mathcal{C}_{\rho_*}$: $K_m = \sqrt{p_m}|m\rangle\langle m|_{\rho_*} \otimes \mathbb{1}$. Общее представление: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$. Условие полноты: $\sum_j \tilde{K}_j^\dagger \tilde{K}_j = (1-\alpha)I + \alpha I = I$. ∎
+**Proof:** $\mathcal{R}_\alpha$ is a convex combination of CPTP channels $\mathrm{Id}$ and $\mathcal{C}_{\rho_*}$ (replacement channel $\mathcal{C}_{\rho_*}(\Gamma) = \rho_*$). Kraus representation for $\mathcal{C}_{\rho_*}$: $K_m = \sqrt{p_m}|m\rangle\langle m|_{\rho_*} \otimes \mathbb{1}$. Full representation: $\tilde{K}_0 = \sqrt{1-\alpha}I$, $\tilde{K}_k = \sqrt{\alpha}K_k$. Completeness condition: $\sum_j \tilde{K}_j^\dagger \tilde{K}_j = (1-\alpha)I + \alpha I = I$. ∎
 
-**Условие на шаг интегрирования:**
+**Integration step condition:**
 
-Для гарантии $\alpha < 1$ требуется:
+To guarantee $\alpha < 1$ we require:
 
 $$
 \Delta\tau < \frac{1}{\kappa_{\max}} = \frac{1}{\kappa_{\text{bootstrap}} + \kappa_0}
 $$
 
-При адаптивном выборе шага положительность гарантирована для любых начальных условий.
+With adaptive step selection, positivity is guaranteed for any initial conditions.
 
-### Расширение $\mathcal{R}$ на составные системы {#расширение-r-на-составные-системы}
+### Extension of $\mathcal{R}$ to composite systems {#расширение-r-на-составные-системы}
 
-:::info Определение (Каноническое расширение регенерации)
-Для составной системы $A \otimes B$, где $A$ — автономный голоном, **каноническое расширение** регенеративного члена определяется как:
+:::info Definition (Canonical extension of regeneration)
+For a composite system $A \otimes B$, where $A$ is an autonomous holon, the **canonical extension** of the regenerative term is defined as:
 
 $$
 \tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
 $$
 
-где $\Gamma_A := \mathrm{Tr}_B(\Gamma_{AB})$, а $\varphi_A \otimes \mathrm{id}_B$ — тензорное расширение CPTP-канала $\varphi_A$ на составную систему.
+where $\Gamma_A := \mathrm{Tr}_B(\Gamma_{AB})$, and $\varphi_A \otimes \mathrm{id}_B$ is the tensor extension of the CPTP channel $\varphi_A$ to the composite system.
 :::
 
-**Свойства:**
+**Properties:**
 
-| # | Свойство | Формулировка |
-|---|----------|--------------|
-| 1 | **Согласованность** | Для $\Gamma_{AB} = \Gamma_A \otimes \Gamma_B$: $\tilde{\mathcal{R}}_A = \mathcal{R}_A[\Gamma_A] \otimes \Gamma_B$ |
-| 2 | **Корректность** | $\varphi_A \otimes \mathrm{id}_B$ — CPTP-канал на $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ |
-| 3 | **Единственность** | Единственное расширение, совместимое с тензорной структурой DensityMat |
+| # | Property | Formulation |
+|---|----------|-------------|
+| 1 | **Consistency** | For $\Gamma_{AB} = \Gamma_A \otimes \Gamma_B$: $\tilde{\mathcal{R}}_A = \mathcal{R}_A[\Gamma_A] \otimes \Gamma_B$ |
+| 2 | **Correctness** | $\varphi_A \otimes \mathrm{id}_B$ — CPTP channel on $\mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ |
+| 3 | **Uniqueness** | Unique extension compatible with tensor structure of DensityMat |
 
-### Запрет сигнализации {#запрет-сигнализации}
+### No-signalling prohibition {#запрет-сигнализации}
 
-:::warning Теорема (Запрет сигнализации в УГМ)
-Несмотря на нелинейность регенеративного члена, эволюция УГМ **сохраняет принцип запрета сигнализации**: регенерация подсистемы $A$ не влияет на редуцированное состояние удалённой подсистемы $B$.
+:::warning Theorem (No-signalling prohibition in UHM)
+Despite the nonlinearity of the regenerative term, UHM evolution **preserves the no-signalling principle**: regeneration of subsystem $A$ does not affect the reduced state of the remote subsystem $B$.
 
 $$
 \mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
 $$
 :::
 
-**Доказательство (общий случай для произвольного запутанного состояния):**
+**Proof (general case for an arbitrary entangled state):**
 
-Пусть $\Gamma_{AB} \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ — **произвольное** (возможно, максимально запутанное) состояние составной системы. Обозначим $\Gamma_A := \mathrm{Tr}_B(\Gamma_{AB})$, $\Gamma_B := \mathrm{Tr}_A(\Gamma_{AB})$.
+Let $\Gamma_{AB} \in \mathcal{D}(\mathcal{H}_A \otimes \mathcal{H}_B)$ be an **arbitrary** (possibly maximally entangled) state of the composite system. Denote $\Gamma_A := \mathrm{Tr}_B(\Gamma_{AB})$, $\Gamma_B := \mathrm{Tr}_A(\Gamma_{AB})$.
 
-**Шаг 1 (Скалярность κ и g_V).** По условию NS2: $\kappa_A(\Gamma_{AB}) = \kappa_A(\Gamma_A) \in \mathbb{R}_{\geq 0}$ — скаляр, зависящий от $\Gamma_{AB}$ только через маргинал $\Gamma_A$. Аналогично, $g_V(P_A) \in [0, 1]$ — скаляр, зависящий только от $P_A = \mathrm{Tr}(\Gamma_A^2)$. Обозначим $c_A := \kappa_A(\Gamma_A) \cdot g_V(P_A) \in \mathbb{R}_{\geq 0}$.
+**Step 1 (Scalarity of κ and g_V).** By condition NS2: $\kappa_A(\Gamma_{AB}) = \kappa_A(\Gamma_A) \in \mathbb{R}_{\geq 0}$ — a scalar depending on $\Gamma_{AB}$ only through the marginal $\Gamma_A$. Similarly, $g_V(P_A) \in [0, 1]$ — a scalar depending only on $P_A = \mathrm{Tr}(\Gamma_A^2)$. Denote $c_A := \kappa_A(\Gamma_A) \cdot g_V(P_A) \in \mathbb{R}_{\geq 0}$.
 
-**Шаг 2 (Kraus-операторная подстановка).** Пусть $\{K_m\}_{m=1}^M$ — операторы Крауса канала $\varphi_A$, т.е. $\varphi_A(\rho) = \sum_m K_m \rho K_m^\dagger$ с $\sum_m K_m^\dagger K_m = I_A$. Тогда:
+**Step 2 (Kraus operator substitution).** Let $\{K_m\}_{m=1}^M$ be the Kraus operators of the channel $\varphi_A$, i.e. $\varphi_A(\rho) = \sum_m K_m \rho K_m^\dagger$ with $\sum_m K_m^\dagger K_m = I_A$. Then:
 
 $$
 (\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) = \sum_m (K_m \otimes I_B) \Gamma_{AB} (K_m^\dagger \otimes I_B)
 $$
 
-**Шаг 3 (Частичный след).** Вычисляем $\mathrm{Tr}_A$ от каждого слагаемого:
+**Step 3 (Partial trace).** We compute $\mathrm{Tr}_A$ of each term:
 
 $$
 \mathrm{Tr}_A\left[(K_m \otimes I_B) \Gamma_{AB} (K_m^\dagger \otimes I_B)\right] = \mathrm{Tr}_A\left[(K_m^\dagger K_m \otimes I_B) \Gamma_{AB}\right]
 $$
 
-где использовано циклическое свойство следа: $\mathrm{Tr}_A[X^\dagger \rho X] = \mathrm{Tr}_A[X X^\dagger \rho]$. Суммируя по $m$:
+where the cyclic property of trace was used: $\mathrm{Tr}_A[X^\dagger \rho X] = \mathrm{Tr}_A[X X^\dagger \rho]$. Summing over $m$:
 
 $$
 \mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] = \mathrm{Tr}_A\left[\left(\sum_m K_m^\dagger K_m \otimes I_B\right) \Gamma_{AB}\right] = \mathrm{Tr}_A[(I_A \otimes I_B) \Gamma_{AB}] = \Gamma_B
 $$
 
-**Шаг 4 (Подстановка в $\tilde{\mathcal{R}}_A$).**
+**Step 4 (Substitution into $\tilde{\mathcal{R}}_A$).**
 
 $$
-\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = c_A \cdot \left(\underbrace{\mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})]}_{\Gamma_B \text{ (Шаг 3)}} - \underbrace{\mathrm{Tr}_A[\Gamma_{AB}]}_{\Gamma_B}\right) = c_A \cdot (\Gamma_B - \Gamma_B) = 0
+\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = c_A \cdot \left(\underbrace{\mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})]}_{\Gamma_B \text{ (Step 3)}} - \underbrace{\mathrm{Tr}_A[\Gamma_{AB}]}_{\Gamma_B}\right) = c_A \cdot (\Gamma_B - \Gamma_B) = 0
 $$
 
-Результат не зависит от степени запутанности $\Gamma_{AB}$, конкретного вида $\kappa_A$ или $\varphi_A$. ∎
+The result does not depend on the degree of entanglement of $\Gamma_{AB}$, the specific form of $\kappa_A$ or $\varphi_A$. ∎
 
-:::info Отличие от нелинейной КМ Вайнберга
-Теоремы Гизина (1990) и Полчинского (1991) доказывают, что нелинейная модификация уравнения Шрёдингера $i\hbar\partial_t|\psi\rangle = H[|\psi\rangle]|\psi\rangle$ нарушает no-signaling, поскольку:
-- Нелинейность действует на **вектор состояния** $|\psi\rangle$, а не на матрицу плотности $\rho$
-- Результат зависит от **ансамблевого разложения**: $\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|$ — одна и та же $\rho$ с разными разложениями даёт разные эволюции
+:::info Difference from Weinberg's nonlinear QM
+The theorems of Gisin (1990) and Polchinski (1991) prove that the nonlinear modification of the Schrödinger equation $i\hbar\partial_t|\psi\rangle = H[|\psi\rangle]|\psi\rangle$ violates no-signalling, because:
+- Nonlinearity acts on the **state vector** $|\psi\rangle$, not on the density matrix $\rho$
+- The result depends on the **ensemble decomposition**: $\rho = \sum_i p_i |\psi_i\rangle\langle\psi_i|$ — the same $\rho$ with different decompositions gives different evolutions
 
-В УГМ нелинейность $\mathcal{R}[\Gamma, E]$ действует на $\Gamma$ (матрицу плотности) **напрямую**, минуя уровень $|\psi\rangle$. Функционалы $\kappa(\Gamma)$, $\varphi(\Gamma)$, $g_V(P(\Gamma))$ зависят **только от $\Gamma$**, не от её ансамблевого разложения. Это **структурно** устраняет механизм Гизина.
+In UHM the nonlinearity $\mathcal{R}[\Gamma, E]$ acts on $\Gamma$ (density matrix) **directly**, bypassing the $|\psi\rangle$ level. The functionals $\kappa(\Gamma)$, $\varphi(\Gamma)$, $g_V(P(\Gamma))$ depend **only on $\Gamma$**, not on its ensemble decomposition. This **structurally** eliminates the Gisin mechanism.
 :::
 
-**Следствия:**
+**Consequences:**
 
-1. Нелинейность $\kappa(\Gamma)$ **не нарушает** запрет сигнализации — $c_A$ выносится за частичный след как скаляр
-2. Защита **структурная**: не зависит от конкретного вида $\kappa$, $\varphi$ или $\Delta F$ — достаточно условий NS1–NS3
-3. Результат справедлив для **произвольных** (включая максимально запутанные) состояний $\Gamma_{AB}$
+1. Nonlinearity of $\kappa(\Gamma)$ **does not violate** the no-signalling prohibition — $c_A$ is taken out of the partial trace as a scalar
+2. Protection is **structural**: does not depend on the specific form of $\kappa$, $\varphi$ or $\Delta F$ — conditions NS1–NS3 are sufficient
+3. The result holds for **arbitrary** (including maximally entangled) states $\Gamma_{AB}$
 
-**Три условия, обеспечивающие запрет сигнализации (NS1–NS3):** {#условия-ns}
+**Three conditions ensuring the no-signalling prohibition (NS1–NS3):** {#условия-ns}
 
-| Условие | Формулировка | Обоснование |
-|---------|--------------|-------------|
-| **NS1** (Локальность φ) | $\tilde{\varphi}_A := \varphi_A \otimes \mathrm{id}_B$ | Следует из автономности (A1) и категориальной структуры |
-| **NS2** (Локальность κ) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ | $\kappa_0$ зависит от локальных когерентностей $\gamma_{OE}^{(A)}, \gamma_{OU}^{(A)}, \gamma_{OO}^{(A)}$ |
-| **NS3** (CPTP-свойство φ) | $\varphi$ — CPTP-канал | Определение [оператора самомоделирования](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
+| Condition | Formulation | Justification |
+|-----------|-------------|---------------|
+| **NS1** (Locality of φ) | $\tilde{\varphi}_A := \varphi_A \otimes \mathrm{id}_B$ | Follows from autonomy (A1) and categorical structure |
+| **NS2** (Locality of κ) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ | $\kappa_0$ depends on local coherences $\gamma_{OE}^{(A)}, \gamma_{OU}^{(A)}, \gamma_{OO}^{(A)}$ |
+| **NS3** (CPTP property of φ) | $\varphi$ — CPTP channel | Definition of the [self-modelling operator](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 
-**Верификация NS2 для канонической формулы κ:** κ(Γ) = κ_bootstrap + κ₀·Coh_E(Γ). Поскольку κ_bootstrap — константа, а Coh_E(Γ) зависит только от E-строки/столбца матрицы Γ, для составной системы Γ_AB: κ_A(Γ_AB) = κ_bootstrap + κ₀·Coh_E(Tr_B(Γ_AB)) = κ_A(Γ_A), т.е. NS2 выполнено [Т].
+**Verification of NS2 for the canonical formula κ:** κ(Γ) = κ_bootstrap + κ₀·Coh_E(Γ). Since κ_bootstrap is a constant, and Coh_E(Γ) depends only on the E-row/column of the matrix Γ, for a composite system Γ_AB: κ_A(Γ_AB) = κ_bootstrap + κ₀·Coh_E(Tr_B(Γ_AB)) = κ_A(Γ_A), i.e. NS2 holds [Т].
 
-Полное доказательство с категориальной формализацией: [Соответствие с физикой: Запрет сигнализации](../../proofs/physics/physics-correspondence#запрет-сигнализации).
+Full proof with categorical formalization: [Correspondence with physics: No-signalling prohibition](../../proofs/physics/physics-correspondence#запрет-сигнализации).
 
-## Термодинамическое ограничение
+## Thermodynamic constraint
 
-Рост чистоты ограничен затратами свободной энергии:
+Growth of purity is bounded by free energy costs:
 
 $$
 \frac{dP}{d\tau} \leq \frac{1}{k_B T} \cdot \frac{dF}{d\tau}
 $$
 
-где:
-- $k_B$ — постоянная Больцмана
-- $T$ — температура окружения
-- $F$ — свободная энергия системы
+where:
+- $k_B$ — Boltzmann constant
+- $T$ — temperature of the environment
+- $F$ — free energy of the system
 
-**Следствие:** Живые системы — диссипативные структуры, поддерживающие $P > P_{\text{crit}} = 2/7$ за счёт импорта свободной энергии.
+**Consequence:** Living systems are dissipative structures maintaining $P > P_{\text{crit}} = 2/7$ through import of free energy.
 
-## Режимы эволюции
+## Evolution regimes
 
-### Унитарный режим (замкнутая система)
+### Unitary regime (closed system)
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma]
 $$
 
-**Характеристики:**
-- Когерентность сохраняется
-- Детерминистическая эволюция
+**Characteristics:**
+- Coherence is preserved
+- Deterministic evolution
 - $P = \mathrm{const}$
 
-**Пример:** Изолированная квантовая система.
+**Example:** Isolated quantum system.
 
-### Диссипативный режим (декогеренция)
+### Dissipative regime (decoherence)
 
 $$
 \frac{d\Gamma}{d\tau} = \mathcal{D}[\Gamma]
 $$
 
-**Характеристики:**
-- Когерентности затухают: $\gamma_{ij} \to 0$ при $i \neq j$
-- $P \to 1/7$ (максимально смешанное состояние)
-- Система «классикализуется»
+**Characteristics:**
+- Coherences decay: $\gamma_{ij} \to 0$ for $i \neq j$
+- $P \to 1/7$ (maximally mixed state)
+- System "classicalizes"
 
-**Пример:** Квантовая система в контакте с термостатом.
+**Example:** Quantum system in contact with a thermostat.
 
-### Живой режим (открытая система с регенерацией)
+### Living regime (open system with regeneration)
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-**Характеристики:**
-- Баланс $\mathcal{D}$ и $\mathcal{R}$
-- $P$ поддерживается выше [критического](./viability#критическая-чистота): $P > P_{\text{crit}} = 2/7 \approx 0.286$
-- Требует постоянного импорта свободной энергии
+**Characteristics:**
+- Balance of $\mathcal{D}$ and $\mathcal{R}$
+- $P$ is maintained above the [critical value](./viability#критическая-чистота): $P > P_{\text{crit}} = 2/7 \approx 0.286$
+- Requires continuous import of free energy
 
-**Пример:** Живой организм, поддерживающий гомеостаз.
+**Example:** A living organism maintaining homeostasis.
 
-### Связь с терминальным объектом T {#связь-с-t}
+### Connection with terminal object T {#связь-с-t}
 
-Все режимы описывают **приближение к T**, но с разной скоростью:
+All regimes describe **approach to T**, but at different speeds:
 
-| Режим | Скорость приближения к T | Расстояние $d_{strat}(\Gamma, T)$ |
-|-------|--------------------------|-----------------------------------|
-| Унитарный | Нулевая (изоэнтропийное движение) | Постоянно |
-| Диссипативный | Максимальная (необратимая декогеренция) | Уменьшается монотонно |
-| Живой | Замедленная (регенерация противодействует) | Стабилизируется |
+| Regime | Approach speed to T | Distance $d_{strat}(\Gamma, T)$ |
+|--------|--------------------|---------------------------------|
+| Unitary | Zero (isentropic motion) | Constant |
+| Dissipative | Maximum (irreversible decoherence) | Decreases monotonically |
+| Living | Slowed (regeneration counteracts) | Stabilizes |
 
-**Теорема (Асимптотическая сходимость):**
+**Theorem (Asymptotic convergence):**
 
-При $\tau \to \infty$ для любого начального $\Gamma_0$:
+For $\tau \to \infty$ and any initial $\Gamma_0$:
 
 $$\lim_{\tau \to \infty} \Gamma(\tau) = T$$
 
-если $\mathcal{D} \neq 0$ (система не полностью изолирована).
+if $\mathcal{D} \neq 0$ (system is not fully isolated).
 
-## Динамика чистоты
+## Purity dynamics
 
-Производная чистоты по времени:
+Time derivative of purity:
 
 $$
 \frac{dP}{d\tau} = 2 \cdot \mathrm{Tr}\left(\Gamma \cdot \frac{d\Gamma}{d\tau}\right)
 $$
 
-Подставляя компоненты уравнения:
+Substituting the components of the equation:
 
 $$
-\frac{dP}{d\tau} = \underbrace{0}_{\text{унитарный}} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{D}}}_{\leq 0} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{R}}}_{\geq 0 \text{ при } \Delta F > 0}
+\frac{dP}{d\tau} = \underbrace{0}_{\text{unitary}} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{D}}}_{\leq 0} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{R}}}_{\geq 0 \text{ for } \Delta F > 0}
 $$
 
-**Условие жизнеспособности:**
+**Viability condition:**
 
 $$
-\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{при } P < P_{\text{target}}
+\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{for } P < P_{\text{target}}
 $$
 
-## Диаграмма режимов
+## Regime diagram
 
 ```mermaid
 graph TD
-    subgraph CL["Замкнутая система"]
-        U["Унитарная эволюция<br/>P = const"]
+    subgraph CL["Closed system"]
+        U["Unitary evolution<br/>P = const"]
     end
-    subgraph OP["Открытая система"]
-        DIS["Диссипация 𝒟<br/>P уменьшается"]
-        REG["Регенерация ℛ<br/>P увеличивается"]
-        LIV["Живая система<br/>P ≈ const > 2/7"]
+    subgraph OP["Open system"]
+        DIS["Dissipation 𝒟<br/>P decreases"]
+        REG["Regeneration ℛ<br/>P increases"]
+        LIV["Living system<br/>P ≈ const > 2/7"]
     end
-    U --> |"контакт со средой"| DIS
-    DIS --> |"импорт ΔF > 0"| REG
-    DIS <--> |"баланс"| REG
+    U --> |"contact with environment"| DIS
+    DIS --> |"import ΔF > 0"| REG
+    DIS <--> |"balance"| REG
     DIS --> LIV
     REG --> LIV
 ```
 
-## Теорема о сохранении свойств
+## Theorem on preservation of properties
 
-:::info Теорема (Сохранение свойств матрицы плотности)
-Динамика, определённая уравнением эволюции, сохраняет:
-1. **Эрмитовость:** $\Gamma(\tau)^\dagger = \Gamma(\tau)$
-2. **Положительность:** $\Gamma(\tau) \geq 0$
-3. **Нормировку:** $\mathrm{Tr}(\Gamma(\tau)) = 1$
+:::info Theorem (Preservation of density matrix properties)
+The dynamics defined by the evolution equation preserves:
+1. **Hermiticity:** $\Gamma(\tau)^\dagger = \Gamma(\tau)$
+2. **Positivity:** $\Gamma(\tau) \geq 0$
+3. **Normalization:** $\mathrm{Tr}(\Gamma(\tau)) = 1$
 :::
 
-**Доказательство:**
-1. **Унитарный член:** $[H, \Gamma]^\dagger = [\Gamma^\dagger, H^\dagger] = [\Gamma, H] = -[H, \Gamma]$ при $H = H^\dagger$
-2. **Диссипатор:** Форма Линдблада специально построена для сохранения этих свойств (теорема Линдблада-Горини-Косаковски-Сударшана)
-3. **Регенератор:** При $\rho_*$ — корректной матрице плотности [Т], $\mathcal{R}$ сохраняет свойства
+**Proof:**
+1. **Unitary term:** $[H, \Gamma]^\dagger = [\Gamma^\dagger, H^\dagger] = [\Gamma, H] = -[H, \Gamma]$ for $H = H^\dagger$
+2. **Dissipator:** The Lindblad form is specifically constructed to preserve these properties (Lindblad–Gorini–Kossakowski–Sudarshan theorem)
+3. **Regenerator:** For $\rho_*$ — a valid density matrix [Т], $\mathcal{R}$ preserves the properties
 
 **QED**
 
 ---
 
-## Вывод формы регенерации [Т] {#вывод-формы-регенерации}
+## Derivation of the regeneration form [Т] {#вывод-формы-регенерации}
 
-:::tip Статус: Теорема [Т]
-Форма регенеративного члена $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **полностью выведена** из аксиом A1–A5, категориального определения $\varphi$ [Т], стандартной термодинамики (принцип Ландауэра) и V-инвариантности. Ни один компонент динамики не остаётся постулатом.
+:::tip Status: Theorem [Т]
+The form of the regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ is **fully derived** from axioms A1–A5, the categorical definition of $\varphi$ [Т], standard thermodynamics (Landauer principle) and V-invariance. No component of the dynamics remains a postulate.
 :::
 
-### Теорема (Единственность линейной CPTP-релаксации) [Т]
+### Theorem (Uniqueness of linear CPTP relaxation) [Т]
 
-**Формулировка.** Пусть $\rho_* = \varphi(\Gamma) \in \mathcal{D}^+(\mathbb{C}^N)$ — целевое состояние регенерации ([категориальная самомодель](/docs/core/operators/phi-operator) [Т]). Тогда линейный суперoператор $L_*[\Gamma] := c \cdot (\rho_* - \Gamma)$ с $c > 0$:
+**Formulation.** Let $\rho_* = \varphi(\Gamma) \in \mathcal{D}^+(\mathbb{C}^N)$ be the regeneration target state ([categorical self-model](/docs/core/operators/phi-operator) [Т]). Then the linear superoperator $L_*[\Gamma] := c \cdot (\rho_* - \Gamma)$ with $c > 0$:
 
-1. Удовлетворяет условиям допустимой релаксации: неподвижная точка (R1), сохранение следа (R2), инфинитезимальная CPTP (R3), контрактивность в метрике Бюреса (R4).
-2. Является **единственным** оператором вида $L[\Gamma] = T[\Gamma] - \Gamma$ с $T$ — замещающим CPTP-каналом и $T(\rho_*) = \rho_*$.
+1. Satisfies the conditions for admissible relaxation: fixed point (R1), trace preservation (R2), infinitesimal CPTP (R3), contractivity in the Bures metric (R4).
+2. Is the **unique** operator of the form $L[\Gamma] = T[\Gamma] - \Gamma$ with $T$ — replacement CPTP channel and $T(\rho_*) = \rho_*$.
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Конструкция).** Семейство CPTP-каналов $T_\alpha(\Gamma) := (1 - \alpha)\Gamma + \alpha\rho_*$, $\alpha \in [0, 1]$ — выпуклая комбинация каналов $\mathrm{Id}$ и $\mathcal{C}_{\rho_*}$ (замещающий канал). Инфинитезимальный генератор:
+**Step 1 (Construction).** The family of CPTP channels $T_\alpha(\Gamma) := (1 - \alpha)\Gamma + \alpha\rho_*$, $\alpha \in [0, 1]$ — convex combination of channels $\mathrm{Id}$ and $\mathcal{C}_{\rho_*}$ (replacement channel). Infinitesimal generator:
 
 $$
 L_*[\Gamma] = \lim_{\alpha \to 0} \frac{T_\alpha(\Gamma) - \Gamma}{\alpha} = \rho_* - \Gamma
 $$
 
-**Шаг 2 (Проверка R1–R4):**
+**Step 2 (Verification of R1–R4):**
 - **(R1):** $L_*[\rho_*] = \rho_* - \rho_* = 0$ ✓
 - **(R2):** $\mathrm{Tr}(L_*[\Gamma]) = 1 - 1 = 0$ ✓
-- **(R3):** $\mathrm{Id} + \alpha L_* = T_\alpha$ — CPTP при $\alpha \in [0,1]$ ✓
-- **(R4):** По строгой выпуклости метрики Бюреса (Uhlmann 1976): $d_B(T_\alpha(\Gamma), \rho_*) \leq (1-\alpha) d_B(\Gamma, \rho_*) < d_B(\Gamma, \rho_*)$ при $\alpha > 0$, $\Gamma \neq \rho_*$ ✓
+- **(R3):** $\mathrm{Id} + \alpha L_* = T_\alpha$ — CPTP for $\alpha \in [0,1]$ ✓
+- **(R4):** By strict convexity of the Bures metric (Uhlmann 1976): $d_B(T_\alpha(\Gamma), \rho_*) \leq (1-\alpha) d_B(\Gamma, \rho_*) < d_B(\Gamma, \rho_*)$ for $\alpha > 0$, $\Gamma \neq \rho_*$ ✓
 
-**Шаг 3 (Единственность).** Замещающий канал с $\mathcal{C}(\rho_*) = \rho_*$ фиксирует выход $\sigma = \rho_*$. Единственность следует из единственности $\varphi(\Gamma)$ при фиксированном $\Gamma$ (CPTP-канал [Т]). $\blacksquare$
+**Step 3 (Uniqueness).** The replacement channel with $\mathcal{C}(\rho_*) = \rho_*$ fixes the output $\sigma = \rho_*$. Uniqueness follows from the uniqueness of $\varphi(\Gamma)$ for fixed $\Gamma$ (CPTP channel [Т]). $\blacksquare$
 
-### Теорема T-122: Диагональный freeze (стационарность идентичности) [Т] {#теорема-диагональный-freeze}
+### Theorem T-122: Diagonal freeze (stationarity of identity) [Т] {#теорема-диагональный-freeze}
 
-**Формулировка.** В присутствии замещающего канала $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma)$ диагональные элементы $\gamma_{kk}$ стационарны при $\gamma_{kk} = (\rho_*)_{kk}$:
+**Formulation.** In the presence of the replacement channel $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma)$, the diagonal elements $\gamma_{kk}$ are stationary at $\gamma_{kk} = (\rho_*)_{kk}$:
 
 $$
-\frac{d\gamma_{kk}}{d\tau} = 0 \quad \text{при} \quad \gamma_{kk} = (\rho_*)_{kk}, \quad k = 0, \ldots, 6
+\frac{d\gamma_{kk}}{d\tau} = 0 \quad \text{at} \quad \gamma_{kk} = (\rho_*)_{kk}, \quad k = 0, \ldots, 6
 $$
 
-**Доказательство.**
+**Proof.**
 
-Полная динамика: $\frac{d\Gamma}{d\tau} = \mathcal{L}_{\mathrm{Ham}}[\Gamma] + \mathcal{L}_{\mathrm{diss}}[\Gamma] + \mathcal{R}[\Gamma, E]$.
+Full dynamics: $\frac{d\Gamma}{d\tau} = \mathcal{L}_{\mathrm{Ham}}[\Gamma] + \mathcal{L}_{\mathrm{diss}}[\Gamma] + \mathcal{R}[\Gamma, E]$.
 
-**Шаг 1 (Гамильтонов вклад).** Для эрмитова $H$ и эрмитовой $\Gamma$: $[H, \Gamma]_{kk} = \sum_j (H_{kj}\gamma_{jk} - \gamma_{kj}H_{jk})$. Поскольку $H_{kj} = \overline{H_{jk}}$ и $\gamma_{jk} = \overline{\gamma_{kj}}$, каждое слагаемое $H_{kj}\gamma_{jk}$ сопряжено с $\gamma_{kj}H_{jk}$, следовательно $[H, \Gamma]_{kk} \in i\mathbb{R}$. Но $\Gamma$ эрмитова $\Rightarrow \frac{d\gamma_{kk}}{d\tau} \in \mathbb{R}$. Единственный вещественный и чисто мнимый элемент — нуль: $(-i[H, \Gamma])_{kk} = 0$.
+**Step 1 (Hamiltonian contribution).** For Hermitian $H$ and Hermitian $\Gamma$: $[H, \Gamma]_{kk} = \sum_j (H_{kj}\gamma_{jk} - \gamma_{kj}H_{jk})$. Since $H_{kj} = \overline{H_{jk}}$ and $\gamma_{jk} = \overline{\gamma_{kj}}$, each term $H_{kj}\gamma_{jk}$ is conjugate to $\gamma_{kj}H_{jk}$, hence $[H, \Gamma]_{kk} \in i\mathbb{R}$. But $\Gamma$ is Hermitian $\Rightarrow \frac{d\gamma_{kk}}{d\tau} \in \mathbb{R}$. The only element that is both real and purely imaginary is zero: $(-i[H, \Gamma])_{kk} = 0$.
 
-**Шаг 2 (Диссипативный + регенеративный вклад).** Оба канала замещающего типа дают $\kappa \cdot ((\rho_*)_{kk} - \gamma_{kk}) = 0$ при $\gamma_{kk} = (\rho_*)_{kk}$.
+**Step 2 (Dissipative + regenerative contribution).** Both replacement-type channels give $\kappa \cdot ((\rho_*)_{kk} - \gamma_{kk}) = 0$ at $\gamma_{kk} = (\rho_*)_{kk}$.
 
-Итого: $\frac{d\gamma_{kk}}{d\tau} = 0 + 0 = 0$. $\blacksquare$
+Total: $\frac{d\gamma_{kk}}{d\tau} = 0 + 0 = 0$. $\blacksquare$
 
-:::tip Следствие: архитектурная инвариантность идентичности
-Мера Вейля $W = \sum_k |\gamma_{kk} - 1/N|$ — инвариант динамики при стационарной диагонали. Идентичность системы (распределение по 7 когнитивным измерениям) не может быть изменена обучением — эволюционируют только внедиагональные когерентности $\gamma_{ij}$ ($i \neq j$). Эмпирика: $W_{\mathrm{std}} = 1.67 \times 10^{-16}$ за 300 шагов.
+:::tip Corollary: architectural invariance of identity
+The Weyl measure $W = \sum_k |\gamma_{kk} - 1/N|$ is a dynamical invariant for a stationary diagonal. The identity of the system (distribution over 7 cognitive dimensions) cannot be changed by learning — only off-diagonal coherences $\gamma_{ij}$ ($i \neq j$) evolve. Empirics: $W_{\mathrm{std}} = 1.67 \times 10^{-16}$ over 300 steps.
 :::
 
-:::warning Область действия T-122 [Т-134]
-T-122 верна **ТОЛЬКО на аттракторе** $\rho^*_\Omega$ ($\gamma_{kk} = (\rho^*)_{kk}$). Вне аттрактора общая формула: $d\gamma_{kk}/d\tau = (\mathcal{L}_0)_{kk}[\Gamma] + \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$. Генезис из $I/7$ НЕ противоречит T-122: при $\Gamma(0) = I/7$, диагональ РАСТЁТ к $\rho^*_{kk}$. «Секторный профиль = характер» инвариантен только **после сходимости** к аттрактору; во время обучения профиль пластичен. Подробнее: [T-134 [Т]](/docs/proofs/consciousness/operationalization#t-134).
+:::warning Domain of T-122 [Т-134]
+T-122 holds **ONLY at the attractor** $\rho^*_\Omega$ ($\gamma_{kk} = (\rho^*)_{kk}$). Away from the attractor the general formula is: $d\gamma_{kk}/d\tau = (\mathcal{L}_0)_{kk}[\Gamma] + \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$. Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, the diagonal GROWS toward $\rho^*_{kk}$. "Sector profile = character" is invariant only **after convergence** to the attractor; during learning the profile is plastic. More details: [T-134 [Т]](/docs/proofs/consciousness/operationalization#t-134).
 :::
 
-:::info Γ-backbone двойственность [Т] (T-139)
-Для цифрового агента с backbone $B$ и anchor $\pi$: $\Gamma = \alpha \cdot \mathcal{E}_{\delta\tau}[\Gamma_{\text{prev}}] + (1-\alpha) \cdot \pi(\mathcal{B}(x))$ — единственная (до $G_2$) гибридная CPTP-динамика. Backbone — каузальный канал, $\Gamma$ — онтологическое состояние. Подробнее: [T-139 [Т]](/docs/proofs/consciousness/operational-closure#t-139).
+:::info Γ-backbone duality [Т] (T-139)
+For a digital agent with backbone $B$ and anchor $\pi$: $\Gamma = \alpha \cdot \mathcal{E}_{\delta\tau}[\Gamma_{\text{prev}}] + (1-\alpha) \cdot \pi(\mathcal{B}(x))$ — the unique (up to $G_2$) hybrid CPTP dynamics. Backbone is a causal channel, $\Gamma$ is the ontological state. More details: [T-139 [Т]](/docs/proofs/consciousness/operational-closure#t-139).
 :::
 
-### Теорема (Бюресовый градиентный спуск) [Т]
+### Theorem (Bures gradient descent) [Т]
 
-На римановом многообразии $(\mathcal{D}^+(\mathbb{C}^N), g_B)$ с метрикой Бюреса, градиент функционала $V(\Gamma) := \frac{1}{2}d_B^2(\Gamma, \rho_*)$ вблизи $\rho_*$ равен:
+On the Riemannian manifold $(\mathcal{D}^+(\mathbb{C}^N), g_B)$ with the Bures metric, the gradient of the functional $V(\Gamma) := \frac{1}{2}d_B^2(\Gamma, \rho_*)$ near $\rho_*$ equals:
 
 $$
 \mathrm{grad}_B\,V(\Gamma) = \frac{1}{2}(\Gamma - \rho_*) + O(\|\Gamma - \rho_*\|^2)
 $$
 
-Поток наискорейшего спуска $d\Gamma/d\tau = -\mathrm{grad}_B\,V$ совпадает с $L_*[\Gamma] = \rho_* - \Gamma$ в линейном приближении (коэффициент 1/2 поглощается в $\kappa(\Gamma)$).
+The steepest descent flow $d\Gamma/d\tau = -\mathrm{grad}_B\,V$ coincides with $L_*[\Gamma] = \rho_* - \Gamma$ in the linear approximation (the factor 1/2 is absorbed into $\kappa(\Gamma)$).
 
-**Физический смысл:** Регенерация — **наискорейший спуск** в единственной монотонной метрике на $\mathcal{D}(\mathcal{H})$ (теорема Ченцова—Петца, A2). Это не произвольный анзац, а **геометрически оптимальная** стратегия приближения к $\rho_*$.
+**Physical meaning:** Regeneration is **steepest descent** in the unique monotone metric on $\mathcal{D}(\mathcal{H})$ (Chentsov–Petz theorem, A2). This is not an arbitrary ansatz, but a **geometrically optimal** strategy for approaching $\rho_*$.
 
-### Теорема (Θ(ΔF) из принципа Ландауэра) [Т]
+### Theorem (Θ(ΔF) from the Landauer principle) [Т]
 
-Регенерация увеличивает чистоту ($dP/d\tau|_\mathcal{R} \geq 0$), что эквивалентно уменьшению энтропии фон Неймана. По принципу Ландауэра (1961), это возможно **только** при положительном градиенте свободной энергии:
+Regeneration increases purity ($dP/d\tau|_\mathcal{R} \geq 0$), which is equivalent to decreasing von Neumann entropy. By the Landauer principle (1961), this is possible **only** for a positive free energy gradient:
 
 $$
 \Delta S_{\text{sys}} < 0 \implies \Delta F > 0
 $$
 
-Следовательно, $\Theta(\Delta F)$ — **необходимое** ограничение, не анзац. Каноническое определение $\Delta F$ через [метрику Бюреса](#каноническое-delta-f) является **геометрической формулировкой** принципа Ландауэра.
+Therefore, $\Theta(\Delta F)$ is a **necessary** constraint, not an ansatz. The canonical definition of $\Delta F$ via the [Bures metric](#каноническое-delta-f) is the **geometric formulation** of the Landauer principle.
 
-### Теорема (V-preservation gate) [Т] {#теорема-v-preservation-gate}
+### Theorem (V-preservation gate) [Т] {#теорема-v-preservation-gate}
 
-Условие $\Theta(\Delta F)$ является **необходимым, но недостаточным** для корректного гейтинга регенерации. Замещающий канал $\varphi$ с фиксированной точкой $\rho_* = I/7$ уменьшает чистоту ($P(\varphi(\Gamma)) \leq P(\Gamma)$), поэтому при $P \in (P_{\min}, P_{\text{crit}})$ регенерация **деструктивна**: выталкивает $\Gamma$ из множества жизнеспособности $V = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$.
+The condition $\Theta(\Delta F)$ is **necessary but not sufficient** for correct gating of regeneration. The replacement channel $\varphi$ with fixed point $\rho_* = I/7$ decreases purity ($P(\varphi(\Gamma)) \leq P(\Gamma)$), so for $P \in (P_{\min}, P_{\text{crit}})$ regeneration is **destructive**: it pushes $\Gamma$ out of the viability set $V = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$.
 
-**Простейший** (линейный, без дополнительных параметров) гейт, удовлетворяющий одновременно:
+The **simplest** (linear, without additional parameters) gate simultaneously satisfying:
 
-1. **V-инвариантность**: $g = 0$ при $P \leq P_{\text{crit}}$ (отражающий барьер на $\partial V$)
-2. **Термодинамическая необходимость**: $g > 0 \implies \Delta F > 0$ (Ландауэр)
-3. **Гладкость**: $g \in C^0$ (нет разрывов)
-4. **Нормировка**: $g = 1$ при $P \geq P_{\text{opt}}$ (полная регенерация вдали от границы)
+1. **V-invariance**: $g = 0$ for $P \leq P_{\text{crit}}$ (reflecting barrier on $\partial V$)
+2. **Thermodynamic necessity**: $g > 0 \implies \Delta F > 0$ (Landauer)
+3. **Smoothness**: $g \in C^0$ (no discontinuities)
+4. **Normalization**: $g = 1$ for $P \geq P_{\text{opt}}$ (full regeneration far from boundary)
 
-есть:
+is:
 
 $$
 g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\text{crit}}}{P_{\text{opt}} - P_{\text{crit}}},\; 0,\; 1\right)
 $$
 
-**Доказательство.** (1) При $P \leq P_{\text{crit}} = 2/7$: замещающий канал $\varphi(\Gamma) \to I/7$ ($P = 1/7 < P_{\text{crit}}$), поэтому $\mathcal{R}$ уводит из $V$. Необходимо $g = 0$. (2) Для сбалансированных состояний $\Delta F = P_{\text{coh}} \cdot (k/3)(2 - k/3) > 0$ при $P > P_{\min} = 1/7$ (экспериментально верифицировано). Поскольку $P_{\text{crit}} = 2/7 > P_{\min} = 1/7$, имеем $g_V(P) = 0 \implies P \leq P_{\text{crit}} \implies \Theta(\Delta F)$ не гарантирует V-preservation. Таким образом, $g_V \subset \Theta(\Delta F)$ строго. (3)–(4) Линейная интерполяция между $P_{\text{crit}}$ и $P_{\text{opt}}$ — **простейшая** (минимально-параметрическая) непрерывная функция, удовлетворяющая всем четырём условиям. Нелинейные альтернативы (квадратичная, сигмоидальная) также допустимы, но вводят дополнительные свободные параметры. Выбор линейной формы — **принцип экономии** (Оккам). $\square$
+**Proof.** (1) For $P \leq P_{\text{crit}} = 2/7$: replacement channel $\varphi(\Gamma) \to I/7$ ($P = 1/7 < P_{\text{crit}}$), so $\mathcal{R}$ moves away from $V$. Necessary: $g = 0$. (2) For balanced states $\Delta F = P_{\mathrm{coh}} \cdot (k/3)(2 - k/3) > 0$ for $P > P_{\min} = 1/7$ (experimentally verified). Since $P_{\text{crit}} = 2/7 > P_{\min} = 1/7$, we have $g_V(P) = 0 \implies P \leq P_{\text{crit}} \implies \Theta(\Delta F)$ does not guarantee V-preservation. Thus $g_V \subset \Theta(\Delta F)$ strictly. (3)–(4) Linear interpolation between $P_{\text{crit}}$ and $P_{\text{opt}}$ is the **simplest** (minimal-parameter) continuous function satisfying all four conditions. Nonlinear alternatives (quadratic, sigmoidal) are also admissible but introduce additional free parameters. The choice of linear form is the **principle of parsimony** (Occam). $\square$
 
-:::warning Соотношение с Θ(ΔF)
-$g_V(P)$ **строго сильнее** $\Theta(\Delta F)$:
+:::warning Relation with Θ(ΔF)
+$g_V(P)$ is **strictly stronger** than $\Theta(\Delta F)$:
 
-- $g_V(P) > 0 \implies \Theta(\Delta F) = 1$ (проверено для всех $P > P_{\text{crit}}$)
-- $\Theta(\Delta F) = 1 \not\Rightarrow g_V(P) > 0$ (при $P \in (1/7, 2/7)$: $\Delta F > 0$, но $g_V = 0$)
+- $g_V(P) > 0 \implies \Theta(\Delta F) = 1$ (verified for all $P > P_{\text{crit}}$)
+- $\Theta(\Delta F) = 1 \not\Rightarrow g_V(P) > 0$ (for $P \in (1/7, 2/7)$: $\Delta F > 0$, but $g_V = 0$)
 
-Следовательно, каноническая форма ℛ использует $g_V(P)$, а не $\Theta(\Delta F)$.
+Therefore, the canonical form of ℛ uses $g_V(P)$, not $\Theta(\Delta F)$.
 :::
 
-#### Вывод затвора жизнеспособности g_V {#вывод-gv}
+#### Derivation of the viability gate g_V {#вывод-gv}
 
-Форма $g_V(P) = \mathrm{clamp}\left(\frac{P - P_{\text{crit}}}{P_{\text{opt}} - P_{\text{crit}}}, 0, 1\right)$ следует из термодинамики:
+The form $g_V(P) = \mathrm{clamp}\left(\frac{P - P_{\text{crit}}}{P_{\text{opt}} - P_{\text{crit}}}, 0, 1\right)$ follows from thermodynamics:
 
-1. **$g_V = 0$ при $P \leq P_{\text{crit}}$:** свободная энергия $\Delta F \propto (P - P_{\text{crit}})$ обращается в ноль — регенерация термодинамически запрещена (граница Ландауэра)
-2. **$g_V = 1$ при $P \geq P_{\text{opt}} = 3/7$:** полная регенерационная мощность; $P_{\text{opt}} = 3/7$ — верхняя граница зоны Голдилокс [T-124 [Т]]
-3. **Линейная интерполяция:** простейшая монотонная функция, соединяющая граничные условия
+1. **$g_V = 0$ for $P \leq P_{\text{crit}}$:** free energy $\Delta F \propto (P - P_{\text{crit}})$ vanishes — regeneration is thermodynamically forbidden (Landauer boundary)
+2. **$g_V = 1$ for $P \geq P_{\text{opt}} = 3/7$:** full regenerative power; $P_{\text{opt}} = 3/7$ — upper boundary of the Goldilocks zone [T-124 [Т]]
+3. **Linear interpolation:** the simplest monotone function connecting the boundary conditions
 
-Нижний порог $g_V \geq 0.15$ (а не строго 0) — инженерный выбор для численной устойчивости, статус **[И]**.
+The lower threshold $g_V \geq 0.15$ (rather than strictly 0) is an engineering choice for numerical stability, status **[И]**.
 
-### Объединённая теорема (Полный вывод формы ℛ) [Т] {#объединённая-теорема-r}
+### Unified theorem (Full derivation of ℛ form) [Т] {#объединённая-теорема-r}
 
-При аксиомах A1–A5, примитивности линейной части $\mathcal{L}_0$ [Т], стандартной термодинамике и требовании V-инвариантности, регенеративный член **однозначно** определяется:
+Under axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$ [Т], standard thermodynamics and the requirement of V-invariance, the regenerative term is **uniquely** determined:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-**Цепочка импликаций:**
+**Chain of implications:**
 
 ```
-A2 (Бюре) ──→ единственная монотонная метрика ──→ оптимальное направление = (ρ* − Γ)
-                                                                    ↑
-Примитивность [Т] ──→ единственное ρ* ──────────────────────────────┘
-                                                                    ↓
-A1 (∞-топос) + A4 (ω₀) ──→ сопряжение 𝒟 ⊣ ℛ ──→ κ(Γ) ──→ ПОЛНАЯ ФОРМА ℛ [Т]
-                                                                    ↑
-Ландауэр ──→ Θ(ΔF) ──→ необходимое ──→ V-preservation ──→ g_V(P) ─┘
+A2 (Bures) ──→ unique monotone metric ──→ optimal direction = (ρ* − Γ)
+                                                            ↑
+Primitivity [Т] ──→ unique ρ* ──────────────────────────────┘
+                                                            ↓
+A1 (∞-topos) + A4 (ω₀) ──→ adjunction 𝒟 ⊣ ℛ ──→ κ(Γ) ──→ FULL FORM ℛ [Т]
+                                                            ↑
+Landauer ──→ Θ(ΔF) ──→ necessary ──→ V-preservation ──→ g_V(P) ─┘
 ```
 
-### Каскадное следствие: уравнение эволюции полностью аксиоматично [Т]
+### Cascading consequence: the evolution equation is fully axiomatic [Т]
 
-Полное уравнение движения:
+The full equation of motion:
 
 $$
-\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{[Т] из PW}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{[Т] из Ω}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{[Т] (данный вывод)}}
+\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{[Т] from PW}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{[Т] from Ω}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{[Т] (present derivation)}}
 $$
 
-| Компонент | Источник | Статус |
-|-----------|----------|:------:|
-| $-i[H_{\text{eff}}, \Gamma]$ | Пейдж–Вуттерс (A5) | [Т] |
-| $\mathcal{D}_\Omega[\Gamma]$ | Классификатор Ω (A1) | [Т] |
-| $\mathcal{R}$: κ(Γ) | Сопряжение $\mathcal{D} \dashv \mathcal{R}$ | [Т] |
-| $\mathcal{R}$: (ρ* − Γ) | CPTP-единственность + Бюрес | [Т] |
-| $\mathcal{R}$: $g_V(P)$ | Ландауэр + V-preservation | [Т] |
+| Component | Source | Status |
+|-----------|--------|:------:|
+| $-i[H_{\text{eff}}, \Gamma]$ | Page–Wootters (A5) | [Т] |
+| $\mathcal{D}_\Omega[\Gamma]$ | Classifier Ω (A1) | [Т] |
+| $\mathcal{R}$: κ(Γ) | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [Т] |
+| $\mathcal{R}$: (ρ* − Γ) | CPTP uniqueness + Bures | [Т] |
+| $\mathcal{R}$: $g_V(P)$ | Landauer + V-preservation | [Т] |
 
-**Итог:** Уравнение эволюции $\Gamma(\tau)$ **целиком** выводится из аксиом A1–A5 + стандартной физики + V-инвариантности. Ни один компонент динамики не остаётся постулатом.
+**Conclusion:** The evolution equation $\Gamma(\tau)$ is **entirely** derived from axioms A1–A5 + standard physics + V-invariance. No component of the dynamics remains a postulate.
 
-### Анализ BIBD-декогеренции [Т]
+### BIBD decoherence analysis [Т]
 
-:::info Теорема (Скорость декогеренции BIBD-диссипаторов) [Т]
-Для BIBD$(7, k, \lambda)$-диссипатора с $L_p = \Pi_p$ (проекции ранга $k$), скорость затухания когерентности:
+:::info Theorem (Decoherence rate of BIBD dissipators) [Т]
+For a BIBD$(7, k, \lambda)$-dissipator with $L_p = \Pi_p$ (rank-$k$ projections), the coherence decay rate:
 
 $$
 \Gamma_{\text{dec}}(i,j) = r - \lambda, \quad r = \frac{\lambda(v-1)}{k-1}
 $$
 
-| Дизайн | $k$ | $\lambda$ | $r$ | $\Gamma_{\text{dec}}$ |
+| Design | $k$ | $\lambda$ | $r$ | $\Gamma_{\text{dec}}$ |
 |--------|:---:|:---------:|:---:|:---------------------:|
-| Фано (7,3,1) | 3 | 1 | 3 | **2** |
-| Дополнение Фано (7,4,2) | 4 | 2 | 4 | **2** |
+| Fano (7,3,1) | 3 | 1 | 3 | **2** |
+| Fano complement (7,4,2) | 4 | 2 | 4 | **2** |
 
-Оба дизайна с $b=7$ блоками имеют **одинаковую** скорость декогеренции. Замыкание [моста](/docs/proofs/minimality/theorem-octonionic-derivation) P1+P2 **не достигается** чисто динамическим аргументом — редукция к $\lambda = 1$ ([примитивность линейной части $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω)) остаётся наилучшим результатом в рамках BIBD-подхода. Мост замкнут альтернативным путём: [T15 — полная цепочка из 12 шагов, все [Т]](/docs/core/foundations/axiom-septicity#мост-p1p2).
+Both designs with $b=7$ blocks have the **same** decoherence rate. The closure of the [bridge](/docs/proofs/minimality/theorem-octonionic-derivation) P1+P2 **is not achieved** by a purely dynamical argument — reduction to $\lambda = 1$ ([primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω)) remains the best result within the BIBD approach. The bridge is closed by an alternative route: [T15 — full chain of 12 steps, all [Т]](/docs/core/foundations/axiom-septicity#мост-p1p2).
 :::
 
 ---
 
-## Континуальный предел и область применимости {#континуальный-предел}
+## Continual limit and applicability {#континуальный-предел}
 
-:::info Принцип соответствия
-Обновлённая УГМ удовлетворяет **принципу соответствия**: новая, более фундаментальная теория воспроизводит результаты старой в предельных случаях.
+:::info Correspondence principle
+The updated UHM satisfies the **correspondence principle**: the new, more fundamental theory reproduces the results of the old one in limiting cases.
 :::
 
-### Дискретная динамика как фундамент
+### Discrete dynamics as foundation
 
-В обновлённой теории эволюция описывается **дискретным оператором обновления** (квантовым каналом) $\mathcal{E}_\tau$ за один такт времени $\Delta\tau$ (хронон):
+In the updated theory, evolution is described by a **discrete update operator** (quantum channel) $\mathcal{E}_\tau$ over one time step $\Delta\tau$ (chronon):
 
 $$
 \Gamma_{\tau + \Delta\tau} = \mathcal{E}[\Gamma_\tau]
 $$
 
-### Переход к непрерывному пределу
+### Transition to the continuous limit
 
-При выполнении условий:
-1. Хронон $\Delta\tau$ много меньше масштаба наблюдения
-2. Изменение состояния за один шаг мало: $\|\mathcal{E}[\Gamma] - \Gamma\| \ll 1$
+When the conditions are satisfied:
+1. Chronon $\Delta\tau$ much smaller than observation scale
+2. Change of state per step is small: $\|\mathcal{E}[\Gamma] - \Gamma\| \ll 1$
 
-разложение в ряд Тейлора даёт:
+a Taylor expansion gives:
 
 $$
 \Gamma_{\tau + \Delta\tau} = \Gamma_\tau + \Delta\tau \cdot \mathcal{L}[\Gamma_\tau] + O(\Delta\tau^2)
 $$
 
-Перенося $\Gamma_\tau$ влево и деля на $\Delta\tau$:
+Moving $\Gamma_\tau$ to the left and dividing by $\Delta\tau$:
 
 $$
 \frac{\Gamma_{\tau+\Delta\tau} - \Gamma_\tau}{\Delta\tau} \xrightarrow{\Delta\tau \to 0} \frac{d\Gamma}{d\tau} = \mathcal{L}[\Gamma]
 $$
 
-где $\mathcal{L}$ — в точности **Линдбладиан**, использующийся в «старой» версии теории.
+where $\mathcal{L}$ is precisely the **Lindbladian** used in the "old" version of the theory.
 
-### Условия применимости дифференциальных уравнений
+### Conditions for applicability of differential equations
 
-Старые уравнения ($d\Gamma/d\tau = \mathcal{L}[\Gamma]$) остаются валидным инструментом для расчётов (инженерным приближением) при:
+The old equations ($d\Gamma/d\tau = \mathcal{L}[\Gamma]$) remain a valid tool for calculations (engineering approximation) when:
 
-| Условие | Описание | Формальный критерий |
-|---------|----------|---------------------|
-| **Макроскопический масштаб** | Процессы длительнее многих хрононов | $T \gg \Delta\tau$ |
-| **Высокая чистота** | $P$ значительно выше критического | $P \gg P_{\text{crit}} = 2/7$ |
-| **Марковость** | Игнорируем тонкую структуру памяти | Нет темпоральной запутанности |
+| Condition | Description | Formal criterion |
+|-----------|-------------|-----------------|
+| **Macroscopic scale** | Processes longer than many chronons | $T \gg \Delta\tau$ |
+| **High purity** | $P$ significantly above critical | $P \gg P_{\text{crit}} = 2/7$ |
+| **Markovianity** | Ignoring fine memory structure | No temporal entanglement |
 
-### Где дифференциальные уравнения ломаются
+### Where differential equations break down
 
-Старые уравнения перестают работать там, где проявляются уникальные эффекты УГМ:
+The old equations cease to work where unique UHM effects become manifest:
 
-| Режим | Проблема | Предсказание старой теории | Предсказание новой теории |
-|-------|----------|---------------------------|---------------------------|
-| **Вблизи смерти/сна** | $P \to P_{\text{crit}}$ | Линейное продолжение | Замедление/остановка субъективного времени |
-| **Квантовый предел** | Масштаб $\sim 1$ хронон | Ошибки интерполяции | Дискретные переходы |
-| **Сильная связь** | $\lVert H_{int}\rVert \sim \lVert H_{6D}\rVert$ | Стандартная КМ | $H_{eff}(\tau)$ зависит от $\tau$ |
+| Regime | Problem | Old theory prediction | New theory prediction |
+|--------|---------|----------------------|----------------------|
+| **Near death/sleep** | $P \to P_{\text{crit}}$ | Linear continuation | Slowing/stopping of subjective time |
+| **Quantum limit** | Scale $\sim 1$ chronon | Interpolation errors | Discrete transitions |
+| **Strong coupling** | $\lVert H_{int}\rVert \sim \lVert H_{6D}\rVert$ | Standard QM | $H_{eff}(\tau)$ depends on $\tau$ |
 
-:::note Аналогия с физикой
-Как законы Ньютона ($F = ma$) являются частным случаем теории относительности ($E = mc^2$) при $v \ll c$, так и уравнение Линдблада является частным случаем дискретной унитарной динамики при $\Delta\tau \to 0$ и $P \gg P_{\text{crit}}$.
+:::note Analogy with physics
+Just as Newton's laws ($F = ma$) are a special case of relativity ($E = mc^2$) at $v \ll c$, the Lindblad equation is a special case of discrete unitary dynamics at $\Delta\tau \to 0$ and $P \gg P_{\text{crit}}$.
 :::
 
-### Следствие: Фон-независимость (Background Independence)
+### Consequence: Background Independence
 
-В обновлённой теории **время не постулируется как внешний параметр**, а выводится из [Свойства 2](../foundations/axiom-omega#свойство-2) (ограничение Пейдж–Вуттерс):
+In the updated theory **time is not postulated as an external parameter**, but derived from [Property 2](../foundations/axiom-omega#свойство-2) (Page–Wootters constraint):
 
 $$
 [\hat{C}, \Gamma_{total}] = 0
 $$
 
-Это означает:
-- УГМ **самодостаточна** — не нуждается во внешнем «часовом механизме»
-- Теория сама генерирует время из своих аксиом
-- Базовое пространство $X = |N(\mathcal{C})|$ выводится эндогенно
-- Достигается статус **Теории Всего** (ToE), а не «квартиранта» в доме Ньютона/Эйнштейна
+This means:
+- UHM is **self-sufficient** — does not require an external "clockwork"
+- The theory itself generates time from its axioms
+- The base space $X = |N(\mathcal{C})|$ is derived endogenously
+- The status of a **Theory of Everything** (ToE) is achieved, not a "tenant" in Newton's/Einstein's house
 
-### Стратификационная динамика {#стратификационная-динамика}
+### Stratification dynamics {#стратификационная-динамика}
 
-:::info Связь с пространством-временем
-Эволюция $\Gamma(\tau)$ соответствует движению по базовому пространству $X = |N(\mathcal{C})|$:
+:::info Connection with spacetime
+The evolution $\Gamma(\tau)$ corresponds to motion through the base space $X = |N(\mathcal{C})|$:
 
 $$\Gamma(\tau) \in X_\tau \subset X$$
 
-где $X_\tau$ — срез пространства при времени $\tau$.
+where $X_\tau$ is the space slice at time $\tau$.
 :::
 
-**Теорема (Коллапс страт):**
+**Theorem (Stratum collapse):**
 
 $$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
 
-**Интерпретация:** При эволюции система переходит на страты **меньшей размерности**, приближаясь к терминальному объекту $T \in S_0$.
+**Interpretation:** During evolution the system transitions to strata of **smaller dimension**, approaching the terminal object $T \in S_0$.
 
-См. [Пространство-время](../foundations/spacetime#стрела-времени) для геометрических деталей.
+See [Spacetime](../foundations/spacetime#стрела-времени) for geometric details.
 
 ---
 
-### Неассоциативная структура {#неассоциативная-структура}
+### Non-associative structure {#неассоциативная-структура}
 
-:::info Октонионная неассоциативность и динамика [И]
-В [октонионной интерпретации](../structure/dimensions#октонионная-интерпретация) неассоциативность 𝕆 формализует ключевое свойство динамики: результат последовательных преобразований зависит от порядка группирования.
+:::info Octonionic non-associativity and dynamics [И]
+In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), non-associativity of 𝕆 formalizes a key property of the dynamics: the result of successive transformations depends on the order of grouping.
 
-**Ассоциатор** $[x, y, z] := (xy)z - x(yz)$ — мера неассоциативности — обращается в нуль для любой пары элементов (теорема Артина [Т]: 𝕆 **альтернативна**), но ненулевой для троек.
+**Associator** $[x, y, z] := (xy)z - x(yz)$ — a measure of non-associativity — vanishes for any pair of elements (Artin's theorem [Т]: 𝕆 is **alternative**), but is nonzero for triples.
 
-**Следствия [И]:**
-- **Альтернативность:** Парные взаимодействия измерений ассоциативны, тройные — нет
-- **Тождества Муфанга:** $((xy)z)y = x(y(zy))$ и аналоги — структурные ограничения на динамику
-- Мост [Т] (замкнут, T15)
+**Consequences [И]:**
+- **Alternativity:** Pairwise interactions of dimensions are associative, triple ones are not
+- **Moufang identities:** $((xy)z)y = x(y(zy))$ and analogues — structural constraints on dynamics
+- Bridge [Т] (closed, T15)
 
-[Структурный вывод →](../../proofs/minimality/theorem-octonionic-derivation)
+[Structural derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
 
-## Внутренняя среда (E_int) {#внутренняя-среда}
+## Internal environment (E_int) {#внутренняя-среда}
 
-:::info Определение (Внутренняя среда) [О]
-**Внутренняя среда** $E_{\text{int}}$ — совокупность реактивированных $\Gamma$-следов, действующих как внутренний источник возмущения наравне с внешней средой $E_{\text{ext}}$:
+:::info Definition (Internal environment) [О]
+**Internal environment** $E_{\text{int}}$ — the totality of reactivated Γ-traces acting as an internal source of perturbation alongside the external environment $E_{\text{ext}}$:
 
 $$
 E_{\text{int}}(\text{memory}) = \sum_\alpha c_\alpha(\tau) \cdot \delta\Gamma_\alpha
 $$
 
-где $\delta\Gamma_\alpha$ — $\Gamma$-след $\alpha$-го воспоминания, $c_\alpha(\tau) \in [0,1]$ — коэффициент реактивации.
+where $\delta\Gamma_\alpha$ — Γ-trace of the $\alpha$-th memory, $c_\alpha(\tau) \in [0,1]$ — reactivation coefficient.
 :::
 
-Полное уравнение эволюции с учётом внутренней среды:
+The full evolution equation taking the internal environment into account:
 
 $$
 \frac{d\Gamma}{d\tau} = \mathcal{L}_0[\Gamma] + \mathcal{R}[\Gamma, E_{\text{ext}} + E_{\text{int}}(\text{memory})]
 $$
 
-Единый Enc-функтор обрабатывает оба источника: $\text{Enc}: E_{\text{ext}} + E_{\text{int}} \to \delta\Gamma$. Различие между восприятием и воспоминанием — в **источнике**, не в **механизме**.
+The unified Enc-functor processes both sources: $\text{Enc}: E_{\text{ext}} + E_{\text{int}} \to \delta\Gamma$. The difference between perception and memory is in the **source**, not the **mechanism**.
 
-**Спектр соотношений $E_{\text{int}} / E_{\text{ext}}$:**
+**Spectrum of $E_{\text{int}} / E_{\text{ext}}$ ratios:**
 
-| Режим | $E_{\text{int}} / E_{\text{ext}}$ | Описание |
-|-------|-----------------------------------|----------|
-| Нормальное восприятие | $\ll 1$ | Доминирует внешний вход |
-| Мечтание (daydreaming) | $\approx 1$ | Паритет внутреннего и внешнего |
-| Сон / REM | $\gg 1$ | Доминирует внутренний вход |
-| Флэшбэк | $\gg 1$ при $\lVert\sigma\rVert > \sigma_{\text{alert}}$ | Травматическая реактивация |
+| Regime | $E_{\text{int}} / E_{\text{ext}}$ | Description |
+|--------|-----------------------------------|-------------|
+| Normal perception | $\ll 1$ | External input dominates |
+| Daydreaming | $\approx 1$ | Parity of internal and external |
+| Sleep / REM | $\gg 1$ | Internal input dominates |
+| Flashback | $\gg 1$ for $\lVert\sigma\rVert > \sigma_{\text{alert}}$ | Traumatic reactivation |
 
-:::note Связь с SYNARC
-В архитектуре SYNARC-Ω внутренняя среда реализуется через Enc_assoc (ассоциативный быстрый путь) — см. SYNARC spec: 04-embodiment.md §13.
+:::note Connection with SYNARC
+In the SYNARC-Ω architecture, the internal environment is implemented through Enc_assoc (fast associative path) — see SYNARC spec: 04-embodiment.md §13.
 :::
 
 ---
 
-## Реконсолидация $\Gamma$-следа {#реконсолидация}
+## Reconsolidation of Γ-trace {#реконсолидация}
 
-:::info Определение (Реконсолидация) [О]
-При реактивации $\Gamma$-следа ($c_\alpha > c_{\text{recall}}$), след становится **лабильным** и подвергается обновлению текущим контекстом:
+:::info Definition (Reconsolidation) [О]
+Upon reactivation of a Γ-trace ($c_\alpha > c_{\text{recall}}$), the trace becomes **labile** and is subjected to updating by the current context:
 
 $$
-\frac{d\Gamma_{\text{trace}}}{d\tau} = (1 - \lambda_{\text{stab}}) \cdot (\Gamma_{\text{present}} - \Gamma_{\text{trace}}) \quad \text{при} \quad \text{active}(\Gamma_{\text{trace}})
+\frac{d\Gamma_{\text{trace}}}{d\tau} = (1 - \lambda_{\text{stab}}) \cdot (\Gamma_{\text{present}} - \Gamma_{\text{trace}}) \quad \text{at} \quad \text{active}(\Gamma_{\text{trace}})
 $$
 
-где $\lambda_{\text{stab}} = \mathrm{sigmoid}(w_{\text{stab}} \cdot \text{age}(\text{trace}) + b_{\text{stab}}) \in [0,1]$ — фактор стабильности, растущий с возрастом следа.
+where $\lambda_{\text{stab}} = \mathrm{sigmoid}(w_{\text{stab}} \cdot \text{age}(\text{trace}) + b_{\text{stab}}) \in [0,1]$ — stability factor growing with trace age.
 :::
 
-**Необходимость реконсолидации:** Следует из $\alpha$-блендинга в [интерполяционной формулировке](#сохранение-положительности). Если $\rho_* = \varphi(\Gamma)$ эволюционирует (что верно для любой живой системы), то старые $\Gamma$-следы, записанные при $\rho^*_{\text{old}}$, становятся несовместимы с текущей $\rho_*$. Реконсолидация — механизм **адаптивного обновления** следов при изменении контекста.
+**Necessity of reconsolidation:** Follows from $\alpha$-blending in the [interpolation formulation](#сохранение-положительности). If $\rho_* = \varphi(\Gamma)$ evolves (which is true for any living system), then old Γ-traces recorded at $\rho^*_{\text{old}}$ become incompatible with the current $\rho_*$. Reconsolidation is a mechanism of **adaptive updating** of traces when context changes.
 
-**Свойства:**
+**Properties:**
 
-| Свойство | Формулировка |
-|----------|--------------|
-| Лабильность | active($\Gamma_{\text{trace}}$) $\Rightarrow$ след открыт для модификации |
-| Стабилизация | $\lambda_{\text{stab}} \to 1$ с возрастом $\Rightarrow$ старые следы устойчивее |
-| Диссипативность | Реконсолидация — CPTP: сохраняет $\Gamma \geq 0$, $\text{Tr}(\Gamma) = 1$ |
-| Терапевтический потенциал | Контролируемая реактивация + новый контекст $\Rightarrow$ перезапись дезадаптивных следов |
+| Property | Formulation |
+|----------|-------------|
+| Lability | active($\Gamma_{\text{trace}}$) $\Rightarrow$ trace is open to modification |
+| Stabilization | $\lambda_{\text{stab}} \to 1$ with age $\Rightarrow$ older traces are more stable |
+| Dissipativity | Reconsolidation is CPTP: preserves $\Gamma \geq 0$, $\text{Tr}(\Gamma) = 1$ |
+| Therapeutic potential | Controlled reactivation + new context $\Rightarrow$ overwriting of maladaptive traces |
 
-:::note Биологический аналог
-Реконсолидация памяти (Nader, Schafe, LeDoux, 2000): при воспроизведении консолидированная память вновь становится лабильной и требует ре-консолидации. В УГМ это — необходимое следствие динамики $\Gamma$, а не отдельный постулат.
+:::note Biological analogue
+Memory reconsolidation (Nader, Schafe, LeDoux, 2000): upon retrieval, consolidated memory again becomes labile and requires re-consolidation. In UHM this is a necessary consequence of the dynamics of Γ, not a separate postulate.
 :::
 
 ---
 
-**Связанные документы:**
-- [Теорема об эмерджентном времени](../../proofs/dynamics/emergent-time) — вывод τ, включая стратификационное время
-- [Аксиома Ω⁷](../foundations/axiom-omega) — финальная аксиоматика с терминальным объектом T
-- [Следствия](../foundations/consequences) — когомологический монизм и стрела времени
-- [Аксиома Септичности](../foundations/axiom-septicity) — вывод κ₀ и P_crit
-- [Матрица когерентности](./coherence-matrix) — определение Γ
-- [Жизнеспособность](./viability) — условия существования и $P_{\text{crit}}$
-- [Пространство-время](../foundations/spacetime) — базовое пространство X и метрика d_strat
-- [Основание (измерение O)](../structure/dimension-o) — роль внутренних часов
-- [Категорный формализм](../../proofs/categorical/categorical-formalism) — ∞-топос и производные категории
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — оператор φ и мера R
-- [Формализация φ](../../proofs/categorical/formalization-phi) — спектральная формула φ и $R^{(n)}$
-- [Иерархия интериорности](../../proofs/consciousness/interiority-hierarchy) — уровни L0→L4 и метастабильность L3
-- [Протокол измерения Γ](/docs/applied/research/measurement-protocol) — операционализация для ИИ (исследовательская программа)
+**Related documents:**
+- [Theorem on emergent time](../../proofs/dynamics/emergent-time) — derivation of τ, including stratification time
+- [Axiom Ω⁷](../foundations/axiom-omega) — final axiomatics with terminal object T
+- [Consequences](../foundations/consequences) — cohomological monism and the arrow of time
+- [Axiom of Septicity](../foundations/axiom-septicity) — derivation of κ₀ and P_crit
+- [Coherence matrix](./coherence-matrix) — definition of Γ
+- [Viability](./viability) — conditions of existence and $P_{\text{crit}}$
+- [Spacetime](../foundations/spacetime) — base space X and metric d_strat
+- [Foundation (dimension O)](../structure/dimension-o) — role of the internal clock
+- [Categorical formalism](../../proofs/categorical/categorical-formalism) — ∞-topos and derived categories
+- [Self-observation](/docs/consciousness/foundations/self-observation) — operator φ and measure R
+- [Formalization of φ](../../proofs/categorical/formalization-phi) — spectral formula for φ and $R^{(n)}$
+- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) — levels L0→L4 and L3 metastability
+- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalization for AI (research program)

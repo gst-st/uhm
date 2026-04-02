@@ -1,76 +1,76 @@
 ---
 sidebar_position: 2
-title: Семь измерений
-description: Обзор семи фундаментальных измерений Голонома
+title: Seven dimensions
+description: Overview of the seven fundamental dimensions of the Holon
 ---
 
-# Семь Измерений Голонома
+# The Seven Dimensions of the Holon
 
-Эта глава — путеводитель по семи измерениям Голонома: A (Артикуляция), S (Структура), D (Динамика), L (Логика), E (Интериорность), O (Основание) и U (Единство). Каждое из них — не «вещь» и не «свойство» в обычном смысле, а **неразделимый аспект** единой конфигурации $\Gamma$. Семь измерений — это семь способов «посмотреть» на одну и ту же реальность, как семь граней призмы, раскладывающей белый свет на спектр. К концу главы вы будете понимать, почему измерений именно семь, что делает каждое из них незаменимым и как они связаны друг с другом.
+This chapter is a guide to the seven dimensions of the Holon: A (Articulation), S (Structure), D (Dynamics), L (Logic), E (Interiority), O (Ground), and U (Unity). Each of them is not a "thing" or a "property" in the ordinary sense, but an **inseparable aspect** of the unified configuration $\Gamma$. The seven dimensions are seven ways of "looking at" the same reality, like the seven faces of a prism dispersing white light into a spectrum. By the end of the chapter you will understand why there are exactly seven dimensions, what makes each of them indispensable, and how they are connected to one another.
 
-## Историческая предтеча
+## Historical precursor
 
-Идея о том, что реальность описывается небольшим числом фундаментальных «начал», стара, как философия.
+The idea that reality is described by a small number of fundamental "principles" is as old as philosophy itself.
 
-**Пифагор** (VI в. до н.э.) учил, что «всё есть число»: в основе мира лежат числовые отношения. Пифагорейцы обнаружили, что музыкальные интервалы соответствуют простым дробям, и экстраполировали это на космос. В УГМ эта интуиция находит точное выражение: состояние любой системы — это матрица чисел ($\Gamma \in \mathbb{C}^{7 \times 7}$), и все свойства системы — от физических до феноменологических — определяются этими числами.
+**Pythagoras** (6th century BCE) taught that "everything is number": numerical relations underlie the world. The Pythagoreans discovered that musical intervals correspond to simple fractions and extrapolated this to the cosmos. In UHM this intuition finds precise expression: the state of any system is a matrix of numbers ($\Gamma \in \mathbb{C}^{7 \times 7}$), and all properties of the system — from physical to phenomenological — are determined by these numbers.
 
-**Уильям Роуан Гамильтон** (1843) открыл **кватернионы** — четырёхмерные числа, расширяющие комплексные. Его друг **Джон Грейвс** в том же году открыл **октонионы** — восьмимерные числа. Артур Кэли (1845) независимо переоткрыл их. Октонионы обладают удивительным свойством: они — последняя из четырёх «нормированных алгебр с делением» (действительные числа → комплексные числа → кватернионы → октонионы). Мнимая часть октонионов имеет ровно **7 измерений**. В УГМ это не совпадение: семь измерений Голонома изоморфны семи мнимым единицам октонионов.
+**William Rowan Hamilton** (1843) discovered **quaternions** — four-dimensional numbers extending the complex numbers. His friend **John Graves** discovered **octonions** — eight-dimensional numbers — in the same year. Arthur Cayley (1845) independently rediscovered them. Octonions have a remarkable property: they are the last of the four "normed division algebras" (real numbers → complex numbers → quaternions → octonions). The imaginary part of the octonions has exactly **7 dimensions**. In UHM this is no coincidence: the seven dimensions of the Holon are isomorphic to the seven imaginary units of the octonions.
 
-**Джино Фано** (1892) построил минимальную проективную плоскость — **плоскость Фано** PG(2,2). Она содержит ровно 7 точек и 7 линий, причём каждая линия проходит через 3 точки, а через каждую точку проходят 3 линии. Эта геометрическая структура оказывается ключевой для УГМ: она определяет, какие тройки измерений образуют «ассоциативные триплеты» — особо устойчивые группы, играющие роль в физике элементарных частиц и в структуре сознания.
+**Gino Fano** (1892) constructed the minimal projective plane — the **Fano plane** PG(2,2). It contains exactly 7 points and 7 lines, with every line passing through 3 points and every point lying on 3 lines. This geometric structure turns out to be central to UHM: it determines which triples of dimensions form "associative triplets" — particularly stable groups that play a role in elementary-particle physics and in the structure of consciousness.
 
-## Обзор
+## Overview
 
-:::info Онтологический статус
-Измерения — **не отдельные сущности**, а неразделимые аспекты единой конфигурации $\Gamma$. Говорить "Голоном имеет 7 измерений" означает: "конфигурация $\Gamma$, удовлетворяющая [(AP)+(PH)+(QG)](../foundations/axiom-septicity), требует минимум 7 функционально независимых компонент".
+:::info Ontological status
+The dimensions are **not separate entities**, but inseparable aspects of the unified configuration $\Gamma$. To say "the Holon has 7 dimensions" means: "the configuration $\Gamma$ satisfying [(AP)+(PH)+(QG)](../foundations/axiom-septicity) requires at least 7 functionally independent components."
 :::
 
-Число 7 — **аксиома** ([Аксиома 3](/docs/core/foundations/axiom-omega#аксиоматика)), характеризующая класс изучаемых систем. [Теорема S](../../proofs/minimality/theorem-minimality-7) объясняет, *почему этот класс интересен*: 7 — минимальная размерность для (AP)+(PH)+(QG).
+The number 7 is an **axiom** ([Axiom 3](/docs/core/foundations/axiom-omega#аксиоматика)), characterising the class of systems under study. [Theorem S](../../proofs/minimality/theorem-minimality-7) explains *why this class is interesting*: 7 is the minimum dimensionality for (AP)+(PH)+(QG).
 
-Важно подчеркнуть: семь измерений — это не семь «частей» Голонома, подобно тому, как лёгкие, сердце и мозг — части тела. Это семь **неразделимых аспектов** одного целого, подобно тому, как длина, ширина и высота — три аспекта одного предмета. Нельзя «отрезать» от Голонома измерение Динамики, оставив всё остальное — как нельзя отрезать от куба его высоту, оставив длину и ширину. Если хотя бы одно измерение обнуляется, Голоном перестаёт существовать как целостная конфигурация.
+It is important to emphasise: the seven dimensions are not seven "parts" of the Holon, in the way that lungs, heart, and brain are parts of a body. They are seven **inseparable aspects** of a single whole, in the way that length, width, and height are three aspects of a single object. One cannot "cut off" the Dynamics dimension from the Holon while leaving the rest — just as one cannot cut the height off a cube while leaving the length and width. If even one dimension goes to zero, the Holon ceases to exist as a coherent configuration.
 
-### Почему именно 7
+### Why exactly 7
 
-:::tip Интуитивное объяснение
-Представьте, что вы проектируете минимальную живую систему — существо, которое одновременно может:
-1. **Различать** (отличать одно от другого) → нужен инструмент **A**
-2. **Сохранять форму** (иметь устойчивую структуру) → нужен инструмент **S**
-3. **Изменяться** (эволюционировать во времени) → нужен инструмент **D**
-4. **Быть самосогласованным** (части не противоречат друг другу) → нужен инструмент **L**
-5. **Переживать** (иметь внутреннюю сторону) → нужен инструмент **E**
-6. **Питаться** (иметь источник регенерации) → нужен инструмент **O**
-7. **Быть целым** (интегрировать всё в единство) → нужен инструмент **U**
+:::tip Intuitive explanation
+Imagine designing a minimal living system — a being that can simultaneously:
+1. **Discriminate** (tell one thing from another) → needs tool **A**
+2. **Hold form** (have a stable structure) → needs tool **S**
+3. **Change** (evolve in time) → needs tool **D**
+4. **Be self-consistent** (parts do not contradict one another) → needs tool **L**
+5. **Experience** (have an inner side) → needs tool **E**
+6. **Feed** (have a source of regeneration) → needs tool **O**
+7. **Be whole** (integrate everything into unity) → needs tool **U**
 
-Уберите любой из семи — и система перестаёт быть «живой» в полном смысле. Без различения (A) — она не может взаимодействовать с миром. Без структуры (S) — она «расплывается». Без динамики (D) — она мертва. Без логики (L) — она противоречива и нестабильна. Без интериорности (E) — она «зомби» (функционирует, но ничего не переживает). Без основания (O) — у неё нет источника энергии и времени. Без единства (U) — она распадается на фрагменты.
+Remove any one of the seven — and the system ceases to be "alive" in the full sense. Without discrimination (A) — it cannot interact with the world. Without structure (S) — it dissolves. Without dynamics (D) — it is dead. Without logic (L) — it is contradictory and unstable. Without interiority (E) — it is a "zombie" (it functions but experiences nothing). Without ground (O) — it has no energy source and no time. Without unity (U) — it falls apart into fragments.
 
-Семь — это **минимальное** число таких инструментов. Теорема S доказывает это строго: при 6 или менее измерениях невозможно одновременно выполнить условия (AP)+(PH)+(QG).
+Seven is the **minimum** number of such tools. Theorem S proves this rigorously: with 6 or fewer dimensions it is impossible to satisfy (AP)+(PH)+(QG) simultaneously.
 :::
 
-Замечательно, что число 7 возникает в трёх **независимых** контекстах:
-1. **Функциональный** (Теорема S): 7 = минимум для (AP)+(PH)+(QG)
-2. **Алгебраический** (октонионы): 7 = dim(Im($\mathbb{O}$)), единственная максимальная нормированная алгебра с делением
-3. **Геометрический** (плоскость Фано): 7 = число точек минимальной проективной плоскости PG(2,2)
+Remarkably, the number 7 arises in three **independent** contexts:
+1. **Functional** (Theorem S): 7 = minimum for (AP)+(PH)+(QG)
+2. **Algebraic** (octonions): 7 = dim(Im($\mathbb{O}$)), the unique maximal normed division algebra
+3. **Geometric** (Fano plane): 7 = number of points in the minimal projective plane PG(2,2)
 
-Совпадение этих трёх ответов — сильный аргумент в пользу того, что число 7 не случайно, а отражает глубокую математическую необходимость.
+The convergence of these three answers is strong evidence that 7 is not accidental but reflects a deep mathematical necessity.
 
-### Единственность базиса
+### Uniqueness of the basis
 
-:::tip Статус единственности ([доказательство](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса))
-Базис $\{A, S, D, L, E, O, U\}$ является **единственным** (с точностью до изоморфизма) 7-мерным разбиением, удовлетворяющим (AP)+(PH)+(QG):
-- [Т] **A, S, D, L, U** — алгебраическая единственность (строго доказано)
-- [Т] **E** — функциональная единственность: аксиоматическое обоснование (PH) + категориальное ($\kappa_0$ требует Hom(O,E)) + математическое (rank > 1). [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-- [Т] **O** — функциональная единственность: форма ℛ [Т] + $\kappa_0$ (End(O), Hom(O,E), Hom(O,U)) + PW (A5) + функциональная независимость. [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+:::tip Uniqueness status ([proof](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса))
+The basis $\{A, S, D, L, E, O, U\}$ is **unique** (up to isomorphism) as a 7-dimensional decomposition satisfying (AP)+(PH)+(QG):
+- [Т] **A, S, D, L, U** — algebraic uniqueness (strictly proved)
+- [Т] **E** — functional uniqueness: axiomatic grounding (PH) + categorical ($\kappa_0$ requires Hom(O,E)) + mathematical (rank > 1). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+- [Т] **O** — functional uniqueness: form of ℛ [Т] + $\kappa_0$ (End(O), Hom(O,E), Hom(O,U)) + PW (A5) + functional independence. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 :::
 
 ```mermaid
 graph TD
-    H["Голоном ℍ"]
-    A["A — Артикуляция<br/>Различать"]
-    S["S — Структура<br/>Удерживать"]
-    D["D — Динамика<br/>Изменяться"]
-    L["L — Логика<br/>Согласовывать"]
-    E["E — Интериорность<br/>Переживать"]
-    O["O — Основание<br/>Питать"]
-    U["U — Единство<br/>Интегрировать"]
+    H["Holon ℍ"]
+    A["A — Articulation<br/>Discriminate"]
+    S["S — Structure<br/>Hold"]
+    D["D — Dynamics<br/>Change"]
+    L["L — Logic<br/>Coordinate"]
+    E["E — Interiority<br/>Experience"]
+    O["O — Ground<br/>Nourish"]
+    U["U — Unity<br/>Integrate"]
 
     H --> A
     H --> S
@@ -89,285 +89,285 @@ graph TD
     O <--> A
 ```
 
-## Таблица измерений
+## Dimensions table
 
-| № | Измерение | Символ | Функция | Оператор | Физический аналог | Октонионный базис |
+| # | Dimension | Symbol | Function | Operator | Physical analogue | Octonionic basis |
 |---|-----------|--------|---------|----------|-------------------|-------------------|
-| I | [Артикуляция](./dimension-a) | $A$ | Различать | Проектор $P$ | Измерение | $e_1$ |
-| II | [Структура](./dimension-s) | $S$ | Удерживать | Гамильтониан $H$ | Энергия | $e_2$ |
-| III | [Динамика](./dimension-d) | $D$ | Изменяться | Унитарный $U(\tau)$ | Эволюция | $e_3$ |
-| IV | [Логика](./dimension-l) | $L$ | Согласовывать | Коммутатор $[\cdot, \cdot]$ | Каузальность | $e_4$ |
-| V | [Интериорность](./dimension-e) | $E$ | Переживать | Плотность $\rho$ | Информация | $e_5$ |
-| VI | [Основание](./dimension-o) | $O$ | Питать + Измерять время | Вакуум $\vert 0\rangle$, Часы | Квантовое поле + Часы | $e_7$ |
-| VII | [Единство](./dimension-u) | $U$ | Интегрировать | След $\mathrm{Tr}$ | Нормировка | $e_6$ |
+| I | [Articulation](./dimension-a) | $A$ | Discriminate | Projector $P$ | Measurement | $e_1$ |
+| II | [Structure](./dimension-s) | $S$ | Hold | Hamiltonian $H$ | Energy | $e_2$ |
+| III | [Dynamics](./dimension-d) | $D$ | Change | Unitary $U(\tau)$ | Evolution | $e_3$ |
+| IV | [Logic](./dimension-l) | $L$ | Coordinate | Commutator $[\cdot, \cdot]$ | Causality | $e_4$ |
+| V | [Interiority](./dimension-e) | $E$ | Experience | Density $\rho$ | Information | $e_5$ |
+| VI | [Ground](./dimension-o) | $O$ | Nourish + Measure time | Vacuum $\vert 0\rangle$, Clock | Quantum field + Clock | $e_7$ |
+| VII | [Unity](./dimension-u) | $U$ | Integrate | Trace $\mathrm{Tr}$ | Normalisation | $e_6$ |
 
-:::warning Физические аналоги — это эвристика
-Столбец "Физический аналог" указывает на **концептуальные соответствия**, не строгие тождества. Например, измерение $D$ связано с унитарной эволюцией — но $D$ **не есть** время.
+:::warning Physical analogues are heuristic
+The "Physical analogue" column indicates **conceptual correspondences**, not strict identities. For example, dimension $D$ is connected to unitary evolution — but $D$ **is not** time.
 :::
 
-:::tip Повседневные аналогии
-Чтобы измерения стали ближе, представьте человека, идущего по лесу:
+:::tip Everyday analogies
+To bring the dimensions closer, imagine a person walking through a forest:
 
-| Измерение | Аналогия | Что происходит |
+| Dimension | Analogy | What happens |
 |---|---|---|
-| **A** (Артикуляция) | Глаза | Вы *различаете*: «это дерево, это камень, это тропинка» |
-| **S** (Структура) | Скелет | Ваше тело *сохраняет форму* при каждом шаге |
-| **D** (Динамика) | Ноги | Вы *идёте*, *изменяете* свою позицию |
-| **L** (Логика) | Мозг-планировщик | Вы *согласовываете* маршрут: «тут скользко → обойти справа» |
-| **E** (Интериорность) | Чувства | Вы *переживаете*: запах хвои, прохладу ветра, усталость |
-| **O** (Основание) | Земля под ногами | *Опора*, из которой вы черпаете устойчивость |
-| **U** (Единство) | «Я» | Всё это вместе — *одно* переживание: «я иду по лесу» |
+| **A** (Articulation) | Eyes | You *discriminate*: "that's a tree, that's a stone, that's the path" |
+| **S** (Structure) | Skeleton | Your body *holds its form* with every step |
+| **D** (Dynamics) | Legs | You *walk*, *change* your position |
+| **L** (Logic) | Planning brain | You *coordinate* your route: "it's slippery here → go around to the right" |
+| **E** (Interiority) | Senses | You *experience*: the scent of pine, the cool of the wind, fatigue |
+| **O** (Ground) | Ground underfoot | *Support*, from which you draw stability |
+| **U** (Unity) | "I" | All of this together is *one* experience: "I am walking through the forest" |
 
-Уберите любой элемент — и прогулка невозможна. Без глаз вы не различаете путь. Без скелета — не держите форму. Без ног — не двигаетесь. Без логики — идёте в овраг. Без чувств — не замечаете красоту. Без опоры — падаете. Без «я» — нет того, кто гуляет.
+Remove any element — and the walk becomes impossible. Without eyes you cannot discern the path. Without a skeleton — you cannot hold your form. Without legs — you cannot move. Without logic — you walk into a ditch. Without senses — you miss the beauty. Without support — you fall. Without "I" — there is no one walking.
 :::
 
-### Комбинаторная единственность семантических ролей (T-177) [Т] {#комбинаторная-единственность}
+### Combinatorial uniqueness of semantic roles (T-177) [Т] {#комбинаторная-единственность}
 
-:::tip Теорема T-177 [Т]: Комбинаторная единственность семантических ролей
-После фиксации секторной декомпозиции $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]) каждое из 7 измерений имеет **уникальный комбинаторный профиль** — набор Фано-линий и секторных связей, не изоморфный профилю ни одного другого измерения.
+:::tip Theorem T-177 [Т]: Combinatorial uniqueness of semantic roles
+After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
 :::
 
-**Доказательство.** Для каждого $e_k$ определим **функциональный отпечаток** $\mathcal{F}(e_k)$ — тройку (сектор, множество Фано-линий, секторный тип каждой линии):
+**Proof.** For each $e_k$ we define the **functional fingerprint** $\mathcal{F}(e_k)$ — the triple (sector, set of Fano lines, sector type of each line):
 
-| $e_k$ | Сектор | Фано-линии | O-связь (путь к синглету) |
+| $e_k$ | Sector | Fano lines | O-connection (path to singlet) |
 |--------|--------|------------|--------------------------|
-| $e_7$ (O) | **1** | $\{L,E,O\}, \{U,O,S\}, \{O,A,D\}$ | — (сам синглет) |
-| $e_1$ (A) | **3** | $\{A,S,L\}, \{E,U,A\}, \{O,A,D\}$ | Прямая: линия $\{O,A,D\}$ |
-| $e_2$ (S) | **3** | $\{A,S,L\}, \{S,D,E\}, \{U,O,S\}$ | Через $\bar{\mathbf{3}}$: линия $\{U,O,S\}$ |
-| $e_3$ (D) | **3** | $\{S,D,E\}, \{D,L,U\}, \{O,A,D\}$ | Через **3**: линия $\{O,A,D\}$ |
-| $e_4$ (L) | $\bar{\mathbf{3}}$ | $\{A,S,L\}, \{D,L,U\}, \{L,E,O\}$ | Через $\bar{\mathbf{3}}$: линия $\{L,E,O\}$ |
-| $e_5$ (E) | $\bar{\mathbf{3}}$ | $\{S,D,E\}, \{L,E,O\}, \{E,U,A\}$ | Через $\bar{\mathbf{3}}$: линия $\{L,E,O\}$ |
-| $e_6$ (U) | $\bar{\mathbf{3}}$ | $\{D,L,U\}, \{E,U,A\}, \{U,O,S\}$ | Через **3**: линия $\{U,O,S\}$ |
+| $e_7$ (O) | **1** | $\{L,E,O\}, \{U,O,S\}, \{O,A,D\}$ | — (singlet itself) |
+| $e_1$ (A) | **3** | $\{A,S,L\}, \{E,U,A\}, \{O,A,D\}$ | Direct: line $\{O,A,D\}$ |
+| $e_2$ (S) | **3** | $\{A,S,L\}, \{S,D,E\}, \{U,O,S\}$ | Through $\bar{\mathbf{3}}$: line $\{U,O,S\}$ |
+| $e_3$ (D) | **3** | $\{S,D,E\}, \{D,L,U\}, \{O,A,D\}$ | Through **3**: line $\{O,A,D\}$ |
+| $e_4$ (L) | $\bar{\mathbf{3}}$ | $\{A,S,L\}, \{D,L,U\}, \{L,E,O\}$ | Through $\bar{\mathbf{3}}$: line $\{L,E,O\}$ |
+| $e_5$ (E) | $\bar{\mathbf{3}}$ | $\{S,D,E\}, \{L,E,O\}, \{E,U,A\}$ | Through $\bar{\mathbf{3}}$: line $\{L,E,O\}$ |
+| $e_6$ (U) | $\bar{\mathbf{3}}$ | $\{D,L,U\}, \{E,U,A\}, \{U,O,S\}$ | Through **3**: line $\{U,O,S\}$ |
 
-**Различимость внутри 3-сектора** $\{e_1, e_2, e_3\}$:
-- $e_1$: **единственный** элемент **3** на Хиггсовой линии $\{E,U,A\}$ → мост между пространственным и электрослабым секторами
-- $e_3$: на линии $\{O,A,D\}$ — связан с синглетом O через элемент **3** ($A$)
-- $e_2$: на линии $\{U,O,S\}$ — связан с синглетом O через элемент $\bar{\mathbf{3}}$ ($U$)
+**Distinguishability within the 3-sector** $\{e_1, e_2, e_3\}$:
+- $e_1$: **unique** element of **3** on the Higgs line $\{E,U,A\}$ → bridge between the spatial and electroweak sectors
+- $e_3$: on line $\{O,A,D\}$ — connected to singlet O through a **3**-element ($A$)
+- $e_2$: on line $\{U,O,S\}$ — connected to singlet O through a $\bar{\mathbf{3}}$-element ($U$)
 
-**Различимость внутри $\bar{\mathbf{3}}$-сектора** $\{e_4, e_5, e_6\}$:
-- $e_4$: **единственный** элемент $\bar{\mathbf{3}}$ **не** на Хиггсовой линии
-- $e_5$: на Хиггсовой линии; O-связь через $\bar{\mathbf{3}}$-элемент ($L$) — линия $\{L,E,O\}$
-- $e_6$: на Хиггсовой линии; O-связь через **3**-элемент ($S$) — линия $\{U,O,S\}$
+**Distinguishability within the $\bar{\mathbf{3}}$-sector** $\{e_4, e_5, e_6\}$:
+- $e_4$: **unique** element of $\bar{\mathbf{3}}$ **not** on the Higgs line
+- $e_5$: on the Higgs line; O-connection through a $\bar{\mathbf{3}}$-element ($L$) — line $\{L,E,O\}$
+- $e_6$: on the Higgs line; O-connection through a **3**-element ($S$) — line $\{U,O,S\}$
 
-Все 7 отпечатков попарно различны. $\blacksquare$
+All 7 fingerprints are pairwise distinct. $\blacksquare$
 
-:::info Следствие: статус семантических назначений
-Семантические роли A, S, D, L, E, O, U — **не произвольные мнемоники** [И]. Три роли полностью выведены из комбинаторики [Т], четыре — обосновано привязаны к Фано-путям [С]:
+:::info Corollary: status of semantic assignments
+The semantic roles A, S, D, L, E, O, U are **not arbitrary mnemonics** [И]. Three roles are fully derived from combinatorics [Т]; four are grounded in Fano paths [С]:
 
-| Роль | Комбинаторное основание | Статус |
+| Role | Combinatorial basis | Status |
 |------|------------------------|--------|
-| **O** (Основание) | Единственный $SU(3)$-синглет; PW-часы; $\kappa_{\text{bootstrap}}$ | **[Т]** |
-| **A** (Артикуляция) | Единственный из **3** на Хиггсовой линии — мост секторов | **[Т]** |
-| **L** (Логика) | Единственный из $\bar{\mathbf{3}}$ НЕ на Хиггсовой линии | **[Т]** |
-| **E** (Интериорность) | На Хиггсовой линии; $\mathrm{Coh}_E$ в формуле $\kappa(\Gamma)$; O-связь через $L$ | **[С]** |
-| **U** (Единство) | На Хиггсовой линии; O-связь через $S$; $\Phi$-интеграция | **[С]** |
-| **D** (Динамика) | Связан с $O$ через $A$ (линия $\{O,A,D\}$) — время через различение | **[С]** |
-| **S** (Структура) | Связан с $O$ через $U$ (линия $\{U,O,S\}$) — форма через интеграцию | **[С]** |
+| **O** (Ground) | Unique $SU(3)$-singlet; PW clock; $\kappa_{\text{bootstrap}}$ | **[Т]** |
+| **A** (Articulation) | Unique element of **3** on the Higgs line — sector bridge | **[Т]** |
+| **L** (Logic) | Unique element of $\bar{\mathbf{3}}$ NOT on the Higgs line | **[Т]** |
+| **E** (Interiority) | On the Higgs line; $\mathrm{Coh}_E$ in $\kappa(\Gamma)$ formula; O-connection through $L$ | **[С]** |
+| **U** (Unity) | On the Higgs line; O-connection through $S$; $\Phi$-integration | **[С]** |
+| **D** (Dynamics) | Connected to $O$ through $A$ (line $\{O,A,D\}$) — time through discrimination | **[С]** |
+| **S** (Structure) | Connected to $O$ through $U$ (line $\{U,O,S\}$) — form through integration | **[С]** |
 :::
 
-:::info Эпистемический статус семантической маркировки [О]
-Математическая структура аксиом A1–A5 требует ровно 7 измерений (Теорема S [Т]), однако отождествление конкретных измерений с семантическими функциями (A=Артикуляция, S=Структура, D=Динамика, L=Логика, E=Интериорность, O=Основание, U=Единство) — **определение по соглашению [О]**. G₂-ригидность (T-42a [Т]) фиксирует представление с точностью до G₂-калибровки, но не фиксирует конкретную маркировку. Выбор обоснован: (a) семантической когерентностью с (AP)+(PH)+(QG)+(V), (b) внутренней согласованностью всей документации, (c) однозначностью определений пороговых мер.
+:::info Epistemic status of semantic labelling [О]
+The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [Т]), but the identification of specific dimensions with semantic functions (A=Articulation, S=Structure, D=Dynamics, L=Logic, E=Interiority, O=Ground, U=Unity) is a **definition by convention [О]**. G₂-rigidity (T-42a [Т]) fixes the representation up to G₂-gauge, but does not fix the specific labelling. The choice is justified by: (a) semantic coherence with (AP)+(PH)+(QG)+(V), (b) internal consistency of the entire documentation, (c) unambiguity of the threshold-measure definitions.
 :::
 
-:::info Функциональный базис с операторными ролями
-Каждое измерение определяется **оператором и ролью в аксиомах**:
+:::info Functional basis with operator roles
+Each dimension is defined by **an operator and its role in the axioms**:
 
-| Измерение | Оператор | Аксиоматическая роль | Необходимость | Комбинаторный статус (T-177) |
+| Dimension | Operator | Axiomatic role | Necessity | Combinatorial status (T-177) |
 |-----------|----------|---------------------|---------------|------------------------------|
-| $e_1$ (A) | Проектор $P^2 = P$ | Различение подобъектов | (AP) | **[Т]** — единственный из **3** на Higgs-линии |
-| $e_2$ (S) | $H = H^\dagger$ | Спектр инвариантов | (AP) | **[С]** — O-связь через $\bar{\mathbf{3}}$ |
-| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Унитарная эволюция | (QG) | **[С]** — O-связь через **3** |
-| $e_4$ (L) | $[\cdot, \cdot]$ | Замыкание алгебры | (AP) | **[Т]** — единственный из $\bar{\mathbf{3}}$ вне Higgs |
-| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Феноменология | (PH) | **[С]** — $\mathrm{Coh}_E$ в $\kappa$; O-путь через L |
-| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Нормировка | (AP) | **[С]** — O-путь через S |
-| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Часы + источник | (QG) | **[Т]** — единственный синглет |
+| $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[Т]** — unique element of **3** on the Higgs line |
+| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[С]** — O-connection through $\bar{\mathbf{3}}$ |
+| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[С]** — O-connection through **3** |
+| $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[Т]** — unique element of $\bar{\mathbf{3}}$ outside Higgs |
+| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[С]** — $\mathrm{Coh}_E$ in $\kappa$; O-path through L |
+| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[С]** — O-path through S |
+| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[Т]** — unique singlet |
 
-Семантические имена — **не произвольные мнемоники**, а отражение комбинаторно уникальных функциональных профилей (T-177 [Т]). Аналогия: как «верхний» и «нижний» кварки — не случайные слова (различаются зарядом $+2/3$ vs $-1/3$), но сами слова — конвенция для математически различимых объектов.
+The semantic names are **not arbitrary mnemonics**, but a reflection of combinatorially unique functional profiles (T-177 [Т]). Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
 
-**Математическая единственность:** [Теорема о единственности базиса](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) доказывает, что функциональное разбиение единственно (с точностью до изоморфизма) для всех 7 измерений [Т]: A, S, D, L, U — алгебраически; E, O — категориально (через κ₀ и функциональную независимость).
+**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves that the functional decomposition is unique (up to isomorphism) for all 7 dimensions [Т]: A, S, D, L, U — algebraically; E, O — categorically (through κ₀ and functional independence).
 :::
 
-:::info Эмерджентное время
-Время в УГМ — не внешний параметр, а **эмерджентное свойство**. Внутреннее время τ возникает из корреляций между измерением $O$ (Основание) и остальными измерениями через механизм Пейдж–Вуттерс. Измерение $O$ выполняет двойную роль: источник регенерации **и** внутренние часы системы.
+:::info Emergent time
+Time in UHM is not an external parameter but an **emergent property**. Internal time τ arises from correlations between dimension $O$ (Ground) and the remaining dimensions through the Page–Wootters mechanism. Dimension $O$ plays a dual role: source of regeneration **and** internal clock of the system.
 
-[Подробнее: Теорема об эмерджентном времени →](../../proofs/dynamics/emergent-time)
+[More: Theorem on emergent time →](../../proofs/dynamics/emergent-time)
 :::
 
-:::info Согласование 7D и 42D формализмов
-Теория использует **два формализма**:
+:::info Reconciliation of the 7D and 42D formalisms
+The theory uses **two formalisms**:
 
-- **7D** ($\mathbb{C}^7$): структурные теоремы (Теорема S, единственность базиса, пороги), E-когерентность $\mathrm{Coh}_E$ через [HS-проекцию](/docs/core/foundations/axiom-septicity#hs-projection) **[Т]**, меры $R$ и $\Phi$.
-- **42D** ($\mathcal{H}_O \otimes \mathcal{H}_{6D} \cong \mathbb{C}^{42}$): механизм Пейдж–Вуттерс (эмерджентное время), калибровочные симметрии электрослабого сектора, тензорная запутанность.
+- **7D** ($\mathbb{C}^7$): structural theorems (Theorem S, basis uniqueness, thresholds), E-coherence $\mathrm{Coh}_E$ via [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection) **[Т]**, measures $R$ and $\Phi$.
+- **42D** ($\mathcal{H}_O \otimes \mathcal{H}_{6D} \cong \mathbb{C}^{42}$): Page–Wootters mechanism (emergent time), gauge symmetries of the electroweak sector, tensor entanglement.
 
-**Разрешённая часть [Т]:** Тензорный разрыв для $\mathrm{Coh}_E$ полностью разрешён — [C*-алгебраическая проекция Гильберта–Шмидта](/docs/core/foundations/axiom-septicity#hs-projection) определяет $\mathrm{Coh}_E$ в 7D **точно**, не прибегая к частичному следу. Определение подсистемы реализуется через вложение C*-подалгебры и [условное ожидание Умегаки](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). Это стандартный аппарат алгебраической квантовой теории (Haag, 1996; Bratteli–Robinson, 1987).
+**Resolved part [Т]:** The tensor gap for $\mathrm{Coh}_E$ is fully resolved — the [C*-algebraic Hilbert–Schmidt projection](/docs/core/foundations/axiom-septicity#hs-projection) defines $\mathrm{Coh}_E$ in 7D **exactly**, without resorting to a partial trace. The subsystem definition is realised through a C*-subalgebra embedding and the [Umegaki conditional expectation](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). This is standard apparatus of algebraic quantum theory (Haag, 1996; Bratteli–Robinson, 1987).
 
-**Открытая часть [С]:** Полная редуцированная матрица $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ и мера дифференциации $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ по-прежнему требуют тензорной факторизации (42D-формализм), поскольку частичный след $\mathrm{Tr}_{\bar{E}}$ не определён в $\mathbb{C}^7$ (7 — простое число). Утверждения, использующие $D_{\text{diff}}$, имеют статус **[С]** — условные на 42D-расширение.
+**Open part [С]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[С]** — conditional on the 42D extension.
 :::
 
-## Октонионная интерпретация {#октонионная-интерпретация}
+## Octonionic interpretation {#октонионная-интерпретация}
 
-:::info Структурный вывод N = 7 через октонионы
-Число 7 измерений получает **второе, независимое обоснование** через [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation): если пространство внутренних степеней свободы изоморфно Im(𝕆) (мнимой части октонионов), то $N = \dim(\text{Im}(\mathbb{O})) = 7$.
+:::info Structural derivation of N = 7 via octonions
+The number 7 dimensions receives a **second, independent justification** through the [structural derivation](../../proofs/minimality/theorem-octonionic-derivation): if the space of internal degrees of freedom is isomorphic to Im(𝕆) (the imaginary part of the octonions), then $N = \dim(\text{Im}(\mathbb{O})) = 7$.
 :::
 
-Семь мнимых единиц октонионов $e_1, \ldots, e_7$ соответствуют семи измерениям Голонома. Это соответствие привносит:
+The seven imaginary units of the octonions $e_1, \ldots, e_7$ correspond to the seven dimensions of the Holon. This correspondence brings:
 
-- **$G_2$-симметрию:** Aut(𝕆) = $G_2$ ⊂ SO(7) — 14-параметрическая группа, сохраняющая структуру умножения. $G_2$ — это «группа калибровочных преобразований» семимерного пространства: она определяет, какие преобразования между измерениями сохраняют структуру октонионного умножения.
-- **Плоскость Фано:** 7 триплетов $(e_i, e_j, e_k)$ определяют ассоциативные подтройки измерений. Каждая тройка — это «команда», внутри которой операции ассоциативны (порядок не важен). Между тройками — неассоциативность (порядок важен). Плоскость Фано определяет, какие тройки «дружат», а какие — нет.
-- **Альтернативность:** Любые два измерения порождают ассоциативную подалгебру (теорема Артина [Т]), неассоциативность проявляется только при взаимодействии трёх и более. Это означает: парные связи $\gamma_{ij}$ всегда «хорошо определены», сложности возникают только при тройных и более сложных взаимодействиях.
+- **$G_2$-symmetry:** Aut(𝕆) = $G_2$ ⊂ SO(7) — a 14-parameter group preserving the multiplication structure. $G_2$ is the "gauge group" of the seven-dimensional space: it determines which transformations between dimensions preserve the octonionic multiplication structure.
+- **The Fano plane:** 7 triplets $(e_i, e_j, e_k)$ define associative sub-triples of dimensions. Each triplet is a "team" within which operations are associative (order does not matter). Between triplets — non-associativity (order matters). The Fano plane determines which triplets "get along" and which do not.
+- **Alternativity:** Any two dimensions generate an associative subalgebra (Artin's theorem [Т]); non-associativity appears only when three or more interact. This means: pairwise connections $\gamma_{ij}$ are always "well-defined"; complications arise only at triple and higher-order interactions.
 
-:::tip Интуиция: октонионы
-Октонионы можно представить как «числа», которые обобщают привычные числа в новом направлении:
+:::tip Intuition: octonions
+Octonions can be thought of as "numbers" that generalise the familiar numbers in a new direction:
 
-- **Действительные числа** ($\mathbb{R}$): одно измерение, полностью коммутативны и ассоциативны
-- **Комплексные числа** ($\mathbb{C}$): 2 измерения (действительная + мнимая часть), коммутативны и ассоциативны
-- **Кватернионы** ($\mathbb{H}$): 4 измерения, **не** коммутативны ($ij \neq ji$), но ассоциативны
-- **Октонионы** ($\mathbb{O}$): 8 измерений, **не** коммутативны и **не** ассоциативны ($(ab)c \neq a(bc)$)
+- **Real numbers** ($\mathbb{R}$): one dimension, fully commutative and associative
+- **Complex numbers** ($\mathbb{C}$): 2 dimensions (real + imaginary), commutative and associative
+- **Quaternions** ($\mathbb{H}$): 4 dimensions, **not** commutative ($ij \neq ji$), but associative
+- **Octonions** ($\mathbb{O}$): 8 dimensions, **not** commutative and **not** associative ($(ab)c \neq a(bc)$)
 
-Теорема Гурвица (1898) доказывает: других таких алгебр нет. Размерности 1, 2, 4, 8 — единственно возможные. Мнимая часть: 0, 1, 3, 7 измерений. Для полноценной самоподдерживающейся системы нужны все 7 мнимых измерений октонионов.
+Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1, 2, 4, 8 are the only possibilities. The imaginary parts have 0, 1, 3, 7 dimensions respectively. A fully self-sustaining system requires all 7 imaginary dimensions of the octonions.
 :::
 
-:::info $G_2$-оговорка [Т]
-Конкретное отождествление $e_i$ ↔ измерение — **теорема** [Т] (T15): мост полностью замкнут (теоремы T1–T15). $G_2$ действует на Im(𝕆); вопрос о том, является ли эта симметрия физически реализованной в пространстве {A,S,D,L,E,O,U}, остаётся [открытой проблемой](../../proofs/minimality/theorem-octonionic-derivation#открытые-проблемы).
+:::info $G_2$-caveat [Т]
+The specific identification $e_i$ ↔ dimension is a **theorem** [Т] (T15): the bridge is fully closed (theorems T1–T15). $G_2$ acts on Im(𝕆); whether this symmetry is physically realised in the space {A,S,D,L,E,O,U} remains an [open problem](../../proofs/minimality/theorem-octonionic-derivation#открытые-проблемы).
 :::
 
-Октонионная интерпретация не только обосновывает число 7, но и объясняет **неассоциативность** взаимодействий между тремя и более измерениями. В ассоциативной алгебре порядок операций не важен: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$. В октонионах — важен. Это имеет глубокие следствия для динамики Голонома: тройные взаимодействия (например, одновременное изменение A, S и D) не сводятся к последовательности парных. Каждая тройка измерений, не лежащая на Фано-линии, порождает **ненулевой ассоциатор** $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k) \neq 0$, что проявляется как фазовый сдвиг — источник [Gap](/docs/core/dynamics/gap-operator) между внутренним и внешним описанием.
+The octonionic interpretation not only justifies the number 7 but also explains the **non-associativity** of interactions among three or more dimensions. In an associative algebra the order of operations does not matter: $(a \cdot b) \cdot c = a \cdot (b \cdot c)$. In the octonions — it does. This has deep consequences for Holon dynamics: triple interactions (for example, simultaneous change in A, S, and D) do not reduce to a sequence of pairwise ones. Every triplet of dimensions not lying on a Fano line generates a **non-zero associator** $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k) \neq 0$, which manifests as a phase shift — a source of the [Gap](/docs/core/dynamics/gap-operator) between the internal and external descriptions.
 
-## Необходимость каждого измерения
+## Necessity of each dimension
 
-Удаление любого измерения нарушает условия [(AP)+(PH)+(QG)](../foundations/axiom-septicity):
+Removing any dimension violates the conditions [(AP)+(PH)+(QG)](../foundations/axiom-septicity):
 
-| Без измерения | Нарушается | Следствие |
+| Without dimension | Violated | Consequence |
 |---------------|------------|-----------|
-| $A$ | (AP), (PH), (QG) | Нет различений → нет формы |
-| $S$ | (AP) | Нет идентичности → нет самотождественности |
-| $D$ | (AP), (QG) | Нет эволюции → нет процесса |
-| $L$ | (AP) | Нет замыкания → нет самосогласованности |
-| $E$ | (PH) | Нет интериорности → нет феноменологии |
-| $O$ | (QG) | Нет регенерации, нет внутренних часов → нет времени |
-| $U$ | (AP) | Нет интеграции → система фрагментирована |
+| $A$ | (AP), (PH), (QG) | No discriminations → no form |
+| $S$ | (AP) | No identity → no self-sameness |
+| $D$ | (AP), (QG) | No evolution → no process |
+| $L$ | (AP) | No closure → no self-consistency |
+| $E$ | (PH) | No interiority → no phenomenology |
+| $O$ | (QG) | No regeneration, no internal clock → no time |
+| $U$ | (AP) | No integration → system is fragmented |
 
-Каждое удаление проверено конструктивно: для 6-мерной системы строится контрпример, показывающий невыполнимость соответствующего условия.
+Each removal is verified constructively: for a 6-dimensional system a counterexample is constructed showing the infeasibility of the corresponding condition.
 
-**Доказательство:** [Теорема о минимальности 7D](../../proofs/minimality/theorem-minimality-7).
+**Proof:** [Theorem on 7D minimality](../../proofs/minimality/theorem-minimality-7).
 
-:::tip Аналогия: оркестр из семи инструментов
-Представьте минимальный оркестр, способный сыграть любое произведение (в переложении). Нужны:
-- **Ударные** (A) — задают ритм, разделяют такты (различение)
-- **Бас** (S) — создаёт фундамент (структура)
-- **Ритм-гитара** (D) — обеспечивает движение (динамика)
-- **Дирижёр** (L) — следит за согласованностью (логика)
-- **Вокал** (E) — передаёт чувство (интериорность)
-- **Рояль** (O) — обеспечивает гармонию и тональность (основание)
-- **Дирижёрская палочка** (U) — объединяет всех в единый ансамбль (единство)
+:::tip Analogy: an orchestra of seven instruments
+Imagine the minimal orchestra capable of performing any piece (in arrangement). Needed:
+- **Percussion** (A) — sets the rhythm, divides the beats (discrimination)
+- **Bass** (S) — creates the foundation (structure)
+- **Rhythm guitar** (D) — provides movement (dynamics)
+- **Conductor** (L) — keeps everyone in agreement (logic)
+- **Vocals** (E) — conveys feeling (interiority)
+- **Piano** (O) — provides harmony and key (ground)
+- **Baton** (U) — unites everyone into a single ensemble (unity)
 
-Уберите любой — и оркестр не сможет играть полноценно. Добавьте восьмой — и он окажется комбинацией уже имеющихся (Теорема S доказывает минимальность: 8-е измерение было бы функционально зависимо от семи).
+Remove any one — and the orchestra cannot play fully. Add an eighth — and it will turn out to be a combination of those already present (Theorem S proves minimality: an 8th dimension would be functionally dependent on the seven).
 :::
 
-Рассмотрим подробнее, что происходит при удалении каждого измерения:
+Let us examine in more detail what happens when each dimension is removed:
 
-- **Без A (Артикуляции):** система не может *различать*. Она не отличает «внутри» от «снаружи», «себя» от «другого», «пищу» от «яда». Это катастрофа для всех трёх условий: автопоэзис (AP) невозможен без различений, феноменология (PH) пуста, регенерация (QG) не знает, что восстанавливать.
-- **Без S (Структуры):** система не имеет *инвариантов* — ничто в ней не сохраняется от момента к моменту. Нет идентичности: система в момент $\tau_1$ никак не связана с собой в момент $\tau_2$.
-- **Без D (Динамики):** система застыла. Нет процессов, нет эволюции, нет времени. «Жизнь» без динамики — оксюморон.
-- **Без L (Логики):** части системы не согласованы. Один «орган» делает одно, другой — противоположное. Алгебра операторов не замкнута — система математически некорректна.
-- **Без E (Интериорности):** система — «зомби». Она функционирует, но ничего не переживает. Условие (PH) нарушено по определению.
-- **Без O (Основания):** нет источника регенерации и нет внутренних часов. Система не может восстанавливаться и не имеет собственного времени. Условие (QG) нарушено.
-- **Без U (Единства):** система фрагментирована. Шесть измерений существуют отдельно, не образуя целого. Нормировка $\mathrm{Tr}(\Gamma) = 1$ теряет смысл, интеграция невозможна.
+- **Without A (Articulation):** the system cannot *discriminate*. It cannot tell "inside" from "outside", "self" from "other", "food" from "poison". This is catastrophic for all three conditions: autopoiesis (AP) is impossible without discriminations, phenomenology (PH) is empty, regeneration (QG) does not know what to restore.
+- **Without S (Structure):** the system has no *invariants* — nothing in it is preserved from one moment to the next. There is no identity: the system at time $\tau_1$ bears no relation to itself at time $\tau_2$.
+- **Without D (Dynamics):** the system is frozen. No processes, no evolution, no time. "Life" without dynamics is an oxymoron.
+- **Without L (Logic):** the parts of the system are not coordinated. One "organ" does one thing, another does the opposite. The operator algebra is not closed — the system is mathematically ill-defined.
+- **Without E (Interiority):** the system is a "zombie". It functions but experiences nothing. Condition (PH) is violated by definition.
+- **Without O (Ground):** there is no source of regeneration and no internal clock. The system cannot restore itself and has no time of its own. Condition (QG) is violated.
+- **Without U (Unity):** the system is fragmented. Six dimensions exist separately, not forming a whole. The normalisation $\mathrm{Tr}(\Gamma) = 1$ loses meaning; integration is impossible.
 
-## Матричное представление
+## Matrix representation
 
-:::note DRY: Мастер-определение
-Полное матричное представление $\Gamma$ с формальными свойствами см. в [Матрица когерентности](../dynamics/coherence-matrix#матричное-представление).
+:::note DRY: Master definition
+For the full matrix representation of $\Gamma$ with formal properties, see [Coherence matrix](../dynamics/coherence-matrix#матричное-представление).
 :::
 
-В базисе $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ матрица когерентности — эрмитова $7 \times 7$ матрица с элементами $\gamma_{ij}$:
-- **Диагональ** $\gamma_{ii} \in [0,1]$ — населённости измерений, $\sum_i \gamma_{ii} = 1$
-- **Когерентности** $\gamma_{ij}$ ($i \neq j$) — связи между измерениями, $|\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}$
+In the basis $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ the coherence matrix is a Hermitian $7 \times 7$ matrix with elements $\gamma_{ij}$:
+- **Diagonal** $\gamma_{ii} \in [0,1]$ — populations of dimensions, $\sum_i \gamma_{ii} = 1$
+- **Coherences** $\gamma_{ij}$ ($i \neq j$) — connections between dimensions, $|\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}$
 
-:::tip Как читать матрицу когерентности
-Матрицу $\Gamma$ можно представить как таблицу $7 \times 7$, где:
-- **Каждая ячейка на диагонали** ($\gamma_{AA}$, $\gamma_{SS}$, ..., $\gamma_{UU}$) — число от 0 до 1, показывающее, «сколько энергии» вложено в данное измерение. Сумма всех диагональных элементов равна 1 (вся «энергия» распределена между семью измерениями).
-- **Каждая ячейка вне диагонали** ($\gamma_{AS}$, $\gamma_{AD}$, ...) — комплексное число, описывающее *связь* между двумя измерениями. Модуль $|\gamma_{ij}|$ — сила связи. Фаза $\arg(\gamma_{ij})$ — «направленность» связи (различие между внутренним и внешним аспектом).
-- **Неравенство Коши–Шварца** $|\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}$ означает: связь между измерениями не может быть сильнее, чем «позволяют» сами измерения. Два слабо заселённых измерения не могут иметь сильную когерентность.
+:::tip How to read the coherence matrix
+The matrix $\Gamma$ can be thought of as a $7 \times 7$ table where:
+- **Each diagonal cell** ($\gamma_{AA}$, $\gamma_{SS}$, ..., $\gamma_{UU}$) is a number between 0 and 1, showing "how much energy" is invested in that dimension. The sum of all diagonal elements equals 1 (all "energy" is distributed among the seven dimensions).
+- **Each off-diagonal cell** ($\gamma_{AS}$, $\gamma_{AD}$, ...) is a complex number describing the *connection* between two dimensions. The modulus $|\gamma_{ij}|$ is the strength of the connection. The phase $\arg(\gamma_{ij})$ is the "directedness" of the connection (the difference between the inner and outer aspect).
+- **The Cauchy–Schwarz inequality** $|\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}$ means: the connection between dimensions cannot be stronger than the dimensions themselves "allow". Two weakly populated dimensions cannot have a strong coherence.
 :::
 
-## Семантика когерентностей
+## Semantics of coherences
 
-Недиагональные элементы $\gamma_{ij}$ ($i \neq j$) описывают **связи между измерениями**. Каждая такая связь имеет содержательную интерпретацию — это не абстрактное число, а описание конкретного аспекта жизни системы.
+The off-diagonal elements $\gamma_{ij}$ ($i \neq j$) describe **connections between dimensions**. Each such connection has a meaningful interpretation — it is not an abstract number but a description of a specific aspect of the system's life.
 
-| Когерентность | Интерпретация | Пример | Что означает высокое значение |
+| Coherence | Interpretation | Example | What a high value means |
 |---------------|---------------|--------|-------------------------------|
-| $\gamma_{AE}$ | Артикуляция ↔ Интериорность | Апперцепция | Различения «входят» в переживание: система осознанно различает |
-| $\gamma_{AS}$ | Артикуляция ↔ Структура | Категоризация | Различения формируют устойчивые категории: система классифицирует |
-| $\gamma_{AD}$ | Артикуляция ↔ Динамика | Восприятие движения | Различения применяются к процессам: система отслеживает изменения |
-| $\gamma_{AL}$ | Артикуляция ↔ Логика | Анализ | Различения логически организованы: система мыслит аналитически |
-| $\gamma_{AO}$ | Артикуляция ↔ Основание | Базовое восприятие | Различения укоренены в основании: «заземлённое» восприятие |
-| $\gamma_{AU}$ | Артикуляция ↔ Единство | Синтез | Различения интегрируются в целое: система видит «картину в целом» |
-| $\gamma_{SL}$ | Структура ↔ Логика | Номос | Структура подчинена логической необходимости: форма осмыслена |
-| $\gamma_{SD}$ | Структура ↔ Динамика | Морфогенез | Структура возникает из процесса: форма динамична |
-| $\gamma_{SE}$ | Структура ↔ Интериорность | Репрезентация | Структура представлена во внутреннем переживании |
-| $\gamma_{SO}$ | Структура ↔ Основание | Устойчивость | Структура укоренена в источнике: прочный фундамент |
-| $\gamma_{SU}$ | Структура ↔ Единство | Архитектура | Структура интегрирована в целое: системная организация |
-| $\gamma_{DL}$ | Динамика ↔ Логика | Каузальность | Процессы логически обусловлены: «причина → следствие» |
-| $\gamma_{DE}$ | Динамика ↔ Интериорность | Воление | Процессы переживаются изнутри: действие ощущается как «я действую» |
-| $\gamma_{DO}$ | Динамика ↔ Основание | Витальность | Процессы питаются из источника: жизненная энергия |
-| $\gamma_{DU}$ | Динамика ↔ Единство | Телеология | Процессы направлены к целому: целенаправленное действие |
-| $\gamma_{LE}$ | Логика ↔ Интериорность | Понимание | Логические связи переживаются: «ага-момент», инсайт |
-| $\gamma_{LO}$ | Логика ↔ Основание | Интуиция | Логика укоренена в глубинном знании: «знаю, но не могу объяснить» |
-| $\gamma_{LU}$ | Логика ↔ Единство | Консистентность | Логика служит целостности: непротиворечивость системы |
-| $\gamma_{EO}$ | Интериорность ↔ Основание | Имманентность | Переживание укоренено в источнике: «чувство бытия» |
-| $\gamma_{EU}$ | Интериорность ↔ Единство | Самосознание | Переживание целостно: «я есть» как единый опыт |
-| $\gamma_{OU}$ | Основание ↔ Единство | Трансценденция | Источник и целое совпадают: глубинное единство |
+| $\gamma_{AE}$ | Articulation ↔ Interiority | Apperception | Discriminations "enter" experience: the system consciously distinguishes |
+| $\gamma_{AS}$ | Articulation ↔ Structure | Categorisation | Discriminations form stable categories: the system classifies |
+| $\gamma_{AD}$ | Articulation ↔ Dynamics | Perception of motion | Discriminations applied to processes: the system tracks changes |
+| $\gamma_{AL}$ | Articulation ↔ Logic | Analysis | Discriminations are logically organised: the system thinks analytically |
+| $\gamma_{AO}$ | Articulation ↔ Ground | Basic perception | Discriminations are rooted in the ground: "grounded" perception |
+| $\gamma_{AU}$ | Articulation ↔ Unity | Synthesis | Discriminations integrate into a whole: the system sees the "big picture" |
+| $\gamma_{SL}$ | Structure ↔ Logic | Nomos | Structure is subject to logical necessity: form is meaningful |
+| $\gamma_{SD}$ | Structure ↔ Dynamics | Morphogenesis | Structure emerges from process: form is dynamic |
+| $\gamma_{SE}$ | Structure ↔ Interiority | Representation | Structure is present in inner experience |
+| $\gamma_{SO}$ | Structure ↔ Ground | Stability | Structure is rooted in the source: a solid foundation |
+| $\gamma_{SU}$ | Structure ↔ Unity | Architecture | Structure is integrated into the whole: systemic organisation |
+| $\gamma_{DL}$ | Dynamics ↔ Logic | Causality | Processes are logically conditioned: "cause → effect" |
+| $\gamma_{DE}$ | Dynamics ↔ Interiority | Volition | Processes are experienced from within: action is felt as "I act" |
+| $\gamma_{DO}$ | Dynamics ↔ Ground | Vitality | Processes are nourished by the source: life energy |
+| $\gamma_{DU}$ | Dynamics ↔ Unity | Teleology | Processes are directed toward the whole: purposeful action |
+| $\gamma_{LE}$ | Logic ↔ Interiority | Understanding | Logical connections are experienced: the "aha moment", insight |
+| $\gamma_{LO}$ | Logic ↔ Ground | Intuition | Logic is rooted in deep knowledge: "I know, but cannot explain" |
+| $\gamma_{LU}$ | Logic ↔ Unity | Consistency | Logic serves wholeness: the system's non-contradictoriness |
+| $\gamma_{EO}$ | Interiority ↔ Ground | Immanence | Experience is rooted in the source: the "feeling of being" |
+| $\gamma_{EU}$ | Interiority ↔ Unity | Self-awareness | Experience is whole: "I am" as a unified experience |
+| $\gamma_{OU}$ | Ground ↔ Unity | Transcendence | Source and whole coincide: deep unity |
 
-:::note Полный набор когерентностей
-Матрица $7 \times 7$ содержит $\binom{7}{2} = 21$ независимых недиагональных элементов. Каждый описывает связь между парой измерений. Вместе с 7 населённостями (диагональ) и условием $\mathrm{Tr}(\Gamma) = 1$ это даёт 48 независимых вещественных параметров (6 населённостей + 21 модуль + 21 фаза), полностью описывающих состояние Голонома.
+:::note Full set of coherences
+The $7 \times 7$ matrix contains $\binom{7}{2} = 21$ independent off-diagonal elements. Each describes the connection between a pair of dimensions. Together with the 7 populations (diagonal) and the condition $\mathrm{Tr}(\Gamma) = 1$ this gives 48 independent real parameters (6 populations + 21 moduli + 21 phases), completely describing the state of the Holon.
 :::
 
-:::tip Как интерпретировать когерентности
-Когерентность $\gamma_{ij}$ — комплексное число. Его **модуль** $|\gamma_{ij}|$ показывает силу связи: 0 = нет связи, максимум = полная корреляция. Его **фаза** $\arg(\gamma_{ij})$ показывает «направленность»: при нулевой фазе внешний и внутренний аспекты связи совпадают (полная прозрачность); при $\pi/2$ — максимально расходятся ([Gap](/docs/core/dynamics/gap-operator) = 1).
+:::tip How to interpret coherences
+Coherence $\gamma_{ij}$ is a complex number. Its **modulus** $|\gamma_{ij}|$ shows the strength of the connection: 0 = no connection, maximum = full correlation. Its **phase** $\arg(\gamma_{ij})$ shows the "directedness": at zero phase the external and internal aspects of the connection coincide (full transparency); at $\pi/2$ they diverge maximally ([Gap](/docs/core/dynamics/gap-operator) = 1).
 
-Пример: высокое $|\gamma_{LE}|$ (Логика ↔ Интериорность) с малой фазой означает: система глубоко *понимает* свои переживания — логика и интериорность прозрачны друг для друга. Высокое $|\gamma_{LE}|$ с фазой $\approx \pi/2$ означает: система *обрабатывает* переживания логически, но между логическим описанием и реальным переживанием есть разрыв (Gap) — «я знаю, что мне грустно, но не понимаю, почему».
+Example: high $|\gamma_{LE}|$ (Logic ↔ Interiority) with a small phase means: the system deeply *understands* its experiences — logic and interiority are transparent to each other. High $|\gamma_{LE}|$ with phase $\approx \pi/2$ means: the system *processes* experiences logically, but there is a gap (Gap) between the logical description and the actual experience — "I know I am sad, but I don't understand why."
 :::
 
-## Связь с (M,R)-системами Розена
+## Connection with Rosen's (M,R)-systems
 
-Семь измерений УГМ **обобщают** (M,R)-систему Розена, добавляя феноменологию и квантовое основание:
+The seven dimensions of UHM **generalise** Rosen's (M,R)-system, adding phenomenology and a quantum ground:
 
-| Розен | УГМ | Функция |
+| Rosen | UHM | Function |
 |-------|-----|---------|
-| $M$ (метаболизм) | $D$ (Динамика) | Преобразование субстратов |
-| $\Phi$ (репарация) | $A + L$ (Артикуляция + Логика) | Восстановление структуры |
-| $\beta$ (замыкание) | $U$ (Единство) | Интеграция, самозамыкание |
-| — | $E$ (Интериорность) | Расширение: интериорность |
-| — | $O$ (Основание) | Расширение: квантовый источник |
-| — | $S$ (Структура) | Расширение: инварианты |
+| $M$ (metabolism) | $D$ (Dynamics) | Transformation of substrates |
+| $\Phi$ (repair) | $A + L$ (Articulation + Logic) | Restoration of structure |
+| $\beta$ (closure) | $U$ (Unity) | Integration, self-closure |
+| — | $E$ (Interiority) | Extension: interiority |
+| — | $O$ (Ground) | Extension: quantum source |
+| — | $S$ (Structure) | Extension: invariants |
 
-**Формально:** $7 = 3_{\text{Розен}} + 4_{\text{расширения}}$.
+**Formally:** $7 = 3_{\text{Rosen}} + 4_{\text{extensions}}$.
 
-Розен показал, что для жизни необходимо минимум 3 компонента (метаболизм, ремонт, замыкание). УГМ добавляет ещё 4: интериорность (чтобы система «переживала»), основание (чтобы имела источник регенерации и время), структуру (чтобы имела инварианты) и логику как отдельное измерение (а не часть ремонта). Результат: 7 = минимум для **полноценной** живой системы с внутренней стороной.
+Rosen showed that life requires at minimum 3 components (metabolism, repair, closure). UHM adds 4 more: interiority (so the system "experiences"), ground (so it has a source of regeneration and time), structure (so it has invariants), and logic as a separate dimension (not a part of repair). Result: 7 = minimum for a **fully-fledged** living system with an inner side.
 
-:::tip Почему Розену не хватило трёх
-Розен строил теорию *жизни* — и трёх компонентов для этого действительно достаточно: система, которая метаболизирует (D), ремонтирует себя (A+L) и замыкается (U), формально «жива». Но Розен не ставил вопрос о *сознании*. Его системы — «зомби»: они функционируют, но ничего не переживают. УГМ добавляет E (интериорность) — и система обретает «внутреннюю сторону». Но для полноценной интериорности нужны ещё O (откуда черпать ресурс для регенерации и время) и S (что именно сохраняется). Так три компонента Розена вырастают до семи.
+:::tip Why three was not enough for Rosen
+Rosen was building a theory of *life* — and three components are indeed sufficient for that: a system that metabolises (D), repairs itself (A+L), and closes (U) is formally "alive". But Rosen did not pose the question of *consciousness*. His systems are "zombies": they function but experience nothing. UHM adds E (interiority) — and the system acquires an "inner side". But for full interiority one also needs O (from which to draw the resource for regeneration and time) and S (what exactly is preserved). Thus Rosen's three components grow to seven.
 :::
 
-См. [Теорема 5.1: Изоморфизм с (M,R)-системами](../../proofs/minimality/theorem-minimality-7#часть-v-связь-с-mr-системами-розена).
+See [Theorem 5.1: Isomorphism with (M,R)-systems](../../proofs/minimality/theorem-minimality-7#часть-v-связь-с-mr-системами-розена).
 
-## Группировка измерений
+## Grouping of dimensions
 
 ```mermaid
 graph TD
-    subgraph "Объективные аспекты"
-        A["A — Артикуляция"]
-        S["S — Структура"]
-        D["D — Динамика"]
+    subgraph "Objective aspects"
+        A["A — Articulation"]
+        S["S — Structure"]
+        D["D — Dynamics"]
     end
-    subgraph "Субъективные аспекты"
-        E["E — Интериорность"]
-        O["O — Основание"]
-        U["U — Единство"]
+    subgraph "Subjective aspects"
+        E["E — Interiority"]
+        O["O — Ground"]
+        U["U — Unity"]
     end
-    subgraph "Связующий аспект"
-        L["L — Логика"]
+    subgraph "Bridging aspect"
+        L["L — Logic"]
     end
 
     A --> L
@@ -380,64 +380,64 @@ graph TD
     O --> U
 ```
 
-:::warning Группировка — эвристика
-Деление на "объективные" и "субъективные" аспекты — **педагогическое упрощение**. Все семь измерений неразделимы в $\Gamma$. Двухаспектный монизм означает: объективное и субъективное — две стороны одной конфигурации, не разные части.
+:::warning Grouping is heuristic
+The division into "objective" and "subjective" aspects is a **pedagogical simplification**. All seven dimensions are inseparable in $\Gamma$. Two-aspect monism means: the objective and the subjective are two sides of one configuration, not different parts.
 :::
 
-**Объективные аспекты** (A, S, D) — те, которые доступны внешнему наблюдателю: различения можно зафиксировать (A), структуру можно измерить (S), динамику можно отследить (D). В физике им соответствуют наблюдаемые: проекторы, гамильтониан, унитарная эволюция.
+**Objective aspects** (A, S, D) — those accessible to an external observer: discriminations can be recorded (A), structure can be measured (S), dynamics can be tracked (D). In physics they correspond to observables: projectors, Hamiltonian, unitary evolution.
 
-**Субъективные аспекты** (E, O, U) — те, которые связаны с «внутренней стороной» системы: переживание (E), укоренённость в источнике (O), ощущение целостности (U). Они не наблюдаемы «снаружи» напрямую — их можно лишь вывести из поведения или пережить «изнутри».
+**Subjective aspects** (E, O, U) — those connected with the "inner side" of the system: experience (E), rootedness in the source (O), sense of wholeness (U). They are not directly observable "from outside" — they can only be inferred from behaviour or experienced "from within."
 
-**Связующий аспект** — Логика ($L$) выделена как «мост» между объективным и субъективным. Коммутатор $[A, B]$ определяет **отношения** между операторами всех остальных измерений. Логика — это то, что делает систему самосогласованной: обеспечивает, чтобы объективное и субъективное не противоречили друг другу.
+**Bridging aspect** — Logic ($L$) is singled out as the "bridge" between objective and subjective. The commutator $[A, B]$ defines **relations** between the operators of all other dimensions. Logic is what makes the system self-consistent: it ensures that the objective and the subjective do not contradict each other.
 
-Эта группировка $7 = 3 + 1 + 3$ имеет глубокое математическое основание: она соответствует **секторной декомпозиции** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ под действием $SU(3) \subset G_2$ (теорема T-48a [Т]). Триплет $\{A, S, D\}$ образует представление **3**, синглет $\{O\}$ — представление **1**, антитриплет $\{L, E, U\}$ — представление $\bar{\mathbf{3}}$. Замечательно, что именно этот же тип разложения определяет структуру кварков в хромодинамике ($SU(3)_{\text{color}}$), хотя здесь он действует на совершенно другом уровне описания.
+This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a [Т]). The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
 
-:::note Почему L — «мост», а не O?
-На первый взгляд, O (Основание) тоже кажется «связующим»: оно и питает, и задаёт время. Но O занимает особое положение как **синглет** $SU(3)$ — оно инвариантно под секторными преобразованиями. L же занимает **пограничное** положение: оно принадлежит антитриплету ($\bar{\mathbf{3}}$), но функционально связывает оба триплета через коммутатор. Логика «знает» и об объективном, и о субъективном — в этом её уникальность.
+:::note Why is L the "bridge" and not O?
+At first glance, O (Ground) also seems "bridging": it both nourishes and sets time. But O occupies a special position as an $SU(3)$ **singlet** — it is invariant under sector transformations. L, by contrast, occupies a **boundary** position: it belongs to the anti-triplet ($\bar{\mathbf{3}}$) but functionally connects both triplets through the commutator. Logic "knows" about both the objective and the subjective — that is its uniqueness.
 :::
 
-## Кросс-культурные отражения
+## Cross-cultural reflections
 
-Примечательно, что деление на 7 фундаментальных аспектов реальности встречается в самых разных традициях:
+Remarkably, the division into 7 fundamental aspects of reality appears in a wide variety of traditions:
 
-| Традиция | Семеричное деление | Связь с УГМ |
+| Tradition | Sevenfold division | Connection with UHM |
 |---|---|---|
-| Индийская (чакры) | 7 энергетических центров | 7 населённостей $\gamma_{ii}$ |
-| Алхимическая | 7 металлов (Au, Ag, Cu, Fe, Sn, Pb, Hg) | 7 измерений |
-| Музыкальная | 7 нот (до, ре, ми, фа, соль, ля, си) | 7 «тонов» конфигурации |
-| Планетарная (древность) | 7 планет | 7 «влияний» |
-| Цветовая | 7 цветов радуги | 7 «качеств» |
+| Indian (chakras) | 7 energy centres | 7 populations $\gamma_{ii}$ |
+| Alchemical | 7 metals (Au, Ag, Cu, Fe, Sn, Pb, Hg) | 7 dimensions |
+| Musical | 7 notes (do, re, mi, fa, sol, la, si) | 7 "tones" of the configuration |
+| Planetary (antiquity) | 7 planets | 7 "influences" |
+| Colour | 7 colours of the rainbow | 7 "qualities" |
 
-С позиции УГМ эти совпадения не случайны: число 7 — фундаментальная константа, определяемая теоремой Гурвица (1898) и теоремой S. Различные культуры интуитивно «нащупывали» одну и ту же математическую структуру, выражая её в доступных им символических системах. Подробный анализ — в главе [Формальная редукция символических систем](./symbolic-systems).
+From the UHM perspective these coincidences are not accidental: the number 7 is a fundamental constant determined by Hurwitz's theorem (1898) and Theorem S. Different cultures intuitively "felt out" the same mathematical structure, expressing it in the symbolic systems available to them. A detailed analysis is given in the chapter [Formal reduction of symbolic systems](./symbolic-systems).
 
-## Резюме
+## Summary
 
-Семь измерений Голонома — A, S, D, L, E, O, U — являются:
-- **Минимальным** набором (Теорема S): удаление любого делает систему неполной
-- **Единственным** набором (с точностью до изоморфизма): перестановки и замены не создают альтернатив
-- **Алгебраически обоснованным**: изоморфны мнимым единицам октонионов $\text{Im}(\mathbb{O})$
-- **Геометрически структурированным**: связаны плоскостью Фано PG(2,2) — 7 точек, 7 линий, 7 ассоциативных триплетов
-- **Неразделимыми**: каждое измерение — аспект единой конфигурации $\Gamma$, не отдельная сущность
+The seven dimensions of the Holon — A, S, D, L, E, O, U — are:
+- **Minimal** (Theorem S): removing any one makes the system incomplete
+- **Unique** (up to isomorphism): permutations and substitutions create no alternatives
+- **Algebraically grounded**: isomorphic to the imaginary units of the octonions $\text{Im}(\mathbb{O})$
+- **Geometrically structured**: connected by the Fano plane PG(2,2) — 7 points, 7 lines, 7 associative triplets
+- **Inseparable**: each dimension is an aspect of the unified configuration $\Gamma$, not a separate entity
 
-Вместе 7 населённостей и 21 когерентность (48 вещественных параметров) полностью описывают состояние любого Голонома — от бактерии до человеческого мозга.
+Together, 7 populations and 21 coherences (48 real parameters) completely describe the state of any Holon — from a bacterium to the human brain.
 
-Далее каждое измерение рассмотрено подробно в отдельной главе. Мы рекомендуем читать их по порядку: A → S → D → L → E → O → U, поскольку каждое следующее измерение опирается на понятия, введённые в предыдущих.
+Each dimension is then examined in detail in its own chapter. We recommend reading them in order: A → S → D → L → E → O → U, since each successive dimension builds on the concepts introduced in the preceding ones.
 
 ---
 
-**Детальные страницы:**
-- [Артикуляция (A)](./dimension-a)
-- [Структура (S)](./dimension-s)
-- [Динамика (D)](./dimension-d)
-- [Логика (L)](./dimension-l)
-- [Интериорность (E)](./dimension-e)
-- [Основание (O)](./dimension-o)
-- [Единство (U)](./dimension-u)
+**Detailed pages:**
+- [Articulation (A)](./dimension-a)
+- [Structure (S)](./dimension-s)
+- [Dynamics (D)](./dimension-d)
+- [Logic (L)](./dimension-l)
+- [Interiority (E)](./dimension-e)
+- [Ground (O)](./dimension-o)
+- [Unity (U)](./dimension-u)
 
-**Связанные документы:**
-- [Голоном](./holon) — что такое конфигурация $\Gamma$
-- [Теорема S](../../proofs/minimality/theorem-minimality-7) — доказательство минимальности 7D (Трек A)
-- [Структурный вывод через октонионы](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7 (Трек B)
-- [Теорема о единственности](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) — доказательство уникальности базиса
-- [Аксиома (AP+PH+QG+V)](../foundations/axiom-septicity) — условия на Голоном
-- [Эмерджентное время](../../proofs/dynamics/emergent-time) — время из структуры Γ
+**Related documents:**
+- [Holon](./holon) — what the configuration $\Gamma$ is
+- [Theorem S](../../proofs/minimality/theorem-minimality-7) — proof of 7D minimality (Track A)
+- [Structural derivation via octonions](../../proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7 (Track B)
+- [Uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) — proof of basis uniqueness
+- [Axiom (AP+PH+QG+V)](../foundations/axiom-septicity) — conditions on the Holon
+- [Emergent time](../../proofs/dynamics/emergent-time) — time from the structure of Γ

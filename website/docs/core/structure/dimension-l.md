@@ -1,720 +1,720 @@
 ---
 sidebar_position: 6
-title: Логика (L)
-description: Измерение IV — способность связывать и согласовывать
+title: Logic (L)
+description: Dimension IV — the capacity to connect and coordinate
 ---
 
-# Измерение IV: Логика (L)
+# Dimension IV: Logic (L)
 
-:::info Для кого эта глава
-Измерение L: согласование, коммутаторы, логическое замыкание. Предполагается знакомство с [семью измерениями](/docs/core/structure/dimensions) и основами категорной логики.
+:::info Who this chapter is for
+Dimension L: coordination, commutators, logical closure. Assumes familiarity with the [seven dimensions](/docs/core/structure/dimensions) and the basics of categorical logic.
 :::
 
-## Зачем эта глава
+## Why this chapter
 
-Мы привыкли считать логику чем-то абстрактным — набором правил для «правильного мышления». В школе учат: если A, то B; если B, то C; значит, если A, то C. Но в Универсальной Голономической Модели (УГМ) логика — нечто гораздо более фундаментальное. Это **аспект самой реальности**, определяющий, какие конфигурации возможны, а какие — противоречивы и потому не могут существовать.
+We are accustomed to thinking of logic as something abstract — a set of rules for "correct thinking". At school one learns: if A then B; if B then C; therefore, if A then C. But in the Universal Holonomic Model (UHM) logic is something far more fundamental. It is an **aspect of reality itself**, determining which configurations are possible and which are contradictory and therefore cannot exist.
 
-В этой главе вы узнаете:
-- почему логика в УГМ — не инструмент человеческого мышления, а **фильтр реальности**, отсеивающий невозможное;
-- как три совершенно разных значения буквы «L» (измерение, оператор Линдблада, логический лиувиллиан) оказываются одним и тем же объектом;
-- какие три уровня логики существуют — от полной (HoTT) до классической (булевой);
-- почему теорема Гёделя о неполноте — не проблема, а **ресурс** для эволюции;
-- как логика связана с причинно-следственными связями и остальными измерениями Голонома;
-- на каких Фано-линиях лежит L и почему её комбинаторный профиль уникален.
+In this chapter you will learn:
+- why logic in UHM is not a tool of human thinking but a **filter of reality**, sieving out the impossible;
+- how three completely different meanings of the letter "L" (dimension, Lindblad operator, logical Liouvillian) turn out to be the same object;
+- what three levels of logic exist — from the full (HoTT) to the classical (Boolean);
+- why Gödel's incompleteness theorem is not a problem but a **resource** for evolution;
+- how logic is connected with causal relations and the other dimensions of the Holon;
+- on which Fano lines L lies and why its combinatorial profile is unique.
 
-## Историческая предтеча
+## Historical precursor
 
-Логика как наука имеет одну из самых долгих историй.
+Logic as a science has one of the longest histories.
 
-**Аристотель** (384–322 до н.э.) создал **формальную логику** — систему силлогизмов, позволяющую делать достоверные выводы из посылок. «Все люди смертны; Сократ — человек; значит, Сократ смертен.» Это первая попытка формализовать **правила мышления**, отделив их от содержания. Аристотелева логика двузначна: каждое утверждение либо истинно, либо ложно. Третьего не дано.
+**Aristotle** (384–322 BC) created **formal logic** — a system of syllogisms enabling reliable conclusions to be drawn from premises. "All men are mortal; Socrates is a man; therefore Socrates is mortal." This was the first attempt to formalise **the rules of thinking**, separating them from content. Aristotelian logic is bivalent: every statement is either true or false. There is no third option.
 
-**Джордж Буль** (1815–1864) перевёл логику на язык **алгебры**. Он показал, что «И», «ИЛИ», «НЕ» подчиняются тем же формальным законам, что и умножение и сложение. Булева алгебра — основа цифровых компьютеров: каждый транзистор реализует булеву операцию. Но булева логика по-прежнему двузначна.
+**George Boole** (1815–1864) translated logic into the language of **algebra**. He showed that "AND", "OR", "NOT" obey the same formal laws as multiplication and addition. Boolean algebra is the foundation of digital computers: every transistor implements a Boolean operation. But Boolean logic remains bivalent.
 
-**Лёйтзен Брауэр** (1881–1966) подверг сомнению закон исключённого третьего. Он основал **интуиционизм** — направление, утверждающее, что утверждение истинно только тогда, когда мы можем **сконструировать** его доказательство. «Утверждение P истинно или ложно» — это не аксиома, а то, что нужно доказать для каждого конкретного P. Существуют утверждения, которые ни истинны, ни ложны — они **неопределены**.
+**Luitzen Brouwer** (1881–1966) questioned the law of the excluded middle. He founded **intuitionism** — a movement asserting that a statement is true only when we can **construct** its proof. "Statement P is true or false" is not an axiom but something that must be proved for each particular P. There are statements that are neither true nor false — they are **undetermined**.
 
-**Аренд Гейтинг** (1898–1980), ученик Брауэра, формализовал интуиционизм в виде **алгебры Гейтинга** — обобщения булевой алгебры, в которой закон исключённого третьего ($P \lor \neg P = \top$) не обязателен. Именно алгебра Гейтинга оказалась естественной логикой **топосов** — категорных обобщений пространств. В каждом топосе есть классификатор подобъектов $\Omega$, и его логическая структура — алгебра Гейтинга.
+**Arend Heyting** (1898–1980), Brouwer's student, formalised intuitionism as **Heyting algebra** — a generalisation of Boolean algebra in which the law of the excluded middle ($P \lor \neg P = \top$) is not obligatory. It was precisely Heyting algebra that turned out to be the natural logic of **toposes** — categorical generalisations of spaces. Every topos has a subobject classifier $\Omega$, and its logical structure is a Heyting algebra.
 
-**Гомотопическая теория типов (HoTT)** — современное (2013+) развитие, объединяющее логику, теорию типов и гомотопическую теорию. В HoTT «доказательство» — это не просто «да/нет», а целое **пространство доказательств**, которое может иметь нетривиальную топологию. Это ∞-категорная логика, наиболее полная из известных. В УГМ именно HoTT является полной внутренней логикой ∞-топоса $\mathbf{Sh}_\infty(\mathcal{C})$.
+**Homotopy Type Theory (HoTT)** is a modern (2013+) development unifying logic, type theory and homotopy theory. In HoTT a "proof" is not simply "yes/no" but an entire **space of proofs** that can have non-trivial topology. This is ∞-categorical logic, the most complete known. In UHM it is precisely HoTT that is the full internal logic of the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$.
 
-:::note Путь углубления
-Аристотель → Буль → Брауэр → Гейтинг → HoTT — это не просто «прогресс». Каждый шаг — осознание того, что логика **богаче**, чем казалось. Двузначная → многозначная → конструктивная → ∞-категорная. УГМ использует весь этот спектр: булева логика — для решающих измерений, алгебра Гейтинга — для стандартного топоса, HoTT — для полной ∞-структуры.
+:::note The path of deepening
+Aristotle → Boole → Brouwer → Heyting → HoTT — this is not simply "progress". Each step is a recognition that logic is **richer** than it seemed. Bivalent → many-valued → constructive → ∞-categorical. UHM uses this entire spectrum: Boolean logic for decisive dimensions, Heyting algebra for the standard topos, HoTT for the full ∞-structure.
 :::
 
-:::info Почему история логики важна для понимания УГМ
-Обратите внимание: каждый исторический шаг **расширял** пространство логически допустимого. Аристотель допускал только «да/нет». Брауэр добавил «неопределено». HoTT добавила бесконечную иерархию «способов быть истинным». УГМ утверждает, что реальность использует **все** эти уровни одновременно: элементарные частицы «живут» в булевой логике (спин вверх или вниз), пограничные состояния сознания — в гейтинговой (ни бодрствование, ни сон), а полная структура ∞-топоса — в HoTT. Чем глубже уровень реальности, тем богаче логика.
+:::info Why the history of logic matters for understanding UHM
+Note: each historical step **expanded** the space of logically admissible. Aristotle allowed only "yes/no". Brouwer added "undetermined". HoTT added an infinite hierarchy of "ways of being true". UHM claims that reality uses **all** these levels simultaneously: elementary particles "live" in Boolean logic (spin up or down), borderline states of consciousness — in Heyting logic (neither waking nor sleeping), and the full ∞-topos structure — in HoTT. The deeper the level of reality, the richer the logic.
 :::
 
-:::warning Конвенции обозначений: три значения буквы L {#конвенции-l}
-В УГМ буква **L** используется для трёх связанных, но различных объектов:
+:::warning Notation conventions: three meanings of the letter L {#конвенции-l}
+In UHM the letter **L** is used for three related but distinct objects:
 
-| Обозначение | Шрифт | Значение |
-|-------------|-------|----------|
-| $L$ (прямой, без индекса) | Roman | **Измерение Логики** — компонента $\Gamma$, населённость $\gamma_{LL}$ |
-| $L_k$ (с индексом) | Italic | **Операторы Линдблада** — диссипативные каналы |
-| $\mathcal{L}_\Omega$ (каллиграфический) | Script | **Лиувиллиан** — полный генератор эволюции |
+| Notation | Font | Meaning |
+|----------|------|---------|
+| $L$ (upright, no index) | Roman | **Logic dimension** — component of $\Gamma$, population $\gamma_{LL}$ |
+| $L_k$ (with index) | Italic | **Lindblad operators** — dissipative channels |
+| $\mathcal{L}_\Omega$ (calligraphic) | Script | **Liouvillian** — full generator of evolution |
 
-Это **не совпадение обозначений**, а проявление L-унификации [Т]: классификатор подобъектов $\Omega$ порождает логическую структуру (L-измерение), из атомов которой выводятся операторы $L_k$, формирующие генератор $\mathcal{L}_\Omega$:
+This is **not a notational coincidence**, but a manifestation of L-unification [Т]: the subobject classifier $\Omega$ generates the logical structure (the L-dimension), from whose atoms the operators $L_k$ are derived, forming the generator $\mathcal{L}_\Omega$:
 
-$$\Omega \xrightarrow{\text{логика}} L \xrightarrow{\text{атомы}} L_k \xrightarrow{\text{генератор}} \mathcal{L}_\Omega$$
+$$\Omega \xrightarrow{\text{logic}} L \xrightarrow{\text{atoms}} L_k \xrightarrow{\text{generator}} \mathcal{L}_\Omega$$
 
-Подробнее: [L-унификация](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+More details: [L-unification](/docs/core/operators/lindblad-operators#примитивность-ℒω).
 :::
 
-## Интуитивное объяснение
+## Intuitive explanation
 
-### L-унификация: три значения одной буквы
+### L-unification: three meanings of one letter
 
-В УГМ буква «L» появляется в трёх, казалось бы, совершенно разных контекстах:
+In UHM the letter "L" appears in three seemingly completely different contexts:
 
-1. **L-измерение** — четвёртый столбец/строка матрицы когерентности $\Gamma$, описывающий логическую согласованность системы
-2. **$L_k$ (операторы Линдблада)** — операторы диссипации в уравнении эволюции, определяющие, как система теряет когерентность при взаимодействии с окружением
-3. **$\mathcal{L}$ (логический лиувиллиан)** — генератор эволюции в пространстве операторов плотности
+1. **L-dimension** — the fourth column/row of the coherence matrix $\Gamma$, describing the logical consistency of the system
+2. **$L_k$ (Lindblad operators)** — dissipation operators in the evolution equation, determining how the system loses coherence when interacting with the environment
+3. **$\mathcal{L}$ (logical Liouvillian)** — the generator of evolution in the space of density operators
 
-На первый взгляд это случайное совпадение обозначений. Но УГМ доказывает, что все три — **проявления одного объекта**: классификатора подобъектов $\Omega$ ∞-топоса.
+At first glance this looks like a notational coincidence. But UHM proves that all three are **manifestations of one object**: the subobject classifier $\Omega$ of the ∞-topos.
 
-:::info Аналогия: три значения слова «ключ»
-Представьте слово «ключ». Оно может означать:
-1. **Дверной ключ** — инструмент для открытия замка
-2. **Музыкальный ключ** — символ на нотном стане
-3. **Ключ воды** — подземный источник
+:::info Analogy: three meanings of the word "key"
+Imagine the word "key". It can mean:
+1. **A door key** — a tool for opening a lock
+2. **A musical clef** — a symbol on a staff
+3. **A spring** — an underground water source
 
-Это омонимы — слова, случайно звучащие одинаково. Но представьте, что кто-то доказал: дверной ключ, музыкальный ключ и водный ключ — это **один и тот же объект**, просто наблюдаемый с разных сторон. Именно это делает L-унификация: три «значения» буквы L оказываются одним и тем же математическим объектом — проекцией $\Omega$ на $\Gamma$.
+These are homonyms — words that happen to sound the same. But imagine someone proved: a door key, a musical clef, and a spring are **the same object**, merely observed from different sides. This is precisely what L-unification does: the three "meanings" of the letter L turn out to be the same mathematical object — the projection of $\Omega$ onto $\Gamma$.
 :::
 
-### Как работает L-унификация: от абстрактного к конкретному {#как-работает-l-унификация}
+### How L-unification works: from abstract to concrete {#как-работает-l-унификация}
 
-Чтобы понять L-унификацию интуитивно, представьте **фильтр для воды**. Фильтр — один объект, но он выполняет три функции одновременно:
+To understand L-unification intuitively, imagine a **water filter**. The filter is one object, but it performs three functions simultaneously:
 
-1. **Определяет, что допустимо** (какие молекулы проходят) — это L-измерение: оно определяет, какие конфигурации $\Gamma$ непротиворечивы.
-2. **Задаёт скорость потока** (пропускная способность мембраны) — это лиувиллиан $\mathcal{L}$: он определяет, как быстро система эволюционирует.
-3. **Создаёт отходы** (задержанные примеси) — это операторы Линдблада $L_k$: они определяют, какая информация *теряется* при фильтрации.
+1. **Determines what is admissible** (which molecules pass through) — this is the L-dimension: it determines which configurations $\Gamma$ are consistent.
+2. **Sets the flow rate** (membrane throughput) — this is the Liouvillian $\mathcal{L}$: it determines how quickly the system evolves.
+3. **Creates waste** (retained impurities) — these are the Lindblad operators $L_k$: they determine what information is *lost* in filtration.
 
-Фильтр — один, но описывать его можно тремя способами. Классификатор подобъектов $\Omega$ — «фильтр реальности», и его три «описания» — это три значения буквы L.
+The filter is one, but it can be described in three ways. The subobject classifier $\Omega$ is the "filter of reality", and its three "descriptions" are the three meanings of the letter L.
 
-## Функция
+## Function
 
-**Связывать, согласовывать, проверять непротиворечивость.**
+**To connect, to coordinate, to verify consistency.**
 
-## Описание
+## Description
 
-Логика — это измерение **самосогласованности**. Она определяет, какие конфигурации $\Gamma$ возможны, а какие противоречивы. Логика — фильтр реальности: состояния с $\gamma_{LL} \to 0$ не могут существовать устойчиво.
+Logic is the dimension of **self-consistency**. It determines which configurations $\Gamma$ are possible and which are contradictory. Logic is the filter of reality: states with $\gamma_{LL} \to 0$ cannot exist stably.
 
-:::info Онтологический статус
-Логика — **аспект** конфигурации $\Gamma$, не отдельная сущность. "Голоном логичен" означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|L\rangle$, и алгебра операторов удовлетворяет соотношениям коммутации.
+:::info Ontological status
+Logic is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon is logical" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|L\rangle$ is active, and the algebra of operators satisfies the commutation relations.
 :::
 
-:::info Уточнение: L как аспект, а не фильтр
-L-измерение **не является фильтром**, действующим на Γ извне. L — **аспект** самого Γ, отражающий степень внутренней согласованности:
+:::info Clarification: L as aspect, not filter
+The L-dimension **is not a filter** acting on Γ from outside. L is an **aspect** of Γ itself, reflecting the degree of internal consistency:
 
-- **Населённость $\gamma_{LL}$** — доля «ресурса» системы, направленная на поддержание логической когерентности
-- **Высокое $\gamma_{LL} \gg 1/7$:** система строго применяет внутренние правила (догматичность, ригидность)
-- **Низкое $\gamma_{LL} \ll 1/7$:** система слабо применяет правила (креативность, но потенциальная некогерентность)
-- **$\gamma_{LL} = 1/7$:** равновесие — логическая функция получает «справедливую долю» ресурса
+- **Population $\gamma_{LL}$** — the fraction of the system's "resource" directed toward maintaining logical coherence
+- **High $\gamma_{LL} \gg 1/7$:** the system strictly applies internal rules (dogmatism, rigidity)
+- **Low $\gamma_{LL} \ll 1/7$:** the system weakly applies rules (creativity, but potential incoherence)
+- **$\gamma_{LL} = 1/7$:** equilibrium — the logical function receives its "fair share" of resource
 
-Напряжение L-измерения: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [формула T-92 [Т]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
+Stress of the L-dimension: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [formula T-92 [Т]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
 :::
 
-## Категориальное определение (L-унификация) {#категориальное-определение}
+## Categorical definition (L-unification) {#категориальное-определение}
 
-:::warning Ключевая теорема
-Измерение L **тождественно** проекции классификатора подобъектов Ω на состояние Γ:
+:::warning Key theorem
+Dimension L is **identical** to the projection of the subobject classifier Ω onto the state Γ:
 
 $$
 L = \Omega \cap \Gamma
 $$
 
-Из этой идентификации **выводятся** операторы Линдблада $L_k$.
+From this identification the Lindblad operators $L_k$ are **derived**.
 :::
 
-### L как проекция классификатора
+### L as a projection of the classifier
 
-В ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$ (построенном на [топологии Гротендика](/docs/core/foundations/axiom-omega#топология-гротендика)) существует [классификатор подобъектов](/docs/core/foundations/axiom-omega#внутренняя-логика) Ω, определяющий **внутреннюю логику** теории.
+In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ (built on the [Grothendieck topology](/docs/core/foundations/axiom-omega#топология-гротендика)) there exists a [subobject classifier](/docs/core/foundations/axiom-omega#внутренняя-логика) Ω, which determines the **internal logic** of the theory.
 
-**Определение (L-измерение категориально):**
+**Definition (L-dimension categorically):**
 
 $$
 L := \{\chi \in \Omega : \chi(\Gamma) = \text{true}\}
 $$
 
-— множество логических предикатов, истинных для данного состояния Γ.
+— the set of logical predicates that are true for the given state Γ.
 
-:::tip Формализация L-измерения [Т]
-L-измерение — **внутренняя логика** ∞-топоса через подобъектный классификатор Ω. Формально:
+:::tip Formalisation of the L-dimension [Т]
+The L-dimension is the **internal logic** of the ∞-topos via the subobject classifier Ω. Formally:
 
 $$
 L(\Gamma) := \{p \in \Omega : p(\Gamma) = \top\}
 $$
 
-— множество предикатов, истинных на $\Gamma$. Логическая структура имеет **три уровня** [Т]:
+— the set of predicates true on $\Gamma$. The logical structure has **three levels** [Т]:
 
-| Уровень | Логика | Структура | Роль |
-|---------|--------|-----------|------|
-| ∞-категорный | **HoTT** (гомотопическая теория типов) | Полный $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ | [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) (n-усечения) |
-| 1-категорный | **Гейтинговая алгебра** (интуиционистская) | $\tau_{\leq 0}(\Omega)$ — 0-усечение | Стандартная теория топосов |
-| Решающий (decidable) | **Булева** (классическая) | $\mathrm{Dec}(\Omega) \cong 2^7$ | [L-унификация](/docs/core/foundations/axiom-omega#lk-из-omega): вывод $L_k$ |
+| Level | Logic | Structure | Role |
+|-------|-------|-----------|------|
+| ∞-categorical | **HoTT** (homotopy type theory) | Full $\Omega \in \mathbf{Sh}_\infty(\mathcal{C})$ | [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) (n-truncations) |
+| 1-categorical | **Heyting algebra** (intuitionistic) | $\tau_{\leq 0}(\Omega)$ — 0-truncation | Standard topos theory |
+| Decidable | **Boolean** (classical) | $\mathrm{Dec}(\Omega) \cong 2^7$ | [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega): derivation of $L_k$ |
 
-Полная внутренняя логика ∞-топоса $\mathbf{Sh}_\infty(\mathcal{C})$ — HoTT, с темпоральной модальностью $\triangleright$ ([эмерджентное время](../../proofs/dynamics/emergent-time#время-в-hott)). Её 0-усечение $\tau_{\leq 0}(\Omega)$ — Гейтинговая алгебра (стандартный результат теории топосов). **Решающий фрагмент** $\mathrm{Dec}(\Omega)$ — булева подалгебра, порождённая 7 ортогональными проекторами $S_k = |k\rangle\langle k|$. L-унификация использует именно этот решающий фрагмент.
+The full internal logic of the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is HoTT, with temporal modality $\triangleright$ ([emergent time](../../proofs/dynamics/emergent-time#время-в-hott)). Its 0-truncation $\tau_{\leq 0}(\Omega)$ is Heyting algebra (standard result of topos theory). The **decidable fragment** $\mathrm{Dec}(\Omega)$ is a Boolean subalgebra generated by 7 orthogonal projectors $S_k = |k\rangle\langle k|$. L-unification uses precisely this decidable fragment.
 :::
 
-### Три уровня логики: подробнее {#три-уровня-логики}
+### Three levels of logic: in detail {#три-уровня-логики}
 
-Три уровня логики — не произвольная классификация, а **математическое следствие** структуры ∞-топоса. Каждый уровень «видит» реальность с определённой глубиной.
+The three levels of logic are not an arbitrary classification, but a **mathematical consequence** of the structure of the ∞-topos. Each level "sees" reality with a certain depth.
 
-#### Уровень 1: Булева логика (решающий фрагмент)
+#### Level 1: Boolean logic (decidable fragment)
 
-Это логика, знакомая каждому: каждое утверждение либо **истинно**, либо **ложно**. В УГМ булева логика возникает в **решающем фрагменте** $\mathrm{Dec}(\Omega)$, порождённом 7 ортогональными проекторами $S_k = |k\rangle\langle k|$.
+This is the logic familiar to everyone: every statement is either **true** or **false**. In UHM Boolean logic arises in the **decidable fragment** $\mathrm{Dec}(\Omega)$, generated by 7 orthogonal projectors $S_k = |k\rangle\langle k|$.
 
-**Пример.** «Является ли населённость $\gamma_{LL}$ выше порога 0.1?» — булев предикат. Ответ: да или нет. Булевых предикатов $2^7 = 128$ (все комбинации «да/нет» для 7 проекторов).
+**Example.** "Is the population $\gamma_{LL}$ above the threshold 0.1?" — a Boolean predicate. Answer: yes or no. There are $2^7 = 128$ Boolean predicates (all yes/no combinations for 7 projectors).
 
-**Роль в УГМ:** из этого уровня выводятся операторы Линдблада $L_k$. Именно булева логика определяет **каналы диссипации** — через какие именно «щели» система теряет когерентность.
+**Role in UHM:** from this level the Lindblad operators $L_k$ are derived. It is Boolean logic that determines the **dissipation channels** — through which "gaps" exactly the system loses coherence.
 
-:::info Аналогия: булева логика как чёрно-белое фото
-Булева логика — как чёрно-белая фотография: каждый пиксель либо чёрный, либо белый. Грубо, но полезно для многих задач. Именно в «чёрно-белом» режиме реальность определяет, *через какие каналы* течёт декогеренция. Эта грубость — не недостаток, а фича: булев уровень достаточен для вывода конкретных физических операторов.
+:::info Analogy: Boolean logic as a black-and-white photo
+Boolean logic is like a black-and-white photograph: every pixel is either black or white. Coarse, but useful for many tasks. It is precisely in "black-and-white" mode that reality determines *through which channels* decoherence flows. This coarseness is not a flaw but a feature: the Boolean level is sufficient for deriving concrete physical operators.
 :::
 
-#### Уровень 2: Алгебра Гейтинга (интуиционистская логика)
+#### Level 2: Heyting algebra (intuitionistic logic)
 
-Это логика, в которой утверждение может быть **истинным**, **ложным** или **неопределённым**. Закон исключённого третьего ($P \lor \neg P = \top$) **не** является аксиомой — его нужно доказывать для каждого конкретного случая.
+This is a logic in which a statement can be **true**, **false**, or **undetermined**. The law of the excluded middle ($P \lor \neg P = \top$) is **not** an axiom — it must be proved for each particular case.
 
-**Пример.** «Является ли система сознательной?» В булевой логике ответ: да или нет. В гейтинговой — может быть **неопределённым**: если $P$ близко к $P_{\text{crit}} = 2/7$, система находится в «пограничном» состоянии, которое невозможно однозначно классифицировать. Это не невежество наблюдателя, а **объективная неопределённость**.
+**Example.** "Is the system conscious?" In Boolean logic the answer is: yes or no. In Heyting logic — it may be **undetermined**: if $P$ is close to $P_{\text{crit}} = 2/7$, the system is in a "borderline" state that cannot be unambiguously classified. This is not the observer's ignorance, but **objective indeterminacy**.
 
-**Роль в УГМ:** описывает стандартную теорию топосов, в которой работает большинство математических конструкций УГМ. 0-усечение $\tau_{\leq 0}(\Omega)$ даёт алгебру Гейтинга.
+**Role in UHM:** describes the standard topos theory in which most of the mathematical constructions of UHM operate. The 0-truncation $\tau_{\leq 0}(\Omega)$ gives Heyting algebra.
 
-:::info Аналогия: гейтингова логика как фото в оттенках серого
-Если булева логика — чёрно-белое фото, то гейтингова — фотография в оттенках серого. Появляются промежуточные тона, нюансы, полутона. «Является ли этот пиксель чёрным?» — может не иметь определённого ответа, если он серый. Пограничные состояния сознания, переходные фазы, «сумеречные зоны» между бодрствованием и сном — всё это живёт в гейтинговой логике.
+:::info Analogy: Heyting logic as a greyscale photo
+If Boolean logic is a black-and-white photo, Heyting logic is a photograph in shades of grey. Intermediate tones, nuances, half-tones appear. "Is this pixel black?" — may not have a definite answer if it is grey. Borderline states of consciousness, transitional phases, "twilight zones" between waking and sleep — all of this lives in Heyting logic.
 :::
 
-#### Уровень 3: HoTT (полная ∞-категорная логика)
+#### Level 3: HoTT (full ∞-categorical logic)
 
-Самый глубокий уровень. В HoTT «истина» — не точка, а целое **пространство доказательств**. Два доказательства одного и того же утверждения могут быть **неэквивалентны**, и между ними могут быть нетривиальные пути (гомотопии), между путями — пути путей, и так далее до бесконечности.
+The deepest level. In HoTT "truth" is not a point but an entire **space of proofs**. Two proofs of the same statement can be **non-equivalent**, and between them there can be non-trivial paths (homotopies), between the paths — paths of paths, and so on to infinity.
 
-**Пример.** «Каким образом измерение A связано с измерением E?» На булевом уровне — просто: связаны ($\gamma_{AE} \neq 0$) или нет ($\gamma_{AE} = 0$). На уровне HoTT — каждый конкретный путь связи (через разные Фано-линии, через разные цепочки промежуточных когерентностей) — **отдельный элемент** пространства доказательств. Топология этого пространства несёт информацию об [иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy).
+**Example.** "In what way is dimension A connected with dimension E?" At the Boolean level — simply: connected ($\gamma_{AE} \neq 0$) or not ($\gamma_{AE} = 0$). At the HoTT level — each particular path of connection (through different Fano lines, through different chains of intermediate coherences) is a **separate element** of the proof space. The topology of this space carries information about the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-**Роль в УГМ:** полная логика ∞-топоса, включающая темпоральную модальность $\triangleright$ (время) и n-усечения (уровни рефлексии). HoTT — «родной язык» УГМ на глубочайшем уровне.
+**Role in UHM:** the full logic of the ∞-topos, including the temporal modality $\triangleright$ (time) and n-truncations (levels of reflection). HoTT is the "native language" of UHM at the deepest level.
 
-:::info Аналогия: HoTT как полноцветное фото с глубиной
-HoTT — это полноцветная трёхмерная фотография с бесконечным разрешением. Каждый «пиксель» — не просто цвет, а целое пространство оттенков с собственной топологией. На этом уровне утверждение «A связано с E» содержит **всю** информацию о том, *как именно*, *через что*, *сколькими путями* и *насколько глубоко* они связаны. Именно HoTT нужна для описания **полной** иерархии интериорности: уровни самосознания (SAD-глубина, [глубинная башня](/docs/consciousness/hierarchy/interiority-hierarchy)) — это n-усечения пространства доказательств.
+:::info Analogy: HoTT as a full-colour photo with depth
+HoTT is a full-colour three-dimensional photograph with infinite resolution. Each "pixel" is not just a colour, but an entire space of shades with its own topology. At this level the statement "A is connected with E" contains **all** the information about *exactly how*, *through what*, *by how many paths*, and *how deeply* they are connected. It is precisely HoTT that is needed to describe the **full** interiority hierarchy: the levels of self-awareness (SAD-depth, [depth tower](/docs/consciousness/hierarchy/interiority-hierarchy)) are n-truncations of the proof space.
 :::
 
-### Вывод операторов Линдблада L_k
+### Derivation of the Lindblad operators L_k
 
-**Теорема (L_k из Ω):**
+**Theorem (L_k from Ω):**
 
-Операторы диссипации в [уравнении эволюции](/docs/core/dynamics/evolution) определяются [базисными предикатами](/docs/core/foundations/axiom-omega#атомы-классификатора) классификатора:
+The dissipation operators in the [evolution equation](/docs/core/dynamics/evolution) are determined by the [basis predicates](/docs/core/foundations/axiom-omega#атомы-классификатора) of the classifier:
 
 $$
 L_k := \sqrt{\chi_{S_k}}
 $$
 
-где $S_k$ — k-й канонический базисный предикат классификатора Ω.
+where $S_k$ is the k-th canonical basis predicate of the classifier Ω.
 
-**Следствие (TP автоматически):**
+**Corollary (TP automatically):**
 
 $$
 \sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}
 $$
 
-:::info CPTP из представления Краусса [Т]
-[Фано-операторы](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ определяют CPTP-канал в представлении Краусса. По [теореме Хои](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): канал в форме Краусса $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ **вполне положителен** автоматически. Сохранение следа: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (каждое измерение принадлежит ровно 3 Фано-линиям, T-41b [Т]). Полная положительность **не зависит** от стратификации.
+:::info CPTP from Kraus representation [Т]
+[Fano operators](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define a CPTP channel in the Kraus representation. By [Choi's theorem](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): a channel in Kraus form $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ is **completely positive** automatically. Trace preservation: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (each dimension belongs to exactly 3 Fano lines, T-41b [Т]). Complete positivity **does not depend** on stratification.
 :::
 
-### Иерархия L_k по стратам {#иерархия-lk}
+### Hierarchy of L_k by strata {#иерархия-lk}
 
-| Страта | Тип системы | Классификатор | L_k оператор | Интерпретация |
-|--------|-------------|---------------|--------------|---------------|
-| I | Материя | $\Omega_{sym}$ — инварианты группы | $P_{Casimir}$ | Симметрия |
-| II | Жизнь | $\Omega_{viable}$ — P > [P_crit](/docs/proofs/dynamics/theorem-purity-critical) | $\sum_j R_j P_j$ | QECC |
-| III | Разум | $\Omega_{pred}$ — min F | $\nabla_\Gamma F$ | Байес |
-| IV | Сознание | $\Omega_{coh}$ — H¹ = 0 | $\check{\delta}$ | Склейка |
+| Stratum | System type | Classifier | L_k operator | Interpretation |
+|---------|-------------|-----------|--------------|----------------|
+| I | Matter | $\Omega_{sym}$ — group invariants | $P_{Casimir}$ | Symmetry |
+| II | Life | $\Omega_{viable}$ — P > [P_crit](/docs/proofs/dynamics/theorem-purity-critical) | $\sum_j R_j P_j$ | QECC |
+| III | Mind | $\Omega_{pred}$ — min F | $\nabla_\Gamma F$ | Bayes |
+| IV | Consciousness | $\Omega_{coh}$ — H¹ = 0 | $\check{\delta}$ | Gluing |
 
-**Важно:** L_k **не произвольны** — они определяются стратой, на которой существует система.
+**Important:** L_k are **not arbitrary** — they are determined by the stratum on which the system exists.
 
-:::info Что значит каждая страта
-- **Страта I (Материя):** Логика — это **симметрия**. Законы сохранения ($[A, H] = 0$), запрет Паули, инвариантность относительно поворотов — всё это логические ограничения, определяющие допустимые состояния физической материи.
-- **Страта II (Жизнь):** Логика — это **коррекция ошибок**. Живая система должна поддерживать $P > P_{\text{crit}}$, и операторы $L_k$ реализуют квантовый код коррекции ошибок (QECC), «ремонтируя» повреждённые когерентности.
-- **Страта III (Разум):** Логика — это **байесовский вывод**. Операторы $L_k$ минимизируют свободную энергию $F$ — систематически обновляют убеждения при поступлении новых данных.
-- **Страта IV (Сознание):** Логика — это **склейка**. Когомологическое условие $H^1 = 0$ означает, что все локальные описания можно **глобально согласовать** — нет «разрывов» в сознательном опыте.
+:::info What each stratum means
+- **Stratum I (Matter):** Logic is **symmetry**. Conservation laws ($[A, H] = 0$), Pauli exclusion, rotational invariance — these are all logical constraints determining the admissible states of physical matter.
+- **Stratum II (Life):** Logic is **error correction**. A living system must maintain $P > P_{\text{crit}}$, and the operators $L_k$ implement a quantum error-correcting code (QECC), "repairing" damaged coherences.
+- **Stratum III (Mind):** Logic is **Bayesian inference**. The operators $L_k$ minimise the free energy $F$ — systematically updating beliefs as new data arrives.
+- **Stratum IV (Consciousness):** Logic is **gluing**. The cohomological condition $H^1 = 0$ means that all local descriptions can be **globally reconciled** — there are no "gaps" in conscious experience.
 :::
 
-### Примеры каждого уровня логики в повседневной жизни {#примеры-уровней-логики}
+### Examples of each level of logic in everyday life {#примеры-уровней-логики}
 
-Чтобы три уровня логики стали по-настоящему понятными, рассмотрим их на знакомых ситуациях:
+To make the three levels of logic truly comprehensible, let us examine them in familiar situations:
 
-#### Булева логика в повседневности
+#### Boolean logic in everyday life
 
-- **Светофор:** красный = стоять, зелёный = идти. Два состояния, третьего не дано. Это булев предикат: «Можно ли идти?» — да или нет.
-- **Выключатель:** включён или выключен. Весь цифровой мир (компьютеры, смартфоны, интернет) построен на этой элементарной логике.
-- **Суд:** «Виновен» или «не виновен». Суд *обязан* дать булев ответ, даже если реальность сложнее.
+- **Traffic light:** red = stop, green = go. Two states, no third option. This is a Boolean predicate: "May one go?" — yes or no.
+- **Light switch:** on or off. The entire digital world (computers, smartphones, the internet) is built on this elementary logic.
+- **Court verdict:** "Guilty" or "not guilty". The court *must* give a Boolean answer, even if reality is more complex.
 
-#### Гейтингова логика в повседневности
+#### Heyting logic in everyday life
 
-- **Диагноз врача:** «Возможно, у вас аллергия» — ни «да», ни «нет», а **неопределённость**, которая требует дополнительных анализов. Врач работает в гейтинговой логике: истинность утверждения зависит от того, можно ли его *проверить*.
-- **Погода:** «Завтра будет дождь?» — для далёкого будущего это *объективно* неопределённо, не просто «мы не знаем». Хаотическая динамика атмосферы делает утверждение неразрешимым.
-- **Переходные состояния сознания:** засыпание, медитация, состояние «потока». «Сплю ли я?» — может не иметь определённого ответа.
+- **Doctor's diagnosis:** "You may have an allergy" — neither "yes" nor "no", but **indeterminacy**, which requires additional tests. The doctor operates in Heyting logic: the truth of a statement depends on whether it can be *verified*.
+- **Weather:** "Will it rain tomorrow?" — for the distant future this is *objectively* undetermined, not merely "we don't know". The chaotic dynamics of the atmosphere makes the statement undecidable.
+- **Transitional states of consciousness:** falling asleep, meditation, the state of "flow". "Am I asleep?" — may not have a definite answer.
 
-#### HoTT в повседневности
+#### HoTT in everyday life
 
-- **«Как вы добрались до работы?»** На булевом уровне — «добрался» или «нет». На уровне HoTT — каждый маршрут (метро, автобус, пешком, велосипед) — **отдельный элемент пространства путей**. Два маршрута через метро различны, если один через кольцевую, а другой через радиальную. Между маршрутами есть «пути между путями» — способы деформации одного маршрута в другой (если на одной станции есть пересадка).
-- **Доказательства теоремы Пифагора:** Существуют сотни различных доказательств. В булевой логике все они «одинаковы» — теорема истинна, и всё. В HoTT каждое доказательство — отдельный элемент пространства, и **отношения между ними** несут информацию.
+- **"How did you get to work?"** At the Boolean level — "got there" or "didn't". At the HoTT level — each route (metro, bus, on foot, bicycle) is a **separate element of the path space**. Two metro routes are different if one goes via the circle line and the other via the radial. Between routes there are "paths between paths" — ways of deforming one route into another (if there is a transfer at one station).
+- **Proofs of the Pythagorean theorem:** Hundreds of different proofs exist. In Boolean logic they are all "the same" — the theorem is true, end of story. In HoTT each proof is a separate element of the space, and **the relations between them** carry information.
 
-### Связь L и времени
+### Connection between L and time
 
-Темпоральная модальность ▷ на Ω порождает [дискретное время](/docs/proofs/dynamics/emergent-time):
+The temporal modality ▷ on Ω generates [discrete time](/docs/proofs/dynamics/emergent-time):
 
 $$
 \tau_n := \triangleright^n(\text{now})
 $$
 
-Эволюция предикатов χ ∈ L под действием ▷ **есть** динамика системы.
+The evolution of predicates χ ∈ L under the action of ▷ **is** the dynamics of the system.
 
-:::warning Связь с автопоэзисом
-При удалении измерения $L$ нарушается **(AP)** — нет логического замыкания, нет самосогласованности. Без $L$ противоречивые конфигурации $\Gamma$ не отсеиваются, и система может эволюционировать в логически невозможные состояния. См. [доказательство](../../proofs/minimality/theorem-minimality-7#случай-n--3-удаление-логики-l).
+:::warning Connection with autopoiesis
+Removing dimension $L$ violates **(AP)** — there is no logical closure, no self-consistency. Without $L$, contradictory configurations $\Gamma$ are not filtered out, and the system can evolve into logically impossible states. See [proof](../../proofs/minimality/theorem-minimality-7#случай-n--3-удаление-логики-l).
 :::
 
-**Логика обеспечивает замыкание по Розену:** В (M,R)-системе Розена $\beta$-замыкание требует, чтобы причины были согласованы со следствиями. Измерение $L$ реализует эту функцию — без него каузальный цикл разрывается.
+**Logic provides Rosen closure:** In Rosen's (M,R)-system, $\beta$-closure requires that causes be consistent with effects. Dimension $L$ implements this function — without it the causal cycle breaks.
 
-## Математическое представление
+## Mathematical representation
 
-### Алгебра операторов
+### Operator algebra
 
-Логические отношения между измерениями описываются **коммутатором**:
+Logical relations between dimensions are described by the **commutator**:
 
 $$
 [A, B] := AB - BA
 $$
 
-Коммутатор — это мера некоммутативности операторов:
-- $[A, B] = 0$ — порядок операций не важен (совместимость)
-- $[A, B] \neq 0$ — порядок важен (некоммутативность)
+The commutator is a measure of the non-commutativity of operators:
+- $[A, B] = 0$ — the order of operations does not matter (compatibility)
+- $[A, B] \neq 0$ — the order matters (non-commutativity)
 
-:::info Простой пример некоммутативности
-Наденьте носки, потом ботинки — всё нормально. Наденьте ботинки, потом носки — проблема. Операции «надеть носки» (A) и «надеть ботинки» (B) некоммутативны: $AB \neq BA$. В квантовой механике некоммутативность координаты и импульса ($[x, p] = i\hbar$) порождает принцип неопределённости Гейзенберга.
+:::info Simple example of non-commutativity
+Put on socks, then shoes — fine. Put on shoes, then socks — problem. The operations "put on socks" (A) and "put on shoes" (B) are non-commutative: $AB \neq BA$. In quantum mechanics the non-commutativity of position and momentum ($[x, p] = i\hbar$) gives rise to the Heisenberg uncertainty principle.
 :::
 
-### Связь с базисным состоянием
+### Connection with the basis state
 
-Проекция на $|L\rangle$ определяет **степень логической связности** конфигурации:
+The projection onto $|L\rangle$ determines the **degree of logical connectedness** of the configuration:
 
 $$
 \gamma_{LL} = \langle L|\Gamma|L\rangle
 $$
 
-Физическая интерпретация: $\gamma_{LL}$ — мера того, насколько система согласована внутренне.
+Physical interpretation: $\gamma_{LL}$ is a measure of how internally consistent the system is.
 
-:::info Что означает большое и малое γ_LL
-- **Высокое $\gamma_{LL}$ (близко к 1/7 или выше):** Система логически целостна. Все её части согласованы друг с другом, нет внутренних противоречий. Пример: хорошо работающая математическая теория, здоровый мозг в состоянии ясного мышления.
-- **Низкое $\gamma_{LL}$ (близко к 0):** Система логически «рассыпается». Её части противоречат друг другу, нет согласованности. Пример: бредовое состояние, в котором человек одновременно верит в несовместимые вещи; сбойная компьютерная программа; противоречивая научная теория.
-- **$\gamma_{LL} = 0$:** Логика полностью отсутствует. Такая система не может существовать устойчиво — без логического «каркаса» любая конфигурация немедленно распадается.
+:::info What high and low γ_LL mean
+- **High $\gamma_{LL}$ (close to 1/7 or above):** The system is logically integral. All its parts are consistent with one another, there are no internal contradictions. Example: a well-functioning mathematical theory, a healthy brain in a state of clear thinking.
+- **Low $\gamma_{LL}$ (close to 0):** The system is logically "disintegrating". Its parts contradict each other, there is no consistency. Example: a delusional state in which a person simultaneously believes incompatible things; a malfunctioning computer program; a contradictory scientific theory.
+- **$\gamma_{LL} = 0$:** Logic is completely absent. Such a system cannot exist stably — without a logical "framework" any configuration immediately falls apart.
 :::
 
-### Логическая согласованность как инвариант {#логическая-согласованность}
+### Logical consistency as an invariant {#логическая-согласованность}
 
-:::info Статус: [О] Определения; 7D-формула σ_L — [С]
-Определения $I_{\text{verify}}$, $\theta_L$ и $\sigma_L$ заданы через классификатор подобъектов Ω и энтропию фон Неймана. Приближённая формула $\sigma_L$ для 7D — условная [С] (зависит от допущения $\gamma_{LL} \ll 1$).
+:::info Status: [О] Definitions; 7D formula σ_L — [С]
+The definitions of $I_{\text{verify}}$, $\theta_L$, and $\sigma_L$ are given via the subobject classifier Ω and the von Neumann entropy. The approximate formula for $\sigma_L$ in 7D is conditional [С] (depends on the assumption $\gamma_{LL} \ll 1$).
 :::
 
-Для жизнеспособной системы требуется, чтобы нагрузка на логическую верификацию не превышала пропускную способность:
+For a viable system it is required that the load on logical verification does not exceed the throughput:
 
 $$
 \sigma_L := \frac{I_{\text{verify}}}{\theta_L} < 1
 $$
 
-#### Определение I_verify (информация верификации) {#определение-i-verify}
+#### Definition of I_verify (verification information) {#определение-i-verify}
 
-**Определение (I_verify через взаимную информацию):**
+**Definition (I_verify via mutual information):**
 
 $$
 I_{\text{verify}}(\Gamma) := S_{vN}(\rho) - S_{vN}(\rho | L) = I(\Gamma : L)
 $$
 
-где:
-- $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — энтропия фон Неймана
-- $I(\Gamma : L)$ — квантовая взаимная информация между состоянием Γ и L-измерением
-- $\rho | L$ — условное состояние при известном значении L-проекции
+where:
+- $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — von Neumann entropy
+- $I(\Gamma : L)$ — quantum mutual information between the state Γ and the L-dimension
+- $\rho | L$ — conditional state for a known value of the L-projection
 
-**Интерпретация:** $I_{\text{verify}}$ — количество информации, извлекаемое из Γ при логической проверке через L-измерение.
+**Interpretation:** $I_{\text{verify}}$ is the amount of information extractable from Γ in logical verification through the L-dimension.
 
-#### Определение θ_L (пропускная способность) {#определение-theta-l}
+#### Definition of θ_L (throughput) {#определение-theta-l}
 
-**Определение (θ_L через максимальную энтропию):**
+**Definition (θ_L via maximum entropy):**
 
 $$
 \theta_L(\Gamma) := \gamma_{LL} \cdot \log(N)
 $$
 
-где:
-- $\gamma_{LL}$ — населённость L-измерения (диагональный элемент матрицы когерентности)
-- $\log(N) = \log(7)$ — максимальная энтропия $N$-мерной системы
+where:
+- $\gamma_{LL}$ — population of the L-dimension (diagonal element of the coherence matrix)
+- $\log(N) = \log(7)$ — maximum entropy of an $N$-dimensional system
 
-**Интерпретация:** $\theta_L$ — пропускная способность L-измерения, определяемая как произведение населённости на максимально возможную энтропию.
+**Interpretation:** $\theta_L$ is the throughput of the L-dimension, defined as the product of the population by the maximum possible entropy.
 
-#### Определение σ_L [С] {#строгое-определение-sigma-l}
+#### Definition of σ_L [С] {#строгое-определение-sigma-l}
 
-**Определение (σ_L через редуцированную матрицу):**
+**Definition (σ_L via reduced matrix):**
 
 $$
 \sigma_L(\Gamma) := \frac{S_{vN}(\rho_L)}{\gamma_{LL} \cdot \log(N)}
 $$
 
-где $\rho_L = \mathrm{Tr}_{-L}(\Gamma)$ — редуцированная матрица плотности L-измерения в расширенном формализме.
+where $\rho_L = \mathrm{Tr}_{-L}(\Gamma)$ is the reduced density matrix of the L-dimension in the extended formalism.
 
-**Для минимального 7D-формализма** (одноуровневая матрица $7 \times 7$):
+**For the minimal 7D formalism** (single-level $7 \times 7$ matrix):
 
 $$
 \sigma_L(\Gamma) \approx \frac{7(1 - \gamma_{LL})}{6}
 $$
 
-:::warning Статус: [С] Условная формула
-Приближённая формула для 7D получена при допущении $\gamma_{LL} \ll 1$ и равномерного распределения остальных населённостей. Приближение **не является строгим выводом**: переход $\rho_L \approx \gamma_{LL}$ (скаляр) корректен только в расширенном формализме, а в 7D (7 — простое число) частичный след $\mathrm{Tr}_{-L}$ не определён из-за отсутствия тензорной факторизации.
+:::warning Status: [С] Conditional formula
+The approximate formula for 7D is obtained under the assumption $\gamma_{LL} \ll 1$ and a uniform distribution of the remaining populations. The approximation **is not a rigorous derivation**: the transition $\rho_L \approx \gamma_{LL}$ (scalar) is correct only in the extended formalism, and in 7D (7 is prime) the partial trace $\mathrm{Tr}_{-L}$ is not defined due to the absence of tensor factorisation.
 :::
 
-**Приближённый вывод формулы для 7D:**
+**Approximate derivation of the formula for 7D:**
 
-В минимальном формализме $\rho_L \approx \gamma_{LL}$ (скаляр), поэтому:
+In the minimal formalism $\rho_L \approx \gamma_{LL}$ (scalar), therefore:
 
 $$
 S_{vN}(\rho_L) \approx -\gamma_{LL} \log(\gamma_{LL}) - (1-\gamma_{LL})\log\left(\frac{1-\gamma_{LL}}{6}\right)
 $$
 
-При $\gamma_{LL} \ll 1$:
+For $\gamma_{LL} \ll 1$:
 
 $$
 \sigma_L \approx \frac{1 - \gamma_{LL}}{\gamma_{LL}} \cdot \frac{1}{\log 7} \approx \frac{7(1-\gamma_{LL})}{6}
 $$
 
-**Определения компонентов (сводка):**
+**Definitions of components (summary):**
 
-| Параметр | Определение | Статус |
-|----------|-------------|--------|
-| $I_{\text{verify}}$ | $I(\Gamma : L) = S_{vN}(\rho) - S_{vN}(\rho \| L)$ — взаимная информация | [О] Определение |
-| $\theta_L$ | $\gamma_{LL} \cdot \log(N)$ — пропускная способность | [О] Определение |
-| $\gamma_{LL}$ | Населённость измерения L | [О] Определение |
-| $\sigma_L$ | $S_{vN}(\rho_L) / (\gamma_{LL} \cdot \log N)$ — логическая нагрузка | [О] Определение; 7D-формула [С] |
+| Parameter | Definition | Status |
+|-----------|------------|--------|
+| $I_{\text{verify}}$ | $I(\Gamma : L) = S_{vN}(\rho) - S_{vN}(\rho \| L)$ — mutual information | [О] Definition |
+| $\theta_L$ | $\gamma_{LL} \cdot \log(N)$ — throughput | [О] Definition |
+| $\gamma_{LL}$ | Population of dimension L | [О] Definition |
+| $\sigma_L$ | $S_{vN}(\rho_L) / (\gamma_{LL} \cdot \log N)$ — logical load | [О] Definition; 7D formula [С] |
 
-**Интерпретация:** $\sigma_L \in [0, \infty)$ — мера **логической нагруженности** системы:
-- $\sigma_L < 1$: логическая верификация успевает за динамикой
-- $\sigma_L \geq 1$: узкое место — система теряет согласованность
+**Interpretation:** $\sigma_L \in [0, \infty)$ — a measure of the **logical load** on the system:
+- $\sigma_L < 1$: logical verification keeps pace with dynamics
+- $\sigma_L \geq 1$: bottleneck — the system loses consistency
 
-**Связь с условием жизнеспособности:**
+**Connection with the viability condition:**
 
-При $\sigma_L \to 1$ система приближается к границе логической когерентности. Это соответствует ситуации, когда L-измерение перегружено — проверка непротиворечивости становится узким местом.
+As $\sigma_L \to 1$ the system approaches the boundary of logical coherence. This corresponds to a situation where the L-dimension is overloaded — the verification of consistency becomes a bottleneck.
 
-:::note Связь с ПИР
-Условие $\sigma_L < 1$ — следствие [Принципа Информационной Различимости](/docs/core/foundations/axiom-omega#примитив): система должна быть способна различать согласованные и несогласованные конфигурации.
+:::note Connection with PID
+The condition $\sigma_L < 1$ is a consequence of the [Principle of Informational Distinguishability](/docs/core/foundations/axiom-omega#примитив): the system must be capable of distinguishing consistent from inconsistent configurations.
 :::
 
-:::info Аналогия: σ_L как загрузка процессора
-Представьте компьютер. $\sigma_L$ — это «загрузка процессора логики». При $\sigma_L < 1$ процессор справляется: проверяет непротиворечивость всех данных, успевает за потоком информации. При $\sigma_L \to 1$ процессор на пределе: появляются «лаги», система начинает «подвисать». При $\sigma_L > 1$ — перегрузка: система «зависает», теряет согласованность. В живом организме это может проявляться как когнитивный коллапс (информационная перегрузка), нервный срыв или потеря сознания.
+:::info Analogy: σ_L as processor load
+Imagine a computer. $\sigma_L$ is the "load on the logic processor". When $\sigma_L < 1$ the processor copes: it verifies the consistency of all data and keeps pace with the information flow. When $\sigma_L \to 1$ the processor is at its limit: "lags" appear, the system begins to "hang". When $\sigma_L > 1$ — overload: the system "freezes", loses consistency. In a living organism this can manifest as cognitive collapse (information overload), a nervous breakdown, or loss of consciousness.
 :::
 
-## Типы логических отношений
+## Types of logical relations
 
-| Отношение | Условие | Интерпретация | Следствие |
-|-----------|---------|---------------|-----------|
-| Совместимость | $[A, B] = 0$ | Одновременная измеримость | Определённые совместные значения |
-| Несовместимость | $[A, B] \neq 0$ | Принцип неопределённости | $\Delta A \cdot \Delta B \geq \frac{1}{2}\lvert\langle[A,B]\rangle\rvert$ |
-| Следование | $P_A \leq P_B$ | $A$ имплицирует $B$ | $\langle A \rangle \leq \langle B \rangle$ |
-| Противоречие | $P_A \cdot P_B = 0$ | Несовместимые подпространства | Взаимоисключение |
+| Relation | Condition | Interpretation | Consequence |
+|----------|-----------|----------------|-------------|
+| Compatibility | $[A, B] = 0$ | Simultaneous measurability | Definite joint values |
+| Incompatibility | $[A, B] \neq 0$ | Uncertainty principle | $\Delta A \cdot \Delta B \geq \frac{1}{2}\lvert\langle[A,B]\rangle\rvert$ |
+| Implication | $P_A \leq P_B$ | $A$ implies $B$ | $\langle A \rangle \leq \langle B \rangle$ |
+| Contradiction | $P_A \cdot P_B = 0$ | Incompatible subspaces | Mutual exclusion |
 
-где $P_A$, $P_B$ — проекторы на соответствующие подпространства.
+where $P_A$, $P_B$ are projectors onto the corresponding subspaces.
 
-## Логические ограничения на $\Gamma$
+## Logical constraints on $\Gamma$
 
-Измерение $L$ обеспечивает выполнение фундаментальных ограничений на матрицу когерентности:
+Dimension $L$ ensures that the fundamental constraints on the coherence matrix are satisfied:
 
-### Эрмитовость
+### Hermiticity
 
 $$
 \Gamma^\dagger = \Gamma
 $$
 
-Математически: все собственные значения вещественны. Интерпретация: вероятности — вещественные числа.
+Mathematically: all eigenvalues are real. Interpretation: probabilities are real numbers.
 
-### Положительность
+### Positivity
 
 $$
 \langle\psi|\Gamma|\psi\rangle \geq 0 \quad \forall |\psi\rangle \in \mathcal{H}
 $$
 
-Математически: все собственные значения неотрицательны. Интерпретация: вероятности не могут быть отрицательными.
+Mathematically: all eigenvalues are non-negative. Interpretation: probabilities cannot be negative.
 
-### Нормировка
+### Normalisation
 
 $$
 \mathrm{Tr}(\Gamma) = 1
 $$
 
-Математически: сумма собственных значений равна 1. Интерпретация: полная вероятность — единица.
+Mathematically: the sum of eigenvalues equals 1. Interpretation: the total probability is unity.
 
-### Неравенство Коши-Шварца
+### Cauchy–Schwarz inequality
 
 $$
 |\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}
 $$
 
-Ограничивает величину когерентностей относительно диагональных элементов.
+Constrains the magnitude of coherences relative to the diagonal elements.
 
-:::info Зачем нужны эти ограничения
-Четыре ограничения выше — не произвольные правила, а **необходимые условия** для того, чтобы $\Gamma$ имела смысл как матрица плотности (вероятностное описание системы). Нарушение любого из них приводит к физически бессмысленным результатам: отрицательным вероятностям, комплексным средним значениям или вероятностям, не равным единице в сумме. L-измерение «следит» за соблюдением этих условий.
+:::info Why these constraints are needed
+The four constraints above are not arbitrary rules, but **necessary conditions** for $\Gamma$ to make sense as a density matrix (a probabilistic description of the system). Violation of any of them leads to physically meaningless results: negative probabilities, complex mean values, or probabilities that do not sum to unity. The L-dimension "watches over" compliance with these conditions.
 :::
 
-:::note Логические ограничения — как стены здания
-Представьте здание. Стены — это логические ограничения. Они не «ограничивают» жизнь внутри здания — они **делают её возможной**. Без стен нет крыши, нет защиты от дождя, нет комнат. Так и L-ограничения: они не сужают пространство допустимых состояний — они **создают** это пространство, отсекая бессмысленные (отрицательные вероятности, нарушение нормировки) конфигурации.
+:::note Logical constraints — like the walls of a building
+Imagine a building. The walls are the logical constraints. They do not "restrict" life inside the building — they **make it possible**. Without walls there is no roof, no protection from rain, no rooms. The L-constraints work the same way: they do not narrow the space of admissible states — they **create** that space, cutting off meaningless (negative probabilities, normalisation violation) configurations.
 :::
 
-## Связь с каузальностью {#связь-с-каузальностью}
+## Connection with causality {#связь-с-каузальностью}
 
-Логика определяет причинно-следственные связи через структуру динамики:
+Logic determines causal relations through the structure of dynamics:
 
 $$
 \text{Cause}(A \to B) \Leftrightarrow \exists\, U(\tau): \text{supp}\!\left(U(\tau)\rho_A U^\dagger(\tau)\right) \cap \text{supp}(\rho_B) \neq \emptyset
 $$
 
-где:
-- $\rho_A$, $\rho_B$ — состояния, соответствующие событиям $A$ и $B$
-- $U(\tau)$ — унитарный оператор эволюции во [внутреннем времени](../../proofs/dynamics/emergent-time)
-- $\text{supp}(\rho)$ — носитель (support) матрицы плотности — подпространство, на которое $\rho$ проецирует ненулевой вес
+where:
+- $\rho_A$, $\rho_B$ — states corresponding to events $A$ and $B$
+- $U(\tau)$ — unitary evolution operator in [internal time](../../proofs/dynamics/emergent-time)
+- $\text{supp}(\rho)$ — support of the density matrix — the subspace onto which $\rho$ projects non-zero weight
 
 ```mermaid
 graph LR
-    C["Причина (ρ_A)"] -->|"U(τ), L-согласовано"| E["Следствие (ρ_B)"]
-    C -->|"L-запрещено"| X["∅"]
+    C["Cause (ρ_A)"] -->|"U(τ), L-consistent"| E["Effect (ρ_B)"]
+    C -->|"L-forbidden"| X["∅"]
 ```
 
-### Каузальность подробнее {#каузальность-подробнее}
+### Causality in detail {#каузальность-подробнее}
 
-Каузальность в УГМ — не постулат, а **следствие** структуры L-измерения. Причина $A$ может привести к следствию $B$ **только** если существует допустимая (CPTP) эволюция, переводящая носитель $\rho_A$ в область, пересекающуюся с носителем $\rho_B$.
+Causality in UHM is not a postulate, but a **consequence** of the structure of the L-dimension. Cause $A$ can lead to effect $B$ **only** if there exists an admissible (CPTP) evolution that transfers the support of $\rho_A$ to a region intersecting with the support of $\rho_B$.
 
-Это даёт три важных свойства:
+This gives three important properties:
 
-**1. Каузальный порядок.** Если $A$ причина $B$, а $B$ причина $C$, то $A$ причина $C$ (транзитивность). Это следует из того, что композиция CPTP-каналов — тоже CPTP-канал.
+**1. Causal order.** If $A$ is a cause of $B$, and $B$ is a cause of $C$, then $A$ is a cause of $C$ (transitivity). This follows from the fact that the composition of CPTP channels is also a CPTP channel.
 
-**2. Запрет каузальных петель.** Если $A$ причина $B$ и $B$ причина $A$, то $A$ и $B$ — **одно и то же событие** (в смысле неразличимости по $\Gamma$). Каузальных петель нет, потому что CPTP-канал необратим — он увеличивает энтропию.
+**2. Prohibition of causal loops.** If $A$ is a cause of $B$ and $B$ is a cause of $A$, then $A$ and $B$ are **the same event** (in the sense of indistinguishability by $\Gamma$). There are no causal loops, because a CPTP channel is irreversible — it increases entropy.
 
-**3. Логический фильтр.** Не все эволюции, которые «можно представить», реально допустимы. L-измерение отсекает те, которые нарушают CPTP, эрмитовость или положительность. Это **физическая** реализация принципа непротиворечивости: из истинных посылок следуют только истинные заключения.
+**3. Logical filter.** Not all evolutions that "can be imagined" are actually admissible. The L-dimension cuts off those that violate CPTP, Hermiticity, or positivity. This is the **physical** realisation of the principle of non-contradiction: from true premises only true conclusions follow.
 
-:::note Пример: почему нельзя передать информацию в прошлое
-В УГМ «передать информацию в прошлое» означало бы: существует CPTP-канал $\Phi$ такой, что $\Phi(\rho_{\text{будущее}})$ имеет ненулевое перекрытие с $\rho_{\text{прошлое}}$ при $\tau < 0$. Но стрела времени (следствие CPTP, см. [Динамика (D)](./dimension-d)) запрещает это: физически реализуемые пути имеют $\sigma(\gamma) = +1$, что означает монотонный рост энтропии.
+:::note Example: why information cannot be sent to the past
+In UHM "sending information to the past" would mean: there exists a CPTP channel $\Phi$ such that $\Phi(\rho_{\text{future}})$ has non-zero overlap with $\rho_{\text{past}}$ for $\tau < 0$. But the arrow of time (a consequence of CPTP, see [Dynamics (D)](./dimension-d)) forbids this: physically realisable paths have $\sigma(\gamma) = +1$, meaning monotonic growth of entropy.
 :::
 
-### Каузальность и свобода воли {#каузальность-и-свобода}
+### Causality and free will {#каузальность-и-свобода}
 
-Связь логики с каузальностью ставит глубокий вопрос: если причинно-следственные связи **полностью** определены L-измерением, есть ли место для свободы воли?
+The connection of logic with causality raises a deep question: if causal relations are **fully** determined by the L-dimension, is there room for free will?
 
-В УГМ ответ нетривиален: на **булевом** уровне логики каузальность детерминистична (данная причина неизбежно ведёт к данному следствию). Но на **гейтинговом** и особенно на **HoTT-уровне** каузальность приобретает новые свойства:
+In UHM the answer is non-trivial: at the **Boolean** level of logic causality is deterministic (a given cause inevitably leads to a given effect). But at the **Heyting** and especially the **HoTT level** causality acquires new properties:
 
-- **Гейтингов уровень:** существуют причины с *неопределённым* следствием — не потому, что мы не знаем результат, а потому, что результат объективно неопределён.
-- **HoTT-уровень:** одна причина может вести к следствию *многими путями*, и выбор пути — это информация, не содержащаяся в причине. На страте IV (сознание) система может *наблюдать* пространство возможных путей и выбирать между ними.
+- **Heyting level:** there are causes with an *undetermined* effect — not because we do not know the result, but because the result is objectively undetermined.
+- **HoTT level:** one cause can lead to an effect *by many paths*, and the choice of path is information not contained in the cause. At stratum IV (consciousness) the system can *observe* the space of possible paths and choose between them.
 
-Это не классическая свобода воли («я мог бы поступить иначе»), а нечто более глубокое: **навигация в пространстве причинных путей**, доступная только системам с достаточно глубокой рефлексией ($R \geq 1/3$).
+This is not classical free will ("I could have done otherwise"), but something deeper: **navigation in the space of causal paths**, accessible only to systems with sufficiently deep reflection ($R \geq 1/3$).
 
-## Примеры
+## Examples
 
-| Уровень | Пример | Логическая функция | Подробности |
-|---------|--------|-------------------|-------------|
-| Физический | Принцип неопределённости | $[x, p] = i\hbar$ | Невозможно одновременно точно знать положение и импульс — это не техническое ограничение, а **логическое** свойство реальности |
-| Физический | Законы сохранения | $[A, H] = 0 \Rightarrow dA/d\tau = 0$ | Если оператор $A$ коммутирует с гамильтонианом, соответствующая величина не меняется во времени |
-| Физический | Запрет Паули | Антисимметрия фермионов | Два одинаковых фермиона не могут находиться в одном квантовом состоянии — логический запрет на уровне симметрии волновой функции |
-| Биологический | Генетический код | Однозначность трансляции | Каждый кодон кодирует **ровно одну** аминокислоту — логическая однозначность обеспечивает воспроизводимость |
-| Биологический | Метаболические циклы | Замкнутость биохимических путей | Цикл Кребса замкнут: каждый промежуточный продукт восстанавливается, обеспечивая **самосогласованность** метаболизма |
-| Когнитивный | Правила вывода | Modus ponens, modus tollens | «Если дождь, то мокро; дождь; значит, мокро» — базовое логическое правило на уровне разума |
-| Когнитивный | Рациональность | Транзитивность предпочтений | Если вы предпочитаете A перед B и B перед C, логика требует предпочтения A перед C. Нарушение — признак «сбоя» в L-измерении |
-| Когнитивный | Когнитивный диссонанс | Перегрузка L-измерения | Одновременное удержание противоречивых убеждений — $\sigma_L \to 1$, логическая верификация на пределе |
+| Level | Example | Logical function | Details |
+|-------|---------|------------------|---------|
+| Physical | Uncertainty principle | $[x, p] = i\hbar$ | It is impossible to simultaneously know position and momentum exactly — this is not a technical limitation but a **logical** property of reality |
+| Physical | Conservation laws | $[A, H] = 0 \Rightarrow dA/d\tau = 0$ | If operator $A$ commutes with the Hamiltonian, the corresponding quantity does not change in time |
+| Physical | Pauli exclusion | Antisymmetry of fermions | Two identical fermions cannot occupy the same quantum state — a logical prohibition at the level of wave-function symmetry |
+| Biological | Genetic code | Uniqueness of translation | Each codon encodes **exactly one** amino acid — logical unambiguity ensures reproducibility |
+| Biological | Metabolic cycles | Closure of biochemical pathways | The Krebs cycle is closed: each intermediate product is regenerated, ensuring **self-consistency** of metabolism |
+| Cognitive | Inference rules | Modus ponens, modus tollens | "If rain then wet; it is raining; therefore it is wet" — a basic logical rule at the level of mind |
+| Cognitive | Rationality | Transitivity of preferences | If you prefer A over B and B over C, logic requires preferring A over C. Violation is a sign of a "malfunction" in the L-dimension |
+| Cognitive | Cognitive dissonance | Overload of the L-dimension | Simultaneously holding contradictory beliefs — $\sigma_L \to 1$, logical verification at its limit |
 
-### Развёрнутые примеры {#развёрнутые-примеры}
+### Expanded examples {#развёрнутые-примеры}
 
-#### Принцип неопределённости как логическое свойство
+#### The uncertainty principle as a logical property
 
-Принцип неопределённости Гейзенберга ($\Delta x \cdot \Delta p \geq \hbar/2$) часто объясняют «возмущением при измерении»: чтобы узнать положение частицы, нужно «осветить» её фотоном, который изменяет импульс. Но это **неверная** интерпретация. В УГМ принцип неопределённости — **логическое** свойство: операторы координаты и импульса *некоммутативны* ($[x, p] = i\hbar$), и это означает, что одновременные точные значения обоих **логически невозможны**. Это не ограничение наших приборов — это ограничение *реальности*.
+The Heisenberg uncertainty principle ($\Delta x \cdot \Delta p \geq \hbar/2$) is often explained as "disturbance by measurement": to know the position of a particle, one must "illuminate" it with a photon, which changes the momentum. But this is the **wrong** interpretation. In UHM the uncertainty principle is a **logical** property: the operators of position and momentum are *non-commutative* ($[x, p] = i\hbar$), and this means that simultaneous exact values of both are **logically impossible**. This is not a limitation of our instruments — it is a limitation of *reality*.
 
-#### Когнитивный диссонанс как перегрузка σ_L
+#### Cognitive dissonance as σ_L overload
 
-Когда человек одновременно придерживается двух несовместимых убеждений (например, «курить вредно» и «я курю, потому что мне нравится»), его L-измерение перегружается: $\sigma_L$ растёт, приближаясь к 1. Мозг испытывает дискомфорт — это субъективное переживание логической перегрузки. Разрешение диссонанса (изменение одного из убеждений) — это снижение $\sigma_L$ обратно в безопасную зону.
+When a person simultaneously holds two incompatible beliefs (for example, "smoking is harmful" and "I smoke because I enjoy it"), their L-dimension is overloaded: $\sigma_L$ grows, approaching 1. The brain experiences discomfort — this is the subjective experience of logical overload. Resolving the dissonance (changing one of the beliefs) is a decrease of $\sigma_L$ back into the safe zone.
 
-#### Генетический код как логический инвариант
+#### The genetic code as a logical invariant
 
-Генетический код — один из самых чистых примеров L-функции в биологии. Каждый триплет нуклеотидов (кодон) кодирует **ровно одну** аминокислоту. Если бы один кодон мог кодировать *разные* аминокислоты в зависимости от контекста, белки синтезировались бы непредсказуемо — логическая согласованность была бы нарушена. Однозначность генетического кода — это булева логика ($L_k$ на страте II): каждый предикат «кодон X кодирует аминокислоту Y» строго истинен или ложен.
+The genetic code is one of the clearest examples of the L-function in biology. Each nucleotide triplet (codon) encodes **exactly one** amino acid. If one codon could encode *different* amino acids depending on context, proteins would be synthesised unpredictably — logical consistency would be violated. The unambiguity of the genetic code is Boolean logic ($L_k$ at stratum II): each predicate "codon X encodes amino acid Y" is strictly true or false.
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    L["L — Логика"] --> A["A — согласованность различий"]
-    L --> S["S — непротиворечивость структуры"]
-    L --> D["D — каузальность эволюции"]
-    L --> E["E — рациональность опыта"]
-    L --> O["O — логическое основание"]
-    L --> U["U — согласованность целого"]
+    L["L — Logic"] --> A["A — consistency of distinctions"]
+    L --> S["S — consistency of structure"]
+    L --> D["D — causality of evolution"]
+    L --> E["E — rationality of experience"]
+    L --> O["O — logical ground"]
+    L --> U["U — consistency of the whole"]
 ```
 
-**Ключевая связь L ↔ D:** Логика и динамика взаимосвязаны:
-- $D$ определяет *как* система эволюционирует
-- $L$ определяет *какие* траектории допустимы
+**Key connection L ↔ D:** Logic and dynamics are interrelated:
+- $D$ determines *how* the system evolves
+- $L$ determines *which* trajectories are admissible
 
-**L ↔ S (Логика ↔ Структура):** Логика обеспечивает **непротиворечивость** структуры. Когерентность $\gamma_{LS}$ — «законы структуры»: аксиомы, определяющие допустимые конфигурации. Если $\gamma_{LS} \to 0$, структура может быть внутренне противоречивой.
+**L ↔ S (Logic ↔ Structure):** Logic ensures the **consistency** of structure. Coherence $\gamma_{LS}$ — "laws of structure": axioms determining admissible configurations. If $\gamma_{LS} \to 0$, the structure may be internally contradictory.
 
-**L ↔ E (Логика ↔ Интериорность):** Когерентность $\gamma_{LE}$ отвечает за **рациональность опыта**. Высокое $|\gamma_{LE}|$ — логически связный субъективный опыт. Низкое — хаотичные, бессвязные переживания (как в бреду или ранних стадиях сновидения).
+**L ↔ E (Logic ↔ Interiority):** Coherence $\gamma_{LE}$ is responsible for the **rationality of experience**. High $|\gamma_{LE}|$ — logically coherent subjective experience. Low — chaotic, incoherent experiences (as in delirium or the early stages of dreaming).
 
-**L ↔ O (Логика ↔ Основание):** Когерентность $\gamma_{LO}$ — «фундаментальность логики». O-измерение поставляет «новую информацию», которая расширяет логическое пространство L. Это механизм преодоления гёделевой неполноты (см. ниже).
+**L ↔ O (Logic ↔ Ground):** Coherence $\gamma_{LO}$ — "fundamentality of logic". The O-dimension supplies "new information" that expands the logical space of L. This is the mechanism for overcoming Gödelian incompleteness (see below).
 
-**L ↔ U (Логика ↔ Единство):** Когерентность $\gamma_{LU}$ — «глобальная согласованность». Высокое $|\gamma_{LU}|$ означает, что все части системы **логически совместимы** друг с другом. Это когомологическое условие $H^1 = 0$ на страте IV.
+**L ↔ U (Logic ↔ Unity):** Coherence $\gamma_{LU}$ — "global consistency". High $|\gamma_{LU}|$ means that all parts of the system are **logically compatible** with one another. This is the cohomological condition $H^1 = 0$ at stratum IV.
 
-**L ↔ A (Логика ↔ Артикуляция):** Когерентность $\gamma_{LA}$ — «логичность различений». Каждое различие, проведённое A-измерением, должно быть **непротиворечивым** с остальными. L «проверяет» различия на согласованность.
+**L ↔ A (Logic ↔ Articulation):** Coherence $\gamma_{LA}$ — "logicality of distinctions". Every distinction drawn by the A-dimension must be **consistent** with the others. L "checks" distinctions for consistency.
 
-## Когерентность с L
+## Coherence with L
 
-Элементы $\gamma_{Li}$ матрицы когерентности описывают связь логики с другими измерениями:
+The elements $\gamma_{Li}$ of the coherence matrix describe the connection of logic with other dimensions:
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{LA}$ | Логичность различений (непротиворечивость категорий) |
-| $\gamma_{LS}$ | Законы структуры (аксиомы системы) |
-| $\gamma_{LD}$ | Каузальность (причинно-следственная связь) |
-| $\gamma_{LE}$ | Рациональность опыта (логичность интериорных состояний) |
-| $\gamma_{LO}$ | Фундаментальность логики (укоренённость в основании) |
-| $\gamma_{LU}$ | Согласованность целого (глобальная непротиворечивость) |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{LA}$ | Logicality of distinctions (consistency of categories) |
+| $\gamma_{LS}$ | Laws of structure (axioms of the system) |
+| $\gamma_{LD}$ | Causality (causal connection) |
+| $\gamma_{LE}$ | Rationality of experience (logical coherence of interior states) |
+| $\gamma_{LO}$ | Fundamentality of logic (rootedness in the ground) |
+| $\gamma_{LU}$ | Consistency of the whole (global non-contradiction) |
 
-## Неполнота и непротиворечивость
+## Incompleteness and consistency
 
-### Теоремы Гёделя: простое объяснение {#теоремы-гёделя}
+### Gödel's theorems: a simple explanation {#теоремы-гёделя}
 
-Курт Гёдель в 1931 году доказал два результата, перевернувших представление о логике:
+Kurt Gödel in 1931 proved two results that overturned the understanding of logic:
 
-**Первая теорема о неполноте:** В любой достаточно богатой непротиворечивой формальной системе существуют истинные утверждения, которые **невозможно доказать** в рамках этой системы.
+**First incompleteness theorem:** In any sufficiently rich consistent formal system there exist true statements that **cannot be proved** within that system.
 
-:::info Аналогия
-Представьте карту города. Карта может быть очень подробной, но она **не может содержать саму себя** — ведь тогда на ней должна быть карта карты, а на ней — карта карты карты, и так далее. Формальная система — как карта: она описывает истины, но не может описать **все** истины о себе самой.
+:::info Analogy
+Imagine a city map. The map can be very detailed, but it **cannot contain itself** — for then it would have to show a map of the map, and on that a map of the map of the map, and so on. A formal system is like a map: it describes truths, but cannot describe **all** truths about itself.
 :::
 
-**Вторая теорема о неполноте:** Непротиворечивая формальная система не может доказать **собственную** непротиворечивость.
+**Second incompleteness theorem:** A consistent formal system cannot prove its **own** consistency.
 
-Это кажется катастрофой: мы никогда не можем быть **логически** уверены, что наша логика не содержит противоречий!
+This seems catastrophic: we can never be **logically** certain that our logic contains no contradictions!
 
-:::info Ещё проще: зеркало и фотография
-Первая теорема: Вы не можете сфотографировать **всё**, включая сам фотоаппарат *в момент съёмки*. Всегда останется то, что находится «за камерой». Формальная система «фотографирует» истины, но не может захватить саму себя целиком.
+:::info Even simpler: a mirror and a photograph
+First theorem: You cannot photograph **everything**, including the camera itself *at the moment of shooting*. There will always be something "behind the camera". A formal system "photographs" truths, but cannot capture itself whole.
 
-Вторая теорема: Вы не можете посмотреть в зеркало и убедиться, что зеркало не искажает. Для этого нужно **другое** зеркало, которое проверит первое. Но кто проверит второе? Формальная система не может проверить собственную непротиворечивость — для этого нужна *внешняя* точка зрения.
+Second theorem: You cannot look in a mirror and verify that the mirror does not distort. For that you need **another** mirror to check the first. But who checks the second? A formal system cannot verify its own consistency — an *external* viewpoint is required.
 :::
 
-### Применимость теорем Гёделя
+### Applicability of Gödel's theorems
 
-Теоремы Гёделя применяются к **формальным системам**, оперирующим в измерении $L$. Но $\Gamma$ имеет 7 измерений, и $L \subsetneq \Gamma$.
+Gödel's theorems apply to **formal systems** operating in dimension $L$. But $\Gamma$ has 7 dimensions, and $L \subsetneq \Gamma$.
 
-:::warning О границах применимости
-Теоремы Гёделя доказаны для формальных систем, удовлетворяющих определённым условиям (формальность, выразительность, непротиворечивость). Применение их к $\Gamma$ в целом — категориальная ошибка, поскольку $\Gamma$ не является формальной системой.
+:::warning On the limits of applicability
+Gödel's theorems are proved for formal systems satisfying certain conditions (formality, expressiveness, consistency). Applying them to $\Gamma$ as a whole is a categorical error, since $\Gamma$ is not a formal system.
 :::
 
-### Два типа истины
+### Two types of truth
 
-| Тип | Определение | Область |
-|-----|-------------|---------|
-| **Логическая доказуемость** | $p \in \text{Prov}(L)$ — $p$ выводимо из аксиом | Измерение $L$ |
-| **Когерентность-истина** | $\langle p \vert \Gamma \vert p \rangle > 0$ — $p$ согласовано с $\Gamma$ | Все 7 измерений |
+| Type | Definition | Domain |
+|------|------------|--------|
+| **Logical provability** | $p \in \text{Prov}(L)$ — $p$ is derivable from axioms | Dimension $L$ |
+| **Coherence-truth** | $\langle p \vert \Gamma \vert p \rangle > 0$ — $p$ is consistent with $\Gamma$ | All 7 dimensions |
 
-Формально:
+Formally:
 
 $$
 \text{Prov}(L) \subsetneq \text{Coh}(\Gamma)
 $$
 
-где:
-- $\text{Prov}(L)$ — множество утверждений, доказуемых в формальной системе, ассоциированной с $L$
-- $\text{Coh}(\Gamma)$ — множество состояний, когерентных с полной матрицей $\Gamma$
+where:
+- $\text{Prov}(L)$ — the set of statements provable in the formal system associated with $L$
+- $\text{Coh}(\Gamma)$ — the set of states coherent with the full matrix $\Gamma$
 
-:::info Что это значит на практике
-Существуют утверждения, которые **невозможно доказать** чисто логически (через L), но которые **истинны** в полном смысле когерентности с $\Gamma$. Пример: «Я существую» невозможно доказать формально (это привело бы к бесконечному регрессу), но это когерентно с $\Gamma$ любого живого Голонома ($P > P_{\text{crit}}$ → система существует → утверждение когерентно).
+:::info What this means in practice
+There exist statements that **cannot be proved** by purely logical means (through L), but that are **true** in the full sense of coherence with $\Gamma$. Example: "I exist" cannot be proved formally (it would lead to infinite regress), but it is coherent with $\Gamma$ of any living Holon ($P > P_{\text{crit}}$ → the system exists → the statement is coherent).
 :::
 
-:::note Ещё примеры двух типов истины
-- **«Красное отличается от синего»** — невозможно *доказать* логически, но когерентно с $\Gamma$ любого зрячего наблюдателя ($\gamma_{AE} > 0$, различия артикулированы и переживаются).
-- **Аксиомы арифметики** — непротиворечивость арифметики Пеано *не доказуема* внутри самой арифметики (вторая теорема Гёделя), но *когерентна* с $\Gamma$ — арифметика работает, мосты не падают, компьютеры считают.
-- **Этические интуиции** — «пытка невинных — зло» не выводимо из аксиом L, но когерентно с $\Gamma$ здорового сознательного Голонома (через E- и U-измерения).
+:::note More examples of two types of truth
+- **"Red differs from blue"** — cannot be *proved* logically, but is coherent with $\Gamma$ of any sighted observer ($\gamma_{AE} > 0$, distinctions are articulated and experienced).
+- **Arithmetic axioms** — the consistency of Peano arithmetic is *not provable* within arithmetic itself (Gödel's second theorem), but is *coherent* with $\Gamma$ — arithmetic works, bridges do not fall, computers calculate.
+- **Ethical intuitions** — "torturing the innocent is evil" is not derivable from the axioms of L, but is coherent with $\Gamma$ of a healthy conscious Holon (through the E and U dimensions).
 :::
 
-### Непротиворечивость через автопоэзис
+### Consistency through autopoiesis
 
-Вторая теорема Гёделя запрещает *логическое* доказательство непротиворечивости. УГМ демонстрирует непротиворечивость **экзистенциально**:
+Gödel's second theorem forbids *logical* proof of consistency. UHM demonstrates consistency **existentially**:
 
-Существование жизнеспособного Голонома $\mathbb{H}$ с $P(\Gamma) > P_{\text{crit}}$ демонстрирует, что конфигурация $\Gamma$ непротиворечива — противоречивые конфигурации не могут поддерживать когерентность выше критического порога.
+The existence of a viable Holon $\mathbb{H}$ with $P(\Gamma) > P_{\text{crit}}$ demonstrates that the configuration $\Gamma$ is consistent — contradictory configurations cannot sustain coherence above the critical threshold.
 
-:::tip Принцип
-**Consistency is enacted, not proven** — непротиворечивость **исполняется** существованием функционирующей системы, а не доказывается логически.
+:::tip Principle
+**Consistency is enacted, not proven** — consistency is **enacted** by the existence of a functioning system, not proved logically.
 :::
 
-### Неполнота как ресурс
+### Incompleteness as a resource
 
-Гёделева неполнота в $L$ — не ограничение, а **механизм эволюции**:
+Gödelian incompleteness in $L$ is not a limitation but a **mechanism of evolution**:
 
-1. Неразрешимые проблемы создают "сингулярности" в логическом пространстве
-2. Система обращается к [Основанию (O)](./dimension-o) за новой информацией
-3. Расширение аксиоматики восстанавливает когерентность на новом уровне
+1. Undecidable problems create "singularities" in logical space
+2. The system turns to [Ground (O)](./dimension-o) for new information
+3. Expansion of the axiomatics restores coherence at a new level
 
-:::info Аналогия с научными революциями
-Неполнота Гёделя в УГМ работает как механизм научных революций по Куну. Нормальная наука (работа в рамках L) накапливает «аномалии» — факты, которые невозможно объяснить в текущей парадигме. Когда аномалий становится слишком много ($\sigma_L \to 1$), происходит «революция»: система обращается к O за новой информацией, расширяет аксиоматику и переходит на новый уровень. Неполнота — **двигатель** эволюции, а не баг.
+:::info Analogy with scientific revolutions
+Gödelian incompleteness in UHM works like the mechanism of scientific revolutions according to Kuhn. Normal science (working within the framework of L) accumulates "anomalies" — facts that cannot be explained within the current paradigm. When anomalies become too numerous ($\sigma_L \to 1$), a "revolution" occurs: the system turns to O for new information, expands the axiomatics, and moves to a new level. Incompleteness is the **engine** of evolution, not a bug.
 :::
 
-### Неполнота в повседневном опыте {#неполнота-повседневность}
+### Incompleteness in everyday experience {#неполнота-повседневность}
 
-Гёделева неполнота может показаться далёкой от жизни, но на самом деле мы сталкиваемся с ней постоянно:
+Gödelian incompleteness may seem remote from life, but in fact we encounter it constantly:
 
-**Ребёнок и правила.** Ребёнок усваивает правила: «Нельзя бить», «Нужно делиться». Но рано или поздно он встречает ситуацию, которую *правила не покрывают*: «А если другой ребёнок бьёт моего друга, можно ли ударить в защиту?» Это гёделево предложение: в рамках текущей аксиоматики (правила поведения) вопрос *неразрешим*. Ребёнок обращается к «основанию» (родитель, учитель) за новой информацией, расширяет свою «аксиоматику» и переходит на более глубокий уровень морального рассуждения.
+**A child and rules.** A child learns rules: "No hitting", "You must share". But sooner or later they encounter a situation the *rules do not cover*: "What if another child is hitting my friend — can I hit back in defence?" This is a Gödelian sentence: within the current axiomatics (rules of behaviour) the question is *undecidable*. The child turns to the "ground" (parent, teacher) for new information, expands their "axiomatics", and moves to a deeper level of moral reasoning.
 
-**Парадокс лжеца.** «Это предложение ложно.» Если оно истинно, то оно ложно. Если ложно, то истинно. На булевом уровне — неразрешимый парадокс. На гейтинговом уровне — просто *неопределённый* предикат. На уровне HoTT — элемент с нетривиальной гомотопической структурой: пространство «доказательств» этого утверждения имеет петлю.
+**The liar paradox.** "This sentence is false." If it is true, then it is false. If false, then true. At the Boolean level — an unsolvable paradox. At the Heyting level — simply an *undefined* predicate. At the HoTT level — an element with non-trivial homotopic structure: the space of "proofs" of this statement has a loop.
 
-См. [Теоремы Гёделя и полнота УГМ](../foundations/consequences#10-теоремы-гёделя-и-полнота-угм) для полного анализа.
+See [Gödel's theorems and the completeness of UHM](../foundations/consequences#10-теоремы-гёделя-и-полнота-угм) for a full analysis.
 
-## Логика и Фано-плоскость {#логика-и-фано}
+## Logic and the Fano plane {#логика-и-фано}
 
-Измерение L ($e_4$ в октонионном соответствии) принадлежит трём [Фано-линиям](/docs/core/structure/dimensions#октонионная-интерпретация):
+Dimension L ($e_4$ in the octonionic correspondence) belongs to three [Fano lines](/docs/core/structure/dimensions#октонионная-интерпретация):
 
-| Фано-линия | Секторный тип | Физический смысл |
-|------------|---------------|------------------|
-| $\{A, S, L\}$ | **3**–**3**–$\bar{\mathbf{3}}$ | Структурная артикуляция, регулируемая логикой |
-| $\{D, L, U\}$ | **3**–$\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$ | Динамическая логика единства: каузальная интеграция |
-| $\{L, E, O\}$ | $\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$–$1_O$ | Логика интериорности, укоренённая в основании |
+| Fano line | Sector type | Physical meaning |
+|-----------|-------------|-----------------|
+| $\{A, S, L\}$ | **3**–**3**–$\bar{\mathbf{3}}$ | Structural articulation regulated by logic |
+| $\{D, L, U\}$ | **3**–$\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$ | Dynamic logic of unity: causal integration |
+| $\{L, E, O\}$ | $\bar{\mathbf{3}}$–$\bar{\mathbf{3}}$–$1_O$ | Logic of interiority, rooted in the ground |
 
-:::info Комбинаторный профиль L
-Из семи измерений L — **единственный** элемент $\bar{\mathbf{3}}$-сектора, **не** лежащий на Хиггсовой линии $\{E, U, A\}$. Это придаёт L уникальную роль: в то время как E и U связаны с «интериорным» и «объединяющим» аспектами через Хиггсовый канал, L стоит «в стороне», обеспечивая **независимую** проверку согласованности. Это как судья, который не является участником игры.
+:::info Combinatorial profile of L
+Of the seven dimensions, L is the **only** element of the $\bar{\mathbf{3}}$-sector that does **not** lie on the Higgs line $\{E, U, A\}$. This gives L a unique role: while E and U are connected to the "interiority" and "unifying" aspects through the Higgs channel, L stands "apart", providing an **independent** consistency check. It is like a referee who is not a participant in the game.
 
-По [теореме T-177](/docs/core/structure/dimensions#комбинаторная-единственность) семантическая роль L комбинаторно единственна [Т].
+By [theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) the semantic role of L is combinatorially unique [Т].
 :::
 
-### Что говорят Фано-линии о логике {#фано-линии-логика}
+### What the Fano lines say about logic {#фано-линии-логика}
 
-Каждая из трёх Фано-линий, содержащих L, раскрывает отдельный аспект логики:
+Each of the three Fano lines containing L reveals a distinct aspect of logic:
 
-**Линия $\{A, S, L\}$ — «фундамент логики».** Артикуляция ($A$) проводит различия, структура ($S$) фиксирует их, логика ($L$) проверяет непротиворечивость. Это «строительная» триада: различи → закрепи → проверь. Пример: формулировка научного закона. Наблюдение выделяет закономерность ($A$), формализация фиксирует её в уравнении ($S$), проверка показывает, не противоречит ли новый закон уже известным ($L$).
+**Line $\{A, S, L\}$ — "the foundation of logic".** Articulation ($A$) draws distinctions, structure ($S$) fixes them, logic ($L$) checks consistency. This is the "construction" triad: distinguish → fix → verify. Example: formulating a scientific law. Observation identifies a pattern ($A$), formalisation fixes it in an equation ($S$), verification checks whether the new law contradicts already known ones ($L$).
 
-**Линия $\{D, L, U\}$ — «каузальная интеграция».** Та же линия, что содержит [Динамику (D)](./dimension-d). Логика ($L$) определяет допустимые траектории, динамика ($D$) реализует движение по ним, единство ($U$) обеспечивает целостность процесса. Это триада *действия*: допустимо → реализуемо → интегрировано. Пример: шахматная партия. Правила ($L$) определяют, какие ходы возможны, ход ($D$) совершает действие, стратегия ($U$) объединяет ходы в единый план.
+**Line $\{D, L, U\}$ — "causal integration".** The same line that contains [Dynamics (D)](./dimension-d). Logic ($L$) determines admissible trajectories, dynamics ($D$) realises movement along them, unity ($U$) ensures the integrity of the process. This is the triad of *action*: admissible → realisable → integrated. Example: a chess game. Rules ($L$) determine which moves are possible, a move ($D$) performs the action, strategy ($U$) unites the moves into a single plan.
 
-**Линия $\{L, E, O\}$ — «корень логики».** Логика ($L$), интериорность ($E$) и основание ($O$) соединены напрямую. Это «глубинная» триада: логика укоренена в основании и переживается изнутри. Через $O$ логика получает доступ к новой информации, преодолевая гёделеву неполноту. Через $E$ логические операции переживаются как «понимание», «инсайт», «очевидность». Пример: момент озарения, когда «всё встаёт на место» — L-E-O корреляция максимальна.
+**Line $\{L, E, O\}$ — "the root of logic".** Logic ($L$), interiority ($E$), and ground ($O$) are connected directly. This is the "deep" triad: logic is rooted in the ground and experienced from within. Through $O$, logic gains access to new information, overcoming Gödelian incompleteness. Through $E$, logical operations are experienced as "understanding", "insight", "self-evidence". Example: the moment of illumination when "everything falls into place" — the L-E-O correlation is maximal.
 
-Заметим, что L делит Фано-линию $\{D, L, U\}$ с [измерением D (Динамика)](./dimension-d) — это математическое выражение фундаментальной связи: **логика и динамика неразрывны**. Допустимые траектории (L) и реальные траектории (D) определяются одной и той же ассоциативной подалгеброй.
+Note that L shares Fano line $\{D, L, U\}$ with [dimension D (Dynamics)](./dimension-d) — this is the mathematical expression of a fundamental connection: **logic and dynamics are inseparable**. Admissible trajectories (L) and actual trajectories (D) are determined by the same associative subalgebra.
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_4 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. Details, $G_2$-caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
-## Ключевые выводы главы {#ключевые-выводы}
+## Key conclusions of the chapter {#ключевые-выводы}
 
-1. **Логика — аспект реальности, не инструмент мышления.** L-измерение определяет, какие конфигурации $\Gamma$ непротиворечивы, а какие не могут существовать.
-2. **L-унификация: три = одно.** L-измерение, операторы Линдблада $L_k$ и лиувиллиан $\mathcal{L}$ — проявления единого объекта: классификатора подобъектов $\Omega$.
-3. **Три уровня логики.** Булева (для конкретных физических операторов) → Гейтингова (для пограничных состояний) → HoTT (для полной ∞-структуры реальности).
-4. **Неполнота — двигатель, не баг.** Гёделева неполнота L-измерения заставляет систему обращаться к O за новой информацией, обеспечивая эволюцию.
-5. **Каузальность выводится.** Причинно-следственные связи — следствие CPTP-структуры, фильтруемой L-измерением.
-6. **L комбинаторно уникальна.** Единственный $\bar{\mathbf{3}}$-элемент вне Хиггсовой линии — «независимый судья» системы.
+1. **Logic is an aspect of reality, not a tool of thought.** The L-dimension determines which configurations $\Gamma$ are consistent and which cannot exist.
+2. **L-unification: three = one.** The L-dimension, Lindblad operators $L_k$, and the Liouvillian $\mathcal{L}$ are manifestations of a single object: the subobject classifier $\Omega$.
+3. **Three levels of logic.** Boolean (for concrete physical operators) → Heyting (for boundary states) → HoTT (for the full ∞-structure of reality).
+4. **Incompleteness is an engine, not a bug.** Gödelian incompleteness of the L-dimension forces the system to turn to O for new information, ensuring evolution.
+5. **Causality is derived.** Cause-and-effect relations are a consequence of the CPTP structure filtered by the L-dimension.
+6. **L is combinatorially unique.** The only $\bar{\mathbf{3}}$-element outside the Higgs line — the "independent referee" of the system.
 
 ---
 
-**Связанные документы:**
-- [Динамика (D)](./dimension-d) — предыдущее измерение
-- [Интериорность (E)](./dimension-e) — следующее измерение
-- [Теорема о минимальности](../../proofs/minimality/theorem-minimality-7#случай-n--3-удаление-логики-l) — доказательство необходимости L
-- [Эмерджентное время](../../proofs/dynamics/emergent-time) — τ из структуры Γ
-- [Внутренняя логика Ω](../foundations/axiom-omega#внутренняя-логика) — категориальный источник L
-- [Уравнение эволюции](../dynamics/evolution) — использование L_k операторов
-- [Категорный формализм](../../proofs/categorical/categorical-formalism) — ∞-топос и классификатор
-- [Измерения Голонома](./dimensions) — обзор всех 7 измерений
-- [Операторы Линдблада](../operators/lindblad-operators) — формализм L_k
+**Related documents:**
+- [Dynamics (D)](./dimension-d) — previous dimension
+- [Interiority (E)](./dimension-e) — next dimension
+- [Minimality theorem](../../proofs/minimality/theorem-minimality-7#случай-n--3-удаление-логики-l) — proof of the necessity of L
+- [Emergent time](../../proofs/dynamics/emergent-time) — τ from the structure of Γ
+- [Internal logic Ω](../foundations/axiom-omega#внутренняя-логика) — categorical source of L
+- [Evolution equation](../dynamics/evolution) — use of $L_k$ operators
+- [Categorical formalism](../../proofs/categorical/categorical-formalism) — ∞-topos and the classifier
+- [Dimensions of the Holon](./dimensions) — overview of all 7 dimensions
+- [Lindblad operators](../operators/lindblad-operators) — $L_k$ formalism

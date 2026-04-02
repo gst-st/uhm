@@ -1,143 +1,143 @@
 ---
 sidebar_position: 7
-title: "Gap-оператор"
+title: "Gap Operator"
 slug: /core/dynamics/gap-operator
-description: "Определение Ĝ = Im(Γ), антисимметрия, спектр, ранг непрозрачности, связь с чистотой, кривизна расслоения Серра, G₂/⊥-разложение"
+description: "Definition of Ĝ = Im(Γ), antisymmetry, spectrum, opacity rank, relation to purity, Serre bundle curvature, G₂/⊥ decomposition"
 ---
 
-# Gap-оператор
+# Gap Operator
 
-:::info Для кого эта глава
-Антисимметричная часть Γ: определение, спектр, связь с кривизной. Предполагается знакомство с [матрицей когерентности](./coherence-matrix) и основами линейной алгебры.
+:::info Who this chapter is for
+The antisymmetric part of Γ: definition, spectrum, relation to curvature. Assumes familiarity with the [coherence matrix](./coherence-matrix) and basic linear algebra.
 :::
 
-Эта глава вводит **Gap-оператор** $\hat{\mathcal{G}}$ — математический объект, который точно измеряет **суммарную непрозрачность** голонома. Если [мера Gap](/docs/core/dynamics/coherence-matrix#мера-зазора) $\mathrm{Gap}(i,j) \in [0,1]$ описывает непрозрачность отдельной пары измерений, то Gap-оператор собирает всю информацию о 21 паре в единый алгебраический объект, обладающий спектром, симметриями и геометрическим смыслом.
+This chapter introduces the **Gap operator** $\hat{\mathcal{G}}$ — a mathematical object that precisely measures the **total opacity** of the holon. If the [Gap measure](/docs/core/dynamics/coherence-matrix#мера-зазора) $\mathrm{Gap}(i,j) \in [0,1]$ describes the opacity of a single pair of dimensions, then the Gap operator collects all information about 21 pairs into a single algebraic object with a spectrum, symmetries, and geometric meaning.
 
-Читатель узнает:
-- Что такое $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ и почему он антисимметричен
-- Как спектр $\hat{\mathcal{G}}$ определяет **ранг непрозрачности** (от 0 до 3)
-- Почему Gap — это **буквально кривизна** конечной некоммутативной геометрии
-- Как $G_2$-разложение разделяет «здоровый» и «патологический» Gap
+The reader will learn:
+- What $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ is and why it is antisymmetric
+- How the spectrum of $\hat{\mathcal{G}}$ determines the **opacity rank** (from 0 to 3)
+- Why Gap is **literally the curvature** of a finite noncommutative geometry
+- How the $G_2$ decomposition separates "healthy" and "pathological" Gap
 
-:::tip Интуитивное объяснение
-Вспомним [матрицу когерентности](./coherence-matrix) $\Gamma$ — она эрмитова, то есть $\gamma_{ji} = \gamma_{ij}^*$. Это означает, что у каждой когерентности есть **вещественная** и **мнимая** части:
+:::tip Intuitive explanation
+Recall the [coherence matrix](./coherence-matrix) $\Gamma$ — it is Hermitian, meaning $\gamma_{ji} = \gamma_{ij}^*$. This means each coherence has a **real** and an **imaginary** part:
 
-- **Вещественная часть** $\mathrm{Re}(\gamma_{ij})$ — то, в чём **совпадают** внешний и внутренний аспекты связи. Это «общая территория» — то, что доступно и наблюдателю, и самой системе.
-- **Мнимая часть** $\mathrm{Im}(\gamma_{ij})$ — то, в чём они **расходятся**. Это «зазор» (Gap) — несовпадение между тем, как связь выглядит «снаружи» и как она ощущается «изнутри».
+- **Real part** $\mathrm{Re}(\gamma_{ij})$ — the aspect in which the external and internal views of the connection **agree**. This is "common ground" — what is accessible both to the observer and to the system itself.
+- **Imaginary part** $\mathrm{Im}(\gamma_{ij})$ — the aspect in which they **diverge**. This is the "gap" — the mismatch between how the connection looks "from outside" and how it is felt "from inside."
 
-Gap-оператор $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ — это **карта всех несовпадений** разом. Если $\hat{\mathcal{G}} = 0$, система полностью прозрачна: внешнее и внутреннее совпадают для всех пар. Если $\hat{\mathcal{G}} \neq 0$, существуют «слепые пятна» — пары измерений, где система «не видит» себя так, как её видит мир.
+The Gap operator $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ is a **map of all mismatches at once**. If $\hat{\mathcal{G}} = 0$, the system is fully transparent: external and internal coincide for all pairs. If $\hat{\mathcal{G}} \neq 0$, there are "blind spots" — pairs of dimensions where the system does not "see" itself as the world sees it.
 
-Замечательный факт: $\hat{\mathcal{G}}$ принадлежит алгебре Ли $\mathfrak{so}(7)$ — той же алгебре, которая описывает вращения в 7-мерном пространстве. Gap порождает **вращение** матрицы когерентности: сильная непрозрачность в паре $(i,j)$ «перемешивает» измерения $i$ и $j$.
+A remarkable fact: $\hat{\mathcal{G}}$ belongs to the Lie algebra $\mathfrak{so}(7)$ — the same algebra that describes rotations in 7-dimensional space. Gap generates a **rotation** of the coherence matrix: strong opacity in pair $(i,j)$ "mixes" dimensions $i$ and $j$.
 :::
 
-Gap-оператор $\hat{\mathcal{G}}$ — центральный объект [Gap-динамики](/docs/core/dynamics/gap-dynamics), формализующий **антисимметричную часть** [матрицы когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma$. Он измеряет суммарную непрозрачность системы и принадлежит алгебре Ли $\mathfrak{so}(7)$, связывая [дуально-аспектную семантику](/docs/physics/dual-aspect/gap-semantics) с [G₂-структурой](/docs/physics/gauge-symmetry/g2-structure).
+The Gap operator $\hat{\mathcal{G}}$ is the central object of [Gap dynamics](/docs/core/dynamics/gap-dynamics), formalizing the **antisymmetric part** of the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$. It measures the total opacity of the system and belongs to the Lie algebra $\mathfrak{so}(7)$, linking [dual-aspect semantics](/docs/physics/dual-aspect/gap-semantics) with the [G₂ structure](/docs/physics/gauge-symmetry/g2-structure).
 
-:::warning Конвенции обозначений Gap {#конвенции-gap}
+:::warning Gap notation conventions {#конвенции-gap}
 
-| Обозначение | Значение | Формула |
+| Notation | Meaning | Formula |
 |-------------|----------|---------|
-| $\hat{\mathcal{G}}$ | Gap-**оператор** | $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$ |
-| $\mathrm{Gap}(i,j)$ | Gap **между измерениями** $i,j$ | $\lvert\sin(\arg(\gamma_{ij}))\rvert$ |
-| $\mathcal{G}_{\text{total}}$ | **Суммарный** Gap | $2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ |
-| $\mathrm{Gap}_{AB}(i,j)$ | **Межголономный** Gap | $\lvert\sin(\arg(\gamma_{i^A j^B}))\rvert$ |
+| $\hat{\mathcal{G}}$ | Gap **operator** | $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma) \in \mathfrak{so}(7)$ |
+| $\mathrm{Gap}(i,j)$ | Gap **between dimensions** $i,j$ | $\lvert\sin(\arg(\gamma_{ij}))\rvert$ |
+| $\mathcal{G}_{\text{total}}$ | **Total** Gap | $2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ |
+| $\mathrm{Gap}_{AB}(i,j)$ | **Inter-holon** Gap | $\lvert\sin(\arg(\gamma_{i^A j^B}))\rvert$ |
 
-В данном документе $\hat{\mathcal{G}}$ — Gap-оператор (антисимметричная матрица), $\mathcal{G}_{\text{total}}$ — его суммарная величина.
+In this document $\hat{\mathcal{G}}$ denotes the Gap operator (antisymmetric matrix); $\mathcal{G}_{\text{total}}$ denotes its total magnitude.
 :::
 
 ---
 
-## 1. Определение {#определение}
+## 1. Definition {#определение}
 
-### 1.1 Основное определение
+### 1.1 Basic definition
 
-:::tip Определение (Gap-оператор) [Т]
-Для эрмитовой матрицы когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, $\Gamma^\dagger = \Gamma$, **Gap-оператор** определяется как:
+:::tip Definition (Gap operator) [Т]
+For a Hermitian coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, $\Gamma^\dagger = \Gamma$, the **Gap operator** is defined as:
 
 $$
 \hat{\mathcal{G}} := \frac{1}{2i}(\Gamma - \Gamma^T) = \mathrm{Im}(\Gamma)
 $$
 
-— чисто мнимая часть матрицы когерентности.
+— the purely imaginary part of the coherence matrix.
 :::
 
-Поскольку $\Gamma^\dagger = \Gamma$ (эрмитовость), транспонированная матрица $\Gamma^T = \Gamma^*$ (комплексное сопряжение), откуда:
+Since $\Gamma^\dagger = \Gamma$ (Hermiticity), the transposed matrix $\Gamma^T = \Gamma^*$ (complex conjugate), hence:
 
 $$
 \hat{\mathcal{G}} = \frac{\Gamma - \Gamma^*}{2i} = \mathrm{Im}(\Gamma)
 $$
 
-Матричные элементы:
+Matrix elements:
 
 $$
 \hat{\mathcal{G}}_{ij} = \mathrm{Im}(\gamma_{ij}) = |\gamma_{ij}| \cdot \sin(\theta_{ij})
 $$
 
-где $\theta_{ij} = \arg(\gamma_{ij})$ — фаза когерентности.
+where $\theta_{ij} = \arg(\gamma_{ij})$ is the phase of the coherence.
 
-### 1.2 Связь с мерой Gap
+### 1.2 Relation to the Gap measure
 
-Для пары измерений $(i, j)$ мера зазора $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$, поэтому:
+For a pair of dimensions $(i, j)$ the gap measure is $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$, therefore:
 
 $$
 |\hat{\mathcal{G}}_{ij}| = |\gamma_{ij}| \cdot \mathrm{Gap}(i,j)
 $$
 
-Gap-оператор соединяет **силу связи** $|\gamma_{ij}|$ и **непрозрачность** $\mathrm{Gap}(i,j)$ в единый объект.
+The Gap operator combines **connection strength** $|\gamma_{ij}|$ and **opacity** $\mathrm{Gap}(i,j)$ into a single object.
 
-:::info Необходимость комплексной Γ [Т-132]
-Нетривиальная Gap-структура ($\mathrm{Gap}(i,j) > 0$) **требует** комплексных когерентностей: для $\gamma_{ij} \in \mathbb{R}$ мера $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ тождественно. Подробнее: [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132).
+:::info Necessity of complex Γ [Т-132]
+A nontrivial Gap structure ($\mathrm{Gap}(i,j) > 0$) **requires** complex coherences: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132).
 :::
 
-### 1.3 Полная таблица 21 пары когерентностей {#таблица-21-пара}
+### 1.3 Full table of 21 coherence pairs {#таблица-21-пара}
 
-$\binom{7}{2} = 21$ пара измерений определяют 21 когерентность $\gamma_{ij}$, каждая из которых лежит ровно на одной [Фано-линии](/docs/physics/gauge-symmetry/fano-selection-rules):
+$\binom{7}{2} = 21$ pairs of dimensions define 21 coherences $\gamma_{ij}$, each lying on exactly one [Fano line](/docs/physics/gauge-symmetry/fano-selection-rules):
 
-| Пара $(i,j)$ | Фано-линия | Сектор | Физический смысл |
+| Pair $(i,j)$ | Fano line | Sector | Physical meaning |
 |:---:|:---:|:---:|:---|
-| $(A,S)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Структура артикуляции |
-| $(A,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Динамическая артикуляция |
-| $(S,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Структурная динамика |
-| $(L,E)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Логика интериорности |
-| $(L,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Логическое единство |
-| $(E,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | **Хиггсовский канал** |
-| $(A,L)$ | $\{A,L,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Артикуляция логики |
-| $(A,O)$ | $\{A,L,O\}$ | $O$-связь | Наблюдение артикуляции |
-| $(L,O)$ | $\{A,L,O\}$ | $O$-связь | Логическое основание |
-| $(S,E)$ | $\{S,E,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Структура интериорности |
-| $(S,O)$ | $\{S,E,O\}$ | $O$-связь | Структурное основание |
-| $(E,O)$ | $\{S,E,O\}$ | $O$-связь | **Регенеративный канал** ($\kappa_0$) |
-| $(D,U)$ | $\{D,U,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Динамика единства |
-| $(D,O)$ | $\{D,U,O\}$ | $O$-связь | Динамическое основание |
-| $(U,O)$ | $\{D,U,O\}$ | $O$-связь | **Часовой канал** ($\kappa_0$) |
-| $(A,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Артикуляция опыта |
-| $(A,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Артикуляция единства |
-| $(S,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Структурная логика |
-| $(S,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Структурное единство |
-| $(D,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Динамика интериорности |
-| $(D,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Динамическая логика |
+| $(A,S)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Articulation structure |
+| $(A,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Dynamic articulation |
+| $(S,D)$ | $\{A,S,D\}$ | $\mathbf{3}$-$\mathbf{3}$ | Structural dynamics |
+| $(L,E)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logic of interiority |
+| $(L,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | Logical unity |
+| $(E,U)$ | $\{L,E,U\}$ | $\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$ | **Higgs channel** |
+| $(A,L)$ | $\{A,L,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of logic |
+| $(A,O)$ | $\{A,L,O\}$ | $O$-link | Observation of articulation |
+| $(L,O)$ | $\{A,L,O\}$ | $O$-link | Logical foundation |
+| $(S,E)$ | $\{S,E,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structure of interiority |
+| $(S,O)$ | $\{S,E,O\}$ | $O$-link | Structural foundation |
+| $(E,O)$ | $\{S,E,O\}$ | $O$-link | **Regenerative channel** ($\kappa_0$) |
+| $(D,U)$ | $\{D,U,O\}$ | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of unity |
+| $(D,O)$ | $\{D,U,O\}$ | $O$-link | Dynamic foundation |
+| $(U,O)$ | $\{D,U,O\}$ | $O$-link | **Clock channel** ($\kappa_0$) |
+| $(A,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of experience |
+| $(A,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Articulation of unity |
+| $(S,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural logic |
+| $(S,U)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Structural unity |
+| $(D,E)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamics of interiority |
+| $(D,L)$ | — | $\mathbf{3}$-$\bar{\mathbf{3}}$ | Dynamic logic |
 
-:::info Секторная принадлежность
-21 пара распадается на секторы по декомпозиции $7 = 1_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$:
-- **$\mathbf{3}$-$\mathbf{3}$**: 3 пары (внутри конфайнмент-сектора), $\varepsilon_{33} \sim 0.06$
-- **$\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$**: 3 пары (внутри электрослабого сектора), $\varepsilon_{\bar{3}\bar{3}} \sim 10^{-17}$
-- **$\mathbf{3}$-$\bar{\mathbf{3}}$**: 9 пар (конфайнмент↔электрослабый), $\varepsilon_{3\bar{3}} \approx 0$
-- **$O$-связи**: 6 пар ($O$ с остальными), $\varepsilon_O \sim 1$
+:::info Sector membership
+The 21 pairs split into sectors according to the decomposition $7 = 1_O \oplus \mathbf{3}_{A,S,D} \oplus \bar{\mathbf{3}}_{L,E,U}$:
+- **$\mathbf{3}$-$\mathbf{3}$**: 3 pairs (within the confinement sector), $\varepsilon_{33} \sim 0.06$
+- **$\bar{\mathbf{3}}$-$\bar{\mathbf{3}}$**: 3 pairs (within the electroweak sector), $\varepsilon_{\bar{3}\bar{3}} \sim 10^{-17}$
+- **$\mathbf{3}$-$\bar{\mathbf{3}}$**: 9 pairs (confinement↔electroweak), $\varepsilon_{3\bar{3}} \approx 0$
+- **$O$-links**: 6 pairs ($O$ with the rest), $\varepsilon_O \sim 1$
 
-Назначение пар с «—» на Фано-линии зависит от выбора $G_2$-калибровки ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). Первые 15 пар однозначно определены базовыми линиями; последние 6 образуют оставшиеся Фано-линии из 7.
+The assignment of pairs marked "—" to Fano lines depends on the choice of $G_2$ gauge ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). The first 15 pairs are uniquely determined by the base lines; the last 6 form the remaining Fano lines out of 7.
 :::
 
 ---
 
-## 2. Алгебраические свойства {#свойства}
+## 2. Algebraic properties {#свойства}
 
-:::tip Теорема 2.1 (Свойства Gap-оператора) [Т]
-**(a)** $\hat{\mathcal{G}}$ — вещественная **антисимметричная** матрица: $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$.
+:::tip Theorem 2.1 (Properties of the Gap operator) [Т]
+**(a)** $\hat{\mathcal{G}}$ is a real **antisymmetric** matrix: $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$.
 
-**(b)** Собственные значения $\hat{\mathcal{G}}$ чисто мнимые: $\mathrm{spec}(\hat{\mathcal{G}}) \subset i\mathbb{R}$. Они приходят парами $(\pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3, 0)$ с $\lambda_k \in \mathbb{R}$, плюс одно нулевое (поскольку $N = 7$ нечётно).
+**(b)** The eigenvalues of $\hat{\mathcal{G}}$ are purely imaginary: $\mathrm{spec}(\hat{\mathcal{G}}) \subset i\mathbb{R}$. They come in pairs $(\pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3, 0)$ with $\lambda_k \in \mathbb{R}$, plus one zero (since $N = 7$ is odd).
 
-**(c)** $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — элемент алгебры Ли группы вращений $\mathrm{SO}(7)$. Он порождает группу вращений через экспоненциальное отображение $e^{\epsilon\hat{\mathcal{G}}} \in \mathrm{SO}(7)$.
+**(c)** $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — an element of the Lie algebra of the rotation group $\mathrm{SO}(7)$. It generates the rotation group via the exponential map $e^{\epsilon\hat{\mathcal{G}}} \in \mathrm{SO}(7)$.
 
-**(d)** Суммарный Gap:
+**(d)** Total Gap:
 
 $$
 \mathcal{G}_{\text{total}} := \|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2 = 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
@@ -145,255 +145,255 @@ $$
 
 :::
 
-### Соглашение о норме $\mathcal{G}_{\text{total}}$ {#g-total-definition}
+### Convention for the norm $\mathcal{G}_{\text{total}}$ {#g-total-definition}
 
-:::warning Соглашение о норме [О]
-$\mathcal{G}_{\text{total}}$ определяется как **полная** норма Фробениуса (с двойным учётом пар $(i,j)$ и $(j,i)$): $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = \sum_{i,j} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$. Множитель 2 обусловлен антисимметрией $\hat{\mathcal{G}}_{ji} = -\hat{\mathcal{G}}_{ij}$. Это обеспечивает согласованность с разложением чистоты $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ (теорема 4.1) и спектральной формулой $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ (теорема 3.1).
+:::warning Norm convention [О]
+$\mathcal{G}_{\text{total}}$ is defined as the **full** Frobenius norm (counting both pairs $(i,j)$ and $(j,i)$): $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = \sum_{i,j} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$. The factor of 2 is due to the antisymmetry $\hat{\mathcal{G}}_{ji} = -\hat{\mathcal{G}}_{ij}$. This ensures consistency with the purity decomposition $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ (Theorem 4.1) and the spectral formula $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ (Theorem 3.1).
 :::
 
-#### Тождество с оператором Дирака [Т] {#тождество-tr-d2}
+#### Identity with the Dirac operator [Т] {#тождество-tr-d2}
 
-:::tip Следствие (Спектральное тождество)
+:::tip Corollary (Spectral identity)
 $$
 \mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
 $$
 
-где $D_{\mathrm{int}}$ — [внутренний оператор Дирака](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) с элементами $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. Это тождество связывает суммарный Gap с коэффициентом $a_2$ [спектрального действия](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) и обосновывает вывод потенциала [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) из аксиом.
+where $D_{\mathrm{int}}$ is the [internal Dirac operator](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) with elements $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. This identity connects the total Gap to the coefficient $a_2$ of the [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) and justifies the derivation of the potential [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from the axioms.
 :::
 
-**Доказательство.** (a) $\hat{\mathcal{G}}^T = \mathrm{Im}(\Gamma)^T$. Поскольку $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ (следствие эрмитовости), получаем $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$. (b) Стандартное свойство антисимметричных матриц нечётной размерности. (c) $\mathfrak{so}(7)$ — пространство антисимметричных $7 \times 7$ матриц. (d) $\|\hat{\mathcal{G}}\|_F^2 = \sum_{ij} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$ (множитель 2 от двойного учёта пар $(i,j)$ и $(j,i)$). $\square$
+**Proof.** (a) $\hat{\mathcal{G}}^T = \mathrm{Im}(\Gamma)^T$. Since $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ (consequence of Hermiticity), we get $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$. (b) Standard property of antisymmetric matrices of odd dimension. (c) $\mathfrak{so}(7)$ is the space of antisymmetric $7 \times 7$ matrices. (d) $\|\hat{\mathcal{G}}\|_F^2 = \sum_{ij} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$ (the factor of 2 from counting both pairs $(i,j)$ and $(j,i)$). $\square$
 
 ---
 
-## 3. Спектральная интерпретация {#спектр}
+## 3. Spectral interpretation {#спектр}
 
-:::tip Теорема 3.1 (Спектральная структура Gap) [Т]
-Пусть $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$. Тогда:
+:::tip Theorem 3.1 (Spectral structure of Gap) [Т]
+Let $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$. Then:
 
 **(a)** $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$
 
-**(b)** $\lambda_{\max} = \max(\lambda_1, \lambda_2, \lambda_3)$ определяет **максимальный канал непрозрачности**.
+**(b)** $\lambda_{\max} = \max(\lambda_1, \lambda_2, \lambda_3)$ determines the **maximum opacity channel**.
 
-**(c)** Число ненулевых $\lambda_k$ определяет **ранг непрозрачности** $r \in \{0, 1, 2, 3\}$.
+**(c)** The number of nonzero $\lambda_k$ determines the **opacity rank** $r \in \{0, 1, 2, 3\}$.
 :::
 
-### Таблица рангов непрозрачности
+### Opacity rank table
 
-| Ранг | $\lambda$-спектр | Интерпретация |
+| Rank | $\lambda$-spectrum | Interpretation |
 |------|------------------|---------------|
-| 0 | $(0, 0, 0)$ | Полная прозрачность (все $\mathrm{Gap} = 0$) |
-| 1 | $(\lambda, 0, 0)$ | Одномерная непрозрачность — один «канал разрыва» |
-| 2 | $(\lambda_1, \lambda_2, 0)$ | Двумерная непрозрачность |
-| 3 | $(\lambda_1, \lambda_2, \lambda_3)$ | Полная непрозрачность (максимальный ранг) |
+| 0 | $(0, 0, 0)$ | Full transparency (all $\mathrm{Gap} = 0$) |
+| 1 | $(\lambda, 0, 0)$ | One-dimensional opacity — one "break channel" |
+| 2 | $(\lambda_1, \lambda_2, 0)$ | Two-dimensional opacity |
+| 3 | $(\lambda_1, \lambda_2, \lambda_3)$ | Full opacity (maximum rank) |
 
-:::info Замечание [И]
-Максимальный ранг непрозрачности = 3 совпадает с числом «проверочных» измерений (E, O, U) в [аналогии с кодом Хэмминга H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга). Это совпадение связывает алгебру Gap-оператора с теоретико-кодовой структурой.
+:::info Remark [И]
+The maximum opacity rank = 3 coincides with the number of "check" dimensions (E, O, U) in the [Hamming code H(7,4) analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга). This coincidence connects the algebra of the Gap operator to the coding-theoretic structure.
 :::
 
-:::info Связь ранга Gap с кодом Хемминга
-Максимальный ранг $\hat{\mathcal{G}}$ равен **6** (три пары ненулевых собственных значений $\pm i\lambda_k$), что соответствует 3 независимым «вращательным плоскостям» в $\mathbb{R}^7$. Число **3** совпадает с числом проверочных бит кода Хемминга $H(7,4)$: 7 бит данных, 3 проверочных. Связь не случайна — обе структуры определяются плоскостью Фано PG(2,2). Подробнее: [Теорема T9](/docs/core/operators/lindblad-operators#теорема-хемминг-фано).
+:::info Connection between Gap rank and the Hamming code
+The maximum rank of $\hat{\mathcal{G}}$ equals **6** (three pairs of nonzero eigenvalues $\pm i\lambda_k$), corresponding to 3 independent "rotation planes" in $\mathbb{R}^7$. The number **3** coincides with the number of check bits in the Hamming code $H(7,4)$: 7 data bits, 3 check bits. The connection is not coincidental — both structures are determined by the Fano plane PG(2,2). Details: [Theorem T9](/docs/core/operators/lindblad-operators#теорема-хемминг-фано).
 :::
 
 ---
 
-## 4. Связь с чистотой {#связь-чистота}
+## 4. Relation to purity {#связь-чистота}
 
-:::tip Теорема 4.1 (Gap и чистота) [Т]
-Чистота голонома разлагается на симметричную и антисимметричную части:
+:::tip Theorem 4.1 (Gap and purity) [Т]
+The purity of the holon decomposes into symmetric and antisymmetric parts:
 
 $$
 P = \mathrm{Tr}(\Gamma^2) = P_{\text{sym}} + \mathcal{G}_{\text{total}}
 $$
 
-где $P_{\text{sym}} = \mathrm{Tr}(\mathrm{Re}(\Gamma)^2)$ — «симметричная чистота».
+where $P_{\text{sym}} = \mathrm{Tr}(\mathrm{Re}(\Gamma)^2)$ is the "symmetric purity."
 :::
 
-**Следствие.** Суммарный Gap **увеличивает** чистоту $P$ при фиксированном $P_{\text{sym}}$: ненулевые мнимые части когерентностей вносят положительный вклад в $\mathrm{Tr}(\Gamma^2)$.
+**Corollary.** The total Gap **increases** purity $P$ at fixed $P_{\text{sym}}$: nonzero imaginary parts of coherences make a positive contribution to $\mathrm{Tr}(\Gamma^2)$.
 
-**Доказательство.** $\mathrm{Tr}(\Gamma^2) = \mathrm{Tr}((\mathrm{Re}(\Gamma) + i\,\mathrm{Im}(\Gamma))^2)$. Раскрывая: $\mathrm{Tr}(\mathrm{Re}^2) - \mathrm{Tr}(\mathrm{Im}^2) + 2i\,\mathrm{Tr}(\mathrm{Re} \cdot \mathrm{Im})$. Поскольку $P \in \mathbb{R}$ (спектральная теорема), мнимая часть обнуляется, и $P = \mathrm{Tr}(\mathrm{Re}^2) - \mathrm{Tr}(\mathrm{Im}^2)$. Поскольку $\mathrm{Im}(\Gamma)$ — вещественная антисимметричная матрица, $\mathrm{Tr}(\mathrm{Im}^2) = -\|\mathrm{Im}(\Gamma)\|_F^2 = -\mathcal{G}_{\text{total}}$. Следовательно, $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$. $\square$
+**Proof.** $\mathrm{Tr}(\Gamma^2) = \mathrm{Tr}((\mathrm{Re}(\Gamma) + i\,\mathrm{Im}(\Gamma))^2)$. Expanding: $\mathrm{Tr}(\mathrm{Re}^2) - \mathrm{Tr}(\mathrm{Im}^2) + 2i\,\mathrm{Tr}(\mathrm{Re} \cdot \mathrm{Im})$. Since $P \in \mathbb{R}$ (spectral theorem), the imaginary part vanishes, and $P = \mathrm{Tr}(\mathrm{Re}^2) - \mathrm{Tr}(\mathrm{Im}^2)$. Since $\mathrm{Im}(\Gamma)$ is a real antisymmetric matrix, $\mathrm{Tr}(\mathrm{Im}^2) = -\|\mathrm{Im}(\Gamma)\|_F^2 = -\mathcal{G}_{\text{total}}$. Therefore $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$. $\square$
 
 ---
 
-## 5. Кривизна расслоения Серра {#кривизна-серра}
+## 5. Serre bundle curvature {#кривизна-серра}
 
-#### Теорема 5.1 / T-73 (Gap = кривизна из спектральной тройки) [Т] {#теорема-gap-серра}
+#### Theorem 5.1 / T-73 (Gap = curvature from the spectral triple) [Т] {#теорема-gap-серра}
 
-:::tip Теорема 5.1
-В рамках [спектральной тройки](/docs/core/foundations/spacetime#теорема-спектральная-тройка) УГМ (T-53 [Т]) мера $\mathrm{Gap}(i,j)$ **точно совпадает** с нормой кривизны связности на [расслоении Серра](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
+:::tip Theorem 5.1
+Within the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) of UHM (T-53 [Т]), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
 
 $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 :::
 
-**Доказательство (5 шагов).**
+**Proof (5 steps).**
 
-**Шаг 1 (Связность из $D_{\mathrm{int}}$).** Внутренний оператор Дирака $D_{\mathrm{int}}$ ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]) определяет связность на расслоении внутренних фаз. Элементы $D_{\mathrm{int}}$:
+**Step 1 (Connection from $D_{\mathrm{int}}$).** The internal Dirac operator $D_{\mathrm{int}}$ ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]) defines a connection on the bundle of internal phases. Elements of $D_{\mathrm{int}}$:
 
 $$
 [D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}
 $$
 
-Это — **ковариантная производная** вдоль внутренних направлений. Когда $\gamma_{ij} = 0$, связность обрывается (нет транспорта). Когда $\gamma_{ij} \neq 0$, транспорт определяется $D_{\mathrm{int}}$.
+This is the **covariant derivative** along internal directions. When $\gamma_{ij} = 0$, the connection breaks (no transport). When $\gamma_{ij} \neq 0$, transport is determined by $D_{\mathrm{int}}$.
 
-**Шаг 2 (Кривизна связности).** Кривизна расслоения — коммутатор ковариантных производных. В терминах $D_{\mathrm{int}}$:
+**Step 2 (Connection curvature).** The bundle curvature is the commutator of covariant derivatives. In terms of $D_{\mathrm{int}}$:
 
 $$
 \|F\|_{ij}^2 = \sum_{k} |[D_{\mathrm{int}}]_{ik} \cdot [D_{\mathrm{int}}]_{kj} - [D_{\mathrm{int}}]_{jk} \cdot [D_{\mathrm{int}}]_{ki}|^2
 $$
 
-**Шаг 3 (Доминирующий вклад).** Для пар $(i,j)$ с непосредственным Gap-зазором доминирующий вклад в кривизну — прямой элемент:
+**Step 3 (Dominant contribution).** For pairs $(i,j)$ with a direct Gap, the dominant contribution to the curvature is the direct element:
 
 $$
 \|F\|_{ij}^{\mathrm{direct}} = \omega_0^2 \cdot |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 
-Это совпадает с $\|R_H\|_{ij}^2 \propto |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ из Теоремы 1.1 [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра).
+This coincides with $\|R_H\|_{ij}^2 \propto |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ from Theorem 1.1 of [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра).
 
-**Шаг 4 (Второй класс Черна).** Теория Черна–Вейля на расслоении:
+**Step 4 (Second Chern class).** Chern–Weil theory on the bundle:
 
 $$
 c_2(\mathrm{Bundle}) = \frac{1}{8\pi^2}\int \mathrm{Tr}(F \wedge F) = \frac{1}{8\pi^2}\sum_{i < j}|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \frac{1}{8\pi^2}\mathrm{Tr}(D_{\mathrm{int}}^2) / \omega_0^2
 $$
 
-Это — **топологический инвариант**, определённый через спектральную тройку [Т] (T-53), а не через аналогию.
+This is a **topological invariant**, defined via the spectral triple [Т] (T-53), not via analogy.
 
-**Шаг 5 (Строгость из NCG).** В некоммутативной геометрии Конна кривизна определяется через «джанки» $a[D,b]$. Для конечной тройки $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$:
+**Step 5 (Rigor from NCG).** In Connes' noncommutative geometry, curvature is defined through "junk" $a[D,b]$. For the finite triple $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$:
 
 $$
 \mathrm{Curv} = \sum_{i \neq j} [D_{\mathrm{int}}, e_{ij}]
 $$
 
-где $e_{ij}$ — матричные единицы. Норма кривизны:
+where $e_{ij}$ are matrix units. Curvature norm:
 
 $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 
-Это — **точное** отождествление, не приближение, обоснованное спектральной тройкой [Т]. $\blacksquare$
+This is an **exact** identification, not an approximation, justified by the spectral triple [Т]. $\blacksquare$
 
-:::info Уточнение: норма vs. полная 2-форма кривизны
-Отождествление $\|\mathrm{Curv}\|_{ij}^2 = \omega_0^2|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ связывает норму связности с квадратом нормы 2-формы кривизны. Это **точное** тождество на уровне норм. Однако полная 2-форма кривизны $F$ несёт дополнительную геометрическую информацию, не захваченную одной лишь нормой: голономию замкнутых контуров, классы Черна (топологические инварианты, как $c_2$ в Шаге 4), а также структуру связности на расслоении (параллельный перенос). Норма $\|F\|^2$ определяет **энергетику** (действие Янга-Миллса), но не **топологию** расслоения в полном объёме.
+:::info Clarification: norm vs. full curvature 2-form
+The identification $\|\mathrm{Curv}\|_{ij}^2 = \omega_0^2|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ relates the connection norm to the square of the norm of the curvature 2-form. This is an **exact** identity at the level of norms. However, the full curvature 2-form $F$ carries additional geometric information not captured by the norm alone: holonomy of closed loops, Chern classes (topological invariants such as $c_2$ in Step 4), and the structure of the connection on the bundle (parallel transport). The norm $\|F\|^2$ determines the **energetics** (Yang–Mills action), but not the **topology** of the bundle in full.
 :::
 
-**Интерпретация:**
-- **Нулевой Gap** = плоская связность = параллельный перенос не зависит от пути (внешнее описание однозначно определяет внутреннее).
-- **Ненулевой Gap** = кривизна $\neq 0$ = при циклическом изменении внешних параметров внутреннее состояние приобретает геометрический сдвиг (аналог [фазы Берри](/docs/physics/cosmology-phys/berry-phase)).
+**Interpretation:**
+- **Zero Gap** = flat connection = parallel transport is path-independent (the external description uniquely determines the internal one).
+- **Nonzero Gap** = curvature $\neq 0$ = under a cyclic change of external parameters, the internal state acquires a geometric shift (analogue of the [Berry phase](/docs/physics/cosmology-phys/berry-phase)).
 
-:::info Следствие (Геометрическая природа Gap)
-Gap — не «аналогия» с кривизной, а **буквально кривизна** конечной некоммутативной геометрии. Все свойства Gap (антисимметричность, $G_2$-ковариантность, фазовая диаграмма) — прямые следствия геометрии расслоения, а не специальные постулаты. Каноническая метрика информационной геометрии [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#информационная-геометрия) определена через $\mathrm{Tr}(D_{\mathrm{int}}^2)$.
+:::info Corollary (Geometric nature of Gap)
+Gap is not an "analogy" with curvature — it is **literally the curvature** of a finite noncommutative geometry. All properties of Gap (antisymmetry, $G_2$-covariance, phase diagram) are direct consequences of the bundle geometry, not special postulates. The canonical metric of information geometry [gap-thermodynamics](/docs/core/dynamics/gap-thermodynamics#информационная-геометрия) is defined via $\mathrm{Tr}(D_{\mathrm{int}}^2)$.
 :::
 
-### Холономия
+### Holonomy
 
-Нетривиальная холономия замкнутого контура $C$:
+Nontrivial holonomy of a closed loop $C$:
 
 $$
 \mathrm{Hol}(C) = \mathcal{P}\exp\left(\oint_C \mathcal{A}\right) \neq \mathbb{1}
 $$
 
-означает, что система, прошедшая замкнутый цикл внешних воздействий, имеет **изменённое внутреннее состояние** — геометрическая формализация «посттравматического роста».
+means that a system that has traversed a closed cycle of external influences has an **altered internal state** — a geometric formalization of "post-traumatic growth."
 
 ---
 
-## 6. G₂/⊥-разложение {#g2-разложение}
+## 6. G₂/⊥ decomposition {#g2-разложение}
 
-Gap-оператор $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ разлагается на компоненты, связанные с [G₂-структурой](/docs/physics/gauge-symmetry/g2-structure).
+The Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ decomposes into components associated with the [G₂ structure](/docs/physics/gauge-symmetry/g2-structure).
 
-:::tip Теорема 6.1 (G₂/⊥-разложение Gap-оператора) [Т]
-**(a)** $\hat{\mathcal{G}}$ разлагается на G₂-часть и ортогональное дополнение:
+:::tip Theorem 6.1 (G₂/⊥ decomposition of the Gap operator) [Т]
+**(a)** $\hat{\mathcal{G}}$ decomposes into the G₂ part and the orthogonal complement:
 
 $$
 \hat{\mathcal{G}} = \hat{\mathcal{G}}_{G_2} + \hat{\mathcal{G}}_{\perp}
 $$
 
-где $\hat{\mathcal{G}}_{G_2} \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ — проекция на 14-мерную подалгебру $G_2$, и $\hat{\mathcal{G}}_{\perp} \in \mathfrak{so}(7) / \mathfrak{g}_2$ — дополнение (7-мерное, поскольку $\dim\,\mathfrak{so}(7) = 21$, $\dim\,\mathfrak{g}_2 = 14$).
+where $\hat{\mathcal{G}}_{G_2} \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ is the projection onto the 14-dimensional subalgebra $G_2$, and $\hat{\mathcal{G}}_{\perp} \in \mathfrak{so}(7) / \mathfrak{g}_2$ is the complement (7-dimensional, since $\dim\,\mathfrak{so}(7) = 21$, $\dim\,\mathfrak{g}_2 = 14$).
 
-**(b)** $\hat{\mathcal{G}}_{G_2}$ **сохраняет** [Фано-структуру](/docs/physics/gauge-symmetry/fano-selection-rules): поток, порождённый $\hat{\mathcal{G}}_{G_2}$, преобразует $\Gamma$ с сохранением октонионного умножения.
+**(b)** $\hat{\mathcal{G}}_{G_2}$ **preserves** the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules): the flow generated by $\hat{\mathcal{G}}_{G_2}$ transforms $\Gamma$ while preserving the octonionic multiplication.
 
-**(c)** $\hat{\mathcal{G}}_{\perp}$ **нарушает** Фано-структуру: поток, порождённый $\hat{\mathcal{G}}_{\perp}$, смешивает Фано-триплеты.
+**(c)** $\hat{\mathcal{G}}_{\perp}$ **breaks** the Fano structure: the flow generated by $\hat{\mathcal{G}}_{\perp}$ mixes the Fano triplets.
 
-**(d)** Дополнение 7-мерно: ровно одно «нарушающее» направление на каждое [измерение](/docs/core/structure/dimensions).
+**(d)** The complement is 7-dimensional: exactly one "breaking" direction per [dimension](/docs/core/structure/dimensions).
 :::
 
-### Два типа Gap
+### Two types of Gap
 
-| Компонента | Размерность | Характер | Интерпретация |
+| Component | Dimension | Character | Interpretation |
 |------------|-------------|----------|---------------|
-| $\hat{\mathcal{G}}_{G_2}$ | 14 | Структуросохраняющий | «Когерентный» Gap, совместимый с алгебраической структурой $\mathbb{O}$ |
-| $\hat{\mathcal{G}}_{\perp}$ | 7 | Структуроразрушающий | «Декогерентный» Gap, связанный с потерей алгебраической структуры |
+| $\hat{\mathcal{G}}_{G_2}$ | 14 | Structure-preserving | "Coherent" Gap, compatible with the algebraic structure of $\mathbb{O}$ |
+| $\hat{\mathcal{G}}_{\perp}$ | 7 | Structure-breaking | "Decoherent" Gap, associated with the loss of algebraic structure |
 
-:::info Интерпретация (Терапевтическая) [И]
-Здоровая система имеет Gap преимущественно в $G_2$-секторе. Патологический Gap — в $\perp$-секторе. Терапевтическая цель: перевести $\hat{\mathcal{G}}_{\perp} \to 0$, оставив $\hat{\mathcal{G}}_{G_2}$ (который может быть ненулевым и полезным).
+:::info Interpretation (Therapeutic) [И]
+A healthy system has Gap predominantly in the $G_2$ sector. Pathological Gap is in the $\perp$ sector. The therapeutic goal: bring $\hat{\mathcal{G}}_{\perp} \to 0$ while leaving $\hat{\mathcal{G}}_{G_2}$ (which may be nonzero and beneficial).
 :::
 
 ---
 
-## 7. Коммутаторная алгебра {#коммутаторная-алгебра}
+## 7. Commutator algebra {#коммутаторная-алгебра}
 
-### 7.1 Свойства коммутатора [Ĝ, Γ]
+### 7.1 Properties of the commutator [Ĝ, Γ]
 
-:::tip Теорема 7.1 (Коммутатор Gap-оператора с Γ) [Т]
-**(a)** $[\hat{\mathcal{G}}, \Gamma]$ — **антиэрмитов**: $[\hat{\mathcal{G}}, \Gamma]^\dagger = -[\hat{\mathcal{G}}, \Gamma]$.
+:::tip Theorem 7.1 (Commutator of the Gap operator with Γ) [Т]
+**(a)** $[\hat{\mathcal{G}}, \Gamma]$ is **anti-Hermitian**: $[\hat{\mathcal{G}}, \Gamma]^\dagger = -[\hat{\mathcal{G}}, \Gamma]$.
 
 **(b)** $\mathrm{Tr}([\hat{\mathcal{G}}, \Gamma]) = 0$.
 
-**(c)** Коммутатор порождает **унитарный поток**:
+**(c)** The commutator generates a **unitary flow**:
 
 $$
 \Gamma(\epsilon) = e^{i\epsilon\hat{\mathcal{G}}}\,\Gamma\,e^{-i\epsilon\hat{\mathcal{G}}} = \Gamma + i\epsilon[\hat{\mathcal{G}}, \Gamma] + O(\epsilon^2)
 $$
 :::
 
-Gap-оператор порождает вращение матрицы когерентности: сильный Gap в паре $(i,j)$ вращает $\Gamma$ в плоскости $(i,j)$.
+The Gap operator generates a rotation of the coherence matrix: strong Gap in pair $(i,j)$ rotates $\Gamma$ in the $(i,j)$ plane.
 
-### 7.2 Октонионное крестное произведение {#октонионное-крестное-произведение}
+### 7.2 Octonionic cross product {#октонионное-крестное-произведение}
 
-Gap-оператор связан с **крестным произведением** на $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$:
+The Gap operator is related to the **cross product** on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$:
 
 $$
 x \times y := \frac{1}{2}(xy - yx) = \mathrm{Im}(xy)
 $$
 
-:::tip Теорема 7.2 (Gap через крестное произведение) [Т]
-**(a)** $\mathrm{Im}(\gamma_{ij})$ соответствует компоненте крестного произведения $(\hat{e}_i \times \hat{e}_j)_k \propto \epsilon_{ijk}$, возникающей из некоммутативности октонионного умножения $e_i \cdot e_j \neq e_j \cdot e_i$.
+:::tip Theorem 7.2 (Gap via cross product) [Т]
+**(a)** $\mathrm{Im}(\gamma_{ij})$ corresponds to the component of the cross product $(\hat{e}_i \times \hat{e}_j)_k \propto \epsilon_{ijk}$, arising from the non-commutativity of octonionic multiplication $e_i \cdot e_j \neq e_j \cdot e_i$.
 
-**(b)** Для пар внутри [Фано-триплета](/docs/physics/gauge-symmetry/fano-selection-rules) $(i,j,k) \in PG(2,2)$: $e_i \times e_j = \pm e_k$ — крестное произведение ассоциативно вдоль линии (подалгебра $\cong \mathbb{H}$).
+**(b)** For pairs within a [Fano triplet](/docs/physics/gauge-symmetry/fano-selection-rules) $(i,j,k) \in PG(2,2)$: $e_i \times e_j = \pm e_k$ — the cross product is associative along the line (subalgebra $\cong \mathbb{H}$).
 
-**(c)** Для пар **вне** Фано-триплета: ассоциатор $[e_i, e_j, e_k] \neq 0$ порождает дополнительный фазовый сдвиг, увеличивающий Gap.
+**(c)** For pairs **outside** a Fano triplet: the associator $[e_i, e_j, e_k] \neq 0$ generates an additional phase shift that increases Gap.
 :::
 
-:::info Скетч доказательства: Gap = октонионное произведение
-$\mathrm{Im}(\Gamma)$ определяет антисимметричную билинейную форму на $\mathbb{C}^7$. Мнимая часть октонионного произведения $[e_i, e_j] = \mathrm{Im}(e_i \cdot e_j)$ также определяет антисимметричную форму на $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Обе формы — элементы $\Lambda^2(\mathbb{R}^7)$ и обе инвариантны относительно $G_2 = \mathrm{Aut}(\mathbb{O})$. По лемме Шура для присоединённого представления: пространство $G_2$-инвариантных 2-форм на $\mathbb{R}^7$ **одномерно**. Следовательно, формы пропорциональны; коэффициент фиксируется нормировкой. $\blacksquare$
+:::info Proof sketch: Gap = octonionic product
+$\mathrm{Im}(\Gamma)$ defines an antisymmetric bilinear form on $\mathbb{C}^7$. The imaginary part of the octonionic product $[e_i, e_j] = \mathrm{Im}(e_i \cdot e_j)$ also defines an antisymmetric form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Both forms are elements of $\Lambda^2(\mathbb{R}^7)$ and both are invariant under $G_2 = \mathrm{Aut}(\mathbb{O})$. By Schur's lemma for the adjoint representation: the space of $G_2$-invariant 2-forms on $\mathbb{R}^7$ is **one-dimensional**. Therefore the forms are proportional; the coefficient is fixed by normalization. $\blacksquare$
 :::
 
 ---
 
-## 8. Стабилизаторы и топологическая защита {#стабилизаторы}
+## 8. Stabilizers and topological protection {#стабилизаторы}
 
-Стабилизатор Gap-конфигурации определяет топологическую защиту от непрерывных деформаций.
+The stabilizer of a Gap configuration determines topological protection against continuous deformations.
 
-:::tip Теорема 8.1 (Классификация стабилизаторов) [Т]
-Для Gap-оператора $\hat{\mathcal{G}}$ с фиксированным спектром $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$ стабилизатор $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$:
+:::tip Theorem 8.1 (Stabilizer classification) [Т]
+For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$:
 
-| Ранг | Спектр $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_1(G_2/H)$ |
+| Rank | Spectrum of $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_1(G_2/H)$ |
 |------|---------------------------|-----|-----------|---------|-----------------|
 | 0 | $(0,0,0)$ | $G_2$ | 14 | $\{pt\}$ | 0 |
 | 1 | $(\lambda,0,0)$ | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 |
-| 2 | $(\lambda_1,\lambda_2,0)$ | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | 10-мерн. | 0 |
-| 3 (общий) | $(\lambda_1,\lambda_2,\lambda_3)$ | $T^2$ | 2 | 12-мерн. | $\mathbb{Z}^2$ |
-| 3 (вырожд.) | $(\lambda,\lambda,\lambda)$ | $\mathrm{SU}(2)$ | 3 | 11-мерн. | 0 |
+| 2 | $(\lambda_1,\lambda_2,0)$ | $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 4 | 10-dim. | 0 |
+| 3 (generic) | $(\lambda_1,\lambda_2,\lambda_3)$ | $T^2$ | 2 | 12-dim. | $\mathbb{Z}^2$ |
+| 3 (degen.) | $(\lambda,\lambda,\lambda)$ | $\mathrm{SU}(2)$ | 3 | 11-dim. | 0 |
 :::
 
-**Следствие.** Только при ранге 3 с общим спектром фундаментальная группа $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$, что обеспечивает **топологическую защиту**: невырожденные Gap-конфигурации не могут быть непрерывно стянуты к тривиальным. Это — один из [пяти типов защиты Gap](/docs/core/dynamics/gap-phase-diagram#защита-gap).
+**Corollary.** Only at rank 3 with generic spectrum is the fundamental group $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$, which provides **topological protection**: nondegenerate Gap configurations cannot be continuously contracted to trivial ones. This is one of the [five types of Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap).
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — бифуркации, немарковские эффекты, Чой-Ямиолковский
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — метрика Фишера, лагранжиан, T_eff
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, катастрофы Уитни
-- [Дуально-аспектная семантика Gap](/docs/physics/dual-aspect/gap-semantics) — 49-элементная карта
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — G₂ = Aut(𝕆)
-- [Доказательства: Фано-канал](/docs/proofs/gap/fano-channel) — строгие теоремы о G₂-ковариантности
+- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, non-Markovian effects, Choi–Jamiołkowski
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — Fisher metric, Lagrangian, T_eff
+- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, Whitney catastrophes
+- [Dual-aspect Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
+- [G₂ structure](/docs/physics/gauge-symmetry/g2-structure) — G₂ = Aut(𝕆)
+- [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — rigorous theorems on G₂-covariance

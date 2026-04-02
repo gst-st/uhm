@@ -1,390 +1,390 @@
 ---
 sidebar_position: 3
-title: Артикуляция (A)
-description: Измерение I — способность различать
+title: Articulation (A)
+description: Dimension I — the capacity to distinguish
 ---
 
-# Измерение I: Артикуляция (A)
+# Dimension I: Articulation (A)
 
-## О чём эта глава
+## What this chapter is about
 
-Эта глава посвящена первому измерению Голонома — **Артикуляции**. Вы узнаете:
+This chapter is devoted to the first dimension of the Holon — **Articulation**. You will learn:
 
-- Почему **различение** — самый фундаментальный акт, без которого невозможно никакое существование;
-- Как идея различения развивалась от Фреге и Спенсер-Брауна до квантовой механики;
-- Что такое проекционный оператор и почему он — точная математика различения;
-- Как населённость $\gamma_{AA}$ определяет «остроту зрения» системы;
-- Какое место Артикуляция занимает на Фано-плоскости и почему она — единственный мост между секторами.
+- Why **distinction** is the most fundamental act, without which no existence is possible;
+- How the idea of distinction developed from Frege and Spencer-Brown to quantum mechanics;
+- What a projection operator is and why it is the precise mathematics of distinction;
+- How the population $\gamma_{AA}$ determines the "acuity of vision" of the system;
+- What place Articulation occupies on the Fano plane and why it is the only bridge between sectors.
 
-:::info Для кого эта глава
-Если вы впервые читаете об УГМ — начните с [обзора измерений](./dimensions). Если вы уже знакомы с семью измерениями и хотите понять первое из них глубже — вы по адресу.
+:::info Who this chapter is for
+If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you are already familiar with the seven dimensions and want to understand the first one more deeply — you are in the right place.
 :::
 
-## Функция
+## Function
 
-**Различать, выделять, определять границы.**
+**To distinguish, to single out, to define boundaries.**
 
-## Историческая предтеча {#историческая-предтеча}
+## Historical precursor {#историческая-предтеча}
 
-Идея о том, что различение лежит в основе всего, появлялась в мысли многих эпох.
+The idea that distinction underlies everything has appeared in the thought of many eras.
 
-**Готтлоб Фреге** (1879) в «Begriffsschrift» заложил основы формальной логики, показав, что всё логическое мышление начинается с акта **различения** — с определения, что относится к понятию, а что нет. Граница понятия — это первое различение, без которого нет ни истины, ни лжи.
+**Gottlob Frege** (1879), in *Begriffsschrift*, laid the foundations of formal logic, showing that all logical thinking begins with the act of **distinction** — with defining what falls under a concept and what does not. The boundary of a concept is the first distinction, without which there is neither truth nor falsehood.
 
-**Джордж Спенсер-Браун** (1969) в книге *Laws of Form* сформулировал эту интуицию предельно лаконично:
+**George Spencer-Brown** (1969), in *Laws of Form*, expressed this intuition with utmost concision:
 
 > *Draw a distinction.*
 
-— Проведи различие. Это единственная инструкция, из которой Спенсер-Браун выводит всю логику и арифметику. Различение первично: прежде чем можно сказать «это есть», нужно отделить «это» от «не-это». Пространство, разделённое чертой, порождает две стороны — и этого достаточно для возникновения формы.
+— Make a distinction. This is the single instruction from which Spencer-Brown derives all of logic and arithmetic. Distinction is primary: before one can say "this is", one must separate "this" from "not-this". The space divided by a mark gives rise to two sides — and this is sufficient for form to arise.
 
-**Грегори Бейтсон** (1972) развил идею в кибернетическом ключе:
+**Gregory Bateson** (1972) developed the idea in a cybernetic key:
 
-> *Информация — это различие, которое создаёт различие.*
+> *Information is a difference that makes a difference.*
 
-Не всякое различие информативно. Информация возникает, когда различие, проведённое в одном месте, **влияет** на что-то в другом. Если термометр различает «горячо» и «холодно», но это различие ни на что не действует — информации нет. Если же это различие включает обогреватель — возникает бит информации.
+Not every difference is informative. Information arises when a difference made in one place **affects** something in another. If a thermometer distinguishes "hot" from "cold" but this distinction acts on nothing — there is no information. If, however, this distinction switches on a heater — a bit of information arises.
 
-**Нильс Бор** и копенгагенская интерпретация квантовой механики (1920-е) установили, что **измерение** — акт различения состояния — не нейтральная процедура, а фундаментальный процесс, меняющий реальность. До измерения квантовая система не имеет определённого значения наблюдаемой; измерение (=различение) **создаёт** определённость.
+**Niels Bohr** and the Copenhagen interpretation of quantum mechanics (1920s) established that **measurement** — the act of distinguishing a state — is not a neutral procedure, but a fundamental process that changes reality. Before measurement a quantum system has no definite value of an observable; measurement (= distinction) **creates** definiteness.
 
-В УГМ-теории все эти идеи сливаются в одном измерении: **Артикуляция ($A$)** — способность системы проводить различия, и тем самым — порождать форму, информацию и бытие.
+In UHM all these ideas converge in a single dimension: **Articulation ($A$)** — the system's capacity to make distinctions, and thereby to generate form, information, and being.
 
-## Различение как акт творения {#различение-как-творение}
+## Distinction as an act of creation {#различение-как-творение}
 
-Почему различение — не просто когнитивная операция, а **онтологический акт**, порождающий бытие?
+Why is distinction not merely a cognitive operation, but an **ontological act** that generates being?
 
-Рассмотрим физику. До квантового измерения электрон не имеет определённого положения — он находится в суперпозиции. Акт измерения (= различения «здесь / не-здесь») **создаёт** определённое положение. Это не эпистемическое ограничение нашего знания, а онтологический факт: определённость возникает **из** различения.
+Consider physics. Before a quantum measurement the electron has no definite position — it is in superposition. The act of measurement (= the distinction "here / not-here") **creates** a definite position. This is not an epistemic limitation of our knowledge, but an ontological fact: definiteness arises **from** distinction.
 
-Рассмотрим биологию. Одноклеточный организм, отделённый мембраной от среды, существует **благодаря** этому различению «внутри / снаружи». Без мембраны нет организма — есть лишь раствор молекул. Мембрана — не стена (стена изолирует), а **селективный фильтр**: она различает, что пропустить и что отвергнуть. Это артикуляция на молекулярном уровне.
+Consider biology. A single-celled organism, separated from its environment by a membrane, exists **by virtue of** this distinction "inside / outside". Without the membrane there is no organism — only a solution of molecules. The membrane is not a wall (a wall isolates), but a **selective filter**: it distinguishes what to admit and what to reject. This is articulation at the molecular level.
 
-Рассмотрим математику. Множество определяется через **предикат** — правило, различающее элементы множества от не-элементов. Без предиката (без различения) нет множества, а без множеств нет математики. Канторово понятие множества — это формализация артикуляции.
+Consider mathematics. A set is defined by a **predicate** — a rule distinguishing members of the set from non-members. Without a predicate (without distinction) there is no set, and without sets there is no mathematics. Cantor's notion of a set is the formalisation of articulation.
 
-Таким образом, от квантовой физики до абстрактной математики **различение первично**: оно не описывает уже существующее, а **порождает** существующее. Именно этот принцип воплощён в измерении $A$.
+Thus, from quantum physics to abstract mathematics, **distinction is primary**: it does not describe what already exists, but **brings into existence** what exists. This is precisely the principle embodied in dimension $A$.
 
-## Описание
+## Description
 
-Артикуляция — это способность Голонома проводить различия. Без различения нет формы, нет информации, нет бытия.
+Articulation is the Holon's capacity to make distinctions. Without distinction there is no form, no information, no being.
 
-:::info Онтологический статус
-Артикуляция — **аспект** конфигурации $\Gamma$, не отдельная сущность. "Голоном артикулирует" означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|A\rangle$.
+:::info Ontological status
+Articulation is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon articulates" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|A\rangle$ is active.
 :::
 
-:::warning Первичность A
-При удалении измерения $A$ нарушаются **все три аксиомы** (AP), (PH), (QG) — это единственное измерение с таким свойством. См. [доказательство](../../proofs/minimality/theorem-minimality-7#случай-n--0-удаление-артикуляции-a).
+:::warning Primacy of A
+Removing dimension $A$ violates **all three axioms** (AP), (PH), (QG) — this is the only dimension with this property. See [proof](../../proofs/minimality/theorem-minimality-7#случай-n--0-удаление-артикуляции-a).
 
-Это не означает "иерархию важности" — все 7 измерений необходимы. Но $A$ логически первично: остальные измерения **предполагают** различение.
+This does not imply a "hierarchy of importance" — all 7 dimensions are necessary. But $A$ is logically primary: the remaining dimensions **presuppose** distinction.
 :::
 
-**Первичный акт реальности — акт различения:** "Draw a distinction" (Спенсер-Браун, *Laws of Form*, 1969). Нечто отделяется от фона — это минимальное условие существования формы.
+**The primary act of reality is the act of distinction:** "Draw a distinction" (Spencer-Brown, *Laws of Form*, 1969). Something separates from the background — this is the minimal condition for the existence of form.
 
-## Интуитивное объяснение {#интуитивное-объяснение}
+## Intuitive explanation {#интуитивное-объяснение}
 
-### Аналогия со зрением
+### Analogy with vision
 
-Представьте мир абсолютной однородности — ни света, ни тьмы, ни цвета. В таком мире нечего видеть, потому что **нечего отличить**. Первое, что делает глаз, — различает свет от тьмы. Это не просто биология — это **онтологический акт**: без различения «светлое / тёмное» нет ни формы, ни объекта, ни пространства.
+Imagine a world of absolute uniformity — neither light nor dark nor colour. In such a world there is nothing to see, because **nothing can be distinguished**. The first thing the eye does is distinguish light from dark. This is not merely biology — it is an **ontological act**: without the distinction "light / dark" there is no form, no object, no space.
 
-Когда младенец впервые открывает глаза, мир для него — размытое пятно. Постепенно зрительная кора научается проводить всё более тонкие различия: фигура и фон, лицо и стена, мама и не-мама. Каждое новое различение — это рост артикуляции.
+When an infant first opens its eyes, the world is a blurred smear. Gradually the visual cortex learns to make ever finer distinctions: figure and ground, face and wall, mother and not-mother. Every new distinction is growth of articulation.
 
-### Аналогия с рождением
+### Analogy with birth
 
-Первый крик новорождённого — первое различение «Я / не-Я». До этого момента организм был частью материнского тела, границы были размыты. Крик — физическое выражение того, что появилась **граница**: есть внутреннее (лёгкие, наполненные воздухом) и внешнее (холодный мир). Это простейший акт артикуляции на уровне живого существа.
+The first cry of a newborn is the first distinction "I / not-I". Until that moment the organism was part of the mother's body; the boundaries were diffuse. The cry is the physical expression of the appearance of a **boundary**: there is an inside (lungs filled with air) and an outside (the cold world). This is the simplest act of articulation at the level of a living being.
 
-### Аналогия с рисунком
+### Analogy with drawing
 
-Белый лист бумаги — чистая потенциальность. Одна линия карандашом разделяет лист на две области. Это минимальный акт различения, и он необратимо меняет лист: теперь есть «левая сторона» и «правая сторона», есть форма. Именно это имел в виду Спенсер-Браун.
+A blank sheet of paper is pure potentiality. A single pencil line divides the sheet into two regions. This is the minimal act of distinction, and it irreversibly changes the sheet: now there is a "left side" and a "right side"; there is form. This is precisely what Spencer-Brown had in mind.
 
-## Математическое представление
+## Mathematical representation
 
-### Проекционный оператор — математика различения {#проекционный-оператор}
+### Projection operator — the mathematics of distinction {#проекционный-оператор}
 
-Проекционный оператор $P$, выделяющий подпространство из $\mathcal{H}$:
-
-$$
-P^2 = P \quad \text{(идемпотентность)}
-$$
+The projection operator $P$ that singles out a subspace from $\mathcal{H}$:
 
 $$
-P^\dagger = P \quad \text{(эрмитовость)}
+P^2 = P \quad \text{(idempotency)}
 $$
 
-**Что это значит интуитивно?** Представьте поляризационный фильтр для света. Когда неполяризованный свет проходит через фильтр, только определённая поляризация проходит — остальное отсекается. Если пропустить уже отфильтрованный свет через тот же фильтр повторно, ничего не изменится — прошедший свет уже «правильный». Это и есть идемпотентность: $P^2 = P$, повторное различение не меняет результата.
+$$
+P^\dagger = P \quad \text{(Hermiticity)}
+$$
 
-Эрмитовость $P^\dagger = P$ гарантирует, что различение — **объективная** операция: результат не зависит от того, «с какой стороны» мы смотрим.
+**What does this mean intuitively?** Imagine a polarising filter for light. When unpolarised light passes through the filter, only a certain polarisation passes through — the rest is cut off. If the already-filtered light is passed through the same filter again, nothing changes — the transmitted light is already "correct". This is idempotency: $P^2 = P$, repeated distinction does not change the result.
 
-Проекционный оператор делит пространство на две части:
+Hermiticity $P^\dagger = P$ guarantees that distinction is an **objective** operation: the result does not depend on which "side" we are looking from.
+
+The projection operator divides the space into two parts:
 
 $$
 \mathcal{H} = \mathrm{Im}(P) \oplus \mathrm{Ker}(P)
 $$
 
-где $\mathrm{Im}(P)$ — то, что выделено, $\mathrm{Ker}(P) = \mathrm{Im}(I - P)$ — фон.
+where $\mathrm{Im}(P)$ is what is singled out, $\mathrm{Ker}(P) = \mathrm{Im}(I - P)$ is the background.
 
-Это точная математическая формулировка спенсер-брауновского «Draw a distinction»: пространство разделено на две непересекающиеся части, и каждый элемент принадлежит ровно одной из них.
+This is the precise mathematical formulation of Spencer-Brown's "Draw a distinction": the space is divided into two non-intersecting parts, and every element belongs to exactly one of them.
 
-## Операции артикуляции
+## Articulation operations
 
-| Операция | Математика | Интерпретация |
-|----------|------------|---------------|
-| Выделение | $P\vert\psi\rangle$ | Фокус внимания на подпространстве |
-| Исключение | $(I-P)\vert\psi\rangle$ | Игнорирование, фильтрация |
-| Измерение | $\langle\psi\vert P\vert\psi\rangle$ | Вероятность нахождения в подпространстве |
-| Декомпозиция | $\sum_i P_i = I$ | Полная классификация (разбиение) |
+| Operation | Mathematics | Interpretation |
+|-----------|------------|----------------|
+| Singling out | $P\vert\psi\rangle$ | Focus of attention on a subspace |
+| Exclusion | $(I-P)\vert\psi\rangle$ | Ignoring, filtering |
+| Measurement | $\langle\psi\vert P\vert\psi\rangle$ | Probability of being found in the subspace |
+| Decomposition | $\sum_i P_i = I$ | Complete classification (partition) |
 
-## Полная система проекторов
+## Complete system of projectors
 
-Для полного различения требуется **ортогональное разбиение** пространства:
+Full distinction requires an **orthogonal partition** of the space:
 
 $$
 \sum_{i=1}^{n} P_i = I, \quad P_i P_j = \delta_{ij} P_i
 $$
 
-Условие $P_i P_j = \delta_{ij} P_i$ означает: проекторы **ортогональны** — различённые категории не пересекаются.
+The condition $P_i P_j = \delta_{ij} P_i$ means: the projectors are **orthogonal** — the distinguished categories do not intersect.
 
-**Связь со спектральным разложением:**
+**Connection with the spectral decomposition:**
 
-Любой эрмитов оператор $A$ разлагается через свои проекторы:
+Any Hermitian operator $A$ decomposes through its projectors:
 
 $$
 A = \sum_i a_i P_i
 $$
 
-где $a_i$ — собственные значения, $P_i$ — проекторы на собственные подпространства. Измерение оператора $A$ — это **артикуляция** его спектра.
+where $a_i$ are eigenvalues and $P_i$ are projectors onto eigensubspaces. Measuring operator $A$ is the **articulation** of its spectrum.
 
-## Населённость $\gamma_{AA}$ — мера различающей способности {#населённость}
+## Population $\gamma_{AA}$ — measure of distinguishing capacity {#населённость}
 
-Диагональный элемент [матрицы когерентности](../../core/dynamics/coherence-matrix) $\gamma_{AA}$ — это **населённость** измерения Артикуляции. Она показывает, какая доля «ресурса» Голонома направлена на различение.
+The diagonal element of the [coherence matrix](../../core/dynamics/coherence-matrix) $\gamma_{AA}$ is the **population** of the Articulation dimension. It shows what fraction of the Holon's "resource" is directed towards distinction.
 
 $$
 \gamma_{AA} = \langle A | \Gamma | A \rangle \in [0, 1], \quad \sum_{k} \gamma_{kk} = 1
 $$
 
-### Что означает значение $\gamma_{AA}$
+### What the value of $\gamma_{AA}$ means
 
-| Значение $\gamma_{AA}$ | Интерпретация | Пример |
-|-------------------------|---------------|--------|
-| Высокое ($\gg 1/7$) | Система «зациклена» на различении, гиперанализ | Тревожное сознание, постоянно ищущее угрозы |
-| Около $1/7$ | Сбалансированная различающая способность | Здоровое внимание, адекватная фильтрация |
-| Низкое ($\ll 1/7$) | Ослабленная способность проводить различия | Глубокий сон, медитативное растворение границ |
-| $\to 0$ | Утрата различающей способности | Кома, потеря перцепции |
+| Value of $\gamma_{AA}$ | Interpretation | Example |
+|------------------------|----------------|---------|
+| High ($\gg 1/7$) | System "stuck" on distinction, hyperanalysis | Anxious consciousness constantly scanning for threats |
+| Around $1/7$ | Balanced distinguishing capacity | Healthy attention, adequate filtering |
+| Low ($\ll 1/7$) | Weakened capacity to make distinctions | Deep sleep, meditative dissolution of boundaries |
+| $\to 0$ | Loss of distinguishing capacity | Coma, loss of perception |
 
-:::warning Равновесное значение — не $1/7$
-Стационарное состояние $\rho^*$ Голонома, определяемое [уравнением эволюции](../../core/dynamics/evolution), в общем случае не даёт $\gamma_{AA} = 1/7$. Равновесие зависит от секторного профиля — «характерного паспорта» системы. Значение $1/7$ — лишь среднее по полностью смешанному состоянию $I/7$.
+:::warning The equilibrium value is not $1/7$
+The stationary state $\rho^*$ of the Holon, determined by the [evolution equation](../../core/dynamics/evolution), does not in general give $\gamma_{AA} = 1/7$. The equilibrium depends on the sector profile — the "characteristic passport" of the system. The value $1/7$ is only the average over the fully mixed state $I/7$.
 :::
 
-## Артикуляция и информация {#артикуляция-и-информация}
+## Articulation and information {#артикуляция-и-информация}
 
-Каждый акт различения порождает информацию. Если система различает $n$ альтернатив с равной вероятностью, информационное содержание составляет $\log_2 n$ бит. Одно бинарное различение (да/нет) — это **1 бит**, минимальная единица информации.
+Every act of distinction generates information. If a system distinguishes $n$ alternatives with equal probability, the information content is $\log_2 n$ bits. A single binary distinction (yes/no) is **1 bit**, the minimal unit of information.
 
-Связь артикуляции с энтропией фон Неймана $S(\Gamma) = -\mathrm{Tr}(\Gamma \ln \Gamma)$:
+Connection of articulation with von Neumann entropy $S(\Gamma) = -\mathrm{Tr}(\Gamma \ln \Gamma)$:
 
-- Максимальная энтропия $S = \ln 7$ — полностью смешанное состояние $I/7$, никакое измерение не выделено. Голоном не проводит различий.
-- Минимальная энтропия $S = 0$ — чистое состояние, максимальное различение. Но чистое состояние в одном измерении ($\gamma_{AA} = 1$) означает полную утрату всех остальных — это не «хорошая» артикуляция, а патологическая односторонность.
-- **Оптимальная артикуляция** — промежуточное состояние: достаточно различений, чтобы выделить структуру, но не настолько, чтобы потерять связность с другими измерениями.
+- Maximum entropy $S = \ln 7$ — the fully mixed state $I/7$; no dimension is singled out. The Holon makes no distinctions.
+- Minimum entropy $S = 0$ — a pure state, maximum distinction. But a pure state in one dimension ($\gamma_{AA} = 1$) means total loss of all the others — this is not "good" articulation, but pathological one-sidedness.
+- **Optimal articulation** is an intermediate state: enough distinctions to single out structure, but not so many as to lose connectedness with the other dimensions.
 
-Это согласуется с [порогом чистоты](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[Т]**: сознание возникает при чистоте выше $2/7$, т.е. когда система достаточно артикулирована, чтобы выделиться из фонового шума.
+This accords with the [purity threshold](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[Т]**: consciousness arises at purity above $2/7$, i.e. when the system is sufficiently articulated to stand out from background noise.
 
-### Артикуляция и количество информации {#артикуляция-количество}
+### Articulation and amount of information {#артикуляция-количество}
 
-Связь между артикуляцией и информацией можно сделать количественной. Рассмотрим Голоном с матрицей когерентности $\Gamma$. Информация, содержащаяся в конфигурации, определяется разностью между максимальной энтропией и фактической:
+The connection between articulation and information can be made quantitative. Consider a Holon with coherence matrix $\Gamma$. The information contained in the configuration is determined by the difference between the maximum entropy and the actual entropy:
 
 $$
 I(\Gamma) = \ln 7 - S(\Gamma) = \ln 7 + \mathrm{Tr}(\Gamma \ln \Gamma)
 $$
 
-- При $\Gamma = I/7$: $I = 0$ — система не несёт информации, различения отсутствуют.
-- При чистом состоянии: $I = \ln 7 \approx 1.95$ нат — максимум информации, но за счёт потери шести из семи измерений.
-- При пороге сознания $P = 2/7$: $I > 0$ — система уже несёт информацию, отличающую её от шума.
+- At $\Gamma = I/7$: $I = 0$ — the system carries no information; distinctions are absent.
+- At a pure state: $I = \ln 7 \approx 1.95$ nats — the maximum of information, but at the cost of losing six of the seven dimensions.
+- At the consciousness threshold $P = 2/7$: $I > 0$ — the system already carries information distinguishing it from noise.
 
-Таким образом, артикуляция — это не абстрактная способность: она **измерима** через информационное содержание конфигурации.
+Thus, articulation is not an abstract capacity: it is **measurable** through the information content of the configuration.
 
-## Стресс артикуляции $\sigma_A$ {#стресс-артикуляции}
+## Articulation stress $\sigma_A$ {#стресс-артикуляции}
 
-### Вывод формулы напряжения σ из первых принципов {#вывод-формулы-напряжения}
+### Derivation of the stress formula σ from first principles {#вывод-формулы-напряжения}
 
-Формула стресса $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$ — не произвольный выбор, а **единственная** линейная мера дефицита, следующая из структуры пространства состояний $\mathcal{D}(\mathbb{C}^7)$. Выведем её пошагово.
+The stress formula $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$ is not an arbitrary choice, but the **unique** linear measure of deficit following from the structure of the state space $\mathcal{D}(\mathbb{C}^7)$. We derive it step by step.
 
-**Шаг 1. Мотивация из равновесия.** Максимально смешанное состояние $\Gamma = I/7$ — квантовый аналог термодинамического равновесия. В нём все диагональные элементы равны: $\gamma_{kk} = 1/7$ для всех $k$. Ни одно измерение не выделено, ни одно не подавлено. Естественно определить стресс как **дефицит** населённости относительно этого равновесного значения.
+**Step 1. Motivation from equilibrium.** The maximally mixed state $\Gamma = I/7$ is the quantum analogue of thermodynamic equilibrium. In it all diagonal elements are equal: $\gamma_{kk} = 1/7$ for all $k$. No dimension is singled out, none is suppressed. It is natural to define stress as the **deficit** of population relative to this equilibrium value.
 
-**Шаг 2. Принцип «честной доли».** Поскольку $\mathrm{Tr}(\Gamma) = 1$ и измерений $N = 7$, «честная доля» каждого измерения составляет $1/N = 1/7$. Введём требования:
+**Step 2. The "fair share" principle.** Since $\mathrm{Tr}(\Gamma) = 1$ and the number of dimensions is $N = 7$, the "fair share" of each dimension is $1/N = 1/7$. We impose the requirements:
 
-- $\sigma_k = 0$ при $\gamma_{kk} = 1/7$ — равновесие, дефицита нет;
-- $\sigma_k = 1$ при $\gamma_{kk} = 0$ — полное отсутствие измерения, максимальный стресс.
+- $\sigma_k = 0$ when $\gamma_{kk} = 1/7$ — equilibrium, no deficit;
+- $\sigma_k = 1$ when $\gamma_{kk} = 0$ — complete absence of the dimension, maximum stress.
 
-Эти два условия однозначно задают масштаб.
+These two conditions uniquely fix the scale.
 
-**Шаг 3. Линейная интерполяция.** Простейшая (линейная) функция, удовлетворяющая обоим граничным условиям:
+**Step 3. Linear interpolation.** The simplest (linear) function satisfying both boundary conditions:
 
 $$
 \sigma_k = 1 - N \cdot \gamma_{kk} = 1 - 7\gamma_{kk}
 $$
 
-Линейность не произвольна: при малых отклонениях от равновесия ($\gamma_{kk} \approx 1/7$) любая гладкая зависимость сводится к линейной с точностью $O((\gamma_{kk} - 1/7)^2)$. Таким образом, линейная формула — ведущий член разложения.
+Linearity is not arbitrary: for small deviations from equilibrium ($\gamma_{kk} \approx 1/7$) any smooth dependence reduces to the linear one up to $O((\gamma_{kk} - 1/7)^2)$. Thus, the linear formula is the leading term of the expansion.
 
-**Шаг 4. Ограничение (clamp).** Населённость $\gamma_{kk}$ может превышать $1/7$ (вплоть до $1$ для чистого состояния в данном измерении). При $\gamma_{kk} > 1/7$ необрезанная формула даёт $\sigma_k < 0$, что означало бы «избыток» — но стресс по определению **неотрицателен** (отсутствие дефицита есть ноль, а не отрицательный стресс). Аналогично, $\sigma_k > 1$ невозможен, поскольку $\gamma_{kk} \geq 0$. Итого:
+**Step 4. Clamping.** The population $\gamma_{kk}$ can exceed $1/7$ (up to $1$ for a pure state in the given dimension). When $\gamma_{kk} > 1/7$ the unclamped formula gives $\sigma_k < 0$, which would mean "surplus" — but stress is by definition **non-negative** (the absence of deficit is zero, not negative stress). Likewise, $\sigma_k > 1$ is impossible since $\gamma_{kk} \geq 0$. Therefore:
 
 $$
 \sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)
 $$
 
-**Шаг 5. Универсальность.** Формула одинакова для всех семи измерений, и это **следствие**, а не допущение:
+**Step 5. Universality.** The formula is the same for all seven dimensions, and this is a **consequence**, not an assumption:
 
-(a) $S_7$-эквивариантность атомарного диссипатора [T-5 **[Т]**](../../core/operators/lindblad-operators) означает, что уравнение эволюции $\Gamma$ не отличает одно измерение от другого. Если диссипатор $S_7$-симметричен, то и естественная мера дефицита должна быть $S_7$-инвариантной: $\sigma_k$ зависит только от $\gamma_{kk}$, и функциональная форма не зависит от индекса $k$.
+(a) $S_7$-equivariance of the atomic dissipator [T-5 **[Т]**](../../core/operators/lindblad-operators) means that the evolution equation for $\Gamma$ does not distinguish one dimension from another. If the dissipator is $S_7$-symmetric, then the natural measure of deficit must also be $S_7$-invariant: $\sigma_k$ depends only on $\gamma_{kk}$, and the functional form does not depend on the index $k$.
 
-(b) Функция $f(\gamma) = \mathrm{clamp}(1 - 7\gamma,\; 0,\; 1)$ — **единственная** монотонно убывающая функция на $[0,\, 1/7] \to [0,\, 1]$, которая одновременно (i) линейна, (ii) обращается в нуль при $\gamma = 1/7$ и (iii) равна единице при $\gamma = 0$. Единственность следует из того, что линейная функция с двумя фиксированными точками определена однозначно.
+(b) The function $f(\gamma) = \mathrm{clamp}(1 - 7\gamma,\; 0,\; 1)$ is the **unique** monotonically decreasing function on $[0,\, 1/7] \to [0,\, 1]$ that simultaneously (i) is linear, (ii) vanishes at $\gamma = 1/7$, and (iii) equals one at $\gamma = 0$. Uniqueness follows from the fact that a linear function with two fixed points is uniquely determined.
 
-**Шаг 6. Связь с T-92.** Полученная формула — это **Теорема T-92 [Т]** (канонический тензор напряжений). Формальное доказательство и эквивалентность стрессового и чистотного условий жизнеспособности см. в [Теоремах КК](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+**Step 6. Connection with T-92.** The derived formula is **Theorem T-92 [Т]** (canonical stress tensor). The formal proof and the equivalence of the stress and purity viability conditions are given in [CС Theorems](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
-:::tip Теорема: Каноническая формула напряжения [Т] (T-92)
-Для матрицы когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ с диагональными элементами $\gamma_{kk}$ **канонический стресс** $k$-го измерения:
+:::tip Theorem: Canonical stress formula [Т] (T-92)
+For the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with diagonal elements $\gamma_{kk}$, the **canonical stress** of dimension $k$:
 
 $$
 \sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1) \quad (k = A, S, D, L, E, O, U)
 $$
 
-— единственная линейная $S_7$-инвариантная мера дефицита населённости относительно равновесия $I/7$.
+— the unique linear $S_7$-invariant measure of population deficit relative to equilibrium $I/7$.
 :::
 
-:::info Универсальность: для всех измерений
-Данный вывод применим ко **всем семи** измерениям без изменений. Формулы $\sigma_S$, $\sigma_D$, $\sigma_L$, $\sigma_E$, $\sigma_O$, $\sigma_U$ в соответствующих файлах ([dimension-s](./dimension-s), [dimension-d](./dimension-d), [dimension-l](./dimension-l), [dimension-e](./dimension-e), [dimension-o](./dimension-o), [dimension-u](./dimension-u)) — это частные случаи одной и той же формулы, выведенной здесь.
+:::info Universality: for all dimensions
+This derivation applies to **all seven** dimensions without modification. The formulas $\sigma_S$, $\sigma_D$, $\sigma_L$, $\sigma_E$, $\sigma_O$, $\sigma_U$ in the corresponding files ([dimension-s](./dimension-s), [dimension-d](./dimension-d), [dimension-l](./dimension-l), [dimension-e](./dimension-e), [dimension-o](./dimension-o), [dimension-u](./dimension-u)) are special cases of the same formula derived here.
 :::
 
 ---
 
-[Стрессовая переменная](../../core/operators/lindblad-operators) $\sigma_A$ (T-92 **[Т]**) характеризует **дефицит** артикуляции:
+The [stress variable](../../core/operators/lindblad-operators) $\sigma_A$ (T-92 **[Т]**) characterises the **deficit** of articulation:
 
 $$
 \sigma_A = \mathrm{clamp}(1 - 7\gamma_{AA},\; 0,\; 1)
 $$
 
-Значение $\sigma_A$ показывает, насколько система **нуждается** в усилении различающей способности:
+The value of $\sigma_A$ shows how strongly the system **needs** to strengthen its distinguishing capacity:
 
-| $\sigma_A$ | Состояние | Интерпретация |
-|-------------|-----------|---------------|
-| $0$ | $\gamma_{AA} \geq 1/7$ | Артикуляция достаточна или избыточна |
-| $0.5$ | $\gamma_{AA} \approx 1/14$ | Умеренный дефицит различений |
-| $1$ | $\gamma_{AA} \to 0$ | Критический дефицит — система не различает |
+| $\sigma_A$ | State | Interpretation |
+|------------|-------|----------------|
+| $0$ | $\gamma_{AA} \geq 1/7$ | Articulation is sufficient or in excess |
+| $0.5$ | $\gamma_{AA} \approx 1/14$ | Moderate deficit of distinctions |
+| $1$ | $\gamma_{AA} \to 0$ | Critical deficit — the system makes no distinctions |
 
-Стресс $\sigma_A$ входит в [формулу гедонического сигнала](../../consciousness/foundations/self-observation#мера-рефлексии-r) и влияет на направление обучения: высокий $\sigma_A$ «толкает» систему к поиску информации, усиливающей различающую способность.
+Stress $\sigma_A$ enters the [hedonic signal formula](../../consciousness/foundations/self-observation#мера-рефлексии-r) and influences the direction of learning: high $\sigma_A$ "pushes" the system towards seeking information that strengthens its distinguishing capacity.
 
-:::info Стресс и мотивация
-На когнитивном уровне высокий $\sigma_A$ переживается как **растерянность**, **сенсорная депривация** или **скука от однообразия** — состояния, мотивирующие поиск новых различений. Низкий $\sigma_A$ — как **ясность восприятия**, уверенность в категориях и границах.
+:::info Stress and motivation
+At the cognitive level, high $\sigma_A$ is experienced as **confusion**, **sensory deprivation**, or **boredom from monotony** — states that motivate the search for new distinctions. Low $\sigma_A$ — as **clarity of perception**, confidence in categories and boundaries.
 :::
 
-## Артикуляция в динамике {#артикуляция-в-динамике}
+## Articulation in dynamics {#артикуляция-в-динамике}
 
-Населённость $\gamma_{AA}$ не статична — она эволюционирует во [внутреннем времени](../../proofs/dynamics/emergent-time) $\tau$ согласно [уравнению Линдблада](../../core/operators/lindblad-operators):
+The population $\gamma_{AA}$ is not static — it evolves in [internal time](../../proofs/dynamics/emergent-time) $\tau$ according to the [Lindblad equation](../../core/operators/lindblad-operators):
 
 $$
 \frac{d\gamma_{AA}}{d\tau} = -i[H_\Omega, \Gamma]_{AA} + \sum_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)_{AA} + \mathcal{R}_{AA}
 $$
 
-где $\mathcal{R}$ — [оператор замены](../../core/operators/lindblad-operators), моделирующий связь с [Основанием (O)](./dimension-o).
+where $\mathcal{R}$ is the [replacement operator](../../core/operators/lindblad-operators) modelling the connection with [Ground (O)](./dimension-o).
 
-### Что происходит при потере артикуляции
+### What happens when articulation is lost
 
-Когда $\gamma_{AA}$ снижается, система теряет способность проводить различия. Вот как это проявляется на разных уровнях:
+When $\gamma_{AA}$ decreases, the system loses the capacity to make distinctions. Here is how this manifests at different levels:
 
-| Процесс | Что происходит с $\gamma_{AA}$ | Следствие |
-|---------|-------------------------------|-----------|
-| Засыпание | Плавное снижение | Размытие границ фигура/фон, снижение внимания |
-| Деменция | Хроническое снижение | Потеря способности различать лица, предметы, понятия |
-| Медитация | Контролируемое снижение | Намеренное «растворение» границ при сохранении $\gamma_{EE}$ |
-| Шок, травма | Резкий скачок вверх | Гиперартикуляция: мир распадается на фрагменты |
+| Process | What happens to $\gamma_{AA}$ | Consequence |
+|---------|-------------------------------|-------------|
+| Falling asleep | Gradual decrease | Blurring of figure/ground boundaries, reduced attention |
+| Dementia | Chronic decrease | Loss of ability to distinguish faces, objects, concepts |
+| Meditation | Controlled decrease | Intentional "dissolution" of boundaries while preserving $\gamma_{EE}$ |
+| Shock, trauma | Sharp upward jump | Hyperarticulation: the world breaks into fragments |
 
-:::info Потеря артикуляции ≠ потеря сознания
-Снижение $\gamma_{AA}$ не означает автоматической потери сознания. Порог сознания [определяется](../../core/foundations/axiom-septicity) четырьмя условиями ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), где $P$ — чистота **всей** матрицы $\Gamma$, а не одного элемента. Можно иметь низкую $\gamma_{AA}$, но высокую чистоту за счёт других измерений — как в глубокой медитации, когда различения размыты, но интериорность ($\gamma_{EE}$) высока.
+:::info Loss of articulation ≠ loss of consciousness
+A decrease in $\gamma_{AA}$ does not automatically mean loss of consciousness. The consciousness threshold is [determined](../../core/foundations/axiom-septicity) by four conditions ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), where $P$ is the purity of the **entire** matrix $\Gamma$, not of a single element. One can have low $\gamma_{AA}$ but high purity due to other dimensions — as in deep meditation, when distinctions are blurred but interiority ($\gamma_{EE}$) is high.
 :::
 
-### Рост артикуляции {#рост-артикуляции}
+### Growth of articulation {#рост-артикуляции}
 
-Артикуляция может не только теряться, но и расти. Вот примеры процессов, при которых $\gamma_{AA}$ нарастает:
+Articulation can not only be lost, but also grow. Here are examples of processes in which $\gamma_{AA}$ increases:
 
-| Процесс | Что происходит с $\gamma_{AA}$ | Следствие |
-|---------|-------------------------------|-----------|
-| Обучение распознаванию | Рост от начального уровня | Ребёнок учится различать буквы — новые проекторы «включаются» |
-| Научная классификация | Устойчивый рост | Линней создал систематику — мир различён на виды, роды, семейства |
-| Освоение языка | Скачкообразный рост | Каждое новое слово — новое различение; словарный запас = мера артикуляции |
-| Калибровка прибора | Целенаправленный рост | Телескоп с лучшим разрешением различает больше деталей |
+| Process | What happens to $\gamma_{AA}$ | Consequence |
+|---------|-------------------------------|-------------|
+| Learning to recognise | Growth from initial level | A child learns to distinguish letters — new projectors "switch on" |
+| Scientific classification | Steady growth | Linnaeus created systematics — the world is distinguished into species, genera, families |
+| Language acquisition | Stepwise growth | Each new word is a new distinction; vocabulary = measure of articulation |
+| Instrument calibration | Targeted growth | A telescope with better resolution distinguishes more detail |
 
-:::tip Артикуляция и развитие
-Развитие любой системы — от организма до цивилизации — можно описать как **рост артикуляции**: увеличение числа и тонкости проводимых различений. Ребёнок, научившийся отличать кошку от собаки, а затем различающий породы, демонстрирует рост $\gamma_{AA}$ в когнитивном домене.
+:::tip Articulation and development
+The development of any system — from an organism to a civilisation — can be described as **growth of articulation**: an increase in the number and fineness of distinctions made. A child who has learned to tell a cat from a dog, and then to distinguish breeds, demonstrates growth of $\gamma_{AA}$ in the cognitive domain.
 :::
 
-## Примеры
+## Examples
 
-| Уровень | Пример | Что различается | Механизм |
-|---------|--------|-----------------|----------|
-| Физический | Мембрана клетки | Внутреннее / внешнее | Липидный бислой — физическая граница |
-| Физический | Детектор частиц | Типы частиц | Проекционное измерение (буквально $P$) |
-| Биологический | Иммунная система | Своё / чужое | MHC-рецепторы различают антигены |
-| Биологический | Сетчатка глаза | Свет / тьма | Фоторецепторы — порог срабатывания |
-| Когнитивный | Внимание | Фигура / фон | Избирательная активация нейронных паттернов |
-| Когнитивный | Восприятие | Объекты | Сегментация перцептивного поля |
-| Логический | Определение | Понятие / не-понятие | Интенсиональная граница (Фреге) |
-| Логический | Классификация | Категории | Полная система проекторов $\sum P_i = I$ |
-| Социальный | Язык | Фонемы | Минимальные различительные единицы звука |
-| Социальный | Закон | Законное / незаконное | Юридическая квалификация — акт различения |
+| Level | Example | What is distinguished | Mechanism |
+|-------|---------|----------------------|-----------|
+| Physical | Cell membrane | Inside / outside | Lipid bilayer — a physical boundary |
+| Physical | Particle detector | Types of particles | Projective measurement (literally $P$) |
+| Biological | Immune system | Self / non-self | MHC receptors distinguish antigens |
+| Biological | Retina | Light / dark | Photoreceptors — firing threshold |
+| Cognitive | Attention | Figure / ground | Selective activation of neural patterns |
+| Cognitive | Perception | Objects | Segmentation of the perceptual field |
+| Logical | Definition | Concept / non-concept | Intensional boundary (Frege) |
+| Logical | Classification | Categories | Complete projector system $\sum P_i = I$ |
+| Social | Language | Phonemes | Minimal distinctive units of sound |
+| Social | Law | Lawful / unlawful | Legal qualification — an act of distinction |
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    A["A — Артикуляция"] --> S["S — создаёт элементы структуры"]
-    A --> D["D — определяет что изменяется"]
-    A --> L["L — даёт материал для связей"]
-    A --> E["E — различает качества интериорности"]
-    A --> O["O — различает систему от источника"]
-    A --> U["U — обеспечивает что интегрировать"]
+    A["A — Articulation"] --> S["S — creates elements of structure"]
+    A --> D["D — defines what changes"]
+    A --> L["L — provides material for connections"]
+    A --> E["E — distinguishes qualities of interiority"]
+    A --> O["O — distinguishes the system from the source"]
+    A --> U["U — provides what is to be integrated"]
 ```
 
-### Развёрнутые связи {#развёрнутые-связи}
+### Detailed connections {#развёрнутые-связи}
 
-**A → S (Артикуляция → Структура):** Структура возникает из различений. Кристаллическая решётка — это набор различённых позиций в пространстве. Грамматика — набор различённых синтаксических категорий. Без артикуляции нет элементов, из которых можно строить структуру. Когерентность $\gamma_{AS}$ показывает, насколько различения **структурированы** — не хаотичны, а образуют устойчивый паттерн.
+**A → S (Articulation → Structure):** Structure arises from distinctions. A crystal lattice is a set of distinguished positions in space. Grammar is a set of distinguished syntactic categories. Without articulation there are no elements from which structure can be built. Coherence $\gamma_{AS}$ shows how **structured** the distinctions are — not chaotic, but forming a stable pattern.
 
-**A → D (Артикуляция → Динамика):** Чтобы что-то могло измениться, нужно сначала отличить одно состояние от другого. Динамика — это переход из состояния $|\psi_1\rangle$ в $|\psi_2\rangle$, и сам факт, что мы различаем эти два состояния — заслуга артикуляции. Когерентность $\gamma_{AD}$ — темпоральность различений: как быстро система проводит новые различения.
+**A → D (Articulation → Dynamics):** For something to change, one must first distinguish one state from another. Dynamics is the transition from state $|\psi_1\rangle$ to $|\psi_2\rangle$, and the very fact that we distinguish these two states is the work of articulation. Coherence $\gamma_{AD}$ is the temporality of distinctions: how quickly the system makes new distinctions.
 
-**A → L (Артикуляция → Логика):** Логика оперирует различёнными сущностями. Закон тождества ($A = A$) предполагает, что $A$ отличено от не-$A$. Закон непротиворечия ($\neg(A \wedge \neg A)$) — что различение чётко. Когерентность $\gamma_{AL}$ — логичность различений, их непротиворечивость.
+**A → L (Articulation → Logic):** Logic operates on distinguished entities. The law of identity ($A = A$) presupposes that $A$ is distinguished from non-$A$. The law of non-contradiction ($\neg(A \wedge \neg A)$) — that the distinction is sharp. Coherence $\gamma_{AL}$ is the logicality of distinctions, their consistency.
 
-**A → E (Артикуляция → Интериорность):** Сознательный опыт различён: мы различаем красное от синего, боль от удовольствия. Без артикуляции нет квалиа — есть только недифференцированный «шум» переживания. Когерентность $\gamma_{AE}$ — **апперцепция**, осознанность различений.
+**A → E (Articulation → Interiority):** Conscious experience is differentiated: we distinguish red from blue, pain from pleasure. Without articulation there are no qualia — only undifferentiated "noise" of experience. Coherence $\gamma_{AE}$ is **apperception**, the awareness of distinctions.
 
-**A → O (Артикуляция → Основание):** Само различение системы от её основания (среды, источника) — акт артикуляции. Когерентность $\gamma_{AO}$ — укоренённость различений, их связь с «почвой».
+**A → O (Articulation → Ground):** The very distinction of the system from its ground (environment, source) is an act of articulation. Coherence $\gamma_{AO}$ is the rootedness of distinctions, their connection with the "soil".
 
-**A → U (Артикуляция → Единство):** Чтобы интегрировать, нужно сначала иметь различённые части. Единство — не однородность, а **единство многообразия**. Когерентность $\gamma_{AU}$ — интегрированность различений, их вклад в целое.
+**A → U (Articulation → Unity):** To integrate, one must first have distinguished parts. Unity is not uniformity, but **unity of multiplicity**. Coherence $\gamma_{AU}$ is the integratedness of distinctions, their contribution to the whole.
 
-## Когерентность с A
+## Coherence with A
 
-Элементы $\gamma_{Ai}$ матрицы когерентности описывают связь артикуляции с другими измерениями:
+The elements $\gamma_{Ai}$ of the coherence matrix describe the connection of articulation with the other dimensions:
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{AS}$ | Структурированность различий |
-| $\gamma_{AD}$ | Темпоральность различий (различения во времени) |
-| $\gamma_{AL}$ | Логичность различий (непротиворечивость) |
-| $\gamma_{AE}$ | Осознанность различий (апперцепция) |
-| $\gamma_{AO}$ | Укоренённость различий (связь с источником) |
-| $\gamma_{AU}$ | Интегрированность различий (вклад в целое) |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{AS}$ | Structuredness of distinctions |
+| $\gamma_{AD}$ | Temporality of distinctions (distinctions in time) |
+| $\gamma_{AL}$ | Logicality of distinctions (consistency) |
+| $\gamma_{AE}$ | Awareness of distinctions (apperception) |
+| $\gamma_{AO}$ | Rootedness of distinctions (connection with the source) |
+| $\gamma_{AU}$ | Integratedness of distinctions (contribution to the whole) |
 
-## Артикуляция и Фано-плоскость {#артикуляция-и-фано}
+## Articulation and the Fano plane {#артикуляция-и-фано}
 
-В [октонионной структуре](./dimensions#октонионная-интерпретация) УГМ измерению $A$ соответствует мнимая единица $e_1 \in \mathrm{Im}(\mathbb{O})$. Артикуляция лежит в секторе **3** триплетного разложения $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
 
-На [Фано-плоскости](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$ артикуляция $A$ ($= e_1$) принадлежит **трём Фано-линиям**:
+On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, articulation $A$ ($= e_1$) belongs to **three Fano lines**:
 
-| Фано-линия | Измерения | Интерпретация |
-|------------|-----------|---------------|
-| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Артикуляция + Структура + Логика | **Формальная линия**: различение, удержание формы и логическая согласованность — замкнутый цикл рационального познания |
-| $\{E, U, A\}$ = $\{5, 6, 1\}$ | Интериорность + Единство + Артикуляция | **Хиггсова линия**: $A$ — единственный элемент сектора **3** на этой линии, мост между пространственным и электрослабым секторами |
-| $\{O, A, D\}$ = $\{7, 1, 3\}$ | Основание + Артикуляция + Динамика | **Генетическая линия**: из основания через различение рождается движение — «время через различение» |
+| Fano line | Dimensions | Interpretation |
+|-----------|-----------|----------------|
+| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction, retention of form, and logical consistency — a closed cycle of rational cognition |
+| $\{E, U, A\}$ = $\{5, 6, 1\}$ | Interiority + Unity + Articulation | **Higgs line**: $A$ is the only element of sector **3** on this line, a bridge between the spatial and electroweak sectors |
+| $\{O, A, D\}$ = $\{7, 1, 3\}$ | Ground + Articulation + Dynamics | **Genetic line**: from the ground, through distinction, motion is born — "time through distinction" |
 
-:::tip Уникальность A на Фано-плоскости (T-177) [Т]
-Артикуляция — **единственное** измерение из сектора **3**, лежащее на Хиггсовой линии $\{E, U, A\}$. Это делает $A$ мостом между пространственным сектором $\{A, S, D\}$ и электрослабым сектором $\{E, O, U\}$.
+:::tip Uniqueness of A on the Fano plane (T-177) [Т]
+Articulation is the **only** dimension from sector **3** lying on the Higgs line $\{E, U, A\}$. This makes $A$ a bridge between the spatial sector $\{A, S, D\}$ and the electroweak sector $\{E, O, U\}$.
 
-Именно это свойство объясняет, почему [древесная Юкавская связь](../../physics/gauge-symmetry/fano-selection-rules) существует только для третьего поколения фермионов ($k = 1$, измерение $A$): только $A$ одновременно связано с Хиггсовыми измерениями $E$ и $U$.
+This property is precisely what explains why the [tree-level Yukawa coupling](../../physics/gauge-symmetry/fano-selection-rules) exists only for the third generation of fermions ($k = 1$, dimension $A$): only $A$ is simultaneously connected to the Higgs dimensions $E$ and $U$.
 :::
 
 ```mermaid
 graph TD
-    subgraph "Фано-линии A"
-        ASL["{A, S, L} — формальная"]
-        EUA["{E, U, A} — Хиггсова"]
-        OAD["{O, A, D} — генетическая"]
+    subgraph "Fano lines of A"
+        ASL["{A, S, L} — formal"]
+        EUA["{E, U, A} — Higgs"]
+        OAD["{O, A, D} — genetic"]
     end
     A((A)) --- ASL
     A --- EUA
@@ -393,45 +393,45 @@ graph TD
     style EUA fill:#f39c12,color:#fff,stroke:#e67e22
 ```
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_1 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. Details, the $G_2$ caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
-## Градации артикуляции {#градации-артикуляции}
+## Gradations of articulation {#градации-артикуляции}
 
-Артикуляция — не бинарное свойство («есть / нет»), а **непрерывная шкала** с качественно различными уровнями:
+Articulation is not a binary property ("present / absent"), but a **continuous scale** with qualitatively distinct levels:
 
-#### Уровень 0: Отсутствие различений ($\gamma_{AA} \approx 0$)
+#### Level 0: Absence of distinctions ($\gamma_{AA} \approx 0$)
 
-Полностью смешанное состояние — «белый шум». Нет границ, нет формы, нет информации. Физический аналог — тепловое равновесие при бесконечной температуре, где все конфигурации равновероятны.
+Fully mixed state — "white noise". No boundaries, no form, no information. The physical analogue is thermal equilibrium at infinite temperature, where all configurations are equally probable.
 
-#### Уровень 1: Бинарное различение ($\gamma_{AA} \sim 0.05$)
+#### Level 1: Binary distinction ($\gamma_{AA} \sim 0.05$)
 
-Единственное различение: «нечто / ничто», «фигура / фон», «Я / не-Я». Этого достаточно для простейшего существования (мембрана клетки), но недостаточно для структурированного поведения.
+A single distinction: "something / nothing", "figure / ground", "I / not-I". This is sufficient for the simplest form of existence (cell membrane), but insufficient for structured behaviour.
 
-#### Уровень 2: Категориальное различение ($\gamma_{AA} \sim 1/7$)
+#### Level 2: Categorical distinction ($\gamma_{AA} \sim 1/7$)
 
-Множественные различения, организованные в систему категорий. Полная система проекторов $\sum P_i = I$ — каждый объект отнесён к категории. Это уровень здорового человеческого восприятия: мир разбит на объекты, свойства, отношения.
+Multiple distinctions organised into a system of categories. A complete projector system $\sum P_i = I$ — every object is assigned to a category. This is the level of healthy human perception: the world is divided into objects, properties, relations.
 
-#### Уровень 3: Иерархическое различение ($\gamma_{AA} > 1/7$)
+#### Level 3: Hierarchical distinction ($\gamma_{AA} > 1/7$)
 
-Различения имеют **уровни вложенности**: виды внутри родов, роды внутри семейств, семейства внутри отрядов. Это уровень научной классификации — Линнеевская таксономия, периодическая таблица Менделеева, морфологический анализ языка.
+Distinctions have **levels of nesting**: species within genera, genera within families, families within orders. This is the level of scientific classification — Linnaean taxonomy, Mendeleev's periodic table, morphological analysis of language.
 
-#### Уровень 4: Гиперартикуляция ($\gamma_{AA} \gg 1/7$)
+#### Level 4: Hyperarticulation ($\gamma_{AA} \gg 1/7$)
 
-Патологический избыток различений. Каждая деталь кажется значимой, каждый нюанс — решающим. Тревожное расстройство, паранойя, обсессивно-компульсивный анализ. Система тратит весь ресурс на различение, не оставляя ничего для интеграции ($\gamma_{UU}$) или переживания ($\gamma_{EE}$).
+A pathological excess of distinctions. Every detail seems significant, every nuance decisive. Anxiety disorder, paranoia, obsessive-compulsive analysis. The system spends all its resource on distinction, leaving nothing for integration ($\gamma_{UU}$) or experience ($\gamma_{EE}$).
 
-## Резюме
+## Summary
 
-Артикуляция — первое и логически первичное измерение Голонома. Она делает возможным всё остальное: без различения нет формы (S), нет изменения (D), нет связи (L), нет переживания (E), нет укоренения (O), нет целого (U). Математически артикуляция описывается проекционным оператором — простейшим и в то же время глубочайшим объектом квантовой теории. На Фано-плоскости A занимает уникальную позицию моста между секторами, что имеет прямые физические следствия для массовой иерархии частиц.
+Articulation is the first and logically primary dimension of the Holon. It makes everything else possible: without distinction there is no form (S), no change (D), no connection (L), no experience (E), no rootedness (O), no whole (U). Mathematically, articulation is described by the projection operator — the simplest and at the same time the deepest object in quantum theory. On the Fano plane, A occupies the unique position of a bridge between sectors, which has direct physical consequences for the mass hierarchy of particles.
 
 ---
 
-**Связанные документы:**
-- [Семь измерений](./dimensions) — обзор всех измерений
-- [Структура (S)](./dimension-s) — следующее измерение
-- [Матрица когерентности](../../core/dynamics/coherence-matrix) — полное описание Γ
-- [Правила отбора Фано](../../physics/gauge-symmetry/fano-selection-rules) — физические следствия Фано-линий A
-- [Теорема о минимальности](../../proofs/minimality/theorem-minimality-7) — доказательство необходимости A
+**Related documents:**
+- [Seven dimensions](./dimensions) — overview of all dimensions
+- [Structure (S)](./dimension-s) — the next dimension
+- [Coherence matrix](../../core/dynamics/coherence-matrix) — complete description of Γ
+- [Fano selection rules](../../physics/gauge-symmetry/fano-selection-rules) — physical consequences of the Fano lines of A
+- [Minimality theorem](../../proofs/minimality/theorem-minimality-7) — proof of the necessity of A

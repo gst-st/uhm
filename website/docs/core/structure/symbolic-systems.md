@@ -1,686 +1,686 @@
 ---
 sidebar_position: 10
-title: "Формальная редукция символических систем"
+title: "Formal reduction of symbolic systems"
 slug: /core/structure/symbolic-systems
-description: "Категориальная постановка: символические системы как функторы проекции из Γ. Фундаментальный анализ всех основных символических традиций, таблица проекций, теорема полноты, структурные выводы"
+description: "Categorical formulation: symbolic systems as projection functors from Γ. Fundamental analysis of all major symbolic traditions, projection table, completeness theorem, structural conclusions"
 ---
 
-# Формальная редукция символических систем
+# Formal Reduction of Symbolic Systems
 
-Эта глава показывает, как все символические системы человечества — от индийских чакр до западной астрологии, от китайского И-Цзин до каббалистического Древа Жизни, от алхимии до Большой Пятёрки — являются **проекциями одного и того же математического объекта**: матрицы когерентности $\Gamma \in \mathbb{C}^{7 \times 7}$. Каждая из этих систем «видит» часть $\Gamma$, но ни одна не видит целое. УГМ — первый формализм, в котором все эти фрагментарные описания объединяются в единую картину.
+This chapter shows how all symbolic systems of humanity — from the Indian chakras to Western astrology, from the Chinese I Ching to the Kabbalistic Tree of Life, from alchemy to the Big Five — are **projections of the same mathematical object**: the coherence matrix $\Gamma \in \mathbb{C}^{7 \times 7}$. Each of these systems "sees" a part of $\Gamma$, but none sees the whole. UHM is the first formalism in which all these fragmentary descriptions are united into a single picture.
 
-Читатель узнает: почему в разных культурах и эпохах возникли структурно сходные системы описания; что именно каждая из них «видит» и что «теряет»; и почему число 7 встречается в символических системах так часто — от семи чакр до семи нот и семи дней недели.
+The reader will learn: why structurally similar descriptive systems arose in different cultures and eras; what exactly each of them "sees" and what it "loses"; and why the number 7 appears in symbolic systems so frequently — from the seven chakras to the seven musical notes and the seven days of the week.
 
-:::warning Статус [И]
-Весь материал данного раздела имеет статус **интерпретации**. Формулы проекций $\pi_S$ — конструктивные, но эмпирическая валидация не проводилась. Отождествления «символ ↔ элемент Γ» — содержательные гипотезы, не тождества.
+:::warning Status [И]
+All material in this section has the status of **interpretation**. The projection formulae $\pi_S$ are constructive, but empirical validation has not been carried out. The identifications "symbol ↔ element of Γ" are substantive hypotheses, not identities.
 :::
 
 ---
 
-## 1. Фундаментальная постановка {#фундаментальная-постановка}
+## 1. Fundamental formulation {#фундаментальная-постановка}
 
-### 1.1 Что такое символическая система
+### 1.1 What is a symbolic system
 
-**Определение.** Символическая система $S$ — структурированное множество элементов $\{s_k\}$ с отношениями $R_S$, претендующее на описание целостного состояния сущности (организма, личности, события).
+**Definition.** A symbolic system $S$ is a structured set of elements $\{s_k\}$ with relations $R_S$, claiming to describe the integral state of an entity (organism, person, event).
 
-С позиции УГМ, любая такая система формализуется как **функтор проекции**:
+From the UHM perspective, any such system is formalised as a **projection functor**:
 
 $$
 \pi_S: \text{Hol} \to \mathcal{C}_S
 $$
 
-где $\text{Hol}$ — категория [голономов](/docs/core/structure/dimensions), $\mathcal{C}_S$ — целевая категория системы $S$ (конечное множество символов с отношениями).
+where $\text{Hol}$ is the category of [holons](/docs/core/structure/dimensions) and $\mathcal{C}_S$ is the target category of system $S$ (a finite set of symbols with relations).
 
-:::tip Что значит «функтор проекции» простым языком
-Представьте трёхмерный предмет — скажем, скульптуру. Тень этой скульптуры на стене — это **проекция**: двумерное изображение, которое передаёт часть информации о скульптуре (контур, общие пространства), но теряет глубину. Разные тени одной скульптуры (от лампы слева, от лампы сверху, от лампы спереди) выглядят по-разному, но все они — проекции одного и того же объекта.
+:::tip What "projection functor" means in plain language
+Imagine a three-dimensional object — say, a sculpture. The shadow of that sculpture on the wall is a **projection**: a two-dimensional image that conveys part of the information about the sculpture (outline, general shapes) but loses depth. Different shadows of the same sculpture (from a lamp on the left, from above, from the front) look different, but they are all projections of the same object.
 
-Функтор проекции $\pi_S$ работает аналогично. $\Gamma$ — это «скульптура» (48 параметров). Символическая система $S$ — это «тень» (несколько параметров). Чакральная система видит «тень» из 7 элементов. Таро — из 22. Астрология — из ~50. Но все они — «тени» одного и того же $\Gamma$. Слово «функтор» означает, что проекция сохраняет структуру: если два состояния связаны в $\Gamma$, они будут связаны и в проекции (хотя обратное неверно — проекция может «склеить» разные состояния).
+The projection functor $\pi_S$ works analogously. $\Gamma$ is the "sculpture" (48 parameters). Symbolic system $S$ is the "shadow" (a few parameters). The chakra system sees a "shadow" of 7 elements. Tarot — of 22. Astrology — of ~50. But all of them are "shadows" of the same $\Gamma$. The word "functor" means that the projection preserves structure: if two states are connected in $\Gamma$, they will be connected in the projection as well (though the converse does not hold — a projection may "glue together" different states).
 :::
 
-### 1.2 Почему проекции неизбежны
+### 1.2 Why projections are inevitable
 
-Полное состояние голонома описывается [матрицей когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathbb{C}^{7 \times 7}$ с **48 независимыми вещественными параметрами** (7 населённостей с условием $\text{Tr} = 1$ дают 6; 21 комплексная когерентность дают 42; итого 48).
+The full state of a holon is described by the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathbb{C}^{7 \times 7}$ with **48 independent real parameters** (7 populations subject to $\text{Tr} = 1$ give 6; 21 complex coherences give 42; total 48).
 
-Любая система с числом элементов $|S| < 48$ **не может** содержать полную информацию о $\Gamma$. Потеря информации — не дефект символической системы, а **следствие теоремы о размерности**: отображение из $\mathbb{R}^{48}$ в $\mathbb{R}^n$ при $n < 48$ неинъективно.
+Any system with $|S| < 48$ elements **cannot** contain complete information about $\Gamma$. Loss of information is not a defect of the symbolic system but a **consequence of the dimensionality theorem**: a map from $\mathbb{R}^{48}$ to $\mathbb{R}^n$ with $n < 48$ is non-injective.
 
-Аналогия: вы не можете передать цвет (3 числа: R, G, B) одним числом без потерь. Если у вас есть только яркость (1 число) — вы не отличите красный от зелёного одинаковой яркости. Точно так же система из 7 элементов (чакры) не может передать все 48 параметров $\Gamma$ — она неизбежно «склеивает» разные состояния, теряя когерентности.
+Analogy: you cannot convey colour (3 numbers: R, G, B) in a single number without loss. If you have only brightness (1 number) — you cannot distinguish red from green of equal brightness. In exactly the same way, a 7-element system (chakras) cannot convey all 48 parameters of $\Gamma$ — it inevitably "glues together" different states, losing coherences.
 
-### 1.3 Фундаментальный вопрос
+### 1.3 The fundamental question
 
-Почему в разных культурах и эпохах возникли структурно сходные системы описания? Ответ УГМ: все они отображают один и тот же математический объект — $\Gamma$ — и различаются лишь **выбором проекции**. Устойчивые системы — те, чьи проекции захватывают структурно значимые подпространства $\Gamma$.
+Why did structurally similar descriptive systems arise in different cultures and eras? The UHM answer: they all map the same mathematical object — $\Gamma$ — and differ only in their **choice of projection**. Stable systems are those whose projections capture structurally significant subspaces of $\Gamma$.
 
-Этот ответ объясняет сразу два загадочных факта: (1) **сходство** между далёкими традициями (индийские чакры и европейская алхимия обе выделяют 7 элементов — потому что обе проецируют 7-мерную диагональ $\Gamma$); и (2) **различия** между ними (чакры видят населённости, Таро видит когерентности — потому что они проецируют разные аспекты $\Gamma$).
+This answer explains two puzzling facts at once: (1) the **similarity** between distant traditions (Indian chakras and European alchemy both distinguish 7 elements — because both project the 7-dimensional diagonal of $\Gamma$); and (2) the **differences** between them (chakras see populations, Tarot sees coherences — because they project different aspects of $\Gamma$).
 
-### 1.4 Принцип неопределённости проекции {#принцип-неопределённости-проекции}
+### 1.4 The projection uncertainty principle {#принцип-неопределённости-проекции}
 
-:::warning Центральное методологическое ограничение [И]
-УГМ определяет объект ($\Gamma \in \mathbb{C}^{7 \times 7}$), символические системы — **эмпирические приближения** к нему. Выбор проекции $\pi_S$ — **не математический вывод**, а эмпирическая гипотеза.
+:::warning Central methodological limitation [И]
+UHM defines the object ($\Gamma \in \mathbb{C}^{7 \times 7}$); symbolic systems are **empirical approximations** to it. The choice of projection $\pi_S$ is **not a mathematical derivation** but an empirical hypothesis.
 :::
 
-**Проблема.** В матрице $\Gamma$ существует **несколько** 7-элементных подструктур, на которые можно спроецировать 7-элементную символическую систему:
+**The problem.** The matrix $\Gamma$ contains **several** 7-element substructures onto which a 7-element symbolic system can be projected:
 
-| Кандидат-подструктура | Элементы | Структура |
+| Candidate substructure | Elements | Structure |
 |---|---|---|
-| Населённости (диагональ) | $\gamma_{11}, \ldots, \gamma_{77}$ | Линейный порядок (по индексу) |
-| Фано-линии | 7 триплетов $\{i, j, k\}$ | Инциденционная геометрия PG(2,2) |
-| Проекторы $\Pi_p$ | 7 проекторов на Фано-подпространства | $G_2$-орбита |
-| Спектр $\Gamma$ | 7 собственных значений $\lambda_1, \ldots, \lambda_7$ | Упорядоченный набор (по величине) |
-| Базисные операторы Крауса | 7 операторов $K_m^{(\mathrm{atom})}$ | Набор атомов классификатора |
+| Populations (diagonal) | $\gamma_{11}, \ldots, \gamma_{77}$ | Linear order (by index) |
+| Fano lines | 7 triplets $\{i, j, k\}$ | Incidence geometry PG(2,2) |
+| Projectors $\Pi_p$ | 7 projectors onto Fano subspaces | $G_2$-orbit |
+| Spectrum of $\Gamma$ | 7 eigenvalues $\lambda_1, \ldots, \lambda_7$ | Ordered set (by magnitude) |
+| Atomic Kraus operators | 7 operators $K_m^{(\mathrm{atom})}$ | Set of classifier atoms |
 
-Биекция $\phi: \mathrm{Obj}(S) \to$ (подструктура Γ) для символической системы $S$ с 7 элементами может быть построена для **любого** из кандидатов. Однако каждый выбор порождает **разную** проекцию $\pi_S$ с разными свойствами.
+A bijection $\phi: \mathrm{Obj}(S) \to$ (substructure of Γ) for a symbolic system $S$ with 7 elements can be constructed for **any** of the candidates. However, each choice generates a **different** projection $\pi_S$ with different properties.
 
-**Следствие.** Все отождествления $\pi_S$ в настоящем документе — **конструктивные гипотезы [И]**, не математические выводы [Т]. Для каждой символической системы:
+**Corollary.** All identifications $\pi_S$ in this document are **constructive hypotheses [И]**, not mathematical derivations [Т]. For each symbolic system:
 
-1. Тип подструктуры (диагональ, Фано-линии, спектр, …) — **гипотеза первого порядка**
-2. Конкретная биекция внутри выбранного типа — **гипотеза второго порядка**
-3. Верификация требует эмпирических данных (см. [программу исследований](/docs/applied/research/symbolic-correspondence#программа))
+1. The type of substructure (diagonal, Fano lines, spectrum, …) — **first-order hypothesis**
+2. The specific bijection within the chosen type — **second-order hypothesis**
+3. Verification requires empirical data (see the [research programme](/docs/applied/research/symbolic-correspondence#программа))
 
 ---
 
-## 2. Структура матрицы когерентности как источник проекций {#структура-гаммы}
+## 2. Structure of the coherence matrix as the source of projections {#структура-гаммы}
 
-Матрица $\Gamma$ содержит три типа информации, на которые нацелены различные символические системы:
+The matrix $\Gamma$ contains three types of information targeted by different symbolic systems:
 
-| Тип данных | Элементы $\Gamma$ | Число параметров | Что описывает |
+| Data type | Elements of $\Gamma$ | Number of parameters | What it describes |
 |---|---|---|---|
-| **Населённости** | $\gamma_{ii}$ (диагональ) | 6 (с учётом $\text{Tr}=1$) | Распределение «энергии» по [измерениям](/docs/core/structure/dimensions) |
-| **Модули когерентности** | $\lvert\gamma_{ij}\rvert$ (внедиагональные) | 21 | Сила связи между измерениями |
-| **Фазы когерентности** | $\theta_{ij} = \arg(\gamma_{ij})$ | 21 | Направленность связи, [Gap](/docs/core/dynamics/gap-operator) между внешним и внутренним |
+| **Populations** | $\gamma_{ii}$ (diagonal) | 6 (accounting for $\text{Tr}=1$) | Distribution of "energy" across [dimensions](/docs/core/structure/dimensions) |
+| **Coherence moduli** | $\lvert\gamma_{ij}\rvert$ (off-diagonal) | 21 | Strength of connection between dimensions |
+| **Coherence phases** | $\theta_{ij} = \arg(\gamma_{ij})$ | 21 | Directedness of connection, [Gap](/docs/core/dynamics/gap-operator) between outer and inner |
 
-Символические системы различаются тем, **какой из этих трёх типов** они способны выразить, и с какой полнотой.
+Symbolic systems differ in **which of these three types** they are capable of expressing, and with what completeness.
 
-### 2.1 Классификация проекций
+### 2.1 Classification of projections
 
-**Определение.** Проекция $\pi_S$ характеризуется четвёркой:
+**Definition.** Projection $\pi_S$ is characterised by a quadruple:
 
 $$
 \pi_S = (D_S, \, M_S, \, \Phi_S, \, \text{Res}_S)
 $$
 
-где:
-- $D_S \subseteq \{1,\ldots,7\}$ — какие измерения «видит» система (населённости)
-- $M_S \subseteq \{(i,j): i<j\}$ — какие модули когерентности захватывает
-- $\Phi_S \subseteq M_S$ — для каких пар различает фазу
-- $\text{Res}_S \in \{\text{бинарная}, \text{дискретная}, \text{непрерывная}\}$ — разрешающая способность
+where:
+- $D_S \subseteq \{1,\ldots,7\}$ — which dimensions the system "sees" (populations)
+- $M_S \subseteq \{(i,j): i<j\}$ — which coherence moduli it captures
+- $\Phi_S \subseteq M_S$ — for which pairs it distinguishes phase
+- $\text{Res}_S \in \{\text{binary}, \text{discrete}, \text{continuous}\}$ — resolving power
 
 ---
 
-## 3. Таксономия символических систем {#таксономия}
+## 3. Taxonomy of symbolic systems {#таксономия}
 
-### 3.1 Системы, основанные на населённостях (диагональ $\Gamma$)
+### 3.1 Systems based on populations (diagonal of $\Gamma$)
 
-Эти системы описывают **распределение энергии** между измерениями, игнорируя связи (когерентности).
+These systems describe the **distribution of energy** among dimensions, ignoring connections (coherences).
 
-#### Чакральная система (7 чакр) {#чакры}
+#### Chakra system (7 chakras) {#чакры}
 
-:::info Применён [Принцип неопределённости проекции](#принцип-неопределённости-проекции)
-Анализ ниже демонстрирует, что отождествление чакр с элементами $\Gamma$ — **конструктивная гипотеза** [И], а не математический вывод. Представлены несколько кандидатов для проекции и их свойства.
+:::info The [Projection uncertainty principle](#принцип-неопределённости-проекции) applied
+The analysis below demonstrates that the identification of chakras with elements of $\Gamma$ is a **constructive hypothesis** [И], not a mathematical derivation. Several projection candidates and their properties are presented.
 :::
 
-##### A. Постановка от УГМ
+##### A. UHM formulation
 
-Чакральная система — упорядоченный набор из 7 элементов. Вопрос: какие 7-элементные подструктуры $\Gamma$ может описывать система с **линейным порядком**?
+The chakra system is an ordered set of 7 elements. Question: which 7-element substructures of $\Gamma$ can a system with a **linear order** describe?
 
-| Кандидат | Подструктура $\Gamma$ | Естественный порядок? |
+| Candidate | Substructure of $\Gamma$ | Natural order? |
 |---|---|---|
-| Диагональ (населённости) | $\gamma_{11}, \ldots, \gamma_{77}$ | По индексу (условный) или по величине |
-| Фано-линии | 7 триплетов | **Нет** — инциденционная геометрия, не порядок |
-| Спектр $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | По величине (естественный) |
+| Diagonal (populations) | $\gamma_{11}, \ldots, \gamma_{77}$ | By index (conventional) or by magnitude |
+| Fano lines | 7 triplets | **No** — incidence geometry, not an order |
+| Spectrum of $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | By magnitude (natural) |
 
-##### B. Категориальный анализ
+##### B. Categorical analysis
 
-Чакра-система определяет **тонкую категорию** (категорию-порядок):
+The chakra system defines a **thin category** (a category-order):
 
 $$\mathrm{Chak} = (\mathrm{Mu} \leq \mathrm{Sv} \leq \mathrm{Ma} \leq \mathrm{An} \leq \mathrm{Vi} \leq \mathrm{Aj} \leq \mathrm{Sa})$$
 
-Это линейно упорядоченное множество (total order). Пространство измерений с [Фано-структурой](/docs/physics/gauge-symmetry/g2-structure) — **не порядок**: это инциденционная геометрия $\mathrm{PG}(2,2)$ с нелинейными отношениями (каждая точка на 3 линиях, каждая линия через 3 точки).
+This is a linearly ordered set (total order). The dimension space with [Fano structure](/docs/physics/gauge-symmetry/g2-structure) is **not an order**: it is incidence geometry $\mathrm{PG}(2,2)$ with non-linear relations (each point on 3 lines, each line through 3 points).
 
-**Категориальная несовместимость.** Любая биекция $\phi: \mathrm{Obj}(\mathrm{Chak}) \to \mathrm{Obj}(\mathrm{Dim})$ **уничтожает** нелинейную Фано-структуру. Линейный порядок не может представить проективную геометрию: из 7 Фано-линий ни одна, вообще говоря, не «уважает» порядок (т.е. не состоит из трёх последовательных элементов). Это **потеря информации**, неизбежная при проекции из $\mathrm{PG}(2,2)$ в линейную цепь.
+**Categorical incompatibility.** Any bijection $\phi: \mathrm{Obj}(\mathrm{Chak}) \to \mathrm{Obj}(\mathrm{Dim})$ **destroys** the non-linear Fano structure. A linear order cannot represent projective geometry: of the 7 Fano lines, none, in general, "respects" the order (i.e., none consists of three consecutive elements). This is an **information loss** that is inevitable when projecting from $\mathrm{PG}(2,2)$ to a linear chain.
 
-##### C. Таттва-иерархия
+##### C. Tattva hierarchy
 
-Традиционная чакральная система несёт дополнительную структуру: каждой чакре сопоставлен **элемент** (таттва), образующий иерархию тонкости:
+The traditional chakra system carries additional structure: each chakra is assigned an **element** (tattva) forming a hierarchy of subtlety:
 
-$$\text{Земля} \to \text{Вода} \to \text{Огонь} \to \text{Воздух} \to \text{Эфир} \to \text{Ум} \to \text{Запредельное}$$
+$$\text{Earth} \to \text{Water} \to \text{Fire} \to \text{Air} \to \text{Ether} \to \text{Mind} \to \text{Beyond}$$
 
-Это функтор $F: \mathrm{Chak} \to \mathrm{Subtlety}$ в категорию тонкости (также линейный порядок). Вопрос: существует ли **естественный** порядок тонкости на $\{A, S, D, L, E, U, O\}$? Если да, то отображение чакр на измерения должно быть **монотонным** относительно обоих порядков (иерархия чакр и иерархия тонкости).
+This is a functor $F: \mathrm{Chak} \to \mathrm{Subtlety}$ into the subtlety category (also a linear order). Question: is there a **natural** subtlety order on $\{A, S, D, L, E, U, O\}$? If so, the mapping of chakras to dimensions must be **monotone** with respect to both orders (the chakra hierarchy and the subtlety hierarchy).
 
-##### D. Граничные ограничения
+##### D. Boundary constraints
 
-Два отождествления имеют **наибольшее функциональное обоснование**:
+Two identifications have the **strongest functional justification**:
 
-| Чакра | Измерение | Обоснование |
+| Chakra | Dimension | Justification |
 |---|---|---|
-| Муладхара (корень, основание, опора) | $O$ (Основание) | Функциональное совпадение: питание, регенерация, источник |
-| Сахасрара (корона, тысячелепестковый) | $U$ (Единство) | Функциональное совпадение: интеграция, целостность, нормировка |
+| Muladhara (root, base, support) | $O$ (Ground) | Functional match: nourishment, regeneration, source |
+| Sahasrara (crown, thousand-petalled) | $U$ (Unity) | Functional match: integration, wholeness, normalisation |
 
-При фиксации $O \leftrightarrow \mathrm{Mu}$ и $U \leftrightarrow \mathrm{Sa}$ остаётся отображение пяти средних чакр $\{\mathrm{Sv}, \mathrm{Ma}, \mathrm{An}, \mathrm{Vi}, \mathrm{Aj}\}$ на пять измерений $\{A, S, D, L, E\}$. Число возможных биекций: $5! = 120$.
+With $O \leftrightarrow \mathrm{Mu}$ and $U \leftrightarrow \mathrm{Sa}$ fixed, the remaining task is to map the five middle chakras $\{\mathrm{Sv}, \mathrm{Ma}, \mathrm{An}, \mathrm{Vi}, \mathrm{Aj}\}$ onto the five dimensions $\{A, S, D, L, E\}$. Number of possible bijections: $5! = 120$.
 
-##### E. Анализ совместимости
+##### E. Compatibility analysis
 
-Один из 120 кандидатов (использованный в предыдущей версии документа):
+One of the 120 candidates (used in the previous version of this document):
 
-| Чакра | Измерение | Таттва ↔ Функция |
+| Chakra | Dimension | Tattva ↔ Function |
 |---|---|---|
-| 1. Муладхара | $O$ | Земля ↔ Питание |
-| 2. Свадхистхана | $E$ | Вода ↔ Переживание |
-| 3. Манипура | $D$ | Огонь ↔ Динамика |
-| 4. Анахата | $L$ | Воздух ↔ Связь/Согласование |
-| 5. Вишуддха | $A$ | Эфир ↔ Артикуляция |
-| 6. Аджна | $S$ | Ум ↔ Структура/Паттерн |
-| 7. Сахасрара | $U$ | Запредельное ↔ Единство |
+| 1. Muladhara | $O$ | Earth ↔ Nourishment |
+| 2. Svadhisthana | $E$ | Water ↔ Experience |
+| 3. Manipura | $D$ | Fire ↔ Dynamics |
+| 4. Anahata | $L$ | Air ↔ Connection/Coordination |
+| 5. Vishuddha | $A$ | Ether ↔ Articulation |
+| 6. Ajna | $S$ | Mind ↔ Structure/Pattern |
+| 7. Sahasrara | $U$ | Beyond ↔ Unity |
 
-Этот кандидат (обозначим $\phi_0$) индуцирует порядок на измерениях: $O < E < D < L < A < S < U$.
+This candidate (denote it $\phi_0$) induces an order on dimensions: $O < E < D < L < A < S < U$.
 
-**Фано-совместимость.** Из 7 [Фано-линий](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий) $\{1,2,4\}, \{2,3,5\}, \{3,4,6\}, \{4,5,7\}, \{5,6,1\}, \{6,7,2\}, \{7,1,3\}$ при отображении $\phi_0$ (A=1, S=2, D=3, L=4, E=5, U=6, O=7) получаем:
+**Fano compatibility.** From the 7 [Fano lines](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий) $\{1,2,4\}, \{2,3,5\}, \{3,4,6\}, \{4,5,7\}, \{5,6,1\}, \{6,7,2\}, \{7,1,3\}$ under mapping $\phi_0$ (A=1, S=2, D=3, L=4, E=5, U=6, O=7) we obtain:
 
-| Фано-линия | Измерения ($\phi_0$) | Позиции в порядке чакр |
+| Fano line | Dimensions ($\phi_0$) | Positions in chakra order |
 |---|---|---|
-| $\{1,2,4\}$ | $\{A, S, L\}$ | $\{5, 6, 4\}$ — **не** смежные |
-| $\{2,3,5\}$ | $\{S, D, E\}$ | $\{6, 3, 2\}$ — **не** смежные |
-| $\{3,4,6\}$ | $\{D, L, U\}$ | $\{3, 4, 7\}$ — **не** смежные |
-| $\{4,5,7\}$ | $\{L, E, O\}$ | $\{4, 2, 1\}$ — **не** смежные |
-| $\{5,6,1\}$ | $\{E, U, A\}$ | $\{2, 7, 5\}$ — **не** смежные |
-| $\{6,7,2\}$ | $\{U, O, S\}$ | $\{7, 1, 6\}$ — **не** смежные |
-| $\{7,1,3\}$ | $\{O, A, D\}$ | $\{1, 5, 3\}$ — **не** смежные |
+| $\{1,2,4\}$ | $\{A, S, L\}$ | $\{5, 6, 4\}$ — **not** adjacent |
+| $\{2,3,5\}$ | $\{S, D, E\}$ | $\{6, 3, 2\}$ — **not** adjacent |
+| $\{3,4,6\}$ | $\{D, L, U\}$ | $\{3, 4, 7\}$ — **not** adjacent |
+| $\{4,5,7\}$ | $\{L, E, O\}$ | $\{4, 2, 1\}$ — **not** adjacent |
+| $\{5,6,1\}$ | $\{E, U, A\}$ | $\{2, 7, 5\}$ — **not** adjacent |
+| $\{6,7,2\}$ | $\{U, O, S\}$ | $\{7, 1, 6\}$ — **not** adjacent |
+| $\{7,1,3\}$ | $\{O, A, D\}$ | $\{1, 5, 3\}$ — **not** adjacent |
 
-**Ни одна** Фано-линия не состоит из трёх последовательных чакр. Это подтверждает категориальную несовместимость (§B): линейный порядок чакр **ортогонален** Фано-геометрии.
+**Not a single** Fano line consists of three consecutive chakras. This confirms the categorical incompatibility (§B): the linear order of chakras is **orthogonal** to the Fano geometry.
 
-##### F. Верификационные критерии
+##### F. Verification criteria
 
-Что могло бы подтвердить или опровергнуть конкретное отображение $\phi$?
+What could confirm or refute a specific mapping $\phi$?
 
-1. **Корреляционный тест:** Если $\phi$ верна, то активация чакры $k$ должна коррелировать с увеличением населённости $\gamma_{\phi(k)\phi(k)}$ (измеримо через [протокол Gap-диагностики](/docs/applied/research/gap-diagnostics))
-2. **Таттва-монотонность:** Порядок тонкости таттв должен монотонно соответствовать некоторой вычислимой характеристике измерений (например, средней когерентности или энтропии)
-3. **Фано-нейтральность:** Поскольку $\mathrm{Chak}$ — порядок, а $\mathrm{PG}(2,2)$ — нет, корректная $\phi$ **не должна** утверждать соответствия с Фано-линиями
+1. **Correlation test:** If $\phi$ is correct, activation of chakra $k$ should correlate with an increase in population $\gamma_{\phi(k)\phi(k)}$ (measurable via the [Gap-diagnostics protocol](/docs/applied/research/gap-diagnostics))
+2. **Tattva monotonicity:** The subtlety order of the tattvas should monotonically correspond to some computable characteristic of the dimensions (e.g., mean coherence or entropy)
+3. **Fano neutrality:** Since $\mathrm{Chak}$ is an order and $\mathrm{PG}(2,2)$ is not, a correct $\phi$ **must not** assert correspondences with Fano lines
 
-**Текущий статус:** Отображение $\phi_0$ выше — **наиболее обсуждаемый кандидат**, но эмпирическая верификация не проводилась. Альтернативные $\phi$ (ещё 119 биекций) не исследованы систематически.
+**Current status:** The mapping $\phi_0$ above is the **most widely discussed candidate**, but empirical verification has not been carried out. Alternative $\phi$ mappings (the remaining 119 bijections) have not been studied systematically.
 
-**Что видит (при любом $\phi$):** Полную диагональ — все 7 населённостей.
-**Что теряет:** Все 42 когерентности (21 модуль + 21 фаза), Фано-структуру, динамику. Не описывает *связи* между центрами, только их индивидуальную «заряженность».
+**What it sees (for any $\phi$):** The complete diagonal — all 7 populations.
+**What it loses:** All 42 coherences (21 moduli + 21 phases), the Fano structure, dynamics. It does not describe the *connections* between centres, only their individual "charge."
 
-**Структурное наблюдение.** Из всех традиционных систем чакральная единственная содержит **ровно 7 элементов** — число, совпадающее с размерностью $\Gamma$. Это не совпадение: 7 — размерность мнимых октонионов $\text{Im}(\mathbb{O})$, определяющая минимальный базис для (AP)+(PH)+(QG) ([Теорема S](/docs/proofs/minimality/theorem-minimality-7)).
+**Structural observation.** Of all traditional systems, the chakra system is unique in containing **exactly 7 elements** — a number coinciding with the dimensionality of $\Gamma$. This is no coincidence: 7 is the dimensionality of the imaginary octonions $\text{Im}(\mathbb{O})$, which determines the minimal basis for (AP)+(PH)+(QG) ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)).
 
-#### Суфийские Латаиф (тонкие центры)
+#### Sufi Lataif (subtle centres)
 
-*Конкретные отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
+*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-**Структура.** 5–7 тонких центров (наименования: Нафс, Кальб, Рух, Сирр, Хафи, Ахфа, иногда дополнительные).
+**Structure.** 5–7 subtle centres (names: Nafs, Qalb, Ruh, Sirr, Khafi, Akhfa, sometimes additional ones).
 
-**Проекция:** Подмножество диагонали, обычно 5 основных: $\pi_{\text{латаиф}}: \Gamma \mapsto (\gamma_{OO}, \gamma_{EE}, \gamma_{DD}, \gamma_{LL}, \gamma_{UU})$.
+**Projection:** A subset of the diagonal, typically 5 main ones: $\pi_{\text{lataif}}: \Gamma \mapsto (\gamma_{OO}, \gamma_{EE}, \gamma_{DD}, \gamma_{LL}, \gamma_{UU})$.
 
-**Замечание.** Варианты с 7 Латаифами структурно изоморфны чакральной системе.
+**Note.** Variants with 7 Lataif are structurally isomorphic to the chakra system.
 
-#### Пять скандх (буддизм)
+#### The five skandhas (Buddhism)
 
-*Конкретные отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
+*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-**Структура.** 5 совокупностей: Рупа (форма), Ведана (ощущение), Санна (восприятие), Санкхара (формации), Виннана (сознание).
+**Structure.** 5 aggregates: Rupa (form), Vedana (sensation), Sanna (perception), Sankhara (formations), Vinnana (consciousness).
 
-**Проекция:** $\pi_{\text{скандхи}}: \Gamma \mapsto (\gamma_{SS}, \gamma_{EE}, \gamma_{AA}, \gamma_{DD}, \gamma_{UU})$.
+**Projection:** $\pi_{\text{skandhas}}: \Gamma \mapsto (\gamma_{SS}, \gamma_{EE}, \gamma_{AA}, \gamma_{DD}, \gamma_{UU})$.
 
-| Скандха | Измерение | Обоснование |
+| Skandha | Dimension | Justification |
 |---|---|---|
-| Рупа (форма) | S | Телесная структура |
-| Ведана (ощущение) | E | Субъективное переживание |
-| Санна (восприятие) | A | Различение, распознавание |
-| Санкхара (формации) | D | Волевые импульсы, процессы |
-| Виннана (сознание) | U | Интегративное осознавание |
+| Rupa (form) | S | Bodily structure |
+| Vedana (sensation) | E | Subjective experience |
+| Sanna (perception) | A | Discrimination, recognition |
+| Sankhara (formations) | D | Volitional impulses, processes |
+| Vinnana (consciousness) | U | Integrative awareness |
 
-**Что видит:** 5 из 7 населённостей.
-**Что теряет:** Населённости L и O; все когерентности.
+**What it sees:** 5 of the 7 populations.
+**What it loses:** Populations L and O; all coherences.
 
-**Структурное наблюдение.** Буддийский анализ систематически *не выделяет* логику (L) как отдельный аспект и *не тематизирует* основание (O). Это согласуется с анатта-доктриной: отрицание фиксированного субстрата (O) и растворение формальной логики в процессуальности (D).
+**Structural observation.** Buddhist analysis systematically *does not single out* logic (L) as a separate aspect and *does not thematise* ground (O). This is consistent with the anatta doctrine: denial of a fixed substrate (O) and dissolution of formal logic into processuality (D).
 
 ---
 
-### 3.2 Системы, основанные на когерентностях (внедиагональные элементы)
+### 3.2 Systems based on coherences (off-diagonal elements)
 
-*Все отождествления элемент↔когерентность в §3.2 — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
+*All element↔coherence identifications in §3.2 are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-Эти системы описывают **связи** между измерениями.
+These systems describe **connections** between dimensions.
 
-#### Таро (Старшие Арканы)
+#### Tarot (Major Arcana)
 
-**Структура.** 22 карты Старших Арканов (0–XXI).
+**Structure.** 22 cards of the Major Arcana (0–XXI).
 
-**Проекция:**
+**Projection:**
 
 $$
-\pi_{\text{Таро}}: \Gamma \mapsto \{21 \text{ когерентность} + 1 \text{ нулевой элемент}\}
+\pi_{\text{Tarot}}: \Gamma \mapsto \{21 \text{ coherences} + 1 \text{ zero element}\}
 $$
 
-| Группа карт | Элементы $\Gamma$ | Число |
+| Card group | Elements of $\Gamma$ | Number |
 |---|---|---|
-| Карты I–XXI | 21 когерентность $\lvert\gamma_{ij}\rvert$ ($i < j$) | 21 |
-| Карта 0 (Шут) | Состояние $\Gamma \propto I/7$ (равномерное, без когерентностей) | 1 |
+| Cards I–XXI | 21 coherences $\lvert\gamma_{ij}\rvert$ ($i < j$) | 21 |
+| Card 0 (The Fool) | State $\Gamma \propto I/7$ (uniform, without coherences) | 1 |
 
-**Что видит:** Модули всех 21 когерентности (верхний треугольник).
-**Что теряет:** Населённости (диагональ), фазы (направленность связей), динамику.
+**What it sees:** Moduli of all 21 coherences (upper triangle).
+**What it loses:** Populations (diagonal), phases (directedness of connections), dynamics.
 
-**Структурное наблюдение.** Число 22 = 21 + 1 точно совпадает с числом внедиагональных элементов верхнего треугольника плюс тривиальное состояние. Карта «Шут» (0) семантически описывает чистую потенциальность — состояние до различений, что соответствует $\Gamma = I/7$.
+**Structural observation.** The number 22 = 21 + 1 coincides exactly with the number of off-diagonal elements in the upper triangle plus the trivial state. The "Fool" card (0) semantically describes pure potentiality — the state before discriminations — which corresponds to $\Gamma = I/7$.
 
-#### Каббала (Древо Жизни)
+#### Kabbalah (Tree of Life)
 
-**Структура.** 10 сфирот + 22 пути.
+**Structure.** 10 sefirot + 22 paths.
 
-**Проекция:**
+**Projection:**
 
 $$
-\pi_{\text{Каббала}}: \Gamma \mapsto \{10 \text{ суперпозиций}; \, 22 \text{ связи}\}
+\pi_{\text{Kabbalah}}: \Gamma \mapsto \{10 \text{ superpositions}; \, 22 \text{ connections}\}
 $$
 
-10 сфирот — **не отдельные измерения**, а нелинейные комбинации (суперпозиции) элементов $\Gamma$:
+The 10 sefirot are **not separate dimensions** but non-linear combinations (superpositions) of elements of $\Gamma$:
 
-| Сфира | Приблизительная комбинация | Тип |
+| Sefira | Approximate combination | Type |
 |---|---|---|
-| Кетер | $\gamma_{UU}$ (или $\gamma_{UU} + \text{Re}(\gamma_{OU})$) | Населённость + когерентность |
-| Хокма | $\gamma_{AA} + \lvert\gamma_{AL}\rvert$ | Смешанная |
-| Бина | $\gamma_{LL} + \lvert\gamma_{LS}\rvert$ | Смешанная |
-| Хесед | $\lvert\gamma_{SU}\rvert$ | Когерентность |
-| Гвура | $\lvert\gamma_{DL}\rvert$ | Когерентность |
-| Тиферет | $\gamma_{EE} + \text{Re}(\gamma_{EU})$ | Населённость + когерентность |
-| Нецах | $\lvert\gamma_{DE}\rvert$ | Когерентность |
-| Ход | $\lvert\gamma_{AL}\rvert$ | Когерентность |
-| Йесод | $\gamma_{OO} + \lvert\gamma_{OE}\rvert$ | Смешанная |
-| Малхут | $\gamma_{SS}$ | Населённость |
+| Kether | $\gamma_{UU}$ (or $\gamma_{UU} + \text{Re}(\gamma_{OU})$) | Population + coherence |
+| Chokmah | $\gamma_{AA} + \lvert\gamma_{AL}\rvert$ | Mixed |
+| Binah | $\gamma_{LL} + \lvert\gamma_{LS}\rvert$ | Mixed |
+| Chesed | $\lvert\gamma_{SU}\rvert$ | Coherence |
+| Gevurah | $\lvert\gamma_{DL}\rvert$ | Coherence |
+| Tiferet | $\gamma_{EE} + \text{Re}(\gamma_{EU})$ | Population + coherence |
+| Netzach | $\lvert\gamma_{DE}\rvert$ | Coherence |
+| Hod | $\lvert\gamma_{AL}\rvert$ | Coherence |
+| Yesod | $\gamma_{OO} + \lvert\gamma_{OE}\rvert$ | Mixed |
+| Malkuth | $\gamma_{SS}$ | Population |
 
-22 пути соответствуют 22 буквам иврита и отображаются на подмножество когерентностей.
+The 22 paths correspond to the 22 letters of the Hebrew alphabet and map onto a subset of coherences.
 
-**Что видит:** 10 из 49 элементов — смешанные комбинации населённостей и когерентностей.
-**Что теряет:** Большую часть когерентностей (39 из 49 элементов), фазовую структуру, динамику.
+**What it sees:** 10 of the 49 elements — mixed combinations of populations and coherences.
+**What it loses:** The majority of coherences (39 of 49 elements), phase structure, dynamics.
 
-**Структурное наблюдение.** Каббала — единственная традиционная система, которая *смешивает* населённости и когерентности в одних элементах (сфиротах). Это делает обратную проекцию $\pi_{\text{Каббала}}^{-1}$ наиболее сложной.
+**Structural observation.** Kabbalah is the only traditional system that *mixes* populations and coherences within single elements (sefirot). This makes the inverse projection $\pi_{\text{Kabbalah}}^{-1}$ the most complex of all.
 
-#### Эннеаграмма
+#### Enneagram
 
-**Структура.** 9 типов + 18 направленных связей (стрелки интеграции/дезинтеграции).
+**Structure.** 9 types + 18 directed connections (arrows of integration/disintegration).
 
-**Проекция:** $\pi_{\text{Эннеа}}: \Gamma \mapsto \{9 \text{ подмножеств}\}$.
+**Projection:** $\pi_{\text{Ennea}}: \Gamma \mapsto \{9 \text{ subsets}\}$.
 
-9 типов — комбинации 3 центров (голова/сердце/тело ↔ L/E/D) × 3 стратегий (активная/пассивная/гармонизирующая):
+The 9 types are combinations of 3 centres (head/heart/body ↔ L/E/D) × 3 strategies (active/passive/harmonising):
 
-| Тип | Центр | Стратегия | Приблизительная проекция |
+| Type | Centre | Strategy | Approximate projection |
 |---|---|---|---|
-| 1 | D (тело) | гармонизирующая | $\lvert\gamma_{DL}\rvert > \lvert\gamma_{DE}\rvert$, $\gamma_{DD}$ низкое |
-| 2 | E (сердце) | активная | $\lvert\gamma_{EA}\rvert$ высокое |
-| 3 | E (сердце) | гармонизирующая | $\lvert\gamma_{ED}\rvert$ высокое |
-| 4 | E (сердце) | пассивная | $\lvert\gamma_{EO}\rvert$ высокое |
-| 5 | L (голова) | пассивная | $\gamma_{LL}$ высокое, $\lvert\gamma_{LE}\rvert$ низкое |
-| 6 | L (голова) | гармонизирующая | $\lvert\gamma_{LS}\rvert$ высокое |
-| 7 | L (голова) | активная | $\lvert\gamma_{LD}\rvert$ высокое |
-| 8 | D (тело) | активная | $\gamma_{DD}$ высокое |
-| 9 | D (тело) | пассивная | $\gamma_{DD}$ низкое, $\lvert\gamma_{DU}\rvert$ высокое |
+| 1 | D (body) | harmonising | $\lvert\gamma_{DL}\rvert > \lvert\gamma_{DE}\rvert$, $\gamma_{DD}$ low |
+| 2 | E (heart) | active | $\lvert\gamma_{EA}\rvert$ high |
+| 3 | E (heart) | harmonising | $\lvert\gamma_{ED}\rvert$ high |
+| 4 | E (heart) | passive | $\lvert\gamma_{EO}\rvert$ high |
+| 5 | L (head) | passive | $\gamma_{LL}$ high, $\lvert\gamma_{LE}\rvert$ low |
+| 6 | L (head) | harmonising | $\lvert\gamma_{LS}\rvert$ high |
+| 7 | L (head) | active | $\lvert\gamma_{LD}\rvert$ high |
+| 8 | D (body) | active | $\gamma_{DD}$ high |
+| 9 | D (body) | passive | $\gamma_{DD}$ low, $\lvert\gamma_{DU}\rvert$ high |
 
-**Что видит:** Подмножество населённостей и модулей, грубо дискретизированных в 9 кластеров.
-**Что теряет:** Непрерывность пространства состояний, фазы, точные значения.
+**What it sees:** A subset of populations and moduli, coarsely discretised into 9 clusters.
+**What it loses:** Continuity of the state space, phases, exact values.
 
-**Структурное наблюдение.** Число 9 = $C(3,1) \times 3$ — прямое произведение трёх «центров» на три «позиции», что есть грубая факторизация 3-мерного подпространства $\{D, L, E\}$.
-
----
-
-### 3.3 Системы с бинарной проекцией фазы
-
-*Все отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
-
-Эти системы дискретизируют непрерывную фазу $\theta_{ij} \in [0, 2\pi)$ в бинарное значение.
-
-#### И-Цзин (易經)
-
-**Структура.** 64 гексаграммы, каждая из 6 линий (инь/ян).
-
-**Проекция:**
-
-$$
-\pi_{\text{ИЦ}}: \Gamma \mapsto (\text{sgn}(\text{Re}(\gamma_{ij})))_{(i,j) \in M_6} \in \{-1, +1\}^6
-$$
-
-где $M_6$ — 6 пар измерений (предположительно без U-измерения или с фиксированной комбинацией).
-
-| Свойство | Значение |
-|---|---|
-| Число элементов | $2^6 = 64$ гексаграммы |
-| Бинарная проекция | $\text{sgn}(\text{Re}(\gamma_{ij}))$: инь (−) / ян (+) |
-| Число измерений | 6 из 7 (без U или с U, кодированным глобально) |
-
-**Что видит:** Знак действительной части для 6 когерентностей — грубейшую бинарную информацию о фазе.
-**Что теряет:** Непрерывность фазы ($\theta \in [0, 2\pi)$ → 1 бит), 7-е измерение, модули всех когерентностей, населённости.
-
-**Структурное наблюдение.** Бинарная проекция $\text{sgn}(\text{Re}(\gamma_{ij}))$ эквивалентна вопросу: «фаза в первом или втором полукруге?», т.е. $\theta_{ij} \in (-\pi/2, \pi/2)$ (ян) или $\theta_{ij} \in (\pi/2, 3\pi/2)$ (инь). Это — предельно грубая дискретизация Gap: Gap < 1/√2 → «ян» (относительная прозрачность), Gap > 1/√2 → «инь» (относительная непрозрачность).
-
-#### Нумерология
-
-**Структура.** 9 базовых чисел (1–9), получаемых сложением цифр.
-
-**Проекция:** $\pi_{\text{нумер}}: \Gamma \mapsto f(\sum_i \gamma_{ii}) \bmod 9 + 1$, где $f$ — функция, зависящая от входных данных (дата рождения и т.д.).
-
-**Что видит:** Одно число — максимально грубая скалярная проекция.
-**Что теряет:** Практически всё (48 → 1 параметр).
-
-**Структурное наблюдение.** Нумерология — пример **критически вырожденной** проекции. Информационная ёмкость: $\log_2 9 \approx 3.2$ бита из $48 \times \log_2(\text{Res})$, где Res — разрешающая способность. Это не означает бесполезность: даже 3 бита могут захватывать значимый инвариант, если проекция выбрана удачно.
+**Structural observation.** The number 9 = $C(3,1) \times 3$ — a direct product of three "centres" by three "positions" — is a coarse factorisation of the 3-dimensional subspace $\{D, L, E\}$.
 
 ---
 
-### 3.4 Системы, описывающие внешние когерентности (верхний треугольник)
+### 3.3 Systems with binary phase projection
 
-*Все отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-Эти системы описывают, **как связи между измерениями выглядят снаружи** ($\text{Map}_{\text{ext}}$), но не как они переживаются изнутри ($\text{Map}_{\text{int}}$).
+These systems discretise the continuous phase $\theta_{ij} \in [0, 2\pi)$ into a binary value.
 
-#### Западная астрология
+#### I Ching (易經)
 
-**Структура.** ~50 элементов: 10 планет × 12 знаков × 12 домов + аспекты между планетами.
+**Structure.** 64 hexagrams, each of 6 lines (yin/yang).
 
-**Проекция:**
+**Projection:**
 
 $$
-\pi_{\text{астро}}: \Gamma \mapsto \{\lvert\gamma_{ij}\rvert, \, \text{дискретные\_аспекты}(\lvert\gamma_{ij}\rvert)\}_{i < j}
+\pi_{\text{IC}}: \Gamma \mapsto (\text{sgn}(\text{Re}(\gamma_{ij})))_{(i,j) \in M_6} \in \{-1, +1\}^6
 $$
 
-Планеты отображаются на измерения или их комбинации; знаки и дома — на дискретизацию модулей; аспекты — на дискретизацию когерентностей:
+where $M_6$ is 6 pairs of dimensions (presumably without the U-dimension or with a fixed combination).
 
-| Астрологический аспект | Приблизительный Gap-диапазон |
+| Property | Value |
 |---|---|
-| Соединение (0°) | $\lvert\gamma_{ij}\rvert$ максимален, Gap ≈ 0 |
-| Оппозиция (180°) | $\theta_{ij} \approx \pi$, Gap ≈ 0 (но Re < 0) |
-| Квадратура (90°) | $\theta_{ij} \approx \pi/2$, Gap ≈ 1 |
-| Тригон (120°) | $\theta_{ij} \approx 2\pi/3$, Gap ≈ √3/2 |
-| Секстиль (60°) | $\theta_{ij} \approx \pi/3$, Gap ≈ √3/2 |
+| Number of elements | $2^6 = 64$ hexagrams |
+| Binary projection | $\text{sgn}(\text{Re}(\gamma_{ij}))$: yin (−) / yang (+) |
+| Number of dimensions | 6 of 7 (without U or with U encoded globally) |
 
-**Что видит:** Верхний треугольник — внешние когерентности через символику планет и аспектов. Грубая дискретизация фазы (5–7 аспектов из непрерывного $[0, 2\pi)$).
-**Что теряет:** Внутренний аспект ($\text{Map}_{\text{int}}$, нижний треугольник), фазовую динамику, самокоррекцию.
+**What it sees:** The sign of the real part for 6 coherences — the coarsest binary phase information.
+**What it loses:** Phase continuity ($\theta \in [0, 2\pi)$ → 1 bit), the 7th dimension, moduli of all coherences, populations.
 
-**Структурное наблюдение.** Астрология — наиболее **богатая** из традиционных систем по числу элементов (~50), но она захватывает только $\text{Map}_{\text{ext}}$. Это объясняет её устойчивость: внешние наблюдения доступнее, чем интроспекция.
+**Structural observation.** The binary projection $\text{sgn}(\text{Re}(\gamma_{ij}))$ is equivalent to asking: "is the phase in the first or second semicircle?" — i.e., $\theta_{ij} \in (-\pi/2, \pi/2)$ (yang) or $\theta_{ij} \in (\pi/2, 3\pi/2)$ (yin). This is the maximally coarse discretisation of Gap: Gap < 1/√2 → "yang" (relative transparency), Gap > 1/√2 → "yin" (relative opacity).
+
+#### Numerology
+
+**Structure.** 9 base numbers (1–9), obtained by summing digits.
+
+**Projection:** $\pi_{\text{numer}}: \Gamma \mapsto f(\sum_i \gamma_{ii}) \bmod 9 + 1$, where $f$ is a function depending on input data (date of birth, etc.).
+
+**What it sees:** One number — the maximally coarse scalar projection.
+**What it loses:** Almost everything (48 → 1 parameter).
+
+**Structural observation.** Numerology is an example of a **critically degenerate** projection. Information capacity: $\log_2 9 \approx 3.2$ bits out of $48 \times \log_2(\text{Res})$, where Res is the resolving power. This does not mean uselessness: even 3 bits can capture a meaningful invariant if the projection is well chosen.
+
+---
+
+### 3.4 Systems describing external coherences (upper triangle)
+
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+
+These systems describe **how connections between dimensions appear from outside** ($\text{Map}_{\text{ext}}$), but not how they are experienced from within ($\text{Map}_{\text{int}}$).
+
+#### Western astrology
+
+**Structure.** ~50 elements: 10 planets × 12 signs × 12 houses + aspects between planets.
+
+**Projection:**
+
+$$
+\pi_{\text{astro}}: \Gamma \mapsto \{\lvert\gamma_{ij}\rvert, \, \text{discrete\_aspects}(\lvert\gamma_{ij}\rvert)\}_{i < j}
+$$
+
+Planets map onto dimensions or their combinations; signs and houses — onto discretisation of moduli; aspects — onto discretisation of coherences:
+
+| Astrological aspect | Approximate Gap range |
+|---|---|
+| Conjunction (0°) | $\lvert\gamma_{ij}\rvert$ maximal, Gap ≈ 0 |
+| Opposition (180°) | $\theta_{ij} \approx \pi$, Gap ≈ 0 (but Re < 0) |
+| Square (90°) | $\theta_{ij} \approx \pi/2$, Gap ≈ 1 |
+| Trine (120°) | $\theta_{ij} \approx 2\pi/3$, Gap ≈ √3/2 |
+| Sextile (60°) | $\theta_{ij} \approx \pi/3$, Gap ≈ √3/2 |
+
+**What it sees:** The upper triangle — external coherences through the symbolism of planets and aspects. Coarse phase discretisation (5–7 aspects from a continuous $[0, 2\pi)$).
+**What it loses:** The inner aspect ($\text{Map}_{\text{int}}$, lower triangle), phase dynamics, self-correction.
+
+**Structural observation.** Astrology is the **richest** of the traditional systems in number of elements (~50), but it captures only $\text{Map}_{\text{ext}}$. This explains its stability: external observations are more accessible than introspection.
 
 #### Human Design
 
-**Структура.** 64 ворот (из И-Цзин) + 36 каналов + 9 центров + 4 типа + 6 профилей.
+**Structure.** 64 gates (from I Ching) + 36 channels + 9 centres + 4 types + 6 profiles.
 
-**Проекция:** Гибрид нескольких проекций:
+**Projection:** A hybrid of several projections:
 
 $$
-\pi_{\text{HD}} = \pi_{\text{центры}} \oplus \pi_{\text{каналы}} \oplus \pi_{\text{ворота}}
+\pi_{\text{HD}} = \pi_{\text{centres}} \oplus \pi_{\text{channels}} \oplus \pi_{\text{gates}}
 $$
 
-| Компонент HD | Элементы $\Gamma$ | Тип проекции |
+| HD component | Elements of $\Gamma$ | Projection type |
 |---|---|---|
-| 9 центров | Подмножества населённостей $\gamma_{ii}$ | Диагональ (грубая) |
-| 36 каналов | Подмножество когерентностей $\lvert\gamma_{ij}\rvert$ | Модули (частичные) |
-| 64 ворот | Бинарная проекция И-Цзин через астрол. позиции | Бинарная |
-| Тип (4 шт.) | Грубая классификация суммарного профиля | Скалярная |
+| 9 centres | Subsets of populations $\gamma_{ii}$ | Diagonal (coarse) |
+| 36 channels | Subset of coherences $\lvert\gamma_{ij}\rvert$ | Moduli (partial) |
+| 64 gates | Binary I Ching projection via astrological positions | Binary |
+| Type (4 types) | Coarse classification of overall profile | Scalar |
 
-**Что видит:** Часть диагонали + часть когерентностей через синтез И-Цзин и астрологии.
-**Что теряет:** Полную фазовую структуру, $\text{Map}_{\text{int}}$, динамику.
+**What it sees:** Part of the diagonal + part of the coherences through a synthesis of I Ching and astrology.
+**What it loses:** Full phase structure, $\text{Map}_{\text{int}}$, dynamics.
 
-**Структурное наблюдение.** Human Design — эклектическая система, попытка увеличить информационную ёмкость проекции через комбинирование нескольких традиционных систем. Однако комбинация проекций $\pi_A \oplus \pi_B$ не эквивалентна расширению — она может вносить противоречия, если $\pi_A$ и $\pi_B$ проецируют один элемент $\Gamma$ по-разному.
+**Structural observation.** Human Design is an eclectic system — an attempt to increase the information capacity of the projection by combining several traditional systems. However, the combination of projections $\pi_A \oplus \pi_B$ is not equivalent to an extension — it can introduce contradictions if $\pi_A$ and $\pi_B$ project the same element of $\Gamma$ differently.
 
 ---
 
-### 3.5 Системы с элементной структурой
+### 3.5 Systems with elemental structure
 
-*Все отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-Системы, описывающие не отдельные элементы $\Gamma$, а **классы эквивалентности** состояний.
+Systems that describe not individual elements of $\Gamma$ but **equivalence classes** of states.
 
-#### Алхимия (европейская)
+#### Alchemy (European)
 
-**Структура.** 4 элемента (Огонь, Вода, Воздух, Земля) + 3 принципа (Сера, Ртуть, Соль) + 7 металлов.
+**Structure.** 4 elements (Fire, Water, Air, Earth) + 3 principles (Sulfur, Mercury, Salt) + 7 metals.
 
-**Проекция:**
+**Projection:**
 
-| Алхимический концепт | Проекция в $\Gamma$ |
+| Alchemical concept | Projection in $\Gamma$ |
 |---|---|
-| 4 элемента | 4 комбинации 2 осей: Горячее/Холодное × Сухое/Влажное ≈ $\text{sgn}(\gamma_{DD}), \text{sgn}(\gamma_{EE})$ |
-| 3 принципа | Тройка: Сера (D, активное), Ртуть (A, связующее), Соль (S, стабильное) |
-| 7 металлов | 7 населённостей $\gamma_{ii}$, традиционно ассоциированных с планетами |
+| 4 elements | 4 combinations of 2 axes: Hot/Cold × Dry/Moist ≈ $\text{sgn}(\gamma_{DD}), \text{sgn}(\gamma_{EE})$ |
+| 3 principles | Triplet: Sulfur (D, active), Mercury (A, mediating), Salt (S, stable) |
+| 7 metals | 7 populations $\gamma_{ii}$, traditionally associated with planets |
 
-**Что видит:** 7 населённостей (через металлы), 4-кластерную бинарную классификацию (через элементы).
-**Что теряет:** Когерентности, фазы, непрерывность.
+**What it sees:** 7 populations (via metals), a 4-cluster binary classification (via elements).
+**What it loses:** Coherences, phases, continuity.
 
-**Структурное наблюдение.** Алхимическая семёрка металлов (Au, Ag, Cu, Fe, Sn, Pb, Hg) → 7 планет → 7 измерений — одна из древнейших семеричных классификаций. Число 7 здесь не случайно: оно отражает фундаментальность $\dim(\text{Im}(\mathbb{O})) = 7$.
+**Structural observation.** The alchemical seven metals (Au, Ag, Cu, Fe, Sn, Pb, Hg) → 7 planets → 7 dimensions is one of the oldest sevenfold classifications. The number 7 here is no coincidence: it reflects the fundamentality of $\dim(\text{Im}(\mathbb{O})) = 7$.
 
-#### У-Син (五行, Пять элементов)
+#### Wu Xing (五行, Five Elements)
 
-**Структура.** 5 фаз: Дерево, Огонь, Земля, Металл, Вода. Циклы порождения и преодоления.
+**Structure.** 5 phases: Wood, Fire, Earth, Metal, Water. Cycles of generation and conquest.
 
-**Проекция:** $\pi_{\text{УСин}}: \Gamma \mapsto 5$ классов, с циклическими отношениями.
+**Projection:** $\pi_{\text{WuXing}}: \Gamma \mapsto 5$ classes, with cyclic relations.
 
-| Элемент | Возможное отождествление | Обоснование |
+| Element | Possible identification | Justification |
 |---|---|---|
-| Дерево (木) | D (Динамика) | Рост, экспансия |
-| Огонь (火) | E (Интериорность) | Переживание, интенсивность |
-| Земля (土) | S (Структура) | Устойчивость, опора |
-| Металл (金) | L (Логика) | Чёткость, различение |
-| Вода (水) | O (Основание) | Глубина, источник |
+| Wood (木) | D (Dynamics) | Growth, expansion |
+| Fire (火) | E (Interiority) | Experience, intensity |
+| Earth (土) | S (Structure) | Stability, support |
+| Metal (金) | L (Logic) | Clarity, discrimination |
+| Water (水) | O (Ground) | Depth, source |
 
-**Что видит:** 5 из 7 населённостей. Циклы порождения/преодоления — грубая дискретизация токов $J_{\text{net}}(i,j)$ между измерениями.
-**Что теряет:** 2 измерения (A и U), когерентности, непрерывность.
+**What it sees:** 5 of the 7 populations. Generation/conquest cycles — coarse discretisation of net currents $J_{\text{net}}(i,j)$ between dimensions.
+**What it loses:** 2 dimensions (A and U), coherences, continuity.
 
-**Структурное наблюдение.** Цикл порождения Дерево→Огонь→Земля→Металл→Вода→Дерево соответствует циклической перестановке 5 измерений. Цикл преодоления — «перескакивание» через одно. Оба цикла — частные случаи структуры токов $J_{\text{net}}(i,j)$ при специфических конфигурациях $\Gamma$.
-
----
-
-### 3.6 Геометрические и числовые системы
-
-*Все отождествления ниже — [гипотезы проекции](#принцип-неопределённости-проекции) [И].*
-
-#### Платоновы тела
-
-**Структура.** 5 правильных многогранников: тетраэдр (4), куб (6), октаэдр (8), додекаэдр (12), икосаэдр (20).
-
-**Связь с $\Gamma$:** Платоновы тела — не проекция $\Gamma$, а описание **симметрий** подпространств $\mathcal{H}$. Группы симметрий Платоновых тел ($A_4, S_4, A_5$) — конечные подгруппы $SO(3) \subset G_2$, и их представления на $\mathbb{C}^7$ определяют инвариантные подпространства матрицы когерентности.
-
-#### Руны (Старший Футарк)
-
-**Структура.** 24 руны, организованные в 3 «атта» по 8.
-
-**Проекция:** 24 = 21 когерентность + 3 населённости. Организация в 3 группы по 8 напоминает разложение $7 \to 1 + 3 + \bar{3}$ под SU(3) (8 генераторов SU(3) = присоединённое представление).
+**Structural observation.** The generation cycle Wood→Fire→Earth→Metal→Water→Wood corresponds to a cyclic permutation of 5 dimensions. The conquest cycle is a "skip-one" permutation. Both cycles are special cases of the net-current structure $J_{\text{net}}(i,j)$ for specific configurations of $\Gamma$.
 
 ---
 
-## 4. Количественное сравнение {#количественное-сравнение}
+### 3.6 Geometric and numerical systems
 
-### 4.1 Информационная ёмкость
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
 
-| Система | Элементы | Информация (бит) | Из 48 параметров | Утрата (%) |
+#### Platonic solids
+
+**Structure.** 5 regular polyhedra: tetrahedron (4), cube (6), octahedron (8), dodecahedron (12), icosahedron (20).
+
+**Connection with $\Gamma$:** The Platonic solids are not a projection of $\Gamma$ but a description of the **symmetries** of subspaces of $\mathcal{H}$. The symmetry groups of the Platonic solids ($A_4, S_4, A_5$) are finite subgroups of $SO(3) \subset G_2$, and their representations on $\mathbb{C}^7$ determine invariant subspaces of the coherence matrix.
+
+#### Runes (Elder Futhark)
+
+**Structure.** 24 runes organised into 3 "aettir" of 8.
+
+**Projection:** 24 = 21 coherences + 3 populations. The organisation into 3 groups of 8 recalls the decomposition $7 \to 1 + 3 + \bar{3}$ under SU(3) (8 generators of SU(3) = adjoint representation).
+
+---
+
+## 4. Quantitative comparison {#количественное-сравнение}
+
+### 4.1 Information capacity
+
+| System | Elements | Information (bits) | Of 48 parameters | Loss (%) |
 |---|---|---|---|---|
-| **Чакры** | 7 | ~21 (3 бита × 7) | 7 населённостей | 85% |
-| **Пять скандх** | 5 | ~15 | 5 населённостей | 90% |
-| **У-Син** | 5 + циклы | ~17 | 5 населённостей + 5 направленных связей | 87% |
-| **Нумерология** | 9 чисел | ~3.2 | 1 скалярный инвариант | 97% |
-| **Эннеаграмма** | 9 + 18 | ~25 | ~9 кластеров в 3D подпространстве | 82% |
-| **И-Цзин** | 64 | 6 | 6 бинарных знаков из 21 фазы | 88% |
-| **Таро (Major)** | 22 | ~45 | 21 модуль + 1 тривиальное состояние | 53% |
-| **Каббала** | 32 (10+22) | ~50 | 10 смешанных + 22 пути | 48% |
-| **Астрология** | ~50 | ~60 | Верхний треугольник + грубая фаза | 42% |
-| **Human Design** | ~170 | ~70 | Гибрид нескольких проекций | 38% |
-| **Руны** | 24 | ~33 | 21 когерентность + 3 населённости | 65% |
-| **Алхимия** | 7+4+3 | ~27 | 7 населённостей + 4 бинарных класса | 77% |
-| **УГМ ($\Gamma$)** | **49** | **~144** | **Все 48 параметров** | **0%** |
+| **Chakras** | 7 | ~21 (3 bits × 7) | 7 populations | 85% |
+| **Five skandhas** | 5 | ~15 | 5 populations | 90% |
+| **Wu Xing** | 5 + cycles | ~17 | 5 populations + 5 directed connections | 87% |
+| **Numerology** | 9 numbers | ~3.2 | 1 scalar invariant | 97% |
+| **Enneagram** | 9 + 18 | ~25 | ~9 clusters in 3D subspace | 82% |
+| **I Ching** | 64 | 6 | 6 binary signs from 21 phases | 88% |
+| **Tarot (Major)** | 22 | ~45 | 21 moduli + 1 trivial state | 53% |
+| **Kabbalah** | 32 (10+22) | ~50 | 10 mixed + 22 paths | 48% |
+| **Astrology** | ~50 | ~60 | Upper triangle + coarse phase | 42% |
+| **Human Design** | ~170 | ~70 | Hybrid of several projections | 38% |
+| **Runes** | 24 | ~33 | 21 coherences + 3 populations | 65% |
+| **Alchemy** | 7+4+3 | ~27 | 7 populations + 4 binary classes | 77% |
+| **UHM ($\Gamma$)** | **49** | **~144** | **All 48 parameters** | **0%** |
 
-### 4.2 Структурное сравнение
+### 4.2 Structural comparison
 
-| Параметр | И-Цзин | Астрология | Каббала | HD | Таро | Чакры | **УГМ** |
+| Parameter | I Ching | Astrology | Kabbalah | HD | Tarot | Chakras | **UHM** |
 |---|---|---|---|---|---|---|---|
-| Населённости | 0/7 | Частично | 4/7 | Частично | 0/7 | **7/7** | **7/7** |
-| Модули когерентности | 0/21 | ~15/21 | ~8/21 | ~10/21 | **21/21** | 0/21 | **21/21** |
-| Фазы | 6 бит | 5–7 дискр. | 0 | 0 | 0 | 0 | **21 непр.** |
-| Двойственность ext/int | Нет | Нет | Частичная | Нет | Нет | Нет | **Да** |
-| Динамика | Статика | Циклы | Статика | Статика | Статика | Статика | **$d\Gamma/d\tau$** |
-| Самокоррекция | Нет | Нет | Нет | Нет | Нет | Нет | **Да** ($\varphi$) |
-| Фальсифицируемость | Нет | Нет | Нет | Нет | Нет | Нет | **Да** |
+| Populations | 0/7 | Partial | 4/7 | Partial | 0/7 | **7/7** | **7/7** |
+| Coherence moduli | 0/21 | ~15/21 | ~8/21 | ~10/21 | **21/21** | 0/21 | **21/21** |
+| Phases | 6 bits | 5–7 discrete | 0 | 0 | 0 | 0 | **21 continuous** |
+| Ext/int duality | No | No | Partial | No | No | No | **Yes** |
+| Dynamics | Static | Cycles | Static | Static | Static | Static | **$d\Gamma/d\tau$** |
+| Self-correction | No | No | No | No | No | No | **Yes** ($\varphi$) |
+| Falsifiability | No | No | No | No | No | No | **Yes** |
 
 ---
 
-## 5. Полнота и минимальность {#теорема-полноты}
+## 5. Completeness and minimality {#теорема-полноты}
 
-После анализа более десяти символических систем из разных эпох и культур возникают два вопроса: (1) достаточно ли формализма $\Gamma$ для описания всего, что эти системы описывают? и (2) является ли $\Gamma$ минимальным таким формализмом?
+After analysing more than ten symbolic systems from different eras and cultures, two questions arise: (1) is the formalism $\Gamma$ sufficient to describe everything that these systems describe? and (2) is $\Gamma$ the minimal such formalism?
 
-### 5.1 Описательная полнота [О] {#описательная-полнота}
+### 5.1 Descriptive completeness [О] {#описательная-полнота}
 
-:::info Наблюдение (Описательная полнота) [О]
-Для каждого предиката $P$, выразимого в любой из перечисленных символических систем, существует формула в терминах $\Gamma$:
+:::info Observation (Descriptive completeness) [О]
+For every predicate $P$ expressible in any of the listed symbolic systems, there exists a formula in terms of $\Gamma$:
 
 $$
 P = \pi_S(F_P(\Gamma))
 $$
 :::
 
-:::warning Эпистемический статус
-Это наблюдение — **тривиальное следствие определений** (статус [О]), а не содержательная теорема. Каждая $\pi_S$ определена как отображение *из* $\Gamma$, поэтому выразимость $P$ через $\Gamma$ — тавтология. Нетривиальны два других утверждения.
+:::warning Epistemic status
+This observation is a **trivial consequence of definitions** (status [О]), not a substantive theorem. Each $\pi_S$ is defined as a map *from* $\Gamma$, so the expressibility of $P$ through $\Gamma$ is a tautology. The other two statements are non-trivial.
 :::
 
-### 5.2 Минимальность Γ [Т] {#минимальность-гаммы}
+### 5.2 Minimality of Γ [Т] {#минимальность-гаммы}
 
-:::warning Утверждение (Минимальность) [Т]
-Матрица $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — **минимальный** объект, объединяющий все перечисленные проекции. Точнее: для любого альтернативного формализма $\Gamma' \in \mathcal{D}(\mathbb{C}^{N'})$, допускающего те же проекции:
+:::warning Claim (Minimality) [Т]
+The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is the **minimal** object unifying all the listed projections. More precisely: for any alternative formalism $\Gamma' \in \mathcal{D}(\mathbb{C}^{N'})$ admitting the same projections:
 
 $$
 N' \geq 7
 $$
 :::
 
-**Доказательство.** По [Теореме S](/docs/proofs/minimality/theorem-minimality-7) [Т]: $N = 7$ — минимальная размерность для (AP)+(PH)+(QG). Символические системы, описывающие автопоэтические сущности (чакры как «энергетические центры живого существа», Каббала как «структура души»), имплицитно предполагают все три условия. Следовательно, $N' \geq 7$. $\blacksquare$
+**Proof.** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7) [Т]: $N = 7$ is the minimum dimensionality for (AP)+(PH)+(QG). Symbolic systems that describe autopoietic entities (chakras as "energy centres of a living being", Kabbalah as "the structure of the soul") implicitly assume all three conditions. Therefore $N' \geq 7$. $\blacksquare$
 
-### 5.3 Теоретико-информационная характеристика утраты [Т] {#информационная-утрата}
+### 5.3 Information-theoretic characterisation of loss [Т] {#информационная-утрата}
 
-:::warning Теорема (Граница информационной утраты) [Т]
-Для проекции $\pi_S: \mathcal{D}(\mathbb{C}^7) \to \mathcal{C}_S$ с $|\mathrm{Obj}(\mathcal{C}_S)| = M$ элементами, потеря информации ограничена снизу:
+:::warning Theorem (Information loss bound) [Т]
+For a projection $\pi_S: \mathcal{D}(\mathbb{C}^7) \to \mathcal{C}_S$ with $|\mathrm{Obj}(\mathcal{C}_S)| = M$ elements, the information loss is bounded below by:
 
 $$
 H(\Gamma | \pi_S(\Gamma)) \geq \log_2 \binom{48}{M} - M \cdot \log_2(\text{Res}_S)
 $$
 
-где $H(\cdot|\cdot)$ — условная энтропия, $\text{Res}_S$ — разрешающая способность элементов системы $S$.
+where $H(\cdot|\cdot)$ is the conditional entropy and $\text{Res}_S$ is the resolving power of the elements of system $S$.
 :::
 
-**Следствие.** Для бинарных систем ($\text{Res}_S = 2$, как И-Цзин): $H \geq \log_2 \binom{48}{6} - 6 \approx 16.7$ бит утрачено из $\sim 144$ бит при 3 десятичных знаках разрешения. Это формализует интуицию таблицы §4.1.
+**Corollary.** For binary systems ($\text{Res}_S = 2$, like I Ching): $H \geq \log_2 \binom{48}{6} - 6 \approx 16.7$ bits are lost out of $\sim 144$ bits at 3 decimal digits of resolution. This formalises the intuition of the table in §4.1.
 
 ---
 
-## 6. Структурный анализ: что определяет устойчивость проекции {#структурный-анализ}
+## 6. Structural analysis: what determines the stability of a projection {#структурный-анализ}
 
-### 6.1 Фано-структура и естественные проекции
+### 6.1 Fano structure and natural projections
 
-[Плоскость Фано](/docs/proofs/gap/fano-channel) PG(2,2) определяет 7 ассоциативных триплетов. Когерентности **внутри** Фано-триплетов более устойчивы, чем между ними. Это объясняет, почему определённые группировки измерений повторяются в разных культурах:
+The [Fano plane](/docs/proofs/gap/fano-channel) PG(2,2) defines 7 associative triplets. Coherences **within** Fano triplets are more stable than those between them. This explains why certain groupings of dimensions recur across cultures:
 
-| № | Фано-линия | Измерения | Культурный аналог |
+| # | Fano line | Dimensions | Cultural analogue |
 |---|---|---|---|
-| 1 | $\{1, 2, 4\}$ | $\{A, S, L\}$ | «Ум» (когнитивный блок: различение + форма + согласование) |
-| 2 | $\{2, 3, 5\}$ | $\{S, D, E\}$ | «Тело» (соматический блок: форма + движение + ощущение) |
-| 3 | $\{3, 4, 6\}$ | $\{D, L, U\}$ | «Воля» (деятельно-целостный: действие + логика + интеграция) |
-| 4 | $\{4, 5, 7\}$ | $\{L, E, O\}$ | «Мудрость» (глубинный блок: понимание + переживание + источник) |
-| 5 | $\{5, 6, 1\}$ | $\{E, U, A\}$ | «Дух» (интегративное сознание: опыт + единство + артикуляция) |
-| 6 | $\{6, 7, 2\}$ | $\{U, O, S\}$ | «Бытие» (основа: интеграция + питание + устойчивость) |
-| 7 | $\{7, 1, 3\}$ | $\{O, A, D\}$ | «Жизненная сила» (витальный блок: источник + различение + динамика) |
+| 1 | $\{1, 2, 4\}$ | $\{A, S, L\}$ | "Mind" (cognitive block: discrimination + form + coordination) |
+| 2 | $\{2, 3, 5\}$ | $\{S, D, E\}$ | "Body" (somatic block: form + motion + sensation) |
+| 3 | $\{3, 4, 6\}$ | $\{D, L, U\}$ | "Will" (active-integral: action + logic + integration) |
+| 4 | $\{4, 5, 7\}$ | $\{L, E, O\}$ | "Wisdom" (depth block: understanding + experience + source) |
+| 5 | $\{5, 6, 1\}$ | $\{E, U, A\}$ | "Spirit" (integrative consciousness: experience + unity + articulation) |
+| 6 | $\{6, 7, 2\}$ | $\{U, O, S\}$ | "Being" (ground: integration + nourishment + stability) |
+| 7 | $\{7, 1, 3\}$ | $\{O, A, D\}$ | "Vital force" (vital block: source + discrimination + dynamics) |
 
-*Конвенция индексов: $\{A, S, D, L, E, U, O\} = \{1, 2, 3, 4, 5, 6, 7\}$ — согласована с [G₂-структурой](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий). Каждая линия — триплет $\{i, i{+}1, i{+}3 \bmod 7\}$.*
+*Index convention: $\{A, S, D, L, E, U, O\} = \{1, 2, 3, 4, 5, 6, 7\}$ — consistent with the [G₂-structure](/docs/physics/gauge-symmetry/g2-structure#12-таблица-фано-линий). Each line is a triplet $\{i, i{+}1, i{+}3 \bmod 7\}$.*
 
-**Наблюдение.** Три Фано-линии, содержащие A (=1): $\{A, S, L\}$, $\{E, U, A\}$, $\{O, A, D\}$. Тройственное деление «тело–ум–дух» — одна из наиболее устойчивых кросс-культурных классификаций. В УГМ оно следует из того, что каждое измерение (в частности, A) участвует ровно в 3 Фано-триплетах — фундаментальное свойство PG(2,2).
+**Observation.** The three Fano lines containing A (=1): $\{A, S, L\}$, $\{E, U, A\}$, $\{O, A, D\}$. The tripartite division "body–mind–spirit" is one of the most stable cross-cultural classifications. In UHM it follows from the fact that each dimension (in particular A) participates in exactly 3 Fano triplets — a fundamental property of PG(2,2).
 
-### 6.2 Почему семёрка устойчива
+### 6.2 Why the sevenfold is stable
 
-Число 7 появляется в символических системах необъяснимо часто: 7 чакр, 7 металлов алхимии, 7 дней недели, 7 нот, 7 планет древности, 7 смертных грехов, 7 таинств, 7 Латаифов. В рамках УГМ это имеет точное объяснение:
+The number 7 appears in symbolic systems with inexplicable frequency: 7 chakras, 7 alchemical metals, 7 days of the week, 7 notes, 7 planets of antiquity, 7 deadly sins, 7 sacraments, 7 Lataif. Within UHM this has a precise explanation:
 
 $$
 \dim(\text{Im}(\mathbb{O})) = 7
 $$
 
-Семь мнимых единиц октонионов $\{e_1, \ldots, e_7\}$ — **единственный** допустимый базис для алгебры с делением над $\mathbb{R}$ (кроме $\mathbb{R}, \mathbb{C}, \mathbb{H}$, дающих 0, 1, 3 мнимых единицы). Теорема Гурвица (1898) фиксирует возможные размерности: 1, 2, 4, 8. Размерность мнимой части: 0, 1, 3, 7. Для системы с (AP)+(PH)+(QG) минимальная достаточная размерность — 7.
+The seven imaginary units of the octonions $\{e_1, \ldots, e_7\}$ are the **unique** admissible basis for a division algebra over $\mathbb{R}$ (besides $\mathbb{R}, \mathbb{C}, \mathbb{H}$, which give 0, 1, 3 imaginary units). Hurwitz's theorem (1898) fixes the possible dimensions: 1, 2, 4, 8. The imaginary part dimensions: 0, 1, 3, 7. For a system with (AP)+(PH)+(QG), the minimum sufficient dimension is 7.
 
-### 6.3 Почему двойственность скрыта
+### 6.3 Why the duality is hidden
 
-Ни одна традиционная символическая система не формализует различие между **внешним** ($\gamma_{ij}$, верхний треугольник) и **внутренним** ($\gamma_{ji} = \gamma_{ij}^*$, нижний треугольник) аспектом когерентности. Причина:
+No traditional symbolic system formalises the distinction between the **external** ($\gamma_{ij}$, upper triangle) and **internal** ($\gamma_{ji} = \gamma_{ij}^*$, lower triangle) aspect of coherence. The reason:
 
-Различие между $\gamma_{ij}$ и $\gamma_{ji}$ кодируется **фазой** $\theta_{ij} = \arg(\gamma_{ij})$. Фаза — наиболее «хрупкий» параметр: она первой разрушается при огрублении наблюдения (дефазировка). Традиционные системы возникли из интроспективного и феноменологического опыта, который не обладает достаточным разрешением для регистрации фазовой информации.
+The distinction between $\gamma_{ij}$ and $\gamma_{ji}$ is encoded in the **phase** $\theta_{ij} = \arg(\gamma_{ij})$. Phase is the most "fragile" parameter: it is the first to be destroyed when the observation is coarsened (dephasing). Traditional systems arose from introspective and phenomenological experience, which does not have sufficient resolution to register phase information.
 
-В формализме УГМ двойственность реализована через **эрмитово сопряжение** $*: \gamma_{ij} \mapsto \gamma_{ji}$, которое является контравариантным инволютивным функтором в $\dagger$-категории гильбертовых пространств. [Gap](/docs/core/dynamics/gap-operator) $= |\sin(\theta_{ij})|$ — точная мера расхождения между внешним и внутренним.
+In the UHM formalism, the duality is realised through **Hermitian conjugation** $*: \gamma_{ij} \mapsto \gamma_{ji}$, which is a contravariant involutive functor in the $\dagger$-category of Hilbert spaces. [Gap](/docs/core/dynamics/gap-operator) $= |\sin(\theta_{ij})|$ is the precise measure of the divergence between external and internal.
 
 ---
 
-## 7. Формализация мистических концептов [И] {#мистические-концепты}
+## 7. Formalisation of mystical concepts [И] {#мистические-концепты}
 
-Ряд кросс-культурных феноменологических концептов допускает формализацию через Gap-структуру. Формулировки ниже — конструктивные интерпретации, не эмпирически подтверждённые тождества.
+A number of cross-cultural phenomenological concepts admit formalisation through the Gap structure. The formulations below are constructive interpretations, not empirically confirmed identities.
 
-| Концепт | Формализация в УГМ | Механизм |
+| Concept | Formalisation in UHM | Mechanism |
 |---|---|---|
-| **«Просветление»** | L4: $\varphi(\Gamma^*) = \Gamma^*$ — [неподвижная точка](/docs/consciousness/hierarchy/interiority-hierarchy) самомоделирования | Не Gap = 0, а **рефлексивная прозрачность**: система точно знает свой Gap |
-| **«Тёмная ночь души»** | Седло-узловая [бифуркация Gap](/docs/core/dynamics/gap-phase-diagram#бифуркации): потеря стабильного Gap-профиля | Стационарный аттрактор исчезает при изменении параметров |
-| **«Кундалини»** | Каскадная активация когерентностей снизу вверх: $\gamma_{OE} \to \gamma_{OD} \to \gamma_{OS} \to \gamma_{OA}$ | O-измерение последовательно связывается с остальными |
-| **«Синхроничность»** (Юнг) | Межсистемный $\text{Gap}_{AB}(i,j) \to 0$ для конкретного канала | Два [голонома](/docs/core/dynamics/composite-systems) временно резонируют по одному измерению |
-| **«Недвойственность»** (Адвайта) | Предел $\text{Gap} \to 0$ для всех пар | Теоретический предел; недостижим для нетривиальных систем из-за [топологической защиты Gap](/docs/core/dynamics/gap-phase-diagram#защита-gap) |
-| **«Мандала»** | Визуализация Gap-профиля (тепловая карта $7 \times 7$) | Структурированное представление 49 элементов |
-| **«Карма»** | Немарковское ядро памяти $K(\tau-s)$ в [интегро-дифференциальном уравнении](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) Gap-динамики | Прошлые конфигурации влияют на текущую эволюцию через ядро памяти |
-| **«Дхарма»** (Будда) | Аттрактор $\Gamma^*$ эволюционного уравнения: стационарное состояние, к которому система стремится при $\tau \to \infty$ | Структура самого уравнения, не конкретная конфигурация |
+| **"Enlightenment"** | L4: $\varphi(\Gamma^*) = \Gamma^*$ — [fixed point](/docs/consciousness/hierarchy/interiority-hierarchy) of self-modelling | Not Gap = 0, but **reflexive transparency**: the system accurately knows its own Gap |
+| **"Dark night of the soul"** | Saddle-node [Gap bifurcation](/docs/core/dynamics/gap-phase-diagram#бифуркации): loss of stable Gap profile | The stationary attractor disappears as parameters change |
+| **"Kundalini"** | Cascading activation of coherences bottom-up: $\gamma_{OE} \to \gamma_{OD} \to \gamma_{OS} \to \gamma_{OA}$ | The O-dimension sequentially connects with the others |
+| **"Synchronicity"** (Jung) | Inter-system $\text{Gap}_{AB}(i,j) \to 0$ for a specific channel | Two [holons](/docs/core/dynamics/composite-systems) temporarily resonate along one dimension |
+| **"Non-duality"** (Advaita) | Limit $\text{Gap} \to 0$ for all pairs | Theoretical limit; unreachable for non-trivial systems due to [topological Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap) |
+| **"Mandala"** | Visualisation of the Gap profile (heat map $7 \times 7$) | Structured representation of 49 elements |
+| **"Karma"** | Non-Markovian memory kernel $K(\tau-s)$ in the [integro-differential equation](/docs/core/dynamics/gap-phase-diagram#немарковские-осцилляции) of Gap dynamics | Past configurations influence current evolution through the memory kernel |
+| **"Dharma"** (Buddha) | Attractor $\Gamma^*$ of the evolution equation: the stationary state toward which the system tends as $\tau \to \infty$ | The structure of the equation itself, not a specific configuration |
 
 ---
 
-## 8. Фундаментальные выводы {#фундаментальные-выводы}
+## 8. Fundamental conclusions {#фундаментальные-выводы}
 
-Проанализировав более десяти символических систем — от древнейших (чакры, И-Цзин, алхимия) до современных (Human Design, Эннеаграмма) — мы можем сформулировать общие закономерности: почему символические системы устроены так, а не иначе, и чего они неизбежно не могут описать.
+Having analysed more than ten symbolic systems — from the most ancient (chakras, I Ching, alchemy) to modern ones (Human Design, Enneagram) — we can formulate general patterns: why symbolic systems are structured as they are, and what they inevitably cannot describe.
 
-### 8.1 Три закона символических систем
+### 8.1 Three laws of symbolic systems
 
-На основании проведённого анализа формулируются три структурных закона:
+Based on the analysis carried out, three structural laws are formulated:
 
-**Закон 1 (Неизбежность проекции).** Любая конечная описательная система с числом элементов $< 48$ является неинъективной проекцией $\Gamma$. Потеря информации — не недостаток системы, а следствие теоремы о размерности.
+**Law 1 (Inevitability of projection).** Any finite descriptive system with fewer than 48 elements is a non-injective projection of $\Gamma$. Information loss is not a defect of the system but a consequence of the dimensionality theorem.
 
-**Закон 2 (Фано-структура проекций).** Устойчивые символические системы проецируют на подпространства, уважающие Фано-структуру PG(2,2). Тройственные деления (тело/психика/дух; Сера/Ртуть/Соль; и т.д.) отражают 3-элементные Фано-триплеты, в которых когерентности наиболее устойчивы.
+**Law 2 (Fano structure of projections).** Stable symbolic systems project onto subspaces that respect the Fano structure PG(2,2). Tripartite divisions (body/psyche/spirit; Sulfur/Mercury/Salt; etc.) reflect the 3-element Fano triplets in which coherences are most stable.
 
-**Закон 3 (Недоступность двойственности).** Различие между $\text{Map}_{\text{ext}}$ и $\text{Map}_{\text{int}}$ (кодируемое фазой $\theta_{ij}$) систематически ускользает от традиционных символических систем, поскольку фазовая информация требует наибольшей разрешающей способности наблюдателя.
+**Law 3 (Inaccessibility of duality).** The distinction between $\text{Map}_{\text{ext}}$ and $\text{Map}_{\text{int}}$ (encoded by phase $\theta_{ij}$) systematically eludes traditional symbolic systems, since phase information requires the greatest resolving power of the observer.
 
-### 8.2 Что стоит за «оккультностью»
+### 8.2 What lies behind "occultism"
 
-Слово «оккультный» происходит от латинского *occultus* — «скрытый». Символические системы воспринимаются как «оккультные» (скрытые) по двум причинам, которые УГМ позволяет точно формализовать:
+The word "occult" derives from the Latin *occultus* — "hidden." Symbolic systems are perceived as "occult" (hidden) for two reasons, which UHM allows to formalise precisely:
 
-1. **Эпистемологическая:** Проекция $\pi_S$ теряет информацию, но практик системы $S$ не знает, что именно потеряно. Восстановление $\pi_S^{-1}$ неоднозначно, создавая иллюзию «тайны».
+1. **Epistemological:** The projection $\pi_S$ loses information, but the practitioner of system $S$ does not know what exactly has been lost. The recovery $\pi_S^{-1}$ is ambiguous, creating the illusion of "mystery."
 
-2. **Онтологическая:** [Gap](/docs/core/dynamics/gap-operator) между внешним и внутренним ($|\sin(\theta_{ij})| > 0$) означает, что полная реальность *принципиально* не сводится к внешнему наблюдению. Есть часть реальности (Im($\gamma_{ij}$)), недоступная через $\text{Map}_{\text{ext}}$. Это — формализация интуиции, стоящей за всеми эзотерическими традициями.
+2. **Ontological:** The [Gap](/docs/core/dynamics/gap-operator) between external and internal ($|\sin(\theta_{ij})| > 0$) means that full reality *in principle* cannot be reduced to external observation. There is a part of reality (Im($\gamma_{ij}$)) inaccessible through $\text{Map}_{\text{ext}}$. This is the formalisation of the intuition underlying all esoteric traditions.
 
-УГМ **снимает** первую причину (предоставляя полный формализм) и **объясняет** вторую (Gap — точно определённая мера «скрытого»).
+UHM **removes** the first reason (by providing a complete formalism) and **explains** the second (Gap is a precisely defined measure of the "hidden").
 
-### 8.3 Описательная когерентность и её ограничения [И]
+### 8.3 Descriptive coherence and its limitations [И]
 
-:::info Наблюдение (Описательная когерентность) [И]
-УГМ способна вывести каждый феноменологический предикат каждой проанализированной символической системы через единый формализм $\Gamma \in \mathbb{C}^{7 \times 7}$. Это **необходимое** условие адекватности теории (если бы $\Gamma$ не могла выразить известные системы, теория была бы неполна), но **не достаточное** условие истинности (описательная когерентность — не то же самое, что предсказательная сила).
+:::info Observation (Descriptive coherence) [И]
+UHM is capable of deriving every phenomenological predicate of every analysed symbolic system through the unified formalism $\Gamma \in \mathbb{C}^{7 \times 7}$. This is a **necessary** condition for the adequacy of the theory (if $\Gamma$ could not express the known systems, the theory would be incomplete), but **not a sufficient** condition for its truth (descriptive coherence is not the same as predictive power).
 :::
 
-**Ограничения данного анализа:**
+**Limitations of this analysis:**
 
-1. **Произвольность проекций.** Конкретные отождествления (чакра ↔ измерение) — гипотезы [И], не теоремы. Для каждой символической системы существует $k!$ возможных биекций, из которых выбрана одна «наиболее обоснованная». Без эмпирической верификации выбор остаётся спекулятивным.
+1. **Arbitrariness of projections.** The specific identifications (chakra ↔ dimension) are hypotheses [И], not theorems. For each symbolic system there exist $k!$ possible bijections, of which one "most justified" is chosen. Without empirical verification the choice remains speculative.
 
-2. **Ретроспективность.** Анализ проведён *после* формулирования теории. Предсказательная сила требует, чтобы теория предсказывала структуру *неизвестных* символических систем или новые свойства *известных*.
+2. **Retrospectiveness.** The analysis was carried out *after* the theory was formulated. Predictive power requires the theory to predict the structure of *unknown* symbolic systems or new properties of *known* ones.
 
-3. **Риск переобучения.** 48 свободных параметров $\Gamma$ при 12 анализируемых системах — высокое соотношение параметров к данным. Необходимы жёсткие верификационные критерии (см. [программу исследований](/docs/applied/research/symbolic-correspondence#программа)).
+3. **Risk of overfitting.** 48 free parameters of $\Gamma$ against 12 systems analysed is a high parameter-to-data ratio. Strict verification criteria are needed (see the [research programme](/docs/applied/research/symbolic-correspondence#программа)).
 
-**Критерий Поппера.** Анализ был бы *фальсифицирован*, если бы обнаружилась устойчивая символическая система, требующая $> 7$ независимых параметров для описания или несовместимая ни с одной проекцией $\pi_S$ из $\Gamma$.
+**Popper criterion.** The analysis would be *falsified* if a stable symbolic system were found that requires $> 7$ independent parameters to describe, or that is incompatible with any projection $\pi_S$ from $\Gamma$.
 
 ---
 
-## 9. Пять типов несводимости Gap [Т/Г] {#защита-gap}
+## 9. Five types of Gap irreducibility [Т/Г] {#защита-gap}
 
-Анализ символических систем обнажает фундаментальный факт: ни одна традиция не описала состояние «полной прозрачности» (Gap = 0 для всех пар) как реализуемое. В УГМ это следует из **пяти независимых** механизмов неустранимости Gap:
+Analysis of symbolic systems reveals a fundamental fact: no tradition has described the state of "complete transparency" (Gap = 0 for all pairs) as realisable. In UHM this follows from **five independent** mechanisms of Gap ineliminability:
 
-| Тип | Механизм | Источник | Статус |
+| Type | Mechanism | Source | Status |
 |---|---|---|---|
-| 1. Кодовый | Граница Хэмминга H(7,4): ≥ 3 из 21 Gap ненулевые | [Теория кодов](/docs/proofs/gap/fano-channel) | [И] |
-| 2. Алгебраический | Октонионный ассоциатор $[e_i, e_j, e_k] \neq 0$ порождает фазовый сдвиг | [Октонионная структура](/docs/proofs/minimality/theorem-octonionic-derivation) | [Г] |
-| 3. Энергетический | Спонтанный минимум $V_{\text{Gap}} \neq 0$ из кубического потенциала $V_3$ | [Gap-термодинамика](/docs/core/dynamics/gap-thermodynamics) | [Г] |
-| 4. Категориальный | Теорема Лавёра: неподвижная точка самомоделирования не тривиальна | [φ-оператор](/docs/core/operators/phi-operator) | [Г] |
-| 5. Топологический | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$: некоторые Gap-конфигурации нельзя непрерывно стянуть | [Gap-фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram) | [Г] |
+| 1. Code-theoretic | Hamming bound H(7,4): ≥ 3 of 21 Gaps are non-zero | [Coding theory](/docs/proofs/gap/fano-channel) | [И] |
+| 2. Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ generates a phase shift | [Octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) | [Г] |
+| 3. Energetic | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from cubic potential $V_3$ | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | [Г] |
+| 4. Categorical | Lawvere's theorem: the fixed point of self-modelling is non-trivial | [φ-operator](/docs/core/operators/phi-operator) | [Г] |
+| 5. Topological | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [Г] |
 
-**Вывод.** Полная прозрачность (отсутствие «скрытого») — математически невозможна для нетривиальной 7D октонионной системы. Это объясняет, почему все символические традиции указывают на «непостижимое»: не как на метафору, а как на структурное свойство реальности.
+**Conclusion.** Complete transparency (absence of the "hidden") is mathematically impossible for a non-trivial 7D octonionic system. This explains why all symbolic traditions point to the "incomprehensible" — not as a metaphor but as a structural property of reality.
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Семь измерений](/docs/core/structure/dimensions) — A, S, D, L, E, O, U
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — мера расхождения внешнего и внутреннего
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — 49-элементная карта
-- [Gap-диагностика](/docs/applied/research/gap-diagnostics) — прикладная методология
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
-- [Символические соответствия](/docs/applied/research/symbolic-correspondence) — операционализация
-- [Фано-канал](/docs/proofs/gap/fano-channel) — ассоциативные триплеты и коды
-- [Теорема о минимальности N = 7](/docs/proofs/minimality/theorem-minimality-7) — почему 7
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Seven dimensions](/docs/core/structure/dimensions) — A, S, D, L, E, O, U
+- [Gap operator](/docs/core/dynamics/gap-operator) — measure of divergence between external and internal
+- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — applied methodology
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
+- [Symbolic correspondences](/docs/applied/research/symbolic-correspondence) — operationalisation
+- [Fano channel](/docs/proofs/gap/fano-channel) — associative triplets and codes
+- [Theorem on minimality N = 7](/docs/proofs/minimality/theorem-minimality-7) — why 7

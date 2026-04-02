@@ -1,496 +1,496 @@
 ---
 sidebar_position: 2
-title: "Операторы Линдблада"
-description: "Мастер-определение операторов Линдблада L_k в УГМ: атомарные и Фано-структурированные операторы, CPTP-верификация, G₂-ковариантность"
+title: "Lindblad Operators"
+description: "Master definition of the Lindblad operators L_k in UHM: atomic and Fano-structured operators, CPTP verification, G₂-covariance"
 ---
 
-# Операторы Линдблада L_k
+# Lindblad Operators L_k
 
-Эта глава о том, как реальность рассеивает когерентность — и почему это не катастрофа, а необходимое условие жизни. Любая система, взаимодействующая с окружением, постепенно теряет квантовые корреляции (когерентности). Это фундаментальный процесс, называемый *декогеренция*. В классической аналогии — это ветер, который размывает рисунок на песке. Каждый оператор Линдблада $L_k$ — конкретное «направление ветра», конкретный канал, по которому информация утекает из системы.
+This chapter is about how reality dissipates coherence — and why that is not a catastrophe but a necessary condition of life. Any system interacting with an environment gradually loses quantum correlations (coherences). This is the fundamental process known as *decoherence*. In the classical analogy it is a wind that blurs a drawing in the sand. Each Lindblad operator $L_k$ is a specific "direction of the wind", a specific channel through which information leaks out of the system.
 
-Но УГМ добавляет к этой классической картине неожиданный поворот: структура декогеренции **не произвольна**. Она однозначно определяется аксиомами теории и организована по [плоскости Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — той же алгебраической структуре, которая управляет октонионами и исключительной группой $G_2$. Декогеренция — не хаос, а *структурированное забывание*.
+But UHM adds an unexpected twist to this classical picture: the structure of decoherence is **not arbitrary**. It is uniquely determined by the axioms of the theory and organised according to the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) — the same algebraic structure that governs the octonions and the exceptional group $G_2$. Decoherence is not chaos, but *structured forgetting*.
 
-:::info DRY: Мастер-определение операторов Линдблада
-Это **каноническое определение** операторов Линдблада $L_k$ в УГМ. Все документы должны ссылаться сюда, а не повторять определение.
+:::info DRY: Master definition of the Lindblad operators
+This is the **canonical definition** of the Lindblad operators $L_k$ in UHM. All documents should reference this page rather than repeat the definition.
 :::
 
 ---
 
-## Историческая предтеча
+## Historical Precursors
 
-Теория открытых квантовых систем — одно из важнейших достижений математической физики XX века.
+The theory of open quantum systems is one of the most important achievements of mathematical physics in the twentieth century.
 
-**Гёран Линдблад** (Швеция, 1976) и **независимо** Витторио Горини, Андржей Коссаковский и Джордж Сударшан (Италия–Индия, 1976) доказали фундаментальную теорему: *любая* марковская эволюция квантовой системы (без памяти о прошлом) может быть записана в форме мастер-уравнения с определёнными операторами $L_k$. Это уравнение теперь носит имя LGKS (Lindblad–Gorini–Kossakowski–Sudarshan), хотя чаще его называют просто «уравнением Линдблада».
+**Göran Lindblad** (Sweden, 1976) and **independently** Vittorio Gorini, Andrzej Kossakowski, and George Sudarshan (Italy–India, 1976) proved a fundamental theorem: *any* Markovian evolution of a quantum system (without memory of the past) can be written in the form of a master equation with specific operators $L_k$. This equation now bears the name LGKS (Lindblad–Gorini–Kossakowski–Sudarshan), although it is more commonly referred to simply as "the Lindblad equation".
 
-**Карл Краус** (1983) показал эквивалентный подход через *операторное представление*: любой квантовый канал можно записать как $\Phi(\rho) = \sum_k K_k \rho K_k^\dagger$ с условием $\sum_k K_k^\dagger K_k = I$. Операторы Крауса $K_k$ — «кирпичики», из которых строится любое допустимое квантовое преобразование.
+**Karl Kraus** (1983) demonstrated an equivalent approach via the *operator-sum representation*: any quantum channel can be written as $\Phi(\rho) = \sum_k K_k \rho K_k^\dagger$ subject to $\sum_k K_k^\dagger K_k = I$. The Kraus operators $K_k$ are the "building blocks" from which any admissible quantum transformation is constructed.
 
-**Войцех Стайнспринг** (1955) доказал ещё более глубокий результат: любой квантовый канал — это проекция унитарной (обратимой) эволюции в большем пространстве. Декогеренция — не «потеря» информации, а её «утечка» в окружение.
+**Wojciech Stinespring** (1955) proved an even deeper result: any quantum channel is the projection of a unitary (reversible) evolution in a larger space. Decoherence is not a "loss" of information but its "leakage" into the environment.
 
-В УГМ операторы Линдблада **не постулируются** — они *выводятся* из структуры классификатора подобъектов $\Omega$. Каждый атом $\Omega$ порождает свой оператор $L_k$, и структура [плоскости Фано](/docs/physics/gauge-symmetry/fano-selection-rules) определяет их единственную физически допустимую комбинацию.
-
----
-
-## Интуитивное объяснение: ветер и рисунок на песке {#интуиция-ветер}
-
-Представьте рисунок на песке. Ветер постепенно его размывает. Каждый порыв ветра — это один оператор Линдблада $L_k$: конкретное направление, конкретная сила.
-
-Если ветер дует **со всех сторон одинаково** (атомарные операторы $L_k^{\text{atom}}$), рисунок стирается *полностью*. Остаётся плоская поверхность — максимально смешанное состояние $I/7$.
-
-Но если ветер дует **структурированно** (Фано-операторы $L_p^{\text{Fano}}$), он стирает мелкие детали, но *сохраняет* крупные черты. Рисунок блёкнет (когерентности уменьшаются в 3 раза), но не исчезает. Это критически важно для живых систем: им нужно взаимодействовать с окружением (позволять ветру дуть), но при этом сохранять свою идентичность (не дать рисунку исчезнуть полностью).
+In UHM the Lindblad operators are **not postulated** — they are *derived* from the structure of the subobject classifier $\Omega$. Each atom of $\Omega$ generates its own operator $L_k$, and the structure of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) determines their unique physically admissible combination.
 
 ---
 
-## L-унификация
+## Intuitive Explanation: Wind and a Drawing in the Sand {#интуиция-ветер}
 
-В УГМ буква **L** объединяет три уровня структуры. Это не случайное совпадение обозначений — за ним стоит глубокая структурная связь.
+Imagine a drawing in the sand. The wind gradually blurs it. Each gust of wind is a single Lindblad operator $L_k$: a specific direction, a specific force.
 
-| Обозначение | Значение | Источник |
+If the wind blows **from all directions equally** (atomic operators $L_k^{\text{atom}}$), the drawing is erased *completely*. What remains is a flat surface — the maximally mixed state $I/7$.
+
+But if the wind blows **in a structured way** (Fano operators $L_p^{\text{Fano}}$), it erases fine details while *preserving* the broad features. The drawing fades (coherences are reduced by a factor of 3), but does not disappear. This is critically important for living systems: they need to interact with the environment (to let the wind blow), while at the same time preserving their identity (preventing the drawing from vanishing entirely).
+
+---
+
+## L-Unification
+
+In UHM the letter **L** unifies three levels of structure. This is not a coincidental overlap of notation — behind it lies a deep structural connection.
+
+| Notation | Meaning | Source |
 |-------------|----------|----------|
-| $L$ (логика) | [Измерение Логики](/docs/core/structure/dimension-l) | Структура Ω |
-| $L_k$ (операторы) | Операторы Линдблада | Диссипативная динамика |
-| $\mathcal{L}_\Omega$ | [Логический Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан) | Генератор эволюции |
+| $L$ (logic) | [Logic dimension](/docs/core/structure/dimension-l) | Structure of Ω |
+| $L_k$ (operators) | Lindblad operators | Dissipative dynamics |
+| $\mathcal{L}_\Omega$ | [Logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) | Generator of evolution |
 
-Это как слово «ключ» в русском языке — дверной, музыкальный, водный — три разных понятия. Но в УГМ оказывается, что «ключ-L» — это реально *одна и та же* конструкция на разных уровнях описания. L-измерение (логическая структура Голонома) порождает $L_k$ (конкретные операторы), которые собираются в $\mathcal{L}_\Omega$ (полный генератор эволюции). Одна буква — один корень — три проявления.
+It is like the word "key" in English — door-key, musical key, key to an answer — three different concepts. But in UHM it turns out that "L-key" is genuinely *the same* construction at different levels of description. The L-dimension (the logical structure of the Holon) generates $L_k$ (the specific operators), which assemble into $\mathcal{L}_\Omega$ (the full generator of evolution). One letter — one root — three manifestations.
 
-:::tip Теорема: L-унификация
-Три конструкции выводятся из единого источника — [Аксиомы Ω⁷](/docs/core/foundations/axiom-omega):
+:::tip Theorem: L-unification
+The three constructions are derived from a single source — [Axiom Ω⁷](/docs/core/foundations/axiom-omega):
 
 $$
-\Omega \xrightarrow{\text{логика}} L \xrightarrow{\text{стратификация}} L_k \xrightarrow{\text{генератор}} \mathcal{L}_\Omega
+\Omega \xrightarrow{\text{logic}} L \xrightarrow{\text{stratification}} L_k \xrightarrow{\text{generator}} \mathcal{L}_\Omega
 $$
 
-[Доказательство →](/docs/proofs/physics/physics-correspondence#2-l-унификация) | Статус: **[Т]**
+[Proof →](/docs/proofs/physics/physics-correspondence#2-l-унификация) | Status: **[Т]**
 :::
 
-## Определение операторов Линдблада
+## Definition of the Lindblad Operators
 
-### Стандартная форма Линдблада для открытых систем
+### Standard Lindblad Form for Open Systems
 
-Для произвольной открытой квантовой системы мастер-уравнение Линдблада (LGKS) имеет вид:
+For an arbitrary open quantum system the Lindblad (LGKS) master equation takes the form:
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]
 $$
 
-где диссипатор $\mathcal{D}$ задаётся набором операторов $\{L_k\}$:
+where the dissipator $\mathcal{D}$ is specified by a set of operators $\{L_k\}$:
 
 $$
 \mathcal{D}[\Gamma] = \sum_{k} \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-В стандартной физике операторы $L_k$ **постулируются** из феноменологических соображений. В УГМ они **выводятся** из структуры классификатора подобъектов $\Omega$.
+In standard physics the operators $L_k$ are **postulated** from phenomenological considerations. In UHM they are **derived** from the structure of the subobject classifier $\Omega$.
 
-### Деривация из классификатора $\Omega$ {#деривация-из-классификатора}
+### Derivation from the Classifier $\Omega$ {#деривация-из-классификатора}
 
-[Аксиома Ω⁷](/docs/core/foundations/axiom-omega) определяет классификатор подобъектов $\Omega$ $\infty$-топоса, в котором живёт Голоном. Атомы $\Omega$ — минимальные нетривиальные подобъекты — однозначно порождают операторы Линдблада через следующую цепочку:
+[Axiom Ω⁷](/docs/core/foundations/axiom-omega) defines the subobject classifier $\Omega$ of the $\infty$-topos in which the Holon lives. The atoms of $\Omega$ — the minimal non-trivial subobjects — uniquely generate the Lindblad operators through the following chain:
 
-**Шаг 1. Атомы $\Omega$ → проекторы.** Каждый атомарный подобъект $S_k \subset \Omega$ ($k \in \{A, S, D, L, E, O, U\}$) соответствует одному измерению Голонома. Проекция на подобъект даёт **атомарный оператор Линдблада**:
+**Step 1. Atoms of $\Omega$ → projectors.** Each atomic subobject $S_k \subset \Omega$ ($k \in \{A, S, D, L, E, O, U\}$) corresponds to one dimension of the Holon. Projection onto the subobject yields the **atomic Lindblad operator**:
 
 $$
 L_k^{\text{atom}} = |k\rangle\langle k|
 $$
 
-Это проектор, а не переходный оператор — $L_k^{\text{atom}}$ «наблюдает» $k$-е измерение, не генерируя переходов между измерениями.
+This is a projector, not a transition operator — $L_k^{\text{atom}}$ "observes" the $k$-th dimension without generating transitions between dimensions.
 
-**Шаг 2. Составные атомы → Фано-операторы.** Классификатор $\Omega$ в $\infty$-топосе содержит не только точечные атомы, но и **составные подобъекты**. [Плоскость Фано](/docs/physics/gauge-symmetry/g2-structure) PG(2,2) определяет 7 линейных подобъектов — троек измерений. Каждая Фано-линия $p = (i, j, k)$ даёт **Фано-оператор Линдблада**:
+**Step 2. Composite atoms → Fano operators.** The classifier $\Omega$ in the $\infty$-topos contains not only point-like atoms but also **composite subobjects**. The [Fano plane](/docs/physics/gauge-symmetry/g2-structure) PG(2,2) defines 7 linear subobjects — triples of dimensions. Each Fano line $p = (i, j, k)$ yields a **Fano Lindblad operator**:
 
 $$
 L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\,\Pi_p = \frac{1}{\sqrt{3}}(|i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|)
 $$
 
-**Шаг 3. Каноническая форма.** Единственность Фано-формы как физически корректной доказана ниже (теорема [единственности Фано-формы](#теорема-единственность-фано) [Т]): только Фано-операторы одновременно удовлетворяют CPTP, $G_2$-ковариантности и примитивности.
+**Step 3. Canonical form.** The uniqueness of the Fano form as the physically correct one is proved below (theorem on [uniqueness of the Fano form](#теорема-единственность-фано) [Т]): only the Fano operators simultaneously satisfy CPTP, $G_2$-covariance, and primitivity.
 
-:::info Замечание: роль гамильтониана в генерации переходов
-Атомарные и Фано-операторы — **проекторы**, не переходные операторы. Межуровневые переходы (off-diagonal dynamics) генерируются **гамильтоновой** частью $-i[H_{\text{eff}}, \Gamma]$: именно коммутатор с $H_{\text{eff}}$ создаёт когерентности между измерениями. Диссипатор $\mathcal{D}[\Gamma]$ с проекционными $L_k$ отвечает за **декогеренцию** — подавление когерентностей. Полная динамика возникает из баланса этих двух процессов.
+:::info Remark: the role of the Hamiltonian in generating transitions
+The atomic and Fano operators are **projectors**, not transition operators. Inter-level transitions (off-diagonal dynamics) are generated by the **Hamiltonian** part $-i[H_{\text{eff}}, \Gamma]$: it is the commutator with $H_{\text{eff}}$ that creates coherences between dimensions. The dissipator $\mathcal{D}[\Gamma]$ with projective $L_k$ is responsible for **decoherence** — the suppression of coherences. The full dynamics arises from the balance between these two processes.
 :::
 
-### Свойства
+### Properties
 
-1. **Сохранение следа:** Диссипатор $\mathcal{D}[\Gamma]$ автоматически сохраняет след: $\mathrm{Tr}(\mathcal{D}[\Gamma]) = 0$ для произвольных $L_k$ (следует из структуры уравнения Линдблада). **Примечание:** Условие $\sum_k L_k^\dagger L_k = \mathbb{I}$ относится к **операторам Крауса** CPTP-канала (см. [Фано-операторы](#фано-операторы)), а не к операторам Линдблада в мастер-уравнении.
-2. **Проекционная природа:** каждый $L_k$ — проектор на подобъект классификатора $\Omega$, осуществляющий «наблюдение» соответствующего сектора
-3. **Связь с χ_S:** операторы определяют [характеристику субъектности](/docs/consciousness/foundations/self-observation)
-4. **Связь с ▷:** через L-унификацию, $L_k$ порождают [темпоральную модальность](/docs/core/operators/emergent-time)
+1. **Trace preservation:** The dissipator $\mathcal{D}[\Gamma]$ automatically preserves the trace: $\mathrm{Tr}(\mathcal{D}[\Gamma]) = 0$ for arbitrary $L_k$ (follows from the structure of the Lindblad equation). **Note:** The condition $\sum_k L_k^\dagger L_k = \mathbb{I}$ applies to the **Kraus operators** of the CPTP channel (see [Fano operators](#фано-операторы)), not to the Lindblad operators in the master equation.
+2. **Projective nature:** each $L_k$ is a projector onto a subobject of the classifier $\Omega$, performing "observation" of the corresponding sector
+3. **Relation to χ_S:** the operators define the [subjectness characteristic](/docs/consciousness/foundations/self-observation)
+4. **Relation to ▷:** via L-unification, $L_k$ generate the [temporal modality](/docs/core/operators/emergent-time)
 
-## Два типа атомов классификатора Ω {#атомы-классификатора}
+## Two Types of Atoms of the Classifier Ω {#атомы-классификатора}
 
-### Интуитивное объяснение: пиксели и группы {#интуиция-атомы}
+### Intuitive Explanation: Pixels and Groups {#интуиция-атомы}
 
-Классификатор подобъектов $\Omega$ — это «словарь» всех возможных частей Голонома. В этом словаре есть два типа «слов»:
+The subobject classifier $\Omega$ is a "dictionary" of all possible parts of the Holon. In this dictionary there are two types of "words":
 
-- **Атомарные подобъекты** $S_k$ — отдельные «пиксели». Каждый $S_k$ соответствует одному измерению: $S_A$ — измерение Аффекта, $S_S$ — измерение Структуры, и так далее. Их 7 штук — по числу измерений.
+- **Atomic subobjects** $S_k$ — individual "pixels". Each $S_k$ corresponds to one dimension: $S_A$ — the Affect dimension, $S_S$ — the Structure dimension, and so on. There are 7 of them — one per dimension.
 
-- **Составные подобъекты** $S_p$ — «группы пикселей». Каждый $S_p$ — это тройка измерений, образующих линию на [плоскости Фано](/docs/physics/gauge-symmetry/fano-selection-rules). Их тоже 7, и каждое измерение входит ровно в 3 тройки. Например, если линия $p$ связывает измерения $\{A, D, U\}$, то $S_p = \mathrm{span}\{|A\rangle, |D\rangle, |U\rangle\}$.
+- **Composite subobjects** $S_p$ — "groups of pixels". Each $S_p$ is a triple of dimensions forming a line on the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). There are also 7 of them, and each dimension belongs to exactly 3 triples. For example, if line $p$ connects dimensions $\{A, D, U\}$, then $S_p = \mathrm{span}\{|A\rangle, |D\rangle, |U\rangle\}$.
 
-Два типа атомов порождают два типа операторов Линдблада — *атомарные* и *Фано*. Атомарные наблюдают каждое измерение по отдельности (пиксельное зрение). Фано наблюдают тройки (расфокусированное зрение). Физически каноническими являются Фано-операторы — именно они определяют реальную динамику.
+The two types of atoms generate two types of Lindblad operators — *atomic* and *Fano*. The atomic operators observe each dimension individually (pixel vision). The Fano operators observe triples (defocused vision). The Fano operators are the physically canonical ones — they are the ones that determine the actual dynamics.
 
 ---
 
-Из [L-унификации](/docs/proofs/categorical/categorical-formalism) следует, что операторы Линдблада выводятся из **атомов** классификатора $\Omega$. В [Аксиоме Ω⁷](/docs/core/foundations/axiom-omega) определены **базисные (атомарные) атомы**:
+From [L-unification](/docs/proofs/categorical/categorical-formalism) it follows that the Lindblad operators are derived from the **atoms** of the classifier $\Omega$. [Axiom Ω⁷](/docs/core/foundations/axiom-omega) defines the **basic (atomic) atoms**:
 
-:::warning Историческое замечание: ранние формулировки $L_k$
-В ранних формулировках УГМ использовались записи $L_k = \sqrt{\chi_{S_k}}$ (характеристический морфизм) и $L_k = \sqrt{\gamma_k}|k\rangle\langle k+1| \otimes P_{\text{strat}}^{(k)}$ (переходные операторы). Обе записи **устарели**: первая математически некорректна ($\sqrt{\chi} = \chi$ для $\chi \in \{0,1\}$), вторая смешивает роль гамильтониана (переходы) и диссипатора (проекции). Каноническое определение — проекторы $L_k^{\text{atom}} = |k\rangle\langle k|$ и $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ — см. [§Деривация из классификатора](#деривация-из-классификатора). Единственность Фано-формы: [Т] ([теорема](#теорема-единственность-фано)).
+:::warning Historical remark: early formulations of $L_k$
+Early formulations of UHM used the notations $L_k = \sqrt{\chi_{S_k}}$ (characteristic morphism) and $L_k = \sqrt{\gamma_k}|k\rangle\langle k+1| \otimes P_{\text{strat}}^{(k)}$ (transition operators). Both notations are **obsolete**: the first is mathematically incorrect ($\sqrt{\chi} = \chi$ for $\chi \in \{0,1\}$), the second conflates the roles of the Hamiltonian (transitions) and the dissipator (projections). The canonical definition — projectors $L_k^{\text{atom}} = |k\rangle\langle k|$ and $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ — see [§Derivation from the classifier](#деривация-из-классификатора). Uniqueness of the Fano form: [Т] ([theorem](#теорема-единственность-фано)).
 :::
 
 $$
 S_k = |k\rangle\langle k|, \quad k \in \{A, S, D, L, E, O, U\}
 $$
 
-Однако классификатор $\Omega$ в $\infty$-топосе содержит не только атомарные подобъекты, но и **составные**. [Плоскость Фано](/docs/physics/gauge-symmetry/g2-structure) $\mathrm{PG}(2,2)$ определяет 7 **линейных подобъектов** — проекции на 3-мерные подпространства:
+However, the classifier $\Omega$ in the $\infty$-topos contains not only atomic subobjects but also **composite** ones. The [Fano plane](/docs/physics/gauge-symmetry/g2-structure) $\mathrm{PG}(2,2)$ defines 7 **linear subobjects** — projections onto 3-dimensional subspaces:
 
 $$
 \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
 $$
 
-Каждая Фано-линия $p = (i, j, k)$ порождает **составной атом** $S_p = \mathrm{span}\{|i\rangle, |j\rangle, |k\rangle\}$.
+Each Fano line $p = (i, j, k)$ generates a **composite atom** $S_p = \mathrm{span}\{|i\rangle, |j\rangle, |k\rangle\}$.
 
-:::tip Теорема: Полнота атомов Фано [Т]
-Каждое измерение лежит на ровно 3 Фано-линиях. Следовательно:
+:::tip Theorem: Completeness of Fano atoms [Т]
+Each dimension lies on exactly 3 Fano lines. Therefore:
 
 $$
 \sum_{p=1}^{7} \Pi_p = 3I
 $$
 
-[Доказательство →](/docs/proofs/gap/fano-channel#фано-канал) | Статус: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#фано-канал) | Status: **[Т]**
 :::
 
-:::info Замечание: Категорная интерпретация
-Атомарные подобъекты $S_k$ и составные Фано-подобъекты $S_p$ вместе формируют решётку подобъектов классификатора $\Omega$. Переход от атомарных к составным атомам соответствует обогащению логики классификатора — от булевой (точечной) к проективной (линейной). Это отражает структуру $\infty$-топоса, где $\Omega$ содержит иерархию типов истинности.
+:::info Remark: Categorical interpretation
+The atomic subobjects $S_k$ and the composite Fano subobjects $S_p$ together form the lattice of subobjects of the classifier $\Omega$. The transition from atomic to composite atoms corresponds to an enrichment of the classifier's logic — from Boolean (point-like) to projective (linear). This reflects the structure of the $\infty$-topos, where $\Omega$ contains a hierarchy of truth-value types.
 :::
 
-:::info Разграничение двух форм $L_k$ {#разграничение-форм-lk}
-В УГМ используются **две различные формы** операторов $L_k$, которые не следует смешивать:
+:::info Distinction between the two forms of $L_k$ {#разграничение-форм-lk}
+UHM employs **two distinct forms** of the operators $L_k$ that should not be conflated:
 
-| Форма | Обозначение | Определение | Роль |
+| Form | Notation | Definition | Role |
 |-------|-------------|-------------|------|
-| **Формальная (атомарная)** | $L_k^{\text{atom}} = \lvert k\rangle\langle k\rvert$ | Проекторы из классификатора подобъектов $\Omega$ | Категориальное основание; доказательство примитивности |
-| **Фано-форма (составная)** | $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ | Проекторы на Фано-линии PG(2,2) | Физические теоремы; CPTP-каналы; динамика |
+| **Formal (atomic)** | $L_k^{\text{atom}} = \lvert k\rangle\langle k\rvert$ | Projectors from the subobject classifier $\Omega$ | Categorical foundation; proof of primitivity |
+| **Fano form (composite)** | $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ | Projectors onto Fano lines of PG(2,2) | Physical theorems; CPTP channels; dynamics |
 
-**Все физические результаты** (контракция когерентностей, $P_{\text{crit}} = 2/7$, $G_2$-ковариантность, формула $\kappa_0$) используют **Фано-форму**. Атомарная форма служит фундаментом для доказательства примитивности линейной части $\mathcal{L}_0$ [Т] и $S_7$-эквивариантности [Т], но в физических вычислениях заменяется Фано-операторами.
+**All physical results** (coherence contraction, $P_{\text{crit}} = 2/7$, $G_2$-covariance, formula for $\kappa_0$) use the **Fano form**. The atomic form serves as the foundation for proving primitivity of the linear part $\mathcal{L}_0$ [Т] and $S_7$-equivariance [Т], but is replaced by the Fano operators in physical computations.
 
-**Эквивалентность двух форм** следует из цепочки L-унификации T11--T13 [Т]: ранг Хои канала = 7 (T11) + проективная декомпозиция из L-унификации (T12) + вынужденная BIBD$(7,3,1)$ (T13) доказывают, что атомарные проекторы $L_k^{\text{atom}}$ **однозначно порождают** Фано-операторы $L_p^{\text{Fano}}$ как единственное минимальное составное разложение. Подробнее: [T11](#теорема-ранг-хои), [T12](#теорема-проективная-декомпозиция), [T13](#теорема-bibd-из-хои).
+**The equivalence of the two forms** follows from the L-unification chain T11–T13 [Т]: Choi rank of the channel = 7 (T11) + projective decomposition from L-unification (T12) + forced BIBD$(7,3,1)$ (T13) prove that the atomic projectors $L_k^{\text{atom}}$ **uniquely generate** the Fano operators $L_p^{\text{Fano}}$ as the unique minimal composite decomposition. Details: [T11](#теорема-ранг-хои), [T12](#теорема-проективная-декомпозиция), [T13](#теорема-bibd-из-хои).
 :::
 
-#### Теорема (Единственность Фано-формы из аксиом) [Т] {#теорема-единственность-фано}
+#### Theorem (Uniqueness of the Fano form from axioms) [Т] {#теорема-единственность-фано}
 
-:::tip Теорема (Единственность Фано-формы из аксиом) [Т]
-Фано-операторы — **единственные** минимальные составные операторы Линдблада, совместимые с аксиомами A1–A5.
+:::tip Theorem (Uniqueness of the Fano form from axioms) [Т]
+The Fano operators are the **unique** minimal composite Lindblad operators compatible with axioms A1–A5.
 
-**Доказательство (7 шагов).**
+**Proof (7 steps).**
 
-**Шаг 1 (Автопоэзис → $c > 0$).** Из A1 (автопоэзис) необходимо $c > 0$ ([T7](#теорема-необходимость-c) [Т]): без активного Фано-канала регенерация подавлена.
+**Step 1 (Autopoiesis → $c > 0$).** From A1 (autopoiesis) one needs $c > 0$ ([T7](#теорема-необходимость-c) [Т]): without an active Fano channel, regeneration is suppressed.
 
-**Шаг 2 ($c > 0$ → полное покрытие пар).** Из [T2](#теорема-полнота-покрытия) [Т]: $c > 0$ требует, чтобы граф взаимодействия $G_H$ покрывал **все** пары $(i,j)$ через хотя бы один оператор $L_p$.
+**Step 2 ($c > 0$ → full pair coverage).** From [T2](#теорема-полнота-покрытия) [Т]: $c > 0$ requires that the interaction graph $G_H$ covers **all** pairs $(i,j)$ through at least one operator $L_p$.
 
-**Шаг 3 (Ранг Чоя = 7).** Из [T11](#теорема-ранг-хои) [Т]: ранг матрицы Чоя канала $\Phi_{k=3}$ равен 7.
+**Step 3 (Choi rank = 7).** From [T11](#теорема-ранг-хои) [Т]: the Choi matrix rank of the channel $\Phi_{k=3}$ equals 7.
 
-**Шаг 4 (Оптимальный блок $k = 3$).** Из [T12](#теорема-проективная-декомпозиция) [Т]: проективная декомпозиция из L-унификации требует проекторов ранга 3 (минимальный ранг, покрывающий все пары при $N = 7$).
+**Step 4 (Optimal block $k = 3$).** From [T12](#теорема-проективная-декомпозиция) [Т]: the projective decomposition from L-unification requires rank-3 projectors (the minimal rank covering all pairs at $N = 7$).
 
-**Шаг 5 (BIBD-единственность).** Из [T13](#теорема-bibd-из-хои) [Т]: система $b = 7$ проекторов ранга $k = 3$ на $\mathbb{C}^7$ с полным покрытием пар — это $\mathrm{BIBD}(7, 3, 1)$. По неравенству Фишера и единственности проективной плоскости порядка 2 (Veblen–Wedderburn): $\mathrm{BIBD}(7,3,1) \cong PG(2,2)$ — **единственная** с точностью до изоморфизма.
+**Step 5 (BIBD uniqueness).** From [T13](#теорема-bibd-из-хои) [Т]: a system of $b = 7$ rank-$k = 3$ projectors on $\mathbb{C}^7$ with full pair coverage is a $\mathrm{BIBD}(7, 3, 1)$. By Fisher's inequality and the uniqueness of the projective plane of order 2 (Veblen–Wedderburn): $\mathrm{BIBD}(7,3,1) \cong PG(2,2)$ — **unique** up to isomorphism.
 
-**Шаг 6 (Связь с атомарными).** Фано-проекторы выражаются через атомарные: $\Pi_p = \sum_{k \in \text{line}_p} L_k^{\text{atom}}$. Обратно, атомарные восстанавливаются из Фано через: $L_k^{\text{atom}} = \frac{1}{3}\sum_{p : k \in \text{line}_p} \Pi_p - \frac{1}{3}I_7$ (из инволюционной матрицы инцидентности Фано-плоскости). Это — биективное соответствие.
+**Step 6 (Relation to atomic).** The Fano projectors are expressed through the atomic ones: $\Pi_p = \sum_{k \in \text{line}_p} L_k^{\text{atom}}$. Conversely, the atomic operators are recovered from the Fano ones via: $L_k^{\text{atom}} = \frac{1}{3}\sum_{p : k \in \text{line}_p} \Pi_p - \frac{1}{3}I_7$ (from the involutory incidence matrix of the Fano plane). This is a bijective correspondence.
 
-**Шаг 7 (Динамическая неэквивалентность, но структурная порождаемость).** Линдбладианы $\mathcal{L}_{\text{atom}}$ и $\mathcal{L}_{\text{Fano}}$ — **разные** каналы (дефазинг vs. частичное сохранение когерентностей). Но $\mathcal{L}_{\text{Fano}}$ — **единственный** линдбладиан, удовлетворяющий одновременно:
+**Step 7 (Dynamical non-equivalence, but structural generability).** The Lindbladians $\mathcal{L}_{\text{atom}}$ and $\mathcal{L}_{\text{Fano}}$ are **different** channels (dephasing vs. partial preservation of coherences). But $\mathcal{L}_{\text{Fano}}$ is the **unique** Lindbladian simultaneously satisfying:
 - CPTP [Т] (T-78)
-- $G_2$-ковариантность [Т] (T-42a)
-- Полное покрытие пар [Т] (T-41b)
-- Примитивность [Т] (T-39a)
+- $G_2$-covariance [Т] (T-42a)
+- Full pair coverage [Т] (T-41b)
+- Primitivity [Т] (T-39a)
 
-Атомарные операторы — «алфавит»; Фано-операторы — единственная «грамматика», совместимая с физикой. $\blacksquare$
+The atomic operators are the "alphabet"; the Fano operators are the unique "grammar" compatible with physics. $\blacksquare$
 :::
 
-## Фано-структурированные операторы Линдблада $L_p^{\text{Fano}}$ {#фано-операторы}
+## Fano-Structured Lindblad Operators $L_p^{\text{Fano}}$ {#фано-операторы}
 
-### Определение
+### Definition
 
-Для каждой [Фано-линии](/docs/physics/gauge-symmetry/g2-structure) $p = (i, j, k)$ определяется оператор Линдблада:
+For each [Fano line](/docs/physics/gauge-symmetry/g2-structure) $p = (i, j, k)$ the Lindblad operator is defined as:
 
 $$
 L_p^{\text{Fano}} := \frac{1}{\sqrt{3}}\,\Pi_p = \frac{1}{\sqrt{3}}(|i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|)
 $$
 
-:::tip Теорема: CPTP-верификация Фано-операторов [Т]
-Операторы $L_p^{\text{Fano}}$ удовлетворяют условию полноты (Complete Positivity and Trace Preservation):
+:::tip Theorem: CPTP verification of the Fano operators [Т]
+The operators $L_p^{\text{Fano}}$ satisfy the completeness condition (Complete Positivity and Trace Preservation):
 
 $$
 \sum_{p=1}^{7} (L_p^{\text{Fano}})^\dagger L_p^{\text{Fano}} = \frac{1}{3}\sum_{p=1}^{7} \Pi_p = \frac{1}{3} \cdot 3I = I \quad \checkmark
 $$
 
-Следовательно, Фано-операторы определяют корректный CPTP-канал. Статус: **[Т]**
+Consequently, the Fano operators define a well-formed CPTP channel. Status: **[Т]**
 :::
 
-:::info Замечание о каноничности Фано-формы [Т]
-Атомарные операторы $L_k^{\mathrm{atom}} = |k\rangle\langle k|$ и Фано-операторы $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ определяют **различные** CPTP-каналы: $\Phi_{\mathrm{atom}}(\rho) = \mathrm{diag}(\rho)$ (полная дефазировка) vs. $\Phi_{\mathrm{Fano}}(\rho) = \frac{1}{3}\sum_p \Pi_p \rho \Pi_p$ (частичная). Оба — корректные CPTP-каналы [Т] (форма Краусса → полная положительность). Для всех физических теорем УГМ **каноническая форма — Фано** [Т], диктуемая $G_2$-симметрией (T-42a [Т]).
+:::info Remark on the canonicity of the Fano form [Т]
+The atomic operators $L_k^{\mathrm{atom}} = |k\rangle\langle k|$ and the Fano operators $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define **different** CPTP channels: $\Phi_{\mathrm{atom}}(\rho) = \mathrm{diag}(\rho)$ (complete dephasing) vs. $\Phi_{\mathrm{Fano}}(\rho) = \frac{1}{3}\sum_p \Pi_p \rho \Pi_p$ (partial). Both are well-formed CPTP channels [Т] (Kraus form → complete positivity). For all physical theorems of UHM the **canonical form is Fano** [Т], dictated by $G_2$-symmetry (T-42a [Т]).
 
-**Стайнспринговская дилатация.** Среда $\mathcal{E} = \mathbb{C}^7$, унитарное вложение $U|v\rangle|0\rangle = \sum_{p=1}^{7}(L_p|v\rangle) \otimes |p\rangle$. Проверка: $\langle 0|U^\dagger U|0\rangle = \sum_p L_p^\dagger L_p = \mathbb{I}_7$ ✓
+**Stinespring dilation.** Environment $\mathcal{E} = \mathbb{C}^7$, unitary embedding $U|v\rangle|0\rangle = \sum_{p=1}^{7}(L_p|v\rangle) \otimes |p\rangle$. Check: $\langle 0|U^\dagger U|0\rangle = \sum_p L_p^\dagger L_p = \mathbb{I}_7$ ✓
 :::
 
-### Фано-предиктивный канал {#фано-канал}
+### Fano Predictive Channel {#фано-канал}
 
-Фано-операторы порождают **предиктивный канал**, действующий на [матрицу когерентности](/docs/core/dynamics/coherence-matrix):
+The Fano operators generate a **predictive channel** acting on the [coherence matrix](/docs/core/dynamics/coherence-matrix):
 
 $$
 \mathcal{P}_{\text{Fano}}(\Gamma) := \sum_{p=1}^{7} L_p^{\text{Fano}} \, \Gamma \, (L_p^{\text{Fano}})^\dagger = \frac{1}{3}\sum_{p=1}^{7} \Pi_p \, \Gamma \, \Pi_p
 $$
 
-:::tip Теорема: Фано-канал сохраняет когерентности [Т]
-Для произвольной матрицы когерентности $\Gamma$:
+:::tip Theorem: The Fano channel preserves coherences [Т]
+For an arbitrary coherence matrix $\Gamma$:
 
-**(a)** Диагональные элементы сохраняются точно:
+**(a)** Diagonal elements are preserved exactly:
 
 $$
 [\mathcal{P}_{\text{Fano}}(\Gamma)]_{ii} = \gamma_{ii}
 $$
 
-**(b)** Недиагональные элементы (когерентности) сохраняются с коэффициентом $1/3$:
+**(b)** Off-diagonal elements (coherences) are preserved with a factor of $1/3$:
 
 $$
-[\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{для всех } i \neq j
+[\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{for all } i \neq j
 $$
 
-**(c)** Фазы когерентностей сохраняются в точности:
+**(c)** The phases of coherences are preserved exactly:
 
 $$
 \arg([\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij}) = \theta_{ij}
 $$
 
-[Доказательство →](/docs/proofs/gap/fano-channel#фано-канал) | Статус: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#фано-канал) | Status: **[Т]**
 :::
 
-:::info Замечание: Ключевое отличие от атомарного канала
-Атомарный канал $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m \Gamma P_m = \mathrm{diag}(\Gamma)$ **уничтожает** все когерентности ($\gamma_{ij} \to 0$ при $i \neq j$). Фано-канал **сохраняет** когерентности с масштабированием $1/3$, не искажая фазы. Это критически важно для [жизнеспособных систем](/docs/core/dynamics/viability), где $P > P_{\mathrm{crit}}$ требует ненулевых когерентностей.
+:::info Remark: Key difference from the atomic channel
+The atomic channel $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m \Gamma P_m = \mathrm{diag}(\Gamma)$ **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$). The Fano channel **preserves** coherences with a scaling factor of $1/3$ without distorting their phases. This is critically important for [viable systems](/docs/core/dynamics/viability), where $P > P_{\mathrm{crit}}$ requires non-zero coherences.
 :::
 
-## Примитивность $\mathcal{L}_\Omega$ {#примитивность-ℒω}
+## Primitivity of $\mathcal{L}_\Omega$ {#примитивность-ℒω}
 
-:::info DRY: Каноническая формулировка теоремы примитивности
-Это **каноническое определение** примитивности логического Лиувиллиана $\mathcal{L}_\Omega$ в УГМ. Все документы должны ссылаться сюда.
+:::info DRY: Canonical formulation of the primitivity theorem
+This is the **canonical definition** of primitivity of the logical Liouvillian $\mathcal{L}_\Omega$ in UHM. All documents should reference this page.
 
-**Уточнение:** примитивность доказана для **линейной части** $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (без нелинейного регенерационного члена $\mathcal{R}$). Полная динамика $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ нелинейна (поскольку $\rho_* = \varphi(\Gamma)$ зависит от состояния) и может иметь **несколько** неподвижных точек (тривиальная $I/7$ + нетривиальные аттракторы, см. [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)).
+**Clarification:** primitivity is proved for the **linear part** $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without the nonlinear regeneration term $\mathcal{R}$). The full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ is nonlinear (since $\rho_* = \varphi(\Gamma)$ depends on the state) and may have **multiple** fixed points (the trivial $I/7$ plus nontrivial attractors, see [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)).
 :::
 
-### Определение примитивности
+### Definition of Primitivity
 
-Генератор $\mathcal{L}$ называется **примитивным** (relaxing), если:
+A generator $\mathcal{L}$ is called **primitive** (relaxing) if:
 
-1. Существует **единственное** стационарное состояние $\rho_* \in \mathcal{D}(\mathcal{H})$: $\mathcal{L}[\rho_*] = 0$
-2. Для **любого** начального состояния $\rho_0 \in \mathcal{D}(\mathcal{H})$:
+1. There exists a **unique** stationary state $\rho_* \in \mathcal{D}(\mathcal{H})$: $\mathcal{L}[\rho_*] = 0$
+2. For **any** initial state $\rho_0 \in \mathcal{D}(\mathcal{H})$:
 
 $$
 \lim_{\tau \to \infty} e^{\tau\mathcal{L}}[\rho_0] = \rho_*
 $$
 
-Эквивалентная спектральная формулировка: все собственные значения $\lambda_k$ супероператора $\mathcal{L}$ удовлетворяют $\text{Re}(\lambda_k) \leq 0$, причём $\text{Re}(\lambda_k) = 0$ только для единственного стационарного режима ($\lambda_0 = 0$, кратность 1).
+Equivalent spectral formulation: all eigenvalues $\lambda_k$ of the superoperator $\mathcal{L}$ satisfy $\text{Re}(\lambda_k) \leq 0$, with $\text{Re}(\lambda_k) = 0$ only for the unique stationary mode ($\lambda_0 = 0$, multiplicity 1).
 
-### Граф взаимодействия
+### Interaction Graph
 
-**Определение.** Граф взаимодействия $G_H = (V, E)$ гамильтониана $H$:
-- $V = \{A, S, D, L, E, O, U\}$ (7 вершин)
-- $(i,j) \in E \Leftrightarrow H_{ij} \neq 0$ (ребро, если есть ненулевая связь)
+**Definition.** The interaction graph $G_H = (V, E)$ of the Hamiltonian $H$:
+- $V = \{A, S, D, L, E, O, U\}$ (7 vertices)
+- $(i,j) \in E \Leftrightarrow H_{ij} \neq 0$ (an edge if there is a non-zero coupling)
 
-### Теорема примитивности
+### Primitivity Theorem
 
-:::tip Теорема T-39a: Примитивность линейной части $\mathcal{L}_0$ [Т]
-Пусть $\mathcal{H} = \mathbb{C}^7$ — пространство состояний холона, удовлетворяющего (AP)+(PH)+(QG)+(V). Пусть $\mathcal{L}_0 = -i[H_{\text{eff}}, \cdot] + \mathcal{D}[\cdot]$ — **линейная** часть Лиувиллиана (без нелинейного регенеративного члена $\mathcal{R}$), с атомарными операторами $L_k = |k\rangle\langle k|$ и связным графом взаимодействия.
+:::tip Theorem T-39a: Primitivity of the linear part $\mathcal{L}_0$ [Т]
+Let $\mathcal{H} = \mathbb{C}^7$ be the state space of a holon satisfying (AP)+(PH)+(QG)+(V). Let $\mathcal{L}_0 = -i[H_{\text{eff}}, \cdot] + \mathcal{D}[\cdot]$ be the **linear** part of the Liouvillian (without the nonlinear regenerative term $\mathcal{R}$), with atomic operators $L_k = |k\rangle\langle k|$ and a connected interaction graph.
 
-Тогда $\mathcal{L}_0$ примитивен: единственное стационарное состояние — $I/7$, и для любого $\rho_0$:
+Then $\mathcal{L}_0$ is primitive: the unique stationary state is $I/7$, and for any $\rho_0$:
 
 $$
 \lim_{\tau \to \infty} e^{\tau\mathcal{L}_0}[\rho_0] = I/7
 $$
 
-Статус: **[Т]**
+Status: **[Т]**
 
-:::warning Уточнение: $\mathcal{L}_0$ vs $\mathcal{L}_\Omega$
-Примитивность доказана для **линейной части** $\mathcal{L}_0$. Полный Лиувиллиан $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ включает нелинейную регенерацию и может иметь **нетривиальный** стационар $\rho^* \neq I/7$ (T-96 [Т]). Примитивность $\mathcal{L}_0$ гарантирует единственность $I/7$ для диссипативной части и спектральную щель $\Delta > 0$.
+:::warning Clarification: $\mathcal{L}_0$ vs $\mathcal{L}_\Omega$
+Primitivity is proved for the **linear part** $\mathcal{L}_0$. The full Liouvillian $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ includes nonlinear regeneration and may have a **nontrivial** stationary state $\rho^* \neq I/7$ (T-96 [Т]). Primitivity of $\mathcal{L}_0$ guarantees uniqueness of $I/7$ for the dissipative part and a spectral gap $\Delta > 0$.
 :::
 :::
 
-**Доказательство.** Применяем критерий Эванса—Спона (Evans 1977, Spohn 1976):
+**Proof.** We apply the Evans–Spohn criterion (Evans 1977, Spohn 1976):
 
-> Линдбладов генератор $\mathcal{L}$ примитивен тогда и только тогда, когда алгебра фиксированных точек $\mathcal{F}(\mathcal{L}) := \{X \in M_N(\mathbb{C}) : [X, L_k] = [X, L_k^\dagger] = [X, H] = 0 \;\forall k\}$ тривиальна: $\mathcal{F}(\mathcal{L}) = \mathbb{C} \cdot I$.
+> A Lindblad generator $\mathcal{L}$ is primitive if and only if the fixed-point algebra $\mathcal{F}(\mathcal{L}) := \{X \in M_N(\mathbb{C}) : [X, L_k] = [X, L_k^\dagger] = [X, H] = 0 \;\forall k\}$ is trivial: $\mathcal{F}(\mathcal{L}) = \mathbb{C} \cdot I$.
 
-**Лемма 1.** $[X, |k\rangle\langle k|] = 0$ для всех $k \in \{0,\ldots,6\}$ $\Leftrightarrow$ $X$ диагональна.
+**Lemma 1.** $[X, |k\rangle\langle k|] = 0$ for all $k \in \{0,\ldots,6\}$ $\Leftrightarrow$ $X$ is diagonal.
 
-*Доказательство.* Матричный элемент коммутатора: $[X, |k\rangle\langle k|]_{mn} = x_{mk}\delta_{nk} - x_{kn}\delta_{mk}$. Для $m \neq k$, $n = k$: $x_{mk} = 0$. Перебирая все $k$: $x_{ij} = 0$ при $i \neq j$. $\blacksquare$
+*Proof.* Matrix element of the commutator: $[X, |k\rangle\langle k|]_{mn} = x_{mk}\delta_{nk} - x_{kn}\delta_{mk}$. For $m \neq k$, $n = k$: $x_{mk} = 0$. Ranging over all $k$: $x_{ij} = 0$ for $i \neq j$. $\blacksquare$
 
-**Лемма 2.** Если $X = \text{diag}(x_0,\ldots,x_6)$, $[X, H] = 0$, и граф $G_H$ связен, то $X = c \cdot I$.
+**Lemma 2.** If $X = \text{diag}(x_0,\ldots,x_6)$, $[X, H] = 0$, and the graph $G_H$ is connected, then $X = c \cdot I$.
 
-*Доказательство.* $[X, H]_{ij} = (x_i - x_j)H_{ij}$. Если $H_{ij} \neq 0$ (ребро в $G_H$), то $x_i = x_j$. По связности $G_H$: для любых $i,j$ существует путь, вдоль которого все $x_{v_\ell}$ равны. Значит $x_0 = \cdots = x_6 = c$. $\blacksquare$
+*Proof.* $[X, H]_{ij} = (x_i - x_j)H_{ij}$. If $H_{ij} \neq 0$ (an edge in $G_H$), then $x_i = x_j$. By connectedness of $G_H$: for any $i,j$ there exists a path along which all $x_{v_\ell}$ are equal. Hence $x_0 = \cdots = x_6 = c$. $\blacksquare$
 
-Комбинируя Леммы 1 и 2: $\mathcal{F}(\mathcal{L}_\Omega) = \mathbb{C} \cdot I$. По критерию Эванса—Спона: $\mathcal{L}_\Omega$ примитивен. $\blacksquare$
+Combining Lemmas 1 and 2: $\mathcal{F}(\mathcal{L}_\Omega) = \mathbb{C} \cdot I$. By the Evans–Spohn criterion: $\mathcal{L}_\Omega$ is primitive. $\blacksquare$
 
-**Ссылки:**
+**References:**
 - Evans, D. E. (1977). *Irreducible quantum dynamical semigroups.* Commun. Math. Phys. **54**, 293–297.
 - Spohn, H. (1976). *An algebraic condition for the approach to equilibrium.* Lett. Math. Phys. **2**, 33–38.
 - Frigerio, A. (1978). *Stationary states of quantum dynamical semigroups.* Commun. Math. Phys. **63**, 269–276.
 
-### Теорема связности
+### Connectivity Theorem
 
-:::tip Теорема: Связность $G_H$ из жизнеспособности [Т]
-Если 7D-система удовлетворяет (AP)+(PH)+(QG)+(V), то граф взаимодействия $G_H$ её эффективного гамильтониана связен.
+:::tip Theorem: Connectivity of $G_H$ from viability [Т]
+If a 7D system satisfies (AP)+(PH)+(QG)+(V), then the interaction graph $G_H$ of its effective Hamiltonian is connected.
 
-Статус: **[Т]**
+Status: **[Т]**
 :::
 
-*Доказательство.* От противного.
+*Proof.* By contradiction.
 
-Предположим, $G_H$ несвязен. Тогда $V = V_1 \sqcup V_2$, $|V_1| \geq 1$, $|V_2| \geq 1$, и $H_{ij} = 0$ для всех $i \in V_1$, $j \in V_2$.
+Suppose $G_H$ is disconnected. Then $V = V_1 \sqcup V_2$, $|V_1| \geq 1$, $|V_2| \geq 1$, and $H_{ij} = 0$ for all $i \in V_1$, $j \in V_2$.
 
-Рассмотрим действие $\mathcal{L}_\Omega$ на межкомпонентные когерентности $\gamma_{ij}$ ($i \in V_1$, $j \in V_2$):
+Consider the action of $\mathcal{L}_\Omega$ on the inter-component coherences $\gamma_{ij}$ ($i \in V_1$, $j \in V_2$):
 
-**Гамильтонова часть:**
+**Hamiltonian part:**
 
 $$
 (-i[H,\Gamma])_{ij} = -i\sum_m (H_{im}\gamma_{mj} - \gamma_{im}H_{mj})
 $$
 
-Для $i \in V_1$: $H_{im} \neq 0$ только при $m \in V_1$. Для $j \in V_2$: $H_{mj} \neq 0$ только при $m \in V_2$. Это выражение связывает $\gamma_{ij}$ только с другими межкомпонентными когерентностями. Гамильтониан **не генерирует** межкомпонентные когерентности из внутрикомпонентных.
+For $i \in V_1$: $H_{im} \neq 0$ only for $m \in V_1$. For $j \in V_2$: $H_{mj} \neq 0$ only for $m \in V_2$. This expression couples $\gamma_{ij}$ only to other inter-component coherences. The Hamiltonian **does not generate** inter-component coherences from intra-component ones.
 
-**Диссипативная часть** (атомарный диссипатор):
+**Dissipative part** (atomic dissipator):
 
 $$
 \mathcal{D}[\Gamma]_{ij} = -\gamma_{ij}(1-\delta_{ij})
 $$
 
-Для $i \neq j$: $\mathcal{D}[\Gamma]_{ij} = -\gamma_{ij}$. Диссипатор **экспоненциально подавляет** все когерентности.
+For $i \neq j$: $\mathcal{D}[\Gamma]_{ij} = -\gamma_{ij}$. The dissipator **exponentially suppresses** all coherences.
 
-**Комбинация:** Межкомпонентные когерентности подвержены экспоненциальному затуханию (от диссипатора) и не получают «подпитки» от внутрикомпонентных:
+**Combination:** The inter-component coherences are subject to exponential decay (from the dissipator) and receive no "feed" from intra-component ones:
 
 $$
-\gamma_{ij}(\tau) \xrightarrow{\tau \to \infty} 0 \quad \text{для всех } i \in V_1,\, j \in V_2
+\gamma_{ij}(\tau) \xrightarrow{\tau \to \infty} 0 \quad \text{for all } i \in V_1,\, j \in V_2
 $$
 
-Асимптотически $\Gamma$ становится **блочно-диагональной**, т.е. система динамически распадается на две подсистемы размерностей $|V_1|$ и $|V_2|$, обе строго меньше 7. Для каждого из трёх ключевых измерений:
+Asymptotically $\Gamma$ becomes **block-diagonal**, i.e. the system dynamically splits into two subsystems of dimensions $|V_1|$ and $|V_2|$, both strictly less than 7. For each of the three key dimensions:
 
-- Если $E \in V_2$: потеря $\gamma_{iE} \to 0$ для $i \in V_1$ → нарушение **(PH)** (интериорность теряет связь со структурными измерениями)
-- Если $O \in V_2$: потеря $\gamma_{iO} \to 0$ для $i \in V_1$ → нарушение **(QG)** (невозможна регенерация для подсистемы $V_1$)
-- Если $U \in V_2$: потеря $\gamma_{iU} \to 0$ для $i \in V_1$ → нарушение **(AP)** (подсистема $V_1$ теряет интеграцию)
+- If $E \in V_2$: loss $\gamma_{iE} \to 0$ for $i \in V_1$ → violation of **(PH)** (interiority loses its connection to the structural dimensions)
+- If $O \in V_2$: loss $\gamma_{iO} \to 0$ for $i \in V_1$ → violation of **(QG)** (regeneration becomes impossible for subsystem $V_1$)
+- If $U \in V_2$: loss $\gamma_{iU} \to 0$ for $i \in V_1$ → violation of **(AP)** (subsystem $V_1$ loses integration)
 
-Но [Теорема S](/docs/proofs/minimality/theorem-minimality-7) **[Т]** доказывает, что (AP)+(PH)+(QG) требуют **минимум 7** динамически связанных измерений. Условие **(V)** ($P > P_{\text{crit}} = 2/7$) требует устойчивого состояния. Если $G_H$ несвязен, деградация неизбежна.
+But [Theorem S](/docs/proofs/minimality/theorem-minimality-7) **[Т]** proves that (AP)+(PH)+(QG) require **at least 7** dynamically coupled dimensions. Condition **(V)** ($P > P_{\text{crit}} = 2/7$) requires a stable state. If $G_H$ is disconnected, degradation is inevitable.
 
-Противоречие: жизнеспособный холон не может иметь несвязный $G_H$. $\blacksquare$
+Contradiction: a viable holon cannot have a disconnected $G_H$. $\blacksquare$
 
-Связность G_H следует из (V) жизнеспособности: нетривиальный аттрактор ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]) имеет $P_{\mathrm{coh}} > 0$, а Фано-канал с $c > 0$ генерирует когерентности для **всех** пар $(i,j)$ (полнота покрытия), что определяет полный граф $G_H$. Подробнее: [Теорема T2](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+Connectivity of $G_H$ follows from (V) viability: the nontrivial attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]) has $P_{\mathrm{coh}} > 0$, and the Fano channel with $c > 0$ generates coherences for **all** pairs $(i,j)$ (full coverage), which defines a complete graph $G_H$. Details: [Theorem T2](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 
-### Расширение на Фано-конструкцию
+### Extension to the Fano Construction
 
-:::tip Следствие: Примитивность с Фано-операторами [Т]
-Теорема примитивности справедлива и для Фано-операторов $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$.
+:::tip Corollary: Primitivity with Fano operators [Т]
+The primitivity theorem also holds for the Fano operators $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$.
 
-*Доказательство.* Алгебра, порождённая $\{\Pi_p\}_{p=1}^7$, содержит все атомарные проекции $\{|k\rangle\langle k|\}$, поскольку $\Pi_p \Pi_q = |k\rangle\langle k|$ для двух линий, пересекающихся в точке $k$. Далее по Леммам 1 и 2. $\blacksquare$
+*Proof.* The algebra generated by $\{\Pi_p\}_{p=1}^7$ contains all atomic projections $\{|k\rangle\langle k|\}$, since $\Pi_p \Pi_q = |k\rangle\langle k|$ for two lines intersecting at point $k$. The rest follows by Lemmas 1 and 2. $\blacksquare$
 
-Статус: **[Т]**
+Status: **[Т]**
 :::
 
-### Каскадные следствия примитивности
+### Cascading Corollaries of Primitivity
 
-Доказательство примитивности замыкает **5 условных результатов**, повышая их статус с [С] на [Т]:
+The proof of primitivity closes **5 conditional results**, upgrading their status from [С] to [Т]:
 
-| Результат | Старый статус | Новый статус | Причина |
+| Result | Old status | New status | Reason |
 |-----------|:---:|:---:|---|
-| Эквивалентность (1)⇔(2) для φ | [С] | **[Т]** | Теорема Перрона—Фробениуса применима |
-| Вариационная характеризация φ (Th.3.1 FEP) | [С] | **[Т]** | Единственность стационарного состояния |
-| Спектральная формула φ (Th.2.3) | [Т] | **[Т]** (кратность 1) | Единственный нулевой режим |
-| Сходимость $R \to 1$ (Th.4.2) | [Т] | **[Т]** (безусловно) | Гарантирована при любом начальном состоянии |
-| Единственность цели регенерации | неявное | **[Т]** | $\Gamma_{\text{target}} = \rho_*$ однозначно |
+| Equivalence (1)⇔(2) for φ | [С] | **[Т]** | Perron–Frobenius theorem applicable |
+| Variational characterisation of φ (Th.3.1 FEP) | [С] | **[Т]** | Uniqueness of the stationary state |
+| Spectral formula for φ (Th.2.3) | [Т] | **[Т]** (multiplicity 1) | Unique zero mode |
+| Convergence $R \to 1$ (Th.4.2) | [Т] | **[Т]** (unconditionally) | Guaranteed for any initial state |
+| Uniqueness of the regeneration target | implicit | **[Т]** | $\Gamma_{\text{target}} = \rho_*$ uniquely |
 
-**Подробнее:** [Формализация φ](/docs/proofs/categorical/formalization-phi), [FEP-деривация](/docs/proofs/dynamics/fep-derivation)
+**Details:** [Formalisation of φ](/docs/proofs/categorical/formalization-phi), [FEP derivation](/docs/proofs/dynamics/fep-derivation)
 
-### Единственность Фано-структуры из теории дизайнов {#единственность-фано}
+### Uniqueness of the Fano Structure from Design Theory {#единственность-фано}
 
-:::tip Теорема: Единственность Фано из (7,3,1)-BIBD [Т]
-Среди всех CPTP-каналов на $\mathcal{D}(\mathbb{C}^7)$, построенных из проекционных операторов Краузе $K_p = \frac{1}{\sqrt{r}}\Pi_p$ (проекции ранга $k$), удовлетворяющих:
+:::tip Theorem: Uniqueness of the Fano from (7,3,1)-BIBD [Т]
+Among all CPTP channels on $\mathcal{D}(\mathbb{C}^7)$ constructed from projective Kraus operators $K_p = \frac{1}{\sqrt{r}}\Pi_p$ (rank-$k$ projections) satisfying:
 
 **(a)** $\sum_p K_p^\dagger K_p = I$ (CPTP);
-**(b)** $[\mathcal{P}(\Gamma)]_{ii} = \gamma_{ii}$ (сохранение населённостей);
-**(c)** Демократичность: каждая пара $(i,j)$ содержится в **ровно** $\lambda$ проекциях
+**(b)** $[\mathcal{P}(\Gamma)]_{ii} = \gamma_{ii}$ (population preservation);
+**(c)** Democracy: each pair $(i,j)$ is contained in **exactly** $\lambda$ projections
 
-с $\lambda = 1$ (максимальная равномерность), **единственным** решением является Фано-канал $\mathcal{P}_{\text{Fano}}$ с проекциями на 7 линий PG(2,2).
+with $\lambda = 1$ (maximal uniformity), the **unique** solution is the Fano channel $\mathcal{P}_{\text{Fano}}$ with projections onto the 7 lines of PG(2,2).
 
-Статус: **[Т]** (стандартная комбинаторика — Hall 1967)
+Status: **[Т]** (standard combinatorics — Hall 1967)
 :::
 
-*Доказательство.* Условия (a)–(c) определяют $(v,k,\lambda)$-сбалансированную неполную блочную схему (BIBD): $v = 7$ точек, $b$ блоков размера $k$, каждая точка в $r$ блоках, каждая пара в $\lambda = 1$ блоках.
+*Proof.* Conditions (a)–(c) define a $(v,k,\lambda)$-balanced incomplete block design (BIBD): $v = 7$ points, $b$ blocks of size $k$, each point in $r$ blocks, each pair in $\lambda = 1$ blocks.
 
-Необходимые соотношения BIBD: $bk = vr$, $r(k-1) = \lambda(v-1) = 6$.
+Necessary BIBD relations: $bk = vr$, $r(k-1) = \lambda(v-1) = 6$.
 
-Из $r(k-1) = 6$ при целых $r, k \geq 2$:
+From $r(k-1) = 6$ with integers $r, k \geq 2$:
 
-| $k$ | $r$ | $b = 7r/k$ | Допустимость |
+| $k$ | $r$ | $b = 7r/k$ | Admissibility |
 |-----|-----|-----------|---|
-| 2 | 6 | 21 | Формально допустимо, но 21 оператор — неестественная конструкция |
+| 2 | 6 | 21 | Formally admissible, but 21 operators is an unnatural construction |
 | 3 | 3 | 7 | **(7,3,1)-BIBD** |
-| 4 | 2 | 3.5 | Не целое — запрещено |
-| 7 | 1 | 1 | Тривиальна |
+| 4 | 2 | 3.5 | Not an integer — forbidden |
+| 7 | 1 | 1 | Trivial |
 
-При $k = 3$: **Теорема (Hall 1967).** $(7,3,1)$-BIBD **единственна** с точностью до изоморфизма и изоморфна проективной плоскости Фано $\text{PG}(2,2)$. Единственность следует из того, что $\text{PG}(2,q)$ единственна для простого $q$, а $q = 2$ — единственное простое с $v = q^2 + q + 1 = 7$.
+For $k = 3$: **Theorem (Hall 1967).** The $(7,3,1)$-BIBD is **unique** up to isomorphism and is isomorphic to the Fano projective plane $\text{PG}(2,2)$. Uniqueness follows from the fact that $\text{PG}(2,q)$ is unique for prime $q$, and $q = 2$ is the unique prime with $v = q^2 + q + 1 = 7$.
 
-Свойства единственного решения:
-- Фано-плоскость **изоморфна** таблице умножения октонионов
-- $\text{Aut}(\text{PG}(2,2)) \cong GL(3,\mathbb{F}_2) \cong PSL(2,7)$, порядок 168
+Properties of the unique solution:
+- The Fano plane is **isomorphic** to the multiplication table of the octonions
+- $\text{Aut}(\text{PG}(2,2)) \cong GL(3,\mathbb{F}_2) \cong PSL(2,7)$, order 168
 - $PSL(2,7) \subset G_2 = \text{Aut}(\mathbb{O})$
 
 $\blacksquare$
 
-### $S_7$-эквивариантность атомарного диссипатора {#s7-эквивариантность}
+### $S_7$-Equivariance of the Atomic Dissipator {#s7-эквивариантность}
 
-:::tip Теорема T5: $S_7$-эквивариантность атомарного диссипатора [Т]
-Пусть $\mathcal{D}_\text{atom}$ — атомарный диссипатор с операторами $L_k = |k\rangle\langle k|$, $k = 0, \ldots, 6$. Для любой перестановки $\sigma \in S_7$ и соответствующего унитарного оператора $U_\sigma: |k\rangle \mapsto |\sigma(k)\rangle$:
+:::tip Theorem T5: $S_7$-equivariance of the atomic dissipator [Т]
+Let $\mathcal{D}_\text{atom}$ be the atomic dissipator with operators $L_k = |k\rangle\langle k|$, $k = 0, \ldots, 6$. For any permutation $\sigma \in S_7$ and the corresponding unitary operator $U_\sigma: |k\rangle \mapsto |\sigma(k)\rangle$:
 
 $$
 \mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \, \mathcal{D}_\text{atom}[\Gamma] \, U_\sigma^\dagger
 $$
 
-Статус: **[Т]**
+Status: **[Т]**
 :::
 
-**Доказательство.**
+**Proof.**
 
-**(a)** Трансформация операторов: $U_\sigma L_k U_\sigma^\dagger = |\sigma(k)\rangle\langle\sigma(k)| = L_{\sigma(k)}$.
+**(a)** Operator transformation: $U_\sigma L_k U_\sigma^\dagger = |\sigma(k)\rangle\langle\sigma(k)| = L_{\sigma(k)}$.
 
-**(b)** Вычислим $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = \sum_{k}(L_k (U_\sigma \Gamma U_\sigma^\dagger) L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, U_\sigma \Gamma U_\sigma^\dagger\})$.
+**(b)** Compute $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = \sum_{k}(L_k (U_\sigma \Gamma U_\sigma^\dagger) L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, U_\sigma \Gamma U_\sigma^\dagger\})$.
 
-**(c)** Вычислим $U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger = \sum_{k}(L_{\sigma(k)} (U_\sigma \Gamma U_\sigma^\dagger) L_{\sigma(k)}^\dagger - \frac{1}{2}\{L_{\sigma(k)}^\dagger L_{\sigma(k)}, U_\sigma \Gamma U_\sigma^\dagger\})$.
+**(c)** Compute $U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger = \sum_{k}(L_{\sigma(k)} (U_\sigma \Gamma U_\sigma^\dagger) L_{\sigma(k)}^\dagger - \frac{1}{2}\{L_{\sigma(k)}^\dagger L_{\sigma(k)}, U_\sigma \Gamma U_\sigma^\dagger\})$.
 
-**(d)** Поскольку $\sigma$ — биекция, $\sum_{k} f(L_{\sigma(k)}) = \sum_{k} f(L_k)$. Выражения совпадают. $\blacksquare$
+**(d)** Since $\sigma$ is a bijection, $\sum_{k} f(L_{\sigma(k)}) = \sum_{k} f(L_k)$. The expressions coincide. $\blacksquare$
 
-#### Теорема T6: Равномерная контракция когерентностей [Т] {#теорема-равномерная-контракция}
+#### Theorem T6: Uniform contraction of coherences [Т] {#теорема-равномерная-контракция}
 
-> Атомарный диссипатор $\mathcal{D}_\text{atom}$ контрактирует **все** когерентности с одинаковой скоростью:
+> The atomic dissipator $\mathcal{D}_\text{atom}$ contracts **all** coherences at the same rate:
 >
 > $$
 > \mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij} \quad (i \neq j), \qquad \mathcal{D}_\text{atom}[\Gamma]_{ii} = 0
 > $$
 
-**Доказательство.** $\mathcal{D}_\text{atom}[\Gamma]_{ij} = \sum_k \langle i|k\rangle\langle k|\Gamma|k\rangle\langle k|j\rangle - \gamma_{ij} = \delta_{ij}\gamma_{ii} - \gamma_{ij}$. $\blacksquare$
+**Proof.** $\mathcal{D}_\text{atom}[\Gamma]_{ij} = \sum_k \langle i|k\rangle\langle k|\Gamma|k\rangle\langle k|j\rangle - \gamma_{ij} = \delta_{ij}\gamma_{ii} - \gamma_{ij}$. $\blacksquare$
 
-**Значение.** Равномерная контракция — **структурное следствие** $S_7$-эквивариантности: диссипатор не различает пары $(i,j)$. Все когерентности декогерируют с $\alpha = 1$. Это доказывает демократичность контракции **безусловно** (без (КГ)).
+**Significance.** Uniform contraction is a **structural consequence** of $S_7$-equivariance: the dissipator does not distinguish between pairs $(i,j)$. All coherences decohere with $\alpha = 1$. This proves the democracy of contraction **unconditionally** (without (КГ)).
 
-#### Теорема T7: Автопоэтическая необходимость $c > 0$ [Т] {#теорема-необходимость-c}
+#### Theorem T7: Autopoietic necessity of $c > 0$ [Т] {#теорема-необходимость-c}
 
-> Атомарный диссипатор ($c = 0$) несовместим с устойчивой жизнеспособностью (AP)+(V): формула $\kappa_0$ [Т] подавляется быстрее, чем диссипативный вклад.
+> The atomic dissipator ($c = 0$) is incompatible with stable viability (AP)+(V): the formula for $\kappa_0$ [Т] is suppressed faster than the dissipative contribution.
 
-**Доказательство.** (a) При $\alpha = 1$: $|\gamma_{ij}(\tau)| \sim e^{-\tau}$. Скорость $\kappa_0 = \omega_0 |\gamma_{OE}| |\gamma_{OU}| / \gamma_{OO}$ затухает экспоненциально. (b) Стационарная чистота $P^* \approx 1/N + \kappa^*/(2\alpha)$. При $\alpha = 2/3$ (Фано): $P^* \approx 1/7 + 3\kappa^*/4$ — шире область жизнеспособности. (c) Диссипация действует на все 21 пару, регенерация модулируется через $\gamma_{OE}$, $\gamma_{OU}$ — коэффициенты асимметричны. Для устойчивости необходимо $c > 0$. $\blacksquare$
+**Proof.** (a) With $\alpha = 1$: $|\gamma_{ij}(\tau)| \sim e^{-\tau}$. The rate $\kappa_0 = \omega_0 |\gamma_{OE}| |\gamma_{OU}| / \gamma_{OO}$ decays exponentially. (b) Stationary purity $P^* \approx 1/N + \kappa^*/(2\alpha)$. With $\alpha = 2/3$ (Fano): $P^* \approx 1/7 + 3\kappa^*/4$ — the viability region is broader. (c) Dissipation acts on all 21 pairs, regeneration is modulated through $\gamma_{OE}$, $\gamma_{OU}$ — the coefficients are asymmetric. For stability, $c > 0$ is necessary. $\blacksquare$
 
-#### Теорема T8: Граница Хемминга [Т] {#теорема-граница-хемминга}
+#### Theorem T8: Hamming bound [Т] {#теорема-граница-хемминга}
 
-> Для кода длины $n = 7$, исправляющего 1 ошибку: $2^r \geq 8$, минимум $r = 3$. Граница достигается — код **совершенный**. Единственный — $H(7,4)$. (Hamming 1950)
+> For a length-$n = 7$ code correcting 1 error: $2^r \geq 8$, minimum $r = 3$. The bound is achieved — the code is **perfect**. The unique one is $H(7,4)$. (Hamming 1950)
 
-#### Теорема T9: Структура $H(7,4)$ = PG(2,2) [Т] {#теорема-хемминг-фано}
+#### Theorem T9: Structure of $H(7,4)$ = PG(2,2) [Т] {#теорема-хемминг-фано}
 
-> Кодовые слова веса 3 дуального кода $H(7,4)^\perp = S(3,7)$ образуют 7 троек — линии плоскости Фано. (стандартная теория кодов)
+> The codewords of weight 3 in the dual code $H(7,4)^\perp = S(3,7)$ form 7 triples — the lines of the Fano plane. (standard coding theory)
 
-**Связь с автопоэзисом.** Различение 8 ситуаций (нет возмущения + 7 одноразмерных) требует $\lceil\log_2 8\rceil = 3$ наблюдений — ровно 3 проверочных бита $H(7,4)$. Число 3 совпадает с $K = 3$ (триадная декомпозиция [Т]), $k = 3$ (блок Фано), $d = 3$ (кодовое расстояние).
+**Connection to autopoiesis.** Distinguishing 8 situations (no perturbation + 7 single-dimensional ones) requires $\lceil\log_2 8\rceil = 3$ observations — exactly 3 parity-check bits of $H(7,4)$. The number 3 coincides with $K = 3$ (triadic decomposition [Т]), $k = 3$ (Fano block size), $d = 3$ (code distance).
 
-#### Теорема T10: Автопоэтическая оптимальность Фано-канала [Т] {#теорема-оптимальность-фано}
+#### Theorem T10: Autopoietic optimality of the Fano channel [Т] {#теорема-оптимальность-фано}
 
-> Среди $S_7$-инвариантных BIBD$(7,k,1)$-каналов ($k \in \{2,3\}$), удовлетворяющих $c > 0$ (T7), полноте покрытия (T2), демократичности (T6), **единственный оптимальный** — Фано-канал ($k=3$, $c=1/3$): строго доминирует по контракции, стационарной чистоте, числу операторов и $G_2$-ковариантности.
+> Among $S_7$-invariant BIBD$(7,k,1)$ channels ($k \in \{2,3\}$) satisfying $c > 0$ (T7), full pair coverage (T2), and democracy (T6), the **unique optimal** one is the Fano channel ($k=3$, $c=1/3$): it strictly dominates in contraction rate, stationary purity, number of operators, and $G_2$-covariance.
 
 ---
 
-### Замыкание моста (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [Т] {#редукция-моста}
+### Closing the Bridge (AP)+(PH)+(QG)+(V) ⇒ P1+P2 [Т] {#редукция-моста}
 
-Шестнадцать теорем (T1–T16) порождают **полную цепочку импликаций**, все шаги — теоремы [Т] (T16/ПИР перемаркирован [О] — определение, встроенное в A1+A2; вычислительные результаты не затронуты):
+Sixteen theorems (T1–T16) generate a **complete chain of implications**, all steps being theorems [Т] (T16/ПИР is reclassified [О] — a definition embedded in A1+A2; computational results are unaffected):
 
 $$
 \boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{связность } G_H \xrightarrow{[\text{Т}]} \forall(i,j):\,\lambda_{ij} \geq 1
@@ -504,263 +504,263 @@ $$
 \xrightarrow{[\text{Т}]} \text{BIBD}(7,3,1) = \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2 \xrightarrow{[\text{Т}]} P1+P2
 $$
 
-#### Теорема T1: Эквивалентность BIBD-каналов [Т] {#теорема-bibd-эквивалентность}
+#### Theorem T1: Equivalence of BIBD channels [Т] {#теорема-bibd-эквивалентность}
 
-> Все $(v,k,\lambda)$-BIBD каналы с одинаковыми $v$ и $k$ (но произвольным $\lambda$) порождают **один и тот же** CPTP-канал. Контракция когерентностей $c = (k-1)/(v-1)$ зависит только от $(v,k)$.
+> All $(v,k,\lambda)$-BIBD channels with the same $v$ and $k$ (but arbitrary $\lambda$) generate **the same** CPTP channel. The coherence contraction $c = (k-1)/(v-1)$ depends only on $(v,k)$.
 
-**Доказательство.** Для BIBD-канала $\Phi_{\mathcal{B}}(\Gamma) = \frac{1}{r}\sum_p \Pi_p\Gamma\Pi_p$: диагональные элементы $[\Phi]_{ii} = \gamma_{ii}$ (каждая точка в $r$ блоках), внедиагональные $[\Phi]_{ij} = \frac{\lambda}{r}\gamma_{ij} = \frac{k-1}{v-1}\gamma_{ij}$ (из соотношения BIBD $r(k-1) = \lambda(v-1)$). Выражение не зависит от $\lambda$. $\blacksquare$
+**Proof.** For the BIBD channel $\Phi_{\mathcal{B}}(\Gamma) = \frac{1}{r}\sum_p \Pi_p\Gamma\Pi_p$: diagonal elements $[\Phi]_{ii} = \gamma_{ii}$ (each point in $r$ blocks), off-diagonal $[\Phi]_{ij} = \frac{\lambda}{r}\gamma_{ij} = \frac{k-1}{v-1}\gamma_{ij}$ (from the BIBD relation $r(k-1) = \lambda(v-1)$). The expression does not depend on $\lambda$. $\blacksquare$
 
-**Следствие T1.1.** Для $v=7$, $k=3$: контракция $c = 1/3$ — одна и та же для Фано-канала ($\lambda=1$, $b=7$) и любого $(7,3,\lambda)$-BIBD канала. Выбор $\lambda=1$ **вынуждается** из Теорем T11–T13 [Т]: ранг Хои канала = 7 (минимальное разложение), L-унификация даёт проективные операторы, и 7 ранга-3 проекторов с контракцией 1/3 образуют BIBD$(7,3,1)$.
+**Corollary T1.1.** For $v=7$, $k=3$: the contraction $c = 1/3$ is the same for the Fano channel ($\lambda=1$, $b=7$) and any $(7,3,\lambda)$-BIBD channel. The choice $\lambda=1$ is **forced** by Theorems T11–T13 [Т]: Choi rank of the channel = 7 (minimal decomposition), L-unification yields projective operators, and 7 rank-3 projectors with contraction 1/3 form a BIBD$(7,3,1)$.
 
-#### Теорема T2: Полнота покрытия пар [Т] {#теорема-полнота-покрытия}
+#### Theorem T2: Full pair coverage [Т] {#теорема-полнота-покрытия}
 
-> Пусть $\Phi$ — проективный CPTP-канал наблюдения на $\mathcal{D}(\mathbb{C}^7)$. Если граф взаимодействия $G_H$ связен [Т] и лиувиллиан примитивен [Т], то каждая пара $(i,j)$ должна быть покрыта хотя бы одним блоком: $\lambda_{ij} \geq 1$.
+> Let $\Phi$ be a projective CPTP observation channel on $\mathcal{D}(\mathbb{C}^7)$. If the interaction graph $G_H$ is connected [Т] and the Liouvillian is primitive [Т], then every pair $(i,j)$ must be covered by at least one block: $\lambda_{ij} \geq 1$.
 
-**Доказательство.** (a) Связность $G_H$ доказана из (AP)+(PH)+(QG)+(V) + теоремы S [Т]. (b) Примитивность $\mathcal{L}_\Omega$ [Т] и связность $G_H$ гарантируют $\gamma^*_{ij} \neq 0$ для всех $i \neq j$ в стационарном $\rho_*$. (c) Если $\lambda_{ij} = 0$, то $[\Phi(\Gamma)]_{ij} = 0$ — канал «слеп» к связи $(i,j)$, самомодель не содержит информации о ненулевой связи $\gamma^*_{ij}$, что противоречит (AP). $\blacksquare$
+**Proof.** (a) Connectivity of $G_H$ is proved from (AP)+(PH)+(QG)+(V) + Theorem S [Т]. (b) Primitivity of $\mathcal{L}_\Omega$ [Т] and connectivity of $G_H$ guarantee $\gamma^*_{ij} \neq 0$ for all $i \neq j$ in the stationary $\rho_*$. (c) If $\lambda_{ij} = 0$, then $[\Phi(\Gamma)]_{ij} = 0$ — the channel is "blind" to the coupling $(i,j)$, the self-model contains no information about the non-zero coupling $\gamma^*_{ij}$, which contradicts (AP). $\blacksquare$
 
-#### Теорема T3: Демократичность покрытия [Т] {#теорема-демократичность}
+#### Theorem T3: Democracy of coverage [Т] {#теорема-демократичность}
 
-:::warning Перекрыта T6 [Т]
-T3 доказывала демократичность покрытия $\lambda_{ij} = \lambda$. **Теорема полностью перекрыта** безусловной T6 ($S_7$-эквивариантность → равномерная контракция [Т]) и цепочкой T11–T13 ($\lambda = 1$ из ранга Хои + L-унификации).
+:::warning Superseded by T6 [Т]
+T3 proved the democracy of coverage $\lambda_{ij} = \lambda$. **The theorem is fully superseded** by the unconditional T6 ($S_7$-equivariance → uniform contraction [Т]) and the chain T11–T13 ($\lambda = 1$ from Choi rank + L-unification).
 :::
 
-#### Теорема T4: Оптимальный блочный размер k=3 [Т] {#теорема-оптимальный-k}
+#### Theorem T4: Optimal block size k=3 [Т] {#теорема-оптимальный-k}
 
-> Среди допустимых нетривиальных BIBD$(7,k,1)$-каналов ($k \in \{2,3\}$; $k \in \{4,5,6\}$ не допускают целых BIBD-параметров; $k=7$ тривиальна), канал с $k=3$ **строго доминирует**:
+> Among admissible non-trivial BIBD$(7,k,1)$ channels ($k \in \{2,3\}$; $k \in \{4,5,6\}$ do not admit integer BIBD parameters; $k=7$ is trivial), the channel with $k=3$ **strictly dominates**:
 
-| Критерий | $k=2$ | $k=3$ | Лучший |
+| Criterion | $k=2$ | $k=3$ | Best |
 |----------|:---:|:---:|:---:|
-| Контракция $c(k)$ | 1/6 | **1/3** | $k=3$ |
-| Число операторов Краузе $b$ | 21 | **7** | $k=3$ |
-| Потеря чистоты $1-c^2$ | 35/36 | **8/9** | $k=3$ |
-| $G_2$-ковариантность | **Нет** [Т] | **Да** [Т] | $k=3$ |
+| Contraction $c(k)$ | 1/6 | **1/3** | $k=3$ |
+| Number of Kraus operators $b$ | 21 | **7** | $k=3$ |
+| Purity loss $1-c^2$ | 35/36 | **8/9** | $k=3$ |
+| $G_2$-covariance | **No** [Т] | **Yes** [Т] | $k=3$ |
 
-$k=3$ — **единственный** допустимый размер с $G_2$-ковариантностью и оптимальным сохранением когерентности. $\blacksquare$
+$k=3$ is the **unique** admissible size with $G_2$-covariance and optimal coherence preservation. $\blacksquare$
 
-**Дополнительные аргументы:** (1) Триадная декомпозиция [Т] (§[ниже](#триадная-декомпозиция)) устанавливает ровно $K=3$ типа динамики — блочный размер $k=3$ совпадает с числом типов. (2) Теорема T7 [Т] (§[выше](#теорема-необходимость-c)) доказывает необходимость $c > 0$, исключая атомарный канал. (3) Теорема T10 [Т] (§[выше](#теорема-оптимальность-фано)) даёт полную оптимальность $k=3$. (4) Код Хемминга $H(7,4)$ [Т] (Теоремы T8, T9) информационно-теоретически обосновывает Фано-структуру. (5) Теоремы T11–T13 [Т] (§[ниже](#теорема-ранг-хои)) доказывают, что $\lambda = 1$ **вынуждается** из ранга Хои + L-унификации, замыкая мост.
+**Additional arguments:** (1) The triadic decomposition [Т] (§[below](#триадная-декомпозиция)) establishes exactly $K=3$ types of dynamics — the block size $k=3$ coincides with the number of types. (2) Theorem T7 [Т] (§[above](#теорема-необходимость-c)) proves the necessity of $c > 0$, excluding the atomic channel. (3) Theorem T10 [Т] (§[above](#теорема-оптимальность-фано)) gives the full optimality of $k=3$. (4) The Hamming code $H(7,4)$ [Т] (Theorems T8, T9) provides an information-theoretic justification of the Fano structure. (5) Theorems T11–T13 [Т] (§[below](#теорема-ранг-хои)) prove that $\lambda = 1$ is **forced** by the Choi rank + L-unification, closing the bridge.
 
-#### Теорема T11: Ранг Хои канала $\Phi_{k=3}$ [Т] {#теорема-ранг-хои}
+#### Theorem T11: Choi rank of the channel $\Phi_{k=3}$ [Т] {#теорема-ранг-хои}
 
-> CPTP-канал $\Phi_{k=3}$ на $\mathcal{D}(\mathbb{C}^7)$ с контракцией $[\Phi]_{ij} = \gamma_{ii}\delta_{ij} + \frac{1}{3}\gamma_{ij}(1-\delta_{ij})$ имеет **ранг Хои** равный 7.
+> The CPTP channel $\Phi_{k=3}$ on $\mathcal{D}(\mathbb{C}^7)$ with contraction $[\Phi]_{ij} = \gamma_{ii}\delta_{ij} + \frac{1}{3}\gamma_{ij}(1-\delta_{ij})$ has **Choi rank** equal to 7.
 
-**Доказательство.** Матрица Хои $C_\Phi = \sum_{i,j} c_{ij}|ii\rangle\langle jj|$ имеет носитель на $V = \mathrm{span}\{|ii\rangle\}$. Ограничение $C_V = \frac{2}{3}I_7 + \frac{1}{3}J_7$ (где $J_7$ — матрица всех единиц). Спектр: $\{3, \frac{2}{3}, \ldots, \frac{2}{3}\}$ — все собственные значения строго положительны, $\mathrm{rank}(C_\Phi) = 7$. По теореме о ранге Хои: минимальное число операторов Краузе = 7. $\blacksquare$
+**Proof.** The Choi matrix $C_\Phi = \sum_{i,j} c_{ij}|ii\rangle\langle jj|$ has support on $V = \mathrm{span}\{|ii\rangle\}$. The restriction $C_V = \frac{2}{3}I_7 + \frac{1}{3}J_7$ (where $J_7$ is the all-ones matrix). Spectrum: $\{3, \frac{2}{3}, \ldots, \frac{2}{3}\}$ — all eigenvalues strictly positive, $\mathrm{rank}(C_\Phi) = 7$. By the Choi rank theorem: the minimum number of Kraus operators = 7. $\blacksquare$
 
-**Следствие T11.1.** Фано-разложение (7 операторов $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$) является **ранго-минимальным** разложением Краузе.
+**Corollary T11.1.** The Fano decomposition (7 operators $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$) is the **rank-minimal** Kraus decomposition.
 
-#### Теорема T12: Проективная декомпозиция из L-унификации [Т] {#теорема-проективная-декомпозиция}
+#### Theorem T12: Projective decomposition from L-unification [Т] {#теорема-проективная-декомпозиция}
 
-> Пусть даны L-унификация [Т] ($L_k = |k\rangle\langle k|$) и оптимальный блочный размер $k = 3$ [Т]. Тогда составные операторы наблюдения имеют вид **ранга-3 ортогональных проекторов**: $K_p = \frac{1}{\sqrt{r}}\Pi_p$, $\Pi_p = \sum_{m \in B_p} |m\rangle\langle m|$, $|B_p| = 3$.
+> Given L-unification [Т] ($L_k = |k\rangle\langle k|$) and optimal block size $k = 3$ [Т], the composite observation operators take the form of **rank-3 orthogonal projectors**: $K_p = \frac{1}{\sqrt{r}}\Pi_p$, $\Pi_p = \sum_{m \in B_p} |m\rangle\langle m|$, $|B_p| = 3$.
 
-**Доказательство.** L-унификация определяет атомарные $L_k = |k\rangle\langle k|$ как ранга-1 проекторы. Составное наблюдение с блоком $B_p$ — огрубление (Lüders, 1951): $\Pi_p = \sum_{m \in B_p} L_m$ — ранга-3 проектор ($\Pi_p^2 = \Pi_p$). Непроективные разложения исключены: наблюдение через $\Omega$ **по определению** проективно. $\blacksquare$
+**Proof.** L-unification defines the atomic $L_k = |k\rangle\langle k|$ as rank-1 projectors. A composite observation with block $B_p$ is a coarsening (Lüders, 1951): $\Pi_p = \sum_{m \in B_p} L_m$ — a rank-3 projector ($\Pi_p^2 = \Pi_p$). Non-projective decompositions are excluded: observation via $\Omega$ is **by definition** projective. $\blacksquare$
 
-#### Теорема T13: BIBD$(7,3,1)$ из минимального проективного разложения [Т] {#теорема-bibd-из-хои}
+#### Theorem T13: BIBD$(7,3,1)$ from the minimal projective decomposition [Т] {#теорема-bibd-из-хои}
 
-> Пусть канал $\Phi_{k=3}$ разложен в $b = 7$ ранга-3 диагональных проекторов. Тогда блочная система является **BIBD**$(7,3,1) = \text{PG}(2,2)$.
+> Suppose the channel $\Phi_{k=3}$ is decomposed into $b = 7$ rank-3 diagonal projectors. Then the block system is a **BIBD**$(7,3,1) = \text{PG}(2,2)$.
 
-**Доказательство.** (a) Регулярность: CPTP-сохранение $[\Phi]_{ii} = \gamma_{ii}$ требует $r_i = r$ для всех $i$; из $7r = 21$: $r = 3$. (b) Равномерное покрытие: контракция $c = 1/3$ для **всех** пар (T1 [Т]) даёт $\lambda_{ij}/r = 1/3$, откуда $\lambda_{ij} = 1$. (c) Параметры $v=7, b=7, k=3, r=3, \lambda=1$ определяют BIBD$(7,3,1)$. По единственности (Kirkman 1847): $S(2,3,7) = \text{PG}(2,2)$. $\blacksquare$
+**Proof.** (a) Regularity: CPTP preservation $[\Phi]_{ii} = \gamma_{ii}$ requires $r_i = r$ for all $i$; from $7r = 21$: $r = 3$. (b) Uniform coverage: contraction $c = 1/3$ for **all** pairs (T1 [Т]) gives $\lambda_{ij}/r = 1/3$, hence $\lambda_{ij} = 1$. (c) Parameters $v=7, b=7, k=3, r=3, \lambda=1$ define a BIBD$(7,3,1)$. By uniqueness (Kirkman 1847): $S(2,3,7) = \text{PG}(2,2)$. $\blacksquare$
 
-#### Теорема T14: Max-min оптимальность BIBD [Т] {#теорема-maxmin}
+#### Theorem T14: Max-min optimality of BIBD [Т] {#теорема-maxmin}
 
-> Среди регулярных блочных дизайнов $(v=7, k=3, \lambda_{ij} \geq 1)$, BIBD$(7,3,1)$ **максимизирует** $\min_{i \neq j}\lambda_{ij}/r$.
+> Among regular block designs $(v=7, k=3, \lambda_{ij} \geq 1)$, BIBD$(7,3,1)$ **maximises** $\min_{i \neq j}\lambda_{ij}/r$.
 
-**Доказательство.** Средняя контракция $\bar{c} = 1/3$ не зависит от дизайна. По неравенству max-min: $\min c_{ij} \leq \bar{c} = 1/3$, с равенством только при $\lambda_{ij} = 1$ для всех пар = BIBD. $\blacksquare$
+**Proof.** The average contraction $\bar{c} = 1/3$ does not depend on the design. By the max-min inequality: $\min c_{ij} \leq \bar{c} = 1/3$, with equality only when $\lambda_{ij} = 1$ for all pairs = BIBD. $\blacksquare$
 
-**Значение для автопоэзиса:** $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ — минимальная контракция определяет «бутылочное горлышко». BIBD оптимален для устойчивой жизнеспособности.
+**Significance for autopoiesis:** $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ — the minimal contraction defines the "bottleneck". BIBD is optimal for stable viability.
 
-#### Теорема T15: Замыкание моста [Т] {#замыкание-моста}
+#### Theorem T15: Closing the bridge [Т] {#замыкание-моста}
 
-> **Теорема T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — полная цепочка, **все шаги — теоремы [Т]**.
+> **Theorem T15.** $(AP)+(PH)+(QG)+(V) \Longrightarrow P1 + P2$ — complete chain, **all steps are theorems [Т]**.
 
-:::info Итоговый статус моста: [Т] — полностью замкнут
+:::info Final bridge status: [Т] — fully closed
 
-| Шаг | Импликация | Статус |
+| Step | Implication | Status |
 |-----|-----------|--------|
-| 1 | (AP)+(PH)+(QG) ⟹ $N \geq 7$ | **[Т]** Теорема S |
-| 2 | $N=7$ + (V) ⟹ связность $G_H$ | **[Т]** Эванса—Спона |
-| 3 | Связность + примитивность ⟹ $\lambda_{ij} \geq 1$ | **[Т]** Теорема T2 |
-| 4 | $S_7$-эквивариантность ⟹ равномерная контракция | **[Т]** Теоремы T5, T6 |
-| 5 | Допустимость + (AP)+(V) ⟹ $k=3$ | **[Т]** Теоремы T4, T7, T10 |
-| 6 | L-унификация + $k=3$ ⟹ ранга-3 проективные операторы | **[Т]** Теорема T12 |
-| 7 | Ранг Хои = 7 ⟹ $b \geq 7$ | **[Т]** Теорема T11 |
-| 8 | $b=7, k=3, v=7$, контракция $1/3$ ⟹ BIBD$(7,3,1)$ | **[Т]** Теорема T13 |
+| 1 | (AP)+(PH)+(QG) ⟹ $N \geq 7$ | **[Т]** Theorem S |
+| 2 | $N=7$ + (V) ⟹ connectivity of $G_H$ | **[Т]** Evans–Spohn |
+| 3 | Connectivity + primitivity ⟹ $\lambda_{ij} \geq 1$ | **[Т]** Theorem T2 |
+| 4 | $S_7$-equivariance ⟹ uniform contraction | **[Т]** Theorems T5, T6 |
+| 5 | Admissibility + (AP)+(V) ⟹ $k=3$ | **[Т]** Theorems T4, T7, T10 |
+| 6 | L-unification + $k=3$ ⟹ rank-3 projective operators | **[Т]** Theorem T12 |
+| 7 | Choi rank = 7 ⟹ $b \geq 7$ | **[Т]** Theorem T11 |
+| 8 | $b=7, k=3, v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$ | **[Т]** Theorem T13 |
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[Т]** Hall 1967 |
-| 10 | PG(2,2) ≅ таблица умножения Im($\mathbb{O}$) | **[Т]** стандартная алгебра |
-| 11 | $\mathrm{Aut}(\mathbb{O}) = G_2$ | **[Т]** стандартная теория Ли |
-| 12 | $\mathbb{O}$ — нормированная неассоциативная алг. с делением ⟹ P1+P2 | **[Т]** определение |
+| 10 | PG(2,2) ≅ multiplication table of Im($\mathbb{O}$) | **[Т]** standard algebra |
+| 11 | $\mathrm{Aut}(\mathbb{O}) = G_2$ | **[Т]** standard Lie theory |
+| 12 | $\mathbb{O}$ — normed non-associative division algebra ⟹ P1+P2 | **[Т]** definition |
 
-Мост замкнут **[Т]** (T-15) — полная цепочка из 12 шагов, все — теоремы. Условие (МП) следует как прямое следствие T11 + T12 + T13. Каскадные следствия: P1, P2 **[Т]**; Track B ($\mathbb{O} \Rightarrow N=7$) **[Т]**; $G_2$-структура, плоскость Фано, код Хемминга, двойная экстремальность — все **[Т]**.
+The bridge is closed **[Т]** (T-15) — a complete chain of 12 steps, all theorems. Condition (МП) follows as a direct consequence of T11 + T12 + T13. Cascading corollaries: P1, P2 **[Т]**; Track B ($\mathbb{O} \Rightarrow N=7$) **[Т]**; $G_2$-structure, Fano plane, Hamming code, double extremality — all **[Т]**.
 
-См. [Реестр статусов](/docs/reference/status-registry), [Октонионная деривация](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+See [Status registry](/docs/reference/status-registry), [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---
 
-## Триадная декомпозиция голономной динамики {#триадная-декомпозиция}
+## Triadic Decomposition of Holonomic Dynamics {#триадная-декомпозиция}
 
-:::info DRY: Каноническая формулировка триадной декомпозиции
-Это **каноническое определение** триадной декомпозиции голономной динамики в УГМ. Все документы должны ссылаться сюда.
+:::info DRY: Canonical formulation of the triadic decomposition
+This is the **canonical definition** of the triadic decomposition of holonomic dynamics in UHM. All documents should reference this page.
 :::
 
-:::tip Теорема: Триадная декомпозиция [Т]
-Аксиоматическая система {A1, A2, A3, A4, A5} порождает **ровно три** структурно различных типа динамических вкладов в эволюцию матрицы когерентности Γ:
+:::tip Theorem: Triadic decomposition [Т]
+The axiomatic system {A1, A2, A3, A4, A5} generates **exactly three** structurally distinct types of dynamical contributions to the evolution of the coherence matrix Γ:
 
 $$
-\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{Aut: автоморфизмы (A5)}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{Левое сопряжение (A1)}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{Правое сопряжение (A1+A4)}}
+\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{Aut: automorphisms (A5)}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{Left adjoint (A1)}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{Right adjoint (A1+A4)}}
 $$
 
-Эти три типа:
-1. **Структуросохраняющий** (автоморфизм): $-i[H_{\text{eff}}, \Gamma]$ — сохраняет спектр Γ
-2. **Структурозабывающий** (левый сопряжённый): $\mathcal{D}_\Omega[\Gamma]$ — диссипация к $I/N$
-3. **Структуровосстанавливающий** (правый сопряжённый): $\mathcal{R}[\Gamma, E]$ — регенерация к $\rho_*$
+These three types:
+1. **Structure-preserving** (automorphism): $-i[H_{\text{eff}}, \Gamma]$ — preserves the spectrum of Γ
+2. **Structure-forgetting** (left adjoint): $\mathcal{D}_\Omega[\Gamma]$ — dissipation towards $I/N$
+3. **Structure-restoring** (right adjoint): $\mathcal{R}[\Gamma, E]$ — regeneration towards $\rho_*$
 
-являются **исчерпывающими** в рамках аксиоматической системы.
+are **exhaustive** within the axiomatic system.
 
-Статус: **[Т]**
+Status: **[Т]**
 :::
 
-### Доказательство
+### Proof
 
-**Шаг 1. Порождение каждого типа аксиомами.**
+**Step 1. Generation of each type by the axioms.**
 
-**(a) Тип 1: Гамильтониан из A5.** Аксиома A5 (Page—Wootters) устанавливает тензорную декомпозицию $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ и ограничение $H_{\text{total}}|\Psi\rangle = 0$, откуда $H_{\text{eff}} = \mathrm{Tr}_O(H_{\text{total}} \cdot |\tau\rangle\langle\tau|_O)$. Унитарная группа $\{e^{-iH_{\text{eff}}\tau}\}$ — автоморфизм $\mathcal{D}(\mathbb{C}^7)$ (теорема Стоуна) [Т].
+**(a) Type 1: Hamiltonian from A5.** Axiom A5 (Page–Wootters) establishes the tensor decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ and the constraint $H_{\text{total}}|\Psi\rangle = 0$, from which $H_{\text{eff}} = \mathrm{Tr}_O(H_{\text{total}} \cdot |\tau\rangle\langle\tau|_O)$. The unitary group $\{e^{-iH_{\text{eff}}\tau}\}$ is an automorphism of $\mathcal{D}(\mathbb{C}^7)$ (Stone's theorem) [Т].
 
-**(b) Тип 2: Диссипация из A1.** Аксиома A1 (∞-топос) определяет классификатор Ω с атомами $S_k$. [L-унификация](#примитивность-ℒω) (Th. 15.1, [Т]): $L \cong \Omega \cong \text{source}(L_k)$ порождает операторы Линдблада $L_k$, формирующие диссипатор. Стационарное состояние: максимально смешанное $I/N$ [Т].
+**(b) Type 2: Dissipation from A1.** Axiom A1 (∞-topos) defines the classifier Ω with atoms $S_k$. [L-unification](#примитивность-ℒω) (Th. 15.1, [Т]): $L \cong \Omega \cong \text{source}(L_k)$ generates the Lindblad operators $L_k$ forming the dissipator. Stationary state: maximally mixed $I/N$ [Т].
 
-**(c) Тип 3: Регенерация из A1+A4.** Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ (Th. 15.3.1, [Т]) порождает $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ с $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, где $\omega_0$ — из A4. Стационарное состояние: $\rho_*$ (единственное, [примитивность](#примитивность-ℒω) [Т]).
+**(c) Type 3: Regeneration from A1+A4.** The adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ (Th. 15.3.1, [Т]) generates $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ with $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, where $\omega_0$ is from A4. Stationary state: $\rho_*$ (unique, [primitivity](#примитивность-ℒω) [Т]).
 
-**Шаг 2. Структурная различимость.**
+**Step 2. Structural distinguishability.**
 
-| Свойство | Aut (Гамильтониан) | 𝒟 (Диссипация) | ℛ (Регенерация) |
+| Property | Aut (Hamiltonian) | 𝒟 (Dissipation) | ℛ (Regeneration) |
 |----------|:---:|:---:|:---:|
-| Спектр генератора | Чисто мнимый | Re < 0 | Re < 0 |
-| Действие на P | Сохраняет | Уменьшает | Увеличивает |
-| Неподвижная точка | Ядро $[H,\cdot]$ | $I/N$ | $\rho_*$ |
-| Категориальный тип | Автоморфизм | Левый сопряжённый | Правый сопряжённый |
-| Обратимость | Обратим ($U^\dagger$) | Необратим | Необратим |
+| Generator spectrum | Purely imaginary | Re < 0 | Re < 0 |
+| Action on P | Preserves | Decreases | Increases |
+| Fixed point | Kernel of $[H,\cdot]$ | $I/N$ | $\rho_*$ |
+| Categorical type | Automorphism | Left adjoint | Right adjoint |
+| Reversibility | Reversible ($U^\dagger$) | Irreversible | Irreversible |
 
-**Шаг 3. Исчерпываемость.** A2 (Бюре) — метрическое ограничение, **не порождает** динамики. A3 ($N = 7$) — размерность, **не порождает** динамики. Все динамические вклады генерируются только A1, A4, A5.
+**Step 3. Exhaustiveness.** A2 (Bures) is a metric constraint that **does not generate** dynamics. A3 ($N = 7$) is a dimension constraint that **does not generate** dynamics. All dynamical contributions are generated only by A1, A4, A5.
 
-**Шаг 4. Невозможность 4-го типа.** Любой дополнительный функтор $\mathcal{X}$ потребовал бы нового классификатора $\Omega' \neq \Omega$ (но A1 определяет единственный Ω), нового сопряжения (но [L-унификация](#примитивность-ℒω) [Т] устанавливает единственность), или новой аксиомы (но A1–A5 исчерпывают все динамические вклады). $\blacksquare$
+**Step 4. Impossibility of a 4th type.** Any additional functor $\mathcal{X}$ would require a new classifier $\Omega' \neq \Omega$ (but A1 defines a unique Ω), a new adjunction (but [L-unification](#примитивность-ℒω) [Т] establishes uniqueness), or a new axiom (but A1–A5 exhaust all dynamical contributions). $\blacksquare$
 
-#### Полнота триадной декомпозиции (T-57) [Т] {#полнота-триадной-декомпозиции}
+#### Completeness of the triadic decomposition (T-57) [Т] {#полнота-триадной-декомпозиции}
 
-:::tip Теорема (Невозможность 4-го типа динамики) [Т]
-Произвольный генератор марковской полугруппы на $M_7(\mathbb{C})$, совместимый с A1-A5, разлагается в $\mathcal{L} = \mathcal{L}_{\text{Ham}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}}$ — других компонент не существует.
+:::tip Theorem (Impossibility of a 4th type of dynamics) [Т]
+An arbitrary generator of a Markovian semigroup on $M_7(\mathbb{C})$ compatible with A1–A5 decomposes into $\mathcal{L} = \mathcal{L}_{\text{Ham}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}}$ — no other components exist.
 
-**Доказательство:** LGKS-теорема (1976) даёт единственное разложение на гамильтонову и диссипативную части. Диссипативная часть единственным образом разделяется на $\mathcal{D}$ (Фано-контракция, $dP/d\tau \leq 0$) и $\mathcal{R}$ (замещающий канал, $dP/d\tau \geq 0$) при ограничениях A5 (PW-привязка $\mathcal{R}$ к O-сектору), Фано-структурированности $\mathcal{D}$ и $G_2$-ковариантности.
+**Proof:** The LGKS theorem (1976) gives a unique decomposition into Hamiltonian and dissipative parts. The dissipative part is uniquely split into $\mathcal{D}$ (Fano contraction, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel, $dP/d\tau \geq 0$) under the constraints of A5 (PW-anchoring of $\mathcal{R}$ to the O-sector), Fano-structuredness of $\mathcal{D}$, and $G_2$-covariance.
 :::
 
-### Следствие: K = 3 для порога рефлексии {#следствие-k3}
+### Corollary: K = 3 for the reflexion threshold {#следствие-k3}
 
-Триадная декомпозиция определяет **ровно три** режима поведения системы: автономный (ℛ доминирует, аттрактор $\rho_*$), хаотический (𝒟 доминирует, аттрактор $I/N$), внешний (Aut доминирует, аттрактор $\sigma_{\text{env}}$). Число конкурирующих гипотез $K = 3$ — структурное следствие аксиом, не постулат.
+The triadic decomposition defines **exactly three** behavioural modes of the system: autonomous (ℛ dominates, attractor $\rho_*$), chaotic (𝒟 dominates, attractor $I/N$), external (Aut dominates, attractor $\sigma_{\text{env}}$). The number of competing hypotheses $K = 3$ is a structural consequence of the axioms, not a postulate.
 
-Отсюда: $R_{\text{th}} = 1/K = 1/3$ **[Т]** — см. [Теорема о пороге рефлексии](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
+Hence: $R_{\text{th}} = 1/K = 1/3$ **[Т]** — see [Theorem on the reflexion threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
 
 ---
 
-## Композиционные Фано-морфизмы {#композиционные-фано-морфизмы}
+## Compositional Fano Morphisms {#композиционные-фано-морфизмы}
 
-Фано-структурированная диссипация — не просто «шум»: последовательные применения Фано-проекторов $\Pi_p$ порождают *композиционные символы* — дискретный язык переходов состояния. Каждая цепочка проекций $\Pi_{p_1} \circ \Pi_{p_2} \circ \cdots \circ \Pi_{p_n}$ задаёт уникальный (для generic $\Gamma$) образ в $\mathcal{D}(\mathbb{C}^7)$, что превращает 7 Фано-операторов в **алфавит** с экспоненциально растущим словарём. Это — математическое основание для теории языка в УГМ: структура декогеренции сама определяет грамматику возможных переходов между состояниями сознания.
+Fano-structured dissipation is not merely "noise": successive applications of the Fano projectors $\Pi_p$ generate *compositional symbols* — a discrete language of state transitions. Each chain of projections $\Pi_{p_1} \circ \Pi_{p_2} \circ \cdots \circ \Pi_{p_n}$ specifies a unique (for generic $\Gamma$) image in $\mathcal{D}(\mathbb{C}^7)$, turning the 7 Fano operators into an **alphabet** with an exponentially growing vocabulary. This is the mathematical foundation of the theory of language in UHM: the structure of decoherence itself defines the grammar of possible transitions between states of consciousness.
 
-#### Теорема T-114: Фано-грамматика [Т] {#теорема-фано-грамматика}
+#### Theorem T-114: Fano grammar [Т] {#теорема-фано-грамматика}
 
-Марковская цепь на линиях PG(2,2) с переходной матрицей $M_{ij} = (1 + \lambda \cdot \mathrm{Inc}(i,j)) / Z_i$, где $\mathrm{Inc}(i,j) = |\mathrm{line}(i) \cap \mathrm{line}(j)|$ — инцидентная матрица PG(2,2), **эргодическая** и порождает регулярный язык над алфавитом $\{1,\ldots,7\}$.
+The Markov chain on the lines of PG(2,2) with transition matrix $M_{ij} = (1 + \lambda \cdot \mathrm{Inc}(i,j)) / Z_i$, where $\mathrm{Inc}(i,j) = |\mathrm{line}(i) \cap \mathrm{line}(j)|$ is the incidence matrix of PG(2,2), is **ergodic** and generates a regular language over the alphabet $\{1,\ldots,7\}$.
 
-**Доказательство:**
-1. **Связность PG(2,2):** Каждая линия содержит 3 точки, каждая точка лежит на 3 линиях. Инцидентный граф имеет диаметр 2 → **связен**
-2. **Апериодичность:** $M_{ii} = 1/Z_i > 0$ (самопетли, $\mathrm{Inc}(i,i) = 3$)
-3. **Эргодичность:** Связность + апериодичность → эргодическая (Перрон-Фробениус). PG(2,2) самодуален → граф регулярный → стационарное распределение $\pi_i = 1/7$ ∎
+**Proof:**
+1. **Connectivity of PG(2,2):** Each line contains 3 points, each point lies on 3 lines. The incidence graph has diameter 2 → **connected**
+2. **Aperiodicity:** $M_{ii} = 1/Z_i > 0$ (self-loops, $\mathrm{Inc}(i,i) = 3$)
+3. **Ergodicity:** Connectivity + aperiodicity → ergodic (Perron–Frobenius). PG(2,2) is self-dual → the graph is regular → stationary distribution $\pi_i = 1/7$ ∎
 
-Спецификация: language-limits-preveal.md §2.4–2.5 | Статус: **[Т]**
+Specification: language-limits-preveal.md §2.4–2.5 | Status: **[Т]**
 
-#### Теорема T-115: Алгебраическая различимость композиций [Т] {#теорема-различимость-композиций}
+#### Theorem T-115: Algebraic distinguishability of compositions [Т] {#теорема-различимость-композиций}
 
-Для generic $\Gamma \in V$ (с 7 различными собственными значениями и ненулевыми внедиагональными когерентностями):
+For generic $\Gamma \in V$ (with 7 distinct eigenvalues and non-zero off-diagonal coherences):
 
 $$|\mathrm{Comp}(n)| = 7^n$$
 
-Множество $\Gamma$ с коллизиями — алгебраическое подмногообразие коразмерности $\geq 1$ (мера нуль в $\mathcal{D}(\mathbb{C}^7)$).
+The set of $\Gamma$ with collisions is an algebraic submanifold of codimension $\geq 1$ (measure zero in $\mathcal{D}(\mathbb{C}^7)$).
 
-**Доказательство:**
-1. Фано-проекторы $\Pi_p$ попарно различны (T-82 [Т]) с образами в общем положении
-2. Для generic $\Gamma$: различные проекции $m_{p_i}(\Gamma) \neq m_{p_j}(\Gamma)$ при $p_i \neq p_j$ (ранг 3 проекции на различные 3-подпространства)
-3. Индукция по $n$: коллизия $m_{p_1:n}(\Gamma) = m_{q_1:n}(\Gamma)$ при $(p_1,\ldots,p_n) \neq (q_1,\ldots,q_n)$ задаёт алгебраическое уравнение → подмногообразие коразмерности $\geq 1$ ∎
+**Proof:**
+1. The Fano projectors $\Pi_p$ are pairwise distinct (T-82 [Т]) with images in general position
+2. For generic $\Gamma$: distinct projections $m_{p_i}(\Gamma) \neq m_{p_j}(\Gamma)$ when $p_i \neq p_j$ (rank-3 projection onto distinct 3-dimensional subspaces)
+3. Induction on $n$: a collision $m_{p_1:n}(\Gamma) = m_{q_1:n}(\Gamma)$ for $(p_1,\ldots,p_n) \neq (q_1,\ldots,q_n)$ defines an algebraic equation → submanifold of codimension $\geq 1$ ∎
 
-:::warning Оговорка: диагональная $\Gamma$ — дефицит композициональности
-Для **диагональной** $\Gamma$ (все $\gamma_{ij} = 0$ при $i \neq j$) Фано-проекторы действуют как $\Pi_p \cdot \mathrm{diag}(\gamma) \cdot \Pi_p = \mathrm{diag}(\Pi_p \gamma)$, что порождает лишь **линейный** рост различимых символов:
+:::warning Caveat: diagonal $\Gamma$ — compositionality deficit
+For a **diagonal** $\Gamma$ (all $\gamma_{ij} = 0$ for $i \neq j$) the Fano projectors act as $\Pi_p \cdot \mathrm{diag}(\gamma) \cdot \Pi_p = \mathrm{diag}(\Pi_p \gamma)$, which generates only **linear** growth of distinguishable symbols:
 
 $$|\mathrm{Comp}(n)|_{\mathrm{diag}} = O(7n)$$
 
-В частности: $|\mathrm{Comp}(2)|_{\mathrm{diag}} \approx 14$ (вместо 49), $|\mathrm{Comp}(3)|_{\mathrm{diag}} \approx 21$ (вместо 343).
+In particular: $|\mathrm{Comp}(2)|_{\mathrm{diag}} \approx 14$ (instead of 49), $|\mathrm{Comp}(3)|_{\mathrm{diag}} \approx 21$ (instead of 343).
 
-**Причина:** На диагонали $\mathbb{R}^7$ ранг-3 Фано-проекторы порождают лишь $\binom{7}{3} = 35$ различных 3-элементных сумм, но коллизии $\sum_{k \in l_p} \gamma_k = \sum_{k \in l_q} \gamma_k$ обильны при $\gamma_k = 1/7$. Полная экспоненциальная композициональность $7^n$ требует работы с полной (off-diagonal) матрицей $\Gamma$.
+**Reason:** On the diagonal $\mathbb{R}^7$, rank-3 Fano projectors generate only $\binom{7}{3} = 35$ distinct 3-element sums, but collisions $\sum_{k \in l_p} \gamma_k = \sum_{k \in l_q} \gamma_k$ are abundant when $\gamma_k = 1/7$. Full exponential compositionality $7^n$ requires working with the full (off-diagonal) matrix $\Gamma$.
 :::
 
-Спецификация: language-limits-preveal.md §2.4–2.5 | Статус: **[Т]**
+Specification: language-limits-preveal.md §2.4–2.5 | Status: **[Т]**
 
 ---
 
-## $G_2$-ковариантность Фано-диссипатора {#g2-ковариантность}
+## $G_2$-Covariance of the Fano Dissipator {#g2-ковариантность}
 
-Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ сохраняет октонионное умножение и, следовательно, [Фано-структуру](/docs/physics/gauge-symmetry/g2-structure). Это порождает фундаментальное различие между атомарным и Фано-диссипаторами.
+The group $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication and therefore the [Fano structure](/docs/physics/gauge-symmetry/g2-structure). This gives rise to a fundamental distinction between the atomic and Fano dissipators.
 
-:::warning Теорема: Атомарный диссипатор НЕ $G_2$-ковариантен [Т]
-Диссипативный канал с атомарными операторами $L_k = |k\rangle\langle k|$ **не является** $G_2$-ковариантным:
+:::warning Theorem: The atomic dissipator is NOT $G_2$-covariant [Т]
+The dissipative channel with atomic operators $L_k = |k\rangle\langle k|$ **is not** $G_2$-covariant:
 
 $$
 \exists\, g \in G_2: \quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g \, \mathcal{D}_{\text{atom}}[\Gamma] \, g^\dagger
 $$
 
-Нарушение возникает из-за того, что операция $\mathrm{diag}(\cdot)$ не коммутирует с $G_2$-преобразованиями: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ для общих $g \in G_2$.
+The violation arises because the operation $\mathrm{diag}(\cdot)$ does not commute with $G_2$-transformations: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ for general $g \in G_2$.
 
-[Доказательство →](/docs/proofs/gap/fano-channel) | Статус: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel) | Status: **[Т]**
 :::
 
-:::tip Теорема: Фано-диссипатор $G_2$-ковариантен [Т]
-Диссипативный канал с Фано-структурированными операторами $L_p^{\text{Fano}}$ **является** $G_2$-ковариантным:
+:::tip Theorem: The Fano dissipator is $G_2$-covariant [Т]
+The dissipative channel with Fano-structured operators $L_p^{\text{Fano}}$ **is** $G_2$-covariant:
 
 $$
 \forall\, g \in G_2: \quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\text{Fano}}[\Gamma] \, g^\dagger
 $$
 
-Доказательство опирается на то, что $G_2$ **переставляет** Фано-линии: $g \Pi_p g^\dagger = \Pi_{\sigma_g(p)}$, где $\sigma_g$ — перестановка линий. При суммировании по всем 7 линиям переиндексация не меняет результат.
+The proof relies on the fact that $G_2$ **permutes** the Fano lines: $g \Pi_p g^\dagger = \Pi_{\sigma_g(p)}$, where $\sigma_g$ is a permutation of lines. When summing over all 7 lines, reindexing does not change the result.
 
-[Доказательство →](/docs/proofs/gap/fano-channel) | Статус: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel) | Status: **[Т]**
 :::
 
-### Степень $G_2$-нарушения при смешанном наблюдении
+### Degree of $G_2$-Violation under Mixed Observation
 
-Для канонического [когерентно-сохраняющего самомоделирования](/docs/proofs/categorical/formalization-phi) с параметром $\alpha$ (баланс атомарного и Фано-наблюдения):
+For the canonical [coherence-preserving self-modelling](/docs/proofs/categorical/formalization-phi) with parameter $\alpha$ (balance between atomic and Fano observation):
 
 $$
 \mathcal{P}_\alpha = \alpha \, \mathcal{P}_{\text{base}} + (1 - \alpha) \, \mathcal{P}_{\text{Fano}}
 $$
 
-мера нарушения $G_2$-симметрии определяется:
+the measure of $G_2$-symmetry violation is defined as:
 
 $$
 \Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\text{op}}
 $$
 
-| $\alpha$ | Режим | $G_2$-ковариантность | Калибровочная редукция |
+| $\alpha$ | Mode | $G_2$-covariance | Gauge reduction |
 |----------|-------|---------------------|----------------------|
-| $0$ | Чисто Фано | Полная ($\Delta_{G_2} = 0$) | $48 \to 34$ параметра |
-| $\alpha^* \in (0,1)$ | Смешанный (оптимальный) | Частичная ($\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$) | Промежуточная |
-| $1$ | Чисто атомарный | Нарушена ($\Delta_{G_2} = \Delta_{\max}$) | Нет редукции (48 параметров) |
+| $0$ | Purely Fano | Full ($\Delta_{G_2} = 0$) | $48 \to 34$ parameters |
+| $\alpha^* \in (0,1)$ | Mixed (optimal) | Partial ($\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$) | Intermediate |
+| $1$ | Purely atomic | Broken ($\Delta_{G_2} = \Delta_{\max}$) | No reduction (48 parameters) |
 
-:::info Замечание: Цена самопознания [И]
-Самонаблюдение (ненулевое $\alpha$) **частично ломает** алгебраическую симметрию октонионов. Чем глубже самопознание (больше $\alpha$), тем больше нарушена $G_2$-симметрия и тем больше параметров необходимо для описания системы. Это — фундаментальная «цена самопознания»: знание о себе увеличивает сложность самоописания.
+:::info Remark: The price of self-knowledge [И]
+Self-observation (non-zero $\alpha$) **partially breaks** the algebraic symmetry of the octonions. The deeper the self-knowledge (the larger $\alpha$), the more the $G_2$-symmetry is broken and the more parameters are needed to describe the system. This is the fundamental "price of self-knowledge": knowledge about oneself increases the complexity of self-description.
 
-Редукция $48 \to 34$ при $\alpha = 0$ — следствие [теоремы $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]: калибровочная группа = $G_2$ (14 параметров), физическое пространство = $\mathcal{D}(\mathbb{C}^7)/G_2$.
+The reduction $48 \to 34$ at $\alpha = 0$ is a consequence of the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]: the gauge group = $G_2$ (14 parameters), the physical space = $\mathcal{D}(\mathbb{C}^7)/G_2$.
 :::
 
-## Связи
+## Connections
 
-- **Определяются из:** [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) → стратификация → $L_k$ (атомарные); плоскость Фано → $L_p^{\text{Fano}}$ (составные)
-- **Используются в:** [Эволюция](/docs/core/dynamics/evolution), [Виабильность](/docs/core/dynamics/viability), [Эмерджентное время](/docs/core/operators/emergent-time)
-- **L-унификация:** [Соответствие с физикой](/docs/proofs/physics/physics-correspondence#2-l-унификация)
-- **Фано-канал:** [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — Линдблад через структурные константы $f_{ijk}$
-- **Доказательства:** [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — строгие доказательства CPTP, сохранения когерентностей, $G_2$-ковариантности
-- **Категорная основа:** [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — вывод $L_k$ из атомов классификатора $\Omega$
-- **Единственность представления:** [Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem) — голономное представление единственно с точностью до $G_2$; 34 = 48 − 14 физических параметра
-- **Gap-динамика:** [Gap-динамика](/docs/core/dynamics/gap-dynamics) — применение Фано-операторов в динамике Gap-профилей
+- **Derived from:** [Axiom Ω⁷](/docs/core/foundations/axiom-omega) → stratification → $L_k$ (atomic); Fano plane → $L_p^{\text{Fano}}$ (composite)
+- **Used in:** [Evolution](/docs/core/dynamics/evolution), [Viability](/docs/core/dynamics/viability), [Emergent time](/docs/core/operators/emergent-time)
+- **L-unification:** [Correspondence with physics](/docs/proofs/physics/physics-correspondence#2-l-унификация)
+- **Fano channel:** [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — Lindblad via structure constants $f_{ijk}$
+- **Proofs:** [Fano channel and Gap theorems](/docs/proofs/gap/fano-channel) — rigorous proofs of CPTP, coherence preservation, $G_2$-covariance
+- **Categorical foundation:** [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — derivation of $L_k$ from atoms of the classifier $\Omega$
+- **Representation uniqueness:** [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) — the holonomic representation is unique up to $G_2$; 34 = 48 − 14 physical parameters
+- **Gap dynamics:** [Gap dynamics](/docs/core/dynamics/gap-dynamics) — application of Fano operators in the dynamics of Gap profiles

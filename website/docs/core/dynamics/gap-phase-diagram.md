@@ -1,451 +1,451 @@
 ---
 sidebar_position: 8
-title: "Фазовая диаграмма Gap"
+title: "Gap Phase Diagram"
 slug: /core/dynamics/gap-phase-diagram
-description: "Три фазы Gap (когерентная, промежуточная, декогерентная), бифуркации, катастрофы Уитни, swallowtail и уровни L0→L4, немарковские осцилляции, критические явления"
+description: "Three Gap phases (ordered, intermediate, disordered), bifurcations, Whitney catastrophes, swallowtail and levels L0→L4, non-Markovian oscillations, critical phenomena"
 ---
 
-# Фазовая диаграмма Gap
+# Gap Phase Diagram
 
-:::info Для кого эта глава
-Три фазы когерентности, критические явления, бифуркации. Предполагается знакомство с [Gap-оператором](/docs/core/dynamics/gap-operator) и [термодинамикой Gap](/docs/core/dynamics/gap-thermodynamics).
+:::info Who this chapter is for
+Three phases of coherence, critical phenomena, bifurcations. Assumes familiarity with the [Gap operator](/docs/core/dynamics/gap-operator) and [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics).
 :::
 
-Эта глава представляет **карту всех возможных состояний** непрозрачности голонома. Подобно тому, как фазовая диаграмма воды показывает, при каких температуре и давлении вода бывает льдом, жидкостью или паром, фазовая диаграмма Gap показывает, при каких условиях непрозрачность системы бывает **упорядоченной** (конкретные каналы прозрачны, другие нет), **разупорядоченной** (все каналы одинаково мутны) или **мёртвой** (когерентности исчезли).
+This chapter presents a **map of all possible states** of holon opacity. Just as the phase diagram of water shows at what temperature and pressure water exists as ice, liquid, or steam, the Gap phase diagram shows under what conditions the system's opacity is **ordered** (specific channels are transparent, others are not), **disordered** (all channels are equally murky), or **dead** (coherences have disappeared).
 
-Читатель узнает:
-- Три фазы Gap и как они связаны с клиническими состояниями
-- Критические явления и фазовые переходы между фазами
-- Как катастрофа «ласточкин хвост» (swallowtail) связывает Gap с уровнями сознания L0--L4
-- Пять независимых механизмов защиты Gap от исчезновения
+The reader will learn:
+- The three Gap phases and how they relate to clinical states
+- Critical phenomena and phase transitions between phases
+- How the swallowtail catastrophe connects Gap to levels of consciousness L0--L4
+- Five independent mechanisms protecting Gap from disappearing
 
-:::tip Аналогия с водой
-Три фазы Gap удивительно похожи на три фазы воды:
+:::tip Water analogy
+The three Gap phases are strikingly similar to the three phases of water:
 
-| Фаза воды | Фаза Gap | Что происходит |
+| Water phase | Gap phase | What happens |
 |-----------|----------|----------------|
-| **Лёд** (упорядоченный) | **Фаза I** — упорядоченный Gap | Молекулы воды выстроены в кристаллическую решётку. Аналогично: одни каналы прозрачны, другие непрозрачны — есть **структура**. Система «знает», где у неё слепые пятна. |
-| **Вода** (жидкость) | **Фаза II** — разупорядоченный Gap | Молекулы хаотично движутся, но связаны. Аналогично: все каналы **одинаково мутны**. Непрозрачность есть, но без структуры — «диффузный туман». |
-| **Пар** (газ) | **Фаза III** — мёртвая зона | Молекулы разлетелись, связей нет. Аналогично: когерентности **исчезли**, Gap не определён. Система нежизнеспособна. |
+| **Ice** (ordered) | **Phase I** — ordered Gap | Water molecules are arranged in a crystal lattice. Analogously: some channels are transparent, others opaque — there is **structure**. The system "knows" where its blind spots are. |
+| **Water** (liquid) | **Phase II** — disordered Gap | Molecules move chaotically but remain bound. Analogously: all channels are **equally murky**. Opacity exists, but without structure — a "diffuse fog." |
+| **Steam** (gas) | **Phase III** — dead zone | Molecules have dispersed, no bonds remain. Analogously: coherences have **disappeared**, Gap is undefined. The system is non-viable. |
 
-Переход лёд $\to$ вода (фаза I $\to$ II) — **непрерывный** (2-го рода): структура плавно «размывается». Переход лёд $\to$ пар (фаза I $\to$ III) — **скачкообразный** (1-го рода): система резко теряет когерентность, как при острой декомпенсации.
+The ice $\to$ water transition (phase I $\to$ II) is **continuous** (2nd order): the structure gradually "blurs." The ice $\to$ steam transition (phase I $\to$ III) is **discontinuous** (1st order): the system abruptly loses coherence, as in acute decompensation.
 :::
 
-Полная фазовая диаграмма [Gap-динамики](/docs/core/dynamics/gap-dynamics) описывает стационарные режимы непрозрачности голонома в плоскости управляющих параметров $(T_{\text{eff}}, \kappa/\Gamma_2)$. Три основных фазы, критические явления и катастрофы Уитни связывают термодинамику Gap с [уровнями интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) и клиническими наблюдениями.
+The full phase diagram of [Gap dynamics](/docs/core/dynamics/gap-dynamics) describes the stationary opacity regimes of the holon in the plane of control parameters $(T_{\text{eff}}, \kappa/\Gamma_2)$. Three main phases, critical phenomena, and Whitney catastrophes connect Gap thermodynamics with [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy) and clinical observations.
 
 ---
 
-## 1. Управляющие параметры {#параметры}
+## 1. Control parameters {#параметры}
 
-Два безразмерных параметра определяют стационарное Gap-состояние:
+Two dimensionless parameters determine the stationary Gap state:
 
-**(a)** Безразмерная температура:
+**(a)** Dimensionless temperature:
 
 $$
 t := \frac{T_{\text{eff}}}{T_c} = \frac{\Gamma_2}{\kappa_0} \cdot \frac{k_B T_{\text{phys}} \ln 21}{\mu^2}
 $$
 
-где $T_{\text{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B T_{\text{phys}}$ — [эффективная температура](/docs/core/dynamics/gap-thermodynamics#эффективная-температура).
+where $T_{\text{eff}} = (\Gamma_2 / \kappa_0) \cdot k_B T_{\text{phys}}$ is the [effective temperature](/docs/core/dynamics/gap-thermodynamics#эффективная-температура).
 
-**(b)** Отношение регенерации к диссипации:
+**(b)** Ratio of regeneration to dissipation:
 
 $$
 r := \kappa / \Gamma_2
 $$
 
-— безразмерный параметр «жизнеспособности».
+— dimensionless "viability" parameter.
 
 ---
 
-## 2. Три фазы {#три-фазы}
+## 2. Three phases {#три-фазы}
 
-:::tip Теорема 2.1 (Фазовая диаграмма Gap) [Т]
-В плоскости $(t, r)$ система имеет три фазы:
+:::tip Theorem 2.1 (Gap phase diagram) [Т]
+In the $(t, r)$ plane the system has three phases:
 
-**(a) Фаза I — Упорядоченный Gap** ($t < 1$, $r > r_c$):
-несколько каналов с высоким Gap, остальные прозрачны. $G_2 \to H$ спонтанно нарушена. Существуют голдстоуновские моды. Параметр порядка: $\mathcal{G}_{\text{total}} > 0$, ранг $\hat{\mathcal{G}} \in \{1, 2, 3\}$.
+**(a) Phase I — Ordered Gap** ($t < 1$, $r > r_c$):
+a few channels with high Gap, the rest transparent. $G_2 \to H$ spontaneously broken. Goldstone modes exist. Order parameter: $\mathcal{G}_{\text{total}} > 0$, rank $\hat{\mathcal{G}} \in \{1, 2, 3\}$.
 
-**(b) Фаза II — Разупорядоченный Gap** ($t > 1$, $r > r_c$):
-Gap распределён равномерно по всем каналам. Анизотропия $\sigma^2_{\text{Gap}} \to 0$. $G_2$ приблизительно сохранена. Примечание: стационарная формула $\mathrm{Gap}^{(\infty)}(i,j) = |\sin(\theta_{ij} - \arctan(\ldots))|$ из [единой теоремы](/docs/core/dynamics/gap-dynamics#единая-теорема) допускает неоднородные $\theta_{ij}$, но при $T_{\text{eff}} > T_c$ тепловые флуктуации рандомизируют фазы, делая **усреднённый по времени** Gap изотропным.
+**(b) Phase II — Disordered Gap** ($t > 1$, $r > r_c$):
+Gap distributed uniformly across all channels. Anisotropy $\sigma^2_{\text{Gap}} \to 0$. $G_2$ approximately preserved. Note: the stationary formula $\mathrm{Gap}^{(\infty)}(i,j) = |\sin(\theta_{ij} - \arctan(\ldots))|$ from the [unified theorem](/docs/core/dynamics/gap-dynamics#единая-теорема) admits inhomogeneous $\theta_{ij}$, but at $T_{\text{eff}} > T_c$ thermal fluctuations randomize phases, making the **time-averaged** Gap isotropic.
 
-**(c) Фаза III — Мёртвая зона** ($r < r_c$):
-регенерация слишком слаба, когерентности затухают: $|\gamma_{ij}| \to 0$. Система не [жизнеспособна](/docs/core/dynamics/viability).
+**(c) Phase III — Dead zone** ($r < r_c$):
+regeneration is too weak, coherences decay: $|\gamma_{ij}| \to 0$. The system is not [viable](/docs/core/dynamics/viability).
 :::
 
-### Параметры порядка трёх фаз
+### Order parameters of the three phases
 
-Для каждой фазы определяются явные параметры порядка, позволяющие количественно различать режимы:
+For each phase, explicit order parameters are defined to quantitatively distinguish regimes:
 
-| Фаза | Первичный параметр порядка | Вторичный параметр | Поведение |
+| Phase | Primary order parameter | Secondary parameter | Behavior |
 |---|---|---|---|
-| I (упорядоченный) | $\sigma^2_{\text{Gap}} := \mathrm{Var}\bigl(\{\mathrm{Gap}(i,j)\}\bigr) > 0$ | $\mathrm{rank}(\hat{\mathcal{G}}) \in \{1,2,3\}$ | Анизотропия ненулевая, G₂ нарушена до $H_{\hat{\mathcal{G}}_*}$ |
-| II (разупорядоченный) | $\sigma^2_{\text{Gap}} \to 0$ | $\mathcal{G}_{\text{total}} > 0$, но $\mathrm{Gap}(i,j) \approx \mathrm{const}$ | Изотропная мутность, G₂ приблизительно сохранена |
-| III (мёртвая) | $\mathcal{G}_{\text{total}} \to 0$ | $\lvert\gamma_{ij}\rvert \to 0 \;\forall\, (i,j)$ | Когерентности вымирают, Gap не определён |
+| I (ordered) | $\sigma^2_{\text{Gap}} := \mathrm{Var}\bigl(\{\mathrm{Gap}(i,j)\}\bigr) > 0$ | $\mathrm{rank}(\hat{\mathcal{G}}) \in \{1,2,3\}$ | Nonzero anisotropy, G₂ broken to $H_{\hat{\mathcal{G}}_*}$ |
+| II (disordered) | $\sigma^2_{\text{Gap}} \to 0$ | $\mathcal{G}_{\text{total}} > 0$, but $\mathrm{Gap}(i,j) \approx \mathrm{const}$ | Isotropic murkiness, G₂ approximately preserved |
+| III (dead) | $\mathcal{G}_{\text{total}} \to 0$ | $\lvert\gamma_{ij}\rvert \to 0 \;\forall\, (i,j)$ | Coherences die out, Gap undefined |
 
-:::note Замечание [Т]
-Параметр порядка $\sigma^2_{\text{Gap}}$ непрерывно обращается в нуль на линии перехода I $\leftrightarrow$ II ($t = 1$), что характеризует переход **второго рода**. На линии I $\leftrightarrow$ III ($r = r_c$) полный Gap $\mathcal{G}_{\text{total}}$ претерпевает **разрыв** — переход первого рода.
+:::note Remark [Т]
+The order parameter $\sigma^2_{\text{Gap}}$ vanishes continuously on the transition line I $\leftrightarrow$ II ($t = 1$), characterizing a **second-order** transition. On the line I $\leftrightarrow$ III ($r = r_c$) the total Gap $\mathcal{G}_{\text{total}}$ undergoes a **discontinuity** — a first-order transition.
 :::
 
-Критическое значение:
+Critical value:
 
 $$
 r_c = \frac{P_{\text{crit}}}{7P} \approx \frac{2}{49P}
 $$
 
-### Визуализация фазовой диаграммы
+### Phase diagram visualization
 
 ```
     t (T_eff/T_c)
     │
-  2 ┤         Фаза II: Разупорядоченный Gap
-    │        (равномерный, восстановимый)
+  2 ┤         Phase II: Disordered Gap
+    │        (uniform, recoverable)
     │
   1 ┤─ ─ ─ ─ ─ ─ ─ ─ ╋ ─ ─ ─ ─ ─ ─ ─ ─ ─
     │               ╱ (t*,r*)
-    │    Фаза I   ╱   ← 2-го рода (непрерывный)
-    │  Упорядоч. ╱
+    │   Phase I   ╱   ← 2nd order (continuous)
+    │  Ordered   ╱
     │   Gap     ╱
     │          ╱
   0 ┤─────────╱─────────────────────────────
-    │ Ф. III │
-    │ Мёртвая│
+    │ Ph. III │
+    │  Dead   │
     └────────┼────────┼─────────────────── r (κ/Γ₂)
              r_c      1
 ```
 
-### Линии фазовых переходов
+### Phase transition lines
 
-| Переход | Линия | Род | Характеристика |
+| Transition | Line | Order | Characteristic |
 |---|---|---|---|
-| I ↔ II | $t = 1$ при $r > r_c$ | 2-й (непрерывный) | $\beta = 1/2$ (класс Ландау) |
-| I ↔ III | $r = r_c$ при $t < 1$ | 1-й (разрывный) | $\mathcal{G}_{\text{total}}$ скачком → 0 |
-| Трикритическая | $(t^*, r^*) = (1, r_c)$ | Смена рода | $\beta = 1/4$, $\gamma = 1$, $\delta = 5$ |
+| I ↔ II | $t = 1$ at $r > r_c$ | 2nd (continuous) | $\beta = 1/2$ (Landau class) |
+| I ↔ III | $r = r_c$ at $t < 1$ | 1st (discontinuous) | $\mathcal{G}_{\text{total}}$ jumps → 0 |
+| Tricritical | $(t^*, r^*) = (1, r_c)$ | Order change | $\beta = 1/4$, $\gamma = 1$, $\delta = 5$ |
 
 ---
 
-## 3. Клиническое соответствие {#клиническое-соответствие}
+## 3. Clinical correspondence {#клиническое-соответствие}
 
-:::info Теорема 3.1 (Соответствие фаз клиническим состояниям) [И]
+:::info Theorem 3.1 (Correspondence of phases to clinical states) [И]
 
-| Фаза | Клинический аналог | Характеристика |
+| Phase | Clinical analogue | Characteristic |
 |---|---|---|
-| I (упорядоченный) | Нормальное функционирование | Специфические непрозрачности (вытеснение), прозрачность в остальных каналах |
-| II (разупорядоченный) | Диффузное диссоциативное состояние | Все каналы одинаково мутны |
-| III (мёртвая) | Деменция, кома, клиническая смерть | Потеря когерентностей |
-| I ↔ II переход | Психотический эпизод | «Расплавка» структурированной непрозрачности |
-| I ↔ III переход | Острая декомпенсация | Скачкообразный распад при истощении ресурсов |
-| Трикритическая | Пограничное состояние | Осцилляция между упорядоченным и хаотическим Gap |
+| I (ordered) | Normal functioning | Specific opacities (repression), transparency in other channels |
+| II (disordered) | Diffuse dissociative state | All channels equally murky |
+| III (dead) | Dementia, coma, clinical death | Loss of coherences |
+| I ↔ II transition | Psychotic episode | "Melting" of structured opacity |
+| I ↔ III transition | Acute decompensation | Discontinuous collapse under resource exhaustion |
+| Tricritical | Borderline state | Oscillation between ordered and chaotic Gap |
 :::
 
 ---
 
-## 4. Бифуркации Gap-ландшафта {#бифуркации}
+## 4. Gap-landscape bifurcations {#бифуркации}
 
-:::note Каноническое определение
-Определение Gap-ландшафта ($\mathcal{G}: \mathcal{D}(\mathbb{C}^7) \to [0,1]^{21}$), три типа бифуркаций (вилочная, седло-узловая, Хопфа) и их клинические аналоги подробно изложены в [Динамике Gap, разделы 3.1–3.3](/docs/core/dynamics/gap-dynamics#бифуркации). Здесь рассматриваются только аспекты, специфичные для фазовой диаграммы.
+:::note Canonical definition
+The definition of the Gap landscape ($\mathcal{G}: \mathcal{D}(\mathbb{C}^7) \to [0,1]^{21}$), three types of bifurcations (pitchfork, saddle-node, Hopf), and their clinical analogues are described in detail in [Gap Dynamics, sections 3.1–3.3](/docs/core/dynamics/gap-dynamics#бифуркации). Only aspects specific to the phase diagram are considered here.
 :::
 
-В плоскости $(t, r)$ бифуркации Gap-ландшафта порождают линии фазовых переходов (раздел 2). Ключевые типы: **вилочная** (спонтанное нарушение симметрии Gap-профиля), **седло-узловая** (исчезновение стационарного профиля) и **Хопфа** (переход к осцилляторному режиму). Подробные формулы и доказательства приведены в [Gap-динамике](/docs/core/dynamics/gap-dynamics#бифуркации).
+In the $(t, r)$ plane, bifurcations of the Gap landscape generate the phase transition lines (section 2). Key types: **pitchfork** (spontaneous breaking of Gap-profile symmetry), **saddle-node** (disappearance of a stationary profile), and **Hopf** (transition to an oscillatory regime). Detailed formulas and proofs are given in [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации).
 
 ---
 
-## 5. Катастрофы Уитни {#катастрофы-уитни}
+## 5. Whitney catastrophes {#катастрофы-уитни}
 
-Базовые катастрофы (складка, сборка) описаны в [Динамике Gap, раздел 3.4](/docs/core/dynamics/gap-dynamics#бифуркации). Здесь рассматривается их расширение до **swallowtail** ($A_4$) при 3 управляющих параметрах и связь с [уровнями интериорности](/docs/consciousness/hierarchy/interiority-hierarchy).
+The basic catastrophes (fold, cusp) are described in [Gap Dynamics, section 3.4](/docs/core/dynamics/gap-dynamics#бифуркации). Here we consider their extension to the **swallowtail** ($A_4$) with 3 control parameters and the connection with [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-### Swallowtail и уровни L0 → L4
+### Swallowtail and levels L0 → L4
 
-:::tip Теорема 5.2 (Swallowtail-каскад и L-уровни) [Т]
-При 3 управляющих параметрах $(\kappa, \alpha, \Delta F)$ возникает **swallowtail** (ласточкин хвост) — катастрофа с 4 листами. Доказано через теорему Арнольда (1972): кодимерность 3, приближённая $\mathbb{Z}_2$-симметрия пурити $\Rightarrow$ $A_4$-бифуркация. См. [$A_4$-бифуркация](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
+:::tip Theorem 5.2 (Swallowtail cascade and L-levels) [Т]
+With 3 control parameters $(\kappa, \alpha, \Delta F)$, a **swallowtail** appears — a catastrophe with 4 sheets. Proved via Arnold's theorem (1972): codimension 3, approximate $\mathbb{Z}_2$-symmetry of purity $\Rightarrow$ $A_4$-bifurcation. See [$A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
 
-Соответствие листов swallowtail [уровням интериорности](/docs/consciousness/hierarchy/interiority-hierarchy):
+Correspondence of swallowtail sheets to [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy):
 
-| Лист swallowtail | Уровень | Характеристика |
+| Swallowtail sheet | Level | Characteristic |
 |---|---|---|
-| Внешний стабильный | L0–L1 | Стационарный Gap, неосознанный |
-| Промежуточный | L2 | Частично осознанный Gap, метастабильный |
-| Внутренний нестабильный | L3 | Почти полная осознанность Gap |
-| Точка самопересечения | L4 | Неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ |
+| Outer stable | L0–L1 | Stationary Gap, unconscious |
+| Intermediate | L2 | Partially conscious Gap, metastable |
+| Inner unstable | L3 | Near-full Gap awareness |
+| Self-intersection point | L4 | Fixed point $\varphi(\Gamma^*) = \Gamma^*$ |
 :::
 
-### Тристабильность и количественная модель Swallowtail
+### Tristability and quantitative swallowtail model
 
-Нормальная форма swallowtail-катастрофы ($A_4$) для эффективного потенциала Gap:
+Normal form of the swallowtail catastrophe ($A_4$) for the effective Gap potential:
 
 $$
 V_{\text{eff}}(G) = G^5 + a\,G^3 + b\,G^2 + c\,G
 $$
 
-где $(a, b, c)$ — три управляющих параметра. Стационарное условие $\partial V_{\text{eff}}/\partial G = 0$ даёт полином четвёртой степени, допускающий до **трёх устойчивых минимумов** при выполнении стандартных условий swallowtail-катастрофы (Арнольд, 1975):
+where $(a, b, c)$ are the three control parameters. The stationary condition $\partial V_{\text{eff}}/\partial G = 0$ gives a degree-four polynomial admitting up to **three stable minima** under the standard swallowtail catastrophe conditions (Arnold, 1975):
 
 $$
 |a| > \sqrt[3]{27b^2/4}, \quad c \in (c_{\min}(a,b),\, c_{\max}(a,b))
 $$
 
-:::tip Теорема 5.3 (Три минимума Gap-потенциала и L-уровни) [Т]
-Три устойчивых Gap-профиля отождествляются с диапазонами иерархии интериорности:
+:::tip Theorem 5.3 (Three minima of the Gap potential and L-levels) [Т]
+Three stable Gap profiles are identified with ranges of the interiority hierarchy:
 
-| Минимум | $G$ | Рефлексия | L-уровень | Клиника |
+| Minimum | $G$ | Reflection | L-level | Clinical |
 |---|---|---|---|---|
-| $G_{\text{high}} \approx 0.8$ | Высокий | $R \approx 0$ | L0/L1 | Базовая интериорность, алекситимия |
-| $G_{\text{mid}} \approx 0.4$ | Средний | $R > 0$ | L2 | Нормальное функционирование |
-| $G_{\text{low}} \approx 0.1$ | Низкий | $R \gg 0$ | L3+ | Рефлексивное / метакогнитивное сознание |
+| $G_{\text{high}} \approx 0.8$ | High | $R \approx 0$ | L0/L1 | Basic interiority, alexithymia |
+| $G_{\text{mid}} \approx 0.4$ | Medium | $R > 0$ | L2 | Normal functioning |
+| $G_{\text{low}} \approx 0.1$ | Low | $R \gg 0$ | L3+ | Reflective / metacognitive consciousness |
 :::
 
-**Переходы между L-уровнями** — фазовые переходы первого рода (fold-бифуркации): [Т]
+**Transitions between L-levels** — first-order phase transitions (fold bifurcations): [Т]
 
-- **L1 $\to$ L2** (пробуждение сознания): fold-бифуркация при $\kappa > \kappa_{\text{fold}}$; Gap скачком падает с $G_{\text{high}}$ до $G_{\text{mid}}$.
-- **L2 $\to$ L3** (инсайт): fold-бифуркация при $\kappa > \kappa'_{\text{fold}}$; Gap скачком падает с $G_{\text{mid}}$ до $G_{\text{low}}$.
-- Обратные переходы происходят при **меньших** значениях $\kappa$ (гистерезис). Ширина гистерезиса:
+- **L1 $\to$ L2** (awakening of consciousness): fold bifurcation at $\kappa > \kappa_{\text{fold}}$; Gap drops discontinuously from $G_{\text{high}}$ to $G_{\text{mid}}$.
+- **L2 $\to$ L3** (insight): fold bifurcation at $\kappa > \kappa'_{\text{fold}}$; Gap drops discontinuously from $G_{\text{mid}}$ to $G_{\text{low}}$.
+- Reverse transitions occur at **smaller** values of $\kappa$ (hysteresis). Hysteresis width:
 
 $$
 \Delta\kappa_{L1 \to L2} = \frac{\lambda_3 \bar{A}_1}{\mu^2}, \qquad \Delta\kappa_{L2 \to L3} = \frac{\lambda_3 \bar{A}_2}{\mu^2}
 $$
 
-- **Прямой скачок L1 $\to$ L3** возможен при одновременном управлении всеми тремя параметрами — swallowtail-путь, обходящий промежуточный минимум. Необходимое условие:
+- **Direct jump L1 $\to$ L3** is possible with simultaneous control of all three parameters — a swallowtail path bypassing the intermediate minimum. Necessary condition:
 
 $$
 \lambda_3 \bar{A} < \frac{4\mu^6}{27\lambda_4^2}
 $$
 
-— подавление октонионной неассоциативности ниже порога swallowtail. [Т]
+— suppression of octonionic non-associativity below the swallowtail threshold. [Т]
 
-:::tip Статус swallowtail-модели [Т]
-Теоремы 5.2 и 5.3 доказаны через теорему Арнольда (1972): три физически независимых управляющих параметра $(\kappa, \alpha, \Delta F)$ и приближённая $\mathbb{Z}_2$-симметрия пурити однозначно определяют кодимерность 3 и тип катастрофы $A_4$ (swallowtail). Отождествление листов с L-уровнями — следствие структуры уравнения эволюции. Полное доказательство: [$A_4$-бифуркация](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
+:::tip Status of the swallowtail model [Т]
+Theorems 5.2 and 5.3 are proved via Arnold's theorem (1972): three physically independent control parameters $(\kappa, \alpha, \Delta F)$ and the approximate $\mathbb{Z}_2$-symmetry of purity uniquely determine codimension 3 and catastrophe type $A_4$ (swallowtail). The identification of sheets with L-levels is a consequence of the structure of the evolution equation. Full proof: [$A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
 :::
 
 ---
 
-## 6. Немарковские осцилляции Gap {#немарковские-осцилляции}
+## 6. Non-Markovian Gap oscillations {#немарковские-осцилляции}
 
-Основная теория немарковских осцилляций (экспоненциальное ядро памяти, три режима: марковский, осциллирующий, передемпфированный) изложена в [Динамике Gap, раздел 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Здесь рассматриваются расширения, специфичные для фазовой диаграммы: обобщённая ФДТ и Фибоначчиевы частоты.
+The basic theory of non-Markovian oscillations (exponential memory kernel, three regimes: Markovian, oscillatory, overdamped) is presented in [Gap Dynamics, section 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Here we consider extensions specific to the phase diagram: the generalized FDT and Fibonacci frequencies.
 
-### 6.1 Немарковская ФДТ для Gap [Т]
+### 6.1 Non-Markovian FDT for Gap [Т]
 
-Для немарковской динамики с произвольным ядром памяти $K(\tau)$ флуктуационно-диссипативная теорема обобщается. Уравнение движения:
+For non-Markovian dynamics with an arbitrary memory kernel $K(\tau)$, the fluctuation-dissipation theorem is generalized. Equation of motion:
 
 $$
 \frac{d\,\mathrm{Gap}(i,j;\tau)}{d\tau} = -\int_0^\tau K(\tau - \tau')\,\mathrm{Gap}(i,j;\tau')\,d\tau' + \xi_{ij}(\tau)
 $$
 
-Обобщённая ФДТ в частотном пространстве:
+Generalized FDT in frequency space:
 
 $$
 \chi_{ij}(\omega) = \frac{1}{T_{\text{eff}}} \cdot \frac{\widetilde{C}_{ij}(\omega)}{\mathrm{Re}\bigl[\widetilde{K}(\omega)\bigr]}
 $$
 
-где $\widetilde{K}(\omega) = \int_0^\infty K(\tau)\,e^{i\omega\tau}\,d\tau$ — фурье-образ ядра памяти.
+where $\widetilde{K}(\omega) = \int_0^\infty K(\tau)\,e^{i\omega\tau}\,d\tau$ is the Fourier transform of the memory kernel.
 
-Для экспоненциального ядра $K(\tau) = (\Gamma_2^2/\tau_M)\,e^{-\tau/\tau_M}$:
+For the exponential kernel $K(\tau) = (\Gamma_2^2/\tau_M)\,e^{-\tau/\tau_M}$:
 
 $$
 \chi_{ij}(\omega) = \frac{1 + \omega^2\tau_M^2}{T_{\text{eff}}\,\Gamma_2^2\,\tau_M} \;\widetilde{C}_{ij}(\omega)
 $$
 
-При $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **антирезонанс**. Система с памятью сильнее реагирует на высокочастотные возмущения. Это объясняет эффективность повторяющихся коротких терапевтических сессий по сравнению с редкими длительными. [С]
+At $\omega\tau_M \gg 1$: $\chi \propto \omega^2$ — **anti-resonance**. A system with memory responds more strongly to high-frequency perturbations. This explains the effectiveness of repeated short therapeutic sessions compared to infrequent long ones. [С]
 
-:::warning Статус немарковской ФДТ [С]
-Обобщённая ФДТ для немарковской динамики корректна при условии, что ядро памяти $K(\tau)$ описывает линейный отклик (режим малых отклонений от стационарного состояния). Применимость к реальным нейробиологическим системам, где нелинейности существенны, не обоснована.
+:::warning Status of non-Markovian FDT [С]
+The generalized FDT for non-Markovian dynamics is correct provided that the memory kernel $K(\tau)$ describes linear response (regime of small deviations from the stationary state). Applicability to real neurobiological systems, where nonlinearities are significant, is not established.
 :::
 
-### 6.2 Фибоначчиевы частоты и золотое сечение [И]
+### 6.2 Fibonacci frequencies and the golden ratio [И]
 
-:::warning Гипотеза (Фибоначчиевы частоты Gap-осцилляций) [И]
-Если собственные частоты эффективного гамильтониана $H_{\text{eff}}$ следуют ряду Фибоначчи:
+:::warning Hypothesis (Fibonacci frequencies of Gap oscillations) [И]
+If the eigenfrequencies of the effective Hamiltonian $H_{\text{eff}}$ follow the Fibonacci series:
 
 $$
-\omega = (0, 1, 2, 3, 5, 8, 13) \quad \text{(нормированный)}
+\omega = (0, 1, 2, 3, 5, 8, 13) \quad \text{(normalized)}
 $$
 
-то разностные частоты $|\omega_i - \omega_j|$ определяют осцилляции Gap:
+then the difference frequencies $|\omega_i - \omega_j|$ determine Gap oscillations:
 
 $$
 \mathrm{Gap}(i,j;\tau) = \bigl|\sin\bigl(\theta_{ij}(0) + (\omega_i - \omega_j)\tau\bigr)\bigr|
 $$
 
-Пары с рациональными отношениями $\Delta\omega/\Delta\omega'$ имеют **периодические** окна прозрачности. Пары с иррациональными отношениями заполняют $[0,1]$ **эргодически** — Gap принимает все значения с равной вероятностью.
+Pairs with rational ratios $\Delta\omega/\Delta\omega'$ have **periodic** transparency windows. Pairs with irrational ratios fill $[0,1]$ **ergodically** — Gap takes all values with equal probability.
 
-Поскольку отношение соседних чисел Фибоначчи стремится к **золотому сечению** $\varphi = (1+\sqrt{5})/2 \approx 1.618$ — наиболее иррациональному числу — большинство разностных частот взаимно иррациональны. Следствие: полная прозрачность ($\mathrm{Gap} = 0$) — недостижимый **предел**, а не стационарное состояние.
+Since the ratio of successive Fibonacci numbers converges to the **golden ratio** $\varphi = (1+\sqrt{5})/2 \approx 1.618$ — the most irrational number — most difference frequencies are mutually irrational. Consequence: full transparency ($\mathrm{Gap} = 0$) is an unreachable **limit**, not a stationary state.
 :::
 
-Если данная гипотеза верна, она влечёт конкретное предсказание: спектр мощности Gap-осцилляций должен содержать пики на частотах $f_n = (\omega_i - \omega_j) \cdot f_0$, где $f_0$ — базовая частота, а отношения пиков приближаются к $\varphi$. Проверка — через анализ ультрамедленных колебаний в фМРТ resting-state. [И]
+If this hypothesis is correct, it entails a concrete prediction: the power spectrum of Gap oscillations must contain peaks at frequencies $f_n = (\omega_i - \omega_j) \cdot f_0$, where $f_0$ is the base frequency and the ratios of peaks approach $\varphi$. Verification — via analysis of infra-slow fluctuations in resting-state fMRI. [И]
 
 ---
 
-## 7. Критические явления {#критические-явления}
+## 7. Critical phenomena {#критические-явления}
 
-:::tip Теорема 7.1 (Критические показатели) [Т]
-Вблизи критической точки $t = 1$ (переход I ↔ II) система демонстрирует масштабно-инвариантное поведение:
+:::tip Theorem 7.1 (Critical exponents) [Т]
+Near the critical point $t = 1$ (transition I ↔ II) the system exhibits scale-invariant behavior:
 
-**(a)** Параметр порядка: $\sigma_{\text{Gap}}^2 \propto (1 - t)^{2\beta}$, $\beta = 1/2$ (среднеполевой)
+**(a)** Order parameter: $\sigma_{\text{Gap}}^2 \propto (1 - t)^{2\beta}$, $\beta = 1/2$ (mean-field)
 
-**(b)** Восприимчивость: $\chi \propto |1 - t|^{-\gamma}$, $\gamma = 1$
+**(b)** Susceptibility: $\chi \propto |1 - t|^{-\gamma}$, $\gamma = 1$
 
-**(c)** Длина корреляции: $\xi \propto |1 - t|^{-\nu}$, $\nu = 1/2$
+**(c)** Correlation length: $\xi \propto |1 - t|^{-\nu}$, $\nu = 1/2$
 :::
 
-Класс универсальности — **Ландау** (среднеполевой), что естественно для системы с дальнодействующими когерентностями.
+The universality class is **Landau** (mean-field), which is natural for a system with long-range coherences.
 
-### 7.1 Полная таблица критических показателей [Т]
+### 7.1 Full table of critical exponents [Т]
 
-Вблизи линии перехода I $\leftrightarrow$ II ($t = 1$) и в трикритической точке $(t^*, r^*) = (1, r_c)$ критические показатели принимают следующие значения:
+Near the transition line I $\leftrightarrow$ II ($t = 1$) and at the tricritical point $(t^*, r^*) = (1, r_c)$ the critical exponents take the following values:
 
-| Показатель | Определение | На линии $t = 1$ (Ландау) | В трикритической точке | Физический смысл |
+| Exponent | Definition | On line $t = 1$ (Landau) | At tricritical point | Physical meaning |
 |---|---|---|---|---|
-| $\beta$ | $\sigma_{\text{Gap}}^2 \propto (1-t)^{2\beta}$ | $1/2$ | $1/4$ | Нарастание параметра порядка |
-| $\gamma$ | $\chi \propto \lvert 1-t\rvert^{-\gamma}$ | $1$ | $1$ | Расходимость восприимчивости |
-| $\nu$ | $\xi \propto \lvert 1-t\rvert^{-\nu}$ | $1/2$ | $1/2$ | Расходимость корреляционной длины |
-| $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (лог.) | $1/2$ | Аномалия теплоёмкости |
-| $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ при $t = 1$ | $3$ | $5$ | Критическая изотерма |
+| $\beta$ | $\sigma_{\text{Gap}}^2 \propto (1-t)^{2\beta}$ | $1/2$ | $1/4$ | Growth of order parameter |
+| $\gamma$ | $\chi \propto \lvert 1-t\rvert^{-\gamma}$ | $1$ | $1$ | Divergence of susceptibility |
+| $\nu$ | $\xi \propto \lvert 1-t\rvert^{-\nu}$ | $1/2$ | $1/2$ | Divergence of correlation length |
+| $\alpha$ | $C \propto \lvert 1-t\rvert^{-\alpha}$ | $0$ (log.) | $1/2$ | Heat capacity anomaly |
+| $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ at $t = 1$ | $3$ | $5$ | Critical isotherm |
 
-:::tip Теорема 7.2 (Точность среднеполевых показателей) [С]
-Среднеполевые критические показатели **точны** для Gap-системы при условии, что эффективная размерность корректно отождествлена с числом степеней свободы:
+:::tip Theorem 7.2 (Accuracy of mean-field exponents) [С]
+Mean-field critical exponents are **exact** for the Gap system provided the effective dimension is correctly identified with the number of degrees of freedom:
 
-**(a)** Эффективная размерность $d_{\text{eff}} = 21$ (число независимых когерентностей) превышает верхнюю критическую размерность $d_c = 4$ теории $\varphi^4$.
+**(a)** Effective dimension $d_{\text{eff}} = 21$ (number of independent coherences) exceeds the upper critical dimension $d_c = 4$ of $\varphi^4$ theory.
 
-**(b)** По критерию Гинзбурга параметр $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$, поэтому флуктуационная область пренебрежимо мала.
+**(b)** By the Ginzburg criterion the parameter $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$, so the fluctuation region is negligibly small.
 
-**(c)** Вблизи трикритической точки эффективная теория — $\varphi^6$ с $d_c = 3 < 21$. Среднеполевые показатели также точны.
+**(c)** Near the tricritical point the effective theory is $\varphi^6$ with $d_c = 3 < 21$. Mean-field exponents are also exact.
 :::
 
-:::warning Статус [С]
-Отождествление $d_{\text{eff}} = 21$ (число когерентностей $\binom{7}{2}$) с эффективной размерностью статистической системы корректно при условии, что все 21 когерентность флуктуируют независимо. $G_2$-симметрия снижает число независимых степеней свободы до $21 - 14 = 7$, что всё ещё превышает $d_c = 4$, но делает оценку $\mathrm{Gi}$ менее тривиальной.
+:::warning Status [С]
+The identification $d_{\text{eff}} = 21$ (number of coherences $\binom{7}{2}$) with the effective dimension of a statistical system is correct provided all 21 coherences fluctuate independently. $G_2$-symmetry reduces the number of independent degrees of freedom to $21 - 14 = 7$, which still exceeds $d_c = 4$, but makes the $\mathrm{Gi}$ estimate less trivial.
 :::
 
-Соотношения скейлинга:
+Scaling relations:
 
 $$
-\alpha + 2\beta + \gamma = 0 + 1 + 1 = 2 \quad \checkmark \quad \text{(закон Рашбрука)}
+\alpha + 2\beta + \gamma = 0 + 1 + 1 = 2 \quad \checkmark \quad \text{(Rushbrooke's law)}
 $$
 
-:::info Замечание о законе Жозефсона [О]
-Гиперскейлинговое соотношение $d\nu = 2 - \alpha$ выполнено при $d = d_c = 4$ (верхняя критическая размерность), но **нарушено** при $d_{\text{eff}} = 21 > d_c$. Это ожидаемое поведение: выше верхней критической размерности гиперскейлинг не работает, среднеполевые показатели применяются без гиперскейлинговых поправок.
+:::info Remark on Josephson's law [О]
+The hyperscaling relation $d\nu = 2 - \alpha$ holds at $d = d_c = 4$ (upper critical dimension), but **fails** at $d_{\text{eff}} = 21 > d_c$. This is expected behavior: above the upper critical dimension hyperscaling does not hold, mean-field exponents apply without hyperscaling corrections.
 :::
 
 ---
 
-## 8. Голдстоуновские моды {#голдстоуновские-моды}
+## 8. Goldstone modes {#голдстоуновские-моды}
 
-При спонтанном нарушении $G_2 \to H_{\hat{\mathcal{G}}_*}$ возникают голдстоуновские моды — медленные коллективные осцилляции Gap-профиля.
+Under spontaneous breaking $G_2 \to H_{\hat{\mathcal{G}}_*}$, Goldstone modes arise — slow collective oscillations of the Gap profile.
 
-:::tip Теорема 8.1 (Квази-голдстоуновские моды) [Т]
-В открытой (диссипативной) системе:
+:::tip Theorem 8.1 (Quasi-Goldstone modes) [Т]
+In an open (dissipative) system:
 
-**(a)** Моды **квазимассовые** (не строго безмассовые): $m_{\text{Gold}}^2 = \Gamma_2 \cdot \kappa_0 / |\gamma|^2$.
+**(a)** Modes are **quasi-massive** (not strictly massless): $m_{\text{Gold}}^2 = \Gamma_2 \cdot \kappa_0 / |\gamma|^2$.
 
-**(b)** Каждая мода перераспределяет Gap между парами при сохранении $\mathcal{G}_{\text{total}}$:
+**(b)** Each mode redistributes Gap between pairs while preserving $\mathcal{G}_{\text{total}}$:
 
 $$
 \delta\mathrm{Gap}(i,j) = \sum_a \epsilon_a \cdot [T_a, \hat{\mathcal{G}}_*]_{ij}
 $$
 
-**(c)** Число мод зависит от ранга непрозрачности:
+**(c)** The number of modes depends on the opacity rank:
 
-| Ранг | $n_{\text{Gold}}$ | Предсказание для ISF |
+| Rank | $n_{\text{Gold}}$ | Prediction for ISF |
 |---|---|---|
-| 1 | 6 | 6 независимых ISF-компонент |
-| 2 | 10 | 10 ISF-компонент |
-| 3 | 12 | 12 ISF-компонент |
+| 1 | 6 | 6 independent ISF components |
+| 2 | 10 | 10 ISF components |
+| 3 | 12 | 12 ISF components |
 
-**(d)** Частота: $f_{\text{Gold}} \sim 0.005$–$0.02$ Гц — совпадает с ультрамедленными нейрональными флуктуациями (ISF) в фМРТ.
+**(d)** Frequency: $f_{\text{Gold}} \sim 0.005$–$0.02$ Hz — coincides with infra-slow neuronal fluctuations (ISF) in fMRI.
 :::
 
-### 8.1 Спектр возбуждений вокруг спонтанного Gap [Т]
+### 8.1 Excitation spectrum around spontaneous Gap [Т]
 
-Вблизи минимума $V_{\text{Gap}}$ полное пространство малых колебаний $\theta_{ij} = \theta^*_{ij} + \delta\theta_{ij}$ разделяется на три сектора:
+Near the minimum of $V_{\text{Gap}}$, the full space of small oscillations $\theta_{ij} = \theta^*_{ij} + \delta\theta_{ij}$ splits into three sectors:
 
-| Сектор | Число мод | Частота | Физический смысл |
+| Sector | Number of modes | Frequency | Physical meaning |
 |---|---|---|---|
-| Массивные | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Колебания перпендикулярно орбите $G_2$ |
-| Квази-голдстоуновские | $n_{\text{broken}} = 14 - \dim(H)$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Медленное перераспределение Gap вдоль орбиты |
-| Топологически защищённые | $0$ или $1$ | Определяется $Q_{\text{top}}$ | Не может затухнуть без фазового перехода |
+| Massive | $21 - n_{\text{broken}} - n_{\text{top}}$ | $\omega_{\text{mass}}^2 = \mu_{\text{eff}}^2 + \kappa/m$ | Oscillations perpendicular to the $G_2$ orbit |
+| Quasi-Goldstone | $n_{\text{broken}} = 14 - \dim(H)$ | $\omega_{\text{Gold}}^2 = \kappa/m - \Gamma_2^2/(4m^2)$ | Slow redistribution of Gap along the orbit |
+| Topologically protected | $0$ or $1$ | Determined by $Q_{\text{top}}$ | Cannot decay without a phase transition |
 
-Суммарное число мод: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — по числу независимых когерентностей $\binom{7}{2}$.
+Total number of modes: $n_{\text{mass}} + n_{\text{Gold}} + n_{\text{top}} = 21$ — equal to the number of independent coherences $\binom{7}{2}$.
 
-При $\kappa > \Gamma_2^2/(4m)$ квази-голдстоуновские моды совершают **затухающие осцилляции**. При $\kappa < \Gamma_2^2/(4m)$ — **апериодическое затухание** (передемпфированный режим). В предельном случае изолированной системы ($\Gamma_2 \to 0$) голдстоуновские моды становятся строго безмассовыми: $\omega_{\text{Gold}} \to \sqrt{\kappa/m}$ при $m_{\text{Gold}} \to 0$. [Т]
+At $\kappa > \Gamma_2^2/(4m)$ quasi-Goldstone modes undergo **damped oscillations**. At $\kappa < \Gamma_2^2/(4m)$ — **aperiodic decay** (overdamped regime). In the limiting case of an isolated system ($\Gamma_2 \to 0$), Goldstone modes become strictly massless: $\omega_{\text{Gold}} \to \sqrt{\kappa/m}$ as $m_{\text{Gold}} \to 0$. [Т]
 
-### 8.2 Нарушенные симметрии и число мод [Т]
+### 8.2 Broken symmetries and number of modes [Т]
 
-**Определение [О].** {#стабилизатор-gap} Подгруппа изотропии (стабилизатор) стационарной Gap-конфигурации:
+**Definition [О].** {#стабилизатор-gap} Isotropy subgroup (stabilizer) of the stationary Gap configuration:
 
 $$H_{\hat{\mathcal{G}}_*} := \{g \in G_2 : \mathrm{Ad}_g(\hat{\mathcal{G}}_*) = \hat{\mathcal{G}}_*\}$$
 
-где $\mathrm{Ad}_g$ — присоединённое действие $G_2$ на $\mathfrak{so}(7)$. Число нарушенных генераторов: $n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})$.
+where $\mathrm{Ad}_g$ is the adjoint action of $G_2$ on $\mathfrak{so}(7)$. Number of broken generators: $n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})$.
 
-Полная $G_2$-симметрия лагранжиана нарушается стационарным состоянием до подгруппы-стабилизатора:
+The full $G_2$-symmetry of the Lagrangian is broken by the stationary state to the stabilizer subgroup:
 
 $$
 G_2 \to H_{\hat{\mathcal{G}}_*}, \quad n_{\text{broken}} = 14 - \dim(H_{\hat{\mathcal{G}}_*})
 $$
 
-| Ранг $\hat{\mathcal{G}}_*$ | Стабилизатор $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Пространство $G_2/H$ |
+| Rank $\hat{\mathcal{G}}_*$ | Stabilizer $H$ | $\dim(H)$ | $n_{\text{broken}}$ | Space $G_2/H$ |
 |---|---|---|---|---|
 | $0$ | $G_2$ | $14$ | $0$ | $\{\mathrm{pt}\}$ |
 | $1$ | $SU(3)$ | $8$ | $6$ | $G_2/SU(3) \cong S^6$ |
-| $2$ | $SU(2) \times U(1)$ | $4$ | $10$ | $10$-мерн. |
-| $3$ (общий) | $T^2$ | $2$ | $12$ | $12$-мерн. |
-| $3$ (вырожд.) | $SU(2)$ | $3$ | $11$ | $11$-мерн. |
+| $2$ | $SU(2) \times U(1)$ | $4$ | $10$ | $10$-dim. |
+| $3$ (generic) | $T^2$ | $2$ | $12$ | $12$-dim. |
+| $3$ (degen.) | $SU(2)$ | $3$ | $11$ | $11$-dim. |
 
-Дискретная $PT$-симметрия ($\theta \to -\theta$, $\tau \to -\tau$) нарушена кубическим членом $V_3$ потенциала уже на уровне лагранжиана — стационарное состояние наследует это нарушение. [Т]
+The discrete $PT$-symmetry ($\theta \to -\theta$, $\tau \to -\tau$) is broken by the cubic term $V_3$ of the potential already at the Lagrangian level — the stationary state inherits this breaking. [Т]
 
 ---
 
-## 9. Пять типов защиты Gap {#защита-gap}
+## 9. Five types of Gap protection {#защита-gap}
 
-С учётом всех результатов установлено **пять независимых механизмов** неустранимости Gap:
+Taking all results into account, **five independent mechanisms** of Gap irremovability are established:
 
-| № | Тип защиты | Источник | Механизм |
+| # | Protection type | Source | Mechanism |
 |---|---|---|---|
-| 1 | Кодовая | [Gap-динамика](/docs/core/dynamics/gap-dynamics#код-хэмминга) | Граница Хэмминга H(7,4): $\geq 3$ ненулевых Gap |
-| 2 | Алгебраическая | [Gap-оператор](/docs/core/dynamics/gap-operator#g2-разложение) | Октонионный ассоциатор $[e_i,e_j,e_k] \neq 0$ |
-| 3 | Энергетическая | [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) | Спонтанный минимум $V_{\text{Gap}} \neq 0$ из $V_3$ |
-| 4 | Категориальная | [Самонаблюдение](/docs/consciousness/foundations/self-observation) | Теорема Лавёра: неподвижная точка не может быть тривиальной |
-| 5 | Топологическая | [Gap-оператор](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+| 1 | Code-theoretic | [Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга) | Hamming bound H(7,4): $\geq 3$ nonzero Gaps |
+| 2 | Algebraic | [Gap operator](/docs/core/dynamics/gap-operator#g2-разложение) | Octonionic associator $[e_i,e_j,e_k] \neq 0$ |
+| 3 | Energetic | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from $V_3$ |
+| 4 | Categorical | [Self-observation](/docs/consciousness/foundations/self-observation) | Lawvere's theorem: the fixed point cannot be trivial |
+| 5 | Topological | [Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
 
 ---
 
-## 10. Тождества Уорда для Gap-корреляторов {#тождества-уорда}
+## 10. Ward identities for Gap correlators {#тождества-уорда}
 
-$G_2$-инвариантность лагранжиана порождает **14 линейных соотношений** между Gap-корреляторами — аналог тождеств Уорда квантовой теории поля. [Т]
+$G_2$-invariance of the Lagrangian generates **14 linear relations** between Gap correlators — an analogue of Ward identities in quantum field theory. [Т]
 
-:::tip Теорема 10.1 (Тождества Уорда) [Т]
-Для $n$-точечного коррелятора $G^{(n)}\bigl((i_1,j_1,\tau_1),\ldots,(i_n,j_n,\tau_n)\bigr) := \langle\mathrm{Gap}(i_1,j_1;\tau_1)\cdots\mathrm{Gap}(i_n,j_n;\tau_n)\rangle$:
+:::tip Theorem 10.1 (Ward identities) [Т]
+For the $n$-point correlator $G^{(n)}\bigl((i_1,j_1,\tau_1),\ldots,(i_n,j_n,\tau_n)\bigr) := \langle\mathrm{Gap}(i_1,j_1;\tau_1)\cdots\mathrm{Gap}(i_n,j_n;\tau_n)\rangle$:
 
-**(a)** Для каждого генератора $T_a \in \mathfrak{g}_2$:
+**(a)** For each generator $T_a \in \mathfrak{g}_2$:
 
 $$
 \sum_{i<j} [T_a]_{ij}\,\frac{\partial}{\partial\theta_{ij}}\,G^{(n)} = 0
 $$
 
-**(b)** Для двухточечного коррелятора $C_{(ij),(kl)}(\tau) = \langle\mathrm{Gap}(i,j;\tau)\;\mathrm{Gap}(k,l;0)\rangle$:
+**(b)** For the two-point correlator $C_{(ij),(kl)}(\tau) = \langle\mathrm{Gap}(i,j;\tau)\;\mathrm{Gap}(k,l;0)\rangle$:
 
 $$
 \sum_{m}\bigl([T_a]_{im}\,C_{(mj),(kl)} + [T_a]_{jm}\,C_{(im),(kl)}\bigr) = 0
 $$
 
-**(c)** Число независимых двухточечных корреляторов с учётом 14 тождеств:
+**(c)** Number of independent two-point correlators accounting for the 14 identities:
 
 $$
 N_{\text{corr}} = \frac{21 \times 22}{2} - 14 = 217
 $$
 :::
 
-**Экспериментальная проверка $G_2$-симметрии.** Степень нарушения тождеств Уорда — мера нарушения $G_2$-симметрии:
+**Experimental verification of $G_2$-symmetry.** The degree of Ward identity violation is a measure of $G_2$-symmetry breaking:
 
 $$
 \Delta_{G_2}^{(\text{exp})} := \max_a \Bigl\|\sum_m [T_a]_{im}\,C_{(mj),(kl)} + [T_a]_{jm}\,C_{(im),(kl)}\Bigr\|
 $$
 
-При $\Delta_{G_2}^{(\text{exp})} = 0$: полная $G_2$-симметрия. При $\Delta_{G_2}^{(\text{exp})} > 0$: частичное нарушение. Это — первый операциональный протокол для проверки $G_2$-структуры в экспериментальных данных (нейровизуализация, ИИ-метрики, психометрия). [О]
+At $\Delta_{G_2}^{(\text{exp})} = 0$: full $G_2$-symmetry. At $\Delta_{G_2}^{(\text{exp})} > 0$: partial breaking. This is the first operational protocol for verifying $G_2$-structure in experimental data (neuroimaging, AI metrics, psychometrics). [О]
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — определение $\hat{\mathcal{G}}$, спектр, G₂-разложение
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — бифуркации, Чой-Ямиолковский, Хэмминг
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — лагранжиан, $V_{\text{Gap}}$, $T_{\text{eff}}$
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
-- [Доказательства: Фано-канал](/docs/proofs/gap/fano-channel) — G₂-ковариантность Фано-диссипатора
-- [Когерентная матрица](/docs/core/dynamics/coherence-matrix) — определение $\gamma_{ij}$, параметр порядка
-- [Символические системы](/docs/core/structure/symbolic-systems) — октонионная алгебра и структурные константы
+- [Gap operator](/docs/core/dynamics/gap-operator) — definition of $\hat{\mathcal{G}}$, spectrum, G₂ decomposition
+- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, Choi–Jamiołkowski, Hamming
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — Lagrangian, $V_{\text{Gap}}$, $T_{\text{eff}}$
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
+- [Proofs: Fano channel](/docs/proofs/gap/fano-channel) — G₂-covariance of the Fano dissipator
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\gamma_{ij}$, order parameter
+- [Symbolic systems](/docs/core/structure/symbolic-systems) — octonionic algebra and structure constants

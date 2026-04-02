@@ -1,352 +1,352 @@
 ---
 sidebar_position: 4
-title: Структура (S)
-description: Измерение II — способность удерживать форму
+title: Structure (S)
+description: Dimension II — capacity to hold form
 ---
 
-# Измерение II: Структура (S)
+# Dimension II: Structure (S)
 
-## О чём эта глава
+## What this chapter is about
 
-Эта глава посвящена второму измерению Голонома — **Структуре**. Вы узнаете:
+This chapter is devoted to the second dimension of the Holon — **Structure**. You will learn:
 
-- Почему **сохранение формы** — необходимое условие существования чего-либо во времени;
-- Как идея инвариантов развивалась от Галуа через Нётер к современной физике;
-- Что такое гамильтониан и почему его спектр — это «отпечаток пальцев» системы;
-- Как населённость $\gamma_{SS}$ определяет ригидность конфигурации;
-- Почему Структура и Динамика — два лица одной медали;
-- Какое место S занимает на Фано-плоскости.
+- Why **preservation of form** is a necessary condition for the existence of anything in time;
+- How the idea of invariants developed from Galois through Noether to modern physics;
+- What a Hamiltonian is and why its spectrum is the system's "fingerprint";
+- How the population $\gamma_{SS}$ determines the rigidity of a configuration;
+- Why Structure and Dynamics are two sides of the same coin;
+- What place S occupies on the Fano plane.
 
-:::info Для кого эта глава
-Если вы впервые читаете об УГМ — начните с [обзора измерений](./dimensions). Если вы хотите понять, откуда берётся устойчивость формы, — вы по адресу. Предполагается знакомство с [Артикуляцией (A)](./dimension-a).
+:::info Who this chapter is for
+If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you want to understand where the stability of form comes from — you are in the right place. Familiarity with [Articulation (A)](./dimension-a) is assumed.
 :::
 
-## Функция
+## Function
 
-**Удерживать форму, сохранять конфигурацию.**
+**To hold form, to preserve configuration.**
 
-## Историческая предтеча {#историческая-предтеча}
+## Historical precursor {#историческая-предтеча}
 
-Идея о том, что за изменчивостью мира стоят неизменные структуры, — одна из древнейших в мысли.
+The idea that behind the mutability of the world lie unchanging structures is one of the oldest in human thought.
 
-**Платон** (IV в. до н.э.) учил, что за изменчивыми вещами стоят неизменные **эйдосы** — формы. Стул сломается, но «идея стула» вечна. Хотя платоновский идеализм давно не принимают буквально, интуиция верна: за текучестью мира стоят инварианты.
+**Plato** (4th century BCE) taught that behind changeable things stand unchanging **eide** — forms. A chair will break, but the "idea of a chair" is eternal. Although Platonic idealism is no longer taken literally, the intuition is correct: behind the flux of the world lie invariants.
 
-**Эварист Галуа** (1832) — юный гений, погибший на дуэли в 20 лет, — совершил одно из величайших открытий в математике. Изучая, какие уравнения можно решить в радикалах, он обнаружил, что ответ зависит не от конкретных коэффициентов, а от **структуры симметрий** корней уравнения. Так родилась **теория групп** — математика инвариантов. Главный урок Галуа: важно не содержание (конкретные числа), а **структура** (как элементы связаны между собой).
+**Évariste Galois** (1832) — a young genius who died in a duel at the age of 20 — made one of the greatest discoveries in mathematics. Studying which equations can be solved in radicals, he found that the answer depends not on the specific coefficients, but on the **structure of the symmetries** of the roots. This gave birth to **group theory** — the mathematics of invariants. The main lesson of Galois: what matters is not the content (specific numbers), but the **structure** (how elements are related to each other).
 
-**Клод Леви-Стросс** (1958) в «Структурной антропологии» показал, что за разнообразием мифов, ритуалов и систем родства скрываются **инвариантные структуры**. Миф о потопе выглядит по-разному в Месопотамии и у индейцев навахо, но **структура** мифа (угроза → испытание → возрождение) одна и та же. Структурализм — это поиск того, что остаётся неизменным при вариациях.
+**Claude Lévi-Strauss** (1958) in *Structural Anthropology* showed that behind the diversity of myths, rituals, and kinship systems lie **invariant structures**. The flood myth looks different in Mesopotamia and among the Navajo, but the **structure** of the myth (threat → trial → rebirth) is the same. Structuralism is the search for what remains unchanged under variations.
 
-**Эмми Нётер** (1918) доказала одну из самых красивых теорем физики: **каждой непрерывной симметрии** физической системы соответствует **сохраняющаяся величина**. Вращательная симметрия → сохранение углового момента. Трансляционная симметрия → сохранение импульса. Временная симметрия → сохранение энергии. Теорема Нётер формализовала связь между структурой (симметрией) и инвариантами (законами сохранения).
+**Emmy Noether** (1918) proved one of the most beautiful theorems in physics: **every continuous symmetry** of a physical system corresponds to a **conserved quantity**. Rotational symmetry → conservation of angular momentum. Translational symmetry → conservation of momentum. Temporal symmetry → conservation of energy. Noether's theorem formalised the connection between structure (symmetry) and invariants (conservation laws).
 
-В УГМ-теории все эти идеи сходятся в измерении **Структура ($S$)** — аспекте конфигурации $\Gamma$, ответственном за сохранение формы, удержание инвариантов и обеспечение идентичности во времени.
+In UHM theory all these ideas converge in the dimension **Structure ($S$)** — the aspect of configuration $\Gamma$ responsible for the preservation of form, the retention of invariants, and the provision of identity in time.
 
-## Почему форма вообще сохраняется? {#почему-форма-сохраняется}
+## Why does form persist at all? {#почему-форма-сохраняется}
 
-Вопрос кажется наивным, но он глубок. Почему вообще что-то остаётся неизменным? Почему электрон через миллиард лет — тот же электрон? Почему ДНК копируется с точностью до одной ошибки на миллиард пар оснований?
+The question seems naïve, but it is deep. Why does anything remain unchanged? Why is an electron after a billion years still the same electron? Why does DNA copy itself with an error rate of just one mistake per billion base pairs?
 
-Ответ физики: потому что существуют **симметрии**. Если закон природы не меняется при некотором преобразовании (повороте, сдвиге, отражении), то существует величина, которая **не может** измениться. Это не постулат — это математическая теорема (Нётер). Сохранение — не свойство вещей, а **следствие симметрий** законов, которым вещи подчиняются.
+Physics answers: because **symmetries** exist. If a law of nature does not change under some transformation (rotation, translation, reflection), then there exists a quantity that **cannot** change. This is not a postulate — it is a mathematical theorem (Noether). Conservation is not a property of things, but a **consequence of the symmetries** of the laws to which things are subject.
 
-В УГМ-теории этот принцип углублён: симметрии не «заданы извне», а **возникают** из структуры самой конфигурации $\Gamma$. Гамильтониан $H_\Omega$ определяется аксиомами [A1–A5](../../core/foundations/axiom-omega), и его симметрии — математическое следствие этих аксиом. Таким образом, устойчивость формы — не загадочное свойство реальности, а **выводимое** следствие фундаментальной структуры.
+In UHM theory this principle is deepened: symmetries are not "imposed from outside", but **emerge** from the structure of the configuration $\Gamma$ itself. The Hamiltonian $H_\Omega$ is determined by axioms [A1–A5](../../core/foundations/axiom-omega), and its symmetries are a mathematical consequence of those axioms. Thus the stability of form is not a mysterious property of reality, but a **derivable** consequence of the fundamental structure.
 
-## Описание
+## Description
 
-Структура — это то, что остаётся неизменным при изменениях. Это инварианты, законы сохранения, топологические свойства.
+Structure is what remains unchanged through changes. It is invariants, conservation laws, topological properties.
 
-:::info Онтологический статус
-Структура — **аспект** конфигурации $\Gamma$, не отдельная сущность. "Голоном имеет структуру" означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|S\rangle$, и существует гамильтониан $H$ с нетривиальным спектром.
+:::info Ontological status
+Structure is an **aspect** of configuration $\Gamma$, not a separate entity. "The Holon has structure" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|S\rangle$ is active, and there exists a Hamiltonian $H$ with a non-trivial spectrum.
 :::
 
-:::warning Связь с автопоэзисом
-При удалении измерения $S$ нарушается **(AP)** — нет идентичности, нет самотождественности. Без структуры нельзя определить, что такое "та же самая система". См. [доказательство](../../proofs/minimality/theorem-minimality-7#случай-n--1-удаление-структуры-s).
+:::warning Connection with autopoiesis
+Removal of dimension $S$ violates **(AP)** — there is no identity, no self-sameness. Without structure one cannot define what "the same system" means. See [proof](../../proofs/minimality/theorem-minimality-7#случай-n--1-удаление-структуры-s).
 :::
 
-**Структура обеспечивает идентичность Голонома во времени:** пока динамика ($D$) изменяет состояние, структура ($S$) определяет, *что именно* остаётся инвариантным — и тем самым позволяет говорить о "том же" Голономе в разные моменты времени.
+**Structure provides the Holon's identity in time:** while dynamics ($D$) changes the state, structure ($S$) determines *what exactly* remains invariant — and thereby allows one to speak of "the same" Holon at different moments in time.
 
-## Интуитивное объяснение {#интуитивное-объяснение}
+## Intuitive explanation {#интуитивное-объяснение}
 
-### Аналогия с каркасом здания
+### Analogy with a building frame
 
-Представьте здание. Стены можно перекрасить, окна заменить, мебель переставить — и всё равно это «то же здание». Что делает его тем же? **Каркас** — несущая конструкция, которая сохраняется при всех косметических изменениях. Если убрать каркас — здание рухнет, и никакие стены не помогут.
+Imagine a building. The walls can be repainted, the windows replaced, the furniture rearranged — and it is still "the same building". What makes it the same? The **frame** — the load-bearing structure that is preserved through all cosmetic changes. Remove the frame and the building collapses, no matter how good the walls are.
 
-Структура Голонома — это его «каркас»: то, что сохраняется при эволюции. Диагональные элементы $\gamma_{kk}$ могут флуктуировать, когерентности $\gamma_{ij}$ — осциллировать, но определённые комбинации остаются инвариантными. Именно эти инварианты задают **идентичность** системы.
+The Structure of a Holon is its "frame": what is preserved during evolution. The diagonal elements $\gamma_{kk}$ may fluctuate, the coherences $\gamma_{ij}$ may oscillate, but certain combinations remain invariant. These invariants define the **identity** of the system.
 
-### Аналогия с ДНК
+### Analogy with DNA
 
-При делении клетки всё её содержимое перестраивается: мембрана разрывается, белки распределяются, цитоплазма делится. Но **ДНК копируется точно** — это структура, которая сохраняется через поколения клеток. ДНК — инвариант клеточной динамики, «каркас» биологической идентичности.
+When a cell divides, all its contents are rearranged: the membrane ruptures, proteins are distributed, the cytoplasm divides. But **DNA is copied exactly** — it is the structure that is preserved across generations of cells. DNA is the invariant of cellular dynamics, the "frame" of biological identity.
 
-Более того, ДНК — пример **информационной** структуры: важна не физическая молекула (атомы заменяются), а **последовательность** нуклеотидов. Аналогично, структура Голонома — не конкретные значения $\gamma_{ij}$, а **паттерн** их отношений.
+Moreover, DNA is an example of an **informational** structure: what matters is not the physical molecule (atoms are replaced), but the **sequence** of nucleotides. Analogously, the Structure of a Holon is not the specific values of $\gamma_{ij}$, but the **pattern** of their relationships.
 
-### Аналогия со спектром звёзд
+### Analogy with stellar spectra
 
-Астрономы определяют химический состав звезды, находящейся в миллионах световых лет, по её **спектру** — набору частот излучаемого света. Каждый химический элемент оставляет уникальный «спектральный отпечаток» — набор линий поглощения и излучения.
+Astronomers determine the chemical composition of a star millions of light-years away from its **spectrum** — the set of frequencies of emitted light. Each chemical element leaves a unique "spectral fingerprint" — a set of absorption and emission lines.
 
-Точно так же гамильтониан $H$ Голонома имеет **спектр** — набор собственных значений $\{E_n\}$, однозначно характеризующий структуру системы. По спектру можно определить, какие симметрии есть у системы, какие переходы возможны, какова «архитектура» конфигурации — даже не зная деталей состояния.
+In exactly the same way, the Hamiltonian $H$ of a Holon has a **spectrum** — the set of eigenvalues $\{E_n\}$ that uniquely characterises the structure of the system. From the spectrum one can determine which symmetries the system has, which transitions are possible, and what the "architecture" of the configuration is — even without knowing the details of the state.
 
-## Математическое представление
+## Mathematical representation
 
-### Гамильтониан — оператор структуры
+### Hamiltonian — the structure operator
 
-Гамильтониан $H$ — эрмитов оператор, определяющий структуру системы:
+The Hamiltonian $H$ is a Hermitian operator that determines the structure of the system:
 
 $$
 H^\dagger = H
 $$
 
-Собственные векторы гамильтониана — **стационарные состояния**:
+The eigenvectors of the Hamiltonian are the **stationary states**:
 
 $$
 H|\psi_n\rangle = E_n|\psi_n\rangle
 $$
 
-Структура определяется:
-- **Спектром** $\{E_n\}$ — набор собственных значений (энергий)
-- **Собственными векторами** $\{|\psi_n\rangle\}$ — стационарные конфигурации
+Structure is determined by:
+- **Spectrum** $\{E_n\}$ — the set of eigenvalues (energies)
+- **Eigenvectors** $\{|\psi_n\rangle\}$ — stationary configurations
 
-**Почему именно $H$?** Гамильтониан — единственный оператор, который одновременно определяет:
-1. **Что сохраняется** — через коммутирующие наблюдаемые ($[A, H] = 0$ ⟹ $A$ сохраняется)
-2. **Как система эволюционирует** — через $U(\tau) = e^{-iH_{eff}\tau}$
+**Why $H$ specifically?** The Hamiltonian is the unique operator that simultaneously determines:
+1. **What is conserved** — through commuting observables ($[A, H] = 0$ ⟹ $A$ is conserved)
+2. **How the system evolves** — through $U(\tau) = e^{-iH_{eff}\tau}$
 
-Это двойная роль делает $H$ идеальным математическим представлением структуры.
+This dual role makes $H$ the ideal mathematical representation of structure.
 
-## Гамильтониан в базисе измерений
+## Hamiltonian in the dimension basis
 
-В базисе $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$:
+In the basis $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$:
 
 $$
 H = \sum_{i} \omega_i |i\rangle\langle i| + \sum_{i \neq j} J_{ij} |i\rangle\langle j|
 $$
 
-где:
-- $\omega_i$ — собственные частоты базисных состояний (диагональные элементы)
-- $J_{ij}$ — коэффициенты связи между измерениями (недиагональные элементы)
+where:
+- $\omega_i$ — natural frequencies of the basis states (diagonal elements)
+- $J_{ij}$ — coupling coefficients between dimensions (off-diagonal elements)
 
-Диагональные элементы $\omega_i$ задают «энергетический ландшафт» — какие состояния предпочтительнее. Недиагональные элементы $J_{ij}$ задают **связность** — насколько легко система переходит между измерениями.
+The diagonal elements $\omega_i$ define the "energy landscape" — which states are preferred. The off-diagonal elements $J_{ij}$ define **connectivity** — how easily the system transitions between dimensions.
 
-## Населённость $\gamma_{SS}$ — мера ригидности {#населённость}
+## Population $\gamma_{SS}$ — measure of rigidity {#населённость}
 
-Диагональный элемент [матрицы когерентности](../../core/dynamics/coherence-matrix) $\gamma_{SS}$ — это **населённость** измерения Структуры. Она показывает, какая доля «ресурса» Голонома направлена на удержание формы.
+The diagonal element of the [coherence matrix](../../core/dynamics/coherence-matrix) $\gamma_{SS}$ is the **population** of the Structure dimension. It shows what fraction of the Holon's "resource" is directed towards holding form.
 
 $$
 \gamma_{SS} = \langle S | \Gamma | S \rangle \in [0, 1], \quad \sum_{k} \gamma_{kk} = 1
 $$
 
-### Что означает значение $\gamma_{SS}$
+### What the value of $\gamma_{SS}$ means
 
-| Значение $\gamma_{SS}$ | Интерпретация | Пример |
-|-------------------------|---------------|--------|
-| Высокое ($\gg 1/7$) | Ригидная система, сопротивляется изменениям | Кристалл, догма, навязчивость |
-| Около $1/7$ | Сбалансированная устойчивость | Здоровая адаптивность: форма сохраняется, но допускает пластичность |
-| Низкое ($\ll 1/7$) | Слабая структурированность, аморфность | Газ, поток сознания без фокуса, дезорганизация |
-| $\to 0$ | Утрата всякой структуры | Тепловая смерть, полная деструктурация |
+| Value of $\gamma_{SS}$ | Interpretation | Example |
+|------------------------|----------------|---------|
+| High ($\gg 1/7$) | Rigid system, resists change | Crystal, dogma, obsessiveness |
+| Around $1/7$ | Balanced stability | Healthy adaptability: form is preserved but allows plasticity |
+| Low ($\ll 1/7$) | Weak structuredness, amorphousness | Gas, stream of consciousness without focus, disorganisation |
+| $\to 0$ | Loss of all structure | Heat death, complete destructuration |
 
-:::warning Структура ≠ ригидность
-Высокая $\gamma_{SS}$ — не всегда хорошо. Чрезмерная структурированность (ригидность) препятствует адаптации. Живые системы поддерживают $\gamma_{SS}$ в диапазоне, позволяющем сочетать устойчивость с пластичностью. Это согласуется с [зоной Голдилокс](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ **[Т]** — сознание требует баланса между порядком и хаосом.
+:::warning Structure ≠ rigidity
+High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) impedes adaptation. Living systems maintain $\gamma_{SS}$ in a range that combines stability with plasticity. This is consistent with the [Goldilocks zone](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ **[Т]** — consciousness requires a balance between order and chaos.
 :::
 
-## Стресс структуры $\sigma_S$ {#стресс-структуры}
+## Structural stress $\sigma_S$ {#стресс-структуры}
 
-[Стрессовая переменная](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[Т]**) характеризует **дефицит** структурной устойчивости:
+The [stress variable](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[Т]**) characterises the **deficit** of structural stability:
 
 $$
 \sigma_S = \mathrm{clamp}(1 - 7\gamma_{SS},\; 0,\; 1)
 $$
 
-| $\sigma_S$ | Состояние | Интерпретация |
-|-------------|-----------|---------------|
-| $0$ | $\gamma_{SS} \geq 1/7$ | Структура достаточна или избыточна |
-| $0.5$ | $\gamma_{SS} \approx 1/14$ | Умеренный дефицит — система «расшатана» |
-| $1$ | $\gamma_{SS} \to 0$ | Критический дефицит — форма утрачена |
+| $\sigma_S$ | State | Interpretation |
+|------------|-------|----------------|
+| $0$ | $\gamma_{SS} \geq 1/7$ | Structure is sufficient or in excess |
+| $0.5$ | $\gamma_{SS} \approx 1/14$ | Moderate deficit — the system is "shaky" |
+| $1$ | $\gamma_{SS} \to 0$ | Critical deficit — form is lost |
 
-:::info Стресс и переживание
-На когнитивном уровне высокий $\sigma_S$ переживается как **дезориентация**, **потеря опоры**, **ощущение хаоса** — мир перестал быть предсказуемым, привычные структуры рухнули. Низкий $\sigma_S$ — как **уверенность**, **надёжность**, **понимание правил игры**. Стресс $\sigma_S$ влияет на [гедонический сигнал](../../consciousness/foundations/self-observation#мера-рефлексии-r) и мотивирует систему к поиску устойчивых паттернов.
+:::info Stress and experience
+At the cognitive level, high $\sigma_S$ is experienced as **disorientation**, **loss of ground**, **a sense of chaos** — the world has ceased to be predictable, familiar structures have collapsed. Low $\sigma_S$ feels like **confidence**, **reliability**, **understanding the rules of the game**. Stress $\sigma_S$ affects the [hedonic signal](../../consciousness/foundations/self-observation#мера-рефлексии-r) and motivates the system to seek stable patterns.
 :::
 
-## Структура в динамике {#структура-в-динамике}
+## Structure in dynamics {#структура-в-динамике}
 
-Населённость $\gamma_{SS}$ эволюционирует во [внутреннем времени](../../proofs/dynamics/emergent-time) $\tau$ согласно полному уравнению:
+The population $\gamma_{SS}$ evolves in [internal time](../../proofs/dynamics/emergent-time) $\tau$ according to the full equation:
 
 $$
 \frac{d\gamma_{SS}}{d\tau} = -i[H_\Omega, \Gamma]_{SS} + \mathcal{D}_{SS}[\Gamma] + \mathcal{R}_{SS}
 $$
 
-где $\mathcal{D}$ — диссипативная часть ([операторы Линдблада](../../core/operators/lindblad-operators)), $\mathcal{R}$ — [оператор замены](../../core/operators/lindblad-operators).
+where $\mathcal{D}$ is the dissipative part ([Lindblad operators](../../core/operators/lindblad-operators)) and $\mathcal{R}$ is the [replacement operator](../../core/operators/lindblad-operators).
 
-### Процессы, изменяющие структуру
+### Processes that change structure
 
-| Процесс | Что происходит с $\gamma_{SS}$ | Следствие |
-|---------|-------------------------------|-----------|
-| Кристаллизация | Резкий рост | Жидкость обретает дальний порядок — фазовый переход |
-| Обучение навыку | Плавный рост | Повторение закрепляет нейронные паттерны (миелинизация) |
-| Травма, шок | Резкое падение | Привычные структуры разрушены, мир стал непредсказуемым |
-| Старение | Хроническое снижение | Клеточные механизмы репарации ослабевают |
-| Революция | Падение + последующий рост | Старые институты разрушены, новые ещё не сформированы |
+| Process | What happens to $\gamma_{SS}$ | Consequence |
+|---------|-------------------------------|-------------|
+| Crystallisation | Sharp increase | A liquid acquires long-range order — phase transition |
+| Skill learning | Gradual increase | Repetition consolidates neural patterns (myelination) |
+| Trauma, shock | Sharp decrease | Familiar structures destroyed, the world has become unpredictable |
+| Ageing | Chronic decrease | Cellular repair mechanisms weaken |
+| Revolution | Decrease + subsequent increase | Old institutions destroyed, new ones not yet formed |
 
-:::tip Структурная пластичность
-Здоровая система не просто удерживает структуру — она способна **реструктурироваться**. Это означает: $\gamma_{SS}$ временно снижается (старая форма разрушается), а затем возрастает в новой конфигурации ($\gamma_{Sk}$ перераспределяются). Такая динамика — основа адаптации. Система, неспособная временно «отпустить» структуру, не может научиться ничему новому.
+:::tip Structural plasticity
+A healthy system does not merely hold structure — it is capable of **restructuring itself**. This means: $\gamma_{SS}$ temporarily decreases (the old form is dismantled), then increases in a new configuration ($\gamma_{Sk}$ are redistributed). This dynamic is the basis of adaptation. A system incapable of temporarily "releasing" its structure cannot learn anything new.
 :::
 
-## Инварианты и законы сохранения
+## Invariants and conservation laws
 
-Структура выражается через **сохраняющиеся величины**:
+Structure is expressed through **conserved quantities**:
 
 $$
 \frac{d\langle A \rangle}{d\tau} = 0 \quad \Leftrightarrow \quad [A, H] = 0
 $$
 
-Оператор $A$ сохраняется тогда и только тогда, когда он коммутирует с гамильтонианом. Это **теорема Нётер** в квантовой форме.
+An operator $A$ is conserved if and only if it commutes with the Hamiltonian. This is **Noether's theorem** in quantum form.
 
-### Теорема Нётер подробнее {#теорема-нётер}
+### Noether's theorem in detail {#теорема-нётер}
 
-Классическая теорема Нётер утверждает: если уравнения движения инвариантны относительно непрерывного преобразования, то существует сохраняющаяся величина. В квантовой механике это принимает элегантную форму:
+The classical Noether theorem states: if the equations of motion are invariant under a continuous transformation, then there exists a conserved quantity. In quantum mechanics this takes an elegant form:
 
-| Симметрия | Преобразование | Сохраняющаяся величина |
-|-----------|---------------|------------------------|
-| Трансляция в пространстве | $x \to x + a$ | Импульс $p$ |
-| Трансляция во времени | $t \to t + \Delta t$ | Энергия $E$ |
-| Вращение | $\theta \to \theta + \alpha$ | Угловой момент $L$ |
-| Фазовое преобразование | $\psi \to e^{i\alpha}\psi$ | Заряд $Q$ |
+| Symmetry | Transformation | Conserved quantity |
+|----------|---------------|-------------------|
+| Spatial translation | $x \to x + a$ | Momentum $p$ |
+| Time translation | $t \to t + \Delta t$ | Energy $E$ |
+| Rotation | $\theta \to \theta + \alpha$ | Angular momentum $L$ |
+| Phase transformation | $\psi \to e^{i\alpha}\psi$ | Charge $Q$ |
 
-В контексте Голонома: симметрии гамильтониана $H_\Omega$ определяют, какие комбинации населённостей и когерентностей сохраняются при эволюции. Полный набор таких инвариантов — это и есть **структура** системы.
+In the context of the Holon: the symmetries of the Hamiltonian $H_\Omega$ determine which combinations of populations and coherences are conserved during evolution. The complete set of such invariants is precisely the **structure** of the system.
 
-:::info Генератор симметрии = сохраняющаяся величина
-В квантовой механике генератор симметрии (оператор, порождающий преобразование) и сохраняющаяся величина — это **один и тот же оператор**. Импульс $\hat{p}$ одновременно порождает трансляции и сохраняется при трансляционной симметрии. Это глубокое единство — «две стороны одной медали» — отражается в дуальности S ↔ D.
+:::info Generator of symmetry = conserved quantity
+In quantum mechanics the generator of a symmetry (the operator that produces the transformation) and the conserved quantity are **one and the same operator**. Momentum $\hat{p}$ simultaneously generates translations and is conserved under translational symmetry. This deep unity — "two sides of the same coin" — is reflected in the S ↔ D duality.
 :::
 
-## Структура и память {#структура-и-память}
+## Structure and memory {#структура-и-память}
 
-Структура обеспечивает **память** системы — способность сохранять информацию. Без инвариантов всякая информация была бы мгновенно потеряна в потоке динамики.
+Structure provides the system's **memory** — the capacity to retain information. Without invariants, all information would be instantly lost in the flux of dynamics.
 
-| Тип памяти | Структурный инвариант | Время жизни |
-|------------|----------------------|-------------|
-| ДНК | Последовательность нуклеотидов | $\sim 10^9$ лет (вид) |
-| Кристаллическая структура | Параметры решётки | $\sim 10^{10}$ лет |
-| Долговременная память | Синаптические веса | $\sim 10^1$ лет |
-| Кратковременная память | Паттерны активности | $\sim 10^1$ секунд |
-| Квантовая когерентность | Фаза $\gamma_{ij}$ | $\sim 10^{-12}$ секунд (при $T$ комнатной) |
+| Memory type | Structural invariant | Lifetime |
+|-------------|---------------------|----------|
+| DNA | Nucleotide sequence | $\sim 10^9$ years (species) |
+| Crystal structure | Lattice parameters | $\sim 10^{10}$ years |
+| Long-term memory | Synaptic weights | $\sim 10^1$ years |
+| Short-term memory | Activity patterns | $\sim 10^1$ seconds |
+| Quantum coherence | Phase $\gamma_{ij}$ | $\sim 10^{-12}$ seconds (at room $T$) |
 
-Чем выше $\gamma_{SS}$ относительно $\gamma_{DD}$, тем дольше живёт «память» системы. При $\gamma_{SS} \to 0$ система теряет способность хранить информацию и становится «беспамятной» — каждый момент начинает с чистого листа.
+The higher $\gamma_{SS}$ relative to $\gamma_{DD}$, the longer the system's "memory" lives. When $\gamma_{SS} \to 0$ the system loses the ability to store information and becomes "memoryless" — each moment begins from a blank slate.
 
-## Типы структур
+## Types of structures
 
-| Тип | Математический инвариант | Пример |
-|-----|--------------------------|--------|
-| Топологическая | Гомотопические классы | Число дырок в торе |
-| Алгебраическая | Группы симметрии | Кристаллографические группы |
-| Метрическая | Расстояния, углы | Геометрия риманова многообразия |
-| Информационная | Паттерны, корреляции | ДНК-последовательность |
+| Type | Mathematical invariant | Example |
+|------|----------------------|---------|
+| Topological | Homotopy classes | Number of holes in a torus |
+| Algebraic | Symmetry groups | Crystallographic groups |
+| Metric | Distances, angles | Riemannian manifold geometry |
+| Informational | Patterns, correlations | DNA sequence |
 
-## Дуальность S ↔ D {#дуальность-sd}
+## S ↔ D duality {#дуальность-sd}
 
-Структура и [Динамика](./dimension-d) — два аспекта одного объекта: **гамильтониана $H$**.
+Structure and [Dynamics](./dimension-d) are two aspects of one object: **the Hamiltonian $H$**.
 
-**Один оператор — два лица:**
+**One operator — two faces:**
 
-| Аспект | Что описывает $H$ | Математическая операция |
-|--------|-------------------|------------------------|
-| **Структура (S)** | Спектр $\{E_n\}$ — стационарные состояния | Собственные значения: $H\|\psi_n\rangle = E_n\|\psi_n\rangle$ |
-| **Динамика (D)** | Эволюция $U(\tau) = e^{-iH_{eff}\tau}$ | Экспоненциальное отображение |
+| Aspect | What $H$ describes | Mathematical operation |
+|--------|-------------------|----------------------|
+| **Structure (S)** | Spectrum $\{E_n\}$ — stationary states | Eigenvalues: $H\|\psi_n\rangle = E_n\|\psi_n\rangle$ |
+| **Dynamics (D)** | Evolution $U(\tau) = e^{-iH_{eff}\tau}$ | Exponential map |
 
-Это не метафора — это точное математическое утверждение. Зная спектр $H$ (структуру), вы полностью определяете эволюцию (динамику), и наоборот: зная все возможные эволюции, можно восстановить спектр.
+This is not a metaphor — it is a precise mathematical statement. Knowing the spectrum of $H$ (structure), you completely determine the evolution (dynamics), and vice versa: knowing all possible evolutions, one can recover the spectrum.
 
-**Аналогия с музыкой:** Партитура (структура) и исполнение (динамика) — два аспекта одного произведения. Партитура — набор нот (спектр), исполнение — звучание во времени (эволюция). Одна партитура определяет все возможные исполнения; одно полное исполнение позволяет восстановить партитуру.
+**Music analogy:** A score (structure) and a performance (dynamics) are two aspects of the same work. The score is a set of notes (spectrum); the performance is sound in time (evolution). One score determines all possible performances; one complete performance allows the score to be recovered.
 
-:::tip Следствие дуальности
-Когерентность $\gamma_{SD}$ — **устойчивость при эволюции**. Высокая $\gamma_{SD}$ означает, что структура и динамика «согласованы»: система эволюционирует, не разрушая собственную форму. Низкая $\gamma_{SD}$ — признак нестабильности: динамика разрушает структуру (хаотический распад) или структура подавляет динамику (замороженность).
+:::tip Consequence of duality
+The coherence $\gamma_{SD}$ is the **stability under evolution**. High $\gamma_{SD}$ means that structure and dynamics are "aligned": the system evolves without destroying its own form. Low $\gamma_{SD}$ is a sign of instability: dynamics destroys structure (chaotic collapse) or structure suppresses dynamics (freezing).
 :::
 
-## Примеры
+## Examples
 
-| Уровень | Пример | Структурный инвариант |
-|---------|--------|----------------------|
-| Физический | Кристаллическая решётка | Трансляционная симметрия |
-| Физический | Атомные орбитали | Квантовые числа $(n, l, m)$ |
-| Биологический | ДНК | Последовательность нуклеотидов |
-| Биологический | Белок | Третичная структура укладки |
-| Когнитивный | Грамматика | Синтаксические правила |
-| Когнитивный | Долговременная память | Устойчивые нейронные паттерны |
-| Социальный | Конституция | Основные правовые нормы |
-| Социальный | Язык | Фонологическая система |
-| Математический | Группа симметрий | Таблица умножения группы |
-| Математический | Топологическое пространство | Гомеоморфный тип |
+| Level | Example | Structural invariant |
+|-------|---------|---------------------|
+| Physical | Crystal lattice | Translational symmetry |
+| Physical | Atomic orbitals | Quantum numbers $(n, l, m)$ |
+| Biological | DNA | Nucleotide sequence |
+| Biological | Protein | Tertiary folding structure |
+| Cognitive | Grammar | Syntactic rules |
+| Cognitive | Long-term memory | Stable neural patterns |
+| Social | Constitution | Fundamental legal norms |
+| Social | Language | Phonological system |
+| Mathematical | Symmetry group | Group multiplication table |
+| Mathematical | Topological space | Homeomorphism type |
 
-## Структура на разных уровнях организации {#уровни-организации}
+## Structure at different levels of organisation {#уровни-организации}
 
-Структура проявляется на каждом уровне сложности, но форма инвариантов различна:
+Structure manifests at every level of complexity, but the form of the invariants differs:
 
-### Физический уровень
-На уровне элементарных частиц структура — это **квантовые числа** (спин, заряд, цвет), которые сохраняются при взаимодействиях. Кристалл — пример макроскопической структуры: трансляционная симметрия решётки определяет электронные зоны и все физические свойства материала.
+### Physical level
+At the level of elementary particles, structure is **quantum numbers** (spin, charge, colour) that are conserved in interactions. A crystal is an example of macroscopic structure: the translational symmetry of the lattice determines the electronic bands and all physical properties of the material.
 
-### Биологический уровень
-Генетический код — информационная структура, сохраняющаяся через миллиарды лет эволюции. Триплетный код (3 нуклеотида → 1 аминокислота) — инвариант, общий для всех живых организмов на Земле. Морфогенез — процесс, в котором структура (план тела) реализуется через динамику (деление и дифференциация клеток).
+### Biological level
+The genetic code is an informational structure preserved across billions of years of evolution. The triplet code (3 nucleotides → 1 amino acid) is an invariant shared by all living organisms on Earth. Morphogenesis is the process in which structure (the body plan) is realised through dynamics (cell division and differentiation).
 
-### Когнитивный уровень
-Грамматика — структура языка. Конкретные слова (динамика речи) меняются, но грамматические правила (структура) сохраняются на протяжении поколений. Ребёнок усваивает грамматику, не заучивая правила — он восстанавливает **структуру** из потока речи, что демонстрирует фундаментальность $S$.
+### Cognitive level
+Grammar is the structure of language. Specific words (the dynamics of speech) change, but grammatical rules (structure) are preserved across generations. A child acquires grammar without memorising rules — they recover the **structure** from the flow of speech, demonstrating the fundamentality of $S$.
 
-### Социальный уровень
-Институты — социальные структуры, сохраняющиеся при смене поколений. Конституция — структурный инвариант государства: правительства меняются, но основные правила остаются. Когда структура разрушается (революция, хаос), социальная система теряет идентичность — точно как Голоном при $\gamma_{SS} \to 0$.
+### Social level
+Institutions are social structures that persist across generations. A constitution is the structural invariant of a state: governments change, but the fundamental rules remain. When structure is destroyed (revolution, chaos), the social system loses its identity — exactly as a Holon does when $\gamma_{SS} \to 0$.
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    S["S — Структура"] --> A["A — задаёт что различать"]
-    S --> D["D — определяет траектории эволюции"]
-    S --> L["L — кодирует логические отношения"]
-    S --> E["E — определяет пространство качеств"]
-    S --> O["O — укоренена в основании"]
-    S --> U["U — обеспечивает целостность"]
+    S["S — Structure"] --> A["A — defines what to distinguish"]
+    S --> D["D — determines evolutionary trajectories"]
+    S --> L["L — encodes logical relations"]
+    S --> E["E — defines the quality space"]
+    S --> O["O — rooted in the ground"]
+    S --> U["U — provides wholeness"]
 ```
 
-### Развёрнутые связи {#развёрнутые-связи}
+### Expanded connections {#развёрнутые-связи}
 
-**S ↔ A (Структура ↔ Артикуляция):** Структура и различение взаимно необходимы. [Артикуляция](./dimension-a) создаёт элементы, из которых строится структура, а структура определяет, **какие** различения устойчивы. Грамматика языка (структура) определяет, какие фонемные различения (артикуляции) значимы: в русском «р» и «л» — разные фонемы, в японском — нет. Когерентность $\gamma_{SA}$ — **артикулированность структуры**: насколько чётко выражены границы формы.
+**S ↔ A (Structure ↔ Articulation):** Structure and distinction are mutually necessary. [Articulation](./dimension-a) creates the elements from which structure is built, and structure determines **which** distinctions are stable. The grammar of a language (structure) determines which phonemic distinctions (articulations) are meaningful: in Russian "р" and "л" are different phonemes, in Japanese they are not. The coherence $\gamma_{SA}$ is the **articulatedness of structure**: how sharply the boundaries of form are expressed.
 
-**S ↔ D (Структура ↔ Динамика):** Центральная дуальность теории (подробнее [выше](#дуальность-sd)). $H$ одновременно определяет спектр (структуру) и эволюцию (динамику). Когерентность $\gamma_{SD}$ — **устойчивость при эволюции**: высокая означает, что система эволюционирует, не разрушая собственную форму. Аналогия: река течёт (D), но русло (S) сохраняется — это высокая $\gamma_{SD}$.
+**S ↔ D (Structure ↔ Dynamics):** The central duality of the theory (details [above](#дуальность-sd)). $H$ simultaneously determines the spectrum (structure) and the evolution (dynamics). The coherence $\gamma_{SD}$ is **stability under evolution**: high means the system evolves without destroying its own form. Analogy: a river flows (D), but the riverbed (S) is preserved — this is high $\gamma_{SD}$.
 
-**S → L (Структура → Логика):** Структура задаёт **отношения** между элементами, а [Логика](./dimension-l) — **правила** этих отношений. Кристаллическая решётка (структура) определяет, какие химические связи (логические отношения) возможны. Когерентность $\gamma_{SL}$ — **логическая согласованность** формы: непротиворечивость структуры.
+**S → L (Structure → Logic):** Structure defines the **relations** between elements, while [Logic](./dimension-l) defines the **rules** of those relations. A crystal lattice (structure) determines which chemical bonds (logical relations) are possible. The coherence $\gamma_{SL}$ is the **logical consistency** of form: the non-contradictoriness of structure.
 
-**S → E (Структура → Интериорность):** Структура определяет **пространство возможных переживаний**. Архитектура зрительной коры (структура) определяет, какие цвета, формы и движения могут быть восприняты (интериорность). Когерентность $\gamma_{SE}$ — **осознанность структуры**: переживает ли система свою собственную форму.
+**S → E (Structure → Interiority):** Structure determines the **space of possible experiences**. The architecture of the visual cortex (structure) determines which colours, shapes, and motions can be perceived (interiority). The coherence $\gamma_{SE}$ is the **awareness of structure**: whether the system experiences its own form.
 
-**S → O (Структура → Основание):** Структура укоренена в [Основании](./dimension-o) — источнике, из которого она черпает ресурсы для самоподдержания. Когерентность $\gamma_{SO}$ — **фундаментальность**: насколько структура связана с глубинным источником, а не является поверхностной надстройкой.
+**S → O (Structure → Ground):** Structure is rooted in the [Ground](./dimension-o) — the source from which it draws resources for self-maintenance. The coherence $\gamma_{SO}$ is **fundamentality**: how much the structure is connected to the deep source rather than being a superficial overlay.
 
-**S → U (Структура → Единство):** Структура — не хаотичный набор инвариантов, а **организованное целое**. Когерентность $\gamma_{SU}$ — **интегрированность структуры**: вклад формы в единство Голонома. На Фано-плоскости эта связь выражена линией $\{U, O, S\}$: структура возникает из основания через интеграцию.
+**S → U (Structure → Unity):** Structure is not a chaotic set of invariants but an **organised whole**. The coherence $\gamma_{SU}$ is the **integration of structure**: the contribution of form to the unity of the Holon. On the Fano plane this connection is expressed by the line $\{U, O, S\}$: structure emerges from the ground through integration.
 
-## Когерентность с S
+## Coherence with S
 
-Элементы $\gamma_{Si}$ матрицы когерентности описывают связь структуры с другими измерениями:
+The elements $\gamma_{Si}$ of the coherence matrix describe the connection of structure with other dimensions:
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{SA}$ | Артикулированность структуры (чёткость границ) |
-| $\gamma_{SD}$ | Устойчивость при эволюции (стабильность) |
-| $\gamma_{SL}$ | Логическая согласованность (непротиворечивость) |
-| $\gamma_{SE}$ | Осознанность структуры (восприятие формы) |
-| $\gamma_{SO}$ | Укоренённость в основании (фундаментальность) |
-| $\gamma_{SU}$ | Интегрированность структуры (вклад в целое) |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{SA}$ | Articulatedness of structure (sharpness of boundaries) |
+| $\gamma_{SD}$ | Stability under evolution (robustness) |
+| $\gamma_{SL}$ | Logical consistency (non-contradictoriness) |
+| $\gamma_{SE}$ | Awareness of structure (perception of form) |
+| $\gamma_{SO}$ | Rootedness in the ground (fundamentality) |
+| $\gamma_{SU}$ | Integration of structure (contribution to the whole) |
 
-## Структура и Фано-плоскость {#структура-и-фано}
+## Structure and the Fano plane {#структура-и-фано}
 
-В [октонионной структуре](./dimensions#октонионная-интерпретация) УГМ измерению $S$ соответствует мнимая единица $e_2 \in \mathrm{Im}(\mathbb{O})$. Структура лежит в секторе **3** триплетного разложения $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
 
-На [Фано-плоскости](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$ структура $S$ ($= e_2$) принадлежит **трём Фано-линиям**:
+On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, structure $S$ ($= e_2$) belongs to **three Fano lines**:
 
-| Фано-линия | Измерения | Интерпретация |
-|------------|-----------|---------------|
-| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Артикуляция + Структура + Логика | **Формальная линия**: различение + форма + логика — триада рационального познания |
-| $\{S, D, E\}$ = $\{2, 3, 5\}$ | Структура + Динамика + Интериорность | **Эволюционная линия**: форма + изменение + переживание — триада живого опыта |
-| $\{U, O, S\}$ = $\{6, 7, 2\}$ | Единство + Основание + Структура | **Фундаментальная линия**: $S$ связана с $O$ через элемент $\bar{\mathbf{3}}$ ($U$) — форма через интеграцию |
+| Fano line | Dimensions | Interpretation |
+|-----------|------------|----------------|
+| $\{A, S, L\}$ = $\{1, 2, 4\}$ | Articulation + Structure + Logic | **Formal line**: distinction + form + logic — the triad of rational cognition |
+| $\{S, D, E\}$ = $\{2, 3, 5\}$ | Structure + Dynamics + Interiority | **Evolutionary line**: form + change + experience — the triad of lived experience |
+| $\{U, O, S\}$ = $\{6, 7, 2\}$ | Unity + Ground + Structure | **Fundamental line**: $S$ is connected to $O$ through the $\bar{\mathbf{3}}$ element ($U$) — form through integration |
 
-:::tip Уникальность S на Фано-плоскости (T-177) [Т]
-Структура — единственный элемент сектора **3**, связанный с Основанием ($O$) через элемент $\bar{\mathbf{3}}$ (Единство, $U$) на линии $\{U, O, S\}$. Для сравнения: $A$ связана с $O$ напрямую (линия $\{O, A, D\}$), а $D$ — через элемент **3** ($A$).
+:::tip Uniqueness of S on the Fano plane (T-177) [Т]
+Structure is the only element of the **3** sector that is connected to Ground ($O$) through a $\bar{\mathbf{3}}$ element (Unity, $U$) on the line $\{U, O, S\}$. By comparison: $A$ is connected to $O$ directly (line $\{O, A, D\}$), and $D$ — through a **3** element ($A$).
 
-Это означает, что путь от Основания к Структуре проходит через **интеграцию** ($U$) — форма возникает не напрямую из источника, а через объединение.
+This means that the path from the Ground to Structure passes through **integration** ($U$) — form arises not directly from the source, but through unification.
 :::
 
 ```mermaid
 graph TD
-    subgraph "Фано-линии S"
-        ASL["{A, S, L} — формальная"]
-        SDE["{S, D, E} — эволюционная"]
-        UOS["{U, O, S} — фундаментальная"]
+    subgraph "Fano lines of S"
+        ASL["{A, S, L} — formal"]
+        SDE["{S, D, E} — evolutionary"]
+        UOS["{U, O, S} — fundamental"]
     end
     S((S)) --- ASL
     S --- SDE
@@ -355,45 +355,45 @@ graph TD
     style SDE fill:#3498db,color:#fff,stroke:#2980b9
 ```
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_2 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. Details, $G_2$-caveat, and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
-## Градации структуры {#градации-структуры}
+## Gradations of structure {#градации-структуры}
 
-Как и [Артикуляция](./dimension-a#градации-артикуляции), Структура — не бинарное свойство, а **непрерывная шкала**:
+Like [Articulation](./dimension-a#градации-артикуляции), Structure is not a binary property but a **continuous scale**:
 
-#### Уровень 0: Аморфность ($\gamma_{SS} \approx 0$)
+#### Level 0: Amorphousness ($\gamma_{SS} \approx 0$)
 
-Никакие инварианты не выделены — полный хаос. Физический аналог — идеальный газ при бесконечной температуре: каждый момент не связан с предыдущим, «памяти» нет. На когнитивном уровне — делирий, где ни одна мысль не удерживается дольше мгновения.
+No invariants are distinguished — complete chaos. The physical analogue is an ideal gas at infinite temperature: each moment is unconnected to the previous, there is no "memory". At the cognitive level — delirium, where no thought is held for longer than an instant.
 
-#### Уровень 1: Локальный порядок ($\gamma_{SS} \sim 0.05$)
+#### Level 1: Local order ($\gamma_{SS} \sim 0.05$)
 
-Есть ближний порядок, но нет дальнего. Жидкость: соседние молекулы ещё скоррелированы, но на расстоянии нескольких молекулярных радиусов корреляции исчезают. Когнитивный аналог — дремота, где мысли связаны локально, но общая структура рассуждения отсутствует.
+There is short-range order but no long-range order. A liquid: neighbouring molecules are still correlated, but correlations disappear beyond a few molecular radii. The cognitive analogue is drowsiness, where thoughts are locally connected but the overall structure of reasoning is absent.
 
-#### Уровень 2: Устойчивая форма ($\gamma_{SS} \sim 1/7$)
+#### Level 2: Stable form ($\gamma_{SS} \sim 1/7$)
 
-Сбалансированная структура: инварианты достаточно сильны, чтобы обеспечить идентичность, но достаточно гибки, чтобы допускать адаптацию. Это уровень здорового организма, функционирующего общества, работающей теории.
+Balanced structure: invariants are strong enough to ensure identity, but flexible enough to allow adaptation. This is the level of a healthy organism, a functioning society, a working theory.
 
-#### Уровень 3: Кристаллический порядок ($\gamma_{SS} > 1/7$)
+#### Level 3: Crystalline order ($\gamma_{SS} > 1/7$)
 
-Высокий дальний порядок. Кристалл, бюрократия, ригидный характер. Устойчивость гарантирована, но ценой гибкости. Новая информация с трудом интегрируется — структура «отвергает» то, что не вписывается в существующие рамки.
+High long-range order. Crystal, bureaucracy, rigid character. Stability is guaranteed, but at the cost of flexibility. New information is difficult to integrate — structure "rejects" what does not fit existing frameworks.
 
-#### Уровень 4: Окаменение ($\gamma_{SS} \gg 1/7$)
+#### Level 4: Ossification ($\gamma_{SS} \gg 1/7$)
 
-Патологическая ригидность. Система не способна к адаптации: любое отклонение от формы подавляется. Фанатизм, окостенение институтов, «мёртвая буква закона». Структура из средства выживания превращается в его препятствие.
+Pathological rigidity. The system is incapable of adaptation: any deviation from form is suppressed. Fanaticism, institutional sclerosis, "the dead letter of the law". Structure turns from a means of survival into an obstacle to it.
 
-## Резюме
+## Summary
 
-Структура — второе измерение Голонома, обеспечивающее его идентичность во времени. Без структуры нет инвариантов, нет памяти, нет самотождественности. Математически структура описывается гамильтонианом — оператором, чей спектр определяет «архитектуру» системы, а экспонента — её эволюцию. Дуальность S ↔ D (спектр ↔ эволюция) — одно из центральных соотношений теории. На Фано-плоскости S занимает уникальную позицию: связана с Основанием через Единство, что отражает путь «от источника через интеграцию к форме».
+Structure is the second dimension of the Holon, providing its identity in time. Without structure there are no invariants, no memory, no self-sameness. Mathematically, structure is described by the Hamiltonian — the operator whose spectrum defines the "architecture" of the system and whose exponential defines its evolution. The S ↔ D duality (spectrum ↔ evolution) is one of the central relations of the theory. On the Fano plane, S occupies a unique position: it is connected to the Ground through Unity, reflecting the path "from the source through integration to form".
 
 ---
 
-**Связанные документы:**
-- [Артикуляция (A)](./dimension-a) — предыдущее измерение
-- [Динамика (D)](./dimension-d) — следующее измерение
-- [Матрица когерентности](../../core/dynamics/coherence-matrix) — полное описание Γ
-- [Теорема о минимальности](../../proofs/minimality/theorem-minimality-7) — доказательство необходимости S
-- [Эмерджентное время](../../proofs/dynamics/emergent-time) — τ из структуры Γ
+**Related documents:**
+- [Articulation (A)](./dimension-a) — previous dimension
+- [Dynamics (D)](./dimension-d) — next dimension
+- [Coherence matrix](../../core/dynamics/coherence-matrix) — full description of Γ
+- [Minimality theorem](../../proofs/minimality/theorem-minimality-7) — proof of the necessity of S
+- [Emergent time](../../proofs/dynamics/emergent-time) — τ from the structure of Γ

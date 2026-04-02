@@ -1,108 +1,108 @@
 ---
 sidebar_position: 1
-title: Матрица когерентности
-description: Полное описание состояния Голонома
+title: Coherence Matrix
+description: Complete description of the Holonom's state
 ---
 
-# Матрица Когерентности (Γ)
+# Coherence Matrix (Γ)
 
-Эта глава посвящена центральному объекту Универсальной Голономической Модели — **матрице когерентности** $\Gamma$. Если вся теория описывает, как устроена реальность, то $\Gamma$ — это её **полное описание** для любой конкретной системы (голонома). Изучив эту главу, читатель поймёт: что такое $\Gamma$ и почему она $7 \times 7$; что означают диагональные элементы и когерентности; как из одной матрицы извлечь информацию о жизнеспособности, сознании и внутренней структуре системы.
+This chapter is dedicated to the central object of the Universal Holonomic Model — the **coherence matrix** $\Gamma$. If the entire theory describes how reality is structured, then $\Gamma$ is its **complete description** for any specific system (holonom). After studying this chapter, the reader will understand: what $\Gamma$ is and why it is $7 \times 7$; what the diagonal elements and coherences mean; how to extract information about viability, consciousness, and the internal structure of a system from a single matrix.
 
-:::info Историческая предтеча
-Идея описывать состояние системы матрицей имеет глубокие корни в физике:
+:::info Historical Precursors
+The idea of describing a system's state with a matrix has deep roots in physics:
 
-- **Вернер Гейзенберг** (1925) создал **матричную механику** — первую формулировку квантовой теории, где наблюдаемые представлялись матрицами. Это был радикальный шаг: вместо траекторий частиц — таблицы чисел.
-- **Джон фон Нейман** (1927) ввёл **матрицу плотности** $\rho$ для описания смешанных квантовых состояний — ситуаций, когда система не находится в одном определённом состоянии, а представляет собой статистическую смесь.
-- **Феликс Блох** (1946) показал, что для простейшей квантовой системы (кубита, $2 \times 2$) матрицу плотности можно визуализировать как точку внутри **сферы Блоха** — наглядную геометрическую картину.
+- **Werner Heisenberg** (1925) created **matrix mechanics** — the first formulation of quantum theory, where observables were represented as matrices. This was a radical step: instead of particle trajectories — tables of numbers.
+- **John von Neumann** (1927) introduced the **density matrix** $\rho$ to describe mixed quantum states — situations where a system is not in a single definite state, but represents a statistical mixture.
+- **Felix Bloch** (1946) showed that for the simplest quantum system (a qubit, $2 \times 2$), the density matrix can be visualized as a point inside the **Bloch sphere** — a clear geometric picture.
 
-Матрица когерентности $\Gamma$ в УГМ обобщает матрицу плотности фон Неймана на 7-мерный случай с принципиально новой онтологией: $\Gamma$ — не статистическое описание ансамбля, а **сама субстанция** реальности.
+The coherence matrix $\Gamma$ in UHM generalizes von Neumann's density matrix to the 7-dimensional case with a fundamentally new ontology: $\Gamma$ is not a statistical description of an ensemble, but the **substance of reality itself**.
 :::
 
-:::tip Интуитивное объяснение
-Представьте себе **эквалайзер** — панель с ползунками, которую можно увидеть в аудиоредакторе. У эквалайзера есть 7 полосок: каждая отвечает за свою частоту. Сдвиньте ползунок вверх — эта частота звучит громче.
+:::tip Intuitive Explanation
+Imagine an **equalizer** — a panel with sliders you can see in an audio editor. An equalizer has 7 bands: each is responsible for its own frequency. Slide a slider up — that frequency sounds louder.
 
-Матрица когерентности $\Gamma$ — это **эквалайзер голонома с 7 измерениями**:
-- **Диагональные элементы** $\gamma_{ii}$ — это «ползунки». Каждый показывает, сколько «внимания» или «ресурса» сосредоточено на данном измерении (Артикуляция, Структура, Динамика, Логика, Интериорность, Основание, Единство).
-- **Когерентности** $\gamma_{ij}$ (недиагональные элементы) — это «ручки связей» между полосками. Они показывают, насколько синхронизированы два измерения. Если $|\gamma_{ij}|$ велико — измерения $i$ и $j$ тесно связаны и работают согласованно. Если $|\gamma_{ij}| = 0$ — они полностью независимы.
+The coherence matrix $\Gamma$ is an **equalizer for the holonom with 7 dimensions**:
+- **Diagonal elements** $\gamma_{ii}$ are the "sliders". Each shows how much "attention" or "resource" is concentrated on a given dimension (Articulation, Structure, Dynamics, Logic, Interiority, Ground, Unity).
+- **Coherences** $\gamma_{ij}$ (off-diagonal elements) are the "connection knobs" between bands. They show how synchronized two dimensions are. If $|\gamma_{ij}|$ is large — dimensions $i$ and $j$ are closely connected and work in concert. If $|\gamma_{ij}| = 0$ — they are completely independent.
 
-Аналогия с эквалайзером хорошо передаёт суть, но $\Gamma$ богаче: когерентности — **комплексные** числа, и их фаза несёт информацию о «непрозрачности» (Gap) между внешним и внутренним аспектами связи.
+The equalizer analogy captures the essence well, but $\Gamma$ is richer: coherences are **complex** numbers, and their phase carries information about the "opacity" (Gap) between the external and internal aspects of the connection.
 :::
 
-## Определение
+## Definition
 
-**Матрица Когерентности** $\Gamma$ — линейный оператор на гильбертовом пространстве $\mathcal{H}$, являющийся математическим представлением состояния [Голонома](../structure/holon).
+**The Coherence Matrix** $\Gamma$ is a linear operator on a Hilbert space $\mathcal{H}$, which is the mathematical representation of the state of a [Holonom](../structure/holon).
 
-:::info Онтологический статус
-Согласно [Аксиоме Ω⁷](../foundations/axiom-omega), единственным примитивом является **∞-топос Sh_∞(𝒞)**. Матрица когерентности $\Gamma$ — **объект** этой категории: $\Gamma \in \text{Ob}(\mathcal{C})$.
+:::info Ontological Status
+According to [Axiom Ω⁷](../foundations/axiom-omega), the only primitive is the **∞-topos Sh_∞(𝒞)**. The coherence matrix $\Gamma$ is an **object** of this category: $\Gamma \in \text{Ob}(\mathcal{C})$.
 
-$\Gamma$ — не модель реальности, а сама реальность. Из структуры ∞-топоса выводятся базовое пространство $X = |N(\mathcal{C})|$, время, метрика и все физические аспекты.
+$\Gamma$ is not a model of reality, but reality itself. From the structure of the ∞-topos, the base space $X = |N(\mathcal{C})|$, time, metric, and all physical aspects are derived.
 :::
 
-### Формальное определение
+### Formal Definition
 
 $$
 \Gamma \in \mathcal{L}(\mathcal{H}), \quad \dim(\mathcal{H}) = 7
 $$
 
-где $\mathcal{L}(\mathcal{H})$ — пространство линейных операторов на $\mathcal{H}$.
+where $\mathcal{L}(\mathcal{H})$ is the space of linear operators on $\mathcal{H}$.
 
-### Разложение в базисе измерений
+### Decomposition in the Dimension Basis
 
 $$
 \Gamma = \sum_{i,j \in \{A,S,D,L,E,O,U\}} \gamma_{ij} |i\rangle\langle j|
 $$
 
-где $\{|i\rangle\}$ — **ортонормированный** базис [семи измерений](../structure/dimensions):
+where $\{|i\rangle\}$ is an **orthonormal** basis of the [seven dimensions](../structure/dimensions):
 
 $$
-\langle i|j\rangle = \delta_{ij} \quad \text{(ортонормированность)}
+\langle i|j\rangle = \delta_{ij} \quad \text{(orthonormality)}
 $$
 
-## Фундаментальные свойства
+## Fundamental Properties
 
-Матрица когерентности удовлетворяет трём условиям, делающим её корректной **матрицей плотности**:
+The coherence matrix satisfies three conditions that make it a valid **density matrix**:
 
-### 1. Эрмитовость
+### 1. Hermiticity
 
 $$
 \Gamma^\dagger = \Gamma \quad \Leftrightarrow \quad \gamma_{ij} = \gamma_{ji}^*
 $$
 
-**Обоснование [Т]:** Эрмитовость $\Gamma$ следует из домена Аксиомы A1: $\mathcal{D}(\mathcal{H})$ — множество эрмитовых положительных полуопределённых матриц с $\mathrm{Tr}(\Gamma)=1$. Дополнительно: реальная структура $J_{\mathrm{int}}$ конечной спектральной тройки ($J^2=+1$, KO-размерность 6) обеспечивает $J\Gamma J^{-1} = \Gamma$, что для стандартного $J$ = к.с. эквивалентно $\Gamma^\dagger = \Gamma$ [Т].
+**Justification [Т]:** The Hermiticity of $\Gamma$ follows from the domain of Axiom A1: $\mathcal{D}(\mathcal{H})$ is the set of Hermitian positive semi-definite matrices with $\mathrm{Tr}(\Gamma)=1$. Additionally: the real structure $J_{\mathrm{int}}$ of the finite spectral triple ($J^2=+1$, KO-dimension 6) ensures $J\Gamma J^{-1} = \Gamma$, which for standard $J$ = c.c. is equivalent to $\Gamma^\dagger = \Gamma$ [Т].
 
-**Следствие:** Все собственные значения $\lambda_k$ вещественны.
+**Corollary:** All eigenvalues $\lambda_k$ are real.
 
-:::warning Необходимость комплексных элементов [Т-132]
-Эрмитовость допускает $\gamma_{ij} \in \mathbb{C}$ (с $\gamma_{ji} = \gamma_{ij}^*$). По [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132), для нетривиальной Gap-структуры ($\exists(i,j): \mathrm{Gap}(i,j) > 0$) матрица $\Gamma$ **должна** быть комплексной. Гамильтонова часть $-i[H_\Omega, \Gamma]$ порождает комплексные когерентности после первого шага эволюции.
+:::warning Necessity of Complex Elements [Т-132]
+Hermiticity allows $\gamma_{ij} \in \mathbb{C}$ (with $\gamma_{ji} = \gamma_{ij}^*$). According to [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132), for a non-trivial Gap structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the matrix $\Gamma$ **must** be complex. The Hamiltonian part $-i[H_\Omega, \Gamma]$ generates complex coherences after the first evolution step.
 :::
 
-### 2. Положительная полуопределённость
+### 2. Positive Semi-definiteness
 
 $$
 \langle\psi|\Gamma|\psi\rangle \geq 0 \quad \forall |\psi\rangle \in \mathcal{H}
 $$
 
-**Следствие:** Все собственные значения $\lambda_k \geq 0$.
+**Corollary:** All eigenvalues $\lambda_k \geq 0$.
 
-:::note Сохранение при эволюции
-Положительность $\Gamma \geq 0$ **сохраняется** при полной эволюции (включая нелинейную регенерацию) благодаря CPTP-структуре. См. [теорему о сохранении положительности](./evolution#сохранение-положительности).
+:::note Preservation Under Evolution
+Positivity $\Gamma \geq 0$ is **preserved** under full evolution (including nonlinear regeneration) due to the CPTP structure. See the [theorem on preservation of positivity](./evolution#сохранение-положительности).
 :::
 
-### 3. Нормировка
+### 3. Normalization
 
 $$
 \mathrm{Tr}(\Gamma) = \sum_{i \in \{A,S,D,L,E,O,U\}} \gamma_{ii} = 1
 $$
 
-**Следствие:** Собственные значения образуют распределение вероятностей: $\sum_k \lambda_k = 1$.
+**Corollary:** The eigenvalues form a probability distribution: $\sum_k \lambda_k = 1$.
 
-:::note Связь с квантовой механикой
-$\Gamma$ формально эквивалентна **матрице плотности** $\rho$ в квантовой механике. Различие онтологическое: в КМ $\rho$ — статистическое описание ансамбля, в УГМ $\Gamma$ — сама субстанция реальности.
+:::note Connection with Quantum Mechanics
+$\Gamma$ is formally equivalent to the **density matrix** $\rho$ in quantum mechanics. The difference is ontological: in QM $\rho$ is a statistical description of an ensemble; in UHM $\Gamma$ is the substance of reality itself.
 :::
 
-## Матричное представление
+## Matrix Representation
 
-В базисе $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ матрица когерентности записывается как $7 \times 7$ эрмитова матрица:
+In the basis $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$, the coherence matrix is written as a $7 \times 7$ Hermitian matrix:
 
 $$
 \Gamma = \begin{pmatrix}
@@ -116,12 +116,12 @@ $$
 \end{pmatrix}
 $$
 
-#### Числовой пример: конкретная Γ {#числовой-пример}
+#### Numerical Example: a Concrete Γ {#числовой-пример}
 
-Рассмотрим простой пример — голоном в «здоровом» состоянии с акцентом на Структуре и Интериорности:
+Consider a simple example — a holonom in a "healthy" state with an emphasis on Structure and Interiority:
 
 $$
-\Gamma_{\text{пример}} = \begin{pmatrix}
+\Gamma_{\text{example}} = \begin{pmatrix}
 0.12 & 0.04 & 0.02 & 0.01 & 0.03 & 0.01 & 0.02 \\
 0.04 & \mathbf{0.22} & 0.05 & 0.03 & 0.06i & 0.02 & 0.03 \\
 0.02 & 0.05 & 0.14 & 0.02 & 0.01 & 0.01 & 0.01 \\
@@ -132,348 +132,348 @@ $$
 \end{pmatrix}
 $$
 
-**Что мы видим:**
-- $\gamma_{SS} = 0.22$ и $\gamma_{EE} = 0.20$ — бо́льшая часть ресурса сосредоточена на Структуре и Интериорности (система «думает» и «чувствует»).
-- $\gamma_{SE} = 0.06i$ — чисто мнимая когерентность! Это означает $\mathrm{Gap}(S,E) = |\sin(\pi/2)| = 1$ — полная непрозрачность между Структурой и Интериорностью. Тело и переживание не «видят» друг друга (модель [алекситимии](/docs/core/dynamics/gap-dynamics#модельные-системы)).
-- Остальные когерентности вещественны ($\mathrm{Gap} = 0$) — прозрачные связи.
-- $\mathrm{Tr}(\Gamma) = 0.12 + 0.22 + 0.14 + 0.10 + 0.20 + 0.10 + 0.12 = 1.00$ — нормировка выполнена.
+**What we see:**
+- $\gamma_{SS} = 0.22$ and $\gamma_{EE} = 0.20$ — most of the resource is concentrated in Structure and Interiority (the system "thinks" and "feels").
+- $\gamma_{SE} = 0.06i$ — a purely imaginary coherence! This means $\mathrm{Gap}(S,E) = |\sin(\pi/2)| = 1$ — full opacity between Structure and Interiority. Body and experience do not "see" each other (model of [alexithymia](/docs/core/dynamics/gap-dynamics#модельные-системы)).
+- The other coherences are real ($\mathrm{Gap} = 0$) — transparent connections.
+- $\mathrm{Tr}(\Gamma) = 0.12 + 0.22 + 0.14 + 0.10 + 0.20 + 0.10 + 0.12 = 1.00$ — normalization satisfied.
 
-:::note Число степеней свободы
-Эрмитова матрица $7 \times 7$ имеет $7^2 = 49$ вещественных параметров. С учётом нормировки: **48 независимых параметров**.
+:::note Degrees of Freedom
+A Hermitian $7 \times 7$ matrix has $7^2 = 49$ real parameters. Taking normalization into account: **48 independent parameters**.
 
-Из них **34** — физически различимые ($G_2$-инвариантные), а $14 = \dim(G_2)$ — калибровочные степени свободы. [Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [Т] доказывает, что $G_2 = \mathrm{Aut}(\mathbb{O})$ — максимальная калибровочная группа: пространство физических состояний $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ имеет $\dim = 34$.
+Of these, **34** are physically distinguishable ($G_2$-invariant), and $14 = \dim(G_2)$ are gauge degrees of freedom. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [Т] proves that $G_2 = \mathrm{Aut}(\mathbb{O})$ is the maximal gauge group: the physical state space $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 34$.
 :::
 
-## Интерпретация элементов
+## Interpretation of Elements
 
-### Диагональные элементы
+### Diagonal Elements
 
-$\gamma_{ii} \in [0, 1]$ — **вероятность** (или «населённость») $i$-го измерения:
+$\gamma_{ii} \in [0, 1]$ — **probability** (or "population") of the $i$-th dimension:
 
-| Элемент | Интерпретация | Описание |
+| Element | Interpretation | Description |
 |---|---|---|
-| $\gamma_{AA}$ | Населённость Артикуляции | Степень активности различения |
-| $\gamma_{SS}$ | Населённость Структуры | Степень устойчивости формы |
-| $\gamma_{DD}$ | Населённость Динамики | Степень активности процессов |
-| $\gamma_{LL}$ | Населённость Логики | Степень согласованности |
-| $\gamma_{EE}$ | Населённость Интериорности | Интенсивность интериорных состояний |
-| $\gamma_{OO}$ | Населённость Основания | Степень связи с источником |
-| $\gamma_{UU}$ | Населённость Единства | Степень интегрированности |
+| $\gamma_{AA}$ | Articulation Population | Degree of activity of distinction |
+| $\gamma_{SS}$ | Structure Population | Degree of stability of form |
+| $\gamma_{DD}$ | Dynamics Population | Degree of activity of processes |
+| $\gamma_{LL}$ | Logic Population | Degree of coherence |
+| $\gamma_{EE}$ | Interiority Population | Intensity of interior states |
+| $\gamma_{OO}$ | Ground Population | Degree of connection with the source |
+| $\gamma_{UU}$ | Unity Population | Degree of integration |
 
-**Условие нормировки:**
+**Normalization condition:**
 
 $$
 \sum_{i \in \{A,S,D,L,E,O,U\}} \gamma_{ii} = 1
 $$
 
-### Недиагональные элементы (когерентности)
+### Off-diagonal Elements (Coherences)
 
-$\gamma_{ij}$ (при $i \neq j$) — **когерентности** (квантовые корреляции) между измерениями.
+$\gamma_{ij}$ (for $i \neq j$) — **coherences** (quantum correlations) between dimensions.
 
-**Неравенство Коши-Шварца:**
+**Cauchy–Schwarz inequality:**
 
 $$
 |\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}
 $$
 
-**Полная таблица когерентностей ($\binom{7}{2} = 21$ пара):**
+**Full table of coherences ($\binom{7}{2} = 21$ pairs):**
 
-Каждая когерентность $\gamma_{ij}$ ($i \neq j$) количественно выражает степень квантовой корреляции между измерениями $i$ и $j$. Модуль $|\gamma_{ij}|$ — сила связи, аргумент $\arg(\gamma_{ij})$ — относительная фаза.
+Each coherence $\gamma_{ij}$ ($i \neq j$) quantifies the degree of quantum correlation between dimensions $i$ and $j$. The modulus $|\gamma_{ij}|$ is the strength of the connection; the argument $\arg(\gamma_{ij})$ is the relative phase.
 
-| Когерентность | Имя | Фундаментальное значение |
+| Coherence | Name | Fundamental Meaning |
 |---|---|---|
-| $\gamma_{AS}$ | **Морфогенез** | Кристаллизация различий в устойчивые формы |
-| $\gamma_{AD}$ | **Актуализация** | Потенциальное различение, актуализированное в процессе |
-| $\gamma_{AL}$ | **Предикация** | Различение, ставшее логическим предикатом |
-| $\gamma_{AE}$ | **Апперцепция** | Различение, вошедшее в интериорность |
-| $\gamma_{AO}$ | **Спонтанность** | Возникновение различений из основания без внешней причины |
-| $\gamma_{AU}$ | **Дифференциация** | Различение, сохраняющее целостность |
-| $\gamma_{SD}$ | **Персистенция** | Форма, сохраняющаяся через процесс |
-| $\gamma_{SL}$ | **Номос** | Структура, обладающая логической необходимостью |
-| $\gamma_{SE}$ | **Репрезентация** | Структура, представленная в интериорности |
-| $\gamma_{SO}$ | **Архетип** | Устойчивые формы, укоренённые в основании |
-| $\gamma_{SU}$ | **Симметрия** | Структурное выражение единства |
-| $\gamma_{DL}$ | **Регуляция** | Логически управляемый процесс |
-| $\gamma_{DE}$ | **Аффекция** | Действие процесса на интериорность |
-| $\gamma_{DO}$ | **Генезис** | Порождающий процесс из основания |
-| $\gamma_{DU}$ | **Телеология** | Интегрированное направленное изменение |
-| $\gamma_{LE}$ | **Эвиденция** | Логическая связность в интериорности |
-| $\gamma_{LO}$ | **Фундирование** | Логика, укоренённая в основании |
-| $\gamma_{LU}$ | **Консистентность** | Логическая непротиворечивость целого |
-| $\gamma_{EO}$ | **Имманентность** | Основание, присутствующее внутри интериорности |
-| $\gamma_{EU}$ | **Синтез** | Интеграция интериорного содержания в целое |
-| $\gamma_{OU}$ | **Полнота** | Тождество источника и целого |
+| $\gamma_{AS}$ | **Morphogenesis** | Crystallization of distinctions into stable forms |
+| $\gamma_{AD}$ | **Actualization** | Potential distinction actualized in process |
+| $\gamma_{AL}$ | **Predication** | Distinction that has become a logical predicate |
+| $\gamma_{AE}$ | **Apperception** | Distinction that has entered interiority |
+| $\gamma_{AO}$ | **Spontaneity** | Arising of distinctions from the ground without external cause |
+| $\gamma_{AU}$ | **Differentiation** | Distinction that preserves wholeness |
+| $\gamma_{SD}$ | **Persistence** | Form maintained through process |
+| $\gamma_{SL}$ | **Nomos** | Structure possessing logical necessity |
+| $\gamma_{SE}$ | **Representation** | Structure represented in interiority |
+| $\gamma_{SO}$ | **Archetype** | Stable forms rooted in the ground |
+| $\gamma_{SU}$ | **Symmetry** | Structural expression of unity |
+| $\gamma_{DL}$ | **Regulation** | Logically governed process |
+| $\gamma_{DE}$ | **Affection** | Action of process on interiority |
+| $\gamma_{DO}$ | **Genesis** | Generative process from the ground |
+| $\gamma_{DU}$ | **Teleology** | Integrated directed change |
+| $\gamma_{LE}$ | **Evidence** | Logical coherence in interiority |
+| $\gamma_{LO}$ | **Grounding** | Logic rooted in the ground |
+| $\gamma_{LU}$ | **Consistency** | Logical non-contradiction of the whole |
+| $\gamma_{EO}$ | **Immanence** | Ground present within interiority |
+| $\gamma_{EU}$ | **Synthesis** | Integration of interior content into the whole |
+| $\gamma_{OU}$ | **Completeness** | Identity of source and whole |
 
-### Семантика ключевых когерентностей {#семантика-когерентностей}
+### Semantics of Key Coherences {#семантика-когерентностей}
 
-| Когерентность | Обозначение | Физический смысл |
+| Coherence | Designation | Physical Meaning |
 |---------------|-------------|------------------|
-| $\gamma_{AE}$ | Апперцепция | Связь различения с переживанием |
-| $\gamma_{SE}$ | Структурный опыт | Ощущение формы и порядка |
-| $\gamma_{DE}$ | Аффект действия | Чувство движения и процесса |
-| $\gamma_{OE}$ | Источник регенерации | Вклад в формулу $\kappa_0$ |
-| $\gamma_{OU}$ | Интегративный источник | Второй множитель $\kappa_0$ |
-| $\gamma_{EU}$ | Экспериенциальная интеграция | Вклад в меру $\Phi$ |
-| $\gamma_{SD}$ | Спектральный дуализм | Связь структуры и динамики (одно $H$) |
-| $\gamma_{LU}$ | Логическая целостность | Согласованность целого |
-| $\gamma_{AD}$ | Перцептивная динамика | Различение процессов |
-| $\gamma_{AL}$ | Логическая артикуляция | Точность категоризации |
+| $\gamma_{AE}$ | Apperception | Connection of distinction with experience |
+| $\gamma_{SE}$ | Structural experience | Sensation of form and order |
+| $\gamma_{DE}$ | Action affect | Feeling of movement and process |
+| $\gamma_{OE}$ | Regeneration source | Contribution to formula $\kappa_0$ |
+| $\gamma_{OU}$ | Integrative source | Second factor of $\kappa_0$ |
+| $\gamma_{EU}$ | Experiential integration | Contribution to measure $\Phi$ |
+| $\gamma_{SD}$ | Spectral dualism | Connection of structure and dynamics (one $H$) |
+| $\gamma_{LU}$ | Logical wholeness | Coherence of the whole |
+| $\gamma_{AD}$ | Perceptual dynamics | Distinction of processes |
+| $\gamma_{AL}$ | Logical articulation | Precision of categorization |
 
-Полная семантика всех 21 когерентности: [Gap-динамика](/docs/core/dynamics/gap-dynamics).
+Full semantics of all 21 coherences: [Gap dynamics](/docs/core/dynamics/gap-dynamics).
 
 <details>
-<summary>Междисциплинарные проявления когерентностей</summary>
+<summary>Interdisciplinary manifestations of coherences</summary>
 
-| Когерентность | Имя | Физика | Биология | Когнитивистика |
+| Coherence | Name | Physics | Biology | Cognitive Science |
 |---|---|---|---|---|
-| $\gamma_{AS}$ | Морфогенез | Спонтанное нарушение симметрии | Органогенез | Формирование понятий |
-| $\gamma_{AD}$ | Актуализация | Возбуждение моды | Рецепция стимула | Обнаружение сигнала |
-| $\gamma_{AL}$ | Предикация | Классификация состояний | Распознавание паттернов | Суждение |
-| $\gamma_{AE}$ | Апперцепция | Квантовое наблюдение | Сенсорная интеграция | Осознанное восприятие |
-| $\gamma_{AO}$ | Спонтанность | Вакуумные флуктуации | Мутагенез | Инсайт |
-| $\gamma_{AU}$ | Дифференциация | Расщепление спектра | Клеточная дифференциация | Анализ |
-| $\gamma_{SD}$ | Персистенция | Стационарное состояние | Гомеостаз | Устойчивость репрезентации |
-| $\gamma_{SL}$ | Номос | Закон сохранения | Генетический код | Правило |
-| $\gamma_{SE}$ | Репрезентация | Наблюдаемая (оператор) | Перцептивное поле | Ментальная модель |
-| $\gamma_{SO}$ | Архетип | Основное состояние | Генотип | Прототип |
-| $\gamma_{SU}$ | Симметрия | Группа симметрии | Билатеральность | Гармония |
-| $\gamma_{DL}$ | Регуляция | Обратная связь | Гомеостатическая петля | Исполнительный контроль |
-| $\gamma_{DE}$ | Аффекция | Диссипация | Стресс-реакция | Эмоциональный отклик |
-| $\gamma_{DO}$ | Генезис | Рождение частиц | Абиогенез | Креативность |
-| $\gamma_{DU}$ | Телеология | Минимизация действия | Адаптация | Целеполагание |
-| $\gamma_{LE}$ | Эвиденция | Измеримость | Обучение | Момент понимания |
-| $\gamma_{LO}$ | Фундирование | Первые принципы | Эволюционная необходимость | Аподиктичность |
-| $\gamma_{LU}$ | Консистентность | Калибровочная инвариантность | Геномная целостность | Когнитивная согласованность |
-| $\gamma_{EO}$ | Имманентность | Вакуумная энергия | Витальность | Ощущение присутствия |
-| $\gamma_{EU}$ | Синтез | Суперпозиция | Системная интеграция | Единство опыта |
-| $\gamma_{OU}$ | Полнота | Унитарность | Экосистемная замкнутость | Завершённость |
+| $\gamma_{AS}$ | Morphogenesis | Spontaneous symmetry breaking | Organogenesis | Concept formation |
+| $\gamma_{AD}$ | Actualization | Mode excitation | Stimulus reception | Signal detection |
+| $\gamma_{AL}$ | Predication | State classification | Pattern recognition | Judgment |
+| $\gamma_{AE}$ | Apperception | Quantum observation | Sensory integration | Conscious perception |
+| $\gamma_{AO}$ | Spontaneity | Vacuum fluctuations | Mutagenesis | Insight |
+| $\gamma_{AU}$ | Differentiation | Spectral splitting | Cell differentiation | Analysis |
+| $\gamma_{SD}$ | Persistence | Stationary state | Homeostasis | Representational stability |
+| $\gamma_{SL}$ | Nomos | Conservation law | Genetic code | Rule |
+| $\gamma_{SE}$ | Representation | Observable (operator) | Perceptual field | Mental model |
+| $\gamma_{SO}$ | Archetype | Ground state | Genotype | Prototype |
+| $\gamma_{SU}$ | Symmetry | Symmetry group | Bilaterality | Harmony |
+| $\gamma_{DL}$ | Regulation | Feedback | Homeostatic loop | Executive control |
+| $\gamma_{DE}$ | Affection | Dissipation | Stress response | Emotional response |
+| $\gamma_{DO}$ | Genesis | Particle creation | Abiogenesis | Creativity |
+| $\gamma_{DU}$ | Teleology | Action minimization | Adaptation | Goal-setting |
+| $\gamma_{LE}$ | Evidence | Measurability | Learning | Moment of understanding |
+| $\gamma_{LO}$ | Grounding | First principles | Evolutionary necessity | Apodicticity |
+| $\gamma_{LU}$ | Consistency | Gauge invariance | Genomic integrity | Cognitive coherence |
+| $\gamma_{EO}$ | Immanence | Vacuum energy | Vitality | Sense of presence |
+| $\gamma_{EU}$ | Synthesis | Superposition | Systemic integration | Unity of experience |
+| $\gamma_{OU}$ | Completeness | Unitarity | Ecosystem closure | Completedness |
 
 </details>
 
-## Дуально-аспектная семантика: 49 элементов {#дуально-аспектная-семантика}
+## Dual-Aspect Semantics: 49 Elements {#дуально-аспектная-семантика}
 
-Стандартный подход рассматривает $\gamma_{ij}$ и $\gamma_{ji}$ как «одну и ту же» когерентность, записанную с двух сторон. Однако в УГМ наддиагональные и поддиагональные элементы несут **различную семантику** через отображения $\mathrm{Map}_{\mathrm{ext}}$ и $\mathrm{Map}_{\mathrm{int}}$.
+The standard approach treats $\gamma_{ij}$ and $\gamma_{ji}$ as "the same" coherence written from two sides. However, in UHM the superdiagonal and subdiagonal elements carry **different semantics** through the mappings $\mathrm{Map}_{\mathrm{ext}}$ and $\mathrm{Map}_{\mathrm{int}}$.
 
-### Декомпозиция когерентности
+### Coherence Decomposition
 
-Любой недиагональный элемент $\gamma_{ij}$ ($i \neq j$) — комплексное число:
+Any off-diagonal element $\gamma_{ij}$ ($i \neq j$) is a complex number:
 
 $$
-\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}} = \underbrace{\mathrm{Re}(\gamma_{ij})}_{\text{симметричная часть}} + i \underbrace{\mathrm{Im}(\gamma_{ij})}_{\text{направленная часть}}
+\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}} = \underbrace{\mathrm{Re}(\gamma_{ij})}_{\text{symmetric part}} + i \underbrace{\mathrm{Im}(\gamma_{ij})}_{\text{directed part}}
 $$
 
-Эрмитовость $\Gamma^\dagger = \Gamma$ означает $\gamma_{ji} = \gamma_{ij}^*$, что даёт:
+Hermiticity $\Gamma^\dagger = \Gamma$ means $\gamma_{ji} = \gamma_{ij}^*$, which gives:
 
-| Компонента | Свойство | Семантика |
+| Component | Property | Semantics |
 |---|---|---|
-| $\lvert\gamma_{ij}\rvert = \lvert\gamma_{ji}\rvert$ | Модули равны | Сила связи одна и та же для внешнего и внутреннего |
-| $\mathrm{Re}(\gamma_{ij}) = \mathrm{Re}(\gamma_{ji})$ | Действительные части равны | **Общее**: то, что совпадает между внешним и внутренним |
-| $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ | Мнимые части противоположны | **Зазор (Gap)**: то, чем внешнее отличается от внутреннего |
-| $\arg(\gamma_{ij}) = -\arg(\gamma_{ji})$ | Фазы противоположны | Направление «стрелы дуальности» обратно для экстериорной и интериорной проекций |
+| $\lvert\gamma_{ij}\rvert = \lvert\gamma_{ji}\rvert$ | Moduli are equal | Connection strength is the same for the external and internal |
+| $\mathrm{Re}(\gamma_{ij}) = \mathrm{Re}(\gamma_{ji})$ | Real parts are equal | **Common**: what coincides between the external and internal |
+| $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ | Imaginary parts are opposite | **Gap**: what distinguishes the external from the internal |
+| $\arg(\gamma_{ij}) = -\arg(\gamma_{ji})$ | Phases are opposite | The direction of the "arrow of duality" is reversed for exterior and interior projections |
 
-### Принцип сопряжённой пары (Т.4.1) {#принцип-сопряжённой-пары}
+### Principle of the Conjugate Pair (Т.4.1) {#принцип-сопряжённой-пары}
 
-:::info Интерпретация [И]
-Принцип сопряжённой пары — семантическое утверждение (интерпретация модуля как «общего», фазы как «перспективы»), не математическая теорема. Математическое содержание — тривиальное следствие полярного разложения комплексного числа.
+:::info Interpretation [И]
+The conjugate pair principle is a semantic statement (interpretation of the modulus as "common", the phase as "perspective"), not a mathematical theorem. The mathematical content is a trivial consequence of the polar decomposition of a complex number.
 :::
 
-Для каждой когерентности $\gamma_{ij}$:
+For each coherence $\gamma_{ij}$:
 
 $$
-\underbrace{\gamma_{ij}}_{\text{внешнее}} = \underbrace{|\gamma_{ij}|}_{\text{общее}} \cdot \underbrace{e^{i\theta}}_{\text{перспектива}}, \qquad \underbrace{\gamma_{ji}}_{\text{внутреннее}} = \underbrace{|\gamma_{ij}|}_{\text{общее}} \cdot \underbrace{e^{-i\theta}}_{\text{обратная перспектива}}
+\underbrace{\gamma_{ij}}_{\text{external}} = \underbrace{|\gamma_{ij}|}_{\text{common}} \cdot \underbrace{e^{i\theta}}_{\text{perspective}}, \qquad \underbrace{\gamma_{ji}}_{\text{internal}} = \underbrace{|\gamma_{ij}|}_{\text{common}} \cdot \underbrace{e^{-i\theta}}_{\text{inverse perspective}}
 $$
 
-1. **Модуль** $|\gamma_{ij}|$ — **инвариант** дуальности: сила связи не зависит от перспективы
-2. **Фаза** $\theta$ — **индекс перспективы**: «угол зрения» на одну и ту же связь
-3. **$\mathrm{Gap}(i,j) = |\sin\theta|$** — мера несовпадения внешнего и внутреннего
+1. **Modulus** $|\gamma_{ij}|$ — **invariant** of duality: connection strength is independent of perspective
+2. **Phase** $\theta$ — **perspective index**: the "angle of view" on the same connection
+3. **$\mathrm{Gap}(i,j) = |\sin\theta|$** — measure of discrepancy between external and internal
 
-**Следствие:** Полностью «прозрачная» система (все $\gamma_{ij} \in \mathbb{R}$) — теоретический предел, в котором экстериорный и интериорный аспекты совпадают. Это состояние эквивалентно **Уровню L4** (унитарное сознание), при котором $\varphi(\Gamma) = \Gamma$ и все фазы обнуляются.
+**Corollary:** A fully "transparent" system (all $\gamma_{ij} \in \mathbb{R}$) is a theoretical limit in which exterior and interior aspects coincide. This state is equivalent to **Level L4** (unitary consciousness), at which $\varphi(\Gamma) = \Gamma$ and all phases vanish.
 
-### Мера зазора (Gap) для каждой пары {#мера-зазора}
+### Gap Measure for Each Pair {#мера-зазора}
 
-**Определение.** Зазор (Gap) между внешним и внутренним аспектом когерентности $\gamma_{ij}$:
+**Definition.** The Gap between the external and internal aspect of coherence $\gamma_{ij}$:
 
 $$
 \mathrm{Gap}(i,j) := \frac{|\mathrm{Im}(\gamma_{ij})|}{|\gamma_{ij}|} = |\sin(\arg(\gamma_{ij}))| \in [0, 1]
 $$
 
-**Интерпретация:**
+**Interpretation:**
 
-- **Gap = 0** ($\gamma_{ij} \in \mathbb{R}$): полная прозрачность. Экстериорная и интериорная проекции совпадают.
-- **Gap = 1** ($\gamma_{ij} \in i\mathbb{R}$): максимальная непрозрачность. Внешнее и внутреннее полностью ортогональны.
-- **Gap $\in (0, 1)$**: частичный зазор — норма для живых систем.
+- **Gap = 0** ($\gamma_{ij} \in \mathbb{R}$): full transparency. The exterior and interior projections coincide.
+- **Gap = 1** ($\gamma_{ij} \in i\mathbb{R}$): maximum opacity. The external and internal are completely orthogonal.
+- **Gap $\in (0, 1)$**: partial gap — the norm for living systems.
 
-:::note Связь с [динамикой Gap](./gap-dynamics)
-Эволюция, диагностика и термодинамика Gap подробно рассмотрены в [Gap-динамике](./gap-dynamics) и [Gap-термодинамике](./gap-thermodynamics). Фазовая диагностика (карта прозрачности) и терапевтические протоколы — в [Gap-семантике](/docs/physics/dual-aspect/gap-semantics).
+:::note Connection with [Gap dynamics](./gap-dynamics)
+The evolution, diagnostics, and thermodynamics of the Gap are discussed in detail in [Gap dynamics](./gap-dynamics) and [Gap thermodynamics](./gap-thermodynamics). Phase diagnostics (transparency map) and therapeutic protocols are in [Gap semantics](/docs/physics/dual-aspect/gap-semantics).
 :::
 
-### 49-клеточная карта: структура {#49-клеточная-карта}
+### 49-Cell Map: Structure {#49-клеточная-карта}
 
-Полная матрица $\Gamma$ содержит не 28 (7 + 21), а **49 содержательных элементов**:
+The full matrix $\Gamma$ contains not 28 (7 + 21), but **49 meaningful elements**:
 
-| Область матрицы | Количество | Семантика | Отображение |
+| Matrix Region | Count | Semantics | Mapping |
 |---|---|---|---|
-| **Диагональ** $\gamma_{ii}$ | 7 | Населённости измерений (Gap $= 0$ тождественно) | Общее для $\mathrm{Map}_{\mathrm{ext}}$ и $\mathrm{Map}_{\mathrm{int}}$ |
-| **Верхний треугольник** $\gamma_{ij}$ ($i < j$) | 21 | Внешние проекции когерентностей | $\mathrm{Map}_{\mathrm{ext}}$: как связь **выглядит** для наблюдателя |
-| **Нижний треугольник** $\gamma_{ji}$ ($j > i$) | 21 | Интериорные проекции когерентностей | $\mathrm{Map}_{\mathrm{int}}$: как связь **представлена** со стороны системы (сопряжённая проекция) |
+| **Diagonal** $\gamma_{ii}$ | 7 | Dimension populations (Gap $= 0$ identically) | Common to $\mathrm{Map}_{\mathrm{ext}}$ and $\mathrm{Map}_{\mathrm{int}}$ |
+| **Upper triangle** $\gamma_{ij}$ ($i < j$) | 21 | External projections of coherences | $\mathrm{Map}_{\mathrm{ext}}$: how the connection **appears** to an observer |
+| **Lower triangle** $\gamma_{ji}$ ($j > i$) | 21 | Interior projections of coherences | $\mathrm{Map}_{\mathrm{int}}$: how the connection is **represented** from the system's side (conjugate projection) |
 
-:::tip Эрмитово сопряжение как функтор дуальности [И]
-Пусть $\Gamma \in \mathrm{Ob}(\mathcal{C})$ — матрица когерентности в $\infty$-топосе $\mathrm{Sh}_\infty(\mathcal{C})$. Тогда эрмитово сопряжение $*$ реализует функтор дуальности:
+:::tip Hermitian Conjugation as a Duality Functor [И]
+Let $\Gamma \in \mathrm{Ob}(\mathcal{C})$ be the coherence matrix in the $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Then Hermitian conjugation $*$ implements the duality functor:
 
 $$
 *: \mathrm{Map}_{\mathrm{ext}}(i, j) \longrightarrow \mathrm{Map}_{\mathrm{int}}(j, i)
 $$
 
-удовлетворяющий: (1) **Инволютивность:** $** = \mathrm{id}$; (2) **Сохранение модуля:** $|*(\gamma_{ij})| = |\gamma_{ij}|$; (3) **Обращение фазы:** $\arg(*(\gamma_{ij})) = -\arg(\gamma_{ij})$.
+satisfying: (1) **Involutivity:** $** = \mathrm{id}$; (2) **Modulus preservation:** $|*(\gamma_{ij})| = |\gamma_{ij}|$; (3) **Phase reversal:** $\arg(*(\gamma_{ij})) = -\arg(\gamma_{ij})$.
 
-Отождествление «верхний треугольник = $\mathrm{Map}_{\mathrm{ext}}$, нижний = $\mathrm{Map}_{\mathrm{int}}$» — семантическая интерпретация (постулат УГМ), а не выводимая теорема. Эрмитовость — свойство любой матрицы плотности; двойственная интерпретация — дополнительный постулат.
+The identification "upper triangle = $\mathrm{Map}_{\mathrm{ext}}$, lower = $\mathrm{Map}_{\mathrm{int}}$" is a semantic interpretation (a postulate of UHM), not a derivable theorem. Hermiticity is a property of any density matrix; the dual interpretation is an additional postulate.
 :::
 
-:::info Полные таблицы 21 внешней и 21 внутренней проекций
-Полная 49-клеточная карта с таблицей внешних проекций ($\mathrm{Map}_{\mathrm{ext}}$: Морфогенез, Актуализация, Предикация, ...) и интериорных проекций ($\mathrm{Map}_{\mathrm{int}}$: Фильтр, Поток, Рамка, ...) приведена в [Gap-семантике: 49 элементов](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта).
+:::info Full Tables of 21 External and 21 Internal Projections
+The full 49-cell map with the table of external projections ($\mathrm{Map}_{\mathrm{ext}}$: Morphogenesis, Actualization, Predication, ...) and interior projections ($\mathrm{Map}_{\mathrm{int}}$: Filter, Flow, Frame, ...) is given in [Gap semantics: 49 elements](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта).
 :::
 
-### Квантовый ток между измерениями (Т.2.2) {#квантовый-ток}
+### Quantum Current Between Dimensions (Т.2.2) {#квантовый-ток}
 
-:::tip Теорема 2.2: Межизмеренческий ток вероятности [Т]
-Для пары измерений $(i, j)$ ток вероятности определяется:
+:::tip Theorem 2.2: Probability Current Between Dimensions [Т]
+For a pair of dimensions $(i, j)$, the probability current is defined as:
 
 $$
 J_{i \leftarrow j} = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ji}) = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ij}^*)
 $$
 
-**Нетто-ток:**
+**Net current:**
 
 $$
 J_{\mathrm{net}}(i,j) = 2|H_{ij}| \cdot |\gamma_{ij}| \cdot \sin(\alpha_{ij} - \theta_{ij})
 $$
 
-где $\alpha_{ij} = \arg(H_{ij})$, $\theta_{ij} = \arg(\gamma_{ij})$.
+where $\alpha_{ij} = \arg(H_{ij})$, $\theta_{ij} = \arg(\gamma_{ij})$.
 :::
 
-**Следствия:**
+**Corollaries:**
 
-1. **Направление тока** определяется разностью фаз $(\alpha - \theta)$:
-   - $\sin(\alpha - \theta) > 0$: ток течёт от $j$ к $i$ (измерение $i$ «получает» от $j$)
-   - $\sin(\alpha - \theta) < 0$: ток течёт от $i$ к $j$
-   - $\sin(\alpha - \theta) = 0$: равновесие, ток отсутствует
+1. **Current direction** is determined by the phase difference $(\alpha - \theta)$:
+   - $\sin(\alpha - \theta) > 0$: current flows from $j$ to $i$ (dimension $i$ "receives" from $j$)
+   - $\sin(\alpha - \theta) < 0$: current flows from $i$ to $j$
+   - $\sin(\alpha - \theta) = 0$: equilibrium, no current
 
-2. **Осцилляция тока** при унитарной эволюции — фаза вращается:
+2. **Current oscillation** under unitary evolution — the phase rotates:
 
 $$
 \theta_{ij}(\tau) = \theta_{ij}(0) + (\omega_i - \omega_j) \cdot \tau
 $$
 
-где $\omega_i, \omega_j$ — собственные частоты гамильтониана. Ток **осциллирует** с частотой $|\omega_i - \omega_j|$.
+where $\omega_i, \omega_j$ are the eigenfrequencies of the Hamiltonian. The current **oscillates** with frequency $|\omega_i - \omega_j|$.
 
-3. **Уравнение непрерывности** (сохранение нормировки):
+3. **Continuity equation** (normalization preservation):
 
 $$
 \frac{d}{d\tau} \mathrm{Tr}(\Gamma) = 0 \quad \Rightarrow \quad \sum_{j \neq i} J_{\mathrm{net}}(i,j) = -\frac{d\gamma_{ii}}{d\tau}\bigg|_{\text{unitary}}
 $$
 
-Что уходит из населённости $\gamma_{ii}$, распределяется по токам к другим измерениям.
+What leaves the population $\gamma_{ii}$ is distributed among the currents to other dimensions.
 
-## Типы состояний
+## State Types
 
-### Чистое состояние
+### Pure State
 
 $$
 \Gamma = |\psi\rangle\langle\psi|, \quad \mathrm{rank}(\Gamma) = 1
 $$
 
-**Свойства:**
-- [Чистота](./viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2) = 1$
-- [Энтропия фон Неймана](./viability#связь-с-энтропией): $S_{vN} = 0$
-- Максимальная когерентность
+**Properties:**
+- [Purity](./viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2) = 1$
+- [von Neumann entropy](./viability#связь-с-энтропией): $S_{vN} = 0$
+- Maximum coherence
 
-### Смешанное состояние
+### Mixed State
 
 $$
 \Gamma = \sum_k p_k |\psi_k\rangle\langle\psi_k|, \quad p_k > 0, \quad \sum_k p_k = 1
 $$
 
-**Свойства:**
+**Properties:**
 - $\mathrm{rank}(\Gamma) > 1$
 - $P < 1$
 - $S_{vN} > 0$
 
-### Максимально смешанное состояние
+### Maximally Mixed State
 
 $$
 \Gamma = \frac{I_7}{7}, \quad \gamma_{ij} = \frac{\delta_{ij}}{7}
 $$
 
-где $I_7$ — единичная матрица $7 \times 7$.
+where $I_7$ is the $7 \times 7$ identity matrix.
 
-**Свойства:**
-- $P = \frac{1}{7} \approx 0.143$ — минимальная чистота
-- $S_{vN} = \log 7 \approx 1.95$ — максимальная энтропия
-- Все когерентности равны нулю: $\gamma_{ij} = 0$ при $i \neq j$
+**Properties:**
+- $P = \frac{1}{7} \approx 0.143$ — minimum purity
+- $S_{vN} = \log 7 \approx 1.95$ — maximum entropy
+- All coherences are zero: $\gamma_{ij} = 0$ for $i \neq j$
 
-## Связь с мерами состояния
+## Connection with State Measures
 
-### Норма Фробениуса
+### Frobenius Norm
 
-**Норма Фробениуса** — стандартная метрика на пространстве матриц:
+The **Frobenius norm** is the standard metric on the space of matrices:
 
 $$
 \|\Gamma\|_F := \sqrt{\mathrm{Tr}(\Gamma^\dagger \Gamma)} = \sqrt{\sum_{i,j} |\gamma_{ij}|^2}
 $$
 
-**Расстояние** между двумя матрицами когерентности:
+**Distance** between two coherence matrices:
 
 $$
 d_F(\Gamma_1, \Gamma_2) := \|\Gamma_1 - \Gamma_2\|_F
 $$
 
-### Чистота (Purity)
+### Purity
 
 $$
-P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2 = \sum_{i} \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2 \in \left[\frac{1}{7}, 1\right] \quad \text{(тождество } \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2 \text{ верно, т.к. } \Gamma \text{ эрмитова)}
+P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2 = \sum_{i} \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2 \in \left[\frac{1}{7}, 1\right] \quad \text{(identity } \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2 \text{ holds since } \Gamma \text{ is Hermitian)}
 $$
 
-Чистота — мера [жизнеспособности](./viability) Голонома.
+Purity is a measure of the [viability](./viability) of the Holonom.
 
-### Энтропия фон Неймана {#энтропия-фон-неймана}
+### von Neumann Entropy {#энтропия-фон-неймана}
 
 $$
 S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) = -\sum_k \lambda_k \log \lambda_k
 $$
 
-где $\{\lambda_k\}$ — собственные значения $\Gamma$.
+where $\{\lambda_k\}$ are the eigenvalues of $\Gamma$.
 
-**Связь с чистотой:**
-- $S_{vN} = 0 \Leftrightarrow P = 1$ (чистое состояние)
-- $S_{vN} = \log 7 \Leftrightarrow P = 1/7$ (максимально смешанное)
+**Connection with purity:**
+- $S_{vN} = 0 \Leftrightarrow P = 1$ (pure state)
+- $S_{vN} = \log 7 \Leftrightarrow P = 1/7$ (maximally mixed)
 
-### Мера интеграции
+### Integration Measure
 
 $$
 \Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}
 $$
 
-Мера интеграции связана с [измерением Единства](../structure/dimension-u#мера-интеграции-φ).
+The integration measure is related to the [Unity dimension](../structure/dimension-u#мера-интеграции-φ).
 
-## Спектральное разложение
+## Spectral Decomposition
 
-Поскольку $\Gamma$ — эрмитов оператор, существует спектральное разложение:
+Since $\Gamma$ is a Hermitian operator, a spectral decomposition exists:
 
 $$
 \Gamma = \sum_{k=1}^{7} \lambda_k |\phi_k\rangle\langle\phi_k|
 $$
 
-где:
-- $\lambda_k \in [0, 1]$ — собственные значения, $\sum_k \lambda_k = 1$
-- $|\phi_k\rangle$ — ортонормированные собственные векторы
+where:
+- $\lambda_k \in [0, 1]$ — eigenvalues, $\sum_k \lambda_k = 1$
+- $|\phi_k\rangle$ — orthonormal eigenvectors
 
-**Применение:** Собственные векторы $|\phi_k\rangle$ определяют «главные оси» конфигурации $\Gamma$, а собственные значения $\lambda_k$ — их веса.
+**Application:** The eigenvectors $|\phi_k\rangle$ define the "principal axes" of the configuration $\Gamma$, and the eigenvalues $\lambda_k$ their weights.
 
-## Структура матрицы Γ
+## Structure of Matrix Γ
 
 ```mermaid
 graph LR
-    subgraph D["Диагональ γᵢᵢ"]
+    subgraph D["Diagonal γᵢᵢ"]
         AA["γ_AA"]
         SS["γ_SS"]
         DD["γ_DD"]
@@ -482,85 +482,85 @@ graph LR
         OO["γ_OO"]
         UU["γ_UU"]
     end
-    subgraph C["Когерентности γᵢⱼ"]
+    subgraph C["Coherences γᵢⱼ"]
         AE["γ_AE"]
         EU["γ_EU"]
         EO["γ_EO"]
         dots["..."]
     end
-    D --> |"Σ γᵢᵢ = 1"| N["Нормировка"]
-    C --> |"21 параметр"| N
+    D --> |"Σ γᵢᵢ = 1"| N["Normalization"]
+    C --> |"21 parameters"| N
 ```
 
-**Структура параметров:**
-- **7 диагональных** $\gamma_{ii}$ — населённости измерений
-- **21 когерентность** $\gamma_{ij}$ ($i \neq j$) — связи между измерениями
-- **Всего:** 48 независимых вещественных параметров (с учётом нормировки)
+**Parameter structure:**
+- **7 diagonal** $\gamma_{ii}$ — dimension populations
+- **21 coherences** $\gamma_{ij}$ ($i \neq j$) — connections between dimensions
+- **Total:** 48 independent real parameters (taking normalization into account)
 
-:::info Фано-организация когерентностей
-21 когерентность $\gamma_{ij}$ ($i \neq j$) организованы [плоскостью Фано](/docs/physics/gauge-symmetry/fano-selection-rules) PG(2,2):
-- Каждая **Фано-линия** $(i,j,k)$ группирует 3 когерентности, трансформирующиеся совместно под Фано-диссипатором
-- **G₂-ковариантность** [Т]: Фано-диссипатор $\mathcal{D}_{\text{Fano}}$ сохраняет симметрию $G_2 = \mathrm{Aut}(\mathbb{O})$
-- Все 21 пара покрыты ровно одной Фано-линией ($\lambda = 1$ в BIBD$(7,3,1)$)
+:::info Fano Organization of Coherences
+The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) PG(2,2):
+- Each **Fano line** $(i,j,k)$ groups 3 coherences that transform jointly under the Fano dissipator
+- **$G_2$-covariance** [Т]: the Fano dissipator $\mathcal{D}_{\text{Fano}}$ preserves the symmetry $G_2 = \mathrm{Aut}(\mathbb{O})$
+- All 21 pairs are covered by exactly one Fano line ($\lambda = 1$ in BIBD$(7,3,1)$)
 
-Это — не произвольная классификация, а следствие единственности проективной плоскости порядка 2 [Т].
+This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [Т].
 :::
 
-## Два уровня формализации
+## Two Levels of Formalization
 
-:::warning Важное уточнение: минимальный vs. расширенный формализм
-УГМ использует **два уровня** математического описания. Непонимание этого различия приводит к ошибкам интерпретации.
+:::warning Important Clarification: minimal vs. extended formalism
+UHM uses **two levels** of mathematical description. Misunderstanding this distinction leads to interpretation errors.
 :::
 
-### Минимальный 7D-формализм (концептуальный)
+### Minimal 7D Formalism (conceptual)
 
-Согласно [Теореме S](../../proofs/minimality/theorem-minimality-7), **минимальная** размерность для автопоэтической системы:
+According to [Theorem S](../../proofs/minimality/theorem-minimality-7), the **minimal** dimension for an autopoietic system is:
 
 $$
 \mathcal{H}_{\min} = \mathbb{C}^7 = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}
 $$
 
-Это **простое** 7-мерное пространство, **не** тензорное произведение (поскольку 7 — простое число).
+This is a **simple** 7-dimensional space, **not** a tensor product (since 7 is prime).
 
-**Применение:** Концептуальный анализ, доказательство минимальности, структурные теоремы.
+**Application:** Conceptual analysis, minimality proofs, structural theorems.
 
-### Расширенный тензорный формализм (операциональный)
+### Extended Tensor Formalism (operational)
 
-Для описания **реальных систем** и определения частичного следа каждое измерение наделяется собственным гильбертовым пространством:
+To describe **real systems** and define partial trace, each dimension is given its own Hilbert space:
 
 $$
 \mathcal{H}_{\text{ext}} = \bigotimes_{i \in \{A,S,D,L,E,O,U\}} \mathcal{H}_i
 $$
 
-где $\dim(\mathcal{H}_i) \geq 1$ зависит от сложности системы.
+where $\dim(\mathcal{H}_i) \geq 1$ depends on the complexity of the system.
 
-**Связь формализмов:** Минимальный случай $\dim(\mathcal{H}_i) = 1$ для всех $i$ **не** даёт тензорного произведения ($1^7 = 1 \neq 7$). Расширенный формализм — это **обобщение**, где:
+**Connection of formalisms:** The minimal case $\dim(\mathcal{H}_i) = 1$ for all $i$ does **not** yield a tensor product ($1^7 = 1 \neq 7$). The extended formalism is a **generalization**, where:
 
 $$
 \dim(\mathcal{H}_{\text{ext}}) = \prod_i \dim(\mathcal{H}_i)
 $$
 
-**Применение:** Частичный след $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$, иерархия интериорности, операциональные определения.
+**Application:** Partial trace $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$, interiority hierarchy, operational definitions.
 
-### Согласование формализмов
+### Reconciling the Formalisms
 
-| Аспект | Минимальный (7D) | Расширенный (тензорный) |
+| Aspect | Minimal (7D) | Extended (tensor) |
 |---|---|---|
-| Пространство | $\mathbb{C}^7$ | $\bigotimes_i \mathcal{H}_i$ |
-| Тензорная структура | Нет | Да |
-| Частичный след | Не определён | Определён |
-| Применение | Теоремы, концепции | Операциональные меры |
-| $\rho_E$ | Скаляр $\gamma_{EE}$ | Оператор на $\mathcal{H}_E$ |
+| Space | $\mathbb{C}^7$ | $\bigotimes_i \mathcal{H}_i$ |
+| Tensor structure | No | Yes |
+| Partial trace | Not defined | Defined |
+| Application | Theorems, concepts | Operational measures |
+| $\rho_E$ | Scalar $\gamma_{EE}$ | Operator on $\mathcal{H}_E$ |
 
-:::info Математическая связь формализмов
-Два формализма связаны через **каноническую проекцию** и **вложение**. Это не произвольная интерпретация, а строгая математическая конструкция.
+:::info Mathematical Connection of Formalisms
+The two formalisms are connected through a **canonical projection** and **embedding**. This is not an arbitrary interpretation, but a rigorous mathematical construction.
 :::
 
-#### Теорема (Связь формализмов)
+#### Theorem (Connection of Formalisms)
 
-**Вложение (минимальный → расширенный):**
+**Embedding (minimal → extended):**
 
-Пусть $\dim(\mathcal{H}_i) = d_i \geq 1$. Определим вложение:
+Let $\dim(\mathcal{H}_i) = d_i \geq 1$. Define the embedding:
 
 $$
 \iota: \mathcal{L}(\mathbb{C}^7) \hookrightarrow \mathcal{L}\left(\bigotimes_i \mathcal{H}_i\right)
@@ -570,9 +570,9 @@ $$
 \iota(\Gamma) := \sum_{i,j} \gamma_{ij} \cdot |e_i\rangle\langle e_j|
 $$
 
-где $|e_i\rangle := |0_1\rangle \otimes ... \otimes |1_i\rangle \otimes ... \otimes |0_7\rangle$ — состояние с «возбуждением» в i-м подпространстве, $|0_k\rangle, |1_k\rangle \in \mathcal{H}_k$ — ортонормированные базисные состояния.
+where $|e_i\rangle := |0_1\rangle \otimes ... \otimes |1_i\rangle \otimes ... \otimes |0_7\rangle$ is the state with an "excitation" in the $i$-th subspace, $|0_k\rangle, |1_k\rangle \in \mathcal{H}_k$ — orthonormal basis states.
 
-**Проекция (расширенный → минимальный):**
+**Projection (extended → minimal):**
 
 $$
 \pi: \mathcal{L}\left(\bigotimes_i \mathcal{H}_i\right) \to \mathcal{L}(\mathbb{C}^7)
@@ -582,149 +582,149 @@ $$
 \pi(\Gamma_{ext})_{ij} := \langle e_i | \Gamma_{ext} | e_j \rangle
 $$
 
-где $|e_i\rangle$ — базисные состояния из определения вложения $\iota$.
+where $|e_i\rangle$ are the basis states from the definition of the embedding $\iota$.
 
-**Свойства:**
+**Properties:**
 
-| Свойство | Формула | Следствие |
+| Property | Formula | Corollary |
 |---|---|---|
-| Согласованность | $\pi \circ \iota = \mathrm{id}$ | Проекция восстанавливает минимальное представление |
-| Сохранение P | $P(\iota(\Gamma)) \geq P(\Gamma)$ | Чистота не уменьшается при вложении |
-| Сохранение $\Phi$ | $\Phi(\pi(\Gamma_{ext})) \approx \Phi_{eff}(\Gamma_{ext})$ | Интеграция согласована |
+| Consistency | $\pi \circ \iota = \mathrm{id}$ | Projection recovers the minimal representation |
+| P preservation | $P(\iota(\Gamma)) \geq P(\Gamma)$ | Purity does not decrease under embedding |
+| $\Phi$ preservation | $\Phi(\pi(\Gamma_{ext})) \approx \Phi_{eff}(\Gamma_{ext})$ | Integration is consistent |
 
-#### Область определения операций
+#### Domain of Operations
 
-| Операция | Минимальный 7D | Расширенный | Формула перехода |
+| Operation | Minimal 7D | Extended | Transition Formula |
 |---|---|---|---|
-| $P = \mathrm{Tr}(\Gamma^2)$ | Да | Да | $P(\Gamma) = P(\iota(\Gamma))$ |
-| $\Phi = \sum_{i\neq j}\lVert\gamma_{ij}\rVert^2 / \sum_i \gamma_{ii}^2$ | Да | Да | Согласовано |
-| $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Нет | Да | Требуется $\iota$ |
-| $D_{diff} = \exp(S_{vN}(\rho_E))$ | Нет | Да | Вычисляется в расширенном |
-| $R = 1/(7P)$, где $P = \mathrm{Tr}(\Gamma^2)$; $\rho^*_{\mathrm{diss}} = I/7$ | Да | Да | Согласовано |
+| $P = \mathrm{Tr}(\Gamma^2)$ | Yes | Yes | $P(\Gamma) = P(\iota(\Gamma))$ |
+| $\Phi = \sum_{i\neq j}\lVert\gamma_{ij}\rVert^2 / \sum_i \gamma_{ii}^2$ | Yes | Yes | Consistent |
+| $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | No | Yes | Requires $\iota$ |
+| $D_{diff} = \exp(S_{vN}(\rho_E))$ | No | Yes | Computed in extended |
+| $R = 1/(7P)$, where $P = \mathrm{Tr}(\Gamma^2)$; $\rho^*_{\mathrm{diss}} = I/7$ | Yes | Yes | Consistent |
 
-:::warning Правило использования формализмов
-1. **Теоремы о минимальности** (Теорема S, $\dim \geq 7$) — доказываются в минимальном формализме
-2. **Операции с подсистемами** ($\rho_E$, $D_{diff}$, частичный след) — только в расширенном формализме
-3. **Мера сознательности C** — полностью вычислима только в расширенном формализме; в минимальном используется упрощённая формула $C_{min} = \Phi \times R$
+:::warning Rule for Using Formalisms
+1. **Minimality theorems** (Theorem S, $\dim \geq 7$) — proved in the minimal formalism
+2. **Operations with subsystems** ($\rho_E$, $D_{diff}$, partial trace) — only in the extended formalism
+3. **Consciousness measure C** — fully computable only in the extended formalism; in the minimal formalism the simplified formula $C_{min} = \Phi \times R$ is used
 
-**Практическое следствие:** При анализе конкретных систем всегда работаем в расширенном формализме. Минимальный формализм — инструмент для структурных доказательств.
+**Practical corollary:** When analyzing specific systems, we always work in the extended formalism. The minimal formalism is a tool for structural proofs.
 :::
 
-:::warning Нотация: ρ_E vs Γ_E
-- $\Gamma$ — полная $7 \times 7$ матрица когерентности Голонома
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — редуцированная матрица на E-секторе
-- В 7D формализме (где $\mathbb{C}^7$ — простое, не факторизуется) $\rho_E$ вычисляется через **проекцию Гильберта—Шмидта**, а не частичный след
-- $\Gamma_E$ иногда используется как краткая запись для $\rho_E$, но строго: $\Gamma$ = полная матрица, $\rho_E$ = редуцированная
+:::warning Notation: ρ_E vs Γ_E
+- $\Gamma$ — the full $7 \times 7$ coherence matrix of the Holonom
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — reduced matrix on the E-sector
+- In the 7D formalism (where $\mathbb{C}^7$ is prime, not factorable), $\rho_E$ is computed via the **Hilbert–Schmidt projection**, not the partial trace
+- $\Gamma_E$ is sometimes used as shorthand for $\rho_E$, but strictly: $\Gamma$ = full matrix, $\rho_E$ = reduced
 :::
 
-### Тензорное расширение для Пейдж–Вуттерс {#тензорное-расширение-page-wootters}
+### Tensor Extension for Page–Wootters {#тензорное-расширение-page-wootters}
 
-Для механизма Пейдж–Вуттерс ([Свойство 3 Ω⁷](../foundations/axiom-omega#свойство-3)) требуется специальное тензорное разложение:
+The Page–Wootters mechanism ([Property 3 of Ω⁷](../foundations/axiom-omega#свойство-3)) requires a special tensor decomposition:
 
 $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}
 $$
 
-где:
-- $\mathcal{H}_O \cong \mathbb{C}^7$ — пространство [измерения O](../structure/dimension-o) (внутренние часы). Размерность 7 определяется числом дискретных «тактов» часов: каждому из 7 измерений {A,S,D,L,E,O,U} соответствует момент времени $|\tau_n\rangle$, $n = 0,\ldots,6$, связанный с циклическим действием $Z_7$ ([оператор сдвига $V_O$](../structure/dimension-o#оператор-сдвига-v_o))
-- $\mathcal{H}_{6D} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\} \cong \mathbb{C}^6$ — остальные измерения
+where:
+- $\mathcal{H}_O \cong \mathbb{C}^7$ — the space of [dimension O](../structure/dimension-o) (internal clock). Dimension 7 is determined by the number of discrete "ticks" of the clock: each of the 7 dimensions {A,S,D,L,E,O,U} corresponds to a moment of time $|\tau_n\rangle$, $n = 0,\ldots,6$, associated with the cyclic action $Z_7$ ([shift operator $V_O$](../structure/dimension-o#оператор-сдвига-v_o))
+- $\mathcal{H}_{6D} = \mathrm{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\} \cong \mathbb{C}^6$ — the remaining dimensions
 
-**Глобальная матрица когерентности:**
+**Global coherence matrix:**
 
 $$
 \Gamma_{total} \in \mathcal{L}(\mathcal{H}_O \otimes \mathcal{H}_{6D})
 $$
 
-**Размерность:** $\dim(\mathcal{H}_{total}) = 7 \times 6 = 42$
+**Dimension:** $\dim(\mathcal{H}_{total}) = 7 \times 6 = 42$
 
-**Связь с 7D-матрицей через условные состояния:**
+**Connection with the 7D matrix through conditional states:**
 
-Условное состояние при фиксированном моменте времени $\tau$:
+Conditional state at a fixed moment of time $\tau$:
 
 $$
 \Gamma(\tau) = \frac{\mathrm{Tr}_O\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]}{p(\tau)}
 $$
 
-где:
-- $|\tau\rangle_O$ — [базис часов](../structure/dimension-o#оператор-сдвига-v_o)
-- $p(\tau) = \mathrm{Tr}\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]$ — вероятность момента времени
+where:
+- $|\tau\rangle_O$ — [clock basis](../structure/dimension-o#оператор-сдвига-v_o)
+- $p(\tau) = \mathrm{Tr}\left[ (|\tau\rangle\langle \tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{total} \right]$ — probability of the moment of time
 
-**Свойства условного состояния:**
-- $\Gamma(\tau) \in \mathcal{L}(\mathcal{H}_{6D})$ — матрица $6 \times 6$
+**Properties of the conditional state:**
+- $\Gamma(\tau) \in \mathcal{L}(\mathcal{H}_{6D})$ — $6 \times 6$ matrix
 - $\Gamma(\tau)^\dagger = \Gamma(\tau)$, $\Gamma(\tau) \geq 0$, $\mathrm{Tr}(\Gamma(\tau)) = 1$
-- Динамика: $i\frac{\partial}{\partial\tau}\Gamma(\tau) = [H_{eff}(\tau), \Gamma(\tau)]$
+- Dynamics: $i\frac{\partial}{\partial\tau}\Gamma(\tau) = [H_{eff}(\tau), \Gamma(\tau)]$
 
-:::warning Связь формализмов
-| Формализм | Пространство | $\Gamma$ | Применение |
+:::warning Connection of Formalisms
+| Formalism | Space | $\Gamma$ | Application |
 |---|---|---|---|
-| Минимальный 7D | $\mathbb{C}^7$ | $7 \times 7$ матрица | Теоремы, концепции |
-| Тензорный Пейдж–Вуттерс | $\mathbb{C}^7 \otimes \mathbb{C}^6$ | $42 \times 42$ матрица | Эмерджентное время |
-| Условные состояния | $\mathbb{C}^6$ | $6 \times 6$ матрица | Динамика при фиксированном τ |
+| Minimal 7D | $\mathbb{C}^7$ | $7 \times 7$ matrix | Theorems, concepts |
+| Tensor Page–Wootters | $\mathbb{C}^7 \otimes \mathbb{C}^6$ | $42 \times 42$ matrix | Emergent time |
+| Conditional states | $\mathbb{C}^6$ | $6 \times 6$ matrix | Dynamics at fixed τ |
 
-**Согласование:** Минимальный 7D-формализм вложен в тензорный Пейдж–Вуттерс через выбор **эквидистантного времени** $p(\tau) = 1/7$:
+**Consistency:** The minimal 7D formalism is embedded in the tensor Page–Wootters formalism via the choice of **equidistant time** $p(\tau) = 1/7$:
 $$
-\Gamma_{7D} = \frac{1}{7} \sum_{n=0}^{6} |\tau_n\rangle\langle \tau_n| \otimes \Gamma(\tau_n) + \text{корреляции}
+\Gamma_{7D} = \frac{1}{7} \sum_{n=0}^{6} |\tau_n\rangle\langle \tau_n| \otimes \Gamma(\tau_n) + \text{correlations}
 $$
 
-Все три формализма описывают **один и тот же физический объект** на разных уровнях детализации:
-- 7D: структурный анализ (какие измерения есть)
-- 42D: временно́й анализ (как измерения коррелируют с часами)
-- 6D: мгновенный анализ (состояние в момент τ)
+All three formalisms describe **the same physical object** at different levels of detail:
+- 7D: structural analysis (which dimensions exist)
+- 42D: temporal analysis (how dimensions correlate with the clock)
+- 6D: instantaneous analysis (state at moment τ)
 :::
 
-### Морита-эквивалентность 7D и 42D формализмов {#морита-эквивалентность-7d-42d}
+### Morita Equivalence of 7D and 42D Formalisms {#морита-эквивалентность-7d-42d}
 
-:::tip Теорема (Морита-эквивалентность 7D↔42D) [Т] {#теорема-морита-эквивалентность}
+:::tip Theorem (Morita Equivalence 7D↔42D) [Т] {#теорема-морита-эквивалентность}
 
-Формализмы $\mathcal{D}(\mathbb{C}^7)$ и $\mathcal{D}(\mathbb{C}^{42})$ Морита-эквивалентны:
+The formalisms $\mathcal{D}(\mathbb{C}^7)$ and $\mathcal{D}(\mathbb{C}^{42})$ are Morita equivalent:
 $$\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$$
 
-**Доказательство (4 шага).**
+**Proof (4 steps).**
 
-**Шаг 1 (Функтор расширения).** Тензорное произведение $\iota: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$, $\Gamma \mapsto \Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$ — вложение (часы инициализированы).
+**Step 1 (Extension functor).** Tensor product $\iota: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$, $\Gamma \mapsto \Gamma \otimes |\tau_0\rangle\langle\tau_0|_O$ — embedding (clock initialized).
 
-**Шаг 2 (Функтор редукции).** Частичный след $\pi: \mathcal{D}(\mathbb{C}^{42}) \to \mathcal{D}(\mathbb{C}^7)$, $\Gamma_{42} \mapsto \mathrm{Tr}_O(\Gamma_{42})$ — CPTP-канал.
+**Step 2 (Reduction functor).** Partial trace $\pi: \mathcal{D}(\mathbb{C}^{42}) \to \mathcal{D}(\mathbb{C}^7)$, $\Gamma_{42} \mapsto \mathrm{Tr}_O(\Gamma_{42})$ — CPTP channel.
 
-**Шаг 3 (Сечение).** $\pi \circ \iota = \mathrm{id}$: частичный след по O тензорного произведения с чистым O-состоянием даёт исходную матрицу.
+**Step 3 (Section).** $\pi \circ \iota = \mathrm{id}$: the partial trace over O of the tensor product with a pure O-state gives the original matrix.
 
-**Шаг 4 (Теорема сравнения Лури).** Функтор $\iota$ индуцирует эквивалентность ∞-топосов по HTT 6.5.3.13 (Lurie): если морфизм сайтов $f: (\mathcal{C}_1, J_1) \to (\mathcal{C}_2, J_2)$ порождает эквивалентность на решётках подобъектов, то $f^*: \mathbf{Sh}_\infty(\mathcal{C}_2) \xrightarrow{\sim} \mathbf{Sh}_\infty(\mathcal{C}_1)$.
+**Step 4 (Lurie comparison theorem).** The functor $\iota$ induces an equivalence of ∞-toposes by HTT 6.5.3.13 (Lurie): if the morphism of sites $f: (\mathcal{C}_1, J_1) \to (\mathcal{C}_2, J_2)$ generates an equivalence on subobject lattices, then $f^*: \mathbf{Sh}_\infty(\mathcal{C}_2) \xrightarrow{\sim} \mathbf{Sh}_\infty(\mathcal{C}_1)$.
 
-Применение: метрика Бюреса на $\mathcal{D}(\mathbb{C}^7)$ совпадает с ограничением Бюреса на $\mathcal{D}(\mathbb{C}^{42})$ на образе $\iota$ (монотонность CPTP-каналов + сечение). Следовательно, покрытия согласованы и $\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$. $\blacksquare$
+Application: the Bures metric on $\mathcal{D}(\mathbb{C}^7)$ coincides with the restriction of the Bures metric on $\mathcal{D}(\mathbb{C}^{42})$ to the image of $\iota$ (CPTP channel monotonicity + section). Consequently, the covers are consistent and $\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$. $\blacksquare$
 :::
 
-**Следствие.** Все безразмерные инварианты ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) одинаковы в обоих формализмах. 7D-формулы — **точные**, не приближения.
+**Corollary.** All dimensionless invariants ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are the same in both formalisms. The 7D formulas are **exact**, not approximations.
 
-### Когда какой формализм использовать
+### When to Use Which Formalism
 
-| Задача | Формализм | Обоснование |
+| Task | Formalism | Justification |
 |---|---|---|
-| Доказательство $\dim \geq 7$ | Минимальный | Достаточно для структурных теорем |
-| Определение $\rho_E$, $\mathrm{Tr}_{-E}$ | Расширенный | Требуется тензорная структура |
-| Мера интеграции $\Phi$ | Оба | $\Phi = \sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ не требует тензорной структуры |
-| Иерархия L0→L1→L2→L3→L4 | Расширенный | Условия L1–L4 требуют $\rho_E$ с $\mathrm{rank} > 1$ |
-| Феноменология конкретной системы | Расширенный | Нужна структура $\mathcal{H}_E$ |
+| Proof of $\dim \geq 7$ | Minimal | Sufficient for structural theorems |
+| Definition of $\rho_E$, $\mathrm{Tr}_{-E}$ | Extended | Tensor structure required |
+| Integration measure $\Phi$ | Both | $\Phi = \sum_{i \neq j} \lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ does not require tensor structure |
+| Hierarchy L0→L1→L2→L3→L4 | Extended | Conditions L1–L4 require $\rho_E$ with $\mathrm{rank} > 1$ |
+| Phenomenology of a specific system | Extended | Structure of $\mathcal{H}_E$ needed |
 
 ---
 
-### Фановская структура когерентностей {#фановская-структура}
+### Fano Structure of Coherences {#фановская-структура}
 
-:::info Октонионная структура когерентностей [С]
-Матрица $\Gamma$ содержит $\binom{7}{2} = 21$ когерентность $\gamma_{ij}$. В [октонионной интерпретации](../structure/dimensions#октонионная-интерпретация) эти 21 пара соответствуют 21 ребру полного графа $K_7$ на 7 вершинах.
+:::info Octonionic Structure of Coherences [С]
+The matrix $\Gamma$ contains $\binom{7}{2} = 21$ coherences $\gamma_{ij}$. In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), these 21 pairs correspond to the 21 edges of the complete graph $K_7$ on 7 vertices.
 
-[Плоскость Фано](../../proofs/minimality/theorem-octonionic-derivation#плоскость-фано) PG(2,2) выделяет **7 триплетов** — линий, на которых октонионное умножение замкнуто. Каждый триплет $(e_i, e_j, e_k)$ определяет ассоциативную подалгебру, изоморфную Im($\mathbb{H}$).
+The [Fano plane](../../proofs/minimality/theorem-octonionic-derivation#плоскость-фано) PG(2,2) singles out **7 triplets** — lines on which octonionic multiplication is closed. Each triplet $(e_i, e_j, e_k)$ defines an associative subalgebra isomorphic to Im($\mathbb{H}$).
 
-**Предсказание [Т]:** Когерентности внутри Фано-триплетов могут проявлять более сильные корреляции, чем между триплетами. Мост [Т] (замкнут, T15).
+**Prediction [Т]:** Coherences within Fano triplets may exhibit stronger correlations than those between triplets. Bridge [Т] (closed, T15).
 
-[Структурный вывод →](../../proofs/minimality/theorem-octonionic-derivation)
+[Structural derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
 
-**Связанные документы:**
-- [Аксиома Ω⁷](../foundations/axiom-omega) — ∞-топос Sh_∞(𝒞) как примитив
-- [Эволюция](./evolution) — динамика Γ(τ) с внутренним временем
-- [Эмерджентное время](../../proofs/dynamics/emergent-time) — τ из структуры Γ
-- [Жизнеспособность](./viability) — мера P и условия существования
-- [Семь измерений](../structure/dimensions) — базис пространства состояний
-- [Математический аппарат](../../reference/specification) — формальная спецификация
-- [Gap-семантика: 49 элементов](/docs/physics/dual-aspect/gap-semantics) — полная 49-клеточная карта, фазовая диагностика и прогностика
-- [Динамика Gap](./gap-dynamics) — Gap-оператор, бифуркации, немарковская динамика
-- [Gap-термодинамика](./gap-thermodynamics) — термодинамические аспекты зазора
+**Related documents:**
+- [Axiom Ω⁷](../foundations/axiom-omega) — ∞-topos Sh_∞(𝒞) as primitive
+- [Evolution](./evolution) — dynamics of Γ(τ) with internal time
+- [Emergent time](../../proofs/dynamics/emergent-time) — τ from the structure of Γ
+- [Viability](./viability) — measure P and conditions of existence
+- [Seven dimensions](../structure/dimensions) — basis of the state space
+- [Mathematical apparatus](../../reference/specification) — formal specification
+- [Gap semantics: 49 elements](/docs/physics/dual-aspect/gap-semantics) — full 49-cell map, phase diagnostics and prognostics
+- [Gap dynamics](./gap-dynamics) — Gap operator, bifurcations, non-Markovian dynamics
+- [Gap thermodynamics](./gap-thermodynamics) — thermodynamic aspects of the gap

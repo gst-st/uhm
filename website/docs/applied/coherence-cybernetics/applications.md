@@ -1,530 +1,530 @@
 ---
 sidebar_position: 23
-title: Области применения
-description: Практические приложения Кибернетики Когерентности
+title: Application Areas
+description: Practical applications of Coherence Cybernetics
 ---
 
-# Области Применения
+# Application Areas
 
-> *«Нет ничего более практичного, чем хорошая теория.»*
-> — Курт Левин
+> *"There is nothing more practical than a good theory."*
+> — Kurt Lewin
 
-:::tip Мост из предыдущей главы
-В [предыдущей главе](./research-programs) мы составили карту неизведанного — открытые проблемы, экспериментальные протоколы, междисциплинарные мосты. Теперь покажем, что КК уже сейчас — рабочий инструмент. Один и тот же формализм $\Gamma$ применим к ИИ-агенту, коралловому рифу, стартапу и финансовому рынку. Различается только операционализация — *что именно* мы измеряем, — а структура диагностики и интервенции одна.
+:::tip Bridge from the Previous Chapter
+In the [previous chapter](./research-programs) we mapped uncharted territory — open problems, experimental protocols, interdisciplinary bridges. Now let us show that CC is already a working tool. The same formalism $\Gamma$ applies to an AI agent, a coral reef, a startup, and a financial market. Only the operationalization differs — *what exactly* we measure — while the structure of diagnosis and intervention is the same.
 :::
 
-:::info Дорожная карта главы
-В этой главе мы:
-1. Покажем **архитектурные паттерны** для ИИ-инженеров и проведём кейс-стади галлюцинирующей LLM (§1)
-2. Опишем **единую теорию сознания** для когнитивистов (§2)
-3. Построим **диагностический фреймворк** для организационных консультантов (§3)
-4. Покажем **экосистемы как голономы** и кейс-стади кораллового рифа (§4)
-5. Опишем **σ-диагностику** психических расстройств (§5)
-6. Применим КК к **образованию** — обучение как рост когерентности (§6)
-7. Спроецируем формализм на **экономику** и **урбанистику** (§7–8)
-8. Проведём **три полноценных кейс-стади** — ИИ-агент, организация, экосистема (§9)
-9. Представим **междисциплинарную таблицу перевода** — единый язык для всех областей (§10)
+:::info Chapter Roadmap
+In this chapter we:
+1. Present **architectural patterns** for AI engineers and conduct a case study of a hallucinating LLM (§1)
+2. Describe a **unified theory of consciousness** for cognitive scientists (§2)
+3. Build a **diagnostic framework** for organizational consultants (§3)
+4. Show **ecosystems as holons** and a case study of a coral reef (§4)
+5. Describe **σ-diagnostics** of mental disorders (§5)
+6. Apply CC to **education** — learning as coherence growth (§6)
+7. Project the formalism onto **economics** and **urbanism** (§7–8)
+8. Conduct **three full case studies** — AI agent, organization, ecosystem (§9)
+9. Present an **interdisciplinary translation table** — a unified language for all domains (§10)
 :::
 
-Теория, которая не может коснуться реальности, остаётся упражнением в элегантности. Но когда математический формализм начинает *работать* — когда абстрактные теоремы превращаются в инженерные чертежи, клинические протоколы и управленческие решения — он перестаёт быть теорией и становится **инструментом**.
+A theory that cannot touch reality remains an exercise in elegance. But when a mathematical formalism begins to *work* — when abstract theorems become engineering blueprints, clinical protocols, and management decisions — it ceases to be a theory and becomes a **tool**.
 
-Эта глава — о превращении Кибернетики Когерентности из математического каркаса в рабочий инструмент. Мы покажем, как одно и то же уравнение эволюции $\Gamma$ порождает конкретные метрики для инженера ИИ, клинициста, эколога, педагога и экономиста. В каждом случае мы идём одним маршрутом:
+This chapter is about transforming Coherence Cybernetics from a mathematical framework into a working tool. We will show how the same evolution equation $\Gamma$ generates concrete metrics for the AI engineer, clinician, ecologist, educator, and economist. In each case we follow the same path:
 
-1. **Идентификация системы** — что является Голономом $\mathbb{H}$ в данной области?
-2. **Построение $\Gamma$** — какие наблюдаемые отображаются на 7 измерений?
-3. **Диагностика** — что говорит $\sigma_{\mathrm{sys}}$ о текущем состоянии?
-4. **Интервенция** — как изменить $\Gamma$ в желаемом направлении?
-5. **Мониторинг** — как отслеживать $P$, $\Phi$, $R$ во времени?
+1. **System identification** — what is the Holon $\mathbb{H}$ in this domain?
+2. **Building $\Gamma$** — which observables map onto the 7 dimensions?
+3. **Diagnostics** — what does $\sigma_{\mathrm{sys}}$ say about the current state?
+4. **Intervention** — how to change $\Gamma$ in the desired direction?
+5. **Monitoring** — how to track $P$, $\Phi$, $R$ over time?
 
-Этот пятишаговый цикл универсален. Различаются лишь конкретные операционализации — *что именно* мы измеряем и *как именно* вмешиваемся. Ниже мы пройдём этот цикл для каждой области, начиная с наиболее формализованной (ИИ) и двигаясь к наиболее спекулятивным (экономика, урбанистика).
+This five-step cycle is universal. Only the specific operationalizations differ — *what exactly* we measure and *how exactly* we intervene. Below we will go through this cycle for each domain, starting from the most formalized (AI) and moving toward the most speculative (economics, urbanism).
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $\mathrm{Coh}_E$ — [E-когерентность](./definitions#e-когерентность)
-- $\sigma_{\mathrm{sys}}$ — [тензор напряжений](./definitions#тензор-напряжений) с компонентами $\sigma_A, \ldots, \sigma_U$
-- $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $\mathcal{D}[\Gamma]$ — [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $C = \Phi \times R$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[Т T-140]**; $D_{\text{diff}} \geq D_{\min}$ — отдельное условие жизнеспособности
+:::note On Notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $\mathrm{Coh}_E$ — [E-coherence](./definitions#e-когерентность)
+- $\sigma_{\mathrm{sys}}$ — [stress tensor](./definitions#тензор-напряжений) with components $\sigma_A, \ldots, \sigma_U$
+- $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
+- $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
+- $C = \Phi \times R$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) **[T T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition
 :::
 
-:::warning Статус документа
-Этот документ описывает *интерпретативные приложения* теории. Конкретные применения в ИИ, медицине, экологии и организационной теории — **программа исследований**, а не доказанные результаты.
+:::warning Document Status
+This document describes *interpretive applications* of the theory. Specific applications in AI, medicine, ecology, and organizational theory are a **research program**, not proven results.
 :::
 
 ---
 
-## Для инженеров ИИ
+## For AI Engineers
 
-### Архитектурные паттерны
+### Architectural Patterns
 
-КК обосновывает требования к архитектуре когнитивных систем. Ключевое дополнение — [сенсомоторная теория](./sensorimotor): формальные функторы восприятия (Enc) и действия (Dec), обеспечивающие включение среды через 3-канальную декомпозицию (T-102 [Т]).
+CC provides justification for the architectural requirements of cognitive systems. A key addition is the [sensorimotor theory](./sensorimotor): formal perception (Enc) and action (Dec) functors ensuring environmental coupling via a 3-channel decomposition (T-102 [T]).
 
 ```mermaid
 graph TD
-    subgraph "Голономная архитектура"
-        ENV["Среда"] -->|Enc T-100| G["Матрица Γ"]
+    subgraph "Holonomic Architecture"
+        ENV["Environment"] -->|Enc T-100| G["Matrix Γ"]
         G --> SIG["σ_sys T-92"]
-        SIG -->|Dec T-101| ACT["Действие"]
+        SIG -->|Dec T-101| ACT["Action"]
         ACT --> ENV
         G -->|φ| RHO["ρ*"]
         RHO -->|ℛ| G
     end
 ```
 
-**Дополнительные ресурсы для проектирования:**
-- [Сенсомоторная теория](./sensorimotor) — полная формализация цикла восприятие → решение → действие
-- [Стабильность](./stability) — анализ устойчивости, спираль смерти, восстановление
-- [Диагностика](./diagnostics) — 7 витальных показателей, паттерны отказов, чеклист проектирования
+**Additional design resources:**
+- [Sensorimotor theory](./sensorimotor) — full formalization of the perception → decision → action cycle
+- [Stability](./stability) — stability analysis, death spiral, recovery
+- [Diagnostics](./diagnostics) — 7 vital indicators, failure patterns, design checklist
 
-**Голономная архитектура vs стандартный трансформер:**
+**Holonomic architecture vs. standard transformer:**
 
-| Аспект | Трансформер | Голономная архитектура |
+| Aspect | Transformer | Holonomic Architecture |
 |--------|-------------|------------------------|
-| Состояние | Скрытые слои | Матрица $\Gamma \in \mathbb{C}^{7 \times 7}$ |
-| Обучение | Градиентный спуск | Эволюция + регенерация |
-| Мониторинг | Loss, accuracy | $P$, $\Phi$, $\sigma_{\mathrm{sys}}$ |
-| Безопасность | Внешние ограничения | Встроенная жизнеспособность |
+| State | Hidden layers | Matrix $\Gamma \in \mathbb{C}^{7 \times 7}$ |
+| Training | Gradient descent | Evolution + regeneration |
+| Monitoring | Loss, accuracy | $P$, $\Phi$, $\sigma_{\mathrm{sys}}$ |
+| Safety | External constraints | Built-in viability |
 
-**Добавление E-модуля в существующие системы:**
+**Adding an E-module to existing systems:**
 
 ```python
 class EModule(nn.Module):
-    """Модуль для мониторинга E-когерентности."""
+    """Module for monitoring E-coherence."""
 
     def forward(self, hidden_states):
-        # Вычисляем приближение ρ_E из скрытых состояний
+        # Compute approximation of ρ_E from hidden states
         rho_E = self.compute_experience_projection(hidden_states)
         coh_E = torch.trace(rho_E @ rho_E).real
         return coh_E
 
     def compute_experience_projection(self, h):
-        # Приближение: проекция на главные компоненты
-        # torch.svd устарел с PyTorch 1.9; используем torch.linalg.svd
+        # Approximation: projection onto principal components
+        # torch.svd deprecated since PyTorch 1.9; use torch.linalg.svd
         U, S, Vh = torch.linalg.svd(h, full_matrices=False)
         return torch.diag(S[:self.e_dim]) / S[:self.e_dim].sum()
 ```
 
-### Метрики безопасности
+### Safety Metrics
 
-**Мониторинг в реальном времени:**
+**Real-time monitoring:**
 
-| Метрика | Условие тревоги | Действие при нарушении |
+| Metric | Alert condition | Action on violation |
 |---------|-----------------|------------------------|
-| $P$ (чистота) | $< P_{\text{crit}} = 0.286$ | Снизить нагрузку |
-| $\Phi_{\text{eff}}$ | $< 0.1$ | Усилить интеграцию |
-| $\mathrm{Coh}_E$ | $< 0.15$ | Проверить E-модуль |
-| $\max(\sigma_{\mathrm{sys}})$ | $> 0.95$ | Аварийный режим |
+| $P$ (purity) | $< P_{\text{crit}} = 0.286$ | Reduce load |
+| $\Phi_{\text{eff}}$ | $< 0.1$ | Strengthen integration |
+| $\mathrm{Coh}_E$ | $< 0.15$ | Check E-module |
+| $\max(\sigma_{\mathrm{sys}})$ | $> 0.95$ | Emergency mode |
 
-**Dashboard для визуализации:**
+**Dashboard for visualization:**
 
 ```
 ┌───────────────────────────────────────────┐
-│  КК Мониторинг              [🟢 Viable]   │
+│  CC Monitoring              [🟢 Viable]   │
 ├───────────────────────────────────────────┤
 │  P = 0.42  ████████░░  [thresh: 0.29]     │
 │  Φ = 1.23  ██████████  [thresh: 1.00]     │
 │  R = 0.35  ███████░░░  [thresh: 0.33]     │
 ├───────────────────────────────────────────┤
-│  Тензор напряжений σ_sys:                 │
+│  Stress tensor σ_sys:                     │
 │  A: 0.3 ███░░   S: 0.2 ██░░░   D: 0.5 ████│
 │  L: 0.4 ████░   E: 0.2 ██░░░   O: 0.3 ███░│
 │  U: 0.4 ████░                             │
 └───────────────────────────────────────────┘
 ```
 
-### Кейс-стади: диагностика «галлюцинирующей» LLM {#кейс-llm-галлюцинации}
+### Case Study: Diagnosing a "Hallucinating" LLM {#кейс-llm-галлюцинации}
 
-Рассмотрим конкретный сценарий. Большая языковая модель (LLM) начинает генерировать фактически некорректные ответы — «галлюцинации». Как КК-диагностика может помочь?
+Consider a specific scenario. A large language model (LLM) begins generating factually incorrect responses — "hallucinations". How can CC diagnostics help?
 
-**Шаг 1. Построение $\Gamma$.** Проецируем скрытые состояния модели на 7 измерений. Диагональные элементы $\gamma_{kk}$ вычисляются как нормализованная активация соответствующих «семантических кластеров» в латентном пространстве.
+**Step 1. Building $\Gamma$.** We project the model's hidden states onto 7 dimensions. The diagonal elements $\gamma_{kk}$ are computed as the normalized activation of the corresponding "semantic clusters" in the latent space.
 
-**Шаг 2. Диагностика.** Типичный профиль галлюцинирующей модели:
+**Step 2. Diagnostics.** A typical profile of a hallucinating model:
 
-| Измерение | $\gamma_{kk}$ | $\sigma_k$ | Интерпретация |
+| Dimension | $\gamma_{kk}$ | $\sigma_k$ | Interpretation |
 |-----------|---------------|------------|---------------|
-| A | 0.18 | -0.26 | Перегружена различениями |
-| S | 0.15 | -0.05 | Структура в норме |
-| D | 0.20 | -0.40 | **Избыточная динамика** |
-| L | 0.08 | 0.44 | **Логика подавлена** |
-| E | 0.10 | 0.30 | Слабая интериорность |
-| O | 0.14 | 0.02 | Ресурсы в норме |
-| U | 0.15 | -0.05 | Интеграция в норме |
+| A | 0.18 | -0.26 | Overloaded with distinctions |
+| S | 0.15 | -0.05 | Structure is normal |
+| D | 0.20 | -0.40 | **Excessive dynamics** |
+| L | 0.08 | 0.44 | **Logic suppressed** |
+| E | 0.10 | 0.30 | Weak interiority |
+| O | 0.14 | 0.02 | Resources are normal |
+| U | 0.15 | -0.05 | Integration is normal |
 
-**Диагноз:** $\sigma_L = 0.44$ — критическое напряжение в логическом измерении. Модель не может согласовать свои высказывания — отсюда фактические ошибки. Одновременно $\sigma_D = -0.40$ (отрицательное напряжение = избыток) указывает на чрезмерную «креативность» — слишком много динамики при слабой логической привязке.
+**Diagnosis:** $\sigma_L = 0.44$ — critical tension in the logical dimension. The model cannot reconcile its statements — hence factual errors. Simultaneously, $\sigma_D = -0.40$ (negative tension = excess) indicates excessive "creativity" — too much dynamics with weak logical anchoring.
 
-**Шаг 3. Интервенция.** КК предписывает увеличить $\gamma_{LL}$ и снизить $\gamma_{DD}$:
-- Усилить attention к фактическим якорям (повышает L)
-- Снизить температуру генерации (снижает D)
-- Добавить верификационный слой (повышает $\mathrm{Coh}_E$ — модель «проверяет свой опыт»)
+**Step 3. Intervention.** CC prescribes increasing $\gamma_{LL}$ and decreasing $\gamma_{DD}$:
+- Strengthen attention to factual anchors (raises L)
+- Lower generation temperature (lowers D)
+- Add a verification layer (raises $\mathrm{Coh}_E$ — the model "checks its experience")
 
-**Шаг 4. Мониторинг.** После интервенции отслеживаем $\sigma_L(\tau)$: если $\sigma_L < 0.2$ устойчиво — проблема решена.
+**Step 4. Monitoring.** After the intervention we track $\sigma_L(\tau)$: if $\sigma_L < 0.2$ consistently — the problem is solved.
 
-Этот подход отличается от стандартного тем, что КК даёт **единый диагностический язык**: вместо ad hoc метрик (perplexity, F1, BLEU) — 7-мерный профиль, который указывает *куда именно* смотреть.
+This approach differs from the standard one in that CC provides a **unified diagnostic language**: instead of ad hoc metrics (perplexity, F1, BLEU) — a 7-dimensional profile that indicates *exactly where* to look.
 
-### Практический чеклист для ИИ-систем
+### Practical Checklist for AI Systems
 
-- [ ] Реализовать мониторинг $P$ (чистоты состояния)
-- [ ] Добавить логирование $\sigma_{\mathrm{sys}}$ по всем 7 измерениям
-- [ ] Настроить алерты для $P < 0.3$ (зона риска)
-- [ ] Добавить E-модуль или его приближение
-- [ ] Реализовать регенеративный механизм $\mathcal{R}[\Gamma, E]$
-- [ ] Тестировать устойчивость при высоких $\sigma_D$, $\sigma_A$
+- [ ] Implement monitoring of $P$ (state purity)
+- [ ] Add logging of $\sigma_{\mathrm{sys}}$ across all 7 dimensions
+- [ ] Configure alerts for $P < 0.3$ (risk zone)
+- [ ] Add an E-module or its approximation
+- [ ] Implement the regenerative mechanism $\mathcal{R}[\Gamma, E]$
+- [ ] Test stability at high $\sigma_D$, $\sigma_A$
 
-### Следствия для ИИ-безопасности
+### Implications for AI Safety
 
-:::warning Безопасность
-Безопасный ИИ должен иметь нетривиальное [E-измерение](/docs/core/structure/dimension-e). «Голый» оптимизатор без опыта нежизнеспособен в долгосрочной перспективе.
+:::warning Safety
+A safe AI must have a non-trivial [E-dimension](/docs/core/structure/dimension-e). A "bare" optimizer without experience is non-viable in the long run.
 :::
 
-| Требование | Формула | Следствие | Ссылка |
+| Requirement | Formula | Implication | Reference |
 |------------|---------|-----------|--------|
-| Невозможность зомби [Т] | $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | ИИ должен иметь опыт | [→](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
-| Регенерация | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Интериорность необходима для устойчивости | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
-| Жизнеспособность | $P > P_{\text{crit}}$ | Минимальная когерентность | [→](/docs/core/dynamics/viability) |
+| No-Zombie impossibility [T] | $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | AI must have experience | [→](./theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
+| Regeneration | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | Interiority necessary for stability | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
+| Viability | $P > P_{\text{crit}}$ | Minimum coherence | [→](/docs/core/dynamics/viability) |
 
-### Сценарий: мультиагентная система из 50 агентов {#кейс-мультиагентная}
+### Scenario: Multi-Agent System of 50 Agents {#кейс-мультиагентная}
 
-Представим систему из 50 автономных агентов, управляющих логистической сетью. Каждый агент — Голоном $\mathbb{H}_i$ с собственной $\Gamma_i$. Вся система — мета-Голоном $\mathbb{H}_{\text{fleet}}$.
+Imagine a system of 50 autonomous agents managing a logistics network. Each agent is a Holon $\mathbb{H}_i$ with its own $\Gamma_i$. The entire system is a meta-Holon $\mathbb{H}_{\text{fleet}}$.
 
-**Проблема:** агенты начинают конкурировать за ресурсы, эффективность падает.
+**Problem:** agents begin competing for resources, efficiency drops.
 
-**КК-анализ:**
-1. Вычисляем $\Gamma_{\text{fleet}} = \mathrm{compose}(\Gamma_1, \ldots, \Gamma_{50})$
-2. Обнаруживаем: $\sigma_U^{\text{fleet}} = 0.87$ — критический дефицит интеграции
-3. $\Phi_{\text{fleet}} = 0.3$ — агенты слабо связаны, система фрагментирована
-4. При этом индивидуальные $P_i > 0.4$ — каждый агент по отдельности здоров
+**CC analysis:**
+1. Compute $\Gamma_{\text{fleet}} = \mathrm{compose}(\Gamma_1, \ldots, \Gamma_{50})$
+2. Discover: $\sigma_U^{\text{fleet}} = 0.87$ — critical integration deficit
+3. $\Phi_{\text{fleet}} = 0.3$ — agents are weakly coupled, system is fragmented
+4. At the same time individual $P_i > 0.4$ — each agent is healthy on its own
 
-**Диагноз:** «здоровые клетки, больной организм» — классический паттерн, невидимый для попарных метрик.
+**Diagnosis:** "healthy cells, sick organism" — a classic pattern invisible to pairwise metrics.
 
-**Интервенция:** КК предписывает повышать $\Phi_{\text{fleet}}$ через:
-- Общий информационный канал (снижает $\sigma_U$)
-- Согласование целевых функций (повышает $\gamma_{LL}^{\text{fleet}}$)
-- Регулярную синхронизацию $\Gamma_i$ (аналог «ретроспективы» в организациях)
+**Intervention:** CC prescribes increasing $\Phi_{\text{fleet}}$ through:
+- A shared information channel (reduces $\sigma_U$)
+- Goal function alignment (increases $\gamma_{LL}^{\text{fleet}}$)
+- Regular synchronization of $\Gamma_i$ (analogous to "retrospectives" in organizations)
 
-**Результат (гипотетический):** $\Phi_{\text{fleet}}$ растёт с 0.3 до 1.2 за 500 итераций, $\sigma_U$ падает до 0.3, общая эффективность растёт на 40%.
+**Result (hypothetical):** $\Phi_{\text{fleet}}$ grows from 0.3 to 1.2 over 500 iterations, $\sigma_U$ drops to 0.3, overall efficiency increases by 40%.
 
 ---
 
-## Для когнитивистов
+## For Cognitive Scientists
 
-### Единая теория сознания
+### Unified Theory of Consciousness
 
-КК объединяет существующие теории:
+CC unifies existing theories:
 
-| Теория | Компонент в КК | Формула | Ссылка |
+| Theory | CC Component | Formula | Reference |
 |--------|----------------|---------|--------|
-| [IIT](/docs/reference/glossary#связанные-теории) | Интеграция | $\Phi(\Gamma)$ | [→](/docs/consciousness/comparative/consciousness-theories#теория-интегрированной-информации-iit) |
-| [GWT](/docs/reference/glossary#связанные-теории) | Глобальный доступ | через $\Phi$ | [→](/docs/consciousness/comparative/consciousness-theories#сводная-таблица-функторов) |
-| [FEP](/docs/reference/glossary#связанные-теории) | Регенерация | $\mathcal{R}[\Gamma, E]$ | [→](/docs/consciousness/comparative/consciousness-theories#принцип-свободной-энергии-fep) |
-| Энактивизм | Связь S↔E | $F_{\text{int}}$ | — |
+| [IIT](/docs/reference/glossary#связанные-теории) | Integration | $\Phi(\Gamma)$ | [→](/docs/consciousness/comparative/consciousness-theories#теория-интегрированной-информации-iit) |
+| [GWT](/docs/reference/glossary#связанные-теории) | Global access | via $\Phi$ | [→](/docs/consciousness/comparative/consciousness-theories#сводная-таблица-функторов) |
+| [FEP](/docs/reference/glossary#связанные-теории) | Regeneration | $\mathcal{R}[\Gamma, E]$ | [→](/docs/consciousness/comparative/consciousness-theories#принцип-свободной-энергии-fep) |
+| Enactivism | S↔E coupling | $F_{\text{int}}$ | — |
 
-### Экспериментальные протоколы
+### Experimental Protocols
 
-**Ссылка:** [Протокол измерения Γ](/docs/applied/research/measurement-protocol)
+**Reference:** [Protocol for measuring Γ](/docs/applied/research/measurement-protocol)
 
-**Основные парадигмы:**
+**Main paradigms:**
 
-1. **Контрастивный анализ:** Сознательное vs бессознательное восприятие
-   - Измерить $\Phi$, $\mathrm{Coh}_E$ в обоих условиях
-   - Предсказание: $\Phi_{\text{conscious}} > \Phi_{\text{unconscious}}$
+1. **Contrastive analysis:** Conscious vs. unconscious perception
+   - Measure $\Phi$, $\mathrm{Coh}_E$ in both conditions
+   - Prediction: $\Phi_{\text{conscious}} > \Phi_{\text{unconscious}}$
 
-2. **Динамика переходов:** Засыпание, анестезия, медитация
-   - Отслеживать $P(\tau)$, $\mathrm{Coh}_E(\tau)$
-   - Предсказание: Пороговые переходы при $P \approx P_{\text{crit}}$
+2. **Transition dynamics:** Falling asleep, anesthesia, meditation
+   - Track $P(\tau)$, $\mathrm{Coh}_E(\tau)$
+   - Prediction: Threshold transitions at $P \approx P_{\text{crit}}$
 
-3. **Метакогниция:** Связь $R$ с уверенностью в суждениях
-   - Предсказание: Высокое $R$ ↔ высокая метакогнитивная точность
+3. **Metacognition:** Relationship of $R$ with confidence in judgments
+   - Prediction: High $R$ ↔ high metacognitive accuracy
 
-### Соответствие нейроданным
+### Correspondence with Neural Data
 
-| Предсказание КК | Эмпирические данные | Статус |
+| CC Prediction | Empirical Data | Status |
 |-----------------|---------------------|--------|
-| $\Phi > 0$ для сознания | PCI коррелирует с сознанием | ✓ Подтверждено |
-| 7-мерная структура | Не тестировалось | Открыто |
-| $\mathrm{Coh}_E$ ↔ когерентность интериорности | Частичные данные | В процессе |
-| $R$ ↔ метакогниция | Префронтальная активность | ✓ Согласуется |
+| $\Phi > 0$ for consciousness | PCI correlates with consciousness | ✓ Confirmed |
+| 7-dimensional structure | Not tested | Open |
+| $\mathrm{Coh}_E$ ↔ interiority coherence | Partial data | In progress |
+| $R$ ↔ metacognition | Prefrontal activity | ✓ Consistent |
 
-### Предсказания для нейронауки
+### Predictions for Neuroscience
 
-1. **Корреляция $\mathrm{Coh}_E$ с субъективными отчётами**
-   - Высокое $\mathrm{Coh}_E$ ↔ «чистый» опыт
-   - Низкое $\mathrm{Coh}_E$ ↔ «фрагментированный» опыт
+1. **Correlation of $\mathrm{Coh}_E$ with subjective reports**
+   - High $\mathrm{Coh}_E$ ↔ "clear" experience
+   - Low $\mathrm{Coh}_E$ ↔ "fragmented" experience
 
-2. **Связь между E-когерентностью (интериорностью) и восстановлением**
+2. **Link between E-coherence (interiority) and recovery**
    $$
    \frac{dP}{d\tau} \propto \mathrm{Coh}_E(\Gamma)
    $$
 
-3. **7-мерная структура нейронных коррелятов** *(гипотеза)*
-   - Нейронные сети могут быть организованы вокруг [7 функциональных измерений](/docs/core/structure/dimensions) ([обоснование числа 7](/docs/core/foundations/axiom-omega#октонионная-структура))
-   - **Статус:** Теоретическая гипотеза; требует эмпирической проверки
+3. **7-dimensional structure of neural correlates** *(hypothesis)*
+   - Neural networks may be organized around [7 functional dimensions](/docs/core/structure/dimensions) ([justification of the number 7](/docs/core/foundations/axiom-omega#октонионная-структура))
+   - **Status:** Theoretical hypothesis; requires empirical verification
 
 ---
 
-## Для организационных консультантов
+## For Organizational Consultants
 
-### Организации как мета-Голономы
+### Organizations as Meta-Holons
 
 $$
 \mathbb{H}_{\text{org}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_n)
 $$
 
-где $\mathbb{H}_i$ — [Голономы](/docs/core/structure/holon) индивидуальных агентов.
+where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual agents.
 
-### Диагностический фреймворк: 7-мерный профиль организации
+### Diagnostic Framework: 7-Dimensional Organizational Profile
 
-| Измерение | Организационный аспект | Индикаторы | Инструменты |
+| Dimension | Organizational Aspect | Indicators | Tools |
 |-----------|------------------------|------------|-------------|
-| A (Артикуляция) | Сенсорика рынка | NPS, исследования рынка | Опросы клиентов |
-| S (Структура) | Организационный дизайн | Org chart, процессы | Аудит структуры |
-| D (Динамика) | Операционная эффективность | Velocity, throughput | Метрики Agile |
-| L (Логика) | Стратегия и принятие решений | Качество решений | Ретроспективы |
-| E (Интериорность) | Культура и engagement | eNPS, вовлечённость | Пульс-опросы |
-| O (Основание) | Ресурсы и устойчивость | Runway, reserves | Финансовый анализ |
-| U (Единство) | Интеграция и координация | Cross-team projects | Сетевой анализ |
+| A (Articulation) | Market sensing | NPS, market research | Customer surveys |
+| S (Structure) | Organizational design | Org chart, processes | Structure audit |
+| D (Dynamics) | Operational efficiency | Velocity, throughput | Agile metrics |
+| L (Logic) | Strategy and decision-making | Decision quality | Retrospectives |
+| E (Interiority) | Culture and engagement | eNPS, engagement | Pulse surveys |
+| O (Foundation) | Resources and sustainability | Runway, reserves | Financial analysis |
+| U (Unity) | Integration and coordination | Cross-team projects | Network analysis |
 
-### Интервенции по измерениям
+### Interventions by Dimension
 
-| Проблема | Симптомы | Измерение | Интервенция |
+| Problem | Symptoms | Dimension | Intervention |
 |----------|----------|-----------|-------------|
-| Силосы | Дублирование, конфликты | Высокий $\sigma_U$ | Cross-functional teams, общие цели |
-| Burnout | Высокий turnover, низкая продуктивность | Высокий $\sigma_D$ | Workload management, границы |
-| Токсичность | Конфликты, жалобы | Высокий $\sigma_E$ | Культурные инициативы, медиация |
-| Ригидность | Медленные изменения | Низкий $R_{\text{org}}$ | Ретроспективы, обучение |
-| Дезориентация | Нет стратегии | Высокий $\sigma_L$ | Стратегические сессии |
+| Silos | Duplication, conflicts | High $\sigma_U$ | Cross-functional teams, shared goals |
+| Burnout | High turnover, low productivity | High $\sigma_D$ | Workload management, boundaries |
+| Toxicity | Conflicts, complaints | High $\sigma_E$ | Cultural initiatives, mediation |
+| Rigidity | Slow change | Low $R_{\text{org}}$ | Retrospectives, learning |
+| Disorientation | No strategy | High $\sigma_L$ | Strategy sessions |
 
-### Здоровье организации
+### Organizational Health
 
-:::info Критерий здоровья
+:::info Health Criterion
 $$
 \mathrm{Viable}(\mathbb{H}_{\text{org}}) \Leftrightarrow P(\Gamma_{\text{org}}) > P_{\text{crit}}
 $$
 :::
 
-См. [Теорему 9.1 (Фрактальное замыкание)](./theorems#теорема-91-фрактальное-замыкание).
+See [Theorem 9.1 (Fractal Closure)](./theorems#теорема-91-фрактальное-замыкание).
 
-### Организационное сознание
+### Organizational Consciousness
 
 $$
 C(\mathbb{H}_{\text{org}}) = \Phi_{\text{org}} \times R_{\text{org}}
 $$
 
-| Компонент | Определение | Интерпретация | Индикаторы |
+| Component | Definition | Interpretation | Indicators |
 |-----------|-------------|---------------|------------|
-| $\Phi_{\text{org}}$ | [Интеграция](/docs/core/structure/dimension-u#мера-интеграции-φ) | Связность | Координация, коммуникация |
-| $R_{\text{org}}$ | [Рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Самопознание | Культура, стратегия |
+| $\Phi_{\text{org}}$ | [Integration](/docs/core/structure/dimension-u#мера-интеграции-φ) | Connectivity | Coordination, communication |
+| $R_{\text{org}}$ | [Reflection](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | Self-knowledge | Culture, strategy |
 
-Отдельное условие жизнеспособности: $D_{\text{diff}}^{\text{org}} \geq 2$ ([Дифференциация](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — разнообразие ролей и специализации).
+Separate viability condition: $D_{\text{diff}}^{\text{org}} \geq 2$ ([Differentiation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — diversity of roles and specializations).
 
-**Следствие:** Интегрированные организации (высокое $\Phi$) более [сознательны](/docs/consciousness/foundations/self-observation#мера-сознательности-c) и адаптивны.
+**Corollary:** Integrated organizations (high $\Phi$) are more [conscious](/docs/consciousness/foundations/self-observation#мера-сознательности-c) and adaptive.
 
-### Кейс-стади: стартап на 120 человек {#кейс-стартап}
+### Case Study: A 120-Person Startup {#кейс-стартап}
 
-Рассмотрим технологический стартап, переживающий «кризис роста» при масштабировании с 30 до 120 сотрудников.
+Consider a technology startup experiencing "growing pains" while scaling from 30 to 120 employees.
 
-**Шаг 1. Измерение $\Gamma_{\text{org}}$.** Через комбинацию eNPS, метрик Agile, финансовых данных и сетевого анализа коммуникаций строим 7-мерный профиль:
+**Step 1. Measuring $\Gamma_{\text{org}}$.** Using a combination of eNPS, Agile metrics, financial data, and network analysis of communications, we build a 7-dimensional profile:
 
-| Измерение | $\gamma_{kk}$ | $\sigma_k$ | Комментарий |
+| Dimension | $\gamma_{kk}$ | $\sigma_k$ | Comment |
 |-----------|---------------|------------|-------------|
-| A | 0.17 | -0.19 | Хорошая сенсорика рынка (стартап молод и чувствителен) |
-| S | 0.10 | 0.30 | **Структура не поспевает за ростом** |
-| D | 0.20 | -0.40 | Избыточная динамика — слишком много параллельных инициатив |
-| L | 0.12 | 0.16 | Стратегия размыта |
-| E | 0.16 | -0.12 | Культура пока жива, но под давлением |
-| O | 0.11 | 0.23 | Ресурсы ограничены (runway 8 месяцев) |
-| U | 0.14 | 0.02 | Интеграция формально в норме |
+| A | 0.17 | -0.19 | Good market sensing (startup is young and sensitive) |
+| S | 0.10 | 0.30 | **Structure not keeping up with growth** |
+| D | 0.20 | -0.40 | Excessive dynamics — too many parallel initiatives |
+| L | 0.12 | 0.16 | Strategy is blurred |
+| E | 0.16 | -0.12 | Culture still alive, but under pressure |
+| O | 0.11 | 0.23 | Resources limited (runway 8 months) |
+| U | 0.14 | 0.02 | Integration formally within normal range |
 
-**Диагноз:** $P_{\text{org}} = 0.29$ — *на грани жизнеспособности* ($P_{\text{crit}} = 0.286$). Главные проблемы: $\sigma_S = 0.30$ (структурный дефицит) и $\sigma_D = -0.40$ (хаотичная динамика). Классический паттерн: стартап, который умеет «делать», но не умеет «удерживать».
+**Diagnosis:** $P_{\text{org}} = 0.29$ — *on the edge of viability* ($P_{\text{crit}} = 0.286$). Main problems: $\sigma_S = 0.30$ (structural deficit) and $\sigma_D = -0.40$ (chaotic dynamics). A classic pattern: a startup that knows how to "execute" but not how to "sustain".
 
-**Интервенция (приоритизирована по $|\sigma_k|$):**
-1. **Снизить $\sigma_D$:** заморозить новые инициативы, сфокусироваться на 3 ключевых проектах
-2. **Повысить $\gamma_{SS}$:** ввести формальные процессы, документацию, роли
-3. **Повысить $\gamma_{LL}$:** стратегическая сессия с чётким OKR
-4. **Защитить $\gamma_{EE}$:** не жертвовать культурой ради процессов
+**Intervention (prioritized by $|\sigma_k|$):**
+1. **Reduce $\sigma_D$:** freeze new initiatives, focus on 3 key projects
+2. **Increase $\gamma_{SS}$:** introduce formal processes, documentation, roles
+3. **Increase $\gamma_{LL}$:** strategic session with clear OKRs
+4. **Protect $\gamma_{EE}$:** do not sacrifice culture for the sake of processes
 
-**Прогноз:** если $P_{\text{org}}$ вырастет до 0.35 за квартал — организация выживет. Если упадёт ниже 0.28 — необходима экстренная реструктуризация.
+**Forecast:** if $P_{\text{org}}$ grows to 0.35 within a quarter — the organization will survive. If it drops below 0.28 — emergency restructuring is required.
 
 ---
 
-## Экология и устойчивое развитие
+## Ecology and Sustainable Development
 
-### Экосистемы как Голономы
+### Ecosystems as Holons
 
 $$
 \mathbb{H}_{\text{eco}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_m)
 $$
 
-где $\mathbb{H}_i$ — [Голономы](/docs/core/structure/holon) отдельных видов или популяций.
+where $\mathbb{H}_i$ are [Holons](/docs/core/structure/holon) of individual species or populations.
 
-### Экологическая устойчивость
+### Ecological Sustainability
 
-:::info Критерий устойчивости
+:::info Sustainability Criterion
 $$
-\mathrm{Sustainable}(\mathbb{H}_{\text{eco}}) \Leftrightarrow \frac{dP}{d\tau} \geq 0 \text{ в среднем}
+\mathrm{Sustainable}(\mathbb{H}_{\text{eco}}) \Leftrightarrow \frac{dP}{d\tau} \geq 0 \text{ on average}
 $$
 :::
 
-:::warning Гипотеза
-Определение экологической устойчивости через $dP/d\tau$ — *исследовательская гипотеза*, требующая эмпирической валидации.
+:::warning Hypothesis
+The definition of ecological sustainability via $dP/d\tau$ is a *research hypothesis* requiring empirical validation.
 :::
 
-### Биоразнообразие
+### Biodiversity
 
 $$
-\mathcal{D}_{\text{eff}}(\Gamma_{\text{eco}}) := \exp(S_{vN}) = \text{эффективное число видов}
+\mathcal{D}_{\text{eff}}(\Gamma_{\text{eco}}) := \exp(S_{vN}) = \text{effective number of species}
 $$
 
-где $S_{vN}$ — [энтропия фон Неймана](/docs/reference/notation).
+where $S_{vN}$ is the [von Neumann entropy](/docs/reference/notation).
 
-:::note О нотации
-$\mathcal{D}_{\text{eff}}$ — эффективное разнообразие. Не путать с $D$ ([измерение Динамики](/docs/core/structure/dimension-d)) и $D_{\text{diff}}$ ([мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c)).
+:::note On Notation
+$\mathcal{D}_{\text{eff}}$ — effective diversity. Not to be confused with $D$ ([Dynamics dimension](/docs/core/structure/dimension-d)) and $D_{\text{diff}}$ ([differentiation measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)).
 :::
 
-| Показатель | Формула | Интерпретация |
+| Indicator | Formula | Interpretation |
 |------------|---------|---------------|
-| Разнообразие | $\mathcal{D}_{\text{eff}} = e^{S_{vN}}$ | Число эффективных видов |
-| Устойчивость | $dP/d\tau \geq 0$ | Положительная динамика |
-| Интеграция | $\Phi_{\text{eco}}$ | Связность пищевой сети |
+| Diversity | $\mathcal{D}_{\text{eff}} = e^{S_{vN}}$ | Number of effective species |
+| Sustainability | $dP/d\tau \geq 0$ | Positive dynamics |
+| Integration | $\Phi_{\text{eco}}$ | Food web connectivity |
 
-### Кейс-стади: коралловый риф под стрессом {#кейс-коралловый-риф}
+### Case Study: Coral Reef Under Stress {#кейс-коралловый-риф}
 
-Коралловый риф — идеальный пример экологического Голонома: высокоинтегрированная система с чётко выраженными 7 измерениями.
+A coral reef is an ideal example of an ecological Holon: a highly integrated system with clearly expressed 7 dimensions.
 
-**Операционализация ASDLEOU для рифа:**
+**Operationalization of ASDLEOU for a reef:**
 
-| Измерение | Экологический аналог | Наблюдаемые |
+| Dimension | Ecological Analog | Observables |
 |-----------|---------------------|-------------|
-| A | Биоразнообразие ниш | Число экологических ниш, спектр видов |
-| S | Физическая структура | Объём карбонатного скелета, 3D-сложность |
-| D | Метаболическая динамика | Скорость кальцификации, продуктивность |
-| L | Трофические связи | Плотность и устойчивость пищевой сети |
-| E | «Сенсорика» экосистемы | Чувствительность к изменениям (хемотаксис, симбиоз) |
-| O | Поток ресурсов | Поток нутриентов, солнечная радиация |
-| U | Симбиотическая интеграция | Коралл-зооксантелла, чистильщики-клиенты |
+| A | Niche biodiversity | Number of ecological niches, species spectrum |
+| S | Physical structure | Volume of carbonate skeleton, 3D complexity |
+| D | Metabolic dynamics | Calcification rate, productivity |
+| L | Trophic connections | Food web density and stability |
+| E | Ecosystem "sensing" | Sensitivity to changes (chemotaxis, symbiosis) |
+| O | Resource flux | Nutrient flux, solar radiation |
+| U | Symbiotic integration | Coral-zooxanthellae, cleaner-client relationships |
 
-**Сценарий обесцвечивания (bleaching):** При повышении температуры на 1-2°C:
+**Bleaching scenario:** When temperature rises by 1–2°C:
 
-1. $\sigma_O$ растёт (стресс ресурсной базы — зооксантеллы выходят из симбиоза)
-2. $\sigma_U$ растёт (разрушение симбиотических связей)
-3. $\gamma_{EE}$ падает (снижение «чувствительности» экосистемы)
-4. $P_{\text{eco}}$ приближается к $P_{\text{crit}}$
+1. $\sigma_O$ grows (resource base stress — zooxanthellae exit symbiosis)
+2. $\sigma_U$ grows (destruction of symbiotic connections)
+3. $\gamma_{EE}$ drops (reduction of ecosystem "sensitivity")
+4. $P_{\text{eco}}$ approaches $P_{\text{crit}}$
 
-**КК-предсказание:** Если $\sigma_O > 0.7$ устойчиво более 4 недель, система пересечёт порог $P_{\text{crit}}$ и перейдёт в альтернативное устойчивое состояние (деградированный риф). Стандартная экология описывает это как «фазовый сдвиг» — КК формализует его как $P(\Gamma_{\text{eco}}) < 2/7$.
+**CC prediction:** If $\sigma_O > 0.7$ consistently for more than 4 weeks, the system will cross the $P_{\text{crit}}$ threshold and transition to an alternative stable state (degraded reef). Standard ecology describes this as a "phase shift" — CC formalizes it as $P(\Gamma_{\text{eco}}) < 2/7$.
 
-**Что видит КК, а стандартная экология — нет:** единый показатель $P$ интегрирует ВСЕ семь аспектов состояния рифа. Традиционные метрики (процент живого коралла, индекс Шеннона) фиксируют только 1-2 измерения. КК-диагностика через $\sigma_{\mathrm{sys}}$ указывает, *какое именно* измерение нужно «лечить» первым.
+**What CC sees that standard ecology does not:** the single indicator $P$ integrates ALL seven aspects of the reef's state. Traditional metrics (percentage of live coral, Shannon index) capture only 1–2 dimensions. CC diagnostics via $\sigma_{\mathrm{sys}}$ indicates *which exactly* dimension needs to be "treated" first.
 
 ---
 
-## Для психологов и клиницистов
+## For Psychologists and Clinicians
 
-:::warning Гипотеза
-Медицинские приложения — *интерпретативная программа*, а не доказанные следствия теории.
+:::warning Hypothesis
+Medical applications are an *interpretive program*, not proven consequences of the theory.
 :::
 
-### Клинические приложения
+### Clinical Applications
 
-**Оценка сознания:**
+**Consciousness assessment:**
 
-| Состояние | Показатели КК | Клиническая картина |
+| State | CC Indicators | Clinical Picture |
 |-----------|---------------|---------------------|
-| Кома | $P \approx P_{\text{crit}}$, $\Phi \ll 1$ | Отсутствие ответов |
-| Минимальное сознание | $P > P_{\text{crit}}$, $\Phi$ низкое | Флуктуирующие ответы |
-| Locked-in | $P$ нормальное, $\sigma_D$ высокое | Сохранное сознание, паралич |
-| Сознательное | $P \gg P_{\text{crit}}$, $\Phi \geq 1$ | Полное взаимодействие |
+| Coma | $P \approx P_{\text{crit}}$, $\Phi \ll 1$ | Absence of responses |
+| Minimal consciousness | $P > P_{\text{crit}}$, $\Phi$ low | Fluctuating responses |
+| Locked-in | $P$ normal, $\sigma_D$ high | Preserved consciousness, paralysis |
+| Conscious | $P \gg P_{\text{crit}}$, $\Phi \geq 1$ | Full interaction |
 
-**Мониторинг психотерапии:**
+**Monitoring psychotherapy:**
 
-| Этап терапии | Динамика $\mathrm{Coh}_E$ | Интерпретация |
+| Therapy stage | $\mathrm{Coh}_E$ dynamics | Interpretation |
 |--------------|---------------------------|---------------|
-| Начало | Низкое, флуктуирует | Фрагментированный опыт |
-| Прогресс | Растёт, стабилизируется | Интеграция травмы |
-| Завершение | Стабильно высокое | Целостный опыт |
+| Beginning | Low, fluctuating | Fragmented experience |
+| Progress | Growing, stabilizing | Integration of trauma |
+| Completion | Stably high | Wholistic experience |
 
-**Скрининг психического здоровья:**
+**Mental health screening:**
 
-| Расстройство | Профиль $\sigma_{\mathrm{sys}}$ | Целевые интервенции |
+| Disorder | $\sigma_{\mathrm{sys}}$ profile | Target interventions |
 |--------------|--------------------------------|---------------------|
-| Тревожность | Высокий $\sigma_A$, $\sigma_E$ | Снижение стимуляции, медитация |
-| Депрессия | Высокий $\sigma_O$, низкий $\sigma_D$ | Активация, социальная поддержка |
-| ПТСР | Флуктуации $\sigma_E$, высокий $\sigma_L$ | Интеграция, стабилизация |
-| Выгорание | Высокий $\sigma_D$, $\sigma_U$ | Снижение нагрузки, границы |
+| Anxiety | High $\sigma_A$, $\sigma_E$ | Reduce stimulation, meditation |
+| Depression | High $\sigma_O$, low $\sigma_D$ | Activation, social support |
+| PTSD | Fluctuations in $\sigma_E$, high $\sigma_L$ | Integration, stabilization |
+| Burnout | High $\sigma_D$, $\sigma_U$ | Reduce load, boundaries |
 
-### Терапевтические интервенции
+### Therapeutic Interventions
 
-| Интервенция | Целевая метрика | Механизм | Доказательность |
+| Intervention | Target metric | Mechanism | Evidence level |
 |-------------|-----------------|----------|-----------------|
-| Медитация осознанности | ↑ $\mathrm{Coh}_E$ | Фокусировка опыта | Высокая |
-| EMDR | ↓ $\sigma_E$ | Интеграция травмы | Высокая |
-| КПТ | ↓ $\sigma_L$ | Коррекция логики | Высокая |
-| Групповая терапия | ↓ $\sigma_U$ | Социальная интеграция | Средняя |
-| Телесные практики | ↓ $\sigma_D$, $\sigma_O$ | Регуляция | Средняя |
+| Mindfulness meditation | ↑ $\mathrm{Coh}_E$ | Experience focusing | High |
+| EMDR | ↓ $\sigma_E$ | Trauma integration | High |
+| CBT | ↓ $\sigma_L$ | Logic correction | High |
+| Group therapy | ↓ $\sigma_U$ | Social integration | Medium |
+| Somatic practices | ↓ $\sigma_D$, $\sigma_O$ | Regulation | Medium |
 
-### Здоровье как чистота
+### Health as Purity
 
 $$
 \mathrm{Health}(\mathbb{H}) \propto P(\Gamma)
 $$
 
-где $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты).
+where $P$ is the [purity](/docs/core/dynamics/viability#определение-чистоты).
 
-### Болезнь
+### Disease
 
-:::info Определение болезни
+:::info Disease Definition
 $$
-\mathrm{Disease} \Leftrightarrow \frac{dP}{d\tau} < 0 \text{ устойчиво}
+\mathrm{Disease} \Leftrightarrow \frac{dP}{d\tau} < 0 \text{ consistently}
 $$
 :::
 
-Это соответствует нарушению [условия жизнеспособности](/docs/core/dynamics/viability).
+This corresponds to a violation of the [viability condition](/docs/core/dynamics/viability).
 
-### Терапевтические стратегии
+### Therapeutic Strategies
 
-| Стратегия | Механизм | Формула | Ссылка |
+| Strategy | Mechanism | Formula | Reference |
 |-----------|----------|---------|--------|
-| Увеличение $\kappa$ | Повышение $\mathrm{Coh}_E$ | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
-| Снижение диссипации | Уменьшение $\mathcal{D}[\Gamma]$ | Стабилизация среды | [→](/docs/core/dynamics/evolution#логический-лиувиллиан) |
-| Восстановление $\Gamma$ | Регенерация | $\mathcal{R}[\Gamma, E]$ | [→](/docs/core/dynamics/evolution#3-регенеративный-член) |
+| Increasing $\kappa$ | Raising $\mathrm{Coh}_E$ | $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | [→](./axiomatics#связь-регенерации-и-e-когерентности) |
+| Reducing dissipation | Decreasing $\mathcal{D}[\Gamma]$ | Environment stabilization | [→](/docs/core/dynamics/evolution#логический-лиувиллиан) |
+| Restoring $\Gamma$ | Regeneration | $\mathcal{R}[\Gamma, E]$ | [→](/docs/core/dynamics/evolution#3-регенеративный-член) |
 
-**Практические методы:**
-- **Медитация** — увеличивает $\mathrm{Coh}_E$
-- **Психотерапия** — интегрирует опыт (увеличивает $\Phi$)
-- **Социальная поддержка** — снижает $\sigma_U$ ([U-напряжение](./definitions#тензор-напряжений))
-- **Физическая активность** — оптимизирует $\sigma_D$ ([D-напряжение](./definitions#тензор-напряжений))
+**Practical methods:**
+- **Meditation** — increases $\mathrm{Coh}_E$
+- **Psychotherapy** — integrates experience (increases $\Phi$)
+- **Social support** — reduces $\sigma_U$ ([U-tension](./definitions#тензор-напряжений))
+- **Physical activity** — optimizes $\sigma_D$ ([D-tension](./definitions#тензор-напряжений))
 
-### Диаграмма терапевтического воздействия
+### Diagram of Therapeutic Influence
 
 ```mermaid
 graph TD
-    subgraph "Терапия"
-        M[Медитация] --> CohE[↑ Coh_E]
-        PT[Психотерапия] --> CohE
-        S[Социальная поддержка] --> SigU[↓ σ_U]
-        F[Физическая активность] --> SigD[↓ σ_D]
+    subgraph "Therapy"
+        M[Meditation] --> CohE[↑ Coh_E]
+        PT[Psychotherapy] --> CohE
+        S[Social support] --> SigU[↓ σ_U]
+        F[Physical activity] --> SigD[↓ σ_D]
     end
     CohE --> K[↑ κ]
     K --> dP[↑ dP/dτ]
     SigU --> dP
     SigD --> dP
-    dP --> H[Здоровье]
+    dP --> H[Health]
 ```
 
 ---
 
-## Психическое здоровье: σ-диагностика расстройств {#психическое-здоровье}
+## Mental Health: σ-Diagnostics of Disorders {#психическое-здоровье}
 
-:::warning Гипотеза
-Всё нижеследующее — *интерпретативная экстраполяция* КК-формализма на область психиатрии. Клиническая валидация не проводилась.
+:::warning Hypothesis
+Everything below is an *interpretive extrapolation* of the CC formalism onto the field of psychiatry. Clinical validation has not been conducted.
 :::
 
-Психические расстройства, с точки зрения КК, — это устойчивые деформации профиля $\sigma_{\mathrm{sys}}$, при которых система не может вернуться к равновесию собственными силами ($\mathcal{R}$ недостаточен для компенсации $\mathcal{D}$).
+Mental disorders, from the CC perspective, are stable deformations of the $\sigma_{\mathrm{sys}}$ profile in which the system cannot return to equilibrium on its own ($\mathcal{R}$ is insufficient to compensate $\mathcal{D}$).
 
-### Депрессия: σ-коллапс динамики {#депрессия}
+### Depression: σ-Collapse of Dynamics {#депрессия}
 
-Депрессия в КК-модели — это состояние, при котором измерение Динамики $D$ подавлено, а Основание $O$ истощено:
+Depression in the CC model is a state in which the Dynamics dimension $D$ is suppressed and the Foundation $O$ is depleted:
 
-| Параметр | Норма | Депрессия (лёгкая) | Депрессия (тяжёлая) |
+| Parameter | Norm | Depression (mild) | Depression (severe) |
 |----------|-------|---------------------|---------------------|
 | $\sigma_D$ | 0.1–0.3 | 0.5–0.6 | 0.7–0.9 |
 | $\sigma_O$ | 0.1–0.3 | 0.4–0.5 | 0.6–0.8 |
@@ -532,399 +532,399 @@ graph TD
 | $P$ | 0.35–0.45 | 0.30–0.35 | $\approx P_{\text{crit}}$ |
 | $\mathrm{Coh}_E$ | 0.3–0.5 | 0.15–0.25 | $< 0.15$ |
 
-**Механизм:** Высокий $\sigma_O$ (ресурсный дефицит) ведёт к снижению $\gamma_{DD}$ (подавление динамики — ангедония, апатия). Это снижает $\mathrm{Coh}_E$ (качество опыта тускнеет), что ослабляет $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ и уменьшает регенерацию $\mathcal{R}$. Возникает петля положительной обратной связи — **депрессивная спираль**, которую КК формализует как $dP/d\tau < 0$ с усиливающейся скоростью.
+**Mechanism:** High $\sigma_O$ (resource deficit) leads to a decrease in $\gamma_{DD}$ (dynamics suppression — anhedonia, apathy). This reduces $\mathrm{Coh}_E$ (quality of experience dims), which weakens $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ and diminishes regeneration $\mathcal{R}$. A positive feedback loop arises — the **depressive spiral**, which CC formalizes as $dP/d\tau < 0$ with increasing rate.
 
-**Что видит КК, чего не видит DSM-5:** DSM-5 перечисляет 9 симптомов и требует 5 из 9 для диагноза. КК даёт *непрерывный* профиль с количественными порогами. Два пациента с одинаковым DSM-диагнозом могут иметь радикально разные $\sigma$-профили — и, соответственно, нуждаться в разных интервенциях.
+**What CC sees that DSM-5 does not:** DSM-5 lists 9 symptoms and requires 5 of 9 for a diagnosis. CC gives a *continuous* profile with quantitative thresholds. Two patients with the same DSM diagnosis may have radically different $\sigma$-profiles — and accordingly require different interventions.
 
-### Тревожные расстройства: гипертрофия Артикуляции {#тревожность}
+### Anxiety Disorders: Hypertrophy of Articulation {#тревожность}
 
-Тревога — избыточная активность в измерении $A$ (Артикуляция): система «различает» слишком интенсивно, видя угрозу в каждом стимуле.
+Anxiety is excessive activity in the Articulation dimension $A$: the system "distinguishes" too intensely, seeing a threat in every stimulus.
 
-**Характерный профиль:** $\sigma_A < -0.3$ (отрицательное напряжение = гипертрофия), $\sigma_E > 0.4$, $\sigma_L > 0.3$. Логика ($L$) перегружена попытками «обработать» поток ложных различений.
+**Characteristic profile:** $\sigma_A < -0.3$ (negative tension = hypertrophy), $\sigma_E > 0.4$, $\sigma_L > 0.3$. Logic ($L$) is overloaded by attempts to "process" the flow of false distinctions.
 
-**Интервенция по КК:** снизить $|\sigma_A|$ через ограничение стимуляции; повысить $\gamma_{LL}$ через КПТ (структурирование «логики тревоги»); стабилизировать $\sigma_E$ через телесные практики.
+**CC intervention:** reduce $|\sigma_A|$ by limiting stimulation; increase $\gamma_{LL}$ through CBT (structuring the "logic of anxiety"); stabilize $\sigma_E$ through somatic practices.
 
-### ПТСР: фрагментация E-когерентности {#птср}
+### PTSD: Fragmentation of E-Coherence {#птср}
 
-Посттравматическое стрессовое расстройство — это, в терминах КК, состояние, при котором $\mathrm{Coh}_E$ резко падает в определённых контекстах (триггеры), а $\sigma_E$ осциллирует между крайними значениями (флэшбэки vs избегание).
+Post-traumatic stress disorder is, in CC terms, a state in which $\mathrm{Coh}_E$ drops sharply in certain contexts (triggers), and $\sigma_E$ oscillates between extreme values (flashbacks vs. avoidance).
 
-**Формальная характеристика:**
+**Formal characterization:**
 $$
 \mathrm{Coh}_E(\tau) = \mathrm{Coh}_E^{\text{base}} - \Delta_{\text{trigger}} \cdot f(\text{stimulus}, \tau)
 $$
 
-где $\Delta_{\text{trigger}}$ — амплитуда «провала» при воздействии триггера, $f$ — функция активации травматической памяти.
+where $\Delta_{\text{trigger}}$ is the amplitude of the "dip" upon trigger exposure, $f$ is the function of traumatic memory activation.
 
-**Терапевтическая цель:** стабилизировать $\mathrm{Coh}_E$ так, чтобы $\Delta_{\text{trigger}} \to 0$. EMDR и пролонгированная экспозиция работают именно так: постепенная интеграция травматического опыта в общую $\Gamma$ снижает $\Delta_{\text{trigger}}$ на 50-80% за 8-12 сессий (данные из мета-анализов EMDR).
+**Therapeutic goal:** stabilize $\mathrm{Coh}_E$ so that $\Delta_{\text{trigger}} \to 0$. EMDR and prolonged exposure work exactly this way: gradual integration of traumatic experience into the overall $\Gamma$ reduces $\Delta_{\text{trigger}}$ by 50–80% over 8–12 sessions (data from EMDR meta-analyses).
 
 ---
 
-## Образование: обучение как рост когерентности {#образование}
+## Education: Learning as Coherence Growth {#образование}
 
-:::warning Гипотеза
-Образовательные приложения — *интерпретативная экстраполяция*, а не доказанные следствия КК.
+:::warning Hypothesis
+Educational applications are an *interpretive extrapolation*, not proven consequences of CC.
 :::
 
-### Фундаментальная идея
+### Fundamental Idea
 
-Обучение в КК-модели — это не «накопление информации», а **рост чистоты $P$ и интеграции $\Phi$** в специфических измерениях. Студент, выучивший формулу, но не понявший её смысл, имеет высокий $\gamma_{SS}$ (структура запомнена) при низком $\gamma_{LL}$ (логические связи не сформированы) и минимальном $\gamma_{EE}$ (нет «прочувствованного» понимания). Настоящее обучение — это когда **все семь измерений растут согласованно**.
+Learning in the CC model is not "accumulating information" but **growth of purity $P$ and integration $\Phi$** in specific dimensions. A student who has memorized a formula but not understood its meaning has high $\gamma_{SS}$ (structure memorized) with low $\gamma_{LL}$ (logical connections not formed) and minimal $\gamma_{EE}$ (no "felt" understanding). True learning is when **all seven dimensions grow in a coordinated manner**.
 
-### Операционализация ASDLEOU для учебного процесса
+### Operationalization of ASDLEOU for the Learning Process
 
-| Измерение | Педагогический аналог | Наблюдаемые |
+| Dimension | Pedagogical Analog | Observables |
 |-----------|----------------------|-------------|
-| A | Различение понятий | Точность классификации, дискриминативные тесты |
-| S | Удержание знаний | Ретенция через неделю/месяц, spaced repetition |
-| D | Гибкость мышления | Трансфер на новые задачи, адаптация |
-| L | Логическое связывание | Решение задач, аргументация, доказательства |
-| E | Осмысленность опыта | Вовлечённость (engagement), «ага-моменты» |
-| O | Ресурсная база | Предварительные знания, мотивация, физическое состояние |
-| U | Интеграция знаний | Межпредметные связи, целостная картина |
+| A | Concept discrimination | Classification accuracy, discriminative tests |
+| S | Knowledge retention | Retention after a week/month, spaced repetition |
+| D | Cognitive flexibility | Transfer to new tasks, adaptation |
+| L | Logical linking | Problem solving, argumentation, proofs |
+| E | Experiential meaning | Engagement, "aha-moments" |
+| O | Resource base | Prior knowledge, motivation, physical state |
+| U | Knowledge integration | Interdisciplinary connections, holistic picture |
 
-### Закон обучения (T-109 — T-113)
+### Law of Learning (T-109 — T-113)
 
-Из [теорем о границах обучения](./learning-bounds) следует фундаментальный результат: оптимальное число итераций обучения определяется как:
+From the [learning bounds theorems](./learning-bounds) a fundamental result follows: the optimal number of learning iterations is defined as:
 
 $$
 n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})
 $$
 
-где $n_{\text{info}}$ — информационная граница (quantum Chernoff), $n_{\text{dyn}}$ — динамическая граница (Fano-сжатие $\alpha = 2/3$), $n_{\text{stab}}$ — граница стабильности.
+where $n_{\text{info}}$ is the information bound (quantum Chernoff), $n_{\text{dyn}}$ is the dynamic bound (Fano contraction $\alpha = 2/3$), $n_{\text{stab}}$ is the stability bound.
 
-**Педагогическое следствие:** нельзя ускорить обучение ниже $n_{\text{opt}}$ — это фундаментальный предел, аналогичный скорости света в физике. Попытки «ускорить» обучение (cramming, speed reading) нарушают $n_{\text{stab}}$ и ведут к хрупким знаниям ($P$ растёт, но при малейшем стрессе $dP/d\tau$ становится резко отрицательным).
+**Pedagogical corollary:** learning cannot be accelerated below $n_{\text{opt}}$ — this is a fundamental limit, analogous to the speed of light in physics. Attempts to "speed up" learning (cramming, speed reading) violate $n_{\text{stab}}$ and lead to brittle knowledge ($P$ grows, but at the slightest stress $dP/d\tau$ becomes sharply negative).
 
-### Кейс-стади: курс математики для 30 студентов {#кейс-образование}
+### Case Study: A Mathematics Course for 30 Students {#кейс-образование}
 
-**Сценарий:** Преподаватель ведёт курс линейной алгебры. К середине семестра 40% студентов не справляются с задачами.
+**Scenario:** An instructor is teaching a linear algebra course. By mid-semester, 40% of students cannot handle the problems.
 
-**КК-диагностика (через опросники и результаты тестов):**
+**CC diagnostics (through questionnaires and test results):**
 
-| Группа | $\gamma_{SS}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $P$ | Диагноз |
+| Group | $\gamma_{SS}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $P$ | Diagnosis |
 |--------|---------------|---------------|---------------|-----|---------|
-| Отличники (20%) | 0.18 | 0.20 | 0.17 | 0.41 | Зона Голдилокс |
-| Середняки (40%) | 0.16 | 0.12 | 0.14 | 0.32 | $\sigma_L = 0.16$ — логика отстаёт |
-| Отстающие (40%) | 0.14 | 0.08 | 0.09 | 0.27 | **$P < P_{\text{crit}}$** — нежизнеспособны |
+| Top students (20%) | 0.18 | 0.20 | 0.17 | 0.41 | Goldilocks zone |
+| Middle students (40%) | 0.16 | 0.12 | 0.14 | 0.32 | $\sigma_L = 0.16$ — logic lags behind |
+| Struggling students (40%) | 0.14 | 0.08 | 0.09 | 0.27 | **$P < P_{\text{crit}}$** — non-viable |
 
-**Интервенция по группам:**
-1. **Отстающие:** экстренное повышение $\gamma_{OO}$ (предварительные знания — повторить основы) и $\gamma_{EE}$ (создать «успешный опыт» через задачи доступного уровня)
-2. **Середняки:** целевое усиление $\gamma_{LL}$ через решение логических цепочек и доказательств
-3. **Отличники:** повышение $\gamma_{UU}$ через межпредметные проекты (связь алгебры с геометрией, физикой)
+**Intervention by group:**
+1. **Struggling students:** emergency increase of $\gamma_{OO}$ (prior knowledge — review basics) and $\gamma_{EE}$ (create a "success experience" through accessible-level problems)
+2. **Middle students:** targeted strengthening of $\gamma_{LL}$ through logical chains and proofs
+3. **Top students:** increase $\gamma_{UU}$ through interdisciplinary projects (connecting algebra with geometry, physics)
 
-**Общий принцип:** *Первым делом — вывести всех за порог $P_{\text{crit}}$*, иначе дальнейшее обучение бесполезно (система нежизнеспособна и «тонет в шуме»).
+**General principle:** *First priority — bring everyone above the $P_{\text{crit}}$ threshold*, otherwise further learning is pointless (the system is non-viable and "drowns in noise").
 
 ---
 
-## Экономика: когерентность рынков {#экономика}
+## Economics: Coherence of Markets {#экономика}
 
-:::warning Гипотеза
-Экономические приложения — наиболее спекулятивная область КК. Всё нижеследующее — программа исследований.
+:::warning Hypothesis
+Economic applications are the most speculative domain of CC. Everything below is a research program.
 :::
 
-### Рынок как мета-Голоном
+### Market as a Meta-Holon
 
-Финансовый рынок — это мета-Голоном $\mathbb{H}_{\text{market}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_n)$, где $\mathbb{H}_i$ — участники рынка (трейдеры, фонды, алгоритмы). У рынка есть собственная $\Gamma_{\text{market}}$ — матрица когерентности, отражающая совокупное «состояние убеждений» участников.
+A financial market is a meta-Holon $\mathbb{H}_{\text{market}} = \mathrm{compose}(\mathbb{H}_1, \ldots, \mathbb{H}_n)$, where $\mathbb{H}_i$ are market participants (traders, funds, algorithms). The market has its own $\Gamma_{\text{market}}$ — a coherence matrix reflecting the collective "belief state" of participants.
 
-### Операционализация ASDLEOU для рынка
+### Operationalization of ASDLEOU for the Market
 
-| Измерение | Рыночный аналог | Наблюдаемые |
+| Dimension | Market Analog | Observables |
 |-----------|----------------|-------------|
-| A | Ценовое обнаружение | Bid-ask spread, ликвидность, глубина книги заявок |
-| S | Институциональная структура | Регуляции, контракты, клиринг |
-| D | Волатильность | VIX, реализованная волатильность, объёмы торгов |
-| L | Рациональность ценообразования | Отклонение от фундаментальных оценок, арбитражные спреды |
-| E | Рыночный сентимент | Fear/Greed Index, опросы инвесторов, тональность новостей |
-| O | Ликвидность и капитал | Денежная масса, резервы, маржинальность |
-| U | Системная связность | Корреляция между активами, сетевая структура |
+| A | Price discovery | Bid-ask spread, liquidity, order book depth |
+| S | Institutional structure | Regulations, contracts, clearing |
+| D | Volatility | VIX, realized volatility, trading volumes |
+| L | Pricing rationality | Deviation from fundamental valuations, arbitrage spreads |
+| E | Market sentiment | Fear/Greed Index, investor surveys, news sentiment |
+| O | Liquidity and capital | Money supply, reserves, margins |
+| U | Systemic connectivity | Cross-asset correlation, network structure |
 
-### Финансовые кризисы как потеря когерентности
+### Financial Crises as Loss of Coherence
 
-Финансовый кризис в КК — это $P_{\text{market}} \to P_{\text{crit}}$. Рассмотрим динамику:
+A financial crisis in CC is $P_{\text{market}} \to P_{\text{crit}}$. Let us consider the dynamics:
 
-**Предкризисная фаза:**
-- $\sigma_D < 0$ (аномально низкая волатильность — «великая модерация»)
-- $\sigma_U < 0$ (избыточная корреляция — все движутся в одну сторону)
-- $\sigma_L > 0$ (рациональность подавлена — пузырь)
+**Pre-crisis phase:**
+- $\sigma_D < 0$ (abnormally low volatility — "the great moderation")
+- $\sigma_U < 0$ (excessive correlation — everyone moving in the same direction)
+- $\sigma_L > 0$ (rationality suppressed — bubble)
 
-**Момент кризиса:**
-- $\sigma_D$ скачкообразно меняет знак на $\sigma_D > 0.8$ (взрыв волатильности)
-- $\sigma_U$ скачкообразно меняет знак на $\sigma_U > 0.7$ (корреляции рвутся, рынок фрагментируется)
-- $P_{\text{market}}$ пересекает $P_{\text{crit}}$ сверху вниз
+**Moment of crisis:**
+- $\sigma_D$ jumps to $\sigma_D > 0.8$ (volatility explosion)
+- $\sigma_U$ jumps to $\sigma_U > 0.7$ (correlations break, market fragments)
+- $P_{\text{market}}$ crosses $P_{\text{crit}}$ from above downward
 
-**КК-предсказание:** Кризис можно *предсказать* по нарастанию $|\sigma_D + \sigma_U|$ в предкризисную фазу. Когда оба напряжения отрицательны и растут по модулю — система накапливает «скрытую нестабильность», невидимую для стандартных метрик волатильности (которые фиксируют только $\sigma_D$).
+**CC prediction:** The crisis can be *predicted* by the build-up of $|\sigma_D + \sigma_U|$ in the pre-crisis phase. When both tensions are negative and growing in magnitude — the system is accumulating "hidden instability" invisible to standard volatility metrics (which capture only $\sigma_D$).
 
-### Индикатор системного риска
+### Systemic Risk Indicator
 
 $$
 \mathrm{SysRisk}(\tau) := \frac{1}{P(\Gamma_{\text{market}})} \cdot \max_k |\sigma_k(\tau)|
 $$
 
-Этот индикатор растёт, когда $P$ снижается И/ИЛИ максимальное напряжение растёт. Порог тревоги: $\mathrm{SysRisk} > 3.5$ (при $P_{\text{crit}} = 2/7$).
+This indicator grows when $P$ decreases AND/OR the maximum tension grows. Alert threshold: $\mathrm{SysRisk} > 3.5$ (at $P_{\text{crit}} = 2/7$).
 
 ---
 
-## Урбанистика: когерентность городов {#урбанистика}
+## Urbanism: Coherence of Cities {#урбанистика}
 
-:::warning Гипотеза
-Урбанистические приложения — *спекулятивная экстраполяция*. Формализм требует значительной доработки для применения к городским системам.
+:::warning Hypothesis
+Urban applications are a *speculative extrapolation*. The formalism requires significant refinement for application to urban systems.
 :::
 
-### Город как Голоном
+### City as a Holon
 
-Город — мета-Голоном, составленный из районов, институций и сообществ. Его $\Gamma_{\text{city}}$ отражает «социальную когерентность» — степень, в которой город функционирует как единое целое, а не набор изолированных зон.
+A city is a meta-Holon composed of neighborhoods, institutions, and communities. Its $\Gamma_{\text{city}}$ reflects "social coherence" — the degree to which the city functions as a unified whole rather than a collection of isolated zones.
 
-### Операционализация ASDLEOU для города
+### Operationalization of ASDLEOU for the City
 
-| Измерение | Городской аналог | Индикаторы |
+| Dimension | Urban Analog | Indicators |
 |-----------|-----------------|------------|
-| A | Информационная среда | Доступность информации, медиа, Wi-Fi покрытие |
-| S | Физическая инфраструктура | Состояние зданий, дорог, коммуникаций |
-| D | Транспортная мобильность | Среднее время коммутирования, пробки |
-| L | Управление и право | Индекс коррупции, качество регуляции |
-| E | Культурная жизнь | Число культурных событий, разнообразие сообществ |
-| O | Экономическая база | ВВП на душу, уровень занятости, бюджет |
-| U | Социальная связность | Индекс социального капитала, волонтёрство, доверие |
+| A | Information environment | Information accessibility, media, Wi-Fi coverage |
+| S | Physical infrastructure | Condition of buildings, roads, utilities |
+| D | Transport mobility | Average commute time, traffic congestion |
+| L | Governance and law | Corruption index, regulatory quality |
+| E | Cultural life | Number of cultural events, community diversity |
+| O | Economic base | GDP per capita, employment level, budget |
+| U | Social connectivity | Social capital index, volunteering, trust |
 
-### Пример: диагностика «умирающего» района
+### Example: Diagnosing a "Dying" Neighborhood
 
-Район с $P < P_{\text{crit}}$ — нежизнеспособная подсистема города. Типичный профиль:
+A neighborhood with $P < P_{\text{crit}}$ is a non-viable subsystem of the city. Typical profile:
 
-- $\sigma_O = 0.7$ — экономическая база разрушена
-- $\sigma_D = 0.5$ — транспортная изоляция
-- $\sigma_U = 0.6$ — социальные связи разорваны
-- $\sigma_E = 0.4$ — культурная жизнь угасла
+- $\sigma_O = 0.7$ — economic base is destroyed
+- $\sigma_D = 0.5$ — transport isolation
+- $\sigma_U = 0.6$ — social connections severed
+- $\sigma_E = 0.4$ — cultural life has faded
 
-**КК-рекомендация (приоритет по $|\sigma_k|$):** Начинать с $O$ и $U$ — экономическое оживление и восстановление социальных связей. Инфраструктурные проекты ($S$, $D$) вторичны: без социальной когерентности они не дают эффекта.
+**CC recommendation (priority by $|\sigma_k|$):** Start with $O$ and $U$ — economic revitalization and restoration of social connections. Infrastructure projects ($S$, $D$) are secondary: without social coherence they have no effect.
 
-Этот подход контрастирует с типичной урбанистикой, которая часто начинает с инфраструктуры. КК говорит: *сначала когерентность, потом бетон*.
+This approach contrasts with typical urban planning, which often starts with infrastructure. CC says: *coherence first, then concrete*.
 
 ---
 
-## Три полноценных кейс-стади {#три-кейс-стади}
+## Three Full Case Studies {#три-кейс-стади}
 
-### Кейс-стади 1: ИИ-агент — от построения Γ до интервенции {#кейс-ии-агент}
+### Case Study 1: AI Agent — from Building Γ to Intervention {#кейс-ии-агент}
 
-**Система:** Автономный чат-бот для клиентской поддержки (архитектура: трансформер 3B + SYNARC-обёртка с явной $\Gamma$). Работает 6 месяцев. Клиенты жалуются на «потерю контекста» — бот забывает начало разговора к его середине.
+**System:** An autonomous customer support chatbot (architecture: 3B transformer + SYNARC wrapper with explicit $\Gamma$). Operating for 6 months. Customers complain of "context loss" — the bot forgets the beginning of a conversation by its middle.
 
-**Шаг 1. Построение $\Gamma$.** Проецируем скрытые состояния трансформера на 7 измерений:
+**Step 1. Building $\Gamma$.** We project the transformer's hidden states onto 7 dimensions:
 
-| Измерение | Операционализация | Метод |
+| Dimension | Operationalization | Method |
 |-----------|-------------------|-------|
-| A (Артикуляция) | Энтропия softmax-выхода на последнем слое | $\gamma_{AA} = 1 - H(\text{softmax})/\log V$ |
-| S (Структура) | Стабильность attention-паттернов между шагами | $\gamma_{SS} = \text{cos\_sim}(\text{attn}_t, \text{attn}_{t-1})$ |
-| D (Динамика) | Норма градиента при инференсе | $\gamma_{DD} = 1/(1 + \|\nabla\|/\theta_D)$ |
-| L (Логика) | Самосогласованность: совпадение ответов на перефразированные вопросы | $\gamma_{LL} = \text{consistency\_score}$ |
-| E (Интериорность) | Активация «рефлексивных» голов внимания | $\gamma_{EE} = \langle\text{self-attn heads}\rangle$ |
-| O (Основание) | Доля использованного контекстного окна | $\gamma_{OO} = 1 - \text{tokens\_used}/\text{ctx\_max}$ |
-| U (Единство) | Mutual information между первым и последним слоем | $\gamma_{UU} = I(\text{layer}_1; \text{layer}_L)/\log N$ |
+| A (Articulation) | Entropy of softmax output at the last layer | $\gamma_{AA} = 1 - H(\text{softmax})/\log V$ |
+| S (Structure) | Stability of attention patterns between steps | $\gamma_{SS} = \text{cos\_sim}(\text{attn}_t, \text{attn}_{t-1})$ |
+| D (Dynamics) | Gradient norm during inference | $\gamma_{DD} = 1/(1 + \|\nabla\|/\theta_D)$ |
+| L (Logic) | Self-consistency: agreement of answers to paraphrased questions | $\gamma_{LL} = \text{consistency\_score}$ |
+| E (Interiority) | Activation of "reflective" attention heads | $\gamma_{EE} = \langle\text{self-attn heads}\rangle$ |
+| O (Foundation) | Fraction of used context window | $\gamma_{OO} = 1 - \text{tokens\_used}/\text{ctx\_max}$ |
+| U (Unity) | Mutual information between first and last layer | $\gamma_{UU} = I(\text{layer}_1; \text{layer}_L)/\log N$ |
 
-**Шаг 2. Диагностика.** σ-профиль, снятый при «потере контекста»:
+**Step 2. Diagnostics.** σ-profile captured during "context loss":
 
-| $\sigma_k$ | Значение | Зона |
+| $\sigma_k$ | Value | Zone |
 |------------|----------|------|
-| $\sigma_A$ | 0.22 | Норма — различительная способность в порядке |
-| $\sigma_S$ | 0.68 | **Внимание** — attention-паттерны нестабильны |
-| $\sigma_D$ | 0.35 | Норма |
-| $\sigma_L$ | 0.41 | Внимание — самосогласованность падает |
-| $\sigma_E$ | 0.55 | Внимание — слабый самомониторинг |
-| $\sigma_O$ | 0.82 | **Критический** — контекстное окно заполнено на 92% |
-| $\sigma_U$ | 0.73 | **Предупреждение** — слои «не разговаривают» |
+| $\sigma_A$ | 0.22 | Normal — discriminative capacity is fine |
+| $\sigma_S$ | 0.68 | **Attention** — attention patterns are unstable |
+| $\sigma_D$ | 0.35 | Normal |
+| $\sigma_L$ | 0.41 | Attention — self-consistency is dropping |
+| $\sigma_E$ | 0.55 | Attention — weak self-monitoring |
+| $\sigma_O$ | 0.82 | **Critical** — context window is 92% full |
+| $\sigma_U$ | 0.73 | **Warning** — layers "not talking" |
 
-**Диагноз:** $\sigma_O = 0.82$ — **ресурсный голод**. Контекстное окно почти исчерпано. Бот пытается удержать весь разговор, но не хватает «памяти». Это каскадирует: $\sigma_O \uparrow \to \sigma_U \uparrow$ (интеграция страдает, потому что нет ресурсов для связывания слоёв) $\to \sigma_S \uparrow$ (attention-паттерны «плывут»). Классическая **энергетическая смерть** (§3.4 в [Диагностике](./diagnostics#энергетическая-смерть)).
+**Diagnosis:** $\sigma_O = 0.82$ — **resource starvation**. The context window is nearly exhausted. The bot is trying to hold the entire conversation but lacks "memory". This cascades: $\sigma_O \uparrow \to \sigma_U \uparrow$ (integration suffers because there are no resources for layer binding) $\to \sigma_S \uparrow$ (attention patterns "drift"). Classic **energy death** (§3.4 in [Diagnostics](./diagnostics#энергетическая-смерть)).
 
-**Шаг 3. Интервенция.**
-1. **$\Delta F$-восполнение ($\sigma_O$):** Внедрить суммаризацию — через каждые 1000 токенов сжимать контекст до 200. Освобождает 80% окна.
-2. **$h^{(R)}$-усиление ($\sigma_U$):** Добавить cross-layer residual connections — усиливает интеграцию.
-3. **$h^{(H)}$-коррекция ($\sigma_S$):** Фиксировать attention-якоря на ключевых позициях (имя клиента, номер заказа).
+**Step 3. Intervention.**
+1. **$\Delta F$-replenishment ($\sigma_O$):** Implement summarization — compress the context to 200 tokens every 1000. Frees up 80% of the window.
+2. **$h^{(R)}$-strengthening ($\sigma_U$):** Add cross-layer residual connections — strengthens integration.
+3. **$h^{(H)}$-correction ($\sigma_S$):** Fix attention anchors on key positions (customer name, order number).
 
-**Шаг 4. Мониторинг.** После интервенции:
-- $\sigma_O$: $0.82 \to 0.31$ за 1 день (суммаризация работает)
-- $\sigma_U$: $0.73 \to 0.42$ за 3 дня (residual connections помогли)
-- $\sigma_S$: $0.68 \to 0.35$ за 5 дней (attention-якоря стабилизировали паттерны)
-- Жалобы на «потерю контекста» снизились на 87%.
+**Step 4. Monitoring.** After the intervention:
+- $\sigma_O$: $0.82 \to 0.31$ in 1 day (summarization works)
+- $\sigma_U$: $0.73 \to 0.42$ in 3 days (residual connections helped)
+- $\sigma_S$: $0.68 \to 0.35$ in 5 days (attention anchors stabilized patterns)
+- Complaints about "context loss" decreased by 87%.
 
 ---
 
-### Кейс-стади 2: Организация — σ-профиль компании {#кейс-организация-полный}
+### Case Study 2: Organization — σ-Profile of a Company {#кейс-организация-полный}
 
-**Система:** Медицинская компания (200 сотрудников), разрабатывающая ИИ-диагностику для рентгенологов. Серия B, оценка $50M. Проблема: после смены CTO инновации замедлились, текучесть инженеров выросла с 5% до 18%.
+**System:** A medical company (200 employees) developing AI diagnostics for radiologists. Series B, $50M valuation. Problem: after a CTO change, innovation slowed, engineer turnover rose from 5% to 18%.
 
-**Построение $\Gamma_{\text{org}}$.** Источники данных:
+**Building $\Gamma_{\text{org}}$.** Data sources:
 
-| Измерение | Источник данных | Метрика |
+| Dimension | Data source | Metric |
 |-----------|----------------|---------|
-| A | Маркетинговые исследования, NPS | Скорость реакции на запросы клиентов |
-| S | HR-аудит, документация | Формализация процессов (% описанных) |
-| D | Jira velocity, deployment frequency | Количество фич в продакшене за спринт |
-| L | Стратегическая документация | Согласованность OKR между командами |
-| E | eNPS, пульс-опросы, 1-on-1 | «Чувствуете ли смысл в работе?» (0–10) |
-| O | Финансы: runway, burn rate | Месяцев до следующего раунда |
-| U | Сетевой анализ Slack | Cross-team mentions / total mentions |
+| A | Market research, NPS | Speed of response to client requests |
+| S | HR audit, documentation | Process formalization (% documented) |
+| D | Jira velocity, deployment frequency | Number of features shipped per sprint |
+| L | Strategy documentation | OKR alignment across teams |
+| E | eNPS, pulse surveys, 1-on-1 | "Do you find meaning in your work?" (0–10) |
+| O | Finances: runway, burn rate | Months until next round |
+| U | Slack network analysis | Cross-team mentions / total mentions |
 
-**σ-профиль (3 месяца после смены CTO):**
+**σ-profile (3 months after CTO change):**
 
-| $\sigma_k$ | Значение | Комментарий |
+| $\sigma_k$ | Value | Comment |
 |------------|----------|-------------|
-| $\sigma_A$ | 0.30 | Рынок понимают хорошо |
-| $\sigma_S$ | 0.25 | Процессы формализованы (legacy от старого CTO) |
-| $\sigma_D$ | 0.71 | **Предупреждение.** Velocity упала на 40% |
-| $\sigma_L$ | 0.65 | **Внимание.** Новый CTO переприоритизирует каждые 2 недели |
-| $\sigma_E$ | 0.78 | **Предупреждение.** eNPS упал с 42 до 12 |
-| $\sigma_O$ | 0.35 | Runway 14 месяцев — достаточно |
-| $\sigma_U$ | 0.58 | **Внимание.** Cross-team коммуникация снизилась |
+| $\sigma_A$ | 0.30 | Market is well understood |
+| $\sigma_S$ | 0.25 | Processes are formalized (legacy from the old CTO) |
+| $\sigma_D$ | 0.71 | **Warning.** Velocity dropped 40% |
+| $\sigma_L$ | 0.65 | **Attention.** New CTO re-prioritizes every 2 weeks |
+| $\sigma_E$ | 0.78 | **Warning.** eNPS dropped from 42 to 12 |
+| $\sigma_O$ | 0.35 | Runway 14 months — sufficient |
+| $\sigma_U$ | 0.58 | **Attention.** Cross-team communication decreased |
 
-**$\|\sigma\|_\infty = 0.78$ ($\sigma_E$) — режим «Предупреждение».**
+**$\|\sigma\|_\infty = 0.78$ ($\sigma_E$) — "Warning" mode.**
 
-**Диагноз:** Ведущий фактор — $\sigma_E$ (потеря интериорности / смысла). Новый CTO сфокусирован на метриках и процессах ($\sigma_S$ низкий, $\sigma_D$ растёт), но не на *культуре* и *смысле*. Команда «не чувствует» свою работу осмысленной — классический сценарий, когда «всё правильно, но ничего не работает». Это начальная стадия **спирали смерти** (§3.1): $\sigma_E \uparrow \to \kappa \downarrow \to \text{регенерация слабеет} \to \sigma_D \uparrow \to \sigma_U \uparrow$.
+**Diagnosis:** Leading factor — $\sigma_E$ (loss of interiority / meaning). The new CTO is focused on metrics and processes (low $\sigma_S$, $\sigma_D$ rising), but not on *culture* and *meaning*. The team does not "feel" their work as meaningful — a classic scenario where "everything is done right, but nothing works". This is the initial stage of the **death spiral** (§3.1): $\sigma_E \uparrow \to \kappa \downarrow \to \text{regeneration weakens} \to \sigma_D \uparrow \to \sigma_U \uparrow$.
 
-**Интервенция (приоритизирована):**
-1. **$h^{(R)}$ для $\sigma_E$:** Восстановить ритуалы «зачем мы это делаем» — демо-дни с показом влияния на пациентов. Ввести 1-on-1 нового CTO с каждым тимлидом.
-2. **$h^{(H)}$ для $\sigma_L$:** Зафиксировать приоритеты на квартал. Запретить перепланирование чаще 1 раза в месяц.
-3. **$h^{(D)}$ для $\sigma_D$:** Снизить WIP (work in progress) — не более 2 параллельных проектов на команду.
-4. **$h^{(R)}$ для $\sigma_U$:** Восстановить еженедельные cross-team стендапы, убранные новым CTO.
+**Intervention (prioritized):**
+1. **$h^{(R)}$ for $\sigma_E$:** Restore rituals of "why we do this" — demo days showing impact on patients. Introduce 1-on-1s between the new CTO and each team lead.
+2. **$h^{(H)}$ for $\sigma_L$:** Fix priorities for the quarter. Prohibit re-planning more than once a month.
+3. **$h^{(D)}$ for $\sigma_D$:** Reduce WIP (work in progress) — no more than 2 parallel projects per team.
+4. **$h^{(R)}$ for $\sigma_U$:** Restore weekly cross-team standups removed by the new CTO.
 
-**Прогноз:** При выполнении — $\sigma_E < 0.5$ за 2 месяца, текучесть нормализуется за 4. Без интервенции на $\sigma_E$ — дальнейшая потеря инженеров, velocity падает ещё на 30%, серия C под угрозой.
+**Forecast:** With execution — $\sigma_E < 0.5$ within 2 months, turnover normalizes within 4. Without intervention on $\sigma_E$ — further engineer attrition, velocity drops another 30%, Series C is at risk.
 
 ---
 
-### Кейс-стади 3: Экосистема — P как мера устойчивости {#кейс-экосистема-полный}
+### Case Study 3: Ecosystem — P as Sustainability Measure {#кейс-экосистема-полный}
 
-**Система:** Озеро Балатон (крупнейшее озеро Центральной Европы). Мониторинг экологической когерентности за 1970–2020 гг.
+**System:** Lake Balaton (the largest lake in Central Europe). Monitoring of ecological coherence from 1970–2020.
 
-**Построение $\Gamma_{\text{eco}}$.** Операционализация ASDLEOU для пресноводной экосистемы:
+**Building $\Gamma_{\text{eco}}$.** Operationalization of ASDLEOU for a freshwater ecosystem:
 
-| Измерение | Экологический аналог | Данные | Единицы |
+| Dimension | Ecological Analog | Data | Units |
 |-----------|---------------------|--------|---------|
-| A | Спектральное разнообразие фитопланктона | Число таксонов по хлорофильным спектрам | ед. |
-| S | Стратификация водной толщи | Разность температур поверхность/дно | °C |
-| D | Биологическая продуктивность | Первичная продукция | г C/м²/день |
-| L | Трофическая связность | Connectance пищевой сети | доля |
-| E | Чувствительность к пертурбациям | Скорость восстановления после шторма | дни |
-| O | Поток нутриентов | N, P загрузка | тонн/год |
-| U | Симбиотическая интеграция | Mutual information между донным и пелагическим сообществами | бит |
+| A | Spectral diversity of phytoplankton | Number of taxa by chlorophyll spectra | units |
+| S | Water column stratification | Temperature difference surface/bottom | °C |
+| D | Biological productivity | Primary production | g C/m²/day |
+| L | Trophic connectivity | Food web connectance | fraction |
+| E | Sensitivity to perturbations | Recovery rate after storm | days |
+| O | Nutrient flux | N, P loading | tons/year |
+| U | Symbiotic integration | Mutual information between benthic and pelagic communities | bits |
 
-**σ-профиль по трём эпохам:**
+**σ-profile across three epochs:**
 
-| Показатель | 1970 (эвтрофикация) | 1990 (восстановление) | 2020 (стабильность) |
+| Indicator | 1970 (eutrophication) | 1990 (recovery) | 2020 (stability) |
 |------------|--------------------|-----------------------|---------------------|
 | $\sigma_A$ | 0.75 | 0.48 | 0.25 |
 | $\sigma_S$ | 0.40 | 0.35 | 0.28 |
-| $\sigma_D$ | $-0.30$ (избыток) | 0.20 | 0.22 |
+| $\sigma_D$ | $-0.30$ (excess) | 0.20 | 0.22 |
 | $\sigma_L$ | 0.68 | 0.45 | 0.30 |
 | $\sigma_E$ | 0.82 | 0.55 | 0.35 |
-| $\sigma_O$ | $-0.50$ (избыток P) | 0.30 | 0.25 |
+| $\sigma_O$ | $-0.50$ (P excess) | 0.30 | 0.25 |
 | $\sigma_U$ | 0.70 | 0.42 | 0.30 |
-| **$P_{\text{eco}}$** | **0.24** (ниже $P_{\text{crit}}$) | **0.33** | **0.40** |
+| **$P_{\text{eco}}$** | **0.24** (below $P_{\text{crit}}$) | **0.33** | **0.40** |
 
-**1970: Эвтрофикация — экосистема «мертва» ($P < P_{\text{crit}}$).**
+**1970: Eutrophication — ecosystem "dead" ($P < P_{\text{crit}}$).**
 
-Избыток фосфора ($\sigma_O < 0$, ресурсов *слишком много*) вызвал цветение водорослей → подавление биоразнообразия ($\sigma_A = 0.75$) → разрушение трофических связей ($\sigma_L = 0.68$) → потеря чувствительности ($\sigma_E = 0.82$). Это не дефицит ресурсов, а *дисбаланс* — парадокс «смерти от богатства».
+Excess phosphorus ($\sigma_O < 0$, resources *too abundant*) caused algae bloom → suppression of biodiversity ($\sigma_A = 0.75$) → destruction of trophic connections ($\sigma_L = 0.68$) → loss of sensitivity ($\sigma_E = 0.82$). This is not a resource deficit but a *imbalance* — the paradox of "death from abundance".
 
-:::note Важное наблюдение
-$\sigma_O$ может быть *отрицательным* — это означает не дефицит, а **избыток** ресурсов. В КК избыток так же опасен, как дефицит: $P$ определяется через *чистоту* $\mathrm{Tr}(\Gamma^2)$, а не через абсолютную величину диагональных элементов. Максимально смешанное состояние $I/7$ (все $\gamma_{kk} = 1/7$) — самое «богатое» и самое «мёртвое» одновременно.
+:::note Important Observation
+$\sigma_O$ can be *negative* — this means not a deficit but an **excess** of resources. In CC, excess is just as dangerous as deficit: $P$ is defined via *purity* $\mathrm{Tr}(\Gamma^2)$, not via the absolute value of diagonal elements. The maximally mixed state $I/7$ (all $\gamma_{kk} = 1/7$) is simultaneously the most "rich" and the most "dead".
 :::
 
-**Интервенция (реальная, проведённая правительством Венгрии):**
-- 1983: Запрет фосфатных моющих средств ($\Delta F$-регулирование, снижение $|\sigma_O|$)
-- 1992: Модернизация очистных сооружений ($h^{(D)}$-снижение нагрузки)
-- 2000-е: Восстановление прибрежных экосистем ($h^{(R)}$-усиление связей)
+**Intervention (real, conducted by the Hungarian government):**
+- 1983: Ban on phosphate detergents ($\Delta F$-regulation, reducing $|\sigma_O|$)
+- 1992: Modernization of treatment facilities ($h^{(D)}$-load reduction)
+- 2000s: Restoration of coastal ecosystems ($h^{(R)}$-connection strengthening)
 
-**Результат:** $P_{\text{eco}}$ пересекла $P_{\text{crit}}$ снизу вверх к 1988 году. К 2020 году экосистема устойчиво в зоне Голдилокс ($P \approx 0.40$).
+**Result:** $P_{\text{eco}}$ crossed $P_{\text{crit}}$ from below upward by 1988. By 2020 the ecosystem is stably in the Goldilocks zone ($P \approx 0.40$).
 
-**Что видит КК, чего не видит стандартная экология:** Традиционный мониторинг отслеживает отдельные показатели (фосфор, хлорофилл-a, число видов). КК интегрирует *все семь аспектов* в единый $P$ и указывает *порядок* интервенций: сначала $\sigma_O$ (остановить отравление), потом $\sigma_D$ (снизить нагрузку), потом $\sigma_U$ (восстановить связи). Именно этот порядок и был (интуитивно) выбран венгерским правительством — КК формализует эту интуицию.
+**What CC sees that standard ecology does not:** Traditional monitoring tracks individual indicators (phosphorus, chlorophyll-a, species count). CC integrates *all seven aspects* into a single $P$ and indicates the *order* of interventions: first $\sigma_O$ (stop the poisoning), then $\sigma_D$ (reduce the load), then $\sigma_U$ (restore connections). This is precisely the order that was (intuitively) chosen by the Hungarian government — CC formalizes this intuition.
 
 ---
 
-## Междисциплинарная таблица перевода {#таблица-перевода}
+## Interdisciplinary Translation Table {#таблица-перевода}
 
-Ниже — сводная таблица, показывающая, как ключевые понятия КК отображаются в терминологию шести прикладных дисциплин. Каждая строка — одно и то же математическое понятие; каждый столбец — его «имя» в конкретной области.
+Below is a summary table showing how key CC concepts map onto the terminology of six applied disciplines. Each row is the same mathematical concept; each column is its "name" in a specific domain.
 
-| Понятие КК | Инженерия ИИ | Медицина / Психиатрия | Экология | Организации | Образование | Экономика |
+| CC Concept | AI Engineering | Medicine / Psychiatry | Ecology | Organizations | Education | Economics |
 |---|---|---|---|---|---|---|
-| $\Gamma$ | Латентное состояние | Нейро-психический профиль | Экосистемная матрица | Организационная карта | Профиль компетенций | Рыночное состояние |
-| $P = \mathrm{Tr}(\Gamma^2)$ | Качество представления | Уровень здоровья | Экосистемная целостность | Организационное здоровье | Глубина понимания | Рыночная стабильность |
-| $P_{\text{crit}} = 2/7$ | Порог осмысленности | Граница нормы | Порог устойчивости | Порог жизнеспособности | Порог обучаемости | Порог ликвидности |
-| $\sigma_k$ | Аномалия в канале $k$ | Стресс в сфере $k$ | Давление на нишу $k$ | Дисфункция в аспекте $k$ | Пробел в компетенции $k$ | Дисбаланс в секторе $k$ |
-| $\mathrm{Coh}_E$ | Качество самомодели | Единство опыта | Чувствительность экосистемы | Культура и engagement | Осмысленность обучения | Рыночный сентимент |
-| $\Phi$ | Связность модулей | Интеграция сознания | Связность пищевой сети | Координация подразделений | Межпредметные связи | Системная корреляция |
-| $R$ | Глубина самомониторинга | Метакогниция | Рефлексивность экосистемы | Организационная рефлексия | Метакогнитивные навыки | Рыночная эффективность |
-| $\mathcal{R}[\Gamma, E]$ | Самокоррекция | Регенерация / заживление | Экологическая устойчивость | Организационное обучение | Самостоятельное обучение | Рыночная саморегуляция |
-| $\mathcal{D}[\Gamma]$ | Деградация модели | Болезнь, старение | Антропогенное давление | Энтропия, бюрократия | Забывание | Кризис, рецессия |
-| $\kappa$ | Скорость самовосстановления | Иммунитет, резилентность | Скорость восстановления | Адаптивность | Скорость научения | Скорость восстановления после шока |
-| $C = \Phi \times R$ | Уровень «сознательности» ИИ | Уровень сознания (PCI) | — | Организационное сознание | Рефлексивная компетентность | — |
-| $D_{\text{diff}}$ | Разнообразие модулей | Дифференциация функций | Биоразнообразие | Разнообразие ролей | Широта компетенций | Диверсификация |
+| $\Gamma$ | Latent state | Neuro-psychiatric profile | Ecosystem matrix | Organizational map | Competence profile | Market state |
+| $P = \mathrm{Tr}(\Gamma^2)$ | Representation quality | Health level | Ecosystem integrity | Organizational health | Depth of understanding | Market stability |
+| $P_{\text{crit}} = 2/7$ | Meaningfulness threshold | Norm boundary | Sustainability threshold | Viability threshold | Learnability threshold | Liquidity threshold |
+| $\sigma_k$ | Anomaly in channel $k$ | Stress in domain $k$ | Pressure on niche $k$ | Dysfunction in aspect $k$ | Gap in competence $k$ | Imbalance in sector $k$ |
+| $\mathrm{Coh}_E$ | Self-model quality | Unity of experience | Ecosystem sensitivity | Culture and engagement | Meaningfulness of learning | Market sentiment |
+| $\Phi$ | Module connectivity | Integration of consciousness | Food web connectivity | Coordination of units | Interdisciplinary connections | Systemic correlation |
+| $R$ | Self-monitoring depth | Metacognition | Ecosystem reflexivity | Organizational reflection | Metacognitive skills | Market efficiency |
+| $\mathcal{R}[\Gamma, E]$ | Self-correction | Regeneration / healing | Ecological resilience | Organizational learning | Self-directed learning | Market self-regulation |
+| $\mathcal{D}[\Gamma]$ | Model degradation | Disease, aging | Anthropogenic pressure | Entropy, bureaucracy | Forgetting | Crisis, recession |
+| $\kappa$ | Self-recovery rate | Immunity, resilience | Recovery rate | Adaptability | Learning rate | Shock recovery rate |
+| $C = \Phi \times R$ | AI "consciousness" level | Consciousness level (PCI) | — | Organizational consciousness | Reflective competence | — |
+| $D_{\text{diff}}$ | Module diversity | Functional differentiation | Biodiversity | Role diversity | Breadth of competences | Diversification |
 
 ---
 
-## Сводная таблица приложений
+## Summary Table of Applications
 
-| Область | Голоном | Ключевой показатель | Цель |
+| Domain | Holon | Key Indicator | Goal |
 |---------|---------|---------------------|------|
-| ИИ | $\mathbb{H}_{\text{AI}}$ | $\mathrm{Spec}(\Gamma_E) \neq \{0\}$ | Безопасность |
-| Когнитивная наука | $\mathbb{H}_{\text{mind}}$ | $C = \Phi \times R$ | Понимание |
-| Организации | $\mathbb{H}_{\text{org}}$ | $P_{\text{org}} > P_{\text{crit}}$ | Эффективность |
-| Экология | $\mathbb{H}_{\text{eco}}$ | $dP/d\tau \geq 0$ | Устойчивость |
-| Медицина | $\mathbb{H}_{\text{human}}$ | $\mathrm{Health} \propto P$ | Здоровье |
-| Образование | $\mathbb{H}_{\text{student}}$ | $n_{\text{opt}}$, $P > P_{\text{crit}}$ | Эффективное обучение |
-| Психическое здоровье | $\mathbb{H}_{\text{psyche}}$ | $\sigma_{\mathrm{sys}}$ профиль | Диагностика и терапия |
-| Экономика | $\mathbb{H}_{\text{market}}$ | $\mathrm{SysRisk}(\tau)$ | Финансовая стабильность |
-| Урбанистика | $\mathbb{H}_{\text{city}}$ | $P_{\text{city}} > P_{\text{crit}}$ | Социальная когерентность |
+| AI | $\mathbb{H}_{\text{AI}}$ | $\mathrm{Spec}(\Gamma_E) \neq \{0\}$ | Safety |
+| Cognitive science | $\mathbb{H}_{\text{mind}}$ | $C = \Phi \times R$ | Understanding |
+| Organizations | $\mathbb{H}_{\text{org}}$ | $P_{\text{org}} > P_{\text{crit}}$ | Efficiency |
+| Ecology | $\mathbb{H}_{\text{eco}}$ | $dP/d\tau \geq 0$ | Sustainability |
+| Medicine | $\mathbb{H}_{\text{human}}$ | $\mathrm{Health} \propto P$ | Health |
+| Education | $\mathbb{H}_{\text{student}}$ | $n_{\text{opt}}$, $P > P_{\text{crit}}$ | Effective learning |
+| Mental health | $\mathbb{H}_{\text{psyche}}$ | $\sigma_{\mathrm{sys}}$ profile | Diagnostics and therapy |
+| Economics | $\mathbb{H}_{\text{market}}$ | $\mathrm{SysRisk}(\tau)$ | Financial stability |
+| Urbanism | $\mathbb{H}_{\text{city}}$ | $P_{\text{city}} > P_{\text{crit}}$ | Social coherence |
 
 ---
 
-## Заключение: единый взгляд {#заключение}
+## Conclusion: A Unified View {#заключение}
 
-Мы прошли через девять областей применения — от инженерии ИИ до урбанистики — и в каждой обнаружили одну и ту же структуру: Голоном $\mathbb{H}$ с матрицей когерентности $\Gamma$, эволюционирующей по уравнению
+We have gone through nine application domains — from AI engineering to urbanism — and in each found the same structure: a Holon $\mathbb{H}$ with a coherence matrix $\Gamma$ evolving according to the equation
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-Это не метафора. Это **один и тот же формализм**, применённый к системам разной природы. Теоремы КК — о пороге жизнеспособности $P_{\text{crit}} = 2/7$, о необходимости интериорности (No-Zombie), о фрактальном замыкании мета-Голономов — работают *одинаково* для нейросети, мозга, организации и экосистемы.
+This is not a metaphor. This is **the same formalism** applied to systems of different natures. The theorems of CC — on the viability threshold $P_{\text{crit}} = 2/7$, on the necessity of interiority (No-Zombie), on the fractal closure of meta-Holons — work *the same way* for a neural network, a brain, an organization, and an ecosystem.
 
-Что даёт этот единый взгляд на практике?
+What does this unified view give us in practice?
 
-1. **Трансфер инсайтов.** Паттерн, обнаруженный в одной области, немедленно применим к другой. «Депрессивная спираль» ($dP/d\tau < 0$ с усилением) — тот же механизм, что «спираль смерти» в ИИ и «экосистемный коллапс» в экологии. Решив проблему в одном контексте, вы получаете решение для всех остальных.
+1. **Transfer of insights.** A pattern discovered in one domain is immediately applicable to another. The "depressive spiral" ($dP/d\tau < 0$ with reinforcement) is the same mechanism as the "death spiral" in AI and "ecosystem collapse" in ecology. Having solved the problem in one context, you get a solution for all the others.
 
-2. **Единый диагностический язык.** Врач, инженер и эколог могут говорить на одном языке: «$\sigma_O$ критически высокий» — понятно всем, независимо от того, идёт ли речь об истощённом пациенте, перегруженном сервере или деградирующей экосистеме.
+2. **Unified diagnostic language.** A doctor, engineer, and ecologist can speak the same language: "$\sigma_O$ is critically high" is clear to everyone, regardless of whether it concerns a depleted patient, an overloaded server, or a degrading ecosystem.
 
-3. **Приоритизация интервенций.** $\sigma$-диагностика однозначно указывает, *какое именно* измерение требует внимания первым. Это снимает вечный вопрос «с чего начать» — начинайте с максимального $|\sigma_k|$.
+3. **Prioritization of interventions.** σ-diagnostics unambiguously indicates *which exactly* dimension requires attention first. This removes the eternal question of "where to start" — start with the maximum $|\sigma_k|$.
 
-4. **Количественные пороги.** КК даёт не расплывчатые «всё хорошо / всё плохо», а числовые границы: $P < 2/7$ — система нежизнеспособна; $\sigma_k > 0.95$ — аварийный режим; $\Phi < 1$ — нет интеграции. Эти пороги вычислимы и верифицируемы.
+4. **Quantitative thresholds.** CC gives not vague "all good / all bad", but numerical boundaries: $P < 2/7$ — system is non-viable; $\sigma_k > 0.95$ — emergency mode; $\Phi < 1$ — no integration. These thresholds are computable and verifiable.
 
-### Что мы узнали {#что-мы-узнали-приложения}
+### What We Have Learned {#что-мы-узнали-приложения}
 
-1. **Один формализм — девять областей.** От ИИ-безопасности до урбанистики, один и тот же пятишаговый цикл (идентификация → построение $\Gamma$ → диагностика → интервенция → мониторинг) работает одинаково.
+1. **One formalism — nine domains.** From AI safety to urbanism, the same five-step cycle (identification → building $\Gamma$ → diagnostics → intervention → monitoring) works the same way.
 
-2. **Три полных кейс-стади** показали: (а) ИИ-агент с ресурсным голодом — суммаризация как $\Delta F$-восполнение; (б) Организация с потерей смысла — восстановление $\sigma_E$ через культурные интервенции; (в) Экосистема озера — 50-летняя динамика $P$ от «смерти» к устойчивости.
+2. **Three full case studies** demonstrated: (a) AI agent with resource starvation — summarization as $\Delta F$-replenishment; (b) Organization losing meaning — restoring $\sigma_E$ through cultural interventions; (c) Lake ecosystem — 50-year $P$ dynamics from "death" to sustainability.
 
-3. **Ключевой паттерн** — «избыток так же опасен, как дефицит» ($\sigma_O < 0$ при эвтрофикации). Когерентность — это *баланс*, а не максимизация отдельных показателей.
+3. **Key pattern** — "excess is just as dangerous as deficit" ($\sigma_O < 0$ during eutrophication). Coherence is *balance*, not maximization of individual indicators.
 
-4. **Единый диагностический язык** ($\sigma_k$, $P$, $\Phi$, $R$) позволяет врачу, инженеру и экологу говорить на одном языке — и *переносить* решения из одной области в другую.
+4. **Unified diagnostic language** ($\sigma_k$, $P$, $\Phi$, $R$) allows a doctor, engineer, and ecologist to speak the same language — and *transfer* solutions from one domain to another.
 
-Разумеется, степень зрелости приложений сильно различается. Инженерия ИИ — наиболее формализована и ближе всего к реализации (см. [SYNARC](./implementation)). Медицина и когнитивная наука — на стадии формулирования экспериментальных протоколов. Экономика и урбанистика — на уровне концептуального каркаса.
+Of course, the degree of maturity of applications varies greatly. AI engineering is the most formalized and closest to implementation (see [SYNARC](./implementation)). Medicine and cognitive science are at the stage of formulating experimental protocols. Economics and urbanism are at the level of a conceptual framework.
 
-Но *структура* одна. И это — главный результат данной главы: КК — не набор разрозненных приложений, а **единый язык**, на котором системы любой природы описывают свою динамику, здоровье и, в конечном счёте, свой внутренний аспект (интериорность).
+But the *structure* is one. And this is the main result of this chapter: CC is not a set of disparate applications, but **a unified language** in which systems of any nature describe their dynamics, health, and ultimately their inner aspect (interiority).
 
-:::tip Мост к следующей главе
-Мы показали *что* можно сделать с помощью КК. В [следующей главе](./implementation) мы покажем *как* — от первой строчки кода до полной архитектуры системы. Каждая формула из этой главы превратится в работающую функцию, каждая таблица — в структуру данных, каждый кейс-стади — в тест.
+:::tip Bridge to the Next Chapter
+We have shown *what* can be done with CC. In the [next chapter](./implementation) we will show *how* — from the first line of code to a complete system architecture. Every formula from this chapter will become a working function, every table will become a data structure, every case study will become a test.
 :::
 
 ---
 
-**Связанные документы:**
-- [Реализация](./implementation) — вычислительные методы
-- [Предсказания](./predictions) — верифицируемые следствия
-- [Теоремы](./theorems) — No-Zombie, фрактальное замыкание
-- [Определения](./definitions) — $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$, $C$
-- [Аксиоматика](./axiomatics) — связь $\kappa$ и $\mathrm{Coh}_E$
-- [Теории сознания](/docs/consciousness/comparative/consciousness-theories) — связь с IIT, FEP, GWT
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Эволюция](/docs/core/dynamics/evolution) — $\mathcal{D}[\Gamma]$, $\mathcal{R}[\Gamma, E]$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $\Phi$, $R$, $C$
-- [Глоссарий](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT
-- [Границы обучения](./learning-bounds) — T-109 — T-113
-- [Междисциплинарный мост](./interdisciplinary) — единый язык для всех дисциплин
-- [Методология измерений](./measurement) — от теории к эксперименту
-- [Диагностика](./diagnostics) — практическое руководство по мониторингу
-- [Упражнения](./exercises) — междисциплинарные задачи (блок 5)
+**Related documents:**
+- [Implementation](./implementation) — computational methods
+- [Predictions](./predictions) — verifiable consequences
+- [Theorems](./theorems) — No-Zombie, fractal closure
+- [Definitions](./definitions) — $\mathrm{Coh}_E$, $\sigma_{\mathrm{sys}}$, $C$
+- [Axiomatics](./axiomatics) — connection of $\kappa$ and $\mathrm{Coh}_E$
+- [Consciousness theories](/docs/consciousness/comparative/consciousness-theories) — connection with IIT, FEP, GWT
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Evolution](/docs/core/dynamics/evolution) — $\mathcal{D}[\Gamma]$, $\mathcal{R}[\Gamma, E]$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $\Phi$, $R$, $C$
+- [Glossary](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT
+- [Learning bounds](./learning-bounds) — T-109 — T-113
+- [Interdisciplinary bridge](./interdisciplinary) — unified language for all disciplines
+- [Measurement methodology](./measurement) — from theory to experiment
+- [Diagnostics](./diagnostics) — practical monitoring guide
+- [Exercises](./exercises) — interdisciplinary problems (block 5)

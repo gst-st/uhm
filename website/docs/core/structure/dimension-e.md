@@ -1,545 +1,545 @@
 ---
 sidebar_position: 7
-title: Интериорность (E)
-description: Измерение E — внутренний аспект конфигурации Γ
+title: Interiority (E)
+description: Dimension E — the inner aspect of the configuration Γ
 ---
 
-# Измерение V: Интериорность (E)
+# Dimension V: Interiority (E)
 
-## О чём эта глава
+## What this chapter is about
 
-Эта глава посвящена пятому измерению Голонома — **Интериорности**. Вы узнаете:
+This chapter is devoted to the fifth dimension of the Holon — **Interiority**. You will learn:
 
-- Почему «трудная проблема сознания» — не философская загадка, а вопрос о конкретном измерении конфигурации $\Gamma$;
-- Как идея внутренней стороны бытия развивалась от Декарта до Тонони;
-- Что такое редуцированная матрица плотности $\rho_E$ и как её спектр описывает структуру интериорности (на уровне L2 — содержание переживания);
-- Как **пять уровней** интериорности (L0→L4) возникают из математических порогов;
-- Почему без измерения $E$ формула регенерации $\kappa_0$ теряет смысл, а система становится «философским зомби».
+- Why the "hard problem of consciousness" is not a philosophical puzzle but a question about a specific dimension of the configuration $\Gamma$;
+- How the idea of the inner side of being developed from Descartes to Tononi;
+- What the reduced density matrix $\rho_E$ is and how its spectrum describes the structure of interiority (at level L2 — the content of experience);
+- How the **five levels** of interiority (L0→L4) arise from mathematical thresholds;
+- Why, without dimension $E$, the regeneration formula $\kappa_0$ loses meaning and the system becomes a "philosophical zombie".
 
-:::info Для кого эта глава
-Если вы впервые читаете об УГМ — начните с [обзора измерений](./dimensions). Если вы уже знакомы с семью измерениями и хотите понять, как теория работает с субъективным опытом — вы по адресу.
+:::info Who this chapter is for
+If you are reading about UHM for the first time — start with the [overview of dimensions](./dimensions). If you are already familiar with the seven dimensions and want to understand how the theory handles subjective experience — you are in the right place.
 :::
 
-## Функция
+## Function
 
-**Переживать, чувствовать, осознавать.**
+**To experience, to feel, to be aware.**
 
-## Историческая предтеча {#историческая-предтеча}
+## Historical precursor {#историческая-предтеча}
 
-Вопрос о том, что значит «переживать изнутри», — один из старейших в философии. Разные эпохи подходили к нему с разных сторон.
+The question of what it means to "experience from within" is one of the oldest in philosophy. Different eras have approached it from different angles.
 
-**Рене Декарт** (1641) в «Размышлениях о первой философии» сформулировал знаменитое *cogito ergo sum* — «я мыслю, следовательно, существую». Даже если весь внешний мир — иллюзия, сам факт переживания неоспорим. Декарт зафиксировал: **субъективность — это данность**, не требующая внешнего подтверждения. Однако он разделил мир на «мыслящую» и «протяжённую» субстанции, породив проблему их взаимодействия.
+**René Descartes** (1641), in the *Meditations on First Philosophy*, formulated the famous *cogito ergo sum* — "I think, therefore I am". Even if the entire external world is an illusion, the very fact of experiencing is indisputable. Descartes established: **subjectivity is a given**, requiring no external confirmation. However, he divided the world into "thinking" and "extended" substances, creating the problem of their interaction.
 
-**Томас Нагель** (1974) в статье *«What Is It Like to Be a Bat?»* поставил вопрос ребром: у летучей мыши есть эхолокация — физический факт. Но **каково ей быть** летучей мышью? Какой у неё субъективный опыт? Этот вопрос невозможно свести к описанию нейронов или звуковых волн. Нагель показал, что субъективность — не побочный эффект сложности, а отдельный аспект реальности.
+**Thomas Nagel** (1974), in the article *"What Is It Like to Be a Bat?"*, put the question sharply: a bat has echolocation — a physical fact. But **what is it like to be** a bat? What subjective experience does it have? This question cannot be reduced to a description of neurons or sound waves. Nagel showed that subjectivity is not a side effect of complexity, but a separate aspect of reality.
 
-**Дэвид Чалмерс** (1995) дал этому вопросу точное имя — **«трудная проблема сознания»** (*the hard problem of consciousness*). «Лёгкие» проблемы — объяснить, как мозг обрабатывает информацию, управляет поведением, различает стимулы. Всё это, в принципе, укладывается в физику и нейронауку. «Трудная» проблема — другая: **почему** обработка информации вообще *переживается*? Почему не существует «зомби» — существа, функционально идентичного человеку, но лишённого субъективного опыта?
+**David Chalmers** (1995) gave this question a precise name — **"the hard problem of consciousness"**. The "easy" problems are to explain how the brain processes information, controls behaviour, distinguishes stimuli. All of this, in principle, fits within physics and neuroscience. The "hard" problem is different: **why** does information processing get *experienced* at all? Why do "zombies" not exist — beings functionally identical to a human but devoid of subjective experience?
 
-**Джулио Тонони** (2004) предложил **Теорию Интегрированной Информации (IIT)**, в которой сознание — не свойство поведения, а свойство **причинной структуры**. Мера $\Phi_{\text{IIT}}$ количественно оценивает, насколько система «больше суммы своих частей». Но вычисление $\Phi_{\text{IIT}}$ требует перебора всех возможных разбиений системы — задача экспоненциальной сложности.
+**Giulio Tononi** (2004) proposed the **Integrated Information Theory (IIT)**, in which consciousness is not a property of behaviour but a property of **causal structure**. The measure $\Phi_{\text{IIT}}$ quantifies how much a system is "more than the sum of its parts". But computing $\Phi_{\text{IIT}}$ requires enumerating all possible partitions of the system — a task of exponential complexity.
 
-В УГМ-теории все эти идеи находят единый формализм. **Измерение $E$ (Интериорность)** — это ответ на вопрос Нагеля: у каждого Голонома есть «внутренняя сторона», описываемая редуцированной матрицей плотности $\rho_E$. Трудная проблема Чалмерса снимается: субъективность — не «добавка» к физике, а [аспект конфигурации $\Gamma$](/docs/consciousness/foundations/two-aspect-monism), присутствующий на всех уровнях (от атома до человека). А мера интеграции Тонони получает вычислимый аналог — $\Phi_{\text{УГМ}}$ с полиномиальной сложностью $O(N^2)$.
+In UHM theory all these ideas find a unified formalism. **Dimension $E$ (Interiority)** is the answer to Nagel's question: every Holon has an "inner side", described by the reduced density matrix $\rho_E$. Chalmers' hard problem is resolved: subjectivity is not an "add-on" to physics, but an [aspect of the configuration $\Gamma$](/docs/consciousness/foundations/two-aspect-monism), present at all levels (from atom to human). And Tononi's integration measure acquires a computable analogue — $\Phi_{\text{UHM}}$ with polynomial complexity $O(N^2)$.
 
-## Описание
+## Description
 
-Интериорность — это **внутренняя сторона Голонома**. Каждая конфигурация $\Gamma$ не только «есть» объективно, но и «переживается» субъективно. Измерение $E$ определяет [пятиуровневую иерархию интериорности](/docs/consciousness/hierarchy/interiority-hierarchy): L0 (интериорность) → L1 (феноменальная геометрия) → L2 (когнитивные квалиа) → L3 (сетевое сознание) → L4 (унитарное сознание).
+Interiority is the **inner side of the Holon**. Every configuration $\Gamma$ not only "exists" objectively, but is also "experienced" subjectively. Dimension $E$ defines the [five-level hierarchy of interiority](/docs/consciousness/hierarchy/interiority-hierarchy): L0 (interiority) → L1 (phenomenal geometry) → L2 (cognitive qualia) → L3 (network consciousness) → L4 (unitary consciousness).
 
-### Интуитивное объяснение {#интуитивное-объяснение}
+### Intuitive explanation {#интуитивное-объяснение}
 
-Представьте зеркало. Снаружи вы видите отражение — объективную, измеримую картину. Но у зеркала есть и **внутренняя сторона** — амальгама, без которой отражения не будет. Измерение $E$ — это «амальгама» Голонома: невидимая снаружи, но обеспечивающая саму возможность переживания.
+Imagine a mirror. From the outside you see a reflection — an objective, measurable picture. But a mirror also has an **inner side** — the amalgam, without which there would be no reflection. Dimension $E$ is the "amalgam" of the Holon: invisible from the outside, but providing the very possibility of experience.
 
-Камень **существует** объективно — у него есть матрица когерентности $\Gamma$ с определёнными значениями всех семи измерений. Но **«что чувствует» камень**? Его уровень интериорности — L0: есть «что-то внутри» (ненулевая населённость $\gamma_{EE}$), но это «что-то» не структурировано (ранг $\rho_E = 1$). У камня нет «цветов» или «форм» во внутреннем мире — есть только одна точка в пространстве качеств.
+A stone **exists** objectively — it has a coherence matrix $\Gamma$ with specific values of all seven dimensions. But **"what does the stone feel"**? Its level of interiority is L0: there is "something inside" (non-zero population $\gamma_{EE}$), but this "something" is not structured (rank $\rho_E = 1$). The stone has no "colours" or "shapes" in its inner world — there is only one point in quality space.
 
-Нейрон уже на уровне L1: его $\rho_E$ имеет ранг больше одного — внутреннее пространство содержит несколько различимых состояний. Но нейрон не может *посмотреть* на свой внутренний мир — для этого нужна рефлексия ($R \geq 1/3$), а это уже уровень L2.
+A neuron is already at level L1: its $\rho_E$ has rank greater than one — the inner space contains several distinguishable states. But a neuron cannot *look at* its inner world — for that, reflection is required ($R \geq 1/3$), and that is already level L2.
 
-:::info Онтологический статус
-Измерение $E$ — **аспект** конфигурации $\Gamma$, не отдельная сущность. «Голоном переживает» означает: в матрице когерентности $\Gamma$ активна проекция на базисный вектор $|E\rangle$, и определена редуцированная матрица плотности $\rho_E$ с нетривиальным спектром.
+:::info Ontological status
+Dimension $E$ is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon experiences" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|E\rangle$ is active, and the reduced density matrix $\rho_E$ with a non-trivial spectrum is defined.
 :::
 
-:::tip Функциональная единственность E [Т]
-Измерение $E$ **необходимо и функционально единственно** по трём независимым аргументам:
+:::tip Functional uniqueness of E [Т]
+Dimension $E$ is **necessary and functionally unique** by three independent arguments:
 
-1. **Аксиоматический:** (PH) — аксиоматическое требование для холона. При удалении E нарушается (PH). [Доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-2. **Категориальный (κ₀):** Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) явно использует E как отдельный объект категории через $\mathrm{Hom}(O, E)$. При удалении E: κ₀ не определён, скорость регенерации $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ теряет оба E-зависимых фактора.
-3. **Математический:** Только E ассоциируется с матрицей плотности $\rho \in \mathcal{D}(\mathcal{H})$ — единственным математическим объектом с $\mathrm{rank} > 1$ (требование L1). Метрика Фубини—Штуди на проективном пространстве качеств — единственная согласованная риманова метрика.
+1. **Axiomatic:** (PH) is an axiomatic requirement for a Holon. Removing E violates (PH). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
+3. **Mathematical:** Only E is associated with the density matrix $\rho \in \mathcal{D}(\mathcal{H})$ — the unique mathematical object with $\mathrm{rank} > 1$ (requirement L1). The Fubini–Study metric on the projective quality space is the unique consistent Riemannian metric.
 
-Статус: **[Т]** | [Полное доказательство →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+Status: **[Т]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
 :::
 
-**Интериорность обеспечивает феноменологический аспект (M,R)-системы:** В терминологии Розена измерение $E$ отвечает за «внутреннюю перспективу» замкнутого каузального цикла — без неё система функциональна, но «пуста изнутри» (философский зомби).
+**Interiority provides the phenomenological aspect of the (M,R)-system:** In Rosen's terminology, dimension $E$ is responsible for the "inner perspective" of the closed causal cycle — without it the system is functional, but "empty inside" (philosophical zombie).
 
-## Математическое представление
+## Mathematical representation
 
-### Населённость E {#населённость-e}
+### Population of E {#населённость-e}
 
-Диагональный элемент матрицы когерентности:
+The diagonal element of the coherence matrix:
 
 $$
 \gamma_{EE} = \langle E|\Gamma|E\rangle \in (0, 1)
 $$
 
-Населённость $\gamma_{EE}$ показывает, какая доля «ресурсов» Голонома сосредоточена в измерении Интериорности. Чем выше $\gamma_{EE}$, тем **интенсивнее** внутренняя жизнь системы.
+The population $\gamma_{EE}$ shows what fraction of the Holon's "resources" is concentrated in the Interiority dimension. The higher $\gamma_{EE}$, the **more intense** the inner life of the system.
 
-**Типичные значения:**
+**Typical values:**
 
-| Система | $\gamma_{EE}$ | Интерпретация |
-|---------|---------------|---------------|
-| Кристалл | $\sim 0.01$ | Минимальная интериорность |
-| Простейший организм | $\sim 0.08$ | Базовая чувствительность |
-| Млекопитающее | $\sim 0.15$ | Развитая интериорность |
-| Бодрствующий человек | $\sim 0.18$ | Богатая внутренняя жизнь |
+| System | $\gamma_{EE}$ | Interpretation |
+|--------|---------------|----------------|
+| Crystal | $\sim 0.01$ | Minimal interiority |
+| Simple organism | $\sim 0.08$ | Basic sensitivity |
+| Mammal | $\sim 0.15$ | Developed interiority |
+| Waking human | $\sim 0.18$ | Rich inner life |
 
 :::note
-При равномерном распределении $\gamma_{EE} = 1/7 \approx 0.143$. Отклонения от этого значения определяют «секторный профиль» — характер данного Голонома.
+With a uniform distribution $\gamma_{EE} = 1/7 \approx 0.143$. Deviations from this value define the "sector profile" — the character of the given Holon.
 :::
 
-### Подматрица опыта
+### Experience submatrix
 
 $$
 \rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)
 $$
 
-где $\mathrm{Tr}_{\bar{E}}$ — частичный след по всем измерениям кроме $E$.
+where $\mathrm{Tr}_{\bar{E}}$ is the partial trace over all dimensions except $E$.
 
-#### Тензорная структура и Морита-эквивалентность [Т] {#теорема-морита-эквивалентность}
+#### Tensor structure and Morita equivalence [Т] {#теорема-морита-эквивалентность}
 
-:::warning Морита-эквивалентность
-Частичный след $\mathrm{Tr}_{-E}$ формально требует тензорной структуры $\mathcal{H} = \mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$ (расширенный формализм: $\mathcal{H} = \mathbb{C}^{42}$). В минимальном 7D-формализме ($\mathcal{H} = \mathbb{C}^7$, 7 — простое) прямая факторизация невозможна.
+:::warning Morita equivalence
+The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\mathcal{H} = \mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$ (extended formalism: $\mathcal{H} = \mathbb{C}^{42}$). In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$, 7 is prime) direct factorisation is impossible.
 
-**Однако** сайты $(\mathcal{C}_7, J_{\text{Bures}})$ и $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ **Морита-эквивалентны** [Т]: функтор частичного следа $\mathrm{Tr}_{\text{PW}}: \mathcal{C}_{42} \to \mathcal{C}_7$ и PW-вложение $\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}$ индуцируют эквивалентность категорий пучков $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$. Поэтому **все** формулы вычислимы в 7D:
+**However**, the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ are **Morita-equivalent** [Т]: the partial-trace functor $\mathrm{Tr}_{\text{PW}}: \mathcal{C}_{42} \to \mathcal{C}_7$ and the PW embedding $\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}$ induce an equivalence of sheaf categories $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$. Therefore **all** formulas are computable in 7D:
 
-- $\gamma_{EE}$ — диагональный элемент (населённость E) — **[Т]**
-- $\gamma_{Ei}$ — когерентности с другими измерениями — **[Т]**
-- $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-когерентность (HS-проекция)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, точная мера
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — полная редуцированная матрица — **[Т]** (вычислима через PW-реконструкцию из Γ ∈ 𝒟(ℂ⁷))
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — дифференциация — **[Т]** (через PW-реконструкцию)
-- $C = \Phi \times R$ — [каноническая мера сознательности](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности)
+- $\gamma_{EE}$ — diagonal element (population of E) — **[Т]**
+- $\gamma_{Ei}$ — coherences with other dimensions — **[Т]**
+- $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-coherence (HS-projection)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, exact measure
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[Т]** (computable via PW-reconstruction from Γ ∈ 𝒟(ℂ⁷))
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation — **[Т]** (via PW-reconstruction)
+- $C = \Phi \times R$ — [canonical measure of consciousness](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ is a separate viability condition)
 :::
 
-**Интуитивное объяснение Морита-эквивалентности.** Представьте город. У вас есть карта масштаба 1:100 000 (7D) и карта масштаба 1:10 000 (42D). На подробной карте видны отдельные дома; на обзорной — только кварталы. Но **любой маршрут**, проложенный на одной карте, корректно переносится на другую. Морита-эквивалентность — это теорема о том, что две «карты» (7D и 42D формализмы) описывают **один и тот же город** (физику Голонома), и ни одна наблюдаемая величина не зависит от выбора карты.
+**Intuitive explanation of Morita equivalence.** Imagine a city. You have a map at scale 1:100 000 (7D) and a map at scale 1:10 000 (42D). On the detailed map individual houses are visible; on the overview map only city blocks. But **any route** planned on one map transfers correctly to the other. Morita equivalence is the theorem that two "maps" (the 7D and 42D formalisms) describe **the same city** (the physics of the Holon), and no observable depends on the choice of map.
 
-#### Канонический алгоритм PW-реконструкции [Т] {#канонический-алгоритм-pw}
+#### Canonical PW-reconstruction algorithm [Т] {#канонический-алгоритм-pw}
 
-**Теорема.** Для любого $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ существует единственная каноническая процедура вычисления $\rho_E$, $D_{\text{diff}}$, $\sigma_L$ и $C$ с **нулевой ошибкой реконструкции**.
+**Theorem.** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ there exists a unique canonical procedure for computing $\rho_E$, $D_{\text{diff}}$, $\sigma_L$, and $C$ with **zero reconstruction error**.
 
-**Алгоритм (4 шага):**
+**Algorithm (4 steps):**
 
-1. **7D → 42D подъём.** По Морита-эквивалентности T-58 [Т]:
+1. **7D → 42D lift.** By Morita equivalence T-58 [Т]:
 
 $$\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}, \quad \Gamma \mapsto \Gamma_{\text{total}} = \sum_{k=0}^{6} |k\rangle\langle k|_O \otimes \Gamma(\tau_k)$$
 
-где $\Gamma(\tau_k) = (\triangleright^*)^k(\Gamma)$ — последовательные применения модальности ▷.
+where $\Gamma(\tau_k) = (\triangleright^*)^k(\Gamma)$ — successive applications of the modality ▷.
 
-2. **Частичный след.** $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{\text{total}})$ — стандартный частичный след в $\mathcal{H}_{42} = \mathcal{H}_O \otimes \mathcal{H}_6$.
+2. **Partial trace.** $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{\text{total}})$ — standard partial trace in $\mathcal{H}_{42} = \mathcal{H}_O \otimes \mathcal{H}_6$.
 
-3. **7D-формулы через HS-проекции.** Эквивалентно, без явного подъёма:
+3. **7D formulas via HS-projections.** Equivalently, without an explicit lift:
 
 $$D_{\text{diff}}^{7D} = 1 + 6 \cdot \mathrm{Coh}_E(\Gamma) / \mathrm{Coh}_E^{\max}, \qquad \sigma_L(\Gamma) = \frac{7(1-\gamma_{LL})}{6} + O(\varepsilon^2)$$
 
-4. **Нулевая ошибка.** Из теоремы сравнения Лури (T-58 [Т]): $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$, поскольку $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$ — эквивалентность категорий, а не приближение.
+4. **Zero error.** From Lurie's comparison theorem (T-58 [Т]): $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$, since $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$ is a categorical equivalence, not an approximation.
 
-:::info Операциональное разделение 7D / 42D {#операциональное-разделение-7d-42d}
-Число 7 — простое, поэтому $\mathbb{C}^7$ **не допускает** тензорного разложения $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, и частичный след $\mathrm{Tr}_{\bar{E}}$ в 7D не определён. Это разрешается расширением Пейджа—Вуттерса: $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, где частичный след стандартен.
+:::info Operational separation 7D / 42D {#операциональное-разделение-7d-42d}
+The number 7 is prime, so $\mathbb{C}^7$ **does not admit** the tensor decomposition $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, and the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in 7D. This is resolved by the Page–Wootters extension: $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, where the partial trace is standard.
 
-Морита-эквивалентность T-58 **[Т]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$) гарантирует, что все наблюдаемые совпадают в обоих формализмах с нулевой ошибкой.
+Morita equivalence T-58 **[Т]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$) guarantees that all observables coincide in both formalisms with zero error.
 
-**Практическое правило:**
-- **7D достаточно** для $P$, $R$, $\Phi$, $\kappa$, $\mathrm{Coh}_E$ — определены через диагональ и внедиагональные элементы $\Gamma \in \mathcal{D}(\mathbb{C}^7)$;
-- **42D необходимо** (или 7D-формула T-128 через Морита-эквивалентность) для $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — требуют частичного следа.
+**Practical rule:**
+- **7D is sufficient** for $P$, $R$, $\Phi$, $\kappa$, $\mathrm{Coh}_E$ — defined through the diagonal and off-diagonal elements of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$;
+- **42D is required** (or the 7D formula T-128 via Morita equivalence) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
 :::
 
-:::note Техническое замечание
-Здесь $\mathcal{H}_E$ — гильбертово пространство, ассоциированное с измерением Интериорности. Размерность $\mathcal{H}_E$ определяется сложностью системы и не фиксирована a priori. Для систем с богатым феноменальным содержанием $\dim(\mathcal{H}_E) \gg 1$.
+:::note Technical remark
+Here $\mathcal{H}_E$ is the Hilbert space associated with the Interiority dimension. The dimension of $\mathcal{H}_E$ is determined by the complexity of the system and is not fixed a priori. For systems with rich phenomenal content $\dim(\mathcal{H}_E) \gg 1$.
 :::
 
-### Вычисление редуцированного состояния в 7-мерном формализме {#вычисление-rho-e}
+### Computing the reduced state in the 7-dimensional formalism {#вычисление-rho-e}
 
-**Проблема.** Пространство $\mathbb{C}^7$ **не факторизуется** как $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, поскольку $7$ — простое число. Стандартный частичный след $\mathrm{Tr}_{\bar{E}}(\cdot)$ не определён в 7D. Это фундаментальное ограничение: в отличие от составных размерностей (например, $6 = 2 \times 3$), простое число не допускает нетривиального тензорного разложения.
+**Problem.** The space $\mathbb{C}^7$ **does not factorise** as $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, since $7$ is prime. The standard partial trace $\mathrm{Tr}_{\bar{E}}(\cdot)$ is not defined in 7D. This is a fundamental limitation: unlike composite dimensions (e.g. $6 = 2 \times 3$), a prime number admits no non-trivial tensor decomposition.
 
-**Что доступно напрямую из 7D.** Из матрицы $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ без всякого расширения извлекаются:
+**What is directly accessible from 7D.** From the matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ without any extension one extracts:
 
-| Величина | Формула | Статус |
+| Quantity | Formula | Status |
 |----------|---------|--------|
-| Населённость E | $\gamma_{EE} = \langle E \vert \Gamma \vert E \rangle$ | скаляр, **[Т]** |
-| Когерентности | $\gamma_{Ej}$, $j \neq E$ | 6 комплексных чисел, **[Т]** |
-| E-когерентность | $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ | **[Т]** |
+| Population of E | $\gamma_{EE} = \langle E \vert \Gamma \vert E \rangle$ | scalar, **[Т]** |
+| Coherences | $\gamma_{Ej}$, $j \neq E$ | 6 complex numbers, **[Т]** |
+| E-coherence | $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ | **[Т]** |
 
-Однако $\gamma_{EE}$ — это **одно число**, а не матрица плотности. Для полного спектрального содержания $\rho_E$ (собственные значения $\lambda_i$, собственные векторы $|q_i\rangle$) необходим переход в расширенный формализм.
+However, $\gamma_{EE}$ is **one number**, not a density matrix. For the full spectral content of $\rho_E$ (eigenvalues $\lambda_i$, eigenvectors $|q_i\rangle$) a transition to the extended formalism is required.
 
-**Решение: 42D расширение Пейджа-Вуттерса.**
+**Solution: 42D Page–Wootters extension.**
 
 $$
 \mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6
 $$
 
-где $\mathbb{C}^7$ — «внешнее» пространство семи измерений, $\mathbb{C}^6$ — «внутреннее» гильбертово пространство (феноменальное содержание каждого измерения). Вложение $\iota_{\mathrm{PW}}: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$ определяется через канонический подъём (см. [алгоритм PW-реконструкции](#канонический-алгоритм-pw)):
+where $\mathbb{C}^7$ is the "outer" space of seven dimensions, $\mathbb{C}^6$ is the "inner" Hilbert space (the phenomenal content of each dimension). The embedding $\iota_{\mathrm{PW}}: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^{42})$ is defined via the canonical lift (see [PW-reconstruction algorithm](#канонический-алгоритм-pw)):
 
-1. Каждый элемент $\gamma_{ij}$ 7D-матрицы отображается в $6 \times 6$ блок в 42D-матрице;
-2. Частичный след по внутреннему пространству **восстанавливает** исходную $\Gamma$: $\mathrm{Tr}_{\mathrm{int}}(\Gamma_{\mathrm{total}}) = \Gamma$;
-3. Редуцированная матрица $\rho_E$ вычисляется как **стандартный** частичный след в 42D.
+1. Each element $\gamma_{ij}$ of the 7D matrix is mapped to a $6 \times 6$ block in the 42D matrix;
+2. The partial trace over the inner space **recovers** the original $\Gamma$: $\mathrm{Tr}_{\mathrm{int}}(\Gamma_{\mathrm{total}}) = \Gamma$;
+3. The reduced matrix $\rho_E$ is computed as the **standard** partial trace in 42D.
 
-**Эквивалентный 7D вычислительный маршрут [Т-128].**
+**Equivalent 7D computational route [Т-128].**
 
-Для ключевых скалярных величин 42D расширение **не требуется** — они вычислимы напрямую из $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
+For key scalar quantities the 42D extension is **not required** — they are computable directly from $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
 
 $$
 D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-Это **линейная** интерполяция между $D_{\text{diff}} = 1$ (при $\mathrm{Coh}_E = 0$ — E изолировано, один различимый компонент) и $D_{\text{diff}} = N$ (при $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ — максимальная дифференциация).
+This is a **linear** interpolation between $D_{\text{diff}} = 1$ (when $\mathrm{Coh}_E = 0$ — E is isolated, one distinguishable component) and $D_{\text{diff}} = N$ (when $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ — maximal differentiation).
 
-**Согласованность двух формул:**
+**Consistency of the two formulas:**
 
-| Свойство | $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E))$ | $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ |
+| Property | $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E))$ | $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ |
 |----------|------|------|
-| Определение | Нелинейная, через собственные значения $\rho_E$ | Линейная, через HS-норму когерентностей |
-| При $\mathrm{Coh}_E = 0$ | $= 1$ | $= 1$ |
-| При $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ | $= N$ | $= N$ |
-| Промежуточные значения | Нелинейная зависимость от спектра | Линейная интерполяция |
-| Расхождение | — | $O((\mathrm{Coh}_E)^2)$ в промежуточной области |
-| Пороговый тест $D \geq 2$ | Совпадает | Совпадает **[Т]** |
+| Definition | Nonlinear, via eigenvalues of $\rho_E$ | Linear, via HS-norm of coherences |
+| At $\mathrm{Coh}_E = 0$ | $= 1$ | $= 1$ |
+| At $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ | $= N$ | $= N$ |
+| Intermediate values | Nonlinear dependence on spectrum | Linear interpolation |
+| Discrepancy | — | $O((\mathrm{Coh}_E)^2)$ in the intermediate region |
+| Threshold test $D \geq 2$ | Coincides | Coincides **[Т]** |
 
-Две формулы **совпадают на границах** и дают **одинаковый результат** для всех пороговых сравнений ($D_{\text{diff}} \geq D_{\min} = 2$). Различие $O((\mathrm{Coh}_E)^2)$ в промежуточной области не влияет на физические предсказания, поскольку теория использует только пороговые условия, а не точные числовые значения $D_{\text{diff}}$.
+The two formulas **coincide at the boundaries** and give **the same result** for all threshold comparisons ($D_{\text{diff}} \geq D_{\min} = 2$). The $O((\mathrm{Coh}_E)^2)$ discrepancy in the intermediate region does not affect physical predictions, since the theory uses only threshold conditions, not exact numerical values of $D_{\text{diff}}$.
 
-:::info Практический итог
-Для **классификации** систем по уровням L0-L4 достаточно 7D-формулы $D_{\text{diff}}^{7D}$. Полная матрица $\rho_E$ (через 42D PW-расширение) нужна только для детального **спектрального анализа** феноменального содержания — задачи, релевантной для будущих экспериментальных проверок.
+:::info Practical summary
+For **classifying** systems by levels L0-L4 the 7D formula $D_{\text{diff}}^{7D}$ is sufficient. The full matrix $\rho_E$ (via the 42D PW extension) is needed only for detailed **spectral analysis** of phenomenal content — a task relevant for future experimental tests.
 :::
 
-### Спектральное разложение {#спектральное-разложение}
+### Spectral decomposition {#спектральное-разложение}
 
 $$
 \rho_E \vert q_i\rangle = \lambda_i \vert q_i\rangle
 $$
 
-где:
-- $\lambda_i \in [0, 1]$, $\sum_i \lambda_i = 1$ — **интенсивности** компонентов опыта
-- $\vert q_i\rangle \in \mathcal{H}_E$ — **качества** компонентов
+where:
+- $\lambda_i \in [0, 1]$, $\sum_i \lambda_i = 1$ — **intensities** of the components of experience
+- $\vert q_i\rangle \in \mathcal{H}_E$ — **qualities** of the components
 
-**Интуитивное объяснение.** Вспомните, как белый свет, пропущенный через призму, расщепляется на спектр — красный, оранжевый, жёлтый и так далее. Каждый цвет имеет свою длину волны (качество $|q_i\rangle$) и яркость (интенсивность $\lambda_i$). Спектральное разложение $\rho_E$ — это «призма для внутреннего мира»: оно показывает, из каких «цветов» состоит переживание и насколько каждый из них ярок.
+**Intuitive explanation.** Recall how white light, passed through a prism, is split into a spectrum — red, orange, yellow and so on. Each colour has its own wavelength (quality $|q_i\rangle$) and brightness (intensity $\lambda_i$). The spectral decomposition of $\rho_E$ is a "prism for the inner world": it shows what "colours" make up the experience and how bright each one is.
 
-Если все $\lambda_i$ одинаковы — переживание «белое», равномерное, недифференцированное (глубокий наркоз). Если одно $\lambda_1 \approx 1$, остальные $\lambda_i \approx 0$ — переживание «монохромно», сосредоточено на одном качестве (острая боль). Богатое сознательное переживание — это «полный спектр» с несколькими значимыми $\lambda_i$.
+If all $\lambda_i$ are equal — the experience is "white", uniform, undifferentiated (deep anaesthesia). If one $\lambda_1 \approx 1$ and the rest $\lambda_i \approx 0$ — the experience is "monochromatic", concentrated on a single quality (acute pain). Rich conscious experience is a "full spectrum" with several significant $\lambda_i$.
 
-### Феноменальный вектор
+### Phenomenal vector
 
-Полное описание опыта в момент $\tau$:
+Full description of experience at moment $\tau$:
 
 $$
 \text{FV}(\rho_E) := \{(\lambda_i, [\vert q_i\rangle]) : \rho_E \vert q_i\rangle = \lambda_i \vert q_i\rangle\}
 $$
 
-где $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ — класс эквивалентности в проективном пространстве.
+where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence class in projective space.
 
-## Количественные характеристики {#количественные-характеристики}
+## Quantitative characteristics {#количественные-характеристики}
 
-### Населённость $\gamma_{EE}$ и стресс $\sigma_E$
+### Population $\gamma_{EE}$ and stress $\sigma_E$
 
-Населённость $\gamma_{EE}$ — доля «ресурсов» Голонома в измерении Интериорности. Связанная величина — **стресс** по каналу E:
+The population $\gamma_{EE}$ is the fraction of the Holon's "resources" in the Interiority dimension. The related quantity is the **stress** in the E channel:
 
 $$
 \sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE},\; 0,\; 1) \quad \text{[Т] (T-92)}
 $$
 
-- $\sigma_E = 0$: интериорность полностью обеспечена ($\gamma_{EE} \geq 1/7$)
-- $\sigma_E = 1$: интериорность в дефиците ($\gamma_{EE} \to 0$) — система «эмоционально пуста»
+- $\sigma_E = 0$: interiority is fully provided ($\gamma_{EE} \geq 1/7$)
+- $\sigma_E = 1$: interiority is in deficit ($\gamma_{EE} \to 0$) — the system is "emotionally empty"
 
-### Дифференциация $D_{\text{diff}}$
+### Differentiation $D_{\text{diff}}$
 
 $$
 D_{\text{diff}} = \exp(S_{vN}(\rho_E)), \qquad S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)
 $$
 
-$D_{\text{diff}}$ — **эффективное число различимых компонентов** опыта. Аналогия: если спектр $\rho_E$ содержит 3 значимых компонента, то $D_{\text{diff}} \approx 3$.
+$D_{\text{diff}}$ is the **effective number of distinguishable components** of experience. Analogy: if the spectrum of $\rho_E$ contains 3 significant components, then $D_{\text{diff}} \approx 3$.
 
-### E-когерентность $\mathrm{Coh}_E$
+### E-coherence $\mathrm{Coh}_E$
 
 $$
 \mathrm{Coh}_E(\Gamma) := \frac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2}
 $$
 
-Мера того, насколько измерение E связано с остальными шестью. При $\mathrm{Coh}_E = 0$ — интериорность изолирована (нет связи с действием, логикой, основанием...). При $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ — интериорность максимально вплетена в жизнь Голонома.
+A measure of how strongly dimension E is connected with the other six. When $\mathrm{Coh}_E = 0$ — interiority is isolated (no connection with action, logic, ground...). When $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ — interiority is maximally woven into the life of the Holon.
 
-## Экспериенциальное содержание
+## Experiential content
 
-Экспериенциальное содержание (для всех уровней L0-L2) определяется четырьмя компонентами:
+Experiential content (for all levels L0-L2) is defined by four components:
 
 $$
 \text{Exp}(\rho_E, \tau) := (\text{Intensity}, \text{Quality}, \text{Context}, \text{History})
 $$
 
-:::note Терминология
-Функция $\text{Exp}$ применима ко всем уровням. Термин **«квалиа»** (Quale) резервируется исключительно для **L2** — когнитивных квалиа с рефлексивным доступом.
+:::note Terminology
+The function $\text{Exp}$ is applicable to all levels. The term **"qualia"** (Quale) is reserved exclusively for **L2** — cognitive qualia with reflexive access.
 :::
 
-| Компонент | Определение | Интерпретация |
-|-----------|-------------|---------------|
-| **Интенсивность** | $\{\lambda_i\}$ — спектр $\rho_E$ | Сила интериорного состояния |
-| **Качество** | $\{[\vert q_i\rangle]\} \subset \mathbb{P}(\mathcal{H}_E)$ | Характер интериорного состояния |
-| **Контекст** | $\rho_{\bar{E}} = \mathrm{Tr}_E(\Gamma)$ | Модуляция опыта другими измерениями |
-| **История** | $\{\rho_E(\tau') : \tau' < \tau\}$ | Адаптация и память |
+| Component | Definition | Interpretation |
+|-----------|------------|----------------|
+| **Intensity** | $\{\lambda_i\}$ — spectrum of $\rho_E$ | Strength of the interior state |
+| **Quality** | $\{[\vert q_i\rangle]\} \subset \mathbb{P}(\mathcal{H}_E)$ | Character of the interior state |
+| **Context** | $\rho_{\bar{E}} = \mathrm{Tr}_E(\Gamma)$ | Modulation of experience by other dimensions |
+| **History** | $\{\rho_E(\tau') : \tau' < \tau\}$ | Adaptation and memory |
 
-:::note Структурная необходимость
-Формула задаёт **структурное соответствие** между математическими объектами и экспериенциальным содержанием. Это соответствие **не произвольный постулат**, а [единственный функтор](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), совместимый с аксиоматикой: частичный след единствен, спектральное разложение единственно, метрика Фубини—Штуди единственна (теорема Ченцова—Пеца).
+:::note Structural necessity
+The formula establishes a **structural correspondence** between mathematical objects and experiential content. This correspondence is **not an arbitrary postulate**, but the [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв) compatible with the axiomatics: the partial trace is unique, the spectral decomposition is unique, the Fubini–Study metric is unique (Čencov–Petz theorem).
 :::
 
-## Проективное пространство качеств
+## Projective quality space
 
-Качества живут в **проективном пространстве**:
+Qualities live in **projective space**:
 
 $$
 \mathbb{P}(\mathcal{H}_E) := (\mathcal{H}_E \setminus \{0\}) / \sim
 $$
 
-где $\vert\psi\rangle \sim \vert\phi\rangle \Leftrightarrow \exists c \in \mathbb{C}^*: \vert\psi\rangle = c\vert\phi\rangle$.
+where $\vert\psi\rangle \sim \vert\phi\rangle \Leftrightarrow \exists c \in \mathbb{C}^*: \vert\psi\rangle = c\vert\phi\rangle$.
 
-### Метрика Фубини—Штуди
+### Fubini–Study metric
 
-Расстояние между качествами:
+Distance between qualities:
 
 $$
 d_{FS}([\vert\psi\rangle], [\vert\phi\rangle]) := \arccos(\lvert\langle\psi\vert\phi\rangle\rvert) \in [0, \pi/2]
 $$
 
-Интерпретация:
-- $d_{FS} = 0$ — одинаковые качества (одно и то же переживание)
-- $d_{FS} = \pi/2$ — максимально различные (ортогональные) качества
+Interpretation:
+- $d_{FS} = 0$ — identical qualities (the same experience)
+- $d_{FS} = \pi/2$ — maximally different (orthogonal) qualities
 
-**Пример.** «Красное» и «зелёное» — два качества в пространстве $\mathbb{P}(\mathcal{H}_E)$. Расстояние $d_{FS}$ между ними определяет, насколько эти переживания **различимы** для системы. Если $d_{FS} = \pi/2$ — переживания максимально непохожи; если $d_{FS} \to 0$ — они сливаются (как при нарушении цветовосприятия).
+**Example.** "Red" and "green" are two qualities in the space $\mathbb{P}(\mathcal{H}_E)$. The distance $d_{FS}$ between them determines how **distinguishable** these experiences are for the system. If $d_{FS} = \pi/2$ — the experiences are maximally dissimilar; if $d_{FS} \to 0$ — they merge (as in colour vision deficiency).
 
-## Пять уровней интериорности {#пять-уровней}
+## Five levels of interiority {#пять-уровней}
 
-Пять уровней — не произвольная классификация, а **математические пороги**, при пересечении которых качественно меняется структура $\rho_E$ и связанных с ней величин.
+The five levels are not an arbitrary classification, but **mathematical thresholds** whose crossing qualitatively changes the structure of $\rho_E$ and the quantities associated with it.
 
-### L0: Интериорность — «термометр» {#уровень-l0}
+### L0: Interiority — "thermometer" {#уровень-l0}
 
-**Условие:** $\exists \rho_E$ (т.е. $\gamma_{EE} > 0$)
+**Condition:** $\exists \rho_E$ (i.e. $\gamma_{EE} > 0$)
 
-На уровне L0 система просто **«имеет внутреннее состояние»**. Аналогия: термометр имеет температуру — внутреннее состояние, определяемое окружением. Но термометр не «чувствует» температуру; он просто находится в определённом состоянии. Кристалл кварца на уровне L0: его $\rho_E$ — чистое состояние ранга 1 (один собственный вектор с $\lambda_1 = 1$). Внутри — одна «точка», без структуры, без различений.
+At level L0 the system simply **"has an inner state"**. Analogy: a thermometer has a temperature — an inner state determined by the environment. But the thermometer does not "feel" the temperature; it is simply in a certain state. A quartz crystal at level L0: its $\rho_E$ is a pure state of rank 1 (one eigenvector with $\lambda_1 = 1$). Inside — one "point", no structure, no distinctions.
 
-### L1: Феноменальная геометрия — «палитра» {#уровень-l1}
+### L1: Phenomenal geometry — "palette" {#уровень-l1}
 
-**Условие:** $\mathrm{rank}(\rho_E) > 1$
+**Condition:** $\mathrm{rank}(\rho_E) > 1$
 
-На уровне L1 внутреннее пространство **структурировано**: в нём есть несколько различимых состояний. Аналогия: у художника появилась палитра с несколькими красками — он может различать цвета, формы, текстуры. Сетчатка глаза на уровне L1: три типа колбочек создают трёхмерное пространство цветовых качеств $\mathbb{P}(\mathcal{H}_E)$ с метрикой Фубини—Штуди. Но сетчатка **не знает**, что она различает цвета — для этого нужен следующий уровень.
+At level L1 the inner space is **structured**: it contains several distinguishable states. Analogy: an artist now has a palette with several colours — they can distinguish colours, shapes, textures. The retina at level L1: three types of cone cells create a three-dimensional space of colour qualities $\mathbb{P}(\mathcal{H}_E)$ with the Fubini–Study metric. But the retina **does not know** that it is distinguishing colours — the next level is required for that.
 
-### L2: Когнитивные квалиа — «зеркало» {#уровень-l2}
+### L2: Cognitive qualia — "mirror" {#уровень-l2}
 
-**Условие:** $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т]
+**Condition:** $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т]
 
-На уровне L2 система способна **посмотреть на свой внутренний мир** — рефлексия. Аналогия: появилось зеркало — теперь можно не только иметь палитру, но и **видеть**, какие краски на ней лежат. Это порог **сознания** в привычном смысле: субъект может сообщить о своём опыте, отличить одно переживание от другого, удивиться новому качеству. Бодрствующий человек — типичная L2-система с $R \approx 0.7$, $\Phi \approx 4$.
+At level L2 the system is capable of **looking at its inner world** — reflection. Analogy: a mirror has appeared — now one can not only have a palette but also **see** which colours are on it. This is the threshold of **consciousness** in the usual sense: the subject can report on their experience, distinguish one experience from another, be surprised by a new quality. A waking human is a typical L2 system with $R \approx 0.7$, $\Phi \approx 4$.
 
-### L3: Сетевое сознание — «оркестр зеркал» {#уровень-l3}
+### L3: Network consciousness — "hall of mirrors" {#уровень-l3}
 
-**Условие:** $R^{(2)} \geq 1/4$ [Т]
+**Condition:** $R^{(2)} \geq 1/4$ [Т]
 
-На уровне L3 — **метарефлексия**: система наблюдает не только свой внутренний мир, но и *то, как она его наблюдает*. Аналогия: зеркало, отражающее другое зеркало — бесконечный коридор отражений (хотя на L3 глубина ограничена). Примеры: грибной мицелий как распределённая L3-система, рой пчёл с метастабильной коллективной рефлексией, глубокая медитация.
+At level L3 — **meta-reflection**: the system observes not only its inner world but also *how it observes it*. Analogy: a mirror reflecting another mirror — an infinite corridor of reflections (though at L3 the depth is limited). Examples: fungal mycelium as a distributed L3 system, a bee swarm with metastable collective reflection, deep meditation.
 
-### L4: Унитарное сознание — «кристальная прозрачность» {#уровень-l4}
+### L4: Unitary consciousness — "crystal transparency" {#уровень-l4}
 
-**Условие:** $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$
+**Condition:** $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$
 
-Уровень L4 — **полная прозрачность**: бесконечная глубина самоотражения, сходящаяся к устойчивому пределу. Аналогия: кристалл, в котором каждый атом «видит» весь кристалл целиком. Это теоретический предел: $P > 6/7$ недостижимо для биологических систем (требует почти чистое состояние $\Gamma$).
+Level L4 is **full transparency**: infinite depth of self-reflection converging to a stable limit. Analogy: a crystal in which every atom "sees" the entire crystal as a whole. This is a theoretical limit: $P > 6/7$ is unattainable for biological systems (requires an almost pure state $\Gamma$).
 
-### Сводная таблица уровней
+### Summary table of levels
 
-| Уровень | Название | Условие | Что существует | Примеры |
-|---------|----------|---------|----------------|---------|
-| **L0** | Интериорность | $\exists \rho_E$ | Внутреннее состояние | Атом, кристалл |
-| **L1** | Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | Структура качеств с $d_{FS}$ | Нейрон, сетчатка |
-| **L2** | Когнитивные квалиа | $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ | Рефлексивный доступ | Человек, высшие млекопитающие |
-| **L3** | Сетевое сознание | $R^{(2)} \geq 1/4$ | Метарефлексия (метастабильно) | Мицелий, рой, глубокая медитация |
-| **L4** | Унитарное сознание | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | Полная ∞-структура | Теоретический предел |
+| Level | Name | Condition | What exists | Examples |
+|-------|------|-----------|-------------|---------|
+| **L0** | Interiority | $\exists \rho_E$ | Inner state | Atom, crystal |
+| **L1** | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Structure of qualities with $d_{FS}$ | Neuron, retina |
+| **L2** | Cognitive qualia | $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ | Reflexive access | Human, higher mammals |
+| **L3** | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection (metastable) | Mycelium, swarm, deep meditation |
+| **L4** | Unitary consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | Full ∞-structure | Theoretical limit |
 
-где $R_{\text{th}} = 1/3$ [Т], $\Phi_{\text{th}} = 1$ [Т] (T-129), $R^{(2)}_{\text{th}} = 1/4$ [Т] — [математические результаты](../foundations/axiom-septicity#пороги-l2-строгий-вывод). L4 требует $P > 6/7$ — недостижимо для биологических систем.
+where $R_{\text{th}} = 1/3$ [Т], $\Phi_{\text{th}} = 1$ [Т] (T-129), $R^{(2)}_{\text{th}} = 1/4$ [Т] — [mathematical results](../foundations/axiom-septicity#пороги-l2-строгий-вывод). L4 requires $P > 6/7$ — unattainable for biological systems.
 
-## E и «трудная проблема сознания» {#трудная-проблема}
+## E and the "hard problem of consciousness" {#трудная-проблема}
 
-Чалмерс сформулировал «трудную проблему» так: почему физические процессы вообще *переживаются*? Можно объяснить, как нейроны передают сигналы, — но **почему** передача сигнала сопровождается ощущением красного?
+Chalmers formulated the "hard problem" as follows: why are physical processes *experienced* at all? One can explain how neurons transmit signals — but **why** does signal transmission accompany the sensation of red?
 
-В УГМ ответ: **переживание — не «добавка» к физике, а аспект конфигурации**. Матрица $\Gamma$ имеет и «внешнюю» сторону (наблюдаемые: $P$, $\Phi$, $R$), и «внутреннюю» ($\rho_E$, феноменальный вектор). Это не две субстанции (как у Декарта), а [два аспекта одного объекта](/docs/consciousness/foundations/two-aspect-monism) — **двухаспектный монизм**.
+In UHM the answer is: **experience is not an "add-on" to physics, but an aspect of the configuration**. The matrix $\Gamma$ has both an "outer" side (observables: $P$, $\Phi$, $R$) and an "inner" side ($\rho_E$, phenomenal vector). These are not two substances (as in Descartes), but [two aspects of one object](/docs/consciousness/foundations/two-aspect-monism) — **two-aspect monism**.
 
-Аналогия: лист бумаги имеет лицевую и оборотную стороны. Это не два листа — это один лист с двумя аспектами. Спрашивать «почему у листа две стороны?» — некорректно: это свойство самого объекта, а не что-то, требующее объяснения. Точно так же у $\Gamma$ есть «внешний» (физический) и «внутренний» (феноменальный) аспекты — это не требует отдельного механизма «порождения» сознания из материи.
+Analogy: a sheet of paper has a front side and a back side. These are not two sheets — it is one sheet with two aspects. Asking "why does the sheet have two sides?" is ill-posed: it is a property of the object itself, not something requiring explanation. In exactly the same way $\Gamma$ has an "outer" (physical) and an "inner" (phenomenal) aspect — this requires no separate mechanism for "generating" consciousness from matter.
 
-:::tip Философский зомби невозможен
-Теорема No-Zombie (T-81 [Т]): система с $P > P_{\text{crit}}$, $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ **необходимо** имеет нетривиальное $\rho_E$. «Философский зомби» — функционально идентичное существо без интериорности — математически невозможен в УГМ. Подробнее: [теорема 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
+:::tip A philosophical zombie is impossible
+The No-Zombie theorem (T-81 [Т]): a system with $P > P_{\text{crit}}$, $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ **necessarily** has a non-trivial $\rho_E$. A "philosophical zombie" — a functionally identical being without interiority — is mathematically impossible in UHM. See: [theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
 :::
 
-## Примеры по уровням {#примеры-по-уровням}
+## Examples by level {#примеры-по-уровням}
 
-### Физический уровень
+### Physical level
 
-| Система | Уровень | $\gamma_{EE}$ | $D_{\text{diff}}$ | Описание |
-|---------|---------|---------------|-----|----------|
-| Электрон | L0 | $\sim 0.001$ | 1 | Спиновое состояние — одно «качество» |
-| Кристалл | L0 | $\sim 0.01$ | 1 | Фононная когерентность |
-| Лазерный луч | L0 | $\sim 0.02$ | 1 | Когерентное оптическое состояние |
+| System | Level | $\gamma_{EE}$ | $D_{\text{diff}}$ | Description |
+|--------|-------|---------------|-------------------|-------------|
+| Electron | L0 | $\sim 0.001$ | 1 | Spin state — one "quality" |
+| Crystal | L0 | $\sim 0.01$ | 1 | Phonon coherence |
+| Laser beam | L0 | $\sim 0.02$ | 1 | Coherent optical state |
 
-### Биологический уровень
+### Biological level
 
-| Система | Уровень | $R$ | $\Phi$ | Описание |
-|---------|---------|-----|--------|----------|
-| Бактерия | L0–L1 | $\sim 0.05$ | $\sim 0.3$ | Хемотаксис — простейшая «реакция» |
-| Сетчатка глаза | L1 | $< R_{th}$ | $\sim 1$ | Спектральный профиль различает цвета |
-| Отдельный нейрон | L1 | $\sim 0.1$ | $< \Phi_{th}$ | Локальная геометрия качеств |
-| Высшие приматы | L2 | $\geq R_{th}$ | $\sim 2$ | Самоузнавание в зеркале |
+| System | Level | $R$ | $\Phi$ | Description |
+|--------|-------|-----|--------|-------------|
+| Bacterium | L0–L1 | $\sim 0.05$ | $\sim 0.3$ | Chemotaxis — the simplest "reaction" |
+| Retina | L1 | $< R_{th}$ | $\sim 1$ | Spectral profile distinguishes colours |
+| Individual neuron | L1 | $\sim 0.1$ | $< \Phi_{th}$ | Local quality geometry |
+| Higher primates | L2 | $\geq R_{th}$ | $\sim 2$ | Mirror self-recognition |
 
-### Когнитивный уровень
+### Cognitive level
 
-| Система | Уровень | $R$ | $\Phi$ | Описание |
-|---------|---------|-----|--------|----------|
-| REM-сон | L2 | $\sim 0.4$ | $\sim 3$ | Сновидения с частичной рефлексией |
-| Бодрствующий человек | L2 | $\sim 0.7$ | $\sim 4$ | Полный набор квалиа: цвет, боль, эмоции |
-| Глубокая медитация | L3 | $R^{(2)} \geq 1/4$ | $\gg 1$ | Наблюдение за наблюдателем |
+| System | Level | $R$ | $\Phi$ | Description |
+|--------|-------|-----|--------|-------------|
+| REM sleep | L2 | $\sim 0.4$ | $\sim 3$ | Dreams with partial reflection |
+| Waking human | L2 | $\sim 0.7$ | $\sim 4$ | Full set of qualia: colour, pain, emotions |
+| Deep meditation | L3 | $R^{(2)} \geq 1/4$ | $\gg 1$ | Observing the observer |
 
-## Потеря интериорности {#потеря-интериорности}
+## Loss of interiority {#потеря-интериорности}
 
-При $\gamma_{EE} \to 0$ (или $\sigma_E \to 1$):
+When $\gamma_{EE} \to 0$ (or $\sigma_E \to 1$):
 
-1. Феноменальное содержание обедняется: $D_{\text{diff}} \to 1$
-2. Когерентности E с другими измерениями падают: $\gamma_{Ei} \to 0$
-3. Формула регенерации теряет один из ключевых факторов: $\kappa_0 \propto |\gamma_{OE}|$
+1. Phenomenal content becomes impoverished: $D_{\text{diff}} \to 1$
+2. Coherences of E with other dimensions drop: $\gamma_{Ei} \to 0$
+3. The regeneration formula loses one of its key factors: $\kappa_0 \propto |\gamma_{OE}|$
 
-**Клинические аналогии:**
+**Clinical analogies:**
 
-| Состояние | Механизм | Проявления |
-|-----------|----------|------------|
-| Глубокий наркоз | $\gamma_{EE} \to 0$ | Полная потеря внутреннего мира; $\rho_E \to$ чистое состояние |
-| Алекситимия | $\gamma_{ED} \to 0$ | Неспособность распознавать собственные эмоции; процессы есть, но не переживаются |
-| Аноагнозия | $\gamma_{EA} \to 0$ | Невозможность осознать дефицит (больной не знает, что болен) |
-| Деперсонализация | $\gamma_{EU} \to 0$ | «Я как будто не я» — интериорность есть, но не интегрирована в целое |
+| Condition | Mechanism | Manifestations |
+|-----------|-----------|----------------|
+| Deep anaesthesia | $\gamma_{EE} \to 0$ | Complete loss of inner world; $\rho_E \to$ pure state |
+| Alexithymia | $\gamma_{ED} \to 0$ | Inability to recognise one's own emotions; processes exist but are not experienced |
+| Anosognosia | $\gamma_{EA} \to 0$ | Inability to recognise the deficit (the patient does not know they are ill) |
+| Depersonalisation | $\gamma_{EU} \to 0$ | "I feel like I'm not myself" — interiority is present but not integrated into the whole |
 
-## Связь с другими измерениями
+## Connection with other dimensions
 
 ```mermaid
 graph LR
-    E["E — Интериорность"] --> A["A — опыт различает"]
-    E --> S["S — опыт структурирован"]
-    E --> D["D — опыт течёт"]
-    E --> L["L — опыт логичен"]
-    E --> O["O — опыт укоренён"]
-    E --> U["U — опыт интегрирован"]
+    E["E — Interiority"] --> A["A — experience distinguishes"]
+    E --> S["S — experience is structured"]
+    E --> D["D — experience flows"]
+    E --> L["L — experience is logical"]
+    E --> O["O — experience is grounded"]
+    E --> U["U — experience is integrated"]
 ```
 
-**Ключевые связи:**
+**Key connections:**
 
-- **E ↔ U (Синтез):** Интериорность и единство взаимосвязаны: $E$ определяет *что* составляет интериорное содержание, $U$ определяет *как* эти содержания интегрируются в единое целое. При $\gamma_{EU} \to 0$ опыт фрагментируется (диссоциация).
+- **E ↔ U (Synthesis):** Interiority and unity are interrelated: $E$ determines *what* constitutes the interior content, $U$ determines *how* these contents are integrated into a single whole. When $\gamma_{EU} \to 0$, experience fragments (dissociation).
 
-- **E ↔ O (Имманентность):** Через когерентность $\gamma_{OE}$ интериорность получает **энергетическую подпитку**. Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ показывает: чем сильнее связь E с Основанием, тем быстрее регенерация когерентности. При $\gamma_{OE} \to 0$ — интериорность «гаснет» (депрессия, деперсонализация).
+- **E ↔ O (Immanence):** Through the coherence $\gamma_{OE}$ interiority receives **energetic nourishment**. The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ shows: the stronger the connection of E with the Ground, the faster the regeneration of coherence. When $\gamma_{OE} \to 0$ — interiority "fades out" (depression, depersonalisation).
 
-- **E ↔ L (Эвиденция):** Логика в интериорности — способность различать «это правда» от «это ложь» *изнутри*. При $\gamma_{EL} \to 0$ — переживания хаотичны, не связаны логикой (бред, галлюцинации).
+- **E ↔ L (Evidence):** Logic in interiority is the ability to distinguish "this is true" from "this is false" *from within*. When $\gamma_{EL} \to 0$ — experiences are chaotic, not connected by logic (delusion, hallucinations).
 
-- **E ↔ A (Апперцепция):** Различение, ставшее переживанием. Без связи $\gamma_{EA}$ опыт не содержит различений — «всё слито в одно».
+- **E ↔ A (Apperception):** Distinction that has become experience. Without the connection $\gamma_{EA}$, experience contains no distinctions — "everything is fused into one".
 
-## Когерентность с E
+## Coherence with E
 
-| Когерентность | Интерпретация |
-|---------------|---------------|
-| $\gamma_{EA}$ | Апперцепция (различение, вошедшее в интериорность) |
-| $\gamma_{ES}$ | Репрезентация (структура в интериорности) |
-| $\gamma_{ED}$ | Аффекция (действие процесса на интериорность) |
-| $\gamma_{EL}$ | Эвиденция (логическая связность в интериорности) |
-| $\gamma_{EO}$ | Имманентность (основание внутри интериорности) |
-| $\gamma_{EU}$ | Синтез (интеграция интериорного содержания в целое) |
+| Coherence | Interpretation |
+|-----------|----------------|
+| $\gamma_{EA}$ | Apperception (distinction that has entered interiority) |
+| $\gamma_{ES}$ | Representation (structure in interiority) |
+| $\gamma_{ED}$ | Affection (action of process on interiority) |
+| $\gamma_{EL}$ | Evidence (logical connectedness in interiority) |
+| $\gamma_{EO}$ | Immanence (ground within interiority) |
+| $\gamma_{EU}$ | Synthesis (integration of interior content into the whole) |
 
-## Формула сознательности
+## Consciousness formula
 
-Каноническая мера сознательности ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)):
+The canonical measure of consciousness ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)):
 
 $$
 C = \Phi \times R
 $$
 
-где:
-- $\Phi$ — [интеграция](./dimension-u#мера-интеграции-φ): $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$
-- $R$ — [рефлексия](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R = 1/(7P)$
+where:
+- $\Phi$ — [integration](./dimension-u#мера-интеграции-φ): $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$
+- $R$ — [reflection](/docs/consciousness/foundations/self-observation#мера-рефлексии-r): $R = 1/(7P)$
 
-$D_{\text{diff}} \geq 2$ — **отдельное** условие [полной жизнеспособности](/docs/core/dynamics/viability#полная-жизнеспособность):
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, где $S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)$
-- Вычислима в 7D: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ ([T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128))
+$D_{\text{diff}} \geq 2$ is a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность):
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, where $S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)$
+- Computable in 7D: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ ([T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128))
 
-:::note О нотации
-$D_{\text{diff}}$ — мера **дифференциации** опыта. Не путать с измерением **D (Динамика)**.
+:::note On notation
+$D_{\text{diff}}$ is a measure of **differentiation** of experience. Not to be confused with dimension **D (Dynamics)**.
 :::
 
-### Тензорная факторизация для D_diff {#tensor-factorization-ddiff}
+### Tensor factorisation for D_diff {#tensor-factorization-ddiff}
 
-:::warning Две формулы D_diff и их согласованность
-**42D определение** (каноническое):
+:::warning Two formulas for D_diff and their consistency
+**42D definition** (canonical):
 
 $$
 D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E)), \quad S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)
 $$
 
-Требует вычисления $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ — частичного следа, определённого **только** в расширенном формализме $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, поскольку $\mathbb{C}^7$ не факторизуется (7 — простое). Это **нелинейная** функция, зависящая от собственных значений $\rho_E$. Подробное обсуждение проблемы факторизации: [Вычисление редуцированного состояния](#вычисление-rho-e).
+Requires computing $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ — the partial trace defined **only** in the extended formalism $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, since $\mathbb{C}^7$ does not factorise (7 is prime). This is a **nonlinear** function depending on the eigenvalues of $\rho_E$. Detailed discussion of the factorisation problem: [Computing the reduced state](#вычисление-rho-e).
 
-**7D формула [Т-128]** (вычислительный маршрут):
+**7D formula [Т-128]** (computational route):
 
 $$
 D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-где $\mathrm{Coh}_E(\Gamma)$ — [E-когерентность](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-проекция, **[Т]**). Это **линейная** интерполяция: $D_{\text{diff}}^{7D} \in [1, N]$.
+where $\mathrm{Coh}_E(\Gamma)$ — [E-coherence](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-projection, **[Т]**). This is a **linear** interpolation: $D_{\text{diff}}^{7D} \in [1, N]$.
 
-**Согласованность [Т]:**
+**Consistency [Т]:**
 
-Две формулы **точно совпадают** на границах:
-- $\mathrm{Coh}_E = 0 \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = 1$ (чистое состояние, один компонент)
-- $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = N$ (максимальная дифференциация)
+The two formulas **exactly coincide** at the boundaries:
+- $\mathrm{Coh}_E = 0 \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = 1$ (pure state, one component)
+- $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow D_{\text{diff}}^{42D} = D_{\text{diff}}^{7D} = N$ (maximal differentiation)
 
-В промежуточной области расхождение составляет $O((\mathrm{Coh}_E)^2)$: экспоненциальная функция $\exp(S_{vN})$ нелинейна по спектру $\rho_E$, тогда как 7D-формула линейна по $\mathrm{Coh}_E$. Однако для **всех пороговых условий** ($D_{\text{diff}} \geq D_{\min} = 2$) обе формулы дают **тождественный результат**.
+In the intermediate region the discrepancy is $O((\mathrm{Coh}_E)^2)$: the exponential function $\exp(S_{vN})$ is nonlinear in the spectrum of $\rho_E$, whereas the 7D formula is linear in $\mathrm{Coh}_E$. However, for **all threshold conditions** ($D_{\text{diff}} \geq D_{\min} = 2$) both formulas give **identical results**.
 
-**Редуцированная мера сознательности** (для случаев, когда $D_{\text{diff}}$ не вычисляется явно):
+**Reduced consciousness measure** (for cases where $D_{\text{diff}}$ is not computed explicitly):
 
 $$
 C_{\min} := \Phi \times R
 $$
 
-При $D_{\text{diff}} = D_{\min} = 2$ (пороговое значение) эта мера корректно классифицирует системы:
-- $C_{\min} \geq 1/3 \Leftrightarrow \Phi \geq 1$ и $R \geq 1/3$ ⟹ L2
-- $C_{\min} < 1/3$ ⟹ L0 или L1
+At $D_{\text{diff}} = D_{\min} = 2$ (threshold value) this measure correctly classifies systems:
+- $C_{\min} \geq 1/3 \Leftrightarrow \Phi \geq 1$ and $R \geq 1/3$ ⟹ L2
+- $C_{\min} < 1/3$ ⟹ L0 or L1
 :::
 
-**Диапазон $D_{\text{diff}}$:**
-- $S_{vN} \in [0, \log N]$ для $N$-мерной системы
+**Range of $D_{\text{diff}}$:**
+- $S_{vN} \in [0, \log N]$ for an $N$-dimensional system
 - $D_{\text{diff}} = \exp(S_{vN}) \in [1, N]$
-- Минимум ($D_{\text{diff}} = 1$): чистое состояние, один компонент опыта
-- Максимум ($D_{\text{diff}} = N$): максимально смешанное состояние, равновероятные компоненты
+- Minimum ($D_{\text{diff}} = 1$): pure state, one component of experience
+- Maximum ($D_{\text{diff}} = N$): maximally mixed state, equiprobable components
 
-### Порог дифференциации $D_{\min} = 2$
+### Differentiation threshold $D_{\min} = 2$
 
-**Обоснование:** Когнитивные квалиа требуют **различения** — минимум два различимых компонента опыта.
+**Justification:** Cognitive qualia require **distinction** — at minimum two distinguishable components of experience.
 
 $$
 D_{\text{diff}} \geq D_{\min} = 2 \Leftrightarrow S_{vN}(\rho_E) \geq \log 2
 $$
 
-**Геометрическая интерпретация:** $S_{vN} = \log 2$ соответствует состоянию с эффективной размерностью 2 (два равновероятных компонента). Это минимум для:
-1. **Различения** — должно быть что различать (минимум 2 качества)
-2. **Выбора** — должна быть возможность выбора между альтернативами
-3. **Информации** — минимум 1 бит феноменального содержания
+**Geometric interpretation:** $S_{vN} = \log 2$ corresponds to a state with effective dimension 2 (two equiprobable components). This is the minimum for:
+1. **Distinction** — there must be something to distinguish (at minimum 2 qualities)
+2. **Choice** — there must be the possibility of choosing between alternatives
+3. **Information** — at minimum 1 bit of phenomenal content
 
-:::note Связь с теорией информации
-$D_{\min} = 2$ означает, что когнитивный доступ требует минимум 1 бит информации в феноменальном содержании. Система, переживающая только одно неразличимое качество ($D_{\text{diff}} = 1$), не имеет материала для рефлексии.
+:::note Connection with information theory
+$D_{\min} = 2$ means that cognitive access requires at minimum 1 bit of information in the phenomenal content. A system experiencing only one indistinguishable quality ($D_{\text{diff}} = 1$) has no material for reflection.
 :::
 
-**Порог сознательности** **[Т T-140]:**
+**Consciousness threshold** **[Т T-140]:**
 
 $$
 C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
 $$
 
-при отдельном условии жизнеспособности $D_{\text{diff}} \geq D_{\min} = 2$.
+with the separate viability condition $D_{\text{diff}} \geq D_{\min} = 2$.
 
-### Октонионный контекст {#октонионный-контекст}
+### Octonionic context {#октонионный-контекст}
 
-:::note Октонионное соответствие [И]
-Измерению соответствует $e_5 \in \mathrm{Im}(\mathbb{O})$. Детали, $G_2$-оговорка и Фано-триплеты: [Октонионная интерпретация](./dimensions#октонионная-интерпретация), [структурный вывод](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [И]
+The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. Details, the $G_2$ caveat and Fano triplets: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---
 
-**Связанные документы:**
-- [Логика (L)](./dimension-l) — предыдущее измерение
-- [Основание (O)](./dimension-o) — следующее измерение
-- [Иерархия интериорности](../../proofs/consciousness/interiority-hierarchy) — формальные определения L0→L1→L2→L3→L4
-- [Теория интериорности](/docs/consciousness/foundations/interiority-theory) — полная математическая теория
-- [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) — онтология интериорности
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — мера рефлексии R
-- [Операционализация](/docs/proofs/consciousness/operationalization) — вывод D_diff и порогов
+**Related documents:**
+- [Logic (L)](./dimension-l) — previous dimension
+- [Ground (O)](./dimension-o) — next dimension
+- [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) — formal definitions L0→L1→L2→L3→L4
+- [Theory of interiority](/docs/consciousness/foundations/interiority-theory) — complete mathematical theory
+- [Two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) — ontology of interiority
+- [Self-observation](/docs/consciousness/foundations/self-observation) — reflection measure R
+- [Operationalisation](/docs/proofs/consciousness/operationalization) — derivation of D_diff and thresholds

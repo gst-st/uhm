@@ -1,725 +1,725 @@
 ---
 sidebar_position: 6
-title: "Составные системы и Gap-запутанность"
+title: "Composite Systems and Gap-Entanglement"
 slug: /core/dynamics/composite-systems
-description: "Составная матрица когерентности Γ_AB, межсистемный Gap, граница Холево, Gap-запутанность, эмпатия, РГ-поток, эмерджентная геометрия 3+1, G₂-многообразия, Gap-кривизна"
+description: "Composite coherence matrix Γ_AB, inter-system Gap, Holevo bound, Gap-entanglement, empathy, RG flow, emergent 3+1 geometry, G₂-manifolds, Gap-curvature"
 ---
 
-# Составные системы и Gap-запутанность
+# Composite Systems and Gap-Entanglement
 
-**Что происходит, когда два голонома встречаются?** До сих пор мы рассматривали одиночный голоном — его матрицу когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, эволюцию, жизнеспособность, Gap. Но реальный мир состоит из **множества** взаимодействующих систем: людей, клеток, организмов. Эта глава описывает, как формализуется взаимодействие голономов и какие новые явления при этом возникают.
+**What happens when two holonoms meet?** So far we have considered a single holonom — its coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, evolution, viability, and Gap. But the real world consists of **many** interacting systems: people, cells, organisms. This chapter describes how the interaction of holonoms is formalized and what new phenomena arise in the process.
 
-Читатель узнает:
-- Как описать составную систему двух голономов (матрица $\Gamma_{AB} \in \mathcal{D}(\mathbb{C}^{49})$)
-- Что такое **межсистемный Gap** и почему он определяет «непрозрачность» между двумя существами
-- Почему **граница Холево** запрещает полное понимание через внешнее наблюдение
-- Что такое **Gap-запутанность** и как она формализует эмпатию
-- Как из Gap-структуры возникает **геометрия пространства-времени** 3+1
+The reader will learn:
+- How to describe a composite system of two holonoms (matrix $\Gamma_{AB} \in \mathcal{D}(\mathbb{C}^{49})$)
+- What the **inter-system Gap** is and why it determines the "opacity" between two beings
+- Why the **Holevo bound** prohibits complete understanding through external observation
+- What **Gap-entanglement** is and how it formalizes empathy
+- How **spacetime geometry** 3+1 emerges from the Gap structure
 
-:::tip Интуитивное объяснение
-Представьте двух музыкантов, которые начинают играть вместе. Каждый из них — отдельный «голоном» со своей внутренней структурой (мелодия, ритм, эмоции). Когда они играют порознь, каждый описывается своей матрицей $\Gamma_A$ и $\Gamma_B$.
+:::tip Intuitive Explanation
+Imagine two musicians who start playing together. Each of them is a separate "holonom" with its own internal structure (melody, rhythm, emotions). When they play separately, each is described by its own matrix $\Gamma_A$ and $\Gamma_B$.
 
-Но когда они **играют вместе**, возникает нечто новое — **запутанность**. Их игра перестаёт быть простой суммой двух сольных партий. Появляются совместные эффекты: гармония, контрапункт, синхронизация ритмов — всё это невозможно описать, глядя на каждого музыканта отдельно.
+But when they **play together**, something new arises — **entanglement**. Their playing ceases to be a simple sum of two solo parts. Joint effects appear: harmony, counterpoint, rhythmic synchronization — all of this is impossible to describe by looking at each musician separately.
 
-Составная матрица $\Gamma_{AB}$ содержит **49 межсистемных Gap-каналов** — для каждой пары измерений (одно от $A$, другое от $B$). Если $\mathrm{Gap}_{AB}(E_A, E_B) \approx 0$ — их интериорности «прозрачны» друг для друга: музыканты «чувствуют» эмоции партнёра. Если Gap велик — они играют каждый «в своём мире», не слыша друг друга.
+The composite matrix $\Gamma_{AB}$ contains **49 inter-system Gap channels** — for each pair of dimensions (one from $A$, one from $B$). If $\mathrm{Gap}_{AB}(E_A, E_B) \approx 0$ — their interiorities are "transparent" to each other: the musicians "feel" the partner's emotions. If the Gap is large — they each play "in their own world", not hearing each other.
 :::
 
-:::info Источники
-Данная страница систематизирует результаты по составным системам (межсистемный Gap, Gap-запутанность, эмпатия) и мосту голономия → стрела времени (РГ-поток, эмерджентная геометрия 3+1, $G_2$-многообразия и компактификация, Gap-кривизна и кривизна пространства-времени).
+:::info Sources
+This page systematizes results on composite systems (inter-system Gap, Gap-entanglement, empathy) and the bridge holonomy → arrow of time (RG flow, emergent 3+1 geometry, $G_2$-manifolds and compactification, Gap-curvature and spacetime curvature).
 :::
 
 ---
 
-## 1. Составная матрица когерентности {#составная-матрица}
+## 1. Composite Coherence Matrix {#составная-матрица}
 
-### Тензорное произведение голономов
+### Tensor Product of Holonoms
 
-Для двух [голономов](../structure/holon) $\mathfrak{H}_A$ и $\mathfrak{H}_B$ с матрицами когерентности $\Gamma_A, \Gamma_B \in \mathcal{D}(\mathbb{C}^7)$ составная система описывается матрицей плотности на тензорном произведении:
+For two [holonoms](../structure/holon) $\mathfrak{H}_A$ and $\mathfrak{H}_B$ with coherence matrices $\Gamma_A, \Gamma_B \in \mathcal{D}(\mathbb{C}^7)$, the composite system is described by a density matrix on the tensor product:
 
 $$
 \Gamma_{AB} \in \mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7) = \mathcal{D}(\mathbb{C}^{49})
 $$
 
-Тензорное произведение (а не прямая сумма) необходимо для описания **запутанности** между голономами: в прямой сумме $\mathbb{C}^7 \oplus \mathbb{C}^7 = \mathbb{C}^{14}$ запутанность невозможна по определению.
+The tensor product (not the direct sum) is necessary for describing **entanglement** between holonoms: in the direct sum $\mathbb{C}^7 \oplus \mathbb{C}^7 = \mathbb{C}^{14}$, entanglement is impossible by definition.
 
-:::info Два типа тензорных произведений в УГМ
-В теории используются два различных тензорных произведения:
+:::info Two Types of Tensor Products in UHM
+The theory uses two distinct tensor products:
 
-1. **Межголонное** (данная страница): $\mathcal{H}_A \otimes \mathcal{H}_B = \mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ — описывает запутанность между двумя голономами. Каждый $\mathbb{C}^7$ — не разложимое тензорно подпространство (7 — простое число).
+1. **Inter-holonom** (this page): $\mathcal{H}_A \otimes \mathcal{H}_B = \mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ — describes entanglement between two holonoms. Each $\mathbb{C}^7$ is a non-factorable tensor subspace (7 is prime).
 
-2. **Внутриголонное** (расширенный формализм): $\mathcal{H}_{\text{ext}} = \bigotimes_i \mathcal{H}_i$ с $\dim(\mathcal{H}_i) \geq 1$ — позволяет определить [частичный след](/docs/core/dynamics/coherence-matrix#два-уровня-формализации) $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ внутри одного голонома. Используется для вычисления $D_{\text{diff}}$.
+2. **Intra-holonom** (extended formalism): $\mathcal{H}_{\text{ext}} = \bigotimes_i \mathcal{H}_i$ with $\dim(\mathcal{H}_i) \geq 1$ — allows defining the [partial trace](/docs/core/dynamics/coherence-matrix#два-уровня-формализации) $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ within a single holonom. Used for computing $D_{\text{diff}}$.
 
-Частный случай внутриголонного разложения — [Пейдж–Вуттерс](/docs/core/dynamics/coherence-matrix#тензорное-расширение-page-wootters): $\mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$.
+A special case of the intra-holonom decomposition is [Page–Wootters](/docs/core/dynamics/coherence-matrix#тензорное-расширение-page-wootters): $\mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$.
 :::
 
-:::warning Прямая сумма vs тензорное произведение
-- **Прямая сумма** $\mathcal{H}_A \oplus \mathcal{H}_B = \mathbb{C}^{14}$: подсистемы **независимы**, запутанность невозможна, нет нелокальных корреляций. Блочно-диагональное представление $\Gamma_A \oplus \Gamma_B$ описывает классическую смесь, а не составную квантовую систему.
-- **Тензорное произведение** $\mathcal{H}_A \otimes \mathcal{H}_B = \mathbb{C}^{49}$: подсистемы **могут быть запутаны**, полный набор квантовых корреляций. Именно этот формализм используется в УГМ для составных систем.
+:::warning Direct Sum vs Tensor Product
+- **Direct sum** $\mathcal{H}_A \oplus \mathcal{H}_B = \mathbb{C}^{14}$: subsystems are **independent**, entanglement is impossible, no nonlocal correlations. The block-diagonal representation $\Gamma_A \oplus \Gamma_B$ describes a classical mixture, not a composite quantum system.
+- **Tensor product** $\mathcal{H}_A \otimes \mathcal{H}_B = \mathbb{C}^{49}$: subsystems **can be entangled**, full set of quantum correlations. This is the formalism used in UHM for composite systems.
 
-Блочная запись $\Gamma_{AB}$ в виде $2 \times 2$ блочной матрицы (см. ниже) — это **нотационное удобство** для визуализации структуры $49 \times 49$ матрицы через проекцию на подпространства $A$ и $B$, а не утверждение о прямой сумме.
+The block notation of $\Gamma_{AB}$ as a $2 \times 2$ block matrix (see below) is a **notational convenience** for visualizing the structure of the $49 \times 49$ matrix through projection onto subspaces $A$ and $B$, not a statement about a direct sum.
 :::
 
-### Определение (Composite Coherence Matrix)
+### Definition (Composite Coherence Matrix)
 
-Для двух систем $A$ и $B$ составная матрица когерентности:
+For two systems $A$ and $B$, the composite coherence matrix:
 
 $$
 \Gamma_{AB} \in \mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7)
 $$
 
-В блочной нотации (проекция на подпространства $A$, $B$):
+In block notation (projection onto subspaces $A$, $B$):
 
 $$
-\Gamma_{AB} \xrightarrow{\text{блочная запись}} \begin{pmatrix} \Gamma_A & \Gamma_{A \leftrightarrow B} \\ \Gamma_{A \leftrightarrow B}^\dagger & \Gamma_B \end{pmatrix}
+\Gamma_{AB} \xrightarrow{\text{block notation}} \begin{pmatrix} \Gamma_A & \Gamma_{A \leftrightarrow B} \\ \Gamma_{A \leftrightarrow B}^\dagger & \Gamma_B \end{pmatrix}
 $$
 
-где:
+where:
 
-- $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB}) \in \mathbb{C}^{7 \times 7}$ — [матрица когерентности](./coherence-matrix) системы $A$ (частичный след по $B$)
-- $\Gamma_B = \mathrm{Tr}_A(\Gamma_{AB}) \in \mathbb{C}^{7 \times 7}$ — матрица когерентности системы $B$
-- $\Gamma_{A \leftrightarrow B} \in \mathbb{C}^{7 \times 7}$ — **межсистемная матрица когерентности** (корреляционный блок)
+- $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB}) \in \mathbb{C}^{7 \times 7}$ — [coherence matrix](./coherence-matrix) of system $A$ (partial trace over $B$)
+- $\Gamma_B = \mathrm{Tr}_A(\Gamma_{AB}) \in \mathbb{C}^{7 \times 7}$ — coherence matrix of system $B$
+- $\Gamma_{A \leftrightarrow B} \in \mathbb{C}^{7 \times 7}$ — **inter-system coherence matrix** (correlation block)
 
-:::note О блочной записи
-Блочная $14 \times 14$ запись — проекция полной $49 \times 49$ матрицы на одноэкситонные подпространства $\mathrm{span}\{|i^A\rangle \otimes |0^B\rangle\}$ и $\mathrm{span}\{|0^A\rangle \otimes |j^B\rangle\}$. Она корректно описывает маргиналы $\Gamma_A$, $\Gamma_B$ и межсистемные когерентности первого порядка $\gamma_{i^A j^B}$, но не захватывает все $49^2$ элементов полной матрицы. Для полного описания запутанности необходима $49 \times 49$ матрица.
+:::note On Block Notation
+The block $14 \times 14$ notation is a projection of the full $49 \times 49$ matrix onto the single-excitation subspaces $\mathrm{span}\{|i^A\rangle \otimes |0^B\rangle\}$ and $\mathrm{span}\{|0^A\rangle \otimes |j^B\rangle\}$. It correctly describes the marginals $\Gamma_A$, $\Gamma_B$ and first-order inter-system coherences $\gamma_{i^A j^B}$, but does not capture all $49^2$ elements of the full matrix. For a complete description of entanglement, a $49 \times 49$ matrix is required.
 :::
 
-### Свойства составной матрицы
+### Properties of the Composite Matrix
 
-| Свойство | Формулировка | Следствие |
+| Property | Statement | Corollary |
 |----------|--------------|-----------|
-| Эрмитовость | $\Gamma_{AB}^\dagger = \Gamma_{AB}$ | Собственные значения вещественны |
-| Положительность | $\Gamma_{AB} \geq 0$ | Корректная матрица плотности |
-| Нормировка | $\mathrm{Tr}(\Gamma_{AB}) = 1$ | Вероятностная интерпретация |
-| Факторизация | Нет запутанности $\Leftrightarrow \Gamma_{AB} = \Gamma_A \otimes \Gamma_B$ | Системы некоррелированы |
+| Hermiticity | $\Gamma_{AB}^\dagger = \Gamma_{AB}$ | Eigenvalues are real |
+| Positivity | $\Gamma_{AB} \geq 0$ | Valid density matrix |
+| Normalization | $\mathrm{Tr}(\Gamma_{AB}) = 1$ | Probabilistic interpretation |
+| Factorization | No entanglement $\Leftrightarrow \Gamma_{AB} = \Gamma_A \otimes \Gamma_B$ | Systems are uncorrelated |
 
-Межсистемная матрица $\Gamma_{A \leftrightarrow B}$ содержит **все** корреляции между системами: как классические, так и квантовые. Её элементы $\gamma_{i^A j^B}$ описывают когерентность между измерением $i$ системы $A$ и измерением $j$ системы $B$.
+The inter-system matrix $\Gamma_{A \leftrightarrow B}$ contains **all** correlations between systems: both classical and quantum. Its elements $\gamma_{i^A j^B}$ describe the coherence between dimension $i$ of system $A$ and dimension $j$ of system $B$.
 
 ---
 
-## 2. Межсистемный Gap {#межсистемный-gap}
+## 2. Inter-system Gap {#межсистемный-gap}
 
-### Определение Gap-каналов
+### Definition of Gap Channels
 
-:::tip Определение 7.1 (Межсистемный Gap) [О]
-Для каждой пары $(i \in A, j \in B)$ определяется межсистемный Gap:
+:::tip Definition 7.1 (Inter-system Gap) [О]
+For each pair $(i \in A, j \in B)$ the inter-system Gap is defined:
 
 $$
 \mathrm{Gap}_{AB}(i,j) := |\sin(\arg(\gamma_{i^A j^B}))| \in [0, 1]
 $$
 
-Всего $7 \times 7 = 49$ межсистемных Gap-каналов.
+Total: $7 \times 7 = 49$ inter-system Gap channels.
 :::
 
-**Интерпретация:**
+**Interpretation:**
 
-| $\mathrm{Gap}_{AB}(i,j)$ | Значение |
+| $\mathrm{Gap}_{AB}(i,j)$ | Meaning |
 |---|---|
-| $= 0$ | Измерения $i^A$ и $j^B$ полностью прозрачны друг для друга |
-| $\in (0, 1)$ | Частичная непрозрачность — зазор между внешним и внутренним |
-| $= 1$ | Максимальный зазор — полная непрозрачность |
+| $= 0$ | Dimensions $i^A$ and $j^B$ are fully transparent to each other |
+| $\in (0, 1)$ | Partial opacity — a gap between external and internal |
+| $= 1$ | Maximum gap — full opacity |
 
-### Межсистемный Gap-оператор
+### Inter-system Gap Operator
 
-**Определение:**
+**Definition:**
 
 $$
 \hat{\mathcal{G}}_{AB} = \mathrm{Im}(\Gamma_{A \leftrightarrow B}) \in \mathbb{R}^{7 \times 7}
 $$
 
-**Ключевое отличие от внутреннего Gap:**
+**Key difference from internal Gap:**
 
-| Свойство | Внутренний $\hat{\mathcal{G}}$ | Межсистемный $\hat{\mathcal{G}}_{AB}$ |
+| Property | Internal $\hat{\mathcal{G}}$ | Inter-system $\hat{\mathcal{G}}_{AB}$ |
 |---|---|---|
-| Структура | $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ (антисимметричный) | Произвольная вещественная матрица |
-| Ранг | $\leq 3$ (из эрмитовости $\Gamma$) | $0 \leq \mathrm{rank} \leq 7$ |
-| Интерпретация | Внутренний зазор системы | Непрозрачность между системами |
+| Structure | $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ (antisymmetric) | Arbitrary real matrix |
+| Rank | $\leq 3$ (from Hermiticity of $\Gamma$) | $0 \leq \mathrm{rank} \leq 7$ |
+| Interpretation | Internal gap of the system | Opacity between systems |
 
-**Сингулярные значения** $\hat{\mathcal{G}}_{AB}$:
+**Singular values** of $\hat{\mathcal{G}}_{AB}$:
 
 $$
 \sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_7 \geq 0
 $$
 
-Ранг оператора $\hat{\mathcal{G}}_{AB}$ — это **ранг межсистемной непрозрачности** (от 0 до 7):
+The rank of operator $\hat{\mathcal{G}}_{AB}$ is the **rank of inter-system opacity** (from 0 to 7):
 
-- $\mathrm{rank} = 0$: полная прозрачность (идеальная эмпатия)
-- $\mathrm{rank} = 7$: максимальная непрозрачность (полная изоляция)
+- $\mathrm{rank} = 0$: full transparency (ideal empathy)
+- $\mathrm{rank} = 7$: maximum opacity (complete isolation)
 
-### G₂-структура межсистемного Gap
+### G₂ Structure of the Inter-system Gap
 
-Оператор $\hat{\mathcal{G}}_{AB}$ трансформируется как $(7) \otimes (7)$ представления $G_2 \times G_2$:
+The operator $\hat{\mathcal{G}}_{AB}$ transforms as the $(7) \otimes (7)$ representation of $G_2 \times G_2$:
 
 $$
 (7) \otimes (7) = (1) \oplus (7) \oplus (14) \oplus (27)
 $$
 
-| Представление | Размерность | Физический смысл |
+| Representation | Dimension | Physical Meaning |
 |---|---|---|
-| $(1)$ | 1 | Синглет = полная межсистемная непрозрачность $\mathrm{Tr}(\hat{\mathcal{G}}_{AB})$ |
-| $(7)$ | 7 | Вектор асимметрии Gap |
-| $(14)$ | 14 | $\mathfrak{g}_2$-компонента (калибровочная) |
-| $(27)$ | 27 | Симметричный бесследовый тензор |
+| $(1)$ | 1 | Singlet = total inter-system opacity $\mathrm{Tr}(\hat{\mathcal{G}}_{AB})$ |
+| $(7)$ | 7 | Gap asymmetry vector |
+| $(14)$ | 14 | $\mathfrak{g}_2$-component (gauge) |
+| $(27)$ | 27 | Symmetric traceless tensor |
 
 ---
 
-## 3. Граница Холево для понимания {#граница-холево}
+## 3. Holevo Bound for Understanding {#граница-холево}
 
-:::tip Теорема 7.2 (Граница Холево для понимания) [Т]
-Количество информации, доступное системе $A$ о системе $B$ через внешние наблюдения, ограничено сверху:
+:::tip Theorem 7.2 (Holevo Bound for Understanding) [Т]
+The amount of information accessible to system $A$ about system $B$ through external observations is bounded above:
 
 $$
 \chi(B \to A) := S(\bar{\rho}_B) - \sum_x p_x S(\rho_B^{(x)}) \leq S(\bar{\rho}_B)
 $$
 
-Следствие для Gap:
+Corollary for Gap:
 
 $$
 I_{\mathrm{accessible}}(A \to B) \leq S_{vN}(\rho_B^{\mathrm{ext}})
 $$
 
-где $\rho_B^{\mathrm{ext}} = \mathrm{Map}_{\mathrm{ext}}(\Gamma_B)$.
+where $\rho_B^{\mathrm{ext}} = \mathrm{Map}_{\mathrm{ext}}(\Gamma_B)$.
 :::
 
-### Интерпретация
+### Interpretation
 
-Внутренняя часть $\mathrm{Map}_{\mathrm{int}}(\Gamma_B)$ — [внутренний аспект](../../physics/dual-aspect/gap-semantics) — **принципиально недоступна** через внешние наблюдения.
+The internal part $\mathrm{Map}_{\mathrm{int}}(\Gamma_B)$ — the [internal aspect](../../physics/dual-aspect/gap-semantics) — is **in principle inaccessible** through external observations.
 
-**Полное понимание** возможно **только** через разделённый $\mathrm{Map}_{\mathrm{int}}$ — эмпатию, резонанс. Это не метафора: граница Холево — строгая теоретико-информационная теорема, запрещающая извлечение внутренней информации внешними измерениями.
+**Complete understanding** is possible **only** through a shared $\mathrm{Map}_{\mathrm{int}}$ — empathy, resonance. This is not a metaphor: the Holevo bound is a rigorous information-theoretic theorem prohibiting the extraction of internal information by external measurements.
 
-| Тип знания | Ограничение | Механизм |
+| Type of knowledge | Bound | Mechanism |
 |---|---|---|
-| Внешнее наблюдение | $\leq S_{vN}(\rho_B^{\mathrm{ext}})$ | Граница Холево |
-| Эмпатическое понимание | Доступ к $\mathrm{Map}_{\mathrm{int}}$ | Через Gap-запутанность |
-| Полное понимание | $\mathrm{Map}_{\mathrm{ext}} + \mathrm{Map}_{\mathrm{int}}$ | Требует $\mathrm{Gap}_{AB} \to 0$ |
+| External observation | $\leq S_{vN}(\rho_B^{\mathrm{ext}})$ | Holevo bound |
+| Empathic understanding | Access to $\mathrm{Map}_{\mathrm{int}}$ | Via Gap-entanglement |
+| Complete understanding | $\mathrm{Map}_{\mathrm{ext}} + \mathrm{Map}_{\mathrm{int}}$ | Requires $\mathrm{Gap}_{AB} \to 0$ |
 
 ---
 
-## 4. Gap-запутанность {#gap-запутанность}
+## 4. Gap-Entanglement {#gap-запутанность}
 
-### Определение (Gap-entanglement)
+### Definition (Gap-entanglement)
 
 $$
 \mathcal{E}_{\mathrm{Gap}} := S_{vN}(\Gamma_A) + S_{vN}(\Gamma_B) - S_{vN}(\Gamma_{AB})
 $$
 
-Два [голонома](../structure/holon) **Gap-запутаны**, если:
+Two [holonoms](../structure/holon) are **Gap-entangled** if:
 
 $$
 \Gamma_{AB} \neq \Gamma_A \otimes \Gamma_B
 $$
 
-То есть составная матрица не факторизуется — существуют нетривиальные квантовые корреляции.
+That is, the composite matrix does not factorize — non-trivial quantum correlations exist.
 
-### Неравенство взаимного понимания
+### Mutual Understanding Inequality
 
-:::warning Теорема 3.2 (Неравенство взаимного понимания) [Г]
+:::warning Theorem 3.2 (Mutual Understanding Inequality) [Г]
 $$
 \sum_{i,j} \mathrm{Gap}_{AB}(i,j)^2 \geq C(P_A, P_B) \cdot \left(1 - \frac{\mathcal{E}_{\mathrm{Gap}}}{\mathcal{E}_{\max}}\right)
 $$
 
-где $\mathcal{E}_{\max} = \min(S_{vN}(\Gamma_A), S_{vN}(\Gamma_B))$.
+where $\mathcal{E}_{\max} = \min(S_{vN}(\Gamma_A), S_{vN}(\Gamma_B))$.
 :::
 
-**Альтернативная форма:**
+**Alternative form:**
 
 $$
 \sum_{i,j} \mathrm{Gap}_{AB}(i,j) \geq 49 - \frac{S_{vN}(\Gamma_A) + S_{vN}(\Gamma_B)}{S_{\max}}
 $$
 
-### Интерпретация неравенства
+### Interpretation of the Inequality
 
-| Режим | $\mathcal{E}_{\mathrm{Gap}}$ | Минимальный Gap | Значение |
+| Regime | $\mathcal{E}_{\mathrm{Gap}}$ | Minimum Gap | Meaning |
 |---|---|---|---|
-| Высокая запутанность | $\to \mathcal{E}_{\max}$ | $\to 0$ | Системы могут быть прозрачны друг для друга |
-| Низкая запутанность | $\to 0$ | $\geq C(P_A, P_B)$ | Непрозрачность неизбежна |
-| Сепарабельное состояние | $= 0$ | Максимальный | Полное отсутствие взаимного доступа к $\mathrm{Map}_{\mathrm{int}}$ |
+| High entanglement | $\to \mathcal{E}_{\max}$ | $\to 0$ | Systems can be transparent to each other |
+| Low entanglement | $\to 0$ | $\geq C(P_A, P_B)$ | Opacity is unavoidable |
+| Separable state | $= 0$ | Maximum | Complete absence of mutual access to $\mathrm{Map}_{\mathrm{int}}$ |
 
-**Фундаментальный смысл:** неравенство устанавливает количественную связь между квантовыми корреляциями (запутанностью) и возможностью межсистемного понимания (прозрачностью Gap). Это формализация идеи: «для подлинного понимания нужна реальная связь».
+**Fundamental meaning:** the inequality establishes a quantitative connection between quantum correlations (entanglement) and the possibility of inter-system understanding (Gap transparency). This is the formalization of the idea: "genuine understanding requires a real connection".
 
 ---
 
-## 5. Коллективный фазовый переход {#коллективный-переход}
+## 5. Collective Phase Transition {#коллективный-переход}
 
-:::tip Теорема 3.3 (Коллективный Gap-фазовый переход) [Т]
-Для $N$ взаимодействующих голономов:
+:::tip Theorem 3.3 (Collective Gap Phase Transition) [Т]
+For $N$ interacting holonoms:
 
-**(a) Слабое взаимодействие:** независимые Gap-профили, индивидуальные $T_c$.
+**(a) Weak interaction:** independent Gap profiles, individual $T_c$.
 
-**(b) Сильное взаимодействие:** синхронизированный Gap, единая коллективная критическая температура:
+**(b) Strong interaction:** synchronized Gap, a single collective critical temperature:
 
 $$
 T_c^{(\mathrm{coll})} = T_c^{(\mathrm{indiv})} \cdot \left(1 + \frac{(N-1)\bar{\sigma}^2}{\mu^2}\right)
 $$
 
-где:
+where:
 
 $$
 \bar{\sigma}^2 = \frac{1}{N(N-1)} \sum_{A \neq B} \mathrm{Tr}(\hat{\mathcal{G}}_{AB}^2)
 $$
 
-**(c)** Коллективная $T_c^{(\mathrm{coll})} > T_c^{(\mathrm{indiv})}$: взаимодействие **стабилизирует** упорядоченную Gap-фазу.
+**(c)** Collective $T_c^{(\mathrm{coll})} > T_c^{(\mathrm{indiv})}$: interaction **stabilizes** the ordered Gap phase.
 :::
 
-### Интерпретация
+### Interpretation
 
-Социальные группы поддерживают структурированную непрозрачность (роли, границы, иерархии) при условиях, где изолированный индивид перешёл бы в неупорядоченную фазу. Это математическая формализация **социальной стабильности**:
+Social groups maintain structured opacity (roles, boundaries, hierarchies) under conditions where an isolated individual would have transitioned to a disordered phase. This is the mathematical formalization of **social stability**:
 
-| Параметр | Изолированный голоном | Группа из $N$ голономов |
+| Parameter | Isolated holonom | Group of $N$ holonoms |
 |---|---|---|
-| Критическая температура | $T_c^{(\mathrm{indiv})}$ | $T_c^{(\mathrm{coll})} > T_c^{(\mathrm{indiv})}$ |
-| Gap-структура | Индивидуальная | Коллективно синхронизирована |
-| Устойчивость | Низкая | Высокая (усилена взаимодействием) |
-| Аналогия | Одинокий человек | Коллектив с социальными нормами |
+| Critical temperature | $T_c^{(\mathrm{indiv})}$ | $T_c^{(\mathrm{coll})} > T_c^{(\mathrm{indiv})}$ |
+| Gap structure | Individual | Collectively synchronized |
+| Stability | Low | High (enhanced by interaction) |
+| Analogy | Lone individual | Collective with social norms |
 
 ---
 
-## 6. Эмпатическая прозрачность {#эмпатия}
+## 6. Empathic Transparency {#эмпатия}
 
-### Определение (Empathic transparency)
+### Definition (Empathic Transparency)
 
-Голоном $A$ **эмпатически прозрачен** для $B$ в канале $(i,j)$, если:
+Holonom $A$ is **empathically transparent** to $B$ in channel $(i,j)$ if:
 
 $$
-\mathrm{Gap}_{AB}(i,j) < \epsilon \quad \text{и} \quad |\gamma_{i^A j^B}| > \delta
+\mathrm{Gap}_{AB}(i,j) < \epsilon \quad \text{and} \quad |\gamma_{i^A j^B}| > \delta
 $$
 
-То есть зазор мал ($< \epsilon$), а когерентность значительна ($> \delta$).
+That is, the gap is small ($< \epsilon$) and the coherence is significant ($> \delta$).
 
-### Необходимые условия эмпатии
+### Necessary Conditions for Empathy
 
-:::tip Теорема 4.1 (Необходимые условия эмпатии) [Т]
-Эмпатическая прозрачность между $A$ и $B$ требует **одновременного** выполнения:
+:::tip Theorem 4.1 (Necessary Conditions for Empathy) [Т]
+Empathic transparency between $A$ and $B$ requires the **simultaneous** fulfillment of:
 
-**(a) Gap-запутанность:** $\mathcal{E}_{\mathrm{Gap}} > 0$ — системы не могут быть сепарабельными.
+**(a) Gap-entanglement:** $\mathcal{E}_{\mathrm{Gap}} > 0$ — the systems cannot be separable.
 
-**(b) Координация φ:** $\theta^{\mathrm{target}}_{i^A} \approx \theta^{\mathrm{target}}_{j^B} \pmod{\pi}$ — координированные мировые модели.
+**(b) φ-coordination:** $\theta^{\mathrm{target}}_{i^A} \approx \theta^{\mathrm{target}}_{j^B} \pmod{\pi}$ — coordinated world models.
 
-**(c) Жизнеспособность:** $P_A > P_{\mathrm{crit}}$ и $P_B > P_{\mathrm{crit}}$ — обе системы [жизнеспособны](./viability).
+**(c) Viability:** $P_A > P_{\mathrm{crit}}$ and $P_B > P_{\mathrm{crit}}$ — both systems are [viable](./viability).
 
-**(d) Взаимная когерентность:** $|\gamma_{i^A j^B}| > \sqrt{P_{\mathrm{crit}} / 7}$ — достаточная сила связи.
+**(d) Mutual coherence:** $|\gamma_{i^A j^B}| > \sqrt{P_{\mathrm{crit}} / 7}$ — sufficient connection strength.
 :::
 
-### Интерпретация
+### Interpretation
 
-Эмпатия — это **физическое состояние**, требующее:
+Empathy is a **physical state** requiring:
 
-| Условие | Физический смысл | Формальное требование |
+| Condition | Physical Meaning | Formal Requirement |
 |---|---|---|
-| (a) Запутанность | Квантовые корреляции между системами | $\mathcal{E}_{\mathrm{Gap}} > 0$ |
-| (b) Координация | Согласованные мировые модели | Фазы целевых состояний совпадают |
-| (c) Жизнеспособность | Достаточная когерентность для рефлексии | $P > P_{\mathrm{crit}} = 2/7$ |
-| (d) Связь | Реальная межсистемная когерентность | $\lvert\gamma_{i^A j^B}\rvert > \sqrt{2/49}$ |
+| (a) Entanglement | Quantum correlations between systems | $\mathcal{E}_{\mathrm{Gap}} > 0$ |
+| (b) Coordination | Consistent world models | Phases of target states coincide |
+| (c) Viability | Sufficient coherence for reflection | $P > P_{\mathrm{crit}} = 2/7$ |
+| (d) Connection | Real inter-system coherence | $\lvert\gamma_{i^A j^B}\rvert > \sqrt{2/49}$ |
 
-Нарушение **любого** из четырёх условий делает эмпатическую прозрачность невозможной. Это объясняет, почему эмпатия — редкий и хрупкий феномен: она требует совпадения нескольких независимых факторов.
+Violation of **any** of the four conditions makes empathic transparency impossible. This explains why empathy is a rare and fragile phenomenon: it requires the coincidence of several independent factors.
 
 ---
 
-## 7. Замыкание моста: голономия → стрела времени {#мост-голономия}
+## 7. Bridge Closure: Holonomy → Arrow of Time {#мост-голономия}
 
-### Нетривиальная голономия из феноменологии
+### Non-trivial Holonomy from Phenomenology
 
-:::tip Теорема 1.1 (Феноменология подразумевает нетривиальную голономию) [Т]
-Если выполнен постулат (PH) — $\rho_E \neq I / \dim$ (состояние не максимально смешанное в измерении [E](../structure/dimension-e)), то расслоение Серра обладает нетривиальной голономией:
+:::tip Theorem 1.1 (Phenomenology Implies Non-trivial Holonomy) [Т]
+If postulate (PH) holds — $\rho_E \neq I / \dim$ (the state is not maximally mixed in dimension [E](../structure/dimension-e)), then the Serre fibration has non-trivial holonomy:
 
 $$
 \mathrm{Hol}(C) \neq \mathrm{id}_{\mathcal{F}_{\mathrm{int}}}
 $$
 
-**Доказательство:** Кривизна $\propto \mathrm{Gap} > 0$ → теорема Амброуза-Зингера → нетривиальная голономия. $\square$
+**Proof:** Curvature $\propto \mathrm{Gap} > 0$ → Ambrose–Singer theorem → non-trivial holonomy. $\square$
 :::
 
-### Голономия подразумевает стрелу времени
+### Holonomy Implies Arrow of Time
 
-:::tip Теорема 1.2 (Нетривиальная голономия подразумевает стрелу времени) [Т]
-PT-преобразование действует на связность как $A_{ij} \to -A_{ij}$, следовательно:
+:::tip Theorem 1.2 (Non-trivial Holonomy Implies Arrow of Time) [Т]
+PT-transformation acts on the connection as $A_{ij} \to -A_{ij}$, therefore:
 
 $$
 PT[\mathrm{Hol}(C)] = \mathrm{Hol}(C)^{-1} \neq \mathrm{Hol}(C)
 $$
 
-Прошлое и будущее **различимы** через голономию.
+Past and future are **distinguishable** via holonomy.
 :::
 
-### Стрела → V₃ ≠ 0
+### Arrow → V₃ ≠ 0
 
-:::tip Теорема 1.3 (Стрела → V₃ ≠ 0) [Т]
-$V_3$ — единственный PT-нечётный член в потенциале $V_{\mathrm{Gap}}$:
+:::tip Theorem 1.3 (Arrow → V₃ ≠ 0) [Т]
+$V_3$ is the only PT-odd term in the potential $V_{\mathrm{Gap}}$:
 
 $$
 V_3 \propto \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})
 $$
 
-При PT-преобразовании: $V_3 \to -V_3$. Стрела времени требует $V_3 \neq 0$ → ассоциатор $\neq 0$ → [Аксиома P2](../foundations/axiom-septicity). Статус повышен до [Т] в составе полной цепочки [T15](/docs/core/operators/lindblad-operators#замыкание-моста).
+Under PT-transformation: $V_3 \to -V_3$. The arrow of time requires $V_3 \neq 0$ → associator $\neq 0$ → [Axiom P2](../foundations/axiom-septicity). Status elevated to [Т] as part of the complete chain [T15](/docs/core/operators/lindblad-operators#замыкание-моста).
 :::
 
-### Полная цепочка моста
+### Complete Bridge Chain
 
-:::tip Теорема 1.4 (Полная цепочка моста) [Т]
+:::tip Theorem 1.4 (Complete Bridge Chain) [Т]
 $$
 (AP) + (PH) + (QG) + (V) \implies P1 + P2
 $$
 
-Все шаги доказаны **[Т]** — полная цепочка из 12 шагов (T1–T16). Подробности: [T15 — замыкание моста](/docs/core/operators/lindblad-operators#замыкание-моста).
+All steps are proven **[Т]** — complete chain of 12 steps (T1–T16). Details: [T15 — bridge closure](/docs/core/operators/lindblad-operators#замыкание-моста).
 :::
 
-**Схема цепочки** (сокращённая; полная 12-шаговая версия — в [T15](/docs/core/operators/lindblad-operators#замыкание-моста)):
+**Chain diagram** (abbreviated; full 12-step version — in [T15](/docs/core/operators/lindblad-operators#замыкание-моста)):
 
 ```
 (AP) + (PH) + (QG) + (V)
-  ↓  [Т] Теорема 1.1 — нетривиальная голономия
-  ↓  [Т] Теорема 1.2 — стрела времени
-  ↓  [Т] Теорема 1.3 — V₃ ≠ 0, ассоциатор ≠ 0
-  ↓  [Т] T11–T13 — ранг Хои, L-унификация, BIBD(7,3,1)
-  ↓  [Т] Октонионная структура, dim = 7
+  ↓  [Т] Theorem 1.1 — non-trivial holonomy
+  ↓  [Т] Theorem 1.2 — arrow of time
+  ↓  [Т] Theorem 1.3 — V₃ ≠ 0, associator ≠ 0
+  ↓  [Т] T11–T13 — Hoy rank, L-unification, BIBD(7,3,1)
+  ↓  [Т] Octonionic structure, dim = 7
   ↓  [Т] P1 + P2
 ```
 
 ---
 
-## 8. РГ-поток параметров Gap {#рг-поток}
+## 8. RG Flow of Gap Parameters {#рг-поток}
 
-### Бета-функции
+### Beta Functions
 
-:::tip Теорема 2.1 (Бета-функции) [Т]
+:::tip Theorem 2.1 (Beta Functions) [Т]
 
-**(a) Масса:**
+**(a) Mass:**
 
 $$
 \beta_{\mu^2} = -\frac{21\lambda_4}{8\pi^2}\mu^2 + \frac{7\lambda_3^2}{16\pi^2}
 $$
 
-**(b) Кубическое взаимодействие:**
+**(b) Cubic interaction:**
 
 $$
 \beta_{\lambda_3} = -\frac{15\lambda_3 \lambda_4}{8\pi^2}
 $$
 
-**(c) Квартичное взаимодействие:**
+**(c) Quartic interaction:**
 
 $$
 \beta_{\lambda_4} = \frac{3\lambda_4^2}{4\pi^2} \cdot 21 - \frac{7\lambda_3^2}{8\pi^2 \mu^2}
 $$
 :::
 
-### Неподвижные точки РГ-потока
+### Fixed Points of the RG Flow
 
-:::tip Теорема 2.2 (Неподвижные точки РГ-потока) [Т]
+:::tip Theorem 2.2 (Fixed Points of the RG Flow) [Т]
 
-**(a) Гауссова:** $\mu^2 = 0, \lambda_3 = 0, \lambda_4 = 0$ — **неустойчива**.
+**(a) Gaussian:** $\mu^2 = 0, \lambda_3 = 0, \lambda_4 = 0$ — **unstable**.
 
-**(b) Вильсон-Фишер:** $\lambda_3 = 0, \lambda_4^* = \frac{4\pi^2}{63}$ — **ИК-устойчива**.
+**(b) Wilson–Fisher:** $\lambda_3 = 0, \lambda_4^* = \frac{4\pi^2}{63}$ — **IR-stable**.
 
-**(c) Октонионная:** **не существует** на однопетлевом уровне.
+**(c) Octonionic:** **does not exist** at the one-loop level.
 :::
 
-**Фундаментальное следствие:** $V_3$ — ИК-нерелевантен. Стрела Gap = **УФ-эффект**, подавленный на коллективном уровне. Это означает, что стрела времени (через $V_3 \neq 0$) проявляется на микроскопическом уровне, но ренормализуется к нулю при переходе к макроскопическим масштабам.
+**Fundamental corollary:** $V_3$ is IR-irrelevant. The Gap arrow = a **UV effect**, suppressed at the collective level. This means that the arrow of time (via $V_3 \neq 0$) manifests at the microscopic level but renormalizes to zero when passing to macroscopic scales.
 
-### Связь с критическими явлениями
+### Connection with Critical Phenomena
 
-:::tip Теорема 2.3 (Связь с критическими явлениями) [Т]
+:::tip Theorem 2.3 (Connection with Critical Phenomena) [Т]
 
-**(a)** Фазовый переход I ↔ II при $\mu^2 = 0$.
+**(a)** Phase transition I ↔ II at $\mu^2 = 0$.
 
-**(b)** Класс универсальности Вильсон-Фишера: $\nu \approx 1/2$.
+**(b)** Wilson–Fisher universality class: $\nu \approx 1/2$.
 
-**(c)** Аномальная размерность $\eta \approx 0$.
+**(c)** Anomalous dimension $\eta \approx 0$.
 :::
 
-### Физическая картина РГ-потока
+### Physical Picture of the RG Flow
 
 ```
-УФ (микро)                              ИК (макро)
+UV (micro)                              IR (macro)
 ──────────────────────────────────────────────────→
 λ₃ ≠ 0                                   λ₃ → 0
-V₃ ≠ 0 (стрела)                          V₃ → 0
-Октонионная структура                     Вильсон-Фишер
-Нарушение ассоциативности                 Эффективная ассоциативность
-dim = 7 (фундаментальная)                 Эффективная размерность
+V₃ ≠ 0 (arrow)                           V₃ → 0
+Octonionic structure                      Wilson–Fisher
+Violation of associativity               Effective associativity
+dim = 7 (fundamental)                    Effective dimension
 ```
 
 ---
 
-## 9. Эмерджентная геометрия 3+1 {#геометрия-3+1}
+## 9. Emergent 3+1 Geometry {#геометрия-3+1}
 
-### Разложение Im(𝕆) под SU(3)
+### Decomposition of Im(𝕆) under SU(3)
 
-:::tip Теорема 5.1 (Разложение Im(𝕆) под SU(3) ⊂ G₂) [Т]
+:::tip Theorem 5.1 (Decomposition of Im(𝕆) under SU(3) ⊂ G₂) [Т]
 
 $$
 \mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{C}^3
 $$
 
-Под действием $SU(3)$:
+Under the action of $SU(3)$:
 
 $$
 7 = 1 + 3 + \bar{3}
 $$
 :::
 
-**Разложение по представлениям:**
+**Decomposition by representations:**
 
-| Представление | Пространство | Размерность (вещ.) | Роль |
+| Representation | Space | Dimension (real) | Role |
 |---|---|---|---|
-| $1$ (синглет) | $\mathbb{R}^1$ | 1 | Направление O-измерения |
-| $3$ | $\mathbb{C}^3$ | 6 | Три комплексных пространственных направления |
-| $\bar{3}$ | $\overline{\mathbb{C}^3}$ | (сопряжённое к $3$) | |
+| $1$ (singlet) | $\mathbb{R}^1$ | 1 | Direction of O-dimension |
+| $3$ | $\mathbb{C}^3$ | 6 | Three complex spatial directions |
+| $\bar{3}$ | $\overline{\mathbb{C}^3}$ | (conjugate to $3$) | |
 
-### Время из O, пространство из ⊥
+### Time from O, Space from ⊥
 
-:::warning Теорема 5.2 (Время из O, пространство из ⊥) [Г] → результат доказан [Т] через спектральную тройку (T-83)
+:::warning Theorem 5.2 (Time from O, Space from ⊥) [Г] → result proven [Т] via spectral triple (T-83)
 
-**(a)** $\mathbb{R}^1$ = O-измерение ([Основание](../structure/dimension-o)), часовая подсистема (Пейдж–Вуттерс).
+**(a)** $\mathbb{R}^1$ = O-dimension ([Ground](../structure/dimension-o)), clock subsystem (Page–Wootters).
 
-**(b)** $\mathbb{C}^3 \to$ эффективное пространство:
+**(b)** $\mathbb{C}^3 \to$ effective space:
 
 $$
 d_{\mathrm{space}} = \frac{1}{2} \dim_{\mathbb{R}}(\mathbb{C}^3) = 3
 $$
 
-**(c)** Лоренцева сигнатура $(1,3)$:
+**(c)** Lorentzian signature $(1,3)$:
 
 $$
 ds^2 = d\tau^2 - |dz_1|^2 - |dz_2|^2 - |dz_3|^2
 $$
 
-O-направление стабилизировано $SU(3)$ (время), пространственные направления вращаются под $SU(3)$.
+The O-direction is stabilized by $SU(3)$ (time), spatial directions rotate under $SU(3)$.
 :::
 
-### Механизм эмерджентности 3+1
+### Mechanism of 3+1 Emergence
 
-**Шаг 1:** Семь мнимых единиц октонионов $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ — фундаментальное пространство [семи измерений](../structure/dimensions).
+**Step 1:** Seven imaginary units of the octonions $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ — the fundamental space of the [seven dimensions](../structure/dimensions).
 
-**Шаг 2:** Группа автоморфизмов $G_2 = \mathrm{Aut}(\mathbb{O})$ содержит максимальную подгруппу $SU(3) \subset G_2$.
+**Step 2:** The automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$ contains the maximal subgroup $SU(3) \subset G_2$.
 
-**Шаг 3:** Выбор O-измерения (часовой переменной) фиксирует подгруппу $SU(3)$, стабилизирующую одно направление.
+**Step 3:** The choice of O-dimension (clock variable) fixes the subgroup $SU(3)$ stabilizing one direction.
 
-**Шаг 4:** Под действием $SU(3)$ оставшиеся 6 вещественных направлений группируются в $\mathbb{C}^3$ — три комплексных координаты.
+**Step 4:** Under the action of $SU(3)$, the remaining 6 real directions group into $\mathbb{C}^3$ — three complex coordinates.
 
-**Шаг 5:** Комплексная структура определяет метрику Кэлера, дающую Лоренцеву сигнатуру $(1,3)$.
+**Step 5:** The complex structure defines a Kähler metric yielding Lorentzian signature $(1,3)$.
 
-### Связь с физикой
+### Connection with Physics
 
-| Элемент | В 𝕆-разложении | В физике |
+| Element | In 𝕆-decomposition | In physics |
 |---|---|---|
-| $\mathbb{R}^1$ (синглет) | O-направление | Время |
-| $\mathbb{C}^3$ ($3 + \bar{3}$) | Ортогональное дополнение | 3D пространство |
-| $SU(3)$ | Стабилизатор O | Калибровочная группа цвета ([КХД](../../physics/gauge-symmetry/standard-model)) |
-| $G_2$ | Полная симметрия | Объединяющая группа УГМ |
+| $\mathbb{R}^1$ (singlet) | O-direction | Time |
+| $\mathbb{C}^3$ ($3 + \bar{3}$) | Orthogonal complement | 3D space |
+| $SU(3)$ | Stabilizer of O | Gauge group of color ([QCD](../../physics/gauge-symmetry/standard-model)) |
+| $G_2$ | Full symmetry | Unifying group of UHM |
 
-:::info Замечание
-Эмерджентность сигнатуры $(1,3)$ из $G_2 \supset SU(3)$ — одно из наиболее нетривиальных предсказаний УГМ. Пространство-время **не постулируется**, а возникает из алгебраической структуры октонионов через выбор часовой переменной. Подробнее: [Эмерджентная геометрия](../../physics/gravity/emergent-geometry).
+:::info Remark
+The emergence of signature $(1,3)$ from $G_2 \supset SU(3)$ is one of the most non-trivial predictions of UHM. Spacetime is **not postulated**, but arises from the algebraic structure of the octonions through the choice of a clock variable. Details: [Emergent Geometry](../../physics/gravity/emergent-geometry).
 :::
 
-### $G_2$-многообразия и связь с М-теорией
+### $G_2$-Manifolds and Connection with M-Theory
 
-:::tip Теорема 5.3 ($G_2$-многообразия и компактификация) [Т]
+:::tip Theorem 5.3 ($G_2$-Manifolds and Compactification) [Т]
 
-**(a)** М-теория определена в 11 измерениях. Компактификация на $G_2$-многообразие:
+**(a)** M-theory is defined in 11 dimensions. Compactification on a $G_2$-manifold:
 
 $$
 11 = 4 + 7
 $$
 
-даёт 4D пространство-время с $N = 1$ суперсимметрией.
+gives a 4D spacetime with $N = 1$ supersymmetry.
 
-**(b)** В УГМ: 7 внутренних [измерений](../structure/dimensions) голонома **тождественны** с 7D компактной частью. Голоном — «точка» в дополнительных измерениях.
+**(b)** In UHM: the 7 internal [dimensions](../structure/dimensions) of the holonom are **identical** to the 7D compact part. The holonom is a "point" in the extra dimensions.
 
-**(c)** Метрика $G_2$-многообразия определяется Gap-профилем:
+**(c)** The metric of the $G_2$-manifold is determined by the Gap profile:
 
 $$
 g_{ij}^{(7)} \propto |\gamma_{ij}|^2 + \mathrm{Gap}(i,j)^2
 $$
 
-Голономия многообразия $\mathrm{Hol}(g) = G_2$ — в точности автоморфизмы октонионов.
+The holonomy of the manifold $\mathrm{Hol}(g) = G_2$ — precisely the automorphisms of the octonions.
 :::
 
-### Космологическая постоянная из Gap
+### Cosmological Constant from Gap
 
-:::warning Теорема 5.3(d) (Космологическая постоянная из непрозрачности O-канала) [Г] → O-доминирование Λ доказано [Т] (T-84)
+:::warning Theorem 5.3(d) (Cosmological Constant from O-Channel Opacity) [Г] → O-dominance of Λ proven [Т] (T-84)
 
 $$
 \Lambda \propto \mathcal{G}_{\mathrm{total}}^{(O)} := \sum_{i} \mathrm{Gap}(O, i)^2 \cdot |\gamma_{Oi}|^2
 $$
 
-— суммарная непрозрачность O-измерения. Малость $\Lambda$ означает высокую прозрачность O-канала: время «почти точно наблюдаемо».
+— total opacity of the O-dimension. The smallness of $\Lambda$ means high transparency of the O-channel: time is "almost exactly observable".
 :::
 
-:::info Замечание
-Связь $\Lambda \sim \mathrm{Tr}(\Gamma_O \cdot H)$ подробно рассматривается в [космологической постоянной](../../physics/gravity/cosmological-constant). Для реалистичной конфигурации требуется вычислить $\mathcal{G}_{\mathrm{total}}^{(O)}$ и сравнить с наблюдаемым значением $\Lambda \sim 10^{-122}$ в планковских единицах — это **открытая проблема**.
+:::info Remark
+The connection $\Lambda \sim \mathrm{Tr}(\Gamma_O \cdot H)$ is discussed in detail in [cosmological constant](../../physics/gravity/cosmological-constant). For a realistic configuration, one needs to compute $\mathcal{G}_{\mathrm{total}}^{(O)}$ and compare with the observed value $\Lambda \sim 10^{-122}$ in Planck units — this is an **open problem**.
 :::
 
 ---
 
-## 10. Gap-кривизна и кривизна пространства-времени {#gap-кривизна}
+## 10. Gap-Curvature and Spacetime Curvature {#gap-кривизна}
 
-### Связь кривизн
+### Connection of Curvatures
 
-:::tip Теорема 6.1 (Связь Gap-кривизны с кривизной пространства-времени) [Т]
+:::tip Theorem 6.1 (Connection of Gap-Curvature with Spacetime Curvature) [Т]
 
-**(a)** Gap-кривизна — тензор $\mathcal{R}_{ij,kl}$ на 21-мерном пространстве когерентностей (кривизна расслоения Серра).
+**(a)** Gap-curvature — tensor $\mathcal{R}_{ij,kl}$ on the 21-dimensional space of coherences (curvature of the Serre fibration).
 
-**(b)** Проекция на пространственные направления (из разложения $7 = 1 + 3 + \bar{3}$, [Теорема 5.1](#геометрия-3+1)) даёт 4D кривизну:
+**(b)** Projection onto spatial directions (from the decomposition $7 = 1 + 3 + \bar{3}$, [Theorem 5.1](#геометрия-3+1)) gives 4D curvature:
 
 $$
 R_{\mu\nu\rho\sigma}^{(4D)} = \sum_{i \in \mu,\, j \in \nu,\, k \in \rho,\, l \in \sigma} \mathcal{R}_{ij,kl}
 $$
 
-где суммирование — по измерениям голонома, принадлежащим данному 4D направлению.
+where the summation is over dimensions of the holonom belonging to the given 4D direction.
 
-**(c)** Тензор Риччи:
-
-$$
-R_{\mu\nu}^{(4D)} = g^{\rho\sigma} R_{\mu\nu\rho\sigma}^{(4D)} \propto \sum_{k,l \in \text{простр.}} \mathrm{Gap}(k,l) \cdot |\gamma_{kl}|
-$$
-
-**(d)** Скалярная кривизна:
+**(c)** Ricci tensor:
 
 $$
-R^{(4D)} \propto \mathcal{G}_{\mathrm{total}}^{(\mathrm{простр.})}
+R_{\mu\nu}^{(4D)} = g^{\rho\sigma} R_{\mu\nu\rho\sigma}^{(4D)} \propto \sum_{k,l \in \text{spatial}} \mathrm{Gap}(k,l) \cdot |\gamma_{kl}|
 $$
 
-— пропорциональна суммарному Gap в пространственном секторе.
+**(d)** Scalar curvature:
+
+$$
+R^{(4D)} \propto \mathcal{G}_{\mathrm{total}}^{(\mathrm{spatial})}
+$$
+
+— proportional to the total Gap in the spatial sector.
 :::
 
-**Следствие:** Плоское пространство ($R = 0$) соответствует нулевому Gap в пространственных когерентностях. Кривизна пространства-времени **порождается** непрозрачностью между пространственными измерениями голонома.
+**Corollary:** Flat space ($R = 0$) corresponds to zero Gap in the spatial coherences. Spacetime curvature is **generated** by the opacity between the spatial dimensions of the holonom.
 
-### Уравнения Эйнштейна из Gap-вариации
+### Einstein Equations from Gap Variation
 
-:::warning Гипотеза 6.1 (Уравнения Эйнштейна из Gap-вариации) [Г] → полный вывод через спектральное действие [Т] (T-65)
-Вариация Gap-действия $S_{\mathrm{Gap}}$ по пространственной метрике $g_{\mu\nu}$ даёт уравнения Эйнштейна:
+:::warning Hypothesis 6.1 (Einstein Equations from Gap Variation) [Г] → full derivation via spectral action [Т] (T-65)
+Variation of the Gap action $S_{\mathrm{Gap}}$ with respect to the spatial metric $g_{\mu\nu}$ gives the Einstein equations:
 
 $$
 \frac{\delta S_{\mathrm{Gap}}}{\delta g_{\mu\nu}} = 0 \quad \Longrightarrow \quad R_{\mu\nu} - \frac{1}{2}g_{\mu\nu}R + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}
 $$
 
-где гравитационная постоянная связана с параметрами Gap:
+where the gravitational constant is connected to Gap parameters:
 
 $$
-G \propto \frac{1}{\mu^2 \cdot |\gamma_{\mathrm{простр.}}|^2}
+G \propto \frac{1}{\mu^2 \cdot |\gamma_{\mathrm{spatial}}|^2}
 $$
 :::
 
-:::info Замечание
-Для строгого вывода необходимо: (1) формализовать проекцию $S_{\mathrm{Gap}}$ на 4D сектор; (2) показать ковариантность проекции; (3) вычислить $T_{\mu\nu}$ через Gap-параметры. Подробнее: [Уравнения Эйнштейна](../../physics/gravity/einstein-equations).
+:::info Remark
+For a rigorous derivation one needs: (1) to formalize the projection of $S_{\mathrm{Gap}}$ onto the 4D sector; (2) to show covariance of the projection; (3) to compute $T_{\mu\nu}$ via Gap parameters. Details: [Einstein Equations](../../physics/gravity/einstein-equations).
 :::
 
 ---
 
-## 11. Топологическая защита Gap-вакуума {#топологическая-защита-вакуума}
+## 11. Topological Protection of the Gap Vacuum {#топологическая-защита-вакуума}
 
-### Постановка
+### Setup
 
-Gap-вакуум ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) стабилен динамически (положительно определённый гессиан). Данный раздел устанавливает **топологическую** защиту — невозможность непрерывной деформации вакуума в конфигурацию с $\mathrm{Gap} = 0$ без прохождения через фазовый переход.
+The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) is dynamically stable (positive-definite Hessian). This section establishes **topological** protection — the impossibility of continuously deforming the vacuum into a configuration with $\mathrm{Gap} = 0$ without passing through a phase transition.
 
-#### Теорема 11.1 / T-69 (Топологическая защита Gap-вакуума) [Т] {#теорема-тополог-защита}
+#### Theorem 11.1 / T-69 (Topological Protection of the Gap Vacuum) [Т] {#теорема-тополог-защита}
 
-:::tip Теорема 11.1
+:::tip Theorem 11.1
 
-**Утверждение.** Gap-вакуум (T-61 [Т]) топологически защищён: любой непрерывный путь из вакуумной конфигурации в конфигурацию с $\mathrm{Gap}(i,j) = 0$ для какой-либо пары $(i,j)$ должен пройти через точку перехода с энергетическим барьером $\Delta V \geq 6\mu^2 > 0$.
+**Statement.** The Gap vacuum (T-61 [Т]) is topologically protected: any continuous path from the vacuum configuration to a configuration with $\mathrm{Gap}(i,j) = 0$ for some pair $(i,j)$ must pass through a transition point with an energy barrier $\Delta V \geq 6\mu^2 > 0$.
 :::
 
-**Доказательство (6 шагов).**
+**Proof (6 steps).**
 
-**Шаг 1 (Орбитная структура).** Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ действует на пространстве Gap-конфигураций $\mathcal{M}_{\mathrm{Gap}} \subset [0,1]^{21}$ через $\mathrm{Ad}(G_2)$. Стабилизатор вакуумной конфигурации (все $\mathrm{Gap}(i,j) > 0$, ранг непрозрачности максимален) — максимальный тор $T^2 \subset G_2$ ([#25](/docs/reference/status-registry) [Т]). Орбита вакуума: $G_2/T^2$.
+**Step 1 (Orbit structure).** The group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the space of Gap configurations $\mathcal{M}_{\mathrm{Gap}} \subset [0,1]^{21}$ via $\mathrm{Ad}(G_2)$. The stabilizer of the vacuum configuration (all $\mathrm{Gap}(i,j) > 0$, opacity rank maximal) is the maximal torus $T^2 \subset G_2$ ([#25](/docs/reference/status-registry) [Т]). Vacuum orbit: $G_2/T^2$.
 
-**Шаг 2 (Топологическая классификация).** Из точной последовательности гомотопий расслоения $T^2 \hookrightarrow G_2 \to G_2/T^2$ и простой связности $G_2$ ($\pi_1(G_2) = 0$):
+**Step 2 (Topological classification).** From the exact homotopy sequence of the fibration $T^2 \hookrightarrow G_2 \to G_2/T^2$ and simple connectivity of $G_2$ ($\pi_1(G_2) = 0$):
 
 $$
 \pi_2(G_2/T^2) \cong \pi_1(T^2) \cong \mathbb{Z}^2
 $$
 
-Gap-конфигурации максимального ранга топологически классифицированы числами намотки $(n_1, n_2) \in \mathbb{Z}^2$.
+Gap configurations of maximal rank are topologically classified by winding numbers $(n_1, n_2) \in \mathbb{Z}^2$.
 
-**Шаг 3 (Вакуум в тривиальном секторе).** Вакуум ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) — $G_2$-инвариантная точка с секторной параметризацией $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [Т] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). Из $G_2$-инвариантности: вакуум лежит в тривиальном топологическом секторе $(n_1, n_2) = (0, 0)$.
+**Step 3 (Vacuum in the trivial sector).** The vacuum ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) is a $G_2$-invariant point with sector parameterization $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [Т] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). From $G_2$-invariance: the vacuum lies in the trivial topological sector $(n_1, n_2) = (0, 0)$.
 
-**Шаг 4 (Энергетический барьер).** Для перехода к конфигурации с $\mathrm{Gap}(i,j) = 0$ (для какой-либо пары) необходимо изменить ранг стабилизатора: $T^2 \to H$ (с $\dim H > 2$). Это требует прохождения через критическую точку потенциала $V_{\mathrm{Gap}}$.
+**Step 4 (Energy barrier).** To transition to a configuration with $\mathrm{Gap}(i,j) = 0$ (for some pair), the stabilizer rank must change: $T^2 \to H$ (with $\dim H > 2$). This requires passing through a critical point of the potential $V_{\mathrm{Gap}}$.
 
-Из T-64 [Т], гессиан в вакууме строго положительно определён. Минимальное собственное значение:
+From T-64 [Т], the Hessian at the vacuum is strictly positive-definite. Minimum eigenvalue:
 
 $$
 \lambda_{\min}(H_{\mathrm{Gap}}) = 6\mu^2(1 + O(\varepsilon^2)) > 0
 $$
 
-Энергетический барьер для любого пути от вакуума к конфигурации со сменой стабилизатора:
+Energy barrier for any path from the vacuum to a configuration with a change of stabilizer:
 
 $$
 \Delta V \geq \frac{1}{2}\lambda_{\min} \cdot (\Delta\varepsilon)^2 \geq 6\mu^2 \cdot (\Delta\varepsilon_{\min})^2
 $$
 
-**Шаг 5 (Нижняя граница $\Delta\varepsilon_{\min}$).** Для конфайнмент-сектора: $\sin^2\theta_{3\bar{3}} = 1$ (вакуум) $\to$ $\sin^2\theta_{3\bar{3}} = 0$ ($\mathrm{Gap} = 0$). Это $\Delta\theta = \pi/2$. Энергетический барьер:
+**Step 5 (Lower bound on $\Delta\varepsilon_{\min}$).** For the confinement sector: $\sin^2\theta_{3\bar{3}} = 1$ (vacuum) $\to$ $\sin^2\theta_{3\bar{3}} = 0$ ($\mathrm{Gap} = 0$). This is $\Delta\theta = \pi/2$. Energy barrier:
 
 $$
 \Delta V_{3\bar{3}} = 9\mu^2 \cdot |\sin^2\theta_{3\bar{3}} - 1| = 9\mu^2
 $$
 
-Для O-секторных пар: $\mathrm{Gap}(O,i) \approx 1$ (вакуум) $\to$ $\mathrm{Gap}(O,i) = 0$ требует $\theta_{Oi} \to 0$. Барьер:
+For O-sector pairs: $\mathrm{Gap}(O,i) \approx 1$ (vacuum) $\to$ $\mathrm{Gap}(O,i) = 0$ requires $\theta_{Oi} \to 0$. Barrier:
 
 $$
 \Delta V_{Oi} = 12\mu^2 \cdot |\Delta\varepsilon_{Oi}|^2 \geq 12\mu^2 \varepsilon_0^2
 $$
 
-**Шаг 6 (Компактность).** Пространство конфигураций $(S^1)^{21}$ компактно. Единственность глобального минимума (T-64 [Т]) + положительность гессиана $\to$ вакуум отделён от любой конфигурации с нулевым Gap конечным энергетическим барьером. $\blacksquare$
+**Step 6 (Compactness).** The configuration space $(S^1)^{21}$ is compact. Uniqueness of the global minimum (T-64 [Т]) + positive-definiteness of the Hessian $\to$ the vacuum is separated from any configuration with zero Gap by a finite energy barrier. $\blacksquare$
 
-### Физическое значение
+### Physical Significance
 
-| Сектор | Барьер | Следствие |
+| Sector | Barrier | Corollary |
 |--------|--------|-----------|
-| Конфайнмент ($3 \to \bar{3}$) | $9\mu^2 \sim M_P^2$ | Конфайнмент невозможно «выключить» непрерывной деформацией |
-| O-сектор ($O \to i$) | $12\mu^2\varepsilon_0^2$ | Изоляция O-сектора устойчива |
-| Топологические солитоны | $(n_1, n_2) \neq (0,0)$ | Стабильны в силу $\pi_2(G_2/T^2) = \mathbb{Z}^2$ |
+| Confinement ($3 \to \bar{3}$) | $9\mu^2 \sim M_P^2$ | Confinement cannot be "switched off" by continuous deformation |
+| O-sector ($O \to i$) | $12\mu^2\varepsilon_0^2$ | Isolation of O-sector is stable |
+| Topological solitons | $(n_1, n_2) \neq (0,0)$ | Stable by virtue of $\pi_2(G_2/T^2) = \mathbb{Z}^2$ |
 
-:::info Следствие
-Стабильность всех физических предсказаний (массы, константы связи) **обоснована**: вакуум устойчив как динамически (T-64 [Т]), так и топологически (T-69 [Т]).
+:::info Corollary
+The stability of all physical predictions (masses, coupling constants) is **justified**: the vacuum is stable both dynamically (T-64 [Т]) and topologically (T-69 [Т]).
 :::
 
 ---
 
-## 12. Связь с другими разделами {#связи}
+## 12. Connection with Other Sections {#связи}
 
-### Фундаментальные определения
+### Fundamental Definitions
 
-| Понятие | Определяется в | Роль в данном разделе |
+| Concept | Defined in | Role in this section |
 |---|---|---|
-| Матрица когерентности $\Gamma$ | [Матрица когерентности](./coherence-matrix) | Базовый объект для $\Gamma_{AB}$ |
-| Gap-семантика | [49 элементов](../../physics/dual-aspect/gap-semantics) | $\mathrm{Gap}_{AB}(i,j)$ обобщает на межсистемный случай |
-| Жизнеспособность $P$ | [Жизнеспособность](./viability) | Условие (c) эмпатии: $P > P_{\mathrm{crit}}$ |
-| Оператор $\varphi$ | [Самонаблюдение](/docs/consciousness/foundations/self-observation) | Координация фаз в условии (b) |
-| Семь измерений | [Измерения](../structure/dimensions) | $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ |
-| O-измерение | [Основание](../structure/dimension-o) | Часовая подсистема для геометрии $3+1$ |
+| Coherence matrix $\Gamma$ | [Coherence matrix](./coherence-matrix) | Base object for $\Gamma_{AB}$ |
+| Gap semantics | [49 elements](../../physics/dual-aspect/gap-semantics) | $\mathrm{Gap}_{AB}(i,j)$ generalizes to the inter-system case |
+| Viability $P$ | [Viability](./viability) | Condition (c) of empathy: $P > P_{\mathrm{crit}}$ |
+| Operator $\varphi$ | [Self-observation](/docs/consciousness/foundations/self-observation) | Phase coordination in condition (b) |
+| Seven dimensions | [Dimensions](../structure/dimensions) | $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ |
+| O-dimension | [Ground](../structure/dimension-o) | Clock subsystem for 3+1 geometry |
 
-### Доказательства
+### Proofs
 
-| Результат | Доказательство |
+| Result | Proof |
 |---|---|
-| Эмерджентное время | [Теорема об эмерджентном времени](/docs/proofs/dynamics/emergent-time) |
-| Октонионная структура | [Теорема об октонионном выводе](/docs/proofs/minimality/theorem-octonionic-derivation) |
-| Критическая чистота | [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) |
-| Категорный формализм | [Категорный формализм](/docs/proofs/categorical/categorical-formalism) |
+| Emergent time | [Theorem on emergent time](/docs/proofs/dynamics/emergent-time) |
+| Octonionic structure | [Theorem on octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation) |
+| Critical purity | [Theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical) |
+| Categorical formalism | [Categorical formalism](/docs/proofs/categorical/categorical-formalism) |
 
-### Физические соответствия
+### Physical Correspondences
 
-| Тема | Страница |
+| Topic | Page |
 |---|---|
-| Калибровочные симметрии ($G_2$, $SU(3)$) | [G₂-структура](../../physics/gauge-symmetry/g2-structure) |
-| Стандартная модель | [Стандартная модель](../../physics/gauge-symmetry/standard-model) |
-| Эмерджентная геометрия | [Геометрия пространства-времени](../../physics/gravity/emergent-geometry) |
-| Уравнения Эйнштейна из Gap | [Уравнения Эйнштейна](../../physics/gravity/einstein-equations) |
-| Космологическая постоянная $\Lambda$ | [Космологическая постоянная](../../physics/gravity/cosmological-constant) |
-| Дзета-регуляризация | [ζ-регуляризация](../../physics/dual-aspect/zeta-regularization) |
-| Запрет сигнализации | [Эволюция Γ: запрет сигнализации](./evolution#запрет-сигнализации) |
+| Gauge symmetries ($G_2$, $SU(3)$) | [G₂-structure](../../physics/gauge-symmetry/g2-structure) |
+| Standard Model | [Standard Model](../../physics/gauge-symmetry/standard-model) |
+| Emergent geometry | [Spacetime geometry](../../physics/gravity/emergent-geometry) |
+| Einstein equations from Gap | [Einstein equations](../../physics/gravity/einstein-equations) |
+| Cosmological constant $\Lambda$ | [Cosmological constant](../../physics/gravity/cosmological-constant) |
+| Zeta-regularization | [ζ-regularization](../../physics/dual-aspect/zeta-regularization) |
+| No-signaling | [Evolution of Γ: no-signaling](./evolution#запрет-сигнализации) |
 
-### Смежные темы в динамике
+### Related Topics in Dynamics
 
-| Тема | Страница |
+| Topic | Page |
 |---|---|
-| Уравнение эволюции | [Эволюция Γ](./evolution) |
-| Расширение $\mathcal{R}$ на составные системы | [Эволюция Γ: расширение](./evolution#расширение-r-на-составные-системы) |
-| Операторы Линдблада | [Операторы Линдблада](../operators/lindblad-operators) |
-| РГ-поток и [Φ-оператор](../operators/phi-operator) | Связь через бета-функции |
+| Evolution equation | [Evolution of Γ](./evolution) |
+| Extension of $\mathcal{R}$ to composite systems | [Evolution of Γ: extension](./evolution#расширение-r-на-составные-системы) |
+| Lindblad operators | [Lindblad operators](../operators/lindblad-operators) |
+| RG flow and [Φ-operator](../operators/phi-operator) | Connection via beta functions |
 
 ---
 
-**Связанные документы:**
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — алгебраическая структура антисимметричной части Γ
-- [Эволюция Γ](/docs/core/dynamics/evolution) — уравнение движения и расширение ℛ на составные системы
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение Γ и мер чистоты/зазора
+**Related documents:**
+- [Gap operator](/docs/core/dynamics/gap-operator) — algebraic structure of the antisymmetric part of Γ
+- [Evolution of Γ](/docs/core/dynamics/evolution) — equation of motion and extension of ℛ to composite systems
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of Γ and measures of purity/gap
