@@ -74,7 +74,7 @@ Each of these approaches illuminates part of the picture, but none covers the wh
 
 ---
 
-## What Is Coherence Cybernetics
+## What Is Coherence Cybernetics {#что-такое-кибернетика-когерентности}
 
 **Coherence Cybernetics (CC)** is the only complete cybernetics strictly derivable from Unitary Holonomic Monism (UHM). It describes the dynamics of **any** systems — from elementary particles to biological organisms and social structures — through the evolution of the coherence matrix:
 

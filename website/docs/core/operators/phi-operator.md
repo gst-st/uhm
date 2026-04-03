@@ -127,7 +127,7 @@ A living self-model **must** preserve coherences: $\exists\, (i,j): [\varphi(\Ga
 
 ---
 
-## Canonical construction of φ_coh from the Fano structure
+## Canonical construction of φ_coh from the Fano structure {#каноническая-конструкция-φ_coh-из-фано-структуры}
 
 ### Why the Fano channel is needed: defocused vision {#интуиция-фано}
 

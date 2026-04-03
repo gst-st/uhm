@@ -1,454 +1,454 @@
 ---
 sidebar_position: 4
-title: "Gap-диагностика"
+title: "Gap Diagnostics"
 slug: /applied/research/gap-diagnostics
-description: "Карта прозрачности, диагностические паттерны, протокол дуального интервью, фазовая прогностика, коррекционные протоколы, окна прозрачности"
+description: "Transparency map, diagnostic patterns, dual interview protocol, phase forecasting, correction protocols, transparency windows"
 ---
 
-# Gap-диагностика
+# Gap Diagnostics
 
-:::info Для кого эта глава
-Прикладная методология Gap-диагностики: карта прозрачности, диагностические паттерны и протоколы коррекции для рассогласований между экстериорной и интериорной проекциями.
+:::info Who This Chapter Is For
+Applied methodology of Gap diagnostics: transparency map, diagnostic patterns, and correction protocols for misalignments between the exterior and interior projections.
 :::
 
 
-Gap-диагностика — прикладная методология на основе [меры зазора](/docs/physics/dual-aspect/gap-semantics) $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$, позволяющая оценить рассогласование между экстериорной и интериорной проекциями для каждой из 21 пары [семи измерений](/docs/core/structure/dimensions). Данный документ описывает карту прозрачности, диагностические паттерны и протоколы коррекции.
+Gap diagnostics is an applied methodology based on the [gap measure](/docs/physics/dual-aspect/gap-semantics) $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$, which allows one to assess the misalignment between the exterior and interior projections for each of the 21 pairs of [seven dimensions](/docs/core/structure/dimensions). This document describes the transparency map, diagnostic patterns, and correction protocols.
 
-:::warning Статус [И]
-Весь материал данного раздела имеет статус **интерпретации/приложения**. Gap-диагностика — операционализация математического формализма [матрицы когерентности](/docs/core/dynamics/coherence-matrix); эмпирическая валидация требует отдельной [исследовательской программы](/docs/applied/research/measurement-protocol).
+:::warning Status [I]
+All material in this section has the status of **interpretation/application**. Gap diagnostics is an operationalization of the mathematical formalism of the [coherence matrix](/docs/core/dynamics/coherence-matrix); empirical validation requires a separate [research program](/docs/applied/research/measurement-protocol).
 :::
 
-:::note Область применимости
-Gap как математическая мера ($|\sin\theta|$) определена для **любого голона**. Однако диагностические и коррекционные протоколы данного документа предполагают систему [уровня L2+](/docs/consciousness/hierarchy/interiority-hierarchy) (организмы с ЦНС), для которых интериорная проекция ($\mathrm{Map}_{\mathrm{int}}$) доступна через интроспективные отчёты.
+:::note Scope of Applicability
+Gap as a mathematical measure ($|\sin\theta|$) is defined for **any holon**. However, the diagnostic and correction protocols of this document assume a system of [level L2+](/docs/consciousness/hierarchy/interiority-hierarchy) (organisms with a CNS), for which the interior projection ($\mathrm{Map}_{\mathrm{int}}$) is accessible through introspective reports.
 :::
 
 ---
 
-## 1. Карта прозрачности {#карта-прозрачности}
+## 1. Transparency Map {#карта-прозрачности}
 
-### 1.1 Определение
+### 1.1 Definition
 
-Для конкретного голонома с матрицей когерентности $\Gamma$ вычисляется $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ для всех 21 пары. Результат визуализируется как **тепловая карта** $7 \times 7$:
+For a specific holon with coherence matrix $\Gamma$, $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ is computed for all 21 pairs. The result is visualized as a **heatmap** $7 \times 7$:
 
-| Зона | Gap | Цвет | Интерпретация |
-|------|-----|------|---------------|
-| Прозрачная | $\approx 0$ | Зелёная | Экстериорный и интериорный аспекты согласованы |
-| Переходная | $0.3$–$0.7$ | Жёлтая | Частичное рассогласование — зона роста |
-| Непрозрачная | $\approx 1$ | Красная | Полная диссоциация |
+| Zone | Gap | Color | Interpretation |
+|------|-----|-------|----------------|
+| Transparent | $\approx 0$ | Green | Exterior and interior aspects are aligned |
+| Transitional | $0.3$–$0.7$ | Yellow | Partial misalignment — zone of growth |
+| Opaque | $\approx 1$ | Red | Complete dissociation |
 
-### 1.2 Диагональ: 7 населённостей
+### 1.2 Diagonal: 7 Populations
 
-Диагональные элементы $\gamma_{ii} \in \mathbb{R}$ имеют $\mathrm{Gap} = 0$ тождественно — населённость есть **единственная величина**, полностью совпадающая между экстериорной и интериорной проекциями.
+The diagonal elements $\gamma_{ii} \in \mathbb{R}$ have $\mathrm{Gap} = 0$ identically — population is the **only quantity** that is completely coincident between the exterior and interior projections.
 
-| Элемент | [Измерение](/docs/core/structure/dimensions) | Экстериорное проявление | Интериорный аспект (L2+) |
-|---------|-----------|--------------------|-----------------------|
-| $\gamma_{AA}$ | [Артикуляция](/docs/core/structure/dimension-a) | Коммуникативная активность | Ясность различения |
-| $\gamma_{SS}$ | [Структура](/docs/core/structure/dimension-s) | Физическая устойчивость | Ощущение стабильности |
-| $\gamma_{DD}$ | [Динамика](/docs/core/structure/dimension-d) | Наблюдаемая активность | Ощущение энергии |
-| $\gamma_{LL}$ | [Логика](/docs/core/structure/dimension-l) | Когнитивная производительность | Ощущение ясности мысли |
-| $\gamma_{EE}$ | [Интериорность](/docs/core/structure/dimension-e) | Эмоциональная реактивность | Глубина переживания |
-| $\gamma_{OO}$ | [Основание](/docs/core/structure/dimension-o) | Жизненная сила | Ощущение укоренённости |
-| $\gamma_{UU}$ | [Единство](/docs/core/structure/dimension-u) | Поведенческая интегрированность | Ощущение целостности |
+| Element | [Dimension](/docs/core/structure/dimensions) | Exterior manifestation | Interior aspect (L2+) |
+|---------|-----------|----------------------|-----------------------|
+| $\gamma_{AA}$ | [Articulation](/docs/core/structure/dimension-a) | Communicative activity | Clarity of discrimination |
+| $\gamma_{SS}$ | [Structure](/docs/core/structure/dimension-s) | Physical stability | Sense of stability |
+| $\gamma_{DD}$ | [Dynamics](/docs/core/structure/dimension-d) | Observable activity | Sense of energy |
+| $\gamma_{LL}$ | [Logic](/docs/core/structure/dimension-l) | Cognitive performance | Sense of mental clarity |
+| $\gamma_{EE}$ | [Interiority](/docs/core/structure/dimension-e) | Emotional reactivity | Depth of experience |
+| $\gamma_{OO}$ | [Ground](/docs/core/structure/dimension-o) | Vitality | Sense of groundedness |
+| $\gamma_{UU}$ | [Unity](/docs/core/structure/dimension-u) | Behavioral integration | Sense of wholeness |
 
 ---
 
-## 2. Диагностические паттерны {#паттерны}
+## 2. Diagnostic Patterns {#паттерны}
 
-### 2.1 Основные паттерны
+### 2.1 Main Patterns
 
-| Паттерн | Gap-профиль | Клиническое описание |
+| Pattern | Gap profile | Clinical description |
 |---------|-------------|---------------------|
-| **Алекситимия** | $\mathrm{Gap}(S,E) \approx 1$ | Тело и переживание разорваны: пациент не чувствует тело |
-| **Невроз расщепления** | $\mathrm{Gap}(L,E) \approx 1$ | Логика и переживание разорваны: «всё понимает, но не чувствует» |
-| **Импульсивность** | $\mathrm{Gap}(D,L) \approx 1$ | Действие и логика разорваны: действует без размышления |
-| **Экзистенциальный кризис** | $\mathrm{Gap}(O,U) \approx 1$ | Источник и целое разорваны: потеря смысла |
-| **Аутентичность** | $\mathrm{Gap}(A,O) \approx 0$ | Различение и основание согласованы: «слова = суть» |
-| **Мудрость** | $\mathrm{Gap}(L,O) \approx 0$ | Логика и основание согласованы: укоренённое понимание |
+| **Alexithymia** | $\mathrm{Gap}(S,E) \approx 1$ | Body and experience are severed: the patient does not feel their body |
+| **Splitting neurosis** | $\mathrm{Gap}(L,E) \approx 1$ | Logic and experience are severed: "understands everything, but does not feel" |
+| **Impulsivity** | $\mathrm{Gap}(D,L) \approx 1$ | Action and logic are severed: acts without thinking |
+| **Existential crisis** | $\mathrm{Gap}(O,U) \approx 1$ | Source and whole are severed: loss of meaning |
+| **Authenticity** | $\mathrm{Gap}(A,O) \approx 0$ | Discrimination and ground are aligned: "words = essence" |
+| **Wisdom** | $\mathrm{Gap}(L,O) \approx 0$ | Logic and ground are aligned: grounded understanding |
 
-### 2.2 Систематика по Фано-линиям {#фано-паттерны}
+### 2.2 Systematics by Fano Lines {#фано-паттерны}
 
-Каждая пара $(i,j)$ однозначно определяет Фано-линию $(i,j,k)$ в $\mathrm{PG}(2,2)$. Поэтому диагностические паттерны естественно группируются по **7 Фано-линиям** (отображение $\phi_0$: A=1, S=2, D=3, L=4, E=5, U=6, O=7):
+Each pair $(i,j)$ uniquely determines a Fano line $(i,j,k)$ in $\mathrm{PG}(2,2)$. Therefore diagnostic patterns naturally group by **7 Fano lines** (mapping $\phi_0$: A=1, S=2, D=3, L=4, E=5, U=6, O=7):
 
-#### Линия 1: {A, S, L} — когнитивно-коммуникативная {#линия-asl}
+#### Line 1: {A, S, L} — cognitive-communicative {#линия-asl}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $A \leftrightarrow S$ | **Соматическая немота**: тело не поддерживает речь, разрыв выражения и ощущения | Телесная выразительность: тело «говорит» |
-| $A \leftrightarrow L$ | **Демагогия**: говорит, но не думает; или думает, но не формулирует | Ясная аргументация: слово = мысль |
-| $S \leftrightarrow L$ | **Когнитивное расщепление**: телесные ощущения и логика не согласованы | Воплощённая логика: мысль укоренена в теле |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $A \leftrightarrow S$ | **Somatic muteness**: the body does not support speech; rupture of expression and sensation | Bodily expressiveness: the body "speaks" |
+| $A \leftrightarrow L$ | **Demagoguery**: speaks without thinking; or thinks without formulating | Clear argumentation: word = thought |
+| $S \leftrightarrow L$ | **Cognitive splitting**: bodily sensations and logic are misaligned | Embodied logic: thought is rooted in the body |
 
-:::tip Триплетный паттерн {A,S,L}
-Если все три Gap на линии $\{A,S,L\}$ высокие — **когнитивная фрагментация** [И]: система артикулирует, структурирует и анализирует, но три процесса не связаны. Характерно для гиперинтеллектуализации при соматических расстройствах.
+:::tip Triplet Pattern {A,S,L}
+If all three Gaps on line $\{A,S,L\}$ are high — **cognitive fragmentation** [I]: the system articulates, structures, and analyzes, but the three processes are not connected. Characteristic of hyperintellectualization in somatic disorders.
 :::
 
-#### Линия 2: {S, D, E} — психосоматическая {#линия-sde}
+#### Line 2: {S, D, E} — psychosomatic {#линия-sde}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $S \leftrightarrow D$ | **Дискинезия**: тело и движение рассогласованы, структура не поддерживает динамику | Пластичность: форма следует за движением |
-| $S \leftrightarrow E$ | **Алекситимия**: тело и переживание разорваны (основной паттерн, см. §2.1) | Телесная чувствительность |
-| $D \leftrightarrow E$ | **Слепая активность**: действие без переживания, «робот» | Осмысленная активность |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $S \leftrightarrow D$ | **Dyskinesia**: body and movement are misaligned, structure does not support dynamics | Plasticity: form follows movement |
+| $S \leftrightarrow E$ | **Alexithymia**: body and experience are severed (main pattern, see §2.1) | Bodily sensitivity |
+| $D \leftrightarrow E$ | **Blind activity**: action without experience, "robot" | Meaningful activity |
 
-:::tip Триплетный паттерн {S,D,E}
-Все три Gap высокие — **психосоматическая диссоциация** [И]: тело, движение и чувство разобщены. Встречается при тяжёлых травматических состояниях (замороженность).
+:::tip Triplet Pattern {S,D,E}
+All three Gaps high — **psychosomatic dissociation** [I]: body, movement, and feeling are disconnected. Occurs in severe traumatic states (freezing).
 :::
 
-#### Линия 3: {D, L, U} — волевой синтез {#линия-dlu}
+#### Line 3: {D, L, U} — volitional synthesis {#линия-dlu}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $D \leftrightarrow L$ | **Импульсивность**: действие без размышления (основной паттерн, см. §2.1) | Рассудительное действие |
-| $D \leftrightarrow U$ | **Хаотичная активность**: движение не интегрировано в целое | Целенаправленная активность |
-| $L \leftrightarrow U$ | **Фрагментарное мышление**: логика не видит целого, «деревья без леса» | Холистическое понимание |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $D \leftrightarrow L$ | **Impulsivity**: action without reflection (main pattern, see §2.1) | Deliberate action |
+| $D \leftrightarrow U$ | **Chaotic activity**: movement is not integrated into the whole | Goal-directed activity |
+| $L \leftrightarrow U$ | **Fragmentary thinking**: logic does not see the whole, "trees without forest" | Holistic understanding |
 
-:::tip Триплетный паттерн {D,L,U}
-Все три Gap высокие — **волевой паралич** [И]: ни действие, ни мысль, ни целостность не согласованы. Характерно для прокрастинации экзистенциального типа.
+:::tip Triplet Pattern {D,L,U}
+All three Gaps high — **volitional paralysis** [I]: neither action, nor thought, nor wholeness are aligned. Characteristic of existential-type procrastination.
 :::
 
-#### Линия 4: {L, E, O} — смысловая ось {#линия-leo}
+#### Line 4: {L, E, O} — semantic axis {#линия-leo}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $L \leftrightarrow E$ | **Невроз расщепления**: логика и переживание разорваны (основной паттерн, см. §2.1) | Эмоциональный интеллект |
-| $L \leftrightarrow O$ | **Отчуждённое знание**: понимает, но не укоренён; «знание без мудрости» | **Мудрость**: укоренённое понимание |
-| $E \leftrightarrow O$ | **Безосновное переживание**: чувствует, но не знает откуда и зачем | Укоренённое чувство: переживание с «дном» |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $L \leftrightarrow E$ | **Splitting neurosis**: logic and experience are severed (main pattern, see §2.1) | Emotional intelligence |
+| $L \leftrightarrow O$ | **Alienated knowledge**: understands, but is not grounded; "knowledge without wisdom" | **Wisdom**: grounded understanding |
+| $E \leftrightarrow O$ | **Groundless experience**: feels, but does not know where from or why | Grounded feeling: experience with a "foundation" |
 
-:::tip Триплетный паттерн {L,E,O}
-Все три Gap высокие — **смысловой вакуум** [И]: мысль, чувство и основание не связаны. Характерно для экзистенциальной депрессии.
+:::tip Triplet Pattern {L,E,O}
+All three Gaps high — **meaning vacuum** [I]: thought, feeling, and ground are not connected. Characteristic of existential depression.
 :::
 
-#### Линия 5: {E, U, A} — интегративно-экспрессивная {#линия-eua}
+#### Line 5: {E, U, A} — integrative-expressive {#линия-eua}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $E \leftrightarrow U$ | **Эмоциональная фрагментация**: переживание не встроено в целое | Эмоциональная зрелость |
-| $E \leftrightarrow A$ | **Маска**: выражает не то, что чувствует | Экспрессивная аутентичность |
-| $U \leftrightarrow A$ | **Диффузная идентичность**: целостность не выражается в различении | Целостное самовыражение |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $E \leftrightarrow U$ | **Emotional fragmentation**: experience is not embedded in the whole | Emotional maturity |
+| $E \leftrightarrow A$ | **Mask**: expresses other than what is felt | Expressive authenticity |
+| $U \leftrightarrow A$ | **Diffuse identity**: wholeness is not expressed in discrimination | Integral self-expression |
 
-:::tip Триплетный паттерн {E,U,A}
-Все три Gap высокие — **кризис аутентичности** [И]: чувства, целостность и выражение разобщены. Характерно для «ложного я» (Винникотт).
+:::tip Triplet Pattern {E,U,A}
+All three Gaps high — **authenticity crisis** [I]: feelings, wholeness, and expression are disconnected. Characteristic of the "false self" (Winnicott).
 :::
 
-#### Линия 6: {U, O, S} — онтологическая устойчивость {#линия-uos}
+#### Line 6: {U, O, S} — ontological stability {#линия-uos}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $U \leftrightarrow O$ | **Экзистенциальный кризис**: целое и источник разорваны (основной паттерн, см. §2.1) | Укоренённая целостность |
-| $U \leftrightarrow S$ | **Дезинтеграция**: целостность не поддержана телесной структурой | Воплощённая целостность |
-| $O \leftrightarrow S$ | **Безосновность**: тело отделено от источника, «не чувствую почвы» | Укоренённость: тело = опора |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $U \leftrightarrow O$ | **Existential crisis**: whole and source are severed (main pattern, see §2.1) | Grounded wholeness |
+| $U \leftrightarrow S$ | **Disintegration**: wholeness is not supported by bodily structure | Embodied wholeness |
+| $O \leftrightarrow S$ | **Groundlessness**: body is separated from the source, "I don't feel the ground" | Groundedness: body = support |
 
-:::tip Триплетный паттерн {U,O,S}
-Все три Gap высокие — **онтологическая неустойчивость** [И]: ни целое, ни источник, ни тело не согласованы. Характерно для шизоидных состояний (Лэйнг).
+:::tip Triplet Pattern {U,O,S}
+All three Gaps high — **ontological instability** [I]: neither whole, nor source, nor body are aligned. Characteristic of schizoid states (Laing).
 :::
 
-#### Линия 7: {O, A, D} — деятельностная укоренённость {#линия-oad}
+#### Line 7: {O, A, D} — activity-based groundedness {#линия-oad}
 
-| Пара | Высокий Gap ($\approx 1$) | Низкий Gap ($\approx 0$) |
-|------|---------------------------|--------------------------|
-| $O \leftrightarrow A$ | **Неаутентичность**: различение и основание рассогласованы | **Аутентичность**: «слова = суть» (основной паттерн, см. §2.1) |
-| $O \leftrightarrow D$ | **Суета**: активность без основания, действия «впустую» | Осмысленная деятельность |
-| $A \leftrightarrow D$ | **Дисфазия активности**: говорит одно — делает другое | Деятельная речь: слово = дело |
+| Pair | High Gap ($\approx 1$) | Low Gap ($\approx 0$) |
+|------|------------------------|----------------------|
+| $O \leftrightarrow A$ | **Inauthenticity**: discrimination and ground are misaligned | **Authenticity**: "words = essence" (main pattern, see §2.1) |
+| $O \leftrightarrow D$ | **Fussiness**: activity without ground, actions "in vain" | Meaningful activity |
+| $A \leftrightarrow D$ | **Activity dysphasia**: says one thing — does another | Active speech: word = deed |
 
-:::tip Триплетный паттерн {O,A,D}
-Все три Gap высокие — **деятельностная дезориентация** [И]: нет связи между тем, что говорит, делает и чем укоренён. Характерно для синдрома выгорания.
+:::tip Triplet Pattern {O,A,D}
+All three Gaps high — **activity disorientation** [I]: no connection between what is said, done, and what is grounded in. Characteristic of burnout syndrome.
 :::
 
-#### Сводная таблица триплетных паттернов
+#### Summary Table of Triplet Patterns
 
-| Фано-линия | Триплет | Паттерн | Клинический аналог |
+| Fano line | Triplet | Pattern | Clinical analogue |
 |------------|---------|---------|-------------------|
-| $\ell_1$ | $\{A,S,L\}$ | Когнитивная фрагментация | Гиперинтеллектуализация |
-| $\ell_2$ | $\{S,D,E\}$ | Психосоматическая диссоциация | Травматическая замороженность |
-| $\ell_3$ | $\{D,L,U\}$ | Волевой паралич | Экзистенциальная прокрастинация |
-| $\ell_4$ | $\{L,E,O\}$ | Смысловой вакуум | Экзистенциальная депрессия |
-| $\ell_5$ | $\{E,U,A\}$ | Кризис аутентичности | «Ложное я» |
-| $\ell_6$ | $\{U,O,S\}$ | Онтологическая неустойчивость | Шизоидная позиция |
-| $\ell_7$ | $\{O,A,D\}$ | Деятельностная дезориентация | Синдром выгорания |
+| $\ell_1$ | $\{A,S,L\}$ | Cognitive fragmentation | Hyperintellectualization |
+| $\ell_2$ | $\{S,D,E\}$ | Psychosomatic dissociation | Traumatic freezing |
+| $\ell_3$ | $\{D,L,U\}$ | Volitional paralysis | Existential procrastination |
+| $\ell_4$ | $\{L,E,O\}$ | Meaning vacuum | Existential depression |
+| $\ell_5$ | $\{E,U,A\}$ | Authenticity crisis | "False self" |
+| $\ell_6$ | $\{U,O,S\}$ | Ontological instability | Schizoid position |
+| $\ell_7$ | $\{O,A,D\}$ | Activity disorientation | Burnout syndrome |
 
-### 2.3 Развёрнутая диагностика (пример)
+### 2.3 Extended Diagnostics (Example)
 
-> **Субъект:** высокая $|\gamma_{LE}|$ (сильная связь логика–опыт), но $\arg(\gamma_{LE}) \approx \pi/2$ ($\mathrm{Gap} \approx 1$).
+> **Subject:** high $|\gamma_{LE}|$ (strong logic–experience connection), but $\arg(\gamma_{LE}) \approx \pi/2$ ($\mathrm{Gap} \approx 1$).
 >
-> **Внешнее** ($\gamma_{LE}$): наблюдатель видит моменты инсайта — человек «понимает».
+> **External** ($\gamma_{LE}$): the observer sees moments of insight — the person "understands."
 >
-> **Внутреннее** ($\gamma_{EL}$): субъект ощущает, что переживания не становятся пониманием.
+> **Internal** ($\gamma_{EL}$): the subject senses that experiences do not become understanding.
 >
-> **Диагноз:** Интеллектуализация аффекта. Максимальный зазор при максимальной силе связи.
+> **Diagnosis:** Intellectualization of affect. Maximum gap at maximum connection strength.
 >
-> **Коррекция:** Практики, объединяющие логику и переживание (телесно-ориентированная терапия, практика коана в дзен). Цель: $\arg(\gamma_{LE}) \to 0$, сохраняя $|\gamma_{LE}|$ высоким.
+> **Correction:** Practices uniting logic and experience (body-oriented therapy, koan practice in Zen). Goal: $\arg(\gamma_{LE}) \to 0$, keeping $|\gamma_{LE}|$ high.
 
 ---
 
-## 3. Протокол «Дуальное Интервью» {#протокол}
+## 3. The "Dual Interview" Protocol {#протокол}
 
-:::info Полная версия протокола
-Развёрнутое описание протокола двойного интервью — включая 4 этапа с биометрией (EEG, fMRI, HRV), спектральную реконструкцию $H_{\text{eff}}$, физиологические частоты и код реконструкции Gap-профиля — см. [Протокол измерения Γ: Двойное интервью](/docs/applied/research/measurement-protocol#протокол-двойного-интервью-для-биологических-систем). Ниже — краткий диагностический вариант.
+:::info Full Protocol Version
+The full description of the dual interview protocol — including 4 stages with biometrics (EEG, fMRI, HRV), spectral reconstruction of $H_{\text{eff}}$, physiological frequencies, and Gap-profile reconstruction code — see [Γ Measurement Protocol: Dual Interview](/docs/applied/research/measurement-protocol#протокол-двойного-интервью-для-биологических-систем). Below is the concise diagnostic version.
 :::
 
-### 3.1 Ввод данных
+### 3.1 Data Input
 
-**Шаг 1. Внешние измерения** (наблюдатель):
-- Опросники, биометрия, поведенческие маркеры
-- Оценка $\gamma_{ij}$ (верхний треугольник — Map_ext)
+**Step 1. External measurements** (observer):
+- Questionnaires, biometrics, behavioral markers
+- Estimation of $\gamma_{ij}$ (upper triangle — Map_ext)
 
-**Шаг 2. Внутренние отчёты** (субъект):
-- Интроспективные отчёты, шкалы переживания
-- Оценка $\gamma_{ji}$ (нижний треугольник — Map_int)
+**Step 2. Internal reports** (subject):
+- Introspective reports, experience scales
+- Estimation of $\gamma_{ji}$ (lower triangle — Map_int)
 
-**Шаг 3. Вычисление:**
-- $\mathrm{Gap}(i,j)$ для всех 21 пары
-- Вектор населённостей $\{\gamma_{ii}\}$
-- Профиль [квантовых токов](/docs/core/dynamics/coherence-matrix) $J_{\text{net}}(i,j)$
+**Step 3. Computation:**
+- $\mathrm{Gap}(i,j)$ for all 21 pairs
+- Population vector $\{\gamma_{ii}\}$
+- Profile of [quantum currents](/docs/core/dynamics/coherence-matrix) $J_{\text{net}}(i,j)$
 
-### 3.2 Вывод
+### 3.2 Output
 
-- **Карта прозрачности** (тепловая карта $7 \times 7$)
-- **Вектор населённостей** (гистограмма 7 значений)
-- **Профиль токов** (направления потоков между измерениями)
-- **Ранг непрозрачности** (0–3, из [спектра Gap-оператора](/docs/core/dynamics/gap-operator#спектр))
+- **Transparency map** (heatmap $7 \times 7$)
+- **Population vector** (histogram of 7 values)
+- **Current profile** (flow directions between dimensions)
+- **Opacity rank** (0–3, from the [Gap operator spectrum](/docs/core/dynamics/gap-operator#спектр))
 
 ---
 
-## 4. Фазовая прогностика {#прогностика}
+## 4. Phase Forecasting {#прогностика}
 
-### 4.1 Эволюция фазы
+### 4.1 Phase Evolution
 
-Под действием унитарной эволюции фаза вращается:
+Under unitary evolution, the phase rotates:
 
 $$
 \theta_{ij}(\tau) = \theta_{ij}(0) + (\omega_i - \omega_j) \cdot \tau
 $$
 
-Gap осциллирует с частотой $|\omega_i - \omega_j|$:
+Gap oscillates with frequency $|\omega_i - \omega_j|$:
 
 $$
 \mathrm{Gap}(i,j;\tau) = |\sin(\theta_{ij}(0) + \Delta\omega_{ij} \cdot \tau)|
 $$
 
-### 4.2 Окна прозрачности
+### 4.2 Transparency Windows
 
-**Определение.** Период, когда $\mathrm{Gap}(i,j) \approx 0$ — экстериорный и интериорный аспекты согласованы. Оптимальное время для:
-- Осознания
-- Терапевтического вмешательства
-- Принятия решений
+**Definition.** A period when $\mathrm{Gap}(i,j) \approx 0$ — exterior and interior aspects are aligned. Optimal time for:
+- Awareness
+- Therapeutic intervention
+- Decision-making
 
-### 4.3 Зоны турбулентности
+### 4.3 Turbulence Zones
 
-Периоды $\mathrm{Gap}(i,j) \approx 1$: максимальное рассогласование. Риск дезориентации, но потенциал для глубинной трансформации (кризис = возможность).
+Periods $\mathrm{Gap}(i,j) \approx 1$: maximum misalignment. Risk of disorientation, but potential for deep transformation (crisis = opportunity).
 
-### 4.4 Фазовые резонансы
+### 4.4 Phase Resonances
 
-Когда несколько пар одновременно проходят через $\mathrm{Gap} \approx 0$ — момент «тотального просветления» (все каналы прозрачны). Вероятность резонанса определяется рациональностью отношений разностных частот $\Delta\omega_{ij}/\Delta\omega_{kl}$.
+When several pairs simultaneously pass through $\mathrm{Gap} \approx 0$ — a moment of "total transparency" (all channels are transparent). The probability of resonance is determined by the rationality of the ratios of differential frequencies $\Delta\omega_{ij}/\Delta\omega_{kl}$.
 
-#### Численный пример: расчёт окон резонанса {#численный-резонанс}
+#### Numerical Example: Resonance Window Calculation {#численный-резонанс}
 
-Рассмотрим систему с собственными частотами (в условных единицах $\tau^{-1}$):
+Consider a system with eigenfrequencies (in dimensionless units $\tau^{-1}$):
 
 $$
 \omega = (\omega_A, \omega_S, \omega_D, \omega_L, \omega_E, \omega_O, \omega_U) = (1.0,\; 3.0,\; 4.0,\; 6.0,\; 7.0,\; 9.0,\; 12.0)
 $$
 
-и начальными фазами $\theta_{ij}(0) = 0$ для всех пар.
+and initial phases $\theta_{ij}(0) = 0$ for all pairs.
 
-**Шаг 1.** Вычислим разностные частоты для пар Фано-линии $\{A,S,L\} = \{1,2,4\}$:
+**Step 1.** Compute the differential frequencies for the pairs of Fano line $\{A,S,L\} = \{1,2,4\}$:
 
 $$
 \Delta\omega_{AS} = |1-3| = 2, \quad \Delta\omega_{AL} = |1-6| = 5, \quad \Delta\omega_{SL} = |3-6| = 3
 $$
 
-**Шаг 2.** Условие прозрачности: $\mathrm{Gap}(i,j;\tau) = |\sin(\Delta\omega_{ij} \cdot \tau)| < \varepsilon$ выполнено вблизи $\tau = n\pi/\Delta\omega_{ij}$, $n \in \mathbb{Z}$.
+**Step 2.** Transparency condition: $\mathrm{Gap}(i,j;\tau) = |\sin(\Delta\omega_{ij} \cdot \tau)| < \varepsilon$ is satisfied near $\tau = n\pi/\Delta\omega_{ij}$, $n \in \mathbb{Z}$.
 
-Окна прозрачности для каждой пары ($\varepsilon = 0.1$, окно $\delta\tau \approx \varepsilon / \Delta\omega_{ij}$):
+Transparency windows for each pair ($\varepsilon = 0.1$, window $\delta\tau \approx \varepsilon / \Delta\omega_{ij}$):
 
-| Пара | $\Delta\omega$ | Период | Окна (первые) | Ширина окна |
-|------|----------------|--------|---------------|-------------|
+| Pair | $\Delta\omega$ | Period | Windows (first) | Window width |
+|------|----------------|--------|-----------------|-------------|
 | $A \leftrightarrow S$ | 2 | $\pi/2 \approx 1.57$ | $\tau = 0, 1.57, 3.14, \ldots$ | $\delta\tau \approx 0.05$ |
 | $A \leftrightarrow L$ | 5 | $\pi/5 \approx 0.63$ | $\tau = 0, 0.63, 1.26, \ldots$ | $\delta\tau \approx 0.02$ |
 | $S \leftrightarrow L$ | 3 | $\pi/3 \approx 1.05$ | $\tau = 0, 1.05, 2.09, \ldots$ | $\delta\tau \approx 0.03$ |
 
-**Шаг 3.** Условие тройного резонанса на линии $\{A,S,L\}$: все три Gap одновременно $< \varepsilon$. Это требует:
+**Step 3.** Triple resonance condition on line $\{A,S,L\}$: all three Gaps simultaneously $< \varepsilon$. This requires:
 
 $$
 2\tau \approx n_1 \pi, \quad 5\tau \approx n_2 \pi, \quad 3\tau \approx n_3 \pi
 $$
 
-Отношения частот: $\Delta\omega_{AS} / \Delta\omega_{SL} = 2/3$ (рационально!), $\Delta\omega_{AL} / \Delta\omega_{SL} = 5/3$ (рационально!). Следовательно, тройной резонанс **периодичен** с периодом:
+Frequency ratios: $\Delta\omega_{AS} / \Delta\omega_{SL} = 2/3$ (rational!), $\Delta\omega_{AL} / \Delta\omega_{SL} = 5/3$ (rational!). Therefore, the triple resonance is **periodic** with period:
 
 $$
-T_{\text{рез}} = \frac{\pi}{\gcd(2, 3, 5)} = \pi
+T_{\text{res}} = \frac{\pi}{\gcd(2, 3, 5)} = \pi
 $$
 
-Первый нетривиальный тройной резонанс: $\tau^* = \pi \approx 3.14$.
+First non-trivial triple resonance: $\tau^* = \pi \approx 3.14$.
 
-**Шаг 4.** Проверка: при $\tau = \pi$:
+**Step 4.** Verification: at $\tau = \pi$:
 - $\mathrm{Gap}(A,S) = |\sin(2\pi)| = 0$
 - $\mathrm{Gap}(A,L) = |\sin(5\pi)| = 0$
 - $\mathrm{Gap}(S,L) = |\sin(3\pi)| = 0$
 
-Все три канала прозрачны одновременно.
+All three channels are transparent simultaneously.
 
-:::warning Контрпример: иррациональные частоты
-Если бы $\omega_L = 1 + \sqrt{5} \approx 3.236$, то $\Delta\omega_{AL}/\Delta\omega_{AS}$ стало бы иррациональным, и тройной резонанс **никогда** не наступил бы точно — лишь приближённые окна по теореме Вейля об эквидистрибуции. Это случай «системы Фибоначчи» из §6.5.
+:::warning Counterexample: Irrational Frequencies
+If $\omega_L = 1 + \sqrt{5} \approx 3.236$, then $\Delta\omega_{AL}/\Delta\omega_{AS}$ would become irrational, and the triple resonance would **never** occur exactly — only approximate windows by Weyl's equidistribution theorem. This is the "Fibonacci system" case from §6.5.
 :::
 
-### 4.5 Предсказание фазовых переходов
+### 4.5 Predicting Phase Transitions
 
-[Бифуркация](/docs/core/dynamics/gap-phase-diagram#бифуркации) происходит при:
+[Bifurcation](/docs/core/dynamics/gap-phase-diagram#бифуркации) occurs when:
 
 $$
 \lambda_{\max}\left(\frac{\partial^2 P}{\partial \Gamma^2}\right) = 0
 $$
 
-Малое возмущение одной когерентности может изменить всю фазовую карту.
+A small perturbation of one coherence can change the entire phase map.
 
 ---
 
-## 5. Коррекционные протоколы {#коррекция}
+## 5. Correction Protocols {#коррекция}
 
-### 5.1 Принцип минимального вмешательства
+### 5.1 Principle of Minimal Intervention
 
-Из [аналогии с кодом Хэмминга H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга): при нарушении **одной** когерентности достаточно восстановить **одну** связь — система через [φ-оператор](/docs/core/operators/phi-operator) автоматически скорректирует остальные.
+From the [Hamming code H(7,4) analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга): when **one** coherence is disrupted, it is sufficient to restore **one** connection — the system will automatically correct the rest through the [φ-operator](/docs/core/operators/phi-operator).
 
-:::warning Предупреждение
-При нарушении $\geq 2$ когерентностей автоматическая коррекция **не гарантирована** — требуется вмешательство по нескольким каналам.
+:::warning Warning
+When $\geq 2$ coherences are disrupted, automatic correction is **not guaranteed** — intervention across multiple channels is required.
 :::
 
-### 5.2 Таблица коррекций
+### 5.2 Correction Table
 
-| Проблемный канал | Gap | Коррекционная практика | Цель |
-|------------------|-----|------------------------|------|
-| $S \leftrightarrow E$ | $\approx 1$ | Телесные практики (йога, танец) | $\arg(\gamma_{SE}) \to 0$ |
-| $L \leftrightarrow E$ | $\approx 1$ | Медитация на коан, логотерапия | $\arg(\gamma_{LE}) \to 0$ |
-| $D \leftrightarrow L$ | $\approx 1$ | GTD, пошаговое планирование | $\arg(\gamma_{DL}) \to 0$ |
-| $A \leftrightarrow O$ | $\approx 1$ | Практика искренности, молчание | $\arg(\gamma_{AO}) \to 0$ |
-| $O \leftrightarrow U$ | $\approx 1$ | Созерцание, via negativa | $\arg(\gamma_{OU}) \to 0$ |
-| $D \leftrightarrow E$ | $\approx 1$ | Спорт + осознанность | $\arg(\gamma_{DE}) \to 0$ |
-| $A \leftrightarrow U$ | $\approx 1$ | Холистические практики | $\arg(\gamma_{AU}) \to 0$ |
+| Problem channel | Gap | Correction practice | Goal |
+|-----------------|-----|---------------------|------|
+| $S \leftrightarrow E$ | $\approx 1$ | Bodily practices (yoga, dance) | $\arg(\gamma_{SE}) \to 0$ |
+| $L \leftrightarrow E$ | $\approx 1$ | Koan meditation, logotherapy | $\arg(\gamma_{LE}) \to 0$ |
+| $D \leftrightarrow L$ | $\approx 1$ | GTD, step-by-step planning | $\arg(\gamma_{DL}) \to 0$ |
+| $A \leftrightarrow O$ | $\approx 1$ | Sincerity practice, silence | $\arg(\gamma_{AO}) \to 0$ |
+| $O \leftrightarrow U$ | $\approx 1$ | Contemplation, via negativa | $\arg(\gamma_{OU}) \to 0$ |
+| $D \leftrightarrow E$ | $\approx 1$ | Sport + mindfulness | $\arg(\gamma_{DE}) \to 0$ |
+| $A \leftrightarrow U$ | $\approx 1$ | Holistic practices | $\arg(\gamma_{AU}) \to 0$ |
 
-### 5.3 Оптимальная частота вмешательства
+### 5.3 Optimal Intervention Frequency
 
-Из [ФДТ для Gap](/docs/core/dynamics/gap-thermodynamics): для каждого канала $(i,j)$ существует резонансная частота:
+From [FDT for Gap](/docs/core/dynamics/gap-thermodynamics): for each channel $(i,j)$ there is a resonant frequency:
 
 $$
 \omega_r^{(ij)} = \sqrt{|\omega_i - \omega_j|^2 - 2\Gamma_2^2}
 $$
 
-Терапевтическое воздействие наиболее эффективно при совпадении его временного масштаба с $\omega_r$.
+Therapeutic intervention is most effective when its time scale coincides with $\omega_r$.
 
-### 5.4 Коррекционный алгоритм {#коррекционный-алгоритм}
+### 5.4 Correction Algorithm {#коррекционный-алгоритм}
 
-Пошаговый протокол коррекции на основе [кода Хэмминга H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга) и [меры стресса](/docs/consciousness/foundations/self-observation) $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ [T-92].
+A step-by-step correction protocol based on [Hamming code H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга) and the [stress measure](/docs/consciousness/foundations/self-observation) $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ [T-92].
 
-#### Шаг 1. Идентификация критических каналов {#шаг-1}
+#### Step 1. Identification of Critical Channels {#шаг-1}
 
-Вычислить $\mathrm{Gap}(i,j)$ для всех 21 пары. Выделить множество **критических каналов**:
+Compute $\mathrm{Gap}(i,j)$ for all 21 pairs. Identify the set of **critical channels**:
 
 $$
 \mathcal{C} = \{(i,j) : \mathrm{Gap}(i,j) > 0.7\}
 $$
 
-Если $|\mathcal{C}| = 0$ — система в зелёной зоне, коррекция не требуется.
+If $|\mathcal{C}| = 0$ — the system is in the green zone, no correction needed.
 
-#### Шаг 2. Проверка Фано-линейности {#шаг-2}
+#### Step 2. Verification of Fano Linearity {#шаг-2}
 
-Для каждого критического канала $(i,j) \in \mathcal{C}$ определить Фано-линию $\ell(i,j) = \{i, j, k\}$. Проверить:
+For each critical channel $(i,j) \in \mathcal{C}$, identify the Fano line $\ell(i,j) = \{i, j, k\}$. Check:
 
-- **Изолированная ошибка**: только один канал $(i,j)$ на линии $\ell$ имеет $\mathrm{Gap} > 0.7$, остальные два канала на той же линии имеют $\mathrm{Gap} < 0.3$.
-- **Линейная ошибка**: два или три канала одной Фано-линии имеют $\mathrm{Gap} > 0.7$ (триплетный паттерн из §2.2).
-- **Распределённая ошибка**: критические каналы лежат на разных Фано-линиях.
+- **Isolated error**: only one channel $(i,j)$ on line $\ell$ has $\mathrm{Gap} > 0.7$, the other two channels on the same line have $\mathrm{Gap} < 0.3$.
+- **Line error**: two or three channels of one Fano line have $\mathrm{Gap} > 0.7$ (triplet pattern from §2.2).
+- **Distributed error**: critical channels lie on different Fano lines.
 
-#### Шаг 3. Одиночная коррекция (H(7,4)) {#шаг-3}
+#### Step 3. Single Correction (H(7,4)) {#шаг-3}
 
-Если ошибка **изолированная** (один канал):
+If the error is **isolated** (one channel):
 
-1. Применить коррекционную практику из таблицы §5.2 для конкретного канала $(i,j)$.
-2. По [аналогии с H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга): код исправляет **одну** ошибку. [φ-оператор](/docs/core/operators/phi-operator) автоматически восстановит когерентности на смежных каналах.
-3. **Ожидаемая динамика**: $\mathrm{Gap}(i,j) \to 0$ за время $\sim 1/\omega_r^{(ij)}$ (резонансная частота из §5.3).
+1. Apply the correction practice from table §5.2 for the specific channel $(i,j)$.
+2. By [analogy with H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга): the code corrects **one** error. The [φ-operator](/docs/core/operators/phi-operator) will automatically restore coherences on adjacent channels.
+3. **Expected dynamics**: $\mathrm{Gap}(i,j) \to 0$ over time $\sim 1/\omega_r^{(ij)}$ (resonant frequency from §5.3).
 
-#### Шаг 4. Множественная коррекция с приоритизацией по $\sigma_k$ {#шаг-4}
+#### Step 4. Multiple Correction with Prioritization by $\sigma_k$ {#шаг-4}
 
-Если ошибок $\geq 2$ (линейная или распределённая):
+If there are $\geq 2$ errors (line or distributed):
 
-1. **Приоритет по стрессу.** Для каждого измерения $k$, участвующего в критических каналах, вычислить $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$. Измерение с максимальным $\sigma_k$ — наиболее стрессированное, ему приоритет.
+1. **Priority by stress.** For each dimension $k$ involved in critical channels, compute $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$. The dimension with maximum $\sigma_k$ is the most stressed — it receives priority.
 
-2. **Порядок вмешательства.** Отсортировать критические каналы по убыванию $\max(\sigma_i, \sigma_j)$:
+2. **Intervention order.** Sort critical channels by descending $\max(\sigma_i, \sigma_j)$:
 
 $$
-(i_1, j_1), (i_2, j_2), \ldots \quad \text{где } \max(\sigma_{i_1}, \sigma_{j_1}) \geq \max(\sigma_{i_2}, \sigma_{j_2}) \geq \ldots
+(i_1, j_1), (i_2, j_2), \ldots \quad \text{where } \max(\sigma_{i_1}, \sigma_{j_1}) \geq \max(\sigma_{i_2}, \sigma_{j_2}) \geq \ldots
 $$
 
-3. **Последовательное вмешательство.** Для каждого канала в порядке приоритета:
-   - Применить коррекционную практику из §5.2.
-   - После каждого вмешательства **выждать** интервал $\Delta\tau \geq 2\pi/\omega_r^{(ij)}$ (один полный цикл) и переоценить $\mathrm{Gap}$ для всех 21 пары.
-   - Если автокоррекция через φ-оператор уже снизила Gap смежных каналов — пропустить их.
+3. **Sequential intervention.** For each channel in priority order:
+   - Apply the correction practice from §5.2.
+   - After each intervention, **wait** an interval $\Delta\tau \geq 2\pi/\omega_r^{(ij)}$ (one full cycle) and re-evaluate $\mathrm{Gap}$ for all 21 pairs.
+   - If autocorrection via the φ-operator has already reduced the Gap of adjacent channels — skip them.
 
-4. **Триплетная коррекция.** Если все три канала одной Фано-линии критические (триплетный паттерн), вмешательство **по всем трём** одновременно (φ-оператор не справляется с двумя ошибками на одной линии).
+4. **Triplet correction.** If all three channels of one Fano line are critical (triplet pattern), intervene on **all three** simultaneously (the φ-operator cannot handle two errors on the same line).
 
-:::warning Ограничение H(7,4)
-Код Хэмминга H(7,4) гарантирует исправление **ровно одной** ошибки. При $|\mathcal{C}| \geq 2$ каналах на одной Фано-линии автоматическая φ-коррекция **не гарантирована** — требуется множественное вмешательство по шагу 4.
+:::warning H(7,4) Limitation
+Hamming code H(7,4) guarantees correction of **exactly one** error. With $|\mathcal{C}| \geq 2$ channels on one Fano line, automatic φ-correction is **not guaranteed** — multiple intervention per step 4 is required.
 :::
 
-#### Шаг 5. Мониторинг динамики Gap {#шаг-5}
+#### Step 5. Monitoring Gap Dynamics {#шаг-5}
 
-После каждого вмешательства отслеживать:
+After each intervention, track:
 
-| Метрика | Формула | Целевое значение |
-|---------|---------|-----------------|
-| Gap канала | $\mathrm{Gap}(i,j;\tau)$ | $< 0.3$ (зелёная зона) |
-| Средний Gap | $\bar{G} = \frac{1}{21}\sum_{i<j}\mathrm{Gap}(i,j)$ | $< 0.2$ |
-| Максимальный $\sigma$ | $\sigma_{\max} = \max_k \sigma_k$ | $< 0.5$ |
-| Чистота | $P = \mathrm{tr}(\Gamma^2)$ | $> 2/7$ (порог сознания) |
+| Metric | Formula | Target value |
+|--------|---------|-------------|
+| Channel Gap | $\mathrm{Gap}(i,j;\tau)$ | $< 0.3$ (green zone) |
+| Average Gap | $\bar{G} = \frac{1}{21}\sum_{i<j}\mathrm{Gap}(i,j)$ | $< 0.2$ |
+| Maximum $\sigma$ | $\sigma_{\max} = \max_k \sigma_k$ | $< 0.5$ |
+| Purity | $P = \mathrm{tr}(\Gamma^2)$ | $> 2/7$ (consciousness threshold) |
 
-**Критерий завершения коррекции:**
+**Correction completion criterion:**
 
 $$
 \max_{(i,j)} \mathrm{Gap}(i,j) < 0.3 \;\;\wedge\;\; \sigma_{\max} < 0.5 \;\;\wedge\;\; P > P_{\text{crit}} = 2/7
 $$
 
-**Критерий эскалации** (переход к интенсивному протоколу):
+**Escalation criterion** (transition to intensive protocol):
 
 $$
 |\mathcal{C}| > 7 \;\;\vee\;\; \bar{G} > 0.7 \;\;\vee\;\; P < 1/7 + 0.02
 $$
 
-:::tip Алгоритмическая сводка
+:::tip Algorithm Summary
 1. $\mathcal{C} \leftarrow \{(i,j) : \mathrm{Gap}(i,j) > 0.7\}$
-2. Если $|\mathcal{C}| = 0$ → стоп (система здорова)
-3. Если $|\mathcal{C}| = 1$ и ошибка изолированная → одиночная H(7,4)-коррекция (шаг 3)
-4. Иначе → приоритизация по $\sigma_k$ (шаг 4): сортировка, последовательное вмешательство, переоценка
-5. Мониторинг $\mathrm{Gap}$, $\sigma$, $P$ до выполнения критерия завершения (шаг 5)
+2. If $|\mathcal{C}| = 0$ → stop (system is healthy)
+3. If $|\mathcal{C}| = 1$ and error is isolated → single H(7,4) correction (step 3)
+4. Otherwise → prioritization by $\sigma_k$ (step 4): sorting, sequential intervention, re-evaluation
+5. Monitor $\mathrm{Gap}$, $\sigma$, $P$ until the completion criterion is met (step 5)
 :::
 
 ---
 
-## 6. Модельные системы {#модельные-системы}
+## 6. Model Systems {#модельные-системы}
 
-### 6.1 Равномерная система ($\Gamma = I/7$)
+### 6.1 Uniform System ($\Gamma = I/7$)
 
-Все когерентности $= 0$. Gap не определён. $P = 1/7$ — минимальная чистота. **Полностью декогерированная система.**
+All coherences $= 0$. Gap is undefined. $P = 1/7$ — minimum purity. **Completely decoherent system.**
 
-### 6.2 Чистое состояние (равномерная суперпозиция)
+### 6.2 Pure State (Uniform Superposition)
 
-$|\psi\rangle = (1/\sqrt{7})\sum_i |i\rangle$: все $\gamma_{ij} = 1/7 \in \mathbb{R}$, $\mathrm{Gap} = 0$ для всех пар. **Идеальная прозрачность.**
+$|\psi\rangle = (1/\sqrt{7})\sum_i |i\rangle$: all $\gamma_{ij} = 1/7 \in \mathbb{R}$, $\mathrm{Gap} = 0$ for all pairs. **Ideal transparency.**
 
-### 6.3 Состояние с фазами (Фано-структура)
+### 6.3 State with Phases (Fano Structure)
 
-$\phi_k = (k-1)\pi/7$: $\mathrm{Gap}(i,j) = |\sin((i-j)\pi/7)|$. Gap монотонно растёт с «расстоянием» между измерениями. Ближайшие измерения прозрачнее, далёкие — непрозрачнее.
+$\phi_k = (k-1)\pi/7$: $\mathrm{Gap}(i,j) = |\sin((i-j)\pi/7)|$. Gap grows monotonically with the "distance" between dimensions. Nearest dimensions are more transparent, distant ones — more opaque.
 
-### 6.4 Модель алекситимии
+### 6.4 Alexithymia Model
 
-$\gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}$, остальные когерентности $\in \mathbb{R}$. $\mathrm{Gap}(S,E) = 1$ (максимальный). Одна когерентность нарушена → коррекция через H(7,4).
+$\gamma_{SE} = |\gamma_{SE}| \cdot e^{i\pi/2}$, remaining coherences $\in \mathbb{R}$. $\mathrm{Gap}(S,E) = 1$ (maximum). One coherence is disrupted → correction via H(7,4).
 
-### 6.5 Динамическая система (Фибоначчи)
+### 6.5 Dynamic System (Fibonacci)
 
-$\omega = (0, 1, 2, 3, 5, 8, 13)$. Иррациональные отношения $\Delta\omega$ → Gap принимает все значения эргодически → полная прозрачность недостижима.
+$\omega = (0, 1, 2, 3, 5, 8, 13)$. Irrational ratios $\Delta\omega$ → Gap takes all values ergodically → complete transparency is unachievable.
 
 ---
 
-## Связанные документы
+## Related Documents
 
-- [Дуально-аспектная семантика Gap](/docs/physics/dual-aspect/gap-semantics) — 49-элементная карта
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — бифуркации, Хэмминг
-- [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — три фазы, критические явления
-- [Протокол измерения](/docs/applied/research/measurement-protocol) — экспериментальная верификация
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
+- [Dual-aspect Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
+- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — bifurcations, Hamming
+- [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) — three phases, critical phenomena
+- [Measurement protocol](/docs/applied/research/measurement-protocol) — experimental verification
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4

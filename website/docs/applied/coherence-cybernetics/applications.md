@@ -207,7 +207,7 @@ Imagine a system of 50 autonomous agents managing a logistics network. Each agen
 
 ---
 
-## For Cognitive Scientists
+## For Cognitive Scientists {#для-когнитивистов}
 
 ### Unified Theory of Consciousness
 

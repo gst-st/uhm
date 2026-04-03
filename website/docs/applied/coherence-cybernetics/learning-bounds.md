@@ -55,7 +55,7 @@ And theorem T-113 closes the circle: $N = 7$ is the minimal architecture in whic
 In this document:
 - $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
 - $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
-- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние) (categorical self-model)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#target-state) (categorical self-model)
 - $\lambda_{\mathrm{gap}} = 2/3$ — [spectral gap](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part $\mathcal{L}_0$ (T-39a [T])
 - $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — [minimal regeneration](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [T])
 - $C_{\mathrm{Enc}} \leq \log_2 7$ — [information capacity](./sensorimotor#информационная-ёмкость) (T-107 [T])

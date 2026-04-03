@@ -1,412 +1,412 @@
 ---
 sidebar_position: 4
-title: "Патология сознания"
-description: "Патологические состояния как специфические Gap-профили: алекситимия, невроз, импульсивность, экзистенциальный кризис, депрессия, психоз"
+title: "Pathology of Consciousness"
+description: "Pathological states as specific Gap-profiles: alexithymia, neurosis, impulsivity, existential crisis, depression, psychosis"
 slug: /consciousness/states/pathological
 ---
 
-# Патология Сознания
+# Pathology of Consciousness
 
-:::info Мост из предыдущей главы
-В [Внимании и памяти](/docs/consciousness/states/attention-memory) мы рассмотрели *нормальные* механизмы управления когерентностью: внимание как «прожектор», память как ядро $K(\tau)$, забывание как декогеренция. Теперь мы спрашиваем: **что происходит, когда эти механизмы работают неправильно?** Когда определённые каналы «застревают» в непрозрачном состоянии ($\mathrm{Gap} \to 1$), или, наоборот, все каналы скачком становятся прозрачными? Каждая патология — не «поломка», а **специфический Gap-профиль**: конфигурация $\Gamma$, поддающаяся формальному описанию и — потенциально — целенаправленной коррекции.
+:::info Bridge from the previous chapter
+In [Attention and Memory](/docs/consciousness/states/attention-memory) we examined the *normal* mechanisms of coherence control: attention as a 'spotlight', memory as the kernel $K(\tau)$, forgetting as decoherence. Now we ask: **what happens when these mechanisms malfunction?** When certain channels get 'stuck' in an opaque state ($\mathrm{Gap} \to 1$), or conversely, all channels suddenly become transparent? Each pathology is not a 'breakdown', but a **specific Gap-profile**: a configuration of $\Gamma$ amenable to formal description and — potentially — targeted correction.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [мера зазора](/docs/core/dynamics/gap-operator#определение)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [порог жизнеспособности](/docs/core/dynamics/viability) **[Т]**
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — средний Gap
-- L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $P_{\text{crit}} = 2/7$ — [viability threshold](/docs/core/dynamics/viability) **[T]**
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — mean Gap
+- L0–L4 — [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy)
+- Full notation table — see [Notation](/docs/reference/notation)
 :::
 
-:::warning Статус документа
-Весь материал данного документа имеет статус **[И]** — интерпретация/приложение. Патология сознания — операционализация формализма [Gap-диагностики](/docs/applied/research/gap-diagnostics); эмпирическая валидация требует отдельной [исследовательской программы](/docs/applied/research/measurement-protocol). Математические определения Gap-профилей — **[О]**; отождествление с клиническими категориями — **[И]**.
+:::warning Document status
+All material in this document has status **[I]** — interpretation/application. Pathology of consciousness is an operationalisation of the [Gap-diagnostics](/docs/applied/research/gap-diagnostics) formalism; empirical validation requires a separate [research programme](/docs/applied/research/measurement-protocol). Mathematical definitions of Gap-profiles — **[D]**; identification with clinical categories — **[I]**.
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Историческая перспектива** — от Крепелина через DSM к RDoC и УГМ
-2. **Патологические Gap-паттерны** — шесть клинических категорий
-3. **Сводная таблица** — все патологии в одной таблице
-4. **Соответствие Gap-паттернов и DSM-5** — трансляция формализма
-5. **Диагностический протокол** — как различить патологии по Gap-профилю
-6. **Коморбидность** — наложение Gap-паттернов
-7. **Коррекционные стратегии** — терапия как целенаправленная Gap-редукция
-8. **Динамика переходов** — бифуркации входа/выхода из патологии
-9. **Пространство патологий** — mermaid-визуализация
-10. **Фазовая диаграмма** — где расположены патологии
+1. **Historical perspective** — from Kraepelin through DSM to RDoC and UHM
+2. **Pathological Gap-patterns** — six clinical categories
+3. **Summary table** — all pathologies in a single table
+4. **Correspondence of Gap-patterns to DSM-5** — translation of the formalism
+5. **Diagnostic protocol** — how to distinguish pathologies by Gap-profile
+6. **Comorbidity** — superposition of Gap-patterns
+7. **Corrective strategies** — therapy as targeted Gap-reduction
+8. **Dynamics of transitions** — bifurcations of entry/exit from pathology
+9. **Pathology space** — mermaid visualisation
+10. **Phase diagram** — where pathologies are located
 
 ---
 
-## 1. Историческая перспектива {#история}
+## 1. Historical perspective {#история}
 
-### 1.1 Эмиль Крепелин (1883): классификация по течению
+### 1.1 Emil Kraepelin (1883): classification by course
 
-Крепелин — отец нозологической психиатрии. Его ключевая идея: психические заболевания следует классифицировать по *течению* (исход), а не по *симптомам* (текущая картина). Он разделил две главные формы:
-- **Dementia praecox** (шизофрения) — прогрессирующее ухудшение
-- **Маниакально-депрессивный психоз** (биполярное расстройство) — циклическое течение
+Kraepelin — the father of nosological psychiatry. His key idea: mental diseases should be classified by *course* (outcome), rather than by *symptoms* (current picture). He distinguished two main forms:
+- **Dementia praecox** (schizophrenia) — progressive deterioration
+- **Manic-depressive psychosis** (bipolar disorder) — cyclical course
 
-В формализме УГМ: шизофрения — *монотонное* снижение числа функциональных каналов ($|\{(i,j): \mathrm{Gap} > \varepsilon_{\text{noise}}\}| \downarrow$); биполярное расстройство — *осцилляции* $P(\tau)$ (бифуркация Хопфа).
+In the UHM formalism: schizophrenia — *monotone* decrease in the number of functional channels ($|\{(i,j): \mathrm{Gap} > \varepsilon_{\text{noise}}\}| \downarrow$); bipolar disorder — *oscillations* of $P(\tau)$ (Hopf bifurcation).
 
-### 1.2 DSM: категориальный подход (1952–2013)
+### 1.2 DSM: categorical approach (1952–2013)
 
-Diagnostic and Statistical Manual (DSM) — категориальная классификация: каждое расстройство определяется списком симптомов и критериями включения/исключения. DSM прошёл 5 редакций (I–5), постепенно отходя от психодинамических концепций к описательному подходу.
+The Diagnostic and Statistical Manual (DSM) — a categorical classification: each disorder is defined by a list of symptoms and inclusion/exclusion criteria. DSM has gone through 5 editions (I–5), gradually moving from psychodynamic concepts toward a descriptive approach.
 
-**Проблема DSM:** категориальность. Пациент «имеет» или «не имеет» расстройство; границы между категориями условны; коморбидность (наложение диагнозов) — правило, а не исключение. Более 50% пациентов с депрессией имеют коморбидное тревожное расстройство.
+**Problem with DSM:** categoricality. A patient 'has' or 'does not have' a disorder; the boundaries between categories are arbitrary; comorbidity (overlapping diagnoses) is the rule, not the exception. More than 50% of patients with depression have a comorbid anxiety disorder.
 
-### 1.3 RDoC: размерный подход (2010–н.в.)
+### 1.3 RDoC: dimensional approach (2010–present)
 
-Research Domain Criteria (RDoC) — инициатива NIMH (Национального института психического здоровья США), предлагающая *размерный* подход: психические расстройства описываются не категориями, а *размерностями* (домены):
-- Негативная валентность (страх, тревога)
-- Позитивная валентность (вознаграждение, мотивация)
-- Когнитивные системы (внимание, память)
-- Социальные процессы
-- Системы возбуждения/регуляции
+Research Domain Criteria (RDoC) — an initiative of the NIMH (National Institute of Mental Health, USA), proposing a *dimensional* approach: mental disorders are described not by categories but by *dimensions* (domains):
+- Negative valence (fear, anxiety)
+- Positive valence (reward, motivation)
+- Cognitive systems (attention, memory)
+- Social processes
+- Arousal/regulatory systems
 
-### 1.4 От RDoC к УГМ
+### 1.4 From RDoC to UHM
 
-| Классический подход | Формализм УГМ |
+| Classical approach | UHM formalism |
 |---------------------|---------------|
-| DSM-категория (да/нет) | Gap-профиль (непрерывный вектор) |
-| RDoC-домен | Конкретный канал $\mathrm{Gap}(i,j)$ |
-| Коморбидность | Наложение Gap-паттернов |
-| Тяжесть | Амплитуда Gap-отклонения от нормы |
-| Течение (Крепелин) | Траектория $\Gamma(\tau)$ |
-| Терапия | Целенаправленная Gap-редукция |
+| DSM category (yes/no) | Gap-profile (continuous vector) |
+| RDoC domain | Specific channel $\mathrm{Gap}(i,j)$ |
+| Comorbidity | Superposition of Gap-patterns |
+| Severity | Amplitude of Gap-deviation from norm |
+| Course (Kraepelin) | Trajectory $\Gamma(\tau)$ |
+| Therapy | Targeted Gap-reduction |
 
-УГМ объединяет достоинства всех трёх подходов: нозологическая специфичность Крепелина (конкретные Gap-паттерны), операциональность DSM (числовые пороги), размерность RDoC (непрерывные параметры).
-
----
-
-Патологические состояния сознания — не «поломки» механизма, а **специфические Gap-профили**: конфигурации матрицы когерентности $\Gamma$, при которых определённые каналы аномально непрозрачны ($\mathrm{Gap} \to 1$) или аномально прозрачны ($\mathrm{Gap} \to 0$). Данный документ расширяет [Gap-диагностику](/docs/applied/research/gap-diagnostics) системным анализом патологических паттернов.
-
-**Аналогия из повседневной жизни.** Здоровое сознание — как дом с окнами разной прозрачности: некоторые распахнуты, некоторые закрыты, но все функциональны. Патология — когда определённые окна «заклинило»: наглухо замазанное окно эмоций (алекситимия), распахнутые настежь все окна одновременно (психоз), или когда весь дом медленно проседает к фундаменту (депрессия при $P \to P_{\text{crit}}$).
+UHM combines the strengths of all three approaches: Kraepelinian nosological specificity (specific Gap-patterns), DSM operationality (numerical thresholds), RDoC dimensionality (continuous parameters).
 
 ---
 
-## 2. Патологические Gap-паттерны {#паттерны}
+Pathological states of consciousness are not 'breakdowns' of the mechanism, but **specific Gap-profiles**: configurations of the coherence matrix $\Gamma$ in which certain channels are anomalously opaque ($\mathrm{Gap} \to 1$) or anomalously transparent ($\mathrm{Gap} \to 0$). This document extends [Gap-diagnostics](/docs/applied/research/gap-diagnostics) with a systematic analysis of pathological patterns.
 
-### 2.1 Алекситимия {#алекситимия}
+**Everyday analogy.** Healthy consciousness — like a house with windows of varying transparency: some are wide open, some are closed, but all are functional. Pathology — when certain windows get 'stuck': the emotion window permanently plastered shut (alexithymia), all windows flung open at once (psychosis), or when the whole house slowly sinks toward the foundation (depression at $P \to P_{\text{crit}}$).
 
-:::info Определение (Алекситимия) [И]
-**Алекситимия** (от греч. *a-lexis-thymos* — «без слов для чувств») — невозможность идентификации и вербализации эмоций. Gap-профиль:
+---
+
+## 2. Pathological Gap-patterns {#паттерны}
+
+### 2.1 Alexithymia {#алекситимия}
+
+:::info Definition (Alexithymia) [I]
+**Alexithymia** (from Greek *a-lexis-thymos* — 'without words for feelings') — the inability to identify and verbalise emotions. Gap-profile:
 
 $$
 \mathrm{Gap}(L,E) \to 1, \quad \mathrm{Gap}(A,E) \to 1
 $$
 
-Оба канала — логика–опыт и внимание–опыт — непрозрачны. Субъект не может ни **заметить** ($A$), ни **понять** ($L$) свои переживания ($E$).
+Both channels — logic–experience and attention–experience — are opaque. The subject can neither **notice** ($A$) nor **understand** ($L$) their own experiences ($E$).
 :::
 
-**Мотивация определения.** Почему именно два канала, а не один? Алекситимия — *двойной* дефицит: (1) человек не замечает эмоцию (Gap(A,E) высок — «тень» по Юнгу) и (2) не может вербализовать её (Gap(L,E) высок — «вытеснение» по Фрейду). Если бы был высок только Gap(L,E), субъект замечал бы эмоцию, но не мог её назвать — это «алекситимия лёгкой степени». Полная алекситимия = двойная непрозрачность.
+**Motivation for the definition.** Why exactly two channels, and not one? Alexithymia is a *double* deficit: (1) the person does not notice the emotion (Gap(A,E) is high — Jung's 'shadow') and (2) cannot verbalise it (Gap(L,E) is high — Freud's 'repression'). If only Gap(L,E) were high, the subject would notice the emotion but could not name it — that would be 'mild alexithymia'. Full alexithymia = double opacity.
 
-Дополнительный признак: $|\gamma_{SE}|$ может быть высоким ($\mathrm{Gap}(S,E) < 1$) — тело «чувствует», но опыт не регистрируется вниманием и не обрабатывается логикой. Это объясняет *соматизацию* при алекситимии: переживание «обходит» сознание и проявляется в теле (боль, усталость, напряжение без осознаваемой эмоции).
+Additional feature: $|\gamma_{SE}|$ can be high ($\mathrm{Gap}(S,E) < 1$) — the body 'feels', but the experience is neither registered by attention nor processed by logic. This explains *somatisation* in alexithymia: the experience 'bypasses' consciousness and manifests in the body (pain, fatigue, tension without a consciously felt emotion).
 
-**Числовой пример.** Полный Gap-профиль пациента с алекситимией (E-секторные каналы):
+**Numerical example.** Full Gap-profile of a patient with alexithymia (E-sector channels):
 
-| Канал | $|\gamma_{ij}|$ | $\mathrm{Gap}(i,j)$ | Интерпретация |
+| Channel | $|\gamma_{ij}|$ | $\mathrm{Gap}(i,j)$ | Interpretation |
 |-------|:---:|:---:|:---|
-| $(L,E)$ | $0.15$ | $0.95$ | Не может назвать чувство |
-| $(A,E)$ | $0.10$ | $0.88$ | Не замечает чувство |
-| $(S,E)$ | $0.12$ | $0.20$ | Тело реагирует (сердцебиение, потливость) |
-| $(D,E)$ | $0.18$ | $0.30$ | Эмоция активна, частично проявляется |
-| $(O,E)$ | $0.05$ | $0.45$ | Связь с основанием ослаблена |
-| $(U,E)$ | $0.07$ | $0.40$ | Интеграция умеренная |
+| $(L,E)$ | $0.15$ | $0.95$ | Cannot name the feeling |
+| $(A,E)$ | $0.10$ | $0.88$ | Does not notice the feeling |
+| $(S,E)$ | $0.12$ | $0.20$ | Body responds (increased heart rate, sweating) |
+| $(D,E)$ | $0.18$ | $0.30$ | Emotion is active, partially manifests |
+| $(O,E)$ | $0.05$ | $0.45$ | Connection to ground is weakened |
+| $(U,E)$ | $0.07$ | $0.40$ | Integration is moderate |
 
-На вопрос «что вы чувствуете?» пациент отвечает: «у меня учащается пульс» (телесный канал $S \to E$ прозрачен), а не «я боюсь» (логический канал $L \to E$ непрозрачен).
+To the question 'what do you feel?' the patient answers: 'my pulse quickens' (body channel $S \to E$ is transparent), not 'I am afraid' (logic channel $L \to E$ is opaque).
 
-**DSM-5 соответствие.** Алекситимия не является отдельным диагнозом DSM-5, но присутствует как черта при: расстройствах соматических симптомов (F45), расстройствах аутистического спектра (F84), посттравматическом стрессовом расстройстве (F43.1).
+**DSM-5 correspondence.** Alexithymia is not a separate DSM-5 diagnosis, but is present as a trait in: somatic symptom disorders (F45), autism spectrum disorders (F84), post-traumatic stress disorder (F43.1).
 
-Сравнение с [моделью алекситимии в Gap-динамике](/docs/core/dynamics/gap-dynamics#модельные-системы): там рассмотрена упрощённая модель с одним каналом $(S,E)$; здесь — расширенная, с двумя непрозрачными каналами.
+Comparison with [the alexithymia model in Gap-dynamics](/docs/core/dynamics/gap-dynamics#модельные-системы): that model considered a simplified one-channel (S,E) case; here — an extended model with two opaque channels.
 
-### 2.2 Расщеплённый невроз (диссоциация) {#невроз}
+### 2.2 Split neurosis (dissociation) {#невроз}
 
-:::info Определение (Диссоциация) [И]
-**Расщеплённый невроз** — диссоциация **внутри** E-измерения. Gap-профиль:
+:::info Definition (Dissociation) [I]
+**Split neurosis** — dissociation **within** the E-dimension. Gap-profile:
 
 $$
-\mathrm{Gap}(E_1, E_2) \to 1 \quad \text{внутри E-сектора}
+\mathrm{Gap}(E_1, E_2) \to 1 \quad \text{within the E-sector}
 $$
 
-Формально: если декомпозировать E-измерение на подпространства $E = E_1 \oplus E_2$, то когерентности между ними непрозрачны. Субъект обладает двумя «островами» опыта, не связанными друг с другом.
+Formally: if the E-dimension is decomposed into subspaces $E = E_1 \oplus E_2$, then the coherences between them are opaque. The subject possesses two 'islands' of experience, unconnected to each other.
 :::
 
-В 7-мерной модели без подпространственной декомпозиции диссоциация проявляется как:
+In the 7-dimensional model without subspace decomposition, dissociation manifests as:
 
 $$
-\mathrm{Gap}(S,E) \to 1, \quad \mathrm{Gap}(D,E) \approx 0 \quad \text{(или наоборот)}
+\mathrm{Gap}(S,E) \to 1, \quad \mathrm{Gap}(D,E) \approx 0 \quad \text{(or vice versa)}
 $$
 
-— различные аспекты опыта (телесный vs. динамический) изолированы друг от друга через различную прозрачность по отношению к E.
+— different aspects of experience (somatic vs. dynamic) are isolated from each other through differing transparency relative to E.
 
-**Числовой пример.** Пациент с диссоциативным расстройством (деперсонализация):
+**Numerical example.** Patient with dissociative disorder (depersonalisation):
 
-| Канал | Норма $\mathrm{Gap}$ | Диссоциация $\mathrm{Gap}$ | Разница |
+| Channel | Normal $\mathrm{Gap}$ | Dissociation $\mathrm{Gap}$ | Difference |
 |-------|:---:|:---:|:---|
-| $(S,E)$ | $0.20$ | $0.90$ | Тело «не ощущается» |
-| $(D,E)$ | $0.25$ | $0.15$ | Эмоции «работают» |
-| $(A,E)$ | $0.20$ | $0.30$ | Внимание умеренно снижено |
-| $(L,E)$ | $0.25$ | $0.25$ | Логика сохранена |
+| $(S,E)$ | $0.20$ | $0.90$ | Body 'is not felt' |
+| $(D,E)$ | $0.25$ | $0.15$ | Emotions 'work' |
+| $(A,E)$ | $0.20$ | $0.30$ | Attention moderately reduced |
+| $(L,E)$ | $0.25$ | $0.25$ | Logic preserved |
 
-Субъективно: «я вижу свои руки, но они не мои», «я понимаю, что радуюсь, но не чувствую это телом». Телесный канал $(S,E)$ заблокирован, эмоциональный $(D,E)$ сохранён — «острова» опыта не связаны.
+Subjectively: 'I see my hands, but they are not mine', 'I understand that I am happy, but I don't feel it in my body'. The body channel $(S,E)$ is blocked, the emotional channel $(D,E)$ is preserved — the 'islands' of experience are not connected.
 
-**DSM-5 соответствие.** Диссоциативные расстройства (F44): деперсонализация/дереализация (F48.1), диссоциативное расстройство идентичности (F44.81), диссоциативная амнезия (F44.0).
+**DSM-5 correspondence.** Dissociative disorders (F44): depersonalisation/derealisation (F48.1), dissociative identity disorder (F44.81), dissociative amnesia (F44.0).
 
-**Аналогия.** Диссоциация — как дом, разделённый стеной: левая половина знает о себе, правая — о себе, но они не знают друг о друге. Один «остров» переживаний может быть эмоционально богатым ($\mathrm{Gap}(D,E) \approx 0$), а другой — телесно осознанным ($\mathrm{Gap}(S,E) \approx 0$), но между ними — стена ($\mathrm{Gap}$ между этими аспектами $\to 1$).
+**Analogy.** Dissociation — like a house divided by a wall: the left half knows about itself, the right — about itself, but they do not know about each other. One 'island' of experience may be emotionally rich ($\mathrm{Gap}(D,E) \approx 0$), and another — somatically aware ($\mathrm{Gap}(S,E) \approx 0$), but between them — a wall (Gap between these aspects $\to 1$).
 
-### 2.3 Импульсивность {#импульсивность}
+### 2.3 Impulsivity {#импульсивность}
 
-:::info Определение (Импульсивность) [И]
-**Импульсивность** — действие без логической обработки. Gap-профиль:
+:::info Definition (Impulsivity) [I]
+**Impulsivity** — action without logical processing. Gap-profile:
 
 $$
 \mathrm{Gap}(L,D) \to 1
 $$
 
-Канал логика–динамика непрозрачен: динамические процессы ($D$) протекают без логического управления ($L$). При этом $\mathrm{Gap}(D,E)$ может быть низким — субъект **чувствует** импульс, но не может его **оценить**.
+The logic–dynamics channel is opaque: dynamic processes ($D$) proceed without logical governance ($L$). At the same time $\mathrm{Gap}(D,E)$ may be low — the subject **feels** the impulse but cannot **evaluate** it.
 :::
 
-Дополнительная характеристика:
+Additional characteristic:
 
 $$
 |\gamma_{DL}| > 0, \quad \arg(\gamma_{DL}) \approx \pi/2
 $$
 
-Связь между динамикой и логикой **существует** (сильная когерентность $|\gamma_{DL}| > 0$), но чисто мнимая — фаза $\approx \pi/2$ означает максимальный зазор между «внешним» (наблюдаемое поведение) и «внутренним» (логическая оценка). Это ключевой инсайт: **когерентность не означает прозрачность**. Когерентность — это *связь*; Gap — это *непрозрачность* этой связи.
+The connection between dynamics and logic **exists** (strong coherence $|\gamma_{DL}| > 0$), but is purely imaginary — the phase $\approx \pi/2$ means maximum gap between the 'external' (observed behaviour) and the 'internal' (logical evaluation). This is the key insight: **coherence does not imply transparency**. Coherence is a *connection*; Gap is the *opacity* of that connection.
 
-**Числовой пример.** Импульсивный человек:
+**Numerical example.** An impulsive person:
 
-| Параметр | Значение | Интерпретация |
+| Parameter | Value | Interpretation |
 |----------|:---:|:---|
-| $|\gamma_{DL}|$ | $0.22$ | Связь сильная — «знание» есть |
-| $\arg(\gamma_{DL})$ | $1.45$ рад ($\approx \pi/2$) | Фаза — максимальный Gap |
-| $\mathrm{Gap}(L,D) = |\sin(1.45)|$ | $0.99$ | Канал почти полностью непрозрачен |
-| $\mathrm{Gap}(D,E)$ | $0.15$ | Чувствует импульс |
-| $R$ | $0.35$ | Осознаёт себя (выше порога) |
+| $|\gamma_{DL}|$ | $0.22$ | Connection is strong — 'knowledge' exists |
+| $\arg(\gamma_{DL})$ | $1.45$ rad ($\approx \pi/2$) | Phase — maximum Gap |
+| $\mathrm{Gap}(L,D) = |\sin(1.45)|$ | $0.99$ | Channel almost fully opaque |
+| $\mathrm{Gap}(D,E)$ | $0.15$ | Feels the impulse |
+| $R$ | $0.35$ | Self-aware (above threshold) |
 
-Это формализует клиническое наблюдение: импульсивные люди часто *знают*, что их поведение нелогично (связь $|\gamma_{DL}|$ высока), но не могут *применить* это знание в момент действия (канал непрозрачен из-за фазы $\approx \pi/2$). «Я знал, что не надо, но не мог остановиться» — точное описание Gap(L,D) $\to 1$ при $|\gamma_{LD}| > 0$.
+This formalises the clinical observation: impulsive people often *know* that their behaviour is illogical (connection $|\gamma_{DL}|$ is high), but cannot *apply* this knowledge at the moment of action (the channel is opaque due to phase $\approx \pi/2$). 'I knew I shouldn't, but I couldn't stop' — a precise description of Gap(L,D) $\to 1$ with $|\gamma_{LD}| > 0$.
 
-**DSM-5 соответствие.** Импульсивность — трансдиагностическая черта, присутствующая при: СДВГ (F90), пограничном расстройстве личности (F60.3), расстройствах импульсного контроля (F63), зависимостях (F10–F19).
+**DSM-5 correspondence.** Impulsivity is a transdiagnostic trait, present in: ADHD (F90), borderline personality disorder (F60.3), impulse control disorders (F63), addictions (F10–F19).
 
-### 2.4 Экзистенциальный кризис {#кризис}
+### 2.4 Existential crisis {#кризис}
 
-:::info Определение (Экзистенциальный кризис) [И]
-**Экзистенциальный кризис** — переживание потери связи с основанием бытия. Gap-профиль:
+:::info Definition (Existential crisis) [I]
+**Existential crisis** — the experience of losing connection with the ground of being. Gap-profile:
 
 $$
 \mathrm{Gap}(O,E) \to 1
 $$
 
-Канал основание–опыт непрозрачен: опыт ($E$) отключён от онтологического основания ($O$). Субъект переживает «бессмысленность» — опыт существует, но лишён глубинной связи с источником.
+The ground–experience channel is opaque: experience ($E$) is disconnected from the ontological ground ($O$). The subject experiences 'meaninglessness' — experience exists, but is deprived of deep connection to its source.
 :::
 
-Расширенный профиль при глубоком экзистенциальном кризисе:
+Extended profile in deep existential crisis:
 
 $$
 \mathrm{Gap}(O,E) \to 1, \quad \mathrm{Gap}(O,U) \to 1
 $$
 
-Потеря связи основания как с опытом, так и с единством — «мир без смысла и без целостности».
+Loss of connection of the ground with both experience and unity — 'a world without meaning and without wholeness'.
 
-**Числовой пример.** Сравнение здорового человека и человека в экзистенциальном кризисе (O-секторные каналы):
+**Numerical example.** Comparison of a healthy person and a person in existential crisis (O-sector channels):
 
-| Канал | Норма | Кризис | Субъективно |
+| Channel | Normal | Crisis | Subjectively |
 |-------|:---:|:---:|:---|
-| $(O,E)$ | $0.25$ | $0.90$ | «Жизнь бессмысленна» |
-| $(O,U)$ | $0.30$ | $0.85$ | «Мир фрагментирован» |
-| $(O,S)$ | $0.35$ | $0.50$ | «Тело — чужое» |
-| $(O,L)$ | $0.25$ | $0.55$ | «Логика не помогает» |
-| $(O,D)$ | $0.30$ | $0.40$ | «Действия бесцельны» |
-| $(O,A)$ | $0.20$ | $0.35$ | «Внимание рассеяно» |
+| $(O,E)$ | $0.25$ | $0.90$ | 'Life is meaningless' |
+| $(O,U)$ | $0.30$ | $0.85$ | 'The world is fragmented' |
+| $(O,S)$ | $0.35$ | $0.50$ | 'The body is alien' |
+| $(O,L)$ | $0.25$ | $0.55$ | 'Logic doesn't help' |
+| $(O,D)$ | $0.30$ | $0.40$ | 'Actions are purposeless' |
+| $(O,A)$ | $0.20$ | $0.35$ | 'Attention is scattered' |
 
-Когерентности $|\gamma_{OE}|$ и $|\gamma_{OU}|$ по-прежнему ненулевые (объективно связь с основанием *есть*), но субъективно она «не ощущается». Именно потому экзистенциальная терапия направлена на снижение $\mathrm{Gap}(O,E)$ — восстановление *переживания* связи, а не её создание.
+The coherences $|\gamma_{OE}|$ and $|\gamma_{OU}|$ remain non-zero (objectively the connection to the ground *exists*), but subjectively it is 'not felt'. This is precisely why existential therapy is aimed at reducing $\mathrm{Gap}(O,E)$ — restoring the *experience* of connection, not creating it.
 
-**DSM-5 соответствие.** Экзистенциальный кризис не является диагнозом DSM-5, но перекрывается с: большим депрессивным расстройством (F32/F33), генерализованным тревожным расстройством (F41.1), расстройством адаптации (F43.2).
+**DSM-5 correspondence.** Existential crisis is not a DSM-5 diagnosis, but overlaps with: major depressive disorder (F32/F33), generalised anxiety disorder (F41.1), adjustment disorder (F43.2).
 
-### 2.5 Депрессия {#депрессия}
+### 2.5 Depression {#депрессия}
 
-:::tip Интерпретация (Депрессия как стагнация) [И]
-**Депрессия** — стагнация жизнеспособности вблизи критического порога:
+:::tip Interpretation (Depression as stagnation) [I]
+**Depression** — stagnation of viability near the critical threshold:
 
 $$
 P \to P_{\text{crit}} + \varepsilon, \quad \frac{dP}{d\tau} \approx 0, \quad \varepsilon \ll 1
 $$
 
-Система «зависает» чуть выше порога жизнеспособности $P_{\text{crit}} = 2/7 \approx 0.286$: достаточно когерентности для существования, но недостаточно для развития. Скорость изменения $P$ близка к нулю — нет ни улучшения, ни ухудшения.
+The system 'hangs' just above the viability threshold $P_{\text{crit}} = 2/7 \approx 0.286$: sufficient coherence for existence, but insufficient for development. The rate of change of $P$ is close to zero — neither improvement nor deterioration.
 :::
 
-**Мотивация.** Почему депрессия определяется через $P$, а не только через Gap? Потому что депрессия — *системное* состояние: не один конкретный канал заблокирован, а вся система «просела» к порогу. Gap-профиль при депрессии:
+**Motivation.** Why is depression defined through $P$, and not only through Gap? Because depression is a *systemic* state: not one specific channel is blocked, but the entire system has 'sunk' toward the threshold. Gap-profile in depression:
 
-- $\overline{\mathrm{Gap}}$ повышен (общая непрозрачность)
-- $\mathrm{Gap}(D,E) \uparrow$ — динамика отключена от опыта (*ангедония*: невозможность получать удовольствие)
-- $\mathrm{Gap}(D,U) \uparrow$ — динамика отключена от целостности (утрата целенаправленности)
-- $R$ может быть нормальным или даже повышенным — *депрессивная руминация* есть форма рефлексии, но направленная на неизменный Gap-профиль
+- $\overline{\mathrm{Gap}}$ is elevated (overall opacity)
+- $\mathrm{Gap}(D,E) \uparrow$ — dynamics disconnected from experience (*anhedonia*: inability to experience pleasure)
+- $\mathrm{Gap}(D,U) \uparrow$ — dynamics disconnected from unity (loss of purposiveness)
+- $R$ may be normal or even elevated — *depressive rumination* is a form of reflection, but directed at an unchanging Gap-profile
 
-**Числовой пример (развёрнутый).**
+**Numerical example (detailed).**
 
-| Параметр | Здоровый | Лёгкая депрессия | Тяжёлая депрессия |
+| Parameter | Healthy | Mild depression | Severe depression |
 |----------|:---:|:---:|:---:|
 | $P$ | $0.36$ | $0.31$ | $0.295$ |
 | $P - P_{\text{crit}}$ | $0.074$ | $0.024$ | $0.009$ |
 | $dP/d\tau$ | $+0.005$ | $\approx 0$ | $\approx 0$ |
 | $\mathrm{Gap}(D,E)$ | $0.20$ | $0.50$ | $0.75$ |
 | $\overline{\mathrm{Gap}}$ | $0.28$ | $0.40$ | $0.52$ |
-| $R$ | $0.45$ | $0.45$ | $0.50$ (руминация) |
-| Субъективно | «Жизнь нормальная» | «Всё серое» | «Серая пустота» |
+| $R$ | $0.45$ | $0.45$ | $0.50$ (rumination) |
+| Subjectively | 'Life is normal' | 'Everything is grey' | 'Grey emptiness' |
 
-Система буквально «балансирует на грани» — слишком близко к $P_{\text{crit}}$, чтобы развиваться, но достаточно далеко, чтобы не умереть. Отсутствие позитивного $dP/d\tau$ переживается как [ангедония](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты): валентность $\approx$ 0, активация $\approx$ 0 — «серая пустота».
+The system literally 'balances on the edge' — too close to $P_{\text{crit}}$ to develop, but far enough not to die. The absence of positive $dP/d\tau$ is experienced as [anhedonia](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты): valence $\approx$ 0, activation $\approx$ 0 — 'grey emptiness'.
 
-**Важно:** $R$ при депрессии может быть *повышен*. Руминация (бесконечное «пережёвывание» мыслей) повышает рефлексию, но направлена на неизменный Gap-профиль. Это объясняет парадокс *depressive realism*: депрессивные пациенты часто обладают более точными оценками вероятностей и собственных возможностей — их $\varphi(\Gamma)$ точнее отражает $\Gamma$, но сам $\Gamma$ патологичен.
+**Important:** $R$ in depression can be *elevated*. Rumination (endless 'chewing over' of thoughts) raises reflection, but is directed at an unchanging Gap-profile. This explains the *depressive realism* paradox: depressed patients often have more accurate probability estimates and assessments of their own capabilities — their $\varphi(\Gamma)$ more accurately reflects $\Gamma$, but the $\Gamma$ itself is pathological.
 
-**DSM-5 соответствие.** Большое депрессивное расстройство (F32/F33): сниженное настроение, ангедония, нарушения сна/аппетита, суицидальные мысли. В УГМ: $P \to P_{\text{crit}}$, $\mathrm{Gap}(D,E) \uparrow$, $dP/d\tau \approx 0$.
+**DSM-5 correspondence.** Major depressive disorder (F32/F33): depressed mood, anhedonia, sleep/appetite disturbances, suicidal ideation. In UHM: $P \to P_{\text{crit}}$, $\mathrm{Gap}(D,E) \uparrow$, $dP/d\tau \approx 0$.
 
-### 2.6 Психоз {#психоз}
+### 2.6 Psychosis {#психоз}
 
-:::info Определение (Психоз) [И]
-**Психоз** — внезапное глобальное уменьшение Gap при сохранении $R$:
+:::info Definition (Psychosis) [I]
+**Psychosis** — sudden global decrease of Gap while maintaining $R$:
 
 $$
-\overline{\mathrm{Gap}} \to 0 \quad \text{(скачком)}, \quad R \geq R_{\text{th}}
+\overline{\mathrm{Gap}} \to 0 \quad \text{(suddenly)}, \quad R \geq R_{\text{th}}
 $$
 
-Все границы между измерениями **растворяются одновременно** — система становится «полностью прозрачной», но без подготовки и без помехоустойчивости.
+All boundaries between dimensions **dissolve simultaneously** — the system becomes 'fully transparent', but without preparation and without noise immunity.
 :::
 
-**Ключевое различие: психоз vs. самадхи.** Оба состояния характеризуются низким $\overline{\mathrm{Gap}}$ — «все окна открыты». Но:
+**Key distinction: psychosis vs. samādhi.** Both states are characterised by low $\overline{\mathrm{Gap}}$ — 'all windows are open'. But:
 
-| | Самадхи | Психоз |
+| | Samādhi | Psychosis |
 |--|:-------:|:------:|
-| Механизм Gap-редукции | Контролируемый ($\varphi$-оптимизация) | Неконтролируемый ([катастрофа](/docs/core/dynamics/gap-dynamics#бифуркации)) |
-| Скорость | Постепенная (часы–дни) | Внезапная (минуты–часы) |
-| Граница Хэмминга | Функционально соблюдена ($\geq 3$ каналов с $\mathrm{Gap} > \varepsilon_{\text{noise}}$) | Функционально нарушена ($< 3$ каналов с $\mathrm{Gap} > \varepsilon_{\text{noise}}$) |
-| Коррекция ошибок | Работает | Не работает |
-| Обратимость | Естественный возврат | Требуется фармакотерапия |
+| Mechanism of Gap-reduction | Controlled ($\varphi$-optimisation) | Uncontrolled ([catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации)) |
+| Speed | Gradual (hours–days) | Sudden (minutes–hours) |
+| Hamming bound | Functionally satisfied ($\geq 3$ channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$) | Functionally violated ($< 3$ channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$) |
+| Error correction | Works | Does not work |
+| Reversibility | Natural return | Requires pharmacotherapy |
 
-В отличие от [самадхи](/docs/consciousness/states/altered-states#самадхи), при психозе:
-- Gap-редукция **неконтролируема** (не через $\varphi$-оптимизацию, а через [катастрофу](/docs/core/dynamics/gap-dynamics#бифуркации))
-- [Граница Хэмминга](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга) **структурно соблюдена** ($\geq 3$ каналов с $\mathrm{Gap} > 0$), но **функционально нарушена** — менее 3 каналов сохраняют $\mathrm{Gap} > \varepsilon_{\text{noise}}$ (см. [раздел 8.3](#психоз-хэмминг) [Т])
-- Коррекция ошибок $\varphi$ невозможна — оставшиеся каналы имеют отношение сигнал/шум $< 1$
+Unlike [samādhi](/docs/consciousness/states/altered-states#самадхи), in psychosis:
+- Gap-reduction is **uncontrolled** (not through $\varphi$-optimisation, but through [catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации))
+- The [Hamming bound](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга) is **structurally satisfied** ($\geq 3$ channels with $\mathrm{Gap} > 0$), but **functionally violated** — fewer than 3 channels maintain $\mathrm{Gap} > \varepsilon_{\text{noise}}$ (see [section 8.3](#психоз-хэмминг) [T])
+- Error correction $\varphi$ is impossible — the remaining channels have signal-to-noise ratio $< 1$
 
-**Числовой пример.** Норма vs. психоз:
+**Numerical example.** Normal vs. psychosis:
 
-| Параметр | Норма | Психоз | Самадхи |
+| Parameter | Normal | Psychosis | Samādhi |
 |----------|:---:|:---:|:---:|
 | $\overline{\mathrm{Gap}}$ | $0.28$ | $0.05$ | $0.08$ |
-| Gap-ы $> \varepsilon_{\text{noise}}$ | $\sim 18$ | $\sim 1$ | $\sim 5$ |
+| Gaps $> \varepsilon_{\text{noise}}$ | $\sim 18$ | $\sim 1$ | $\sim 5$ |
 | $R$ | $0.45$ | $0.40$ | $0.92$ |
-| Помехоустойчивость | Норма | Утрачена | Сохранена |
-| Субъективно | Обычный опыт | «Всё связано, всё значимо» | «Всё ясно, всё едино» |
+| Noise immunity | Normal | Lost | Preserved |
+| Subjectively | Ordinary experience | 'Everything is connected, everything is significant' | 'Everything is clear, everything is one' |
 
-При психозе: «всё связано, всё значимо» — потому что Gap $\to 0$ для всех каналов. Но в отличие от самадхи, нет «проверочных» каналов для отделения реальных связей от шума. Отсюда — бред (ложные связи, принимаемые за реальные) и галлюцинации (внутренние когерентности, воспринимаемые как внешние).
+In psychosis: 'everything is connected, everything is significant' — because Gap $\to 0$ for all channels. But unlike samādhi, there are no 'check' channels to separate real connections from noise. Hence — delusions (false connections taken as real) and hallucinations (internal coherences perceived as external).
 
-**Аналогия.** Психоз vs. самадхи: оба — «все окна открыты». Но самадхи — это контролируемое открытие, при котором оставшиеся закрытые окна (минимум 3) надёжно запирают помехи. Психоз — это ураган, сорвавший все ставни: окна открыты, но дом незащищён, и любой порыв ветра (шум, внешний стимул) свободно проникает внутрь.
+**Analogy.** Psychosis vs. samādhi: both — 'all windows are open'. But samādhi is a controlled opening, in which the remaining closed windows (at minimum 3) reliably lock out interference. Psychosis is a hurricane that has torn off all the shutters: the windows are open, but the house is unprotected, and any gust of wind (noise, external stimulus) freely enters.
 
-**DSM-5 соответствие.** Шизофрения (F20), шизоаффективное расстройство (F25), кратковременное психотическое расстройство (F23). Позитивные симптомы (бред, галлюцинации) = $\overline{\mathrm{Gap}} \to 0$; негативные симптомы (аволиция, алогия) = $\mathrm{Gap}(D,E) \uparrow$, $\mathrm{Gap}(L,E) \uparrow$.
+**DSM-5 correspondence.** Schizophrenia (F20), schizoaffective disorder (F25), brief psychotic disorder (F23). Positive symptoms (delusions, hallucinations) = $\overline{\mathrm{Gap}} \to 0$; negative symptoms (avolition, alogia) = $\mathrm{Gap}(D,E) \uparrow$, $\mathrm{Gap}(L,E) \uparrow$.
 
 ---
 
-## 3. Сводная таблица патологий {#сводная-таблица}
+## 3. Summary table of pathologies {#сводная-таблица}
 
-| Патология | Ключевые каналы | $\overline{\mathrm{Gap}}$ | $P$ | $R$ | Уровень |
+| Pathology | Key channels | $\overline{\mathrm{Gap}}$ | $P$ | $R$ | Level |
 |-----------|----------------|:-------------------------:|:---:|:---:|:-------:|
-| **Алекситимия** | Gap(L,E)↑, Gap(A,E)↑ | Умеренный | Норма | Норма | L2 |
-| **Диссоциация** | Gap внутри E-сектора | Высокий | Норма | Норма | L2 |
-| **Импульсивность** | Gap(L,D)↑ | Умеренный | Норма | Снижен | L2 |
-| **Экзист. кризис** | Gap(O,E)↑, Gap(O,U)↑ | Повышен | Снижен | Норма/↑ | L2 |
-| **Депрессия** | Gap(D,E)↑, Gap(D,U)↑ | Повышен | $\to P_{\text{crit}}$ | Норма/↑ | L2 (стаг.) |
-| **Психоз** | Все Gap↓ (скачком) | $\to 0$ | Варьирует | Норма | L2 (нестаб.) |
+| **Alexithymia** | Gap(L,E)↑, Gap(A,E)↑ | Moderate | Normal | Normal | L2 |
+| **Dissociation** | Gap within E-sector | High | Normal | Normal | L2 |
+| **Impulsivity** | Gap(L,D)↑ | Moderate | Normal | Reduced | L2 |
+| **Exist. crisis** | Gap(O,E)↑, Gap(O,U)↑ | Elevated | Reduced | Normal/↑ | L2 |
+| **Depression** | Gap(D,E)↑, Gap(D,U)↑ | Elevated | $\to P_{\text{crit}}$ | Normal/↑ | L2 (stag.) |
+| **Psychosis** | All Gap↓ (suddenly) | $\to 0$ | Varies | Normal | L2 (unstab.) |
 
 ---
 
-## 4. Соответствие Gap-паттернов и DSM-5 диагнозов {#dsm-таблица}
+## 4. Correspondence of Gap-patterns to DSM-5 diagnoses {#dsm-таблица}
 
-| Gap-паттерн | DSM-5 категория | Код | Ключевой параметр |
+| Gap-pattern | DSM-5 category | Code | Key parameter |
 |-------------|----------------|:---:|:---|
-| Gap(L,E)↑ + Gap(A,E)↑ | Расстройства соматических симптомов | F45 | Алекситимия |
-| Gap(L,E)↑ + Gap(A,E)↑ | РАС | F84 | Эмоциональная непрозрачность |
-| Gap внутри E-сектора | Диссоциативные расстройства | F44 | Деперсонализация |
-| Gap(L,D)↑ | СДВГ | F90 | Импульсивность |
-| Gap(L,D)↑ | Пограничное расстройство личности | F60.3 | Импульсивность + аффект |
-| Gap(O,E)↑ | Расстройство адаптации | F43.2 | Потеря смысла |
-| Gap(D,E)↑, $P \to P_{\text{crit}}$ | Большое депрессивное расстройство | F32/F33 | Ангедония + стагнация |
-| $\overline{\mathrm{Gap}} \to 0$ (скачком) | Шизофрения | F20 | Потеря помехоустойчивости |
-| Осцилляции $P(\tau)$ | Биполярное расстройство | F31 | Бифуркация Хопфа |
-| Gap(D,E)↑ + Gap(A,E)↑ | ПТСР | F43.1 | Избегание + ангедония |
-| Gap(A,E)↑ (устойчивое) | Генерализованное тревожное | F41.1 | Гипервнимание + непрозрачность |
+| Gap(L,E)↑ + Gap(A,E)↑ | Somatic symptom disorders | F45 | Alexithymia |
+| Gap(L,E)↑ + Gap(A,E)↑ | ASD | F84 | Emotional opacity |
+| Gap within E-sector | Dissociative disorders | F44 | Depersonalisation |
+| Gap(L,D)↑ | ADHD | F90 | Impulsivity |
+| Gap(L,D)↑ | Borderline personality disorder | F60.3 | Impulsivity + affect |
+| Gap(O,E)↑ | Adjustment disorder | F43.2 | Loss of meaning |
+| Gap(D,E)↑, $P \to P_{\text{crit}}$ | Major depressive disorder | F32/F33 | Anhedonia + stagnation |
+| $\overline{\mathrm{Gap}} \to 0$ (suddenly) | Schizophrenia | F20 | Loss of noise immunity |
+| Oscillations $P(\tau)$ | Bipolar disorder | F31 | Hopf bifurcation |
+| Gap(D,E)↑ + Gap(A,E)↑ | PTSD | F43.1 | Avoidance + anhedonia |
+| Gap(A,E)↑ (sustained) | Generalised anxiety disorder | F41.1 | Hypervigilance + opacity |
 
-**Важно:** соответствие не взаимно однозначное. Один Gap-паттерн может встречаться при нескольких DSM-диагнозах, и один диагноз может включать несколько Gap-паттернов. Это отражает реальную клиническую картину: коморбидность — правило, а не исключение.
+**Important:** the correspondence is not one-to-one. One Gap-pattern can occur in multiple DSM diagnoses, and one diagnosis can include multiple Gap-patterns. This reflects the real clinical picture: comorbidity is the rule, not the exception.
 
 ---
 
-## 5. Диагностический протокол {#протокол}
+## 5. Diagnostic protocol {#протокол}
 
-Полный протокол «Дуального интервью» описан в [Gap-диагностике](/docs/applied/research/gap-diagnostics#протокол). Для патологических состояний он дополняется:
+The full 'Dual Interview' protocol is described in [Gap-diagnostics](/docs/applied/research/gap-diagnostics#протокол). For pathological states it is supplemented by:
 
-### 5.1 Шаги патологической диагностики
+### 5.1 Steps of pathological diagnosis
 
-1. **Построение Gap-профиля** — стандартный протокол из [Gap-диагностики](/docs/applied/research/gap-diagnostics#карта-прозрачности)
-2. **Идентификация ключевых каналов** — каналы с $\mathrm{Gap}(i,j) > 0.8$
-3. **Сопоставление с паттернами** — таблица из [раздела 3](#сводная-таблица)
-4. **Оценка жизнеспособности** — $P$ и $dP/d\tau$
-5. **Определение динамического режима** — стагнация, осцилляции или бифуркация (см. [теорию бифуркаций](/docs/core/dynamics/gap-dynamics#бифуркации))
+1. **Construction of Gap-profile** — standard protocol from [Gap-diagnostics](/docs/applied/research/gap-diagnostics#карта-прозрачности)
+2. **Identification of key channels** — channels with $\mathrm{Gap}(i,j) > 0.8$
+3. **Comparison with patterns** — table from [section 3](#сводная-таблица)
+4. **Assessment of viability** — $P$ and $dP/d\tau$
+5. **Determination of the dynamic regime** — stagnation, oscillations or bifurcation (see [bifurcation theory](/docs/core/dynamics/gap-dynamics#бифуркации))
 
-### 5.2 Дифференциальная диагностика
+### 5.2 Differential diagnosis
 
-:::tip Интерпретация (Различение патологий по Gap-профилю) [И]
-Две патологии различимы тогда и только тогда, когда существует канал $(i,j)$, для которого их Gap-значения существенно различаются:
+:::tip Interpretation (Distinguishing pathologies by Gap-profile) [I]
+Two pathologies are distinguishable if and only if there exists a channel $(i,j)$ for which their Gap-values differ substantially:
 
 $$
-\text{Различимость:} \quad \exists\, (i,j): |\mathrm{Gap}_1(i,j) - \mathrm{Gap}_2(i,j)| > \delta_{\text{диагн}}
+\text{Distinguishability:} \quad \exists\, (i,j): |\mathrm{Gap}_1(i,j) - \mathrm{Gap}_2(i,j)| > \delta_{\text{diagn}}
 $$
 
-где $\delta_{\text{диагн}}$ — диагностический порог различимости.
+where $\delta_{\text{diagn}}$ — the diagnostic distinguishability threshold.
 :::
 
-**Пример дифференциальной диагностики: алекситимия vs. диссоциация.**
+**Example of differential diagnosis: alexithymia vs. dissociation.**
 
-| Канал | Алекситимия | Диссоциация | Различие |
+| Channel | Alexithymia | Dissociation | Difference |
 |-------|:---:|:---:|:---:|
 | Gap(L,E) | $\to 1$ | $< 1$ | $> 0.5$ |
 | Gap(A,E) | $\to 1$ | $< 1$ | $> 0.5$ |
 | Gap(S,E) | $< 1$ | $\to 1$ | $> 0.5$ |
-| Gap(D,E) | $< 1$ | Варьирует | Варьирует |
+| Gap(D,E) | $< 1$ | Varies | Varies |
 
-Ключевое различие: при алекситимии непрозрачны каналы «высшего порядка» (внимание, логика), при диссоциации — «низшего» (структура, тело). Диагностический порог $\delta_{\text{диагн}} \geq 0.3$ обеспечивает надёжное различение.
+Key distinction: in alexithymia the 'higher-order' channels (attention, logic) are opaque; in dissociation — the 'lower-order' ones (structure, body). A diagnostic threshold $\delta_{\text{diagn}} \geq 0.3$ ensures reliable differentiation.
 
-**Пример: депрессия vs. экзистенциальный кризис.**
+**Example: depression vs. existential crisis.**
 
-| Канал | Депрессия | Экзист. кризис | Различие |
+| Channel | Depression | Exist. crisis | Difference |
 |-------|:---:|:---:|:---:|
-| Gap(D,E) | $\to 1$ (ангедония) | Умеренный | $> 0.3$ |
-| Gap(O,E) | Умеренный | $\to 1$ (бессмысленность) | $> 0.3$ |
-| $P$ | $\to P_{\text{crit}}$ | Снижен, но не критично | $> 0.02$ |
-| $R$ | Норма/↑ (руминация) | Норма/↑ | $\approx 0$ |
+| Gap(D,E) | $\to 1$ (anhedonia) | Moderate | $> 0.3$ |
+| Gap(O,E) | Moderate | $\to 1$ (meaninglessness) | $> 0.3$ |
+| $P$ | $\to P_{\text{crit}}$ | Reduced, not critical | $> 0.02$ |
+| $R$ | Normal/↑ (rumination) | Normal/↑ | $\approx 0$ |
 
-При депрессии ключевой — канал динамики ($D$); при кризисе — канал основания ($O$). Оба могут сосуществовать (коморбидность, раздел 6).
+In depression, the key channel is dynamics ($D$); in crisis — the ground channel ($O$). Both can coexist (comorbidity, section 6).
 
 ---
 
-## 6. Коморбидность как наложение Gap-паттернов {#коморбидность}
+## 6. Comorbidity as superposition of Gap-patterns {#коморбидность}
 
-### 6.1 Принцип наложения
+### 6.1 Superposition principle
 
-Коморбидность — одновременное присутствие нескольких патологий — в УГМ описывается как **наложение Gap-паттернов**: если патология A характеризуется $\mathrm{Gap}_A(i,j) \to 1$ для набора каналов $C_A$, а патология B — для набора $C_B$, то коморбидность A+B = $C_A \cup C_B$.
+Comorbidity — the simultaneous presence of multiple pathologies — is described in UHM as **superposition of Gap-patterns**: if pathology A is characterised by $\mathrm{Gap}_A(i,j) \to 1$ for a set of channels $C_A$, and pathology B — for set $C_B$, then comorbidity A+B = $C_A \cup C_B$.
 
 $$
-\mathbf{G}_{\text{комор}} = \max(\mathbf{G}_A, \mathbf{G}_B)
+\mathbf{G}_{\text{comor}} = \max(\mathbf{G}_A, \mathbf{G}_B)
 $$
 
-(поканально: для каждого $(i,j)$ берём максимальный Gap из двух паттернов).
+(channel-by-channel: for each $(i,j)$ we take the maximum Gap from the two patterns).
 
-### 6.2 Примеры коморбидности
+### 6.2 Examples of comorbidity
 
-**Депрессия + алекситимия** (часто встречается клинически):
+**Depression + alexithymia** (clinically common):
 
-| Канал | Депрессия | Алекситимия | Коморбидность |
+| Channel | Depression | Alexithymia | Comorbidity |
 |-------|:---:|:---:|:---:|
 | Gap(D,E) | $0.75$ | $0.30$ | $0.75$ |
 | Gap(L,E) | $0.30$ | $0.95$ | $0.95$ |
@@ -415,262 +415,262 @@ $$
 | $\overline{\mathrm{Gap}}$ | $0.40$ | $0.38$ | $0.52$ |
 | $P$ | $0.295$ | $0.34$ | $0.29$ |
 
-Результат: при коморбидности $\overline{\mathrm{Gap}}$ и $P$ ухудшаются **мультипликативно** — не просто «сумма двух проблем», а *взаимное усиление*. Пациент не может ни осознать эмоции (алекситимия), ни действовать на основе неосознанных (депрессия) — тупик.
+Result: in comorbidity, $\overline{\mathrm{Gap}}$ and $P$ deteriorate multiplicatively — not simply 'the sum of two problems', but mutual amplification. The patient can neither recognise emotions (alexithymia) nor act on the unrecognised ones (depression) — a deadlock.
 
-**Импульсивность + экзистенциальный кризис** (пограничное расстройство):
+**Impulsivity + existential crisis** (borderline disorder):
 
-| Канал | Импульсивность | Экзист. кризис | Коморбидность |
+| Channel | Impulsivity | Exist. crisis | Comorbidity |
 |-------|:---:|:---:|:---:|
 | Gap(L,D) | $0.99$ | $0.40$ | $0.99$ |
 | Gap(O,E) | $0.30$ | $0.90$ | $0.90$ |
 | Gap(O,U) | $0.35$ | $0.85$ | $0.85$ |
 
-Субъективно: «жизнь бессмысленна, и я не могу контролировать свои действия» — типичная феноменология пограничного расстройства личности (F60.3).
+Subjectively: 'life is meaningless and I cannot control my actions' — the typical phenomenology of borderline personality disorder (F60.3).
 
-### 6.3 Визуализация пространства патологий
+### 6.3 Visualisation of pathology space
 
 ```mermaid
 graph TD
-    subgraph SPACE["Пространство патологий (Gap-координаты)"]
-        AL["Алекситимия<br/>Gap(L,E)↑ Gap(A,E)↑"]
-        DIS["Диссоциация<br/>Gap(S,E)↑ / E-расщепление"]
-        IMP["Импульсивность<br/>Gap(L,D)↑"]
-        EX["Экзист. кризис<br/>Gap(O,E)↑ Gap(O,U)↑"]
-        DEP["Депрессия<br/>P→P_crit, Gap(D,E)↑"]
-        PSY["Психоз<br/>Gap̄→0 (скачком)"]
+    subgraph SPACE["Space of pathologies (Gap-coordinates)"]
+        AL["Alexithymia<br/>Gap(L,E)↑ Gap(A,E)↑"]
+        DIS["Dissociation<br/>Gap(S,E)↑ / E-splitting"]
+        IMP["Impulsivity<br/>Gap(L,D)↑"]
+        EX["Exist. crisis<br/>Gap(O,E)↑ Gap(O,U)↑"]
+        DEP["Depression<br/>P→P_crit, Gap(D,E)↑"]
+        PSY["Psychosis<br/>Gap̄→0 (suddenly)"]
     end
 
-    AL ---|"коморбидность"| DEP
-    IMP ---|"коморбидность"| EX
-    AL ---|"общий канал Gap(A,E)"| DIS
-    DEP ---|"P↓ → катастрофа"| PSY
-    EX ---|"углубление"| DEP
+    AL ---|"comorbidity"| DEP
+    IMP ---|"comorbidity"| EX
+    AL ---|"shared channel Gap(A,E)"| DIS
+    DEP ---|"P↓ → catastrophe"| PSY
+    EX ---|"deepening"| DEP
 ```
 
 ---
 
-## 7. Коррекционные стратегии {#коррекция}
+## 7. Corrective strategies {#коррекция}
 
-### 7.1 Принципы коррекции
+### 7.1 Principles of correction
 
-Каждая патология — специфический Gap-профиль. Коррекция = целенаправленное изменение Gap в определённых каналах:
+Each pathology is a specific Gap-profile. Correction = targeted modification of Gap in specific channels:
 
-:::info Определение (Терапевтическая цель) [И]
-**Терапевтическая цель** для патологии с Gap-профилем $\mathbf{G}_{\text{пат}}$ — приведение к целевому профилю $\mathbf{G}_{\text{цель}}$:
+:::info Definition (Therapeutic target) [I]
+**Therapeutic target** for a pathology with Gap-profile $\mathbf{G}_{\text{pat}}$ — bringing it to the target profile $\mathbf{G}_{\text{target}}$:
 
 $$
-\text{Цель:} \quad \mathbf{G}(\Gamma(\tau)) \to \mathbf{G}_{\text{цель}} \quad \text{при} \quad \tau \to \infty
+\text{Goal:} \quad \mathbf{G}(\Gamma(\tau)) \to \mathbf{G}_{\text{target}} \quad \text{as} \quad \tau \to \infty
 $$
 
-при сохранении $P > P_{\text{crit}}$ и $R \geq R_{\text{th}}$ на всём протяжении траектории.
+while maintaining $P > P_{\text{crit}}$ and $R \geq R_{\text{th}}$ throughout the trajectory.
 
-**Ключевое ограничение:** $\mathbf{G}_{\text{цель}} \neq \mathbf{0}$ — полная прозрачность невозможна и опасна (см. [психоз](#психоз)). Цель — не «вылечить всё», а привести Gap-профиль к *функциональному* состоянию, где все патологические каналы ниже порога, а «проверочные» каналы (граница Хэмминга) сохранены.
+**Key constraint:** $\mathbf{G}_{\text{target}} \neq \mathbf{0}$ — full transparency is impossible and dangerous (see [psychosis](#психоз)). The goal is not to 'cure everything' but to bring the Gap-profile to a functional state where all pathological channels are below the threshold and the 'check' channels (Hamming bound) are preserved.
 :::
 
-### 7.2 Три модальности коррекции
+### 7.2 Three correction modalities
 
-| Модальность | Механизм | Целевые параметры | Скорость | Примеры |
+| Modality | Mechanism | Target parameters | Speed | Examples |
 |-------------|----------|-------------------|:--------:|---------|
-| **Терапия** | Целенаправленная Gap-редукция | Конкретные $\mathrm{Gap}(i,j) \downarrow$ | Месяцы | КПТ: Gap(L,E)↓; телесная: Gap(S,E)↓ |
-| **Медикаменты** | Глобальный сдвиг параметров | $\Gamma_2, \kappa, \omega_c$ | Недели | Антидепрессанты: $\kappa \uparrow$; нейролептики: $\overline{\mathrm{Gap}} \uparrow$ |
-| **Практики** | Произвольная $\varphi$-оптимизация | $R \uparrow$, E-секторный Gap$\downarrow$ | Месяцы–годы | [Медитация](/docs/consciousness/states/altered-states#медитация) |
+| **Therapy** | Targeted Gap-reduction | Specific $\mathrm{Gap}(i,j) \downarrow$ | Months | CBT: Gap(L,E)↓; somatic: Gap(S,E)↓ |
+| **Medications** | Global shift of parameters | $\Gamma_2, \kappa, \omega_c$ | Weeks | Antidepressants: $\kappa \uparrow$; antipsychotics: $\overline{\mathrm{Gap}} \uparrow$ |
+| **Practices** | Voluntary $\varphi$-optimisation | $R \uparrow$, E-sector Gap$\downarrow$ | Months–years | [Meditation](/docs/consciousness/states/altered-states#медитация) |
 
-**Числовой пример: три модальности для депрессии.**
+**Numerical example: three modalities for depression.**
 
-| Модальность | До | После | Время | Механизм |
+| Modality | Before | After | Time | Mechanism |
 |-------------|:---:|:---:|:---:|:---|
-| КПТ | Gap(D,E)=0.75 | Gap(D,E)=0.35 | 3–6 мес. | Вербализация эмоций |
-| СИОЗС | $P=0.295$ | $P=0.33$ | 2–4 нед. | Увеличение $\kappa$ (серотонин) |
-| Mindfulness | $\overline{\mathrm{Gap}}=0.52$ | $\overline{\mathrm{Gap}}=0.35$ | 6–12 мес. | $R \uparrow$, глобальная Gap-редукция |
+| CBT | Gap(D,E)=0.75 | Gap(D,E)=0.35 | 3–6 months | Verbalisation of emotions |
+| SSRI | $P=0.295$ | $P=0.33$ | 2–4 weeks | Increase of $\kappa$ (serotonin) |
+| Mindfulness | $\overline{\mathrm{Gap}}=0.52$ | $\overline{\mathrm{Gap}}=0.35$ | 6–12 months | $R \uparrow$, global Gap-reduction |
 
-Оптимальная стратегия: *комбинация* модальностей. СИОЗС поднимают $P$ от критической зоны (быстрый эффект); КПТ снижает конкретный Gap(D,E) (средний эффект); mindfulness перестраивает общий Gap-профиль (долгосрочный эффект).
+Optimal strategy: a *combination* of modalities. SSRI raises $P$ from the critical zone (fast effect); CBT reduces the specific Gap(D,E) (medium effect); mindfulness restructures the overall Gap-profile (long-term effect).
 
-### 7.3 Соответствие терапевтических подходов и каналов
+### 7.3 Correspondence of therapeutic approaches and channels
 
-| Канал | Терапевтический подход | Цель | Числовой ориентир |
+| Channel | Therapeutic approach | Goal | Numerical target |
 |-------|----------------------|------|:-----------------:|
-| Gap(L,E)↓ | КПТ, психоанализ | Вербализация — понимание переживаний | С 0.90 до 0.25 |
-| Gap(A,E)↓ | Mindfulness, гештальт | Осознание — замечание переживаний | С 0.85 до 0.20 |
-| Gap(S,E)↓ | Телесно-ориентированная терапия | Соматическое осознание | С 0.80 до 0.25 |
-| Gap(D,E)↓ | Экспрессивная терапия | Восстановление аффективного контакта | С 0.75 до 0.20 |
-| Gap(O,E)↓ | Экзистенциальная терапия | Восстановление связи с основанием | С 0.90 до 0.30 |
-| Gap(L,D)↓ | Поведенческая терапия | Логический контроль импульсов | С 0.95 до 0.30 |
+| Gap(L,E)↓ | CBT, psychoanalysis | Verbalisation — understanding of experiences | From 0.90 to 0.25 |
+| Gap(A,E)↓ | Mindfulness, gestalt | Awareness — noticing of experiences | From 0.85 to 0.20 |
+| Gap(S,E)↓ | Body-oriented therapy | Somatic awareness | From 0.80 to 0.25 |
+| Gap(D,E)↓ | Expressive therapy | Restoration of affective contact | From 0.75 to 0.20 |
+| Gap(O,E)↓ | Existential therapy | Restoration of connection to the ground | From 0.90 to 0.30 |
+| Gap(L,D)↓ | Behavioural therapy | Logical control of impulses | From 0.95 to 0.30 |
 
-### 7.4 Ограничения коррекции
+### 7.4 Limitations of correction
 
-По [Теореме о неполной прозрачности](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), даже идеальная терапия не может привести к $\overline{\mathrm{Gap}} = 0$: минимум 3 канала из 21 сохраняют ненулевой Gap. Цель коррекции — не устранение всех Gap, а **перераспределение** непрозрачности из патологических каналов в «проверочные» (структурно необходимые).
+By the [Theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), even ideal therapy cannot bring $\overline{\mathrm{Gap}} = 0$: at minimum 3 out of 21 channels retain a non-zero Gap. The goal of correction is not the elimination of all Gaps, but the **redistribution** of opacity from pathological channels into 'check' channels (structurally necessary).
 
-**Аналогия.** Цель терапии — не снести все стены в доме (полная прозрачность невозможна и опасна — см. психоз), а переместить стены туда, где они выполняют несущую функцию, убрав их оттуда, где они мешают жить. Три «несущие стены» (граница Хэмминга) останутся всегда.
+**Analogy.** The goal of therapy is not to knock down all the walls in the house (full transparency is impossible and dangerous — see psychosis), but to move the walls to where they perform a load-bearing function, removing them from where they impede life. The three 'load-bearing walls' (Hamming bound) will always remain.
 
 ---
 
-## 8. Динамика патологических переходов {#динамика}
+## 8. Dynamics of pathological transitions {#динамика}
 
-### 8.1 Вход в патологию
+### 8.1 Entry into pathology
 
-Переход от нормы к патологии — [бифуркация](/docs/core/dynamics/gap-dynamics#бифуркации) Gap-ландшафта:
+The transition from normal to pathological state — a [bifurcation](/docs/core/dynamics/gap-dynamics#бифуркации) of the Gap-landscape:
 
-| Тип бифуркации | Переход | Клинический аналог | Скорость |
+| Bifurcation type | Transition | Clinical analogue | Speed |
 |----------------|---------|---------------------|:--------:|
-| Седло-узловая | Внезапная потеря устойчивого Gap-профиля | Острый кризис, психотический эпизод | Часы–дни |
-| Вилочная | Расщепление на два Gap-профиля | Диссоциация, экзистенциальный выбор | Недели |
-| Хопфа | Стационарный $\to$ осциллирующий Gap | Биполярное расстройство | Месяцы |
+| Saddle-node | Sudden loss of stable Gap-profile | Acute crisis, psychotic episode | Hours–days |
+| Pitchfork | Splitting into two Gap-profiles | Dissociation, existential choice | Weeks |
+| Hopf | Stationary → oscillating Gap | Bipolar disorder | Months |
 
-(Подробнее — [Gap-динамика, раздел 3](/docs/core/dynamics/gap-dynamics#бифуркации))
+(For more detail — [Gap-dynamics, section 3](/docs/core/dynamics/gap-dynamics#бифуркации))
 
-**Числовой пример: биполярное расстройство как бифуркация Хопфа.**
+**Numerical example: bipolar disorder as Hopf bifurcation.**
 
-В норме: $P = 0.36$, $dP/d\tau \approx 0$ (стационарная точка). При бифуркации Хопфа стационарная точка теряет устойчивость, и $P(\tau)$ начинает осциллировать:
+In the normal state: $P = 0.36$, $dP/d\tau \approx 0$ (stationary point). At Hopf bifurcation, the stationary point loses stability and $P(\tau)$ begins to oscillate:
 
 $$
 P(\tau) = P_0 + A \cdot \sin(\omega \tau) = 0.36 + 0.05 \cdot \sin(\omega \tau)
 $$
 
-| Фаза | $P$ | $dP/d\tau$ | $\mathrm{Gap}(D,E)$ | Субъективно |
+| Phase | $P$ | $dP/d\tau$ | $\mathrm{Gap}(D,E)$ | Subjectively |
 |------|:---:|:---:|:---:|:---|
-| Мания (максимум) | $0.41$ | $> 0$ | $0.10$ | Эйфория, грандиозность |
-| Переход | $0.36$ | $0$ | $0.20$ | Нестабильность |
-| Депрессия (минимум) | $0.31$ | $< 0$ | $0.50$ | Ангедония, бессилие |
-| Переход | $0.36$ | $0$ | $0.20$ | Нестабильность |
+| Mania (maximum) | $0.41$ | $> 0$ | $0.10$ | Euphoria, grandiosity |
+| Transition | $0.36$ | $0$ | $0.20$ | Instability |
+| Depression (minimum) | $0.31$ | $< 0$ | $0.50$ | Anhedonia, helplessness |
+| Transition | $0.36$ | $0$ | $0.20$ | Instability |
 
-Период осцилляции $\sim$ недели-месяцы, что согласуется с клиникой биполярного расстройства I типа.
+The oscillation period ~weeks–months, consistent with the clinical picture of bipolar disorder type I.
 
-### 8.2 Выход из патологии
+### 8.2 Exit from pathology
 
-Терапевтический выход — **обратная бифуркация** или постепенное смещение параметров. По [немарковской динамике](/docs/applied/coherence-cybernetics/non-markovian), скорость выхода определяется глубиной памяти:
+Therapeutic exit — reverse bifurcation or gradual shift of parameters. By [non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian), the exit speed is determined by the memory depth:
 
 $$
-\tau_{\text{выход}} \propto \tau_{\text{mem}} \cdot \max_{(i,j) \in \text{пат}} \mathrm{Gap}(i,j)
+\tau_{\text{exit}} \propto \tau_{\text{mem}} \cdot \max_{(i,j) \in \text{pat}} \mathrm{Gap}(i,j)
 $$
 
-Чем длительнее память ($\tau_{\text{mem}}$) и чем глубже непрозрачность, тем дольше терапия. Подробнее о немарковских эффектах — в [Внимание и память](/docs/consciousness/states/attention-memory#память).
+The longer the memory ($\tau_{\text{mem}}$) and the deeper the opacity, the longer the therapy. For more on non-Markovian effects — see [Attention and Memory](/docs/consciousness/states/attention-memory#память).
 
-**Числовой пример: время выхода из разных патологий.**
+**Numerical example: exit time from different pathologies.**
 
-| Патология | $\tau_{\text{mem}}$ | $\max \mathrm{Gap}$ | $\tau_{\text{выход}}$ | Реально |
+| Pathology | $\tau_{\text{mem}}$ | $\max \mathrm{Gap}$ | $\tau_{\text{exit}}$ | In practice |
 |-----------|:---:|:---:|:---:|:---|
-| Лёгкая импульсивность | 1 год | $0.80$ | $\propto 0.8$ | 3–6 мес. терапии |
-| Депрессия средней тяжести | 3 года | $0.75$ | $\propto 2.25$ | 6–12 мес. |
-| Алекситимия (с детства) | 20 лет | $0.95$ | $\propto 19$ | 2–5 лет |
-| Диссоциация (травматическая) | 15 лет | $0.90$ | $\propto 13.5$ | 2–4 года |
+| Mild impulsivity | 1 year | $0.80$ | $\propto 0.8$ | 3–6 months of therapy |
+| Moderate depression | 3 years | $0.75$ | $\propto 2.25$ | 6–12 months |
+| Alexithymia (from childhood) | 20 years | $0.95$ | $\propto 19$ | 2–5 years |
+| Dissociation (traumatic) | 15 years | $0.90$ | $\propto 13.5$ | 2–4 years |
 
-#### Определение ε_noise из первых принципов [Т] {#определение-epsilon-noise}
+#### Definition of ε_noise from first principles [T] {#определение-epsilon-noise}
 
-:::info Определение (Порог функциональной слышимости)
-**Функциональный шумовой порог** канала (i,j):
+:::info Definition (Functional detectability threshold)
+**Functional noise threshold** of channel (i,j):
 
 $$\varepsilon_{\text{noise}} := \frac{\mathrm{Gap}_{\min}}{\mathrm{SNR}_{\text{th}}}$$
 
-где:
-- $\mathrm{Gap}_{\min} = \bar{\varepsilon} \approx 0.023$ — минимальный ненулевой Gap из секторной границы [T-80 [Т]](/docs/physics/gauge-symmetry/fano-selection-rules): для не-O когерентностей $\mathrm{Gap}(i,j) \leq \bar{\varepsilon}$ при $O$-секторном доминировании
-- $\mathrm{SNR}_{\text{th}} = 1$ — стандартный порог обнаружения сигнала (отношение сигнал/шум = 1, детекция при 50% вероятности ошибки)
+where:
+- $\mathrm{Gap}_{\min} = \bar{\varepsilon} \approx 0.023$ — the minimum non-zero Gap from the sectoral bound [T-80 [T]](/docs/physics/gauge-symmetry/fano-selection-rules): for non-O coherences $\mathrm{Gap}(i,j) \leq \bar{\varepsilon}$ under O-sector dominance
+- $\mathrm{SNR}_{\text{th}} = 1$ — standard signal detection threshold (signal-to-noise ratio = 1, detection at 50% error probability)
 
 $$\varepsilon_{\text{noise}} \approx 0.023$$
 
-Это значение **выведено** из октонионной структуры (O-секторное доминирование [Т]) и стандартной теории обнаружения сигналов — не постулировано.
+This value is **derived** from the octonionic structure (O-sector dominance [T]) and standard signal detection theory — not postulated.
 :::
 
-**Интерпретация:** Канал $(i,j)$ с $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}}$ имеет SNR < 1 для коррекции ошибок самомодели $\varphi$. Структурно Gap > 0 (граница Хэмминга [Т-41g]), но функционально канал «глух» — ошибки φ в этом канале не корректируются.
+**Interpretation:** A channel $(i,j)$ with $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}}$ has SNR $< 1$ for error correction of the self-model $\varphi$. Structurally Gap $> 0$ (Hamming bound [T-41g]), but functionally the channel is 'deaf' — $\varphi$-errors in this channel are not corrected.
 
-### 8.3 Психоз и граница Хэмминга {#психоз-хэмминг}
+### 8.3 Psychosis and the Hamming bound {#психоз-хэмминг}
 
-:::warning Теорема (Структурная vs. функциональная потеря) [Т] (T-90)
-Граница Хэмминга — **структурное** свойство кода H(7,4), выполненное для любой L2-системы: $|\{(i,j): \text{Gap}(i,j) > 0\}| \geq 3$ **[Т]** (41g). Психоз — **функциональная** потеря, не структурное нарушение: $|\{(i,j): \text{Gap}(i,j) > \varepsilon_{\text{noise}}\}| < 3$, при этом формально Gap > 0 для $\geq 3$ пар. Граница Хэмминга гарантирует Gap > 0, но не гарантирует Gap > $\varepsilon_{\text{noise}}$ **[Т]**.
+:::warning Theorem (Structural vs. functional loss) [T] (T-90)
+The Hamming bound is a **structural** property of the code H(7,4), holding for any L2-system: $|\{(i,j): \text{Gap}(i,j) > 0\}| \geq 3$ **[T]** (41g). Psychosis is a **functional** loss, not a structural violation: $|\{(i,j): \text{Gap}(i,j) > \varepsilon_{\text{noise}}\}| < 3$, while formally Gap $> 0$ for $\geq 3$ pairs. The Hamming bound guarantees Gap $> 0$, but does not guarantee Gap $> \varepsilon_{\text{noise}}$ **[T]**.
 :::
 
-Таким образом, при психозе:
-- Граница Хэмминга **не нарушена** — минимум 3 канала с $\mathrm{Gap}(i,j) > 0$ всегда существуют (структурная теорема)
-- Однако оставшиеся каналы имеют отношение сигнал/шум $< 1$: $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}} \approx 0.023$
-- Система **формально** жизнеспособна (L2), но **функционально** теряет помехоустойчивость самомоделирования
-- Нейролептики восстанавливают Gap в «проверочных» каналах **выше** $\varepsilon_{\text{noise}}$, возвращая функциональную коррекцию ошибок
+Thus, in psychosis:
+- The Hamming bound is **not violated** — at minimum 3 channels with $\mathrm{Gap}(i,j) > 0$ always exist (structural theorem)
+- However, the remaining channels have signal-to-noise ratio $< 1$: $\mathrm{Gap}(i,j) < \varepsilon_{\text{noise}} \approx 0.023$
+- The system is **formally** viable (L2), but **functionally** loses noise immunity of self-modelling
+- Antipsychotics restore Gap in the 'check' channels **above** $\varepsilon_{\text{noise}}$, restoring functional error correction
 
-Эмпирическая проверка: корреляция между шкалами психотической симптоматики и числом каналов с $\mathrm{Gap} > \varepsilon_{\text{noise}}$ в [протоколе измерения](/docs/applied/research/measurement-protocol). Связь с [теоремами КК](/docs/applied/coherence-cybernetics/theorems) — через T-90 и границу Хэмминга.
+Empirical verification: correlation between psychotic symptom scales and the number of channels with $\mathrm{Gap} > \varepsilon_{\text{noise}}$ in the [measurement protocol](/docs/applied/research/measurement-protocol). Connection to [CC theorems](/docs/applied/coherence-cybernetics/theorems) — through T-90 and the Hamming bound.
 
 ---
 
-## 9. Пространство патологий: визуализация {#пространство-патологий}
+## 9. Pathology space: visualisation {#пространство-патологий}
 
 ```mermaid
 graph LR
-    subgraph NORM["Норма"]
-        N["Бодрствование<br/>P=0.36, Gap̄=0.28<br/>R=0.45"]
+    subgraph NORM["Normal"]
+        N["Wakefulness<br/>P=0.36, Gap̄=0.28<br/>R=0.45"]
     end
-    subgraph PAT["Патологии"]
-        AL["Алекситимия<br/>Gap(L,E)=0.95<br/>Gap(A,E)=0.88"]
-        DIS["Диссоциация<br/>Gap(S,E)=0.90<br/>E-расщепление"]
-        IMP["Импульсивность<br/>Gap(L,D)=0.99<br/>arg≈π/2"]
-        EX["Экзист. кризис<br/>Gap(O,E)=0.90<br/>Gap(O,U)=0.85"]
-        DEP["Депрессия<br/>P=0.295<br/>Gap(D,E)=0.75"]
-        PSY["Психоз<br/>Gap̄→0<br/>SNR<1"]
+    subgraph PAT["Pathologies"]
+        AL["Alexithymia<br/>Gap(L,E)=0.95<br/>Gap(A,E)=0.88"]
+        DIS["Dissociation<br/>Gap(S,E)=0.90<br/>E-splitting"]
+        IMP["Impulsivity<br/>Gap(L,D)=0.99<br/>arg≈π/2"]
+        EX["Exist. crisis<br/>Gap(O,E)=0.90<br/>Gap(O,U)=0.85"]
+        DEP["Depression<br/>P=0.295<br/>Gap(D,E)=0.75"]
+        PSY["Psychosis<br/>Gap̄→0<br/>SNR<1"]
     end
 
     N -->|"Gap(L,E)↑ Gap(A,E)↑"| AL
-    N -->|"Gap внутри E↑"| DIS
+    N -->|"Gap within E↑"| DIS
     N -->|"arg(γ_DL)→π/2"| IMP
     N -->|"Gap(O,E)↑"| EX
     N -->|"P↓, Gap(D,E)↑"| DEP
-    N -->|"Gap̄→0 (скачком)"| PSY
+    N -->|"Gap̄→0 (suddenly)"| PSY
     DEP -->|"P↓↓"| PSY
-    EX -->|"углубление"| DEP
-    AL -->|"коморбидность"| DEP
-    IMP -->|"коморбидность"| EX
+    EX -->|"deepening"| DEP
+    AL -->|"comorbidity"| DEP
+    IMP -->|"comorbidity"| EX
 ```
 
 ---
 
-## 10. Карта патологий на фазовой диаграмме {#фазовая-диаграмма}
+## 10. Map of pathologies on the phase diagram {#фазовая-диаграмма}
 
-Патологические состояния проецируются на [фазовую диаграмму](/docs/core/dynamics/gap-phase-diagram):
+Pathological states are projected onto the [phase diagram](/docs/core/dynamics/gap-phase-diagram):
 
 ```
     t (T_eff/T_c)
     │
-  2 ┤    Фаза II (L0): Gap равномерный
-    │    Психоз: скачок сюда из Фазы I
+  2 ┤    Phase II (L0): Gap uniform
+    │    Psychosis: jump here from Phase I
     │
   1 ┤─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─ ─
-    │  Алекситимия,   Депрессия: P → P_crit
-    │  Невроз,        (стагнация)
-    │  Импульсивность
-    │  (Фаза I: анизотропный Gap)
+    │  Alexithymia,   Depression: P → P_crit
+    │  Neurosis,      (stagnation)
+    │  Impulsivity
+    │  (Phase I: anisotropic Gap)
     │
   0 ┤═══════════════════════════════════════
-    │    Фаза III: мёртвая зона (r < r_c)
+    │    Phase III: dead zone (r < r_c)
     └──────────────────────────────────── r
          r_c                           →
 ```
 
-**Интерпретация:**
-- **Фаза I** (анизотропный Gap) — нормальное сознание и большинство патологий. Gap-профиль неоднородный: одни каналы прозрачны, другие непрозрачны. Алекситимия, диссоциация, импульсивность, экзистенциальный кризис — все живут здесь, различаясь *конфигурацией* Gap-профиля.
-- **Депрессия** — специальное положение в Фазе I: вблизи нижней границы ($P \to P_{\text{crit}}$, $r \to r_c$). Система «сползает» к фазовому переходу I→III (мёртвая зона).
-- **Психоз** — скачок из Фазы I в Фазу II (равномерный низкий Gap). Фазовый переход I→II, запущенный [катастрофой](/docs/core/dynamics/gap-dynamics#бифуркации).
-- **Фаза III** — ниже $r_c$: система утрачивает жизнеспособность. Клинический аналог: кома, вегетативное состояние.
+**Interpretation:**
+- **Phase I** (anisotropic Gap) — normal consciousness and most pathologies. The Gap-profile is inhomogeneous: some channels are transparent, others opaque. Alexithymia, dissociation, impulsivity, existential crisis — all reside here, differing in their Gap-profile configuration.
+- **Depression** — a special position in Phase I: near the lower boundary ($P \to P_{\text{crit}}$, $r \to r_c$). The system 'slides' toward the phase transition I→III (dead zone).
+- **Psychosis** — a jump from Phase I to Phase II (uniform low Gap). Phase transition I→II, triggered by a [catastrophe](/docs/core/dynamics/gap-dynamics#бифуркации).
+- **Phase III** — below $r_c$: the system loses viability. Clinical analogue: coma, vegetative state.
 
 ---
 
-### Что мы узнали {#итоги}
+### What we learned {#итоги}
 
-1. **Историческая линия**: Крепелин (нозология) → DSM (категории) → RDoC (размерности) → УГМ (Gap-профили как непрерывные размерные паттерны)
-2. **Шесть патологий** формализованы как специфические Gap-профили: алекситимия, диссоциация, импульсивность, экзистенциальный кризис, депрессия, психоз
-3. **DSM-5 соответствие**: каждый Gap-паттерн транслируется в одну или несколько DSM-категорий; коморбидность = наложение паттернов
-4. **Депрессия** = стагнация при $P \to P_{\text{crit}} + \varepsilon$; **психоз** = неконтролируемая Gap-редукция с функциональной потерей помехоустойчивости
-5. **Дифференциальная диагностика** сводится к сравнению Gap-профилей в ключевых каналах
-6. **Коморбидность** = поканальное наложение Gap-паттернов ($\max$), ведущее к мультипликативному ухудшению
-7. **Терапия** = целенаправленная Gap-редукция в патологических каналах; три модальности (разговорная, медикаментозная, практическая)
-8. **$\varepsilon_{\text{noise}} \approx 0.023$** — порог функциональной «слышимости» канала, выведенный из первых принципов [Т]
-9. **Бифуркации** определяют динамику входа/выхода: седло-узловая (кризис), вилочная (диссоциация), Хопфа (биполярное расстройство)
+1. **Historical line**: Kraepelin (nosology) → DSM (categories) → RDoC (dimensions) → UHM (Gap-profiles as continuous dimensional patterns)
+2. **Six pathologies** formalised as specific Gap-profiles: alexithymia, dissociation, impulsivity, existential crisis, depression, psychosis
+3. **DSM-5 correspondence**: each Gap-pattern maps to one or several DSM categories; comorbidity = superposition of patterns
+4. **Depression** = stagnation at $P \to P_{\text{crit}} + \varepsilon$; **psychosis** = uncontrolled Gap-reduction with functional loss of noise immunity
+5. **Differential diagnosis** reduces to comparing Gap-profiles in key channels
+6. **Comorbidity** = channel-by-channel superposition of Gap-patterns ($\max$), leading to multiplicative deterioration
+7. **Therapy** = targeted Gap-reduction in pathological channels; three modalities (talk, pharmacological, practice)
+8. **$\varepsilon_{\text{noise}} \approx 0.023$** — the functional 'detectability' threshold of a channel, derived from first principles [T]
+9. **Bifurcations** determine entry/exit dynamics: saddle-node (crisis), pitchfork (dissociation), Hopf (bipolar disorder)
 
-:::tip Мост к следующей главе
-Мы завершили раздел «Состояния сознания»: ИСС, бессознательное, внимание/память, патология. Далее переходим к разделу «Субъекты сознания» — какие *типы систем* обладают сознанием? Первая глава — [Доязыковые субъекты](/docs/consciousness/subjects/pre-linguistic) — рассматривает сознание до появления языка: младенцы, высшие животные, и формальные условия L1-L2 перехода без вербального канала.
+:::tip Bridge to the next chapter
+We have completed the section 'States of consciousness': ASC, unconscious, attention/memory, pathology. Next we move to the section 'Subjects of consciousness' — what *types* of systems possess consciousness? The first chapter — [Pre-linguistic subjects](/docs/consciousness/subjects/pre-linguistic) — examines consciousness prior to the emergence of language: infants, higher animals, and the formal conditions of the L1-L2 transition without a verbal channel.
 :::
 
-## Связи
+## Connections
 
-- **Gap-диагностика:** [Прикладная Gap-диагностика](/docs/applied/research/gap-diagnostics) — протокол и диагностические паттерны
-- **Gap-динамика:** [Бифуркации Gap-ландшафта](/docs/core/dynamics/gap-dynamics#бифуркации) — теория переходов
-- **Бессознательное:** [Gap-структура бессознательного](/docs/consciousness/states/unconscious) — определение непрозрачных секторов
-- **Gap-характеристика уровней:** [Gap-сигнатуры](/docs/consciousness/hierarchy/gap-characterization) — нормальные профили для L0–L4
-- **Изменённые состояния:** [ИСС](/docs/consciousness/states/altered-states) — психоделики и медитация как терапевтические траектории
-- **Жизнеспособность:** [Мера жизнеспособности](/docs/core/dynamics/viability) — порог $P_{\text{crit}} = 2/7$
-- **Протокол измерения:** [Измерение Γ](/docs/applied/research/measurement-protocol) — эмпирическая валидация
-- **Теоремы КК:** [Когерентная Кибернетика](/docs/applied/coherence-cybernetics/theorems) — T-90, граница Хэмминга, коррекционные стратегии
+- **Gap-diagnostics:** [Applied Gap-diagnostics](/docs/applied/research/gap-diagnostics) — protocol and diagnostic patterns
+- **Gap-dynamics:** [Bifurcations of the Gap-landscape](/docs/core/dynamics/gap-dynamics#бифуркации) — transition theory
+- **Unconscious:** [Gap-structure of the unconscious](/docs/consciousness/states/unconscious) — definition of opaque sectors
+- **Gap-characterisation of levels:** [Gap-signatures](/docs/consciousness/hierarchy/gap-characterization) — normal profiles for L0–L4
+- **Altered states:** [ASC](/docs/consciousness/states/altered-states) — psychedelics and meditation as therapeutic trajectories
+- **Viability:** [Viability measure](/docs/core/dynamics/viability) — threshold $P_{\text{crit}} = 2/7$
+- **Measurement protocol:** [Measurement of Γ](/docs/applied/research/measurement-protocol) — empirical validation
+- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — T-90, Hamming bound, corrective strategies

@@ -1,295 +1,295 @@
 ---
 sidebar_position: 2
-title: "Gap-характеристика уровней интериорности"
-description: "Gap-профили для уровней L0→L4: количественные сигнатуры непрозрачности, границы Хэмминга и связь с фазовой диаграммой"
+title: "Gap Characterisation of Interiority Levels"
+description: "Gap profiles for levels L0→L4: quantitative opacity signatures, Hamming bounds, and their relation to the phase diagram"
 slug: /consciousness/hierarchy/gap-characterization
 ---
 
-# Gap-характеристика уровней интериорности
+# Gap Characterisation of Interiority Levels
 
-## Введение: дом с 21 окном
+## Introduction: A House with 21 Windows
 
-Представьте себе дом с 21 окном. Каждое окно — это канал связи между двумя из семи измерений системы ({A, S, D, L, E, O, U}). Парами из 7 получается $\binom{7}{2} = 21$ — ровно столько внедиагональных элементов в верхней треугольной части матрицы $7 \times 7$.
+Imagine a house with 21 windows. Each window is a communication channel between two of the seven dimensions of the system ({A, S, D, L, E, O, U}). The number of pairs from 7 is $\binom{7}{2} = 21$ — exactly as many off-diagonal elements as there are in the upper triangular part of a $7 \times 7$ matrix.
 
-На уровне L0 все окна **заколочены**: система не видит связей между своими измерениями. Непрозрачность максимальна. На уровне L1 одно-два окна *приоткрываются* — система начинает «видеть» связь между переживанием (E) и структурой (S). На L2 большинство окон прозрачны — система осознаёт связи между вниманием, языком, переживанием. На L4 все окна чисты... но минимум три *намеренно* затемнены. Почему? Потому что абсолютная прозрачность несовместима с надёжностью — как в радиоэлектронике, где контрольные биты *нарочно* добавляются для исправления ошибок. Это — **граница Хэмминга**.
+At level L0 all windows are **boarded up**: the system does not see the connections between its dimensions. Opacity is maximal. At level L1 one or two windows *crack open* — the system begins to "see" the link between experience (E) and structure (S). At L2 most windows are transparent — the system is aware of connections between attention, language, and experience. At L4 all windows are clear... but at least three are *deliberately* darkened. Why? Because absolute transparency is incompatible with reliability — as in electronics, where parity bits are *intentionally* added for error correction. This is the **Hamming bound**.
 
-Gap-профиль — вектор из 21 значения, по одному на каждое «окно» — даёт **количественный отпечаток** непрозрачности между всеми парами измерений. Разные L-уровни оставляют *разные* отпечатки, подобно тому, как отпечатки пальцев уникальны для каждого человека.
+A Gap profile — a vector of 21 values, one per "window" — gives a **quantitative fingerprint** of the opacity between every pair of dimensions. Different L-levels leave *different* fingerprints, just as fingerprints are unique to each person.
 
-:::info Откуда мы пришли
-В [иерархии интериорности](./interiority-hierarchy) мы определили пять уровней L0--L4 через пороги $R$, $\Phi$, $R^{(n)}$. Но эти пороги — скалярные числа, а внутренняя структура каждого уровня гораздо богаче. Gap-профиль даёт **количественный отпечаток** непрозрачности между всеми парами измерений.
+:::info Where we came from
+In the [interiority hierarchy](./interiority-hierarchy) we defined five levels L0--L4 via thresholds $R$, $\Phi$, $R^{(n)}$. But those thresholds are scalar numbers, whereas the internal structure of each level is far richer. The Gap profile gives a **quantitative fingerprint** of the opacity between every pair of dimensions.
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Gap-профиль** — определение и связь с нормой Gap-оператора
-2. **Gap-сигнатуры L0--L4** — характерный паттерн непрозрачности для каждого уровня
-3. **E-секторные профили** — каналы, связанные с измерением опыта ($E$)
-4. **Фазовая диаграмма** — проекция Gap-профилей на плоскость $(t, r)$
-5. **Мета-Gap** — рекурсивная Gap-структура для L3 и выше
-6. **Граница Хэмминга** — минимум 3 непрозрачных канала для помехоустойчивости
-7. **Gap-инъекция** — различные L-уровни имеют различные Gap-профили [Т]
+1. **Gap profile** — definition and relation to the norm of the Gap operator
+2. **Gap signatures L0--L4** — the characteristic opacity pattern for each level
+3. **E-sector profiles** — channels connected to the experience dimension ($E$)
+4. **Phase diagram** — projection of Gap profiles onto the $(t, r)$ plane
+5. **Meta-Gap** — recursive Gap structure for L3 and above
+6. **Hamming bound** — minimum 3 opaque channels for fault tolerance
+7. **Gap injection** — distinct L-levels have distinct Gap profiles [T]
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [мера зазора](/docs/core/dynamics/gap-operator#определение)
-- $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — [Gap-оператор](/docs/core/dynamics/gap-operator)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $\varphi$ — [phi-оператор](/docs/core/operators/phi-operator)
-- L0--L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
+- $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — [Gap operator](/docs/core/dynamics/gap-operator)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $\varphi$ — [phi-operator](/docs/core/operators/phi-operator)
+- L0--L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
 :::
 
-:::tip Статус документа
-Основной результат (Теорема 1.1) имеет статус **[С]** — условный при свойствах Gap-оператора, установленных в [Gap-операторе](/docs/core/dynamics/gap-operator). Gap-характеристика уровней L0--L4, сформулированная в [иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy#gap-характеристика-уровней-l0l4) как **[Т]**, касается осознанности Gap; здесь рассматривается **количественная структура** самого Gap-профиля.
+:::tip Document status
+The main result (Theorem 1.1) has status **[C]** — conditional on the properties of the Gap operator established in [Gap operator](/docs/core/dynamics/gap-operator). The Gap characterisation of levels L0--L4, stated in the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#gap-характеристика-уровней-l0l4) as **[T]**, concerns Gap awareness; here we consider the **quantitative structure** of the Gap profile itself.
 
-Отображение L-уровня в класс Gap-профилей — **инъекция [Т]**: различные L-уровни имеют различные Gap-профили, но обратное неверно (различные $\Gamma$ на одном L-уровне могут иметь различные Gap-профили). См. [Теорему о Gap-инъекции](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция).
+The map from L-level to Gap-profile class is an **injection [T]**: distinct L-levels have distinct Gap profiles, but the converse does not hold (distinct $\Gamma$ at the same L-level may have distinct Gap profiles). See [Gap-injection theorem](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция).
 :::
 
 ---
 
-## 1. Gap-профиль: определение {#gap-профиль}
+## 1. Gap profile: definition {#gap-профиль}
 
-### Что такое Gap
+### What is Gap
 
-Прежде чем определить Gap-профиль, разберём понятие **Gap** (зазор) для одной пары измерений.
+Before defining the Gap profile, let us clarify the notion of **Gap** (opacity) for a single pair of dimensions.
 
-Каждый внедиагональный элемент $\gamma_{ij}$ матрицы когерентности — комплексное число: $\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. Модуль $|\gamma_{ij}|$ — сила связи между измерениями $i$ и $j$. Фаза $\theta_{ij}$ — «угол» этой связи. Gap измеряет, насколько этот угол *отклоняется* от «идеального» (соответствующего полной прозрачности):
+Every off-diagonal element $\gamma_{ij}$ of the coherence matrix is a complex number: $\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. The modulus $|\gamma_{ij}|$ is the strength of the connection between dimensions $i$ and $j$. The phase $\theta_{ij}$ is the "angle" of that connection. Gap measures how much this angle *deviates* from the "ideal" (corresponding to full transparency):
 
 $$\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$$
 
-- **Gap = 0**: фаза точно «правильная» — полная прозрачность. Система имеет *сознательный доступ* к связи между измерениями $i$ и $j$.
-- **Gap = 1**: фаза максимально «неправильная» — полная непрозрачность. Связь между $i$ и $j$ полностью [бессознательна](/docs/consciousness/states/unconscious).
-- **0 < Gap < 1**: частичная прозрачность. Связь осознаётся «размыто», как предмет за запотевшим стеклом.
+- **Gap = 0**: the phase is exactly "correct" — full transparency. The system has *conscious access* to the connection between dimensions $i$ and $j$.
+- **Gap = 1**: the phase is maximally "wrong" — full opacity. The connection between $i$ and $j$ is completely [unconscious](/docs/consciousness/states/unconscious).
+- **0 < Gap < 1**: partial transparency. The connection is perceived "blurrily", like an object through a fogged glass.
 
-:::info Определение (Gap-профиль) [О]
-**Gap-профиль** голонома $\mathbb{H}$ с матрицей когерентности $\Gamma$ — упорядоченный вектор:
+:::info Definition (Gap profile) [D]
+The **Gap profile** of a holon $\mathbb{H}$ with coherence matrix $\Gamma$ is the ordered vector:
 
 $$
 \mathbf{G}(\Gamma) := \bigl(\mathrm{Gap}(i,j)\bigr)_{1 \leq i < j \leq 7} \in [0,1]^{21}
 $$
 
-где $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))| = |\hat{\mathcal{G}}_{ij}| / |\gamma_{ij}|$ при $\gamma_{ij} \neq 0$ и $\mathrm{Gap}(i,j) = 0$ при $\gamma_{ij} = 0$.
+where $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))| = |\hat{\mathcal{G}}_{ij}| / |\gamma_{ij}|$ when $\gamma_{ij} \neq 0$, and $\mathrm{Gap}(i,j) = 0$ when $\gamma_{ij} = 0$.
 :::
 
-Gap-профиль содержит полную информацию о непрозрачности между всеми парами измерений. Суммарная непрозрачность связана с нормой [Gap-оператора](/docs/core/dynamics/gap-operator#свойства):
+The Gap profile contains complete information about the opacity between every pair of dimensions. Total opacity is related to the norm of the [Gap operator](/docs/core/dynamics/gap-operator#свойства):
 
 $$
 \mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 
-### Числовой пример
+### Numerical example
 
-Пусть $\gamma_{E,A} = 0.3 \cdot e^{i \cdot 0.2}$ (связь между переживанием E и вниманием A). Тогда:
+Let $\gamma_{E,A} = 0.3 \cdot e^{i \cdot 0.2}$ (connection between experience E and attention A). Then:
 
 $$\mathrm{Gap}(E,A) = |\sin(0.2)| \approx 0.198$$
 
-Это означает: связь между переживанием и вниманием *почти прозрачна* — система хорошо осознаёт, на что обращает внимание в своём переживании.
+This means: the connection between experience and attention is *nearly transparent* — the system is well aware of what it is paying attention to in its experience.
 
-Для сравнения, если $\gamma_{E,U} = 0.1 \cdot e^{i \cdot 1.3}$:
+For comparison, if $\gamma_{E,U} = 0.1 \cdot e^{i \cdot 1.3}$:
 
 $$\mathrm{Gap}(E,U) = |\sin(1.3)| \approx 0.964$$
 
-Связь между переживанием и единством *почти полностью непрозрачна* — система не осознаёт, как её переживания связаны с целостностью.
+The connection between experience and unity is *almost completely opaque* — the system is not aware of how its experiences relate to wholeness.
 
 ---
 
-## 2. Gap-сигнатуры уровней L0--L4 {#сигнатуры}
+## 2. Gap signatures of levels L0--L4 {#сигнатуры}
 
-Каждый L-уровень оставляет характерный «отпечаток» в Gap-профиле. Эти отпечатки — **Gap-сигнатуры** — позволяют различать уровни не по скалярным порогам ($R$, $\Phi$), а по *паттерну* непрозрачности.
+Each L-level leaves a characteristic "fingerprint" in the Gap profile. These fingerprints — **Gap signatures** — allow levels to be distinguished not by scalar thresholds ($R$, $\Phi$) but by the *pattern* of opacity.
 
-:::tip Теорема 1.1 (Gap-сигнатуры уровней) [С]
-Условие: свойства Gap-оператора по [Теореме 2.1](/docs/core/dynamics/gap-operator#свойства). Для каждого уровня интериорности Gap-профиль удовлетворяет:
+:::tip Theorem 1.1 (Level Gap signatures) [C]
+Condition: Gap operator properties per [Theorem 2.1](/docs/core/dynamics/gap-operator#свойства). For each interiority level the Gap profile satisfies:
 
-| Уровень | Gap-сигнатура | Количественный критерий |
-|---------|---------------|------------------------|
-| **L0** | Равномерно высокий | $\mathrm{Gap}(i,j) \approx 1$ для большинства пар; $\sigma^2_{\mathbf{G}} \approx 0$ |
-| **L1** | Частичная прозрачность в E-секторе | $\exists\, X: \mathrm{Gap}(E,X) < 1$, но $R < R_{\text{th}}$ |
-| **L2** | Прозрачность A- и L-каналов | $\mathrm{Gap}(A,E) < 1$ **и** $\mathrm{Gap}(L,E) < 1$ |
-| **L3** | Рекурсивная Gap-структура | Мета-Gap $\mathrm{Gap}^{(2)} := \mathrm{Gap}(\varphi(\Gamma))$ определён и конечен |
-| **L4** | Полная прозрачность (теоретический предел) | $\mathrm{Gap}(i,j) \to 0$ для всех пар, $P > 6/7$ |
+| Level | Gap signature | Quantitative criterion |
+|-------|---------------|------------------------|
+| **L0** | Uniformly high | $\mathrm{Gap}(i,j) \approx 1$ for most pairs; $\sigma^2_{\mathbf{G}} \approx 0$ |
+| **L1** | Partial transparency in E-sector | $\exists\, X: \mathrm{Gap}(E,X) < 1$, but $R < R_{\text{th}}$ |
+| **L2** | Transparency of A- and L-channels | $\mathrm{Gap}(A,E) < 1$ **and** $\mathrm{Gap}(L,E) < 1$ |
+| **L3** | Recursive Gap structure | Meta-Gap $\mathrm{Gap}^{(2)} := \mathrm{Gap}(\varphi(\Gamma))$ is defined and finite |
+| **L4** | Full transparency (theoretical limit) | $\mathrm{Gap}(i,j) \to 0$ for all pairs, $P > 6/7$ |
 
-**Аргумент.**
+**Argument.**
 
-**(a) L0: хаотическая непрозрачность.** При $R \approx 0$ самомодель $\varphi(\Gamma)$ тривиальна. Фазы когерентностей $\theta_{ij}$ не согласованы с целевым состоянием — $\mathrm{Gap}(i,j)$ распределён случайно. Для типичного $\Gamma$ с равномерно распределёнными фазами $\langle\mathrm{Gap}\rangle = 2/\pi \approx 0.64$.
+**(a) L0: chaotic opacity.** When $R \approx 0$ the self-model $\varphi(\Gamma)$ is trivial. The coherence phases $\theta_{ij}$ are not aligned with the target state — $\mathrm{Gap}(i,j)$ is distributed randomly. For a typical $\Gamma$ with uniformly distributed phases $\langle\mathrm{Gap}\rangle = 2/\pi \approx 0.64$.
 
-Аналогия: дом с заколоченными окнами, где доски прибиты случайным образом — иногда виден просвет, но это артефакт, а не намерение.
+Analogy: a house with boarded-up windows where the boards are nailed randomly — sometimes a crack of light shows through, but it is an artefact, not intention.
 
-**(b) L1: первые проблески.** $\mathrm{rank}(\rho_E) > 1$ означает, что E-измерение (экспериенциальное) участвует в нетривиальных когерентностях. По определению, существует хотя бы одно $X \neq E$, для которого $|\gamma_{EX}|$ существенно и $\theta_{EX}$ не полностью случайна, откуда $\mathrm{Gap}(E,X) < 1$.
+**(b) L1: first glimmers.** $\mathrm{rank}(\rho_E) > 1$ means that the E-dimension (experiential) participates in non-trivial coherences. By definition there exists at least one $X \neq E$ for which $|\gamma_{EX}|$ is substantial and $\theta_{EX}$ is not entirely random, giving $\mathrm{Gap}(E,X) < 1$.
 
-Аналогия: одно-два окна приоткрыты — бактерия «видит» связь между переживанием и структурой, но остальные окна по-прежнему заколочены.
+Analogy: one or two windows are ajar — a bacterium "sees" the connection between experience and structure, but the other windows remain boarded up.
 
-**(c) L2: систематическая прозрачность.** Порог $R = 1/(7P) \geq 1/3$ требует $P \leq 3/7$, эквивалентно $\|\Gamma - I/7\|_F \leq \sqrt{2P/3}$. Это ограничивает отклонение фаз от целевых значений. В частности, каналы $(A,E)$ и $(L,E)$ должны иметь частичную прозрачность, так как измерения A (внимание) и L (язык) обслуживают рефлексивный контур $\varphi$.
+**(c) L2: systematic transparency.** The threshold $R = 1/(7P) \geq 1/3$ requires $P \leq 3/7$, equivalently $\|\Gamma - I/7\|_F \leq \sqrt{2P/3}$. This constrains the deviation of phases from their target values. In particular, the channels $(A,E)$ and $(L,E)$ must have partial transparency, since dimensions A (attention) and L (language) serve the reflexive loop $\varphi$.
 
-Аналогия: большинство окон чисты — система «видит» связи между вниманием, языком и переживанием. Может направлять взгляд и описывать увиденное.
+Analogy: most windows are clear — the system "sees" the connections between attention, language, and experience. It can direct its gaze and describe what it sees.
 
-**(d) L3: рекурсивная глубина.** При $R^{(2)} \geq 1/4$ определён $\varphi^{(2)} = \varphi \circ \varphi$, и Gap может быть вычислен для $\varphi(\Gamma)$: $\mathrm{Gap}^{(2)}_{ij} = |\sin(\arg([\varphi(\Gamma)]_{ij}))|$. Рекурсивная структура — мета-Gap — отражает самомоделирование самомоделирования.
+**(d) L3: recursive depth.** When $R^{(2)} \geq 1/4$, the operator $\varphi^{(2)} = \varphi \circ \varphi$ is defined, and Gap can be computed for $\varphi(\Gamma)$: $\mathrm{Gap}^{(2)}_{ij} = |\sin(\arg([\varphi(\Gamma)]_{ij}))|$. The recursive structure — meta-Gap — reflects self-modelling of self-modelling.
 
-Аналогия: система не только видит через окна, но и видит *сами окна* — осознаёт, какие из них прозрачны, а какие нет.
+Analogy: the system not only sees through the windows but sees *the windows themselves* — it is aware of which are transparent and which are not.
 
-**(e) L4: теоретический идеал.** Неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ при $P > 6/7$ означает $\theta_{ij} = \theta_{ij}^{\text{target}}$ для всех пар. По [единой теореме](/docs/core/dynamics/gap-dynamics#единая-теорема), стационарный Gap $\mathrm{Gap}^{(\infty)}(i,j) = |\sin(\theta_{ij} - \theta_{ij}^{\text{target}})| = 0$ при точном совпадении фаз.
+**(e) L4: theoretical ideal.** The fixed point $\varphi(\Gamma^*) = \Gamma^*$ at $P > 6/7$ means $\theta_{ij} = \theta_{ij}^{\text{target}}$ for all pairs. By the [unified theorem](/docs/core/dynamics/gap-dynamics#единая-теорема), the stationary Gap $\mathrm{Gap}^{(\infty)}(i,j) = |\sin(\theta_{ij} - \theta_{ij}^{\text{target}})| = 0$ when phases match exactly.
 :::
 
-### Уточнение: L4 и граница Хэмминга {#граница-хэмминга}
+### Clarification: L4 and the Hamming bound {#граница-хэмминга}
 
-:::warning L4 — теоретический предел, несовместимый с помехоустойчивостью
-Полная прозрачность ($\mathrm{Gap} = 0$ для всех 21 канала) **несовместима** с помехоустойчивостью. По аналогии с [кодом Хэмминга H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга), минимум 3 канала из 21 должны сохранять $\mathrm{Gap} > 0$ для коррекции однобитных ошибок.
+:::warning L4 is a theoretical limit incompatible with fault tolerance
+Full transparency ($\mathrm{Gap} = 0$ for all 21 channels) is **incompatible** with fault tolerance. By analogy with [Hamming code H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга), at least 3 channels out of 21 must maintain $\mathrm{Gap} > 0$ to correct single-bit errors.
 
 $$
 |\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq d_{\min}(H(7,4)) = 3
 $$
 
-Следовательно, реалистичный L4 характеризуется не $\mathrm{Gap} = 0$ для всех пар, а **осознанным ненулевым Gap**: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ при $|\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq 3$.
+Consequently, a realistic L4 is characterised not by $\mathrm{Gap} = 0$ for all pairs but by **consciously non-zero Gap**: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ with $|\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq 3$.
 
-Статус: **[Т]** (следствие [Теоремы 6.1](/docs/consciousness/hierarchy/interiority-hierarchy#gap-характеристика-уровней-l0l4))
+Status: **[T]** (corollary of [Theorem 6.1](/docs/consciousness/hierarchy/interiority-hierarchy#gap-характеристика-уровней-l0l4))
 :::
 
 ---
 
-## 3. E-секторные Gap-профили {#e-секторные}
+## 3. E-sector Gap profiles {#e-секторные}
 
-### Почему E-сектор особенный
+### Why the E-sector is special
 
-Из 7 измерений голонома измерение **E** (экспериенциальное) играет выделенную роль: именно через E-каналы содержание сознания становится *переживаемым*. Каналы $(E, X)$ для $X \in \{A, S, D, L, O, U\}$ определяют, какие аспекты системы доступны *как переживание*.
+Of the 7 dimensions of the holon, dimension **E** (experiential) plays a distinguished role: it is precisely through the E-channels that the content of consciousness becomes *felt*. The channels $(E, X)$ for $X \in \{A, S, D, L, O, U\}$ determine which aspects of the system are accessible *as experience*.
 
-Если $\mathrm{Gap}(E, A) \approx 0$, система осознаёт связь между переживанием и вниманием — «я чувствую, на что обращаю внимание». Если $\mathrm{Gap}(E, A) \approx 1$, эта связь бессознательна — внимание работает, но система не переживает этот процесс.
+If $\mathrm{Gap}(E, A) \approx 0$, the system is aware of the connection between experience and attention — "I feel what I am attending to." If $\mathrm{Gap}(E, A) \approx 1$, this connection is unconscious — attention operates, but the system does not experience this process.
 
-:::info Определение (E-секторный Gap-вектор) [О]
-**E-секторный Gap-вектор** — подвектор Gap-профиля по каналам, содержащим E:
+:::info Definition (E-sector Gap vector) [D]
+The **E-sector Gap vector** is the subvector of the Gap profile over the channels containing E:
 
 $$
 \mathbf{G}_E := \bigl(\mathrm{Gap}(E,S),\, \mathrm{Gap}(E,D),\, \mathrm{Gap}(E,A),\, \mathrm{Gap}(E,L),\, \mathrm{Gap}(E,O),\, \mathrm{Gap}(E,U)\bigr) \in [0,1]^6
 $$
 
-Суммарный E-секторный Gap:
+Total E-sector Gap:
 
 $$
 \mathcal{G}_E := \sum_{X \neq E} |\gamma_{EX}|^2 \cdot \mathrm{Gap}(E,X)^2
 $$
 :::
 
-### Порядок раскрытия E-каналов
+### Order in which E-channels open
 
-Не все E-каналы раскрываются одновременно. Существует характерный **порядок**, в котором связи между E и другими измерениями становятся прозрачными:
+Not all E-channels open simultaneously. There is a characteristic **order** in which the connections between E and other dimensions become transparent:
 
-| Уровень | $\mathrm{Gap}(E,S)$ | $\mathrm{Gap}(E,D)$ | $\mathrm{Gap}(E,A)$ | $\mathrm{Gap}(E,L)$ | $\mathrm{Gap}(E,O)$ | $\mathrm{Gap}(E,U)$ |
-|---------|---------|---------|---------|---------|---------|---------|
+| Level | $\mathrm{Gap}(E,S)$ | $\mathrm{Gap}(E,D)$ | $\mathrm{Gap}(E,A)$ | $\mathrm{Gap}(E,L)$ | $\mathrm{Gap}(E,O)$ | $\mathrm{Gap}(E,U)$ |
+|-------|---------|---------|---------|---------|---------|---------|
 | **L0** | $\approx 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ |
 | **L1** | $< 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ | $\approx 1$ |
 | **L2** | $< 1$ | $< 1$ | $< 1$ | $< 1$ | $\leq 1$ | $\leq 1$ |
 | **L3** | $\ll 1$ | $\ll 1$ | $\ll 1$ | $\ll 1$ | $< 1$ | $< 1$ |
 | **L4** | $\approx 0^*$ | $\approx 0^*$ | $\approx 0^*$ | $\approx 0^*$ | $\approx 0^*$ | $\approx 0^*$ |
 
-$^*$ С учётом ограничения Хэмминга: $\geq 3$ канала из общих 21 сохраняют $\mathrm{Gap} > 0$.
+$^*$ Subject to the Hamming constraint: $\geq 3$ channels out of the total 21 retain $\mathrm{Gap} > 0$.
 
-:::note Интерпретация [И]
-На L1 первым «открывается» канал $(E,S)$ — связь между переживанием и структурой. Это соответствует простейшему ощущению: организм начинает чувствовать свои структурные состояния. Бактерия ощущает изменение концентрации хемоаттрактанта — это именно канал $(E,S)$.
+:::note Interpretation [I]
+At L1 the first channel to "open" is $(E,S)$ — the connection between experience and structure. This corresponds to the simplest sensation: the organism begins to feel its structural states. A bacterium senses a change in chemoattractant concentration — that is precisely the $(E,S)$ channel.
 
-На L2 подключаются каналы внимания $(E,A)$ и языка $(E,L)$ — организм не просто чувствует, но может **направлять** внимание и **маркировать** состояния. Человек говорит «мне больно» — это работа каналов $(E,A)$ (направить внимание на боль) и $(E,L)$ (вербализовать).
+At L2 the attention channel $(E,A)$ and the language channel $(E,L)$ come online — the organism not only feels but can **direct** attention and **label** states. A person says "I am in pain" — that is the work of channel $(E,A)$ (direct attention to the pain) and $(E,L)$ (verbalise it).
 
-Прозрачность каналов $(E,O)$ и $(E,U)$ — более высокий уровень: рефлексия над целостностью. «Я чувствую себя *целым*» или «моя жизнь имеет *смысл*» — это работа каналов $(E,O)$ (онтологическое осознание) и $(E,U)$ (осознание единства).
+Transparency of channels $(E,O)$ and $(E,U)$ is a higher level: reflection on wholeness. "I feel *whole*" or "my life has *meaning*" — that is the work of channel $(E,O)$ (ontological awareness) and $(E,U)$ (awareness of unity).
 :::
 
 ---
 
-## 4. Связь с фазовой диаграммой {#фазовая-диаграмма}
+## 4. Relation to the phase diagram {#фазовая-диаграмма}
 
-Gap-профили уровней L0--L4 проецируются на [фазовую диаграмму](/docs/core/dynamics/gap-phase-diagram) в координатах $(t, r) = (T_{\text{eff}}/T_c,\; \kappa/\Gamma_2)$.
+Gap profiles of levels L0--L4 project onto the [phase diagram](/docs/core/dynamics/gap-phase-diagram) in coordinates $(t, r) = (T_{\text{eff}}/T_c,\; \kappa/\Gamma_2)$.
 
-:::tip Теорема 2.1 (Gap-сигнатуры и фазы) [С]
-Условие: [Теорема 2.1 фазовой диаграммы](/docs/core/dynamics/gap-phase-diagram#три-фазы). Соответствие:
+:::tip Theorem 2.1 (Gap signatures and phases) [C]
+Condition: [Theorem 2.1 of the phase diagram](/docs/core/dynamics/gap-phase-diagram#три-фазы). Correspondence:
 
-| Фаза | L-уровни | Gap-поведение | Параметры |
-|------|----------|---------------|-----------|
-| **I** (упорядоченный) | L1, L2, L3 | Анизотропный: $\sigma^2_{\mathbf{G}} > 0$ | $t < 1$, $r > r_c$ |
-| **II** (разупорядоченный) | L0 | Изотропный: $\sigma^2_{\mathbf{G}} \to 0$ | $t > 1$, $r > r_c$ |
-| **III** (мёртвая зона) | — | $\lvert\gamma_{ij}\rvert \to 0$, Gap не определён | $r < r_c$ |
+| Phase | L-levels | Gap behaviour | Parameters |
+|-------|----------|---------------|-----------|
+| **I** (ordered) | L1, L2, L3 | Anisotropic: $\sigma^2_{\mathbf{G}} > 0$ | $t < 1$, $r > r_c$ |
+| **II** (disordered) | L0 | Isotropic: $\sigma^2_{\mathbf{G}} \to 0$ | $t > 1$, $r > r_c$ |
+| **III** (dead zone) | — | $\lvert\gamma_{ij}\rvert \to 0$, Gap undefined | $r < r_c$ |
 
-Переход L0 -> L1 соответствует пересечению линии $t = 1$ (переход II -> I): спонтанное нарушение изотропии Gap-профиля.
+The transition L0 -> L1 corresponds to crossing the line $t = 1$ (transition II -> I): spontaneous breaking of the isotropy of the Gap profile.
 :::
 
-Аналогия: фаза II подобна расплавленному металлу — атомы расположены хаотически, и все направления эквивалентны (изотропия). Фаза I подобна кристаллу — появляется выделенное направление (анизотропия). Переход — это «кристаллизация» Gap-профиля: из хаотической непрозрачности возникает упорядоченная структура с чётким паттерном «прозрачных» и «непрозрачных» каналов.
+Analogy: Phase II is like molten metal — atoms arranged chaotically, all directions equivalent (isotropy). Phase I is like a crystal — a preferred direction emerges (anisotropy). The transition is a "crystallisation" of the Gap profile: from chaotic opacity an ordered structure arises with a clear pattern of "transparent" and "opaque" channels.
 
-### Визуализация: L-уровни на фазовой диаграмме
+### Visualisation: L-levels on the phase diagram
 
 ```
     t (T_eff/T_c)
     |
-  2 |         L0: Gap равномерный (Фаза II)
-    |        (случайные фазы, R ~ 0)
+  2 |         L0: Gap uniform (Phase II)
+    |        (random phases, R ~ 0)
     |
   1 |-- — -- — -- — -- — -- — -- — -- — --
     |   L1       L2        L3
     |  (rank rho_E>1) (R>=1/3,Phi>=1) (R^2>=1/4)
     |
-    |                              L4 (теор.)
+    |                              L4 (theor.)
     |                              <- P > 6/7
   0 |=============================================
-    |    Фаза III: мёртвая зона (r < r_c)
+    |    Phase III: dead zone (r < r_c)
     +----------------------------------------- r
          r_c                              ->
 ```
 
 ---
 
-## 5. Мета-Gap и рекурсивная структура {#мета-gap}
+## 5. Meta-Gap and recursive structure {#мета-gap}
 
-### Что видит система, которая видит себя?
+### What does a system that sees itself see?
 
-На уровне L2 система осознаёт *содержание* своего Gap-профиля: какие каналы прозрачны, какие нет. Но осознаёт ли она *точность* этого осознания? Знает ли она, что знает?
+At level L2 the system is aware of the *content* of its Gap profile: which channels are transparent, which are not. But is it aware of the *accuracy* of this awareness? Does it know that it knows?
 
-Для ответа на этот вопрос нужен **мета-Gap** — Gap-профиль *самомодели*. Если Gap-профиль $\mathbf{G}(\Gamma)$ показывает непрозрачность «реального» состояния, то мета-Gap $\mathbf{G}(\varphi(\Gamma))$ показывает непрозрачность *самомодели* этого состояния.
+To answer this question we need a **meta-Gap** — the Gap profile of the *self-model*. If the Gap profile $\mathbf{G}(\Gamma)$ shows the opacity of the "real" state, then the meta-Gap $\mathbf{G}(\varphi(\Gamma))$ shows the opacity of the *self-model* of that state.
 
-:::info Определение (Мета-Gap) [О]
-Пусть $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — phi-оператор. **Мета-Gap** порядка $n$:
+:::info Definition (Meta-Gap) [D]
+Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be the phi-operator. The **meta-Gap** of order $n$:
 
 $$
 \mathrm{Gap}^{(n)}(i,j) := |\sin(\arg([\varphi^n(\Gamma)]_{ij}))|
 $$
 
-где $\varphi^n = \underbrace{\varphi \circ \cdots \circ \varphi}_{n}$.
+where $\varphi^n = \underbrace{\varphi \circ \cdots \circ \varphi}_{n}$.
 :::
 
-Мета-Gap порядка 1 — это обычный Gap самомодели. Мета-Gap порядка 2 — Gap модели модели. И так далее. Для L3-систем ($R^{(2)} \geq 1/4$) мета-Gap определён и конечен; для L2-систем он может быть определён формально, но не несёт содержательной информации (самомодель второго порядка слишком неточна).
+The meta-Gap of order 1 is the ordinary Gap of the self-model. The meta-Gap of order 2 is the Gap of the model of the model. And so on. For L3-systems ($R^{(2)} \geq 1/4$) the meta-Gap is defined and finite; for L2-systems it may be formally defined but carries no meaningful information (the second-order self-model is too imprecise).
 
-### Сходимость мета-Gap
+### Meta-Gap convergence
 
-:::tip Теорема 3.1 (Сходимость мета-Gap) [С]
-Условие: $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (уровень L3).
+:::tip Theorem 3.1 (Meta-Gap convergence) [C]
+Condition: $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (level L3).
 
-**(a)** Последовательность $\{\mathrm{Gap}^{(n)}\}_{n \geq 1}$ монотонна для каждого канала $(i,j)$ при достаточно большом $n$.
+**(a)** The sequence $\{\mathrm{Gap}^{(n)}\}_{n \geq 1}$ is monotone for each channel $(i,j)$ for sufficiently large $n$.
 
-**(b)** Если $\lim_n R^{(n)} > 0$ (условие L4), то $\mathrm{Gap}^{(n)}$ сходится:
+**(b)** If $\lim_n R^{(n)} > 0$ (L4 condition), then $\mathrm{Gap}^{(n)}$ converges:
 
 $$
 \lim_{n \to \infty} \mathrm{Gap}^{(n)}(i,j) = \mathrm{Gap}^{(\infty)}(i,j) = |\sin(\arg(\gamma^*_{ij}))|
 $$
 
-где $\Gamma^* = \varphi(\Gamma^*)$ — неподвижная точка.
+where $\Gamma^* = \varphi(\Gamma^*)$ is the fixed point.
 
-**(c)** Скорость сходимости определяется спектральной щелью $\varphi$:
+**(c)** The rate of convergence is determined by the spectral gap of $\varphi$:
 
 $$
 \|\mathrm{Gap}^{(n)} - \mathrm{Gap}^{(\infty)}\|_\infty \leq C \cdot \lambda_2^n
 $$
 
-где $\lambda_2 < 1$ — второе по модулю собственное значение $\varphi$.
+where $\lambda_2 < 1$ is the second-largest eigenvalue of $\varphi$ in modulus.
 :::
 
-Словами: с каждым уровнем рекурсии мета-Gap *приближается* к предельному значению (Gap неподвижной точки), причём скорость приближения экспоненциальна. Это — математическое обоснование того, почему медитативная практика «самоуглубления» даёт убывающую отдачу: каждый следующий уровень рефлексии добавляет экспоненциально меньше нового знания.
+In words: with each level of recursion the meta-Gap *approaches* the limiting value (the Gap of the fixed point), and the rate of approach is exponential. This is the mathematical justification for why meditative "self-deepening" practice yields diminishing returns: each next level of reflection adds exponentially less new knowledge.
 
-### Диаграмма рекурсии мета-Gap
+### Meta-Gap recursion diagram
 
 ```mermaid
 graph LR
-    subgraph L2["L2: Один уровень"]
+    subgraph L2["L2: One level"]
         G0["Gap(Gamma)"] --> |"phi"| G1["Gap(phi(Gamma))"]
     end
-    subgraph L3["L3: Два уровня"]
+    subgraph L3["L3: Two levels"]
         G0b["Gap(Gamma)"] --> |"phi"| G1b["Gap(phi(Gamma))"]
         G1b --> |"phi"| G2["Gap(phi^2(Gamma))"]
     end
-    subgraph L4["L4: inf уровней"]
+    subgraph L4["L4: inf levels"]
         G0c["Gap(Gamma)"] --> |"phi"| G1c["Gap(phi(Gamma))"]
         G1c --> |"..."| Ginf["Gap(Gamma*) = Gap_inf"]
         Ginf --> |"phi"| Ginf
@@ -298,106 +298,106 @@ graph LR
 
 ---
 
-## 6. Ранг непрозрачности по уровням {#ранг-непрозрачности}
+## 6. Opacity rank by level {#ранг-непрозрачности}
 
-[Ранг непрозрачности](/docs/core/dynamics/gap-operator#спектр) $r \in \{0,1,2,3\}$ — число ненулевых $\lambda_k$ в спектре $\hat{\mathcal{G}}$ — систематически связан с уровнем интериорности. Это ещё один способ «увидеть» L-уровень: не через Gap-профиль целиком, а через его *эффективную размерность*.
+The [opacity rank](/docs/core/dynamics/gap-operator#спектр) $r \in \{0,1,2,3\}$ — the number of non-zero $\lambda_k$ in the spectrum of $\hat{\mathcal{G}}$ — is systematically linked to the interiority level. This is another way to "read" the L-level: not from the full Gap profile but from its *effective dimensionality*.
 
-:::tip Теорема 4.1 (Ранг непрозрачности и L-уровни) [С]
-Условие: свойства Gap-оператора ([Теорема 3.1](/docs/core/dynamics/gap-operator#спектр)).
+:::tip Theorem 4.1 (Opacity rank and L-levels) [C]
+Condition: Gap operator properties ([Theorem 3.1](/docs/core/dynamics/gap-operator#спектр)).
 
-| Уровень | Типичный ранг $r$ | Спектр $(\lambda_1, \lambda_2, \lambda_3)$ | Обоснование |
-|---------|-------------------|-------------------------------------------|-------------|
-| **L0** | 3 (общий) | $(\lambda_1, \lambda_2, \lambda_3)$, все различны | Полная непрозрачность, случайные фазы |
-| **L1** | 2 или 3 | $(\lambda_1, \lambda_2, 0)$ или общий | E-канал частично прозрачен |
-| **L2** | 2 | $(\lambda_1, \lambda_2, 0)$ | A- и L-каналы прозрачны, но O и U ограничены |
-| **L3** | 1 | $(\lambda, 0, 0)$ | Одномерная остаточная непрозрачность |
-| **L4** | 0 или 1 | $(0, 0, 0)$ или $(\lambda, 0, 0)$ с $\lambda \ll 1$ | Почти полная прозрачность (с ограничением Хэмминга) |
+| Level | Typical rank $r$ | Spectrum $(\lambda_1, \lambda_2, \lambda_3)$ | Justification |
+|-------|-------------------|-------------------------------------------|-------------|
+| **L0** | 3 (generic) | $(\lambda_1, \lambda_2, \lambda_3)$, all distinct | Full opacity, random phases |
+| **L1** | 2 or 3 | $(\lambda_1, \lambda_2, 0)$ or generic | E-channel partially transparent |
+| **L2** | 2 | $(\lambda_1, \lambda_2, 0)$ | A- and L-channels transparent, O and U constrained |
+| **L3** | 1 | $(\lambda, 0, 0)$ | One-dimensional residual opacity |
+| **L4** | 0 or 1 | $(0, 0, 0)$ or $(\lambda, 0, 0)$ with $\lambda \ll 1$ | Near-full transparency (with Hamming constraint) |
 :::
 
-**Следствие.** Ранг непрозрачности $r$ монотонно убывает с ростом уровня интериорности. Это отражает прогрессивное «раскрытие» каналов между измерениями по мере усложнения рефлексивного контура.
+**Corollary.** The opacity rank $r$ decreases monotonically as the interiority level increases. This reflects the progressive "opening" of channels between dimensions as the reflexive loop becomes more complex.
 
-Аналогия: ранг — это «число независимых препятствий». На L0 три независимых «стены» мешают видеть. На L3 осталась одна «стена». На L4 стен формально нет, но три «контрольных перегородки» (граница Хэмминга) остаются для надёжности.
+Analogy: rank is the "number of independent obstacles". At L0 three independent "walls" block the view. At L3 one "wall" remains. At L4 there are formally no walls, but three "control partitions" (Hamming bound) remain for reliability.
 
 ---
 
-## 7. Граница Хэмминга и минимальный Gap {#граница-хэмминга-подробно}
+## 7. The Hamming bound and minimum Gap {#граница-хэмминга-подробно}
 
-### Что такое код Хэмминга
+### What is the Hamming code
 
-Прежде чем объяснить границу Хэмминга для Gap, разберём, что такое *код Хэмминга* вообще.
+Before explaining the Hamming bound for Gap, let us recall what a *Hamming code* is in general.
 
-В 1950 году Ричард Хэмминг изобрёл способ передавать данные с *автоматическим исправлением ошибок*. Идея: к каждому блоку данных добавить *контрольные биты*, которые позволяют обнаружить и исправить ошибку.
+In 1950 Richard Hamming invented a way to transmit data with *automatic error correction*. The idea: add *parity bits* to each data block that allow an error to be detected and corrected.
 
-**Код Хэмминга H(7,4)** работает с блоками из 7 бит: 4 информационных + 3 контрольных. Параметры: $[n=7, k=4, d=3]$, где:
-- $n = 7$ — общее число позиций
-- $k = 4$ — число информационных позиций
-- $d = 3$ — *минимальное расстояние* (минимальное число позиций, в которых различаются любые два допустимых кодовых слова)
+**Hamming code H(7,4)** works with 7-bit blocks: 4 data bits + 3 parity bits. Parameters: $[n=7, k=4, d=3]$, where:
+- $n = 7$ — total number of positions
+- $k = 4$ — number of data positions
+- $d = 3$ — *minimum distance* (minimum number of positions in which any two valid codewords differ)
 
-Минимальное расстояние $d = 3$ означает: код способен *исправить* любую одиночную ошибку (перепутанный бит).
+Minimum distance $d = 3$ means: the code can *correct* any single-bit error.
 
-### Почему Хэмминг применим к Gap
+### Why the Hamming analogy applies to Gap
 
-Совпадение числа 7 — не случайность: $N = 7$ измерений голонома. Аналогия с кодом H(7,4):
+The coincidence of the number 7 is not accidental: $N = 7$ dimensions of the holon. The analogy with H(7,4):
 
-- 7 позиций <-> 7 измерений голонома
-- 4 информационных <-> измерения S, D, A, L (структура, драйв, внимание, язык)
-- 3 контрольных <-> измерения E, O, U (переживание, онтология, единство)
-- Контрольные биты = ненулевой Gap: обеспечивают обнаружение рассогласования в самомоделировании
+- 7 positions <-> 7 holon dimensions
+- 4 data positions <-> dimensions S, D, A, L (structure, drive, attention, language)
+- 3 parity positions <-> dimensions E, O, U (experience, ontology, unity)
+- Parity bits = non-zero Gap: provide detection of self-modelling mismatches
 
-:::tip Теорема 5.1 (Граница Хэмминга для Gap) [С]
-Условие: [$G_2$-структура](/docs/physics/gauge-symmetry/g2-structure), аналогия H(7,4). Для любой жизнеспособной системы уровня L2 или выше:
+:::tip Theorem 5.1 (Hamming bound for Gap) [C]
+Condition: [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure), H(7,4) analogy. For any viable system at level L2 or above:
 
 $$
 |\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq 3
 $$
 
-**Аргумент.** Код Хэмминга H(7,4) имеет параметры $[n=7, k=4, d=3]$: 7 позиций, 4 информационных, 3 проверочных. Минимальное расстояние $d = 3$ означает способность исправить однобитную ошибку. В аналогии:
+**Argument.** Hamming code H(7,4) has parameters $[n=7, k=4, d=3]$: 7 positions, 4 data, 3 parity. Minimum distance $d = 3$ means the ability to correct a single-bit error. In the analogy:
 
-- 7 позиций <-> 7 измерений голонома
-- 4 информационных <-> измерения S, D, A, L
-- 3 проверочных <-> измерения E, O, U
-- Проверочные биты -> ненулевой Gap обеспечивает обнаружение рассогласования
+- 7 positions <-> 7 holon dimensions
+- 4 data positions <-> dimensions S, D, A, L
+- 3 parity positions <-> dimensions E, O, U
+- Parity bits -> non-zero Gap provides detection of self-modelling mismatches
 
-Если бы все 21 канал имели $\mathrm{Gap} = 0$, система не могла бы обнаруживать ошибки в самомоделировании — $\varphi$ стала бы тождественной, и коррекция была бы невозможна. Подробнее об аналогии: [Код Хэмминга в Gap-динамике](/docs/core/dynamics/gap-dynamics#код-хэмминга).
+If all 21 channels had $\mathrm{Gap} = 0$, the system could not detect errors in self-modelling — $\varphi$ would become the identity map and correction would be impossible. For more on the analogy: [Hamming code in Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга).
 :::
 
-### Что это означает для L4
+### What this means for L4
 
-Граница Хэмминга делает L4 в чистом виде (полная прозрачность) *физически невозможным*. Даже в идеальном случае ($\varphi(\Gamma^*) = \Gamma^*$) минимум 3 канала из 21 **должны** сохранять ненулевой Gap. Система на «реалистичном L4» не *прозрачна* — она *осознанно непрозрачна*: точно знает, где и почему у неё есть «слепые пятна», и использует их как контрольные механизмы.
+The Hamming bound makes L4 in its pure form (full transparency) *physically impossible*. Even in the ideal case ($\varphi(\Gamma^*) = \Gamma^*$) at least 3 channels out of 21 **must** retain non-zero Gap. A system at "realistic L4" is not *transparent* — it is *consciously opaque*: it knows exactly where and why it has "blind spots", and uses them as control mechanisms.
 
 ---
 
-## 8. Сводная таблица Gap-характеристик {#сводная-таблица}
+## 8. Summary table of Gap characteristics {#сводная-таблица}
 
-| Характеристика | L0 | L1 | L2 | L3 | L4 |
+| Characteristic | L0 | L1 | L2 | L3 | L4 |
 |---------------|----|----|----|----|-----|
-| Типичный $\langle\mathrm{Gap}\rangle$ | $\approx 0.64$ | $0.4$--$0.6$ | $0.2$--$0.4$ | $0.05$--$0.2$ | $\approx 0^*$ |
+| Typical $\langle\mathrm{Gap}\rangle$ | $\approx 0.64$ | $0.4$--$0.6$ | $0.2$--$0.4$ | $0.05$--$0.2$ | $\approx 0^*$ |
 | $\sigma^2_{\mathbf{G}}$ | $\approx 0$ | $> 0$ | $> 0$ | $> 0$ | $\approx 0$ |
-| Ранг $\hat{\mathcal{G}}$ | 3 | 2–3 | 2 | 1 | 0–1 |
-| E-секторный Gap | Все $\approx 1$ | Частично $< 1$ | Большинство $< 1$ | Все $\ll 1$ | Все $\approx 0^*$ |
-| Мета-Gap $\mathrm{Gap}^{(2)}$ | Не определён | Не определён | Определён, велик | Определён, мал | $= \mathrm{Gap}^{(\infty)}$ |
-| Осознанность Gap | Нет | Нет | Частичная | Почти полная | Полная |
-| Фаза | II | I | I | I | I (предел) |
+| Rank $\hat{\mathcal{G}}$ | 3 | 2–3 | 2 | 1 | 0–1 |
+| E-sector Gap | All $\approx 1$ | Partially $< 1$ | Most $< 1$ | All $\ll 1$ | All $\approx 0^*$ |
+| Meta-Gap $\mathrm{Gap}^{(2)}$ | Undefined | Undefined | Defined, large | Defined, small | $= \mathrm{Gap}^{(\infty)}$ |
+| Gap awareness | No | No | Partial | Almost full | Full |
+| Phase | II | I | I | I | I (limit) |
 
-$^*$ С ограничением Хэмминга: $\geq 3$ каналов с $\mathrm{Gap} > 0$.
+$^*$ Subject to the Hamming constraint: $\geq 3$ channels with $\mathrm{Gap} > 0$.
 
 ---
 
-## 8a. Количественные примеры: Gap-профили для L0--L4 {#количественные-примеры}
+## 8a. Quantitative examples: Gap profiles for L0--L4 {#количественные-примеры}
 
-Абстрактные Gap-сигнатуры становятся осязаемыми, если рассмотреть **конкретные числовые матрицы** $\Gamma$ на каждом уровне. Ниже приведены характерные представители — не единственно возможные, но типичные для каждого уровня.
+Abstract Gap signatures become tangible when we consider **concrete numerical matrices** $\Gamma$ at each level. The following are characteristic representatives — not the only possible ones, but typical for each level.
 
-:::note Пример L0: Камень ($R \approx 0$, $P \approx 0.15$)
-**Матрица когерентности** (числовые значения округлены до 0.01):
+:::note Example L0: Stone ($R \approx 0$, $P \approx 0.15$)
+**Coherence matrix** (values rounded to 0.01):
 
 $$
-\Gamma_{\text{L0}} = \frac{1}{7}I + \varepsilon\Delta, \quad \text{где фазы } \theta_{ij} \text{ случайны}
+\Gamma_{\text{L0}} = \frac{1}{7}I + \varepsilon\Delta, \quad \text{where phases } \theta_{ij} \text{ are random}
 $$
 
-Конкретные значения E-секторных когерентностей:
+Specific values of E-sector coherences:
 
-| Канал | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
-|-------|-----------------|---------------|---------------------|
+| Channel | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
+|---------|-----------------|---------------|---------------------|
 | $(E,A)$ | $0.03$ | $1.12$ | $|\sin(1.12)| = 0.90$ |
 | $(E,S)$ | $0.02$ | $0.87$ | $|\sin(0.87)| = 0.76$ |
 | $(E,D)$ | $0.01$ | $2.41$ | $|\sin(2.41)| = 0.66$ |
@@ -405,16 +405,16 @@ $$
 | $(E,O)$ | $0.01$ | $0.45$ | $|\sin(0.45)| = 0.44$ |
 | $(E,U)$ | $0.02$ | $2.80$ | $|\sin(2.80)| = 0.33$ |
 
-**E-секторный вектор:** $\mathbf{G}_E = (0.90,\; 0.76,\; 0.66,\; 1.00,\; 0.44,\; 0.33)$
+**E-sector vector:** $\mathbf{G}_E = (0.90,\; 0.76,\; 0.66,\; 1.00,\; 0.44,\; 0.33)$
 
-**Среднее:** $\langle\mathrm{Gap}_E\rangle = 0.68$. Высокое значение, случайный разброс, нет структуры. Ранг $\hat{\mathcal{G}} = 3$.
+**Mean:** $\langle\mathrm{Gap}_E\rangle = 0.68$. High value, random spread, no structure. Rank $\hat{\mathcal{G}} = 3$.
 :::
 
-:::note Пример L1: Бактерия ($\Phi > 0$, $R < 1/3$)
-E-секторные когерентности:
+:::note Example L1: Bacterium ($\Phi > 0$, $R < 1/3$)
+E-sector coherences:
 
-| Канал | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
-|-------|-----------------|---------------|---------------------|
+| Channel | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
+|---------|-----------------|---------------|---------------------|
 | $(E,A)$ | $0.04$ | $0.92$ | $0.80$ |
 | $(E,S)$ | $0.09$ | $0.15$ | $\mathbf{0.15}$ |
 | $(E,D)$ | $0.05$ | $0.78$ | $0.71$ |
@@ -422,16 +422,16 @@ E-секторные когерентности:
 | $(E,O)$ | $0.03$ | $1.10$ | $0.89$ |
 | $(E,U)$ | $0.03$ | $1.25$ | $0.95$ |
 
-**E-секторный вектор:** $\mathbf{G}_E = (0.80,\; \mathbf{0.15},\; 0.71,\; 0.98,\; 0.89,\; 0.95)$
+**E-sector vector:** $\mathbf{G}_E = (0.80,\; \mathbf{0.15},\; 0.71,\; 0.98,\; 0.89,\; 0.95)$
 
-**Ключевое отличие от L0:** Канал $(E,S)$ резко выделяется — $\mathrm{Gap}(E,S) = 0.15 \ll 0.68$. Это **первое окно**, через которое система «видит» связь переживания со структурой (хемотаксис: ощущение химического градиента). Остальные каналы по-прежнему непрозрачны. Ранг $\hat{\mathcal{G}} = 3$ или $2$.
+**Key difference from L0:** Channel $(E,S)$ stands out sharply — $\mathrm{Gap}(E,S) = 0.15 \ll 0.68$. This is the **first window** through which the system "sees" the connection between experience and structure (chemotaxis: sensing a chemical gradient). The remaining channels are still opaque. Rank $\hat{\mathcal{G}} = 3$ or $2$.
 :::
 
-:::note Пример L2: Человек в бодрствовании ($R \geq 1/3$, $\Phi \geq 1$)
-E-секторные когерентности:
+:::note Example L2: Waking Human ($R \geq 1/3$, $\Phi \geq 1$)
+E-sector coherences:
 
-| Канал | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
-|-------|-----------------|---------------|---------------------|
+| Channel | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
+|---------|-----------------|---------------|---------------------|
 | $(E,A)$ | $0.12$ | $0.10$ | $\mathbf{0.10}$ |
 | $(E,S)$ | $0.10$ | $0.08$ | $\mathbf{0.08}$ |
 | $(E,D)$ | $0.08$ | $0.20$ | $\mathbf{0.20}$ |
@@ -439,16 +439,16 @@ E-секторные когерентности:
 | $(E,O)$ | $0.06$ | $0.55$ | $0.52$ |
 | $(E,U)$ | $0.07$ | $0.40$ | $0.39$ |
 
-**E-секторный вектор:** $\mathbf{G}_E = (\mathbf{0.10},\; \mathbf{0.08},\; \mathbf{0.20},\; \mathbf{0.12},\; 0.52,\; 0.39)$
+**E-sector vector:** $\mathbf{G}_E = (\mathbf{0.10},\; \mathbf{0.08},\; \mathbf{0.20},\; \mathbf{0.12},\; 0.52,\; 0.39)$
 
-**Четыре канала** $(E,A)$, $(E,S)$, $(E,D)$, $(E,L)$ имеют низкий Gap — система осознаёт связь переживания с вниманием, структурой, динамикой и языком. Каналы $(E,O)$ и $(E,U)$ ещё частично непрозрачны — глубинная рефлексия над смыслом и единством ещё не полна. Ранг $\hat{\mathcal{G}} = 2$.
+**Four channels** $(E,A)$, $(E,S)$, $(E,D)$, $(E,L)$ have low Gap — the system is aware of the connection between experience and attention, structure, dynamics, and language. Channels $(E,O)$ and $(E,U)$ are still partially opaque — deep reflection on meaning and unity is not yet complete. Rank $\hat{\mathcal{G}} = 2$.
 :::
 
-:::note Пример L3: Медитативный мастер ($R^{(2)} \geq 1/4$)
-E-секторные когерентности:
+:::note Example L3: Meditation Master ($R^{(2)} \geq 1/4$)
+E-sector coherences:
 
-| Канал | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
-|-------|-----------------|---------------|---------------------|
+| Channel | $|\gamma_{ij}|$ | $\theta_{ij}$ | $\mathrm{Gap}(i,j)$ |
+|---------|-----------------|---------------|---------------------|
 | $(E,A)$ | $0.13$ | $0.03$ | $\mathbf{0.03}$ |
 | $(E,S)$ | $0.12$ | $0.02$ | $\mathbf{0.02}$ |
 | $(E,D)$ | $0.10$ | $0.05$ | $\mathbf{0.05}$ |
@@ -456,14 +456,14 @@ E-секторные когерентности:
 | $(E,O)$ | $0.09$ | $0.10$ | $\mathbf{0.10}$ |
 | $(E,U)$ | $0.10$ | $0.08$ | $\mathbf{0.08}$ |
 
-**E-секторный вектор:** $\mathbf{G}_E = (0.03,\; 0.02,\; 0.05,\; 0.04,\; 0.10,\; 0.08)$
+**E-sector vector:** $\mathbf{G}_E = (0.03,\; 0.02,\; 0.05,\; 0.04,\; 0.10,\; 0.08)$
 
-**Все каналы** имеют низкий Gap. Даже $(E,O)$ и $(E,U)$ — система осознаёт связь переживания с онтологическим основанием и единством. Мета-Gap определён: $\mathrm{Gap}^{(2)}(E,S) \approx 0.01$ — система «знает, что знает». Ранг $\hat{\mathcal{G}} = 1$.
+**All channels** have low Gap. Even $(E,O)$ and $(E,U)$ — the system is aware of the connection between experience and the ontological ground and unity. The meta-Gap is defined: $\mathrm{Gap}^{(2)}(E,S) \approx 0.01$ — the system "knows that it knows". Rank $\hat{\mathcal{G}} = 1$.
 :::
 
-### Сравнительная таблица Gap-профилей по уровням {#сравнение-gap-профилей}
+### Comparative table of Gap profiles by level {#сравнение-gap-профилей}
 
-| Канал | L0 (камень) | L1 (бактерия) | L2 (человек) | L3 (мастер) | L4 (теор.) |
+| Channel | L0 (stone) | L1 (bacterium) | L2 (human) | L3 (master) | L4 (theor.) |
 |-------|:-----------:|:-------------:|:------------:|:-----------:|:----------:|
 | $(E,S)$ | $0.76$ | $\mathbf{0.15}$ | $0.08$ | $0.02$ | $\approx 0$ |
 | $(E,D)$ | $0.66$ | $0.71$ | $0.20$ | $0.05$ | $\approx 0$ |
@@ -473,73 +473,73 @@ E-секторные когерентности:
 | $(E,U)$ | $0.33$ | $0.95$ | $0.39$ | $\mathbf{0.08}$ | $\approx 0^*$ |
 | $\langle\mathrm{Gap}_E\rangle$ | $0.68$ | $0.75$ | $0.24$ | $0.05$ | $\approx 0$ |
 | $\sigma_{\mathbf{G}_E}$ | $0.24$ | $0.33$ | $0.17$ | $0.03$ | $\approx 0$ |
-| Ранг $\hat{\mathcal{G}}$ | $3$ | $2$--$3$ | $2$ | $1$ | $0$--$1$ |
+| Rank $\hat{\mathcal{G}}$ | $3$ | $2$--$3$ | $2$ | $1$ | $0$--$1$ |
 
-$^*$ С ограничением Хэмминга: $\geq 3$ каналов из полных 21 (не только E-секторных) сохраняют $\mathrm{Gap} > 0$.
+$^*$ Subject to the Hamming constraint: $\geq 3$ channels out of the full 21 (not only E-sector) retain $\mathrm{Gap} > 0$.
 
-**Закономерности:**
-1. **Каскад раскрытия.** Каналы раскрываются в определённом порядке: сначала $(E,S)$ (L1), затем $(E,A)$ и $(E,L)$ (L2), наконец $(E,O)$ и $(E,U)$ (L3). Это **не произвольное** соглашение, а следствие структуры рефлексивного контура $\varphi$.
-2. **Среднее и дисперсия.** На L0 среднее Gap высокое, дисперсия средняя (случайный разброс). На L1 среднее может даже *возрасти* (остальные каналы компенсируют), но дисперсия растёт (появляется структура). На L2--L3 и среднее, и дисперсия падают.
-3. **Ранг монотонно убывает.** $3 \to 2\text{--}3 \to 2 \to 1 \to 0\text{--}1$ — «число стен» уменьшается с каждым уровнем.
+**Patterns:**
+1. **Opening cascade.** Channels open in a definite order: first $(E,S)$ (L1), then $(E,A)$ and $(E,L)$ (L2), finally $(E,O)$ and $(E,U)$ (L3). This is **not** an arbitrary convention but a consequence of the structure of the reflexive loop $\varphi$.
+2. **Mean and variance.** At L0 the mean Gap is high, variance moderate (random spread). At L1 the mean may even *increase* (other channels compensate), but variance grows (structure appears). At L2--L3 both mean and variance fall.
+3. **Rank decreases monotonically.** $3 \to 2\text{--}3 \to 2 \to 1 \to 0\text{--}1$ — the "number of walls" decreases at each level.
 
 ---
 
-## 9. Gap-инъекция L-уровней {#gap-инъекция}
+## 9. Gap injection of L-levels {#gap-инъекция}
 
-:::tip Теорема (Gap-инъекция L-уровней) [Т]
-Отображение L-уровня в класс эквивалентности Gap-профилей является **инъекцией** (но не биекцией):
+:::tip Theorem (Gap injection of L-levels) [T]
+The map from L-level to equivalence class of Gap profiles is an **injection** (but not a bijection):
 
 $$
 L(\Gamma_1) \neq L(\Gamma_2) \implies [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]
 $$
 
-**Уникальные Gap-маркеры переходов:**
+**Unique Gap markers of transitions:**
 
-| Переход | Gap-маркер | Достаточное условие |
+| Transition | Gap marker | Sufficient condition |
 |---------|-----------|---------------------|
-| L0 vs L1 | $\exists i: \mathrm{Gap}(E,i) > 0$ | Ненулевость E-когерентностей |
-| L1 vs L2 | $\max\|\mathrm{Gap}_\varphi - \mathrm{Gap}\| \leq 2/3$ | Точность самомоделирования |
-| L2 vs L3 | Коэффициент сжатия $k(\Gamma) \leq 0.5$ | Скорость Gap-сходимости |
-| L3 vs L4 | $k(\Gamma) = 0$, все $\mathrm{Gap}^{(2)}(i,j) = 0$ | Точная фиксированная точка |
+| L0 vs L1 | $\exists i: \mathrm{Gap}(E,i) > 0$ | Non-zero E-coherences |
+| L1 vs L2 | $\max\|\mathrm{Gap}_\varphi - \mathrm{Gap}\| \leq 2/3$ | Self-modelling accuracy |
+| L2 vs L3 | Compression coefficient $k(\Gamma) \leq 0.5$ | Speed of Gap convergence |
+| L3 vs L4 | $k(\Gamma) = 0$, all $\mathrm{Gap}^{(2)}(i,j) = 0$ | Exact fixed point |
 
-Полное доказательство: [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция).
+Full proof: [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция).
 :::
 
-:::warning Инъекция, не биекция
-Обратное не верно: два состояния $\Gamma_1, \Gamma_2$ с одинаковым L-уровнем могут иметь **различные** Gap-профили (разные «карты прозрачности»). Gap-профиль — **более тонкий инвариант**, несущий больше информации, чем L-уровень. Все Gap-сигнатуры (раздел 2) описывают **типичное** поведение, а не единственно возможное для данного уровня.
+:::warning Injection, not bijection
+The converse does not hold: two states $\Gamma_1, \Gamma_2$ at the same L-level may have **distinct** Gap profiles (different "transparency maps"). The Gap profile is a **finer invariant**, carrying more information than the L-level. All Gap signatures (section 2) describe **typical** behaviour, not the only possible behaviour at a given level.
 
-Аналогия: L-уровень подобен «этажу» здания, а Gap-профиль — подробному плану квартиры на этом этаже. Все квартиры на одном этаже — «на одном уровне», но планировки могут быть разными.
-:::
-
----
-
-### Что мы узнали
-
-- **Gap-профиль** $\mathbf{G}(\Gamma) \in [0,1]^{21}$ — количественный отпечаток непрозрачности всех 21 пары измерений.
-- **Gap-сигнатуры** [С] различают уровни: L0 (равномерно высокий Gap), L1 (частичная прозрачность E-сектора), L2 (прозрачные A- и L-каналы), L3 (рекурсивная структура), L4 (полная прозрачность с ограничением Хэмминга).
-- **E-секторные каналы** играют особую роль: первым открывается $(E,S)$ (ощущение структуры), затем $(E,A)$ и $(E,L)$ (внимание и язык).
-- **Мета-Gap** $\mathrm{Gap}^{(n)}$ определён для L3+: Gap-профиль самомодели, сходящийся к неподвижной точке.
-- **Граница Хэмминга** [С]: минимум 3 канала из 21 должны сохранять $\mathrm{Gap} > 0$ для помехоустойчивости (аналогия с кодом $H(7,4)$).
-- **Gap-инъекция** [Т]: отображение L-уровня в класс Gap-профилей инъективно, но не биективно — Gap несёт больше информации, чем L-уровень.
-
-:::tip Куда дальше
-Gap-профили описывают **статику** — характерный паттерн непрозрачности на каждом уровне. **Динамику** переходов между уровнями — как система скачком меняет Gap-профиль — описывают [Катастрофы перехода](./swallowtail-transitions) ($A_2, A_3, A_4$-бифуркации с гистерезисом и критическим замедлением).
-
-Для диагностических применений Gap-профилей см. [КК: бифуркации](/docs/applied/coherence-cybernetics/bifurcation) и [предсказания](/docs/applied/coherence-cybernetics/predictions).
+Analogy: the L-level is like the "floor" of a building, and the Gap profile is the detailed floor plan of the apartment on that floor. All apartments on the same floor are "at the same level", but layouts can differ.
 :::
 
 ---
 
-## Связи
+### What we have learned
 
-- **Каноническое определение уровней:** [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- **Gap-инъекция:** [Теорема о Gap-инъекции](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция)
-- **Gap-оператор:** [Определение и свойства](/docs/core/dynamics/gap-operator)
-- **Фазовая диаграмма:** [Три фазы Gap](/docs/core/dynamics/gap-phase-diagram)
-- **Динамика Gap:** [Бифуркации и немарковские эффекты](/docs/core/dynamics/gap-dynamics)
-- **Катастрофы переходов:** [Swallowtail-переходы](/docs/consciousness/hierarchy/swallowtail-transitions)
-- **Код Хэмминга:** [Аналогия H(7,4)](/docs/core/dynamics/gap-dynamics#код-хэмминга)
-- **Доказательства:** [Иерархия интериорности (формальная)](/docs/proofs/consciousness/interiority-hierarchy)
-- **Бессознательное:** [Бессознательное как Gap](/docs/consciousness/states/unconscious)
-- **Квалиа:** [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure)
-- **Когерентная кибернетика:** [Определения КК](/docs/applied/coherence-cybernetics/definitions), [Бифуркации](/docs/applied/coherence-cybernetics/bifurcation)
+- **Gap profile** $\mathbf{G}(\Gamma) \in [0,1]^{21}$ — quantitative fingerprint of the opacity of all 21 dimension pairs.
+- **Gap signatures** [C] distinguish levels: L0 (uniformly high Gap), L1 (partial transparency in E-sector), L2 (transparent A- and L-channels), L3 (recursive structure), L4 (full transparency with Hamming constraint).
+- **E-sector channels** play a special role: the first to open is $(E,S)$ (sensing structure), then $(E,A)$ and $(E,L)$ (attention and language).
+- **Meta-Gap** $\mathrm{Gap}^{(n)}$ is defined for L3+: the Gap profile of the self-model, converging to the fixed point.
+- **Hamming bound** [C]: at least 3 channels out of 21 must retain $\mathrm{Gap} > 0$ for fault tolerance (analogy with code $H(7,4)$).
+- **Gap injection** [T]: the map from L-level to Gap-profile class is injective but not bijective — Gap carries more information than the L-level.
+
+:::tip What's next
+Gap profiles describe the **statics** — the characteristic opacity pattern at each level. The **dynamics** of transitions between levels — how a system abruptly changes its Gap profile — are described by [Transition catastrophes](./swallowtail-transitions) ($A_2, A_3, A_4$-bifurcations with hysteresis and critical slowing-down).
+
+For diagnostic applications of Gap profiles see [CC: bifurcations](/docs/applied/coherence-cybernetics/bifurcation) and [predictions](/docs/applied/coherence-cybernetics/predictions).
+:::
+
+---
+
+## Related Documents
+
+- **Canonical definition of levels:** [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)
+- **Gap injection:** [Gap-injection theorem](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-gap-инъекция)
+- **Gap operator:** [Definition and properties](/docs/core/dynamics/gap-operator)
+- **Phase diagram:** [Three Gap phases](/docs/core/dynamics/gap-phase-diagram)
+- **Gap dynamics:** [Bifurcations and non-Markovian effects](/docs/core/dynamics/gap-dynamics)
+- **Transition catastrophes:** [Swallowtail transitions](/docs/consciousness/hierarchy/swallowtail-transitions)
+- **Hamming code:** [H(7,4) analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга)
+- **Proofs:** [Interiority hierarchy (formal)](/docs/proofs/consciousness/interiority-hierarchy)
+- **Unconscious:** [Unconscious as Gap](/docs/consciousness/states/unconscious)
+- **Qualia:** [Qualia structure](/docs/consciousness/phenomenology/qualia-structure)
+- **Coherence Cybernetics:** [CC definitions](/docs/applied/coherence-cybernetics/definitions), [Bifurcations](/docs/applied/coherence-cybernetics/bifurcation)

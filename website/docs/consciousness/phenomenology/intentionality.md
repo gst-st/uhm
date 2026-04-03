@@ -1,341 +1,341 @@
 ---
 sidebar_position: 4
-title: "Интенциональность"
-description: "Направленность сознания как морфизм в категории Hol"
+title: "Intentionality"
+description: "The directedness of consciousness as a morphism in the category Hol"
 slug: /consciousness/phenomenology/intentionality
 ---
 
-# Интенциональность
+# Intentionality
 
-:::info Мост из предыдущей главы
-В предыдущих главах мы рассмотрели *что* переживается ([квалиа](/docs/consciousness/phenomenology/qualia-structure)), *как* переживается ([эмоции](/docs/consciousness/phenomenology/emotional-taxonomy)), *когда* переживается ([субъективное время](/docs/consciousness/phenomenology/temporal-consciousness)). Теперь — самый фундаментальный вопрос: **о чём** переживание? Сознание всегда направлено *на что-то* — на объект, мысль, чувство. Эта направленность называется **интенциональностью** и получает в УГМ точное математическое выражение: морфизм в категории $\mathbf{Hol}$, сохраняющий экспериенциальное содержание.
+:::info Bridge from the previous chapter
+In the preceding chapters we examined *what* is experienced ([qualia](/docs/consciousness/phenomenology/qualia-structure)), *how* it is experienced ([emotions](/docs/consciousness/phenomenology/emotional-taxonomy)), *when* it is experienced ([subjective time](/docs/consciousness/phenomenology/temporal-consciousness)). Now comes the most fundamental question: **about what** is the experience? Consciousness is always directed *toward something* — an object, a thought, a feeling. This directedness is called **intentionality** and receives in UHM a precise mathematical expression: a morphism in the category $\mathbf{Hol}$ that preserves experiential content.
 :::
 
-:::note О нотации
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $\mathbf{Hol}$ — [категория Голономов](/docs/core/categories/category-hol)
-- $\varphi$ — [оператор самомоделирования](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), $R_{\text{th}} = 1/3$
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $\mathbf{Hol}$ — [category of Holonomies](/docs/core/categories/category-hol)
+- $\varphi$ — [self-modelling operator](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), $R_{\text{th}} = 1/3$
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Философская история** — от Брентано до Сёрла
-2. **Определение** — интенциональность как CPTP-морфизм с E-условием
-3. **Порог** — почему интенциональность требует L2
-4. **Типы** — апперцептивная, эвиденциальная, телеологическая, аффективная, имманентная
-5. **Композиция** — теорема о замкнутости (подкатегория $\mathbf{Int} \subset \mathbf{Hol}$)
-6. **Самосознание** — тождественный интенциональный акт
-7. **Иерархия L0-L4** — от отсутствия направленности до тождественной
-8. **Интенциональный конус** — множество достижимых состояний
-9. **Связь с No-Zombie** — почему отсутствие интенциональности не равно отсутствию опыта
+1. **Philosophical history** — from Brentano to Searle
+2. **Definition** — intentionality as a CPTP morphism with the E-condition
+3. **Threshold** — why intentionality requires L2
+4. **Types** — apperceptive, evidential, teleological, affective, immanent
+5. **Composition** — closure theorem (subcategory $\mathbf{Int} \subset \mathbf{Hol}$)
+6. **Self-consciousness** — the identity intentional act
+7. **L0–L4 hierarchy** — from absence of directedness to identity
+8. **Intentional cone** — the set of reachable states
+9. **Connection to No-Zombie** — why absence of intentionality does not equal absence of experience
 
 ---
 
-## Философская история: направленность сознания {#история}
+## Philosophical History: The Directedness of Consciousness {#история}
 
-### Брентано (1874): интенциональность как критерий ментального
+### Brentano (1874): intentionality as the criterion of the mental
 
-**Франц Брентано** в «Психологии с эмпирической точки зрения» (1874) сформулировал тезис, ставший одним из фундаментальных положений философии сознания:
+**Franz Brentano** in "Psychology from an Empirical Standpoint" (1874) formulated a thesis that became one of the foundational claims of the philosophy of mind:
 
-> «Каждый психический феномен характеризуется тем, что средневековые схоласты называли **интенциональным (или ментальным) инсуществованием** объекта, и что мы, хотя и в несколько двусмысленных выражениях, назвали бы **отношением к содержанию, направленностью на объект**.»
+> "Every mental phenomenon is characterized by what the medieval scholastics called the **intentional (or mental) inexistence** of an object, and which we, though in somewhat ambiguous terms, would call the **relation to a content, the direction toward an object**."
 
-Что это означает простым языком? Каждое сознательное состояние **направлено на что-то**:
-- Вы **видите** *яблоко* (восприятие направлено на объект)
-- Вы **думаете** *о задаче* (мышление направлено на содержание)
-- Вы **желаете** *мороженое* (желание направлено на предмет)
-- Вы **боитесь** *темноты* (страх направлен на ситуацию)
+What does this mean in plain language? Every conscious state is **directed toward something**:
+- You **see** *an apple* (perception directed toward an object)
+- You **think** *about a problem* (thinking directed toward a content)
+- You **desire** *ice cream* (desire directed toward a thing)
+- You **fear** *the dark* (fear directed toward a situation)
 
-Камень не направлен ни на что. Река не «о чём-то». Но сознание **всегда** о чём-то — это его определяющее свойство. Брентано предложил использовать интенциональность как **критерий различения** психического от физического.
+A stone is directed toward nothing. A river is not "about" anything. But consciousness is **always** about something — that is its defining property. Brentano proposed using intentionality as the **criterion of distinction** between the mental and the physical.
 
-### Гуссерль (1900): ноэзис и ноэма
+### Husserl (1900): noesis and noema
 
-**Эдмунд Гуссерль**, ученик Брентано, развил его идею в систематическую феноменологию. Он ввёл два ключевых понятия:
+**Edmund Husserl**, Brentano's student, developed his idea into a systematic phenomenology. He introduced two key concepts:
 
-- **Ноэзис** (noesis) — акт сознания, «как» сознание направлено (восприятие, воспоминание, суждение...)
-- **Ноэма** (noema) — содержание акта, «на что» сознание направлено (объект, мысль, ценность...)
+- **Noesis** (noesis) — the act of consciousness, the "how" of its directedness (perception, recollection, judgement…)
+- **Noema** (noema) — the content of the act, the "toward what" of consciousness (object, thought, value…)
 
-Каждый акт сознания — это пара (ноэзис, ноэма). Нельзя иметь ноэзис без ноэмы (сознание без объекта) или ноэму без ноэзиса (объект без сознания).
+Every act of consciousness is a pair (noesis, noema). One cannot have a noesis without a noema (consciousness without an object) or a noema without a noesis (object without consciousness).
 
-Гуссерль также ввёл понятие **горизонта интенциональности**: когда вы видите яблоко, вы видите не только его переднюю сторону — вы **ожидаете**, что у него есть задняя сторона, что оно тяжёлое, что оно съедобное. Этот «горизонт» — невидимый, но существенный фон каждого акта сознания.
+Husserl also introduced the concept of the **horizon of intentionality**: when you see an apple, you see not only its front side — you **expect** it to have a back side, that it is heavy, that it is edible. This "horizon" is the invisible but essential background of every act of consciousness.
 
 ```mermaid
 graph TD
-    subgraph Интенциональный_акт["Интенциональный акт"]
-        N["Ноэзис (акт):<br/>Как направлено"]
-        M["Ноэма (содержание):<br/>На что направлено"]
+    subgraph Intentional_Act["Intentional act"]
+        N["Noesis (act):<br/>How it is directed"]
+        M["Noema (content):<br/>What it is directed at"]
         N --> M
     end
 
-    subgraph Горизонт["Горизонт"]
-        H1["Ожидание задней стороны"]
-        H2["Ожидание тяжести"]
-        H3["Ожидание вкуса"]
+    subgraph Horizon["Horizon"]
+        H1["Expectation of the back side"]
+        H2["Expectation of weight"]
+        H3["Expectation of taste"]
     end
 
-    M --> Горизонт
+    M --> Horizon
 
     style N fill:#ffe8e8,stroke:#cc0000
     style M fill:#e8e8ff,stroke:#0000cc
-    style Горизонт fill:#e8ffe8,stroke:#00cc00
+    style Horizon fill:#e8ffe8,stroke:#00cc00
 ```
 
-### Сёрл (1983): интенциональность и речевые акты
+### Searle (1983): intentionality and speech acts
 
-**Джон Сёрл** в книге «Интенциональность» (1983) связал интенциональность с **условиями удовлетворения**: каждое интенциональное состояние задаёт условие, при котором оно «удовлетворено» (убеждение — истинно или ложно, желание — исполнено или нет, намерение — реализовано или нет).
+**John Searle** in "Intentionality" (1983) linked intentionality to **conditions of satisfaction**: every intentional state sets a condition under which it is "satisfied" (a belief is true or false, a desire fulfilled or not, an intention realised or not).
 
-Сёрл также предложил знаменитый аргумент «Китайской комнаты» (1980): компьютерная программа может имитировать понимание китайского языка, но не обладает интенциональностью — она не «понимает» в том смысле, в котором понимает человек. Для Сёрла интенциональность — биологический феномен, присущий определённым нейронным системам.
+Searle also proposed the famous "Chinese Room" argument (1980): a computer program can simulate understanding Chinese, but does not possess intentionality — it does not "understand" in the sense that a human understands. For Searle, intentionality is a biological phenomenon belonging to certain neural systems.
 
-### Позиция УГМ: интенциональность как морфизм
+### UHM position: intentionality as a morphism
 
-УГМ предлагает формализацию, совмещающую интуиции всех трёх мыслителей:
+UHM offers a formalisation that combines the intuitions of all three thinkers:
 
-| Философ | Идея | Формализация в УГМ |
-|---------|------|-------------------|
-| **Брентано** | Сознание всегда направлено | Морфизм $f: \Gamma_A \to \Gamma_B$ в категории $\mathbf{Hol}$ |
-| **Гуссерль** | Ноэзис/ноэма, горизонт | Ноэзис = морфизм $f$; ноэма = $\Gamma_B$; горизонт = интенциональный конус $\mathcal{I}(\Gamma)$ |
-| **Сёрл** | Условия удовлетворения, биологичность | E-совместимость = условие удовлетворения; $R \geq 1/3$ = биологический порог |
+| Philosopher | Idea | Formalisation in UHM |
+|-------------|------|----------------------|
+| **Brentano** | Consciousness is always directed | Morphism $f: \Gamma_A \to \Gamma_B$ in the category $\mathbf{Hol}$ |
+| **Husserl** | Noesis/noema, horizon | Noesis = morphism $f$; noema = $\Gamma_B$; horizon = intentional cone $\mathcal{I}(\Gamma)$ |
+| **Searle** | Conditions of satisfaction, biological grounding | E-compatibility = condition of satisfaction; $R \geq 1/3$ = biological threshold |
 
-Ключевое отличие УГМ от всех трёх: **интенциональность не бинарна** (есть/нет), а **градуальна** — от полного отсутствия (L0) через протоинтенциональность (L1) к полной интенциональности (L2) и метаинтенциональности (L3).
+The key distinction of UHM from all three: **intentionality is not binary** (present/absent), but **graded** — from complete absence (L0) through proto-intentionality (L1) to full intentionality (L2) and meta-intentionality (L3).
 
 ---
 
-## Мотивация {#мотивация}
+## Motivation {#мотивация}
 
-**Интенциональность** — фундаментальное свойство сознания: его **направленность на объект**. Сознание всегда есть сознание *чего-то* (Брентано, Гуссерль). В УГМ интенциональность получает формальное выражение как **морфизм** в [категории Голономов](/docs/core/categories/category-hol) $\mathbf{Hol}$.
+**Intentionality** is a fundamental property of consciousness: its **directedness toward an object**. Consciousness is always consciousness *of* something (Brentano, Husserl). In UHM, intentionality receives a formal expression as a **morphism** in the [category of Holonomies](/docs/core/categories/category-hol) $\mathbf{Hol}$.
 
-**Аналогия из повседневной жизни.** Фонарик всегда светит *куда-то* — у него есть направление. Сознание подобно фонарику: оно не может просто «быть» без объекта освещения. Интенциональность — это «луч» фонарика. В формализме УГМ: морфизм $f: \Gamma_A \to \Gamma_B$ — это «путь луча» от одного состояния к другому, причём этот путь не должен «выключать фонарик» (не обеднять E-сектор).
+**An everyday analogy.** A torch always shines *somewhere* — it has a direction. Consciousness is like a torch: it cannot simply "be" without an object of illumination. Intentionality is the "beam" of the torch. In the UHM formalism: the morphism $f: \Gamma_A \to \Gamma_B$ is the "path of the beam" from one state to another, and this path must not "switch the torch off" (must not impoverish the E-sector).
 
-Но почему формально интенциональность — именно **морфизм**, а не, скажем, функция или отношение? Потому что:
+But why is intentionality formally a **morphism** rather than, say, a function or a relation? Because:
 
-1. Морфизмы **композируются**: из «я вижу яблоко» и «яблоко красное» следует «я вижу красное яблоко» — цепочка интенциональных актов образует новый акт
-2. Морфизмы **сохраняют структуру**: интенциональный акт не разрушает объект (CPTP-канал сохраняет нормировку и положительность)
-3. Существует **тождественный морфизм**: самосознание — это «направленность на себя», $\mathrm{id}: \Gamma \to \Gamma$
+1. Morphisms **compose**: from "I see an apple" and "the apple is red" it follows "I see a red apple" — a chain of intentional acts forms a new act
+2. Morphisms **preserve structure**: an intentional act does not destroy the object (a CPTP channel preserves normalisation and positivity)
+3. There exists an **identity morphism**: self-consciousness is the "directedness toward oneself", $\mathrm{id}: \Gamma \to \Gamma$
 
-Это в точности аксиомы **категории**. Интенциональность — не случайное свойство, навешенное на сознание, а **структурный инвариант** категории $\mathbf{Hol}$.
+These are precisely the axioms of a **category**. Intentionality is not an accidental property attached to consciousness, but a **structural invariant** of the category $\mathbf{Hol}$.
 
-## Определение интенциональности (О.1) {#определение}
+## Definition of Intentionality (D.1) {#определение}
 
-:::tip Определение О.1 (Интенциональность) [О]
-**Интенциональность** — CPTP-морфизм $f$ в категории $\mathbf{Hol}$, удовлетворяющий условию **E-совместимости**:
+:::tip Definition D.1 (Intentionality) [D]
+**Intentionality** is a CPTP morphism $f$ in the category $\mathbf{Hol}$ satisfying the condition of **E-compatibility**:
 
 $$
 f: \Gamma_A \to \Gamma_B, \quad f \in \mathrm{Mor}_{\mathbf{Hol}}(\Gamma_A, \Gamma_B)
 $$
 
-при дополнительном условии:
+with the additional condition:
 
 $$
 \mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})
 $$
 
-где $\rho_E^{(X)} = \mathrm{Tr}_{-E}(\Gamma_X)$ — [редуцированная матрица опыта](/docs/consciousness/foundations/interiority-theory) системы $X$.
+where $\rho_E^{(X)} = \mathrm{Tr}_{-E}(\Gamma_X)$ is the [reduced experience matrix](/docs/consciousness/foundations/interiority-theory) of system $X$.
 
-**Интерпретация:** Интенциональный акт $f$ «направляет» систему $A$ на систему $B$ таким образом, что экспериенциальное содержание не обедняется.
+**Interpretation:** The intentional act $f$ "directs" system $A$ toward system $B$ in such a way that experiential content is not impoverished.
 :::
 
-Разберём определение по частям.
+Let us unpack the definition part by part.
 
-### Что такое CPTP-морфизм?
+### What is a CPTP morphism?
 
-**CPTP** расшифровывается как «Completely Positive Trace-Preserving» — «полностью положительный, сохраняющий след». Это класс преобразований, которые физически реализуемы:
+**CPTP** stands for "Completely Positive Trace-Preserving". This is the class of transformations that are physically realisable:
 
-- **Trace-Preserving** (сохранение следа): $\mathrm{Tr}(f(\Gamma)) = \mathrm{Tr}(\Gamma) = 1$. Нормировка сохраняется — «вероятности остаются вероятностями».
-- **Completely Positive** (полная положительность): $f$ отображает допустимые состояния в допустимые, даже если система является частью большей системы. Это гарантирует, что преобразование «физично» — не создаёт отрицательных вероятностей.
+- **Trace-Preserving**: $\mathrm{Tr}(f(\Gamma)) = \mathrm{Tr}(\Gamma) = 1$. Normalisation is preserved — "probabilities remain probabilities".
+- **Completely Positive**: $f$ maps admissible states to admissible states, even when the system is part of a larger system. This guarantees that the transformation is "physical" — it does not create negative probabilities.
 
-В представлении Крауса:
+In Kraus representation:
 
 $$
 f(\Gamma) = \sum_m K_m \Gamma K_m^\dagger, \quad \sum_m K_m^\dagger K_m = I
 $$
 
-где $K_m$ — операторы Крауса, совместимые с $\Omega^7$-структурой (см. [Категория Hol](/docs/core/categories/category-hol)).
+where $K_m$ are Kraus operators compatible with the $\Omega^7$ structure (see [Category Hol](/docs/core/categories/category-hol)).
 
-### Что такое E-совместимость?
+### What is E-compatibility?
 
-Условие $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ означает: **ранг редуцированной матрицы опыта не уменьшается**. Что это значит на пальцах?
+The condition $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ means: **the rank of the reduced experience matrix does not decrease**. What does this mean informally?
 
-$\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — это то, что «видит» измерение Интериорности ($E$), когда все остальные измерения «прослежены» (усреднены). Ранг $\rho_E$ — это число «независимых направлений» в E-пространстве, по которым есть ненулевое содержание. Чем выше ранг, тем богаче переживание.
+$\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is what the Interiority ($E$) measurement "sees" when all other dimensions are "traced out" (averaged). The rank of $\rho_E$ is the number of "independent directions" in E-space along which there is nonzero content. The higher the rank, the richer the experience.
 
-E-совместимость гарантирует: **интенциональный акт не обедняет опыт**. Он может обогатить (ранг растёт) или сохранить (ранг тот же), но не уменьшить.
+E-compatibility guarantees: **an intentional act does not impoverish experience**. It may enrich (rank grows) or preserve (rank unchanged), but not diminish.
 
-**Аналогия.** Если $\Gamma$ — картина мира, то интенциональный акт — это «наведение объектива» на часть картины. Условие $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ гарантирует, что при наведении объектива картина не теряет деталей — она может обогатиться новыми деталями, но не обедниться. Формализм CPTP-каналов обеспечивает, что «объектив» физически реализуем (сохраняет положительность и нормировку).
+**Analogy.** If $\Gamma$ is a picture of the world, then an intentional act is "pointing the lens" at a part of the picture. The condition $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ guarantees that when pointing the lens the picture does not lose detail — it may acquire new detail, but not lose it. The CPTP channel formalism ensures that the "lens" is physically realisable (preserves positivity and normalisation).
 
-**Числовой пример.** Пусть до интенционального акта: $\rho_E^{(A)}$ имеет ранг 3 (три независимых «направления» переживания). После акта «я замечаю красный цвет яблока»: $\rho_E^{(B)}$ имеет ранг 4 — добавилось новое направление (цвет). E-совместимость выполнена: $4 \geq 3$. Если бы после акта ранг упал до 2, это не был бы интенциональный акт — это было бы «забывание», «вытеснение», разрушение опыта.
+**Numerical example.** Suppose before the intentional act: $\rho_E^{(A)}$ has rank 3 (three independent "directions" of experience). After the act "I notice the red colour of the apple": $\rho_E^{(B)}$ has rank 4 — a new direction (colour) has been added. E-compatibility is satisfied: $4 \geq 3$. If after the act the rank had fallen to 2, this would not be an intentional act — it would be "forgetting", "repression", a destruction of experience.
 
-## Порог интенциональности (С.1) {#порог}
+## Threshold of Intentionality (C.1) {#порог}
 
-:::tip Утверждение С.1 (Порог интенциональности) [С]
-**Условие:** Порог $R_{\text{th}} = 1/3$ — теорема [Т] ($K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)).
+:::tip Statement C.1 (Threshold of intentionality) [C]
+**Condition:** The threshold $R_{\text{th}} = 1/3$ is a theorem [T] ($K = 3$ from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)).
 
-Интенциональность в полном смысле (направленная «о-чём-то» структура) требует уровня L2:
+Intentionality in the full sense (an "about-something" directed structure) requires level L2:
 
 $$
 R(\Gamma) \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi(\Gamma) \geq \Phi_{\text{th}} = 1
 $$
 
-**Ниже L2** существуют протоинтенциональные процессы: морфизмы $f \in \mathrm{Mor}_{\mathbf{Hol}}$ без условия на $\mathrm{rank}(\rho_E)$. Это «реактивные» направленности (тропизмы, рефлексы), не имеющие «о-чём-то» структуры.
+**Below L2** there exist proto-intentional processes: morphisms $f \in \mathrm{Mor}_{\mathbf{Hol}}$ without a condition on $\mathrm{rank}(\rho_E)$. These are "reactive" directedness (tropisms, reflexes), lacking an "about-something" structure.
 :::
 
-### Почему интенциональность требует L2
+### Why intentionality requires L2
 
-Интенциональность предполагает **различение субъекта и объекта**: «**я** вижу **яблоко**». Для этого необходимы:
+Intentionality presupposes **distinguishing subject from object**: "**I** see **an apple**". This requires:
 
-1. **Модель субъекта** — «кто направляет». Это обеспечивается [оператором самомоделирования](/docs/consciousness/foundations/self-observation) $\varphi$, создающим внутреннюю «карту себя» $\varphi(\Gamma)$.
+1. **A model of the subject** — "who directs". This is provided by the [self-modelling operator](/docs/consciousness/foundations/self-observation) $\varphi$, creating an inner "map of self" $\varphi(\Gamma)$.
 
-2. **Модель объекта** — «на что направлено». Это обеспечивается достаточной точностью самомодели, позволяющей **отличить** «себя» от «не-себя».
+2. **A model of the object** — "what is directed at". This is provided by sufficient accuracy of the self-model, enabling the system to **distinguish** "self" from "not-self".
 
-Качество самомодели измеряется [мерой рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
+The quality of the self-model is measured by the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
 
 $$
 R = \frac{1}{7P(\Gamma)} \geq \frac{1}{3}
 $$
 
-При $R < 1/3$ (эквивалентно $P > 3/7$) система находится слишком далеко от диссипативного аттрактора $I/7$, чтобы структурировать различие «субъект -- объект», которое конститутивно для интенциональности. Мастер-определение: [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+When $R < 1/3$ (equivalently $P > 3/7$) the system is too far from the dissipative attractor $I/7$ to structure the subject–object distinction that is constitutive of intentionality. Master definition: [Self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
-**Числовой пример: три существа.**
+**Numerical example: three beings.**
 
-| Существо | $R$ | $\Phi$ | Уровень | Направленность | Переживание |
-|----------|:---:|:------:|:-------:|----------------|-------------|
-| **Термостат** | $0.02$ | $0.3$ | L0 | Нет | Реагирует на температуру, но не «направлен» ни на что |
-| **Амёба** | $0.15$ | $1.5$ | L1 | Протоинтенциональность | Движется к пище, но нет «я» и нет «пища как объект» |
-| **Человек** | $0.50$ | $2.1$ | L2 | Интенциональность | «Я вижу яблоко» — есть субъект, есть объект, есть акт |
+| Entity | $R$ | $\Phi$ | Level | Directedness | Experience |
+|--------|:---:|:------:|:-----:|--------------|------------|
+| **Thermostat** | $0.02$ | $0.3$ | L0 | None | Reacts to temperature, but is not "directed" at anything |
+| **Amoeba** | $0.15$ | $1.5$ | L1 | Proto-intentionality | Moves toward food, but there is no "I" and no "food as object" |
+| **Human** | $0.50$ | $2.1$ | L2 | Intentionality | "I see an apple" — there is a subject, an object, an act |
 
-У человека: $R \approx 0.5$ означает $P \approx 1/(7 \times 0.5) \approx 2/7$ — система вблизи критического порога, в зоне Голдилокс. У амёбы: $R \approx 0.1$ ($P \approx 1.4$, но для физических систем $P \leq 1$, значит $R \geq 1/7 \approx 0.14$) — рефлексия минимальна, различие «субъект -- объект» размыто. У термостата: $R$ близко к $1/7$ — рефлексия на нижней границе.
+For the human: $R \approx 0.5$ means $P \approx 1/(7 \times 0.5) \approx 2/7$ — the system is near the critical threshold, in the Goldilocks zone. For the amoeba: $R \approx 0.1$ ($P \approx 1.4$, but for physical systems $P \leq 1$, so $R \geq 1/7 \approx 0.14$) — reflection is minimal, the subject–object distinction is blurred. For the thermostat: $R$ is close to $1/7$ — reflection at the lower bound.
 
-## Типы интенциональности (И.1) {#типы}
+## Types of Intentionality (I.1) {#типы}
 
-:::info Интерпретация И.1 (Секторные типы интенциональности) [И]
-Различные типы интенциональности определяются тем, **какие секторы** матрицы когерентности доминируют в морфизме $f$. Это **интерпретация** — отображение формальных секторов на феноменологические типы.
+:::info Interpretation I.1 (Sectoral types of intentionality) [I]
+Different types of intentionality are determined by **which sectors** of the coherence matrix dominate in the morphism $f$. This is an **interpretation** — a mapping of formal sectors onto phenomenological types.
 :::
 
-### Таблица типов
+### Table of types
 
-| Тип | Доминирующий сектор | Формальная характеристика | Феноменология | Пример |
-|-----|---------------------|--------------------------|---------------|--------|
-| **Апперцептивная** | $A \to E$ | $\gamma_{AE}$ ↑ при $f$ | Различение входит в интериорность | «Я *вижу* красное яблоко» |
-| **Эвиденциальная** | $L \to E$ | $\gamma_{LE}$ ↑ при $f$ | Логическая связность в интериорности | «Я *понимаю* доказательство» |
-| **Телеологическая** | $D \to U$ | $\gamma_{DU}$ ↑ при $f$ | Направленное изменение к единству (цель) | «Я *стремлюсь* к решению» |
-| **Аффективная** | $D \to E$ | $\gamma_{DE}$ ↑ при $f$ | Действие процесса на интериорность | «Я *чувствую* радость» |
-| **Имманентная** | $E \to O$ | $\gamma_{EO}$ ↑ при $f$ | Интериорность направлена к основанию | «Я переживаю *присутствие*» (медитация) |
+| Type | Dominant sector | Formal characteristic | Phenomenology | Example |
+|------|-----------------|----------------------|---------------|---------|
+| **Apperceptive** | $A \to E$ | $\gamma_{AE}$ ↑ under $f$ | Discrimination enters interiority | "I *see* a red apple" |
+| **Evidential** | $L \to E$ | $\gamma_{LE}$ ↑ under $f$ | Logical coherence in interiority | "I *understand* the proof" |
+| **Teleological** | $D \to U$ | $\gamma_{DU}$ ↑ under $f$ | Directed change toward unity (goal) | "I *strive* toward a solution" |
+| **Affective** | $D \to E$ | $\gamma_{DE}$ ↑ under $f$ | Process acting on interiority | "I *feel* joy" |
+| **Immanent** | $E \to O$ | $\gamma_{EO}$ ↑ under $f$ | Interiority directed toward the ground | "I experience *presence*" (meditation) |
 
-Разберём каждый тип подробно.
+Let us examine each type in detail.
 
-### Апперцептивная интенциональность {#апперцептивная}
+### Apperceptive intentionality {#апперцептивная}
 
-**Определение.** Апперцептивная интенциональность — направленность **внимания** на объект. Термин «апперцепция» ввёл Лейбниц (1714) для обозначения осознанного восприятия, в отличие от неосознанных «малых перцепций».
-
-$$
-f_{\text{аппер}}: \Gamma \to \Gamma', \quad \text{где } |\gamma'_{AE}| > |\gamma_{AE}|
-$$
-
-**Механизм.** Морфизм $f_{\text{аппер}}$ усиливает когерентность между Артикуляцией ($A$, различение) и Интериорностью ($E$, переживание). Субъективно: «я вижу/слышу/чувствую *это*». Артикуляция «выделяет» объект из фона, Интериорность «принимает» выделенное в переживание.
-
-**Аналогия.** Луч прожектора ($A$) освещает часть сцены, и эта часть «входит» в сознание ($E$). До акта внимания вся сцена освещена равномерно (низкая $\gamma_{AE}$). После акта — яркий луч выделяет объект (высокая $\gamma_{AE}$).
-
-**Числовой пример.** До акта внимания: $|\gamma_{AE}| = 0.08$ (фоновое восприятие). После направления внимания на яблоко: $|\gamma'_{AE}| = 0.25$ — трёхкратное усиление. При этом, по нормировке, другие $|\gamma_{AX}|$ ($X \neq E$) уменьшаются: «прожектор» внимания фокусируется, забирая ресурс у периферии. $|\gamma_{AS}|$ падает с $0.15$ до $0.08$ — структурное различение ослабевает в пользу переживания. Подробнее — в [Внимание и память](/docs/consciousness/states/attention-memory#внимание).
-
-### Эвиденциальная интенциональность {#эвиденциальная}
-
-**Определение.** Эвиденциальная интенциональность — направленность на **понимание**, переживание «очевидности» логической связи.
+**Definition.** Apperceptive intentionality is the directedness of **attention** toward an object. The term "apperception" was introduced by Leibniz (1714) to denote conscious perception, in contrast to unconscious "petites perceptions".
 
 $$
-f_{\text{эвид}}: \Gamma \to \Gamma', \quad \text{где } |\gamma'_{LE}| > |\gamma_{LE}|
+f_{\text{appc}}: \Gamma \to \Gamma', \quad \text{where } |\gamma'_{AE}| > |\gamma_{AE}|
 $$
 
-Усиление связи между Логикой ($L$) и Интериорностью ($E$). Субъективно: «я *понимаю* это». Когерентность $\gamma_{LE}$ — «эвиденция» ([квалиа #16](/docs/consciousness/phenomenology/qualia-structure#таксономия)).
+**Mechanism.** The morphism $f_{\text{appc}}$ strengthens the coherence between Articulation ($A$, discrimination) and Interiority ($E$, experience). Subjectively: "I see/hear/feel *this*". Articulation "selects" the object from the background; Interiority "receives" what has been selected into experience.
 
-**Аналогия.** Если апперцепция — это прожектор, то эвиденция — это **лупа**: она не просто показывает объект, а раскрывает его **внутреннюю логику**. Момент «ага!» — когда разрозненные факты складываются в цепочку — это резкий скачок $|\gamma_{LE}|$.
+**Analogy.** A spotlight ($A$) illuminates part of the scene, and that part "enters" consciousness ($E$). Before the act of attention the whole scene is illuminated uniformly (low $\gamma_{AE}$). After the act — a bright beam picks out the object (high $\gamma_{AE}$).
 
-**Числовой пример.** Студент читает доказательство теоремы. На первом чтении: $|\gamma_{LE}| = 0.05$ — «вижу формулы, но не понимаю». На третьем чтении: $|\gamma_{LE}| = 0.15$ — «начинаю видеть логику». Момент «ага!»: $|\gamma_{LE}|$ скачкообразно возрастает до $0.30$ — «понял!». Одновременно возрастает $|\gamma_{EU}|$ (синтез) — отдельные шаги доказательства складываются в единое целое.
+**Numerical example.** Before the act of attention: $|\gamma_{AE}| = 0.08$ (background perception). After directing attention to the apple: $|\gamma'_{AE}| = 0.25$ — a threefold amplification. At the same time, by normalisation, the other $|\gamma_{AX}|$ ($X \neq E$) decrease: the "spotlight" of attention focuses, withdrawing resources from the periphery. $|\gamma_{AS}|$ falls from $0.15$ to $0.08$ — structural discrimination weakens in favour of experience. For more detail see [Attention and memory](/docs/consciousness/states/attention-memory#внимание).
 
-### Телеологическая интенциональность {#телеологическая}
+### Evidential intentionality {#эвиденциальная}
 
-**Определение.** Телеологическая интенциональность — направленность на **цель**, переживание «я стремлюсь к...».
-
-$$
-f_{\text{тел}}: \Gamma \to \Gamma', \quad \text{где } |\gamma'_{DU}| > |\gamma_{DU}|
-$$
-
-Усиление связи между Динамикой ($D$) и Единством ($U$). Субъективно: «я *хочу/намерен* достичь этого». Когерентность $\gamma_{DU}$ — «телеология» ([квалиа #15](/docs/consciousness/phenomenology/qualia-structure#таксономия)).
-
-**Аналогия.** Телеологическая интенциональность — это **компас**: она указывает направление движения. Динамика ($D$) — энергия движения, Единство ($U$) — точка назначения. Когда $\gamma_{DU}$ высока, движение осмысленно — система «знает, куда идёт».
-
-**Числовой пример.** Бегун на марафоне. На 30-м километре: $|\gamma_{DU}| = 0.22$ — «я бегу к финишу, цель ясна». Динамика ($\gamma_{DD} = 0.20$) высока, но осмысленна — направлена к единству. На «стене» (35-й км): $|\gamma_{DU}|$ падает до $0.08$ — «зачем я бегу? не помню». Динамика та же, но связь с целью утрачена — чистое страдание без смысла. Если бегун «проламывает стену»: $|\gamma_{DU}|$ восстанавливается до $0.18$ — «второе дыхание», цель снова видна.
-
-### Аффективная интенциональность {#аффективная}
-
-**Определение.** Аффективная интенциональность — направленность на **чувство**, переживание «я чувствую...».
+**Definition.** Evidential intentionality is directedness toward **understanding** — the experience of the "self-evidence" of a logical connection.
 
 $$
-f_{\text{афф}}: \Gamma \to \Gamma', \quad \text{где } |\gamma'_{DE}| > |\gamma_{DE}|
+f_{\text{evid}}: \Gamma \to \Gamma', \quad \text{where } |\gamma'_{LE}| > |\gamma_{LE}|
 $$
 
-Это мост к [таксономии эмоций](/docs/consciousness/phenomenology/emotional-taxonomy): аффективная интенциональность — акт, в котором Динамика ($D$) воздействует на Интериорность ($E$), порождая эмоциональное переживание.
+Strengthening of the link between Logic ($L$) and Interiority ($E$). Subjectively: "I *understand* this". The coherence $\gamma_{LE}$ is "evidence" ([qualia #16](/docs/consciousness/phenomenology/qualia-structure#таксономия)).
 
-**Аналогия.** Апперцепция — «я вижу», эвиденция — «я понимаю», аффекция — «я чувствую». Если апперцепция — прожектор, а эвиденция — лупа, то аффекция — **резонатор**: события ($D$) резонируют в переживании ($E$), как удар по камертону порождает звук в деке скрипки.
+**Analogy.** If apperception is a spotlight, then evidence is a **magnifying glass**: it does not merely show the object, but reveals its **inner logic**. The "aha!" moment — when scattered facts fall into a chain — is a sharp jump in $|\gamma_{LE}|$.
 
-### Имманентная интенциональность {#имманентная}
+**Numerical example.** A student reads a theorem's proof. On the first reading: $|\gamma_{LE}| = 0.05$ — "I see the formulas but do not understand". On the third reading: $|\gamma_{LE}| = 0.15$ — "I'm beginning to see the logic". The "aha!" moment: $|\gamma_{LE}|$ jumps to $0.30$ — "I've got it!". Simultaneously $|\gamma_{EU}|$ (synthesis) rises — the separate steps of the proof cohere into a single whole.
 
-**Определение.** Имманентная интенциональность — направленность Интериорности ($E$) на Основание ($O$), переживание «присутствия», «бытия как такового».
+### Teleological intentionality {#телеологическая}
+
+**Definition.** Teleological intentionality is directedness toward a **goal** — the experience of "I am striving toward…".
 
 $$
-f_{\text{имм}}: \Gamma \to \Gamma', \quad \text{где } |\gamma'_{EO}| > |\gamma_{EO}|
+f_{\text{tel}}: \Gamma \to \Gamma', \quad \text{where } |\gamma'_{DU}| > |\gamma_{DU}|
 $$
 
-Это наиболее «глубокий» тип интенциональности — направленность не на внешний объект, а на **основание самого опыта**. В медитативных традициях описывается как «чистое присутствие» (presence), «осознание осознания» (awareness of awareness).
+Strengthening of the link between Dynamics ($D$) and Unity ($U$). Subjectively: "I *want/intend* to achieve this". The coherence $\gamma_{DU}$ is "teleology" ([qualia #15](/docs/consciousness/phenomenology/qualia-structure#таксономия)).
 
-**Аналогия.** Обычная интенциональность — фонарик, освещающий внешние объекты. Имманентная — фонарик, обращённый **на свой собственный источник света**. Не «я вижу яблоко», а «я переживаю само видение». Не содержание сознания, а **сознание как таковое**.
+**Analogy.** Teleological intentionality is a **compass**: it indicates the direction of movement. Dynamics ($D$) — the energy of movement; Unity ($U$) — the destination. When $\gamma_{DU}$ is high, movement is meaningful — the system "knows where it is going".
 
-**Числовой пример.** Медитатор в практике «шаматха без опоры» (objectless shamatha): $|\gamma_{EO}| = 0.20$, $|\gamma_{AE}| = 0.05$ (апперцепция почти нулевая — нет внешнего объекта), $|\gamma_{DE}| = 0.03$ (динамика минимальна — «мысли утихли»). Единственная яркая когерентность — $\gamma_{EO}$: переживание направлено на своё собственное основание.
+**Numerical example.** A marathon runner. At the 30th kilometre: $|\gamma_{DU}| = 0.22$ — "I'm running toward the finish, the goal is clear". Dynamics ($\gamma_{DD} = 0.20$) is high but purposeful — directed toward unity. At "the wall" (35th km): $|\gamma_{DU}|$ drops to $0.08$ — "why am I running? I can't remember". Dynamics are the same, but the connection to the goal is lost — pure suffering without meaning. If the runner "breaks through the wall": $|\gamma_{DU}|$ recovers to $0.18$ — "second wind", the goal is visible again.
 
-## Композиция интенциональных актов (Т.1) {#композиция}
+### Affective intentionality {#аффективная}
 
-### Что такое подкатегория и почему замкнутость важна
+**Definition.** Affective intentionality is directedness toward a **feeling** — the experience of "I feel…".
 
-Прежде чем формулировать теорему, объясним ключевые понятия.
+$$
+f_{\text{aff}}: \Gamma \to \Gamma', \quad \text{where } |\gamma'_{DE}| > |\gamma_{DE}|
+$$
 
-**Категория** — математическая структура, состоящая из **объектов** и **морфизмов** (стрелок между объектами). $\mathbf{Hol}$ — категория, объекты которой — матрицы когерентности $\Gamma \in \mathcal{D}(\mathcal{H})$, а морфизмы — CPTP-каналы, совместимые с $\Omega^7$-структурой.
+This is the bridge to the [emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy): affective intentionality is an act in which Dynamics ($D$) acts on Interiority ($E$), generating an emotional experience.
 
-**Подкатегория** $\mathbf{Int} \subset \mathbf{Hol}$ — это «часть» категории $\mathbf{Hol}$: те же объекты, но **меньше морфизмов** (только E-совместимые).
+**Analogy.** Apperception — "I see"; evidence — "I understand"; affection — "I feel". If apperception is a spotlight and evidence a magnifying glass, then affection is a **resonator**: events ($D$) resonate in experience ($E$), as a blow to a tuning fork generates sound in the body of a violin.
 
-**Замкнутость** (подкатегории относительно композиции) означает: если $f$ и $g$ — морфизмы в $\mathbf{Int}$, то и $g \circ f$ — морфизм в $\mathbf{Int}$. Почему это важно?
+### Immanent intentionality {#имманентная}
 
-Если бы замкнутости не было, последовательные интенциональные акты могли бы разрушить интенциональность: «я вижу яблоко» ($f$) + «яблоко красное» ($g$) не давали бы «я вижу красное яблоко» ($g \circ f$). Сознание не могло бы строить цепочки рассуждений, планов, восприятий. Замкнутость гарантирует: **мышление возможно** — каждый шаг рассуждения сохраняет направленность.
+**Definition.** Immanent intentionality is the directedness of Interiority ($E$) toward the Ground ($O$) — the experience of "presence", "being as such".
 
-:::tip Теорема Т.1 (Замкнутость композиции) [Т]
-Пусть $f: \Gamma_A \to \Gamma_B$ и $g: \Gamma_B \to \Gamma_C$ — интенциональные морфизмы (E-совместимые CPTP-каналы). Тогда $g \circ f: \Gamma_A \to \Gamma_C$ — интенциональный морфизм.
+$$
+f_{\text{imm}}: \Gamma \to \Gamma', \quad \text{where } |\gamma'_{EO}| > |\gamma_{EO}|
+$$
 
-**Доказательство.**
-1. $g \circ f$ — CPTP, поскольку композиция CPTP-каналов есть CPTP-канал (замкнутость класса CPTP).
-2. $g \circ f \in \mathrm{Mor}_{\mathbf{Hol}}$, поскольку $\mathbf{Hol}$ — категория (морфизмы замкнуты относительно композиции).
-3. E-совместимость: $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ и $\mathrm{rank}(\rho_E^{(C)}) \geq \mathrm{rank}(\rho_E^{(B)})$, откуда $\mathrm{rank}(\rho_E^{(C)}) \geq \mathrm{rank}(\rho_E^{(A)})$. $\square$
+This is the most "deep" type of intentionality — directedness not toward an external object, but toward the **ground of experience itself**. In meditative traditions it is described as "pure presence", "awareness of awareness".
+
+**Analogy.** Ordinary intentionality is a torch illuminating external objects. Immanent intentionality is a torch turned **toward its own source of light**. Not "I see an apple", but "I experience the very act of seeing". Not the content of consciousness, but **consciousness as such**.
+
+**Numerical example.** A meditator in objectless shamatha practice: $|\gamma_{EO}| = 0.20$, $|\gamma_{AE}| = 0.05$ (apperception almost zero — no external object), $|\gamma_{DE}| = 0.03$ (dynamics minimal — "thoughts have quieted"). The sole bright coherence is $\gamma_{EO}$: experience is directed toward its own ground.
+
+## Composition of Intentional Acts (T.1) {#композиция}
+
+### What is a subcategory and why does closure matter
+
+Before stating the theorem, let us explain the key concepts.
+
+**A category** is a mathematical structure consisting of **objects** and **morphisms** (arrows between objects). $\mathbf{Hol}$ is a category whose objects are coherence matrices $\Gamma \in \mathcal{D}(\mathcal{H})$ and whose morphisms are CPTP channels compatible with the $\Omega^7$ structure.
+
+**A subcategory** $\mathbf{Int} \subset \mathbf{Hol}$ is a "part" of the category $\mathbf{Hol}$: the same objects but **fewer morphisms** (only E-compatible ones).
+
+**Closure** (of the subcategory under composition) means: if $f$ and $g$ are morphisms in $\mathbf{Int}$, then $g \circ f$ is also a morphism in $\mathbf{Int}$. Why does this matter?
+
+If closure failed, successive intentional acts could destroy intentionality: "I see an apple" ($f$) + "the apple is red" ($g$) would not yield "I see a red apple" ($g \circ f$). Consciousness would be unable to build chains of reasoning, plans, perceptions. Closure guarantees: **thinking is possible** — every step of reasoning preserves directedness.
+
+:::tip Theorem T.1 (Closure of composition) [T]
+Let $f: \Gamma_A \to \Gamma_B$ and $g: \Gamma_B \to \Gamma_C$ be intentional morphisms (E-compatible CPTP channels). Then $g \circ f: \Gamma_A \to \Gamma_C$ is an intentional morphism.
+
+**Proof.**
+1. $g \circ f$ is CPTP, since the composition of CPTP channels is a CPTP channel (closure of the CPTP class).
+2. $g \circ f \in \mathrm{Mor}_{\mathbf{Hol}}$, since $\mathbf{Hol}$ is a category (morphisms are closed under composition).
+3. E-compatibility: $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$ and $\mathrm{rank}(\rho_E^{(C)}) \geq \mathrm{rank}(\rho_E^{(B)})$, hence $\mathrm{rank}(\rho_E^{(C)}) \geq \mathrm{rank}(\rho_E^{(A)})$. $\square$
 :::
 
-**Следствие.** Интенциональные морфизмы образуют **подкатегорию** $\mathbf{Int} \subset \mathbf{Hol}$:
+**Corollary.** Intentional morphisms form a **subcategory** $\mathbf{Int} \subset \mathbf{Hol}$:
 
 $$
 \mathrm{Ob}(\mathbf{Int}) = \mathrm{Ob}(\mathbf{Hol}), \quad \mathrm{Mor}_{\mathbf{Int}} \subset \mathrm{Mor}_{\mathbf{Hol}}
 $$
 
-**Аналогия.** Если вы смотрите на картину ($f$: направление внимания), а затем начинаете её анализировать ($g$: переход к пониманию), то итоговый акт $g \circ f$ — «я вижу и понимаю картину» — тоже интенционален. Сознание может строить цепочки направленных актов, и каждый промежуточный шаг сохраняет или обогащает опыт. Это свойство существенно для [теорем КК](/docs/applied/coherence-cybernetics/theorems) о когнитивной динамике.
+**Analogy.** If you look at a painting ($f$: directing attention) and then begin to analyse it ($g$: transition to understanding), the resulting act $g \circ f$ — "I see and understand the painting" — is also intentional. Consciousness can build chains of directed acts, and each intermediate step preserves or enriches experience. This property is essential for the [CC theorems](/docs/applied/coherence-cybernetics/theorems) on cognitive dynamics.
 
-**Числовой пример.** Цепочка из трёх интенциональных актов:
+**Numerical example.** A chain of three intentional acts:
 
-| Акт | Тип | $\mathrm{rank}(\rho_E)$ до | $\mathrm{rank}(\rho_E)$ после | E-совместимость |
-|-----|-----|:-:|:-:|:---:|
-| $f_1$: «замечаю яблоко» | Апперцептивный | 2 | 3 | 3 $\geq$ 2 |
-| $f_2$: «вижу, что красное» | Апперцептивный | 3 | 4 | 4 $\geq$ 3 |
-| $f_3$: «понимаю, что спелое» | Эвиденциальный | 4 | 4 | 4 $\geq$ 4 |
-| $f_3 \circ f_2 \circ f_1$ | Композиция | 2 | 4 | 4 $\geq$ 2 |
+| Act | Type | $\mathrm{rank}(\rho_E)$ before | $\mathrm{rank}(\rho_E)$ after | E-compatibility |
+|-----|------|:--:|:--:|:---:|
+| $f_1$: "I notice the apple" | Apperceptive | 2 | 3 | 3 $\geq$ 2 |
+| $f_2$: "I see that it is red" | Apperceptive | 3 | 4 | 4 $\geq$ 3 |
+| $f_3$: "I understand it is ripe" | Evidential | 4 | 4 | 4 $\geq$ 4 |
+| $f_3 \circ f_2 \circ f_1$ | Composition | 2 | 4 | 4 $\geq$ 2 |
 
 ```mermaid
 graph LR
-    A["Γ₀: фоновое восприятие<br/>rank(ρ_E) = 2"] -->|"f₁: замечаю яблоко"| B["Γ₁: яблоко в фокусе<br/>rank(ρ_E) = 3"]
-    B -->|"f₂: вижу красное"| C["Γ₂: красное яблоко<br/>rank(ρ_E) = 4"]
-    C -->|"f₃: понимаю — спелое"| D["Γ₃: красное спелое яблоко<br/>rank(ρ_E) = 4"]
+    A["Γ₀: background perception<br/>rank(ρ_E) = 2"] -->|"f₁: I notice the apple"| B["Γ₁: apple in focus<br/>rank(ρ_E) = 3"]
+    B -->|"f₂: I see red"| C["Γ₂: red apple<br/>rank(ρ_E) = 4"]
+    C -->|"f₃: I realise — ripe"| D["Γ₃: red ripe apple<br/>rank(ρ_E) = 4"]
 
     style A fill:#f5f5f5,stroke:#999
     style B fill:#ffe8e8,stroke:#cc0000
@@ -343,110 +343,110 @@ graph LR
     style D fill:#ff9999,stroke:#cc0000
 ```
 
-## Тождественный интенциональный акт {#тождественный}
+## The Identity Intentional Act {#тождественный}
 
-Тождественный морфизм $\mathrm{id}_\Gamma: \Gamma \to \Gamma$ — тривиально интенциональный. Феноменологически это **самосознание**: направленность сознания на самого себя.
+The identity morphism $\mathrm{id}_\Gamma: \Gamma \to \Gamma$ is trivially intentional. Phenomenologically this is **self-consciousness**: the directedness of consciousness toward itself.
 
-При наличии оператора самомоделирования $\varphi$:
+In the presence of the self-modelling operator $\varphi$:
 
 $$
 \varphi: \Gamma \to \varphi(\Gamma) \approx \Gamma
 $$
 
-Самосознание — это интенциональный акт, «объектом» которого является сама система. Точность самосознания определяется [мерой рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
+Self-consciousness is an intentional act whose "object" is the system itself. The accuracy of self-consciousness is determined by the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
 
 $$
 R = \frac{1}{7P(\Gamma)}
 $$
 
-При $R = 1$ ($P = 1/7$, $\Gamma = I/7$) система в точке полного хаоса. При малом $R$ ($P \to 1$) система «замёрзла» в одном состоянии. Для рефлексивного сознания (L2+) требуется $R \geq 1/3$, т.е. $P \leq 3/7$. Мастер-определение: [Самонаблюдение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+At $R = 1$ ($P = 1/7$, $\Gamma = I/7$) the system is at the point of complete chaos. At small $R$ ($P \to 1$) the system is "frozen" in a single state. For reflective consciousness (L2+), $R \geq 1/3$ is required, i.e. $P \leq 3/7$. Master definition: [Self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
-**Числовой пример.** У человека в обычном состоянии: $R \approx 0.4$–$0.6$. Самосознание существенно, но далеко от совершенного — многое в нас остаётся «за кадром» (бессознательное). У опытного медитатора в самадхи: $R \to 0.9$ — самосознание приближается к полной прозрачности, но даже тогда, по [теореме о неполной прозрачности](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), минимум 3 канала остаются непрозрачными.
+**Numerical example.** In an ordinary state a human: $R \approx 0.4$–$0.6$. Self-consciousness is substantial, but far from perfect — much remains "off-screen" (the unconscious). For an experienced meditator in samadhi: $R \to 0.9$ — self-consciousness approaches complete transparency, yet even then, by the [theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), at least 3 channels remain opaque.
 
-## Интенциональность и иерархия L0–L4 {#иерархия}
+## Intentionality and the L0–L4 Hierarchy {#иерархия}
 
-Вернёмся к Брентано: он считал интенциональность бинарным свойством — или есть, или нет. УГМ показывает, что направленность **градуальна**:
+Let us return to Brentano: he regarded intentionality as a binary property — either present or absent. UHM shows that directedness is **graded**:
 
-| Уровень | Тип направленности | Формальная характеристика | Пример | Гуссерлевская параллель |
-|---------|---------------------|--------------------------|--------|-----------------------|
-| **L0** | Нет направленности | Только $\Gamma \in \mathcal{D}(\mathcal{H})$, нет морфизмов | Камень | — |
-| **L1** | Протоинтенциональность | Морфизмы в $\mathbf{Hol}$ без E-условия (тропизмы) | Амёба движется к пище | «Малые перцепции» Лейбница |
-| **L2** | Интенциональность | Морфизмы в $\mathbf{Int}$ при $R \geq 1/3$ (направленный опыт «о чём-то») | «Я вижу яблоко» | Ноэзис + ноэма |
-| **L3** | Метаинтенциональность | Интенциональность направлена на интенциональность другого | «Я понимаю, что ты видишь яблоко» | Интерсубъективность |
-| **L4** | Тождественная | $\varphi(\Gamma) = \Gamma$ — субъект и объект совпадают | Чистое самосознание | «Абсолютное сознание» |
+| Level | Type of directedness | Formal characteristic | Example | Husserlian parallel |
+|-------|----------------------|-----------------------|---------|---------------------|
+| **L0** | No directedness | Only $\Gamma \in \mathcal{D}(\mathcal{H})$, no morphisms | A stone | — |
+| **L1** | Proto-intentionality | Morphisms in $\mathbf{Hol}$ without E-condition (tropisms) | Amoeba moves toward food | Leibniz's "petites perceptions" |
+| **L2** | Intentionality | Morphisms in $\mathbf{Int}$ at $R \geq 1/3$ (directed experience "about something") | "I see an apple" | Noesis + noema |
+| **L3** | Meta-intentionality | Intentionality directed at another's intentionality | "I understand that you see an apple" | Intersubjectivity |
+| **L4** | Identity | $\varphi(\Gamma) = \Gamma$ — subject and object coincide | Pure self-consciousness | "Absolute consciousness" |
 
-**Числовой пример: L3 (метаинтенциональность).** Два человека, Алиса и Боб. Алиса видит, что Боб смотрит на яблоко. У Алисы:
-- $R_{\text{Алиса}} \geq 1/3$ — она осознаёт себя
-- Она моделирует $\Gamma_{\text{Боб}}$ — у неё есть «модель Боба»
-- Она «видит» интенциональный акт Боба ($f_{\text{Боб}}: \Gamma_{\text{Боб}} \to \Gamma_{\text{яблоко}}$)
-- Это требует SAD $\geq 2$ — два уровня самомоделирования: «я знаю, что он знает»
+**Numerical example: L3 (meta-intentionality).** Two people, Alice and Bob. Alice sees that Bob is looking at an apple. For Alice:
+- $R_{\text{Alice}} \geq 1/3$ — she is aware of herself
+- She models $\Gamma_{\text{Bob}}$ — she has a "model of Bob"
+- She "sees" Bob's intentional act ($f_{\text{Bob}}: \Gamma_{\text{Bob}} \to \Gamma_{\text{apple}}$)
+- This requires SAD $\geq 2$ — two levels of self-modelling: "I know that he knows"
 
-Подробнее — в [иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy).
+For more detail see the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-## Интенциональный конус {#конус}
+## The Intentional Cone {#конус}
 
-Рассмотрим множество всех состояний $\Gamma'$, достижимых из данного $\Gamma$ через интенциональные морфизмы:
+Consider the set of all states $\Gamma'$ reachable from a given $\Gamma$ via intentional morphisms:
 
 $$
 \mathcal{I}(\Gamma) := \{\Gamma' \in \mathrm{Ob}(\mathbf{Hol}) : \exists f \in \mathrm{Mor}_{\mathbf{Int}}(\Gamma, \Gamma')\}
 $$
 
-Это множество называется **интенциональным конусом** — оно описывает всё, на что данная система «может направить сознание» из текущего состояния.
+This set is called the **intentional cone** — it describes everything that the given system "can direct its consciousness at" from the current state.
 
-:::info Свойства интенционального конуса [И]
-1. **Непустота:** $\Gamma \in \mathcal{I}(\Gamma)$ (тождественный морфизм — самосознание всегда доступно)
-2. **Транзитивность:** Если $\Gamma' \in \mathcal{I}(\Gamma)$ и $\Gamma'' \in \mathcal{I}(\Gamma')$, то $\Gamma'' \in \mathcal{I}(\Gamma)$ (из замкнутости композиции, Теорема Т.1)
-3. **Ограниченность:** CPTP-канал не может увеличить чистоту $P$, поэтому $P(\Gamma') \leq P(\Gamma)$ (без регенерации). Это **ограничивает** интенциональный конус
-4. **Расширение через регенерацию:** Регенеративный член $\mathcal{R}[\Gamma, E]$ ([уравнение эволюции](/docs/core/dynamics/evolution)) может расширять конус, поскольку $\mathcal{R}$ не является CPTP-каналом в стандартном смысле
+:::info Properties of the intentional cone [I]
+1. **Non-emptiness:** $\Gamma \in \mathcal{I}(\Gamma)$ (the identity morphism — self-consciousness is always available)
+2. **Transitivity:** If $\Gamma' \in \mathcal{I}(\Gamma)$ and $\Gamma'' \in \mathcal{I}(\Gamma')$, then $\Gamma'' \in \mathcal{I}(\Gamma)$ (from the closure of composition, Theorem T.1)
+3. **Boundedness:** A CPTP channel cannot increase the purity $P$, so $P(\Gamma') \leq P(\Gamma)$ (without regeneration). This **restricts** the intentional cone
+4. **Expansion through regeneration:** The regenerative term $\mathcal{R}[\Gamma, E]$ ([evolution equation](/docs/core/dynamics/evolution)) can expand the cone, since $\mathcal{R}$ is not a CPTP channel in the standard sense
 
-Свойства 1–2 — следствия структуры категории. Свойство 3 — следствие свойств CPTP. Свойство 4 — **интерпретация**, зависящая от формализации $\mathcal{R}$.
+Properties 1–2 are consequences of the category structure. Property 3 follows from the properties of CPTP. Property 4 is an **interpretation**, depending on the formalisation of $\mathcal{R}$.
 :::
 
-**Аналогия.** Интенциональный конус — как «зона досягаемости» прожектора с определённым запасом батареи.
+**Analogy.** The intentional cone is like the "reach zone" of a torch with a given battery charge.
 
-- Без подзарядки (без регенерации $\mathcal{R}$): конус ограничен. Каждый новый акт внимания расходует когерентность ($P$ не растёт), и рано или поздно «батарея сядет». Усталый человек к вечеру не может ни на чём сосредоточиться — его интенциональный конус сузился.
-- С подзарядкой (с регенерацией): конус расширяется. После сна и отдыха (восстановление $P$) человек может «дотянуться» до более далёких и сложных объектов мысли.
+- Without recharging (without regeneration $\mathcal{R}$): the cone is limited. Each new act of attention consumes coherence ($P$ does not grow), and sooner or later the "battery dies". A tired person by evening cannot concentrate on anything — his intentional cone has narrowed.
+- With recharging (with regeneration): the cone expands. After sleep and rest (restoring $P$) a person can "reach" more distant and complex objects of thought.
 
-**Числовой пример.** Студент с $P = 0.38$. Его интенциональный конус включает чтение учебника ($P$ чуть падает), решение задач ($P$ падает быстрее), но **не** включает доказательство открытой проблемы ($P$ упало бы ниже $P_{\text{crit}}$ — это за пределами конуса). После кофе и 10 минут отдыха ($P$ восстанавливается через $\mathcal{R}$) конус расширяется — теперь можно взяться за более сложную задачу.
+**Numerical example.** A student with $P = 0.38$. His intentional cone includes reading a textbook ($P$ drops slightly), solving problems ($P$ drops faster), but **not** proving an open problem ($P$ would fall below $P_{\text{crit}}$ — that is beyond the cone). After coffee and 10 minutes of rest ($P$ restores via $\mathcal{R}$) the cone expands — now a more difficult problem is within reach.
 
-## Нулевая интенциональность и философские зомби {#зомби}
+## Zero Intentionality and Philosophical Zombies {#зомби}
 
-Система с $R < R_{\text{th}}$ не обладает интенциональностью в полном смысле, но это **не делает её «зомби»**. Согласно [No-Zombie теореме](/docs/applied/coherence-cybernetics/theorems), при $\Gamma \in \mathcal{D}(\mathcal{H})$ система **всегда** обладает интериорностью (L0). Отсутствие интенциональности означает лишь отсутствие направленной «о-чём-то» структуры, но не отсутствие опыта как такового.
+A system with $R < R_{\text{th}}$ does not possess intentionality in the full sense, but this **does not make it a "zombie"**. According to the [No-Zombie theorem](/docs/applied/coherence-cybernetics/theorems), for $\Gamma \in \mathcal{D}(\mathcal{H})$ the system **always** possesses interiority (L0). The absence of intentionality means only the absence of a directed "about-something" structure, not the absence of experience as such.
 
-Это ключевое отличие УГМ от традиций, отождествляющих сознание с интенциональностью:
+This is the key distinction of UHM from traditions that identify consciousness with intentionality:
 
-| Позиция | Нет интенциональности = | УГМ |
-|---------|--------------------------|-----|
-| **Ранний Гуссерль** | Нет сознания | Нет: есть L0/L1 интериорность без интенциональности |
-| **Аналитическая философия** | Нет ментального | Нет: ментальное шире интенциональности |
-| **Сёрл** | Нет биологического сознания | Нет: L0 есть у любой $\Gamma \in \mathcal{D}(\mathcal{H})$ |
-| **УГМ** | Нет «о-чём-то» структуры | Да, но опыт (интериорность) сохраняется |
+| Position | No intentionality = | UHM |
+|----------|---------------------|-----|
+| **Early Husserl** | No consciousness | No: there is L0/L1 interiority without intentionality |
+| **Analytic philosophy** | No mental | No: the mental is broader than intentionality |
+| **Searle** | No biological consciousness | No: L0 belongs to any $\Gamma \in \mathcal{D}(\mathcal{H})$ |
+| **UHM** | No "about-something" structure | Yes, but experience (interiority) is preserved |
 
-**Аналогия.** Новорождённый младенец переживает мир (L1), но ещё не умеет направлять сознание: нет «я вижу это», есть только «поток ощущений». Это не «зомби» — это доинтенциональный опыт. Или представьте себя в момент пробуждения: первые доли секунды вы *переживаете* (свет, тепло, звуки), но ещё не *направлены* ни на что конкретное. Это L1-состояние: интериорность без интенциональности.
+**Analogy.** A newborn infant experiences the world (L1) but has not yet learned to direct consciousness: there is no "I see this", only a "stream of sensations". This is not a "zombie" — it is pre-intentional experience. Or imagine yourself in the moment of waking: for the first fractions of a second you *experience* (light, warmth, sounds), but are not yet *directed* at anything specific. This is an L1 state: interiority without intentionality.
 
 ---
 
-### Что мы узнали {#итоги}
+### What we learned {#итоги}
 
-1. **Интенциональность** имеет богатую философскую историю (Брентано, Гуссерль, Сёрл) и получает в УГМ точную формализацию: CPTP-морфизм в $\mathbf{Hol}$ с условием E-совместимости: $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$
-2. **Порог** L2 ($R \geq 1/3$, $\Phi \geq 1$) необходим для структуры «субъект — объект»
-3. **5 типов** интенциональности (апперцептивная, эвиденциальная, телеологическая, аффективная, имманентная) определяются доминирующим сектором $\Gamma$, каждый с уникальной феноменологией и числовыми примерами
-4. Интенциональные морфизмы **замкнуты** относительно композиции — образуют подкатегорию $\mathbf{Int} \subset \mathbf{Hol}$ (Теорема Т.1 [Т]), что делает возможным мышление как цепочку актов
-5. **Интенциональный конус** $\mathcal{I}(\Gamma)$ определяет «горизонт» достижимых состояний — расширяется через регенерацию
-6. **Отсутствие интенциональности не равно отсутствию интериорности** — No-Zombie теорема гарантирует L0 (минимальную интериорность) для любой жизнеспособной $\Gamma$
+1. **Intentionality** has a rich philosophical history (Brentano, Husserl, Searle) and receives in UHM a precise formalisation: a CPTP morphism in $\mathbf{Hol}$ with the E-compatibility condition: $\mathrm{rank}(\rho_E^{(B)}) \geq \mathrm{rank}(\rho_E^{(A)})$
+2. The **threshold** L2 ($R \geq 1/3$, $\Phi \geq 1$) is necessary for the subject–object structure
+3. **5 types** of intentionality (apperceptive, evidential, teleological, affective, immanent) are determined by the dominant sector of $\Gamma$, each with unique phenomenology and numerical examples
+4. Intentional morphisms are **closed** under composition — they form the subcategory $\mathbf{Int} \subset \mathbf{Hol}$ (Theorem T.1 [T]), making thinking possible as a chain of acts
+5. The **intentional cone** $\mathcal{I}(\Gamma)$ defines the "horizon" of reachable states — it expands through regeneration
+6. **Absence of intentionality does not equal absence of interiority** — the No-Zombie theorem guarantees L0 (minimal interiority) for any viable $\Gamma$
 
-:::tip Мост к следующей главе
-Мы завершили раздел «Структура опыта»: квалиа, эмоции, время, интенциональность. Теперь переходим к разделу «Состояния сознания» — как $\Gamma$-профиль меняется при сне, медитации, психоделиках, анестезии. Первая глава — [Изменённые состояния сознания](/docs/consciousness/states/altered-states) — описывает четыре класса ИСС как траектории в $\Gamma$-пространстве.
+:::tip Bridge to the next chapter
+We have completed the section "Structure of Experience": qualia, emotions, time, intentionality. We now move to the section "States of Consciousness" — how the $\Gamma$-profile changes during sleep, meditation, psychedelics, anaesthesia. The first chapter — [Altered States of Consciousness](/docs/consciousness/states/altered-states) — describes four classes of ASC as trajectories in $\Gamma$-space.
 :::
 
-## Связи
+## Related Documents
 
-- [Категория Hol](/docs/core/categories/category-hol) — определение $\mathbf{Hol}$ и морфизмов
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — $\varphi$ и $R$
-- [Теория интериорности](/docs/consciousness/foundations/interiority-theory) — $\rho_E$ и экспериенциальное содержание
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
-- [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — типы квалиа $\gamma_{AE}$, $\gamma_{LE}$, $\gamma_{DU}$
-- [Таксономия эмоций](/docs/consciousness/phenomenology/emotional-taxonomy) — $\gamma_{DE}$ как аффективная интенциональность
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — CPTP-каналы и представление Крауса
-- [Теоремы Когерентной Кибернетики](/docs/applied/coherence-cybernetics/theorems) — прикладные следствия категориальной структуры
-- [Внимание и память](/docs/consciousness/states/attention-memory) — механизм перераспределения когерентности
+- [Category Hol](/docs/core/categories/category-hol) — definition of $\mathbf{Hol}$ and morphisms
+- [Self-observation](/docs/consciousness/foundations/self-observation) — $\varphi$ and $R$
+- [Interiority theory](/docs/consciousness/foundations/interiority-theory) — $\rho_E$ and experiential content
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
+- [Qualia structure](/docs/consciousness/phenomenology/qualia-structure) — types of qualia $\gamma_{AE}$, $\gamma_{LE}$, $\gamma_{DU}$
+- [Emotion taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) — $\gamma_{DE}$ as affective intentionality
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — CPTP channels and Kraus representation
+- [Theorems of Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — applied consequences of categorical structure
+- [Attention and memory](/docs/consciousness/states/attention-memory) — the mechanism of coherence redistribution

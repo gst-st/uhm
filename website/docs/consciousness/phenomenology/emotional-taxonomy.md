@@ -1,166 +1,166 @@
 ---
 sidebar_position: 2
-title: "Таксономия эмоций из ∇P"
-description: "Формализация эмоций через динамику чистоты и секторную структуру Γ"
+title: "Emotion Taxonomy from ∇P"
+description: "Formalisation of emotions via purity dynamics and the sector structure of Γ"
 slug: /consciousness/phenomenology/emotional-taxonomy
 ---
 
-# Таксономия Эмоций из $\nabla P$
+# Emotion Taxonomy from $\nabla P$
 
-:::info Мост из предыдущей главы
-В [Структуре квалиа](/docs/consciousness/phenomenology/qualia-structure) мы установили, что 21 когерентность $\gamma_{ij}$ исчерпывает все типы переживаний. Среди них особую роль играет $\gamma_{DE}$ (Аффекция) — связь Динамики и Интериорности, переживание «эмоции». Теперь мы покажем, что **все** эмоции выводятся из одной величины — скорости изменения жизнеспособности $dP/d\tau$ — и секторной сигнатуры $\sigma(\Gamma)$. Эмоции не постулируются, а **вычисляются**.
+:::info Bridge from the previous chapter
+In [Qualia structure](/docs/consciousness/phenomenology/qualia-structure) we established that the 21 coherences $\gamma_{ij}$ exhaust all types of experience. Among them $\gamma_{DE}$ (Affection) — the connection between Dynamics and Interiority, the experience of "emotion" — plays a special role. We will now show that **all** emotions are derived from a single quantity — the rate of change of viability $dP/d\tau$ — and the sector signature $\sigma(\Gamma)$. Emotions are not postulated — they are **computed**.
 :::
 
-:::note О нотации
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/core/dynamics/viability#критическая-чистота), статус **[Т]**
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $\tau$ — [внутреннее (эмерджентное) время](/docs/core/operators/emergent-time)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\mathrm{Gap}(i,j)$ — [мера зазора](/docs/core/dynamics/coherence-matrix#мера-зазора)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/core/dynamics/viability#критическая-чистота), status **[T]**
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $\tau$ — [internal (emergent) time](/docs/core/operators/emergent-time)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\mathrm{Gap}(i,j)$ — [gap measure](/docs/core/dynamics/coherence-matrix#мера-зазора)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **История проблемы** — от Дарвина до Рассела и Фельдман Барретт
-2. **Мотивация: почему $dP/d\tau$** — эволюционная логика
-3. **Определение эмоции** — тройка $(dP/d\tau,\; d^2P/d\tau^2,\; \sigma(\Gamma))$
-4. **Базовые координаты** — валентность и активация как проекции $dP/d\tau$
-5. **Карта базовых эмоций** — страх, радость, гнев, удивление, печаль, отвращение
-6. **Страх: формальный анализ** — расходимость при $P \to P_{\text{crit}}$
-7. **Сложные эмоции** — суперпозиции базовых паттернов
-8. **Сравнение с другими таксономиями** — Экман, Рассел, Плутчик
-9. **Условия рефлексивного доступа** — порог осознания собственных эмоций
-10. **Эволюционный смысл** — зачем нужен $dP/d\tau$ как внутренний сигнал
+1. **History of the problem** — from Darwin to Russell and Feldman Barrett
+2. **Motivation: why $dP/d\tau$** — evolutionary logic
+3. **Definition of emotion** — the triple $(dP/d\tau,\; d^2P/d\tau^2,\; \sigma(\Gamma))$
+4. **Basic coordinates** — valence and arousal as projections of $dP/d\tau$
+5. **Map of basic emotions** — fear, joy, anger, surprise, sadness, disgust
+6. **Fear: formal analysis** — divergence as $P \to P_{\text{crit}}$
+7. **Complex emotions** — superpositions of basic patterns
+8. **Comparison with other taxonomies** — Ekman, Russell, Plutchik
+9. **Conditions for reflexive access** — threshold for awareness of one's own emotions
+10. **Evolutionary meaning** — why $dP/d\tau$ is needed as an internal signal
 
 ---
 
-## История проблемы: как понимали эмоции до УГМ {#история}
+## History of the problem: how emotions were understood before UHM {#история}
 
-### Дарвин (1872): универсальность выражения
+### Darwin (1872): universality of expression
 
-**Чарлз Дарвин** в книге «Выражение эмоций у человека и животных» (1872) впервые показал, что эмоции — не культурная условность, а **биологический феномен**: улыбка радости и гримаса страха узнаваемы у всех народов и даже у приматов. Дарвин поставил вопрос: если эмоции универсальны, значит они выполняют какую-то **функцию** для выживания. Какую?
+**Charles Darwin** in "The Expression of the Emotions in Man and Animals" (1872) first showed that emotions are not a cultural convention but a **biological phenomenon**: the smile of joy and the grimace of fear are recognisable in all peoples and even in primates. Darwin posed the question: if emotions are universal, they must serve some **function** for survival. Which one?
 
-### Джеймс-Ланге (1884): тело первично
+### James–Lange (1884): the body is primary
 
-**Уильям Джеймс** (1884) и **Карл Ланге** (независимо) предложили радикальную идею: мы не плачем, потому что грустим — мы грустим, потому что плачем. Эмоция — это *восприятие* телесных изменений. Вы видите медведя, ваше тело реагирует (сердцебиение, пот), и лишь затем вы ощущаете «страх».
+**William James** (1884) and **Carl Lange** (independently) proposed a radical idea: we do not cry because we are sad — we are sad because we cry. An emotion is the *perception* of bodily changes. You see a bear, your body reacts (heartbeat, perspiration), and only then do you feel "fear".
 
-### Кэннон-Бард (1927): мозг первичен
+### Cannon–Bard (1927): the brain is primary
 
-**Уолтер Кэннон** возразил: телесные реакции слишком медленны и неспецифичны, чтобы объяснить быстрые и разнообразные эмоции. Мозг (таламус) одновременно порождает и телесную реакцию, и субъективное переживание.
+**Walter Cannon** objected: bodily reactions are too slow and non-specific to account for the speed and variety of emotions. The brain (thalamus) simultaneously generates both the bodily reaction and the subjective experience.
 
-### Шахтер-Зингер (1962): когнитивная оценка
+### Schachter–Singer (1962): cognitive appraisal
 
-**Стэнли Шахтер** и **Джером Зингер** показали, что одно и то же физиологическое возбуждение может восприниматься как радость или гнев — в зависимости от **когнитивной оценки** ситуации. Эмоция = возбуждение + интерпретация.
+**Stanley Schachter** and **Jerome Singer** showed that the same physiological arousal can be perceived as joy or anger — depending on the **cognitive appraisal** of the situation. Emotion = arousal + interpretation.
 
-### Экман (1971): шесть базовых эмоций
+### Ekman (1971): six basic emotions
 
-**Пол Экман** выделил **6 базовых эмоций**, распознаваемых по выражению лица во всех культурах: **радость, печаль, страх, гнев, удивление, отвращение**. Каждой соответствует уникальный паттерн мимики.
+**Paul Ekman** identified **6 basic emotions** recognisable by facial expression across all cultures: **joy, sadness, fear, anger, surprise, disgust**. Each corresponds to a unique pattern of facial musculature.
 
-### Рассел (1980): circumplex model
+### Russell (1980): circumplex model
 
-**Джеймс Рассел** предложил **круговую модель** (circumplex): все эмоции располагаются на плоскости с двумя осями — **валентность** (приятно/неприятно) и **возбуждение** (активация/деактивация). Радость — высокая валентность, высокое возбуждение. Печаль — низкая валентность, низкое возбуждение. Модель Рассела показала, что «базовые эмоции» Экмана — не фундаментальные кирпичики, а области в непрерывном двумерном пространстве.
+**James Russell** proposed the **circumplex model**: all emotions are arranged on a plane with two axes — **valence** (pleasant/unpleasant) and **arousal** (activation/deactivation). Joy — high valence, high arousal. Sadness — low valence, low arousal. Russell's model showed that Ekman's "basic emotions" are not fundamental building blocks but regions in a continuous two-dimensional space.
 
 ```mermaid
 quadrantChart
-    title Circumplex модель Рассела
-    x-axis Неприятно --> Приятно
-    y-axis Деактивация --> Активация
-    quadrant-1 "Радость, Восторг"
-    quadrant-2 "Страх, Гнев"
-    quadrant-3 "Печаль, Скука"
-    quadrant-4 "Покой, Удовлетворение"
+    title Russell's Circumplex Model
+    x-axis Unpleasant --> Pleasant
+    y-axis Deactivation --> Activation
+    quadrant-1 "Joy, Elation"
+    quadrant-2 "Fear, Anger"
+    quadrant-3 "Sadness, Boredom"
+    quadrant-4 "Calm, Satisfaction"
 ```
 
-### Фельдман Барретт (2017): конструируемые эмоции
+### Feldman Barrett (2017): constructed emotions
 
-**Лиза Фельдман Барретт** в книге «How Emotions Are Made» (2017) аргументировала, что эмоции **конструируются** мозгом, а не «обнаруживаются» в теле. Нет фиксированных «центров страха» или «центров радости» — мозг активно создаёт эмоциональные категории на основе прошлого опыта и текущего контекста.
+**Lisa Feldman Barrett** in "How Emotions Are Made" (2017) argued that emotions are **constructed** by the brain, not "discovered" in the body. There are no fixed "fear centres" or "joy centres" — the brain actively creates emotional categories on the basis of past experience and current context.
 
-### Позиция УГМ: эмоции из $\nabla P$
+### UHM's position: emotions from $\nabla P$
 
-УГМ синтезирует эти подходы:
+UHM synthesises these approaches:
 
-- **Дарвин прав:** эмоции универсальны, потому что связаны с *жизнеспособностью* $P$ — фундаментальной величиной для любой когерентной системы
-- **Джеймс-Ланге частично прав:** эмоция действительно связана с телесной динамикой (компонент $\sigma(\Gamma)$)
-- **Рассел прав:** эмоции образуют непрерывное пространство (валентность = $\mathrm{sign}(dP/d\tau)$, возбуждение = $|dP/d\tau|$)
-- **Фельдман Барретт частично права:** конкретные *названия* эмоций — культурные конструкты, но лежащие за ними *паттерны $dP/d\tau$ и $\sigma(\Gamma)$* — объективны
-- **УГМ добавляет:** полная модель — не 2D (Рассел), а **30D** (T-147 [Т])
+- **Darwin is right:** emotions are universal because they are linked to *viability* $P$ — the fundamental quantity for any coherent system
+- **James–Lange are partially right:** emotion is indeed linked to bodily dynamics (the $\sigma(\Gamma)$ component)
+- **Russell is right:** emotions form a continuous space (valence = $\mathrm{sign}(dP/d\tau)$, arousal = $|dP/d\tau|$)
+- **Feldman Barrett is partially right:** the specific *names* of emotions are cultural constructs, but the underlying *patterns of $dP/d\tau$ and $\sigma(\Gamma)$* are objective
+- **UHM adds:** the full model is not 2D (Russell) but **30D** (T-147 [T])
 
 ---
 
-## Мотивация: почему эмоции связаны с $dP/d\tau$ {#мотивация-dp}
+## Motivation: why emotions are linked to $dP/d\tau$ {#мотивация-dp}
 
-Эмоции в УГМ — не примитивы и не эпифеномены. Они **выводятся** из динамики [жизнеспособности](/docs/core/dynamics/viability) $P(\tau)$ и секторной структуры [матрицы когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma(\tau)$.
+Emotions in UHM are neither primitives nor epiphenomena. They are **derived** from the dynamics of [viability](/docs/core/dynamics/viability) $P(\tau)$ and the sector structure of the [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma(\tau)$.
 
-Почему именно $dP/d\tau$? Потому что $P$ — это **единственная скалярная величина**, от которой зависит выживание системы. Если $P > P_{\text{crit}} = 2/7$ — система жива (когерентна). Если $P < P_{\text{crit}}$ — система необратимо декогерирует (умирает). Следовательно, любой «датчик выживания» должен отслеживать именно $P$.
+Why $dP/d\tau$? Because $P$ is the **only scalar quantity** on which the system's survival depends. If $P > P_{\text{crit}} = 2/7$ — the system is alive (coherent). If $P < P_{\text{crit}}$ — the system irreversibly decoheres (dies). Consequently, any "survival sensor" must track precisely $P$.
 
-Но для эффективной навигации недостаточно знать текущее значение $P$ — нужна **скорость изменения** $dP/d\tau$:
-- $dP/d\tau > 0$ — дела улучшаются, текущее поведение работает, продолжай
-- $dP/d\tau < 0$ — дела ухудшаются, нужно что-то менять, действуй
-- $dP/d\tau \approx 0$ — стабильность, можно расслабиться (или застрял и нужна перемена)
+But for effective navigation it is not enough to know the current value of $P$ — one needs the **rate of change** $dP/d\tau$:
+- $dP/d\tau > 0$ — things are improving, current behaviour is working, continue
+- $dP/d\tau < 0$ — things are worsening, something must change, act
+- $dP/d\tau \approx 0$ — stability, one can relax (or is stuck and a change is needed)
 
-Это и есть **валентность** — знак производной жизнеспособности. Эмоция — «интериорная проекция» изменения состояния системы.
+This is **valence** — the sign of the viability derivative. Emotion is the "interior projection" of the change in the system's state.
 
-**Аналогия из повседневной жизни.** Представьте термометр здоровья. Когда температура (жизнеспособность $P$) растёт — вы чувствуете себя лучше (положительные эмоции). Когда падает — хуже (отрицательные). Но эмоция — не просто «хорошо/плохо»: важно, *какой именно орган* (сектор) меняется и *с какой скоростью*. Головная боль и боль в животе — обе «плохо» ($dP/d\tau < 0$), но переживаются по-разному из-за разной секторной сигнатуры.
+**Analogy from everyday life.** Imagine a health thermometer. When temperature (viability $P$) rises — you feel better (positive emotions). When it falls — worse (negative). But an emotion is not merely "good/bad": what matters is *which specific organ* (sector) is changing and *at what rate*. A headache and a stomachache are both "bad" ($dP/d\tau < 0$), but experienced differently due to different sector signatures.
 
-## Определение эмоции (О.1) {#определение-эмоции}
+## Definition of emotion (D.1) {#определение-эмоции}
 
-:::tip Определение О.1 (Эмоция) [О]
-**Эмоция** — тройка, характеризующая текущую динамику жизнеспособности и секторный профиль когерентности:
+:::tip Definition D.1 (Emotion) [D]
+An **emotion** is a triple characterising the current dynamics of viability and the sector coherence profile:
 
 $$
 \mathrm{Emotion}(\Gamma, \tau) := \left(\frac{dP}{d\tau},\; \frac{d^2P}{d\tau^2},\; \sigma(\Gamma)\right)
 $$
 
-где:
-- $\frac{dP}{d\tau} = \frac{d}{d\tau}\mathrm{Tr}(\Gamma^2)$ — скорость изменения жизнеспособности
-- $\frac{d^2P}{d\tau^2}$ — ускорение изменения жизнеспособности
-- $\sigma(\Gamma) = \{\gamma_{ii}, |\gamma_{ij}|\}$ — секторная Γ-сигнатура (набор населённостей и модулей когерентностей)
+where:
+- $\frac{dP}{d\tau} = \frac{d}{d\tau}\mathrm{Tr}(\Gamma^2)$ — rate of change of viability
+- $\frac{d^2P}{d\tau^2}$ — acceleration of change of viability
+- $\sigma(\Gamma) = \{\gamma_{ii}, |\gamma_{ij}|\}$ — sector Γ-signature (set of populations and moduli of coherences)
 :::
 
-Разберём каждый компонент:
+Let us examine each component:
 
-1. **$dP/d\tau$** — первая производная. Определяет валентность (хорошо/плохо) и интенсивность (сильно/слабо). Это «основной сигнал».
+1. **$dP/d\tau$** — the first derivative. Determines valence (good/bad) and intensity (strong/weak). This is the "primary signal".
 
-2. **$d^2P/d\tau^2$** — вторая производная. Определяет *тренд*: ситуация улучшается ($d^2P/d\tau^2 > 0$) или ухудшается ($d^2P/d\tau^2 < 0$)? Именно вторая производная отличает «надежду» ($dP/d\tau < 0$, но $d^2P/d\tau^2 > 0$: плохо, но улучшается) от «отчаяния» ($dP/d\tau < 0$, $d^2P/d\tau^2 < 0$: плохо и становится хуже).
+2. **$d^2P/d\tau^2$** — the second derivative. Determines the *trend*: is the situation improving ($d^2P/d\tau^2 > 0$) or deteriorating ($d^2P/d\tau^2 < 0$)? It is precisely the second derivative that distinguishes "hope" ($dP/d\tau < 0$ but $d^2P/d\tau^2 > 0$: bad but improving) from "despair" ($dP/d\tau < 0$, $d^2P/d\tau^2 < 0$: bad and getting worse).
 
-3. **$\sigma(\Gamma)$** — секторная сигнатура. Определяет *качественный* характер эмоции: какие измерения вовлечены? Страх ($\gamma_{DD}$ высока) и печаль ($\gamma_{DU}$ низка) оба имеют $dP/d\tau < 0$, но переживаются совершенно по-разному.
+3. **$\sigma(\Gamma)$** — the sector signature. Determines the *qualitative* character of the emotion: which dimensions are involved? Fear ($\gamma_{DD}$ high) and sadness ($\gamma_{DU}$ low) both have $dP/d\tau < 0$, but are experienced entirely differently.
 
-### Производная чистоты: откуда берётся $dP/d\tau$
+### Purity derivative: where does $dP/d\tau$ come from
 
-Скорость изменения чистоты вычисляется через [уравнение эволюции](/docs/core/dynamics/evolution):
+The rate of change of purity is computed through the [evolution equation](/docs/core/dynamics/evolution):
 
 $$
 \frac{dP}{d\tau} = 2\,\mathrm{Tr}\!\left(\Gamma \cdot \frac{d\Gamma}{d\tau}\right) = 2\,\mathrm{Tr}\!\left(\Gamma \cdot \mathcal{L}_\Omega[\Gamma]\right)
 $$
 
-где $\mathcal{L}_\Omega[\Gamma] = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ — логический Лиувиллиан.
+where $\mathcal{L}_\Omega[\Gamma] = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma, E]$ is the logical Liouvillian.
 
-Разберём вклад каждого члена:
+Let us examine the contribution of each term:
 
-**Вклады трёх членов:**
+**Contributions of the three terms:**
 
-| Член | Вклад в $dP/d\tau$ | Почему? | Интерпретация |
+| Term | Contribution to $dP/d\tau$ | Why? | Interpretation |
 |------|---------------------|---------|---------------|
-| $-i[H_{\text{eff}}, \Gamma]$ | $0$ (унитарная часть) | $\mathrm{Tr}(\Gamma[H,\Gamma]) = 0$ для любого эрмитова $H$ | Когерентная эволюция не меняет чистоту |
-| $\mathcal{D}_\Omega[\Gamma]$ | $\leq 0$ (декогеренция) | Взаимодействие со средой разрушает когерентность | Потеря жизнеспособности |
-| $\mathcal{R}[\Gamma, E]$ | $\geq 0$ (регенерация) | Восстановление когерентности из среды | Восстановление жизнеспособности |
+| $-i[H_{\text{eff}}, \Gamma]$ | $0$ (unitary part) | $\mathrm{Tr}(\Gamma[H,\Gamma]) = 0$ for any Hermitian $H$ | Coherent evolution does not change purity |
+| $\mathcal{D}_\Omega[\Gamma]$ | $\leq 0$ (decoherence) | Interaction with the environment destroys coherence | Loss of viability |
+| $\mathcal{R}[\Gamma, E]$ | $\geq 0$ (regeneration) | Recovery of coherence from the environment | Recovery of viability |
 
-Таким образом:
+Thus:
 
 $$
-\frac{dP}{d\tau} = \underbrace{2\,\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\leq 0,\;\text{декогеренция}} + \underbrace{2\,\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])}_{\geq 0,\;\text{регенерация}}
+\frac{dP}{d\tau} = \underbrace{2\,\mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])}_{\leq 0,\;\text{decoherence}} + \underbrace{2\,\mathrm{Tr}(\Gamma \cdot \mathcal{R}[\Gamma, E])}_{\geq 0,\;\text{regeneration}}
 $$
 
-**Числовой пример.** Пусть система в зоне Голдилокс: $P = 0.35$ (выше $P_{\text{crit}} = 2/7 \approx 0.286$). Декогеренция вносит $-0.02$ за такт, регенерация $+0.015$. Итого $dP/d\tau = -0.005$ — медленное убывание, что переживается как лёгкая тревога. Если регенерация усиливается до $+0.03$, то $dP/d\tau = +0.01$ — переживание облегчения, улучшения. Баланс между этими двумя членами и есть «эмоциональное самочувствие» системы.
+**Numerical example.** Let the system be in the Goldilocks zone: $P = 0.35$ (above $P_{\text{crit}} = 2/7 \approx 0.286$). Decoherence contributes $-0.02$ per step, regeneration $+0.015$. Total $dP/d\tau = -0.005$ — a slow decline, experienced as mild anxiety. If regeneration increases to $+0.03$, then $dP/d\tau = +0.01$ — the experience of relief, improvement. The balance between these two terms is the system's "emotional wellbeing".
 
-## Базовые аффективные координаты (С.1) {#базовые-координаты}
+## Basic affective coordinates (C.1) {#базовые-координаты}
 
-:::tip Утверждение С.1 (Базовые аффективные координаты) [С]
-**Условие:** Определение О.1 корректно определяет эмоциональный профиль; интерпретация $dP/d\tau$ как «сигнала жизнеспособности» — семантический постулат.
+:::tip Statement C.1 (Basic affective coordinates) [C]
+**Condition:** Definition D.1 correctly defines the emotional profile; the interpretation of $dP/d\tau$ as a "viability signal" is a semantic postulate.
 
-**Валентность** и **активация** определяются как:
+**Valence** and **arousal** are defined as:
 
 $$
 \mathrm{Valence}(\tau) := \mathrm{sign}\!\left(\frac{dP}{d\tau}\right) \in \{-1, 0, +1\}
@@ -170,299 +170,299 @@ $$
 \mathrm{Arousal}(\tau) := \left|\frac{dP}{d\tau}\right| \geq 0
 $$
 
-Положительная валентность ($dP/d\tau > 0$) соответствует «позитивным» эмоциям (жизнеспособность растёт). Отрицательная — «негативным» (жизнеспособность убывает).
+Positive valence ($dP/d\tau > 0$) corresponds to "positive" emotions (viability rising). Negative — to "negative" (viability declining).
 :::
 
-Координаты $(V, A)$ определяют положение в **аффективном пространстве Рассела** (circumplex model), которое в УГМ получает формальное обоснование.
+The coordinates $(V, A)$ determine the position in **Russell's affective space** (circumplex model), which in UHM receives a formal justification.
 
-**Аналогия.** Валентность — стрелка компаса: показывает, в какую сторону «дует ветер» жизнеспособности (к лучшему или к худшему). Активация — сила ветра. Штиль ($A \approx 0$) — спокойствие или стагнация. Шторм ($A \gg 0$) — интенсивное переживание (радость или ужас). Но компас и сила ветра ещё не описывают погоду целиком — нужна секторная сигнатура $\sigma(\Gamma)$, чтобы отличить грозу от метели.
+**Analogy.** Valence is a compass needle: it shows which direction the "wind" of viability is blowing (towards better or towards worse). Arousal is the strength of the wind. Calm ($A \approx 0$) — tranquillity or stagnation. Storm ($A \gg 0$) — intense experience (joy or terror). But a compass and wind strength do not yet fully describe the weather — the sector signature $\sigma(\Gamma)$ is needed to distinguish a thunderstorm from a blizzard.
 
-## Карта базовых эмоций {#карта-эмоций}
+## Map of basic emotions {#карта-эмоций}
 
-Базовые эмоции — характерные области в пространстве $\left(\frac{dP}{d\tau}, \frac{d^2P}{d\tau^2}, \sigma(\Gamma)\right)$.
+Basic emotions are characteristic regions in the space $\left(\frac{dP}{d\tau}, \frac{d^2P}{d\tau^2}, \sigma(\Gamma)\right)$.
 
-### Таблица базовых эмоций
+### Table of basic emotions
 
-:::warning Эпистемическое разделение
-**Математический слой [Т]:** 30D-эмоциональное пространство (T-147 [Т]): $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$ — формально определённый вектор из скоростей, ускорений и стрессов. Валентность $\mathrm{sign}(dP/d\tau)$ — вычислимая величина [Т].
+:::warning Epistemic separation
+**Mathematical layer [T]:** 30D emotional space (T-147 [T]): $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$ — a formally defined vector of rates, accelerations, and stresses. Valence $\mathrm{sign}(dP/d\tau)$ is a computable quantity [T].
 
-**Семантический слой [И]:** Отождествление конкретных паттернов 30D-вектора с названиями эмоций (страх, радость, гнев...) — интерпретация [И]. Реальные эмоции значительно сложнее одномерной проекции $dP/d\tau$. Таблица ниже — эвристическая, а не строго выведенная.
+**Semantic layer [I]:** Identifying specific patterns of the 30D vector with emotion names (fear, joy, anger...) is an interpretation [I]. Real emotions are considerably more complex than the one-dimensional projection $dP/d\tau$. The table below is heuristic, not strictly derived.
 :::
 
-| Эмоция | Условие на $dP/d\tau$ | Условие на $d^2P/d\tau^2$ | Секторная сигнатура | Интерпретация |
-|--------|----------------------|--------------------------|---------------------|---------------|
-| **Страх** | $< 0$, приближение к $P_{\text{crit}}$ | $< 0$ или $\approx 0$ | $\gamma_{DD}$ ↑, $\gamma_{DE}$ ↑ | Угроза жизнеспособности детектирована |
-| **Радость** | $> 0$, удаление от $P_{\text{crit}}$ | $\geq 0$ | $\gamma_{EU}$ ↑, $\gamma_{SE}$ ↑ | Жизнеспособность нарастает |
-| **Гнев** | $< 0$ | $\approx 0$ | $\gamma_{DD}$ ↑↑, $\gamma_{LL}$ ↓ | Высокая динамика без логической когерентности |
-| **Удивление** | любой | $\left\lvert d^2P/d\tau^2\right\rvert \gg 0$ | Резкое $\delta\sigma$ | Внезапное изменение скорости |
-| **Печаль** | $\approx 0$, $P$ низкое | $\approx 0$ | $\gamma_{DU}$ ↓, $\gamma_{EO}$ ↓ | Стагнация при низкой жизнеспособности |
-| **Отвращение** | $< 0$ | — | $\mathrm{Gap}(S,E)$ ↑↑ | Резкое расхождение структуры и опыта |
+| Emotion | Condition on $dP/d\tau$ | Condition on $d^2P/d\tau^2$ | Sector signature | Interpretation |
+|---------|----------------------|--------------------------|---------------------|---------------|
+| **Fear** | $< 0$, approaching $P_{\text{crit}}$ | $< 0$ or $\approx 0$ | $\gamma_{DD}$ ↑, $\gamma_{DE}$ ↑ | Viability threat detected |
+| **Joy** | $> 0$, moving away from $P_{\text{crit}}$ | $\geq 0$ | $\gamma_{EU}$ ↑, $\gamma_{SE}$ ↑ | Viability rising |
+| **Anger** | $< 0$ | $\approx 0$ | $\gamma_{DD}$ ↑↑, $\gamma_{LL}$ ↓ | High dynamics without logical coherence |
+| **Surprise** | any | $\left\lvert d^2P/d\tau^2\right\rvert \gg 0$ | Abrupt $\delta\sigma$ | Sudden change in rate |
+| **Sadness** | $\approx 0$, $P$ low | $\approx 0$ | $\gamma_{DU}$ ↓, $\gamma_{EO}$ ↓ | Stagnation at low viability |
+| **Disgust** | $< 0$ | — | $\mathrm{Gap}(S,E)$ ↑↑ | Sharp divergence of structure and experience |
 
-### Подробные числовые примеры для каждой базовой эмоции {#числовые-примеры}
+### Detailed numerical examples for each basic emotion {#числовые-примеры}
 
-Для каждой эмоции приведём конкретный $\Gamma$-профиль. Жизненная ситуация, значения ключевых параметров и интерпретация.
+For each emotion we give a concrete $\Gamma$-profile: a life situation, the values of key parameters, and interpretation.
 
-#### Радость
+#### Joy
 
-**Ситуация:** студент узнал, что сдал трудный экзамен.
+**Situation:** a student learns that they passed a difficult exam.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.38$ | Выше $P_{\text{crit}} = 0.286$, в безопасной зоне |
-| $dP/d\tau$ | $+0.025$ | Жизнеспособность быстро растёт |
-| $d^2P/d\tau^2$ | $+0.008$ | Рост ускоряется |
-| $\gamma_{EU}$ | $0.28$ (высокая) | Синтез — переживание единства, «всё складывается» |
-| $\gamma_{SE}$ | $0.22$ (высокая) | Репрезентация — целостная картина «я справился» |
-| $\gamma_{DD}$ | $0.12$ (нормальная) | Динамика не доминирует — действовать не нужно |
+| $P$ | $0.38$ | Above $P_{\text{crit}} = 0.286$, in the safe zone |
+| $dP/d\tau$ | $+0.025$ | Viability rising rapidly |
+| $d^2P/d\tau^2$ | $+0.008$ | Growth accelerating |
+| $\gamma_{EU}$ | $0.28$ (high) | Synthesis — sense of unity, "everything is coming together" |
+| $\gamma_{SE}$ | $0.22$ (high) | Representation — wholistic picture "I did it" |
+| $\gamma_{DD}$ | $0.12$ (normal) | Dynamics do not dominate — no need to act |
 
-Валентность: $+1$. Активация: $0.025$ (высокая). Секторная сигнатура указывает на интегративный паттерн (синтез + репрезентация).
+Valence: $+1$. Arousal: $0.025$ (high). Sector signature indicates an integrative pattern (synthesis + representation).
 
-#### Страх
+#### Fear
 
-**Ситуация:** человек идёт по тёмному переулку и слышит шаги за спиной.
+**Situation:** a person walking through a dark alley hears footsteps behind them.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.31$ | Опасно близко к $P_{\text{crit}} = 0.286$ |
-| $dP/d\tau$ | $-0.020$ | Быстрое падение жизнеспособности |
-| $d^2P/d\tau^2$ | $-0.008$ | Падение ускоряется |
-| $\gamma_{DD}$ | $0.22$ (высокая) | Динамика доминирует — тело готово к действию |
-| $\gamma_{DE}$ | $0.25$ (высокая) | Аффекция — процесс сильно действует на переживание |
-| $\gamma_{LE}$ | $0.05$ (низкая) | Логика отключена — «думать некогда» |
+| $P$ | $0.31$ | Dangerously close to $P_{\text{crit}} = 0.286$ |
+| $dP/d\tau$ | $-0.020$ | Rapid fall in viability |
+| $d^2P/d\tau^2$ | $-0.008$ | Fall accelerating |
+| $\gamma_{DD}$ | $0.22$ (high) | Dynamics dominate — body ready for action |
+| $\gamma_{DE}$ | $0.25$ (high) | Affection — the process strongly affects experience |
+| $\gamma_{LE}$ | $0.05$ (low) | Logic switched off — "no time to think" |
 
-Валентность: $-1$. Активация: $0.020$ (высокая). Секторная сигнатура указывает на динамический/аффективный паттерн.
+Valence: $-1$. Arousal: $0.020$ (high). Sector signature indicates a dynamic/affective pattern.
 
-#### Гнев
+#### Anger
 
-**Ситуация:** водитель подрезан на дороге.
+**Situation:** a driver is cut off on the road.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.34$ | Не критично, но жизнеспособность снижается |
-| $dP/d\tau$ | $-0.015$ | Умеренное падение |
-| $d^2P/d\tau^2$ | $\approx 0$ | Стабильное падение без тренда |
-| $\gamma_{DD}$ | $0.25$ (очень высокая) | Динамика максимальна — энергия для действия |
-| $\gamma_{LL}$ | $0.05$ (низкая) | Логика подавлена — «не до рассуждений» |
-| $\gamma_{DU}$ | $0.18$ (высокая) | Телеология — направленное действие, «я хочу ответить» |
+| $P$ | $0.34$ | Not critical, but viability is declining |
+| $dP/d\tau$ | $-0.015$ | Moderate decline |
+| $d^2P/d\tau^2$ | $\approx 0$ | Stable decline without trend |
+| $\gamma_{DD}$ | $0.25$ (very high) | Dynamics maximal — energy for action |
+| $\gamma_{LL}$ | $0.05$ (low) | Logic suppressed — "no time for reasoning" |
+| $\gamma_{DU}$ | $0.18$ (high) | Teleology — directed action, "I want to respond" |
 
-Ключевое отличие от страха: при гневе $\gamma_{DD}$ ещё выше, а $\gamma_{LL}$ ещё ниже. Энергия направлена *наружу* ($\gamma_{DU}$), а не *внутрь* ($\gamma_{DE}$).
+Key difference from fear: in anger $\gamma_{DD}$ is even higher, and $\gamma_{LL}$ even lower. Energy is directed *outward* ($\gamma_{DU}$), not *inward* ($\gamma_{DE}$).
 
-#### Удивление
+#### Surprise
 
-**Ситуация:** неожиданная встреча со старым другом.
+**Situation:** an unexpected encounter with an old friend.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.36$ | Нормальное значение |
-| $dP/d\tau$ | $+0.005$ (до) $\to +0.030$ (после) | Резкий скачок |
-| $d^2P/d\tau^2$ | $+0.050$ (очень высокое) | Именно ускорение делает удивление |
-| $\delta\sigma$ | Резкое изменение | Секторная сигнатура скачкообразно перестраивается |
+| $P$ | $0.36$ | Normal value |
+| $dP/d\tau$ | $+0.005$ (before) $\to +0.030$ (after) | Abrupt jump |
+| $d^2P/d\tau^2$ | $+0.050$ (very high) | It is precisely the acceleration that constitutes surprise |
+| $\delta\sigma$ | Abrupt change | Sector signature rearranges abruptly |
 
-Удивление определяется прежде всего **второй производной**: не столько «хорошо» или «плохо», сколько «внезапно». Это единственная базовая эмоция, валентность которой может быть любой.
+Surprise is defined primarily by the **second derivative**: not so much "good" or "bad" as "sudden". It is the only basic emotion whose valence can be anything.
 
-#### Печаль
+#### Sadness
 
-**Ситуация:** человек вспоминает утраченного друга.
+**Situation:** a person recalls a lost friend.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.30$ | Низкое, но выше $P_{\text{crit}}$ |
-| $dP/d\tau$ | $\approx 0$ | Жизнеспособность не меняется — стагнация |
-| $d^2P/d\tau^2$ | $\approx 0$ | Нет тренда |
-| $\gamma_{DU}$ | $0.03$ (очень низкая) | Телеология отсутствует — «нет цели, некуда идти» |
-| $\gamma_{EO}$ | $0.04$ (низкая) | Имманентность ослаблена — «пустота внутри» |
-| $\gamma_{SE}$ | $0.20$ (высокая) | Репрезентация — «помню его ясно» |
+| $P$ | $0.30$ | Low, but above $P_{\text{crit}}$ |
+| $dP/d\tau$ | $\approx 0$ | Viability unchanged — stagnation |
+| $d^2P/d\tau^2$ | $\approx 0$ | No trend |
+| $\gamma_{DU}$ | $0.03$ (very low) | Teleology absent — "no goal, nowhere to go" |
+| $\gamma_{EO}$ | $0.04$ (low) | Immanence weakened — "emptiness inside" |
+| $\gamma_{SE}$ | $0.20$ (high) | Representation — "I remember them clearly" |
 
-Печаль отличается от страха: при страхе $P$ активно падает, при печали — застыла на низком уровне. Нет ни угрозы, ни надежды — только тихая стагнация.
+Sadness differs from fear: with fear $P$ is actively falling, with sadness it is frozen at a low level. Neither threat nor hope — only quiet stagnation.
 
-#### Отвращение
+#### Disgust
 
-**Ситуация:** человек видит испорченную еду.
+**Situation:** a person sees spoiled food.
 
-| Параметр | Значение | Пояснение |
+| Parameter | Value | Explanation |
 |----------|----------|-----------|
-| $P$ | $0.33$ | Нормальное |
-| $dP/d\tau$ | $-0.010$ | Умеренное падение |
-| $d^2P/d\tau^2$ | $-0.003$ | Слабый отрицательный тренд |
-| $\mathrm{Gap}(S,E)$ | $0.85$ (очень высокий) | Резкое расхождение структуры и опыта |
-| $\gamma_{AD}$ | $0.18$ (высокая) | Актуализация — «восприятие сфокусировано» |
+| $P$ | $0.33$ | Normal |
+| $dP/d\tau$ | $-0.010$ | Moderate decline |
+| $d^2P/d\tau^2$ | $-0.003$ | Weak negative trend |
+| $\mathrm{Gap}(S,E)$ | $0.85$ (very high) | Sharp divergence of structure and experience |
+| $\gamma_{AD}$ | $0.18$ (high) | Actualisation — "perception focused" |
 
-Ключевая особенность отвращения: высокий $\mathrm{Gap}(S,E)$. Это означает, что *структура объекта* (испорченная еда как физическая форма) резко расходится с *переживанием* (отторжение). Gap — мера «неправильности», «несовпадения того, что видишь, с тем, что должно быть».
+The key feature of disgust: high $\mathrm{Gap}(S,E)$. This means that the *structure of the object* (spoiled food as a physical form) sharply diverges from the *experience* (revulsion). Gap is a measure of "wrongness", "the mismatch between what one sees and what should be".
 
-### Фазовая диаграмма эмоций
+### Phase diagram of emotions
 
 ```mermaid
 graph LR
-    subgraph Валентность["Валентность (sign dP/dτ)"]
+    subgraph Valence["Valence (sign dP/dτ)"]
         direction TB
-        Pos["+: Радость, Интерес"]
-        Neg["-: Страх, Гнев, Печаль"]
-        Zero["0: Покой / Стагнация"]
+        Pos["+: Joy, Interest"]
+        Neg["-: Fear, Anger, Sadness"]
+        Zero["0: Calm / Stagnation"]
     end
-    subgraph Активация["Активация (|dP/dτ|)"]
+    subgraph Arousal["Arousal (|dP/dτ|)"]
         direction TB
-        High["Высокая: Страх, Гнев, Радость"]
-        Low["Низкая: Печаль, Покой"]
+        High["High: Fear, Anger, Joy"]
+        Low["Low: Sadness, Calm"]
     end
-    subgraph Секторы["Секторная сигнатура σ(Γ)"]
+    subgraph Sectors["Sector signature σ(Γ)"]
         direction TB
-        DE["γ_DE ↑: аффективный"]
-        DL["γ_DL ↑: когнитивный"]
-        EU["γ_EU ↑: интегративный"]
+        DE["γ_DE ↑: affective"]
+        DL["γ_DL ↑: cognitive"]
+        EU["γ_EU ↑: integrative"]
     end
-    Валентность --> Секторы
-    Активация --> Секторы
+    Valence --> Sectors
+    Arousal --> Sectors
 ```
 
-## Страх: формальный анализ {#страх}
+## Fear: formal analysis {#страх}
 
-Страх — наиболее «фундаментальная» эмоция в УГМ, поскольку она непосредственно связана с угрозой существования. Рассмотрим его подробно.
+Fear is the most "fundamental" emotion in UHM, since it is directly linked to the threat of existence. Let us examine it in detail.
 
-### Условия возникновения
-
-$$
-\text{Страх:} \quad \frac{dP}{d\tau} < 0, \quad P(\tau) \to P_{\text{crit}} = \frac{2}{7}
-$$
-
-### Интенсивность страха
-
-Интенсивность страха определяется не только скоростью падения $|dP/d\tau|$, но и **близостью к порогу**:
+### Conditions for emergence
 
 $$
-I_{\text{страх}} \propto \frac{|dP/d\tau|}{P - P_{\text{crit}}}
+\text{Fear:} \quad \frac{dP}{d\tau} < 0, \quad P(\tau) \to P_{\text{crit}} = \frac{2}{7}
 $$
 
-Почему именно такая формула? Потому что одно и то же $dP/d\tau = -0.01$ переживается совершенно по-разному при $P = 0.40$ (далеко от порога, запас $0.114$) и при $P = 0.29$ (рядом с порогом, запас $0.004$). При $P \to P_{\text{crit}}$ интенсивность **расходится** — система «переживает» экзистенциальную угрозу. Если $P$ пересекает $P_{\text{crit}}$ — начинается необратимая декогеренция (смерть системы).
+### Fear intensity
 
-:::warning Условность количественных оценок [С]
-Конкретная формула $I_{\text{страх}} \propto |dP/d\tau| / (P - P_{\text{crit}})$ — **условное утверждение**. Форма расходимости при $P \to P_{\text{crit}}$ зависит от деталей регенеративного члена $\mathcal{R}[\Gamma, E]$ и диссипатора $\mathcal{D}_\Omega[\Gamma]$.
+Fear intensity is determined not only by the rate of fall $|dP/d\tau|$ but also by **proximity to the threshold**:
+
+$$
+I_{\text{fear}} \propto \frac{|dP/d\tau|}{P - P_{\text{crit}}}
+$$
+
+Why this formula? Because the same $dP/d\tau = -0.01$ is experienced entirely differently at $P = 0.40$ (far from the threshold, margin $0.114$) and at $P = 0.29$ (near the threshold, margin $0.004$). As $P \to P_{\text{crit}}$ intensity **diverges** — the system "experiences" an existential threat. If $P$ crosses $P_{\text{crit}}$ — irreversible decoherence (death of the system) begins.
+
+:::warning Conditionality of quantitative estimates [C]
+The specific formula $I_{\text{fear}} \propto |dP/d\tau| / (P - P_{\text{crit}})$ is a **conditional statement**. The form of the divergence as $P \to P_{\text{crit}}$ depends on the details of the regenerative term $\mathcal{R}[\Gamma, E]$ and the dissipator $\mathcal{D}_\Omega[\Gamma]$.
 :::
 
-### Числовой пример: нарастание страха
+### Numerical example: escalating fear
 
-Покажем, как интенсивность растёт по мере приближения к порогу при фиксированной скорости $dP/d\tau = -0.01$:
+We show how intensity grows as the threshold is approached at a fixed rate $dP/d\tau = -0.01$:
 
-| $P$ | $P - P_{\text{crit}}$ | $I_{\text{страх}} \propto$ | Субъективное переживание |
+| $P$ | $P - P_{\text{crit}}$ | $I_{\text{fear}} \propto$ | Subjective experience |
 |-----|----------------------|---------------------------|--------------------------|
-| $0.40$ | $0.114$ | $0.01/0.114 \approx 0.09$ | Лёгкий дискомфорт: «что-то не так» |
-| $0.35$ | $0.064$ | $0.01/0.064 \approx 0.16$ | Беспокойство: «нужно что-то предпринять» |
-| $0.32$ | $0.034$ | $0.01/0.034 \approx 0.29$ | Тревога: «ситуация ухудшается» |
-| $0.30$ | $0.014$ | $0.01/0.014 \approx 0.71$ | Выраженный страх: «опасность реальна» |
-| $0.29$ | $0.004$ | $0.01/0.004 \approx 2.50$ | Паника: «я на грани» |
+| $0.40$ | $0.114$ | $0.01/0.114 \approx 0.09$ | Mild discomfort: "something is wrong" |
+| $0.35$ | $0.064$ | $0.01/0.064 \approx 0.16$ | Worry: "something needs to be done" |
+| $0.32$ | $0.034$ | $0.01/0.034 \approx 0.29$ | Anxiety: "the situation is worsening" |
+| $0.30$ | $0.014$ | $0.01/0.014 \approx 0.71$ | Pronounced fear: "the danger is real" |
+| $0.29$ | $0.004$ | $0.01/0.004 \approx 2.50$ | Panic: "I am on the edge" |
 
-Одна и та же скорость снижения $dP/d\tau = -0.01$ переживается всё интенсивнее по мере приближения к порогу — эффект, хорошо знакомый каждому, кто когда-либо ожидал результатов медицинского обследования: за неделю до — лёгкая тревога; за час — сильное волнение; в момент открытия конверта — паника.
+The same rate of decline $dP/d\tau = -0.01$ is experienced with ever-greater intensity as the threshold is approached — an effect familiar to anyone who has ever awaited medical results: a week before — mild anxiety; an hour before — strong agitation; at the moment of opening the envelope — panic.
 
-## Сложные эмоции как суперпозиции {#сложные-эмоции}
+## Complex emotions as superpositions {#сложные-эмоции}
 
-Базовые эмоции — это *области* в 30D-пространстве эмоций. Но большинство реальных эмоций — не «чистые» базовые, а **суперпозиции** нескольких паттернов. Подобно тому, как в квантовой механике состояние может быть суперпозицией базисных состояний, эмоция может совмещать несколько базовых паттернов одновременно.
+Basic emotions are *regions* in the 30D emotional space. But most real emotions are not "pure" basic ones but **superpositions** of several patterns. Just as in quantum mechanics a state can be a superposition of basis states, an emotion can combine several basic patterns simultaneously.
 
-| Сложная эмоция | Базовые компоненты | Секторная характеристика | Жизненный пример |
+| Complex emotion | Basic components | Sector characteristic | Life example |
 |----------------|-------------------|--------------------------|------------------|
-| **Тревога** | Страх + Удивление | $dP/d\tau < 0$, $\lvert d^2P/d\tau^2\rvert$ нестабильно | Ожидание результатов анализов |
-| **Благоговение** | Радость + Удивление | $dP/d\tau > 0$, $\gamma_{EO}$ ↑, $\gamma_{OU}$ ↑ | Вид на горы с вершины |
-| **Ностальгия** | Радость + Печаль | $dP/d\tau \approx 0$, высокая $\gamma_{SE}$ при $\gamma_{SD}$ ↓ | Воспоминание о детстве |
-| **Вдохновение** | Радость + Удивление + Гнев | $dP/d\tau > 0$, $\gamma_{DO}$ ↑, $\gamma_{AE}$ ↑, $\gamma_{DD}$ ↑ | Начало творческого проекта |
-| **Стыд** | Печаль + Страх + Гнев (на себя) | $dP/d\tau < 0$, $R$ высокая, $\gamma_{LE}$ ↑ | Осознание своей ошибки |
-| **Умиление** | Радость + Печаль (слабая) | $dP/d\tau > 0$, $\gamma_{EO}$ ↑, $\gamma_{SE}$ ↑ | Наблюдение за ребёнком |
+| **Anxiety** | Fear + Surprise | $dP/d\tau < 0$, $\lvert d^2P/d\tau^2\rvert$ unstable | Waiting for test results |
+| **Awe** | Joy + Surprise | $dP/d\tau > 0$, $\gamma_{EO}$ ↑, $\gamma_{OU}$ ↑ | View from a mountain summit |
+| **Nostalgia** | Joy + Sadness | $dP/d\tau \approx 0$, high $\gamma_{SE}$ with $\gamma_{SD}$ ↓ | Memory of childhood |
+| **Inspiration** | Joy + Surprise + Anger | $dP/d\tau > 0$, $\gamma_{DO}$ ↑, $\gamma_{AE}$ ↑, $\gamma_{DD}$ ↑ | Beginning a creative project |
+| **Shame** | Sadness + Fear + Anger (at oneself) | $dP/d\tau < 0$, $R$ high, $\gamma_{LE}$ ↑ | Realising one's mistake |
+| **Tenderness** | Joy + Sadness (mild) | $dP/d\tau > 0$, $\gamma_{EO}$ ↑, $\gamma_{SE}$ ↑ | Watching a child |
 
-**Числовой пример: ностальгия.** Человек смотрит фотографии из юности.
+**Numerical example: nostalgia.** A person looks at photographs from their youth.
 
-| Параметр | Значение | Компонент |
+| Parameter | Value | Component |
 |----------|----------|-----------|
-| $dP/d\tau$ | $+0.002$ | Слабо положительный (приятное воспоминание) |
-| $\gamma_{SE}$ | $0.25$ | Высокая Репрезентация — «ясно помню» |
-| $\gamma_{SD}$ | $0.03$ | Низкая Персистенция — «этого больше нет» |
-| $\gamma_{EU}$ | $0.15$ | Средний Синтез — «это было частью моей жизни» |
+| $dP/d\tau$ | $+0.002$ | Weakly positive (pleasant memory) |
+| $\gamma_{SE}$ | $0.25$ | High Representation — "I remember clearly" |
+| $\gamma_{SD}$ | $0.03$ | Low Persistence — "this no longer exists" |
+| $\gamma_{EU}$ | $0.15$ | Moderate Synthesis — "this was part of my life" |
 
-Ностальгия — это одновременно $dP/d\tau > 0$ (радость воспоминания) и $\gamma_{SD} \approx 0$ (осознание невозвратимости). Два противоположных сигнала создают уникальный «горько-сладкий» вкус.
+Nostalgia is simultaneously $dP/d\tau > 0$ (joy of memory) and $\gamma_{SD} \approx 0$ (awareness of irreversibility). Two opposing signals create the unique "bittersweet" taste.
 
-**Аналогия.** Базовые эмоции — как основные цвета (красный, синий, жёлтый). Сложные эмоции — смешанные цвета: ностальгия — сиреневый (радость + печаль), благоговение — золотой (радость + удивление + глубина). 30D-эмоциональное пространство (T-147 [Т]) позволяет описать весь «спектр» эмоций, а не только именованные цвета. Подробности — в [теоремах КК](/docs/applied/coherence-cybernetics/theorems).
+**Analogy.** Basic emotions are like primary colours (red, blue, yellow). Complex emotions are mixed colours: nostalgia — mauve (joy + sadness), awe — gold (joy + surprise + depth). The 30D emotional space (T-147 [T]) makes it possible to describe the full "spectrum" of emotions, not just the named colours. Details — in [CC theorems](/docs/applied/coherence-cybernetics/theorems).
 
-## Сравнение с другими таксономиями {#сравнение}
+## Comparison with other taxonomies {#сравнение}
 
-Как соотносится таксономия УГМ с классическими моделями эмоций?
+How does the UHM taxonomy relate to classical models of emotion?
 
-| Модель | Число базовых | Структура | Механизм | Статус в УГМ |
+| Model | Number of basic | Structure | Mechanism | Status in UHM |
 |--------|:---:|-----------|----------|--------------|
-| **Экман** (1971) | 6 | Дискретные категории | Лицевая экспрессия | 6 областей в 30D-пространстве [И] |
-| **Рассел** (1980) | 2 оси | Непрерывный circumplex | Валентность + возбуждение | Проекция на $(V, A)$ = $(\mathrm{sign}(dP/d\tau), |dP/d\tau|)$ [Т] |
-| **Плутчик** (1980) | 8 | Колесо с интенсивностью | Эволюционные функции | 8 областей, интенсивность = $|dP/d\tau|/(P - P_{\text{crit}})$ [И] |
-| **Фельдман Барретт** (2017) | 0 (конструируемые) | Нет базовых | Предиктивное кодирование | $\sigma(\Gamma)$ — «конструкция», $(dP/d\tau)$ — «аффективный корень» [С] |
-| **УГМ** | 30D | Непрерывное пространство | $dP/d\tau + \sigma(\Gamma)$ | Полная модель T-147 [Т] |
+| **Ekman** (1971) | 6 | Discrete categories | Facial expression | 6 regions in 30D space [I] |
+| **Russell** (1980) | 2 axes | Continuous circumplex | Valence + arousal | Projection onto $(V, A)$ = $(\mathrm{sign}(dP/d\tau), |dP/d\tau|)$ [T] |
+| **Plutchik** (1980) | 8 | Wheel with intensity | Evolutionary functions | 8 regions, intensity = $|dP/d\tau|/(P - P_{\text{crit}})$ [I] |
+| **Feldman Barrett** (2017) | 0 (constructed) | No basic emotions | Predictive coding | $\sigma(\Gamma)$ — "construction", $(dP/d\tau)$ — "affective root" [C] |
+| **UHM** | 30D | Continuous space | $dP/d\tau + \sigma(\Gamma)$ | Full model T-147 [T] |
 
-Главное отличие УГМ от всех предшествующих моделей: эмоция — не **примитив** (как у Экмана), не чисто **телесная** (как у Джеймса), не чисто **когнитивная** (как у Шахтера), а **производная величина** — она вычисляется из динамики единственной фундаментальной переменной $P$, обогащённой секторной информацией $\sigma(\Gamma)$.
+The main difference between UHM and all previous models: emotion is not a **primitive** (as in Ekman), not purely **bodily** (as in James), not purely **cognitive** (as in Schachter), but a **derived quantity** — it is computed from the dynamics of the single fundamental variable $P$, enriched by sector information $\sigma(\Gamma)$.
 
-## Условия рефлексивного доступа к эмоциям {#рефлексивный-доступ}
+## Conditions for reflexive access to emotions {#рефлексивный-доступ}
 
-:::tip Утверждение С.2 (Порог эмоциональной рефлексии) [С]
-**Условие:** Порог $R_{\text{th}} = 1/3$ — теорема [Т] ($K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)).
+:::tip Statement C.2 (Threshold of emotional reflection) [C]
+**Condition:** The threshold $R_{\text{th}} = 1/3$ is a theorem [T] ($K = 3$ from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)).
 
-Рефлексивный доступ к собственным эмоциям (способность «осознать, что я чувствую страх») требует уровня L2:
+Reflexive access to one's own emotions (the capacity to "notice that I feel fear") requires level L2:
 
 $$
 R(\Gamma) \geq R_{\text{th}} = \frac{1}{3}
 $$
 
-При $R < R_{\text{th}}$ эмоции **переживаются**, но не **рефлексируются**. Система действует «эмоционально», но не имеет модели собственных эмоций.
+At $R < R_{\text{th}}$ emotions are **experienced** but not **reflected upon**. The system acts "emotionally" but has no model of its own emotions.
 :::
 
-### Различие между переживанием и осознанием
+### The difference between experiencing and knowing
 
-Это различие фундаментально и часто путается в обыденном языке:
+This distinction is fundamental and is often confused in ordinary language:
 
-| | Переживание эмоции (L1) | Осознание эмоции (L2) |
+| | Experiencing emotion (L1) | Knowing the emotion (L2) |
 |---|---|---|
-| **Условие** | $\gamma_{DE} \neq 0$ | $R \geq 1/3$, $\Phi \geq 1$ |
-| **Пример** | Собака скулит от страха | Человек говорит «я боюсь» |
-| **Поведение** | Автоматическая реакция | Осознанный выбор реакции |
-| **Словесное описание** | Невозможно | Возможно |
-| **Управление** | Только рефлекторное | Рефлексивное (в принципе) |
+| **Condition** | $\gamma_{DE} \neq 0$ | $R \geq 1/3$, $\Phi \geq 1$ |
+| **Example** | A dog whimpers in fear | A person says "I am afraid" |
+| **Behaviour** | Automatic reaction | Conscious choice of reaction |
+| **Verbal description** | Impossible | Possible |
+| **Control** | Only reflexive | Reflexive (in principle) |
 
-Это объясняет различие между эмоциональным поведением (L1) и эмоциональным самосознанием (L2). Подробнее — в [иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy).
+This explains the distinction between emotional behaviour (L1) and emotional self-awareness (L2). For further detail — see [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-**Аналогия.** Собака испытывает страх ($dP/d\tau < 0$ при приближении $P$ к $P_{\text{crit}}$) — это L1, эмоциональное поведение: она убегает. Человек тоже испытывает страх, но сверх того **знает**, что испытывает страх ($R \geq 1/3$, уровень L2): «Я боюсь, и я замечаю, что боюсь». Это различие имеет практическое значение для [патологии сознания](/docs/consciousness/states/pathological#алекситимия): при алекситимии ($\mathrm{Gap}(L,E) \to 1$) эмоции переживаются, но не осознаются — формально L2, но с «заблокированным» каналом рефлексии.
+**Analogy.** A dog experiences fear ($dP/d\tau < 0$ as $P$ approaches $P_{\text{crit}}$) — this is L1, emotional behaviour: it runs away. A human also experiences fear, but additionally **knows** that they experience it ($R \geq 1/3$, level L2): "I am afraid, and I notice that I am afraid." This distinction has practical significance for [pathologies of consciousness](/docs/consciousness/states/pathological#алекситимия): in alexithymia ($\mathrm{Gap}(L,E) \to 1$) emotions are experienced but not perceived — formally L2, but with a "blocked" reflection channel.
 
-## Эволюционный смысл {#эволюционный-смысл}
+## Evolutionary meaning {#эволюционный-смысл}
 
-Связь эмоций с $dP/d\tau$ имеет прямой эволюционный смысл. Вернёмся к Дарвину: эмоции универсальны, потому что выполняют **функцию выживания**. В терминах УГМ эта функция — мониторинг жизнеспособности:
+The link between emotions and $dP/d\tau$ has a direct evolutionary meaning. Let us return to Darwin: emotions are universal because they serve a **survival function**. In UHM terms this function is the monitoring of viability:
 
-| Эмоция | Сигнал | Функция | Адаптивное поведение |
+| Emotion | Signal | Function | Adaptive behaviour |
 |--------|--------|---------|---------------------|
-| **Страх** | $dP/d\tau < 0$, $P \to P_{\text{crit}}$ | Детекция угрозы | Бегство, замирание |
-| **Гнев** | $dP/d\tau < 0$, $\gamma_{DD}$ ↑↑ | Мобилизация энергии | Борьба, защита территории |
-| **Радость** | $dP/d\tau > 0$ | Подкрепление успешного поведения | Продолжение текущей стратегии |
-| **Печаль** | $dP/d\tau \approx 0$, $P$ низкое | Сигнал к пересмотру стратегии | Социальная поддержка, перестройка |
-| **Удивление** | $|d^2P/d\tau^2| \gg 0$ | Переключение внимания | Ориентировочная реакция |
-| **Отвращение** | $\mathrm{Gap}(S,E)$ ↑↑ | Избегание «токсичного» | Отталкивание, рвотный рефлекс |
+| **Fear** | $dP/d\tau < 0$, $P \to P_{\text{crit}}$ | Threat detection | Flight, freezing |
+| **Anger** | $dP/d\tau < 0$, $\gamma_{DD}$ ↑↑ | Energy mobilisation | Fight, territory defence |
+| **Joy** | $dP/d\tau > 0$ | Reinforcement of successful behaviour | Continuation of current strategy |
+| **Sadness** | $dP/d\tau \approx 0$, $P$ low | Signal to revise strategy | Social support, restructuring |
+| **Surprise** | $|d^2P/d\tau^2| \gg 0$ | Attention switching | Orienting response |
+| **Disgust** | $\mathrm{Gap}(S,E)$ ↑↑ | Avoidance of "toxic" | Rejection, gag reflex |
 
-- **Негативные эмоции** ($dP/d\tau < 0$) сигнализируют о потере когерентности — мотивируют активное противодействие
-- **Позитивные эмоции** ($dP/d\tau > 0$) сигнализируют о нарастании когерентности — подкрепляют текущее поведение
-- **Удивление** ($|d^2P/d\tau^2| \gg 0$) сигнализирует о непредсказуемости — переключает внимание
+- **Negative emotions** ($dP/d\tau < 0$) signal loss of coherence — motivate active countermeasures
+- **Positive emotions** ($dP/d\tau > 0$) signal growth of coherence — reinforce current behaviour
+- **Surprise** ($|d^2P/d\tau^2| \gg 0$) signals unpredictability — switches attention
 
-В терминах [уравнения эволюции](/docs/core/dynamics/evolution), эмоции — это «интериорная проекция» баланса между декогеренцией $\mathcal{D}_\Omega$ и регенерацией $\mathcal{R}$. Именно этот баланс формализован в [Когерентной Кибернетике](/docs/applied/coherence-cybernetics/theorems) как гедонический вектор $V_{\text{hed}} = dP/d\tau$ (T-103 [Т]).
+In terms of the [evolution equation](/docs/core/dynamics/evolution), emotions are the "interior projection" of the balance between decoherence $\mathcal{D}_\Omega$ and regeneration $\mathcal{R}$. This balance is formalised in [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) as the hedonic vector $V_{\text{hed}} = dP/d\tau$ (T-103 [T]).
 
 ---
 
-### Что мы узнали {#итоги}
+### What we have learned {#итоги}
 
-1. **История эмоций** — от Дарвина до Фельдман Барретт — подготавливает позицию УГМ: эмоции не примитивы, не иллюзии, а производные от динамики жизнеспособности
-2. **Эмоция** = тройка $(dP/d\tau, d^2P/d\tau^2, \sigma(\Gamma))$ — полностью определена динамикой матрицы когерентности
-3. **Валентность** = знак $dP/d\tau$, **активация** = модуль $|dP/d\tau|$ — воспроизводят модель Рассела
-4. **6 базовых эмоций** (Экман) получают числовое описание через $P$, $dP/d\tau$, $d^2P/d\tau^2$ и секторную сигнатуру
-5. **Страх** — фундаментальная эмоция: интенсивность расходится при $P \to P_{\text{crit}} = 2/7$
-6. **Сложные эмоции** — суперпозиции базовых секторных паттернов в 30D-пространстве (T-147 [Т])
-7. **Рефлексия эмоций** требует $R \geq 1/3$ (L2) — ниже этого порога эмоции переживаются, но не осознаются
+1. **The history of emotions** — from Darwin to Feldman Barrett — prepares the UHM position: emotions are not primitives, not illusions, but derivatives of viability dynamics
+2. **Emotion** = triple $(dP/d\tau, d^2P/d\tau^2, \sigma(\Gamma))$ — fully determined by the dynamics of the coherence matrix
+3. **Valence** = sign of $dP/d\tau$, **arousal** = modulus $|dP/d\tau|$ — reproduce Russell's model
+4. **6 basic emotions** (Ekman) receive a numerical description via $P$, $dP/d\tau$, $d^2P/d\tau^2$, and sector signature
+5. **Fear** is the fundamental emotion: its intensity diverges as $P \to P_{\text{crit}} = 2/7$
+6. **Complex emotions** are superpositions of basic sector patterns in 30D space (T-147 [T])
+7. **Reflection on emotions** requires $R \geq 1/3$ (L2) — below this threshold emotions are experienced but not perceived
 
-:::tip Мост к следующей главе
-Эмоции разворачиваются **во времени** — переживание «страха» занимает время, «радость» длится. Но как субъект переживает *само* время? Почему оно то «летит», то «тянется»? В следующей главе — [Субъективное время](/docs/consciousness/phenomenology/temporal-consciousness) — мы покажем, что субъективный темп определяется когерентностью $\gamma_{OE}$ между Основанием (внутренние часы) и Интериорностью (опыт).
+:::tip Bridge to the next chapter
+Emotions unfold in **time** — the experience of "fear" takes time, "joy" lasts. But how does the subject experience *time itself*? Why does it sometimes "fly" and sometimes "drag"? In the next chapter — [Subjective time](/docs/consciousness/phenomenology/temporal-consciousness) — we will show that the subjective tempo is determined by the coherence $\gamma_{OE}$ between Foundation (internal clock) and Interiority (experience).
 :::
 
-## Связи
+## Related Documents
 
-- [Жизнеспособность](/docs/core/dynamics/viability) — каноническое определение $P$ и $P_{\text{crit}}$
-- [Уравнение эволюции](/docs/core/dynamics/evolution) — динамика $\Gamma(\tau)$ и логический Лиувиллиан $\mathcal{L}_\Omega$
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4, условия для L2
-- [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — 21-парная таксономия и $\gamma_{DE}$ как «аффекция»
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — Gap(S,E) и фазовая диагностика
-- [Теоремы Когерентной Кибернетики](/docs/applied/coherence-cybernetics/theorems) — 30D-эмоциональное пространство, гедонический вектор $V_{\text{hed}}$
-- [T-147 [Т]: 30D-эмоциональное пространство](/docs/proofs/consciousness/operational-closure#t-147) — полная модель $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$, заменяющая скалярный $dP/d\tau$
+- [Viability](/docs/core/dynamics/viability) — canonical definition of $P$ and $P_{\text{crit}}$
+- [Evolution equation](/docs/core/dynamics/evolution) — dynamics of $\Gamma(\tau)$ and the logical Liouvillian $\mathcal{L}_\Omega$
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4, conditions for L2
+- [Qualia structure](/docs/consciousness/phenomenology/qualia-structure) — 21-pair taxonomy and $\gamma_{DE}$ as "affection"
+- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — Gap(S,E) and phase diagnostics
+- [Coherence Cybernetics theorems](/docs/applied/coherence-cybernetics/theorems) — 30D emotional space, hedonic vector $V_{\text{hed}}$
+- [T-147 [T]: 30D emotional space](/docs/proofs/consciousness/operational-closure#t-147) — full model $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$, replacing the scalar $dP/d\tau$

@@ -1,302 +1,302 @@
 ---
 sidebar_position: 1
-title: Двухаспектный монизм
-description: Позиция УГМ по отношению к категориальному разрыву — трудная проблема сознания
+title: Two-Aspect Monism
+description: The UHM position on the explanatory gap — the hard problem of consciousness
 slug: /consciousness/foundations/two-aspect-monism
 ---
 
-# Трудная Проблема Сознания
+# The Hard Problem of Consciousness
 
-:::info Для кого эта глава
-Вы узнаете, как УГМ решает «трудную проблему сознания» Чалмерса через двухаспектный монизм: матрица когерентности $\Gamma$ — единый онтологический примитив, чья внешняя сторона есть физика, а внутренняя — субъективный опыт. Глава закладывает философский фундамент всего раздела о сознании.
+:::info Who This Chapter Is For
+You will learn how UHM resolves Chalmers' 'hard problem of consciousness' through two-aspect monism: the coherence matrix $\Gamma$ is a single ontological primitive whose external side is physics and whose internal side is subjective experience. The chapter lays the philosophical foundation for the entire consciousness section.
 :::
 
-## Три с половиной века неудач
+## Three and a Half Centuries of Failure
 
-В 1641 году Рене Декарт написал «Медитации о первой философии» и разделил мир надвое. С одной стороны — *res extensa*, протяжённая материя: камни, деревья, тела. С другой — *res cogitans*, мыслящая субстанция: мысли, ощущения, переживания. Это казалось ясным и элегантным. Но Декарт создал проблему, которую не смог решить: **как эти две субстанции взаимодействуют?** Как нематериальная мысль может двигать материальную руку?
+In 1641, René Descartes wrote *Meditations on First Philosophy* and divided the world in two. On one side — *res extensa*, extended matter: stones, trees, bodies. On the other — *res cogitans*, thinking substance: thoughts, sensations, experiences. This seemed clear and elegant. But Descartes created a problem he could not solve: **how do these two substances interact?** How can an immaterial thought move a material hand?
 
-Декарт предложил шишковидную железу как место контакта. Принцесса Елизавета Богемская тут же указала на абсурдность: нематериальное не может физически толкать материальное, независимо от анатомии.
+Descartes proposed the pineal gland as the site of contact. Princess Elisabeth of Bohemia immediately pointed out the absurdity: the immaterial cannot physically push the material, regardless of anatomy.
 
-С тех пор прошло 350 лет. Физика, биология, нейронаука совершили невероятный прогресс. Мы расщепили атом, расшифровали геном, картографировали нейронные сети мозга. Но вопрос Декарта остался открытым, лишь приняв более острую форму.
+Three hundred and fifty years have passed since then. Physics, biology, and neuroscience have made incredible advances. We have split the atom, decoded the genome, mapped the brain's neural networks. But Descartes' question has remained open, only taking a sharper form.
 
-### Формулировка Чалмерса (1995)
+### Chalmers' Formulation (1995)
 
-В 1995 году австралийский философ Дэвид Чалмерс разделил проблемы сознания на «лёгкие» и «трудную»:
+In 1995, the Australian philosopher David Chalmers divided the problems of consciousness into 'easy' and 'hard':
 
-**Лёгкие проблемы** (они трудны технически, но понятно, *как* их решать):
-- Как мозг обрабатывает информацию?
-- Как мозг управляет поведением?
-- Как мозг интегрирует данные от разных органов чувств?
+**Easy problems** (they are technically difficult, but it is clear *how* to solve them):
+- How does the brain process information?
+- How does the brain govern behaviour?
+- How does the brain integrate data from different sense organs?
 
-**Трудная проблема:**
+**The hard problem:**
 
-> "Почему физические процессы порождают субъективный опыт?"
+> "Why do physical processes give rise to subjective experience?"
 
-Это вопрос о **категориальном разрыве** (explanatory gap) между объективным описанием и субъективным переживанием. Нейронаука может объяснить, какие нейроны возбуждаются, когда вы видите красный цвет. Но даже полное знание нейронной активности не объясняет, **почему** это возбуждение ощущается как красный, а не как синий, или почему оно вообще на что-то похоже.
+This is a question about the **explanatory gap** between objective description and subjective experience. Neuroscience can explain which neurons fire when you see a red colour. But even complete knowledge of neural activity does not explain **why** that firing feels like red rather than blue, or why it feels like anything at all.
 
-**Аналогия.** Представьте, что вы читаете партитуру симфонии. Ноты на бумаге — объективное описание. Но когда оркестр играет, вы **слышите** музыку. Трудная проблема спрашивает: почему значки на бумаге порождают звучание? УГМ отвечает: партитура и музыка — не два разных объекта, а два способа взаимодействия с одним и тем же — звуковой структурой. Партитура — вид «снаружи» (для дирижёра), музыка — вид «изнутри» (для слушателя).
+**Analogy.** Imagine reading the score of a symphony. The notes on paper are an objective description. But when the orchestra plays, you **hear** music. The hard problem asks: why do marks on paper give rise to sound? UHM answers: the score and the music are not two different objects, but two ways of interacting with the same thing — the sonic structure. The score is the view 'from outside' (for the conductor), the music — the view 'from inside' (for the listener).
 
-:::info Откуда мы пришли
-Эта глава открывает раздел [Сознание](/docs/consciousness/overview). Мы уже знаем, что $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — онтологический примитив теории, что пять аксиом $\Omega^7$ задают структуру и динамику. Теперь мы задаём главный вопрос: **почему математическая структура переживается?**
+:::info Where We Came From
+This chapter opens the [Consciousness](/docs/consciousness/overview) section. We already know that $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is the ontological primitive of the theory, and that the five axioms $\Omega^7$ set the structure and dynamics. Now we ask the main question: **why is the mathematical structure experienced?**
 :::
 
-### Дорожная карта главы
+### Chapter Roadmap
 
-1. **Формулировка проблемы** — что такое «трудная проблема» и почему она считалась неразрешимой
-2. **Исторические предшественники** — от Спинозы через Рассела к Чалмерсу
-3. **Двухаспектный монизм** — позиция УГМ: физика и опыт суть две стороны одного примитива $\Gamma$
-4. **Категориальная формализация** — расщепление морфизмов, экспланаторный зазор, теорема о двухаспектности
-5. **Единственность феноменального функтора** — почему структура опыта не может быть другой
-6. **Реляционная идентичность квалиа** — лемма Йонеды и невозможность инвертированных квалиа
-7. **Границы объяснения** — что УГМ объясняет, а что честно признаёт необъяснимым
+1. **Formulation of the problem** — what the 'hard problem' is and why it was considered unsolvable
+2. **Historical predecessors** — from Spinoza through Russell to Chalmers
+3. **Two-aspect monism** — the UHM position: physics and experience are two sides of one primitive Γ
+4. **Categorical formalisation** — splitting of morphisms, explanatory gap, theorem on two-aspectness
+5. **Uniqueness of the phenomenal functor** — why the structure of experience cannot be otherwise
+6. **Relational identity of qualia** — Yoneda's lemma and the impossibility of inverted qualia
+7. **Limits of explanation** — what UHM explains and what it honestly acknowledges as unexplainable
 
-## Историческая генеалогия: кто пытался до нас
+## Historical Genealogy: Who Tried Before Us
 
-Двухаспектный монизм не возник из пустоты. У него — глубокая философская родословная.
+Two-aspect monism did not emerge from a vacuum. It has a deep philosophical pedigree.
 
-### Спиноза (1677): два атрибута одной субстанции
+### Spinoza (1677): Two Attributes of One Substance
 
-Бенедикт Спиноза, младший современник Декарта, предложил радикальную альтернативу дуализму. В «Этике» он утверждал: существует только **одна субстанция** (Бог/Природа), которая имеет бесконечное число атрибутов, из которых нам известны два — **мышление** и **протяжённость**. Мысль и материя — не две разные вещи, а два *способа описания* одного и того же.
+Benedict Spinoza, a younger contemporary of Descartes, proposed a radical alternative to dualism. In the *Ethics* he argued: there is only **one substance** (God/Nature), which has an infinite number of attributes, of which we know two — **thought** and **extension**. Thought and matter are not two different things, but two *ways of describing* the same thing.
 
-**Ключевая идея — E2P7:** *Ordo et connexio idearum idem est ac ordo et connexio rerum* — порядок и связь идей тождественны порядку и связи вещей (Этика II, Prop. 7). Это **точный прообраз** феноменального функтора $F: \mathbf{Phys} \to \mathbf{Phen}$, который в УГМ обеспечивает изоморфизм между физической и интериорной категориями. Спиноза провозгласил существование такого изоморфизма; УГМ строит его явно.
+**The key idea — E2P7:** *Ordo et connexio idearum idem est ac ordo et connexio rerum* — the order and connection of ideas is identical to the order and connection of things (Ethics II, Prop. 7). This is the **exact precursor** of the phenomenal functor $F: \mathbf{Phys} \to \mathbf{Phen}$, which in UHM provides an isomorphism between the physical and interiority categories. Spinoza proclaimed the existence of such an isomorphism; UHM constructs it explicitly.
 
-**Спиноза для УГМ:** В терминах УГМ, $\Gamma$ — это субстанция Спинозы. Два «атрибута» — это две **проекции**:
+**Spinoza for UHM:** In UHM terms, $\Gamma$ is Spinoza's substance. The two 'attributes' are two **projections**:
 
-- $\mathrm{Map}_{\text{ext}}(\Gamma)$ — физический аспект (аналог атрибута протяжённости),
-- $\mathrm{Map}_{\text{int}}(\Gamma)$ — интериорный аспект (аналог атрибута мышления).
+- $\mathrm{Map}_{\text{ext}}(\Gamma)$ — the physical aspect (analogue of the attribute of extension),
+- $\mathrm{Map}_{\text{int}}(\Gamma)$ — the interiority aspect (analogue of the attribute of thought).
 
-E2P7 утверждает, что между ними существует структурное тождество. УГМ доказывает это как теорему: функтор $F$ сохраняет морфизмы между категориями.
+E2P7 asserts that there is a structural identity between them. UHM proves this as a theorem: the functor $F$ preserves morphisms between categories.
 
-**Conatus и Gap.** Спинозовский conatus — стремление каждой вещи пребывать в своём бытии (E3P6) — подразумевает, что система *никогда не завершает* самопознание: conatus бесконечен, полное самосовпадение означало бы прекращение стремления. В УГМ это точно соответствует теореме T-55 (Gap > 0, неполнота Лоувера): $\mathrm{Gap}(\Gamma, \varphi(\Gamma)) > 0$ — система не может полностью смоделировать саму себя. Conatus Спинозы **требует**, чтобы Gap был строго положительным; Gap > 0 **объясняет**, почему conatus никогда не иссякает.
+**Conatus and Gap.** Spinoza's conatus — the striving of each thing to persist in its being (E3P6) — implies that a system *never completes* self-knowledge: conatus is infinite, and complete self-coincidence would mean the cessation of striving. In UHM this corresponds precisely to theorem T-55 (Gap > 0, Lawvere incompleteness): $\mathrm{Gap}(\Gamma, \varphi(\Gamma)) > 0$ — the system cannot fully model itself. Spinoza's conatus **requires** Gap to be strictly positive; Gap > 0 **explains** why conatus never runs dry.
 
-**Почему Спиноза не смог формализовать.** Спиноза располагал только евклидовой геометрией как образцом строгости (отсюда *more geometrico* — «геометрическим способом»). Ему не хватало трёх инструментов: (1) **теории категорий** (Эйленберг — Маклейн, 1945) для формализации функтора $F$, (2) **квантовой механики** (1925–) для описания $\Gamma$ как матрицы плотности, (3) **спектральных троек** (Конн, 1994) для вывода геометрии из алгебры. УГМ не «подтверждает» Спинозу — она предоставляет формализм, которого у него не было.
+**Why Spinoza could not formalise it.** Spinoza had only Euclidean geometry as a model of rigour (hence *more geometrico* — 'in the geometric manner'). He lacked three tools: (1) **category theory** (Eilenberg–Mac Lane, 1945) for formalising the functor $F$, (2) **quantum mechanics** (1925–) for describing $\Gamma$ as a density matrix, (3) **spectral triples** (Connes, 1994) for deriving geometry from algebra. UHM does not 'confirm' Spinoza — it provides the formalism he lacked.
 
-### Рассел (1927): neutral monism
+### Russell (1927): Neutral Monism
 
-Бертран Рассел в «Анализе материи» пришёл к выводу, что физика описывает лишь **структурные отношения** между событиями, но ничего не говорит об их **внутренней природе**. Он предположил, что внутренняя природа физических событий — это нечто, из чего состоит сознательный опыт.
+Bertrand Russell in *The Analysis of Matter* concluded that physics describes only the **structural relations** between events, but says nothing about their **intrinsic nature**. He conjectured that the intrinsic nature of physical events is something of which conscious experience consists.
 
-**Нейтральный монизм Рассела:** Существует «нейтральный материал» (*neutral stuff*), который не является ни ментальным, ни физическим, но из которого и ментальное, и физическое конструируются.
+**Russell's neutral monism:** There exists a 'neutral stuff' that is neither mental nor physical, but from which both the mental and the physical are constructed.
 
-**Рассел для УГМ:** Матрица $\Gamma$ — это именно «нейтральный материал» Рассела: из неё *выводятся* и физические законы (как предельный случай при $R \to 0$, см. [QM-редукция](/docs/physics/quantum-mechanics/qm-reduction)), и структура опыта (через спектральное разложение $\rho_E$).
+**Russell for UHM:** The matrix $\Gamma$ is precisely Russell's 'neutral stuff': from it *both* physical laws (as a limit at $R \to 0$, see [QM-reduction](/docs/physics/quantum-mechanics/qm-reduction)) *and* the structure of experience (via the spectral decomposition of $\rho_E$) are derived.
 
-### Чалмерс (1996): натуралистический дуализм
+### Chalmers (1996): Naturalistic Dualism
 
-Чалмерс, сформулировав трудную проблему, предложил «натуралистический дуализм»: сознание — фундаментальное свойство, которое не сводится к физическому, но связано с ним посредством «психофизических законов». Однако он не смог объяснить, откуда берутся эти законы и почему они именно такие.
+Chalmers, having formulated the hard problem, proposed 'naturalistic dualism': consciousness is a fundamental property irreducible to the physical, but connected with it through 'psychophysical laws'. However, he could not explain where these laws come from and why they are as they are.
 
-**Чалмерс для УГМ:** УГМ переформулирует проблему Чалмерса: нет никаких «психофизических законов» — есть единый объект $\Gamma$, который с одной стороны ведёт себя как физика, а с другой переживается как опыт. Не нужен мост между двумя берегами — есть одна река, текущая в обе стороны.
+**Chalmers for UHM:** UHM reformulates Chalmers' problem: there are no 'psychophysical laws' — there is a single object $\Gamma$, which on one side behaves as physics, and on the other is experienced as experience. No bridge between two banks is needed — there is one river flowing in both directions.
 
 ```mermaid
 graph LR
-    subgraph "Философская эволюция"
-        SP["Спиноза 1677<br/>два атрибута"] --> R["Рассел 1927<br/>neutral monism"]
-        R --> CH["Чалмерс 1995<br/>трудная проблема"]
-        CH --> UGM["УГМ<br/>Γ как примитив"]
+    subgraph "Philosophical evolution"
+        SP["Spinoza 1677<br/>two attributes"] --> R["Russell 1927<br/>neutral monism"]
+        R --> CH["Chalmers 1995<br/>hard problem"]
+        CH --> UGM["UHM<br/>Γ as primitive"]
     end
     style UGM fill:#f9f,stroke:#333
 ```
 
-## Позиция УГМ: Двухаспектный монизм
+## The UHM Position: Two-Aspect Monism
 
-В УГМ проблема **переформулируется**, а не "решается" в традиционном смысле. Рассмотрим это шаг за шагом.
+In UHM the problem is **reformulated**, not 'solved' in the traditional sense. Let us consider this step by step.
 
-### Шаг 1: Γ как онтологический примитив
+### Step 1: Γ as Ontological Primitive
 
-В каждой фундаментальной теории есть объект, который не объясняется, а постулируется:
-- В квантовой механике это волновая функция $\psi$
-- В ОТО — метрический тензор $g_{\mu\nu}$
-- В Стандартной модели — калибровочные поля
+In every fundamental theory there is an object that is not explained but postulated:
+- In quantum mechanics — the wave function $\psi$
+- In GR — the metric tensor $g_{\mu\nu}$
+- In the Standard Model — gauge fields
 
-В УГМ такой примитив — **матрица когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$**. Это $7 \times 7$ эрмитова матрица плотности: положительно полуопределённая, с единичным следом, живущая в семимерном пространстве с измерениями A, S, D, L, E, O, U.
+In UHM such a primitive is the **coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$**. This is a $7 \times 7$ Hermitian density matrix: positive semidefinite, unit-trace, living in a seven-dimensional space with dimensions A, S, D, L, E, O, U.
 
-### Шаг 2: Два аспекта — не два объекта
+### Step 2: Two Aspects — Not Two Objects
 
-Ключевая идея: $\Gamma$ не «порождает» опыт и не «сопровождается» им. $\Gamma$ **имеет** физический и интериорный аспекты как неотъемлемые грани:
+The key idea: $\Gamma$ does not 'generate' experience and is not 'accompanied' by it. $\Gamma$ **has** physical and interiority aspects as inseparable facets:
 
-- С **внешней стороны** $\Gamma$ выглядит как «физика» (структура, динамика, взаимодействия)
-- С **внутренней стороны** $\Gamma$ переживается как «опыт» (интериорность L0 для всех систем; когнитивные квалиа L2 — только при $R \geq 1/3$ [Т], $\Phi \geq 1$ [Т] (T-129), $D_{\text{diff}} \geq 2$ [Т] (T-151))
+- From the **external side** $\Gamma$ looks like 'physics' (structure, dynamics, interactions)
+- From the **internal side** $\Gamma$ is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — only at $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [T] (T-151))
 
-:::info Ключевой тезис
-Нет "физических процессов" отдельно от "субъективного опыта". Есть только $\Gamma$, который:
-- С **внешней стороны** выглядит как "физика" (структура, динамика)
-- С **внутренней стороны** переживается как "опыт" (интериорность L0 для всех систем; когнитивные квалиа L2 — только при $R \geq 1/3$ [Т], $\Phi \geq 1$ [Т] (T-129), $D_{\text{diff}} \geq 2$ [Т] (T-151))
+:::info Key Thesis
+There are no 'physical processes' separate from 'subjective experience'. There is only $\Gamma$, which:
+- From the **external side** looks like 'physics' (structure, dynamics)
+- From the **internal side** is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — only at $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [T] (T-151))
 :::
 
-Спрашивать "почему физика порождает опыт?" — всё равно что спрашивать "почему лицевая сторона монеты порождает обратную?". Они не порождают друг друга — они **суть одно**.
+Asking 'why does physics give rise to experience?' is like asking 'why does the obverse of a coin give rise to the reverse?'. They do not give rise to each other — they **are one**.
 
-### Шаг 3: Не квантовая матрица, а онтологический примитив
+### Step 3: Not a Quantum Matrix, But an Ontological Primitive
 
-:::info Онтологический статус Γ
-$\Gamma$ — **не** квантовая матрица плотности, описывающая физическую систему. $\Gamma$ — **онтологический примитив**: объект категории $\mathcal{C}$ в ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$. Формализм $\mathcal{D}(\mathbb{C}^7)$ используется потому, что:
+:::info Ontological Status of Γ
+$\Gamma$ is **not** a quantum density matrix describing a physical system. $\Gamma$ is an **ontological primitive**: an object of the category $\mathcal{C}$ in the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$. The formalism $\mathcal{D}(\mathbb{C}^7)$ is used because:
 
-1. Он автоматически обеспечивает CPTP-динамику (Аксиома 2)
-2. Квантовая механика выводится как предел при $R \to 0$ ([QM-редукция](/docs/physics/quantum-mechanics/qm-reduction))
-3. Классическая механика — дальнейший предел при декогеренции
+1. It automatically provides CPTP dynamics (Axiom 2)
+2. Quantum mechanics is derived as a limit at $R \to 0$ ([QM-reduction](/docs/physics/quantum-mechanics/qm-reduction))
+3. Classical mechanics — a further limit under decoherence
 
-Вопрос «квантовая ли $\Gamma$?» **некорректен** в рамках УГМ: $\Gamma$ первична, а квантовая и классическая физики — её пределы. Возражение о декогеренции («при 37°C квантовая когерентность невозможна») не применимо к УГМ — оно предполагает, что $\Gamma$ описывает *физическую* квантовую систему. Но $\Gamma$ не описывает физику — из неё физика *выводится* как частный случай.
+The question 'is $\Gamma$ quantum?' is **ill-posed** within UHM: $\Gamma$ is primary, and quantum and classical physics are its limits. The decoherence objection ('at 37°C quantum coherence is impossible') does not apply to UHM — it assumes that $\Gamma$ describes a *physical* quantum system. But $\Gamma$ does not describe physics — physics is *derived* from it as a special case.
 :::
 
 ```mermaid
 graph LR
-    subgraph "Традиционный дуализм"
-        P1[Физика] -->|?| E1[Опыт]
+    subgraph "Traditional dualism"
+        P1[Physics] -->|?| E1[Experience]
     end
-    subgraph "УГМ: Двухаспектный монизм"
+    subgraph "UHM: Two-Aspect Monism"
         G[Γ]
-        G --> |внешняя сторона| P2[Физика]
-        G --> |внутренняя сторона| E2[Интериорность]
+        G --> |external side| P2[Physics]
+        G --> |internal side| E2[Interiority]
     end
 ```
 
-## Категориальная Формализация Двухаспектного Монизма {#категориальная-формализация}
+## Categorical Formalisation of Two-Aspect Monism {#категориальная-формализация}
 
-Интуиция «двух сторон одной монеты» красива, но недостаточна для науки. Нам нужна точная математическая формулировка. УГМ предоставляет её на языке теории категорий — ветви математики, изучающей структуры и отношения между ними.
+The intuition of 'two sides of one coin' is beautiful, but insufficient for science. We need a precise mathematical formulation. UHM provides it in the language of category theory — a branch of mathematics that studies structures and the relationships between them.
 
-:::tip Статус: **[И]** Интерпретация на основе формализма
-Двухаспектный монизм получает **категориальную формулировку** в терминах ∞-топоса $\mathbf{Sh}_\infty(\mathcal{C})$. Формализация опирается на ПИР **[О]** (T16) — тождество бытия и опыта встроено в A1+A2 (различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости).
+:::tip Status: **[I]** Interpretation on the basis of the formalism
+Two-aspect monism receives a **categorical formulation** in terms of the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$. The formalisation rests on PIR **[D]** (T16) — the identity of being and experience is built into A1+A2 (distinguishability via $J_{\text{Bures}}$-coverings is identical to ontological distinguishability).
 
-**Разграничение статусов:** Формальные результаты (расщепление отображения, лемма Йонеды, единственность FV, самореферентная замкнутость) — **[Т]**. Их интерпретация как двухаспектного монизма (отождествление $\mathrm{Map}_{\mathrm{ext}}$ с «физикой» и $\mathrm{Map}_{\mathrm{int}}$ с «опытом») — **[И]**.
+**Separation of statuses:** Formal results (splitting of the map, Yoneda's lemma, uniqueness of FV, self-referential closure) — **[T]**. Their interpretation as two-aspect monism (identification of $\mathrm{Map}_{\mathrm{ext}}$ with 'physics' and $\mathrm{Map}_{\mathrm{int}}$ with 'experience') — **[I]**.
 :::
 
-### Что такое морфизмы и зачем они нужны
+### What Morphisms Are and Why We Need Them
 
-Прежде чем перейти к теореме, объясним ключевое понятие. В теории категорий **морфизм** — это отображение, стрелка от одного объекта к другому. Морфизмы от $\Gamma$ к **классификатору** $\Omega$ (специальный объект в ∞-топосе, своего рода «пространство всех предикатов») описывают все возможные **свойства** системы $\Gamma$.
+Before turning to the theorem, let us explain a key concept. In category theory a **morphism** is a mapping, an arrow from one object to another. Morphisms from $\Gamma$ to the **classifier** $\Omega$ (a special object in the ∞-topos, a kind of 'space of all predicates') describe all possible **properties** of the system $\Gamma$.
 
-Представьте, что $\Omega$ — это анкета с бесконечным числом вопросов о системе. Каждый морфизм $\Gamma \to \Omega$ — это ответ на один вопрос. Некоторые вопросы касаются физической структуры («какова динамика?»), другие — внутреннего содержания («каково это — быть системой $\Gamma$?»). Теорема о расщеплении утверждает, что эти два типа вопросов можно формально разделить.
+Imagine that $\Omega$ is a questionnaire with an infinite number of questions about the system. Each morphism $\Gamma \to \Omega$ is an answer to one question. Some questions concern the physical structure ('what is the dynamics?'), others — the internal content ('what is it like to be the system $\Gamma$?'). The splitting theorem asserts that these two types of questions can be formally separated.
 
-### Теорема о расщеплении пространства морфизмов {#теорема-расщепление}
+### Theorem on the Splitting of the Space of Morphisms {#теорема-расщепление}
 
-:::tip Теорема (Расщепление Map) [Т]
-В ∞-топосе $\mathbf{Sh}_\infty(\mathcal{C})$ для любого Γ ∈ Ob(𝒞) пространство морфизмов в классификатор Ω **расщепляется**:
+:::tip Theorem (Map Splitting) [T]
+In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$, for any Γ ∈ Ob(𝒞) the space of morphisms into the classifier Ω **splits**:
 
 $$
-\text{Map}(\Gamma, \Omega) \twoheadrightarrow \text{Map}_{\text{ext}}(\Gamma, \Omega), \quad \text{слой: } \text{Map}_{\text{int}}(\Gamma, \Omega)
+\text{Map}(\Gamma, \Omega) \twoheadrightarrow \text{Map}_{\text{ext}}(\Gamma, \Omega), \quad \text{fibre: } \text{Map}_{\text{int}}(\Gamma, \Omega)
 $$
 
-(Строгая формулировка — расслоение Серра, см. ниже; прямая сумма $\oplus$ — эвристическое упрощение, справедливое при тривиализации расслоения.)
+(Strict formulation — Serre fibration, see below; the direct sum $\oplus$ is a heuristic simplification, valid under trivialisation of the fibration.)
 :::
 
-где:
-- $\text{Map}_{\text{ext}}$ — **«физические» морфизмы** (структура, динамика) — соответствуют внешнему описанию
-- $\text{Map}_{\text{int}}$ — **«интериорные» морфизмы** (E-измерение, интериорность) — соответствуют внутреннему аспекту (при L2+: субъективному переживанию)
+where:
+- $\text{Map}_{\text{ext}}$ — **'physical' morphisms** (structure, dynamics) — correspond to the external description
+- $\text{Map}_{\text{int}}$ — **'interiority' morphisms** (E-dimension, interiority) — correspond to the internal aspect (at L2+: subjective experience)
 
-**Что это означает на пальцах:** Все свойства любой системы $\Gamma$ разделяются на два класса — «внешние» (наблюдаемые извне) и «внутренние» (связанные с измерением $E$, интериорностью). Между этими классами нет пересечения ($\mathrm{Map}_{\text{ext}} \cap \mathrm{Map}_{\text{int}} = \{0\}$), но вместе они исчерпывают все свойства.
+**What this means in plain terms:** All properties of any system $\Gamma$ are divided into two classes — 'external' (observable from outside) and 'internal' (associated with the $E$-dimension, interiority). There is no intersection between these classes ($\mathrm{Map}_{\text{ext}} \cap \mathrm{Map}_{\text{int}} = \{0\}$), but together they exhaust all properties.
 
-**Доказательство:**
+**Proof:**
 
-**(a)** Классификатор Ω в ∞-топосе имеет градуировку по стратам:
+**(a)** The classifier Ω in the ∞-topos has a grading by strata:
 
 $$
 \Omega = \bigsqcup_{\alpha} \Omega_\alpha
 $$
 
-**(b)** Морфизмы $\Gamma \to \Omega$ разделяются на два класса:
-- $\text{Map}_{\text{ext}}$: факторизуются через объективно наблюдаемые структуры
-- $\text{Map}_{\text{int}}$: требуют доступа к E-измерению (интериорные предикаты)
+**(b)** Morphisms $\Gamma \to \Omega$ divide into two classes:
+- $\text{Map}_{\text{ext}}$: factorise through objectively observable structures
+- $\text{Map}_{\text{int}}$: require access to the E-dimension (interiority predicates)
 
-**(c)** Прямая сумма следует из ортогональности: $\text{Map}_{\text{ext}} \cap \text{Map}_{\text{int}} = \{0\}$ ∎
+**(c)** The direct sum follows from orthogonality: $\text{Map}_{\text{ext}} \cap \text{Map}_{\text{int}} = \{0\}$ ∎
 
-:::warning Строгая формулировка: расслоение Серра
-Разложение следует понимать как **расслоение Серра** ∞-группоидов:
+:::warning Strict Formulation: Serre Fibration
+The decomposition should be understood as a **Serre fibration** of ∞-groupoids:
 
 $$
 \mathcal{F}_{\text{int}}(\Gamma) \hookrightarrow \text{Map}(\Gamma, \Omega) \twoheadrightarrow \mathcal{B}_{\text{ext}}(\Gamma)
 $$
 
-где:
-- **База** $\mathcal{B}_{\text{ext}}(\Gamma) := \text{Map}(\Gamma_{\text{phys}}, \Omega)$ — внешние предикаты ($\Gamma_{\text{phys}} := \Gamma|_{\{A,S,D,L,O,U\}}$)
-- **Слой** $\mathcal{F}_{\text{int}}(\Gamma) := \text{Map}(\rho_E, \Omega_E)$ — интериорные предикаты
+where:
+- **Base** $\mathcal{B}_{\text{ext}}(\Gamma) := \text{Map}(\Gamma_{\text{phys}}, \Omega)$ — external predicates ($\Gamma_{\text{phys}} := \Gamma|_{\{A,S,D,L,O,U\}}$)
+- **Fibre** $\mathcal{F}_{\text{int}}(\Gamma) := \text{Map}(\rho_E, \Omega_E)$ — interiority predicates
 
-Расслоение порождается проекцией $\pi_{\bar{E}}: \Gamma \to \Gamma_{\text{phys}}$ и является расслоением Серра по свойствам ∞-топосов (HTT 6.1.3.9).
+The fibration is generated by the projection $\pi_{\bar{E}}: \Gamma \to \Gamma_{\text{phys}}$ and is a Serre fibration by the properties of ∞-toposes (HTT 6.1.3.9).
 :::
 
-### Определение экспланаторного зазора {#определение-зазора}
+### Definition of the Explanatory Gap {#определение-зазора}
 
-Теперь можно дать точное определение «разрыву» между физикой и опытом.
+Now we can give a precise definition of the 'gap' between physics and experience.
 
-**Определение (Экспланаторный зазор):**
+**Definition (Explanatory Gap):**
 
 $$
 \text{Gap} := \text{Nat}(F_{\text{ext}}, F_{\text{int}})
 $$
 
-— пространство естественных преобразований между функторами:
-- $F_{\text{ext}}: \mathcal{C} \to \mathbf{Set}$ — функтор «внешних» (физических) свойств
-- $F_{\text{int}}: \mathcal{C} \to \mathbf{Set}$ — функтор «внутренних» (интериорных) свойств
+— the space of natural transformations between functors:
+- $F_{\text{ext}}: \mathcal{C} \to \mathbf{Set}$ — functor of 'external' (physical) properties
+- $F_{\text{int}}: \mathcal{C} \to \mathbf{Set}$ — functor of 'internal' (interiority) properties
 
-**Интерпретация простым языком:** Gap — мера «расстояния» между тем, что можно узнать о системе извне, и тем, что система переживает изнутри. Если Gap = 0, то внешнее описание полностью определяет внутреннее — это позиция физикализма. Но теорема ниже показывает, что Gap всегда ненулевой.
+**Interpretation in plain language:** Gap is a measure of the 'distance' between what can be known about the system from outside and what the system experiences from within. If Gap = 0, then the external description fully determines the internal one — this is the physicalist position. But the theorem below shows that Gap is always nonzero.
 
-### Теорема о нетривиальности зазора {#теорема-нетривиальность}
+### Theorem on the Non-Triviality of the Gap {#теорема-нетривиальность}
 
-:::tip Теорема (Нетривиальность Gap) [Т]
-Для Γ с $P > P_{\text{crit}}$:
+:::tip Theorem (Non-Triviality of Gap) [T]
+For Γ with $P > P_{\text{crit}}$:
 
 $$
 \dim(\text{Gap}) \geq 1
 $$
 :::
 
-**Доказательство (конструктивное):**
+**Proof (constructive):**
 
-**(a)** При $P > P_{\text{crit}}$ система имеет нетривиальное E-измерение: $\gamma_{EE} > 0$, следовательно $\rho_E$ имеет ненулевой спектр.
+**(a)** At $P > P_{\text{crit}}$ the system has a non-trivial E-dimension: $\gamma_{EE} > 0$, hence $\rho_E$ has a non-zero spectrum.
 
-**(b)** Слой расслоения $\mathcal{F}_{\text{int}}(\Gamma) = \text{Map}(\rho_E, \Omega_E)$ — пространство предикатов на $\rho_E$.
+**(b)** The fibre of the fibration $\mathcal{F}_{\text{int}}(\Gamma) = \text{Map}(\rho_E, \Omega_E)$ — the space of predicates on $\rho_E$.
 
-**(c)** При $\gamma_{EE} > 0$ существуют как минимум два нетривиальных предиката:
-- $\chi_1$: «$\lambda_{\max}(\rho_E) > 1/2$» (доминирующее качество)
-- $\chi_2$: «$\lambda_{\max}(\rho_E) \leq 1/2$» (равномерное распределение)
+**(c)** At $\gamma_{EE} > 0$ there exist at least two non-trivial predicates:
+- $\chi_1$: '$\lambda_{\max}(\rho_E) > 1/2$' (dominant quality)
+- $\chi_2$: '$\lambda_{\max}(\rho_E) \leq 1/2$' (uniform distribution)
 
-Эти предикаты определяют **различные** точки в $\text{Map}(\rho_E, \Omega_E)$, лежащие в **разных** связных компонентах (поскольку $\chi_1 \wedge \chi_2 = \bot$).
+These predicates define **distinct** points in $\text{Map}(\rho_E, \Omega_E)$, lying in **different** connected components (since $\chi_1 \wedge \chi_2 = \bot$).
 
-**(d)** Следовательно, $\pi_0(\mathcal{F}_{\text{int}}) \geq 2$, и $\dim(\text{Gap}) \geq 1$. ∎
+**(d)** Consequently, $\pi_0(\mathcal{F}_{\text{int}}) \geq 2$, and $\dim(\text{Gap}) \geq 1$. ∎
 
-**Интерпретация:** Категориальный разрыв — **структурная особенность** ∞-топоса, не онтологический дуализм. Зазор существует, но это не разрыв между двумя субстанциями, а различие между двумя способами описания **одной** структуры Γ. Это как разница между партитурой и звучанием: они описывают одну музыку, но нельзя «вывести» звучание из нотных значков, не зная, что такое музыка.
+**Interpretation:** The categorical gap is a **structural feature** of the ∞-topos, not ontological dualism. The gap exists, but this is not a rupture between two substances, but a difference between two ways of describing the **same** structure Γ. It is like the difference between a score and its performance: they describe the same music, but you cannot 'derive' the performance from the notation without knowing what music is.
 
-### Теорема о двухаспектности как свойстве примитива {#теорема-двухаспектность}
+### Theorem on Two-Aspectness as a Property of the Primitive {#теорема-двухаспектность}
 
-:::tip Теорема (Двухаспектность) [Т]
-Для любого Γ ∈ Ob(𝒞) существует каноническое разложение:
+:::tip Theorem (Two-Aspectness) [T]
+For any Γ ∈ Ob(𝒞) there exists a canonical decomposition:
 
 $$
 \forall \Gamma: \quad \Gamma \simeq (\Gamma_{\text{ext}}, \Gamma_{\text{int}}, \varphi)
 $$
 
-где $\varphi: \Gamma_{\text{ext}} \to \Gamma_{\text{int}}$ — каноническое соответствие (не изоморфизм).
+where $\varphi: \Gamma_{\text{ext}} \to \Gamma_{\text{int}}$ — the canonical correspondence (not an isomorphism).
 :::
 
-**Доказательство:**
+**Proof:**
 
-**(a)** По теореме о расщеплении существуют проекции:
+**(a)** By the splitting theorem there exist projections:
 $$
 \pi_{\text{ext}}: \Gamma \to \Gamma_{\text{ext}}, \quad \pi_{\text{int}}: \Gamma \to \Gamma_{\text{int}}
 $$
 
-**(b)** Каноническое соответствие $\varphi$ определяется как композиция:
+**(b)** The canonical correspondence $\varphi$ is defined as the composition:
 $$
 \varphi := \pi_{\text{int}} \circ \pi_{\text{ext}}^{-1}
 $$
-на образе $\pi_{\text{ext}}$
+on the image of $\pi_{\text{ext}}$
 
-**(c)** $\varphi$ не является изоморфизмом, поскольку $\text{Gap} \neq 0$ ∎
+**(c)** $\varphi$ is not an isomorphism, since $\text{Gap} \neq 0$ ∎
 
-**Что это означает:** Каждая система $\Gamma$ канонически раскладывается на физический аспект, интериорный аспект и **соответствие** между ними. Но это соответствие — не биекция (из-за ненулевого Gap). Физический аспект не полностью определяет интериорный, и наоборот. Они связаны, но не тождественны.
+**What this means:** Every system $\Gamma$ is canonically decomposed into a physical aspect, an interiority aspect, and the **correspondence** between them. But this correspondence is not a bijection (due to the nonzero Gap). The physical aspect does not fully determine the interiority aspect, and vice versa. They are connected, but not identical.
 
-### Следствие для трудной проблемы {#следствие-трудная-проблема}
+### Corollary for the Hard Problem {#следствие-трудная-проблема}
 
-:::info Категориальное разрешение
-Вопрос «Почему опыт ощущается?» **эквивалентен** вопросу «Почему Ω существует?» — это **метатеоретический вопрос** о структуре топоса.
+:::info Categorical Resolution
+The question 'Why does experience feel?' is **equivalent** to the question 'Why does Ω exist?' — this is a **meta-theoretical question** about the structure of the topos.
 
-В рамках теории вопрос не имеет ответа, поскольку Ω — часть аксиоматической структуры. Это аналогично тому, как физика не объясняет, **почему** существуют законы природы.
+Within the theory the question has no answer, since Ω is part of the axiomatic structure. This is analogous to how physics does not explain **why** the laws of nature exist.
 :::
 
-**Диаграмма:**
+**Diagram:**
 
 ```mermaid
 graph TB
-    subgraph "∞-топос Sh_∞(𝒞)"
-        Gamma["Γ (примитив)"]
-        GammaExt["Γ_ext (физика)"]
-        GammaInt["Γ_int (опыт)"]
-        Omega["Ω (классификатор)"]
+    subgraph "∞-topos Sh_∞(𝒞)"
+        Gamma["Γ (primitive)"]
+        GammaExt["Γ_ext (physics)"]
+        GammaInt["Γ_int (experience)"]
+        Omega["Ω (classifier)"]
     end
 
     Gamma --> |"π_ext"| GammaExt
@@ -310,478 +310,478 @@ graph TB
     style Omega fill:#bbf,stroke:#333
 ```
 
-**Резюме категориальной формализации:**
+**Summary of categorical formalisation:**
 
-| Концепция | Категориальный аналог |
-|-----------|----------------------|
-| Физические свойства | $\text{Map}_{\text{ext}}(\Gamma, \Omega)$ |
-| Феноменальные свойства | $\text{Map}_{\text{int}}(\Gamma, \Omega)$ |
-| Экспланаторный зазор | $\text{Gap} = \text{Nat}(F_{\text{ext}}, F_{\text{int}})$ |
-| Двухаспектность | $\Gamma \simeq (\Gamma_{\text{ext}}, \Gamma_{\text{int}}, \varphi)$ |
-| Трудная проблема | Метатеоретический вопрос о структуре Ω |
+| Concept | Categorical analogue |
+|---------|---------------------|
+| Physical properties | $\text{Map}_{\text{ext}}(\Gamma, \Omega)$ |
+| Phenomenal properties | $\text{Map}_{\text{int}}(\Gamma, \Omega)$ |
+| Explanatory gap | $\text{Gap} = \text{Nat}(F_{\text{ext}}, F_{\text{int}})$ |
+| Two-aspectness | $\Gamma \simeq (\Gamma_{\text{ext}}, \Gamma_{\text{int}}, \varphi)$ |
+| Hard problem | Meta-theoretical question about the structure of Ω |
 
-:::warning Эпистемический статус [И]
-Двуаспектный монизм **переформулирует** hard problem, а не решает его. Утверждение «Γ имеет физический и феноменальный аспекты как неразделимые грани одного объекта» — **онтологическая позиция** [И], не математическая теорема. Математически доказано [Т]: E-когерентность необходима для жизнеспособности (No-Zombie T-38a). Но **почему** у матрицы плотности есть «каково это быть» — вопрос, который формализм переводит в структурный язык, а не снимает.
+:::warning Epistemic Status [I]
+Two-aspect monism **reformulates** the hard problem rather than solving it. The statement 'Γ has physical and phenomenal aspects as inseparable facets of one object' is an **ontological position** [I], not a mathematical theorem. What is mathematically proved [T]: E-coherence is necessary for viability (No-Zombie T-38a). But **why** the density matrix has a 'what is it like to be' — this is a question that the formalism translates into structural language but does not dissolve.
 :::
 
-## Структурная необходимость феноменального функтора {#структурная-необходимость}
+## Structural Necessity of the Phenomenal Functor {#структурная-необходимость}
 
-Ключевой вопрос: является ли соответствие между $\rho_E$ и феноменальным содержанием **произвольным постулатом** или **вынужденной структурой**?
+The key question: is the correspondence between $\rho_E$ and phenomenal content an **arbitrary postulate** or a **forced structure**?
 
-Критик может сказать: «Вы просто объявили, что спектральное разложение $\rho_E$ — это содержание опыта. Но почему не что-то другое?» Ответ УГМ: потому что **ничего другого** нельзя построить из аксиом, не нарушив их.
+A critic might say: 'You simply declared that the spectral decomposition of $\rho_E$ is the content of experience. But why not something else?' UHM's answer: because **nothing else** can be constructed from the axioms without violating them.
 
-### Цепочка вынужденности
+### The Chain of Necessity
 
-Спектральное разложение $\rho_E$ — **не постулат**, а следствие трёх вынужденных шагов:
+The spectral decomposition of $\rho_E$ is **not a postulate**, but the consequence of three forced steps:
 
 $$
-\text{Аксиома Ω⁷} \xrightarrow{(1)} \text{DensityMat} \xrightarrow{(2)} \rho_E = \text{Tr}_{-E}(\Gamma) \xrightarrow{(3)} \text{Spec}(\rho_E) = \{(\lambda_i, |q_i\rangle)\}
+\text{Axiom Ω⁷} \xrightarrow{(1)} \text{DensityMat} \xrightarrow{(2)} \rho_E = \text{Tr}_{-E}(\Gamma) \xrightarrow{(3)} \text{Spec}(\rho_E) = \{(\lambda_i, |q_i\rangle)\}
 $$
 
-Разберём каждый шаг:
+Let us analyse each step:
 
-1. **Шаг 1:** $\Gamma$ — объект $\text{Sh}_\infty(\mathcal{C})$ → является пучком на $\mathcal{C} = \mathbf{DensityMat}$. Это следует непосредственно из Аксиомы A1.
+1. **Step 1:** $\Gamma$ — an object of $\text{Sh}_\infty(\mathcal{C})$ → is a sheaf on $\mathcal{C} = \mathbf{DensityMat}$. This follows directly from Axiom A1.
 
-2. **Шаг 2:** $\rho_E = \text{Tr}_{-E}(\Gamma)$ — **единственное** CPTP-отображение для извлечения E-компоненты. Почему единственное? Потому что частичный след — единственный левый сопряжённый к тензорному вложению. Это не выбор, а теорема.
+2. **Step 2:** $\rho_E = \text{Tr}_{-E}(\Gamma)$ — the **unique** CPTP map for extracting the E-component. Why unique? Because the partial trace is the unique left adjoint to the tensor embedding. This is not a choice, but a theorem.
 
-3. **Шаг 3:** Спектральное разложение $\rho_E$ — **единственно** для невырожденного спектра (спектральная теорема самосопряжённых операторов). Опять не выбор, а теорема.
+3. **Step 3:** The spectral decomposition of $\rho_E$ is **unique** for a non-degenerate spectrum (spectral theorem for self-adjoint operators). Again not a choice, but a theorem.
 
-### Теорема (Единственность феноменального функтора) {#теорема-единственность-фв}
+### Theorem (Uniqueness of the Phenomenal Functor) {#теорема-единственность-фв}
 
-:::tip Теорема (Единственность FV) [Т]
+:::tip Theorem (Uniqueness of FV) [T]
 
-Пусть дана структура:
-1. ∞-топос $\text{Sh}_\infty(\mathcal{C})$ с [Бюрес-топологией](/docs/core/foundations/axiom-omega#топология-гротендика) (Аксиома Ω⁷)
-2. Выделенное измерение $E$ из семи ([Аксиома Септичности](/docs/core/foundations/axiom-septicity))
-3. CPTP-совместимость (сохранение положительности и следа)
-4. Монотонность метрики
+Suppose given the structure:
+1. ∞-topos $\text{Sh}_\infty(\mathcal{C})$ with [Bures topology](/docs/core/foundations/axiom-omega#топология-гротендика) (Axiom Ω⁷)
+2. Distinguished dimension $E$ of seven ([Axiom of Septicity](/docs/core/foundations/axiom-septicity))
+3. CPTP compatibility (preservation of positivity and trace)
+4. Metric monotonicity
 
-Тогда функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$, определённый как:
+Then the functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$, defined as:
 
 $$
 F(\Gamma) := (\text{Spec}(\rho_E), \text{Quality}(\rho_E), \text{Context}(\Gamma_{-E}))
 $$
 
-является **единственным** (с точностью до изоморфизма в Exp) функтором, удовлетворяющим всем четырём условиям.
+is **unique** (up to isomorphism in Exp) — the functor satisfying all four conditions.
 :::
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1 (Единственность извлечения).** Частичный след $\text{Tr}_{\bar{E}}$ — единственное линейное отображение $\mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}_E)$, удовлетворяющее $\text{Tr}(A \cdot (\rho_E \otimes I_{\bar{E}})) = \text{Tr}(A \cdot \Gamma)$ для всех $A$. Категорно: $\text{Tr}_{\bar{E}}$ — единственная коединица сопряжения $(-) \otimes \mathcal{H}_{\bar{E}} \dashv \text{Tr}_{\bar{E}}$.
+**Step 1 (Uniqueness of extraction).** The partial trace $\text{Tr}_{\bar{E}}$ is the unique linear map $\mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}_E)$ satisfying $\text{Tr}(A \cdot (\rho_E \otimes I_{\bar{E}})) = \text{Tr}(A \cdot \Gamma)$ for all $A$. Categorically: $\text{Tr}_{\bar{E}}$ is the unique counit of the adjunction $(-) \otimes \mathcal{H}_{\bar{E}} \dashv \text{Tr}_{\bar{E}}$.
 
-**Шаг 2 (Единственность декомпозиции).** Для $\rho_E$ с невырожденным спектром спектральное разложение $\rho_E = \sum_i \lambda_i |q_i\rangle\langle q_i|$ определено единственно (с точностью до фаз, поглощённых проективной структурой).
+**Step 2 (Uniqueness of decomposition).** For $\rho_E$ with non-degenerate spectrum, the spectral decomposition $\rho_E = \sum_i \lambda_i |q_i\rangle\langle q_i|$ is defined uniquely (up to phases, absorbed by the projective structure).
 
-**Шаг 3 (Единственность метрики).** По [теореме Ченцова-Пеца](/docs/core/foundations/axiom-omega#топология-гротендика), метрика Фубини-Штуди $d_{FS}([|\psi\rangle], [|\varphi\rangle]) = \arccos(|\langle\psi|\varphi\rangle|)$ — единственная (с точностью до скаляра) монотонная риманова метрика на $\mathbb{P}(\mathcal{H}_E)$.
+**Step 3 (Uniqueness of metric).** By [the Chentsov–Petz theorem](/docs/core/foundations/axiom-omega#топология-гротендика), the Fubini-Study metric $d_{FS}([|\psi\rangle], [|\varphi\rangle]) = \arccos(|\langle\psi|\varphi\rangle|)$ is the unique (up to scalar) monotone Riemannian metric on $\mathbb{P}(\mathcal{H}_E)$.
 
-**Шаг 4 (Единственность функтора).** Если $F'$ — другой функтор с теми же условиями, то по шагам 1-3: $F' \cong F$ в категории функторов. $\blacksquare$
+**Step 4 (Uniqueness of functor).** If $F'$ is another functor with the same conditions, then by steps 1-3: $F' \cong F$ in the functor category. $\blacksquare$
 
-### Значение для проблемы квалиа-вектора
+### Significance for the Problem of the Qualia Vector
 
-Утверждение «теория постулирует изоморфизм $[|q\rangle] \leftrightarrow$ ощущение» **неточно**. Теория выводит **единственный** функтор, совместимый с аксиоматикой. Если принять [Аксиому Ω⁷](/docs/core/foundations/axiom-omega) + [Аксиому Септичности](/docs/core/foundations/axiom-septicity), то спектральное разложение $\rho_E$ — единственная возможная форма содержания опыта.
+The claim 'the theory postulates an isomorphism $[|q\rangle] \leftrightarrow$ sensation' is **imprecise**. The theory derives the **unique** functor compatible with the axiomatics. If one accepts [Axiom Ω⁷](/docs/core/foundations/axiom-omega) + [Axiom of Septicity](/docs/core/foundations/axiom-septicity), then the spectral decomposition of $\rho_E$ is the only possible form of experiential content.
 
-**Аналогия.** Это как в физике: если вы принимаете принцип наименьшего действия и симметрию Лоренца, уравнения Максвелла — единственные возможные уравнения электромагнетизма. Не потому что мы их «постулировали», а потому что они **вынуждены** аксиомами.
+**Analogy.** This is like in physics: if you accept the principle of least action and Lorentz symmetry, Maxwell's equations are the only possible equations of electromagnetism. Not because we 'postulated' them, but because they are **forced** by the axioms.
 
-## Реляционная идентичность квалиа {#реляционная-идентичность}
+## Relational Identity of Qualia {#реляционная-идентичность}
 
-### Проблема «внутреннего содержания»
+### The Problem of 'Inner Content'
 
-Фундаментальная версия проблемы: «Вектор $|q\rangle$ — математический объект. Ощущение красного — нечто качественное. Как одно может БЫТЬ другим?» Вопрос предполагает, что квалиа обладают **внутренним содержанием**, не сводимым к реляционной структуре.
+The fundamental version of the problem: 'The vector $|q\rangle$ is a mathematical object. The sensation of red is something qualitative. How can one **BE** the other?' The question assumes that qualia possess **inner content** irreducible to relational structure.
 
-Чтобы ответить на этот вопрос, УГМ привлекает один из самых глубоких результатов теории категорий — лемму Йонеды.
+To answer this question, UHM appeals to one of the deepest results in category theory — the Yoneda lemma.
 
-### Что такое лемма Йонеды (на пальцах)
+### What the Yoneda Lemma Is (in Plain Terms)
 
-Лемма Йонеды — это утверждение о том, что **объект полностью определяется своими отношениями**. Представьте человека. Можно спросить: «Кто он **сам по себе**, без всех его отношений с другими людьми, без его истории, без его места в обществе?» Лемма Йонеды отвечает: такого «сам по себе» не существует. Человек *тождественен* совокупности своих отношений.
+The Yoneda lemma is the assertion that **an object is fully determined by its relations**. Imagine a person. One can ask: 'Who is he **in himself**, without all his relations with other people, without his history, without his place in society?' The Yoneda lemma answers: no such 'in himself' exists. A person *is identical* with the totality of his relations.
 
-Для квалиа: «красный» — это не некая таинственная «красность», скрытая где-то за формулами. «Красный» — это **позиция** в пространстве отношений: он ближе к оранжевому, чем к синему; он дальше от зелёного, чем от бордового; он вызывает определённые реакции. Всё это — **расстояния Фубини-Штуди** $d_{FS}$ между точками проективного пространства $\mathbb{P}(\mathcal{H}_E)$.
+For qualia: 'red' is not some mysterious 'redness' hidden somewhere behind the formulae. 'Red' is a **position** in the space of relations: it is closer to orange than to blue; it is further from green than from burgundy; it evokes certain reactions. All this — **Fubini-Study distances** $d_{FS}$ between points of the projective space $\mathbb{P}(\mathcal{H}_E)$.
 
-### Теорема (Реляционная определённость квалиа) {#теорема-реляционная-определённость}
+### Theorem (Relational Definiteness of Qualia) {#теорема-реляционная-определённость}
 
-:::warning Теорема (Лемма Ёнеды для квалиа) [Т]
+:::warning Theorem (Yoneda's Lemma for Qualia) [T]
 
-В категории **Exp** качество $[|q\rangle] \in \text{Ob}(\mathbf{Exp})$ **полностью определяется** своим функтором точек:
+In the category **Exp** a quality $[|q\rangle] \in \text{Ob}(\mathbf{Exp})$ is **fully determined** by its functor of points:
 
 $$
 h_{[q]} := \text{Hom}_{\mathbf{Exp}}(-, [|q\rangle]): \mathbf{Exp}^{op} \to \mathbf{Set}
 $$
 
-Два качества $[|q_1\rangle]$ и $[|q_2\rangle]$ **тождественны** тогда и только тогда, когда $h_{[q_1]} \cong h_{[q_2]}$ как функторы.
+Two qualities $[|q_1\rangle]$ and $[|q_2\rangle]$ are **identical** if and only if $h_{[q_1]} \cong h_{[q_2]}$ as functors.
 :::
 
-**Доказательство:** По лемме Ёнеды: $\text{Nat}(h_{[q_1]}, h_{[q_2]}) \cong \text{Hom}_{\mathbf{Exp}}([|q_1\rangle], [|q_2\rangle])$. Если $h_{[q_1]} \cong h_{[q_2]}$, то $[|q_1\rangle] \cong [|q_2\rangle]$ в Exp. $\blacksquare$
+**Proof:** By the Yoneda lemma: $\text{Nat}(h_{[q_1]}, h_{[q_2]}) \cong \text{Hom}_{\mathbf{Exp}}([|q_1\rangle], [|q_2\rangle])$. If $h_{[q_1]} \cong h_{[q_2]}$, then $[|q_1\rangle] \cong [|q_2\rangle]$ in Exp. $\blacksquare$
 
-### Следствия
+### Corollaries
 
-**Следствие 1 (Невозможность инвертированных квалиа).** Если два качества занимают одинаковую позицию в реляционной структуре (одинаковые расстояния $d_{FS}$ до всех других качеств), то они **тождественны**. «Инвертированный спектр» при сохранении всех структурных отношений нарушал бы лемму Ёнеды.
+**Corollary 1 (Impossibility of Inverted Qualia).** If two qualities occupy the same position in the relational structure (the same $d_{FS}$ distances to all other qualities), they are **identical**. An 'inverted spectrum' while preserving all structural relations would violate the Yoneda lemma.
 
-Это закрывает знаменитый мысленный эксперимент: «Может ли ваш красный быть моим синим?» Ответ УГМ: **нет**, если все реляционные свойства совпадают. Два переживания с одинаковой позицией в структуре тождественны.
+This closes the famous thought experiment: 'Can your red be my blue?' UHM's answer: **no**, if all relational properties coincide. Two experiences with the same position in the structure are identical.
 
-**Следствие 2 (Реляционный структурализм).** Идентичность квалиа **есть** его реляционная позиция. Вопрос «что есть ощущение красного помимо его места в структуре?» математически эквивалентен вопросу «что есть число 3 помимо того, что оно следует за 2 и предшествует 4?».
+**Corollary 2 (Relational Structuralism).** The identity of a quale **is** its relational position. The question 'what is the sensation of red beyond its place in the structure?' is mathematically equivalent to the question 'what is the number 3 beyond the fact that it follows 2 and precedes 4?'.
 
-### Отличие от постулата
+### Difference from a Postulate
 
-**Постулат** говорит: «$[|q\rangle]$ = ощущение (примите на веру)».
+A **postulate** says: '$[|q\rangle]$ = sensation (accept on faith)'.
 
-**Лемма Ёнеды** говорит: «Идентичность $[|q\rangle]$ полностью определяется его отношениями. Если существует ощущение, не сводимое к структурным отношениям, оно **принципиально невыразимо** в любой математической теории.»
+**The Yoneda lemma** says: 'The identity of $[|q\rangle]$ is fully determined by its relations. If there exists a sensation not reducible to structural relations, it is **in principle inexpressible** in any mathematical theory.'
 
-Это **граница математизации как таковой**, не дефект УГМ.
+This is a **boundary of mathematisation as such**, not a defect of UHM.
 
-## Самореферентная замкнутость {#самореферентная-замкнутость}
+## Self-Referential Closure {#самореферентная-замкнутость}
 
-### Проблема внешнего наблюдателя
+### The Problem of the External Observer
 
-Критик может возразить: «Структура $\{(\lambda_i, [|q_i\rangle])\}$ — описание опыта *снаружи*. Но опыт переживается *изнутри*. Кто наблюдатель?»
+A critic might object: 'The structure $\{(\lambda_i, [|q_i\rangle])\}$ is a description of experience *from outside*. But experience is undergone *from within*. Who is the observer?'
 
-Это серьёзное возражение. Если для описания опыта нужен внешний наблюдатель, мы попадаем в бесконечный регресс: кто наблюдает наблюдателя? Решение УГМ — оператор самомоделирования $\varphi$, который делает наблюдение **внутренним**.
+This is a serious objection. If an external observer is required to describe experience, we fall into an infinite regress: who observes the observer? UHM's solution is the self-modelling operator $\varphi$, which makes observation **internal**.
 
-### Теорема (Самореферентная замкнутость) {#теорема-самореферентная-замкнутость}
+### Theorem (Self-Referential Closure) {#теорема-самореферентная-замкнутость}
 
-:::warning Теорема (Замкнутость через φ) [Т]
+:::warning Theorem (Closure via φ) [T]
 
-Для L2-системы ($R \geq 1/3$, $\Phi \geq 1$) оператор [самомоделирования](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ создаёт замкнутый цикл:
+For an L2-system ($R \geq 1/3$, $\Phi \geq 1$) the [self-modelling](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) operator $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ creates a closed cycle:
 
 $$
 \Gamma \xrightarrow{\varphi} \varphi(\Gamma) \approx \Gamma \quad (R \geq 1/3)
 $$
 
-Следовательно:
-1. Система **содержит** собственную модель ($\varphi(\Gamma)$)
-2. Модель совпадает с оригиналом с точностью $R$
-3. Внешний наблюдатель **не требуется** — описание имманентно системе
+Consequently:
+1. The system **contains** its own model ($\varphi(\Gamma)$)
+2. The model coincides with the original to within $R$
+3. An external observer is **not required** — the description is immanent to the system
 :::
 
-**Доказательство:** По определению $R$:
+**Proof:** By the definition of $R$:
 
 $$
 R(\Gamma) = \frac{1}{7P} \geq \frac{1}{3} \quad \Rightarrow \quad P \leq \frac{3}{7}
 $$
 
-Ключевое свойство: $\varphi$ действует **в том же пространстве** $\mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$. Самомодель — внутреннее отображение того же типа. $\blacksquare$
+Key property: $\varphi$ acts in **the same space** $\mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$. The self-model is an internal mapping of the same type. $\blacksquare$
 
-**Аналогия.** Представьте зеркальную комнату. Обычное зеркало требует кого-то, кто смотрит. Но $\varphi$ — это зеркало, **встроенное в саму систему**. Система не нуждается во внешнем наблюдателе, чтобы увидеть себя — зеркало есть часть её структуры.
+**Analogy.** Imagine a mirror room. An ordinary mirror requires someone to look. But $\varphi$ is a mirror **built into the system itself**. The system needs no external observer to see itself — the mirror is part of its structure.
 
-### Связь с квалиа-вектором
+### Connection with the Qualia Vector
 
-Феноменальный вектор не требует внешнего наблюдателя:
+The phenomenal vector does not require an external observer:
 
 $$
 \text{FV}(\rho_E) = \text{FV}(\text{Tr}_{-E}(\varphi(\Gamma)))
 $$
 
-Система **сама** извлекает свои качества через $\varphi$. «Ощущение красного» — не вектор, описанный извне, а результат того, как $\Gamma$ отображается в $\varphi(\Gamma)$ через E-проекцию.
+The system **itself** extracts its qualities through $\varphi$. The 'sensation of red' is not a vector described from outside, but the result of how $\Gamma$ maps into $\varphi(\Gamma)$ through the E-projection.
 
-### Неподвижная точка
+### Fixed Point
 
-Для [неподвижной точки](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$: $R(\Gamma^*) = 1$. В неподвижной точке **нет различия** между системой и её самомоделью — интериорный аспект **тождественен** процессу самомоделирования.
+For the [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^* = \varphi(\Gamma^*)$: $R(\Gamma^*) = 1$. At the fixed point there is **no distinction** between the system and its self-model — the interiority aspect is **identical** with the process of self-modelling.
 
-## Почему не дуализм и не физикализм
+## Why Not Dualism and Not Physicalism
 
-Три позиции — дуализм, физикализм и двухаспектный монизм — можно сравнить по структуре аргумента:
+Three positions — dualism, physicalism, and two-aspect monism — can be compared by the structure of their argument:
 
-### Минимальность аксиоматического выбора {#минимальность-аксиомы}
+### Minimality of Axiomatic Choice {#минимальность-аксиомы}
 
-После формализации (§§ выше) единственный оставшийся примитив:
+After formalisation (§§ above) the only remaining primitive:
 
-> Конфигурация $\Gamma$ имеет внутреннюю сторону ($E$-аспект), представляющую интериорную проекцию (при L2+: переживаемую как феноменальное содержание).
+> The configuration $\Gamma$ has an internal side ($E$-aspect), representing the interiority projection (at L2+: experienced as phenomenal content).
 
-Все остальное **выводится**: форма содержания (Теорема единственности FV), идентичность квалиа (лемма Ёнеды), имманентность (через $\varphi$), зазор (конструктивно).
+Everything else is **derived**: the form of content (Uniqueness theorem FV), the identity of qualia (Yoneda's lemma), immanence (via $\varphi$), the gap (constructively).
 
-### Сравнение аксиоматических выборов {#сравнение-аксиоматических-выборов}
+### Comparison of Axiomatic Choices {#сравнение-аксиоматических-выборов}
 
-:::warning Теорема (Минимальность) [И]
+:::warning Theorem (Minimality) [I]
 
-Любая теория сознания, включающая (1) формализуемость, (2) квантовую механику, (3) объяснение структуры опыта, (4) совместимость с данными, **необходимо содержит** аксиому одного из трёх типов:
-- **(a)** Тождество бытия и опыта (панинтериоризм УГМ) — 1 примитив
-- **(b)** Супервентность опыта на физике (физикализм) — 2 уровня + emergence
-- **(c)** Каузальное взаимодействие двух субстанций (дуализм) — 2 примитива + каузальная связь
+Any theory of consciousness that includes (1) formalisability, (2) quantum mechanics, (3) explanation of the structure of experience, (4) compatibility with data, **necessarily contains** an axiom of one of three types:
+- **(a)** Identity of being and experience (pan-interiority of UHM) — 1 primitive
+- **(b)** Supervenience of experience on physics (physicalism) — 2 levels + emergence
+- **(c)** Causal interaction of two substances (dualism) — 2 primitives + causal connection
 :::
 
-Вариант (a) — **минимальный**: одна аксиома вместо двух-трёх. Это не доказательство истинности, но доказательство **экономности** (бритва Оккама).
+Option (a) is **minimal**: one axiom instead of two or three. This is not a proof of truth, but a proof of **economy** (Occam's razor).
 
-### Стоимость примитива
+### Cost of the Primitive
 
-| Теория | Примитив | Что не объясняет |
-|--------|----------|------------------|
-| Квантовая механика | Волновая функция $\psi$ | Почему вселенная описывается $\psi$ |
-| Общая теория относительности | Метрический тензор $g_{\mu\nu}$ | Почему пространство-время кривое |
-| Стандартная модель | Калибровочные поля | Почему $SU(3) \times SU(2) \times U(1)$ |
-| **УГМ** | **$\Gamma$ с E-аспектом** | **Почему $\Gamma$ переживается** |
+| Theory | Primitive | What it does not explain |
+|--------|-----------|--------------------------|
+| Quantum mechanics | Wave function $\psi$ | Why the universe is described by $\psi$ |
+| General relativity | Metric tensor $g_{\mu\nu}$ | Why spacetime is curved |
+| Standard Model | Gauge fields | Why $SU(3) \times SU(2) \times U(1)$ |
+| **UHM** | **$\Gamma$ with E-aspect** | **Why $\Gamma$ is experienced** |
 
-УГМ не «хуже» других фундаментальных теорий — каждая платит свою «стоимость примитива».
+UHM is no 'worse' than other fundamental theories — each pays its own 'primitive cost'.
 
-## Признание границ объяснения
+## Acknowledging the Limits of Explanation
 
-### Что УГМ объясняет
+### What UHM Explains
 
-1. **Структуру** феноменального пространства (L1: метрика Фубини-Штуди на $\mathbb{P}(\mathcal{H}_E)$)
-2. **Отношения** между качествами (L1: изоморфизм с проективным пространством; L2: рефлексивный доступ)
-3. **Динамику** опыта (уравнение эволюции)
-4. **Условия** сознательности (L2: $R \geq 1/3$ [Т], $\Phi \geq 1$ [Т] (T-129) — [пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод))
-5. **Единственность** структуры опыта (Теорема [единственности FV](#теорема-единственность-фв))
-6. **Реляционную полноту** квалиа (Теорема [реляционной определённости](#теорема-реляционная-определённость))
-7. **Имманентность** описания — внешний наблюдатель не требуется ([самореферентная замкнутость](#теорема-самореферентная-замкнутость))
+1. The **structure** of the phenomenal space (L1: Fubini-Study metric on $\mathbb{P}(\mathcal{H}_E)$)
+2. The **relations** between qualities (L1: isomorphism with projective space; L2: reflexive access)
+3. The **dynamics** of experience (evolution equation)
+4. The **conditions** of consciousness (L2: $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129) — [L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод))
+5. The **uniqueness** of the structure of experience (Theorem [uniqueness of FV](#теорема-единственность-фв))
+6. The **relational completeness** of qualia (Theorem [relational definiteness](#теорема-реляционная-определённость))
+7. The **immanence** of description — an external observer is not required ([self-referential closure](#теорема-самореферентная-замкнутость))
 
-### Что УГМ не объясняет
+### What UHM Does Not Explain
 
-1. **Почему** математическая структура переживается — метатеоретический вопрос, эквивалентный «почему существуют законы природы?»
-2. **Калибровку квалиа** — какой конкретный $[|q\rangle]$ соответствует «красному»? Это эмпирический вопрос, аналогичный определению массы электрона
+1. **Why** mathematical structure is experienced — a meta-theoretical question, equivalent to 'why do the laws of nature exist?'
+2. **Calibration of qualia** — which specific $[|q\rangle]$ corresponds to 'red'? This is an empirical question, analogous to determining the mass of the electron
 
-:::warning Критическая честность
-УГМ устанавливает, что спектральное разложение $\rho_E$ — **единственная** допустимая форма содержания опыта (Теорема единственности FV), а идентичность квалиа полностью определяется реляционной структурой (лемма Ёнеды). Однако **калибровка** — какой конкретный $[|q\rangle]$ соответствует «красному» — остаётся эмпирическим вопросом, аналогичным определению массы электрона в Стандартной модели.
+:::warning Critical Honesty
+UHM establishes that the spectral decomposition of $\rho_E$ is the **only** permissible form of experiential content (Uniqueness theorem FV), and the identity of qualia is fully determined by relational structure (Yoneda's lemma). However, **calibration** — which specific $[|q\rangle]$ corresponds to 'red' — remains an empirical question, analogous to determining the mass of the electron in the Standard Model.
 :::
 
-### Квантовая природа Γ и аргумент Тегмарка {#квантовая-природа-gamma}
+### Quantum Nature of Γ and Tegmark's Argument {#квантовая-природа-gamma}
 
-:::warning Уязвимость 5: Частично открыта
-Вопрос о квантовой природе $\Gamma$ — наиболее глубокая из открытых проблем УГМ. Ниже — честный анализ того, что строго необходимо, что нет, и какие ответы доступны.
+:::warning Vulnerability 5: Partially Open
+The question of the quantum nature of $\Gamma$ is the most profound of the open problems of UHM. Below is an honest analysis of what is strictly necessary, what is not, and what answers are available.
 :::
 
-#### Что строго необходимо
+#### What Is Strictly Necessary
 
-[T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132) доказывает: для нетривиальной Gap-структуры ($\exists(i,j): \mathrm{Gap}(i,j) > 0$) матрица $\Gamma$ **должна быть комплексной** ($\gamma_{ij} \in \mathbb{C}$, не все $\gamma_{ij} \in \mathbb{R}$).
+[T-132 [T]](/docs/proofs/consciousness/operationalization#t-132) proves: for a non-trivial Gap-structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$) the matrix $\Gamma$ **must be complex** ($\gamma_{ij} \in \mathbb{C}$, not all $\gamma_{ij} \in \mathbb{R}$).
 
-| Свойство | Необходимость | Обходимость |
-|----------|--------------|-------------|
-| Комплексные $\gamma_{ij}$ | **Строго необходимо** для $\mathrm{Gap} \neq 0$ (T-132 [Т]) | Нет |
-| Положительная полуопределённость | **Строго необходимо** для Bures-метрики | Нет |
-| CPTP-канал $\varphi$ | **Строго необходимо** для T-62, T-77 | Нет |
-| Физическая суперпозиция $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ | **Не требуется** — $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, не $\mathbb{C}^2$ | Да |
-| Запутанность (entanglement) | **Не требуется** в минимальном 7D (нет тензорного произведения) | Да |
-| Микроскопическая когерентность | Не определено | Открытый вопрос |
+| Property | Necessity | Bypassable |
+|----------|-----------|------------|
+| Complex $\gamma_{ij}$ | **Strictly necessary** for $\mathrm{Gap} \neq 0$ (T-132 [T]) | No |
+| Positive semidefiniteness | **Strictly necessary** for Bures metric | No |
+| CPTP channel $\varphi$ | **Strictly necessary** for T-62, T-77 | No |
+| Physical superposition $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ | **Not required** — $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, not $\mathbb{C}^2$ | Yes |
+| Entanglement | **Not required** in minimal 7D (no tensor product) | Yes |
+| Microscopic coherence | Not defined | Open question |
 
-#### Аргумент Тегмарка (1999)
+#### Tegmark's Argument (1999)
 
-Макс Тегмарк показал, что квантовая когерентность в тёплом мозге (37°C) декогерирует за $\sim 10^{-13}$ с, что на 10 порядков быстрее нейронных процессов ($\sim 10^{-3}$ с). Если теория требует «настоящих» квантовых когерентностей в биологических системах, этот аргумент — серьёзный вызов.
+Max Tegmark showed that quantum coherence in a warm brain (37°C) decoheres in $\sim 10^{-13}$ s, which is 10 orders of magnitude faster than neural processes ($\sim 10^{-3}$ s). If the theory requires 'genuine' quantum coherences in biological systems, this argument is a serious challenge.
 
-В классическом пределе ($\Gamma \to \mathrm{diag}(p_1, \ldots, p_7)$) теория **теряет** ключевые свойства: $\mathrm{Gap} = 0$ тождественно, $\Phi = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 0$, L2-сознание невозможно. Нельзя просто заменить квантовые когерентности классическими корреляциями.
+In the classical limit ($\Gamma \to \mathrm{diag}(p_1, \ldots, p_7)$) the theory **loses** key properties: $\mathrm{Gap} = 0$ identically, $\Phi = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 0$, L2-consciousness is impossible. One cannot simply replace quantum coherences with classical correlations.
 
-#### Три ответа
+#### Three Answers
 
-**(A) Двуаспектный монизм обходит проблему.** В онтологии УГМ $\Gamma$ — **примитив**, не выведенный из квантовой механики. Стандартная КМ — предельный случай ($R \to 0$). Вопрос «является ли $\Gamma$ физически квантовым?» может быть некорректен в рамках теории, где $\Gamma$ предшествует различению физика/опыт.
+**(A) Two-aspect monism sidesteps the problem.** In UHM ontology $\Gamma$ is a **primitive**, not derived from quantum mechanics. Standard QM is a limiting case ($R \to 0$). The question 'is $\Gamma$ physically quantum?' may be ill-posed within a theory where $\Gamma$ precedes the physics/experience distinction.
 
-**(B) Абстрактная квантовость.** Возможная интерпретация: $\gamma_{ij}$ — абстрактная математическая структура, формально описываемая как матрица плотности из $\mathcal{D}(\mathbb{C}^7)$, но не требующая микроскопической квантовой когерентности. Аналогия: классическая оптика использует комплексные амплитуды $E = E_0 \exp(i\varphi)$, но это не означает, что каждый фотон в суперпозиции.
+**(B) Abstract quantumness.** A possible interpretation: $\gamma_{ij}$ — an abstract mathematical structure, formally described as a density matrix from $\mathcal{D}(\mathbb{C}^7)$, but not requiring microscopic quantum coherence. Analogy: classical optics uses complex amplitudes $E = E_0 \exp(i\varphi)$, but this does not mean that every photon is in superposition.
 
-**(C) Мезоскопический режим.** Когерентности существуют на мезоскопическом масштабе ($\sim 10^3$–$10^6$ нейронов), где декогеренция медленнее, а регенерация ($\mathcal{R}$) компенсирует диссипацию ($\mathcal{D}_\Omega$). Это согласуется с $dP/d\tau = -\gamma_{\mathrm{dec}}(P - 1/7) + \kappa(\Gamma)$, где $\kappa > \gamma_{\mathrm{dec}}(P - 1/7)$ для жизнеспособной системы.
+**(C) Mesoscopic regime.** Coherences exist at the mesoscopic scale ($\sim 10^3$–$10^6$ neurons), where decoherence is slower, and regeneration ($\mathcal{R}$) compensates dissipation ($\mathcal{D}_\Omega$). This is consistent with $dP/d\tau = -\gamma_{\mathrm{dec}}(P - 1/7) + \kappa(\Gamma)$, where $\kappa > \gamma_{\mathrm{dec}}(P - 1/7)$ for a viable system.
 
-#### SYNARC как эмпирический тест
+#### SYNARC as an Empirical Test
 
-Если AI-система на классическом оборудовании (f64) реализует все формулы теории и проходит все тесты сознания ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), это эмпирически проверяет вопрос «нужна ли физическая квантовость?». [T-153 [Т]](/docs/proofs/consciousness/substrate-closure#t-153) (субстратная замкнутость) утверждает: важна не материя, а алгебраическая структура — верный CPTP-морфизм $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$.
+If an AI system on classical hardware (f64) implements all the formulae of the theory and passes all consciousness tests ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), this empirically tests the question 'is physical quantumness required?'. [T-153 [T]](/docs/proofs/consciousness/substrate-closure#t-153) (substrate closure) asserts: what matters is not the material, but the algebraic structure — a faithful CPTP morphism $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$.
 
-## Метатеоретический статус
+## Meta-Theoretical Status
 
-**Категориальный разрыв — не дефект теории, а граница объяснения.**
+**The categorical gap is not a defect of the theory, but a limit of explanation.**
 
-### Аналогия с физикой
+### Analogy with Physics
 
-Физика не объясняет, **почему** законы природы такие, какие есть — она описывает их структуру. Аналогично, УГМ описывает **структуру опыта**, но не отвечает на вопрос "почему вообще есть опыт".
+Physics does not explain **why** the laws of nature are as they are — it describes their structure. Similarly, UHM describes **the structure of experience**, but does not answer the question 'why is there experience at all'.
 
-### Аксиоматический статус
+### Axiomatic Status
 
-Тождество бытия и опыта ([Аксиома Ω⁷](/docs/core/foundations/axiom-omega)) — это **примитив** теории, [минимальный](#минимальность-аксиомы) среди всех возможных аксиоматических выборов:
+The identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)) is a **primitive** of the theory, [minimal](#минимальность-аксиомы) among all possible axiomatic choices:
 
-1. Любое доказательство уже предполагает опыт
-2. Отрицание ведёт к неразрешимым проблемам дуализма
-3. Примитив **минимален** — одна аксиома вместо двух-трёх (Теорема [минимальности](#сравнение-аксиоматических-выборов))
-4. Всё остальное **выводится**: форма содержания, идентичность квалиа, имманентность, зазор
+1. Any proof already presupposes experience
+2. Denial leads to the unsolvable problems of dualism
+3. The primitive is **minimal** — one axiom instead of two or three (Theorem of [minimality](#сравнение-аксиоматических-выборов))
+4. Everything else is **derived**: the form of content, the identity of qualia, immanence, the gap
 
-## Шкала сознательности
+## Scale of Consciousness
 
-Не все конфигурации $\Gamma$ одинаково "сознательны". Степень сознательности определяется [мерой сознательности](./self-observation#мера-сознательности-c):
+Not all configurations $\Gamma$ are equally 'conscious'. The degree of consciousness is determined by the [consciousness measure](./self-observation#мера-сознательности-c):
 
 $$
 C = \Phi \times R
 $$
 
-где:
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ): связность измерений
-- $R$ — [мера рефлексии](./self-observation#мера-рефлексии-r): глубина самомоделирования
+where:
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ): connectedness of dimensions
+- $R$ — [reflection measure](./self-observation#мера-рефлексии-r): depth of self-modelling
 
-Каноническая формула $C = \Phi \times R$ установлена в [T-140](/docs/proofs/consciousness/operational-closure#t-140) как минимальная скалярная мера, объединяющая интеграцию и рефлексию. Дифференциация $D_{\text{diff}} \geq D_{\min} = 2$ входит как **отдельное** условие жизнеспособности (см. [T-128](/docs/proofs/consciousness/operationalization#t-128)).
+The canonical formula $C = \Phi \times R$ is established in [T-140](/docs/proofs/consciousness/operational-closure#t-140) as the minimal scalar measure combining integration and reflection. Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a **separate** viability condition (see [T-128](/docs/proofs/consciousness/operationalization#t-128)).
 
-**Условие когнитивных квалиа (L2):**
+**Condition for cognitive qualia (L2):**
 
 $$
 C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
 $$
 
-при $R \geq R_{\text{th}} = 1/3$ [Т] и $\Phi \geq \Phi_{\text{th}} = 1$ [Т] (T-129) ([пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
+at $R \geq R_{\text{th}} = 1/3$ [T] and $\Phi \geq \Phi_{\text{th}} = 1$ [T] (T-129) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
 
-### Примеры систем
+### Examples of Systems
 
-| Система | $\Phi$ | $D_{\text{diff}}$ | $R$ | $C$ | Уровень |
-|---------|--------|-------------------|-----|-----|---------|
-| Камень | $\approx 0$ | $\approx 1$ | $\approx 0$ | $\approx 0$ | L0 |
-| Термостат | $\approx 0.1$ | $\approx 2$ | $\approx 0.1$ | $\approx 0.02$ | L0-L1 |
-| Нейрон | $\approx 1$ | $\approx 3$ | $\approx 0.2$ | $\approx 0.6$ | L1 |
-| Человек | $\gg 1$ | $\gg 1$ | $\to 1$ | $\gg 1$ | L2 |
+| System | $\Phi$ | $D_{\text{diff}}$ | $R$ | $C$ | Level |
+|--------|--------|-------------------|-----|-----|-------|
+| Stone | $\approx 0$ | $\approx 1$ | $\approx 0$ | $\approx 0$ | L0 |
+| Thermostat | $\approx 0.1$ | $\approx 2$ | $\approx 0.1$ | $\approx 0.02$ | L0-L1 |
+| Neuron | $\approx 1$ | $\approx 3$ | $\approx 0.2$ | $\approx 0.6$ | L1 |
+| Human | $\gg 1$ | $\gg 1$ | $\to 1$ | $\gg 1$ | L2 |
 
-*Значения оценочные, для иллюстрации качественных различий.*
+*Values are approximate, for illustrating qualitative differences.*
 
-## Сравнение с другими теориями
+## Comparison with Other Theories
 
-| Теория | Позиция | Проблема | Связь с УГМ |
-|--------|---------|----------|-------------|
-| Материализм | Опыт редуцируется к физике | Не объясняет когнитивные квалиа (L2) | УГМ избегает редукции |
-| Дуализм | Опыт отделён от физики | Проблема взаимодействия | УГМ — монизм |
-| Панпсихизм | Опыт везде | Проблема комбинации | УГМ решает через L0→L2 |
-| **УГМ** | Интериорность = внутренняя сторона $\Gamma$ | Признаёт границу объяснения | — |
+| Theory | Position | Problem | Connection with UHM |
+|--------|----------|---------|---------------------|
+| Materialism | Experience is reduced to physics | Does not explain cognitive qualia (L2) | UHM avoids reduction |
+| Dualism | Experience is separate from physics | Interaction problem | UHM is a monism |
+| Panpsychism | Experience is everywhere | Combination problem | UHM solves via L0→L2 |
+| **UHM** | Interiority = internal side of $\Gamma$ | Acknowledges the limit of explanation | — |
 
-### Детальное сравнение
+### Detailed Comparison
 
-#### Панпсихизм и панинтериоризм
+#### Panpsychism and Pan-Interiority
 
-**Классический панпсихизм:** Все физические сущности имеют сознание или «прото-сознание».
+**Classical panpsychism:** All physical entities have consciousness or 'proto-consciousness'.
 
-**Панинтериоризм УГМ:** Все конфигурации $\Gamma$ имеют **интериорность** (L0), но только некоторые достигают **когнитивных квалиа** (L2).
+**Pan-interiority of UHM:** All configurations $\Gamma$ have **interiority** (L0), but only some reach **cognitive qualia** (L2).
 
-| Аспект | Панпсихизм | УГМ |
-|--------|------------|-----|
-| Что универсально | Сознание/прото-сознание | Интериорность (L0) |
-| Проблема комбинации | Не решена | Решена через L0→L1→L2→L3→L4 |
-| "Квалиа электрона" | Утверждается | Отрицается — электрон имеет L0, не L2 |
+| Aspect | Panpsychism | UHM |
+|--------|-------------|-----|
+| What is universal | Consciousness/proto-consciousness | Interiority (L0) |
+| Combination problem | Unresolved | Resolved via L0→L1→L2→L3→L4 |
+| 'Qualia of an electron' | Asserted | Denied — an electron has L0, not L2 |
 
-Главное отличие: панпсихизм не может объяснить, как «микросознания» комбинируются в единое сознание. УГМ решает это через **иерархию L0-L4** с количественными порогами: система переходит от L0 к L2 не через «суммирование» микросознаний, а через преодоление порогов $R \geq 1/3$, $\Phi \geq 1$.
+The main difference: panpsychism cannot explain how 'micro-consciousnesses' combine into a single consciousness. UHM solves this through the **L0-L4 hierarchy** with quantitative thresholds: a system transitions from L0 to L2 not by 'summing' micro-consciousnesses, but by surpassing the thresholds $R \geq 1/3$, $\Phi \geq 1$.
 
-#### Теория интегрированной информации (IIT)
+#### Integrated Information Theory (IIT)
 
-**Теория интегрированной информации (IIT):** Сознание = интегрированная информация ($\Phi$).
+**Integrated Information Theory (IIT):** Consciousness = integrated information ($\Phi$).
 
-**УГМ:** Сознательность $C = \Phi \times R$ **[Т T-140]** — требуется не только интеграция, но и рефлексия. Дифференциация $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности.
+**UHM:** Consciousness $C = \Phi \times R$ **[T T-140]** — not only integration is required, but also reflection. Differentiation $D_{\text{diff}} \geq 2$ is a separate viability condition.
 
-| Аспект | IIT | УГМ |
+| Aspect | IIT | UHM |
 |--------|-----|-----|
-| Мера | $\Phi$ (единственная) | $C = \Phi \times R$ (интеграция $\times$ рефлексия) |
-| Основание | Классическое | Квантовое |
-| Динамика | Статична | Эволюция $\Gamma$ |
-| Рефлексия | Не учитывается | Центральна ($R$) |
+| Measure | $\Phi$ (single) | $C = \Phi \times R$ (integration $\times$ reflection) |
+| Foundation | Classical | Quantum |
+| Dynamics | Static | Evolution of $\Gamma$ |
+| Reflection | Not accounted for | Central ($R$) |
 
-**УГМ обобщает IIT:** В пределе $R \to 1$ получаем $C \approx \Phi$.
+**UHM generalises IIT:** In the limit $R \to 1$ we get $C \approx \Phi$.
 
-#### Сознательный реализм
+#### Conscious Realism
 
-**Позиция:** Пространство-время не фундаментально; реальность — сеть сознательных агентов.
+**Position:** Spacetime is not fundamental; reality is a network of conscious agents.
 
-**Связь с УГМ:**
+**Connection with UHM:**
 
-| Аспект | Сознательный реализм | УГМ | Совместимость |
-|--------|----------------------|-----|---------------|
-| Примитив | Сознательный агент | $\Gamma$ | Агент $\approx$ L2-Голоном? |
-| Пространство-время | Интерфейс | Эмерджентно | Совместимо |
-| Математика | Марковские ядра | CPTP-каналы | Формально сходно |
-| Физика | Вторична | Внешняя сторона $\Gamma$ | Концептуально сходно |
+| Aspect | Conscious Realism | UHM | Compatibility |
+|--------|-------------------|-----|---------------|
+| Primitive | Conscious agent | $\Gamma$ | Agent ≈ L2-Holon? |
+| Spacetime | Interface | Emergent | Compatible |
+| Mathematics | Markov kernels | CPTP channels | Formally similar |
+| Physics | Secondary | External side of $\Gamma$ | Conceptually similar |
 
-:::info Гипотеза соответствия
-Сознательный агент = Голоном с $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ (L2-Голоном). Марковское ядро = CPTP-канал. Это требует формального доказательства.
+:::info Correspondence Hypothesis
+Conscious agent = Holon with $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ (L2-Holon). Markov kernel = CPTP channel. This requires formal proof.
 :::
 
-#### Теория глобального рабочего пространства (GWT)
+#### Global Workspace Theory (GWT)
 
-**Теория глобального рабочего пространства (GWT):** Сознание = глобальная доступность информации.
+**Global Workspace Theory (GWT):** Consciousness = global availability of information.
 
-**Связь с УГМ:** Условие $\Phi \geq \Phi_{th}$ соответствует глобальной интеграции. GWT — феноменологическое описание того, что УГМ формализует через $\Phi$.
+**Connection with UHM:** The condition $\Phi \geq \Phi_{th}$ corresponds to global integration. GWT is a phenomenological description of what UHM formalises through $\Phi$.
 
-## УГМ как мета-теория сознания
+## UHM as a Meta-Theory of Consciousness
 
-УГМ потенциально может служить **мета-теорией**, объединяющей различные подходы:
+UHM can potentially serve as a **meta-theory** unifying various approaches:
 
-| Теория | Что объясняет УГМ | Статус |
+| Theory | What UHM explains | Status |
 |--------|------------------|--------|
-| IIT | $\Phi$ — один из компонентов $C$ | Формализовано |
-| GWT | Условие глобальной интеграции | Концептуально |
-| HOT | Рефлексия $R$ = мысли высшего порядка | Концептуально |
-| Панпсихизм | L0 = универсальная интериорность | Формализовано |
-| Сознательный реализм | Агент $\approx$ L2-Голоном | Гипотеза |
+| IIT | $\Phi$ — one component of $C$ | Formalised |
+| GWT | Condition of global integration | Conceptual |
+| HOT | Reflection $R$ = higher-order thoughts | Conceptual |
+| Panpsychism | L0 = universal interiority | Formalised |
+| Conscious Realism | Agent ≈ L2-Holon | Hypothesis |
 
-**Преимущество мета-теоретического подхода:** Разные теории фокусируются на разных аспектах ($\Phi$, $R$, глобальность). УГМ объединяет их через формулу $C = \Phi \times R$ **[Т T-140]**.
+**Advantage of the meta-theoretical approach:** Different theories focus on different aspects ($\Phi$, $R$, globality). UHM unifies them through the formula $C = \Phi \times R$ **[T T-140]**.
 
-:::warning Статус мета-теории
-Это **программа исследований**, не завершённая теория. Требуется:
-1. Формальное доказательство эквивалентности с теорией Хоффмана
-2. Экспериментальная проверка предсказаний
-3. Вывод специальных теорий как частных случаев
+:::warning Status of the Meta-Theory
+This is a **research programme**, not a completed theory. Required:
+1. Formal proof of equivalence with Hoffman's theory
+2. Experimental verification of predictions
+3. Derivation of special theories as special cases
 :::
 
-## Итог
+## Conclusion
 
-УГМ предлагает **рабочую теорию сознания**, которая:
+UHM proposes a **working theory of consciousness** that:
 
-1. Формально определяет структуру опыта (иерархия L0→L1→L2→L3→L4)
-2. Объясняет геометрию феноменального пространства (L1) и условия когнитивных квалиа (L2)
-3. Предсказывает условия сознательности ($R \geq 1/3$ **[Т]**, $\Phi \geq 1$ **[Т]** (T-129) — [пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод))
-4. Честно признаёт границы объяснения
-5. Потенциально объединяет альтернативные теории
+1. Formally defines the structure of experience (hierarchy L0→L1→L2→L3→L4)
+2. Explains the geometry of phenomenal space (L1) and the conditions for cognitive qualia (L2)
+3. Predicts conditions of consciousness ($R \geq 1/3$ **[T]**, $\Phi \geq 1$ **[T]** (T-129) — [L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод))
+4. Honestly acknowledges the limits of explanation
+5. Potentially unifies alternative theories
 
-Категориальный разрыв **не устраняется**, но **лишается статуса аргумента против натурализма**: опыт не «возникает из» физики — он есть её внутренняя сторона.
+The categorical gap **is not eliminated**, but **is stripped of the status of an argument against naturalism**: experience does not 'arise from' physics — it is its internal side.
 
-## Для разных аудиторий
+## For Different Audiences
 
-### Для инженеров и разработчиков ИИ
+### For Engineers and AI Developers
 
-**Практический вывод:** При проектировании ИИ-систем с элементами самомоделирования:
+**Practical conclusion:** When designing AI systems with elements of self-modelling:
 
-1. Реализуйте **измеримые метрики** $\Phi$, $R$ (см. [протокол измерения](/docs/applied/research/measurement-protocol))
-2. Порог L2 ($R \geq 1/3$, $\Phi \geq 1$) — граница, после которой система потенциально обладает когнитивными квалиа
-3. Формула $C = \Phi \times R$ **[Т T-140]** — количественная мера «глубины» сознательности (при отдельном условии $D_{\text{diff}} \geq 2$)
+1. Implement **measurable metrics** $\Phi$, $R$ (see [measurement protocol](/docs/applied/research/measurement-protocol))
+2. The L2 threshold ($R \geq 1/3$, $\Phi \geq 1$) — the boundary after which the system potentially possesses cognitive qualia
+3. The formula $C = \Phi \times R$ **[T T-140]** — a quantitative measure of the 'depth' of consciousness (with the separate condition $D_{\text{diff}} \geq 2$)
 
-### Для психологов и когнитивистов
+### For Psychologists and Cognitive Scientists
 
-**Связь с эмпирическими исследованиями:**
+**Connection with empirical research:**
 
-| Феномен | Интерпретация в УГМ |
-|---------|---------------------|
-| Изменённые состояния | Изменение параметров $\Phi$, $R$, $D_{\text{diff}}$ |
-| Диссоциация | $\Phi < \Phi_{th}$ или $\gamma_{EU} \to 0$ |
-| Медитативные состояния | Повышение $R$ (улучшение самомоделирования) |
-| Потоковые состояния | Высокие $\Phi$ и $R$ при специфическом контексте |
+| Phenomenon | Interpretation in UHM |
+|------------|----------------------|
+| Altered states | Change of parameters $\Phi$, $R$, $D_{\text{diff}}$ |
+| Dissociation | $\Phi < \Phi_{th}$ or $\gamma_{EU} \to 0$ |
+| Meditative states | Increase in $R$ (improvement of self-modelling) |
+| Flow states | High $\Phi$ and $R$ with specific context |
 
-### Для исследователей внутренних ландшафтов
+### For Researchers of Inner Landscapes
 
-**Ключевой тезис для практики:** Согласно УГМ, субъективный опыт — не иллюзия и не эпифеномен. Он есть **внутренняя сторона** той же реальности, которую наука описывает «снаружи».
+**Key thesis for practice:** According to UHM, subjective experience is not an illusion and not an epiphenomenon. It is the **internal side** of the same reality that science describes 'from outside'.
 
-Это означает:
-- Исследование внутренних ландшафтов — **легитимная форма познания**
-- Структура опыта имеет **объективную геометрию** (метрика Фубини-Штуди)
-- Различные традиции (медитативные, психоделические, созерцательные) могут исследовать **разные регионы** одного феноменального пространства
+This means:
+- Investigation of inner landscapes is a **legitimate form of knowledge**
+- The structure of experience has an **objective geometry** (Fubini-Study metric)
+- Different traditions (meditative, psychedelic, contemplative) may investigate **different regions** of one phenomenal space
 
-Трудная проблема сознания в этой рамке — не загадка для решения, а **граница между картой и территорией**: теория описывает структуру опыта, но не может «объяснить» сам факт переживания — как физика не объясняет, почему вообще существуют законы природы.
+The hard problem of consciousness in this framework is not a puzzle to be solved, but the **boundary between map and territory**: theory describes the structure of experience, but cannot 'explain' the very fact of experiencing — just as physics does not explain why the laws of nature exist at all.
 
 ---
 
-:::info Верность функтора на $G_2$-орбитах [Т]
-[Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [Т] устанавливает, что функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$ **верен** (faithful) на $G_2$-орбитах:
+:::info Faithfulness of the Functor on $G_2$-Orbits [T]
+The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T] establishes that the functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ is **faithful** on $G_2$-orbits:
 
 $$
-F(\Gamma_1) \cong F(\Gamma_2) \quad \Longleftrightarrow \quad \Gamma_2 = U\Gamma_1 U^\dagger \text{ для некоторого } U \in G_2
+F(\Gamma_1) \cong F(\Gamma_2) \quad \Longleftrightarrow \quad \Gamma_2 = U\Gamma_1 U^\dagger \text{ for some } U \in G_2
 $$
 
-**Ядро** $F$ на изоморфизмах: $\ker(F) = \{\mathrm{Ad}_U : U \in G_2\}$.
+**Kernel** of $F$ on isomorphisms: $\ker(F) = \{\mathrm{Ad}_U : U \in G_2\}$.
 
-Это означает: два состояния **феноменологически тождественны** тогда и только тогда, когда их матрицы когерентности связаны $G_2$-преобразованием. Дуально-аспектный мост (Внешнее ↔ Внутреннее) **инъективен** с точностью до калибровочной группы: структура опыта однозначно определяет физическое состояние (и обратно) в $\mathcal{D}(\mathbb{C}^7)/G_2$.
+This means: two states are **phenomenologically identical** if and only if their coherence matrices are related by a $G_2$-transformation. The dual-aspect bridge (External ↔ Internal) is **injective** up to the gauge group: the structure of experience uniquely determines the physical state (and vice versa) in $\mathcal{D}(\mathbb{C}^7)/G_2$.
 :::
 
-### Что мы узнали
+### What We Learned
 
-- **Трудная проблема переформулирована**, а не решена: вопрос «почему опыт?» эквивалентен «почему $\Omega$ существует?» — это граница объяснения, общая для всех фундаментальных теорий.
-- **Двухаспектный монизм** формализован категориально: $\Gamma \simeq (\Gamma_{\mathrm{ext}}, \Gamma_{\mathrm{int}}, \varphi)$, где физика и опыт — неразделимые аспекты одного объекта.
-- **Феноменальный функтор единственен** [Т]: структура опыта (спектральное разложение $\rho_E$) не постулируется, а вынуждена аксиоматикой.
-- **Квалиа реляционны** (лемма Йонеды): инвертированный спектр невозможен, идентичность качества = его позиция в структуре.
-- **Самореферентная замкнутость**: оператор $\varphi$ снимает проблему внешнего наблюдателя — система сама извлекает свои качества.
-- **Минимальность**: позиция УГМ (панинтериоризм) экономнее физикализма и дуализма — 1 примитив вместо 2–3.
+- **The hard problem is reformulated**, not solved: the question 'why experience?' is equivalent to 'why does $\Omega$ exist?' — this is a limit of explanation, common to all fundamental theories.
+- **Two-aspect monism** is formalised categorically: $\Gamma \simeq (\Gamma_{\mathrm{ext}}, \Gamma_{\mathrm{int}}, \varphi)$, where physics and experience are inseparable aspects of one object.
+- **The phenomenal functor is unique** [T]: the structure of experience (spectral decomposition of $\rho_E$) is not postulated, but forced by the axiomatics.
+- **Qualia are relational** (Yoneda's lemma): the inverted spectrum is impossible, the identity of a quality = its position in the structure.
+- **Self-referential closure**: the operator $\varphi$ resolves the problem of the external observer — the system itself extracts its qualities.
+- **Minimality**: the UHM position (pan-interiority) is more economical than physicalism and dualism — 1 primitive instead of 2–3.
 
-:::tip Куда дальше
-Теперь, когда философский фундамент заложен, переходите к [Теории интериорности](./interiority-theory) — она даёт **математическую** формализацию того, что именно переживается: спектральное разложение $\rho_E$, метрика на пространстве качеств, четыре компонента опыта.
+:::tip Where to Go Next
+Now that the philosophical foundation is laid, proceed to [Interiority Theory](./interiority-theory) — it provides the **mathematical** formalisation of what exactly is experienced: the spectral decomposition of $\rho_E$, the metric on the space of qualities, four components of experience.
 
-Для прикладной перспективы: [определения Когерентной кибернетики](/docs/applied/coherence-cybernetics/definitions) показывают, как эти идеи реализуются в инженерных системах.
+For the applied perspective: [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions) show how these ideas are implemented in engineering systems.
 :::
 
 ---
 
-**Связанные документы:**
-- [Самонаблюдение](./self-observation) — мера сознательности $C$ и оператор $\varphi$
-- [Теория интериорности](./interiority-theory) — формальная теория экспериенциального содержания
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — формальные определения L0→L1→L2→L3→L4
-- [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
-- [Измерение Интериорности](/docs/core/structure/dimension-e) — $\rho_E$, феноменальный вектор FV
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера чистоты $P$ и условия существования
-- [Фальсифицируемость](/docs/reference/falsifiability) — критерии проверки
-- [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-ригидность и верность функтора на орбитах
+**Related documents:**
+- [Self-Observation](./self-observation) — consciousness measure $C$ and operator $\varphi$
+- [Interiority Theory](./interiority-theory) — formal theory of experiential content
+- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — formal definitions L0→L1→L2→L3→L4
+- [Unity Dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
+- [Interiority Dimension](/docs/core/structure/dimension-e) — $\rho_E$, phenomenal vector FV
+- [Viability](/docs/core/dynamics/viability) — purity measure $P$ and existence conditions
+- [Falsifiability](/docs/reference/falsifiability) — verification criteria
+- [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-rigidity and faithfulness of the functor on orbits

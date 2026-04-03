@@ -622,7 +622,7 @@ A philosophical zombie is a creature identical to a human in all respects, excep
 
 ### Problem 6.1 ★★ A Physicist Reads an Organizational Audit
 
-Using the [translation table](./interdisciplinary#таблица-перевода), reformulate the following organizational diagnosis in the language of physics:
+Using the [translation table](./interdisciplinary#translation-table), reformulate the following organizational diagnosis in the language of physics:
 
 > "The company suffers from poor inter-departmental coordination (employees do not know what neighboring departments are doing), while each department individually operates effectively."
 
@@ -1034,7 +1034,7 @@ Read the [justification for the number 7](/docs/core/foundations/axiom-omega#о�
 
 1. Read [Introduction](./introduction), [Definitions](./definitions), and [Stability](./stability)
 2. Solve problems 1.1–1.5, 3.1, 4.1, 4.3–4.4
-3. Try the [minimal code](./implementation#быстрый-старт) from the Implementation section
+3. Try the [minimal code](./implementation#quick-start) from the Implementation section
 
 ### Level "Advanced" (★★—★★★)
 

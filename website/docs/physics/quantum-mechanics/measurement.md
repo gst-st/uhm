@@ -524,7 +524,7 @@ $\blacksquare$
 
 | Условие | Формулировка | Следует из |
 |---------|--------------|------------|
-| **NS1** (Локальность $\varphi$) | $\tilde{\varphi}_A = \varphi_A \otimes \text{id}_B$ | [Автономность (A1)](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема) |
+| **NS1** (Локальность $\varphi$) | $\tilde{\varphi}_A = \varphi_A \otimes \text{id}_B$ | [Автономность (A1)](/docs/core/foundations/axiom-septicity#definition-autonomous-sub-system) |
 | **NS2** (Локальность $\kappa$) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\text{Tr}_B(\Gamma_{AB}))$ | [Определение $\kappa_0$](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
 | **NS3** (CPTP $\varphi$) | $\varphi$ — CPTP-канал | [Определение $\varphi$](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 

@@ -1,498 +1,498 @@
 ---
 sidebar_position: 1
 title: Теорема Пуанкаре-Перельмана
-description: Топологическая аналогия для когнитивной эволюции в УГМ
+description: Topological analogy for cognitive evolution in UHM
 ---
 
-# Теорема Пуанкаре-Перельмана и УГМ
+# The Poincaré-Perelman Theorem and UHM
 
-:::warning Статус документа: Структурная аналогия
-Этот документ представляет **структурную аналогию** между топологией Пуанкаре-Перельмана и когнитивной эволюцией в УГМ. Соответствия — **эвристические**, не строгие изоморфизмы. Цель — интуитивное понимание, а не доказательства.
+:::warning Document Status: Structural Analogy
+This document presents a **structural analogy** between the topology of Poincaré-Perelman and cognitive evolution in UHM. The correspondences are **heuristic**, not strict isomorphisms. The goal is intuitive understanding, not proofs.
 
-**Ключевое ограничение:** Теорема Пуанкаре о 3-многообразиях и $S^3$. Пространство состояний УГМ — $\mathbb{C}^7$, дающее $S^{13}$ для чистых состояний. Аналогия **структурная**, не размерная.
+**Key limitation:** The Poincaré theorem concerns 3-manifolds and $S^3$. The UHM state space is $\mathbb{C}^7$, giving $S^{13}$ for pure states. The analogy is **structural**, not dimensional.
 :::
 
-:::note О нотации
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $P_{\text{crit}} = 2/N = 2/7$ — [критическая чистота](/docs/proofs/dynamics/theorem-purity-critical)
-- $\mathcal{D}[\Gamma]$ — [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан)
-- $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $\sigma_{\mathrm{sys}}$ — [тензор напряжений](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений)
+:::note About Notation
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $P_{\text{crit}} = 2/N = 2/7$ — [critical purity](/docs/proofs/dynamics/theorem-purity-critical)
+- $\mathcal{D}[\Gamma]$ — [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан)
+- $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
+- $\sigma_{\mathrm{sys}}$ — [stress tensor](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений)
 :::
 
 ---
 
-## Часть I: Классическая теорема
+## Part I: The Classical Theorem
 
-### Формулировка Пуанкаре
+### Poincaré's Formulation
 
-**Гипотеза Пуанкаре** (доказана Перельманом, 2003):
+**The Poincaré conjecture** (proved by Perelman, 2003):
 
-> Всякое односвязное компактное трёхмерное многообразие без края гомеоморфно трёхмерной сфере $S^3$.
+> Every simply-connected compact three-dimensional manifold without boundary is homeomorphic to the three-dimensional sphere $S^3$.
 
-**Простыми словами:** Если трёхмерное пространство не имеет «дырок» и конечно, оно обязательно является сферой.
+**In plain terms:** If a three-dimensional space has no "holes" and is finite, it must be a sphere.
 
-### Метод Перельмана: поток Риччи
+### Perelman's Method: Ricci Flow
 
-Перельман использовал **поток Риччи**:
+Perelman used the **Ricci flow**:
 
 $$
 \frac{\partial g}{\partial t} = -2 \cdot \mathrm{Ric}(g)
 $$
 
-где:
-- $g$ — риманова метрика (описывает «форму» пространства)
-- $\mathrm{Ric}$ — тензор кривизны Риччи (мера «искривлённости»)
+where:
+- $g$ — Riemannian metric (describes the "shape" of space)
+- $\mathrm{Ric}$ — Ricci curvature tensor (measure of "curvedness")
 
-**Интуиция:** Этот поток «сглаживает» неровности пространства, как тепло выравнивает температуру. Любая форма без дырок постепенно превращается в идеальную сферу.
-
----
-
-## Часть II: Структурная аналогия с УГМ
-
-### Таблица соответствий
-
-| Топология (Пуанкаре) | УГМ | Тип соответствия |
-|----------------------|-----|------------------|
-| Многообразие $M$ | Пространство $\mathcal{D}(\mathcal{H})$ | Структурное |
-| Компактность | $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$ | Точное |
-| Односвязность $\pi_1 = \{e\}$ | Отсутствие логических противоречий | Метафорическое |
-| Сфера $S^n$ | Чистое состояние $P = 1$ | Структурное |
-| Кривизна $\mathrm{Ric}$ | [Тензор напряжений](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений) $\sigma_{\mathrm{sys}}$ | Аналогическое |
-| Поток Риччи | [Эволюция](/docs/core/dynamics/evolution) $d\Gamma/d\tau$ | Структурное |
-
-:::info Примечание
-Пространство матриц плотности $\mathcal{D}(\mathcal{H})$ выпукло и, следовательно, стягиваемо — оно автоматически односвязно ($\pi_1 = \{e\}$) для любой системы. Поэтому соответствие «односвязность ↔ отсутствие противоречий» является метафорическим.
-:::
-
-### Размерностное соответствие
-
-:::info Топология пространства состояний
-Для $\mathcal{H} = \mathbb{C}^N$ (в УГМ $N = 7$):
-- Пространство чистых состояний: $\{|\psi\rangle : \langle\psi|\psi\rangle = 1\} \cong S^{2N-1} = S^{13}$
-- Проективное пространство: $\mathbb{P}(\mathcal{H}) = \mathbb{CP}^{N-1} = \mathbb{CP}^6$
-:::
-
-Аналогия с $S^3$ — **структурная**: как $S^3$ является «целевым состоянием» для односвязных 3-многообразий, так чистое состояние ($P = 1$) является аттрактором для когерентных систем.
+**Intuition:** This flow "smooths out" the irregularities of space, the way heat equalizes temperature. Any shape without holes gradually turns into a perfect sphere.
 
 ---
 
-## Часть II.b: Строгие математические основания
+## Part II: Structural Analogy with UHM
 
-Ряд ключевых аспектов аналогии опирается на **доказанные теоремы** современной квантовой геометрии.
+### Correspondence Table
 
-### Стратификация $\mathcal{D}(\mathbb{C}^7)$ по рангу
+| Topology (Poincaré) | UHM | Type of correspondence |
+|---------------------|-----|------------------------|
+| Manifold $M$ | Space $\mathcal{D}(\mathcal{H})$ | Structural |
+| Compactness | $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$ | Exact |
+| Simply-connectedness $\pi_1 = \{e\}$ | Absence of logical contradictions | Metaphorical |
+| Sphere $S^n$ | Pure state $P = 1$ | Structural |
+| Curvature $\mathrm{Ric}$ | [Stress tensor](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений) $\sigma_{\mathrm{sys}}$ | Analogical |
+| Ricci flow | [Evolution](/docs/core/dynamics/evolution) $d\Gamma/d\tau$ | Structural |
 
-**Определение** [О]: Пространство состояний допускает **стратификацию по рангу**:
+:::info Note
+The space of density matrices $\mathcal{D}(\mathcal{H})$ is convex and therefore contractible — it is automatically simply-connected ($\pi_1 = \{e\}$) for any system. Therefore, the correspondence "simply-connectedness ↔ absence of contradictions" is metaphorical.
+:::
+
+### Dimensional Correspondence
+
+:::info Topology of the State Space
+For $\mathcal{H} = \mathbb{C}^N$ (in UHM $N = 7$):
+- Space of pure states: $\{|\psi\rangle : \langle\psi|\psi\rangle = 1\} \cong S^{2N-1} = S^{13}$
+- Projective space: $\mathbb{P}(\mathcal{H}) = \mathbb{CP}^{N-1} = \mathbb{CP}^6$
+:::
+
+The analogy with $S^3$ is **structural**: just as $S^3$ is the "target state" for simply-connected 3-manifolds, the pure state ($P = 1$) is the attractor for coherent systems.
+
+---
+
+## Part II.b: Rigorous Mathematical Foundations
+
+A number of key aspects of the analogy rest on **proven theorems** of modern quantum geometry.
+
+### Stratification of $\mathcal{D}(\mathbb{C}^7)$ by Rank
+
+**Definition** [D]: The state space admits a **rank stratification**:
 
 $$
 \mathcal{D}(\mathbb{C}^7) = \bigsqcup_{k=1}^{7} \mathcal{D}_k^\circ, \qquad \mathcal{D}_k^\circ := \{\rho \in \mathcal{D}(\mathbb{C}^7) : \mathrm{rank}\,\rho = k\}
 $$
 
-| Страта | $\dim_\mathbb{R}$ | Топология | Роль в УГМ |
-|--------|-----------|-----------|-------------|
-| $\mathcal{D}_7^\circ$ (интерьор) | 48 | Открытое выпуклое многообразие | Жизнеспособные состояния ($P > 1/7$) |
-| $\mathcal{D}_6^\circ$ | 40 | Подмногообразие коразмерности 8 | Граница сингулярности Хюбнера |
-| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 12 | Компактное кэлерово многообразие | Чистые состояния, $P = 1$ |
+| Stratum | $\dim_\mathbb{R}$ | Topology | Role in UHM |
+|---------|-----------|-----------|-------------|
+| $\mathcal{D}_7^\circ$ (interior) | 48 | Open convex manifold | Viable states ($P > 1/7$) |
+| $\mathcal{D}_6^\circ$ | 40 | Submanifold of codimension 8 | Hübner singularity boundary |
+| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 12 | Compact Kähler manifold | Pure states, $P = 1$ |
 
-**Топологический факт [Т]:** $\mathcal{D}_+(\mathbb{C}^7) := \mathcal{D}_7^\circ$ выпукло и стягиваемо: $\pi_k(\mathcal{D}_+) = 0$ для всех $k \geq 1$. Это подтверждает и уточняет примечание из §2 (таблица соответствий): односвязность $\mathcal{D}_+$ выполнена **тривиально**, вне зависимости от когнитивного содержания.
+**Topological fact [T]:** $\mathcal{D}_+(\mathbb{C}^7) := \mathcal{D}_7^\circ$ is convex and contractible: $\pi_k(\mathcal{D}_+) = 0$ for all $k \geq 1$. This confirms and refines the note from §2 (correspondence table): the simple-connectedness of $\mathcal{D}_+$ holds **trivially**, independent of cognitive content.
 
-### Теорема Хюбнера о скалярной кривизне метрики Бюреса [Т]
+### Hübner's Theorem on the Scalar Curvature of the Bures Metric [T]
 
-:::info Теорема (Hübner 1999; arXiv:quant-ph/9810012)
-Пусть $g_{\mathrm{B}}$ — метрика Бюреса ($\equiv$ SLD-метрика квантовой информации Фишера) на $\mathcal{D}_+(\mathbb{C}^N)$. Тогда:
+:::info Theorem (Hübner 1999; arXiv:quant-ph/9810012)
+Let $g_{\mathrm{B}}$ be the Bures metric ($\equiv$ SLD quantum Fisher information metric) on $\mathcal{D}_+(\mathbb{C}^N)$. Then:
 
-1. $g_{\mathrm{B}}$ — гладкая риманова метрика на открытом многообразии $\mathcal{D}_+(\mathbb{C}^N)$
-2. **Нижняя оценка:** $\displaystyle R_{\mathrm{scal}}(\rho) \geq \frac{N(N-1)}{8}$ для всех $\rho \in \mathcal{D}_+(\mathbb{C}^N)$
-3. **Сингулярность на границе:** $R_{\mathrm{scal}}(\rho) \to +\infty$ при $\mathrm{rank}(\rho) \to N-1$ (т.е. при $\rho \to \partial\mathcal{D}_+$)
+1. $g_{\mathrm{B}}$ is a smooth Riemannian metric on the open manifold $\mathcal{D}_+(\mathbb{C}^N)$
+2. **Lower bound:** $\displaystyle R_{\mathrm{scal}}(\rho) \geq \frac{N(N-1)}{8}$ for all $\rho \in \mathcal{D}_+(\mathbb{C}^N)$
+3. **Singularity at the boundary:** $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to N-1$ (i.e., as $\rho \to \partial\mathcal{D}_+$)
 :::
 
-**Следствие для $N = 7$ [Т]:** В интерьоре $\mathcal{D}_+(\mathbb{C}^7)$ скалярная кривизна $R_{\mathrm{scal}} \geq 21/4 \approx 5.25$. Она расходится при $\rho \to \mathcal{D}_6^\circ$. Это — **строгое математическое обоснование** необходимости хирургии при rank-collapse: сингулярность кривизны Бюреса является квантовым аналогом перешейка в потоке Риччи.
+**Corollary for $N = 7$ [T]:** In the interior $\mathcal{D}_+(\mathbb{C}^7)$ the scalar curvature $R_{\mathrm{scal}} \geq 21/4 \approx 5.25$. It diverges as $\rho \to \mathcal{D}_6^\circ$. This is the **rigorous mathematical justification** for the necessity of surgery at rank-collapse: the Bures curvature singularity is the quantum analogue of the neck in Ricci flow.
 
-### Теорема Карлена–Масса: линдбладовская динамика — градиентный поток [Т]
+### Carlen–Maas Theorem: Lindblad Dynamics as a Gradient Flow [T]
 
-:::info Теорема (Carlen–Maas 2017; arXiv:1609.01254)
-Пусть $\mathcal{L}_\sigma$ — примитивный ГКСЛ-генератор (оператор Линдблада) с **КМС-симметрией** относительно $\sigma$:
+:::info Theorem (Carlen–Maas 2017; arXiv:1609.01254)
+Let $\mathcal{L}_\sigma$ be a primitive GKSL generator (Lindblad operator) with **KMS symmetry** with respect to $\sigma$:
 
 $$
 \langle A,\, \mathcal{L}_\sigma(B)\rangle_\sigma = \langle \mathcal{L}_\sigma(A),\, B\rangle_\sigma, \qquad \langle A,B\rangle_\sigma := \mathrm{Tr}\!\left(A^\dagger \sigma^{1/2} B \sigma^{1/2}\right)
 $$
 
-Эволюция $\partial_t \rho = \mathcal{L}_\sigma(\rho)$ является **градиентным потоком квантовой относительной энтропии**
+The evolution $\partial_t \rho = \mathcal{L}_\sigma(\rho)$ is the **gradient flow of quantum relative entropy**
 
 $$
 D(\rho\|\sigma) = \mathrm{Tr}(\rho\log\rho) - \mathrm{Tr}(\rho\log\sigma)
 $$
 
-относительно квантовой 2-метрики Васерштейна $\mathcal{W}_\sigma$ на $\mathcal{D}_+(\mathbb{C}^N)$.
+with respect to the quantum 2-Wasserstein metric $\mathcal{W}_\sigma$ on $\mathcal{D}_+(\mathbb{C}^N)$.
 
-**Следствие:** Кривизна Риччи $(\mathcal{D}_+, \mathcal{W}_\sigma)$ удовлетворяет $\kappa(\mathcal{L}_\sigma) \geq \lambda_1(\mathcal{L}_\sigma) > 0$.
+**Corollary:** Ricci curvature of $(\mathcal{D}_+, \mathcal{W}_\sigma)$ satisfies $\kappa(\mathcal{L}_\sigma) \geq \lambda_1(\mathcal{L}_\sigma) > 0$.
 :::
 
-Этот результат **повышает статус аналогии**: линдбладовская динамика УГМ не просто «напоминает» поток Риччи структурно — она сама является градиентным потоком в риманновой структуре (метрика Васерштейна).
+This result **elevates the status of the analogy**: the Lindblad dynamics of UHM does not merely "resemble" Ricci flow structurally — it itself is a gradient flow in a Riemannian structure (the Wasserstein metric).
 
-**Уточнённая сравнительная таблица [Т/И]:**
+**Refined comparison table [T/I]:**
 
-| | Поток Риччи–Перельмана | КМС-симметричный Линдблад |
+| | Ricci–Perelman Flow | KMS-symmetric Lindblad |
 |---|---|---|
-| Пространство | $(M^n, g(t))$ — метрики многообразия | $(\mathcal{D}_+(\mathbb{C}^7), \mathcal{W}_\sigma)$ |
-| Функционал | $\mathcal{F}(g) = \int(R + |\nabla f|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — кв. относительная энтропия |
-| Поток | $\partial_t g = -2\,\mathrm{Ric}(g)$ | $\partial_t\rho = \mathcal{L}_\sigma(\rho)$ |
-| Кривизна | Может быть $< 0$; хирургия при $\|\mathrm{Ric}\| \to \infty$ | $\kappa \geq \lambda_1 > 0$ **в интерьоре** [Т] |
-| Хирургия | При перешейках | При rank-collapse: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [Т, Хюбнер] |
-| Аттрактор | Метрика постоянной кривизны / $S^n$ | $\sigma$ (энтропийный минимум) |
+| Space | $(M^n, g(t))$ — metrics on a manifold | $(\mathcal{D}_+(\mathbb{C}^7), \mathcal{W}_\sigma)$ |
+| Functional | $\mathcal{F}(g) = \int(R + |\nabla f|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — quantum relative entropy |
+| Flow | $\partial_t g = -2\,\mathrm{Ric}(g)$ | $\partial_t\rho = \mathcal{L}_\sigma(\rho)$ |
+| Curvature | Can be $< 0$; surgery when $\|\mathrm{Ric}\| \to \infty$ | $\kappa \geq \lambda_1 > 0$ **in the interior** [T] |
+| Surgery | At necks | At rank-collapse: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [T, Hübner] |
+| Attractor | Constant curvature metric / $S^n$ | $\sigma$ (entropy minimum) |
 
-:::warning Ключевое различие [Т]
-**Поток Риччи** изменяет метрику $g(t)$ на **фиксированном** многообразии $M^n$ и может развивать сингулярности.
+:::warning Key Distinction [T]
+**Ricci flow** changes the metric $g(t)$ on a **fixed** manifold $M^n$ and can develop singularities.
 
-**Линдблад-поток** изменяет состояние $\rho(t)$ в **фиксированном** метрическом пространстве $(\mathcal{D}_+, \mathcal{W}_\sigma)$ с **положительной кривизной**.
+**Lindblad flow** changes the state $\rho(t)$ in a **fixed** metric space $(\mathcal{D}_+, \mathcal{W}_\sigma)$ with **positive curvature**.
 
-Следствие: в интерьоре $\mathcal{D}_+(\mathbb{C}^7)$ **нет** топологических препятствий сходимости. Хирургия нужна **только** при rank-collapse $\rho \to \partial\mathcal{D}_+$.
+Consequence: in the interior $\mathcal{D}_+(\mathbb{C}^7)$ there are **no** topological obstacles to convergence. Surgery is needed **only** at rank-collapse $\rho \to \partial\mathcal{D}_+$.
 :::
 
 ---
 
-## Часть III: P_crit как топологический порог
+## Part III: P_crit as a Topological Threshold
 
-:::tip Ключевой инсайт
-Порог [$P_{\text{crit}} = 2/N$](/docs/proofs/dynamics/theorem-purity-critical) в УГМ играет роль, аналогичную условию односвязности в теореме Пуанкаре: это **минимальное условие**, при котором система приобретает структурную идентичность.
+:::tip Key Insight
+The threshold [$P_{\text{crit}} = 2/N$](/docs/proofs/dynamics/theorem-purity-critical) in UHM plays a role analogous to the simply-connectedness condition in the Poincaré theorem: it is the **minimal condition** under which a system acquires structural identity.
 :::
 
-### Аналогия: два типа порогов
+### Analogy: Two Types of Thresholds
 
-| Теорема Пуанкаре | Теорема о критической чистоте |
-|------------------|-------------------------------|
-| **Условие:** $\pi_1(M) = \{e\}$ (нет дырок) | **Условие:** $P > 2/N$ (сигнал > шум) |
-| **Следствие:** $M \cong S^3$ (сфера) | **Следствие:** Структура различима |
-| **Метод:** Поток Риччи → сглаживание | **Метод:** Регенерация → когерентность |
+| Poincaré Theorem | Theorem on Critical Purity |
+|------------------|----------------------------|
+| **Condition:** $\pi_1(M) = \{e\}$ (no holes) | **Condition:** $P > 2/N$ (signal > noise) |
+| **Consequence:** $M \cong S^3$ (sphere) | **Consequence:** Structure is distinguishable |
+| **Method:** Ricci flow → smoothing | **Method:** Regeneration → coherence |
 
-### Геометрический смысл P_crit
+### Geometric Meaning of P_crit
 
-В представлении Блоха матрица когерентности $\Gamma$ параметризуется:
+In the Bloch representation the coherence matrix $\Gamma$ is parametrized:
 
 $$
 \Gamma = \frac{I_N}{N} + \frac{1}{2} \sum_{i} r_i \lambda_i
 $$
 
-где $\mathbf{r}$ — «вектор Блоха» (отклонение от хаоса).
+where $\mathbf{r}$ — the "Bloch vector" (deviation from chaos).
 
-**Критическое условие:**
+**Critical condition:**
 
 $$
 |\mathbf{r}|^2 = 2\left(P - \frac{1}{N}\right) \geq \frac{2}{N}
 $$
 
-**Интерпретация:** При $P = P_{\text{crit}} = 2/N$ длина вектора $|\mathbf{r}|$ равна «радиусу шума». Это **минимальное отклонение**, при котором структура становится различимой.
+**Interpretation:** At $P = P_{\text{crit}} = 2/N$ the vector length $|\mathbf{r}|$ equals the "noise radius". This is the **minimal deviation** at which structure becomes distinguishable.
 
 ```mermaid
 graph LR
-    subgraph "Пространство состояний"
-        C["🔵 Центр: I/N<br/>(хаос, P = 1/N)"]
-        R["🟡 Граница P_crit<br/>(порог различимости)"]
-        S["🟢 Чистое состояние<br/>(P = 1)"]
+    subgraph "State space"
+        C["🔵 Center: I/N<br/>(chaos, P = 1/N)"]
+        R["🟡 Boundary P_crit<br/>(distinguishability threshold)"]
+        S["🟢 Pure state<br/>(P = 1)"]
     end
     C -->|"r = 0"| R
-    R -->|"r растёт"| S
+    R -->|"r grows"| S
 ```
 
 ---
 
-## Часть IV: Фактор 2 — глубокая связь
+## Part IV: The Factor of 2 — A Deep Connection
 
-### В теореме Пуанкаре
+### In the Poincaré Theorem
 
-Поток Риччи: $\frac{\partial g}{\partial t} = \mathbf{-2} \cdot \mathrm{Ric}(g)$
+Ricci flow: $\frac{\partial g}{\partial t} = \mathbf{-2} \cdot \mathrm{Ric}(g)$
 
-Фактор 2 — конвенциональный выбор, упрощающий эволюцию скалярной кривизны.
+The factor of 2 is a conventional choice that simplifies the evolution of scalar curvature.
 
-:::note Математическое уточнение
-Стандартный поток Риччи **не сохраняет объём**. Для положительной кривизны объём убывает. Существует *нормализованный* поток Риччи с дополнительным членом, который сохраняет объём, но это другое уравнение.
+:::note Mathematical Clarification
+The standard Ricci flow **does not preserve volume**. For positive curvature the volume decreases. There exists a *normalized* Ricci flow with an additional term that preserves volume, but that is a different equation.
 :::
 
-### В теореме о критической чистоте
+### In the Theorem on Critical Purity
 
 $P_{\text{crit}} = \frac{\mathbf{2}}{N}$
 
-Фактор 2 появляется из принципа **«удвоения структуры»**: чтобы быть различимым от хаоса, нужно иметь структуру **в два раза больше** базового шума.
+The factor of 2 arises from the **"structure doubling" principle**: to be distinguishable from chaos, the structure must be **twice** the baseline noise.
 
-### Фактор 2: совпадение, не связь
+### The Factor of 2: Coincidence, Not Connection
 
-:::warning Совпадение, не доказанная связь
-Фактор 2 в потоке Риччи $\partial_t g = -\mathbf{2}\,\mathrm{Ric}$ — **конвенциональный** (Гамильтон, 1982). Замена на $-c\,\mathrm{Ric}$ даёт эквивалентный поток с перепараметризацией $t' = (c/2)t$.
+:::warning Coincidence, Not a Proven Connection
+The factor of 2 in Ricci flow $\partial_t g = -\mathbf{2}\,\mathrm{Ric}$ is **conventional** (Hamilton, 1982). Replacing it with $-c\,\mathrm{Ric}$ gives an equivalent flow with reparametrization $t' = (c/2)t$.
 
-Фактор 2 в $P_{\text{crit}} = \mathbf{2}/N$ — **алгебраический** ($\|\Gamma - I/N\|_F^2 > \|I/N\|_F^2$).
+The factor of 2 in $P_{\text{crit}} = \mathbf{2}/N$ is **algebraic** ($\|\Gamma - I/N\|_F^2 > \|I/N\|_F^2$).
 
-Эти два «2» **не связаны математически**. Совпадение числовое, не структурное.
+These two "2"s are **not mathematically related**. The coincidence is numerical, not structural.
 :::
 
 ---
 
-## Часть V: Спектральная аналогия
+## Part V: Spectral Analogy
 
-### Доминирование моды при P_crit
+### Mode Dominance at P_crit
 
-При $P = P_{\text{crit}} = 2/N$ оптимальный спектр $\Gamma$:
+At $P = P_{\text{crit}} = 2/N$ the optimal spectrum of $\Gamma$:
 
 $$
 \lambda_{\max} = \frac{1 + \sqrt{N-1}}{N} \approx 0.493 \approx \frac{1}{2}
 $$
 
-**Смысл:** Доминирующая мода захватывает **почти половину** когерентности. Это минимальное «большинство», необходимое для идентичности.
+**Meaning:** The dominant mode captures **almost half** of the coherence. This is the minimal "majority" needed for identity.
 
-### Аналогия с постоянной кривизной
+### Analogy with Constant Curvature
 
-| Поток Риччи | Спектр Γ |
-|-------------|----------|
-| Сходится к постоянной кривизне | Сходится к спектру с доминантой |
-| Все направления эквивалентны | Одно направление доминирует |
-| Сфера: максимальная симметрия | Чистое состояние: λ₁ = 1 |
+| Ricci Flow | Spectrum of Γ |
+|------------|---------------|
+| Converges to constant curvature | Converges to a spectrum with a dominant mode |
+| All directions are equivalent | One direction dominates |
+| Sphere: maximal symmetry | Pure state: λ₁ = 1 |
 
-:::warning Инверсия симметрии
-Поток Риччи увеличивает симметрию (сходимость к сфере с максимальной $SO(3)$-симметрией). Эволюция УГМ к чистому состоянию **уменьшает** симметрию (от $U(7)$ к $U(1) \times U(6)$). Это фундаментальное различие: аналогия структурная, но направление симметрии — противоположное.
+:::warning Symmetry Inversion
+Ricci flow increases symmetry (convergence to a sphere with maximal $SO(3)$-symmetry). UHM evolution toward a pure state **decreases** symmetry (from $U(7)$ to $U(1) \times U(6)$). This is a fundamental difference: the analogy is structural, but the direction of symmetry is opposite.
 :::
 
-### Правило 49%
+### The 49% Rule
 
-:::tip Неочевидный вывод
-При пороге жизнеспособности доминирующее собственное значение составляет ≈49% — **почти половина, но не больше**.
+:::tip Non-Obvious Conclusion
+At the viability threshold the dominant eigenvalue is ≈49% — **almost half, but not more**.
 
-Это напоминает:
-- Теорию голосования (простое большинство)
-- Теорему Перрона-Фробениуса (доминирующий собственный вектор)
-- Квантовую декогеренцию (einselection)
+This resembles:
+- Voting theory (simple majority)
+- The Perron-Frobenius theorem (dominant eigenvector)
+- Quantum decoherence (einselection)
 :::
 
 ---
 
-## Часть VI: Сингулярности и кризисы
+## Part VI: Singularities and Crises
 
-### Сингулярности потока Риччи
+### Ricci Flow Singularities
 
-В процессе потока Риччи многообразие может образовывать **перешейки** (necks), стягивающиеся в точки — **сингулярности**.
+During the Ricci flow a manifold can form **necks** that contract to points — **singularities**.
 
-Перельман разработал **хирургию**: разрезать перешеек, заклеить «сферическими шапочками» и продолжить поток.
+Perelman developed **surgery**: cut the neck, cap both ends with "spherical caps," and continue the flow.
 
-### Аналогия: когнитивные кризисы
+### Analogy: Cognitive Crises
 
-| Топологическая сингулярность | Когнитивный аналог |
-|------------------------------|-------------------|
+| Topological singularity | Cognitive analogue |
+|-------------------------|-------------------|
 | $\mathrm{Ric} \to \infty$ | $\|\sigma_{\mathrm{sys}}\|_\infty \to 1$ |
-| Перешеек стягивается | Старая модель несовместима с данными |
-| Хирургия | Реструктуризация убеждений |
-| Сферическая шапочка | Новая согласованная подсистема |
+| Neck contracts | Old model is incompatible with data |
+| Surgery | Restructuring of beliefs |
+| Spherical cap | New consistent subsystem |
 
-**Формально:**
+**Formally:**
 
 $$
 \|\sigma_{\mathrm{sys}}\|_\infty \to 1 \implies P \to P_{\text{crit}}
 $$
 
-(следствие определения тензора напряжений — см. [КК: определения](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений))
+(consequence of the definition of the stress tensor — see [CC: Definitions](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений))
 
-**Математическое обоснование через теорему Хюбнера [Т]:** Скалярная кривизна Бюреса $R_{\mathrm{scal}}(\rho) \to +\infty$ при $\mathrm{rank}(\rho) \to 6$ (Часть II.b) — строгий аналог условия срабатывания хирургии Перельмана. Регуляризация $\Gamma \mapsto (\Gamma + \varepsilon I/7)/(1+\varepsilon)$ возвращает $\rho$ в интерьор $\mathcal{D}_+(\mathbb{C}^7)$, восстанавливая конечную кривизну и гарантии теоремы Карлена–Масса.
+**Mathematical justification via the Hübner theorem [T]:** The Bures scalar curvature $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to 6$ (Part II.b) — a rigorous analogue of the condition triggering Perelman's surgery. The regularization $\Gamma \mapsto (\Gamma + \varepsilon I/7)/(1+\varepsilon)$ returns $\rho$ to the interior $\mathcal{D}_+(\mathbb{C}^7)$, restoring finite curvature and the guarantees of the Carlen–Maas theorem.
 
-:::note Связь с теоремами Гёделя
-Сингулярности в L-измерении могут соответствовать **гёделевым пределам** — утверждениям, недоказуемым в текущей аксиоматике. «Хирургия» — расширение аксиоматики через O-измерение. См. [Гёдель и полнота УГМ](/docs/core/foundations/consequences#10-теоремы-гёделя-и-полнота-угм).
+:::note Connection to Gödel's Theorems
+Singularities in the L-dimension may correspond to **Gödelian limits** — statements unprovable within the current axiomatics. "Surgery" is the extension of the axiomatics via the O-dimension. See [Gödel and the completeness of UHM](/docs/core/foundations/consequences#10-теоремы-гёделя-и-полнота-угм).
 :::
 
 ---
 
-## Часть VII: Интуитивные выводы
+## Part VII: Intuitive Conclusions
 
-### Очевидные выводы
+### Obvious Conclusions
 
-1. **Целостность — это сфера**
-   - Как сфера — простейшая замкнутая форма без дефектов
-   - Так чистое состояние — простейшее состояние без внутренних противоречий
+1. **Wholeness is a sphere**
+   - As a sphere is the simplest closed form without defects
+   - So a pure state is the simplest state without internal contradictions
 
-2. **Эволюция — это сглаживание**
-   - Как поток Риччи сглаживает неровности
-   - Так регенерация увеличивает когерентность
+2. **Evolution is smoothing**
+   - As Ricci flow smooths out irregularities
+   - So regeneration increases coherence
 
-3. **Противоречия — это дырки**
-   - Как нестягиваемые петли препятствуют сферичности
-   - Так логические парадоксы препятствуют интеграции
+3. **Contradictions are holes**
+   - As non-contractible loops prevent sphericity
+   - So logical paradoxes prevent integration
 
-### Неочевидные выводы
+### Non-Obvious Conclusions
 
-:::info 1. Порог существования универсален
-$P_{\text{crit}} = 2/N$ — не «подогнанный параметр», а фундаментальная константа, аналогичная топологическим инвариантам. Она определяет **границу между бытием и небытием** структуры.
+:::info 1. The Existence Threshold Is Universal
+$P_{\text{crit}} = 2/N$ is not a "fitted parameter" but a fundamental constant, analogous to topological invariants. It defines the **boundary between being and non-being** of structure.
 :::
 
-:::info 2. Кризисы необходимы
-Как поток Риччи неизбежно проходит через сингулярности, так когнитивная эволюция неизбежно проходит через кризисы. **Плавное развитие невозможно** — необходима «хирургия» (переструктурирование).
+:::info 2. Crises Are Necessary
+Just as Ricci flow inevitably passes through singularities, so cognitive evolution inevitably passes through crises. **Smooth development is impossible** — "surgery" (restructuring) is necessary.
 :::
 
-:::info 3. Половина — это минимум
-Доминирующая мода при $P_{\text{crit}}$ захватывает ≈49%. Это **минимальное большинство**, необходимое для идентичности. Сознание начинается, когда одна «мысль» становится громче половины всего шума.
+:::info 3. Half Is the Minimum
+The dominant mode at $P_{\text{crit}}$ captures ≈49%. This is the **minimal majority** needed for identity. Consciousness begins when one "thought" becomes louder than half of all noise.
 :::
 
-:::info 4. Размерность 7 — топологически оптимальна
-Минимальная размерность $N = 7$ (см. [Теорему S](/docs/proofs/minimality/theorem-minimality-7), [октонионное обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)) обеспечивает:
-- Достаточно места для «хирургии» (реструктуризации)
-- Достаточно низкий порог ($P_{\text{crit}} \approx 0.29$) для гибкости
-- Достаточно высокий порог для устойчивости к шуму
+:::info 4. Dimension 7 Is Topologically Optimal
+The minimal dimension $N = 7$ (see [Theorem S](/docs/proofs/minimality/theorem-minimality-7), [octonion justification](/docs/core/foundations/axiom-omega#октонионная-структура)) provides:
+- Enough room for "surgery" (restructuring)
+- A sufficiently low threshold ($P_{\text{crit}} \approx 0.29$) for flexibility
+- A sufficiently high threshold for noise robustness
 :::
 
 ---
 
-## Часть VIII: Философские интерпретации
+## Part VIII: Philosophical Interpretations
 
-:::warning Статус раздела
-Следующие утверждения — **философские экстраполяции**, не научные выводы. Они предполагают, что структурная аналогия отражает глубокую связь.
+:::warning Section Status
+The following statements are **philosophical extrapolations**, not scientific conclusions. They assume that the structural analogy reflects a deep connection.
 :::
 
-### Целостность как математический аттрактор
+### Wholeness as a Mathematical Attractor
 
-**Интерпретация:** Состояние максимальной когерентности ($P = 1$) — не «награда» или «цель», а естественный результат эволюции системы без внутренних противоречий.
+**Interpretation:** The state of maximal coherence ($P = 1$) is not a "reward" or "goal," but the natural result of a system's evolution without internal contradictions.
 
-**Условие:** Отсутствие «топологических дефектов» (противоречий).
+**Condition:** Absence of "topological defects" (contradictions).
 
-### Противоречия как препятствия
+### Contradictions as Obstacles
 
-**Интерпретация:** Логические противоречия (самообман, когнитивный диссонанс) создают «дыры» в структуре сознания, препятствующие эволюции.
+**Interpretation:** Logical contradictions (self-deception, cognitive dissonance) create "holes" in the structure of consciousness, impeding evolution.
 
-**Спекулятивно:** Если *гипотетически* ассоциировать с $\Gamma$ многообразие $M_\Gamma$ (не определённое формально в УГМ), то $\pi_1(M_\Gamma) \neq \{e\}$ означало бы, что система может «застрять» в локальном минимуме. Это — мотивирующая метафора, не строгое утверждение.
+**Speculatively:** If we *hypothetically* associate a manifold $M_\Gamma$ (not formally defined in UHM) with $\Gamma$, then $\pi_1(M_\Gamma) \neq \{e\}$ would mean that the system can "get stuck" in a local minimum. This is a motivating metaphor, not a strict statement.
 
-### Кризисы как необходимость
+### Crises as Necessity
 
-**Интерпретация:** Плавная эволюция может быть невозможна. Сингулярности (кризисы) — точки, где старая структура должна быть «разрезана» для продолжения эволюции.
+**Interpretation:** Smooth evolution may be impossible. Singularities (crises) are points where the old structure must be "cut" for evolution to continue.
 
-**Аналогия:** Хирургия Перельмана ↔ Реструктуризация убеждений.
+**Analogy:** Perelman's surgery ↔ Restructuring of beliefs.
 
 ---
 
-## Часть IX: Ограничения аналогии
+## Part IX: Limitations of the Analogy
 
-:::warning Критические различия
+:::warning Critical Differences
 
-| Аспект | Теорема Пуанкаре | УГМ | Статус |
+| Aspect | Poincaré Theorem | UHM | Status |
 |--------|------------------|-----|--------|
-| Размерность | $n = 3$ | $N = 7$ (комплексное) | Структурная аналогия |
-| Объект | Многообразие $M$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Различные объекты |
-| Эволюция | Поток на метрике $g$ | Линдблад на $\Gamma$ — градиентный поток в $\mathcal{W}_\sigma$ | Оба — градиентные потоки [Т, Карлен–Масс] |
-| Односвязность | $\pi_1(M) = \{e\}$ | $\pi_1(\mathcal{D}_+) = \{0\}$ (выпуклость) | Тривиально выполнено [Т] |
-| Сингулярности | При $\|\mathrm{Ric}\| \to \infty$ (перешейки) | При rank-collapse: $R_{\mathrm{scal}}^{\mathrm{B}} \to +\infty$ | Аналогия обоснована [Т, Хюбнер] |
-| Аттрактор | $S^3$ | $\mathbb{CP}^6 \cong \mathcal{D}_1^\circ$ (чистые состояния) | Структурная аналогия |
+| Dimension | $n = 3$ | $N = 7$ (complex) | Structural analogy |
+| Object | Manifold $M$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Different objects |
+| Evolution | Flow on metric $g$ | Lindblad on $\Gamma$ — gradient flow in $\mathcal{W}_\sigma$ | Both are gradient flows [T, Carlen–Maas] |
+| Simply-connectedness | $\pi_1(M) = \{e\}$ | $\pi_1(\mathcal{D}_+) = \{0\}$ (convexity) | Trivially satisfied [T] |
+| Singularities | When $\|\mathrm{Ric}\| \to \infty$ (necks) | At rank-collapse: $R_{\mathrm{scal}}^{\mathrm{B}} \to +\infty$ | Analogy justified [T, Hübner] |
+| Attractor | $S^3$ | $\mathbb{CP}^6 \cong \mathcal{D}_1^\circ$ (pure states) | Structural analogy |
 
-**Вывод:** Аналогия **частично обоснована математически**: оба потока суть градиентные потоки энтропийных функционалов; сингулярности обоих потоков — кривизные взрывы у коразмерных страт. Изоморфизма нет, но структурная связь — глубже метафоры.
+**Conclusion:** The analogy is **partially justified mathematically**: both flows are gradient flows of entropic functionals; the singularities of both flows are curvature blow-ups near codimensional strata. There is no isomorphism, but the structural connection is deeper than a metaphor.
 :::
 
-### Открытые вопросы
+### Open Questions
 
-1. **Изоморфизм** кривизны Васерштейна и кривизны Риччи метрики $g$ — НЕ доказан; $\kappa(\mathcal{L}_\sigma) \neq \mathrm{Ric}(g_{\mathrm{B}})$ в общем случае
-2. **КМС-симметрия** $\mathcal{L}_\Omega$ в УГМ — требует верификации; без неё теорема Карлена–Масса не применима напрямую
-3. **Сходимость** к $P = 1$ — НЕ гарантирована; аттрактор КМС-Линдблада — $\sigma$ (возможно смешанное), а не $\mathbb{CP}^6$
-4. **Количественная связь** $P_{\mathrm{crit}} \leftrightarrow \lambda_1(\mathcal{L}_\sigma)$ — открытая проблема
+1. **Isomorphism** of Wasserstein curvature and Ricci curvature of the metric $g$ — NOT proven; $\kappa(\mathcal{L}_\sigma) \neq \mathrm{Ric}(g_{\mathrm{B}})$ in general
+2. **KMS symmetry** of $\mathcal{L}_\Omega$ in UHM — requires verification; without it the Carlen–Maas theorem does not apply directly
+3. **Convergence** to $P = 1$ — NOT guaranteed; the attractor of the KMS-Lindblad is $\sigma$ (possibly mixed), not $\mathbb{CP}^6$
+4. **Quantitative connection** $P_{\mathrm{crit}} \leftrightarrow \lambda_1(\mathcal{L}_\sigma)$ — open problem
 
 ---
 
-## Часть X: Применение к архитектуре AGI
+## Part X: Application to AGI Architecture
 
-:::warning Статус раздела
-Утверждения этой части — **архитектурные принципы и гипотезы** на основе доказанных теорем (Хюбнер, Карлен–Масс, Флориел). Прямые эмпирические проверки не проводились.
+:::warning Section Status
+The claims of this section are **architectural principles and hypotheses** based on proven theorems (Hübner, Carlen–Maas, Floricel). Direct empirical tests have not been conducted.
 :::
 
-### Гарантии сходимости из теоремы Карлена–Масса [Т]
+### Convergence Guarantees from the Carlen–Maas Theorem [T]
 
-Положительная кривизна $\kappa(\mathcal{L}_\sigma) \geq \lambda_1 > 0$ (следствие КМС-симметрии) даёт **экспоненциальную сходимость** любой траектории к $\sigma$:
+Positive curvature $\kappa(\mathcal{L}_\sigma) \geq \lambda_1 > 0$ (consequence of KMS symmetry) gives **exponential convergence** of any trajectory to $\sigma$:
 
 $$
 D(\rho(t)\|\sigma) \leq \mathrm{e}^{-2\lambda_1 t}\,D(\rho_0\|\sigma)
 $$
 
-Для AGI-архитектуры: при КМС-симметричной динамике адаптация к любому начальному состоянию $\rho_0 \in \mathcal{D}_+(\mathbb{C}^7)$ **гарантированно сходится** за время $T \leq \frac{1}{2\lambda_1}\ln D(\rho_0\|\sigma)$.
+For an AGI architecture: under KMS-symmetric dynamics, adaptation from any initial state $\rho_0 \in \mathcal{D}_+(\mathbb{C}^7)$ **is guaranteed to converge** within time $T \leq \frac{1}{2\lambda_1}\ln D(\rho_0\|\sigma)$.
 
-### Стратификация D(ℂ⁷) → таксономия когнитивных кризисов [Г]
+### Stratification of D(ℂ⁷) → Taxonomy of Cognitive Crises [H]
 
-| Страта коллапса | $\mathrm{rank}\,\Gamma$ | Кривизна Хюбнера | Когнитивный аналог |
+| Collapse stratum | $\mathrm{rank}\,\Gamma$ | Hübner curvature | Cognitive analogue |
 |----------------|------------------------|------------------|--------------------|
-| $\mathcal{D}_6^\circ$ | 6 | $R_{\mathrm{scal}} \to +\infty$ | Потеря одного измерения Холона |
-| $\mathcal{D}_5^\circ$ | 5 | $R_{\mathrm{scal}} \to +\infty$ | Тяжёлый когнитивный коллапс |
-| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 1 | Конечная (кэлерова метрика) | Абсолютная фиксация (чистое состояние) |
+| $\mathcal{D}_6^\circ$ | 6 | $R_{\mathrm{scal}} \to +\infty$ | Loss of one Holon dimension |
+| $\mathcal{D}_5^\circ$ | 5 | $R_{\mathrm{scal}} \to +\infty$ | Severe cognitive collapse |
+| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 1 | Finite (Kähler metric) | Absolute fixation (pure state) |
 
-**Принцип [Г]:** AGI-система должна поддерживать $\mathrm{rank}(\Gamma) = 7$ для нахождения в интерьоре $\mathcal{D}_+(\mathbb{C}^7)$ с гарантиями Карлена–Масса. Любой rank-collapse требует хирургии.
+**Principle [H]:** An AGI system must maintain $\mathrm{rank}(\Gamma) = 7$ to remain in the interior $\mathcal{D}_+(\mathbb{C}^7)$ with Carlen–Maas guarantees. Any rank-collapse requires surgery.
 
-### Некоммутативный поток Риччи как регуляризация весов AGI [Г]
+### Noncommutative Ricci Flow as AGI Weight Regularization [H]
 
-По теореме Флориела–Горбанпура–Хальхали (arXiv:1310.2900): **NC-поток Риччи** на $M_N(\mathbb{C})$ сходится к плоской метрике. Для параметрического пространства AGI-сети $W \in M_N(\mathbb{C})$:
+By the Floricel–Ghorbanpour–Khalkhali theorem (arXiv:1310.2900): the **NC-Ricci flow** on $M_N(\mathbb{C})$ converges to a flat metric. For the parameter space of an AGI network $W \in M_N(\mathbb{C})$:
 
 $$
 \partial_t g_W = -2\,\widetilde{\mathrm{Ric}}(g_W) \quad \Rightarrow \quad g_W(t) \xrightarrow{t\to\infty} g_{\mathrm{flat}}
 $$
 
-Это обеспечивает равномерное распределение кривизны — математически строгий аналог «когнитивного выравнивания».
+This provides a uniform distribution of curvature — a mathematically rigorous analogue of "cognitive leveling."
 
-### УГМ как квантово-геометрическое основание AGI
+### UHM as a Quantum-Geometric Foundation for AGI
 
-Совокупность доказанных теорем устанавливает:
+The collection of proven theorems establishes:
 
-1. **$\mathcal{D}_+(\mathbb{C}^7)$ — канонически обоснованное пространство состояний** [Т]: несёт динамику (Линдблад-поток), геометрию (метрика Бюреса / метрика Васерштейна) и топологию (стратификация по рангу).
+1. **$\mathcal{D}_+(\mathbb{C}^7)$ is a canonically justified state space** [T]: it carries dynamics (Lindblad flow), geometry (Bures metric / Wasserstein metric), and topology (rank stratification).
 
-2. **Линдблад = квантово-геометрический поток** [Т, Карлен–Масс]: эволюция AGI в УГМ — градиентный поток квантовой относительной энтропии в Васерштейнском пространстве с положительной кривизной.
+2. **Lindblad = quantum-geometric flow** [T, Carlen–Maas]: AGI evolution in UHM is a gradient flow of quantum relative entropy in a Wasserstein space with positive curvature.
 
-3. **Хирургия = геометрически обоснованная операция** [Т, Хюбнер]: устранение кривизных сингулярностей у rank-collapse — прямой аналог хирургии Перельмана.
+3. **Surgery = geometrically justified operation** [T, Hübner]: elimination of curvature singularities at rank-collapse is a direct analogue of Perelman's surgery.
 
-4. **$\mathbb{CP}^6$ — структурный аттрактор** [О]: $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ — нижняя страта стратификации и аналог $S^3$ в теореме Пуанкаре (по роли аттрактора, не по размерности).
+4. **$\mathbb{CP}^6$ — structural attractor** [D]: $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ — the lowest stratum of the stratification and the analogue of $S^3$ in the Poincaré theorem (by its role as attractor, not by dimension).
 
 ---
 
-## Диаграмма аналогии
+## Analogy Diagram
 
 ```mermaid
 graph TD
-    subgraph "Теорема Пуанкаре-Перельмана"
-        M[Многообразие M] --> |поток Риччи| S3[Сфера S³]
-        C1[Компактность] --> M
-        SC[Односвязность π₁ = e] --> M
-        SG["Сингулярности"] -.->|хирургия| M
+    subgraph "Poincaré-Perelman Theorem"
+        M[Manifold M] --> |Ricci flow| S3[Sphere S³]
+        C1[Compactness] --> M
+        SC[Simply-connectedness π₁ = e] --> M
+        SG["Singularities"] -.->|surgery| M
     end
-    subgraph "УГМ (аналогия)"
-        G[Γ ∈ 𝒟ℋ] --> |эволюция| PS[Чистое состояние P=1]
+    subgraph "UHM (analogy)"
+        G[Γ ∈ 𝒟ℋ] --> |evolution| PS[Pure state P=1]
         C2[Tr Γ = 1] --> G
         LI[P > P_crit = 2/7] --> G
-        CR["Кризисы"] -.->|реструктуризация| G
+        CR["Crises"] -.->|restructuring| G
     end
-    M -.->|структурная аналогия| G
-    S3 -.->|структурная аналогия| PS
-    SC -.->|"порог различимости"| LI
+    M -.->|structural analogy| G
+    S3 -.->|structural analogy| PS
+    SC -.->|"distinguishability threshold"| LI
 ```
 
 ---
 
-## Резюме
+## Summary
 
-### Главные соответствия
+### Main Correspondences
 
-| Пуанкаре | УГМ | Вывод |
-|----------|-----|-------|
-| Односвязность | $P > 2/N$ | **Порог существования** |
-| Сфера | Чистое состояние | **Аттрактор** |
-| Поток Риччи | Эволюция Линдблада | **Механизм** |
-| Хирургия | Реструктуризация | **Преодоление кризисов** |
-| Фактор 2 в Ric | Фактор 2 в $P_{\text{crit}}$ | **Принцип удвоения** |
+| Poincaré | UHM | Conclusion |
+|----------|-----|------------|
+| Simply-connectedness | $P > 2/N$ | **Existence threshold** |
+| Sphere | Pure state | **Attractor** |
+| Ricci flow | Lindblad evolution | **Mechanism** |
+| Surgery | Restructuring | **Overcoming crises** |
+| Factor 2 in Ric | Factor 2 in $P_{\text{crit}}$ | **Doubling principle** |
 
-### Практическое значение
+### Practical Significance
 
-Аналогия предоставляет **интуитивную основу** для понимания:
+The analogy provides an **intuitive basis** for understanding:
 
-1. Почему когерентные системы **стремятся к интеграции** (как многообразия к сфере)
-2. Почему противоречия **препятствуют развитию** (как дыры препятствуют сферичности)
-3. Почему кризисы **необходимы** (как хирургия необходима при сингулярностях)
-4. Почему существует **чёткий порог** существования (как чёткое условие односвязности)
+1. Why coherent systems **strive toward integration** (as manifolds strive toward a sphere)
+2. Why contradictions **impede development** (as holes impede sphericity)
+3. Why crises **are necessary** (as surgery is necessary at singularities)
+4. Why there exists a **clear threshold** of existence (as there is a clear simply-connectedness condition)
 
 ---
 
-**Связанные документы:**
-- [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) — доказательство $P_{\text{crit}} = 2/N$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma/d\tau$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и условия существования
-- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — необходимость 7 измерений
-- [Тензор напряжений](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений) — $\sigma_{\mathrm{sys}}$
-- [Инженерные выводы](/docs/applied/research/engineering-insights) — практические следствия
+**Related documents:**
+- [Theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical) — proof of $P_{\text{crit}} = 2/N$
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma/d\tau$
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and conditions of existence
+- [Theorem on minimality 7D](/docs/proofs/minimality/theorem-minimality-7) — necessity of 7 dimensions
+- [Stress tensor](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений) — $\sigma_{\mathrm{sys}}$
+- [Engineering insights](/docs/applied/research/engineering-insights) — practical consequences
 
-**Математические источники:**
+**Mathematical sources:**
 - M. Hübner (1999). *The Scalar Curvature of the Bures Metric on the Space of Density Matrices.* arXiv:quant-ph/9810012
 - E. Carlen, J. Maas (2017). *Gradient Flow and Entropy Inequalities for QMS with Detailed Balance.* arXiv:1609.01254
 - R. Floricel, A. Ghorbanpour, M. Khalkhali (2014). *Noncommutative Ricci Flow in a Matrix Geometry.* arXiv:1310.2900

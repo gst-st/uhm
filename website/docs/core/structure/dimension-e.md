@@ -502,7 +502,7 @@ At $D_{\text{diff}} = D_{\min} = 2$ (threshold value) this measure correctly cla
 - Minimum ($D_{\text{diff}} = 1$): pure state, one component of experience
 - Maximum ($D_{\text{diff}} = N$): maximally mixed state, equiprobable components
 
-### Differentiation threshold $D_{\min} = 2$
+### Differentiation threshold $D_{\min} = 2$ {#differentiation-threshold-dmin-2}
 
 **Justification:** Cognitive qualia require **distinction** — at minimum two distinguishable components of experience.
 

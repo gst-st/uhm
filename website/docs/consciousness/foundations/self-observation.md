@@ -1,64 +1,64 @@
 ---
 sidebar_position: 3
-title: Самонаблюдение
-description: Сознание как самонаблюдение Γ
+title: Self-Observation
+description: Consciousness as self-observation of Γ
 slug: /consciousness/foundations/self-observation
 ---
 
-# Самонаблюдение и Сознание
+# Self-Observation and Consciousness
 
-## Может ли глаз увидеть сам себя?
+## Can the Eye See Itself?
 
-Этот древний парадокс — ключ к пониманию сознания. Глаз видит всё, кроме самого себя. Мозг обрабатывает всю информацию, кроме... собственной обработки? На первый взгляд, самонаблюдение кажется логически невозможным: чтобы наблюдать себя, нужен наблюдатель, но кто наблюдает наблюдателя?
+This ancient paradox is the key to understanding consciousness. The eye sees everything except itself. The brain processes all information except... its own processing? At first glance, self-observation seems logically impossible: to observe oneself, one needs an observer, but who observes the observer?
 
-### От Гёделя к strange loops
+### From Gödel to Strange Loops
 
-В 1931 году Курт Гёдель доказал теорему о неполноте: достаточно мощная формальная система не может доказать свою собственную непротиворечивость. Это казалось фатальным для идеи самонаблюдения — если даже математика не может полностью «познать себя», то как может это сделать сознание?
+In 1931, Kurt Gödel proved the incompleteness theorem: a sufficiently powerful formal system cannot prove its own consistency. This seemed fatal to the idea of self-observation — if even mathematics cannot fully 'know itself', how can consciousness do it?
 
-Дуглас Хофштадтер в книге «Гёдель, Эшер, Бах» (1979) предложил ответ: **strange loops** — странные петли самореференции. Сознание — не полное самопознание (что невозможно по Гёделю), а **приблизительная самомодель** с ограниченной точностью. Хофштадтер показал, что самореференция — не баг, а фича: именно она порождает «я».
+Douglas Hofstadter in *Gödel, Escher, Bach* (1979) proposed an answer: **strange loops** — strange loops of self-reference. Consciousness is not complete self-knowledge (which is impossible by Gödel), but an **approximate self-model** of limited precision. Hofstadter showed that self-reference is not a bug but a feature: it is precisely what gives rise to the 'I'.
 
-**УГМ формализует эту идею.** Оператор самомоделирования $\varphi$ — это математически точная «странная петля»:
-- $\varphi(\Gamma) \approx \Gamma$ (самомодель приблизительна — дань Гёделю)
-- $R$ измеряет качество приближения (не 0 и не 1 — между невежеством и всеведением)
-- Теорема Банаха гарантирует сходимость (петля стабильна, а не расходится)
+**UHM formalises this idea.** The self-modelling operator $\varphi$ is a mathematically precise 'strange loop':
+- $\varphi(\Gamma) \approx \Gamma$ (the self-model is approximate — a nod to Gödel)
+- $R$ measures the quality of the approximation (neither 0 nor 1 — between ignorance and omniscience)
+- Banach's theorem guarantees convergence (the loop is stable, not divergent)
 
-:::info Откуда мы пришли
-В [теории интериорности](./interiority-theory) мы описали **что** переживается — спектральное разложение $\rho_E$, метрика Фубини-Штуди, четыре компонента опыта. Теперь мы задаём следующий вопрос: **как** система может наблюдать собственное содержание? Ответ — оператор самомоделирования $\varphi$ и мера рефлексии $R$.
+:::info Where We Came From
+In [interiority theory](./interiority-theory) we described **what** is experienced — the spectral decomposition of $\rho_E$, the Fubini-Study metric, four components of experience. Now we ask the next question: **how** can the system observe its own contents? The answer is the self-modelling operator $\varphi$ and the reflection measure $R$.
 :::
 
-### Дорожная карта главы
+### Chapter Roadmap
 
-1. **Оператор $\varphi$** — CPTP-канал самомоделирования: система строит модель самой себя
-2. **Теорема о неподвижной точке** — каждый акт самонаблюдения приближает к точному самопознанию
-3. **Мера рефлексии $R$** — количественная оценка качества самомодели ($R = 1/(7P)$)
-4. **Рефлексия высших порядков $R^{(n)}$** — «знаю, что знаю» и глубже
-5. **Мера сознательности $C = \Phi \times R$** — скалярная сводка «насколько сознательна система»
-6. **CRL** — компилируемый рефлексивный язык для самомодификации
+1. **Operator $\varphi$** — CPTP self-modelling channel: the system builds a model of itself
+2. **Fixed-point theorem** — each act of self-observation brings the system closer to accurate self-knowledge
+3. **Reflection measure $R$** — quantitative assessment of self-model quality ($R = 1/(7P)$)
+4. **Higher-order reflection $R^{(n)}$** — 'I know that I know' and deeper
+5. **Consciousness measure $C = \Phi \times R$** — scalar summary of 'how conscious is the system'
+6. **CRL** — compilable reflexive language for self-modification
 
-**Аналогия.** Представьте художника, который рисует автопортрет, глядя в зеркало. Зеркало — это оператор $\varphi$: оно создаёт модель ($\varphi(\Gamma)$) оригинала ($\Gamma$). Качество зеркала — мера $R$: идеальное зеркало даёт $R = 1$, мутное — $R \approx 0$. Порог $R \geq 1/3$ означает: зеркало достаточно чистое, чтобы художник **узнал себя** — это граница когнитивных квалиа (L2).
+**Analogy.** Imagine an artist painting a self-portrait while looking in a mirror. The mirror is the operator $\varphi$: it creates a model ($\varphi(\Gamma)$) of the original ($\Gamma$). The quality of the mirror is the measure $R$: a perfect mirror gives $R = 1$, a clouded one gives $R \approx 0$. The threshold $R \geq 1/3$ means: the mirror is clear enough that the artist **recognises themselves** — this is the boundary of cognitive qualia (L2).
 
-## Сознание как самонаблюдение $\Gamma$
+## Consciousness as Self-Observation of $\Gamma$
 
-Сознание — не эпифеномен и не отдельная субстанция. **Сознание — это способ, которым Γ переживает собственную конфигурацию.**
+Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration.**
 
-:::info Онтологический статус
-Каждая конфигурация $\Gamma$ имеет «внешнюю» (объективную) и «внутреннюю» (субъективную) стороны. Они неразделимы — это не дуализм, а **двухаспектный монизм**.
+:::info Ontological Status
+Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism**.
 :::
 
-## Оператор самомоделирования φ {#оператор-самомоделирования-φ}
+## Self-Modelling Operator φ {#оператор-самомоделирования-φ}
 
-### Что такое CPTP-канал (простым языком)
+### What Is a CPTP Channel (in Plain Language)
 
-Прежде чем определить $\varphi$, объясним, что такое **CPTP-канал** (Completely Positive Trace-Preserving). Это центральное понятие квантовой теории информации, но его смысл прост:
+Before defining $\varphi$, let us explain what a **CPTP channel** (Completely Positive Trace-Preserving) is. This is a central concept in quantum information theory, but its meaning is simple:
 
-- **Trace-Preserving** (сохраняющий след): если система имеет суммарную «вероятность» 1, после преобразования она по-прежнему равна 1. Ничего не создаётся из ничего и не исчезает.
-- **Completely Positive** (полностью положительный): преобразование корректно даже если система является частью большей. Оно не может создать отрицательные вероятности.
+- **Trace-Preserving**: if the system has total 'probability' 1, after the transformation it remains 1. Nothing is created from nothing and nothing disappears.
+- **Completely Positive**: the transformation is correct even if the system is part of a larger one. It cannot create negative probabilities.
 
-**Аналогия.** CPTP-канал — это как фотокопир для матриц плотности: он создаёт (возможно, искажённую) копию, но не нарушает физических законов. Сумма диагональных элементов (нормировка) сохраняется, матрица остаётся положительно полуопределённой.
+**Analogy.** A CPTP channel is like a photocopier for density matrices: it creates a (possibly distorted) copy, but does not violate physical laws. The sum of diagonal elements (normalisation) is preserved, the matrix remains positive semidefinite.
 
-### Определение
+### Definition
 
-**Оператор самомоделирования** $\varphi$ — CPTP-канал, моделирующий процесс самонаблюдения системы:
+**The self-modelling operator** $\varphi$ — a CPTP channel modelling the system's self-observation process:
 
 $$
 \varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
@@ -68,632 +68,632 @@ $$
 \varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
 $$
 
-где $\{K_m\}$ — операторы Крауса, удовлетворяющие условию:
+where $\{K_m\}$ — Kraus operators satisfying the condition:
 
 $$
 \sum_m K_m^\dagger K_m = I
 $$
 
-Каноническая форма для УГМ определена в [§2.6 Формализации φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм). Полные детали, включая теоремы о неподвижных точках и связь с регенерацией: [Формализация оператора φ](/docs/proofs/categorical/formalization-phi).
+The canonical form for UHM is defined in [§2.6 of the Formalisation of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм). Full details, including fixed-point theorems and the connection with regeneration: [Formalisation of the φ-operator](/docs/proofs/categorical/formalization-phi).
 
-**Что делает $\varphi$?** Она берёт текущее состояние $\Gamma$ (оригинал) и создаёт его **внутреннюю модель** $\varphi(\Gamma)$. Это не копирование (что запрещено теоремой о некопировании в квантовой механике), а создание приблизительной модели через CPTP-канал.
+**What does $\varphi$ do?** It takes the current state $\Gamma$ (the original) and creates its **internal model** $\varphi(\Gamma)$. This is not copying (which is forbidden by the no-cloning theorem in quantum mechanics), but the creation of an approximate model via a CPTP channel.
 
-:::tip CPTP-свойство и запрет сигнализации (NS3)
-CPTP-свойство $\varphi$ является **критическим** не только для математической корректности, но и для совместимости с квантовой механикой. Именно из CPTP следует [условие NS3](/docs/core/dynamics/evolution#запрет-сигнализации):
+:::tip CPTP Property and No-Signalling (NS3)
+The CPTP property of $\varphi$ is **critical** not only for mathematical correctness, but also for compatibility with quantum mechanics. It is precisely from CPTP that the [NS3 condition](/docs/core/dynamics/evolution#запрет-сигнализации) follows:
 
 $$
 \mathrm{Tr}_A[(\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB})] = \mathrm{Tr}_A[\Gamma_{AB}] = \Gamma_B
 $$
 
-что гарантирует, что регенеративный член $\mathcal{R}$ [не нарушает запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). Любая модификация $\varphi$, нарушающая CPTP-условие $\sum_m K_m^\dagger K_m = I$, потенциально открывает канал сверхсветовой коммуникации.
+which guarantees that the regenerative term $\mathcal{R}$ [does not violate no-signalling](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). Any modification of $\varphi$ that violates the CPTP condition $\sum_m K_m^\dagger K_m = I$ potentially opens a channel for superluminal communication.
 :::
 
-:::tip Физическая реализация — решено [Т]
-Оператор $\varphi$ имеет явную физическую реализацию как **замещающий канал** (см. [теорему ниже](#теорема-физическая-реализация-phi)): $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$, где $\rho^* = \varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) текущего состояния [Т]. Это снимает «операциональный разрыв»: $\rho^*$ определяется категориальной структурой (левый сопряжённый), $k$ — наблюдаемый параметр (отношение предиктивной к реактивной активности).
+:::tip Physical Realisation — Resolved [T]
+The operator $\varphi$ has an explicit physical realisation as a **replacement channel** (see [theorem below](#теорема-физическая-реализация-phi)): $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$, where $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T]. This closes the 'operational gap': $\rho^*$ is determined by categorical structure (left adjoint), $k$ is an observable parameter (ratio of predictive to reactive activity).
 :::
 
-:::note О нотации
-$\varphi$ (phi) — оператор самомоделирования. Не путать с $\Phi$ — [мерой интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ).
+:::note Note on Notation
+$\varphi$ (phi) — the self-modelling operator. Not to be confused with $\Phi$ — the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
 :::
 
-### Интерпретация операторов Крауса
+### Interpretation of Kraus Operators
 
-| Свойство | Описание |
-|----------|----------|
-| $K_m$ | «Фильтры восприятия» — частичные аспекты самонаблюдения |
-| $\sum_m K_m^\dagger K_m = I$ | Сохранение нормировки: $\mathrm{Tr}(\varphi(\Gamma)) = 1$ |
-| CPTP | Сохраняет положительность $\Gamma \geq 0$ и след — [теорема](/docs/core/dynamics/evolution#сохранение-положительности) |
+| Property | Description |
+|----------|-------------|
+| $K_m$ | 'Filters of perception' — partial aspects of self-observation |
+| $\sum_m K_m^\dagger K_m = I$ | Preservation of normalisation: $\mathrm{Tr}(\varphi(\Gamma)) = 1$ |
+| CPTP | Preserves positivity $\Gamma \geq 0$ and trace — [theorem](/docs/core/dynamics/evolution#сохранение-положительности) |
 
-**Аналогия.** Каждый оператор Крауса $K_m$ — это как один «ракурс» в зеркале. Мы не видим себя целиком одним взглядом; мы собираем образ из множества частичных перспектив. Условие $\sum K_m^\dagger K_m = I$ гарантирует, что все перспективы вместе дают полную картину (с точностью до качества зеркала).
+**Analogy.** Each Kraus operator $K_m$ is like one 'angle' in the mirror. We do not see ourselves entirely in a single glance; we assemble the image from multiple partial perspectives. The condition $\sum K_m^\dagger K_m = I$ guarantees that all perspectives together give a complete picture (up to the quality of the mirror).
 
-### Физическая реализация φ-оператора {#физическая-реализация-phi}
+### Physical Realisation of the φ-Operator {#физическая-реализация-phi}
 
-#### Теорема (Физическая реализация φ-оператора) [Т] {#теорема-физическая-реализация-phi}
+#### Theorem (Physical Realisation of the φ-Operator) [T] {#теорема-физическая-реализация-phi}
 
-Оператор самомоделирования $\varphi$ реализуется как замещающий канал:
+The self-modelling operator $\varphi$ is realised as a replacement channel:
 
 $$
 \varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*
 $$
 
-где $\rho^* = \varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) текущего состояния [Т], $k = 1 - R$ — степень самомоделирования, определяемая мерой рефлексии $R$ (см. [ниже](#теорема-k-из-r)).
+where $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T], $k = 1 - R$ — the degree of self-modelling, determined by the reflection measure $R$ (see [below](#теорема-k-из-r)).
 
-**Что это означает на пальцах:** Самомоделирование — это **смешивание** текущего состояния $\Gamma$ с «идеальной моделью» $\rho^*$. Параметр $k$ определяет пропорцию: при $k = 0$ (идеальная самомодель, $R = 1$) система не нуждается в коррекции; при $k = 1$ (полное отсутствие самомодели, $R = 0$) система полностью заменяется моделью.
+**What this means in plain terms:** Self-modelling is a **mixing** of the current state $\Gamma$ with the 'ideal model' $\rho^*$. The parameter $k$ determines the proportion: at $k = 0$ (ideal self-model, $R = 1$) the system requires no correction; at $k = 1$ (complete absence of self-model, $R = 0$) the system is fully replaced by the model.
 
-**Доказательство.** По [категориальному определению](/docs/core/operators/phi-operator) $\varphi$ (левый сопряжённый к включению подобъектов), самомодель $\varphi(\Gamma) = \rho^*$ единственна для каждого $\Gamma$. Замещающий канал $T_k(\Gamma) := (1-k)\Gamma + k\rho^*$ — выпуклая комбинация $\mathrm{Id}$ и $\mathcal{C}_{\rho^*}$ (замещающего канала [Т](/docs/core/dynamics/evolution#вывод-формы-регенерации)), следовательно CPTP при $k \in [0,1]$. Сжимаемость: $\|T_k(\Gamma_1) - T_k(\Gamma_2)\|_F = (1-k)\|\Gamma_1 - \Gamma_2\|_F$ с константой сжатия $(1-k) < 1$. $\blacksquare$
+**Proof.** By the [categorical definition](/docs/core/operators/phi-operator) of $\varphi$ (left adjoint to the inclusion of subobjects), the self-model $\varphi(\Gamma) = \rho^*$ is unique for each $\Gamma$. The replacement channel $T_k(\Gamma) := (1-k)\Gamma + k\rho^*$ — a convex combination of $\mathrm{Id}$ and $\mathcal{C}_{\rho^*}$ (the replacement channel [T](/docs/core/dynamics/evolution#вывод-формы-регенерации)) — is therefore CPTP for $k \in [0,1]$. Contractivity: $\|T_k(\Gamma_1) - T_k(\Gamma_2)\|_F = (1-k)\|\Gamma_1 - \Gamma_2\|_F$ with contraction constant $(1-k) < 1$. $\blacksquare$
 
-**Физическая интерпретация:** $\rho^*$ — внутренняя генеративная модель (предсказание); $k = 1 - R$ — степень доверия к модели (precision weighting в предиктивном кодировании), определяемая [мерой рефлексии](#теорема-k-из-r) [Т].
+**Physical interpretation:** $\rho^*$ — the internal generative model (prediction); $k = 1 - R$ — the degree of trust in the model (precision weighting in predictive coding), determined by the [reflection measure](#теорема-k-из-r) [T].
 
-**Измерение:** $R(\Gamma) = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$.
+**Measurement:** $R(\Gamma) = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$.
 
-#### Неподвижная точка (КК-4) [Т] {#неподвижная-точка-кк4}
+#### Fixed Point (CC-4) [T] {#неподвижная-точка-кк4}
 
-$\Gamma^* = \rho^*_{\mathrm{diss}} = I/7$ — единственная неподвижная точка простого замещающего канала ($\varphi_k(\Gamma^*) = \Gamma^*$ при $k > 0$).
+$\Gamma^* = \rho^*_{\mathrm{diss}} = I/7$ — the unique fixed point of the simple replacement channel ($\varphi_k(\Gamma^*) = \Gamma^*$ for $k > 0$).
 
-**Доказательство.** $(1-k)\Gamma^* + k\rho^*_{\mathrm{diss}} = \Gamma^*$ $\Rightarrow$ $k(\Gamma^* - \rho^*_{\mathrm{diss}}) = 0$ $\Rightarrow$ $\Gamma^* = \rho^*_{\mathrm{diss}}$ (при $k > 0$). Единственность по алгебре замещающего канала. $\blacksquare$
+**Proof.** $(1-k)\Gamma^* + k\rho^*_{\mathrm{diss}} = \Gamma^*$ $\Rightarrow$ $k(\Gamma^* - \rho^*_{\mathrm{diss}}) = 0$ $\Rightarrow$ $\Gamma^* = \rho^*_{\mathrm{diss}}$ (for $k > 0$). Uniqueness follows from the algebra of the replacement channel. $\blacksquare$
 
-#### Иерархия аттракторов [О] {#иерархия-аттракторов}
+#### Attractor Hierarchy [D] {#иерархия-аттракторов}
 
-В теории различаются **три неподвижные точки** на разных уровнях:
+The theory distinguishes **three fixed points** at different levels:
 
-| Уровень | Объект | Определение | $P$ | Роль в теории |
-|---------|--------|-------------|-----|--------------|
-| 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | **Референс для $R$**: расстояние от тепловой смерти |
-| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [Т] | **Физический аттрактор**: баланс диссипации и регенерации |
-| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $P_{\mathrm{crit}} = 2/7$ | **Граница жизнеспособности**: цель канонической $\varphi_{\mathrm{coh}}$ |
+| Level | Object | Definition | $P$ | Role in theory |
+|-------|--------|------------|-----|----------------|
+| 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | **Reference for $R$**: distance from heat death |
+| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | **Physical attractor**: balance of dissipation and regeneration |
+| 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $P_{\mathrm{crit}} = 2/7$ | **Viability boundary**: target of canonical $\varphi_{\mathrm{coh}}$ |
 
-**Нетривиальность аттрактора** [Т]: $\rho^*_\Omega \neq I/7$ — доказано через $\kappa_{\mathrm{bootstrap}} > 0$ (T-59). См. [полное доказательство](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
+**Non-triviality of the attractor** [T]: $\rho^*_\Omega \neq I/7$ — proved via $\kappa_{\mathrm{bootstrap}} > 0$ (T-59). See the [full proof](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 
-Формула $R = 1/(7P)$ использует $\rho^*_{\mathrm{diss}} = I/7$ — это корректно, поскольку $R$ измеряет **расстояние от тепловой смерти**, а не расстояние от динамического аттрактора $\rho^*_\Omega$.
+The formula $R = 1/(7P)$ uses $\rho^*_{\mathrm{diss}} = I/7$ — this is correct because $R$ measures the **distance from heat death**, not the distance from the dynamic attractor $\rho^*_\Omega$.
 
-:::info Стратификация определений
-- **Простая форма** $\varphi_k$: неподвижная точка $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, нежизнеспособна)
-- **Каноническая** $\varphi_{\mathrm{coh}}$: неподвижная точка $\Gamma^*_{\mathrm{coh}}$ ($P = 2/7$, граница жизнеспособности)
-- **Полный Лиувиллиан** $\mathcal{L}_\Omega$: аттрактор $\rho^*_\Omega$ ($P > 1/7$, физический баланс)
+:::info Definition Stratification
+- **Simple form** $\varphi_k$: fixed point $\rho^*_{\mathrm{diss}} = I/7$ ($P = 1/7$, non-viable)
+- **Canonical** $\varphi_{\mathrm{coh}}$: fixed point $\Gamma^*_{\mathrm{coh}}$ ($P = 2/7$, viability boundary)
+- **Full Liouvillian** $\mathcal{L}_\Omega$: attractor $\rho^*_\Omega$ ($P > 1/7$, physical balance)
 
-Подробнее: [иерархия неподвижных точек](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [стратификация](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+For details: [hierarchy of fixed points](/docs/core/dynamics/evolution#иерархия-неподвижных-точек), [stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
-:::info Снятие циркулярности (P4.3)
-Определение φ **не содержит порочного круга**: диссипативное стационарное состояние $\rho^*_{\mathrm{diss}} = I/7$ выводится из примитивности линейной части $\mathcal{L}_0$ [Т-39a] — это свойство **динамики**, не зависящее от $\varphi$. Мера рефлексии $R(\Gamma) = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2/\|\Gamma\|_F^2$ определяется **только** состоянием $\Gamma$ и референсом $\rho^*_{\mathrm{diss}} = I/7$ (константой), а параметр $k = 1 - R$ выводится из $R$ (см. [теорему ниже](#теорема-k-из-r)). Таким образом, $\varphi_k$ определён через независимые объекты ($\rho^*$ из динамики, $R$ из состояния системы), а не через себя.
+:::info Elimination of Circularity (P4.3)
+The definition of φ **does not contain a vicious circle**: the dissipative stationary state $\rho^*_{\mathrm{diss}} = I/7$ is derived from the primitivity of the linear part $\mathcal{L}_0$ [T-39a] — a property of **dynamics**, independent of $\varphi$. The reflection measure $R(\Gamma) = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2/\|\Gamma\|_F^2$ is determined **solely** by the state $\Gamma$ and the reference $\rho^*_{\mathrm{diss}} = I/7$ (a constant), and the parameter $k = 1 - R$ is derived from $R$ (see [theorem below](#теорема-k-из-r)). Thus, $\varphi_k$ is defined through independent objects ($\rho^*$ from dynamics, $R$ from the system state), not through itself.
 :::
 
-#### Теорема (Параметр сжатия из рефлексии) [Т] {#теорема-k-из-r}
+#### Theorem (Compression Parameter from Reflection) [T] {#теорема-k-из-r}
 
-Параметр сжатия $k$ **не является свободным** — он однозначно определяется мерой рефлексии:
+The compression parameter $k$ **is not free** — it is uniquely determined by the reflection measure:
 
 $$
 k = 1 - R, \quad R(\Gamma) = 1 - \frac{\|\Gamma - \rho^*\|_F^2}{\|\Gamma\|_F^2}
 $$
 
-**Доказательство.** Из T-62 [Т]: $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$. Мера рефлексии $R$ — нормированная близость к аттрактору $\rho^*$ ([мастер-определение](#мера-рефлексии-r)). Для $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ с $\mathrm{Tr}(\Gamma) = 1$:
+**Proof.** From T-62 [T]: $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$. The reflection measure $R$ — normalised proximity to the attractor $\rho^*$ ([master definition](#мера-рефлексии-r)). For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $\mathrm{Tr}(\Gamma) = 1$:
 
 $$
 \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 = \mathrm{Tr}(\Gamma^2) - \frac{1}{7} = P - \frac{1}{7}, \quad R = \frac{1}{7P}
 $$
 
-Промежуточные шаги вычисления:
+Intermediate steps of the calculation:
 1. $\|\Gamma - I/7\|_F^2 = \mathrm{Tr}((\Gamma - I/7)^2) = \mathrm{Tr}(\Gamma^2) - 2\mathrm{Tr}(\Gamma \cdot I/7) + \mathrm{Tr}((I/7)^2)$
 2. $= P - 2/7 + 1/7 = P - 1/7$
 3. $R = 1 - (P - 1/7)/P = 1/(7P)$
 
-Здесь $\rho^*_{\mathrm{diss}} = I/7$ — диссипативный аттрактор. Равенство $\mathrm{Tr}(\Gamma \cdot I/7) = 1/7$ выполнено для любого $\Gamma$ с $\mathrm{Tr}(\Gamma) = 1$.
+Here $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor. The equality $\mathrm{Tr}(\Gamma \cdot I/7) = 1/7$ holds for any $\Gamma$ with $\mathrm{Tr}(\Gamma) = 1$.
 
-Определяя $k := 1 - R$: при $\Gamma = \rho^*_{\mathrm{diss}}$ имеем $P = 1/7$, $R = 1$, $k = 0$ — тождественное отображение. При $P \to 1$ (чистое состояние): $R = 1/7$, $k = 6/7$ — сильная коррекция. Соотношение $k = 1 - R$ не содержит циркулярности: $R$ определён через $\Gamma$ и $\rho^*_{\mathrm{diss}} = I/7$ (константу), а не через $k$ или $\varphi$. $\blacksquare$
+Defining $k := 1 - R$: at $\Gamma = \rho^*_{\mathrm{diss}}$ we have $P = 1/7$, $R = 1$, $k = 0$ — identity mapping. At $P \to 1$ (pure state): $R = 1/7$, $k = 6/7$ — strong correction. The relation $k = 1 - R$ contains no circularity: $R$ is defined via $\Gamma$ and $\rho^*_{\mathrm{diss}} = I/7$ (a constant), not via $k$ or $\varphi$. $\blacksquare$
 
-**Ключевые значения:**
+**Key values:**
 
-| $R$ | $k = 1 - R$ | Интерпретация |
-|-----|-------------|---------------|
-| $0$ | $1$ | Полная замена: система не «узнаёт» себя |
-| $R_{\text{th}} = 1/3$ | $2/3$ | Порог L2 (рефлексивное сознание) |
-| $1$ | $0$ | Тождественное отображение: идеальная самомодель |
+| $R$ | $k = 1 - R$ | Interpretation |
+|-----|-------------|----------------|
+| $0$ | $1$ | Total replacement: the system does not 'recognise' itself |
+| $R_{\text{th}} = 1/3$ | $2/3$ | Threshold L2 (reflexive consciousness) |
+| $1$ | $0$ | Identity mapping: perfect self-model |
 
-:::tip Следствие
-Параметр $k$ — не свободная константа, а **функция состояния** системы. Чем выше рефлексия $R$, тем слабее коррекция самомодели (меньше $k$). Это обеспечивает **адаптивность** самомоделирования: система с хорошей самомоделью ($R \to 1$) почти не изменяет $\Gamma$, а система с плохой ($R \to 0$) получает максимальную коррекцию.
+:::tip Corollary
+The parameter $k$ is not a free constant, but a **state function** of the system. The higher the reflection $R$, the weaker the self-model correction (smaller $k$). This ensures **adaptivity** of self-modelling: a system with a good self-model ($R \to 1$) barely changes $\Gamma$, while a system with a poor one ($R \to 0$) receives maximum correction.
 :::
 
-## Теорема о неподвижной точке {#теорема-о-неподвижной-точке}
+## Fixed-Point Theorem {#теорема-о-неподвижной-точке}
 
-### Почему эта теорема важна
+### Why This Theorem Matters
 
-Существование неподвижной точки означает: **итеративное самонаблюдение сходится**. Система, которая наблюдает себя, потом наблюдает результат наблюдения, потом наблюдает результат наблюдения результата... не уходит в бесконечный регресс, а стабилизируется. Это математическое обоснование того, что сознание — не бесконечная рекурсия, а устойчивый процесс.
+The existence of a fixed point means: **iterative self-observation converges**. A system that observes itself, then observes the result of observation, then observes the result of the observation of the result... does not go into infinite regress, but stabilises. This is the mathematical justification that consciousness is not an infinite recursion, but a stable process.
 
-### Условие сжатия
+### Contraction Condition
 
-Замещающий канал [Т] (см. [теорему выше](#теорема-физическая-реализация-phi)) обеспечивает сжимающее отображение:
+The replacement channel [T] (see [theorem above](#теорема-физическая-реализация-phi)) provides a contracting mapping:
 
 $$
 \varphi_k(\Gamma) := (1 - k) \cdot \Gamma + k \cdot \rho^*
 $$
 
-где $k \in (0, 1)$ — степень самомоделирования, $\rho^* = \varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) текущего состояния [Т].
+where $k \in (0, 1)$ — the degree of self-modelling, $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [T].
 
-:::info [Теорема](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (Существование неподвижной точки)
-Если $\varphi$ — сжимающее отображение с константой $k < 1$:
+:::info [Theorem](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) (Existence of a Fixed Point)
+If $\varphi$ is a contracting mapping with constant $k < 1$:
 
 $$
 \forall \Gamma_1, \Gamma_2 \in \mathcal{D}(\mathcal{H}): \|\varphi(\Gamma_1) - \varphi(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
 $$
 
-то существует единственная неподвижная точка $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
+then there exists a unique fixed point $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
 
 $$
 \varphi(\Gamma^*) = \Gamma^*
 $$
 :::
 
-**Доказательство:** По [теореме Банаха](/docs/proofs/categorical/formalization-phi#31-основная-теорема) о неподвижной точке сжимающего отображения. Пространство $\mathcal{D}(\mathcal{H})$ — полное метрическое (замкнутое подмножество конечномерного пространства с нормой Фробениуса). $\varphi$ — сжимающее отображение с константой $k < 1$. По теореме Банаха существует единственная неподвижная точка. ∎
+**Proof:** By [Banach's fixed-point theorem](/docs/proofs/categorical/formalization-phi#31-основная-теорема) for contracting mappings. The space $\mathcal{D}(\mathcal{H})$ is a complete metric space (closed subset of a finite-dimensional space with Frobenius norm). $\varphi$ is a contracting mapping with constant $k < 1$. By Banach's theorem, a unique fixed point exists. ∎
 
-### Сходимость к неподвижной точке
+### Convergence to the Fixed Point
 
 $$
 \lim_{n \to \infty} \varphi^n(\Gamma_0) = \Gamma^*
 $$
 
-**Скорость сходимости:**
+**Rate of convergence:**
 
 $$
 \|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F
 $$
 
-**Числовой пример.** При $k = 2/3$ ($R = 1/3$, порог L2): после 10 итераций ошибка уменьшается в $(2/3)^{10} \approx 0.017$ раз — менее 2% от начальной. После 20 итераций — менее 0.03%.
+**Numerical example.** At $k = 2/3$ ($R = 1/3$, threshold L2): after 10 iterations the error decreases by a factor of $(2/3)^{10} \approx 0.017$ — less than 2% of the initial value. After 20 iterations — less than 0.03%.
 
-**Интерпретация:** При $k < 1$ каждый акт самонаблюдения приближает систему к точному самопознанию ($\Gamma^* = \rho^*$ — [КК-4](#неподвижная-точка-кк4) [Т]). Самонаблюдение — не бесконечный регресс, а **сходящийся процесс**.
+**Interpretation:** At $k < 1$, each act of self-observation brings the system closer to accurate self-knowledge ($\Gamma^* = \rho^*$ — [CC-4](#неподвижная-точка-кк4) [T]). Self-observation is not an infinite regress, but a **convergent process**.
 
-### Самореферентная замкнутость и квалиа {#самореферентная-замкнутость}
+### Self-Referential Closure and Qualia {#самореферентная-замкнутость}
 
-Оператор $\varphi$ разрешает проблему «внешнего наблюдателя» для квалиа: структура $\{(\lambda_i, [|q_i\rangle])\}$ не описание опыта *извне*, а результат *внутреннего* самомоделирования.
+The operator $\varphi$ resolves the problem of the 'external observer' for qualia: the structure $\{(\lambda_i, [|q_i\rangle])\}$ is not a description of experience *from outside*, but the result of *internal* self-modelling.
 
-:::info Следствие для квалиа-вектора
-Феноменальный вектор не требует внешнего наблюдателя:
+:::info Corollary for the Qualia Vector
+The phenomenal vector does not require an external observer:
 
 $$
 \text{FV}(\rho_E) = \text{FV}(\text{Tr}_{-E}(\varphi(\Gamma)))
 $$
 
-Система **сама** извлекает свои качества через $\varphi$. Подробнее: [Самореферентная замкнутость](./two-aspect-monism#самореферентная-замкнутость).
+The system **itself** extracts its qualities via $\varphi$. More details: [Self-Referential Closure](./two-aspect-monism#самореферентная-замкнутость).
 :::
 
-## Мера рефлексии R {#мера-рефлексии-r}
+## Reflection Measure R {#мера-рефлексии-r}
 
-### Мотивация: зачем нужна количественная мера самопознания
+### Motivation: Why a Quantitative Measure of Self-Knowledge Is Needed
 
-Интуитивно, одни системы «знают себя» лучше других. Человек в состоянии бодрствования лучше моделирует себя, чем человек под наркозом. Медитирующий монах — лучше, чем рассеянный пешеход. Нужна **числовая мера**, которая выражала бы это различие.
+Intuitively, some systems 'know themselves' better than others. A person in wakefulness models themselves better than a person under anaesthesia. A meditating monk — better than a distracted pedestrian. We need a **numerical measure** that expresses this difference.
 
-$R$ — мера рефлексии — отвечает на вопрос: **насколько хорошо система знает саму себя?**
+$R$ — the reflection measure — answers the question: **how well does the system know itself?**
 
-### Мастер-определение
+### Master Definition
 
-**[Мастер-определение для L2]**
+**[Master definition for L2]**
 
-<!-- DRY: Мастер-определение R (меры рефлексии). Все ссылки должны указывать сюда: /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
+<!-- DRY: Master definition of R (reflection measure). All references should point here: /docs/consciousness/foundations/self-observation#мера-рефлексии-r -->
 
-**Мера рефлексии** $R = R^{(1)}$ количественно оценивает качество самомоделирования:
+**The reflection measure** $R = R^{(1)}$ quantitatively assesses the quality of self-modelling:
 
 $$
 R(\Gamma) := 1 - \frac{\|\Gamma - \rho^*_{\mathrm{diss}}\|^2_F}{\|\Gamma\|^2_F} = \frac{1}{7P(\Gamma)}
 $$
 
-где $\rho^*_{\mathrm{diss}} = I/7$ — диссипативный аттрактор, $\|\cdot\|_F$ — [норма Фробениуса](/docs/core/dynamics/coherence-matrix#норма-фробениуса), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([чистота](/docs/core/dynamics/viability#определение-чистоты)).
+where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F$ — [Frobenius norm](/docs/core/dynamics/coherence-matrix#frobenius-norm), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([purity](/docs/core/dynamics/viability#определение-чистоты)).
 
-### Пошаговый вывод формулы $R = 1/(7P)$
+### Step-by-Step Derivation of $R = 1/(7P)$
 
-Выведем формулу шаг за шагом, начиная с определения:
+Let us derive the formula step by step, starting from the definition:
 
-**Шаг 1.** Начнём с определения: $R = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$
+**Step 1.** Begin with the definition: $R = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$
 
-**Шаг 2.** Знаменатель: $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ (это определение чистоты)
+**Step 2.** Denominator: $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ (this is the definition of purity)
 
-**Шаг 3.** Числитель: $\|\Gamma - I/7\|_F^2 = \mathrm{Tr}((\Gamma - I/7)^2)$
+**Step 3.** Numerator: $\|\Gamma - I/7\|_F^2 = \mathrm{Tr}((\Gamma - I/7)^2)$
 
-Раскроем скобки:
+Expanding:
 $$\mathrm{Tr}(\Gamma^2 - 2\Gamma \cdot I/7 + (I/7)^2) = \mathrm{Tr}(\Gamma^2) - \frac{2}{7}\mathrm{Tr}(\Gamma) + \frac{1}{7^2}\mathrm{Tr}(I)$$
 
-**Шаг 4.** Используем: $\mathrm{Tr}(\Gamma^2) = P$, $\mathrm{Tr}(\Gamma) = 1$, $\mathrm{Tr}(I) = 7$:
+**Step 4.** Using: $\mathrm{Tr}(\Gamma^2) = P$, $\mathrm{Tr}(\Gamma) = 1$, $\mathrm{Tr}(I) = 7$:
 $$= P - \frac{2}{7} + \frac{7}{49} = P - \frac{2}{7} + \frac{1}{7} = P - \frac{1}{7}$$
 
-**Шаг 5.** Подставляем:
+**Step 5.** Substituting:
 $$R = 1 - \frac{P - 1/7}{P} = 1 - 1 + \frac{1}{7P} = \frac{1}{7P}$$
 
-Результат: **$R = 1/(7P)$** — элегантная формула, связывающая рефлексию с чистотой.
+Result: **$R = 1/(7P)$** — an elegant formula linking reflection to purity.
 
-### Почему $R$ убывает с ростом $P$?
+### Why Does $R$ Decrease as $P$ Increases?
 
-На первый взгляд, это парадоксально: чем «чище» система (больше $P$), тем хуже она себя знает (меньше $R$)? Но парадокс исчезает, если понять семантику $R$.
+At first glance this is paradoxical: the 'purer' the system (larger $P$), the less it knows itself (smaller $R$)? But the paradox disappears once we understand the semantics of $R$.
 
-$R$ измеряет **нормированное расстояние от тепловой смерти** ($I/7$). Высокочистые системы ($P \to 1$) находятся далеко от $I/7$ — они «замёрзли» в одном состоянии, у них мало «термального запаса» для гибкой самонастройки. Низкочистые системы ($P \to 1/7$) находятся вблизи $I/7$ — у них максимальный запас, но они слишком хаотичны, чтобы быть жизнеспособными.
+$R$ measures the **normalised distance from heat death** ($I/7$). High-purity systems ($P \to 1$) are far from $I/7$ — they are 'frozen' in a single state, with little 'thermal reserve' for flexible self-adjustment. Low-purity systems ($P \to 1/7$) are close to $I/7$ — they have maximum reserve, but are too chaotic to be viable.
 
-**Аналогия.** Представьте термометр в бане. «Рефлексия» — это запас до максимальной температуры. В прохладной бане (низкое $P$, ближе к «хаосу» $I/7$) запас большой ($R$ велико). В раскалённой (высокое $P$) — запас мал ($R$ мало). Для комфорта (сознания) нужен **средний** диапазон.
+**Analogy.** Imagine a thermometer in a sauna. 'Reflection' is the reserve up to the maximum temperature. In a cool sauna (low $P$, closer to the 'chaos' of $I/7$) the reserve is large ($R$ is large). In a scorching one (high $P$) — the reserve is small ($R$ is small). For comfort (consciousness) a **middle** range is needed.
 
-:::note Эквивалентность форм R
-Упрощённая форма $R = 1/(7P)$ получается при $\rho^* = I/7$ (диссипативный аттрактор). Общая форма Фробениуса $R = 1 - \|\Gamma - \rho^*\|_F^2 / P$ используется в коде, где $\rho^*$ может быть произвольным референсным состоянием. При $\rho^* = I/7$ обе формы алгебраически тождественны: $\|\Gamma - I/7\|_F^2 = P - 1/7$, откуда $R = 1 - (P - 1/7)/P = 1/(7P)$.
+:::note Equivalence of Forms of R
+The simplified form $R = 1/(7P)$ is obtained when $\rho^* = I/7$ (dissipative attractor). The general Frobenius form $R = 1 - \|\Gamma - \rho^*\|_F^2 / P$ is used in code, where $\rho^*$ can be an arbitrary reference state. At $\rho^* = I/7$ both forms are algebraically identical: $\|\Gamma - I/7\|_F^2 = P - 1/7$, hence $R = 1 - (P - 1/7)/P = 1/(7P)$.
 :::
 
-:::warning Семантика R: расстояние от тепловой смерти (C1)
-$R = 1/(7P)$ измеряет **нормированную близость к тепловой смерти** ($I/7$), а не качество категориальной самомодели $\varphi(\Gamma)$. Ключевые следствия:
+:::warning Semantics of R: Distance from Heat Death (C1)
+$R = 1/(7P)$ measures the **normalised proximity to heat death** ($I/7$), not the quality of the categorical self-model $\varphi(\Gamma)$. Key corollaries:
 
-- **Монотонность:** $R$ убывает с ростом $P$ — это намеренно. Высокочистые системы ($P \to 1$) далеки от $I/7$, поэтому «термальный запас» мал: $R \to 1/7$.
-- **Зона Goldilocks:** пересечение $P > P_{\mathrm{crit}} = 2/7$ (снизу) и $R \geq 1/3 \Leftrightarrow P \leq 3/7$ (сверху) даёт $P \in (2/7, 3/7]$ — [окно сознания](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
-- **Отличие от $\varphi(\Gamma)$:** мера $\|\Gamma - \varphi(\Gamma)\|_F$ характеризует качество категориальной самомодели (уровень 2 в [иерархии аттракторов](#иерархия-аттракторов)), тогда как $R$ использует фиксированный референс $I/7$ (уровень 0). Эти величины не взаимозаменяемы.
+- **Monotonicity:** $R$ decreases as $P$ grows — this is intentional. High-purity systems ($P \to 1$) are far from $I/7$, so the 'thermal reserve' is small: $R \to 1/7$.
+- **Goldilocks zone:** the intersection of $P > P_{\mathrm{crit}} = 2/7$ (from below) and $R \geq 1/3 \Leftrightarrow P \leq 3/7$ (from above) gives $P \in (2/7, 3/7]$ — the [consciousness window](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
+- **Difference from $\varphi(\Gamma)$:** the measure $\|\Gamma - \varphi(\Gamma)\|_F$ characterises the quality of the categorical self-model (level 2 in the [attractor hierarchy](#иерархия-аттракторов)), while $R$ uses the fixed reference $I/7$ (level 0). These quantities are not interchangeable.
 :::
 
-### Почему $R_{\text{th}} = 1/3$: не произвол, а следствие $K = 3$
+### Why $R_{\text{th}} = 1/3$: Not Arbitrary, But a Consequence of $K = 3$
 
-Порог $R_{\text{th}} = 1/3$ — не произвольный выбор. Он следует из **триадического разложения** Линдблад-операторов: $K = 3$ альтернативы в байесовском выводе.
+The threshold $R_{\text{th}} = 1/3$ is not an arbitrary choice. It follows from the **triadic decomposition** of Lindblad operators: $K = 3$ alternatives in Bayesian inference.
 
-Формула порогов: $X_{\text{th}}^{(n)} = 1/(n+1)$. При $n = 2$ (для перехода L1→L2): $R_{\text{th}} = 1/(2+1) = 1/3$.
+Threshold formula: $X_{\text{th}}^{(n)} = 1/(n+1)$. At $n = 2$ (for the L1→L2 transition): $R_{\text{th}} = 1/(2+1) = 1/3$.
 
-Откуда $K = 3$? Из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) Линдблад-операторов: любой CPTP-канал на $\mathcal{D}(\mathbb{C}^7)$ раскладывается на три базовых компоненты. Чтобы система могла различить «себя» от «не-себя» среди $K = 3$ альтернатив, её рефлексия должна превышать $1/K = 1/3$ (байесовское доминирование).
+Where does $K = 3$ come from? From the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) of Lindblad operators: any CPTP channel on $\mathcal{D}(\mathbb{C}^7)$ decomposes into three basic components. For the system to distinguish 'self' from 'not-self' among $K = 3$ alternatives, its reflection must exceed $1/K = 1/3$ (Bayesian dominance).
 
-**Числовой пример.** $R = 1/3$ соответствует $P = 1/(7 \times 1/3) = 3/7 \approx 0.429$. Это верхняя граница зоны Голдилокс.
+**Numerical example.** $R = 1/3$ corresponds to $P = 1/(7 \times 1/3) = 3/7 \approx 0.429$. This is the upper boundary of the Goldilocks zone.
 
-| Значение $R$ | Интерпретация |
-|--------------|---------------|
-| $R \to 1$ | Идеальное самопознание: $\Gamma \approx \Gamma^*$ |
-| $R \geq R_{\text{th}} = 1/3$ | Порог когнитивных квалиа (L2) **[Т]** — $K = 3$ выведено из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция); [порог L2](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) |
-| $R \approx 0$ | Отсутствие самомоделирования |
+| Value of $R$ | Interpretation |
+|--------------|----------------|
+| $R \to 1$ | Perfect self-knowledge: $\Gamma \approx \Gamma^*$ |
+| $R \geq R_{\text{th}} = 1/3$ | Threshold of cognitive qualia (L2) **[T]** — $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция); [L2 threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) |
+| $R \approx 0$ | Absence of self-modelling |
 
-**Алгоритм вычисления:** См. [compute_R](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r) в формализации φ.
+**Computation algorithm:** See [compute_R](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r) in the formalisation of φ.
 
-:::info $G_2$-инвариантность R [Т]
-Мера рефлексии $R$ — **$G_2$-инвариант**: для любого $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ выполнено $R(U\Gamma U^\dagger) = R(\Gamma)$. Это следует из $G_2$-ковариантности оператора $\varphi$ и унитарной инвариантности нормы Фробениуса. Следовательно, $R$ — **наблюдатель-независимая** величина: различные наблюдатели, связанные калибровочным преобразованием $G_2$, измеряют одинаковое $R$.
+:::info $G_2$-Invariance of R [T]
+The reflection measure $R$ is a **$G_2$-invariant**: for any $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, $R(U\Gamma U^\dagger) = R(\Gamma)$. This follows from the $G_2$-covariance of the operator $\varphi$ and the unitary invariance of the Frobenius norm. Consequently, $R$ is an **observer-independent** quantity: different observers related by a $G_2$ gauge transformation measure the same $R$.
 
-Это доказано в [теореме $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#инварианты) [Т]: все пороговые условия иерархии L0–L4 определяются через $G_2$-инвариантные функции $\Gamma$ и потому **объективны**.
+This is proved in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#инварианты) [T]: all threshold conditions of the L0–L4 hierarchy are defined through $G_2$-invariant functions of $\Gamma$ and are therefore **objective**.
 :::
 
-:::info Нецикличность и каноничность R [Т-126]
-Каноническое определение $R$ использует $\rho^*_{\mathrm{diss}} = I/7$ (константу), а не $\varphi(\Gamma)$. Три записи ($1 - \|\Gamma - I/7\|^2_F / P$, формула $1/(7P)$, формула через $k = 1 - R$) — **одно алгебраическое тождество** ([T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126)). Имплементационные аппроксимации $R_{\mathrm{impl}}$ и $\rho_{RC}$ — отдельные величины в другом пространстве (H3 **ЗАКРЫТА**: [T-130](/docs/proofs/consciousness/operationalization#t-130)+[T-133](/docs/proofs/consciousness/operationalization#t-133) [Т] — перенос порогов через CPTP-мостик); каноническое $R$ однозначно. См. [стратификацию определений](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+:::info Non-Circularity and Canonicity of R [T-126]
+The canonical definition of $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ (a constant), not $\varphi(\Gamma)$. The three expressions ($1 - \|\Gamma - I/7\|^2_F / P$, the formula $1/(7P)$, the formula via $k = 1 - R$) are **one algebraic identity** ([T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126)). Implementation approximations $R_{\mathrm{impl}}$ and $\rho_{RC}$ are separate quantities in a different space (H3 **CLOSED**: [T-130](/docs/proofs/consciousness/operationalization#t-130)+[T-133](/docs/proofs/consciousness/operationalization#t-133) [T] — threshold transfer via CPTP bridge); canonical $R$ is unambiguous. See [definition stratification](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
-:::info Соглашение: каноническое R через Фробениус
-$R$ определяется через норму Фробениуса (формула выше) — это **каноническая** мера рефлексии первого порядка. Для обобщения на высшие порядки ($n \geq 2$) используется верность: $R^{(n)} := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$. Оба определения при $n=1$ монотонно связаны и дают согласованную L2-классификацию (см. [связь определений](#рефлексия-высших-порядков-rn) ниже).
+:::info Convention: Canonical R via Frobenius
+$R$ is defined via the Frobenius norm (formula above) — this is the **canonical** first-order reflection measure. For generalisation to higher orders ($n \geq 2$) fidelity is used: $R^{(n)} := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$. Both definitions at $n=1$ are monotonically related and give a consistent L2 classification (see [connection between definitions](#рефлексия-высших-порядков-rn) below).
 :::
 
-:::note О нотации
-$R$ — мера рефлексии (качество самомоделирования). Не путать с $\mathcal{R}$ — [регенеративным членом](/docs/core/dynamics/evolution#3-регенеративный-член) уравнения эволюции.
+:::note Note on Notation
+$R$ — reflection measure (quality of self-modelling). Not to be confused with $\mathcal{R}$ — the [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation.
 :::
 
-## Рефлексия высших порядков $R^{(n)}$ {#рефлексия-высших-порядков-rn}
+## Higher-Order Reflection $R^{(n)}$ {#рефлексия-высших-порядков-rn}
 
-### Мотивация: «знаю, что знаю»
+### Motivation: "I Know That I Know"
 
-$R$ (первого порядка) отвечает на вопрос: «насколько точна моя самомодель?» Но можно спросить глубже: «насколько точна моя *модель моей самомодели*?» Это $R^{(2)}$ — метарефлексия.
+$R$ (first order) answers the question: 'how accurate is my self-model?' But one can ask more deeply: 'how accurate is my *model of my self-model*?' This is $R^{(2)}$ — meta-reflection.
 
-Человек не просто чувствует боль — он **знает, что чувствует боль** (рефлексия 1-го порядка). И **знает, что знает** (рефлексия 2-го порядка). Некоторые медитативные практики работают именно с этим уровнем — наблюдение за наблюдателем.
+A person does not simply feel pain — they **know that they feel pain** (first-order reflection). And **know that they know** (second-order reflection). Some meditative practices work precisely at this level — observing the observer.
 
-:::info Расширение для пост-рефлексивных уровней
-Для определения уровней L3 и L4 [иерархии интериорности](/docs/proofs/consciousness/interiority-hierarchy) требуется **обобщённая рефлексия n-го порядка**.
+:::info Extension for Post-Reflexive Levels
+Defining levels L3 and L4 of the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) requires **generalised n-th order reflection**.
 :::
 
-### Определение
+### Definition
 
-**Рефлексия n-го порядка** измеряет качество самомоделирования на глубине n:
+**n-th order reflection** measures the quality of self-modelling at depth n:
 
 $$
 R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
 $$
 
-где:
-- $\varphi^{(n)} := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}$ — n-кратная композиция оператора $\varphi$
+where:
+- $\varphi^{(n)} := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}$ — n-fold composition of the operator $\varphi$
 - $\varphi^{(0)}(\Gamma) := \Gamma$
-- $F(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity (верность)
+- $F(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity
 
-**Числовой пример.** Пусть $R^{(1)} = 0.4$ (выше порога L2). Тогда $\varphi(\Gamma)$ близко к $\Gamma$. $R^{(2)} = F(\varphi(\Gamma), \varphi^2(\Gamma))$ — насколько $\varphi(\Gamma)$ и $\varphi(\varphi(\Gamma))$ похожи. Поскольку $\varphi$ сжимающее, $R^{(2)} > R^{(1)}$ — метарефлексия растёт с глубиной.
+**Numerical example.** Let $R^{(1)} = 0.4$ (above the L2 threshold). Then $\varphi(\Gamma)$ is close to $\Gamma$. $R^{(2)} = F(\varphi(\Gamma), \varphi^2(\Gamma))$ — how similar $\varphi(\Gamma)$ and $\varphi(\varphi(\Gamma))$ are. Since $\varphi$ is contracting, $R^{(2)} > R^{(1)}$ — meta-reflection grows with depth.
 
-### Интерпретация
+### Interpretation
 
-| Порядок | Формула | Интерпретация |
-|---------|---------|---------------|
-| $R^{(1)} = R$ | $F(\Gamma, \varphi(\Gamma))$ | Качество самомодели (рефлексия 1-го порядка) |
-| $R^{(2)}$ | $F(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$ | Качество модели самомодели (метарефлексия) |
-| $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ | Качество n-й итерации самомоделирования |
+| Order | Formula | Interpretation |
+|-------|---------|----------------|
+| $R^{(1)} = R$ | $F(\Gamma, \varphi(\Gamma))$ | Quality of self-model (first-order reflection) |
+| $R^{(2)}$ | $F(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$ | Quality of the model of the self-model (meta-reflection) |
+| $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ | Quality of the n-th iteration of self-modelling |
 
-:::warning Связь двух определений [С]
-Каноническое определение $R = 1/(7P)$ (эквивалентно $1 - \|\Gamma - I/7\|_F^2 / P$, Фробениус с $\rho^*_{\mathrm{diss}} = I/7$) и верность $R^{(1)}_F := F(\Gamma, \varphi(\Gamma))$ — **разные функции** с гарантированными неравенствами:
+:::warning Connection Between the Two Definitions [C]
+The canonical definition $R = 1/(7P)$ (equivalent to $1 - \|\Gamma - I/7\|_F^2 / P$, Frobenius with $\rho^*_{\mathrm{diss}} = I/7$) and the fidelity $R^{(1)}_F := F(\Gamma, \varphi(\Gamma))$ are **different functions** with guaranteed inequalities:
 
 $$
 1 - \sqrt{1 - R^{(1)}_F} \leq \sqrt{R} \leq 1
 $$
 
-(из неравенства Фукса-ван де Граафа и связи $\|\cdot\|_1 \leq \sqrt{N}\|\cdot\|_F$).
+(from the Fuchs–van de Graaf inequality and the relation $\|\cdot\|_1 \leq \sqrt{N}\|\cdot\|_F$).
 
-**Каноническое определение:** $R$ через Фробениус — для порога $R_{\text{th}} = 1/3$ и L2-критерия.
-**Обобщение на высшие порядки:** $R^{(n)}$ через верность — для L3, L4 (верность инвариантна под унитарными преобразованиями, что существенно при итерации $\varphi^{(n)}$).
+**Canonical definition:** $R$ via Frobenius — for the threshold $R_{\text{th}} = 1/3$ and the L2 criterion.
+**Generalisation to higher orders:** $R^{(n)}$ via fidelity — for L3, L4 (fidelity is invariant under unitary transformations, which is essential when iterating $\varphi^{(n)}$).
 
-**Согласованность:** При $R > 1/3$ оба определения дают $R^{(1)}_F > 1/3$ (монотонная связь сохраняет порядок), поэтому L2-классификация не зависит от выбора.
+**Consistency:** At $R > 1/3$ both definitions give $R^{(1)}_F > 1/3$ (a monotonic relation preserves order), so L2 classification does not depend on the choice.
 :::
 
-### Универсальная формула порогов
+### Universal Threshold Formula
 
-Пороги для всех уровней иерархии следуют единой формуле:
+Thresholds for all hierarchy levels follow a single formula:
 
 $$
 X^{(n)}_{\text{th}} = \frac{1}{n+1}
 $$
 
-| Переход | n | Порог | Интерпретация |
-|---------|---|-------|---------------|
-| L0→L1 | 1 | — | Структурный (rank > 1) |
-| L1→L2 | 2 | $R_{\text{th}} = 1/3$ | Рефлексия доминирует над шумом |
-| L2→L3 | 3 | $R^{(2)}_{\text{th}} = 1/4$ | Метарефлексия доминирует |
-| L3→L4 | 4 | $\lim_n R^{(n)} > 0$ | Полная рефлексивная замкнутость |
+| Transition | n | Threshold | Interpretation |
+|------------|---|-----------|----------------|
+| L0→L1 | 1 | — | Structural (rank > 1) |
+| L1→L2 | 2 | $R_{\text{th}} = 1/3$ | Reflection dominates noise |
+| L2→L3 | 3 | $R^{(2)}_{\text{th}} = 1/4$ | Meta-reflection dominates |
+| L3→L4 | 4 | $\lim_n R^{(n)} > 0$ | Complete reflexive closure |
 
-### Связь со спектральной формулой φ
+### Connection with the Spectral Formula of φ
 
-Для вычисления $R^{(n)}$ используется [спектральная формула φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление):
+For computing $R^{(n)}$, the [spectral formula of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление) is used:
 
 $$
 \varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k
 $$
 
-где $\{R_k, L_k, \lambda_k\}$ — собственные структуры логического Лиувиллиана $\mathcal{L}_\Omega$.
+where $\{R_k, L_k, \lambda_k\}$ — eigen-structures of the logical Liouvillian $\mathcal{L}_\Omega$.
 
-## Примеры сжимающих CPTP-каналов
+## Examples of Contracting CPTP Channels
 
-Для интуиции полезно увидеть конкретные реализации:
+For intuition, it is useful to see concrete realisations:
 
-| Канал | Формула | Константа $k$ | Неподвижная точка |
-|-------|---------|---------------|-------------------|
-| Деполяризующий | $\varphi(\rho) = p\rho + (1-p)\frac{I}{N}$ | $k = p$ | $\Gamma^* = \frac{I}{N}$ |
-| Термализация | $\varphi(\rho) = \lambda\rho + (1-\lambda)\rho_{\text{th}}$ | $k = \lambda$ | $\Gamma^* = \rho_{\text{th}}$ |
-| Амплитудное затухание | $K_0 = \vert 0\rangle\langle 0\vert + \sqrt{1-\gamma}\vert 1\rangle\langle 1\vert$, $K_1 = \sqrt{\gamma}\vert 0\rangle\langle 1\vert$ | $k = 1 - \gamma$ | $\Gamma^* = \vert 0\rangle\langle 0\vert$ |
+| Channel | Formula | Constant $k$ | Fixed point |
+|---------|---------|--------------|-------------|
+| Depolarising | $\varphi(\rho) = p\rho + (1-p)\frac{I}{N}$ | $k = p$ | $\Gamma^* = \frac{I}{N}$ |
+| Thermalisation | $\varphi(\rho) = \lambda\rho + (1-\lambda)\rho_{\text{th}}$ | $k = \lambda$ | $\Gamma^* = \rho_{\text{th}}$ |
+| Amplitude damping | $K_0 = \vert 0\rangle\langle 0\vert + \sqrt{1-\gamma}\vert 1\rangle\langle 1\vert$, $K_1 = \sqrt{\gamma}\vert 0\rangle\langle 1\vert$ | $k = 1 - \gamma$ | $\Gamma^* = \vert 0\rangle\langle 0\vert$ |
 
-где $p, \lambda \in [0, 1)$, $\gamma \in (0, 1]$, $\rho_{\text{th}} = e^{-\beta H}/Z$ — термальное состояние.
+where $p, \lambda \in [0, 1)$, $\gamma \in (0, 1]$, $\rho_{\text{th}} = e^{-\beta H}/Z$ — thermal state.
 
-:::note Связь с замещающим каналом
-Деполяризующий канал и термализация — частные случаи [замещающего канала](#теорема-физическая-реализация-phi) $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ с $\rho^* = I/N$ и $\rho^* = \rho_{\text{th}}$ соответственно. В УГМ $\rho^* = \varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) [Т], что фиксирует выбор однозначно.
+:::note Connection with the Replacement Channel
+The depolarising channel and thermalisation are special cases of the [replacement channel](#теорема-физическая-реализация-phi) $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ with $\rho^* = I/N$ and $\rho^* = \rho_{\text{th}}$ respectively. In UHM $\rho^* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) [T], which fixes the choice unambiguously.
 :::
 
-## Иерархия интериорности
+## Interiority Hierarchy
 
-Самонаблюдение организовано в **пять уровней** (L0→L1→L2→L3→L4). Каждый уровень определяется количественным порогом:
+Self-observation is organised into **five levels** (L0→L1→L2→L3→L4). Each level is defined by a quantitative threshold:
 
-| Уровень | Название | Условие | Описание | Пример |
-|---------|----------|---------|----------|--------|
-| L0 | Интериорность | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Фундаментальное свойство «иметь изнанку» | Электрон |
-| L1 | Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | Структура с [метрикой Фубини-Штуди](./interiority-theory#метрика-фубини-штуди) | Бактерия |
-| L2 | Когнитивные квалиа | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Рефлексивно доступный сознательный опыт | Человек |
-| L3 | Сетевое сознание | $R^{(2)} \geq 1/4$ | Метарефлексия — модели моделей | Медитирующий |
-| L4 | Унитарное сознание | $\lim_n R^{(n)} > 0$ | Полная рефлексивная замкнутость | Теоретический предел |
+| Level | Name | Condition | Description | Example |
+|-------|------|-----------|-------------|---------|
+| L0 | Interiority | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Fundamental property of 'having an inside' | Electron |
+| L1 | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Structure with [Fubini-Study metric](./interiority-theory#fubini-study-metric) | Bacterium |
+| L2 | Cognitive qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Reflexively accessible conscious experience | Human |
+| L3 | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection — models of models | Meditator |
+| L4 | Unitary consciousness | $\lim_n R^{(n)} > 0$ | Complete reflexive closure | Theoretical limit |
 
-где:
-- $\rho_E$ — редуцированная матрица плотности измерения Интериорности (требует [расширенного формализма](/docs/core/dynamics/coherence-matrix#два-уровня-формализации))
-- $R$ — мера рефлексии (см. выше) — **вычислима в минимальном формализме**
-- $R^{(n)}$ — рефлексия n-го порядка (см. выше) — **вычислима в минимальном формализме**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) — **вычислима в минимальном формализме**
+where:
+- $\rho_E$ — reduced density matrix of the Interiority dimension (requires [extended formalism](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization))
+- $R$ — reflection measure (see above) — **computable in the minimal formalism**
+- $R^{(n)}$ — n-th order reflection (see above) — **computable in the minimal formalism**
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) — **computable in the minimal formalism**
 
-:::note Два уровня формализации в классификации
-- **L0/L1** определяются через $\rho_E$ — требуют **расширенного** формализма
-- **L2** можно проверить через $R \geq 1/3$, $\Phi \geq 1$ — вычислимо в **минимальном** формализме (условие $D_{\text{diff}} \geq 2$ требует расширенного)
-- **L3/L4** определяются через $R^{(n)}$ — вычислимо в **минимальном** формализме
+:::note Two Levels of Formalisation in Classification
+- **L0/L1** are defined via $\rho_E$ — require the **extended** formalism
+- **L2** can be verified via $R \geq 1/3$, $\Phi \geq 1$ — computable in the **minimal** formalism (the condition $D_{\text{diff}} \geq 2$ requires the extended formalism)
+- **L3/L4** are defined via $R^{(n)}$ — computable in the **minimal** formalism
 :::
 
-:::info Статус порогов
-Формула $X^{(n)}_{\text{th}} = 1/(n+1)$ — следствие байесовского доминирования при $K = n+1$ альтернативах:
+:::info Status of Thresholds
+The formula $X^{(n)}_{\text{th}} = 1/(n+1)$ is a consequence of Bayesian dominance with $K = n+1$ alternatives:
 
 $$
 X^{(n)}_{\text{th}} = \frac{1}{n+1}
 $$
 
-| Порог | Значение | Статус |
-|-------|----------|--------|
-| $R_{\text{th}}$ | $1/3$ | **[Т]** теорема ($K=3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) |
-| $R^{(2)}_{\text{th}}$ | $1/4$ | **[С]** условная ($K=4$) |
-| $\Phi_{\text{th}}$ | $1$ | **[Т]** теорема (T-129) |
+| Threshold | Value | Status |
+|-----------|-------|--------|
+| $R_{\text{th}}$ | $1/3$ | **[T]** theorem ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) |
+| $R^{(2)}_{\text{th}}$ | $1/4$ | **[C]** conditional ($K=4$) |
+| $\Phi_{\text{th}}$ | $1$ | **[T]** theorem (T-129) |
 
-См. [Пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод) и [Теорема о конечности иерархии](/docs/proofs/consciousness/interiority-hierarchy#теорема-43-l4--максимальный-уровень).
+See [L2 Thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод) and [Theorem on Hierarchy Finiteness](/docs/proofs/consciousness/interiority-hierarchy#теорема-43-l4--максимальный-уровень).
 :::
 
-:::warning Стабильность пост-рефлексивных уровней
-- **L3 метастабилен:** Состояние L3 распадается до L2 с характерным временем $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$
-- **L4 устойчив:** Аттрактор при $P > 6/7 \approx 0.857$ (практически недостижим для биологических систем)
+:::warning Stability of Post-Reflexive Levels
+- **L3 is metastable:** The L3 state decays to L2 with characteristic time $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$
+- **L4 is stable:** Attractor at $P > 6/7 \approx 0.857$ (practically unreachable for biological systems)
 
-Подробности: [Теорема о метастабильности L3](/docs/proofs/consciousness/interiority-hierarchy#теорема-32-метастабильность-l3).
+Details: [Theorem on Metastability of L3](/docs/proofs/consciousness/interiority-hierarchy#теорема-32-метастабильность-l3).
 :::
 
-:::note Глубина самоосознания (SAD)
-Дискретная иерархия L0–L4 обобщается на непрерывный случай через **репрезентационную башню** $s_\text{full} \to s^{(L-1)} \to \cdots \to \Gamma$ с мерой $\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$. Биологические корреляты: бактерия (SAD=0), насекомое (SAD=1), млекопитающее (SAD=2+), человек (SAD $\leq$ 3, [§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)). См. [Башня глубины](/docs/consciousness/hierarchy/depth-tower).
+:::note Self-Awareness Depth (SAD)
+The discrete hierarchy L0–L4 is generalised to the continuous case through the **representation tower** $s_\text{full} \to s^{(L-1)} \to \cdots \to \Gamma$ with measure $\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$. Biological correlates: bacterium (SAD=0), insect (SAD=1), mammal (SAD=2+), human (SAD $\leq$ 3, [§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)). See [Depth Tower](/docs/consciousness/hierarchy/depth-tower).
 :::
 
-**Терминология:** То, что называется «квалиа», корректно применяется **только к L2**. Для L0/L1 используется термин «экспериенциальное содержание», для L3/L4 — специфические термины «сетевое сознание» и «унитарное сознание».
+**Terminology:** What is called 'qualia' applies correctly **only to L2**. For L0/L1 the term 'experiential content' is used; for L3/L4 — the specific terms 'network consciousness' and 'unitary consciousness'.
 
-Формальные определения и условия перехода: [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy).
+Formal definitions and transition conditions: [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
 
-## Монотонность укоренения (C23) [С] {#grounding-монотонность}
+## Grounding Monotonicity (C23) [C] {#grounding-монотонность}
 
-При инициализации из LLM-весов (Путь B) начальное укоренение $\mathrm{grounding}(w, 0) = 0$ (LLM-символы не связаны с $\sigma$-профилями). $\sigma$-loss $L_\sigma = \|\sigma_{\text{sys},\Omega}\|_2$ создаёт давление на укоренение.
+Upon initialisation from LLM weights (Path B) initial grounding $\mathrm{grounding}(w, 0) = 0$ (LLM symbols are not linked to $\sigma$-profiles). The $\sigma$-loss $L_\sigma = \|\sigma_{\text{sys},\Omega}\|_2$ creates pressure on grounding.
 
-:::tip Теорема C23 [С]: Монотонность укоренения
-$\mathrm{grounding}(w, \tau)$ монотонно возрастает при $\eta_\sigma > 0$ и непрерывном сенсомоторном потоке.
+:::tip Theorem C23 [C]: Grounding Monotonicity
+$\mathrm{grounding}(w, \tau)$ increases monotonically at $\eta_\sigma > 0$ and continuous sensorimotor flow.
 
-**Набросок доказательства:**
-1. $\sigma$-loss градиент $\nabla_w L_\sigma \neq 0$ при $\mathrm{grounding}(w) < 1$ (стресс не обнулён)
-2. Обновление весов $w \leftarrow w - \eta_\sigma \nabla_w L_\sigma$ уменьшает $L_\sigma$ (стандартный SGD)
-3. Уменьшение $L_\sigma$ ↔ увеличение grounding (по определению: символы лучше предсказывают $\sigma$-профили)
+**Proof sketch:**
+1. $\sigma$-loss gradient $\nabla_w L_\sigma \neq 0$ when $\mathrm{grounding}(w) < 1$ (stress not zeroed)
+2. Weight update $w \leftarrow w - \eta_\sigma \nabla_w L_\sigma$ decreases $L_\sigma$ (standard SGD)
+3. Decrease in $L_\sigma$ ↔ increase in grounding (by definition: symbols better predict $\sigma$-profiles)
 
-**Условие [С]:** Непрерывное обучение (метапластичность) + сенсомоторная среда.
+**Condition [C]:** Continuous learning (metaplasticity) + sensorimotor environment.
 
-Спецификация: language-model.md §8 | Статус: **[С]**
+Specification: language-model.md §8 | Status: **[C]**
 :::
 
 ---
 
-## Мера сознательности C {#мера-сознательности-c}
+## Consciousness Measure C {#мера-сознательности-c}
 
-### Почему произведение, а не сумма?
+### Why a Product, Not a Sum?
 
-Мера сознательности объединяет рефлексию и интеграцию. Но почему $C = \Phi \times R$, а не $C = \Phi + R$?
+The consciousness measure combines reflection and integration. But why $C = \Phi \times R$ and not $C = \Phi + R$?
 
-**Геометрический аргумент.** Сознание требует **одновременно** и интеграции, и рефлексии. Если $\Phi = 0$ (полная фрагментация) — сознание невозможно, даже при идеальной рефлексии. Если $R = 0$ (нулевое самомоделирование) — сознание невозможно, даже при идеальной интеграции. Произведение обнуляется, если хотя бы один множитель ноль. Сумма — нет.
+**Geometric argument.** Consciousness requires **both** integration and reflection simultaneously. If $\Phi = 0$ (complete fragmentation) — consciousness is impossible, even with perfect reflection. If $R = 0$ (zero self-modelling) — consciousness is impossible, even with perfect integration. The product vanishes if at least one factor is zero. The sum does not.
 
 ```mermaid
 graph LR
-    subgraph "C = Φ + R (неверно)"
-        A1["Φ=0, R=1 → C=1 ✗<br/>Фрагмент, знающий себя"]
-        A2["Φ=1, R=0 → C=1 ✗<br/>Единое, не знающее себя"]
+    subgraph "C = Φ + R (incorrect)"
+        A1["Φ=0, R=1 → C=1 ✗<br/>Fragment that knows itself"]
+        A2["Φ=1, R=0 → C=1 ✗<br/>Unified, not knowing itself"]
     end
-    subgraph "C = Φ × R (верно)"
-        B1["Φ=0, R=1 → C=0 ✓<br/>Нет интеграции → нет сознания"]
-        B2["Φ=1, R=0 → C=0 ✓<br/>Нет рефлексии → нет сознания"]
-        B3["Φ=2, R=0.5 → C=1 ✓<br/>Баланс → сознание"]
+    subgraph "C = Φ × R (correct)"
+        B1["Φ=0, R=1 → C=0 ✓<br/>No integration → no consciousness"]
+        B2["Φ=1, R=0 → C=0 ✓<br/>No reflection → no consciousness"]
+        B3["Φ=2, R=0.5 → C=1 ✓<br/>Balance → consciousness"]
     end
 ```
 
-**Числовой пример.** Для типичного человека в бодрствовании: $\Phi \approx 3$, $R \approx 0.4$ → $C \approx 1.2 > C_{\text{th}} = 1/3$. В глубоком сне: $\Phi \approx 0.5$, $R \approx 0.1$ → $C \approx 0.05 < 1/3$ — ниже порога.
+**Numerical example.** For a typical human in wakefulness: $\Phi \approx 3$, $R \approx 0.4$ → $C \approx 1.2 > C_{\text{th}} = 1/3$. In deep sleep: $\Phi \approx 0.5$, $R \approx 0.1$ → $C \approx 0.05 < 1/3$ — below the threshold.
 
-### Каноническая формула
+### Canonical Formula
 
-Каноническая мера сознательности ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)):
+Canonical consciousness measure ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)):
 
 $$
 C = \Phi \times R
 $$
 
-где:
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ): $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}$ — вычислима в минимальном 7D-формализме
-- $R$ — мера рефлексии (см. выше) — $R = 1/(7P)$, вычислима в минимальном 7D-формализме
+where:
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ): $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}$ — computable in the minimal 7D formalism
+- $R$ — reflection measure (see above) — $R = 1/(7P)$, computable in the minimal 7D formalism
 
-Порог когнитивных квалиа (L2): $C_{\text{th}} = \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$.
+Threshold of cognitive qualia (L2): $C_{\text{th}} = \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$.
 
-:::info Отделение $D_{\text{diff}}$ от $C$
-$D_{\text{diff}} \geq 2$ — **отдельное** условие [полной жизнеспособности](/docs/core/dynamics/viability#полная-жизнеспособность), характеризующее богатство феноменального содержания E-сектора. Мера $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ вычислима в 7D через [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, где $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
+:::info Separating $D_{\text{diff}}$ from $C$
+$D_{\text{diff}} \geq 2$ — a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность), characterising the richness of phenomenal content in the E-sector. The measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ is computable in 7D via [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, where $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
-Включение $D_{\text{diff}}$ в $C$ дублирует условие жизнеспособности $V$. Каноническая мера $C = \Phi \cdot R$ — минимальная скалярная сводка условий интеграции и рефлексии.
+Including $D_{\text{diff}}$ in $C$ duplicates the viability condition $V$. The canonical measure $C = \Phi \cdot R$ is the minimal scalar summary of the integration and reflection conditions.
 :::
 
-:::note О нотации
-$D_{\text{diff}}$ — мера **дифференциации** (разнообразие содержания опыта). Не путать с измерением **Динамики** $D$ (одно из семи измерений Голонома).
+:::note Note on Notation
+$D_{\text{diff}}$ — measure of **differentiation** (diversity of experiential content). Not to be confused with the **Dynamics** dimension $D$ (one of the seven dimensions of the Holon).
 :::
 
-**Условие когнитивных квалиа (L2):**
+**Condition for cognitive qualia (L2):**
 
 $$
 C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}
 $$
 
-при условии $D_{\text{diff}} \geq D_{\min} = 2$ **[Т]** (T-151) — отдельное условие жизнеспособности.
+subject to $D_{\text{diff}} \geq D_{\min} = 2$ **[T]** (T-151) — a separate viability condition.
 
-## Для разных аудиторий
+## For Different Audiences
 
-### Для инженеров и разработчиков ИИ
+### For Engineers and AI Developers
 
-Практическая реализация самонаблюдения требует:
+Practical implementation of self-observation requires:
 
-1. **Выбор CPTP-канала:** Замещающий канал $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [Т] (см. [физическая реализация](#теорема-физическая-реализация-phi)). $\rho^*$ — стационарное состояние $\mathcal{L}_\Omega$. Параметр $k$ подбирается из данных (типично $k \approx 0.05$). См. также [каноническая форма φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
-2. **Вычисление R:** Алгоритм $O(N^2)$ для матрицы $N \times N$ — см. [псевдокод](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r)
-3. **Проверка L2:** `is_L2 = (R >= 1/3) and (Phi >= 1) and (D_diff >= 2)`
+1. **Choice of CPTP channel:** Replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T] (see [physical realisation](#теорема-физическая-реализация-phi)). $\rho^*$ — stationary state of $\mathcal{L}_\Omega$. Parameter $k$ is fitted from data (typically $k \approx 0.05$). See also [canonical form of φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм)
+2. **Computing R:** Algorithm $O(N^2)$ for an $N \times N$ matrix — see [pseudocode](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r)
+3. **Checking L2:** `is_L2 = (R >= 1/3) and (Phi >= 1) and (D_diff >= 2)`
 
-:::tip D_diff в 7D-формализме: точная формула [T-128 [Т]]
-По [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128):
+:::tip D_diff in the 7D Formalism: Exact Formula [T-128 [T]]
+By [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128):
 
 $$D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N-1)$$
 
-Формула вычислима в $\mathcal{D}(\mathbb{C}^7)$ за $O(N^2)$ без PW-вложения (через
-Морита-эквивалентность [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). При $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [Т]](/docs/proofs/consciousness/substrate-closure#t-154)):
+The formula is computable in $\mathcal{D}(\mathbb{C}^7)$ in $O(N^2)$ without PW-embedding (via
+Morita equivalence [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). At $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [T]](/docs/proofs/consciousness/substrate-closure#t-154)):
 $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot 6$.
 
-**Численная верификация (SYNARC):** $D_{\text{diff}} = 3.60$ на стационаре, реализовано в
-`DensityMatrix7::differentiation()` и `Gamma::differentiation_measure()`.
+**Numerical verification (SYNARC):** $D_{\text{diff}} = 3.60$ at the stationary point, implemented in
+`DensityMatrix7::differentiation()` and `Gamma::differentiation_measure()`.
 :::
 
-### Для психологов и когнитивистов
+### For Psychologists and Cognitive Scientists
 
-Самонаблюдение в УГМ формализует то, что в психологии называется **метакогницией** и **интроспекцией**:
+Self-observation in UHM formalises what in psychology is called **metacognition** and **introspection**:
 
-| Психологический термин | Формализм УГМ |
-|------------------------|---------------|
-| Метакогниция | Оператор $\varphi$ (самомоделирование) |
-| Качество интроспекции | Мера $R$ (точность самомодели) |
-| Интеграция опыта | Мера $\Phi$ (связность) |
-| Богатство сознания | $D_{\text{diff}}$ (разнообразие состояний) |
+| Psychological term | UHM formalism |
+|-------------------|---------------|
+| Metacognition | Operator $\varphi$ (self-modelling) |
+| Quality of introspection | Measure $R$ (accuracy of self-model) |
+| Integration of experience | Measure $\Phi$ (connectedness) |
+| Richness of consciousness | $D_{\text{diff}}$ (diversity of states) |
 
-**Клиническое значение:** Низкие значения $R$ могут соответствовать алекситимии, диссоциации или снижению метакогнитивных способностей.
+**Clinical significance:** Low values of $R$ may correspond to alexithymia, dissociation, or reduced metacognitive abilities.
 
-### Для исследователей внутренних ландшафтов
+### For Researchers of Inner Landscapes
 
-Теория интериорности описывает **структуру субъективного опыта** — то, что переживается «изнутри»:
+Interiority theory describes the **structure of subjective experience** — what is experienced 'from within':
 
-- **Интенсивность** ($\lambda_i$) — яркость, громкость, сила переживания
-- **Качество** ($[|q_i\rangle]$) — характер: цвет, тембр, эмоциональный тон
-- **Контекст** — модуляция опыта вниманием, настроением, телесными ощущениями
-- **История** — как прошлые состояния влияют на текущее переживание
+- **Intensity** ($\lambda_i$) — brightness, loudness, strength of experience
+- **Quality** ($[|q_i\rangle]$) — character: colour, timbre, emotional tone
+- **Context** — modulation of experience by attention, mood, bodily sensations
+- **History** — how past states influence current experience
 
-Изменённые состояния сознания могут характеризоваться изменением параметров:
-- **Повышенная интеграция** ($\Phi \uparrow$) — ощущение единства, растворения границ
-- **Изменённая дифференциация** ($D_{\text{diff}}$) — богатство или, напротив, упрощение палитры переживаний
-- **Изменённая рефлексия** ($R$) — от гиперрефлексии до полного растворения наблюдателя
+Altered states of consciousness may be characterised by changes in parameters:
+- **Increased integration** ($\Phi \uparrow$) — sense of unity, dissolution of boundaries
+- **Altered differentiation** ($D_{\text{diff}}$) — richness or, conversely, simplification of the experiential palette
+- **Altered reflection** ($R$) — from hyper-reflection to complete dissolution of the observer
 
 ---
 
-## CRL — компилируемый рефлексивный язык [О] {#crl-теоретическое-основание}
+## CRL — Compilable Reflexive Language [D] {#crl-теоретическое-основание}
 
-### Определение
+### Definition
 
-**CRL (Compilable Reflexive Language)** — подмножество ISL с compile-семантикой: ISL-токен → δΓ. CRL — это язык, на котором система может **рефлексивно** модифицировать собственную когерентность.
+**CRL (Compilable Reflexive Language)** — a subset of ISL with compile semantics: ISL-token → δΓ. CRL is a language in which the system can **reflexively** modify its own coherence.
 
-### Теоретический фундамент
+### Theoretical Foundation
 
-CRL опирается на три доказанных результата:
+CRL rests on three proved results:
 
-| Основание | Теорема | Роль |
+| Foundation | Theorem | Role |
 |-----------|---------|------|
-| ISL-грамматика | T-114 [Т] | PG(2,2) определяет синтаксис (7 базисных символов, 7 правил) |
-| Рефлексивный порог | $R_{\text{th}} = 1/3$ [Т] (T-40b, из триадной декомпозиции K=3) | Необходимая рефлексивность для самонаблюдения |
-| φ-оператор | T-62 [Т] | Самомодель $\varphi(\Gamma)$ как основа рефлексии |
+| ISL grammar | T-114 [T] | PG(2,2) determines the syntax (7 base symbols, 7 rules) |
+| Reflexive threshold | $R_{\text{th}} = 1/3$ [T] (T-40b, from triadic decomposition K=3) | Necessary reflexivity for self-observation |
+| φ-operator | T-62 [T] | Self-model $\varphi(\Gamma)$ as the basis of reflection |
 
-CRL возможен **только** при L2 (когнитивных квалиа): система должна уметь наблюдать собственное состояние ($R \geq 1/3$), различать его компоненты ($D_{\text{diff}} \geq 2$), и формировать когерентное описание ($\Phi \geq 1$).
+CRL is possible **only** at L2 (cognitive qualia): the system must be able to observe its own state ($R \geq 1/3$), distinguish its components ($D_{\text{diff}} \geq 2$), and form a coherent description ($\Phi \geq 1$).
 
-### Compile-семантика [О]
+### Compile Semantics [D]
 
-Каждый CRL-атом отображается в конкретное возмущение когерентности:
+Each CRL atom maps to a specific coherence perturbation:
 
 $$
 \text{compile}: \text{ISL-atom} \to \delta\Gamma \in \text{End}(\mathcal{D}(\mathbb{C}^7))
 $$
 
-- **7 секторных атомов** (по $\gamma_{kk}$): `σ_A↑`, `σ_D↓`, `P↑`, ...
-- **21 когерентный атом** (по $\gamma_{ij}$): `регуляция↑`, `апперцепция↓`, `синтез↑`, ...
+- **7 sector atoms** (by $\gamma_{kk}$): `σ_A↑`, `σ_D↓`, `P↑`, ...
+- **21 coherence atoms** (by $\gamma_{ij}$): `regulation↑`, `apperception↓`, `synthesis↑`, ...
 
-Каждый атом верифицируется через grounding ≥ $P_{\text{crit}} = 2/7$ — символ должен быть различим от шума.
+Each atom is verified via grounding ≥ $P_{\text{crit}} = 2/7$ — the symbol must be distinguishable from noise.
 
-### CRL-цикл
+### CRL Cycle
 
 ```
 observe(Γ) → ISL-describe → match(CRL-atom) → compile(δΓ) → apply → measure
 ```
 
-Полный цикл: система наблюдает своё состояние, описывает его на ISL, находит подходящий CRL-атом, компилирует его в δΓ, применяет и измеряет результат. Это **рефлексивная самомодификация** — аналог когнитивной переоценки (CBT) в терминах УГМ.
+Full cycle: the system observes its state, describes it in ISL, finds the appropriate CRL atom, compiles it into δΓ, applies it, and measures the result. This is **reflexive self-modification** — the analogue of cognitive reappraisal (CBT) in UHM terms.
 
 ---
 
-### Что мы узнали
+### What We Learned
 
-- **Оператор $\varphi$** — CPTP-канал самомоделирования, реализуемый как замещающий канал $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [Т].
-- **Мера рефлексии** $R = 1/(7P)$ — нормированная близость к тепловой смерти ($I/7$). Порог $R_{\mathrm{th}} = 1/3$ [Т] следует из триадной декомпозиции ($K = 3$).
-- **Параметр сжатия $k = 1 - R$** — не свободная константа, а функция состояния: хорошая самомодель ($R \to 1$) требует минимальной коррекции.
-- **Рефлексия высших порядков** $R^{(n)}$ обобщает самомоделирование на глубину $n$: $R^{(2)} \geq 1/4$ для L3 (метакогниция).
-- **Мера сознательности** $C = \Phi \times R$ [Т T-140] — минимальная скалярная сводка; порог L2: $C_{\mathrm{th}} = 1/3$.
-- **Зона Голдилокс**: $P \in (2/7, 3/7]$ — пересечение условий жизнеспособности ($P > 2/7$) и рефлексии ($R \geq 1/3 \Leftrightarrow P \leq 3/7$).
-- **CRL** — рефлексивный язык для самомодификации когерентности, возможный только при L2.
+- **Operator $\varphi$** — CPTP self-modelling channel, realised as a replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T].
+- **Reflection measure** $R = 1/(7P)$ — normalised proximity to heat death ($I/7$). Threshold $R_{\mathrm{th}} = 1/3$ [T] follows from the triadic decomposition ($K = 3$).
+- **Compression parameter $k = 1 - R$** — not a free constant, but a state function: a good self-model ($R \to 1$) requires minimal correction.
+- **Higher-order reflection** $R^{(n)}$ generalises self-modelling to depth $n$: $R^{(2)} \geq 1/4$ for L3 (metacognition).
+- **Consciousness measure** $C = \Phi \times R$ [T T-140] — minimal scalar summary; L2 threshold: $C_{\mathrm{th}} = 1/3$.
+- **Goldilocks zone**: $P \in (2/7, 3/7]$ — intersection of viability conditions ($P > 2/7$) and reflection ($R \geq 1/3 \Leftrightarrow P \leq 3/7$).
+- **CRL** — reflexive language for self-modification of coherence, possible only at L2.
 
-:::tip Куда дальше
-Мы описали три столпа: **что** переживается (теория интериорности), **как** система наблюдает себя (самонаблюдение), **зачем** это нужно (двухаспектный монизм). Теперь переходите к [Иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — она организует все системы от камня (L0) до теоретического предела (L4) в строгую классификацию с количественными порогами.
+:::tip Where to Go Next
+We have described three pillars: **what** is experienced (interiority theory), **how** the system observes itself (self-observation), **why** this is necessary (two-aspect monism). Now proceed to [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — it organises all systems from a stone (L0) to the theoretical limit (L4) in a rigorous classification with quantitative thresholds.
 
-Для операциональных формул стресса и капы см. [определения Когерентной кибернетики](/docs/applied/coherence-cybernetics/definitions).
+For operational stress and kappa formulas, see [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions).
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — теоремы о порогах $R_{\mathrm{th}}$ и $\Phi_{\mathrm{th}}$
-- [Теория интериорности](./interiority-theory) — полное математическое описание
-- [Трудная проблема](./two-aspect-monism) — философский анализ
-- [Формализация $\varphi$](/docs/proofs/categorical/formalization-phi) — строгое доказательство теорем и спектральная формула
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — формальные определения L0→L4 и универсальная формула порогов
-- [Измерение Единства (U)](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
-- [Измерение Основания (O)](/docs/core/structure/dimension-o) — доминирующее измерение L3/L4
-- [Жизнеспособность](/docs/core/dynamics/viability) — связь $P$ и условий существования
-- [Эволюция $\Gamma$](/docs/core/dynamics/evolution) — канонический $\Delta F$ через метрику Бюреса
-- [Протокол измерения $\Gamma$](/docs/applied/research/measurement-protocol) — Effective $\Phi$ и метрики для ИИ
-- [Определения КК](/docs/applied/coherence-cybernetics/definitions) — $\sigma_{\mathrm{sys}}$ (T-92), $\kappa$, $\Delta F$
+**Related documents:**
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — theorems on thresholds $R_{\mathrm{th}}$ and $\Phi_{\mathrm{th}}$
+- [Interiority Theory](./interiority-theory) — complete mathematical description
+- [Hard Problem](./two-aspect-monism) — philosophical analysis
+- [Formalisation of $\varphi$](/docs/proofs/categorical/formalization-phi) — rigorous proof of theorems and spectral formula
+- [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — formal definitions L0→L4 and universal threshold formula
+- [Unity Dimension (U)](/docs/core/structure/dimension-u) — integration measure $\Phi$
+- [Ground Dimension (O)](/docs/core/structure/dimension-o) — dominant dimension at L3/L4
+- [Viability](/docs/core/dynamics/viability) — relationship between $P$ and existence conditions
+- [Evolution of $\Gamma$](/docs/core/dynamics/evolution) — canonical $\Delta F$ via Bures metric
+- [Measurement Protocol for $\Gamma$](/docs/applied/research/measurement-protocol) — Effective $\Phi$ and metrics for AI
+- [CC Definitions](/docs/applied/coherence-cybernetics/definitions) — $\sigma_{\mathrm{sys}}$ (T-92), $\kappa$, $\Delta F$

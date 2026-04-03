@@ -166,7 +166,7 @@ $$
 \sum_{i \in \{A,S,D,L,E,O,U\}} \gamma_{ii} = 1
 $$
 
-### Off-diagonal Elements (Coherences)
+### Off-diagonal Elements (Coherences) {#недиагональные-элементы-когерентности}
 
 $\gamma_{ij}$ (for $i \neq j$) — **coherences** (quantum correlations) between dimensions.
 
@@ -384,7 +384,7 @@ $$
 
 **Properties:**
 - [Purity](./viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2) = 1$
-- [von Neumann entropy](./viability#связь-с-энтропией): $S_{vN} = 0$
+- [von Neumann entropy](./viability#relation-to-entropy): $S_{vN} = 0$
 - Maximum coherence
 
 ### Mixed State
@@ -398,7 +398,7 @@ $$
 - $P < 1$
 - $S_{vN} > 0$
 
-### Maximally Mixed State
+### Maximally Mixed State {#maximally-mixed-state}
 
 $$
 \Gamma = \frac{I_7}{7}, \quad \gamma_{ij} = \frac{\delta_{ij}}{7}
@@ -506,7 +506,7 @@ The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the [Fano plane](/
 This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [Т].
 :::
 
-## Two Levels of Formalization
+## Two Levels of Formalization {#two-levels-of-formalization}
 
 :::warning Important Clarification: minimal vs. extended formalism
 UHM uses **two levels** of mathematical description. Misunderstanding this distinction leads to interpretation errors.

@@ -30,6 +30,8 @@ In this chapter we:
 
 ---
 
+<a id="таблица-перевода"></a>
+
 ## 1. Central Translation Table {#translation-table}
 
 ### 1.1 Core Objects

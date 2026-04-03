@@ -349,7 +349,7 @@ $$
 
 где $\mathcal{H}_{6D} = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$ — 6 оставшихся измерений Голонома.
 
-Минимальный 7D формализм получается через диагональное вложение — см. [Матрица когерентности](/docs/core/dynamics/coherence-matrix#два-уровня-формализации).
+Минимальный 7D формализм получается через диагональное вложение — см. [Матрица когерентности](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization).
 
 ### 6.5 Предел $N \to \infty$
 

@@ -47,7 +47,7 @@ The theory uses two distinct tensor products:
 
 1. **Inter-holonom** (this page): $\mathcal{H}_A \otimes \mathcal{H}_B = \mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ — describes entanglement between two holonoms. Each $\mathbb{C}^7$ is a non-factorable tensor subspace (7 is prime).
 
-2. **Intra-holonom** (extended formalism): $\mathcal{H}_{\text{ext}} = \bigotimes_i \mathcal{H}_i$ with $\dim(\mathcal{H}_i) \geq 1$ — allows defining the [partial trace](/docs/core/dynamics/coherence-matrix#два-уровня-формализации) $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ within a single holonom. Used for computing $D_{\text{diff}}$.
+2. **Intra-holonom** (extended formalism): $\mathcal{H}_{\text{ext}} = \bigotimes_i \mathcal{H}_i$ with $\dim(\mathcal{H}_i) \geq 1$ — allows defining the [partial trace](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization) $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ within a single holonom. Used for computing $D_{\text{diff}}$.
 
 A special case of the intra-holonom decomposition is [Page–Wootters](/docs/core/dynamics/coherence-matrix#тензорное-расширение-page-wootters): $\mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$.
 :::

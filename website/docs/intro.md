@@ -113,7 +113,7 @@ The theory uses **two related formalisms**:
 In the minimal formalism, $\mathcal{H}_O$ is **one of the 7 dimensions** (basis vector $|O\rangle$).
 In the extended formalism, $\mathcal{H}_O \cong \mathbb{C}^7$ is the **internal clock space** with 7 time states τ ∈ ℤ₇.
 
-The formalisms are related by **Morita equivalence** [T]: $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$ (Lurie comparison theorem). All 7D formulas are exact, not approximations. See [Coherence matrix](/docs/core/dynamics/coherence-matrix#согласование-формализмов).
+The formalisms are related by **Morita equivalence** [T]: $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$ (Lurie comparison theorem). All 7D formulas are exact, not approximations. See [Coherence matrix](/docs/core/dynamics/coherence-matrix#reconciling-the-formalisms).
 :::
 
 ## Central Concepts

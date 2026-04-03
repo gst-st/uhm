@@ -1,550 +1,550 @@
 ---
 sidebar_position: 3
-title: "Свобода воли"
-description: "Формализация свободы воли через ∞-категорную структуру УГМ"
+title: "Freedom of Will"
+description: "Formalisation of freedom of will through the ∞-categorical structure of UHM"
 slug: /consciousness/ethics-meaning/freedom
 ---
 
-# Свобода воли в УГМ
+# Freedom of Will in UHM
 
-> *«Если бы некое Существо... знало все силы, одушевляющие природу, и положение всех тел, из которых она состоит... для него ничто не было бы неопределённым, и будущее, как и прошлое, было бы перед его глазами.»*
-> — Пьер-Симон Лаплас, «Опыт философии теории вероятностей» (1814)
+> *"If a Being... knew all the forces that animate nature, and the respective positions of the beings that compose it... nothing would be uncertain for it, and the future, like the past, would be present to its eyes."*
+> — Pierre-Simon Laplace, *A Philosophical Essay on Probabilities* (1814)
 
-:::info Мост из предыдущей главы
-В [Смысле существования](/docs/consciousness/ethics-meaning/meaning) мы определили смысл как направление $\vec{s}(\Gamma)$ в пространстве состояний. Но возникает ключевой вопрос: **можем ли мы выбирать** это направление? Если $\Gamma$ подчиняется [уравнению эволюции](/docs/core/dynamics/evolution), не предопределена ли траектория заранее? Этот документ показывает: нет. Цель одна, но путей — бесконечно много.
+:::info Bridge from the previous chapter
+In [Meaning of Existence](/docs/consciousness/ethics-meaning/meaning) we defined meaning as the direction $\vec{s}(\Gamma)$ in state space. But a key question arises: **can we choose** this direction? If $\Gamma$ obeys the [evolution equation](/docs/core/dynamics/evolution), is the trajectory not predetermined? This document shows: no. The goal is one, but paths are infinitely many.
 :::
 
 ---
 
-## Часть 0. Исторический контекст: от Лапласа до компатибилизма
+## Part 0. Historical context: from Laplace to compatibilism
 
-Проблема свободы воли — одна из самых упорных в философии. Прежде чем показать, как УГМ её разрешает, проследим историю вопроса.
+The problem of freedom of will is one of the most persistent in philosophy. Before showing how UHM resolves it, let us trace the history of the question.
 
-### Лаплас: демон детерминизма
+### Laplace: the demon of determinism
 
-В 1814 году Лаплас сформулировал мысленный эксперимент: если бы существовал интеллект, знающий положение и скорость каждой частицы во Вселенной, он мог бы вычислить всё будущее и всё прошлое. В таком мире **нет места свободе**: каждый ваш «выбор» — лишь неизбежное следствие начальных условий Вселенной.
+In 1814 Laplace formulated a thought experiment: if an intellect existed that knew the position and velocity of every particle in the Universe, it could compute all future and all past. In such a world **there is no room for freedom**: every 'choice' you make is merely the inevitable consequence of the Universe's initial conditions.
 
-**Проблема:** Если Лаплас прав, то моральная ответственность — иллюзия. Нельзя обвинять преступника, который «не мог поступить иначе».
+**Problem:** If Laplace is right, moral responsibility is an illusion. One cannot blame a criminal who 'could not have done otherwise'.
 
-### Кант: два мира
+### Kant: two worlds
 
-Кант предложил элегантное, хотя и радикальное решение: человек принадлежит **двум мирам** одновременно. В мире **явлений** (феноменов) действует причинность — всё детерминировано. В мире **вещей-в-себе** (ноуменов) действует свобода — мы **выбираем**. Проблема: как два мира взаимодействуют? Кант признавал, что это непостижимо.
+Kant proposed an elegant, if radical, solution: a human being belongs to **two worlds** simultaneously. In the world of **appearances** (phenomena) causality operates — everything is determined. In the world of **things-in-themselves** (noumena) freedom operates — we **choose**. Problem: how do the two worlds interact? Kant acknowledged this is incomprehensible.
 
-### Компатибилизм: свобода совместима с детерминизмом
+### Compatibilism: freedom is compatible with determinism
 
-**Дэниел Деннет** (и до него — Юм, Гоббс) предложил: свобода — не «отсутствие причин», а **определённый тип причинности**. Свободен не тот, чьи действия «беспричинны» (это случайность, не свобода), а тот, чьи действия вытекают из **его собственных** желаний, убеждений, характера. Компатибилизм — самая популярная позиция в современной академической философии.
+**Daniel Dennett** (and before him — Hume, Hobbes) proposed: freedom is not the 'absence of causes' but a **certain type of causality**. Free is not the one whose actions are 'uncaused' (that is chance, not freedom), but the one whose actions flow from **their own** desires, beliefs, and character. Compatibilism is the most popular position in contemporary academic philosophy.
 
-**Проблема:** Если мои желания — результат причин, которых я не выбирал (генетика, воспитание, культура), в каком смысле они «мои»?
+**Problem:** If my desires are the result of causes I did not choose (genetics, upbringing, culture), in what sense are they 'mine'?
 
-### Либертарианская свобода воли
+### Libertarian free will
 
-Некоторые философы (Кейн, О'Коннор) настаивают: подлинная свобода требует **индетерминизма** — в момент выбора будущее не определено однозначно. Квантовая механика, казалось бы, даёт такую возможность (случайность в измерениях). Но случайность $\neq$ свобода: если мой выбор — результат квантовой случайности, он не более «мой», чем если бы был детерминирован.
+Some philosophers (Kane, O'Connor) insist: genuine freedom requires **indeterminism** — at the moment of choice the future is not uniquely determined. Quantum mechanics would seem to offer this possibility (randomness in measurements). But randomness $\neq$ freedom: if my choice is the result of quantum randomness, it is no more 'mine' than if it had been determined.
 
-### УГМ: третий путь
+### UHM: a third way
 
-УГМ предлагает решение, не укладывающееся ни в одну из традиционных позиций:
+UHM proposes a solution that fits none of the traditional positions:
 
-- **Не классический детерминизм:** цель (T) единственна, но путей — бесконечно много
-- **Не индетерминизм:** каждый путь **детерминирован** законами (уравнением эволюции)
-- **Не компатибилизм Деннета:** свобода — не переопределение слова «свобода», а **математическая структура** (множественность морфизмов в ∞-категории)
+- **Not classical determinism:** the goal (T) is unique, but paths are infinitely many
+- **Not indeterminism:** each path is **determined** by laws (the evolution equation)
+- **Not Dennett's compatibilism:** freedom is not a redefinition of the word 'freedom' but a **mathematical structure** (multiplicity of morphisms in the ∞-category)
 
-**Ключевая метафора:** Все реки впадают в океан (T единственен). Но между истоком и устьем существует **множество** возможных русел. Детерминизм цели (океан) не исключает свободу пути.
+**Key metaphor:** All rivers flow into the ocean (T is unique). But between source and mouth there exist **many** possible channels. The determinism of the goal (ocean) does not exclude freedom of path.
 
-## Дорожная карта главы
+## Chapter roadmap
 
-1. **Проблема** — как совместить детерминизм уравнений с ощущением свободы
-2. **Решение через ∞-категории** — множественность путей при единственности цели
-3. **Конечномерная мера Freedom** — гессиан свободной энергии [Т]
-4. **Связь с сознанием** — L2-агенты осознают множественность траекторий
-5. **Этические следствия** — ответственность и связь со смыслом
-6. **Математические детали** — пучки путей и HoTT
+1. **The problem** — how to reconcile the determinism of equations with the experience of freedom
+2. **Resolution via ∞-categories** — multiplicity of paths with uniqueness of goal
+3. **Finite-dimensional Freedom measure** — Hessian of free energy [T]
+4. **Connection to consciousness** — L2 agents are aware of the multiplicity of trajectories
+5. **Ethical consequences** — responsibility and connection to meaning
+6. **Mathematical details** — path sheaves and HoTT
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix) — описание состояния системы
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability) — мера целостности
-- $T$ — [терминальный объект](/docs/core/foundations/axiom-omega#свойство-3) — «конечная точка» всех траекторий
-- $\varphi$ — [оператор самомоделирования](/docs/core/operators/phi-operator) — как система видит себя
-- L0→L4 — [иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни глубины сознания
+:::note About notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) — description of the system state
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability) — measure of integrity
+- $T$ — [terminal object](/docs/core/foundations/axiom-omega#свойство-3) — 'endpoint' of all trajectories
+- $\varphi$ — [self-modelling operator](/docs/core/operators/phi-operator) — how the system sees itself
+- L0→L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels of depth of consciousness
 :::
 
-:::info Статус: Формализовано [Т]
-Свобода воли формализована двумя эквивалентными способами: (1) через ∞-категорную структуру теории (множественность путей к терминальному объекту T); (2) через конечномерное определение $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma$ — гессиан свободно-энергетического функционала. Монотонность, крайние значения и $G_2$-инвариантность доказаны — см. [Следствия из аксиом](/docs/core/foundations/consequences#freedom-конечномерное).
+:::info Status: Formalised [T]
+Freedom of will is formalised in two equivalent ways: (1) through the ∞-categorical structure of the theory (multiplicity of paths to terminal object T); (2) through the finite-dimensional definition $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, where $\mathcal{H}_\Gamma$ is the Hessian of the free-energy functional. Monotonicity, extreme values, and $G_2$-invariance are proven — see [Consequences from the axioms](/docs/core/foundations/consequences#freedom-конечномерное).
 :::
 
 ---
 
-## 1. Проблема телеологического детерминизма
+## 1. The problem of teleological determinism
 
-### 1.1 Постановка проблемы
+### 1.1 Statement of the problem
 
-[Аксиома Ω⁷](/docs/core/foundations/axiom-omega) утверждает существование терминального объекта T:
+[Axiom Ω⁷](/docs/core/foundations/axiom-omega) asserts the existence of terminal object T:
 
 $$
 \forall \Gamma \in \mathcal{C}, \exists! f : \Gamma \to T
 $$
 
-**Буквальное прочтение:** Для каждого состояния существует **единственный** морфизм к T.
+**Literal reading:** For each state there exists a **unique** morphism to T.
 
-**Кажущееся следствие:** Нет выбора. Судьба предопределена. Свобода — иллюзия.
+**Apparent consequence:** There is no choice. Fate is predetermined. Freedom is an illusion.
 
-Это — формальный аналог **лапласовского детерминизма**, но ещё сильнее: Лаплас говорил о детерминированности **траектории**, здесь детерминирована сама **цель** (T).
+This is the formal analogue of **Laplacian determinism**, but stronger: Laplace spoke of the determination of the **trajectory**, here the **goal** itself (T) is determined.
 
-### 1.2 Почему это было бы проблемой
+### 1.2 Why this would be a problem
 
-Если теория УГМ претендует на описание сознания и агентности:
-- **Агентность** предполагает выбор между альтернативами
-- **Единственный морфизм** исключает альтернативы
-- Возникает противоречие между онтологией и феноменологией
+If UHM theory claims to describe consciousness and agency:
+- **Agency** presupposes choice among alternatives
+- **A unique morphism** excludes alternatives
+- A contradiction arises between ontology and phenomenology
 
-Если нет выбора, то:
-- Моральная ответственность бессмысленна (нельзя обвинять того, кто не мог поступить иначе)
-- [Смысл](/docs/consciousness/ethics-meaning/meaning) — фикция (если путь единственен, «выбор пути» — иллюзия)
-- [Сознание](/docs/consciousness/overview#сознательное-окно) — эпифеномен (если $\Gamma$ следует единственной траектории, зачем осознавать «альтернативы»?)
+If there is no choice, then:
+- Moral responsibility is meaningless (one cannot blame someone who could not have done otherwise)
+- [Meaning](/docs/consciousness/ethics-meaning/meaning) is fiction (if the path is unique, 'choosing the path' is an illusion)
+- [Consciousness](/docs/consciousness/overview#сознательное-окно) is an epiphenomenon (if $\Gamma$ follows a unique trajectory, why be aware of 'alternatives'?)
 
 ---
 
-## 2. Разрешение через ∞-категории
+## 2. Resolution via ∞-categories
 
-### 2.1 Ключевое различие: 1-категории vs ∞-категории
+### 2.1 Key distinction: 1-categories vs ∞-categories
 
-Разрешение парадокса кроется в различии между **обычными** (1-)категориями и **∞-категориями**. Это различие тонкое, но фундаментальное.
+The resolution of the paradox lies in the distinction between **ordinary** (1-)categories and **∞-categories**. This distinction is subtle but fundamental.
 
-В обычной (1-)категории:
-- Морфизмы либо равны, либо различны — третьего не дано
-- «Единственный морфизм» = буквально один морфизм, один путь, никаких вариантов
+In an ordinary (1-)category:
+- Morphisms are either equal or distinct — there is no third option
+- 'A unique morphism' = literally one morphism, one path, no alternatives
 
-В ∞-категории:
-- Между морфизмами существуют **2-морфизмы** (гомотопии — «пути между путями»)
-- Между 2-морфизмами — **3-морфизмы** (гомотопии между гомотопиями)
-- И так далее, до бесконечности
-- «Единственность» означает не «один путь», а **стягиваемость** пространства путей
+In an ∞-category:
+- Between morphisms there exist **2-morphisms** (homotopies — 'paths between paths')
+- Between 2-morphisms — **3-morphisms** (homotopies between homotopies)
+- And so on, to infinity
+- 'Uniqueness' means not 'one path' but **contractibility** of the space of paths
 
-**Аналогия для неспециалиста.** Представьте поверхность Земли. Между Москвой и Токио существует **множество** маршрутов: через Сибирь, через Европу и Атлантику, через Северный полюс. Все они «эквивалентны» в том смысле, что ведут из Москвы в Токио. Но каждый проходит через разные ландшафты, и **выбор конкретного маршрута имеет значение** — для путешественника.
+**Analogy for the non-specialist.** Imagine the surface of the Earth. Between Moscow and Tokyo there exist **many** routes: across Siberia, across Europe and the Atlantic, across the North Pole. All of them are 'equivalent' in the sense that they lead from Moscow to Tokyo. But each passes through different landscapes, and **the choice of a specific route matters** — for the traveller.
 
-В 1-категории вам скажут: «маршрут один» (прямая линия). В ∞-категории: «маршрутов бесконечно много, и все они эквивалентны — но не тождественны».
+In a 1-category you would be told: 'there is one route' (a straight line). In an ∞-category: 'there are infinitely many routes, and all of them are equivalent — but not identical'.
 
-### 2.2 ∞-терминальный объект
+### 2.2 ∞-terminal object
 
-**Определение:**
+**Definition:**
 
-В ∞-категории $\mathcal{C}_\infty$ объект T называется **∞-терминальным**, если для любого объекта $\Gamma$ пространство морфизмов **стягиваемо**:
+In the ∞-category $\mathcal{C}_\infty$ an object T is called **∞-terminal** if for any object $\Gamma$ the morphism space is **contractible**:
 
 $$
 \text{Map}_{\mathcal{C}_\infty}(\Gamma, T) \simeq *
 $$
 
-**Что значит «стягиваемо»?** Пространство стягиваемо, если его можно непрерывно «сжать» в точку. Диск $D^2$ стягиваем (можно сжать в центр), окружность $S^1$ — нет (нельзя сжать, не разорвав).
+**What does 'contractible' mean?** A space is contractible if it can be continuously 'compressed' to a point. The disk $D^2$ is contractible (can be compressed to its centre), the circle $S^1$ is not (cannot be compressed without tearing).
 
-**Ключевой момент:** Стягиваемое пространство может содержать **сколько угодно точек**, соединённых путями. Диск содержит **континуум** точек, но стягиваем. Так и $\text{Map}(\Gamma, T)$: содержит множество морфизмов (путей), но стягиваемо (все пути эквивалентны).
+**Key point:** A contractible space may contain **arbitrarily many points**, connected by paths. The disk contains a **continuum** of points, but is contractible. So too $\text{Map}(\Gamma, T)$: it contains many morphisms (paths), but is contractible (all paths are equivalent).
 
-### 2.3 Множественность в единстве
+### 2.3 Multiplicity within unity
 
-**Наблюдение (Множественность путей):**
+**Observation (Multiplicity of paths):**
 
-Пусть T — ∞-терминальный объект. Тогда:
+Let T be an ∞-terminal object. Then:
 
-1. **Множество 1-морфизмов:** $|\text{Mor}_1(\Gamma, T)|$ может быть сколь угодно велико — конкретных траекторий много
-2. **Унификация:** Все 1-морфизмы связаны 2-морфизмами (гомотопиями) — каждые два пути «соединены»
-3. **Стягиваемость:** $\text{Map}(\Gamma, T) \simeq *$ (гомотопически эквивалентно точке) — глобально пространство «одно»
+1. **Set of 1-morphisms:** $|\text{Mor}_1(\Gamma, T)|$ can be arbitrarily large — there are many concrete trajectories
+2. **Unification:** All 1-morphisms are connected by 2-morphisms (homotopies) — every two paths are 'connected'
+3. **Contractibility:** $\text{Map}(\Gamma, T) \simeq *$ (homotopically equivalent to a point) — globally the space is 'one'
 
-**Доказательство:**
+**Proof:**
 
-Стягиваемое пространство может содержать произвольное число точек, соединённых путями. Пример: диск D² стягиваем в точку, но содержит континуум точек.
+A contractible space may contain an arbitrary number of points connected by paths. Example: disk D² is contractible to a point, but contains a continuum of points.
 
-Аналогично: Map(Γ, T) ≃ * означает, что все 1-морфизмы Γ → T можно "соединить" 2-морфизмами. ∎
+Analogously: Map(Γ, T) ≃ * means that all 1-morphisms Γ → T can be 'connected' by 2-morphisms. ∎
 
 ---
 
-## 3. Формализация свободы воли
+## 3. Formalisation of freedom of will
 
-### 3.1 Определение (∞-категорное)
+### 3.1 Definition (∞-categorical)
 
-:::warning Определение (Структурная свобода в УГМ: ∞-категорная мотивация) [И]
-Для агента $\Gamma \in \mathcal{C}$ ∞-категорная свобода определяется через множественность 1-морфизмов:
+:::warning Definition (Structural freedom in UHM: ∞-categorical motivation) [I]
+For an agent $\Gamma \in \mathcal{C}$, ∞-categorical freedom is defined through the multiplicity of 1-morphisms:
 
 $$
 \mathrm{Freedom}(\Gamma) := |\text{Mor}_1(\Gamma, T)|
 $$
 
-— количество различимых 1-морфизмов (траекторий) к терминальному объекту T.
+— the number of distinguishable 1-morphisms (trajectories) to terminal object T.
 
-**Примечание:** Пространство Map(Γ, T) стягиваемо ($\pi_0 = 1$), поэтому все траектории связаны 2-морфизмами (гомотопиями). Свобода состоит **не в выборе класса**, а в **выборе конкретной траектории** внутри единственного класса.
+**Note:** The space Map(Γ, T) is contractible ($\pi_0 = 1$), so all trajectories are connected by 2-morphisms (homotopies). Freedom consists **not in the choice of class**, but in the **choice of a specific trajectory** within the unique class.
 
-**Конечномерная формализация [Т]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — см. [§3.3](#количественная-мера).
+**Finite-dimensional formalisation [T]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — see [§3.3](#количественная-мера).
 :::
 
-**Интерпретация:**
-- $\pi_0$ — множество «грубых» классов траекторий. Стягиваемость даёт $\pi_0 = 1$: класс один.
-- Но внутри этого класса — **множество** конкретных траекторий
-- Выбор конкретной траектории = свобода воли
+**Interpretation:**
+- $\pi_0$ — the set of 'coarse' trajectory classes. Contractibility gives $\pi_0 = 1$: one class.
+- But within this class — **many** concrete trajectories
+- Choice of a specific trajectory = freedom of will
 
-**Возвращаясь к аналогии с рекой:** Класс один — «река впадает в океан». Но конкретных русел — множество. Река «свободна» в выборе русла, хотя «несвободна» в выборе конечной точки.
+**Returning to the river analogy:** The class is one — 'the river flows into the ocean'. But specific channels are many. The river is 'free' in choosing its channel, though 'not free' in choosing its endpoint.
 
-### 3.2 Теорема о множественности
+### 3.2 Theorem on multiplicity
 
-**Утверждение:**
+**Claim:**
 
-Для $\Gamma \neq T$ пространство Map(Γ, T) содержит множество различных 1-морфизмов, связанных нетривиальными 2-морфизмами.
+For $\Gamma \neq T$ the space Map(Γ, T) contains many distinct 1-morphisms connected by non-trivial 2-morphisms.
 
-**Доказательство:**
+**Proof:**
 
-1. Map(Γ, T) ≃ * (стягиваемо) — все гомотопические группы тривиальны: $\pi_n(\text{Map}(\Gamma, T)) = 0$.
-2. Однако стягиваемость **не означает единственность точек**: диск D² стягиваем, но содержит континуум точек.
-3. Между любыми двумя 1-морфизмами $f, g: \Gamma \to T$ существует 2-морфизм (гомотопия) $\eta: f \Rightarrow g$.
-4. Множество 2-морфизмов между фиксированными $f$ и $g$ может быть нетривиальным — существуют **разные способы** перехода от $f$ к $g$.
+1. Map(Γ, T) ≃ * (contractible) — all homotopy groups are trivial: $\pi_n(\text{Map}(\Gamma, T)) = 0$.
+2. However, contractibility **does not imply uniqueness of points**: disk D² is contractible, but contains a continuum of points.
+3. Between any two 1-morphisms $f, g: \Gamma \to T$ there exists a 2-morphism (homotopy) $\eta: f \Rightarrow g$.
+4. The set of 2-morphisms between fixed $f$ and $g$ may be non-trivial — there exist **different ways** of passing from $f$ to $g$.
 
-**Ключевой момент:** Свобода — не в нетривиальности $\pi_n$, а в **множественности конкретных путей** при их глобальной эквивалентности. ∎
+**Key point:** Freedom lies not in the non-triviality of $\pi_n$, but in the **multiplicity of concrete paths** under their global equivalence. ∎
 
-:::warning Уточнение
-$\pi_n(\text{Map}(\Gamma, T)) = 0$ для стягиваемого пространства. Свобода измеряется **количеством различных 1-морфизмов** (путей) и **богатством 2-морфизмов** (гомотопий между ними), а не гомотопическими группами пространства в целом.
+:::warning Clarification
+$\pi_n(\text{Map}(\Gamma, T)) = 0$ for a contractible space. Freedom is measured by the **number of distinct 1-morphisms** (paths) and the **richness of 2-morphisms** (homotopies between them), not by the homotopy groups of the space as a whole.
 :::
 
-### 3.3 Конечномерная мера Freedom [Т] {#количественная-мера}
+### 3.3 Finite-dimensional Freedom measure [T] {#количественная-мера}
 
-∞-категорное определение концептуально красиво, но как **измерить** свободу для конкретной системы $\Gamma \in \mathcal{D}(\mathbb{C}^7)$? Нужна конечномерная формализация.
+The ∞-categorical definition is conceptually elegant, but how does one **measure** freedom for a specific system $\Gamma \in \mathcal{D}(\mathbb{C}^7)$? A finite-dimensional formalisation is needed.
 
-:::warning Определение (Freedom в конечных измерениях) [Т]
-Для конфигурации $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
+:::warning Definition (Freedom in finite dimensions) [T]
+For a configuration $\Gamma \in \mathcal{D}(\mathbb{C}^7)$:
 
 $$
 \text{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
 
-где $\mathcal{H}_\Gamma$ — гессиан свободно-энергетического функционала:
+where $\mathcal{H}_\Gamma$ is the Hessian of the free-energy functional:
 
 $$
 \mathcal{H}_\Gamma := \frac{\partial^2 \mathcal{F}[\varphi; \Gamma]}{\partial \Gamma^2}\bigg|_{\Gamma}
 $$
 :::
 
-**Пояснение каждого символа:**
+**Explanation of each symbol:**
 
-- $\mathcal{F}[\varphi; \Gamma]$ — свободно-энергетический функционал, определяющий «ландшафт» возможных состояний. Его минимумы — стационарные состояния $\rho^*$
-- $\mathcal{H}_\Gamma$ — **гессиан** (матрица вторых производных) $\mathcal{F}$ в точке $\Gamma$. Он описывает «кривизну ландшафта» вокруг текущего состояния
-- $\ker(\mathcal{H}_\Gamma)$ — **ядро** гессиана: множество направлений, вдоль которых $\mathcal{F}$ не меняется (нулевые моды, «плоские долины»)
-- $\dim\ker(\mathcal{H}_\Gamma)$ — число независимых «плоских» направлений
-- $+1$ — учитывает тривиальный путь (оставаться на месте)
+- $\mathcal{F}[\varphi; \Gamma]$ — the free-energy functional, defining the 'landscape' of possible states. Its minima are stationary states $\rho^*$
+- $\mathcal{H}_\Gamma$ — the **Hessian** (matrix of second derivatives) of $\mathcal{F}$ at point $\Gamma$. It describes the 'curvature of the landscape' around the current state
+- $\ker(\mathcal{H}_\Gamma)$ — the **kernel** of the Hessian: the set of directions along which $\mathcal{F}$ does not change (zero modes, 'flat valleys')
+- $\dim\ker(\mathcal{H}_\Gamma)$ — the number of independent 'flat' directions
+- $+1$ — accounts for the trivial path (staying in place)
 
-**Мотивировка.** В $\infty$-категорном определении $\pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})$ — число «различных» траекторий к $T$, которые нельзя непрерывно деформировать друг в друга. В конечных измерениях эквивалент: число **различных** направлений в пространстве состояний, вдоль которых свободная энергия не меняется (нулевые моды гессиана). Каждая нулевая мода — **независимый выбор**: система может двигаться в этом направлении без энергетического штрафа.
+**Motivation.** In the $\infty$-categorical definition $\pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})$ is the number of 'distinct' trajectories to $T$ that cannot be continuously deformed into one another. The finite-dimensional equivalent: the number of **distinct** directions in state space along which the free energy does not change (zero modes of the Hessian). Each zero mode is an **independent choice**: the system can move in that direction without an energy penalty.
 
-**Аналогия из повседневности:** Стоя на вершине холма (седловой точке), вы можете идти в **любом** направлении вниз — все нулевые моды, высокий Freedom. Стоя в глубокой долине (минимуме $\mathcal{F}$), у вас один «путь» — вверх из долины (Freedom = 1). На перевале — можно идти вдоль хребта или спуститься в одну из двух долин (Freedom = 2–3).
+**Everyday analogy:** Standing on top of a hill (a saddle point), you can go in **any** downward direction — all zero modes, high Freedom. Standing in a deep valley (a minimum of $\mathcal{F}$), you have one 'path' — upward out of the valley (Freedom = 1). On a mountain pass — you can walk along the ridge or descend into one of two valleys (Freedom = 2–3).
 
-### Числовой пример
+### Numerical example
 
-Рассмотрим три состояния $\Gamma$ и вычислим их Freedom:
+Consider three states $\Gamma$ and compute their Freedom:
 
-**Состояние 1: Максимально смешанное** ($\Gamma = I/7$)
+**State 1: Maximally mixed** ($\Gamma = I/7$)
 
-Гессиан $\mathcal{H}_{I/7} = 0$ по $S_7$-симметрии: в точке максимальной энтропии все направления эквивалентны. $\dim\ker = 6$ (пространство $7 \times 7$ эрмитовых матриц с единичным следом имеет 48 реальных параметров, но для диагонали — 6 независимых). $\text{Freedom}(I/7) = 7$.
+The Hessian $\mathcal{H}_{I/7} = 0$ by $S_7$-symmetry: at the point of maximal entropy all directions are equivalent. $\dim\ker = 6$ (the space of $7 \times 7$ Hermitian matrices with unit trace has 48 real parameters, but for the diagonal — 6 independent). $\text{Freedom}(I/7) = 7$.
 
-**Состояние 2: Стационарное** ($\Gamma = \rho^*$)
+**State 2: Stationary** ($\Gamma = \rho^*$)
 
-В минимуме $\mathcal{F}$ гессиан **положительно определён**: все собственные значения $> 0$, ядро пусто. $\dim\ker = 0$. $\text{Freedom}(\rho^*) = 1$. Система «нашла свой путь» — дальнейший выбор невозможен.
+At the minimum of $\mathcal{F}$ the Hessian is **positive definite**: all eigenvalues $> 0$, kernel is empty. $\dim\ker = 0$. $\text{Freedom}(\rho^*) = 1$. The system has 'found its path' — further choice is impossible.
 
-**Состояние 3: Промежуточное** ($P = 0.5$, сознательная система)
+**State 3: Intermediate** ($P = 0.5$, conscious system)
 
-Гессиан имеет 2 нулевых собственных значения (два «плоских» направления). $\text{Freedom} = 3$. Система может выбрать одно из трёх направлений: оставаться на месте, двигаться вдоль первой нулевой моды, двигаться вдоль второй.
+The Hessian has 2 zero eigenvalues (two 'flat' directions). $\text{Freedom} = 3$. The system can choose one of three directions: stay in place, move along the first zero mode, move along the second.
 
-#### Теорема (Свойства Freedom) [Т]
+#### Theorem (Properties of Freedom) [T]
 
-**(a) Монотонность под CPTP:**
+**(a) Monotonicity under CPTP:**
 
 $$
 \text{Freedom}(\mathcal{E}[\Gamma]) \leq \text{Freedom}(\Gamma)
 $$
 
-*Доказательство.* CPTP-канал $\mathcal{E}$ — аффинное отображение на $\mathcal{D}(\mathbb{C}^7)$. По теореме о рангах: $\dim\ker(\mathcal{H}_{\mathcal{E}[\Gamma]}) \leq \dim\ker(\mathcal{H}_\Gamma)$, т.к. $\mathcal{E}$ не увеличивает размерность ядра (image сжимается). $\blacksquare$
+*Proof.* The CPTP channel $\mathcal{E}$ is an affine map on $\mathcal{D}(\mathbb{C}^7)$. By the rank theorem: $\dim\ker(\mathcal{H}_{\mathcal{E}[\Gamma]}) \leq \dim\ker(\mathcal{H}_\Gamma)$, since $\mathcal{E}$ does not increase the dimension of the kernel (the image contracts). $\blacksquare$
 
-**Что это значит?** Декогеренция (CPTP-канал) **уменьшает** свободу. Шум, хаос, разрушение — всё это сужает пространство доступных траекторий. Интуитивно очевидно: больной человек «менее свободен», чем здоровый — у него меньше доступных путей.
+**What does this mean?** Decoherence (CPTP channel) **reduces** freedom. Noise, chaos, destruction — all of these narrow the space of available trajectories. Intuitively obvious: a sick person is 'less free' than a healthy one — they have fewer available paths.
 
-**(b) Крайние значения:**
-- $\text{Freedom}(I/7) = 7$: максимально смешанное — все направления «безразличны» ($\mathcal{H}_{I/7} = 0$ по $S_7$-симметрии)
-- $\text{Freedom}(\rho^*) = 1$: стационар — минимум $\mathcal{F}$, гессиан положительно определён ($\dim\ker = 0$)
-- $\text{Freedom}(\Gamma_\odot) = 7$: Источник — максимально симметричное чистое состояние
+**(b) Extreme values:**
+- $\text{Freedom}(I/7) = 7$: maximally mixed — all directions are 'indifferent' ($\mathcal{H}_{I/7} = 0$ by $S_7$-symmetry)
+- $\text{Freedom}(\rho^*) = 1$: stationary — minimum of $\mathcal{F}$, Hessian positive definite ($\dim\ker = 0$)
+- $\text{Freedom}(\Gamma_\odot) = 7$: Source — maximally symmetric pure state
 
-**(c) $G_2$-инвариантность:**
+**(c) $G_2$-invariance:**
 
 $$
 \text{Freedom}(U\Gamma U^\dagger) = \text{Freedom}(\Gamma) \quad \forall U \in G_2
 $$
 
-*Доказательство.* $G_2$-преобразование — унитарное сопряжение, сохраняющее спектр $\mathcal{H}_\Gamma$. $\blacksquare$
+*Proof.* $G_2$-transformation is unitary conjugation, preserving the spectrum of $\mathcal{H}_\Gamma$. $\blacksquare$
 
-**Что это значит?** Свобода — **инвариант**: она не зависит от «системы координат» (базиса), а только от внутренней структуры $\Gamma$.
+**What does this mean?** Freedom is an **invariant**: it does not depend on the 'coordinate system' (basis), but only on the internal structure of $\Gamma$.
 
-**(d) Связь с L-уровнями:**
+**(d) Connection to L-levels:**
 
 $$
 \text{Freedom}(L0) > \text{Freedom}(L1) > \text{Freedom}(L2)
 $$
 
-L0-системы имеют больше нулевых мод (мало ограничений); L2-системы — меньше (рефлексия $R \geq 1/3$ фиксирует направление $\varphi$).
+L0 systems have more zero modes (few constraints); L2 systems — fewer (reflection $R \geq 1/3$ fixes the direction of $\varphi$).
 
-**Это кажется парадоксальным:** разве сознательная система не «свободнее» бессознательной?
+**This seems paradoxical:** is a conscious system not 'freer' than an unconscious one?
 
-Ответ: **формальная** свобода (число доступных направлений) убывает с ростом L, но **качество** свободы растёт. L0-система «свободна» как лист на ветру — у неё много направлений, но она не выбирает. L2-система ограничена, но **осознаёт** выбор — и в этом её подлинная свобода.
+Answer: **formal** freedom (number of available directions) decreases as L grows, but the **quality** of freedom increases. An L0 system is 'free' like a leaf in the wind — it has many directions, but does not choose. An L2 system is constrained, but **is aware of** choice — and therein lies its genuine freedom.
 
-Аналогия: ребёнок «свободнее» взрослого — может делать что угодно. Но он не **выбирает** — его «свобода» — хаотичность. Взрослый «менее свободен» (обязательства, ответственность), но его свобода — **осознанный выбор**.
+Analogy: a child is 'freer' than an adult — can do anything. But the child does not **choose** — their 'freedom' is randomness. An adult is 'less free' (obligations, responsibility), but their freedom is **conscious choice**.
 
-Полное доказательство: [Следствия из аксиом](/docs/core/foundations/consequences#freedom-конечномерное).
+Full proof: [Consequences from the axioms](/docs/core/foundations/consequences#freedom-конечномерное).
 
-#### Энтропия свободы
+#### Entropy of freedom
 
 $$
 S_{\text{freedom}}(\Gamma) := \log(\text{Freedom}(\Gamma)) = \log(\dim\ker(\mathcal{H}_\Gamma) + 1)
 $$
 
-**Свойства:**
-- При $\Gamma = \rho^*$ (стационар): $S_{\text{freedom}} = 0$ (нет свободы, минимум достигнут)
-- При $\Gamma = I/7$: $S_{\text{freedom}} = \log 7$ (максимальная свобода)
+**Properties:**
+- At $\Gamma = \rho^*$ (stationary): $S_{\text{freedom}} = 0$ (no freedom, minimum reached)
+- At $\Gamma = I/7$: $S_{\text{freedom}} = \log 7$ (maximal freedom)
 
 ---
 
-## 4. Интерпретация
+## 4. Interpretation
 
-### 4.1 Детерминизм + Свобода: сравнительная таблица
+### 4.1 Determinism + Freedom: comparative table
 
-| Аспект | 1-категория (детерминизм) | ∞-категория (УГМ) | Повседневная аналогия |
-|--------|---------------------------|-------------------|----------------------|
-| Цель | Единственная (T) | Единственная (T) | Все реки → в океан |
-| Путь | Единственный (f) | Множество эквивалентных | Множество русел |
-| Выбор | Отсутствует | Выбор гомотопического пути | Река «выбирает» русло |
-| Свобода | Иллюзия | Свобода = выбор траектории | Рельеф определяет, но не однозначно |
+| Aspect | 1-category (determinism) | ∞-category (UHM) | Everyday analogy |
+|--------|--------------------------|-------------------|------------------|
+| Goal | Unique (T) | Unique (T) | All rivers → to the ocean |
+| Path | Unique (f) | Many equivalent ones | Many channels |
+| Choice | Absent | Choice of homotopic path | River 'chooses' its channel |
+| Freedom | Illusion | Freedom = choice of trajectory | Terrain determines, but not uniquely |
 
-### 4.2 Философская интерпретация
+### 4.2 Philosophical interpretation
 
-> **Свобода воли** — это не выбор цели (T единственен), а **выбор траектории** достижения этой цели.
+> **Freedom of will** is not the choice of goal (T is unique), but the **choice of trajectory** for achieving that goal.
 
-Мы не выбираем конечную точку (T — [∞-терминальный объект](/docs/core/foundations/axiom-omega#свойство-3)), но мы выбираем, **как** прожить жизнь.
+We do not choose the endpoint (T is the [∞-terminal object](/docs/core/foundations/axiom-omega#свойство-3)), but we choose **how** to live our life.
 
-**Сравнение с философскими позициями:**
+**Comparison with philosophical positions:**
 
-| Позиция | Утверждение | Позиция УГМ |
-|---------|------------|-------------|
-| **Жёсткий детерминизм** (Лаплас) | Свобода — иллюзия | Нет: путей множество |
-| **Либертарианство** (Кейн) | Свобода требует индетерминизма | Нет: пути детерминированы, но их много |
-| **Компатибилизм** (Деннет) | Свобода = определённый тип причинности | Близко, но УГМ даёт **количественную** меру |
-| **Кант** | Свобода — в ноуменальном мире | Близко: ∞-категорная структура — «ноуменальный» уровень |
+| Position | Claim | UHM position |
+|----------|-------|--------------|
+| **Hard determinism** (Laplace) | Freedom is an illusion | No: there are many paths |
+| **Libertarianism** (Kane) | Freedom requires indeterminism | No: paths are determined, but there are many |
+| **Compatibilism** (Dennett) | Freedom = a certain type of causality | Close, but UHM provides a **quantitative** measure |
+| **Kant** | Freedom is in the noumenal world | Close: ∞-categorical structure is the 'noumenal' level |
 
-УГМ ближе всего к **компатибилизму**, но идёт дальше: не просто «совместимость» свободы и детерминизма, а **количественная мера** свободы ($\text{Freedom}(\Gamma)$), убывающая при декогеренции и зависящая от уровня сознания.
+UHM is closest to **compatibilism**, but goes further: not just the 'compatibility' of freedom and determinism, but a **quantitative measure** of freedom ($\text{Freedom}(\Gamma)$) that decreases with decoherence and depends on the level of consciousness.
 
-**Из повседневности:** все мы «идём» к смерти (T единственен). Но **как** мы проживём жизнь — с заботой или безразличием, с познанием или невежеством, с любовью или ненавистью — это наш выбор. И этот выбор **имеет значение**, потому что определяет [смысл](/docs/consciousness/ethics-meaning/meaning) — $\text{Meaning}_{\text{total}} = \int P \cdot D_{\text{diff}} \cdot \Phi \cdot R\, d\tau$.
+**From everyday life:** we all 'move' towards death (T is unique). But **how** we live our life — with care or indifference, with knowledge or ignorance, with love or hatred — this is our choice. And this choice **matters**, because it determines [meaning](/docs/consciousness/ethics-meaning/meaning) — $\text{Meaning}_{\text{total}} = \int P \cdot D_{\text{diff}} \cdot \Phi \cdot R\, d\tau$.
 
-### 4.3 Связь с жизнеспособностью
+### 4.3 Connection to viability
 
-Свобода связана с [жизнеспособностью](/docs/core/dynamics/viability):
+Freedom is connected to [viability](/docs/core/dynamics/viability):
 
 $$
 P(\Gamma) > P_{\text{crit}} = \frac{2}{7} \Rightarrow S_{\text{freedom}}(\Gamma) > 0
 $$
 
-Жизнеспособная система обладает ненулевой свободой выбора пути. Система ниже порога ($P \leq P_{\text{crit}}$) движется к $I/7$ единственным путём — свобода утрачена.
+A viable system possesses non-zero freedom of path choice. A system below the threshold ($P \leq P_{\text{crit}}$) moves towards $I/7$ by a unique path — freedom is lost.
 
 ---
 
-## 5. Выбор пути
+## 5. Choice of path
 
-### 5.1 Структура пространства путей
+### 5.1 Structure of path space
 
-Пространство Map(Γ, T) разлагается:
+The space Map(Γ, T) decomposes:
 
 $$
 \text{Map}(\Gamma, T) = \bigsqcup_{[\gamma] \in \pi_0} \text{Path}_{[\gamma]}
 $$
 
-Каждая компонента $\text{Path}_{[\gamma]}$ — класс гомотопически эквивалентных путей. Для ∞-терминального T: $\pi_0 = 1$ (один класс), но внутри этого класса — **бесконечное разнообразие** конкретных траекторий.
+Each component $\text{Path}_{[\gamma]}$ is a class of homotopically equivalent paths. For ∞-terminal T: $\pi_0 = 1$ (one class), but within this class — **infinite variety** of concrete trajectories.
 
-### 5.2 Развёрнутая аналогия: реки и русла
+### 5.2 Extended analogy: rivers and channels
 
-Представьте горный ландшафт, по которому стекает вода к океану.
+Imagine a mountain landscape through which water flows down to the ocean.
 
-**Океан** = T (терминальный объект). Все реки впадают в него — это «единственность цели».
+**Ocean** = T (terminal object). All rivers flow into it — this is 'uniqueness of goal'.
 
-**Рельеф** = $\mathcal{F}[\Gamma]$ (свободно-энергетический функционал). Он определяет, куда «стекает» вода — какие траектории возможны.
+**Terrain** = $\mathcal{F}[\Gamma]$ (free-energy functional). It determines where water 'flows' — which trajectories are possible.
 
-**Русла** = конкретные морфизмы $f: \Gamma \to T$. Их много: через горную долину, через равнину, через пещеры.
+**Channels** = concrete morphisms $f: \Gamma \to T$. There are many: through a mountain valley, across a plain, through caves.
 
-**Нулевые моды гессиана** = «перевалы» и «плоскогорья»: места, где вода может пойти в любую из нескольких долин. В этих точках — максимальный Freedom.
+**Zero modes of the Hessian** = 'passes' and 'plateaux': places where water can flow into any of several valleys. At these points — maximal Freedom.
 
-**Минимумы $\mathcal{F}$** = «глубокие озёра»: вода «застревает» (стационар $\rho^*$, Freedom = 1). Выход возможен только при внешнем воздействии.
+**Minima of $\mathcal{F}$** = 'deep lakes': water 'gets stuck' (stationary $\rho^*$, Freedom = 1). Exit is possible only with external influence.
 
-**Водопады** = бифуркации: точки, где малое возмущение приводит к выбору принципиально разного русла.
+**Waterfalls** = bifurcations: points where a small perturbation leads to the choice of a fundamentally different channel.
 
-### 5.3 Критерии выбора
+### 5.3 Criteria for choice
 
-Агент выбирает путь по критериям:
+An agent chooses a path according to criteria:
 
-| Критерий | Формула | Интерпретация | Пример |
-|----------|---------|---------------|--------|
-| Энергия | $\int_\gamma \lVert d\Gamma/d\tau\rVert_B$ | Минимальные усилия | Лень, привычка |
-| Время | $\text{length}(\gamma)$ | Кратчайший путь | Эффективность |
-| Риск | $\min_\tau P(\Gamma(\tau))$ | Максимальная жизнеспособность | Осторожность |
-| Интериорность | $\int_\gamma S_{vN}(\rho_E)$ | Богатство интериорных состояний | Полнота жизни |
+| Criterion | Formula | Interpretation | Example |
+|-----------|---------|----------------|---------|
+| Energy | $\int_\gamma \lVert d\Gamma/d\tau\rVert_B$ | Minimal effort | Laziness, habit |
+| Time | $\text{length}(\gamma)$ | Shortest path | Efficiency |
+| Risk | $\min_\tau P(\Gamma(\tau))$ | Maximum viability | Caution |
+| Interiority | $\int_\gamma S_{vN}(\rho_E)$ | Richness of interior states | Fullness of life |
 
-### 5.4 Алгоритм выбора
+### 5.4 Choice algorithm
 
 ```
 ALGORITHM choose_path(Γ, T, preferences):
-    # Вход: текущее состояние, терминальный объект, предпочтения агента
-    # Выход: конкретный путь γ: Γ → T
+    # Input: current state, terminal object, agent preferences
+    # Output: specific path γ: Γ → T
 
-    # 1. Вычислить пространство путей
+    # 1. Compute path space
     PathSpace := Map(Γ, T)
 
-    # 2. Разложить на связные компоненты
+    # 2. Decompose into connected components
     Components := π₀(PathSpace)
 
-    # 3. Применить ограничения жизнеспособности
+    # 3. Apply viability constraints
     Viable := filter(c for c in Components if min_purity(c) > P_crit)
 
-    # 4. Оптимизировать по предпочтениям
+    # 4. Optimise by preferences
     Optimal := argmin(Viable, cost(preferences))
 
-    # 5. Выбрать представителя
+    # 5. Select representative
     γ := representative(Optimal)
 
     RETURN γ
 ```
 
-:::note Статус: Концептуальный псевдокод
-Этот алгоритм — **концептуальная схема**, не реализуемая напрямую. Вычисление Map(Γ, T) в ∞-категории — бесконечномерная задача. Для практической реализации необходимы конечномерные приближения.
+:::note Status: Conceptual pseudocode
+This algorithm is a **conceptual scheme**, not directly implementable. Computing Map(Γ, T) in an ∞-category is an infinite-dimensional task. For practical implementation, finite-dimensional approximations are required.
 :::
 
 ---
 
-## 6. Связь с сознанием
+## 6. Connection to consciousness
 
-### 6.1 Рефлексивный выбор
+### 6.1 Reflexive choice
 
-[Оператор самомоделирования](/docs/proofs/categorical/formalization-phi) $\varphi$ связан со свободой воли: $\varphi$ выбирает **конкретную** самомодель из множества возможных:
+The [self-modelling operator](/docs/proofs/categorical/formalization-phi) $\varphi$ is connected to freedom of will: $\varphi$ selects a **specific** self-model from the set of possible ones:
 
 $$
 \varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H}), \quad \varphi(\Gamma) \in \text{Sub}(\Gamma)
 $$
 
-Каждый выбор $\varphi$ индуцирует траекторию эволюции $\Gamma \to \varphi(\Gamma) \to \varphi^2(\Gamma) \to \cdots$, что можно рассматривать как элемент Map(Γ, T) при отождествлении предельной точки с T.
+Each choice of $\varphi$ induces an evolution trajectory $\Gamma \to \varphi(\Gamma) \to \varphi^2(\Gamma) \to \cdots$, which can be viewed as an element of Map(Γ, T) upon identifying the limit point with T.
 
-**Связь с Freedom:** Чем богаче пространство $\text{Sub}(\Gamma)$ (подалгебр $\Gamma$), тем больше вариантов для $\varphi$ — и тем выше Freedom. Высокое $R$ **ограничивает** $\varphi$ (самомодель точнее → меньше «свободы выбора» самомодели), но **улучшает** качество выбора.
+**Connection to Freedom:** The richer the space $\text{Sub}(\Gamma)$ (subalgebras of $\Gamma$), the more options for $\varphi$ — and the higher the Freedom. High $R$ **constrains** $\varphi$ (self-model is more precise → less 'freedom of choice' of self-model), but **improves** the quality of choice.
 
-### 6.2 Осознанный vs автоматический выбор
+### 6.2 Conscious vs automatic choice
 
-| Уровень интериорности | Характер выбора | Аналогия | Freedom |
-|----------------------|-----------------|----------|---------|
-| [L0](/docs/consciousness/hierarchy/interiority-hierarchy) (интериорность) | Автоматический: фиксированная траектория | Камень катится с горы | Высокий (много мод, нет выбора) |
-| [L1](/docs/consciousness/hierarchy/interiority-hierarchy) (феноменальная геометрия) | Реактивный: выбор из конечного набора | Животное: бежать или затаиться | Средний |
-| [L2](/docs/consciousness/hierarchy/interiority-hierarchy) (когнитивные квалиа) | Рефлексивный: осознанный выбор траектории | Человек планирует карьеру | Низкий (осознанный) |
-| [L3](/docs/consciousness/hierarchy/interiority-hierarchy) (сетевое сознание) | Мета-рефлексивный: выбор критериев выбора | Философ: «а правильны ли мои критерии?» | Ещё ниже |
-| [L4](/docs/consciousness/hierarchy/interiority-hierarchy) (унитарное сознание) | Интегральный: выбор с полным самомоделированием | Мудрец: самомодель совпадает с реальностью | Минимальный (Freedom = 1 или 2) |
+| Interiority level | Character of choice | Analogy | Freedom |
+|-------------------|---------------------|---------|---------|
+| [L0](/docs/consciousness/hierarchy/interiority-hierarchy) (interiority) | Automatic: fixed trajectory | Stone rolls down a hill | High (many modes, no choice) |
+| [L1](/docs/consciousness/hierarchy/interiority-hierarchy) (phenomenal geometry) | Reactive: choice from a finite set | Animal: run or hide | Medium |
+| [L2](/docs/consciousness/hierarchy/interiority-hierarchy) (cognitive qualia) | Reflexive: conscious choice of trajectory | A person plans a career | Low (conscious) |
+| [L3](/docs/consciousness/hierarchy/interiority-hierarchy) (network consciousness) | Meta-reflexive: choice of choice criteria | Philosopher: 'but are my criteria correct?' | Even lower |
+| [L4](/docs/consciousness/hierarchy/interiority-hierarchy) (unitary consciousness) | Integral: choice with complete self-modelling | Sage: self-model coincides with reality | Minimal (Freedom = 1 or 2) |
 
-Сознательный агент (L2+) осознаёт **множественность** траекторий и делает **рефлексивный** выбор. Агенты L3-L4 способны дополнительно выбирать сами критерии выбора.
+A conscious agent (L2+) is aware of the **multiplicity** of trajectories and makes a **reflexive** choice. L3–L4 agents are additionally capable of choosing the very criteria of choice.
 
-**Парадокс мудрости:** L4-система (мудрец) имеет минимальный Freedom — но максимальную **качественную** свободу. Мудрец «не может поступить иначе» (его $\varphi(\Gamma) \approx \Gamma$, путь единственен), но этот единственный путь — **наилучший**. Он свободен, потому что **не нуждается** в альтернативах.
+**The paradox of wisdom:** An L4 system (sage) has minimal Freedom — but maximal **qualitative** freedom. The sage 'cannot act otherwise' (their $\varphi(\Gamma) \approx \Gamma$, the path is unique), but this unique path is **the best one**. They are free because they **do not need** alternatives.
 
 ---
 
-## 7. Этические следствия
+## 7. Ethical consequences
 
-### 7.1 Ответственность
+### 7.1 Responsibility
 
-Множественность путей обосновывает **моральную ответственность**:
+The multiplicity of paths grounds **moral responsibility**:
 
-- Агент **мог бы** выбрать другой путь (Freedom > 1)
-- Выбор данного пути — результат **решения** агента ($\varphi$ выбирает конкретную траекторию)
-- Следовательно, агент **ответственен** за последствия
+- An agent **could have** chosen a different path (Freedom > 1)
+- The choice of this path is the result of the agent's **decision** ($\varphi$ selects a specific trajectory)
+- Consequently, the agent is **responsible** for the consequences
 
-:::note Ограничение
-Все траектории гомотопически эквивалентны (ведут к одному T). Моральная значимость выбора определяется не конечной точкой (T), а **содержанием пути**: переживаниями, воздействием на других Голономов, локальным изменением $P$.
+:::note Limitation
+All trajectories are homotopically equivalent (they lead to the same T). The moral significance of a choice is determined not by the endpoint (T) but by the **content of the path**: experiences, impact on other Holons, local change in $P$.
 :::
 
-**Связь с уголовным правом:** Ответственность пропорциональна Freedom. L0-система (камень) — нулевая ответственность. L1-система (животное) — ограниченная (реактивный выбор). L2-система (человек) — полная ответственность: осознанный выбор из множества альтернатив. Невменяемость (временное снижение $R < 1/3$) — **уменьшение** ответственности, потому что уменьшается осознанность выбора.
+**Connection to criminal law:** Responsibility is proportional to Freedom. An L0 system (stone) — zero responsibility. An L1 system (animal) — limited (reactive choice). An L2 system (human) — full responsibility: conscious choice from many alternatives. Diminished responsibility (temporary reduction of $R < 1/3$) — **diminished** responsibility, because the awareness of choice is reduced.
 
-### 7.2 Связь со смыслом
+### 7.2 Connection to meaning
 
-Свобода выбора пути связана со [смыслом существования](/docs/consciousness/ethics-meaning/meaning):
+Freedom of path choice is connected to [meaning of existence](/docs/consciousness/ethics-meaning/meaning):
 
 $$
 \text{Meaning}(\Gamma) \propto S_{\text{freedom}}(\Gamma) \cdot \text{Significance}(\gamma)
 $$
 
-Смысл = свобода × значимость выбранного пути. Система с нулевой свободой (Freedom = 1, стационар) не может «выбрать» значимый путь. Система с максимальной свободой (Freedom = 7, хаос) не может оценить значимость. Наивысший смысл — в **промежуточной зоне**: достаточно свободы для выбора, достаточно структуры для оценки.
+Meaning = freedom × significance of chosen path. A system with zero freedom (Freedom = 1, stationary) cannot 'choose' a meaningful path. A system with maximal freedom (Freedom = 7, chaos) cannot assess significance. The highest meaning is in the **intermediate zone**: enough freedom to choose, enough structure to assess.
 
-Это объясняет, почему «слишком лёгкая» жизнь (всё решено за вас, Freedom → 1) и «слишком хаотичная» (нет структуры, Freedom → max) одинаково **бессмысленны**. Максимальный смысл — в **зоне осознанного выбора**: L2-L3, где Freedom умеренный, а осознанность — высокая.
+This explains why a 'too easy' life (everything decided for you, Freedom → 1) and a 'too chaotic' one (no structure, Freedom → max) are equally **meaningless**. Maximum meaning is in the **zone of conscious choice**: L2–L3, where Freedom is moderate and awareness is high.
 
 ---
 
-## 8. Математические детали
+## 8. Mathematical details
 
-### 8.1 Пространство путей как пучок
+### 8.1 Path space as a sheaf
 
-**Определение (Пучок путей):**
+**Definition (Path sheaf):**
 
 $$
 \mathcal{P}\text{ath}_{\Gamma \to T} : U \mapsto \text{Map}_{\mathcal{C}_\infty}(\Gamma|_U, T|_U)
 $$
 
-где $U$ — открытое подмножество базового пространства $X = |N(\mathcal{C})|$.
+where $U$ is an open subset of the base space $X = |N(\mathcal{C})|$.
 
-### 8.2 Локальные сечения = локальные выборы
+### 8.2 Local sections = local choices
 
-**Утверждение (Локальная свобода):**
+**Statement (Local freedom):**
 
-Пусть $\{U_\alpha\}$ — покрытие X. Тогда:
+Let $\{U_\alpha\}$ be a cover of X. Then:
 
-1. Над каждым $U_\alpha$ существует множество локальных сечений $s_\alpha \in \Gamma(U_\alpha, \mathcal{P}\text{ath})$
-2. Сечения согласуются на пересечениях: $s_\alpha|_{U_\alpha \cap U_\beta} \simeq_2 s_\beta|_{U_\alpha \cap U_\beta}$
-3. Глобальное сечение $s \in \Gamma(X, \mathcal{P}\text{ath})$ — конкретная траектория
+1. Over each $U_\alpha$ there exists a set of local sections $s_\alpha \in \Gamma(U_\alpha, \mathcal{P}\text{ath})$
+2. Sections agree on intersections: $s_\alpha|_{U_\alpha \cap U_\beta} \simeq_2 s_\beta|_{U_\alpha \cap U_\beta}$
+3. Global section $s \in \Gamma(X, \mathcal{P}\text{ath})$ — a specific trajectory
 
-**Интерпретация:**
-- Локальный выбор — агент выбирает путь в своей «окрестности опыта»
-- Глобальная согласованность — локальные выборы «сшиваются» в единую траекторию
-- Свобода = выбор локального сечения
+**Interpretation:**
+- Local choice — an agent chooses a path in their 'neighbourhood of experience'
+- Global consistency — local choices are 'stitched together' into a single trajectory
+- Freedom = choice of local section
 
-### 8.3 Связь с HoTT
+### 8.3 Connection to HoTT
 
-В гомотопической теории типов (внутренняя логика ∞-топоса):
+In homotopy type theory (internal logic of ∞-topos):
 
-| HoTT | Свобода воли |
-|------|--------------|
-| Тип Path(a, b) | Пространство путей Γ → T |
-| Терм p : Path(a, b) | Конкретная траектория |
-| Путь q : p = p' | Эквивалентность траекторий |
-| Унивалентность | (Γ = T) ≃ (Γ ≃ T) |
-
----
-
-### Что мы узнали {#что-мы-узнали}
-
-1. **Детерминизм и свобода совместимы.** Цель (T) единственна, но путей — множество. ∞-категорная структура разрешает парадокс.
-2. **Freedom формализована [Т]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — число нулевых мод гессиана + 1.
-3. **Монотонность [Т]:** CPTP-каналы не увеличивают свободу. Декогеренция **уменьшает** число доступных траекторий.
-4. **Freedom(L0) > Freedom(L2):** формальная свобода убывает с ростом L, но **качество** свободы (осознанность выбора) растёт.
-5. **Ответственность обоснована:** агент **мог бы** выбрать иначе — и отвечает за последствия конкретного выбора.
-6. **Связь со смыслом:** $\text{Meaning} \propto S_{\text{freedom}} \times \text{Significance}$. Наивысший смысл — в промежуточной зоне свободы.
-7. **Историческое место УГМ:** ближе всего к компатибилизму, но с количественной мерой и ∞-категорным обоснованием.
-
-## Резюме
-
-:::tip Ключевые результаты
-1. **Телеологический детерминизм разрешён:** Цель (T) единственна, но траекторий множество
-2. **Свобода формализована [Т]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — число нулевых мод гессиана + 1 (см. [§3.3](#количественная-мера))
-3. **Монотонность [Т]:** $\text{Freedom}(\mathcal{E}[\Gamma]) \leq \text{Freedom}(\Gamma)$ для CPTP-каналов
-4. **$G_2$-инвариантность [Т]:** $\text{Freedom}(U\Gamma U^\dagger) = \text{Freedom}(\Gamma)$ для $U \in G_2$
-5. **Связь с сознанием:** L2+-агенты осознают множественность траекторий; $\text{Freedom}(L0) > \text{Freedom}(L1) > \text{Freedom}(L2)$
-6. **Этическое следствие:** Множественность траекторий обосновывает ответственность
-:::
-
-:::tip Мост к следующей главе
-Мы показали, что агент свободен в выборе траектории. Но что происходит, когда траектория **заканчивается**? Что значит $P \to 0$ — и есть ли что-то «после»? В следующей — и завершающей — главе: [Смерть и непрерывность](/docs/consciousness/ethics-meaning/death-continuity).
-:::
+| HoTT | Freedom of will |
+|------|-----------------|
+| Type Path(a, b) | Path space Γ → T |
+| Term p : Path(a, b) | Specific trajectory |
+| Path q : p = p' | Equivalence of trajectories |
+| Univalence | (Γ = T) ≃ (Γ ≃ T) |
 
 ---
 
-**Связанные документы:**
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-терминальный объект
-- [Смысл существования](/docs/consciousness/ethics-meaning/meaning) — связь свободы и смысла
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P > P_{\text{crit}} \Rightarrow S_{\text{freedom}} > 0$
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — ∞-топос и лаксный 2-функтор
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — φ как выбор пути
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни осознанности выбора
-- [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — ответственность как следствие свободы
+### What we learned {#что-мы-узнали}
+
+1. **Determinism and freedom are compatible.** The goal (T) is unique, but paths are many. The ∞-categorical structure resolves the paradox.
+2. **Freedom is formalised [T]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — the number of zero modes of the Hessian + 1.
+3. **Monotonicity [T]:** CPTP channels do not increase freedom. Decoherence **reduces** the number of available trajectories.
+4. **Freedom(L0) > Freedom(L2):** formal freedom decreases as L grows, but the **quality** of freedom (awareness of choice) increases.
+5. **Responsibility is grounded:** an agent **could have** chosen differently — and is responsible for the consequences of the specific choice.
+6. **Connection to meaning:** $\text{Meaning} \propto S_{\text{freedom}} \times \text{Significance}$. Highest meaning is in the intermediate freedom zone.
+7. **UHM's historical position:** closest to compatibilism, but with a quantitative measure and ∞-categorical justification.
+
+## Summary
+
+:::tip Key results
+1. **Teleological determinism resolved:** The goal (T) is unique, but trajectories are many
+2. **Freedom formalised [T]:** $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ — the number of zero modes of the Hessian + 1 (see [§3.3](#количественная-мера))
+3. **Monotonicity [T]:** $\text{Freedom}(\mathcal{E}[\Gamma]) \leq \text{Freedom}(\Gamma)$ for CPTP channels
+4. **$G_2$-invariance [T]:** $\text{Freedom}(U\Gamma U^\dagger) = \text{Freedom}(\Gamma)$ for $U \in G_2$
+5. **Connection to consciousness:** L2+ agents are aware of the multiplicity of trajectories; $\text{Freedom}(L0) > \text{Freedom}(L1) > \text{Freedom}(L2)$
+6. **Ethical consequence:** Multiplicity of trajectories grounds responsibility
+:::
+
+:::tip Bridge to the next chapter
+We have shown that an agent is free in choosing a trajectory. But what happens when the trajectory **ends**? What does $P \to 0$ mean — and is there something 'after'? In the next — and concluding — chapter: [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity).
+:::
+
+---
+
+**Related documents:**
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-terminal object
+- [Meaning of existence](/docs/consciousness/ethics-meaning/meaning) — connection between freedom and meaning
+- [Viability](/docs/core/dynamics/viability) — $P > P_{\text{crit}} \Rightarrow S_{\text{freedom}} > 0$
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — ∞-topos and lax 2-functor
+- [Formalisation of φ](/docs/proofs/categorical/formalization-phi) — φ as path choice
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels of awareness of choice
+- [UHM ethics](/docs/consciousness/ethics-meaning/value-consciousness) — responsibility as consequence of freedom

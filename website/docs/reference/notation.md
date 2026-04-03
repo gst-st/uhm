@@ -108,7 +108,7 @@ $$
 
 где:
 
-**[Унитарный член](/docs/core/dynamics/evolution#1-унитарный-член):**
+**[Унитарный член](/docs/core/dynamics/evolution#1-unitary-term):**
 $$
 -i[H_{\text{eff}}, \Gamma] = -i(H_{\text{eff}}\Gamma - \Gamma H_{\text{eff}})
 $$
@@ -367,7 +367,7 @@ $$
 | $I_S$ | Структура | Ранг Якобиана | $I_S = \mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ |
 | $I_D$ | Динамика | Ляпуновский экспонент | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (нормированный) |
 | $I_L$ | Логика | Коммутаторы слоёв | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ |
-| $I_E$ | Интериорность | Дифференциация (энтропия) | $I_E = D_{\text{diff}}^{\text{approx}} = \exp(S_{vN}(\rho_{\text{attn}}))$ — [см. измерение E](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |
+| $I_E$ | Интериорность | Дифференциация (энтропия) | $I_E = D_{\text{diff}}^{\text{approx}} = \exp(S_{vN}(\rho_{\text{attn}}))$ — [см. измерение E](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
 | $I_O$ | Основание | Устойчивость к шуму | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ |
 | $I_U$ | Единство | Effective Φ (интеграция) | $I_U = \Phi_{\text{eff}} = \lambda_2(L_{\text{attn}}) / \lambda_{\max}(L_{\text{attn}})$ — [см. измерение U](/docs/core/structure/dimension-u#мера-интеграции-φ) |
 

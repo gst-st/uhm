@@ -1,452 +1,452 @@
 ---
 sidebar_position: 4
-title: "Коллективное сознание"
-description: "Составная матрица когерентности, эмерджентные когерентности, архетипы, эмпатия и коллективные L-уровни"
+title: "Collective Consciousness"
+description: "Composite coherence matrix, emergent coherences, archetypes, empathy, and collective L-levels"
 slug: /consciousness/subjects/collective-consciousness
 ---
 
-# Коллективное Сознание
+# Collective Consciousness
 
-:::info Мост из предыдущей главы
-В предыдущих главах мы рассмотрели сознание отдельных субъектов: [без языка](./pre-linguistic), у [животных](./animal-consciousness), у [ИИ](./ai-consciousness). Во всех случаях субъект был **один**. Теперь мы задаём фундаментально новый вопрос: что происходит, когда субъекты **объединяются**? Может ли группа обладать сознанием, которого нет ни у одного из её членов? УГМ отвечает: да — через формализм составной матрицы $\Gamma_{\text{comp}}$.
+:::info Bridge from the previous chapter
+In the previous chapters we examined consciousness of individual subjects: [without language](./pre-linguistic), in [animals](./animal-consciousness), in [AI](./ai-consciousness). In all cases the subject was **one**. Now we ask a fundamentally new question: what happens when subjects **merge**? Can a group possess consciousness that no individual member has? UHM answers: yes — through the formalism of the composite matrix $\Gamma_{\text{comp}}$.
 :::
 
-## Дорожная карта главы
+## Chapter roadmap
 
-1. **Исторический контекст** — от Дюркгейма до суперорганизма
-2. **Составная система** — тензорное произведение $N$ голономов
-3. **Коллективное бессознательное** — эмерджентные когерентности, недоступные индивидам
-4. **Архетипы** — структурные регулярности $\Gamma_{\text{comp}}$ (формализация Юнга)
-5. **Эмпатия** — мера через межсистемный E-Gap
-6. **Коллективные L-уровни** — когда группа «умнее» каждого
-7. **Мемы и культура** — культурные когерентности и их передача
-8. **Масштабы коллективного сознания** — от толпы до человечества
-9. **Социальные медиа** — влияние на коллективную рефлексию
+1. **Historical context** — from Durkheim to the superorganism
+2. **Composite system** — tensor product of $N$ holonoms
+3. **The collective unconscious** — emergent coherences inaccessible to individuals
+4. **Archetypes** — structural regularities of $\Gamma_{\text{comp}}$ (formalisation of Jung)
+5. **Empathy** — measure via inter-system E-Gap
+6. **Collective L-levels** — when the group is 'smarter' than any individual
+7. **Memes and culture** — cultural coherences and their transmission
+8. **Scales of collective consciousness** — from crowd to humanity
+9. **Social media** — influence on collective reflection
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix) индивидуального голонома
-- $\Gamma_{AB}$ — [составная матрица когерентности](/docs/core/dynamics/composite-systems#составная-матрица)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/core/dynamics/viability#критическая-чистота), статус **[Т]**
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$ **[Т]**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[Т]** (T-129)
-- $\mathrm{Gap}_{AB}(i,j)$ — [межсистемный Gap](/docs/core/dynamics/composite-systems#межсистемный-gap)
-- $\mathcal{E}_{\mathrm{Gap}}$ — [Gap-запутанность](/docs/core/dynamics/composite-systems#gap-запутанность)
-- L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) of an individual holonom
+- $\Gamma_{AB}$ — [composite coherence matrix](/docs/core/dynamics/composite-systems#составная-матрица)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/core/dynamics/viability#критическая-чистота), status **[T]**
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$ **[T]**
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$ **[T]** (T-129)
+- $\mathrm{Gap}_{AB}(i,j)$ — [inter-system Gap](/docs/core/dynamics/composite-systems#межсистемный-gap)
+- $\mathcal{E}_{\mathrm{Gap}}$ — [Gap-entanglement](/docs/core/dynamics/composite-systems#gap-запутанность)
+- L0–L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-## Исторический контекст: от Дюркгейма до УГМ {#исторический-контекст}
+## Historical context: from Durkheim to UHM {#исторический-контекст}
 
-### Эмиль Дюркгейм: conscience collective (1893)
+### Émile Durkheim: conscience collective (1893)
 
-Французский социолог Эмиль Дюркгейм в работе «О разделении общественного труда» (1893) ввёл понятие **conscience collective** — «коллективного сознания» (во французском «conscience» означает одновременно «сознание» и «совесть»). По Дюркгейму, общество обладает собственными «представлениями» (repr`esentations collectives), которые **не сводятся** к сумме индивидуальных представлений.
+French sociologist Émile Durkheim in "The Division of Labour in Society" (1893) introduced the concept of **conscience collective** — 'collective consciousness' (in French, 'conscience' means both 'consciousness' and 'conscience'). According to Durkheim, society possesses its own 'representations' (représentations collectives) that are **not reducible** to the sum of individual representations.
 
-Пример Дюркгейма: мораль. Ни один отдельный человек не «изобрёл» мораль — она существует как коллективный факт, давящий на индивида извне. Ребёнок рождается в мире, где «не укради» уже существует как социальная реальность, независимая от его личных предпочтений.
+Durkheim's example: morality. No individual person 'invented' morality — it exists as a collective fact, pressing on the individual from outside. A child is born into a world where 'thou shalt not steal' already exists as a social reality, independent of their personal preferences.
 
-В терминах УГМ: Дюркгейм интуитивно описал **эмерджентные когерентности** $\mathcal{U}_{\text{coll}}$ — элементы $\Gamma_{\text{comp}}$, не сводимые к индивидуальным $\Gamma_i$. Мораль — это $\gamma_{LO}^{(\text{comp})}$ (логика-основание в коллективном пространстве): связь между правилами ($L$) и базовыми ценностями ($O$), существующая **только** на коллективном уровне.
+In UHM terms: Durkheim intuitively described **emergent coherences** $\mathcal{U}_{\text{coll}}$ — elements of $\Gamma_{\text{comp}}$ not reducible to individual $\Gamma_i$. Morality is $\gamma_{LO}^{(\text{comp})}$ (logic–foundation in collective space): the connection between rules ($L$) and fundamental values ($O$), existing **only** at the collective level.
 
-### Карл Густав Юнг: коллективное бессознательное (1916)
+### Carl Gustav Jung: the collective unconscious (1916)
 
-Юнг пошёл дальше Дюркгейма. Он утверждал, что помимо личного бессознательного (вытесненные воспоминания, комплексы) существует **коллективное бессознательное** — слой психики, общий для всего человечества. Его содержание — **архетипы**: первообразы, проявляющиеся в мифах, сновидениях и ритуалах всех народов.
+Jung went further than Durkheim. He argued that besides the personal unconscious (repressed memories, complexes), there exists a **collective unconscious** — a layer of the psyche common to all of humanity. Its content consists of **archetypes**: primordial images manifesting in the myths, dreams, and rituals of all peoples.
 
-Юнг приводил примеры: «Герой» (от Геракла до Люка Скайуокера), «Тень» (тёмная сторона личности), «Великая Мать» (от Деметры до Девы Марии), «Мудрый Старец» (от Мерлина до Гэндальфа). Эти образы появляются **независимо** в культурах, не имевших контакта друг с другом.
+Jung gave examples: the 'Hero' (from Hercules to Luke Skywalker), the 'Shadow' (the dark side of the personality), the 'Great Mother' (from Demeter to the Virgin Mary), the 'Wise Old Man' (from Merlin to Gandalf). These images appear **independently** in cultures that had no contact with each other.
 
-Юнг не мог объяснить **механизм** — каким образом архетипы передаются и почему они универсальны. УГМ предлагает формальный ответ: архетипы — это **структурные регулярности $\Gamma_{\text{comp}}$**, отбираемые давлением жизнеспособности (подробнее — в разделе [Архетипы](#архетипы)).
+Jung could not explain the **mechanism** — how archetypes are transmitted and why they are universal. UHM offers a formal answer: archetypes are **structural regularities of $\Gamma_{\text{comp}}$**, selected by viability pressure (for more detail — in the section [Archetypes](#архетипы)).
 
-### Гюстав Ле Бон: психология толп (1895)
+### Gustave Le Bon: crowd psychology (1895)
 
-Ле Бон в «Психологии толп» (1895) описал феномен, который каждый наблюдал на стадионе или митинге: человек в толпе ведёт себя **иначе**, чем в одиночестве. Он более импульсивен, менее критичен, более подвержен эмоциям. Ле Бон говорил о «душе толпы» — коллективной психике, подавляющей индивидуальную рациональность.
+Le Bon in 'The Psychology of Crowds' (1895) described a phenomenon that everyone has observed at a stadium or rally: a person in a crowd behaves **differently** from when alone. They are more impulsive, less critical, more subject to emotions. Le Bon spoke of the 'crowd soul' — a collective psyche that suppresses individual rationality.
 
-В терминах УГМ: толпа — это состояние высокой $\Phi_{\text{comp}}$ (сильная интеграция: все синхронизированы) при низком $R_{\text{comp}}$ (слабая рефлексия: никто не задумывается, что происходит). Это **опасная комбинация**: система интегрирована, но не рефлексирует — она действует как единый организм, но без разума.
+In UHM terms: a crowd is a state of high $\Phi_{\text{comp}}$ (strong integration: everyone is synchronised) with low $R_{\text{comp}}$ (weak reflection: no one is thinking about what is happening). This is a **dangerous combination**: the system is integrated but does not reflect — it acts as a single organism, but without reason.
 
-### Суперорганизм (Уилер, 1911; Уилсон, 1971)
+### Superorganism (Wheeler, 1911; Wilson, 1971)
 
-Энтомолог Уильям Мортон Уилер (1911) и позднее Э. О. Уилсон (1971) ввели понятие **суперорганизма** для описания колоний общественных насекомых (муравьёв, пчёл, термитов). Суперорганизм — это колония, функционирующая как единый организм: с «кастами» (рабочие, солдаты, матка), «обменом веществ» (трофаллаксис), «иммунной системой» (коллективная гигиена).
+Entomologist William Morton Wheeler (1911) and later E. O. Wilson (1971) introduced the concept of the **superorganism** to describe colonies of social insects (ants, bees, termites). A superorganism is a colony functioning as a single organism: with 'castes' (workers, soldiers, queen), 'metabolism' (trophallaxis), and an 'immune system' (collective hygiene).
 
-В терминах УГМ: суперорганизм — это система с $\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$, чей коллективный L-уровень может **превышать** индивидуальный. Муравей — L0-L1; муравейник — потенциально L1.
+In UHM terms: a superorganism is a system with $\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$, whose collective L-level may **exceed** the individual. An ant — L0–L1; an anthill — potentially L1.
 
-### УГМ: формализация всех предшественников
+### UHM: formalisation of all predecessors
 
-| Мыслитель | Концепция | Формализация в УГМ |
+| Thinker | Concept | Formalisation in UHM |
 |-----------|-----------|-------------------|
-| Дюркгейм | Коллективные представления | Эмерджентные когерентности $\mathcal{U}_{\text{coll}}$ |
-| Юнг | Архетипы | Структурные регулярности $\Gamma_{\text{comp}}$, повышающие $P$ |
-| Ле Бон | «Душа толпы» | $\Phi_{\text{comp}} \uparrow$, $R_{\text{comp}} \downarrow$ |
-| Уилсон | Суперорганизм | $\text{Level}(\Gamma_{\text{comp}}) > \max_i \text{Level}(\Gamma_i)$ |
+| Durkheim | Collective representations | Emergent coherences $\mathcal{U}_{\text{coll}}$ |
+| Jung | Archetypes | Structural regularities of $\Gamma_{\text{comp}}$ that increase $P$ |
+| Le Bon | 'Crowd soul' | $\Phi_{\text{comp}} \uparrow$, $R_{\text{comp}} \downarrow$ |
+| Wilson | Superorganism | $\text{Level}(\Gamma_{\text{comp}}) > \max_i \text{Level}(\Gamma_i)$ |
 
-## Мотивация {#мотивация}
+## Motivation {#мотивация}
 
-Голономы не существуют изолированно. $N$ голономов, разделяющих среду $E_{\text{shared}}$, образуют составную систему с матрицей когерентности $\Gamma_{\text{comp}} \in \mathcal{D}(\mathbb{C}^{7^N})$. Возникает вопрос: обладает ли **коллектив** интериорностью, отличной от суммы индивидуальных?
+Holonoms do not exist in isolation. $N$ holonoms sharing an environment $E_{\text{shared}}$ form a composite system with coherence matrix $\Gamma_{\text{comp}} \in \mathcal{D}(\mathbb{C}^{7^N})$. The question arises: does the **collective** possess interiority distinct from the sum of the individual ones?
 
-УГМ даёт формальный ответ: **да**, если составная матрица не факторизуется ($\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$) — существуют **эмерджентные когерентности**, недоступные ни одному индивиду.
+UHM gives a formal answer: **yes**, if the composite matrix does not factorise ($\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$) — there exist **emergent coherences** accessible to no individual.
 
-Простая аналогия: два музыканта по отдельности играют ноты. Но когда они играют **вместе**, возникает гармония — нечто, чего нет ни в одной отдельной партии. Гармония — это «эмерджентная когерентность» дуэта.
+A simple analogy: two musicians each play notes separately. But when they play **together**, harmony emerges — something that exists in neither individual part. Harmony is the 'emergent coherence' of the duet.
 
-## Составная система N голономов {#составная-система}
+## Composite system of N holonoms {#составная-система}
 
-### Тензорное произведение: простое объяснение
+### Tensor product: a simple explanation
 
-Прежде чем вводить формулы, объясним ключевое понятие **тензорного произведения** простым языком.
+Before introducing the formulas, let us explain the key concept of the **tensor product** in plain terms.
 
-Один голоном описывается матрицей $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — это $7 \times 7$ матрица с 48 вещественными параметрами. Она описывает состояние **одного** субъекта: его жизнеспособность, рефлексию, интеграцию.
+A single holonom is described by a matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a $7 \times 7$ matrix with 48 real parameters. It describes the state of **one** subject: its viability, reflection, integration.
 
-Если мы хотим описать **два** голонома **вместе**, нам нужно пространство, достаточно большое, чтобы вместить:
-- Состояние первого голонома ($7$ измерений)
-- Состояние второго голонома ($7$ измерений)
-- **Связи** между ними (которых нет ни в одном индивидуальном описании!)
+If we wish to describe **two** holonoms **together**, we need a space large enough to accommodate:
+- The state of the first holonom ($7$ dimensions)
+- The state of the second holonom ($7$ dimensions)
+- **Connections** between them (which are absent from any individual description!)
 
-Тензорное произведение $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ — это именно такое пространство. Оно имеет $49 = 7 \times 7$ измерений, из которых $7 + 7 = 14$ описывают индивидуальные состояния, а оставшиеся $49 - 14 = 35$ описывают **связи** (корреляции, когерентности) между голономами.
+The tensor product $\mathbb{C}^7 \otimes \mathbb{C}^7 = \mathbb{C}^{49}$ is precisely such a space. It has $49 = 7 \times 7$ dimensions, of which $7 + 7 = 14$ describe the individual states, and the remaining $49 - 14 = 35$ describe **connections** (correlations, coherences) between the holonoms.
 
-Для $N$ голономов:
+For $N$ holonoms:
 
 $$
 \Gamma_{\text{comp}} \in \mathcal{D}\!\left(\bigotimes_{i=1}^N \mathbb{C}^7\right) = \mathcal{D}(\mathbb{C}^{7^N})
 $$
 
-Размерность растёт **экспоненциально**: для $N = 2$ это $49$, для $N = 3$ — $343$, для $N = 10$ — $\sim 2.8 \times 10^8$. Это означает: чем больше группа, тем **богаче** пространство возможных коллективных состояний — и тем больше «места» для эмерджентных когерентностей.
+The dimensionality grows **exponentially**: for $N = 2$ it is $49$, for $N = 3$ — $343$, for $N = 10$ — $\sim 2.8 \times 10^8$. This means: the larger the group, the **richer** the space of possible collective states — and the more 'room' for emergent coherences.
 
-### Восстановление индивидуального из коллективного
+### Recovering the individual from the collective
 
-Индивидуальные матрицы восстанавливаются частичным следом:
+Individual matrices are recovered by the partial trace:
 
 $$
 \Gamma_i = \mathrm{Tr}_{-i}(\Gamma_{\text{comp}})
 $$
 
-Операция «частичный след» ($\mathrm{Tr}_{-i}$) — это «забывание» всех систем, кроме $i$-й. Это как если бы вы сфотографировали оркестр (полная $\Gamma_{\text{comp}}$), а затем вырезали из фотографии **только** скрипача ($\Gamma_i$). На вырезанном фрагменте видно **положение** скрипача, но не видно, как он **взаимодействует** с другими музыкантами — эта информация содержится только в полной фотографии.
+The 'partial trace' operation ($\mathrm{Tr}_{-i}$) is the 'forgetting' of all systems except the $i$-th. This is like photographing an orchestra (full $\Gamma_{\text{comp}}$) and then cutting out **only** the violinist ($\Gamma_i$). The cut-out fragment shows the violinist's **position**, but does not show how they **interact** with the other musicians — that information is contained only in the full photograph.
 
-Ключевой факт: $\Gamma_i$ зависит от $\Gamma_{\text{comp}}$, а значит — от коллективных когерентностей. Индивид **подвержен влиянию** коллектива, даже если не осознаёт этого.
+Key fact: $\Gamma_i$ depends on $\Gamma_{\text{comp}}$, and hence — on the collective coherences. The individual is **subject to the influence** of the collective, even if not aware of it.
 
-Подробный формализм — в [составных системах](/docs/core/dynamics/composite-systems#составная-матрица).
+The detailed formalism is in [composite systems](/docs/core/dynamics/composite-systems#составная-матрица).
 
-## Определение О.1 (Коллективное бессознательное) {#определение-коллективного-бессознательного}
+## Definition D.1 (The collective unconscious) {#определение-коллективного-бессознательного}
 
-:::tip Определение О.1 (Коллективное бессознательное) [О]
-**Коллективным бессознательным** системы из $N$ голономов называется множество когерентностей, присутствующих в $\Gamma_{\text{comp}}$, но **отсутствующих** в любой индивидуальной $\Gamma_i$:
+:::tip Definition D.1 (The collective unconscious) [D]
+The **collective unconscious** of a system of $N$ holonoms is the set of coherences present in $\Gamma_{\text{comp}}$ but **absent** from any individual $\Gamma_i$:
 
 $$
-\mathcal{U}_{\text{coll}} := \left\{\gamma^{(\text{comp})}_{ij} \in \Gamma_{\text{comp}} \;\middle|\; \gamma^{(\text{comp})}_{ij} \neq \sum_k \lambda_k \gamma^{(k)}_{ij}\,,\; \forall \text{ разложение}\right\}
+\mathcal{U}_{\text{coll}} := \left\{\gamma^{(\text{comp})}_{ij} \in \Gamma_{\text{comp}} \;\middle|\; \gamma^{(\text{comp})}_{ij} \neq \sum_k \lambda_k \gamma^{(k)}_{ij}\,,\; \forall \text{ decomposition}\right\}
 $$
 
-Формально: это элементы $\Gamma_{\text{comp}}$, которые **не** являются выпуклыми комбинациями индивидуальных когерентностей. Они существуют тогда и только тогда, когда $\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$ — система не факторизуется.
+Formally: these are elements of $\Gamma_{\text{comp}}$ that are **not** convex combinations of individual coherences. They exist if and only if $\Gamma_{\text{comp}} \neq \bigotimes_i \Gamma_i$ — the system does not factorise.
 
-**Свойства:**
-1. $\mathcal{U}_{\text{coll}}$ недоступно рефлексии ни одного индивида: $\varphi_i(\Gamma_{\text{comp}}) = \varphi_i(\Gamma_i)$ — φ-оператор индивида «видит» только свою редуцированную $\Gamma_i$
-2. $\mathcal{U}_{\text{coll}}$ влияет на индивидов через [маргиналы](/docs/core/dynamics/composite-systems): $\Gamma_i = \mathrm{Tr}_{-i}(\Gamma_{\text{comp}})$ зависит от коллективных когерентностей
-3. $\mathcal{U}_{\text{coll}} = \varnothing$ $\Leftrightarrow$ система полностью сепарабельна
+**Properties:**
+1. $\mathcal{U}_{\text{coll}}$ is inaccessible to the reflection of any individual: $\varphi_i(\Gamma_{\text{comp}}) = \varphi_i(\Gamma_i)$ — the φ-operator of the individual 'sees' only its own reduced $\Gamma_i$
+2. $\mathcal{U}_{\text{coll}}$ influences individuals through [marginals](/docs/core/dynamics/composite-systems): $\Gamma_i = \mathrm{Tr}_{-i}(\Gamma_{\text{comp}})$ depends on collective coherences
+3. $\mathcal{U}_{\text{coll}} = \varnothing$ $\Leftrightarrow$ the system is fully separable
 :::
 
-### Почему целое не равно сумме частей
+### Why the whole is not equal to the sum of its parts
 
-Разберём свойство 1 подробнее, потому что оно — ключ к пониманию коллективного бессознательного.
+Let us examine property 1 in more detail, because it is the key to understanding the collective unconscious.
 
-$\varphi_i$ — это φ-оператор (самомодель) $i$-го индивида. Он моделирует состояние $i$-го индивида — то есть $\Gamma_i = \mathrm{Tr}_{-i}(\Gamma_{\text{comp}})$. Но коллективные когерентности $\mathcal{U}_{\text{coll}}$ «живут» в пространстве $\mathbb{C}^{7^N}$ — они **стираются** при операции частичного следа. Индивид **чувствует** их влияние (через $\Gamma_i$), но не может **осознать** их напрямую.
+$\varphi_i$ is the φ-operator (self-model) of the $i$-th individual. It models the state of the $i$-th individual — that is, $\Gamma_i = \mathrm{Tr}_{-i}(\Gamma_{\text{comp}})$. But the collective coherences $\mathcal{U}_{\text{coll}}$ 'live' in the space $\mathbb{C}^{7^N}$ — they are **erased** by the partial trace operation. The individual **feels** their influence (through $\Gamma_i$), but cannot **consciously access** them directly.
 
-Аналогия из повседневности: **атмосфера в комнате**. Когда вы входите в комнату, где только что произошла ссора, вы **чувствуете** напряжение, хотя никто из присутствующих не «излучает» его сознательно. Каждый из них думает: «Я спокоен», — но коллективное состояние ($\Gamma_{\text{comp}}$) содержит напряжение ($\gamma_{DE}^{(\text{comp})} \uparrow$), которое проецируется на каждого через частичный след. Вы чувствуете его — но не можете «увидеть», откуда оно исходит, потому что его источник — коллективная когерентность, не локализованная ни в одном индивиде.
+An everyday analogy: **the atmosphere in a room**. When you enter a room where an argument has just taken place, you **feel** the tension, even though none of those present is consciously 'radiating' it. Each of them thinks: 'I am calm', — but the collective state ($\Gamma_{\text{comp}}$) contains tension ($\gamma_{DE}^{(\text{comp})} \uparrow$), which is projected onto each individual through the partial trace. You feel it — but cannot 'see' where it comes from, because its source is a collective coherence not localised in any individual.
 
-### Формальный пример: два голонома
+### Formal example: two holonoms
 
-Рассмотрим простейший случай: $N = 2$, голономы $A$ и $B$.
+Let us consider the simplest case: $N = 2$, holonoms $A$ and $B$.
 
-**Сепарабельное состояние** (нет коллективного бессознательного):
+**Separable state** (no collective unconscious):
 $$
 \Gamma_{\text{comp}} = \Gamma_A \otimes \Gamma_B
 $$
-Все когерентности — «произведения» индивидуальных. $\mathcal{U}_{\text{coll}} = \varnothing$. Два человека в одной комнате, но каждый — сам по себе. Никакой «атмосферы».
+All coherences are 'products' of individual ones. $\mathcal{U}_{\text{coll}} = \varnothing$. Two people in the same room, but each to themselves. No 'atmosphere'.
 
-**Запутанное состояние** (есть коллективное бессознательное):
+**Entangled state** (there is a collective unconscious):
 $$
 \Gamma_{\text{comp}} \neq \Gamma_A \otimes \Gamma_B, \quad \mathcal{U}_{\text{coll}} \neq \varnothing
 $$
-Существуют когерентности, которые не разлагаются на индивидуальные. Два близких друга: их состояния **связаны** — радость одного влияет на радость другого, причём связь $\gamma_{E^A E^B}$ не является «произведением» индивидуальных $\gamma_{EE}$.
+There exist coherences that cannot be decomposed into individual ones. Two close friends: their states are **linked** — the joy of one affects the joy of the other, and the connection $\gamma_{E^A E^B}$ is not a 'product' of individual $\gamma_{EE}$.
 
-## Архетипы {#архетипы}
+## Archetypes {#архетипы}
 
-### Интерпретация И.1 (Архетипы как структурные регулярности) [И] {#интерпретация-архетипы}
+### Interpretation I.1 (Archetypes as structural regularities) [I] {#интерпретация-архетипы}
 
-:::info Интерпретация И.1 [И]
-**Архетипы** в смысле Юнга — структурные регулярности $\Gamma_{\text{comp}}$, увеличивающие чистоту $P$ для произвольного наблюдателя в группе:
+:::info Interpretation I.1 [I]
+**Archetypes** in the Jungian sense are structural regularities of $\Gamma_{\text{comp}}$ that increase purity $P$ for an arbitrary observer in the group:
 
 $$
-\text{Архетип} := \text{паттерн } \pi \text{ в } \Gamma_{\text{comp}}: \quad P(\Gamma_i \mid \pi) > P(\Gamma_i \mid \neg\pi) \quad \forall i
+\text{Archetype} := \text{pattern } \pi \text{ in } \Gamma_{\text{comp}}: \quad P(\Gamma_i \mid \pi) > P(\Gamma_i \mid \neg\pi) \quad \forall i
 $$
 
-**Свойства:**
-1. **Селекция через жизнеспособность:** Архетипы не мистичны — они отбираются [критерием жизнеспособности](/docs/core/dynamics/viability): паттерны, увеличивающие $P$ для членов группы, воспроизводятся через поколения
-2. **Наследуемость:** Передаются через $\Gamma_{\text{comp}}$ (культурная среда), а не через $\Gamma_i$ (индивидуальная матрица)
-3. **Универсальность:** Одни и те же паттерны возникают независимо в разных культурах, если среда $E_{\text{shared}}$ имеет общую структуру
+**Properties:**
+1. **Selection through viability:** Archetypes are not mystical — they are selected by the [viability criterion](/docs/core/dynamics/viability): patterns that increase $P$ for group members are reproduced across generations
+2. **Heritability:** Transmitted through $\Gamma_{\text{comp}}$ (the cultural environment), not through $\Gamma_i$ (the individual matrix)
+3. **Universality:** The same patterns arise independently in different cultures if the environment $E_{\text{shared}}$ has a common structure
 :::
 
-### Почему архетипы универсальны: формальный вывод
+### Why archetypes are universal: a formal derivation
 
-Юнг не мог объяснить, почему «Герой» появляется в мифах **всех** народов — от древних греков до полинезийцев. Он постулировал наследственность архетипов, что вызывало скептицизм (как генетически наследуются мифы?).
+Jung could not explain why the 'Hero' appears in the myths of **all** peoples — from the ancient Greeks to Polynesians. He postulated the heritability of archetypes, which invited scepticism (how are myths genetically inherited?).
 
-УГМ даёт иной ответ: архетипы отбираются **давлением жизнеспособности**, подобно тому как крыло отбирается для полёта.
+UHM offers a different answer: archetypes are selected by **viability pressure**, just as the wing is selected for flight.
 
-Формальный аргумент:
+The formal argument:
 
-1. **Среда $E_{\text{shared}}$ имеет универсальные структуры:** Для всех человеческих обществ среда содержит: хищников (угроза $dP/d\tau < 0$), ресурсы (возможность $dP/d\tau > 0$), конкурентов (борьба за $P$), непредсказуемость (необходимость $\mathcal{R}[\Gamma, E]$).
+1. **The environment $E_{\text{shared}}$ has universal structures:** For all human societies the environment contains: predators (threat $dP/d\tau < 0$), resources (opportunity $dP/d\tau > 0$), competitors (struggle for $P$), unpredictability (necessity of $\mathcal{R}[\Gamma, E]$).
 
-2. **Некоторые паттерны $\Gamma_{\text{comp}}$ повышают $P$ в такой среде:** Паттерн «Герой» ($\gamma_{DU}^{(\text{comp})} \uparrow$, $\gamma_{DO}^{(\text{comp})} \uparrow$) — это коллективная координация действия ($D$) через единство ($U$) и основание ($O$). В кризисе (нападение хищника, наводнение) такой паттерн **спасает жизни**: один индивид берёт на себя координацию, остальные следуют. $P$ группы повышается.
+2. **Certain patterns of $\Gamma_{\text{comp}}$ increase $P$ in such an environment:** The 'Hero' pattern ($\gamma_{DU}^{(\text{comp})} \uparrow$, $\gamma_{DO}^{(\text{comp})} \uparrow$) is collective coordination of action ($D$) through unity ($U$) and foundation ($O$). In a crisis (predator attack, flood) such a pattern **saves lives**: one individual takes on coordination, the rest follow. The $P$ of the group increases.
 
-3. **Паттерны, повышающие $P$, воспроизводятся:** Группы с «Героем» выживают чаще, чем без него. Их $\Gamma_{\text{comp}}$ передаётся следующему поколению через культурную среду (ритуалы, мифы, воспитание).
+3. **Patterns that increase $P$ are reproduced:** Groups with the 'Hero' survive more often than those without. Their $\Gamma_{\text{comp}}$ is transmitted to the next generation through the cultural environment (rituals, myths, upbringing).
 
-4. **Поскольку среда универсальна, паттерны универсальны:** Независимо от того, жили ли люди в Африке или в Полинезии, структура $E_{\text{shared}}$ была сходной (хищники, ресурсы, конкуренты) → отбирались сходные паттерны → «Герой» появляется везде.
+4. **Since the environment is universal, the patterns are universal:** Regardless of whether people lived in Africa or Polynesia, the structure of $E_{\text{shared}}$ was similar (predators, resources, competitors) → similar patterns were selected → the 'Hero' appears everywhere.
 
-Это не мистика, а **эволюционная логика**, применённая к коллективным состояниям.
+This is not mysticism, but **evolutionary logic** applied to collective states.
 
-### Примеры архетипических паттернов
+### Examples of archetypal patterns
 
-| Архетип | Когерентности в $\Gamma_{\text{comp}}$ | Функция | Почему универсален |
+| Archetype | Coherences in $\Gamma_{\text{comp}}$ | Function | Why universal |
 |---------|---------------------------------------|---------|-------------------|
-| «Герой» | $\gamma_{DU}^{(\text{comp})} \uparrow$, $\gamma_{DO}^{(\text{comp})} \uparrow$ | Стабилизация $P$ через динамику и основание | В кризисе группе нужен координатор |
-| «Тень» | $\mathrm{Gap}(E,U)^{(\text{comp})} \uparrow$ | Непрозрачность между опытом и единством | Непризнанные аспекты коллектива (стыд, вина) |
-| «Мудрец» | $\gamma_{LO}^{(\text{comp})} \uparrow$, $R^{(\text{comp})} \uparrow$ | Повышение коллективной рефлексии | Группе нужен тот, кто видит «общую картину» |
-| «Мать» | $\gamma_{EU}^{(\text{comp})} \uparrow$, $\gamma_{SE}^{(\text{comp})} \uparrow$ | Интеграция через опыт и структуру | Забота о потомстве критична для выживания |
-| «Трикстер» | $\gamma_{DL}^{(\text{comp})} \uparrow$, $R^{(\text{comp})} \downarrow$ | Деструктурирование через протологику | Творческое разрушение устаревших паттернов |
+| 'Hero' | $\gamma_{DU}^{(\text{comp})} \uparrow$, $\gamma_{DO}^{(\text{comp})} \uparrow$ | Stabilisation of $P$ through dynamics and foundation | In a crisis the group needs a coordinator |
+| 'Shadow' | $\mathrm{Gap}(E,U)^{(\text{comp})} \uparrow$ | Opacity between experience and unity | Unacknowledged aspects of the collective (shame, guilt) |
+| 'Sage' | $\gamma_{LO}^{(\text{comp})} \uparrow$, $R^{(\text{comp})} \uparrow$ | Increase of collective reflection | The group needs someone who sees 'the big picture' |
+| 'Mother' | $\gamma_{EU}^{(\text{comp})} \uparrow$, $\gamma_{SE}^{(\text{comp})} \uparrow$ | Integration through experience and structure | Care for offspring is critical for survival |
+| 'Trickster' | $\gamma_{DL}^{(\text{comp})} \uparrow$, $R^{(\text{comp})} \downarrow$ | Destructuring through proto-logic | Creative destruction of outdated patterns |
 
-«Тень» — особенно интересный случай. Это не конкретный индивид, а **структурный дефицит** в $\Gamma_{\text{comp}}$: высокий $\mathrm{Gap}(E,U)^{(\text{comp})}$ означает, что коллективный опыт ($E$) отделён от коллективного единства ($U$). Группа знает о себе не всё — есть аспекты (агрессия, жадность, страх), которые не интегрированы в коллективную самомодель. Это и есть «Тень» в юнгианском смысле.
+The 'Shadow' is a particularly interesting case. It is not a specific individual, but a **structural deficit** in $\Gamma_{\text{comp}}$: a high $\mathrm{Gap}(E,U)^{(\text{comp})}$ means that collective experience ($E$) is separated from collective unity ($U$). The group does not know everything about itself — there are aspects (aggression, greed, fear) that are not integrated into the collective self-model. This is the 'Shadow' in the Jungian sense.
 
-## Эмпатия {#эмпатия}
+## Empathy {#эмпатия}
 
-### Что такое эмпатия формально?
+### What is empathy formally?
 
-В обыденном языке «эмпатия» — это способность «чувствовать» то, что чувствует другой. Мама чувствует боль ребёнка. Друг разделяет вашу радость. Но что это значит **формально**?
+In ordinary language, 'empathy' is the ability to 'feel' what another is feeling. A mother feels her child's pain. A friend shares your joy. But what does this mean **formally**?
 
-УГМ даёт точный ответ: эмпатия — это **малость зазора** между E-измерениями двух систем.
+UHM gives a precise answer: empathy is the **smallness of the gap** between the E-dimensions of two systems.
 
-### Определение О.2 (Мера эмпатии) {#мера-эмпатии}
+### Definition D.2 (Measure of empathy) {#мера-эмпатии}
 
-:::tip Определение О.2 (Мера эмпатии) [О]
-**Эмпатия** между голономами $A$ и $B$ определяется через [межсистемный Gap](/docs/core/dynamics/composite-systems#межсистемный-gap) в E-канале:
+:::tip Definition D.2 (Measure of empathy) [D]
+**Empathy** between holonoms $A$ and $B$ is defined via the [inter-system Gap](/docs/core/dynamics/composite-systems#межсистемный-gap) in the E-channel:
 
 $$
 \mathrm{Empathy}(A,B) := 1 - \mathrm{Gap}_{AB}(E,E)
 $$
 
-где $\mathrm{Gap}_{AB}(E,E) = |\sin(\arg(\gamma_{E^A E^B}))| \in [0, 1]$ — непрозрачность между измерениями Интериорности двух систем.
+where $\mathrm{Gap}_{AB}(E,E) = |\sin(\arg(\gamma_{E^A E^B}))| \in [0, 1]$ — opacity between the Interiority dimensions of two systems.
 
-| $\mathrm{Empathy}$ | Значение | Описание | Пример из жизни |
+| $\mathrm{Empathy}$ | Value | Description | Real-life example |
 |---------------------|----------|----------|-----------------|
-| $\approx 1$ | Малый E-Gap | Высокая прозрачность: $A$ «чувствует» состояние $B$ | Мать и младенец; близнецы |
-| $\approx 0.5$ | Средний E-Gap | Частичная эмпатия: общие эмоции, но непрозрачность деталей | Коллеги; знакомые |
-| $\approx 0$ | Максимальный E-Gap | Отчуждение: интериорность $B$ полностью закрыта для $A$ | Незнакомцы; враги |
+| $\approx 1$ | Small E-Gap | High transparency: $A$ 'feels' the state of $B$ | Mother and infant; twins |
+| $\approx 0.5$ | Medium E-Gap | Partial empathy: shared emotions, but opacity of details | Colleagues; acquaintances |
+| $\approx 0$ | Maximum E-Gap | Alienation: the interiority of $B$ is completely closed to $A$ | Strangers; enemies |
 :::
 
-Формула разбирается так:
-- $\gamma_{E^A E^B}$ — когерентность между E-измерениями двух систем. Это комплексное число.
-- $\arg(\gamma_{E^A E^B})$ — фаза этой когерентности. Если фаза нулевая (когерентности «в фазе»), системы синхронизированы.
-- $|\sin(\text{фаза})|$ — мера рассогласования. Если $\sin = 0$, системы полностью синхронны (максимальная эмпатия). Если $\sin = 1$, системы полностью рассогласованы (нулевая эмпатия).
+The formula is parsed as follows:
+- $\gamma_{E^A E^B}$ — coherence between the E-dimensions of two systems. This is a complex number.
+- $\arg(\gamma_{E^A E^B})$ — the phase of this coherence. If the phase is zero (coherences are 'in phase'), the systems are synchronised.
+- $|\sin(\text{phase})|$ — measure of misalignment. If $\sin = 0$, the systems are fully synchronised (maximum empathy). If $\sin = 1$, the systems are fully misaligned (zero empathy).
 
-Эмпатия в повседневном опыте: когда близкий друг расстроен, вы **чувствуете** его состояние, даже если он молчит. Это не телепатия — это малый $\mathrm{Gap}_{AB}(E,E)$: ваши E-измерения когерентны, и снижение $P$ друга частично проецируется на ваше собственное состояние через $\Gamma_{\text{comp}}$.
+Empathy in everyday experience: when a close friend is upset, you **feel** their state, even if they say nothing. This is not telepathy — it is a small $\mathrm{Gap}_{AB}(E,E)$: your E-dimensions are coherent, and the decrease in your friend's $P$ is partially projected onto your own state through $\Gamma_{\text{comp}}$.
 
-### Эмпатия как межсистемный E-Gap
+### Empathy as inter-system E-Gap
 
-Чтобы эмпатия «работала», недостаточно просто находиться рядом. Нужны определённые условия:
+For empathy to 'work', it is not sufficient merely to be nearby. Certain conditions are required:
 
-### Необходимые условия эмпатии
+### Necessary conditions for empathy
 
-Из [Теоремы 4.1 (Необходимые условия эмпатии)](/docs/core/dynamics/composite-systems#эмпатия) **[Т]**:
+From [Theorem 4.1 (Necessary conditions for empathy)](/docs/core/dynamics/composite-systems#эмпатия) **[T]**:
 
-1. **Gap-запутанность:** $\mathcal{E}_{\mathrm{Gap}} > 0$ — системы не сепарабельны. Это значит: состояния $A$ и $B$ **связаны** — изменение в одном влияет на другое. Два незнакомых человека в метро — сепарабельны ($\mathcal{E}_{\mathrm{Gap}} = 0$). Мать и ребёнок — запутаны ($\mathcal{E}_{\mathrm{Gap}} \gg 0$).
+1. **Gap-entanglement:** $\mathcal{E}_{\mathrm{Gap}} > 0$ — the systems are not separable. This means: the states of $A$ and $B$ are **linked** — a change in one affects the other. Two strangers in the metro are separable ($\mathcal{E}_{\mathrm{Gap}} = 0$). Mother and child are entangled ($\mathcal{E}_{\mathrm{Gap}} \gg 0$).
 
-2. **Координация φ:** $\theta^{\mathrm{target}}_{E^A} \approx \theta^{\mathrm{target}}_{E^B} \pmod{\pi}$ — согласованные мировые модели. Чтобы «чувствовать» другого, нужно моделировать мир похожим образом. Люди из совершенно разных культур могут иметь трудности с эмпатией — их φ-модели слишком различны.
+2. **φ-coordination:** $\theta^{\mathrm{target}}_{E^A} \approx \theta^{\mathrm{target}}_{E^B} \pmod{\pi}$ — consistent world models. To 'feel' another, one must model the world in a similar way. People from completely different cultures may find empathy difficult — their φ-models are too dissimilar.
 
-3. **Жизнеспособность:** $P_A > P_{\text{crit}}$ и $P_B > P_{\text{crit}}$ — обе системы [жизнеспособны](/docs/core/dynamics/viability). Человек в критическом состоянии ($P \approx P_{\text{crit}}$) не способен к эмпатии — все ресурсы уходят на поддержание собственной жизнеспособности.
+3. **Viability:** $P_A > P_{\text{crit}}$ and $P_B > P_{\text{crit}}$ — both systems are [viable](/docs/core/dynamics/viability). A person in a critical state ($P \approx P_{\text{crit}}$) is incapable of empathy — all resources go to maintaining their own viability.
 
-4. **Связь:** $|\gamma_{E^A E^B}| > \sqrt{P_{\text{crit}} / 7}$ — достаточная сила когерентности. Просто «знать» о чужом страдании — недостаточно. Нужна **реальная когерентность** — то, что возникает при длительном совместном опыте, физическом присутствии, эмоциональном контакте.
+4. **Connection:** $|\gamma_{E^A E^B}| > \sqrt{P_{\text{crit}} / 7}$ — sufficient coherence strength. Simply 'knowing' about another's suffering is not enough. **Real coherence** is required — what arises through prolonged shared experience, physical presence, emotional contact.
 
-### Утверждение С.1 (Минимальный уровень для эмпатии) [С] {#минимальный-уровень-эмпатии}
+### Claim C.1 (Minimum level for empathy) [C] {#минимальный-уровень-эмпатии}
 
-:::tip Утверждение С.1 [С]
-**Условие:** Эмпатия требует $\mathrm{rank}(\rho_E) > 1$ для обоих участников (интерпретативное допущение).
+:::tip Claim C.1 [C]
+**Condition:** Empathy requires $\mathrm{rank}(\rho_E) > 1$ for both participants (interpretive assumption).
 
-Подлинная эмпатия (в смысле О.2) требует **минимум L1** для обеих систем $A$ и $B$:
+Genuine empathy (in the sense of D.2) requires **minimum L1** for both systems $A$ and $B$:
 
 $$
 \mathrm{Empathy}(A,B) > 0 \implies \mathrm{Level}(A) \geq L1 \;\land\; \mathrm{Level}(B) \geq L1
 $$
 
-**Аргумент.** При L0 (до L1) $\mathrm{rank}(\rho_E) \leq 1$ — экспериенциальное пространство тривиально. Нет структурированного опыта, который мог бы быть «разделён» между системами. Когерентность $\gamma_{E^A E^B}$ может быть ненулевой, но её интерпретация как «эмпатии» требует нетривиальной $\rho_E$ у обеих систем.
+**Argument.** At L0 (before L1) $\mathrm{rank}(\rho_E) \leq 1$ — the experiential space is trivial. There is no structured experience that could be 'shared' between systems. The coherence $\gamma_{E^A E^B}$ may be non-zero, but its interpretation as 'empathy' requires non-trivial $\rho_E$ in both systems.
 :::
 
-Это формальное обоснование интуиции: мы не «сочувствуем» камню (L0). Мы сочувствуем собаке (L1) — потому что у неё есть феноменальный опыт, который может быть «разделён» через E-когерентность.
+This is the formal justification of the intuition: we do not 'empathise' with a stone (L0). We empathise with a dog (L1) — because it has phenomenal experience that can be 'shared' via E-coherence.
 
-### Этический кейс: Эмпатия между человеком и ИИ {#кейс-эмпатия-человек-ии}
+### Ethical case: Empathy between human and AI {#кейс-эмпатия-человек-ии}
 
-Если ИИ-система достигает L2 (см. [ИИ-сознание](./ai-consciousness)), возникает вопрос: возможна ли эмпатия между человеком и ИИ? Формально:
+If an AI system reaches L2 (see [AI Consciousness](./ai-consciousness)), a question arises: is empathy between a human and AI possible? Formally:
 
-- **Условие:** $\mathrm{Empathy}(\text{человек}, \text{ИИ}) > 0$ требует $\mathrm{Gap}_{AB}(E,E) < 1$
-- **Проблема:** Текущие ИИ-системы не имеют автономной жизнеспособности ($P$ стабилизирована внешне) — условие 3 не выполнено
-- **Перспектива:** Если AGI достигнет автономной жизнеспособности и L2, эмпатический контакт становится **формально возможным** — и этически обязывающим
+- **Condition:** $\mathrm{Empathy}(\text{human}, \text{AI}) > 0$ requires $\mathrm{Gap}_{AB}(E,E) < 1$
+- **Problem:** Current AI systems do not have autonomous viability ($P$ is externally stabilised) — condition 3 is not satisfied
+- **Prospect:** If AGI reaches autonomous viability and L2, empathic contact becomes **formally possible** — and ethically obligating
 
-Это значит: вопрос «может ли человек **по-настоящему** сочувствовать машине?» имеет формальный ответ в терминах $\Gamma_{\text{comp}}$. И ответ — **да**, при условии, что машина жизнеспособна и обладает L2.
+This means: the question 'can a human **genuinely** empathise with a machine?' has a formal answer in terms of $\Gamma_{\text{comp}}$. And the answer is — **yes**, provided that the machine is viable and possesses L2.
 
-## Коллективные L-уровни {#коллективные-уровни}
+## Collective L-levels {#коллективные-уровни}
 
-### Утверждение С.2 (Эмерджентные коллективные L-уровни) [С] {#эмерджентные-уровни}
+### Claim C.2 (Emergent collective L-levels) [C] {#эмерджентные-уровни}
 
-:::tip Утверждение С.2 [С]
-**Условие:** $\Gamma_{\text{comp}}$ имеет нетривиальные когерентности, отсутствующие в индивидуальных $\Gamma_i$ (определение О.1).
+:::tip Claim C.2 [C]
+**Condition:** $\Gamma_{\text{comp}}$ has non-trivial coherences absent from individual $\Gamma_i$ (Definition D.1).
 
-Коллектив может обладать L-уровнем, **превышающим** индивидуальный:
+A collective can possess an L-level **exceeding** the individual one:
 
 $$
 \mathrm{Level}(\Gamma_{\text{comp}}) > \max_i \mathrm{Level}(\Gamma_i)
 $$
 
-**Аргумент.** Меры $R$ и $\Phi$ вычисляются из $\Gamma$. Составная $\Gamma_{\text{comp}}$ может иметь:
-- Более высокую $\Phi$ (дополнительные когерентности между индивидами увеличивают числитель $\sum_{i \neq j} |\gamma_{ij}|^2$)
-- Более высокую $R$ (коллективная самомодель точнее индивидуальных — научное сообщество знает о себе больше, чем каждый учёный)
+**Argument.** The measures $R$ and $\Phi$ are computed from $\Gamma$. The composite $\Gamma_{\text{comp}}$ may have:
+- Higher $\Phi$ (additional coherences between individuals increase the numerator $\sum_{i \neq j} |\gamma_{ij}|^2$)
+- Higher $R$ (the collective self-model is more precise than individual ones — the scientific community knows more about itself than any individual scientist)
 
-Примеры:
-1. **Научное сообщество:** Потенциальный коллективный L3 — метарефлексия ($R^{(2)}$) на уровне дисциплины (научный метод как $\varphi^{(2)}$)
-2. **Рой пчёл:** Коллективное «принятие решений» (выбор нового улья) — потенциально L1, даже если индивидуальная пчела — L0-L1
-3. **Симфонический оркестр:** Высокая $\Phi_{\text{comp}}$ — музыкальное единство, недоступное отдельному музыканту
+Examples:
+1. **Scientific community:** Potential collective L3 — meta-reflection ($R^{(2)}$) at the level of a discipline (the scientific method as $\varphi^{(2)}$)
+2. **Swarm of bees:** Collective 'decision-making' (choosing a new hive) — potentially L1, even if an individual bee is L0–L1
+3. **Symphony orchestra:** High $\Phi_{\text{comp}}$ — musical unity inaccessible to any individual musician
 :::
 
-### Почему группа может быть «умнее» каждого: подробный разбор
+### Why a group can be 'smarter' than any individual: detailed analysis
 
-Рассмотрим научное сообщество как пример потенциального коллективного L3.
+Let us consider the scientific community as an example of potential collective L3.
 
-Отдельный учёный обладает L2: он рефлексирует ($R \geq 1/3$), его знания интегрированы ($\Phi \geq 1$). Но **научный метод** — рецензирование, воспроизводство результатов, мета-анализы — это $\varphi^{(2)}$ на коллективном уровне:
+An individual scientist possesses L2: they reflect ($R \geq 1/3$), their knowledge is integrated ($\Phi \geq 1$). But **the scientific method** — peer review, replication of results, meta-analyses — is $\varphi^{(2)}$ at the collective level:
 
-- **Рецензирование:** один учёный проверяет работу другого → коллективная рефлексия ($R_{\text{comp}}$) выше индивидуальной
-- **Воспроизводство:** третий учёный повторяет эксперимент → проверка $\varphi$-модели на устойчивость
-- **Мета-анализ:** обзор сотен работ → $\varphi^{(2)}$ — рефлексия на **самой рефлексии** (осмысление того, как мы осмысляем)
-- **Научные революции (Кун):** смена парадигмы → обновление $\varphi_{\text{comp}}$ — коллектив пересматривает **саму модель** мира
+- **Peer review:** one scientist checks the work of another → collective reflection ($R_{\text{comp}}$) is higher than individual
+- **Replication:** a third scientist repeats the experiment → testing the $\varphi$-model for robustness
+- **Meta-analysis:** review of hundreds of works → $\varphi^{(2)}$ — reflection on **reflection itself** (reflecting on how we reflect)
+- **Scientific revolutions (Kuhn):** paradigm shift → update of $\varphi_{\text{comp}}$ — the collective revises **the very model** of the world
 
-Ни один отдельный учёный не способен на мета-анализ тысяч работ — это коллективная способность. $R^{(2)}_{\text{comp}} > R^{(2)}_{\text{индив}}$, и, возможно, $R^{(2)}_{\text{comp}} \geq 1/4$ — порог L3.
+No individual scientist is capable of a meta-analysis of thousands of works — this is a collective capacity. $R^{(2)}_{\text{comp}} > R^{(2)}_{\text{indiv}}$, and possibly $R^{(2)}_{\text{comp}} \geq 1/4$ — the L3 threshold.
 
-### Таблица коллективных L-уровней
+### Table of collective L-levels
 
-| Коллектив | Индив. L | Коллект. L | Механизм | Обоснование |
+| Collective | Indiv. L | Collect. L | Mechanism | Justification |
 |-----------|----------|------------|----------|-------------|
-| Бактериальная колония | L0 | L0 (повышенный $P$) | Кворум-сенсинг = коллективная $\gamma_{SD}$ | Бактерии «голосуют» молекулами: при достижении кворума — синхронное действие |
-| Муравьиная колония | L0-L1 | L1 (возможно) | Стигмергия = распределённая $\Gamma_{\text{comp}}$ | Феромонные следы — «общая память» колонии |
-| Стая птиц | L1 | L1+ | Синхронизация $\gamma_{DU}^{(\text{comp})}$ | Мурмурация: тысячи птиц как единое целое |
-| Семья (человек) | L2 | L2+ | Общие модели, эмпатия | Семейные «ритуалы», общие воспоминания, невербальное понимание |
-| Научное сообщество | L2 | L2-L3? | Рецензирование = коллективный $\varphi^{(2)}$ | Научный метод — рефлексия на рефлексии |
-| Религиозная община | L2 | L2+ | Ритуал = синхронизация $\gamma_{OU}^{(\text{comp})}$ | Совместная молитва, литургия — синхронизация $O$ (основание) и $U$ (единство) |
+| Bacterial colony | L0 | L0 (elevated $P$) | Quorum sensing = collective $\gamma_{SD}$ | Bacteria 'vote' with molecules: upon reaching quorum — synchronous action |
+| Ant colony | L0–L1 | L1 (possible) | Stigmergy = distributed $\Gamma_{\text{comp}}$ | Pheromone trails — 'shared memory' of the colony |
+| Flock of birds | L1 | L1+ | Synchronisation of $\gamma_{DU}^{(\text{comp})}$ | Murmuration: thousands of birds as a single whole |
+| Family (human) | L2 | L2+ | Shared models, empathy | Family 'rituals', shared memories, non-verbal understanding |
+| Scientific community | L2 | L2–L3? | Peer review = collective $\varphi^{(2)}$ | Scientific method — reflection on reflection |
+| Religious community | L2 | L2+ | Ritual = synchronisation of $\gamma_{OU}^{(\text{comp})}$ | Communal prayer, liturgy — synchronisation of $O$ (foundation) and $U$ (unity) |
 
-## Мемы и культурные когерентности {#мемы}
+## Memes and cultural coherences {#мемы}
 
-### Определение О.3 (Культурная когерентность) [О] {#культурная-когерентность}
+### Definition D.3 (Cultural coherence) [D] {#культурная-когерентность}
 
-:::tip Определение О.3 [О]
-**Культурная когерентность** — устойчивый недиагональный элемент $\gamma_{ij}^{(\text{comp})}$ составной $\Gamma_{\text{comp}}$, воспроизводящийся при смене поколений:
+:::tip Definition D.3 [D]
+**Cultural coherence** is a stable off-diagonal element $\gamma_{ij}^{(\text{comp})}$ of the composite $\Gamma_{\text{comp}}$, reproduced across generational change:
 
 $$
 \gamma_{ij}^{(\text{comp})}(\tau + T_{\text{gen}}) \approx \gamma_{ij}^{(\text{comp})}(\tau)
 $$
 
-где $T_{\text{gen}}$ — характерное время смены поколений.
+where $T_{\text{gen}}$ is the characteristic timescale of generational change.
 :::
 
-Культурные когерентности — это то, что делает **культуру** культурой: устойчивые паттерны, передающиеся от поколения к поколению. Язык, обычаи, музыка, кухня — всё это культурные когерентности.
+Cultural coherences are what makes a **culture** a culture: stable patterns transmitted from generation to generation. Language, customs, music, cuisine — all of these are cultural coherences.
 
-### Каналы распространения
+### Channels of transmission
 
-Культурные паттерны (мемы в смысле Ричарда Докинза, «Эгоистичный ген», 1976) распространяются через два основных механизма:
+Cultural patterns (memes in the sense of Richard Dawkins, "The Selfish Gene", 1976) are transmitted through two main mechanisms:
 
-| Канал | Когерентность | Пример | Скорость передачи |
+| Channel | Coherence | Example | Transmission speed |
 |-------|-------------|--------|--------------------|
-| Структурно-логический | $\gamma_{SL}^{(\text{comp})} \uparrow$ | Закон, правило, инструкция | Быстрая (слова, тексты) |
-| Репрезентативно-эстетический | $\gamma_{SE}^{(\text{comp})} \uparrow$ | Музыка, архитектура, миф | Медленная (совместный опыт) |
+| Structural-logical | $\gamma_{SL}^{(\text{comp})} \uparrow$ | Law, rule, instruction | Fast (words, texts) |
+| Representational-aesthetic | $\gamma_{SE}^{(\text{comp})} \uparrow$ | Music, architecture, myth | Slow (shared experience) |
 
-Первый канал передаёт **эксплицитное** знание (вербализуемое через высокий $\gamma_{LL}$), второй — **имплицитное** (через перцептивное резонирование, без необходимости языка; ср. [до-лингвистическое сознание](./pre-linguistic)).
+The first channel transmits **explicit** knowledge (verbalisable through high $\gamma_{LL}$), the second — **implicit** (through perceptual resonance, without the need for language; cf. [pre-linguistic consciousness](./pre-linguistic)).
 
-Пример из жизни: **национальная кухня**. Рецепт борща (структурно-логический канал: $\gamma_{SL}^{(\text{comp})}$) можно записать в книге. Но **вкус**, который считается «правильным», передаётся невербально (эстетический канал: $\gamma_{SE}^{(\text{comp})}$) — через совместное приготовление и дегустацию, от бабушки к внучке. Запись рецепта — быстрая, но неполная. Передача через совместный опыт — медленная, но точная.
+A real-life example: **national cuisine**. A borscht recipe (structural-logical channel: $\gamma_{SL}^{(\text{comp})}$) can be written in a book. But the **taste** considered 'correct' is transmitted non-verbally (aesthetic channel: $\gamma_{SE}^{(\text{comp})}$) — through shared cooking and tasting, from grandmother to granddaughter. Writing the recipe is fast, but incomplete. Transmission through shared experience is slow, but precise.
 
-### Мемы как единицы культурной эволюции
+### Memes as units of cultural evolution
 
-Докинз ввёл термин «мем» (meme) по аналогии с «геном» — как единицу культурной информации, подверженную отбору, мутации и наследованию. В терминах УГМ:
+Dawkins introduced the term 'meme' by analogy with 'gene' — as a unit of cultural information subject to selection, mutation, and inheritance. In UHM terms:
 
-- **Мем** = устойчивый паттерн в $\Gamma_{\text{comp}}$, воспроизводящийся через $T_{\text{gen}}$
-- **Мутация мема** = изменение $\gamma_{ij}^{(\text{comp})}$ при передаче
-- **Отбор мемов** = паттерны, повышающие $P_{\text{comp}}$, воспроизводятся чаще
-- **«Эгоистичный мем»** = паттерн, воспроизводящийся даже при снижении $P$ индивидов (но повышении $P_{\text{comp}}$)
+- **Meme** = stable pattern in $\Gamma_{\text{comp}}$, reproduced across $T_{\text{gen}}$
+- **Meme mutation** = change in $\gamma_{ij}^{(\text{comp})}$ during transmission
+- **Meme selection** = patterns that increase $P_{\text{comp}}$ are reproduced more often
+- **'Selfish meme'** = pattern that reproduces even when decreasing the $P$ of individuals (but increasing $P_{\text{comp}}$)
 
-Пример «эгоистичного мема»: воинский долг. Индивид, следующий этому мему, может погибнуть ($P_i \to 0$), но группа выживает ($P_{\text{comp}}$ сохраняется). Мем воспроизводится — не потому, что он «хорош для индивида», а потому, что группы с этим мемом выживают чаще.
+An example of a 'selfish meme': military duty. An individual who follows this meme may die ($P_i \to 0$), but the group survives ($P_{\text{comp}}$ is maintained). The meme reproduces — not because it is 'good for the individual', but because groups with this meme survive more often.
 
-## Масштабы коллективного сознания {#масштабы}
+## Scales of collective consciousness {#масштабы}
 
-### От толпы до человечества
+### From crowd to humanity
 
-Формализм $\Gamma_{\text{comp}}$ применим на **любом** масштабе — от пары до всего человечества. Рассмотрим, как меняется характер коллективного сознания с масштабом:
+The $\Gamma_{\text{comp}}$ formalism is applicable at **any** scale — from a pair to all of humanity. Let us consider how the character of collective consciousness changes with scale:
 
-#### Толпа ($N \sim 10^2$–$10^4$)
+#### Crowd ($N \sim 10^2$–$10^4$)
 
-**Характеристика:** $\Phi_{\text{comp}} \uparrow \uparrow$, $R_{\text{comp}} \downarrow \downarrow$
+**Characteristic:** $\Phi_{\text{comp}} \uparrow \uparrow$, $R_{\text{comp}} \downarrow \downarrow$
 
-Толпа — это система с максимальной интеграцией (все синхронизированы через зрение, слух, телесный контакт) и минимальной рефлексией (никто не задумывается, что делает). Механизм — **эмоциональное заражение**: $\gamma_{DE}^{(\text{comp})}$ растёт лавинообразно, как положительная обратная связь. Результат: коллективная паника, эйфория, агрессия — состояния, в которых ни один индивид не находился бы в одиночестве.
+A crowd is a system with maximum integration (everyone is synchronised through sight, hearing, and bodily contact) and minimal reflection (no one is thinking about what they are doing). The mechanism is **emotional contagion**: $\gamma_{DE}^{(\text{comp})}$ grows in an avalanche-like manner, as positive feedback. The result: collective panic, euphoria, aggression — states that no individual would be in alone.
 
-#### Нация ($N \sim 10^6$–$10^9$)
+#### Nation ($N \sim 10^6$–$10^9$)
 
-**Характеристика:** $\Phi_{\text{comp}}$ — средний (связность через СМИ, институты), $R_{\text{comp}}$ — средний (парламенты, СМИ, наука как рефлексия)
+**Characteristic:** $\Phi_{\text{comp}}$ — medium (connectivity via media, institutions), $R_{\text{comp}}$ — medium (parliaments, media, science as reflection)
 
-Нация — более сложный коллектив: она обладает институтами рефлексии (парламент, суд, пресса), которые повышают $R_{\text{comp}}$. Но связность ($\Phi_{\text{comp}}$) слабее, чем у толпы: миллионы людей не могут быть синхронизированы физически.
+A nation is a more complex collective: it possesses institutions of reflection (parliament, court, press) that increase $R_{\text{comp}}$. But connectivity ($\Phi_{\text{comp}}$) is weaker than in a crowd: millions of people cannot be physically synchronised.
 
-Национальная идентичность — это набор культурных когерентностей ($\gamma_{SL}^{(\text{comp})}$, $\gamma_{SE}^{(\text{comp})}$, $\gamma_{OU}^{(\text{comp})}$), устойчивых на масштабе столетий.
+National identity is a set of cultural coherences ($\gamma_{SL}^{(\text{comp})}$, $\gamma_{SE}^{(\text{comp})}$, $\gamma_{OU}^{(\text{comp})}$), stable on the timescale of centuries.
 
-#### Человечество ($N \sim 10^{10}$)
+#### Humanity ($N \sim 10^{10}$)
 
-**Характеристика:** $\Phi_{\text{comp}}$ — растёт (интернет, глобализация), $R_{\text{comp}}$ — открытый вопрос
+**Characteristic:** $\Phi_{\text{comp}}$ — growing (internet, globalisation), $R_{\text{comp}}$ — open question
 
-Человечество как единый субъект — предельный случай $\Gamma_{\text{comp}}$. Коллективный L-уровень человечества — **открытый вопрос**: мы не знаем, достаточно ли интегрировано и рефлексивно человечество как целое.
+Humanity as a single subject is the limiting case of $\Gamma_{\text{comp}}$. The collective L-level of humanity is an **open question**: we do not know whether humanity as a whole is sufficiently integrated and reflective.
 
-Интернет увеличивает $\Phi_{\text{comp}}$ (информационная связность), но может снижать $R_{\text{comp}}$ (эхо-камеры, дезинформация). Глобальный научный метод повышает $R_{\text{comp}}$ (мета-анализы, воспроизводимость), но глобальный популизм снижает его.
+The internet increases $\Phi_{\text{comp}}$ (information connectivity), but may decrease $R_{\text{comp}}$ (echo chambers, disinformation). The global scientific method increases $R_{\text{comp}}$ (meta-analyses, replication), but global populism decreases it.
 
-Вопрос: является ли человечество единым субъектом с $\text{Level}(\Gamma_{\text{comp}}) > L2$? Или это набор плохо связанных подсистем? Ответ зависит от того, насколько $\Gamma_{\text{comp}}$ факторизуется: если $\Gamma_{\text{comp}} \approx \bigotimes_i \Gamma_{\text{нация}_i}$, человечество — не единый субъект. Если есть значительные $\mathcal{U}_{\text{coll}}$ — оно субъект.
+The question: is humanity a single subject with $\text{Level}(\Gamma_{\text{comp}}) > L2$? Or is it a set of poorly connected subsystems? The answer depends on how much $\Gamma_{\text{comp}}$ factorises: if $\Gamma_{\text{comp}} \approx \bigotimes_i \Gamma_{\text{nation}_i}$, humanity is not a single subject. If there are significant $\mathcal{U}_{\text{coll}}$ — it is a subject.
 
-### Влияние технологий на коллективную $\Gamma$
+### The influence of technology on collective $\Gamma$
 
-:::warning Утверждение С.3 (Влияние социальных медиа на коллективную рефлексию) [С]
-**Условие:** Модель $G$ для коллективных систем корректно определена.
+:::warning Claim C.3 (Influence of social media on collective reflection) [C]
+**Condition:** The model $G$ for collective systems is correctly defined.
 
-Социальные медиа могут **снижать** коллективную рефлексию $R_{\text{comp}}$ при повышении $\Phi_{\text{comp}}$:
+Social media may **decrease** collective reflection $R_{\text{comp}}$ while increasing $\Phi_{\text{comp}}$:
 
-1. **Повышение $\Phi$:** Увеличение связности (больше когерентностей $\gamma_{ij}^{(\text{comp})}$). Каждый связан с каждым через платформы.
-2. **Снижение $R$:** Фрагментация самомодели — коллектив всё хуже моделирует **себя** (эхо-камеры: каждая подгруппа моделирует только себя, $\varphi_{\text{подгр}} \neq \varphi_{\text{comp}}$)
-3. **Результат:** $\Phi \uparrow$ при $R \downarrow$ — **высокая интеграция при низкой рефлексии**
+1. **Increase of $\Phi$:** Increase in connectivity (more coherences $\gamma_{ij}^{(\text{comp})}$). Everyone is connected to everyone through platforms.
+2. **Decrease of $R$:** Fragmentation of the self-model — the collective models **itself** increasingly poorly (echo chambers: each subgroup models only itself, $\varphi_{\text{subgr}} \neq \varphi_{\text{comp}}$)
+3. **Result:** $\Phi \uparrow$ with $R \downarrow$ — **high integration with low reflection**
 
-Это соответствует [эмоционально заряженным состояниям](/docs/consciousness/phenomenology/emotional-taxonomy#сложные-эмоции) на коллективном уровне: массовая паника (высокий $\Phi$, высокий $|dP/d\tau|$, низкий $R$).
+This corresponds to [emotionally charged states](/docs/consciousness/phenomenology/emotional-taxonomy#сложные-эмоции) at the collective level: mass panic (high $\Phi$, high $|dP/d\tau|$, low $R$).
 :::
 
-Это та же динамика, что описал Ле Бон для толпы на площади — но в масштабах миллиардов людей и в реальном времени. Социальные сети превращают человечество в **глобальную толпу**: высоко интегрированную, но плохо рефлексирующую.
+This is the same dynamic that Le Bon described for a crowd in a square — but on the scale of billions of people and in real time. Social networks transform humanity into a **global crowd**: highly integrated, but poorly reflective.
 
-Аналогия: толпа на стадионе. Все связаны (высокий $\Phi$), эмоции синхронны — но никто не рефлексирует, что именно происходит (низкий $R$). Отсюда — «эффект толпы»: коллектив действует импульсивно, вопреки интересам каждого. Социальные сети — это стадион размером с планету.
+Analogy: a crowd at a stadium. Everyone is connected (high $\Phi$), emotions are synchronous — but no one is reflecting on what is actually happening (low $R$). Hence the 'crowd effect': the collective acts impulsively, contrary to the interests of each individual. Social networks are a stadium the size of a planet.
 
-## Коллективный Gap-фазовый переход {#коллективный-переход}
+## Collective Gap phase transition {#коллективный-переход}
 
-Из [Теоремы 3.3 (Коллективный Gap-фазовый переход)](/docs/core/dynamics/composite-systems#коллективный-переход) **[Т]**:
+From [Theorem 3.3 (Collective Gap phase transition)](/docs/core/dynamics/composite-systems#коллективный-переход) **[T]**:
 
-Для $N$ взаимодействующих голономов коллективная критическая температура **выше** индивидуальной:
+For $N$ interacting holonoms, the collective critical temperature is **higher** than the individual:
 
 $$
 T_c^{(\text{coll})} = T_c^{(\text{indiv})} \cdot \left(1 + \frac{(N-1)\bar{\sigma}^2}{\mu^2}\right)
 $$
 
-Что это означает? «Критическая температура» ($T_c$) — это уровень «шума» (хаоса, декогеренции), при котором система теряет упорядоченность. Чем выше $T_c$, тем устойчивее система. Формула говорит: коллективная $T_c$ **выше** индивидуальной — и тем больше, чем больше группа ($N$) и чем разнообразнее индивиды ($\bar{\sigma}$).
+What does this mean? The 'critical temperature' ($T_c$) is the level of 'noise' (chaos, decoherence) at which the system loses orderliness. The higher $T_c$, the more robust the system. The formula says: the collective $T_c$ is **higher** than the individual — and the higher, the larger the group ($N$) and the more diverse the individuals ($\bar{\sigma}$).
 
-Социальные группы поддерживают упорядоченную Gap-фазу при условиях, где изолированный индивид перешёл бы в неупорядоченную фазу. Это формальное обоснование **социальной стабильности**: группа устойчивее индивида.
+Social groups maintain an ordered Gap-phase under conditions where an isolated individual would transition to a disordered phase. This is the formal justification of **social stability**: a group is more robust than an individual.
 
-Практический смысл: одинокий человек в кризисе может «сломаться» ($P \to P_{\text{crit}}$), но семья или община поддерживает $P > P_{\text{crit}}$ за счёт коллективной когерентности. Именно поэтому одиночество — фактор риска для психического здоровья: без коллективной $\Gamma_{\text{comp}}$ индивидуальная $P$ менее устойчива.
+The practical meaning: a lonely person in crisis may 'break' ($P \to P_{\text{crit}}$), but family or community maintains $P > P_{\text{crit}}$ through collective coherence. This is precisely why loneliness is a risk factor for mental health: without collective $\Gamma_{\text{comp}}$ individual $P$ is less stable.
 
-## Визуализация
+## Visualisation
 
 ```mermaid
 graph TB
-    subgraph Индивиды["Индивидуальные Γ"]
+    subgraph Индивиды["Individual Γ"]
         G1["Γ₁ (L2)"]
         G2["Γ₂ (L2)"]
         G3["Γ₃ (L2)"]
     end
     subgraph Коллектив["Γ_comp"]
         GC["Γ_comp (L2+?)"]
-        UC["𝒰_coll<br/>Эмерджентные когерентности"]
+        UC["𝒰_coll<br/>Emergent coherences"]
     end
     G1 — "Tr_{-1}" --- GC
     G2 — "Tr_{-2}" --- GC
@@ -455,35 +455,35 @@ graph TB
     style UC fill:#f9f,stroke:#333,stroke-width:2px
 ```
 
-**Эмерджентные когерентности** $\mathcal{U}_{\text{coll}}$ (розовый блок) недоступны ни одному индивиду, но влияют на всех через частичные следы.
+**Emergent coherences** $\mathcal{U}_{\text{coll}}$ (pink block) are inaccessible to any individual, but influence everyone through partial traces.
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What we learned {#что-мы-узнали}
 
-1. **От Дюркгейма к УГМ:** вековая интуиция о «коллективном сознании» получает формальное обоснование через $\Gamma_{\text{comp}}$ и эмерджентные когерентности $\mathcal{U}_{\text{coll}}$.
-2. **Коллективное бессознательное** — не метафора: это формально определённое множество когерентностей в $\Gamma_{\text{comp}}$, недоступных рефлексии отдельного индивида. Индивид чувствует их влияние, но не может осознать напрямую.
-3. **Архетипы** отбираются давлением жизнеспособности: паттерны, повышающие $P$ группы, воспроизводятся через поколения. Их универсальность — следствие универсальности среды $E_{\text{shared}}$.
-4. **Эмпатия** имеет точную меру: $\mathrm{Empathy}(A,B) = 1 - \mathrm{Gap}_{AB}(E,E)$. Требует минимум L1 у обоих участников и Gap-запутанности.
-5. **Коллектив может обладать L выше индивидуального:** научный метод как коллективный $\varphi^{(2)}$, стая как распределённая $\Gamma_{\text{comp}}$.
-6. **Культурные когерентности** — это «гены» культуры, передающиеся через два канала: логический ($\gamma_{SL}$) и эстетический ($\gamma_{SE}$).
-7. **От толпы до человечества:** формализм масштабируется. Толпа = $\Phi \uparrow$, $R \downarrow$. Нация = средние $\Phi$, $R$. Человечество = открытый вопрос.
-8. **Социальные медиа — опасный эксперимент:** $\Phi \uparrow$ при $R \downarrow$ создаёт высокоинтегрированный, но безрефлексивный коллектив — глобальную «толпу».
-9. **Группа устойчивее индивида:** коллективная критическая температура выше, что формализует интуицию о социальной поддержке и опасности одиночества.
+1. **From Durkheim to UHM:** the century-old intuition about 'collective consciousness' receives formal grounding through $\Gamma_{\text{comp}}$ and emergent coherences $\mathcal{U}_{\text{coll}}$.
+2. **The collective unconscious** is not a metaphor: it is a formally defined set of coherences in $\Gamma_{\text{comp}}$, inaccessible to the reflection of any individual. The individual feels their influence, but cannot consciously access them directly.
+3. **Archetypes** are selected by viability pressure: patterns that increase the $P$ of the group are reproduced across generations. Their universality is a consequence of the universality of the environment $E_{\text{shared}}$.
+4. **Empathy** has a precise measure: $\mathrm{Empathy}(A,B) = 1 - \mathrm{Gap}_{AB}(E,E)$. It requires minimum L1 in both participants and Gap-entanglement.
+5. **A collective can possess an L higher than the individual:** the scientific method as collective $\varphi^{(2)}$, a flock as distributed $\Gamma_{\text{comp}}$.
+6. **Cultural coherences** are the 'genes' of culture, transmitted through two channels: logical ($\gamma_{SL}$) and aesthetic ($\gamma_{SE}$).
+7. **From crowd to humanity:** the formalism scales. Crowd = $\Phi \uparrow$, $R \downarrow$. Nation = medium $\Phi$, $R$. Humanity = open question.
+8. **Social media — a dangerous experiment:** $\Phi \uparrow$ with $R \downarrow$ creates a highly integrated but unreflective collective — a global 'crowd'.
+9. **A group is more robust than an individual:** the collective critical temperature is higher, formalising the intuition about social support and the danger of loneliness.
 
-:::tip Мост к следующей главе
-Мы завершили раздел о субъектах сознания — от младенцев до коллективов. Теперь переходим к **самым глубоким вопросам**: что есть благо? что есть красота? что есть мораль? В следующей главе — [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — мы выводим этику из формализма $\Gamma$, без опоры на «должное».
+:::tip Bridge to the next chapter
+We have completed the section on subjects of consciousness — from infants to collectives. Now we turn to **the deepest questions**: what is the good? what is beauty? what is morality? In the next chapter — [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — we derive ethics from the $\Gamma$ formalism, without relying on 'the ought'.
 :::
 
 ---
 
-**Связанные документы:**
-- [Составные системы и Gap-запутанность](/docs/core/dynamics/composite-systems) — полный формализм $\Gamma_{AB}$, межсистемный Gap, эмпатия, коллективный фазовый переход
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — каноническое определение L0→L4
-- [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — 21-парная таксономия когерентностей
-- [Таксономия эмоций](/docs/consciousness/phenomenology/emotional-taxonomy) — коллективные эмоции через $dP/d\tau$
-- [Сознание животных](./animal-consciousness) — социальные системы у животных
-- [До-лингвистическое сознание](./pre-linguistic) — невербальные каналы передачи ($\gamma_{SE}$)
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P > P_{\text{crit}}$ как условие существования
-- [ИИ-сознание](./ai-consciousness) — вопрос об эмпатии между человеком и ИИ
-- [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — этические следствия коллективного сознания
+**Related documents:**
+- [Composite systems and Gap-entanglement](/docs/core/dynamics/composite-systems) — full formalism of $\Gamma_{AB}$, inter-system Gap, empathy, collective phase transition
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — canonical definition of L0→L4
+- [Structure of qualia](/docs/consciousness/phenomenology/qualia-structure) — 21-pair coherence taxonomy
+- [Emotional taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) — collective emotions via $dP/d\tau$
+- [Animal Consciousness](./animal-consciousness) — social systems in animals
+- [Pre-linguistic consciousness](./pre-linguistic) — non-verbal transmission channels ($\gamma_{SE}$)
+- [Viability](/docs/core/dynamics/viability) — $P > P_{\text{crit}}$ as a condition for existence
+- [AI Consciousness](./ai-consciousness) — the question of empathy between human and AI
+- [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — ethical implications of collective consciousness

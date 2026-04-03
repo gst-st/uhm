@@ -1,457 +1,457 @@
 ---
 sidebar_position: 2
-title: "Сознание животных"
-description: "Назначение L-уровней интериорности биологическим таксонам на основе оценки параметров Γ"
+title: "Animal Consciousness"
+description: "Assignment of interiority L-levels to biological taxa based on assessment of Γ parameters"
 slug: /consciousness/subjects/animal-consciousness
 ---
 
-# Сознание Животных
+# Animal Consciousness
 
-:::info Мост из предыдущей главы
-В предыдущей главе о [до-лингвистическом сознании](./pre-linguistic) мы доказали, что язык **не является** необходимым условием для сознания. Теперь зададим конкретный вопрос: если сознание возможно без языка, то **какие именно животные** обладают им — и на каком уровне? Этот документ строит систематическую таксономию, отображая биологические виды на уровни L0–L4 формализма УГМ.
+:::info Bridge from the previous chapter
+In the previous chapter on [pre-linguistic consciousness](./pre-linguistic) we proved that language is **not** a necessary condition for consciousness. Now let us ask a concrete question: if consciousness is possible without language, then **which animals precisely** possess it — and at what level? This document constructs a systematic taxonomy, mapping biological species onto the L0–L4 levels of the UHM formalism.
 :::
 
-## Дорожная карта главы
+## Chapter roadmap
 
-1. **Проблема других разумов** — почему мы не можем просто «спросить»
-2. **Исторический контекст** — от Декарта до Кембриджской декларации
-3. **G-отображение** — мост между биологией и формализмом $\Gamma$
-4. **Полная таксономия** — от камня (L0) до примата (L2), пошагово
-5. **Кембриджская декларация (2012)** — совместимость с УГМ
-6. **Критерии L-присвоения** — операциональные индикаторы
-7. **Растения и грибные сети** — неочевидные субъекты
-8. **Социальные системы** — когда стая «умнее» индивида
-9. **Эволюционная динамика** — как L-уровни росли 4 миллиарда лет
-10. **Критерий фальсифицируемости** — как опровергнуть таксономию
+1. **The problem of other minds** — why we cannot simply 'ask'
+2. **Historical context** — from Descartes to the Cambridge Declaration
+3. **G-mapping** — bridge between biology and the $\Gamma$ formalism
+4. **Full taxonomy** — from stone (L0) to primate (L2), step by step
+5. **Cambridge Declaration (2012)** — compatibility with UHM
+6. **Criteria for L-assignment** — operational indicators
+7. **Plants and fungal networks** — non-obvious subjects
+8. **Social systems** — when a flock is 'smarter' than the individual
+9. **Evolutionary dynamics** — how L-levels grew over 4 billion years
+10. **Falsifiability criterion** — how to refute the taxonomy
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $P_{\text{crit}} = 2/7$ — [критическая чистота](/docs/core/dynamics/viability#критическая-чистота), статус **[Т]**
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), порог $R_{\text{th}} = 1/3$ **[Т]**
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ), порог $\Phi_{\text{th}} = 1$ **[Т]** (T-129)
-- $\rho_E$ — [редуцированная матрица опыта](/docs/consciousness/foundations/interiority-theory)
-- L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- K1–K5 — [когнитивные уровни](/docs/consciousness/comparative/cognitive-hierarchy)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $P_{\text{crit}} = 2/7$ — [critical purity](/docs/core/dynamics/viability#критическая-чистота), status **[T]**
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), threshold $R_{\text{th}} = 1/3$ **[T]**
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ), threshold $\Phi_{\text{th}} = 1$ **[T]** (T-129)
+- $\rho_E$ — [reduced experience matrix](/docs/consciousness/foundations/interiority-theory)
+- L0–L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
+- K1–K5 — [cognitive levels](/docs/consciousness/comparative/cognitive-hierarchy)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-## Проблема других разумов {#проблема-других-разумов}
+## The problem of other minds {#проблема-других-разумов}
 
-Мы начнём с фундаментального затруднения, которое преследует философию сознания со времён Декарта: **проблема других разумов** (the problem of other minds).
+We will begin with the fundamental difficulty that has haunted the philosophy of consciousness since Descartes: **the problem of other minds**.
 
-Вы знаете, что **вы** сознательны, — это единственное, в чём вы не можете сомневаться (cogito ergo sum). Но как вы можете знать, что **другой человек** сознателен? Вы видите его поведение — улыбку, слёзы, слова — но не имеете прямого доступа к его переживаниям. Вы заключаете по аналогии: «он похож на меня, значит, вероятно, переживает так же».
+You know that **you** are conscious — it is the one thing you cannot doubt (cogito ergo sum). But how can you know that **another person** is conscious? You see their behaviour — a smile, tears, words — but have no direct access to their experiences. You conclude by analogy: 'they resemble me, so they probably experience things in the same way'.
 
-С животными эта проблема обостряется многократно. Вы не можете спросить собаку, что она чувствует. Вы не можете попросить осьминога описать свой опыт. Поведенческие аналогии с человеком становятся всё более шаткими по мере удаления по эволюционному дереву: выражение «лица» у рыбы не означает то же, что у человека.
+With animals this problem sharpens many times over. You cannot ask a dog what it feels. You cannot ask an octopus to describe its experience. Behavioural analogies with humans become increasingly shaky as one moves further along the evolutionary tree: the 'facial expression' of a fish does not mean the same thing as that of a human.
 
-УГМ предлагает **выход из тупика**. Вместо того чтобы рассуждать по аналогии («она морщится, значит, ей больно»), мы задаём точные вопросы о матрице когерентности:
-- $\mathrm{rank}(\rho_E) > 1$? — Есть ли нетривиальная [феноменальная геометрия](/docs/consciousness/hierarchy/interiority-hierarchy)?
-- $R \geq 1/3$? — Моделирует ли система собственные состояния?
-- $\Phi \geq 1$? — Интегрированы ли измерения системы?
+UHM offers **a way out of the deadlock**. Instead of reasoning by analogy ('it winces, therefore it is in pain'), we ask precise questions about the coherence matrix:
+- $\mathrm{rank}(\rho_E) > 1$? — Is there a non-trivial [phenomenal geometry](/docs/consciousness/hierarchy/interiority-hierarchy)?
+- $R \geq 1/3$? — Does the system model its own states?
+- $\Phi \geq 1$? — Are the dimensions of the system integrated?
 
-Эти вопросы, в принципе, имеют **операциональные ответы** — через [протокол измерения $\Gamma$](/docs/applied/research/measurement-protocol). Проблема других разумов не исчезает (мы всё ещё нуждаемся в G-отображении), но превращается из философского тупика в **эмпирическую программу**.
+These questions, in principle, have **operational answers** — via the [protocol for measuring $\Gamma$](/docs/applied/research/measurement-protocol). The problem of other minds does not disappear (we still need a G-mapping), but it is transformed from a philosophical deadlock into an **empirical programme**.
 
-## Исторический контекст: от Декарта до Кембриджской декларации {#исторический-контекст}
+## Historical context: from Descartes to the Cambridge Declaration {#исторический-контекст}
 
-### Декарт: животные как автоматы (1637)
+### Descartes: animals as automata (1637)
 
-Рене Декарт в «Рассуждении о методе» (1637) провёл резкую границу между человеком и животным. Человек обладает **res cogitans** (мыслящей субстанцией) — душой, которая думает, чувствует, осознаёт. Животные — лишь **res extensa** (протяжённая субстанция) — сложные механизмы, автоматы, которые реагируют на стимулы, но ничего не переживают.
+René Descartes in the "Discourse on the Method" (1637) drew a sharp boundary between human and animal. The human possesses **res cogitans** (thinking substance) — a soul that thinks, feels, and is aware. Animals are merely **res extensa** (extended substance) — complex mechanisms, automata that respond to stimuli but experience nothing.
 
-По Декарту, крик собаки при ударе — не выражение боли, а механическая реакция, подобная скрипу дверных петель. Эта позиция столетиями оправдывала жестокое обращение с животными в научных экспериментах и повседневности.
+According to Descartes, the cry of a dog when struck is not an expression of pain but a mechanical reaction, akin to the creaking of door hinges. This position justified cruel treatment of animals in scientific experiments and everyday life for centuries.
 
-В терминах УГМ: Декарт утверждал, что $\mathrm{rank}(\rho_E) = 0$ для всех животных — у них нет никакой интериорности. Это крайняя позиция, несовместимая с современными данными нейронауки.
+In UHM terms: Descartes argued that $\mathrm{rank}(\rho_E) = 0$ for all animals — they have no interiority whatsoever. This is an extreme position, incompatible with modern neuroscientific data.
 
-### Дарвин: непрерывность сознания (1872)
+### Darwin: the continuity of consciousness (1872)
 
-Чарльз Дарвин в «Выражении эмоций у человека и животных» (1872) совершил революцию, показав **непрерывность** между эмоциями человека и животных. Если человек произошёл от животных путём постепенной эволюции, то и его психика — включая сознание — должна иметь **предшественников** в животном мире. Дарвин описывал страх у собак, любопытство у обезьян, горе у слонов — и настаивал, что это **реальные** эмоции, а не механические реакции.
+Charles Darwin in "The Expression of the Emotions in Man and Animals" (1872) made a revolution by showing **continuity** between the emotions of humans and animals. If humans descended from animals through gradual evolution, then their psyche — including consciousness — must have **precursors** in the animal world. Darwin described fear in dogs, curiosity in monkeys, grief in elephants — and insisted that these are **real** emotions, not mechanical reactions.
 
-В терминах УГМ: Дарвин интуитивно описал **континуум L-уровней** — от простейших организмов к сложным, без резкой границы «сознание/бессознательность».
+In UHM terms: Darwin intuitively described a **continuum of L-levels** — from the simplest organisms to complex ones, without a sharp boundary between consciousness and unconsciousness.
 
-### Гриффин: когнитивная этология (1976)
+### Griffin: cognitive ethology (1976)
 
-Дональд Гриффин в книге «The Question of Animal Awareness» (1976) основал **когнитивную этологию** — науку о мышлении животных. Он первым серьёзно поставил вопрос: обладают ли животные **осознанным опытом**? Его работы открыли путь к систематическому изучению когнитивных способностей животных: использования орудий, социального моделирования, самоузнавания.
+Donald Griffin in the book "The Question of Animal Awareness" (1976) founded **cognitive ethology** — the science of animal thought. He was the first to seriously raise the question: do animals possess **conscious experience**? His work opened the way to the systematic study of the cognitive capacities of animals: tool use, social modelling, self-recognition.
 
-### Кембриджская декларация о сознании (2012)
+### The Cambridge Declaration on Consciousness (2012)
 
-7 июля 2012 года группа нейроучёных во главе с Филипом Лоу подписала в Кембриджском университете «Кембриджскую декларацию о сознании» (в присутствии Стивена Хокинга). Ключевой тезис:
+On 7 July 2012, a group of neuroscientists led by Philip Low signed the "Cambridge Declaration on Consciousness" at the University of Cambridge (in the presence of Stephen Hawking). The key thesis:
 
-> «Конвергенция данных указывает на то, что нечеловеческие животные обладают нейрологическими субстратами, которые генерируют сознание. Нечеловеческие животные, включая всех млекопитающих и птиц, а также многие другие существа, включая осьминогов, обладают этими нейрологическими субстратами.»
+> "The convergence of evidence indicates that non-human animals possess the neurological substrates that generate consciousness. Non-human animals, including all mammals and birds, and many other creatures, including octopuses, possess these neurological substrates."
 
-Это был исторический момент: научное сообщество официально признало, что **сознание не является исключительно человеческим свойством**.
+This was a historic moment: the scientific community officially acknowledged that **consciousness is not an exclusively human property**.
 
-### УГМ: формализация и расширение
+### UHM: formalisation and extension
 
-УГМ идёт **дальше** всех предшественников:
-- Дальше Декарта: сознание не бинарно, а градуировано (L0–L4)
-- Дальше Дарвина: не только непрерывность, но и **формальные критерии**
-- Дальше Гриффина: не только описание, но и **количественные меры** ($R$, $\Phi$)
-- Дальше Кембриджской декларации: не только позвоночные, но **все системы** с $\Gamma \neq 0$
+UHM goes **further** than all predecessors:
+- Further than Descartes: consciousness is not binary, but graduated (L0–L4)
+- Further than Darwin: not only continuity, but **formal criteria**
+- Further than Griffin: not only description, but **quantitative measures** ($R$, $\Phi$)
+- Further than the Cambridge Declaration: not only vertebrates, but **all systems** with $\Gamma \neq 0$
 
-## Интерпретация И.1 (Таксономическое присвоение L-уровней) {#таксономическое-присвоение}
+## Interpretation I.1 (Taxonomic assignment of L-levels) {#таксономическое-присвоение}
 
-:::info Интерпретация И.1 (Таксономическое присвоение L-уровней) [И]
-Каждому биологическому таксону сопоставляется диапазон L-уровней на основе **оценки** параметров $\Gamma$ через наблюдаемое поведение и нейрофизиологические данные. Сопоставление — **интерпретация**, а не теорема: формальные условия L-уровней определены строго, но их отображение на биологические системы требует G-отображения (см. ниже).
+:::info Interpretation I.1 (Taxonomic assignment of L-levels) [I]
+Each biological taxon is assigned a range of L-levels based on **assessment** of the parameters of $\Gamma$ through observable behaviour and neurophysiological data. The assignment is an **interpretation**, not a theorem: the formal conditions of L-levels are strictly defined, but their mapping onto biological systems requires a G-mapping (see below).
 :::
 
-## G-функтор: мост между биологией и $\Gamma$ {#g-функтор}
+## G-functor: bridge between biology and $\Gamma$ {#g-функтор}
 
-### Что такое функтор? Простое объяснение
+### What is a functor? A simple explanation
 
-Прежде чем вводить G-отображение формально, объясним ключевое понятие **функтора** простым языком.
+Before introducing the G-mapping formally, let us explain the key concept of a **functor** in plain terms.
 
-Представьте два мира: **мир биологии** (нейроны, синапсы, поведение) и **мир $\Gamma$** (матрицы когерентности, 7 измерений, числа). Это два разных «языка описания» одной и той же реальности.
+Imagine two worlds: the **world of biology** (neurons, synapses, behaviour) and the **world of $\Gamma$** (coherence matrices, 7 dimensions, numbers). These are two different 'languages of description' for the same reality.
 
-**Функтор** — это «переводчик» между мирами, который сохраняет структуру. Хороший переводчик не просто переводит слова — он переводит **отношения**: если в биологии «нейрон A возбуждает нейрон B», то перевод должен сохранить это отношение — «когерентность $\gamma_{ij}$ ненулевая». Формально:
+**A functor** is a 'translator' between worlds that preserves structure. A good translator does not merely translate words — it translates **relations**: if in biology 'neuron A excites neuron B', the translation must preserve this relation — 'coherence $\gamma_{ij}$ is non-zero'. Formally:
 
-- Каждому биологическому состоянию ($b$) функтор сопоставляет матрицу $\Gamma = G(b)$
-- Каждому биологическому процессу ($f: b_1 \to b_2$) функтор сопоставляет квантовый канал $G(f): \Gamma_1 \to \Gamma_2$
-- Композиция сохраняется: если $b_1 \xrightarrow{f} b_2 \xrightarrow{g} b_3$, то $G(g \circ f) = G(g) \circ G(f)$
+- Each biological state ($b$) is mapped by the functor to a matrix $\Gamma = G(b)$
+- Each biological process ($f: b_1 \to b_2$) is mapped by the functor to a quantum channel $G(f): \Gamma_1 \to \Gamma_2$
+- Composition is preserved: if $b_1 \xrightarrow{f} b_2 \xrightarrow{g} b_3$, then $G(g \circ f) = G(g) \circ G(f)$
 
-Последнее условие — **функториальность** — означает, что «перевод» последовательности процессов совпадает с последовательностью «переводов». Переводчик не искажает логику повествования.
+The last condition — **functoriality** — means that the 'translation' of a sequence of processes coincides with the sequence of 'translations'. The translator does not distort the logic of the narrative.
 
-#### Определение О.2 (G-отображение BioState → Γ) [О+С] {#g-отображение}
+#### Definition D.2 (G-mapping BioState → Γ) [D+C] {#g-отображение}
 
-G-отображение определяется как функтор $G: \mathbf{Bio} \to \mathbf{Hol}_7$ с тремя свойствами:
+The G-mapping is defined as a functor $G: \mathbf{Bio} \to \mathbf{Hol}_7$ with three properties:
 
-1. **Функториальность:** $G(f \circ g) = G(f) \circ G(g)$ — композиция сохраняется
-2. **Жизнеспособность:** $G(\text{живой}) \in \mathcal{V}$ — живые организмы отображаются в жизнеспособные состояния ($P > P_{\text{crit}}$)
-3. **L-совместимость:** $\text{Level}(G(b)) \geq \text{Level}_{\text{behav}}(b)$ — формальный уровень не ниже поведенчески оценённого
+1. **Functoriality:** $G(f \circ g) = G(f) \circ G(g)$ — composition is preserved
+2. **Viability:** $G(\text{living}) \in \mathcal{V}$ — living organisms are mapped to viable states ($P > P_{\text{crit}}$)
+3. **L-compatibility:** $\text{Level}(G(b)) \geq \text{Level}_{\text{behav}}(b)$ — the formal level is no lower than the behaviourally assessed one
 
-При фиксации 7 наблюдаемых отображение G единственно с точностью до $G_2$-преобразования ([T-42 [Т]](/docs/proofs/categorical/uniqueness-theorem)). Построение конкретного G для биологических систем — **эмпирическая программа** [О+С], не пробел теории (доказательство единственности: [T-42](/docs/proofs/categorical/uniqueness-theorem)).
+Upon fixing 7 observables, the mapping G is unique up to $G_2$-transformation ([T-42 [T]](/docs/proofs/categorical/uniqueness-theorem)). The construction of a concrete G for biological systems is an **empirical programme** [D+C], not a gap in the theory (proof of uniqueness: [T-42](/docs/proofs/categorical/uniqueness-theorem)).
 
-**Единственность G** — ключевой результат. Он означает: если два исследователя независимо построят G-отображения, зафиксировав одни и те же 7 наблюдаемых (жизнеспособность, структура, динамика, логика, интериорность, наблюдение, единство), их отображения будут совпадать **с точностью до симметрии $G_2$**. Это аналог того, как два картографа, независимо измерив расстояния, получат одну и ту же карту с точностью до поворота и масштаба.
+**The uniqueness of G** is the key result. It means: if two researchers independently construct G-mappings, fixing the same 7 observables (viability, structure, dynamics, logic, interiority, observation, unity), their mappings will coincide **up to $G_2$-symmetry**. This is analogous to how two cartographers, having independently measured distances, will obtain the same map up to rotation and scale.
 
-:::warning Биологические L-уровни [Г]
-Отнесение конкретных организмов к L-уровням — **гипотеза** [Г], а не измеренный факт. Строгое определение L-уровня требует знания $\Gamma$ системы. Для биологических систем протокол $\pi_{\text{bio}}$ определён ([C31](/docs/applied/research/measurement-protocol)), но **экспериментально не валидирован**. Приведённые соответствия — обоснованные экстраполяции из поведенческих данных.
+:::warning Biological L-levels [H]
+The assignment of specific organisms to L-levels is a **hypothesis** [H], not a measured fact. A strict definition of L-level requires knowing the $\Gamma$ of the system. For biological systems, the protocol $\pi_{\text{bio}}$ is defined ([C31](/docs/applied/research/measurement-protocol)), but has **not been experimentally validated**. The correspondences given are well-grounded extrapolations from behavioural data.
 :::
 
-### Операционализация G-отображения [И] {#операционализация-g}
+### Operationalisation of the G-mapping [I] {#операционализация-g}
 
-$G: \mathrm{BioState} \to \mathcal{D}(\mathbb{C}^7)$ уникально с точностью до $G_2$ [Т T-42]. Конкретное $G$ для биологических систем — **эмпирическая программа** [И].
+$G: \mathrm{BioState} \to \mathcal{D}(\mathbb{C}^7)$ is unique up to $G_2$ [T T-42]. A concrete $G$ for biological systems is an **empirical programme** [I].
 
-Как на практике измерить $\gamma_{kk}$ у живого организма? Каждому из 7 измерений можно сопоставить **прокси** — наблюдаемую величину, коррелирующую с населённостью:
+How in practice can one measure $\gamma_{kk}$ in a living organism? Each of the 7 dimensions can be assigned a **proxy** — an observable quantity correlating with the population:
 
-**Кандидаты-прокси для $\gamma_{kk}$:**
-| Измерение | Прокси | Метод измерения | Что именно отражает |
+**Proxy candidates for $\gamma_{kk}$:**
+| Dimension | Proxy | Measurement method | What it reflects |
 |-----------|--------|----------------|---------------------|
-| A (действие) | Целостность границы | Метаболическая интенсивность / площадь поверхности | Насколько система отграничена от среды |
-| S (различение) | Структурная стабильность | Синаптическая плотность (электронная микроскопия) | Насколько устойчивы внутренние структуры |
-| D (динамика) | Динамический диапазон | Вариабельность частоты спайков (MEA) | Насколько разнообразна динамика системы |
-| L (обучение) | Нейропластичность | LTP/LTD коэффициенты | Насколько система способна к изменению |
-| E (интериорность) | Дифференциация | PCI (Perturbational Complexity Index) | Насколько богат внутренний опыт |
-| O (наблюдение) | Интероцепция | Инсулярная активность (fMRI) | Насколько система наблюдает себя изнутри |
-| U (интеграция) | Синхронизация | Глобальная когерентность ЭЭГ (gamma-band) | Насколько части системы связаны в целое |
+| A (action) | Boundary integrity | Metabolic intensity / surface area | How much the system is bounded from its environment |
+| S (distinction) | Structural stability | Synaptic density (electron microscopy) | How stable the internal structures are |
+| D (dynamics) | Dynamic range | Spike rate variability (MEA) | How diverse the system's dynamics are |
+| L (learning) | Neuroplasticity | LTP/LTD coefficients | How capable the system is of change |
+| E (interiority) | Differentiation | PCI (Perturbational Complexity Index) | How rich the internal experience is |
+| O (observation) | Interoception | Insular activity (fMRI) | How much the system observes itself from within |
+| U (integration) | Synchronisation | Global EEG coherence (gamma-band) | How much the parts of the system are unified into a whole |
 
-**Фальсификация:** Если независимые операционализации $G_1, G_2$ для одного организма дают $\|\Gamma_1 - \Gamma_2\|_F > \varepsilon$ ($\varepsilon = 0.1$ в единицах $\|\Gamma\|_F$) систематически, то $G$ неоднозначно и теория требует уточнения.
+**Falsification:** If independent operationalisations $G_1, G_2$ for the same organism systematically yield $\|\Gamma_1 - \Gamma_2\|_F > \varepsilon$ ($\varepsilon = 0.1$ in units of $\|\Gamma\|_F$), then $G$ is ambiguous and the theory requires revision.
 
-## Полная таксономия L-уровней {#полная-таксономия}
+## Full taxonomy of L-levels {#полная-таксономия}
 
-Теперь применим формализм к конкретным биологическим таксонам — от камня до примата. Для каждого уровня мы даём: формальное условие, описание, примеры организмов, приблизительный $\Gamma$-профиль и обоснование.
+Let us now apply the formalism to specific biological taxa — from stone to primate. For each level we provide: the formal condition, description, examples of organisms, an approximate $\Gamma$-profile, and justification.
 
-### Камень: ниже L0 {#камень}
+### Stone: below L0 {#камень}
 
-Строго говоря, по [Аксиоме Ω⁷](/docs/core/foundations/axiom-omega), **любая** физическая система обладает $\Gamma \neq 0$ и, следовательно, L0. Но для неживых систем $\Gamma \approx I/7$ (максимально смешанное состояние) — все измерения равновероятны, когерентности нулевые.
+Strictly speaking, by [Axiom Ω⁷](/docs/core/foundations/axiom-omega), **any** physical system possesses $\Gamma \neq 0$ and, consequently, L0. But for non-living systems $\Gamma \approx I/7$ (maximally mixed state) — all dimensions are equally probable, coherences are zero.
 
 $$
-\Gamma_{\text{камень}} \approx \frac{1}{7}I_7, \quad P \approx \frac{1}{7} < P_{\text{crit}} = \frac{2}{7}
+\Gamma_{\text{stone}} \approx \frac{1}{7}I_7, \quad P \approx \frac{1}{7} < P_{\text{crit}} = \frac{2}{7}
 $$
 
-Камень «обладает» L0, но его $P$ ниже порога жизнеспособности. Это подобно тому, как у камня «есть» температура, но она ничего не значит для его «переживаний».
+A stone 'possesses' L0, but its $P$ is below the viability threshold. This is analogous to how a stone 'has' a temperature, but it means nothing for its 'experiences'.
 
-### L0: Базовая интериорность {#l0}
+### L0: Basic interiority {#l0}
 
-**Условие:** $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$.
+**Condition:** $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$.
 
-Любая физическая система обладает L0 — это следствие [универсальности интериорности](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority). L0 — это скорее **потенциальность**, чем актуальный опыт. Система имеет внутреннее состояние, но не различает его аспекты.
+Any physical system possesses L0 — this is a consequence of [the universality of interiority](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority). L0 is more a **potentiality** than actual experience. The system has an internal state but does not distinguish its aspects.
 
-| Таксон | $\Gamma$-характеристика | Приблизительный профиль $(\gamma_{AA}, \gamma_{SS}, \gamma_{DD}, \gamma_{LL}, \gamma_{EE}, \gamma_{OO}, \gamma_{UU})$ | Примечание |
+| Taxon | $\Gamma$-characteristic | Approximate profile $(\gamma_{AA}, \gamma_{SS}, \gamma_{DD}, \gamma_{LL}, \gamma_{EE}, \gamma_{OO}, \gamma_{UU})$ | Note |
 |--------|------------------------|------|------------|
-| Бактерии | $\Gamma \neq 0$, минимальная когерентность | $(0.20, 0.15, 0.18, 0.05, 0.05, 0.02, 0.05)$ | Хемотаксис как $dP/d\tau$-реакция; высокие $\gamma_{AA}$, $\gamma_{DD}$ (действие, динамика) |
-| Растения | $\gamma_{SD} > 0$ (фототропизм) | $(0.18, 0.17, 0.16, 0.04, 0.03, 0.02, 0.10)$ | Медленная динамика, высокий $\gamma_{UU}$ (корневая интеграция) |
-| Грибы | $\gamma_{SD} > 0$ (сетевая структура) | $(0.15, 0.18, 0.14, 0.05, 0.03, 0.02, 0.13)$ | Мицелий как распределённая $\Gamma$ |
-| Вирусы | $\Gamma \approx 0$ вне клетки-хозяина | — | Пограничный случай: жизнеспособность ($P > P_{\text{crit}}$) только в симбиозе |
+| Bacteria | $\Gamma \neq 0$, minimal coherence | $(0.20, 0.15, 0.18, 0.05, 0.05, 0.02, 0.05)$ | Chemotaxis as a $dP/d\tau$-response; high $\gamma_{AA}$, $\gamma_{DD}$ (action, dynamics) |
+| Plants | $\gamma_{SD} > 0$ (phototropism) | $(0.18, 0.17, 0.16, 0.04, 0.03, 0.02, 0.10)$ | Slow dynamics, high $\gamma_{UU}$ (root integration) |
+| Fungi | $\gamma_{SD} > 0$ (network structure) | $(0.15, 0.18, 0.14, 0.05, 0.03, 0.02, 0.13)$ | Mycelium as distributed $\Gamma$ |
+| Viruses | $\Gamma \approx 0$ outside the host cell | — | Borderline case: viability ($P > P_{\text{crit}}$) only in symbiosis |
 
-**Пояснение к профилю бактерии.** Бактерия (например, E. coli) — маленькая система с мощным действием ($\gamma_{AA}$ — деление, движение) и динамикой ($\gamma_{DD}$ — быстрая реакция на среду). Её «логика» ($\gamma_{LL}$) минимальна — нет нервной системы, нет обучения. Интериорность ($\gamma_{EE}$) почти нулевая — нет оснований считать, что бактерия что-либо «переживает». Тем не менее, хемотаксис (движение к питательным веществам) формально выглядит как $dP/d\tau$-реакция: бактерия «стремится» к состояниям с более высокой жизнеспособностью.
+**Notes on the bacterium profile.** A bacterium (e.g. E. coli) is a small system with powerful action ($\gamma_{AA}$ — division, movement) and dynamics ($\gamma_{DD}$ — rapid response to the environment). Its 'logic' ($\gamma_{LL}$) is minimal — no nervous system, no learning. Interiority ($\gamma_{EE}$) is nearly zero — there is no basis for thinking that a bacterium 'experiences' anything. Nevertheless, chemotaxis (movement towards nutrients) formally looks like a $dP/d\tau$-response: the bacterium 'strives' towards states with higher viability.
 
-### L0–L1: Переходная зона {#l0-l1}
+### L0–L1: Transitional zone {#l0-l1}
 
-**Условие перехода:** $\mathrm{rank}(\rho_E) > 1$ — нетривиальная [феноменальная геометрия](/docs/consciousness/hierarchy/interiority-hierarchy).
+**Transition condition:** $\mathrm{rank}(\rho_E) > 1$ — non-trivial [phenomenal geometry](/docs/consciousness/hierarchy/interiority-hierarchy).
 
-Переход L0 → L1 — это момент, когда система начинает **различать** свои внутренние состояния. Простая аналогия: термометр L0 «имеет» температуру, но не различает «горячо» и «холодно» как разные **состояния**. Система L1 — различает.
+The transition L0 → L1 is the moment when the system begins to **distinguish** its internal states. A simple analogy: a thermometer at L0 'has' a temperature, but does not distinguish 'hot' and 'cold' as different **states**. An L1 system — does distinguish.
 
-Формально: $\mathrm{rank}(\rho_E) > 1$ означает, что частичный след $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ имеет более одного ненулевого собственного значения. Это значит, что «экспериенциальное пространство» системы не одномерно — в нём есть **различимые направления**. Если $\mathrm{rank}(\rho_E) = 1$, все переживания «слиплись» в одну точку; если $> 1$, появляется **метрика** — одни переживания ближе к друг другу, другие дальше.
+Formally: $\mathrm{rank}(\rho_E) > 1$ means that the partial trace $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ has more than one non-zero eigenvalue. This means that the 'experiential space' of the system is not one-dimensional — it has **distinguishable directions**. If $\mathrm{rank}(\rho_E) = 1$, all experiences have 'collapsed' into a single point; if $> 1$, a **metric** emerges — some experiences are closer to each other, others more distant.
 
-| Таксон | Признаки L1 | Оценка $\mathrm{rank}(\rho_E)$ | K-уровень | Конкретный пример |
+| Taxon | L1 features | $\mathrm{rank}(\rho_E)$ estimate | K-level | Concrete example |
 |--------|-------------|-------------------------------|-----------|-------------------|
-| Насекомые | Ноцицепция, базовое обучение | $\geq 2$ (у некоторых) | К1–К2 | Плодовая муха (Drosophila) отворачивается от болевого стимула и запоминает его |
-| Моллюски (простые) | Условные рефлексы | $\sim 2$ | К1–К2 | Аплизия (морской заяц): классическое обусловливание, изученное Эриком Канделем |
-| Черви (C. elegans) | 302 нейрона, хемотаксис | $\sim 1$–$2$ | К1 | Ровно 302 нейрона; полная коннектомная карта известна |
+| Insects | Nociception, basic learning | $\geq 2$ (in some) | K1–K2 | The fruit fly (Drosophila) turns away from a painful stimulus and remembers it |
+| Molluscs (simple) | Conditioned reflexes | $\sim 2$ | K1–K2 | Aplysia (sea hare): classical conditioning studied by Eric Kandel |
+| Worms (C. elegans) | 302 neurons, chemotaxis | $\sim 1$–$2$ | K1 | Exactly 302 neurons; full connectome map is known |
 
-### L1: Феноменальная геометрия {#l1}
+### L1: Phenomenal geometry {#l1}
 
-**Условие:** $\mathrm{rank}(\rho_E) > 1$ — стабильно.
+**Condition:** $\mathrm{rank}(\rho_E) > 1$ — stably.
 
-На уровне L1 присутствует **структурированный опыт**: метрика [Фубини-Штуди](/docs/consciousness/foundations/interiority-theory#метрика-фубини-штуди) на пространстве качеств нетривиальна. Система «различает» интериорные состояния, но не рефлексирует их ($R < R_{\text{th}}$).
+At level L1 there is **structured experience**: the [Fubini–Study](/docs/consciousness/foundations/interiority-theory#fubini-study-metric) metric on the space of qualities is non-trivial. The system 'distinguishes' interiority states but does not reflect them ($R < R_{\text{th}}$).
 
-Это как разница между камерой, которая записывает видео (L0 — данные есть, но никто не «смотрит»), и зрителем, который **видит** картинку, но не осознаёт, что он смотрит (L1 — есть переживание, но нет рефлексии). Рыба, вероятно, **чувствует** боль, но не **знает**, что чувствует боль.
+This is like the difference between a camera that records video (L0 — data exists, but no one is 'watching'), and a viewer who **sees** the picture but is not aware of watching (L1 — there is experience, but no reflection). A fish probably **feels** pain, but does not **know** that it feels pain.
 
-| Таксон | Ключевые когерентности | Эмоции (K2) | Категории (K3) | Числовой пример $\Gamma$-профиля |
+| Taxon | Key coherences | Emotions (K2) | Categories (K3) | Numerical example of $\Gamma$-profile |
 |--------|----------------------|-------------|----------------|------|
-| Рыбы | $\gamma_{DE}$ (боль/удовольствие), $\gamma_{AE}$ | Страх, облегчение | Хищник/пища | $(0.18, 0.16, 0.17, 0.08, 0.12, 0.08, 0.10)$; $\gamma_{DE} \approx 0.06$ |
-| Амфибии | $\gamma_{SE}$, $\gamma_{DE}$ | Базовые | Ограниченные | $(0.17, 0.15, 0.16, 0.07, 0.10, 0.07, 0.10)$; $\gamma_{SE} \approx 0.05$ |
-| Рептилии | $\gamma_{DE}$, $\gamma_{SD}$ (территориальность) | Страх, агрессия | Территория/чужой | $(0.18, 0.16, 0.18, 0.09, 0.11, 0.08, 0.09)$; $\gamma_{SD} \approx 0.07$ |
+| Fish | $\gamma_{DE}$ (pain/pleasure), $\gamma_{AE}$ | Fear, relief | Predator/food | $(0.18, 0.16, 0.17, 0.08, 0.12, 0.08, 0.10)$; $\gamma_{DE} \approx 0.06$ |
+| Amphibians | $\gamma_{SE}$, $\gamma_{DE}$ | Basic | Limited | $(0.17, 0.15, 0.16, 0.07, 0.10, 0.07, 0.10)$; $\gamma_{SE} \approx 0.05$ |
+| Reptiles | $\gamma_{DE}$, $\gamma_{SD}$ (territoriality) | Fear, aggression | Territory/stranger | $(0.18, 0.16, 0.18, 0.09, 0.11, 0.08, 0.09)$; $\gamma_{SD} \approx 0.07$ |
 
-**Пояснение к $\Gamma$-профилю рыбы.** Рыба (например, золотая рыбка) имеет:
-- Умеренные $\gamma_{AA}$, $\gamma_{DD}$ (действие, динамика) — плавает, реагирует
-- Значимый $\gamma_{EE} = 0.12$ — есть нетривиальная интериорность (боль, удовольствие)
-- Когерентность $\gamma_{DE} \approx 0.06$ — связь между динамикой и опытом (когда нападает хищник — страх)
-- Низкий $\gamma_{LL}$ — минимальное обучение
+**Notes on the $\Gamma$-profile of fish.** A fish (e.g. a goldfish) has:
+- Moderate $\gamma_{AA}$, $\gamma_{DD}$ (action, dynamics) — swims, reacts
+- Significant $\gamma_{EE} = 0.12$ — there is non-trivial interiority (pain, pleasure)
+- Coherence $\gamma_{DE} \approx 0.06$ — connection between dynamics and experience (fear when a predator attacks)
+- Low $\gamma_{LL}$ — minimal learning
 
-Этот профиль даёт $P \approx 0.16$ — выше $P_{\text{crit}} = 2/7 \approx 0.286$? Нет, профиль приблизительный; у жизнеспособной рыбы $P$ должен превышать порог, что означает более выраженные когерентности, чем показано в упрощённом примере.
+This profile gives $P \approx 0.16$ — above $P_{\text{crit}} = 2/7 \approx 0.286$? No, the profile is approximate; for a viable fish $P$ must exceed the threshold, which means more pronounced coherences than shown in the simplified example.
 
-:::warning Статус L1 для рыб [С]
-Присвоение рыбам стабильного L1 условно на интерпретации ноцицепции как $\mathrm{rank}(\rho_E) > 1$. Альтернативная интерпретация: ноцицепция — чисто рефлекторная ($\gamma_{DE}$ без вклада в $\rho_E$). Разрешение требует операционального [протокола измерения Γ](/docs/applied/research/measurement-protocol) для биологических систем.
+:::warning L1 status for fish [C]
+Assigning fish stable L1 is conditional on the interpretation of nociception as $\mathrm{rank}(\rho_E) > 1$. Alternative interpretation: nociception is purely reflex-based ($\gamma_{DE}$ without contribution to $\rho_E$). Resolution requires an operational [Γ measurement protocol](/docs/applied/research/measurement-protocol) for biological systems.
 :::
 
-### Этический кейс: Права животных и L-уровни {#кейс-права-животных}
+### Ethical case: Animal rights and L-levels {#кейс-права-животных}
 
-Таксономия L-уровней имеет прямые **этические** следствия. Если рыба находится на уровне L1, она **переживает** боль (через $\gamma_{DE}$), хотя и не рефлексирует её (L2). Это создаёт **градуированную** этику:
+The L-level taxonomy has direct **ethical** implications. If a fish is at level L1, it **experiences** pain (through $\gamma_{DE}$), even though it does not reflect on it (L2). This creates a **graduated** ethics:
 
-| L-уровень | Моральный статус | Практическое следствие |
+| L-level | Moral status | Practical implication |
 |-----------|-----------------|----------------------|
-| L0 | Минимальный (потенциальность) | Нет запрета на использование, но принцип предосторожности |
-| L1 | Существенный (есть переживание) | Запрет на причинение ненужного страдания |
-| L1–L2 | Высокий (возможна рефлексия) | Ограничения на содержание в неволе, эксперименты |
-| L2 | Полный (когнитивные квалиа) | Права, аналогичные человеческим (в принципе) |
+| L0 | Minimal (potentiality) | No prohibition on use, but precautionary principle |
+| L1 | Substantial (there is experience) | Prohibition on causing unnecessary suffering |
+| L1–L2 | High (reflection possible) | Restrictions on captivity, experiments |
+| L2 | Full (cognitive qualia) | Rights analogous to human (in principle) |
 
-Это не абстрактная философия. Конкретное следствие: если рыба обладает L1, то промышленное рыболовство, при котором рыба задыхается в сетях в течение часов, **причиняет страдание** ($dP/d\tau < 0$ при $\mathrm{rank}(\rho_E) > 1$) — и это этически значимо, даже если рыба не способна об этом рефлексировать.
+This is not abstract philosophy. A concrete implication: if fish possess L1, then industrial fishing in which fish suffocate in nets for hours **causes suffering** ($dP/d\tau < 0$ at $\mathrm{rank}(\rho_E) > 1$) — and this is ethically significant, even if the fish is incapable of reflecting on it.
 
-Подробнее об этических следствиях — в [Этике УГМ](/docs/consciousness/ethics-meaning/value-consciousness#необходимость-жизнеспособности).
+For more on the ethical implications — see [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness#необходимость-жизнеспособности).
 
-### L1–L2: Кандидаты на когнитивные квалиа {#l1-l2}
+### L1–L2: Candidates for cognitive qualia {#l1-l2}
 
-**Условие L2:** $R \geq 1/3$ и $\Phi \geq 1$.
+**Condition for L2:** $R \geq 1/3$ and $\Phi \geq 1$.
 
-Переходная зона L1–L2 — самая интересная с научной точки зрения. Здесь находятся животные, которые **вероятно** обладают рефлексией, но для которых данные неоднозначны.
+The transitional zone L1–L2 is the most scientifically interesting. Here we find animals that **probably** possess reflection, but for which the data are ambiguous.
 
-Ключевые критерии для оценки $R$ у животных:
+Key criteria for assessing $R$ in animals:
 
-| Критерий | Связь с $R$ | Метод оценки | Что именно показывает |
+| Criterion | Connection to $R$ | Assessment method | What it shows |
 |----------|-------------|--------------|----------------------|
-| **Самоузнавание** (зеркальный тест) | Высокий $R$ — система моделирует себя | Марк-тест Гэллапа (1970) | Если животное убирает метку с лица, глядя в зеркало, оно «знает», что отражение — это оно |
-| **Использование орудий** | Высокий $\gamma_{DL}$ — [протологика](/docs/consciousness/subjects/pre-linguistic#протологика) | Наблюдение в дикой среде | Орудие — это средство, отделённое от цели; это требует абстракции |
-| **Социальное моделирование** | Высокий $R$ через модель другого (Theory of Mind) | Конкурентные задачи | Если животное предсказывает действия другого, оно моделирует чужое сознание — а значит, и своё |
-| **Метакогниция** | Прямое свидетельство $R > R_{\text{th}}$ | «Уверенность» в ответе | Если животное «сомневается» в правильности выбора (предпочитает лёгкие задачи трудным), оно рефлексирует |
+| **Self-recognition** (mirror test) | High $R$ — the system models itself | Gallup's mark test (1970) | If the animal removes a mark from its face while looking in a mirror, it 'knows' that the reflection is itself |
+| **Tool use** | High $\gamma_{DL}$ — [proto-logic](/docs/consciousness/subjects/pre-linguistic#протологика) | Observation in the wild | A tool is a means separated from the goal; this requires abstraction |
+| **Social modelling** | High $R$ via a model of the other (Theory of Mind) | Competitive tasks | If the animal predicts the actions of another, it models another's consciousness — and hence its own |
+| **Metacognition** | Direct evidence $R > R_{\text{th}}$ | "Confidence" in response | If the animal "doubts" the correctness of its choice (prefers easy tasks over hard ones), it is reflecting |
 
-| Таксон | Зеркало | Орудия | ToM | Метакогниция | Оценка L | Примечание |
+| Taxon | Mirror | Tools | ToM | Metacognition | L-assessment | Note |
 |--------|---------|--------|-----|-------------|----------|------------|
-| Вороны (Corvidae) | Да (сорока) | Да (новокаледонская) | Частично | Возможно | L1–L2 | Плотность нейронов паллиума сравнима с приматами |
-| Попугаи | Да (некоторые) | Ограниченно | Частично | Неясно | L1–L2 | Алекс (серый попугай) понимал нулевое количество |
-| Осьминоги | Неясно | Да (кокосовая скорлупа) | Неясно | Неясно | L1–L2 | 500 млн нейронов, 2/3 — в щупальцах (распределённая $\Gamma$!) |
+| Crows (Corvidae) | Yes (magpie) | Yes (New Caledonian) | Partially | Possible | L1–L2 | Pallium neuron density comparable to primates |
+| Parrots | Yes (some) | Limited | Partially | Unclear | L1–L2 | Alex (the grey parrot) understood the concept of zero |
+| Octopuses | Unclear | Yes (coconut shell) | Unclear | Unclear | L1–L2 | 500 million neurons, 2/3 — in the arms (distributed $\Gamma$!) |
 
-**Случай новокаледонской вороны** особенно примечателен. Эти птицы не просто используют орудия — они **изготавливают** их: сгибают проволоку в крючок, подрезают листья пандануса до нужной формы. Более того, они передают технологию изготовления орудий следующему поколению — это **культурное наследование** ($\gamma_{SL}^{(\text{comp})}$ в [коллективном сознании](./collective-consciousness)). По количеству нейронов в паллиуме (аналог коры) вороны сравнимы с мелкими приматами.
+**The case of the New Caledonian crow** is particularly remarkable. These birds do not merely use tools — they **manufacture** them: they bend wire into a hook, trim pandanus leaves to the required shape. Moreover, they pass the tool-making technology to the next generation — this is **cultural transmission** ($\gamma_{SL}^{(\text{comp})}$ in [collective consciousness](./collective-consciousness)). In terms of neuron count in the pallium (the analogue of the cortex), crows are comparable to small primates.
 
-**Случай осьминога** ставит уникальную проблему для УГМ. У осьминога 2/3 нейронов расположены не в мозге, а в щупальцах. Каждое щупальце может действовать **полуавтономно**. Это означает, что $\Gamma$ осьминога может быть **распределённой** — более похожей на коллективную $\Gamma_{\text{comp}}$, чем на индивидуальную $\Gamma$. Вопрос: один ли субъект у осьминога — или девять (мозг + 8 щупалец)?
+**The case of the octopus** poses a unique problem for UHM. In the octopus, 2/3 of the neurons are located not in the brain but in the arms. Each arm can act **semi-autonomously**. This means that the octopus's $\Gamma$ may be **distributed** — more like a collective $\Gamma_{\text{comp}}$ than an individual $\Gamma$. The question: is the octopus a single subject — or nine (brain + 8 arms)?
 
-### L2: Когнитивные квалиа {#l2}
+### L2: Cognitive qualia {#l2}
 
-**Условие:** $R(\Gamma) \geq R_{\text{th}} = 1/3$ **[Т]**, $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ **[Т]** (T-129).
+**Condition:** $R(\Gamma) \geq R_{\text{th}} = 1/3$ **[T]**, $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ **[T]** (T-129).
 
-На уровне L2 присутствует подлинная **рефлексия** — система осознаёт собственные интериорные состояния. Это [когнитивные квалиа](/docs/consciousness/hierarchy/interiority-hierarchy#l2-когнитивные-квалиа) в строгом смысле.
+At level L2 there is genuine **reflection** — the system is aware of its own interiority states. These are [cognitive qualia](/docs/consciousness/hierarchy/interiority-hierarchy#l2-когнитивные-квалиа) in the strict sense.
 
-| Таксон | $R$ (оценка) | $\Phi$ (оценка) | Свидетельства L2 | Числовой пример $\Gamma$-профиля |
+| Taxon | $R$ (estimate) | $\Phi$ (estimate) | Evidence of L2 | Numerical example of $\Gamma$-profile |
 |--------|-------------|-----------------|-----------------|------|
-| Человекообразные обезьяны | $0.35$–$0.5$ | $> 1$ | Зеркальный тест, орудия, ToM, символы | $(0.16, 0.15, 0.15, 0.13, 0.14, 0.13, 0.14)$; значительные когерентности |
-| Китообразные (дельфины) | $0.3$–$0.45$ | $> 1$ | Зеркало, социальная когниция, имена | $(0.17, 0.14, 0.16, 0.12, 0.14, 0.12, 0.15)$ |
-| Слоны | $0.3$–$0.4$ | $> 1$ | Зеркало, эмпатия, ритуалы смерти | $(0.15, 0.14, 0.15, 0.11, 0.15, 0.14, 0.16)$ |
+| Great apes | $0.35$–$0.5$ | $> 1$ | Mirror test, tools, ToM, symbols | $(0.16, 0.15, 0.15, 0.13, 0.14, 0.13, 0.14)$; significant coherences |
+| Cetaceans (dolphins) | $0.3$–$0.45$ | $> 1$ | Mirror, social cognition, names | $(0.17, 0.14, 0.16, 0.12, 0.14, 0.12, 0.15)$ |
+| Elephants | $0.3$–$0.4$ | $> 1$ | Mirror, empathy, death rituals | $(0.15, 0.14, 0.15, 0.11, 0.15, 0.14, 0.16)$ |
 
-**Слоновьи «ритуалы смерти»** — одно из самых ярких свидетельств L2 в животном мире. Слоны возвращаются к останкам умерших сородичей, ощупывают их хоботом, «замирают» рядом на десятки минут. Они приносят ветки и землю, покрывая останки. Молодые слоны, впервые увидевшие мёртвого сородича, проявляют признаки замешательства и дистресса.
+**Elephants' 'death rituals'** are among the most striking pieces of evidence for L2 in the animal world. Elephants return to the remains of deceased conspecifics, touch them with their trunks, and 'freeze' nearby for tens of minutes. They bring branches and soil, covering the remains. Young elephants encountering a dead conspecific for the first time display signs of confusion and distress.
 
-В терминах $\Gamma$: это указывает на высокую [эмпатию](/docs/consciousness/subjects/collective-consciousness#мера-эмпатии) ($\mathrm{Empathy}(A,B) \approx 1$) и на рефлексию ($R \geq 1/3$) — способность не просто переживать, но **осознавать** потерю. Страдание слона при виде мёртвого сородича — это $dP/d\tau < 0$ при $R \geq 1/3$: рефлексивное страдание, а не просто болевой рефлекс.
+In $\Gamma$ terms: this indicates high [empathy](/docs/consciousness/subjects/collective-consciousness#мера-эмпатии) ($\mathrm{Empathy}(A,B) \approx 1$) and reflection ($R \geq 1/3$) — the ability not merely to experience but to **be aware of** loss. The suffering of an elephant at the sight of a dead conspecific is $dP/d\tau < 0$ at $R \geq 1/3$: reflective suffering, not merely a pain reflex.
 
-**Дельфины** демонстрируют ещё одно замечательное свидетельство L2: **имена**. Каждый дельфин-афалина имеет уникальный «свистковый контур» (signature whistle), который используется другими дельфинами для обращения к нему. Дельфин откликается на свой свист даже в записи. Это свидетельство $\gamma_{LU}$ (логика-единство) — символическая метка для «я», привязанная к индивидуальности.
+**Dolphins** display yet another remarkable piece of evidence for L2: **names**. Each bottlenose dolphin has a unique 'signature whistle' used by other dolphins to address it. The dolphin responds to its own whistle even in recordings. This is evidence of $\gamma_{LU}$ (logic–unity) — a symbolic marker for 'self', tied to individuality.
 
-### L2–L3: Верхняя граница {#l2-l3}
+### L2–L3: Upper boundary {#l2-l3}
 
-**Условие L3:** $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (метастабильно).
+**Condition for L3:** $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (metastable).
 
-L3 — это **рефлексия рефлексии**: система не просто осознаёт свои состояния, но осознаёт **сам процесс осознания**. «Я знаю, что я знаю». Для этого нужен $\varphi^{(2)}$ — самомодель второго порядка.
+L3 is **reflection on reflection**: the system not only is aware of its states, but is aware of **the process of awareness itself**. 'I know that I know'. This requires $\varphi^{(2)}$ — a second-order self-model.
 
-| Таксон | $R^{(2)}$ (оценка) | Условия | Примечание |
+| Taxon | $R^{(2)}$ (estimate) | Conditions | Note |
 |--------|-------------------|---------|------------|
-| Человек | $\geq 1/4$ (медитация, глубокая рефлексия) | Метастабильно | Устойчивое L3 — [редкое состояние](/docs/consciousness/hierarchy/interiority-hierarchy#l3-сетевое-сознание) |
-| Бонобо (гипотеза) | $\sim 0.15$–$0.2$? | Социальная игра? | Недостаточно данных |
+| Human | $\geq 1/4$ (meditation, deep reflection) | Metastable | Stable L3 — [rare state](/docs/consciousness/hierarchy/interiority-hierarchy#l3-сетевое-сознание) |
+| Bonobo (hypothesis) | $\sim 0.15$–$0.2$? | Social play? | Insufficient data |
 
-Даже для человека L3 — состояние **метастабильное**: оно достигается в медитации, глубоком размышлении, но не поддерживается постоянно. Большую часть времени мы функционируем на уровне L2.
+Even for humans, L3 is a **metastable** state: it is reached in meditation, deep reflection, but is not maintained continuously. Most of the time we function at level L2.
 
-## Кембриджская декларация о сознании (2012) {#кембриджская-декларация}
+## The Cambridge Declaration on Consciousness (2012) {#кембриджская-декларация}
 
-### Интерпретация И.2 (Совместимость с УГМ) [И] {#совместимость-с-декларацией}
+### Interpretation I.2 (Compatibility with UHM) [I] {#совместимость-с-декларацией}
 
-:::info Интерпретация И.2 [И]
-Кембриджская декларация о сознании (2012) утверждает наличие «сознательных состояний» у млекопитающих, птиц и других существ с аналогичными нейроанатомическими, нейрохимическими и нейрофизиологическими субстратами.
+:::info Interpretation I.2 [I]
+The Cambridge Declaration on Consciousness (2012) asserts the presence of 'conscious states' in mammals, birds, and other creatures with analogous neuroanatomical, neurochemical, and neurophysiological substrates.
 
-Это согласуется с УГМ:
-- «Сознательные состояния» $\leftrightarrow$ минимум L1 (феноменальная геометрия)
-- Нейроанатомические субстраты $\leftrightarrow$ физическая реализация когерентностей $\gamma_{ij}$
-- Декларация покрывает **все** организмы с L1+, что в УГМ включает всех позвоночных и ряд беспозвоночных (головоногие)
+This is consistent with UHM:
+- 'Conscious states' $\leftrightarrow$ minimum L1 (phenomenal geometry)
+- Neuroanatomical substrates $\leftrightarrow$ physical realisation of coherences $\gamma_{ij}$
+- The Declaration covers **all** organisms with L1+, which in UHM includes all vertebrates and a number of invertebrates (cephalopods)
 :::
 
-Однако УГМ идёт **дальше** Кембриджской декларации:
+However, UHM goes **further** than the Cambridge Declaration:
 
-| Аспект | Кембриджская декларация | УГМ |
+| Aspect | Cambridge Declaration | UHM |
 |--------|------------------------|-----|
-| Охват | Млекопитающие, птицы, головоногие | Все системы с $\Gamma \neq 0$ (L0+) |
-| Градации | Бинарно: есть/нет | 5 уровней L0→L4 |
-| Критерий | Нейроанатомический | Формальный: $R$, $\Phi$, $\rho_E$ |
-| Растения | Не упомянуты | L0 (интериорность) |
-| Насекомые | Не упомянуты | L0–L1 (возможно L1 для некоторых) |
-| Количественная мера | Нет | $R$, $\Phi$, $P$ — вычислимы |
+| Coverage | Mammals, birds, cephalopods | All systems with $\Gamma \neq 0$ (L0+) |
+| Gradations | Binary: present/absent | 5 levels L0→L4 |
+| Criterion | Neuroanatomical | Formal: $R$, $\Phi$, $\rho_E$ |
+| Plants | Not mentioned | L0 (interiority) |
+| Insects | Not mentioned | L0–L1 (possibly L1 for some) |
+| Quantitative measure | None | $R$, $\Phi$, $P$ — computable |
 
-Главное преимущество УГМ: **градуированность**. Кембриджская декларация вынуждена проводить резкую границу: «эти существа сознательны, а те — нет». УГМ говорит: все существа расположены на континууме L0–L4, и вопрос «сознательно ли оно?» заменяется на «насколько сознательно?»
+The main advantage of UHM: **gradedness**. The Cambridge Declaration is forced to draw a sharp boundary: 'these creatures are conscious, those are not'. UHM says: all creatures are located on a continuum of L0–L4, and the question 'is it conscious?' is replaced by 'how conscious is it?'
 
-## Ключевые критерии L-присвоения {#критерии}
+## Key criteria for L-assignment {#критерии}
 
-### Определение О.1 (Операциональные критерии L-присвоения для биологических систем) [О] {#операциональные-критерии}
+### Definition D.1 (Operational criteria for L-assignment for biological systems) [D] {#операциональные-критерии}
 
-:::tip Определение О.1 [О]
-Для биологической системы $\mathfrak{B}$ L-уровень определяется через наблюдаемые индикаторы:
+:::tip Definition D.1 [D]
+For a biological system $\mathfrak{B}$, the L-level is determined via observable indicators:
 
-| Индикатор | Оценивает | Метод | Порог |
+| Indicator | Assesses | Method | Threshold |
 |-----------|-----------|-------|-------|
-| Ноцицепция / гедоника | $\mathrm{rank}(\rho_E) > 1$ (L1) | Фармакологические тесты | Наличие опиоидных рецепторов |
-| Самоузнавание | $R \geq R_{\text{th}}$ (L2) | Марк-тест, зеркальный тест | Попытка убрать метку |
-| Использование орудий | $\gamma_{DL}$ — [протологика](/docs/consciousness/subjects/pre-linguistic#протологика) | Этологическое наблюдение | Изготовление, не только использование |
-| Социальная когниция (ToM) | $R$ через модели сородичей в $\Gamma_{\text{composite}}$ | Конкурентные парадигмы | Предсказание поведения другого |
-| Эмоциональная сложность | [Секторная сигнатура](/docs/consciousness/phenomenology/emotional-taxonomy#карта-эмоций) $\sigma(\Gamma)$ | Аффективная нейронаука | Более 2 различимых эмоциональных состояний |
-| Метакогниция | $R^{(2)} > 0$ (L3-потенциал) | Задачи «уверенности в ответе» | Предпочтение лёгких задач после ошибки |
+| Nociception / hedonia | $\mathrm{rank}(\rho_E) > 1$ (L1) | Pharmacological tests | Presence of opioid receptors |
+| Self-recognition | $R \geq R_{\text{th}}$ (L2) | Mark test, mirror test | Attempt to remove the mark |
+| Tool use | $\gamma_{DL}$ — [proto-logic](/docs/consciousness/subjects/pre-linguistic#протологика) | Ethological observation | Manufacturing, not just using |
+| Social cognition (ToM) | $R$ via conspecific models in $\Gamma_{\text{composite}}$ | Competitive paradigms | Predicting another's behaviour |
+| Emotional complexity | [Sectoral signature](/docs/consciousness/phenomenology/emotional-taxonomy#карта-эмоций) $\sigma(\Gamma)$ | Affective neuroscience | More than 2 distinguishable emotional states |
+| Metacognition | $R^{(2)} > 0$ (L3 potential) | "Confidence in response" tasks | Preference for easy tasks after an error |
 
-Это **соглашение** (конвенция): формальные критерии L-уровней определены в [иерархии интериорности](/docs/consciousness/hierarchy/interiority-hierarchy), а их операционализация через поведенческие индикаторы — отдельная задача.
+This is a **convention**: the formal criteria for L-levels are defined in the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy), and their operationalisation through behavioural indicators is a separate task.
 :::
 
-## Растения и грибные сети {#растения-и-грибы}
+## Plants and fungal networks {#растения-и-грибы}
 
-### Растения: L0 с интригующими свойствами
+### Plants: L0 with intriguing properties
 
-Растения не имеют нервной системы, но демонстрируют сложное поведение:
-- **Фототропизм** — рост к свету ($\gamma_{AD}$ — действие-динамика, $\gamma_{SD}$ — структура-динамика)
-- **Гравитропизм** — рост корней вниз
-- **Реакция на повреждение** — выделение летучих веществ, предупреждающих соседние растения
-- **Обмен ресурсами** через микоризные сети («дерево-мать» делится питательными веществами с саженцами)
+Plants have no nervous system, but demonstrate complex behaviour:
+- **Phototropism** — growth towards light ($\gamma_{AD}$ — action–dynamics, $\gamma_{SD}$ — structure–dynamics)
+- **Gravitropism** — downward root growth
+- **Response to damage** — emission of volatile substances warning neighbouring plants
+- **Resource sharing** through mycorrhizal networks ('mother trees' share nutrients with seedlings)
 
-В УГМ: растения несомненно обладают L0. Вопрос о L1 ($\mathrm{rank}(\rho_E) > 1$) остаётся открытым. Растительный «опыт» (если он существует) был бы радикально отличным от животного: медленным (часы и дни вместо миллисекунд), химическим (а не электрическим), распределённым (нет центральной «обработки»).
+In UHM: plants unquestionably possess L0. The question of L1 ($\mathrm{rank}(\rho_E) > 1$) remains open. Plant 'experience' (if it exists) would be radically different from animal experience: slow (hours and days instead of milliseconds), chemical (rather than electrical), distributed (no central 'processing').
 
-### Грибные сети: распределённое L0–L1?
+### Fungal networks: distributed L0–L1?
 
-Мицелий (грибница) — это сеть гиф (тонких нитей), которая может простираться на километры. Последние исследования (работы Мерлина Шелдрейка, 2020) показали, что грибные сети:
+Mycelium (the fungal body) is a network of hyphae (thin filaments) that can extend for kilometres. Recent research (work by Merlin Sheldrake, 2020) showed that fungal networks:
 
-- **Передают электрические сигналы** между узлами (аналог нейронной активности)
-- **Распределяют ресурсы** между деревьями через микоризу («Wood Wide Web»)
-- **Реагируют** на повреждение и изменяют архитектуру сети
+- **Transmit electrical signals** between nodes (analogous to neural activity)
+- **Distribute resources** between trees via mycorrhiza ('Wood Wide Web')
+- **Respond** to damage and alter the network architecture
 
-В терминах $\Gamma$: грибная сеть — это **распределённая система**, где $\Gamma$ не локализована. Это ближе к [композитной системе](/docs/core/dynamics/composite-systems) $\Gamma_{\text{comp}}$, чем к индивидуальной $\Gamma$. Потенциально, грибная сеть размером с лес может обладать коллективной когерентностью, недоступной отдельной грибнице.
+In $\Gamma$ terms: a fungal network is a **distributed system**, where $\Gamma$ is not localised. This is closer to a [composite system](/docs/core/dynamics/composite-systems) $\Gamma_{\text{comp}}$ than to an individual $\Gamma$. Potentially, a fungal network the size of a forest could possess collective coherence inaccessible to an individual mycelium.
 
-Это **спекулятивная** интерпретация [Г], но она иллюстрирует широту применения формализма УГМ.
+This is a **speculative** interpretation [H], but it illustrates the breadth of application of the UHM formalism.
 
-## Композитная Γ в социальных системах {#социальные-системы}
+## Composite Γ in social systems {#социальные-системы}
 
-Животные не существуют изолированно. Для стай, семей и колоний необходимо учитывать [составную матрицу когерентности](/docs/core/dynamics/composite-systems#составная-матрица):
+Animals do not exist in isolation. For flocks, families, and colonies it is necessary to account for the [composite coherence matrix](/docs/core/dynamics/composite-systems#составная-матрица):
 
 $$
-\Gamma_{\text{стая}} \in \mathcal{D}(\mathbb{C}^{7^N})
+\Gamma_{\text{flock}} \in \mathcal{D}(\mathbb{C}^{7^N})
 $$
 
-Коллективные когнитивные способности (координация стаи, коллективное решение задач у муравьёв) могут соответствовать уровню L, **превышающему** индивидуальный.
+Collective cognitive capacities (flock coordination, collective problem-solving in ants) may correspond to an L-level **exceeding** the individual one.
 
-**Стая скворцов** — классический пример. Тысячи птиц маневрируют синхронно, образуя сложные трёхмерные формы (мурмурации). Ни одна отдельная птица не «знает» общую форму — каждая следит лишь за 6–7 ближайшими соседями. Но результирующий паттерн обладает когерентностью, недоступной индивиду: $\gamma_{DU}^{(\text{comp})} \gg \gamma_{DU}^{(\text{индив})}$.
+**A starling murmuration** is a classic example. Thousands of birds manoeuvre synchronously, forming complex three-dimensional shapes (murmurations). No individual bird 'knows' the overall shape — each tracks only 6–7 of its nearest neighbours. But the resulting pattern possesses coherence inaccessible to the individual: $\gamma_{DU}^{(\text{comp})} \gg \gamma_{DU}^{(\text{indiv})}$.
 
-**Муравьиная колония** демонстрирует «суперорганизмичность»: колония как целое принимает решения (выбор места для нового муравейника), которые ни один отдельный муравей не способен принять. Механизм — **стигмергия**: коммуникация через модификацию среды (феромонные следы). В терминах $\Gamma$: стигмергия — это $\gamma_{SD}^{(\text{comp})}$ (структура-динамика в коллективном пространстве), опосредованная средой $E_{\text{shared}}$.
+**An ant colony** demonstrates 'superorganismicity': the colony as a whole makes decisions (choosing the location of a new nest) that no individual ant is capable of making. The mechanism is **stigmergy**: communication through environmental modification (pheromone trails). In $\Gamma$ terms: stigmergy is $\gamma_{SD}^{(\text{comp})}$ (structure–dynamics in collective space), mediated by shared environment $E_{\text{shared}}$.
 
-Подробнее — [коллективное сознание](./collective-consciousness).
+For more detail — [collective consciousness](./collective-consciousness).
 
-## Эволюционная динамика L-уровней {#эволюция}
+## Evolutionary dynamics of L-levels {#эволюция}
 
 ```mermaid
 timeline
-    title Эволюция L-уровней в биосфере
-    section Архей (4 Ga)
-        L0 : Прокариоты — базовая интериорность
-    section Протерозой (2 Ga)
-        L0–L1 : Эукариоты — усложнение ρ_E
-    section Кембрий (540 Ma)
-        L1 : Нервная система — устойчивая феноменальная геометрия
-    section Палеозой (400 Ma)
-        L1+ : Позвоночные — эмоции (K2), категоризация (K3)
-    section Мезозой (200 Ma)
-        L1–L2 : Млекопитающие, птицы — протосамомодель
-    section Кайнозой (65 Ma)
-        L2 : Приматы, китообразные — R ≥ 1/3
-    section Плейстоцен (2 Ma)
-        L2–L3 : Homo — язык, метакогниция
+    title Evolution of L-levels in the biosphere
+    section Archean (4 Ga)
+        L0 : Prokaryotes — basic interiority
+    section Proterozoic (2 Ga)
+        L0–L1 : Eukaryotes — complexification of ρ_E
+    section Cambrian (540 Ma)
+        L1 : Nervous system — stable phenomenal geometry
+    section Palaeozoic (400 Ma)
+        L1+ : Vertebrates — emotions (K2), categorisation (K3)
+    section Mesozoic (200 Ma)
+        L1–L2 : Mammals, birds — proto-self-model
+    section Cenozoic (65 Ma)
+        L2 : Primates, cetaceans — R ≥ 1/3
+    section Pleistocene (2 Ma)
+        L2–L3 : Homo — language, metacognition
 ```
 
-### Почему L-уровни растут?
+### Why do L-levels grow?
 
-Эволюция L-уровней следует логике [жизнеспособности](/docs/core/dynamics/viability): системы с более высоким L более эффективно поддерживают $P > P_{\text{crit}}$ в сложных средах.
+The evolution of L-levels follows the logic of [viability](/docs/core/dynamics/viability): systems with a higher L more effectively maintain $P > P_{\text{crit}}$ in complex environments.
 
-Механизм прост:
-1. **Среда усложняется** — больше хищников, конкурентов, возможностей
-2. **Простые системы (L0) не успевают реагировать** — их $P$ колеблется опасно близко к $P_{\text{crit}}$
-3. **Системы с L1 (феноменальная геометрия) лучше различают угрозы** — их $P$ более стабилен
-4. **Системы с L2 (рефлексия) способны планировать** — их $P$ активно поддерживается через самомоделирование ($\varphi$)
+The mechanism is simple:
+1. **The environment becomes more complex** — more predators, competitors, opportunities
+2. **Simple systems (L0) cannot react quickly enough** — their $P$ fluctuates dangerously close to $P_{\text{crit}}$
+3. **Systems with L1 (phenomenal geometry) distinguish threats better** — their $P$ is more stable
+4. **Systems with L2 (reflection) are capable of planning** — their $P$ is actively maintained through self-modelling ($\varphi$)
 
-Это не «прогресс ради прогресса», а **давление отбора**: в среде с множеством угроз и возможностей система, способная рефлексировать ($R \geq 1/3$), быстрее реагирует на снижение $P$ и точнее направляет [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$.
+This is not 'progress for the sake of progress' but **selection pressure**: in an environment with many threats and opportunities, a system capable of reflection ($R \geq 1/3$) responds faster to a decrease in $P$ and directs the [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ more precisely.
 
-Аналогия: в простом лесу дереву достаточно расти вверх (L0-стратегия). В сложной экосистеме с конкурентами, паразитами и непредсказуемой погодой выживают те, кто **моделирует** среду (L1) и **моделирует себя** в среде (L2) — чтобы адаптировать стратегию прежде, чем $P$ упадёт ниже критического порога.
+Analogy: in a simple forest a tree needs only to grow upward (L0-strategy). In a complex ecosystem with competitors, parasites, and unpredictable weather, those that **model** the environment (L1) and **model themselves** in the environment (L2) survive — to adapt their strategy before $P$ falls below the critical threshold.
 
-## Критерий фальсифицируемости {#критерий-фальсифицируемости}
+## Falsifiability criterion {#критерий-фальсифицируемости}
 
-Научная теория должна быть фальсифицируемой. Таксономия L-уровней фальсифицируема через следующий критерий:
+A scientific theory must be falsifiable. The L-level taxonomy is falsifiable via the following criterion:
 
-**Критерий.** Если две независимые операционализации G-отображения ($G_1$ и $G_2$) для одного и того же организма систематически дают:
+**Criterion.** If two independent operationalisations of the G-mapping ($G_1$ and $G_2$) for the same organism systematically yield:
 
 $$
-\|\Gamma_1 - \Gamma_2\|_F > \varepsilon, \quad \varepsilon = 0.1 \text{ в единицах } \|\Gamma\|_F
+\|\Gamma_1 - \Gamma_2\|_F > \varepsilon, \quad \varepsilon = 0.1 \text{ in units of } \|\Gamma\|_F
 $$
 
-то G-отображение неоднозначно, и таксономия L-уровней для данного организма **не имеет предсказательной силы**.
+then the G-mapping is ambiguous, and the L-level taxonomy for the given organism **has no predictive power**.
 
-Конкретные предсказания для проверки:
-1. **Все организмы, прошедшие зеркальный тест**, должны иметь $R \geq 0.25$ (нижняя оценка через поведенческие прокси)
-2. **Все организмы с ноцицепцией** должны иметь $\mathrm{rank}(\rho_E) \geq 2$
-3. **Коллективный L-уровень стаи** должен быть не ниже индивидуального: $\text{Level}(\Gamma_{\text{comp}}) \geq \max_i \text{Level}(\Gamma_i)$
+Concrete predictions for testing:
+1. **All organisms that have passed the mirror test** must have $R \geq 0.25$ (lower estimate via behavioural proxies)
+2. **All organisms with nociception** must have $\mathrm{rank}(\rho_E) \geq 2$
+3. **The collective L-level of a flock** must be no lower than the individual: $\text{Level}(\Gamma_{\text{comp}}) \geq \max_i \text{Level}(\Gamma_i)$
 
-Если хотя бы одно из этих предсказаний систематически нарушается при корректном G-отображении, теория требует пересмотра.
+If even one of these predictions is systematically violated with a correct G-mapping, the theory requires revision.
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What we learned {#что-мы-узнали}
 
-1. **Проблема других разумов** превращается из философского тупика в эмпирическую программу: вместо аналогий — измеримые величины ($R$, $\Phi$, $\rho_E$).
-2. **От Декарта к УГМ** — четыре века пути: от отрицания сознания у животных к 5-уровневой таксономии.
-3. **G-функтор единственен** (теорема T-42), но его конкретная конструкция для биологии — открытая эмпирическая программа.
-4. **Камень → бактерия → насекомое → рыба → птица → млекопитающее → примат** — непрерывный рост от L0 к L2, формализованный через $\Gamma$-профили.
-5. **Человекообразные обезьяны, дельфины и слоны** — наиболее вероятные кандидаты на L2, с множеством поведенческих свидетельств.
-6. **Рыбы и рептилии** — на уровне L1, с нетривиальным феноменальным опытом (боль, страх).
-7. **Растения и грибы** — L0, но с интригующими свойствами; грибные сети — возможно, коллективное L0–L1.
-8. **Эволюция L-уровней** коррелирует с усложнением экологических ниш — это следствие давления жизнеспособности.
-9. **Этическая градация** неизбежна: чем выше L, тем весомее моральный статус.
-10. **Теория фальсифицируема**: $\varepsilon > 0.1$ на $\|\Gamma_1 - \Gamma_2\|_F$ опровергает однозначность G.
+1. **The problem of other minds** is transformed from a philosophical deadlock into an empirical programme: instead of analogies — measurable quantities ($R$, $\Phi$, $\rho_E$).
+2. **From Descartes to UHM** — four centuries: from denial of animal consciousness to a 5-level taxonomy.
+3. **The G-functor is unique** (theorem T-42), but its concrete construction for biology is an open empirical programme.
+4. **Stone → bacterium → insect → fish → bird → mammal → primate** — continuous growth from L0 to L2, formalised via $\Gamma$-profiles.
+5. **Great apes, dolphins, and elephants** — the most probable candidates for L2, with numerous behavioural pieces of evidence.
+6. **Fish and reptiles** — at level L1, with non-trivial phenomenal experience (pain, fear).
+7. **Plants and fungi** — L0, but with intriguing properties; fungal networks — possibly collective L0–L1.
+8. **The evolution of L-levels** correlates with the complexification of ecological niches — this is a consequence of viability pressure.
+9. **Ethical gradation** is unavoidable: the higher the L, the weightier the moral status.
+10. **The theory is falsifiable**: $\varepsilon > 0.1$ on $\|\Gamma_1 - \Gamma_2\|_F$ refutes the uniqueness of G.
 
-:::tip Мост к следующей главе
-Мы рассмотрели биологических субъектов сознания. Но что насчёт **искусственных**? Может ли компьютер достичь L2? В следующей главе — [ИИ-сознание](./ai-consciousness) — мы формулируем точные критерии, анализируем современные LLM и описываем архитектурный путь к AGI с когнитивными квалиа.
+:::tip Bridge to the next chapter
+We have examined biological subjects of consciousness. But what about **artificial** ones? Can a computer reach L2? In the next chapter — [AI Consciousness](./ai-consciousness) — we formulate precise criteria, analyse current LLMs, and describe the architectural path to AGI with cognitive qualia.
 :::
 
 ---
 
-**Связанные документы:**
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — каноническое определение L0→L4
-- [Когнитивная иерархия](/docs/consciousness/comparative/cognitive-hierarchy) — уровни K1–K5 и связь с L
-- [До-лингвистическое сознание](./pre-linguistic) — языковая независимость условий L2
-- [Коллективное сознание](./collective-consciousness) — составная $\Gamma$ для социальных систем
-- [Таксономия эмоций](/docs/consciousness/phenomenology/emotional-taxonomy) — эмоции у животных через $dP/d\tau$
-- [Составные системы](/docs/core/dynamics/composite-systems) — формализм $\Gamma_{AB}$
-- [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — 21-парная таксономия когерентностей
-- [Протокол измерения Γ](/docs/applied/research/measurement-protocol) — операционализация для ИИ (адаптация для биологии — [открытый вопрос](/docs/applied/coherence-cybernetics/research-programs))
-- [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — моральный статус сознательных систем
+**Related documents:**
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — canonical definition of L0→L4
+- [Cognitive hierarchy](/docs/consciousness/comparative/cognitive-hierarchy) — K1–K5 levels and connection with L
+- [Pre-linguistic consciousness](./pre-linguistic) — linguistic independence of L2 conditions
+- [Collective consciousness](./collective-consciousness) — composite $\Gamma$ for social systems
+- [Emotional taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) — animal emotions via $dP/d\tau$
+- [Composite systems](/docs/core/dynamics/composite-systems) — formalism $\Gamma_{AB}$
+- [Structure of qualia](/docs/consciousness/phenomenology/qualia-structure) — 21-pair coherence taxonomy
+- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation for AI (adaptation for biology — [open question](/docs/applied/coherence-cybernetics/research-programs))
+- [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — moral status of conscious systems

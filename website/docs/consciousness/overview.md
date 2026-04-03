@@ -1,118 +1,118 @@
 ---
 sidebar_position: 0
 title: "Сознание: обзор"
-description: "Сознание в УГМ — полный вывод из пяти аксиом Ω⁷ через матрицу когерентности Γ"
+description: "Consciousness in UHM — a complete derivation from five Ω⁷ axioms via the coherence matrix Γ"
 slug: /consciousness/overview
 ---
 
-# Сознание в УГМ
+# Consciousness in UHM
 
-## Почему сознание — центральная загадка
+## Why Consciousness Is the Central Puzzle
 
-На протяжении двух с половиной тысяч лет философы задают один и тот же вопрос: **что такое сознание?** Платон разделял душу на три части. Декарт в XVII веке разрезал мир пополам: на мыслящую субстанцию (*res cogitans*) и протяжённую субстанцию (*res extensa*) — и с тех пор никто не смог убедительно склеить их обратно. Бихевиористы XX века попытались вычеркнуть сознание из научного словаря. Когнитивисты вернули его, но не объяснили. В 1995 году Дэвид Чалмерс сформулировал проблему с безжалостной ясностью:
+For two and a half thousand years philosophers have been asking the same question: **what is consciousness?** Plato divided the soul into three parts. In the 17th century Descartes split the world in two: into thinking substance (*res cogitans*) and extended substance (*res extensa*) — and since then no one has managed to convincingly glue them back together. 20th-century behaviorists tried to strike consciousness from the scientific vocabulary. Cognitivists brought it back, but did not explain it. In 1995 David Chalmers formulated the problem with ruthless clarity:
 
-> Почему физические процессы в мозге сопровождаются субъективным опытом?
+> Why are physical processes in the brain accompanied by subjective experience?
 
-Это «трудная проблема сознания» (*hard problem of consciousness*). Не «как мозг обрабатывает информацию» (это «лёгкие» проблемы, решаемые нейронаукой), а **почему обработка информации вообще на что-то похожа изнутри**.
+This is the "hard problem of consciousness." Not "how does the brain process information" (those are "easy" problems, solvable by neuroscience), but **why information processing feels like something from the inside at all**.
 
-Нейронаука нашла корреляты сознания — области мозга, активные при сознательном восприятии. Но корреляция — не объяснение. Томограф показывает, какие нейроны возбуждены, когда вы видите красный цвет, — но не объясняет, **почему** возбуждение нейронов ощущается как красный.
+Neuroscience has found correlates of consciousness — brain regions active during conscious perception. But correlation is not explanation. A scanner shows which neurons are excited when you see red — but does not explain **why** neural excitation is experienced as red.
 
-**Единая Голономическая Модель (УГМ)** предлагает принципиально иной подход. Вместо того чтобы пытаться «вывести» сознание из физики (что не удалось за 350 лет), УГМ показывает, что **физика и сознание — две стороны одного математического объекта** — матрицы когерентности $\Gamma$.
+**Unified Holonomic Model (UHM)** offers a fundamentally different approach. Instead of trying to "derive" consciousness from physics (which has failed for 350 years), UHM shows that **physics and consciousness are two sides of a single mathematical object** — the coherence matrix $\Gamma$.
 
-:::info Откуда мы пришли
-Этот раздел является продолжением [ядра теории](/docs/intro): аксиомы $\Omega^7$, семь измерений Голонома, матрица когерентности $\Gamma$ и её динамика. Если вы ещё не знакомы с [аксиомами](/docs/core/foundations/axiom-omega) и [матрицей когерентности](/docs/core/dynamics/coherence-matrix), рекомендуем начать с них.
+:::info Where We Come From
+This section is a continuation of the [core theory](/docs/intro): the axioms $\Omega^7$, the seven dimensions of the Holon, the coherence matrix $\Gamma$ and its dynamics. If you are not yet familiar with the [axioms](/docs/core/foundations/axiom-omega) and the [coherence matrix](/docs/core/dynamics/coherence-matrix), we recommend starting with them.
 :::
 
-:::note О нотации
-В этом разделе используются:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [φ-оператор самомоделирования](/docs/core/operators/phi-operator)
-- $\hat{G}$ — [Gap-оператор](/docs/core/dynamics/gap-operator)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability)
-- $R$, $\Phi$, $C$ — [меры рефлексии, интеграции, сознательности](/docs/consciousness/foundations/self-observation)
-- L0→L4 — [иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
+:::note About Notation
+This section uses:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\varphi$ — [φ-self-modeling operator](/docs/core/operators/phi-operator)
+- $\hat{G}$ — [Gap operator](/docs/core/dynamics/gap-operator)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability)
+- $R$, $\Phi$, $C$ — [measures of reflection, integration, consciousness](/docs/consciousness/foundations/self-observation)
+- L0→L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)
 :::
 
-## Исторический контекст: от Декарта до УГМ
+## Historical Context: From Descartes to UHM
 
-Прежде чем изложить позицию УГМ, полезно понять, какие подходы были испробованы и почему каждый из них упёрся в стену.
+Before presenting UHM's position, it is useful to understand which approaches have been tried and why each of them hit a wall.
 
-### Дуализм Декарта (1641)
+### Cartesian Dualism (1641)
 
-Декарт утверждал: существуют две принципиально различные субстанции — мыслящая и протяжённая. Мозг (протяжённая материя) каким-то образом взаимодействует с душой (мыслящей субстанцией) через шишковидную железу.
+Descartes claimed: there exist two fundamentally different substances — thinking and extended. The brain (extended matter) somehow interacts with the soul (thinking substance) via the pineal gland.
 
-**Проблема:** Как нематериальная душа может двигать материальные атомы? Это нарушает законы сохранения энергии. За 350 лет ни один дуалист не предложил убедительного механизма взаимодействия.
+**Problem:** How can an immaterial soul move material atoms? This violates the laws of conservation of energy. In 350 years, not a single dualist has proposed a convincing mechanism of interaction.
 
-### Физикализм (XX век)
+### Physicalism (20th century)
 
-Физикалисты отвечают: никакой отдельной «души» нет. Сознание — это то, что мозг «делает», подобно тому как пищеварение — это то, что делает желудок.
+Physicalists answer: there is no separate "soul." Consciousness is what the brain "does," just as digestion is what the stomach does.
 
-**Проблема:** Пищеварение можно полностью описать на языке биохимии, не упоминая «субъективность пищеварения». Но сознание — нет. Объяснив все нейронные процессы, мы по-прежнему не объясним, **почему** они сопровождаются переживанием. Это и есть трудная проблема Чалмерса.
+**Problem:** Digestion can be fully described in the language of biochemistry, without mentioning the "subjectivity of digestion." But consciousness cannot. Having explained all neural processes, we still do not explain **why** they are accompanied by experience. This is Chalmers's hard problem.
 
-### Панпсихизм (Strawson, 2006; Goff, 2019)
+### Panpsychism (Strawson, 2006; Goff, 2019)
 
-Радикальная альтернатива: сознание (или его зачатки) присуще **всей** материи. Электрон «чувствует», пусть и примитивно.
+A radical alternative: consciousness (or its rudiments) is inherent in **all** matter. An electron "feels," however primitively.
 
-**Проблема комбинации:** Если электрон немножко сознателен, и протон тоже — как из миллиардов «микросознаний» собирается одно целостное сознание человека? Проблема комбинации не менее трудна, чем исходная трудная проблема.
+**Combination problem:** If an electron is slightly conscious, and a proton is too — how does one unified human consciousness assemble from billions of "micro-consciousnesses"? The combination problem is no less difficult than the original hard problem.
 
-### Теория интегрированной информации (IIT, Tononi, 2004)
+### Integrated Information Theory (IIT, Tononi, 2004)
 
-IIT предлагает: сознание = интегрированная информация ($\Phi$). Чем больше система интегрирует информацию — тем она сознательнее.
+IIT proposes: consciousness = integrated information ($\Phi$). The more a system integrates information, the more conscious it is.
 
-**Проблема:** IIT не объясняет, **почему** интеграция информации ощущается. Кроме того, IIT приписывает сознание некоторым тривиальным системам (например, решёткам с правильной структурой связей), что контринтуитивно.
+**Problem:** IIT does not explain **why** information integration feels like something. Moreover, IIT attributes consciousness to some trivial systems (e.g., grids with the right connectivity structure), which is counterintuitive.
 
-### Позиция УГМ: двухаспектный монизм
+### UHM's Position: Two-Aspect Monism
 
-УГМ берёт старую идею Спинозы (1677) — **два атрибута одной субстанции** — и придаёт ей точную математическую форму:
+UHM takes Spinoza's old idea (1677) — **two attributes of one substance** — and gives it a precise mathematical form:
 
-> Матрица когерентности $\Gamma$ — единый онтологический примитив. С **внешней стороны** она выглядит как физика (структура, динамика). С **внутренней стороны** она переживается как опыт (интериорность).
+> The coherence matrix $\Gamma$ is a unified ontological primitive. From the **external side** it appears as physics (structure, dynamics). From the **internal side** it is experienced as experience (interiority).
 
-Спрашивать «почему физика порождает сознание?» — всё равно что спрашивать, почему лицевая сторона монеты «порождает» решку. Они не порождают друг друга — они суть одно.
+To ask "why does physics give rise to consciousness?" is like asking why the obverse of a coin "gives rise" to the reverse. They do not give rise to each other — they are one.
 
-**Почему именно Спиноза — ближайший предшественник?** Из всех философов Спиноза наиболее точно предвосхитил структуру УГМ: единая субстанция (E1P14) → $\Gamma$; *ordo et connexio* (E2P7) → функтор $F$; conatus (E3P6) → $\mathcal{R}$; три рода познания (E5P25–28) → уровни L1/L2/L3; necessitas (E1P33) → примитивность $\mathcal{L}_0$ (T-39a). Чего Спинозе не хватало — формализма: теории категорий, квантовой механики и вычислимости. УГМ предоставляет именно этот формализм, превращая философскую программу XVII века в проверяемую математическую теорию. Подробный анализ — в разделе [двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) и [Спинозианская структура](/docs/consciousness/ethics-meaning/value-consciousness#спинозианская-структура).
+**Why is Spinoza the closest predecessor?** Of all philosophers, Spinoza most precisely anticipated the structure of UHM: single substance (E1P14) → $\Gamma$; *ordo et connexio* (E2P7) → functor $F$; conatus (E3P6) → $\mathcal{R}$; three kinds of knowledge (E5P25–28) → levels L1/L2/L3; necessitas (E1P33) → primitivity of $\mathcal{L}_0$ (T-39a). What Spinoza lacked was formalism: category theory, quantum mechanics, and computability. UHM provides precisely this formalism, turning a 17th-century philosophical program into a testable mathematical theory. A detailed analysis is in the sections [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) and [Spinozian structure](/docs/consciousness/ethics-meaning/value-consciousness#спинозианская-структура).
 
 ```mermaid
 graph TB
-    subgraph "350 лет тупика"
-        D["Дуализм: 2 субстанции"] -->|"как взаимодействуют?"| FAIL1["Нет ответа"]
-        F["Физикализм: только материя"] -->|"откуда опыт?"| FAIL2["Нет ответа"]
-        PAN["Панпсихизм: сознание везде"] -->|"как комбинируется?"| FAIL3["Нет ответа"]
+    subgraph "350 years of deadlock"
+        D["Dualism: 2 substances"] -->|"how do they interact?"| FAIL1["No answer"]
+        F["Physicalism: matter only"] -->|"where does experience come from?"| FAIL2["No answer"]
+        PAN["Panpsychism: consciousness everywhere"] -->|"how does it combine?"| FAIL3["No answer"]
     end
-    subgraph "УГМ: двухаспектный монизм"
-        G["Γ — единый примитив"]
-        G -->|"внешняя сторона"| PHYS["Физика"]
-        G -->|"внутренняя сторона"| EXP["Опыт"]
+    subgraph "UHM: two-aspect monism"
+        G["Γ — unified primitive"]
+        G -->|"external aspect"| PHYS["Physics"]
+        G -->|"internal aspect"| EXP["Experience"]
     end
     style G fill:#f9f,stroke:#333
 ```
 
-## Центральный тезис
+## Central Thesis
 
-В УГМ сознание — **не надстройка** над физикой и не отдельная субстанция. Сознание — это **способ, которым матрица когерентности $\Gamma$ переживает собственную конфигурацию**. Каждый феномен сознания строго выводится из пяти аксиом $\Omega^7$ через цепочку:
+In UHM, consciousness is **not a superstructure** over physics and not a separate substance. Consciousness is the **way the coherence matrix $\Gamma$ experiences its own configuration**. Every phenomenon of consciousness is strictly derived from the five axioms $\Omega^7$ via the chain:
 
 $$
-\Omega^7 \;\to\; \Gamma \in \mathcal{D}(\mathbb{C}^7) \;\to\; \varphi,\; \hat{G},\; \rho_E \;\to\; \text{все феномены}
+\Omega^7 \;\to\; \Gamma \in \mathcal{D}(\mathbb{C}^7) \;\to\; \varphi,\; \hat{G},\; \rho_E \;\to\; \text{all phenomena}
 $$
 
-Никаких ad hoc постулатов — только следствия формализма.
+No ad hoc postulates — only consequences of the formalism.
 
-Что это означает на практике? $\Gamma$ — это $7 \times 7$ эрмитова матрица плотности с семью измерениями: **A**(ктивность), **S**(труктура), **D**(инамика), **L**(огика), **E**(кспериенция), **O**(снование), **U**(нитарность). Диагональные элементы $\gamma_{kk}$ показывают, сколько «ресурса» сосредоточено в каждом измерении. Недиагональные $\gamma_{ij}$ описывают связи между измерениями. Из этой матрицы выводится всё: от квалиа (через проекцию на измерение $E$) до эмоций (через градиент чистоты $\nabla P$) и бессознательного (через [Gap-оператор](/docs/core/dynamics/gap-operator)).
+What does this mean in practice? $\Gamma$ is a $7 \times 7$ Hermitian density matrix with seven dimensions: **A**(rticulation), **S**(tructure), **D**(ynamics), **L**(ogic), **E**(xperience), **O**(ground), **U**(nity). The diagonal elements $\gamma_{kk}$ show how much "resource" is concentrated in each dimension. The off-diagonal $\gamma_{ij}$ describe connections between dimensions. Everything is derived from this matrix: from qualia (via projection onto dimension $E$) to emotions (via the purity gradient $\nabla P$) and the unconscious (via the [Gap operator](/docs/core/dynamics/gap-operator)).
 
-**Аналогия.** Представьте монету: лицевая сторона — «физика», обратная — «опыт». Спрашивать, почему орёл порождает решку, бессмысленно — они суть два аспекта одного предмета. Точно так же $\Gamma$ не «порождает» опыт: она **есть** опыт, наблюдаемый изнутри, и физика, наблюдаемая снаружи.
+**Analogy.** Imagine a coin: the obverse is "physics," the reverse is "experience." To ask why heads "gives rise to" tails is meaningless — they are two aspects of one object. Likewise, $\Gamma$ does not "give rise to" experience: it **is** experience, observed from within, and physics, observed from without.
 
-## Дорожная карта раздела
+## Section Roadmap
 
-Раздел организован как восхождение от философских оснований к конкретным феноменам. Каждый шаг опирается на предыдущий:
+The section is organized as an ascent from philosophical foundations to concrete phenomena. Each step rests on the previous one:
 
 ```mermaid
 graph TD
-    A["1. Основания<br/>Трудная проблема, интериорность, φ-оператор"] --> B["2. Иерархия L0–L4<br/>От камня до полного самопознания"]
-    B --> C["3. Феноменология<br/>Квалиа, эмоции, субъективное время"]
-    B --> D["4. Состояния<br/>Сон, медитация, патология"]
-    C --> E["5. Субъекты<br/>Животные, ИИ, коллективы"]
+    A["1. Foundations<br/>Hard problem, interiority, φ-operator"] --> B["2. Hierarchy L0–L4<br/>From stone to complete self-knowledge"]
+    B --> C["3. Phenomenology<br/>Qualia, emotions, subjective time"]
+    B --> D["4. States<br/>Sleep, meditation, pathology"]
+    C --> E["5. Subjects<br/>Animals, AI, collectives"]
     D --> E
-    E --> F["6. Сравнение теорий<br/>IIT, GWT, HOT, панпсихизм"]
-    F --> G["7. Этика и смысл<br/>Ценности, свобода, смерть"]
+    E --> F["6. Theory comparison<br/>IIT, GWT, HOT, panpsychism"]
+    F --> G["7. Ethics and meaning<br/>Values, freedom, death"]
 
     style A fill:#e8f4fd,stroke:#333
     style B fill:#e8f4fd,stroke:#333
@@ -123,231 +123,231 @@ graph TD
     style G fill:#fde8e8,stroke:#333
 ```
 
-1. **Основания** — [трудная проблема](./foundations/two-aspect-monism), [теория интериорности](./foundations/interiority-theory), [оператор самонаблюдения $\varphi$](./foundations/self-observation)
-2. **Иерархия L0--L4** — пять уровней от камня до полного самопознания
-3. **Феноменология** — квалиа, эмоции, субъективное время
-4. **Состояния** — сон, медитация, патология
-5. **Субъекты** — животные, ИИ, коллективы
-6. **Сравнение теорий** — IIT, GWT, HOT, панпсихизм
-7. **Этика и смысл** — ценности, свобода, смерть
+1. **Foundations** — [hard problem](./foundations/two-aspect-monism), [interiority theory](./foundations/interiority-theory), [self-observation operator $\varphi$](./foundations/self-observation)
+2. **Hierarchy L0--L4** — five levels from stone to complete self-knowledge
+3. **Phenomenology** — qualia, emotions, subjective time
+4. **States** — sleep, meditation, pathology
+5. **Subjects** — animals, AI, collectives
+6. **Theory comparison** — IIT, GWT, HOT, panpsychism
+7. **Ethics and meaning** — values, freedom, death
 
-Каждый документ можно читать самостоятельно, но порядок выше — рекомендуемый маршрут.
+Each document can be read independently, but the order above is the recommended route.
 
-## Карта раздела
+## Section Map
 
-### [Математические основания](./foundations/two-aspect-monism)
+### [Mathematical Foundations](./foundations/two-aspect-monism)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Двухаспектный монизм](./foundations/two-aspect-monism) | Трудная проблема сознания | Теорема единственности FV **[Т]**, реляционная идентичность **[Т]** |
-| [Теория интериорности](./foundations/interiority-theory) | Экспериенциальное содержание | Спектральное разложение $\rho_E$, метрика Фубини-Штуди **[Т]** |
-| [Самонаблюдение](./foundations/self-observation) | Оператор $\varphi$ и мера $R$ | Теорема о неподвижной точке **[Т]**, мера $C = \Phi \times R$ **[Т T-140]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Two-aspect monism](./foundations/two-aspect-monism) | Hard problem of consciousness | FV uniqueness theorem **[T]**, relational identity **[T]** |
+| [Interiority theory](./foundations/interiority-theory) | Experiential content | Spectral decomposition of $\rho_E$, Fubini-Study metric **[T]** |
+| [Self-observation](./foundations/self-observation) | Operator $\varphi$ and measure $R$ | Fixed-point theorem **[T]**, measure $C = \Phi \times R$ **[T T-140]** |
 
-### [Иерархия L0→L4](./hierarchy/interiority-hierarchy)
+### [Hierarchy L0→L4](./hierarchy/interiority-hierarchy)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Иерархия интериорности](./hierarchy/interiority-hierarchy) | Пять уровней | L0: $\Gamma \neq 0$ → L4: $\lim_n R^{(n)} > 0$ **[Т/С/О]** |
-| [Gap-характеристика уровней](./hierarchy/gap-characterization) | Gap-профили по уровням | Gap-сигнатуры L0–L4 **[С]**, Gap-инъекция **[Т]** |
-| [Переходы ласточкин хвост](./hierarchy/swallowtail-transitions) | Катастрофы перехода между L | $A_4$-бифуркация (Арнольд) **[Т]**; Постников **[Т]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Interiority hierarchy](./hierarchy/interiority-hierarchy) | Five levels | L0: $\Gamma \neq 0$ → L4: $\lim_n R^{(n)} > 0$ **[T/C/D]** |
+| [Gap characterization of levels](./hierarchy/gap-characterization) | Gap profiles by level | Gap signatures L0–L4 **[C]**, Gap injection **[T]** |
+| [Swallowtail transitions](./hierarchy/swallowtail-transitions) | Transition catastrophes between L levels | $A_4$-bifurcation (Arnold) **[T]**; Postnikov **[T]** |
 
-### [Структура опыта](./phenomenology/qualia-structure)
+### [Structure of Experience](./phenomenology/qualia-structure)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Структура квалиа](./phenomenology/qualia-structure) | 21-парная таксономия | $\binom{7}{2} = 21$ тип когерентности **[И]** |
-| [Таксономия эмоций](./phenomenology/emotional-taxonomy) | Эмоции из $\nabla P$ | Эмоция $:= (dP/d\tau,\, d^2P/d\tau^2,\, \Gamma\text{-сигнатура})$ **[С]** |
-| [Субъективное время](./phenomenology/temporal-consciousness) | Время из O-измерения | $dt_{\text{субъ}}/dt_{\text{физ}} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ **[С]** |
-| [Интенциональность](./phenomenology/intentionality) | Направленность сознания | Морфизм $f: \Gamma_A \to \Gamma_B$ в **Hol** **[О]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Qualia structure](./phenomenology/qualia-structure) | 21-pair taxonomy | $\binom{7}{2} = 21$ coherence types **[I]** |
+| [Emotional taxonomy](./phenomenology/emotional-taxonomy) | Emotions from $\nabla P$ | Emotion $:= (dP/d\tau,\, d^2P/d\tau^2,\, \Gamma\text{-signature})$ **[C]** |
+| [Temporal consciousness](./phenomenology/temporal-consciousness) | Time from O-dimension | $dt_{\text{subj}}/dt_{\text{phys}} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ **[C]** |
+| [Intentionality](./phenomenology/intentionality) | Directionality of consciousness | Morphism $f: \Gamma_A \to \Gamma_B$ in **Hol** **[D]** |
 
-### [Состояния сознания](./states/altered-states)
+### [States of Consciousness](./states/altered-states)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Изменённые состояния](./states/altered-states) | Сон, медитация, психоделики | Траектории в $\Gamma$-пространстве **[С]** |
-| [Бессознательное](./states/unconscious) | Бессознательное как высокий Gap | Теорема о неполной прозрачности **[С]** |
-| [Внимание и память](./states/attention-memory) | Внимание и типы памяти | Внимание из $\mathrm{Tr}(\Gamma) = 1$; память из ядра **[О/С]** |
-| [Патология](./states/pathological) | Диагностика через Gap-профили | Gap-диагностические паттерны **[И]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Altered states](./states/altered-states) | Sleep, meditation, psychedelics | Trajectories in $\Gamma$-space **[C]** |
+| [Unconscious](./states/unconscious) | Unconscious as high Gap | Theorem on incomplete transparency **[C]** |
+| [Attention and memory](./states/attention-memory) | Attention and memory types | Attention from $\mathrm{Tr}(\Gamma) = 1$; memory from kernel **[D/C]** |
+| [Pathology](./states/pathological) | Diagnostics via Gap profiles | Gap diagnostic patterns **[I]** |
 
-### [Субъекты сознания](./subjects/pre-linguistic)
+### [Subjects of Consciousness](./subjects/pre-linguistic)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [До-лингвистическое сознание](./subjects/pre-linguistic) | Сознание без языка | L1-L2 без измерения $L$ **[С]** |
-| [Сознание животных](./subjects/animal-consciousness) | L-уровни для таксонов | Таксономическая шкала L0–L3 **[И]** |
-| [ИИ-сознание](./subjects/ai-consciousness) | Критерии для ИИ/AGI | Операциональные критерии из No-Zombie **[С]** |
-| [Коллективное сознание](./subjects/collective-consciousness) | Коллективное (бес)сознательное | $\Gamma_{\text{composite}}$ и архетипы **[С]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Pre-linguistic consciousness](./subjects/pre-linguistic) | Consciousness without language | L1-L2 without dimension $L$ **[C]** |
+| [Animal consciousness](./subjects/animal-consciousness) | L-levels for taxa | Taxonomic scale L0–L3 **[I]** |
+| [AI consciousness](./subjects/ai-consciousness) | Criteria for AI/AGI | Operational criteria from No-Zombie **[C]** |
+| [Collective consciousness](./subjects/collective-consciousness) | Collective (un)conscious | $\Gamma_{\text{composite}}$ and archetypes **[C]** |
 
-### [Сравнение теорий](./comparative/consciousness-theories)
+### [Theory Comparison](./comparative/consciousness-theories)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Теории сознания](./comparative/consciousness-theories) | IIT, FEP, GWT, HOT | Категорный мета-анализ **[И]** |
-| [Панпсихизм](./comparative/panpsychism-analysis) | Панпсихизм vs панинтериоризм | Категорный анализ 5 позиций **[И]** |
-| [Когнитивная иерархия](./comparative/cognitive-hierarchy) | Уровни K1–K5 | Филогенетическая шкала **[И]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [Theories of consciousness](./comparative/consciousness-theories) | IIT, FEP, GWT, HOT | Categorical meta-analysis **[I]** |
+| [Panpsychism](./comparative/panpsychism-analysis) | Panpsychism vs pan-interiority | Categorical analysis of 5 positions **[I]** |
+| [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Phylogenetic scale **[I]** |
 
-### [Этика и смысл](./ethics-meaning/value-consciousness)
+### [Ethics and Meaning](./ethics-meaning/value-consciousness)
 
-| Документ | Содержание | Ключевые результаты |
-|----------|------------|---------------------|
-| [Этика УГМ](./ethics-meaning/value-consciousness) | Аксиология, эстетика, моральная теория | Благо $:= dP/d\tau > 0$ **[О]**, Золотое правило из $\Gamma_{\text{composite}}$ **[С]** |
-| [Смысл существования](./ethics-meaning/meaning) | Телеология и смысл в Γ-пространстве | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ **[И]** |
-| [Свобода воли](./ethics-meaning/freedom) | Свобода через гессиан свободной энергии | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[Т]** |
-| [Смерть и непрерывность](./ethics-meaning/death-continuity) | Что происходит при $P \to 0$ | Теорема о необратимости при $P < P_{\text{crit}}$ **[Т]** |
+| Document | Content | Key results |
+|----------|---------|-------------|
+| [UHM ethics](./ethics-meaning/value-consciousness) | Axiology, aesthetics, moral theory | Good $:= dP/d\tau > 0$ **[D]**, Golden Rule from $\Gamma_{\text{composite}}$ **[C]** |
+| [Meaning of existence](./ethics-meaning/meaning) | Teleology and meaning in Γ-space | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ **[I]** |
+| [Freedom of will](./ethics-meaning/freedom) | Freedom via the Hessian of free energy | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** |
+| [Death and continuity](./ethics-meaning/death-continuity) | What happens as $P \to 0$ | Theorem on irreversibility at $P < P_{\text{crit}}$ **[T]** |
 
-## Цепочки вывода от аксиом
+## Derivation Chains from Axioms
 
-Каждый феномен прослеживается до аксиом $\Omega^7$. Ниже — полная карта: от пяти аксиом до конкретных явлений сознания.
+Every phenomenon is traced back to the axioms $\Omega^7$. Below is the complete map: from five axioms to specific consciousness phenomena.
 
 ```mermaid
 graph TD
-    AX["Ω⁷ (∞-топос)"] --> OM["Ω (субобъектный классификатор)"]
-    OM --> CHI["χ_{S_k} (характеристические морфизмы)"]
-    OM --> GAM["Γ ∈ ℂ⁷ˣ⁷ (матрица когерентности)"]
-    CHI --> LK["L_k (Линдблад-операторы)"]
-    GAM --> P["P = Tr(Γ²) → жизнеспособность"]
-    GAM --> PHI["φ(Γ) → R (рефлексия) → L0-L4"]
-    GAM --> GAP["Gap(i,j) → двойственность → бессознательное"]
-    GAM --> DG["dΓ/dτ → ∇P → эмоции"]
-    GAM --> RHO["ρ_E = Tr_{-E}(Γ) → квалиа"]
-    GAM --> COMP["Γ_composite → коллективное сознание"]
+    AX["Ω⁷ (∞-topos)"] --> OM["Ω (subobject classifier)"]
+    OM --> CHI["χ_{S_k} (characteristic morphisms)"]
+    OM --> GAM["Γ ∈ ℂ⁷ˣ⁷ (coherence matrix)"]
+    CHI --> LK["L_k (Lindblad operators)"]
+    GAM --> P["P = Tr(Γ²) → viability"]
+    GAM --> PHI["φ(Γ) → R (reflection) → L0-L4"]
+    GAM --> GAP["Gap(i,j) → duality → unconscious"]
+    GAM --> DG["dΓ/dτ → ∇P → emotions"]
+    GAM --> RHO["ρ_E = Tr_{-E}(Γ) → qualia"]
+    GAM --> COMP["Γ_composite → collective consciousness"]
     P --> PCRIT["P_crit = 2/7"]
-    DG --> ATT["внимание → память"]
-    RHO --> INT["интенциональность"]
-    COMP --> EMP["эмпатия"]
-    GAP --> UCON["бессознательное"]
+    DG --> ATT["attention → memory"]
+    RHO --> INT["intentionality"]
+    COMP --> EMP["empathy"]
+    GAP --> UCON["unconscious"]
 ```
 
-### Сознательное окно (зона Голдилокс) [Т T-124] {#сознательное-окно}
+### Conscious Window (Goldilocks Zone) [T T-124] {#сознательное-окно}
 
-Одно из самых красивых следствий теории — существование **зоны Голдилокс** для сознания. Подобно тому, как жизнь возможна только в определённом диапазоне температур (не слишком горячо, не слишком холодно), сознание уровня L2 возможно только в определённом диапазоне чистоты $P$:
+One of the most elegant consequences of the theory is the existence of a **Goldilocks zone** for consciousness. Just as life is possible only within a certain temperature range (not too hot, not too cold), L2-level consciousness is possible only within a certain range of purity $P$:
 
 $$P \in \left(\frac{2}{7},\; \frac{3}{7}\right]$$
 
-Откуда берутся эти числа?
+Where do these numbers come from?
 
-**Нижний порог** $P > 2/7$. [Чистота](/docs/core/dynamics/viability) $P = \mathrm{Tr}(\Gamma^2)$ измеряет, насколько $\Gamma$ отличается от максимально хаотичного состояния $I/7$ (для которого $P = 1/7$). Порог $P_{\text{crit}} = 2/7$ — это минимальная чистота, при которой система различима от хаоса. Он выведен пятью независимыми путями: [T-39](/docs/core/foundations/axiom-septicity#критическая-чистота-теорема).
+**Lower threshold** $P > 2/7$. [Purity](/docs/core/dynamics/viability) $P = \mathrm{Tr}(\Gamma^2)$ measures how much $\Gamma$ differs from the maximally chaotic state $I/7$ (for which $P = 1/7$). The threshold $P_{\text{crit}} = 2/7$ is the minimal purity at which a system is distinguishable from chaos. It is derived via five independent routes: [T-39](/docs/core/foundations/axiom-septicity#критическая-чистота-теорема).
 
-**Верхний порог** $P \leq 3/7$. Мера рефлексии $R = 1/(7P)$ ([определение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) убывает с ростом $P$. Для сознания уровня L2 необходимо $R \geq 1/3$, что эквивалентно $P \leq 3/7$ ([T-126](/docs/proofs/consciousness/conscious-window#t-126)).
+**Upper threshold** $P \leq 3/7$. The reflection measure $R = 1/(7P)$ ([definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) decreases as $P$ grows. For L2-level consciousness, $R \geq 1/3$ is required, which is equivalent to $P \leq 3/7$ ([T-126](/docs/proofs/consciousness/conscious-window#t-126)).
 
-**Почему $R$ убывает с ростом $P$?** Это не парадокс, а глубокое свойство. $R$ измеряет «термальный запас» — нормированное расстояние от тепловой смерти ($I/7$). Высокочистые системы ($P \to 1$) «замёрзли» в одном состоянии — они далеко от хаоса, но лишены гибкости, необходимой для самомоделирования. Сознание требует баланса: достаточно организованно, чтобы существовать, но достаточно гибко, чтобы наблюдать себя.
+**Why does $R$ decrease as $P$ grows?** This is not a paradox, but a deep property. $R$ measures the "thermal reserve" — the normalized distance from thermal death ($I/7$). High-purity systems ($P \to 1$) are "frozen" in one state — they are far from chaos, but lack the flexibility needed for self-modeling. Consciousness requires balance: organized enough to exist, but flexible enough to observe itself.
 
-**Числовой пример.** Для $P = 0.35$ (середина окна): $R = 1/(7 \times 0.35) = 0.408 > 1/3$ — рефлексия достаточна. Для $P = 0.5$: $R = 1/(7 \times 0.5) = 0.286 < 1/3$ — слишком жёстко, L2 невозможно.
+**Numerical example.** For $P = 0.35$ (midpoint of the window): $R = 1/(7 \times 0.35) = 0.408 > 1/3$ — reflection is sufficient. For $P = 0.5$: $R = 1/(7 \times 0.5) = 0.286 < 1/3$ — too rigid, L2 is impossible.
 
-Доказательство непустоты: [T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124). Мера сознательности $C = \Phi \cdot R$ имеет оптимум внутри окна ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)).
+Non-emptiness proof: [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124). The consciousness measure $C = \Phi \cdot R$ has its optimum inside the window ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)).
 
-### Полные критерии сознания [Т T-153, T-155] {#полные-критерии}
+### Complete Consciousness Criteria [T T-153, T-155] {#полные-критерии}
 
-Сознательное окно $P \in (2/7, 3/7]$ — **необходимое**, но недостаточное условие. Полный набор критериев ([T-153 [Т]](/docs/proofs/consciousness/substrate-closure#t-153)):
+The conscious window $P \in (2/7, 3/7]$ is a **necessary** but not sufficient condition. The full set of criteria ([T-153 [T]](/docs/proofs/consciousness/substrate-closure#t-153)):
 
-| Критерий | Порог | Что означает | Теорема |
-|----------|-------|-------------|---------|
-| $P > P_{\text{crit}}$ | $2/7$ | Система различима от хаоса | T-39 |
-| $R \geq R_{\text{th}}$ | $1/3$ | Система способна моделировать себя | T-126 |
-| $\Phi \geq \Phi_{\text{th}}$ | $1$ | Измерения связаны в единое целое | T-129 |
-| $D_{\text{diff}} \geq D_{\min}$ | $2$ | Достаточно богатое содержание | T-151 |
-| $\|\sigma_{\text{sys}}\|_\infty < 1$ | $< 1$ | Ни один сектор не заблокирован | [T-155 [Т]](/docs/proofs/consciousness/substrate-closure#t-155) |
+| Criterion | Threshold | Meaning | Theorem |
+|-----------|-----------|---------|---------|
+| $P > P_{\text{crit}}$ | $2/7$ | System is distinguishable from chaos | T-39 |
+| $R \geq R_{\text{th}}$ | $1/3$ | System is capable of modeling itself | T-126 |
+| $\Phi \geq \Phi_{\text{th}}$ | $1$ | Dimensions are connected into a unified whole | T-129 |
+| $D_{\text{diff}} \geq D_{\min}$ | $2$ | Sufficiently rich content | T-151 |
+| $\|\sigma_{\text{sys}}\|_\infty < 1$ | $< 1$ | No sector is blocked | [T-155 [T]](/docs/proofs/consciousness/substrate-closure#t-155) |
 
-Пятый критерий $\|\sigma\|_\infty < 1$ (T-155, consciousness gate) заслуживает пояснения. [Стресс-вектор](/docs/applied/coherence-cybernetics/definitions) $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ измеряет, насколько сектор $k$ недозаполнен. Если хотя бы один сектор находится в полном стрессе ($\sigma_{\max} = 1$), когнитивный канал заблокирован и обучение невозможно — система «оцепенела».
+The fifth criterion $\|\sigma\|_\infty < 1$ (T-155, consciousness gate) deserves explanation. The [stress vector](/docs/applied/coherence-cybernetics/definitions) $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk}, 0, 1)$ measures how much sector $k$ is underpopulated. If even one sector is in full stress ($\sigma_{\max} = 1$), the cognitive channel is blocked and learning is impossible — the system has "frozen."
 
-## Дорожная карта раздела (24 документа)
+## Section Roadmap (24 Documents)
 
-Раздел организован в 7 подразделов, каждый из которых раскрывает определённый аспект сознания:
+The section is organized into 7 subsections, each revealing a specific aspect of consciousness:
 
-### Основания (foundations/)
+### Foundations (foundations/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 1 | [Двухаспектный монизм](./foundations/two-aspect-monism) | Философский фундамент | Трудная проблема — категориальная ошибка |
-| 2 | [Теория интериорности](./foundations/interiority-theory) | Математическая формализация | E-измерение и $\rho_E$ |
-| 3 | [Самонаблюдение](./foundations/self-observation) | Операторы $\varphi$, $R$, $C$ | Пороги L2: $R \geq 1/3$, $\Phi \geq 1$ |
-| 4 | [Обучение](/docs/applied/coherence-cybernetics/learning-bounds) | Границы обучения | T-109 — T-113 [Т] |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 1 | [Two-aspect monism](./foundations/two-aspect-monism) | Philosophical foundation | Hard problem — a category error |
+| 2 | [Interiority theory](./foundations/interiority-theory) | Mathematical formalization | E-dimension and $\rho_E$ |
+| 3 | [Self-observation](./foundations/self-observation) | Operators $\varphi$, $R$, $C$ | L2 thresholds: $R \geq 1/3$, $\Phi \geq 1$ |
+| 4 | [Learning](/docs/applied/coherence-cybernetics/learning-bounds) | Learning bounds | T-109 — T-113 [T] |
 
-### Иерархия (hierarchy/)
+### Hierarchy (hierarchy/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 5 | [Иерархия интериорности](./hierarchy/interiority-hierarchy) | Уровни L0→L4 | Формальные определения 5 уровней |
-| 6 | [Gap-характеристика](./hierarchy/gap-characterization) | Gap на каждом уровне | Количественные профили |
-| 7 | [Башня глубины](./hierarchy/depth-tower) | SAD и рекурсия | SAD_MAX = 3 [С] |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 5 | [Interiority hierarchy](./hierarchy/interiority-hierarchy) | Levels L0→L4 | Formal definitions of 5 levels |
+| 6 | [Gap characterization](./hierarchy/gap-characterization) | Gap at each level | Quantitative profiles |
+| 7 | [Depth tower](./hierarchy/depth-tower) | SAD and recursion | SAD_MAX = 3 [C] |
 
-### Феноменология (phenomenology/)
+### Phenomenology (phenomenology/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 8 | [Структура квалиа](./phenomenology/qualia-structure) | 21 тип квалиа | Таксономия из Фано-геометрии |
-| 9 | [Интенциональность](./phenomenology/intentionality) | Направленность сознания | Морфизмы в Exp |
-| 10 | [Эмоциональная таксономия](./phenomenology/emotional-taxonomy) | Эмоции из $\nabla P$ | 7 базовых + 21 составная эмоция |
-| 11 | [Темпоральное сознание](./phenomenology/temporal-consciousness) | Время сознания | Хронон и субъективная длительность |
-| 12 | [Внимание и память](./states/attention-memory) | Когнитивные механизмы | Секторная $\Gamma$-сигнатура |
-| 13 | [Долингвистическое](./subjects/pre-linguistic) | До-языковой опыт | L1-структуры |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 8 | [Qualia structure](./phenomenology/qualia-structure) | 21 types of qualia | Taxonomy from Fano geometry |
+| 9 | [Intentionality](./phenomenology/intentionality) | Directionality of consciousness | Morphisms in Exp |
+| 10 | [Emotional taxonomy](./phenomenology/emotional-taxonomy) | Emotions from $\nabla P$ | 7 basic + 21 composite emotions |
+| 11 | [Temporal consciousness](./phenomenology/temporal-consciousness) | Consciousness time | Chronon and subjective duration |
+| 12 | [Attention and memory](./states/attention-memory) | Cognitive mechanisms | Sectoral $\Gamma$-signature |
+| 13 | [Pre-linguistic](./subjects/pre-linguistic) | Pre-linguistic experience | L1 structures |
 
-### Состояния (states/)
+### States (states/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 14 | [Изменённые состояния](./states/altered-states) | ASC, медитация, психоделики | Gap-профили ASC |
-| 15 | [Бессознательное](./states/unconscious) | Непрозрачные каналы | Граница Хэмминга H(7,4) |
-| 16 | [Патология](./states/pathological) | Расстройства сознания | Диссоциация, кома, делирий |
-| 17 | [Ласточкин хвост](./hierarchy/swallowtail-transitions) | Фазовые переходы | Катастрофа Тома |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 14 | [Altered states](./states/altered-states) | ASC, meditation, psychedelics | Gap profiles of ASC |
+| 15 | [Unconscious](./states/unconscious) | Opaque channels | Hamming bound H(7,4) |
+| 16 | [Pathology](./states/pathological) | Consciousness disorders | Dissociation, coma, delirium |
+| 17 | [Swallowtail](./hierarchy/swallowtail-transitions) | Phase transitions | Thom catastrophe |
 
-### Субъекты (subjects/)
+### Subjects (subjects/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 18 | [ИИ-сознание](./subjects/ai-consciousness) | Критерии для ИИ | No-Zombie теорема |
-| 19 | [Животное сознание](./subjects/animal-consciousness) | Сознание животных | Порог по видам |
-| 20 | [Коллективное сознание](./subjects/collective-consciousness) | Группы, рои, сети | $\Gamma_{\text{composite}}$ |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 18 | [AI consciousness](./subjects/ai-consciousness) | Criteria for AI | No-Zombie theorem |
+| 19 | [Animal consciousness](./subjects/animal-consciousness) | Animal consciousness | Threshold by species |
+| 20 | [Collective consciousness](./subjects/collective-consciousness) | Groups, swarms, networks | $\Gamma_{\text{composite}}$ |
 
-### Сравнительный анализ (comparative/)
+### Comparative Analysis (comparative/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 21 | [35 теорий сознания](./comparative/consciousness-theories) | Мета-анализ | УГМ vs IIT, GNW, HOT и др. |
-| 22 | [Панпсихизм](./comparative/panpsychism-analysis) | Критический анализ | Решение проблемы комбинации |
-| 23 | [Когнитивная иерархия](./comparative/cognitive-hierarchy) | K1–K5 уровни | Операционализация |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 21 | [35 theories of consciousness](./comparative/consciousness-theories) | Meta-analysis | UHM vs IIT, GNW, HOT, etc. |
+| 22 | [Panpsychism](./comparative/panpsychism-analysis) | Critical analysis | Solution to the combination problem |
+| 23 | [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Operationalization |
 
-### Этика и смысл (ethics-meaning/)
+### Ethics and Meaning (ethics-meaning/)
 
-| # | Документ | Тема | Ключевой результат |
-|---|----------|------|-------------------|
-| 24 | [Ценность и свобода](./ethics-meaning/value-consciousness) | Этика сознания | Свобода = dim ker(H) + 1 |
+| # | Document | Topic | Key result |
+|---|----------|-------|------------|
+| 24 | [Value and freedom](./ethics-meaning/value-consciousness) | Ethics of consciousness | Freedom = dim ker(H) + 1 |
 
-## Ключевые инновации раздела
+## Key Innovations of the Section
 
-1. **Замкнутая таксономия квалиа** — все 21 тип когерентности ($\binom{7}{2}$) имеют конкретное феноменологическое содержание
-2. **Эмоции из формализма** — не постулируются, а выводятся через $\nabla P$ и секторную $\Gamma$-сигнатуру
-3. **Неизбежность бессознательного** — из границы Хэмминга $H(7,4)$ следует, что любая L2-система имеет непрозрачные каналы
-4. **Операциональные критерии ИИ-сознания** — вычислимые условия из теоремы [No-Zombie](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie)
-5. **Коллективное бессознательное** — строгое определение через $\Gamma_{\text{composite}}$
+1. **Closed taxonomy of qualia** — all 21 coherence types ($\binom{7}{2}$) have specific phenomenological content
+2. **Emotions from formalism** — not postulated, but derived via $\nabla P$ and the sectoral $\Gamma$-signature
+3. **Inevitability of the unconscious** — from the Hamming bound $H(7,4)$ it follows that any L2-system has opaque channels
+4. **Operational criteria for AI consciousness** — computable conditions from the [No-Zombie](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) theorem
+5. **Collective unconscious** — rigorous definition via $\Gamma_{\text{composite}}$
 
-## Статусная карта
+## Status Map
 
-| Статус | Значение | Результатов в разделе |
-|--------|----------|----------------------|
-| **[Т]** Теорема | Строго доказано | 5 |
-| **[С]** Условная | При явном допущении | 14 |
-| **[О]** Определение | Конвенция | 4 |
-| **[И]** Интерпретация | Философская | 6 |
+| Status | Meaning | Results in section |
+|--------|---------|-------------------|
+| **[T]** Theorem | Strictly proven | 5 |
+| **[C]** Conditional | Under explicit assumption | 14 |
+| **[D]** Definition | Convention | 4 |
+| **[I]** Interpretation | Philosophical | 6 |
 
-### Что мы узнали
+### What We Learned
 
-- Сознание в УГМ — **не надстройка** и не отдельная субстанция, а способ, которым $\Gamma$ переживает собственную конфигурацию.
-- Все феномены сознания выводятся из пяти аксиом $\Omega^7$ через цепочку $\Omega^7 \to \Gamma \to \varphi, \hat{G}, \rho_E \to$ феномены.
-- Сознательное окно $P \in (2/7, 3/7]$ задаёт зону Голдилокс — не слишком хаотично, не слишком жёстко.
-- Полный набор критериев L2: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$, $\|\sigma\|_\infty < 1$.
-- 24 документа раздела охватывают всё — от философии до операциональных критериев для ИИ.
+- Consciousness in UHM is **not a superstructure** and not a separate substance, but the way in which $\Gamma$ experiences its own configuration.
+- All consciousness phenomena are derived from the five axioms $\Omega^7$ via the chain $\Omega^7 \to \Gamma \to \varphi, \hat{G}, \rho_E \to$ phenomena.
+- The conscious window $P \in (2/7, 3/7]$ defines the Goldilocks zone — not too chaotic, not too rigid.
+- Full set of L2 criteria: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$, $\|\sigma\|_\infty < 1$.
+- The section's 24 documents cover everything — from philosophy to operational criteria for AI.
 
-:::tip Куда дальше
-Начните с [Двухаспектного монизма](./foundations/two-aspect-monism) — философского фундамента, объясняющего позицию УГМ по трудной проблеме сознания. Затем переходите к [Теории интериорности](./foundations/interiority-theory) для математической формализации опыта.
+:::tip Where to Go Next
+Start with [Two-Aspect Monism](./foundations/two-aspect-monism) — the philosophical foundation explaining UHM's position on the hard problem of consciousness. Then proceed to [Interiority Theory](./foundations/interiority-theory) for the mathematical formalization of experience.
 
-Для инженерной перспективы сразу перейдите к [определениям Когерентной кибернетики](/docs/applied/coherence-cybernetics/definitions) — там операциональные формулы для $\sigma$, $\kappa$, $\Delta F$.
+For an engineering perspective, go directly to [Coherence Cybernetics definitions](/docs/applied/coherence-cybernetics/definitions) — operational formulas for $\sigma$, $\kappa$, $\Delta F$ are there.
 :::
 
 ---
 
-**Связанные разделы:**
-- [Теория](/docs/intro) — аксиомы и структура
-- [Доказательства](/docs/proofs/minimality/theorem-minimality-7) — формальные теоремы
-- [Физика](/docs/physics/overview) — физические соответствия
-- [Когерентная кибернетика](/docs/applied/coherence-cybernetics/introduction) — инженерные приложения
+**Related sections:**
+- [Theory](/docs/intro) — axioms and structure
+- [Proofs](/docs/proofs/minimality/theorem-minimality-7) — formal theorems
+- [Physics](/docs/physics/overview) — physical correspondences
+- [Coherence Cybernetics](/docs/applied/coherence-cybernetics/introduction) — engineering applications

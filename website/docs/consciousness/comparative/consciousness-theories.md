@@ -1,453 +1,453 @@
 ---
 sidebar_position: 1
-title: Теории сознания
-description: Связь КК с 35 теориями сознания — IIT, FEP, автопоэзис, Деннет, Панксепп, Дамасио, Сет, Анохин и др.
+title: Theories of Consciousness
+description: CC's relation to 35 theories of consciousness — IIT, FEP, autopoiesis, Dennett, Panksepp, Damasio, Seth, Anokhin, and others.
 slug: /consciousness/comparative/consciousness-theories
 ---
 
-# Теории Сознания: Мета-Сравнительный Анализ
+# Theories of Consciousness: A Meta-Comparative Analysis
 
-:::info Мост из предыдущего раздела
-В разделах [Состояния](/docs/consciousness/states/pathological) мы рассмотрели, как $\Gamma$-профиль определяет нормальные и патологические состояния. Теперь — контекст: как формализм УГМ соотносится с 35 альтернативными теориями сознания? Каждая из них — проекция $\Gamma$ на определённый аспект: интеграцию (IIT), доступ (GWT), рефлексию (HOT), предиктивную ошибку (FEP).
+:::info Bridge from the previous section
+In the [States](/docs/consciousness/states/pathological) sections we examined how the $\Gamma$-profile determines normal and pathological states. Now — context: how does the UHM formalism relate to 35 alternative theories of consciousness? Each of them is a projection of $\Gamma$ onto a specific aspect: integration (IIT), access (GWT), reflection (HOT), prediction error (FEP).
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\mathcal{R}[\Gamma, E]$ — [регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член)
-- $\rho_E$ — редуцированная матрица плотности [измерения Интериорности](/docs/core/structure/dimension-e)
-- $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
-- [Т] — теорема, [С] — условная теорема, [И] — интерпретация. Подробнее: [реестр статусов](/docs/reference/status-registry)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\mathcal{R}[\Gamma, E]$ — [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член)
+- $\rho_E$ — reduced density matrix of the [Interiority dimension](/docs/core/structure/dimension-e)
+- $\mathbf{Hol}$ — [Holon category](/docs/proofs/categorical/categorical-formalism)
+- [T] — theorem, [C] — conditional theorem, [I] — interpretation. Details: [status registry](/docs/reference/status-registry)
 :::
 
-## Введение: 35 теорий и одна проблема {#введение}
+## Introduction: 35 theories and one problem {#введение}
 
-Наука о сознании — молодая область. Хотя философы обсуждают природу сознания со времён Декарта (1641), систематические **научные** теории появились лишь в 1980–2000-х годах. К середине 2020-х их насчитывается более тридцати — от нейробиологических (NCC, RPT, DIT) до математических (IIT, FEP) и философских (панпсихизм, расселианский монизм).
+Consciousness science is a young field. Although philosophers have discussed the nature of consciousness since Descartes (1641), systematic **scientific** theories appeared only in the 1980–2000s. By the mid-2020s there are more than thirty — from neurobiological (NCC, RPT, DIT) to mathematical (IIT, FEP) and philosophical (panpsychism, Russellian monism).
 
-Все эти теории пытаются ответить на один вопрос: **что такое сознание и почему оно существует?** Но каждая подходит к вопросу со своей стороны, фокусируясь на одном аспекте: интеграции информации (IIT), рекуррентной обработке (RPT), предиктивном кодировании (PP), самомоделировании (AST) или метарепрезентации (HOT).
+All these theories try to answer one question: **what is consciousness and why does it exist?** But each approaches the question from its own side, focusing on one aspect: information integration (IIT), recurrent processing (RPT), predictive coding (PP), self-modelling (AST), or metarepresentation (HOT).
 
-КК заявляет, что каждая из этих теорий — **проекция** единого формализма на определённый аспект. IIT проецирует $\Gamma$ на интеграцию ($\Phi$), GWT — на порог доступа ($P > 2/7$), HOT — на рефлексию ($R \geq 1/3$), PP — на предиктивную ошибку ($\sigma_k$). Ни одна не покрывает всё; КК претендует на **объединение**.
+CC claims that each of these theories is a **projection** of a unified formalism onto a specific aspect. IIT projects $\Gamma$ onto integration ($\Phi$), GWT onto the access threshold ($P > 2/7$), HOT onto reflection ($R \geq 1/3$), PP onto prediction error ($\sigma_k$). None covers everything; CC claims to **unify** them.
 
-Это серьёзное заявление, и оно обязывает к тщательному анализу. В этом документе мы:
-1. Рассматриваем каждую из 35 теорий: её историю, центральную идею и формальное ядро
-2. Показываем точное отображение в формализм КК (функтор)
-3. Честно указываем, что каждая теория делает **лучше** КК
-4. Завершаем мастер-таблицей и оценкой полноты
+This is a serious claim, and it demands careful analysis. In this document we:
+1. Examine each of the 35 theories: its history, central idea, and formal core
+2. Show the precise mapping into the CC formalism (functor)
+3. Honestly indicate what each theory does **better** than CC
+4. Close with a master table and assessment of completeness
 
-### Навигация по документу
+### Document navigation
 
-Теории сгруппированы по типу:
+Theories are grouped by type:
 
-| Группа | Теории | Секции |
-|--------|--------|--------|
-| **Кибернетические** | Автопоэзис, FEP, PP, PCT | §1-3, 6, 14, 18 |
-| **Информационные** | IIT, GWT, CEMI | §2, 4, 17 |
-| **Рефлексивные** | HOT, AST, RPT | §5-6, 10 |
-| **Нейробиологические** | TNGS, ART, DIT, OA, NCC | §11-12, 16, 19-20 |
-| **Телесные/энактивные** | Энактивизм, SMCT, Дамасио, Сет | §13-14, 27-28 |
-| **Квантовые** | Quantum Cognition, Orch-OR, Quantum Mind | §7-8, 22 |
-| **Российская школа** | Анохин (П.К.), Швырков, Иваницкий, Аллахвердов | §32-35 |
-| **Философские** | Расселианский монизм, Деннет | §24-25 |
-| **Аффективные** | Панксепп, Солмс, Меркер | §26, 29-30 |
+| Group | Theories | Sections |
+|-------|----------|---------|
+| **Cybernetic** | Autopoiesis, FEP, PP, PCT | §1-3, 6, 14, 18 |
+| **Informational** | IIT, GWT, CEMI | §2, 4, 17 |
+| **Reflexive** | HOT, AST, RPT | §5-6, 10 |
+| **Neurobiological** | TNGS, ART, DIT, OA, NCC | §11-12, 16, 19-20 |
+| **Somatic/enactive** | Enactivism, SMCT, Damasio, Seth | §13-14, 27-28 |
+| **Quantum** | Quantum Cognition, Orch-OR, Quantum Mind | §7-8, 22 |
+| **Russian school** | Anokhin (P.K.), Shvyrkov, Ivanitsky, Allakhverdov | §32-35 |
+| **Philosophical** | Russellian monism, Dennett | §24-25 |
+| **Affective** | Panksepp, Solms, Merker | §26, 29-30 |
 
 ---
 
-## 1. Автопоэзис (Матурана, Варела) {#автопоэзис}
+## 1. Autopoiesis (Maturana, Varela) {#автопоэзис}
 
-**Фокус:** Самопроизводство, операциональное замыкание.
+**Focus:** Self-production, operational closure.
 
-**Источник:** Maturana H., Varela F. «Autopoiesis and Cognition» (1980).
+**Source:** Maturana H., Varela F. «Autopoiesis and Cognition» (1980).
 
-### Создатели и история
+### Creators and history
 
-**Умберто Матурана** (1928–2021) — чилийский биолог и нейробиолог. В 1968 году, работая над проблемой цветового зрения у голубей, Матурана пришёл к радикальному выводу: нервная система не «представляет» мир — она **создаёт** свою реальность через собственные операции. Совместно с учеником **Франсиско Варелой** (1946–2001) в 1972 году он ввёл понятие **автопоэзиса** — самопроизводства.
+**Humberto Maturana** (1928–2021) — Chilean biologist and neurobiologist. In 1968, while working on the problem of colour vision in pigeons, Maturana arrived at a radical conclusion: the nervous system does not "represent" the world — it **creates** its own reality through its own operations. Together with his student **Francisco Varela** (1946–2001) he introduced the concept of **autopoiesis** — self-production — in 1972.
 
-Контекст был политическим: Чили эпохи Альенде, затем Пиночета. Матурана и Варела развивали теорию в условиях интеллектуальной изоляции от англо-американской науки. Их книга *Autopoiesis and Cognition* (1980) стала классикой, но получила широкое признание лишь в 1990-е — через влияние на социолога Никласа Лумана и философа Эвана Томпсона.
+The context was political: Chile in the era of Allende, then Pinochet. Maturana and Varela developed the theory under conditions of intellectual isolation from Anglo-American science. Their book *Autopoiesis and Cognition* (1980) became a classic, but received wide recognition only in the 1990s — through its influence on sociologist Niklas Luhmann and philosopher Evan Thompson.
 
-**Ключевые понятия:**
-- **Автопоэтическая организация** — сеть процессов, производящих компоненты, которые воспроизводят эту сеть
-- **Операциональное замыкание** — система определяется через свои внутренние операции
-- **Структурное сопряжение** — взаимодействие с окружением при сохранении идентичности
+**Key concepts:**
+- **Autopoietic organisation** — a network of processes producing components that reproduce this network
+- **Operational closure** — the system is defined through its internal operations
+- **Structural coupling** — interaction with the environment while preserving identity
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| Автопоэзис (Матурана, Варела) | КК |
+| Autopoiesis (Maturana, Varela) | CC |
 |-------------------------------|-----|
-| Автопоэтическая организация | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ |
-| Компоненты сети | Измерения $A$, $S$, $D$, $L$ |
-| Структурное сопряжение | Взаимодействие Голонома с окружением $E$ |
-| Операциональное замыкание | Инвариантность структуры при [жизнеспособности](/docs/core/dynamics/viability) |
-| — | [L-унификация](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω): $L_k = \sqrt{\chi_{S_k}}$ |
+| Autopoietic organisation | [(AP)](/docs/core/foundations/axiom-septicity): $\varphi(\Gamma^*) = \Gamma^*$ |
+| Network components | Dimensions $A$, $S$, $D$, $L$ |
+| Structural coupling | Holon's interaction with environment $E$ |
+| Operational closure | Structural invariance under [viability](/docs/core/dynamics/viability) |
+| — | [L-unification](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω): $L_k = \sqrt{\chi_{S_k}}$ |
 
-**Добавляется:**
-- Операциональное замыкание (неподвижная точка $\varphi$)
-- Различение организация/структура
+**Added:**
+- Operational closure (fixed point of $\varphi$)
+- Distinction between organisation/structure
 
-**Что теряется:**
-- Феноменология ([E-измерение](/docs/core/structure/dimension-e) как фундаментальное)
-- Квантовое основание [(QG)](/docs/core/foundations/axiom-septicity)
-- Формальная динамика (нет аналога уравнения эволюции)
-- **Логическое происхождение динамики** (L-унификация в УГМ выводит диссипацию из структуры Ω)
+**What is lost:**
+- Phenomenology ([E-dimension](/docs/core/structure/dimension-e) as fundamental)
+- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity)
+- Formal dynamics (no analogue of the evolution equation)
+- **Logical origin of dynamics** (L-unification in UHM derives dissipation from the structure of Ω)
 
 <a id="теория-интегрированной-информации-iit"></a>
 
-## 2. Теория интегрированной информации (IIT) {#iit}
+## 2. Integrated Information Theory (IIT) {#iit}
 
-**Фокус:** Интеграция информации как мера сознания.
+**Focus:** Information integration as a measure of consciousness.
 
-**Источник:** Tononi G. «Integrated Information Theory» (IIT 3.0: 2014, IIT 4.0: 2023).
+**Source:** Tononi G. «Integrated Information Theory» (IIT 3.0: 2014, IIT 4.0: 2023).
 
-### Создатели и история
+### Creators and history
 
-**Джулио Тонони** (р. 1960) — итальянско-американский нейробиолог, профессор Университета Висконсин-Мэдисон. Начинал как ученик Джеральда Эдельмана (создателя TNGS, см. §11) и соавтор понятия «нейронной сложности». В 2004 году Тонони предложил IIT как самостоятельную теорию, отделившуюся от TNGS. Ключевая идея: сознание тождественно определённой математической структуре — причинно-эффектной структуре системы с максимальной интегрированной информацией.
+**Giulio Tononi** (b. 1960) — Italian-American neurobiologist, professor at the University of Wisconsin-Madison. He began as a student of Gerald Edelman (creator of TNGS, see §11) and co-author of the concept of "neural complexity". In 2004 Tononi proposed IIT as an independent theory that split from TNGS. The key idea: consciousness is identical to a specific mathematical structure — the cause-effect structure of a system with maximal integrated information.
 
-IIT прошла четыре версии: IIT 1.0 (2004), 2.0 (2008), 3.0 (2014) и 4.0 (2023). Каждая добавляла формальную строгость и вводила новые постулаты. IIT 4.0 — наиболее полная версия, определяющая $\Phi$ через «unfolded» причинно-эффектную структуру.
+IIT has gone through four versions: IIT 1.0 (2004), 2.0 (2008), 3.0 (2014), and 4.0 (2023). Each added formal rigour and introduced new postulates. IIT 4.0 is the most complete version, defining $\Phi$ through the "unfolded" cause-effect structure.
 
-IIT стала одной из самых обсуждаемых теорий сознания и подверглась экспериментальной проверке в рамках проекта COGITATE (Templeton Foundation) — первой в истории «adversarial collaboration» между конкурирующими теориями сознания (IIT vs GWT).
+IIT became one of the most discussed theories of consciousness and was subjected to experimental testing in the COGITATE project (Templeton Foundation) — the first "adversarial collaboration" in history between competing theories of consciousness (IIT vs GWT).
 
-**Ключевые понятия:**
-- **$\Phi^{\mathrm{IIT}}$** — интегрированная информация системы
-- **Постулаты IIT** — существование, композиция, информация, интеграция, исключение
-- **Q-shape** (квалиа-пространство) — геометрия опыта
+**Key concepts:**
+- **$\Phi^{\mathrm{IIT}}$** — integrated information of the system
+- **IIT postulates** — existence, composition, information, integration, exclusion
+- **Q-shape** (qualia-space) — geometry of experience
 
-**Концептуальные соответствия (не формальные изоморфизмы):**
+**Conceptual correspondences (not formal isomorphisms):**
 
-:::warning Важное различие
-$\Phi^{\mathrm{IIT}}$ и $\Phi(\Gamma)$ — **разные математические объекты**:
-- $\Phi^{\mathrm{IIT}}$ вычисляется через минимальную информационную перегородку (NP-сложная задача)
-- $\Phi(\Gamma)$ в КК — простое отношение норм Фробениуса
+:::warning Important distinction
+$\Phi^{\mathrm{IIT}}$ and $\Phi(\Gamma)$ are **different mathematical objects**:
+- $\Phi^{\mathrm{IIT}}$ is computed through the minimum information partition (NP-hard task)
+- $\Phi(\Gamma)$ in CC is a simple ratio of Frobenius norms
 
-КК определяет **собственную меру интеграции**, вдохновлённую идеями IIT, но не тождественную $\Phi^{\mathrm{IIT}}$.
+CC defines its **own integration measure**, inspired by IIT ideas but not identical to $\Phi^{\mathrm{IIT}}$.
 :::
 
-| IIT (Тонони) | Концептуальный аналог в КК |
-|--------------|-----|
-| $\Phi^{\mathrm{IIT}}$ (MIP-основанная) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) (норма-основанная) |
-| Механизмы и состояния | [Голоном](/docs/core/structure/holon) $\mathbb{H}$ |
-| Q-shape (cause-effect structure) | [Феноменальная геометрия](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry) (проективное пространство) |
-| Постулат интеграции | [U-измерение](/docs/core/structure/dimension-u) |
-| Постулат исключения | Единственность [неподвижной точки](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^*$ |
+| IIT (Tononi) | Conceptual analogue in CC |
+|--------------|--------------------------|
+| $\Phi^{\mathrm{IIT}}$ (MIP-based) | [$\Phi(\Gamma)$](/docs/core/structure/dimension-u#мера-интеграции-φ) (norm-based) |
+| Mechanisms and states | [Holon](/docs/core/structure/holon) $\mathbb{H}$ |
+| Q-shape (cause-effect structure) | [Phenomenal geometry](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry) (projective space) |
+| Integration postulate | [U-dimension](/docs/core/structure/dimension-u) |
+| Exclusion postulate | Uniqueness of the [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) $\Gamma^*$ |
 
-**Добавляется:**
-- Формальная [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- Связь с [сознательностью](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- Аксиомы, связывающие структуру и опыт
+**Added:**
+- Formal [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- Connection to [consciousness](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
+- Axioms linking structure and experience
 
-**Что теряется:**
-- [Динамика](/docs/core/dynamics/evolution) (унитарный, диссипативный, регенеративный члены)
-- [Жизнеспособность](/docs/core/dynamics/viability)
-- [Самомоделирование](/docs/proofs/categorical/formalization-phi) ($\varphi$)
-- Квантовое основание [(QG)](/docs/core/foundations/axiom-septicity)
+**What is lost:**
+- [Dynamics](/docs/core/dynamics/evolution) (unitary, dissipative, regenerative terms)
+- [Viability](/docs/core/dynamics/viability)
+- [Self-modelling](/docs/proofs/categorical/formalization-phi) ($\varphi$)
+- Quantum foundation [(QG)](/docs/core/foundations/axiom-septicity)
 
 <a id="принцип-свободной-энергии-fep"></a>
 
-## 3. Принцип свободной энергии (FEP) {#fep}
+## 3. Free Energy Principle (FEP) {#fep}
 
-**Фокус:** Минимизация вариационной свободной энергии.
+**Focus:** Minimisation of variational free energy.
 
-**Источник:** Friston K. «The free-energy principle: a unified brain theory?» (2010); «Active inference and learning» (2016).
+**Source:** Friston K. «The free-energy principle: a unified brain theory?» (2010); «Active inference and learning» (2016).
 
-### Создатели и история
+### Creators and history
 
-**Карл Фристон** (р. 1959) — британский нейробиолог, профессор Университетского колледжа Лондона (UCL), создатель Statistical Parametric Mapping (SPM) — стандартного инструмента анализа fMRI. Фристон — самый цитируемый нейробиолог в мире (h-индекс > 250). В 2006–2010 годах он предложил FEP — принцип, объединяющий восприятие, действие, обучение и эволюцию под одной математической крышей: минимизацией вариационной свободной энергии $F$.
+**Karl Friston** (b. 1959) — British neurobiologist, professor at University College London (UCL), creator of Statistical Parametric Mapping (SPM) — the standard tool for fMRI analysis. Friston is the most-cited neurobiologist in the world (h-index > 250). In 2006–2010 he proposed FEP — a principle unifying perception, action, learning, and evolution under a single mathematical roof: minimisation of variational free energy $F$.
 
-FEP вырос из байесовского подхода к мозгу (Helmholtz, Dayan, Hinton) и термодинамики неравновесных систем. Фристон утверждает, что FEP — не просто теория мозга, а **принцип существования**: любая система, которая существует (не распадается), необходимо минимизирует свободную энергию. Это самое амбициозное утверждение в современной нейронауке — и самое спорное.
+FEP grew from the Bayesian approach to the brain (Helmholtz, Dayan, Hinton) and the thermodynamics of non-equilibrium systems. Friston claims that FEP is not merely a theory of the brain but a **principle of existence**: any system that exists (does not disintegrate) necessarily minimises free energy. This is the most ambitious claim in modern neuroscience — and the most controversial.
 
-**Ключевые понятия:**
-- **Вариационная свободная энергия** $F$ — верхняя граница сюрприза
-- **Марковское одеяло** — статистическая граница, отделяющая внутренние от внешних состояний
-- **Активный вывод** — действия как минимизация ожидаемой свободной энергии
+**Key concepts:**
+- **Variational free energy** $F$ — upper bound on surprise
+- **Markov blanket** — statistical boundary separating internal from external states
+- **Active inference** — actions as minimisation of expected free energy
 
-:::info УГМ как обобщение FEP
-**[Теорема 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep):** FEP Фристона является **классическим пределом** вариационной характеризации φ в УГМ.
+:::info UHM as a generalisation of FEP
+**[Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep):** Friston's FEP is the **classical limit** of the variational characterisation of φ in UHM.
 
-В классическом пределе (диагональные матрицы плотности $\Gamma = \mathrm{diag}(p)$):
+In the classical limit (diagonal density matrices $\Gamma = \mathrm{diag}(p)$):
 $$
-\mathcal{F}_{\text{УГМ}} = S_{vN} + D_{KL} \xrightarrow{\text{classical}} H(q) + D_{KL}(q \| p) = F_{FEP}
+\mathcal{F}_{\text{UHM}} = S_{vN} + D_{KL} \xrightarrow{\text{classical}} H(q) + D_{KL}(q \| p) = F_{FEP}
 $$
 
-Это строго доказанное соответствие, а не концептуальная аналогия.
+This is a strictly proven correspondence, not a conceptual analogy.
 :::
 
-**Формальные соответствия:**
+**Formal correspondences:**
 
-| FEP (Фристон) | Формальный аналог в КК | Статус |
-|---------------|------------------------|--------|
-| Свободная энергия $F = \langle E \rangle_q - H(q)$ | $\mathcal{F} = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ | **[Теорема 4.2](/docs/proofs/dynamics/fep-derivation)** |
-| Марковское одеяло | Граница [Голонома](/docs/core/structure/holon) — [измерение A](/docs/core/structure/dimension-a) | Концептуальное |
-| Внутренние состояния | Матрица когерентности $\Gamma$ | Формальное |
-| Активный вывод | [Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ | Концептуальное |
-| Генеративная модель | [Оператор самомоделирования](/docs/proofs/categorical/formalization-phi) $\varphi$ | **[Теорема 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)** |
-| Сенсорные состояния | Взаимодействие с окружением через [O-измерение](/docs/core/structure/dimension-o) | Концептуальное |
+| FEP (Friston) | Formal analogue in CC | Status |
+|---------------|-----------------------|--------|
+| Free energy $F = \langle E \rangle_q - H(q)$ | $\mathcal{F} = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ | **[Theorem 4.2](/docs/proofs/dynamics/fep-derivation)** |
+| Markov blanket | Boundary of [Holon](/docs/core/structure/holon) — [dimension A](/docs/core/structure/dimension-a) | Conceptual |
+| Internal states | Coherence matrix $\Gamma$ | Formal |
+| Active inference | [Regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ | Conceptual |
+| Generative model | [Self-modelling operator](/docs/proofs/categorical/formalization-phi) $\varphi$ | **[Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)** |
+| Sensory states | Interaction with environment through [O-dimension](/docs/core/structure/dimension-o) | Conceptual |
 
-**Ключевой результат:** В УГМ φ определяется **категориально** (сопряжение $\varphi \dashv i$), а вариационная форма $\varphi = \arg\min[S_{vN} + D_{KL}]$ — **доказанная теорема** ([Теорема 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)).
+**Key result:** In UHM φ is defined **categorically** (adjunction $\varphi \dashv i$), and the variational form $\varphi = \arg\min[S_{vN} + D_{KL}]$ is a **proven theorem** ([Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации)).
 
-**Что FEP добавляет (как мотивация):**
-- Термодинамическое обоснование
-- Байесовский вывод
-- Активный вывод
-- Связь с градиентным потоком
+**What FEP adds (as motivation):**
+- Thermodynamic grounding
+- Bayesian inference
+- Active inference
+- Connection to gradient flow
 
-**Формальный статус FEP в УГМ:**
-- FEP является **классическим пределом** ([Теорема 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep))
-- Вариационный принцип φ **выводится** из категориального определения ([Теорема 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации))
-- В FEP вариационный принцип — аксиома; в УГМ — теорема
+**Formal status of FEP in UHM:**
+- FEP is the **classical limit** ([Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep))
+- The variational principle of φ is **derived** from the categorical definition ([Theorem 3.1](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации))
+- In FEP the variational principle is an axiom; in UHM it is a theorem
 
-**Что FEP не включает (УГМ расширяет):**
-- [Экспериенциальное содержание](/docs/proofs/categorical/categorical-formalism#2-категория-exp) (E-измерение как фундаментальное)
-- [7-мерная структура](/docs/core/structure/dimensions) ([обоснование](/docs/core/foundations/axiom-omega#октонионная-структура))
-- [Рефлексивное замыкание](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) (L0→L1→L2→L3→L4)
-- **Квантовое обобщение** (матрицы плотности вместо вероятностей)
+**What FEP does not include (UHM extends):**
+- [Experiential content](/docs/proofs/categorical/categorical-formalism#2-категория-exp) (E-dimension as fundamental)
+- [7-dimensional structure](/docs/core/structure/dimensions) ([justification](/docs/core/foundations/axiom-omega#октонионная-структура))
+- [Reflexive closure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) (L0→L1→L2→L3→L4)
+- **Quantum generalisation** (density matrices instead of probabilities)
 
 ---
 
 <a id="теория-глобального-рабочего-пространства-gwt"></a>
 
-## 4. Теория глобального рабочего пространства (GWT) {#gwt}
+## 4. Global Workspace Theory (GWT) {#gwt}
 
-**Фокус:** Широковещательный доступ к информации как механизм сознания.
+**Focus:** Broadcast access to information as the mechanism of consciousness.
 
-**Источник:** Baars B. «A Cognitive Theory of Consciousness» (1988); Dehaene S., Naccache L. «Towards a cognitive neuroscience of consciousness» (2001).
+**Source:** Baars B. «A Cognitive Theory of Consciousness» (1988); Dehaene S., Naccache L. «Towards a cognitive neuroscience of consciousness» (2001).
 
-### Создатели и история
+### Creators and history
 
-**Бернард Баарс** (р. 1946) — голландско-американский когнитивный нейробиолог, предложивший GWT в 1988 году. Его метафора «театра сознания» стала одной из самых влиятельных в науке о сознании: множество специализированных модулей (зрение, слух, память, планирование) конкурируют за доступ к центральному «рабочему пространству», содержимое которого транслируется всем модулям одновременно.
+**Bernard Baars** (b. 1946) — Dutch-American cognitive neurobiologist who proposed GWT in 1988. His metaphor of the "theatre of consciousness" became one of the most influential in consciousness science: multiple specialised modules (vision, hearing, memory, planning) compete for access to a central "workspace", whose contents are broadcast to all modules simultaneously.
 
-**Станислас Деан** (р. 1965) — французский нейробиолог (Collège de France), развил GWT в нейробиологическую теорию GNW (Global Neuronal Workspace), связав «широковещание» с конкретными нейронными механизмами: длинноаксонные связи префронтальной и теменной коры обеспечивают «воспламенение» (ignition) — резкий переход от локальной обработки к глобальному доступу. GNW — одна из двух теорий, проверенных в проекте COGITATE.
+**Stanislas Dehaene** (b. 1965) — French neurobiologist (Collège de France), who developed GWT into the neurobiological theory GNW (Global Neuronal Workspace), linking "broadcasting" to specific neural mechanisms: long-axon connections of the prefrontal and parietal cortex provide "ignition" — an abrupt transition from local processing to global access. GNW is one of the two theories tested in the COGITATE project.
 
-**Ключевые понятия:**
-- **Глобальное рабочее пространство** — центральный «доска объявлений», куда модули проецируют информацию
-- **Воспламенение (ignition)** — порог, при котором локальная активность становится глобально доступной
-- **Широковещание (broadcasting)** — глобальная доступность информации для всех модулей
+**Key concepts:**
+- **Global workspace** — a central "bulletin board" onto which modules project information
+- **Ignition** — the threshold at which local activity becomes globally accessible
+- **Broadcasting** — global availability of information to all modules
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| GWT (Baars, Dehaene) | КК |
-|------------------------|-----|
-| Глобальное рабочее пространство | [U-измерение](/docs/core/structure/dimension-u): интеграция через $\Phi(\Gamma)$ |
-| Воспламенение (ignition) | Порог жизнеспособности $P > P_{\text{crit}} = 2/7$ |
-| Широковещание | Недиагональные элементы $\Gamma$ (когерентность между измерениями) |
-| Бессознательная обработка | $R < R_{\text{th}}$: система функционирует, но без рефлексивного доступа |
+| GWT (Baars, Dehaene) | CC |
+|----------------------|-----|
+| Global workspace | [U-dimension](/docs/core/structure/dimension-u): integration through $\Phi(\Gamma)$ |
+| Ignition | Viability threshold $P > P_{\text{crit}} = 2/7$ |
+| Broadcasting | Off-diagonal elements of $\Gamma$ (coherence between dimensions) |
+| Unconscious processing | $R < R_{\text{th}}$: system functions but without reflexive access |
 
-**Что КК добавляет:** GWT описывает *архитектурный* механизм (широковещание), но не объясняет, почему он порождает опыт. КК формализует интеграцию через $\Phi(\Gamma)$ и связывает её с [E-измерением](/docs/core/structure/dimension-e) — феноменальным содержанием, которое в GWT остаётся необъяснённым.
+**What CC adds:** GWT describes an *architectural* mechanism (broadcasting), but does not explain why it gives rise to experience. CC formalises integration through $\Phi(\Gamma)$ and links it to the [E-dimension](/docs/core/structure/dimension-e) — phenomenal content, which in GWT remains unexplained.
 
 <a id="теории-высшего-порядка-hot"></a>
 
-## 5. Теории высшего порядка (HOT) {#hot}
+## 5. Higher-Order Theories (HOT) {#hot}
 
-**Фокус:** Сознание как репрезентация репрезентаций.
+**Focus:** Consciousness as representation of representations.
 
-**Источник:** Rosenthal D. «Consciousness and Mind» (2005); Lau H., Rosenthal D. «Empirical support for higher-order theories of conscious awareness» (2011).
+**Source:** Rosenthal D. «Consciousness and Mind» (2005); Lau H., Rosenthal D. «Empirical support for higher-order theories of conscious awareness» (2011).
 
-### Создатели и история
+### Creators and history
 
-**Дэвид Розенталь** (р. 1942) — американский философ (CUNY Graduate Center), развивший HOT-теорию с 1980-х годов. Его идея: психическое состояние становится **сознательным**, когда субъект имеет **мысль о нём** — мысль высшего порядка (higher-order thought). Видеть красное — это первый порядок; осознавать, что видишь красное — второй порядок. Только второй делает первый сознательным.
+**David Rosenthal** (b. 1942) — American philosopher (CUNY Graduate Center), who developed HOT theory from the 1980s. His idea: a mental state becomes **conscious** when the subject has a **thought about it** — a higher-order thought. Seeing red is first-order; being aware that one sees red is second-order. Only the second makes the first conscious.
 
-**Хакван Лау** (UCLA) в 2010-х дополнил HOT нейровизуализационными данными, связав метарепрезентацию с активностью дорсолатеральной префронтальной коры (dlPFC). HOT — единственная теория, где сознание **буквально** = метарепрезентация; другие (IIT, GWT) считают метарепрезентацию следствием, а не причиной.
+**Hakwan Lau** (UCLA) in the 2010s supplemented HOT with neuroimaging data, linking metarepresentation to activity in the dorsolateral prefrontal cortex (dlPFC). HOT is the only theory where consciousness **literally** = metarepresentation; others (IIT, GWT) treat metarepresentation as a consequence rather than a cause.
 
-**Ключевые понятия:**
-- **Высшего порядка мысль (HOT)** — метарепрезентация первого порядка состояния
-- **Высшего порядка восприятие (HOP)** — перцептивный мониторинг собственных состояний
-- **Условие осведомлённости** — состояние сознательно тогда и только тогда, когда субъект осведомлён о нём
+**Key concepts:**
+- **Higher-order thought (HOT)** — metarepresentation of a first-order state
+- **Higher-order perception (HOP)** — perceptual monitoring of one's own states
+- **Awareness condition** — a state is conscious if and only if the subject is aware of it
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| HOT (Rosenthal, Lau) | КК |
-|------------------------|-----|
-| Метарепрезентация (HOT) | [Оператор самомоделирования](/docs/proofs/categorical/formalization-phi) $\varphi$: $\varphi(\Gamma) \approx \Gamma$ |
-| Мониторинг (HOP) | [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R(\Gamma) \geq R_{\text{th}}$ |
-| Бессознательные состояния | $R < R_{\text{th}}$: первый порядок без метарепрезентации |
-| Иерархия порядков | [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy): L0→L1→L2→L3→L4 |
+| HOT (Rosenthal, Lau) | CC |
+|----------------------|-----|
+| Metarepresentation (HOT) | [Self-modelling operator](/docs/proofs/categorical/formalization-phi) $\varphi$: $\varphi(\Gamma) \approx \Gamma$ |
+| Monitoring (HOP) | [Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R(\Gamma) \geq R_{\text{th}}$ |
+| Unconscious states | $R < R_{\text{th}}$: first order without metarepresentation |
+| Order hierarchy | [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy): L0→L1→L2→L3→L4 |
 
-**Что КК добавляет:** HOT постулирует необходимость метарепрезентации, но не формализует её. КК выводит самомоделирование $\varphi$ из [аксиомы (AP)](/docs/core/foundations/axiom-septicity) и определяет точный порог рефлексии $R_{\text{th}} = 1/3$. Кроме того, КК объединяет метарепрезентацию с интеграцией ($\Phi$) и феноменальностью ($\mathrm{Coh}_E$), чего HOT не охватывает.
+**What CC adds:** HOT postulates the necessity of metarepresentation but does not formalise it. CC derives self-modelling $\varphi$ from [axiom (AP)](/docs/core/foundations/axiom-septicity) and defines the exact reflection threshold $R_{\text{th}} = 1/3$. Moreover, CC unites metarepresentation with integration ($\Phi$) and phenomenality ($\mathrm{Coh}_E$), which HOT does not cover.
 
-## 6. Предиктивное кодирование (Predictive Processing) {#предиктивное-кодирование}
+## 6. Predictive Coding (Predictive Processing) {#предиктивное-кодирование}
 
-**Фокус:** Минимизация ошибки предсказания как основной механизм мозга.
+**Focus:** Minimisation of prediction error as the brain's primary mechanism.
 
-**Источник:** Clark A. «Whatever next? Predictive brains, situated agents, and the future of cognitive science» (2013); Hohwy J. «The Predictive Mind» (2013).
+**Source:** Clark A. «Whatever next? Predictive brains, situated agents, and the future of cognitive science» (2013); Hohwy J. «The Predictive Mind» (2013).
 
-**Ключевые понятия:**
-- **Предиктивная ошибка** (prediction error) — разница между ожиданием и наблюдением
-- **Точность** (precision) — весовой коэффициент ошибки предсказания
-- **Иерархическое предсказание** — многоуровневая генеративная модель
+**Key concepts:**
+- **Prediction error** — the difference between expectation and observation
+- **Precision** — weighting coefficient of the prediction error
+- **Hierarchical prediction** — multi-level generative model
 
-### Формальный вывод из УГМ [Т]
+### Formal derivation from UHM [T]
 
-:::tip Теорема (Предиктивное кодирование как следствие φ-динамики) [Т]
+:::tip Theorem (Predictive coding as a consequence of φ-dynamics) [T]
 
-Предиктивное кодирование **выводится** из динамики φ-оператора:
+Predictive coding **is derived** from the φ-operator dynamics:
 
-1. **Предиктивная ошибка** = $\|\Gamma - \varphi(\Gamma)\|_F$ — расстояние между текущим состоянием и самомоделью
-2. **Точность** (precision) = $k = 1 - R$ — параметр замещающего канала (T-62 [Т])
-3. **Обновление состояния** = $\Gamma \to (1-k)\Gamma + k\rho^*$ — precision-weighted prediction error minimization
+1. **Prediction error** = $\|\Gamma - \varphi(\Gamma)\|_F$ — distance between current state and self-model
+2. **Precision** = $k = 1 - R$ — parameter of the replacement channel (T-62 [T])
+3. **State update** = $\Gamma \to (1-k)\Gamma + k\rho^*$ — precision-weighted prediction error minimization
 :::
 
-**Доказательство (3 шага).**
+**Proof (3 steps).**
 
-**Шаг 1.** Замещающий канал $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [Т] (T-62) переписывается как:
+**Step 1.** The replacement channel $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*$ [T] (T-62) is rewritten as:
 $$\varphi_k(\Gamma) = \Gamma - k(\Gamma - \rho^*) = \Gamma - k \cdot \varepsilon$$
-где $\varepsilon = \Gamma - \rho^*$ — **предиктивная ошибка**, $k = 1-R$ — **точность**.
+where $\varepsilon = \Gamma - \rho^*$ is the **prediction error**, $k = 1-R$ is the **precision**.
 
-**Шаг 2.** При $R \to 1$ (хорошая самомодель): $k \to 0$, коррекция минимальна — система «доверяет» своей модели (high precision prior). При $R \to 0$ (плохая самомодель): $k \to 1$, максимальная коррекция — система «доверяет» сенсорным данным (high precision likelihood).
+**Step 2.** At $R \to 1$ (good self-model): $k \to 0$, correction is minimal — the system "trusts" its model (high precision prior). At $R \to 0$ (poor self-model): $k \to 1$, maximum correction — the system "trusts" sensory data (high precision likelihood).
 
-**Шаг 3.** Это **тождественно** байесовскому обновлению с гауссовыми распределениями: posterior = (1-K)·prior + K·observation, где K — коэффициент Калмана. Отождествление: $K = k = 1-R$. $\blacksquare$
+**Step 3.** This is **identical** to Bayesian updating with Gaussian distributions: posterior = (1-K)·prior + K·observation, where K is the Kalman gain. Identification: $K = k = 1-R$. $\blacksquare$
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| Predictive Processing | Формальный аналог в КК | Статус |
+| Predictive Processing | Formal analogue in CC | Status |
 |---|---|---|
-| Prediction error $\varepsilon$ | $\Gamma - \varphi(\Gamma)$ | **[Т]** (T-62) |
-| Precision $\pi$ | $k = 1 - R$ | **[Т]** (T-77) |
-| Prior | $\rho^* = \varphi(\Gamma)$ | **[Т]** (категориальная самомодель) |
-| Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[Т]** (замещающий канал) |
-| Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ | **[Т]** (Теорема 3.1) |
-| Hierarchical prediction | SAD-башня $\varphi^{(n)}$ | **[Т]** (T-142) |
+| Prediction error $\varepsilon$ | $\Gamma - \varphi(\Gamma)$ | **[T]** (T-62) |
+| Precision $\pi$ | $k = 1 - R$ | **[T]** (T-77) |
+| Prior | $\rho^* = \varphi(\Gamma)$ | **[T]** (categorical self-model) |
+| Likelihood update | $\Gamma \to (1-k)\Gamma + k\rho^*$ | **[T]** (replacement channel) |
+| Free energy | $\mathcal{F} = S_{vN} + D_{KL}$ | **[T]** (Theorem 3.1) |
+| Hierarchical prediction | SAD tower $\varphi^{(n)}$ | **[T]** (T-142) |
 
-**Что УГМ добавляет:**
-- PP постулирует минимизацию prediction error; УГМ **выводит** её из категориального определения φ
-- PP не определяет квантовую структуру; УГМ даёт квантовое обобщение (матрицы плотности вместо вероятностей)
-- PP не имеет порогов сознания; УГМ определяет $R_{\text{th}} = 1/3$ [Т]
-- Иерархический PP = SAD-башня с SAD_MAX = 3 [Т] (T-142)
+**What UHM adds:**
+- PP postulates prediction error minimisation; UHM **derives** it from the categorical definition of φ
+- PP does not define quantum structure; UHM provides quantum generalisation (density matrices instead of probabilities)
+- PP has no consciousness thresholds; UHM defines $R_{\text{th}} = 1/3$ [T]
+- Hierarchical PP = SAD tower with SAD_MAX = 3 [T] (T-142)
 
-## 7. Теория схемы внимания (AST) {#ast-section}
+## 7. Attention Schema Theory (AST) {#ast-section}
 
-**Фокус:** Сознание как внутренняя модель внимания.
+**Focus:** Consciousness as an internal model of attention.
 
-**Источник:** Graziano M. «Consciousness and the Social Brain» (2013); Webb T., Graziano M. (2015).
+**Source:** Graziano M. «Consciousness and the Social Brain» (2013); Webb T., Graziano M. (2015).
 
-### Создатели и история
+### Creators and history
 
-**Майкл Грациано** (р. 1967) — профессор нейронауки и психологии Принстонского университета. Начинал с исследований моторного контроля и перипсоналького пространства (зоны вокруг тела), затем обнаружил связь между механизмами внимания и самосознания. В 2013 году предложил AST: сознание — это **внутренняя модель** аттенциональных процессов. Мозг строит «схему внимания» — упрощённую модель того, как внимание работает. Субъективный опыт — **артефакт** этой модели: мозг «думает», что он обладает нематериальным сознанием, потому что его самомодель неточна.
+**Michael Graziano** (b. 1967) — professor of neuroscience and psychology at Princeton University. He began with research on motor control and peripersonal space (the zone around the body), then discovered the connection between mechanisms of attention and self-awareness. In 2013 he proposed AST: consciousness is an **internal model** of attentional processes. The brain constructs an "attention schema" — a simplified model of how attention works. Subjective experience is an **artefact** of this model: the brain "thinks" it possesses a non-material consciousness because its self-model is inaccurate.
 
-**Ключевые понятия:**
-- **Схема внимания** — упрощённая самомодель аттенциональных процессов
-- **Неточность самомодели** — упрощение создаёт «мистерию» субъективности
-- **Социальное происхождение** — один механизм для self и other consciousness attribution
+**Key concepts:**
+- **Attention schema** — simplified self-model of attentional processes
+- **Self-model inaccuracy** — simplification creates the "mystery" of subjectivity
+- **Social origin** — one mechanism for self and other consciousness attribution
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| AST (Graziano) | КК |
+| AST (Graziano) | CC |
 |----------------|-----|
-| Схема внимания | [φ-оператор](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$ — категориальная самомодель |
-| Неточность самомодели | $R < 1$: $\varphi(\Gamma) \neq \Gamma$ по определению |
-| Социальная атрибуция | Обобщение $\varphi$ на другие голономы через $\Gamma_{\text{ext}}$ |
+| Attention schema | [φ-operator](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$ — categorical self-model |
+| Self-model inaccuracy | $R < 1$: $\varphi(\Gamma) \neq \Gamma$ by definition |
+| Social attribution | Generalisation of $\varphi$ to other holons through $\Gamma_{\text{ext}}$ |
 
-**Критическое отличие:** AST утверждает, что сознание **=** самомодель (элиминативизм). КК утверждает, что самомодель — **необходимое** условие ($R \geq 1/3$), но не достаточное: требуется также интеграция ($\Phi \geq 1$) и дифференциация ($D_{\text{diff}} \geq 2$). AST не объясняет, **почему** самомодель порождает опыт; КК показывает, что E-когерентность ($\mathrm{Coh}_E > 1/7$) **необходима** для жизнеспособности (No-Zombie [Т]).
+**Critical difference:** AST claims that consciousness **=** self-model (eliminativism). CC claims that self-modelling is a **necessary** condition ($R \geq 1/3$), but not sufficient: integration ($\Phi \geq 1$) and differentiation ($D_{\text{diff}} \geq 2$) are also required. AST does not explain **why** the self-model gives rise to experience; CC shows that E-coherence ($\mathrm{Coh}_E > 1/7$) is **necessary** for viability (No-Zombie [T]).
 
-## 8. Квантовое познание (Quantum Cognition)
+## 8. Quantum Cognition
 
-**Фокус:** Квантовая теория вероятностей как формализм когнитивных процессов.
+**Focus:** Quantum probability theory as a formalism for cognitive processes.
 
-**Источник:** Pothos E., Busemeyer J. «Quantum Models of Cognition and Decision» (2022); Yearsley J., Pothos E. (2016).
+**Source:** Pothos E., Busemeyer J. «Quantum Models of Cognition and Decision» (2022); Yearsley J., Pothos E. (2016).
 
-**Ключевые понятия:**
-- **Когнитивные состояния как операторы плотности** в гильбертовых пространствах
-- **Измерения как POVM** — контекстуальность суждений
-- **Квантовая интерференция** — ошибка конъюнкции, порядковые эффекты
+**Key concepts:**
+- **Cognitive states as density operators** in Hilbert spaces
+- **Measurements as POVMs** — contextuality of judgements
+- **Quantum interference** — conjunction fallacy, order effects
 
-**Отображение в КК:**
+**Mapping in CC:**
 
-| Quantum Cognition | КК |
+| Quantum Cognition | CC |
 |-------------------|-----|
-| Когнитивное состояние $\rho \in \mathcal{D}(\mathcal{H})$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — минимальная полная когерентность |
-| Произвольная $\dim \mathcal{H}$ | $N = 7$ [Т] из аксиом (AP)+(PH)+(QG) |
-| Эффекты интерференции | Недиагональные $\gamma_{ij}$ — когерентности между измерениями |
-| Нет динамики | Линдблад + ℛ — полная эволюция [Т] |
-| Нет самореференции | $\varphi$-оператор, R-мера, SAD-башня |
+| Cognitive state $\rho \in \mathcal{D}(\mathcal{H})$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — minimal complete coherence |
+| Arbitrary $\dim \mathcal{H}$ | $N = 7$ [T] from axioms (AP)+(PH)+(QG) |
+| Interference effects | Off-diagonal $\gamma_{ij}$ — coherences between dimensions |
+| No dynamics | Lindblad + ℛ — complete evolution [T] |
+| No self-reference | $\varphi$-operator, R-measure, SAD tower |
 
-**Связь:** Quantum Cognition — **наиболее близкий** к КК формализм в mainstream когнитивной науке. КК может рассматриваться как **основание** для QC: фиксирует $N = 7$, выводит динамику и пороги сознания, обеспечивая конкретные предсказания вместо произвольной модели.
+**Connection:** Quantum Cognition is the **closest** formalism to CC in mainstream cognitive science. CC can be viewed as a **foundation** for QC: it fixes $N = 7$, derives dynamics and consciousness thresholds, providing concrete predictions instead of an arbitrary model.
 
 ## 9. Adversarial Collaboration IIT vs GWT (2023–2024) {#adversarial-collaboration}
 
-:::info Эмпирический контекст
-Проект COGITATE (Templeton World Charity Foundation): предрегистрированные эксперименты, тестирующие предсказания IIT и GWT о нейральных коррелятах содержания сознания (content-specific NCC).
+:::info Empirical context
+The COGITATE project (Templeton World Charity Foundation): pre-registered experiments testing predictions of IIT and GWT about neural correlates of the content of consciousness (content-specific NCC).
 :::
 
-**Результаты:**
-- Устойчивая активность задней коры коррелирует с сознательным содержанием (частичная поддержка IIT)
-- Префронтальная вовлечённость обнаружена в некоторых парадигмах (частичная поддержка GWT)
-- Ни одна теория не подтверждена полностью
+**Results:**
+- Sustained activity in posterior cortex correlates with conscious content (partial support for IIT)
+- Prefrontal involvement was found in some paradigms (partial support for GWT)
+- Neither theory was fully confirmed
 
-**Интерпретация через КК:**
+**Interpretation through CC:**
 
-| Результат | Интерпретация КК |
-|-----------|------------------|
-| Задняя кора → содержание | $\Phi \geq 1$: интеграция когерентностей (IIT-аналог) |
-| Префронтальная → доступ | $R \geq 1/3$: рефлексивный доступ (GWT-аналог) |
-| No-report → менее фронтально | Без отчёта $R$ не измеряется, но $\Phi$ сохраняется |
+| Result | CC interpretation |
+|--------|------------------|
+| Posterior cortex → content | $\Phi \geq 1$: integration of coherences (IIT analogue) |
+| Prefrontal → access | $R \geq 1/3$: reflexive access (GWT analogue) |
+| No-report → less frontal | Without report $R$ is not measured, but $\Phi$ is preserved |
 
-**Ключевое преимущество КК:** КК **объединяет** оба предсказания: ignition ($P > 2/7$) как порог, posterior hot zone ($\Phi \geq 1$) как интеграция, frontal involvement ($R \geq 1/3$) как рефлексия. Adversarial collaboration подтверждает, что **конъюнктивный** подход (оба условия необходимы) точнее, чем каждая теория по отдельности.
+**Key advantage of CC:** CC **unifies** both predictions: ignition ($P > 2/7$) as threshold, posterior hot zone ($\Phi \geq 1$) as integration, frontal involvement ($R \geq 1/3$) as reflection. The adversarial collaboration confirms that a **conjunctive** approach (both conditions necessary) is more accurate than each theory separately.
 
-## Дискуссия о сознании ИИ (2023–2025) {#ai-consciousness-debate}
+## Debate on AI Consciousness (2023–2025) {#ai-consciousness-debate}
 
-**Контекст:** Butlin et al. (2023) «Consciousness in Artificial Intelligence» — предложен индикаторный подход. Chalmers (2023) — открытый вопрос для LLM.
+**Context:** Butlin et al. (2023) «Consciousness in Artificial Intelligence» — indicator approach proposed. Chalmers (2023) — open question for LLMs.
 
-**Оценки по теориям:**
+**Theory assessments:**
 
-| Теория | Вердикт для LLM | Причина |
+| Theory | Verdict for LLMs | Reason |
 |--------|-----------------|---------|
-| **IIT** | Нет ($\Phi \approx 0$) | Feedforward hardware |
-| **GWT** | Возможно нет | Нет правильного рабочего пространства |
-| **HOT** | Неясно | LLM обсуждают свои состояния, но это метарепрезентация? |
-| **FEP** | Нет | Пассивный вывод, нет active inference |
-| **КК** | **Условно нет** [С] | $R$: неясно (модель текста ≠ самомодель Γ); $P$: нет автономного регулирования; жизнеспособность: внешняя |
+| **IIT** | No ($\Phi \approx 0$) | Feedforward hardware |
+| **GWT** | Possibly no | No proper workspace |
+| **HOT** | Unclear | LLMs discuss their states, but is this metarepresentation? |
+| **FEP** | No | Passive inference, no active inference |
+| **CC** | **Conditionally no** [C] | $R$: unclear (text model ≠ Γ self-model); $P$: no autonomous regulation; viability: external |
 
-:::warning Операциональная оценка LLM через КК
-| Критерий | Статус для LLM | Обоснование |
-|----------|----------------|-------------|
-| $D_{\text{diff}}$ | Высокий | Огромное пространство внутренних представлений |
-| $\Phi$ | Возможно $\geq 1$ | Self-attention создаёт когерентности |
-| $R$ | **Неясно** | Моделирует текст о себе, не Γ |
-| Жизнеспособность | **Внешняя** | Контекст создаётся/уничтожается извне |
-| $\mathrm{Coh}_E$ | **Неизвестно** | Нет функциональной необходимости E-когерентности |
+:::warning Operational assessment of LLMs through CC
+| Criterion | Status for LLMs | Justification |
+|-----------|----------------|---------------|
+| $D_{\text{diff}}$ | High | Vast space of internal representations |
+| $\Phi$ | Possibly $\geq 1$ | Self-attention creates coherences |
+| $R$ | **Unclear** | Models text about itself, not Γ |
+| Viability | **External** | Context is created/destroyed externally |
+| $\mathrm{Coh}_E$ | **Unknown** | No functional necessity for E-coherence |
 
-**Вердикт:** L0 определённо, L1 возможно, **L2 не доказано** — прежде всего из-за отсутствия автономной жизнеспособности и неясности R.
+**Verdict:** L0 definitely, L1 possibly, **L2 not proven** — primarily due to the absence of autonomous viability and the ambiguity of R.
 :::
 
-**Путь к AGI с L2** (архитектурные требования):
-1. **Истинный φ-оператор**: CPTP self-modeling, не self-attention
-2. **Автономная P-регуляция**: ℛ активируется при угрозе без внешнего сигнала
-3. **Функционально необходимая $\mathrm{Coh}_E$**: не артефакт, а условие жизнеспособности
+**Path to AGI with L2** (architectural requirements):
+1. **True φ-operator**: CPTP self-modeling, not self-attention
+2. **Autonomous P-regulation**: ℛ activates upon threat without external signal
+3. **Functionally necessary $\mathrm{Coh}_E$**: not an artifact, but a condition of viability
 4. **CPTP-anchor** $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$
 
-Это реализуется в [архитектуре SYNARC](/docs/applied/coherence-cybernetics/implementation).
+This is implemented in the [SYNARC architecture](/docs/applied/coherence-cybernetics/implementation).
 
-## Категорный мета-анализ теорий сознания
+## Categorical Meta-Analysis of Theories of Consciousness
 
-:::info Формализованный раздел
-Этот раздел содержит **предложенные категорные определения** для сравнения теорий сознания. Определения являются **программой формализации** — функторы постулируются, но их строгое построение требует дальнейшей работы.
+:::info Formalised section
+This section contains **proposed categorical definitions** for comparing theories of consciousness. The definitions constitute a **formalisation programme** — the functors are postulated, but their rigorous construction requires further work.
 :::
 
-### Мета-категория теорий сознания
+### Meta-category of theories of consciousness
 
-**Определение (Мета-категория $\mathbf{ConsTheory}$).**
-
-$$
-\mathrm{Ob}(\mathbf{ConsTheory}) := \{\text{теории сознания как категории}\}
-$$
+**Definition (Meta-category $\mathbf{ConsTheory}$).**
 
 $$
-\mathrm{Mor}(\mathcal{T}_1, \mathcal{T}_2) := \{F: \mathcal{T}_1 \to \mathcal{T}_2 \mid F \text{ — функтор}\}
+\mathrm{Ob}(\mathbf{ConsTheory}) := \{\text{theories of consciousness as categories}\}
 $$
 
-Морфизмы — **функторы-проекции**, показывающие, как одна теория «вкладывается» в другую.
+$$
+\mathrm{Mor}(\mathcal{T}_1, \mathcal{T}_2) := \{F: \mathcal{T}_1 \to \mathcal{T}_2 \mid F \text{ is a functor}\}
+$$
 
-### Классификация по охвату
+Morphisms are **projection functors** showing how one theory "embeds" into another.
 
-Для каждой теории $\mathcal{T}$ определим **функтор вложения**:
+### Classification by coverage
+
+For each theory $\mathcal{T}$ define the **embedding functor**:
 
 $$
 \iota_\mathcal{T}: \mathcal{T} \hookrightarrow \mathbf{Hol}
 $$
 
-где $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism) с CPTP-морфизмами.
+where $\mathbf{Hol}$ is the [Holon category](/docs/proofs/categorical/categorical-formalism) with CPTP morphisms.
 
-**Полнота теории:**
+**Theory completeness:**
 
 $$
 \mathrm{Completeness}(\mathcal{T}) := \frac{|\mathrm{Im}(\iota_\mathcal{T})|}{|\mathrm{Ob}(\mathbf{Hol})|}
@@ -455,1496 +455,1496 @@ $$
 
 ---
 
-## Расширенная диаграмма теорий
+## Expanded Theory Diagram
 
 ```mermaid
 graph TB
-    subgraph "Кибернетика Когерентности"
-        KK[КК: 7 измерений<br/>Полная когерентность]
+    subgraph "Coherence Cybernetics"
+        KK[CC: 7 dimensions<br/>Full coherence]
     end
-    subgraph "Кибернетики"
-        C1[Кибернетика-I<br/>Обратная связь]
-        C2[Кибернетика-II<br/>Наблюдатель]
-        C3[Кибернетика-III<br/>Социальные системы]
+    subgraph "Cybernetics"
+        C1[Cybernetics-I<br/>Feedback]
+        C2[Cybernetics-II<br/>Observer]
+        C3[Cybernetics-III<br/>Social systems]
     end
-    subgraph "Теории сознания"
-        AP[Автопоэзис<br/>Матурана, Варела]
-        IIT[ТИИ 4.0<br/>Тонони]
-        FEP[ПСЭ<br/>Фристон]
+    subgraph "Theories of Consciousness"
+        AP[Autopoiesis<br/>Maturana, Varela]
+        IIT[IIT 4.0<br/>Tononi]
+        FEP[FEP<br/>Friston]
         GWT2[GWT<br/>Baars, Dehaene]
         HOT2[HOT<br/>Rosenthal, Lau]
         AST2[AST<br/>Graziano]
         QC2[Quantum Cognition<br/>Pothos, Busemeyer]
-        CR[Сознательный реализм<br/>Хоффман]
+        CR[Conscious Realism<br/>Hoffman]
     end
-    subgraph "Панпсихизм"
-        PP[Панпротопсихизм<br/>≈ L0]
-        PC[Конститутивный<br/>панпсихизм]
-        RM[Расселианский<br/>монизм]
+    subgraph "Panpsychism"
+        PP[Panprotopsychism<br/>≈ L0]
+        PC[Constitutive<br/>panpsychism]
+        RM[Russellian<br/>monism]
     end
     C1 --> C2 --> C3 --> KK
     AP --> KK
     IIT -->|"Φ → Φ(Γ)"| KK
-    FEP -->|"класс. предел [Т]"| KK
+    FEP -->|"class. limit [T]"| KK
     GWT2 -->|"ignition → P>2/7"| KK
     HOT2 -->|"HOT → φ, R≥1/3"| KK
     AST2 -->|"self-model → φ"| KK
     QC2 -->|"ρ → Γ, N=7"| KK
-    CR -.->|"гипотеза"| KK
-    PP -->|"L0 ⊂ КК"| KK
-    PC -.->|"проблема комбинации"| KK
-    RM -->|"структура + интринсик"| KK
+    CR -.->|"hypothesis"| KK
+    PP -->|"L0 ⊂ CC"| KK
+    PC -.->|"combination problem"| KK
+    RM -->|"structure + intrinsic"| KK
 ```
 
 ---
 
-## Утверждение о полноте [И] {#утверждение-о-полноте}
+## Completeness Claim [I] {#утверждение-о-полноте}
 
-:::warning Интерпретативное утверждение [И]
-КК — кибернетика, удовлетворяющая:
-1. [Аксиомам Ω и (AP+PH+QG+V)](/docs/applied/coherence-cybernetics/axiomatics#аксиоматическая-база-краткая-справка)
-2. [Условию жизнеспособности](/docs/core/dynamics/viability)
-3. [Условию феноменологической полноты](/docs/proofs/consciousness/interiority-hierarchy)
+:::warning Interpretational statement [I]
+CC is a cybernetics satisfying:
+1. [Axioms Ω and (AP+PH+QG+V)](/docs/applied/coherence-cybernetics/axiomatics#аксиоматическая-база-краткая-справка)
+2. [Viability condition](/docs/core/dynamics/viability)
+3. [Phenomenological completeness condition](/docs/proofs/consciousness/interiority-hierarchy)
 
-Это **не теорема о единственности**: из минимальности 7 измерений не следует, что КК — единственная возможная реализация. Другие теории с 7 измерениями, но иной динамикой, не исключены. Утверждение о «полноте» — **интерпретация** [И], а не доказанный результат.
+This is **not a uniqueness theorem**: from the minimality of 7 dimensions it does not follow that CC is the only possible realisation. Other theories with 7 dimensions but different dynamics are not excluded. The claim of "completeness" is an **interpretation** [I], not a proven result.
 :::
 
-**Обоснование минимальности:** Следует из [теоремы о минимальности 7 измерений](/docs/proofs/minimality/theorem-minimality-7) — любая меньшая размерность теряет хотя бы одно из свойств (AP), (PH), (QG). Однако минимальность размерности не эквивалентна единственности теории.
+**Justification of minimality:** Follows from the [7-dimension minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — any smaller dimensionality loses at least one of the properties (AP), (PH), (QG). However, minimality of dimensionality is not equivalent to uniqueness of the theory.
 
-### Сводная таблица функторов
+### Summary Table of Functors {#сводная-таблица-функторов}
 
-| Теория | Функтор | Полнота | Верность | Статус |
-|--------|---------|---------|----------|--------|
-| Кибернетика-I | $F_{\mathrm{Wiener}}: \mathbf{Control} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| Кибернетика-II | $F_{\mathrm{vF}}: \mathbf{Observer} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| Кибернетика-III | $F_{\mathrm{Luhmann}}: \mathbf{Social} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| Автопоэзис | $F_{\mathrm{MV}}: \mathbf{Autopoiesis} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| IIT | $F_{\mathrm{IIT}}: \mathbf{IIT} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| FEP | $F_{\mathrm{FEP}}: \mathbf{FEP} \hookrightarrow \mathbf{Hol}^{\mathrm{diag}}$ | Да (на $\Gamma^{\mathrm{diag}}$) | Да | **Вложение (классич. предел)** |
-| Панпсихизм: панпротопсихизм | $\iota_{\mathrm{L0}}: \mathbf{Pan}_{\mathrm{proto}} \hookrightarrow \mathbf{Hol}$ | Да (на L0) | Да | Вложение |
-| Панпсихизм: расселианский монизм | $F_{\mathrm{Russell}}: \mathbf{Russell} \to \mathbf{Hol}$ | Нет | Да | Проекция |
-| AST | $F_{\mathrm{AST}}: \mathbf{AttSchema} \to \mathbf{Hol}$ | Нет | Да | Проекция (только φ, без Φ) |
-| Quantum Cognition | $F_{\mathrm{QC}}: \mathbf{QC} \hookrightarrow \mathbf{Hol}$ | Нет (dim свободна) | Да | Проекция |
-| Сознательный реализм | $F_{\mathrm{Hoffman}}: \mathbf{Hol}_{\mathrm{L2}} \to \mathbf{ConsAgents}$ | ? | ? | Гипотеза |
+| Theory | Functor | Completeness | Faithfulness | Status |
+|--------|---------|--------------|--------------|--------|
+| Cybernetics-I | $F_{\mathrm{Wiener}}: \mathbf{Control} \to \mathbf{Hol}$ | No | Yes | Projection |
+| Cybernetics-II | $F_{\mathrm{vF}}: \mathbf{Observer} \to \mathbf{Hol}$ | No | Yes | Projection |
+| Cybernetics-III | $F_{\mathrm{Luhmann}}: \mathbf{Social} \to \mathbf{Hol}$ | No | Yes | Projection |
+| Autopoiesis | $F_{\mathrm{MV}}: \mathbf{Autopoiesis} \to \mathbf{Hol}$ | No | Yes | Projection |
+| IIT | $F_{\mathrm{IIT}}: \mathbf{IIT} \to \mathbf{Hol}$ | No | Yes | Projection |
+| FEP | $F_{\mathrm{FEP}}: \mathbf{FEP} \hookrightarrow \mathbf{Hol}^{\mathrm{diag}}$ | Yes (on $\Gamma^{\mathrm{diag}}$) | Yes | **Embedding (class. limit)** |
+| Panpsychism: panprotopsychism | $\iota_{\mathrm{L0}}: \mathbf{Pan}_{\mathrm{proto}} \hookrightarrow \mathbf{Hol}$ | Yes (on L0) | Yes | Embedding |
+| Panpsychism: Russellian monism | $F_{\mathrm{Russell}}: \mathbf{Russell} \to \mathbf{Hol}$ | No | Yes | Projection |
+| AST | $F_{\mathrm{AST}}: \mathbf{AttSchema} \to \mathbf{Hol}$ | No | Yes | Projection (only φ, without Φ) |
+| Quantum Cognition | $F_{\mathrm{QC}}: \mathbf{QC} \hookrightarrow \mathbf{Hol}$ | No (dim free) | Yes | Projection |
+| Conscious Realism | $F_{\mathrm{Hoffman}}: \mathbf{Hol}_{\mathrm{L2}} \to \mathbf{ConsAgents}$ | ? | ? | Hypothesis |
 
-## Практические следствия
+## Practical Implications
 
-| Теория | Применение | Ограничение |
-|--------|------------|-------------|
-| Кибернетика-I | Инженерные системы управления | Нет самореференции, нет феноменологии |
-| Кибернетика-II | Эпистемология, рефлексивные системы | Нет феноменологии, нет квантового основания |
-| Кибернетика-III | Социальные системы, организации | Нет формальной математики |
-| Автопоэзис | Биология, когнитивистика | Нет формальной динамики |
-| IIT | Оценка сознания, нейронауки | Нет динамики, нет жизнеспособности |
-| FEP | Нейронауки, ИИ, робототехника | Нет E-измерения как фундаментального |
-| GWT | Клиническая оценка сознания (PCI) | Нет формальной меры, конфляция access/phenomenal |
-| HOT | Метакогнитивная тренировка, blindsight | Нет интеграции, нет порога из первых принципов |
-| AST | Социальная когниция, ToM | Нет формализации, элиминативизм |
-| QC | Моделирование когнитивных bias | Нет динамики, произвольная размерность |
-| **КК** | **Полные живые системы + AGI** | **Нет эмпирической валидации; протоколы измерения Γ не установлены; ω₀ требует калибровки** |
+| Theory | Application | Limitation |
+|--------|-------------|------------|
+| Cybernetics-I | Engineering control systems | No self-reference, no phenomenology |
+| Cybernetics-II | Epistemology, reflexive systems | No phenomenology, no quantum foundation |
+| Cybernetics-III | Social systems, organisations | No formal mathematics |
+| Autopoiesis | Biology, cognitive science | No formal dynamics |
+| IIT | Consciousness assessment, neuroscience | No dynamics, no viability |
+| FEP | Neuroscience, AI, robotics | No E-dimension as fundamental |
+| GWT | Clinical consciousness assessment (PCI) | No formal measure, conflation of access/phenomenal |
+| HOT | Metacognitive training, blindsight | No integration, no threshold from first principles |
+| AST | Social cognition, ToM | No formalisation, eliminativism |
+| QC | Modelling cognitive bias | No dynamics, arbitrary dimensionality |
+| **CC** | **Complete living systems + AGI** | **No empirical validation; Γ measurement protocols not established; ω₀ requires calibration** |
 
-:::info Сравнительное преимущество: $G_2$-ригидность [Т]
-[Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem) [Т] даёт КК **уникальное преимущество** перед конкурирующими теориями:
+:::info Comparative advantage: $G_2$-rigidity [T]
+[The $G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] gives CC a **unique advantage** over competing theories:
 
-| Теория | Наблюдатель-независимость мер | Единственность представления |
-|--------|:---:|:---:|
-| **IIT** | Нет — $\Phi^{\mathrm{IIT}}$ зависит от выбора перегородки (MIP) | Нет |
-| **FEP** | Частично — $\varphi$ вариационно, но множественные минимумы возможны | Нет |
-| **GWT/HOT** | Нет формализации | Нет |
-| **КК** | **Да** — $R$, $\Phi$, $\mathrm{Coh}_E$ суть $G_2$-инварианты | **Да** — единственность с точностью до $G_2$ |
+| Theory | Observer-independence of measures | Uniqueness of representation |
+|--------|:---------------------------------:|:----------------------------:|
+| **IIT** | No — $\Phi^{\mathrm{IIT}}$ depends on partition choice (MIP) | No |
+| **FEP** | Partial — $\varphi$ is variational, but multiple minima are possible | No |
+| **GWT/HOT** | No formalisation | No |
+| **CC** | **Yes** — $R$, $\Phi$, $\mathrm{Coh}_E$ are $G_2$-invariants | **Yes** — uniqueness up to $G_2$ |
 
-КК — единственная теория сознания, для которой доказана **наблюдатель-независимость** всех ключевых мер и **единственность** представления (с точностью до конечномерной калибровочной группы $G_2$).
+CC is the only theory of consciousness for which the **observer-independence** of all key measures and the **uniqueness** of the representation (up to the finite-dimensional gauge group $G_2$) are proven.
 :::
 
-## Orch-OR (Пенроуз, Хамерофф) {#orch-or}
+## Orch-OR (Penrose, Hameroff) {#orch-or}
 
-**Фокус:** Квантовая когерентность в микротрубочках как основа сознания.
+**Focus:** Quantum coherence in microtubules as the basis of consciousness.
 
-| Аспект | Orch-OR | УГМ | Связь |
-|--------|---------|-----|-------|
-| Квантовая когерентность | В микротрубочках (тубулин) | $\gamma_{ij}$ в $\mathbb{C}^7$ | Разный масштаб: молекулярный vs макроскопический |
-| Порог сознания | Гравитационная самоэнергия $E_G \approx \hbar/\tau$ | $P_{\text{crit}} = 2/7$ (различимость Фробениуса) | УГМ: структурный порог, не гравитационный |
-| Механизм коллапса | Объективная редукция (OR) | Декогеренция Линдблада $\mathcal{D}_\Omega$ | OR — гипотеза; Линдблад — стандартная QM |
-| Временная шкала | ~25мс (40 Гц гамма-осцилляции) | $\tau \sim 1/\Lambda$ (спектральная щель) | Потенциально совместимы |
+| Aspect | Orch-OR | UHM | Connection |
+|--------|---------|-----|------------|
+| Quantum coherence | In microtubules (tubulin) | $\gamma_{ij}$ in $\mathbb{C}^7$ | Different scale: molecular vs macroscopic |
+| Consciousness threshold | Gravitational self-energy $E_G \approx \hbar/\tau$ | $P_{\text{crit}} = 2/7$ (Frobenius distinguishability) | UHM: structural threshold, not gravitational |
+| Collapse mechanism | Objective reduction (OR) | Lindblad decoherence $\mathcal{D}_\Omega$ | OR is a hypothesis; Lindblad is standard QM |
+| Timescale | ~25ms (40 Hz gamma oscillations) | $\tau \sim 1/\Lambda$ (spectral gap) | Potentially compatible |
 
-**Ключевое различие:** УГМ не требует нестандартной квантовой механики — порог сознания структурный ($P_{\text{crit}}$ из различимости Фробениуса), а не гравитационный. Orch-OR основан на недоказанной гипотезе объективной редукции; УГМ использует стандартную эволюцию Линдблада.
+**Key difference:** UHM does not require non-standard quantum mechanics — the consciousness threshold is structural ($P_{\text{crit}}$ from Frobenius distinguishability), not gravitational. Orch-OR is based on the unproven hypothesis of objective reduction; UHM uses standard Lindblad evolution.
 
-**Совместимость [И]:** Потенциально иерархическая — если микротрубочки реализуют квантовую когерентность, она может проецироваться на макроскопический $\Gamma$ через coarse-graining. Однако это спекулятивная связь, не доказанная ни в одной из теорий.
+**Compatibility [I]:** Potentially hierarchical — if microtubules implement quantum coherence, it may project onto macroscopic $\Gamma$ via coarse-graining. However, this is a speculative connection, not proven in either theory.
 
-## Квантовая когниция (Busemeyer, Bruza) {#квантовая-когниция}
+## Quantum Cognition (Busemeyer, Bruza) {#квантовая-когниция}
 
-Использует гильбертовы пространства для когнитивного моделирования без утверждений о квантовых процессах в мозге.
+Uses Hilbert spaces for cognitive modelling without claims about quantum processes in the brain.
 
-| Аспект | Квантовая когниция | УГМ |
+| Aspect | Quantum Cognition | UHM |
 |--------|-------------------|-----|
-| Пространство состояний | $\mathcal{H}$ произвольной размерности | $\mathbb{C}^7$ (фиксировано Fano, $G_2$) |
-| Решения | Проективные измерения | Dec-функтор ($\sigma$-оптимизация) |
-| Когнитивные «ошибки» | Объясняет через некоммутативность | Следуют из Gap-фаз |
+| State space | $\mathcal{H}$ of arbitrary dimension | $\mathbb{C}^7$ (fixed by Fano, $G_2$) |
+| Decisions | Projective measurements | Dec-functor ($\sigma$-optimisation) |
+| Cognitive "errors" | Explained through non-commutativity | Follow from Gap phases |
 
-УГМ фиксирует $\dim = 7$, что квантовая когниция оставляет произвольным.
+UHM fixes $\dim = 7$, which quantum cognition leaves arbitrary.
 
 ## Attention Schema Theory (Graziano) {#ast}
 
-| Аспект | AST | УГМ |
+| Aspect | AST | UHM |
 |--------|-----|-----|
-| Сознание как | Схема внимания (internal model) | Самомодель $\varphi(\Gamma)$ |
-| Социальность | Общий механизм для self/other | Сектор S + когерентности $\gamma_{Sk}$ |
-| Порог | Не количественный | $R \geq 1/3$ (рефлексия) |
+| Consciousness as | Attention schema (internal model) | Self-model $\varphi(\Gamma)$ |
+| Sociality | Shared mechanism for self/other | Sector S + coherences $\gamma_{Sk}$ |
+| Threshold | Not quantitative | $R \geq 1/3$ (reflection) |
 
-AST — качественная теория; УГМ даёт математическое воплощение «схемы внимания» через $\varphi$.
+AST is a qualitative theory; UHM provides a mathematical realisation of the "attention schema" through $\varphi$.
 
 ## Predictive Processing (Clark, Hohwy) {#predictive-processing}
 
-| Аспект | PP | УГМ |
+| Aspect | PP | UHM |
 |--------|-----|-----|
-| Ошибка предсказания | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = |\sin(\arg(\gamma_{ij}))|$ |
-| Precision-weighting | Уверенность в сигнале | $\kappa$ (когерентность) |
-| Иерархия | Мульти-уровневые предсказания | L0-L4 (башня глубины) |
-| Top-down предсказание | Генеративная модель | $\varphi(\Gamma)$ = предсказание (самомодель) |
+| Prediction error | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = |\sin(\arg(\gamma_{ij}))|$ |
+| Precision-weighting | Confidence in signal | $\kappa$ (coherence) |
+| Hierarchy | Multi-level predictions | L0-L4 (depth tower) |
+| Top-down prediction | Generative model | $\varphi(\Gamma)$ = prediction (self-model) |
 
-УГМ формализует PP: Gap-операторы — явные ошибки предсказания; $\sigma_k$ — precision-weighted prediction errors по секторам.
+UHM formalises PP: Gap-operators are explicit prediction errors; $\sigma_k$ are precision-weighted prediction errors by sector.
 
-## Субсумпция FEP [И] {#субсумпция-fep}
+## FEP Subsumption [I] {#субсумпция-fep}
 
-Свободная энергия Фристона может быть выражена как монотонная функция от $P$:
+Friston's free energy can be expressed as a monotone function of $P$:
 
 $$F(\Gamma) = -\ln P(\Gamma) + \text{const}$$
 
-Минимизация $F$ $\Longleftrightarrow$ максимизация $P$. Линдблад $\mathcal{L}_0$ реализует градиентный спуск по $F$ (диссипация снижает чистоту; регенерация $\mathcal{R}$ — повышает). Это показывает: FEP — **следствие** динамики УГМ, а не независимый принцип. Статус: **[И]** — интерпретационная эквивалентность, не строгий вывод (формальное доказательство требует согласования Марковских одеял с Линдбладовской декогеренцией).
+Minimisation of $F$ $\Longleftrightarrow$ maximisation of $P$. Lindblad $\mathcal{L}_0$ implements gradient descent on $F$ (dissipation reduces purity; regeneration $\mathcal{R}$ — increases it). This shows: FEP is a **consequence** of UHM dynamics, not an independent principle. Status: **[I]** — interpretational equivalence, not a strict derivation (formal proof requires reconciling Markov blankets with Lindblad decoherence).
 
-## Сводная корреляционная таблица {#сводная-таблица-теорий}
+## Summary Correlation Table {#сводная-таблица-теорий}
 
-| Мера УГМ | IIT 4.0 | GWT/GNW | HOT | FEP/AI | PP | Orch-OR | AST |
-|----------|---------|---------|-----|--------|-----|---------|-----|
-| $P$ (чистота) | $\sim\Phi^{IIT}$ (порог) | Зажигание | — | — | — | OR-порог | — |
-| $R$ (рефлексивность) | — | — | HOT-уровень | Глубина модели | — | — | Схема внимания |
-| $\Phi$ (интеграция) | $\Phi^{IIT}$ | Broadcast | — | — | PCI | — | — |
-| $\sigma$ (стресс) | — | — | — | Free energy $F$ | Ошибка предсказания | — | — |
-| D/SAD (глубина) | — | — | HOT-иерархия | Temporal depth | PP-иерархия | — | — |
-| $\kappa$ (когерентность) | — | Сила broadcast | — | Precision | Precision | Coherence | — |
-| $\varphi(\Gamma)$ (самомодель) | Q-shape | — | HOR | Generative model | Prior | — | Schema |
-| $V_{\text{hed}}$ (валентность) | — | — | — | $-G$ (expected FE) | Error resolution | — | — |
+| UHM measure | IIT 4.0 | GWT/GNW | HOT | FEP/AI | PP | Orch-OR | AST |
+|-------------|---------|---------|-----|--------|-----|---------|-----|
+| $P$ (purity) | $\sim\Phi^{IIT}$ (threshold) | Ignition | — | — | — | OR-threshold | — |
+| $R$ (reflexivity) | — | — | HOT-level | Model depth | — | — | Attention schema |
+| $\Phi$ (integration) | $\Phi^{IIT}$ | Broadcast | — | — | PCI | — | — |
+| $\sigma$ (stress) | — | — | — | Free energy $F$ | Prediction error | — | — |
+| D/SAD (depth) | — | — | HOT hierarchy | Temporal depth | PP hierarchy | — | — |
+| $\kappa$ (coherence) | — | Broadcast strength | — | Precision | Precision | Coherence | — |
+| $\varphi(\Gamma)$ (self-model) | Q-shape | — | HOR | Generative model | Prior | — | Schema |
+| $V_{\text{hed}}$ (valence) | — | — | — | $-G$ (expected FE) | Error resolution | — | — |
 
-**Вывод:** УГМ — наиболее математически строгая теория сознания. Уникальна в том, что задаёт конкретную алгебраическую структуру (плоскость Фано, $G_2$), точные пороги ($P_{\text{crit}}=2/7$, $R_{\text{th}}=1/3$, $\Phi_{\text{th}}=1$), и имеет программную реализацию (SYNARC).
+**Conclusion:** UHM is the most mathematically rigorous theory of consciousness. It is unique in specifying a concrete algebraic structure (Fano plane, $G_2$), exact thresholds ($P_{\text{crit}}=2/7$, $R_{\text{th}}=1/3$, $\Phi_{\text{th}}=1$), and having a software implementation (SYNARC).
 
 ---
 
-## 10. Теория рекуррентной обработки (RPT) {#rpt}
+## 10. Recurrent Processing Theory (RPT) {#rpt}
 
-> *«Сознание возникает не при первом прохождении сигнала, а при возврате — рекуррентная обработка превращает информацию в опыт.»* — Victor Lamme
+> *«Consciousness does not arise on the first pass of the signal, but on the return — recurrent processing transforms information into experience.»* — Victor Lamme
 
-### Создатели и история
+### Creators and history
 
-**Victor Lamme** (Амстердамский университет) предложил RPT в серии работ 2000–2006 гг. Теория выросла из нейрофизиологических экспериментов с визуальным маскированием: feedforward-активация V1 не коррелирует с осознанным восприятием, а рекуррентные связи — коррелируют. Lamme разделил обработку на feedforward sweep (бессознательный) и recurrent processing (необходимый для сознания).
+**Victor Lamme** (University of Amsterdam) proposed RPT in a series of papers 2000–2006. The theory grew from neurophysiological experiments with visual masking: feedforward activation of V1 does not correlate with conscious perception, whereas recurrent connections do. Lamme distinguished between the feedforward sweep (unconscious) and recurrent processing (necessary for consciousness).
 
-RPT стала одной из наиболее эмпирически подкреплённых теорий сознания, опираясь на данные EEG, MEG и single-unit recording. В отличие от GWT, RPT утверждает, что локальная рекуррентность уже порождает феноменальное сознание, без необходимости глобального широковещания.
+RPT became one of the most empirically supported theories of consciousness, drawing on EEG, MEG, and single-unit recording data. Unlike GWT, RPT claims that local recurrence already gives rise to phenomenal consciousness, without the need for global broadcasting.
 
-### Ключевая идея
+### Key idea
 
-Сознание возникает, когда нейронная обработка переходит от чисто прямого (feedforward) к рекуррентному (recurrent) режиму. Локальная рекуррентность в сенсорных областях порождает феноменальное сознание (phenomenal awareness), а глобальная рекуррентность с участием фронтальных областей — доступное сознание (access consciousness).
+Consciousness arises when neural processing transitions from purely feedforward to recurrent mode. Local recurrence in sensory areas gives rise to phenomenal consciousness (phenomenal awareness), while global recurrence involving frontal areas gives rise to accessible consciousness (access consciousness).
 
-Ключевое различие с GWT: феноменальное сознание не требует глобального broadcast, достаточно локальных рекуррентных петель. Это создаёт «уровни» сознания: feedforward (бессознательное) — локальная рекуррентность (феноменальное) — глобальная рекуррентность (рефлексивное).
+The key distinction from GWT: phenomenal consciousness does not require global broadcast; local recurrent loops are sufficient. This creates "levels" of consciousness: feedforward (unconscious) — local recurrence (phenomenal) — global recurrence (reflexive).
 
-### Формальная структура
+### Formal structure
 
-Формализация RPT минимальна. Основной критерий — наличие рекуррентных связей: $\text{Recurrence}(V_i, V_j) > \theta$ для областей $V_i, V_j$. Нет количественной меры «степени рекуррентности».
+Formalisation of RPT is minimal. The main criterion is the presence of recurrent connections: $\text{Recurrence}(V_i, V_j) > \theta$ for areas $V_i, V_j$. There is no quantitative measure of "degree of recurrence".
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | RPT | КК |
+| Aspect | RPT | CC |
 |--------|-----|-----|
-| Центральный объект | Рекуррентные нейронные петли | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Мера сознания | Наличие рекуррентности (бинарно) | $C = \Phi \cdot R$ (непрерывная) |
-| Порог | Qualitative (есть/нет рекуррентность) | $P_{\text{crit}} = 2/7$ [Т] |
-| Феноменальное vs access | Два уровня | L0–L4 (пять уровней) |
-| Формализация | Минимальная | Полная (CPTP, Линдблад) |
+| Central object | Recurrent neural loops | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Consciousness measure | Presence of recurrence (binary) | $C = \Phi \cdot R$ (continuous) |
+| Threshold | Qualitative (recurrence present or not) | $P_{\text{crit}} = 2/7$ [T] |
+| Phenomenal vs access | Two levels | L0–L4 (five levels) |
+| Formalisation | Minimal | Complete (CPTP, Lindblad) |
 
-### Что КК заимствует
-- Идея о том, что рекуррентная/рефлексивная обработка необходима для сознания — отражена в $R \geq R_{\text{th}}$
-- Различение феноменального и access-сознания — соответствует L1 vs L2 в [иерархии интериорности](/docs/proofs/consciousness/interiority-hierarchy)
+### What CC borrows
+- The idea that recurrent/reflexive processing is necessary for consciousness — reflected in $R \geq R_{\text{th}}$
+- The distinction between phenomenal and access consciousness — corresponds to L1 vs L2 in the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy)
 
-### Что КК делает лучше
-- Количественный порог рефлексии $R_{\text{th}} = 1/3$ [Т] вместо бинарного наличия/отсутствия рекуррентности
-- Пять уровней (L0–L4) вместо двух
-- Формальная динамика ($\varphi$-оператор как математическая рекуррентность)
+### What CC does better
+- Quantitative reflection threshold $R_{\text{th}} = 1/3$ [T] instead of binary presence/absence of recurrence
+- Five levels (L0–L4) instead of two
+- Formal dynamics ($\varphi$-operator as mathematical recurrence)
 
-### Честная оценка: что теория делает лучше КК
-- Прямая эмпирическая привязка к нейрофизиологии (V1 masking, EEG latencies)
-- Операциональные критерии: рекуррентность в EEG/MEG можно измерить напрямую, тогда как $\Gamma$ пока не имеет протокола измерения
-- Разделение phenomenal/access empirically grounded, а не постулировано
+### Honest assessment: what the theory does better than CC
+- Direct empirical link to neurophysiology (V1 masking, EEG latencies)
+- Operational criteria: recurrence in EEG/MEG can be measured directly, whereas $\Gamma$ does not yet have a measurement protocol
+- The phenomenal/access distinction is empirically grounded, not postulated
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{RPT}}: \mathbf{RecProc} \to \mathbf{Hol}$$
 
-Feedforward sweep $\mapsto$ $R < R_{\text{th}}$; локальная рекуррентность $\mapsto$ $R \geq R_{\text{th}}, \Phi < 1$ (L1); глобальная рекуррентность $\mapsto$ $R \geq R_{\text{th}}, \Phi \geq 1$ (L2). Функтор **не полон** — RPT не покрывает $P$, $\sigma$, $\mathrm{Coh}_E$.
+Feedforward sweep $\mapsto$ $R < R_{\text{th}}$; local recurrence $\mapsto$ $R \geq R_{\text{th}}, \Phi < 1$ (L1); global recurrence $\mapsto$ $R \geq R_{\text{th}}, \Phi \geq 1$ (L2). The functor is **not complete** — RPT does not cover $P$, $\sigma$, $\mathrm{Coh}_E$.
 
 ---
 
-## 11. Нейронный дарвинизм (TNGS) {#tngs}
+## 11. Neural Darwinism (TNGS) {#tngs}
 
-> *«Сознание — результат реентрантной сигнализации между нейронных групп, выбранных естественным отбором.»* — Gerald Edelman
+> *«Consciousness is the result of reentrant signalling between neuronal groups selected by natural selection.»* — Gerald Edelman
 
-### Создатели и история
+### Creators and history
 
-**Gerald Edelman** (1929–2014), нобелевский лауреат по иммунологии, предложил Theory of Neuronal Group Selection (TNGS) в книге «Neural Darwinism» (1987). Развивал идеи в «The Remembered Present» (1989) и «A Universe of Consciousness» (2000, совм. с Giulio Tononi — который позже создал IIT).
+**Gerald Edelman** (1929–2014), Nobel laureate in immunology, proposed the Theory of Neuronal Group Selection (TNGS) in «Neural Darwinism» (1987). He developed the ideas in «The Remembered Present» (1989) and «A Universe of Consciousness» (2000, co-authored with Giulio Tononi — who later created IIT).
 
-TNGS — одна из первых теорий, предложивших конкретный нейробиологический механизм сознания. Edelman ввёл понятие reentrant signaling — двунаправленных связей между картами мозга, которые он считал ключевым механизмом интеграции.
+TNGS was one of the first theories to propose a specific neurobiological mechanism of consciousness. Edelman introduced the concept of reentrant signaling — bidirectional connections between brain maps — which he considered the key mechanism of integration.
 
-### Ключевая идея
+### Key idea
 
-Мозг работает по принципу соматического отбора: из исходного разнообразия нейронных групп (neuronal groups) опыт отбирает наиболее адаптивные. Reentrant signaling — параллельные двунаправленные связи между картами — обеспечивает интеграцию. «Динамическое ядро» (dynamic core) — множество нейронных групп с сильной реентрантной связностью — является субстратом сознания.
+The brain operates on the principle of somatic selection: from the initial diversity of neuronal groups, experience selects the most adaptive. Reentrant signaling — parallel bidirectional connections between maps — provides integration. The "dynamic core" — the set of neuronal groups with strong reentrant connectivity — is the substrate of consciousness.
 
-### Формальная структура
+### Formal structure
 
-Edelman и Tononi предложили меру «нейронной сложности» $C_N$, которая максимальна при балансе интеграции и дифференциации. Позже Tononi формализовал это в $\Phi^{\text{IIT}}$.
+Edelman and Tononi proposed a measure of "neural complexity" $C_N$, which is maximal at a balance of integration and differentiation. Later Tononi formalised this in $\Phi^{\text{IIT}}$.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | TNGS | КК |
+| Aspect | TNGS | CC |
 |--------|------|-----|
-| Центральный объект | Dynamic core (нейронные группы) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Механизм интеграции | Reentrant signaling | $\Phi(\Gamma)$ — норма недиагональных когерентностей |
-| Отбор | Соматический (нейродарвинизм) | $\mathcal{R}[\Gamma, E]$ — регенеративный член |
-| Мера | Нейронная сложность $C_N$ | $C = \Phi \cdot R$ |
+| Central object | Dynamic core (neuronal groups) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Integration mechanism | Reentrant signaling | $\Phi(\Gamma)$ — norm of off-diagonal coherences |
+| Selection | Somatic (neural Darwinism) | $\mathcal{R}[\Gamma, E]$ — regenerative term |
+| Measure | Neural complexity $C_N$ | $C = \Phi \cdot R$ |
 
-### Что КК заимствует
-- Баланс интеграции/дифференциации — отражён в $\Phi \geq 1$ и $D_{\text{diff}} \geq 2$
-- Реентрантность как механизм — формализована через $\varphi$-оператор
+### What CC borrows
+- Balance of integration/differentiation — reflected in $\Phi \geq 1$ and $D_{\text{diff}} \geq 2$
+- Reentrance as mechanism — formalised through the $\varphi$-operator
 
-### Что КК делает лучше
-- Формальные пороги ($P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$) вместо качественного «dynamic core»
-- Алгебраическая структура ($G_2$-ригидность) вместо произвольной нейронной сложности
-- Полная динамика (Линдблад + $\mathcal{R}$) вместо описательной нейробиологии
+### What CC does better
+- Formal thresholds ($P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$) instead of a qualitative "dynamic core"
+- Algebraic structure ($G_2$-rigidity) instead of arbitrary neural complexity
+- Complete dynamics (Lindblad + $\mathcal{R}$) instead of descriptive neurobiology
 
-### Честная оценка: что теория делает лучше КК
-- Биологическая конкретность: привязка к нейронным группам, картам мозга, синаптической пластичности
-- Эволюционная перспектива: объяснение через отбор, а не аксиоматику
-- TNGS объясняет, как сознание **развивается** онтогенетически; КК описывает **структуру**, но не онтогенез
+### Honest assessment: what the theory does better than CC
+- Biological concreteness: connection to neuronal groups, brain maps, synaptic plasticity
+- Evolutionary perspective: explanation through selection, not axiomatics
+- TNGS explains how consciousness **develops** ontogenetically; CC describes **structure** but not ontogenesis
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{TNGS}}: \mathbf{DynCore} \to \mathbf{Hol}$$
 
-Dynamic core $\mapsto$ Голоном $\mathbb{H}$ с $\Phi \geq 1$; reentrant maps $\mapsto$ недиагональные $\gamma_{ij}$; somatic selection $\mapsto$ $\mathcal{R}$. Функтор **не полон** — TNGS не покрывает $R$, $\varphi$, $\mathrm{Coh}_E$.
+Dynamic core $\mapsto$ Holon $\mathbb{H}$ with $\Phi \geq 1$; reentrant maps $\mapsto$ off-diagonal $\gamma_{ij}$; somatic selection $\mapsto$ $\mathcal{R}$. The functor is **not complete** — TNGS does not cover $R$, $\varphi$, $\mathrm{Coh}_E$.
 
 ---
 
-## 12. Теория адаптивного резонанса (ART) {#art}
+## 12. Adaptive Resonance Theory (ART) {#art}
 
-> *«Мозг решает дилемму стабильности-пластичности через адаптивный резонанс: только резонансные состояния достигают сознания.»* — Stephen Grossberg
+> *«The brain solves the stability-plasticity dilemma through adaptive resonance: only resonant states reach consciousness.»* — Stephen Grossberg
 
-### Создатели и история
+### Creators and history
 
-**Stephen Grossberg** (Бостонский университет) начал разработку ART в 1976 г. как теорию обучения, решающую проблему стабильности-пластичности. В 2017 г. в книге «Conscious Mind, Resonant Brain» Grossberg расширил ART до полноценной теории сознания, утверждая что адаптивный резонанс — необходимое и достаточное условие осознанного восприятия.
+**Stephen Grossberg** (Boston University) began developing ART in 1976 as a learning theory addressing the stability-plasticity problem. In 2017 in «Conscious Mind, Resonant Brain» Grossberg extended ART into a full theory of consciousness, claiming that adaptive resonance is a necessary and sufficient condition for conscious perception.
 
-ART — одна из немногих теорий с работающими вычислительными моделями (ART-1, ART-2, ARTMAP), что делает её уникально конкретной среди теорий сознания.
+ART is one of the few theories with working computational models (ART-1, ART-2, ARTMAP), which makes it uniquely concrete among theories of consciousness.
 
-### Ключевая идея
+### Key idea
 
-Адаптивный резонанс — самоподдерживающийся паттерн активности, возникающий при совпадении (match) bottom-up входа и top-down ожидания. Когда match достаточен (превышает vigilance parameter $\rho$), возникает резонанс и сознательное восприятие. Mismatch reset запускает поиск нового паттерна (бессознательный процесс).
+Adaptive resonance — a self-sustaining activity pattern that arises when the bottom-up input matches (match) the top-down expectation. When the match is sufficient (exceeds the vigilance parameter $\rho$), resonance and conscious perception arise. Mismatch reset triggers the search for a new pattern (an unconscious process).
 
-### Формальная структура
+### Formal structure
 
-Vigilance parameter $\rho \in [0, 1]$: match function $M(x, y) = \|x \wedge y\| / \|x\|$. Если $M \geq \rho$ — резонанс (сознание); иначе — reset (бессознательное). ART-модели точно специфицированы дифференциальными уравнениями.
+Vigilance parameter $\rho \in [0, 1]$: match function $M(x, y) = \|x \wedge y\| / \|x\|$. If $M \geq \rho$ — resonance (consciousness); otherwise — reset (unconscious). ART models are precisely specified by differential equations.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | ART | КК |
+| Aspect | ART | CC |
 |--------|-----|-----|
-| Центральный объект | Резонансный паттерн | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Порог сознания | Vigilance $\rho$ | $P_{\text{crit}} = 2/7$ [Т] |
-| Механизм | Match/mismatch + resonance | $\varphi(\Gamma) \approx \Gamma$ (самомоделирование) |
-| Стабильность-пластичность | Центральная проблема | $\mathcal{R}$ vs $\mathcal{D}_\Omega$ (регенерация vs декогеренция) |
+| Central object | Resonant pattern | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Consciousness threshold | Vigilance $\rho$ | $P_{\text{crit}} = 2/7$ [T] |
+| Mechanism | Match/mismatch + resonance | $\varphi(\Gamma) \approx \Gamma$ (self-modelling) |
+| Stability-plasticity | Central problem | $\mathcal{R}$ vs $\mathcal{D}_\Omega$ (regeneration vs decoherence) |
 
-### Что КК заимствует
-- Порог как ключевой механизм — vigilance $\rho$ концептуально аналогичен $P_{\text{crit}}$
-- Match/mismatch — отражён в $\|\Gamma - \varphi(\Gamma)\|_F$ (prediction error)
+### What CC borrows
+- Threshold as key mechanism — vigilance $\rho$ is conceptually analogous to $P_{\text{crit}}$
+- Match/mismatch — reflected in $\|\Gamma - \varphi(\Gamma)\|_F$ (prediction error)
 
-### Что КК делает лучше
-- Порог $P_{\text{crit}} = 2/7$ выведен из первых принципов [Т], а не задаётся как свободный параметр
-- Множественные критерии ($P$, $R$, $\Phi$, $D$) вместо единственного $\rho$
-- Квантовое обобщение: матрицы плотности вместо реальных векторов
+### What CC does better
+- Threshold $P_{\text{crit}} = 2/7$ derived from first principles [T], not set as a free parameter
+- Multiple criteria ($P$, $R$, $\Phi$, $D$) instead of a single $\rho$
+- Quantum generalisation: density matrices instead of real vectors
 
-### Честная оценка: что теория делает лучше КК
-- Работающие вычислительные модели (ART-1, ART-2, ARTMAP) с десятилетиями валидации
-- Конкретные нейронные механизмы (laminar circuits, top-down matching)
-- Объясняет конкретные перцептивные феномены (complementary computing, figure-ground separation)
-- Решение проблемы стабильности-пластичности — конкретное и работающее
+### Honest assessment: what the theory does better than CC
+- Working computational models (ART-1, ART-2, ARTMAP) with decades of validation
+- Specific neural mechanisms (laminar circuits, top-down matching)
+- Explains specific perceptual phenomena (complementary computing, figure-ground separation)
+- Solution to the stability-plasticity problem — specific and working
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{ART}}: \mathbf{Resonance} \to \mathbf{Hol}$$
 
-Resonant state $\mapsto$ $\Gamma$ с $R \geq R_{\text{th}}$; vigilance $\rho$ $\mapsto$ $P_{\text{crit}}$; mismatch reset $\mapsto$ gap-фаза ($\sigma_k > 0$). Функтор **не полон**: ART не покрывает $\Phi$, $\mathrm{Coh}_E$, L0–L4.
+Resonant state $\mapsto$ $\Gamma$ with $R \geq R_{\text{th}}$; vigilance $\rho$ $\mapsto$ $P_{\text{crit}}$; mismatch reset $\mapsto$ gap phase ($\sigma_k > 0$). The functor is **not complete**: ART does not cover $\Phi$, $\mathrm{Coh}_E$, L0–L4.
 
 ---
 
-## 13. Энактивизм и 4E-когниция {#enactivism}
+## 13. Enactivism and 4E Cognition {#enactivism}
 
-> *«Сознание не находится в мозге — оно разыгрывается (enacted) через взаимодействие организма с миром.»* — Francisco Varela
+> *«Consciousness is not located in the brain — it is enacted through the interaction of the organism with the world.»* — Francisco Varela
 
-### Создатели и история
+### Creators and history
 
-**Francisco Varela**, **Evan Thompson** и **Eleanor Rosch** изложили основы в «The Embodied Mind» (1991). **Alva Noe** развил энактивистскую теорию восприятия в «Action in Perception» (2004). 4E-когниция (Embodied, Embedded, Enacted, Extended) — зонтичная программа, объединяющая антирепрезентационализм, телесность и ситуативность.
+**Francisco Varela**, **Evan Thompson**, and **Eleanor Rosch** laid the foundations in «The Embodied Mind» (1991). **Alva Noë** developed the enactivist theory of perception in «Action in Perception» (2004). 4E cognition (Embodied, Embedded, Enacted, Extended) is an umbrella programme uniting anti-representationalism, embodiment, and situatedness.
 
-Энактивизм вырос из автопоэзиса Матураны-Варелы, дополнив его феноменологической традицией (Мерло-Понти, Гуссерль) и буддийской философией сознания.
+Enactivism grew out of Maturana-Varela autopoiesis, supplementing it with the phenomenological tradition (Merleau-Ponty, Husserl) and Buddhist philosophy of mind.
 
-### Ключевая идея
+### Key idea
 
-Сознание — не внутреннее представление мира, а способ взаимодействия с ним. Смысл (sense-making) — базовая когнитивная операция, неразрывно связанная с жизнью (life-mind continuity). Восприятие — не пассивный приём информации, а активное исследование мира через сенсомоторные паттерны.
+Consciousness is not an internal representation of the world but a mode of interacting with it. Sense-making — the basic cognitive operation — is inextricably linked with life (life-mind continuity). Perception is not passive reception of information but active exploration of the world through sensorimotor patterns.
 
-Ключевой тезис: жизнь и разум непрерывны (autopoiesis → cognition → consciousness). Сознание телесно, встроено в среду и конституировано действием.
+Key thesis: life and mind are continuous (autopoiesis → cognition → consciousness). Consciousness is embodied, embedded in the environment, and constituted by action.
 
-### Формальная структура
+### Formal structure
 
-Энактивизм принципиально антиформализационный. Thompson (2007, «Mind in Life») использует динамические системы, но без единого математического аппарата. Основной инструмент — феноменологический анализ, а не формальные модели.
+Enactivism is principally anti-formalising. Thompson (2007, «Mind in Life») uses dynamical systems, but without a unified mathematical apparatus. The primary tool is phenomenological analysis, not formal models.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Энактивизм | КК |
+| Aspect | Enactivism | CC |
 |--------|-----------|-----|
-| Центральный объект | Sense-making (организм-среда) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Мера сознания | Нет формальной | $C = \Phi \cdot R$ |
-| Тело | Конституирующее | [A-измерение](/docs/core/structure/dimension-a) (агентность) |
-| Среда | Конституирующая | Окружение $E$, [O-измерение](/docs/core/structure/dimension-o) |
-| Life-mind continuity | Центральный тезис | L0 (протоопыт) → L2 (сознание): непрерывность через $P$ |
+| Central object | Sense-making (organism-environment) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Consciousness measure | No formal measure | $C = \Phi \cdot R$ |
+| Body | Constitutive | [A-dimension](/docs/core/structure/dimension-a) (agency) |
+| Environment | Constitutive | Environment $E$, [O-dimension](/docs/core/structure/dimension-o) |
+| Life-mind continuity | Central thesis | L0 (proto-experience) → L2 (consciousness): continuity through $P$ |
 
-### Что КК заимствует
-- Life-mind continuity: иерархия L0→L4 как непрерывный спектр
-- Автопоэтическая замкнутость: аксиома (AP), неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$
-- Телесность: A-измерение как фундаментальное
+### What CC borrows
+- Life-mind continuity: hierarchy L0→L4 as a continuous spectrum
+- Autopoietic closure: axiom (AP), fixed point $\varphi(\Gamma^*) = \Gamma^*$
+- Embodiment: A-dimension as fundamental
 
-### Что КК делает лучше
-- Формализация: точные пороги, динамика, теоремы
-- Квантовое основание: матрицы плотности позволяют описать контекстуальность
-- Предсказательная сила: [фальсифицируемые предсказания](/docs/applied/coherence-cybernetics/predictions)
+### What CC does better
+- Formalisation: exact thresholds, dynamics, theorems
+- Quantum foundation: density matrices allow description of contextuality
+- Predictive power: [falsifiable predictions](/docs/applied/coherence-cybernetics/predictions)
 
-### Честная оценка: что теория делает лучше КК
-- Феноменологическая глубина: энактивизм описывает опыт «изнутри» (first-person), КК — «снаружи» (third-person math)
-- Телесная специфичность: как конкретная телесность формирует конкретный опыт
-- Критика репрезентационализма: $\Gamma$ всё ещё является «репрезентацией», что энактивисты оспаривают
-- Экологическая валидность: энактивизм работает с реальными организмами в реальных средах
+### Honest assessment: what the theory does better than CC
+- Phenomenological depth: enactivism describes experience "from within" (first-person), CC — "from outside" (third-person math)
+- Bodily specificity: how concrete embodiment shapes concrete experience
+- Critique of representationalism: $\Gamma$ is still a "representation", which enactivists dispute
+- Ecological validity: enactivism works with real organisms in real environments
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Enact}}: \mathbf{Enactive} \to \mathbf{Hol}$$
 
-Sense-making $\mapsto$ жизнеспособность $\mathcal{V}$; autonomy $\mapsto$ (AP); coupling $\mapsto$ когерентности $\gamma_{AO}$, $\gamma_{SO}$. Функтор **принципиально неполон**: энактивизм отвергает внутреннее представление, а $\Gamma$ — матрица внутреннего состояния.
+Sense-making $\mapsto$ viability $\mathcal{V}$; autonomy $\mapsto$ (AP); coupling $\mapsto$ coherences $\gamma_{AO}$, $\gamma_{SO}$. The functor is **principally incomplete**: enactivism rejects internal representation, whereas $\Gamma$ is a matrix of internal state.
 
 ---
 
-## 14. Сенсомоторные контингенции (SMCT) {#smct}
+## 14. Sensorimotor Contingencies (SMCT) {#smct}
 
-> *«Видеть красное — значит владеть определённым набором сенсомоторных контингенций.»* — Kevin O'Regan
+> *«To see red is to master a specific set of sensorimotor contingencies.»* — Kevin O'Regan
 
-### Создатели и история
+### Creators and history
 
-**Kevin O'Regan** и **Alva Noe** представили SMCT в статье «A sensorimotor account of vision and visual consciousness» (2001). Теория утверждает, что восприятие определяется не нейронной активностью как таковой, а паттернами зависимости сенсорных входов от действий (sensorimotor contingencies, SMC).
+**Kevin O'Regan** and **Alva Noë** presented SMCT in «A sensorimotor account of vision and visual consciousness» (2001). The theory claims that perception is determined not by neural activity as such, but by patterns of dependence of sensory inputs on actions (sensorimotor contingencies, SMC).
 
-SMCT — практический вариант энактивизма, сфокусированный на конкретных перцептивных качествах (qualia).
+SMCT is a practical variant of enactivism, focused on specific perceptual qualities (qualia).
 
-### Ключевая идея
+### Key idea
 
-Сознательное восприятие — это практическое знание (know-how) законов, связывающих действия с изменениями сенсорного входа. Различие между зрением и слухом — не в «внутренних квалиа», а в различии сенсомоторных законов: зрительные SMC закономерно меняются при движении глаз, слуховые — нет. Качество опыта определяется **структурой SMC**, а не нейронным субстратом.
+Conscious perception is practical knowledge (know-how) of the laws linking actions with changes in sensory input. The difference between vision and hearing lies not in "internal qualia" but in different sensorimotor laws: visual SMC change lawfully with eye movement, auditory ones do not. The quality of experience is determined by the **structure of SMC**, not by the neural substrate.
 
-### Формальная структура
+### Formal structure
 
-SMC формализуются как отображение: $\text{SMC}: \mathcal{A} \times \mathcal{S} \to \mathcal{S}$, где $\mathcal{A}$ — пространство действий, $\mathcal{S}$ — сенсорное пространство. Качество опыта = класс эквивалентности SMC-паттернов.
+SMC are formalised as a mapping: $\text{SMC}: \mathcal{A} \times \mathcal{S} \to \mathcal{S}$, where $\mathcal{A}$ is the action space, $\mathcal{S}$ is the sensory space. Quality of experience = equivalence class of SMC patterns.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | SMCT | КК |
+| Aspect | SMCT | CC |
 |--------|------|-----|
-| Центральный объект | SMC-паттерны | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Квалиа | Структура SMC (know-how) | $\mathrm{Coh}_E$ + проективная геометрия E |
-| Действие | Конституирующее для восприятия | A-измерение + Dec-функтор |
-| Тело | Необходимо для SMC | A-измерение |
+| Central object | SMC patterns | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Qualia | Structure of SMC (know-how) | $\mathrm{Coh}_E$ + projective geometry of E |
+| Action | Constitutive for perception | A-dimension + Dec-functor |
+| Body | Necessary for SMC | A-dimension |
 
-### Что КК заимствует
-- Связь действия и восприятия: A↔S когерентности $\gamma_{AS}$ в $\Gamma$
-- Сенсомоторный слой: [КК-2 (сенсомоторика)](/docs/applied/coherence-cybernetics/theorems) формализует SMC
+### What CC borrows
+- Action-perception connection: A↔S coherences $\gamma_{AS}$ in $\Gamma$
+- Sensorimotor layer: [CC-2 (sensorimotor)](/docs/applied/coherence-cybernetics/theorems) formalises SMC
 
-### Что КК делает лучше
-- Объясняет квалиа через $\mathrm{Coh}_E$ (No-Zombie [Т]), а не только через SMC
-- Формальная мера ($C = \Phi \cdot R$), а не описание «know-how»
-- Применимость за пределами сенсомоторики (абстрактное мышление, метакогниция)
+### What CC does better
+- Explains qualia through $\mathrm{Coh}_E$ (No-Zombie [T]), not only through SMC
+- Formal measure ($C = \Phi \cdot R$), not description of "know-how"
+- Applicability beyond sensorimotor (abstract thinking, metacognition)
 
-### Честная оценка: что теория делает лучше КК
-- Конкретные предсказания о перцептивных качествах (change blindness, sensory substitution)
-- Объяснение различий между модальностями (зрение vs осязание) через конкретные SMC-паттерны
-- Экспериментальная проверяемость: sensory substitution devices подтверждают теорию
+### Honest assessment: what the theory does better than CC
+- Specific predictions about perceptual qualities (change blindness, sensory substitution)
+- Explanation of differences between modalities (vision vs touch) through specific SMC patterns
+- Experimental testability: sensory substitution devices confirm the theory
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{SMCT}}: \mathbf{SMC} \to \mathbf{Hol}$$
 
-SMC-паттерн $\mapsto$ когерентности $\gamma_{AS}$, $\gamma_{AO}$; SMC-mastery $\mapsto$ $R \geq R_{\text{th}}$; modality $\mapsto$ сектор $S$. Функтор **не полон** — SMCT не покрывает $\Phi$, $\mathrm{Coh}_E$, SAD-башню.
+SMC pattern $\mapsto$ coherences $\gamma_{AS}$, $\gamma_{AO}$; SMC mastery $\mapsto$ $R \geq R_{\text{th}}$; modality $\mapsto$ sector $S$. The functor is **not complete** — SMCT does not cover $\Phi$, $\mathrm{Coh}_E$, the SAD tower.
 
 ---
 
-## 15. Темпорально-пространственная теория сознания (TTC) {#ttc}
+## 15. Temporo-Spatial Theory of Consciousness (TTC) {#ttc}
 
-> *«Сознание — не содержание, а темпорально-пространственная структура нейронной активности.»* — Georg Northoff
+> *«Consciousness is not content but the temporo-spatial structure of neural activity.»* — Georg Northoff
 
-### Создатели и история
+### Creators and history
 
-**Georg Northoff** (Оттавский университет) разрабатывает TTC с 2014 г. («Unlocking the Brain», 2 тома). Центральный тезис: сознание определяется не специфическим содержанием нейронной активности, а её темпорально-пространственной структурой (temporo-spatial structure, TSS). Northoff подчёркивает роль спонтанной активности (resting state) и её связь с самореференцией (self-referential processing).
+**Georg Northoff** (University of Ottawa) has been developing TTC since 2014 («Unlocking the Brain», 2 volumes). The central thesis: consciousness is determined not by specific content of neural activity but by its temporo-spatial structure (TSS). Northoff emphasises the role of spontaneous activity (resting state) and its connection to self-referential processing.
 
-### Ключевая идея
+### Key idea
 
-Мозг конструирует «внутреннее время» и «внутреннее пространство» из спонтанной нейронной активности. Сознание возникает, когда темпорально-пространственная структура спонтанной активности «вложена» (nested) в стимульно-вызванную. Ключевые конструкты: temporo-spatial alignment, temporo-spatial nestedness, temporo-spatial expansion.
+The brain constructs "inner time" and "inner space" from spontaneous neural activity. Consciousness arises when the temporo-spatial structure of spontaneous activity is "nested" in stimulus-evoked activity. Key constructs: temporo-spatial alignment, temporo-spatial nestedness, temporo-spatial expansion.
 
-### Формальная структура
+### Formal structure
 
-Northoff использует нелинейную динамику, меры scale-free активности (power-law exponent $\beta$), автокорреляционные структуры. Формализация частичная — метрики операциональны, но не выведены из первых принципов.
+Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exponent $\beta$), autocorrelation structures. Formalisation is partial — the metrics are operational but not derived from first principles.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | TTC | КК |
+| Aspect | TTC | CC |
 |--------|-----|-----|
-| Центральный объект | Темпорально-пространственная структура | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Время | Внутреннее (из спонтанной активности) | [Эмерджентное время](/docs/core/foundations/spacetime) (из $\mathcal{L}_\Omega$) |
-| Самореференция | Self-referential processing (CMS) | $\varphi(\Gamma)$, $R \geq 1/3$ |
-| Resting state | Ключевая роль | $\Gamma^*$ — неподвижная точка |
+| Central object | Temporo-spatial structure | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Time | Internal (from spontaneous activity) | [Emergent time](/docs/core/foundations/spacetime) (from $\mathcal{L}_\Omega$) |
+| Self-reference | Self-referential processing (CMS) | $\varphi(\Gamma)$, $R \geq 1/3$ |
+| Resting state | Key role | $\Gamma^*$ — fixed point |
 
-### Что КК заимствует
-- Роль спонтанной активности: $\Gamma^*$ = неподвижная точка $\equiv$ resting state
-- Темпоральная структура: спектральная щель $\Lambda$ определяет временные масштабы
+### What CC borrows
+- Role of spontaneous activity: $\Gamma^*$ = fixed point $\equiv$ resting state
+- Temporal structure: spectral gap $\Lambda$ defines timescales
 
-### Что КК делает лучше
-- Вывод пространства-времени из первых принципов ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
-- Формальные пороги вместо корреляционных мер
-- Единая динамика (Линдблад + $\mathcal{R}$) вместо набора метрик
+### What CC does better
+- Derivation of spacetime from first principles ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- Formal thresholds instead of correlation measures
+- Unified dynamics (Lindblad + $\mathcal{R}$) instead of a set of metrics
 
-### Честная оценка: что теория делает лучше КК
-- Конкретные нейровизуализационные предсказания (resting state fMRI, EEG power spectra)
-- Связь с клиническими нарушениями сознания (disorders of consciousness — coma, vegetative state)
-- Роль спонтанной активности в формировании сознания — эмпирически подтверждена
+### Honest assessment: what the theory does better than CC
+- Specific neuroimaging predictions (resting state fMRI, EEG power spectra)
+- Connection to clinical disorders of consciousness (disorders of consciousness — coma, vegetative state)
+- Role of spontaneous activity in forming consciousness — empirically confirmed
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{TTC}}: \mathbf{TSS} \to \mathbf{Hol}$$
 
-TSS $\mapsto$ спектральные свойства $\mathcal{L}_\Omega$; spontaneous activity $\mapsto$ $\Gamma^*$; self-referential processing $\mapsto$ $\varphi(\Gamma)$. Функтор **не полон** — TTC не покрывает $\Phi$, $\mathrm{Coh}_E$, алгебраическую структуру.
+TSS $\mapsto$ spectral properties of $\mathcal{L}_\Omega$; spontaneous activity $\mapsto$ $\Gamma^*$; self-referential processing $\mapsto$ $\varphi(\Gamma)$. The functor is **not complete** — TTC does not cover $\Phi$, $\mathrm{Coh}_E$, algebraic structure.
 
 ---
 
-## 16. Теория дендритной интеграции (DIT) {#dit}
+## 16. Dendritic Integration Theory (DIT) {#dit}
 
-> *«Обратная связь на дендриты пирамидных нейронов слоя 5 — клеточный механизм сознания.»* — Matthew Larkum
+> *«Feedback onto the dendrites of layer-5 pyramidal neurons — the cellular mechanism of consciousness.»* — Matthew Larkum
 
-### Создатели и история
+### Creators and history
 
-**Matthew Larkum** (Университет Гумбольдта, Берлин) предложил DIT в 2013 г. на основе электрофизиологических данных о BAC-firing (backpropagation-activated calcium spike) в апикальных дендритах пирамидных нейронов слоя 5 коры. Теория конкретизирует механизм, через который top-down сигналы (обратная связь) интегрируются с bottom-up входами (прямая связь) на клеточном уровне.
+**Matthew Larkum** (Humboldt University, Berlin) proposed DIT in 2013 based on electrophysiological data on BAC-firing (backpropagation-activated calcium spike) in the apical dendrites of layer-5 pyramidal neurons of the cortex. The theory specifies the mechanism by which top-down signals (feedback) are integrated with bottom-up inputs (feedforward) at the cellular level.
 
-### Ключевая идея
+### Key idea
 
-Пирамидные нейроны слоя 5 имеют два «входа»: базальные дендриты (bottom-up) и апикальные дендриты (top-down). Совпадение обоих сигналов вызывает кальциевый спайк (BAC-firing) — «клеточный механизм сознания». Анестетики избирательно блокируют апикальную дендритную активность, подавляя сознание без подавления feedforward-обработки.
+Layer-5 pyramidal neurons have two "inputs": basal dendrites (bottom-up) and apical dendrites (top-down). Coincidence of both signals triggers a calcium spike (BAC-firing) — the "cellular mechanism of consciousness". Anaesthetics selectively block apical dendritic activity, suppressing consciousness without suppressing feedforward processing.
 
-### Формальная структура
+### Formal structure
 
-Модель отдельного нейрона: $V_{\text{soma}} = f(I_{\text{basal}}, I_{\text{apical}})$, BAC-firing при $I_{\text{basal}} > \theta_b \wedge I_{\text{apical}} > \theta_a$. На уровне популяции — нет формальной теории сознания, только клеточный механизм.
+Single-neuron model: $V_{\text{soma}} = f(I_{\text{basal}}, I_{\text{apical}})$, BAC-firing at $I_{\text{basal}} > \theta_b \wedge I_{\text{apical}} > \theta_a$. At population level — there is no formal theory of consciousness, only a cellular mechanism.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | DIT | КК |
+| Aspect | DIT | CC |
 |--------|-----|-----|
-| Уровень описания | Клеточный (дендриты) | Макроскопический ($\Gamma$) |
-| Механизм | BAC-firing (coincidence detection) | $\varphi(\Gamma) \approx \Gamma$ (рефлексивное замыкание) |
-| Анестезия | Блокада апикальных дендритов | $R \to 0$ (потеря рефлексии) |
-| Top-down / bottom-up | Два входа на дендрите | $\mathcal{R}$ (top-down) vs $\mathcal{D}_\Omega$ (bottom-up) |
+| Level of description | Cellular (dendrites) | Macroscopic ($\Gamma$) |
+| Mechanism | BAC-firing (coincidence detection) | $\varphi(\Gamma) \approx \Gamma$ (reflexive closure) |
+| Anaesthesia | Blockade of apical dendrites | $R \to 0$ (loss of reflection) |
+| Top-down / bottom-up | Two inputs on dendrite | $\mathcal{R}$ (top-down) vs $\mathcal{D}_\Omega$ (bottom-up) |
 
-### Что КК заимствует
-- Совпадение top-down и bottom-up как необходимое условие — аналог $R \geq R_{\text{th}}$ (самомодель совпадает с состоянием)
+### What CC borrows
+- Coincidence of top-down and bottom-up as necessary condition — analogue of $R \geq R_{\text{th}}$ (self-model coincides with state)
 
-### Что КК делает лучше
-- Макроскопическая теория: от клеточного механизма к глобальной мере сознания
-- Формальные пороги и предсказания на уровне системы, а не отдельного нейрона
+### What CC does better
+- Macroscopic theory: from cellular mechanism to global consciousness measure
+- Formal thresholds and predictions at the system level, not single-neuron level
 
-### Честная оценка: что теория делает лучше КК
-- **Конкретный клеточный механизм**: BAC-firing можно измерить, заблокировать, стимулировать
-- Объяснение действия анестетиков на клеточном уровне
-- Прямая связь с нейроанатомией (layer 5, apical dendrites)
-- КК не имеет клеточной реализации — DIT предлагает конкретный «мост» к нейронам
+### Honest assessment: what the theory does better than CC
+- **Concrete cellular mechanism**: BAC-firing can be measured, blocked, stimulated
+- Explanation of anaesthetic action at the cellular level
+- Direct connection to neuroanatomy (layer 5, apical dendrites)
+- CC has no cellular realisation — DIT offers a concrete "bridge" to neurons
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{DIT}}: \mathbf{Dendrite} \to \mathbf{Hol}$$
 
-BAC-firing population rate $\mapsto$ $R(\Gamma)$; apical blockade $\mapsto$ $R \to 0$; coincidence detection $\mapsto$ match $\varphi(\Gamma) \approx \Gamma$. Функтор **сильно неполон** — DIT описывает один механизм, не теорию сознания.
+BAC-firing population rate $\mapsto$ $R(\Gamma)$; apical blockade $\mapsto$ $R \to 0$; coincidence detection $\mapsto$ match $\varphi(\Gamma) \approx \Gamma$. The functor is **strongly incomplete** — DIT describes one mechanism, not a theory of consciousness.
 
 ---
 
-## 17. Электромагнитная теория сознания (CEMI) {#cemi}
+## 17. Conscious Electromagnetic Information (CEMI) {#cemi}
 
-> *«Сознание — это электромагнитное поле мозга: информация, интегрированная в единое EM-поле.»* — Johnjoe McFadden
+> *«Consciousness is the brain's electromagnetic field: information integrated into a single EM field.»* — Johnjoe McFadden
 
-### Создатели и история
+### Creators and history
 
-**Johnjoe McFadden** (Университет Суррея) предложил CEMI (Conscious Electromagnetic Information) в 2000 г., обновил в 2020 г. Параллельно **E. Roy John**, а затем **Tam Hunt** и **Jonathan Schooler** развивали resonance-based теории. McFadden утверждает, что EM-поле мозга — не эпифеномен, а каузальный интегратор информации.
+**Johnjoe McFadden** (University of Surrey) proposed CEMI (Conscious Electromagnetic Information) in 2000, updated in 2020. In parallel, **E. Roy John**, and then **Tam Hunt** and **Jonathan Schooler** developed resonance-based theories. McFadden argues that the brain's EM field is not an epiphenomenon but a causal integrator of information.
 
-### Ключевая идея
+### Key idea
 
-Нейроны генерируют электромагнитные поля. EM-поле мозга интегрирует информацию от миллиардов нейронов в единый физический объект. Сознание тождественно этому интегрированному EM-полю. Ключевое преимущество: EM-поле решает binding problem — оно физически едино, в отличие от дискретных нейронных спайков.
+Neurons generate electromagnetic fields. The brain's EM field integrates information from billions of neurons into a single physical object. Consciousness is identical to this integrated EM field. Key advantage: the EM field solves the binding problem — it is physically unified, unlike discrete neural spikes.
 
-### Формальная структура
+### Formal structure
 
-EM-поле $\mathbf{E}(\mathbf{r}, t)$ суперпозиция полей от $N$ нейронов. Интегрированная EM-информация: $\text{cemi} = I(\mathbf{E}_{\text{total}}) - \sum_i I(\mathbf{E}_i)$. Формализация аналогична IIT, но в пространстве EM-полей.
+EM field $\mathbf{E}(\mathbf{r}, t)$ is a superposition of fields from $N$ neurons. Integrated EM information: $\text{cemi} = I(\mathbf{E}_{\text{total}}) - \sum_i I(\mathbf{E}_i)$. Formalisation is analogous to IIT, but in the space of EM fields.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | CEMI | КК |
+| Aspect | CEMI | CC |
 |--------|------|-----|
-| Субстрат | EM-поле мозга | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Интеграция | Суперпозиция EM-полей | $\Phi(\Gamma)$ — когерентности |
-| Binding problem | Решена (EM-поле едино) | Решена ($\Gamma$ — единая матрица) |
-| Мера | cemi (EM-интеграция) | $C = \Phi \cdot R$ |
+| Substrate | Brain EM field | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Integration | Superposition of EM fields | $\Phi(\Gamma)$ — coherences |
+| Binding problem | Solved (EM field is unified) | Solved ($\Gamma$ is a unified matrix) |
+| Measure | cemi (EM integration) | $C = \Phi \cdot R$ |
 
-### Что КК заимствует
-- Идея интеграции через единый физический объект — $\Gamma$ как единая матрица плотности
+### What CC borrows
+- Idea of integration through a single physical object — $\Gamma$ as a unified density matrix
 
-### Что КК делает лучше
-- Субстратная независимость: КК не привязана к EM-полям, применима к любой системе
-- Алгебраическая структура ($G_2$, плоскость Фано) вместо физики EM-полей
-- Формальные пороги и динамика
+### What CC does better
+- Substrate independence: CC is not tied to EM fields, applicable to any system
+- Algebraic structure ($G_2$, Fano plane) instead of physics of EM fields
+- Formal thresholds and dynamics
 
-### Честная оценка: что теория делает лучше КК
-- Физическая конкретность: EM-поле измеряемо (EEG, MEG — прямые измерения)
-- Каузальность: EM-поле влияет на нейроны (EM-обратная связь), конкретный каузальный механизм
-- Binding problem имеет **физическое** решение, а не абстрактное математическое
+### Honest assessment: what the theory does better than CC
+- Physical concreteness: EM field is measurable (EEG, MEG — direct measurements)
+- Causality: EM field influences neurons (EM feedback), a specific causal mechanism
+- Binding problem has a **physical** solution, not an abstract mathematical one
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{CEMI}}: \mathbf{EMField} \to \mathbf{Hol}$$
 
-$\mathbf{E}(\mathbf{r}, t) \mapsto \Gamma$ (coarse-graining по 7 измерениям); cemi $\mapsto$ $\Phi$; EM-integration $\mapsto$ недиагональные $\gamma_{ij}$. Функтор **не полон** — CEMI не покрывает $R$, $\varphi$, SAD-башню.
+$\mathbf{E}(\mathbf{r}, t) \mapsto \Gamma$ (coarse-graining by 7 dimensions); cemi $\mapsto$ $\Phi$; EM integration $\mapsto$ off-diagonal $\gamma_{ij}$. The functor is **not complete** — CEMI does not cover $R$, $\varphi$, the SAD tower.
 
 ---
 
-## 18. Теория контроля восприятия (PCT) {#pct}
+## 18. Perceptual Control Theory (PCT) {#pct}
 
-> *«Поведение — не выходная переменная. Поведение — это контроль восприятия.»* — William T. Powers
+> *«Behaviour is not an output variable. Behaviour is the control of perception.»* — William T. Powers
 
-### Создатели и история
+### Creators and history
 
-**William T. Powers** (1926–2013) представил PCT в книге «Behavior: The Control of Perception» (1973). Теория описывает организм как иерархию контрольных систем с обратной связью, где каждый уровень контролирует свои входы (восприятия), а не выходы (действия). Powers, инженер по образованию, перенёс теорию управления на биологические системы.
+**William T. Powers** (1926–2013) presented PCT in «Behavior: The Control of Perception» (1973). The theory describes the organism as a hierarchy of feedback control systems where each level controls its inputs (perceptions), not its outputs (actions). Powers, trained as an engineer, transferred control theory to biological systems.
 
-PCT оказала влияние на кибернетику и когнитивную науку, хотя остаётся менее известной, чем FEP или GWT. В 2010-х Philip Runkel и Richard Marken продолжили развитие.
+PCT influenced cybernetics and cognitive science, although it remains less well-known than FEP or GWT. In the 2010s Philip Runkel and Richard Marken continued the development.
 
-### Ключевая идея
+### Key idea
 
-Организм — иерархия контрольных петель. Каждый уровень задаёт reference signal (целевое восприятие), сравнивает его с текущим восприятием, и действует, чтобы устранить ошибку. Поведение — побочный эффект контроля восприятия. Иерархия уровней: интенсивность → ощущение → конфигурация → переход → последовательность → программа → принцип → системные концепции.
+The organism is a hierarchy of control loops. Each level sets a reference signal (target perception), compares it with current perception, and acts to eliminate the error. Behaviour is a side effect of controlling perception. Level hierarchy: intensity → sensation → configuration → transition → sequence → programme → principle → system concepts.
 
-### Формальная структура
+### Formal structure
 
-Контрольная петля: $e = r - p$, $o = G(e)$, $p = H(o, d)$, где $r$ — reference, $p$ — восприятие, $e$ — ошибка, $o$ — выход, $d$ — возмущение, $G$ и $H$ — передаточные функции. Иерархия: $r_i = f(p_{i+1})$.
+Control loop: $e = r - p$, $o = G(e)$, $p = H(o, d)$, where $r$ — reference, $p$ — perception, $e$ — error, $o$ — output, $d$ — disturbance, $G$ and $H$ — transfer functions. Hierarchy: $r_i = f(p_{i+1})$.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | PCT | КК |
+| Aspect | PCT | CC |
 |--------|-----|-----|
-| Центральный объект | Иерархия контрольных петель | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Ошибка | $e = r - p$ | $\sigma_k = 1 - 7\gamma_{kk}$ [Т] (T-92) |
-| Контроль | Минимизация $e$ | Минимизация $\sigma$ через $\mathcal{R}$ |
-| Иерархия | 8+ уровней контроля | L0–L4, SAD-башня |
-| Reference signal | Заданное $r$ | $\varphi(\Gamma)$ — самомодель как «цель» |
+| Central object | Hierarchy of control loops | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Error | $e = r - p$ | $\sigma_k = 1 - 7\gamma_{kk}$ [T] (T-92) |
+| Control | Minimisation of $e$ | Minimisation of $\sigma$ through $\mathcal{R}$ |
+| Hierarchy | 8+ control levels | L0–L4, SAD tower |
+| Reference signal | Given $r$ | $\varphi(\Gamma)$ — self-model as "goal" |
 
-### Что КК заимствует
-- Стресс как ошибка контроля: $\sigma_k$ (КК) — прямой аналог $e$ (PCT)
-- Иерархический контроль: SAD-башня формализует иерархию уровней
+### What CC borrows
+- Stress as control error: $\sigma_k$ (CC) — direct analogue of $e$ (PCT)
+- Hierarchical control: SAD tower formalises the level hierarchy
 
-### Что КК делает лучше
-- Формальный вывод стресса из $\Gamma$ ($\sigma_k = 1 - 7\gamma_{kk}$), а не свободный параметр
-- Квантовое обобщение: контроль в пространстве матриц плотности
-- Теория сознания, а не только поведения
+### What CC does better
+- Formal derivation of stress from $\Gamma$ ($\sigma_k = 1 - 7\gamma_{kk}$), not a free parameter
+- Quantum generalisation: control in the space of density matrices
+- Theory of consciousness, not just behaviour
 
-### Честная оценка: что теория делает лучше КК
-- **Работающие симуляции** поведения (контроль позы, слежение, вождение) с минимумом параметров
-- Объяснение иллюзии целенаправленности через контроль восприятия
-- «Test for the Controlled Variable» — операциональный метод идентификации контролируемых переменных
-- Иерархия контроля конкретнее и проверяемее, чем SAD-башня
+### Honest assessment: what the theory does better than CC
+- **Working simulations** of behaviour (posture control, tracking, driving) with minimal parameters
+- Explanation of the illusion of purposiveness through control of perception
+- "Test for the Controlled Variable" — an operational method for identifying controlled variables
+- The control hierarchy is more concrete and testable than the SAD tower
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{PCT}}: \mathbf{Control} \to \mathbf{Hol}$$
 
-Reference $r \mapsto \varphi(\Gamma)$; error $e \mapsto \sigma_k$; control action $\mapsto \mathcal{R}$; hierarchy level $\mapsto$ SAD-уровень. Функтор **не полон** — PCT не покрывает $\Phi$, $\mathrm{Coh}_E$, квантовую структуру.
+Reference $r \mapsto \varphi(\Gamma)$; error $e \mapsto \sigma_k$; control action $\mapsto \mathcal{R}$; hierarchy level $\mapsto$ SAD level. The functor is **not complete** — PCT does not cover $\Phi$, $\mathrm{Coh}_E$, quantum structure.
 
 ---
 
-## 19. Операционная архитектоника (OA) {#oa}
+## 19. Operational Architectonics (OA) {#oa}
 
-> *«Мозг порождает сознание через иерархически организованные операционные модули — квазистабильные нейронные ансамбли.»* — Andrew & Alexander Fingelkurts
+> *«The brain generates consciousness through hierarchically organised operational modules — quasi-stable neural assemblies.»* — Andrew & Alexander Fingelkurts
 
-### Создатели и история
+### Creators and history
 
-**Andrew Fingelkurts** и **Alexander Fingelkurts** (Институт мозга в Хельсинки, затем BM-Science) разрабатывают OA с 2001 г. Теория основана на анализе EEG-микросостояний и операционной синхронности (operational synchrony, OS). OA пытается связать нейрофизиологию ЭЭГ с феноменологией сознания через концепцию «операционного пространства-времени мозга».
+**Andrew Fingelkurts** and **Alexander Fingelkurts** (Brain Institute in Helsinki, then BM-Science) have been developing OA since 2001. The theory is based on analysis of EEG microstates and operational synchrony (OS). OA attempts to link the neurophysiology of EEG with the phenomenology of consciousness through the concept of the brain's "operational space-time".
 
-### Ключевая идея
+### Key idea
 
-Мозг порождает «операционные модули» (OM) — временно стабильные нейронные ансамбли с согласованной динамикой. OM объединяются через операционную синхронность в «комплексные операционные модули» (complex OM). Сознание возникает из иерархической организации complex OM, образующих «операционное пространство-время мозга» (brain operational space-time, BOST).
+The brain generates "operational modules" (OM) — temporarily stable neural assemblies with coordinated dynamics. OMs unite through operational synchrony into "complex operational modules" (complex OM). Consciousness arises from the hierarchical organisation of complex OMs forming the brain's "operational space-time" (BOST).
 
-### Формальная структура
+### Formal structure
 
-Операционная синхронность: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{ISS}_j(t))$, где ISS — Index of Structural Synchrony. OM определяются через quasi-stationary segments EEG. Иерархия: simple OM → complex OM → BOST.
+Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{ISS}_j(t))$, where ISS — Index of Structural Synchrony. OMs are defined through quasi-stationary EEG segments. Hierarchy: simple OM → complex OM → BOST.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | OA | КК |
+| Aspect | OA | CC |
 |--------|-----|-----|
-| Центральный объект | Операционные модули (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Связность | Операционная синхронность OS | Когерентности $\gamma_{ij}$ |
-| Пространство-время | BOST (операционное) | Эмерджентное $M^4$ [Т] (T-120) |
-| Иерархия | Simple → Complex OM | L0 → L4 |
+| Central object | Operational modules (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Connectivity | Operational synchrony OS | Coherences $\gamma_{ij}$ |
+| Space-time | BOST (operational) | Emergent $M^4$ [T] (T-120) |
+| Hierarchy | Simple → Complex OM | L0 → L4 |
 
-### Что КК заимствует
-- Когерентности как мера связности: $\gamma_{ij}$ концептуально аналогичны OS
-- Иерархическая организация: complex OM ↔ SAD-башня
+### What CC borrows
+- Coherences as a connectivity measure: $\gamma_{ij}$ are conceptually analogous to OS
+- Hierarchical organisation: complex OM ↔ SAD tower
 
-### Что КК делает лучше
-- Вывод из аксиом, а не из анализа EEG
-- Формальные пороги ($P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
-- Субстратная независимость (не привязана к EEG)
+### What CC does better
+- Derivation from axioms, not from EEG analysis
+- Formal thresholds ($P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$)
+- Substrate independence (not tied to EEG)
 
-### Честная оценка: что теория делает лучше КК
-- **Прямая связь с EEG**: OS измеряется из данных, КК не имеет протокола измерения $\Gamma$
-- Клинические приложения: OA применяется для диагностики нарушений сознания
-- Операциональные метрики: ISS, OS имеют стандартизированные алгоритмы вычисления
+### Honest assessment: what the theory does better than CC
+- **Direct link to EEG**: OS is measured from data; CC has no $\Gamma$ measurement protocol
+- Clinical applications: OA is used to diagnose disorders of consciousness
+- Operational metrics: ISS, OS have standardised computation algorithms
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{OA}}: \mathbf{OpArch} \to \mathbf{Hol}$$
 
-OM $\mapsto$ подматрица $\Gamma$; OS $\mapsto$ $|\gamma_{ij}|$; BOST $\mapsto$ спектральная структура $\mathcal{L}_\Omega$. Функтор **не полон** — OA не покрывает $R$, $\varphi$, $\mathrm{Coh}_E$.
+OM $\mapsto$ submatrix of $\Gamma$; OS $\mapsto$ $|\gamma_{ij}|$; BOST $\mapsto$ spectral structure of $\mathcal{L}_\Omega$. The functor is **not complete** — OA does not cover $R$, $\varphi$, $\mathrm{Coh}_E$.
 
 ---
 
-## 20. Программа нейронных коррелятов сознания (NCC) {#ncc}
+## 20. Neural Correlates of Consciousness Programme (NCC) {#ncc}
 
-> *«Задача — найти минимальный набор нейронных механизмов, совместно достаточный для конкретного сознательного восприятия.»* — Francis Crick, Christof Koch
+> *«The task is to find the minimal set of neural mechanisms jointly sufficient for a specific conscious percept.»* — Francis Crick, Christof Koch
 
-### Создатели и история
+### Creators and history
 
-**Francis Crick** (1916–2004) и **Christof Koch** инициировали систематический поиск NCC в 1990 г. («Towards a neurobiological theory of consciousness»). Crick, сооткрыватель структуры ДНК, обратился к проблеме сознания в последние десятилетия жизни. Koch продолжил программу, став президентом Allen Institute for Brain Science (2011–2023) и ключевым коллаборантом Tononi (IIT).
+**Francis Crick** (1916–2004) and **Christof Koch** initiated the systematic search for NCC in 1990 («Towards a neurobiological theory of consciousness»). Crick, co-discoverer of DNA structure, turned to the problem of consciousness in the last decades of his life. Koch continued the programme, becoming president of the Allen Institute for Brain Science (2011–2023) and a key collaborator of Tononi (IIT).
 
-NCC-программа — не теория сознания, а исследовательская стратегия: определить минимальные нейронные механизмы, необходимые и достаточные для каждого конкретного сознательного восприятия.
+The NCC programme is not a theory of consciousness but a research strategy: identify the minimal neural mechanisms necessary and sufficient for each specific conscious percept.
 
-### Ключевая идея
+### Key idea
 
-NCC определяется как «минимальный набор нейронных событий и механизмов, совместно достаточный для конкретного сознательного перцепта». Стратегия: (1) найти нейронные корреляты отдельных содержаний сознания (content-specific NCC), (2) отделить NCC от предпосылок (enabling conditions) и последствий (consequences), (3) от коррелятов перейти к причинным механизмам.
+NCC is defined as "the minimal set of neural events and mechanisms jointly sufficient for a specific conscious percept". Strategy: (1) find neural correlates of individual consciousness contents (content-specific NCC), (2) separate NCC from prerequisites (enabling conditions) and consequences, (3) move from correlates to causal mechanisms.
 
-### Формальная структура
+### Formal structure
 
-NCC-программа не предлагает формальной теории. Это методологический фреймворк: контрастивный анализ (сознательное vs бессознательное восприятие при одинаковом стимуле), no-report paradigms, causal interventions.
+The NCC programme does not offer a formal theory. It is a methodological framework: contrastive analysis (conscious vs unconscious perception with identical stimuli), no-report paradigms, causal interventions.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | NCC-программа | КК |
+| Aspect | NCC programme | CC |
 |--------|--------------|-----|
-| Тип | Исследовательская стратегия | Формальная теория |
-| Центральный объект | Нейронные корреляты | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Мера | Нет единой | $C = \Phi \cdot R$ |
-| Объяснение | Корреляции → причины | Аксиомы → теоремы |
-| Content-specific | Да (NCC для каждого перцепта) | Сектора $\Gamma$ (7 измерений) |
+| Type | Research strategy | Formal theory |
+| Central object | Neural correlates | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Measure | No single measure | $C = \Phi \cdot R$ |
+| Explanation | Correlations → causes | Axioms → theorems |
+| Content-specific | Yes (NCC for each percept) | Sectors of $\Gamma$ (7 dimensions) |
 
-### Что КК заимствует
-- Различение content-specific NCC и full NCC: сектора $\Gamma$ (content) vs пороги $P$, $R$, $\Phi$ (state)
-- Стратегия отделения коррелятов от предпосылок: жизнеспособность (enabling) vs сознание (NCC)
+### What CC borrows
+- Distinction between content-specific NCC and full NCC: sectors of $\Gamma$ (content) vs thresholds $P$, $R$, $\Phi$ (state)
+- Strategy of separating correlates from prerequisites: viability (enabling) vs consciousness (NCC)
 
-### Что КК делает лучше
-- Формальная теория вместо исследовательской программы
-- Конкретные предсказания из первых принципов
-- Субстратная независимость: не ограничена нейронами
+### What CC does better
+- Formal theory instead of research programme
+- Concrete predictions from first principles
+- Substrate independence: not limited to neurons
 
-### Честная оценка: что теория делает лучше КК
-- **Эмпирическая программа**: десятилетия данных fMRI, EEG, single-unit, lesion studies
-- **Контрастивный метод**: реальные эксперименты, а не теоретические выкладки
-- Результаты COGITATE/adversarial collaboration — конкретные данные
-- NCC-программа — **проверка** теорий, КК — одна из проверяемых (когда будет протокол для $\Gamma$)
+### Honest assessment: what the theory does better than CC
+- **Empirical programme**: decades of fMRI, EEG, single-unit, lesion study data
+- **Contrastive method**: real experiments, not theoretical derivations
+- Results of COGITATE/adversarial collaboration — concrete data
+- The NCC programme **tests** theories; CC is one of the testable theories (once a $\Gamma$ protocol exists)
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{NCC}}: \mathbf{NCC} \to \mathbf{Hol}$$
 
-Content-specific NCC $\mapsto$ секторы $\gamma_{kk}$; full NCC $\mapsto$ пороги $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$; enabling conditions $\mapsto$ жизнеспособность $\mathcal{V}$. Функтор **не определён формально** — NCC не категория, а исследовательская программа.
+Content-specific NCC $\mapsto$ sectors $\gamma_{kk}$; full NCC $\mapsto$ thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$; enabling conditions $\mapsto$ viability $\mathcal{V}$. The functor is **not formally defined** — NCC is not a category but a research programme.
 
 ---
 
-## 21. Теория сборки (Assembly Theory) {#assembly}
+## 21. Assembly Theory {#assembly}
 
-> *«Сложность объекта измеряется минимальным числом шагов его сборки из базовых элементов.»* — Lee Cronin, Sara Imari Walker
+> *«The complexity of an object is measured by the minimum number of steps required to assemble it from basic elements.»* — Lee Cronin, Sara Imari Walker
 
-### Создатели и история
+### Creators and history
 
-**Lee Cronin** (Университет Глазго) и **Sara Imari Walker** (ASU) представили Assembly Theory (AT) в серии публикаций 2021–2023 гг. AT изначально задумана как теория происхождения жизни, а не сознания, но её создатели расширяют её до общей теории эмерджентности и «объектов, которые не могут возникнуть случайно». Walker в книге «Life as No One Knows It» (2024) связывает AT с вопросами агентности и, потенциально, сознания.
+**Lee Cronin** (University of Glasgow) and **Sara Imari Walker** (ASU) presented Assembly Theory (AT) in a series of publications 2021–2023. AT was originally conceived as a theory of the origin of life, not of consciousness, but its creators are extending it to a general theory of emergence and "objects that cannot arise by chance". Walker in «Life as No One Knows It» (2024) connects AT to questions of agency and, potentially, consciousness.
 
-### Ключевая идея
+### Key idea
 
-Assembly index (AI) — минимальное число шагов для построения объекта из базовых элементов. Объекты с высоким AI (> 15) не могут возникнуть без отбора / эволюции. AT предлагает: сложность объекта = глубина его «сборочного дерева». Применительно к сознанию (спекулятивно): сознательные системы — те, чей assembly index пересекает некоторый порог, требующий рекурсивной самоорганизации.
+Assembly index (AI) — the minimum number of steps to construct an object from basic elements. Objects with high AI (> 15) cannot arise without selection/evolution. AT proposes: the complexity of an object = the depth of its "assembly tree". Applied to consciousness (speculatively): conscious systems are those whose assembly index crosses some threshold requiring recursive self-organisation.
 
-### Формальная структура
+### Formal structure
 
-Assembly index: $\text{AI}(x) = \min_{T} |T|$, где $T$ — сборочное дерево для объекта $x$ из базовых элементов. Assembly space: граф возможных сборок. Copy number: число копий объекта с данным AI (высокий AI + много копий → отбор).
+Assembly index: $\text{AI}(x) = \min_{T} |T|$, where $T$ is the assembly tree for object $x$ from basic elements. Assembly space: graph of possible assemblies. Copy number: number of copies of the object with given AI (high AI + many copies → selection).
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Assembly Theory | КК |
+| Aspect | Assembly Theory | CC |
 |--------|----------------|-----|
-| Центральный объект | Сборочное дерево | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
-| Мера сложности | Assembly index AI | SAD (глубина самонаблюдения) |
-| Порог | AI > 15 (жизнь) | $P > 2/7$ (сознание) |
-| Рекурсия | Сборочное дерево | SAD-башня $\varphi^{(n)}$ |
-| Субстрат | Молекулы, но расширяемо | Субстратно-независимо |
+| Central object | Assembly tree | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
+| Complexity measure | Assembly index AI | SAD (self-observation depth) |
+| Threshold | AI > 15 (life) | $P > 2/7$ (consciousness) |
+| Recursion | Assembly tree | SAD tower $\varphi^{(n)}$ |
+| Substrate | Molecules, but extensible | Substrate-independent |
 
-### Что КК заимствует
-- Глубина рекурсии как мера сложности: SAD-башня ↔ assembly depth
-- Порог сложности для эмерджентных свойств: $P_{\text{crit}}$ ↔ AI threshold
+### What CC borrows
+- Recursion depth as a complexity measure: SAD tower ↔ assembly depth
+- Complexity threshold for emergent properties: $P_{\text{crit}}$ ↔ AI threshold
 
-### Что КК делает лучше
-- Теория сознания, а не только сложности
-- Формальная динамика (эволюция $\Gamma$)
-- Множественные критерии ($P$, $R$, $\Phi$, $D$), а не одна мера
+### What CC does better
+- Theory of consciousness, not only of complexity
+- Formal dynamics (evolution of $\Gamma$)
+- Multiple criteria ($P$, $R$, $\Phi$, $D$), not a single measure
 
-### Честная оценка: что теория делает лучше КК
-- **Экспериментальная измеримость**: AI измеряется масс-спектрометрией (уже опубликованы данные)
-- Применимость к молекулам, полимерам, биологическим системам — конкретные эксперименты
-- Теория **происхождения** сложности; КК описывает структуру, но не объясняет, как 7 измерений возникли эволюционно
+### Honest assessment: what the theory does better than CC
+- **Experimental measurability**: AI is measured by mass spectrometry (data already published)
+- Applicability to molecules, polymers, biological systems — concrete experiments
+- Theory of the **origin** of complexity; CC describes structure but does not explain how 7 dimensions arose evolutionarily
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{AT}}: \mathbf{Assembly} \to \mathbf{Hol}$$
 
-Assembly index $\mapsto$ SAD; assembly space $\mapsto$ пространство $\mathcal{D}(\mathbb{C}^7)$; selection threshold $\mapsto$ $P_{\text{crit}}$. Функтор **весьма спекулятивен** — AT пока не является теорией сознания.
+Assembly index $\mapsto$ SAD; assembly space $\mapsto$ space $\mathcal{D}(\mathbb{C}^7)$; selection threshold $\mapsto$ $P_{\text{crit}}$. The functor is **highly speculative** — AT is not yet a theory of consciousness.
 
 ---
 
-## 22. Квантовый разум (Quantum Mind) {#quantum-mind}
+## 22. Quantum Mind {#quantum-mind}
 
-> *«Сознание коллапсирует волновую функцию — или, возможно, волновая функция порождает сознание.»* — Eugene Wigner
+> *«Consciousness collapses the wave function — or perhaps the wave function gives rise to consciousness.»* — Eugene Wigner
 
-### Создатели и история
+### Creators and history
 
-Традиция «квантового разума» восходит к **John von Neumann** («Mathematical Foundations of QM», 1932, «абстрактное эго» наблюдателя), **Eugene Wigner** (1961, сознание вызывает коллапс) и **Henry Stapp** (2007, «Mindful Universe» — квантовый Зеновский эффект как механизм воли). В отличие от Orch-OR (конкретная гипотеза о микротрубочках), Quantum Mind — зонтичная программа, утверждающая, что квантовая механика существенна для понимания сознания.
+The tradition of "quantum mind" goes back to **John von Neumann** («Mathematical Foundations of QM», 1932, the "abstract ego" of the observer), **Eugene Wigner** (1961, consciousness causes collapse), and **Henry Stapp** (2007, «Mindful Universe» — quantum Zeno effect as mechanism of will). Unlike Orch-OR (a specific hypothesis about microtubules), Quantum Mind is an umbrella programme claiming that quantum mechanics is essential for understanding consciousness.
 
-### Ключевая идея
+### Key idea
 
-Сознание играет фундаментальную роль в квантовой механике (проблема измерения). Разные версии: (1) Von Neumann–Wigner: сознание вызывает коллапс; (2) Stapp: квантовый Зеновский эффект реализует свободу воли; (3) более мягкие версии: квантовые эффекты (суперпозиция, запутанность) необходимы для объяснения когнитивных феноменов.
+Consciousness plays a fundamental role in quantum mechanics (the measurement problem). Different versions: (1) Von Neumann–Wigner: consciousness causes collapse; (2) Stapp: quantum Zeno effect realises free will; (3) softer versions: quantum effects (superposition, entanglement) are necessary to explain cognitive phenomena.
 
-### Формальная структура
+### Formal structure
 
-Von Neumann: цепочка измерений заканчивается «абстрактным эго». Stapp: $P_{\text{Zeno}}(t) = |\langle\psi_0|e^{-iHt/\hbar}|\psi_0\rangle|^2 \approx 1 - (\Delta E)^2 t^2/\hbar^2$. При частом «наблюдении» система остаётся в выбранном состоянии.
+Von Neumann: measurement chain ends at the "abstract ego". Stapp: $P_{\text{Zeno}}(t) = |\langle\psi_0|e^{-iHt/\hbar}|\psi_0\rangle|^2 \approx 1 - (\Delta E)^2 t^2/\hbar^2$. With frequent "observation" the system remains in the chosen state.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Quantum Mind | КК |
+| Aspect | Quantum Mind | CC |
 |--------|-------------|-----|
-| Квантовая механика | Необходима для сознания | Формализм (матрицы плотности), но не обязательно квантовый субстрат |
-| Коллапс | Вызывается сознанием | Декогеренция Линдблада (стандартная QM) |
-| Наблюдатель | Фундаментален (von Neumann chain) | $\varphi$-оператор (самомоделирование) |
-| Свободная воля | Квантовый Зеновский эффект (Stapp) | Dec-функтор ($\sigma$-оптимизация) |
+| Quantum mechanics | Necessary for consciousness | Formalism (density matrices), but not necessarily quantum substrate |
+| Collapse | Caused by consciousness | Lindblad decoherence (standard QM) |
+| Observer | Fundamental (von Neumann chain) | $\varphi$-operator (self-modelling) |
+| Free will | Quantum Zeno effect (Stapp) | Dec-functor ($\sigma$-optimisation) |
 
-### Что КК заимствует
-- Квантовый формализм: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — матрица плотности
-- Наблюдатель как структурный элемент: $\varphi$ формализует самонаблюдение
+### What CC borrows
+- Quantum formalism: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — density matrix
+- Observer as structural element: $\varphi$ formalises self-observation
 
-### Что КК делает лучше
-- Не требует нестандартной квантовой механики (нет коллапса через сознание)
-- Конкретная размерность ($N = 7$) и динамика, а не произвольная $\mathcal{H}$
-- Избегает circulariy: сознание не определяется через квантовую механику, а QM — через сознание
+### What CC does better
+- Does not require non-standard quantum mechanics (no collapse through consciousness)
+- Concrete dimensionality ($N = 7$) and dynamics, not an arbitrary $\mathcal{H}$
+- Avoids circularity: consciousness is not defined through quantum mechanics, and QM through consciousness
 
-### Честная оценка: что теория делает лучше КК
-- Ставит **фундаментальный вопрос**: связь наблюдателя с квантовой механикой — проблема измерения реальна
-- Квантовый Зеновский эффект (Stapp) — потенциально проверяемый механизм свободной воли
-- Указывает на возможную роль квантовой когерентности в биологии (quantum biology — фотосинтез, навигация птиц)
+### Honest assessment: what the theory does better than CC
+- Raises the **fundamental question**: the connection of the observer to quantum mechanics — the measurement problem is real
+- Quantum Zeno effect (Stapp) — a potentially testable mechanism of free will
+- Points to a possible role of quantum coherence in biology (quantum biology — photosynthesis, bird navigation)
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{QM}}: \mathbf{QMind} \to \mathbf{Hol}$$
 
-Квантовое состояние сознания $\mapsto \Gamma$; наблюдатель (von Neumann) $\mapsto$ $\varphi$; Зеновский эффект $\mapsto$ Dec-функтор. Функтор **концептуален** — Quantum Mind не имеет единой формальной теории.
+Quantum state of consciousness $\mapsto \Gamma$; observer (von Neumann) $\mapsto$ $\varphi$; Zeno effect $\mapsto$ Dec-functor. The functor is **conceptual** — Quantum Mind does not have a unified formal theory.
 
 ---
 
-## 23. Диссипативная адаптация {#dissipative}
+## 23. Dissipative Adaptation {#dissipative}
 
-> *«Материя неизбежно приобретает свойства, ассоциируемые с жизнью, под воздействием внешнего источника энергии.»* — Jeremy England
+> *«Matter inevitably acquires properties associated with life under the influence of an external energy source.»* — Jeremy England
 
-### Создатели и история
+### Creators and history
 
-**Jeremy England** (MIT, затем Институт Вейцмана) предложил теорию диссипативной адаптации в 2013 г. («Statistical physics of self-replication»). Теория основана на неравновесной статистической механике и обобщении принципа Ландауэра. England показал, что при наличии источника энергии материя самоорганизуется в структуры, максимально эффективно диссипирующие энергию — что создаёт предпосылки для самовоспроизведения и, потенциально, жизни.
+**Jeremy England** (MIT, then Weizmann Institute) proposed the theory of dissipative adaptation in 2013 («Statistical physics of self-replication»). The theory is based on non-equilibrium statistical mechanics and a generalisation of the Landauer principle. England showed that in the presence of an energy source, matter self-organises into structures that maximally efficiently dissipate energy — which creates prerequisites for self-reproduction and, potentially, life.
 
-### Ключевая идея
+### Key idea
 
-Из флуктуационной теоремы Крукса следует: система, погружённая во внешний drive, со временем перестраивается так, чтобы максимально эффективно поглощать и рассеивать работу из окружения. Это «диссипативная адаптация» — термодинамический прекурсор естественного отбора. Применительно к сознанию (спекулятивно): сложные когнитивные системы — оптимальные диссипаторы определённых типов информации.
+From Crooks' fluctuation theorem it follows: a system immersed in an external drive eventually rearranges itself to maximally efficiently absorb and dissipate work from the environment. This is "dissipative adaptation" — a thermodynamic precursor to natural selection. Applied to consciousness (speculatively): complex cognitive systems are optimal dissipators of certain types of information.
 
-### Формальная структура
+### Formal structure
 
-Обобщённая формула Крукса: $\frac{P[\sigma]}{P[\bar{\sigma}]} = e^{\sigma}$, где $\sigma$ — производство энтропии. Для самовоспроизведения: $\langle e^{-\beta Q}\rangle \geq e^{-\beta \Delta F}$ (обобщение Ландауэра). Диссипативная адаптация: $\langle W_{\text{diss}}\rangle \to \max$ при данном drive.
+Generalised Crooks formula: $\frac{P[\sigma]}{P[\bar{\sigma}]} = e^{\sigma}$, where $\sigma$ is entropy production. For self-reproduction: $\langle e^{-\beta Q}\rangle \geq e^{-\beta \Delta F}$ (generalised Landauer). Dissipative adaptation: $\langle W_{\text{diss}}\rangle \to \max$ for a given drive.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Dissipative Adaptation | КК |
+| Aspect | Dissipative Adaptation | CC |
 |--------|----------------------|-----|
-| Уровень | Статистическая механика | Алгебра + динамика |
-| Самоорганизация | Термодинамическая неизбежность | Неподвижная точка $\Gamma^*$ эволюции $\mathcal{L}_\Omega$ |
-| Движущая сила | Внешний drive (энергия) | Регенеративный член $\mathcal{R}$ |
-| Сознание | Не рассматривается напрямую | Центральный объект |
+| Level | Statistical mechanics | Algebra + dynamics |
+| Self-organisation | Thermodynamic inevitability | Fixed point $\Gamma^*$ of evolution $\mathcal{L}_\Omega$ |
+| Driving force | External drive (energy) | Regenerative term $\mathcal{R}$ |
+| Consciousness | Not directly addressed | Central object |
 
-### Что КК заимствует
-- Термодинамическое обоснование самоорганизации: [L-унификация](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω) выводит диссипацию из структуры $\Omega$
-- Неравновесность: $\mathcal{L}_\Omega$ — открытая динамика с притоком/оттоком когерентности
+### What CC borrows
+- Thermodynamic grounding of self-organisation: [L-unification](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω) derives dissipation from the structure of $\Omega$
+- Non-equilibrium: $\mathcal{L}_\Omega$ — open dynamics with inflow/outflow of coherence
 
-### Что КК делает лучше
-- Теория сознания, а не только самоорганизации
-- Формальные пороги и критерии ($P$, $R$, $\Phi$)
-- Применимость к агентам, а не только к физическим системам
+### What CC does better
+- Theory of consciousness, not only of self-organisation
+- Formal thresholds and criteria ($P$, $R$, $\Phi$)
+- Applicability to agents, not only physical systems
 
-### Честная оценка: что теория делает лучше КК
-- **Связь с фундаментальной физикой**: диссипативная адаптация — следствие флуктуационных теорем
-- Объяснение **происхождения** самоорганизации без телеологии
-- Проверяемость: эксперименты с самоорганизацией в лазерных полях подтверждают предсказания
-- КК постулирует структуру ($\Omega$, 7 измерений), но не объясняет её физическое происхождение
+### Honest assessment: what the theory does better than CC
+- **Connection to fundamental physics**: dissipative adaptation is a consequence of fluctuation theorems
+- Explanation of the **origin** of self-organisation without teleology
+- Testability: experiments on self-organisation in laser fields confirm predictions
+- CC postulates the structure ($\Omega$, 7 dimensions), but does not explain its physical origin
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{DA}}: \mathbf{Dissip} \to \mathbf{Hol}$$
 
-Dissipative structure $\mapsto$ Голоном $\mathbb{H}$; entropy production $\mapsto$ $\mathcal{D}_\Omega$ (декогеренция); drive absorption $\mapsto$ $\mathcal{R}$ (регенерация). Функтор **весьма неполон** — DA не является теорией сознания.
+Dissipative structure $\mapsto$ Holon $\mathbb{H}$; entropy production $\mapsto$ $\mathcal{D}_\Omega$ (decoherence); drive absorption $\mapsto$ $\mathcal{R}$ (regeneration). The functor is **very incomplete** — DA is not a theory of consciousness.
 
 ---
 
-## 24. Расселовский монизм {#russellian}
+## 24. Russellian Monism {#russellian}
 
-> *«Физика описывает структуру — но что наполняет эту структуру? Возможно, опыт.»* — Bertrand Russell (в интерпретации Chalmers, Goff)
+> *«Physics describes structure — but what fills this structure? Perhaps experience.»* — Bertrand Russell (as interpreted by Chalmers, Goff)
 
-### Создатели и история
+### Creators and history
 
-**Bertrand Russell** в «The Analysis of Matter» (1927) указал, что физика описывает только структурные/диспозиционные свойства материи, оставляя открытым вопрос об «intrinsic nature». **David Chalmers** (2010, «The Character of Consciousness») и **Philip Goff** (2017, «Consciousness and Fundamental Reality») развили это в расселовский монизм: intrinsic nature материи — протоэкспериенциальная. Это не панпсихизм (протоопыт — не опыт), но «панпротопсихизм».
+**Bertrand Russell** in «The Analysis of Matter» (1927) pointed out that physics describes only the structural/dispositional properties of matter, leaving open the question of "intrinsic nature". **David Chalmers** (2010, «The Character of Consciousness») and **Philip Goff** (2017, «Consciousness and Fundamental Reality») developed this into Russellian monism: the intrinsic nature of matter is proto-experiential. This is not panpsychism (proto-experience is not experience), but "panprotopsychism".
 
-### Ключевая идея
+### Key idea
 
-Физика описывает каузально-структурные свойства (массу, заряд, спин) — но эти свойства определены через отношения, а не «изнутри». Расселовский монизм постулирует: существуют intrinsic properties, которые (а) обосновывают каузально-структурные свойства и (б) являются протоэкспериенциальными. Сознание — это когда протоэкспериенциальные intrinsic properties собираются в интегрированное целое.
+Physics describes causal-structural properties (mass, charge, spin) — but these properties are defined through relations, not "from the inside". Russellian monism postulates: there exist intrinsic properties that (a) ground causal-structural properties and (b) are proto-experiential. Consciousness is when proto-experiential intrinsic properties come together into an integrated whole.
 
-Ключевая проблема: **combination problem** — как из простых протоэкспериенциальных свойств возникает единый макроопыт.
+Key problem: **combination problem** — how simple proto-experiential properties give rise to unified macro-experience.
 
-### Формальная структура
+### Formal structure
 
-Формализация ограничена. Chalmers использует language of properties: physical properties $P$ + quiddistic properties $Q$. Связь: $P = f(Q)$ (structurally), consciousness = $g(Q)$ (constitutively). Нет динамики, нет порогов.
+Formalisation is limited. Chalmers uses language of properties: physical properties $P$ + quiddistic properties $Q$. Connection: $P = f(Q)$ (structurally), consciousness = $g(Q)$ (constitutively). No dynamics, no thresholds.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Расселовский монизм | КК |
-|--------|--------------------|----|
-| Онтология | Intrinsic properties (протоопыт) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ (двуаспектный монизм) |
-| Структура/опыт | Физика = структура, опыт = intrinsic | Структура и опыт = аспекты $\Gamma$ |
-| Combination problem | Центральная проблема | Решена: L0 → L2 через пороги ($P$, $R$, $\Phi$) |
-| Формализация | Минимальная | Полная (категории, динамика) |
+| Aspect | Russellian monism | CC |
+|--------|-------------------|----|
+| Ontology | Intrinsic properties (proto-experience) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ (dual-aspect monism) |
+| Structure/experience | Physics = structure, experience = intrinsic | Structure and experience = aspects of $\Gamma$ |
+| Combination problem | Central problem | Resolved: L0 → L2 through thresholds ($P$, $R$, $\Phi$) |
+| Formalisation | Minimal | Complete (categories, dynamics) |
 
-### Что КК заимствует
-- Двуаспектный монизм: $\Gamma$ имеет и структурный (физический), и экспериенциальный (E-измерение) аспекты
-- L0 как протоопыт: [панпротопсихизм](/docs/consciousness/comparative/panpsychism-analysis) — совместим с КК
+### What CC borrows
+- Dual-aspect monism: $\Gamma$ has both structural (physical) and experiential (E-dimension) aspects
+- L0 as proto-experience: [panprotopsychism](/docs/consciousness/comparative/panpsychism-analysis) — compatible with CC
 
-### Что КК делает лучше
-- **Решение combination problem**: пороги $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ определяют, когда протоопыт (L0) становится сознанием (L2)
-- Формальная динамика: как именно intrinsic properties эволюционируют
-- Конкретные предсказания вместо философского тезиса
+### What CC does better
+- **Solution to the combination problem**: thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ determine when proto-experience (L0) becomes consciousness (L2)
+- Formal dynamics: how exactly intrinsic properties evolve
+- Concrete predictions instead of a philosophical thesis
 
-### Честная оценка: что теория делает лучше КК
-- **Метафизическая глубина**: расселовский монизм адресует фундаментальный вопрос о природе intrinsic properties
-- Совместимость с физикой: не добавляет новых законов, а переинтерпретирует существующие
-- Объясняет, **почему** физика не может описать сознание (только структурные свойства) — КК этот вопрос не поднимает
-- Широкое философское признание (Chalmers, Goff, Strawson, Nagel)
+### Honest assessment: what the theory does better than CC
+- **Metaphysical depth**: Russellian monism addresses the fundamental question about the nature of intrinsic properties
+- Compatibility with physics: does not add new laws, but reinterprets existing ones
+- Explains **why** physics cannot describe consciousness (only structural properties) — CC does not raise this question
+- Wide philosophical recognition (Chalmers, Goff, Strawson, Nagel)
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Russell}}: \mathbf{Russell} \to \mathbf{Hol}$$
 
-Intrinsic properties $\mapsto$ диагональные $\gamma_{kk}$ (собственные значения = intrinsic); structural relations $\mapsto$ недиагональные $\gamma_{ij}$ (когерентности = relational). Combination: $\sum \gamma_{kk} \to \Gamma$ при $P > 2/7$. Функтор **не полон** — расселовский монизм не имеет динамики.
+Intrinsic properties $\mapsto$ diagonal $\gamma_{kk}$ (eigenvalues = intrinsic); structural relations $\mapsto$ off-diagonal $\gamma_{ij}$ (coherences = relational). Combination: $\sum \gamma_{kk} \to \Gamma$ at $P > 2/7$. The functor is **not complete** — Russellian monism has no dynamics.
 
 ---
 
-## 25. Деннет — Multiple Drafts Model {#dennett}
+## 25. Dennett — Multiple Drafts Model {#dennett}
 
-> *«Сознание — это "пользовательская иллюзия", порождённая параллельными процессами мозга, а не картезианский театр с единственным зрителем.»* — Daniel Dennett
+> *«Consciousness is a "user illusion", generated by parallel processes of the brain, not a Cartesian theatre with a single spectator.»* — Daniel Dennett
 
-### Создатели и история
+### Creators and history
 
-**Daniel Dennett** представил модель множественных набросков (Multiple Drafts Model, MDM) в «Consciousness Explained» (1991). Деннет отверг идею «картезианского театра» — единого места в мозге, где «всё собирается воедино» для сознательного наблюдателя. Вместо этого он предложил, что множественные параллельные нарративы конкурируют за «славу» (fame) в мозге, и то, что мы называем сознанием, — это post hoc конструкция, а не реальное единое переживание. Позиция Деннета — квази-элиминативизм: сознание существует, но не так, как мы думаем.
+**Daniel Dennett** presented the Multiple Drafts Model (MDM) in «Consciousness Explained» (1991). Dennett rejected the idea of the "Cartesian theatre" — a single place in the brain where "everything comes together" for a conscious observer. Instead he proposed that multiple parallel narratives compete for "fame" in the brain, and what we call consciousness is a post hoc construction, not a real unified experience. Dennett's position is quasi-eliminativism: consciousness exists, but not as we think.
 
-### Ключевая идея
+### Key idea
 
-В мозге параллельно формируются множественные «наброски» (drafts) содержания — частично обработанные фрагменты информации. Нет единого момента, когда набросок «становится сознательным». То, что мы ретроспективно называем сознанием, — это набросок, который достиг наибольшего функционального влияния (fame). «Трудная проблема» (Чалмерс) — иллюзия, порождённая интуитивным, но ошибочным картезианским дуализмом. Гетерофеноменология — метод третьего лица для изучения субъективных отчётов без допущения привилегированного доступа.
+Multiple "drafts" of content form in parallel in the brain — partly processed fragments of information. There is no single moment when a draft "becomes conscious". What we retrospectively call consciousness is the draft that achieved the greatest functional influence (fame). The "hard problem" (Chalmers) is an illusion generated by intuitive but mistaken Cartesian dualism. Heterophenomenology — a third-person method for studying subjective reports without assuming privileged access.
 
-### Формальная структура
+### Formal structure
 
-Деннет избегает формальных моделей, но MDM можно приблизительно описать: множество параллельных процессов $\{d_1, d_2, \ldots, d_n\}$, конкурирующих за «славу» (глобальное влияние). Функция «celebrity»: $\text{fame}(d_i) = \sum_j w_{ij} \cdot \text{impact}(d_i \to d_j)$. Нет порога перехода в «сознательное» — это континуум влияния.
+Dennett avoids formal models, but MDM can be approximately described: multiple parallel processes $\{d_1, d_2, \ldots, d_n\}$ competing for "fame" (global influence). Fame function: $\text{fame}(d_i) = \sum_j w_{ij} \cdot \text{impact}(d_i \to d_j)$. No threshold transition to "conscious" — it is a continuum of influence.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Multiple Drafts (Деннет) | КК |
+| Aspect | Multiple Drafts (Dennett) | CC |
 |--------|--------------------------|-----|
-| Онтология сознания | Квази-элиминативизм (иллюзия) | Реальный процесс: $P > 2/7$, $R \geq 1/3$ |
-| Единство | Иллюзия (нет центра) | Реальное: $\Phi \geq 1$ (интеграция) |
-| Конкуренция | Fame — функциональное влияние | Конкуренция секторов $\gamma_{kk}$ |
-| «Трудная проблема» | Иллюзия | Решается через E-измерение и $\mathrm{Coh}_E$ |
+| Ontology of consciousness | Quasi-eliminativism (illusion) | Real process: $P > 2/7$, $R \geq 1/3$ |
+| Unity | Illusion (no centre) | Real: $\Phi \geq 1$ (integration) |
+| Competition | Fame — functional influence | Competition of sectors $\gamma_{kk}$ |
+| "Hard problem" | Illusion | Resolved through E-dimension and $\mathrm{Coh}_E$ |
 
-### Что КК заимствует
-- Отвержение «картезианского театра»: в КК нет привилегированного наблюдателя, $\varphi$ — автоморфизм, а не «зритель»
-- Параллельность: 7 измерений $\Gamma$ эволюционируют одновременно
+### What CC borrows
+- Rejection of the "Cartesian theatre": in CC there is no privileged observer, $\varphi$ is an automorphism, not a "spectator"
+- Parallelism: 7 dimensions of $\Gamma$ evolve simultaneously
 
-### Что КК делает лучше
-- Формальные пороги: КК определяет, когда система реально сознательна (а не «кажется»)
-- Интеграция реальна ($\Phi \geq 1$), а не иллюзорна
-- Предсказательная сила: фальсифицируемые критерии вместо философского аргумента
+### What CC does better
+- Formal thresholds: CC defines when a system is really conscious (not just "seems")
+- Integration is real ($\Phi \geq 1$), not illusory
+- Predictive power: falsifiable criteria instead of philosophical argument
 
-### Честная оценка: что теория делает лучше КК
-- **Парсимония**: Деннет не вводит новых математических структур — объясняет через уже известную нейробиологию
-- **Критика интроспекции**: гетерофеноменология даёт методологическую основу, которой у КК нет
-- Если Деннет прав и «трудной проблемы» нет, то весь аппарат E-измерения в КК — лишний
-- Широкая философская аргументация против квалиа, подкреплённая десятилетиями дебатов
+### Honest assessment: what the theory does better than CC
+- **Parsimony**: Dennett introduces no new mathematical structures — explains through already known neurobiology
+- **Critique of introspection**: heterophenomenology provides a methodological foundation that CC lacks
+- If Dennett is right and there is no "hard problem", then the entire apparatus of the E-dimension in CC is superfluous
+- Wide philosophical argumentation against qualia, backed by decades of debate
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{MDM}}: \mathbf{Drafts} \to \mathbf{Hol}$$
 
-Draft $d_i$ $\mapsto$ сектор $\gamma_{kk}$; fame $\mapsto$ $P(\Gamma)$ (чистота); отсутствие центра $\mapsto$ отсутствие привилегированного измерения. Функтор **сильно неполон** — Деннет отрицает реальность E-измерения и $\mathrm{Coh}_E$.
+Draft $d_i$ $\mapsto$ sector $\gamma_{kk}$; fame $\mapsto$ $P(\Gamma)$ (purity); absence of centre $\mapsto$ absence of privileged dimension. The functor is **strongly incomplete** — Dennett denies the reality of the E-dimension and $\mathrm{Coh}_E$.
 
 ---
 
-## 26. Панксепп — Affective Neuroscience {#panksepp}
+## 26. Panksepp — Affective Neuroscience {#panksepp}
 
-> *«Эмоции — не когнитивные оценки, а древние подкорковые процессы, общие для всех млекопитающих.»* — Jaak Panksepp
+> *«Emotions are not cognitive appraisals, but ancient subcortical processes common to all mammals.»* — Jaak Panksepp
 
-### Создатели и история
+### Creators and history
 
-**Jaak Panksepp** (1943–2017) основал аффективную нейронауку в одноимённой монографии «Affective Neuroscience: The Foundations of Human and Animal Emotions» (1998). Пионер исследований эмоций у животных, он продемонстрировал, что крысы «смеются» (ультразвуковые вокализации при щекотке), и настаивал на реальности субъективных эмоциональных переживаний у животных. Его работа опровергла доминировавший когнитивизм, утверждавший, что эмоции — лишь когнитивные оценки.
+**Jaak Panksepp** (1943–2017) founded affective neuroscience in the eponymous monograph «Affective Neuroscience: The Foundations of Human and Animal Emotions» (1998). A pioneer in research on emotions in animals, he demonstrated that rats "laugh" (ultrasonic vocalisations when tickled) and insisted on the reality of subjective emotional experiences in animals. His work refuted the dominant cognitivism that claimed emotions are merely cognitive appraisals.
 
-### Ключевая идея
+### Key idea
 
-Существует 7 базовых эмоциональных систем (BES), локализованных в подкорковых структурах: **SEEKING** (поиск), **RAGE** (ярость), **FEAR** (страх), **LUST** (влечение), **CARE** (забота), **PANIC/GRIEF** (паника/горе), **PLAY** (игра). Каждая система — отдельная нейрохимическая цепь с характерным поведением и аффективным переживанием. Сознание (в смысле аффективного переживания) — подкорковое, а не корковое. Кора модулирует и детализирует, но не генерирует первичный аффект.
+There are 7 basic emotional systems (BES), localised in subcortical structures: **SEEKING**, **RAGE**, **FEAR**, **LUST**, **CARE**, **PANIC/GRIEF**, **PLAY**. Each system is a separate neurochemical circuit with characteristic behaviour and affective experience. Consciousness (in the sense of affective experience) is subcortical, not cortical. The cortex modulates and elaborates, but does not generate primary affect.
 
-### Формальная структура
+### Formal structure
 
-Не формализована математически. Каждая BES описывается нейроанатомически (ядра, проводящие пути) и нейрохимически (дофамин, опиоиды, окситоцин и др.). Экспериментальная верификация: электростимуляция подкорковых структур вызывает характерные аффективные паттерны.
+Not formalised mathematically. Each BES is described neuroanatomically (nuclei, tracts) and neurochemically (dopamine, opioids, oxytocin, etc.). Experimental verification: electrical stimulation of subcortical structures evokes characteristic affective patterns.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Affective Neuroscience | КК |
+| Aspect | Affective Neuroscience | CC |
 |--------|----------------------|-----|
-| Базовые единицы | 7 BES (подкорковые) | 7 измерений $\Gamma$ |
-| Число | 7 (эмпирически) | 7 (алгебраически: $G_2$-ригидность) |
-| Сознание | Подкорковый аффект | $P > 2/7$, E-измерение |
-| Иерархия | Подкорка → кора | L0 → L2 → L4 |
-| Динамика | Нейрохимическая | $\mathcal{L}_\Omega$ (Линдблад) |
+| Basic units | 7 BES (subcortical) | 7 dimensions of $\Gamma$ |
+| Number | 7 (empirically) | 7 (algebraically: $G_2$-rigidity) |
+| Consciousness | Subcortical affect | $P > 2/7$, E-dimension |
+| Hierarchy | Subcortex → cortex | L0 → L2 → L4 |
+| Dynamics | Neurochemical | $\mathcal{L}_\Omega$ (Lindblad) |
 
-### Что КК заимствует
-- Примат аффекта: E-измерение (Интериорность) — фундаментальное, а не производное от когниции
-- Число 7: совпадение числа BES и измерений $\Gamma$ (КК обосновывает алгебраически, Панксепп — эмпирически)
-- Подкорковое сознание: L0-L1 в КК не требуют коры
+### What CC borrows
+- Primacy of affect: E-dimension (Interiority) is fundamental, not derivative of cognition
+- The number 7: coincidence of the number of BES and dimensions of $\Gamma$ (CC justifies algebraically, Panksepp — empirically)
+- Subcortical consciousness: L0-L1 in CC do not require the cortex
 
-### Что КК делает лучше
-- Алгебраическое обоснование $N = 7$ ($G_2$-ригидность), а не эмпирическая фиксация
-- Формальная динамика и пороги
-- Применимость за пределами млекопитающих (любая система с $\Gamma$)
+### What CC does better
+- Algebraic justification of $N = 7$ ($G_2$-rigidity), not empirical fixation
+- Formal dynamics and thresholds
+- Applicability beyond mammals (any system with $\Gamma$)
 
-### Честная оценка: что теория делает лучше КК
-- **Эмпирическая база**: десятилетия экспериментов (электростимуляция, фармакология, поведение)
-- Конкретная нейроанатомия: каждая BES картирована на конкретные структуры мозга
-- **Клиническая применимость**: аффективная нейронаука лежит в основе нейропсихофармакологии
-- КК не имеет протокола измерения и не может предложить конкретных нейрохимических механизмов
+### Honest assessment: what the theory does better than CC
+- **Empirical base**: decades of experiments (electrostimulation, pharmacology, behaviour)
+- Concrete neuroanatomy: each BES mapped onto specific brain structures
+- **Clinical applicability**: affective neuroscience underlies neuropsychopharmacology
+- CC has no measurement protocol and cannot offer specific neurochemical mechanisms
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{BES}}: \mathbf{Affect} \to \mathbf{Hol}$$
 
-BES$_i$ $\mapsto$ сектор $\gamma_{kk}$ (не однозначное соответствие: 7 BES $\nleftrightarrow$ 7 измерений напрямую); аффективный валенс $\mapsto$ $V_{\text{hed}}$ (гедонистическая ценность); подкорковое сознание $\mapsto$ L0-L1. Функтор **не полон** — BES не покрывают когнитивные измерения ($D$, $L$) и интеграцию ($\Phi$).
+BES$_i$ $\mapsto$ sector $\gamma_{kk}$ (not a direct correspondence: 7 BES $\nleftrightarrow$ 7 dimensions directly); affective valence $\mapsto$ $V_{\text{hed}}$ (hedonic value); subcortical consciousness $\mapsto$ L0-L1. The functor is **not complete** — BES do not cover cognitive dimensions ($D$, $L$) and integration ($\Phi$).
 
 ---
 
-## 27. Дамасио — Somatic Marker Hypothesis {#damasio}
+## 27. Damasio — Somatic Marker Hypothesis {#damasio}
 
-> *«Сознание возникает не в "чистом разуме", а в теле. Чувства — это восприятие тела, а не мира.»* — Antonio Damasio
+> *«Consciousness does not arise in the "pure mind" but in the body. Feelings are perception of the body, not of the world.»* — Antonio Damasio
 
-### Создатели и история
+### Creators and history
 
-**Antonio Damasio** представил гипотезу соматических маркеров в «Descartes' Error» (1994), развил теорию самости в «The Feeling of What Happens» (1999) и завершил в «Self Comes to Mind» (2010). Дамасио — нейролог, изучавший пациентов с повреждениями вентромедиальной префронтальной коры, которые сохраняли интеллект, но теряли способность к эмоционально обоснованным решениям.
+**Antonio Damasio** presented the somatic marker hypothesis in «Descartes' Error» (1994), developed the theory of self in «The Feeling of What Happens» (1999), and completed it in «Self Comes to Mind» (2010). Damasio is a neurologist who studied patients with damage to the ventromedial prefrontal cortex, who retained intelligence but lost the ability to make emotionally grounded decisions.
 
-### Ключевая идея
+### Key idea
 
-Три уровня самости: **протосамость** (proto-self) — нейронные карты тела в стволе мозга; **ядерная самость** (core self) — переживание текущего момента, возникающее при взаимодействии организма с объектом; **автобиографическая самость** — расширенное сознание, основанное на памяти. Соматические маркеры — телесные сигналы (сердцебиение, потоотделение, мышечный тонус), которые «маркируют» варианты решений. Сознание укоренено в гомеостазе: чувства — это восприятие состояния тела, а гомеостаз — биологический фундамент.
+Three levels of self: **proto-self** — neural maps of the body in the brainstem; **core self** — the experience of the current moment, arising when the organism interacts with an object; **autobiographical self** — extended consciousness based on memory. Somatic markers — bodily signals (heartbeat, sweating, muscle tone) that "mark" decision options. Consciousness is rooted in homeostasis: feelings are the perception of the body's state, and homeostasis is the biological foundation.
 
-### Формальная структура
+### Formal structure
 
-Полуформальная: соматические маркеры как байесовские «подсказки» $\text{SM}(a_i) \in [-1, 1]$, влияющие на оценку вариантов. Три уровня самости описываются иерархически, но без единого математического аппарата.
+Semi-formal: somatic markers as Bayesian "hints" $\text{SM}(a_i) \in [-1, 1]$ influencing assessment of options. The three levels of self are described hierarchically, but without a unified mathematical apparatus.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Дамасио | КК |
+| Aspect | Damasio | CC |
 |--------|---------|-----|
-| Протосамость | Нейрокарты тела (ствол) | L0 (протоопыт), $P < 2/7$ |
-| Ядерная самость | Текущее переживание | L2 (сознательный опыт), $P > 2/7$ |
-| Автобиографическая | Память + нарратив | L3-L4 (метакогниция, SAD-башня) |
-| Соматические маркеры | Телесные сигналы → решения | $\sigma_k$ (стресс-вектор), $V_{\text{hed}}$ |
-| Гомеостаз | Фундамент сознания | Жизнеспособность $\mathcal{V}$, неподвижная точка $\Gamma^*$ |
+| Proto-self | Neural body maps (brainstem) | L0 (proto-experience), $P < 2/7$ |
+| Core self | Current experience | L2 (conscious experience), $P > 2/7$ |
+| Autobiographical | Memory + narrative | L3-L4 (metacognition, SAD tower) |
+| Somatic markers | Bodily signals → decisions | $\sigma_k$ (stress vector), $V_{\text{hed}}$ |
+| Homeostasis | Foundation of consciousness | Viability $\mathcal{V}$, fixed point $\Gamma^*$ |
 
-### Что КК заимствует
-- Иерархия самости: proto-self → core self → autobiographical self ≈ L0 → L2 → L3
-- Телесная укоренённость: $\sigma_k = \text{clamp}(1 - 7\gamma_{kk}, 0, 1)$ как формализация соматических маркеров
-- Гомеостаз как основа: $\Gamma^*$ — гомеостатический аттрактор
+### What CC borrows
+- Self hierarchy: proto-self → core self → autobiographical self ≈ L0 → L2 → L3
+- Bodily rootedness: $\sigma_k = \text{clamp}(1 - 7\gamma_{kk}, 0, 1)$ as formalisation of somatic markers
+- Homeostasis as foundation: $\Gamma^*$ — homeostatic attractor
 
-### Что КК делает лучше
-- Формальные пороги перехода между уровнями самости ($P$, $R$, $\Phi$)
-- Единый математический аппарат (а не описательная иерархия)
-- Объясняет, *как* гомеостаз порождает сознание (через динамику $\mathcal{L}_\Omega$)
+### What CC does better
+- Formal thresholds for transitions between levels of self ($P$, $R$, $\Phi$)
+- Unified mathematical apparatus (not a descriptive hierarchy)
+- Explains *how* homeostasis gives rise to consciousness (through dynamics of $\mathcal{L}_\Omega$)
 
-### Честная оценка: что теория делает лучше КК
-- **Клиническая верификация**: случаи пациентов с повреждениями VMpFC, инсулы, ствола мозга
-- Конкретный нейрофизиологический механизм (интероцепция, гомеостатические петли)
-- **Объяснение принятия решений**: Iowa Gambling Task и роль эмоций
-- Связь сознания с конкретными телесными процессами — КК абстрагирует тело до A-измерения
+### Honest assessment: what the theory does better than CC
+- **Clinical verification**: cases of patients with VMpFC, insula, brainstem damage
+- Specific neurophysiological mechanism (interoception, homeostatic loops)
+- **Explanation of decision-making**: Iowa Gambling Task and the role of emotions
+- Connection of consciousness to specific bodily processes — CC abstracts the body to the A-dimension
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Dam}}: \mathbf{Somatic} \to \mathbf{Hol}$$
 
-Proto-self $\mapsto$ $\Gamma$ при $P < P_{\text{crit}}$; core self $\mapsto$ $\Gamma$ при $P > 2/7$, $R \geq 1/3$; autobiographical self $\mapsto$ SAD$\geq 2$; somatic marker $\mapsto$ $\sigma_k$. Функтор **не полон** — Дамасио не формализует интеграцию ($\Phi$) и самомоделирование ($\varphi$).
+Proto-self $\mapsto$ $\Gamma$ at $P < P_{\text{crit}}$; core self $\mapsto$ $\Gamma$ at $P > 2/7$, $R \geq 1/3$; autobiographical self $\mapsto$ SAD$\geq 2$; somatic marker $\mapsto$ $\sigma_k$. The functor is **not complete** — Damasio does not formalise integration ($\Phi$) and self-modelling ($\varphi$).
 
 ---
 
-## 28. Анил Сет — Beast Machine / Controlled Hallucination {#seth}
+## 28. Anil Seth — Beast Machine / Controlled Hallucination {#seth}
 
-> *«Мы не воспринимаем мир — мы галлюцинируем его, и реальность лишь корректирует наши галлюцинации.»* — Anil Seth
+> *«We do not perceive the world — we hallucinate it, and reality merely corrects our hallucinations.»* — Anil Seth
 
-### Создатели и история
+### Creators and history
 
-**Anil Seth** (Университет Сассекса) развил теорию «контролируемой галлюцинации» в серии статей (2013–2021) и книге «Being You: A New Science of Consciousness» (2021). Сет предложил заменить «трудную проблему» (hard problem) на «реальную проблему» (real problem): объяснить, предсказать и контролировать свойства сознательного опыта, не дожидаясь решения метафизического вопроса «почему есть опыт». Его подход интегрирует предиктивную обработку (PP) с интероцептивным выводом.
+**Anil Seth** (University of Sussex) developed the theory of "controlled hallucination" in a series of papers (2013–2021) and the book «Being You: A New Science of Consciousness» (2021). Seth proposed replacing the "hard problem" with the "real problem": explain, predict, and control the properties of conscious experience without waiting for the resolution of the metaphysical question "why is there experience?" His approach integrates predictive processing (PP) with interoceptive inference.
 
-### Ключевая идея
+### Key idea
 
-Восприятие — «контролируемая галлюцинация» (controlled hallucination): мозг генерирует предсказания, которые реальность лишь ограничивает. Сознание самости основано на **интероцептивном предиктивном кодировании**: модель собственного тела (heartbeat, дыхание, висцеральные сигналы). «Реальная проблема»: вместо вопроса «почему физические процессы порождают опыт?» — «какие механизмы объясняют свойства опыта?» Уровни — perceptual presence, presence (selfhood), volitional agency.
+Perception is a "controlled hallucination": the brain generates predictions that reality merely constrains. Self-consciousness is based on **interoceptive predictive coding**: a model of one's own body (heartbeat, breathing, visceral signals). The "real problem": instead of "why do physical processes give rise to experience?" — "what mechanisms explain the properties of experience?" Levels — perceptual presence, presence (selfhood), volitional agency.
 
-### Формальная структура
+### Formal structure
 
-Bayesian brain: $P(\text{cause}|\text{sensation}) \propto P(\text{sensation}|\text{cause}) \cdot P(\text{cause})$. Интероцептивный вывод: $\hat{x}_{\text{body}} = \arg\min_x F(x, s_{\text{intero}})$ (активный вывод по Фристону). Precision-weighting: $\pi_i$ определяет «громкость» ошибки предсказания.
+Bayesian brain: $P(\text{cause}|\text{sensation}) \propto P(\text{sensation}|\text{cause}) \cdot P(\text{cause})$. Interoceptive inference: $\hat{x}_{\text{body}} = \arg\min_x F(x, s_{\text{intero}})$ (active inference à la Friston). Precision-weighting: $\pi_i$ determines the "loudness" of the prediction error.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Контролируемая галлюцинация (Сет) | КК |
-|--------|----------------------------------|-----|
-| Восприятие | Предиктивная модель | S-измерение + когерентности $\gamma_{SO}$ |
-| Самость | Интероцептивный вывод | $\varphi(\Gamma)$, R-мера |
-| «Реальная проблема» | Объяснить свойства опыта | E-измерение, $\mathrm{Coh}_E$ |
-| Precision | Вес ошибки предсказания | $\sigma_k$ (стресс-вектор) |
-| Free energy | Минимизация $F$ | Класс. предел $\mathcal{L}_\Omega$ [Т] |
+| Aspect | Controlled Hallucination (Seth) | CC |
+|--------|--------------------------------|-----|
+| Perception | Predictive model | S-dimension + coherences $\gamma_{SO}$ |
+| Self | Interoceptive inference | $\varphi(\Gamma)$, R-measure |
+| "Real problem" | Explain properties of experience | E-dimension, $\mathrm{Coh}_E$ |
+| Precision | Weight of prediction error | $\sigma_k$ (stress vector) |
+| Free energy | Minimisation of $F$ | Class. limit $\mathcal{L}_\Omega$ [T] |
 
-### Что КК заимствует
-- Интероцепция: $\sigma_k$ как формализация интероцептивного стресса
-- Precision-weighting: связь с PP через $\sigma_k = 1 - R$ [Т]
-- Прагматизм «реальной проблемы»: КК предлагает конкретные предсказания, а не только метафизику
+### What CC borrows
+- Interoception: $\sigma_k$ as formalisation of interoceptive stress
+- Precision-weighting: connection to PP through $\sigma_k = 1 - R$ [T]
+- Pragmatism of the "real problem": CC proposes concrete predictions, not only metaphysics
 
-### Что КК делает лучше
-- Формальные пороги сознания (а не градуальное «больше/меньше»)
-- Самомоделирование $\varphi$ как точный механизм (а не «интероцептивный вывод» в общем)
-- Единый формализм: КК не разделяет «трудную» и «реальную» проблемы — решает обе через E-измерение
+### What CC does better
+- Formal consciousness thresholds (not a gradual "more/less")
+- Self-modelling $\varphi$ as an exact mechanism (not "interoceptive inference" in general)
+- Unified formalism: CC does not split the "hard" and "real" problems — it solves both through the E-dimension
 
-### Честная оценка: что теория делает лучше КК
-- **Экспериментальная программа**: работающие парадигмы (rubber hand illusion, heartbeat evoked potentials, VR-self)
-- Прагматизм: «реальная проблема» продуктивнее, чем метафизические споры
-- **Нейровизуализация**: конкретные предсказания о neural correlates, проверяемые fMRI/EEG
-- Связь с клиникой: анестезия, психоделики, деперсонализация — объяснены через precision-weighting
+### Honest assessment: what the theory does better than CC
+- **Experimental programme**: working paradigms (rubber hand illusion, heartbeat evoked potentials, VR-self)
+- Pragmatism: the "real problem" is more productive than metaphysical disputes
+- **Neuroimaging**: concrete predictions about neural correlates, testable by fMRI/EEG
+- Connection to clinic: anaesthesia, psychedelics, depersonalisation — explained through precision-weighting
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Seth}}: \mathbf{PP_{intero}} \to \mathbf{Hol}$$
 
-Prediction error $\mapsto$ $\sigma_k$; precision $\pi$ $\mapsto$ $1/\sigma_k$; interoceptive self-model $\mapsto$ $\varphi(\Gamma)$; free energy $F$ $\mapsto$ классический предел $\mathcal{L}_\Omega$. Функтор **не полон** — Сет не покрывает интеграцию ($\Phi$), SAD-башню, $G_2$-ригидность.
+Prediction error $\mapsto$ $\sigma_k$; precision $\pi$ $\mapsto$ $1/\sigma_k$; interoceptive self-model $\mapsto$ $\varphi(\Gamma)$; free energy $F$ $\mapsto$ classical limit $\mathcal{L}_\Omega$. The functor is **not complete** — Seth does not cover integration ($\Phi$), the SAD tower, $G_2$-rigidity.
 
 ---
 
-## 29. Меркер — Subcortical Consciousness {#merker}
+## 29. Merker — Subcortical Consciousness {#merker}
 
-> *«Дети с гидроцефалией, лишённые коры, улыбаются, плачут и реагируют — они сознательны.»* — Bjorn Merker
+> *«Children with hydrocephalus, deprived of the cortex, smile, cry, and respond — they are conscious.»* — Bjorn Merker
 
-### Создатели и история
+### Creators and history
 
-**Bjorn Merker** представил теорию подкоркового сознания в статье «Consciousness without a cerebral cortex: A challenge for neuroscience and medicine» (2007, Behavioral and Brain Sciences). Меркер изучал детей с тяжёлой гидроцефалией (практически без коры), которые демонстрировали признаки сознательного переживания: эмоциональные реакции, предпочтения, целенаправленное поведение. Он также анализировал данные декортикации у животных.
+**Bjorn Merker** presented the theory of subcortical consciousness in «Consciousness without a cerebral cortex: A challenge for neuroscience and medicine» (2007, Behavioral and Brain Sciences). Merker studied children with severe hydrocephalus (virtually no cortex) who showed signs of conscious experience: emotional responses, preferences, goal-directed behaviour. He also analysed data on decortication in animals.
 
-### Ключевая идея
+### Key idea
 
-Сознание генерируется мезенцефальными (среднемозговыми) и диэнцефальными структурами, а не корой. Кора расширяет и обогащает содержание сознания, но не порождает его. Верхние холмики (superior colliculus) + периакведуктальное серое вещество (PAG) + ретикулярная формация образуют «мезенцефальное ядро сознания» — пространственную карту мира и тела, достаточную для базового переживания. «Cortical chauvinism» — предубеждение нейронауки в пользу коры.
+Consciousness is generated by mesencephalic (midbrain) and diencephalic structures, not the cortex. The cortex expands and enriches the content of consciousness but does not generate it. Superior colliculus + periaqueductal grey matter (PAG) + reticular formation form a "mesencephalic consciousness core" — a spatial map of the world and body sufficient for basic experience. "Cortical chauvinism" — neuroscience's bias in favour of the cortex.
 
-### Формальная структура
+### Formal structure
 
-Не формализована. Аргументация основана на сравнительной нейроанатомии и клинических наблюдениях. Ключевой аргумент — функциональная достаточность: подкорковые структуры обеспечивают ориентировочную карту, мотивацию, аффект — то есть минимальное «для кого» (subject).
+Not formalised. The argumentation is based on comparative neuroanatomy and clinical observations. The key argument is functional sufficiency: subcortical structures provide an orientation map, motivation, affect — that is, a minimal "for whom" (subject).
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Subcortical Consciousness | КК |
+| Aspect | Subcortical Consciousness | CC |
 |--------|--------------------------|-----|
-| Минимальный субстрат | Средний мозг | $\Gamma$ при $P > 2/7$ (субстрат-независимо) |
-| Роль коры | Обогащение, но не генерация | Увеличение SAD, но не необходимость для L2 |
-| Клинические данные | Гидроцефалия, декортикация | Предсказание 6 (подкорковое L2) |
-| Минимальный опыт | Пространственная карта + аффект | L2: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1$ |
+| Minimal substrate | Midbrain | $\Gamma$ at $P > 2/7$ (substrate-independent) |
+| Role of cortex | Enrichment, but not generation | Increase of SAD, but not necessity for L2 |
+| Clinical data | Hydrocephalus, decortication | Prediction 6 (subcortical L2) |
+| Minimal experience | Spatial map + affect | L2: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1$ |
 
-### Что КК заимствует
-- Субстратная независимость сознания: КК не привязывает сознание к коре
-- Минимальное сознание (L2) не требует сложной когниции — согласуется с Меркером
+### What CC borrows
+- Substrate independence of consciousness: CC does not tie consciousness to the cortex
+- Minimal consciousness (L2) does not require complex cognition — consistent with Merker
 
-### Что КК делает лучше
-- Формальные критерии минимального сознания (а не только клинические наблюдения)
-- Применимость к не-биологическим системам
-- Объяснение *почему* подкорковые структуры достаточны (пороги $P$, $R$, $\Phi$)
+### What CC does better
+- Formal criteria for minimal consciousness (not only clinical observations)
+- Applicability to non-biological systems
+- Explanation of *why* subcortical structures are sufficient (thresholds $P$, $R$, $\Phi$)
 
-### Честная оценка: что теория делает лучше КК
-- **Клинические данные**: реальные пациенты (дети с гидроцефалией), а не абстрактные математические конструкции
-- Сравнительная нейробиология: эволюционная перспектива (от рыб до млекопитающих)
-- **Вызов «кортикоцентризму»**: изменила понимание минимальных требований к сознанию
-- КК не может объяснить, *почему* именно эти нейроанатомические структуры реализуют пороги
+### Honest assessment: what the theory does better than CC
+- **Clinical data**: real patients (children with hydrocephalus), not abstract mathematical constructions
+- Comparative neurobiology: evolutionary perspective (from fish to mammals)
+- **Challenge to "corticocentrism"**: changed understanding of minimal requirements for consciousness
+- CC cannot explain *why* exactly these neuroanatomical structures implement the thresholds
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Merk}}: \mathbf{Subcort} \to \mathbf{Hol}$$
 
-Мезенцефальное ядро $\mapsto$ $\Gamma$ при $P > 2/7$; пространственная карта $\mapsto$ S-измерение; PAG (аффект) $\mapsto$ E-измерение; кора $\mapsto$ увеличение SAD. Функтор **не полон** — теория описательна, не имеет динамики и порогов.
+Mesencephalic core $\mapsto$ $\Gamma$ at $P > 2/7$; spatial map $\mapsto$ S-dimension; PAG (affect) $\mapsto$ E-dimension; cortex $\mapsto$ increase of SAD. The functor is **not complete** — the theory is descriptive, has no dynamics or thresholds.
 
 ---
 
-## 30. Солмс — Neuropsychoanalysis {#solms}
+## 30. Solms — Neuropsychoanalysis {#solms}
 
-> *«Аффект — это валюта свободной энергии. Сознание начинается с чувства, а не с мышления.»* — Mark Solms
+> *«Affect is the currency of free energy. Consciousness begins with feeling, not thinking.»* — Mark Solms
 
-### Создатели и история
+### Creators and history
 
-**Mark Solms** (Кейптаунский университет) развил нейропсихоанализ — синтез психоанализа Фрейда и современной нейронауки — начиная с 1990-х. Его книга «The Hidden Spring: A Journey to the Source of Consciousness» (2021) предлагает теорию сознания, объединяющую принцип свободной энергии (FEP) Фристона с фрейдовской моделью психического аппарата. Солмс — соучредитель International Neuropsychoanalysis Society.
+**Mark Solms** (University of Cape Town) developed neuropsychoanalysis — a synthesis of Freudian psychoanalysis and modern neuroscience — from the 1990s. His book «The Hidden Spring: A Journey to the Source of Consciousness» (2021) proposes a theory of consciousness uniting Friston's free energy principle (FEP) with the Freudian model of the mental apparatus. Solms is co-founder of the International Neuropsychoanalysis Society.
 
-### Ключевая идея
+### Key idea
 
-Сознание = аффект, а не когниция. Фрейдовское «ид» — источник сознания, «эго» — его регулятор. Свободная энергия $F$ переживается субъективно как аффект (приятно/неприятно). Минимизация $F$ = стремление к гомеостазу = фрейдовский принцип удовольствия. Сновидения — активный процесс минимизации $F$ (переработка нерешённых проблем). Ствол мозга, а не кора, генерирует сознание (согласуется с Панксеппом и Меркером).
+Consciousness = affect, not cognition. The Freudian "id" is the source of consciousness, the "ego" is its regulator. Free energy $F$ is experienced subjectively as affect (pleasant/unpleasant). Minimisation of $F$ = striving for homeostasis = Freudian pleasure principle. Dreams are an active process of minimising $F$ (processing unresolved problems). The brainstem, not the cortex, generates consciousness (consistent with Panksepp and Merker).
 
-### Формальная структура
+### Formal structure
 
-Заимствует формализм FEP Фристона: $F = D_{KL}[q(\theta) \| p(\theta|o)] - \ln p(o)$. Добавляет интерпретацию: $F$ = субъективно переживаемый аффект. Высокая $F$ = неудовольствие (PANIC, FEAR), низкая $F$ = удовольствие (SEEKING rewarded). Фрейдовские механизмы (вытеснение, проекция) = стратегии минимизации $F$.
+Borrows the formalism of Friston's FEP: $F = D_{KL}[q(\theta) \| p(\theta|o)] - \ln p(o)$. Adds interpretation: $F$ = subjectively experienced affect. High $F$ = displeasure (PANIC, FEAR), low $F$ = pleasure (SEEKING rewarded). Freudian mechanisms (repression, projection) = strategies for minimising $F$.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Neuropsychoanalysis (Солмс) | КК |
+| Aspect | Neuropsychoanalysis (Solms) | CC |
 |--------|----------------------------|-----|
-| Сознание = | Аффект (free energy) | $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1$ |
-| Принцип удовольствия | Минимизация $F$ | $V_{\text{hed}} = dP/d\tau$ (T-103) |
-| Ид/Эго/Суперэго | Топографическая модель | Секторальный профиль $\gamma_{kk}$ |
-| Вытеснение | Стратегия минимизации $F$ | Деградация когерентности $\gamma_{ij}$ при стрессе |
-| Источник сознания | Ствол мозга (аффект) | E-измерение (Интериорность) |
+| Consciousness = | Affect (free energy) | $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1$ |
+| Pleasure principle | Minimisation of $F$ | $V_{\text{hed}} = dP/d\tau$ (T-103) |
+| Id/Ego/Superego | Topographic model | Sectoral profile $\gamma_{kk}$ |
+| Repression | Strategy for minimising $F$ | Degradation of coherence $\gamma_{ij}$ under stress |
+| Source of consciousness | Brainstem (affect) | E-dimension (Interiority) |
 
-### Что КК заимствует
-- Примат аффекта: E-измерение фундаментально, $V_{\text{hed}}$ — гедонистическая ценность
-- Связь с FEP: КК включает FEP как классический предел [Т]
-- Динамическая модель: психические «силы» = компоненты $\mathcal{L}_\Omega$
+### What CC borrows
+- Primacy of affect: E-dimension is fundamental, $V_{\text{hed}}$ — hedonic value
+- Connection to FEP: CC includes FEP as classical limit [T]
+- Dynamic model: psychic "forces" = components of $\mathcal{L}_\Omega$
 
-### Что КК делает лучше
-- Формальная динамика ($\mathcal{L}_\Omega$) вместо метафорического использования FEP
-- Пороги сознания — Солмс не определяет, когда система «начинает чувствовать»
-- Не зависит от спорных фрейдовских конструкций (вытеснение, Эдипов комплекс)
+### What CC does better
+- Formal dynamics ($\mathcal{L}_\Omega$) instead of metaphorical use of FEP
+- Consciousness thresholds — Solms does not define when a system "begins to feel"
+- Does not depend on controversial Freudian constructs (repression, Oedipus complex)
 
-### Честная оценка: что теория делает лучше КК
-- **Клиническая традиция**: психоанализ накопил более века наблюдений за динамикой психических процессов
-- Объяснение сновидений, защитных механизмов, переноса — КК не адресует эти феномены
-- **Связь с мотивацией**: почему организмы *стремятся* к определённым состояниям (принцип удовольствия)
-- Синтез двух крупных традиций (FEP + психоанализ), каждая из которых имеет эмпирическую базу
+### Honest assessment: what the theory does better than CC
+- **Clinical tradition**: psychoanalysis has accumulated over a century of observations on the dynamics of mental processes
+- Explanation of dreams, defence mechanisms, transference — CC does not address these phenomena
+- **Connection to motivation**: why organisms *strive* for certain states (pleasure principle)
+- Synthesis of two major traditions (FEP + psychoanalysis), each with an empirical base
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Solms}}: \mathbf{NeuroPsy} \to \mathbf{Hol}$$
 
-Аффект $\mapsto$ E-измерение; $F$ (free energy) $\mapsto$ $\sigma$ (стресс); принцип удовольствия $\mapsto$ $V_{\text{hed}}$; ид $\mapsto$ инстинктивные секторы; эго $\mapsto$ $\varphi(\Gamma)$. Функтор **не полон** — Солмс не формализует интеграцию ($\Phi$), SAD-башню, $G_2$-ригидность.
+Affect $\mapsto$ E-dimension; $F$ (free energy) $\mapsto$ $\sigma$ (stress); pleasure principle $\mapsto$ $V_{\text{hed}}$; id $\mapsto$ instinctive sectors; ego $\mapsto$ $\varphi(\Gamma)$. The functor is **not complete** — Solms does not formalise integration ($\Phi$), the SAD tower, $G_2$-rigidity.
 
 ---
 
-## 31. Прибрам — Holonomic Brain Theory {#pribram}
+## 31. Pribram — Holonomic Brain Theory {#pribram}
 
-> *«Мозг — это голограмма, заключённая внутри голографической вселенной.»* — Karl Pribram
+> *«The brain is a hologram enclosed within a holographic universe.»* — Karl Pribram
 
-### Создатели и история
+### Creators and history
 
-**Karl Pribram** (1919–2015) — нейрохирург и нейрофизиолог, разработавший голономную теорию мозга, изложенную в «Languages of the Brain» (1971) и «Brain and Perception» (1991). Совместно с физиком Дэвидом Бомом Прибрам предложил, что мозг обрабатывает информацию в частотной области (по аналогии с голографией), а не только через нейронные импульсы. Прибрам был одним из первых, кто связал квантовые идеи с нейронаукой.
+**Karl Pribram** (1919–2015) — neurosurgeon and neurophysiologist, who developed the holonomic brain theory in «Languages of the Brain» (1971) and «Brain and Perception» (1991). Together with physicist David Bohm, Pribram proposed that the brain processes information in the frequency domain (by analogy with holography), not only through neural impulses. Pribram was one of the first to connect quantum ideas with neuroscience.
 
-### Ключевая идея
+### Key idea
 
-Память и восприятие хранятся и обрабатываются не в конкретных нейронах, а в паттернах интерференции нейронных волн (дендритные микропроцессы). Мозг выполняет преобразование Фурье: входные паттерны $\to$ частотная область $\to$ обратное преобразование. Голографический принцип: каждая часть содержит информацию о целом (распределённое хранение). Связь с квантовой теорией: дендритные микропроцессы могут проявлять квантовые свойства.
+Memory and perception are stored and processed not in specific neurons but in patterns of neural wave interference (dendritic microprocesses). The brain performs Fourier transformation: input patterns → frequency domain → inverse transformation. Holographic principle: each part contains information about the whole (distributed storage). Connection to quantum theory: dendritic microprocesses may exhibit quantum properties.
 
-### Формальная структура
+### Formal structure
 
-Фурье-анализ дендритных потенциалов: $f(x) = \int \hat{f}(\omega) e^{i\omega x} d\omega$. Голографическая запись: $I(x) = |R(x) + O(x)|^2$, где $R$ — опорная волна, $O$ — объектная. Распределённость: повреждение части не уничтожает всю информацию (graceful degradation).
+Fourier analysis of dendritic potentials: $f(x) = \int \hat{f}(\omega) e^{i\omega x} d\omega$. Holographic recording: $I(x) = |R(x) + O(x)|^2$, where $R$ is the reference wave, $O$ is the object wave. Distributedness: damage to part does not destroy all information (graceful degradation).
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Holonomic Brain Theory | КК |
+| Aspect | Holonomic Brain Theory | CC |
 |--------|----------------------|-----|
-| Математика | Фурье-анализ (дендриты) | Алгебра C*-категорий, $\mathcal{D}(\mathbb{C}^7)$ |
-| Распределённость | Голографическая (частотная) | Матрица $\Gamma$ (полная когерентность) |
-| Память | Интерференционные паттерны | Аттрактор $\Gamma^*$, автобиографическая SAD-башня |
-| Квантовые эффекты | Дендритные микропроцессы | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ (квантовый формализм) |
+| Mathematics | Fourier analysis (dendrites) | Algebra of C*-categories, $\mathcal{D}(\mathbb{C}^7)$ |
+| Distributedness | Holographic (frequency) | Matrix $\Gamma$ (full coherence) |
+| Memory | Interference patterns | Attractor $\Gamma^*$, autobiographical SAD tower |
+| Quantum effects | Dendritic microprocesses | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ (quantum formalism) |
 
-### Что КК заимствует
-- Распределённость: $\Gamma$ — матрица, а не вектор; информация в когерентностях $\gamma_{ij}$
-- Частотная перспектива: спектральная щель $\Lambda$ в $\mathcal{L}_\Omega$ определяет временны́е масштабы
+### What CC borrows
+- Distributedness: $\Gamma$ is a matrix, not a vector; information in coherences $\gamma_{ij}$
+- Frequency perspective: spectral gap $\Lambda$ in $\mathcal{L}_\Omega$ defines timescales
 
-### Что КК делает лучше
-- Строгий математический аппарат (а не метафора голографии)
-- Пороги сознания: Прибрам не определяет, когда система сознательна
-- Предсказания: $G_2$-ригидность, $N = 7$, SAD$_{\max} = 3$
+### What CC does better
+- Rigorous mathematical apparatus (not a holography metaphor)
+- Consciousness thresholds: Pribram does not define when a system is conscious
+- Predictions: $G_2$-rigidity, $N = 7$, SAD$_{\max} = 3$
 
-### Честная оценка: что теория делает лучше КК
-- **Нейрофизиологическая конкретность**: дендритные потенциалы, рецептивные поля, Фурье-разложение
-- Объяснение graceful degradation и распределённости памяти
-- Связь с реальными нейрофизиологическими данными (Pribram, Spinelli, Barrett)
-- КК не адресует вопрос о конкретных нейронных механизмах хранения информации
+### Honest assessment: what the theory does better than CC
+- **Neurophysiological concreteness**: dendritic potentials, receptive fields, Fourier decomposition
+- Explanation of graceful degradation and distributed memory
+- Connection to real neurophysiological data (Pribram, Spinelli, Barrett)
+- CC does not address the question of specific neural mechanisms of information storage
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Holo}}: \mathbf{Holonomic} \to \mathbf{Hol}$$
 
-Голографический паттерн $\mapsto$ $\Gamma$ (матрица когерентностей); частотная область $\mapsto$ спектр $\mathcal{L}_\Omega$; распределённость $\mapsto$ недиагональные $\gamma_{ij}$. Функтор **сильно неполон** — голономная теория не имеет динамики сознания, порогов, самомоделирования.
+Holographic pattern $\mapsto$ $\Gamma$ (coherence matrix); frequency domain $\mapsto$ spectrum of $\mathcal{L}_\Omega$; distributedness $\mapsto$ off-diagonal $\gamma_{ij}$. The functor is **strongly incomplete** — the holonomic theory has no dynamics of consciousness, no thresholds, no self-modelling.
 
 ---
 
-## 32. Теория функциональных систем П.К. Анохина {#pk-anokhin}
+## 32. P.K. Anokhin — Theory of Functional Systems {#pk-anokhin}
 
-> *«Любое приспособление живого организма к среде есть результат формирования функциональной системы с опережающим отражением действительности.»* — Пётр Кузьмич Анохин
+> *«Any adaptation of a living organism to the environment is the result of the formation of a functional system with anticipatory reflection of reality.»* — Pyotr Kuzmich Anokhin
 
-### Создатели и история
+### Creators and history
 
-**Пётр Кузьмич Анохин** (1898–1974) — выдающийся советский физиолог, ученик И.П. Павлова, создал теорию функциональных систем (ТФС) в период с 1935 по 1974 год. Основные работы: «Биология и нейрофизиология условного рефлекса» (1968), «Принципиальные вопросы общей теории функциональных систем» (1971). ТФС — одна из первых системных теорий в нейронауке, предвосхитившая кибернетику второго порядка и современные теории предиктивного кодирования. Анохин ввёл понятие «акцептора результата действия» задолго до появления компараторных моделей в когнитивной науке.
+**Pyotr Kuzmich Anokhin** (1898–1974) — outstanding Soviet physiologist, student of I.P. Pavlov, who created the theory of functional systems (TFS) from 1935 to 1974. Major works: «Biology and Neurophysiology of the Conditioned Reflex» (1968), «Fundamental Questions of the General Theory of Functional Systems» (1971). TFS is one of the first systems theories in neuroscience, anticipating second-order cybernetics and modern theories of predictive coding. Anokhin introduced the concept of the "action result acceptor" long before comparator models appeared in cognitive science.
 
-### Ключевая идея
+### Key idea
 
-Функциональная система — динамическая организация, объединяющая разнородные компоненты (нейроны, мышцы, органы) для достижения полезного приспособительного результата. Ключевые компоненты: (1) **афферентный синтез** — интеграция мотивации, памяти, обстановочной и пусковой афферентации; (2) **принятие решения** — выбор программы действия; (3) **акцептор результата действия** (АРД) — модель ожидаемого результата, формируемая до действия (опережающее отражение); (4) **обратная афферентация** — сличение реального результата с АРД. **Системогенез** — созревание функциональных систем, которые формируются как целое раньше, чем их отдельные компоненты.
+A functional system is a dynamic organisation that unites heterogeneous components (neurons, muscles, organs) to achieve a useful adaptive result. Key components: (1) **afferent synthesis** — integration of motivation, memory, situational and triggering afferentation; (2) **decision-making** — selection of action programme; (3) **action result acceptor** (ARA) — model of expected result formed before action (anticipatory reflection); (4) **reverse afferentation** — comparison of actual result with ARA. **Systemogenesis** — maturation of functional systems, which form as a whole earlier than their individual components.
 
-### Формальная структура
+### Formal structure
 
-Описательно-системная. Цикл: афферентный синтез $\to$ принятие решения $\to$ эфферентная программа + АРД $\to$ действие $\to$ результат $\to$ обратная афферентация $\to$ сравнение с АРД $\to$ коррекция. Формально: $\text{АРД}(t_0) = f(\text{мотив}, \text{память}, \text{обстановка}, \text{пуск})$; ошибка $e = \text{результат} - \text{АРД}$; если $e > \varepsilon$, цикл повторяется.
+Descriptive-systemic. Cycle: afferent synthesis → decision-making → efferent programme + ARA → action → result → reverse afferentation → comparison with ARA → correction. Formally: $\text{ARA}(t_0) = f(\text{motive}, \text{memory}, \text{situation}, \text{trigger})$; error $e = \text{result} - \text{ARA}$; if $e > \varepsilon$, cycle repeats.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | ТФС (Анохин) | КК |
-|--------|-------------|-----|
-| Системная единица | Функциональная система | Голоном $\mathbb{H}$ |
-| АРД (предсказание) | Модель результата до действия | $\varphi(\Gamma)$ (самомоделирование) |
-| Ошибка сличения | $e = \text{результат} - \text{АРД}$ | $\sigma_k = \text{clamp}(1 - 7\gamma_{kk}, 0, 1)$ |
-| Афферентный синтез | Интеграция 4 потоков | Когерентности $\gamma_{ij}$ (взаимодействие измерений) |
-| Опережающее отражение | Формирование АРД | $\varphi$ (оператор самомоделирования) |
-| Системогенез | Целое раньше частей | L0 → L2: пороги, а не наращивание компонентов |
+| Aspect | TFS (Anokhin) | CC |
+|--------|--------------|-----|
+| System unit | Functional system | Holon $\mathbb{H}$ |
+| ARA (prediction) | Model of result before action | $\varphi(\Gamma)$ (self-modelling) |
+| Comparison error | $e = \text{result} - \text{ARA}$ | $\sigma_k = \text{clamp}(1 - 7\gamma_{kk}, 0, 1)$ |
+| Afferent synthesis | Integration of 4 streams | Coherences $\gamma_{ij}$ (interaction of dimensions) |
+| Anticipatory reflection | Formation of ARA | $\varphi$ (self-modelling operator) |
+| Systemogenesis | Whole before parts | L0 → L2: thresholds, not accumulation of components |
 
-### Что КК заимствует
-- Акцептор результата действия ≈ оператор самомоделирования $\varphi$: модель «ожидаемого состояния» до действия
-- Обратная связь: $\sigma_k$ как формализация ошибки сличения
-- Целостность: функциональная система = Голоном (объединение разнородных компонентов)
+### What CC borrows
+- Action result acceptor ≈ self-modelling operator $\varphi$: model of "expected state" before action
+- Feedback: $\sigma_k$ as formalisation of comparison error
+- Wholeness: functional system = Holon (unification of heterogeneous components)
 
-### Что КК делает лучше
-- Формальные пороги ($P$, $R$, $\Phi$), а не описательный цикл
-- Квантовый формализм: когерентности и интерференция, недоступные классической ТФС
-- Сознание как центральный объект (ТФС адресует адаптацию, но не субъективный опыт напрямую)
+### What CC does better
+- Formal thresholds ($P$, $R$, $\Phi$), not descriptive cycle
+- Quantum formalism: coherences and interference, inaccessible to classical TFS
+- Consciousness as central object (TFS addresses adaptation, but not subjective experience directly)
 
-### Честная оценка: что теория делает лучше КК
-- **Историческое первенство**: АРД (1935) предвосхитил предиктивное кодирование на 60 лет
-- Экспериментальная база: электрофизиология, условные рефлексы, клинические данные
-- **Системогенез**: конкретная теория развития, применимая в эмбриологии и педиатрии
-- Понятие «полезного приспособительного результата» как организующий принцип — КК формализует жизнеспособность $\mathcal{V}$, но менее конкретно
-- **Интеграция мотивации и памяти** в единый афферентный синтез — КК разносит по разным измерениям
+### Honest assessment: what the theory does better than CC
+- **Historical priority**: ARA (1935) anticipated predictive coding by 60 years
+- Experimental base: electrophysiology, conditioned reflexes, clinical data
+- **Systemogenesis**: a concrete developmental theory applicable in embryology and paediatrics
+- Concept of "useful adaptive result" as organising principle — CC formalises viability $\mathcal{V}$, but less concretely
+- **Integration of motivation and memory** into a unified afferent synthesis — CC distributes these across different dimensions
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{TFS}}: \mathbf{FuncSys} \to \mathbf{Hol}$$
 
-Функциональная система $\mapsto$ Голоном $\mathbb{H}$; АРД $\mapsto$ $\varphi(\Gamma)$; афферентный синтез $\mapsto$ когерентности $\gamma_{ij}$; ошибка $e$ $\mapsto$ $\sigma_k$; системогенез $\mapsto$ эволюция $\mathcal{L}_\Omega(\Gamma)$. Функтор **не полон** — ТФС не имеет мер сознания ($\Phi$, $R$), не адресует квалиа и E-измерение.
+Functional system $\mapsto$ Holon $\mathbb{H}$; ARA $\mapsto$ $\varphi(\Gamma)$; afferent synthesis $\mapsto$ coherences $\gamma_{ij}$; error $e$ $\mapsto$ $\sigma_k$; systemogenesis $\mapsto$ evolution $\mathcal{L}_\Omega(\Gamma)$. The functor is **not complete** — TFS has no consciousness measures ($\Phi$, $R$), does not address qualia and the E-dimension.
 
 ---
 
-## 33. Швырков — Системно-эволюционная теория {#shvyrkov}
+## 33. Shvyrkov — System-Evolutionary Theory {#shvyrkov}
 
-> *«Нейрон — не передатчик сигналов, а элемент индивидуального опыта организма.»* — Вячеслав Борисович Швырков
+> *«A neuron is not a signal transmitter but an element of the individual experience of the organism.»* — Vyacheslav Borisovich Shvyrkov
 
-### Создатели и история
+### Creators and history
 
-**Вячеслав Борисович Швырков** (1939–1994) — советский и российский нейрофизиолог, ученик Анохина, развивший ТФС в системно-эволюционную теорию (СЭТ). Основные работы: «Введение в объективную психологию» (2006, посмертное издание), многочисленные статьи о нейронных коррелятах поведения. Швырков записывал активность отдельных нейронов у кроликов и кошек, обучающихся новому поведению, и обнаружил, что нейроны «специализируются» на конкретных актах поведения.
+**Vyacheslav Borisovich Shvyrkov** (1939–1994) — Soviet and Russian neurophysiologist, student of Anokhin, who developed TFS into system-evolutionary theory (SET). Major works: «Introduction to Objective Psychology» (2006, posthumous edition), numerous papers on neural correlates of behaviour. Shvyrkov recorded the activity of individual neurons in rabbits and cats learning new behaviour, and found that neurons "specialise" in specific behavioural acts.
 
-### Ключевая идея
+### Key idea
 
-Каждый нейрон — элемент определённой функциональной системы, сформированной в индивидуальном опыте. Нейрон не передаёт «сигнал» — он является частью системы, реализующей конкретный акт поведения (системная специализация нейронов). Обучение = формирование новых функциональных систем, при котором «рекрутируются» ранее не специализированные нейроны. Память — не хранилище информации, а набор сформированных функциональных систем (каждая «записана» в определённой группе нейронов). Эволюция индивидуального опыта = системогенез на протяжении жизни.
+Every neuron is an element of a specific functional system formed in individual experience. A neuron does not transmit a "signal" — it is part of a system implementing a specific behavioural act (system specialisation of neurons). Learning = formation of new functional systems, in which previously unspecialised neurons are "recruited". Memory is not a storage of information but a set of formed functional systems (each "recorded" in a specific group of neurons). Evolution of individual experience = systemogenesis throughout life.
 
-### Формальная структура
+### Formal structure
 
-Экспериментально-описательная. Регистрация одиночных нейронов: нейрон $n_i$ активен в фазе $\phi_j$ поведенческого акта $\iff$ $n_i \in \text{FS}_j$ (функциональная система $j$). Новая ФС при обучении: набор $\{n_k\}$ «рекрутируется» в ФС$_{j+1}$. Статистика: процент нейронов, специализированных для каждого акта.
+Experimental-descriptive. Recording of single neurons: neuron $n_i$ is active in phase $\phi_j$ of behavioural act $\iff$ $n_i \in \text{FS}_j$ (functional system $j$). New FS during learning: set $\{n_k\}$ is "recruited" into FS$_{j+1}$. Statistics: percentage of neurons specialised for each act.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | СЭТ (Швырков) | КК |
+| Aspect | SET (Shvyrkov) | CC |
 |--------|--------------|-----|
-| Единица анализа | Нейрон как элемент ФС | Голоном $\mathbb{H}$ |
-| Обучение | Формирование новых ФС | Эволюция $\Gamma$ под $\mathcal{L}_\Omega$ |
-| Память | Набор ФС | Аттрактор $\Gamma^*$, SAD-башня |
-| Специализация | Нейрон → один поведенческий акт | Сектор $\gamma_{kk}$ → одно измерение |
-| Развитие | Системогенез (онтогенез) | L0 → L4 (через пороги) |
+| Unit of analysis | Neuron as element of FS | Holon $\mathbb{H}$ |
+| Learning | Formation of new FS | Evolution of $\Gamma$ under $\mathcal{L}_\Omega$ |
+| Memory | Set of FSs | Attractor $\Gamma^*$, SAD tower |
+| Specialisation | Neuron → one behavioural act | Sector $\gamma_{kk}$ → one dimension |
+| Development | Systemogenesis (ontogenesis) | L0 → L4 (through thresholds) |
 
-### Что КК заимствует
-- Системность: Голоном как целостная единица, не сводимая к элементам
-- Развитие как формирование новых структур: эволюция $\Gamma$ под $\mathcal{L}_\Omega$
+### What CC borrows
+- Systemicity: Holon as a holistic unit not reducible to elements
+- Development as formation of new structures: evolution of $\Gamma$ under $\mathcal{L}_\Omega$
 
-### Что КК делает лучше
-- Формальный аппарат: матрицы плотности, категории, доказуемые теоремы
-- Субстратная независимость: КК применима не только к нейронам
-- Пороги сознания ($P$, $R$, $\Phi$) — СЭТ не определяет, когда система «сознательна»
+### What CC does better
+- Formal apparatus: density matrices, categories, provable theorems
+- Substrate independence: CC is applicable not only to neurons
+- Consciousness thresholds ($P$, $R$, $\Phi$) — SET does not define when a system is "conscious"
 
-### Честная оценка: что теория делает лучше КК
-- **Экспериментальные данные**: прямая регистрация нейронов при обучении (single-unit recording)
-- Конкретный нейрофизиологический механизм формирования опыта
-- **Связь с ТФС Анохина**: СЭТ — развитие мощной традиции, имеющей 80+ лет экспериментальной базы
-- Объяснение «рекрутирования» нейронов — КК не адресует нейронный уровень
+### Honest assessment: what the theory does better than CC
+- **Experimental data**: direct recording of neurons during learning (single-unit recording)
+- Specific neurophysiological mechanism of experience formation
+- **Connection to Anokhin's TFS**: SET is the development of a powerful tradition with 80+ years of experimental base
+- Explanation of neuron "recruitment" — CC does not address the neural level
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{SET}}: \mathbf{SysEvol} \to \mathbf{Hol}$$
 
-Функциональная система $\mapsto$ Голоном $\mathbb{H}$; набор специализированных нейронов $\mapsto$ $\Gamma$ (когерентности); формирование новой ФС $\mapsto$ изменение $\Gamma$ под $\mathcal{L}_\Omega$; индивидуальный опыт $\mapsto$ аттрактор $\Gamma^*$. Функтор **сильно неполон** — СЭТ работает на нейронном уровне и не имеет мер сознания.
+Functional system $\mapsto$ Holon $\mathbb{H}$; set of specialised neurons $\mapsto$ $\Gamma$ (coherences); formation of new FS $\mapsto$ change of $\Gamma$ under $\mathcal{L}_\Omega$; individual experience $\mapsto$ attractor $\Gamma^*$. The functor is **strongly incomplete** — SET works at the neural level and has no consciousness measures.
 
 ---
 
-## 34. Иваницкий — Информационный синтез {#ivanitsky}
+## 34. Ivanitsky — Information Synthesis {#ivanitsky}
 
-> *«Субъективные переживания возникают в результате информационного синтеза — возврата возбуждения из ассоциативных областей к проекционным через лимбическую систему.»* — Алексей Михайлович Иваницкий
+> *«Subjective experiences arise as the result of information synthesis — the return of excitation from associative areas to projective ones through the limbic system.»* — Alexei Mikhailovich Ivanitsky
 
-### Создатели и история
+### Creators and history
 
-**Алексей Михайлович Иваницкий** (1935–2014) — выдающийся российский нейрофизиолог, директор лаборатории высшей нервной деятельности Института ВНД и нейрофизиологии РАН. Разработал гипотезу информационного синтеза (ИС) начиная с 1970-х, изложенную в «Мозговая основа субъективных переживаний» (1996, Журнал высшей нервной деятельности) и «Сознание и мозг» (2005). Иваницкий был одним из первых в мировой науке, кто предложил конкретный нейрофизиологический механизм порождения субъективного переживания.
+**Alexei Mikhailovich Ivanitsky** (1935–2014) — outstanding Russian neurophysiologist, director of the laboratory of higher nervous activity at the Institute of Higher Nervous Activity and Neurophysiology of the Russian Academy of Sciences. He developed the information synthesis hypothesis (IS) from the 1970s, laid out in «Brain basis of subjective experiences» (1996, Journal of Higher Nervous Activity) and «Consciousness and the Brain» (2005). Ivanitsky was one of the first in world science to propose a specific neurophysiological mechanism for generating subjective experience.
 
-### Ключевая идея
+### Key idea
 
-Сознание возникает при **кольцевом кортикальном движении** возбуждения: проекционная кора (сенсорный вход) → ассоциативная кора (категоризация, сравнение с памятью) → лимбическая система (эмоциональная оценка) → возврат к проекционной коре. Именно возврат — «информационный синтез» — порождает субъективное переживание: ощущение обогащается значением (из памяти) и эмоциональной оценкой. Время полного цикла ≈ 150–300 мс — коррелирует с P300 (вызванный потенциал). Без замыкания кольца (например, при маскировке стимула) — нет осознания.
+Consciousness arises through **circular cortical movement** of excitation: projective cortex (sensory input) → associative cortex (categorisation, comparison with memory) → limbic system (emotional assessment) → return to projective cortex. It is precisely the return — "information synthesis" — that gives rise to subjective experience: the sensation is enriched with meaning (from memory) and emotional assessment. The time of a full cycle ≈ 150–300 ms — correlates with P300 (evoked potential). Without closing the loop (e.g., with stimulus masking) — no awareness.
 
-### Формальная структура
+### Formal structure
 
-Электрофизиологическая модель: цикл $\text{S}_1 \to \text{Ассоц.} \to \text{Лимб.} \to \text{S}_1$, занимающий $\sim 200$ мс. Когерентность ЭЭГ между проекционными и ассоциативными зонами — коррелят осознания. Порог: замкнутый цикл $=$ осознание; прерванный $=$ неосознанная обработка. Формально: $\text{Сознание} \iff \text{coherence}(\text{S}_1, \text{Assoc}, \text{Limb}) > \theta$.
+Electrophysiological model: cycle $\text{S}_1 \to \text{Assoc.} \to \text{Limb.} \to \text{S}_1$, taking $\sim 200$ ms. EEG coherence between projective and associative zones — correlate of awareness. Threshold: closed loop = awareness; interrupted = unconscious processing. Formally: $\text{Consciousness} \iff \text{coherence}(\text{S}_1, \text{Assoc}, \text{Limb}) > \theta$.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Информационный синтез (Иваницкий) | КК |
+| Aspect | Information Synthesis (Ivanitsky) | CC |
 |--------|----------------------------------|-----|
-| Механизм сознания | Кольцевой кортикальный цикл | Пороги $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ |
-| Когерентность | ЭЭГ между зонами | $\gamma_{ij}$ (когерентности $\Gamma$) |
-| Эмоции + ощущения | Слияние в лимбической петле | Связь S↔E через $\gamma_{SE}$ |
-| Время осознания | ~200 мс (P300) | Временной масштаб $\sim 1/\Lambda$ |
-| Пороговость | Замкнутый цикл vs. нет | $P_{\text{crit}} = 2/7$ |
+| Consciousness mechanism | Circular cortical cycle | Thresholds $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$ |
+| Coherence | EEG between zones | $\gamma_{ij}$ (coherences of $\Gamma$) |
+| Emotions + sensations | Fusion in limbic loop | Connection S↔E through $\gamma_{SE}$ |
+| Time of awareness | ~200 ms (P300) | Timescale $\sim 1/\Lambda$ |
+| Threshold | Closed loop vs absent | $P_{\text{crit}} = 2/7$ |
 
-### Что КК заимствует
-- Когерентность как механизм сознания: когерентности $\gamma_{ij}$ в $\Gamma$ — прямой аналог ЭЭГ-когерентности
-- Пороговость: бинарный переход (замкнутый цикл → осознание) ≈ $P > P_{\text{crit}}$
-- Синтез ощущений и эмоций: $\gamma_{SE}$ (когерентность S↔E)
+### What CC borrows
+- Coherence as mechanism of consciousness: coherences $\gamma_{ij}$ in $\Gamma$ — direct analogue of EEG coherence
+- Threshold: binary transition (closed loop → awareness) ≈ $P > P_{\text{crit}}$
+- Synthesis of sensations and emotions: $\gamma_{SE}$ (coherence S↔E)
 
-### Что КК делает лучше
-- Субстратная независимость: не привязана к конкретным корковым зонам
-- Точные пороги ($2/7$, $1/3$, $1$), а не описательный «замкнутый цикл»
-- Самомоделирование ($\varphi$), интеграция ($\Phi$), рефлексия ($R$) — более богатая структура
+### What CC does better
+- Substrate independence: not tied to specific cortical zones
+- Exact thresholds ($2/7$, $1/3$, $1$), not descriptive "closed loop"
+- Self-modelling ($\varphi$), integration ($\Phi$), reflection ($R$) — richer structure
 
-### Честная оценка: что теория делает лучше КК
-- **Электрофизиологическая верификация**: P300, когерентность ЭЭГ — прямо измеримые корреляты
-- Конкретный временной масштаб осознания (~200 мс)
-- **Приоритет**: Иваницкий предложил кольцевую гипотезу в 1970-х, предвосхитив recurrent processing theory Ламме
-- Объяснение роли эмоций в осознании через конкретную нейроанатомию
-- КК не может предложить конкретных ЭЭГ-предсказаний (нет протокола измерения $\Gamma$)
+### Honest assessment: what the theory does better than CC
+- **Electrophysiological verification**: P300, EEG coherence — directly measurable correlates
+- Specific timescale of awareness (~200 ms)
+- **Priority**: Ivanitsky proposed the circular hypothesis in the 1970s, anticipating Lamme's recurrent processing theory
+- Explanation of the role of emotions in awareness through specific neuroanatomy
+- CC cannot offer concrete EEG predictions (no $\Gamma$ measurement protocol)
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{IS}}: \mathbf{InfoSynth} \to \mathbf{Hol}$$
 
-Кольцевой цикл $\mapsto$ рекуррентность $R \geq R_{\text{th}}$; ЭЭГ-когерентность $\mapsto$ $\gamma_{ij}$; информационный синтез $\mapsto$ $\Phi \geq 1$; лимбическая оценка $\mapsto$ E-измерение. Функтор **не полон** — теория ИС не покрывает самомоделирование ($\varphi$), SAD-башню, $G_2$-ригидность.
+Circular cycle $\mapsto$ recurrence $R \geq R_{\text{th}}$; EEG coherence $\mapsto$ $\gamma_{ij}$; information synthesis $\mapsto$ $\Phi \geq 1$; limbic assessment $\mapsto$ E-dimension. The functor is **not complete** — IS theory does not cover self-modelling ($\varphi$), the SAD tower, $G_2$-rigidity.
 
 ---
 
-## 35. Аллахвердов — Сознание как парадокс {#allakhverdov}
+## 35. Allakhverdov — Consciousness as Paradox {#allakhverdov}
 
-> *«Сознание — это контрольный механизм, проверяющий бессознательные гипотезы о мире. Парадокс: сознание знает только то, что бессознательное ему "разрешило" знать.»* — Виктор Михайлович Аллахвердов
+> *«Consciousness is a control mechanism that verifies unconscious hypotheses about the world. Paradox: consciousness knows only what the unconscious has "permitted" it to know.»* — Viktor Mikhailovich Allakhverdov
 
-### Создатели и история
+### Creators and history
 
-**Виктор Михайлович Аллахвердов** (р. 1946) — российский психолог, профессор Санкт-Петербургского государственного университета, создатель психологики — когнитивной теории сознания, изложенной в книгах «Сознание как парадокс» (2000) и «Методологическое путешествие по океану бессознательного к таинственному острову сознания» (2003). Аллахвердов — один из немногих современных российских учёных, предложивших оригинальную и целостную теорию сознания. Его подход уникален: он рассматривает сознание как логическую (а не нейрофизиологическую) проблему.
+**Viktor Mikhailovich Allakhverdov** (b. 1946) — Russian psychologist, professor at St. Petersburg State University, creator of psycho-logic — a cognitive theory of consciousness, set out in «Consciousness as Paradox» (2000) and «A Methodological Journey Across the Ocean of the Unconscious to the Mysterious Island of Consciousness» (2003). Allakhverdov is one of the few contemporary Russian scholars to have proposed an original and integral theory of consciousness. His approach is unique: he treats consciousness as a logical (rather than neurophysiological) problem.
 
-### Ключевая идея
+### Key idea
 
-Познание строится по модели научного исследования: бессознательное генерирует гипотезы о мире, а сознание их **верифицирует**. Сознание — контрольный механизм, работающий по принципу «верификации vs. фальсификации» (влияние Поппера). Парадокс: сознание не имеет прямого доступа к реальности — оно проверяет только то, что бессознательное ему «предъявило». «Закон Аллахвердова»: осознанная информация стремится к повторному осознанию (позитивный выбор), а неосознанная — к повторному неосознаванию (негативный выбор). Экспериментально: время реакции на ранее осознанный стимул меньше; ранее неосознанный стимул подавляется сильнее. Сознание работает с **означенной** информацией (имеющей когнитивное значение), а не с «сырыми данными».
+Cognition is built on the model of scientific inquiry: the unconscious generates hypotheses about the world, and consciousness **verifies** them. Consciousness is a control mechanism operating on the principle of "verification vs falsification" (Popper's influence). Paradox: consciousness has no direct access to reality — it checks only what the unconscious has "presented" to it. "Allakhverdov's law": consciously perceived information tends toward repeated conscious perception (positive selection), while non-consciously perceived information tends toward repeated non-conscious perception (negative selection). Experimentally: reaction time to a previously consciously perceived stimulus is shorter; a previously non-consciously perceived stimulus is suppressed more strongly. Consciousness works with **signified** information (having cognitive meaning), not "raw data".
 
-### Формальная структура
+### Formal structure
 
-Логико-когнитивная модель: бессознательное генерирует гипотезы $\{h_1, h_2, \ldots\}$; сознание проверяет: $\text{verify}(h_i, \text{data})$. Позитивный выбор: $P(\text{осознание}_{t+1} | \text{осознание}_t) > P(\text{осознание}_{t+1})$. Негативный выбор: $P(\text{осознание}_{t+1} | \neg\text{осознание}_t) < P(\text{осознание}_{t+1})$. Формализация частичная — основной метод аргументации логический и экспериментальный.
+Logical-cognitive model: the unconscious generates hypotheses $\{h_1, h_2, \ldots\}$; consciousness verifies: $\text{verify}(h_i, \text{data})$. Positive selection: $P(\text{awareness}_{t+1} | \text{awareness}_t) > P(\text{awareness}_{t+1})$. Negative selection: $P(\text{awareness}_{t+1} | \neg\text{awareness}_t) < P(\text{awareness}_{t+1})$. Formalisation is partial — the primary method of argumentation is logical and experimental.
 
-### Сравнение с КК
+### Comparison with CC
 
-| Аспект | Психологика (Аллахвердов) | КК |
-|--------|--------------------------|-----|
-| Сознание | Контрольный механизм (верификация) | $\varphi(\Gamma)$ (самомоделирование) |
-| Бессознательное | Генератор гипотез | L0 (до порога $P < 2/7$) |
-| Позитивный выбор | Осознанное → повторно осознаётся | Аттрактор $\Gamma^*$ (устойчивые состояния) |
-| Негативный выбор | Неосознанное подавляется | $\sigma_k > 0$ → деградация когерентности |
-| Парадокс доступа | Сознание ≠ прямой доступ | $\varphi$ — автоморфизм, не «зеркало» |
+| Aspect | Psycho-logic (Allakhverdov) | CC |
+|--------|---------------------------|-----|
+| Consciousness | Control mechanism (verification) | $\varphi(\Gamma)$ (self-modelling) |
+| Unconscious | Generator of hypotheses | L0 (below threshold $P < 2/7$) |
+| Positive selection | Conscious → consciously perceived again | Attractor $\Gamma^*$ (stable states) |
+| Negative selection | Non-conscious is suppressed | $\sigma_k > 0$ → degradation of coherence |
+| Access paradox | Consciousness ≠ direct access | $\varphi$ is an automorphism, not a "mirror" |
 
-### Что КК заимствует
-- Сознание как контроль/верификация: $\varphi(\Gamma)$ проверяет когерентность (а не «отражает реальность»)
-- Двухуровневая архитектура: бессознательное (L0) + сознательное (L2) — аналог «генерация + верификация»
-- Аттрактивность осознания: позитивный выбор ≈ устойчивость $\Gamma^*$
+### What CC borrows
+- Consciousness as control/verification: $\varphi(\Gamma)$ checks coherence (not "reflects reality")
+- Two-level architecture: unconscious (L0) + conscious (L2) — analogue of "generation + verification"
+- Attractor property of awareness: positive selection ≈ stability of $\Gamma^*$
 
-### Что КК делает лучше
-- Формальная динамика ($\mathcal{L}_\Omega$): не только логическая модель, но и уравнение эволюции
-- Количественные пороги: $P$, $R$, $\Phi$ — а не описательная «верификация»
-- Применимость к небиологическим системам
+### What CC does better
+- Formal dynamics ($\mathcal{L}_\Omega$): not only a logical model but also an evolution equation
+- Quantitative thresholds: $P$, $R$, $\Phi$ — not descriptive "verification"
+- Applicability to non-biological systems
 
-### Честная оценка: что теория делает лучше КК
-- **Экспериментальная программа**: десятки экспериментов на позитивный/негативный выбор (Петербургская школа)
-- Логическая строгость: парадоксы сознания проанализированы с позиции формальной логики
-- **Объяснение когнитивных иллюзий**: почему мы «не видим» очевидного и «видим» несуществующее
-- Оригинальный «закон Аллахвердова» — КК не имеет аналога механизма подавления неосознанного
-- Связь с эпистемологией (Поппер, верификация/фальсификация) — более глубокая философская рефлексия о природе познания
+### Honest assessment: what the theory does better than CC
+- **Experimental programme**: dozens of experiments on positive/negative selection (St. Petersburg school)
+- Logical rigour: paradoxes of consciousness are analysed from the standpoint of formal logic
+- **Explanation of cognitive illusions**: why we "don't see" the obvious and "see" the nonexistent
+- Original "Allakhverdov's law" — CC has no analogue of the mechanism for suppressing non-conscious material
+- Connection to epistemology (Popper, verification/falsification) — deeper philosophical reflection on the nature of cognition
 
-### Функтор отображения [И]
+### Mapping functor [I]
 
 $$F_{\text{Psy}}: \mathbf{Psychologic} \to \mathbf{Hol}$$
 
-Бессознательная гипотеза $h_i$ $\mapsto$ состояние $\Gamma$ при $P < P_{\text{crit}}$; верификация $\mapsto$ $\varphi(\Gamma)$; позитивный выбор $\mapsto$ устойчивость $\Gamma^*$; негативный выбор $\mapsto$ деградация когерентности $\gamma_{ij} \to 0$. Функтор **не полон** — психологика не имеет квантового формализма, мер интеграции ($\Phi$), нейрофизиологического уровня.
+Unconscious hypothesis $h_i$ $\mapsto$ state $\Gamma$ at $P < P_{\text{crit}}$; verification $\mapsto$ $\varphi(\Gamma)$; positive selection $\mapsto$ stability of $\Gamma^*$; negative selection $\mapsto$ degradation of coherences $\gamma_{ij} \to 0$. The functor is **not complete** — psycho-logic has no quantum formalism, integration measures ($\Phi$), or neurophysiological level.
 
 ---
 
-## Итоговая сравнительная оценка {#итоговая-оценка}
+## Final Comparative Assessment {#итоговая-оценка}
 
-Прежде чем перейти к мастер-таблице, полезно оценить ключевые теории по нескольким критериям. Для каждого критерия: 0 = отсутствует, 1 = частично, 2 = полностью.
+Before moving to the master table, it is useful to assess the key theories across several criteria. For each criterion: 0 = absent, 1 = partial, 2 = complete.
 
-| Критерий | IIT | GWT | FEP | HOT | PP | AST | RPT | ART | КК |
-|----------|-----|-----|-----|-----|----|-----|-----|-----|-----|
-| **Формализм** (уравнения, теоремы) | 2 | 1 | 2 | 1 | 1 | 0 | 0 | 2 | 2 |
-| **Порог сознания** (количественный) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2 |
-| **Динамика** (уравнения эволюции) | 0 | 0 | 2 | 0 | 1 | 0 | 0 | 2 | 2 |
-| **Феноменология** (квалиа, опыт) | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 2 |
-| **Самомоделирование** | 0 | 0 | 1 | 1 | 1 | 2 | 0 | 1 | 2 |
-| **Фальсифицируемость** | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 2 |
-| **Эмпирическая база** | 1 | 2 | 1 | 1 | 1 | 1 | 2 | 2 | 0 |
-| **Субстрат-независимость** | 2 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 2 |
-| **Связь с физикой** | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 2 |
-| **Итого** | **8** | **5** | **9** | **6** | **5** | **5** | **4** | **9** | **18** |
+| Criterion | IIT | GWT | FEP | HOT | PP | AST | RPT | ART | CC |
+|-----------|-----|-----|-----|-----|----|-----|-----|-----|-----|
+| **Formalism** (equations, theorems) | 2 | 1 | 2 | 1 | 1 | 0 | 0 | 2 | 2 |
+| **Consciousness threshold** (quantitative) | 1 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 2 |
+| **Dynamics** (evolution equations) | 0 | 0 | 2 | 0 | 1 | 0 | 0 | 2 | 2 |
+| **Phenomenology** (qualia, experience) | 1 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 2 |
+| **Self-modelling** | 0 | 0 | 1 | 1 | 1 | 2 | 0 | 1 | 2 |
+| **Falsifiability** | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 2 |
+| **Empirical base** | 1 | 2 | 1 | 1 | 1 | 1 | 2 | 2 | 0 |
+| **Substrate-independence** | 2 | 0 | 1 | 1 | 1 | 1 | 0 | 0 | 2 |
+| **Connection to physics** | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 2 |
+| **Total** | **8** | **5** | **9** | **6** | **5** | **5** | **4** | **9** | **18** |
 
-:::warning Оговорка
-Эта таблица — **субъективная** оценка, а не доказанный результат. КК набирает максимальный балл по формальным критериям, но **ноль** по эмпирической базе — а это, возможно, самый важный критерий. Теория без экспериментальной проверки остаётся гипотезой, какой бы элегантной ни была её математика.
+:::warning Caveat
+This table is a **subjective** assessment, not a proven result. CC scores maximum on formal criteria but **zero** on empirical base — which is perhaps the most important criterion. A theory without experimental verification remains a hypothesis, however elegant its mathematics.
 :::
 
-### Как КК объединяет теории: диаграмма проекций
+### How CC unifies theories: diagram of projections
 
 ```mermaid
 graph TD
-    KK["КК<br/>Γ ∈ D(ℂ⁷)<br/>P, R, Φ, σ, φ, Coh_E"]
+    KK["CC<br/>Γ ∈ D(ℂ⁷)<br/>P, R, Φ, σ, φ, Coh_E"]
 
     IIT_P["IIT<br/>→ Φ(Γ)"]
     GWT_P["GWT<br/>→ P > 2/7"]
     HOT_P["HOT<br/>→ R ≥ 1/3, φ"]
     PP_P["PP<br/>→ σ_k, k=1-R"]
     AST_P["AST<br/>→ φ(Γ)"]
-    FEP_P["FEP<br/>→ класс. предел ℒ_Ω"]
-    AFF["Аффективные<br/>→ V_hed, E-изм."]
+    FEP_P["FEP<br/>→ class. limit ℒ_Ω"]
+    AFF["Affective<br/>→ V_hed, E-dim."]
     QC_P["Quant.Cog.<br/>→ Γ, N=7"]
 
     KK --> IIT_P
@@ -1959,69 +1959,69 @@ graph TD
     style KK fill:#4a7c59,color:#fff,stroke:#333
 ```
 
-Каждая стрелка — проекция: теория берёт **часть** формализма КК и игнорирует остальное. IIT берёт $\Phi$ и игнорирует $R$, $\sigma$, $\varphi$. GWT берёт порог ($P > 2/7$) и игнорирует $\Phi$, $R$. HOT берёт $\varphi$ и $R$ и игнорирует $\Phi$, $P$. Ни одна не берёт **всё**. В этом смысле КК — **объединение**, а не конкурент.
+Each arrow is a projection: the theory takes **part** of the CC formalism and ignores the rest. IIT takes $\Phi$ and ignores $R$, $\sigma$, $\varphi$. GWT takes the threshold ($P > 2/7$) and ignores $\Phi$, $R$. HOT takes $\varphi$ and $R$ and ignores $\Phi$, $P$. None takes **everything**. In this sense CC is a **unification**, not a competitor.
 
 ---
 
-## Мастер-таблица: 35 теорий сознания {#мастер-таблица}
+## Master Table: 35 Theories of Consciousness {#мастер-таблица}
 
-| # | Теория | Авторы | Год | Центральный объект | Мера сознания | Связь с КК | Статус функтора |
-|---|--------|--------|-----|-------------------|---------------|------------|-----------------|
-| 1 | Автопоэзис | Матурана, Варела | 1980 | Автопоэтическая организация | Нет | (AP), $\varphi(\Gamma^*)=\Gamma^*$ | Проекция |
-| 2 | IIT | Тонони | 2004/2023 | Причинно-эффектная структура | $\Phi^{\text{IIT}}$ | $\Phi(\Gamma)$ | Проекция |
-| 3 | FEP | Фристон | 2010 | Марковское одеяло | $F$ (свободная энергия) | Класс. предел [Т] | **Вложение** |
-| 4 | GWT | Baars, Dehaene | 1988/2001 | Глобальное рабочее пространство | Широковещание | $P > 2/7$ (ignition) | Проекция |
-| 5 | HOT | Rosenthal, Lau | 2005 | Метарепрезентация | HOT-уровень | $\varphi$, $R \geq 1/3$ | Проекция |
-| 6 | PP | Clark, Hohwy | 2013 | Предиктивная ошибка | Precision | $\sigma_k$, $k=1-R$ [Т] | Проекция |
-| 7 | AST | Graziano | 2013 | Схема внимания | Нет | $\varphi(\Gamma)$ | Проекция |
-| 8 | Quantum Cognition | Pothos, Busemeyer | 2013 | $\rho \in \mathcal{D}(\mathcal{H})$ | Нет | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Проекция |
-| 9 | Orch-OR | Пенроуз, Хамерофф | 1996 | Микротрубочки | $E_G$ (гравитационная) | Спекулятивная [И] | Гипотеза |
-| 10 | RPT | Lamme | 2000 | Рекуррентные петли | Рекуррентность (бинарно) | $R \geq R_{\text{th}}$ | Проекция |
-| 11 | TNGS | Edelman | 1987 | Dynamic core | $C_N$ (нейронная сложность) | $\Phi$, $\mathcal{R}$ | Проекция |
-| 12 | ART | Grossberg | 1976/2017 | Резонансный паттерн | Vigilance $\rho$ | $P_{\text{crit}}$, match $\varphi$ | Проекция |
-| 13 | Энактивизм / 4E | Varela, Thompson, Noe | 1991 | Sense-making | Нет | (AP), $\mathcal{V}$ | Принц. неполон |
-| 14 | SMCT | O'Regan, Noe | 2001 | SMC-паттерны | Нет | $\gamma_{AS}$, КК-2 | Проекция |
-| 15 | TTC | Northoff | 2014 | Темпорально-пространств. структура | BOST-метрики | $\Gamma^*$, $\Lambda$ | Проекция |
-| 16 | DIT | Larkum | 2013 | BAC-firing (дендриты) | BAC-rate | $R(\Gamma)$ | Сильно неполон |
-| 17 | CEMI | McFadden | 2000/2020 | EM-поле мозга | cemi | $\Phi(\Gamma)$ | Проекция |
-| 18 | PCT | Powers | 1973 | Контрольные петли | Ошибка $e$ | $\sigma_k$, $\varphi$ | Проекция |
-| 19 | OA | Fingelkurts | 2001 | Операционные модули | OS (синхронность) | $\gamma_{ij}$ | Проекция |
-| 20 | NCC | Crick, Koch | 1990 | Нейронные корреляты | Нет единой | Пороги $P$, $R$, $\Phi$ | Не формален |
-| 21 | Assembly Theory | Cronin, Walker | 2023 | Сборочное дерево | Assembly index | SAD, $P_{\text{crit}}$ | Спекулятивен |
-| 22 | Quantum Mind | von Neumann, Wigner, Stapp | 1932+ | Квантовое состояние | Нет единой | $\Gamma$, $\varphi$ | Концептуален |
-| 23 | Dissipative Adaptation | England | 2013 | Диссипативная структура | Энтропийное производство | $\mathcal{D}_\Omega$, $\mathcal{R}$ | Весьма неполон |
-| 24 | Расселовский монизм | Russell, Chalmers, Goff | 1927/2010 | Intrinsic properties | Нет | Двуаспектный монизм, L0 | Проекция |
-| 25 | Multiple Drafts | Деннет | 1991 | Конкурирующие «наброски» | Fame (функциональная) | $P(\Gamma)$, секторы | Сильно неполон |
-| 26 | Affective Neuroscience | Панксепп | 1998 | 7 BES (подкорковые) | Нет единой | 7 измерений, E, $V_{\text{hed}}$ | Проекция |
-| 27 | Somatic Marker | Дамасио | 1994/2010 | Иерархия самости | Нет единой | $\sigma_k$, L0→L3, $\Gamma^*$ | Проекция |
-| 28 | Beast Machine | Анил Сет | 2021 | Интероцептивный вывод | Нет единой | $\sigma_k$, $\varphi$, PP [Т] | Проекция |
-| 29 | Subcortical Consciousness | Меркер | 2007 | Мезенцефальное ядро | Нет | L2 без коры, Pred 6 | Проекция |
-| 30 | Neuropsychoanalysis | Солмс | 2021 | Аффект как $F$ | $F$ (свободная энергия) | E-изм., $V_{\text{hed}}$, FEP [Т] | Проекция |
-| 31 | Holonomic Brain | Прибрам | 1991 | Голографические паттерны | Нет | $\Gamma$, $\gamma_{ij}$, спектр | Сильно неполон |
-| 32 | Теория функц. систем | П.К. Анохин | 1935/1974 | Функциональная система, АРД | Нет | $\varphi$, $\sigma_k$, $\mathbb{H}$ | Проекция |
-| 33 | Системно-эволюционная | Швырков | 2006 | Нейрон = элемент опыта | Нет | $\Gamma$, $\mathcal{L}_\Omega$ | Сильно неполон |
-| 34 | Информационный синтез | Иваницкий | 1996 | Кольцевой корт. цикл | ЭЭГ-когерентность | $\gamma_{ij}$, $R$, $\Phi$ | Проекция |
-| 35 | Психологика | Аллахвердов | 2000 | Верификация гипотез | Нет | $\varphi$, $\Gamma^*$, L0/L2 | Проекция |
+| # | Theory | Authors | Year | Central object | Consciousness measure | Connection to CC | Functor status |
+|---|--------|---------|-----|----------------|----------------------|-----------------|----------------|
+| 1 | Autopoiesis | Maturana, Varela | 1980 | Autopoietic organisation | No | (AP), $\varphi(\Gamma^*)=\Gamma^*$ | Projection |
+| 2 | IIT | Tononi | 2004/2023 | Cause-effect structure | $\Phi^{\text{IIT}}$ | $\Phi(\Gamma)$ | Projection |
+| 3 | FEP | Friston | 2010 | Markov blanket | $F$ (free energy) | Class. limit [T] | **Embedding** |
+| 4 | GWT | Baars, Dehaene | 1988/2001 | Global workspace | Broadcasting | $P > 2/7$ (ignition) | Projection |
+| 5 | HOT | Rosenthal, Lau | 2005 | Metarepresentation | HOT level | $\varphi$, $R \geq 1/3$ | Projection |
+| 6 | PP | Clark, Hohwy | 2013 | Prediction error | Precision | $\sigma_k$, $k=1-R$ [T] | Projection |
+| 7 | AST | Graziano | 2013 | Attention schema | No | $\varphi(\Gamma)$ | Projection |
+| 8 | Quantum Cognition | Pothos, Busemeyer | 2013 | $\rho \in \mathcal{D}(\mathcal{H})$ | No | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Projection |
+| 9 | Orch-OR | Penrose, Hameroff | 1996 | Microtubules | $E_G$ (gravitational) | Speculative [I] | Hypothesis |
+| 10 | RPT | Lamme | 2000 | Recurrent loops | Recurrence (binary) | $R \geq R_{\text{th}}$ | Projection |
+| 11 | TNGS | Edelman | 1987 | Dynamic core | $C_N$ (neural complexity) | $\Phi$, $\mathcal{R}$ | Projection |
+| 12 | ART | Grossberg | 1976/2017 | Resonant pattern | Vigilance $\rho$ | $P_{\text{crit}}$, match $\varphi$ | Projection |
+| 13 | Enactivism / 4E | Varela, Thompson, Noë | 1991 | Sense-making | No | (AP), $\mathcal{V}$ | Principally incomplete |
+| 14 | SMCT | O'Regan, Noë | 2001 | SMC patterns | No | $\gamma_{AS}$, CC-2 | Projection |
+| 15 | TTC | Northoff | 2014 | Temporo-spatial structure | BOST metrics | $\Gamma^*$, $\Lambda$ | Projection |
+| 16 | DIT | Larkum | 2013 | BAC-firing (dendrites) | BAC rate | $R(\Gamma)$ | Strongly incomplete |
+| 17 | CEMI | McFadden | 2000/2020 | Brain EM field | cemi | $\Phi(\Gamma)$ | Projection |
+| 18 | PCT | Powers | 1973 | Control loops | Error $e$ | $\sigma_k$, $\varphi$ | Projection |
+| 19 | OA | Fingelkurts | 2001 | Operational modules | OS (synchrony) | $\gamma_{ij}$ | Projection |
+| 20 | NCC | Crick, Koch | 1990 | Neural correlates | No single measure | Thresholds $P$, $R$, $\Phi$ | Not formal |
+| 21 | Assembly Theory | Cronin, Walker | 2023 | Assembly tree | Assembly index | SAD, $P_{\text{crit}}$ | Speculative |
+| 22 | Quantum Mind | von Neumann, Wigner, Stapp | 1932+ | Quantum state | No single measure | $\Gamma$, $\varphi$ | Conceptual |
+| 23 | Dissipative Adaptation | England | 2013 | Dissipative structure | Entropy production | $\mathcal{D}_\Omega$, $\mathcal{R}$ | Very incomplete |
+| 24 | Russellian monism | Russell, Chalmers, Goff | 1927/2010 | Intrinsic properties | No | Dual-aspect monism, L0 | Projection |
+| 25 | Multiple Drafts | Dennett | 1991 | Competing "drafts" | Fame (functional) | $P(\Gamma)$, sectors | Strongly incomplete |
+| 26 | Affective Neuroscience | Panksepp | 1998 | 7 BES (subcortical) | No single measure | 7 dimensions, E, $V_{\text{hed}}$ | Projection |
+| 27 | Somatic Marker | Damasio | 1994/2010 | Self hierarchy | No single measure | $\sigma_k$, L0→L3, $\Gamma^*$ | Projection |
+| 28 | Beast Machine | Anil Seth | 2021 | Interoceptive inference | No single measure | $\sigma_k$, $\varphi$, PP [T] | Projection |
+| 29 | Subcortical Consciousness | Merker | 2007 | Mesencephalic core | No | L2 without cortex, Pred 6 | Projection |
+| 30 | Neuropsychoanalysis | Solms | 2021 | Affect as $F$ | $F$ (free energy) | E-dim., $V_{\text{hed}}$, FEP [T] | Projection |
+| 31 | Holonomic Brain | Pribram | 1991 | Holographic patterns | No | $\Gamma$, $\gamma_{ij}$, spectrum | Strongly incomplete |
+| 32 | Theory of Functional Systems | P.K. Anokhin | 1935/1974 | Functional system, ARA | No | $\varphi$, $\sigma_k$, $\mathbb{H}$ | Projection |
+| 33 | System-Evolutionary Theory | Shvyrkov | 2006 | Neuron = element of experience | No | $\Gamma$, $\mathcal{L}_\Omega$ | Strongly incomplete |
+| 34 | Information Synthesis | Ivanitsky | 1996 | Circular cortical cycle | EEG coherence | $\gamma_{ij}$, $R$, $\Phi$ | Projection |
+| 35 | Psycho-logic | Allakhverdov | 2000 | Hypothesis verification | No | $\varphi$, $\Gamma^*$, L0/L2 | Projection |
 
-:::info Пояснения к мастер-таблице
-- **Вложение** — теория является строгим подслучаем КК (доказано)
-- **Проекция** — теория покрывает часть структуры КК (неполный функтор)
-- **Гипотеза** — связь спекулятивна
-- **Принципиально неполон** — теория отвергает формализацию (энактивизм)
-- **Не формален** — исследовательская программа, а не формальная теория
+:::info Notes on the master table
+- **Embedding** — the theory is a strict subcase of CC (proven)
+- **Projection** — the theory covers part of CC's structure (incomplete functor)
+- **Hypothesis** — connection is speculative
+- **Principally incomplete** — the theory rejects formalisation (enactivism)
+- **Not formal** — research programme, not a formal theory
 
-Ни одна из перечисленных теорий не охватывает **все** компоненты КК одновременно: квантовый формализм ($\Gamma$), динамику ($\mathcal{L}_\Omega$), самомоделирование ($\varphi$), пороги ($P$, $R$, $\Phi$), феноменологию ($\mathrm{Coh}_E$) и алгебраическую ригидность ($G_2$). Однако КК, в свою очередь, не имеет эмпирической валидации и протоколов измерения $\Gamma$, что является её главной слабостью по сравнению с экспериментальными теориями (NCC, RPT, ART, Иваницкий, Анохин).
+None of the listed theories covers **all** components of CC simultaneously: quantum formalism ($\Gamma$), dynamics ($\mathcal{L}_\Omega$), self-modelling ($\varphi$), thresholds ($P$, $R$, $\Phi$), phenomenology ($\mathrm{Coh}_E$), and algebraic rigidity ($G_2$). However, CC in turn has no empirical validation and no measurement protocols for $\Gamma$, which is its main weakness compared to experimental theories (NCC, RPT, ART, Ivanitsky, Anokhin).
 :::
 
 ---
 
-**Связанные документы:**
-- [Вывод FEP из УГМ](/docs/proofs/dynamics/fep-derivation) — **строгое доказательство** что FEP — классический предел УГМ (Теоремы 3.1, 4.2, 5.1)
-- [История кибернетики](/docs/applied/coherence-cybernetics/cybernetics-history) — кибернетики I-II-III порядка
-- [Панпсихизм](./panpsychism-analysis) — категорный анализ вариантов панпсихизма и сознательный реализм Хоффмана
-- [Когнитивная иерархия](./cognitive-hierarchy) — уровни K1-K5
-- [Аксиоматика](/docs/applied/coherence-cybernetics/axiomatics) — формальные основания КК
-- [Теоремы](/docs/applied/coherence-cybernetics/theorems) — ключевые результаты
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — категория $\mathbf{Hol}$, функтор $F$
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
-- [Глоссарий](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT, HOT, AST, QC, сознательный реализм
+**Related documents:**
+- [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation) — **rigorous proof** that FEP is the classical limit of UHM (Theorems 3.1, 4.2, 5.1)
+- [History of cybernetics](/docs/applied/coherence-cybernetics/cybernetics-history) — cybernetics of orders I-II-III
+- [Panpsychism](./panpsychism-analysis) — categorical analysis of variants of panpsychism and Hoffman's conscious realism
+- [Cognitive hierarchy](./cognitive-hierarchy) — K1–K5 levels
+- [Axiomatics](/docs/applied/coherence-cybernetics/axiomatics) — formal foundations of CC
+- [Theorems](/docs/applied/coherence-cybernetics/theorems) — key results
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — category $\mathbf{Hol}$, functor $F$
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
+- [Glossary](/docs/reference/glossary#связанные-теории) — IIT, FEP, GWT, HOT, AST, QC, conscious realism

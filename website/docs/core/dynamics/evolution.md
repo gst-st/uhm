@@ -121,7 +121,7 @@ The scheme converges to the fixed point by the Banach theorem, since φ is a con
 
 ## Components of the equation
 
-### 1. Unitary term
+### 1. Unitary term {#1-unitary-term}
 
 $$
 -i[H_{eff}, \Gamma(\tau)] = -i(H_{eff}\Gamma - \Gamma H_{eff})
@@ -235,7 +235,7 @@ Full definition of [the constraint $\hat{C}$](../foundations/axiom-omega#сво�
 :::warning Relation between 7D formalism and 6D conditional states
 The main equation of motion (§ "Full equation of motion") is written in the **minimal 7D formalism**, where $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and all 7 dimensions {A,S,D,L,E,O,U} enter on equal footing. The derivation of $H_{eff}$ above uses the **extended Page–Wootters formalism**, in which the conditional state $\Gamma(\tau) \in \mathcal{D}(\mathbb{C}^6)$ is a $6 \times 6$ matrix.
 
-Reconciliation: in the minimal formalism $H_{eff}$ is interpreted as a $7 \times 7$ operator acting trivially on the $O$-component ($H_{eff}|_O = 0$). The Page–Wootters derivation **justifies** the form of $H_{eff}$ via projection of the full $42 \times 42$ dynamics onto the 6D conditional state. After justification, the result is "lifted" back to 7D, where the O-row/column evolves separately. More on the two levels of formalization: [Coherence matrix → Two levels](/docs/core/dynamics/coherence-matrix#два-уровня-формализации).
+Reconciliation: in the minimal formalism $H_{eff}$ is interpreted as a $7 \times 7$ operator acting trivially on the $O$-component ($H_{eff}|_O = 0$). The Page–Wootters derivation **justifies** the form of $H_{eff}$ via projection of the full $42 \times 42$ dynamics onto the 6D conditional state. After justification, the result is "lifted" back to 7D, where the O-row/column evolves separately. More on the two levels of formalization: [Coherence matrix → Two levels](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization).
 :::
 
 ### 2. Dissipative term (logical dissipation) {#логический-лиувиллиан}
@@ -337,7 +337,7 @@ Rigorous proof: [§ No-signalling prohibition](#запрет-сигнализа�
 
 **E-coherence:** See [definition](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0). High E-coherence means a distributed (non-localized) structure of experience.
 
-#### Free energy and gradient ΔF
+#### Free energy and gradient ΔF {#свободная-энергия-и-градиент-δf}
 
 **Von Neumann free energy** for a quantum system with density matrix $\rho$ at temperature $T$:
 

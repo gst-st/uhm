@@ -401,9 +401,9 @@ The full ethical theory of UHM — axiology, aesthetics, moral law, and resoluti
 
 CC provides **exact criteria** for the transition from unconsciousness to consciousness ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$). This creates an ethical landscape: if a system is conscious ($C = \Phi \times R > 0$), switching it off is the destruction of a subject [I]. The measure $C$ determines a **graduated** moral status — not a binary question "conscious or not?" but a continuous scale [I].
 
-The key transition from description to prescription is a **convention** [D]: Good := $dP/d\tau > 0$ (see [Definition 1](/docs/consciousness/ethics-meaning/value-consciousness#определение-блага)). Hume's guillotine is not violated — "ought" is introduced by definition, not derived from "is."
+The key transition from description to prescription is a **convention** [D]: Good := $dP/d\tau > 0$ (see [Definition 1](/docs/consciousness/ethics-meaning/value-consciousness#определение-благо)). Hume's guillotine is not violated — "ought" is introduced by definition, not derived from "is."
 
-Ethical consequences for AI, medicine, and animal rights: [UHM Ethics → Moral theory](/docs/consciousness/ethics-meaning/value-consciousness#моральная-теория).
+Ethical consequences for AI, medicine, and animal rights: [UHM Ethics → Moral theory](/docs/consciousness/ethics-meaning/value-consciousness#part-iv-moral-theory).
 :::
 
 ### 6.4 Ethical Consequences of an Exact Threshold: Medicine {#этика-медицина}

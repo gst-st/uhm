@@ -62,7 +62,7 @@ $$
 
 ## Гамильтониан
 
-См. [Эволюция: Унитарный член](/docs/core/dynamics/evolution#1-унитарный-член).
+См. [Эволюция: Унитарный член](/docs/core/dynamics/evolution#1-unitary-term).
 
 $$
 H = \sum_{i=1}^{N} \omega_i |i\rangle\langle i| + \sum_{i \neq j} J_{ij} |i\rangle\langle j|
@@ -101,7 +101,7 @@ P = \mathrm{Tr}(\Gamma^2) \in \left[\frac{1}{N}, 1\right] = \left[\frac{1}{7}, 1
 $$
 
 - $P = 1$: чистое состояние ($\Gamma = |\psi\rangle\langle\psi|$)
-- $P = 1/N = 1/7$: [максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#максимально-смешанное-состояние) ($\Gamma = I_N/N$)
+- $P = 1/N = 1/7$: [максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) ($\Gamma = I_N/N$)
 
 ### Условие жизнеспособности
 
@@ -426,7 +426,7 @@ $$
 где $S_{vN}(\rho_E) = -\mathrm{Tr}(\rho_E \log \rho_E)$ — [энтропия фон Неймана](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана).
 
 :::warning Требование: расширенный формализм для D_diff
-Вычисление $D_{\text{diff}}$ требует полной редуцированной матрицы $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$, что определено только в [расширенном тензорном формализме](/docs/core/dynamics/coherence-matrix#два-уровня-формализации) (42D). В 7D частичный след не определён (7 — простое число).
+Вычисление $D_{\text{diff}}$ требует полной редуцированной матрицы $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$, что определено только в [расширенном тензорном формализме](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization) (42D). В 7D частичный след не определён (7 — простое число).
 
 **Примечание:** Скалярная мера $\mathrm{Coh}_E$ (E-когерентность) **не требует** частичного следа — она определена в 7D через [HS-проекцию](/docs/core/foundations/axiom-septicity#hs-projection) **[Т]**. Расширенный формализм необходим только для спектрального разложения $\rho_E$ и, следовательно, для $D_{\text{diff}}$.
 :::

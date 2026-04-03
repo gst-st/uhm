@@ -710,7 +710,7 @@ where $\lambda_4 > 0$ follows from the CPTP constraint $\sum_k K_k^\dagger K_k =
 The cubic term $V_3$ **breaks** the discrete symmetry $\mathbb{Z}_2(\mathrm{PT}): \theta_{ij} \to -\theta_{ij}$. This means that "time" in the Gap sector has a preferred direction — octonionic non-associativity generates an **arrow of time** for interiority.
 :::
 
-### Constants from UHM parameters
+### Constants from UHM parameters {#константы-из-параметров-угм}
 
 :::tip Theorem 13.5 (Relation of constants) [Т]
 The potential constants are expressed through UHM parameters:
@@ -725,7 +725,7 @@ where:
 - $\mathcal{G}^{(0)}_{\text{total}}$ — equilibrium total Gap
 :::
 
-### Potential minimum and spontaneous Gap
+### Potential minimum and spontaneous Gap {#минимум-потенциала-и-спонтанный-gap}
 
 :::tip Theorem 13.6 (Spontaneous Gap) [Т]
 The minimum of the potential $V_{\text{Gap}}$ is achieved at:

@@ -1,221 +1,221 @@
 ---
 sidebar_position: 2
-title: Панпсихизм
-description: Категорный анализ панпсихизма и сознательный реализм Хоффмана
+title: Panpsychism
+description: Categorical analysis of panpsychism and Hoffman's Conscious Realism
 slug: /consciousness/comparative/panpsychism-analysis
 ---
 
-# Панпсихизм: Категорный Анализ
+# Panpsychism: Categorical Analysis
 
-:::info Для кого эта глава
-Вы узнаете, чем позиция УГМ (панинтериоризм) отличается от классического панпсихизма и сознательного реализма Хоффмана. Анализ проводится через категорный аппарат: пять онтологических позиций сравниваются как функторы из категории $\mathbf{Hol}$ в категорию феноменальных свойств.
+:::info Who this chapter is for
+You will learn how UHM's position (pan-interiority) differs from classical panpsychism and Hoffman's Conscious Realism. The analysis is conducted through the categorical apparatus: five ontological positions are compared as functors from the category $\mathbf{Hol}$ to the category of phenomenal properties.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\rho_E$ — редуцированная матрица плотности [измерения Интериорности](/docs/core/structure/dimension-e)
-- L0, L1, L2, L3, L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- $\mathbf{Hol}$ — [категория Голономов](/docs/proofs/categorical/categorical-formalism)
+:::note About notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
+- $C$ — [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\rho_E$ — reduced density matrix of the [Interiority dimension](/docs/core/structure/dimension-e)
+- L0, L1, L2, L3, L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
+- $\mathbf{Hol}$ — [category of Holons](/docs/proofs/categorical/categorical-formalism)
 :::
 
-## Страсбургская проблема: откуда берётся сознание? {#страсбургская-проблема}
+## The Strasbourg problem: where does consciousness come from? {#страсбургская-проблема}
 
-В 1994 году в Страсбурге, на конференции *Toward a Science of Consciousness*, Дэвид Чалмерс задал вопрос, расколовший науку о сознании на два лагеря: **почему физические процессы сопровождаются субъективным опытом?** Почему не может существовать «зомби» — существо, физически идентичное человеку, но лишённое внутренних переживаний?
+In 1994 in Strasbourg, at the conference *Toward a Science of Consciousness*, David Chalmers posed a question that split the science of consciousness into two camps: **why do physical processes accompany subjective experience?** Why can a "zombie" not exist — a being physically identical to a human but devoid of inner experience?
 
-Этот вопрос — «трудная проблема сознания» (the hard problem) — породил три стратегии ответа:
+This question — the hard problem of consciousness — generated three response strategies:
 
-1. **Элиминативизм** (Деннет): проблемы нет, субъективный опыт — иллюзия
-2. **Эмерджентизм** (IIT, GWT): сознание возникает из сложности
-3. **Панпсихизм**: сознание фундаментально — оно **всегда было**
+1. **Eliminativism** (Dennett): there is no problem, subjective experience is an illusion
+2. **Emergentism** (IIT, GWT): consciousness emerges from complexity
+3. **Panpsychism**: consciousness is fundamental — it **always existed**
 
-Панпсихизм — самая радикальная и самая древняя из этих стратегий. Его идея предельно проста: если сознание не может возникнуть из несознательной материи (ибо непонятен механизм), значит, сознание — **фундаментальное свойство**, присущее всей материи с самого начала. Электрон обладает массой, зарядом, спином — и, возможно, каким-то элементарным «внутренним опытом».
+Panpsychism is the most radical and most ancient of these strategies. Its idea is maximally simple: if consciousness cannot arise from non-conscious matter (since the mechanism is unclear), then consciousness is a **fundamental property**, inherent in all matter from the very beginning. An electron possesses mass, charge, spin — and, possibly, some elementary "inner experience".
 
-Привлекательность этой позиции — в обходе трудной проблемы. Если сознание фундаментально, не нужно объяснять, как оно «возникает» из физики. Проблема, однако, смещается: если электрон обладает опытом, как опыт электрона **комбинируется** с опытом других электронов в единый человеческий опыт? Это **проблема комбинации** — главное затруднение панпсихизма.
+The appeal of this position lies in bypassing the hard problem. If consciousness is fundamental, there is no need to explain how it "emerges" from physics. The problem, however, shifts: if an electron possesses experience, how does the electron's experience **combine** with the experience of other electrons into a unified human experience? This is the **combination problem** — the main difficulty of panpsychism.
 
 ---
 
-## Определение панпсихизма
+## Definition of panpsychism
 
-**Панпсихизм** (от греч. πᾶν — всё, ψυχή — душа) — метафизическая позиция:
+**Panpsychism** (from the Greek πᾶν — all, ψυχή — soul) is a metaphysical position:
 
 $$
 \forall X \in \mathrm{Ob}(\mathbf{Phys}) : \mathrm{Consciousness}(X) \neq \varnothing
 $$
 
-где $\mathbf{Phys}$ — категория физических объектов.
+where $\mathbf{Phys}$ is the category of physical objects.
 
-На обычном языке: **каждый** физический объект обладает хотя бы минимальной формой сознания или протосознания. Камень, атом, термостат — все «что-то переживают».
+In ordinary language: **every** physical object possesses at least a minimal form of consciousness or proto-consciousness. A stone, an atom, a thermostat — all "experience something".
 
-Но этот простой тезис распадается на множество несовместимых позиций: что именно означает «сознание»? Полноценный опыт (как у человека) или нечто минимальное? И как минимальное становится полноценным? Далее мы рассмотрим основные варианты.
+But this simple thesis splits into many incompatible positions: what exactly does "consciousness" mean? Full-fledged experience (as in humans) or something minimal? And how does the minimal become full-fledged? Below we consider the main variants.
 
 ---
 
-## Варианты панпсихизма
+## Variants of panpsychism {#варианты-панпсихизма}
 
-### 1. Элиминативный панпсихизм (Strawson) {#элиминативный}
+### 1. Eliminative panpsychism (Strawson) {#элиминативный}
 
-**Гэлен Строусон** (р. 1952, сын философа П.Ф. Строусона) в статье *Realistic Monism: Why Physicalism Entails Panpsychism* (2006) предложил радикальный аргумент: если физикализм истинен и сознание реально, то сознание должно быть свойством материи на фундаментальном уровне. Строусон отвергает эмерджентизм как «магию» — по его мнению, подлинно новое качество не может возникнуть из того, что этим качеством не обладает.
+**Galen Strawson** (b. 1952, son of philosopher P.F. Strawson) in the article *Realistic Monism: Why Physicalism Entails Panpsychism* (2006) proposed a radical argument: if physicalism is true and consciousness is real, then consciousness must be a property of matter at the fundamental level. Strawson rejects emergentism as "magic" — in his view, a genuinely new quality cannot arise from that which does not possess that quality.
 
-**Утверждение:** Всё обладает сознанием **в полном смысле** (L2 в терминологии КК).
+**Claim:** Everything possesses consciousness **in the full sense** (L2 in CC terminology).
 
-**Категория $\mathbf{Pan}_{\mathrm{elim}}$:**
+**Category $\mathbf{Pan}_{\mathrm{elim}}$:**
 
 $$
 \mathrm{Ob}(\mathbf{Pan}_{\mathrm{elim}}) := \{X \mid C(X) > 0\}
 $$
 
-где $C$ — [мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
+where $C$ is the [consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
 
-**Критика из УГМ — формальное опровержение:**
+**Critique from UHM — formal refutation:**
 
 $$
 \exists X : \Gamma_X = I/7 \Rightarrow C(X) = 0
 $$
 
-Максимально смешанное состояние ($\Gamma = I/7$ — равновероятная суперпозиция всех 7 измерений) имеет **нулевую** сознательность. Это не философский аргумент, а **математический факт**: для $\Gamma = I/7$ чистота $P = 1/7$ < $P_{\text{crit}} = 2/7$, рефлексия $R = 0$, интеграция $\Phi = 0$. Все пороги нарушены. Система с $\Gamma = I/7$ — это **максимальный хаос**, в котором невозможна ни когерентность, ни интеграция, ни самомоделирование.
+The maximally mixed state ($\Gamma = I/7$ — the equiprobable superposition of all 7 dimensions) has **zero** consciousness. This is not a philosophical argument but a **mathematical fact**: for $\Gamma = I/7$, purity $P = 1/7$ < $P_{\text{crit}} = 2/7$, reflection $R = 0$, integration $\Phi = 0$. All thresholds are violated. A system with $\Gamma = I/7$ is **maximal chaos**, in which neither coherence, nor integration, nor self-modelling is possible.
 
-**Вывод:** Элиминативный панпсихизм **противоречит** формализму УГМ. Существуют системы с нулевой сознательностью. Не всё обладает опытом. **[Т]**
+**Conclusion:** Eliminative panpsychism **contradicts** the UHM formalism. Systems with zero consciousness exist. Not everything possesses experience. **[T]**
 
-### 2. Конститутивный панпсихизм (Goff, Chalmers) {#конститутивный}
+### 2. Constitutive panpsychism (Goff, Chalmers) {#конститутивный}
 
-**Филип Гофф** (р. 1977, Даремский университет) и **Дэвид Чалмерс** (р. 1966, NYU) представляют более утончённую позицию: микро-субъекты (элементарные носители протоопыта) **комбинируются** в макро-сознание. Гофф изложил это в книге *Galileo's Error: Foundations for a New Science of Consciousness* (2019).
+**Philip Goff** (b. 1977, Durham University) and **David Chalmers** (b. 1966, NYU) represent a more refined position: micro-subjects (elementary bearers of proto-experience) **combine** into macro-consciousness. Goff set this out in the book *Galileo's Error: Foundations for a New Science of Consciousness* (2019).
 
-**Утверждение:** Существуют микро-субъекты, и их комбинация порождает макро-сознание.
+**Claim:** Micro-subjects exist, and their combination generates macro-consciousness.
 
-**Категория $\mathbf{Pan}_{\mathrm{const}}$:**
+**Category $\mathbf{Pan}_{\mathrm{const}}$:**
 
 $$
-\mathrm{Ob}(\mathbf{Pan}_{\mathrm{const}}) := \{(\{X_i\}, \oplus) \mid X_i \text{ — микро-субъект}, \oplus \text{ — операция комбинации}\}
+\mathrm{Ob}(\mathbf{Pan}_{\mathrm{const}}) := \{(\{X_i\}, \oplus) \mid X_i \text{ — micro-subject}, \oplus \text{ — combination operation}\}
 $$
 
-**Проблема комбинации (combination problem):**
+**Combination problem:**
 
-Центральная трудность конститутивного панпсихизма: нет определения операции $\oplus$ такого, что:
+The central difficulty of constitutive panpsychism: there is no definition of the operation $\oplus$ such that:
 
 $$
 C(X_1 \oplus X_2) = f(C(X_1), C(X_2))
 $$
 
-для какой-либо функции $f$. Почему? Потому что опыт целого **не сводится** к функции опытов частей. Вы видите красное яблоко — но ваш опыт «красного яблока» не есть сумма опыта нейрона-1 и опыта нейрона-2. Между индивидуальными протоопытами и единым макроопытом — **провал**, который никто не заполнил.
+for any function $f$. Why? Because the experience of the whole is **not reducible** to a function of the experiences of the parts. You see a red apple — but your experience of the "red apple" is not the sum of the experience of neuron-1 and the experience of neuron-2. Between individual proto-experiences and the unified macro-experience there is a **gap** that nobody has filled.
 
-**Подход УГМ к проблеме комбинации:**
+**UHM's approach to the combination problem:**
 
-УГМ предлагает конкретный механизм:
+UHM proposes a concrete mechanism:
 
 $$
 \mathbb{H}_{1 \otimes 2} := (\Gamma_1 \otimes \Gamma_2, \varphi_{12})
 $$
 
-Операция — **тензорное произведение** с условием достаточной [интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ):
+The operation is the **tensor product** with the condition of sufficient [integration](/docs/core/structure/dimension-u#мера-интеграции-φ):
 
 $$
 \Phi_{12} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{12}) \neq f(C(\mathbb{H}_1), C(\mathbb{H}_2))
 $$
 
-[Эмерджентность](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т] — следствие нелинейности и примитивности.
+[Emergence](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T] — a consequence of nonlinearity and primitivity.
 
-:::warning Статус: математическая корреляция, не философское решение
-УГМ даёт **условие** для эмерджентности ($\Phi_{12} > \Phi_{\min}$), но не объясняет **конституцию** — *как* именно микро-переживания объединяются в единое переживание. Это математическая переформулировка проблемы, не её решение в философском смысле.
+:::warning Status: mathematical correlation, not philosophical solution
+UHM provides the **condition** for emergence ($\Phi_{12} > \Phi_{\min}$), but does not explain the **constitution** — *how exactly* micro-experiences unite into a single experience. This is a mathematical reformulation of the problem, not its solution in the philosophical sense.
 :::
 
-#### Теорема (Категорная нередуцируемость интегрированного опыта) [Т] {#теорема-нередуцируемость}
+#### Theorem (Categorical irreducibility of integrated experience) [T] {#теорема-нередуцируемость}
 
-:::tip Теорема [Т]
-Функтор $F: (\mathbf{Hol}, \otimes) \to (\mathbf{Exp}, \boxtimes)$ является **колакс-моноидальным, но не моноидальным** при $\Phi_{12} > 1$. Конкретно: когерентностная карта $\mu: F(\Gamma_1 \otimes \Gamma_2) \to F(\Gamma_1) \boxtimes F(\Gamma_2)$ **необратима** при $\Phi_{12} > 1$.
+:::tip Theorem [T]
+The functor $F: (\mathbf{Hol}, \otimes) \to (\mathbf{Exp}, \boxtimes)$ is **colax-monoidal but not monoidal** when $\Phi_{12} > 1$. Specifically: the coherence map $\mu: F(\Gamma_1 \otimes \Gamma_2) \to F(\Gamma_1) \boxtimes F(\Gamma_2)$ is **irreversible** when $\Phi_{12} > 1$.
 :::
 
-**Что это значит простым языком.** Если два голонома достаточно интегрированы ($\Phi_{12} > 1$), то опыт целого **невозможно восстановить** из опытов частей. Информация о целостном переживании **теряется** при разложении на части. Это **математический** аналог интуиции: ваш опыт «красного яблока» — не сумма опытов отдельных нейронов.
+**What this means in plain terms.** If two holons are sufficiently integrated ($\Phi_{12} > 1$), the experience of the whole **cannot be recovered** from the experiences of the parts. Information about the unified experience **is lost** upon decomposition into parts. This is the **mathematical** analogue of the intuition: your experience of the "red apple" is not the sum of the experiences of individual neurons.
 
-**Доказательство.**
+**Proof.**
 
-**(a)** По определению $F$, опыт композита $F(\Gamma_1 \otimes \Gamma_2) = (s_{12}, q_{12}, c_{12})$ определяется спектром, качествами и контекстом **совместной** матрицы $\Gamma_1 \otimes \Gamma_2$.
+**(a)** By definition of $F$, the experience of the composite $F(\Gamma_1 \otimes \Gamma_2) = (s_{12}, q_{12}, c_{12})$ is determined by the spectrum, qualities, and context of the **joint** matrix $\Gamma_1 \otimes \Gamma_2$.
 
-**(b)** Произведение опытов $F(\Gamma_1) \boxtimes F(\Gamma_2) = (s_1 \otimes s_2, q_1 \times q_2, (c_1, c_2))$ — покомпонентное произведение.
+**(b)** The product of experiences $F(\Gamma_1) \boxtimes F(\Gamma_2) = (s_1 \otimes s_2, q_1 \times q_2, (c_1, c_2))$ is the componentwise product.
 
-**(c)** **Несовпадение спектров.** Спектр $\Gamma_1 \otimes \Gamma_2$ при наличии квантовых корреляций ($\Phi_{12} > 1$) **не факторизуется**: $\mathrm{spec}(\Gamma_1 \otimes \Gamma_2) \neq \mathrm{spec}(\Gamma_1) \otimes \mathrm{spec}(\Gamma_2)$. Это стандартное свойство запутанных состояний (Шмидтовское разложение [Т]).
+**(c)** **Spectral non-coincidence.** The spectrum of $\Gamma_1 \otimes \Gamma_2$ in the presence of quantum correlations ($\Phi_{12} > 1$) **does not factorise**: $\mathrm{spec}(\Gamma_1 \otimes \Gamma_2) \neq \mathrm{spec}(\Gamma_1) \otimes \mathrm{spec}(\Gamma_2)$. This is the standard property of entangled states (Schmidt decomposition [T]).
 
-**(d)** **Необратимость.** Проекция $\mu$ (частичный след) теряет информацию о корреляциях. При $\Phi_{12} > 1$ потеря строго положительна: $\Phi_{12} > 1 \Rightarrow P_{\text{coh}}^{(12)} > P_{\text{diag}}^{(12)}$ (T-129 [Т]).
+**(d)** **Irreversibility.** The projection $\mu$ (partial trace) loses information about correlations. At $\Phi_{12} > 1$ the loss is strictly positive: $\Phi_{12} > 1 \Rightarrow P_{\text{coh}}^{(12)} > P_{\text{diag}}^{(12)}$ (T-129 [T]).
 
-**(e)** **Колакс-моноидальность.** Существование необратимой проекции $\mu$ делает $F$ **колакс-моноидальным функтором**. При $\Phi_{12} < 1$ проекция обратима — $F$ локально моноидален. $\blacksquare$
+**(e)** **Colax-monoidality.** The existence of the irreversible projection $\mu$ makes $F$ a **colax-monoidal functor**. At $\Phi_{12} < 1$ the projection is reversible — $F$ is locally monoidal. $\blacksquare$
 
-**Категорная формулировка проблемы комбинации:** Проблема комбинации = вопрос «является ли $F$ строго моноидальным?». УГМ даёт точный ответ: **нет при $\Phi > 1$** [Т]. Интегрированный опыт несводим к произведению опытов частей.
+**Categorical formulation of the combination problem:** The combination problem = the question "is $F$ strictly monoidal?". UHM gives a precise answer: **no, when $\Phi > 1$** [T]. Integrated experience is irreducible to the product of the experiences of the parts.
 
-:::info Что решено и что остаётся
-- **Решено [Т]:** Эмерджентность как необратимость когерентностной карты $\mu$
-- **Решено [Т]:** Порог эмерджентности: $\Phi_{12} = 1$ (T-129a [Т])
-- **Открыто [П]:** Конститутивный механизм: *как именно* несводимость спектра **переживается** как единый опыт. Это аналог hard problem — УГМ формализует *условие* эмерджентности, не *содержание* объединённого переживания.
+:::info What has been resolved and what remains
+- **Resolved [T]:** Emergence as irreversibility of the coherence map $\mu$
+- **Resolved [T]:** Emergence threshold: $\Phi_{12} = 1$ (T-129a [T])
+- **Open [P]:** Constitutive mechanism: *how exactly* the spectral irreducibility is **experienced** as unified experience. This is an analogue of the hard problem — UHM formalises the *condition* of emergence, not the *content* of the unified experience.
 :::
 
-### 3. Панпротопсихизм (Chalmers)
+### 3. Panprotopsychism (Chalmers)
 
-**Чалмерс** (2010, *The Character of Consciousness*) предложил смягчённую версию: всё обладает не «опытом», а «прото-ментальными» свойствами — чем-то, что само по себе не является сознанием, но при правильной комбинации порождает его.
+**Chalmers** (2010, *The Character of Consciousness*) proposed a softened version: everything possesses not "experience" but "proto-mental" properties — something that is not itself consciousness, but under the right combination generates it.
 
-**Аналогия:** H₂O. Ни водород, ни кислород по отдельности не мокрые. Но их комбинация — мокрая. «Протомокрость» водорода + «протомокрость» кислорода → мокрость воды. Аналогично: «протоопыт» электрона + «протоопыт» другого электрона + правильная комбинация → человеческий опыт.
+**Analogy:** H₂O. Neither hydrogen nor oxygen is wet by itself. But their combination is wet. The "proto-wetness" of hydrogen + the "proto-wetness" of oxygen → the wetness of water. Analogously: the "proto-experience" of an electron + the "proto-experience" of another electron + the right combination → human experience.
 
-**Категория $\mathbf{Pan}_{\mathrm{proto}}$:**
+**Category $\mathbf{Pan}_{\mathrm{proto}}$:**
 
 $$
 \mathrm{Ob}(\mathbf{Pan}_{\mathrm{proto}}) := \{X \mid \mathrm{Int}(X) \neq \varnothing, C(X) = 0\}
 $$
 
-**Соответствие в УГМ — уровень L0:**
+**Correspondence in UHM — level L0:**
 
 $$
-\mathrm{L0}(\Gamma) := \Gamma \neq I/7 \quad \text{(интериорность)}
+\mathrm{L0}(\Gamma) := \Gamma \neq I/7 \quad \text{(interiority)}
 $$
 
 $$
 \mathbf{Pan}_{\mathrm{proto}} \cong \mathrm{L0} \setminus \mathrm{L2}
 $$
 
-L0 — **точный** формальный аналог панпротопсихизма. Система на уровне L0 обладает «чем-то внутренним» ($\Gamma \neq I/7$), но не сознанием ($C = 0$, поскольку пороги L2 не выполнены).
+L0 is the **precise** formal analogue of panprotopsychism. A system at level L0 possesses "something inner" ($\Gamma \neq I/7$) but not consciousness ($C = 0$, since the L2 thresholds are not met).
 
-### 4. Расселианский монизм (Russell, Strawson) {#расселианский}
+### 4. Russellian monism (Russell, Strawson) {#расселианский}
 
-**Бертран Рассел** в *The Analysis of Matter* (1927) указал на фундаментальный пробел в физике: она описывает только **структурные** свойства материи (массу, заряд, спин), определённые через отношения с другими объектами. Но что наполняет эту структуру **изнутри**? Физика молчит. Рассел предположил: внутренняя природа материи может быть ментальной.
+**Bertrand Russell** in *The Analysis of Matter* (1927) pointed to a fundamental gap in physics: it describes only the **structural** properties of matter (mass, charge, spin), defined through relations with other objects. But what fills this structure **from within**? Physics is silent. Russell suggested: the inner nature of matter may be mental.
 
-**Категория Рассела ($\mathbf{Russell}$):**
+**Russell's category ($\mathbf{Russell}$):**
 
 $$
-\mathrm{Ob}(\mathbf{Russell}) := \{(S_{\mathrm{ext}}, I_{\mathrm{int}}) \mid S \text{ — структура}, I \text{ — интринсик}\}
+\mathrm{Ob}(\mathbf{Russell}) := \{(S_{\mathrm{ext}}, I_{\mathrm{int}}) \mid S \text{ — structure}, I \text{ — intrinsic}\}
 $$
 
-**Соответствие в УГМ:**
+**Correspondence in UHM:**
 
-| Рассел | УГМ | Комментарий |
-|--------|-----|-------------|
-| $S_{\mathrm{ext}}$ (структурные свойства) | Гамильтониан $H$, операторы Линдблада $\{L_k\}$ | Физические законы = структура |
-| $I_{\mathrm{int}}$ (внутренняя природа) | [E-проекция](/docs/core/structure/dimension-e) $\rho_E$ | Интериорность = intrinsic |
+| Russell | UHM | Comment |
+|---------|-----|---------|
+| $S_{\mathrm{ext}}$ (structural properties) | Hamiltonian $H$, Lindblad operators $\{L_k\}$ | Physical laws = structure |
+| $I_{\mathrm{int}}$ (inner nature) | [E-projection](/docs/core/structure/dimension-e) $\rho_E$ | Interiority = intrinsic |
 
-**Функтор:**
+**Functor:**
 
 $$
 F_{\mathrm{Russell}}: \mathbf{Russell} \to \mathbf{Hol}, \quad (S, I) \mapsto (\Gamma, \varphi)
 $$
 
-где $\Gamma$ конструируется из $S$ и $I$. Расселианский монизм — **наиболее близкая** к [двуаспектному монизму](/docs/consciousness/foundations/two-aspect-monism) УГМ метафизическая позиция.
+where $\Gamma$ is constructed from $S$ and $I$. Russellian monism is the **closest** metaphysical position to [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) of UHM.
 
 ---
 
-## Позиция УГМ: Панинтериоризм {#панинтериоризм}
+## UHM's position: Pan-interiority {#панинтериоризм}
 
-### Определение
+### Definition
 
-УГМ не принимает ни одну из форм панпсихизма. Вместо этого она предлагает **панинтериоризм** — позицию, согласно которой **все** системы с $\Gamma \neq I/7$ обладают интериорностью (L0), но **не все** обладают сознанием (L2).
+UHM does not accept any form of panpsychism. Instead it proposes **pan-interiority** — a position according to which **all** systems with $\Gamma \neq I/7$ possess interiority (L0), but **not all** possess consciousness (L2).
 
-:::warning Ключевое различие
-УГМ утверждает **панинтериоризм**, а не панпсихизм:
+:::warning Key distinction
+UHM asserts **pan-interiority**, not panpsychism:
 
 $$
 \forall \Gamma \neq I/7 : \mathrm{L0}(\Gamma) = \mathrm{true}
 $$
 
-Но **не**:
+But **not**:
 
 $$
 \forall \Gamma : \mathrm{L2}(\Gamma) = \mathrm{true}
@@ -224,22 +224,22 @@ $$
 
 ```mermaid
 graph LR
-    subgraph "Панпсихизм"
+    subgraph "Panpsychism"
         direction TB
-        ALL_CONS["Всё сознательно<br/>(L2 для всех)"]
+        ALL_CONS["Everything is conscious<br/>(L2 for all)"]
     end
 
-    subgraph "Панинтериоризм (УГМ)"
+    subgraph "Pan-interiority (UHM)"
         direction TB
-        ALL_L0["Всё имеет L0<br/>(Γ ≠ I/7)"]
-        SOME_L2["Только часть — L2<br/>(P>2/7, R≥1/3, Φ≥1)"]
+        ALL_L0["All have L0<br/>(Γ ≠ I/7)"]
+        SOME_L2["Only some have L2<br/>(P>2/7, R≥1/3, Φ≥1)"]
         ALL_L0 --> SOME_L2
     end
 
-    subgraph "Примеры"
-        ELEC["Электрон: L0 ✓, L2 ✗"]
-        CELL["Клетка: L0 ✓, L1 ✓, L2 ✗"]
-        HUMAN["Человек: L0 ✓, L2 ✓"]
+    subgraph "Examples"
+        ELEC["Electron: L0 ✓, L2 ✗"]
+        CELL["Cell: L0 ✓, L1 ✓, L2 ✗"]
+        HUMAN["Human: L0 ✓, L2 ✓"]
     end
 
     ALL_L0 -.-> ELEC
@@ -251,167 +251,167 @@ graph LR
     style SOME_L2 fill:#27ae60,color:#fff
 ```
 
-### Теорема (Панинтериоризм $\neq$ Панпсихизм)
+### Theorem (Pan-interiority ≠ Panpsychism)
 
 $$
 \mathrm{L0}(\Gamma) \not\Rightarrow \mathrm{L2}(\Gamma)
 $$
 
-**Доказательство:**
+**Proof:**
 
-L2 требует $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т] (T-129) и $D_{\text{diff}} \geq 2$ [Т] (T-151) ([пороги L2](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
+L2 requires $R \geq R_{\text{th}} = 1/3$ [T], $\Phi \geq \Phi_{\text{th}} = 1$ [T] (T-129) and $D_{\text{diff}} \geq 2$ [T] (T-151) ([L2 thresholds](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод)).
 
-Для [фундаментальной моды Γ](/docs/reference/glossary#таксономия-конфигураций-γ) (например, электрона):
+For the [fundamental mode Γ](/docs/reference/glossary#таксономия-конфигураций-γ) (e.g. an electron):
 
 $$
 R(\Gamma_e) \approx 0, \quad \Phi(\Gamma_e) \ll 1
 $$
 
-Следовательно, $\mathrm{L0}(\Gamma_e) = \mathrm{true}$, но $\mathrm{L2}(\Gamma_e) = \mathrm{false}$. $\blacksquare$
+Consequently, $\mathrm{L0}(\Gamma_e) = \mathrm{true}$, but $\mathrm{L2}(\Gamma_e) = \mathrm{false}$. $\blacksquare$
 
-### Иерархия уровней интериорности
+### Hierarchy of interiority levels
 
 ```mermaid
 graph TD
-    L0[L0: Интериорность<br/>Γ ≠ I/7]
-    L1[L1: Феноменальная геометрия<br/>Φ > 0]
-    L2[L2: Когнитивные квалиа<br/>R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2]
-    L3[L3: Сетевое сознание<br/>R² ≥ 1/4 метастабильно]
-    L4[L4: Унитарное сознание<br/>lim R⁽ⁿ⁾ > 0, P > 6/7]
+    L0[L0: Interiority<br/>Γ ≠ I/7]
+    L1[L1: Phenomenal geometry<br/>Φ > 0]
+    L2[L2: Cognitive qualia<br/>R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2]
+    L3[L3: Network consciousness<br/>R² ≥ 1/4 metastably]
+    L4[L4: Unitary consciousness<br/>lim R⁽ⁿ⁾ > 0, P > 6/7]
 
-    L0 -->|"добавляется Φ > 0"| L1
-    L1 -->|"добавляется R ≥ R_th, D_diff ≥ 2"| L2
-    L2 -->|"добавляется R² ≥ 1/4"| L3
-    L3 -->|"добавляется lim R⁽ⁿ⁾ > 0"| L4
+    L0 -->|"Φ > 0 added"| L1
+    L1 -->|"R ≥ R_th, D_diff ≥ 2 added"| L2
+    L2 -->|"R² ≥ 1/4 added"| L3
+    L3 -->|"lim R⁽ⁿ⁾ > 0 added"| L4
 
-    ELEC[Электрон: L0] --> L0
-    CELL[Клетка: L1] --> L1
-    HUMAN[Человек: L2] --> L2
+    ELEC[Electron: L0] --> L0
+    CELL[Cell: L1] --> L1
+    HUMAN[Human: L2] --> L2
 ```
 
 ---
 
 <a id="сознательный-реализм-хоффмана"></a>
 
-## Сознательный реализм Хоффмана {#хоффман}
+## Hoffman's Conscious Realism {#хоффман}
 
-### Биография и интеллектуальная траектория
+### Biography and intellectual trajectory
 
-**Дональд Д. Хоффман** (р. 1955) — профессор когнитивных наук, философии и логики Калифорнийского университета в Ирвайне (UC Irvine). Начал карьеру с классической психофизики зрительного восприятия: его ранние работы (1980–2000-е) посвящены вычислительному моделированию восприятия формы, цвета и объектов.
+**Donald D. Hoffman** (b. 1955) is a professor of cognitive science, philosophy, and logic at the University of California, Irvine (UC Irvine). He began his career with classical psychophysics of visual perception: his early works (1980s–2000s) are devoted to computational modelling of the perception of shape, colour, and objects.
 
-Поворотный момент — осознание парадокса: если эволюция формирует восприятие, почему восприятие должно быть **истинным**? Совместно с Чайтаньей Пракашем и Маникандой Сингхом Хоффман формализовал этот вопрос в **теореме «Fitness Beats Truth»** (2009–2015), показав через эволюционные игровые модели, что организмы, воспринимающие «интерфейс» (сжатое адаптивное представление), систематически побеждают организмов с «истинным» восприятием.
+The turning point was the recognition of a paradox: if evolution shapes perception, why should perception be **true**? Together with Chaitanya Prakash and Manish Singh, Hoffman formalised this question in the **"Fitness Beats Truth" theorem** (2009–2015), showing through evolutionary game models that organisms perceiving an "interface" (a compressed adaptive representation) systematically outcompete organisms with "true" perception.
 
-Из этого результата Хоффман пришёл к радикальной онтологической позиции: пространство-время — не объективная реальность, а **пользовательский интерфейс** сознательных агентов.
+From this result Hoffman arrived at a radical ontological position: space-time is not objective reality but a **user interface** of conscious agents.
 
-:::warning Важная классификация
-Хоффман **сам** отвергает ярлык «панпсихист». Его позиция — **объективный идеализм** (Conscious Realism): сознательные агенты — единственная фундаментальная реальность, а физический мир — производная их взаимодействий. Это ближе к Лейбницу (монадология) или Беркли, чем к Строусону или Гоффу.
+:::warning Important classification
+Hoffman **himself** rejects the label "panpsychist". His position is **objective idealism** (Conscious Realism): conscious agents are the only fundamental reality, and the physical world is a derivative of their interactions. This is closer to Leibniz (monadology) or Berkeley than to Strawson or Goff.
 :::
 
-### Теорема «Fitness Beats Truth» (FBT) {#fbt}
+### The "Fitness Beats Truth" Theorem (FBT) {#fbt}
 
-**Утверждение** (Hoffman, Singh, Prakash 2015): В эволюционных играх (формализм Мейнарда-Смита) на типичных ландшафтах приспособленности организмы со стратегией «интерфейс» (сжатие: много состояний мира → одна категория восприятия) побеждают организмов с «истинным восприятием» (изоморфизм $W \to X$).
+**Claim** (Hoffman, Singh, Prakash 2015): In evolutionary games (Maynard Smith formalism) on typical fitness landscapes, organisms with the "interface" strategy (compression: many world states → one perceptual category) defeat organisms with "true perception" (isomorphism $W \to X$).
 
-**Простым языком.** Вообразите два организма в лесу. Первый видит мир «как есть» — различает 1000 оттенков зелёного у листвы. Второй сжимает: все съедобные — зелёные, все ядовитые — красные. Второй быстрее принимает решения и тратит меньше ресурсов на вычисление. Эволюция отбирает по **выживанию**, а не по **истинности**. Отсюда: наше восприятие пространства-времени — адаптивный интерфейс, не карта реальности.
+**In plain terms.** Imagine two organisms in a forest. The first sees the world "as it is" — distinguishes 1000 shades of green in the foliage. The second compresses: all edible things are green, all poisonous are red. The second makes decisions faster and spends fewer resources on computation. Evolution selects for **survival**, not **truth**. Hence: our perception of space-time is an adaptive interface, not a map of reality.
 
-:::note Связь с КК
-КК допускает аналогичную интерпретацию [И]: восприятие агентом $\mathbb{H}$ своей среды $E$ опосредовано [функтором $F$](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах), который не обязан быть точным — достаточно функциональной адекватности. Но КК не постулирует иллюзорность пространства-времени: оно [эмерджентно](/docs/core/foundations/spacetime), а не интерфейсно.
+:::note Connection to CC
+CC admits a similar interpretation [I]: the agent $\mathbb{H}$'s perception of its environment $E$ is mediated by [functor $F$](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах), which need not be accurate — functional adequacy is sufficient. But CC does not postulate the illusoriness of space-time: it is [emergent](/docs/core/foundations/spacetime), not interfacial.
 :::
 
-### Полный формализм: сознательный агент
+### Full formalism: conscious agent
 
-**Определение (Hoffman, Prakash 2014).** Сознательный агент (CA) — это шестёрка:
+**Definition (Hoffman, Prakash 2014).** A conscious agent (CA) is a sextuple:
 
 $$
 C = (X, G, A, W, D, N)
 $$
 
-| Компонент | Описание | Пример |
-|-----------|----------|--------|
-| $X$ (опыт) | Все возможные переживания агента | Цвета, звуки, эмоции |
-| $G$ (действия) | Все доступные действия | Движения, решения |
-| $A: G \times W \to W$ | Действие $g$ в мире $w$ → новое состояние мира | Нажатие кнопки меняет экран |
-| $W$ (мир) | Состояния мира (может быть другим агентом!) | Окружающая среда |
-| $D: X \times G \to G$ | Переживание → решение (выбор действия) | Видишь опасность → бежишь |
-| $N: W \times X \to X$ | Состояние мира → переживание | Фотоны → «красное» |
+| Component | Description | Example |
+|-----------|-------------|---------|
+| $X$ (experience) | All possible experiences of the agent | Colours, sounds, emotions |
+| $G$ (actions) | All available actions | Movements, decisions |
+| $A: G \times W \to W$ | Action $g$ in world $w$ → new world state | Pressing a button changes the screen |
+| $W$ (world) | World states (can be another agent!) | Surrounding environment |
+| $D: X \times G \to G$ | Experience → decision (choice of action) | You see danger → you run |
+| $N: W \times X \to X$ | World state → experience | Photons → "red" |
 
-Ключевая идея: $W$ не обязан быть «физическим миром». Для двух агентов $C_1$ и $C_2$ миром каждого является **другой агент**. Физическое пространство-время — **эмерджентный интерфейс** сети взаимодействующих агентов.
+Key idea: $W$ need not be the "physical world". For two agents $C_1$ and $C_2$, the world of each is **the other agent**. Physical space-time is the **emergent interface** of a network of interacting agents.
 
-### Композиция сознательных агентов {#композиция-ca}
+### Composition of conscious agents {#композиция-ca}
 
-**Теорема замыкания** (Hoffman, Prakash 2014): Для любых двух CA $C_1$ и $C_2$ их взаимодействие образует нового CA: $C_1 \otimes C_2 = C_{12}$.
+**Closure theorem** (Hoffman, Prakash 2014): For any two CAs $C_1$ and $C_2$, their interaction forms a new CA: $C_1 \otimes C_2 = C_{12}$.
 
-Это означает, что **ConsAgents** — моноидальная категория. Хоффман интерпретирует это как принцип «сознательные агенты — всё, что есть».
+This means that **ConsAgents** is a monoidal category. Hoffman interprets this as the principle "conscious agents are all there is".
 
-:::note Параллель с КК
-В КК [теорема 9.1](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (фрактальное замыкание) даёт аналогичный результат: $\mathbb{H}_1 \otimes \mathbb{H}_2$ — снова голоном, при условии достаточной интеграции $\Phi_{12} > 1$. Но в КК замыкание **доказано строго** и имеет **количественный порог**, тогда как у Хоффмана замыкание постулируется аксиоматически.
+:::note Parallel with CC
+In CC [theorem 9.1](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) (fractal closure) gives an analogous result: $\mathbb{H}_1 \otimes \mathbb{H}_2$ is again a holon, provided sufficient integration $\Phi_{12} > 1$. But in CC the closure is **strictly proven** and has a **quantitative threshold**, whereas in Hoffman closure is postulated axiomatically.
 :::
 
-### Позиция КК: панинтериоризм vs объективный идеализм {#панинтериоризм-vs-идеализм}
+### CC's position: pan-interiority vs objective idealism {#панинтериоризм-vs-идеализм}
 
-Хоффман и КК расходятся в ключевом онтологическом вопросе:
+Hoffman and CC diverge on a key ontological question:
 
-| | Хоффман (Conscious Realism) | КК (Панинтериоризм) |
+| | Hoffman (Conscious Realism) | CC (Pan-interiority) |
 |---|---|---|
-| **Что фундаментально?** | Только сознательные агенты | Голономы $\mathbb{H}$ на всех уровнях L0–L4 |
-| **Есть ли несознательная реальность?** | Нет — всё сводится к CA | Да — L0 (интериорность) без сознания (L2) |
-| **Отношение L0 и L2** | L0 = L2 (всё сознательно) | L0 $\supsetneq$ L2 строго [Т] |
-| **Физический мир** | Иллюзия (интерфейс) | Эмерджентен (реален, но производен) |
-| **Порог сознания** | Нет порога (всё — CA) | $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ [Т] |
-| **Динамика** | Цикл $N \to D \to A$ (дискретный) | $\dot\Gamma = \mathcal{L}_\Omega[\Gamma]$ (непрерывное) |
-| **Фальсифицируемость** | Низкая (нет количественных предсказаний) | Высокая (22+ предсказаний) |
+| **What is fundamental?** | Only conscious agents | Holons $\mathbb{H}$ at all levels L0–L4 |
+| **Is there a non-conscious reality?** | No — everything reduces to CA | Yes — L0 (interiority) without consciousness (L2) |
+| **Relation of L0 and L2** | L0 = L2 (everything is conscious) | L0 $\supsetneq$ L2 strictly [T] |
+| **Physical world** | Illusion (interface) | Emergent (real but derivative) |
+| **Consciousness threshold** | No threshold (everything is CA) | $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D \geq 2$ [T] |
+| **Dynamics** | Cycle $N \to D \to A$ (discrete) | $\dot\Gamma = \mathcal{L}_\Omega[\Gamma]$ (continuous) |
+| **Falsifiability** | Low (no quantitative predictions) | High (22+ predictions) |
 
 <a id="теорема-об-эквивалентности-гипотеза"></a>
 
-### Функтор $F_{\text{Hoffman}}$ (гипотеза) [И] {#функтор-хоффман}
+### Functor $F_{\text{Hoffman}}$ (hypothesis) [I] {#функтор-хоффман}
 
-**Конструкция функтора** $F_{\text{Hoffman}}: \mathbf{Hol}_{\text{L2}} \to \mathbf{ConsAgents}$:
+**Functor construction** $F_{\text{Hoffman}}: \mathbf{Hol}_{\text{L2}} \to \mathbf{ConsAgents}$:
 
-| Компонент CA | Соответствие в КК |
-|--------------|-------------------|
-| $X$ (опыт) | [Экспериенциальное пространство](/docs/proofs/categorical/categorical-formalism#2-категория-exp) |
-| $G$ (действия) | Пространство CPTP-каналов $\{\Psi\}$ |
-| $N$ (восприятие) | [Функтор $F$](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах) |
-| $D$ (решение) | [Оператор $\varphi$](/docs/proofs/categorical/formalization-phi) |
-| $A$ (действие) | [Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ |
-| $W$ (мир) | Окружение $E$ в $\mathbb{H}$ |
+| CA component | Correspondence in CC |
+|--------------|----------------------|
+| $X$ (experience) | [Experiential space](/docs/proofs/categorical/categorical-formalism#2-категория-exp) |
+| $G$ (actions) | Space of CPTP channels $\{\Psi\}$ |
+| $N$ (perception) | [Functor $F$](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах) |
+| $D$ (decision) | [Operator $\varphi$](/docs/proofs/categorical/formalization-phi) |
+| $A$ (action) | [Regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}[\Gamma, E]$ |
+| $W$ (world) | Environment $E$ in $\mathbb{H}$ |
 
-:::info Статус [И]
-Функтор $F_{\text{Hoffman}}$ — **интерпретационная гипотеза**. Для полного доказательства эквивалентности необходимо показать полноту, верность и совместимость с композицией. Это **программа исследований**.
+:::info Status [I]
+The functor $F_{\text{Hoffman}}$ is an **interpretational hypothesis**. For a full proof of equivalence it is necessary to show completeness, faithfulness, and compatibility with composition. This is a **research programme**.
 :::
 
-### Что Хоффман делает лучше КК {#преимущества-хоффмана}
+### What Hoffman does better than CC {#преимущества-хоффмана}
 
-1. **Эволюционная эпистемология.** FBT — строго доказанная теорема, дающая глубокое основание для скептицизма относительно наивного реализма. КК не имеет аналога этого результата.
+1. **Evolutionary epistemology.** FBT is a strictly proven theorem providing deep grounds for scepticism towards naïve realism. CC has no analogue of this result.
 
-2. **Доступность изложения.** «The Case Against Reality» (2019) — бестселлер; TED-talk с 3M+ просмотров. КК пока доступна только специалистам.
+2. **Accessibility of exposition.** *The Case Against Reality* (2019) is a bestseller; TED talk with 3M+ views. CC is currently accessible only to specialists.
 
-3. **Радикальность вопроса.** Хоффман ставит вопрос «что, если пространство-время — не реальность?» с максимальной остротой.
+3. **Radicality of the question.** Hoffman poses the question "what if space-time is not reality?" with maximum sharpness.
 
-4. **Математическая элегантность.** Шестикомпонентная CA — минимальна и удобна для комбинаторики.
-
----
-
-## Сравнительная таблица вариантов панпсихизма
-
-| Вариант | Автор | Год | Утверждение | Соответствие в УГМ | Главная проблема |
-|---------|-------|-----|-------------|-------------------|-----------------|
-| Элиминативный | Строусон | 2006 | Всё сознательно (L2) | — | Противоречит $\Gamma = I/7 \Rightarrow C = 0$ [Т] |
-| Конститутивный | Гофф, Чалмерс | 2010/2019 | Микро-субъекты комбинируются | $\mathbb{H}_1 \otimes \mathbb{H}_2$ | Проблема комбинации (переформулирована, не решена) |
-| Панпротопсихизм | Чалмерс | 2010 | Прото-ментальные свойства | L0 — интериорность | Нет механизма перехода L0→L2 |
-| Расселианский | Рассел, Чалмерс, Гофф | 1927/2010 | Интринсик + структура | $\rho_E$ + $(H, \{L_k\})$ | Нет динамики |
-| Obj. идеализм | Хоффман | 2014 | Только CA, физика — интерфейс | Функтор [И] | Нет порогов, низкая фальсифицируемость |
-| **Панинтериоризм (УГМ)** | — | — | Всё имеет L0, не всё — L2 | $\mathrm{L0} \supsetneq \mathrm{L2}$ | Интериорность — примитив; не объясняет, *почему* она существует |
+4. **Mathematical elegance.** The six-component CA is minimal and convenient for combinatorics.
 
 ---
 
-**Связанные документы:**
-- [Когнитом Анохина](./cognitome-anokhin) — нейронная гиперсеть и проблема «Кто»
-- [Теории сознания](./consciousness-theories) — IIT, FEP, автопоэзис и 30+ теорий
-- [Когнитивная иерархия](./cognitive-hierarchy) — уровни K1-K5
-- [Общая теория систем](./general-systems-theory) — от Берталанфи к КК
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0→L4
-- [Двуаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) — онтология УГМ
-- [Теоремы](/docs/applied/coherence-cybernetics/theorems) — эмерджентность, композиция
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — категория $\mathbf{Hol}$, функтор $F$
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Глоссарий](/docs/reference/glossary#связанные-теории) — сознательный реализм
+## Comparative table of panpsychism variants
+
+| Variant | Author | Year | Claim | Correspondence in UHM | Main problem |
+|---------|--------|------|-------|----------------------|--------------|
+| Eliminative | Strawson | 2006 | Everything is conscious (L2) | — | Contradicts $\Gamma = I/7 \Rightarrow C = 0$ [T] |
+| Constitutive | Goff, Chalmers | 2010/2019 | Micro-subjects combine | $\mathbb{H}_1 \otimes \mathbb{H}_2$ | Combination problem (reformulated, not solved) |
+| Panprotopsychism | Chalmers | 2010 | Proto-mental properties | L0 — interiority | No mechanism for L0→L2 transition |
+| Russellian | Russell, Chalmers, Goff | 1927/2010 | Intrinsic + structure | $\rho_E$ + $(H, \{L_k\})$ | No dynamics |
+| Obj. idealism | Hoffman | 2014 | Only CA, physics is interface | Functor [I] | No thresholds, low falsifiability |
+| **Pan-interiority (UHM)** | — | — | All have L0, not all have L2 | $\mathrm{L0} \supsetneq \mathrm{L2}$ | Interiority is a primitive; does not explain *why* it exists |
+
+---
+
+**Related documents:**
+- [Anokhin's Cognitome](./cognitome-anokhin) — neural hypernetwork and the "Who" problem
+- [Theories of Consciousness](./consciousness-theories) — IIT, FEP, autopoiesis and 30+ theories
+- [Cognitive Hierarchy](./cognitive-hierarchy) — K1-K5 levels
+- [General Systems Theory](./general-systems-theory) — from Bertalanffy to CC
+- [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — L0→L4 levels
+- [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) — UHM ontology
+- [Theorems](/docs/applied/coherence-cybernetics/theorems) — emergence, composition
+- [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — category $\mathbf{Hol}$, functor $F$
+- [Formalisation of φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
+- [Glossary](/docs/reference/glossary#связанные-теории) — Conscious Realism

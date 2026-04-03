@@ -2,415 +2,415 @@
 sidebar_position: 5
 title: "Символические соответствия"
 slug: /applied/research/symbolic-correspondence
-description: "Операционализация символических соответствий: протокол обратной проекции, таблицы соответствий (зодиак, гексаграммы, арканы), программа исследований"
+description: "Operationalization of symbolic correspondences: back-projection protocol, correspondence tables (zodiac, hexagrams, arcana), research program"
 ---
 
-# Символические соответствия
+# Symbolic Correspondences
 
-:::info Для кого эта глава
-Операционализация мостов между символическими системами и Gap-формализмом: протокол обратной проекции и таблицы соответствий.
+:::info Who This Chapter Is For
+Operationalization of bridges between symbolic systems and the Gap formalism: the back-projection protocol and correspondence tables.
 :::
 
 
-Операционализация мостов между [символическими системами](/docs/core/structure/symbolic-systems) и Gap-формализмом: протокол обратной проекции, конкретные таблицы соответствий и программа эмпирической верификации.
+Operationalization of bridges between [symbolic systems](/docs/core/structure/symbolic-systems) and the Gap formalism: the back-projection protocol, specific correspondence tables, and an empirical verification program.
 
-:::warning Статус [П]
-Весь материал — **исследовательская программа**. Таблицы соответствий конструктивны, но эмпирическая проверка не проводилась.
+:::warning Status [P]
+All material is a **research program**. The correspondence tables are constructive, but empirical verification has not been conducted.
 :::
 
 ---
 
-## 1. Протокол обратной проекции {#обратная-проекция}
+## 1. Back-Projection Protocol {#обратная-проекция}
 
-### 1.1 Задача
+### 1.1 Task
 
-Для описания в терминах символической системы $S$ восстановить Gap-профиль:
+For a description in terms of symbolic system $S$, recover the Gap profile:
 
 $$
 \pi_S^{-1}: \mathcal{C}_S \to \text{Hol}
 $$
 
-:::warning Предупреждение
-Обратная проекция $\pi_S^{-1}$ **не однозначна** — проекция теряет информацию. Восстановление определено с точностью до ядра $\ker(\pi_S)$.
+:::warning Warning
+The back-projection $\pi_S^{-1}$ is **not unique** — projection loses information. Recovery is defined up to the kernel $\ker(\pi_S)$.
 :::
 
-### 1.2 Алгоритм
+### 1.2 Algorithm
 
-1. **Ввод:** Описание в терминах системы $S$ (натальная карта, гексаграмма, расклад и т.д.)
-2. **Отображение:** Перевод элементов $S$ в компоненты $\Gamma$ через таблицу соответствий (§2–4)
-3. **Дополнение:** Восстановление недостающих компонент $\Gamma$ через:
-   - [Фано-ограничения](/docs/physics/gauge-symmetry/fano-selection-rules) (когерентности на одной Фано-линии связаны)
-   - Условие положительной полуопределённости $\Gamma \geq 0$
-   - Минимизация [информационной энтропии](/docs/core/dynamics/gap-thermodynamics) при заданных ограничениях
-4. **Вывод:** Полная [карта прозрачности](/docs/applied/research/gap-diagnostics) $7 \times 7$
+1. **Input:** Description in terms of system $S$ (birth chart, hexagram, spread, etc.)
+2. **Mapping:** Translation of elements of $S$ into components of $\Gamma$ via the correspondence table (§2–4)
+3. **Completion:** Recovery of missing components of $\Gamma$ via:
+   - [Fano constraints](/docs/physics/gauge-symmetry/fano-selection-rules) (coherences on the same Fano line are linked)
+   - Positive semidefiniteness condition $\Gamma \geq 0$
+   - Minimization of [information entropy](/docs/core/dynamics/gap-thermodynamics) under the given constraints
+4. **Output:** Full [transparency map](/docs/applied/research/gap-diagnostics) $7 \times 7$
 
-### 1.3 Разобранный пример: расклад из трёх арканов [И] {#пример-расклад}
+### 1.3 Worked Example: Three-Card Spread [I] {#пример-расклад}
 
-Покажем работу алгоритма на конкретном трёхкарточном раскладе Таро.
+We demonstrate the algorithm on a concrete three-card Tarot spread.
 
-#### Шаг 1. Ввод
+#### Step 1. Input
 
-Расклад из трёх карт (прошлое / настоящее / будущее):
+A three-card spread (past / present / future):
 
-| Позиция | Карта | Номер |
-|---------|-------|-------|
-| Прошлое | Шут | 0 |
-| Настоящее | Влюблённые | VI |
-| Будущее | Башня | XVI |
+| Position | Card | Number |
+|----------|------|--------|
+| Past | The Fool | 0 |
+| Present | The Lovers | VI |
+| Future | The Tower | XVI |
 
-#### Шаг 2. Отображение через таблицу (§4)
+#### Step 2. Mapping via Table (§4)
 
-Каждый аркан отображается на элемент $\Gamma$ по каноническому соответствию (§4.1):
+Each arcanum maps to an element of $\Gamma$ according to the canonical correspondence (§4.1):
 
-- **Шут (0):** $\Gamma \propto I/7$ — полностью декогерированное состояние, все когерентности равны нулю. В контексте расклада это не отдельная когерентность, а **референтное состояние** — точка максимальной энтропии.
-- **Влюблённые (VI):** $\gamma_{AE}$ — когерентность между [Артикуляцией](/docs/core/structure/dimension-a) и [Интериорностью](/docs/core/structure/dimension-e). Семантика: *различение через переживание*, выбор на основании внутреннего чувства.
-- **Башня (XVI):** $\gamma_{DS}$ — когерентность между [Динамикой](/docs/core/structure/dimension-d) и [Структурой](/docs/core/structure/dimension-s). Семантика: *разрушение формы через действие*, катастрофический распад устойчивой структуры.
+- **The Fool (0):** $\Gamma \propto I/7$ — fully decohered state, all coherences equal zero. In the context of the spread this is not a separate coherence, but a **reference state** — the point of maximum entropy.
+- **The Lovers (VI):** $\gamma_{AE}$ — coherence between [Articulation](/docs/core/structure/dimension-a) and [Interiority](/docs/core/structure/dimension-e). Semantics: *discernment through experience*, choice based on inner feeling.
+- **The Tower (XVI):** $\gamma_{DS}$ — coherence between [Dynamics](/docs/core/structure/dimension-d) and [Structure](/docs/core/structure/dimension-s). Semantics: *destruction of form through action*, catastrophic collapse of a stable structure.
 
-#### Шаг 3. Формирование частичного профиля
+#### Step 3. Forming the Partial Profile
 
-Из расклада непосредственно заданы две когерентности и одно референтное состояние. Записываем:
-
-$$
-\text{Известно: } |\gamma_{AE}| > 0, \quad |\gamma_{DS}| > 0, \quad \text{фон} = I/7
-$$
-
-Временная упорядоченность расклада задаёт **динамическую траекторию**:
+Two coherences and one reference state are directly specified by the spread. We write:
 
 $$
-\Gamma(t_0) \approx I/7 \;\xrightarrow{\text{активация } \gamma_{AE}}\; \Gamma(t_1) \;\xrightarrow{\text{активация } \gamma_{DS}}\; \Gamma(t_2)
+\text{Known: } |\gamma_{AE}| > 0, \quad |\gamma_{DS}| > 0, \quad \text{background} = I/7
 $$
 
-Интерпретация: система стартовала из недифференцированного состояния (Шут), прошла через фазу артикуляционно-интериорной связи (Влюблённые), и движется к разрушению структурно-динамической когерентности (Башня).
-
-#### Шаг 4. Дополнение через Фано-ограничения
-
-Когерентности $\gamma_{AE}$ и $\gamma_{DS}$ лежат на **разных** [Фано-линиях](/docs/physics/gauge-symmetry/fano-selection-rules). Однако Фано-геометрия $\mathrm{PG}(2,2)$ связывает тройки когерентностей: если две из трёх на одной линии известны, третья ограничена. В данном случае:
-
-- Линия, содержащая $\gamma_{AE}$, также содержит когерентности с $O$ и $U$ (зависит от конкретной линии). Фано-условие: $\gamma_{AE} \cdot \gamma_{EO} \cdot \gamma_{AO}$ удовлетворяет замыканию.
-- Линия, содержащая $\gamma_{DS}$, связывает $D$, $S$ и третье измерение. Аналогичное ограничение.
-
-Оставшиеся 19 когерентностей восстанавливаются через:
+The temporal ordering of the spread defines a **dynamic trajectory**:
 
 $$
-\Gamma^* = \arg\min_{\Gamma \geq 0} S(\Gamma) \quad \text{при } \gamma_{AE} = c_1, \; \gamma_{DS} = c_2, \; \text{Tr}(\Gamma) = 1
+\Gamma(t_0) \approx I/7 \;\xrightarrow{\text{activation } \gamma_{AE}}\; \Gamma(t_1) \;\xrightarrow{\text{activation } \gamma_{DS}}\; \Gamma(t_2)
 $$
 
-где $S(\Gamma) = -\text{Tr}(\Gamma \ln \Gamma)$ — фон-Неймановская энтропия. Принцип максимальной энтропии при фиксированных ограничениях даёт **наименее предвзятое** дополнение.
+Interpretation: the system started from an undifferentiated state (The Fool), passed through a phase of articulatory-interiority coupling (The Lovers), and is moving toward the destruction of structural-dynamic coherence (The Tower).
 
-#### Шаг 5. Вывод
+#### Step 4. Completion via Fano Constraints
 
-Результат — частичная [карта прозрачности](/docs/applied/research/gap-diagnostics) размера $7 \times 7$ с двумя «подсвеченными» когерентностями ($\gamma_{AE}$, $\gamma_{DS}$) и энтропийным фоном для остальных.
+The coherences $\gamma_{AE}$ and $\gamma_{DS}$ lie on **different** [Fano lines](/docs/physics/gauge-symmetry/fano-selection-rules). However, the Fano geometry $\mathrm{PG}(2,2)$ links coherence triplets: if two of the three on one line are known, the third is constrained. In this case:
 
-:::warning Ограничения примера
-Три карты из 22 задают лишь $\sim 10\%$ информации о когерентностном профиле. Полный расклад (например, Кельтский Крест, 10 карт) даёт существенно больше ограничений, но и он не восстанавливает $\Gamma$ однозначно из-за потери фаз и диагонали (см. §4.2).
+- The line containing $\gamma_{AE}$ also contains coherences with $O$ and $U$ (depending on the specific line). Fano condition: $\gamma_{AE} \cdot \gamma_{EO} \cdot \gamma_{AO}$ satisfies closure.
+- The line containing $\gamma_{DS}$ links $D$, $S$, and a third dimension. An analogous constraint.
+
+The remaining 19 coherences are recovered via:
+
+$$
+\Gamma^* = \arg\min_{\Gamma \geq 0} S(\Gamma) \quad \text{subject to } \gamma_{AE} = c_1, \; \gamma_{DS} = c_2, \; \text{Tr}(\Gamma) = 1
+$$
+
+where $S(\Gamma) = -\text{Tr}(\Gamma \ln \Gamma)$ — von Neumann entropy. The maximum entropy principle under fixed constraints gives the **least biased** completion.
+
+#### Step 5. Output
+
+The result is a partial [transparency map](/docs/applied/research/gap-diagnostics) of size $7 \times 7$ with two "highlighted" coherences ($\gamma_{AE}$, $\gamma_{DS}$) and an entropy background for the rest.
+
+:::warning Example Limitations
+Three cards out of 22 specify only $\sim 10\%$ of the information about the coherence profile. A full spread (e.g., Celtic Cross, 10 cards) provides substantially more constraints, but it too does not recover $\Gamma$ uniquely due to the loss of phases and the diagonal (see §4.2).
 :::
 
 ---
 
-## 2. Зодиакальные соответствия [И] {#зодиак}
+## 2. Zodiac Correspondences [I] {#зодиак}
 
-### 2.1 Принцип
+### 2.1 Principle
 
-12 знаков зодиака отображаются на 12 пар из $\{A, S, D\} \times \{L, E, O, U\}$ — пересечение пространственного триплета с внутренним квартетом:
+12 zodiac signs map to 12 pairs from $\{A, S, D\} \times \{L, E, O, U\}$ — the intersection of the spatial triplet with the inner quartet:
 
-| Знак | Пара $(i,j)$ | Элемент | Gap-интерпретация |
+| Sign | Pair $(i,j)$ | Element | Gap interpretation |
 |------|-------------|---------|-------------------|
-| Овен | $(D, E)$ | Огонь | Динамика-Интериорность: действие через переживание |
-| Телец | $(S, O)$ | Земля | Структура-Основание: устойчивость в бытии |
-| Близнецы | $(A, L)$ | Воздух | Артикуляция-Логика: выражение через мысль |
-| Рак | $(S, E)$ | Вода | Структура-Интериорность: тело и чувство |
-| Лев | $(D, O)$ | Огонь | Динамика-Основание: творческая сила |
-| Дева | $(A, O)$ | Земля | Артикуляция-Основание: различение сути |
-| Весы | $(A, E)$ | Воздух | Артикуляция-Интериорность: эстетическая гармония |
-| Скорпион | $(D, L)$ | Вода | Динамика-Логика: трансформация понимания |
-| Стрелец | $(D, U)$ | Огонь | Динамика-Единство: устремлённость к целому |
-| Козерог | $(S, L)$ | Земля | Структура-Логика: систематическое строительство |
-| Водолей | $(A, U)$ | Воздух | Артикуляция-Единство: целостное видение |
-| Рыбы | $(S, U)$ | Вода | Структура-Единство: растворение в целом |
+| Aries | $(D, E)$ | Fire | Dynamics-Interiority: action through experience |
+| Taurus | $(S, O)$ | Earth | Structure-Ground: stability in being |
+| Gemini | $(A, L)$ | Air | Articulation-Logic: expression through thought |
+| Cancer | $(S, E)$ | Water | Structure-Interiority: body and feeling |
+| Leo | $(D, O)$ | Fire | Dynamics-Ground: creative force |
+| Virgo | $(A, O)$ | Earth | Articulation-Ground: discernment of essence |
+| Libra | $(A, E)$ | Air | Articulation-Interiority: aesthetic harmony |
+| Scorpio | $(D, L)$ | Water | Dynamics-Logic: transformation of understanding |
+| Sagittarius | $(D, U)$ | Fire | Dynamics-Unity: aspiration toward wholeness |
+| Capricorn | $(S, L)$ | Earth | Structure-Logic: systematic construction |
+| Aquarius | $(A, U)$ | Air | Articulation-Unity: holistic vision |
+| Pisces | $(S, U)$ | Water | Structure-Unity: dissolution into wholeness |
 
-### 2.2 Элементы
+### 2.2 Elements
 
-| Стихия | Триплет-измерение | Характеристика |
-|--------|-------------------|----------------|
-| Огонь | $D$ (Динамика) | Активность, трансформация |
-| Земля | $S$ (Структура) | Устойчивость, форма |
-| Воздух | $A$ (Артикуляция) | Различение, коммуникация |
-| Вода | — (чередование) | Связь через $E$ (Интериорность) |
+| Element | Triplet dimension | Characteristic |
+|---------|------------------|----------------|
+| Fire | $D$ (Dynamics) | Activity, transformation |
+| Earth | $S$ (Structure) | Stability, form |
+| Air | $A$ (Articulation) | Discernment, communication |
+| Water | — (alternating) | Connection via $E$ (Interiority) |
 
 ---
 
-## 3. Гексаграммы И-Цзин [И] {#гексаграммы}
+## 3. I Ching Hexagrams [I] {#гексаграммы}
 
-### 3.1 Принцип
+### 3.1 Principle
 
-64 гексаграммы = $2^6$ бинарных сигнатур 6 из 7 [измерений](/docs/core/structure/dimensions) (без $U$):
+64 hexagrams = $2^6$ binary signatures of 6 of the 7 [dimensions](/docs/core/structure/dimensions) (excluding $U$):
 
 $$
 \pi_{\text{yijing}}(\Gamma) = \left(\text{sgn}(\text{Re}(\gamma_{ij}))\right)_{(i,j) \in \mathcal{S}_6}
 $$
 
-Каждая черта (инь/ян) = знак вещественной части когерентности.
+Each line (yin/yang) = the sign of the real part of the coherence.
 
-### 3.2 Пример
+### 3.2 Example
 
-| Черта | Пара | Ян ($\text{Re} > 0$) | Инь ($\text{Re} < 0$) |
-|-------|------|----------------------|----------------------|
-| 1 (внизу) | $O$ | Активное основание | Скрытое основание |
-| 2 | $E$ | Открытый опыт | Подавленный опыт |
-| 3 | $L$ | Ясная логика | Спутанная логика |
-| 4 | $D$ | Активная динамика | Застой |
-| 5 | $S$ | Устойчивая структура | Неустойчивость |
-| 6 (вверху) | $A$ | Ясная артикуляция | Невыраженность |
+| Line | Pair | Yang ($\text{Re} > 0$) | Yin ($\text{Re} < 0$) |
+|------|------|----------------------|----------------------|
+| 1 (bottom) | $O$ | Active ground | Hidden ground |
+| 2 | $E$ | Open experience | Suppressed experience |
+| 3 | $L$ | Clear logic | Confused logic |
+| 4 | $D$ | Active dynamics | Stagnation |
+| 5 | $S$ | Stable structure | Instability |
+| 6 (top) | $A$ | Clear articulation | Inexpressiveness |
 
-### 3.3 Потеря информации
+### 3.3 Information Loss
 
-И-Цзин теряет: (a) непрерывность фазы $\theta \in [0, 2\pi)$ → бинарная проекция; (b) 7-е измерение $U$ (Единство); (c) все мнимые части $\text{Im}(\gamma_{ij})$ — весь Gap-профиль.
+I Ching loses: (a) phase continuity $\theta \in [0, 2\pi)$ → binary projection; (b) the 7th dimension $U$ (Unity); (c) all imaginary parts $\text{Im}(\gamma_{ij})$ — the entire Gap profile.
 
 ---
 
-## 4. Major Arcana Таро [И] {#таро}
+## 4. Tarot Major Arcana [I] {#таро}
 
-### 4.1 Принцип
+### 4.1 Principle
 
-22 Major Arcana $\approx$ 21 когерентность + 1 нулевой элемент (Шут = $\Gamma \propto I/7$, [полностью декогерированная система](/docs/applied/research/gap-diagnostics#модельные-системы)):
+22 Major Arcana $\approx$ 21 coherences + 1 null element (The Fool = $\Gamma \propto I/7$, [fully decohered system](/docs/applied/research/gap-diagnostics#модельные-системы)):
 
 $$
 \pi_{\text{tarot}}: \{\gamma_{ij}\}_{i<j} \cup \{I/7\} \to \{0, I, II, \ldots, XXI\}
 $$
 
-### 4.2 Потеря информации
+### 4.2 Information Loss
 
-Таро теряет: (a) населённости $\gamma_{ii}$ (диагональ); (b) фазы $\theta_{ij}$ (непрерывная информация); (c) динамику ($d\Gamma/d\tau$); (d) различение Map_ext / Map_int.
-
----
-
-## 5. Чакральная система [И] {#чакры}
-
-:::warning Статус гипотезы
-Таблица ниже — **одна из 120 возможных** биекций средних чакр на измерения (при фиксированных граничных отождествлениях O↔Муладхара и U↔Сахасрара). Подробный категориальный анализ, включая несовместимость линейного порядка чакр с Фано-геометрией PG(2,2), см. в [Символические системы: §3.1 Чакры](/docs/core/structure/symbolic-systems#чакры).
-:::
-
-7 чакр $\approx$ 7 населённостей $\gamma_{ii}$ ([диагональ $\Gamma$](/docs/core/dynamics/coherence-matrix)):
-
-| Чакра | Измерение | $\gamma_{ii}$ |
-|-------|-----------|--------------|
-| Муладхара | $O$ ([Основание](/docs/core/structure/dimension-o)) | $\gamma_{OO}$ |
-| Свадхистхана | $E$ ([Интериорность](/docs/core/structure/dimension-e)) | $\gamma_{EE}$ |
-| Манипура | $D$ ([Динамика](/docs/core/structure/dimension-d)) | $\gamma_{DD}$ |
-| Анахата | $L$ ([Логика](/docs/core/structure/dimension-l)) | $\gamma_{LL}$ |
-| Вишуддха | $A$ ([Артикуляция](/docs/core/structure/dimension-a)) | $\gamma_{AA}$ |
-| Аджна | $S$ ([Структура](/docs/core/structure/dimension-s)) | $\gamma_{SS}$ |
-| Сахасрара | $U$ ([Единство](/docs/core/structure/dimension-u)) | $\gamma_{UU}$ |
-
-Чакральная система теряет: все 42 когерентности (21 внешних + 21 внутренних), Gap-структуру, динамику.
+Tarot loses: (a) populations $\gamma_{ii}$ (diagonal); (b) phases $\theta_{ij}$ (continuous information); (c) dynamics ($d\Gamma/d\tau$); (d) the distinction between Map_ext / Map_int.
 
 ---
 
-## 6. Программа исследований [П] {#программа}
+## 5. Chakra System [I] {#чакры}
 
-:::warning Статус [П]
-Весь раздел — **исследовательская программа**. Ни одна из гипотез пока не проверена эмпирически. Предлагаемый дизайн — минимально необходимый для строгой проверки.
+:::warning Hypothesis Status
+The table below is **one of 120 possible** bijections of the middle chakras onto dimensions (with fixed boundary identifications O↔Muladhara and U↔Sahasrara). For detailed categorical analysis, including the incompatibility of the linear order of chakras with the Fano geometry PG(2,2), see [Symbolic Systems: §3.1 Chakras](/docs/core/structure/symbolic-systems#чакры).
 :::
 
-### 6.1 Гипотезы {#гипотезы}
+7 chakras $\approx$ 7 populations $\gamma_{ii}$ ([diagonal of $\Gamma$](/docs/core/dynamics/coherence-matrix)):
 
-#### H-SC1: Зодиакально-Gap корреляция [П]
+| Chakra | Dimension | $\gamma_{ii}$ |
+|--------|-----------|--------------|
+| Muladhara | $O$ ([Ground](/docs/core/structure/dimension-o)) | $\gamma_{OO}$ |
+| Svadhisthana | $E$ ([Interiority](/docs/core/structure/dimension-e)) | $\gamma_{EE}$ |
+| Manipura | $D$ ([Dynamics](/docs/core/structure/dimension-d)) | $\gamma_{DD}$ |
+| Anahata | $L$ ([Logic](/docs/core/structure/dimension-l)) | $\gamma_{LL}$ |
+| Vishuddha | $A$ ([Articulation](/docs/core/structure/dimension-a)) | $\gamma_{AA}$ |
+| Ajna | $S$ ([Structure](/docs/core/structure/dimension-s)) | $\gamma_{SS}$ |
+| Sahasrara | $U$ ([Unity](/docs/core/structure/dimension-u)) | $\gamma_{UU}$ |
 
-**Формулировка.** Для субъекта с натальной картой, в которой доминирует знак $Z_k$, соответствующая когерентность $\gamma_{ij}(Z_k)$ (по таблице §2.1) статистически значимо выше среднего.
+The chakra system loses: all 42 coherences (21 external + 21 internal), the Gap structure, and dynamics.
 
-**Конкретное предсказание.** Субъекты с доминантным Овном ($Z_1 = \text{Овен} \mapsto (D, E)$) имеют $|\gamma_{DE}| > \langle|\gamma_{DE}|\rangle_{\text{pop}}$ с размером эффекта $d \geq 0.3$ (малый, по Коэну).
+---
 
-**Обоснование.** Если зодиакальные соответствия (§2) отражают реальную структуру, население определённых когерентностей должно коррелировать с астрологическими конфигурациями.
+## 6. Research Program [P] {#программа}
 
-#### H-SC2: Предсказательная сила обратной проекции И-Цзин [П]
+:::warning Status [P]
+This entire section is a **research program**. None of the hypotheses has yet been empirically verified. The proposed design is the minimum required for rigorous testing.
+:::
 
-**Формулировка.** Гексаграмма, полученная из измеренного Gap-профиля субъекта через прямую проекцию $\pi_{\text{yijing}}(\Gamma)$, совпадает с гексаграммой, выбранной субъектом в ритуальном контексте, чаще, чем при случайном выборе (chance level = 1/64).
+### 6.1 Hypotheses {#гипотезы}
 
-**Конкретное предсказание.** Частота совпадения $\geq 3/64$ (в 3+ раза выше случайного уровня), $p < 0.01$ по точному тесту Фишера.
+#### H-SC1: Zodiac-Gap Correlation [P]
 
-**Обоснование.** Если И-Цзин — проекция $\Gamma$ (§3), то субъект, интуитивно выбирающий гексаграмму, неявно считывает знаковую структуру собственного $\Gamma$.
+**Formulation.** For a subject with a birth chart in which sign $Z_k$ dominates, the corresponding coherence $\gamma_{ij}(Z_k)$ (per the table in §2.1) is statistically significantly above the mean.
 
-#### H-SC3: Межсистемная согласованность [П]
+**Specific prediction.** Subjects with dominant Aries ($Z_1 = \text{Aries} \mapsto (D, E)$) have $|\gamma_{DE}| > \langle|\gamma_{DE}|\rangle_{\text{pop}}$ with effect size $d \geq 0.3$ (small, per Cohen).
 
-**Формулировка.** Для одного субъекта частичные $\Gamma$-профили, восстановленные из разных символических систем ($S_1, S_2, S_3$), согласуются в общих компонентах с точностью $\|\Delta\Gamma\|_F < \varepsilon_{\text{crit}}$.
+**Justification.** If the zodiac correspondences (§2) reflect a real structure, the population of certain coherences should correlate with astrological configurations.
 
-**Конкретное предсказание.** Корреляция между $\gamma_{ii}$ из чакральной диагностики и $\gamma_{ii}$ из зодиакальной карты составляет $r \geq 0.4$ (см. также §7).
+#### H-SC2: Predictive Power of I Ching Back-Projection [P]
 
-**Обоснование.** Если все символические системы — проекции одного $\Gamma$ (основной тезис [Символических систем](/docs/core/structure/symbolic-systems)), их восстановленные профили должны быть совместимы.
+**Formulation.** The hexagram obtained from a subject's measured Gap profile via direct projection $\pi_{\text{yijing}}(\Gamma)$ matches the hexagram chosen by the subject in a ritual context more often than random selection (chance level = 1/64).
 
-### 6.2 Методология {#методология}
+**Specific prediction.** Match frequency $\geq 3/64$ (3+ times above chance level), $p < 0.01$ by Fisher's exact test.
 
-#### Выборка
+**Justification.** If I Ching is a projection of $\Gamma$ (§3), then a subject intuitively choosing a hexagram implicitly reads the sign structure of their own $\Gamma$.
 
-| Параметр | Значение | Обоснование |
-|----------|----------|-------------|
-| $N$ (общий размер) | $\geq 200$ | Мощность 0.80 при $d = 0.3$, $\alpha = 0.01$ |
-| Группы для H-SC1 | 12 зодиакальных групп $\times$ $\geq 17$ человек | Равномерное покрытие знаков |
-| Группа для H-SC2 | $\geq 100$ субъектов с двойным измерением | Достаточно для точного теста Фишера |
-| Контрольная группа | $\geq 50$ субъектов без знания символических систем | Контроль эффекта ожидания |
+#### H-SC3: Inter-System Consistency [P]
 
-#### Инструменты измерения
+**Formulation.** For a single subject, partial $\Gamma$-profiles recovered from different symbolic systems ($S_1, S_2, S_3$) agree in common components to within $\|\Delta\Gamma\|_F < \varepsilon_{\text{crit}}$.
 
-1. **Gap-профиль:** [Протокол Дуального Интервью](/docs/applied/research/gap-diagnostics#протокол) — стандартизированная процедура с экстериорным и интериорным модулями.
-2. **Натальная карта:** Стандартная астрологическая программа (фиксированные эфемериды, система домов Плацида для единообразия).
-3. **И-Цзин:** Ритуальное бросание монет (6 бросков × 3 монеты) в стандартизированных условиях.
-4. **Чакральная диагностика:** Опросник биоэнергетической самооценки (7 шкал, валидированный на русскоязычной выборке; если не существует — разработка и пре-валидация как отдельный этап).
-5. **Таро:** Стандартизированный расклад (Кельтский Крест, 10 карт) с двойным слепым кодированием.
+**Specific prediction.** The correlation between $\gamma_{ii}$ from chakra diagnostics and $\gamma_{ii}$ from the zodiac chart is $r \geq 0.4$ (see also §7).
 
-#### Статистические тесты
+**Justification.** If all symbolic systems are projections of one $\Gamma$ (the central thesis of [Symbolic Systems](/docs/core/structure/symbolic-systems)), their recovered profiles must be compatible.
 
-| Гипотеза | Тест | Поправка |
-|----------|------|----------|
-| H-SC1 | Одновыборочный $t$-тест для каждой из 12 групп, размер эффекта $d$ Коэна | Бонферрони ($\alpha_{\text{adj}} = 0.01/12$) |
-| H-SC2 | Точный тест Фишера (совпадение/несовпадение vs. chance 1/64) | Без поправки (одна гипотеза) |
-| H-SC3 | Внутриклассовая корреляция ICC(3,1) между проекциями | Bootstrap 95% CI |
+### 6.2 Methodology {#методология}
 
-#### Контроль артефактов
+#### Sample
 
-- **Двойное ослепление:** Оператор Gap-диагностики не знает астрологических данных субъекта.
-- **Рандомизация порядка:** Символические системы предъявляются в случайном порядке.
-- **Предрегистрация:** Протокол и анализ-план публикуются до начала сбора данных (OSF или аналог).
+| Parameter | Value | Justification |
+|-----------|-------|---------------|
+| $N$ (total size) | $\geq 200$ | Power 0.80 at $d = 0.3$, $\alpha = 0.01$ |
+| Groups for H-SC1 | 12 zodiac groups $\times$ $\geq 17$ subjects | Uniform coverage of signs |
+| Group for H-SC2 | $\geq 100$ subjects with dual measurement | Sufficient for Fisher's exact test |
+| Control group | $\geq 50$ subjects without knowledge of symbolic systems | Control for expectation effect |
 
-### 6.3 Ожидаемые исходы {#ожидаемые-исходы}
+#### Measurement Instruments
 
-#### При подтверждении
+1. **Gap profile:** [Dual Interview Protocol](/docs/applied/research/gap-diagnostics#протокол) — standardized procedure with external and internal modules.
+2. **Birth chart:** Standard astrological software (fixed ephemerides, Placidus house system for uniformity).
+3. **I Ching:** Ritual coin toss (6 throws × 3 coins) under standardized conditions.
+4. **Chakra diagnostics:** Bioenergetic self-assessment questionnaire (7 scales, validated on a Russian-speaking sample; if none exists — development and pre-validation as a separate stage).
+5. **Tarot:** Standardized spread (Celtic Cross, 10 cards) with double-blind coding.
 
-| Гипотеза | Результат | Следствие |
-|----------|-----------|-----------|
-| H-SC1 подтверждена | $d \geq 0.3$ для $\geq 6$ из 12 знаков | Зодиакальные соответствия (§2) переходят из [И] в [С] — условно подтверждённые |
-| H-SC2 подтверждена | Совпадение $\geq 3/64$ | И-Цзин как проекция $\Gamma$ (§3) переходит из [И] в [С]; открывается вопрос о механизме считывания |
-| H-SC3 подтверждена | ICC $\geq 0.4$ | Центральный тезис о [единстве проекций](/docs/core/structure/symbolic-systems) получает эмпирическую поддержку |
+#### Statistical Tests
 
-#### При опровержении
+| Hypothesis | Test | Correction |
+|------------|------|------------|
+| H-SC1 | One-sample $t$-test for each of the 12 groups, Cohen's effect size $d$ | Bonferroni ($\alpha_{\text{adj}} = 0.01/12$) |
+| H-SC2 | Fisher's exact test (match/mismatch vs. chance 1/64) | No correction (single hypothesis) |
+| H-SC3 | Intraclass correlation ICC(3,1) between projections | Bootstrap 95% CI |
 
-| Гипотеза | Результат | Следствие |
-|----------|-----------|-----------|
-| H-SC1 опровергнута | $d < 0.1$ для $\geq 10$ знаков | Зодиакальная таблица (§2) ошибочна или астрология не отражает $\Gamma$ |
-| H-SC2 опровергнута | Совпадение $\leq 1/64$ | И-Цзин-проекция (§3) не работает; пересмотр бинарной кодировки |
-| H-SC3 опровергнута | ICC $< 0.2$ | Системы проецируют **разные** объекты, а не один $\Gamma$ — фатально для тезиса единства |
+#### Artifact Control
 
-### 6.4 Критерии фальсификации {#фальсификация}
+- **Double blinding:** The Gap diagnostics operator does not know the subject's astrological data.
+- **Order randomization:** Symbolic systems are presented in random order.
+- **Pre-registration:** Protocol and analysis plan are published before data collection begins (OSF or equivalent).
 
-Подход символических соответствий **определённо опровергается**, если выполнено хотя бы одно из следующих условий:
+### 6.3 Expected Outcomes {#ожидаемые-исходы}
 
-1. **Нулевая межсистемная корреляция.** ICC между частичными $\Gamma$-профилями из трёх и более независимых символических систем для одного субъекта не отличается от нуля ($\text{ICC} < 0.05$, $N \geq 200$). Это означает, что символические системы не проецируют общий объект.
+#### If Confirmed
 
-2. **Случайность прямой проекции.** Прямая проекция $\pi_S(\Gamma_{\text{measured}})$ для измеренного $\Gamma$ не предсказывает символическое описание субъекта лучше случайного выбора ни для одной системы $S$ из четырёх (зодиак, И-Цзин, Таро, чакры), $N \geq 200$, $p > 0.10$ для всех.
+| Hypothesis | Result | Consequence |
+|------------|--------|-------------|
+| H-SC1 confirmed | $d \geq 0.3$ for $\geq 6$ of 12 signs | Zodiac correspondences (§2) transition from [I] to [C] — conditionally confirmed |
+| H-SC2 confirmed | Match $\geq 3/64$ | I Ching as a projection of $\Gamma$ (§3) transitions from [I] to [C]; the question of the readout mechanism opens up |
+| H-SC3 confirmed | ICC $\geq 0.4$ | The central thesis on [the unity of projections](/docs/core/structure/symbolic-systems) receives empirical support |
 
-3. **Нарушение Фано-замыкания.** Восстановленные когерентности систематически нарушают [Фано-ограничения](/docs/physics/gauge-symmetry/fano-selection-rules) — тройки когерентностей на одной Фано-линии несовместимы с $\Gamma \geq 0$ в $> 50\%$ случаев.
+#### If Refuted
 
-4. **Контрольная инвариантность.** Результат обратной проекции $\pi_S^{-1}$ статистически неотличим для радикально разных субъектов (например, здоровый взрослый vs. пациент с тяжёлым расстройством), что означает нулевую диагностическую чувствительность.
+| Hypothesis | Result | Consequence |
+|------------|--------|-------------|
+| H-SC1 refuted | $d < 0.1$ for $\geq 10$ signs | The zodiac table (§2) is erroneous or astrology does not reflect $\Gamma$ |
+| H-SC2 refuted | Match $\leq 1/64$ | The I Ching projection (§3) does not work; revision of the binary encoding |
+| H-SC3 refuted | ICC $< 0.2$ | The systems project **different** objects, not one $\Gamma$ — fatal for the unity thesis |
 
-:::info Принцип
-Ни один отрицательный результат для **отдельной** символической системы не опровергает подход в целом — он лишь показывает, что данная таблица соответствий неверна. Фальсификация требует отрицательного результата **для всех систем одновременно** (критерий 2) или отрицательного результата **для межсистемной согласованности** (критерий 1).
+### 6.4 Falsification Criteria {#фальсификация}
+
+The symbolic correspondences approach is **definitively refuted** if at least one of the following conditions holds:
+
+1. **Zero inter-system correlation.** ICC between partial $\Gamma$-profiles from three or more independent symbolic systems for one subject does not differ from zero ($\text{ICC} < 0.05$, $N \geq 200$). This means the symbolic systems do not project a common object.
+
+2. **Randomness of direct projection.** The direct projection $\pi_S(\Gamma_{\text{measured}})$ for measured $\Gamma$ does not predict the subject's symbolic description better than random selection for any of the four systems $S$ (zodiac, I Ching, Tarot, chakras), $N \geq 200$, $p > 0.10$ for all.
+
+3. **Fano closure violation.** Recovered coherences systematically violate [Fano constraints](/docs/physics/gauge-symmetry/fano-selection-rules) — coherence triplets on one Fano line are incompatible with $\Gamma \geq 0$ in $> 50\%$ of cases.
+
+4. **Control invariance.** The result of back-projection $\pi_S^{-1}$ is statistically indistinguishable for radically different subjects (e.g., healthy adult vs. patient with severe disorder), indicating zero diagnostic sensitivity.
+
+:::info Principle
+No single negative result for an **individual** symbolic system refutes the approach as a whole — it only shows that the given correspondence table is wrong. Falsification requires a negative result **for all systems simultaneously** (criterion 2) or a negative result **for inter-system consistency** (criterion 1).
 :::
 
 ---
 
-## 7. Межсистемная когерентность {#межсистемная-когерентность}
+## 7. Inter-System Coherence {#межсистемная-когерентность}
 
-:::warning Статус [И]
-Формальное условие согласованности — **интерпретация**. Эмпирическая проверка — часть [программы исследований](#программа) (H-SC3).
+:::warning Status [I]
+The formal consistency condition is an **interpretation**. Empirical verification is part of the [research program](#программа) (H-SC3).
 :::
 
-### 7.1 Постановка задачи
+### 7.1 Problem Statement
 
-Пусть для одного и того же субъекта (голонома) с истинной матрицей когерентности $\Gamma^*$ выполнены обратные проекции из $K$ символических систем:
+Let back-projections from $K$ symbolic systems be performed for one and the same subject (holon) with true coherence matrix $\Gamma^*$:
 
 $$
 \hat{\Gamma}_1 = \pi_{S_1}^{-1}(s_1), \quad \hat{\Gamma}_2 = \pi_{S_2}^{-1}(s_2), \quad \ldots, \quad \hat{\Gamma}_K = \pi_{S_K}^{-1}(s_K)
 $$
 
-Каждая $\hat{\Gamma}_k$ — наилучшее восстановление $\Gamma^*$ по данным системы $S_k$ (алгоритм §1.2). Вопрос: **согласуются ли эти восстановления?**
+Each $\hat{\Gamma}_k$ is the best recovery of $\Gamma^*$ from the data of system $S_k$ (algorithm §1.2). Question: **do these recoveries agree?**
 
-### 7.2 Формальное условие согласованности {#условие-согласованности}
+### 7.2 Formal Consistency Condition {#условие-согласованности}
 
-**Определение.** Набор восстановлений $\{\hat{\Gamma}_k\}_{k=1}^K$ **согласован**, если существует единая $\Gamma^* \geq 0$, $\text{Tr}(\Gamma^*) = 1$, такая что:
+**Definition.** The set of recoveries $\{\hat{\Gamma}_k\}_{k=1}^K$ is **consistent** if there exists a single $\Gamma^* \geq 0$, $\text{Tr}(\Gamma^*) = 1$, such that:
 
 $$
 \boxed{\forall k: \quad \left\| P_k \, \hat{\Gamma}_k \, P_k - P_k \, \Gamma^* \, P_k \right\|_F < \varepsilon_k}
 $$
 
-где $P_k$ — ортогональный проектор на подпространство, «видимое» системой $S_k$, а $\varepsilon_k$ — допустимая погрешность, определяемая информационной потерей $\pi_{S_k}$.
+where $P_k$ is the orthogonal projector onto the subspace "visible" to system $S_k$, and $\varepsilon_k$ is the admissible error determined by the information loss of $\pi_{S_k}$.
 
-Эквивалентная формулировка через пересечения:
+Equivalent formulation via intersections:
 
 $$
 \bigcap_{k=1}^K \mathcal{B}_k(\hat{\Gamma}_k, \varepsilon_k) \neq \varnothing
 $$
 
-где $\mathcal{B}_k(\hat{\Gamma}_k, \varepsilon_k) = \{\Gamma \geq 0 : \|P_k \Gamma P_k - P_k \hat{\Gamma}_k P_k\|_F < \varepsilon_k, \; \text{Tr}(\Gamma)=1\}$ — множество допустимых $\Gamma$ по данным системы $S_k$.
+where $\mathcal{B}_k(\hat{\Gamma}_k, \varepsilon_k) = \{\Gamma \geq 0 : \|P_k \Gamma P_k - P_k \hat{\Gamma}_k P_k\|_F < \varepsilon_k, \; \text{Tr}(\Gamma)=1\}$ — the set of admissible $\Gamma$ given the data of system $S_k$.
 
-### 7.3 Пример: чакры + зодиак + Таро {#пример-три-системы}
+### 7.3 Example: Chakras + Zodiac + Tarot {#пример-три-системы}
 
-Рассмотрим конкретную ситуацию с тремя системами для одного субъекта:
+Consider a specific situation with three systems for one subject:
 
-| Система | Что видит | $P_k$ |
-|---------|-----------|-------|
-| Чакры (§5) | 7 населённостей $\gamma_{ii}$ | $P_{\text{чакры}} = \text{diag}(1,1,1,1,1,1,1)$ |
-| Зодиак (§2) | 12 когерентностей $|\gamma_{ij}|$ для пар $(i,j) \in \{A,S,D\} \times \{L,E,O,U\}$ | $P_{\text{зод}}$ — проектор на 12 внедиагональных элементов |
-| Таро (§4) | 21 когерентность $|\gamma_{ij}|$ ($i < j$) | $P_{\text{таро}}$ — проектор на полный верхний треугольник |
+| System | What it sees | $P_k$ |
+|--------|-------------|-------|
+| Chakras (§5) | 7 populations $\gamma_{ii}$ | $P_{\text{chakras}} = \text{diag}(1,1,1,1,1,1,1)$ |
+| Zodiac (§2) | 12 coherences $|\gamma_{ij}|$ for pairs $(i,j) \in \{A,S,D\} \times \{L,E,O,U\}$ | $P_{\text{zod}}$ — projector onto 12 off-diagonal elements |
+| Tarot (§4) | 21 coherences $|\gamma_{ij}|$ ($i < j$) | $P_{\text{tarot}}$ — projector onto the full upper triangle |
 
-**Согласованность означает:**
+**Consistency means:**
 
-1. Населённости $\gamma_{ii}$ из чакральной диагностики и населённости, восстановленные из зодиакального профиля через дополнение (§1.2, шаг 3), должны совпадать в пределах $\varepsilon$.
-2. Двенадцать когерентностей, заданных зодиаком, должны быть подмножеством 21 когерентности, заданной Таро, с точностью $\varepsilon$.
-3. Все ограничения одновременно должны допускать единую $\Gamma^* \geq 0$.
+1. The populations $\gamma_{ii}$ from chakra diagnostics and the populations recovered from the zodiac profile via completion (§1.2, step 3) must agree within $\varepsilon$.
+2. The twelve coherences specified by the zodiac must be a subset of the 21 coherences specified by the Tarot, to within $\varepsilon$.
+3. All constraints simultaneously must admit a single $\Gamma^* \geq 0$.
 
-Формально:
-
-$$
-\left\| \text{diag}(\hat{\Gamma}_{\text{чакры}}) - \text{diag}(\hat{\Gamma}_{\text{зод}}) \right\|_2 < \varepsilon_1
-$$
+Formally:
 
 $$
-\left\| \hat{\gamma}_{ij}^{(\text{зод})} - \hat{\gamma}_{ij}^{(\text{таро})} \right\| < \varepsilon_2 \quad \forall (i,j) \in \{A,S,D\} \times \{L,E,O,U\}
+\left\| \text{diag}(\hat{\Gamma}_{\text{chakras}}) - \text{diag}(\hat{\Gamma}_{\text{zod}}) \right\|_2 < \varepsilon_1
 $$
 
-### 7.4 Диагностика несогласованности {#диагностика-несогласованности}
+$$
+\left\| \hat{\gamma}_{ij}^{(\text{zod})} - \hat{\gamma}_{ij}^{(\text{tarot})} \right\| < \varepsilon_2 \quad \forall (i,j) \in \{A,S,D\} \times \{L,E,O,U\}
+$$
 
-Если $\bigcap_k \mathcal{B}_k = \varnothing$ (пересечение пусто), возможны три интерпретации:
+### 7.4 Diagnosing Inconsistency {#диагностика-несогласованности}
 
-#### 7.4.1 Ошибка в таблице соответствий
+If $\bigcap_k \mathcal{B}_k = \varnothing$ (the intersection is empty), three interpretations are possible:
 
-Одна или несколько таблиц (§2–5) содержат неверное отождествление «символ $\leftrightarrow$ элемент $\Gamma$». Это наиболее вероятная причина и наименее фатальная: исправление таблицы может восстановить согласованность.
+#### 7.4.1 Error in the Correspondence Table
 
-**Диагностический признак:** Несогласованность *систематически* затрагивает одну и ту же систему $S_k$ для разных субъектов.
+One or more tables (§2–5) contain an incorrect identification "symbol $\leftrightarrow$ element of $\Gamma$". This is the most likely cause and the least fatal: correcting the table may restore consistency.
 
-#### 7.4.2 Разные временные срезы
+**Diagnostic sign:** The inconsistency *systematically* affects the same system $S_k$ for different subjects.
 
-Символические системы описывают $\Gamma$ в разные моменты времени: натальная карта фиксирует $\Gamma(t_{\text{рождение}})$, чакральная диагностика — $\Gamma(t_{\text{сейчас}})$, расклад Таро — $\Gamma(t_{\text{вопрос}})$. Расхождение отражает реальную [динамику $d\Gamma/d\tau$](/docs/core/dynamics/evolution), а не ошибку соответствия.
+#### 7.4.2 Different Temporal Cross-Sections
 
-**Диагностический признак:** Несогласованность тем больше, чем больше временной разрыв между моментами «снимков».
+Symbolic systems describe $\Gamma$ at different moments in time: a birth chart captures $\Gamma(t_{\text{birth}})$, chakra diagnostics — $\Gamma(t_{\text{now}})$, a Tarot spread — $\Gamma(t_{\text{question}})$. The divergence reflects the real [dynamics $d\Gamma/d\tau$](/docs/core/dynamics/evolution), not a correspondence error.
 
-#### 7.4.3 Фундаментальная несовместимость
+**Diagnostic sign:** The inconsistency grows with the temporal gap between the "snapshot" moments.
 
-Символические системы **не являются** проекциями одного объекта. Это фатальный исход для тезиса о единстве, эквивалентный критерию фальсификации §6.4, п. 1.
+#### 7.4.3 Fundamental Incompatibility
 
-**Диагностический признак:** Несогласованность *не уменьшается* при (a) коррекции таблиц, (b) синхронизации временных срезов, (c) увеличении выборки.
+The symbolic systems **are not** projections of a single object. This is the fatal outcome for the unity thesis, equivalent to falsification criterion §6.4, item 1.
 
-### 7.5 Мера межсистемной когерентности {#мера-когерентности}
+**Diagnostic sign:** The inconsistency *does not decrease* with (a) table corrections, (b) temporal cross-section synchronization, (c) sample size increase.
 
-Для количественной оценки вводим **индекс межсистемной когерентности**:
+### 7.5 Inter-System Coherence Measure {#мера-когерентности}
+
+For quantitative assessment, we introduce the **inter-system coherence index**:
 
 $$
 \mathcal{I}_K = 1 - \frac{\min_{\Gamma^* \geq 0} \sum_{k=1}^K w_k \|P_k \Gamma^* P_k - P_k \hat{\Gamma}_k P_k\|_F^2}{\sum_{k=1}^K w_k \|P_k \hat{\Gamma}_k P_k\|_F^2}
 $$
 
-где $w_k = \dim(\text{Im}(P_k)) / \sum_j \dim(\text{Im}(P_j))$ — вес системы, пропорциональный количеству «видимых» параметров.
+where $w_k = \dim(\text{Im}(P_k)) / \sum_j \dim(\text{Im}(P_j))$ — the weight of the system, proportional to the number of "visible" parameters.
 
-| $\mathcal{I}_K$ | Интерпретация |
+| $\mathcal{I}_K$ | Interpretation |
 |------------------|---------------|
-| $\geq 0.8$ | Высокая согласованность — системы проецируют один объект |
-| $0.4$–$0.8$ | Умеренная — возможны ошибки в таблицах или временные рассогласования |
-| $< 0.4$ | Низкая — тезис о единстве под вопросом |
-| $\leq 0$ | Полная несовместимость — фальсификация (§6.4, п. 1) |
+| $\geq 0.8$ | High consistency — the systems project one object |
+| $0.4$–$0.8$ | Moderate — table errors or temporal mismatches are possible |
+| $< 0.4$ | Low — the unity thesis is questionable |
+| $\leq 0$ | Complete incompatibility — falsification (§6.4, item 1) |
 
 ---
 
-## Связанные документы
+## Related Documents
 
-- [Символические системы](/docs/core/structure/symbolic-systems) — формальная редукция
-- [Gap-диагностика](/docs/applied/research/gap-diagnostics) — прикладная методология
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — 49-элементная карта
-- [Протокол измерения](/docs/applied/research/measurement-protocol) — экспериментальная верификация
+- [Symbolic systems](/docs/core/structure/symbolic-systems) — formal reduction
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — applied methodology
+- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
+- [Measurement protocol](/docs/applied/research/measurement-protocol) — experimental verification

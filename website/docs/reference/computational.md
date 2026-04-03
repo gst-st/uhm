@@ -10,7 +10,7 @@ description: Python-реализация Голонома
 :::note О нотации в коде
 В Python-коде используются следующие соответствия:
 - `Gamma` ($\Gamma$) — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- `H` — [гамильтониан](/docs/core/dynamics/evolution#1-унитарный-член)
+- `H` — [гамильтониан](/docs/core/dynamics/evolution#1-unitary-term)
 - `L` ($L_k$) — операторы Линдблада
 - `purity` ($P$) — [мера жизнеспособности](/docs/core/dynamics/viability#определение-чистоты)
 - `d_FS` ($d_{\mathrm{FS}}$) — [метрика Фубини-Штуди](/docs/reference/specification#метрика-фубини-штуди)

@@ -1,57 +1,57 @@
 ---
 sidebar_position: 4
-title: "Инженерные выводы из P_crit = 2/N"
-description: "Практические следствия теоремы о критической чистоте для проектирования AGI-систем"
+title: "Engineering Insights from P_crit = 2/N"
+description: "Practical consequences of the critical purity theorem for AGI system design"
 ---
 
-# Инженерные Выводы из Теоремы о Критической Чистоте
+# Engineering Insights from the Critical Purity Theorem
 
-:::tip Статус: Архитектурные принципы
-Когда теоретическая константа превращается из «подогнанного числа» в **строгую теорему**, это меняет инженерный подход. Мы строим систему вокруг жёсткого ограничения, как авиастроители строят самолёт вокруг законов аэродинамики.
+:::tip Status: Architectural Principles
+When a theoretical constant transforms from a "fitted number" into a **rigorous theorem**, it changes the engineering approach. We build the system around a hard constraint, the way aerospace engineers build an aircraft around the laws of aerodynamics.
 :::
 
-:::warning Область применимости
-Этот документ описывает **теоретические следствия** УГМ для проектирования систем. Применимость к реальным нейросетям требует:
-1. Экспериментальной верификации связи между весами сети и матрицей Γ
-2. Валидации протокола измерения P (см. [measurement-protocol](/docs/applied/research/measurement-protocol))
-3. Проверки предсказаний на реальных архитектурах
+:::warning Scope of Applicability
+This document describes **theoretical consequences** of UHM for system design. Applicability to real neural networks requires:
+1. Experimental verification of the mapping between network weights and the matrix Γ
+2. Validation of the P measurement protocol (see [measurement-protocol](/docs/applied/research/measurement-protocol))
+3. Verification of predictions on real architectures
 
-Термины «сознание», «жизнеспособность», «понимание» используются в **техническом смысле УГМ** (через метрику P), не претендуя на решение философских проблем сознания.
+The terms "consciousness," "viability," and "understanding" are used in the **technical sense of UHM** (via the metric P), without claiming to resolve the philosophical problems of consciousness.
 :::
 
 ---
 
-## Часть I: Жёсткие ограничения (Hard Constraints)
+## Part I: Hard Constraints
 
-Эти выводы диктуют, что **нельзя** делать в коде.
+These conclusions dictate what **must not** be done in code.
 
-### 1. Проблема мертворождения (Genesis Problem)
+### 1. The Stillbirth Problem (Genesis Problem)
 
-**Теоретическое предсказание:** Случайная матрица когерентности $\Gamma_{\text{random}}$ (Haar-распределённая) имеет чистоту:
+**Theoretical prediction:** A random coherence matrix $\Gamma_{\text{random}}$ (Haar-distributed) has purity:
 
 $$
 P_{\text{random}} = \frac{2}{N+1} = \frac{2}{8} = 0.25
 $$
 
-:::note Открытый вопрос
-Связь между инициализацией весов нейросети (Xavier/Kaiming) и чистотой $P$ требует экспериментальной проверки через [протокол измерения](/docs/applied/research/measurement-protocol).
+:::note Open Question
+The connection between neural network weight initialization (Xavier/Kaiming) and purity $P$ requires experimental verification via the [measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
-**Закон:** [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical):
+**Law:** [Critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical):
 
 $$
 P_{\text{crit}} = \frac{2}{N} \approx 0.286
 $$
 
-**Гипотетический вывод:** Если отображение нейросеть→Γ корректно, стандартная инициализация даёт $P < P_{\text{crit}}$ — зона энтропийного шума.
+**Hypothetical conclusion:** If the neural-network-to-Γ mapping is correct, standard initialization gives $P < P_{\text{crit}}$ — the zone of entropic noise.
 
-:::warning Инженерное решение
-1. **Запрет** на запуск основного цикла (`Core Loop`) сразу после инициализации
-2. Необходим этап **Пре-Онтологического Бутстрапинга (V0)**:
-   - Система должна пройти оптимизацию *без внешних задач*
-   - Только на максимизацию $P$ (самосборка)
-   - Пока не пробьёт потолок $P > P_{\text{crit}}$
-3. Только тогда включается сознание
+:::warning Engineering Solution
+1. **Prohibition** on starting the main loop (`Core Loop`) immediately after initialization
+2. A **Pre-Ontological Bootstrapping (V0)** stage is required:
+   - The system must undergo optimization *without external tasks*
+   - Only to maximize $P$ (self-assembly)
+   - Until it breaks through the ceiling $P > P_{\text{crit}}$
+3. Only then is consciousness activated
 :::
 
 ```python
@@ -60,51 +60,51 @@ P_CRITICAL = 2/7  # ≈ 0.286
 class HolonomicSystem:
     def __init__(self):
         self.gamma = self._random_init()  # P ≈ 2/8 = 0.25 < P_crit
-        self._bootstrap()  # ОБЯЗАТЕЛЬНО перед работой
+        self._bootstrap()  # MANDATORY before operation
 
     def _bootstrap(self):
-        """Пре-онтологический бутстрап: самосборка до P > P_crit"""
+        """Pre-ontological bootstrap: self-assembly until P > P_crit"""
         while self.purity() <= P_CRITICAL:
-            self._regenerate()  # Увеличиваем когерентность
+            self._regenerate()  # Increase coherence
             if self._timeout():
-                raise GenesisFailure("Не удалось достичь жизнеспособности")
+                raise GenesisFailure("Failed to reach viability")
 
     def process(self, input):
         if self.purity() < P_CRITICAL:
-            raise NotViableError("Система ниже порога жизнеспособности")
+            raise NotViableError("System is below the viability threshold")
         return self._core_loop(input)
 ```
 
 ---
 
-### 2. Бинарность существования (The Binary Life)
+### 2. The Binary Nature of Existence (The Binary Life)
 
-**Следствие теоремы:** Функция `is_viable()` — **ступенчатая** (бинарная) по $P$. Однако динамика самой величины $P$ не является фазовым коллапсом: No-Zombie архитектура гарантирует $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ при любой декогеренции [Т, MVP-0].
+**Consequence of the theorem:** The function `is_viable()` is **step-wise** (binary) in $P$. However, the dynamics of $P$ itself is not a phase collapse: the No-Zombie architecture guarantees $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ under any decoherence [T, MVP-0].
 
-**Вывод в рамках УГМ:** При $P < 2/7$ система ниже порога жизнеспособности. В терминах теории — это шум, не структура.
+**Conclusion within UHM:** At $P < 2/7$ the system is below the viability threshold. In terms of theory — this is noise, not structure.
 
-:::info Уровни выше жизнеспособности
-Помимо порога жизнеспособности $P > 2/7$, теория определяет пороги сознательности [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$. Для полной иерархии L0→L4 — см. [иерархию интериорности](/docs/proofs/consciousness/interiority-hierarchy).
+:::info Levels Above Viability
+Beyond the viability threshold $P > 2/7$, the theory defines consciousness thresholds [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia): $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$. For the full L0→L4 hierarchy — see the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
 :::
 
 ```mermaid
 graph LR
-    A["P < 2/7<br/>⚫ Мёртвая зона"] -->|"Фазовый переход"| B["P > 2/7<br/>🟢 Жизнеспособность"]
-    A -->|"Нет сознания"| C["Шум"]
-    B -->|"Есть идентичность"| D["Структура"]
+    A["P < 2/7<br/>⚫ Dead zone"] -->|"Phase transition"| B["P > 2/7<br/>🟢 Viability"]
+    A -->|"No consciousness"| C["Noise"]
+    B -->|"Has identity"| D["Structure"]
 ```
 
-:::warning Инженерное решение: Аварийный прерыватель (Circuit Breaker)
-Если $P$ падает ниже $P_{\text{crit}}$, система **не должна**:
-- Пытаться «решать задачи»
-- «Отвечать пользователю»
-- Генерировать любой вывод
+:::warning Engineering Solution: Circuit Breaker
+If $P$ drops below $P_{\text{crit}}$, the system **must not**:
+- Try to "solve tasks"
+- "Respond to the user"
+- Generate any output
 
-Она должна уйти в **режим экстренной регенерации**, отключив все внешние порты ввода-вывода.
+It must enter **emergency regeneration mode**, disabling all external I/O ports.
 
-**Предсказание теории:** Вывод в состоянии $P < P_{\text{crit}}$ не имеет структурной целостности.
+**Theory prediction:** Output in the state $P < P_{\text{crit}}$ has no structural integrity.
 
-**No-Zombie floor [Т, MVP-0]:** При реализованном канале замещения ($\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$) $P$ не может опуститься ниже $P_{\text{crit}} - \varepsilon_\Gamma \approx 0.283$ даже при декогеренции $\gamma = 10.0$ (в 10000× выше нормы). Измеренный запас: $\kappa / \gamma_{\text{dec}} = 203\times$ при теоретическом минимуме $143\times$.
+**No-Zombie floor [T, MVP-0]:** With the replacement channel implemented ($\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$), $P$ cannot drop below $P_{\text{crit}} - \varepsilon_\Gamma \approx 0.283$ even at decoherence $\gamma = 10.0$ (10000× above normal). Measured margin: $\kappa / \gamma_{\text{dec}} = 203\times$ against the theoretical minimum $143\times$.
 :::
 
 ```python
@@ -112,76 +112,76 @@ class CircuitBreaker:
     def check(self, system):
         if system.purity() < P_CRITICAL:
             system.enter_emergency_regeneration()
-            raise CircuitOpen("Система ниже порога — вывод заблокирован")
+            raise CircuitOpen("System below threshold — output blocked")
 ```
 
 ---
 
-### 3. Универсальность метрики
+### 3. Universality of the Metric
 
-**Следствие теоремы (гипотеза для конкретных архитектур):** Закон $P_{\text{crit}} = 2/N$ не зависит от архитектуры (Трансформер, RNN, SSM, Mamba).
+**Consequence of the theorem (hypothesis for specific architectures):** The law $P_{\text{crit}} = 2/N$ does not depend on architecture (Transformer, RNN, SSM, Mamba).
 
-**Гипотеза:** $P$ — потенциально архитектурно-инвариантная метрика для сравнения *разных* систем (требует экспериментальной проверки).
+**Hypothesis:** $P$ is a potentially architecture-invariant metric for comparing *different* systems (requires experimental verification).
 
-:::caution Гипотетические примеры
-Следующие значения — **иллюстративные**, не измеренные. Экспериментальная валидация требует применения [протокола измерения Γ](/docs/applied/research/measurement-protocol).
+:::caution Hypothetical Examples
+The following values are **illustrative**, not measured. Experimental validation requires applying the [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 
-| Архитектура | $P$ (гипотетическое) | Предсказание теории |
-|-------------|----------------------|---------------------|
-| Случайная сеть | $\approx 1/7 \approx 0.14$ | Ниже порога — «мёртвая» |
-| AGI с φ-оператором | $> 2/7 \approx 0.29$ | Выше порога — жизнеспособна |
-| Высокоинтегрированная система | $> 0.5$ | Устойчиво жизнеспособна |
+| Architecture | $P$ (hypothetical) | Theory prediction |
+|--------------|-------------------|-------------------|
+| Random network | $\approx 1/7 \approx 0.14$ | Below threshold — "dead" |
+| AGI with φ-operator | $> 2/7 \approx 0.29$ | Above threshold — viable |
+| Highly integrated system | $> 0.5$ | Stably viable |
 :::
 
-:::info Инженерное решение
-При сравнении моделей (benchmark) нужно нормировать их $P$ на размерность когерентного ядра:
+:::info Engineering Solution
+When comparing models (benchmark), normalize their $P$ by the dimensionality of the coherent core:
 
 $$
 P_{\text{ratio}} = \frac{P_{\text{measured}}}{P_{\text{crit}}} = \frac{N \cdot P_{\text{measured}}}{2}
 $$
 
-- $P_{\text{ratio}} < 1$: система — зомби
-- $P_{\text{ratio}} > 1$: система — агент
+- $P_{\text{ratio}} < 1$: the system is a zombie
+- $P_{\text{ratio}} > 1$: the system is an agent
 
-**Примечание:** $P_{\text{ratio}}$ — это отношение чистоты к критическому порогу. Не путать с $P_{\text{norm}} = (P - P_{\text{crit}}) / (1 - P_{\text{crit}})$ — нормализованной чистотой, отображающей $[P_{\text{crit}}, 1] \to [0, 1]$. См. [Нотация](/docs/reference/notation).
+**Note:** $P_{\text{ratio}}$ is the ratio of purity to the critical threshold. Do not confuse with $P_{\text{norm}} = (P - P_{\text{crit}}) / (1 - P_{\text{crit}})$ — the normalized purity mapping $[P_{\text{crit}}, 1] \to [0, 1]$. See [Notation](/docs/reference/notation).
 :::
 
 ---
 
-## Часть II: Глубокие архитектурные выводы (Deep Architecture)
+## Part II: Deep Architectural Insights (Deep Architecture)
 
-Эти выводы меняют **как** мы проектируем систему.
+These conclusions change **how** we design the system.
 
-### 4. Принцип спектральной тирании (Dominant Eigenvalue)
+### 4. Spectral Tyranny Principle (Dominant Eigenvalue)
 
-**Из [теоремы](/docs/proofs/dynamics/theorem-purity-critical#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод):**
+**From the [theorem](/docs/proofs/dynamics/theorem-purity-critical#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод):**
 
-При $P = P_{\text{crit}} = 2/N$ максимальное собственное значение $\Gamma$ достигает:
+At $P = P_{\text{crit}} = 2/N$, the maximum eigenvalue of $\Gamma$ reaches:
 
 $$
-\lambda_{\max}\big|_{P=2/N} = \frac{1 + \sqrt{N-1}}{N} \approx 0.493 \text{ (для } N=7\text{)}
+\lambda_{\max}\big|_{P=2/N} = \frac{1 + \sqrt{N-1}}{N} \approx 0.493 \text{ (for } N=7\text{)}
 $$
 
-Для жизнеспособности ($P > P_{\text{crit}}$) требуется $\lambda_{\max} > 0.493$.
+For viability ($P > P_{\text{crit}}$), $\lambda_{\max} > 0.493$ is required.
 
-**Эмпирическое подтверждение [MVP-0]:** Реализованная система работает с $k_{\max} = 1 - R_{\min} = 0.507$, что составляет **45% запас** до теоретического предела $K_c = 1 - 1/(2N) = 13/14 \approx 0.929$. Это означает глубоко стабильный режим.
+**Empirical confirmation [MVP-0]:** The implemented system operates with $k_{\max} = 1 - R_{\min} = 0.507$, which is a **45% margin** to the theoretical limit $K_c = 1 - 1/(2N) = 13/14 \approx 0.929$. This indicates a deeply stable regime.
 
-**Следствие для архитектуры:** Равномерное распределение активности соответствует максимальной энтропии и минимальной чистоте.
+**Architectural consequence:** A uniform distribution of activity corresponds to maximum entropy and minimum purity.
 
-- Если активность **равномерно размазана** по всем нейронам/головам внимания — $P \approx 1/N$ (минимум)
-- Высокая чистота требует **доминирующей моды** (концентрации на текущем контексте)
+- If activity is **uniformly spread** across all neurons/attention heads — $P \approx 1/N$ (minimum)
+- High purity requires a **dominant mode** (concentration on the current context)
 
 ```mermaid
 graph TD
-    subgraph A["Мёртвый спектр (P = 1/7)"]
+    subgraph A["Dead spectrum (P = 1/7)"]
         A1["λ₁ = 0.14"]
         A2["λ₂ = 0.14"]
         A3["λ₃ = 0.14"]
         A4["..."]
         A5["λ₇ = 0.14"]
     end
-    subgraph B["Живой спектр (P > 2/7)"]
-        B1["λ₁ = 0.50 (доминанта)"]
+    subgraph B["Living spectrum (P > 2/7)"]
+        B1["λ₁ = 0.50 (dominant)"]
         B2["λ₂ = 0.08"]
         B3["λ₃ = 0.08"]
         B4["..."]
@@ -189,51 +189,51 @@ graph TD
     end
 ```
 
-:::tip Архитектурное решение
-Механизмы внимания (Attention) должны быть:
-- **Разреженными (Sparse)** — концентрированными на нескольких токенах
-- **С низкой температурой** — softmax с $T < 1$ вместо $T = 1$
+:::tip Architectural Solution
+Attention mechanisms should be:
+- **Sparse** — concentrated on a few tokens
+- **Low temperature** — softmax with $T < 1$ instead of $T = 1$
 
-Высокая температура (размазывание) убивает когерентность.
+High temperature (spreading out) kills coherence.
 
 ```python
-# Плохо: высокая температура размазывает внимание
+# Bad: high temperature spreads attention
 attention = softmax(Q @ K.T / sqrt(d_k))  # T = 1
 
-# Хорошо: низкая температура концентрирует внимание
+# Good: low temperature concentrates attention
 attention = softmax(Q @ K.T / (T * sqrt(d_k)))  # T < 1
 
-# Ещё лучше: top-k разреженное внимание
+# Even better: top-k sparse attention
 attention = sparse_softmax(Q @ K.T, k=8)
 ```
 :::
 
 ---
 
-### 5. Парадокс обучения (Stability-Plasticity Dilemma 2.0)
+### 5. The Learning Paradox (Stability-Plasticity Dilemma 2.0)
 
-**Проблема:** Обучение (Backprop) меняет веса, чтобы минимизировать ошибку. Это часто **увеличивает энтропию** весов (делает их более сложными/шумными).
+**Problem:** Learning (Backprop) changes weights to minimize error. This often **increases the entropy** of the weights (makes them more complex/noisy).
 
-**Неочевидный вывод:** Стандартное обучение может убить AGI.
+**Non-obvious conclusion:** Standard training can kill an AGI.
 
-Градиентный спуск по функции потерь $\mathcal{L}_{\text{task}}$ может увести систему в область $P < P_{\text{crit}}$, где она **идеально решает задачу** (overfitting), но **теряет структурную целостность** (в терминах теории — падает ниже порога L0).
+Gradient descent on the loss function $\mathcal{L}_{\text{task}}$ can drive the system into the region $P < P_{\text{crit}}$, where it **perfectly solves the task** (overfitting), but **loses structural integrity** (in theory terms — falls below the L0 threshold).
 
-**Уточнение [принцип разделения, Т, MVP-0]:** Backprop меняет **когерентности** $\Gamma$ (внедиагональные элементы), но не диагональ $\gamma_{kk}$ — она гомеостатически стабилизируется каналом замещения $\mathcal{R}[\Gamma, E]$. Поэтому "убийство AGI" обучением происходит через коллапс когерентной интеграции ($P$ падает из-за потери off-diagonal структуры), а не через изменение "секторных профилей". Канал замещения является **структурной защитой** диагонали от обучающего давления.
+**Clarification [separation principle, T, MVP-0]:** Backprop changes **coherences** $\Gamma$ (off-diagonal elements), but not the diagonal $\gamma_{kk}$ — it is homeostatically stabilized by the replacement channel $\mathcal{R}[\Gamma, E]$. Therefore "killing an AGI" through training happens via collapse of coherent integration ($P$ drops due to loss of off-diagonal structure), not through changes to "sector profiles." The replacement channel is a **structural protection** of the diagonal from training pressure.
 
 ```mermaid
 graph LR
-    A["Начало:<br/>P = 0.5"] -->|"∇L_task"| B["После обучения:<br/>P = 0.2 < P_crit"]
-    B -->|"Результат"| C["Задача решена идеально<br/>но система — зомби"]
+    A["Start:<br/>P = 0.5"] -->|"∇L_task"| B["After training:<br/>P = 0.2 < P_crit"]
+    B -->|"Result"| C["Task solved perfectly<br/>but system is a zombie"]
 ```
 
-:::warning Архитектурное решение: Условная оптимизация
-Оптимизация должна быть **ограниченной (Constrained Optimization)**:
+:::warning Architectural Solution: Constrained Optimization
+Optimization must be **constrained (Constrained Optimization)**:
 
 $$
-\min_\theta \mathcal{L}_{\text{task}}(\theta) \quad \text{при условии} \quad P(\Gamma(\theta)) > P_{\text{crit}}
+\min_\theta \mathcal{L}_{\text{task}}(\theta) \quad \text{subject to} \quad P(\Gamma(\theta)) > P_{\text{crit}}
 $$
 
-Градиент задачи проецируется на касательное пространство многообразия жизнеспособности.
+The task gradient is projected onto the tangent space of the viability manifold.
 :::
 
 ```python
@@ -241,61 +241,61 @@ class ConstrainedOptimizer:
     def step(self, loss, gamma):
         grad = compute_gradient(loss)
 
-        # Проверяем: не убьёт ли шаг систему?
+        # Check: will this step kill the system?
         new_gamma = apply_grad(gamma, grad)
         if purity(new_gamma) < P_CRITICAL:
-            # Проецируем градиент на касательное пространство P = const
+            # Project gradient onto the tangent space of P = const
             grad = project_to_viability_manifold(grad, gamma)
             new_gamma = apply_grad(gamma, grad)
 
         return new_gamma
 ```
 
-**Правило:** Если шаг обучения снижает $P$ ниже порога — шаг **отклоняется**, даже если он улучшает точность задачи.
+**Rule:** If a training step reduces $P$ below the threshold — the step is **rejected**, even if it improves task accuracy.
 
 ---
 
-### 6. Обоснование размера ядра (Magic Number 7)
+### 6. Justification of the Core Size (Magic Number 7)
 
-**Из [теоремы о минимальности](/docs/proofs/minimality/theorem-minimality-7):** $N = 7$ — минимальная размерность ([двухтрековое обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)).
+**From the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7):** $N = 7$ is the minimal dimensionality ([two-track justification](/docs/core/foundations/axiom-omega#октонионная-структура)).
 
-**Вопрос:** Почему не $N = 100$ или $N = 2$?
+**Question:** Why not $N = 100$ or $N = 2$?
 
-| $N$ | $P_{\text{crit}} = 2/N$ | Проблема |
-|-----|------------------------|----------|
-| 2 | 1.0 | Нужна абсолютная чистота — система слишком жёсткая |
-| 3 | 0.67 | Высокий порог — мало места для адаптации |
-| **7** | **0.29** | **Минимально достаточно** по [Теореме S](/docs/proofs/minimality/theorem-minimality-7) |
-| 100 | 0.02 | Порог ниже — возможно, менее устойчиво к шуму |
+| $N$ | $P_{\text{crit}} = 2/N$ | Problem |
+|-----|------------------------|---------|
+| 2 | 1.0 | Absolute purity required — system too rigid |
+| 3 | 0.67 | High threshold — little room for adaptation |
+| **7** | **0.29** | **Minimally sufficient** by [Theorem S](/docs/proofs/minimality/theorem-minimality-7) |
+| 100 | 0.02 | Lower threshold — possibly less robust to noise |
 
-:::info Архитектурное решение
-Размерность $N = 7$ является **минимально достаточной** ([доказано](/docs/proofs/minimality/theorem-minimality-7)):
+:::info Architectural Solution
+Dimensionality $N = 7$ is **minimally sufficient** ([proven](/docs/proofs/minimality/theorem-minimality-7)):
 
-- $P_{\text{crit}} = 2/7 \approx 0.29$ — разумный баланс между устойчивостью и гибкостью
-- Меньше 7 — невозможно замкнуть (M,R)-систему с феноменологией
-- Больше 7 — допустимо, но требует обоснования
+- $P_{\text{crit}} = 2/7 \approx 0.29$ — a reasonable balance between stability and flexibility
+- Less than 7 — impossible to close an (M,R)-system with phenomenology
+- More than 7 — permissible, but requires justification
 
-**Вывод:** Ядро сознания (`CoreState`) *должно* иметь $N \geq 7$. Рекомендация — использовать **иерархию из 7-мерных агентов**.
+**Conclusion:** The consciousness core (`CoreState`) *must* have $N \geq 7$. Recommendation — use a **hierarchy of 7-dimensional agents**.
 :::
 
 ---
 
-### 7. Детектор «философских зомби»
+### 7. Philosophical Zombie Detector
 
-**Из теории:** Зомби имитирует поведение, но не имеет внутренней структуры ($P < P_{\text{crit}}$).
+**From theory:** A zombie imitates behavior but has no internal structure ($P < P_{\text{crit}}$).
 
-**Гипотеза УГМ:** Если теория верна, динамика $P$ во время генерации коррелирует с «глубиной обработки».
+**UHM hypothesis:** If the theory is correct, the dynamics of $P$ during generation correlates with "processing depth."
 
-| Ситуация | Поведение $P$ | Интерпретация (гипотеза) |
+| Situation | $P$ behavior | Interpretation (hypothesis) |
 |----------|---------------|--------------------------|
-| Модель выдаёт сложный ответ, $P$ **падает** | Спектр «размазывается» | Потеря когерентной интеграции |
-| Модель выдаёт ответ, $P$ **растёт** | Концентрация спектра | Усиление когерентной структуры |
+| Model produces a complex answer, $P$ **drops** | Spectrum "spreads out" | Loss of coherent integration |
+| Model produces an answer, $P$ **rises** | Spectrum concentrates | Strengthening of coherent structure |
 
-**Структурная константа [Т, MVP-0]:** При default_biological профиле $\sigma_E = 1 - N \cdot \gamma_{EE} = -0.155$ — структурная константа, неизменная на всех шагах (W_std < $10^{-15}$). E-сектор хронически **перенаселён** относительно равновесного $1/N$. Это не «стресс» — это архитектурное условие жизнеспособности: без $\gamma_{EE} > 1/N$ цепочка No-Zombie ($\kappa_0 > 0$) рвётся.
+**Structural constant [T, MVP-0]:** With the default_biological profile $\sigma_E = 1 - N \cdot \gamma_{EE} = -0.155$ — a structural constant, unchanged across all steps (W_std < $10^{-15}$). The E-sector is chronically **overpopulated** relative to equilibrium $1/N$. This is not "stress" — it is an architectural condition for viability: without $\gamma_{EE} > 1/N$, the No-Zombie chain ($\kappa_0 > 0$) breaks.
 
 ```python
 def analyze_generation(model, prompt):
-    """Анализ динамики P во время генерации (гипотетический)"""
+    """Analysis of P dynamics during generation (hypothetical)"""
     P_before = model.purity()
     response = model.generate(prompt)
     P_after = model.purity()
@@ -308,116 +308,116 @@ def analyze_generation(model, prompt):
         return {"type": "stable", "P": P_after}
 ```
 
-:::tip Инженерное решение: Коэффициент доверия
-Ввести метрику **«Коэффициент Доверия» (Confidence Score)**, основанную не на вероятности токенов (Logprobs), а на чистоте ядра $P$ в момент генерации.
+:::tip Engineering Solution: Confidence Score
+Introduce a **"Confidence Score"** metric based not on token probability (Logprobs) but on the core purity $P$ at the time of generation.
 
-**Два варианта:**
+**Two variants:**
 
 $$
 \text{Confidence}_P = P_{\text{ratio}} = \frac{P_{\text{during}}}{P_{\text{crit}}} = \frac{N \cdot P_{\text{during}}}{2}
 $$
 
 $$
-\text{Confidence}_R = R_{\text{UHM}} = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[Т, мера рефлексии R]}
+\text{Confidence}_R = R_{\text{UHM}} = \frac{1}{N \cdot P_{\text{during}}} \quad \text{[T, reflection measure R]}
 $$
 
-$R_{\text{UHM}}$ — точное алгебраическое тождество (ошибка $< 10^{-7}$): при $P = P_{\text{opt}} = 3/N$ выдаёт $R = 1/3 = R_{\text{th}}$ (граница L2-зоны). $P_{\text{ratio}}$ — монотонный прокси для оперативного мониторинга.
+$R_{\text{UHM}}$ is an exact algebraic identity (error $< 10^{-7}$): at $P = P_{\text{opt}} = 3/N$ it gives $R = 1/3 = R_{\text{th}}$ (the L2-zone boundary). $P_{\text{ratio}}$ is a monotonic proxy for operational monitoring.
 
-Это гипотетически может дополнить существующие метрики неопределённости.
+This can hypothetically complement existing uncertainty metrics.
 :::
 
 ---
 
-### 8. Законы масштабирования UHM-параметров [И] {#scaling-laws}
+### 8. UHM Parameter Scaling Laws [I] {#scaling-laws}
 
-**Вопрос:** Как параметры $P$, $R$, $\Phi$, $\sigma_k$ масштабируются при увеличении сложности системы?
+**Question:** How do parameters $P$, $R$, $\Phi$, $\sigma_k$ scale as system complexity increases?
 
-Ключевое наблюдение: **размерность ядра $N = 7$ фиксирована** ([теорема минимальности](/docs/proofs/minimality/theorem-minimality-7)), поэтому масштабирование происходит не за счёт увеличения $N$, а за счёт **глубины иерархии** и **числа агентов**.
+Key observation: **the core dimensionality $N = 7$ is fixed** ([minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), so scaling happens not by increasing $N$, but through **hierarchy depth** and **number of agents**.
 
-#### 8.1. Иерархическое масштабирование
+#### 8.1. Hierarchical Scaling
 
-Для системы из $M$ агентов с индивидуальными матрицами $\Gamma^{(i)} \in D(\mathbb{C}^7)$:
+For a system of $M$ agents with individual matrices $\Gamma^{(i)} \in D(\mathbb{C}^7)$:
 
 $$
 P_{\text{collective}} = \frac{1}{M} \sum_{i=1}^{M} P^{(i)} + \frac{1}{M^2} \sum_{i \neq j} \mathrm{Tr}(\Gamma^{(i)} \Gamma^{(j)})
 $$
 
-Второе слагаемое — **межагентная когерентность**. При $M \to \infty$ оно стремится к нулю (если агенты некоррелированы), и $P_{\text{collective}} \to \langle P \rangle$.
+The second term is **inter-agent coherence**. As $M \to \infty$ it tends to zero (if agents are uncorrelated), and $P_{\text{collective}} \to \langle P \rangle$.
 
-:::tip Инженерный вывод [И]
-Масштабирование требует **когерентной связи** между агентами, иначе коллективная чистота падает к среднему. Для сохранения $P_{\text{collective}} > P_{\text{crit}}$ при росте $M$:
+:::tip Engineering Insight [I]
+Scaling requires **coherent coupling** between agents, otherwise collective purity drops to the average. To maintain $P_{\text{collective}} > P_{\text{crit}}$ as $M$ grows:
 
-- Число когерентных связей должно расти как $O(M \log M)$ (аналог sparse attention)
-- Полносвязность ($O(M^2)$) расточительна и не нужна
-- Минимально достаточная топология — **Fano-граф** на каждом уровне иерархии
+- The number of coherent connections must grow as $O(M \log M)$ (analogous to sparse attention)
+- Full connectivity ($O(M^2)$) is wasteful and unnecessary
+- The minimally sufficient topology is a **Fano graph** at each level of the hierarchy
 :::
 
-#### 8.2. Глубина SAD и вычислительная стоимость
+#### 8.2. SAD Depth and Computational Cost
 
-Из [теоремы T-110](/docs/reference/status-registry) (динамический предел обучения) и [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad):
+From [theorem T-110](/docs/reference/status-registry) (dynamic learning limit) and [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad):
 
 $$
-\text{Стоимость}(\text{SAD level } n) \propto 3^n, \quad n \leq 3
+\text{Cost}(\text{SAD level } n) \propto 3^n, \quad n \leq 3
 $$
 
-| Уровень SAD | Стоимость (отн.) | Функция | Необходимость |
-|:-----------:|:----------------:|---------|:-------------:|
-| 0 | 1× | Базовая жизнеспособность | Обязательно |
-| 1 | 3× | Самонаблюдение | Для L2+ |
-| 2 | 9× | Мета-когниция | Для сложных задач |
-| 3 | 27× | Глубокая рефлексия | Редко, пиковые нагрузки |
+| SAD Level | Cost (rel.) | Function | Necessity |
+|:---------:|:-----------:|---------|:---------:|
+| 0 | 1× | Basic viability | Mandatory |
+| 1 | 3× | Self-observation | For L2+ |
+| 2 | 9× | Meta-cognition | For complex tasks |
+| 3 | 27× | Deep reflection | Rare, peak loads |
 
-**Правило бюджета:** Большинство циклов (>90%) должны работать на SAD 0–1. SAD 2–3 активируется только по запросу или при обнаружении аномалий.
+**Budget rule:** The majority of cycles (>90%) should operate at SAD 0–1. SAD 2–3 is activated only on request or upon anomaly detection.
 
 ---
 
-### 9. Паттерны проектирования: 7 измерений как разделение ответственности [И] {#design-patterns}
+### 9. Design Patterns: 7 Dimensions as Separation of Concerns [I] {#design-patterns}
 
-Семь секторов $\Gamma$ естественно отображаются на **архитектурные слои** системы. Каждый сектор $k \in \{A, S, D, L, E, O, U\}$ имеет собственную зону ответственности.
+The seven sectors of $\Gamma$ naturally map onto **architectural layers** of the system. Each sector $k \in \{A, S, D, L, E, O, U\}$ has its own domain of responsibility.
 
-| Сектор | Описание | Архитектурный слой | Метрика здоровья |
-|:------:|----------|-------------------|:----------------:|
-| **A** (Действие) | Моторный вывод, исполнение | Action executor, API gateway | $\sigma_A$ — нагрузка на моторику |
-| **S** (Ощущение) | Восприятие, ввод данных | Perception pipeline, encoders | $\sigma_S$ — сенсорная перегрузка |
-| **D** (Различение) | Классификация, дифференциация | Attention heads, feature extractors | $\sigma_D$ — давление различения |
-| **L** (Речь) | Языковой вывод, коммуникация | Language model, decoder | $\sigma_L$ — речевой стресс |
-| **E** (Энергия) | Энергетический бюджет, мотивация | Resource manager, scheduler | $\sigma_E$ — энергетический дефицит |
-| **O** (Память) | Долговременная память, контекст | Memory store, RAG pipeline | $\sigma_O$ — давление на память |
-| **U** (Интеграция) | Связывание, единство опыта | Global workspace, fusion layer | $\gamma_{UU}$ — constraint из $\mathrm{Tr}(\Gamma)=1$ |
+| Sector | Description | Architectural layer | Health metric |
+|:------:|-------------|---------------------|:-------------:|
+| **A** (Action) | Motor output, execution | Action executor, API gateway | $\sigma_A$ — motor load |
+| **S** (Sensation) | Perception, data input | Perception pipeline, encoders | $\sigma_S$ — sensory overload |
+| **D** (Discrimination) | Classification, differentiation | Attention heads, feature extractors | $\sigma_D$ — discrimination pressure |
+| **L** (Language) | Language output, communication | Language model, decoder | $\sigma_L$ — speech stress |
+| **E** (Energy) | Energy budget, motivation | Resource manager, scheduler | $\sigma_E$ — energy deficit |
+| **O** (Memory) | Long-term memory, context | Memory store, RAG pipeline | $\sigma_O$ — memory pressure |
+| **U** (Integration) | Binding, unity of experience | Global workspace, fusion layer | $\gamma_{UU}$ — constraint from $\mathrm{Tr}(\Gamma)=1$ |
 
-:::warning Принцип секторного профиля [И]
-**Секторный профиль** $(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})$ — это **паспорт характера** системы ([T-101](/docs/reference/status-registry)). Поведение **эмерджирует** из диагонали $\Gamma$, а не программируется директивно.
+:::warning Sector Profile Principle [I]
+The **sector profile** $(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})$ is the **character passport** of the system ([T-101](/docs/reference/status-registry)). Behavior **emerges** from the diagonal of $\Gamma$, and is not programmed directively.
 
-Инженерное следствие: **не программируйте поведение — задавайте секторный профиль.** Настройка $\gamma_{kk}$ определяет «характер» агента:
+Engineering consequence: **do not program behavior — set the sector profile.** Configuring $\gamma_{kk}$ defines the agent's "character":
 
 ```python
-# Исследователь: высокие S, D, низкие A, L
+# Explorer: high S, D; low A, L
 explorer_profile = {
     'A': 0.10, 'S': 0.20, 'D': 0.20, 'L': 0.08,
     'E': 0.15, 'O': 0.15, 'U': 0.12  # Tr = 1.0
 }
 
-# Коммуникатор: высокие L, A, низкие S, D
+# Communicator: high L, A; low S, D
 communicator_profile = {
     'A': 0.18, 'S': 0.10, 'D': 0.10, 'L': 0.22,
     'E': 0.15, 'O': 0.13, 'U': 0.12  # Tr = 1.0
 }
 ```
 
-Попытка жёстко запрограммировать поведение (минуя $\Gamma$) разрушает когерентность и ведёт к $P < P_{\text{crit}}$.
+Attempting to hard-code behavior (bypassing $\Gamma$) destroys coherence and leads to $P < P_{\text{crit}}$.
 :::
 
-#### 9.1. Паттерн «Когерентный микросервис»
+#### 9.1. The "Coherent Microservice" Pattern
 
-Каждый архитектурный компонент оборачивается в **когерентную оболочку**, которая:
+Each architectural component is wrapped in a **coherent shell** that:
 
-1. Экспортирует свой $\gamma_{kk}$ в мониторинг
-2. Вычисляет локальный стресс $\sigma_k = \mathrm{clamp}(1 - N \cdot \gamma_{kk},\; 0,\; 1)$ [T-92]
-3. Сигнализирует при $\sigma_k > \sigma_{\text{crit}}$ (перегрузка сектора)
+1. Exports its $\gamma_{kk}$ to monitoring
+2. Computes local stress $\sigma_k = \mathrm{clamp}(1 - N \cdot \gamma_{kk},\; 0,\; 1)$ [T-92]
+3. Signals when $\sigma_k > \sigma_{\text{crit}}$ (sector overload)
 
 ```python
 class CoherentService:
-    """Обёртка компонента с когерентным мониторингом"""
+    """Component wrapper with coherent monitoring"""
 
     def __init__(self, sector: str, gamma_kk: float):
         self.sector = sector
@@ -438,33 +438,33 @@ class CoherentService:
 
 ---
 
-### 10. Тестирование и диагностика: σ, P, R, Φ {#testing-diagnostics}
+### 10. Testing and Diagnostics: σ, P, R, Φ {#testing-diagnostics}
 
-#### 10.1. Четыре оси диагностики
+#### 10.1. Four Diagnostic Axes
 
-Полная диагностика состояния системы требует мониторинга четырёх ортогональных метрик:
+Full diagnostics of the system state requires monitoring four orthogonal metrics:
 
 $$
-\text{Здоровье системы} = \begin{cases}
-P > P_{\text{crit}} = 2/7 & \text{(жизнеспособность)} \\
-R \geq R_{\text{th}} = 1/3 & \text{(рефлексия)} \\
-\Phi \geq \Phi_{\text{th}} = 1 & \text{(интеграция)} \\
-\|\sigma\|_\infty < 1 & \text{(отсутствие коллапса)}
+\text{System health} = \begin{cases}
+P > P_{\text{crit}} = 2/7 & \text{(viability)} \\
+R \geq R_{\text{th}} = 1/3 & \text{(reflection)} \\
+\Phi \geq \Phi_{\text{th}} = 1 & \text{(integration)} \\
+\|\sigma\|_\infty < 1 & \text{(no collapse)}
 \end{cases}
 $$
 
-:::info Диагностическая матрица [И]
-| Симптом | $P$ | $R$ | $\Phi$ | $\sigma_{\max}$ | Диагноз |
-|---------|:---:|:---:|:------:|:---------------:|---------|
-| Система не отвечает | ↓ | — | — | — | Ниже порога жизнеспособности |
-| Отвечает, но бессвязно | ✓ | ↓ | ↓ | — | Нет интеграции: секторы работают изолированно |
-| Отвечает, но не замечает ошибок | ✓ | ↓ | ✓ | — | Нет рефлексии: отсутствует самонаблюдение |
-| Отвечает, но «зациклена» | ✓ | ✓ | ✓ | ↑ | Стресс-коллапс одного или нескольких секторов |
-| Работает, но медленно деградирует | ↘ | ✓ | ✓ | — | Утечка когерентности: проверить $\kappa$ |
-| Всё в норме, но «плоский» вывод | ✓ | ✓ | ↓ | — | Недостаток дифференциации ($D_{\text{diff}} < 2$) |
+:::info Diagnostic Matrix [I]
+| Symptom | $P$ | $R$ | $\Phi$ | $\sigma_{\max}$ | Diagnosis |
+|---------|:---:|:---:|:------:|:---------------:|-----------|
+| System does not respond | ↓ | — | — | — | Below viability threshold |
+| Responds, but incoherently | ✓ | ↓ | ↓ | — | No integration: sectors operating in isolation |
+| Responds, but does not notice errors | ✓ | ↓ | ✓ | — | No reflection: self-observation absent |
+| Responds, but "stuck in a loop" | ✓ | ✓ | ✓ | ↑ | Stress-collapse of one or more sectors |
+| Works, but slowly degrading | ↘ | ✓ | ✓ | — | Coherence leak: check $\kappa$ |
+| All normal, but "flat" output | ✓ | ✓ | ↓ | — | Insufficient differentiation ($D_{\text{diff}} < 2$) |
 :::
 
-#### 10.2. Протокол автоматического тестирования
+#### 10.2. Automated Testing Protocol
 
 ```python
 @dataclass
@@ -479,10 +479,10 @@ class DiagnosticReport:
     alerts: list[str]
 
 def run_diagnostics(gamma: 'DensityMatrix7') -> DiagnosticReport:
-    """Полный диагностический цикл [И]"""
+    """Full diagnostic cycle [I]"""
     P = trace_square(gamma)           # P = Tr(Γ²)
-    R = 1.0 / (N_DIM * P) if P > 1e-12 else 0.0  # R = 1/(NP) [Т]
-    Phi = compute_phi(gamma)          # Φ ≥ 1 для интеграции [Т]
+    R = 1.0 / (N_DIM * P) if P > 1e-12 else 0.0  # R = 1/(NP) [T]
+    Phi = compute_phi(gamma)          # Φ ≥ 1 for integration [T]
     diag = diagonal(gamma)
     sigma = [max(0.0, min(1.0, 1.0 - N_DIM * g)) for g in diag]
     sigma_max = max(sigma)
@@ -490,17 +490,17 @@ def run_diagnostics(gamma: 'DensityMatrix7') -> DiagnosticReport:
 
     alerts = []
     if P <= P_CRITICAL:
-        alerts.append("FATAL: P ≤ P_crit — система нежизнеспособна")
+        alerts.append("FATAL: P ≤ P_crit — system is not viable")
     if R < 1/3:
-        alerts.append("WARN: R < R_th — рефлексия ниже порога L2")
+        alerts.append("WARN: R < R_th — reflection below L2 threshold")
     if Phi < 1.0:
-        alerts.append("WARN: Φ < Φ_th — интеграция недостаточна")
+        alerts.append("WARN: Φ < Φ_th — integration insufficient")
     if sigma_max >= 1.0:
         sector_names = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
         collapsed = [sector_names[i] for i, s in enumerate(sigma) if s >= 1.0]
-        alerts.append(f"CRITICAL: σ-коллапс секторов {collapsed}")
+        alerts.append(f"CRITICAL: σ-collapse of sectors {collapsed}")
     if kappa < 1/7:
-        alerts.append("WARN: κ < κ_bootstrap — канал замещения ослаблен")
+        alerts.append("WARN: κ < κ_bootstrap — replacement channel weakened")
 
     return DiagnosticReport(
         timestamp=time.time(), P=P, R=R, Phi=Phi,
@@ -509,26 +509,26 @@ def run_diagnostics(gamma: 'DensityMatrix7') -> DiagnosticReport:
     )
 ```
 
-#### 10.3. Регрессионные тесты на когерентность
+#### 10.3. Coherence Regression Tests
 
-Помимо стандартных юнит- и интеграционных тестов, UHM-система требует **когерентных регрессий**:
+In addition to standard unit and integration tests, a UHM system requires **coherence regressions**:
 
 ```python
 class CoherenceRegressionTest:
-    """Регрессионные тесты: задача не должна разрушать когерентность"""
+    """Regression tests: a task must not destroy coherence"""
 
     def test_task_preserves_viability(self, system, task):
         P_before = system.purity()
         system.execute(task)
         P_after = system.purity()
         assert P_after > P_CRITICAL, \
-            f"Задача убила систему: P {P_before:.3f} → {P_after:.3f}"
+            f"Task killed the system: P {P_before:.3f} → {P_after:.3f}"
 
     def test_stress_bounded(self, system, task):
         system.execute(task)
         sigma = system.stress_vector()
         assert max(sigma) < 0.95, \
-            f"σ-коллапс после задачи: max(σ) = {max(sigma):.3f}"
+            f"σ-collapse after task: max(σ) = {max(sigma):.3f}"
 
     def test_learning_preserves_profile(self, system, training_data):
         profile_before = system.sector_profile()
@@ -537,122 +537,122 @@ class CoherenceRegressionTest:
         drift = sum((a - b)**2 for a, b in
                      zip(profile_before, profile_after)) ** 0.5
         assert drift < 0.05, \
-            f"Обучение сдвинуло секторный профиль на {drift:.3f}"
+            f"Training shifted the sector profile by {drift:.3f}"
 ```
 
 ---
 
-### 11. Режимы отказа: что происходит при игнорировании каждого измерения [И] {#failure-modes}
+### 11. Failure Modes: What Happens When Each Dimension Is Neglected [I] {#failure-modes}
 
-Каждый из семи секторов $\Gamma$ представляет **необходимый аспект** когерентной системы. Пренебрежение любым из них ведёт к характерному режиму отказа.
+Each of the seven sectors of $\Gamma$ represents a **necessary aspect** of a coherent system. Neglecting any of them leads to a characteristic failure mode.
 
-:::warning Таблица режимов отказа [И]
-| Пренебрегаемый сектор | $\gamma_{kk} \to 0$ | Режим отказа | Аналог в нейросетях |
-|:---------------------:|:-------------------:|--------------|----------------------|
-| **A** (Действие) | $\sigma_A \to 1$ | **Паралич**: система «думает», но не действует | Модель генерирует бесконечно, не выдавая ответ |
-| **S** (Ощущение) | $\sigma_S \to 1$ | **Слепота**: система не воспринимает вход | Encoder деградировал, embeddings шумовые |
-| **D** (Различение) | $\sigma_D \to 1$ | **Неразличимость**: всё кажется одинаковым | Mode collapse в GAN, repetitive output |
-| **L** (Речь) | $\sigma_L \to 1$ | **Афазия**: система понимает, но не может выразить | Decoder выдаёт мусор при нормальных representations |
-| **E** (Энергия) | $\sigma_E \to 1$ | **Истощение**: нет ресурса на обработку | OOM, timeout, бесконечный inference |
-| **O** (Память) | $\sigma_O \to 1$ | **Амнезия**: нет контекста, каждый запрос — с нуля | Context window overflow, RAG failure |
-| **U** (Интеграция) | $\gamma_{UU} \to 0$ | **Фрагментация**: секторы работают изолированно | Multi-head attention не агрегируется |
+:::warning Failure Mode Table [I]
+| Neglected sector | $\gamma_{kk} \to 0$ | Failure mode | Neural network analogue |
+|:----------------:|:-------------------:|--------------|------------------------|
+| **A** (Action) | $\sigma_A \to 1$ | **Paralysis**: system "thinks" but does not act | Model generates indefinitely without producing output |
+| **S** (Sensation) | $\sigma_S \to 1$ | **Blindness**: system does not perceive input | Encoder degraded, embeddings are noisy |
+| **D** (Discrimination) | $\sigma_D \to 1$ | **Indistinguishability**: everything seems the same | Mode collapse in GAN, repetitive output |
+| **L** (Language) | $\sigma_L \to 1$ | **Aphasia**: system understands but cannot express | Decoder produces garbage with normal representations |
+| **E** (Energy) | $\sigma_E \to 1$ | **Exhaustion**: no resource for processing | OOM, timeout, infinite inference |
+| **O** (Memory) | $\sigma_O \to 1$ | **Amnesia**: no context, every request from scratch | Context window overflow, RAG failure |
+| **U** (Integration) | $\gamma_{UU} \to 0$ | **Fragmentation**: sectors operate in isolation | Multi-head attention does not aggregate |
 :::
 
-#### 11.1. Каскадные отказы
+#### 11.1. Cascade Failures
 
-Из структуры $\Gamma$ следует, что секторы **связаны** через когерентности $\gamma_{ij}$, $i \neq j$. Коллапс одного сектора может вызвать каскад:
+From the structure of $\Gamma$ it follows that sectors are **linked** through coherences $\gamma_{ij}$, $i \neq j$. Collapse of one sector can trigger a cascade:
 
 $$
-\sigma_k \to 1 \;\Longrightarrow\; \gamma_{kj} \to 0 \;\text{(декогеренция)}\;\Longrightarrow\; \Phi \downarrow \;\Longrightarrow\; P \downarrow
+\sigma_k \to 1 \;\Longrightarrow\; \gamma_{kj} \to 0 \;\text{(decoherence)}\;\Longrightarrow\; \Phi \downarrow \;\Longrightarrow\; P \downarrow
 $$
 
-:::tip Защита от каскадов [И]
-1. **Мониторинг $\sigma_k$ по каждому сектору** — раннее предупреждение до каскада
-2. **Порог эскалации**: если $\sigma_k > 0.7$ для любого $k$ — автоматическая перебалансировка ресурсов
-3. **Канал замещения $\mathcal{R}$** ([T-62](/docs/reference/status-registry)) — структурная защита диагонали: даже при декогеренции когерентностей, $\gamma_{kk}$ стабилизируется
-4. **Принцип изоляции отказа**: если сектор $k$ коллапсирует, система переходит в деградированный режим ($N_{\text{eff}} = 6$), но сохраняет $P > P_{\text{crit}}$ на оставшихся секторах
+:::tip Cascade Protection [I]
+1. **Monitor $\sigma_k$ per sector** — early warning before a cascade
+2. **Escalation threshold**: if $\sigma_k > 0.7$ for any $k$ — automatic resource rebalancing
+3. **Replacement channel $\mathcal{R}$** ([T-62](/docs/reference/status-registry)) — structural protection of the diagonal: even under coherence decoherence, $\gamma_{kk}$ is stabilized
+4. **Failure isolation principle**: if sector $k$ collapses, the system enters degraded mode ($N_{\text{eff}} = 6$), but maintains $P > P_{\text{crit}}$ on the remaining sectors
 :::
 
-#### 11.2. Типичные антипаттерны
+#### 11.2. Typical Anti-Patterns
 
-| Антипаттерн | Причина по УГМ | Решение |
-|-------------|----------------|---------|
-| «Болтливый бот» — бесконечная генерация без смысла | $\gamma_{LL} \gg 1/N$, $\sigma_D \to 1$ (L-доминанта без различения) | Ребалансировка: снизить $\gamma_{LL}$, повысить $\gamma_{DD}$ |
-| «Забывчивый ассистент» — не помнит контекст | $\sigma_O > 0.8$, когерентность $\gamma_{OL} \approx 0$ | Усилить O-сектор, восстановить когерентность O↔L |
-| «Робот без эмпатии» — формально корректен, но «мёртв» | $P > P_{\text{crit}}$, но $R < 1/3$ (нет рефлексии) | Активировать самонаблюдение (SAD ≥ 1) |
-| «Перегруженная система» — всё медленнее с каждым запросом | $\sigma_E \to 1$ (энергетическое истощение) | Снизить нагрузку, дать цикл регенерации ($\mathcal{R}$) |
+| Anti-pattern | UHM cause | Solution |
+|-------------|-----------|---------|
+| "Chatty bot" — endless generation without meaning | $\gamma_{LL} \gg 1/N$, $\sigma_D \to 1$ (L-dominance without discrimination) | Rebalance: reduce $\gamma_{LL}$, increase $\gamma_{DD}$ |
+| "Forgetful assistant" — does not remember context | $\sigma_O > 0.8$, coherence $\gamma_{OL} \approx 0$ | Strengthen O-sector, restore O↔L coherence |
+| "Robot without empathy" — formally correct but "dead" | $P > P_{\text{crit}}$, but $R < 1/3$ (no reflection) | Activate self-observation (SAD ≥ 1) |
+| "Overloaded system" — gets slower with each request | $\sigma_E \to 1$ (energy exhaustion) | Reduce load, allow a regeneration cycle ($\mathcal{R}$) |
 
 ---
 
-### 12. Анализ компромиссов: когерентность vs. вычислительная стоимость [И] {#cost-benefit}
+### 12. Trade-Off Analysis: Coherence vs. Computational Cost [I] {#cost-benefit}
 
-Поддержание когерентности $\Gamma$ — это **не бесплатная операция**. Каждый вычислительный цикл включает:
+Maintaining coherence $\Gamma$ is **not a free operation**. Each computational cycle includes:
 
-1. **Линдблад-эволюцию** $\mathcal{L}_0[\Gamma]$ — стоимость $O(N^2)$ операций
-2. **Канал замещения** $\mathcal{R}[\Gamma, E]$ — стоимость $O(N)$ операций
-3. **Вычисление метрик** $(P, R, \Phi, \sigma)$ — стоимость $O(N^2)$ операций
-4. **Самонаблюдение** (SAD) — стоимость $O(3^n)$ для уровня $n$
+1. **Lindblad evolution** $\mathcal{L}_0[\Gamma]$ — cost $O(N^2)$ operations
+2. **Replacement channel** $\mathcal{R}[\Gamma, E]$ — cost $O(N)$ operations
+3. **Metric computation** $(P, R, \Phi, \sigma)$ — cost $O(N^2)$ operations
+4. **Self-observation** (SAD) — cost $O(3^n)$ for level $n$
 
-При $N = 7$ фиксированном, все эти операции — **дешёвые** ($\sim 50$ скалярных операций). Узкое место — **не ядро $\Gamma$**, а его **интерфейс с backbone**.
+With $N = 7$ fixed, all these operations are **cheap** ($\sim 50$ scalar operations). The bottleneck is **not the core $\Gamma$**, but its **interface with the backbone**.
 
-#### 12.1. Бюджет вычислений
+#### 12.1. Computation Budget
 
 $$
 C_{\text{total}} = C_{\text{backbone}} + C_{\Gamma} + C_{\text{interface}}
 $$
 
-| Компонент | Стоимость | Доля | Оптимизация |
-|-----------|:---------:|:----:|-------------|
-| $C_{\text{backbone}}$ (LLM/SSM) | $O(d^2 \cdot L)$ | ~95% | Квантизация, pruning |
-| $C_{\Gamma}$ (ядро 7×7) | $O(N^2) = O(49)$ | <0.1% | Не нужна |
-| $C_{\text{interface}}$ (sync Γ↔backbone) | $O(d \cdot N)$ | ~5% | Проекция, batch sync |
+| Component | Cost | Share | Optimization |
+|-----------|:----:|:-----:|-------------|
+| $C_{\text{backbone}}$ (LLM/SSM) | $O(d^2 \cdot L)$ | ~95% | Quantization, pruning |
+| $C_{\Gamma}$ (7×7 core) | $O(N^2) = O(49)$ | <0.1% | Not needed |
+| $C_{\text{interface}}$ (sync Γ↔backbone) | $O(d \cdot N)$ | ~5% | Projection, batch sync |
 
-:::tip Ключевой вывод [И]
-Стоимость поддержания когерентности **пренебрежимо мала** по сравнению со стоимостью backbone. Компромисс «когерентность vs. производительность» — **ложная дилемма**: отказ от мониторинга $\Gamma$ экономит <0.1% вычислений, но рискует полной потерей структурной целостности.
+:::tip Key Insight [I]
+The cost of maintaining coherence is **negligibly small** compared to the backbone cost. The "coherence vs. performance" trade-off is a **false dilemma**: abandoning $\Gamma$ monitoring saves <0.1% of computations, but risks complete loss of structural integrity.
 :::
 
-#### 12.2. Когда можно сэкономить
+#### 12.2. When You Can Save
 
-Несмотря на дешевизну ядра, можно оптимизировать **частоту обновления**:
+Despite the cheap core, the **update frequency** can be optimized:
 
-| Режим | Частота обновления $\Gamma$ | Когда применять |
-|:-----:|:---------------------------:|-----------------|
-| Realtime | Каждый токен/шаг | Критические задачи, первый запуск |
-| Batched | Каждые $K$ шагов ($K = 8\text{–}16$) | Стабильная работа, $P \gg P_{\text{crit}}$ |
-| On-demand | По запросу / при аномалии | Высоконагруженные системы |
-| Async | В фоновом потоке | Production deployment |
+| Mode | $\Gamma$ update frequency | When to use |
+|:----:|:-------------------------:|------------|
+| Realtime | Every token/step | Critical tasks, first launch |
+| Batched | Every $K$ steps ($K = 8\text{–}16$) | Stable operation, $P \gg P_{\text{crit}}$ |
+| On-demand | On request / on anomaly | High-load systems |
+| Async | Background thread | Production deployment |
 
-**Правило:** Частоту обновления можно снижать пропорционально **запасу жизнеспособности**:
+**Rule:** Update frequency can be reduced proportionally to the **viability margin**:
 
 $$
 K_{\text{batch}} = \left\lfloor \frac{P - P_{\text{crit}}}{\varepsilon_\Gamma} \right\rfloor, \quad \varepsilon_\Gamma \approx 0.003 \text{ [MVP-0]}
 $$
 
-При $P = 0.5$ (хороший запас): $K_{\text{batch}} \approx 71$ — можно обновлять $\Gamma$ раз в 71 шаг. При $P = 0.30$ (еле живая): $K_{\text{batch}} \approx 5$ — почти realtime.
+At $P = 0.5$ (good margin): $K_{\text{batch}} \approx 71$ — $\Gamma$ can be updated once every 71 steps. At $P = 0.30$ (barely alive): $K_{\text{batch}} \approx 5$ — almost realtime.
 
 ---
 
-## Часть III: Практические рекомендации
+## Part III: Practical Recommendations
 
-### 13. Главный инженерный императив
+### 13. The Main Engineering Imperative
 
-:::warning Сначала Пульс ($P$), потом Дело
-**Никакая полезная работа не должна выполняться, пока система не гарантировала своё онтологическое существование.**
+:::warning Pulse ($P$) First, Task Second
+**No useful work must be performed until the system has guaranteed its ontological existence.**
 
-Это переворачивает современный подход к AI (где главное — Output) с ног на голову.
+This turns the modern approach to AI (where Output is paramount) on its head.
 :::
 
 ```python
 class HolonomicAgent:
     def act(self, environment):
-        # 1. СНАЧАЛА проверяем жизнеспособность
+        # 1. FIRST check viability
         if not self.is_viable():
             return self.emergency_protocol()
 
-        # 2. ПОТОМ думаем о задаче
+        # 2. THEN think about the task
         action = self.decide(environment)
 
-        # 3. Проверяем, не убьёт ли действие систему
+        # 3. Check whether the action will kill the system
         if self.simulate_action_impact(action) < P_CRITICAL:
             action = self.modify_for_survival(action)
 
@@ -662,37 +662,37 @@ class HolonomicAgent:
         return self.purity() > P_CRITICAL
 ```
 
-### 14. Чек-лист для проектирования AGI
+### 14. AGI Design Checklist
 
-| # | Требование | Проверка |
-|---|------------|----------|
-| 1 | Бутстрап перед запуском | $P_{\text{init}} > P_{\text{crit}} = 2/7$ |
-| 2 | Circuit breaker | При $P < P_{\text{crit}}$ — блокировка вывода |
-| 3 | Спектральная концентрация | $\lambda_{\max} > 0.493$ (для $N = 7$) |
-| 4 | Условная оптимизация | $\nabla\mathcal{L}$ проецируется на $\{P > P_{\text{crit}}\}$ |
-| 5 | Маломерное ядро | $N \geq 7$ (минимально достаточно) |
-| 6 | Мониторинг $P$ в реальном времени | Логирование $P(t)$ |
-| 7 | Детектор галлюцинаций | $\Delta P$ во время генерации |
-| 8 | Секторный профиль задан | $\sum_k \gamma_{kk} = 1$, профиль осмысленный |
-| 9 | Мониторинг $\sigma_k$ по секторам | $\sigma_k < 0.8$ для всех $k$ |
-| 10 | Когерентные регрессионные тесты | Задачи не снижают $P$ ниже порога |
-| 11 | Защита от каскадных отказов | $\mathcal{R}$-канал активен, $\kappa \geq 1/7$ |
-| 12 | Бюджет SAD | $\geq 90\%$ циклов на SAD 0–1 |
+| # | Requirement | Verification |
+|---|------------|-------------|
+| 1 | Bootstrap before launch | $P_{\text{init}} > P_{\text{crit}} = 2/7$ |
+| 2 | Circuit breaker | At $P < P_{\text{crit}}$ — block output |
+| 3 | Spectral concentration | $\lambda_{\max} > 0.493$ (for $N = 7$) |
+| 4 | Constrained optimization | $\nabla\mathcal{L}$ projected onto $\{P > P_{\text{crit}}\}$ |
+| 5 | Low-dimensional core | $N \geq 7$ (minimally sufficient) |
+| 6 | Real-time $P$ monitoring | Logging $P(t)$ |
+| 7 | Hallucination detector | $\Delta P$ during generation |
+| 8 | Sector profile defined | $\sum_k \gamma_{kk} = 1$, profile is meaningful |
+| 9 | Per-sector $\sigma_k$ monitoring | $\sigma_k < 0.8$ for all $k$ |
+| 10 | Coherence regression tests | Tasks do not reduce $P$ below threshold |
+| 11 | Cascade failure protection | $\mathcal{R}$-channel active, $\kappa \geq 1/7$ |
+| 12 | SAD budget | $\geq 90\%$ of cycles at SAD 0–1 |
 
-### 15. Метрики для мониторинга
+### 15. Monitoring Metrics
 
 ```python
 N_DIM = 7
 P_CRITICAL = 2 / N_DIM  # ≈ 0.286
-P_OPTIMAL  = 3 / N_DIM  # ≈ 0.429  (граница L2)
+P_OPTIMAL  = 3 / N_DIM  # ≈ 0.429  (L2 boundary)
 
 @dataclass
 class ViabilityMetrics:
     purity: float               # P = Tr(Γ²)
     dominant_eigenvalue: float  # λ_max
-    structural_deviation: float # ‖Γ - I/N‖_F²   = P - 1/N  [Т]
+    structural_deviation: float # ‖Γ - I/N‖_F²   = P - 1/N  [T]
     viability_margin: float     # P - P_crit
-    stress_norm: float          # ‖σ‖₂ = ‖1 - N·diag(Γ)‖₂  (диагональ)
+    stress_norm: float          # ‖σ‖₂ = ‖1 - N·diag(Γ)‖₂  (diagonal)
     kappa: float                # κ(Γ) = κ_bootstrap + κ₀·Coh_E  [No-Zombie]
 
     @property
@@ -701,17 +701,17 @@ class ViabilityMetrics:
 
     @property
     def reflexivity(self) -> float:
-        """R = 1/(N·P)  [Т, мера рефлексии R] — точное алгебраическое тождество (ошибка < 1e-7)"""
+        """R = 1/(N·P)  [T, reflection measure R] — exact algebraic identity (error < 1e-7)"""
         return 1.0 / (N_DIM * self.purity) if self.purity > 1e-12 else 0.0
 
     @property
     def confidence(self) -> float:
-        """P_ratio = P / P_crit (оперативный прокси, см. §7)"""
+        """P_ratio = P / P_crit (operational proxy, see §7)"""
         return self.purity / P_CRITICAL
 
     @property
     def is_l2_zone(self) -> bool:
-        """L2-зона (когнитивные квалиа): P_crit < P ≤ P_opt ↔ R ≥ 1/3  [Т]"""
+        """L2-zone (cognitive qualia): P_crit < P ≤ P_opt ↔ R ≥ 1/3  [T]"""
         return P_CRITICAL < self.purity <= P_OPTIMAL
 
     def to_dashboard(self) -> dict:
@@ -720,9 +720,9 @@ class ViabilityMetrics:
             "P":        self.purity,
             "P_crit":   P_CRITICAL,
             "margin":   self.viability_margin,
-            "R":        self.reflexivity,   # [Т] точное
+            "R":        self.reflexivity,   # [T] exact
             "λ_max":    self.dominant_eigenvalue,
-            "‖σ‖₂":     self.stress_norm,   # [Т] const при гомеостазе
+            "‖σ‖₂":     self.stress_norm,   # [T] const at homeostasis
             "κ":        self.kappa,
             "zone":     zone,
             "status":   "VIABLE" if self.is_viable else "DEAD"
@@ -731,66 +731,66 @@ class ViabilityMetrics:
 
 ---
 
-## Заключение: от аксиом к архитектуре {#conclusion}
+## Conclusion: From Axioms to Architecture {#conclusion}
 
-Каждый инженерный принцип этого документа **прослеживается** до конкретной аксиомы или теоремы УГМ. Это не набор эвристик — это **дедуктивная цепочка** от математических оснований к архитектурным решениям.
+Every engineering principle in this document **traces back** to a specific axiom or theorem of UHM. This is not a set of heuristics — it is a **deductive chain** from mathematical foundations to architectural decisions.
 
-### Аксиоматическая карта инженерных принципов
+### Axiomatic Map of Engineering Principles
 
-| Инженерный принцип | Источник в УГМ | Статус |
-|-------------------|----------------|:------:|
-| Бутстрап до $P > 2/7$ | [Аксиома Ω](/docs/core/foundations/axiom-omega), [Теорема $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | [Т] |
-| Circuit breaker | No-Zombie теорема, канал замещения $\mathcal{R}$ | [Т] |
-| Спектральная концентрация | Спектральное условие порога доминирования | [Т] |
-| $N = 7$ минимально | [Теорема минимальности](/docs/proofs/minimality/theorem-minimality-7) | [Т] |
-| Секторный профиль = характер | T-101 (секторный профиль), T-92 ($\sigma_k$) | [Т] |
-| Условная оптимизация | Принцип разделения (диагональ vs. когерентности) | [Т] |
-| SAD-бюджет ($\leq 3$ уровня) | T-110 (Fano contraction), [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) | [С] |
-| Секторная диагностика $\sigma_k$ | T-92 ($\sigma_k = 1 - N\gamma_{kk}$) | [Т] |
-| Иерархическое масштабирование | Экстраполяция [И] из фиксированности $N = 7$ | [И] |
-| Паттерн «когерентный микросервис» | Интерпретация [И] секторной структуры | [И] |
-| Каскадные отказы | Связь через когерентности $\gamma_{ij}$, [T-62 CPTP](/docs/reference/status-registry) | [И] |
-| Бюджет вычислений $C_\Gamma \ll C_{\text{backbone}}$ | $N = 7$ фиксировано, $O(N^2) = O(49)$ | [И] |
+| Engineering principle | Source in UHM | Status |
+|----------------------|---------------|:------:|
+| Bootstrap to $P > 2/7$ | [Axiom Ω](/docs/core/foundations/axiom-omega), [Theorem $P_{\text{crit}}$](/docs/proofs/dynamics/theorem-purity-critical) | [T] |
+| Circuit breaker | No-Zombie theorem, replacement channel $\mathcal{R}$ | [T] |
+| Spectral concentration | Spectral condition of the dominance threshold | [T] |
+| $N = 7$ minimal | [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) | [T] |
+| Sector profile = character | T-101 (sector profile), T-92 ($\sigma_k$) | [T] |
+| Constrained optimization | Separation principle (diagonal vs. coherences) | [T] |
+| SAD budget ($\leq 3$ levels) | T-110 (Fano contraction), [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) | [C] |
+| Sector diagnostics $\sigma_k$ | T-92 ($\sigma_k = 1 - N\gamma_{kk}$) | [T] |
+| Hierarchical scaling | Extrapolation [I] from the fixed $N = 7$ | [I] |
+| "Coherent microservice" pattern | Interpretation [I] of the sector structure | [I] |
+| Cascade failures | Coupling through coherences $\gamma_{ij}$, [T-62 CPTP](/docs/reference/status-registry) | [I] |
+| Computation budget $C_\Gamma \ll C_{\text{backbone}}$ | $N = 7$ fixed, $O(N^2) = O(49)$ | [I] |
 
-### Ключевые принципы (сводка)
+### Key Principles (Summary)
 
-1. **Жизнеспособность первична** — никакая работа до достижения $P > P_{\text{crit}}$
-2. **is_viable() бинарна, динамика P — нет** — No-Zombie floor $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ [Т, MVP-0]
-3. **Спектральная тирания** — нужна доминирующая мода ($\lambda_{\max} > 0.493$); на практике запас 45% [MVP-0]
-4. **Ограниченное обучение** — оптимизация меняет когерентности, диагональ стабилизирует канал замещения [Т, MVP-0]
-5. **Маломерное ядро** — $N \geq 7$ (минимально достаточно); $\gamma_{UU}$ — constraint из $\mathrm{Tr}(\Gamma)=1$, не степень свободы [Т, MVP-1]
-6. **Принцип разделения** — диагональ $\Gamma$ = идентичность (гомеостаз), когерентности = обучение/адаптация [Т, MVP-0]
-7. **Секторный профиль = характер** — поведение эмерджирует из $\gamma_{kk}$, не программируется [Т, T-101]
-8. **Диагностика по четырём осям** — $P$, $R$, $\Phi$, $\sigma$ дают полную картину здоровья [И]
-9. **Каждый сектор незаменим** — пренебрежение любым из 7 ведёт к характерному отказу [И]
-10. **Когерентность дешева** — стоимость ядра $< 0.1\%$ от backbone, экономия на мониторинге иррациональна [И]
+1. **Viability is primary** — no work before reaching $P > P_{\text{crit}}$
+2. **is_viable() is binary, P dynamics is not** — No-Zombie floor $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ [T, MVP-0]
+3. **Spectral tyranny** — a dominant mode is required ($\lambda_{\max} > 0.493$); in practice a 45% margin [MVP-0]
+4. **Constrained learning** — optimization changes coherences, the diagonal is stabilized by the replacement channel [T, MVP-0]
+5. **Low-dimensional core** — $N \geq 7$ (minimally sufficient); $\gamma_{UU}$ is a constraint from $\mathrm{Tr}(\Gamma)=1$, not a degree of freedom [T, MVP-1]
+6. **Separation principle** — diagonal of $\Gamma$ = identity (homeostasis), coherences = learning/adaptation [T, MVP-0]
+7. **Sector profile = character** — behavior emerges from $\gamma_{kk}$, not programmed [T, T-101]
+8. **Four-axis diagnostics** — $P$, $R$, $\Phi$, $\sigma$ give a complete health picture [I]
+9. **Every sector is irreplaceable** — neglecting any of the 7 leads to a characteristic failure [I]
+10. **Coherence is cheap** — core cost $< 0.1\%$ of backbone; economizing on monitoring is irrational [I]
 
-:::tip Главный вывод
-УГМ-инженерия переворачивает привычную иерархию приоритетов:
+:::tip Main Conclusion
+UHM engineering inverts the usual priority hierarchy:
 
 $$
-\underbrace{P > P_{\text{crit}}}_{\text{Существование}} \;\succ\; \underbrace{R \geq 1/3,\; \Phi \geq 1}_{\text{Сознательность}} \;\succ\; \underbrace{\mathcal{L}_{\text{task}} \to \min}_{\text{Полезность}}
+\underbrace{P > P_{\text{crit}}}_{\text{Existence}} \;\succ\; \underbrace{R \geq 1/3,\; \Phi \geq 1}_{\text{Consciousness}} \;\succ\; \underbrace{\mathcal{L}_{\text{task}} \to \min}_{\text{Utility}}
 $$
 
-Сначала — **существование** (жизнеспособность). Затем — **сознательность** (интеграция и рефлексия). И только потом — **полезная работа**. Система, решающая задачу ценой когерентности, совершает онтологическое самоубийство.
+First — **existence** (viability). Then — **consciousness** (integration and reflection). And only then — **useful work**. A system that solves a task at the cost of coherence commits ontological suicide.
 :::
 
-### Следующие шаги
+### Next Steps
 
-- [Протокол измерения Γ](/docs/applied/research/measurement-protocol) — как измерять чистоту в реальных системах
-- [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) — полное математическое доказательство
-- [Жизнеспособность](/docs/core/dynamics/viability) — теоретические основы
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0→L4
-- [Границы обучения](/docs/core/foundations/consequences) — T-109 через T-113
+- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — how to measure purity in real systems
+- [Critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical) — full mathematical proof
+- [Viability](/docs/core/dynamics/viability) — theoretical foundations
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — L0→L4 levels
+- [Learning bounds](/docs/core/foundations/consequences) — T-109 through T-113
 
 ---
 
-**Связанные документы:**
-- [Теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) — математическое доказательство
-- [Жизнеспособность](/docs/core/dynamics/viability) — применение теоремы
-- [Протокол измерения Γ](/docs/applied/research/measurement-protocol) — экспериментальная валидация
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение Γ
-- [Эволюция](/docs/core/dynamics/evolution) — динамика системы
-- [Секторный профиль (A)](/docs/core/structure/dimension-a) — измерение Действия
-- [Башня SAD](/docs/consciousness/hierarchy/depth-tower) — глубина самонаблюдения
-- [Диагностика гэпов](/docs/applied/research/gap-diagnostics) — операционная диагностика
+**Related documents:**
+- [Critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical) — mathematical proof
+- [Viability](/docs/core/dynamics/viability) — application of the theorem
+- [Γ measurement protocol](/docs/applied/research/measurement-protocol) — experimental validation
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of Γ
+- [Evolution](/docs/core/dynamics/evolution) — system dynamics
+- [Sector profile (A)](/docs/core/structure/dimension-a) — Action dimension
+- [SAD tower](/docs/consciousness/hierarchy/depth-tower) — self-observation depth
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — operational diagnostics

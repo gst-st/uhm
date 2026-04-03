@@ -63,7 +63,7 @@ $$
 **Утверждение:** Любая система, описываемая матрицей когерентности $\Gamma$ в расширенном формализме, обладает интериорностью.
 
 :::warning Предусловие: тензорная структура
-Теорема требует **расширенного тензорного формализма** (см. [Два уровня формализации](/docs/core/dynamics/coherence-matrix#два-уровня-формализации)):
+Теорема требует **расширенного тензорного формализма** (см. [Два уровня формализации](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization)):
 $$
 \mathcal{H} = \bigotimes_{i \in \{A,S,D,L,E,O,U\}} \mathcal{H}_i
 $$
@@ -250,7 +250,7 @@ $$
 - $\Theta(x)$ — функция Хевисайда: $\Theta(x) = 1$ если $x > 0$, иначе $0$
 - $R(\Gamma)$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
 - $\Phi(\Gamma)$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $D_{\text{diff}}(\rho_E)$ — [мера дифференциации](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2)
+- $D_{\text{diff}}(\rho_E)$ — [мера дифференциации](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)
 - $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ — пороговые значения
 
 :::note Терминология
@@ -341,7 +341,7 @@ $$
 
 **Обоснование (структурный фазовый переход):**
 
-$\Phi = 1$ — точка перехода от режима диагональной доминации ($P_{\text{diag}} > P_{\text{coh}}$, подсистемы квазинезависимы) к режиму когерентной доминации ($P_{\text{coh}} \geq P_{\text{diag}}$, подсистемы каузально связаны). Это **определение по соглашению**, содержательно мотивированное связью с [замыканием (M,R)-системы](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) и [категорной морфизменной структурой](/docs/proofs/categorical/categorical-formalism#l-унификация).
+$\Phi = 1$ — точка перехода от режима диагональной доминации ($P_{\text{diag}} > P_{\text{coh}}$, подсистемы квазинезависимы) к режиму когерентной доминации ($P_{\text{coh}} \geq P_{\text{diag}}$, подсистемы каузально связаны). Это **определение по соглашению**, содержательно мотивированное связью с [замыканием (M,R)-системы](/docs/core/foundations/axiom-septicity#prerequisite-autonomy) и [категорной морфизменной структурой](/docs/proofs/categorical/categorical-formalism#l-унификация).
 
 Полное обоснование см. [Определение порога интеграции](/docs/core/structure/dimension-u#теорема-эквивалентность-порогов).
 
@@ -368,7 +368,7 @@ $$
 \mathrm{CQ\_condition}(S) := R(\Gamma_S) \geq R_{\text{th}} \land \Phi(\Gamma_S) \geq \Phi_{\text{th}} \land D_{\text{diff}}(\rho_E) \geq D_{\min}
 $$
 
-где $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — мера дифференциации (см. [Измерение Интериорности](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2)).
+где $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — мера дифференциации (см. [Измерение Интериорности](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)).
 
 ### Характеристики Уровня 2
 

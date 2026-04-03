@@ -1,212 +1,212 @@
 ---
 sidebar_position: 5
-title: "Общая теория систем и КК"
-description: "От Берталанфи через Урманцева к Когерентной Кибернетике: математическое обобщение Общей Теории Систем"
+title: "General Systems Theory and CC"
+description: "From Bertalanffy through Urmantsev to Coherence Cybernetics: mathematical generalization of General Systems Theory"
 ---
 
-# Общая Теория Систем и Когерентная Кибернетика
+# General Systems Theory and Coherence Cybernetics
 
-:::info Для кого эта глава
-Вы узнаете, как Когерентная Кибернетика математически обобщает Общую Теорию Систем (ОТС) Берталанфи и Урманцева. Центральные концепции ОТС — открытые системы, эквифинальность, иерархичность — воспроизводятся как частные случаи формализма $\Gamma$.
+:::info Who this chapter is for
+You will learn how Coherence Cybernetics mathematically generalizes the General Systems Theory (GST) of Bertalanffy and Urmantsev. The central concepts of GST — open systems, equifinality, hierarchy — are reproduced as special cases of the $\Gamma$ formalism.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ — [уравнение эволюции](/docs/core/dynamics/evolution)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $P$ — [чистота](/docs/core/dynamics/coherence-matrix) $\mathrm{Tr}(\Gamma^2)$
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $\mathbb{H}$ — [Голоном](/docs/core/structure/holon)
-- $V_{\mathrm{hed}}$ — [гедоническая валентность](/docs/applied/coherence-cybernetics/theorems#теорема-114-гедоническая-валентность) $dP/d\tau$
+:::note About notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ — [evolution equation](/docs/core/dynamics/evolution)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $P$ — [purity](/docs/core/dynamics/coherence-matrix) $\mathrm{Tr}(\Gamma^2)$
+- $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
+- $\mathbb{H}$ — [Holon](/docs/core/structure/holon)
+- $V_{\mathrm{hed}}$ — [hedonic valence](/docs/applied/coherence-cybernetics/theorems#теорема-114-гедоническая-валентность) $dP/d\tau$
 :::
 
-## Введение: зачем нужна общая теория систем? {#введение}
+## Introduction: why do we need general systems theory? {#введение}
 
-В середине XX века произошёл интеллектуальный сдвиг, изменивший облик науки: исследователи в совершенно разных областях — от биологии клеток до социологии организаций — обнаружили, что описывают свои объекты **одними и теми же дифференциальными уравнениями**. Рост популяции бактерий подчиняется тем же законам, что и распространение слухов в социальной сети. Теплообмен в здании формально неотличим от потока капитала в экономике. Это наблюдение породило вопрос: существуют ли **универсальные законы**, управляющие системами **любой природы**?
+In the mid-twentieth century an intellectual shift occurred that transformed the face of science: researchers in completely different fields — from cell biology to the sociology of organisations — discovered that they were describing their objects using **the same differential equations**. The growth of a bacterial population obeys the same laws as the spread of rumours in a social network. Heat transfer in a building is formally indistinguishable from the flow of capital in an economy. This observation raised the question: do **universal laws** exist that govern systems of **any nature**?
 
-Ответом стала **Общая Теория Систем** (ОТС) — междисциплинарная программа, заложенная Людвигом фон Берталанфи в 1930–1950-х годах и развитая несколькими школами на протяжении семидесяти лет.
+The answer was **General Systems Theory** (GST) — an interdisciplinary programme founded by Ludwig von Bertalanffy in the 1930s–1950s and developed by several schools over seventy years.
 
-Когерентная Кибернетика (КК) претендует не только на мета-статус среди [теорий сознания](/docs/consciousness/comparative/consciousness-theories), но и на математическое обобщение ОТС. Это серьёзное заявление: ОТС — великая интеллектуальная традиция с подтверждённой эвристической ценностью. Заявление об обобщении обязывает показать, что формализм КК **воспроизводит** центральные концепции ОТС как частные случаи, а также **добавляет** то, чего ОТС не может.
+Coherence Cybernetics (CC) claims not only meta-status among [theories of consciousness](/docs/consciousness/comparative/consciousness-theories), but also the mathematical generalisation of GST. This is a serious claim: GST is a great intellectual tradition with proven heuristic value. A claim to generalisation obliges one to show that the CC formalism **reproduces** the central concepts of GST as special cases, and also **adds** what GST cannot.
 
-В этом разделе мы проследим путь от Берталанфи через Урманцева к КК, покажем точные соответствия и честно укажем на ограничения.
+In this section we trace the path from Bertalanffy through Urmantsev to CC, show precise correspondences, and honestly identify limitations.
 
 ---
 
-## Людвиг фон Берталанфи: рождение ОТС (1950–1968) {#берталанфи}
+## Ludwig von Bertalanffy: the birth of GST (1950–1968) {#берталанфи}
 
-### Биография и контекст
+### Biography and context
 
-**Людвиг фон Берталанфи** (Ludwig von Bertalanffy, 1901–1972) — австрийский биолог-теоретик, получивший докторскую степень в Венском университете. В 1930-е годы, работая над проблемами роста организмов, Берталанфи обнаружил, что уравнения роста клеточной массы формально идентичны уравнениям химической кинетики. Это наблюдение стало зерном его главной идеи.
+**Ludwig von Bertalanffy** (1901–1972) was an Austrian theoretical biologist who received his doctorate from the University of Vienna. In the 1930s, working on problems of organism growth, Bertalanffy discovered that the equations for cell-mass growth were formally identical to the equations of chemical kinetics. This observation became the seed of his central idea.
 
-После Второй мировой войны Берталанфи эмигрировал — сначала в Канаду (Университет Альберты), затем в США. В 1954 году совместно с экономистом Кеннетом Боулдингом, физиологом Ральфом Жерар и математиком Анатолем Рапопортом он основал **Society for General Systems Research** (ныне International Society for the Systems Sciences). Главная книга — *General System Theory: Foundations, Development, Applications* (1968) — собрала идеи, развивавшиеся с 1930-х.
+After World War II Bertalanffy emigrated — first to Canada (University of Alberta), then to the United States. In 1954, together with economist Kenneth Boulding, physiologist Ralph Gerard, and mathematician Anatol Rapoport, he founded the **Society for General Systems Research** (now the International Society for the Systems Sciences). His principal book — *General System Theory: Foundations, Development, Applications* (1968) — collected ideas developed since the 1930s.
 
-### Центральная идея
+### Central idea
 
-Берталанфи утверждал: существуют **общие законы систем**, не зависящие от природы составляющих элементов — физических, биологических, социальных. Эти законы описывают **структурные изоморфизмы** между системами разной природы.
+Bertalanffy argued: there exist **general laws of systems**, independent of the nature of the constituent elements — physical, biological, or social. These laws describe **structural isomorphisms** between systems of different natures.
 
-Простой пример. Уравнение роста по Берталанфи:
+A simple example. The Bertalanffy growth equation:
 
 $$
 \frac{dW}{dt} = \eta W^{2/3} - \kappa W
 $$
 
-описывает рост массы $W$ организма, где $\eta W^{2/3}$ — поступление питательных веществ (пропорционально поверхности), а $\kappa W$ — расход (пропорционально массе). Но **точно такое же** уравнение описывает рост кристалла, накопление капитала фирмой и распространение инфекции в популяции. Берталанфи увидел в этом не совпадение, а **закон**.
+describes the growth of an organism's mass $W$, where $\eta W^{2/3}$ is nutrient uptake (proportional to surface area) and $\kappa W$ is expenditure (proportional to mass). But **exactly the same** equation describes the growth of a crystal, the accumulation of capital by a firm, and the spread of infection in a population. Bertalanffy saw in this not a coincidence, but a **law**.
 
-### Ключевые понятия
+### Key concepts
 
-- **Открытая система** — система, которая обменивается веществом, энергией или информацией с окружением. Это противоположность классическим термодинамически замкнутым системам. Живые организмы — открытые системы по определению: они потребляют пищу и выделяют отходы.
+- **Open system** — a system that exchanges matter, energy, or information with its environment. This is the opposite of classical thermodynamically closed systems. Living organisms are open systems by definition: they consume food and excrete waste.
 
-- **Эквифинальность** — свойство открытых систем достигать одного и того же конечного состояния из разных начальных условий. Организм достигает взрослого размера независимо от того, получал ли он больше или меньше питания в начале жизни (в пределах жизнеспособности). Замкнутые системы такого свойства не имеют — их конечное состояние однозначно определяется начальными условиями.
+- **Equifinality** — the property of open systems to reach the same final state from different initial conditions. An organism reaches its adult size regardless of whether it received more or less nourishment at the start of life (within viability limits). Closed systems lack this property — their final state is uniquely determined by initial conditions.
 
-- **Изоморфизмы между науками** — одни и те же математические структуры (системы ОДУ, обратная связь, иерархия) проявляются в физике, биологии, экономике и социологии.
+- **Isomorphisms between sciences** — the same mathematical structures (systems of ODEs, feedback, hierarchy) appear in physics, biology, economics, and sociology.
 
-### Математический аппарат
+### Mathematical apparatus
 
-Берталанфи предложил предельно общую формализацию:
+Bertalanffy proposed an extremely general formalisation:
 
 $$
 \frac{dx_i}{dt} = f_i(x_1, \ldots, x_n), \quad i = 1, \ldots, n
 $$
 
-Система обыкновенных дифференциальных уравнений (ОДУ) как **универсальный язык** описания динамики. Любая система, динамика которой описывается через взаимодействие переменных, вписывается в этот формат.
+A system of ordinary differential equations (ODEs) as a **universal language** for describing dynamics. Any system whose dynamics can be described through the interaction of variables fits this format.
 
-**Сила и слабость этого подхода** взаимосвязаны. Формализм предельно общий — он охватывает всё, но именно поэтому не порождает конкретных предсказаний. Утверждение «динамика описывается системой ОДУ» истинно для столь широкого класса объектов, что становится тривиальным. ОТС Берталанфи — скорее **философская программа** и **эвристический принцип**, чем математическая теория с теоремами и опровержимыми предсказаниями.
+**The strength and weakness of this approach** are interrelated. The formalism is maximally general — it covers everything, but precisely for this reason generates no specific predictions. The statement "dynamics is described by a system of ODEs" is true for such a wide class of objects that it becomes trivial. Bertalanffy's GST is more a **philosophical programme** and **heuristic principle** than a mathematical theory with theorems and refutable predictions.
 
-:::info Ключевой вклад Берталанфи
-Берталанфи не открыл законы систем — он открыл **возможность** таких законов. Его главная заслуга — легитимизация междисциплинарного системного мышления как научной программы. До Берталанфи сравнение живого организма с фирмой считалось метафорой; после него — исследовательской стратегией.
+:::info Bertalanffy's key contribution
+Bertalanffy did not discover the laws of systems — he discovered the **possibility** of such laws. His main achievement was legitimising interdisciplinary systems thinking as a scientific programme. Before Bertalanffy, comparing a living organism with a firm was considered a metaphor; after him — a research strategy.
 :::
 
 ---
 
-## Ю.А. Урманцев: ОТС объектов (1978–2009) {#урманцев}
+## Yu.A. Urmantsev: GST of objects (1978–2009) {#урманцев}
 
-### Биография и контекст
+### Biography and context
 
-**Юнир Абдинович Урманцев** (1925–2009) — советский и российский философ-системолог, профессор Московского университета. Урманцев поставил перед собой задачу, которую Берталанфи не решил: создать **формальную** общую теорию систем, а не программную декларацию. Результат — «Общая теория систем» (1978) и последующие работы, вплоть до «Начал общей теории систем» (2003).
+**Yunir Abdinovich Urmantsev** (1925–2009) was a Soviet and Russian philosopher-systemologist, professor at Moscow University. Urmantsev set himself the task that Bertalanffy had not solved: to create a **formal** general systems theory, not a programmatic declaration. The result was *General Systems Theory* (1978) and subsequent works, up to *Foundations of General Systems Theory* (2003).
 
-Урманцев работал в традиции, отличной от англо-американского системного движения. Если Берталанфи, Боулдинг и Эшби были биологами и инженерами, то Урманцев — философ, стремившийся к логической строгости в духе советской философии науки.
+Urmantsev worked in a tradition different from the Anglo-American systems movement. Where Bertalanffy, Boulding, and Ashby were biologists and engineers, Urmantsev was a philosopher who sought logical rigour in the spirit of Soviet philosophy of science.
 
-### Центральная конструкция
+### Central construction
 
-Урманцев определил **систему** как четвёрку:
+Urmantsev defined a **system** as a quadruple:
 
 $$
 \mathcal{S} = \{m, \, \mathfrak{R}, \, Z, \, S\}
 $$
 
-| Компонент | Обозначение | Описание | Пример (для живой клетки) |
-|-----------|-------------|----------|---------------------------|
-| Элементы | $m$ | Множество составных частей системы | Органеллы: ядро, митохондрии, рибосомы |
-| Отношения | $\mathfrak{R}$ | Связи между элементами | Метаболические пути, сигнальные каскады |
-| Законы композиции | $Z$ | Правила, по которым элементы образуют систему | Генетический код, правила сборки белков |
-| Свойства | $S$ | Наблюдаемые характеристики системы как целого | Метаболическая активность, способность к делению |
+| Component | Notation | Description | Example (for a living cell) |
+|-----------|----------|-------------|------------------------------|
+| Elements | $m$ | Set of system components | Organelles: nucleus, mitochondria, ribosomes |
+| Relations | $\mathfrak{R}$ | Connections between elements | Metabolic pathways, signalling cascades |
+| Composition laws | $Z$ | Rules by which elements form the system | Genetic code, protein assembly rules |
+| Properties | $S$ | Observable characteristics of the system as a whole | Metabolic activity, capacity for division |
 
-### Ключевые результаты
+### Key results
 
-- **Закон системных преобразований** — Урманцев систематически классифицировал способы изменения системы. Систему можно изменить четырьмя путями: (1) изменив элементы $m$, (2) изменив отношения $\mathfrak{R}$, (3) изменив законы $Z$, (4) изменив всё одновременно. Это даёт полную комбинаторику преобразований.
+- **Law of systems transformations** — Urmantsev systematically classified ways of changing a system. A system can be changed in four ways: (1) by changing elements $m$, (2) by changing relations $\mathfrak{R}$, (3) by changing laws $Z$, (4) by changing everything simultaneously. This yields a complete combinatorics of transformations.
 
-- **Полиморфизм и изоморфизм систем** — формальные отображения между системами разной природы. Две системы изоморфны, если между ними существует биекция, сохраняющая отношения и законы.
+- **Polymorphism and isomorphism of systems** — formal mappings between systems of different natures. Two systems are isomorphic if a bijection exists between them that preserves relations and laws.
 
-- **Алгебраический подход** — группоиды и полигруппоиды как инструмент описания системных преобразований. Урманцев первым попытался дать ОТС алгебраическую форму.
+- **Algebraic approach** — groupoids and polygroupoids as tools for describing systems transformations. Urmantsev was the first to attempt to give GST an algebraic form.
 
-### Отображение в КК
+### Mapping to CC
 
-| Урманцев ($\mathcal{S}$) | КК-формализация | Комментарий |
-|--------------------------|-----------------|-------------|
-| Элементы $m$ | Измерения $k \in \{A, S, D, L, E, O, U\}$ | 7 семантических ролей |
-| Отношения $\mathfrak{R}$ | Когерентности $\gamma_{ij}$ (внедиагональные элементы $\Gamma$) | 21 пара когерентностей |
-| Законы композиции $Z$ | [Оператор эволюции](/docs/core/dynamics/evolution) $\mathcal{L}_\Omega$ | Динамика выведена из структуры $\Omega$ |
-| Свойства $S$ | Наблюдаемые: $P$, $\Phi$, $R$, $\sigma_k$ | Конкретные функции от $\Gamma$ |
+| Urmantsev ($\mathcal{S}$) | CC formalization | Comment |
+|---------------------------|-----------------|---------|
+| Elements $m$ | Dimensions $k \in \{A, S, D, L, E, O, U\}$ | 7 semantic roles |
+| Relations $\mathfrak{R}$ | Coherences $\gamma_{ij}$ (off-diagonal elements of $\Gamma$) | 21 coherence pairs |
+| Composition laws $Z$ | [Evolution operator](/docs/core/dynamics/evolution) $\mathcal{L}_\Omega$ | Dynamics derived from structure $\Omega$ |
+| Properties $S$ | Observables: $P$, $\Phi$, $R$, $\sigma_k$ | Concrete functions of $\Gamma$ |
 
-Преимущество Урманцева — явная попытка алгебраической формализации. Но его алгебра остаётся **описательной**: она классифицирует типы систем и преобразований, но не порождает динамику из структуры, как это делает [L-унификация](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω) в КК.
+Urmantsev's advantage is the explicit attempt at algebraic formalisation. But his algebra remains **descriptive**: it classifies types of systems and transformations, but does not derive dynamics from structure, as [L-unification](/docs/applied/coherence-cybernetics/axiomatics#l-унификация-вывод-l_k-из-ω) does in CC.
 
-:::note Урманцев и проблема сознания
-Урманцев никогда не обращался к проблеме сознания. Его ОТС — теория **объектов** (систем любой природы), не теория **субъектов** (систем, обладающих внутренним опытом). В этом — принципиальное ограничение его подхода и одновременно его честность: он не претендовал на то, чего его формализм не мог дать.
+:::note Urmantsev and the problem of consciousness
+Urmantsev never addressed the problem of consciousness. His GST is a theory of **objects** (systems of any nature), not a theory of **subjects** (systems possessing inner experience). Herein lies the fundamental limitation of his approach and, simultaneously, its honesty: he did not claim what his formalism could not deliver.
 :::
 
 ---
 
-## Другие школы ОТС {#другие-школы}
+## Other GST schools {#другие-школы}
 
-ОТС — не монолитная теория, а семейство подходов. Каждый подчёркивает свой аспект «системности». Рассмотрим ключевые школы и их связь с КК.
+GST is not a monolithic theory but a family of approaches. Each emphasises its own aspect of "systemness". Let us consider the key schools and their connection to CC.
 
-### Месарович и Такахара (1975): математическая ОТС
+### Mesarovic and Takahara (1975): mathematical GST
 
-**Михайло Месарович** (Кейсовский университет, США) и **Ясухико Такахара** (Токийский технологический) создали наиболее строгую математическую ОТС. Их определение: система — отображение $S \subseteq X \times Y$ (вход → выход). Центральная тема — иерархические многоуровневые системы с задачей координации слоёв.
+**Mihajlo Mesarovic** (Case Western Reserve University, USA) and **Yasuhiko Takahara** (Tokyo Institute of Technology) created the most rigorous mathematical GST. Their definition: a system is a mapping $S \subseteq X \times Y$ (input → output). The central theme is hierarchical multilevel systems with the task of coordinating layers.
 
-Ключевые понятия:
-- **Стратифицированное описание** — один объект описывается на нескольких уровнях абстракции (например, завод: уровень деталей, уровень цехов, уровень предприятия)
-- **Координация** — согласование решений между слоями иерархии
+Key concepts:
+- **Stratified description** — one object is described at several levels of abstraction (e.g. a factory: the parts level, the workshop level, the enterprise level)
+- **Coordination** — reconciling decisions between layers of a hierarchy
 
-Это наиболее близкий к КК формализм в классической ОТС: идея стратификации перекликается с тем, как КК различает уровни описания — от $\Gamma$ (микро) через наблюдаемые $P, \Phi, R$ (мезо) до поведения голонома (макро). Однако у Месаровича нет квантовой алгебры и нет понятия сознания.
+This is the closest formalism to CC in classical GST: the idea of stratification resonates with the way CC distinguishes levels of description — from $\Gamma$ (micro) through observables $P, \Phi, R$ (meso) to holon behaviour (macro). However, Mesarovic has neither quantum algebra nor a concept of consciousness.
 
-### Клир (1969, 1985): системная эпистемология
+### Klir (1969, 1985): systems epistemology
 
-**Джордж Клир** (Binghamton University, США) предложил **General Systems Problem Solver (GSPS)** — эпистемологическую иерархию моделей. Восемь уровней организации знания:
+**George Klir** (Binghamton University, USA) proposed the **General Systems Problem Solver (GSPS)** — an epistemological hierarchy of models. Eight levels of knowledge organisation:
 
-1. Источник (данные)
-2. Данные → переменные
-3. Порождающие системы (правила)
-4. Структурированные системы (композиции)
-5. Метасистемы (изменение правил)
-6–8. Мета-метауровни
+1. Source (data)
+2. Data → variables
+3. Generative systems (rules)
+4. Structured systems (compositions)
+5. Metasystems (change of rules)
+6–8. Meta-meta levels
 
-Идея системной эпистемологии перекликается с [SAD-иерархией](/docs/consciousness/hierarchy/interiority-hierarchy) КК (SAD-0: реакция, SAD-1: модель себя, SAD-2: модель модели, SAD-3: рефлексия модели). Однако у Клира нет формальных порогов перехода между уровнями — нет аналога $P_{\mathrm{crit}}$ или $R_{\mathrm{th}}$.
+The idea of systems epistemology resonates with the [SAD hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) of CC (SAD-0: reaction, SAD-1: model of self, SAD-2: model of the model, SAD-3: reflection of the model). However, Klir has no formal thresholds for transitions between levels — no analogue of $P_{\mathrm{crit}}$ or $R_{\mathrm{th}}$.
 
-### Боулдинг (1956): девять уровней сложности
+### Boulding (1956): nine levels of complexity
 
-**Кеннет Боулдинг** (один из соучредителей общества ОТС) предложил интуитивную «лестницу сложности» — девять уровней систем:
+**Kenneth Boulding** (one of the co-founders of the GST society) proposed an intuitive "ladder of complexity" — nine levels of systems:
 
-| Уровень | Описание | Аналог в КК | Комментарий |
-|---------|----------|--------------|-------------|
-| 1 | Статические рамки (кристалл) | Нет (КК описывает динамические системы) | Структура без динамики |
-| 2 | Часовые механизмы | $P \ll 2/7$, детерминированная динамика | Предсказуемые, без обратной связи |
-| 3 | Кибернетические системы (термостат) | Обратная связь, но без $\varphi$ | Контроль без самомоделирования |
-| 4 | Открытые системы (клетка) | $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ | Обмен с окружением |
-| 5 | Растения (генетическое общество) | L0 (протоинтериорность) | Рост, воспроизводство |
-| 6 | Животные | L1 (перцептивная интериорность) | Ощущения, движение |
-| 7 | Человек | L2–L3 ($P > 2/7$, SAD $\geq 1$) | Самосознание, язык |
-| 8 | Социальные системы | Композиция голономов (T-68) | Коллективная когерентность |
-| 9 | Трансцендентное | Открытый вопрос | Неформализуемое? |
+| Level | Description | Analogue in CC | Comment |
+|-------|-------------|----------------|---------|
+| 1 | Static frameworks (crystal) | None (CC describes dynamic systems) | Structure without dynamics |
+| 2 | Clockwork mechanisms | $P \ll 2/7$, deterministic dynamics | Predictable, no feedback |
+| 3 | Cybernetic systems (thermostat) | Feedback, but without $\varphi$ | Control without self-modelling |
+| 4 | Open systems (cell) | $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ | Exchange with environment |
+| 5 | Plants (genetic society) | L0 (proto-interiority) | Growth, reproduction |
+| 6 | Animals | L1 (perceptual interiority) | Sensations, movement |
+| 7 | Human | L2–L3 ($P > 2/7$, SAD $\geq 1$) | Self-awareness, language |
+| 8 | Social systems | Composition of holons (T-68) | Collective coherence |
+| 9 | Transcendent | Open question | Unformalizable? |
 
-Лестница Боулдинга интуитивно верна и педагогически ценна, но задана описательно. КК предлагает **формальные критерии** перехода между уровнями: не «достаточная сложность», а конкретные числа ($P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$).
+Boulding's ladder is intuitively correct and pedagogically valuable, but stated descriptively. CC offers **formal criteria** for transitions between levels: not "sufficient complexity" but concrete numbers ($P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$).
 
-### Акофф и Эмери (1972): целеполагание
+### Ackoff and Emery (1972): goal-setting
 
-**Рассел Акофф** и **Фред Эмери** поставили **целеполагание** в центр системности. Система «целенаправлена» (purposeful), если способна выбирать и цели, и средства. Целеустремлённые системы отличаются от целеуправляемых (goal-directed: выбор средств, но не целей) и реактивных (state-maintaining: поддержание гомеостаза).
+**Russell Ackoff** and **Fred Emery** placed **goal-setting** at the centre of systemness. A system is "purposeful" if it is capable of choosing both goals and means. Purposeful systems differ from goal-directed systems (choice of means, but not goals) and reactive systems (state-maintaining: homeostasis maintenance).
 
-В КК аналогом целеполагания служит [гедоническая валентность](/docs/applied/coherence-cybernetics/theorems#теорема-114-гедоническая-валентность) $V_{\mathrm{hed}} = dP/d\tau$ — формально выведенный внутренний «компас» системы, направляющий поведение в сторону увеличения когерентности. При этом $V_{\mathrm{hed}}$ — не постулированная «цель», а **следствие** динамики $\mathcal{L}_\Omega$: система «стремится» к увеличению $P$, потому что это математическое свойство её эволюционного уравнения.
+In CC the analogue of goal-setting is [hedonic valence](/docs/applied/coherence-cybernetics/theorems#теорема-114-гедоническая-валентность) $V_{\mathrm{hed}} = dP/d\tau$ — a formally derived internal "compass" of the system that directs behaviour towards increasing coherence. Here $V_{\mathrm{hed}}$ is not a postulated "goal" but a **consequence** of the dynamics $\mathcal{L}_\Omega$: the system "aims" to increase $P$ because this is a mathematical property of its evolution equation.
 
-### Лем и Тёрчин: метасистемный переход
+### Lem and Turchin: the metasystem transition
 
-**Станислав Лем** в *Сумме технологии* (1964) обсуждал **метасистемный переход** — качественный скачок, когда система управления сама становится объектом управления следующего уровня. Жизнь → сознание → разум — цепочка метасистемных переходов.
+**Stanisław Lem** in *Summa Technologiae* (1964) discussed the **metasystem transition** — a qualitative leap when a control system itself becomes the object of control at the next level. Life → consciousness → mind: a chain of metasystem transitions.
 
-**Валентин Тёрчин** (Turchin, 1970) формализовал эту идею в книге *Феномен науки*: метасистемный переход $M \to M'$ создаёт новый уровень контроля. Множество систем $\{S_i\}$ объединяются под управлением метасистемы $S'$, которая контролирует их как целое.
+**Valentin Turchin** (1970) formalised this idea in *The Phenomenon of Science*: a metasystem transition $M \to M'$ creates a new level of control. A set of systems $\{S_i\}$ is united under the control of a metasystem $S'$, which controls them as a whole.
 
-В КК метасистемному переходу соответствует:
-- **Индивидуальный уровень**: рост SAD (самонаблюдение наблюдает за самонаблюдением) — каждый уровень SAD есть метасистемный переход в пространстве самомоделирования
-- **Групповой уровень**: [композиция голономов](/docs/applied/coherence-cybernetics/theorems) — переход от индивидуальной $\Gamma$ к групповой когерентности
+In CC the metasystem transition corresponds to:
+- **Individual level**: growth of SAD (self-observation observing self-observation) — each SAD level is a metasystem transition in the space of self-modelling
+- **Group level**: [composition of holons](/docs/applied/coherence-cybernetics/theorems) — transition from individual $\Gamma$ to group coherence
 
 ---
 
-## Генеалогия: от ОТС к КК {#генеалогия}
+## Genealogy: from GST to CC {#генеалогия}
 
-Связь КК с интеллектуальными традициями XX века нагляднее всего выражается диаграммой. КК наследует идеи **трёх основополагающих программ**: общей теории систем, кибернетики и теории информации.
+The connection of CC to the intellectual traditions of the twentieth century is most clearly expressed by a diagram. CC inherits ideas from **three foundational programmes**: general systems theory, cybernetics, and information theory.
 
 ```mermaid
 graph TD
-    A["Берталанфи<br/>ОТС (1950-1968)<br/>📌 Открытые системы, изоморфизмы"] --> D["Месарович, Такахара<br/>Мат. ОТС (1975)<br/>📌 Иерархия, координация"]
-    A --> E["Урманцев<br/>ОТС объектов (1978)<br/>📌 Формальная четвёрка {m,ℜ,Z,S}"]
-    B["Винер<br/>Кибернетика (1948)<br/>📌 Обратная связь, управление"] --> F["Кибернетика 2-го порядка<br/>фон Фёрстер (1970-е)<br/>📌 Наблюдатель наблюдает"]
-    B --> G["Эшби<br/>Необходимое разнообразие (1956)<br/>📌 Сложность регулятора ≥ сложности объекта"]
-    C["Шеннон<br/>Теория информации (1948)<br/>📌 Энтропия, каналы"] --> H["Тонони<br/>IIT (2004-2023)<br/>📌 Φ как мера сознания"]
-    F --> I["Матурана, Варела<br/>Автопоэзис (1972)<br/>📌 Самопроизводство"]
+    A["Bertalanffy<br/>GST (1950-1968)<br/>📌 Open systems, isomorphisms"] --> D["Mesarovic, Takahara<br/>Math. GST (1975)<br/>📌 Hierarchy, coordination"]
+    A --> E["Urmantsev<br/>GST of objects (1978)<br/>📌 Formal quadruple {m,ℜ,Z,S}"]
+    B["Wiener<br/>Cybernetics (1948)<br/>📌 Feedback, control"] --> F["Second-order cybernetics<br/>von Foerster (1970s)<br/>📌 Observer observes"]
+    B --> G["Ashby<br/>Requisite variety (1956)<br/>📌 Controller complexity ≥ system complexity"]
+    C["Shannon<br/>Information theory (1948)<br/>📌 Entropy, channels"] --> H["Tononi<br/>IIT (2004-2023)<br/>📌 Φ as measure of consciousness"]
+    F --> I["Maturana, Varela<br/>Autopoiesis (1972)<br/>📌 Self-production"]
     G --> D
-    A --> J["Боулдинг<br/>9 уровней (1956)<br/>📌 Лестница сложности"]
-    A --> K["Клир<br/>GSPS (1985)<br/>📌 Эпистемологические уровни"]
-    D --> L["КК<br/>Когерентная Кибернетика<br/>📌 Γ ∈ D(ℂ⁷), пороги, G₂"]
+    A --> J["Boulding<br/>9 levels (1956)<br/>📌 Ladder of complexity"]
+    A --> K["Klir<br/>GSPS (1985)<br/>📌 Epistemological levels"]
+    D --> L["CC<br/>Coherence Cybernetics<br/>📌 Γ ∈ D(ℂ⁷), thresholds, G₂"]
     E --> L
     F --> L
     H --> L
@@ -218,153 +218,153 @@ graph TD
     style C fill:#5b7ea8,color:#fff
 ```
 
-Каждая стрелка на диаграмме — не просто «вдохновение», а конкретное структурное наследование. Берталанфи дал идею открытой системы ($\mathcal{L}_\Omega$ включает обмен с окружением через $\mathcal{R}$). Винер дал обратную связь ($\varphi \to \rho^* \to \mathcal{R}$). Шеннон дал информационные меры ($S_{vN}$, $D_{KL}$). Урманцев дал структурную четвёрку (элементы, отношения, законы, свойства). Фон Фёрстер дал наблюдателя ($\varphi$-оператор). Тонони дал меру интеграции ($\Phi$).
+Each arrow in the diagram is not merely "inspiration" but concrete structural inheritance. Bertalanffy gave the idea of an open system ($\mathcal{L}_\Omega$ includes exchange with the environment via $\mathcal{R}$). Wiener gave feedback ($\varphi \to \rho^* \to \mathcal{R}$). Shannon gave information measures ($S_{vN}$, $D_{KL}$). Urmantsev gave the structural quadruple (elements, relations, laws, properties). Von Foerster gave the observer ($\varphi$-operator). Tononi gave the integration measure ($\Phi$).
 
-КК отличается тем, что **объединяет** все эти элементы в едином квантово-алгебраическом формализме, где они не просто сосуществуют, а **выводятся** друг из друга.
+CC is distinguished by **uniting** all these elements in a single quantum-algebraic formalism, where they do not merely coexist but are **derived** from one another.
 
 ---
 
-## Как КК обобщает ОТС: формальное обоснование {#кк-обобщает-отс}
+## How CC generalizes GST: formal justification {#кк-обобщает-отс}
 
-Ключевой аргумент: КК не добавляет к ОТС «ещё одну переменную», а **выводит** концепции ОТС как проекции на подмножество измерений.
+The key argument: CC does not add "yet another variable" to GST but **derives** GST concepts as projections onto a subset of dimensions.
 
-### Таблица обобщений
+### Generalization table
 
-| Концепция ОТС | КК-формализация | Статус | Что добавлено |
-|---------------|-----------------|--------|---------------|
-| Система | [Голоном](/docs/core/structure/holon) $\mathbb{H}$ | [О] | Фиксированная размерность $N=7$ |
-| Открытая система | $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (диссипация + регенерация) | [Т] | Конкретная динамика, не только «обмен» |
-| Гомеостаз | $P > 2/7$ ([область жизнеспособности](/docs/core/dynamics/viability) $\mathcal{V}$) | [Т] | Точный числовой порог |
-| Обратная связь | $\varphi(\Gamma) \to \rho^* \to \mathcal{R}$ (самомоделирование → регенерация) | [Т] | Самомоделирование, не просто обратная связь |
-| Эквифинальность | [Примитивность](/docs/core/dynamics/evolution) $\mathcal{L}_0$ → единственный аттрактор $I/7$ (T-39a) | [Т] | Доказанная единственность аттрактора |
-| Иерархия | [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy) уровни интериорности | [Т] | Формальные пороги переходов |
-| Изоморфизм систем | [Субстрат-независимость](/docs/consciousness/foundations/interiority-theory) (T-153) | [Т] | Доказанная теорема, не только аналогия |
-| Элемент системы | Измерение $k \in \{A, S, D, L, E, O, U\}$ | [О] | 7 семантических ролей |
-| Связь | Когерентность $\gamma_{ij}$ | [Т] | Квантовая когерентность |
-| Целостность | $\Phi \geq 1$ — [порог интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) для сознания | [Т] | Числовой порог |
-| Энтропия | $S_{vN}(\Gamma) = -\mathrm{Tr}(\Gamma \ln \Gamma)$ | [Т] | Квантовая (фон-Неймановская) энтропия |
-| Целеполагание | $V_{\mathrm{hed}} = dP/d\tau$ — гедоническая валентность (T-103) | [Т] | Не постулированная цель, а следствие динамики |
-| Метасистемный переход | Композиция голономов (T-68) | [С] | Количественный порог ($\Phi_{12} > 1$) |
+| GST concept | CC formalization | Status | What is added |
+|-------------|-----------------|--------|---------------|
+| System | [Holon](/docs/core/structure/holon) $\mathbb{H}$ | [D] | Fixed dimension $N=7$ |
+| Open system | $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (dissipation + regeneration) | [T] | Concrete dynamics, not just "exchange" |
+| Homeostasis | $P > 2/7$ ([viability region](/docs/core/dynamics/viability) $\mathcal{V}$) | [T] | Exact numerical threshold |
+| Feedback | $\varphi(\Gamma) \to \rho^* \to \mathcal{R}$ (self-modelling → regeneration) | [T] | Self-modelling, not just feedback |
+| Equifinality | [Primitivity](/docs/core/dynamics/evolution) $\mathcal{L}_0$ → unique attractor $I/7$ (T-39a) | [T] | Proven uniqueness of attractor |
+| Hierarchy | [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy) interiority levels | [T] | Formal transition thresholds |
+| Systems isomorphism | [Substrate-independence](/docs/consciousness/foundations/interiority-theory) (T-153) | [T] | Proven theorem, not just analogy |
+| System element | Dimension $k \in \{A, S, D, L, E, O, U\}$ | [D] | 7 semantic roles |
+| Connection | Coherence $\gamma_{ij}$ | [T] | Quantum coherence |
+| Integrity | $\Phi \geq 1$ — [integration threshold](/docs/core/structure/dimension-u#мера-интеграции-φ) for consciousness | [T] | Numerical threshold |
+| Entropy | $S_{vN}(\Gamma) = -\mathrm{Tr}(\Gamma \ln \Gamma)$ | [T] | Quantum (von Neumann) entropy |
+| Goal-setting | $V_{\mathrm{hed}} = dP/d\tau$ — hedonic valence (T-103) | [T] | Not a postulated goal, but a consequence of dynamics |
+| Metasystem transition | Composition of holons (T-68) | [C] | Quantitative threshold ($\Phi_{12} > 1$) |
 
-:::info Условные обозначения статусов
-[О] — определение, [Т] — теорема, [С] — условная теорема. Подробнее: [реестр статусов](/docs/reference/status-registry).
+:::info Status notation
+[D] — definition, [T] — theorem, [C] — conditional theorem. Details: [status registry](/docs/reference/status-registry).
 :::
 
-### Формальное построение обобщения
+### Formal construction of the generalization
 
-**Утверждение.** Для любой классической ОТС-системы $\mathcal{S} = (m, \mathfrak{R}, Z)$ можно построить голоном $\mathbb{H}$, воспроизводящий её структуру.
+**Statement.** For any classical GST system $\mathcal{S} = (m, \mathfrak{R}, Z)$ one can construct a holon $\mathbb{H}$ that reproduces its structure.
 
-**Конструкция:**
+**Construction:**
 
-1. **Элементы → измерения.** Каждому элементу $m_k$ сопоставим измерение $k$ с весом $\gamma_{kk}$. Вес отражает «значимость» элемента в системе: $\gamma_{kk} = 0$ означает, что элемент неактивен, $\gamma_{kk} = 1/7$ — равновесный.
+1. **Elements → dimensions.** Each element $m_k$ is mapped to a dimension $k$ with weight $\gamma_{kk}$. The weight reflects the "significance" of the element in the system: $\gamma_{kk} = 0$ means the element is inactive, $\gamma_{kk} = 1/7$ is the equilibrium value.
 
-2. **Отношения → когерентности.** Каждому отношению $r_{ij} \in \mathfrak{R}$ сопоставим когерентность $\gamma_{ij}$. Если элементы $m_i$ и $m_j$ сильно связаны, $|\gamma_{ij}|$ велика; если независимы, $\gamma_{ij} \approx 0$.
+2. **Relations → coherences.** Each relation $r_{ij} \in \mathfrak{R}$ is mapped to a coherence $\gamma_{ij}$. If elements $m_i$ and $m_j$ are strongly connected, $|\gamma_{ij}|$ is large; if independent, $\gamma_{ij} \approx 0$.
 
-3. **Законы → оператор эволюции.** Закону $Z$ сопоставим $\mathcal{L}_\Omega$, действующий на $\Gamma$. Конкретная форма $\mathcal{L}_\Omega$ определяется аксиомами КК.
+3. **Laws → evolution operator.** Law $Z$ is mapped to $\mathcal{L}_\Omega$ acting on $\Gamma$. The specific form of $\mathcal{L}_\Omega$ is determined by the axioms of CC.
 
-**Два случая по числу элементов:**
+**Two cases by number of elements:**
 
-- Если число элементов $|m| < 7$, голоном проецируется на подпространство — неиспользованные измерения имеют $\gamma_{kk} = 0$.
-- Если $|m| > 7$, элементы группируются по [семантическим ролям](/docs/core/foundations/axiom-septicity). Это неизбежное сжатие: 7 измерений КК — **минимальное** число, покрывающее все фундаментальные аспекты, но не каждый конкретный элемент.
+- If the number of elements $|m| < 7$, the holon projects onto a subspace — unused dimensions have $\gamma_{kk} = 0$.
+- If $|m| > 7$, elements are grouped by [semantic roles](/docs/core/foundations/axiom-septicity). This is an inevitable compression: the 7 dimensions of CC are the **minimum** number covering all fundamental aspects, but not every specific element.
 
-Таким образом, **любая ОТС-система имеет представление как голоном** (с возможной потерей информации при проекции).
+Thus, **any GST system has a representation as a holon** (with possible information loss during projection).
 
-:::warning Ограничение аргумента
-Отображение $\mathcal{S} \mapsto \mathbb{H}$ сюръективно, но **не инъективно**: разные ОТС-системы могут отображаться в один голоном. Это неизбежная цена 7-мерной проекции. Обратное отображение (из голонома в ОТС-систему) определено однозначно лишь при фиксированной интерпретации измерений. Аналогия: карта проекции трёхмерного объекта на плоскость теряет информацию о глубине; но если известна точка зрения, объект восстанавливается.
+:::warning Limitation of the argument
+The mapping $\mathcal{S} \mapsto \mathbb{H}$ is surjective but **not injective**: different GST systems may map to the same holon. This is the inevitable cost of 7-dimensional projection. The inverse mapping (from holon to GST system) is uniquely defined only when the interpretation of dimensions is fixed. Analogy: the projection of a three-dimensional object onto a plane loses depth information; but if the viewpoint is known, the object can be reconstructed.
 :::
 
-### Сводная таблица: Берталанфи — Урманцев — КК
+### Summary table: Bertalanffy — Urmantsev — CC
 
-| Аспект | Берталанфи | Урманцев | КК |
-|--------|-----------|----------|-----|
-| **Определение системы** | Множество элементов во взаимодействии | $\{m, \mathfrak{R}, Z, S\}$ | Голоном $\mathbb{H} = (\Gamma, \varphi, E)$ |
-| **Математика** | Система ОДУ | Группоиды | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, $\mathcal{L}_\Omega$ |
-| **Динамика** | $\dot{x}_i = f_i(x_1, \ldots, x_n)$ | Описательная | $\dot{\Gamma} = \mathcal{L}_\Omega[\Gamma]$ |
-| **Пороги** | Нет | Нет | $P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$ |
-| **Субъективный опыт** | Не рассматривается | Не рассматривается | Центральный объект (E-измерение) |
-| **Предсказания** | Нет конкретных | Нет конкретных | 22+ фальсифицируемых |
-| **Субстрат** | Абстрактный | Абстрактный | Абстрактный + доказанная независимость (T-153) |
-| **Обратная связь** | Постулируется | Классифицируется | Выводится из $\varphi$ |
-| **Иерархия** | Описательная | Описательная | L0→L4 с формальными критериями |
-| **Классическая/квантовая** | Классическая | Классическая | Квантовая ($\Gamma$ — матрица плотности) |
+| Aspect | Bertalanffy | Urmantsev | CC |
+|--------|-------------|-----------|-----|
+| **System definition** | Set of elements in interaction | $\{m, \mathfrak{R}, Z, S\}$ | Holon $\mathbb{H} = (\Gamma, \varphi, E)$ |
+| **Mathematics** | System of ODEs | Groupoids | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, $\mathcal{L}_\Omega$ |
+| **Dynamics** | $\dot{x}_i = f_i(x_1, \ldots, x_n)$ | Descriptive | $\dot{\Gamma} = \mathcal{L}_\Omega[\Gamma]$ |
+| **Thresholds** | None | None | $P_{\mathrm{crit}} = 2/7$, $R_{\mathrm{th}} = 1/3$, $\Phi_{\mathrm{th}} = 1$ |
+| **Subjective experience** | Not considered | Not considered | Central object (E-dimension) |
+| **Predictions** | None specific | None specific | 22+ falsifiable |
+| **Substrate** | Abstract | Abstract | Abstract + proven independence (T-153) |
+| **Feedback** | Postulated | Classified | Derived from $\varphi$ |
+| **Hierarchy** | Descriptive | Descriptive | L0→L4 with formal criteria |
+| **Classical/quantum** | Classical | Classical | Quantum ($\Gamma$ — density matrix) |
 
-### Что КК добавляет к ОТС-описанию
+### What CC adds to the GST description
 
-Кроме обобщения существующих концепций, КК вносит **принципиально новый слой**, отсутствующий у Берталанфи и Урманцева:
+Beyond generalising existing concepts, CC introduces a **principally new layer** absent in Bertalanffy and Urmantsev:
 
-1. **Диссипация** ($\mathcal{L}_0$): линдбладовская динамика с доказанной примитивностью (T-39a [Т]) — единственный аттрактор $I/7$, к которому стремится система без регенерации
+1. **Dissipation** ($\mathcal{L}_0$): Lindblad dynamics with proven primitivity (T-39a [T]) — unique attractor $I/7$ towards which the system tends without regeneration
 
-2. **Регенерация** ($\mathcal{R}$): нелинейный член, определяемый самомоделью $\varphi(\Gamma)$ — система сопротивляется распаду через самомоделирование
+2. **Regeneration** ($\mathcal{R}$): nonlinear term determined by self-model $\varphi(\Gamma)$ — the system resists decay through self-modelling
 
-3. **Наблюдаемые**: $P$, $\Phi$, $R$, $\sigma_k$ — конкретные функции от $\Gamma$, а не абстрактные «свойства» системы. Каждая наблюдаемая вычислима по $\Gamma$, и её значение определяет качественное состояние системы
-
----
-
-## Чего ОТС не может, а КК может {#преимущества-кк}
-
-**1. Точные пороги вместо качественных описаний.**
-
-ОТС говорит о «достаточной сложности» для эмерджентных свойств. Когда система «достаточно сложна»? Берталанфи не отвечает. Урманцев классифицирует типы сложности, но не указывает числовых границ. КК **выводит** конкретные числа:
-- $P_{\mathrm{crit}} = 2/7$ — [порог сознания](/docs/core/dynamics/viability)
-- $R_{\mathrm{th}} = 1/3$ — [порог рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\Phi_{\mathrm{th}} = 1$ — [порог интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-
-Эти числа следуют из аксиом, а не подобраны ad hoc. Они могут быть **опровергнуты** экспериментом — в этом их сила.
-
-**2. Субъективный опыт.**
-
-ОТС полностью молчит о квалиа и сознании. Даже лестница Боулдинга, включающая «человека» и «трансцендентное», не формализует внутренний опыт. КК формализует [интериорность](/docs/consciousness/foundations/interiority-theory) через $\mathrm{Coh}_E$ и доказывает [теорему No-Zombie](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): любая жизнеспособная система необходимо обладает ненулевой интериорностью.
-
-**3. Фальсифицируемые предсказания.**
-
-КК формулирует [22+ предсказания](/docs/applied/coherence-cybernetics/predictions), каждое с конкретным числовым критерием. Если хотя бы одно окажется ложным, теория потребует пересмотра. ОТС не порождает предсказаний, проверяемых экспериментом — она слишком общая для этого.
-
-**4. Субстрат-независимость с доказательством.**
-
-ОТС **постулирует** изоморфизмы между науками — системы разной природы «похожи». КК **доказывает** (T-153 [Т]): любая система с $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, удовлетворяющая порогам, обладает интериорностью — **независимо от физического субстрата**. Это не аналогия, а теорема.
+3. **Observables**: $P$, $\Phi$, $R$, $\sigma_k$ — concrete functions of $\Gamma$, not abstract "properties" of the system. Each observable is computable from $\Gamma$, and its value determines the qualitative state of the system
 
 ---
 
-## Чего КК не может (что ОТС делает хорошо) {#преимущества-отс}
+## What GST cannot do, but CC can {#преимущества-кк}
 
-Объективность требует признать области, где ОТС сохраняет преимущество.
+**1. Exact thresholds instead of qualitative descriptions.**
 
-**1. Десятилетия эмпирической проверки.**
+GST speaks of "sufficient complexity" for emergent properties. When is a system "sufficiently complex"? Bertalanffy does not answer. Urmantsev classifies types of complexity but specifies no numerical boundaries. CC **derives** concrete numbers:
+- $P_{\mathrm{crit}} = 2/7$ — [consciousness threshold](/docs/core/dynamics/viability)
+- $R_{\mathrm{th}} = 1/3$ — [reflection threshold](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\Phi_{\mathrm{th}} = 1$ — [integration threshold](/docs/core/structure/dimension-u#мера-интеграции-φ)
 
-ОТС применялась в экологии (модели популяций), биологии (рост организмов), менеджменте (организационная теория), инженерии (системная инженерия, INCOSE) — с подтверждённой эвристической ценностью. Понятия «обратная связь», «открытая система», «гомеостаз» стали рабочими инструментами. КК — молодая теория, эмпирическая верификация которой ещё впереди.
+These numbers follow from the axioms and are not chosen ad hoc. They can be **refuted** by experiment — therein lies their strength.
 
-**2. Доступность.**
+**2. Subjective experience.**
 
-ОТС не требует квантовой теории, теории категорий или спектральной геометрии. Она доступна биологу, инженеру, менеджеру. Книга Берталанфи читается без специальной подготовки. КК предъявляет высокие требования к математической подготовке — это ограничивает круг потенциальных пользователей и критиков.
+GST is entirely silent on qualia and consciousness. Even Boulding's ladder, which includes "human" and "transcendent", does not formalise inner experience. CC formalises [interiority](/docs/consciousness/foundations/interiority-theory) through $\mathrm{Coh}_E$ and proves the [No-Zombie theorem](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): any viable system necessarily possesses non-zero interiority.
 
-**3. Системы без сознания.**
+**3. Falsifiable predictions.**
 
-ОТС естественно описывает инженерные, экономические, экологические системы, не претендуя на объяснение их «внутренней жизни». Для водопроводной системы или биржевого рынка ОТС — идеальный язык. КК ориентирована на системы с потенциалом интериорности; для чисто механических систем ($P \ll 2/7$) её аппарат избыточен — зачем привлекать $G_2$-ригидность для описания термостата?
+CC formulates [22+ predictions](/docs/applied/coherence-cybernetics/predictions), each with a concrete numerical criterion. If even one turns out to be false, the theory will require revision. GST does not generate predictions verifiable by experiment — it is too general for that.
 
-**4. Модульность.**
+**4. Substrate-independence with proof.**
 
-ОТС легко комбинируется с другими подходами (теория управления, исследование операций, синергетика). Системный инженер берёт от ОТС понятие подсистемы, от теории управления — стабильность, от исследования операций — оптимизацию. КК представляет собой монолитный формализм, интеграция которого с прикладными дисциплинами — открытая задача.
+GST **postulates** isomorphisms between sciences — systems of different natures "resemble" one another. CC **proves** (T-153 [T]): any system with $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ satisfying the thresholds possesses interiority — **independently of physical substrate**. This is not an analogy but a theorem.
 
 ---
 
-## Итоги {#итоги}
+## What CC cannot do (where GST excels) {#преимущества-отс}
 
-Связь КК и ОТС можно выразить формулой:
+Objectivity requires acknowledging areas where GST retains an advantage.
+
+**1. Decades of empirical validation.**
+
+GST has been applied in ecology (population models), biology (organism growth), management (organisational theory), engineering (systems engineering, INCOSE) — with proven heuristic value. The concepts of "feedback", "open system", and "homeostasis" have become working tools. CC is a young theory whose empirical verification still lies ahead.
+
+**2. Accessibility.**
+
+GST does not require quantum theory, category theory, or spectral geometry. It is accessible to a biologist, engineer, or manager. Bertalanffy's book can be read without specialised preparation. CC makes high demands on mathematical preparation — this limits the circle of potential users and critics.
+
+**3. Systems without consciousness.**
+
+GST naturally describes engineering, economic, and ecological systems without claiming to explain their "inner life". For a water supply system or a stock market, GST is the ideal language. CC is oriented towards systems with potential interiority; for purely mechanical systems ($P \ll 2/7$) its apparatus is excessive — why invoke $G_2$-rigidity to describe a thermostat?
+
+**4. Modularity.**
+
+GST combines easily with other approaches (control theory, operations research, synergetics). A systems engineer takes the concept of subsystem from GST, stability from control theory, and optimisation from operations research. CC represents a monolithic formalism whose integration with applied disciplines is an open task.
+
+---
+
+## Conclusion {#итоги}
+
+The relationship of CC and GST can be expressed by the formula:
 
 $$
-\text{КК} \;\approx\; \text{ОТС} \;+\; \text{квантовая структура} \;+\; \text{сознание} \;+\; \text{фальсифицируемость}
+\text{CC} \;\approx\; \text{GST} \;+\; \text{quantum structure} \;+\; \text{consciousness} \;+\; \text{falsifiability}
 $$
 
-КК **воспроизводит** центральные концепции ОТС — открытость, гомеостаз, эквифинальность, иерархию, изоморфизм — как следствия своих аксиом. При этом она **добавляет** то, чего ОТС не содержит: точные пороги, квантово-алгебраическую динамику, формализацию субъективного опыта и фальсифицируемые предсказания.
+CC **reproduces** the central concepts of GST — openness, homeostasis, equifinality, hierarchy, isomorphism — as consequences of its axioms. At the same time it **adds** what GST does not contain: exact thresholds, quantum-algebraic dynamics, formalisation of subjective experience, and falsifiable predictions.
 
 ```mermaid
 graph LR
-    OTS["ОТС<br/>(Берталанфи, Урманцев)<br/>Открытость, гомеостаз,<br/>иерархия, изоморфизм"]
-    QS["Квантовая структура<br/>Γ ∈ D(ℂ⁷), G₂-ригидность,<br/>N = 7 из Fano"]
-    CONS["Сознание<br/>E-измерение, Coh_E,<br/>L0→L4, No-Zombie"]
-    FALS["Фальсифицируемость<br/>22+ предсказаний,<br/>P_crit = 2/7, R_th = 1/3"]
+    OTS["GST<br/>(Bertalanffy, Urmantsev)<br/>Openness, homeostasis,<br/>hierarchy, isomorphism"]
+    QS["Quantum structure<br/>Γ ∈ D(ℂ⁷), G₂-rigidity,<br/>N = 7 from Fano"]
+    CONS["Consciousness<br/>E-dimension, Coh_E,<br/>L0→L4, No-Zombie"]
+    FALS["Falsifiability<br/>22+ predictions,<br/>P_crit = 2/7, R_th = 1/3"]
 
-    OTS --> KK["КК"]
+    OTS --> KK["CC"]
     QS --> KK
     CONS --> KK
     FALS --> KK
@@ -373,16 +373,16 @@ graph LR
     style OTS fill:#5b7ea8,color:#fff
 ```
 
-Однако заявление об обобщении остаётся **программным** до тех пор, пока предсказания КК не пройдут эмпирическую проверку. ОТС Берталанфи заслужила свой статус десятилетиями применения; КК должна заслужить свой — экспериментом.
+However, the claim to generalisation remains **programmatic** until the predictions of CC have passed empirical verification. Bertalanffy's GST earned its status through decades of application; CC must earn its own — through experiment.
 
 ---
 
-**Связанные документы:**
-- [Теории сознания](./consciousness-theories) — IIT, FEP, автопоэзис и ещё 30+ теорий
-- [Когнитом Анохина](./cognitome-anokhin) — российская теория сознания
-- [Панпсихизм](./panpsychism-analysis) — панинтериоризм vs панпсихизм
-- [Когнитивная иерархия](./cognitive-hierarchy) — уровни K1-K5
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0→L4
-- [Аксиоматика](/docs/applied/coherence-cybernetics/axiomatics) — формальные основания КК
-- [Предсказания](/docs/applied/coherence-cybernetics/predictions) — 22+ фальсифицируемых предсказаний
-- [История кибернетики](/docs/applied/coherence-cybernetics/cybernetics-history) — кибернетики I-II-III порядка
+**Related documents:**
+- [Theories of Consciousness](./consciousness-theories) — IIT, FEP, autopoiesis and 30+ more theories
+- [Anokhin's Cognitome](./cognitome-anokhin) — Russian theory of consciousness
+- [Panpsychism](./panpsychism-analysis) — pan-interiority vs panpsychism
+- [Cognitive Hierarchy](./cognitive-hierarchy) — K1-K5 levels
+- [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — L0→L4 levels
+- [Axiomatics](/docs/applied/coherence-cybernetics/axiomatics) — formal foundations of CC
+- [Predictions](/docs/applied/coherence-cybernetics/predictions) — 22+ falsifiable predictions
+- [History of Cybernetics](/docs/applied/coherence-cybernetics/cybernetics-history) — first/second/third-order cybernetics

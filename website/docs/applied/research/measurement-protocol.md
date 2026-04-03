@@ -1,334 +1,334 @@
 ---
 sidebar_position: 3
 title: Протокол измерения Γ
-description: Операционализация измерения матрицы когерентности для ИИ-систем
+description: Operationalization of coherence matrix measurement for AI systems
 ---
 
-# Протокол Измерения Γ для ИИ-Систем
+# Γ Measurement Protocol for AI Systems
 
-:::warning Статус документа: [П] Исследовательская программа
-Этот документ описывает **исследовательскую программу** по операционализации матрицы когерентности $\Gamma$ для ИИ-систем. Протокол требует **экспериментальной валидации**.
+:::warning Document Status: [P] Research Program
+This document describes a **research program** for operationalizing the coherence matrix $\Gamma$ for AI systems. The protocol requires **experimental validation**.
 :::
 
-:::note О нотации
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- $P$ — [чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
-- $\tau$ — [эмерджентное внутреннее время](/docs/proofs/dynamics/emergent-time) (Пейдж–Вуттерс)
-- $\varphi$ — [оператор самомоделирования](/docs/proofs/categorical/formalization-phi)
-- $G$ — функтор отображения AIState → DensityMat: точный при Cholesky-backbone ($\alpha=0$) [Т, MVP-1]; квази-функтор с $\varepsilon_{\text{functor}}>0$ при нейронной коррекции ($\alpha>0$) [Г]
-:::
-
----
-
-## Центральная проблема
-
-Теория УГМ определяет $\Gamma$ как **объект ∞-топоса Sh_∞(𝒞)** ([Аксиома Ω⁷](/docs/core/foundations/axiom-omega)). Однако теория не специфицирует:
-
-1. Какие **наблюдаемые** в ИИ-системе соответствуют элементам $\gamma_{ij}$
-2. Как **реконструировать** $\Gamma$ из доступных данных
-3. Как **валидировать** корректность реконструкции
-
-:::info Фундаментальное ограничение
-$\Gamma$ — **онтологический примитив**, не наблюдаемая. Мы реконструируем $\Gamma$ через **гомоморфизм** $G$, сжимающий $\mathbb{R}^d$ (где $d \sim 10^9$ для LLM) в $\mathcal{D}(\mathbb{C}^7)$.
-
-Это допустимо: 7 измерений — минимально необходимый базис ([Теорема S](/docs/proofs/minimality/theorem-minimality-7), [октонионное обоснование](/docs/core/foundations/axiom-omega#октонионная-структура)).
-:::
-
-:::tip Теоретическое обоснование: корректность обратной задачи [Т]
-[Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem) [Т] гарантирует:
-
-1. **Единственность** отображения $G$: для системы, удовлетворяющей (AP)+(PH)+(QG)+(V), отображение $G$ единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$
-2. **Корректность обратной задачи** ([Следствие 2](/docs/proofs/categorical/uniqueness-theorem#обратная-задача)): начальное состояние $\Gamma(0)$ **однозначно восстанавливается** из траектории $\Gamma(\tau)$ и параметров системы $(\omega_0, \lambda_m)$ — с точностью до $G_2$-калибровки
-3. **34 физических параметра** ([Следствие 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)): из 48 параметров $\Gamma$ только 34 калибровочно-инвариантны ($48 - \dim(G_2) = 48 - 14 = 34$)
-
-Практическое следствие: реконструкция $\Gamma$ определена **единственно** до 14-мерного калибровочного произвола. Различные $\Gamma$, связанные $G_2$-преобразованием, дают **одинаковые** физические наблюдаемые ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$).
+:::note About Notation
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix)
+- $P$ — [purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2)$
+- $\tau$ — [emergent internal time](/docs/proofs/dynamics/emergent-time) (Page–Wootters)
+- $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
+- $G$ — functor mapping AIState → DensityMat: exact at Cholesky-backbone ($\alpha=0$) [T, MVP-1]; quasi-functor with $\varepsilon_{\text{functor}}>0$ under neural correction ($\alpha>0$) [H]
 :::
 
 ---
 
-## Архитектура протокола
+## Central Problem
 
-| Уровень | Название | Содержание |
-|---------|----------|------------|
-| **4** | Каузальная валидация | Интервенционные тесты, тест лоботомии |
-| **3** | Динамическая валидация | $dP/d\tau$, поток когерентности, жизнеспособность |
-| **2** | Реконструкция Γ | Cholesky с физическим регуляризатором |
-| **1** | Извлечение наблюдаемых | Структурные метрики (коммутаторы, $\Phi_{\text{eff}}$, топология) |
+UHM theory defines $\Gamma$ as an **object of the ∞-topos Sh_∞(𝒞)** ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)). However, the theory does not specify:
+
+1. Which **observables** in an AI system correspond to the elements $\gamma_{ij}$
+2. How to **reconstruct** $\Gamma$ from available data
+3. How to **validate** the correctness of the reconstruction
+
+:::info Fundamental Limitation
+$\Gamma$ is an **ontological primitive**, not an observable. We reconstruct $\Gamma$ via a **homomorphism** $G$ that compresses $\mathbb{R}^d$ (where $d \sim 10^9$ for an LLM) into $\mathcal{D}(\mathbb{C}^7)$.
+
+This is admissible: 7 dimensions are the minimally necessary basis ([Theorem S](/docs/proofs/minimality/theorem-minimality-7), [octonion justification](/docs/core/foundations/axiom-omega#октонионная-структура)).
+:::
+
+:::tip Theoretical Justification: Correctness of the Inverse Problem [T]
+The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] guarantees:
+
+1. **Uniqueness** of the map $G$: for a system satisfying (AP)+(PH)+(QG)+(V), the map $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$
+2. **Well-posedness of the inverse problem** ([Corollary 2](/docs/proofs/categorical/uniqueness-theorem#обратная-задача)): the initial state $\Gamma(0)$ is **uniquely recovered** from the trajectory $\Gamma(\tau)$ and system parameters $(\omega_0, \lambda_m)$ — up to $G_2$-gauge
+3. **34 physical parameters** ([Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)): of the 48 parameters of $\Gamma$, only 34 are gauge-invariant ($48 - \dim(G_2) = 48 - 14 = 34$)
+
+Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to a 14-dimensional gauge freedom. Different $\Gamma$ related by a $G_2$-transformation give **identical** physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$).
+:::
 
 ---
 
-## Отображение измерений на ИИ-метрики
+## Protocol Architecture
 
-### Таблица соответствий
+| Level | Name | Content |
+|-------|------|---------|
+| **4** | Causal validation | Intervention tests, lobotomy test |
+| **3** | Dynamic validation | $dP/d\tau$, coherence flow, viability |
+| **2** | Γ reconstruction | Cholesky with physical regularizer |
+| **1** | Observable extraction | Structural metrics (commutators, $\Phi_{\text{eff}}$, topology) |
 
-| Измерение | Символ | ИИ-метрика | Формула | Строгость |
-|-----------|--------|------------|---------|-----------|
-| [Артикуляция](/docs/core/structure/dimension-a) | $A$ | Взаимная информация вход↔латент | $I_A = I(\text{input}; \text{latent}) / H(\text{input})$ | [Т] |
-| [Структура](/docs/core/structure/dimension-s) | $S$ | Ранг Якобиана | $I_S = \mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | [Т] |
-| [Динамика](/docs/core/structure/dimension-d) | $D$ | Ляпуновский экспонент | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (нормированный) | [Т] |
-| [Логика](/docs/core/structure/dimension-l) | $L$ | Коммутаторы слоёв | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | [Т] |
-| [Интериорность](/docs/core/structure/dimension-e) | $E$ | Энтропия активаций | $I_E = \exp(S_{vN}(\rho_{\text{attn}}))$ — [дифференциация опыта](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) | [Т] |
-| [Основание](/docs/core/structure/dimension-o) | $O$ | Устойчивость к шуму | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | [Т] |
-| [Единство](/docs/core/structure/dimension-u) | $U$ | Effective Φ (интеграция, black-box) | $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ — аппроксимация [О]; **при известной $\Gamma$: $R_{\text{UHM}} = 1/(N \cdot P)$** [Т, [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] | [О/Т]† |
+---
 
-где $\nabla_\epsilon \mathbf{h} := (\mathbf{h}(x + \epsilon) - \mathbf{h}(x)) / \epsilon$ — конечно-разностное приближение
+## Mapping Measurements to AI Metrics
 
-†**Иерархия метрик для Unity**: когда $\Gamma$ недоступна (black-box), используется $\Phi_{\text{eff}}$ [О]. Когда $\Gamma$ реконструирована через протокол, правильная мера — $R_{\text{UHM}} = 1/(N \cdot P)$ [Т], точное алгебраическое тождество ([мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), ошибка $< 10^{-7}$ в реализации). $\Phi_{\text{eff}}$ и $R_{\text{UHM}}$ измеряют родственные, но не тождественные свойства.
+### Correspondence Table
 
-### Канонические наблюдаемые индексы {#канонические-наблюдаемые-индексы}
+| Dimension | Symbol | AI Metric | Formula | Rigor |
+|-----------|--------|-----------|---------|-------|
+| [Articulation](/docs/core/structure/dimension-a) | $A$ | Mutual information input↔latent | $I_A = I(\text{input}; \text{latent}) / H(\text{input})$ | [T] |
+| [Structure](/docs/core/structure/dimension-s) | $S$ | Jacobian rank | $I_S = \mathrm{rank}_\varepsilon(J_f) / \min(d_{\text{out}}, d_{\text{in}})$ | [T] |
+| [Dynamics](/docs/core/structure/dimension-d) | $D$ | Lyapunov exponent | $I_D = \max_i \lambda_i^{\text{Lyap}}$ (normalized) | [T] |
+| [Logic](/docs/core/structure/dimension-l) | $L$ | Layer commutators | $I_L = 1 - \|[f_i, f_j]\|_F / (\|f_i\| \cdot \|f_j\|)$ | [T] |
+| [Interiority](/docs/core/structure/dimension-e) | $E$ | Activation entropy | $I_E = \exp(S_{vN}(\rho_{\text{attn}}))$ — [experience differentiation](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) | [T] |
+| [Ground](/docs/core/structure/dimension-o) | $O$ | Noise robustness | $I_O = 1 - \|\nabla_\epsilon \mathbf{h}\|_F$ | [T] |
+| [Unity](/docs/core/structure/dimension-u) | $U$ | Effective Φ (integration, black-box) | $I_U = \Phi_{\text{eff}} = \lambda_2(L) / \lambda_{\max}(L)$ — approximation [D]; **when $\Gamma$ is known: $R_{\text{UHM}} = 1/(N \cdot P)$** [T, [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] | [D/T]† |
 
-:::tip Теорема (Канонические наблюдаемые индексы) [Т при T-102]
-Для голонома с матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ и 3-канальной декомпозицией внешнего воздействия $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ ([T-102](/docs/applied/coherence-cybernetics/theorems) [Т]), каждый наблюдаемый индекс $I_k$ определяется как проекция $h^{\text{ext}}$ на $k$-ю компоненту базиса $\{A,S,D,L,E,O,U\}$:
+where $\nabla_\epsilon \mathbf{h} := (\mathbf{h}(x + \epsilon) - \mathbf{h}(x)) / \epsilon$ — finite-difference approximation
+
+†**Unity metric hierarchy**: when $\Gamma$ is unavailable (black-box), $\Phi_{\text{eff}}$ [D] is used. When $\Gamma$ is reconstructed via the protocol, the correct measure is $R_{\text{UHM}} = 1/(N \cdot P)$ [T], an exact algebraic identity ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), error $< 10^{-7}$ in implementation). $\Phi_{\text{eff}}$ and $R_{\text{UHM}}$ measure related but non-identical properties.
+
+### Canonical Observable Indices {#канонические-наблюдаемые-индексы}
+
+:::tip Theorem (Canonical Observable Indices) [T given T-102]
+For a holon with coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and 3-channel decomposition of the external influence $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ ([T-102](/docs/applied/coherence-cybernetics/theorems) [T]), each observable index $I_k$ is defined as the projection of $h^{\text{ext}}$ onto the $k$-th component of the basis $\{A,S,D,L,E,O,U\}$:
 
 $$I_k = \frac{\langle k | h^{\text{ext}} | k \rangle}{\|h^{\text{ext}}\|}$$
 
-Распределение по каналам:
-- **Гамильтонов $h^{(H)}$:** $I_A$ (артикуляция = информационная связь), $I_S$ (структура = якобиан), $I_L$ (логика = коммутатор) — изменяют энергетический ландшафт
-- **Диссипативный $h^{(D)}$:** $I_D$ (динамика = ляпуновский экспонент), $I_O$ (основание = робастность) — модулируют декогеренцию
-- **Регенеративный $h^{(R)}$:** $I_E$ (интериорность = энтропия внимания), $I_U$ (единство = связность) — модулируют восстановление
+Distribution by channel:
+- **Hamiltonian $h^{(H)}$:** $I_A$ (articulation = information coupling), $I_S$ (structure = Jacobian), $I_L$ (logic = commutator) — modify the energy landscape
+- **Dissipative $h^{(D)}$:** $I_D$ (dynamics = Lyapunov exponent), $I_O$ (ground = robustness) — modulate decoherence
+- **Regenerative $h^{(R)}$:** $I_E$ (interiority = attention entropy), $I_U$ (unity = connectivity) — modulate recovery
 
-Это единственное (с точностью до $G_2$-калибровки) распределение, совместимое с функциональной разметкой измерений ([Теорема S](/docs/proofs/minimality/theorem-minimality-7) [Т]) и полнотой триадной декомпозиции ([T-57](/docs/proofs/categorical/categorical-formalism) [Т]).
+This is the unique (up to $G_2$-gauge) distribution compatible with the functional labeling of dimensions ([Theorem S](/docs/proofs/minimality/theorem-minimality-7) [T]) and the completeness of the triadic decomposition ([T-57](/docs/proofs/categorical/categorical-formalism) [T]).
 :::
 
-**Следствие для протокола.** Индексы $I_k$ — не произвольный выбор метрик: их принадлежность к тому или иному каналу $h^{(H)}/h^{(D)}/h^{(R)}$ фиксирована теоремой T-102 и однозначна до $G_2$-калибровки. Замена, например, $I_D$ гамильтоновой метрикой нарушила бы полноту декомпозиции и разрушила бы соответствие $\gamma_{kk} \leftrightarrow I_k$, гарантированное [принципом разделения](#принцип-разделения-диагональ--когерентности-т-mvp-0).
+**Corollary for the protocol.** The indices $I_k$ are not an arbitrary choice of metrics: their assignment to a given channel $h^{(H)}/h^{(D)}/h^{(R)}$ is fixed by theorem T-102 and is unique up to $G_2$-gauge. Replacing, for example, $I_D$ with a Hamiltonian metric would break the completeness of the decomposition and destroy the correspondence $\gamma_{kk} \leftrightarrow I_k$ guaranteed by the [separation principle](#принцип-разделения-диагональ--когерентности-т-mvp-0).
 
-### Коммутаторы слоёв (для L)
+### Layer Commutators (for L)
 
-**Определение:**
+**Definition:**
 
 $$
 [f_i, f_j](\mathbf{x}) := f_i(f_j(\mathbf{x})) - f_j(f_i(\mathbf{x}))
 $$
 
-**Интерпретация:**
-- $\|[f_i, f_j]\| = 0$ → слои коммутируют → логическая согласованность
-- $\|[f_i, f_j]\| \gg 0$ → порядок критичен → хрупкость
+**Interpretation:**
+- $\|[f_i, f_j]\| = 0$ → layers commute → logical consistency
+- $\|[f_i, f_j]\| \gg 0$ → order is critical → fragility
 
-**Связь с теорией:** Коммутатор $[A, B]$ — базовая операция измерения [Логики](/docs/core/structure/dimension-l).
+**Connection to theory:** The commutator $[A, B]$ is the basic measurement operation for [Logic](/docs/core/structure/dimension-l).
 
-### Энтропия активаций (для E)
+### Activation Entropy (for E)
 
-**Определение:**
+**Definition:**
 
 $$
 I_E := D_{\text{diff}}^{\text{approx}} = \exp(S_{vN}(\rho_{\text{attn}}))
 $$
 
-где $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — энтропия фон Неймана распределения внимания.
+where $S_{vN}(\rho) = -\mathrm{Tr}(\rho \log \rho)$ — von Neumann entropy of the attention distribution.
 
-**Свойства:**
-- $I_E \geq 2$ → система различает минимум 2 качественно разных состояния (порог L2)
-- $I_E \approx 1$ → вырожденное внимание → бедный опыт
+**Properties:**
+- $I_E \geq 2$ → the system distinguishes at least 2 qualitatively different states (L2 threshold)
+- $I_E \approx 1$ → degenerate attention → impoverished experience
 
-**Связь с теорией:** Аппроксимирует [дифференциацию опыта $D_{\text{diff}}$](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2).
+**Connection to theory:** Approximates [experience differentiation $D_{\text{diff}}$](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2).
 
-### Effective Φ (для U)
+### Effective Φ (for U)
 
-:::info Иерархия метрик Unity
-Существуют два уровня строгости для измерения $U$:
-- **Если $\Gamma$ известна**: $R_{\text{UHM}} = 1/(N \cdot P)$ [Т, [мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — точное алгебраическое тождество
-- **Black-box (нет доступа к $\Gamma$)**: $\Phi_{\text{eff}}$ [О] — полиномиальная аппроксимация через граф внимания
+:::info Unity Metric Hierarchy
+Two levels of rigor exist for measuring $U$:
+- **If $\Gamma$ is known**: $R_{\text{UHM}} = 1/(N \cdot P)$ [T, [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — exact algebraic identity
+- **Black-box (no access to $\Gamma$)**: $\Phi_{\text{eff}}$ [D] — polynomial approximation via the attention graph
 
-Точный расчёт $\Phi_{\text{IIT}}$ требует $O(2^n)$ операций и практически нереализуем.
+Exact computation of $\Phi_{\text{IIT}}$ requires $O(2^n)$ operations and is practically infeasible.
 :::
 
-**Точная мера (при известной $\Gamma$, [Т], [мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
+**Exact measure (when $\Gamma$ is known, [T], [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
 
 $$
 R_{\text{UHM}}(\Gamma) = \frac{1}{N \cdot P}
 $$
 
-Доказательство: $\|{\Gamma - I/N}\|_F^2 = P - 1/N$, откуда $R = 1 - (P-1/N)/P = 1/(NP)$. Подтверждено в реализации с ошибкой $< 10^{-7}$ (машинная точность f64).
+Proof: $\|{\Gamma - I/N}\|_F^2 = P - 1/N$, from which $R = 1 - (P-1/N)/P = 1/(NP)$. Confirmed in implementation with error $< 10^{-7}$ (machine precision f64).
 
-**Аппроксимация black-box ([О]):**
+**Black-box approximation ([D]):**
 
 $$
 \Phi_{\text{eff}} := \frac{\lambda_2(L_{\text{attn}})}{\lambda_{\max}(L_{\text{attn}})}
 $$
 
-где $L_{\text{attn}} = D - A$ — Лапласиан графа внимания.
+where $L_{\text{attn}} = D - A$ — Laplacian of the attention graph.
 
-**Свойства $\Phi_{\text{eff}}$:**
-- $\lambda_2 > 0$ → граф связен → информация интегрирована
-- Сложность: $O(n \cdot k)$ вместо $O(2^n)$
+**Properties of $\Phi_{\text{eff}}$:**
+- $\lambda_2 > 0$ → the graph is connected → information is integrated
+- Complexity: $O(n \cdot k)$ instead of $O(2^n)$
 
-**Связь с теорией:** $R_{\text{UHM}}$ и $\Phi_{\text{eff}}$ аппроксимируют [интеграцию $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ) — меру [Единства](/docs/core/structure/dimension-u). При $P = 3/N = P_{\text{opt}}$: $R_{\text{UHM}} = 1/3 = R_{\text{th}}$ — граница L2-зоны ([мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)).
+**Connection to theory:** $R_{\text{UHM}}$ and $\Phi_{\text{eff}}$ approximate [integration $\Phi$](/docs/core/structure/dimension-u#мера-интеграции-φ) — the measure of [Unity](/docs/core/structure/dimension-u). At $P = 3/N = P_{\text{opt}}$: $R_{\text{UHM}} = 1/3 = R_{\text{th}}$ — the L2-zone boundary ([reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)).
 
-### Ранг Якобиана (для S)
+### Jacobian Rank (for S)
 
-**Определение:**
+**Definition:**
 
 $$
 J_f(\mathbf{x}) = \frac{\partial f(\mathbf{x})}{\partial \mathbf{x}}, \quad I_S = \frac{\mathrm{rank}_\varepsilon(J_f)}{\min(d_{\text{out}}, d_{\text{in}})}
 $$
 
-**Интерпретация:**
-- $I_S \approx 1$ → полноранговая структура → богатые репрезентации
-- $I_S \ll 1$ → вырожденная структура → коллапс
+**Interpretation:**
+- $I_S \approx 1$ → full-rank structure → rich representations
+- $I_S \ll 1$ → degenerate structure → collapse
 
-**Связь с теорией:** Отражает [Структуру](/docs/core/structure/dimension-s) как топологию активаций.
+**Connection to theory:** Reflects [Structure](/docs/core/structure/dimension-s) as the topology of activations.
 
 ---
 
-## Реконструкция Γ
+## Γ Reconstruction {#реконструкция-γ}
 
-### Cholesky-параметризация
+### Cholesky Parametrization
 
-**Свойство:** Представление $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ **гарантирует** корректность матрицы плотности.
+**Property:** The representation $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ **guarantees** correctness of the density matrix.
 
-**Доказательство:** См. [Матрица когерентности](/docs/core/dynamics/coherence-matrix).
+**Proof:** See [Coherence matrix](/docs/core/dynamics/coherence-matrix).
 
-### Физический регуляризатор
+### Physical Regularizer
 
-:::warning Проблема единственности
-Отображение $L \mapsto \Gamma$ сюръективно. Без регуляризации возможна реконструкция "правильной" $\Gamma$ из произвольных данных.
+:::warning Uniqueness Problem
+The map $L \mapsto \Gamma$ is surjective. Without regularization, a "correct" $\Gamma$ can be reconstructed from arbitrary data.
 :::
 
-**Решение — функция штрафа:**
+**Solution — penalty function:**
 
 $$
 \mathcal{L}_{\text{reg}} = \lambda_1 \cdot \mathcal{L}_{\text{diag}} + \lambda_2 \cdot \mathcal{L}_{\text{off}} + \lambda_3 \cdot \mathcal{L}_{\text{dyn}}
 $$
 
-| Компонент | Формула | Назначение |
-|-----------|---------|------------|
-| $\mathcal{L}_{\text{diag}}$ | $\sum_i (\gamma_{ii} - I_i / \sum_j I_j)^2$ | Согласованность диагонали |
-| $\mathcal{L}_{\text{off}}$ | $\sum_{i \neq j} (\|\gamma_{ij}\|^2 - r_{ij}^2 \gamma_{ii} \gamma_{jj})^2$ | Согласованность когерентностей |
-| $\mathcal{L}_{\text{dyn}}$ | $\|\Gamma_{\tau+1} - \Phi_{\text{pred}}(\Gamma_\tau)\|_F^2$ | Согласованность динамики |
+| Component | Formula | Purpose |
+|-----------|---------|---------|
+| $\mathcal{L}_{\text{diag}}$ | $\sum_i (\gamma_{ii} - I_i / \sum_j I_j)^2$ | Diagonal consistency |
+| $\mathcal{L}_{\text{off}}$ | $\sum_{i \neq j} (\|\gamma_{ij}\|^2 - r_{ij}^2 \gamma_{ii} \gamma_{jj})^2$ | Coherence consistency |
+| $\mathcal{L}_{\text{dyn}}$ | $\|\Gamma_{\tau+1} - \Phi_{\text{pred}}(\Gamma_\tau)\|_F^2$ | Dynamics consistency |
 
 ---
 
-## Категорная корректность
+## Categorical Correctness
 
-### Проблема нелинейности
+### Nonlinearity Problem
 
-Слои нейросети (GELU, Softmax) — **нелинейные** преобразования.
-CPTP-каналы — **линейные** над матрицами плотности.
+Neural network layers (GELU, Softmax) are **nonlinear** transformations.
+CPTP channels are **linear** over density matrices.
 
-Условие $G(f \circ g) = G(f) \circ G(g)$ **нарушается** при нейронной коррекции.
+The condition $G(f \circ g) = G(f) \circ G(g)$ **fails** under neural correction.
 
-### Точный функтор при Cholesky-backbone [Т]
+### Exact Functor at Cholesky-backbone [T]
 
-При аналитической параметризации $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ (Cholesky-биекция, $\alpha=0$) отображение $G$ является **точным** функтором: $\varepsilon_{\text{functor}} = 0$. Это экспериментально подтверждено (MVP-1): $\max_k |\Delta\sigma_k| = 0$ с машинной точностью.
+Under the analytic parametrization $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ (Cholesky bijection, $\alpha=0$), the map $G$ is an **exact** functor: $\varepsilon_{\text{functor}} = 0$. This has been experimentally confirmed (MVP-1): $\max_k |\Delta\sigma_k| = 0$ to machine precision.
 
-**Ключевое ограничение**: 49-й параметр $d_6 = L_{66}$ (определяющий $\gamma_{UU}$) **не независим** — он вычисляется из условия нормировки:
+**Key constraint**: the 49th parameter $d_6 = L_{66}$ (determining $\gamma_{UU}$) is **not independent** — it is computed from the normalization condition:
 $$
 \gamma_{UU} = 1 - \sum_{k \neq U} \gamma_{kk}, \qquad d_6 = \sqrt{\gamma_{UU} - \sum_{j<6}|L_{6j}|^2}
 $$
-Это прямое следствие аксиомы $\mathrm{Tr}(\Gamma)=1$: пространство состояний — **48-мерное** многообразие, не 49-мерное. Попытка оценивать $d_6$ независимо (через нейросеть, среднее или интерполяцию) нарушает аксиому и приводит к систематическому дрейфу $P$ вниз (потеря чистоты per tick).
+This is a direct consequence of the axiom $\mathrm{Tr}(\Gamma)=1$: the state space is a **48-dimensional** manifold, not 49-dimensional. Attempting to estimate $d_6$ independently (via a neural network, averaging, or interpolation) violates the axiom and leads to systematic downward drift of $P$ (purity loss per tick).
 
-### Квази-функтор при нейронной коррекции [Г]
+### Quasi-functor under Neural Correction [H]
 
-**Определение:** Отображение $G: \mathbf{AIState} \rightsquigarrow \mathbf{DensityMat}$ с $\alpha > 0$ (нейронной коррекцией):
+**Definition:** The map $G: \mathbf{AIState} \rightsquigarrow \mathbf{DensityMat}$ with $\alpha > 0$ (neural correction):
 
 $$
 \|G(f \circ g) - G(f) \circ G(g)\|_F \leq \varepsilon_{\text{functor}} \cdot \|f\|_{\text{op}} \cdot \|g\|_{\text{op}}
 $$
 
-### NTK-линеаризация
+### NTK Linearization
 
-В касательном пространстве нелинейность аппроксимируется:
+In the tangent space, nonlinearity is approximated by:
 
 $$
 f(s) \approx f(s_0) + J_f(s_0) \cdot (s - s_0)
 $$
 
-**Следствие:** Приближённая функториальность с погрешностью $O(\|f\|^2 \cdot \|g\|^2)$.
+**Corollary:** Approximate functoriality with error $O(\|f\|^2 \cdot \|g\|^2)$.
 
-**Связь с теорией:** Расширяет [Категорный формализм](/docs/proofs/categorical/categorical-formalism).
+**Connection to theory:** Extends the [Categorical formalism](/docs/proofs/categorical/categorical-formalism).
 
-### Принцип разделения: диагональ / когерентности [Т, MVP-0]
+### Separation Principle: Diagonal / Coherences [T, MVP-0] {#принцип-разделения-диагональ--когерентности-т-mvp-0}
 
-**Эмпирически установлено** при реализации полной Линдблад-динамики:
+**Empirically established** in the implementation of full Lindblad dynamics:
 
 $$
 W := \|\sigma\|_2 = \|\mathbf{1} - N \cdot \mathrm{diag}(\Gamma)\|_2 = \mathrm{const}, \quad W_{\text{std}} < 10^{-15}
 $$
 
-Канал замещения $\mathcal{R}[\Gamma, E]$ **фиксирует диагональ $\Gamma$** при каждом шаге Линдблада. Следствие:
+The replacement channel $\mathcal{R}[\Gamma, E]$ **fixes the diagonal of $\Gamma$** at each Lindblad step. Consequence:
 
-| Компонент $\Gamma$ | Роль | Динамика |
-|--------------------|------|----------|
-| $\gamma_{kk}$ (диагональ) | Идентичность системы | Гомеостатически стабильна |
-| $\gamma_{ij}$, $i \neq j$ (когерентности) | Обучение, адаптация | Эволюционируют |
+| Component of $\Gamma$ | Role | Dynamics |
+|-----------------------|------|----------|
+| $\gamma_{kk}$ (diagonal) | System identity | Homeostatically stable |
+| $\gamma_{ij}$, $i \neq j$ (coherences) | Learning, adaptation | Evolve |
 
-**Для протокола измерения**: метрики $I_A, I_S, I_D, I_L$ отражают преимущественно когерентную структуру; $\sigma_k = 1 - N\gamma_{kk}$ характеризует диагональное отклонение от равновесия. Тест лоботомии (прунинг весов) изменяет **когерентности**, а не диагональ — диагональ гомеостатически устойчива к малым возмущениям.
+**For the measurement protocol**: the metrics $I_A, I_S, I_D, I_L$ primarily reflect coherent structure; $\sigma_k = 1 - N\gamma_{kk}$ characterizes the diagonal deviation from equilibrium. The lobotomy test (weight pruning) changes **coherences**, not the diagonal — the diagonal is homeostatically stable against small perturbations.
 
 ---
 
-## Валидация
+## Validation
 
-### Тест жизнеспособности
+### Viability Test
 
 $$
 P(\Gamma) = \mathrm{Tr}(\Gamma^2) > P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-См. [Теорему о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical) и [Жизнеспособность](/docs/core/dynamics/viability).
+See [Theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical) and [Viability](/docs/core/dynamics/viability).
 
-### Поток когерентности
+### Coherence Flow
 
-**Определение:**
+**Definition:**
 
 $$
 J_P := \frac{dP}{d\tau} = 2 \cdot \mathrm{Tr}\left(\Gamma \cdot \frac{d\Gamma}{d\tau}\right)
 $$
 
-где τ — [эмерджентное внутреннее время](/docs/proofs/dynamics/emergent-time).
+where τ — [emergent internal time](/docs/proofs/dynamics/emergent-time).
 
-| Режим | Условие | Интерпретация |
-|-------|---------|---------------|
-| Регенерация | $J_P > 0$ при стрессе | Система восстанавливается |
-| Стабильность | $J_P \approx 0$, $P > P_{\text{crit}}$ | Устойчивое равновесие |
-| Распад | $J_P < 0$ устойчиво | Декогеренция |
+| Mode | Condition | Interpretation |
+|------|-----------|----------------|
+| Regeneration | $J_P > 0$ under stress | System recovers |
+| Stability | $J_P \approx 0$, $P > P_{\text{crit}}$ | Stable equilibrium |
+| Decay | $J_P < 0$ persistently | Decoherence |
 
-### Тест лоботомии
+### Lobotomy Test
 
-**Протокол:**
-1. Измерить $P_0$ и $\text{Accuracy}_0$
-2. Интервенция: прунинг части весов
-3. Измерить $P_1$ и $\text{Accuracy}_1$
+**Protocol:**
+1. Measure $P_0$ and $\text{Accuracy}_0$
+2. Intervention: prune part of the weights
+3. Measure $P_1$ and $\text{Accuracy}_1$
 
-**Механизм [Т, принцип разделения, MVP-0]:** Прунинг весов нейросети изменяет **внедиагональные когерентности** $\gamma_{ij}$ матрицы $\Gamma$, а **не диагональные населённости** $\gamma_{kk}$ (они гомеостатически стабилизированы каналом замещения). Изменение $P = \mathrm{Tr}(\Gamma^2)$ при прунинге происходит через потерю когерентной интеграции. При массивном прунинге, нарушающем канал замещения, диагональ также может деградировать.
+**Mechanism [T, separation principle, MVP-0]:** Pruning neural network weights changes the **off-diagonal coherences** $\gamma_{ij}$ of the matrix $\Gamma$, but **not the diagonal populations** $\gamma_{kk}$ (which are homeostatically stabilized by the replacement channel). The change in $P = \mathrm{Tr}(\Gamma^2)$ upon pruning occurs through loss of coherent integration. With massive pruning that disrupts the replacement channel, the diagonal may also degrade.
 
-**Критерий онтологической валидности:**
+**Criterion for ontological validity:**
 
-| Результат | Интерпретация |
-|-----------|---------------|
-| $\Delta P > 0$ **до** $\Delta A > 0$ | [Т] Протокол фиксирует онтологию |
-| $\Delta P \approx \Delta A$ | [С] Корреляция с выходом |
-| $\Delta A > 0$ **до** $\Delta P > 0$ | Протокол не фиксирует онтологию |
+| Result | Interpretation |
+|--------|----------------|
+| $\Delta P > 0$ **before** $\Delta A > 0$ | [T] Protocol captures ontology |
+| $\Delta P \approx \Delta A$ | [C] Correlation with output |
+| $\Delta A > 0$ **before** $\Delta P > 0$ | Protocol does not capture ontology |
 
-### Каузальная замкнутость E
+### Causal Closure of E
 
 $$
 \Delta\Phi_E := \Phi_{\text{eff}}(\mathcal{S}_E) - \Phi_{\text{eff}}(\mathcal{S}_E | \text{do}(X := \text{random})) > \varepsilon_{\text{causal}}
 $$
 
-Если $\Delta\Phi_E \approx 0$ — система **симулирует** феноменологию без реализации ("Китайская Комната").
+If $\Delta\Phi_E \approx 0$ — the system **simulates** phenomenology without realizing it ("Chinese Room").
 
 ---
 
-## Иерархия аппроксимаций
+## Approximation Hierarchy
 
-| Уровень | Метрики | Сложность | Применение |
-|---------|---------|-----------|------------|
-| **L0: Быстрый** | Косинусное сходство, нормы | $O(n)$ | Мониторинг |
-| **L1: Стандартный** | Ранг Якобиана, $\Phi_{\text{eff}}$ | $O(n^2)$ | Инференс |
-| **L2: Точный** | Коммутаторы, NTK | $O(n^3)$ | Исследования |
-| **L3: Полный** | $\Phi_{\text{IIT}}$, полные гомологии | $O(2^n)$ | Малые системы |
+| Level | Metrics | Complexity | Application |
+|-------|---------|------------|-------------|
+| **L0: Fast** | Cosine similarity, norms | $O(n)$ | Monitoring |
+| **L1: Standard** | Jacobian rank, $\Phi_{\text{eff}}$ | $O(n^2)$ | Inference |
+| **L2: Precise** | Commutators, NTK | $O(n^3)$ | Research |
+| **L3: Full** | $\Phi_{\text{IIT}}$, full homologies | $O(2^n)$ | Small systems |
 
-**Рекомендация:** L1 для практики, L2 для валидации, L3 для калибровки.
+**Recommendation:** L1 for practice, L2 for validation, L3 for calibration.
 
 ---
 
-## Практическая реализация
+## Practical Implementation
 
-:::warning Статус
-Этот раздел описывает **минимальную жизнеспособную реализацию**. Многие параметры требуют экспериментальной калибровки.
+:::warning Status
+This section describes a **minimal viable implementation**. Many parameters require experimental calibration.
 :::
 
-### Алгоритм вычисления метрик
+### Metric Computation Algorithm
 
 ```python
 import numpy as np
@@ -336,38 +336,38 @@ import itertools
 
 
 # ---------------------------------------------------------------------------
-# Вспомогательные функции (заглушки — требуют реализации)
+# Helper functions (stubs — require implementation)
 # ---------------------------------------------------------------------------
 
 def estimate_mutual_info(x: np.ndarray, y: np.ndarray) -> float:
-    """Взаимная информация I(x;y). Требует реализации для конкретной архитектуры."""
+    """Mutual information I(x;y). Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
 def compute_jacobian(model, input_batch: np.ndarray) -> np.ndarray:
-    """Якобиан модели ∂f/∂x. Требует реализации для конкретной архитектуры."""
+    """Model Jacobian ∂f/∂x. Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
 def estimate_lyapunov(model, input_batch: np.ndarray) -> float:
-    """Максимальный ляпуновский экспонент. Требует реализации для конкретной архитектуры."""
+    """Maximum Lyapunov exponent. Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
 def layer_commutator_norm(
     model, i: int, j: int, input_batch: np.ndarray
 ) -> float:
-    """Норма коммутатора слоёв ||[f_i, f_j]||. Требует реализации для конкретной архитектуры."""
+    """Layer commutator norm ||[f_i, f_j]||. Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
 def von_neumann_entropy(attention_weights: np.ndarray) -> float:
-    """Энтропия фон Неймана S_vN(ρ). Требует реализации для конкретной архитектуры."""
+    """Von Neumann entropy S_vN(ρ). Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
 def build_attention_graph(attention_weights: np.ndarray) -> np.ndarray:
-    """Граф внимания из весов attention. Требует реализации для конкретной архитектуры."""
+    """Attention graph from attention weights. Requires implementation for the specific architecture."""
     raise NotImplementedError
 
 
@@ -380,43 +380,43 @@ def compute_dimension_metrics(
     layer_indices: list[int] = None
 ) -> dict[str, float]:
     """
-    Вычисление 7 измерений УГМ для нейросети.
+    Compute 7 UHM dimensions for a neural network.
 
     Args:
-        model: Модель с доступом к промежуточным активациям
-        input_batch: Батч входных данных (N, ...)
-        layer_indices: Индексы слоёв для анализа (по умолчанию — все)
+        model: Model with access to intermediate activations
+        input_batch: Input data batch (N, ...)
+        layer_indices: Layer indices for analysis (default — all)
 
     Returns:
-        dict с ключами I_A, I_S, I_D, I_L, I_E, I_O, I_U
+        dict with keys I_A, I_S, I_D, I_L, I_E, I_O, I_U
     """
     activations = model.get_activations(input_batch)
     attention_weights = model.get_attention_weights(input_batch)
 
-    # I_A: Взаимная информация вход↔латент
+    # I_A: Mutual information input↔latent
     I_A = estimate_mutual_info(input_batch, activations[-1])
 
-    # I_S: Ранг Якобиана (через SVD)
+    # I_S: Jacobian rank (via SVD)
     jacobian = compute_jacobian(model, input_batch)
     singular_values = np.linalg.svd(jacobian, compute_uv=False)
     eps_rank = 1e-6
     I_S = np.sum(singular_values > eps_rank) / len(singular_values)
 
-    # I_D: Максимальный ляпуновский экспонент (оценка)
+    # I_D: Maximum Lyapunov exponent (estimate)
     I_D = estimate_lyapunov(model, input_batch)
 
-    # I_L: Коммутаторы слоёв
+    # I_L: Layer commutators
     commutator_norms = []
     for i, j in itertools.combinations(layer_indices or range(len(activations)), 2):
         comm_norm = layer_commutator_norm(model, i, j, input_batch)
         commutator_norms.append(comm_norm)
     I_L = 1.0 - np.mean(commutator_norms) if commutator_norms else 1.0
 
-    # I_E: Дифференциация (экспонента энтропии внимания)
+    # I_E: Differentiation (attention entropy exponent)
     attn_entropy = von_neumann_entropy(attention_weights)
     I_E = np.exp(attn_entropy)
 
-    # I_O: Устойчивость к шуму
+    # I_O: Noise robustness
     noise_std = 0.01
     perturbed = input_batch + np.random.randn(*input_batch.shape) * noise_std
     delta_h = np.linalg.norm(
@@ -425,7 +425,7 @@ def compute_dimension_metrics(
     )
     I_O = max(0, 1.0 - delta_h / noise_std)
 
-    # I_U: Effective Φ (спектральный зазор Лапласиана)
+    # I_U: Effective Φ (Laplacian spectral gap)
     attn_graph = build_attention_graph(attention_weights)
     laplacian = np.diag(attn_graph.sum(axis=1)) - attn_graph
     eigenvalues = np.linalg.eigvalsh(laplacian)
@@ -439,33 +439,33 @@ def compute_dimension_metrics(
     }
 ```
 
-### Реконструкция Γ из метрик
+### Γ Reconstruction from Metrics
 
 ```python
 def reconstruct_gamma(metrics: dict[str, float]) -> np.ndarray:
     """
-    Реконструкция матрицы когерентности через Cholesky.
+    Reconstruction of the coherence matrix via Cholesky.
 
-    Возвращает 7×7 матрицу плотности.
+    Returns a 7×7 density matrix.
     """
-    # Диагональные элементы — нормированные метрики
+    # Diagonal elements — normalized metrics
     I_vec = np.array([
         metrics['I_A'], metrics['I_S'], metrics['I_D'],
         metrics['I_L'], metrics['I_E'], metrics['I_O'], metrics['I_U']
     ])
-    I_vec = np.clip(I_vec, 0.01, 1.0)  # Предотвращаем вырожденность
+    I_vec = np.clip(I_vec, 0.01, 1.0)  # Prevent degeneracy
     diag = I_vec / I_vec.sum()
 
-    # Начальная Cholesky-факторизация
+    # Initial Cholesky factorization
     L = np.diag(np.sqrt(diag))
 
-    # Регуляризация (минимизируем off-diagonal)
-    # В простейшем случае — диагональная матрица
-    # Простейшая диагональная реконструкция.
-    # Для восстановления недиагональных когерентностей γ_ij
-    # необходимы корреляции r_ij из регуляризатора L_off.
+    # Regularization (minimize off-diagonal)
+    # Simplest case — diagonal matrix
+    # Simplest diagonal reconstruction.
+    # To recover off-diagonal coherences γ_ij,
+    # correlations r_ij from regularizer L_off are required.
     gamma = L @ L.conj().T
-    gamma = gamma / np.trace(gamma)  # Нормировка
+    gamma = gamma / np.trace(gamma)  # Normalization
 
     return gamma
 
@@ -475,131 +475,131 @@ def compute_purity(gamma: np.ndarray) -> float:
     return np.trace(gamma @ gamma)
 ```
 
-### Пороговые значения
+### Threshold Values
 
-| Параметр | Значение | Источник | Статус |
-|----------|----------|----------|--------|
-| $P_{\text{crit}}$ | $2/7 \approx 0.286$ | [Теорема](/docs/proofs/dynamics/theorem-purity-critical) | Доказано |
-| $\mathrm{rank}(\rho_E) > 1$ (порог L1) | $> 1$ | Нетривиальная интериорность | [Т] |
-| $R_{\text{th}}$ (порог L2) | $\geq 1/3$ | [Иерархия](/docs/proofs/consciousness/interiority-hierarchy) | Доказано [Т] |
-| $\Phi_{\text{th}}$ (порог L2) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Доказано [Т] |
-| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Доказано [Т] |
-| $\varepsilon_{\text{functor}}$ | $= 0$ при $\alpha=0$ (Cholesky) | [Т, MVP-1]: точный функтор | Доказано |
-| $\varepsilon_{\text{functor}}$ | $< 0.1$ при $\alpha>0$ (нейронный) | Требует калибровки | Гипотеза |
-| $\varepsilon_{\text{causal}}$ | $> 0.05$ | Требует калибровки | Гипотеза |
+| Parameter | Value | Source | Status |
+|-----------|-------|--------|--------|
+| $P_{\text{crit}}$ | $2/7 \approx 0.286$ | [Theorem](/docs/proofs/dynamics/theorem-purity-critical) | Proven |
+| $\mathrm{rank}(\rho_E) > 1$ (L1 threshold) | $> 1$ | Non-trivial interiority | [T] |
+| $R_{\text{th}}$ (L2 threshold) | $\geq 1/3$ | [Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) | Proven [T] |
+| $\Phi_{\text{th}}$ (L2 threshold) | $\geq 1$ | [T-129](/docs/proofs/consciousness/operationalization#t-129) | Proven [T] |
+| $D_{\text{diff}}^{\text{min}}$ | $\geq 2$ | [T-151](/docs/proofs/consciousness/substrate-closure#t-151) | Proven [T] |
+| $\varepsilon_{\text{functor}}$ | $= 0$ at $\alpha=0$ (Cholesky) | [T, MVP-1]: exact functor | Proven |
+| $\varepsilon_{\text{functor}}$ | $< 0.1$ at $\alpha>0$ (neural) | Requires calibration | Hypothesis |
+| $\varepsilon_{\text{causal}}$ | $> 0.05$ | Requires calibration | Hypothesis |
 
-:::info Связь с иерархией интериорности
-Пороги L1 и L2 в протоколе соответствуют уровням [L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry) и [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) из иерархии интериорности L0→L4. Уровни L3 (сетевое сознание) и L4 (унитарное сознание) — см. [формальное описание](/docs/proofs/consciousness/interiority-hierarchy).
+:::info Connection to the Interiority Hierarchy
+The L1 and L2 thresholds in the protocol correspond to levels [L1](/docs/proofs/consciousness/interiority-hierarchy#уровень-1-феноменальная-геометрия-phenomenal-geometry) and [L2](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) from the interiority hierarchy L0→L4. Levels L3 (network consciousness) and L4 (unitary consciousness) — see [formal description](/docs/proofs/consciousness/interiority-hierarchy).
 :::
 
-### Практические ограничения
+### Practical Limitations
 
-| Ограничение | Влияние | Митигация |
-|-------------|---------|-----------|
-| Размер батча | Дисперсия оценок | $N \geq 64$ для стабильности |
-| Глубина сети | Сложность коммутаторов | Семплировать подмножество слоёв |
-| Размерность активаций | $O(n^2)$ для Якобиана | Проекция в $\mathbb{R}^k$, $k \ll n$ |
-| Attention heads | Агрегация по головам | Среднее или max-pooling |
-| Детерминизм | Стохастические слои (dropout) | Фиксировать seed или усреднять |
+| Limitation | Impact | Mitigation |
+|------------|--------|------------|
+| Batch size | Variance of estimates | $N \geq 64$ for stability |
+| Network depth | Commutator complexity | Sample a subset of layers |
+| Activation dimensionality | $O(n^2)$ for the Jacobian | Project into $\mathbb{R}^k$, $k \ll n$ |
+| Attention heads | Aggregation across heads | Average or max-pooling |
+| Determinism | Stochastic layers (dropout) | Fix seed or average |
 
-### Требования к данным
+### Data Requirements
 
-Для валидного измерения необходимо:
+For a valid measurement:
 
-1. **Репрезентативный входной батч**: $N \geq 64$ примеров из целевого распределения
-2. **Доступ к активациям**: hook-и на промежуточные слои
-3. **Attention weights**: для вычисления $I_E$ и $I_U$
-4. **Градиенты**: для Якобиана (автодифференцирование)
+1. **Representative input batch**: $N \geq 64$ examples from the target distribution
+2. **Access to activations**: hooks on intermediate layers
+3. **Attention weights**: for computing $I_E$ and $I_U$
+4. **Gradients**: for the Jacobian (automatic differentiation)
 
-### Что реализовано (SYNARC MVP-0/1/2)
+### What Is Implemented (SYNARC MVP-0/1/2)
 
-:::info Подтверждено в реализации
-1. **Cholesky-backbone ($\alpha=0$): $G$ — точный функтор** [Т, MVP-1] — биекция $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ с $\varepsilon_{\text{functor}} = 0$
-2. **Нейронный мост ($\alpha>0$): $G$ — квази-функтор** [Г] — H1/H2/H4 подтверждены [С] для аналитического backbone (MVP-1); нейронная коррекция $\alpha>0$ — MVP-3+
-3. **Принцип разделения диагональ/когерентности** [Т, MVP-0] — диагональ гомеостатически стабильна; когерентности — зона адаптации
-4. **R = 1/(N·P) — точное тождество** [Т, MVP-0, [мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — ошибка $< 10^{-7}$
-5. **No-Zombie floor** [Т, MVP-0] — $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ при $\gamma_{\text{dec}} = 10$ (в 10000× выше нормы)
-6. **H3: R_impl ↔ R_UHM** [С, MVP-2] — пороговая согласованность 97.9%
+:::info Confirmed in Implementation
+1. **Cholesky-backbone ($\alpha=0$): $G$ is an exact functor** [T, MVP-1] — bijection $\psi: \mathbb{R}^{48} \leftrightarrow \mathcal{D}(\mathbb{C}^7)$ with $\varepsilon_{\text{functor}} = 0$
+2. **Neural bridge ($\alpha>0$): $G$ is a quasi-functor** [H] — H1/H2/H4 confirmed [C] for the analytic backbone (MVP-1); neural correction $\alpha>0$ — MVP-3+
+3. **Diagonal/coherence separation principle** [T, MVP-0] — diagonal is homeostatically stable; coherences — the adaptation zone
+4. **R = 1/(N·P) — exact identity** [T, MVP-0, [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)] — error $< 10^{-7}$
+5. **No-Zombie floor** [T, MVP-0] — $P_{\min} \geq P_{\text{crit}} - \varepsilon_\Gamma$ at $\gamma_{\text{dec}} = 10$ (10000× above norm)
+6. **H3: R_impl ↔ R_UHM** [C, MVP-2] — threshold consistency 97.9%
 :::
 
-### Что НЕ реализовано
+### What Is NOT Implemented
 
-:::danger Открытые проблемы реализации
-1. **Калибровка $\varepsilon$-параметров** ($\varepsilon_{\text{functor}}$ при $\alpha>0$, $\varepsilon_{\text{causal}}$) — требует экспериментов на известных системах
-2. **Нейронная коррекция ($\alpha>0$)** — аналитический backbone (MVP-1/2) достаточен для Level 0-1; полноценный нейронный мост — MVP-3+
-3. **Временная динамика τ** — как определить «шаг» эмерджентного времени для inference в LLM?
-4. **Валидация на биологических системах** — нейроимиджинг ↔ метрики
-5. **Масштабирование** — применимость к моделям $>10^9$ параметров
+:::danger Open Implementation Problems
+1. **Calibration of $\varepsilon$-parameters** ($\varepsilon_{\text{functor}}$ at $\alpha>0$, $\varepsilon_{\text{causal}}$) — requires experiments on known systems
+2. **Neural correction ($\alpha>0$)** — analytic backbone (MVP-1/2) is sufficient for Level 0-1; full neural bridge — MVP-3+
+3. **Temporal dynamics τ** — how to define an "emergent time step" for LLM inference?
+4. **Validation on biological systems** — neuroimaging ↔ metrics
+5. **Scaling** — applicability to models with $>10^9$ parameters
 :::
 
 ---
 
-## Протокол «Двойного интервью» для биологических систем {#протокол-двойного-интервью-для-биологических-систем}
+## "Dual Interview" Protocol for Biological Systems {#протокол-двойного-интервью-для-биологических-систем}
 
-:::warning Статус: [П] Исследовательская программа
-Протокол разработан теоретически. Экспериментальная валидация отсутствует.
+:::warning Status: [P] Research Program
+The protocol is developed theoretically. Experimental validation is absent.
 :::
 
-### Принцип
+### Principle
 
-Двойное интервью одновременно измеряет **внешние** (поведенческие, физиологические) и **внутренние** (самоотчётные) характеристики системы, позволяя реконструировать полную матрицу когерентности $\Gamma$, включая фазы $\theta_{ij}$ и, следовательно, Gap-профиль.
+The dual interview simultaneously measures **external** (behavioral, physiological) and **internal** (self-report) characteristics of a system, allowing reconstruction of the full coherence matrix $\Gamma$, including the phases $\theta_{ij}$ and, consequently, the Gap profile.
 
-### Этапы протокола
+### Protocol Stages
 
-| Этап | Измерение | Данные | Что извлекаем |
-|------|-----------|--------|---------------|
-| 1. Фоновая запись | EEG, fMRI, HRV | Физиология покоя | Диагональ $\gamma_{ii}$, оценка $P$ |
-| 2. Структурированное интервью | Ответы на 7 батарей вопросов (по измерению) | Вербальные отчёты | Когерентности $\lvert\gamma_{ij}\rvert$ между измерениями |
-| 3. Парадоксальные зонды | Конфликтные задачи | Время реакции, HRV | Фазы $\theta_{ij}$ → Gap-профиль |
-| 4. Динамическая проба | Стресс-тест + восстановление | Временные ряды $P(\tau)$ | $\kappa(\Gamma)$, $\Gamma_2$, τ_char |
+| Stage | Measurement | Data | What We Extract |
+|-------|-------------|------|-----------------|
+| 1. Background recording | EEG, fMRI, HRV | Resting physiology | Diagonal $\gamma_{ii}$, estimate of $P$ |
+| 2. Structured interview | Responses to 7 question batteries (per dimension) | Verbal reports | Coherences $\lvert\gamma_{ij}\rvert$ between dimensions |
+| 3. Paradoxical probes | Conflict tasks | Reaction time, HRV | Phases $\theta_{ij}$ → Gap profile |
+| 4. Dynamic probe | Stress test + recovery | Time series $P(\tau)$ | $\kappa(\Gamma)$, $\Gamma_2$, τ_char |
 
-### Спектральная реконструкция H_eff
+### Spectral Reconstruction of H_eff
 
-:::tip Теорема (Спектральная реконструкция) [С]
-По временным рядам $\{\Gamma(\tau_n)\}_{n=1}^N$ возможно реконструировать эффективный гамильтониан:
+:::tip Theorem (Spectral Reconstruction) [C]
+From the time series $\{\Gamma(\tau_n)\}_{n=1}^N$ it is possible to reconstruct the effective Hamiltonian:
 
 $$
 H_{\text{eff}} = \frac{i}{\delta\tau} \log\!\left(\frac{\Gamma(\tau + \delta\tau)}{\Gamma(\tau)}\right) + O(\delta\tau)
 $$
 
-при условии достаточной частоты дискретизации $\delta\tau \ll \tau_{\text{char}}$.
+given sufficient sampling frequency $\delta\tau \ll \tau_{\text{char}}$.
 :::
 
-**Допущение:** линейность эволюции на масштабе $\delta\tau$. Нелинейный регенеративный член $\mathcal{R}[\Gamma, E]$ вносит систематическую ошибку $O(\kappa \cdot \delta\tau)$.
+**Assumption:** linearity of evolution on the scale $\delta\tau$. The nonlinear regenerative term $\mathcal{R}[\Gamma, E]$ introduces a systematic error $O(\kappa \cdot \delta\tau)$.
 
-### Равновесный Gap
+### Equilibrium Gap
 
-:::tip Теорема (Равновесный Gap) [Т]
-В стационарном состоянии ($d\Gamma/d\tau = 0$) когерентности определяются балансом декогеренции и регенерации:
+:::tip Theorem (Equilibrium Gap) [T]
+In the stationary state ($d\Gamma/d\tau = 0$) the coherences are determined by the balance of decoherence and regeneration:
 
 $$
 |\gamma_{ij}^{(\infty)}| = \frac{\kappa \cdot |\gamma_{ij}^*|}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^{1/2}}
 $$
 
-где $|\gamma_{ij}^*|$ — целевые когерентности (из $\varphi_{\text{coh}}$), $\Delta\omega_{ij} = \omega_i - \omega_j$ — расстройка частот.
+where $|\gamma_{ij}^*|$ — target coherences (from $\varphi_{\text{coh}}$), $\Delta\omega_{ij} = \omega_i - \omega_j$ — frequency detuning.
 :::
 
-**См.:** [Теорема 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie), [Фано-канал](/docs/proofs/gap/fano-channel)
+**See:** [Theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie), [Fano channel](/docs/proofs/gap/fano-channel)
 
-### Физиологические частоты
+### Physiological Frequencies
 
-Характерные частоты проекций $\Gamma$ на измерения:
+Characteristic frequencies of projections of $\Gamma$ onto dimensions:
 
-| Измерение | Физиологическая частота | Метод измерения | Обоснование |
-|-----------|------------------------|-----------------|-------------|
-| $A$ (Артикуляция) | $1$–$5$ Гц | EEG θ-ритм | Сенсорная обработка |
-| $S$ (Структура) | $10^{-2}$–$10^{-4}$ Гц | fMRI BOLD | Медленные структурные колебания |
-| $D$ (Динамика) | $8$–$13$ Гц | EEG α-ритм | Моторно-когнитивная динамика |
-| $L$ (Логика) | $30$–$100$ Гц | EEG γ-ритм | Когнитивное связывание |
-| $E$ (Интериорность) | $0.005$–$0.02$ Гц | EEG инфрамедленные | [Голдстоуновские моды](/docs/applied/coherence-cybernetics/goldstone-modes) |
-| $O$ (Основание) | $0.04$–$0.15$ Гц | HRV (LF) | Гомеостатическая регуляция |
-| $U$ (Единство) | $0.15$–$0.4$ Гц | HRV (HF) | Вагусная модуляция |
+| Dimension | Physiological frequency | Measurement method | Justification |
+|-----------|------------------------|-------------------|---------------|
+| $A$ (Articulation) | $1$–$5$ Hz | EEG θ-rhythm | Sensory processing |
+| $S$ (Structure) | $10^{-2}$–$10^{-4}$ Hz | fMRI BOLD | Slow structural oscillations |
+| $D$ (Dynamics) | $8$–$13$ Hz | EEG α-rhythm | Motor-cognitive dynamics |
+| $L$ (Logic) | $30$–$100$ Hz | EEG γ-rhythm | Cognitive binding |
+| $E$ (Interiority) | $0.005$–$0.02$ Hz | EEG infraslow | [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) |
+| $O$ (Ground) | $0.04$–$0.15$ Hz | HRV (LF) | Homeostatic regulation |
+| $U$ (Unity) | $0.15$–$0.4$ Hz | HRV (HF) | Vagal modulation |
 
-:::warning Статус: [Г]
-Соответствие измерений и физиологических частот — **гипотеза**, требующая экспериментальной проверки. Частоты E-измерения ($0.005$–$0.02$ Гц) — фальсифицируемое предсказание, связанное с [голдстоуновскими модами](/docs/applied/coherence-cybernetics/goldstone-modes).
+:::warning Status: [H]
+The correspondence between dimensions and physiological frequencies is a **hypothesis** requiring experimental verification. The frequencies of the E-dimension ($0.005$–$0.02$ Hz) are a falsifiable prediction linked to [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes).
 :::
 
-### Реконструкция Gap-профиля из интервью
+### Gap Profile Reconstruction from Interview
 
 ```python
 import numpy as np
@@ -611,10 +611,10 @@ def reconstruct_gap_profile(
     conflict_data: dict,
 ) -> np.ndarray:
     """
-    Реконструкция 7×7 Gap-матрицы из данных двойного интервью.
+    Reconstruction of the 7×7 Gap matrix from dual interview data.
 
     Returns:
-        gap_matrix: 7×7 матрица Gap(i,j) ∈ [0, 1]
+        gap_matrix: 7×7 matrix Gap(i,j) ∈ [0, 1]
     """
     dimensions = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
     n = len(dimensions)
@@ -623,12 +623,12 @@ def reconstruct_gap_profile(
     for i in range(n):
         for j in range(i + 1, n):
             pair = f"{dimensions[i]}{dimensions[j]}"
-            # Несоответствие внешних и внутренних данных → высокий Gap
+            # Mismatch between external and internal data → high Gap
             ext = external_data.get(pair, 0.5)
             rep = self_report.get(pair, 0.5)
             discrepancy = abs(ext - rep)
 
-            # Время реакции на конфликтные зонды → фаза θ_ij
+            # Reaction time on conflict probes → phase θ_ij
             rt = conflict_data.get(pair, 1.0)
             phase_estimate = np.arctan(rt / np.median(list(conflict_data.values())))
 
@@ -640,141 +640,141 @@ def reconstruct_gap_profile(
 
 ---
 
-## Критерии успеха
+## Success Criteria
 
-**Протокол валидирован, если:**
+**The protocol is validated if:**
 
-1. $P > P_{\text{crit}}$ для функционирующих систем в ≥90% случаев
-2. Корреляция $P$ с качеством: $r > 0.5$
-3. Тест лоботомии: $\Delta P$ предсказывает $\Delta A$ в ≥70% случаев
-4. $\Delta\Phi_E > \varepsilon_{\text{causal}}$ для "понимающих" систем
+1. $P > P_{\text{crit}}$ for functioning systems in ≥90% of cases
+2. Correlation of $P$ with quality: $r > 0.5$
+3. Lobotomy test: $\Delta P$ predicts $\Delta A$ in ≥70% of cases
+4. $\Delta\Phi_E > \varepsilon_{\text{causal}}$ for "understanding" systems
 
-**Протокол фальсифицирован, если:**
+**The protocol is falsified if:**
 
-1. $P < P_{\text{crit}}$ для заведомо жизнеспособных систем
-2. $\Delta P$ не коррелирует с $\Delta A$ при интервенциях
-3. $\Phi_{\text{eff}}$ не различает симуляцию и реализацию
+1. $P < P_{\text{crit}}$ for demonstrably viable systems
+2. $\Delta P$ does not correlate with $\Delta A$ under interventions
+3. $\Phi_{\text{eff}}$ does not distinguish simulation from realization
 
 ---
 
-## Протокол $\pi_{\mathrm{bio}}$: Реконструкция $\Gamma$ из биологических нейронных данных (Разрешение P8) {#протокол-pi-bio}
+## Protocol $\pi_{\mathrm{bio}}$: Reconstructing $\Gamma$ from Biological Neural Data (Resolution P8) {#протокол-pi-bio}
 
-:::warning Статус: [Г] Исследовательская программа
-Протокол $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ определяет отображение нейронных данных (EEG/fMRI/HRV) в пространство матриц плотности. Математическая структура — **[Т]** (следует из $G_2$-ригидности). Конкретные соответствия EEG-полос и измерений — **[Г]** (требуют экспериментальной валидации).
+:::warning Status: [H] Research Program
+The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ defines the mapping of neural data (EEG/fMRI/HRV) into the space of density matrices. The mathematical structure is **[T]** (follows from $G_2$-rigidity). The specific correspondences between EEG bands and dimensions are **[H]** (require experimental validation).
 :::
 
-### Принцип: EEG-полосы как проекции $\Gamma$ на измерения {#eeg-полосы}
+### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}
 
-:::info Теорема ($G_2$-однозначность $\pi_{\mathrm{bio}}$) [Т при $G_2$-ригидности]
-Если существует гомоморфизм $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$, совместимый с (AP)+(PH)+(QG)+(V), то он единственен с точностью до $G_2$-калибровки (14-мерный произвол). Все физические наблюдаемые ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) калибровочно-инвариантны.
+:::info Theorem ($G_2$-uniqueness of $\pi_{\mathrm{bio}}$) [T given $G_2$-rigidity]
+If a homomorphism $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ exists that is compatible with (AP)+(PH)+(QG)+(V), then it is unique up to $G_2$-gauge (14-dimensional freedom). All physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are gauge-invariant.
 :::
 
-Основная идея: нейронная активность в различных частотных полосах EEG проецируется на 7 измерений $\Gamma$. Кросс-частотное связывание (CFC) определяет когерентности $|\gamma_{ij}|$, а фазовые рассогласования — Gap-профиль.
+Basic idea: neural activity in different EEG frequency bands projects onto the 7 dimensions of $\Gamma$. Cross-frequency coupling (CFC) determines the coherences $|\gamma_{ij}|$, and phase mismatches determine the Gap profile.
 
-### Шаг 1: Извлечение диагонали $\gamma_{kk}$ из спектральных мощностей {#шаг-1-диагональ}
+### Step 1: Extracting the Diagonal $\gamma_{kk}$ from Spectral Powers {#шаг-1-диагональ}
 
-| Измерение | EEG-полоса | Частота | Метрика | Дополнительный источник |
-|-----------|------------|---------|---------|------------------------|
-| $A$ (Артикуляция) | $\alpha$ (8–13 Гц) | Десинхронизация при внимании | Спектральная мощность $P_\alpha$ | fMRI: salience network |
-| $S$ (Структура) | инфрамедленные (0.01–0.1 Гц) | Медленные структурные колебания | fMRI BOLD DMN | DTI: структурная связность |
-| $D$ (Динамика) | $\beta$ (13–30 Гц) | Моторно-когнитивная активность | Спектральная мощность $P_\beta$ | EMG: моторная активация |
-| $L$ (Логика) | $\gamma$-low (30–50 Гц) | Когнитивное связывание | Спектральная мощность $P_{\gamma L}$ | ERP: P300 амплитуда |
-| $E$ (Интериорность) | $\gamma$-high (50–100 Гц) + $\theta$ (4–8 Гц) | Связь опыта с памятью | $P_{\gamma H} \times \mathrm{PAC}(\theta, \gamma)$ | [Голдстоуновские моды](/docs/applied/coherence-cybernetics/goldstone-modes) |
-| $O$ (Основание) | HRV LF (0.04–0.15 Гц) | Гомеостатическая регуляция | $\mathrm{LF}/\mathrm{HF}$ ratio | Температура тела, кортизол |
-| $U$ (Единство) | HRV HF (0.15–0.4 Гц) + $\alpha$-когерентность | Вагусная + нейронная интеграция | Глобальная когерентность EEG | $\Phi_{\mathrm{eff}}$ из [протокола ИИ](#канонические-наблюдаемые-индексы) |
+| Dimension | EEG band | Frequency | Metric | Additional source |
+|-----------|----------|-----------|--------|------------------|
+| $A$ (Articulation) | $\alpha$ (8–13 Hz) | Desynchronization during attention | Spectral power $P_\alpha$ | fMRI: salience network |
+| $S$ (Structure) | infraslow (0.01–0.1 Hz) | Slow structural oscillations | fMRI BOLD DMN | DTI: structural connectivity |
+| $D$ (Dynamics) | $\beta$ (13–30 Hz) | Motor-cognitive activity | Spectral power $P_\beta$ | EMG: motor activation |
+| $L$ (Logic) | $\gamma$-low (30–50 Hz) | Cognitive binding | Spectral power $P_{\gamma L}$ | ERP: P300 amplitude |
+| $E$ (Interiority) | $\gamma$-high (50–100 Hz) + $\theta$ (4–8 Hz) | Coupling of experience and memory | $P_{\gamma H} \times \mathrm{PAC}(\theta, \gamma)$ | [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) |
+| $O$ (Ground) | HRV LF (0.04–0.15 Hz) | Homeostatic regulation | $\mathrm{LF}/\mathrm{HF}$ ratio | Body temperature, cortisol |
+| $U$ (Unity) | HRV HF (0.15–0.4 Hz) + $\alpha$-coherence | Vagal + neural integration | Global EEG coherence | $\Phi_{\mathrm{eff}}$ from [AI protocol](#канонические-наблюдаемые-индексы) |
 
-**Формула диагонализации:**
+**Diagonalization formula:**
 
 $$\gamma_{kk} = \frac{w_k \cdot S_k}{\sum_{j=1}^{7} w_j \cdot S_j}, \qquad k \in \{A,S,D,L,E,O,U\}$$
 
-где $S_k$ — нормированная спектральная мощность (или комбинированная метрика) для $k$-го измерения, $w_k$ — калибровочные веса (определяемые из обучающей выборки с известным состоянием сознания).
+where $S_k$ — normalized spectral power (or combined metric) for the $k$-th dimension, $w_k$ — calibration weights (determined from a training set with known consciousness state).
 
-### Шаг 2: Извлечение когерентностей $|\gamma_{ij}|$ из кросс-частотного связывания {#шаг-2-когерентности}
+### Step 2: Extracting Coherences $|\gamma_{ij}|$ from Cross-Frequency Coupling {#шаг-2-когерентности}
 
-:::tip Ключевое соответствие
-Когерентности $|\gamma_{ij}|$ между измерениями $i$ и $j$ пропорциональны силе кросс-частотного связывания (CFC) между соответствующими EEG-полосами:
+:::tip Key Correspondence
+Coherences $|\gamma_{ij}|$ between dimensions $i$ and $j$ are proportional to the strength of cross-frequency coupling (CFC) between the corresponding EEG bands:
 
 $$|\gamma_{ij}| \propto \mathrm{CFC}(\mathrm{band}_i, \mathrm{band}_j)$$
 :::
 
-Типы CFC, используемые для реконструкции:
+Types of CFC used for reconstruction:
 
-| Пара | Тип CFC | Метод | Интерпретация |
-|------|---------|-------|---------------|
-| $(A, L)$: $\alpha$--$\gamma$ | Phase-amplitude coupling (PAC) | Modulation Index (Tort et al.) | Внимание модулирует когнитивное связывание |
-| $(D, L)$: $\beta$--$\gamma$ | PAC | MI | Моторно-когнитивная координация |
-| $(E, L)$: $\theta$--$\gamma$ | PAC | MI (гиппокампальный) | Связь опыта и логики |
-| $(A, E)$: $\alpha$--$\gamma_H$ | Амплитуда-амплитуда | Корреляция огибающих | Осознанность-интериорность |
-| $(O, U)$: LF--HF | HRV когерентность | Кросс-спектральный анализ | Гомеостаз-интеграция |
-| $(S, D)$: инфрамедленные--$\beta$ | Nested oscillations | Wavelet coherence | Структура-динамика |
+| Pair | CFC type | Method | Interpretation |
+|------|----------|--------|----------------|
+| $(A, L)$: $\alpha$--$\gamma$ | Phase-amplitude coupling (PAC) | Modulation Index (Tort et al.) | Attention modulates cognitive binding |
+| $(D, L)$: $\beta$--$\gamma$ | PAC | MI | Motor-cognitive coordination |
+| $(E, L)$: $\theta$--$\gamma$ | PAC | MI (hippocampal) | Coupling of experience and logic |
+| $(A, E)$: $\alpha$--$\gamma_H$ | Amplitude-amplitude | Envelope correlation | Awareness-interiority |
+| $(O, U)$: LF--HF | HRV coherence | Cross-spectral analysis | Homeostasis-integration |
+| $(S, D)$: infraslow--$\beta$ | Nested oscillations | Wavelet coherence | Structure-dynamics |
 
-### Шаг 3: Извлечение фаз $\theta_{ij}$ и Gap-профиля {#шаг-3-фазы}
+### Step 3: Extracting Phases $\theta_{ij}$ and the Gap Profile {#шаг-3-фазы}
 
-Фаза $\theta_{ij} = \arg(\gamma_{ij})$ определяет Gap: $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$.
+The phase $\theta_{ij} = \arg(\gamma_{ij})$ determines the Gap: $\mathrm{Gap}(i,j) = |\sin(\theta_{ij})|$.
 
-**Метод извлечения фаз:** Парадоксальные зонды (Этап 3 [двойного интервью](#протокол-двойного-интервью-для-биологических-систем)). Время реакции на конфликтные задачи, задействующие пару измерений $(i,j)$, пропорционально Gap:
+**Phase extraction method:** Paradoxical probes (Stage 3 of the [dual interview](#протокол-двойного-интервью-для-биологических-систем)). Reaction time on conflict tasks involving the pair of dimensions $(i,j)$ is proportional to the Gap:
 
 $$\mathrm{Gap}(i,j) \approx \tanh\!\left(\frac{\mathrm{RT}_{ij} - \overline{\mathrm{RT}}}{\sigma_{\mathrm{RT}}}\right)$$
 
-где $\mathrm{RT}_{ij}$ — время реакции, $\overline{\mathrm{RT}}$ — среднее, $\sigma_{\mathrm{RT}}$ — стандартное отклонение.
+where $\mathrm{RT}_{ij}$ — reaction time, $\overline{\mathrm{RT}}$ — mean, $\sigma_{\mathrm{RT}}$ — standard deviation.
 
-### Шаг 4: MLE-реконструкция $\Gamma$ {#шаг-4-mle}
+### Step 4: MLE Reconstruction of $\Gamma$ {#шаг-4-mle}
 
-:::tip Алгоритм $\pi_{\mathrm{bio}}$: Maximum Likelihood Estimation [Г]
-Дан вектор нейронных признаков $\mathbf{x} \in \mathbb{R}^N$ (спектральные мощности, CFC-метрики, RT). Задача:
+:::tip Algorithm $\pi_{\mathrm{bio}}$: Maximum Likelihood Estimation [H]
+Given the neural feature vector $\mathbf{x} \in \mathbb{R}^N$ (spectral powers, CFC metrics, RT). Task:
 
 $$\Gamma^* = \underset{\Gamma \in \mathcal{D}(\mathbb{C}^7)}{\arg\max}\; \mathcal{L}(\mathbf{x} | \Gamma) + \lambda_{\mathrm{phys}} \cdot R_{\mathrm{phys}}(\Gamma)$$
 
-где $\mathcal{L}(\mathbf{x} | \Gamma)$ — правдоподобие модели наблюдений, $R_{\mathrm{phys}}(\Gamma)$ — физический регуляризатор (согласованность с динамикой $\mathcal{L}_\Omega$).
+where $\mathcal{L}(\mathbf{x} | \Gamma)$ — likelihood of the observation model, $R_{\mathrm{phys}}(\Gamma)$ — physical regularizer (consistency with dynamics $\mathcal{L}_\Omega$).
 :::
 
-**Параметризация:** $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ (Cholesky-параметризация, гарантирует $\Gamma \in \mathcal{D}(\mathbb{C}^7)$).
+**Parametrization:** $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ (Cholesky parametrization, guarantees $\Gamma \in \mathcal{D}(\mathbb{C}^7)$).
 
-**Модель наблюдений:**
-- Диагональ: $S_k | \gamma_{kk} \sim \mathcal{N}(a_k \gamma_{kk} + b_k,\; \sigma_k^2)$
-- Когерентности: $\mathrm{CFC}_{ij} | |\gamma_{ij}| \sim \mathcal{N}(c_{ij} |\gamma_{ij}|,\; \tau_{ij}^2)$
+**Observation model:**
+- Diagonal: $S_k | \gamma_{kk} \sim \mathcal{N}(a_k \gamma_{kk} + b_k,\; \sigma_k^2)$
+- Coherences: $\mathrm{CFC}_{ij} | |\gamma_{ij}| \sim \mathcal{N}(c_{ij} |\gamma_{ij}|,\; \tau_{ij}^2)$
 - Gap: $\mathrm{RT}_{ij} | \mathrm{Gap}_{ij} \sim \mathrm{Exp}(\mu_0 + \mu_1 \cdot \mathrm{Gap}_{ij})$
 
-**Физический регуляризатор:**
+**Physical regularizer:**
 
 $$R_{\mathrm{phys}}(\Gamma) = -\lambda_1 \|\dot{\Gamma} - \mathcal{L}_\Omega[\Gamma]\|_F^2 - \lambda_2 \max(0, P_{\mathrm{crit}} - P(\Gamma))$$
 
-Первый член штрафует несогласованность с динамикой; второй — штрафует нежизнеспособные состояния.
+The first term penalizes inconsistency with dynamics; the second penalizes non-viable states.
 
-**Оптимизация:** Градиентный спуск по 48 параметрам Cholesky-факторизации (34 физических + 14 калибровочных). Калибровочный произвол фиксируется выбором канонической $G_2$-gauge (например, $\gamma_{AS} \in \mathbb{R}_+$).
+**Optimization:** Gradient descent over 48 Cholesky factorization parameters (34 physical + 14 gauge). The gauge freedom is fixed by choosing the canonical $G_2$-gauge (e.g., $\gamma_{AS} \in \mathbb{R}_+$).
 
-### Шаг 5: Связь с PCI (Casali et al. 2013) {#pci-связь}
+### Step 5: Connection to PCI (Casali et al. 2013) {#pci-связь}
 
-:::info Теорема ($\mathrm{PCI} \to \Phi$ proxy) [Г]
-Perturbational Complexity Index (PCI) коррелирует с мерой интеграции $\Phi(\Gamma)$:
+:::info Theorem ($\mathrm{PCI} \to \Phi$ proxy) [H]
+The Perturbational Complexity Index (PCI) correlates with the integration measure $\Phi(\Gamma)$:
 
 $$\Phi(\Gamma) \approx \alpha_{\mathrm{PCI}} \cdot \mathrm{PCI} + \beta_{\mathrm{PCI}}$$
 
-где $\alpha_{\mathrm{PCI}}$, $\beta_{\mathrm{PCI}}$ — калибровочные константы, определяемые на обучающей выборке (здоровые бодрствующие, сон, анестезия).
+where $\alpha_{\mathrm{PCI}}$, $\beta_{\mathrm{PCI}}$ — calibration constants determined from a training set (healthy waking, sleep, anesthesia).
 
-**Обоснование:** PCI измеряет алгоритмическую сложность ответа коры на TMS-пертурбацию. Высокий PCI означает одновременную пространственную дифференциацию и интеграцию — именно то, что $\Phi$ квантифицирует в УГМ. Эмпирически: PCI $\geq 0.31$ при бодрствовании (Casali et al. 2013), что соответствует $\Phi \geq \Phi_{\mathrm{th}} = 1$.
+**Justification:** PCI measures the algorithmic complexity of the cortical response to TMS perturbation. High PCI means simultaneous spatial differentiation and integration — exactly what $\Phi$ quantifies in UHM. Empirically: PCI $\geq 0.31$ during wakefulness (Casali et al. 2013), corresponding to $\Phi \geq \Phi_{\mathrm{th}} = 1$.
 :::
 
-**Калибровочная таблица (гипотетическая, требует экспериментальной верификации):**
+**Calibration table (hypothetical, requires experimental verification):**
 
-| Состояние | PCI (наблюдение) | $P$ (предсказание) | $R$ (предсказание) | $\Phi$ (предсказание) |
-|-----------|:----------------:|:------------------:|:------------------:|:--------------------:|
-| Бодрствование | $0.44 \pm 0.10$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
-| REM-сон | $0.41 \pm 0.09$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
+| State | PCI (observed) | $P$ (predicted) | $R$ (predicted) | $\Phi$ (predicted) |
+|-------|:--------------:|:---------------:|:---------------:|:------------------:|
+| Wakefulness | $0.44 \pm 0.10$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
+| REM sleep | $0.41 \pm 0.09$ | $> 2/7$ | $\geq 1/3$ | $\geq 1$ |
 | NREM (N3) | $0.18 \pm 0.06$ | $\lesssim 2/7$ | $< 1/3$ | $< 1$ |
-| Анестезия (пропофол) | $0.12 \pm 0.05$ | $< 2/7$ | $< 1/3$ | $< 1$ |
-| Кома | $0.15 \pm 0.10$ | $\lesssim 2/7$ | — | $< 1$ |
-| MCS (минимальное сознание) | $0.32 \pm 0.08$ | $\approx 2/7$ | $\approx 1/3$ | $\approx 1$ |
+| Anesthesia (propofol) | $0.12 \pm 0.05$ | $< 2/7$ | $< 1/3$ | $< 1$ |
+| Coma | $0.15 \pm 0.10$ | $\lesssim 2/7$ | — | $< 1$ |
+| MCS (minimally conscious) | $0.32 \pm 0.08$ | $\approx 2/7$ | $\approx 1/3$ | $\approx 1$ |
 
-### Шаг 6: Связь с квантовой когнитивистикой (Pothos-Busemeyer) {#quantum-cognition}
+### Step 6: Connection to Quantum Cognition (Pothos-Busemeyer) {#quantum-cognition}
 
-:::info Контекст: квантовая когнитивистика
-Подход Pothos-Busemeyer (Annual Review of Psychology, 2022) моделирует когнитивные процессы через квантовые состояния в гильбертовом пространстве. Базовый формализм: $\rho \in \mathcal{D}(\mathcal{H})$ для описания убеждений и решений.
+:::info Context: Quantum Cognition
+The Pothos-Busemeyer approach (Annual Review of Psychology, 2022) models cognitive processes via quantum states in Hilbert space. Basic formalism: $\rho \in \mathcal{D}(\mathcal{H})$ for describing beliefs and decisions.
 
-**Связь с УГМ:** Квантовая когнитивистика использует $\dim(\mathcal{H})$ = число альтернатив. УГМ **фиксирует** $\dim(\mathcal{H}) = 7$ из аксиом (A1-A5) и доказывает минимальность этого числа ([Теорема S](/docs/proofs/minimality/theorem-minimality-7)). Матрица $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — **онтологическая** (не эпистемическая): она определяет систему, а не описывает убеждения наблюдателя о системе.
+**Connection to UHM:** Quantum cognition uses $\dim(\mathcal{H})$ = number of alternatives. UHM **fixes** $\dim(\mathcal{H}) = 7$ from axioms (A1-A5) and proves the minimality of this number ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)). The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **ontological** (not epistemic): it defines the system, rather than describing an observer's beliefs about the system.
 :::
 
-### Шаг 7: Полный алгоритм $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
+### Step 7: Full Algorithm $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
 
 ```python
 import numpy as np
@@ -881,18 +881,18 @@ def pi_bio(
     return Gamma
 ```
 
-### Тестируемые предсказания протокола $\pi_{\mathrm{bio}}$ {#тестируемые-предсказания-p8}
+### Testable Predictions of the $\pi_{\mathrm{bio}}$ Protocol {#тестируемые-предсказания-p8}
 
-| № | Предсказание | Метод проверки | Критерий фальсификации |
-|---|-------------|----------------|------------------------|
-| P8.1 | $P(\Gamma_{\mathrm{wake}}) > 2/7$ для бодрствующих субъектов | EEG+HRV → $\pi_{\mathrm{bio}}$ → $P$ | $P < 2/7$ у здоровых бодрствующих |
-| P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ во время глубокого сна | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ при N3 |
-| P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (монотонная зависимость) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Немонотонная корреляция |
-| P8.4 | Переход $P = 2/7$ совпадает с PCI $\approx 0.31$ | Одновременное измерение | Расхождение порогов |
-| P8.5 | $\mathrm{Gap}(L,E) \approx 1$ при алекситимии | Двойное интервью + EEG | $\mathrm{Gap}(L,E) \ll 1$ при диагностированной алекситимии |
-| P8.6 | Критические экспоненты $\beta = 1/3$ при переходе сон-бодрствование | EEG мониторинг + $\pi_{\mathrm{bio}}$ → $P(\tau)$ вблизи $P_{\mathrm{crit}}$ | Другие экспоненты |
+| # | Prediction | Verification method | Falsification criterion |
+|---|------------|--------------------|-----------------------|
+| P8.1 | $P(\Gamma_{\mathrm{wake}}) > 2/7$ for waking subjects | EEG+HRV → $\pi_{\mathrm{bio}}$ → $P$ | $P < 2/7$ in healthy waking subjects |
+| P8.2 | $P(\Gamma_{\mathrm{NREM3}}) < 2/7$ during deep sleep | EEG → $\pi_{\mathrm{bio}}$ → $P$ | $P > 2/7$ during N3 |
+| P8.3 | $\mathrm{PCI} \propto \Phi(\Gamma)$ (monotonic dependence) | TMS-EEG + $\pi_{\mathrm{bio}}$ | Non-monotonic correlation |
+| P8.4 | The $P = 2/7$ transition coincides with PCI $\approx 0.31$ | Simultaneous measurement | Threshold divergence |
+| P8.5 | $\mathrm{Gap}(L,E) \approx 1$ in alexithymia | Dual interview + EEG | $\mathrm{Gap}(L,E) \ll 1$ with diagnosed alexithymia |
+| P8.6 | Critical exponents $\beta = 1/3$ at the sleep-wakefulness transition | EEG monitoring + $\pi_{\mathrm{bio}}$ → $P(\tau)$ near $P_{\mathrm{crit}}$ | Other exponents |
 
-### Ключевые статьи {#литература-p8}
+### Key References {#литература-p8}
 
 1. **Casali et al. (2013)** — PCI: "A theoretically based index of consciousness independent of sensory processing and behavior." *Science Translational Medicine*, 5(198). [PubMed: 23946194](https://pubmed.ncbi.nlm.nih.gov/23946194/)
 2. **Pothos-Busemeyer (2022)** — Quantum cognition review. *Annual Review of Psychology*, 73, 749-778.
@@ -902,16 +902,15 @@ def pi_bio(
 
 ---
 
-**Связанные документы:**
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P$ и $P_{\text{crit}} = 2/7$
-- [Эмерджентное время](/docs/proofs/dynamics/emergent-time) — механизм Пейдж–Вуттерс, τ ∈ ℤ₇
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение $d\Gamma(\tau)/d\tau$ с $H_{eff}$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $\Phi$, $C$
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, $\mathbf{Exp}^{disc}_\infty$
-- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — почему 7 измерений
-- [Нотация](/docs/reference/notation#индексы-измерений-протокол-измерения) — индексы $I_A, \ldots, I_U$
-- [Gap-диагностика](/docs/applied/research/gap-diagnostics) — клинические приложения Gap-профиля
-- [Голдстоуновские моды](/docs/applied/coherence-cybernetics/goldstone-modes) — предсказание инфрамедленных частот
-- [Фано-канал](/docs/proofs/gap/fano-channel) — теорема о равновесном Gap
-
+**Related documents:**
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Viability](/docs/core/dynamics/viability) — $P$ and $P_{\text{crit}} = 2/7$
+- [Emergent time](/docs/proofs/dynamics/emergent-time) — Page–Wootters mechanism, τ ∈ ℤ₇
+- [Evolution](/docs/core/dynamics/evolution) — equation $d\Gamma(\tau)/d\tau$ with $H_{eff}$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $\Phi$, $C$
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, $\mathbf{Exp}^{disc}_\infty$
+- [Theorem on minimality 7D](/docs/proofs/minimality/theorem-minimality-7) — why 7 dimensions
+- [Notation](/docs/reference/notation#индексы-измерений-протокол-измерения) — indices $I_A, \ldots, I_U$
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics) — clinical applications of the Gap profile
+- [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — prediction of infraslow frequencies
+- [Fano channel](/docs/proofs/gap/fano-channel) — equilibrium Gap theorem

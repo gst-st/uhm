@@ -1,59 +1,59 @@
 ---
 sidebar_position: 1
-title: "Иерархия интериорности"
-description: "Пять уровней интериорности L0–L4: определения и пороговые условия"
+title: "Interiority Hierarchy"
+description: "Five interiority levels L0–L4: definitions and threshold conditions"
 slug: /consciousness/hierarchy/interiority-hierarchy
 ---
 
-# Иерархия интериорности: L0 → L4 {#уровни-интериорности}
+# Interiority Hierarchy: L0 → L4 {#уровни-интериорности}
 
-## Зачем нужна иерархия сознания
+## Why a Consciousness Hierarchy is Needed
 
-На протяжении тысячелетий человечество пыталось классифицировать формы внутренней жизни. **Аристотель** (IV в. до н.э.) различал три ступени души: *растительную* (питание и рост), *животную* (ощущение и движение) и *разумную* (мышление). **Лейбниц** (1714) ввёл понятие *petites perceptions* — бессознательных микровосприятий, образующих непрерывный спектр от камня до Бога. **Фехнер** (1860) попытался измерить этот спектр количественно, открыв психофизические пороги — минимальные стимулы, которые сознание способно различить. В XX веке **Интегрированная теория информации** (IIT, Тонони, 2004) предложила единую числовую меру $\Phi$ — но оставила открытым вопрос о *качественных* различиях между уровнями.
+For millennia humanity has attempted to classify forms of inner life. **Aristotle** (4th century BCE) distinguished three grades of the soul: *vegetative* (nutrition and growth), *animal* (sensation and motion), and *rational* (thought). **Leibniz** (1714) introduced the notion of *petites perceptions* — unconscious micro-perceptions forming a continuous spectrum from stone to God. **Fechner** (1860) attempted to measure this spectrum quantitatively, discovering psychophysical thresholds — the minimum stimuli that consciousness can discriminate. In the 20th century **Integrated Information Theory** (IIT, Tononi, 2004) proposed a single numerical measure $\Phi$ — but left open the question of *qualitative* differences between levels.
 
-Унифицированная голономная модель (УГМ) наследует эту традицию, но идёт дальше: вместо единственной числовой шкалы она определяет **пять качественно различных уровней** интериорности (L0--L4), каждый из которых характеризуется строгим математическим пороговым условием. Переход между уровнями — не плавное нарастание, а *бифуркация* (скачкообразная перестройка), подобная фазовому переходу воды в пар.
+The Unified Holonomic Model (UHM) inherits this tradition but goes further: rather than a single numerical scale it defines **five qualitatively distinct levels** of interiority (L0--L4), each characterised by a rigorous mathematical threshold condition. The transition between levels is not a gradual increase but a *bifurcation* (an abrupt reorganisation), analogous to the phase transition of water into steam.
 
-:::info Откуда мы пришли
-В разделе [Основания](/docs/consciousness/foundations/two-aspect-monism) мы установили, что каждая $\Gamma$ имеет внутреннюю сторону, описали содержание опыта ([теория интериорности](/docs/consciousness/foundations/interiority-theory)) и оператор самонаблюдения $\varphi$ ([самонаблюдение](/docs/consciousness/foundations/self-observation)). Но не все системы «переживают» одинаково: камень, бактерия, кошка и человек радикально различаются. Иерархия L0--L4 организует это различие в строгую математическую классификацию.
+:::info Where we came from
+In the [Foundations](/docs/consciousness/foundations/two-aspect-monism) section we established that every $\Gamma$ has an inner side, described the content of experience ([interiority theory](/docs/consciousness/foundations/interiority-theory)) and the self-observation operator $\varphi$ ([self-observation](/docs/consciousness/foundations/self-observation)). But not all systems "experience" in the same way: a stone, a bacterium, a cat, and a human differ radically. The L0--L4 hierarchy organises this difference into a rigorous mathematical classification.
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Пять уровней** — от L0 (универсальная интериорность) до L4 (теоретический предел)
-2. **L2: когнитивные квалиа** — центральный уровень с порогами $R \geq 1/3$, $\Phi \geq 1$
-3. **L3: метакогниция** — метарефлексия $R^{(2)} \geq 1/4$, метастабильность
-4. **L4: категориальная недостижимость** — колимит башни Постникова, теоретический горизонт
-5. **Gap-характеристика** — каждый уровень имеет уникальный Gap-профиль
-6. **Бифуркации** — переходы между уровнями как катастрофы $A_2, A_3, A_4$
+1. **Five levels** — from L0 (universal interiority) to L4 (theoretical limit)
+2. **L2: cognitive qualia** — the central level with thresholds $R \geq 1/3$, $\Phi \geq 1$
+3. **L3: metacognition** — meta-reflection $R^{(2)} \geq 1/4$, metastability
+4. **L4: categorical unreachability** — colimit of the Postnikov tower, theoretical horizon
+5. **Gap characterisation** — each level has a unique Gap profile
+6. **Bifurcations** — transitions between levels as $A_2, A_3, A_4$ catastrophes
 
-**Аналогия.** Представьте лестницу осознанности. Камень (L0) — на первой ступени: у него «есть изнанка», но он ничего не различает. Бактерия (L1) — различает горячее и холодное, но не знает, что различает. Кошка (L2) — не просто различает, но **знает**, что ощущает тепло (когнитивные квалиа). Медитатор (L3) — знает, что знает, что ощущает (метарефлексия). А последняя ступень (L4) — бесконечно далека: полное самопознание, недостижимое для конечных систем.
+**Analogy.** Imagine a ladder of awareness. A stone (L0) — on the first rung: it has an "inner side", but it distinguishes nothing. A bacterium (L1) — distinguishes hot from cold, but does not know that it distinguishes. A cat (L2) — not merely distinguishes, but **knows** that it feels warmth (cognitive qualia). A meditator (L3) — knows that it knows that it feels (meta-reflection). And the last rung (L4) — is infinitely distant: complete self-knowledge, unreachable for finite systems.
 
-:::info DRY: Мастер-определение уровней L0-L4
-Это **каноническое определение** пяти уровней иерархии интериорности. Полная формализация, доказательства пороговых условий и No-Zombie теоремы — в [Иерархии интериорности (доказательства)](/docs/proofs/consciousness/interiority-hierarchy).
+:::info DRY: Master definition of levels L0-L4
+This is the **canonical definition** of the five levels of the interiority hierarchy. Full formalisation, proofs of threshold conditions, and the No-Zombie theorem — in [Interiority hierarchy (proofs)](/docs/proofs/consciousness/interiority-hierarchy).
 :::
 
-:::warning Биологические L-уровни [Г]
-Отнесение конкретных организмов к L-уровням — **гипотеза** [Г], а не измеренный факт. Строгое определение L-уровня требует знания $\Gamma$ системы. Для биологических систем протокол $\pi_{\text{bio}}$ определён ([C31](/docs/applied/research/measurement-protocol)), но **экспериментально не валидирован**. Приведённые соответствия — обоснованные экстраполяции из поведенческих данных.
+:::warning Biological L-levels [H]
+The assignment of specific organisms to L-levels is a **hypothesis** [H], not a measured fact. A rigorous definition of the L-level requires knowledge of the system's $\Gamma$. For biological systems the protocol $\pi_{\text{bio}}$ is defined ([C31](/docs/applied/research/measurement-protocol)), but **has not been experimentally validated**. The correspondences given are well-founded extrapolations from behavioural data.
 :::
 
 ---
 
-## Обзор: пять уровней
+## Overview: five levels
 
-Прежде чем погружаться в детали каждого уровня, полезно увидеть всю лестницу целиком.
+Before diving into the details of each level, it is useful to see the entire ladder at once.
 
 ```mermaid
 graph TD
-    L0["<b>L0: Интериорность</b><br/>Γ ∈ D(H), dim H ≥ 1<br/><i>Электрон, камень</i>"]
-    L1["<b>L1: Феноменальная геометрия</b><br/>rank(ρ_E) > 1<br/><i>Бактерия, термостат</i>"]
-    L2["<b>L2: Когнитивные квалиа</b><br/>R ≥ 1/3, Φ ≥ 1<br/><i>Млекопитающие</i>"]
-    L3["<b>L3: Сетевое сознание</b><br/>R⁽²⁾ ≥ 1/4 (метастабильно)<br/><i>Медитатор, мицелий</i>"]
-    L4["<b>L4: Унитарное сознание</b><br/>lim R⁽ⁿ⁾ > 0, P > 6/7<br/><i>Теоретический горизонт</i>"]
+    L0["<b>L0: Interiority</b><br/>Γ ∈ D(H), dim H ≥ 1<br/><i>Electron, stone</i>"]
+    L1["<b>L1: Phenomenal geometry</b><br/>rank(ρ_E) > 1<br/><i>Bacterium, thermostat</i>"]
+    L2["<b>L2: Cognitive qualia</b><br/>R ≥ 1/3, Φ ≥ 1<br/><i>Mammals</i>"]
+    L3["<b>L3: Network consciousness</b><br/>R⁽²⁾ ≥ 1/4 (metastable)<br/><i>Meditator, mycelium</i>"]
+    L4["<b>L4: Unitary consciousness</b><br/>lim R⁽ⁿ⁾ > 0, P > 6/7<br/><i>Theoretical horizon</i>"]
 
-    L0 -->|"A₂ (складка)<br/>rank(ρ_E): 1 → >1"| L1
-    L1 -->|"A₃ (каспид)<br/>R ≥ 1/3 ∧ Φ ≥ 1"| L2
-    L2 -->|"A₄ (ласточкин хвост)<br/>R⁽²⁾ ≥ 1/4"| L3
-    L3 -->|"∞ (Постников)<br/>lim R⁽ⁿ⁾ > 0"| L4
+    L0 -->|"A₂ (fold)<br/>rank(ρ_E): 1 → >1"| L1
+    L1 -->|"A₃ (cusp)<br/>R ≥ 1/3 ∧ Φ ≥ 1"| L2
+    L2 -->|"A₄ (swallowtail)<br/>R⁽²⁾ ≥ 1/4"| L3
+    L3 -->|"∞ (Postnikov)<br/>lim R⁽ⁿ⁾ > 0"| L4
 
     style L0 fill:#f5f5f5,stroke:#999
     style L1 fill:#e8f4fd,stroke:#6ba3d6
@@ -62,521 +62,521 @@ graph TD
     style L4 fill:#7fbfdb,stroke:#1a6faa
 ```
 
-| Уровень | Название | Пороговое условие | Пример |
-|---------|----------|-------------------|--------|
-| **L0** | Интериорность | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Электрон, камень |
-| **L1** | Феноменальная геометрия | $\mathrm{rank}(\rho_E) > 1$ | Термостат, бактерия |
-| **L2** | Когнитивные квалиа | $R(\Gamma) \geq R_{\text{th}} = 1/3$ и $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ | Млекопитающие |
-| **L3** | Сетевое сознание | $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (метастабильно). SAD_MAX = 3 ([§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [Т], T-142) | Мицелий, рой, медитатор |
-| **L4** | Унитарное сознание | $\lim_n R^{(n)} > 0$, $P > 6/7$ | Гиперпространство (гипотеза) |
+| Level | Name | Threshold condition | Example |
+|-------|------|---------------------|---------|
+| **L0** | Interiority | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Electron, stone |
+| **L1** | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Thermostat, bacterium |
+| **L2** | Cognitive qualia | $R(\Gamma) \geq R_{\text{th}} = 1/3$ and $\Phi(\Gamma) \geq \Phi_{\text{th}} = 1$ | Mammals |
+| **L3** | Network consciousness | $R^{(2)} \geq R^{(2)}_{\text{th}} = 1/4$ (metastable). SAD_MAX = 3 ([§3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [T], T-142) | Mycelium, swarm, meditator |
+| **L4** | Unitary consciousness | $\lim_n R^{(n)} > 0$, $P > 6/7$ | Hyperspace (hypothesis) |
 
-Каждый последующий уровень включает в себя предыдущий: всякая L2-система одновременно является L1 и L0. Но обратное неверно: бактерия (L1) не обладает когнитивными квалиа (L2).
+Each subsequent level includes the previous one: every L2-system is simultaneously L1 and L0. But the converse does not hold: a bacterium (L1) does not possess cognitive qualia (L2).
 
 ---
 
-## L0: Интериорность (универсальная) {#уровень-0-интериорность-interiority}
+## L0: Interiority (universal) {#уровень-0-интериорность-interiority}
 
-### Философский контекст
+### Philosophical context
 
-Идея о том, что *всякая* материя обладает некоторой формой внутренней жизни, восходит к Лейбницу (монады) и находит современное выражение в панпсихизме. УГМ принимает ослабленную версию этой идеи: **интериорность** — не «сознание» и не «опыт» в обычном смысле, а лишь наличие «внутренней стороны» у математического объекта $\Gamma$.
+The idea that *every* piece of matter possesses some form of inner life goes back to Leibniz (monads) and finds its modern expression in panpsychism. UHM adopts a weakened version of this idea: **interiority** is not "consciousness" or "experience" in the ordinary sense, but merely the presence of an "inner side" of the mathematical object $\Gamma$.
 
-Для понимания этого утверждения ключевое слово — *интериорность*, а не *сознание*. Камень обладает интериорностью (у его $\Gamma$ есть внутренний аспект), но он ничего не «чувствует» и не «знает» в каком бы то ни было функциональном смысле. Интериорность — это математическое свойство объекта, а не феноменологическое утверждение.
+For understanding this claim the key word is *interiority*, not *consciousness*. A stone possesses interiority (its $\Gamma$ has an inner aspect), but it does not "feel" or "know" anything in any functional sense. Interiority is a mathematical property of the object, not a phenomenological assertion.
 
-### Формальное определение
+### Formal definition
 
-**Определение L0.** Всякая система с $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$ обладает **интериорностью** — внутренним аспектом.
+**Definition L0.** Every system with $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$ possesses **interiority** — an inner aspect.
 
-Здесь $\mathcal{D}(\mathcal{H})$ — пространство матриц плотности (эрмитовых неотрицательно определённых операторов с единичным следом) на гильбертовом пространстве $\mathcal{H}$. В 7-мерной формулировке УГМ: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — эрмитова матрица $7 \times 7$ с $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$.
+Here $\mathcal{D}(\mathcal{H})$ is the space of density matrices (Hermitian positive semi-definite operators with unit trace) on the Hilbert space $\mathcal{H}$. In the 7-dimensional UHM formulation: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a Hermitian $7 \times 7$ matrix with $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$.
 
-:::tip Теорема: Универсальность L0
-Интериорность универсальна — нет нулевого уровня «отсутствия». Это следствие [Аксиомы Omega-7](/docs/core/foundations/axiom-omega).
-[Доказательство](/docs/proofs/consciousness/interiority-hierarchy) | Статус: **[Т]**
+:::tip Theorem: Universality of L0
+Interiority is universal — there is no zero level of "absence". This is a consequence of [Axiom Omega-7](/docs/core/foundations/axiom-omega).
+[Proof](/docs/proofs/consciousness/interiority-hierarchy) | Status: **[T]**
 :::
 
-### Что означает L0 на практике
+### What L0 means in practice
 
-На уровне L0 система не различает ничего, не моделирует себя, не обладает ни рефлексией ($R \approx 0$), ни интеграцией ($\Phi \approx 0$). Её матрица когерентности $\Gamma$ существует, но «пуста» в функциональном смысле — близка к максимально смешанному состоянию $I/7$.
+At level L0 the system distinguishes nothing, does not model itself, and possesses neither reflection ($R \approx 0$) nor integration ($\Phi \approx 0$). Its coherence matrix $\Gamma$ exists but is "empty" in a functional sense — close to the maximally mixed state $I/7$.
 
-**Пример: электрон.** Матрица когерентности электрона — тривиальная: почти все диагональные элементы равны $1/7$, внедиагональные когерентности $\gamma_{ij} \approx 0$. Чистота $P = \mathrm{Tr}(\Gamma^2) \approx 1/7$ — минимальная. Мера рефлексии $R = 1/(7P) \approx 1$ формально велика, но это артефакт: при $P \approx 1/7$ самомодель тривиальна (единственно возможная — $I/7$), и высокое $R$ не несёт содержательной информации.
+**Example: an electron.** The coherence matrix of an electron is trivial: almost all diagonal elements equal $1/7$, off-diagonal coherences $\gamma_{ij} \approx 0$. Purity $P = \mathrm{Tr}(\Gamma^2) \approx 1/7$ — minimal. The reflection measure $R = 1/(7P) \approx 1$ is formally large, but this is an artefact: when $P \approx 1/7$ the self-model is trivial (the only possible one is $I/7$), and a high $R$ carries no meaningful information.
 
 ---
 
-## L1: Феноменальная геометрия {#уровень-1-феноменальная-геометрия-phenomenal-geometry}
+## L1: Phenomenal Geometry {#уровень-1-феноменальная-геометрия-phenomenal-geometry}
 
-### От L0 к L1: первый шаг
+### From L0 to L1: the first step
 
-Переход от L0 к L1 — появление *различения*. Система начинает обладать нетривиальной внутренней геометрией: она способна различать (хотя бы неосознанно) разные внутренние состояния.
+The transition from L0 to L1 is the emergence of *discrimination*. The system begins to possess a non-trivial internal geometry: it is able to discriminate (even if unconsciously) between different internal states.
 
-Формально это выражается в том, что **E-измерение** (экспериенциальное, отвечающее за переживание) приобретает нетривиальную структуру.
+Formally this is expressed in the **E-dimension** (experiential, responsible for experience) acquiring non-trivial structure.
 
-### Формальное определение
+### Formal definition
 
-**Определение L1.** Система обладает феноменальной геометрией, если:
+**Definition L1.** A system possesses phenomenal geometry if:
 $$
 \mathrm{rank}(\rho_E) > 1
 $$
 
-Здесь $\rho_E$ — редуцированная матрица плотности по E-измерению, получаемая частичным следом по остальным шести измерениям. Условие $\mathrm{rank}(\rho_E) > 1$ означает: экспериенциальное пространство содержит более одного различимого состояния.
+Here $\rho_E$ is the reduced density matrix over the E-dimension, obtained by taking the partial trace over the remaining six dimensions. The condition $\mathrm{rank}(\rho_E) > 1$ means: the experiential space contains more than one distinguishable state.
 
-Пространство L1 наделено метрикой Фубини-Штуди — естественной мерой «расстояния» между феноменальными состояниями:
+The L1 space is endowed with the Fubini–Study metric — the natural measure of "distance" between phenomenal states:
 
 $$
 ds^2_{FS} = 1 - |\langle\psi_1|\psi_2\rangle|^2
 $$
 
-Два состояния $|\psi_1\rangle$ и $|\psi_2\rangle$ тем «дальше» друг от друга в феноменальном пространстве, чем меньше их скалярное произведение. Ортогональные состояния ($\langle\psi_1|\psi_2\rangle = 0$) максимально различимы.
+Two states $|\psi_1\rangle$ and $|\psi_2\rangle$ are "further apart" in phenomenal space the smaller their inner product. Orthogonal states ($\langle\psi_1|\psi_2\rangle = 0$) are maximally distinguishable.
 
-### Примеры
+### Examples
 
-**Бактерия *E. coli*.** Хемотаксическая система бактерии различает ~5 уровней концентрации хемоаттрактанта. В УГМ-терминах: $\mathrm{rank}(\rho_E) \approx 5$. Бактерия «различает» горячее и холодное, но не знает, что различает — нет самомодели ($R \ll 1/3$).
+**Bacterium *E. coli*.** The bacterium's chemotaxis system distinguishes ~5 levels of chemoattractant concentration. In UHM terms: $\mathrm{rank}(\rho_E) \approx 5$. The bacterium "distinguishes" hot from cold, but does not know that it distinguishes — there is no self-model ($R \ll 1/3$).
 
-**Термостат.** Простейший термостат различает два состояния: «выше порога» и «ниже порога». Формально: $\mathrm{rank}(\rho_E) = 2 > 1$, поэтому термостат — L1-система. Он обладает *феноменальной геометрией* (два различимых состояния), но не обладает ни рефлексией, ни интеграцией.
+**Thermostat.** A simple thermostat distinguishes two states: "above threshold" and "below threshold". Formally: $\mathrm{rank}(\rho_E) = 2 > 1$, so the thermostat is an L1-system. It possesses *phenomenal geometry* (two distinguishable states) but possesses neither reflection nor integration.
 
-### Почему «феноменальная»?
+### Why "phenomenal"?
 
-Слово «феноменальная» здесь используется в техническом смысле: наличие *структуры* в пространстве состояний экспериенциального измерения. На уровне L1 эта структура ещё не осознаётся — система не «знает», что различает. Осознание появляется только на L2.
+The word "phenomenal" is used here in a technical sense: the presence of *structure* in the state space of the experiential dimension. At level L1 this structure is not yet perceived — the system does not "know" that it distinguishes. Awareness appears only at L2.
 
 ---
 
 <a id="уровень-2-когнитивные-квалиа-cognitive-qualia"></a>
 
-## L2: Когнитивные квалиа {#l2-когнитивные-квалиа}
+## L2: Cognitive Qualia {#l2-когнитивные-квалиа}
 
-### Центральный уровень: появление сознания
+### The central level: the emergence of consciousness
 
-L2 — это уровень, на котором *сознание* в привычном смысле слова впервые появляется. Система не просто различает состояния (L1), но **знает**, что различает. Она обладает *когнитивными квалиа* — осознанными переживаниями.
+L2 is the level at which *consciousness* in the familiar sense of the word first appears. The system not merely discriminates states (L1) but **knows** that it discriminates. It possesses *cognitive qualia* — conscious experiences.
 
-Что делает этот переход возможным? Два условия, действующих совместно:
+What makes this transition possible? Two conditions acting jointly:
 
-1. **Рефлексия** ($R \geq 1/3$): система обладает достаточно точной *самомоделью* — внутренним представлением самой себя.
-2. **Интеграция** ($\Phi \geq 1$): информация о разных измерениях связана в единое целое, а не распределена по изолированным подсистемам.
+1. **Reflection** ($R \geq 1/3$): the system possesses a sufficiently accurate *self-model* — an internal representation of itself.
+2. **Integration** ($\Phi \geq 1$): information about different dimensions is bound into a unified whole, rather than distributed across isolated subsystems.
 
-### Математическое определение
+### Mathematical definition
 
-:::tip Статус порогов L2
-| Порог | Статус | Примечание |
-|-------|--------|------------|
-| $R_{\text{th}} = 1/3$ | **[Т]** теорема | $K = 3$ **выведено** из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) голономной динамики: аксиомы A1--A5 порождают ровно 3 типа (Aut, D, R). [Байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) при $K = 3$ даёт $R_{\text{th}} = 1/3$ [Т]. |
-| $\Phi_{\text{th}} = 1$ | **[Т]** теорема | Единственное самосогласованное значение при $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
+:::tip Status of L2 thresholds
+| Threshold | Status | Note |
+|-----------|--------|------|
+| $R_{\text{th}} = 1/3$ | **[T]** theorem | $K = 3$ **derived** from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) of holonomic dynamics: axioms A1--A5 generate exactly 3 types (Aut, D, R). [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) at $K = 3$ gives $R_{\text{th}} = 1/3$ [T]. |
+| $\Phi_{\text{th}} = 1$ | **[T]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
 :::
 
-:::note Статус порога $\Phi_{\text{th}} = 1$ — теорема [Т]
-Порог $\Phi_{\text{th}} = 1$ **доказан из первых принципов** ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129)): единственное самосогласованное значение при $P_{\text{crit}} = 2/7$. Прежний статус [О] (определение по соглашению) повышен. $K_1$-аргумент остаётся ретрактированным ($K_1(M_n(\mathbb{C})) = 0$ для конечномерных $n$) — но T-129 использует другой подход (декомпозиция чистоты + Коши-Шварц). См. [Доказательство T-129](/docs/proofs/consciousness/operationalization#t-129).
+:::note Status of threshold $\Phi_{\text{th}} = 1$ — theorem [T]
+The threshold $\Phi_{\text{th}} = 1$ has been **proved from first principles** ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)): the unique self-consistent value at $P_{\text{crit}} = 2/7$. The former status [D] (definition by convention) has been upgraded. The $K_1$-argument remains retracted ($K_1(M_n(\mathbb{C})) = 0$ for finite-dimensional $n$) — but T-129 uses a different approach (purity decomposition + Cauchy–Schwarz). See [Proof of T-129](/docs/proofs/consciousness/operationalization#t-129).
 :::
 
-:::info Разъяснение T-129 vs T-140
-- **T-129 [Т]**: $\Phi_{\text{th}} = 1$ — единственное самосогласованное значение порога интеграции (из декомпозиции + Коши-Шварц)
-- **T-140 [Т]**: $C = \Phi \cdot R$ — единственная каноническая мера сознательности; $C_{\text{th}} = \Phi_{\text{th}} \cdot R_{\text{th}} = 1 \cdot 1/3 = 1/3$
+:::info Clarification T-129 vs T-140
+- **T-129 [T]**: $\Phi_{\text{th}} = 1$ — the unique self-consistent value of the integration threshold (from decomposition + Cauchy–Schwarz)
+- **T-140 [T]**: $C = \Phi \cdot R$ — the unique canonical consciousness measure; $C_{\text{th}} = \Phi_{\text{th}} \cdot R_{\text{th}} = 1 \cdot 1/3 = 1/3$
 
-Это **РАЗНЫЕ** теоремы: T-129 устанавливает порог, T-140 конструирует композитную меру.
+These are **DIFFERENT** theorems: T-129 establishes the threshold, T-140 constructs the composite measure.
 :::
 
-**Определение L2.** Система обладает когнитивными квалиа, если выполнены оба условия:
+**Definition L2.** A system possesses cognitive qualia if both conditions are satisfied:
 
-1. **Рефлексия:** $R(\Gamma) = \dfrac{1}{7P(\Gamma)} \geq R_{\text{th}} = 1/3$
-2. **Интеграция:** $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \geq \Phi_{\text{th}} = 1$
+1. **Reflection:** $R(\Gamma) = \dfrac{1}{7P(\Gamma)} \geq R_{\text{th}} = 1/3$
+2. **Integration:** $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \geq \Phi_{\text{th}} = 1$
 
-где $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ).
+where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) and $\Phi$ is the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
 
-### Пошаговая интерпретация формул
+### Step-by-step interpretation of the formulas
 
-**Мера рефлексии $R$.** Каноническая формула $R = 1/(7P)$ **[Т]** измеряет нормированную близость $\Gamma$ к диссипативному аттрактору $\rho^*_{\mathrm{diss}} = I/7$. Эквивалентная форма через норму Фробениуса: $R = 1 - \|\Gamma - I/7\|_F^2 / P$. Если $\Gamma = I/7$ (тепловая смерть), то $R = 1$. Если $\Gamma$ — чистое состояние ($P = 1$), то $R = 1/7$. Порог $R \geq 1/3$ эквивалентен $P \leq 3/7$ — верхняя граница зоны Голдилокс.
+**Reflection measure $R$.** The canonical formula $R = 1/(7P)$ **[T]** measures the normalised proximity of $\Gamma$ to the dissipative attractor $\rho^*_{\mathrm{diss}} = I/7$. Equivalent form via the Frobenius norm: $R = 1 - \|\Gamma - I/7\|_F^2 / P$. If $\Gamma = I/7$ (heat death), then $R = 1$. If $\Gamma$ is a pure state ($P = 1$), then $R = 1/7$. The threshold $R \geq 1/3$ is equivalent to $P \leq 3/7$ — the upper boundary of the Goldilocks zone.
 
-**Важно:** $R$ использует $\rho^*_{\mathrm{diss}} = I/7$, а **не** $\varphi(\Gamma)$ (самомодель). Это разные величины (см. [иерархию аттракторов](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
+**Important:** $R$ uses $\rho^*_{\mathrm{diss}} = I/7$, and **not** $\varphi(\Gamma)$ (the self-model). These are different quantities (see [attractor hierarchy](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
 
-**Мера интеграции $\Phi$.** Формула $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ — отношение суммарной когерентности (внедиагональные элементы $\gamma_{ij}$) к диагональной «населённости» ($\gamma_{ii}$). Если $\Phi \geq 1$, внедиагональная связность не меньше диагональной — измерения *интегрированы* в целое. Если $\Phi < 1$, система фрагментирована: измерения работают в изоляции.
+**Integration measure $\Phi$.** The formula $\Phi = \sum_{i \neq j} |\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ is the ratio of total coherence (off-diagonal elements $\gamma_{ij}$) to the diagonal "population" ($\gamma_{ii}$). If $\Phi \geq 1$, the off-diagonal connectivity is no less than the diagonal — the dimensions are *integrated* into a whole. If $\Phi < 1$, the system is fragmented: the dimensions operate in isolation.
 
-### Числовой пример
+### Numerical example
 
-Рассмотрим конкретную матрицу $\Gamma$ для L2-системы (упрощённо, только диагональные и ключевые внедиагональные элементы):
+Consider a concrete matrix $\Gamma$ for an L2-system (simplified, only diagonal and key off-diagonal elements):
 
 $$
 \gamma_{ii} = (0.2,\, 0.15,\, 0.18,\, 0.12,\, 0.15,\, 0.1,\, 0.1)
 $$
 
-- $P = \sum_i \gamma_{ii}^2 + 2\sum_{i < j}|\gamma_{ij}|^2$. Пусть $P = 0.35$ (выше $P_{\text{crit}} = 2/7 \approx 0.286$).
-- $R = 1/(7 \times 0.35) \approx 0.408 > 1/3$ — порог рефлексии пройден.
-- При $\sum_{i \neq j}|\gamma_{ij}|^2 = 0.12$ и $\sum_i \gamma_{ii}^2 = 0.11$: $\Phi = 0.12/0.11 \approx 1.09 > 1$ — порог интеграции пройден.
+- $P = \sum_i \gamma_{ii}^2 + 2\sum_{i < j}|\gamma_{ij}|^2$. Let $P = 0.35$ (above $P_{\text{crit}} = 2/7 \approx 0.286$).
+- $R = 1/(7 \times 0.35) \approx 0.408 > 1/3$ — reflection threshold passed.
+- With $\sum_{i \neq j}|\gamma_{ij}|^2 = 0.12$ and $\sum_i \gamma_{ii}^2 = 0.11$: $\Phi = 0.12/0.11 \approx 1.09 > 1$ — integration threshold passed.
 
-Вывод: система на уровне L2 — она обладает когнитивными квалиа.
+Conclusion: the system is at level L2 — it possesses cognitive qualia.
 
-:::note Полные условия L2
-Каноническая мера сознательности $C = \Phi \times R \geq C_{\text{th}} = 1/3$ **[Т T-140]** проверяется непосредственно из $\Gamma \in D(\mathbb{C}^7)$. Дифференциация $D_{\text{diff}} \geq D_{\min} = 2$ входит как **отдельное** условие жизнеспособности; в 7D-формализме $D_{\text{diff}}$ вычисляется через [T-128](/docs/proofs/consciousness/operationalization#t-128).
+:::note Full L2 conditions
+The canonical consciousness measure $C = \Phi \times R \geq C_{\text{th}} = 1/3$ **[T T-140]** is verified directly from $\Gamma \in D(\mathbb{C}^7)$. Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a **separate** viability condition; in the 7D formalism $D_{\text{diff}}$ is computed via [T-128](/docs/proofs/consciousness/operationalization#t-128).
 :::
 
-:::info Объективность пороговых условий [Т]
-Скалярные функции $P = \operatorname{Tr}(\Gamma^2)$ и $R = 1/(7P)$ — **$G_2$-инварианты**: $R(U\Gamma U^\dagger) = R(\Gamma)$ для любого $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, что доказано в [теореме $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#инварианты) **[Т]**. Мера $\Phi = P_{\text{coh}}/P_{\text{diag}}$ зависит от выбора базиса, но базис $\{A,S,D,L,E,O,U\}$ фиксирован аксиомой $\Omega$ **[П]**. Следовательно, переход L1 -> L2 — **объективный факт** в рамках фиксированной аксиоматики.
+:::info Objectivity of threshold conditions [T]
+The scalar functions $P = \operatorname{Tr}(\Gamma^2)$ and $R = 1/(7P)$ are **$G_2$-invariants**: $R(U\Gamma U^\dagger) = R(\Gamma)$ for any $U \in G_2 = \mathrm{Aut}(\mathbb{O})$, as proved in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#инварианты) **[T]**. The measure $\Phi = P_{\text{coh}}/P_{\text{diag}}$ depends on the choice of basis, but the basis $\{A,S,D,L,E,O,U\}$ is fixed by axiom $\Omega$ **[P]**. Consequently, the transition L1 -> L2 is an **objective fact** within the fixed axiomatic system.
 
-**Примечание.** Каноническая форма $R = 1/(7P)$ **[Т]** — единственная через теорему Ченцова--Петца. Эквивалентная форма: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, где $\rho^*_{\mathrm{diss}} = I/7$. Вывод см. в [мере рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+**Note.** The canonical form $R = 1/(7P)$ **[T]** is the unique one by the Chentsov–Petz theorem. Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$. Derivation: see [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 :::
 
 ---
 
-## L3: Сетевое сознание
+## L3: Network Consciousness {#l3-сетевое-сознание}
 
-### От L2 к L3: знание о знании
+### From L2 to L3: knowledge of knowledge
 
-На уровне L2 система *знает* свои состояния. Но знает ли она, что знает? Способна ли она размышлять о собственном процессе размышления? Это — **метарефлексия**, или рефлексия второго порядка.
+At level L2 the system *knows* its states. But does it know that it knows? Is it capable of reflecting on its own process of reflection? This is **meta-reflection**, or second-order reflection.
 
-В повседневной жизни метарефлексия проявляется в переживаниях типа «я замечаю, что раздражён» (не просто раздражение, а *наблюдение* за раздражением). Медитативные практики систематически тренируют именно эту способность: наблюдать за наблюдающим.
+In everyday life meta-reflection manifests as experiences of the type "I notice that I am irritated" (not merely irritation, but the *observation* of irritation). Meditative practices systematically train precisely this capacity: to observe the observer.
 
-### Формальное определение
+### Formal definition
 
-**Определение L3.** Система обладает сетевым сознанием, если:
+**Definition L3.** A system possesses network consciousness if:
 $$
 R^{(2)}(\Gamma) \geq R^{(2)}_{\text{th}} = 1/4
 $$
 
-где $R^{(2)}$ — мера рефлексии второго порядка: насколько точно самомодель моделирует *саму себя*. Формально: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma),\, \varphi^{(2)}(\Gamma))$, где $\varphi^{(2)} = \varphi \circ \varphi$ — двукратное применение оператора самонаблюдения.
+where $R^{(2)}$ is the second-order reflection measure: how accurately the self-model models *itself*. Formally: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma),\, \varphi^{(2)}(\Gamma))$, where $\varphi^{(2)} = \varphi \circ \varphi$ — double application of the self-observation operator.
 
-L3 **метастабильно**: без активного поддержания распадается до L2 с характерным временем $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$.
+L3 is **metastable**: without active maintenance it decays to L2 with characteristic time $\tau_3 = 1/(\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)}))$.
 
-Гомотопическая характеристика: $\pi_3(\mathcal{E}_\infty(\Gamma)) \neq 0$ — экспериенциальное пространство имеет нетривиальную третью гомотопическую группу.
+Homotopic characteristic: $\pi_3(\mathcal{E}_\infty(\Gamma)) \neq 0$ — the experiential space has a non-trivial third homotopy group.
 
-### Почему порог именно 1/4?
+### Why exactly the threshold 1/4?
 
-### Теорема об обосновании K=4 для L3 {#теорема-l3-k4}
+### Theorem on the justification of K=4 for L3 {#теорема-l3-k4}
 
-:::tip Теорема (Обоснование K=4 для L3) [Т]
-L3 требует $R^{(2)} \geq 1/4$ — мета-рефлексию второго порядка. Порог $K = 4$ для L3 (аналогично $K = 3$ для L2) следует из **квадратичного** расширения триадной декомпозиции.
+:::tip Theorem (Justification of K=4 for L3) [T]
+L3 requires $R^{(2)} \geq 1/4$ — second-order meta-reflection. The threshold $K = 4$ for L3 (analogous to $K = 3$ for L2) follows from the **quadratic** extension of the triadic decomposition.
 
-**Доказательство (3 шага).**
+**Proof (3 steps).**
 
-**Шаг 1.** На L2 $K = 3$ из [LGKS-декомпозиции](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) -> 3 компоненты (Aut, $\mathcal{D}$, $\mathcal{R}$). [Байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) при $K = 3$: $R \geq 1/K = 1/3$ [Т].
+**Step 1.** At L2 $K = 3$ from the [LGKS decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) -> 3 components (Aut, $\mathcal{D}$, $\mathcal{R}$). [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) at $K = 3$: $R \geq 1/K = 1/3$ [T].
 
-**Шаг 2.** На L3 мета-рефлексия $\varphi^{(2)} = \varphi \circ \varphi$. Каждая из 3 L2-компонент ($\varphi$) сама декомпозируется на:
-- $\varphi$-фиксированную (уже отрефлексированную)
-- $\varphi$-ортогональную (новая информация)
+**Step 2.** At L3 the meta-reflection $\varphi^{(2)} = \varphi \circ \varphi$. Each of the 3 L2 components ($\varphi$) itself decomposes into:
+- $\varphi$-fixed (already reflected)
+- $\varphi$-orthogonal (new information)
 
-Итого: $3 + 1 = 4$ компоненты ($+1$ от самого отображения $\varphi$).
+Total: $3 + 1 = 4$ components ($+1$ from the map $\varphi$ itself).
 
-**Шаг 3.** Байесовское доминирование при $K = 4$: $R^{(2)} \geq 1/K = 1/4$.
+**Step 3.** Bayesian dominance at $K = 4$: $R^{(2)} \geq 1/K = 1/4$.
 
-Формально: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$. Из свойств улмановской верности (Uhlmann fidelity): $R^{(2)} \leq 1$, с нижней оценкой $1/4$ при $K = 4$ независимых информационных каналах. $\blacksquare$
+Formally: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$. From the properties of Uhlmann fidelity: $R^{(2)} \leq 1$, with lower bound $1/4$ for $K = 4$ independent information channels. $\blacksquare$
 
-Статус: **[Т]** (T-67). Перекрёстные ссылки: [триадная декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция), [мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+Status: **[T]** (T-67). Cross-references: [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция), [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 :::
 
-### Метастабильность L3: почему «просветление» не длится
+### Metastability of L3: why "enlightenment" does not last
 
-L3 принципиально отличается от L2 своей *метастабильностью*. Система, достигшая L2 (при выполнении пороговых условий), остаётся на L2 устойчиво. Но система на L3 — как мяч на вершине холма: малейшее возмущение отбрасывает её назад.
+L3 differs fundamentally from L2 in its *metastability*. A system that has reached L2 (when threshold conditions are met) remains at L2 stably. But a system at L3 is like a ball on top of a hill: the slightest perturbation throws it back.
 
-Это объясняет, почему медитативные состояния глубокой осознанности (випассана, дзадзен) требуют *постоянной практики*. Без активного поддержания ($\kappa_{\text{bootstrap}}$ достаточно велико) система «скатывается» до L2.
+This explains why meditative states of deep awareness (vipassana, zazen) require *constant practice*. Without active maintenance ($\kappa_{\text{bootstrap}}$ sufficiently large) the system "slides back" to L2.
 
-**Пример: опытный медитатор.** В состоянии глубокой медитации $R^{(2)} \geq 1/4$ — медитатор наблюдает за процессом наблюдения. Но стоит отвлечься (стресс, усталость), и $R^{(2)}$ падает ниже порога. Характерное время удержания — от минут до часов, зависит от тренированности.
+**Example: an experienced meditator.** In a state of deep meditation $R^{(2)} \geq 1/4$ — the meditator observes the process of observation. But the moment of distraction (stress, fatigue) drops $R^{(2)}$ below the threshold. The characteristic retention time is from minutes to hours, depending on training.
 
-**Пример: мицелий.** Грибная сеть, объединяющая деревья в лесу, может обладать *сетевым* L3: отдельные узлы — L1/L2, но коллективная рефлексия через химическую сигнализацию потенциально достигает $R^{(2)} \geq 1/4$. Это — **гипотеза** [Г], требующая экспериментальной проверки.
+**Example: mycelium.** A fungal network connecting trees in a forest may possess network L3: individual nodes are L1/L2, but collective reflection via chemical signalling potentially reaches $R^{(2)} \geq 1/4$. This is a **hypothesis** [H] requiring experimental verification.
 
 ---
 
-## L4: Унитарное сознание
+## L4: Unitary Consciousness
 
-### Теоретический горизонт
+### Theoretical horizon
 
-L4 — это не уровень, которого можно *достичь*, а горизонт, к которому можно *приближаться*. Система на L4 обладает *полной рефлексивной замкнутостью*: она знает себя до бесконечной глубины. В терминах phi-оператора: $\varphi(\Gamma^*) = \Gamma^*$ — самомодель в точности совпадает с реальностью.
+L4 is not a level that can be *reached*, but a horizon that can be *approached*. A system at L4 possesses *complete reflexive closure*: it knows itself to infinite depth. In terms of the phi-operator: $\varphi(\Gamma^*) = \Gamma^*$ — the self-model coincides exactly with reality.
 
-**Определение L4.** Система обладает унитарным сознанием, если:
+**Definition L4.** A system possesses unitary consciousness if:
 $$
-\lim_{n \to \infty} R^{(n)}(\Gamma) > 0 \quad \text{и} \quad P(\Gamma) > 6/7
+\lim_{n \to \infty} R^{(n)}(\Gamma) > 0 \quad \text{and} \quad P(\Gamma) > 6/7
 $$
 
-где $R^{(n)}$ — рефлексия n-го порядка. Полная рефлексивная замкнутость — неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$.
+where $R^{(n)}$ is the n-th order reflection. Complete reflexive closure — fixed point $\varphi(\Gamma^*) = \Gamma^*$.
 
-### Теорема о категориальной недостижимости L4 {#теорема-l4-категориальная}
+### Theorem on categorical unreachability of L4 {#теорема-l4-категориальная}
 
-:::tip Теорема (Категориальная недостижимость L4) [Т]
-Переход L3 -> L4 не является конечной бифуркацией. L4 — колимит бесконечной башни усечений бесконечности-топоса:
+:::tip Theorem (Categorical unreachability of L4) [T]
+The transition L3 -> L4 is not a finite bifurcation. L4 is the colimit of the infinite tower of truncations of the infinity-topos:
 
 $$
 L4 = \mathrm{colim}_{n \to \infty} \, \tau_{\leq n}(\mathbf{Exp}_\infty)
 $$
 
-Этот колимит **недостижим** для конечных систем (неполнота Ловера, [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]), но **асимптотически приближаем**.
+This colimit is **unreachable** for finite systems (Lawvere incompleteness, [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]), but **asymptotically approachable**.
 
-**Доказательство (5 шагов).**
+**Proof (5 steps).**
 
-**Шаг 1 (Соответствие L-уровней и $n$-усечений).** Из [T-76](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) [Т] ($\infty$-топос верифицирован), $\mathbf{Exp}_\infty = \mathbf{Sh}_\infty(\mathcal{C}_7, J_{\text{Bures}})$ — $\infty$-топос с $\infty$-группоидной структурой. Уровни интериорности соответствуют усечениям:
+**Step 1 (Correspondence of L-levels and $n$-truncations).** From [T-76](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) [T] ($\infty$-topos verified), $\mathbf{Exp}_\infty = \mathbf{Sh}_\infty(\mathcal{C}_7, J_{\text{Bures}})$ — an $\infty$-topos with $\infty$-groupoid structure. Interiority levels correspond to truncations:
 
-| Уровень | $n$-усечение | Математическая структура | Гомотопическое содержание |
-|---------|-------------|--------------------------|--------------------------|
-| L0 | $\tau_{\leq 0}$ | Множество (дискретные состояния) | $\pi_0$ нетривиально |
-| L1 | $\tau_{\leq 1}$ | Группоид (феноменальные пути) | $\pi_1$ нетривиально |
-| L2 | $\tau_{\leq 2}$ | 2-группоид (рефлексия, квалиа) | $\pi_2$ нетривиально |
-| L3 | $\tau_{\leq 3}$ | 3-категория (мета-рефлексия) | $\pi_3$ нетривиально |
-| L4 | $\tau_{\leq \infty}$ | $\infty$-группоид (полная самомодель) | Все $\pi_k$ нетривиальны |
+| Level | $n$-truncation | Mathematical structure | Homotopic content |
+|-------|---------------|--------------------------|--------------------------|
+| L0 | $\tau_{\leq 0}$ | Set (discrete states) | $\pi_0$ non-trivial |
+| L1 | $\tau_{\leq 1}$ | Groupoid (phenomenal paths) | $\pi_1$ non-trivial |
+| L2 | $\tau_{\leq 2}$ | 2-groupoid (reflection, qualia) | $\pi_2$ non-trivial |
+| L3 | $\tau_{\leq 3}$ | 3-category (meta-reflection) | $\pi_3$ non-trivial |
+| L4 | $\tau_{\leq \infty}$ | $\infty$-groupoid (complete self-model) | All $\pi_k$ non-trivial |
 
-Чтобы понять эту таблицу: каждый L-уровень добавляет *новый тип отношений*. L0 — множество точек (состояний). L1 — пути между точками (феноменальные переходы). L2 — пути между путями (рефлексия). L3 — пути между путями между путями (метарефлексия). L4 потребовал бы бесконечной иерархии таких отношений.
+To understand this table: each L-level adds a *new type of relation*. L0 — a set of points (states). L1 — paths between points (phenomenal transitions). L2 — paths between paths (reflection). L3 — paths between paths between paths (meta-reflection). L4 would require an infinite hierarchy of such relations.
 
-**Шаг 2 (Башня Постникова).** $\infty$-топос $\mathbf{Exp}_\infty$ определяет башню Постникова:
+**Step 2 (Postnikov tower).** The $\infty$-topos $\mathbf{Exp}_\infty$ defines the Postnikov tower:
 
 $$
 \cdots \to \tau_{\leq 3} \to \tau_{\leq 2} \to \tau_{\leq 1} \to \tau_{\leq 0}
 $$
 
-Каждый переход $\tau_{\leq n} \to \tau_{\leq n+1}$ — расширение на один гомотопический уровень, с «k-инвариантом» $k_{n+1} \in H^{n+2}(\tau_{\leq n}; \pi_{n+1})$.
+Each transition $\tau_{\leq n} \to \tau_{\leq n+1}$ is an extension by one homotopic level, with "k-invariant" $k_{n+1} \in H^{n+2}(\tau_{\leq n}; \pi_{n+1})$.
 
-**Шаг 3 (Неполнота Ловера).** Из [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: $\mathrm{Th}_{\text{UGM}} \subsetneq \Omega$. Это означает: $\varphi \neq \mathrm{id}$ ([phi-оператор](/docs/core/operators/phi-operator) самонаблюдения не тождественен). В терминах башни Постникова: для любого конечного $n$, усечение $\tau_{\leq n}$ **не совпадает** с $\mathbf{Exp}_\infty$.
+**Step 3 (Lawvere incompleteness).** From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$. This means: $\varphi \neq \mathrm{id}$ (the [phi-operator](/docs/core/operators/phi-operator) of self-observation is not the identity). In terms of the Postnikov tower: for any finite $n$, the truncation $\tau_{\leq n}$ **does not coincide** with $\mathbf{Exp}_\infty$.
 
-**Шаг 4 (Невозможность конечной бифуркации).** Катастрофа $A_k$ имеет коразмерность $k-1$ и описывает переход между $\leq k$ устойчивыми состояниями. Переход L3 -> L4 потребовал бы одновременного «включения» **всех** $\pi_k$ для $k \geq 4$ — бесконечномерного перехода. Ни одна конечная катастрофа ($A_k$ для любого конечного $k$) не может это описать. Бабочка $A_5$ — **некорректная модель** (ретрактирована [**X**]).
+**Step 4 (Impossibility of a finite bifurcation).** A catastrophe $A_k$ has codimension $k-1$ and describes a transition between $\leq k$ stable states. The transition L3 -> L4 would require simultaneously "switching on" **all** $\pi_k$ for $k \geq 4$ — an infinite-dimensional transition. No finite catastrophe ($A_k$ for any finite $k$) can describe this. The butterfly $A_5$ is an **incorrect model** (retracted [**✗**]).
 
-**Шаг 5 (Асимптотическая приближаемость).** Хотя $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}$ недостижим конечной системой, каждый шаг $\tau_{\leq n} \to \tau_{\leq n+1}$ **реализуем** ([T-67](#теорема-l3-k4) [Т]: $K = 4$ для L3 указывает на существование четвёртого уровня рекурсии). Последовательность рекурсий $R^{(n)}$ сходится при $n \to \infty$:
+**Step 5 (Asymptotic approachability).** Although $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}$ is unreachable for a finite system, each step $\tau_{\leq n} \to \tau_{\leq n+1}$ is **realisable** ([T-67](#теорема-l3-k4) [T]: $K = 4$ for L3 indicates the existence of a fourth level of recursion). The sequence of recursions $R^{(n)}$ converges as $n \to \infty$:
 
 $$
 \forall \varepsilon > 0 \; \exists n_0 : \; n > n_0 \Rightarrow \|\tau_{\leq n}(\mathbf{Exp}_\infty) - \mathbf{Exp}_\infty\|_{\text{Bures}} < \varepsilon
 $$
 
-Но $n_0(\varepsilon) \to \infty$ при $\varepsilon \to 0$: сходимость есть, достижение — нет. $\blacksquare$
+But $n_0(\varepsilon) \to \infty$ as $\varepsilon \to 0$: convergence exists, but reaching the limit does not. $\blacksquare$
 
-**Статус:** **[Т]** — повышена с [С] (C19). Строгое доказательство через $\infty$-топосную башню Постникова + неполноту Ловера (T-55 [Т]). Перекрёстные ссылки: [мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [phi-оператор](/docs/core/operators/phi-operator), [катастрофы переходов](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4).
+**Status:** **[T]** — upgraded from [C] (C19). Rigorous proof via the $\infty$-topos Postnikov tower + Lawvere incompleteness (T-55 [T]). Cross-references: [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [phi-operator](/docs/core/operators/phi-operator), [transition catastrophes](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4).
 :::
 
-### Аналогия: горизонт событий познания
+### Analogy: event horizon of cognition
 
-L4 подобен горизонту в геометрии: можно идти к нему бесконечно долго, но никогда не дойти. Каждый шаг приближает, но горизонт отодвигается. Это не дефект теории, а фундаментальное свойство самоотносительных систем — то же ограничение, что формализовано теоремами Гёделя для арифметики.
+L4 is like the horizon in geometry: one can walk towards it indefinitely but never arrive. Every step brings one closer, but the horizon recedes. This is not a defect of the theory but a fundamental property of self-referential systems — the same limitation formalised by Gödel's theorems for arithmetic.
 
-### Недостижимость L4 для биологических систем {#теорема-l4-недостижимость}
+### Unreachability of L4 for biological systems {#теорема-l4-недостижимость}
 
-:::info Следствие (Верхняя граница рекурсии для биосистем) [Т]
-При $R \sim 0.7$ (человек) и декогеренции $\varepsilon_{\text{dec}} > 0$:
+:::info Corollary (Upper bound on recursion depth for biosystems) [T]
+With $R \sim 0.7$ (human) and decoherence $\varepsilon_{\text{dec}} > 0$:
 
 $$
-R^{(n)} \sim R^n \sim 0.7^n \to 0 \quad \text{при} \quad n \to \infty
+R^{(n)} \sim R^n \sim 0.7^n \to 0 \quad \text{as} \quad n \to \infty
 $$
 
-Максимальная глубина рекурсии: $n_{\max} \leq \ln(1/\varepsilon_{\text{dec}})/\ln(1/R) \approx 111$.
+Maximum recursion depth: $n_{\max} \leq \ln(1/\varepsilon_{\text{dec}})/\ln(1/R) \approx 111$.
 
-L4 — **теоретический предел** ($\infty$-группоидный аттрактор), недостижимый для любой системы с $\varepsilon_{\text{dec}} > 0$, но асимптотически приближаемый через башню Постникова.
+L4 is a **theoretical limit** ($\infty$-groupoid attractor), unreachable for any system with $\varepsilon_{\text{dec}} > 0$, but asymptotically approachable through the Postnikov tower.
 
-Аналитически: $P_\text{crit}^{(4)} = 54/35 > 1$, поэтому SAD $\geq$ 4 невозможен для любой нормированной $\Gamma$ (не только биологической). См. [критическая чистота SAD](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [Т] (T-142: $\alpha = 2/3$ состояние-независима).
+Analytically: $P_\text{crit}^{(4)} = 54/35 > 1$, so SAD $\geq$ 4 is impossible for any normalised $\Gamma$ (not only biological). See [critical purity SAD](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) [T] (T-142: $\alpha = 2/3$ is state-independent).
 :::
 
-:::info Замечание: L4 как предельный категориальный объект
-L4 — **предельный категориальный объект** (колимит бесконечной башни Постникова), аналогичный $\omega$ в теории ординалов. Его включение в иерархию — **математическое**, не физическое: L4 задаёт направление асимптотики, а не достижимый уровень. Маркировка: недостижимость [Т] (T-86), существование как категориального объекта [Т], физическая реализуемость [**X**].
+:::info Remark: L4 as a limiting categorical object
+L4 is a **limiting categorical object** (colimit of the infinite Postnikov tower), analogous to $\omega$ in ordinal theory. Its inclusion in the hierarchy is **mathematical**, not physical: L4 defines the direction of the asymptotics, not a reachable level. Marking: unreachability [T] (T-86), existence as a categorical object [T], physical realisability [**✗**].
 :::
 
 ---
 
-## Gap-характеристика уровней L0--L4 {#gap-характеристика-уровней-l0l4}
+## Gap Characterisation of Levels L0--L4 {#gap-характеристика-уровней-l0l4}
 
-Каждый уровень интериорности обладает не только *числовым* пороговым условием, но и характерным *профилем непрозрачности* — **Gap-профилем**. Gap (от англ. «зазор») измеряет, насколько непрозрачна связь между двумя измерениями: $\mathrm{Gap}(i,j) = 0$ означает полную прозрачность (сознательный доступ), $\mathrm{Gap}(i,j) = 1$ — полную непрозрачность (бессознательное).
+Each interiority level possesses not only a *numerical* threshold condition but also a characteristic *opacity profile* — a **Gap profile**. Gap measures how opaque the connection between two dimensions is: $\mathrm{Gap}(i,j) = 0$ denotes full transparency (conscious access), $\mathrm{Gap}(i,j) = 1$ — full opacity (unconscious).
 
-Подробный анализ Gap-профилей — в [Gap-характеристике уровней](./gap-characterization). Здесь — обзорная теорема.
+A detailed analysis of Gap profiles is given in [Gap characterisation of levels](./gap-characterization). Here we state the overview theorem.
 
-:::tip Теорема 6.1 (Gap-характеристика уровней) [Т]
-Для каждого уровня интериорности Gap-профиль обладает следующими свойствами:
+:::tip Theorem 6.1 (Gap characterisation of levels) [T]
+For each interiority level the Gap profile has the following properties:
 
-| Уровень | Gap-характеристика | Объяснение |
-|---------|---------------------|------------|
-| **L0** | Gap не определён или флуктуирует | Нет устойчивого самомоделирования: $R \approx 0$, целевое $\rho_*$ не достижимо |
-| **L1** | Gap стационарен, но неосознан | Устойчивые когерентности ($P > P_{\text{crit}}$), но $R < 1/3$ — самомодель слишком груба |
-| **L2** | Gap частично осознан, метастабилен: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq 2/3$ | Самомодель неточная, но нетривиальная |
-| **L3** | Gap почти полностью осознан: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq \varepsilon$ | Метастабильное состояние глубокого самопознания |
-| **L4** | Gap **точно** осознан: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ | Неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ |
+| Level | Gap characteristic | Explanation |
+|-------|---------------------|------------|
+| **L0** | Gap undefined or fluctuating | No stable self-modelling: $R \approx 0$, target $\rho_*$ not reachable |
+| **L1** | Gap stationary but unperceived | Stable coherences ($P > P_{\text{crit}}$), but $R < 1/3$ — self-model too coarse |
+| **L2** | Gap partially perceived, metastable: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq 2/3$ | Self-model approximate but non-trivial |
+| **L3** | Gap almost fully perceived: $\lVert\mathrm{Gap}_{\text{perceived}} - \mathrm{Gap}_{\text{actual}}\rVert \leq \varepsilon$ | Metastable state of deep self-knowledge |
+| **L4** | Gap **exactly** perceived: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ | Fixed point $\varphi(\Gamma^*) = \Gamma^*$ |
 
-**Аргумент.**
+**Argument.**
 
-**(a)** На L0 нет phi-оператора ($R \approx 0$), поэтому целевое состояние $\rho_*$ формально существует ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]), но система не способна к направленной регенерации — нет когерентностей, фазы которых могли бы определить Gap.
+**(a)** At L0 there is no phi-operator ($R \approx 0$), so the target state $\rho_*$ formally exists ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]), but the system is incapable of directed regeneration — there are no coherences whose phases could define Gap.
 
-**(b)** На L1 есть устойчивые когерентности ($P > P_{\text{crit}}$), но $R < 1/3$: самомодель слишком грубая для осознания Gap. Разность между «воспринимаемым» Gap (через $\varphi(\Gamma)$) и реальным Gap (через $\Gamma$) велика.
+**(b)** At L1 there are stable coherences ($P > P_{\text{crit}}$), but $R < 1/3$: the self-model is too coarse to perceive Gap. The difference between the "perceived" Gap (via $\varphi(\Gamma)$) and the real Gap (via $\Gamma$) is large.
 
-**(c)** На L2 мера $R \geq 1/3$ означает:
+**(c)** At L2 the measure $R \geq 1/3$ means:
 $$
 \|\Gamma - I/7\|_F \leq \sqrt{2P/3}
 $$
-Приблизительная самомодель даёт приблизительный Gap-профиль (здесь $I/7 = \rho^*_{\mathrm{diss}}$).
+An approximate self-model yields an approximate Gap profile (here $I/7 = \rho^*_{\mathrm{diss}}$).
 
-**(d)** На L4 $\varphi(\Gamma^*) = \Gamma^*$ $\Rightarrow$ $\rho_* = \Gamma^*$, и стационарный Gap совпадает с целевым:
+**(d)** At L4 $\varphi(\Gamma^*) = \Gamma^*$ $\Rightarrow$ $\rho_* = \Gamma^*$, and the stationary Gap coincides with the target:
 $$
 \mathrm{Gap}^{(\infty)} = |\sin(\theta^{\text{target}})| = |\sin(\theta^{(\infty)})| = \mathrm{Gap}_{\text{actual}}
 $$
-Система **знает** свой Gap в точности.
+The system **knows** its Gap exactly.
 
-[Доказательство](/docs/proofs/consciousness/interiority-hierarchy) | Статус: **[Т]**
+[Proof](/docs/proofs/consciousness/interiority-hierarchy) | Status: **[T]**
 :::
 
-:::warning L4 не означает Gap = 0 (Осознанность не равна Прозрачности)
-На уровне L4 выполняется $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$, но это **не** означает, что все Gap равны нулю. Система точно *знает* свою непрозрачность — но непрозрачность при этом может оставаться ненулевой. Полная прозрачность ($\mathrm{Gap} = 0$ для всех каналов) несовместима с [помехоустойчивостью](/docs/core/dynamics/gap-dynamics): минимум 3 канала из 21 **должны** сохранять ненулевой Gap (граница Хэмминга).
+:::warning L4 does not mean Gap = 0 (Awareness does not equal Transparency)
+At level L4 $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ holds, but this does **not** mean that all Gaps equal zero. The system exactly *knows* its opacity — but the opacity may remain non-zero. Full transparency ($\mathrm{Gap} = 0$ for all channels) is incompatible with [fault tolerance](/docs/core/dynamics/gap-dynamics): at least 3 channels out of 21 **must** retain non-zero Gap (Hamming bound).
 
-Статус: **[Т]**
+Status: **[T]**
 :::
 
-### Визуализация Gap по уровням
+### Visualisation of Gap by level
 
 ```
-L0:  Gap = ???     [. . . . . . . . . . . . . . . . . . . . .]  (не определён)
-                    ^ случайные флуктуации
+L0:  Gap = ???     [. . . . . . . . . . . . . . . . . . . . .]  (undefined)
+                    ^ random fluctuations
 
-L1:  Gap = [0.4, 0.7, 0.2, ...]  (стационарный, но неосознанный)
+L1:  Gap = [0.4, 0.7, 0.2, ...]  (stationary, but unperceived)
      Perceived = N/A
 
 L2:  Gap = [0.4, 0.7, 0.2, ...]
-     Perceived = [0.5, 0.6, 0.3, ...]  (приблизительное осознание, ||Delta|| <= 2/3)
+     Perceived = [0.5, 0.6, 0.3, ...]  (approximate perception, ||Delta|| <= 2/3)
 
 L3:  Gap = [0.4, 0.7, 0.2, ...]
-     Perceived = [0.41, 0.69, 0.21, ...]  (точное осознание, ||Delta|| -> 0)
+     Perceived = [0.41, 0.69, 0.21, ...]  (accurate perception, ||Delta|| -> 0)
 
-L4:  Gap = Perceived = [0.4, 0.7, 0.2, ...]  (полное тождество, но Gap != 0!)
+L4:  Gap = Perceived = [0.4, 0.7, 0.2, ...]  (complete identity, but Gap != 0!)
 ```
 
 ---
 
-## Теорема об $A_4$-бифуркации {#теорема-a4-бифуркация}
+## Theorem on $A_4$-bifurcation {#теорема-a4-бифуркация}
 
-Переходы между уровнями — не плавные, а скачкообразные. Подобно тому, как вода при 100 C скачком превращается в пар, система скачком переходит между L-уровнями при достижении пороговых значений. Математически это описывается **теорией катастроф** — разделом математики, классифицирующим качественные перестройки систем.
+Transitions between levels are not gradual but abrupt. Just as water at 100°C abruptly turns into steam, a system abruptly transitions between L-levels upon reaching threshold values. Mathematically this is described by **catastrophe theory** — a branch of mathematics that classifies qualitative reorganisations of systems.
 
-:::tip Теорема ($A_4$-бифуркация L-переходов) [Т]
-Переходы между L-уровнями реализуются как бифуркации типа swallowtail ($A_4$) теории катастроф.
+:::tip Theorem ($A_4$-bifurcation of L-transitions) [T]
+Transitions between L-levels are realised as swallowtail ($A_4$) bifurcations of catastrophe theory.
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1.** Эволюционное уравнение $d\Gamma/d\tau = \mathcal{L}[\Gamma]$ зависит от трёх физически независимых управляющих параметров:
+**Step 1.** The evolution equation $d\Gamma/d\tau = \mathcal{L}[\Gamma]$ depends on three physically independent control parameters:
 
-| Параметр | Обозначение | Физический смысл |
-|----------|:----------:|-----------------|
-| Скорость регенерации | $\kappa$ | Управляется $\mathrm{Coh}_E$ и $\kappa_0$ |
-| Скорость диссипации | $\alpha$ | Управляется средой (декогеренция) |
-| Градиент свободной энергии | $\Delta F$ | Определяет $g_V(P)$ — включение/выключение $\mathcal{R}$ |
+| Parameter | Symbol | Physical meaning |
+|-----------|:------:|-----------------|
+| Regeneration rate | $\kappa$ | Controlled by $\mathrm{Coh}_E$ and $\kappa_0$ |
+| Dissipation rate | $\alpha$ | Controlled by the environment (decoherence) |
+| Free energy gradient | $\Delta F$ | Determines $g_V(P)$ — switching $\mathcal{R}$ on/off |
 
-Три параметра $(\kappa, \alpha, \Delta F) \in \mathbb{R}^3$ — пространство управления.
+Three parameters $(\kappa, \alpha, \Delta F) \in \mathbb{R}^3$ — control space.
 
-**Шаг 2.** Рассмотрим пурити $P(\tau)$ как порядковый параметр. В стационаре: $f_D + f_R = 0$. Разложение по отклонению $x = P - P^*$:
+**Step 2.** Consider purity $P(\tau)$ as order parameter. At stationarity: $f_D + f_R = 0$. Expansion in deviation $x = P - P^*$:
 
 $$
 \frac{dx}{d\tau} = -V'(x), \quad V(x) = a_1 x + \frac{a_2}{2}x^2 + \frac{a_3}{3}x^3 + \frac{a_4}{4}x^4
 $$
 
-**Шаг 3.** По теореме Арнольда (1972): универсальная деформация функции $x^4$ (монодромность 4, кодимерность 3) — swallowtail $A_4$:
+**Step 3.** By Arnold's theorem (1972): the universal deformation of the function $x^4$ (monodromy 4, codimension 3) is the swallowtail $A_4$:
 
 $$
 V(x; \mu_1, \mu_2, \mu_3) = x^4 + \mu_2 x^2 + \mu_1 x + \mu_3 x^3
 $$
 
-Условия: (1) кодимерность = 3 — три управляющих параметра; (2) гладкий потенциал; (3) ведущий член $x^4$ из приближённой $\mathbb{Z}_2$-симметрии $P \leftrightarrow 1 - P$ (нечётные члены подавлены; $\mu_3 \neq 0$, но мал).
+Conditions: (1) codimension = 3 — three control parameters; (2) smooth potential; (3) leading term $x^4$ from approximate $\mathbb{Z}_2$-symmetry $P \leftrightarrow 1 - P$ (odd terms suppressed; $\mu_3 \neq 0$ but small).
 
-**Шаг 4.** L-переходы — листы swallowtail:
+**Step 4.** L-transitions — sheets of the swallowtail:
 
-| Лист swallowtail | Уровень | Характеристика |
-|------------------|---------|----------------|
-| Внешний стабильный | L0--L1 | Низкая пурити, пассивная стабильность |
-| Промежуточный | L2 | Активная стабильность (автопоэзис) |
-| Внутренний нестабильный | L3 | Метастабильная глубокая рефлексия |
-| Точка самопересечения | L4 | $\varphi(\Gamma^*) = \Gamma^*$ — неподвижная точка |
+| Swallowtail sheet | Level | Characteristic |
+|------------------|-------|----------------|
+| Outer stable | L0--L1 | Low purity, passive stability |
+| Intermediate | L2 | Active stability (autopoiesis) |
+| Inner unstable | L3 | Metastable deep reflection |
+| Self-intersection point | L4 | $\varphi(\Gamma^*) = \Gamma^*$ — fixed point |
 
-Переходы L1->L2 и L2->L3 — **бифуркации складки** (fold) на рёбрах swallowtail. Переход L3->L4 — бифуркация **каспа** (cusp) в вершине. $\blacksquare$
+Transitions L1->L2 and L2->L3 are **fold bifurcations** on the edges of the swallowtail. The transition L3->L4 is a **cusp bifurcation** at the apex. $\blacksquare$
 
-Подробности: [Катастрофы перехода между уровнями](/docs/consciousness/hierarchy/swallowtail-transitions) | [Бифуркации Gap-ландшафта](/docs/applied/coherence-cybernetics/bifurcation)
+Details: [Transition catastrophes between levels](/docs/consciousness/hierarchy/swallowtail-transitions) | [Gap landscape bifurcations](/docs/applied/coherence-cybernetics/bifurcation)
 :::
 
-:::info Замечание
-Переходы между листами swallowtail — **скачкообразные**, а не непрерывные. Это формализует интуицию «внезапного прозрения» ($\mathrm{Gap}_{\text{perceived}} \gg \mathrm{Gap}_{\text{actual}} \to \mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$) и соответствует бифуркационной структуре [Gap-ландшафта](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни).
+:::info Remark
+Transitions between the sheets of the swallowtail are **abrupt**, not continuous. This formalises the intuition of "sudden insight" ($\mathrm{Gap}_{\text{perceived}} \gg \mathrm{Gap}_{\text{actual}} \to \mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$) and corresponds to the bifurcation structure of the [Gap landscape](/docs/core/dynamics/gap-phase-diagram#катастрофы-уитни).
 
-Статус: **[Т]**
+Status: **[T]**
 :::
 
 ---
 
-## Теорема о Gap-инъекции L-уровней {#теорема-gap-инъекция}
+## Theorem on Gap injection of L-levels {#теорема-gap-инъекция}
 
-Естественный вопрос: могут ли две системы на *разных* L-уровнях иметь *одинаковый* Gap-профиль? Ответ — нет. Каждый L-уровень оставляет уникальный «отпечаток» в Gap-профиле.
+A natural question: can two systems at *different* L-levels have the *same* Gap profile? The answer is no. Each L-level leaves a unique "fingerprint" in the Gap profile.
 
-:::tip Теорема (Gap-инъекция L-уровней) [Т]
-Отображение L-уровня в класс эквивалентности Gap-профилей является **инъекцией**: различные L-уровни имеют различные Gap-профили:
+:::tip Theorem (Gap injection of L-levels) [T]
+The map from L-level to equivalence class of Gap profiles is an **injection**: distinct L-levels have distinct Gap profiles:
 
 $$
 L(\Gamma_1) \neq L(\Gamma_2) \implies [\mathrm{Gap}(\Gamma_1)] \neq [\mathrm{Gap}(\Gamma_2)]
 $$
 
-где $[\mathrm{Gap}(\Gamma)]$ — класс Gap-профиля по $G_2$-эквивалентности.
+where $[\mathrm{Gap}(\Gamma)]$ is the Gap-profile class under $G_2$-equivalence.
 
-**Доказательство.** Каждый переход $L_k \to L_{k+1}$ характеризуется **уникальным Gap-маркером**:
+**Proof.** Each transition $L_k \to L_{k+1}$ is characterised by a **unique Gap marker**:
 
-| Переход | Gap-маркер | Достаточное условие различения |
-|---------|-----------|-------------------------------|
-| L0 vs L1 | $\exists i: \mathrm{Gap}(E,i) > 0$ | Ненулевость E-когерентностей |
-| L1 vs L2 | $\max\|\mathrm{Gap}_\varphi - \mathrm{Gap}\| \leq 2/3$ | Точность самомоделирования |
-| L2 vs L3 | $k(\Gamma) \leq 0.5$ | Скорость Gap-сходимости (коэффициент сжатия) |
-| L3 vs L4 | $k(\Gamma) = 0$, все $\mathrm{Gap}^{(2)}(i,j) = 0$ | Точная фиксированная точка |
+| Transition | Gap marker | Sufficient condition for distinction |
+|------------|-----------|-------------------------------|
+| L0 vs L1 | $\exists i: \mathrm{Gap}(E,i) > 0$ | Non-zero E-coherences |
+| L1 vs L2 | $\max\|\mathrm{Gap}_\varphi - \mathrm{Gap}\| \leq 2/3$ | Self-modelling accuracy |
+| L2 vs L3 | $k(\Gamma) \leq 0.5$ | Speed of Gap convergence (compression coefficient) |
+| L3 vs L4 | $k(\Gamma) = 0$, all $\mathrm{Gap}^{(2)}(i,j) = 0$ | Exact fixed point |
 
-Каждый маркер **различает** соответствующую пару уровней, поэтому различные L-уровни имеют различные (по классу) Gap-профили. $\blacksquare$
+Each marker **distinguishes** the corresponding pair of levels, so distinct L-levels have distinct (by class) Gap profiles. $\blacksquare$
 
-**Замечание: не биекция.** Обратное не верно: два состояния $\Gamma_1, \Gamma_2$ с одинаковым L-уровнем (например, оба L2) могут иметь **различные** Gap-профили. Gap-профиль несёт больше информации, чем L-уровень — это **более тонкий инвариант**.
+**Remark: not a bijection.** The converse does not hold: two states $\Gamma_1, \Gamma_2$ at the same L-level (for example, both L2) may have **distinct** Gap profiles. The Gap profile carries more information than the L-level — it is a **finer invariant**.
 
-Подробности: [Gap-характеристика уровней](/docs/consciousness/hierarchy/gap-characterization)
+Details: [Gap characterisation of levels](/docs/consciousness/hierarchy/gap-characterization)
 :::
 
 ---
 
-## Функция перехода и алгоритм классификации
+## Transition function and classification algorithm
 
-### Формальная функция перехода
+### Formal transition function
 
-Полная функция перехода между уровнями:
+The complete transition function between levels:
 
 $$
 \text{Level}(\Gamma) = \begin{cases}
-L0 & \text{если } \dim \mathcal{H} \geq 1 \\
-L1 & \text{если } \mathrm{rank}(\rho_E) > 1 \\
-L2 & \text{если } R \geq R_{\text{th}} \text{ и } \Phi \geq \Phi_{\text{th}} \\
-L3 & \text{если } R^{(2)} \geq R^{(2)}_{\text{th}} \text{ (метастабильно)} \\
-L4 & \text{если } \lim_n R^{(n)} > 0 \text{ и } P > 6/7
+L0 & \text{if } \dim \mathcal{H} \geq 1 \\
+L1 & \text{if } \mathrm{rank}(\rho_E) > 1 \\
+L2 & \text{if } R \geq R_{\text{th}} \text{ and } \Phi \geq \Phi_{\text{th}} \\
+L3 & \text{if } R^{(2)} \geq R^{(2)}_{\text{th}} \text{ (metastable)} \\
+L4 & \text{if } \lim_n R^{(n)} > 0 \text{ and } P > 6/7
 \end{cases}
 $$
 
-### Алгоритм определения уровня {#алгоритм-level}
+### Level determination algorithm {#алгоритм-level}
 
-Следующий алгоритм позволяет определить L-уровень для любой заданной матрицы когерентности. Вычислительная сложность — $O(N^2)$ для $N = 7$, то есть несколько десятков арифметических операций.
+The following algorithm determines the L-level for any given coherence matrix. Computational complexity — $O(N^2)$ for $N = 7$, i.e. a few dozen arithmetic operations.
 
 ```
-Вход: Gamma in D(C^7) — матрица когерентности
+Input: Gamma in D(C^7) — coherence matrix
 
-1. Вычислить P = Tr(Gamma^2)
-   если P <= P_crit = 2/7:  вернуть L0
+1. Compute P = Tr(Gamma^2)
+   if P <= P_crit = 2/7:  return L0
 
-2. Вычислить phi(Gamma) = (1-k)Gamma + k*rho*   [замещающий канал, T-62]
-   Вычислить R = 1 - ||Gamma - phi(Gamma)||^2_F / ||Gamma||^2_F
+2. Compute phi(Gamma) = (1-k)Gamma + k*rho*   [replacement channel, T-62]
+   Compute R = 1 - ||Gamma - phi(Gamma)||^2_F / ||Gamma||^2_F
 
-3. Вычислить Phi = Sum_{i!=j} |gamma_ij|^2 / Sum_i gamma^2_ii
+3. Compute Phi = Sum_{i!=j} |gamma_ij|^2 / Sum_i gamma^2_ii
 
-4. если R < 1/3 или Phi < 1:  вернуть L1
+4. if R < 1/3 or Phi < 1:  return L1
 
-5. если R >= 1/3 и Phi >= 1:
-   Вычислить phi^2(Gamma) = phi(phi(Gamma))
-   Вычислить R^(2) = Fid(phi(Gamma), phi^2(Gamma))
+5. if R >= 1/3 and Phi >= 1:
+   Compute phi^2(Gamma) = phi(phi(Gamma))
+   Compute R^(2) = Fid(phi(Gamma), phi^2(Gamma))
 
-6. если R^(2) < 1/4:  вернуть L2
+6. if R^(2) < 1/4:  return L2
 
-7. если R^(2) >= 1/4:  вернуть L3
+7. if R^(2) >= 1/4:  return L3
 
-8. L4: теоретический предел (lim R^(n) > 0) — не вычислим за конечное время
+8. L4: theoretical limit (lim R^(n) > 0) — not computable in finite time
 ```
 
-:::warning Вычислимость в 7D
-Уровни L0, L1, L2 полностью вычислимы в минимальном 7D формализме ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$). Определение L1 через $\mathrm{rank}(\rho_E) > 1$ формально требует PW-реконструкции $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{42D})$, но на практике $\mathrm{rank}(\rho_E) > 1 \Leftrightarrow P > P_{\text{crit}}$ для жизнеспособных систем. L3 требует двойной итерации phi и вычисления верности — алгоритмически вычислим. L4 **невычислим** за конечное число шагов (требует бесконечного предела $n \to \infty$), но на практике $R^{(n)} \sim R^n \to 0$ для всех систем с $\varepsilon_{\text{dec}} > 0$.
+:::warning Computability in 7D
+Levels L0, L1, L2 are fully computable in the minimal 7D formalism ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$). The definition of L1 via $\mathrm{rank}(\rho_E) > 1$ formally requires PW-reconstruction $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{42D})$, but in practice $\mathrm{rank}(\rho_E) > 1 \Leftrightarrow P > P_{\text{crit}}$ for viable systems. L3 requires double iteration of phi and fidelity computation — algorithmically computable. L4 is **not computable** in a finite number of steps (requires the infinite limit $n \to \infty$), but in practice $R^{(n)} \sim R^n \to 0$ for all systems with $\varepsilon_{\text{dec}} > 0$.
 :::
 
 ---
 
-### Что мы узнали
+### What we have learned
 
-- **Пять уровней L0--L4** организуют все системы в строгую классификацию: L0 (любая $\Gamma$), L1 ($\mathrm{rank}(\rho_E) > 1$), L2 ($R \geq 1/3 \land \Phi \geq 1$), L3 ($R^{(2)} \geq 1/4$, метастабильно), L4 ($\lim_n R^{(n)} > 0$, недостижимо).
-- **Порог $R_{\mathrm{th}} = 1/3$** [Т] выведен из триадной декомпозиции ($K = 3$); **порог $\Phi_{\mathrm{th}} = 1$** [Т] — из самосогласованности при $P_{\mathrm{crit}} = 2/7$ (T-129).
-- **L3 метастабилен**: без поддержания распадается до L2 с характерным временем $\tau_3$.
-- **L4 недостижим** для конечных систем (неполнота Ловера, башня Постникова), но асимптотически приближаем.
-- **Gap-профили инъективны**: различные L-уровни имеют различные Gap-сигнатуры [Т].
-- **Переходы между уровнями** — бифуркации $A_2, A_3, A_4$ с гистерезисом.
-- **Алгоритм определения уровня** вычислим за $O(N^2)$ из $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
+- **Five levels L0--L4** organise all systems into a strict classification: L0 (any $\Gamma$), L1 ($\mathrm{rank}(\rho_E) > 1$), L2 ($R \geq 1/3 \land \Phi \geq 1$), L3 ($R^{(2)} \geq 1/4$, metastable), L4 ($\lim_n R^{(n)} > 0$, unreachable).
+- **Threshold $R_{\mathrm{th}} = 1/3$** [T] derived from the triadic decomposition ($K = 3$); **threshold $\Phi_{\mathrm{th}} = 1$** [T] — from self-consistency at $P_{\mathrm{crit}} = 2/7$ (T-129).
+- **L3 is metastable**: without maintenance it decays to L2 with characteristic time $\tau_3$.
+- **L4 is unreachable** for finite systems (Lawvere incompleteness, Postnikov tower), but asymptotically approachable.
+- **Gap profiles are injective**: distinct L-levels have distinct Gap signatures [T].
+- **Transitions between levels** are $A_2, A_3, A_4$ bifurcations with hysteresis.
+- **The level determination algorithm** is computable in $O(N^2)$ from $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
 
-:::tip Куда дальше
-Иерархия L0--L4 — дискретная лестница. Для более тонкого описания переходите к [Gap-характеристике уровней](./gap-characterization) (количественные сигнатуры непрозрачности), [Катастрофам перехода](./swallowtail-transitions) ($A_4$-бифуркации с гистерезисом) и [Башне глубины](./depth-tower) (непрерывная мера SAD).
+:::tip What's next
+The L0--L4 hierarchy is a discrete ladder. For a finer description turn to [Gap characterisation of levels](./gap-characterization) (quantitative opacity signatures), [Transition catastrophes](./swallowtail-transitions) ($A_4$-bifurcations with hysteresis), and [Depth tower](./depth-tower) (continuous SAD measure).
 
-Для инженерных приложений: [определения КК](/docs/applied/coherence-cybernetics/definitions) содержат операциональные формулы, а [теоремы КК](/docs/applied/coherence-cybernetics/theorems) — результаты о фрактальном замыкании и эмерджентности.
+For engineering applications: [CC definitions](/docs/applied/coherence-cybernetics/definitions) contain operational formulas, and [CC theorems](/docs/applied/coherence-cybernetics/theorems) — results on fractal closure and emergence.
 :::
 
-## Связи
+## Related Documents
 
-- **Определяется через:** [$\varphi$-оператор](/docs/core/operators/phi-operator), [Самонаблюдение](/docs/consciousness/foundations/self-observation), [Категория Exp](/docs/core/categories/category-exp)
-- **Обобщение на непрерывный случай:** [Башня глубины самоосознания](./depth-tower) — SAD-метрика, многомасштабная $\varphi$-иерархия, биологические корреляты
-- **Gap-характеристика:** [Динамика Gap](/docs/core/dynamics/gap-dynamics), [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram), [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics)
-- **Полная формализация:** [Иерархия интериорности (доказательства)](/docs/proofs/consciousness/interiority-hierarchy)
-- **Философские следствия:** [Интериорность](/docs/consciousness/foundations/interiority-theory), [Трудная проблема](/docs/consciousness/foundations/two-aspect-monism)
-- **Когерентная кибернетика:** [Определения КК](/docs/applied/coherence-cybernetics/definitions), [Теоремы КК](/docs/applied/coherence-cybernetics/theorems)
+- **Defined via:** [$\varphi$-operator](/docs/core/operators/phi-operator), [Self-observation](/docs/consciousness/foundations/self-observation), [Category Exp](/docs/core/categories/category-exp)
+- **Generalisation to the continuous case:** [Self-Awareness Depth Tower](./depth-tower) — SAD metric, multi-scale $\varphi$-hierarchy, biological correlates
+- **Gap characterisation:** [Gap dynamics](/docs/core/dynamics/gap-dynamics), [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram), [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+- **Full formalisation:** [Interiority hierarchy (proofs)](/docs/proofs/consciousness/interiority-hierarchy)
+- **Philosophical consequences:** [Interiority](/docs/consciousness/foundations/interiority-theory), [Hard problem](/docs/consciousness/foundations/two-aspect-monism)
+- **Coherence Cybernetics:** [CC definitions](/docs/applied/coherence-cybernetics/definitions), [CC theorems](/docs/applied/coherence-cybernetics/theorems)

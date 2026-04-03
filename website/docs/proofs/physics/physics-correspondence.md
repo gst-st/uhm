@@ -312,7 +312,7 @@ $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D}, \quad \dim = 7 \times 6 = 42
 $$
 
-Минимальный 7D формализм получается через диагональное вложение — см. [Матрица когерентности](/docs/core/dynamics/coherence-matrix#два-уровня-формализации).
+Минимальный 7D формализм получается через диагональное вложение — см. [Матрица когерентности](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization).
 
 ---
 
@@ -498,7 +498,7 @@ $$
 
 **[Т] Определение 8.1 (Каноническое расширение).**
 
-Для составной системы $A \otimes B$, где $A$ — [автономный голоном](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема):
+Для составной системы $A \otimes B$, где $A$ — [автономный голоном](/docs/core/foundations/axiom-septicity#definition-autonomous-sub-system):
 
 $$
 \tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
@@ -560,7 +560,7 @@ $$
 
 | Условие | Формулировка | Следует из |
 |---------|--------------|------------|
-| **NS1** (Локальность φ) | $\tilde{\varphi}_A = \varphi_A \otimes \mathrm{id}_B$ | [Автономность (A1)](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема), категориальная структура |
+| **NS1** (Локальность φ) | $\tilde{\varphi}_A = \varphi_A \otimes \mathrm{id}_B$ | [Автономность (A1)](/docs/core/foundations/axiom-septicity#definition-autonomous-sub-system), категориальная структура |
 | **NS2** (Локальность κ) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ | [Определение κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) через локальные когерентности |
 | **NS3** (CPTP φ) | $\varphi$ — CPTP-канал | [Определение φ](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 

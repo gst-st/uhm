@@ -1,196 +1,196 @@
 ---
 sidebar_position: 1
-title: "Изменённые состояния сознания"
-description: "Сон, медитация, психоделики и анестезия как траектории в Γ-пространстве: Gap-профили, когерентности и условия жизнеспособности"
+title: "Altered States of Consciousness"
+description: "Sleep, meditation, psychedelics and anaesthesia as trajectories in Γ-space: Gap profiles, coherences and viability conditions"
 slug: /consciousness/states/altered-states
 ---
 
-# Изменённые Состояния Сознания
+# Altered States of Consciousness
 
-:::info Мост из предыдущей главы
-В разделе «Структура опыта» мы описали, *из чего* состоит сознательный опыт: [21 тип квалиа](/docs/consciousness/phenomenology/qualia-structure), [эмоции](/docs/consciousness/phenomenology/emotional-taxonomy), [субъективное время](/docs/consciousness/phenomenology/temporal-consciousness), [интенциональность](/docs/consciousness/phenomenology/intentionality). Все эти феномены определяются текущим состоянием матрицы $\Gamma$. Но $\Gamma$ не стоит на месте — она эволюционирует. Теперь мы спрашиваем: **что происходит, когда $\Gamma$ отклоняется от типичного бодрствования?** Сон, медитация, психоделики, анестезия — каждое из этих состояний есть особая *траектория* в пространстве $\mathcal{D}(\mathcal{H})$.
+:::info Bridge from the previous chapter
+In the section "Structure of Experience" we described *what* conscious experience is made of: [21 types of qualia](/docs/consciousness/phenomenology/qualia-structure), [emotions](/docs/consciousness/phenomenology/emotional-taxonomy), [subjective time](/docs/consciousness/phenomenology/temporal-consciousness), [intentionality](/docs/consciousness/phenomenology/intentionality). All these phenomena are determined by the current state of the matrix $\Gamma$. But $\Gamma$ does not stand still — it evolves. Now we ask: **what happens when $\Gamma$ deviates from typical wakefulness?** Sleep, meditation, psychedelics, anaesthesia — each of these states is a specific *trajectory* in the space $\mathcal{D}(\mathcal{H})$.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [мера зазора](/docs/core/dynamics/gap-operator#определение)
-- $D_{\text{diff}} = S_{vN}(\rho_E)$ — дифференциация опыта ([энтропия фон Неймана](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана))
-- L0–L4 — [уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
+- $D_{\text{diff}} = S_{vN}(\rho_E)$ — experiential differentiation ([von Neumann entropy](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана))
+- L0–L4 — [interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-:::warning Статус документа
-Описание изменённых состояний как траекторий в $\Gamma$-пространстве имеет статус **[С]** — условное при интерпретации $\Gamma$-траектории как феноменологического содержания. Математический аппарат (динамика $\Gamma$, Gap-профили) — **[Т]**; отождествление конкретных состояний с конкретными Gap-конфигурациями — **[И]**.
+:::warning Document status
+The description of altered states as trajectories in $\Gamma$-space has status **[C]** — conditional on the interpretation of the $\Gamma$-trajectory as phenomenological content. The mathematical apparatus (dynamics of $\Gamma$, Gap profiles) — **[T]**; the identification of specific states with specific Gap configurations — **[I]**.
 :::
 
-:::warning Расширенный формализм для $D_{\text{diff}}$
-Мера дифференциации $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ требует определения $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — частичного следа по всем измерениям кроме $E$. Эта операция определена в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$) и требует PW-реконструкции полного состояния из 7D-матрицы когерентности. В минимальном 7D формализме $D_{\text{diff}}$ вычисляется приближённо через спектр $\Gamma$.
+:::warning Extended formalism for $D_{\text{diff}}$
+The differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ requires the definition $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — the partial trace over all dimensions except $E$. This operation is defined in the extended 42D formalism ($\mathcal{H} = \mathbb{C}^{42}$) and requires PW-reconstruction of the full state from the 7D coherence matrix. In the minimal 7D formalism, $D_{\text{diff}}$ is computed approximately via the spectrum of $\Gamma$.
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Историческая перспектива** — от картографии ИСС Тарта к траекториям в $\Gamma$-пространстве
-2. **ИСС как траектории** — формальное определение через отклонение пятёрки $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$
-3. **Сон** — NREM (возврат к L1) и REM (сновидения)
-4. **Медитация** — шаматха, випассана, самадхи как систематическое управление $\Gamma$
-5. **Психоделики** — расширение $D_{\text{diff}}$ при дестабилизации $R$
-6. **Анестезия** — глобальная декогеренция, переход к L0
-7. **Гипноз и осознанные сновидения** — два особых режима управления $\Gamma$
-8. **Сводная таблица** — все классы ИСС в одной таблице
-9. **Геометрия переходов** — бифуркации между состояниями
+1. **Historical perspective** — from Tart's ASC cartography to trajectories in $\Gamma$-space
+2. **ASC as trajectories** — formal definition via deviation of the quintuple $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$
+3. **Sleep** — NREM (return to L1) and REM (dreams)
+4. **Meditation** — shamatha, vipassanā, samādhi as systematic control of $\Gamma$
+5. **Psychedelics** — expansion of $D_{\text{diff}}$ with destabilisation of $R$
+6. **Anaesthesia** — global decoherence, transition to L0
+7. **Hypnosis and lucid dreaming** — two special modes of $\Gamma$ control
+8. **Summary table** — all ASC classes in one table
+9. **Geometry of transitions** — bifurcations between states
 
 ---
 
-## 1. Историческая перспектива {#история}
+## 1. Historical Perspective {#история}
 
-### 1.1 Чарльз Тарт и картография состояний
+### 1.1 Charles Tart and the cartography of states
 
-В 1969 году американский психолог Чарльз Тарт опубликовал работу *«Altered States of Consciousness»*, предложив первую систематическую классификацию изменённых состояний сознания (ИСС). Тарт рассматривал сознание как **систему**, обладающую стабильными конфигурациями — «дискретными состояниями сознания» (ДСС). Каждое ДСС характеризуется набором «подсистем»: ввод данных (восприятие), обработка (мышление), вывод (поведение), энергия (внимание), и т.д. Переход между ДСС — дестабилизация одной конфигурации и переход к другой.
+In 1969, American psychologist Charles Tart published *"Altered States of Consciousness"*, proposing the first systematic classification of altered states of consciousness (ASC). Tart viewed consciousness as a **system** possessing stable configurations — "discrete states of consciousness" (DSC). Each DSC is characterised by a set of "subsystems": input (perception), processing (thinking), output (behaviour), energy (attention), etc. Transition between DSCs is a destabilisation of one configuration and a transition to another.
 
-**Ключевая идея Тарта:** Нормальное бодрствование — лишь *одна* из возможных конфигураций, не привилегированная с точки зрения «истинности». Сон, медитация, психоделическое состояние — равноправные конфигурации с собственными закономерностями.
+**Tart's key idea:** Normal wakefulness is merely *one* of the possible configurations, not privileged from the standpoint of "truth". Sleep, meditation, the psychedelic state — these are equally legitimate configurations with their own regularities.
 
-### 1.2 От Тарта к УГМ
+### 1.2 From Tart to UHM
 
-Формализм УГМ (Универсальной Голономической Модели) подхватывает и уточняет интуицию Тарта:
+The UHM (Unified Holonomic Model) formalism takes up and refines Tart's intuition:
 
-| Понятие Тарта | Формализм УГМ |
-|---------------|---------------|
-| Дискретное состояние сознания (ДСС) | Аттрактор $\Gamma^*$ в $\mathcal{D}(\mathcal{H})$ |
-| Подсистемы | 7 измерений $\{A, S, D, L, E, O, U\}$ |
-| Переход между ДСС | Траектория $\Gamma(\tau)$, проходящая через [бифуркацию](/docs/core/dynamics/gap-dynamics#бифуркации) |
-| Стабильность ДСС | Бассейн притяжения аттрактора |
-| Энергия для перехода | Изменение $\kappa$ (интенсивность регенерации) или $\Gamma_2$ (скорость декогеренции) |
+| Tart concept | UHM formalism |
+|--------------|---------------|
+| Discrete state of consciousness (DSC) | Attractor $\Gamma^*$ in $\mathcal{D}(\mathcal{H})$ |
+| Subsystems | 7 dimensions $\{A, S, D, L, E, O, U\}$ |
+| Transition between DSCs | Trajectory $\Gamma(\tau)$ passing through a [bifurcation](/docs/core/dynamics/gap-dynamics#бифуркации) |
+| Stability of DSC | Basin of attraction of the attractor |
+| Energy for transition | Change in $\kappa$ (regeneration intensity) or $\Gamma_2$ (decoherence rate) |
 
-Преимущество формализма: у Тарта «подсистемы» описаны качественно, а в УГМ каждый параметр — числовая величина, допускающая измерение и сравнение.
+The advantage of the formalism: in Tart, "subsystems" are described qualitatively, while in UHM every parameter is a numerical quantity admitting measurement and comparison.
 
-### 1.3 Предшественники и контекст
+### 1.3 Predecessors and context
 
-До Тарта изменёнными состояниями занимались разрозненно: Уильям Джеймс (1902, *«Многообразие религиозного опыта»*) описывал мистические состояния; Людвиг (1966) ввёл сам термин «изменённые состояния сознания»; Мастерс и Хьюстон (1966) систематизировали психоделический опыт. Но только Тарт предложил *единую рамку* для всех видов ИСС.
+Before Tart, altered states were studied in a fragmented way: William James (1902, *"The Varieties of Religious Experience"*) described mystical states; Ludwig (1966) introduced the very term "altered states of consciousness"; Masters and Houston (1966) systematised psychedelic experience. But only Tart proposed a *unified framework* for all types of ASC.
 
-В 2000-е годы нейронаука ИСС получила мощный импульс: фМРТ-исследования медитации (Лутц и др., 2004), нейровизуализация психоделических состояний (Кархарт-Харрис и др., 2012), формализация «энтропийного мозга» (Кархарт-Харрис, 2014). Гипотеза энтропийного мозга — прямой предшественник параметра $D_{\text{diff}}$ в УГМ.
+In the 2000s, the neuroscience of ASC received a powerful impulse: fMRI studies of meditation (Lutz et al., 2004), neuroimaging of psychedelic states (Carhart-Harris et al., 2012), formalisation of the "entropic brain" (Carhart-Harris, 2014). The entropic brain hypothesis is the direct precursor of the parameter $D_{\text{diff}}$ in UHM.
 
 ---
 
-## 2. Изменённые состояния как траектории в Γ-пространстве {#траектории}
+## 2. Altered States as Trajectories in Γ-Space {#траектории}
 
-Каждое состояние сознания описывается точкой в пространстве $\mathcal{D}(\mathcal{H})$ — пространстве [матриц когерентности](/docs/core/dynamics/coherence-matrix). Изменённое состояние — это **траектория** $\Gamma(\tau)$, отклоняющаяся от типичного бассейна притяжения бодрствования.
+Every state of consciousness is described by a point in the space $\mathcal{D}(\mathcal{H})$ — the space of [coherence matrices](/docs/core/dynamics/coherence-matrix). An altered state is a **trajectory** $\Gamma(\tau)$ that deviates from the typical basin of attraction of wakefulness.
 
-:::info Определение (Изменённое состояние) [О]
-**Изменённое состояние сознания (ИСС)** — траектория $\Gamma(\tau)$ в $\mathcal{D}(\mathcal{H})$, характеризующаяся существенным отклонением хотя бы одного параметра пятёрки $\{R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}}\}$ от значений типичного бодрствования:
+:::info Definition (Altered state) [D]
+**Altered state of consciousness (ASC)** — a trajectory $\Gamma(\tau)$ in $\mathcal{D}(\mathcal{H})$, characterised by a significant deviation of at least one parameter of the quintuple $\{R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}}\}$ from the values of typical wakefulness:
 
 $$
-\exists\, X \in \{R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}}\}: \quad |X(\Gamma_{\text{ИСС}}) - X(\Gamma_{\text{бодр}})| > \delta_X
+\exists\, X \in \{R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}}\}: \quad |X(\Gamma_{\text{ASC}}) - X(\Gamma_{\text{wake}})| > \delta_X
 $$
 
-где $\delta_X$ — порог значимости для параметра $X$, $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — средний Gap.
+where $\delta_X$ is the significance threshold for parameter $X$, $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — mean Gap.
 :::
 
-**Мотивация.** Зачем нужна формальная пятёрка $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$? Потому что $\Gamma$ — это матрица $7 \times 7$ с 21 независимой когерентностью. Работать с 21-мерным пространством неудобно. Пятёрка — *агрегированное описание*, позволяющее различать все основные классы ИСС. Каждый параметр отвечает за свой аспект:
+**Motivation.** Why is the formal quintuple $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$ needed? Because $\Gamma$ is a $7 \times 7$ matrix with 21 independent coherences. Working in 21-dimensional space is inconvenient. The quintuple is an *aggregated description* that allows all main classes of ASC to be distinguished. Each parameter addresses its own aspect:
 
-- $R$ — «кто наблюдает?» (самомоделирование)
-- $\Phi$ — «сколько связано воедино?» (интеграция)
-- $D_{\text{diff}}$ — «насколько богат опыт?» (дифференциация)
-- $P$ — «жива ли система?» (жизнеспособность)
-- $\overline{\mathrm{Gap}}$ — «насколько прозрачно?» (средняя непрозрачность)
+- $R$ — "who is observing?" (self-modelling)
+- $\Phi$ — "how much is bound together?" (integration)
+- $D_{\text{diff}}$ — "how rich is the experience?" (differentiation)
+- $P$ — "is the system alive?" (viability)
+- $\overline{\mathrm{Gap}}$ — "how transparent?" (mean opacity)
 
-**Аналогия из повседневной жизни.** Представьте состояние сознания как положение ручки настройки на старом радиоприёмнике с пятью регуляторами: $R$ (чёткость приёма), $\Phi$ (объём звука), $D_{\text{diff}}$ (число каналов, которые одновременно слышны), $P$ (мощность сигнала), $\overline{\mathrm{Gap}}$ (уровень помех). Бодрствование — стандартная настройка. ИСС — любое существенное отклонение хотя бы одного регулятора.
+**An everyday analogy.** Imagine a state of consciousness as the position of the tuning knob on an old radio with five controls: $R$ (reception clarity), $\Phi$ (volume), $D_{\text{diff}}$ (number of channels heard simultaneously), $P$ (signal power), $\overline{\mathrm{Gap}}$ (noise level). Wakefulness is the standard setting. ASC is any significant deviation of at least one control.
 
-### 2.1 Пространство состояний: визуализация
+### 2.1 State space: visualisation
 
-Полное пространство $\mathcal{D}(\mathcal{H})$ слишком многомерно для визуализации. Но можно спроецировать его на плоскость двух наиболее информативных параметров — $P$ (жизнеспособность) и $R$ (рефлексия):
+The full space $\mathcal{D}(\mathcal{H})$ is too high-dimensional for visualisation. But it can be projected onto the plane of the two most informative parameters — $P$ (viability) and $R$ (reflection):
 
 ```mermaid
 graph LR
-    subgraph PR["Плоскость (P, R)"]
+    subgraph PR["Plane (P, R)"]
         direction TB
-        W["☀ Бодрствование<br/>P≈0.36, R≈0.45"]
+        W["☀ Wakefulness<br/>P≈0.36, R≈0.45"]
         NREM["🌙 NREM<br/>P≈0.33, R≈0.15"]
         REM["💭 REM<br/>P≈0.34, R≈0.35"]
-        MED["🧘 Самадхи<br/>P≈0.40, R≈0.92"]
-        PSY["🍄 Психоделики<br/>P≈0.32, R≈0.25"]
-        AN["💉 Анестезия<br/>P≈0.20, R≈0.02"]
-        HYP["🔮 Гипноз<br/>P≈0.35, R≈0.30"]
-        LD["✨ Осозн. сновид.<br/>P≈0.34, R≈0.50"]
+        MED["🧘 Samādhi<br/>P≈0.40, R≈0.92"]
+        PSY["🍄 Psychedelics<br/>P≈0.32, R≈0.25"]
+        AN["💉 Anaesthesia<br/>P≈0.20, R≈0.02"]
+        HYP["🔮 Hypnosis<br/>P≈0.35, R≈0.30"]
+        LD["✨ Lucid dream<br/>P≈0.34, R≈0.50"]
     end
-    W -->|"засыпание"| NREM
-    NREM -->|"REM-фаза"| REM
-    W -->|"шаматха→самадхи"| MED
-    W -->|"приём"| PSY
-    W -->|"индукция"| AN
-    W -->|"гипнотизация"| HYP
-    NREM -->|"люцидность"| LD
+    W -->|"falling asleep"| NREM
+    NREM -->|"REM phase"| REM
+    W -->|"shamatha→samādhi"| MED
+    W -->|"intake"| PSY
+    W -->|"induction"| AN
+    W -->|"hypnotisation"| HYP
+    NREM -->|"lucidity"| LD
 ```
 
-На этой диаграмме каждое ИСС — точка (аттрактор) в плоскости $(P, R)$. Стрелки показывают типичные траектории перехода. Вертикальная ось — $R$: всё, что выше горизонтали $R = 1/3 \approx 0.33$, соответствует L2 и выше (рефлексивное сознание). Горизонтальная ось — $P$: всё, что левее вертикали $P = 2/7 \approx 0.286$, нежизнеспособно.
+In this diagram each ASC is a point (attractor) in the plane $(P, R)$. Arrows show typical transition trajectories. The vertical axis is $R$: everything above the horizontal $R = 1/3 \approx 0.33$ corresponds to L2 and above (reflective consciousness). The horizontal axis is $P$: everything to the left of the vertical $P = 2/7 \approx 0.286$ is non-viable.
 
 ---
 
-## 3. Сон {#сон}
+## 3. Sleep {#сон}
 
-Сон — наиболее универсальное и регулярное ИСС: каждый человек проводит треть жизни во сне. С точки зрения УГМ, сон — не «выключение» сознания, а **систематическое перераспределение когерентностей** при сохранении жизнеспособности ($P > P_{\text{crit}}$).
+Sleep is the most universal and regular ASC: every person spends a third of their life asleep. From the UHM perspective, sleep is not a "switching off" of consciousness, but a **systematic redistribution of coherences** while viability is maintained ($P > P_{\text{crit}}$).
 
-### 3.1 NREM-сон (глубокий сон без сновидений) {#nrem}
+### 3.1 NREM sleep (deep dreamless sleep) {#nrem}
 
-В NREM-фазе самомодель деактивируется, но интеграция системы сохраняется:
+In the NREM phase, the self-model is deactivated, but the system's integration is preserved:
 
 $$
-\text{NREM:} \quad R \downarrow\downarrow, \quad \Phi \approx \Phi_{\text{бодр}}, \quad D_{\text{diff}} \downarrow
+\text{NREM:} \quad R \downarrow\downarrow, \quad \Phi \approx \Phi_{\text{wake}}, \quad D_{\text{diff}} \downarrow
 $$
 
-Разберём каждый параметр:
+Let us unpack each parameter:
 
-- **$R < R_{\text{th}} = 1/3$** — система **ниже порога рефлексии**. Рефлексия (мера рефлексии $R$, см. [определение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) измеряет, насколько точно самомодель $\varphi(\Gamma)$ воспроизводит истинное состояние $\Gamma$. Во сне самомодель «расфокусирована»: $\varphi(\Gamma)$ сильно отклоняется от $\Gamma$. Уровень [интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) понижается с L2 до L1.
+- **$R < R_{\text{th}} = 1/3$** — the system is **below the reflection threshold**. The reflection measure $R$ (see [definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)) measures how accurately the self-model $\varphi(\Gamma)$ reproduces the true state $\Gamma$. During sleep the self-model is "defocused": $\varphi(\Gamma)$ deviates strongly from $\Gamma$. The [interiority](/docs/consciousness/hierarchy/interiority-hierarchy) level drops from L2 to L1.
 
-- **$\Phi \approx \Phi_{\text{бодр}}$** — мера интеграции ([определение](/docs/core/structure/dimension-u#мера-интеграции-φ)) остаётся стабильной. Таламо-кортикальные связи сохраняют глобальную когерентность. Это критически важно: глубокий сон — не кома и не анестезия.
+- **$\Phi \approx \Phi_{\text{wake}}$** — the integration measure ([definition](/docs/core/structure/dimension-u#мера-интеграции-φ)) remains stable. Thalamocortical connections preserve global coherence. This is critically important: deep sleep is not a coma and not anaesthesia.
 
-- **$\gamma_{AE} \to 0$** — канал внимания–опыта деактивирован. Нет сознательного внимания к переживаниям.
+- **$\gamma_{AE} \to 0$** — the attention–experience channel is deactivated. There is no conscious attention to experiences.
 
-- **$\mathrm{Gap}(A,E) \to 1$** — максимальная непрозрачность в канале внимания: даже если какой-то опыт происходит, внимание не «дотягивается» до него.
+- **$\mathrm{Gap}(A,E) \to 1$** — maximal opacity in the attention channel: even if some experience is occurring, attention does not "reach" it.
 
-**Числовой пример.** Сравним пять параметров бодрствования и NREM:
+**Numerical example.** Comparing five parameters of wakefulness and NREM:
 
-| Параметр | Бодрствование | NREM-сон | Изменение |
-|----------|:------------:|:--------:|:---------:|
+| Parameter | Wakefulness | NREM sleep | Change |
+|-----------|:-----------:|:----------:|:------:|
 | $R$ | $0.45$ | $0.15$ | $-67\%$ |
 | $\Phi$ | $1.8$ | $1.5$ | $-17\%$ |
 | $P$ | $0.36$ | $0.33$ | $-8\%$ |
 | $\overline{\mathrm{Gap}}$ | $0.30$ | $0.50$ | $+67\%$ |
 | $D_{\text{diff}}$ | $2.0$ | $0.8$ | $-60\%$ |
 
-Рефлексия упала ниже порога ($R = 0.15 < 1/3$), дифференциация опыта резко снизилась, но жизнеспособность и интеграция сохранены — система «жива, но не осознаёт себя».
+Reflection fell below the threshold ($R = 0.15 < 1/3$), experiential differentiation sharply decreased, but viability and integration are preserved — the system is "alive, but not self-aware".
 
-:::info Интерпретация [И]
-NREM — не «выключение» сознания, а **возврат к L1**: интериорность сохранена ($\Gamma \neq 0$), феноменальная геометрия ($\mathrm{rank}(\rho_E) > 1$) может быть активна, но рефлексивный контур $\varphi$ не функционирует ($R < R_{\text{th}}$). Это объясняет, почему при пробуждении из глубокого сна человек иногда говорит «я ничего не помню» — не потому что опыта не было, а потому что не было рефлексивного доступа для его фиксации.
+:::info Interpretation [I]
+NREM is not a "switching off" of consciousness, but a **return to L1**: interiority is preserved ($\Gamma \neq 0$), phenomenal geometry ($\mathrm{rank}(\rho_E) > 1$) may be active, but the reflexive circuit $\varphi$ does not function ($R < R_{\text{th}}$). This explains why upon waking from deep sleep a person sometimes says "I don't remember anything" — not because there was no experience, but because there was no reflexive access to record it.
 
-Нейрофизиологическое соответствие: медленноволновая активность (0.5–4 Гц) в NREM отражает глобальную синхронизацию при сниженной дифференциации — именно паттерн $\Phi \approx \text{const}$, $D_{\text{diff}} \downarrow$.
+Neurophysiological correspondence: slow-wave activity (0.5–4 Hz) in NREM reflects global synchronisation with reduced differentiation — precisely the pattern $\Phi \approx \text{const}$, $D_{\text{diff}} \downarrow$.
 :::
 
-### 3.2 REM-сон (сновидения) {#rem}
+### 3.2 REM sleep (dreaming) {#rem}
 
-В фазе REM когерентность реорганизуется без внешних ограничений:
+In the REM phase, coherence is reorganised without external constraints:
 
 $$
 \text{REM:} \quad R[\Gamma, E] \gg D_\Omega, \quad \gamma_{SE} \uparrow, \quad \gamma_{DE} \uparrow
 $$
 
-Что означает каждое из этих условий?
+What does each of these conditions mean?
 
-- **$R[\Gamma, E] \gg D_\Omega$** — рефлексия по E-сектору (подробнее о секторной рефлексии — в [самонаблюдение](/docs/consciousness/foundations/self-observation)) **доминирует** над диссипативным членом $D_\Omega$, описывающим потерю когерентности. Проще говоря: система активно генерирует «внутренний опыт», быстрее чем теряет его.
+- **$R[\Gamma, E] \gg D_\Omega$** — reflection over the E-sector (for more on sectoral reflection see [self-observation](/docs/consciousness/foundations/self-observation)) **dominates** the dissipative term $D_\Omega$, which describes loss of coherence. Simply put: the system is actively generating "inner experience" faster than it loses it.
 
-- **$\gamma_{AE} \approx 0$** — сознательное внимание отсутствует. Мы не «решаем», на что смотреть во сне.
+- **$\gamma_{AE} \approx 0$** — conscious attention is absent. We do not "decide" what to look at in a dream.
 
-- **$\gamma_{SE}, \gamma_{DE}$ повышены** — когерентности структура–опыт и динамика–опыт усилены. Это означает яркие образы ($S \to E$: структурное содержание «проецируется» в опыт) и интенсивные эмоции ($D \to E$: динамические процессы окрашивают опыт).
+- **$\gamma_{SE}, \gamma_{DE}$ elevated** — the structure–experience and dynamics–experience coherences are strengthened. This means vivid imagery ($S \to E$: structural content is "projected" into experience) and intense emotions ($D \to E$: dynamic processes colour experience).
 
-- **$\mathrm{Gap}(S,E) \downarrow$** — прозрачность структура–опыт возрастает, отсюда — феноменальная яркость сновидений.
+- **$\mathrm{Gap}(S,E) \downarrow$** — the transparency of structure–experience increases, hence the phenomenal vividness of dreams.
 
-**Числовой пример.** Профиль REM по сравнению с NREM и бодрствованием:
+**Numerical example.** REM profile compared with NREM and wakefulness:
 
-| Параметр | Бодрствование | NREM | REM |
-|----------|:------------:|:----:|:---:|
+| Parameter | Wakefulness | NREM | REM |
+|-----------|:-----------:|:----:|:---:|
 | $R$ | $0.45$ | $0.15$ | $0.35$ |
 | $\Phi$ | $1.8$ | $1.5$ | $1.6$ |
 | $\gamma_{AE}$ | $0.12$ | $0.02$ | $0.03$ |
@@ -198,403 +198,403 @@ $$
 | $\gamma_{DE}$ | $0.10$ | $0.05$ | $0.18$ |
 | $\mathrm{Gap}(S,E)$ | $0.25$ | $0.60$ | $0.12$ |
 
-Рефлексия восстанавливается почти до порога ($R = 0.35 \approx R_{\text{th}}$), но канал внимания остаётся выключенным ($\gamma_{AE} \approx 0.03$). Именно эта комбинация создаёт феномен «осознанного, но некритичного» переживания: во сне мы *видим* (высокое $\gamma_{SE}$), *чувствуем* (высокое $\gamma_{DE}$), даже частично *осознаём* ($R$ близко к порогу), но не *контролируем* и не *оцениваем* ($\gamma_{AE} \approx 0$, $\gamma_{LE} \approx 0$).
+Reflection is restored to almost the threshold ($R = 0.35 \approx R_{\text{th}}$), but the attention channel remains switched off ($\gamma_{AE} \approx 0.03$). It is precisely this combination that creates the phenomenon of "conscious but non-critical" experience: in a dream we *see* (high $\gamma_{SE}$), *feel* (high $\gamma_{DE}$), even partially *are aware* ($R$ close to the threshold), but do not *control* or *evaluate* ($\gamma_{AE} \approx 0$, $\gamma_{LE} \approx 0$).
 
-**Аналогия.** Сновидение — как кинотеатр без билетёра. Экран ($\gamma_{SE}$) светит ярко, эмоции ($\gamma_{DE}$) зашкаливают, но критик ($\gamma_{AE}$, $\gamma_{LE}$) отсутствует. Поэтому во сне мы принимаем абсурд за реальность — нет канала «логика–опыт» для проверки когерентности.
+**Analogy.** A dream is like a cinema without a ticket inspector. The screen ($\gamma_{SE}$) shines brightly, emotions ($\gamma_{DE}$) are overwhelming, but the critic ($\gamma_{AE}$, $\gamma_{LE}$) is absent. This is why in dreams we accept absurdity as reality — there is no logic–experience channel to check for coherence.
 
-:::tip Теорема (Условие сновидений) [С]
-Условие: интерпретация $\Gamma$-траектории. Сновидение возникает при:
+:::tip Theorem (Condition for dreaming) [C]
+Condition: interpretation of the $\Gamma$-trajectory. A dream arises when:
 
 $$
 \gamma_{AE} \approx 0, \quad |\gamma_{SE}|^2 + |\gamma_{DE}|^2 > \varepsilon_{\text{dream}}, \quad \mathrm{Gap}(S,E) < 1
 $$
 
-т.е. при отключении внимания ($\gamma_{AE} \to 0$) но сохранении нетривиальных когерентностей в каналах $(S,E)$ и $(D,E)$. Содержание сна определяется **фазовым профилем** $\{\theta_{SE}, \theta_{DE}\}$.
+i.e. when attention is disconnected ($\gamma_{AE} \to 0$) but non-trivial coherences in channels $(S,E)$ and $(D,E)$ are preserved. The content of the dream is determined by the **phase profile** $\{\theta_{SE}, \theta_{DE}\}$.
 
-**Вывод.** Первое условие ($\gamma_{AE} \approx 0$) следует из подавления норадренергической активности во сне — нейромедиатор, поддерживающий канал внимания, отключается. Второе условие ($|\gamma_{SE}|^2 + |\gamma_{DE}|^2 > \varepsilon_{\text{dream}}$) — из реактивации коры понтогеникуло-затылочными (PGO) волнами, которые повышают когерентности $\gamma_{SE}$ и $\gamma_{DE}$. Третье условие ($\mathrm{Gap}(S,E) < 1$) — из снижения тормозного контроля, позволяющего «образам» свободно проецироваться в опыт.
+**Derivation.** The first condition ($\gamma_{AE} \approx 0$) follows from the suppression of noradrenergic activity during sleep — the neurotransmitter that supports the attention channel is switched off. The second condition ($|\gamma_{SE}|^2 + |\gamma_{DE}|^2 > \varepsilon_{\text{dream}}$) — from cortical reactivation by pontogeniculooccipital (PGO) waves, which elevate coherences $\gamma_{SE}$ and $\gamma_{DE}$. The third condition ($\mathrm{Gap}(S,E) < 1$) — from the reduction of inhibitory control, allowing "images" to project freely into experience.
 :::
 
 ---
 
-## 4. Медитация {#медитация}
+## 4. Meditation {#медитация}
 
-Медитация — уникальное ИСС, отличающееся тем, что переход в него **произволен** (осуществляется сознательным решением) и **систематичен** (практикуется регулярно с кумулятивным эффектом). С точки зрения УГМ, медитация — это **произвольная манипуляция** параметрами $\Gamma$-матрицы.
+Meditation is a unique ASC, distinguished by the fact that the transition into it is **voluntary** (carried out by a conscious decision) and **systematic** (practised regularly with a cumulative effect). From the UHM perspective, meditation is **voluntary manipulation** of the parameters of the $\Gamma$-matrix.
 
-Три основные медитативные традиции соответствуют трём различным стратегиям управления $\Gamma$:
+Three main meditative traditions correspond to three different strategies of $\Gamma$ control:
 
-### 4.1 Шаматха (фокусировка внимания) {#шаматха}
+### 4.1 Shamatha (focusing attention) {#шаматха}
 
-Шаматха (санскр. «пребывание в покое») — практика, направленная на усиление концентрации. В УГМ-формализме:
-
-$$
-\text{Шаматха:} \quad \gamma_{AE} \uparrow, \quad R \uparrow, \quad \sigma^2_{\{|\gamma_{AX}|\}} \uparrow
-$$
-
-Расшифруем:
-
-- **$|\gamma_{AE}| \uparrow$** — практикующий сознательно направляет внимание на объект медитации. Когерентность канала внимание–опыт растёт.
-
-- **Из нормировки $\mathrm{Tr}(\Gamma) = 1$:** увеличение $|\gamma_{AE}|$ *неизбежно* сопровождается уменьшением остальных $|\gamma_{AX}|$ для $X \neq E$. Это **эффект «прожектора»** — подробно описан в [Внимание и память](/docs/consciousness/states/attention-memory#внимание). Формально: при фиксированном $\gamma_{AA}$ (доля внимания в общей энергии), неравенство Коши-Шварца $\sum_X |\gamma_{AX}|^2 \leq \gamma_{AA}$ задаёт верхнюю границу. Увеличение одного слагаемого требует уменьшения остальных.
-
-- **$R \uparrow$** — результат тренировки: $R = 1/(7P)$ растёт при снижении $P$ (система движется ближе к зоне Голдилокс). Систематическое наблюдение за $\Gamma$ оптимизирует баланс когерентностей.
-
-- **$\sigma^2_{\{|\gamma_{AX}|\}} \uparrow$** — дисперсия модулей A-секторных когерентностей растёт: один канал усиливается, остальные ослабляются. Это математическое выражение «заострения» внимания.
-
-**Числовой пример: прогрессия практики шаматхи.**
-
-| Стадия | $|\gamma_{AE}|$ | $R$ | $\overline{\mathrm{Gap}}$ | Субъективный опыт |
-|--------|:------:|:---:|:---:|:---|
-| Начинающий | $0.10$ | $0.40$ | $0.30$ | Мысли постоянно отвлекают |
-| 20 мин практики | $0.22$ | $0.55$ | $0.25$ | Периоды устойчивой концентрации |
-| 1 год регулярно | $0.15$ (базовый) | $0.50$ (базовый) | $0.25$ (базовый) | Повышенная осознанность в обычной жизни |
-| Мастер (10+ лет) | $0.25$ (в практике) | $0.70$ | $0.18$ | Устойчивая однонаправленность |
-
-Обратите внимание: после года практики **базовые** значения (вне медитации) смещаются. Это кумулятивный эффект: систематическая тренировка когерентности $\gamma_{AE}$ перестраивает [эффективный гамильтониан](/docs/core/dynamics/evolution) $H_{\text{eff}}$, делая повышенный уровень рефлексии «нормой по умолчанию». Механизм — [процедурная память](/docs/consciousness/states/attention-memory#память): навык концентрации «записывается» в структуру $H_{\text{eff}}$.
-
-### 4.2 Випассана (прозрение) {#випассана}
-
-Випассана (санскр. «ясное видение») — практика наблюдения за собственным опытом без вмешательства. Если шаматха направлена на $R \uparrow$ (усиление самомодели), то випассана — на $\overline{\mathrm{Gap}} \downarrow$ (увеличение прозрачности):
+Shamatha (Skt. "abiding in calm") — a practice directed at strengthening concentration. In UHM formalism:
 
 $$
-\text{Випассана:} \quad \mathrm{Gap}(i,E) \to 0 \quad \text{для всё большего числа пар}
+\text{Shamatha:} \quad \gamma_{AE} \uparrow, \quad R \uparrow, \quad \sigma^2_{\{|\gamma_{AX}|\}} \uparrow
 $$
 
-- **Цель:** $\mathrm{Gap}(i,E) \to 0$ для максимального числа E-секторных каналов. Практик систематически обнаруживает «разрывы» (Gap-ы) между различными измерениями и опытом, и само обнаружение запускает их уменьшение.
+Unpacking:
 
-- **Механизм:** наблюдение за собственными Gap-профилями запускает [бифуркацию](/docs/core/dynamics/gap-dynamics#бифуркации) — скачкообразное уменьшение Gap. Формально: когда $R$ превышает определённый порог в канале $(i,E)$, парциальная рефлексия $R_{ij}$ становится достаточной для «захвата» когерентности $\gamma_{iE}$ оператором $\varphi$ — и Gap резко уменьшается.
+- **$|\gamma_{AE}| \uparrow$** — the practitioner consciously directs attention toward the meditation object. The coherence of the attention–experience channel grows.
 
-- **Феноменология:** практикующий описывает этот момент как «инсайт» — внезапное осознание ранее незамеченного аспекта опыта. Буддийская традиция выделяет последовательность таких инсайтов (*ньяны*), каждый из которых соответствует Gap-редукции в конкретном канале.
+- **From the normalisation $\mathrm{Tr}(\Gamma) = 1$:** an increase in $|\gamma_{AE}|$ *inevitably* is accompanied by a decrease in the remaining $|\gamma_{AX}|$ for $X \neq E$. This is the **spotlight effect** — described in detail in [Attention and memory](/docs/consciousness/states/attention-memory#внимание). Formally: for fixed $\gamma_{AA}$ (fraction of attention in total energy), the Cauchy–Schwarz inequality $\sum_X |\gamma_{AX}|^2 \leq \gamma_{AA}$ sets the upper bound. Increasing one term requires decreasing the rest.
 
-**Числовой пример: випассана-ретрит (10 дней).**
+- **$R \uparrow$** — result of training: $R = 1/(7P)$ grows as $P$ decreases (the system moves closer to the Goldilocks zone). Systematic observation of $\Gamma$ optimises the balance of coherences.
 
-| День | Gap(S,E) | Gap(D,E) | Gap(L,E) | $\overline{\mathrm{Gap}}$ | Субъективный опыт |
-|------|:--------:|:--------:|:--------:|:---:|:---|
-| 1 | $0.35$ | $0.40$ | $0.30$ | $0.32$ | Отвлечение, скука |
-| 3 | $0.20$ | $0.35$ | $0.28$ | $0.28$ | Телесные ощущения обостряются |
-| 5 | $0.12$ | $0.25$ | $0.25$ | $0.23$ | «Вижу» эмоции напрямую |
-| 7 | $0.10$ | $0.15$ | $0.20$ | $0.18$ | Мысли наблюдаются «как объекты» |
-| 10 | $0.08$ | $0.12$ | $0.18$ | $0.15$ | Переживание ясности и «открытости» |
+- **$\sigma^2_{\{|\gamma_{AX}|\}} \uparrow$** — the variance of the moduli of A-sector coherences grows: one channel is strengthened, the rest are weakened. This is the mathematical expression of the "sharpening" of attention.
 
-Обратите внимание на порядок: сначала снижается Gap(S,E) (тело–опыт), затем Gap(D,E) (динамика–опыт), последним — Gap(L,E) (логика–опыт). Этот порядок не случаен: телесный канал наиболее «низкоуровневый» и легче всего осознаётся, логический — наиболее «высокоуровневый» и осознаётся последним.
+**Numerical example: progression of shamatha practice.**
 
-**Аналогия.** Випассана подобна протиранию окон: каждый Gap — мутное стекло. Практик систематически находит грязные стёкла и протирает их. Но по [теореме о неполной прозрачности](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), минимум 3 окна из 21 **обязаны** оставаться мутными — это не неудача практики, а структурная необходимость помехоустойчивости.
+| Stage | $|\gamma_{AE}|$ | $R$ | $\overline{\mathrm{Gap}}$ | Subjective experience |
+|-------|:------:|:---:|:---:|:---|
+| Beginner | $0.10$ | $0.40$ | $0.30$ | Thoughts constantly distract |
+| 20 min practice | $0.22$ | $0.55$ | $0.25$ | Periods of stable concentration |
+| 1 year regularly | $0.15$ (baseline) | $0.50$ (baseline) | $0.25$ (baseline) | Heightened awareness in daily life |
+| Master (10+ years) | $0.25$ (in practice) | $0.70$ | $0.18$ | Stable one-pointedness |
 
-### 4.3 Самадхи (глубокое поглощение) {#самадхи}
+Notice: after a year of practice, the **baseline** values (outside meditation) shift. This is the cumulative effect: systematic training of coherence $\gamma_{AE}$ reorganises the [effective Hamiltonian](/docs/core/dynamics/evolution) $H_{\text{eff}}$, making the elevated level of reflection the "default norm". The mechanism is [procedural memory](/docs/consciousness/states/attention-memory#память): the skill of concentration is "written into" the structure of $H_{\text{eff}}$.
 
-Самадхи (санскр. «сосредоточение») — состояние глубокой медитативной поглощённости, которое буддийская традиция описывает как «прекращение ментальных колебаний». В формализме УГМ:
+### 4.2 Vipassanā (insight) {#випассана}
+
+Vipassanā (Skt. "clear seeing") — the practice of observing one's own experience without intervention. If shamatha is directed at $R \uparrow$ (strengthening the self-model), vipassanā is directed at $\overline{\mathrm{Gap}} \downarrow$ (increasing transparency):
 
 $$
-\text{Самадхи:} \quad \Phi \to \max, \quad R \to 1, \quad \overline{\mathrm{Gap}} \to \min
+\text{Vipassanā:} \quad \mathrm{Gap}(i,E) \to 0 \quad \text{for an increasing number of pairs}
 $$
 
-Это транзиторное приближение к [L4](/docs/consciousness/hierarchy/interiority-hierarchy) — наивысшему уровню интериорности:
+- **Goal:** $\mathrm{Gap}(i,E) \to 0$ for the maximum number of E-sector channels. The practitioner systematically discovers "gaps" between various dimensions and experience, and the very act of discovery triggers their reduction.
 
-- **$\Phi \to \Phi_{\max}$** — максимальная интеграция всех измерений. Все семь измерений когерентны друг с другом, система функционирует как единое целое.
+- **Mechanism:** observation of one's own Gap profiles triggers a [bifurcation](/docs/core/dynamics/gap-dynamics#бифуркации) — an abrupt reduction of Gap. Formally: when $R$ exceeds a certain threshold in channel $(i,E)$, the partial reflection $R_{ij}$ becomes sufficient to "capture" the coherence $\gamma_{iE}$ by the operator $\varphi$ — and the Gap abruptly decreases.
 
-- **$R \to 1$** — самомодель тождественна системе ($\varphi(\Gamma) \approx \Gamma$). Буквально: система «знает себя полностью» (в пределах границы Хэмминга).
+- **Phenomenology:** the practitioner describes this moment as an "insight" — a sudden awareness of a previously unnoticed aspect of experience. The Buddhist tradition identifies a sequence of such insights (*ñānas*), each corresponding to a Gap reduction in a specific channel.
 
-- **$\overline{\mathrm{Gap}} \to \min$** — почти все каналы прозрачны. Границы между измерениями — «растворяются» (но не менее 3 каналов с $\mathrm{Gap} > 0$ сохраняются по [границе Хэмминга](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга)).
+**Numerical example: vipassanā retreat (10 days).**
 
-**Числовой пример: бодрствование vs. самадхи.**
+| Day | Gap(S,E) | Gap(D,E) | Gap(L,E) | $\overline{\mathrm{Gap}}$ | Subjective experience |
+|-----|:--------:|:--------:|:--------:|:---:|:---|
+| 1 | $0.35$ | $0.40$ | $0.30$ | $0.32$ | Distraction, boredom |
+| 3 | $0.20$ | $0.35$ | $0.28$ | $0.28$ | Bodily sensations sharpen |
+| 5 | $0.12$ | $0.25$ | $0.25$ | $0.23$ | "Seeing" emotions directly |
+| 7 | $0.10$ | $0.15$ | $0.20$ | $0.18$ | Thoughts observed "as objects" |
+| 10 | $0.08$ | $0.12$ | $0.18$ | $0.15$ | Experience of clarity and "openness" |
 
-| Параметр | Бодрствование | Самадхи | Интерпретация |
-|----------|:------------:|:-------:|:---|
-| $R$ | $0.45$ | $0.92$ | Самомодель почти точна |
-| $\Phi$ | $1.8$ | $3.5$ | Максимальная интеграция |
-| $\overline{\mathrm{Gap}}$ | $0.30$ | $0.08$ | Почти все каналы прозрачны |
-| $P$ | $0.36$ | $0.40$ | Жизнеспособность повышена |
-| $D_{\text{diff}}$ | $2.0$ | $1.5$ | Дифференциация умеренная |
+Note the order: Gap(S,E) (body–experience) decreases first, then Gap(D,E) (dynamics–experience), and last Gap(L,E) (logic–experience). This order is not accidental: the somatic channel is the most "low-level" and is most easily brought to awareness; the logical channel is the most "high-level" and is brought to awareness last.
 
-Субъективно: «всё ясно, всё едино, я и мир — одно». Но это состояние **транзиторно** — после выхода из самадхи параметры возвращаются к базовым значениям. Почему? Потому что самадхи = приближение к неподвижной точке $\varphi(\Gamma^*) = \Gamma^*$, но в отсутствие практики диссипативные процессы ($\Gamma_2$) возвращают систему к обычному аттрактору.
+**Analogy.** Vipassanā is like wiping windows: each Gap is a smudged pane. The practitioner systematically finds dirty panes and wipes them. But by the [theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), at least 3 of the 21 windows **must** remain opaque — this is not a failure of practice, but a structural necessity of fault tolerance.
 
-:::warning Ограничение [С]
-По [границе Хэмминга](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга), даже в самадхи $\geq 3$ каналов из 21 сохраняют $\mathrm{Gap} > 0$. Полная прозрачность несовместима с помехоустойчивостью. Это математическое обоснование буддийского утверждения о невозможности «полного просветления»: структурная необходимость бессознательного = невозможность $\overline{\mathrm{Gap}} = 0$.
+### 4.3 Samādhi (deep absorption) {#самадхи}
+
+Samādhi (Skt. "concentration") — a state of deep meditative absorption that the Buddhist tradition describes as "the cessation of mental fluctuations". In the UHM formalism:
+
+$$
+\text{Samādhi:} \quad \Phi \to \max, \quad R \to 1, \quad \overline{\mathrm{Gap}} \to \min
+$$
+
+This is a transitory approximation to [L4](/docs/consciousness/hierarchy/interiority-hierarchy) — the highest level of interiority:
+
+- **$\Phi \to \Phi_{\max}$** — maximum integration of all dimensions. All seven dimensions are coherent with each other; the system functions as a single whole.
+
+- **$R \to 1$** — the self-model is identical to the system ($\varphi(\Gamma) \approx \Gamma$). Literally: the system "knows itself completely" (within the Hamming bound).
+
+- **$\overline{\mathrm{Gap}} \to \min$** — almost all channels are transparent. The boundaries between dimensions "dissolve" (but no fewer than 3 channels with $\mathrm{Gap} > 0$ are preserved by the [Hamming bound](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга)).
+
+**Numerical example: wakefulness vs. samādhi.**
+
+| Parameter | Wakefulness | Samādhi | Interpretation |
+|-----------|:-----------:|:-------:|:---|
+| $R$ | $0.45$ | $0.92$ | Self-model is nearly exact |
+| $\Phi$ | $1.8$ | $3.5$ | Maximum integration |
+| $\overline{\mathrm{Gap}}$ | $0.30$ | $0.08$ | Almost all channels are transparent |
+| $P$ | $0.36$ | $0.40$ | Viability elevated |
+| $D_{\text{diff}}$ | $2.0$ | $1.5$ | Differentiation moderate |
+
+Subjectively: "everything is clear, everything is one, I and the world are one". But this state is **transitory** — after leaving samādhi the parameters return to baseline values. Why? Because samādhi = approximation to the fixed point $\varphi(\Gamma^*) = \Gamma^*$, but in the absence of practice dissipative processes ($\Gamma_2$) return the system to the ordinary attractor.
+
+:::warning Limitation [C]
+By the [Hamming bound](/docs/consciousness/hierarchy/gap-characterization#граница-хэмминга), even in samādhi $\geq 3$ of 21 channels retain $\mathrm{Gap} > 0$. Complete transparency is incompatible with fault tolerance. This is the mathematical justification for the Buddhist claim about the impossibility of "complete enlightenment": the structural necessity of the unconscious = the impossibility of $\overline{\mathrm{Gap}} = 0$.
 :::
 
-### 4.4 Сравнение трёх практик
+### 4.4 Comparison of three practices
 
-| | Шаматха | Випассана | Самадхи |
+| | Shamatha | Vipassanā | Samādhi |
 |--|:-------:|:---------:|:-------:|
-| **Целевой параметр** | $R \uparrow$ | $\overline{\mathrm{Gap}} \downarrow$ | $\Phi \to \max$, $R \to 1$ |
-| **Механизм** | Усиление $\gamma_{AE}$ | Наблюдение Gap-профилей | Приближение к $\Gamma^*$ |
-| **Время эффекта** | Минуты | Дни–недели | Минуты (транзиторно) |
-| **Кумулятивность** | Высокая ($H_{\text{eff}}$) | Высокая (Gap-редукция) | Низкая (возврат к аттрактору) |
-| **Аналогия** | Настройка фокуса камеры | Протирание окон | Вид с вершины горы |
+| **Target parameter** | $R \uparrow$ | $\overline{\mathrm{Gap}} \downarrow$ | $\Phi \to \max$, $R \to 1$ |
+| **Mechanism** | Strengthening $\gamma_{AE}$ | Observation of Gap profiles | Approximation to $\Gamma^*$ |
+| **Duration of effect** | Minutes | Days–weeks | Minutes (transitory) |
+| **Cumulativeness** | High ($H_{\text{eff}}$) | High (Gap reduction) | Low (return to attractor) |
+| **Analogy** | Adjusting the camera focus | Wiping windows | View from the mountain top |
 
 ---
 
-## 5. Психоделики {#психоделики}
+## 5. Psychedelics {#психоделики}
 
-### 5.1 Общий профиль
+### 5.1 General profile
 
-Психоделическое воздействие (псилоцибин, ЛСД, ДМТ, мескалин) характеризуется одновременным изменением нескольких параметров:
+Psychedelic exposure (psilocybin, LSD, DMT, mescaline) is characterised by simultaneous changes in several parameters:
 
 $$
-\text{Психоделики:} \quad D_{\text{diff}} \uparrow\uparrow, \quad R \downarrow, \quad \overline{\mathrm{Gap}} \downarrow, \quad P \to P_{\text{crit}}
+\text{Psychedelics:} \quad D_{\text{diff}} \uparrow\uparrow, \quad R \downarrow, \quad \overline{\mathrm{Gap}} \downarrow, \quad P \to P_{\text{crit}}
 $$
 
-Разберём каждый параметр:
+Let us unpack each parameter:
 
-- **$D_{\text{diff}} \uparrow\uparrow$** — энтропия $\rho_E$ резко возрастает. В терминах опыта: пространство переживаний «расширяется» — появляются синестезии, геометрические визуализации, новые ассоциации. Нейрофизиологический коррелят: увеличение энтропии спонтанной мозговой активности (Кархарт-Харрис, 2014).
+- **$D_{\text{diff}} \uparrow\uparrow$** — the entropy of $\rho_E$ sharply increases. In terms of experience: the space of experiences "expands" — synaesthesias, geometric visualisations, new associations appear. Neurophysiological correlate: an increase in the entropy of spontaneous brain activity (Carhart-Harris, 2014).
 
-- **$R \downarrow$** — самомодель дестабилизирована. Субъективно это переживается как «эго-растворение» (ego dissolution). Формально: $\varphi(\Gamma)$ перестаёт быть хорошим приближением $\Gamma$, потому что $\Gamma$ быстро эволюционирует, а $\varphi$ не успевает «перестроиться».
+- **$R \downarrow$** — the self-model is destabilised. Subjectively this is experienced as "ego dissolution". Formally: $\varphi(\Gamma)$ ceases to be a good approximation to $\Gamma$, because $\Gamma$ evolves rapidly while $\varphi$ does not have time to "restructure".
 
-- **$\overline{\mathrm{Gap}} \downarrow$** — глобальное уменьшение Gap. Каналы, ранее непрозрачные ([бессознательное](/docs/consciousness/states/unconscious#определение)), становятся доступными. Отсюда — терапевтический потенциал: вытесненные содержания «выходят на поверхность».
+- **$\overline{\mathrm{Gap}} \downarrow$** — global decrease in Gap. Channels previously opaque ([unconscious](/docs/consciousness/states/unconscious#определение)) become accessible. Hence the therapeutic potential: repressed contents "surface".
 
-- **$P \to P_{\text{crit}} = 2/7$** — при высоких дозах [жизнеспособность](/docs/core/dynamics/viability) приближается к критическому порогу. Система «расшатывается» — вплоть до риска дезинтеграции.
+- **$P \to P_{\text{crit}} = 2/7$** — at high doses [viability](/docs/core/dynamics/viability) approaches the critical threshold. The system is "shaken" — up to the risk of disintegration.
 
-### 5.2 Терапевтическое окно
+### 5.2 Therapeutic window
 
-**Аналогия.** Психоделик — как одновременное открытие всех окон в доме во время шторма. Свежий воздух ($\overline{\mathrm{Gap}} \downarrow$) и новые виды ($D_{\text{diff}} \uparrow\uparrow$) хлынут внутрь, но вместе с ними — ветер и дождь. Стены (самомодель, $R$) расшатываются, и если шторм слишком силён ($P \to P_{\text{crit}}$), дом может разрушиться.
+**Analogy.** A psychedelic is like simultaneously opening all the windows of a house during a storm. Fresh air ($\overline{\mathrm{Gap}} \downarrow$) and new views ($D_{\text{diff}} \uparrow\uparrow$) rush in, but with them — wind and rain. The walls (the self-model, $R$) are shaken, and if the storm is too strong ($P \to P_{\text{crit}}$), the house may collapse.
 
-**Числовой пример.** Траектория при умеренной дозе псилоцибина (пошаговый профиль):
+**Numerical example.** Trajectory at a moderate dose of psilocybin (step-by-step profile):
 
-| Время | $R$ | $D_{\text{diff}}$ | $\overline{\mathrm{Gap}}$ | $P$ | Фаза |
-|-------|:---:|:---------:|:---:|:---:|:-----|
-| $\tau = 0$ (приём) | $0.45$ | $2.0$ | $0.30$ | $0.36$ | Бодрствование |
-| $\tau = 30$ мин | $0.38$ | $2.5$ | $0.25$ | $0.35$ | Onset: лёгкие визуальные эффекты |
-| $\tau = 90$ мин (пик) | $0.25$ | $3.5$ | $0.15$ | $0.32$ | Пик: эго-растворение, визуализации |
-| $\tau = 3$ часа | $0.30$ | $3.0$ | $0.20$ | $0.33$ | Плато: интеграция инсайтов |
-| $\tau = 6$ часов | $0.42$ | $2.2$ | $0.28$ | $0.35$ | Возвращение к базовому профилю |
+| Time | $R$ | $D_{\text{diff}}$ | $\overline{\mathrm{Gap}}$ | $P$ | Phase |
+|------|:---:|:---------:|:---:|:---:|:-----|
+| $\tau = 0$ (intake) | $0.45$ | $2.0$ | $0.30$ | $0.36$ | Wakefulness |
+| $\tau = 30$ min | $0.38$ | $2.5$ | $0.25$ | $0.35$ | Onset: mild visual effects |
+| $\tau = 90$ min (peak) | $0.25$ | $3.5$ | $0.15$ | $0.32$ | Peak: ego dissolution, visualisations |
+| $\tau = 3$ hours | $0.30$ | $3.0$ | $0.20$ | $0.33$ | Plateau: integration of insights |
+| $\tau = 6$ hours | $0.42$ | $2.2$ | $0.28$ | $0.35$ | Return to baseline profile |
 
-На пике ($\tau = 90$ мин): рефлексия ниже порога ($R = 0.25 < 1/3$), но дифференциация опыта почти удвоилась ($D_{\text{diff}} = 3.5$), Gap снизился вдвое ($\overline{\mathrm{Gap}} = 0.15$) — ранее бессознательные содержания становятся доступными, но без привычной структуры «я».
+At the peak ($\tau = 90$ min): reflection is below threshold ($R = 0.25 < 1/3$), but experiential differentiation has almost doubled ($D_{\text{diff}} = 3.5$), Gap has halved ($\overline{\mathrm{Gap}} = 0.15$) — previously unconscious contents become accessible, but without the familiar structure of "I".
 
-:::tip Теорема (Психоделическое окно) [С]
-Условие: интерпретация $\Gamma$-траектории при $D_{\text{diff}} \uparrow$. Терапевтическая эффективность психоделического переживания максимальна в окне:
+:::tip Theorem (Psychedelic window) [C]
+Condition: interpretation of the $\Gamma$-trajectory at $D_{\text{diff}} \uparrow$. The therapeutic efficacy of the psychedelic experience is maximal in the window:
 
 $$
 R_{\text{th}}/2 < R < R_{\text{th}}, \quad P > P_{\text{crit}} + \delta_P
 $$
 
-В этом окне самомодель **ослаблена, но не разрушена** ($R$ ниже порога L2, но существенно выше нуля), а жизнеспособность сохранена ($P$ выше критического порога с запасом $\delta_P$). Gap-редукция позволяет реорганизовать ранее недоступные когерентности.
+In this window the self-model is **weakened but not destroyed** ($R$ is below the L2 threshold, but substantially above zero), and viability is preserved ($P$ is above the critical threshold by a margin $\delta_P$). Gap reduction allows previously inaccessible coherences to be reorganised.
 
-**Обоснование.** Нижняя граница $R > R_{\text{th}}/2 = 1/6 \approx 0.167$: если $R$ падает ниже, самомодель настолько расфокусирована, что никакая реорганизация когерентностей не может быть «зафиксирована» — инсайты не сохраняются. Верхняя граница $R < R_{\text{th}} = 1/3$: если $R$ остаётся выше порога, самомодель слишком стабильна для перестройки — привычные Gap-паттерны воспроизводятся. Условие $P > P_{\text{crit}} + \delta_P$: жизнеспособность должна быть сохранена с запасом, чтобы система не распалась.
+**Justification.** Lower bound $R > R_{\text{th}}/2 = 1/6 \approx 0.167$: if $R$ falls below this, the self-model is so defocused that no reorganisation of coherences can be "fixed" — insights are not retained. Upper bound $R < R_{\text{th}} = 1/3$: if $R$ remains above the threshold, the self-model is too stable for restructuring — habitual Gap patterns reproduce themselves. Condition $P > P_{\text{crit}} + \delta_P$: viability must be preserved with a margin so that the system does not fall apart.
 
-**Числовое значение:** при $R_{\text{th}} = 1/3$, окно: $0.167 < R < 0.333$, $P > 0.286 + \delta_P$.
+**Numerical value:** at $R_{\text{th}} = 1/3$, window: $0.167 < R < 0.333$, $P > 0.286 + \delta_P$.
 :::
 
-### 5.3 Связь с энтропийной моделью мозга
+### 5.3 Connection to the entropic brain model
 
-Гипотеза «энтропийного мозга» (Кархарт-Харрис, 2014) утверждает, что психоделики повышают энтропию нейронной динамики, а нормальное бодрствование — это состояние пониженной энтропии (в сравнении с критической точкой). В формализме УГМ:
+The "entropic brain" hypothesis (Carhart-Harris, 2014) states that psychedelics increase the entropy of neural dynamics, while normal wakefulness is a state of reduced entropy (relative to the critical point). In the UHM formalism:
 
-- Энтропия мозга $\leftrightarrow$ $D_{\text{diff}} = S_{vN}(\rho_E)$
-- «Критическая точка» $\leftrightarrow$ фазовый переход II–I в [фазовой диаграмме Gap](/docs/core/dynamics/gap-phase-diagram#три-фазы)
-- Психоделический пик $\leftrightarrow$ приближение к фазовому переходу снизу
+- Brain entropy $\leftrightarrow$ $D_{\text{diff}} = S_{vN}(\rho_E)$
+- "Critical point" $\leftrightarrow$ phase transition II→I in the [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram#три-фазы)
+- Psychedelic peak $\leftrightarrow$ approaching the phase transition from below
 
 ---
 
-## 6. Анестезия {#анестезия}
+## 6. Anaesthesia {#анестезия}
 
-Анестезия — **глобальная** декогеренция, в отличие от **селективной** при сне. Это важнейшее различие: сон подавляет рефлексию при сохранении интеграции, анестезия — разрушает и то, и другое.
+Anaesthesia is **global** decoherence, in contrast to the **selective** decoherence of sleep. This is the most important distinction: sleep suppresses reflection while preserving integration; anaesthesia destroys both.
 
-### 6.1 Последовательность потери когерентностей
+### 6.1 Sequence of coherence loss
 
-Анестетики разрушают когерентности в определённом порядке, от «высших» к «низшим»:
+Anaesthetics destroy coherences in a specific order, from "higher" to "lower":
 
 $$
 \gamma_{EU} \to 0 \quad \Rightarrow \quad \gamma_{LE} \to 0 \quad \Rightarrow \quad \gamma_{AE} \to 0 \quad \Rightarrow \quad \gamma_{SE} \to 0
 $$
 
-Каждый шаг означает потерю конкретного аспекта сознательного опыта:
+Each step means loss of a specific aspect of conscious experience:
 
-1. **Единство–опыт** ($\gamma_{EU} \to 0$): потеря ощущения целостности. Субъективно: «всё расплывается», «не могу собрать мысли воедино».
-2. **Логика–опыт** ($\gamma_{LE} \to 0$): потеря связного мышления. Субъективно: «мысли не складываются», «считать от 100 не получается».
-3. **Внимание–опыт** ($\gamma_{AE} \to 0$): потеря осознанного восприятия. Субъективно: «не могу на чём-то сосредоточиться», последнее осознанное переживание перед «выключением».
-4. **Структура–опыт** ($\gamma_{SE} \to 0$): потеря сенсорного опыта. Полная утрата феноменологии.
+1. **Unity–experience** ($\gamma_{EU} \to 0$): loss of the sense of wholeness. Subjectively: "everything blurs", "I cannot gather my thoughts".
+2. **Logic–experience** ($\gamma_{LE} \to 0$): loss of coherent thinking. Subjectively: "thoughts do not add up", "I cannot count back from 100".
+3. **Attention–experience** ($\gamma_{AE} \to 0$): loss of conscious perception. Subjectively: "I cannot concentrate on anything", the last conscious experience before "switching off".
+4. **Structure–experience** ($\gamma_{SE} \to 0$): loss of sensory experience. Complete loss of phenomenology.
 
-**Числовой пример: индукция анестезии (пропофол).**
+**Numerical example: induction of anaesthesia (propofol).**
 
-| Стадия | $\gamma_{EU}$ | $\gamma_{LE}$ | $\gamma_{AE}$ | $\gamma_{SE}$ | $\Phi$ | $R$ |
-|--------|:---:|:---:|:---:|:---:|:---:|:---:|
-| Бодрствование | $0.08$ | $0.10$ | $0.12$ | $0.08$ | $1.8$ | $0.45$ |
-| Седация | $0.02$ | $0.06$ | $0.09$ | $0.07$ | $1.0$ | $0.25$ |
-| Потеря сознания | $0.01$ | $0.02$ | $0.03$ | $0.05$ | $0.5$ | $0.10$ |
-| Хирургическая анестезия | $\approx 0$ | $\approx 0$ | $\approx 0$ | $\approx 0$ | $0.2$ | $0.02$ |
+| Stage | $\gamma_{EU}$ | $\gamma_{LE}$ | $\gamma_{AE}$ | $\gamma_{SE}$ | $\Phi$ | $R$ |
+|-------|:---:|:---:|:---:|:---:|:---:|:---:|
+| Wakefulness | $0.08$ | $0.10$ | $0.12$ | $0.08$ | $1.8$ | $0.45$ |
+| Sedation | $0.02$ | $0.06$ | $0.09$ | $0.07$ | $1.0$ | $0.25$ |
+| Loss of consciousness | $0.01$ | $0.02$ | $0.03$ | $0.05$ | $0.5$ | $0.10$ |
+| Surgical anaesthesia | $\approx 0$ | $\approx 0$ | $\approx 0$ | $\approx 0$ | $0.2$ | $0.02$ |
 
-**Аналогия.** Засыпание от наркоза подобно последовательному выключению этажей в здании. Сначала гаснет верхний этаж (единство, смысл), затем средние (логика, внимание), и наконец первый (базовые ощущения). При пробуждении этажи включаются в обратном порядке — сначала чувства, затем мысли, затем понимание «кто я и где я».
+**Analogy.** Falling under anaesthesia is like sequentially switching off floors in a building. First the top floor goes dark (unity, meaning), then the middle ones (logic, attention), and finally the ground floor (basic sensations). On awakening, the floors switch on in reverse order — first feelings, then thoughts, then understanding "who I am and where I am".
 
-### 6.2 Отличие от сна
+### 6.2 Distinction from sleep
 
-:::info Определение (Анестетическая декогеренция) [О]
-Анестезия характеризуется **глобальной** потерей интеграции:
+:::info Definition (Anaesthetic decoherence) [D]
+Anaesthesia is characterised by a **global** loss of integration:
 
 $$
-\Phi \to 0, \quad \text{все } |\gamma_{iE}| \to 0 \quad (i \neq E)
+\Phi \to 0, \quad \text{all } |\gamma_{iE}| \to 0 \quad (i \neq E)
 $$
 
-в отличие от сна, где лишь $\gamma_{AE} \to 0$, но $\Phi$ сохраняется. Анестезия — переход от L2 к L0 (а не к L1, как во сне).
+in contrast to sleep, where only $\gamma_{AE} \to 0$ while $\Phi$ is preserved. Anaesthesia is a transition from L2 to L0 (not to L1 as in sleep).
 :::
 
-**Числовой пример: NREM-сон vs. анестезия.**
+**Numerical example: NREM sleep vs. anaesthesia.**
 
-| Параметр | NREM-сон | Анестезия | Разница |
-|----------|:--------:|:---------:|:-------:|
-| $R$ | $0.15$ | $0.02$ | В 7 раз ниже |
-| $\Phi$ | $1.5$ | $0.2$ | В 7.5 раз ниже |
-| $P$ | $0.33$ | $0.20$ | Ниже $P_{\text{crit}}$ |
-| Уровень | L1 | L0 | На 1 уровень ниже |
-| Самоподдержание | Да | Нет | Требуется ИВЛ |
+| Parameter | NREM sleep | Anaesthesia | Difference |
+|-----------|:----------:|:-----------:|:----------:|
+| $R$ | $0.15$ | $0.02$ | 7 times lower |
+| $\Phi$ | $1.5$ | $0.2$ | 7.5 times lower |
+| $P$ | $0.33$ | $0.20$ | Below $P_{\text{crit}}$ |
+| Level | L1 | L0 | 1 level lower |
+| Self-maintenance | Yes | No | Requires ventilation |
 
-Ключевое различие: в NREM интеграция сохранена ($\Phi = 1.5$, уровень L1), система жизнеспособна ($P = 0.33 > P_{\text{crit}} = 0.286$). В анестезии: $P = 0.20 < P_{\text{crit}}$ — система утрачивает жизнеспособность как целого, хотя физически жива за счёт внешней поддержки (ИВЛ, мониторинг). Именно поэтому общий наркоз требует аппаратуры жизнеобеспечения — система не способна к самоподдержанию ($\mathcal{R}[\Gamma, E]$ слишком слаб).
+The key distinction: in NREM, integration is preserved ($\Phi = 1.5$, level L1), the system is viable ($P = 0.33 > P_{\text{crit}} = 0.286$). In anaesthesia: $P = 0.20 < P_{\text{crit}}$ — the system loses viability as a whole, although it is physically alive thanks to external support (mechanical ventilation, monitoring). This is precisely why general anaesthesia requires life support equipment — the system is incapable of self-maintenance ($\mathcal{R}[\Gamma, E]$ is too weak).
 
-### 6.3 Осознание во время анестезии (intraoperative awareness)
+### 6.3 Awareness during anaesthesia (intraoperative awareness)
 
-Редкое, но клинически значимое осложнение — осознание во время хирургической анестезии (1–2 случая на 1000). В УГМ-формализме это означает **неполную декогеренцию**:
+A rare but clinically significant complication is awareness during surgical anaesthesia (1–2 cases per 1000). In UHM formalism this means **incomplete decoherence**:
 
 $$
 \gamma_{AE} > \varepsilon_{\text{aware}}, \quad \mathrm{Gap}(A,E) < 1
 $$
 
-При этом $\gamma_{LE} \approx 0$: пациент *чувствует* (канал $A \to E$ частично работает), но не может *осмыслить* или *сообщить* о переживании (каналы $L \to E$ и $L \to D$ заблокированы). Это Gap-профиль, подобный [юнговской тени](/docs/consciousness/states/unconscious#тень), но индуцированный фармакологически.
+Meanwhile $\gamma_{LE} \approx 0$: the patient *feels* (the channel $A \to E$ is partially working), but cannot *make sense of* or *report* the experience (channels $L \to E$ and $L \to D$ are blocked). This is a Gap profile analogous to the [Jungian shadow](/docs/consciousness/states/unconscious#тень), but pharmacologically induced.
 
 ---
 
-## 7. Гипноз и осознанные сновидения {#гипноз-осознанные-сновидения}
+## 7. Hypnosis and Lucid Dreaming {#гипноз-осознанные-сновидения}
 
-### 7.1 Гипноз {#гипноз}
+### 7.1 Hypnosis {#гипноз}
 
-Гипноз — состояние повышенной внушаемости, достигаемое через направленное расслабление и фокусировку внимания. В УГМ-формализме гипноз — это **диссоциация канала внимания от канала логики**:
+Hypnosis is a state of heightened suggestibility, achieved through directed relaxation and focusing of attention. In UHM formalism, hypnosis is a **dissociation of the attention channel from the logic channel**:
 
 $$
-\text{Гипноз:} \quad |\gamma_{AE}| \uparrow, \quad \mathrm{Gap}(L,E) \uparrow, \quad R \downarrow \text{(умеренно)}
+\text{Hypnosis:} \quad |\gamma_{AE}| \uparrow, \quad \mathrm{Gap}(L,E) \uparrow, \quad R \downarrow \text{ (moderately)}
 $$
 
-Что здесь происходит?
+What is happening here?
 
-- $|\gamma_{AE}| \uparrow$ — внимание усиленно направлено на голос гипнотизёра (или внутренний объект). Этим гипноз похож на шаматху.
-- $\mathrm{Gap}(L,E) \uparrow$ — но, в отличие от шаматхи, логический контроль **отключается**. Субъект «слышит» и «выполняет», но не «оценивает критически».
-- $R \downarrow$ — рефлексия умеренно снижена, но остаётся выше $R_{\text{th}}/2$. Гипноз — не потеря сознания, а его реорганизация.
+- $|\gamma_{AE}| \uparrow$ — attention is intensely directed toward the hypnotist's voice (or an inner object). In this respect hypnosis resembles shamatha.
+- $\mathrm{Gap}(L,E) \uparrow$ — but, unlike shamatha, logical control **is switched off**. The subject "hears" and "executes", but does not "evaluate critically".
+- $R \downarrow$ — reflection is moderately reduced, but remains above $R_{\text{th}}/2$. Hypnosis is not a loss of consciousness, but its reorganisation.
 
-**Числовой пример.**
+**Numerical example.**
 
-| Параметр | Бодрствование | Гипноз | Шаматха |
-|----------|:---:|:------:|:-------:|
+| Parameter | Wakefulness | Hypnosis | Shamatha |
+|-----------|:---:|:------:|:-------:|
 | $|\gamma_{AE}|$ | $0.12$ | $0.20$ | $0.22$ |
 | $\mathrm{Gap}(L,E)$ | $0.25$ | $0.70$ | $0.20$ |
 | $R$ | $0.45$ | $0.30$ | $0.55$ |
 | $\overline{\mathrm{Gap}}$ | $0.30$ | $0.35$ | $0.25$ |
 
-Критическое различие с шаматхой: при медитации Gap(L,E) снижается (логика становится прозрачнее), при гипнозе — повышается (логический контроль ослабляется). Это объясняет повышенную внушаемость: команды проходят напрямую через канал $A \to E$, минуя критическую проверку $L \to E$.
+The critical difference from shamatha: in meditation Gap(L,E) decreases (logic becomes more transparent), while in hypnosis it increases (logical control weakens). This explains heightened suggestibility: commands pass directly through the channel $A \to E$, bypassing the critical check $L \to E$.
 
-**Аналогия.** Гипноз — как аудиосистема с отключённым эквалайзером: звук (команда) поступает напрямую к динамикам (опыту) без обработки (логической фильтрации).
+**Analogy.** Hypnosis is like an audio system with the equaliser switched off: the sound (command) goes directly to the speakers (experience) without processing (logical filtering).
 
-### 7.2 Осознанные сновидения (lucid dreaming) {#люцидность}
+### 7.2 Lucid dreaming {#люцидность}
 
-Осознанное сновидение — REM-сон, в котором спящий *осознаёт*, что видит сон, и может частично контролировать содержание. В УГМ-формализме:
+A lucid dream is REM sleep in which the sleeper *is aware* that they are dreaming and can partially control the content. In UHM formalism:
 
 $$
-\text{Люцидность:} \quad \text{REM-профиль} + \gamma_{AE} > 0 + R \geq R_{\text{th}}
+\text{Lucidity:} \quad \text{REM profile} + \gamma_{AE} > 0 + R \geq R_{\text{th}}
 $$
 
-Иными словами, к типичному REM-профилю (высокие $\gamma_{SE}$, $\gamma_{DE}$, низкий $\gamma_{LE}$) **добавляется** восстановление канала внимания ($\gamma_{AE} > 0$) и рефлексии ($R \geq R_{\text{th}}$). Спящий поднимается с L1 (обычный REM) до L2 (осознанность).
+In other words, the typical REM profile (high $\gamma_{SE}$, $\gamma_{DE}$, low $\gamma_{LE}$) is **supplemented** by the restoration of the attention channel ($\gamma_{AE} > 0$) and reflection ($R \geq R_{\text{th}}$). The sleeper rises from L1 (ordinary REM) to L2 (awareness).
 
-**Числовой пример: обычный REM vs. осознанное сновидение.**
+**Numerical example: ordinary REM vs. lucid dream.**
 
-| Параметр | Обычный REM | Осознанное сновидение |
-|----------|:----------:|:---------------------:|
+| Parameter | Ordinary REM | Lucid dream |
+|-----------|:----------:|:---------------------:|
 | $\gamma_{AE}$ | $0.03$ | $0.10$ |
 | $R$ | $0.35$ | $0.48$ |
 | $\gamma_{SE}$ | $0.15$ | $0.14$ |
 | $\gamma_{DE}$ | $0.18$ | $0.16$ |
 | $\gamma_{LE}$ | $0.02$ | $0.06$ |
-| Уровень | L1–L2 | L2 |
+| Level | L1–L2 | L2 |
 
-Осознанное сновидение — промежуточное состояние между сном и бодрствованием: яркость образов ($\gamma_{SE}$) сохраняется от REM, но добавляется рефлексивный контроль ($R > R_{\text{th}}$, $\gamma_{AE} > 0$). Тренировка осознанных сновидений — это, по сути, тренировка способности восстанавливать $\gamma_{AE}$ и $R$ из REM-состояния.
+A lucid dream is an intermediate state between sleep and wakefulness: the vividness of imagery ($\gamma_{SE}$) is preserved from REM, but reflexive control ($R > R_{\text{th}}$, $\gamma_{AE} > 0$) is added. Training in lucid dreaming is, in essence, training the ability to restore $\gamma_{AE}$ and $R$ from the REM state.
 
 ---
 
-## 8. Сводная таблица: все классы ИСС {#сводная-таблица}
+## 8. Summary Table: All ASC Classes {#сводная-таблица}
 
-| Параметр | Бодр. | NREM | REM | Самадхи | Психод. | Анест. | Гипноз | Люц. сон |
-|----------|:-----:|:----:|:---:|:-------:|:-------:|:------:|:------:|:--------:|
+| Parameter | Wake | NREM | REM | Samādhi | Psyched. | Anaesth. | Hypnosis | Lucid sl. |
+|-----------|:-----:|:----:|:---:|:-------:|:-------:|:------:|:------:|:--------:|
 | $R$ | $\geq 1/3$ | $< 1/3$ | $\sim 1/3$ | $\to 1$ | $\downarrow$ | $\to 0$ | $\downarrow$ | $\geq 1/3$ |
 | $\Phi$ | $\geq 1$ | $\approx \Phi_0$ | $\approx \Phi_0$ | $\to \max$ | $\sim \Phi_0$ | $\to 0$ | $\sim \Phi_0$ | $\approx \Phi_0$ |
-| $D_{\text{diff}}$ | Умеренная | $\downarrow$ | $\uparrow$ | Умеренная | $\uparrow\uparrow$ | $\to 0$ | Умеренная | $\uparrow$ |
-| $\overline{\mathrm{Gap}}$ | $0.2$–$0.4$ | $0.4$–$0.6$ | $0.3$–$0.5$ | $\to \min$ | $\downarrow$ | Не опр. | $0.3$–$0.4$ | $0.2$–$0.4$ |
+| $D_{\text{diff}}$ | Moderate | $\downarrow$ | $\uparrow$ | Moderate | $\uparrow\uparrow$ | $\to 0$ | Moderate | $\uparrow$ |
+| $\overline{\mathrm{Gap}}$ | $0.2$–$0.4$ | $0.4$–$0.6$ | $0.3$–$0.5$ | $\to \min$ | $\downarrow$ | N/a | $0.3$–$0.4$ | $0.2$–$0.4$ |
 | $P$ | $> 2/7$ | $> 2/7$ | $> 2/7$ | $> 2/7$ | $\to 2/7$ | $< 2/7$ | $> 2/7$ | $> 2/7$ |
-| Уровень | L2 | L1 | L1–L2 | L3–L4 | L1–L2 | L0 | L1–L2 | L2 |
+| Level | L2 | L1 | L1–L2 | L3–L4 | L1–L2 | L0 | L1–L2 | L2 |
 | $\gamma_{AE}$ | $+$ | $\approx 0$ | $\approx 0$ | $+$ | $\downarrow$ | $\approx 0$ | $\uparrow$ | $+$ |
-| Gap(L,E) | Низк. | Высок. | Высок. | $\to 0$ | Низк. | Макс. | $\uparrow$ | Умерен. |
+| Gap(L,E) | Low | High | High | $\to 0$ | Low | Max | $\uparrow$ | Moderate |
 
 ---
 
-## 9. Геометрия переходов {#геометрия}
+## 9. Geometry of Transitions {#геометрия}
 
-Переходы между состояниями — траектории в $\mathcal{D}(\mathcal{H})$, проходящие через [бифуркации](/docs/core/dynamics/gap-dynamics#бифуркации). Каждый переход имеет характерный «профиль» — паттерн изменения параметров во времени.
+Transitions between states are trajectories in $\mathcal{D}(\mathcal{H})$ passing through [bifurcations](/docs/core/dynamics/gap-dynamics#бифуркации). Each transition has a characteristic "profile" — a pattern of parameter changes over time.
 
-### 9.1 Типы переходов
+### 9.1 Types of transitions
 
-- **Засыпание** (бодрствование $\to$ NREM): пересечение порога $R = R_{\text{th}}$ сверху вниз — [седло-узловая бифуркация](/docs/core/dynamics/gap-dynamics#бифуркации). Переход плавный (5–15 минут), характеризуется постепенным снижением $\gamma_{AE}$.
+- **Falling asleep** (wakefulness $\to$ NREM): crossing the threshold $R = R_{\text{th}}$ from above — a [saddle-node bifurcation](/docs/core/dynamics/gap-dynamics#бифуркации). The transition is gradual (5–15 minutes), characterised by a gradual decrease in $\gamma_{AE}$.
 
-- **Начало сновидения** (NREM $\to$ REM): реактивация E-секторных когерентностей без восстановления $\gamma_{AE}$. Переход быстрый (секунды), запускается PGO-волнами.
+- **Onset of dreaming** (NREM $\to$ REM): reactivation of E-sector coherences without restoration of $\gamma_{AE}$. The transition is rapid (seconds), triggered by PGO waves.
 
-- **Вход в самадхи**: приближение к [неподвижной точке](/docs/core/dynamics/gap-dynamics#единая-теорема) $\varphi(\Gamma^*) = \Gamma^*$. Переход постепенный (минуты–часы), требует предварительной подготовки (шаматха + випассана).
+- **Entry into samādhi**: approach to the [fixed point](/docs/core/dynamics/gap-dynamics#единая-теорема) $\varphi(\Gamma^*) = \Gamma^*$. The transition is gradual (minutes to hours), requires prior preparation (shamatha + vipassanā).
 
-- **Психоделический пик**: прохождение вблизи [фазового перехода](/docs/core/dynamics/gap-phase-diagram#три-фазы) II $\to$ I. Переход быстрый (минуты), субъективно воспринимается как «скачок».
+- **Psychedelic peak**: passage near the [phase transition](/docs/core/dynamics/gap-phase-diagram#три-фазы) II $\to$ I. The transition is rapid (minutes), subjectively perceived as a "jump".
 
-- **Гипнотическая индукция** (бодрствование $\to$ гипноз): плавное увеличение $\gamma_{AE}$ при одновременном росте $\mathrm{Gap}(L,E)$. Переход занимает 5–20 минут.
+- **Hypnotic induction** (wakefulness $\to$ hypnosis): gradual increase in $\gamma_{AE}$ with simultaneous growth of $\mathrm{Gap}(L,E)$. The transition takes 5–20 minutes.
 
-- **Люцидность во сне** (REM $\to$ люцидный REM): скачкообразное восстановление $\gamma_{AE}$ и $R$ при сохранении REM-профиля. Переход мгновенный (момент «осознания, что я сплю»).
+- **Lucidity in sleep** (REM $\to$ lucid REM): abrupt restoration of $\gamma_{AE}$ and $R$ with preservation of the REM profile. The transition is instantaneous (the moment of "realising I am asleep").
 
-### 9.2 Диаграмма переходов
+### 9.2 Transition diagram
 
 ```mermaid
 graph TD
-    W["Бодрствование<br/>L2: R≥1/3, P>2/7"]
-    NREM["NREM-сон<br/>L1: R<1/3, Φ≈const"]
-    REM["REM-сон<br/>L1–L2: γ_SE↑, γ_DE↑"]
-    MED["Самадхи<br/>L3–L4: R→1, Gap→min"]
-    PSY["Психоделики<br/>L1–L2: D_diff↑↑, R↓"]
-    AN["Анестезия<br/>L0: Φ→0, P<2/7"]
-    HYP["Гипноз<br/>L1–L2: Gap(L,E)↑"]
-    LD["Люцидный сон<br/>L2: REM + R≥1/3"]
+    W["Wakefulness<br/>L2: R≥1/3, P>2/7"]
+    NREM["NREM sleep<br/>L1: R<1/3, Φ≈const"]
+    REM["REM sleep<br/>L1–L2: γ_SE↑, γ_DE↑"]
+    MED["Samādhi<br/>L3–L4: R→1, Gap→min"]
+    PSY["Psychedelics<br/>L1–L2: D_diff↑↑, R↓"]
+    AN["Anaesthesia<br/>L0: Φ→0, P<2/7"]
+    HYP["Hypnosis<br/>L1–L2: Gap(L,E)↑"]
+    LD["Lucid dream<br/>L2: REM + R≥1/3"]
 
     W -->|"R↓, γ_AE→0"| NREM
     NREM -->|"γ_SE↑, γ_DE↑"| REM
     REM -->|"R↑, γ_AE→0"| W
     NREM -->|"R↑"| W
-    W -->|"шаматха+випассана"| MED
-    MED -->|"диссипация"| W
-    W -->|"фармакология"| PSY
-    PSY -->|"метаболизм"| W
-    W -->|"индукция"| AN
-    AN -->|"восстановление"| W
-    W -->|"индукция"| HYP
-    HYP -->|"дегипнотизация"| W
+    W -->|"shamatha+vipassanā"| MED
+    MED -->|"dissipation"| W
+    W -->|"pharmacology"| PSY
+    PSY -->|"metabolism"| W
+    W -->|"induction"| AN
+    AN -->|"recovery"| W
+    W -->|"induction"| HYP
+    HYP -->|"dehypnotisation"| W
     REM -->|"γ_AE↑, R↑"| LD
     LD -->|"γ_AE→0"| REM
 ```
 
-**Аналогия.** Переходы между ИСС подобны фазовым переходам воды: засыпание — это «замерзание» рефлексии (плавный переход $R$ через порог), психоделический пик — «кипение» опыта ($D_{\text{diff}}$ резко возрастает), анестезия — «абсолютный ноль» ($\Phi \to 0$). Каждый переход имеет свою «температуру» и «давление» — роль играют параметры $\Gamma_2$ (скорость декогеренции) и $\kappa$ (интенсивность регенерации).
+**Analogy.** Transitions between ASC are like phase transitions of water: falling asleep is the "freezing" of reflection (gradual passage of $R$ through the threshold), the psychedelic peak is the "boiling" of experience ($D_{\text{diff}}$ sharply increases), anaesthesia is "absolute zero" ($\Phi \to 0$). Each transition has its own "temperature" and "pressure" — the parameters $\Gamma_2$ (rate of decoherence) and $\kappa$ (intensity of regeneration) play this role.
 
-Подробнее о [коррекционных стратегиях](/docs/consciousness/states/pathological#коррекция) для патологических переходов. Связь с [теоремами КК](/docs/applied/coherence-cybernetics/theorems) — в части динамических аттракторов.
+For more on [correction strategies](/docs/consciousness/states/pathological#коррекция) for pathological transitions. The connection with the [CC theorems](/docs/applied/coherence-cybernetics/theorems) — in the part on dynamic attractors.
 
 ---
 
-### Что мы узнали {#итоги}
+### What we learned {#итоги}
 
-1. **Историческая линия**: Тарт (1969) ввёл систематическую картографию ИСС; УГМ превращает её в количественную теорию с числовыми параметрами и предсказаниями
-2. **ИСС** — траектория в $\mathcal{D}(\mathcal{H})$ с отклонением хотя бы одного параметра из пятёрки $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$
-3. **NREM** — возврат к L1 ($R < 1/3$), интеграция сохранена; **REM** — L1–L2 без внимания ($\gamma_{AE} \approx 0$), яркие образы ($\gamma_{SE} \uparrow$)
-4. **Медитация** — систематическое управление: шаматха ($R \uparrow$), випассана ($\mathrm{Gap} \downarrow$), самадхи (приближение к L4)
-5. **Психоделики** — $D_{\text{diff}} \uparrow\uparrow$, $R \downarrow$, $\overline{\mathrm{Gap}} \downarrow$; терапевтическое окно: $R_{\text{th}}/2 < R < R_{\text{th}}$
-6. **Анестезия** — глобальная декогеренция, $\Phi \to 0$, переход к L0 (в отличие от L1 при сне)
-7. **Гипноз** — диссоциация внимания от логики: $\gamma_{AE} \uparrow$, $\mathrm{Gap}(L,E) \uparrow$
-8. **Осознанные сновидения** — REM + восстановление рефлексии: $R \geq R_{\text{th}}$, $\gamma_{AE} > 0$
-9. **Переходы** — бифуркации Gap-ландшафта; каждый тип ИСС имеет характерную геометрию перехода
+1. **Historical line**: Tart (1969) introduced systematic ASC cartography; UHM transforms it into a quantitative theory with numerical parameters and predictions
+2. **ASC** — a trajectory in $\mathcal{D}(\mathcal{H})$ with deviation of at least one parameter from the quintuple $(R, \Phi, D_{\text{diff}}, P, \overline{\mathrm{Gap}})$
+3. **NREM** — return to L1 ($R < 1/3$), integration preserved; **REM** — L1–L2 without attention ($\gamma_{AE} \approx 0$), vivid imagery ($\gamma_{SE} \uparrow$)
+4. **Meditation** — systematic control: shamatha ($R \uparrow$), vipassanā ($\mathrm{Gap} \downarrow$), samādhi (approach to L4)
+5. **Psychedelics** — $D_{\text{diff}} \uparrow\uparrow$, $R \downarrow$, $\overline{\mathrm{Gap}} \downarrow$; therapeutic window: $R_{\text{th}}/2 < R < R_{\text{th}}$
+6. **Anaesthesia** — global decoherence, $\Phi \to 0$, transition to L0 (as opposed to L1 in sleep)
+7. **Hypnosis** — dissociation of attention from logic: $\gamma_{AE} \uparrow$, $\mathrm{Gap}(L,E) \uparrow$
+8. **Lucid dreaming** — REM + restoration of reflection: $R \geq R_{\text{th}}$, $\gamma_{AE} > 0$
+9. **Transitions** — bifurcations of the Gap landscape; each type of ASC has a characteristic transition geometry
 
-:::tip Мост к следующей главе
-ИСС показывают, как $\Gamma$ отклоняется от нормы. Но часть когерентностей всегда остаётся **недоступной для осознания** — это бессознательное. В следующей главе — [Бессознательное](/docs/consciousness/states/unconscious) — мы покажем, что бессознательное = множество каналов с $\mathrm{Gap} \to 1$, и что полная прозрачность **невозможна** по теореме Хэмминга.
+:::tip Bridge to the next chapter
+ASC show how $\Gamma$ deviates from the norm. But some coherences always remain **inaccessible to consciousness** — this is the unconscious. In the next chapter — [Unconscious](/docs/consciousness/states/unconscious) — we will show that the unconscious = the set of channels with $\mathrm{Gap} \to 1$, and that complete transparency is **impossible** by the Hamming theorem.
 :::
 
-## Связи
+## Related Documents
 
-- **Динамика Γ:** [Эволюция Γ](/docs/core/dynamics/evolution) — уравнения движения
-- **Жизнеспособность:** [Мера жизнеспособности](/docs/core/dynamics/viability) — порог $P_{\text{crit}} = 2/7$
-- **Иерархия уровней:** [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — определения L0–L4
-- **Gap-характеристика:** [Gap-характеристика уровней](/docs/consciousness/hierarchy/gap-characterization) — сигнатуры
-- **Бифуркации:** [Gap-динамика](/docs/core/dynamics/gap-dynamics#бифуркации) — теория переходов
-- **Бессознательное:** [Бессознательное](/docs/consciousness/states/unconscious) — Gap-структура недоступных секторов
-- **Патология:** [Патология сознания](/docs/consciousness/states/pathological) — отклонения от нормы
-- **Теоремы КК:** [Когерентная Кибернетика](/docs/applied/coherence-cybernetics/theorems) — прикладные следствия для динамических аттракторов
-- **Энтропийный мозг:** [Фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram) — связь с гипотезой Кархарт-Харриса
+- **Dynamics of Γ:** [Evolution of Γ](/docs/core/dynamics/evolution) — equations of motion
+- **Viability:** [Viability measure](/docs/core/dynamics/viability) — threshold $P_{\text{crit}} = 2/7$
+- **Level hierarchy:** [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — definitions of L0–L4
+- **Gap characterisation:** [Gap characterisation of levels](/docs/consciousness/hierarchy/gap-characterization) — signatures
+- **Bifurcations:** [Gap dynamics](/docs/core/dynamics/gap-dynamics#бифуркации) — theory of transitions
+- **Unconscious:** [Unconscious](/docs/consciousness/states/unconscious) — Gap structure of inaccessible sectors
+- **Pathology:** [Pathology of consciousness](/docs/consciousness/states/pathological) — deviations from the norm
+- **CC theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — applied consequences for dynamic attractors
+- **Entropic brain:** [Phase diagram](/docs/core/dynamics/gap-phase-diagram) — connection to Carhart-Harris's hypothesis

@@ -267,7 +267,7 @@ $$
 
 2. **Structural phase transition:** At $\Phi < 1$ the state is "quasi-diagonal" — subsystems are quasi-independent. At $\Phi \geq 1$ inter-dimension coherences dominate — subsystems are causally connected through the [coherence matrix](/docs/core/dynamics/coherence-matrix).
 
-3. **Connection with (AP):** [Closure of the (M,R)-system](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) requires causal paths between dimensions encoded in the coherences $\gamma_{ij}$. The condition $\Phi \geq 1$ guarantees that these paths are structurally significant (not small perturbations of the diagonal state).
+3. **Connection with (AP):** [Closure of the (M,R)-system](/docs/core/foundations/axiom-septicity#prerequisite-autonomy) requires causal paths between dimensions encoded in the coherences $\gamma_{ij}$. The condition $\Phi \geq 1$ guarantees that these paths are structurally significant (not small perturbations of the diagonal state).
 
 4. **Categorical justification:** In the category **Hol** [Hom-sets](/docs/proofs/categorical/categorical-formalism) between dimensions $i, j$ are identified with coherences: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-unification](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]). The condition $\Phi \geq 1$ means that the **morphism structure** dominates over the **object structure** — the category is "non-trivially connected".
 

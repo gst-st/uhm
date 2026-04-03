@@ -41,7 +41,7 @@ Coherence Cybernetics operates in a **minimal 7D formalism** ($\mathcal{H} = \ma
 
 For operations requiring tensor structure (partial trace $\mathrm{Tr}_{-E}$, Holon composition $\otimes$), an **extended formalism** is used ($\mathcal{H} = \mathbb{C}^{42}$ with tensor structure).
 
-**See:** [Relation between formalisms](/docs/core/dynamics/coherence-matrix#согласование-формализмов)
+**See:** [Relation between formalisms](/docs/core/dynamics/coherence-matrix#reconciling-the-formalisms)
 :::
 
 ---
@@ -490,7 +490,7 @@ Full formula: [T-98](/docs/core/dynamics/evolution#теорема-баланс-�
 
 ---
 
-## Target State
+## Target State {#целевое-состояние}
 
 ### Why Is the Target State Needed?
 
@@ -679,7 +679,7 @@ where $J_f = \partial f / \partial \mathbf{x}$ is the network's Jacobian. Effect
 Neurobiological correlates require experimental validation. See [Γ measurement protocol](/docs/applied/research/measurement-protocol).
 :::
 
-### Neurobiological Correlates
+### Neurobiological Correlates {#нейробиологические-корреляты}
 
 | CC Measure | Neural Correlate | Measurement Method | Interpretation |
 |---------|---------------|-----------------|---------------|

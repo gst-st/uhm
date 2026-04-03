@@ -322,6 +322,8 @@ Two features make CC modes *unique*:
 
 ---
 
+<a id="предсказание-isf"></a>
+
 ## 6. Falsifiable Prediction: Connection to ISF [H] {#isf-prediction}
 
 ### 6.1 Prediction of Infra-Slow Fluctuations {#frequency-prediction}

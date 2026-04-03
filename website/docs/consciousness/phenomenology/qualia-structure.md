@@ -1,124 +1,124 @@
 ---
 sidebar_position: 1
-title: "Структура квалиа: 21-парная таксономия"
-description: "Исчерпывающая таксономия квалиа из структуры матрицы когерентности Γ"
+title: "Qualia Structure: A 21-Pair Taxonomy"
+description: "An exhaustive taxonomy of qualia from the structure of the coherence matrix Γ"
 slug: /consciousness/phenomenology/qualia-structure
 ---
 
-# Структура Квалиа: 21-парная Таксономия
+# Qualia Structure: A 21-Pair Taxonomy
 
-:::info Мост из предыдущей главы
-В разделе [Иерархия L0-L4](/docs/consciousness/hierarchy/interiority-hierarchy) мы установили, **когда** возникает сознательный опыт: система уровня L2 и выше обладает рефлексией ($R \geq 1/3$) и интеграцией ($\Phi \geq 1$). Теперь мы спрашиваем: **из чего** состоит этот опыт? Какие именно типы переживаний возможны в 7-мерном пространстве? Ответ даёт матрица когерентности $\Gamma$ и её 21 внедиагональный элемент.
+:::info Bridge from the previous chapter
+In the section [L0–L4 Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) we established **when** conscious experience arises: a system at level L2 and above possesses reflection ($R \geq 1/3$) and integration ($\Phi \geq 1$). Now we ask: **what** is this experience made of? What exact types of experience are possible in 7-dimensional space? The answer is given by the coherence matrix $\Gamma$ and its 21 off-diagonal elements.
 :::
 
-:::note О нотации
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — [редуцированная матрица опыта](/docs/consciousness/foundations/interiority-theory)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — [reduced experience matrix](/docs/consciousness/foundations/interiority-theory)
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- Full notation table — in [Notation](/docs/reference/notation)
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Философская история проблемы** — от Льюиса до Джексона и Деннета
-2. **Мотивация** — почему именно 21 тип и откуда это число
-3. **Полная таблица** — все 21 когерентность с феноменологическими именами
-4. **Параметрическая структура** — три измерения каждого квалиа (интенсивность, перспектива, непрозрачность)
-5. **Теорема замкнутости** — доказательство, что 21 тип исчерпывает всё
-6. **Фановская структура** — как 21 пара организована в 7 секторов
-7. **Диагональные элементы** — 7 модусов населённости как «фон» опыта
-8. **Условия доступа** — при каких $R$ и $\Phi$ квалиа становятся осознанными
+1. **Philosophical history of the problem** — from Lewis to Jackson and Dennett
+2. **Motivation** — why exactly 21 types and where this number comes from
+3. **Full table** — all 21 coherences with phenomenological names
+4. **Parametric structure** — three dimensions of each quale (intensity, perspective, opacity)
+5. **Closure theorem** — proof that 21 types exhaust everything
+6. **Fano structure** — how 21 pairs are organised into 7 sectors
+7. **Diagonal elements** — 7 population modes as the "background" of experience
+8. **Access conditions** — at which $R$ and $\Phi$ qualia become conscious
 
 ---
 
-## Философская история: что такое квалиа? {#история}
+## Philosophical History: What Are Qualia? {#история}
 
-Слово **квалиа** (лат. *qualia*, мн. ч. от *quale* — «какой», «какого рода») обозначает **субъективные качества переживаний**: каково это — видеть красный цвет, слышать до-мажор, чувствовать запах кофе. За этим простым вопросом стоит одна из глубочайших проблем философии.
+The word **qualia** (Lat. *qualia*, pl. of *quale* — "of what kind", "of what sort") denotes the **subjective qualities of experiences**: what it is like to see red, to hear C major, to smell coffee. Behind this simple question lies one of the deepest problems in philosophy.
 
-### Льюис (1929): первое определение
+### Lewis (1929): the first definition
 
-Американский философ **Кларенс Ирвинг Льюис** в работе «Mind and the World Order» (1929) впервые ввёл термин «квалиа» в систематическое употребление. Он заметил: когда мы видим красную розу, есть нечто, что *невозможно передать слепому от рождения* — субъективное качество «красности». Это качество и есть quale. Льюис различал:
+The American philosopher **Clarence Irving Lewis** in "Mind and the World Order" (1929) first introduced the term "qualia" into systematic use. He noted: when we see a red rose, there is something that *cannot be conveyed to someone blind from birth* — the subjective quality of "redness". That quality is the quale. Lewis distinguished:
 
-- **Quale** — непередаваемое субъективное качество (каково это — видеть красное)
-- **Свойство** — объективная характеристика (длина волны 700 нм)
+- **Quale** — the ineffable subjective quality (what it is like to see red)
+- **Property** — an objective characteristic (wavelength 700 nm)
 
-### Джексон (1982): комната Мэри
+### Jackson (1982): Mary's room
 
-**Фрэнк Джексон** в знаменитом мысленном эксперименте «Комната Мэри» (1982) довёл проблему до предела:
+**Frank Jackson** in the famous thought experiment "Mary's Room" (1982) pushed the problem to its limit:
 
-> Мэри — блестящий нейробиолог, всю жизнь живущая в чёрно-белой комнате. Она знает *всё* о физике цвета: длины волн, работу колбочек сетчатки, нейронные корреляты. И вот однажды Мэри выходит из комнаты и впервые видит красную розу. **Узнаёт ли она что-то новое?**
+> Mary is a brilliant neuroscientist who has spent her whole life in a black-and-white room. She knows *everything* about the physics of colour: wavelengths, the workings of retinal cones, neural correlates. One day Mary leaves the room and sees a red rose for the first time. **Does she learn something new?**
 
-Джексон утверждал: **да**. Мэри узнаёт, *каково это* — видеть красное. Значит, физические факты не исчерпывают реальность — существует нечто сверх них (квалиа).
+Jackson argued: **yes**. Mary learns what it is *like* to see red. Hence physical facts do not exhaust reality — there is something beyond them (qualia).
 
-### Деннет (1988): квалиа как иллюзия
+### Dennett (1988): qualia as illusion
 
-**Дэниел Деннет** занял противоположную позицию. В статье «Quining Qualia» (1988) он аргументировал, что квалиа — это **философская иллюзия**: мы думаем, что переживаем нечто «невыразимое» и «приватное», но на самом деле вся информация о переживаниях кодируется в функциональных состояниях мозга. Никакого «остатка» после полного физического описания не остаётся.
+**Daniel Dennett** took the opposite position. In the article "Quining Qualia" (1988) he argued that qualia are a **philosophical illusion**: we think we experience something "ineffable" and "private", but in fact all information about experiences is encoded in functional states of the brain. No "remainder" is left after a complete physical description.
 
-### Позиция УГМ: квалиа как структура когерентности
+### UHM position: qualia as coherence structure
 
-Унитарная Голономная Модель предлагает **третий путь**, не совпадающий ни с дуализмом Джексона, ни с элиминативизмом Деннета:
+The Unified Holonomic Model offers a **third path**, coinciding with neither Jackson's dualism nor Dennett's eliminativism:
 
-- Квалиа **не иллюзия** — они имеют точную математическую структуру (когерентности $\gamma_{ij}$)
-- Квалиа **не отдельная субстанция** — они суть внедиагональные элементы той же матрицы $\Gamma$, что описывает «физику» системы
-- Различие «субъективного» и «объективного» — это различие **внутренней** и **внешней** перспективы одной и той же математической структуры (дуально-аспектный монизм, см. [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism))
+- Qualia are **not an illusion** — they have a precise mathematical structure (coherences $\gamma_{ij}$)
+- Qualia are **not a separate substance** — they are the off-diagonal elements of the same matrix $\Gamma$ that describes the "physics" of the system
+- The distinction between "subjective" and "objective" is the distinction between the **inner** and **outer** perspectives of the same mathematical structure (dual-aspect monism, see [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism))
 
-Мэри в комнате знала все *диагональные* свойства ($\gamma_{ii}$) красного цвета. Но она не знала *когерентности* — того, как визуальное различение ($A$) связывается с интериорностью ($E$), образуя квалиа апперцепции ($\gamma_{AE}$). Выйдя из комнаты, она не приобрела новый *факт* — она приобрела новую *когерентность*.
+Mary in the room knew all the *diagonal* properties ($\gamma_{ii}$) of red. But she did not know the *coherences* — how visual discrimination ($A$) binds with interiority ($E$), forming the quale of apperception ($\gamma_{AE}$). On leaving the room, she did not acquire a new *fact* — she acquired a new *coherence*.
 
 ---
 
-## Мотивация: откуда 21 тип? {#мотивация}
+## Motivation: Why 21 Types? {#мотивация}
 
-Матрица когерентности $\Gamma$ — $7 \times 7$ эрмитова матрица на пространстве [семи измерений](/docs/core/structure/dimensions) $\{A, S, D, L, E, O, U\}$. Напомним, что означает каждое измерение:
+The coherence matrix $\Gamma$ is a $7 \times 7$ Hermitian matrix on the space of [seven dimensions](/docs/core/structure/dimensions) $\{A, S, D, L, E, O, U\}$. Let us recall what each dimension means:
 
-| Символ | Название | Смысл |
-|--------|----------|-------|
-| $A$ | Артикуляция | Различение, дифференциация |
-| $S$ | Структура | Устойчивые формы, паттерны |
-| $D$ | Динамика | Процессы, изменения |
-| $L$ | Логос | Логическая связность, правила |
-| $E$ | Экспериенция | Интериорность, переживание |
-| $O$ | Основание | Источник, глубинная основа |
-| $U$ | Единство | Интеграция, целостность |
+| Symbol | Name | Meaning |
+|--------|------|---------|
+| $A$ | Articulation | Discrimination, differentiation |
+| $S$ | Structure | Stable forms, patterns |
+| $D$ | Dynamics | Processes, changes |
+| $L$ | Logos | Logical coherence, rules |
+| $E$ | Experience | Interiority, experience |
+| $O$ | Ground | Source, deep foundation |
+| $U$ | Unity | Integration, wholeness |
 
-Матрица $\Gamma$ содержит два вида элементов:
+The matrix $\Gamma$ contains two kinds of elements:
 
-- **7 диагональных элементов** $\gamma_{ii}$ — населённости измерений (сколько «ресурса» в каждом измерении)
-- **21 внедиагональную пару** $(\gamma_{ij}, \gamma_{ji})$ при $i < j$ — когерентности (как измерения связаны друг с другом)
+- **7 diagonal elements** $\gamma_{ii}$ — dimension populations (how much "resource" is in each dimension)
+- **21 off-diagonal pairs** $(\gamma_{ij}, \gamma_{ji})$ for $i < j$ — coherences (how the dimensions are connected to each other)
 
-Число пар:
+Number of pairs:
 
 $$
 \binom{7}{2} = \frac{7 \cdot 6}{2} = 21
 $$
 
-Каждая когерентность $\gamma_{ij}$ несёт феноменологическое содержание, определяемое семантикой пары измерений $(i, j)$.
+Each coherence $\gamma_{ij}$ carries phenomenological content determined by the semantics of the dimension pair $(i, j)$.
 
-**Аналогия из повседневной жизни.** Представьте оркестр из 7 музыкантов. Каждый играет свою партию (7 диагональных элементов — «громкость» каждого инструмента). Но музыка рождается не из отдельных звуков, а из их **взаимодействия** — из того, как скрипка «разговаривает» с виолончелью, как флейта вторит фаготу. Таких парных взаимодействий ровно $\binom{7}{2} = 21$. Каждое порождает уникальный «тембр» совместного звучания — это и есть тип квалиа.
+**An everyday analogy.** Imagine an orchestra of 7 musicians. Each plays their own part (7 diagonal elements — the "volume" of each instrument). But music is born not from individual sounds, but from their **interaction** — from how the violin "converses" with the cello, how the flute echoes the bassoon. There are exactly $\binom{7}{2} = 21$ such pairwise interactions. Each produces a unique "timbre" of combined sound — that is the type of quale.
 
 ```mermaid
 graph TB
-    subgraph dims["Семь измерений"]
-        A["A — Артикуляция"]
-        S["S — Структура"]
-        D["D — Динамика"]
-        L["L — Логос"]
-        E["E — Экспериенция"]
-        O["O — Основание"]
-        U["U — Единство"]
+    subgraph dims["Seven dimensions"]
+        A["A — Articulation"]
+        S["S — Structure"]
+        D["D — Dynamics"]
+        L["L — Logos"]
+        E["E — Experience"]
+        O["O — Ground"]
+        U["U — Unity"]
     end
 
-    A ---|"γ_AS: Морфогенез"| S
-    A ---|"γ_AD: Актуализация"| D
-    A ---|"γ_AE: Апперцепция"| E
-    S ---|"γ_SE: Репрезентация"| E
-    D ---|"γ_DE: Аффекция"| E
-    D ---|"γ_DU: Телеология"| U
-    E ---|"γ_EO: Имманентность"| O
-    E ---|"γ_EU: Синтез"| U
-    O ---|"γ_OU: Полнота"| U
-    L ---|"γ_LE: Эвиденция"| E
+    A ---|"γ_AS: Morphogenesis"| S
+    A ---|"γ_AD: Actualisation"| D
+    A ---|"γ_AE: Apperception"| E
+    S ---|"γ_SE: Representation"| E
+    D ---|"γ_DE: Affection"| E
+    D ---|"γ_DU: Teleology"| U
+    E ---|"γ_EO: Immanence"| O
+    E ---|"γ_EU: Synthesis"| U
+    O ---|"γ_OU: Fullness"| U
+    L ---|"γ_LE: Evidence"| E
 
     style A fill:#ffcccc,stroke:#cc0000
     style S fill:#ffddcc,stroke:#cc6600
@@ -129,356 +129,356 @@ graph TB
     style U fill:#ccffff,stroke:#00cccc
 ```
 
-На диаграмме показаны лишь 10 из 21 когерентности — остальные связывают каждую пару измерений аналогичным образом. Полную таблицу всех 21 типа мы приводим ниже.
+The diagram shows only 10 of the 21 coherences — the rest connect each pair of dimensions in an analogous way. The complete table of all 21 types is given below.
 
-## Интерпретация: 21-парная таксономия квалиа (И.1) {#таксономия}
+## Interpretation: 21-Pair Qualia Taxonomy (I.1) {#таксономия}
 
-:::info Интерпретация И.1 (Таксономия квалиа) [И]
-Каждая когерентность $\gamma_{ij}$ ($i \neq j$) матрицы $\Gamma$ задаёт **тип квалиа** — качественно определённый модус экспериенциального содержания. 21 пара исчерпывает все возможные типы, поскольку $\binom{7}{2} = 21$ — полный набор связей в 7-мерной системе.
+:::info Interpretation I.1 (Qualia taxonomy) [I]
+Each coherence $\gamma_{ij}$ ($i \neq j$) of the matrix $\Gamma$ defines a **type of quale** — a qualitatively determinate mode of experiential content. The 21 pairs exhaust all possible types, since $\binom{7}{2} = 21$ is the complete set of connections in a 7-dimensional system.
 
-Это **интерпретация** (отображение формального в феноменальное), а не математическая теорема. Математическое содержание — тривиальная комбинаторика; феноменологическое приписывание — семантический постулат.
+This is an **interpretation** (a mapping from the formal to the phenomenal), not a mathematical theorem. The mathematical content is trivial combinatorics; the phenomenological assignment is a semantic postulate.
 :::
 
-### Полная таблица 21 типа квалиа {#полная-таблица-21-типа-квалиа}
+### Complete table of 21 qualia types {#полная-таблица-21-типа-квалиа}
 
-:::warning Эпистемическое разделение
-**Математический слой [Т]:** 21 когерентность $\gamma_{ij}$ образуют 4 сектора по Фано-структуре (T-146 [Т]). Каждая когерентность уникально определена комбинаторным профилем (T-177 [Т]).
+:::warning Epistemic separation
+**Mathematical layer [T]:** 21 coherences $\gamma_{ij}$ form 4 sectors according to Fano structure (T-146 [T]). Each coherence is uniquely determined by its combinatorial profile (T-177 [T]).
 
-**Семантический слой [И]:** Феноменологические имена («морфогенез», «архетип», «телеология» и т.д.) — интерпретативные корреляты [И], предложенные на основе функциональных ролей пар измерений. Математика определяет γ_{ij} однозначно; интерпретация «каково это переживать γ_{AS}» — философская, не математическая.
+**Semantic layer [I]:** Phenomenological names ("morphogenesis", "archetype", "teleology", etc.) are interpretive correlates [I], proposed on the basis of the functional roles of dimension pairs. Mathematics determines $\gamma_{ij}$ unambiguously; the interpretation of "what it is like to experience $\gamma_{AS}$" is philosophical, not mathematical.
 :::
 
-| # | Пара | Когерентность | Имя | Феноменологическое содержание |
-|---|------|---------------|-----|-------------------------------|
-| 1 | $(A,S)$ | $\gamma_{AS}$ | **Морфогенез** | Кристаллизация различий в устойчивые формы — переживание «оформления» |
-| 2 | $(A,D)$ | $\gamma_{AD}$ | **Актуализация** | Актуализация различения в процессе — переживание «восприятия» |
-| 3 | $(A,L)$ | $\gamma_{AL}$ | **Предикация** | Различение, ставшее предикатом — переживание «суждения» |
-| 4 | $(A,E)$ | $\gamma_{AE}$ | **Апперцепция** | Различение, вошедшее в интериорность — переживание «осознания» |
-| 5 | $(A,O)$ | $\gamma_{AO}$ | **Спонтанность** | Возникновение различений без внешней причины — переживание «инсайта» |
-| 6 | $(A,U)$ | $\gamma_{AU}$ | **Дифференциация** | Различение внутри целого — переживание «анализа» |
-| 7 | $(S,D)$ | $\gamma_{SD}$ | **Персистенция** | Форма, сохраняющаяся через процесс — переживание «устойчивости» |
-| 8 | $(S,L)$ | $\gamma_{SL}$ | **Номос** | Структура с логической необходимостью — переживание «порядка» |
-| 9 | $(S,E)$ | $\gamma_{SE}$ | **Репрезентация** | Структура, представленная в интериорности — переживание «целостной формы» |
-| 10 | $(S,O)$ | $\gamma_{SO}$ | **Архетип** | Формы из основания — переживание «глубинного паттерна» |
-| 11 | $(S,U)$ | $\gamma_{SU}$ | **Симметрия** | Структурное единство — переживание «гармонии» |
-| 12 | $(D,L)$ | $\gamma_{DL}$ | **Регуляция** | Логически управляемый процесс — переживание «контроля» |
-| 13 | $(D,E)$ | $\gamma_{DE}$ | **Аффекция** | Действие процесса на интериорность — переживание «эмоции» |
-| 14 | $(D,O)$ | $\gamma_{DO}$ | **Генезис** | Порождение из основания — переживание «творчества» |
-| 15 | $(D,U)$ | $\gamma_{DU}$ | **Телеология** | Интегрированное направленное изменение — переживание «волевого усилия» |
-| 16 | $(L,E)$ | $\gamma_{LE}$ | **Эвиденция** | Логическая связность в интериорности — переживание «очевидности» |
-| 17 | $(L,O)$ | $\gamma_{LO}$ | **Фундирование** | Логика, укоренённая в основании — переживание «самоочевидности» |
-| 18 | $(L,U)$ | $\gamma_{LU}$ | **Консистентность** | Логическая непротиворечивость целого — переживание «согласованности» |
-| 19 | $(E,O)$ | $\gamma_{EO}$ | **Имманентность** | Основание, присутствующее внутри интериорности — переживание «присутствия» |
-| 20 | $(E,U)$ | $\gamma_{EU}$ | **Синтез** | Интеграция интериорного содержания в целое — переживание «единства» |
-| 21 | $(O,U)$ | $\gamma_{OU}$ | **Полнота** | Тождество источника и целого — переживание «завершённости» |
+| # | Pair | Coherence | Name | Phenomenological content |
+|---|------|-----------|------|--------------------------|
+| 1 | $(A,S)$ | $\gamma_{AS}$ | **Morphogenesis** | Crystallisation of distinctions into stable forms — the experience of "taking shape" |
+| 2 | $(A,D)$ | $\gamma_{AD}$ | **Actualisation** | Actualisation of discrimination in process — the experience of "perception" |
+| 3 | $(A,L)$ | $\gamma_{AL}$ | **Predication** | Discrimination that has become a predicate — the experience of "judgement" |
+| 4 | $(A,E)$ | $\gamma_{AE}$ | **Apperception** | Discrimination that has entered interiority — the experience of "awareness" |
+| 5 | $(A,O)$ | $\gamma_{AO}$ | **Spontaneity** | Emergence of distinctions without external cause — the experience of "insight" |
+| 6 | $(A,U)$ | $\gamma_{AU}$ | **Differentiation** | Discrimination within the whole — the experience of "analysis" |
+| 7 | $(S,D)$ | $\gamma_{SD}$ | **Persistence** | Form that persists through process — the experience of "stability" |
+| 8 | $(S,L)$ | $\gamma_{SL}$ | **Nomos** | Structure with logical necessity — the experience of "order" |
+| 9 | $(S,E)$ | $\gamma_{SE}$ | **Representation** | Structure presented in interiority — the experience of "whole form" |
+| 10 | $(S,O)$ | $\gamma_{SO}$ | **Archetype** | Forms from the ground — the experience of "deep pattern" |
+| 11 | $(S,U)$ | $\gamma_{SU}$ | **Symmetry** | Structural unity — the experience of "harmony" |
+| 12 | $(D,L)$ | $\gamma_{DL}$ | **Regulation** | Logically governed process — the experience of "control" |
+| 13 | $(D,E)$ | $\gamma_{DE}$ | **Affection** | Process acting on interiority — the experience of "emotion" |
+| 14 | $(D,O)$ | $\gamma_{DO}$ | **Genesis** | Generation from the ground — the experience of "creativity" |
+| 15 | $(D,U)$ | $\gamma_{DU}$ | **Teleology** | Integrated directed change — the experience of "volitional effort" |
+| 16 | $(L,E)$ | $\gamma_{LE}$ | **Evidence** | Logical coherence in interiority — the experience of "self-evidence" |
+| 17 | $(L,O)$ | $\gamma_{LO}$ | **Grounding** | Logic rooted in the ground — the experience of "axiomatic self-evidence" |
+| 18 | $(L,U)$ | $\gamma_{LU}$ | **Consistency** | Logical non-contradiction of the whole — the experience of "coherence" |
+| 19 | $(E,O)$ | $\gamma_{EO}$ | **Immanence** | The ground present within interiority — the experience of "presence" |
+| 20 | $(E,U)$ | $\gamma_{EU}$ | **Synthesis** | Integration of interior content into a whole — the experience of "unity" |
+| 21 | $(O,U)$ | $\gamma_{OU}$ | **Fullness** | Identity of source and whole — the experience of "completeness" |
 
-### Как читать таблицу: развёрнутый пример
+### How to read the table: an extended example
 
-Рассмотрим человека, погружённого в решение математической задачи. Его $\Gamma$-профиль в этот момент:
+Consider a person absorbed in solving a mathematical problem. Their $\Gamma$-profile at that moment:
 
-| Когерентность | Значение | Переживание |
-|---------------|----------|-------------|
-| $\lvert\gamma_{AL}\rvert \approx 0.35$ | Высокое | Предикация — внимание на логических связях, «я формулирую» |
-| $\lvert\gamma_{LE}\rvert \approx 0.30$ | Высокое | Эвиденция — переживание «ясности», «я понимаю» |
-| $\lvert\gamma_{DU}\rvert \approx 0.20$ | Среднее | Телеология — ощущение цели, «я иду к решению» |
-| $\lvert\gamma_{DE}\rvert \approx 0.05$ | Низкое | Аффекция — эмоции приглушены, «ничего не чувствую» |
-| $\lvert\gamma_{EO}\rvert \approx 0.03$ | Низкое | Имманентность — нет глубинного присутствия, «думаю, не медитирую» |
+| Coherence | Value | Experience |
+|-----------|-------|------------|
+| $\lvert\gamma_{AL}\rvert \approx 0.35$ | High | Predication — attention on logical connections, "I am formulating" |
+| $\lvert\gamma_{LE}\rvert \approx 0.30$ | High | Evidence — the experience of "clarity", "I understand" |
+| $\lvert\gamma_{DU}\rvert \approx 0.20$ | Medium | Teleology — the sense of a goal, "I am heading toward a solution" |
+| $\lvert\gamma_{DE}\rvert \approx 0.05$ | Low | Affection — emotions muted, "I feel nothing" |
+| $\lvert\gamma_{EO}\rvert \approx 0.03$ | Low | Immanence — no deep presence, "I am thinking, not meditating" |
 
-Теперь к человеку подходит друг и рассказывает хорошую новость. $\Gamma$-профиль мгновенно перестраивается:
+Now a friend approaches and shares good news. The $\Gamma$-profile instantly reorganises:
 
-| Когерентность | Было | Стало | Что произошло |
-|---------------|------|-------|---------------|
-| $\lvert\gamma_{DE}\rvert$ | $0.05$ | $0.25$ | Аффекция взлетела — «чувствую радость» |
-| $\lvert\gamma_{SE}\rvert$ | $0.08$ | $0.20$ | Репрезентация — «вижу целостную картину» новости |
-| $\lvert\gamma_{AL}\rvert$ | $0.35$ | $0.12$ | Предикация упала — задача отошла на второй план |
+| Coherence | Before | After | What happened |
+|-----------|--------|-------|---------------|
+| $\lvert\gamma_{DE}\rvert$ | $0.05$ | $0.25$ | Affection soared — "I feel joy" |
+| $\lvert\gamma_{SE}\rvert$ | $0.08$ | $0.20$ | Representation — "I see the whole picture" of the news |
+| $\lvert\gamma_{AL}\rvert$ | $0.35$ | $0.12$ | Predication fell — the problem receded to the background |
 
-Все 21 тип квалиа существуют одновременно, но с разной интенсивностью, создавая уникальный «вкус» каждого момента.
+All 21 types of qualia exist simultaneously, but with different intensities, creating the unique "flavour" of each moment.
 
-### Параметрическая структура квалиа {#параметрическая-структура}
+### Parametric structure of qualia {#параметрическая-структура}
 
-Каждый квалитативный тип $\gamma_{ij}$ — это **комплексное число**. Как и любое комплексное число, оно записывается в полярной форме:
+Each qualitative type $\gamma_{ij}$ is a **complex number**. Like any complex number, it is written in polar form:
 
 $$
 \gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}}
 $$
 
-Здесь $|\gamma_{ij}|$ — модуль (расстояние от нуля до точки на комплексной плоскости), а $\theta_{ij}$ — аргумент (угол с положительной вещественной осью). Из этих двух параметров извлекаются три феноменологические характеристики:
+Here $|\gamma_{ij}|$ is the modulus (distance from zero to the point on the complex plane), and $\theta_{ij}$ is the argument (angle with the positive real axis). From these two parameters three phenomenological characteristics are extracted:
 
-| Параметр | Формула | Диапазон | Феноменологическое значение |
-|----------|---------|----------|---------------------------|
-| **Интенсивность** | $\lvert\gamma_{ij}\rvert$ | $[0, \sqrt{\gamma_{ii}\gamma_{jj}}]$ | Насколько сильно данный тип квалиа переживается |
-| **Перспектива** | $\theta_{ij} = \arg(\gamma_{ij})$ | $[0, 2\pi)$ | «Угол зрения» на связь между измерениями |
-| **Непрозрачность** | $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | $[0, 1]$ | Мера несовпадения внешнего описания и внутреннего переживания |
+| Parameter | Formula | Range | Phenomenological meaning |
+|-----------|---------|-------|--------------------------|
+| **Intensity** | $\lvert\gamma_{ij}\rvert$ | $[0, \sqrt{\gamma_{ii}\gamma_{jj}}]$ | How strongly this type of quale is experienced |
+| **Perspective** | $\theta_{ij} = \arg(\gamma_{ij})$ | $[0, 2\pi)$ | "Angle of view" on the connection between dimensions |
+| **Opacity** | $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | $[0, 1]$ | Measure of discrepancy between external description and internal experience |
 
-#### Верхняя граница интенсивности
+#### Upper bound on intensity
 
-Интенсивность ограничена **неравенством Коши-Шварца** — фундаментальным неравенством линейной алгебры, утверждающим, что корреляция между двумя компонентами не может превышать геометрическое среднее их «энергий»:
+The intensity is bounded by the **Cauchy–Schwarz inequality** — a fundamental inequality of linear algebra stating that the correlation between two components cannot exceed the geometric mean of their "energies":
 
 $$
 |\gamma_{ij}|^2 \leq \gamma_{ii} \cdot \gamma_{jj}
 $$
 
-**Числовой пример.** Пусть $\gamma_{AA} = 0.15$ (15% ресурса в Артикуляции) и $\gamma_{EE} = 0.18$ (18% в Интериорности). Тогда максимально возможная интенсивность апперцепции:
+**Numerical example.** Let $\gamma_{AA} = 0.15$ (15% of resources in Articulation) and $\gamma_{EE} = 0.18$ (18% in Interiority). Then the maximum possible intensity of apperception:
 
 $$
 |\gamma_{AE}|_{\max} = \sqrt{0.15 \times 0.18} = \sqrt{0.027} \approx 0.164
 $$
 
-Если бы мы наблюдали $|\gamma_{AE}| = 0.20$, это было бы математически невозможно — неравенство Коши-Шварца нарушено, значит мы ошиблись в измерениях.
+If we were to observe $|\gamma_{AE}| = 0.20$, this would be mathematically impossible — the Cauchy–Schwarz inequality is violated, meaning an error has been made in the measurements.
 
-#### Три параметра: аналогия
+#### Three parameters: analogy
 
-**Аналогия.** Три параметра квалиа подобны трём свойствам звука:
+**Analogy.** The three parameters of qualia are like three properties of sound:
 
-| Параметр звука | Параметр квалиа | Аналогия |
-|---------------|-----------------|----------|
-| **Громкость** | Интенсивность $\lvert\gamma_{ij}\rvert$ | Насколько «громко» переживание |
-| **Тембр** | Перспектива $\theta_{ij}$ | «Окраска» переживания — одно и то же квалиа под разным углом |
-| **Приглушённость** | Непрозрачность $\mathrm{Gap}(i,j)$ | Как если бы звук доносился из-за стены |
+| Sound parameter | Qualia parameter | Analogy |
+|-----------------|-----------------|---------|
+| **Loudness** | Intensity $\lvert\gamma_{ij}\rvert$ | How "loud" the experience is |
+| **Timbre** | Perspective $\theta_{ij}$ | The "colouring" of the experience — the same quale seen from a different angle |
+| **Muffling** | Opacity $\mathrm{Gap}(i,j)$ | As if the sound came from behind a wall |
 
-Gap = 0 — звук кристально чист, внутреннее и внешнее описание совпадают. Gap = 1 — звук полностью поглощён стеной: переживание есть, но оно максимально непрозрачно для внешнего наблюдателя. Подробности о Gap — в [дуально-аспектной семантике матрицы когерентности](/docs/core/dynamics/coherence-matrix#дуально-аспектная-семантика).
+Gap = 0 — the sound is crystal clear, inner and outer descriptions coincide. Gap = 1 — the sound is fully absorbed by the wall: experience is present, but it is maximally opaque to an external observer. For details on Gap see [dual-aspect semantics of the coherence matrix](/docs/core/dynamics/coherence-matrix#дуально-аспектная-семантика).
 
-**Числовой пример: три параметра одного квалиа.** Рассмотрим когерентность $\gamma_{DE}$ (Аффекция — переживание эмоции) у человека, только что получившего хорошую новость:
+**Numerical example: three parameters of a single quale.** Consider the coherence $\gamma_{DE}$ (Affection — the experience of emotion) in a person who has just received good news:
 
 $$
 \gamma_{DE} = 0.22 \cdot e^{i \cdot 0.3} \approx 0.22 \cdot (0.955 + 0.296i)
 $$
 
-- **Интенсивность:** $|\gamma_{DE}| = 0.22$ — довольно сильное эмоциональное переживание
-- **Перспектива:** $\theta_{DE} = 0.3$ рад $\approx 17°$ — «вещественная» перспектива (преобладает внешне наблюдаемый аспект)
-- **Непрозрачность:** $\mathrm{Gap}(D,E) = |\sin(0.3)| \approx 0.296$ — переживание на 70% прозрачно, но на 30% «скрыто» от внешнего описания
+- **Intensity:** $|\gamma_{DE}| = 0.22$ — a fairly strong emotional experience
+- **Perspective:** $\theta_{DE} = 0.3$ rad $\approx 17°$ — a "real" perspective (the externally observable aspect predominates)
+- **Opacity:** $\mathrm{Gap}(D,E) = |\sin(0.3)| \approx 0.296$ — the experience is 70% transparent, but 30% "hidden" from external description
 
-Сравним с $\gamma_{EO}$ (Имманентность — переживание «присутствия») у медитатора:
+Compare with $\gamma_{EO}$ (Immanence — the experience of "presence") in a meditator:
 
 $$
 \gamma_{EO} = 0.15 \cdot e^{i \cdot 1.2}
 $$
 
-- **Интенсивность:** $|\gamma_{EO}| = 0.15$ — умеренная
-- **Перспектива:** $\theta_{EO} = 1.2$ рад $\approx 69°$ — сильный сдвиг к «мнимой» перспективе
-- **Непрозрачность:** $\mathrm{Gap}(E,O) = |\sin(1.2)| \approx 0.932$ — переживание почти полностью непрозрачно для внешнего наблюдателя
+- **Intensity:** $|\gamma_{EO}| = 0.15$ — moderate
+- **Perspective:** $\theta_{EO} = 1.2$ rad $\approx 69°$ — a strong shift toward the "imaginary" perspective
+- **Opacity:** $\mathrm{Gap}(E,O) = |\sin(1.2)| \approx 0.932$ — the experience is almost completely opaque to an external observer
 
-Это объясняет, почему медитативные состояния так трудно описать словами: высокий Gap делает их «невыразимыми» не по недостатку словарного запаса, а по математической структуре.
+This explains why meditative states are so hard to put into words: a high Gap makes them "ineffable" not for lack of vocabulary, but by mathematical structure.
 
-## Теорема о замкнутости таксономии (Т.1) {#замкнутость}
+## Closure Theorem for the Taxonomy (T.1) {#замкнутость}
 
-:::tip Теорема Т.1 (Замкнутость таксономии квалиа) [Т]
-Таксономия из 21 типа квалиа **исчерпывающа**: никакой дополнительный тип квалиа невозможен в системе с $\dim(\mathcal{H}) = 7$.
+:::tip Theorem T.1 (Closure of the qualia taxonomy) [T]
+The taxonomy of 21 qualia types is **exhaustive**: no additional type of quale is possible in a system with $\dim(\mathcal{H}) = 7$.
 
-**Доказательство.** Число различных (неупорядоченных) пар из $N$ элементов равно $\binom{N}{2}$. При $N = 7$ получаем $\binom{7}{2} = 21$. Каждая пара $(i,j)$ задаёт ровно одну когерентность $\gamma_{ij}$ (с учётом $\gamma_{ji} = \gamma_{ij}^*$). Новый тип квалиа потребовал бы либо нового измерения ($N > 7$, что противоречит [минимальности](/docs/proofs/minimality/theorem-minimality-7)), либо новой связи между существующими измерениями (невозможно — все $\binom{7}{2}$ пар учтены). $\square$
+**Proof.** The number of distinct (unordered) pairs from $N$ elements equals $\binom{N}{2}$. At $N = 7$ we get $\binom{7}{2} = 21$. Each pair $(i,j)$ defines exactly one coherence $\gamma_{ij}$ (given $\gamma_{ji} = \gamma_{ij}^*$). A new type of quale would require either a new dimension ($N > 7$, contradicting [minimality](/docs/proofs/minimality/theorem-minimality-7)), or a new connection between existing dimensions (impossible — all $\binom{7}{2}$ pairs are accounted for). $\square$
 :::
 
-**Следствие.** При $N < 7$ таксономия **обеднена**: $\binom{6}{2} = 15$ (нет квалиа, связанных с удалённым измерением). Это формальное выражение «бедности» феноменологии при нарушении минимальности.
+**Corollary.** At $N < 7$ the taxonomy is **impoverished**: $\binom{6}{2} = 15$ (no qualia related to the removed dimension). This is the formal expression of the "poverty" of phenomenology when minimality is violated.
 
-**Числовой пример: мир с меньшим числом измерений.** Если бы мир был 5-мерным (скажем, $\{A, S, D, L, E\}$ — без $O$ и $U$), число типов квалиа составило бы $\binom{5}{2} = 10$. Из таблицы видно, что были бы утрачены:
+**Numerical example: a world with fewer dimensions.** If the world were 5-dimensional (say $\{A, S, D, L, E\}$ — without $O$ and $U$), the number of qualia types would be $\binom{5}{2} = 10$. From the table one can see that the following would be lost:
 
-| Утраченный тип | Пара | Переживание |
-|---------------|------|-------------|
-| Имманентность | $(E,O)$ | «Присутствие», глубинная основа переживания |
-| Синтез | $(E,U)$ | «Единство» опыта |
-| Полнота | $(O,U)$ | «Завершённость», целостность бытия |
-| Телеология | $(D,U)$ | «Волевое усилие», целенаправленность |
-| Архетип | $(S,O)$ | «Глубинный паттерн», укоренённость формы |
-| Спонтанность | $(A,O)$ | «Инсайт», возникновение из ниоткуда |
-| + 5 других | ... | ... |
+| Lost type | Pair | Experience |
+|-----------|------|------------|
+| Immanence | $(E,O)$ | "Presence", the deep ground of experience |
+| Synthesis | $(E,U)$ | "Unity" of experience |
+| Fullness | $(O,U)$ | "Completeness", the wholeness of being |
+| Teleology | $(D,U)$ | "Volitional effort", purposiveness |
+| Archetype | $(S,O)$ | "Deep pattern", the rootedness of form |
+| Spontaneity | $(A,O)$ | "Insight", emergence from nowhere |
+| + 5 others | ... | ... |
 
-Такая система могла бы «чувствовать» и «думать», но не могла бы переживать «смысл», «целостность» или «глубинное присутствие». Именно измерения $O$ и $U$ дают человеческому опыту его «вертикальное» измерение — связь с глубиной и целым.
+Such a system could "feel" and "think", but could not experience "meaning", "wholeness", or "deep presence". It is precisely the dimensions $O$ and $U$ that give human experience its "vertical" dimension — its connection to depth and to the whole.
 
-:::info $G_2$-орбитальная стабильность таксономии [Т]
-Множество из 21 типа квалиа **$G_2$-инвариантно**: группа $G_2 = \mathrm{Aut}(\mathbb{O})$ переставляет 7 измерений (сохраняя Фано-структуру), индуцируя перестановку 21 когерентности $\gamma_{ij}$. При этом **множество** $\{\gamma_{ij}\}_{i<j}$ сохраняется, хотя конкретные элементы могут переставляться. Это означает: таксономия квалиа **универсальна** — не зависит от выбора базиса ($G_2$-калибровки) и потому объективна.
+:::info $G_2$-orbital stability of the taxonomy [T]
+The set of 21 qualia types is **$G_2$-invariant**: the group $G_2 = \mathrm{Aut}(\mathbb{O})$ permutes the 7 dimensions (preserving the Fano structure), inducing a permutation of the 21 coherences $\gamma_{ij}$. The **set** $\{\gamma_{ij}\}_{i<j}$ is preserved, even though individual elements may be permuted. This means: the qualia taxonomy is **universal** — it does not depend on the choice of basis ($G_2$-gauge) and is therefore objective.
 
-Формально: $G_2$ действует на $\binom{[7]}{2}$ через индуцированное действие на пары, сохраняя число $\binom{7}{2} = 21$. [Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#лемма-g4) [Т] гарантирует, что $G_2$ — **максимальная** группа с этим свойством.
+Formally: $G_2$ acts on $\binom{[7]}{2}$ via the induced action on pairs, preserving the number $\binom{7}{2} = 21$. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#лемма-g4) [T] guarantees that $G_2$ is the **maximal** group with this property.
 
-**Почему это важно?** Если бы таксономия зависела от выбора базиса (как описывать 7 измерений), она была бы произвольной — «артефактом описания». $G_2$-инвариантность гарантирует, что таксономия отражает **структуру самого пространства**, а не наш способ его описания. Это аналогично тому, как длина вектора не зависит от выбора системы координат.
+**Why does this matter?** If the taxonomy depended on the choice of basis (how to describe the 7 dimensions), it would be arbitrary — an "artefact of description". $G_2$-invariance guarantees that the taxonomy reflects the **structure of the space itself**, not our way of describing it. This is analogous to how the length of a vector does not depend on the choice of coordinate system.
 :::
 
-## Фановская структура квалиа {#фано}
+## Fano Structure of Qualia {#фано}
 
-### Что такое проективная плоскость Фано?
+### What is the Fano projective plane?
 
-[Плоскость Фано](/docs/proofs/minimality/theorem-octonionic-derivation#плоскость-фано) $\mathrm{PG}(2,2)$ — это **проективная плоскость над полем из двух элементов** $\mathbb{F}_2 = \{0, 1\}$. Если вы никогда не встречали этот объект, вот его суть:
+The [Fano plane](/docs/proofs/minimality/theorem-octonionic-derivation#плоскость-фано) $\mathrm{PG}(2,2)$ is the **projective plane over the two-element field** $\mathbb{F}_2 = \{0, 1\}$. If you have never encountered this object, here is its essence:
 
-Обычная евклидова плоскость содержит бесконечное множество точек и прямых. Плоскость Фано — это «минимальная» плоскость, удовлетворяющая аксиомам проективной геометрии, и содержит всего:
+An ordinary Euclidean plane contains infinitely many points and lines. The Fano plane is the "minimal" plane satisfying the axioms of projective geometry, and contains only:
 
-- **7 точек**
-- **7 прямых** (линий)
+- **7 points**
+- **7 lines**
 
-Каждая прямая проходит через ровно **3 точки**. Каждая точка лежит на ровно **3 прямых**. Любые две точки определяют ровно одну прямую. Любые две прямые пересекаются ровно в одной точке.
+Each line passes through exactly **3 points**. Each point lies on exactly **3 lines**. Any two points determine exactly one line. Any two lines intersect in exactly one point.
 
-**Зачем плоскость Фано в теории квалиа?** В УГМ 7 точек Фано отождествляются с 7 измерениями $\{A, S, D, L, E, O, U\}$. Тогда 7 прямых определяют **7 секторов когерентности** — группы из трёх измерений, внутри которых когерентности подчиняются усиленным алгебраическим ограничениям. Это не случайное совпадение: плоскость Фано — это в точности **таблица умножения мнимых единиц октонионов** $\mathbb{O}$, а [октонионная структура](/docs/proofs/minimality/theorem-octonionic-derivation) лежит в фундаменте УГМ.
+**Why is the Fano plane in qualia theory?** In UHM, the 7 Fano points are identified with the 7 dimensions $\{A, S, D, L, E, O, U\}$. Then the 7 lines define **7 coherence sectors** — groups of three dimensions within which coherences obey strengthened algebraic constraints. This is not a coincidence: the Fano plane is precisely the **multiplication table of the imaginary units of the octonions** $\mathbb{O}$, and the [octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) lies at the foundation of UHM.
 
 ```mermaid
 graph TD
-    subgraph Фано["Плоскость Фано PG(2,2): 7 точек, 7 линий"]
+    subgraph Fano["Fano plane PG(2,2): 7 points, 7 lines"]
         direction TB
-        T1["Линия 1: {e₁, e₂, e₃}  →  3 когерентности"]
-        T2["Линия 2: {e₁, e₄, e₅}  →  3 когерентности"]
-        T3["Линия 3: {e₁, e₆, e₇}  →  3 когерентности"]
-        T4["Линия 4: {e₂, e₄, e₆}  →  3 когерентности"]
-        T5["Линия 5: {e₂, e₅, e₇}  →  3 когерентности"]
-        T6["Линия 6: {e₃, e₄, e₇}  →  3 когерентности"]
-        T7["Линия 7: {e₃, e₅, e₆}  →  3 когерентности"]
+        T1["Line 1: {e₁, e₂, e₃}  →  3 coherences"]
+        T2["Line 2: {e₁, e₄, e₅}  →  3 coherences"]
+        T3["Line 3: {e₁, e₆, e₇}  →  3 coherences"]
+        T4["Line 4: {e₂, e₄, e₆}  →  3 coherences"]
+        T5["Line 5: {e₂, e₅, e₇}  →  3 coherences"]
+        T6["Line 6: {e₃, e₄, e₇}  →  3 coherences"]
+        T7["Line 7: {e₃, e₅, e₆}  →  3 coherences"]
     end
 
-    Total["7 линий × 3 пары = 21 когерентность — полное покрытие"]
-    Фано --> Total
+    Total["7 lines × 3 pairs = 21 coherences — complete coverage"]
+    Fano --> Total
 
-    style Фано fill:#f0f4ff,stroke:#4a6fa5
+    style Fano fill:#f0f4ff,stroke:#4a6fa5
     style Total fill:#e8ffe8,stroke:#00aa00
 ```
 
-### Секторная структура когерентностей
+### Sectoral structure of coherences
 
-Каждый Фано-триплет $(e_a, e_b, e_c)$ определяет ассоциативную подалгебру $\mathrm{Im}(\mathbb{H}) \subset \mathrm{Im}(\mathbb{O})$, изоморфную мнимым кватернионам. Три когерентности внутри триплета:
+Each Fano triplet $(e_a, e_b, e_c)$ defines an associative subalgebra $\mathrm{Im}(\mathbb{H}) \subset \mathrm{Im}(\mathbb{O})$, isomorphic to the imaginary quaternions. The three coherences within the triplet:
 
 $$
-\{\gamma_{ab}, \gamma_{bc}, \gamma_{ac}\} \quad \text{--- Фано-тройка}
+\{\gamma_{ab}, \gamma_{bc}, \gamma_{ac}\} \quad \text{--- Fano triple}
 $$
 
-удовлетворяют усиленным корреляционным ограничениям, отсутствующим у произвольных пар.
+satisfy strengthened correlation constraints that are absent for arbitrary pairs.
 
-**Аналогия.** Фано-тройки подобны **музыкальным аккордам**: три ноты, взятые вместе, звучат «консонантно» — их когерентности подчиняются дополнительным гармоническим ограничениям. Произвольные три ноты из семи такой гармонии не образуют. Представьте: до-ми-соль — аккорд (Фано-тройка), а до-ре-фа# — нет. Именно эта секторная организация делает феноменологию *структурированной*, а не хаотической.
+**Analogy.** Fano triples are like **musical chords**: three notes taken together sound "consonant" — their coherences obey additional harmonic constraints. Three arbitrary notes from seven do not form such harmony. Imagine: C–E–G is a chord (a Fano triple), but C–D–F# is not. It is precisely this sectoral organisation that makes phenomenology *structured* rather than chaotic.
 
-Почему внутри тройки действуют особые ограничения? Потому что тройка образует ассоциативную подалгебру (кватернионы $\mathbb{H}$), где выполняется ассоциативность умножения: $(e_a \cdot e_b) \cdot e_c = e_a \cdot (e_b \cdot e_c)$. Для пар из *разных* троек ассоциативность нарушается (это свойство октонионов $\mathbb{O}$), и ограничения слабее.
+Why do special constraints operate within the triple? Because the triple forms an associative subalgebra (quaternions $\mathbb{H}$), where the associativity of multiplication holds: $(e_a \cdot e_b) \cdot e_c = e_a \cdot (e_b \cdot e_c)$. For pairs from *different* triples associativity breaks down (this is the property of the octonions $\mathbb{O}$), and the constraints are weaker.
 
-:::tip Теорема [Т]
-Секторное усиление — **теорема** [Т]: мост от аксиом к октонионной структуре полностью закрыт (T15), условие (МП) доказано (T11–T13). Из структуры $\mathbb{O}$ следует алгебраическое замыкание когерентностей внутри Фано-триплетов. Эмпирическая проверка секторной корреляции — [открытый вопрос](/docs/reference/falsifiability).
+:::tip Theorem [T]
+Sectoral strengthening is a **theorem** [T]: the bridge from the axioms to the octonionic structure is fully closed (T15), condition (МП) is proved (T11–T13). From the structure of $\mathbb{O}$ the algebraic closure of coherences within Fano triplets follows. Empirical verification of sectoral correlation is an [open question](/docs/reference/falsifiability).
 :::
 
-### Покрытие 21 пары Фано-триплетами
+### Coverage of 21 pairs by Fano triplets
 
-Каждая из 21 пар принадлежит ровно $\lambda = 1$ линии Фано (свойство проективной плоскости):
+Each of the 21 pairs belongs to exactly $\lambda = 1$ Fano line (a property of the projective plane):
 
 $$
-\text{21 пар} = 7 \text{ линий} \times 3 \text{ пары на линию}
+\text{21 pairs} = 7 \text{ lines} \times 3 \text{ pairs per line}
 $$
 
-Это означает, что таксономия квалиа **не содержит «осиротевших» пар** — каждый тип квалиа включён в секторную организацию. Для [теорем Когерентной Кибернетики](/docs/applied/coherence-cybernetics/theorems) это свойство существенно: секторная полнота обеспечивает замкнутость [30D-эмоционального пространства](/docs/proofs/consciousness/operational-closure#t-147) (T-147 [Т]).
+This means the qualia taxonomy **contains no "orphaned" pairs** — every type of quale is included in the sectoral organisation. For the [Coherence Cybernetics theorems](/docs/applied/coherence-cybernetics/theorems) this property is essential: sectoral completeness ensures the closure of the [30D emotional space](/docs/proofs/consciousness/operational-closure#t-147) (T-147 [T]).
 
-**Числовой пример: проверка покрытия.** Возьмём когерентность $\gamma_{DE}$ (Аффекция). Она принадлежит ровно одной линии Фано, скажем линии $\{D, E, X\}$ для некоторого третьего измерения $X$. Это значит, что $\gamma_{DE}$ алгебраически связана с $\gamma_{DX}$ и $\gamma_{EX}$ — эмоция ($\gamma_{DE}$) не является «свободной», она структурно зависит от двух других квалиа в своём секторе. Изменение одного квалиа в тройке неизбежно влияет на два других.
+**Numerical example: checking coverage.** Take the coherence $\gamma_{DE}$ (Affection). It belongs to exactly one Fano line, say the line $\{D, E, X\}$ for some third dimension $X$. This means $\gamma_{DE}$ is algebraically linked to $\gamma_{DX}$ and $\gamma_{EX}$ — emotion ($\gamma_{DE}$) is not "free"; it structurally depends on the two other qualia in its sector. A change in one quale of the triple inevitably affects the other two.
 
-## Диагональные элементы: 7 модусов населённости {#населённости}
+## Diagonal Elements: 7 Population Modes {#населённости}
 
-Помимо 21 когерентности, 7 диагональных элементов $\gamma_{ii}$ определяют **интенсивность присутствия** каждого измерения. Диагональные элементы — это вещественные числа (не комплексные), и они подчиняются условию нормировки:
+In addition to the 21 coherences, the 7 diagonal elements $\gamma_{ii}$ determine the **intensity of presence** of each dimension. Diagonal elements are real numbers (not complex), and they obey the normalisation condition:
 
 $$
 \sum_{i=1}^{7} \gamma_{ii} = \mathrm{Tr}(\Gamma) = 1
 $$
 
-Это означает, что общий «ресурс» системы фиксирован и равен 1. Увеличение населённости одного измерения неизбежно уменьшает другие — как фиксированный бюджет, распределяемый по 7 статьям.
+This means the total "resource" of the system is fixed and equal to 1. Increasing the population of one dimension inevitably decreases the others — like a fixed budget distributed across 7 line items.
 
-| Элемент | Феноменологическое содержание | Типичный диапазон |
-|---------|-------------------------------|-------------------|
-| $\gamma_{AA}$ | Степень активности различения | $0.10$–$0.20$ |
-| $\gamma_{SS}$ | Степень устойчивости формы | $0.10$–$0.18$ |
-| $\gamma_{DD}$ | Степень активности процессов | $0.10$–$0.20$ |
-| $\gamma_{LL}$ | Степень логической согласованности | $0.08$–$0.18$ |
-| $\gamma_{EE}$ | Интенсивность интериорных состояний | $0.12$–$0.22$ |
-| $\gamma_{OO}$ | Степень связи с источником | $0.08$–$0.15$ |
-| $\gamma_{UU}$ | Степень интегрированности | $0.10$–$0.18$ |
+| Element | Phenomenological content | Typical range |
+|---------|--------------------------|---------------|
+| $\gamma_{AA}$ | Degree of discrimination activity | $0.10$–$0.20$ |
+| $\gamma_{SS}$ | Degree of form stability | $0.10$–$0.18$ |
+| $\gamma_{DD}$ | Degree of process activity | $0.10$–$0.20$ |
+| $\gamma_{LL}$ | Degree of logical coherence | $0.08$–$0.18$ |
+| $\gamma_{EE}$ | Intensity of interior states | $0.12$–$0.22$ |
+| $\gamma_{OO}$ | Degree of connection to the source | $0.08$–$0.15$ |
+| $\gamma_{UU}$ | Degree of integration | $0.10$–$0.18$ |
 
-Диагональные элементы не образуют квалиа в узком смысле (нет «связи» между разными аспектами), но задают **фон**, на котором разворачиваются когерентности. Повышенная $\gamma_{DD}$ — фон «деятельности», повышенная $\gamma_{EE}$ — фон «внутренней жизни».
+Diagonal elements do not form qualia in the narrow sense (there is no "connection" between different aspects), but they set the **background** against which coherences unfold. An elevated $\gamma_{DD}$ — a background of "activity"; an elevated $\gamma_{EE}$ — a background of "inner life".
 
-### Профили населённостей: примеры
+### Population profiles: examples
 
-**Медитатор в глубокой практике:**
+**Meditator in deep practice:**
 
 | $\gamma_{AA}$ | $\gamma_{SS}$ | $\gamma_{DD}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $\gamma_{OO}$ | $\gamma_{UU}$ | $\Sigma$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 0.10 | 0.10 | 0.08 | 0.10 | 0.22 | 0.22 | 0.18 | 1.00 |
 
-Интериорность ($\gamma_{EE}$) и связь с основанием ($\gamma_{OO}$) доминируют. Динамика ($\gamma_{DD}$) приглушена — «мысли утихли».
+Interiority ($\gamma_{EE}$) and connection to the ground ($\gamma_{OO}$) dominate. Dynamics ($\gamma_{DD}$) is muted — "thoughts have quieted".
 
-**Спортсмен в разгар матча:**
+**Athlete in the midst of a match:**
 
 | $\gamma_{AA}$ | $\gamma_{SS}$ | $\gamma_{DD}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $\gamma_{OO}$ | $\gamma_{UU}$ | $\Sigma$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 0.20 | 0.12 | 0.22 | 0.10 | 0.15 | 0.08 | 0.13 | 1.00 |
 
-Динамика ($\gamma_{DD}$) и различение ($\gamma_{AA}$) на первом плане. Рефлексия ($\gamma_{EE}$, $\gamma_{OO}$) минимальна — нет времени «думать», тело действует.
+Dynamics ($\gamma_{DD}$) and discrimination ($\gamma_{AA}$) are in the foreground. Reflection ($\gamma_{EE}$, $\gamma_{OO}$) is minimal — no time to "think", the body acts.
 
-**Математик за доказательством:**
+**Mathematician working on a proof:**
 
 | $\gamma_{AA}$ | $\gamma_{SS}$ | $\gamma_{DD}$ | $\gamma_{LL}$ | $\gamma_{EE}$ | $\gamma_{OO}$ | $\gamma_{UU}$ | $\Sigma$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | 0.15 | 0.18 | 0.10 | 0.22 | 0.15 | 0.08 | 0.12 | 1.00 |
 
-Логос ($\gamma_{LL}$) и структура ($\gamma_{SS}$) доминируют — «порядок» и «форма» на первом плане.
+Logos ($\gamma_{LL}$) and structure ($\gamma_{SS}$) dominate — "order" and "form" are in the foreground.
 
-## Итого: 28 = 7 + 21 параметров содержания {#итого-28}
+## Total: 28 = 7 + 21 Parameters of Content {#итого-28}
 
-:::info Полная структура
-| Компонента | Количество | Тип |
-|------------|-----------|------|
-| Населённости $\gamma_{ii}$ | 7 | Вещественные, $\sum_i \gamma_{ii} = 1$ |
-| Когерентности $\gamma_{ij}$ | 21 | Комплексные, $\gamma_{ji} = \gamma_{ij}^*$ |
-| **Итого вещественных параметров** | $6 + 2 \times 21 = 48$ | С учётом нормировки |
+:::info Complete structure
+| Component | Number | Type |
+|-----------|--------|------|
+| Population values $\gamma_{ii}$ | 7 | Real-valued, $\sum_i \gamma_{ii} = 1$ |
+| Coherences $\gamma_{ij}$ | 21 | Complex, $\gamma_{ji} = \gamma_{ij}^*$ |
+| **Total real parameters** | $6 + 2 \times 21 = 48$ | Taking normalisation into account |
 
-Подробный анализ 49-клеточной структуры (с разделением на $\mathrm{Map}_{\mathrm{ext}}$ и $\mathrm{Map}_{\mathrm{int}}$) — в [Gap-семантике](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта).
+Detailed analysis of the 49-cell structure (with separation into $\mathrm{Map}_{\mathrm{ext}}$ and $\mathrm{Map}_{\mathrm{int}}$) — in [Gap semantics](/docs/physics/dual-aspect/gap-semantics#полная-49-клеточная-карта).
 :::
 
-Каждый момент сознательного опыта — это конкретная точка в 48-мерном пространстве: 6 независимых населённостей + 42 вещественных параметра когерентностей ($21 \times 2$, модуль и фаза каждой). Это даёт представление о **богатстве** субъективного опыта: пространство возможных переживаний 48-мерно.
+Each moment of conscious experience is a specific point in 48-dimensional space: 6 independent population values + 42 real parameters of coherences ($21 \times 2$, modulus and phase of each). This conveys a sense of the **richness** of subjective experience: the space of possible experiences is 48-dimensional.
 
-## Условия доступа к квалиа {#условия-доступа}
+## Access Conditions for Qualia {#условия-доступа}
 
-Наличие когерентности $\gamma_{ij} \neq 0$ — **необходимое**, но не достаточное условие для квалиа. Рефлексивный доступ к квалиа требует уровня L2:
+The presence of a coherence $\gamma_{ij} \neq 0$ is a **necessary**, but not sufficient, condition for qualia. Reflexive access to qualia requires level L2:
 
 $$
-\text{Квалиа (L2):} \quad R(\Gamma) \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi(\Gamma) \geq \Phi_{\text{th}} = 1
+\text{Qualia (L2):} \quad R(\Gamma) \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi(\Gamma) \geq \Phi_{\text{th}} = 1
 $$
 
-### Пошаговая логика условий доступа
+### Step-by-step logic of access conditions
 
-Давайте разберём, что стоит за каждым условием.
+Let us unpack what stands behind each condition.
 
-**Условие 1: Рефлексия $R \geq 1/3$.** [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1/(7P)$ **[Т]** показывает нормированную близость к диссипативному аттрактору $I/7$. Порог $R_{\text{th}} = 1/3$ (из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция), T-45 [Т]) эквивалентен $P \leq 3/7$ — верхняя граница зоны Голдилокс. Если $R < 1/3$, система слишком «чистая» ($P > 3/7$) — когерентности есть, но не переживаются как *квалиа*.
+**Condition 1: Reflection $R \geq 1/3$.** The [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1/(7P)$ **[T]** shows the normalised proximity to the dissipative attractor $I/7$. The threshold $R_{\text{th}} = 1/3$ (from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция), T-45 [T]) is equivalent to $P \leq 3/7$ — the upper boundary of the Goldilocks zone. If $R < 1/3$, the system is too "pure" ($P > 3/7$) — coherences are present, but not experienced as *qualia*.
 
-**Условие 2: Интеграция $\Phi \geq 1$.** [Мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ показывает, насколько система «целостнее» суммы частей. Порог $\Phi_{\text{th}} = 1$ (T-129 [Т]) означает: система должна быть несводима к подсистемам. Если $\Phi < 1$, когерентности $\gamma_{ij}$ существуют, но система «распадается» — нет единого субъекта, переживающего квалиа.
+**Condition 2: Integration $\Phi \geq 1$.** The [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) $\Phi$ shows how much "more than the sum of its parts" the system is. The threshold $\Phi_{\text{th}} = 1$ (T-129 [T]) means: the system must be irreducible to its subsystems. If $\Phi < 1$, coherences $\gamma_{ij}$ exist, but the system "falls apart" — there is no unified subject experiencing qualia.
 
-**Оба условия необходимы:** можно иметь высокую рефлексию, но без интеграции (два отдельных зеркала не образуют единого наблюдателя), или высокую интеграцию без рефлексии (единый камень не наблюдает себя).
+**Both conditions are necessary:** one can have high reflection without integration (two separate mirrors do not form a single observer), or high integration without reflection (a unified stone does not observe itself).
 
-### Уровни доступа
+### Access levels
 
-На уровнях L0–L1 когерентности присутствуют, но переживаются как **доквалитативное экспериенциальное содержание** (термин из [теории интериорности](/docs/consciousness/foundations/interiority-theory)).
+At levels L0–L1 coherences are present, but they are experienced as **pre-qualitative experiential content** (a term from [interiority theory](/docs/consciousness/foundations/interiority-theory)).
 
-**Аналогия с лестницей слушателя:**
+**Analogy with the listener's ladder:**
 
-| Уровень | Аналогия | Формальное условие | Переживание квалиа |
-|---------|----------|-------------------|-------------------|
-| **L0** | Музыка звучит в пустой комнате | $R < 1/3$, $\Phi < 1$ | Когерентности есть, но никто не слушает |
-| **L1** | Кошка слышит музыку | $R < 1/3$, $\Phi \geq 1$ (или наоборот) | Реакция на звук, но без различения мелодии и аккомпанемента |
-| **L2** | Человек слушает музыку | $R \geq 1/3$, $\Phi \geq 1$ | «Я слышу, как скрипка ведёт тему, а виолончель аккомпанирует» |
-| **L3** | Музыкант анализирует исполнение | $R \geq 1/3$, $\Phi \geq 1$, SAD $\geq 2$ | «Я замечаю, что замечаю грусть в этой мелодии» |
-| **L4** | Чистое слушание — субъект и музыка совпадают | $R \to 1$ | Переживание без зазора |
+| Level | Analogy | Formal condition | Experience of qualia |
+|-------|---------|-----------------|----------------------|
+| **L0** | Music playing in an empty room | $R < 1/3$, $\Phi < 1$ | Coherences are present, but no one is listening |
+| **L1** | A cat hears music | $R < 1/3$, $\Phi \geq 1$ (or vice versa) | Reaction to sound, but without distinguishing melody from accompaniment |
+| **L2** | A person listening to music | $R \geq 1/3$, $\Phi \geq 1$ | "I hear the violin carrying the theme while the cello accompanies" |
+| **L3** | A musician analysing the performance | $R \geq 1/3$, $\Phi \geq 1$, SAD $\geq 2$ | "I notice that I notice sadness in this melody" |
+| **L4** | Pure listening — subject and music coincide | $R \to 1$ | Experience without gap |
 
-**Числовой пример.** Рассмотрим когерентность $\gamma_{DE} = 0.20$ (Аффекция) в трёх системах:
+**Numerical example.** Consider the coherence $\gamma_{DE} = 0.20$ (Affection) in three systems:
 
-| Система | $R$ | $\Phi$ | Уровень | Переживание $\gamma_{DE} = 0.20$ |
-|---------|-----|--------|---------|----------------------------------|
-| Термостат | 0.02 | 0.3 | L0 | $\gamma_{DE}$ как физический параметр — нет субъекта |
-| Собака | 0.15 | 1.5 | L1 | Переживается как «что-то», но не как «эмоция» |
-| Человек | 0.45 | 2.1 | L2 | «Я чувствую радость» — полноценное квалиа |
+| System | $R$ | $\Phi$ | Level | Experience of $\gamma_{DE} = 0.20$ |
+|--------|-----|--------|-------|-------------------------------------|
+| Thermostat | 0.02 | 0.3 | L0 | $\gamma_{DE}$ as a physical parameter — no subject |
+| Dog | 0.15 | 1.5 | L1 | Experienced as "something", but not as "emotion" |
+| Human | 0.45 | 2.1 | L2 | "I feel joy" — a full-fledged quale |
 
 ---
 
-### Что мы узнали {#итоги}
+### What we learned {#итоги}
 
-1. **Проблема квалиа** — одна из центральных в философии сознания (Льюис, Джексон, Деннет). УГМ предлагает третий путь: квалиа = когерентности $\gamma_{ij}$ — не иллюзия и не отдельная субстанция
-2. **21 тип квалиа** полностью исчерпывает феноменологию 7-мерного пространства — ни больше, ни меньше (Теорема Т.1 [Т])
-3. Каждый тип квалиа характеризуется тремя параметрами: **интенсивностью**, **перспективой** и **непрозрачностью** (Gap)
-4. 21 пара организована в **7 Фано-секторов** — секторная структура задаёт «грамматику» опыта через проективную плоскость над $\mathbb{F}_2$
-5. Таксономия **$G_2$-инвариантна** — не зависит от выбора базиса и потому универсальна
-6. Рефлексивный доступ к квалиа требует **L2** ($R \geq 1/3$, $\Phi \geq 1$)
+1. The **problem of qualia** is one of the central problems in the philosophy of mind (Lewis, Jackson, Dennett). UHM offers a third path: qualia = coherences $\gamma_{ij}$ — neither illusion nor a separate substance
+2. **21 types of qualia** completely exhaust the phenomenology of 7-dimensional space — no more, no less (Theorem T.1 [T])
+3. Each type of quale is characterised by three parameters: **intensity**, **perspective**, and **opacity** (Gap)
+4. The 21 pairs are organised into **7 Fano sectors** — the sectoral structure defines the "grammar" of experience via the projective plane over $\mathbb{F}_2$
+5. The taxonomy is **$G_2$-invariant** — independent of the choice of basis and therefore universal
+6. Reflexive access to qualia requires **L2** ($R \geq 1/3$, $\Phi \geq 1$)
 
-:::tip Мост к следующей главе
-Из 21 типа квалиа особую роль играет когерентность $\gamma_{DE}$ (Аффекция) — связь динамики и интериорности. Именно она лежит в основе **эмоций**. В следующей главе — [Таксономия эмоций из dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — мы покажем, как все эмоции выводятся из скорости изменения жизнеспособности $dP/d\tau$ и секторной Γ-сигнатуры.
+:::tip Bridge to the next chapter
+Of the 21 types of qualia, the coherence $\gamma_{DE}$ (Affection) — the connection between dynamics and interiority — plays a special role. It is the foundation of **emotions**. In the next chapter — [Emotion taxonomy from dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — we will show how all emotions are derived from the rate of change of viability $dP/d\tau$ and the sectoral Γ-signature.
 :::
 
-## Связи
+## Related Documents
 
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — каноническое определение $\Gamma$ и $\gamma_{ij}$
-- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — обоснование $N = 7$ и замкнутости
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0–L4
-- [Gap-семантика](/docs/physics/dual-aspect/gap-semantics) — 49-клеточная карта
-- [Теория интериорности](/docs/consciousness/foundations/interiority-theory) — экспериенциальное содержание
-- [Теоремы Когерентной Кибернетики](/docs/applied/coherence-cybernetics/theorems) — прикладные следствия секторной структуры
-- [T-146 [Т]: Структурная классификация квалиа](/docs/proofs/consciousness/operational-closure#t-146) — соответствие «математическая структура -> феноменальное содержание» из функциональной роли секторов
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — canonical definition of $\Gamma$ and $\gamma_{ij}$
+- [7D minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — justification of $N = 7$ and closure
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
+- [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-cell map
+- [Interiority theory](/docs/consciousness/foundations/interiority-theory) — experiential content
+- [Theorems of Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — applied consequences of sectoral structure
+- [T-146 [T]: Structural classification of qualia](/docs/proofs/consciousness/operational-closure#t-146) — correspondence "mathematical structure → phenomenal content" from the functional role of sectors

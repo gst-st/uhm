@@ -225,7 +225,7 @@ $$
 
 **Определение 2.2 (Метрика на $\mathcal{D}(\mathcal{H})$):**
 
-[Норма Фробениуса](/docs/core/dynamics/coherence-matrix#норма-фробениуса):
+[Норма Фробениуса](/docs/core/dynamics/coherence-matrix#frobenius-norm):
 
 $$
 \|\rho_1 - \rho_2\|_F := \sqrt{\mathrm{Tr}((\rho_1 - \rho_2)^\dagger(\rho_1 - \rho_2))} = \sqrt{\sum_{ij} |\rho_{1,ij} - \rho_{2,ij}|^2}
@@ -348,7 +348,7 @@ $$
 где:
 - $k \in [0, 1)$ — параметр сжатия
 - $\mathcal{P}$ — любое CPTP-отображение
-- $\Gamma_{\text{anchor}} \in \mathcal{D}(\mathcal{H})$ — фиксированная «якорная» точка (например, [максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#максимально-смешанное-состояние) $I/N$)
+- $\Gamma_{\text{anchor}} \in \mathcal{D}(\mathcal{H})$ — фиксированная «якорная» точка (например, [максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $I/N$)
 
 **Лемма 2.1:** $\varphi_k$ — сжимающее отображение с константой $k$.
 
@@ -1470,7 +1470,7 @@ $$
 
 **Теорема 9.2 (Регенерация удерживает в $\mathcal{V}$):**
 
-Пусть $\varphi$ — сжимающее отображение с неподвижной точкой $\Gamma^* \in \mathcal{V}$ ([жизнеспособная область](/docs/core/dynamics/viability#область-жизнеспособности)).
+Пусть $\varphi$ — сжимающее отображение с неподвижной точкой $\Gamma^* \in \mathcal{V}$ ([жизнеспособная область](/docs/core/dynamics/viability#viability-domain)).
 
 Тогда при достаточно большом $\kappa$ регенерация противодействует диссипации и удерживает систему в $\mathcal{V}$:
 
@@ -1652,7 +1652,7 @@ $$
 
 **Доказательство:**
 
-1. По определению автономности [(A1)](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность): $\mathcal{I}(A:B|\partial A) = 0$ — условная независимость $A$ и $B$.
+1. По определению автономности [(A1)](/docs/core/foundations/axiom-septicity#prerequisite-autonomy): $\mathcal{I}(A:B|\partial A) = 0$ — условная независимость $A$ и $B$.
 
 2. Оператор $\varphi$ определяется как [левый сопряжённый к включению подобъектов](#φ-как-левый-сопряжённый-к-включению-подобъектов):
 $$

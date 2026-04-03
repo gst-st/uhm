@@ -63,7 +63,7 @@ Every mathematical theory begins with the question: **does it even work?** One c
 
 Imagine rolling a ball down a slope. The existence theorem says: the ball *will definitely* roll (it will not freeze at the starting point). The preservation theorem says: the ball remains a ball — it will not turn into gas or acquire negative mass. For our system this means that the coherence matrix $\Gamma$ remains physically meaningful throughout any evolution.
 
-### Theorem 6.1 (Existence of Dynamics) [T]
+### Theorem 6.1 (Existence of Dynamics) [T] {#theorem-61-existence-of-dynamics}
 
 :::note In Plain Terms
 If you place a living cell in a nutrient solution, it will start doing something. It will not "hang", like a computer. Theorem 6.1 is the mathematical guarantee that the CC evolution equation always has a solution: the system **will necessarily** evolve from any initial state.
@@ -81,7 +81,7 @@ For any initial state $\Gamma_0 \in \mathcal{V}$ there exists a unique solution 
 
 Existence of dynamics is a necessary but not sufficient condition. One must also verify that the evolution does not produce "physically meaningless" states — e.g. matrices with negative eigenvalues (which would mean negative probabilities).
 
-### Theorem 6.2 (Preservation of Γ Properties) [T]
+### Theorem 6.2 (Preservation of Γ Properties) [T] {#theorem-62-preservation-of-gamma-properties}
 
 :::note In Plain Terms
 Imagine an accountant keeping a company's balance sheet. Theorem 6.2 is the guarantee that the balance always closes: assets are non-negative, liabilities equal assets, and total capital does not appear from nowhere. In our case: $\Gamma$ remains a "legitimate" density matrix — Hermitian, positive semi-definite, and normalised — throughout the entire evolution.
@@ -109,14 +109,14 @@ Imagine a driver on a mountain road. To avoid falling off the edge, they must **
 
 This is a deep result. It connects **cybernetics** (feedback, control) with **philosophy** (self-consciousness, reflection) through a single mathematical formalism. Von Foerster intuitively foresaw this in his "second-order cybernetics", but could not prove it. Now it is a theorem.
 
-### Theorem 7.1 (Necessity of Self-Reference) [T]
+### Theorem 7.1 (Necessity of Self-Reference) [T] {#theorem-71-necessity-of-self-reference}
 
 :::note In Plain Terms
 You cannot drive a car without knowing where you are on the road. You cannot maintain your body temperature without measuring it. Theorem 7.1 says: **any** system that maintains its viability in a "noisy" environment must have an internal copy (model) of itself — an operator $\varphi$ that maps the state $\Gamma$ to an internal representation.
 
 For an AI engineer: this is the theoretical justification for world-models and self-models in agent architectures. An agent *must* have a self-model — this is not a luxury but a survival condition.
 
-**Connection to other concepts:** [Autopoiesis (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Self-modelling operator](/docs/proofs/categorical/formalization-phi), [Reflection](/docs/consciousness/foundations/self-observation)
+**Connection to other concepts:** [Autopoiesis (AP)](/docs/core/foundations/axiom-septicity#ap-autopoiesis), [Self-modelling operator](/docs/proofs/categorical/formalization-phi), [Reflection](/docs/consciousness/foundations/self-observation)
 :::
 
 :::info Statement
@@ -182,7 +182,7 @@ We now approach the central theorem of all of Coherence Cybernetics — a result
 
 The philosophical "zombie" is a thought experiment of David Chalmers: a being functionally indistinguishable from a human but lacking interiority. It behaves as if it sees the colour red, but "inside" there is absolute darkness. Most theories of consciousness cannot exclude such a possibility. CC can.
 
-The core of the argument is surprisingly simple. Recall the [orchestra analogy from the introduction](./introduction#что-такое-кибернетика-когерентности): the dissipator $\mathcal{D}$ is the hall that constantly "dampens" the sound. For the music to continue, the musicians must play again — that is the regenerator $\mathcal{R}$. But the regeneration rate $\kappa$ depends on E-coherence — on how much the orchestra *hears itself*. If interiority is zero ($\mathrm{Coh}_E = 1/7$, the minimum), regeneration is too weak to compensate dissipation, and the orchestra falls silent. The system **dies**.
+The core of the argument is surprisingly simple. Recall the [orchestra analogy from the introduction](./introduction#what-is-coherence-cybernetics): the dissipator $\mathcal{D}$ is the hall that constantly "dampens" the sound. For the music to continue, the musicians must play again — that is the regenerator $\mathcal{R}$. But the regeneration rate $\kappa$ depends on E-coherence — on how much the orchestra *hears itself*. If interiority is zero ($\mathrm{Coh}_E = 1/7$, the minimum), regeneration is too weak to compensate dissipation, and the orchestra falls silent. The system **dies**.
 
 Thus, the philosophical zombie — a system without interiority but functionally alive — is **mathematically impossible**.
 
@@ -245,7 +245,7 @@ The stationary state under $\varphi_{\text{base}}$ is **fully diagonal** ($\gamm
 Consequently, the stationary state under $\varphi_{\text{base}}$ **is not a Holon state**: it violates **(AP)** regardless of the value of $P_{\text{diag}}$. Therefore $\varphi = \varphi_{\text{coh}}$ with $\alpha < 1$ is **necessary** for any system satisfying (AP)+(PH)+(QG)+(V). $\square_a$
 
 **Step 3** (Non-zero stationary coherences).
-Under $\varphi_{\text{coh}}$ the [fixed point](#теорема-71-необходимость-самореференции-т) $\Gamma^*$ satisfies:
+Under $\varphi_{\text{coh}}$ the [fixed point](#theorem-71-necessity-of-self-reference) $\Gamma^*$ satisfies:
 
 **(3a)** All $\gamma_{ii}^* > 0$: by the [theorem on the necessity of each dimension](/docs/proofs/minimality/theorem-minimality-7#теорема-31-необходимость-7-измерений) [T], if $\gamma_{ii}^* = 0$ for some $i$, then the $i$-th dimension is absent in $\Gamma^*$, violating **(AP)** (for $i \in \{A,S,D,L,U\}$), **(PH)** (for $i = E$), or **(QG)** (for $i = O$).
 
@@ -272,7 +272,7 @@ $$
 \frac{\partial P^{(\infty)}}{\partial \mathrm{Coh}_E} = \frac{\partial P^{(\infty)}}{\partial \kappa} \cdot \kappa_0 > 0
 $$
 
-E-coherence **causally increases** the stationary purity. This includes causal influence on regeneration, [purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), and [free energy](/docs/core/dynamics/evolution#каноническое-delta-f):
+E-coherence **causally increases** the stationary purity. This includes causal influence on regeneration, [purity dynamics](/docs/core/dynamics/evolution#purity-dynamics), and [free energy](/docs/core/dynamics/evolution#каноническое-delta-f):
 
 $$
 \frac{\partial}{\partial \mathrm{Coh}_E}\!\left(\frac{dP}{d\tau}\bigg|_{\mathcal{R}}\right) = 2\kappa_0\,(f - P) \cdot g_V(P) > 0 \quad \text{for } P < P_{\text{target}}
@@ -281,7 +281,7 @@ $$
 $\square_b$
 
 **Step 5** (Explicit bound $\mathrm{Coh}_{\min}$).
-Contribution of the Fano dissipator to [purity dynamics](/docs/core/dynamics/viability#динамика-чистоты):
+Contribution of the Fano dissipator to [purity dynamics](/docs/core/dynamics/viability#purity-dynamics):
 
 $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} = 2\gamma \cdot \bigl(\mathrm{Tr}(\Gamma \cdot \mathcal{P}_{\text{Fano}}(\Gamma)) - P\bigr) = -\frac{4\gamma}{3}\,P_{\text{coh}}
@@ -416,7 +416,7 @@ This is the principle of **self-similarity**: the structure of CC reproduces its
 
 For a sociologist: this is the mathematical justification for what Luhmann intuitively felt — social systems reproduce themselves at every level.
 
-**Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
+**Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-autopoiesis), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
 :::
 
 :::tip Statement [T]
@@ -767,7 +767,7 @@ The formula $\mathcal{V}_{\text{hed}}$ is not an abstract measure: it is the *de
 
 Important: the formula is a theorem [T], but the **interpretation** of it as a subjective experience is [I]. Mathematics says *what* the derivative equals. Philosophy says *how it is experienced*.
 
-**Connection:** [Purity dynamics](/docs/core/dynamics/evolution#динамика-чистоты), [Replacement channel](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Interiority](/docs/consciousness/foundations/interiority-theory)
+**Connection:** [Purity dynamics](/docs/core/dynamics/evolution#purity-dynamics), [Replacement channel](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции), [Interiority](/docs/consciousness/foundations/interiority-theory)
 :::
 
 :::tip Statement

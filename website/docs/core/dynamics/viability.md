@@ -272,7 +272,7 @@ The fixed point of canonical $\varphi_{\text{coh}}$ has $P(\Gamma^*) = P_{\text{
 
 ## Purity dynamics
 
-The derivative of purity with respect to time (see [evolution](./evolution#динамика-чистоты)):
+The derivative of purity with respect to time (see [evolution](./evolution#purity-dynamics)):
 
 $$
 \frac{dP}{d\tau} = 2 \cdot \mathrm{Tr}\left(\Gamma \cdot \frac{d\Gamma}{d\tau}\right)

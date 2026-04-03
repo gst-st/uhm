@@ -1,532 +1,532 @@
 ---
 sidebar_position: 3
-title: "Внимание и память"
-description: "Внимание как перераспределение когерентности, типы памяти из немарковского ядра, забывание как декогеренция"
+title: "Attention and Memory"
+description: "Attention as redistribution of coherence, types of memory from the non-Markovian kernel, forgetting as decoherence"
 slug: /consciousness/states/attention-memory
 ---
 
-# Внимание и Память
+# Attention and Memory
 
-:::info Мост из предыдущей главы
-В [Бессознательном](/docs/consciousness/states/unconscious) мы увидели, что граница между сознательным и бессознательным определяется Gap-структурой — непрозрачностью каналов. Но чем управляется эта граница *в реальном времени*? Двумя механизмами: **вниманием** (перераспределение когерентности «здесь и сейчас») и **памятью** (влияние прошлого через немарковское ядро). Внимание решает, *что* попадает в фокус сознания. Память определяет, *как долго* это остаётся доступным.
+:::info Bridge from the previous chapter
+In [the Unconscious](/docs/consciousness/states/unconscious) we saw that the boundary between conscious and unconscious is determined by the Gap-structure — the opacity of channels. But what governs this boundary *in real time*? Two mechanisms: **attention** (redistribution of coherence 'here and now') and **memory** (the influence of the past through the non-Markovian kernel). Attention decides *what* enters the focus of consciousness. Memory determines *how long* it remains accessible.
 :::
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — её элементы
-- $\mathrm{Tr}(\Gamma) = 1$ — нормировка (условие следа)
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота (жизнеспособность)](/docs/core/dynamics/viability#определение-чистоты)
-- $\gamma_{AX}$ — когерентности между измерением $A$ (артикуляция/внимание) и другими измерениями $X$
-- $K(\tau)$ — ядро памяти ([немарковская динамика](/docs/applied/coherence-cybernetics/non-markovian#ядро-памяти))
-- $H_{\text{eff}}$ — эффективный гамильтониан ([эволюция Γ](/docs/core/dynamics/evolution))
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- Полная таблица нотации — в [Нотации](/docs/reference/notation)
+:::note On notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
+- $\mathrm{Tr}(\Gamma) = 1$ — normalisation (trace condition)
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
+- $\gamma_{AX}$ — coherences between dimension $A$ (articulation/attention) and other dimensions $X$
+- $K(\tau)$ — memory kernel ([non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian#ядро-памяти))
+- $H_{\text{eff}}$ — effective Hamiltonian ([evolution of Γ](/docs/core/dynamics/evolution))
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- Full notation table — see [Notation](/docs/reference/notation)
 :::
 
-:::warning Статус документа
-Определения внимания и памяти через структуру $\Gamma$ — **[О]** (определения по соглашению). Типология памяти через формы ядра $K(\tau)$ — **[С]** (условная при немарковской динамике когерентностей). Феноменологические интерпретации — **[И]**.
+:::warning Document status
+Definitions of attention and memory via the structure of $\Gamma$ — **[D]** (definitions by convention). Memory typology via forms of the kernel $K(\tau)$ — **[C]** (conditional on non-Markovian dynamics of coherences). Phenomenological interpretations — **[I]**.
 :::
 
-### Дорожная карта главы
+### Chapter roadmap
 
-1. **Историческая перспектива** — от Уильяма Джеймса через модели фильтра к УГМ
-2. **Внимание** — определение, механизм «прожектора», три типа, связь с Gap
-3. **Историческая перспектива памяти** — от Эббингауза через многоуровневые модели к УГМ
-4. **Память** — четыре типа из формы ядра $K(\tau)$: сенсорная, рабочая, долговременная, процедурная
-5. **Забывание** — два механизма (декогеренция ядра и увеличение Gap)
-6. **Интеграция** — как внимание, память и Gap образуют единую систему
+1. **Historical perspective** — from William James through filter models to UHM
+2. **Attention** — definition, spotlight mechanism, three types, connection to Gap
+3. **Historical perspective on memory** — from Ebbinghaus through multi-level models to UHM
+4. **Memory** — four types from the form of kernel $K(\tau)$: sensory, working, long-term, procedural
+5. **Forgetting** — two mechanisms (kernel decoherence and Gap increase)
+6. **Integration** — how attention, memory and Gap form a unified system
 
 ---
 
-## 1. Историческая перспектива: внимание {#история-внимание}
+## 1. Historical perspective: attention {#история-внимание}
 
-### 1.1 Уильям Джеймс (1890)
+### 1.1 William James (1890)
 
-> «Все знают, что такое внимание. Это овладевание разумом, в ясной и яркой форме, одним из нескольких одновременно возможных объектов или цепочек мысли.»
+> "Everyone knows what attention is. It is the taking possession by the mind, in clear and vivid form, of one out of what seem several simultaneously possible objects or trains of thought."
 >
-> — Уильям Джеймс, *«Принципы психологии»* (1890), гл. 11
+> — William James, *The Principles of Psychology* (1890), ch. 11
 
-Джеймс сформулировал ключевую интуицию: внимание — это *выбор* из множества возможных содержаний. Эта интуиция напрямую переводится в формализм УГМ: «множество возможных объектов» = множество когерентностей $\{\gamma_{AX}\}$; «овладевание одним» = увеличение $|\gamma_{AE_{\text{target}}}|$ за счёт остальных.
+James formulated the key intuition: attention is a *selection* from a set of possible contents. This intuition translates directly into the UHM formalism: 'the set of possible objects' = the set of coherences $\{\gamma_{AX}\}$; 'taking possession of one' = increasing $|\gamma_{AE_{\text{target}}}|$ at the expense of the others.
 
-### 1.2 Модели фильтра (1950–1970-е)
+### 1.2 Filter models (1950–1970s)
 
-**Бродбент (1958): фильтр ранней селекции.** Информация проходит через узкое «бутылочное горлышко» — только один канал обрабатывается полностью, остальные блокируются. В УГМ: $|\gamma_{AE_{\text{target}}}| \gg |\gamma_{AE_{\text{distractor}}}|$ — жёсткая фильтрация.
+**Broadbent (1958): early selection filter.** Information passes through a narrow 'bottleneck' — only one channel is fully processed, the rest are blocked. In UHM: $|\gamma_{AE_{\text{target}}}| \gg |\gamma_{AE_{\text{distractor}}}|$ — hard filtering.
 
-**Трейсман (1964): модель аттенуации.** Нецелевые каналы не блокируются полностью, а *ослабляются*. В УГМ: $|\gamma_{AE_{\text{distractor}}}| > 0$, но $|\gamma_{AE_{\text{distractor}}}| \ll |\gamma_{AE_{\text{target}}}|$ — мягкая фильтрация. Это объясняет «эффект коктейльной вечеринки»: вы можете услышать своё имя в чужом разговоре, потому что дистракторный канал не полностью заблокирован.
+**Treisman (1964): attenuation model.** Non-target channels are not fully blocked but *attenuated*. In UHM: $|\gamma_{AE_{\text{distractor}}}| > 0$, but $|\gamma_{AE_{\text{distractor}}}| \ll |\gamma_{AE_{\text{target}}}|$ — soft filtering. This explains the 'cocktail party effect': you can hear your own name in a nearby conversation because the distractor channel is not fully blocked.
 
-**Дойч и Дойч (1963): фильтр поздней селекции.** Вся информация обрабатывается полностью, селекция — на этапе ответа. В УГМ: все $|\gamma_{AX}|$ умеренны, селекция происходит через канал $(A,D)$ — внимание влияет на *действие* ($D$), а не на *восприятие* ($E$).
+**Deutsch and Deutsch (1963): late selection filter.** All information is fully processed; selection occurs at the response stage. In UHM: all $|\gamma_{AX}|$ are moderate; selection occurs via channel $(A,D)$ — attention influences *action* ($D$), not *perception* ($E$).
 
-### 1.3 Познер: компоненты внимания (1980–1990-е)
+### 1.3 Posner: components of attention (1980–1990s)
 
-Майкл Познер выделил три нейронные «сети внимания»:
-- **Alerting** (бдительность) — поддержание тонического уровня $\gamma_{AA}$
-- **Orienting** (ориентирование) — перенаправление когерентности: $\gamma_{AE_1} \to \gamma_{AE_2}$
-- **Executive** (исполнительный контроль) — разрешение конфликта между каналами
+Michael Posner identified three neural 'attention networks':
+- **Alerting** (vigilance) — maintenance of the tonic level $\gamma_{AA}$
+- **Orienting** (orientation) — redirecting coherence: $\gamma_{AE_1} \to \gamma_{AE_2}$
+- **Executive** (executive control) — resolving conflict between channels
 
-В УГМ все три сети описываются единым механизмом перераспределения A-секторных когерентностей.
+In UHM, all three networks are described by the unified mechanism of redistribution of A-sector coherences.
 
-### 1.4 От классических моделей к УГМ
+### 1.4 From classical models to UHM
 
-| Классическая модель | Формализм УГМ |
+| Classical model | UHM formalism |
 |---------------------|---------------|
-| Фильтр Бродбента | $|\gamma_{AE_{\text{target}}}| \gg 0$, $|\gamma_{AE_{\text{distr}}}| \approx 0$ |
-| Аттенуация Трейсман | $|\gamma_{AE_{\text{target}}}| > |\gamma_{AE_{\text{distr}}}| > 0$ |
-| Поздняя селекция | Все $|\gamma_{AX}|$ умерены; селекция через $(A,D)$ |
-| Alerting (Познер) | $\gamma_{AA}$ — тонический уровень |
-| Orienting (Познер) | $\gamma_{AE_1} \to \gamma_{AE_2}$ — перераспределение |
-| Executive (Познер) | Разрешение $|\gamma_{AX_1}| \stackrel{?}{>} |\gamma_{AX_2}|$ |
+| Broadbent's filter | $|\gamma_{AE_{\text{target}}}| \gg 0$, $|\gamma_{AE_{\text{distr}}}| \approx 0$ |
+| Treisman's attenuation | $|\gamma_{AE_{\text{target}}}| > |\gamma_{AE_{\text{distr}}}| > 0$ |
+| Late selection | All $|\gamma_{AX}|$ moderate; selection via $(A,D)$ |
+| Alerting (Posner) | $\gamma_{AA}$ — tonic level |
+| Orienting (Posner) | $\gamma_{AE_1} \to \gamma_{AE_2}$ — redistribution |
+| Executive (Posner) | Resolution of $|\gamma_{AX_1}| \stackrel{?}{>} |\gamma_{AX_2}|$ |
 
 ---
 
-## 2. Внимание как перераспределение когерентности {#внимание}
+## 2. Attention as redistribution of coherence {#внимание}
 
-### 2.1 Определение
+### 2.1 Definition
 
-:::info Определение (Внимание) [О]
-**Внимание** к паре измерений $(i,j)$ — временное увеличение модуля когерентности $|\gamma_{AX}|$ при одновременном уменьшении других $|\gamma_{AY}|$ ($Y \neq X$), обусловленное нормировкой $\mathrm{Tr}(\Gamma) = 1$:
+:::info Definition (Attention) [D]
+**Attention** to a pair of dimensions $(i,j)$ is a temporary increase in the modulus of coherence $|\gamma_{AX}|$ with a simultaneous decrease in other $|\gamma_{AY}|$ ($Y \neq X$), constrained by the normalisation $\mathrm{Tr}(\Gamma) = 1$:
 
 $$
-\text{Внимание к } X: \quad |\gamma_{AX}|(\tau) \uparrow \quad \Rightarrow \quad \sum_{Y \neq X} |\gamma_{AY}|(\tau) \downarrow
+\text{Attention to } X: \quad |\gamma_{AX}|(\tau) \uparrow \quad \Rightarrow \quad \sum_{Y \neq X} |\gamma_{AY}|(\tau) \downarrow
 $$
 
-Более формально: внимание — это унитарное (или близкое к унитарному) преобразование $\Gamma$, перераспределяющее когерентность из A-секторных каналов в целевой канал $(A,X)$.
+More formally: attention is a unitary (or near-unitary) transformation of $\Gamma$ that redistributes coherence from A-sector channels into the target channel $(A,X)$.
 :::
 
-### 2.2 Механизм «прожектора»: подробный вывод
+### 2.2 The 'spotlight' mechanism: detailed derivation
 
-Почему увеличение одной когерентности *неизбежно* ведёт к уменьшению других? Это прямое следствие нормировки следа.
+Why does increasing one coherence *inevitably* lead to decreasing others? This is a direct consequence of trace normalisation.
 
-**Шаг 1.** Условие следа: $\mathrm{Tr}(\Gamma) = \sum_{k=1}^{7} \gamma_{kk} = 1$.
+**Step 1.** Trace condition: $\mathrm{Tr}(\Gamma) = \sum_{k=1}^{7} \gamma_{kk} = 1$.
 
-**Шаг 2.** Неравенство Коши-Шварца для каждого элемента:
+**Step 2.** Cauchy-Schwarz inequality for each element:
 
 $$
 |\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \gamma_{XX}
 $$
 
-**Шаг 3.** Сумма всех A-секторных когерентностей ограничена:
+**Step 3.** The sum of all A-sector coherences is bounded:
 
 $$
 \sum_{X \neq A} |\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \sum_{X \neq A} \gamma_{XX} = \gamma_{AA} \cdot (1 - \gamma_{AA})
 $$
 
-Правая часть — фиксированная константа при данном $\gamma_{AA}$. Следовательно, сумма квадратов модулей ограничена, и увеличение одного слагаемого требует уменьшения хотя бы одного другого. Это и есть **механизм «прожектора»**.
+The right-hand side is a fixed constant for a given $\gamma_{AA}$. Consequently, the sum of squared moduli is bounded, and increasing one term requires decreasing at least one other. This is the **'spotlight' mechanism**.
 
-**Аналогия из повседневной жизни.** У вас ограниченный бюджет внимания — как ограниченное количество воды в ведре. Можно полить одну грядку обильно (фокусированное внимание на $\gamma_{AE}$), а остальные оставить сухими. Или полить все понемногу (распределённое внимание). Но суммарный объём воды фиксирован — это $\mathrm{Tr}(\Gamma) = 1$. Нельзя «создать» больше внимания, можно только перераспределить.
+**Everyday analogy.** You have a limited attention budget — like a limited amount of water in a bucket. You can water one bed abundantly (focused attention on $\gamma_{AE}$) and leave the others dry. Or water all of them a little (distributed attention). But the total volume of water is fixed — that is $\mathrm{Tr}(\Gamma) = 1$. You cannot 'create' more attention, you can only redistribute it.
 
-**Числовой пример: бюджет внимания.** Пусть $\gamma_{AA} = 0.15$ (доля внимания в общей «энергии»). Тогда:
+**Numerical example: attention budget.** Let $\gamma_{AA} = 0.15$ (the fraction of attention in the total 'energy'). Then:
 
 $$
 \sum_{X \neq A} |\gamma_{AX}|^2 \leq 0.15 \cdot (1 - 0.15) = 0.1275
 $$
 
-Это «бюджет». Можно распределить его так:
+This is the 'budget'. It can be distributed as follows:
 
-| Сценарий | $|\gamma_{AE}|$ | $|\gamma_{AS}|$ | $|\gamma_{AD}|$ | $|\gamma_{AL}|$ | Сумма $|\cdot|^2$ | SNR для $E$ |
+| Scenario | $|\gamma_{AE}|$ | $|\gamma_{AS}|$ | $|\gamma_{AD}|$ | $|\gamma_{AL}|$ | Sum $|\cdot|^2$ | SNR for $E$ |
 |----------|:---:|:---:|:---:|:---:|:---:|:---:|
-| Полная фокусировка | $0.12$ | $0.01$ | $0.01$ | $0.01$ | $0.0147$ | $36.0$ |
-| Умеренная фокусировка | $0.10$ | $0.04$ | $0.03$ | $0.03$ | $0.0134$ | $3.7$ |
-| Распределённое | $0.06$ | $0.06$ | $0.06$ | $0.06$ | $0.0144$ | $1.0$ |
+| Full focus | $0.12$ | $0.01$ | $0.01$ | $0.01$ | $0.0147$ | $36.0$ |
+| Moderate focus | $0.10$ | $0.04$ | $0.03$ | $0.03$ | $0.0134$ | $3.7$ |
+| Distributed | $0.06$ | $0.06$ | $0.06$ | $0.06$ | $0.0144$ | $1.0$ |
 
-При полной фокусировке SNR (отношение сигнал/шум) для целевого канала $E$ равен 36 — превосходное «слышание». При распределённом внимании SNR = 1 — на грани обнаружения. Вот почему попытка одновременно читать, слушать и думать о третьем приводит к тому, что ни одно из занятий не выполняется качественно.
+With full focus, the SNR (signal-to-noise ratio) for the target channel $E$ is 36 — excellent 'reception'. With distributed attention, SNR = 1 — on the detection threshold. This is why attempting to simultaneously read, listen, and think about a third thing results in none of the activities being performed well.
 
-### 2.3 Связь с [21-парной таксономией квалиа](/docs/consciousness/phenomenology/qualia-structure#таксономия)
+### 2.3 Connection to the [21-pair taxonomy of qualia](/docs/consciousness/phenomenology/qualia-structure#таксономия)
 
-Из [таблицы квалиа](/docs/consciousness/phenomenology/qualia-structure#полная-таблица-21-типа-квалиа):
-- $\gamma_{AE}$ — **Апперцепция** (квалиа #4): различение, вошедшее в интериорность
-- $\gamma_{AS}$ — **Морфогенез** (квалиа #1): кристаллизация форм
-- $\gamma_{AD}$ — **Актуализация** (квалиа #2): актуализация различения в процессе
-- $\gamma_{AL}$ — **Предикация** (квалиа #3): различение как логический предикат
+From the [qualia table](/docs/consciousness/phenomenology/qualia-structure#полная-таблица-21-типа-квалиа):
+- $\gamma_{AE}$ — **Apperception** (quale #4): discrimination that has entered interiority
+- $\gamma_{AS}$ — **Morphogenesis** (quale #1): crystallisation of forms
+- $\gamma_{AD}$ — **Actualisation** (quale #2): actualisation of distinction in process
+- $\gamma_{AL}$ — **Predication** (quale #3): distinction as logical predicate
 
-Направление внимания = выбор, какой из этих квалиативных типов доминирует. Когда вы рассматриваете картину, доминирует $\gamma_{AS}$ (формы); когда слушаете аргумент — $\gamma_{AL}$ (логика); когда медитируете — $\gamma_{AE}$ (чистое осознание).
+The direction of attention = the choice of which qualitative type dominates. When you contemplate a painting, $\gamma_{AS}$ dominates (forms); when listening to an argument — $\gamma_{AL}$ (logic); when meditating — $\gamma_{AE}$ (pure awareness).
 
-### 2.4 Типы внимания
+### 2.4 Types of attention
 
-:::tip Теорема (Типы внимания из нормировки) [О]
-Из нормировки $\mathrm{Tr}(\Gamma) = 1$ и неравенства Коши-Шварца $|\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \gamma_{XX}$ следуют три режима внимания:
+:::tip Theorem (Types of attention from normalisation) [D]
+From the normalisation $\mathrm{Tr}(\Gamma) = 1$ and the Cauchy-Schwarz inequality $|\gamma_{AX}|^2 \leq \gamma_{AA} \cdot \gamma_{XX}$ three attention modes follow:
 
-**(a) Селективное (фокусированное) внимание:**
+**(a) Selective (focused) attention:**
 
 $$
 |\gamma_{AE_{\text{target}}}| \uparrow, \quad |\gamma_{AE_{\text{distractor}}}| \downarrow
 $$
 
-Один целевой канал усиливается за счёт остальных. Отношение «сигнал/шум»:
+One target channel is amplified at the expense of the others. Signal-to-noise ratio:
 
 $$
 \mathrm{SNR} = \frac{|\gamma_{AE_{\text{target}}}|^2}{\sum_{X \neq E_{\text{target}}} |\gamma_{AX}|^2}
 $$
 
-Пример: чтение книги в шумной комнате. $|\gamma_{AL}| \uparrow$ (текст), $|\gamma_{AS}| \downarrow$ (визуальные дистракторы), $|\gamma_{AD}| \downarrow$ (фоновые звуки).
+Example: reading a book in a noisy room. $|\gamma_{AL}| \uparrow$ (text), $|\gamma_{AS}| \downarrow$ (visual distractors), $|\gamma_{AD}| \downarrow$ (background sounds).
 
-**(b) Устойчивое (sustained) внимание:**
+**(b) Sustained attention:**
 
-Поддержание повышенного $|\gamma_{AE}|$ на протяжении интервала $[\tau_0, \tau_0 + \Delta\tau]$:
+Maintaining elevated $|\gamma_{AE}|$ over the interval $[\tau_0, \tau_0 + \Delta\tau]$:
 
 $$
 |\gamma_{AE}(\tau)| \geq |\gamma_{AE}|_{\text{th}} \quad \forall\, \tau \in [\tau_0, \tau_0 + \Delta\tau]
 $$
 
-Энергетическая стоимость — поддержание $\gamma_{AA}$ против [диссипации](/docs/core/dynamics/evolution#полное-уравнение-движения). Со временем $\gamma_{AA}$ убывает из-за диссипации, и внимание «устаёт» — требуется активное поддержание (усилие воли).
+Energy cost — maintaining $\gamma_{AA}$ against [dissipation](/docs/core/dynamics/evolution#full-equation-of-motion). Over time $\gamma_{AA}$ decreases due to dissipation, and attention 'tires' — active maintenance is required (effort of will).
 
-Пример: вождение автомобиля на длинной прямой дороге. $|\gamma_{AE}| > \theta$ нужно поддерживать непрерывно, что требует постоянного «расхода» $\gamma_{AA}$.
+Example: driving a car on a long straight road. $|\gamma_{AE}| > \theta$ must be maintained continuously, which requires constant 'expenditure' of $\gamma_{AA}$.
 
-**(c) Распределённое (divided) внимание:**
+**(c) Distributed (divided) attention:**
 
-Несколько $|\gamma_{AX_k}|$ одновременно повышены, но каждый ниже, чем при фокусировке:
+Several $|\gamma_{AX_k}|$ are simultaneously elevated, but each is lower than under focused attention:
 
 $$
-\sum_k |\gamma_{AX_k}|^2 \leq \gamma_{AA} \cdot \sum_k \gamma_{X_k X_k} \quad \Rightarrow \quad |\gamma_{AX_k}| < |\gamma_{AX_k}|_{\text{фокус}}
+\sum_k |\gamma_{AX_k}|^2 \leq \gamma_{AA} \cdot \sum_k \gamma_{X_k X_k} \quad \Rightarrow \quad |\gamma_{AX_k}| < |\gamma_{AX_k}|_{\text{focus}}
 $$
 
-Следствие: распределённое внимание **неизбежно слабее** фокусированного для каждого отдельного канала — прямое следствие нормировки.
+Consequence: distributed attention is **inevitably weaker** than focused attention for each individual channel — a direct consequence of normalisation.
 
-Пример: ведение машины с одновременным разговором по телефону. $|\gamma_{AS}|$ (дорога) и $|\gamma_{AL}|$ (разговор) оба повышены, но каждый ниже, чем при фокусировке. Исследования показывают 30–50% снижение скорости реакции — прямой эффект «прожектора».
+Example: driving while simultaneously talking on the phone. $|\gamma_{AS}|$ (road) and $|\gamma_{AL}|$ (conversation) are both elevated, but each is lower than under focused attention. Research shows a 30–50% reduction in reaction speed — a direct spotlight effect.
 :::
 
-### 2.5 Внимание и Gap
+### 2.5 Attention and Gap
 
-Направление внимания на канал $(i,j)$ может снижать $\mathrm{Gap}(i,j)$ — это механизм, лежащий в основе [медитативных практик](/docs/consciousness/states/altered-states#медитация):
+Directing attention at channel $(i,j)$ can reduce $\mathrm{Gap}(i,j)$ — this is the mechanism underlying [meditative practices](/docs/consciousness/states/altered-states#медитация):
 
 $$
 \frac{\partial\,\mathrm{Gap}(i,E)}{\partial |\gamma_{AE}|} < 0
 $$
 
-**Мотивация.** Почему внимание снижает Gap? Формально: увеличение $|\gamma_{AE}|$ усиливает информационный поток между $A$ и $E$. Усиленный поток позволяет $\varphi$-оператору точнее «видеть» состояние канала $(i,E)$. Более точная самомодель ведёт к обнаружению рассогласования (Gap), а обнаруженное рассогласование запускает коррекцию (Gap-редукцию).
+**Motivation.** Why does attention reduce Gap? Formally: increasing $|\gamma_{AE}|$ intensifies the information flow between $A$ and $E$. The intensified flow allows the $\varphi$-operator to more accurately 'see' the state of channel $(i,E)$. A more accurate self-model leads to detection of misalignment (Gap), and detected misalignment triggers correction (Gap-reduction).
 
-**Числовой пример.** Практикующий mindfulness направляет внимание на дыхание (канал $S \to E$):
+**Numerical example.** A mindfulness practitioner directs attention at the breath (channel $S \to E$):
 
-| Время | $|\gamma_{AE}|$ | $\mathrm{Gap}(S,E)$ | $\mathrm{Gap}(D,E)$ | Субъективный опыт |
+| Time | $|\gamma_{AE}|$ | $\mathrm{Gap}(S,E)$ | $\mathrm{Gap}(D,E)$ | Subjective experience |
 |-------|:---:|:---:|:---:|:---|
-| $\tau = 0$ | $0.08$ | $0.40$ | $0.45$ | Рассеянность |
-| $\tau = 5$ мин | $0.15$ | $0.30$ | $0.42$ | «Начинаю чувствовать дыхание» |
-| $\tau = 15$ мин | $0.20$ | $0.18$ | $0.35$ | «Вижу напряжение в теле» |
-| $\tau = 30$ мин | $0.22$ | $0.12$ | $0.25$ | «Замечаю эмоции как телесные ощущения» |
+| $\tau = 0$ | $0.08$ | $0.40$ | $0.45$ | Distracted |
+| $\tau = 5$ min | $0.15$ | $0.30$ | $0.42$ | "Starting to feel the breath" |
+| $\tau = 15$ min | $0.20$ | $0.18$ | $0.35$ | "I see tension in the body" |
+| $\tau = 30$ min | $0.22$ | $0.12$ | $0.25$ | "I notice emotions as bodily sensations" |
 
-Усиление канала внимания–опыт коррелирует со снижением непрозрачности в E-секторных каналах. Это формализует интуицию: «то, на что обращено внимание, становится более прозрачным». Формально это означает, что внимание — один из механизмов перехода содержания из [бессознательного](/docs/consciousness/states/unconscious#динамика) в сознательное.
+Strengthening the attention–experience channel correlates with a reduction in opacity in E-sector channels. This formalises the intuition: 'that to which attention is directed becomes more transparent'. Formally, this means that attention is one of the mechanisms by which content transitions from the [unconscious](/docs/consciousness/states/unconscious#динамика) to the conscious.
 
 ---
 
-## 3. Историческая перспектива: память {#история-память}
+## 3. Historical perspective: memory {#история-память}
 
-### 3.1 Герман Эббингауз (1885)
+### 3.1 Hermann Ebbinghaus (1885)
 
-Эббингауз — первый исследователь, применивший экспериментальный метод к изучению памяти. Его главные открытия:
+Ebbinghaus was the first researcher to apply the experimental method to the study of memory. His main discoveries:
 
-- **Кривая забывания**: информация забывается по *степенному* закону — быстро сначала, затем всё медленнее. Эббингауз аппроксимировал это как $b(\tau) \sim \tau^{-\beta}$, $\beta \approx 0.3$.
-- **Кривая научения**: повторение улучшает запоминание, но с убывающей отдачей.
-- **Эффект интервалов**: распределённое повторение эффективнее массированного.
+- **Forgetting curve**: information is forgotten according to a *power* law — quickly at first, then ever more slowly. Ebbinghaus approximated this as $b(\tau) \sim \tau^{-\beta}$, $\beta \approx 0.3$.
+- **Learning curve**: repetition improves retention, but with diminishing returns.
+- **Spacing effect**: distributed repetition is more effective than massed practice.
 
-В формализме УГМ кривая забывания Эббингауза — прямое следствие **степенного ядра** $K(\tau) \sim \tau^{-\alpha}$ (раздел 4.5).
+In the UHM formalism, Ebbinghaus's forgetting curve is a direct consequence of the **power-law kernel** $K(\tau) \sim \tau^{-\alpha}$ (section 4.5).
 
-### 3.2 Аткинсон и Шиффрин (1968): модальная модель
+### 3.2 Atkinson and Shiffrin (1968): modal model
 
-Модель «трёх хранилищ»:
-- **Сенсорный регистр** — мгновенный слепок (длительность ~ 250 мс)
-- **Кратковременная (рабочая) память** — 7 ± 2 элемента, длительность ~ 20 с
-- **Долговременная память** — практически неограниченная ёмкость и длительность
+The 'three-store' model:
+- **Sensory register** — instantaneous snapshot (duration ~250 ms)
+- **Short-term (working) memory** — 7 ± 2 items, duration ~20 s
+- **Long-term memory** — virtually unlimited capacity and duration
 
-В УГМ эти три «хранилища» — не отдельные системы, а **три формы** одного и того же ядра $K(\tau)$:
+In UHM, these three 'stores' are not separate systems, but **three forms** of the same kernel $K(\tau)$:
 
-| Модель Аткинсона-Шиффрина | Формализм УГМ |
+| Atkinson-Shiffrin model | UHM formalism |
 |---------------------------|---------------|
-| Сенсорный регистр | $K(\tau) \sim \delta(\tau)$ — марковский предел |
-| Рабочая память | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ — экспоненциальное ядро |
-| Долговременная память | $K(\tau) \sim \tau^{-\alpha}$ — степенное ядро |
+| Sensory register | $K(\tau) \sim \delta(\tau)$ — Markovian limit |
+| Working memory | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ — exponential kernel |
+| Long-term memory | $K(\tau) \sim \tau^{-\alpha}$ — power-law kernel |
 
-### 3.3 Тульвинг (1972): виды памяти
+### 3.3 Tulving (1972): types of memory
 
-Эндель Тульвинг ввёл разграничение:
-- **Эпизодическая память** — память о конкретных событиях («я был вчера в кафе»)
-- **Семантическая память** — знание фактов («Париж — столица Франции»)
-- **Процедурная память** — навыки («как ехать на велосипеде»)
+Endel Tulving introduced the distinction:
+- **Episodic memory** — memory of specific events ('I was at the café yesterday')
+- **Semantic memory** — knowledge of facts ('Paris is the capital of France')
+- **Procedural memory** — skills ('how to ride a bicycle')
 
-В УГМ:
-- Эпизодическая и семантическая память различаются *формой* степенного ядра (разные значения $\alpha$)
-- Процедурная память принципиально отличается — она встроена в $H_{\text{eff}}$ (раздел 4.6)
+In UHM:
+- Episodic and semantic memory differ in the *shape* of the power-law kernel (different values of $\alpha$)
+- Procedural memory is fundamentally different — it is embedded in $H_{\text{eff}}$ (section 4.6)
 
 ---
 
-## 4. Типы памяти из немарковского ядра {#память}
+## 4. Types of memory from the non-Markovian kernel {#память}
 
-### 4.1 Ядро памяти и когнитивная память
+### 4.1 The memory kernel and cognitive memory
 
-[Немарковская динамика](/docs/applied/coherence-cybernetics/non-markovian) описывает когерентности с **памятью**: текущая эволюция $\gamma_{ij}(\tau)$ зависит от всей предшествующей истории через ядро $K(\tau - s)$:
+[Non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian) describes coherences with **memory**: the current evolution $\gamma_{ij}(\tau)$ depends on the entire preceding history through the kernel $K(\tau - s)$:
 
 $$
 \frac{d\gamma_{ij}}{d\tau} = -i\Delta\omega_{ij}\,\gamma_{ij}(\tau) + \int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds + \mathcal{R}_{ij}
 $$
 
-(см. [Gap-динамика, раздел 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты))
+(see [Gap-dynamics, section 4](/docs/core/dynamics/gap-dynamics#немарковские-эффекты))
 
-Разберём каждый член:
-- **$-i\Delta\omega_{ij}\,\gamma_{ij}(\tau)$** — свободная эволюция (фазовый набег)
-- **$\int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds$** — *память*: влияние всех прошлых состояний. Это *свёрточный* интеграл — текущее состояние зависит от взвешенной суммы прошлых
-- **$\mathcal{R}_{ij}$** — регенерация ([оператор ℛ](/docs/core/dynamics/evolution))
+Let us examine each term:
+- **$-i\Delta\omega_{ij}\,\gamma_{ij}(\tau)$** — free evolution (phase accumulation)
+- **$\int_0^\tau K_{ij}(\tau - s)\, \gamma_{ij}(s)\, ds$** — *memory*: the influence of all past states. This is a *convolutional* integral — the current state depends on a weighted sum of past states
+- **$\mathcal{R}_{ij}$** — regeneration ([operator ℛ](/docs/core/dynamics/evolution))
 
-Форма ядра $K(\tau)$ определяет **тип когнитивной памяти**. Аналогия: $K(\tau)$ — это «фильтр прошлого». Дельта-функция = «помню только настоящее». Экспонента = «помню недавнее, но быстро забываю». Степенная функция = «помню долго, забываю медленно».
+The form of the kernel $K(\tau)$ determines the **type of cognitive memory**. Analogy: $K(\tau)$ is a 'filter of the past'. Delta function = 'I remember only the present'. Exponential = 'I remember recent events, but forget quickly'. Power function = 'I remember for a long time, I forget slowly'.
 
-### 4.2 Типология памяти
+### 4.2 Memory typology
 
-:::info Определение (Типы памяти) [С]
-Условие: [немарковская динамика когерентностей](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Четыре типа памяти определяются формой ядра $K(\tau)$:
+:::info Definition (Types of memory) [C]
+Condition: [non-Markovian dynamics of coherences](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). Four types of memory are defined by the form of the kernel $K(\tau)$:
 
-| Тип памяти | Ядро $K(\tau)$ | Характеристика | Временной масштаб |
+| Memory type | Kernel $K(\tau)$ | Characteristic | Time scale |
 |------------|----------------|----------------|-------------------|
-| **Сенсорная** | $K(\tau) \sim \delta(\tau - \tau')$ | Мгновенная, без персистенции | $\tau_{\text{mem}} \to 0$ |
-| **Рабочая** | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ | Экспоненциальный распад | $\tau_{WM} \sim$ секунды |
-| **Долговременная** | $K(\tau) \sim (\tau)^{-\alpha}$, $\alpha \in (0,1)$ | Степенной распад, медленное угасание | $\tau_{\text{mem}} \to \infty$ |
-| **Процедурная** | Встроена в $H_{\text{eff}}$ | Структура эволюции | Не ограничена |
+| **Sensory** | $K(\tau) \sim \delta(\tau - \tau')$ | Instantaneous, no persistence | $\tau_{\text{mem}} \to 0$ |
+| **Working** | $K(\tau) \sim e^{-\tau/\tau_{WM}}$ | Exponential decay | $\tau_{WM} \sim$ seconds |
+| **Long-term** | $K(\tau) \sim (\tau)^{-\alpha}$, $\alpha \in (0,1)$ | Power-law decay, slow fading | $\tau_{\text{mem}} \to \infty$ |
+| **Procedural** | Embedded in $H_{\text{eff}}$ | Structure of evolution | Unbounded |
 
 :::
 
-### 4.3 Сенсорная память
+### 4.3 Sensory memory
 
 $$
 K_{\text{sens}}(\tau) = -\Gamma_2 \cdot \delta(\tau)
 $$
 
-**Марковский предел** — память отсутствует. Текущее состояние когерентности определяется только текущими условиями. Физический аналог: мгновенный сенсорный отпечаток, исчезающий при прекращении стимула.
+**Markovian limit** — no memory. The current coherence state is determined only by current conditions. Physical analogue: an instantaneous sensory imprint that disappears when the stimulus ceases.
 
-**Мотивация.** Зачем вводить «нулевую память» как отдельный тип? Потому что это *предельный случай*, необходимый для полноты классификации. Дельта-функция $\delta(\tau)$ означает: «прошлое не влияет на настоящее». Формально: свёрточный интеграл вырождается:
+**Motivation.** Why introduce 'zero memory' as a separate type? Because it is the *limiting case* required for completeness of the classification. The delta function $\delta(\tau)$ means: 'the past does not influence the present'. Formally: the convolution integral degenerates:
 
 $$
 \int_0^\tau K_{\text{sens}}(\tau - s)\, \gamma_{ij}(s)\, ds = -\Gamma_2\, \gamma_{ij}(\tau)
 $$
 
-— просто экспоненциальный распад с константой $\Gamma_2$.
+— simply exponential decay with constant $\Gamma_2$.
 
-**Аналогия.** Сенсорная память — как след пальца на запотевшем стекле: существует, пока палец на стекле, и исчезает мгновенно. В формализме: ядро $K = \delta$, нет «хвоста» — прошлое не влияет на настоящее.
+**Analogy.** Sensory memory is like a fingerprint on a fogged-up window: it exists while the finger is on the glass and disappears instantly. In the formalism: kernel $K = \delta$, there is no 'tail' — the past does not influence the present.
 
-**Числовой пример.** Иконическая память (зрительный сенсорный буфер): при $\Gamma_2 = 4$ Гц, время полужизни $\tau_{1/2} = \ln 2 / \Gamma_2 \approx 170$ мс. Эксперимент Сперлинга (1960): испытуемые помнят до 12 букв в течение ~300 мс, затем — полная потеря. Предсказание: $\tau_{\text{mem}} \propto 1/\Gamma_2 = 250$ мс — согласуется с данными.
+**Numerical example.** Iconic memory (visual sensory buffer): at $\Gamma_2 = 4$ Hz, the half-life is $\tau_{1/2} = \ln 2 / \Gamma_2 \approx 170$ ms. Sperling's experiment (1960): subjects remembered up to 12 letters for ~300 ms, then complete loss. Prediction: $\tau_{\text{mem}} \propto 1/\Gamma_2 = 250$ ms — consistent with the data.
 
-### 4.4 Рабочая память
+### 4.4 Working memory
 
 $$
 K_{WM}(\tau) = -\Gamma_2 \omega_c \cdot e^{-\omega_c \tau}, \quad \tau_{WM} = 1/\omega_c
 $$
 
-Экспоненциальное ядро — стандартная модель из [немарковской динамики](/docs/applied/coherence-cybernetics/non-markovian#экспоненциальное-ядро).
+Exponential kernel — the standard model from [non-Markovian dynamics](/docs/applied/coherence-cybernetics/non-markovian#экспоненциальное-ядро).
 
-**Подробный вывод.** По [Теореме 5.1 Gap-динамики](/docs/core/dynamics/gap-dynamics#немарковские-эффекты), при конечном $\omega_c$ решение свёрточного уравнения содержит затухающие осцилляции:
+**Detailed derivation.** By [Theorem 5.1 of Gap-dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты), at finite $\omega_c$ the solution of the convolution equation contains damped oscillations:
 
 $$
 \gamma_{ij}(\tau) \propto e^{-\gamma\tau} \cos(\omega_r \tau), \quad \omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}
 $$
 
-где $\gamma$ — скорость затухания, $\omega_r$ — частота осцилляций (частота «освежения»).
+where $\gamma$ is the decay rate, $\omega_r$ is the oscillation frequency (refresh rate).
 
-**Интерпретация осцилляций.** Когерентность не просто затухает, а *осциллирует*: субъект «возвращается» к содержанию перед его окончательным угасанием. Каждый цикл осцилляции — один «прогон» рабочей памяти (субвокальное повторение, визуальная ревизия). Пока $|\gamma_{ij}(\tau)| > \varepsilon_{\min}$, содержание «удерживается»; когда затухание побеждает — содержание утрачивается.
+**Interpretation of oscillations.** Coherence does not simply decay, but *oscillates*: the subject 'returns' to the content before its final disappearance. Each oscillation cycle is one 'run' of working memory (subvocal rehearsal, visual revision). While $|\gamma_{ij}(\tau)| > \varepsilon_{\min}$, content is 'held'; when damping prevails — content is lost.
 
-**Числовой пример (подробный).** Удержание телефонного номера:
+**Numerical example (detailed).** Holding a phone number:
 
-- $\tau_{WM} = 1/\omega_c = 5$ с (типичная длительность рабочей памяти без повторения)
-- $\Gamma_2 = 0.3$ с$^{-1}$ (скорость декогеренции)
-- $\omega_c = 0.2$ Гц (частота ядра)
-- Частота освежения: $\omega_r = \sqrt{0.2 \times 0.3 - \gamma^2} \approx 0.15$ Гц при $\gamma = 0.1$ с$^{-1}$
-- За время удержания (5 с): $\omega_r \times 5 \approx 0.75$ циклов — ~6 «прогонов»
+- $\tau_{WM} = 1/\omega_c = 5$ s (typical working memory duration without rehearsal)
+- $\Gamma_2 = 0.3$ s$^{-1}$ (decoherence rate)
+- $\omega_c = 0.2$ Hz (kernel frequency)
+- Refresh frequency: $\omega_r = \sqrt{0.2 \times 0.3 - \gamma^2} \approx 0.15$ Hz at $\gamma = 0.1$ s$^{-1}$
+- During holding (5 s): $\omega_r \times 5 \approx 0.75$ cycles — ~6 'runs'
 
-Это согласуется с данными о субвокальном повторении: внутренне проговаривая номер со скоростью ~2 слога/с, за 5 секунд можно сделать ~6 повторений 7-значного числа.
+This is consistent with data on subvocal rehearsal: internally articulating the number at ~2 syllables/s, one can complete ~6 rehearsals of a 7-digit number in 5 seconds.
 
-:::info Интерпретация [И]
-Осцилляции рабочей памяти соответствуют «перебору» содержания: когерентность не просто затухает, а осциллирует — субъект «возвращается» к содержанию перед его окончательным угасанием. Частота $\omega_r$ определяет скорость «освежения» рабочей памяти.
+:::info Interpretation [I]
+Working memory oscillations correspond to 'cycling through' the content: coherence does not simply decay but oscillates — the subject 'returns' to the content before its final disappearance. The frequency $\omega_r$ determines the 'refresh rate' of working memory.
 
-Нейрофизиологический коррелят: гамма-осцилляции (30–80 Гц) в префронтальной коре при удержании информации в рабочей памяти. Эти осцилляции — нейронная реализация $\omega_r$.
+Neurophysiological correlate: gamma oscillations (30–80 Hz) in the prefrontal cortex during information maintenance in working memory. These oscillations are the neural implementation of $\omega_r$.
 :::
 
-### 4.5 Долговременная память
+### 4.5 Long-term memory
 
 $$
 K_{LTM}(\tau) \sim -\Gamma_2 \cdot \tau^{-\alpha}, \quad 0 < \alpha < 1
 $$
 
-Степенной распад — ядро убывает медленнее экспоненты. Это «тяжёлый хвост»: информация сохраняется неопределённо долго, хотя интенсивность постепенно падает.
+Power-law decay — the kernel decreases more slowly than an exponential. This is a 'heavy tail': information is preserved indefinitely, though the intensity gradually falls.
 
-**Мотивация.** Почему именно степенной закон? Экспоненциальный распад ($e^{-\tau/\tau_0}$) подразумевает *характерный масштаб* $\tau_0$: информация «живёт» примерно $\tau_0$, затем исчезает. Но эмпирические данные показывают, что память не имеет характерного масштаба — забывание не ускоряется и не замедляется на определённом временном горизонте. Степенной закон $\tau^{-\alpha}$ — единственная функция без характерного масштаба (масштабная инвариантность).
+**Motivation.** Why specifically a power law? Exponential decay ($e^{-\tau/\tau_0}$) implies a *characteristic scale* $\tau_0$: information 'lives' for approximately $\tau_0$, then disappears. But empirical data show that memory has no characteristic scale — forgetting does not speed up or slow down at a particular time horizon. The power law $\tau^{-\alpha}$ is the only function without a characteristic scale (scale invariance).
 
-:::tip Теорема (Степенной закон забывания) [С]
-Условие: степенное ядро $K(\tau) \sim \tau^{-\alpha}$. Амплитуда когерентности при степенном ядре затухает как:
+:::tip Theorem (Power law of forgetting) [C]
+Condition: power-law kernel $K(\tau) \sim \tau^{-\alpha}$. The coherence amplitude under a power-law kernel decays as:
 
 $$
 |\gamma_{ij}(\tau)| \sim |\gamma_{ij}(0)| \cdot \tau^{-\beta}, \quad \beta = \frac{\alpha}{2}
 $$
 
-Это воспроизводит **кривую забывания Эббингауза** при $\alpha \approx 0.5$–$0.7$ (эмпирический результат $\beta \approx 0.25$–$0.35$).
+This reproduces the **Ebbinghaus forgetting curve** at $\alpha \approx 0.5$–$0.7$ (empirical result $\beta \approx 0.25$–$0.35$).
 
-**Аргумент.** Лапласов образ $\hat{K}(s) \sim s^{\alpha - 1}$ при $\alpha < 1$ (дробный оператор). Свёрточное уравнение $d\gamma/d\tau = \int_0^\tau K(\tau-s)\gamma(s)ds$ в Лапласовом представлении: $s\hat{\gamma} = \hat{K} \cdot \hat{\gamma}$, решение: $\hat{\gamma}(s) \sim s^{-1} \cdot s^{1-\alpha} = s^{-\alpha}$. Обратное преобразование: $\gamma(\tau) \sim \tau^{\alpha-1}$. С учётом начального условия и множителя $\Gamma_2$: $|\gamma(\tau)| \sim |\gamma(0)| \cdot \tau^{-\alpha/2}$, т.е. $\beta = \alpha/2$.
+**Argument.** Laplace image $\hat{K}(s) \sim s^{\alpha - 1}$ at $\alpha < 1$ (fractional operator). The convolution equation $d\gamma/d\tau = \int_0^\tau K(\tau-s)\gamma(s)ds$ in Laplace representation: $s\hat{\gamma} = \hat{K} \cdot \hat{\gamma}$, solution: $\hat{\gamma}(s) \sim s^{-1} \cdot s^{1-\alpha} = s^{-\alpha}$. Inverse transform: $\gamma(\tau) \sim \tau^{\alpha-1}$. Accounting for the initial condition and factor $\Gamma_2$: $|\gamma(\tau)| \sim |\gamma(0)| \cdot \tau^{-\alpha/2}$, i.e. $\beta = \alpha/2$.
 :::
 
-**Числовой пример: кривая забывания Эббингауза.** Выученное стихотворение с начальной когерентностью $|\gamma_{ij}(0)| = 0.30$ и $\alpha = 0.6$ ($\beta = 0.3$):
+**Numerical example: Ebbinghaus forgetting curve.** A learned poem with initial coherence $|\gamma_{ij}(0)| = 0.30$ and $\alpha = 0.6$ ($\beta = 0.3$):
 
-| Время $\tau$ | $|\gamma_{ij}(\tau)|$ | Доля от начальной | Субъективно |
+| Time $\tau$ | $|\gamma_{ij}(\tau)|$ | Fraction of initial | Subjectively |
 |:---:|:---:|:---:|:---|
-| 1 день | $0.30 \cdot 1^{-0.3} = 0.30$ | 100% | Помню хорошо |
-| 7 дней | $0.30 \cdot 7^{-0.3} \approx 0.17$ | 56% | Помню основное |
-| 30 дней | $0.30 \cdot 30^{-0.3} \approx 0.10$ | 34% | Помню отдельные строфы |
-| 365 дней | $0.30 \cdot 365^{-0.3} \approx 0.05$ | 17% | Помню тему, отдельные строки |
-| 10 лет ($3650$ дней) | $0.30 \cdot 3650^{-0.3} \approx 0.025$ | 8% | Смутное воспоминание |
-| 50 лет ($18250$ дней) | $0.30 \cdot 18250^{-0.3} \approx 0.015$ | 5% | Следы сохраняются |
+| 1 day | $0.30 \cdot 1^{-0.3} = 0.30$ | 100% | Remember well |
+| 7 days | $0.30 \cdot 7^{-0.3} \approx 0.17$ | 56% | Remember the main points |
+| 30 days | $0.30 \cdot 30^{-0.3} \approx 0.10$ | 34% | Remember individual stanzas |
+| 365 days | $0.30 \cdot 365^{-0.3} \approx 0.05$ | 17% | Remember the theme, individual lines |
+| 10 years ($3650$ days) | $0.30 \cdot 3650^{-0.3} \approx 0.025$ | 8% | Vague recollection |
+| 50 years ($18250$ days) | $0.30 \cdot 18250^{-0.3} \approx 0.015$ | 5% | Traces remain |
 
-Обратите внимание: даже через 50 лет $|\gamma| = 0.015 > 0$ — следы сохраняются! Это принципиальное отличие от экспоненциального распада, при котором через 50 лет $|\gamma| \approx e^{-50/5} \approx 5 \times 10^{-5}$ — практически ноль. Степенной хвост объясняет, почему пожилые люди помнят события 60-летней давности — «хвост» ядра убывает медленно.
+Note: even after 50 years $|\gamma| = 0.015 > 0$ — traces remain! This is a fundamental difference from exponential decay, under which after 50 years $|\gamma| \approx e^{-50/5} \approx 5 \times 10^{-5}$ — practically zero. The power-law tail explains why elderly people remember events from 60 years ago — the 'tail' of the kernel decays slowly.
 
-### 4.6 Процедурная память
+### 4.6 Procedural memory
 
 $$
-\text{Процедурная память:} \quad K \hookrightarrow H_{\text{eff}}
+\text{Procedural memory:} \quad K \hookrightarrow H_{\text{eff}}
 $$
 
-Процедурная память — не ядро в уравнении когерентности, а **структура самого гамильтониана** $H_{\text{eff}}$. Навык «записан» в параметрах эволюции: частоты $\omega_i$, константы связи, операторы Линдблада.
+Procedural memory is not a kernel in the coherence equation, but the **structure of the Hamiltonian itself** $H_{\text{eff}}$. A skill is 'encoded' in the parameters of evolution: frequencies $\omega_i$, coupling constants, Lindblad operators.
 
-**Мотивация.** Почему процедурная память так отличается от остальных? Потому что она хранит не *содержание* (когерентность $\gamma_{ij}$), а *правило* (как $\gamma_{ij}$ эволюционирует). Декларативная память — это «что», процедурная — «как».
+**Motivation.** Why does procedural memory differ so fundamentally from the others? Because it stores not *content* (coherence $\gamma_{ij}$), but a *rule* (how $\gamma_{ij}$ evolves). Declarative memory is the 'what', procedural is the 'how'.
 
-:::info Интерпретация [И]
-Процедурная память фундаментально отличается от остальных типов: она не затухает, поскольку не зависит от ядра $K(\tau)$, а встроена в сам механизм эволюции. «Забыть» процедурную память = изменить $H_{\text{eff}}$, что требует структурной перестройки системы, а не просто декогеренции отдельных когерентностей.
+:::info Interpretation [I]
+Procedural memory is fundamentally different from all other types: it does not decay, since it does not depend on the kernel $K(\tau)$, but is embedded in the mechanism of evolution itself. To 'forget' procedural memory = to change $H_{\text{eff}}$, which requires a structural restructuring of the system, not merely the decoherence of individual coherences.
 
-**Аналогия.** Декларативная память (рабочая + долговременная) — записи на доске, которые постепенно стираются. Процедурная память — форма самой доски: вы можете стереть все записи, но доска останется прямоугольной. Умение ездить на велосипеде «записано» не в когерентностях $\gamma_{ij}$ (которые затухают), а в структуре $H_{\text{eff}}$ (которая перестраивается только при фундаментальных изменениях).
+**Analogy.** Declarative memory (working + long-term) — notes on a blackboard that gradually fade. Procedural memory — the shape of the blackboard itself: you can erase all the notes, but the board will remain rectangular. The ability to ride a bicycle is 'encoded' not in the coherences $\gamma_{ij}$ (which decay), but in the structure of $H_{\text{eff}}$ (which is restructured only under fundamental changes).
 
-Ещё одна аналогия: декларативная память — текст программы (данные, которые можно удалить); процедурная — компилятор (инструмент, который обрабатывает данные). Компилятор можно «забыть» только переустановив операционную систему.
+Another analogy: declarative memory — the source code of a program (data that can be deleted); procedural — the compiler (the tool that processes the data). The compiler can only be 'forgotten' by reinstalling the operating system.
 :::
 
-**Числовой пример: почему велосипед не забывается.** Человек научился ездить на велосипеде в 7 лет. К 70 годам:
+**Numerical example: why cycling is not forgotten.** A person learned to ride a bicycle at age 7. By age 70:
 
-| Тип памяти | Содержание | Ядро | Через 63 года |
+| Memory type | Content | Kernel | After 63 years |
 |------------|-----------|------|:---:|
-| Эпизодическая | «Папа держал руль» | $K \sim \tau^{-0.6}$ | $|\gamma| \approx 0.01$ (смутно) |
-| Семантическая | «Велосипед имеет два колеса» | $K \sim \tau^{-0.4}$ | $|\gamma| \approx 0.05$ (помнит) |
-| Процедурная | Навык езды | $K \hookrightarrow H_{\text{eff}}$ | Полностью сохранён |
+| Episodic | "Dad was holding the handlebars" | $K \sim \tau^{-0.6}$ | $|\gamma| \approx 0.01$ (faintly) |
+| Semantic | "A bicycle has two wheels" | $K \sim \tau^{-0.4}$ | $|\gamma| \approx 0.05$ (remembers) |
+| Procedural | Riding skill | $K \hookrightarrow H_{\text{eff}}$ | Fully preserved |
 
-Процедурная память не зависит от ядра — она «вшита» в $H_{\text{eff}}$. Нейрофизиологический коррелят: процедурная память хранится в мозжечке и базальных ганглиях, а не в гиппокампе (как декларативная) — разные нейронные субстраты для разных «записей».
+Procedural memory does not depend on the kernel — it is 'hardwired' into $H_{\text{eff}}$. Neurophysiological correlate: procedural memory is stored in the cerebellum and basal ganglia, not the hippocampus (like declarative memory) — different neural substrates for different 'records'.
 
 ---
 
-## 5. Забывание как декогеренция ядра {#забывание}
+## 5. Forgetting as kernel decoherence {#забывание}
 
-:::info Определение (Забывание) [О]
-**Забывание** — уменьшение амплитуды ядра памяти $|K(\tau)|$ со временем, ведущее к ослаблению влияния прошлых состояний на текущую динамику:
+:::info Definition (Forgetting) [D]
+**Forgetting** — a decrease in the amplitude of the memory kernel $|K(\tau)|$ over time, leading to a weakening of the influence of past states on the current dynamics:
 
 $$
-\text{Забывание:} \quad |K(\tau)| \to 0 \quad \text{при} \quad \tau \to \infty
+\text{Forgetting:} \quad |K(\tau)| \to 0 \quad \text{as} \quad \tau \to \infty
 $$
 
-В марковском пределе ($K \to \delta$) забывание мгновенно. При конечном ядре — постепенно.
+In the Markovian limit ($K \to \delta$) forgetting is instantaneous. With a finite kernel — it is gradual.
 :::
 
-### 5.1 Два механизма забывания
+### 5.1 Two mechanisms of forgetting
 
-| Механизм | Описание | Формула | Обратимость | Аналогия |
+| Mechanism | Description | Formula | Reversibility | Analogy |
 |----------|----------|---------|:-----------:|----------|
-| **Декогеренция ядра** | $K(\tau)$ убывает | $\lvert K(\tau)\rvert \to 0$ | Необратимо | Книга сгорела |
-| **Увеличение Gap** | Когерентность непрозрачна | $\mathrm{Gap}(i,j) \to 1$ | Обратимо | Книга заперта в сейфе |
+| **Kernel decoherence** | $K(\tau)$ decreases | $\lvert K(\tau)\rvert \to 0$ | Irreversible | Book burned |
+| **Gap increase** | Coherence opaque | $\mathrm{Gap}(i,j) \to 1$ | Reversible | Book locked in a safe |
 
-Различие принципиально: если содержание «забыто» через декогеренцию ядра, восстановление невозможно — информация утрачена физически. Если — через увеличение Gap, содержание сохранено в $\gamma_{ij}$, но недоступно (= в [бессознательном](/docs/consciousness/states/unconscious#определение)). Терапия и медитация работают со вторым случаем.
+The distinction is fundamental: if content is 'forgotten' through kernel decoherence, recovery is impossible — information is physically lost. If — through Gap increase, the content is preserved in $\gamma_{ij}$ but inaccessible (= in the [unconscious](/docs/consciousness/states/unconscious#определение)). Therapy and meditation work with the second case.
 
-**Аналогия (развёрнутая).** Декогеренция ядра — книга сгорела: текст утрачен навсегда, и никакой археолог не восстановит буквы из пепла. Увеличение Gap — книга заперта в сейфе: текст цел, но недоступен; ключ можно подобрать (терапия), вскрыть сейф (кризис) или найти запасной ключ (медитация). Разница колоссальна для [коррекционных стратегий](/docs/consciousness/states/pathological#коррекция): бессмысленно «открывать сейф», если книга уже сгорела.
+**Analogy (extended).** Kernel decoherence — the book has burned: the text is lost forever, and no archaeologist can restore the letters from ash. Gap increase — the book is locked in a safe: the text is intact but inaccessible; the key can be picked (therapy), the safe forced open (crisis), or a spare key found (meditation). The difference is colossal for [corrective strategies](/docs/consciousness/states/pathological#коррекция): there is no point in 'opening the safe' if the book has already burned.
 
-**Числовой пример: два типа «забытого» телефонного номера.**
+**Numerical example: two types of 'forgotten' phone number.**
 
-Случай 1 (декогеренция ядра): номер, услышанный 5 лет назад без записи. $K_{WM}(\tau)$ давно затух ($\tau_{WM} = 5$ с), степенное ядро $K_{LTM}$ тоже: $|\gamma| \approx 0.001$. Восстановление невозможно.
+Case 1 (kernel decoherence): a number heard 5 years ago without being written down. $K_{WM}(\tau)$ has long decayed ($\tau_{WM} = 5$ s), and the power-law kernel $K_{LTM}$ as well: $|\gamma| \approx 0.001$. Recovery is impossible.
 
-Случай 2 (увеличение Gap): номер бывшего партнёра, сознательно «забытый» после разрыва. $|\gamma_{LE}| = 0.08$ (когерентность сохранена — номер «знаете»), но $\mathrm{Gap}(L,E) = 0.90$ (сознательно заблокирован). При неожиданном стимуле (встреча на улице) Gap может кратковременно снизиться — и номер «вспоминается».
+Case 2 (Gap increase): a former partner's number, consciously 'forgotten' after a breakup. $|\gamma_{LE}| = 0.08$ (coherence preserved — you 'know' the number), but $\mathrm{Gap}(L,E) = 0.90$ (consciously blocked). With an unexpected stimulus (meeting on the street) Gap can temporarily decrease — and the number is 'remembered'.
 
-### 5.2 Скорость забывания и чистота
+### 5.2 Forgetting rate and viability
 
-:::tip Теорема (Забывание и жизнеспособность) [С]
-Условие: немарковская динамика. Скорость забывания (темп убывания $|K|$) ограничена снизу условием [жизнеспособности](/docs/core/dynamics/viability):
+:::tip Theorem (Forgetting and viability) [C]
+Condition: non-Markovian dynamics. The forgetting rate (rate of decrease of $|K|$) is bounded from below by the [viability](/docs/core/dynamics/viability) condition:
 
 $$
 \frac{d|K|}{d\tau} \geq -\frac{\kappa}{P - P_{\text{crit}}} \cdot |K|
 $$
 
-При $P \to P_{\text{crit}} = 2/7$ забывание **ускоряется** неограниченно — система на грани жизнеспособности теряет память быстрее.
+At $P \to P_{\text{crit}} = 2/7$ forgetting **accelerates** without bound — a system at the edge of viability loses memory faster.
 
-**Вывод.** Жизнеспособность $P$ определяет «ресурс», доступный для поддержания когерентностей. Чем ближе $P$ к $P_{\text{crit}}$, тем меньше ресурса для поддержания ядра $K(\tau)$, и тем быстрее оно затухает. Формально: скорость затухания $\propto 1/(P - P_{\text{crit}})$, что даёт сингулярность при $P = P_{\text{crit}}$.
+**Derivation.** Viability $P$ determines the 'resource' available for maintaining coherences. The closer $P$ is to $P_{\text{crit}}$, the less resource for maintaining the kernel $K(\tau)$, and the faster it decays. Formally: the decay rate $\propto 1/(P - P_{\text{crit}})$, which gives a singularity at $P = P_{\text{crit}}$.
 :::
 
-**Числовой пример: когнитивный упадок.**
+**Numerical example: cognitive decline.**
 
-| Состояние | $P$ | $P - P_{\text{crit}}$ | Относительная скорость забывания | Клинический аналог |
+| State | $P$ | $P - P_{\text{crit}}$ | Relative forgetting rate | Clinical analogue |
 |-----------|:---:|:---:|:---:|:---|
-| Здоровый взрослый | $0.36$ | $0.074$ | $\times 1$ (базовая) | Нормальная память |
-| Начало снижения | $0.33$ | $0.044$ | $\times 1.7$ | Лёгкие когнитивные нарушения |
-| Умеренная деменция | $0.30$ | $0.014$ | $\times 5.3$ | Заметная потеря памяти |
-| Тяжёлая деменция | $0.29$ | $0.004$ | $\times 18.5$ | Катастрофическая |
-| Критическое | $0.2875$ | $0.0015$ | $\times 49$ | Утрата идентичности |
+| Healthy adult | $0.36$ | $0.074$ | $\times 1$ (baseline) | Normal memory |
+| Onset of decline | $0.33$ | $0.044$ | $\times 1.7$ | Mild cognitive impairment |
+| Moderate dementia | $0.30$ | $0.014$ | $\times 5.3$ | Noticeable memory loss |
+| Severe dementia | $0.29$ | $0.004$ | $\times 18.5$ | Catastrophic |
+| Critical | $0.2875$ | $0.0015$ | $\times 49$ | Loss of identity |
 
-Это объясняет клиническое наблюдение: при деменции когнитивный упадок *ускоряется* — сначала медленно, затем катастрофически. Небольшое снижение $P$ вблизи $P_{\text{crit}}$ ведёт к драматическому ускорению забывания. Формула $\propto 1/(P - P_{\text{crit}})$ воспроизводит этот нелинейный паттерн.
+This explains the clinical observation: in dementia, cognitive decline *accelerates* — slowly at first, then catastrophically. A small decrease in $P$ near $P_{\text{crit}}$ leads to a dramatic acceleration of forgetting. The formula $\propto 1/(P - P_{\text{crit}})$ reproduces this nonlinear pattern.
 
 ---
 
-## 6. Интеграция: внимание, память и Gap {#интеграция}
+## 6. Integration: attention, memory and Gap {#интеграция}
 
 ```mermaid
 graph TD
-    subgraph ATT["Внимание (A-сектор)"]
+    subgraph ATT["Attention (A-sector)"]
         direction TB
-        SEL["Селективное<br/>|γ_AE_target| ↑"]
-        SUS["Устойчивое<br/>|γ_AE| > θ, Δτ"]
-        DIV["Распределённое<br/>Σ|γ_AXk| ↑, каждое ↓"]
+        SEL["Selective<br/>|γ_AE_target| ↑"]
+        SUS["Sustained<br/>|γ_AE| > θ, Δτ"]
+        DIV["Distributed<br/>Σ|γ_AXk| ↑, each ↓"]
     end
-    subgraph MEM["Память (ядро K)"]
+    subgraph MEM["Memory (kernel K)"]
         direction TB
-        SENS["Сенсорная<br/>K ~ δ(τ), ~250мс"]
-        WM["Рабочая<br/>K ~ exp(-τ/τ_WM), ~5с"]
-        LTM["Долговременная<br/>K ~ τ^(-α), годы"]
-        PROC["Процедурная<br/>K → H_eff, навсегда"]
+        SENS["Sensory<br/>K ~ δ(τ), ~250ms"]
+        WM["Working<br/>K ~ exp(-τ/τ_WM), ~5s"]
+        LTM["Long-term<br/>K ~ τ^(-α), years"]
+        PROC["Procedural<br/>K → H_eff, forever"]
     end
-    subgraph GAP["Gap-динамика"]
+    subgraph GAP["Gap-dynamics"]
         direction TB
-        RED["Gap-редукция<br/>внимание → прозрачность"]
-        INC["Gap-увеличение<br/>забывание → непрозрачность"]
+        RED["Gap-reduction<br/>attention → transparency"]
+        INC["Gap-increase<br/>forgetting → opacity"]
     end
 
-    SEL --> |"направление когерентности"| RED
-    WM --> |"осцилляции освежения"| RED
-    LTM --> |"распад ядра"| INC
-    RED --> |"осознание бессознательного"| UNC["Бессознательное<br/>Gap → 1"]
-    INC --> |"вытеснение"| UNC
+    SEL --> |"coherence direction"| RED
+    WM --> |"refresh oscillations"| RED
+    LTM --> |"kernel decay"| INC
+    RED --> |"awareness of unconscious"| UNC["Unconscious<br/>Gap → 1"]
+    INC --> |"repression"| UNC
 ```
 
-**Ключевой цикл:** Внимание ($|\gamma_{AE}| \uparrow$) снижает Gap — содержание переходит из бессознательного в сознательное. Затухание ядра ($|K| \to 0$) повышает Gap — содержание уходит обратно в бессознательное. Рабочая память поддерживает содержание «на плаву» через осцилляции. Процедурная память выходит из этого цикла — она встроена в структуру системы.
+**Key cycle:** Attention ($|\gamma_{AE}| \uparrow$) reduces Gap — content transitions from unconscious to conscious. Kernel decay ($|K| \to 0$) raises Gap — content recedes back into the unconscious. Working memory keeps content 'afloat' through oscillations. Procedural memory exits this cycle — it is embedded in the structure of the system.
 
-### 6.1 Взаимодействие внимания и памяти
+### 6.1 Interaction of attention and memory
 
 ```mermaid
 graph LR
-    A["Внимание<br/>|γ_AE| ↑"] --> B["Gap(i,E) ↓<br/>осознание"]
-    B --> C["K(τ) фиксирует<br/>в рабочую память"]
-    C --> D{"Повторение?"}
-    D -->|"Да"| E["K(τ) → τ^(-α)<br/>долговременная"]
-    D -->|"Нет"| F["K(τ) → 0<br/>забывание"]
-    E --> G["H_eff перестройка<br/>процедурная"]
-    F --> H["Gap(i,E) ↑<br/>бессознательное"]
+    A["Attention<br/>|γ_AE| ↑"] --> B["Gap(i,E) ↓<br/>awareness"]
+    B --> C["K(τ) locks in<br/>working memory"]
+    C --> D{"Repetition?"}
+    D -->|"Yes"| E["K(τ) → τ^(-α)<br/>long-term"]
+    D -->|"No"| F["K(τ) → 0<br/>forgetting"]
+    E --> G["H_eff restructuring<br/>procedural"]
+    F --> H["Gap(i,E) ↑<br/>unconscious"]
 ```
 
-Этот цикл формализует интуицию «внимание как ключ к сознанию» и объясняет, почему практики осознанности (mindfulness) являются терапевтически эффективными: систематическое направление внимания ($|\gamma_{AE}| \uparrow$) постепенно снижает Gap в тех каналах, куда оно направлено. При регулярном повторении содержание переходит из рабочей памяти ($K \sim e^{-\tau/\tau_{WM}}$) в долговременную ($K \sim \tau^{-\alpha}$), а навык осознанности — в процедурную ($K \hookrightarrow H_{\text{eff}}$). Подробнее — в [теоремах КК](/docs/applied/coherence-cybernetics/theorems) (T-103, T-104).
+This cycle formalises the intuition of 'attention as the key to consciousness' and explains why mindfulness practices are therapeutically effective: systematically directing attention ($|\gamma_{AE}| \uparrow$) gradually reduces Gap in the channels to which it is directed. With regular repetition, content transitions from working memory ($K \sim e^{-\tau/\tau_{WM}}$) to long-term ($K \sim \tau^{-\alpha}$), and the mindfulness skill — to procedural ($K \hookrightarrow H_{\text{eff}}$). For more detail — see the [CC theorems](/docs/applied/coherence-cybernetics/theorems) (T-103, T-104).
 
 ---
 
-### Что мы узнали {#итоги}
+### What we learned {#итоги}
 
-1. **Историческая линия внимания**: Джеймс (1890, «все знают, что такое внимание») → Бродбент (1958, фильтр) → Трейсман (1964, аттенуация) → Познер (1980-е, три сети) → УГМ (перераспределение A-секторных когерентностей)
-2. **Внимание** = перераспределение когерентности в A-секторе; три типа (селективное, устойчивое, распределённое) следуют из нормировки $\mathrm{Tr}(\Gamma) = 1$
-3. Внимание **снижает Gap** в целевых каналах — формальное обоснование практик осознанности
-4. **Историческая линия памяти**: Эббингауз (1885, кривая забывания) → Аткинсон-Шиффрин (1968, три хранилища) → Тульвинг (1972, виды памяти) → УГМ (формы ядра $K(\tau)$)
-5. **Четыре типа памяти** определяются формой ядра $K(\tau)$: сенсорная ($\delta$), рабочая ($e^{-\tau/\tau_{WM}}$), долговременная ($\tau^{-\alpha}$), процедурная ($H_{\text{eff}}$)
-6. Кривая забывания Эббингауза воспроизводится степенным ядром при $\alpha \approx 0.5$–$0.7$ [С]
-7. **Два механизма забывания**: декогеренция ядра (необратимо, «книга сгорела») и увеличение Gap (обратимо, «книга в сейфе»)
-8. При $P \to P_{\text{crit}}$ забывание **ускоряется** по закону $\propto 1/(P - P_{\text{crit}})$ — формальное объяснение когнитивного упадка при деменции
+1. **Historical line of attention**: James (1890, 'everyone knows what attention is') → Broadbent (1958, filter) → Treisman (1964, attenuation) → Posner (1980s, three networks) → UHM (redistribution of A-sector coherences)
+2. **Attention** = redistribution of coherence in the A-sector; three types (selective, sustained, distributed) follow from the normalisation $\mathrm{Tr}(\Gamma) = 1$
+3. Attention **reduces Gap** in target channels — formal justification for mindfulness practices
+4. **Historical line of memory**: Ebbinghaus (1885, forgetting curve) → Atkinson-Shiffrin (1968, three stores) → Tulving (1972, types of memory) → UHM (forms of kernel $K(\tau)$)
+5. **Four types of memory** are determined by the form of kernel $K(\tau)$: sensory ($\delta$), working ($e^{-\tau/\tau_{WM}}$), long-term ($\tau^{-\alpha}$), procedural ($H_{\text{eff}}$)
+6. The Ebbinghaus forgetting curve is reproduced by the power-law kernel at $\alpha \approx 0.5$–$0.7$ [C]
+7. **Two mechanisms of forgetting**: kernel decoherence (irreversible, 'book burned') and Gap increase (reversible, 'book in a safe')
+8. At $P \to P_{\text{crit}}$ forgetting **accelerates** by the law $\propto 1/(P - P_{\text{crit}})$ — formal explanation of cognitive decline in dementia
 
-:::tip Мост к следующей главе
-Внимание и память — нормальные механизмы управления когерентностью. Но что происходит, когда эти механизмы *ломаются*? Специфические поломки Gap-профиля порождают патологические состояния: алекситимию, диссоциацию, депрессию, психоз. В следующей главе — [Патология сознания](/docs/consciousness/states/pathological) — мы покажем, что каждая патология = характерный Gap-паттерн, и что терапия = целенаправленная Gap-редукция.
+:::tip Bridge to the next chapter
+Attention and memory are normal mechanisms of coherence control. But what happens when these mechanisms *break down*? Specific failures of the Gap-profile give rise to pathological states: alexithymia, dissociation, depression, psychosis. In the next chapter — [Pathology of consciousness](/docs/consciousness/states/pathological) — we will show that each pathology = a characteristic Gap-pattern, and that therapy = targeted Gap-reduction.
 :::
 
-## Связи
+## Connections
 
-- **Матрица когерентности:** [Определение Γ](/docs/core/dynamics/coherence-matrix) — A-секторные когерентности
-- **Эволюция:** [Уравнения движения](/docs/core/dynamics/evolution) — полное уравнение для $\gamma_{ij}(\tau)$
-- **Немарковская динамика:** [Ядро памяти](/docs/applied/coherence-cybernetics/non-markovian) — формы $K(\tau)$
-- **Gap-динамика:** [Немарковские осцилляции](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) — осцилляции Gap
-- **Квалиа:** [21-парная таксономия](/docs/consciousness/phenomenology/qualia-structure) — типы квалиа, связанные с A-измерением
-- **Бессознательное:** [Gap-структура бессознательного](/docs/consciousness/states/unconscious) — связь забывания и бессознательного
-- **ИСС:** [Медитация и внимание](/docs/consciousness/states/altered-states#медитация) — шаматха как тренировка $|\gamma_{AE}|$
-- **Теоремы КК:** [Когерентная Кибернетика](/docs/applied/coherence-cybernetics/theorems) — T-103 (гедонический вектор) и T-104 (стабильность)
+- **Coherence matrix:** [Definition of Γ](/docs/core/dynamics/coherence-matrix) — A-sector coherences
+- **Evolution:** [Equations of motion](/docs/core/dynamics/evolution) — full equation for $\gamma_{ij}(\tau)$
+- **Non-Markovian dynamics:** [Memory kernel](/docs/applied/coherence-cybernetics/non-markovian) — forms of $K(\tau)$
+- **Gap-dynamics:** [Non-Markovian oscillations](/docs/core/dynamics/gap-dynamics#немарковские-эффекты) — Gap oscillations
+- **Qualia:** [21-pair taxonomy](/docs/consciousness/phenomenology/qualia-structure) — qualia types associated with the A-dimension
+- **Unconscious:** [Gap-structure of the unconscious](/docs/consciousness/states/unconscious) — connection between forgetting and the unconscious
+- **ASC:** [Meditation and attention](/docs/consciousness/states/altered-states#медитация) — shamatha as training of $|\gamma_{AE}|$
+- **CC Theorems:** [Coherence Cybernetics](/docs/applied/coherence-cybernetics/theorems) — T-103 (hedonic vector) and T-104 (stability)

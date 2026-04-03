@@ -47,7 +47,7 @@ The Python code uses the following correspondences:
 This implementation is **demonstration pseudocode**. For the base class `Holon` see [Computational Implementation](/docs/reference/computational). For the full implementation with consciousness measures see [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy#61-алгоритм-классификации-уровня). For L-unification algorithms see [Constructive Algorithms](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации).
 :::
 
-## Quick Start
+## Quick Start {#быстрый-старт}
 
 ### Installation
 
@@ -509,7 +509,7 @@ def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
     dt — internal time τ step (see /docs/proofs/dynamics/emergent-time)
 
     Three terms:
-    1. Unitary: -i[H_eff, Γ]  (see /docs/core/dynamics/evolution#1-унитарный-член)
+    1. Unitary: -i[H_eff, Γ]  (see /docs/core/dynamics/evolution#1-unitary-term)
     2. Dissipative: 𝒟[Γ]  (see /docs/core/dynamics/evolution#логический-лиувиллиан)
     3. Regenerative: ℛ[Γ, E]  (see /docs/core/dynamics/evolution#3-регенеративный-член)
     """
@@ -1136,7 +1136,7 @@ class Environment:
         self.prediction_error = config.get('prediction_error', 0.3)
 ```
 
-## Threshold Values
+## Threshold Values {#пороговые-значения}
 
 CC threshold values are not arbitrary hyperparameters, but **consequences of theorems**. $P_{\text{crit}} = 2/7$ is derived from the Frobenius norm in 7-dimensional space. $\kappa_{\text{bootstrap}} = 1/7$ follows from the structure of the axiom $\Omega^7$. The calibration table $\omega_0$ links abstract internal time to the physical frequencies of specific systems — from quantum ($10^{15}$ Hz) to social ($10^{-7}$ Hz).
 

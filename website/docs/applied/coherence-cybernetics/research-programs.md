@@ -395,8 +395,8 @@ Each arrow in the hierarchy diagram represents a *concrete mathematical problem*
 |---|----------|---------|------------|
 | E1 | Verification of No-Zombie | Building AI systems, robustness test | [Predictions](./predictions#предсказание-1) |
 | E2 | Correlation $\mathrm{Coh}_E$ ↔ recovery | Neuroimaging + medical data | [Predictions](./predictions#предсказание-2) |
-| E3 | 7-dimensional structure of neural correlates | fMRI, EEG analysis | [Applications](./applications#для-когнитивистов) |
-| E4 | Calibration of $\kappa_0$, $\omega_0$ | Measuring regeneration under controlled conditions | [Implementation](./implementation#пороговые-значения) |
+| E3 | 7-dimensional structure of neural correlates | fMRI, EEG analysis | [Applications](./applications#for-cognitive-scientists) |
+| E4 | Calibration of $\kappa_0$, $\omega_0$ | Measuring regeneration under controlled conditions | [Implementation](./implementation#threshold-values) |
 
 ---
 

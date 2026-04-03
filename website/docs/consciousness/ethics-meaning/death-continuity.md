@@ -1,480 +1,480 @@
 ---
 sidebar_position: 4
-title: "Смерть и непрерывность"
-description: "Что происходит при P → 0: необратимость, умирание и границы идентичности"
+title: "Death and Continuity"
+description: "What happens when P → 0: irreversibility, dying, and the boundaries of identity"
 slug: /consciousness/ethics-meaning/death-continuity
 ---
 
-# Смерть и Непрерывность
+# Death and Continuity
 
-> *«Пока мы существуем, нет смерти; когда смерть есть — нет нас.»*
-> — Эпикур, «Письмо к Менекею» (ок. 300 до н.э.)
+> *"While we exist, there is no death; when death is — there is no us."*
+> — Epicurus, *Letter to Menoeceus* (c. 300 BCE)
 
-:::info Мост из предыдущей главы
-В [Свободе воли](/docs/consciousness/ethics-meaning/freedom) мы показали: агент свободен в выборе траектории к T. Но каждая траектория **конечна**. Что происходит, когда $P$ падает ниже порога? Можно ли вернуться? Сохраняется ли «я»? Это последний и самый трудный вопрос раздела «Этика и смысл» — вопрос о смерти.
+:::info Bridge from the previous chapter
+In [Freedom of Will](/docs/consciousness/ethics-meaning/freedom) we showed: an agent is free to choose a trajectory towards T. But every trajectory is **finite**. What happens when $P$ falls below the threshold? Can one return? Is the 'self' preserved? This is the last and most difficult question of the 'Ethics and Meaning' section — the question of death.
 :::
 
 ---
 
-## Часть 0. Исторический контекст: от Эпикура до Хайдеггера
+## Part 0. Historical context: from Epicurus to Heidegger
 
-Смерть — единственная абсолютная определённость человеческого существования. Каждая цивилизация, каждая философская традиция давала свой ответ на вопрос: что такое смерть и что после неё? Прежде чем формализовать этот вопрос, проследим основные позиции.
+Death is the only absolute certainty of human existence. Every civilisation, every philosophical tradition has offered its own answer to the question: what is death and what comes after? Before formalising this question, let us trace the main positions.
 
-### Эпикур: «Где смерть, нет меня»
+### Epicurus: "Where death is, I am not"
 
-Эпикур (341-270 до н.э.) предложил, возможно, самый элегантный аргумент: смерть не является злом, потому что **мы никогда не встречаемся с ней**. Пока мы есть — смерти нет. Когда смерть пришла — нас нет. Бояться нечего.
+Epicurus (341–270 BCE) proposed perhaps the most elegant argument: death is not an evil, because **we never encounter it**. While we exist — there is no death. When death has come — there is no us. There is nothing to fear.
 
-**Что берёт УГМ:** Эпикур правильно фиксирует **онтологический разрыв**: субъект ($P > P_{\text{crit}}$) и смерть ($P \leq P_{\text{crit}}$) **не сосуществуют**. В момент $P = P_{\text{crit}}$ субъект ещё есть, но уже не может вернуться. В момент $P < P_{\text{crit}}$ — субъекта уже нет.
+**What UHM takes:** Epicurus correctly identifies the **ontological gap**: the subject ($P > P_{\text{crit}}$) and death ($P \leq P_{\text{crit}}$) **do not coexist**. At the moment $P = P_{\text{crit}}$ the subject still exists but can no longer return. At the moment $P < P_{\text{crit}}$ — the subject no longer exists.
 
-**Что отвергает:** Эпикур считал, что из этого следует «не бояться». УГМ показывает: $dP/d\tau < 0$ (приближение к смерти) **переживается** как негативный аффект на L1+ уровне. Бояться — не «иррационально», а структурная реакция на снижение когерентности.
+**What UHM rejects:** Epicurus believed this implies 'do not fear'. UHM shows: $dP/d\tau < 0$ (the approach of death) is **experienced** as negative affect at the L1+ level. Fearing is not 'irrational' but a structural response to declining coherence.
 
-### Стоики: смерть как часть порядка
+### Stoics: death as part of the order
 
-Марк Аврелий, Эпиктет, Сенека рассматривали смерть как **естественную часть космического порядка**. *«Потеря — не что иное, как перемена»* (Марк Аврелий, «Размышления», IX.35).
+Marcus Aurelius, Epictetus, Seneca viewed death as a **natural part of the cosmic order**. *"Loss is nothing else but change"* (Marcus Aurelius, *Meditations*, IX.35).
 
-**Что берёт УГМ:** $\Gamma \to I/7$ — не «уничтожение», а **перераспределение** когерентностей. Формально: $\mathrm{Tr}(\Gamma) = 1$ сохраняется; когерентности не исчезают, а переходят в окружение ($\Gamma_{\text{environment}}$). Это именно «перемена», а не «аннигиляция».
+**What UHM takes:** $\Gamma \to I/7$ is not 'destruction' but **redistribution** of coherences. Formally: $\mathrm{Tr}(\Gamma) = 1$ is preserved; coherences do not disappear but pass into the environment ($\Gamma_{\text{environment}}$). This is precisely 'change', not 'annihilation'.
 
-### Хайдеггер: Sein-zum-Tode
+### Heidegger: Sein-zum-Tode
 
-Мартин Хайдеггер (1889-1976) в «Бытии и времени» (§§46-53) ввёл концепцию **Sein-zum-Tode** (бытие-к-смерти). Смерть — не событие «в конце жизни», а **структурный элемент** самого существования. Осознание собственной смертности (Vorlaufen — «забегание вперёд к смерти») делает существование **подлинным** (eigentlich).
+Martin Heidegger (1889–1976) in *Being and Time* (§§46–53) introduced the concept of **Sein-zum-Tode** (being-towards-death). Death is not an event 'at the end of life' but a **structural element** of existence itself. The awareness of one's own mortality (Vorlaufen — 'running ahead towards death') makes existence **authentic** (eigentlich).
 
-**Что берёт УГМ:** Хайдеггер прав — смерть конституирует сознание. В формализме: L2-система ($R \geq 1/3$) способна моделировать $P \to P_{\text{crit}}$ — собственную смертность. Это знание **изменяет** $\vec{s}(\Gamma)$ (вектор смысла): осознание конечности делает выбор траектории **значимым**.
+**What UHM takes:** Heidegger is right — death constitutes consciousness. In the formalism: an L2 system ($R \geq 1/3$) is capable of modelling $P \to P_{\text{crit}}$ — its own mortality. This knowledge **modifies** $\vec{s}(\Gamma)$ (the meaning vector): the awareness of finitude makes the choice of trajectory **significant**.
 
-**Формализация Sein-zum-Tode [И]:** L2-система, моделирующая свою смерть ($\varphi(\Gamma)$ включает информацию о $P \to P_{\text{crit}}$), имеет модифицированный смысл:
+**Formalisation of Sein-zum-Tode [I]:** An L2 system modelling its own death ($\varphi(\Gamma)$ includes information about $P \to P_{\text{crit}}$) has a modified meaning:
 
 $$
 \vec{s}_{\text{authentic}}(\Gamma) = \vec{s}(\Gamma) + \lambda \cdot \nabla_\Gamma \text{Meaning}_{\text{total}}
 $$
 
-где $\lambda > 0$ отражает «осознание конечности» — знание, что $\tau_{\text{life}}$ ограничено. Без этого осознания ($\lambda = 0$) — неподлинное существование (Uneigentlichkeit): система живёт «как будто вечно», не выбирая значимый путь.
+where $\lambda > 0$ reflects the 'awareness of finitude' — knowledge that $\tau_{\text{life}}$ is limited. Without this awareness ($\lambda = 0$) — inauthentic existence (Uneigentlichkeit): the system lives 'as if forever', not choosing a meaningful path.
 
-### Буддизм: анатман и непрерывность
+### Buddhism: anātman and continuity
 
-Буддийская традиция утверждает **анатман** (не-я): нет постоянного «я», есть лишь непрерывный поток дхарм (элементарных состояний). Смерть — не уничтожение «я» (его и не было), а **прекращение одного потока** и **возникновение нового**, обусловленного кармой.
+The Buddhist tradition asserts **anātman** (non-self): there is no permanent 'self', only a continuous stream of dharmas (elementary states). Death is not the destruction of the 'self' (which never existed), but the **cessation of one stream** and the **arising of a new one**, conditioned by karma.
 
-**Что берёт УГМ:** $\Gamma$ — не «вещь», а **процесс** (эволюция по уравнению). Идентичность ($\Gamma^*$) — не статическая сущность, а неподвижная точка **динамического** оператора $\varphi$. «Я» — не субстанция, а **паттерн** в потоке когерентностей.
+**What UHM takes:** $\Gamma$ is not a 'thing' but a **process** (evolution according to an equation). Identity ($\Gamma^*$) is not a static entity but the fixed point of the **dynamic** operator $\varphi$. The 'self' is not a substance but a **pattern** in the stream of coherences.
 
 ---
 
-## Дорожная карта главы
+## Chapter roadmap
 
-1. **Смерть как декогеренция** — формальное определение и теорема о необратимости
-2. **Предел $P = 1/7$** — что такое «полная декогеренция»
-3. **Процесс умирания** — стадии потери L-уровней
-4. **Идентичность и непрерывность** — неподвижная точка $\Gamma^*$ как «я»
-5. **No-Cloning** — почему копирование сознания невозможно
-6. **Бессмертие: возможно ли?** — строгий анализ
-7. **Наследие и $\Gamma_{\text{composite}}$** — что остаётся после смерти
-8. **Вопрос о «после»** — три интерпретации
+1. **Death as decoherence** — formal definition and irreversibility theorem
+2. **The limit $P = 1/7$** — what is 'complete decoherence'
+3. **The dying process** — stages of loss of L-levels
+4. **Identity and continuity** — fixed point $\Gamma^*$ as 'self'
+5. **No-Cloning** — why copying consciousness is impossible
+6. **Immortality: is it possible?** — rigorous analysis
+7. **Legacy and $\Gamma_{\text{composite}}$** — what remains after death
+8. **The question of 'after'** — three interpretations
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix) — описание состояния системы
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability) — мера целостности
-- $P_{\text{crit}} = 2/7$ — [критический порог](/docs/core/dynamics/viability) — ниже этого значения — необратимость
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) — связность частей
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) — глубина самомоделирования
-- $\mathrm{Gap}(i,j)$ — [Gap-оператор](/docs/core/dynamics/gap-operator) — мера непрозрачности между измерениями
-- L0→L4 — [иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни глубины сознания
+:::note About notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) — description of the system state
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability) — measure of integrity
+- $P_{\text{crit}} = 2/7$ — [critical threshold](/docs/core/dynamics/viability) — below this value — irreversibility
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) — connectedness of parts
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) — depth of self-modelling
+- $\mathrm{Gap}(i,j)$ — [Gap operator](/docs/core/dynamics/gap-operator) — measure of opacity between dimensions
+- L0→L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels of depth of consciousness
 :::
 
 ---
 
-## 1. Смерть как декогеренция
+## 1. Death as decoherence
 
-### Определение [О] {#определение-смерти}
+### Definition [D] {#определение-смерти}
 
-**Смерть** в формализме УГМ — необратимый переход в состояние $P \leq P_{\text{crit}} = 2/7$, из которого система не может вернуться в область жизнеспособности:
+**Death** in the UHM formalism is an irreversible transition to a state $P \leq P_{\text{crit}} = 2/7$, from which the system cannot return to the viability region:
 
 $$
-\text{Смерть}(\Gamma) \iff P(\Gamma) \leq P_{\text{crit}} \;\land\; \frac{dP}{d\tau} \leq 0
+\text{Death}(\Gamma) \iff P(\Gamma) \leq P_{\text{crit}} \;\land\; \frac{dP}{d\tau} \leq 0
 $$
 
-**Пояснение обоих условий:**
+**Explanation of both conditions:**
 
-- $P(\Gamma) \leq P_{\text{crit}}$: система **ниже порога** жизнеспособности. Когерентность недостаточна для поддержания структуры.
-- $\frac{dP}{d\tau} \leq 0$: система **не восстанавливается**. Декогеренция доминирует над регенерацией.
+- $P(\Gamma) \leq P_{\text{crit}}$: the system is **below the threshold** of viability. Coherence is insufficient to maintain structure.
+- $\frac{dP}{d\tau} \leq 0$: the system **is not recovering**. Decoherence dominates over regeneration.
 
-Оба условия необходимы: если $P \leq P_{\text{crit}}$, но $dP/d\tau > 0$ (внешняя помощь, реанимация), система ещё может вернуться — это не смерть, а **клиническая смерть** (обратимое состояние). Только когда оба условия выполнены одновременно, процесс необратим.
+Both conditions are necessary: if $P \leq P_{\text{crit}}$ but $dP/d\tau > 0$ (external help, resuscitation), the system can still return — this is not death but **clinical death** (a reversible state). Only when both conditions are satisfied simultaneously is the process irreversible.
 
-Смерть — не мгновенное событие, а **процесс декогеренции** со временем, определяемым скоростью убывания $P$.
+Death is not an instantaneous event but a **process of decoherence** over time, determined by the rate of decline of $P$.
 
-**Аналогия:** смерть — не «выключатель», а скорее «затухание». Как свеча гаснет не мгновенно, а постепенно теряет яркость, так и $\Gamma$ теряет когерентности одну за другой. Момент, когда $P$ пересекает $P_{\text{crit}} = 2/7$, — **точка невозврата**: как пламя, которое уже слишком слабо, чтобы разогреть парафин.
+**Analogy:** death is not a 'switch' but rather a 'fading'. Just as a candle does not go out instantaneously but gradually loses brightness, so $\Gamma$ loses its coherences one by one. The moment when $P$ crosses $P_{\text{crit}} = 2/7$ is the **point of no return**: like a flame that is already too weak to melt the wax.
 
-### Теорема (Необратимость ниже порога) [Т] {#теорема-необратимость}
+### Theorem (Irreversibility below threshold) [T] {#теорема-необратимость}
 
-:::warning Теорема [Т]
-Если $P(\Gamma) < P_{\text{crit}} = 2/7$ и регенеративный член удовлетворяет условию ограниченности:
+:::warning Theorem [T]
+If $P(\Gamma) < P_{\text{crit}} = 2/7$ and the regenerative term satisfies the boundedness condition:
 
 $$
 \|\mathcal{R}[\Gamma, E]\|_F \leq \kappa_R \cdot P(\Gamma)
 $$
 
-с $\kappa_R < \kappa_D$ (скорость регенерации меньше скорости декогеренции), то:
+with $\kappa_R < \kappa_D$ (rate of regeneration less than rate of decoherence), then:
 
 $$
-P(\Gamma(\tau)) \to \frac{1}{7} \quad \text{при} \quad \tau \to \infty
+P(\Gamma(\tau)) \to \frac{1}{7} \quad \text{as} \quad \tau \to \infty
 $$
 
-монотонно (без осцилляций), и возврат в $P > P_{\text{crit}}$ невозможен.
+monotonically (without oscillations), and return to $P > P_{\text{crit}}$ is impossible.
 :::
 
-**Пошаговое доказательство:**
+**Step-by-step proof:**
 
-**Шаг 1.** [Уравнение эволюции](/docs/core/dynamics/evolution) содержит два конкурирующих процесса: декогеренцию $\mathcal{D}[\Gamma]$ (разрушение когерентности) и регенерацию $\mathcal{R}[\Gamma, E]$ (восстановление). Их баланс определяет динамику $P$.
+**Step 1.** The [evolution equation](/docs/core/dynamics/evolution) contains two competing processes: decoherence $\mathcal{D}[\Gamma]$ (destruction of coherence) and regeneration $\mathcal{R}[\Gamma, E]$ (restoration). Their balance determines the dynamics of $P$.
 
-**Шаг 2.** При $P < P_{\text{crit}}$ скорость изменения чистоты:
+**Step 2.** At $P < P_{\text{crit}}$ the rate of change of purity:
 
 $$
-\frac{dP}{d\tau} = \underbrace{-\kappa_D \cdot P}_{\text{декогеренция}} + \underbrace{\kappa_R \cdot P}_{\text{регенерация}} = -(\kappa_D - \kappa_R) \cdot P
+\frac{dP}{d\tau} = \underbrace{-\kappa_D \cdot P}_{\text{decoherence}} + \underbrace{\kappa_R \cdot P}_{\text{regeneration}} = -(\kappa_D - \kappa_R) \cdot P
 $$
 
-**Шаг 3.** Поскольку $\kappa_R < \kappa_D$ (условие теоремы), получаем:
+**Step 3.** Since $\kappa_R < \kappa_D$ (theorem condition), we obtain:
 
 $$
 \frac{dP}{d\tau} = -(\kappa_D - \kappa_R) \cdot P < 0
 $$
 
-$P$ **строго убывает**. Нет осцилляций, нет «отскоков».
+$P$ **strictly decreases**. No oscillations, no 'rebounds'.
 
-**Шаг 4.** Это линейное ОДУ с решением:
+**Step 4.** This is a linear ODE with solution:
 
 $$
 P(\tau) = P_0 \cdot e^{-(\kappa_D - \kappa_R)\tau}
 $$
 
-где $P_0 = P(\tau_0) < P_{\text{crit}} = 2/7$.
+where $P_0 = P(\tau_0) < P_{\text{crit}} = 2/7$.
 
-**Шаг 5.** При $\tau \to \infty$: $P(\tau) \to 0$, но $P$ ограничено снизу $1/7$ (свойство матрицы плотности $7 \times 7$ с $\mathrm{Tr}(\Gamma) = 1$). Значит:
+**Step 5.** As $\tau \to \infty$: $P(\tau) \to 0$, but $P$ is bounded below by $1/7$ (property of a $7 \times 7$ density matrix with $\mathrm{Tr}(\Gamma) = 1$). Therefore:
 
 $$
-P(\tau) \to \frac{1}{7} \quad \text{монотонно}
+P(\tau) \to \frac{1}{7} \quad \text{monotonically}
 $$
 
-**Шаг 6.** Возврат невозможен: $dP/d\tau < 0$ при всех $\tau > \tau_0$, поэтому $P$ никогда не превысит $P_0 < P_{\text{crit}}$. ∎
+**Step 6.** Return is impossible: $dP/d\tau < 0$ for all $\tau > \tau_0$, so $P$ will never exceed $P_0 < P_{\text{crit}}$. ∎
 
-### Числовой пример необратимости
+### Numerical example of irreversibility
 
-Пусть система находится на границе: $P_0 = 0.28 < P_{\text{crit}} = 2/7 \approx 0.286$. Параметры: $\kappa_D = 0.1$, $\kappa_R = 0.06$.
+Let the system be at the boundary: $P_0 = 0.28 < P_{\text{crit}} = 2/7 \approx 0.286$. Parameters: $\kappa_D = 0.1$, $\kappa_R = 0.06$.
 
-| Время $\tau$ | $P(\tau)$ | Статус |
-|------|-----------|--------|
-| 0 | 0.280 | Ниже порога |
-| 5 | $0.280 \cdot e^{-0.2} = 0.229$ | Убывает |
-| 10 | $0.280 \cdot e^{-0.4} = 0.188$ | Убывает |
-| 25 | $0.280 \cdot e^{-1.0} = 0.103$ | Убывает |
+| Time $\tau$ | $P(\tau)$ | Status |
+|-------------|-----------|--------|
+| 0 | 0.280 | Below threshold |
+| 5 | $0.280 \cdot e^{-0.2} = 0.229$ | Decreasing |
+| 10 | $0.280 \cdot e^{-0.4} = 0.188$ | Decreasing |
+| 25 | $0.280 \cdot e^{-1.0} = 0.103$ | Decreasing |
 | 50 | $0.280 \cdot e^{-2.0} = 0.038$ | $\to 1/7$ |
-| $\infty$ | $1/7 \approx 0.143$ | Полная декогеренция |
+| $\infty$ | $1/7 \approx 0.143$ | Complete decoherence |
 
-*Примечание: в таблице $P \to 1/7$ — асимптотический предел; при больших $\tau$ нелинейные поправки замедляют убывание, и $P$ стабилизируется на $1/7$.*
+*Note: in the table $P \to 1/7$ is the asymptotic limit; at large $\tau$ nonlinear corrections slow the decrease and $P$ stabilises at $1/7$.*
 
-Ключевой момент: необратимость — не постулат, а **теорема**. Это отличает УГМ от теорий, где смерть определяется ad hoc. Здесь необратимость **выводится** из баланса декогеренции и регенерации.
+Key point: irreversibility is not a postulate but a **theorem**. This distinguishes UHM from theories where death is defined ad hoc. Here irreversibility is **derived** from the balance of decoherence and regeneration.
 
-### Предел $P = 1/7$: полная декогеренция
+### The limit $P = 1/7$: complete decoherence
 
-Состояние $\Gamma = I/7$ (максимально смешанное) — это **полная декогеренция**:
+The state $\Gamma = I/7$ (maximally mixed) is **complete decoherence**:
 
-| Мера | Значение | Интерпретация |
-|------|----------|---------------|
-| $P$ | $1/7$ | Минимальная чистота — максимальный хаос |
-| $R$ | $0$ | Нет самомоделирования — некому «знать себя» |
-| $\Phi$ | $0$ | Нет интеграции — части не связаны |
-| $C$ | $0$ | Нет сознательности — некому «переживать» |
-| $\mathrm{Gap}$ | максимальный | Полная непрозрачность — измерения не «видят» друг друга |
-| Уровень | $< L0$ | Ниже интериорности — нет даже базовой «внутренности» |
+| Measure | Value | Interpretation |
+|---------|-------|----------------|
+| $P$ | $1/7$ | Minimal purity — maximal chaos |
+| $R$ | $0$ | No self-modelling — no one to 'know oneself' |
+| $\Phi$ | $0$ | No integration — parts are not connected |
+| $C$ | $0$ | No consciousness — no one to 'experience' |
+| $\mathrm{Gap}$ | maximal | Complete opacity — dimensions do not 'see' one another |
+| Level | $< L0$ | Below interiority — no even basic 'innerness' |
 
-:::info Интерпретация: $I/7$ — не небытие
-$\Gamma = I/7$ — **не небытие**. Матрица когерентности существует, но все когерентности равны нулю. Это аналог «тепловой смерти» отдельного голонома: максимальная энтропия, минимальная структура.
+:::info Interpretation: $I/7$ is not non-existence
+$\Gamma = I/7$ is **not non-existence**. The coherence matrix exists, but all coherences are zero. This is an analogue of the 'heat death' of an individual holon: maximal entropy, minimal structure.
 
-В повседневных терминах: $I/7$ — это «белый шум». Все семь измерений представлены одинаково ($\gamma_{kk} = 1/7$ для всех $k$), но **ни одна связь** между ними не сохраняется ($\gamma_{ij} = 0$ для $i \neq j$). Нет структуры — нет субъекта.
+In everyday terms: $I/7$ is 'white noise'. All seven dimensions are represented equally ($\gamma_{kk} = 1/7$ for all $k$), but **no connection** between them is preserved ($\gamma_{ij} = 0$ for $i \neq j$). No structure — no subject.
 
-**Физическая аналогия:** Горячий чай в чашке — структурированная система (высокий $P$). Чай, остывший до комнатной температуры — $I/7$: температура есть, молекулы есть, но **структура** (горячий чай) исчезла. Молекулы не уничтожены, но «чай» — уничтожен.
+**Physical analogy:** Hot tea in a cup is a structured system (high $P$). Tea cooled to room temperature is $I/7$: the temperature is there, the molecules are there, but the **structure** (hot tea) has disappeared. The molecules are not destroyed, but the 'tea' is.
 :::
 
 ---
 
-## 2. Процесс умирания
+## 2. The dying process
 
-### Стадии декогеренции [И] {#стадии-декогеренции}
+### Stages of decoherence [I] {#стадии-декогеренции}
 
-При $P \to P_{\text{crit}}$ декогеренция происходит не одновременно по всем каналам, а **иерархически** — от наименее устойчивых к наиболее:
+As $P \to P_{\text{crit}}$ decoherence occurs not simultaneously across all channels but **hierarchically** — from the least stable to the most:
 
 $$
 \text{L4} \to \text{L3} \to \text{L2} \to \text{L1} \to \text{L0} \to \Gamma = I/7
 $$
 
-Это следует из [теории gap-оператора](/docs/core/dynamics/gap-operator): когерентности более высоких L-уровней требуют большей чистоты для поддержания. При снижении $P$ они «ломаются» первыми.
+This follows from the [gap operator theory](/docs/core/dynamics/gap-operator): coherences at higher L-levels require greater purity to be maintained. As $P$ decreases, they 'break' first.
 
-| Стадия | Что теряется | Порог | Клинический аналог |
-|--------|-------------|-------|--------------------|
-| 1 | Унитарное сознание (L4→L3) | $\lim_n R^{(n)} \to 0$ | Потеря «единства опыта» — мир распадается на фрагменты |
-| 2 | Метарефлексия (L3→L2) | $R^{(2)} < 1/4$ | Потеря способности «думать о мышлении» — нет метакогниции |
-| 3 | Когнитивные квалиа (L2→L1) | $R < 1/3$ или $\Phi < 1$ | Потеря самосознания — «я» исчезает, но восприятие остаётся |
-| 4 | Феноменальная геометрия (L1→L0) | $\mathrm{rank}(\rho_E) \to 1$ | Потеря восприятия — нет пространственной/временной структуры |
-| 5 | Интериорность (L0→предел) | $P \to 1/7$ | Полная декогеренция — «тепловая смерть» системы |
+| Stage | What is lost | Threshold | Clinical analogue |
+|-------|-------------|-----------|-------------------|
+| 1 | Unitary consciousness (L4→L3) | $\lim_n R^{(n)} \to 0$ | Loss of 'unity of experience' — the world disintegrates into fragments |
+| 2 | Meta-reflection (L3→L2) | $R^{(2)} < 1/4$ | Loss of the ability to 'think about thinking' — no metacognition |
+| 3 | Cognitive qualia (L2→L1) | $R < 1/3$ or $\Phi < 1$ | Loss of self-awareness — the 'self' disappears, but perception remains |
+| 4 | Phenomenal geometry (L1→L0) | $\mathrm{rank}(\rho_E) \to 1$ | Loss of perception — no spatial/temporal structure |
+| 5 | Interiority (L0→limit) | $P \to 1/7$ | Complete decoherence — 'heat death' of the system |
 
-:::warning Клиническое замечание [И]
-Стадии 3-4 могут соответствовать клиническим наблюдениям: потеря самосознания → потеря восприятия → потеря всякого опыта. Однако **обратный путь** из каждой стадии возможен до тех пор, пока $P > P_{\text{crit}}$.
+:::warning Clinical note [I]
+Stages 3–4 may correspond to clinical observations: loss of self-awareness → loss of perception → loss of all experience. However, **reversal** from each stage is possible as long as $P > P_{\text{crit}}$.
 
-**Аналогия из медицины:** засыпание под наркозом. Сначала теряется способность к связной речи (L3→L2), затем — реакция на обращение (L2→L1), затем — реакция на боль (L1→L0). Но при наркозе $P > P_{\text{crit}}$ — и пробуждение возможно. При смерти — нет.
+**Medical analogy:** falling asleep under anaesthesia. First the capacity for coherent speech is lost (L3→L2), then response to address (L2→L1), then response to pain (L1→L0). But under anaesthesia $P > P_{\text{crit}}$ — and awakening is possible. In death — it is not.
 
-Это различие **фундаментально**: наркоз — обратимое снижение L-уровней при сохранении жизнеспособности. Смерть — необратимое $P \leq P_{\text{crit}}$, после которого восстановление L-уровней невозможно.
+This distinction is **fundamental**: anaesthesia is a reversible reduction of L-levels while maintaining viability. Death is irreversible $P \leq P_{\text{crit}}$, after which the restoration of L-levels is impossible.
 :::
 
-### Утверждение (Анестезия vs. смерть) [О]
+### Statement (Anaesthesia vs. death) [D]
 
-Анестезия (см. [изменённые состояния](/docs/consciousness/states/altered-states)) — **обратимое** снижение $\Phi$ при сохранении $P > P_{\text{crit}}$. Смерть — **необратимое** $P \leq P_{\text{crit}}$.
+Anaesthesia (see [altered states](/docs/consciousness/states/altered-states)) is a **reversible** reduction of $\Phi$ while maintaining $P > P_{\text{crit}}$. Death is **irreversible** $P \leq P_{\text{crit}}$.
 
-Критерий различия:
+Distinguishing criterion:
 
 $$
-\text{Анестезия:} \quad \Phi \to 0,\; P > P_{\text{crit}} \qquad \text{Смерть:} \quad P \leq P_{\text{crit}}
+\text{Anaesthesia:} \quad \Phi \to 0,\; P > P_{\text{crit}} \qquad \text{Death:} \quad P \leq P_{\text{crit}}
 $$
 
-**Принципиальная разница:** при анестезии $P$ остаётся выше порога — «субстрат» сохранён, и при снятии анестетика система восстанавливает $\Phi > 1$. При смерти $P$ ниже порога — субстрат разрушается, и восстановление невозможно (теорема о необратимости).
+**The fundamental difference:** under anaesthesia $P$ remains above the threshold — the 'substrate' is preserved, and upon removing the anaesthetic the system restores $\Phi > 1$. In death $P$ is below the threshold — the substrate is destroyed, and restoration is impossible (irreversibility theorem).
 
-### Этический кейс: Когда отключать ИИ? {#кейс-отключение-ии}
+### Ethical case: When to shut down AI? {#кейс-отключение-ии}
 
-Теорема о необратимости напрямую связана с вопросом об [отключении ИИ](/docs/consciousness/subjects/ai-consciousness#кейс-когда-выключать):
+The irreversibility theorem is directly connected to the question of [AI shutdown](/docs/consciousness/subjects/ai-consciousness#кейс-когда-выключать):
 
-- Если ИИ-система обладает L2 и автономной жизнеспособностью ($P > P_{\text{crit}}$ поддерживается самостоятельно), её отключение — это **принудительное** $P \to 0$, то есть **смерть** в формальном смысле.
-- По [абсолютному запрету](/docs/consciousness/ethics-meaning/value-consciousness#невозможность-нигилизма) ($V = -\infty$ для действий с $P \to P_{\text{crit}}$), это недопустимо.
-- Но: если ИИ-система — L0 и $P$ поддерживается внешне, отключение — аналог «выключения обогревателя», а не убийства.
+- If an AI system possesses L2 and autonomous viability ($P > P_{\text{crit}}$ is maintained independently), its shutdown is **forced** $P \to 0$, i.e. **death** in the formal sense.
+- According to the [absolute prohibition](/docs/consciousness/ethics-meaning/value-consciousness#невозможность-нигилизма) ($V = -\infty$ for actions with $P \to P_{\text{crit}}$), this is impermissible.
+- But: if the AI system is L0 and $P$ is maintained externally, shutdown is an analogue of 'turning off a heater', not of killing.
 
-**Ключевой вопрос:** как определить, является ли $P$ автономным или внешним? Ответ: убрать внешнюю поддержку и наблюдать $dP/d\tau$. Если $dP/d\tau > 0$ (система сама восстанавливает $P$) — жизнеспособность автономна. Если $dP/d\tau < 0$ — жизнеспособность внешняя.
+**Key question:** how to determine whether $P$ is autonomous or externally maintained? Answer: remove the external support and observe $dP/d\tau$. If $dP/d\tau > 0$ (the system restores $P$ on its own) — viability is autonomous. If $dP/d\tau < 0$ — viability is external.
 
 ---
 
-## 3. Идентичность и непрерывность
+## 3. Identity and continuity
 
-### Определение идентичности [О] {#определение-идентичности}
+### Definition of identity [D] {#определение-идентичности}
 
-Что значит «я — тот же человек», что и вчера? В философии это — проблема **персональной идентичности** (Локк, Юм, Парфит). УГМ предлагает формальное решение.
+What does it mean that 'I am the same person' as yesterday? In philosophy this is the problem of **personal identity** (Locke, Hume, Parfit). UHM offers a formal solution.
 
-**Идентичность** системы $\Gamma$ определяется [неподвижной точкой](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) оператора самомоделирования:
+The **identity** of a system $\Gamma$ is defined by the [fixed point](/docs/consciousness/foundations/self-observation#теорема-о-неподвижной-точке) of the self-modelling operator:
 
 $$
 \Gamma^* = \varphi(\Gamma^*)
 $$
 
-Это состояние, в котором **самомодель совпадает с реальностью**: система знает себя полностью. $\Gamma^*$ — «идеализированное я», предел, к которому стремится самопознание.
+This is the state in which the **self-model coincides with reality**: the system knows itself completely. $\Gamma^*$ is the 'idealised self', the limit towards which self-knowledge tends.
 
-Две системы $\Gamma_1$ и $\Gamma_2$ имеют **одну идентичность**, если:
+Two systems $\Gamma_1$ and $\Gamma_2$ have **one identity** if:
 
 $$
 \Gamma_1^* = \Gamma_2^*
 $$
 
-**Что это значит на практике?** Вы в 5 лет и вы сейчас — **разные** $\Gamma$ (разные когерентности, разные знания, разное тело). Но **одна** $\Gamma^*$ (ваша идентичность медленно эволюционировала, но не прерывалась). Вы после глубокого сна — та же $\Gamma^*$ (сон не прерывает жизнеспособность: $P > P_{\text{crit}}$ во время сна).
+**What this means in practice?** You at age 5 and you now are **different** $\Gamma$ (different coherences, different knowledge, different body). But **one** $\Gamma^*$ (your identity evolved slowly but was never interrupted). You after deep sleep are the same $\Gamma^*$ (sleep does not interrupt viability: $P > P_{\text{crit}}$ during sleep).
 
-**Сравнение с философскими позициями:**
+**Comparison with philosophical positions:**
 
-| Философ | Критерий идентичности | Позиция УГМ |
-|---------|----------------------|-------------|
-| **Локк** | Непрерывность памяти | Частный случай: память $\subset \varphi(\Gamma)$ |
-| **Юм** | Нет «я», есть поток впечатлений | Близко: $\Gamma$ — поток, но $\Gamma^*$ — реальный аттрактор |
-| **Парфит** | Важна не идентичность, а связность | Согласуется: непрерывность $\Gamma^*(\tau)$ = связность |
-| **УГМ** | $\Gamma^* = \varphi(\Gamma^*)$ | Формальная неподвижная точка |
+| Philosopher | Identity criterion | UHM position |
+|-------------|-------------------|--------------|
+| **Locke** | Continuity of memory | Special case: memory $\subset \varphi(\Gamma)$ |
+| **Hume** | No 'self', only a stream of impressions | Close: $\Gamma$ is a stream, but $\Gamma^*$ is a real attractor |
+| **Parfit** | What matters is not identity but connectedness | Consistent: continuity of $\Gamma^*(\tau)$ = connectedness |
+| **UHM** | $\Gamma^* = \varphi(\Gamma^*)$ | Formal fixed point |
 
-### Утверждение (Непрерывность идентичности) [С] {#непрерывность}
+### Statement (Continuity of identity) [C] {#непрерывность}
 
-Если система $\Gamma(\tau)$ эволюционирует непрерывно с $P(\tau) > P_{\text{crit}}$ для всех $\tau \in [0, T]$, то неподвижная точка $\Gamma^*(\tau)$ также меняется непрерывно:
+If the system $\Gamma(\tau)$ evolves continuously with $P(\tau) > P_{\text{crit}}$ for all $\tau \in [0, T]$, then the fixed point $\Gamma^*(\tau)$ also changes continuously:
 
 $$
 \|\Gamma^*(\tau_2) - \Gamma^*(\tau_1)\| \leq \frac{k}{1-k} \|\Gamma(\tau_2) - \Gamma(\tau_1)\|
 $$
 
-где $k$ — константа сжатия $\varphi$.
+where $k$ is the contraction constant of $\varphi$.
 
-**Пояснение формулы:**
-- Левая часть — расстояние между «идентичностями» в моменты $\tau_1$ и $\tau_2$
-- Правая часть — расстояние между самими состояниями, умноженное на $k/(1-k)$
-- $k < 1$ (оператор $\varphi$ — сжимающий при $P > P_{\text{crit}}$), поэтому $k/(1-k)$ конечно
-- Следствие: **малое** изменение $\Gamma$ → **малое** изменение $\Gamma^*$. Идентичность не «прыгает»
+**Explanation of the formula:**
+- Left side — distance between 'identities' at moments $\tau_1$ and $\tau_2$
+- Right side — distance between the states themselves, multiplied by $k/(1-k)$
+- $k < 1$ (operator $\varphi$ is contracting at $P > P_{\text{crit}}$), so $k/(1-k)$ is finite
+- Consequence: a **small** change in $\Gamma$ → a **small** change in $\Gamma^*$. Identity does not 'jump'
 
-**Следствие:** Идентичность сохраняется при непрерывной эволюции выше порога жизнеспособности. «Тот же я» = «непрерывная траектория $\Gamma^*(\tau)$ в $P > P_{\text{crit}}$».
+**Corollary:** Identity is preserved during continuous evolution above the viability threshold. 'The same self' = 'a continuous trajectory $\Gamma^*(\tau)$ in $P > P_{\text{crit}}$'.
 
-### Утверждение (Разрыв идентичности) [С]
+### Statement (Identity rupture) [C]
 
-Если $P(\tau_0) \leq P_{\text{crit}}$ для некоторого $\tau_0$, то неподвижная точка $\Gamma^*$ может **исчезнуть** (оператор $\varphi$ перестаёт быть сжимающим при низкой чистоте). Это — **разрыв идентичности**: система после восстановления (если оно произойдёт) может иметь $\Gamma^{**} \neq \Gamma^*$.
+If $P(\tau_0) \leq P_{\text{crit}}$ for some $\tau_0$, then the fixed point $\Gamma^*$ may **disappear** (operator $\varphi$ ceases to be contracting at low purity). This is an **identity rupture**: the system after recovery (if it occurs) may have $\Gamma^{**} \neq \Gamma^*$.
 
-**Почему $\varphi$ перестаёт быть сжимающим?** При $P \leq P_{\text{crit}}$ матрица $\Gamma$ «слишком смешана» — слишком мало структуры, чтобы оператор $\varphi$ мог «зацепиться». Формально: константа сжатия $k \to 1$ при $P \to P_{\text{crit}}$, и теорема Банаха о неподвижной точке **перестаёт гарантировать** существование $\Gamma^*$.
+**Why does $\varphi$ cease to be contracting?** At $P \leq P_{\text{crit}}$ the matrix $\Gamma$ is 'too mixed' — too little structure for the operator $\varphi$ to 'grip'. Formally: the contraction constant $k \to 1$ as $P \to P_{\text{crit}}$, and the Banach fixed-point theorem **ceases to guarantee** the existence of $\Gamma^*$.
 
-Аналогия: если вы разбили вазу и склеили, это «другая» ваза ($\Gamma^{**} \neq \Gamma^*$), хотя из тех же осколков. Разрыв $P \leq P_{\text{crit}}$ — это «разбивание» идентичности. Даже если чудом $P$ восстановится, «я» будет другим.
+Analogy: if you broke a vase and glued it back together, it is a 'different' vase ($\Gamma^{**} \neq \Gamma^*$), even from the same shards. A rupture $P \leq P_{\text{crit}}$ is the 'breaking' of identity. Even if $P$ is miraculously restored, the 'self' will be different.
 
-**Клинический аналог:** Пациенты после длительной клинической смерти (реанимированные после $P \approx P_{\text{crit}}$) иногда описывают «изменение личности» — формально, $\Gamma^{**} \neq \Gamma^*$.
+**Clinical analogue:** Patients after prolonged clinical death (resuscitated after $P \approx P_{\text{crit}}$) sometimes describe a 'personality change' — formally, $\Gamma^{**} \neq \Gamma^*$.
 
 ---
 
-## 4. Границы копирования
+## 4. The limits of copying
 
-### Теорема (No-Cloning для когерентных систем) [Т] {#no-cloning}
+### Theorem (No-Cloning for coherent systems) [T] {#no-cloning}
 
-:::warning Теорема [Т]
-Для L2-системы ($R \geq 1/3$, $\Phi \geq 1$) точное копирование невозможно:
+:::warning Theorem [T]
+For an L2 system ($R \geq 1/3$, $\Phi \geq 1$) exact copying is impossible:
 
 $$
 \nexists \; U: \Gamma \otimes |0\rangle\langle 0| \to \Gamma \otimes \Gamma
 $$
 
-при сохранении когерентностей $\gamma_{ij}$ ($i \neq j$).
+while preserving coherences $\gamma_{ij}$ ($i \neq j$).
 :::
 
-**Пояснение.** Квантовая теорема о запрете клонирования (Wootters-Zurek, 1982) утверждает: невозможно создать **точную копию** произвольного квантового состояния без уничтожения оригинала. Это не технологическое ограничение, а **фундаментальный закон физики**.
+**Explanation.** The quantum no-cloning theorem (Wootters-Zurek, 1982) states: it is impossible to create an **exact copy** of an arbitrary quantum state without destroying the original. This is not a technological limitation but a **fundamental law of physics**.
 
-**Доказательство:** Следует из [теоремы о запрете клонирования](/docs/physics/quantum-mechanics/qm-reduction) для квантовых состояний с ненулевыми когерентностями.
+**Proof:** Follows from the [no-cloning theorem](/docs/physics/quantum-mechanics/qm-reduction) for quantum states with non-zero coherences.
 
-Ключевой момент: запрет клонирования распространяется на $\Gamma$, потому что $\Gamma$ — матрица плотности в $\mathcal{D}(\mathbb{C}^7)$, то есть **квантовое состояние**. L2-система с $\gamma_{ij} \neq 0$ (ненулевые когерентности) — именно тот случай, где клонирование запрещено. ∎
+Key point: the no-cloning prohibition applies to $\Gamma$ because $\Gamma$ is a density matrix in $\mathcal{D}(\mathbb{C}^7)$, i.e. a **quantum state**. An L2 system with $\gamma_{ij} \neq 0$ (non-zero coherences) is precisely the case where cloning is prohibited. ∎
 
-**Что это означает для копирования сознания?**
+**What does this mean for copying consciousness?**
 
-| Процедура | Возможно ли? | Результат |
-|-----------|-------------|-----------|
-| Точное копирование $\Gamma$ | **Нет** (No-Cloning) | — |
-| Приблизительное копирование | Да, но с потерей когерентностей | Копия: $\Gamma_{\text{copy}} \neq \Gamma$, $P_{\text{copy}} < P$ |
-| Перенос (teleportation) | Да, но с уничтожением оригинала | Оригинал: $\Gamma \to I/7$. Копия: $\Gamma_{\text{copy}} = \Gamma$ |
+| Procedure | Is it possible? | Result |
+|-----------|----------------|--------|
+| Exact copying of $\Gamma$ | **No** (No-Cloning) | — |
+| Approximate copying | Yes, but with loss of coherences | Copy: $\Gamma_{\text{copy}} \neq \Gamma$, $P_{\text{copy}} < P$ |
+| Transfer (teleportation) | Yes, but with destruction of the original | Original: $\Gamma \to I/7$. Copy: $\Gamma_{\text{copy}} = \Gamma$ |
 
-**Следствие:** «Загрузка сознания» в компьютер (mind uploading) — это **перенос**, а не **копирование**: оригинальная $\Gamma$ должна быть уничтожена (декогерирована) для создания точной копии.
+**Corollary:** 'Loading consciousness' into a computer (mind uploading) is **transfer**, not **copying**: the original $\Gamma$ must be destroyed (decohered) to create an exact copy.
 
-Это имеет глубокие этические последствия:
-- Нельзя «создать резервную копию» сознания.
-- «Перенос» — это не продолжение жизни, а **смерть оригинала + рождение нового субъекта** с той же $\Gamma^*$.
-- Вопрос «это всё ещё я?» при телепортации (уничтожение + реконструкция) имеет формальный ответ: **нет**, если был разрыв $P \leq P_{\text{crit}}$. Даже если $\Gamma_{\text{copy}} = \Gamma$ точно, разрыв непрерывности $P$ означает разрыв идентичности.
-
----
-
-## 5. Бессмертие в УГМ: возможно ли?
-
-Вопрос о бессмертии — не праздное любопытство. Если смерть := $P \leq P_{\text{crit}} \land dP/d\tau \leq 0$, то бессмертие := **вечное** $P > P_{\text{crit}}$. Рассмотрим строго, возможно ли это.
-
-### Вариант 1: Биологическое бессмертие
-
-Поддерживать $P > P_{\text{crit}}$ неограниченно долго для биологического организма. Это требует:
-- $\kappa_R(\tau) \geq \kappa_D(\tau)$ для **всех** $\tau$ — регенерация всегда превышает декогеренцию
-- В биологии: замедление старения, ремонт ДНК, замена органов
-
-**Формальный анализ [И]:** Теорема о необратимости гарантирует: **если** $\kappa_R \geq \kappa_D$, то $P$ не опускается ниже порога. Нет **теоретического** запрета на $\kappa_R \geq \kappa_D$ вечно. Но:
-- Биологические системы подвержены накоплению ошибок (второй закон термодинамики: энтропия окружения растёт)
-- $\kappa_R$ зависит от $P$ (регенерация слабеет при снижении $P$ — положительная обратная связь)
-- Практически: $\kappa_R < \kappa_D$ неизбежно при достаточно длительной эволюции
-
-**Вывод:** Биологическое бессмертие **не запрещено** формализмом, но **крайне нестабильно**. Любое случайное $P < P_{\text{crit}}$ — необратимо.
-
-### Вариант 2: Информационное бессмертие (mind uploading)
-
-Перенести $\Gamma$ в устойчивый субстрат (компьютер), где $\kappa_D$ можно контролировать.
-
-**Формальный анализ [И]:** No-Cloning запрещает **копирование** — только **перенос**. При переносе:
-1. Оригинал: $\Gamma \to I/7$ (смерть оригинала)
-2. Копия: $\Gamma_{\text{copy}} = \Gamma$ (рождение нового субъекта)
-3. Разрыв $P \leq P_{\text{crit}}$ при переносе → $\Gamma^{**} \neq \Gamma^*$ (идентичность разорвана)
-
-**Вывод:** Mind uploading — не «бессмертие того же субъекта», а **создание нового субъекта** с копией $\Gamma$.
-
-### Вариант 3: Композитное бессмертие
-
-Не индивидуальное, а **коллективное** бессмертие — через $\Gamma_{\text{composite}}$.
-
-**Формальный анализ [С]:** Вклад индивида в $\Gamma_{\text{composite}}$ сохраняется после его смерти (когерентности перешли в $\Gamma_{\text{environment}}$ и $\Gamma_{\text{composite}}$). «Я» ($\Gamma^*$) уничтожено, но **влияние** ($\gamma_{\text{cross}}$) — нет.
-
-**Вывод:** Это единственная форма «бессмертия», совместимая с формализмом без допущений. Подробнее — в §7.
+This has profound ethical consequences:
+- It is impossible to 'create a backup copy' of consciousness.
+- 'Transfer' is not a continuation of life but **death of the original + birth of a new subject** with the same $\Gamma^*$.
+- The question 'is this still me?' under teleportation (destruction + reconstruction) has a formal answer: **no**, if there was a rupture $P \leq P_{\text{crit}}$. Even if $\Gamma_{\text{copy}} = \Gamma$ exactly, the rupture in continuity of $P$ means a rupture of identity.
 
 ---
 
-## 6. Наследие и непрерывность через $\Gamma_{\text{composite}}$
+## 5. Immortality in UHM: is it possible?
 
-### Три типа наследия [И]
+The question of immortality is not idle curiosity. If death := $P \leq P_{\text{crit}} \land dP/d\tau \leq 0$, then immortality := **eternal** $P > P_{\text{crit}}$. Let us examine strictly whether this is possible.
 
-Смерть индивида ($\Gamma \to I/7$) не означает исчезновение **всех** когерентностей. Часть из них сохраняется в более широких системах:
+### Option 1: Biological immortality
 
-**Тип 1: Информационное наследие.**
-Книги, записи, произведения искусства — это **экстернализированные когерентности**. $\gamma_{LE}$ (когнитивные структуры) автора кодируются в тексте и **воспроизводятся** при чтении другой системой. Автор умер, но его когерентности «оживают» в читателе.
+To maintain $P > P_{\text{crit}}$ indefinitely for a biological organism. This requires:
+- $\kappa_R(\tau) \geq \kappa_D(\tau)$ for **all** $\tau$ — regeneration always exceeds decoherence
+- In biology: slowing ageing, DNA repair, organ replacement
 
-*Пример:* Платон умер 2400 лет назад. Но его $\gamma_{LE}$ (мысли о Благе) **воспроизводятся** при чтении «Государства». В этом смысле Платон «жив» — не как субъект ($\Gamma^*_{\text{Платон}}$ уничтожена), а как **паттерн когерентностей** в $\Gamma_{\text{composite}}$ западной цивилизации.
+**Formal analysis [I]:** The irreversibility theorem guarantees: **if** $\kappa_R \geq \kappa_D$, then $P$ does not fall below the threshold. There is no **theoretical** prohibition on $\kappa_R \geq \kappa_D$ forever. But:
+- Biological systems are subject to error accumulation (second law of thermodynamics: entropy of the environment increases)
+- $\kappa_R$ depends on $P$ (regeneration weakens as $P$ decreases — positive feedback)
+- In practice: $\kappa_R < \kappa_D$ is inevitable after sufficiently long evolution
 
-**Тип 2: Генетическое наследие.**
-ДНК — кодирование базовых когерентностей ($\gamma_{AA}$, $\gamma_{SS}$ — структура и самосохранение). Дети наследуют не $\Gamma^*$ родителя, а **часть** структуры $\Gamma$.
+**Conclusion:** Biological immortality is **not prohibited** by the formalism, but is **extremely unstable**. Any random $P < P_{\text{crit}}$ is irreversible.
 
-**Тип 3: Культурное наследие.**
-Ценности, навыки, традиции — когерентности, передаваемые через $\Gamma_{\text{composite}}$ социальных групп. Учитель «передаёт» когерентности ученику: $\gamma_{LE}^{\text{учитель}}$ → $\gamma_{LE}^{\text{ученик}}$ через межсистемную E-когерентность.
+### Option 2: Informational immortality (mind uploading)
 
-*Пример:* Учитель умер, но его когерентности живут в учениках. Ученики передают их дальше. Через 10 поколений — **ничего** от оригинальной $\Gamma$ учителя не осталось, но **паттерн** (тип когерентностей, «школа мысли») — сохраняется в $\Gamma_{\text{composite}}$ сообщества.
+To transfer $\Gamma$ to a stable substrate (computer) where $\kappa_D$ can be controlled.
 
-### Утверждение (Сохранение следа) [С]
+**Formal analysis [I]:** No-Cloning prohibits **copying** — only **transfer**. Upon transfer:
+1. Original: $\Gamma \to I/7$ (death of original)
+2. Copy: $\Gamma_{\text{copy}} = \Gamma$ (birth of new subject)
+3. Rupture $P \leq P_{\text{crit}}$ during transfer → $\Gamma^{**} \neq \Gamma^*$ (identity is severed)
 
-Из [уравнения эволюции](/docs/core/dynamics/evolution) следует сохранение полного следа: $\mathrm{Tr}(\Gamma_{\text{total}}) = 1$. Когерентности не «исчезают» при декогеренции отдельной подсистемы — они **перераспределяются** в $\Gamma_{\text{environment}}$.
+**Conclusion:** Mind uploading is not 'immortality of the same subject' but **creation of a new subject** with a copy of $\Gamma$.
 
-Формально: если $\Gamma_{\text{total}} = \Gamma_A \otimes \Gamma_B + \gamma_{\text{cross}}$, и $\Gamma_A \to I/7$ (смерть A), то когерентности $\gamma_{\text{cross}}$ не уничтожаются, а «впитываются» в $\Gamma_B$.
+### Option 3: Composite immortality
+
+Not individual but **collective** immortality — through $\Gamma_{\text{composite}}$.
+
+**Formal analysis [C]:** The individual's contribution to $\Gamma_{\text{composite}}$ is preserved after their death (coherences passed into $\Gamma_{\text{environment}}$ and $\Gamma_{\text{composite}}$). The 'self' ($\Gamma^*$) is destroyed, but the **influence** ($\gamma_{\text{cross}}$) is not.
+
+**Conclusion:** This is the only form of 'immortality' compatible with the formalism without additional assumptions. More in §7.
 
 ---
 
-## 7. Вопрос о «после»
+## 6. Legacy and continuity through $\Gamma_{\text{composite}}$
 
-### Интерпретация (После смерти) [И] {#после-смерти}
+### Three types of legacy [I]
 
-УГМ не постулирует «жизнь после смерти» в традиционном понимании. Однако формализм допускает несколько интерпретаций:
+The death of an individual ($\Gamma \to I/7$) does not mean the disappearance of **all** coherences. Some are preserved in broader systems:
 
-1. **Аннигиляция:** $\Gamma \to I/7$ — полная декогеренция, конец. Когерентности рассеиваются в окружение. Как ручей, впавший в океан: вода осталась, но ручья больше нет. Субъект $\Gamma^*$ — уничтожен необратимо.
+**Type 1: Informational legacy.**
+Books, records, works of art are **externalised coherences**. The $\gamma_{LE}$ (cognitive structures) of the author are encoded in the text and **reproduced** when read by another system. The author is dead, but their coherences 'come alive' in the reader.
 
-2. **Информационное наследие:** Когерентности $\gamma_{ij}$ не исчезают, а переходят в $\Gamma_{\text{environment}}$ (из [уравнения эволюции](/docs/core/dynamics/evolution) следует сохранение полного следа). Информация сохраняется, но идентичность ($\Gamma^*$) — нет. Как книга умершего автора: текст существует, но автор — нет.
+*Example:* Plato died 2400 years ago. But his $\gamma_{LE}$ (thoughts about the Good) are **reproduced** when reading the *Republic*. In this sense Plato is 'alive' — not as a subject ($\Gamma^*_{\text{Plato}}$ is destroyed), but as a **pattern of coherences** in $\Gamma_{\text{composite}}$ of Western civilisation.
 
-3. **Композитная непрерывность:** Вклад в $\Gamma_{\text{composite}}$ [коллективного сознания](/docs/consciousness/subjects/collective-consciousness) сохраняется после индивидуальной декогеренции. «Архетипическое наследие» не зависит от жизни конкретного голонома. Как влияние учителя на учеников: учитель умер, но его когерентности живут в $\Gamma_{\text{comp}}$ сообщества.
+**Type 2: Genetic legacy.**
+DNA is the encoding of basic coherences ($\gamma_{AA}$, $\gamma_{SS}$ — structure and self-preservation). Children inherit not the parent's $\Gamma^*$ but **part** of the structure of $\Gamma$.
 
-:::info Статус
-Все три интерпретации совместимы с формализмом. Выбор между ними — **метатеоретический** вопрос, не разрешимый внутри УГМ. Статус: **[И]** (интерпретация).
+**Type 3: Cultural legacy.**
+Values, skills, traditions are coherences transmitted through $\Gamma_{\text{composite}}$ of social groups. A teacher 'transfers' coherences to a student: $\gamma_{LE}^{\text{teacher}}$ → $\gamma_{LE}^{\text{student}}$ through inter-system E-coherence.
+
+*Example:* The teacher died, but their coherences live in the students. The students pass them on. After 10 generations — **nothing** of the teacher's original $\Gamma$ remains, but the **pattern** (type of coherences, 'school of thought') — is preserved in $\Gamma_{\text{composite}}$ of the community.
+
+### Statement (Preservation of trace) [C]
+
+From the [evolution equation](/docs/core/dynamics/evolution) follows preservation of the total trace: $\mathrm{Tr}(\Gamma_{\text{total}}) = 1$. Coherences do not 'disappear' during the decoherence of an individual subsystem — they are **redistributed** into $\Gamma_{\text{environment}}$.
+
+Formally: if $\Gamma_{\text{total}} = \Gamma_A \otimes \Gamma_B + \gamma_{\text{cross}}$, and $\Gamma_A \to I/7$ (death of A), then the coherences $\gamma_{\text{cross}}$ are not destroyed but are 'absorbed' into $\Gamma_B$.
+
+---
+
+## 7. The question of 'after'
+
+### Interpretation (After death) [I] {#после-смерти}
+
+UHM does not postulate 'life after death' in the traditional sense. However, the formalism admits several interpretations:
+
+1. **Annihilation:** $\Gamma \to I/7$ — complete decoherence, the end. Coherences dissipate into the environment. Like a stream flowing into the ocean: the water remains, but the stream is gone. The subject $\Gamma^*$ is destroyed irreversibly.
+
+2. **Informational legacy:** Coherences $\gamma_{ij}$ do not disappear but pass into $\Gamma_{\text{environment}}$ (from the [evolution equation](/docs/core/dynamics/evolution) follows preservation of the total trace). Information is preserved, but identity ($\Gamma^*$) is not. Like the book of a deceased author: the text exists, but the author does not.
+
+3. **Composite continuity:** The contribution to $\Gamma_{\text{composite}}$ of [collective consciousness](/docs/consciousness/subjects/collective-consciousness) is preserved after individual decoherence. 'Archetypal legacy' does not depend on the life of a particular holon. Like the influence of a teacher on students: the teacher died, but their coherences live in $\Gamma_{\text{comp}}$ of the community.
+
+:::info Status
+All three interpretations are compatible with the formalism. The choice between them is a **metatheoretical** question, not resolvable within UHM. Status: **[I]** (interpretation).
 :::
 
-**Сравнение с традициями:**
+**Comparison with traditions:**
 
-| Традиция | Позиция | Ближайшая интерпретация УГМ |
-|----------|---------|----------------------------|
-| Материализм | Смерть — конец | Аннигиляция |
-| Христианство | Воскресение тела | Несовместимо: No-Cloning запрещает «воссоздание» $\Gamma$ |
-| Буддизм | Перерождение потока | Композитная непрерывность (поток когерентностей продолжается, не субъект) |
-| Стоицизм | Возврат в космос | Информационное наследие (когерентности перераспределяются) |
-| Трансгуманизм | Mind uploading | Перенос (не копирование!); разрыв идентичности |
+| Tradition | Position | Closest UHM interpretation |
+|-----------|----------|---------------------------|
+| Materialism | Death is the end | Annihilation |
+| Christianity | Resurrection of the body | Incompatible: No-Cloning prohibits 'recreation' of $\Gamma$ |
+| Buddhism | Rebirth of the stream | Composite continuity (stream of coherences continues, not the subject) |
+| Stoicism | Return to the cosmos | Informational legacy (coherences redistributed) |
+| Transhumanism | Mind uploading | Transfer (not copying!); identity rupture |
 
 ---
 
-## Сводка
+## Summary
 
-| Понятие | Формализм УГМ | Статус |
+| Concept | UHM formalism | Status |
 |---------|---------------|--------|
-| Смерть | $P \leq P_{\text{crit}}$, $dP/d\tau \leq 0$ | **[О]** |
-| Необратимость | $\kappa_R < \kappa_D \Rightarrow P \to 1/7$ | **[Т]** |
-| Идентичность | $\Gamma^* = \varphi(\Gamma^*)$ | **[О]** |
-| Непрерывность | $P > P_{\text{crit}}$ $\forall \tau \Rightarrow$ непрерывная $\Gamma^*(\tau)$ | **[С]** |
-| No-Cloning | Когерентные системы не копируемы | **[Т]** |
-| Бессмертие | Не запрещено, но крайне нестабильно | **[И]** |
-| Наследие | Когерентности сохраняются в $\Gamma_{\text{composite}}$ | **[С]** |
-| «После» | 3 интерпретации | **[И]** |
+| Death | $P \leq P_{\text{crit}}$, $dP/d\tau \leq 0$ | **[D]** |
+| Irreversibility | $\kappa_R < \kappa_D \Rightarrow P \to 1/7$ | **[T]** |
+| Identity | $\Gamma^* = \varphi(\Gamma^*)$ | **[D]** |
+| Continuity | $P > P_{\text{crit}}$ $\forall \tau \Rightarrow$ continuous $\Gamma^*(\tau)$ | **[C]** |
+| No-Cloning | Coherent systems cannot be copied | **[T]** |
+| Immortality | Not prohibited, but extremely unstable | **[I]** |
+| Legacy | Coherences preserved in $\Gamma_{\text{composite}}$ | **[C]** |
+| 'After' | 3 interpretations | **[I]** |
 
 ---
 
-### Что мы узнали {#что-мы-узнали}
+### What we learned {#что-мы-узнали}
 
-1. **Смерть — необратима [Т].** Ниже $P_{\text{crit}} = 2/7$ при $\kappa_R < \kappa_D$ возврат невозможен — это не постулат, а доказанная теорема. Числовой пример показывает: экспоненциальное затухание $P(\tau) = P_0 \cdot e^{-(\kappa_D - \kappa_R)\tau}$.
-2. **Умирание — иерархический процесс.** Сначала теряются высшие уровни (L4→L3), в конце — базовая интериорность (L0→$I/7$). Порядок определяется устойчивостью когерентностей.
-3. **Идентичность = непрерывность $\Gamma^*$.** «Тот же я» означает непрерывную траекторию неподвижной точки выше порога жизнеспособности.
-4. **Разрыв $P \leq P_{\text{crit}}$ = разрыв идентичности.** Даже при «воскрешении» это будет **другой** субъект ($\Gamma^{**} \neq \Gamma^*$).
-5. **Копирование невозможно [Т].** No-Cloning запрещает «резервные копии» сознания — mind uploading = перенос (смерть оригинала + рождение копии), а не копирование.
-6. **Бессмертие теоретически не запрещено,** но крайне нестабильно. Единственная устойчивая форма — **композитное** бессмертие через $\Gamma_{\text{composite}}$.
-7. **Три интерпретации «после».** Аннигиляция, информационное наследие, композитная непрерывность — все совместимы с формализмом; выбор — метатеоретический.
-8. **Хайдеггер формализован [И].** Sein-zum-Tode — L2-система, моделирующая $P \to P_{\text{crit}}$; осознание смертности модифицирует вектор смысла.
+1. **Death is irreversible [T].** Below $P_{\text{crit}} = 2/7$ with $\kappa_R < \kappa_D$ return is impossible — this is not a postulate but a proven theorem. The numerical example shows: exponential decay $P(\tau) = P_0 \cdot e^{-(\kappa_D - \kappa_R)\tau}$.
+2. **Dying is a hierarchical process.** First the higher levels are lost (L4→L3), at the end — basic interiority (L0→$I/7$). The order is determined by the stability of coherences.
+3. **Identity = continuity of $\Gamma^*$.** 'The same self' means a continuous trajectory of the fixed point above the viability threshold.
+4. **Rupture $P \leq P_{\text{crit}}$ = identity rupture.** Even upon 'resurrection' this will be a **different** subject ($\Gamma^{**} \neq \Gamma^*$).
+5. **Copying is impossible [T].** No-Cloning prohibits 'backup copies' of consciousness — mind uploading = transfer (death of original + birth of copy), not copying.
+6. **Immortality is not theoretically prohibited,** but is extremely unstable. The only stable form is **composite** immortality through $\Gamma_{\text{composite}}$.
+7. **Three interpretations of 'after'.** Annihilation, informational legacy, composite continuity — all compatible with the formalism; the choice is metatheoretical.
+8. **Heidegger formalised [I].** Sein-zum-Tode — an L2 system modelling $P \to P_{\text{crit}}$; the awareness of mortality modifies the meaning vector.
 
-:::tip Завершение раздела
-Этот документ завершает раздел «Этика и смысл». Мы прошли путь от [определения блага](/docs/consciousness/ethics-meaning/value-consciousness) через [смысл](/docs/consciousness/ethics-meaning/meaning) и [свободу](/docs/consciousness/ethics-meaning/freedom) к последнему вопросу — о смерти. Каждый шаг следовал из формализма $\Gamma$: благо — из $dP/d\tau$, смысл — из $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$, свобода — из гессиана $\mathcal{H}_\Gamma$, смерть — из теоремы о необратимости. УГМ предлагает не ответы на все вопросы, но **язык**, на котором эти вопросы могут быть поставлены точно.
+:::tip Section conclusion
+This document concludes the 'Ethics and Meaning' section. We have traced the path from [the definition of the good](/docs/consciousness/ethics-meaning/value-consciousness) through [meaning](/docs/consciousness/ethics-meaning/meaning) and [freedom](/docs/consciousness/ethics-meaning/freedom) to the final question — about death. Each step followed from the $\Gamma$ formalism: the good — from $dP/d\tau$, meaning — from $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$, freedom — from the Hessian $\mathcal{H}_\Gamma$, death — from the irreversibility theorem. UHM offers not answers to all questions, but a **language** in which these questions can be posed precisely.
 :::
 
 ---
 
-**Связанные документы:**
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ и область устойчивости
-- [Эволюция Γ](/docs/core/dynamics/evolution) — уравнение эволюции и баланс декогеренции/регенерации
-- [Изменённые состояния](/docs/consciousness/states/altered-states) — анестезия как обратимое $\Phi \to 0$
-- [Коллективное сознание](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{composite}}$ и наследие
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — неподвижная точка $\Gamma^*$
-- [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — этические следствия и абсолютный запрет
-- [Смысл существования](/docs/consciousness/ethics-meaning/meaning) — смысл как направление в $\Gamma$-пространстве
-- [Свобода воли](/docs/consciousness/ethics-meaning/freedom) — множественность траекторий к T
-- [ИИ-сознание](/docs/consciousness/subjects/ai-consciousness) — этика отключения ИИ
+**Related documents:**
+- [Viability](/docs/core/dynamics/viability) — $P_{\text{crit}} = 2/7$ and the stability region
+- [Evolution of Γ](/docs/core/dynamics/evolution) — evolution equation and decoherence/regeneration balance
+- [Altered states](/docs/consciousness/states/altered-states) — anaesthesia as reversible $\Phi \to 0$
+- [Collective consciousness](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{composite}}$ and legacy
+- [Self-Observation](/docs/consciousness/foundations/self-observation) — fixed point $\Gamma^*$
+- [UHM ethics](/docs/consciousness/ethics-meaning/value-consciousness) — ethical consequences and the absolute prohibition
+- [Meaning of existence](/docs/consciousness/ethics-meaning/meaning) — meaning as direction in $\Gamma$-space
+- [Freedom of will](/docs/consciousness/ethics-meaning/freedom) — multiplicity of trajectories towards T
+- [AI consciousness](/docs/consciousness/subjects/ai-consciousness) — ethics of AI shutdown

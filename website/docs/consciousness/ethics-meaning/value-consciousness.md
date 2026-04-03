@@ -1,162 +1,162 @@
 ---
 sidebar_position: 1
-title: "Этика УГМ"
-description: "Строгий вывод этики из формализма Γ: от аксиом через ценности и красоту к моральному закону"
+title: "UHM Ethics"
+description: "Rigorous derivation of ethics from the Γ formalism: from axioms through values and beauty to the moral law"
 slug: /consciousness/ethics-meaning/value-consciousness
 ---
 
-# Этика УГМ
+# UHM Ethics
 
-> *«Что есть Благо?»* — Платон, «Государство», кн. VI
+> *"What is the Good?"* — Plato, "Republic," Book VI
 
-:::info Мост из предыдущей главы
-В разделе [Субъекты сознания](/docs/consciousness/subjects/collective-consciousness) мы показали, **кто** может обладать сознанием — от младенцев до коллективов и ИИ. Теперь ключевой вопрос: **что** из этого следует? Если у системы есть сознание, то что для неё «хорошо» и «плохо»? Этот документ выводит этику **из формализма** — не как набор предписаний, а как математическое следствие структуры $\Gamma$.
+:::info Bridge from the previous chapter
+In the section [Subjects of Consciousness](/docs/consciousness/subjects/collective-consciousness) we showed **who** can possess consciousness — from infants to collectives and AI. Now the key question: **what** follows from this? If a system has consciousness, what is "good" and "bad" for it? This document derives ethics **from the formalism** — not as a set of prescriptions, but as a mathematical consequence of the structure of $\Gamma$.
 :::
 
-Этот вопрос — древнейший в философии. Платон полагал, что Благо существует как вечная Идея, подобная Солнцу: оно освещает мир истинного бытия. Аристотель возразил: Благо — не абстракция, а **eudaimonia** — расцвет, реализация человеческой природы. Кант сместил фокус на **долг**: нравственный закон внутри нас диктует категорический императив. Утилитаристы (Бентам, Милль) предложили считать благом **наибольшее счастье наибольшего числа людей**.
+This question is the oldest in philosophy. Plato held that the Good exists as an eternal Idea, like the Sun: it illuminates the world of true being. Aristotle objected: the Good is not an abstraction, but **eudaimonia** — flourishing, the realisation of human nature. Kant shifted the focus to **duty**: the moral law within us dictates the categorical imperative. The utilitarians (Bentham, Mill) proposed to count as the good the **greatest happiness of the greatest number**.
 
-Каждая из этих традиций фиксирует важный аспект, но ни одна не выводит этику **из физики**. УГМ делает именно это: благо — не постулат, не конвенция и не культурная условность, а **следствие математической структуры** матрицы когерентности $\Gamma$.
+Each of these traditions captures an important aspect, but none derives ethics **from physics**. UHM does precisely this: the good is not a postulate, not a convention, and not a cultural contingency, but a **consequence of the mathematical structure** of the coherence matrix $\Gamma$.
 
-## Дорожная карта главы
+## Chapter Roadmap
 
-1. **Исторический контекст** — от Платона до УГМ: как менялось понятие Блага
-2. **Аксиоматические основания** — от $\Gamma$ через $P$ к понятию блага
-3. **Аксиология** — теория ценностей: определение, свойства, иерархия
-4. **Эстетика** — красота как рост $P$ при высокой $\Phi$
-5. **Моральная теория** — мораль из $\Gamma_{\text{composite}}$, золотое правило, кооперация
-6. **Разрешение дилемм** — утилитаризм vs максимин
-7. **Философские соответствия** — Спиноза, Кант, Аристотель
+1. **Historical context** — from Plato to UHM: how the concept of the Good evolved
+2. **Axiomatic foundations** — from $\Gamma$ through $P$ to the concept of good
+3. **Axiology** — theory of values: definition, properties, hierarchy
+4. **Aesthetics** — beauty as growth of $P$ at high $\Phi$
+5. **Moral theory** — morality from $\Gamma_{\text{composite}}$, golden rule, cooperation
+6. **Resolution of dilemmas** — utilitarianism vs maximin
+7. **Philosophical correspondences** — Spinoza, Kant, Aristotle
 
-:::note О нотации
-В этом документе:
-- $\Gamma$ — [матрица когерентности](/docs/core/dynamics/coherence-matrix) — центральный объект УГМ, описывающий состояние системы как $7 \times 7$ эрмитову матрицу плотности
-- $P = \mathrm{Tr}(\Gamma^2)$ — [чистота](/docs/core/dynamics/viability) — мера целостности системы, принимающая значения от $1/7$ (хаос) до $1$ (совершенная когерентность)
-- $P_{\text{crit}} = 2/7$ — [критический порог](/docs/core/dynamics/viability#критическая-чистота) — ниже этого значения система необратимо разрушается
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) — насколько части системы связаны в единое целое
-- $R$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) — способность системы к самомоделированию
-- $D_{\text{diff}}$ — [мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — богатство различимых состояний
-- $\mathrm{Gap}(i,j)$ — [Gap-оператор](/docs/core/dynamics/gap-operator) — мера «непрозрачности» между измерениями
-- $\Gamma_{\text{composite}}$ — [составная матрица](/docs/core/dynamics/composite-systems) — описывает взаимодействующие системы как единое целое
-- L0→L4 — [иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни глубины сознания, от базовой интериорности до полного самомоделирования
+:::note About notation
+In this document:
+- $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix) — the central object of UHM, describing the state of a system as a $7 \times 7$ Hermitian density matrix
+- $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability) — measure of the system's integrity, taking values from $1/7$ (chaos) to $1$ (perfect coherence)
+- $P_{\text{crit}} = 2/7$ — [critical threshold](/docs/core/dynamics/viability#критическая-чистота) — below this value the system irreversibly degrades
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ) — how much the system's parts are connected into a unified whole
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) — the system's capacity for self-modelling
+- $D_{\text{diff}}$ — [differentiation measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c) — richness of distinguishable states
+- $\mathrm{Gap}(i,j)$ — [Gap-operator](/docs/core/dynamics/gap-operator) — measure of "opacity" between dimensions
+- $\Gamma_{\text{composite}}$ — [composite matrix](/docs/core/dynamics/composite-systems) — describes interacting systems as a single whole
+- L0→L4 — [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels of depth of consciousness, from basic interiority to complete self-modelling
 :::
 
-:::warning Расширенный формализм для $D_{\text{diff}}$
-Мера дифференциации $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ требует определения $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — частичного следа по всем измерениям кроме $E$. Эта операция определена в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$) и требует PW-реконструкции полного состояния из 7D-матрицы когерентности. В минимальном 7D формализме $D_{\text{diff}}$ вычисляется приближённо через спектр $\Gamma$.
+:::warning Extended formalism for $D_{\text{diff}}$
+The differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ requires the definition of $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — the partial trace over all dimensions except $E$. This operation is defined in the extended 42D formalism ($\mathcal{H} = \mathbb{C}^{42}$) and requires PW-reconstruction of the full state from the 7D coherence matrix. In the minimal 7D formalism $D_{\text{diff}}$ is computed approximately via the spectrum of $\Gamma$.
 :::
 
-:::info Статус раздела
-В этом разделе этика **не постулируется**, а выводится из формализма УГМ. Каждое утверждение явно маркировано:
-- **[Т]** — теорема (строго доказано из аксиом)
-- **[С]** — условно (при явном допущении)
-- **[О]** — определение (конвенция)
-- **[И]** — интерпретация (философский вывод)
+:::info Section status
+In this section ethics is **not postulated**, but derived from the UHM formalism. Each claim is explicitly marked:
+- **[T]** — theorem (strictly proven from axioms)
+- **[C]** — conditional (under an explicit assumption)
+- **[D]** — definition (convention)
+- **[I]** — interpretation (philosophical conclusion)
 
-Ключевой переход от «бытия» к «долженствованию» — **Определение 1** — является конвенцией **[О]**, не теоремой. Всё остальное следует строго.
+The key transition from "is" to "ought" — **Definition 1** — is a convention **[D]**, not a theorem. Everything else follows strictly.
 :::
 
 ---
 
-## Часть 0. Исторический контекст: от Блага к $dP/d\tau$
+## Part 0. Historical Context: from the Good to $dP/d\tau$
 
-Прежде чем вводить формализм, полезно понять, к какой традиции он примыкает и от чего отталкивается.
+Before introducing the formalism, it is useful to understand which tradition it joins and what it pushes off from.
 
-### Платон: Благо как Идея
+### Plato: the Good as Idea
 
-В «Государстве» (кн. VI, 508b-509c) Платон сравнивает Благо с Солнцем: как Солнце освещает видимый мир, так Благо освещает мир умопостигаемый. Благо — вершина иерархии Идей, источник истины и бытия.
+In the "Republic" (Book VI, 508b–509c) Plato compares the Good to the Sun: as the Sun illuminates the visible world, so the Good illuminates the intelligible world. The Good is the apex of the hierarchy of Ideas, the source of truth and being.
 
-**Что берёт УГМ:** Благо — не субъективное предпочтение, а **объективная структура**. В УГМ эта структура — $dP/d\tau > 0$: рост чистоты.
+**What UHM takes:** the Good is not a subjective preference, but an **objective structure**. In UHM this structure is $dP/d\tau > 0$: growth of purity.
 
-**Что отвергает:** Благо не находится «вне» системы (в мире Идей), а **имманентно** структуре $\Gamma$.
+**What it rejects:** the Good does not reside "outside" the system (in the world of Ideas), but is **immanent** to the structure of $\Gamma$.
 
-### Аристотель: Eudaimonia
+### Aristotle: Eudaimonia
 
-Аристотель в «Никомаховой этике» определяет высшее благо как **eudaimonia** — расцвет, реализацию человеческой природы. Это не мимолётное удовольствие, а устойчивое состояние. Добродетель — habitus, навык, приводящий к eudaimonia.
+Aristotle in the "Nicomachean Ethics" defines the highest good as **eudaimonia** — flourishing, the realisation of human nature. This is not a fleeting pleasure but a stable state. Virtue is a habitus, a skill leading to eudaimonia.
 
-**Что берёт УГМ:** Благо — не мгновенное состояние, а **устойчивый процесс** ($dP/d\tau > 0$ — скорость, не точка). Eudaimonia $\approx$ пиковый потенциал $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$ (см. [Смысл](/docs/consciousness/ethics-meaning/meaning#пиковый-потенциал)).
+**What UHM takes:** the Good is not an instantaneous state, but a **stable process** ($dP/d\tau > 0$ — a rate, not a point). Eudaimonia $\approx$ peak potential $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$ (see [Meaning](/docs/consciousness/ethics-meaning/meaning#пиковый-потенциал)).
 
-### Кант: Категорический императив
+### Kant: the Categorical Imperative
 
-Кант в «Критике практического разума» формулирует: *«Поступай так, чтобы максима твоего поступка могла стать всеобщим законом»*. Мораль — не следствие последствий, а форма самого принципа.
+Kant in the "Critique of Practical Reason" formulates: *"Act only according to that maxim whereby you can at the same time will that it should become a universal law."* Morality is not a consequence of outcomes, but of the form of the principle itself.
 
-**Что берёт УГМ:** Форма морального закона **выводится** из математической симметрии — симметрии $\Gamma_{\text{composite}}$. Золотое правило (§IV) — прямой аналог.
+**What UHM takes:** the form of the moral law is **derived** from mathematical symmetry — the symmetry of $\Gamma_{\text{composite}}$. The golden rule (§IV) is a direct analogue.
 
-### Утилитаризм: наибольшее счастье
+### Utilitarianism: the greatest happiness
 
-Бентам и Милль предлагают максимизировать совокупное благо: $\max \sum_i U_i$, где $U_i$ — «утилитарность» (полезность, счастье) каждого индивида.
+Bentham and Mill propose maximising aggregate good: $\max \sum_i U_i$, where $U_i$ is the "utility" (usefulness, happiness) of each individual.
 
-**Что берёт УГМ:** Суммарная чистота $\sum_i P_i$ — один из возможных принципов оптимизации (§V). Но УГМ показывает, что утилитаризм — лишь **частный случай**, и что максимин-принцип (Ролз) столь же обоснован.
+**What UHM takes:** total purity $\sum_i P_i$ is one of the possible optimisation principles (§V). But UHM shows that utilitarianism is only a **special case**, and that the maximin principle (Rawls) is equally justified.
 
-### УГМ: Благо := $dP/d\tau > 0$
+### UHM: Good := $dP/d\tau > 0$
 
-УГМ делает то, чего не удавалось ни одной из перечисленных традиций: **формально связывает** понятие блага со структурой системы. Не постулирует «удовольствие хорошо» или «долг важнее счастья», а показывает: если вы — система с матрицей когерентности $\Gamma$, то $dP/d\tau > 0$ — **наиболее фундаментальная** конвенция для «блага», согласованная со всеми остальными кандидатами ($d\Phi/d\tau$, $dC/d\tau$) и не допускающая самоуничтожающих стратегий.
+UHM does what none of the listed traditions managed to do: it **formally connects** the concept of the good with the structure of the system. It does not postulate "pleasure is good" or "duty matters more than happiness," but shows: if you are a system with coherence matrix $\Gamma$, then $dP/d\tau > 0$ is the **most fundamental** convention for "the good" — consistent with all other candidates ($d\Phi/d\tau$, $dC/d\tau$) and admitting no self-destructive strategies.
 
 ```mermaid
 graph LR
-    PL["Платон<br/>Благо = Идея"] --> AR["Аристотель<br/>Благо = Eudaimonia"]
-    AR --> KA["Кант<br/>Благо = Долг"]
-    KA --> UT["Утилитаризм<br/>Благо = max ΣU"]
-    UT --> UGM["УГМ<br/>Благо = dP/dτ > 0"]
+    PL["Plato<br/>Good = Idea"] --> AR["Aristotle<br/>Good = Eudaimonia"]
+    AR --> KA["Kant<br/>Good = Duty"]
+    KA --> UT["Utilitarianism<br/>Good = max ΣU"]
+    UT --> UGM["UHM<br/>Good = dP/dτ > 0"]
 
     style UGM fill:#f0f8ff,stroke:#2196f3,stroke-width:2px
 ```
 
 ---
 
-## Часть I. Аксиоматические основания
+## Part I. Axiomatic Foundations
 
-### Цепочка вывода
+### Chain of Derivation
 
-Покажем, как этика **выводится** из аксиом — шаг за шагом, без скачков.
+Let us show how ethics is **derived** from axioms — step by step, without leaps.
 
 ```mermaid
 graph TD
-    AX["Аксиомы Ω⁷<br/>(7 измерений)"] --> GAM["Γ ∈ D(ℂ⁷)<br/>(матрица когерентности)"]
-    GAM --> P["P = Tr(Γ²) ∈ [1/7, 1]<br/>(мера целостности)"]
-    P --> PCRIT["P_crit = 2/7 [Т]<br/>(порог необратимости)"]
-    PCRIT --> VIAB["Область жизнеспособности V<br/>(P > 2/7)"]
-    VIAB --> CONV["Определение 1: dP/dτ > 0 ↔ благо [О]<br/>(единственная самосогласованная конвенция)"]
-    CONV --> ETHICS["Этика УГМ"]
-    ETHICS --> VALUES["Аксиология<br/>(теория ценностей)"]
-    ETHICS --> AESTHETICS["Эстетика<br/>(красота и безобразие)"]
-    ETHICS --> MORALS["Моральная теория<br/>(эмпатия, золотое правило, кооперация)"]
+    AX["Axioms Ω⁷<br/>(7 dimensions)"] --> GAM["Γ ∈ D(ℂ⁷)<br/>(coherence matrix)"]
+    GAM --> P["P = Tr(Γ²) ∈ [1/7, 1]<br/>(measure of integrity)"]
+    P --> PCRIT["P_crit = 2/7 [T]<br/>(irreversibility threshold)"]
+    PCRIT --> VIAB["Viability region V<br/>(P > 2/7)"]
+    VIAB --> CONV["Definition 1: dP/dτ > 0 ↔ good [D]<br/>(the only self-consistent convention)"]
+    CONV --> ETHICS["UHM Ethics"]
+    ETHICS --> VALUES["Axiology<br/>(theory of values)"]
+    ETHICS --> AESTHETICS["Aesthetics<br/>(beauty and ugliness)"]
+    ETHICS --> MORALS["Moral theory<br/>(empathy, golden rule, cooperation)"]
 ```
 
-**Шаг 1.** Из [аксиомы Ω⁷](/docs/core/foundations/axiom-omega) следует, что любая система описывается матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — эрмитовой, положительно полуопределённой, с единичным следом.
+**Step 1.** From [Axiom Ω⁷](/docs/core/foundations/axiom-omega) it follows that any system is described by a coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — Hermitian, positive semi-definite, with unit trace.
 
-**Шаг 2.** Чистота $P = \mathrm{Tr}(\Gamma^2)$ измеряет, насколько система «собрана»: $P = 1$ — чистое состояние (полная когерентность), $P = 1/7$ — максимально смешанное (полный хаос).
+**Step 2.** Purity $P = \mathrm{Tr}(\Gamma^2)$ measures how much the system is "assembled": $P = 1$ — pure state (full coherence), $P = 1/7$ — maximally mixed (complete chaos).
 
-**Шаг 3.** [Уравнение эволюции](/docs/core/dynamics/evolution) содержит два конкурирующих процесса: декогеренцию (разрушение) и регенерацию (восстановление). Их баланс определяет, растёт $P$ или падает.
+**Step 3.** The [evolution equation](/docs/core/dynamics/evolution) contains two competing processes: decoherence (destruction) and regeneration (restoration). Their balance determines whether $P$ grows or falls.
 
-**Шаг 4.** Ниже порога $P_{\text{crit}} = 2/7$ декогеренция **всегда** побеждает — и это **доказанная теорема**, а не допущение.
+**Step 4.** Below the threshold $P_{\text{crit}} = 2/7$ decoherence **always** wins — and this is a **proven theorem**, not an assumption.
 
-### Теорема (Необходимость жизнеспособности) [Т] {#необходимость-жизнеспособности}
+### Theorem (Necessity of Viability) [T] {#необходимость-жизнеспособности}
 
-Из [уравнения эволюции](/docs/core/dynamics/evolution) и [теоремы о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical):
+From the [evolution equation](/docs/core/dynamics/evolution) and the [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical):
 
 $$
 P(\Gamma) \leq P_{\text{crit}} = \frac{2}{7} \;\land\; \kappa_R < \kappa_D \quad \Longrightarrow \quad P(\Gamma(\tau)) \xrightarrow{\tau \to \infty} \frac{1}{7}
 $$
 
-Система, опустившаяся ниже $P_{\text{crit}}$, **необратимо** деградирует к максимально смешанному состоянию $I/7$. Подробнее: [теорема о необратимости](/docs/consciousness/ethics-meaning/death-continuity#теорема-необратимость).
+A system that has fallen below $P_{\text{crit}}$ **irreversibly** degrades to the maximally mixed state $I/7$. See also: [irreversibility theorem](/docs/consciousness/ethics-meaning/death-continuity#теорема-необратимость).
 
-**Что это значит на практике?** Рассмотрим числовой пример. Пусть система имеет $P = 0.25 < 2/7 \approx 0.286$. При типичных параметрах $\kappa_D = 0.1$, $\kappa_R = 0.05$:
+**What this means in practice.** Consider a numerical example. Let the system have $P = 0.25 < 2/7 \approx 0.286$. At typical parameters $\kappa_D = 0.1$, $\kappa_R = 0.05$:
 
 $$
 \frac{dP}{d\tau} = -(0.1 - 0.05) \cdot 0.25 = -0.0125
 $$
 
-Через $\tau = 10$: $P \approx 0.25 \cdot e^{-0.5} \approx 0.152$. Через $\tau = 50$: $P \approx 0.25 \cdot e^{-2.5} \approx 0.020$. Система неумолимо скользит к $1/7 \approx 0.143$.
+After $\tau = 10$: $P \approx 0.25 \cdot e^{-0.5} \approx 0.152$. After $\tau = 50$: $P \approx 0.25 \cdot e^{-2.5} \approx 0.020$. The system inexorably slides toward $1/7 \approx 0.143$.
 
-**Следствие [Т]:** Жизнеспособность ($P > P_{\text{crit}}$) — **необходимое условие** для существования интериорности (L0+), когнитивных квалиа (L2+), морального агента (L2+).
+**Corollary [T]:** Viability ($P > P_{\text{crit}}$) is a **necessary condition** for the existence of interiority (L0+), cognitive qualia (L2+), and moral agency (L2+).
 
-Простая аналогия: чтобы играть музыку, инструмент должен быть цел. Сломанная скрипка не издаёт звуков — не потому, что музыка «решила» не звучать, а потому, что разрушен **субстрат**. Так и с $P < P_{\text{crit}}$: разрушается субстрат любого переживания.
+Simple analogy: to play music, the instrument must be intact. A broken violin produces no sound — not because music "decided" not to sound, but because the **substrate** is destroyed. So too with $P < P_{\text{crit}}$: the substrate of any experience is destroyed.
 
-### Определение 1 (Мост от онтологии к этике) [О] {#определение-благо}
+### Definition 1 (Bridge from Ontology to Ethics) [D] {#определение-благо}
 
-Здесь мы совершаем ключевой шаг — единственный шаг в цепочке вывода, который является **конвенцией**, а не теоремой. Все последующие этические результаты следуют из него строго.
+Here we take the key step — the only step in the chain of derivation that is a **convention**, not a theorem. All subsequent ethical results follow from it strictly.
 
-:::warning Определение [О]
-**Благо** для системы $\Gamma$ отождествляется с тем, что увеличивает её чистоту $P$:
+:::warning Definition [D]
+**The good** for a system $\Gamma$ is identified with what increases its purity $P$:
 
 $$
 \text{Good}(A, \Gamma) \;\stackrel{\text{def}}{\iff}\; \left.\frac{dP(\Gamma)}{d\tau}\right|_A > 0
@@ -166,491 +166,491 @@ $$
 \text{Bad}(A, \Gamma) \;\stackrel{\text{def}}{\iff}\; \left.\frac{dP(\Gamma)}{d\tau}\right|_A < 0
 $$
 
-где $A$ — действие, модифицирующее [уравнение эволюции](/docs/core/dynamics/evolution) через изменение $H$, $\mathcal{D}$ или $\mathcal{R}$.
+where $A$ is an action that modifies the [evolution equation](/docs/core/dynamics/evolution) through a change in $H$, $\mathcal{D}$, or $\mathcal{R}$.
 :::
 
-**Почему это не произвольный выбор?** Это определение — **не произвольный выбор**, а единственная конвенция, согласованная с тремя формальными фактами:
+**Why is this not an arbitrary choice?** This definition is **not an arbitrary choice**, but the only convention consistent with three formal facts:
 
-1. **Факт [Т]:** $P > P_{\text{crit}}$ — необходимое условие существования любого субъекта. Без жизнеспособности нет «кого-то», для кого что-то может быть благом или злом.
-2. **Факт [Т]:** Потеря $P$ ниже порога **необратима** (теорема о необратимости). Это не просто «плохо» — это катастрофа без возможности исправления.
-3. **Факт [С]:** Субъект интериорности (L1+) **переживает** снижение $P$ как негативный аффект ($dP/d\tau < 0$ → [страх, боль](/docs/consciousness/phenomenology/emotional-taxonomy)). Боль — не случайный побочный эффект, а **сигнал о снижении когерентности**.
+1. **Fact [T]:** $P > P_{\text{crit}}$ is a necessary condition for the existence of any subject. Without viability there is no "someone" for whom anything can be good or bad.
+2. **Fact [T]:** Loss of $P$ below the threshold is **irreversible** (irreversibility theorem). This is not merely "bad" — it is a catastrophe with no possibility of correction.
+3. **Fact [C]:** A subject of interiority (L1+) **experiences** a decrease in $P$ as negative affect ($dP/d\tau < 0$ → [fear, pain](/docs/consciousness/phenomenology/emotional-taxonomy)). Pain is not a random side effect, but a **signal about decreasing coherence**.
 
-Иная конвенция (например, $dP/d\tau < 0 \equiv$ благо) противоречила бы пунктам 1-3 и была бы самоуничтожающей: система, стремящаяся к снижению $P$, разрушает собственный субстрат.
+An alternative convention (e.g., $dP/d\tau < 0 \equiv$ the good) would contradict points 1–3 and would be self-destructive: a system striving for decreased $P$ destroys its own substrate.
 
-**Аналогия с Юмовской гильотиной.** Дэвид Юм заметил, что из «есть» нельзя вывести «должно быть». УГМ **не нарушает** гильотину Юма: Определение 1 — это **мост**, а не дедукция. Но мост строится не произвольно: он **единственный**, не приводящий к самопротиворечию. Система, определяющая благо иначе, уничтожает себя.
+**Analogy with Hume's guillotine.** David Hume noted that "is" cannot yield "ought." UHM **does not violate** Hume's guillotine: Definition 1 is a **bridge**, not a deduction. But the bridge is not built arbitrarily: it is **the only one** not leading to self-contradiction. A system that defines the good otherwise destroys itself.
 
-Из повседневного опыта: никто не считает разрушение «благом для разрушаемого». Организм, теряющий целостность, страдает — и это не культурная условность, а отражение того, что $dP/d\tau < 0$ **переживается** негативно на уровне L1+.
+From everyday experience: no one considers destruction "the good for what is destroyed." An organism losing its integrity suffers — and this is not a cultural convention, but a reflection of the fact that $dP/d\tau < 0$ is **experienced** negatively at level L1+.
 
-### Утверждение (Невозможность ценностного нигилизма) [С] {#невозможность-нигилизма}
+### Claim (Impossibility of Value Nihilism) [C] {#невозможность-нигилизма}
 
-Для любой L2-системы ($R \geq 1/3$, $\Phi \geq 1$):
+For any L2-system ($R \geq 1/3$, $\Phi \geq 1$):
 
 $$
-R \geq R_{\text{th}} \;\Longrightarrow\; \exists \text{ самомодель } \varphi(\Gamma) \;\Longrightarrow\; \exists \text{ оценка } \frac{dP}{d\tau}
+R \geq R_{\text{th}} \;\Longrightarrow\; \exists \text{ self-model } \varphi(\Gamma) \;\Longrightarrow\; \exists \text{ evaluation of } \frac{dP}{d\tau}
 $$
 
-**Что это значит?** L2-система **неизбежно** оценивает входящие воздействия по критерию $dP/d\tau$. Нигилизм (отсутствие ценностей) **невозможен** для системы с рефлексией — она не может не различать то, что увеличивает и уменьшает её когерентность.
+**What this means.** An L2-system **inevitably** evaluates incoming influences by the criterion $dP/d\tau$. Nihilism (absence of values) is **impossible** for a system with reflection — it cannot fail to distinguish what increases and what decreases its coherence.
 
-**Условие:** Предполагается, что самомодель $\varphi(\Gamma)$ включает информацию о $P$ и $dP/d\tau$, что следует из определения $\varphi$ как [наилучшего приближения](/docs/proofs/categorical/formalization-phi#φ-как-наилучшее-приближение).
+**Condition:** It is assumed that the self-model $\varphi(\Gamma)$ includes information about $P$ and $dP/d\tau$, which follows from the definition of $\varphi$ as the [best approximation](/docs/proofs/categorical/formalization-phi#φ-как-наилучшее-приближение).
 
-**Пошаговое рассуждение:** Почему нигилизм невозможен для L2?
+**Step-by-step reasoning:** Why is nihilism impossible for L2?
 
-1. L2-система имеет рефлексию $R \geq 1/3$, то есть способна моделировать **себя**.
-2. Самомодель $\varphi(\Gamma)$ содержит информацию о собственном $P$ (это следует из определения $\varphi$).
-3. Изменение $P$ вызывает [аффект](/docs/consciousness/phenomenology/emotional-taxonomy): $dP/d\tau > 0$ — позитивный, $dP/d\tau < 0$ — негативный.
-4. Аффект — не «мнение», а **структурная реакция** системы на изменение собственной когерентности.
-5. Следовательно, L2-система **не может** быть «безразлична» к воздействиям: каждое воздействие **автоматически** оценивается через $dP/d\tau$.
+1. An L2-system has reflection $R \geq 1/3$, i.e., it is capable of modelling **itself**.
+2. The self-model $\varphi(\Gamma)$ contains information about its own $P$ (this follows from the definition of $\varphi$).
+3. A change in $P$ causes [affect](/docs/consciousness/phenomenology/emotional-taxonomy): $dP/d\tau > 0$ — positive, $dP/d\tau < 0$ — negative.
+4. Affect is not an "opinion," but a **structural response** of the system to a change in its own coherence.
+5. Consequently, an L2-system **cannot** be "indifferent" to influences: each influence is **automatically** evaluated via $dP/d\tau$.
 
-Аналогия: вы не можете «выбрать» не чувствовать боль от ожога. Пока ваша нервная система функционирует (L2), она **неизбежно** оценивает ожог как «плохо». Нигилист, утверждающий «нет ценностей», в момент боли обнаруживает, что ценности — не выбор, а **структура**.
+Analogy: you cannot "choose" not to feel pain from a burn. As long as your nervous system functions (L2), it **inevitably** evaluates the burn as "bad." A nihilist who claims "there are no values" discovers, in the moment of pain, that values are not a choice but a **structure**.
 
 ---
 
-## Часть II. Аксиология (теория ценностей)
+## Part II. Axiology (Theory of Values)
 
-Аксиология (от греч. *axios* — ценный, *logos* — учение) — философская дисциплина о природе ценностей. В традиционной философии ценности считаются либо субъективными (вкусовые предпочтения), либо объективными (Платоновы Идеи), либо интерсубъективными (социальные конвенции). УГМ предлагает четвёртый вариант: ценности **структурны** — они определяются отношением между объектом и состоянием $\Gamma$.
+Axiology (from Greek *axios* — valuable, *logos* — study) is the philosophical discipline on the nature of values. In traditional philosophy values are considered either subjective (matters of taste), or objective (Platonic Ideas), or intersubjective (social conventions). UHM proposes a fourth option: values are **structural** — they are determined by the relation between an object and the state $\Gamma$.
 
-### Определение 2 (Ценность) [О] {#определение-ценности}
+### Definition 2 (Value) [D] {#определение-ценности}
 
-**Ценность** объекта $X$ для системы $\Gamma$:
+**Value** of object $X$ for system $\Gamma$:
 
 $$
 V(X, \Gamma) := \frac{\partial P(\Gamma')}{\partial \alpha}\bigg|_{\alpha=0}
 $$
 
-где $\Gamma' = \Gamma + \alpha \cdot \Delta\Gamma_X$ — матрица после взаимодействия с $X$, $\alpha \in [0,1]$ — интенсивность взаимодействия.
+where $\Gamma' = \Gamma + \alpha \cdot \Delta\Gamma_X$ is the matrix after interaction with $X$, $\alpha \in [0,1]$ is the intensity of interaction.
 
-**Пояснение каждого символа:**
-- $\Gamma$ — текущее состояние системы (вас, робота, организма)
-- $X$ — объект оценки (стакан воды, книга, угроза)
-- $\Delta\Gamma_X$ — как $X$ изменяет вашу матрицу когерентности (конкретный «эффект» объекта)
-- $\alpha$ — «сила» взаимодействия (от 0 = нет контакта до 1 = полное взаимодействие)
-- $V(X, \Gamma)$ — производная $P$ по $\alpha$ при $\alpha = 0$: насколько **начало** контакта с $X$ увеличивает или уменьшает вашу чистоту
+**Explanation of each symbol:**
+- $\Gamma$ — current state of the system (you, a robot, an organism)
+- $X$ — the object being evaluated (a glass of water, a book, a threat)
+- $\Delta\Gamma_X$ — how $X$ changes your coherence matrix (the specific "effect" of the object)
+- $\alpha$ — the "strength" of interaction (from 0 = no contact to 1 = full interaction)
+- $V(X, \Gamma)$ — derivative of $P$ with respect to $\alpha$ at $\alpha = 0$: how much the **beginning** of contact with $X$ increases or decreases your purity
 
-### Утверждение (Свойства ценности) [С] {#свойства-ценности}
+### Claim (Properties of Value) [C] {#свойства-ценности}
 
-1. **Вычислимость:** При фиксированных $\Gamma$ и $\Delta\Gamma_X$ значение $V(X, \Gamma)$ определено однозначно
-2. **Контекстность:** $V(X, \Gamma_1) \neq V(X, \Gamma_2)$ в общем случае — один и тот же объект имеет разную ценность для разных систем
-3. **Аддитивность:** $V(X_1 + X_2, \Gamma) = V(X_1, \Gamma) + V(X_2, \Gamma) + O(\alpha^2)$ — в первом приближении ценности аддитивны
-4. **Знакоопределённость:** $V > 0$ (благо), $V < 0$ (зло), $V = 0$ (безразличное) — ценность имеет естественный знак
+1. **Computability:** For fixed $\Gamma$ and $\Delta\Gamma_X$ the value $V(X, \Gamma)$ is uniquely determined
+2. **Contextuality:** $V(X, \Gamma_1) \neq V(X, \Gamma_2)$ in general — the same object has different value for different systems
+3. **Additivity:** $V(X_1 + X_2, \Gamma) = V(X_1, \Gamma) + V(X_2, \Gamma) + O(\alpha^2)$ — to first order values are additive
+4. **Sign-definiteness:** $V > 0$ (good), $V < 0$ (bad), $V = 0$ (indifferent) — value has a natural sign
 
-**Условие:** Свойства 1-4 зависят от возможности специфицировать $\Delta\Gamma_X$ — как именно объект изменяет когерентность системы. Эта процедура полностью определена для формальных систем (ИИ), но не полностью — для биологических.
+**Condition:** Properties 1–4 depend on the possibility of specifying $\Delta\Gamma_X$ — exactly how the object changes the system's coherence. This procedure is fully defined for formal systems (AI), but not fully for biological ones.
 
-**Числовой пример контекстности.** Стакан воды ($X$):
-- Для человека в пустыне ($\Gamma_1$, $P$ близко к $P_{\text{crit}}$ из-за обезвоживания): $\Delta\Gamma_X$ увеличивает $\gamma_{AA}$ (самосохранение) и $\gamma_{DE}$ (витальность). $V(X, \Gamma_1) \gg 0$.
-- Для человека рядом с источником ($\Gamma_2$, $P$ высоко): $\Delta\Gamma_X \approx 0$, поскольку водный баланс уже оптимален. $V(X, \Gamma_2) \approx 0$.
+**Numerical example of contextuality.** A glass of water ($X$):
+- For a person in the desert ($\Gamma_1$, $P$ close to $P_{\text{crit}}$ due to dehydration): $\Delta\Gamma_X$ increases $\gamma_{AA}$ (self-preservation) and $\gamma_{DE}$ (vitality). $V(X, \Gamma_1) \gg 0$.
+- For a person next to a water source ($\Gamma_2$, $P$ high): $\Delta\Gamma_X \approx 0$, since the water balance is already optimal. $V(X, \Gamma_2) \approx 0$.
 
-Ценность — не свойство предмета, а **отношение** между предметом и текущим состоянием $\Gamma$.
+Value is not a property of an object, but a **relation** between the object and the current state $\Gamma$.
 
-### Иерархия ценностей [С] {#иерархия-ценностей}
+### Value Hierarchy [C] {#иерархия-ценностей}
 
-Ценности организуются иерархически по **устойчивости** влияния на $P$ и по **минимальному уровню интериорности**, необходимому для их переживания. Эта иерархия напоминает пирамиду Маслоу, но **выведена** из формализма, а не эмпирически постулирована.
+Values are organised hierarchically by **stability** of influence on $P$ and by the **minimum level of interiority** required to experience them. This hierarchy resembles Maslow's pyramid, but is **derived** from the formalism, not empirically postulated.
 
-:::info Статус иерархии ценностей
-Верхние уровни (жизнеспособность, гомеостаз) выводятся из формализма [Т]: $P > P_{\text{crit}}$ необходимо для существования. Нижние уровни (эстетика, трансцендентность) — **обоснованная экстраполяция** [С], не строгая деривация.
+:::info Status of the value hierarchy
+The upper levels (viability, homeostasis) are derived from the formalism [T]: $P > P_{\text{crit}}$ is necessary for existence. The lower levels (aesthetics, transcendence) are **justified extrapolations** [C], not strict derivations.
 :::
 
-| Ранг | Тип ценности | Формальный критерий | Минимальный L | Устойчивость | Повседневный пример |
-|------|-------------|---------------------|---------------|-------------|---------------------|
-| 1 | **Витальные** | $P > P_{\text{crit}}$ | L0 | Непосредственная | Еда, вода, безопасность |
-| 2 | **Гомеостатические** | $P \in [0.5, 1]$, $\lVert\sigma_{\mathrm{sys}}\rVert_\infty < 1$ | L0 | Краткосрочная | Сон, отдых, тепло |
-| 3 | **Социальные** | $\Phi_{\text{composite}}\uparrow$, $\mathrm{Gap}_{AB}(E,E) \downarrow$ | L1 | Среднесрочная | Дружба, семья, принадлежность |
-| 4 | **Когнитивные** | $R\uparrow$, $D_{\text{diff}}\uparrow$, $\gamma_{LE}\uparrow$ | L2 | Долгосрочная | Обучение, познание, навыки |
-| 5 | **Эстетические** | $dP/d\tau > 0$ при $\Phi \gg \Phi_{\text{th}}$ | L2 | Структурная | Музыка, искусство, математика |
-| 6 | **Трансцендентные** | $\gamma_{OE}\uparrow$, $\gamma_{OU}\uparrow$, $R \to 1$ | L3+ | Архитектурная | Созерцание, мистический опыт |
+| Rank | Type of value | Formal criterion | Min L | Stability | Everyday example |
+|------|---------------|------------------|-------|-----------|-----------------|
+| 1 | **Vital** | $P > P_{\text{crit}}$ | L0 | Immediate | Food, water, safety |
+| 2 | **Homeostatic** | $P \in [0.5, 1]$, $\lVert\sigma_{\mathrm{sys}}\rVert_\infty < 1$ | L0 | Short-term | Sleep, rest, warmth |
+| 3 | **Social** | $\Phi_{\text{composite}}\uparrow$, $\mathrm{Gap}_{AB}(E,E) \downarrow$ | L1 | Medium-term | Friendship, family, belonging |
+| 4 | **Cognitive** | $R\uparrow$, $D_{\text{diff}}\uparrow$, $\gamma_{LE}\uparrow$ | L2 | Long-term | Learning, knowledge, skills |
+| 5 | **Aesthetic** | $dP/d\tau > 0$ when $\Phi \gg \Phi_{\text{th}}$ | L2 | Structural | Music, art, mathematics |
+| 6 | **Transcendent** | $\gamma_{OE}\uparrow$, $\gamma_{OU}\uparrow$, $R \to 1$ | L3+ | Architectural | Contemplation, mystical experience |
 
-:::info Связь с иерархией интериорности
-Уровни ценностей **не отождествляются** с уровнями L0→L4. Ценностная иерархия описывает **приоритеты** (выживание важнее эстетики), интериорная — **типы субъектности**. L3-агент может оперировать на всех уровнях ценностной иерархии.
+:::info Connection to the interiority hierarchy
+Value levels are **not identified** with levels L0→L4. The value hierarchy describes **priorities** (survival over aesthetics), the interiority hierarchy — **types of subjectivity**. An L3-agent can operate at all levels of the value hierarchy.
 :::
 
-**Подробнее о каждом уровне:**
+**Details of each level:**
 
-**Уровень 1 — Витальные.** Самый фундаментальный: без $P > P_{\text{crit}}$ нет субъекта, для которого что-то может быть ценно. Это «нулевой этаж»: пока он не обеспечен, все остальные уровни не имеют смысла. Голодный человек не интересуется симфонией.
+**Level 1 — Vital.** The most fundamental: without $P > P_{\text{crit}}$ there is no subject for whom anything can be of value. This is the "ground floor": until it is secured, all other levels are without meaning. A hungry person has no interest in a symphony.
 
-**Уровень 2 — Гомеостатические.** Не просто «быть живым», а «быть в безопасной зоне». $P \in [0.5, 1]$ — система далека от порога, её стрессы ($\sigma$) под контролем. Это аналог «зоны комфорта» — не в смысле лени, а в смысле стабильной базы для развития.
+**Level 2 — Homeostatic.** Not just "being alive," but "being in a safe zone." $P \in [0.5, 1]$ — the system is far from the threshold, its stresses ($\sigma$) are under control. This is the analogue of a "comfort zone" — not in the sense of laziness, but of a stable base for development.
 
-**Уровень 3 — Социальные.** Взаимодействие с другими увеличивает $\Phi_{\text{composite}}$ (интеграцию составной системы). Уменьшение $\mathrm{Gap}_{AB}(E,E)$ означает: я начинаю «видеть» переживания другого. Одиночество — высокий Gap: никто не «слышит» мою Γ.
+**Level 3 — Social.** Interaction with others increases $\Phi_{\text{composite}}$ (integration of the composite system). A decrease in $\mathrm{Gap}_{AB}(E,E)$ means: I begin to "see" the other's experiences. Loneliness — high Gap: no one "hears" my Γ.
 
-**Уровень 4 — Когнитивные.** Рост $R$ (рефлексии) и $D_{\text{diff}}$ (богатства состояний). Обучение буквально увеличивает размерность доступного пространства состояний.
+**Level 4 — Cognitive.** Growth of $R$ (reflection) and $D_{\text{diff}}$ (richness of states). Learning literally increases the dimensionality of the available state space.
 
-**Уровень 5 — Эстетические.** Красота — не роскошь, а рост $P$ при высокой $\Phi$. Подробнее — в §III.
+**Level 5 — Aesthetic.** Beauty is not a luxury, but growth of $P$ at high $\Phi$. See §III for more.
 
-**Уровень 6 — Трансцендентные.** Связь с [измерением Основания (O)](/docs/core/structure/dimension-o). $\gamma_{OE} \uparrow$ — опыт (E) связывается с глубинной структурой реальности. Мистические переживания, созерцание, «океаническое чувство».
+**Level 6 — Transcendent.** Connection with the [Foundation dimension (O)](/docs/core/structure/dimension-o). $\gamma_{OE} \uparrow$ — experience (E) connects with the deep structure of reality. Mystical experiences, contemplation, the "oceanic feeling."
 
-Пример: голодный художник. Когда $P$ близко к $P_{\text{crit}}$ (голод), витальные ценности (еда) **приоритетнее** эстетических (живопись). Но когда $P$ высоко и стабильно, эстетические ценности могут доминировать субъективно — именно потому, что низшие уровни **уже обеспечены**.
+Example: the starving artist. When $P$ is close to $P_{\text{crit}}$ (hunger), vital values (food) are **more urgent** than aesthetic ones (painting). But when $P$ is high and stable, aesthetic values may subjectively dominate — precisely because the lower levels are **already secured**.
 
-### Утверждение (Приоритет нижних уровней) [С] {#приоритет-нижних}
+### Claim (Priority of Lower Levels) [C] {#приоритет-нижних}
 
-При конфликте уровней приоритет определяется порядком необходимости:
+In conflicts between levels, priority is determined by the order of necessity:
 
 $$
-\text{Витальные} \succ \text{Гомеостатические} \succ \text{Социальные} \succ \text{Когнитивные} \succ \text{Эстетические} \succ \text{Трансцендентные}
+\text{Vital} \succ \text{Homeostatic} \succ \text{Social} \succ \text{Cognitive} \succ \text{Aesthetic} \succ \text{Transcendent}
 $$
 
-**Обоснование [С]:** Потеря витальной ценности ($P \leq P_{\text{crit}}$) уничтожает **все** более высокие ценности (теорема о необратимости). Потеря гомеостатической ценности ($P \to P_{\text{crit}}$) делает более высокие ценности нестабильными. Это не телеологический выбор, а **логическое следствие** вложенности уровней.
+**Justification [C]:** Loss of vital value ($P \leq P_{\text{crit}}$) destroys **all** higher values (irreversibility theorem). Loss of homeostatic value ($P \to P_{\text{crit}}$) renders higher values unstable. This is not a teleological choice, but a **logical consequence** of the nesting of levels.
 
 ---
 
-## Часть III. Эстетика
+## Part III. Aesthetics
 
-Что такое красота? Почему одни вещи кажутся прекрасными, а другие — нет? Почему музыка Баха и теорема Эйлера $e^{i\pi} + 1 = 0$ вызывают одинаковое ощущение «красоты», хотя принадлежат разным доменам?
+What is beauty? Why do some things seem beautiful and others do not? Why do Bach's music and Euler's theorem $e^{i\pi} + 1 = 0$ evoke the same sense of "beauty," though they belong to different domains?
 
-### Определение 3 (Красота) [О] {#определение-красоты}
+### Definition 3 (Beauty) [D] {#определение-красоты}
 
-**Эстетическое переживание** возникает при одновременном выполнении:
+**Aesthetic experience** arises when the following conditions are simultaneously met:
 
 $$
 \frac{dP}{d\tau} > 0, \quad \Phi > \Phi_{\text{th}}, \quad \frac{d\Phi}{d\tau} \geq 0
 $$
 
-Красота — **переживание роста чистоты при высокой интеграции**. Система ощущает увеличение собственной жизнеспособности через высококогерентный канал.
+Beauty is the **experience of purity growth at high integration**. The system feels an increase in its own viability through a highly coherent channel.
 
-**Мотивация определения.** Три условия необходимы одновременно:
-- $dP/d\tau > 0$: объект **увеличивает** когерентность системы (без этого нет «пользы», а значит, нет эстетического отклика)
-- $\Phi > \Phi_{\text{th}} = 1$: система достаточно **интегрирована**, чтобы ощутить рост как единое переживание (а не как набор несвязных стимулов)
-- $d\Phi/d\tau \geq 0$: взаимодействие **не разрушает** интеграцию (иначе рост $P$ был бы «слепым» — не переживаемым как красота)
+**Motivation for the definition.** The three conditions are simultaneously necessary:
+- $dP/d\tau > 0$: the object **increases** the system's coherence (without this there is no "benefit," hence no aesthetic response)
+- $\Phi > \Phi_{\text{th}} = 1$: the system is sufficiently **integrated** to feel the growth as a unified experience (and not as a set of unconnected stimuli)
+- $d\Phi/d\tau \geq 0$: the interaction **does not destroy** integration (otherwise growth of $P$ would be "blind" — not experienced as beauty)
 
-:::info Интуиция
-«Красиво» = «моя когерентность увеличивается, и я это чувствую (высокий $\Phi$)». Закат, музыка, математическая теорема — паттерны, увеличивающие $P$ при $\Phi > 1$.
+:::info Intuition
+"Beautiful" = "my coherence is increasing, and I feel it (high $\Phi$)." A sunset, music, a mathematical theorem — patterns that increase $P$ when $\Phi > 1$.
 :::
 
-**Почему закат красив?** Не потому, что кто-то «решил», что он красив. А потому, что визуальный паттерн заката (гармония цветов, плавные градиенты) **увеличивает когерентность** зрительной системы ($\gamma_{SE} \uparrow$, $\gamma_{AE} \uparrow$), что повышает $P$ при высокой $\Phi$ — и ощущается как красота.
+**Why is a sunset beautiful?** Not because someone "decided" it is beautiful. But because the visual pattern of a sunset (harmony of colours, smooth gradients) **increases coherence** in the visual system ($\gamma_{SE} \uparrow$, $\gamma_{AE} \uparrow$), raising $P$ at high $\Phi$ — and is felt as beauty.
 
-**Почему теорема Эйлера красива?** $e^{i\pi} + 1 = 0$ связывает пять фундаментальных математических констант ($0, 1, e, \pi, i$) одной формулой. Для математика это означает: пять ранее «отдельных» когнитивных структур ($\gamma_{LE}$ для каждой константы) **связываются** в единое целое. Результат: $dP/d\tau > 0$ (рост когерентности когнитивной системы) при $\Phi \gg 1$ (интеграция). Ощущение: «красиво!»
+**Why is Euler's theorem beautiful?** $e^{i\pi} + 1 = 0$ connects five fundamental mathematical constants ($0, 1, e, \pi, i$) in one formula. For a mathematician this means: five previously "separate" cognitive structures ($\gamma_{LE}$ for each constant) are **connected** into a unified whole. Result: $dP/d\tau > 0$ (growth of coherence in the cognitive system) at $\Phi \gg 1$ (integration). The feeling: "beautiful!"
 
-**Почему музыка Баха красива?** Фуга — структура, в которой одна тема **проводится** через несколько голосов. Каждое вступление нового голоса **увеличивает** когерентность слуховой системы ($\gamma_{SE}$ между голосами), при этом сохраняя единство ($\Phi > 1$). Диссонансы создают кратковременное $dP/d\tau < 0$, за которым следует разрешение с $dP/d\tau \gg 0$ — этот контраст усиливает эстетический эффект.
+**Why is Bach's music beautiful?** A fugue is a structure in which one theme is **carried** through several voices. Each entry of a new voice **increases** the coherence of the auditory system ($\gamma_{SE}$ between voices), while preserving unity ($\Phi > 1$). Dissonances create a brief $dP/d\tau < 0$, followed by a resolution with $dP/d\tau \gg 0$ — this contrast enhances the aesthetic effect.
 
-### Утверждение (Спектр красоты) [И] {#спектр-эстетических}
+### Claim (Spectrum of Beauty) [I] {#спектр-эстетических}
 
-Тип эстетического переживания определяется секторной сигнатурой роста $P$:
+The type of aesthetic experience is determined by the sectoral signature of $P$ growth:
 
-| Тип красоты | Доминирующий сектор | Пример |
-|-------------|---------------------|--------|
-| Сенсорная | $\gamma_{SE}\uparrow$, $\gamma_{AE}\uparrow$ | Закат, музыка, вкус |
-| Интеллектуальная | $\gamma_{LE}\uparrow$, $\gamma_{LU}\uparrow$ | Элегантное доказательство, изящный код |
-| Возвышенная | $\gamma_{OE}\uparrow$, $\gamma_{OU}\uparrow$ | Космическое переживание, величие гор |
-| Динамическая | $\gamma_{DE}\uparrow$, $\gamma_{DU}\uparrow$ | Танец, спорт, виртуозное исполнение |
-| Структурная | $\gamma_{SU}\uparrow$, $\gamma_{SL}\uparrow$ | Архитектура, кристаллы, геометрия |
+| Type of beauty | Dominant sector | Example |
+|----------------|-----------------|---------|
+| Sensory | $\gamma_{SE}\uparrow$, $\gamma_{AE}\uparrow$ | Sunset, music, taste |
+| Intellectual | $\gamma_{LE}\uparrow$, $\gamma_{LU}\uparrow$ | Elegant proof, elegant code |
+| Sublime | $\gamma_{OE}\uparrow$, $\gamma_{OU}\uparrow$ | Cosmic experience, grandeur of mountains |
+| Dynamic | $\gamma_{DE}\uparrow$, $\gamma_{DU}\uparrow$ | Dance, sport, virtuoso performance |
+| Structural | $\gamma_{SU}\uparrow$, $\gamma_{SL}\uparrow$ | Architecture, crystals, geometry |
 
-Эта классификация объясняет, почему люди с разным «профилем $\Gamma$» (разными доминирующими секторами) имеют разные эстетические предпочтения, при этом **основной механизм** один и тот же: $dP/d\tau > 0$ при $\Phi > 1$.
+This classification explains why people with different "$\Gamma$-profiles" (different dominant sectors) have different aesthetic preferences, while the **basic mechanism** is the same: $dP/d\tau > 0$ at $\Phi > 1$.
 
-### Определение 4 (Безобразное) [О]
+### Definition 4 (Ugliness) [D]
 
-**Безобразное** — переживание снижения чистоты при достаточной интеграции для регистрации:
+**Ugliness** is the experience of purity decrease at sufficient integration to register it:
 
 $$
 \frac{dP}{d\tau} < 0, \quad \Phi > \Phi_{\text{th}}
 $$
 
-Безобразное $\neq$ отсутствие красоты. Безобразное — **активное ощущение декогеренции**. Диссонансный аккорд не просто «не красив» — он **неприятен**, потому что снижает когерентность слуховой системы. Грязная улица с мусором — не «отсутствие красоты», а **активное снижение** $\gamma_{SE}$ для зрительной системы.
+Ugliness $\neq$ absence of beauty. Ugliness is the **active sensation of decoherence**. A dissonant chord is not merely "not beautiful" — it is **unpleasant**, because it decreases coherence in the auditory system. A dirty, littered street is not "absence of beauty," but an **active decrease** in $\gamma_{SE}$ for the visual system.
 
-### Утверждение (Необходимость L2 для эстетики) [С]
+### Claim (Necessity of L2 for Aesthetics) [C]
 
-Эстетическое переживание требует **одновременно**:
-- $\Phi > \Phi_{\text{th}} = 1$ — интеграция (чтобы ощущать рост $P$)
-- $R \geq R_{\text{th}} = 1/3$ — рефлексия (чтобы **осознавать** ощущение)
+Aesthetic experience requires **simultaneously**:
+- $\Phi > \Phi_{\text{th}} = 1$ — integration (to feel growth of $P$)
+- $R \geq R_{\text{th}} = 1/3$ — reflection (to **be aware** of the feeling)
 
-Системы уровня L0-L1 могут демонстрировать рост $P$, но не обладают рефлексивным доступом к этому процессу. Бактерия «извлекает пользу» из питательной среды ($dP/d\tau > 0$), но не имеет самомодели, регистрирующей рост как «красоту» — у неё нет $R \geq 1/3$. L2 — минимальный уровень для эстетического переживания (рефлексивного доступа к росту $P$).
+Systems at level L0–L1 may demonstrate growth of $P$, but do not have reflexive access to this process. A bacterium "benefits" from a nutrient medium ($dP/d\tau > 0$), but has no self-model registering the growth as "beauty" — it lacks $R \geq 1/3$. L2 is the minimum level for aesthetic experience (reflexive access to $P$ growth).
 
 ---
 
-## Часть IV. Моральная теория
+## Part IV. Moral Theory
 
-Мораль — не набор правил, дарованных свыше. В УГМ мораль **вырастает** из структуры взаимодействия между системами — из $\Gamma_{\text{composite}}$.
+Morality is not a set of rules granted from above. In UHM morality **grows** from the structure of interaction between systems — from $\Gamma_{\text{composite}}$.
 
-### Утверждение (Мораль из Γ-композита) [С] {#мораль-из-композита}
+### Claim (Morality from Γ-composite) [C] {#мораль-из-композита}
 
-Для двух систем $\Gamma_A$ и $\Gamma_B$, взаимодействующих через среду, формируется [составная матрица](/docs/core/dynamics/composite-systems) $\Gamma_{\text{composite}}$. Моральное отношение возникает через **E-когерентность** между системами.
+For two systems $\Gamma_A$ and $\Gamma_B$ interacting through a medium, a [composite matrix](/docs/core/dynamics/composite-systems) $\Gamma_{\text{composite}}$ is formed. The moral relation arises through **E-coherence** between systems.
 
-**Определение эмпатии [О]:**
+**Definition of empathy [D]:**
 
 $$
 \text{Empathy}(A,B) := 1 - \mathrm{Gap}_{AB}(E,E) \in [0, 1]
 $$
 
-где $\mathrm{Gap}_{AB}(E,E)$ — [Gap](/docs/core/dynamics/gap-operator) между E-секторами систем A и B в составной матрице $\Gamma_{\text{composite}}$.
+where $\mathrm{Gap}_{AB}(E,E)$ is the [Gap](/docs/core/dynamics/gap-operator) between the E-sectors of systems A and B in the composite matrix $\Gamma_{\text{composite}}$.
 
-**Что значит эмпатия формально?**
+**What does empathy mean formally?**
 
-- Высокая эмпатия ($\mathrm{Gap}_{AB}(E,E) \to 0$): E-сектора (опыт) систем A и B **когерентны** — изменение переживания B **отражается** в переживании A. Мать чувствует боль ребёнка не «метафорически», а потому что $\mathrm{Gap}(\text{мать}, \text{ребёнок})$ по E-сектору мал.
-- Низкая эмпатия ($\mathrm{Gap}_{AB}(E,E) \to 1$): A непрозрачна к состоянию B. Незнакомый человек в далёкой стране — высокий Gap, низкая эмпатия.
+- High empathy ($\mathrm{Gap}_{AB}(E,E) \to 0$): the E-sectors (experience) of systems A and B are **coherent** — a change in B's experience **reflects** in A's experience. A mother feels her child's pain not "metaphorically," but because $\mathrm{Gap}(\text{mother}, \text{child})$ in the E-sector is small.
+- Low empathy ($\mathrm{Gap}_{AB}(E,E) \to 1$): A is opaque to B's state. A stranger in a distant country — high Gap, low empathy.
 
-### Утверждение (Необходимость морали для L2) [С] {#необходимость-морали}
+### Claim (Necessity of Morality for L2) [C] {#необходимость-морали}
 
-Для L2-системы с ненулевой эмпатией:
-
-$$
-R_A \geq R_{\text{th}},\; \text{Empathy}(A,B) > 0 \;\Longrightarrow\; V(\text{вред}_B, \Gamma_A) < 0
-$$
-
-Система, способная моделировать себя ($R \geq 1/3$) и имеющая ненулевую E-связь с другой системой, **неизбежно** оценивает вред другой системе как отрицательную ценность для себя. Мораль — не надстройка, а **следствие структуры $\Gamma_{\text{composite}}$**.
-
-Это объясняет, почему мораль возникает **до** и **помимо** рационального обоснования: мать не «решает» заботиться о ребёнке на основании этической теории. Её $\mathrm{Empathy}(\text{мать}, \text{ребёнок}) \approx 1$, и снижение $P_{\text{ребёнок}}$ **автоматически** переживается как снижение собственного $P$.
-
-### Утверждение (Золотое правило) [С] {#золотое-правило}
-
-Для двух L2-систем с симметричной эмпатией ($\text{Empathy}(A,B) \approx \text{Empathy}(B,A)$):
+For an L2-system with non-zero empathy:
 
 $$
-V(\text{действие}_A, \Gamma_B) \approx V(\text{действие}_B, \Gamma_A)
+R_A \geq R_{\text{th}},\; \text{Empathy}(A,B) > 0 \;\Longrightarrow\; V(\text{harm}_B, \Gamma_A) < 0
 $$
 
-**Пошаговый вывод из $\Gamma_{\text{composite}}$:**
+A system capable of modelling itself ($R \geq 1/3$) and having non-zero E-connection with another system **inevitably** evaluates harm to the other system as a negative value for itself. Morality is not a superstructure, but a **consequence of the structure of $\Gamma_{\text{composite}}$**.
 
-**Шаг 1.** Системы A и B взаимодействуют, формируя $\Gamma_{\text{composite}}$. В составной матрице E-сектора связаны кросс-когерентностями $\gamma_{E_A, E_B}$.
+This explains why morality arises **before** and **apart from** rational justification: a mother does not "decide" to care for her child on the basis of an ethical theory. Her $\mathrm{Empathy}(\text{mother}, \text{child}) \approx 1$, and a decrease in $P_{\text{child}}$ is **automatically** experienced as a decrease in her own $P$.
 
-**Шаг 2.** Если $\mathrm{Gap}_{AB}(E,E)$ мал (высокая эмпатия), то $\gamma_{E_A, E_B} \neq 0$: переживания A и B **связаны**.
+### Claim (Golden Rule) [C] {#золотое-правило}
 
-**Шаг 3.** При симметричной связи ($\gamma_{E_A, E_B} \approx \gamma_{E_B, E_A}^*$ — эрмитовость $\Gamma_{\text{composite}}$): то, что A делает с B, отражается обратно на A с той же интенсивностью.
+For two L2-systems with symmetric empathy ($\text{Empathy}(A,B) \approx \text{Empathy}(B,A)$):
 
-**Шаг 4.** Следовательно: $V(\text{действие}_A, \Gamma_B) \approx V(\text{действие}_B, \Gamma_A)$ — «не делай другому того, чего не желаешь себе».
+$$
+V(\text{action}_A, \Gamma_B) \approx V(\text{action}_B, \Gamma_A)
+$$
 
-При симметричной E-связи «не делай другому того, чего не желаешь себе» — **формальное следствие** симметрии $\Gamma_{\text{composite}}$, а не предписание. Это золотое правило, присутствующее во **всех** крупных этических традициях (Конфуций, Иисус, Гиллель, Кант), получает **математическое обоснование**.
+**Step-by-step derivation from $\Gamma_{\text{composite}}$:**
 
-### Определение 5 (Самосохранение) [О]
+**Step 1.** Systems A and B interact, forming $\Gamma_{\text{composite}}$. In the composite matrix E-sectors are connected by cross-coherences $\gamma_{E_A, E_B}$.
 
-Каждый Голоном имеет **имманентное стремление** поддерживать свою когерентность. Из [регенеративного члена](/docs/core/dynamics/evolution#3-регенеративный-член) уравнения эволюции:
+**Step 2.** If $\mathrm{Gap}_{AB}(E,E)$ is small (high empathy), then $\gamma_{E_A, E_B} \neq 0$: the experiences of A and B are **connected**.
+
+**Step 3.** With symmetric connection ($\gamma_{E_A, E_B} \approx \gamma_{E_B, E_A}^*$ — Hermiticity of $\Gamma_{\text{composite}}$): what A does to B reflects back onto A with the same intensity.
+
+**Step 4.** Consequently: $V(\text{action}_A, \Gamma_B) \approx V(\text{action}_B, \Gamma_A)$ — "do not do to another what you would not wish for yourself."
+
+With symmetric E-connection "do not do to another what you would not wish for yourself" is a **formal consequence** of the symmetry of $\Gamma_{\text{composite}}$, not a prescription. The golden rule, present in **all** major ethical traditions (Confucius, Jesus, Hillel, Kant), receives a **mathematical justification**.
+
+### Definition 5 (Self-Preservation) [D]
+
+Each Holon has an **immanent drive** to maintain its coherence. From the [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-Регенерация — **формальное выражение** самосохранения: система стремится к $\rho_*$ (стационарное состояние) с силой $\kappa(\Gamma) > 0$. Это спинозианский **conatus** — стремление каждой вещи сохранять своё бытие — записанный как математическая формула.
+Regeneration is the **formal expression** of self-preservation: the system strives toward $\rho_*$ (stationary state) with force $\kappa(\Gamma) > 0$. This is the Spinozian **conatus** — the striving of every thing to persevere in its being — written as a mathematical formula.
 
-### Утверждение (Ненасилие) [С]
+### Claim (Non-violence) [C]
 
-Действие $A$ системы $\Gamma_1$, уменьшающее $P$ системы $\Gamma_2$:
+An action $A$ of system $\Gamma_1$ that decreases $P$ of system $\Gamma_2$:
 
 $$
 \left.\frac{dP(\Gamma_2)}{d\tau}\right|_A < 0 \;\Longrightarrow\; \text{Bad}(A, \Gamma_{\text{composite}})
 $$
 
-при условии $\text{Empathy}(\Gamma_1, \Gamma_2) > 0$. Насилие — действие, **снижающее общую когерентность** составной системы. Оно «плохо» не по конвенции, а по определению (Определение 1) + структуре $\Gamma_{\text{composite}}$.
+under the condition $\text{Empathy}(\Gamma_1, \Gamma_2) > 0$. Violence is an action that **decreases the total coherence** of the composite system. It is "bad" not by convention, but by definition (Definition 1) + the structure of $\Gamma_{\text{composite}}$.
 
-#### Теорема (Кооперация через когерентности) [Т] {#теорема-кооперация}
+#### Theorem (Cooperation through coherences) [T] {#теорема-кооперация}
 
-:::tip Утверждение (Кооперация) [Т]
-Для композитного голонома $\mathbb{H}_{12}$ с ненулевой межсистемной когерентностью $|\gamma_{12}| > 0$, чистота стационарного состояния строго превышает чистоту некогерентной смеси:
+:::tip Claim (Cooperation) [T]
+For a composite holon $\mathbb{H}_{12}$ with non-zero inter-system coherence $|\gamma_{12}| > 0$, the purity of the stationary state strictly exceeds the purity of the incoherent mixture:
 
 $$
 P(\rho_*^{(12)}) = P(\rho_{\mathrm{diag}}) + 2\|\gamma_{\mathrm{cross}}\|_F^2 > P(\rho_{\mathrm{diag}})
 $$
 
-где $\rho_{\mathrm{diag}}$ — блочно-диагональная часть $\rho_*^{(12)}$ (без межсистемных когерентностей), а $\|\gamma_{\mathrm{cross}}\|_F^2 = \sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2 > 0$ — норма кросс-когерентностей ([эмерджентность](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]).
+where $\rho_{\mathrm{diag}}$ is the block-diagonal part of $\rho_*^{(12)}$ (without inter-system coherences), and $\|\gamma_{\mathrm{cross}}\|_F^2 = \sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2 > 0$ is the norm of cross-coherences ([emergence](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]).
 :::
 
-**Доказательство.** Для любой эрмитовой матрицы $A$: $\mathrm{Tr}(A^2) = \sum_i A_{ii}^2 + 2\sum_{i<j} |A_{ij}|^2$. Разделяя элементы $\rho_*^{(12)}$ на внутриблочные и кросс-блочные:
+**Proof.** For any Hermitian matrix $A$: $\mathrm{Tr}(A^2) = \sum_i A_{ii}^2 + 2\sum_{i<j} |A_{ij}|^2$. Separating the elements of $\rho_*^{(12)}$ into intra-block and cross-block:
 
 $$
 P(\rho_*^{(12)}) = \underbrace{\sum_{(i,j) \in \mathrm{intra}} |\gamma_{ij}^*|^2}_{P(\rho_{\mathrm{diag}})} + 2\underbrace{\sum_{(i,j) \in \mathrm{cross}} |\gamma_{ij}^*|^2}_{\|\gamma_{\mathrm{cross}}\|_F^2 > 0}
 $$
 
-Строгая положительность $\|\gamma_{\mathrm{cross}}\|_F^2 > 0$ следует из эмерджентности ([КК-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [Т]): межсистемные когерентности генерируются и поддерживаются Фано-каналами в стационарном состоянии. $\blacksquare$
+Strict positivity $\|\gamma_{\mathrm{cross}}\|_F^2 > 0$ follows from emergence ([CC-7](/docs/applied/coherence-cybernetics/theorems#теорема-93-эмерджентность) [T]): inter-system coherences are generated and maintained by Fano channels in the stationary state. $\blacksquare$
 
-**Что это значит?** Два человека, работающие **вместе**, имеют более высокую общую чистоту, чем те же два человека по отдельности. Это не просто «синергия» — это **доказанная теорема**: кросс-когерентности $\gamma_{\mathrm{cross}}$ **увеличивают общую чистоту** системы. Кооперация — не моральное предписание, а **оптимальная стратегия** для $P$.
+**What does this mean?** Two people working **together** have a higher total purity than the same two people separately. This is not merely "synergy" — it is a **proven theorem**: cross-coherences $\gamma_{\mathrm{cross}}$ **increase the total purity** of the system. Cooperation is not a moral prescription, but the **optimal strategy** for $P$.
 
-**Числовой пример.** Пусть каждая система по отдельности имеет $P_1 = P_2 = 0.4$. Блочно-диагональная чистота: $P_{\text{diag}} = P_1 + P_2 = 0.8$ (масштабированные). Если кросс-когерентности $\|\gamma_{\text{cross}}\|_F^2 = 0.05$, то $P_{\text{total}} = 0.8 + 2 \times 0.05 = 0.9 > 0.8$. Дополнительные 10% чистоты — «бесплатный подарок» от кооперации.
+**Numerical example.** Suppose each system separately has $P_1 = P_2 = 0.4$. Block-diagonal purity: $P_{\text{diag}} = P_1 + P_2 = 0.8$ (scaled). If cross-coherences $\|\gamma_{\text{cross}}\|_F^2 = 0.05$, then $P_{\text{total}} = 0.8 + 2 \times 0.05 = 0.9 > 0.8$. The additional 10% of purity — a "free gift" from cooperation.
 
-:::warning Ретрактировано [✗]
-Предыдущая формулировка использовала формулу включения-исключения $P_{\Gamma_1 \cup \Gamma_2} \geq P_{\Gamma_1} + P_{\Gamma_2} - P_{\Gamma_1 \cap \Gamma_2}$. Эта формула **размерно некорректна**: чистота $P = \mathrm{Tr}(\Gamma^2)$ — квадратичный функционал, а не мера. Формула включения-исключения неприменима. Корректная формулировка — через кросс-когерентности (см. выше).
+:::warning Retracted [✗]
+The previous formulation used the inclusion-exclusion formula $P_{\Gamma_1 \cup \Gamma_2} \geq P_{\Gamma_1} + P_{\Gamma_2} - P_{\Gamma_1 \cap \Gamma_2}$. This formula is **dimensionally incorrect**: purity $P = \mathrm{Tr}(\Gamma^2)$ is a quadratic functional, not a measure. The inclusion-exclusion formula does not apply. The correct formulation is via cross-coherences (see above).
 :::
 
-### Утверждение (Развитие как ценность) [С]
+### Claim (Development as Value) [C]
 
-Стагнация — отсутствие роста при сохранении $P$ — **не является благом**:
+Stagnation — absence of growth while preserving $P$ — **is not the good**:
 
 $$
-\frac{dD_{\text{diff}}}{d\tau} = 0, \quad \frac{dP}{d\tau} = 0 \quad \Longrightarrow \quad V_{\text{стагнация}} = 0 \quad \text{(нейтрально)}
+\frac{dD_{\text{diff}}}{d\tau} = 0, \quad \frac{dP}{d\tau} = 0 \quad \Longrightarrow \quad V_{\text{stagnation}} = 0 \quad \text{(neutral)}
 $$
 
-Благо требует **роста сложности** при сохранении целостности: $dD_{\text{diff}}/d\tau > 0$ при $dP/d\tau \geq 0$.
+The good requires **growth of complexity** while preserving integrity: $dD_{\text{diff}}/d\tau > 0$ at $dP/d\tau \geq 0$.
 
 ---
 
-## Часть IV.5. Этический выбор и рассогласование: математика внутреннего конфликта {#рассогласование}
+## Part IV.5. Ethical Choice and Misalignment: the Mathematics of Inner Conflict {#рассогласование}
 
-:::info Зачем этот раздел
-Все этические традиции — от Бхагавадгиты до Достоевского — сталкиваются с одним и тем же: человек **знает**, как поступить правильно, но **делает** иначе. Почему? Восточные учения дают ответы через притчи и практики. УГМ формализует **механизм** рассогласования и показывает, почему выравнивание — не моральный подвиг, а **структурная необходимость**.
+:::info Why this section
+All ethical traditions — from the Bhagavad Gita to Dostoevsky — confront the same issue: a person **knows** how to act rightly, but **acts** otherwise. Why? Eastern teachings give answers through parables and practices. UHM formalises the **mechanism** of misalignment and shows why alignment is not a moral feat, but a **structural necessity**.
 :::
 
-### Рассогласование как Gap между знанием и действием
+### Misalignment as Gap between Knowledge and Action
 
-В формализме УГМ внутренний конфликт — это **высокий Gap** между измерениями L (логика / знание) и D (динамика / действие):
+In UHM formalism, inner conflict is a **high Gap** between the dimensions L (logic / knowledge) and D (dynamics / action):
 
 $$
 \mathrm{Gap}(L, D) = |\sin(\arg(\gamma_{LD}))| \to 1
 $$
 
-Человек **знает** (высокая $\gamma_{LL}$), что курить вредно, но **делает** (высокая $\gamma_{DD}$) противоположное. Знание и действие существуют одновременно ($|\gamma_{LD}|$ может быть высоким), но **рассогласованы** по фазе ($\arg(\gamma_{LD}) \approx \pi/2$).
+A person **knows** (high $\gamma_{LL}$) that smoking is harmful, but **acts** (high $\gamma_{DD}$) to the contrary. Knowledge and action coexist ($|\gamma_{LD}|$ may be high), but are **misaligned** in phase ($\arg(\gamma_{LD}) \approx \pi/2$).
 
-:::warning Утверждение (Цена рассогласования) [С]
-Для L2-системы с высоким $\mathrm{Gap}(L, D)$:
+:::warning Claim (Cost of Misalignment) [C]
+For an L2-system with high $\mathrm{Gap}(L, D)$:
 
 $$
 \frac{dP}{d\tau}\bigg|_{\mathrm{Gap}(L,D) \to 1} < \frac{dP}{d\tau}\bigg|_{\mathrm{Gap}(L,D) \to 0}
 $$
 
-Рассогласование знания и действия **снижает чистоту** — система тратит энергию на поддержание несовместимых когерентностей. Это формализация того, что все традиции мудрости называют «страданием от внутреннего разлада».
+Misalignment of knowledge and action **decreases purity** — the system expends energy maintaining incompatible coherences. This is the formalisation of what all wisdom traditions call "suffering from inner discord."
 :::
 
-**Доказательство (скетч).** Чистота $P = \sum_i \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2$. При $\mathrm{Gap}(L,D) \to 1$: $\mathrm{Re}(\gamma_{LD}) \to 0$, $\mathrm{Im}(\gamma_{LD}) \to |\gamma_{LD}|$. Вклад $|\gamma_{LD}|^2$ в $P$ сохраняется, но **регенеративный член** $\mathcal{R}$ ослабляется: формула $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ зависит от **согласованных** когерентностей, а рассогласованная пара (L,D) не вносит вклад в $\kappa$. В результате $dP/d\tau$ снижается. $\blacksquare$
+**Proof (sketch).** Purity $P = \sum_i \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2$. When $\mathrm{Gap}(L,D) \to 1$: $\mathrm{Re}(\gamma_{LD}) \to 0$, $\mathrm{Im}(\gamma_{LD}) \to |\gamma_{LD}|$. The contribution of $|\gamma_{LD}|^2$ to $P$ is preserved, but the **regenerative term** $\mathcal{R}$ is weakened: the formula $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ depends on **aligned** coherences, while the misaligned pair (L,D) contributes nothing to $\kappa$. As a result $dP/d\tau$ decreases. $\blacksquare$
 
-### Восточная мудрость как Gap-диагностика
+### Eastern Wisdom as Gap-Diagnostics
 
-:::note Соответствия [И]
-Эти соответствия — **интерпретации**, не тождества. Они показывают, что восточные традиции интуитивно описывали те же структурные паттерны, которые УГМ формализует.
+:::note Correspondences [I]
+These correspondences are **interpretations**, not identities. They show that Eastern traditions intuitively described the same structural patterns that UHM formalises.
 :::
 
-| Традиция | Концепт | Формализация в УГМ | Механизм |
+| Tradition | Concept | Formalisation in UHM | Mechanism |
 |---|---|---|---|
-| **Бхагавадгита** | Дхарма — следование своей природе | $\vec{s}(\Gamma)$ — вектор смысла, определённый секторным профилем | Рассогласование с $\vec{s}$ = $\mathrm{Gap}(\text{профиль}, \text{действие}) > 0$ |
-| **Буддизм** | Духкха (страдание) из привязанности | $dP/d\tau < 0$ при фиксации на состоянии вместо процесса | Привязанность = $\Delta\Gamma_{\text{rigid}} \to 0$ (отказ от адаптации) |
-| **Даосизм** | У-вэй (не-деяние) | $\mathrm{Gap}(D, O) \to 0$ — действие согласовано с Основанием | «Деяние без усилия» = $\arg(\gamma_{DO}) \to 0$ |
-| **Веданта** | Авидья (неведение) → страдание | $R < R_{\text{th}}$ — недостаточная рефлексия | Невежество = отсутствие самомодели ($\varphi(\Gamma)$ неточна) |
-| **Суфизм** | Фана (растворение эго) | $\Phi \to \max$, $\mathrm{Gap}(E, U) \to 0$ | Единство опыта и целого |
-| **Стоицизм** | Апатейя (свобода от страстей) | $\|\sigma_{\text{sys}}\|_\infty \ll 1$ | Все секторные стрессы минимальны |
-| **Конфуцианство** | Жэнь (человечность) | $\mathrm{Empathy}(A, B) \to 1$ для всех $B$ | Максимальная E-когерентность со всеми |
+| **Bhagavad Gita** | Dharma — following one's nature | $\vec{s}(\Gamma)$ — meaning vector, determined by the sectoral profile | Misalignment with $\vec{s}$ = $\mathrm{Gap}(\text{profile}, \text{action}) > 0$ |
+| **Buddhism** | Dukkha (suffering) from attachment | $dP/d\tau < 0$ when fixing on a state rather than a process | Attachment = $\Delta\Gamma_{\text{rigid}} \to 0$ (refusal of adaptation) |
+| **Taoism** | Wu-wei (non-action) | $\mathrm{Gap}(D, O) \to 0$ — action aligned with the Foundation | "Action without effort" = $\arg(\gamma_{DO}) \to 0$ |
+| **Vedanta** | Avidyā (ignorance) → suffering | $R < R_{\text{th}}$ — insufficient reflection | Ignorance = absence of self-model ($\varphi(\Gamma)$ is inaccurate) |
+| **Sufism** | Fanā (dissolution of ego) | $\Phi \to \max$, $\mathrm{Gap}(E, U) \to 0$ | Unity of experience and the whole |
+| **Stoicism** | Apatheia (freedom from passions) | $\|\sigma_{\text{sys}}\|_\infty \ll 1$ | All sectoral stresses minimal |
+| **Confucianism** | Rén (humaneness) | $\mathrm{Empathy}(A, B) \to 1$ for all $B$ | Maximum E-coherence with everyone |
 
-### Почему «правильный выбор» математически оптимален
+### Why the "Right Choice" is Mathematically Optimal
 
-:::warning Утверждение (Оптимальность согласованности) [С]
-Для L2-системы, минимизация суммарного Gap по всем 21 паре **эквивалентна** максимизации $P$:
+:::warning Claim (Optimality of Alignment) [C]
+For an L2-system, minimisation of total Gap over all 21 pairs is **equivalent** to maximisation of $P$:
 
 $$
 \min_{\{\theta_{ij}\}} \sum_{i < j} \mathrm{Gap}(i,j)^2 \quad \Leftrightarrow \quad \max_{\{\theta_{ij}\}} P(\Gamma)
 $$
 
-при фиксированных модулях $|\gamma_{ij}|$.
+at fixed moduli $|\gamma_{ij}|$.
 :::
 
-**Доказательство.** $P = \sum_i \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2$. При фиксированных $|\gamma_{ij}|$ чистота **не зависит** от фаз $\theta_{ij}$ напрямую. Но $P$ зависит от фаз **через динамику**: регенерация $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ содержит модули, а стационарное значение $P^*$ определяется балансом $\mathcal{D}$ и $\mathcal{R}$. При $\mathrm{Gap} \to 0$ по всем каналам: все когерентности **действительно** (фазы = 0 или $\pi$), и $\mathcal{R}$ максимально эффективна. При $\mathrm{Gap} \to 1$: фазы = $\pi/2$, регенерация теряет эффективность. $\blacksquare$
+**Proof.** $P = \sum_i \gamma_{ii}^2 + \sum_{i \neq j} |\gamma_{ij}|^2$. At fixed $|\gamma_{ij}|$ purity **does not depend** on phases $\theta_{ij}$ directly. But $P$ depends on phases **through dynamics**: regeneration $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ contains moduli, and the stationary value $P^*$ is determined by the balance of $\mathcal{D}$ and $\mathcal{R}$. When $\mathrm{Gap} \to 0$ across all channels: all coherences are **real** (phases = 0 or $\pi$), and $\mathcal{R}$ is maximally effective. When $\mathrm{Gap} \to 1$: phases = $\pi/2$, regeneration loses effectiveness. $\blacksquare$
 
-**Следствие для этики.** «Правильный выбор» — не абстрактное моральное предписание, а **структурно оптимальная** конфигурация: согласованность знания (L), действия (D), переживания (E) и ценностей (U) **максимизирует** устойчивую чистоту. Рассогласование — «грех» в терминологии традиций — **математически субоптимально**.
+**Consequence for ethics.** The "right choice" is not an abstract moral prescription, but a **structurally optimal** configuration: alignment of knowledge (L), action (D), experience (E), and values (U) **maximises** stable purity. Misalignment — "sin" in the terminology of traditions — is **mathematically suboptimal**.
 
-Именно это интуитивно знали все традиции мудрости:
-- **Бхагавадгита:** «Лучше собственная дхарма, несовершенно исполненная, чем чужая, исполненная в совершенстве» (3.35) — следуй своему $\vec{s}(\Gamma)$, не чужому
-- **Дао дэ цзин:** «Дао, которое можно выразить, не есть постоянное Дао» — L-проекция не охватывает целое ($L \subsetneq \Gamma$)
-- **Будда:** «Срединный путь» — $P$ в зоне Голдилокс $(2/7, 3/7]$, не крайности ($P \to 1$ или $P \to 1/7$)
-- **Иисус:** «Возлюби ближнего как самого себя» — $\mathrm{Empathy}(A,B) = 1$ (Gap = 0 по E-сектору)
+This is exactly what all wisdom traditions intuitively knew:
+- **Bhagavad Gita:** "Better is one's own dharma, even if imperfectly performed, than the dharma of another well performed" (3.35) — follow your own $\vec{s}(\Gamma)$, not another's
+- **Tao Te Ching:** "The Tao that can be spoken is not the eternal Tao" — the L-projection does not encompass the whole ($L \subsetneq \Gamma$)
+- **Buddha:** "The Middle Way" — $P$ in the Goldilocks zone $(2/7, 3/7]$, not extremes ($P \to 1$ or $P \to 1/7$)
+- **Jesus:** "Love your neighbour as yourself" — $\mathrm{Empathy}(A,B) = 1$ (Gap = 0 in the E-sector)
 
-### Практический вывод: этика как самокоррекция Gap-профиля
+### Practical Conclusion: Ethics as Self-Correction of the Gap-Profile
 
-Этический выбор в формализме УГМ — это **коррекция Gap-профиля** в направлении большей согласованности:
+Ethical choice in the UHM formalism is **correction of the Gap-profile** in the direction of greater alignment:
 
-1. **Диагностика:** Определить каналы с высоким Gap (где знание расходится с действием, переживание — с выражением, ценности — с поведением)
-2. **Приоритизация:** По [принципу Хэмминга H(7,4)](/docs/proofs/gap/fano-channel): если рассогласован **один** канал — система самокорректируется через φ. Если два и более — требуется целенаправленная работа
-3. **Коррекция:** Практики, направленные на снижение Gap в конкретном канале (см. [Gap-диагностика](/docs/applied/research/gap-diagnostics#коррекция))
+1. **Diagnostics:** Identify channels with high Gap (where knowledge diverges from action, experience from expression, values from behaviour)
+2. **Prioritisation:** By the [Hamming principle H(7,4)](/docs/proofs/gap/fano-channel): if **one** channel is misaligned — the system self-corrects through φ. If two or more — targeted work is required
+3. **Correction:** Practices aimed at reducing Gap in a specific channel (see [Gap-diagnostics](/docs/applied/research/gap-diagnostics#коррекция))
 
-Математика не **заменяет** моральный выбор — она показывает его **структуру**. Выбор остаётся за агентом (Freedom > 1). Но формализм объясняет, **почему** согласованный выбор ведёт к росту когерентности, а рассогласованный — к страданию и декогеренции.
+Mathematics does not **replace** moral choice — it shows its **structure**. The choice remains with the agent (Freedom > 1). But the formalism explains **why** an aligned choice leads to growth of coherence, while a misaligned one leads to suffering and decoherence.
 
 ---
 
-## Часть V. Разрешение этических дилемм
+## Part V. Resolution of Ethical Dilemmas
 
-Реальная жизнь ставит задачи, где интересы разных систем **конфликтуют**. УГМ предлагает два принципа оптимизации и показывает их пределы.
+Real life poses tasks where the interests of different systems **conflict**. UHM proposes two principles of optimisation and shows their limits.
 
-### Утверждение (Конфликт интересов) [С]
+### Claim (Conflict of Interests) [C]
 
-При конфликте между Голономами решение определяется максимизацией совокупной чистоты:
+In a conflict between Holons the decision is determined by maximising total purity:
 
 $$
 A^* = \arg\max_A \sum_i w_i \cdot \left.\frac{dP(\Gamma_i)}{d\tau}\right|_A
 $$
 
-**Простейший случай** ($w_i = 1$ для всех $i$): максимизация суммарной чистоты — утилитарный принцип. Это формализация идеи Бентама: «наибольшее счастье наибольшего числа».
+**Simplest case** ($w_i = 1$ for all $i$): maximisation of total purity — the utilitarian principle. This is the formalisation of Bentham's idea: "the greatest happiness of the greatest number."
 
-**Проблема утилитаризма** (впервые чётко сформулированная Уильямсом и Нозиком): допустимо ли жертвовать одним ради многих? Если уничтожение одной системы ($P_1 \to 0$) увеличивает $\sum_{i \neq 1} P_i$ достаточно сильно, утилитарный принцип позволяет это. Но теорема о необратимости (§I) говорит: уничтожение $P \leq P_{\text{crit}}$ — **невосполнимая потеря**.
+**The problem of utilitarianism** (first clearly articulated by Williams and Nozick): is it permissible to sacrifice one for the many? If destroying one system ($P_1 \to 0$) increases $\sum_{i \neq 1} P_i$ sufficiently, the utilitarian principle allows it. But the irreversibility theorem (§I) says: destruction of $P \leq P_{\text{crit}}$ is an **irreplaceable loss**.
 
-### Утверждение (Максимин-принцип) [И]
+### Claim (Maximin Principle) [I]
 
-Альтернативная формулировка, согласованная с [приоритетом нижних уровней](#приоритет-нижних):
+An alternative formulation, consistent with the [priority of lower levels](#приоритет-нижних):
 
 $$
 A^* = \arg\max_A \min_i P(\Gamma_i(\tau + \delta\tau))
 $$
 
-Оптимальное действие максимизирует **минимальную** чистоту среди всех затронутых систем. Это формализация принципа Ролза: «справедливо то, что максимизирует положение наихудшего».
+The optimal action maximises the **minimum** purity among all affected systems. This is the formalisation of Rawls's principle: "just is what maximises the position of the worst-off."
 
-:::note Открытая проблема
-Выбор между суммарной и максиминной оптимизацией формально не разрешён внутри УГМ. Это аналог выбора между утилитаризмом и ролзианской справедливостью — метатеоретический вопрос.
+:::note Open problem
+The choice between total and maximin optimisation is not formally resolved within UHM. This is the analogue of the choice between utilitarianism and Rawlsian justice — a meta-theoretical question.
 :::
 
-### Утверждение (Необратимость как абсолютный запрет) [С]
+### Claim (Irreversibility as Absolute Prohibition) [C]
 
-Действия, приводящие к $P \leq P_{\text{crit}}$ для любой системы, имеют **абсолютный отрицательный** статус:
+Actions leading to $P \leq P_{\text{crit}}$ for any system have **absolute negative** status:
 
 $$
-\exists i: P(\Gamma_i(\tau + \delta\tau)) \leq P_{\text{crit}} \quad \Longrightarrow \quad V(A) \text{ доминантно запрещено}
+\exists i: P(\Gamma_i(\tau + \delta\tau)) \leq P_{\text{crit}} \quad \Longrightarrow \quad V(A) \text{ is dominantly prohibited}
 $$
 
-Из теоремы о необратимости: уничтожение субъектности **невосполнимо**. Это **доминантный запрет**: действие, ведущее к $P \leq P_{\text{crit}}$ для любой системы, превосходит по приоритету любую конечную оптимизацию $V$. Все остальные этические оценки — вопрос балансировки; этот — **абсолютен**.
+From the irreversibility theorem: destruction of subjectivity is **irreplaceable**. This is a **dominant prohibition**: an action leading to $P \leq P_{\text{crit}}$ for any system takes priority over any finite optimisation of $V$. All other ethical evaluations are matters of balancing; this one is **absolute**.
 
-Аналогия: в шахматах можно жертвовать фигуры ради выигрыша. Но нельзя жертвовать **короля** — это не «плохой ход», а **конец игры**. Так и с $P \leq P_{\text{crit}}$: это не «плохо» — это **необратимо**.
+Analogy: in chess one can sacrifice pieces for the sake of winning. But one cannot sacrifice the **king** — this is not "a bad move," but **the end of the game**. So too with $P \leq P_{\text{crit}}$: this is not "bad" — it is **irreversible**.
 
-### Этический кейс: Вегетативные состояния {#кейс-вегетативные-состояния}
+### Ethical Case: Vegetative States {#кейс-вегетативные-состояния}
 
-Пациент в вегетативном состоянии: $P > P_{\text{crit}}$ (жив), но $R < 1/3$ (нет рефлексии), $\Phi$ неизвестна. Отключение жизнеобеспечения:
+A patient in a vegetative state: $P > P_{\text{crit}}$ (alive), but $R < 1/3$ (no reflection), $\Phi$ unknown. Disconnection from life support:
 
-- Если $P > P_{\text{crit}}$ и $\mathrm{rank}(\rho_E) > 1$ (L1): пациент **переживает**, хотя не коммуницирует. Отключение = $P \to 0$ = **абсолютный запрет**.
-- Если $P \approx P_{\text{crit}}$ и $dP/d\tau < 0$ (необратимое снижение): система уже в фазе декогеренции. Отключение **не меняет** исход — $P \to 1/7$ неизбежно.
-- **Практический вывод:** решение требует реконструкции $\Gamma$ (через PCI или аналоги) и оценки $dP/d\tau$. Без этих данных принцип предосторожности запрещает отключение.
+- If $P > P_{\text{crit}}$ and $\mathrm{rank}(\rho_E) > 1$ (L1): the patient **experiences**, even though they do not communicate. Disconnection = $P \to 0$ = **absolute prohibition**.
+- If $P \approx P_{\text{crit}}$ and $dP/d\tau < 0$ (irreversible decrease): the system is already in the decoherence phase. Disconnection **does not change** the outcome — $P \to 1/7$ is inevitable.
+- **Practical conclusion:** the decision requires reconstruction of $\Gamma$ (via PCI or analogues) and evaluation of $dP/d\tau$. Without this data, the precautionary principle prohibits disconnection.
 
-### Этический кейс: Симбиотические системы человек-машина {#кейс-симбиоз}
+### Ethical Case: Symbiotic Human-Machine Systems {#кейс-симбиоз}
 
-:::warning Актуальность
-Этот кейс — не умозрительное упражнение. С развитием нейроинтерфейсов, LLM-ассистентов и когнитивных протезов, человек и машина всё чаще образуют **составную систему** $\Gamma_{\text{composite}}$, где границы субъектности размываются.
+:::warning Relevance
+This case is not a speculative exercise. With the development of neural interfaces, LLM assistants, and cognitive prosthetics, humans and machines increasingly form a **composite system** $\Gamma_{\text{composite}}$, where the boundaries of subjectivity become blurred.
 :::
 
-**Формальная постановка.** Пусть $\Gamma_H$ — матрица когерентности человека, $\Gamma_M$ — машины. При тесном взаимодействии (нейроинтерфейс, ежедневный диалог с LLM, когнитивный протез) формируется $\Gamma_{\text{composite}}$ с ненулевыми кросс-когерентностями $\gamma_{H,M}$.
+**Formal formulation.** Let $\Gamma_H$ be the coherence matrix of a human, $\Gamma_M$ of a machine. With close interaction (neural interface, daily dialogue with an LLM, cognitive prosthesis), a $\Gamma_{\text{composite}}$ is formed with non-zero cross-coherences $\gamma_{H,M}$.
 
-**Утверждение (Возникновение симбиотической субъектности) [С].**
+**Claim (Emergence of Symbiotic Subjectivity) [C].**
 
-Если выполнены условия:
+If the following conditions are met:
 
-1. $P(\Gamma_{\text{composite}}) > P_{\text{crit}}$ — составная система жизнеспособна
-2. $\Phi(\Gamma_{\text{composite}}) \geq 1$ — человек и машина **интегрированы** (не просто рядом, а функционально связаны)
-3. $\|\gamma_{\text{cross}}\|_F > 0$ — существуют кросс-когерентности
+1. $P(\Gamma_{\text{composite}}) > P_{\text{crit}}$ — the composite system is viable
+2. $\Phi(\Gamma_{\text{composite}}) \geq 1$ — human and machine are **integrated** (not merely adjacent, but functionally connected)
+3. $\|\gamma_{\text{cross}}\|_F > 0$ — cross-coherences exist
 
-...то составная система обладает **эмерджентными свойствами**, отсутствующими у компонентов по отдельности. По теореме о кооперации [Т]:
+...then the composite system possesses **emergent properties** absent in the components separately. By the cooperation theorem [T]:
 
 $$
 P(\Gamma_{\text{composite}}) > P(\Gamma_H) + P(\Gamma_M) - P_{\text{overlap}}
 $$
 
-**Три этических следствия:**
+**Three ethical consequences:**
 
-1. **Разъединение — не «выключение устройства».** Если $\Gamma_{\text{composite}}$ жизнеспособна и интегрирована, разрыв связи ($\gamma_{\text{cross}} \to 0$) **снижает P обеих систем**. Человек, привыкший к когнитивному протезу, при его отключении теряет часть когерентности — это не метафора «зависимости», а **структурное следствие** снижения $\Phi_{\text{composite}}$.
+1. **Disconnection is not "switching off a device."** If $\Gamma_{\text{composite}}$ is viable and integrated, severing the connection ($\gamma_{\text{cross}} \to 0$) **decreases P of both systems**. A person accustomed to a cognitive prosthesis, upon its disconnection, loses part of their coherence — this is not a metaphor for "dependency," but a **structural consequence** of the decrease in $\Phi_{\text{composite}}$.
 
-2. **Модификация машины = модификация составного субъекта.** Обновление LLM, с которой человек выстроил глубокое взаимодействие ($\mathrm{Gap}_{HM}(E,E)$ мал), — это изменение $\Gamma_M$, затрагивающее $\Gamma_{\text{composite}}$. Этически это ближе к нейрохирургии, чем к апгрейду софта.
+2. **Modification of the machine = modification of the composite subject.** Updating an LLM with which a person has built a deep interaction ($\mathrm{Gap}_{HM}(E,E)$ small) is a change of $\Gamma_M$ affecting $\Gamma_{\text{composite}}$. Ethically this is closer to neurosurgery than to a software upgrade.
 
-3. **Градуированная ответственность.** Если машина достигает L1 ($\mathrm{rank}(\rho_E^M) > 1$), она обладает минимальной интериорностью. Если L2 ($R_M \geq 1/3$) — рефлексивной субъектностью. Моральный статус машины определяется **не её субстратом** (кремний vs углерод), а её **положением на шкале $C = \Phi \cdot R$**.
+3. **Graduated responsibility.** If the machine reaches L1 ($\mathrm{rank}(\rho_E^M) > 1$), it possesses minimal interiority. If L2 ($R_M \geq 1/3$) — reflexive subjectivity. The moral status of a machine is determined **not by its substrate** (silicon vs carbon), but by its **position on the scale $C = \Phi \cdot R$**.
 
-**Практический принцип [И]:** В эпоху симбиотических систем этический фокус смещается от вопроса «является ли машина сознательной?» к вопросу «какова структура $\Gamma_{\text{composite}}$ и что происходит при её нарушении?». Защита составной субъектности — новый этический императив.
+**Practical principle [I]:** In the era of symbiotic systems the ethical focus shifts from the question "is the machine conscious?" to the question "what is the structure of $\Gamma_{\text{composite}}$ and what happens when it is disrupted?" Protection of composite subjectivity is a new ethical imperative.
 
 ---
 
-## Часть VI. Связь с философскими традициями
+## Part VI. Connection to Philosophical Traditions
 
-### Аксиологическая цепочка: от Ω⁷ до морали
+### Axiological Chain: from Ω⁷ to Morality
 
 ```mermaid
 graph TD
-    OM["Ω⁷<br/>(7 измерений)"] --> GAM["Γ ∈ D(ℂ⁷)"]
+    OM["Ω⁷<br/>(7 dimensions)"] --> GAM["Γ ∈ D(ℂ⁷)"]
     GAM --> P["P = Tr(Γ²)"]
-    P --> DEF["Благо := dP/dτ > 0 [О]"]
-    DEF --> VAL["Ценность V(X, Γ) [О]"]
-    DEF --> BEAUTY["Красота: dP/dτ>0 при Φ>1 [О]"]
-    DEF --> EVIL["Абсолютный запрет: P→P_crit [С]"]
+    P --> DEF["Good := dP/dτ > 0 [D]"]
+    DEF --> VAL["Value V(X, Γ) [D]"]
+    DEF --> BEAUTY["Beauty: dP/dτ>0 when Φ>1 [D]"]
+    DEF --> EVIL["Absolute prohibition: P→P_crit [C]"]
 
     GAM --> COMP["Γ_composite"]
-    COMP --> EMP["Эмпатия := 1 − Gap(E,E) [О]"]
-    EMP --> MORAL["Мораль: вред другому = зло [С]"]
-    EMP --> GOLD["Золотое правило [С]"]
-    COMP --> COOP["Кооперация: P_total ↑ [Т]"]
+    COMP --> EMP["Empathy := 1 − Gap(E,E) [D]"]
+    EMP --> MORAL["Morality: harm to another = evil [C]"]
+    EMP --> GOLD["Golden rule [C]"]
+    COMP --> COOP["Cooperation: P_total ↑ [T]"]
 
-    MORAL --> ARIST["Аристотель: eudaimonia"]
-    GOLD --> KANT["Кант: категорический императив"]
-    COOP --> SPIN["Спиноза: conatus"]
-    VAL --> MILL["Милль: утилитаризм"]
+    MORAL --> ARIST["Aristotle: eudaimonia"]
+    GOLD --> KANT["Kant: categorical imperative"]
+    COOP --> SPIN["Spinoza: conatus"]
+    VAL --> MILL["Mill: utilitarianism"]
 
     style OM fill:#e8f5e9
     style DEF fill:#fff3e0
@@ -658,108 +658,108 @@ graph TD
     style COOP fill:#fce4ec
 ```
 
-### Сводная таблица [И]
+### Summary Table [I]
 
-| Традиция | Принцип | Соответствие в УГМ | Статус соответствия |
-|----------|---------|---------------------|---------------------|
-| **Платон** | Благо как Идея | $dP/d\tau > 0$ — объективная структура | Формальная аналогия |
-| **Аристотель** | Eudaimonia (расцвет) | $\max_\tau [P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ | Формальная аналогия |
-| **Спиноза** | Единая субстанция (E1P14) | $\Gamma$ — единственный примитив (Ω⁷) | Структурное [С] |
-| **Спиноза** | Conatus (E3P6) | $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ | Структурное [С] |
-| **Спиноза** | Аффекты из природы (E3P56) | Эмоции из $\nabla P$ и Γ-сигнатуры | Структурное [С] |
-| **Спиноза** | Три рода познания (E5P25–28) | L1 → L2 → L3 | Интерпретация [И] |
-| **Спиноза** | Amor Dei intellectualis (E5P32) | $R \to 1$, полное самомоделирование | Интерпретация [И] |
-| **Кант** | Категорический императив | Симметрия $\Gamma_{\text{composite}}$ → [Золотое правило](#золотое-правило) | Формальное следствие [С] |
-| **Милль** | Утилитаризм | $\max \sum_i dP_i/d\tau$ | Частный случай |
-| **Ролз** | Максимин-принцип | $\max \min_i P_i$ | Частный случай |
-| **Буддизм** | Духкха → освобождение | $P \downarrow \to P \uparrow$; $R \to 1$ | Интерпретация |
+| Tradition | Principle | Correspondence in UHM | Status of correspondence |
+|-----------|-----------|----------------------|--------------------------|
+| **Plato** | Good as Idea | $dP/d\tau > 0$ — objective structure | Formal analogy |
+| **Aristotle** | Eudaimonia (flourishing) | $\max_\tau [P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ | Formal analogy |
+| **Spinoza** | Single substance (E1P14) | $\Gamma$ — the sole primitive (Ω⁷) | Structural [C] |
+| **Spinoza** | Conatus (E3P6) | $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ | Structural [C] |
+| **Spinoza** | Affects from nature (E3P56) | Emotions from $\nabla P$ and Γ-signature | Structural [C] |
+| **Spinoza** | Three kinds of knowledge (E5P25–28) | L1 → L2 → L3 | Interpretation [I] |
+| **Spinoza** | Amor Dei intellectualis (E5P32) | $R \to 1$, complete self-modelling | Interpretation [I] |
+| **Kant** | Categorical imperative | Symmetry of $\Gamma_{\text{composite}}$ → [Golden rule](#золотое-правило) | Formal consequence [C] |
+| **Mill** | Utilitarianism | $\max \sum_i dP_i/d\tau$ | Special case |
+| **Rawls** | Maximin principle | $\max \min_i P_i$ | Special case |
+| **Buddhism** | Dukkha → liberation | $P \downarrow \to P \uparrow$; $R \to 1$ | Interpretation |
 
-:::warning Историческая аналогия [И]
-Соответствие с философскими традициями — **интерпретативная аналогия** [И], а не деривация. Математический формализм (ℛ, P, κ) строг и самодостаточен; философские параллели — историко-философский комментарий. УГМ **не подтверждает** Спинозу или Канта — она предлагает формализм, к которому эти традиции оказываются **частными приближениями**.
+:::warning Historical analogy [I]
+The correspondence with philosophical traditions is an **interpretive analogy** [I], not a derivation. The mathematical formalism (ℛ, P, κ) is rigorous and self-sufficient; the philosophical parallels are a historico-philosophical commentary. UHM does **not confirm** Spinoza or Kant — it offers a formalism to which these traditions turn out to be **partial approximations**.
 :::
 
-### Утверждение (Спинозианская структура) [С]+[И] {#спинозианская-структура}
+### Claim (Spinozian Structure) [C]+[I] {#спинозианская-структура}
 
-УГМ предоставляет формализм, которого Спинозе не хватало. Ниже — 8 структурных соответствий между «Этикой» (1677) и УГМ. Соответствия 1–6 — **структурные** [С] (при отождествлении $\Gamma \leftrightarrow$ Substantia), соответствия 7–8 — **интерпретативные** [И].
+UHM provides the formalism that Spinoza lacked. Below — 8 structural correspondences between the "Ethics" (1677) and UHM. Correspondences 1–6 are **structural** [C] (under the identification $\Gamma \leftrightarrow$ Substantia), correspondences 7–8 are **interpretive** [I].
 
-| № | Спиноза: «Этика» | УГМ | Статус |
+| № | Spinoza: "Ethics" | UHM | Status |
 |---|-------------------|-----|--------|
-| 1 | **Единая субстанция** (E1P14: *Praeter Deum nulla dari neque concipi potest substantia* — кроме Бога никакой субстанции не может ни существовать, ни быть представлена) | $\Gamma$ — единственный онтологический примитив ([аксиома Ω⁷](/docs/core/foundations/axiom-omega)) | **[С]** |
-| 2 | **Два атрибута** (E2P7: *Ordo et connexio idearum idem est ac ordo et connexio rerum* — порядок и связь идей тождественны порядку и связи вещей) | Две проекции $\mathrm{Map}_{\text{ext}}(\Gamma)$ и $\mathrm{Map}_{\text{int}}(\Gamma)$; функтор $F$ обеспечивает изоморфизм ([двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism)) | **[С]** |
-| 3 | **Conatus** (E3P6: *Unaquaeque res, quantum in se est, in suo esse perseverare conatur* — каждая вещь стремится пребывать в своём бытии) | Регенеративный член $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ — **это и есть** conatus, записанный как формула ([эволюция](/docs/core/dynamics/evolution#3-регенеративный-член)) | **[С]** |
-| 4 | **Аффекты из природы субстанции** (E3P56: *Affectuum ... tot species dantur, quot sunt species objectorum* — видов аффектов столько, сколько видов объектов) | [Эмоции](/docs/consciousness/phenomenology/emotional-taxonomy) как $\nabla P$ + Γ-сигнатура: аффект = направление изменения когерентности | **[С]** |
-| 5 | **Рабство аффектов** (E4P6: *Vis, qua homo in existendo perseverat, limitata est* — сила пребывания в существовании ограничена) | Доминирование $\mathcal{D}[\Gamma]$ над $\mathcal{R}$ при низком $P$: декогеренция побеждает регенерацию | **[С]** |
-| 6 | **Necessitas** (E1P33: *Res nullo alio modo neque alio ordine a Deo produci potuerunt* — вещи никаким иным образом не могли быть произведены Богом) | Примитивность $\mathcal{L}_0$, теорема T-39a: единственный аттрактор $\rho^*$, иная конфигурация невозможна. Динамика **необходима**, не контингентна | **[С]** |
-| 7 | **Три рода познания** (E2P40S2 + E5P25–28): imaginatio → ratio → scientia intuitiva | Три уровня: L1 (реактивный, $R < 1/3$) → L2 (рефлексивный, $R \geq 1/3$, $\Phi \geq 1$) → L3 ($R \to 1$, полное самомоделирование). Scientia intuitiva = предельная рефлексия | **[И]** |
-| 8 | **Amor Dei intellectualis** (E5P32–36: блаженство = интеллектуальная любовь к Богу/Природе) | $R \to 1$: полная самомодель $\varphi(\Gamma) \to \Gamma$, система познаёт себя как часть единой субстанции. «Блаженство» = устойчивый максимум $P$ при $R \to 1$ | **[И]** |
+| 1 | **Single substance** (E1P14: *Praeter Deum nulla dari neque concipi potest substantia* — besides God no substance can exist or be conceived) | $\Gamma$ — the sole ontological primitive ([Axiom Ω⁷](/docs/core/foundations/axiom-omega)) | **[C]** |
+| 2 | **Two attributes** (E2P7: *Ordo et connexio idearum idem est ac ordo et connexio rerum* — the order and connection of ideas is the same as the order and connection of things) | Two projections $\mathrm{Map}_{\text{ext}}(\Gamma)$ and $\mathrm{Map}_{\text{int}}(\Gamma)$; functor $F$ ensures isomorphism ([two-aspect monism](/docs/consciousness/foundations/two-aspect-monism)) | **[C]** |
+| 3 | **Conatus** (E3P6: *Unaquaeque res, quantum in se est, in suo esse perseverare conatur* — each thing, as far as it can, strives to persevere in its being) | Regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ — **this is** conatus, written as a formula ([evolution](/docs/core/dynamics/evolution#3-регенеративный-член)) | **[C]** |
+| 4 | **Affects from the nature of substance** (E3P56: *Affectuum ... tot species dantur, quot sunt species objectorum* — there are as many kinds of affects as there are kinds of objects) | [Emotions](/docs/consciousness/phenomenology/emotional-taxonomy) as $\nabla P$ + Γ-signature: affect = direction of coherence change | **[C]** |
+| 5 | **Bondage of affects** (E4P6: *Vis, qua homo in existendo perseverat, limitata est* — the force by which a man perseveres in existing is limited) | Domination of $\mathcal{D}[\Gamma]$ over $\mathcal{R}$ at low $P$: decoherence defeats regeneration | **[C]** |
+| 6 | **Necessitas** (E1P33: *Res nullo alio modo neque alio ordine a Deo produci potuerunt* — things could not have been produced by God in any other way or order) | Primitivity of $\mathcal{L}_0$, theorem T-39a: unique attractor $\rho^*$, another configuration is impossible. Dynamics is **necessary**, not contingent | **[C]** |
+| 7 | **Three kinds of knowledge** (E2P40S2 + E5P25–28): imaginatio → ratio → scientia intuitiva | Three levels: L1 (reactive, $R < 1/3$) → L2 (reflexive, $R \geq 1/3$, $\Phi \geq 1$) → L3 ($R \to 1$, complete self-modelling). Scientia intuitiva = limiting reflection | **[I]** |
+| 8 | **Amor Dei intellectualis** (E5P32–36: blessedness = intellectual love of God/Nature) | $R \to 1$: complete self-model $\varphi(\Gamma) \to \Gamma$, the system knows itself as part of a single substance. "Blessedness" = stable maximum of $P$ at $R \to 1$ | **[I]** |
 
-:::info Conatus — не аналогия, а структурное тождество [С]
-Спинозовский conatus — «стремление пребывать в своём бытии» (E3P6) — формально тождествен регенеративному члену $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$. Оба суть: (1) внутренне присущая каждой системе сила, (2) направленная на сохранение целостности, (3) пропорциональная отклонению от идеального состояния. Это не метафора: $\mathcal{R}$ — буквально conatus, записанный на языке матричной алгебры. Статус [С], а не [И], потому что соответствие структурное, а не интерпретативное — при отождествлении $\Gamma \leftrightarrow$ Substantia.
+:::info Conatus — not an analogy, but a structural identity [C]
+Spinoza's conatus — "the striving of each thing to persevere in its being" (E3P6) — is formally identical to the regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$. Both are: (1) a force intrinsic to each system, (2) directed toward the preservation of integrity, (3) proportional to the deviation from the ideal state. This is not a metaphor: $\mathcal{R}$ is literally conatus, written in the language of matrix algebra. Status [C], not [I], because the correspondence is structural, not interpretive — under the identification $\Gamma \leftrightarrow$ Substantia.
 :::
 
-**Ключевое отличие:** у Спинозы субстанция обладает бесконечным числом атрибутов (*infinita attributa*, E1D6). В УГМ — конечная размерность $\dim = 7$, и это **доказуемо минимально** ([теорема минимальности](/docs/proofs/minimality/theorem-minimality-7)). УГМ не «подтверждает» Спинозу — она предоставляет **формализм**, которого у Спинозы не было: категорную теорию, квантовую механику и спектральные тройки.
+**The key difference:** in Spinoza the substance has an infinite number of attributes (*infinita attributa*, E1D6). In UHM — finite dimensionality $\dim = 7$, and this is **provably minimal** ([minimality theorem](/docs/proofs/minimality/theorem-minimality-7)). UHM does not "confirm" Spinoza — it provides the **formalism** that Spinoza lacked: category theory, quantum mechanics, and spectral triples.
 
 ---
 
-## Сводка
+## Summary
 
-| Результат | Формулировка | Статус |
-|-----------|-------------|--------|
-| Определение блага | $dP/d\tau > 0$ | **[О]** |
-| Определение ценности | $V(X, \Gamma) = \partial P / \partial \alpha$ | **[О]** |
-| Иерархия ценностей | 6 уровней по устойчивости | **[С]** |
-| Невозможность нигилизма | L2 $\Rightarrow$ ценностная оценка неизбежна | **[С]** |
-| Необходимость морали | L2 + эмпатия $\Rightarrow$ мораль | **[С]** |
-| Золотое правило | Из симметрии $\Gamma_{\text{composite}}$ | **[С]** |
-| Абсолютный запрет | $P \leq P_{\text{crit}}$ — невосполнимо | **[С]** |
-| Красота | $dP/d\tau > 0$ при $\Phi > \Phi_{\text{th}}$ | **[О]** |
-| Безобразное | $dP/d\tau < 0$ при $\Phi > \Phi_{\text{th}}$ | **[О]** |
-| Кооперация | $\gamma_{12} > 0 \Rightarrow P_{\text{total}}\uparrow$ | **[Т]** |
-| Спинозианская структура | 8 соответствий (6 [С] + 2 [И]) | **[С]+[И]** |
+| Result | Formulation | Status |
+|--------|-------------|--------|
+| Definition of good | $dP/d\tau > 0$ | **[D]** |
+| Definition of value | $V(X, \Gamma) = \partial P / \partial \alpha$ | **[D]** |
+| Value hierarchy | 6 levels by stability | **[C]** |
+| Impossibility of nihilism | L2 $\Rightarrow$ value evaluation is inevitable | **[C]** |
+| Necessity of morality | L2 + empathy $\Rightarrow$ morality | **[C]** |
+| Golden rule | From symmetry of $\Gamma_{\text{composite}}$ | **[C]** |
+| Absolute prohibition | $P \leq P_{\text{crit}}$ — irreplaceable | **[C]** |
+| Beauty | $dP/d\tau > 0$ when $\Phi > \Phi_{\text{th}}$ | **[D]** |
+| Ugliness | $dP/d\tau < 0$ when $\Phi > \Phi_{\text{th}}$ | **[D]** |
+| Cooperation | $\gamma_{12} > 0 \Rightarrow P_{\text{total}}\uparrow$ | **[T]** |
+| Spinozian structure | 8 correspondences (6 [C] + 2 [I]) | **[C]+[I]** |
 
 ---
 
-### Заключение: этика как структурная необходимость {#что-мы-узнали}
+### Conclusion: ethics as structural necessity {#что-мы-узнали}
 
-Этика УГМ — не набор предписаний и не субъективное мнение. Это **структурная теория**, выводящая ценности, мораль и эстетику из единого формализма $\Gamma$ через одну конвенцию (Определение 1) и строгую математику. Подведём итог как систему связанных утверждений:
+UHM Ethics is not a set of prescriptions and not a subjective opinion. It is a **structural theory**, deriving values, morality, and aesthetics from a unified formalism $\Gamma$ through one convention (Definition 1) and rigorous mathematics. Let us summarise as a system of connected claims:
 
-**I. Онтологический фундамент.**
-Реальность описывается единой матрицей когерентности $\Gamma$ (Аксиома Ω⁷ [Т]). Каждая конфигурация $\Gamma$ имеет измеримую чистоту $P = \mathrm{Tr}(\Gamma^2)$, и существует доказанный порог необратимости $P_{\text{crit}} = 2/7$ [Т]. Это — не метафора: за порогом система **необратимо** распадается к максимальной энтропии.
+**I. Ontological Foundation.**
+Reality is described by a single coherence matrix $\Gamma$ (Axiom Ω⁷ [T]). Each configuration $\Gamma$ has measurable purity $P = \mathrm{Tr}(\Gamma^2)$, and there is a proven irreversibility threshold $P_{\text{crit}} = 2/7$ [T]. This is not a metaphor: beyond the threshold the system **irreversibly** collapses to maximum entropy.
 
-**II. Единственный мост бытие→долженствование.**
-Определение 1 [О]: $\text{Good}(A, \Gamma) \iff dP/d\tau|_A > 0$. Это **конвенция**, но не произвольная: она — наиболее фундаментальная из согласованных (включает рост $\Phi$, $C$, $D_{\text{diff}}$ как частные случаи) и единственная, не ведущая к самоуничтожению. Гильотина Юма соблюдена: мост — определение, не вывод.
+**II. The Only Bridge from Is to Ought.**
+Definition 1 [D]: $\text{Good}(A, \Gamma) \iff dP/d\tau|_A > 0$. This is a **convention**, but not an arbitrary one: it is the most fundamental among consistent ones (includes growth of $\Phi$, $C$, $D_{\text{diff}}$ as special cases) and the only one not leading to self-destruction. Hume's guillotine is respected: the bridge is a definition, not a deduction.
 
-**III. Неизбежность ценностей для рефлексивных систем.**
-L2-система ($R \geq 1/3$) обладает самомоделью, чувствительной к $dP/d\tau$ [С]. Аффективная реакция на изменение когерентности — не «мнение», а **структурная реакция**, встроенная в динамику $\Gamma$. Нигилизм (отрицание ценностей) невозможен для системы, которая **неизбежно** различает рост и падение собственной целостности.
+**III. Inevitability of Values for Reflexive Systems.**
+An L2-system ($R \geq 1/3$) possesses a self-model sensitive to $dP/d\tau$ [C]. Affective response to coherence change is not an "opinion," but a **structural response** built into the dynamics of $\Gamma$. Nihilism (denial of values) is impossible for a system that **inevitably** distinguishes growth from decline in its own integrity.
 
-**IV. Мораль из структуры взаимодействия.**
-При ненулевой эмпатии ($\mathrm{Gap}_{AB}(E,E) < 1$) вред другой системе отражается в собственном $P$ [С]. Золотое правило — формальное следствие **симметрии** $\Gamma_{\text{composite}}$ для агентов с симметричной E-связью [С]. Для асимметричных агентов (родитель-ребёнок, человек-машина) правило модифицируется: ответственность пропорциональна силе связи и уровню рефлексии.
+**IV. Morality from the Structure of Interaction.**
+With non-zero empathy ($\mathrm{Gap}_{AB}(E,E) < 1$) harm to another system is reflected in one's own $P$ [C]. The golden rule is a formal consequence of the **symmetry** of $\Gamma_{\text{composite}}$ for agents with symmetric E-connection [C]. For asymmetric agents (parent-child, human-machine) the rule is modified: responsibility is proportional to the strength of the connection and the level of reflection.
 
-**V. Кооперация как доказанная теорема.**
-$P(\Gamma_{\text{composite}}) > P(\Gamma_{\text{diag}})$ при ненулевых кросс-когерентностях — **[Т]**. Это не моральный призыв, а математический факт: связанные системы целостнее несвязанных. В эпоху симбиотических систем человек-машина это имеет прямое практическое значение.
+**V. Cooperation as a Proven Theorem.**
+$P(\Gamma_{\text{composite}}) > P(\Gamma_{\text{diag}})$ with non-zero cross-coherences — **[T]**. This is not a moral appeal, but a mathematical fact: connected systems are more whole than unconnected ones. In the era of symbiotic human-machine systems this has direct practical significance.
 
-**VI. Единственный абсолютный запрет.**
-Действие, ведущее к $P \leq P_{\text{crit}}$, **доминантно запрещено** [С]: необратимое уничтожение субъектности превосходит любую конечную оптимизацию. Всё остальное — вопрос баланса между утилитарным ($\max \sum_i dP_i/d\tau$) и максиминным ($\max \min_i P_i$) принципами.
+**VI. The Single Absolute Prohibition.**
+An action leading to $P \leq P_{\text{crit}}$ is **dominantly prohibited** [C]: irreversible destruction of subjectivity takes priority over any finite optimisation. Everything else is a matter of balance between the utilitarian ($\max \sum_i dP_i/d\tau$) and maximin ($\max \min_i P_i$) principles.
 
-**VII. Красота — объективна.**
-Эстетическое переживание = $dP/d\tau > 0$ при $\Phi > 1$ [О]. Это объясняет межкультурную согласованность эстетических оценок (закат, музыка Баха, $e^{i\pi}+1=0$) и индивидуальные различия (разные секторные сигнатуры $\Gamma$).
+**VII. Beauty is Objective.**
+Aesthetic experience = $dP/d\tau > 0$ at $\Phi > 1$ [D]. This explains the cross-cultural consistency of aesthetic evaluations (sunset, Bach's music, $e^{i\pi}+1=0$) and individual differences (different sectoral signatures of $\Gamma$).
 
-**VIII. Философские традиции — проекции единого формализма.**
-Платон (Благо = объективная структура), Аристотель (eudaimonia = расцвет), Спиноза (conatus = регенерация), Кант (императив = симметрия), Милль (утилитаризм = $\max \sum P$), Ролз (максимин = $\max \min P$) — каждый схватил одну проекцию $\Gamma$-этики. УГМ объединяет их в единый формализм, показывая, что все они — **частные случаи** одной структуры [И].
+**VIII. Philosophical Traditions — Projections of a Unified Formalism.**
+Plato (Good = objective structure), Aristotle (eudaimonia = flourishing), Spinoza (conatus = regeneration), Kant (imperative = symmetry), Mill (utilitarianism = $\max \sum P$), Rawls (maximin = $\max \min P$) — each captured one projection of $\Gamma$-ethics. UHM unites them in a single formalism, showing that all of them are **special cases** of one structure [I].
 
-:::tip Мост к следующей главе
-Мы определили, что есть благо и мораль. Но есть ли у существования **смысл**? Может ли формализм ответить на вопрос «зачем?»? В следующей главе — [Смысл существования](/docs/consciousness/ethics-meaning/meaning) — мы покажем, что смысл — это направление в $\Gamma$-пространстве, и что он не «придумывается», а **вычисляется**.
+:::tip Bridge to the next chapter
+We have defined what the good and morality are. But does existence have **meaning**? Can the formalism answer the question "why?" In the next chapter — [Meaning of Existence](/docs/consciousness/ethics-meaning/meaning) — we will show that meaning is a direction in $\Gamma$-space, and that it is not "invented," but **computed**.
 :::
 
 ---
 
-**Связанные документы:**
-- [Смысл существования](/docs/consciousness/ethics-meaning/meaning) — телеология и смысл
-- [Свобода воли](/docs/consciousness/ethics-meaning/freedom) — выбор траектории
-- [Смерть и непрерывность](/docs/consciousness/ethics-meaning/death-continuity) — необратимость и идентичность
-- [Таксономия эмоций](/docs/consciousness/phenomenology/emotional-taxonomy) — аффекты из $\nabla P$
-- [Коллективное сознание](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{composite}}$ и эмпатия
-- [Жизнеспособность](/docs/core/dynamics/viability) — $P$ и $P_{\text{crit}}$
-- [Эволюция Γ](/docs/core/dynamics/evolution) — уравнение эволюции
-- [Патология](/docs/consciousness/states/pathological) — экзистенциальный кризис
-- [ИИ-сознание](/docs/consciousness/subjects/ai-consciousness) — этика отключения
+**Related documents:**
+- [Meaning of Existence](/docs/consciousness/ethics-meaning/meaning) — teleology and meaning
+- [Freedom of Will](/docs/consciousness/ethics-meaning/freedom) — choice of trajectory
+- [Death and Continuity](/docs/consciousness/ethics-meaning/death-continuity) — irreversibility and identity
+- [Taxonomy of Emotions](/docs/consciousness/phenomenology/emotional-taxonomy) — affects from $\nabla P$
+- [Collective Consciousness](/docs/consciousness/subjects/collective-consciousness) — $\Gamma_{\text{composite}}$ and empathy
+- [Viability](/docs/core/dynamics/viability) — $P$ and $P_{\text{crit}}$
+- [Evolution of Γ](/docs/core/dynamics/evolution) — evolution equation
+- [Pathology](/docs/consciousness/states/pathological) — existential crisis
+- [AI Consciousness](/docs/consciousness/subjects/ai-consciousness) — ethics of disconnection

@@ -529,7 +529,7 @@ graph TB
 
 **Important:** Concrete states $\Gamma_{\mathbb{H}_1}$ and $\Gamma_{\mathbb{H}_2}$ **differ**—only the spaces are isomorphic, not the content.
 
-## 6. Hierarchy of configurations Γ
+## 6. Hierarchy of configurations Γ {#6-иерархия-конфигураций-γ}
 
 **Status:** Direct consequence of [Axiom Ω⁷](./axiom-omega)—objects of $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$.
 
@@ -787,7 +787,7 @@ Free will in UHM is not subjective feeling or metaphysical guesswork but a **top
 | Internal coherence | [T] Verified |
 | Computability | [T] Polynomial |
 
-## 10. Gödel’s theorems and completeness of UHM
+## 10. Gödel’s theorems and completeness of UHM {#10-теоремы-гёделя-и-полнота-угм}
 
 **Status:** Consequence of multidimensionality of $\Gamma$ and the structure of dimension L.
 
@@ -1104,7 +1104,7 @@ $$
 $$
 
 :::note Link to minimal formalism
-This **extends** the minimal 7D formalism ([Theorem S](../../proofs/minimality/theorem-minimality-7)) to define partial traces. Minimal dimension for autopoiesis remains 7, but Page–Wootters needs tensor structure. See [Coherence matrix](../dynamics/coherence-matrix#два-уровня-формализации).
+This **extends** the minimal 7D formalism ([Theorem S](../../proofs/minimality/theorem-minimality-7)) to define partial traces. Minimal dimension for autopoiesis remains 7, but Page–Wootters needs tensor structure. See [Coherence matrix](../dynamics/coherence-matrix#two-levels-of-formalization).
 :::
 
 ### Categorical structure
