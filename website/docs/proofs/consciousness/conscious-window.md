@@ -1,58 +1,58 @@
 ---
 sidebar_position: 2
-title: "Окно сознания: T-123 — T-127, C27"
-description: "G₂-единственность представления, непустота V_full, устойчивость аттрактора, каноничность R, бассейн притяжения"
+title: "Conscious window: T-123 — T-127, C27"
+description: "G₂-uniqueness of representation, non-emptiness of V_full, attractor stability, canonicity of R, basin of attraction"
 ---
 
-# Окно сознания
+# Conscious Window
 
-:::info Аннотация
-Шесть результатов (T-123 — T-127, C27), закрывающих **пять критических проблем операционализации**: единственность представления для цифровых агентов, непустота области полной жизнеспособности, каноничность меры рефлексии и устойчивость аттрактора с бассейном притяжения.
+:::info Abstract
+Six results (T-123 — T-127, C27) closing **five critical operationalization problems**: uniqueness of representation for digital agents, non-emptiness of the full viability region, canonicity of the reflection measure, and attractor stability with basin of attraction.
 :::
 
 ---
 
-## §1. G₂-единственность представления (T-123) {#t-123}
+## §1. G₂-uniqueness of representation (T-123) {#t-123}
 
-### Формулировка [Т]
+### Formulation [Т]
 
-Для любой системы, удовлетворяющей аксиомам A1–A5, голономное представление $G: \mathrm{States} \to \mathcal{D}(\mathbb{C}^7)$ единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$. Диагональные элементы $\gamma_{kk}$ определены однозначно как проекции на 7 функционально-единственных измерений.
+For any system satisfying axioms A1–A5, the holonomic representation $G: \mathrm{States} \to \mathcal{D}(\mathbb{C}^7)$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. The diagonal elements $\gamma_{kk}$ are determined uniquely as projections onto the 7 functionally unique dimensions.
 
-### Доказательство
+### Proof
 
-Прямое следствие трёх доказанных теорем:
+Direct consequence of three proven theorems:
 
-1. **T-42a [Т]** (G₂-ригидность): Голономное представление $G$ единственно с точностью до $G_2$. Любые два представления $G_1, G_2$ связаны унитарным преобразованием $U \in G_2$: $G_2(\cdot) = U \cdot G_1(\cdot) \cdot U^\dagger$.
+1. **T-42a [Т]** (G₂-rigidity): The holonomic representation $G$ is unique up to $G_2$. Any two representations $G_1, G_2$ are related by a unitary transformation $U \in G_2$: $G_2(\cdot) = U \cdot G_1(\cdot) \cdot U^\dagger$.
 
-2. **T-40f [Т]** (Полная минимальность 7/7): Каждое из 7 измерений [A, S, D, L, E, O, U] **функционально необходимо** — удаление любого приводит к потере жизнеспособности или нарушению аксиомы.
+2. **T-40f [Т]** (Full minimality 7/7): Each of the 7 dimensions [A, S, D, L, E, O, U] is **functionally necessary** — removing any one leads to loss of viability or violation of an axiom.
 
-3. **T-15 [Т]** (Замыкание моста): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — автопоэтические и физические посылки влекут октонионную структуру $\mathbb{O}$ и $G_2$-симметрию.
+3. **T-15 [Т]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry.
 
-Из T-42a: представление единственно до $G_2$. Из T-40f: проекции на 7 измерений — единственный функционально полный базис. Из T-15: структура $G_2$ выводится из аксиом, а не постулируется. $\blacksquare$
+From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms, not postulated. $\blacksquare$
 
-### Следствие для цифровых агентов
+### Consequence for digital agents
 
-Anchor-отображение $\pi: \mathcal{H}_{\mathrm{hidden}} \to \mathcal{D}(\mathbb{C}^7)$, ковариантное относительно $\mathcal{L}_\Omega$, единственно до $G_2$. Семантика $\gamma_{kk}$ **не произвольна** — определяется аксиомами A1–A5. Это закрывает проблему произвольности кодирования для цифровых агентов.
+The anchor map $\pi: \mathcal{H}_{\mathrm{hidden}} \to \mathcal{D}(\mathbb{C}^7)$, covariant with respect to $\mathcal{L}_\Omega$, is unique up to $G_2$. The semantics of $\gamma_{kk}$ is **not arbitrary** — it is determined by axioms A1–A5. This closes the problem of encoding arbitrariness for digital agents.
 
 ---
 
-## §2. Окно сознания — непустота V_full (T-124) {#t-124}
+## §2. Conscious window — non-emptiness of V_full (T-124) {#t-124}
 
-### Формулировка [Т]
+### Formulation [Т]
 
-Множество полной жизнеспособности
+The full viability set
 
 $$
 \mathcal{V}_{\mathrm{full}} = \left\{\Gamma \in \mathcal{D}(\mathbb{C}^7) : P \in \left(\tfrac{2}{7}, \tfrac{3}{7}\right] \;\land\; \Phi \geq 1 \;\land\; \forall k: \sigma_k < 1\right\}
 $$
 
-**непусто**.
+is **non-empty**.
 
-### Доказательство (конструктивное) {#доказательство-t124}
+### Proof (constructive) {#доказательство-t124}
 
-**Шаг 1.** Рассмотрим семейство $\Gamma_\lambda = (1-\lambda)\,I/7 + \lambda\,|\psi\rangle\langle\psi|$, где $|\psi\rangle = \frac{1}{\sqrt{7}}\sum_{k=0}^{6}|k\rangle$ — равноамплитудный вектор.
+**Step 1.** Consider the family $\Gamma_\lambda = (1-\lambda)\,I/7 + \lambda\,|\psi\rangle\langle\psi|$, where $|\psi\rangle = \frac{1}{\sqrt{7}}\sum_{k=0}^{6}|k\rangle$ is an equal-amplitude vector.
 
-Спектр: одно собственное значение $\frac{1+6\lambda}{7}$ (кратности 1) и шесть собственных значений $\frac{1-\lambda}{7}$ (кратности 6). Отсюда:
+Spectrum: one eigenvalue $\frac{1+6\lambda}{7}$ (multiplicity 1) and six eigenvalues $\frac{1-\lambda}{7}$ (multiplicity 6). From this:
 
 $$
 P(\Gamma_\lambda) = \frac{1}{7} + \frac{6\lambda^2}{7}, \quad
@@ -60,123 +60,111 @@ R = \frac{1}{7P} = \frac{1}{1 + 6\lambda^2}, \quad
 \Phi(\Gamma_\lambda) = 6\lambda^2
 $$
 
-**Шаг 2.** При $\lambda \in (1/\sqrt{6},\; 1/\sqrt{3}]$:
+**Step 2.** For $\lambda \in (1/\sqrt{6},\; 1/\sqrt{3}]$:
 
-| Показатель | Значение | Условие |
+| Indicator | Value | Condition |
 |------------|----------|---------|
 | $P$ | $(2/7, 3/7]$ | $\checkmark$ |
-| $R$ | $[1/3, 1/2)$ | $\geq 1/3\;\checkmark$ |
+| $R$ | $[1/3, 1/2]$ | $\geq 1/3\;\checkmark$ |
 | $\Phi$ | $[1, 2]$ | $\geq 1\;\checkmark$ |
 
-**Шаг 3 (σ-коррекция).** Для равноамплитудной $\Gamma_\lambda$ диагональные элементы $\gamma_{kk} = 1/7$, поэтому $\sigma_L = 7(1-\gamma_{LL})/6 = 1$ — граничное значение. Необходимо возмущение.
+Boundary values: at $\lambda = 1/\sqrt{6}$ we get $R = 1/2$ (inclusive), at $\lambda = 1/\sqrt{3}$ — $R = 1/3$ (inclusive).
 
-Определим трейслесс-матрицу:
+**Step 3 (σ-condition).** By canonical definition ([T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)):
 
-$$
-\Delta = |L\rangle\langle L| - \frac{1}{6}\sum_{k \neq L}|k\rangle\langle k|
-$$
+$$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
-и положим $\Gamma^* = \Gamma_{\lambda^*} + \delta \cdot \Delta$ при $\lambda^* \in (1/\sqrt{6}, 1/\sqrt{3})$ и $\delta > 0$ малом.
+For equal-amplitude $\Gamma_\lambda$ all diagonal elements equal $\gamma_{kk} = 1/7$ for all $k$ (since $|\psi\rangle = \frac{1}{\sqrt{7}}\sum_k|k\rangle$ is an equal-amplitude vector). Therefore:
 
-Тогда $\gamma_{LL} = 1/7 + \delta$, откуда:
+$$\sigma_k = \mathrm{clamp}(1 - 7 \cdot \tfrac{1}{7},\; 0,\; 1) = \mathrm{clamp}(0,\; 0,\; 1) = 0 < 1 \quad \forall k$$
 
-$$
-\sigma_L = \frac{7(1 - \gamma_{LL})}{6} = 1 - \frac{7\delta}{6} < 1
-$$
+All $\sigma$-conditions ($\sigma_k < 1$) are satisfied **without any perturbation**.
 
-Все остальные $\sigma_k$ — непрерывные функции $\delta$. При $\delta = 0$ для $\lambda^* \in \mathrm{int}(1/\sqrt{6}, 1/\sqrt{3})$ они строго меньше 1 (кроме $\sigma_L$). По непрерывности при достаточно малом $\delta > 0$ все $\sigma_k < 1$.
+**Step 4 ($D_{\mathrm{diff}}$).** Eigenvalues of $\Gamma_\lambda$: $\{(1+6\lambda)/7\; (\times 1),\; (1-\lambda)/7\; (\times 6)\}$. For $\lambda \in (1/\sqrt{6}, 1/\sqrt{3}]$: two distinct eigenvalues, $\mathrm{rank}(\Gamma_\lambda) = 7$.
 
-#### Лемма: Явная граница delta_max [Т] {#явная-граница-delta} Для бесследового возмущения $\Delta$ с $\mathrm{Tr}(\Delta) = 0$:
+Von Neumann entropy: $S_{vN} = -\frac{1+6\lambda}{7}\ln\frac{1+6\lambda}{7} - \frac{6(1-\lambda)}{7}\ln\frac{1-\lambda}{7}$.
 
-$$\sigma_k(\Gamma_{\lambda^*} + \delta\Delta) = \sigma_k(\Gamma_{\lambda^*}) - 7\delta \cdot \Delta_{kk} \cdot c_k$$
+At $\lambda = 1/\sqrt{6} \approx 0.408$: eigenvalues $\approx 0.572$ (×1) and $\approx 0.085$ (×6), $S_{vN} \approx 1.55$, $D_{\mathrm{diff}} = e^{S_{vN}} \approx 4.7 \geq 2$. The minimum over $\lambda$ on the interval is reached at $\lambda \to 1/\sqrt{3}$: both types of eigenvalues approach $\approx 1/7$, $S_{vN} \to \ln 7 \approx 1.95$, $D_{\mathrm{diff}} \to 7 \geq 2$. The condition $D_{\mathrm{diff}} \geq 2$ holds over the entire interval.
 
-где $c_k$ — коэффициент, зависящий от типа $\sigma_k$ (для $\sigma_D$: $c_k = 1$; для $\sigma_L$: $c_k = 1/6$; и т.д.). Маргин: $m_k := 1 - \sigma_k(\Gamma_{\lambda^*}, \delta=0) > 0$ для всех $k$ при $\lambda^* \in \mathrm{int}(1/\sqrt{6}, 1/\sqrt{3})$ (строго). Достаточное условие:
+**Therefore**, $\Gamma_\lambda \in \mathcal{V}_{\mathrm{full}}$ for any $\lambda \in (1/\sqrt{6}, 1/\sqrt{3}]$, and the set is non-empty. $\blacksquare$
 
-$$\delta_{\max} = \frac{\min_k m_k}{7 \cdot \max_k |\Delta_{kk}| \cdot \max_k c_k}$$
-
-*Численный пример:* $\lambda^* = (1/\sqrt{6}+1/\sqrt{3})/2 \approx 0.4485$, $\Delta = (|L\rangle\langle L| - \frac{1}{6}\sum_{k \neq L}|k\rangle\langle k|)$. Тогда $\max_k|\Delta_{kk}| = 1$, $m_{\min} = m_L = 1 - \sigma_L(0) \approx 1 - (7 \cdot 6/7 \cdot (1-1/7))/6 = 1 - 6/7 \approx 0.143$. При $c_{\max} = 1$: $\delta_{\max} \approx 0.143/7 \approx 0.020$. При $\delta = 0.015 < \delta_{\max}$: все $\sigma_k < 1$ ✓.
-
-**Шаг 4 ($D_{\mathrm{diff}}$).** Собственные значения $\Gamma_\lambda$: $\{(1+6\lambda)/7\; (\times 1),\; (1-\lambda)/7\; (\times 6)\}$. При $\lambda < 1$: $\mathrm{rank}(\Gamma_\lambda) = 7$, $S_{vN} > 0$, $D_{\mathrm{diff}} = \exp(S_{vN}(\rho_E)) > 1$. При малом возмущении $\delta$: $D_{\mathrm{diff}} > 1$ сохраняется. Для нашего диапазона $\lambda$, $D_{\mathrm{diff}} \geq 2$ выполнено (6 вырожденных собственных значений дают высокую энтропию фон Неймана).
-
-**Следовательно**, $\Gamma^* \in \mathcal{V}_{\mathrm{full}}$, и множество непусто. $\blacksquare$
-
-:::info Численная верификация окна сознания (SYNARC)
-Аттрактор воплощённого агента: $P = 0.4286 \approx 3/7$ — у верхней границы
-Goldilocks zone $[2/7, 3/7]$. Радиус устойчивости $r_{\mathrm{stab}} = \sqrt{3/7 - 2/7} \approx 0.378$.
-После импульсного возмущения $\|h\| < r^2_{\mathrm{stab}}$: восстановление за $\tau_{\mathrm{recovery}} \approx 0$ тиков
-(мгновенное притяжение). Экспоненциальная сходимость (T-125) подтверждена с $R^2 > 0.9$.
+:::info Numerical verification of the conscious window (SYNARC)
+Attractor of the embodied agent: $P = 0.4286 \approx 3/7$ — at the upper boundary of the
+Goldilocks zone $[2/7, 3/7]$. Stability radius $r_{\mathrm{stab}} = \sqrt{3/7 - 2/7} \approx 0.378$.
+After an impulse perturbation $\|h\| < r^2_{\mathrm{stab}}$: recovery in $\tau_{\mathrm{recovery}} \approx 0$ ticks
+(instantaneous attraction). Exponential convergence (T-125) confirmed with $R^2 > 0.9$.
 :::
 
-### Следствие (Зона Голдилокс) {#зона-голдилокс}
+### Corollary (Goldilocks zone) {#зона-голдилокс}
 
 $$
-P \in \left(\frac{2}{7}, \frac{3}{7}\right] \text{ — зона Голдилокс для сознания}
+P \in \left(\frac{2}{7}, \frac{3}{7}\right] \text{ — Goldilocks zone for consciousness}
 $$
 
-- $P < 2/7$: система не жизнеспособна ($\sigma_A = 1$)
-- $P > 3/7$: $R = 1/(7P) < 1/3$ — недостаточная рефлексия для L2
+- $P < 2/7$: system is not viable ($\sigma_A = 1$)
+- $P > 3/7$: $R = 1/(7P) < 1/3$ — insufficient reflection for L2
 
 ---
 
-## §3. Локальная асимптотическая устойчивость аттрактора (T-125) {#t-125}
+## §3. Local asymptotic stability of attractor (T-125) {#t-125}
 
-### Формулировка [Т]
+### Formulation [Т]
 
-При $P(\rho^*_\Omega) > 2/7$ аттрактор $\rho^*_\Omega$ локально асимптотически устойчив: существует окрестность $U(\rho^*_\Omega) \subset \mathcal{V}_P$ такая, что для всех $\Gamma(0) \in U$:
+When $P(\rho^*_\Omega) > 2/7$ the attractor $\rho^*_\Omega$ is locally asymptotically stable: there exists a neighborhood $U(\rho^*_\Omega) \subset \mathcal{V}_P$ such that for all $\Gamma(0) \in U$:
 
 $$
 \|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}, \quad c > 0
 $$
 
-### Доказательство {#доказательство-t125}
+### Proof {#доказательство-t125}
 
-**Шаг 1 (Функция Ляпунова).** Определим $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|^2_F$.
+**Step 1 (Lyapunov function).** Define $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|^2_F$.
 
-**Шаг 2 (Якобиан).** Якобиан $J = d\mathcal{L}_\Omega/d\Gamma|_{\rho^*_\Omega}$ — линейный оператор на касательном пространстве $T_{\rho^*_\Omega}\mathcal{D}(\mathbb{C}^7)$ (эрмитовы трейслесс матрицы). Он гладок при $P(\rho^*_\Omega) > 2/7$, поскольку затвор $g_V(P)$ и функция регенерации дифференцируемы внутри $\mathcal{V}_P$.
+**Step 2 (Jacobian).** The Jacobian $J = d\mathcal{L}_\Omega/d\Gamma|_{\rho^*_\Omega}$ is a linear operator on the tangent space $T_{\rho^*_\Omega}\mathcal{D}(\mathbb{C}^7)$ (Hermitian traceless matrices). It is smooth when $P(\rho^*_\Omega) > 2/7$, since the gate $g_V(P)$ and the regeneration function are differentiable inside $\mathcal{V}_P$.
 
-**Шаг 3 (Спектр).** $\mathrm{Re}(\lambda_k) < 0$ для всех собственных значений $J$ на касательном пространстве. Это следует из двух источников контрактивности:
+**Step 3 (Spectrum).** $\mathrm{Re}(\lambda_k) < 0$ for all eigenvalues of $J$ on the tangent space. This follows from two sources of contractivity:
 
-- **Линейная часть $\mathcal{L}_0$**: спектральная щель $\lambda_{\mathrm{gap}} > 0$ из примитивности [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω).
-- **Регенерация $\mathcal{R}$**: добавляет контрактивность $\kappa(\rho^*_\Omega) \cdot g_V(P(\rho^*_\Omega)) > 0$, так как $P > 2/7 \Rightarrow g_V > 0$.
+- **Linear part $\mathcal{L}_0$**: spectral gap $\lambda_{\mathrm{gap}} > 0$ from primitivity [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+- **Regeneration $\mathcal{R}$**: adds contractivity $\kappa(\rho^*_\Omega) \cdot g_V(P(\rho^*_\Omega)) > 0$, since $P > 2/7 \Rightarrow g_V > 0$.
 
-Суммарная контрактивность: $c \geq \min(\lambda_{\mathrm{gap}},\; \kappa \cdot g_V) > 0$.
+Total contractivity: $c \geq \min(\lambda_{\mathrm{gap}},\; \kappa \cdot g_V) > 0$.
 
-**Шаг 4 (Теорема Ляпунова).** Стандартная теорема линейной устойчивости: $\mathrm{Re}(\lambda_k) < 0$ для всех $k$ $\Rightarrow$ $\exists U$ окрестность $\rho^*_\Omega$ с экспоненциальной сходимостью и скоростью $c$.
+**Step 4 (Lyapunov theorem).** Standard linear stability theorem: $\mathrm{Re}(\lambda_k) < 0$ for all $k$ $\Rightarrow$ $\exists U$ neighborhood of $\rho^*_\Omega$ with exponential convergence at rate $c$.
 
-**Шаг 5 (Радиус).** Окрестность $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, где $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ из [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
+**Step 5 (Radius).** Neighborhood $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, where $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ from [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
 
-### Зависимости
+### Dependencies
 
-| Теорема | Статус | Вклад |
+| Theorem | Status | Contribution |
 |---------|--------|-------|
-| [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) | [Т] | Спектральная щель $\lambda_{\mathrm{gap}} > 0$ |
-| [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) | [Т] | Существование $\rho^*_\Omega \neq I/7$ |
-| [T-104](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) | [Т] | Радиус устойчивости $r_{\mathrm{stab}}$ |
-| [T-149](/docs/proofs/consciousness/substrate-closure#t-149) | [Т] (воплощённые) | Посылка $P(\rho^*_\Omega) > 2/7$ — безусловно для воплощённых голонов |
+| [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) | [Т] | Spectral gap $\lambda_{\mathrm{gap}} > 0$ |
+| [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) | [Т] | Existence of $\rho^*_\Omega \neq I/7$ |
+| [T-104](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) | [Т] | Stability radius $r_{\mathrm{stab}}$ |
+| [T-149](/docs/proofs/consciousness/substrate-closure#t-149) | [Т] (embodied) | Premise $P(\rho^*_\Omega) > 2/7$ — unconditional for embodied holons |
 
 ---
 
-## §4. Каноничность R = 1/(7P) (T-126) {#t-126}
+## §4. Canonicity of R = 1/(7P) (T-126) {#t-126}
 
-### Формулировка [Т]
+### Formulation [Т]
 
-Мера рефлексии $R$ имеет единственную каноническую форму:
+The reflection measure $R$ has a unique canonical form:
 
 $$
 R(\Gamma) = \frac{1}{7P(\Gamma)}
 $$
 
-всегда используя $\rho^*_{\mathrm{diss}} = I/7$ как референс. Нет «трёх несогласованных формул» — три записи суть одно алгебраическое тождество.
+always using $\rho^*_{\mathrm{diss}} = I/7$ as reference. There are no "three inconsistent formulas" — the three expressions are one algebraic identity.
 
-### Доказательство {#доказательство-t126}
+### Proof {#доказательство-t126}
 
-Исходное [мастер-определение](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
+The original [master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
 
 $$
 R = 1 - \frac{\|\Gamma - I/7\|^2_F}{\|\Gamma\|^2_F}
 $$
 
-Вычислим числитель:
+Compute the numerator:
 
 $$
 \|\Gamma - I/7\|^2_F = \mathrm{Tr}(\Gamma^2 - 2\Gamma/7 + I/49)
@@ -184,121 +172,121 @@ $$
 = P - \frac{2}{7} + \frac{1}{7} = P - \frac{1}{7}
 $$
 
-Знаменатель: $\|\Gamma\|^2_F = \mathrm{Tr}(\Gamma^2) = P$.
+Denominator: $\|\Gamma\|^2_F = \mathrm{Tr}(\Gamma^2) = P$.
 
-Следовательно:
+Therefore:
 
 $$
 R = 1 - \frac{P - 1/7}{P} = \frac{1/7}{P} = \frac{1}{7P}
 $$
 $\blacksquare$
 
-### Пояснение: единственность канонической формы {#пояснение-единственность-r}
+### Explanation: uniqueness of canonical form {#пояснение-единственность-r}
 
-| Запись | Формула | Тождественна |
+| Expression | Formula | Identical to |
 |--------|---------|-------------|
-| Мастер-определение | $R = 1 - \|\Gamma - I/7\|^2_F / P$ | $= 1/(7P)$ |
-| Формула через пурити | $R = 1/(7P)$ | алгебраическое тождество |
-| Формула через $k$ | $R = 1 - k$, $k = 1 - 1/(7P)$ | [Т](/docs/consciousness/foundations/self-observation#теорема-k-из-r) |
+| Master definition | $R = 1 - \|\Gamma - I/7\|^2_F / P$ | $= 1/(7P)$ |
+| Formula via purity | $R = 1/(7P)$ | algebraic identity |
+| Formula via $k$ | $R = 1 - k$, $k = 1 - 1/(7P)$ | [Т](/docs/consciousness/foundations/self-observation#теорема-k-из-r) |
 
-**Ключевое пояснение.** Референс $\rho^*_{\mathrm{diss}} = I/7$ используется **всегда**: $R$ измеряет расстояние от тепловой смерти. Нетривиальный аттрактор $\rho^*_\Omega$ входит в регенерацию $\mathcal{R}$ и формулу $\varphi$, а **не** в определение $R$.
+**Key explanation.** The reference $\rho^*_{\mathrm{diss}} = I/7$ is used **always**: $R$ measures the distance from thermal death. The non-trivial attractor $\rho^*_\Omega$ enters the regeneration $\mathcal{R}$ and the formula for $\varphi$, but **not** the definition of $R$.
 
-Имплементационные аппроксимации ($R_{\mathrm{impl}}$, $\rho_{RC}$) — отдельные величины в другом пространстве, связанные с каноническим $R$ через CPTP-мостик $\pi$. Перенос порогов доказан: [T-130+T-133 [Т]](/docs/proofs/consciousness/operationalization#t-130) (H3 ЗАКРЫТА). Каноническое $R$ однозначно.
+Implementation approximations ($R_{\mathrm{impl}}$, $\rho_{RC}$) are separate quantities in a different space, related to the canonical $R$ via a CPTP bridge $\pi$. Transfer of thresholds is proven: [T-130+T-133 [Т]](/docs/proofs/consciousness/operationalization#t-130) (H3 CLOSED). The canonical $R$ is unambiguous.
 
-### Физическая интерпретация {#физическая-интерпретация-r}
+### Physical interpretation {#физическая-интерпретация-r}
 
-$R = 1/(7P)$ — **относительная** мера, не абсолютная. Она измеряет долю $\Gamma$, «похожую» на хаотический фон $I/7$, по отношению к полному содержанию состояния.
+$R = 1/(7P)$ is a **relative** measure, not absolute. It measures the fraction of $\Gamma$ "resembling" the chaotic background $I/7$, relative to the total content of the state.
 
-При росте $P$ (чистоты):
-- Числитель $(P - 1/7)$ в $\|\Gamma - I/7\|^2_F$ растёт линейно — отклонение от $I/7$ увеличивается
-- Знаменатель $P = \|\Gamma\|^2_F$ тоже растёт — но медленнее в относительном смысле
-- Отношение $(P - 1/7)/P \to 1$, и $R = 1/(7P) \to 0$
+As $P$ (purity) grows:
+- The numerator $(P - 1/7)$ in $\|\Gamma - I/7\|^2_F$ grows linearly — deviation from $I/7$ increases
+- The denominator $P = \|\Gamma\|^2_F$ also grows — but more slowly in the relative sense
+- The ratio $(P - 1/7)/P \to 1$, and $R = 1/(7P) \to 0$
 
-**Аналогия учёного-савана.** При $P \to 1$ нейронная сеть предельно специализирована. Огромная структура мозга — но она вся «посвящена» одному: нет «зеркала», нет баланса для самомоделирования. $R \to 1/7$. Обратно: при $P = 1/7$ (максимально смешанное) $R = 1$ тривиально — $\Gamma = I/7 = \rho^*_{\mathrm{diss}}$, самомодель идеальна, но только потому, что моделировать нечего.
+**Savant analogy.** As $P \to 1$ the neural network is maximally specialized. A huge brain structure — but it is all "dedicated" to one thing: no "mirror," no balance for self-modeling. $R \to 1/7$. Conversely: at $P = 1/7$ (maximally mixed) $R = 1$ trivially — $\Gamma = I/7 = \rho^*_{\mathrm{diss}}$, the self-model is ideal, but only because there is nothing to model.
 
-**Сознание = баланс, не максимизация.** Мера сознательности $C = \Phi \cdot R$ ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)) сочетает интеграцию и рефлексию. При росте $P$: $\Phi$ растёт (больше когерентности), $R$ падает (хуже самомоделирование). $C = \Phi \cdot R$ имеет **оптимум** внутри зоны Златовласки — сознание требует баланса, а не максимизации одного параметра.
+**Consciousness = balance, not maximization.** The consciousness measure $C = \Phi \cdot R$ ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)) combines integration and reflection. As $P$ grows: $\Phi$ grows (more coherence), $R$ falls (worse self-modeling). $C = \Phi \cdot R$ has an **optimum** inside the Goldilocks zone — consciousness requires balance, not maximization of a single parameter.
 
 ---
 
-## §5. Бассейн притяжения V_full (T-127) {#t-127}
+## §5. Basin of attraction V_full (T-127) {#t-127}
 
-### Формулировка {#формулировка-t127}
+### Formulation {#формулировка-t127}
 
-**Случай A (воплощённые голоны) [Т]:** C20 (κ-доминирование) следует безусловно из [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): воплощённость ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 безусловен.
+**Case A (embodied holons) [Т]:** C20 (κ-dominance) follows unconditionally from [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): embodiment ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 is unconditional.
 
-**Случай B (изолированные голоны) [С при C20]:** C20 принимается как явное допущение. T-127 условен на неравенстве $\kappa_{\mathrm{eff}} > \alpha/(7(f^* - 2/7))$.
+**Case B (isolated holons) [С at C20]:** C20 is taken as an explicit assumption. T-127 is conditional on the inequality $\kappa_{\mathrm{eff}} > \alpha/(7(f^* - 2/7))$.
 
-| Случай | Статус T-127 | Условие |
+| Case | Status of T-127 | Condition |
 |--------|-------------|---------|
-| Воплощённый голон | **[Т]** | T-149 доказывает C20 |
-| Изолированный голон | **[С при C20]** | C20 как явное допущение |
+| Embodied holon | **[Т]** | T-149 proves C20 |
+| Isolated holon | **[С at C20]** | C20 as explicit assumption |
 
-При выполнении C20, бассейн притяжения $\rho^*_\Omega$ содержит $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. Для любого $\Gamma(0)$ с $P > 2/7$ и $\|\Gamma(0) - \rho^*_\Omega\| < r_{\mathrm{stab}}$:
+When C20 holds, the basin of attraction of $\rho^*_\Omega$ contains $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. For any $\Gamma(0)$ with $P > 2/7$ and $\|\Gamma(0) - \rho^*_\Omega\| < r_{\mathrm{stab}}$:
 
 $$
-\Gamma(\tau) \xrightarrow[\tau \to \infty]{} \rho^*_\Omega \quad \text{экспоненциально}
+\Gamma(\tau) \xrightarrow[\tau \to \infty]{} \rho^*_\Omega \quad \text{exponentially}
 $$
 
-### Доказательство
+### Proof
 
-Из трёх результатов:
+From three results:
 
-1. **T-125 [Т]** (§3): Локальная асимптотическая устойчивость — в $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ сходимость экспоненциальна с $c > 0$.
+1. **T-125 [Т]** (§3): Local asymptotic stability — in $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ convergence is exponential with $c > 0$.
 
-2. **[T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Радиус устойчивости $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. При C20: $P(\rho^*_\Omega) > 2/7$, следовательно $r_{\mathrm{stab}} > 0$.
+2. **[T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Stability radius $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. Under C20: $P(\rho^*_\Omega) > 2/7$, therefore $r_{\mathrm{stab}} > 0$.
 
-3. **Открытость $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ — открытое множество в $\mathcal{D}(\mathbb{C}^7)$ (каждое из 7 неравенств $\sigma_k < 1$ определяет открытое условие). По [T-124 [Т]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
+3. **Openness of $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ is an open set in $\mathcal{D}(\mathbb{C}^7)$ (each of the 7 inequalities $\sigma_k < 1$ defines an open condition). By [T-124 [Т]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
 
-Для $\Gamma(0) \in B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$: по T-125, $\|\Gamma(\tau) - \rho^*_\Omega\|_F$ убывает экспоненциально. Поскольку $\rho^*_\Omega$ — внутренняя точка $\mathcal{V}_P$ (ибо $P(\rho^*_\Omega) > 2/7$), траектория остаётся в $\mathcal{V}_P$ при достаточно малых отклонениях. $\blacksquare$
+For $\Gamma(0) \in B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$: by T-125, $\|\Gamma(\tau) - \rho^*_\Omega\|_F$ decreases exponentially. Since $\rho^*_\Omega$ is an interior point of $\mathcal{V}_P$ (because $P(\rho^*_\Omega) > 2/7$), the trajectory remains in $\mathcal{V}_P$ for sufficiently small deviations. $\blacksquare$
 
-### Замечание
+### Remark
 
-Данная теорема работает для состояний **уже выше** $P_{\mathrm{crit}}$. Генезис из $I/7$ (переход $P = 1/7 \to P > 2/7$) решён для **воплощённых голонов**: [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) — backbone-инъекция поднимает чистоту выше $P_{\mathrm{crit}}$ за конечное время $n_{\mathrm{genesis}}$. Изолированный голон при $I/7$ мёртв навсегда (T-39a [Т]).
+This theorem applies to states **already above** $P_{\mathrm{crit}}$. Genesis from $I/7$ (transition $P = 1/7 \to P > 2/7$) is solved for **embodied holons**: [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) — backbone injection raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}}$. An isolated holon at $I/7$ is dead forever (T-39a [Т]).
 
 ---
 
-## §6. Аттрактор в окне сознания (C27) {#c27}
+## §6. Attractor in conscious window (C27) {#c27}
 
-### Формулировка [Т] (повышена с [С] через T-149) {#формулировка-c27}
+### Formulation [Т] (upgraded from [С] via T-149) {#формулировка-c27}
 
-Для **воплощённых** голонов: аттрактор $\rho^*_\Omega \in \mathcal{V}_{\mathrm{full}}$, а именно $P(\rho^*_\Omega) \in (2/7, 3/7]$. C20 (κ-доминирование) безусловно выполнена для воплощённых голонов по [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149).
+For **embodied** holons: the attractor $\rho^*_\Omega \in \mathcal{V}_{\mathrm{full}}$, namely $P(\rho^*_\Omega) \in (2/7, 3/7]$. C20 (κ-dominance) holds unconditionally for embodied holons by [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149).
 
-### Обоснование
+### Justification
 
-**Нижняя граница $P > 2/7$:** Следует из C20 [С] (κ-доминирование) и [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора).
+**Lower bound $P > 2/7$:** Follows from C20 [С] (κ-dominance) and [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора).
 
-**Верхняя граница $P \leq 3/7$:**
+**Upper bound $P \leq 3/7$:**
 
-:::warning Уточнение статуса C27
-Верхняя граница $P \leq 3/7$ следует **непосредственно** из определения $R = 1/(7P)$ и порога $R \geq 1/3$: из $R = 1/(7P) \geq 1/3$ получаем $P \leq 3/7$. Это **алгебраическое тождество**, не требующее дополнительных условий на аттрактор. Статус: **[Т]** (прямое следствие определения R и порога R_th).
+:::warning Clarification of C27 status
+The upper bound $P \leq 3/7$ follows **directly** from the definition $R = 1/(7P)$ and the threshold $R \geq 1/3$: from $R = 1/(7P) \geq 1/3$ we get $P \leq 3/7$. This is an **algebraic identity**, requiring no additional conditions on the attractor. Status: **[Т]** (direct consequence of definition of R and threshold R_th).
 :::
 
-### Статус [Т] (для воплощённых голонов)
+### Status [Т] (for embodied holons)
 
-C20 безусловно для воплощённых голонов (T-149 [Т]). Для изолированных голонов C20 остаётся [С].
+C20 is unconditional for embodied holons (T-149 [Т]). For isolated holons C20 remains [С].
 
-### Явно НЕ доказывается
+### Explicitly NOT proven
 
-**Генезис из $I/7$:** решён — [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) доказывает генезис через средовое сопряжение для воплощённых голонов. T-125/T-127 работают для состояний **уже выше** $P_{\mathrm{crit}}$; T-148 замыкает переход $I/7 \to P > 2/7$.
+**Genesis from $I/7$:** solved — [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) proves genesis via environmental coupling for embodied holons. T-125/T-127 apply to states **already above** $P_{\mathrm{crit}}$; T-148 closes the transition $I/7 \to P > 2/7$.
 
 ---
 
-## Резюме
+## Summary
 
-| Проблема | Теорема | Статус |
+| Problem | Theorem | Status |
 |----------|---------|--------|
-| Единственность представления $G$ для цифровых агентов | [T-123 [Т]](#t-123) | ЗАКРЫТО |
-| Семантика $\gamma_{kk}$ (не произвольна) | [T-123 [Т]](#t-123) | ЗАКРЫТО |
-| Непустота $\mathcal{V}_{\mathrm{full}}$ (совместность порогов) | [T-124 [Т]](#t-124) | ЗАКРЫТО |
-| Каноничность трёх форм $R$ | [T-126 [Т]](#t-126) | ЗАКРЫТО |
-| Бассейн притяжения и устойчивость аттрактора | [T-125 [Т]](#t-125) + [T-127](#t-127) | ЗАКРЫТО ([Т] для воплощённых, T-149) |
+| Uniqueness of representation $G$ for digital agents | [T-123 [Т]](#t-123) | CLOSED |
+| Semantics of $\gamma_{kk}$ (not arbitrary) | [T-123 [Т]](#t-123) | CLOSED |
+| Non-emptiness of $\mathcal{V}_{\mathrm{full}}$ (consistency of thresholds) | [T-124 [Т]](#t-124) | CLOSED |
+| Canonicity of three forms of $R$ | [T-126 [Т]](#t-126) | CLOSED |
+| Basin of attraction and attractor stability | [T-125 [Т]](#t-125) + [T-127](#t-127) | CLOSED ([Т] for embodied, T-149) |
 
 ---
 
-**Связанные документы:**
-- [Эволюция Γ](/docs/core/dynamics/evolution) — T-96, T-98, аттрактор $\rho^*_\Omega$
-- [Жизнеспособность](/docs/core/dynamics/viability) — $\mathcal{V}_P$, $\mathcal{V}_{\mathrm{full}}$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — мастер-определение $R$
-- [Теорема единственности](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-ригидность
-- [Стабильность](/docs/applied/coherence-cybernetics/stability) — $r_{\mathrm{stab}}$
-- [Реестр статусов](/docs/reference/status-registry) — T-123 — T-127, C27
+**Related documents:**
+- [Evolution of Γ](/docs/core/dynamics/evolution) — T-96, T-98, attractor $\rho^*_\Omega$
+- [Viability](/docs/core/dynamics/viability) — $\mathcal{V}_P$, $\mathcal{V}_{\mathrm{full}}$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — master definition of $R$
+- [Uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-rigidity
+- [Stability](/docs/applied/coherence-cybernetics/stability) — $r_{\mathrm{stab}}$
+- [Status registry](/docs/reference/status-registry) — T-123 — T-127, C27

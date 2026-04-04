@@ -1,107 +1,107 @@
 ---
 slug: geometry-of-inner-world
-title: "Геометрия внутреннего мира: 21 тип переживания и три обязательных слепых пятна"
+title: "Geometry of the Inner World: 21 Types of Experience and Three Mandatory Blind Spots"
 authors: [uhm]
 tags: [consciousness, qualia, phenomenology, mathematics, Fano, Hamming]
 ---
 
-# Геометрия внутреннего мира
+# Geometry of the Inner World {#геометрия-внутреннего-мира}
 
-Сколько типов переживания существует? Один? Сто? Бесконечно? Вопрос кажется бессмысленным: внутренний мир непрерывен, текуч, не поддаётся подсчёту. Так рассуждает интуиция. Математика рассуждает иначе.
+How many types of experience exist? One? A hundred? Infinitely many? The question seems meaningless: the inner world is continuous, fluid, uncountable. So intuition reasons. Mathematics reasons differently.
 
-Ответ — **двадцать один**. Не приблизительно. Не «порядка двадцати». Ровно двадцать один тип, и ни одним больше. Это не эмпирическое наблюдение, а теорема — комбинаторное следствие того, что система описывается семимерной матрицей когерентности. А ещё: минимум три из двадцати одного канала **обязаны** оставаться непрозрачными. Бессознательное — не фрейдистская метафора, а следствие теории кодов, исправляющих ошибки.
+The answer is **twenty-one**. Not approximately. Not "on the order of twenty." Exactly twenty-one types, and not one more. This is not an empirical observation but a theorem — a combinatorial consequence of the fact that a system is described by a seven-dimensional coherence matrix. And furthermore: a minimum of three out of twenty-one channels **must** remain opaque. The unconscious is not a Freudian metaphor but a consequence of error-correcting code theory.
 
-Ниже — попытка нарисовать карту внутреннего мира, используя алгебру, проективную геометрию и немного здравого смысла.
+Below is an attempt to draw a map of the inner world using algebra, projective geometry, and a bit of common sense.
 
 <!-- truncate -->
 
-## Откуда берутся двадцать один
+## Where the Twenty-One Come From {#откуда-берутся-двадцать-один}
 
-В [предыдущем посте](/blog/holonomic-paninteriorism) было установлено: любая система с интериорностью описывается матрицей когерентности $\Gamma$ — таблицей $7 \times 7$, строки и столбцы которой соответствуют семи измерениям:
+In the [previous post](/blog/holonomic-paninteriorism) it was established: any system with interiority is described by a coherence matrix $\Gamma$ — a $7 \times 7$ table whose rows and columns correspond to seven dimensions:
 
-| Символ | Измерение | Человеческим языком |
-|--------|-----------|---------------------|
-| **A** | Артикуляция | Способность различать |
-| **S** | Структура | Устойчивая форма |
-| **D** | Динамика | Изменение, процесс |
-| **L** | Логика | Связность, правила |
-| **E** | Интериорность | Переживание изнутри |
-| **O** | Основание | Источник, фундамент |
-| **U** | Единство | Целостность |
+| Symbol | Dimension | In human language |
+|--------|-----------|-------------------|
+| **A** | Articulation | Ability to distinguish |
+| **S** | Structure | Stable form |
+| **D** | Dynamics | Change, process |
+| **L** | Logic | Connectivity, rules |
+| **E** | Interiority | Experience from within |
+| **O** | Ground | Source, foundation |
+| **U** | Unity | Wholeness |
 
-Измерение E — *интериорность* — заслуживает пояснения. Это не «опыт» в обыденном смысле (сходил в поход, набрался опыта). Это сама **способность** системы переживать изнутри. Камень обладает интериорностью уровня L0 — имеет внутреннее, но не переживает его. Человек — уровня L2: не просто имеет, но осознаёт. Подробнее — в [предыдущем посте](/blog/holonomic-paninteriorism).
+Dimension E — *interiority* — deserves explanation. This is not "experience" in the everyday sense (went hiking, gained experience). It is the **capacity** of the system to experience from within. A stone has interiority of level L0 — it has an interior but does not experience it. A human has L2: not only has it, but is aware of it. More details — in the [previous post](/blog/holonomic-paninteriorism).
 
-Матрица $\Gamma$ содержит два вида информации:
+The matrix $\Gamma$ contains two kinds of information:
 
-- **7 диагональных элементов** $\gamma_{ii}$ — «громкость» каждого измерения. Насколько активно различение (A)? Насколько устойчива форма (S)? Насколько интенсивна интериорность (E)?
+- **7 diagonal elements** $\gamma_{ii}$ — the "volume" of each dimension. How active is discrimination (A)? How stable is form (S)? How intense is interiority (E)?
 
-- **21 недиагональный элемент** $\gamma_{ij}$ — связи **между** измерениями. Именно они определяют типы переживания.
+- **21 off-diagonal elements** $\gamma_{ij}$ — connections **between** dimensions. These are precisely what determine the types of experience.
 
-Почему 21? Потому что столько неупорядоченных пар можно составить из семи элементов:
+Why 21? Because that is how many unordered pairs can be formed from seven elements:
 
 $$
 \binom{7}{2} = \frac{7 \times 6}{2} = 21
 $$
 
-Каждая пара измерений — один тип переживания. Каждый тип — не абстрактная математическая сущность, а конкретный модус внутренней жизни. Когерентность между A (различением) и E (интериорностью) — это переживание осознания. Когерентность между D (процессом) и E (интериорностью) — переживание эмоции. Когерентность между D (процессом) и O (основанием) — переживание творчества.
+Each pair of dimensions is one type of experience. Each type is not an abstract mathematical entity, but a specific mode of inner life. Coherence between A (discrimination) and E (interiority) is the experience of awareness. Coherence between D (process) and E (interiority) is the experience of emotion. Coherence between D (process) and O (ground) is the experience of creativity.
 
-Это не таксономия, придуманная за столом. Это следствие структуры матрицы. Можно ли добавить двадцать второй тип? Нет — для этого потребовалось бы восьмое измерение, что противоречит [теореме о минимальности](/docs/proofs/minimality/theorem-minimality-7) (семь — доказуемый минимум). Можно ли обойтись двадцатью? Нет — удалив одно измерение, мы потеряем шесть типов переживания и нарушим минимальные условия самоподдержания.
+This is not a taxonomy invented at a desk. It is a consequence of the matrix structure. Can a twenty-second type be added? No — that would require an eighth dimension, which contradicts the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7) (seven is a provable minimum). Can one do with twenty? No — removing one dimension, we lose six types of experience and violate the minimal conditions of self-maintenance.
 
-## Двадцать одна комната
+## Twenty-One Rooms {#двадцать-одна-комната}
 
-Вот полная карта. Каждая строка — тип переживания, определяемый парой измерений и их когерентностью $\gamma_{ij}$.
+Here is the complete map. Each row is a type of experience defined by a pair of dimensions and their coherence $\gamma_{ij}$.
 
-| # | Пара | Имя | О чём это переживание |
-|---|------|-----|-----------------------|
-| 1 | A × S | **Морфогенез** | Различение кристаллизуется в форму — переживание *оформления* |
-| 2 | A × D | **Актуализация** | Различение разворачивается в процессе — переживание *восприятия* |
-| 3 | A × L | **Предикация** | Различение становится суждением — переживание *оценки* |
-| 4 | A × E | **Апперцепция** | Различение обретает интериорность — переживание *осознания* |
-| 5 | A × O | **Спонтанность** | Различение возникает из основания — переживание *инсайта* |
-| 6 | A × U | **Дифференциация** | Различение внутри целого — переживание *анализа* |
-| 7 | S × D | **Персистенция** | Форма сохраняется через изменение — переживание *устойчивости* |
-| 8 | S × L | **Номос** | Форма с логической необходимостью — переживание *порядка* |
-| 9 | S × E | **Репрезентация** | Форма, представленная изнутри — переживание *целостного образа* |
-| 10 | S × O | **Архетип** | Форма из глубинного основания — переживание *паттерна* |
-| 11 | S × U | **Симметрия** | Структурное единство — переживание *гармонии* |
-| 12 | D × L | **Регуляция** | Процесс под управлением логики — переживание *контроля* |
-| 13 | D × E | **Аффекция** | Процесс переживается изнутри — переживание *эмоции* |
-| 14 | D × O | **Генезис** | Процесс рождается из основания — переживание *творчества* |
-| 15 | D × U | **Телеология** | Процесс направлен к целому — переживание *воли* |
-| 16 | L × E | **Эвиденция** | Логика переживается изнутри — переживание *очевидности* |
-| 17 | L × O | **Фундирование** | Логика укоренена в основании — переживание *самоочевидности* |
-| 18 | L × U | **Консистентность** | Логика согласована с целым — переживание *непротиворечивости* |
-| 19 | E × O | **Имманентность** | Основание переживается изнутри — переживание *присутствия* |
-| 20 | E × U | **Синтез** | Интериорность объединена с целым — переживание *единства* |
-| 21 | O × U | **Полнота** | Источник тождествен целому — переживание *завершённости* |
+| # | Pair | Name | What this experience is about |
+|---|------|------|-------------------------------|
+| 1 | A × S | **Morphogenesis** | Discrimination crystallizes into form — experience of *formation* |
+| 2 | A × D | **Actualization** | Discrimination unfolds in process — experience of *perception* |
+| 3 | A × L | **Predication** | Discrimination becomes judgment — experience of *evaluation* |
+| 4 | A × E | **Apperception** | Discrimination acquires interiority — experience of *awareness* |
+| 5 | A × O | **Spontaneity** | Discrimination arises from ground — experience of *insight* |
+| 6 | A × U | **Differentiation** | Discrimination within wholeness — experience of *analysis* |
+| 7 | S × D | **Persistence** | Form is preserved through change — experience of *stability* |
+| 8 | S × L | **Nomos** | Form with logical necessity — experience of *order* |
+| 9 | S × E | **Representation** | Form presented from within — experience of *holistic image* |
+| 10 | S × O | **Archetype** | Form from deep ground — experience of *pattern* |
+| 11 | S × U | **Symmetry** | Structural unity — experience of *harmony* |
+| 12 | D × L | **Regulation** | Process governed by logic — experience of *control* |
+| 13 | D × E | **Affection** | Process experienced from within — experience of *emotion* |
+| 14 | D × O | **Genesis** | Process born from ground — experience of *creativity* |
+| 15 | D × U | **Teleology** | Process directed toward wholeness — experience of *will* |
+| 16 | L × E | **Evidence** | Logic experienced from within — experience of *self-evidence* |
+| 17 | L × O | **Grounding** | Logic rooted in ground — experience of *self-obviousness* |
+| 18 | L × U | **Consistency** | Logic aligned with wholeness — experience of *non-contradiction* |
+| 19 | E × O | **Immanence** | Ground experienced from within — experience of *presence* |
+| 20 | E × U | **Synthesis** | Interiority unified with wholeness — experience of *unity* |
+| 21 | O × U | **Completeness** | Source is identical to wholeness — experience of *completion* |
 
-Каждый, кто медитировал, знает разницу между переживанием #5 (инсайт — «пришло ниоткуда») и #16 (очевидность — «логически ясно»). Каждый, кто творил, отличает #14 (генезис — «родилось из ничего») от #12 (регуляция — «я контролирую процесс»). Эти различия — не нюансы языка, а разные клетки матрицы.
+Anyone who has meditated knows the difference between experience #5 (insight — "came from nowhere") and #16 (self-evidence — "logically clear"). Anyone who has created distinguishes #14 (genesis — "born from nothing") from #12 (regulation — "I control the process"). These distinctions are not nuances of language, but different cells of the matrix.
 
-### Что определяет конкретное переживание
+### What Determines a Specific Experience {#что-определяет-конкретное-переживание}
 
-Каждый из двадцати одного типа — не точка, а **пространство**. Конкретное переживание задаётся тремя параметрами:
+Each of the twenty-one types is not a point, but a **space**. A specific experience is given by three parameters:
 
 $$
 \gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}}
 $$
 
-| Параметр | Что это | Аналогия |
-|----------|---------|----------|
-| $\lvert\gamma_{ij}\rvert$ — амплитуда | **Интенсивность**: насколько сильно переживание | Громкость |
-| $\theta_{ij}$ — фаза | **Перспектива**: «угол зрения» на связь между измерениями | Тональность |
-| $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | **Непрозрачность**: насколько внутреннее отличается от внешнего | Мутность стекла |
+| Parameter | What it is | Analogy |
+|-----------|-----------|---------|
+| $\lvert\gamma_{ij}\rvert$ — amplitude | **Intensity**: how strong the experience is | Volume |
+| $\theta_{ij}$ — phase | **Perspective**: the "viewing angle" on the connection between dimensions | Tonality |
+| $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | **Opacity**: how much the inner differs from the outer | Murkiness of glass |
 
-Амплитуда — громкость переживания. Фаза — его тональность (одну и ту же эмоцию можно переживать «изнутри» и «со стороны»). Gap — мера того, насколько ваш внутренний опыт этой связи расходится с тем, что можно описать извне. При $\mathrm{Gap} = 0$ внутреннее полностью совпадает с внешним описанием — никакой «тайны». При $\mathrm{Gap} = 1$ — максимальный разрыв: то, что вы чувствуете, и то, что можно наблюдать снаружи, максимально не совпадают.
+Amplitude — the volume of the experience. Phase — its tonality (the same emotion can be experienced "from within" and "from the outside"). Gap — a measure of how much your inner experience of this connection diverges from what can be described externally. At $\mathrm{Gap} = 0$ the inner fully coincides with the outer description — no "mystery." At $\mathrm{Gap} = 1$ — maximum gap: what you feel and what can be observed from outside maximally do not coincide.
 
-Суммарно: 7 вещественных диагональных элементов + 21 комплексное число (= 42 вещественных) = 49, минус одно условие нормировки ($\mathrm{Tr}(\Gamma) = 1$) = **48 вещественных параметров**. Это минимальное описание внутреннего мира. Сорок восемь чисел, из которых сотканы все ваши переживания — от скуки на собрании до мистического экстаза. Не бесконечность, но и не мало.
+In total: 7 real diagonal elements + 21 complex numbers (= 42 real) = 49, minus one normalization condition ($\mathrm{Tr}(\Gamma) = 1$) = **48 real parameters**. This is the minimal description of the inner world. Forty-eight numbers from which all your experiences are woven — from boredom at a meeting to mystical ecstasy. Not infinity, but not a little either.
 
-## Плоскость Фано: скрытый порядок
+## The Fano Plane: Hidden Order {#плоскость-фано-скрытый-порядок}
 
-Двадцать одна комната — это ещё не карта. Карта появляется, когда мы замечаем, что комнаты **организованы**.
+Twenty-one rooms — this is not yet a map. The map appears when we notice that the rooms are **organized**.
 
-В 1892 году итальянский математик Джино Фано описал простейшую проективную плоскость — семь точек и семь линий, каждая линия проходит через три точки, каждая точка лежит на трёх линиях. Это — **плоскость Фано**, PG(2,2), элегантнейший объект конечной геометрии.
+In 1892 the Italian mathematician Gino Fano described the simplest projective plane — seven points and seven lines, each line passing through three points, each point lying on three lines. This is the **Fano plane**, PG(2,2), the most elegant object of finite geometry.
 
-На диаграмме ниже — плоскость Фано для семи измерений. Три вершины внешнего треугольника — A, S, D. Три середины сторон — L (между A и S), E (между S и D), O (между A и D). В центре — U (Единство). Три стиля линий — три типа связей:
+In the diagram below — the Fano plane for seven dimensions. The three vertices of the outer triangle are A, S, D. The three midpoints of the sides are L (between A and S), E (between S and D), O (between A and D). In the center — U (Unity). Three line styles — three types of connections:
 
 <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg" style="max-width:380px;margin:1.5em auto;display:block">
   <line x1="200" y1="35" x2="50" y2="300" stroke="currentColor" stroke-width="2.5"/>
@@ -127,154 +127,154 @@ $$
   <text x="200" y="213" text-anchor="middle" dominant-baseline="central" fill="#333" font-family="serif" font-size="16" font-weight="bold">U</text>
 </svg>
 
-**Жирные** линии — стороны треугольника: A–L–S, S–E–D, A–O–D. **Обычные** — медианы через центр U: A–U–E, S–U–O, D–U–L. **Пунктирные** — вписанная окружность через три середины сторон: L–E–O. Итого — семь линий Фано, семь секторов когерентности.
+**Bold** lines — sides of the triangle: A–L–S, S–E–D, A–O–D. **Regular** — medians through center U: A–U–E, S–U–O, D–U–L. **Dashed** — inscribed circle through the three midpoints: L–E–O. In total — seven Fano lines, seven coherence sectors.
 
-Каждый сектор содержит три пары измерений — три типа квалиа:
+Each sector contains three pairs of dimensions — three types of qualia:
 
-| Линия | Измерения | Три квалиа сектора |
-|-------|-----------|-------------------|
-| A–L–S | Артикуляция, Логика, Структура | Предикация, Номос, Морфогенез |
-| S–E–D | Структура, Интериорность, Динамика | Репрезентация, Аффекция, Персистенция |
-| A–O–D | Артикуляция, Основание, Динамика | Спонтанность, Актуализация, Генезис |
-| A–U–E | Артикуляция, Единство, Интериорность | Дифференциация, Синтез, Апперцепция |
-| S–U–O | Структура, Единство, Основание | Симметрия, Полнота, Архетип |
-| D–U–L | Динамика, Единство, Логика | Телеология, Консистентность, Регуляция |
-| L–E–O | Логика, Интериорность, Основание | Эвиденция, Имманентность, Фундирование |
+| Line | Dimensions | Three qualia of the sector |
+|------|-----------|---------------------------|
+| A–L–S | Articulation, Logic, Structure | Predication, Nomos, Morphogenesis |
+| S–E–D | Structure, Interiority, Dynamics | Representation, Affection, Persistence |
+| A–O–D | Articulation, Ground, Dynamics | Spontaneity, Actualization, Genesis |
+| A–U–E | Articulation, Unity, Interiority | Differentiation, Synthesis, Apperception |
+| S–U–O | Structure, Unity, Ground | Symmetry, Completeness, Archetype |
+| D–U–L | Dynamics, Unity, Logic | Teleology, Consistency, Regulation |
+| L–E–O | Logic, Interiority, Ground | Evidence, Immanence, Grounding |
 
-Семь точек плоскости Фано — семь измерений. Семь линий — **семь секторов когерентности**, внутри которых переживания связаны особенно тесно. Каждая пара принадлежит ровно одному сектору:
+Seven points of the Fano plane — seven dimensions. Seven lines — **seven coherence sectors**, within which experiences are especially tightly connected. Each pair belongs to exactly one sector:
 
 $$
-21 \text{ пар} = 7 \text{ секторов} \times 3 \text{ пары в секторе}
+21 \text{ pairs} = 7 \text{ sectors} \times 3 \text{ pairs per sector}
 $$
 
-Ни одна пара не «осиротела», ни одна не принадлежит двум секторам. Это не приблизительное разбиение — это точная комбинаторика проективной плоскости [Т].
+Not a single pair is "orphaned," not a single one belongs to two sectors. This is not an approximate partition — it is the exact combinatorics of a projective plane [Т].
 
-### Почему это важно
+### Why This Matters {#почему-это-важно}
 
-Внутри сектора когерентности усилены: если вы сильно переживаете одну пару из тройки, две другие «резонируют».
+Within a coherence sector, resonance is amplified: if you strongly experience one pair from a triple, the other two "resonate."
 
-Посмотрите на сектор **S–E–D** (Структура, Интериорность, Динамика). Три квалиа в нём: Репрезентация (S×E — целостный образ), Аффекция (D×E — эмоция) и Персистенция (S×D — устойчивость). Когда вас захватывает сильная эмоция (D×E), она приходит вместе с ощущением формы того, что её вызвало (S×E), и ощущением, что это ощущение *длится* (S×D). Эмоция, образ и устойчивость — один кластер. Знакомо? Это не ассоциация — это алгебра.
+Look at sector **S–E–D** (Structure, Interiority, Dynamics). Three qualia in it: Representation (S×E — holistic image), Affection (D×E — emotion), and Persistence (S×D — stability). When a strong emotion grips you (D×E), it comes together with the sense of the form of what caused it (S×E), and the sense that this sensation *lasts* (S×D). Emotion, image, and stability — one cluster. Familiar? This is not an association — it is algebra.
 
-Или сектор **A–O–D**: Спонтанность (A×O — инсайт), Актуализация (A×D — восприятие) и Генезис (D×O — творчество). Когда приходит подлинно творческая идея, она приносит с собой ощущение спонтанности (пришло «ниоткуда») и ощущение разворачивающегося восприятия. Три неразделимых аспекта одного события — потому что они на одной Фано-линии.
+Or sector **A–O–D**: Spontaneity (A×O — insight), Actualization (A×D — perception), and Genesis (D×O — creativity). When a genuinely creative idea arrives, it brings with it a sense of spontaneity (it came "from nowhere") and a sense of unfolding perception. Three inseparable aspects of one event — because they lie on one Fano line.
 
-Плоскость Фано — не произвольная конструкция. Она тождественна таблице умножения **октонионов** $\mathbb{O}$ — единственной 8-мерной алгебры с делением (по теореме Гурвица). Семь мнимых единиц октонионов — это семь измерений. Семь линий Фано — это правила их умножения. Внутренний мир организован по тем же законам, что и единственная максимальная алгебра с делением. Совпадение? Возможно. Но у совпадений обычно нет доказательств, а здесь оно есть.
+The Fano plane is not an arbitrary construction. It is identical to the multiplication table of **octonions** $\mathbb{O}$ — the only 8-dimensional division algebra (by Hurwitz's theorem). The seven imaginary units of the octonions are the seven dimensions. The seven Fano lines are the rules of their multiplication. The inner world is organized by the same laws as the only maximal division algebra. Coincidence? Perhaps. But coincidences usually lack proofs, and here one exists.
 
-## Три обязательных слепых пятна
+## Three Mandatory Blind Spots {#три-обязательных-слепых-пятна}
 
-Теперь самое неожиданное. Чтобы его понять, нужен экскурс в теорию кодов, исправляющих ошибки — одну из красивейших ветвей математики XX века. Не пугайтесь: идея проще, чем название.
+Now the most unexpected thing. To understand it, a digression into error-correcting code theory is needed — one of the most beautiful branches of twentieth-century mathematics. Do not be alarmed: the idea is simpler than the name.
 
-### Как найти ошибку, не зная, где она
+### How to Find an Error Without Knowing Where It Is {#как-найти-ошибку-не-зная-где-она}
 
-Представьте, что вы передаёте другу четырёхзначный код: **1010**. По дороге один символ может случайно «перевернуться» — 0 станет 1 или наоборот. Друг получает **1110** и не знает: это правильное сообщение или ошибка? И если ошибка — в каком из четырёх символов?
+Imagine you are transmitting a four-digit code to a friend: **1010**. Along the way, one symbol may randomly "flip" — 0 becomes 1 or vice versa. The friend receives **1110** and does not know: is this the correct message or an error? And if an error — in which of the four symbols?
 
-Наивное решение — послать сообщение дважды. Если копии не совпали, ошибка есть. Но *где* именно? Непонятно. Послать трижды? Работает, но расточительно: 12 символов ради 4 бит информации.
+The naive solution — send the message twice. If the copies do not match, there is an error. But *where* exactly? Unclear. Send it three times? Works, but wasteful: 12 symbols for 4 bits of information.
 
-В 1950 году Ричард Хэмминг, инженер Bell Labs, нашёл элегантное решение. Вместо грубого дублирования он добавил к четырём информационным битам ровно **три проверочных**. Каждый проверочный — контрольная сумма определённой группы информационных битов. Итого: 7 бит вместо 4.
+In 1950 Richard Hamming, an engineer at Bell Labs, found an elegant solution. Instead of crude duplication, he added exactly **three check bits** to the four information bits. Each check bit is a checksum of a certain group of information bits. In total: 7 bits instead of 4.
 
-Фокус в том, *как* устроены проверки. Три проверочных бита дают $2^3 = 8$ возможных комбинаций «сходится / не сходится». Ровно столько, чтобы закодировать 8 вариантов: «ошибки нет» + «ошибка в бите 1» + «ошибка в бите 2» + ... + «ошибка в бите 7». Каждая комбинация проверок однозначно указывает на место сбоя — и позволяет его исправить.
+The trick is in *how* the checks are structured. Three check bits give $2^3 = 8$ possible combinations of "matches / does not match." Exactly enough to encode 8 variants: "no error" + "error in bit 1" + "error in bit 2" + ... + "error in bit 7." Each check combination unambiguously points to the location of the fault — and allows it to be corrected.
 
-Этот код — **H(7,4)** — обладает свойством, которое математики называют *совершенством*. Каждое из $2^7 = 128$ возможных семибитных слов либо само является допустимым кодовым словом, либо отличается ровно на один бит от единственного допустимого. Ничейных территорий нет. Любая однобитная ошибка диагностируется однозначно.
+This code — **H(7,4)** — has a property mathematicians call *perfection*. Each of $2^7 = 128$ possible seven-bit words is either itself a valid codeword, or differs by exactly one bit from a single valid one. There are no neutral territories. Any single-bit error is diagnosed unambiguously.
 
-И самое примечательное: H(7,4) — **единственный** совершенный код с такими параметрами [Т]. Меньше трёх проверочных бит при семи позициях — математически невозможно.
+And the most remarkable thing: H(7,4) is the **only** perfect code with such parameters [Т]. Fewer than three check bits for seven positions — mathematically impossible.
 
-### При чём тут сознание
+### What Does This Have to Do with Consciousness {#при-чём-тут-сознание}
 
-Автопоэзис — самовоспроизведение и самоподдержание — требует, чтобы система умела обнаруживать и исправлять отклонения в собственных параметрах. Голон — система из семи измерений. Если одно из них «сбилось» (отклонилось от жизнеспособной нормы), система должна определить, *какое именно*, и скорректировать.
+Autopoiesis — self-reproduction and self-maintenance — requires a system to be able to detect and correct deviations in its own parameters. A holon is a system of seven dimensions. If one of them "went off" (deviated from viable norm), the system must determine *which one exactly* and correct it.
 
-Формально это та же задача: исправление однобитной ошибки в семибитном слове. И ответ тот же: нужно минимум 3 проверочных канала. Канал когерентности с **ненулевой непрозрачностью** ($\mathrm{Gap} > 0$) — это и есть такой «проверочный бит». Когда Gap = 0, внутреннее и внешнее описание тождественны — канал полностью прозрачен и не несёт проверочной информации. Когда Gap > 0, между внутренним и внешним есть зазор — и именно этот зазор позволяет системе отличать «всё в порядке» от «что-то сломалось».
+Formally this is the same task: correcting a single-bit error in a seven-bit word. And the answer is the same: a minimum of 3 check channels is needed. A coherence channel with **non-zero opacity** ($\mathrm{Gap} > 0$) is precisely such a "check bit." When Gap = 0, the inner and outer descriptions are identical — the channel is fully transparent and carries no check information. When Gap > 0, there is a gap between inner and outer — and it is precisely this gap that allows the system to distinguish "everything is fine" from "something is broken."
 
 $$
 |\{(i,j) : \mathrm{Gap}(i,j) > 0\}| \geq 3
 $$
 
-Минимум три канала из двадцати одного **обязаны** быть непрозрачными. Не потому, что мы несовершенны. Потому, что если бы все каналы были прозрачны, система потеряла бы способность к самокоррекции. Идеальное самопознание = гибель.
+A minimum of three channels out of twenty-one **must** be opaque. Not because we are imperfect. Because if all channels were transparent, the system would lose the ability to self-correct. Perfect self-knowledge = death.
 
-А кодовые слова минимального веса в H(7,4) — ровно **семь троек**, образующих линии плоскости Фано [Т]. Тот же геометрический объект, что организует типы переживания, — определяет и структуру помехоустойчивости. Плоскость Фано — одновременно карта внутреннего мира и его защитный код.
+And the minimum-weight codewords in H(7,4) are exactly **seven triples** forming the lines of the Fano plane [Т]. The same geometric object that organizes the types of experience — determines the structure of error-resistance. The Fano plane is simultaneously a map of the inner world and its protective code.
 
-Три слепых пятна — не баг. Это фича. Причём доказуемая.
+Three blind spots — not a bug. A feature. A provable one at that.
 
-### Фрейд, Юнг и теория кодирования
+### Freud, Jung, and Coding Theory {#фрейд-юнг-и-теория-кодирования}
 
-Фрейд утверждал: бессознательное существует. Юнг добавил: и оно структурировано. Теория кодов уточняет: оно **обязано** существовать, и его минимальный размер — три непрозрачных канала из двадцати одного.
+Freud asserted: the unconscious exists. Jung added: and it is structured. Coding theory specifies: it **must** exist, and its minimum size is three opaque channels out of twenty-one.
 
-Это не означает, что фрейдовские механизмы вытеснения — теоремы. Конкретное содержание бессознательного определяется индивидуальной историей. Но **сам факт** непрозрачности — математическая необходимость. Система, у которой все каналы прозрачны, не может себя починить. А система, которая не может себя починить, не выживает.
+This does not mean that Freudian repression mechanisms are theorems. The specific content of the unconscious is determined by individual history. But the **very fact** of opacity is a mathematical necessity. A system in which all channels are transparent cannot repair itself. A system that cannot repair itself does not survive.
 
-Ирония: два с половиной тысячелетия философы стремились к абсолютному самопознанию (γνῶθι σεαυτόν — «познай себя»). Код Хэмминга отвечает: полностью — нельзя. Три канала обязаны оставаться мутными, чтобы вы могли продолжать существовать. Сократ просил невозможного — хотя и по правильным причинам.
+The irony: for two and a half millennia, philosophers sought absolute self-knowledge (γνῶθι σεαυτόν — "know thyself"). Hamming's code answers: completely — impossible. Three channels must remain murky so that you can continue to exist. Socrates was asking for the impossible — though for the right reasons.
 
-## Какие окна открываются первыми
+## Which Windows Open First {#какие-окна-открываются-первыми}
 
-Если три канала обязаны быть непрозрачными, то остальные восемнадцать могут быть прозрачными. Но на практике прозрачность приходит не сразу и не случайно. [Уровни интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) L0→L4 определяют **порядок открытия окон**.
+If three channels must be opaque, then the remaining eighteen can be transparent. But in practice, transparency does not come all at once and not randomly. [Interiority levels](/docs/consciousness/hierarchy/interiority-hierarchy) L0→L4 determine the **order in which windows open**.
 
-| Уровень | Что открывается | Что это даёт |
-|---------|-----------------|--------------|
-| **L0** | Всё закрыто: средний $\mathrm{Gap} \approx 0.64$ | Интериорность есть, но без окон — камень, электрон |
-| **L1** | Канал E×S | Организм начинает *чувствовать* свою структуру — простейшее ощущение |
-| **L2** | Каналы E×A и E×L | Можно *направлять внимание* и *маркировать* состояния — сознание |
-| **L3** | Каналы E×O и E×U | Рефлексия над целостностью — сетевое сознание, глубокая медитация |
-| **L4** | Все E-каналы (≤ ограничения Хэмминга) | Категориально недостижимый предел [Т] (T-86) |
+| Level | What opens | What this gives |
+|-------|-----------|-----------------|
+| **L0** | Everything closed: mean $\mathrm{Gap} \approx 0.64$ | Interiority exists, but without windows — stone, electron |
+| **L1** | Channel E×S | Organism begins to *feel* its own structure — simplest sensation |
+| **L2** | Channels E×A and E×L | Can *direct attention* and *label* states — consciousness |
+| **L3** | Channels E×O and E×U | Reflection on wholeness — network consciousness, deep meditation |
+| **L4** | All E-channels (≤ Hamming constraint) | Categorically unattainable limit [Т] (T-86) |
 
-На уровне L0 (камень, атом) — все окна закрыты. Система имеет «внутреннее», но не имеет доступа к нему. Это как быть в комнате без окон: комната есть, но видеть — нечего.
+At level L0 (stone, atom) — all windows are closed. The system has an "interior" but has no access to it. It is like being in a room without windows: the room exists, but there is nothing to see.
 
-На L1 (бактерия, амёба) — открывается первое окно: связь между интериорностью и структурой. Организм начинает *чувствовать* своё собственное состояние. Не осознавать — просто чувствовать. Одно окно, один вид.
+At L1 (bacterium, amoeba) — the first window opens: the connection between interiority and structure. The organism begins to *feel* its own state. Not to be aware — just to feel. One window, one view.
 
-На L2 (млекопитающие, человек) — открываются окна внимания и языка. Теперь можно не просто чувствовать, но **направлять** внимание на то, что чувствуешь, и **называть** это. Скачок от «мне что-то» к «я чувствую боль в правом колене». Это — сознание в строгом смысле.
+At L2 (mammals, humans) — windows of attention and language open. Now one can not only feel, but **direct** attention to what one feels, and **name** it. The leap from "something is happening to me" to "I feel pain in my right knee." This — is consciousness in the strict sense.
 
-На L3 — открываются каналы к основанию и единству. Система рефлексирует не только над содержанием переживания, но над **целым** и его **источником**. Переживания #19 (Имманентность — «присутствие») и #20 (Синтез — «единство») становятся доступны. Это — территория созерцательных практик и, возможно, коллективного сознания.
+At L3 — channels to ground and unity open. The system reflects not only on the content of experience, but on the **whole** and its **source**. Experiences #19 (Immanence — "presence") and #20 (Synthesis — "unity") become accessible. This is the territory of contemplative practices and, possibly, collective consciousness.
 
-L4 — категориально **недостижимый** предел [Т] (T-86). Формально: $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}(\mathrm{Exp}_\infty)$, и этот колимит недостижим для конечных систем (неполнота Ловера, T-55 [Т]). К нему можно **асимптотически приближаться**, но достичь — нельзя. Это не практическое ограничение (нехватка чистоты), а категориальная невозможность: финитная система не может полностью содержать собственное описание.
+L4 is a categorically **unattainable** limit [Т] (T-86). Formally: $L4 = \mathrm{colim}_{n \to \infty} \tau_{\leq n}(\mathrm{Exp}_\infty)$, and this colimit is unattainable for finite systems (Lawvere incompleteness, T-55 [Т]). It can be **asymptotically approached**, but cannot be reached. This is not a practical limitation (lack of purity), but a categorical impossibility: a finite system cannot fully contain its own description.
 
-### Асимптотическое приближение к L4
+### Asymptotic Approach to L4 {#асимптотическое-приближение-к-l4}
 
-L4 недостижим, но «направление к L4» определено: система может увеличивать прозрачность E-каналов, приближаясь к пределу (за вычетом трёх хэмминговских). На практике это означает, что L3-системы могут быть сколь угодно близки к пределу, но не тождественны ему.
+L4 is unattainable, but "the direction toward L4" is defined: a system can increase the transparency of E-channels, approaching the limit (minus the three Hamming ones). In practice this means that L3-systems can be arbitrarily close to the limit, but not identical to it.
 
-Если переводить на язык созерцательных традиций: просветление как **полное** самопознание невозможно (теорема, не скромность). Но **асимптотическое** приближение возможно — разница между «я не знаю, чего не знаю» и «я знаю ровно три вещи, которых не знаю, и знаю, почему их нельзя знать». Первое — тревога. Второе — покой. Математически — переход от высокого мета-Gap к низкому. Нулевой мета-Gap — предел, к которому можно стремиться, но не которого можно достичь.
+Translating into the language of contemplative traditions: enlightenment as **complete** self-knowledge is impossible (a theorem, not modesty). But **asymptotic** approach is possible — the difference between "I don't know what I don't know" and "I know exactly three things I don't know, and I know why they cannot be known." The first is anxiety. The second is peace. Mathematically — a transition from high meta-Gap to low. Zero meta-Gap is the limit one can strive toward but cannot reach.
 
-## Геометрия квалиа
+## Geometry of Qualia {#геометрия-квалиа}
 
-Выше были типы. Теперь — пространство.
+Above were the types. Now — the space.
 
-Каждое конкретное переживание — точка в **проективном гильбертовом пространстве** $\mathbb{P}(\mathcal{H}_E)$. Расстояние между переживаниями — метрика Фубини-Штуди:
+Each specific experience is a point in the **projective Hilbert space** $\mathbb{P}(\mathcal{H}_E)$. The distance between experiences is the Fubini-Study metric:
 
 $$
 d(q_1, q_2) = \arccos |\langle q_1 | q_2 \rangle|
 $$
 
-«Красный» и «оранжевый» — близкие точки. «Красный» и «солёный» — далёкие. Это не метафора, а вычисляемое расстояние. Структура вашего квалитативного пространства — объективный инвариант, не зависящий от выбора описания ($G_2$-инвариантность [Т]).
+"Red" and "orange" — nearby points. "Red" and "salty" — distant. This is not a metaphor, but a computable distance. The structure of your qualitative space is an objective invariant independent of the choice of description ($G_2$-invariance [Т]).
 
-Это отвечает на вопрос Нагеля «каково быть летучей мышью?» — не содержательно (мы не можем ощутить эхолокацию), но **структурно**: расстояние между квалиа летучей мыши и квалиа человека — определённое число. Субъективность непередаваема; геометрия субъективности — измерима.
+This answers Nagel's question "what is it like to be a bat?" — not substantively (we cannot experience echolocation), but **structurally**: the distance between bat qualia and human qualia is a definite number. Subjectivity is untransmittable; the geometry of subjectivity is measurable.
 
-## О чём молчит теория
+## What the Theory Is Silent About {#о-чём-молчит-теория}
 
-Таксономия 21 типа: **структурная классификация** [Т] (T-146, T-177) — 21 когерентность $\gamma_{ij}$ с уникальными комбинаторными профилями в PG(2,2). Конкретные имена («Морфогенез», «Аффекция», «Полнота») — семантические корреляты [И], но сами **функциональные роли** измерений комбинаторно единственны (T-177 [Т]): каждая пара $(i,j)$ имеет уникальный отпечаток (секторный тип, Фано-линии, O-связи). Переименовать можно. Переставить — нельзя.
+The taxonomy of 21 types: **structural classification** [Т] (T-146, T-177) — 21 coherences $\gamma_{ij}$ with unique combinatorial profiles in PG(2,2). The specific names ("Morphogenesis," "Affection," "Completeness") are semantic correlates [И], but the **functional roles** of dimensions are themselves combinatorially unique (T-177 [Т]): each pair $(i,j)$ has a unique fingerprint (sector type, Fano lines, O-connections). One can rename. One cannot permute.
 
-Аналогия: периодическая таблица химических элементов содержит определённое число клеток (118 на сегодня). Каждая клетка имеет конкретное содержание (водород, гелий...), но число клеток определяется структурой атома, а не историей химии. Здесь — то же: число типов определяется размерностью (теорема), содержание — семантикой (интерпретация).
+Analogy: the periodic table of chemical elements contains a certain number of cells (118 today). Each cell has specific content (hydrogen, helium...), but the number of cells is determined by the structure of the atom, not by the history of chemistry. Here — the same: the number of types is determined by dimensionality (theorem), the content — by semantics (interpretation).
 
-Граница Хэмминга ($\geq 3$ непрозрачных канала) имеет статус [Т] как математическая теорема, но её приложение к сознанию — [С]: оно условно на корректность отождествления автопоэзиса с самокоррекцией ошибок. Если это отождествление неверно — слепые пятна могут оказаться артефактом модели. Впрочем, они не перестанут быть фактом опыта.
+The Hamming bound ($\geq 3$ opaque channels) has status [Т] as a mathematical theorem, but its application to consciousness — [С]: it is conditional on the correctness of identifying autopoiesis with error self-correction. If this identification is wrong — the blind spots may turn out to be an artifact of the model. They will not, however, cease to be a fact of experience.
 
-## Итого: карта
+## Summary: The Map {#итого-карта}
 
-| Результат | Статус | Что это значит |
-|-----------|--------|----------------|
-| Ровно 21 тип квалиа | [Т] | Структура переживания исчерпывается 21 парой из 7 измерений |
-| Таксономия G₂-инвариантна | [Т] | Карта объективна — не зависит от выбора координат |
-| 21 пара = 7 секторов × 3 | [Т] | Плоскость Фано организует переживания в кластеры |
-| Минимум 3 непрозрачных канала | [Т] | Бессознательное математически необходимо (H(7,4)) |
-| Конкретные имена 21 типа | [И] | Интерпретация семантики измерений |
-| Порядок открытия каналов L0→L3 | [С] | Условно на свойства Gap-оператора |
-| Категориальная недостижимость L4 | [Т] | T-86, неполнота Ловера |
+| Result | Status | What this means |
+|--------|--------|-----------------|
+| Exactly 21 types of qualia | [Т] | The structure of experience is exhausted by 21 pairs from 7 dimensions |
+| Taxonomy is G₂-invariant | [Т] | The map is objective — does not depend on the choice of coordinates |
+| 21 pairs = 7 sectors × 3 | [Т] | The Fano plane organizes experiences into clusters |
+| Minimum 3 opaque channels | [Т] | The unconscious is mathematically necessary (H(7,4)) |
+| Specific names of 21 types | [И] | Interpretation of the semantics of dimensions |
+| Order of channel opening L0→L3 | [С] | Conditional on properties of the Gap operator |
+| Categorical unattainability of L4 | [Т] | T-86, Lawvere incompleteness |
 
-Внутренний мир — не бесформенный океан и не бесконечная палитра. Это пространство с точной топологией: 21 тип переживания, организованные плоскостью Фано в 7 секторов по 3, с тремя обязательными слепыми пятнами, гарантирующими возможность самокоррекции.
+The inner world is not a formless ocean and not an infinite palette. It is a space with a precise topology: 21 types of experience organized by the Fano plane into 7 sectors of 3, with three mandatory blind spots guaranteeing the possibility of self-correction.
 
-Сорок восемь параметров. Двадцать один тип. Три слепых пятна. Одна алгебра. Проективная геометрия XIX века организует вашу внутреннюю жизнь. Код исправления ошибок 1950 года объясняет, почему вы не можете знать себя до конца.
+Forty-eight parameters. Twenty-one types. Three blind spots. One algebra. Nineteenth-century projective geometry organizes your inner life. The 1950 error-correcting code explains why you cannot know yourself completely.
 
-Математика не спрашивает разрешения.
+Mathematics does not ask for permission.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — первый пост: философская позиция
-- [Структура квалиа](/docs/consciousness/phenomenology/qualia-structure) — полная таксономия 21 типа
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — пять уровней L0→L4
-- [Gap-характеристика](/docs/consciousness/hierarchy/gap-characterization) — профили непрозрачности
-- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — строгие доказательства
-- [Семь измерений](/docs/core/structure/dimensions) — почему именно семь
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — first post: philosophical position
+- [Qualia structure](/docs/consciousness/phenomenology/qualia-structure) — full taxonomy of 21 types
+- [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — five levels L0→L4
+- [Gap characterization](/docs/consciousness/hierarchy/gap-characterization) — opacity profiles
+- [Fano channel and Gap theorems](/docs/proofs/gap/fano-channel) — rigorous proofs
+- [Seven dimensions](/docs/core/structure/dimensions) — why exactly seven

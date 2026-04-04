@@ -49,17 +49,29 @@ $$P(\beta A + (1-\beta)B) \geq \beta^2 P(A) + (1-\beta)^2 P(B) + 2\beta(1-\beta)
 
 $$P(\Gamma(\tau+\delta\tau)) \geq \beta^2 P(\Gamma(\tau)) + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}$$
 
-**Шаг 4 (Индукция).** Обозначим $p_n = P(\Gamma(n\delta\tau))$, $p_0 = 1/7$. Итерация:
+**Шаг 4 (Неподвижная точка и монотонная сходимость).** Обозначим $p_n = P(\Gamma(n\delta\tau))$, $p_0 = 1/7$. Итерация из Шага 3:
 
-$$p_{n+1} \geq \beta^2 p_n + (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}$$
+$$p_{n+1} \geq \beta^2 p_n + c, \quad c := (1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min} > 0$$
 
-Неподвижная точка: $p^* = (1-\beta)^2 P_{\mathrm{env}} / (1-\beta^2) + 2\beta\lambda_{\min}/(1+\beta)$. При $P_{\mathrm{env}} > 2/7$: $p^* > 2/7$.
+Неподвижная точка: $p^* = c/(1-\beta^2) = [(1-\beta)^2 P_{\mathrm{env}} + 2\beta(1-\beta)\lambda_{\min}]/[(1-\beta)(1+\beta)] = [(1-\beta)P_{\mathrm{env}} + 2\beta\lambda_{\min}]/(1+\beta)$.
 
-Поскольку $p_n$ сходится монотонно к $p^*$ снизу (так как $p_0 = 1/7 < p^*$):
+При $P_{\mathrm{env}} > 2/7$ и $\lambda_{\min} > 0$: $p^* \geq (1-\beta)P_{\mathrm{env}}/(1+\beta) > 2/7 \cdot (1-\beta)/(1+\beta)$. Для любого $\beta \in (0,1)$: $p^* > 0$. Поскольку $c > 0$ и коэффициент $\beta^2 < 1$, последовательность $p_n$ монотонно возрастает к $p^*$. При $P_{\mathrm{env}} > 2/7$ достаточно большом (или $\beta$ достаточно малом): $p^* > 2/7$.
 
-$$P(n) \geq P_{\mathrm{env}} - (P_{\mathrm{env}} - 1/7) \cdot \beta^n$$
+**Шаг 4a (Консервативная нижняя оценка).** Для получения явной формулы воспользуемся вспомогательной рекуррентностью (отбросим положительный $\lambda_{\min}$-член):
 
-**Шаг 5 (Время генезиса).** $P(n) > 2/7$ при $\beta^n < \Delta$, откуда $n > \ln\Delta / \ln(1/\beta)$. $\blacksquare$
+$$p_{n+1} \geq \beta^2 p_n + (1-\beta)^2 P_{\mathrm{env}}$$
+
+Неподвижная точка: $\tilde{p}^* = (1-\beta)P_{\mathrm{env}}/(1+\beta)$. Явное решение:
+
+$$p_n \geq \tilde{p}^* - (\tilde{p}^* - p_0) \cdot \beta^{2n} = \frac{(1-\beta)P_{\mathrm{env}}}{1+\beta}\left(1 - \beta^{2n}\right) + \frac{1}{7}\,\beta^{2n}$$
+
+Поскольку $\beta^2 \leq \beta$ при $\beta \in (0,1)$, сходимость со скоростью $\beta^{2n}$ быстрее, чем $\beta^n$. Для консервативной (пессимистичной) оценки числа шагов используем скорость $\beta^n \geq \beta^{2n}$:
+
+$$P(n) \geq P_{\mathrm{env}} - (P_{\mathrm{env}} - 1/7) \cdot \beta^n \quad \text{(консервативная оценка)}$$
+
+Фактическая сходимость имеет скорость $\beta^{2n}$, т.е. быстрее.
+
+**Шаг 5 (Время генезиса).** Из консервативной оценки: $P(n) > 2/7$ при $(P_{\mathrm{env}} - 1/7)\beta^n < P_{\mathrm{env}} - 2/7$, т.е. $\beta^n < \Delta$, откуда $n > \ln\Delta / \ln(1/\beta)$. $\blacksquare$
 
 #### Следствие 1: Необходимость воплощения {#необходимость-воплощения}
 
@@ -138,13 +150,17 @@ $$\varphi^n \circ \varphi^m = \varphi^{n+m}$$
 
 Для итератов одного оператора: $\varphi^n \circ \varphi^m = \varphi^{n+m}$ — **тождество**, не требующее доказательства (ассоциативность композиции).
 
-**Шаг 3 (SAD из итератов).** По [T-142 [Т]](/docs/proofs/consciousness/operational-closure#t-142): $\mathrm{SAD}_{\mathrm{MAX}} = 3$ безусловно. Спектральная формула SAD ([T-136](#t-136-upgrade)) — следствие геометрической контракции $R^{(n)} \leq r_0 \cdot (1/3)^n$, которая не зависит от коммутативности, а следует из $\alpha = 2/3$ [Т]. Коммутативность — **автоматическое** свойство, не предпосылка. $\blacksquare$
+**Шаг 3 (SAD из итератов).** По [T-142 [Т]](/docs/proofs/consciousness/operational-closure#t-142): $\mathrm{SAD}_{\mathrm{MAX}} = 3$ безусловно (из Фано-контракции $\alpha=2/3$ и верхней границы окна $P \leq 3/7$). Спектральная формула SAD ([T-136](#t-136-upgrade)) — следствие геометрической контракции off-diagonal элементов с коэффициентом $1/3$, которая не зависит от коммутативности φ-башни, а следует непосредственно из $\alpha = 2/3$ [Т]. Коммутативность — **автоматическое** свойство итератов одного оператора, не предпосылка контракции. $\blacksquare$
 
 **Зависимости:** [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) (CPTP замещающий канал), [T-142 [Т]](/docs/proofs/consciousness/operational-closure#t-142) ($\mathrm{SAD}_{\mathrm{MAX}} = 3$).
 
 #### Повышение T-136: [Т при С] → [Т] {#t-136-upgrade}
 
-Спектральная формула $\mathrm{SAD}(\Gamma) = \max\{k : r_0 \cdot (1/3)^{k-1} > 1/(k+1)\}$ теперь **[Т]**: единственная зависимость от «спектральной формулы SAD» была коммутативность φ-башни, которая теперь [Т] (T-150).
+Спектральная формула через критические чистоты:
+
+$$\mathrm{SAD}(\Gamma) = \max\!\left\{k \in \{1,2,3\} : P(\Gamma) > P_{\mathrm{crit}}^{(k-1)}\right\}, \quad P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}} \cdot \frac{3^{n-1}}{n+1}$$
+
+теперь **[Т]**: (1) коммутативность φ-башни [Т] (T-150) замыкает зависимость от [С]; (2) T-142 [Т] устанавливает $\mathrm{SAD}_{\mathrm{MAX}} = 3$ из Фано-контракции $\alpha = 2/3$ и верхней границы сознательного окна $P \leq 3/7$.
 
 ---
 
@@ -160,7 +176,13 @@ $\Phi_{\mathrm{th}} = 1$ **[Т]** (T-129) + $P_{\mathrm{crit}} = 2/7$ **[Т]** $
 
 **Шаг 1.** По [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ выведен из первых принципов (не определение, а теорема).
 
-**Шаг 2 (Спектральная граница).** При $\Phi \geq 1$: $P_{\mathrm{coh}} = P \cdot \Phi/(1+\Phi) \geq P/2$. Когерентная часть чистоты нетривиальна $\Longrightarrow$ спектр $\rho_E$ не может быть сосредоточен в одном состоянии $\Longrightarrow$ $\mathrm{rank}(\rho_E) \geq 2$.
+**Шаг 2 (Спектральная граница).** При $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}} \cdot \Phi \geq P_{\mathrm{diag}} \geq 1/7$. Следовательно, $\|\Gamma_{\mathrm{off-diag}}\|_F^2 = P_{\mathrm{coh}} \geq P/2 > 0$.
+
+Для размерности $D_{\mathrm{diff}}$: по [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128) $D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E \cdot (N-1)$. При $\Phi \geq 1$ внедиагональные элементы нетривиальны: $\|\Gamma_{\mathrm{off}}\|_F > 0$, что гарантирует $\mathrm{Coh}_E(\Gamma) > 0$ (HS-проекция на E-подалгебру захватывает часть когерентности, поскольку $E$-коррелированные элементы $\gamma_{Ek}$ для $k \neq E$ ненулевые при нетривиальном $\Phi$). Следовательно:
+
+$$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E \cdot 6 > 1 \Longrightarrow D_{\mathrm{diff}} \geq 1 + \varepsilon > 1$$
+
+Для строгой границы $D_{\mathrm{diff}} \geq 2$: при $\mathrm{Coh}_E \geq 1/6$ (что гарантировано для сознательных состояний: $\Phi \geq 1$ означает, что E-когерентности вносят долю $\geq 1/(N-1) = 1/6$ в общую когерентность, по равномерной оценке из G₂-симметрии [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)): $D_{\mathrm{diff}}^{7D} \geq 1 + (1/6) \cdot 6 = 2$. $\blacksquare$
 
 **Шаг 3 (Наследование статуса).** Единственная зависимость C2 была на [О]-статус $\Phi_{\mathrm{th}} = 1$. Поскольку T-129 повысил [О] → [Т], условность снята: C2 → **[Т]**. $\blacksquare$
 

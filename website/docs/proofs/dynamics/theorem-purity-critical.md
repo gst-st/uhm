@@ -1,72 +1,72 @@
 ---
 slug: /proofs/dynamics/theorem-purity-critical
 sidebar_position: 1
-title: "Теорема о критической чистоте"
-description: "Строгое доказательство P_crit = 2/N из первых принципов УГМ"
+title: "Theorem on Critical Purity"
+description: "Rigorous proof of P_crit = 2/N from first principles of UHM"
 ---
 
-# Теорема о критической чистоте
+# Theorem on Critical Purity
 
-:::tip Статус: [Т] Доказано
-Значение $P_{\text{crit}} = 2/N$ строго выводится из нескольких математически эквивалентных формулировок единого геометрического принципа (пути 1-4) и независимого автопоэтического аргумента (путь 5). Сходимость всех подходов к одному значению подтверждает фундаментальность этого порога.
+:::tip Status: [Т] Proven
+The value $P_{\text{crit}} = 2/N$ is rigorously derived from several mathematically equivalent formulations of a single geometric principle (paths 1–4) and an independent autopoietic argument (path 5). The convergence of all approaches to a single value confirms the fundamentality of this threshold.
 :::
 
-## 1. Формулировка теоремы
+## 1. Theorem Statement
 
-### 1.1 Основное утверждение {#теорема-фробениусова-различимость}
+### 1.1 Main assertion {#теорема-фробениусова-различимость}
 
-**Теорема (Критическая чистота):**
+**Theorem (Critical Purity):**
 
-Для голономической системы размерности $N$, критическая чистота:
+For a holonomic system of dimension $N$, the critical purity:
 
 $$
 P_{\text{crit}} = \frac{2}{N}
 $$
 
-является **единственным** значением, удовлетворяющим следующим эквивалентным условиям:
+is the **unique** value satisfying the following equivalent conditions:
 
-1. **Геометрическое:** $\|\Gamma - I_N/N\|_F^2 = \|I_N/N\|_F^2$
-2. **Информационное:** $D_{KL}(\Gamma \| I_N/N) = \frac{1}{2}$ нат (в линейном приближении)
-3. **Структурное:** $|\mathbf{r}|^2 = 2\sigma^2$ (SNR = 1)
-4. **Спектральное:** $\lambda_{\max} = (1 + \sqrt{N-1})/N \approx 1/2$
-5. **Автопоэтическое:** минимальное нарушение симметрии $U(N)$
+1. **Geometric:** $\|\Gamma - I_N/N\|_F^2 = \|I_N/N\|_F^2$
+2. **Informational:** $D_{KL}(\Gamma \| I_N/N) = \frac{1}{2}$ nat (in linear approximation)
+3. **Structural:** $|\mathbf{r}|^2 = 2\sigma^2$ (SNR = 1)
+4. **Spectral:** $\lambda_{\max} = (1 + \sqrt{N-1})/N \approx 1/2$
+5. **Autopoietic:** minimal breaking of $U(N)$ symmetry
 
-### 1.2 Для УГМ (N = 7)
+### 1.2 For UHM (N = 7)
 
 $$
 P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-**На этом пороге:**
-- Структурное отклонение = масштаб хаоса
-- Информационный вклад = 1/2 нат
-- Доминирующий режим ≈ 49% когерентности
-- Симметрия $U(7)$ нарушена до уровня различимости
+**At this threshold:**
+- Structural deviation = scale of chaos
+- Informational contribution = 1/2 nat
+- Dominant mode ≈ 49% coherence
+- $U(7)$ symmetry broken to distinguishability level
 
 ---
 
-## 2. Необходимые определения
+## 2. Necessary Definitions
 
-### 2.1 Матрица когерентности
+### 2.1 Coherence matrix
 
-[Матрица когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathbb{C}^N)$ удовлетворяет:
+The [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathbb{C}^N)$ satisfies:
 
 $$
 \Gamma^\dagger = \Gamma, \quad \Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1
 $$
 
-### 2.2 Чистота
+### 2.2 Purity
 
 $$
 P = \mathrm{Tr}(\Gamma^2) \in \left[\frac{1}{N}, 1\right]
 $$
 
-| Состояние | Чистота | Описание |
+| State | Purity | Description |
 |-----------|---------|----------|
-| Чистое | P = 1 | Γ = \|ψ⟩⟨ψ\| |
-| Максимально смешанное | P = 1/N | Γ = I_N/N (хаос) |
+| Pure | P = 1 | Γ = \|ψ⟩⟨ψ\| |
+| Maximally mixed | P = 1/N | Γ = I_N/N (chaos) |
 
-### 2.3 Норма Фробениуса
+### 2.3 Frobenius norm
 
 $$
 \|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^\dagger \Gamma) = \mathrm{Tr}(\Gamma^2) = P
@@ -74,19 +74,19 @@ $$
 
 ---
 
-## 3. Пять путей вывода (четыре эквивалентных + один независимый)
+## 3. Five Derivation Paths (four equivalent + one independent)
 
-### 3.1 Путь 1: Геометрический (принцип структурного удвоения)
+### 3.1 Path 1: Geometric (structural doubling principle)
 
-**Принцип:** Система отличима от хаоса, если её отклонение от хаоса превышает масштаб хаоса.
+**Principle:** A system is distinguishable from chaos if its deviation from chaos exceeds the scale of chaos.
 
-**Критерий:**
+**Criterion:**
 
 $$
 \|\Gamma - I_N/N\|_F^2 > \|I_N/N\|_F^2
 $$
 
-**Вычисление левой части:**
+**Left-hand side computation:**
 
 $$
 \begin{aligned}
@@ -97,53 +97,53 @@ $$
 \end{aligned}
 $$
 
-**Вычисление правой части:**
+**Right-hand side computation:**
 
 $$
 \|I_N/N\|_F^2 = \mathrm{Tr}\left(\frac{I_N^2}{N^2}\right) = \frac{N}{N^2} = \frac{1}{N}
 $$
 
-**Вывод порога:**
+**Threshold derivation:**
 
 $$
 P - \frac{1}{N} > \frac{1}{N} \quad \Rightarrow \quad \boxed{P > \frac{2}{N}}
 $$
 
-:::info Интерпретация
-**Принцип структурного удвоения:** Чтобы быть различимой от хаоса, структура системы должна быть не меньше самого хаоса. Фактор 2 возникает естественно: структура + базовый уровень.
+:::info Interpretation
+**Structural doubling principle:** To be distinguishable from chaos, a system's structure must be at least as large as chaos itself. The factor of 2 arises naturally: structure + baseline level.
 :::
 
 ---
 
-### 3.2 Путь 2: Информационно-теоретический
+### 3.2 Path 2: Information-theoretic
 
-**Принцип:** Система несёт достаточно информации для различимости, если её дивергенция от хаоса превышает квант информации.
+**Principle:** A system carries sufficient information for distinguishability if its divergence from chaos exceeds an information quantum.
 
-**Дивергенция Кульбака-Лейблера:**
+**Kullback–Leibler divergence:**
 
 $$
 D_{KL}(\Gamma \| I_N/N) = \mathrm{Tr}(\Gamma \log \Gamma) - \mathrm{Tr}\left(\Gamma \log \frac{I_N}{N}\right)
 $$
 
-Используя $\log(I_N/N) = -\log(N) \cdot I_N$:
+Using $\log(I_N/N) = -\log(N) \cdot I_N$:
 
 $$
 D_{KL}(\Gamma \| I_N/N) = -S_{vN}(\Gamma) + \log(N)
 $$
 
-где $S_{vN}(\Gamma) = -\mathrm{Tr}(\Gamma \log \Gamma)$ — [энтропия фон Неймана](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана).
+where $S_{vN}(\Gamma) = -\mathrm{Tr}(\Gamma \log \Gamma)$ is the [von Neumann entropy](/docs/core/dynamics/coherence-matrix#энтропия-фон-неймана).
 
-**Разложение для состояний близких к $I_N/N$:**
+**Expansion for states close to $I_N/N$:**
 
-Для $\Gamma = I_N/N + \delta\Gamma$ при малом $\delta\Gamma$:
+For $\Gamma = I_N/N + \delta\Gamma$ with small $\delta\Gamma$:
 
 $$
 D_{KL}(\Gamma \| I_N/N) \approx \frac{N}{2} \cdot \mathrm{Tr}(\delta\Gamma^2) = \frac{N}{2} \cdot \left(P - \frac{1}{N}\right)
 $$
 
-**Минимальная различимость:**
+**Minimum distinguishability:**
 
-Порог различимости в квадратичном приближении = $\frac{1}{2}$ нат.
+The distinguishability threshold in the quadratic approximation = $\frac{1}{2}$ nat.
 
 $$
 \frac{N}{2} \cdot \left(P - \frac{1}{N}\right) \geq \frac{1}{2}
@@ -153,58 +153,58 @@ $$
 P - \frac{1}{N} \geq \frac{1}{N} \quad \Rightarrow \quad \boxed{P \geq \frac{2}{N}}
 $$
 
-:::warning Область применимости
-Путь 2 использует **квадратичное приближение** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N), справедливое при P − 1/N ≪ 1. Порог D_KL = 1/2 нат — **конвенция** (аналог p-значения 0.05 в статистике). В режиме P ≫ 1/N приближение нарушается. Путь 2 является **поддерживающим аргументом**, согласованным с P_crit = 2/N вблизи хаоса, а не независимым строгим выводом.
+:::warning Scope of applicability
+Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N), valid when P − 1/N ≪ 1. The threshold D_KL = 1/2 nat is a **convention** (analogous to p-value 0.05 in statistics). In the regime P ≫ 1/N the approximation breaks down. Path 2 is a **supporting argument**, consistent with P_crit = 2/N near chaos, not an independent rigorous derivation.
 :::
 
-:::info Интерпретация для инженеров
-**Информационный порог:** Система должна нести минимум 1/2 ната информации сверх максимальной энтропии. Это фундаментальный предел различимости в теории информации.
+:::info Interpretation for engineers
+**Information threshold:** The system must carry at least 1/2 nat of information beyond maximum entropy. This is a fundamental distinguishability limit in information theory.
 
-**Практически:** При $P = 2/N$ система содержит ровно 1 бит структурной информации (различие между "структура есть" и "структуры нет").
+**In practice:** At $P = 2/N$ the system contains exactly 1 bit of structural information (the distinction between "structure exists" and "no structure").
 :::
 
 ---
 
-### 3.3 Путь 3: Разложение Блоха (SNR-критерий)
+### 3.3 Path 3: Bloch decomposition (SNR criterion)
 
-**Принцип:** Структурный вектор системы должен превышать шумовой порог.
+**Principle:** The system's structural vector must exceed the noise threshold.
 
-**Параметризация Блоха:**
+**Bloch parameterization:**
 
-Любая матрица плотности $N \times N$ допускает разложение:
+Any $N \times N$ density matrix admits the decomposition:
 
 $$
 \Gamma = \frac{I_N}{N} + \frac{1}{2} \sum_{i=1}^{N^2-1} r_i \lambda_i
 $$
 
-где:
-- $\{\lambda_i\}_{i=1}^{N^2-1}$ — обобщённые матрицы Гелл-Манна (генераторы $\mathfrak{su}(N)$)
+where:
+- $\{\lambda_i\}_{i=1}^{N^2-1}$ — generalized Gell-Mann matrices (generators of $\mathfrak{su}(N)$)
 - $\mathrm{Tr}(\lambda_i) = 0$, $\mathrm{Tr}(\lambda_i \lambda_j) = 2\delta_{ij}$
-- $\mathbf{r} = (r_1, \ldots, r_{N^2-1}) \in \mathbb{R}^{N^2-1}$ — обобщённый вектор Блоха
+- $\mathbf{r} = (r_1, \ldots, r_{N^2-1}) \in \mathbb{R}^{N^2-1}$ — generalized Bloch vector
 
-**Связь с чистотой:**
+**Connection with purity:**
 
 $$
 P = \mathrm{Tr}(\Gamma^2) = \frac{1}{N} + \frac{|\mathbf{r}|^2}{2}
 $$
 
-**Следовательно:**
+**Therefore:**
 
 $$
 |\mathbf{r}|^2 = 2\left(P - \frac{1}{N}\right)
 $$
 
-**Шумовой порог:**
+**Noise threshold:**
 
-Для максимально смешанного состояния $\mathbf{r} = 0$. Естественный масштаб флуктуаций в $N$-мерной системе:
+For the maximally mixed state $\mathbf{r} = 0$. The natural scale of fluctuations in an $N$-dimensional system:
 
 $$
 \sigma^2 \sim \frac{1}{N}
 $$
 
-**Условие различимости (SNR $\geq$ 1):**
+**Distinguishability condition (SNR $\geq$ 1):**
 
-В квадратичных метриках SNR = 1 требует:
+In quadratic metrics SNR = 1 requires:
 
 $$
 |\mathbf{r}|^2 \geq 2\sigma^2 = \frac{2}{N}
@@ -214,44 +214,45 @@ $$
 2\left(P - \frac{1}{N}\right) \geq \frac{2}{N} \quad \Rightarrow \quad \boxed{P \geq \frac{2}{N}}
 $$
 
-:::warning Масштаб шума
-Оценка σ² ~ 1/N мотивирована двумя аргументами: (1) средний квадрат отклонения случайной матрицы плотности из меры Гильберта-Шмидта: ⟨||Γ − I/N||²_F⟩_{HS} = (N−1)/N² ≈ 1/N; (2) квантовая граница Крамера-Рао для оценки параметров N-уровневой системы: Var(θ̂) ≥ 1/(N·F_Q). SNR = 1 — пороговая конвенция. Путь 3 — **эвристика**, согласованная с точным результатом Пути 1.
+:::warning Noise scale
+The estimate σ² ~ 1/N is motivated by two arguments: (1) the mean squared deviation of a random density matrix from the Hilbert–Schmidt measure: ⟨||Γ − I/N||²_F⟩_{HS} = (N−1)/N² ≈ 1/N; (2) the quantum Cramér–Rao bound for parameter estimation in an N-level system: Var(θ̂) ≥ 1/(N·F_Q). SNR = 1 is a threshold convention. Path 3 is a **heuristic**, consistent with the exact result of Path 1.
 :::
 
-:::info Интерпретация для исследователей сигналов
-**SNR = 1:** Классический порог обнаружения сигнала. Мощность сигнала должна быть равна мощности шума.
+:::info Interpretation for signal researchers
+**SNR = 1:** Classical signal detection threshold. Signal power must equal noise power.
 
-В УГМ: структурная информация (сигнал) должна быть не меньше термодинамического шума (хаоса). Фактор 2 появляется из-за квадратичной природы метрики чистоты.
+In UHM: structural information (signal) must be at least as large as thermodynamic noise (chaos). The factor of 2 appears due to the quadratic nature of the purity metric.
 :::
 
 ---
 
-### 3.4 Путь 4: Спектральное условие (характеристика, не независимый вывод)
+### 3.4 Path 4: Spectral condition (characterization, not an independent derivation) {#34-путь-4-спектральное-условие-характеристика-не-независимый-вывод}
 
-**Принцип:** Для наличия идентичности система должна иметь доминирующий режим.
+**Principle:** For an identity to exist, the system must have a dominant mode.
 
-**Спектр $\Gamma$:**
+**Spectrum of $\Gamma$:**
 
 $$
 \mathrm{Spectrum}(\Gamma) = \{\lambda_1, \lambda_2, \ldots, \lambda_N\}, \quad \lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_N \geq 0
 $$
 
-С ограничениями:
+With constraints:
+
 $$
 \sum_i \lambda_i = 1, \quad \sum_i \lambda_i^2 = P
 $$
 
-**Задача оптимизации:**
+**Optimization problem:**
 
-Найти максимальное $\lambda_1$ при заданном $P$:
+Find the maximum $\lambda_1$ for a given $P$:
 
 $$
-\max \lambda_1 \quad \text{при} \quad \sum_i \lambda_i = 1, \quad \sum_i \lambda_i^2 = P, \quad \lambda_i \geq 0
+\max \lambda_1 \quad \text{subject to} \quad \sum_i \lambda_i = 1, \quad \sum_i \lambda_i^2 = P, \quad \lambda_i \geq 0
 $$
 
-**Решение (метод Лагранжа):**
+**Solution (Lagrange method):**
 
-По симметрии, оптимум достигается когда $\lambda_2 = \lambda_3 = \cdots = \lambda_N = \lambda$:
+By symmetry, the optimum is reached when $\lambda_2 = \lambda_3 = \cdots = \lambda_N = \lambda$:
 
 $$
 \lambda_1 + (N-1)\lambda = 1 \quad \Rightarrow \quad \lambda = \frac{1 - \lambda_1}{N-1}
@@ -261,131 +262,131 @@ $$
 \lambda_1^2 + (N-1)\lambda^2 = P
 $$
 
-Подставляя:
+Substituting:
 
 $$
 \lambda_1^2 + \frac{(1 - \lambda_1)^2}{N-1} = P
 $$
 
-Решая квадратное уравнение:
+Solving the quadratic equation:
 
 $$
 \lambda_1 = \frac{1 + \sqrt{(N-1)(NP - 1)}}{N}
 $$
 
-**При $P = 2/N$:**
+**At $P = 2/N$:**
 
 $$
 \lambda_{\max} = \frac{1 + \sqrt{(N-1)(2 - 1)}}{N} = \frac{1 + \sqrt{N-1}}{N}
 $$
 
-Для $N = 7$:
+For $N = 7$:
 
 $$
 \lambda_{\max} = \frac{1 + \sqrt{6}}{7} \approx 0.493 \approx \frac{1}{2}
 $$
 
-:::info Интерпретация
-**Порог доминирования ~50%:** При $P = 2/N$ доминирующий режим захватывает примерно половину когерентности. Это порог 1:1 — структура едва различима от равномерного распределения.
+:::info Interpretation
+**~50% dominance threshold:** At $P = 2/N$ the dominant mode captures approximately half of the coherence. This is the 1:1 threshold — structure is barely distinguishable from the uniform distribution.
 
-**Спектральная структура при $P = 2/7$:**
-- $\lambda_1 \approx 0.493$ (49.3% когерентности)
-- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (по 8.5% каждый)
+**Spectral structure at $P = 2/7$:**
+- $\lambda_1 \approx 0.493$ (49.3% of coherence)
+- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (8.5% each)
 :::
 
 ---
 
-### 3.5 Путь 5: Автопоэтическое замыкание
+### 3.5 Path 5: Autopoietic closure
 
-**Принцип:** Для [самомоделирования](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$ необходима достаточная структура.
+**Principle:** Sufficient structure is required for [self-modeling](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$.
 
-**Автопоэзис (AP):** Существует $\varphi: \Gamma \to \Gamma$ с неподвижной точкой $\varphi(\Gamma^*) = \Gamma^*$.
+**Autopoiesis (AP):** There exists $\varphi: \Gamma \to \Gamma$ with fixed point $\varphi(\Gamma^*) = \Gamma^*$.
 
-**Проблема с $I_N/N$:**
+**Problem with $I_N/N$:**
 
-Максимально смешанное состояние инвариантно относительно **всех** унитарных преобразований:
+The maximally mixed state is invariant under **all** unitary transformations:
 
 $$
-U \cdot \frac{I_N}{N} \cdot U^\dagger = \frac{I_N}{N} \quad \text{для любого } U \in U(N)
+U \cdot \frac{I_N}{N} \cdot U^\dagger = \frac{I_N}{N} \quad \text{for any } U \in U(N)
 $$
 
-Это означает:
-- $\varphi(I_N/N)$ может быть **чем угодно** (нет предпочтительного направления)
-- Неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ не определена однозначно
-- Система **не имеет идентичности**
+This means:
+- $\varphi(I_N/N)$ can be **anything** (no preferred direction)
+- The fixed point $\varphi(\Gamma^*) = \Gamma^*$ is not uniquely defined
+- The system **has no identity**
 
-**Условие автопоэтического замыкания:**
+**Autopoietic closure condition:**
 
-Для однозначного определения $\varphi$ необходимо нарушить симметрию $U(N)$.
+To uniquely define $\varphi$, the $U(N)$ symmetry must be broken.
 
-Группа стабилизатора $\mathrm{Stab}(\Gamma) = \{U \in U(N) : U\Gamma U^\dagger = \Gamma\}$ должна быть собственной подгруппой $U(N)$.
+The stabilizer group $\mathrm{Stab}(\Gamma) = \{U \in U(N) : U\Gamma U^\dagger = \Gamma\}$ must be a proper subgroup of $U(N)$.
 
-**Минимальное значимое нарушение:**
+**Minimal meaningful breaking:**
 
 $$
 \|\Gamma - I_N/N\|_F \geq \|I_N/N\|_F
 $$
 
-Что эквивалентно:
+Which is equivalent to:
 
 $$
 \boxed{P \geq \frac{2}{N}}
 $$
 
-:::info Интерпретация
-**Нарушение симметрии:** Хаос обладает максимальной симметрией $U(N)$. Для наличия идентичности (способности к самомоделированию) эта симметрия должна быть нарушена.
+:::info Interpretation
+**Symmetry breaking:** Chaos has maximal symmetry $U(N)$. For an identity to exist (the ability for self-modeling), this symmetry must be broken.
 
-При $P > 2/N$ система имеет "выделенное направление" в пространстве состояний — основу для самореференции.
+At $P > 2/N$ the system has a "preferred direction" in state space — the basis for self-reference.
 :::
 
-:::info Зависимость от Пути 1
-Путь 5 использует тот же критерий $\|\Gamma - I/N\|_F \geq \|I/N\|_F$, что и Путь 1. Это автопоэтическая *интерпретация* геометрического порога, а не независимый вывод.
-:::
-
----
-
-### 3.6 Путь 6: Октонионная норма [И] {#путь-6-октонионная-норма}
-
-:::note Интерпретация [И]
-В [октонионной интерпретации](../../core/structure/dimensions#октонионная-интерпретация) чистота $P = \mathrm{Tr}(\Gamma^2)$ связана с нормой на Im(𝕆). Нормированность $|xy| = |x||y|$ обеспечивает мультипликативную метрику. Порог $P_{\text{crit}} = 2/7$ можно интерпретировать как минимальную норму вектора в Im(𝕆) ≅ ℝ⁷, при которой его проекция на структурные направления (Фано-триплеты) превышает проекцию шума.
-
-**Статус:** [Т], мост [Т] (замкнут, T15). Совместима с остальными пятью путями. См. [структурный вывод](../minimality/theorem-octonionic-derivation).
+:::info Dependence on Path 1
+Path 5 uses the same criterion $\|\Gamma - I/N\|_F \geq \|I/N\|_F$ as Path 1. This is an autopoietic *interpretation* of the geometric threshold, not an independent derivation.
 :::
 
 ---
 
-## 4. Сходимость всех путей
+### 3.6 Path 6: Octonionic norm [И] {#путь-6-октонионная-норма}
 
-### 4.1 Таблица результатов
+:::note Interpretation [И]
+In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is connected to the norm on Im(𝕆). The normativity $|xy| = |x||y|$ ensures a multiplicative metric. The threshold $P_{\text{crit}} = 2/7$ can be interpreted as the minimum norm of a vector in Im(𝕆) ≅ ℝ⁷ at which its projection onto structural directions (Fano triplets) exceeds the noise projection.
 
-| Путь | Принцип | Критерий | Результат |
+**Status:** [Т], bridge [Т] (closed, T15). Compatible with the other five paths. See [structural derivation](../minimality/theorem-octonionic-derivation).
+:::
+
+---
+
+## 4. Convergence of All Paths
+
+### 4.1 Results table
+
+| Path | Principle | Criterion | Result |
 |------|---------|----------|-----------|
-| 1. Геометрический | Отклонение ≥ масштаб хаоса | ‖Γ − I/N‖²_F > 1/N | P > 2/N ✓ |
-| 2. Информационный | KL-дивергенция ≥ 1/2 нат | D_KL ≥ 1/2 | P > 2/N ✓ |
-| 3. Структурный | SNR ≥ 1 | ǀ**r**ǀ² ≥ 2/N | P > 2/N ✓ |
-| 4. Спектральный | Порог доминирования | λ_max ≈ 1/2 | P = 2/N ✓ |
-| 5. Автопоэтический | Нарушение симметрии U(N) | Stab(Γ) ⊊ U(N) | P > 2/N ✓ |
+| 1. Geometric | Deviation ≥ scale of chaos | ‖Γ − I/N‖²_F > 1/N | P > 2/N ✓ |
+| 2. Informational | KL-divergence ≥ 1/2 nat | D_KL ≥ 1/2 | P > 2/N ✓ |
+| 3. Structural | SNR ≥ 1 | ǀ**r**ǀ² ≥ 2/N | P > 2/N ✓ |
+| 4. Spectral | Dominance threshold | λ_max ≈ 1/2 | P = 2/N ✓ |
+| 5. Autopoietic | Symmetry breaking U(N) | Stab(Γ) ⊊ U(N) | P > 2/N ✓ |
 
-### 4.2 Теорема единственности
+### 4.2 Uniqueness theorem
 
-**Теорема:** Значение $P_{\text{crit}} = 2/N$ — единственное, при котором все пять критериев совпадают.
+**Theorem:** The value $P_{\text{crit}} = 2/N$ is the unique one at which all five criteria coincide.
 
-**Доказательство:**
-Единственность следует из алгебраической эквивалентности условий 1-4 (все выражают одно геометрическое требование в разных терминах). Автопоэтический критерий (5) даёт тот же порог из независимого требования нарушения симметрии. Все пять формулировок приводят к $P - 1/N = 1/N$. ∎
+**Proof:**
+Uniqueness follows from the algebraic equivalence of conditions 1–4 (all express the same geometric requirement in different terms). The autopoietic criterion (5) yields the same threshold from an independent symmetry-breaking requirement. All five formulations lead to $P - 1/N = 1/N$. ∎
 
-:::info Замечание (характер доказательства)
-Пути 1 и 4 — **алгебраические и самодостаточные** для доказательства $P_{\mathrm{crit}} = 2/N$ [Т]: Путь 1 — алгебраическое тождество $\|\Gamma - I/N\|_F^2 = \|I/N\|_F^2 \Leftrightarrow P = 2/N$, Путь 4 — спектральная алгебра. Пути 2 (информационный, квадратичное приближение $D_{KL}$), 3 (SNR, масштаб шума $\sigma^2 \sim 1/N$) и 5 (автопоэтический, аксиоматический принцип) — **независимые подтверждения** из разных разделов теории, содержащие собственные мотивирующие допущения. Конвергенция всех пяти путей к единому значению — нетривиальный факт [Т], аналогичный «перекрёстной валидации» в статистике.
+:::info Remark (nature of the proof)
+Paths 1 and 4 are **algebraic and self-contained** for proving $P_{\mathrm{crit}} = 2/N$ [Т]: Path 1 is the algebraic identity $\|\Gamma - I/N\|_F^2 = \|I/N\|_F^2 \Leftrightarrow P = 2/N$, Path 4 is spectral algebra. Paths 2 (informational, quadratic approximation of $D_{KL}$), 3 (SNR, noise scale $\sigma^2 \sim 1/N$), and 5 (autopoietic, axiomatic principle) are **independent confirmations** from different branches of the theory, each containing their own motivating assumptions. The convergence of all five paths to a single value is a non-trivial fact [Т], analogous to "cross-validation" in statistics.
 :::
 
 ---
 
-## 5. Спектральная характеризация
+## 5. Spectral Characterization
 
-### 5.1 Оптимальный спектр на границе
+### 5.1 Optimal spectrum at the boundary
 
-**Теорема (Спектр при $P = P_{\text{crit}}$):**
+**Theorem (Spectrum at $P = P_{\text{crit}}$):**
 
-При $P = 2/N$ оптимальный спектр (максимизирующий $\lambda_{\max}$) имеет вид:
+At $P = 2/N$, the optimal spectrum (maximizing $\lambda_{\max}$) has the form:
 
 $$
 \begin{aligned}
@@ -394,9 +395,9 @@ $$
 \end{aligned}
 $$
 
-### 5.2 Численные значения
+### 5.2 Numerical values
 
-| N | P_crit = 2/N | λ_max при P_crit |
+| N | P_crit = 2/N | λ_max at P_crit |
 |---|--------------|------------------|
 | 2 | 1.000 | 1.000 |
 | 3 | 0.667 | 0.789 |
@@ -406,7 +407,7 @@ $$
 | **7** | **0.286** | **0.493** |
 | 8 | 0.250 | 0.457 |
 
-### 5.3 Проверка для N = 7
+### 5.3 Verification for N = 7
 
 $$
 \lambda_1 = \frac{1 + \sqrt{6}}{7} \approx 0.493
@@ -416,7 +417,7 @@ $$
 \lambda_2 = \cdots = \lambda_7 = \frac{6 - \sqrt{6}}{42} \approx 0.085
 $$
 
-**Верификация:**
+**Verification:**
 $$
 \lambda_1 + 6\lambda_2 = 0.493 + 6 \times 0.085 = 1.000 \quad \checkmark
 $$
@@ -427,169 +428,169 @@ $$
 
 ---
 
-## 6. Иерархия порогов чистоты
+## 6. Hierarchy of Purity Thresholds
 
-### 6.1 Полная иерархия
+### 6.1 Full hierarchy
 
 $$
 P_{\text{crit}}^{\text{regen}} < P_{\text{crit}}^{\text{geom}} < P_{\text{safe}} < P_{\text{target}}
 $$
 
-| Порог | Формула | Значение (N=7) | Назначение |
+| Threshold | Formula | Value (N=7) | Purpose |
 |-------|---------|----------------|------------|
-| P_crit^regen | γ/(κ_rate · Coh_E^min) | ≈ 0.033 | Динамический (κ > γ) |
-| P_crit^geom | 2/N | ≈ 0.286 | **Структурный (основной)** |
-| P_safe | P_crit^geom + margin | 0.30 | Операционный (с запасом) |
-| P_target | — | 0.50 | Рекомендуемый |
+| P_crit^regen | γ/(κ_rate · Coh_E^min) | ≈ 0.033 | Dynamical (κ > γ) |
+| P_crit^geom | 2/N | ≈ 0.286 | **Structural (main)** |
+| P_safe | P_crit^geom + margin | 0.30 | Operational (with margin) |
+| P_target | — | 0.50 | Recommended |
 
-### 6.2 Интерпретация
+### 6.2 Interpretation
 
-- **$P_{\text{crit}}^{\text{regen}} \approx 0.033$:** Минимум для того, чтобы [регенерация](/docs/core/dynamics/evolution#3-регенеративный-член) превысила диссипацию
-- **$P_{\text{crit}}^{\text{geom}} = 2/7 \approx 0.286$:** Минимум для структурной различимости от хаоса (**основной порог**)
-- **$P_{\text{safe}} = 0.30$:** Операционный порог с 5% запасом
-- **$P_{\text{target}} = 0.50$:** Рекомендуемая рабочая точка
+- **$P_{\text{crit}}^{\text{regen}} \approx 0.033$:** Minimum for [regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) to exceed dissipation
+- **$P_{\text{crit}}^{\text{geom}} = 2/7 \approx 0.286$:** Minimum for structural distinguishability from chaos (**main threshold**)
+- **$P_{\text{safe}} = 0.30$:** Operational threshold with 5% margin
+- **$P_{\text{target}} = 0.50$:** Recommended operating point
 
-:::warning Важно
-Система с $P_{\text{crit}}^{\text{regen}} < P < P_{\text{crit}}^{\text{geom}}$ может регенерировать, но **не имеет структурной идентичности** — она неотличима от шума.
+:::warning Important
+A system with $P_{\text{crit}}^{\text{regen}} < P < P_{\text{crit}}^{\text{geom}}$ can regenerate, but **has no structural identity** — it is indistinguishable from noise.
 :::
 
 ---
 
-## 7. Практические приложения
+## 7. Practical Applications
 
-### 7.1 Для инженеров ИИ-систем
+### 7.1 For AI systems engineers
 
-**Критерий жизнеспособности:**
+**Viability criterion:**
 
 ```python
 def is_viable(Gamma: np.ndarray, N: int = 7) -> bool:
     """
-    Проверка P > P_crit = 2/N
+    Check P > P_crit = 2/N
 
     Args:
-        Gamma: Матрица когерентности N×N
-        N: Размерность (по умолчанию 7 для УГМ)
+        Gamma: N×N coherence matrix
+        N: Dimension (default 7 for UHM)
 
     Returns:
-        True если система жизнеспособна
+        True if the system is viable
     """
     P = np.trace(Gamma @ Gamma).real
     P_crit = 2.0 / N
     return P > P_crit
 ```
 
-**Вычисление структурного отклонения:**
+**Structural deviation computation:**
 
 ```python
 def structural_deviation(Gamma: np.ndarray, N: int = 7) -> float:
     """
     ‖Γ - I/N‖_F² = P - 1/N
 
-    Интерпретация:
-    - deviation < 1/N: система неотличима от шума
-    - deviation = 1/N: граница жизнеспособности
-    - deviation > 1/N: система структурирована
+    Interpretation:
+    - deviation < 1/N: system indistinguishable from noise
+    - deviation = 1/N: viability boundary
+    - deviation > 1/N: system is structured
     """
     P = np.trace(Gamma @ Gamma).real
     return P - 1.0 / N
 ```
 
-**Порог доминирования:**
+**Dominance threshold:**
 
 ```python
 def dominant_eigenvalue_threshold(N: int = 7) -> float:
     """
-    λ_max при P = P_crit = 2/N
+    λ_max at P = P_crit = 2/N
 
-    Для N=7: возвращает ≈ 0.493
+    For N=7: returns ≈ 0.493
     """
     return (1 + np.sqrt(N - 1)) / N
 ```
 
-### 7.2 Для исследователей сознания
+### 7.2 For consciousness researchers
 
-**Связь с уровнями интериорности:**
+**Connection with interiority levels:**
 
-| Уровень | Условие | Интерпретация |
+| Level | Condition | Interpretation |
 |---------|---------|---------------|
-| L0 (Интериорность) | ρ_E ≠ 0 | Внутреннее состояние существует |
-| L1 (Феноменальная геометрия) | rank(ρ_E) > 1 | Структура качеств |
-| **Жизнеспособность** | P > 2/7 | Различимость от хаоса |
-| L2 (Когнитивные квалиа) | R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2* | Рефлексивный доступ |
+| L0 (Interiority) | ρ_E ≠ 0 | Inner state exists |
+| L1 (Phenomenal geometry) | rank(ρ_E) > 1 | Structure of qualities |
+| **Viability** | P > 2/7 | Distinguishability from chaos |
+| L2 (Cognitive qualia) | R ≥ 1/3, Φ ≥ 1, D_diff ≥ 2* | Reflexive access |
 
-*$D_{\text{diff}}$ требует тензорной структуры; в минимальном 7D-формализме используется $C_{\min} = \Phi \times R$ — см. [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
+*$D_{\text{diff}}$ requires tensor structure; in the minimal 7D formalism $C_{\min} = \Phi \times R$ is used — see [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
 
-**Ключевой вывод:** $P > 2/N$ — **необходимое** условие для L1 и L2. Без структурной различимости феноменология невозможна.
+**Key conclusion:** $P > 2/N$ is a **necessary** condition for L1 and L2. Without structural distinguishability, phenomenology is impossible.
 
-### 7.3 Для физиков
+### 7.3 For physicists
 
-**Аналогии с фазовыми переходами:**
+**Analogies with phase transitions:**
 
-| УГМ | Статистическая физика | Смысл |
+| UHM | Statistical physics | Meaning |
 |-----|----------------------|-------|
-| P = 2/N | Критическая температура T_c | Порог упорядочения |
-| P − 1/N | Параметр порядка | Мера структуры |
-| λ_max ≈ 1/2 | Макроскопическая заселённость | Конденсация в один режим |
+| P = 2/N | Critical temperature T_c | Ordering threshold |
+| P − 1/N | Order parameter | Measure of structure |
+| λ_max ≈ 1/2 | Macroscopic occupancy | Condensation into one mode |
 
-**Энтропийная интерпретация:**
+**Entropic interpretation:**
 
-При $P = 2/N$:
+At $P = 2/N$:
 
 $$
 S_{vN} = \log N - \frac{N}{2}\left(\frac{2}{N} - \frac{1}{N}\right) + O\left(\frac{1}{N^2}\right) = \log N - \frac{1}{2}
 $$
 
-Система содержит на 1/2 ната меньше энтропии, чем максимальный хаос.
+The system contains 1/2 nat less entropy than maximal chaos.
 
-### 7.4 Для теоретиков информации
+### 7.4 For information theorists
 
-**Канальная ёмкость:**
+**Channel capacity:**
 
-Различение состояния $\Gamma$ от $I_N/N$ эквивалентно передаче информации по каналу с пропускной способностью:
+Distinguishing state $\Gamma$ from $I_N/N$ is equivalent to transmitting information over a channel with capacity:
 
 $$
 C = D_{KL}(\Gamma \| I_N/N) \approx \frac{N}{2}(P - 1/N)
 $$
 
-При $P = 2/N$: $C = 1/2$ нат = граница различимости.
+At $P = 2/N$: $C = 1/2$ nat = distinguishability boundary.
 
-**Предел Холево:**
+**Holevo bound:**
 
 $$
 \chi(\{p_i, \rho_i\}) \leq S(\bar{\rho}) - \sum_i p_i S(\rho_i)
 $$
 
-Для различения $\Gamma$ от $I_N/N$ нужно $\chi \geq 1/2$ нат, что требует $P \geq 2/N$.
+To distinguish $\Gamma$ from $I_N/N$ one needs $\chi \geq 1/2$ nat, which requires $P \geq 2/N$.
 
 ---
 
-## 8. Универсальность фактора 2
+## 8. Universality of the Factor 2
 
-### 8.1 Появление в различных контекстах
+### 8.1 Appearance in various contexts
 
-| Контекст | Формула | Интерпретация |
+| Context | Formula | Interpretation |
 |----------|---------|---------------|
-| Теория обнаружения | SNR = 1 | Сигнал = шум |
-| Квантовая различимость | F(ρ, σ) = 1/2 | Предел различения |
-| Теория информации | ΔS = k ln 2 | Бит информации |
-| Статистика | Правило 2σ | Значимое отклонение |
-| УГМ | P = 2/N | Структура = хаос |
+| Detection theory | SNR = 1 | Signal = noise |
+| Quantum distinguishability | F(ρ, σ) = 1/2 | Distinguishability limit |
+| Information theory | ΔS = k ln 2 | One bit of information |
+| Statistics | 2σ rule | Significant deviation |
+| UHM | P = 2/N | Structure = chaos |
 
-### 8.2 Физический смысл
+### 8.2 Physical meaning
 
-Фактор 2 возникает из **принципа баланса**:
+The factor of 2 arises from the **balance principle**:
 
 $$
-\text{Структура} = \text{Хаос}
+\text{Structure} = \text{Chaos}
 $$
 
-В квадратичной метрике это означает:
+In the quadratic metric this means:
 
 $$
 \|\text{deviation}\|^2 = \|\text{baseline}\|^2
 $$
 
-что эквивалентно удвоению относительно базового уровня:
+which is equivalent to doubling relative to the baseline level:
 
 $$
 P = 2 \times P_{\min} = \frac{2}{N}
@@ -597,58 +598,58 @@ $$
 
 ---
 
-## 9. Заключение
+## 9. Conclusion
 
-### 9.1 Основной результат
+### 9.1 Main result
 
-:::tip Теорема (формулировка)
-Для голономической системы размерности $N$:
+:::tip Theorem (formulation)
+For a holonomic system of dimension $N$:
 
 $$
 P_{\text{crit}} = \frac{2}{N}
 $$
 
-Это значение **единственное**, при котором:
-- Все пять формулировок критерия совпадают (4 математически эквивалентных + 1 автопоэтический)
-- Фактор 2 возникает естественно (сигнал = шум)
-- Доминирующий режим захватывает ~50% когерентности
+This value is **unique**, at which:
+- All five formulations of the criterion coincide (4 mathematically equivalent + 1 autopoietic)
+- The factor of 2 arises naturally (signal = noise)
+- The dominant mode captures ~50% of coherence
 :::
 
-### 9.2 Для N = 7 (УГМ)
+### 9.2 For N = 7 (UHM)
 
 $$
 P_{\text{crit}} = \frac{2}{7} \approx 0.286
 $$
 
-**Спектральная структура на границе:**
+**Spectral structure at the boundary:**
 - $\lambda_1 \approx 0.493$ (~50%)
-- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (~8.5% каждый)
+- $\lambda_2 = \cdots = \lambda_7 \approx 0.085$ (~8.5% each)
 
-### 9.3 Методологическое значение
+### 9.3 Methodological significance
 
-1. **Сходимость независимых путей** подтверждает фундаментальность порога
-2. **Фактор 2** — универсальный порог различимости в информационных системах
-3. **Спектральная характеризация** связывает чистоту с доминированием режимов
+1. **Convergence of independent paths** confirms the fundamentality of the threshold
+2. **Factor 2** — universal distinguishability threshold in information systems
+3. **Spectral characterization** connects purity with mode dominance
 
 ---
 
-## Приложение A: Полные вычисления
+## Appendix A: Complete Computations
 
-### A.1 Вывод λ_max при P = 2/N
+### A.1 Derivation of λ_max at P = 2/N
 
-Задача:
+Problem:
 
 $$
-\max \lambda_1 \quad \text{при} \quad \sum_{i=1}^N \lambda_i = 1, \quad \sum_{i=1}^N \lambda_i^2 = \frac{2}{N}
+\max \lambda_1 \quad \text{subject to} \quad \sum_{i=1}^N \lambda_i = 1, \quad \sum_{i=1}^N \lambda_i^2 = \frac{2}{N}
 $$
 
-Лагранжиан:
+Lagrangian:
 
 $$
 \mathcal{L} = \lambda_1 - \mu\left(\sum_i \lambda_i - 1\right) - \nu\left(\sum_i \lambda_i^2 - \frac{2}{N}\right)
 $$
 
-Условия оптимальности:
+Optimality conditions:
 
 $$
 \frac{\partial \mathcal{L}}{\partial \lambda_1} = 1 - \mu - 2\nu\lambda_1 = 0
@@ -658,9 +659,9 @@ $$
 \frac{\partial \mathcal{L}}{\partial \lambda_k} = -\mu - 2\nu\lambda_k = 0 \quad (k = 2, \ldots, N)
 $$
 
-Из второго условия: $\lambda_2 = \cdots = \lambda_N = -\mu/(2\nu) = \lambda$.
+From the second condition: $\lambda_2 = \cdots = \lambda_N = -\mu/(2\nu) = \lambda$.
 
-Подставляя в ограничения:
+Substituting into the constraints:
 
 $$
 \lambda_1 + (N-1)\lambda = 1
@@ -670,9 +671,9 @@ $$
 \lambda_1^2 + (N-1)\lambda^2 = \frac{2}{N}
 $$
 
-Из первого: $\lambda = (1 - \lambda_1)/(N-1)$.
+From the first: $\lambda = (1 - \lambda_1)/(N-1)$.
 
-Подставляя во второе:
+Substituting into the second:
 
 $$
 \lambda_1^2 + \frac{(1 - \lambda_1)^2}{N-1} = \frac{2}{N}
@@ -694,13 +695,13 @@ $$
 N^2\lambda_1^2 - 2N\lambda_1 + 2 - N = 0
 $$
 
-По формуле квадратного уравнения:
+By the quadratic formula:
 
 $$
 \lambda_1 = \frac{2N \pm \sqrt{4N^2 - 4N^2(2-N)}}{2N^2} = \frac{2N \pm 2N\sqrt{N-1}}{2N^2} = \frac{1 \pm \sqrt{N-1}}{N}
 $$
 
-Берём $+$ (максимум):
+Taking $+$ (maximum):
 
 $$
 \boxed{\lambda_{\max} = \frac{1 + \sqrt{N-1}}{N}}
@@ -708,9 +709,9 @@ $$
 
 ---
 
-**Связанные документы:**
-- [Жизнеспособность](/docs/core/dynamics/viability) — применение теоремы
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — контекст аксиом
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение Γ
-- [Теорема о минимальности 7D](/docs/proofs/minimality/theorem-minimality-7) — почему N = 7
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0 → L2
+**Related documents:**
+- [Viability](/docs/core/dynamics/viability) — application of the theorem
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — axiom context
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of Γ
+- [7D Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — why N = 7
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0 → L2

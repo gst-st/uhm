@@ -7,7 +7,7 @@ description: "A comprehensive overview of the mathematical foundation of the UHM
 # Mathematical Foundations of the UHM
 
 :::info Who this chapter is for
-This chapter is the foundation on which the entire Unified Holonomic Model (UHM) is built. We trace a 150-year arc of mathematical thought—from the first abstract algebras of the 19th century to the $\infty$-toposes of the 21st—and show how each step was necessary to formulate the UHM.
+This chapter is the foundation on which the entire Unitary Holonomic Monism (UHM) is built. We trace a 150-year arc of mathematical thought—from the first abstract algebras of the 19th century to the $\infty$-toposes of the 21st—and show how each step was necessary to formulate the UHM.
 
 **If you are not a mathematician**, do not be intimidated by the formulas. Every structure is accompanied by an analogy, a story of its creation, and an informal explanation. The point is to grasp the *logic*: why these 24 mathematical structures—and not others—turned out to be needed to describe consciousness.
 

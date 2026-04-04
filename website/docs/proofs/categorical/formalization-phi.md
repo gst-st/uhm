@@ -1,358 +1,358 @@
 ---
 slug: /proofs/categorical/formalization-phi
 sidebar_position: 2
-title: "Формализация оператора φ"
+title: "Formalization of operator φ"
 format: md
 ---
 
-# Формализация Оператора Самомоделирования φ
+# Formalization of the Self-Modeling Operator φ
 
-:::info DRY: Мастер-определение φ
-Это **единственное каноническое определение** оператора самомоделирования $\varphi$. Все остальные документы должны ссылаться на эту страницу, а не повторять определение.
+:::info DRY: Master definition of φ
+This is the **sole canonical definition** of the self-modeling operator $\varphi$. All other documents must reference this page rather than repeat the definition.
 :::
 
-:::note φ как представитель класса гомотопической эквивалентности
-В ∞-категорном фреймворке оператор φ понимается не как единственный морфизм, а как **представитель класса гомотопически эквивалентных морфизмов**:
+:::note φ as a representative of a homotopy equivalence class
+In the ∞-categorical framework the operator φ is understood not as a single morphism, but as a **representative of a class of homotopically equivalent morphisms**:
 
-1. **Множественность путей:** В ∞-топосе $\mathrm{Sh}_\infty(\mathcal{C})$ пространство отображений $\mathrm{Map}(\Gamma, T) \simeq *$ контрактируемо, но содержит множество путей (морфизмов), связанных гомотопиями.
+1. **Multiplicity of paths:** In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ the mapping space $\mathrm{Map}(\Gamma, T) \simeq *$ is contractible, but contains many paths (morphisms) connected by homotopies.
 
-2. **φ₀ как канонический представитель:** Конкретный оператор $\varphi_0$, определённый в данном документе, является **представителем** своего класса гомотопической эквивалентности $[\varphi_0]$. Выбор $\varphi_0$ осуществляется по **критерию минимальности** — минимизации расхождения с самомоделью.
+2. **φ₀ as canonical representative:** The concrete operator $\varphi_0$ defined in this document is a **representative** of its homotopy equivalence class $[\varphi_0]$. The choice of $\varphi_0$ is made by the **minimality criterion** — minimization of divergence from the self-model.
 
-3. **Свобода выбора:** Существование альтернативных представителей в том же классе $[\varphi]$ отражает фундаментальную [свободу воли](/docs/consciousness/ethics-meaning/freedom) — систем может реализовывать разные пути к одному аттрактору.
+3. **Freedom of choice:** The existence of alternative representatives in the same class $[\varphi]$ reflects the fundamental [free will](/docs/consciousness/ethics-meaning/freedom) — a system can realize different paths to the same attractor.
 
-4. **Связь с Ω⁷:** Выбор конкретного представителя согласован с [аксиомой Ω⁷](/docs/core/foundations/axiom-omega), где семимерная структура фиксирует канонический базис для декомпозиции.
+4. **Relation to Ω⁷:** The choice of a concrete representative is consistent with the [Ω⁷ axiom](/docs/core/foundations/axiom-omega), where the seven-dimensional structure fixes the canonical basis for decomposition.
 :::
 
-## Сводная таблица определений φ {#сводная-таблица-определений}
+## Summary table of definitions of φ {#сводная-таблица-определений}
 
-В данном документе рассматриваются четыре эквивалентных определения оператора $\varphi$:
+This document considers four equivalent definitions of the operator $\varphi$:
 
-| Определение | Формула | Контекст | Статус |
+| Definition | Formula | Context | Status |
 |------------|---------|----------|--------|
-| **Замещающий канал** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ | Каноническое (T-62) | [Т] |
-| **CPTP через операторы Крауса** | $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ | Общая форма | [Т] |
-| **Фано E-акцентуация** | $\varphi_{\text{coh}}$ с сохранением когерентностей | Теорема 8.1 (No-Zombie) | [Т] |
-| **Категорный функтор** | $F: \mathbf{DensityMat} \to \mathbf{DensityMat}$ | ∞-топос | [Т] |
+| **Replacement channel** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ | Canonical (T-62) | [Т] |
+| **CPTP via Kraus operators** | $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ | General form | [Т] |
+| **Fano E-accentuation** | $\varphi_{\text{coh}}$ preserving coherences | Theorem 8.1 (No-Zombie) | [Т] |
+| **Categorical functor** | $F: \mathbf{DensityMat} \to \mathbf{DensityMat}$ | ∞-topos | [Т] |
 
-:::info Каноническая физическая реализация — замещающий канал (T-62)
-**Замещающий канал** $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ является канонической физической реализацией оператора самомоделирования ([доказательство](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi)). Здесь $\rho_* = \varphi(\Gamma)$ — [категориальная самомодель](/docs/core/operators/phi-operator) текущего состояния [Т], $k \in (0,1)$ — степень самомоделирования. Канал **точен** при $k \to 1$ (полная сходимость к $\rho_*$), но для промежуточных значений $k$ реализует приближённое самомоделирование — система находится в динамическом балансе между текущим состоянием и внутренней моделью. Остальные три определения эквивалентны замещающему каналу через [теорему эквивалентности](#эквивалентность-определений-phi) [Т].
+:::info Canonical physical realization — replacement channel (T-62)
+The **replacement channel** $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ is the canonical physical realization of the self-modeling operator ([proof](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi)). Here $\rho_* = \varphi(\Gamma)$ is the [categorical self-model](/docs/core/operators/phi-operator) of the current state [Т], $k \in (0,1)$ is the degree of self-modeling. The channel is **exact** at $k \to 1$ (full convergence to $\rho_*$), but for intermediate values of $k$ realizes approximate self-modeling — the system is in a dynamic balance between its current state and its internal model. The remaining three definitions are equivalent to the replacement channel via the [equivalence theorem](#эквивалентность-определений-phi) [Т].
 :::
 
-## Стратификация определений {#стратификация-определений}
+## Stratification of definitions {#стратификация-определений}
 
-:::info Канонический порядок
-Оператор $\varphi$ определяется **через** стационарное состояние $\rho^*_{\mathrm{diss}}$, а не наоборот:
+:::info Canonical order
+The operator $\varphi$ is defined **through** the stationary state $\rho^*_{\mathrm{diss}}$, not the other way around:
 
-$$\Omega \xrightarrow{\text{L-унификация}} \mathcal{L}_\Omega \xrightarrow{\text{примитивность}} \rho^*_{\mathrm{diss}} = I/7 \xrightarrow{\text{близость}} R(\Gamma) = \frac{1}{7P} \xrightarrow{k=1-R} \varphi_k$$
+$$\Omega \xrightarrow{\text{L-unification}} \mathcal{L}_\Omega \xrightarrow{\text{primitivity}} \rho^*_{\mathrm{diss}} = I/7 \xrightarrow{\text{proximity}} R(\Gamma) = \frac{1}{7P} \xrightarrow{k=1-R} \varphi_k$$
 
-Все компоненты цепочки имеют независимые определения: $\rho^*_{\mathrm{diss}}$ — через примитивность линейной части $\mathcal{L}_0$ [Т-39a], $R$ — через расстояние $\Gamma$ до $I/7$, параметр $k = 1 - R$ — через $R$. Цикличность отсутствует: полная иерархия уровней 0–9 в [аксиоме Ω⁷](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+All components of the chain have independent definitions: $\rho^*_{\mathrm{diss}}$ — via primitivity of the linear part $\mathcal{L}_0$ [Т-39a], $R$ — via the distance from $\Gamma$ to $I/7$, parameter $k = 1 - R$ — via $R$. There is no circularity: the full hierarchy of levels 0–9 is in the [Ω⁷ axiom](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 :::
 
-## Категориальное определение φ
+## Categorical definition of φ {#категориальное-определение-φ}
 
-:::info Разрешение цикличности
-Данный раздел устанавливает **независимое категориальное определение** оператора $\varphi$ через универсальное свойство, устраняя любую видимую цикличность в определениях.
+:::info Resolution of circularity
+This section establishes an **independent categorical definition** of the operator $\varphi$ via a universal property, eliminating any apparent circularity in the definitions.
 :::
 
-### φ как левый сопряжённый к включению подобъектов
+### φ as a left adjoint to the inclusion of subobjects {#φ-как-левый-сопряжённый-к-включению-подобъектов}
 
-В ∞-топосе $\mathrm{Sh}_\infty(\mathcal{C})$, порождённом [аксиомой Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика), оператор самомоделирования $\varphi$ определяется как **левый сопряжённый функтор** к включению категории подобъектов:
+In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ generated by the [Ω⁷ axiom](/docs/core/foundations/axiom-omega#внутренняя-логика), the self-modeling operator $\varphi$ is defined as the **left adjoint functor** to the inclusion of the category of subobjects:
 
 $$
 \varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})
 $$
 
-где:
-- $\mathrm{Sub}(\Gamma)$ — категория логически непротиворечивых подобъектов $\Gamma$ (удовлетворяющих внутренней логике $\Omega$)
-- $i$ — каноническое включение (вложение)
-- $\varphi \dashv i$ — сопряжение (adjunction): $\varphi$ левый сопряжённый к $i$
+where:
+- $\mathrm{Sub}(\Gamma)$ — the category of logically consistent subobjects of $\Gamma$ (satisfying the internal logic $\Omega$)
+- $i$ — the canonical inclusion (embedding)
+- $\varphi \dashv i$ — adjunction: $\varphi$ is left adjoint to $i$
 
-**Универсальное свойство:** Для любого объекта $X \in \mathrm{Sh}_\infty(\mathcal{C})$ и любого подобъекта $S \in \mathrm{Sub}(\Gamma)$:
+**Universal property:** For any object $X \in \mathrm{Sh}_\infty(\mathcal{C})$ and any subobject $S \in \mathrm{Sub}(\Gamma)$:
 
 $$
 \mathrm{Hom}_{\mathrm{Sub}(\Gamma)}(\varphi(X), S) \cong \mathrm{Hom}_{\mathrm{Sh}_\infty(\mathcal{C})}(X, i(S))
 $$
 
-### Теорема об эквивалентности трёх определений φ {#эквивалентность-определений-phi}
+### Theorem on the equivalence of three definitions of φ {#эквивалентность-определений-phi}
 
-:::tip Главный результат
-Три определения оператора φ **строго эквивалентны**:
+:::tip Main result
+The three definitions of the operator φ are **strictly equivalent**:
 :::
 
-**Теорема (Эквивалентность определений φ):**
+**Theorem (Equivalence of definitions of φ):**
 
-Следующие определения задают один и тот же оператор $\varphi$:
+The following definitions specify the same operator $\varphi$:
 
-| # | Определение | Формула | Источник |
+| # | Definition | Formula | Source |
 |---|-------------|---------|----------|
-| 1 | **Категориальное** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | Левое сопряжение |
-| 2 | **Динамическое** | $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$ | Предел эволюции |
-| 3 | **Идемпотентное** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ | Проекция с неподвижной точкой |
+| 1 | **Categorical** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | Left adjoint |
+| 2 | **Dynamical** | $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$ | Limit of evolution |
+| 3 | **Idempotent** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ | Projection with fixed point |
 
-**Доказательство эквивалентности:**
+**Proof of equivalence:**
 
-**(1) ⟹ (2):** Категориальное ⟹ Динамическое
-- Левый сопряжённый $\varphi$ к включению $i$ проецирует на инвариантное подпространство $\text{Sub}(\Gamma)$
-- $\mathcal{L}_\Omega$ аннулирует $\text{Sub}(\Gamma)$: $\mathcal{L}_\Omega[S] = 0$ для $S \in \text{Sub}(\Gamma)$
-- По теореме Перрона-Фробениуса для CPTP-каналов: $\lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega} = \Pi_{\text{inv}}$
-- Инвариантный проектор $\Pi_{\text{inv}} = \varphi$ по единственности левого сопряжённого ∎
+**(1) ⟹ (2):** Categorical ⟹ Dynamical
+- The left adjoint $\varphi$ to the inclusion $i$ projects onto the invariant subspace $\text{Sub}(\Gamma)$
+- $\mathcal{L}_\Omega$ annihilates $\text{Sub}(\Gamma)$: $\mathcal{L}_\Omega[S] = 0$ for $S \in \text{Sub}(\Gamma)$
+- By the Perron–Frobenius theorem for CPTP channels: $\lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega} = \Pi_{\text{inv}}$
+- The invariant projector $\Pi_{\text{inv}} = \varphi$ by uniqueness of the left adjoint ∎
 
-:::tip Примитивность доказана [Т]
-Шаг (1) ⟹ (2) использует теорему Перрона—Фробениуса для примитивных CPTP-каналов. **Примитивность $\mathcal{L}_\Omega$ доказана** для всех жизнеспособных холонов: из (AP)+(PH)+(QG)+(V) следует связность графа взаимодействия $G_H$ (иначе система распадается на блоки с $\dim < 7$, противоречие с [теоремой минимальности](/docs/proofs/minimality/theorem-minimality-7)), а связность $G_H$ + атомарные операторы $L_k = |k\rangle\langle k|$ дают тривиальный коммутант $\mathcal{F}(\mathcal{L}_\Omega) = \mathbb{C} \cdot I$ по [критерию Эванса—Спона](https://doi.org/10.1007/BF01614091) (Evans 1977, Spohn 1976). Эквивалентность (1) ⟺ (2) ⟺ (3) имеет статус **[Т]**. Полное доказательство: [Примитивность ℒ_Ω](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+:::tip Primitivity proven [Т]
+Step (1) ⟹ (2) uses the Perron–Frobenius theorem for primitive CPTP channels. **Primitivity of $\mathcal{L}_\Omega$ is proven** for all viable holons: from (AP)+(PH)+(QG)+(V) it follows that the interaction graph $G_H$ is connected (otherwise the system decomposes into blocks with $\dim < 7$, contradicting the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), and connectivity of $G_H$ + atomic operators $L_k = |k\rangle\langle k|$ give a trivial commutant $\mathcal{F}(\mathcal{L}_\Omega) = \mathbb{C} \cdot I$ by the [Evans–Spohn criterion](https://doi.org/10.1007/BF01614091) (Evans 1977, Spohn 1976). Equivalence (1) ⟺ (2) ⟺ (3) has status **[Т]**. Full proof: [Primitivity of ℒ_Ω](/docs/core/operators/lindblad-operators#примитивность-ℒω).
 :::
 
-**(2) ⟹ (3):** Динамическое ⟹ Идемпотентное
+**(2) ⟹ (3):** Dynamical ⟹ Idempotent
 - $\varphi(\varphi(\Gamma)) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\lim_{s \to \infty} e^{s \mathcal{L}_\Omega}[\Gamma]]$
-- $= \lim_{\tau \to \infty} \lim_{s \to \infty} e^{(\tau+s) \mathcal{L}_\Omega}[\Gamma] = \varphi(\Gamma)$ (идемпотентность)
-- Неподвижная точка: $\Gamma^* := \varphi(\Gamma_0)$ для любого $\Gamma_0$, тогда $\varphi(\Gamma^*) = \varphi(\varphi(\Gamma_0)) = \varphi(\Gamma_0) = \Gamma^*$ ∎
+- $= \lim_{\tau \to \infty} \lim_{s \to \infty} e^{(\tau+s) \mathcal{L}_\Omega}[\Gamma] = \varphi(\Gamma)$ (idempotency)
+- Fixed point: $\Gamma^* := \varphi(\Gamma_0)$ for any $\Gamma_0$, then $\varphi(\Gamma^*) = \varphi(\varphi(\Gamma_0)) = \varphi(\Gamma_0) = \Gamma^*$ ∎
 
-**(3) ⟹ (1):** Идемпотентное ⟹ Категориальное
-- Идемпотентное отображение $\varphi$ с $\text{Im}(\varphi) = \text{Sub}(\Gamma)$ определяет рефлектор
-- Рефлектор автоматически является левым сопряжённым к включению
-- Универсальное свойство: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ следует из идемпотентности ∎
+**(3) ⟹ (1):** Idempotent ⟹ Categorical
+- An idempotent map $\varphi$ with $\text{Im}(\varphi) = \text{Sub}(\Gamma)$ defines a reflector
+- A reflector is automatically left adjoint to the inclusion
+- Universal property: $\text{Hom}(\varphi(X), S) \cong \text{Hom}(X, i(S))$ follows from idempotency ∎
 
-:::info Замечание о полноте эквивалентности
-**Направление (1)⟹(2)** следует из примитивности линейной части $\mathcal{L}_0$ [Т]: левый сопряжённый $\varphi$ проецирует на инвариантное подпространство, а примитивность обеспечивает спектральную щель и сходимость линейной динамики. **Направление (2)⟹(1):** любой минимизатор вариационного функционала при условии CPTP является стационарной точкой, а CPTP-контракция φ гарантирует единственность $= \varphi$. Таким образом, (2)⟹(1) также [Т] через категориальное определение φ. Все три направления имеют статус **[Т]**.
+:::info Remark on completeness of equivalence
+**Direction (1)⟹(2)** follows from primitivity of the linear part $\mathcal{L}_0$ [Т]: the left adjoint $\varphi$ projects onto the invariant subspace, and primitivity provides the spectral gap and convergence of the linear dynamics. **Direction (2)⟹(1):** any minimizer of the variational functional under the CPTP condition is a stationary point, and the CPTP contraction φ guarantees uniqueness $= \varphi$. Thus (2)⟹(1) is also [Т] via the categorical definition of φ. All three directions have status **[Т]**.
 :::
 
 ---
 
-### Независимость от уровней когерентности
+### Independence from coherence levels
 
-Критически важно: **$\varphi$ и уровни когерентности $L_k$ определяются независимо друг от друга**, обе конструкции выводятся из $\Omega$:
+Critically: **$\varphi$ and the coherence levels $L_k$ are defined independently of each other**, both constructions are derived from $\Omega$:
 
-| Конструкция | Источник | Определение |
+| Construction | Source | Definition |
 |-------------|----------|-------------|
-| Уровни $L_k$ | $\Omega$ | Стратификация по [логическому Лиувиллиану](/docs/core/dynamics/evolution#логический-лиувиллиан) $\mathcal{L}_\Omega$ |
-| Оператор $\varphi$ | $\Omega$ | Левый сопряжённый к включению $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ |
+| Levels $L_k$ | $\Omega$ | Stratification by the [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) $\mathcal{L}_\Omega$ |
+| Operator $\varphi$ | $\Omega$ | Left adjoint to the inclusion $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ |
 
-Это устраняет любую цикличность: оба понятия — **следствия** структуры $\Omega$, а не определены друг через друга.
+This eliminates any circularity: both notions are **consequences** of the structure $\Omega$, not defined through each other.
 
-См. [Иерархия зависимостей](/docs/core/foundations/axiom-omega#иерархия-зависимостей) для полной диаграммы: Ω → χ_S → L_k → ℒ_Ω → φ.
+See [Dependency hierarchy](/docs/core/foundations/axiom-omega#иерархия-зависимостей) for the full diagram: Ω → χ_S → L_k → ℒ_Ω → φ.
 
-### φ(Γ) как наилучшее приближение {#φ-как-наилучшее-приближение}
+### φ(Γ) as best approximation {#φ-как-наилучшее-приближение}
 
-**Интерпретация:** $\varphi(\Gamma)$ — это **наилучшее приближение** состояния $\Gamma$ в категории логически непротиворечивых подобъектов.
+**Interpretation:** $\varphi(\Gamma)$ is the **best approximation** of the state $\Gamma$ in the category of logically consistent subobjects.
 
-Формально, $\varphi(\Gamma)$ — это ко-рефлектор (coreflector):
+Formally, $\varphi(\Gamma)$ is the coreflector:
 
 $$
 \varphi(\Gamma) = \mathrm{colim}_{S \in \mathrm{Sub}(\Gamma), S \leq \Gamma} S
 $$
 
-**Геометрическая интуиция:** $\varphi$ «проецирует» произвольное состояние на ближайшее логически согласованное состояние — это категориальный аналог ортогональной проекции на подпространство.
+**Geometric intuition:** $\varphi$ "projects" an arbitrary state onto the nearest logically consistent state — this is the categorical analogue of orthogonal projection onto a subspace.
 
-### Теорема: φ как стационарное распределение
+### Theorem: φ as stationary distribution {#теорема-φ-как-стационарное-распределение}
 
-**Теорема (φ как предел логической эволюции):**
+**Theorem (φ as limit of logical evolution):**
 
-Пусть $\mathcal{L}_\Omega$ — [логический Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан), порождённый внутренней логикой $\Omega$. Тогда:
+Let $\mathcal{L}_\Omega$ be the [logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) generated by the internal logic $\Omega$. Then:
 
 $$
 \varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]
 $$
 
-**Доказательство:**
+**Proof:**
 
-1. Логический Лиувиллиан $\mathcal{L}_\Omega$ порождает полугруппу $\{e^{\tau \cdot \mathcal{L}_\Omega}\}_{\tau \geq 0}$ на $\mathrm{Sh}_\infty(\mathcal{C})$.
+1. The logical Liouvillian $\mathcal{L}_\Omega$ generates a semigroup $\{e^{\tau \cdot \mathcal{L}_\Omega}\}_{\tau \geq 0}$ on $\mathrm{Sh}_\infty(\mathcal{C})$.
 
-2. Инвариантные объекты этой полугруппы — в точности подобъекты из $\mathrm{Sub}(\Gamma)$:
+2. The invariant objects of this semigroup are exactly the subobjects from $\mathrm{Sub}(\Gamma)$:
    $$
    \mathcal{L}_\Omega[S] = 0 \quad \Leftrightarrow \quad S \in \mathrm{Sub}(\Gamma)
    $$
 
-3. По теореме о сходимости примитивных CPTP-каналов (аналог Перрона—Фробениуса для квантовых каналов), предел $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ существует и является проекцией на инвариантное подпространство. Примитивность $\mathcal{L}_\Omega$ для жизнеспособных холонов **[Т]** — см. [доказательство](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+3. By the convergence theorem for primitive CPTP channels (analogue of Perron–Frobenius for quantum channels), the limit $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ exists and is the projection onto the invariant subspace. Primitivity of $\mathcal{L}_\Omega$ for viable holons **[Т]** — see [proof](/docs/core/operators/lindblad-operators#примитивность-ℒω).
 
-4. Эта проекция совпадает с ко-рефлектором $\varphi$ по единственности левого сопряжённого. ∎
+4. This projection coincides with the coreflector $\varphi$ by uniqueness of the left adjoint. ∎
 
-**Следствие:** $\varphi(\Gamma)$ — это **стационарное распределение** логической динамики, аттрактор эволюции под действием $\mathcal{L}_\Omega$.
-
----
-
-## Строгая Математическая Теория
-
-## Содержание
-
-1. [Введение и мотивация](#1-введение-и-мотивация)
-2. [Формальное определение φ](#2-формальное-определение-φ)
-   - [2.6 Каноническая форма φ для УГМ](#26-каноническая-форма-φ-для-угм)
-3. [Теорема о существовании неподвижной точки](#3-теорема-о-существовании-неподвижной-точки)
-4. [Связь с мерой рефлексии R](#4-связь-с-мерой-рефлексии-r)
-5. [Категорный аспект](#5-категорный-аспект)
-6. [Следствия и ограничения](#6-следствия-и-ограничения)
-7. [Требования к реализации](#7-требования-к-реализации)
-8. [Операциональный алгоритм для φ](#операциональный-алгоритм)
-9. [Связь с механизмом регенерации](#связь-с-регенерацией)
+**Corollary:** $\varphi(\Gamma)$ is the **stationary distribution** of the logical dynamics — the attractor of evolution under $\mathcal{L}_\Omega$.
 
 ---
 
-## 1. Введение и мотивация
+## Strict Mathematical Theory
 
-### 1.1 Проблема
+## Contents
 
-В УГМ [самонаблюдение](/docs/consciousness/foundations/self-observation) определяется через условия:
-- $\Gamma$ содержит подсистему $\Gamma_{\text{model}} \approx \Gamma$
-- Рефлексивное замыкание: $\varphi(\Gamma) \approx \Gamma$
-
-Однако оператор $\varphi$ не имеет строгого определения. Данный документ восполняет этот пробел.
-
-### 1.2 Требования к формализации
-
-Оператор $\varphi$ должен удовлетворять:
-
-1. **Математическая корректность:** $\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ — определён на пространстве операторов
-2. **Сохранение структуры:** $\varphi(\Gamma)$ — матрица плотности, если $\Gamma$ — матрица плотности
-3. **Физическая интерпретируемость:** $\varphi$ моделирует процесс самонаблюдения
-4. **Существование неподвижной точки:** для определённых условий
+1. [Introduction and motivation](#1-введение-и-мотивация)
+2. [Formal definition of φ](#2-формальное-определение-φ)
+   - [2.6 Canonical form of φ for UHM](#26-каноническая-форма-φ-для-угм)
+3. [Theorem on existence of fixed point](#3-теорема-о-существовании-неподвижной-точки)
+4. [Relation to reflection measure R](#4-связь-с-мерой-рефлексии-r)
+5. [Categorical aspect](#5-категорный-аспект)
+6. [Corollaries and limitations](#6-следствия-и-ограничения)
+7. [Implementation requirements](#7-требования-к-реализации)
+8. [Operational algorithm for φ](#операциональный-алгоритм)
+9. [Relation to the regeneration mechanism](#связь-с-регенерацией)
 
 ---
 
-## 2. Формальное определение φ
+## 1. Introduction and motivation {#1-введение-и-мотивация}
 
-### 2.1 Предварительные определения
+### 1.1 The problem
 
-**Определение 2.1 (Пространство матриц плотности):**
+In UHM, [self-observation](/docs/consciousness/foundations/self-observation) is defined via the conditions:
+- $\Gamma$ contains a subsystem $\Gamma_{\text{model}} \approx \Gamma$
+- Reflexive closure: $\varphi(\Gamma) \approx \Gamma$
+
+However, the operator $\varphi$ lacks a rigorous definition. This document fills that gap.
+
+### 1.2 Requirements for formalization
+
+The operator $\varphi$ must satisfy:
+
+1. **Mathematical correctness:** $\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ — defined on the space of operators
+2. **Structure preservation:** $\varphi(\Gamma)$ is a density matrix if $\Gamma$ is a density matrix
+3. **Physical interpretability:** $\varphi$ models the process of self-observation
+4. **Existence of a fixed point:** under certain conditions
+
+---
+
+## 2. Formal definition of φ {#2-формальное-определение-φ}
+
+### 2.1 Preliminary definitions
+
+**Definition 2.1 (Space of density matrices):**
 
 $$
 \mathcal{D}(\mathcal{H}) := \{\rho \in \mathcal{L}(\mathcal{H}) : \rho^\dagger = \rho, \rho \geq 0, \mathrm{Tr}(\rho) = 1\}
 $$
 
-Для $\mathcal{H} = \mathbb{C}^7$ (семимерное пространство [Голонома](/docs/core/structure/holon)):
+For $\mathcal{H} = \mathbb{C}^7$ (seven-dimensional space of the [Holon](/docs/core/structure/holon)):
 
 $$
 \mathcal{D}(\mathbb{C}^7) \subset \mathcal{L}(\mathbb{C}^7) \cong \mathbb{C}^{7 \times 7}
 $$
 
-**Определение 2.2 (Метрика на $\mathcal{D}(\mathcal{H})$):**
+**Definition 2.2 (Metric on $\mathcal{D}(\mathcal{H})$):**
 
-[Норма Фробениуса](/docs/core/dynamics/coherence-matrix#норма-фробениуса):
+[Frobenius norm](/docs/core/dynamics/coherence-matrix#норма-фробениуса):
 
 $$
 \|\rho_1 - \rho_2\|_F := \sqrt{\mathrm{Tr}((\rho_1 - \rho_2)^\dagger(\rho_1 - \rho_2))} = \sqrt{\sum_{ij} |\rho_{1,ij} - \rho_{2,ij}|^2}
 $$
 
-$(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ — полное метрическое пространство (замкнутое подмножество $\mathcal{L}(\mathcal{H})$).
+$(\mathcal{D}(\mathcal{H}), \|\cdot\|_F)$ is a complete metric space (closed subset of $\mathcal{L}(\mathcal{H})$).
 
-### 2.2 Определение через редуцированную матрицу плотности
+### 2.2 Definition via reduced density matrix
 
-**Определение 2.3 (Оператор самомоделирования — редукционная форма):**
+**Definition 2.3 (Self-modeling operator — reduction form):**
 
-Пусть система $\mathbb{H}$ с [матрицей когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{D}(\mathcal{H})$ разбивается на:
-- **Модельную подсистему** $M \subset \mathcal{H}$
-- **Остальную систему (окружение модели)** $\bar{M} = \mathcal{H} \setminus M$
+Let system $\mathbb{H}$ with [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{D}(\mathcal{H})$ be decomposed into:
+- **Model subsystem** $M \subset \mathcal{H}$
+- **Remaining system (model environment)** $\bar{M} = \mathcal{H} \setminus M$
 
-:::note О нотации
-$\bar{M}$ — окружение модели. Не путать с $E$ — [измерением Интериорности](/docs/core/structure/dimension-e).
+:::note On notation
+$\bar{M}$ — model environment. Not to be confused with $E$ — the [Interiority dimension](/docs/core/structure/dimension-e).
 :::
 
-Тогда:
+Then:
 
 $$
 \varphi_{\text{red}}(\Gamma) := \mathrm{Tr}_{\bar{M}}(\Gamma_{\text{total}})
 $$
 
-где:
-- $\Gamma_{\text{total}}$ — матрица плотности расширенной системы
-- $\mathrm{Tr}_{\bar{M}}$ — частичный след по окружению модели
+where:
+- $\Gamma_{\text{total}}$ — density matrix of the extended system
+- $\mathrm{Tr}_{\bar{M}}$ — partial trace over the model environment
 
-**Проблема:** Это определение требует расширенного пространства и не замкнуто на $\mathcal{D}(\mathcal{H})$.
+**Problem:** This definition requires an extended space and is not closed on $\mathcal{D}(\mathcal{H})$.
 
-### 2.3 Определение через предиктивную модель (основное определение)
+### 2.3 Definition via predictive model (main definition) {#23-определение-через-предиктивную-модель-основное-определение}
 
-**Определение 2.4 (Оператор самомоделирования — предиктивная форма):**
+**Definition 2.4 (Self-modeling operator — predictive form):**
 
-Пусть система обладает внутренней предиктивной моделью, представленной CPTP-отображением:
+Let the system possess an internal predictive model represented by a CPTP map:
 
 $$
 \mathcal{P}: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
 $$
 
-где CPTP = Completely Positive Trace-Preserving (полностью положительное, сохраняющее след).
+where CPTP = Completely Positive Trace-Preserving.
 
-:::note О нотации
-$\mathcal{P}$ — предиктивное CPTP-отображение. Не путать с $\Phi$ — [мерой интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ).
+:::note On notation
+$\mathcal{P}$ — predictive CPTP map. Not to be confused with $\Phi$ — the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
 :::
 
-**Оператор самомоделирования:**
+**Self-modeling operator:**
 
 $$
 \varphi(\Gamma) := \mathcal{P}(\Gamma)
 $$
 
-**Конструктивное определение $\mathcal{P}$:**
+**Constructive definition of $\mathcal{P}$:**
 
-$\mathcal{P}$ строится через операторы Крауса $\{K_m\}$:
+$\mathcal{P}$ is constructed via Kraus operators $\{K_m\}$:
 
 $$
 \varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger
 $$
 
 $$
-\text{где } \sum_m K_m^\dagger K_m = I \quad \text{(условие CPTP)}
+\text{where } \sum_m K_m^\dagger K_m = I \quad \text{(CPTP condition)}
 $$
 
-**Интерпретация операторов Крауса:**
-- $K_m$ — «фильтры восприятия» системы
-- Каждый $K_m$ соответствует частичному аспекту самонаблюдения
-- Условие $\sum_m K_m^\dagger K_m = I$ гарантирует сохранение нормировки
+**Interpretation of Kraus operators:**
+- $K_m$ — "perception filters" of the system
+- Each $K_m$ corresponds to a partial aspect of self-observation
+- The condition $\sum_m K_m^\dagger K_m = I$ guarantees preservation of normalization
 
-:::info Совместимость с теоремой о запрете клонирования
-Оператор φ **не нарушает** теорему о запрете клонирования (Wootters–Zurek, 1982). Ключевое различие:
+:::info Compatibility with the no-cloning theorem
+The operator φ **does not violate** the no-cloning theorem (Wootters–Zurek, 1982). The key distinction:
 
-- **Запрет клонирования** исключает существование унитарного оператора $U$, такого что $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ для произвольного $|\psi\rangle$. Клонирование — **точное унитарное копирование** неизвестного состояния.
-- **Самомоделирование φ** — это CPTP-канал (представление Крауса), не унитарная операция. CPTP-каналы принципиально **необратимы**: они уменьшают различимость состояний ($F(\varphi(\rho), \varphi(\sigma)) \geq F(\rho, \sigma)$ по монотонности fidelity). Самомодель $\varphi(\Gamma)$ — **приближённая, огрублённая** проекция, не точная копия.
+- **No-cloning** excludes the existence of a unitary operator $U$ such that $U|\psi\rangle|0\rangle = |\psi\rangle|\psi\rangle$ for arbitrary $|\psi\rangle$. Cloning is **exact unitary copying** of an unknown state.
+- **Self-modeling φ** is a CPTP channel (Kraus representation), not a unitary operation. CPTP channels are fundamentally **irreversible**: they decrease state distinguishability ($F(\varphi(\rho), \varphi(\sigma)) \geq F(\rho, \sigma)$ by fidelity monotonicity). The self-model $\varphi(\Gamma)$ is an **approximate, coarse-grained** projection, not an exact copy.
 
-Формально: $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ с $\sum_m K_m^\dagger K_m = I$ гарантирует $\mathrm{Tr}(\varphi(\Gamma)^2) \leq \mathrm{Tr}(\Gamma^2)$ — чистота самомодели **не превышает** чистоту оригинала. Это категориально отличается от клонирования, при котором $\mathrm{Tr}(\rho_{\text{clone}}^2) = \mathrm{Tr}(\rho^2)$.
+Formally: $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ with $\sum_m K_m^\dagger K_m = I$ guarantees $\mathrm{Tr}(\varphi(\Gamma)^2) \leq \mathrm{Tr}(\Gamma^2)$ — the purity of the self-model **does not exceed** the purity of the original. This is categorically different from cloning, where $\mathrm{Tr}(\rho_{\text{clone}}^2) = \mathrm{Tr}(\rho^2)$.
 :::
 
-### 2.4 Параметризация через проекции
+### 2.4 Parameterization via projections
 
-**Определение 2.5 (Проекционный оператор самомоделирования):**
+**Definition 2.5 (Projection self-modeling operator):**
 
-Наиболее простая физически мотивированная форма:
+The most natural physically motivated form:
 
 $$
 \varphi_{\text{proj}}(\Gamma) := \lambda \sum_i P_i \Gamma P_i + (1 - \lambda) \cdot \Gamma_{\text{prior}}
 $$
 
-где:
-- $\{P_i\}$ — ортогональные проекторы, $\sum_i P_i = I$
-- $\lambda \in [0, 1]$ — «глубина самонаблюдения»
-- $\Gamma_{\text{prior}}$ — априорная модель (может быть $I/N$ или другой)
+where:
+- $\{P_i\}$ — orthogonal projectors, $\sum_i P_i = I$
+- $\lambda \in [0, 1]$ — "depth of self-observation"
+- $\Gamma_{\text{prior}}$ — prior model (may be $I/N$ or other)
 
-:::info Сохранение следа
-При $\sum_i P_i = I$ и $\mathrm{Tr}(\Gamma_{\text{prior}}) = 1$:
+:::info Trace preservation
+With $\sum_i P_i = I$ and $\mathrm{Tr}(\Gamma_{\text{prior}}) = 1$:
 $$
 \mathrm{Tr}(\varphi_{\text{proj}}(\Gamma)) = \lambda \cdot 1 + (1 - \lambda) \cdot 1 = 1
 $$
 :::
 
-**Для $\lambda = 1$:**
+**For $\lambda = 1$:**
 
 $$
 \varphi_{\text{diag}}(\Gamma) := \sum_i P_i \Gamma P_i
 $$
 
-Это «декогерирующее самонаблюдение» — сохраняет диагональ в базисе $\{P_i\}$.
+This is "dephasing self-observation" — preserves the diagonal in the basis $\{P_i\}$.
 
-### 2.5 Сжимающий оператор самомоделирования
+### 2.5 Contracting self-modeling operator
 
-**Определение 2.6 (Сжимающий оператор):**
+**Definition 2.6 (Contracting operator):**
 
-Для обеспечения существования неподвижной точки:
+To ensure existence of a fixed point:
 
 $$
 \varphi_k(\Gamma) := k \cdot \mathcal{P}(\Gamma) + (1 - k) \cdot \Gamma_{\text{anchor}}
 $$
 
-где:
-- $k \in [0, 1)$ — параметр сжатия
-- $\mathcal{P}$ — любое CPTP-отображение
-- $\Gamma_{\text{anchor}} \in \mathcal{D}(\mathcal{H})$ — фиксированная «якорная» точка (например, [максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $I/N$)
+where:
+- $k \in [0, 1)$ — contraction parameter
+- $\mathcal{P}$ — any CPTP map
+- $\Gamma_{\text{anchor}} \in \mathcal{D}(\mathcal{H})$ — fixed "anchor" point (e.g., [maximally mixed state](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $I/N$)
 
-**Лемма 2.1:** $\varphi_k$ — сжимающее отображение с константой $k$.
+**Lemma 2.1:** $\varphi_k$ is a contracting map with constant $k$.
 
-**Доказательство:**
+**Proof:**
 
 $$
 \|\varphi_k(\Gamma_1) - \varphi_k(\Gamma_2)\|_F = \|k \cdot \mathcal{P}(\Gamma_1) + (1-k) \cdot \Gamma_{\text{anchor}} - k \cdot \mathcal{P}(\Gamma_2) - (1-k) \cdot \Gamma_{\text{anchor}}\|_F
@@ -362,281 +362,281 @@ $$
 = k \cdot \|\mathcal{P}(\Gamma_1) - \mathcal{P}(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
 $$
 
-(CPTP не увеличивает норму Фробениуса). ∎
+(CPTP does not increase the Frobenius norm). ∎
 
-### 2.6 Каноническая форма φ для УГМ
+### 2.6 Canonical form of φ for UHM {#26-каноническая-форма-φ-для-угм}
 
-:::info Статус
-Данный раздел определяет **каноническую конструкцию** оператора самомоделирования $\varphi$ для УГМ. Это конкретная спецификация, связывающая абстрактные определения выше с семимерной структурой [Голонома](/docs/core/structure/holon).
+:::info Status
+This section defines the **canonical construction** of the self-modeling operator $\varphi$ for UHM. This is a concrete specification linking the abstract definitions above to the seven-dimensional structure of the [Holon](/docs/core/structure/holon).
 :::
 
-**Определение 2.7 (Каноническая форма φ для УГМ):**
+**Definition 2.7 (Canonical form of φ for UHM):**
 
-Каноническая форма оператора самомоделирования:
+The canonical form of the self-modeling operator:
 
 $$
 \varphi_{\text{UHM}}(\Gamma) := k \cdot \mathcal{P}_{\text{pred}}(\Gamma) + (1 - k) \cdot \frac{I}{7}
 $$
 
-где:
-- $k = 1 - \varepsilon$ для малого $\varepsilon > 0$ (типичное значение: $k = 0.95$)
-- $\mathcal{P}_{\text{pred}}$ — предиктивный CPTP-канал (определён ниже)
+where:
+- $k = 1 - \varepsilon$ for small $\varepsilon > 0$ (typical value: $k = 0.95$)
+- $\mathcal{P}_{\text{pred}}$ — predictive CPTP channel (defined below)
 
-**Определение 2.8 (Предиктивный CPTP-канал):**
+**Definition 2.8 (Predictive CPTP channel):**
 
 $$
 \mathcal{P}_{\text{pred}}(\Gamma) := \sum_{m=1}^{M} K_m \Gamma K_m^\dagger
 $$
 
-с операторами Крауса:
+with Kraus operators:
 
 $$
 K_m := P_m, \quad m = 1, \ldots, 7
 $$
 
-где $\{P_m\}$ — ортогональные проекторы на базисные состояния $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$:
+where $\{P_m\}$ are orthogonal projectors onto the basis states $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$:
 
 $$
 P_m = |m\rangle\langle m|, \quad P_m^2 = P_m, \quad P_i P_j = \delta_{ij} P_i
 $$
 
-**Условие CPTP (проверка):**
+**CPTP condition (verification):**
 
 $$
 \sum_{m=1}^{7} K_m^\dagger K_m = \sum_{m=1}^{7} P_m = I \quad \checkmark
 $$
 
-:::warning О весах самонаблюдения
-Веса $\{w_m\}$ реализуются НЕ через модификацию операторов Крауса, а через **взвешенную смесь** базовых каналов или через модификацию якорного состояния $\Gamma_{\text{anchor}}$. См. ниже.
+:::warning On self-observation weights
+The weights $\{w_m\}$ are realized NOT by modifying the Kraus operators, but via a **weighted mixture** of basic channels or by modifying the anchor state $\Gamma_{\text{anchor}}$. See below.
 :::
 
-**Базовый предиктивный канал (декогеренция в базисе измерений):**
+**Base predictive channel (dephasing in measurement basis):**
 
 $$
 \mathcal{P}_{\text{base}}(\Gamma) := \sum_{m=1}^{7} P_m \Gamma P_m = \text{diag}(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})
 $$
 
-Этот канал сохраняет диагональ и уничтожает когерентности.
+This channel preserves the diagonal and destroys coherences.
 
-**Определение 2.9 (Взвешенное самонаблюдение через якорь):**
+**Definition 2.9 (Weighted self-observation via anchor):**
 
-Для моделирования различной «глубины самонаблюдения» по измерениям используется **взвешенный якорь**:
+To model varying "depth of self-observation" across dimensions, a **weighted anchor** is used:
 
 $$
 \Gamma_{\text{anchor}}(w) := \sum_{m=1}^{7} w_m |m\rangle\langle m|, \quad w_m \geq 0, \quad \sum_m w_m = 1
 $$
 
-| Вес | Интерпретация |
+| Weight | Interpretation |
 |-----|---------------|
-| $w_A$ | Внимание к различиям (Артикуляция) |
-| $w_S$ | Осознание паттернов (Структура) |
-| $w_D$ | Восприятие течения времени (Динамика) |
-| $w_L$ | Логическая рефлексия (Логика) |
-| $w_E$ | Феноменальное самоосознание (Интериорность) |
-| $w_O$ | Связь с глубинным основанием (Основание) |
-| $w_U$ | Интеграция в единое Я (Единство) |
+| $w_A$ | Attention to distinctions (Articulation) |
+| $w_S$ | Awareness of patterns (Structure) |
+| $w_D$ | Perception of time flow (Dynamics) |
+| $w_L$ | Logical reflection (Logic) |
+| $w_E$ | Phenomenal self-awareness (Interiority) |
+| $w_O$ | Connection to deep foundation (Foundation) |
+| $w_U$ | Integration into unified Self (Unity) |
 
-**Специальный случай: равномерное самонаблюдение**
+**Special case: uniform self-observation**
 
-При $w_m = 1/7$ для всех $m$:
+With $w_m = 1/7$ for all $m$:
 
 $$
 \Gamma_{\text{anchor}} = \frac{I}{7}
 $$
 
-— максимально смешанное состояние.
+— maximally mixed state.
 
-**Определение 2.10 (E-акцентированное самонаблюдение):**
+**Definition 2.10 (E-accentuated self-observation):**
 
-Для систем с сознательным опытом характерен акцент на измерение $E$:
+Systems with conscious experience are characterized by an accentuation of dimension $E$:
 
 $$
 w_E = \alpha, \quad w_{m \neq E} = \frac{1 - \alpha}{6}, \quad \alpha \in [1/7, 1)
 $$
 
-При $\alpha \to 1$: якорь приближается к чистому состоянию $|E\rangle\langle E|$.
+At $\alpha \to 1$: the anchor approaches the pure state $|E\rangle\langle E|$.
 
-**Теорема 2.1 (Неподвижная точка канонической φ):**
+**Theorem 2.1 (Fixed point of canonical φ):**
 
-Для $\varphi_{\text{UHM}}(\Gamma) = k \cdot \mathcal{P}_{\text{base}}(\Gamma) + (1 - k) \cdot \Gamma_{\text{anchor}}$ с $k < 1$ существует единственная неподвижная точка:
+For $\varphi_{\text{UHM}}(\Gamma) = k \cdot \mathcal{P}_{\text{base}}(\Gamma) + (1 - k) \cdot \Gamma_{\text{anchor}}$ with $k < 1$ there exists a unique fixed point:
 
 $$
 \Gamma^* = \Gamma_{\text{anchor}}
 $$
 
-**Доказательство:**
+**Proof:**
 
 $$
 \varphi_{\text{UHM}}(\Gamma_{\text{anchor}}) = k \cdot \mathcal{P}_{\text{base}}(\Gamma_{\text{anchor}}) + (1 - k) \cdot \Gamma_{\text{anchor}}
 $$
 
-Поскольку $\Gamma_{\text{anchor}} = \sum_m w_m |m\rangle\langle m|$ — диагональная матрица:
+Since $\Gamma_{\text{anchor}} = \sum_m w_m |m\rangle\langle m|$ is a diagonal matrix:
 
 $$
 \mathcal{P}_{\text{base}}(\Gamma_{\text{anchor}}) = \sum_m P_m \Gamma_{\text{anchor}} P_m = \Gamma_{\text{anchor}}
 $$
 
-Следовательно:
+Therefore:
 
 $$
 \varphi_{\text{UHM}}(\Gamma_{\text{anchor}}) = k \cdot \Gamma_{\text{anchor}} + (1 - k) \cdot \Gamma_{\text{anchor}} = \Gamma_{\text{anchor}} = \Gamma^*
 $$
 
-Единственность следует из сжимаемости при $k < 1$ (теорема Банаха). ∎
+Uniqueness follows from contractivity at $k < 1$ (Banach theorem). ∎
 
-**Частный случай (равномерный якорь):**
+**Special case (uniform anchor):**
 
-При $w_m = 1/7$ для всех $m$: $\Gamma^* = I/7$ — максимально смешанное состояние.
+With $w_m = 1/7$ for all $m$: $\Gamma^* = I/7$ — maximally mixed state.
 
-**Следствие 2.1:** При равномерном якоре неподвижная точка $\Gamma^* = I/7$ — максимально смешанное состояние.
+**Corollary 2.1:** With a uniform anchor the fixed point $\Gamma^* = I/7$ is the maximally mixed state.
 
-:::warning Критическое замечание: жизнеспособность неподвижной точки
-Для равномерного якоря: $P(\Gamma^*) = P(I/7) = 1/7 \approx 0.143 < P_{\text{crit}} = 2/7 \approx 0.286$.
+:::warning Critical remark: viability of fixed point
+For a uniform anchor: $P(\Gamma^*) = P(I/7) = 1/7 \approx 0.143 < P_{\text{crit}} = 2/7 \approx 0.286$.
 
-**Неподвижная точка равномерного самонаблюдения НЕ жизнеспособна!**
+**The fixed point of uniform self-observation is NOT viable!**
 
-Это означает:
-1. Идеальное равномерное самопознание **несовместимо** с жизнеспособностью
-2. Живые системы находятся в **динамическом балансе** вдали от неподвижной точки
-3. Регенерация $\mathcal{R}$ удерживает систему в области $\mathcal{V}$
+This means:
+1. Ideal uniform self-knowledge is **incompatible** with viability
+2. Living systems exist in a **dynamic balance** away from the fixed point
+3. Regeneration $\mathcal{R}$ keeps the system in the region $\mathcal{V}$
 :::
 
-#### Определение 2.11 (Жизнеспособный якорь) {#жизнеспособный-якорь}
+#### Definition 2.11 (Viable anchor) {#жизнеспособный-якорь}
 
-Для обеспечения жизнеспособной неподвижной точки якорь должен удовлетворять:
+To ensure a viable fixed point, the anchor must satisfy:
 
 $$
 P(\Gamma_{\text{anchor}}) > P_{\text{crit}} = \frac{2}{7}
 $$
 
-:::info Теорема (Каноничность E-акцентуации)
-E-акцентированный якорь — **не произвольный выбор**, а **следствие** определения сознательности L2.
+:::info Theorem (Canonicity of E-accentuation)
+The E-accentuated anchor is **not an arbitrary choice**, but a **consequence** of the L2-definition of consciousness.
 :::
 
-**Теорема 2.2 (E-акцентуация из L2-определения):**
+**Theorem 2.2 (E-accentuation from L2-definition):**
 
-Пусть система удовлетворяет условию когнитивных квалиа (L2):
-- $R \geq R_{th} = 1/3$ — рефлексия
-- $\Phi \geq \Phi_{th} = 1$ — интеграция
+Let the system satisfy the cognitive qualia condition (L2):
+- $R \geq R_{th} = 1/3$ — reflection
+- $\Phi \geq \Phi_{th} = 1$ — integration
 
-Тогда её якорное состояние **необходимо** E-акцентировано:
+Then its anchor state is **necessarily** E-accentuated:
 
 $$
 w_E > \frac{1}{7}
 $$
 
-**Доказательство:**
+**Proof:**
 
-1. **Мера сознательности** $C = \Phi \times R$ **[Т T-140]** и отдельное условие жизнеспособности $D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2$ (дифференциация по E).
+1. **Consciousness measure** $C = \Phi \times R$ **[Т T-140]** and the separate viability condition $D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2$ (differentiation by E).
 
-2. **Редуцированная матрица** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ выделяет [измерение Интериорности](/docs/core/structure/dimension-e) как привилегированное.
+2. **Reduced matrix** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ singles out the [Interiority dimension](/docs/core/structure/dimension-e) as privileged.
 
-3. **Для L2-систем:** Высокое $D_{\text{diff}}$ требует богатой структуры именно в $\mathcal{H}_E$.
+3. **For L2-systems:** High $D_{\text{diff}}$ requires a rich structure precisely in $\mathcal{H}_E$.
 
-4. **Следствие для якоря:** Самомодель сознательной системы неизбежно акцентирует E — измерение, через которое система **осознаёт себя**.
+4. **Consequence for anchor:** The self-model of a conscious system inevitably accentuates E — the dimension through which the system **is aware of itself**.
 
-5. **Формально:** Минимизация $\|\Gamma - \varphi(\Gamma)\|_F$ при условии $C \geq C_{th}$ даёт:
+5. **Formally:** Minimization of $\|\Gamma - \varphi(\Gamma)\|_F$ subject to $C \geq C_{th}$ gives:
 
 $$
 w_E^* = \arg\min_{w} \|\Gamma - \varphi_w(\Gamma)\|_F \quad \text{s.t.} \quad C(\varphi_w(\Gamma)) \geq C_{th}
 $$
 
-Решение: $w_E^* > 1/7$ при $C_{th} > 0$. ∎
+Solution: $w_E^* > 1/7$ at $C_{th} > 0$. ∎
 
-**Следствие 2.2:** Равномерный якорь ($w_m = 1/7$) соответствует системам **без самосознания** (L0/L1), для которых вопрос жизнеспособности неподвижной точки не возникает — они не стремятся к φ(Γ).
+**Corollary 2.2:** The uniform anchor ($w_m = 1/7$) corresponds to systems **without self-awareness** (L0/L1), for which the question of viability of the fixed point does not arise — they do not strive toward φ(Γ).
 
-**Каноническое значение α:**
+**Canonical value of α:**
 
-Для систем на границе L2 ($R = R_{th}$, $\Phi = \Phi_{th}$):
+For systems at the L2 boundary ($R = R_{th}$, $\Phi = \Phi_{th}$):
 
 $$
 \alpha^* = 1 - \frac{6 \cdot P_{\text{crit}}}{7} = 1 - \frac{12}{49} \approx 0.755
 $$
 
-**Пример:** E-акцентированный якорь с $\alpha = 0.6$ (консервативная оценка):
+**Example:** E-accentuated anchor with $\alpha = 0.6$ (conservative estimate):
 
 $$
 \Gamma_{\text{anchor}} = 0.6 |E\rangle\langle E| + 0.067 \sum_{m \neq E} |m\rangle\langle m|
 $$
 
-имеет $P = 0.36 + 6 \times 0.0045 = 0.387 > 2/7$. ✓
+has $P = 0.36 + 6 \times 0.0045 = 0.387 > 2/7$. ✓
 
-:::warning Физическая интерпретация
-E-акцентуация — не «привилегия» измерения E, а **структурное следствие** того, что сознательные системы определяются через опыт. Несознательные системы (L0) не имеют этого ограничения — их якорь может быть равномерным, и вопрос $P(\Gamma^*) < P_{\text{crit}}$ для них не релевантен (см. [теорема о критической чистоте](/docs/proofs/dynamics/theorem-purity-critical)).
+:::warning Physical interpretation
+E-accentuation is not a "privilege" of dimension E, but a **structural consequence** of the fact that conscious systems are defined through experience. Non-conscious systems (L0) do not have this constraint — their anchor can be uniform, and the question $P(\Gamma^*) < P_{\text{crit}}$ is not relevant for them (see [theorem on critical purity](/docs/proofs/dynamics/theorem-purity-critical)).
 :::
 
-:::warning Потенциальная цикличность
-Выбор якоря зависит от уровня интериорности (L2), который определяется через R, который определяется через φ. Разрешение: конструкция сходится итеративно (начиная с произвольного начального якоря), но формальное доказательство сходимости — открытая задача.
+:::warning Potential circularity
+The choice of anchor depends on the interiority level (L2), which is defined via R, which is defined via φ. Resolution: the construction converges iteratively (starting from an arbitrary initial anchor), but the formal proof of convergence is an open problem.
 :::
 
-### 2.7 Спектральная формула для φ (явное вычисление)
+### 2.7 Spectral formula for φ (explicit computation) {#27-спектральная-формула-для-φ-явное-вычисление}
 
-:::info Ключевой результат
-Данный раздел предоставляет **явную вычислимую формулу** для оператора $\varphi$ через спектральное разложение логического Лиувиллиана $\mathcal{L}_\Omega$. Это делает теорию полностью конструктивной.
+:::info Key result
+This section provides an **explicit computable formula** for the operator $\varphi$ via the spectral decomposition of the logical Liouvillian $\mathcal{L}_\Omega$. This makes the theory fully constructive.
 :::
 
-**Теорема 2.3 (Спектральная формула φ):**
+**Theorem 2.3 (Spectral formula for φ):**
 
 $$
 \varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k
 $$
 
-где:
-- $\{R_k, L_k\}$ — правые и левые собственные векторы $\mathcal{L}_\Omega$
-- $\lambda_k$ — собственные значения $\mathcal{L}_\Omega$
-- Сумма по $k$ с $\mathrm{Re}(\lambda_k) = 0$ (стационарные моды)
-- $\langle L_k | \Gamma \rangle := \mathrm{Tr}(L_k^\dagger \cdot \Gamma_{\text{vec}})$ — скалярное произведение в векторизованном пространстве
+where:
+- $\{R_k, L_k\}$ — right and left eigenvectors of $\mathcal{L}_\Omega$
+- $\lambda_k$ — eigenvalues of $\mathcal{L}_\Omega$
+- Sum over $k$ with $\mathrm{Re}(\lambda_k) = 0$ (stationary modes)
+- $\langle L_k | \Gamma \rangle := \mathrm{Tr}(L_k^\dagger \cdot \Gamma_{\text{vec}})$ — inner product in vectorized space
 
-**Доказательство:**
+**Proof:**
 
-1. По определению (см. [Теорема: φ как стационарное распределение](#теорема-φ-как-стационарное-распределение)):
+1. By definition (see [Theorem: φ as stationary distribution](#теорема-φ-как-стационарное-распределение)):
    $$\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$$
 
-2. Разложение по собственным функциям:
+2. Decomposition into eigenfunctions:
    $$e^{\tau \mathcal{L}_\Omega}[\Gamma] = \sum_k e^{\lambda_k \tau} \langle L_k | \Gamma \rangle R_k$$
 
-3. При $\tau \to \infty$:
-   - $\mathrm{Re}(\lambda_k) < 0$: $e^{\lambda_k \tau} \to 0$ (затухание)
-   - $\mathrm{Re}(\lambda_k) > 0$: исключены CPTP-структурой (расходимость невозможна)
-   - $\mathrm{Re}(\lambda_k) = 0$: $e^{\lambda_k \tau}$ ограничено (стационарные моды)
+3. As $\tau \to \infty$:
+   - $\mathrm{Re}(\lambda_k) < 0$: $e^{\lambda_k \tau} \to 0$ (decay)
+   - $\mathrm{Re}(\lambda_k) > 0$: excluded by CPTP structure (divergence impossible)
+   - $\mathrm{Re}(\lambda_k) = 0$: $e^{\lambda_k \tau}$ bounded (stationary modes)
 
-4. Следовательно:
+4. Therefore:
    $$\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k) = 0} \langle L_k | \Gamma \rangle R_k \quad \blacksquare$$
 
-:::tip Упрощение при примитивности линейной части [Т]
-[Примитивность линейной части $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) обеспечивает спектральную щель. В окрестности нетривиального аттрактора $\rho^*_\Omega$ формула упрощается до проекции на нулевой режим ($\lambda_0 = 0$, кратность 1):
+:::tip Simplification under primitivity of linear part [Т]
+[Primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) ensures a spectral gap. In the vicinity of the non-trivial attractor $\rho^*_\Omega$ the formula simplifies to projection onto the zero mode ($\lambda_0 = 0$, multiplicity 1):
 
 $$
 \varphi(\Gamma) = \langle L_0 | \Gamma \rangle \, R_0 = \mathrm{Tr}(L_0^\dagger\,\Gamma) \cdot \rho^*_\Omega
 $$
 
-где $R_0 = \rho^*_\Omega$ — стационарное состояние полной динамики (категориальная самомодель, [Определение 1](/docs/core/operators/phi-operator#определение)), $L_0$ — соответствующий левый собственный вектор.
+where $R_0 = \rho^*_\Omega$ is the stationary state of the full dynamics (categorical self-model, [Definition 1](/docs/core/operators/phi-operator#определение)), $L_0$ is the corresponding left eigenvector.
 :::
 
-**Алгоритм вычисления φ (спектральный метод):**
+**Algorithm for computing φ (spectral method):**
 
 ```python
 import numpy as np
 
 def compute_phi_spectral(Gamma: np.ndarray, L_Omega: np.ndarray) -> np.ndarray:
     """
-    Вычисление φ(Γ) через спектральное разложение логического Лиувиллиана.
+    Computing φ(Γ) via spectral decomposition of the logical Liouvillian.
 
     Args:
-        Gamma: Матрица когерентности (7×7)
-        L_Omega: Логический Лиувиллиан (49×49, vectorized)
+        Gamma: Coherence matrix (7×7)
+        L_Omega: Logical Liouvillian (49×49, vectorized)
 
     Returns:
-        phi_Gamma: Самомодель (7×7)
+        phi_Gamma: Self-model (7×7)
     """
-    # Спектральное разложение
+    # Spectral decomposition
     eigenvalues, R_vectors = np.linalg.eig(L_Omega)
-    L_vectors = np.linalg.inv(R_vectors).T  # Левые собственные векторы
+    L_vectors = np.linalg.inv(R_vectors).T  # Left eigenvectors
 
-    # Векторизация Γ
+    # Vectorize Γ
     Gamma_vec = Gamma.flatten()
 
-    # Сумма по стационарным модам (Re(λ) ≈ 0)
+    # Sum over stationary modes (Re(λ) ≈ 0)
     phi_vec = np.zeros(49, dtype=complex)
     tolerance = 1e-10
 
@@ -645,69 +645,69 @@ def compute_phi_spectral(Gamma: np.ndarray, L_Omega: np.ndarray) -> np.ndarray:
             coeff = np.dot(L_vectors[:, k].conj(), Gamma_vec)
             phi_vec += coeff * R_vectors[:, k]
 
-    # Reshape и нормализация
+    # Reshape and normalize
     phi_Gamma = phi_vec.reshape(7, 7)
-    phi_Gamma = (phi_Gamma + phi_Gamma.conj().T) / 2  # Эрмитовость
-    phi_Gamma /= np.trace(phi_Gamma)  # Нормировка Tr = 1
+    phi_Gamma = (phi_Gamma + phi_Gamma.conj().T) / 2  # Hermiticity
+    phi_Gamma /= np.trace(phi_Gamma)  # Normalize Tr = 1
 
     return phi_Gamma.real
 ```
 
-**Вычислительная сложность:**
+**Computational complexity:**
 
-| Операция | Сложность |
+| Operation | Complexity |
 |----------|-----------|
-| Спектральное разложение $\mathcal{L}_\Omega$ | $O(N^6)$ для $N=7$, т.е. $O(49^3) \approx 10^5$ |
-| Проекция на стационарные моды | $O(N^4)$ |
-| Общая сложность | $O(N^6)$, но $\mathcal{L}_\Omega$ вычисляется один раз |
+| Spectral decomposition of $\mathcal{L}_\Omega$ | $O(N^6)$ for $N=7$, i.e. $O(49^3) \approx 10^5$ |
+| Projection onto stationary modes | $O(N^4)$ |
+| Total complexity | $O(N^6)$, but $\mathcal{L}_\Omega$ is computed once |
 
-**Связь со сжимающей формой:**
+**Relation to contracting form:**
 
-Спектральная формула эквивалентна каноническому определению при правильном выборе $\mathcal{L}_\Omega$. Преимущество спектральной формы:
+The spectral formula is equivalent to the canonical definition with the correct choice of $\mathcal{L}_\Omega$. Advantages of the spectral form:
 
-1. **Явное вычисление** — не требует итераций
-2. **Единственность** — нет зависимости от начального состояния
-3. **Категорная согласованность** — соответствует левому сопряжённому к включению $\mathrm{Sub}(\Gamma)$
+1. **Explicit computation** — no iterations required
+2. **Uniqueness** — no dependence on initial state
+3. **Categorical consistency** — corresponds to the left adjoint to inclusion $\mathrm{Sub}(\Gamma)$
 
-### 2.8 Рефлексия n-го порядка (для L3/L4)
+### 2.8 n-th order reflection (for L3/L4) {#28-рефлексия-n-го-порядка-для-l3l4}
 
-:::info Расширение для пост-рефлексивных уровней
-Для определения уровней L3 и L4 [иерархии интериорности](/docs/proofs/consciousness/interiority-hierarchy) требуется **итерированный** оператор φ.
+:::info Extension for post-reflective levels
+Defining levels L3 and L4 of the [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) requires an **iterated** operator φ.
 :::
 
-**Определение 2.12 (Итерированный оператор φ):**
+**Definition 2.12 (Iterated operator φ):**
 
 $$
 \varphi^{(n)}(\Gamma) := \underbrace{\varphi \circ \varphi \circ \cdots \circ \varphi}_{n}(\Gamma)
 $$
 
-с $\varphi^{(0)}(\Gamma) := \Gamma$.
+with $\varphi^{(0)}(\Gamma) := \Gamma$.
 
-**Определение 2.13 (Рефлексия n-го порядка):**
+**Definition 2.13 (n-th order reflection):**
 
 $$
 R^{(n)}(\Gamma) := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
 $$
 
-где $\mathrm{Fid}(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity (верность).
+where $\mathrm{Fid}(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}})|^2$ — fidelity.
 
-**Пороги для L3/L4:**
+**Thresholds for L3/L4:**
 
-| Переход | Порог | Универсальная формула |
+| Transition | Threshold | Universal formula |
 |---------|-------|----------------------|
 | L1→L2 | $R^{(1)} \geq 1/3$ | $X^{(2)}_{\text{th}} = 1/3$ |
 | L2→L3 | $R^{(2)} \geq 1/4$ | $X^{(3)}_{\text{th}} = 1/4$ |
 | L3→L4 | $\lim_n R^{(n)} > 0$ | — |
 
-**Алгоритм вычисления $R^{(2)}$:**
+**Algorithm for computing $R^{(2)}$:**
 
 ```python
 def compute_R2(Gamma: np.ndarray, L_Omega: np.ndarray) -> float:
     """
-    Вычисление рефлексии второго порядка R^(2).
+    Computing second-order reflection R^(2).
 
     Returns:
-        R2: fidelity между φ(Γ) и φ(φ(Γ))
+        R2: fidelity between φ(Γ) and φ(φ(Γ))
     """
     phi_Gamma = compute_phi_spectral(Gamma, L_Omega)
     phi_phi_Gamma = compute_phi_spectral(phi_Gamma, L_Omega)
@@ -722,105 +722,105 @@ def compute_R2(Gamma: np.ndarray, L_Omega: np.ndarray) -> float:
 
 ---
 
-## 3. Теорема о существовании неподвижной точки
+## 3. Theorem on existence of fixed point {#3-теорема-о-существовании-неподвижной-точки}
 
-### 3.1 Основная теорема
+### 3.1 Main theorem {#31-основная-теорема}
 
-**Теорема 3.1 (Существование неподвижной точки рефлексии):**
+**Theorem 3.1 (Existence of reflexion fixed point):**
 
-Пусть $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — сжимающее отображение с константой $k < 1$:
+Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a contracting map with constant $k < 1$:
 
 $$
 \forall \Gamma_1, \Gamma_2 \in \mathcal{D}(\mathcal{H}): \|\varphi(\Gamma_1) - \varphi(\Gamma_2)\|_F \leq k \cdot \|\Gamma_1 - \Gamma_2\|_F
 $$
 
-Тогда:
+Then:
 
 $$
 \exists! \, \Gamma^* \in \mathcal{D}(\mathcal{H}): \varphi(\Gamma^*) = \Gamma^*
 $$
 
-и для любого $\Gamma_0 \in \mathcal{D}(\mathcal{H})$:
+and for any $\Gamma_0 \in \mathcal{D}(\mathcal{H})$:
 
 $$
 \lim_{n \to \infty} \varphi^n(\Gamma_0) = \Gamma^*
 $$
 
-со скоростью сходимости:
+with convergence rate:
 
 $$
 \|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F
 $$
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1: Полнота пространства**
+**Step 1: Completeness of the space**
 
-$\mathcal{D}(\mathcal{H})$ — замкнутое подмножество банахова пространства $(\mathcal{L}(\mathcal{H}), \|\cdot\|_F)$.
+$\mathcal{D}(\mathcal{H})$ is a closed subset of the Banach space $(\mathcal{L}(\mathcal{H}), \|\cdot\|_F)$.
 
-Проверим замкнутость:
-- Предел последовательности эрмитовых матриц эрмитов
-- Предел последовательности положительно полуопределённых матриц положительно полуопределён (замкнутый конус)
-- $\mathrm{Tr}$ — непрерывная функция, $\mathrm{Tr}(\lim \rho_n) = \lim \mathrm{Tr}(\rho_n) = 1$
+Checking closedness:
+- The limit of a sequence of Hermitian matrices is Hermitian
+- The limit of a sequence of positive semi-definite matrices is positive semi-definite (closed cone)
+- $\mathrm{Tr}$ is a continuous function, $\mathrm{Tr}(\lim \rho_n) = \lim \mathrm{Tr}(\rho_n) = 1$
 
-Следовательно, $\mathcal{D}(\mathcal{H})$ — полное метрическое пространство.
+Therefore, $\mathcal{D}(\mathcal{H})$ is a complete metric space.
 
-**Шаг 2: Применение теоремы Банаха**
+**Step 2: Applying the Banach theorem**
 
-$\varphi$ — сжимающее отображение на полном метрическом пространстве.
+$\varphi$ is a contracting map on a complete metric space.
 
-По теореме Банаха о неподвижной точке:
-- Существует единственная неподвижная точка $\Gamma^*$
-- Итерации сходятся к $\Gamma^*$ для любого начального условия
+By the Banach fixed point theorem:
+- There exists a unique fixed point $\Gamma^*$
+- Iterations converge to $\Gamma^*$ for any initial condition
 
-**Шаг 3: Сохранение структуры**
+**Step 3: Structure preservation**
 
-Покажем, что $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
+Show that $\Gamma^* \in \mathcal{D}(\mathcal{H})$:
 
-$\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ (по построению $\varphi_k$ или как CPTP-отображение).
+$\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ (by construction of $\varphi_k$ or as CPTP map).
 
-$\Gamma^* = \lim_{n \to \infty} \varphi^n(\Gamma_0)$, где $\Gamma_0 \in \mathcal{D}(\mathcal{H})$ и $\varphi^n(\Gamma_0) \in \mathcal{D}(\mathcal{H})$ для всех $n$.
+$\Gamma^* = \lim_{n \to \infty} \varphi^n(\Gamma_0)$, where $\Gamma_0 \in \mathcal{D}(\mathcal{H})$ and $\varphi^n(\Gamma_0) \in \mathcal{D}(\mathcal{H})$ for all $n$.
 
-$\mathcal{D}(\mathcal{H})$ замкнуто $\Rightarrow \Gamma^* \in \mathcal{D}(\mathcal{H})$. ∎
+$\mathcal{D}(\mathcal{H})$ is closed $\Rightarrow \Gamma^* \in \mathcal{D}(\mathcal{H})$. ∎
 
-### 3.2 Приближённые неподвижные точки
+### 3.2 Approximate fixed points
 
-**Определение 3.1 ($\varepsilon$-неподвижная точка):**
+**Definition 3.1 ($\varepsilon$-fixed point):**
 
-$\Gamma$ называется $\varepsilon$-неподвижной точкой, если $\|\Gamma - \varphi(\Gamma)\|_F < \varepsilon$.
+$\Gamma$ is called an $\varepsilon$-fixed point if $\|\Gamma - \varphi(\Gamma)\|_F < \varepsilon$.
 
-**Теорема 3.2 (Существование $\varepsilon$-неподвижной точки для несжимающих $\varphi$):**
+**Theorem 3.2 (Existence of $\varepsilon$-fixed point for non-contracting $\varphi$):**
 
-Пусть $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — непрерывное отображение (не обязательно сжимающее).
+Let $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ be a continuous map (not necessarily contracting).
 
-Тогда для любого $\varepsilon > 0$ существует $\Gamma_\varepsilon \in \mathcal{D}(\mathcal{H})$ такое, что:
+Then for any $\varepsilon > 0$ there exists $\Gamma_\varepsilon \in \mathcal{D}(\mathcal{H})$ such that:
 
 $$
 \|\Gamma_\varepsilon - \varphi(\Gamma_\varepsilon)\|_F < \varepsilon
 $$
 
-**Доказательство:**
+**Proof:**
 
-Рассмотрим семейство отображений:
+Consider the family of maps:
 
 $$
 \varphi_\lambda(\Gamma) := \lambda \cdot \varphi(\Gamma) + (1 - \lambda) \cdot \Gamma_c
 $$
 
-где $\Gamma_c = I/N$ — центр $\mathcal{D}(\mathcal{H})$.
+where $\Gamma_c = I/N$ is the center of $\mathcal{D}(\mathcal{H})$.
 
-Для $\lambda < 1$: $\varphi_\lambda$ — сжимающее отображение с константой $\lambda$ (аналогично Лемме 2.1).
+For $\lambda < 1$: $\varphi_\lambda$ is a contracting map with constant $\lambda$ (analogously to Lemma 2.1).
 
-По Теореме 3.1: $\exists \, \Gamma^*_\lambda : \varphi_\lambda(\Gamma^*_\lambda) = \Gamma^*_\lambda$.
+By Theorem 3.1: $\exists \, \Gamma^*_\lambda : \varphi_\lambda(\Gamma^*_\lambda) = \Gamma^*_\lambda$.
 
-Рассмотрим:
+Consider:
 
 $$
 \|\Gamma^*_\lambda - \varphi(\Gamma^*_\lambda)\|_F = \|\Gamma^*_\lambda - \varphi_\lambda(\Gamma^*_\lambda) + \varphi_\lambda(\Gamma^*_\lambda) - \varphi(\Gamma^*_\lambda)\|_F
 $$
 
 $$
-= \|\varphi_\lambda(\Gamma^*_\lambda) - \varphi(\Gamma^*_\lambda)\|_F \quad (\Gamma^*_\lambda \text{ — неподвижная точка } \varphi_\lambda)
+= \|\varphi_\lambda(\Gamma^*_\lambda) - \varphi(\Gamma^*_\lambda)\|_F \quad (\Gamma^*_\lambda \text{ is a fixed point of } \varphi_\lambda)
 $$
 
 $$
@@ -831,44 +831,44 @@ $$
 \leq (1-\lambda) \cdot \mathrm{diam}(\mathcal{D}(\mathcal{H}))
 $$
 
-где $\mathrm{diam}(\mathcal{D}(\mathcal{H})) = \sup_{\rho_1, \rho_2} \|\rho_1 - \rho_2\|_F \leq \sqrt{2}$ (диаметр пространства матриц плотности).
+where $\mathrm{diam}(\mathcal{D}(\mathcal{H})) = \sup_{\rho_1, \rho_2} \|\rho_1 - \rho_2\|_F \leq \sqrt{2}$ (diameter of the density matrix space).
 
-Выбрав $\lambda = 1 - \varepsilon / (2 \cdot \mathrm{diam}(\mathcal{D}(\mathcal{H})))$, получаем:
+Choosing $\lambda = 1 - \varepsilon / (2 \cdot \mathrm{diam}(\mathcal{D}(\mathcal{H})))$, we get:
 
 $$
 \|\Gamma^*_\lambda - \varphi(\Gamma^*_\lambda)\|_F < \varepsilon
 $$
 ∎
 
-### 3.3 Условия сжатия для CPTP-отображений
+### 3.3 Contraction conditions for CPTP maps
 
-**Теорема 3.3 (Критерий сжатия):**
+**Theorem 3.3 (Contraction criterion):**
 
-CPTP-отображение $\mathcal{P}$ является сжимающим с константой $k < 1$ тогда и только тогда, когда:
+A CPTP map $\mathcal{P}$ is contracting with constant $k < 1$ if and only if:
 
 $$
 \exists \, \rho_{\text{inv}} \in \mathcal{D}(\mathcal{H}) : \mathcal{P}(\rho_{\text{inv}}) = \rho_{\text{inv}} \land \mathrm{spec}(\mathcal{P}|_{\rho_{\text{inv}}^\perp}) \subset \{z \in \mathbb{C} : |z| < 1\}
 $$
 
-где $\mathcal{P}|_{\rho_{\text{inv}}^\perp}$ — ограничение $\mathcal{P}$ на ортогональное дополнение к $\rho_{\text{inv}}$.
+where $\mathcal{P}|_{\rho_{\text{inv}}^\perp}$ is the restriction of $\mathcal{P}$ to the orthogonal complement of $\rho_{\text{inv}}$.
 
-**Интерпретация:** $\mathcal{P}$ сжимающее, если имеет единственное инвариантное состояние и все возмущения затухают.
+**Interpretation:** $\mathcal{P}$ is contracting if it has a unique invariant state and all perturbations decay.
 
-**Примеры сжимающих CPTP:**
+**Examples of contracting CPTP:**
 
-1. **Термализация:**
+1. **Thermalization:**
 
 $$
 \mathcal{P}_{\text{therm}}(\rho) = \lambda \rho + (1-\lambda) \rho_{\text{thermal}}, \quad \lambda < 1
 $$
 
-2. **Деполяризующий канал:**
+2. **Depolarizing channel:**
 
 $$
 \mathcal{P}_{\text{depol}}(\rho) = p \rho + (1-p) \frac{I}{N}, \quad p < 1
 $$
 
-3. **Амплитудное затухание:**
+3. **Amplitude damping:**
 
 $$
 \mathcal{P}_{\text{damp}}(\rho) = K_0 \rho K_0^\dagger + K_1 \rho K_1^\dagger
@@ -878,86 +878,86 @@ $$
 K_0 = |0\rangle\langle 0| + \sqrt{1-\gamma}|1\rangle\langle 1|, \quad K_1 = \sqrt{\gamma}|0\rangle\langle 1|
 $$
 
-Сжимающее для $\gamma > 0$.
+Contracting for $\gamma > 0$.
 
 ---
 
-## 4. Связь с мерой рефлексии R
+## 4. Relation to reflection measure R {#4-связь-с-мерой-рефлексии-r}
 
-### 4.1 Определение R
+### 4.1 Definition of R
 
-**Определение 4.1 ([Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
+**Definition 4.1 ([Reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)):**
 
 $$
 R(\Gamma) := \frac{1}{7P(\Gamma)}, \quad P = \mathrm{Tr}(\Gamma^2)
 $$
 
-Эквивалентная форма: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, где $\rho^*_{\mathrm{diss}} = I/7$, $\|\Gamma\|_F = \sqrt{P}$ (корень из [чистоты](/docs/core/dynamics/viability#определение-чистоты)).
+Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$, $\|\Gamma\|_F = \sqrt{P}$ (square root of [purity](/docs/core/dynamics/viability#определение-чистоты)).
 
-:::warning Различение R_canonical и Q_φ
-$R_{\text{canonical}} := 1/(7P)$ — **каноническое определение**, используемое во всех порогах ($R_{\text{th}} = 1/3$). Это мера близости к максимально смешанному состоянию $I/7$, **НЕ** мера качества самомоделирования.
+:::warning Distinction between R_canonical and Q_φ
+$R_{\text{canonical}} := 1/(7P)$ is the **canonical definition** used in all thresholds ($R_{\text{th}} = 1/3$). It is a measure of proximity to the maximally mixed state $I/7$, **NOT** a measure of quality of self-modeling.
 
-Мера качества самомоделирования определяется отдельно:
+The quality of self-modeling is defined separately:
 
 $$
 Q_\varphi(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}
 $$
 
-Сравнение при характерных состояниях:
-- При $\Gamma = I/7$ (диссипативный аттрактор): $R_{\text{canonical}} = 1$, $Q_\varphi = 1$.
-- При чистом состоянии ($P = 1$): $R_{\text{canonical}} = 1/7$, $Q_\varphi$ зависит от $\varphi$.
+Comparison at characteristic states:
+- At $\Gamma = I/7$ (dissipative attractor): $R_{\text{canonical}} = 1$, $Q_\varphi = 1$.
+- At a pure state ($P = 1$): $R_{\text{canonical}} = 1/7$, $Q_\varphi$ depends on $\varphi$.
 
-В разделах 4.2–4.3 ниже $R$ используется в смысле $Q_\varphi$ (качество самомоделирования), что корректно для анализа сходимости. Во всех остальных разделах и в пороговых условиях $R = R_{\text{canonical}} = 1/(7P)$.
+In sections 4.2–4.3 below, $R$ is used in the sense of $Q_\varphi$ (quality of self-modeling), which is valid for convergence analysis. In all other sections and in threshold conditions $R = R_{\text{canonical}} = 1/(7P)$.
 :::
 
-### 4.2 Сходимость R при приближении к неподвижной точке
+### 4.2 Convergence of R as fixed point is approached
 
-**Теорема 4.1 ($R \to 1$ при $\Gamma \to \Gamma^*$):**
+**Theorem 4.1 ($R \to 1$ as $\Gamma \to \Gamma^*$):**
 
-Пусть $\varphi$ — сжимающее отображение с неподвижной точкой $\Gamma^*$.
+Let $\varphi$ be a contracting map with fixed point $\Gamma^*$.
 
-Тогда:
+Then:
 
 $$
 \lim_{\Gamma \to \Gamma^*} R(\Gamma) = 1
 $$
 
-**Доказательство:**
+**Proof:**
 
-При $\Gamma \to \Gamma^*$:
+As $\Gamma \to \Gamma^*$:
 
 $$
 \|\Gamma - \varphi(\Gamma)\|_F \to \|\Gamma^* - \varphi(\Gamma^*)\|_F = \|\Gamma^* - \Gamma^*\|_F = 0
 $$
 
-Следовательно:
+Therefore:
 
 $$
-R(\Gamma) = \frac{1}{7P(\Gamma)} \to 1 \quad \text{(при } P(\Gamma^*) = 1/7 \text{, т.е. } \Gamma^* = I/7\text{)}
+R(\Gamma) = \frac{1}{7P(\Gamma)} \to 1 \quad \text{(when } P(\Gamma^*) = 1/7 \text{, i.e. } \Gamma^* = I/7\text{)}
 $$
 
-(Предполагаем $\Gamma^* \neq 0$, что выполнено для любой матрицы плотности: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
+(We assume $\Gamma^* \neq 0$, which holds for any density matrix: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
 
-### 4.3 Оценка скорости сходимости R
+### 4.3 Estimate of rate of convergence of R
 
-**Теорема 4.2 (Скорость сходимости R):**
+**Theorem 4.2 (Rate of convergence of R):**
 
-Для сжимающего $\varphi$ с константой $k$ и последовательности $\Gamma_n = \varphi^n(\Gamma_0)$:
+For contracting $\varphi$ with constant $k$ and sequence $\Gamma_n = \varphi^n(\Gamma_0)$:
 
 $$
 1 - R(\Gamma_n) \leq 4 k^{2n} \cdot \frac{\|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
 $$
 
-где $P_{\min} = \min_{\rho \in \mathcal{D}(\mathcal{H})} P(\rho) = 1/N$.
+where $P_{\min} = \min_{\rho \in \mathcal{D}(\mathcal{H})} P(\rho) = 1/N$.
 
-**Доказательство:**
+**Proof:**
 
 $$
 1 - R(\Gamma_n) = \frac{\|\Gamma_n - \varphi(\Gamma_n)\|^2_F}{\|\Gamma_n\|^2_F} = \frac{\|\varphi^n(\Gamma_0) - \varphi^{n+1}(\Gamma_0)\|^2_F}{P(\Gamma_n)}
 $$
 
 $$
-\leq \frac{(k^n \cdot \|\Gamma_0 - \varphi(\Gamma_0)\|_F)^2}{P(\Gamma_n)} \quad \text{(сжатие)}
+\leq \frac{(k^n \cdot \|\Gamma_0 - \varphi(\Gamma_0)\|_F)^2}{P(\Gamma_n)} \quad \text{(contraction)}
 $$
 
 $$
@@ -968,417 +968,417 @@ $$
 \leq \frac{k^{2n} \cdot (\|\Gamma_0 - \Gamma^*\|_F + k \cdot \|\Gamma^* - \Gamma_0\|_F)^2}{P_{\min}} = \frac{k^{2n} \cdot (1 + k)^2 \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
 $$
 
-Для $k < 1$: $(1 + k)^2 < 4$, что даёт оценку:
+For $k < 1$: $(1 + k)^2 < 4$, giving the bound:
 
 $$
 1 - R(\Gamma_n) \leq \frac{4 \cdot k^{2n} \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
 $$
 ∎
 
-:::tip Усиление: безусловная сходимость [Т]
-[Примитивность $\mathcal{L}_\Omega$](/docs/core/operators/lindblad-operators#примитивность-ℒω) гарантирует экспоненциальную сходимость $R \to 1$ при **любом** начальном состоянии $\Gamma_0 \in \mathcal{D}(\mathbb{C}^7)$, без дополнительных условий на начальные данные.
+:::tip Strengthening: unconditional convergence [Т]
+[Primitivity of $\mathcal{L}_\Omega$](/docs/core/operators/lindblad-operators#примитивность-ℒω) guarantees exponential convergence $R \to 1$ for **any** initial state $\Gamma_0 \in \mathcal{D}(\mathbb{C}^7)$, without additional conditions on initial data.
 :::
 
-### 4.4 Связь R с сознательностью C
+### 4.4 Relation of R to consciousness measure C
 
-**Теорема 4.3 (R как множитель сознательности):**
+**Theorem 4.3 (R as a factor of consciousness):**
 
-Из определения [сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c) $C = \Phi \times R$ **[Т T-140]** следует:
+From the definition of [consciousness](/docs/consciousness/foundations/self-observation#мера-сознательности-c) $C = \Phi \times R$ **[Т T-140]** it follows that:
 
 $$
 C(\Gamma^*) = \Phi(\Gamma^*) \times 1 = \Phi(\Gamma^*)
 $$
 
-для неподвижной точки $\Gamma^*$ (при $R = 1$, т.е. идеальной рефлексии).
+for the fixed point $\Gamma^*$ (at $R = 1$, i.e. ideal reflection).
 
-:::note О нотации
-Дифференциация $D_{\text{diff}} \geq D_{\min} = 2$ входит как отдельное условие жизнеспособности, а не как множитель $C$.
+:::note On notation
+Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a separate viability condition, not as a factor of $C$.
 :::
 
-**Следствие:** Идеальное самопознание ($\Gamma = \Gamma^*$) максимизирует вклад рефлексии в сознательность.
+**Corollary:** Ideal self-knowledge ($\Gamma = \Gamma^*$) maximizes the contribution of reflection to consciousness.
 
 ---
 
-## 5. Категорный аспект
+## 5. Categorical aspect {#5-категорный-аспект}
 
-:::info Статус раздела
-Категорный формализм предоставляет дополнительную структуру для понимания $\varphi$, но не является необходимым для практических вычислений в УГМ. См. также [категорный формализм](/docs/proofs/categorical/categorical-formalism).
+:::info Section status
+The categorical formalism provides additional structure for understanding $\varphi$, but is not necessary for practical computations in UHM. See also [categorical formalism](/docs/proofs/categorical/categorical-formalism).
 :::
 
-### 5.1 Категория матриц плотности
+### 5.1 Category of density matrices
 
-:::info DRY: Категория DensityMat
-Каноническое определение категории **DensityMat** (объекты — матрицы плотности, морфизмы — CPTP-каналы) и доказательство аксиом категории см. в [Категорный формализм, §1](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat).
+:::info DRY: Category DensityMat
+The canonical definition of category **DensityMat** (objects — density matrices, morphisms — CPTP channels) and proof of category axioms are in [Categorical formalism, §1](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat).
 :::
 
-**Определение 5.2 (Категория CPTP-каналов):**
+**Definition 5.2 (Category of CPTP channels):**
 
 $$
 \mathbf{CPTP} := (\mathrm{Ob}, \mathrm{Mor})
 $$
 
 $$
-\mathrm{Ob} = \{\mathcal{H}_n = \mathbb{C}^n : n \in \mathbb{N}\} \quad \text{(объекты — гильбертовы пространства)}
+\mathrm{Ob} = \{\mathcal{H}_n = \mathbb{C}^n : n \in \mathbb{N}\} \quad \text{(objects — Hilbert spaces)}
 $$
 
 $$
 \mathrm{Mor}(\mathcal{H}_n, \mathcal{H}_m) = \{\mathcal{P}: \mathcal{D}(\mathcal{H}_n) \to \mathcal{D}(\mathcal{H}_m) : \mathcal{P} \text{ — CPTP}\}
 $$
 
-Это хорошо определённая категория:
-- Композиция: $\mathcal{P} \circ \mathcal{Q}$ — CPTP, если $\mathcal{P}$ и $\mathcal{Q}$ — CPTP
-- Тождество: $\mathrm{id}_\mathcal{H}(\rho) = \rho$ — тривиальный CPTP-канал
+This is a well-defined category:
+- Composition: $\mathcal{P} \circ \mathcal{Q}$ is CPTP if $\mathcal{P}$ and $\mathcal{Q}$ are CPTP
+- Identity: $\mathrm{id}_\mathcal{H}(\rho) = \rho$ — trivial CPTP channel
 
-### 5.2 φ как эндоморфизм
+### 5.2 φ as endomorphism
 
-**Определение 5.3 ($\varphi$ как эндофунктор):**
+**Definition 5.3 ($\varphi$ as endofunctor):**
 
-$\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ индуцирует эндофунктор:
+$\varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})$ induces an endofunctor:
 
 $$
 F_\varphi: \mathbf{CPTP}|_\mathcal{H} \to \mathbf{CPTP}|_\mathcal{H}
 $$
 
-На объектах: $F_\varphi(\mathcal{H}) = \mathcal{H}$ (тождественно)
+On objects: $F_\varphi(\mathcal{H}) = \mathcal{H}$ (identity)
 
-На морфизмах: $F_\varphi(\mathcal{Q}) = \varphi \circ \mathcal{Q} \circ \varphi^{-1}$ (если $\varphi$ обратим)
+On morphisms: $F_\varphi(\mathcal{Q}) = \varphi \circ \mathcal{Q} \circ \varphi^{-1}$ (if $\varphi$ is invertible)
 
-**Проблема:** Общий CPTP-канал не обратим.
+**Problem:** A general CPTP channel is not invertible.
 
-**Решение:** Рассматриваем $\varphi$ как эндоморфизм в категории с единственным объектом:
+**Solution:** We consider $\varphi$ as an endomorphism in the category with a single object:
 
-**Определение 5.4 (Моноид CPTP-каналов):**
-
-$$
-\mathrm{End}(\mathcal{H}) := \mathrm{Mor}(\mathcal{H}, \mathcal{H}) \quad \text{в категории } \mathbf{CPTP}
-$$
-
-Это моноид с операцией композиции.
-
-$\varphi \in \mathrm{End}(\mathcal{H})$ — элемент этого моноида.
-
-### 5.3 Связь с монадами
-
-**Определение 5.5 (Монада самомоделирования):**
-
-Рассмотрим функтор $T: \mathbf{Set} \to \mathbf{Set}$:
+**Definition 5.4 (Monoid of CPTP channels):**
 
 $$
-T(X) = \mathcal{D}(\mathbb{C}^{|X|}) \quad \text{(множество матриц плотности размера } |X| \text{)}
+\mathrm{End}(\mathcal{H}) := \mathrm{Mor}(\mathcal{H}, \mathcal{H}) \quad \text{in category } \mathbf{CPTP}
 $$
 
-Структура монады:
-- **Unit ($\eta$):** $\eta_X: X \to T(X)$, $\eta_X(x) = |x\rangle\langle x|$ (чистое состояние)
-- **Mult ($\mu$):** $\mu_X: T(T(X)) \to T(X)$, $\mu_X(P) = \sum_{\rho \in \mathrm{supp}(P)} P(\rho) \cdot \rho$ (смешивание)
+This is a monoid with the composition operation.
 
-$\varphi$ индуцирует морфизм монад:
+$\varphi \in \mathrm{End}(\mathcal{H})$ — an element of this monoid.
+
+### 5.3 Relation to monads
+
+**Definition 5.5 (Monad of self-modeling):**
+
+Consider the functor $T: \mathbf{Set} \to \mathbf{Set}$:
+
+$$
+T(X) = \mathcal{D}(\mathbb{C}^{|X|}) \quad \text{(set of density matrices of size } |X| \text{)}
+$$
+
+Monad structure:
+- **Unit ($\eta$):** $\eta_X: X \to T(X)$, $\eta_X(x) = |x\rangle\langle x|$ (pure state)
+- **Mult ($\mu$):** $\mu_X: T(T(X)) \to T(X)$, $\mu_X(P) = \sum_{\rho \in \mathrm{supp}(P)} P(\rho) \cdot \rho$ (mixing)
+
+$\varphi$ induces a morphism of monads:
 
 $$
 \varphi^*: (T, \eta, \mu) \to (T, \eta, \mu)
 $$
 
-Условия естественности:
+Naturality conditions:
 
 $$
-\varphi \circ \eta = \eta \quad \text{(самонаблюдение чистого состояния — чистое)}
+\varphi \circ \eta = \eta \quad \text{(self-observation of a pure state is pure)}
 $$
 
 $$
-\varphi \circ \mu = \mu \circ T(\varphi) \quad \text{(согласованность со смешиванием)}
+\varphi \circ \mu = \mu \circ T(\varphi) \quad \text{(consistency with mixing)}
 $$
 
-**Теорема 5.1 (Неподвижная точка как алгебра монады):**
+**Theorem 5.1 (Fixed point as monad algebra):**
 
-Неподвижная точка $\Gamma^* = \varphi(\Gamma^*)$ определяет $T$-алгебру:
+The fixed point $\Gamma^* = \varphi(\Gamma^*)$ defines a $T$-algebra:
 
 $$
 \alpha: T(\Gamma^*) \to \Gamma^*, \quad \alpha = \mu_{\Gamma^*} \circ T(\eta_{\Gamma^*})
 $$
 
-**Интерпретация:** Система в состоянии идеального самопознания — это «алгебра над монадой самомоделирования».
+**Interpretation:** A system in the state of ideal self-knowledge is an "algebra over the self-modeling monad."
 
-### 5.4 2-категорная структура
+### 5.4 2-categorical structure
 
-**Определение 5.6 (2-категория квантовых систем QSys):**
+**Definition 5.6 (2-category of quantum systems QSys):**
 
-| Уровень | Элементы |
+| Level | Elements |
 |---------|----------|
-| 0-морфизмы (объекты) | Гильбертовы пространства $\mathcal{H}$ |
-| 1-морфизмы | CPTP-каналы $\mathcal{P}: \mathcal{D}(\mathcal{H}_1) \to \mathcal{D}(\mathcal{H}_2)$ |
-| 2-морфизмы | Естественные преобразования между каналами |
+| 0-morphisms (objects) | Hilbert spaces $\mathcal{H}$ |
+| 1-morphisms | CPTP channels $\mathcal{P}: \mathcal{D}(\mathcal{H}_1) \to \mathcal{D}(\mathcal{H}_2)$ |
+| 2-morphisms | Natural transformations between channels |
 
-$\varphi$ определяет 2-ячейку:
+$\varphi$ defines a 2-cell:
 
 $$
 \varphi: \mathrm{id}_{\mathcal{D}(\mathcal{H})} \Rightarrow \mathrm{id}_{\mathcal{D}(\mathcal{H})}
 $$
 
-(эндо-2-морфизм тождественного 1-морфизма)
+(endo-2-morphism of the identity 1-morphism)
 
-**Условие неподвижной точки в 2-категорном языке:**
+**Fixed point condition in 2-categorical language:**
 
-$\Gamma^*$ — объект такой, что $\varphi_{\Gamma^*} = \mathrm{id}_{\Gamma^*}$ (2-морфизм редуцируется к тождеству).
+$\Gamma^*$ is an object such that $\varphi_{\Gamma^*} = \mathrm{id}_{\Gamma^*}$ (the 2-morphism reduces to the identity).
 
 ---
 
-## 6. Следствия и ограничения
+## 6. Corollaries and limitations {#6-следствия-и-ограничения}
 
-### 6.1 Следствия формализации
+### 6.1 Corollaries of formalization
 
-**Следствие 6.1 (Необходимость сжатия для идеального самопознания):**
+**Corollary 6.1 (Necessity of contraction for ideal self-knowledge):**
 
-Для существования точного $\Gamma^* = \varphi(\Gamma^*)$ необходимо, чтобы $\varphi$ было сжимающим (или имело инвариантное подпространство).
+For the existence of exact $\Gamma^* = \varphi(\Gamma^*)$ it is necessary that $\varphi$ be contracting (or have an invariant subspace).
 
-**Следствие 6.2 (Приближённое самопознание всегда возможно):**
+**Corollary 6.2 (Approximate self-knowledge is always possible):**
 
-Для любого непрерывного $\varphi$ и любого $\varepsilon > 0$ существует $\varepsilon$-неподвижная точка.
+For any continuous $\varphi$ and any $\varepsilon > 0$ there exists an $\varepsilon$-fixed point.
 
-**Следствие 6.3 (Связь с термодинамикой):**
+**Corollary 6.3 (Relation to thermodynamics):**
 
-Сжимающие CPTP-каналы соответствуют системам с [диссипацией](/docs/core/dynamics/evolution#логический-лиувиллиан) (притяжение к равновесию).
+Contracting CPTP channels correspond to systems with [dissipation](/docs/core/dynamics/evolution#логический-лиувиллиан) (attraction to equilibrium).
 
-Неподвижная точка $\varphi$ — это «термодинамическое равновесие самонаблюдения».
+The fixed point of $\varphi$ is the "thermodynamic equilibrium of self-observation."
 
-### 6.2 Ограничения формализации
+### 6.2 Limitations of formalization
 
-**Ограничение 6.1 (Требование сжатия):**
+**Limitation 6.1 (Contraction requirement):**
 
-Теорема 3.1 требует $k < 1$. Для $k = 1$ (изометрические $\varphi$) неподвижная точка может не существовать или быть неединственной.
+Theorem 3.1 requires $k < 1$. For $k = 1$ (isometric $\varphi$) the fixed point may not exist or may be non-unique.
 
-**Ограничение 6.2 (Конечномерность):**
+**Limitation 6.2 (Finite-dimensionality):**
 
-Доказательства используют конечномерность $\mathcal{H}$. Обобщение на бесконечномерный случай требует дополнительных условий (компактность $\varphi$).
+The proofs use finite-dimensionality of $\mathcal{H}$. Generalization to the infinite-dimensional case requires additional conditions (compactness of $\varphi$).
 
-**Ограничение 6.3 (Статичность):**
+**Limitation 6.3 (Stationarity):**
 
-Формализация рассматривает $\varphi$ как фиксированный оператор. В динамической системе $\varphi$ может зависеть от времени: $\varphi = \varphi(t)$.
+The formalization treats $\varphi$ as a fixed operator. In a dynamical system $\varphi$ may depend on time: $\varphi = \varphi(t)$.
 
-**Открытый вопрос:** Существует ли «движущаяся неподвижная точка» $\Gamma^*(t)$ для $\varphi(t)$? См. Приложение C.
+**Open question:** Does a "moving fixed point" $\Gamma^*(t)$ exist for $\varphi(t)$? See Appendix C.
 
-### 6.3 Физическая интерпретация
+### 6.3 Physical interpretation
 
-**Интерпретация 6.1 (Самомоделирование как квантовый канал):**
+**Interpretation 6.1 (Self-modeling as quantum channel):**
 
-$\varphi$ = CPTP-канал означает, что самонаблюдение:
-- Сохраняет позитивность (не создаёт отрицательных вероятностей)
-- Сохраняет нормировку (полная вероятность = 1)
-- Может уменьшать информацию (не увеличивает различимость)
+$\varphi$ = CPTP channel means that self-observation:
+- Preserves positivity (does not create negative probabilities)
+- Preserves normalization (total probability = 1)
+- Can decrease information (does not increase distinguishability)
 
-**Интерпретация 6.2 (Неподвижная точка как самосогласованность):**
+**Interpretation 6.2 (Fixed point as self-consistency):**
 
-$\Gamma^* = \varphi(\Gamma^*)$ означает: «То, что система видит, совпадает с тем, что она есть.»
+$\Gamma^* = \varphi(\Gamma^*)$ means: "What the system sees coincides with what it is."
 
-Это состояние идеального самопознания — система не имеет «слепых пятен».
+This is the state of ideal self-knowledge — the system has no "blind spots."
 
-**Интерпретация 6.3 (Сжатие как смирение):**
+**Interpretation 6.3 (Contraction as humility):**
 
-$k < 1$ означает, что каждый акт самонаблюдения «приближает» к истине.
+$k < 1$ means that each act of self-observation "approaches" the truth.
 
-Система постепенно корректирует свою модель себя, сходясь к точному представлению.
+The system gradually corrects its self-model, converging to an accurate representation.
 
-### 6.4 Связь с УГМ
+### 6.4 Relation to UHM
 
-**Связь 6.1 (Рефлексивное замыкание):**
+**Relation 6.1 (Reflexive closure):**
 
-Условие [самонаблюдения](/docs/consciousness/foundations/self-observation):
+The condition of [self-observation](/docs/consciousness/foundations/self-observation):
 
 $$
 \varphi(\Gamma) \approx \Gamma
 $$
 
-Формализуется как: $R(\Gamma) \geq 1 - \varepsilon$ для некоторого $\varepsilon > 0$.
+is formalized as: $R(\Gamma) \geq 1 - \varepsilon$ for some $\varepsilon > 0$.
 
-**Связь 6.2 (Сознательность):**
+**Relation 6.2 (Consciousness):**
 
-$C = \Phi \times R$ **[Т T-140]** включает $R$ как множитель.
+$C = \Phi \times R$ **[Т T-140]** includes $R$ as a factor.
 
-При $R \to 1$: $C \to \Phi$ (максимальный вклад интеграции).
+At $R \to 1$: $C \to \Phi$ (maximum contribution of integration).
 
-**Связь 6.3 (Теорема об отсутствии зомби):**
+**Relation 6.3 (No-zombie theorem):**
 
-Из [иерархии интериорности](/docs/proofs/consciousness/interiority-hierarchy#34-теорема-о-жизнеспособности-no-zombie-theorem):
+From [interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy#34-теорема-о-жизнеспособности-no-zombie-theorem):
 
 $$
 \mathrm{Viable}(\mathbb{H}) \Rightarrow R(\Gamma) > 0
 $$
 
-Формализация $\varphi$ обеспечивает: $R(\Gamma) > 0 \Leftrightarrow \Gamma \neq \varphi(\Gamma)$ с конечной точностью.
+The formalization of $\varphi$ ensures: $R(\Gamma) > 0 \Leftrightarrow \Gamma \neq \varphi(\Gamma)$ with finite precision.
 
 ---
 
-## 7. Требования к реализации
+## 7. Implementation requirements {#7-требования-к-реализации}
 
-:::info Статус раздела
-Данный раздел содержит **математические требования** к реализации оператора самомоделирования φ. Конкретные архитектуры и код — предмет отдельных спецификаций.
+:::info Section status
+This section contains **mathematical requirements** for implementing the self-modeling operator φ. Concrete architectures and code are the subject of separate specifications.
 :::
 
-### 7.1 Требования к реализации φ
+### 7.1 Requirements for implementing φ
 
-**Требование 7.1 (Предиктивный оператор самомоделирования):**
+**Requirement 7.1 (Predictive self-modeling operator):**
 
-Реализация $\varphi$ должна удовлетворять:
+The implementation of $\varphi$ must satisfy:
 
 $$
 \varphi(\Gamma) = k \cdot \mathcal{P}_\theta(\Gamma) + (1-k) \cdot \Gamma_{\text{prior}}
 $$
 
-где:
-- $k \in (0, 1)$ — параметр сжатия, обеспечивающий контрактивность
-- $\mathcal{P}_\theta: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — параметризованное отображение
-- $\Gamma_{\text{prior}} = I/7$ — априорное состояние (максимальная энтропия)
+where:
+- $k \in (0, 1)$ — contraction parameter ensuring contractivity
+- $\mathcal{P}_\theta: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ — parameterized map
+- $\Gamma_{\text{prior}} = I/7$ — prior state (maximum entropy)
 
-**Гарантии реализации:**
-1. Выход — валидная матрица плотности (эрмитова, PSD, trace=1)
-2. Сжимающее отображение при $k < 1$
-3. Дифференцируемость по параметрам $\theta$
+**Implementation guarantees:**
+1. Output — valid density matrix (Hermitian, PSD, trace=1)
+2. Contracting map at $k < 1$
+3. Differentiability with respect to parameters $\theta$
 
-**Рекомендуемый метод:** Cholesky-параметризация $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ гарантирует PSD.
+**Recommended method:** Cholesky parameterization $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ guarantees PSD.
 
-### 7.2 Требования к сенсорному энкодеру
+### 7.2 Requirements for sensor encoder
 
-**Требование 7.2 (Encoder: sensors → Γ):**
+**Requirement 7.2 (Encoder: sensors → Γ):**
 
 $$
 \Gamma = \text{Encoder}_\psi(s) = \frac{L(s) \cdot L(s)^\dagger}{\mathrm{Tr}(L(s) \cdot L(s)^\dagger)}
 $$
 
-где $L(s)$ — нижнетреугольная матрица, параметризованная от сенсорного входа $s$.
+where $L(s)$ is a lower-triangular matrix parameterized from sensor input $s$.
 
-### 7.3 Требования к декодеру действий
+### 7.3 Requirements for action decoder
 
-**Требование 7.3 (Decoder: Γ → actions):**
+**Requirement 7.3 (Decoder: Γ → actions):**
 
-Для дискретных действий:
+For discrete actions:
 $$
 \pi(a|\Gamma) = \text{softmax}(W \cdot \text{vec}(\Gamma) + b)
 $$
 
-Для непрерывных действий:
+For continuous actions:
 $$
 \mu, \sigma = \text{Decoder}(\Gamma), \quad a \sim \mathcal{N}(\mu, \sigma^2)
 $$
 
-### 7.4 Обучение
+### 7.4 Training
 
-Минимизация ошибки самопредсказания:
+Minimization of self-prediction error:
 
 $$
 \mathcal{L}(\theta) = \mathbb{E}_{\Gamma \sim \text{trajectories}}[\|\Gamma_{t+1} - \mathcal{P}_\theta(\Gamma_t)\|_F^2]
 $$
 
-:::note Статус реализации
-Требования в данном разделе достаточны для построения конкретной реализации. Cholesky-параметризация гарантирует корректность выходных матриц плотности.
+:::note Implementation status
+The requirements in this section are sufficient for building a concrete implementation. Cholesky parameterization guarantees correctness of the output density matrices.
 :::
 
 ---
 
-## 8. Операциональный алгоритм для φ {#операциональный-алгоритм}
+## 8. Operational algorithm for φ {#операциональный-алгоритм}
 
-:::info Статус: Инженерная спецификация
-Данный раздел предоставляет **конкретный алгоритм** для вычисления оператора самомоделирования φ, пригодный для программной реализации.
+:::info Status: Engineering specification
+This section provides a **concrete algorithm** for computing the self-modeling operator φ, suitable for software implementation.
 :::
 
-### 8.1 Алгоритм: Базовое самомоделирование
+### 8.1 Algorithm: Basic self-modeling
 
-**Вход:** Матрица когерентности $\Gamma \in \mathbb{C}^{7 \times 7}$
+**Input:** Coherence matrix $\Gamma \in \mathbb{C}^{7 \times 7}$
 
-**Параметры:**
-- $k \in (0, 1)$ — коэффициент сжатия (рекомендуется $k = 0.95$)
-- $w \in \Delta^6$ — вектор весов якоря (по умолчанию $w = (1/7, \ldots, 1/7)$)
+**Parameters:**
+- $k \in (0, 1)$ — contraction coefficient (recommended $k = 0.95$)
+- $w \in \Delta^6$ — anchor weight vector (default $w = (1/7, \ldots, 1/7)$)
 
-**Алгоритм:**
+**Algorithm:**
 
 ```
 FUNCTION φ_basic(Γ, k, w):
-    # Шаг 1: Извлечь диагональ (декогеренция в базисе измерений)
-    diag_Γ := diagonal(Γ)  # вектор размера 7
+    # Step 1: Extract diagonal (dephasing in measurement basis)
+    diag_Γ := diagonal(Γ)  # vector of size 7
 
-    # Шаг 2: Построить предиктивное состояние
-    P_pred := diag(diag_Γ)  # диагональная матрица 7×7
+    # Step 2: Build predictive state
+    P_pred := diag(diag_Γ)  # diagonal matrix 7×7
 
-    # Шаг 3: Построить якорное состояние
+    # Step 3: Build anchor state
     Γ_anchor := diag(w)
 
-    # Шаг 4: Смешать с коэффициентом сжатия
+    # Step 4: Mix with contraction coefficient
     φ_Γ := k * P_pred + (1 - k) * Γ_anchor
 
     RETURN φ_Γ
 ```
 
-**Гарантии:**
-- Выход — валидная матрица плотности (эрмитова, PSD, trace=1)
-- Сжимающее отображение с константой $k$
-- Вычислительная сложность: $O(N)$ где $N = 7$
+**Guarantees:**
+- Output — valid density matrix (Hermitian, PSD, trace=1)
+- Contracting map with constant $k$
+- Computational complexity: $O(N)$ where $N = 7$
 
-### 8.2 Алгоритм: Нейросетевое самомоделирование
+### 8.2 Algorithm: Neural network self-modeling
 
-Для обучаемого φ с параметрами θ:
+For trainable φ with parameters θ:
 
 ```
 FUNCTION φ_neural(Γ, θ):
-    # Шаг 1: Векторизовать входную матрицу
-    x := flatten_upper_triangular(Γ)  # 28 параметров (7 диаг + 21 когер)
+    # Step 1: Vectorize input matrix
+    x := flatten_upper_triangular(Γ)  # 28 parameters (7 diag + 21 coh)
 
-    # Шаг 2: Пропустить через нейросеть
+    # Step 2: Pass through neural network
     h := ReLU(W₁ · x + b₁)
-    L_vec := W₂ · h + b₂  # 28 параметров для нижнетреугольной матрицы
+    L_vec := W₂ · h + b₂  # 28 parameters for lower-triangular matrix
 
-    # Шаг 3: Восстановить нижнетреугольную матрицу (Cholesky)
+    # Step 3: Reconstruct lower-triangular matrix (Cholesky)
     L := unflatten_lower_triangular(L_vec)  # 7×7
 
-    # Шаг 4: Построить PSD матрицу и нормировать
+    # Step 4: Build PSD matrix and normalize
     Γ_raw := L · L†
     φ_Γ := Γ_raw / Tr(Γ_raw)
 
-    # Шаг 5: Применить сжатие к якорю
-    k := sigmoid(θ_k)  # обучаемый коэффициент ∈ (0, 1)
+    # Step 5: Apply contraction to anchor
+    k := sigmoid(θ_k)  # trainable coefficient ∈ (0, 1)
     φ_Γ := k * φ_Γ + (1 - k) * I/7
 
     RETURN φ_Γ
 ```
 
-**Обучение:** Минимизировать ошибку предсказания следующего состояния:
+**Training:** Minimize next-state prediction error:
 
 $$
 \mathcal{L}(\theta) = \mathbb{E}_{(\Gamma_t, \Gamma_{t+1}) \sim \tau}[\|\Gamma_{t+1} - \varphi_\theta(\Gamma_t)\|_F^2]
 $$
 
-### 8.3 Вычисление меры рефлексии R
+### 8.3 Computing reflection measure R {#83-вычисление-меры-рефлексии-r}
 
 ```
 FUNCTION compute_R_canonical(Γ):
-    # Каноническое определение R (используется в порогах)
-    P := Tr(Γ† · Γ)       # чистота
+    # Canonical definition of R (used in thresholds)
+    P := Tr(Γ† · Γ)       # purity
     R := 1 / (7 * P)
     RETURN R
 
 FUNCTION compute_Q_phi(Γ, φ):
-    # Качество самомоделирования (отдельная мера, см. WARNING выше)
+    # Quality of self-modeling (separate measure, see WARNING above)
     φ_Γ := φ(Γ)
     error := Γ - φ_Γ
     error_norm_sq := Tr(error† · error)
-    Γ_norm_sq := Tr(Γ† · Γ)  # = P (чистота)
+    Γ_norm_sq := Tr(Γ† · Γ)  # = P (purity)
     Q := 1 - error_norm_sq / Γ_norm_sq
     RETURN Q
 ```
 
-### 8.4 Проверка порога L2
+### 8.4 Checking L2 threshold
 
-:::warning Ограничение 7D-формализма
-Функция `Tr_not_E` (частичный след) требует тензорной структуры. В минимальном 7D-формализме ($\mathcal{H} = \mathbb{C}^7$) используйте `is_L2_minimal` без $D_{\text{diff}}$ — см. [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
+:::warning Limitation of 7D formalism
+The function `Tr_not_E` (partial trace) requires tensor structure. In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$) use `is_L2_minimal` without $D_{\text{diff}}$ — see [dimension-e.md](/docs/core/structure/dimension-e#tensor-factorization-ddiff).
 :::
 
 ```
 FUNCTION is_L2_conscious(Γ, φ):
-    # Вычислить три меры
+    # Compute three measures
     R := compute_R(Γ, φ)
     Φ := compute_integration(Γ)  # Σ|γ_ij|² / Σγ_ii²
     D_diff := exp(von_neumann_entropy(Tr_not_E(Γ)))
 
-    # Проверить пороги
+    # Check thresholds
     RETURN (R ≥ 1/3) AND (Φ ≥ 1) AND (D_diff ≥ 2)
 
-# Минимальная версия без D_diff (для 7D-формализма)
+# Minimal version without D_diff (for 7D formalism)
 FUNCTION is_L2_minimal(Γ, φ):
     R := compute_R(Γ, φ)
     Φ := compute_integration(Γ)
@@ -1387,70 +1387,70 @@ FUNCTION is_L2_minimal(Γ, φ):
 
 ---
 
-## 9. Связь с механизмом регенерации {#связь-с-регенерацией}
+## 9. Relation to the regeneration mechanism {#связь-с-регенерацией}
 
-:::info Ключевая связь
-Оператор самомоделирования $\varphi$ определяет целевое состояние регенерации: $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator)). Для каждого $\Gamma$ самомодель $\varphi(\Gamma)$ единственна (CPTP-канал).
+:::info Key relation
+The self-modeling operator $\varphi$ defines the target state of regeneration: $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([operator φ](/docs/core/operators/phi-operator)). For each $\Gamma$ the self-model $\varphi(\Gamma)$ is unique (CPTP channel).
 :::
 
-### 9.1 Регенерация как стремление к самомодели
+### 9.1 Regeneration as striving toward the self-model
 
-[Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) уравнения эволюции $\Gamma$ **полностью выведен** из аксиом [Т]:
+The [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) of the evolution equation for $\Gamma$ is **fully derived** from the axioms [Т]:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где:
-- $\kappa(\Gamma)$ — [коэффициент регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) [Т] (категориальный вывод из сопряжения)
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т] (замещающий канал + бюресова оптимальность)
-- $g_V(P)$ — V-preservation gate [Т] (уточняет $\Theta(\Delta F)$ из Ландауэра, см. [эволюция](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+where:
+- $\kappa(\Gamma)$ — [regeneration coefficient](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) [Т] (categorical derivation from adjunction)
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([operator φ](/docs/core/operators/phi-operator))
+- $(\rho_* - \Gamma)$ — unique CPTP relaxation [Т] (replacement channel + Bures optimality)
+- $g_V(P)$ — V-preservation gate [Т] (refines $\Theta(\Delta F)$ from Landauer, see [evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
-Полный вывод: [Эволюция → Вывод формы регенерации](/docs/core/dynamics/evolution#вывод-формы-регенерации).
+Full derivation: [Evolution → Derivation of regeneration form](/docs/core/dynamics/evolution#вывод-формы-регенерации).
 
-**Интерпретация:** Система регенерирует, стремясь к состоянию $\varphi(\Gamma)$ — тому, каким она «видит себя». Регенерация — это **активный процесс самореализации**, где система становится своей собственной моделью.
+**Interpretation:** The system regenerates by striving toward state $\varphi(\Gamma)$ — how it "sees itself." Regeneration is an **active process of self-realization**, where the system becomes its own model.
 
-### 9.2 Неподвижная точка и жизнеспособное равновесие
+### 9.2 Fixed point and viable equilibrium
 
-**Теорема 9.1 (Равновесие регенерации):**
+**Theorem 9.1 (Regeneration equilibrium):**
 
-При $\Gamma = \Gamma^* = \varphi(\Gamma^*)$ регенеративный член обращается в ноль:
+At $\Gamma = \Gamma^* = \varphi(\Gamma^*)$ the regenerative term vanishes:
 
 $$
 \mathcal{R}[\Gamma^*, E] = \kappa(\Gamma^*) \cdot (\varphi(\Gamma^*) - \Gamma^*) \cdot g_V(P) = 0
 $$
 
-**Доказательство:** $\varphi(\Gamma^*) = \Gamma^*$ по определению неподвижной точки. ∎
+**Proof:** $\varphi(\Gamma^*) = \Gamma^*$ by definition of fixed point. ∎
 
-**Следствие 9.1:** В неподвижной точке $\Gamma^*$ система находится в состоянии **идеального самопознания** — регенерация не требуется, так как текущее состояние совпадает с самомоделью.
+**Corollary 9.1:** At the fixed point $\Gamma^*$ the system is in a state of **ideal self-knowledge** — regeneration is not required, as the current state coincides with the self-model.
 
-### 9.3 Динамика вне неподвижной точки
+### 9.3 Dynamics outside the fixed point
 
-При $\Gamma \neq \Gamma^*$ возникает «тяга» к самомодели:
+At $\Gamma \neq \Gamma^*$ a "pull" toward the self-model arises:
 
 $$
 \rho_* - \Gamma = \varphi(\Gamma) - \Gamma \neq 0
 $$
 
-**Направление регенерации:**
+**Direction of regeneration:**
 
-1. Если $P(\varphi(\Gamma)) > P(\Gamma)$: регенерация **увеличивает** чистоту
-2. Если $P(\varphi(\Gamma)) < P(\Gamma)$: регенерация **уменьшает** чистоту
+1. If $P(\varphi(\Gamma)) > P(\Gamma)$: regeneration **increases** purity
+2. If $P(\varphi(\Gamma)) < P(\Gamma)$: regeneration **decreases** purity
 
-:::warning Критическое условие: жизнеспособность самомодели
-Для того чтобы регенерация поддерживала жизнеспособность, необходимо:
+:::warning Critical condition: viability of self-model
+For regeneration to support viability, it is necessary that:
 
 $$
 P(\varphi(\Gamma)) \geq P_{\text{crit}} = \frac{2}{7}
 $$
 
-При неправильно сконструированном $\varphi$ система может регенерировать **к нежизнеспособному состоянию**. Это накладывает ограничения на выбор якоря $\Gamma_{\text{anchor}}$ (см. [Определение 2.11](#жизнеспособный-якорь)).
+With an incorrectly constructed $\varphi$ the system may regenerate **toward a non-viable state**. This places constraints on the choice of anchor $\Gamma_{\text{anchor}}$ (see [Definition 2.11](#жизнеспособный-якорь)).
 :::
 
-### 9.4 Связь с мерой рефлексии R
+### 9.4 Relation to reflection measure R
 
-[Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R$ и регенеративный член $\mathcal{R}$ связаны:
+The [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R$ and the regenerative term $\mathcal{R}$ are related:
 
 $$
 1 - R(\Gamma) = \frac{\|\Gamma - I/7\|^2_F}{P(\Gamma)} = 1 - \frac{1}{7P}
@@ -1460,55 +1460,55 @@ $$
 \|\mathcal{R}[\Gamma, E]\| \propto \|\rho^*_{\mathrm{diss}} - \Gamma\| = \|I/7 - \Gamma\| = \sqrt{P \cdot (1 - R)}
 $$
 
-**Интерпретация:**
-- Высокое $R$ (близость к самомодели) → малая амплитуда регенерации
-- Низкое $R$ (расхождение с самомоделью) → большая амплитуда регенерации
+**Interpretation:**
+- High $R$ (proximity to self-model) → small amplitude of regeneration
+- Low $R$ (divergence from self-model) → large amplitude of regeneration
 
-Система с хорошим самопознанием ($R \to 1$) требует минимальной регенерации.
+A system with good self-knowledge ($R \to 1$) requires minimal regeneration.
 
-### 9.5 Устойчивость жизнеспособной области
+### 9.5 Stability of viable region
 
-**Теорема 9.2 (Регенерация удерживает в $\mathcal{V}$):**
+**Theorem 9.2 (Regeneration keeps system in $\mathcal{V}$):**
 
-Пусть $\varphi$ — сжимающее отображение с неподвижной точкой $\Gamma^* \in \mathcal{V}$ ([жизнеспособная область](/docs/core/dynamics/viability#область-жизнеспособности)).
+Let $\varphi$ be a contracting map with fixed point $\Gamma^* \in \mathcal{V}$ ([viable region](/docs/core/dynamics/viability#область-жизнеспособности)).
 
-Тогда при достаточно большом $\kappa$ регенерация противодействует диссипации и удерживает систему в $\mathcal{V}$:
+Then at sufficiently large $\kappa$ regeneration counteracts dissipation and keeps the system in $\mathcal{V}$:
 
 $$
-\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{при } P < P(\Gamma^*)
+\left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{at } P < P(\Gamma^*)
 $$
 
-**Интерпретация:** Регенерация — это **защитный механизм**, использующий самомодель как ориентир для восстановления когерентности.
+**Interpretation:** Regeneration is a **protective mechanism** that uses the self-model as a guide for restoring coherence.
 
-### 9.6 Сохранение положительности при регенерации
+### 9.6 Preservation of positivity under regeneration
 
-:::info Теорема (CPTP-структура регенерации)
-Регенеративный оператор $R_\alpha = (1 - \alpha) \cdot \mathcal{E} + \alpha \cdot \varphi$ с $\alpha = \kappa \cdot \Delta\tau < 1$ является **CPTP-каналом**:
+:::info Theorem (CPTP structure of regeneration)
+The regenerative operator $R_\alpha = (1 - \alpha) \cdot \mathcal{E} + \alpha \cdot \varphi$ with $\alpha = \kappa \cdot \Delta\tau < 1$ is a **CPTP channel**:
 
 $$
 R_\alpha[\Gamma] = \sum_k \tilde{K}_k \Gamma \tilde{K}_k^\dagger
 $$
 
-с операторами Крауса $\tilde{K}_0 = \sqrt{1-\alpha}\,I$ и $\tilde{K}_k = \sqrt{\alpha} K_k$ (от аттрактора $\varphi$).
+with Kraus operators $\tilde{K}_0 = \sqrt{1-\alpha}\,I$ and $\tilde{K}_k = \sqrt{\alpha} K_k$ (from attractor $\varphi$).
 :::
 
-**Следствие:** Регенерация к самомодели $\varphi(\Gamma)$ **гарантирует** сохранение:
-- Положительности: $\Gamma \geq 0$
-- Нормировки: $\mathrm{Tr}(\Gamma) = 1$
+**Corollary:** Regeneration toward self-model $\varphi(\Gamma)$ **guarantees** preservation of:
+- Positivity: $\Gamma \geq 0$
+- Normalization: $\mathrm{Tr}(\Gamma) = 1$
 
-[Подробнее о CPTP-структуре регенерации →](/docs/core/dynamics/evolution#сохранение-положительности)
+[More on CPTP structure of regeneration →](/docs/core/dynamics/evolution#сохранение-положительности)
 
 ---
 
-## Приложение A: Примеры вычислений
+## Appendix A: Computation examples
 
-### A.1 Деполяризующий канал как φ
+### A.1 Depolarizing channel as φ
 
 $$
 \varphi_p(\rho) = p \cdot \rho + (1 - p) \cdot \frac{I}{N}
 $$
 
-**Неподвижная точка:**
+**Fixed point:**
 
 $$
 \Gamma^* = p \cdot \Gamma^* + (1 - p) \cdot \frac{I}{N}
@@ -1518,65 +1518,65 @@ $$
 (1 - p) \cdot \Gamma^* = (1 - p) \cdot \frac{I}{N} \quad \Rightarrow \quad \Gamma^* = \frac{I}{N}
 $$
 
-**Константа сжатия:** $k = p < 1$
+**Contraction constant:** $k = p < 1$
 
-**Мера рефлексии в неподвижной точке:**
+**Reflection measure at fixed point:**
 
 $$
 R(\Gamma^*) = R\left(\frac{I}{N}\right) = 1 - \frac{\|I/N - \varphi(I/N)\|^2_F}{\|I/N\|^2_F} = 1 - \frac{0}{1/N} = 1
 $$
 
-### A.2 Проекционное самонаблюдение
+### A.2 Projection self-observation
 
-Пусть $\{|i\rangle\}$ — ортонормированный базис, $P_i = |i\rangle\langle i|$.
+Let $\{|i\rangle\}$ be an orthonormal basis, $P_i = |i\rangle\langle i|$.
 
 $$
 \varphi_{\text{diag}}(\rho) = \sum_i P_i \rho P_i = \sum_i \rho_{ii} |i\rangle\langle i|
 $$
 
-(Диагонализация в заданном базисе)
+(Diagonalization in the given basis)
 
-**Неподвижные точки:**
+**Fixed points:**
 
 $$
-\varphi_{\text{diag}}(\Gamma) = \Gamma \quad \Leftrightarrow \quad \Gamma \text{ диагональна}
+\varphi_{\text{diag}}(\Gamma) = \Gamma \quad \Leftrightarrow \quad \Gamma \text{ is diagonal}
 $$
 
-Множество неподвижных точек — $(N-1)$-мерный симплекс:
+The set of fixed points is an $(N-1)$-dimensional simplex:
 
 $$
 \mathrm{Fix}(\varphi_{\text{diag}}) = \left\{\sum_i p_i |i\rangle\langle i| : p_i \geq 0, \sum_i p_i = 1\right\} \cong \Delta^{N-1}
 $$
 
-где $N = \dim(\mathcal{H}) = 7$ для [Голонома](/docs/core/structure/holon).
+where $N = \dim(\mathcal{H}) = 7$ for the [Holon](/docs/core/structure/holon).
 
-**Замечание:** Это не сжимающее отображение ($k = 1$ на множестве неподвижных точек).
+**Remark:** This is not a contracting map ($k = 1$ on the set of fixed points).
 
 ---
 
-## Приложение B: Доказательство CPTP-сохранения структуры
+## Appendix B: Proof of CPTP structure preservation
 
-**Лемма B.1:** Если $\mathcal{P}$ — CPTP и $\rho \in \mathcal{D}(\mathcal{H})$, то $\mathcal{P}(\rho) \in \mathcal{D}(\mathcal{H})$.
+**Lemma B.1:** If $\mathcal{P}$ is CPTP and $\rho \in \mathcal{D}(\mathcal{H})$, then $\mathcal{P}(\rho) \in \mathcal{D}(\mathcal{H})$.
 
-**Доказательство:**
+**Proof:**
 
-1. **Эрмитовость:**
+1. **Hermiticity:**
 
 $$
 \mathcal{P}(\rho)^\dagger = \left(\sum_m K_m \rho K_m^\dagger\right)^\dagger = \sum_m K_m \rho^\dagger K_m^\dagger = \sum_m K_m \rho K_m^\dagger = \mathcal{P}(\rho)
 $$
 
-2. **Положительность:**
+2. **Positivity:**
 
-Для любого $|\psi\rangle$:
+For any $|\psi\rangle$:
 
 $$
 \langle\psi|\mathcal{P}(\rho)|\psi\rangle = \sum_m \langle\psi|K_m \rho K_m^\dagger|\psi\rangle = \sum_m \langle K_m^\dagger\psi|\rho|K_m^\dagger\psi\rangle \geq 0
 $$
 
-(так как $\rho \geq 0$)
+(since $\rho \geq 0$)
 
-3. **Нормировка:**
+3. **Normalization:**
 
 $$
 \mathrm{Tr}(\mathcal{P}(\rho)) = \mathrm{Tr}\left(\sum_m K_m \rho K_m^\dagger\right) = \sum_m \mathrm{Tr}(K_m^\dagger K_m \rho) = \mathrm{Tr}\left(\left(\sum_m K_m^\dagger K_m\right) \rho\right) = \mathrm{Tr}(I \cdot \rho) = 1
@@ -1585,9 +1585,9 @@ $$
 
 ---
 
-## Приложение C: Обобщение на зависящий от времени φ
+## Appendix C: Generalization to time-dependent φ
 
-**Определение C.1 (Динамический оператор самомоделирования):**
+**Definition C.1 (Dynamic self-modeling operator):**
 
 $$
 \varphi: [0, \infty) \times \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
@@ -1597,100 +1597,100 @@ $$
 (\tau, \Gamma) \mapsto \varphi(\tau, \Gamma)
 $$
 
-**Уравнение динамической неподвижной точки:**
+**Dynamic fixed point equation:**
 
 $$
 \Gamma^*(\tau) = \varphi(\tau, \Gamma^*(\tau))
 $$
 
-**Теорема C.1 (Существование динамической неподвижной точки):**
+**Theorem C.1 (Existence of dynamic fixed point):**
 
-Если $\varphi(\tau, \cdot)$ сжимающее с константой $k < 1$ для всех $\tau$, и $\varphi$ непрерывно по $\tau$, то:
+If $\varphi(\tau, \cdot)$ is contracting with constant $k < 1$ for all $\tau$, and $\varphi$ is continuous in $\tau$, then:
 
-1. $\Gamma^*(\tau)$ существует и единственна для каждого $\tau$
-2. $\Gamma^*(\tau)$ непрерывна по $\tau$
-3. $\frac{d\Gamma^*}{d\tau} = \frac{\partial \varphi}{\partial \tau} + (D\varphi)\left(\frac{d\Gamma^*}{d\tau}\right)$ (неявное уравнение)
+1. $\Gamma^*(\tau)$ exists and is unique for each $\tau$
+2. $\Gamma^*(\tau)$ is continuous in $\tau$
+3. $\frac{d\Gamma^*}{d\tau} = \frac{\partial \varphi}{\partial \tau} + (D\varphi)\left(\frac{d\Gamma^*}{d\tau}\right)$ (implicit equation)
 
-**Доказательство:** Следует из применения теоремы о неявной функции в банаховом пространстве.
+**Proof:** Follows from applying the implicit function theorem in a Banach space.
 
-### Октонионный контекст самомоделирования {#октонионный-контекст}
+### Octonionic context of self-modeling {#октонионный-контекст}
 
-:::note Самомоделирование и альтернативность [И]
-В [октонионной интерпретации](../../core/structure/dimensions#октонионная-интерпретация) оператор самомоделирования $\varphi$ действует на пространстве Im(𝕆). Альтернативность октонионов (теорема Артина [Т]) гарантирует, что $\varphi$ ассоциативен при действии на любую пару измерений, но может проявлять неассоциативность при одновременном воздействии на три и более измерения.
+:::note Self-modeling and alternativity [И]
+In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), the self-modeling operator $\varphi$ acts on the space Im(𝕆). Alternativity of octonions (Artin's theorem [Т]) guarantees that $\varphi$ is associative when acting on any pair of dimensions, but may exhibit non-associativity when acting simultaneously on three or more dimensions.
 
-Это согласуется со свойством неподвижной точки $\varphi(\Gamma^*) = \Gamma^*$: самосогласованность достигается на полном 7-мерном пространстве, где неассоциативность интегрирована в структуру. Мост [Т] (замкнут, T15). См. [структурный вывод](../minimality/theorem-octonionic-derivation).
+This is consistent with the fixed point property $\varphi(\Gamma^*) = \Gamma^*$: self-consistency is achieved in the full 7-dimensional space where non-associativity is integrated into the structure. Bridge [Т] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---
 
-## Тензорная факторизация φ для составных систем {#тензорная-факторизация}
+## Tensor factorization of φ for composite systems {#тензорная-факторизация}
 
-:::info Связь с запретом сигнализации
-Тензорная факторизация $\varphi$ — ключевое свойство, обеспечивающее [совместимость $\mathcal{R}$ с запретом сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). Оно гарантирует, что самомоделирование автономных подсистем не создаёт каналов сверхсветовой коммуникации.
+:::info Relation to no-signaling prohibition
+Tensor factorization of $\varphi$ is a key property ensuring [compatibility of $\mathcal{R}$ with no-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). It guarantees that self-modeling of autonomous subsystems does not create channels of superluminal communication.
 :::
 
-### Каноническое расширение φ на составную систему
+### Canonical extension of φ to composite system
 
-**Определение (Каноническое расширение $\varphi_A$).** Для автономного голонома $A$ в составной системе $A \otimes B$ расширение $\varphi_A$ определяется:
+**Definition (Canonical extension $\varphi_A$).** For an autonomous holon $A$ in a composite system $A \otimes B$, the extension $\varphi_A$ is defined as:
 
 $$
 \tilde{\varphi}_A := \varphi_A \otimes \mathrm{id}_B
 $$
 
-Это единственное расширение, совместимое с CPTP-структурой $\varphi_A$ и тензорной структурой категории $\mathbf{DensityMat}$.
+This is the unique extension compatible with the CPTP structure of $\varphi_A$ and the tensor structure of category $\mathbf{DensityMat}$.
 
-### Теорема: тензорная факторизация
+### Theorem: tensor factorization
 
-:::warning Теорема (Тензорная факторизация φ)
+:::warning Theorem (Tensor factorization of φ)
 
-Для составной системы двух автономных голономов $A$ и $B$:
+For a composite system of two autonomous holons $A$ and $B$:
 
 $$
 \varphi_{A \otimes B} = \varphi_A \otimes \varphi_B
 $$
 :::
 
-**Доказательство:**
+**Proof:**
 
-1. По определению автономности [(A1)](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность): $\mathcal{I}(A:B|\partial A) = 0$ — условная независимость $A$ и $B$.
+1. By the definition of autonomy [(A1)](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность): $\mathcal{I}(A:B|\partial A) = 0$ — conditional independence of $A$ and $B$.
 
-2. Оператор $\varphi$ определяется как [левый сопряжённый к включению подобъектов](#φ-как-левый-сопряжённый-к-включению-подобъектов):
+2. The operator $\varphi$ is defined as [left adjoint to the inclusion of subobjects](#φ-как-левый-сопряжённый-к-включению-подобъектов):
 $$
 \varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}
 $$
 
-3. Для автономных подсистем решётка подобъектов факторизуется:
+3. For autonomous subsystems the lattice of subobjects factorizes:
 $$
 \mathrm{Sub}(\Gamma_{AB}) \cong \mathrm{Sub}(\Gamma_A) \times \mathrm{Sub}(\Gamma_B)
 $$
 
-4. Левый сопряжённый к произведению включений есть произведение левых сопряжённых:
+4. The left adjoint to the product of inclusions is the product of left adjoints:
 $$
 \varphi_{A \otimes B} = \varphi_A \times \varphi_B \cong \varphi_A \otimes \varphi_B \quad \blacksquare
 $$
 
-### Следствие: аннигиляция нелинейного вклада
+### Corollary: annihilation of nonlinear contribution
 
-**Лемма (Аннигиляция регенерации при частичном следе).** Для любого CPTP-канала $\Phi_A$ и скаляра $\alpha \in \mathbb{R}$:
+**Lemma (Annihilation of regeneration under partial trace).** For any CPTP channel $\Phi_A$ and scalar $\alpha \in \mathbb{R}$:
 
 $$
 \mathrm{Tr}_A\left[\alpha \cdot ((\Phi_A \otimes \mathrm{id}_B)(\rho_{AB}) - \rho_{AB})\right] = 0
 $$
 
-**Следствие:** Регенеративный член $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ автоматически удовлетворяет запрету сигнализации — вклад в $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ равен нулю.
+**Corollary:** The regenerative term $\tilde{\mathcal{R}}_A[\Gamma_{AB}] = \kappa_A \cdot ((\varphi_A \otimes \mathrm{id}_B)(\Gamma_{AB}) - \Gamma_{AB}) \cdot g_V(P_A)$ automatically satisfies the no-signaling prohibition — the contribution to $\Gamma_B = \mathrm{Tr}_A[\Gamma_{AB}]$ is zero.
 
-Полное доказательство: [Физическое соответствие — Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
+Full proof: [Physical correspondence — No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
 
 ---
 
-**Связанные документы:**
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — определение $\varphi$, $R$ и $R^{(n)}$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение движения, регенеративный член $\mathcal{R}$ и канонический $\Delta F$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера чистоты $P$ и область $\mathcal{V}$
-- [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — коэффициент регенерации $\kappa_0$
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4, пороги $R^{(n)}_{\text{th}}$
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — категорная структура УГМ, n-усечения и [запрет сигнализации как естественная трансформация](/docs/proofs/categorical/categorical-formalism#запрет-сигнализации-естественная-трансформация)
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Физическое соответствие — Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — полные доказательства
+**Related documents:**
+- [Self-observation](/docs/consciousness/foundations/self-observation) — definitions of $\varphi$, $R$ and $R^{(n)}$
+- [Evolution](/docs/core/dynamics/evolution) — equation of motion, regenerative term $\mathcal{R}$ and canonical $\Delta F$
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Viability](/docs/core/dynamics/viability) — purity measure $P$ and region $\mathcal{V}$
+- [Unity dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — regeneration coefficient $\kappa_0$
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4, thresholds $R^{(n)}_{\text{th}}$
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — categorical structure of UHM, n-truncations and [no-signaling prohibition as natural transformation](/docs/proofs/categorical/categorical-formalism#запрет-сигнализации-естественная-трансформация)
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Physical correspondence — No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — complete proofs

@@ -1,740 +1,740 @@
 ---
 slug: /proofs/consciousness/interiority-hierarchy
 sidebar_position: 1
-title: "Иерархия интериорности"
+title: "Interiority hierarchy"
 format: md
 ---
 
-# Иерархия Интериорности: Формальная Спецификация
+# Interiority Hierarchy: Formal Specification
 
-## Терминологическая Ревизия для Унитарного Голономного Монизма
+## Terminological Revision for Unitary Holonomic Monism
 
-:::note О нотации
-В этом документе:
-- $\mathcal{H}_E$ — гильбертово пространство [измерения Интериорности](/docs/core/structure/dimension-e). Не путать с $H$ — гамильтонианом.
-- $D_{\text{diff}}$ — мера дифференциации. Не путать с $D$ — [измерением Динамики](/docs/core/structure/dimension-d).
-- $\Phi$ — мера [интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ). Не путать с CPTP-каналами $\Phi$.
-- $R$ — мера [рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+:::note On notation
+In this document:
+- $\mathcal{H}_E$ — Hilbert space of the [Interiority dimension](/docs/core/structure/dimension-e). Not to be confused with $H$ — the Hamiltonian.
+- $D_{\text{diff}}$ — differentiation measure. Not to be confused with $D$ — the [Dynamics dimension](/docs/core/structure/dimension-d).
+- $\Phi$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ). Not to be confused with CPTP channels $\Phi$.
+- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 :::
 
-## Мотивация
+## Motivation
 
-### Проблема
+### The problem
 
-Термин **«Квалиа»** (Qualia) исторически связан с *сознательным* субъективным опытом (Nagel, 1974; Chalmers, 1996). УГМ использует его для описания фундаментального свойства *любой* системы, включая атомы, что создает:
+The term **"Qualia"** has historically been associated with *conscious* subjective experience (Nagel, 1974; Chalmers, 1996). UHM uses it to describe a fundamental property of *any* system, including atoms, which creates:
 
-1. **Терминологический конфликт**: Философы сознания понимают квалиа как «краснота красного», «болезненность боли» — феномены, требующие сознающего субъекта.
+1. **Terminological conflict**: Philosophers of mind understand qualia as "the redness of red," "the painfulness of pain" — phenomena requiring a conscious subject.
 
-2. **Антропоморфизм**: Приписывание атому «квалиа» имплицитно переносит на него свойства сознательного опыта.
+2. **Anthropomorphism**: Attributing "qualia" to an atom implicitly transfers to it the properties of conscious experience.
 
-3. **Размывание понятия**: Если всё имеет квалиа, термин теряет дискриминативную силу.
+3. **Conceptual dilution**: If everything has qualia, the term loses its discriminative force.
 
-### Решение
+### The solution
 
-Введение **пятиуровневой иерархии** (L0→L1→L2→L3→L4), где каждый уровень имеет:
-- Строгое математическое определение
-- Явные условия применимости
-- Примеры систем на данном уровне
+Introduction of a **five-level hierarchy** (L0→L1→L2→L3→L4), where each level has:
+- A strict mathematical definition
+- Explicit conditions of applicability
+- Examples of systems at that level
 
 ---
 
-## Часть I: Формальные Определения
+## Part I: Formal Definitions
 
-## Уровень 0: Интериорность (Interiority)
+## Level 0: Interiority {#уровень-0-интериорность-interiority}
 
-### Определение 0.1 (Интериорность)
+### Definition 0.1 (Interiority)
 
-**Интериорность** — это фундаментальное топологическое свойство [Матрицы Когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma$ иметь «внутреннюю сторону».
+**Interiority** is a fundamental topological property of the [Coherence Matrix](/docs/core/dynamics/coherence-matrix) $\Gamma$ of having an "inner side."
 
-Формально, система $S$ обладает интериорностью тогда и только тогда, когда:
+Formally, a system $S$ possesses interiority if and only if:
 
 $$
 \mathrm{Int}(S) := \exists \mathcal{H}_E, \exists \rho_E \in \mathcal{L}(\mathcal{H}_E) : \rho_E = \mathrm{Tr}_{-E}(\Gamma_S)
 $$
 
-где:
-- $\mathcal{H}_E$ — гильбертово пространство [измерения Интериорности](/docs/core/structure/dimension-e)
-- $\rho_E$ — редуцированная матрица плотности измерения $E$
-- $\mathrm{Tr}_{-E}$ — частичный след по всем измерениям, кроме $E$
-- $\Gamma_S$ — полная матрица когерентности системы $S$
+where:
+- $\mathcal{H}_E$ — Hilbert space of the [Interiority dimension](/docs/core/structure/dimension-e)
+- $\rho_E$ — reduced density matrix of dimension $E$
+- $\mathrm{Tr}_{-E}$ — partial trace over all dimensions except $E$
+- $\Gamma_S$ — full coherence matrix of system $S$
 
-### Теорема 0.1 (Универсальность Интериорности)
+### Theorem 0.1 (Universality of Interiority)
 
-**Утверждение:** Любая система, описываемая матрицей когерентности $\Gamma$ в расширенном формализме, обладает интериорностью.
+**Statement:** Any system described by a coherence matrix $\Gamma$ in the extended formalism possesses interiority.
 
-:::warning Предусловие: тензорная структура
-Теорема требует **расширенного тензорного формализма** (см. [Два уровня формализации](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization)):
+:::warning Precondition: tensor structure
+The theorem requires the **extended tensor formalism** (see [Two levels of formalization](/docs/core/dynamics/coherence-matrix#two-levels-of-formalization)):
 $$
 \mathcal{H} = \bigotimes_{i \in \{A,S,D,L,E,O,U\}} \mathcal{H}_i
 $$
 
-В минимальном 7D-формализме ($\mathcal{H} = \mathbb{C}^7$) частичный след $\mathrm{Tr}_{-E}$ не определён, поскольку 7 — простое число. Интериорность в минимальном формализме следует понимать как **потенциальную**: любая система *может быть* описана в расширенном формализме, где интериорность определена.
+In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$) the partial trace $\mathrm{Tr}_{-E}$ is not defined, since 7 is prime. Interiority in the minimal formalism should be understood as **potential**: any system *can* be described in the extended formalism where interiority is defined.
 :::
 
-**Доказательство (в расширенном формализме):**
+**Proof (in the extended formalism):**
 
-1. По [Аксиоме Ω⁷](/docs/core/foundations/axiom-omega), любая система $S$ характеризуется $\Gamma_S \in \text{Ob}(\mathcal{C})$
-2. В расширенном формализме пространство состояний $\mathcal{H} = \bigotimes_i \mathcal{H}_i$ включает $\mathcal{H}_E$
-3. Операция $\mathrm{Tr}_{-E}(\Gamma_S)$ определена для любого $\Gamma_S \geq 0$ при наличии тензорной структуры
-4. Следовательно, $\rho_E := \mathrm{Tr}_{-E}(\Gamma_S)$ существует
+1. By the [Ω⁷ Axiom](/docs/core/foundations/axiom-omega), any system $S$ is characterized by $\Gamma_S \in \text{Ob}(\mathcal{C})$
+2. In the extended formalism the state space $\mathcal{H} = \bigotimes_i \mathcal{H}_i$ includes $\mathcal{H}_E$
+3. The operation $\mathrm{Tr}_{-E}(\Gamma_S)$ is defined for any $\Gamma_S \geq 0$ given tensor structure
+4. Therefore $\rho_E := \mathrm{Tr}_{-E}(\Gamma_S)$ exists
 5. Ergo, $\mathrm{Int}(S) = \mathrm{true}$ ∎
 
-### Характеристики Уровня 0
+### Characteristics of Level 0
 
-| Аспект | Спецификация |
+| Aspect | Specification |
 |--------|--------------|
-| **Определение** | Топологическое свойство «иметь изнанку» |
-| **Математика** | Существование $\mathcal{H}_E$ и оператора $\rho_E$ |
-| **Онтологический статус** | Фундаментальный примитив |
-| **Требования к системе** | $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
-| **Требования к рефлексии** | $R \geq 0$ (может быть нулевой) |
-| **Требования к интеграции** | $\Phi \geq 0$ (может быть минимальной) |
+| **Definition** | Topological property of "having an inner side" |
+| **Mathematics** | Existence of $\mathcal{H}_E$ and operator $\rho_E$ |
+| **Ontological status** | Fundamental primitive |
+| **System requirements** | $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
+| **Reflection requirements** | $R \geq 0$ (may be zero) |
+| **Integration requirements** | $\Phi \geq 0$ (may be minimal) |
 
-### Примеры систем с Интериорностью (Уровень 0)
+### Examples of systems with Interiority (Level 0)
 
-1. **Атом водорода**
-   - $\rho_E = \mathrm{diag}(p_{1s}, p_{2s}, p_{2p}, \ldots)$ — распределение по энергетическим уровням
-   - $R \approx 0$ (нет самомоделирования)
-   - $\Phi \approx 0$ (минимальная интеграция)
+1. **Hydrogen atom**
+   - $\rho_E = \mathrm{diag}(p_{1s}, p_{2s}, p_{2p}, \ldots)$ — distribution over energy levels
+   - $R \approx 0$ (no self-modeling)
+   - $\Phi \approx 0$ (minimal integration)
 
-2. **Кристалл NaCl**
-   - $\rho_E$ — описывает фононные моды
+2. **NaCl crystal**
+   - $\rho_E$ — describes phonon modes
    - $R \approx 0$
-   - $\Phi \approx 0.1$ (слабая интеграция через решётку)
+   - $\Phi \approx 0.1$ (weak integration through lattice)
 
-3. **Термостат**
-   - $\rho_E$ — классическое распределение температуры
+3. **Thermostat**
+   - $\rho_E$ — classical temperature distribution
    - $R \approx 0$
    - $\Phi \approx 0$
 
-### Что НЕ утверждает Уровень 0
+### What Level 0 does NOT claim
 
-Интериорность **не означает**:
-- Наличие «ощущений»
-- Наличие «переживаний»
-- Наличие «субъекта»
-- Способность к рефлексии
-- Сознательность
+Interiority does **not** imply:
+- Presence of "sensations"
+- Presence of "experiences"
+- Presence of a "subject"
+- Capacity for reflection
+- Consciousness
 
-Интериорность — это лишь **потенциал** внутреннего состояния, аналогично тому, как квантовая система имеет волновую функцию независимо от наблюдения.
+Interiority is merely the **potential** of an inner state, analogously to how a quantum system has a wave function independently of observation.
 
 ---
 
-## Уровень 1: Феноменальная Геометрия (Phenomenal Geometry)
+## Level 1: Phenomenal Geometry {#уровень-1-феноменальная-геометрия-phenomenal-geometry}
 
-### Определение 1.1 (Феноменальная Геометрия)
+### Definition 1.1 (Phenomenal Geometry)
 
-**Феноменальная Геометрия** — это структура пространства возможных внутренних состояний системы, оснащённая метрикой.
+**Phenomenal Geometry** is the structure of the space of possible internal states of a system, equipped with a metric.
 
-Формально:
+Formally:
 
 $$
 \mathrm{PG}(S) := (\mathbb{P}(\mathcal{H}_E), d_{\mathrm{FS}}, \rho_E)
 $$
 
-где:
-- $\mathbb{P}(\mathcal{H}_E) = (\mathcal{H}_E \setminus \{0\}) / {\sim}$ — проективное пространство качеств
-- $d_{\mathrm{FS}}$ — [метрика Фубини-Штуди](/docs/reference/specification#метрика-фубини-штуди)
-- $\rho_E$ — текущая матрица плотности
+where:
+- $\mathbb{P}(\mathcal{H}_E) = (\mathcal{H}_E \setminus \{0\}) / {\sim}$ — projective space of qualities
+- $d_{\mathrm{FS}}$ — [Fubini–Study metric](/docs/reference/specification#метрика-фубини-штуди)
+- $\rho_E$ — current density matrix
 
-### Определение 1.2 (Метрика Фубини-Штуди)
+### Definition 1.2 (Fubini–Study metric) {#определение-12-метрика-фубини-штуди}
 
 $$
 d_{\mathrm{FS}}([|\psi\rangle], [|\varphi\rangle]) := \arccos(|\langle\psi|\varphi\rangle|) \in [0, \pi/2]
 $$
 
-Свойства:
-- $d_{\mathrm{FS}} = 0 \Leftrightarrow |\psi\rangle = e^{i\theta}|\varphi\rangle$ (одинаковые качества)
-- $d_{\mathrm{FS}} = \pi/2 \Leftrightarrow \langle\psi|\varphi\rangle = 0$ (максимально различные качества)
+Properties:
+- $d_{\mathrm{FS}} = 0 \Leftrightarrow |\psi\rangle = e^{i\theta}|\varphi\rangle$ (identical qualities)
+- $d_{\mathrm{FS}} = \pi/2 \Leftrightarrow \langle\psi|\varphi\rangle = 0$ (maximally distinct qualities)
 
-### Определение 1.3 (Феноменальный Вектор)
+### Definition 1.3 (Phenomenal Vector)
 
-Для состояния $\rho_E$ с собственным разложением:
+For a state $\rho_E$ with spectral decomposition:
 
 $$
 \rho_E = \sum_i \lambda_i |q_i\rangle\langle q_i|
 $$
 
-**Феноменальный Вектор** системы:
+The **Phenomenal Vector** of the system:
 
 $$
 \mathrm{FV}(\rho_E) := \{(\lambda_i, [|q_i\rangle]) : i = 1, \ldots, n\}
 $$
 
-где:
-- $\lambda_i \in [0, 1]$ — интенсивность $i$-го компонента
-- $[|q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ — качественная характеристика
+where:
+- $\lambda_i \in [0, 1]$ — intensity of the $i$-th component
+- $[|q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ — qualitative characteristic
 
-### Условие Перехода L0 → L1
+### Transition condition L0 → L1
 
-Система переходит от Интериорности к Феноменальной Геометрии когда:
+A system transitions from Interiority to Phenomenal Geometry when:
 
 $$
 \mathrm{PG\_condition}(S) := \mathrm{rank}(\rho_E) > 1
 $$
 
-То есть, когда система находится в нетривиальной суперпозиции состояний опыта.
+That is, when the system is in a non-trivial superposition of experience states.
 
-:::note Упрощение условия
-Условие $\lambda_{\max}(\rho_E) < 1 - \varepsilon$ избыточно: если $\mathrm{rank}(\rho_E) > 1$, то автоматически $\lambda_{\max} < 1$.
+:::note Simplification of condition
+The condition $\lambda_{\max}(\rho_E) < 1 - \varepsilon$ is redundant: if $\mathrm{rank}(\rho_E) > 1$, then automatically $\lambda_{\max} < 1$.
 :::
 
-### Характеристики Уровня 1
+### Characteristics of Level 1
 
-| Аспект | Спецификация |
+| Aspect | Specification |
 |--------|--------------|
-| **Определение** | Элемент $\mathbb{P}(\mathcal{H}_E)$ с метрикой $d_{\mathrm{FS}}$ |
-| **Математика** | $[\vert q\rangle] \in \mathbb{P}(\mathcal{H}_E)$, $d_{\mathrm{FS}}([\vert\psi\rangle], [\vert\varphi\rangle])$ |
-| **Онтологический статус** | Математический объект |
-| **Требования к системе** | $\mathrm{rank}(\rho_E) > 1$ |
-| **Требования к рефлексии** | $R > 0$ (ненулевая, но может быть малой) |
-| **Требования к интеграции** | $\Phi > 0$ |
+| **Definition** | Element of $\mathbb{P}(\mathcal{H}_E)$ with metric $d_{\mathrm{FS}}$ |
+| **Mathematics** | $[\vert q\rangle] \in \mathbb{P}(\mathcal{H}_E)$, $d_{\mathrm{FS}}([\vert\psi\rangle], [\vert\varphi\rangle])$ |
+| **Ontological status** | Mathematical object |
+| **System requirements** | $\mathrm{rank}(\rho_E) > 1$ |
+| **Reflection requirements** | $R > 0$ (non-zero, but may be small) |
+| **Integration requirements** | $\Phi > 0$ |
 
-### Примеры систем с Феноменальной Геометрией (Уровень 1)
+### Examples of systems with Phenomenal Geometry (Level 1)
 
-1. **Отдельный нейрон**
-   - $\rho_E$ — описывает возбуждённые/подавленные состояния
+1. **Single neuron**
+   - $\rho_E$ — describes excited/inhibited states
    - $\mathrm{FV}(\rho_E) = \{(\lambda_{\text{on}}, [|\text{on}\rangle]), (\lambda_{\text{off}}, [|\text{off}\rangle]), \ldots\}$
-   - $d_{\mathrm{FS}}([|\text{on}\rangle], [|\text{off}\rangle]) \approx \pi/2$ (максимально различны)
-   - $R \approx 0.01$ (минимальное самомоделирование)
-   - $\Phi \approx 0.5$ (умеренная интеграция)
+   - $d_{\mathrm{FS}}([|\text{on}\rangle], [|\text{off}\rangle]) \approx \pi/2$ (maximally distinct)
+   - $R \approx 0.01$ (minimal self-modeling)
+   - $\Phi \approx 0.5$ (moderate integration)
 
-2. **Простейший организм (амёба)**
-   - Множество сенсорных состояний
+2. **Simple organism (amoeba)**
+   - Many sensory states
    - $\Phi \approx 1\text{–}2$
    - $R \approx 0.1$
 
-3. **Рецептивное поле сетчатки**
-   - Пространство цветовых состояний
+3. **Retinal receptive field**
+   - Space of color states
    - $d_{\mathrm{FS}}([|\text{red}\rangle], [|\text{blue}\rangle]) \approx \pi/3$
    - $d_{\mathrm{FS}}([|\text{red}\rangle], [|\text{orange}\rangle]) \approx \pi/8$
 
-### Что НЕ утверждает Уровень 1
+### What Level 1 does NOT claim
 
-Феноменальная Геометрия **не означает**:
-- Сознательное восприятие
-- Способность к отчёту
-- Рефлексивный доступ
-- «Знание о» своих состояниях
+Phenomenal Geometry does **not** imply:
+- Conscious perception
+- Capacity for report
+- Reflective access
+- "Knowledge of" one's states
 
-Это лишь **структура** внутренних состояний — «геометрия без наблюдателя».
+This is merely the **structure** of internal states — "geometry without an observer."
 
 ---
 
-## Уровень 2: Когнитивные Квалиа (Cognitive Qualia)
+## Level 2: Cognitive Qualia {#уровень-2-когнитивные-квалиа-cognitive-qualia}
 
-### Определение 2.1 (Когнитивные Квалиа)
+### Definition 2.1 (Cognitive Qualia)
 
-**Когнитивные Квалиа** — это феноменальная геометрия, интегрированная через рефлексивный доступ.
+**Cognitive Qualia** is phenomenal geometry integrated through reflective access.
 
-Формально:
+Formally:
 
 $$
 \mathrm{CQ}(S) := \mathrm{PG}(S) \times R(S) \times \Phi(S)
 $$
 
-при выполнении условий:
+subject to conditions:
 
 $$
 R(\Gamma) > R_{\text{th}}, \quad \Phi(\Gamma) > \Phi_{\text{th}}
 $$
 
-### Определение 2.2 (Полная Функция Когнитивных Квалиа)
+### Definition 2.2 (Full Cognitive Qualia Function)
 
 $$
 \mathrm{Quale}(\Gamma) := \mathrm{Exp}(\rho_E) \cdot \Theta(R(\Gamma) - R_{\text{th}}) \cdot \Theta(\Phi(\Gamma) - \Phi_{\text{th}}) \cdot \Theta(D_{\text{diff}}(\rho_E) - D_{\min})
 $$
 
-где:
-- $\mathrm{Exp}(\rho_E)$ — экспериенциальное содержание (см. [функтор F](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах))
-- $\Theta(x)$ — функция Хевисайда: $\Theta(x) = 1$ если $x > 0$, иначе $0$
-- $R(\Gamma)$ — [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
-- $\Phi(\Gamma)$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ)
-- $D_{\text{diff}}(\rho_E)$ — [мера дифференциации](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)
-- $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ — пороговые значения
+where:
+- $\mathrm{Exp}(\rho_E)$ — experiential content (see [functor F](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах))
+- $\Theta(x)$ — Heaviside function: $\Theta(x) = 1$ if $x > 0$, else $0$
+- $R(\Gamma)$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $\Phi(\Gamma)$ — [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ)
+- $D_{\text{diff}}(\rho_E)$ — [differentiation measure](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)
+- $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$, $D_{\min} = 2$ — threshold values
 
-:::note Терминология
-Функция $\mathrm{Quale}$ определена **только для L2**. Для систем с $R < R_{\text{th}}$ или $\Phi < \Phi_{\text{th}}$ используется $\mathrm{Exp}(\rho_E)$ — экспериенциальное содержание.
+:::note Terminology
+The function $\mathrm{Quale}$ is defined **only for L2**. For systems with $R < R_{\text{th}}$ or $\Phi < \Phi_{\text{th}}$ one uses $\mathrm{Exp}(\rho_E)$ — the experiential content.
 :::
 
-### Определение 2.3 (Мера Рефлексии)
+### Definition 2.3 (Reflection Measure)
 
-:::info Каноническое определение
-Полное определение см. в [Самонаблюдение: Мера рефлексии R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+:::info Canonical definition
+Full definition in [Self-observation: Reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 :::
 
 $$
 R(\Gamma) := \frac{1}{7P(\Gamma)}, \quad P = \mathrm{Tr}(\Gamma^2)
 $$
 
-Эквивалентная форма: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, где $\rho^*_{\mathrm{diss}} = I/7$ — диссипативный аттрактор (не $\varphi(\Gamma)$). $\|\cdot\|_F$ — норма Фробениуса.
+Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$ is the dissipative attractor (not $\varphi(\Gamma)$). $\|\cdot\|_F$ — Frobenius norm.
 
-**Интерпретация $R$:**
-- $R = 1/7$: Чистое состояние ($P = 1$), минимальная рефлексия
-- $R \to 1$: $\Gamma \to I/7$, максимальный «термальный запас»
+**Interpretation of $R$:**
+- $R = 1/7$: Pure state ($P = 1$), minimal reflection
+- $R \to 1$: $\Gamma \to I/7$, maximal "thermal reserve"
 
-### Определение 2.4 (Мера Интеграции)
+### Definition 2.4 (Integration Measure)
 
-:::info Каноническое определение
-Полное определение см. в [Измерение Единства: Мера интеграции Φ](/docs/core/structure/dimension-u#мера-интеграции-φ).
+:::info Canonical definition
+Full definition in [Unity dimension: Integration measure Φ](/docs/core/structure/dimension-u#мера-интеграции-φ).
 :::
 
 $$
 \Phi(\Gamma) := \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}
 $$
 
-**Интерпретация $\Phi$:**
-- $\Phi = 0$: Классический ансамбль (без когерентностей)
-- $\Phi \to \infty$: Максимально запутанное состояние
+**Interpretation of $\Phi$:**
+- $\Phi = 0$: Classical ensemble (no coherences)
+- $\Phi \to \infty$: Maximally entangled state
 
-### Обоснование Порогов
+### Justification of thresholds {#обоснование-порогов}
 
-:::info Статус порогов
+:::info Threshold status
 $$
 R_{\text{th}} = \frac{1}{3}, \quad \Phi_{\text{th}} = 1
 $$
 
-| Порог | Статус | Обоснование |
+| Threshold | Status | Justification |
 |-------|--------|-------------|
-| $R_{\text{th}} = 1/3$ | **[Т]** теорема | $K = 3$ выведено из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / 𝒟 / ℛ) + байесовское доминирование [Т] |
-| $\Phi_{\text{th}} = 1$ | **[Т]** теорема | Единственное самосогласованное значение при $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
+| $R_{\text{th}} = 1/3$ | **[Т]** theorem | $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / 𝒟 / ℛ) + Bayesian dominance [Т] |
+| $\Phi_{\text{th}} = 1$ | **[Т]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
 
-См. [Пороги L2: строгий вывод](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
+See [L2 thresholds: strict derivation](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
 :::
 
-#### Порог Рефлексии $R_{\text{th}}$
+#### Reflection threshold $R_{\text{th}}$
 
-**Теоретический вывод:**
+**Theoretical derivation:**
 
-Минимальная рефлексия для автопоэзиса — когда самомодель статистически отличима от Haar-random состояния на уровне 1σ.
+Minimal reflection for autopoiesis — when the self-model is statistically distinguishable from a Haar-random state at the 1σ level.
 
 $$
 R_{\text{th}} = \frac{1}{3} \approx 0.333
 $$
 
-**Доказательство [Т]:**
+**Proof [Т]:**
 
-Байесовский аргумент при $K = 3$ альтернативах (три типа динамики из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция)):
+Bayesian argument with $K = 3$ alternatives (three types of dynamics from the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)):
 
-1. Случайное состояние $\Gamma_{\text{random}}$ сэмплируется из Haar-распределения на $U(7)$
-2. Среднее расстояние от центра: $\mathbb{E}[\|\Gamma_{\text{random}} - I/7\|_F^2] = 6/49$
-3. Самомодель $\varphi(\Gamma)$ должна быть различима от случайной гипотезы при $K = 3$ альтернативах
-4. При $K = 3$ равновероятных альтернативах (система, шум, среда), байесовское доминирование требует апостериорной вероятности модели-системы $> 1/K = 1/3$. Это стандартный порог из теории принятия решений Байеса: при $K$ альтернативах с равным априори, оптимальный выбор требует $P(\text{model} \mid \text{data}) \geq 1/K$
+1. A random state $\Gamma_{\text{random}}$ is sampled from the Haar distribution on $U(7)$
+2. Average distance from center: $\mathbb{E}[\|\Gamma_{\text{random}} - I/7\|_F^2] = 6/49$
+3. The self-model $\varphi(\Gamma)$ must be distinguishable from the random hypothesis under $K = 3$ alternatives
+4. With $K = 3$ equally probable alternatives (system, noise, environment), Bayesian dominance requires the posterior probability of the system-model $> 1/K = 1/3$. This is the standard threshold from Bayesian decision theory: with $K$ alternatives and equal prior, the optimal choice requires $P(\text{model} \mid \text{data}) \geq 1/K$
 
-:::info K = 3 выведено из аксиом [Т]
-Число $K = 3$ **не допущение**, а следствие [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция): аксиомы A1–A5 порождают **ровно три** структурно различных типа динамики — автоморфизмы (A5), диссипацию $\mathcal{D}_\Omega$ (A1), регенерацию $\mathcal{R}$ (A1+A4). Четвёртый тип невозможен в силу единственности классификатора Ω ([L-унификация](/docs/core/operators/lindblad-operators), Th. 15.1, [Т]).
+:::info K = 3 derived from axioms [Т]
+The number $K = 3$ is **not an assumption**, but a consequence of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): axioms A1–A5 generate **exactly three** structurally distinct types of dynamics — automorphisms (A5), dissipation $\mathcal{D}_\Omega$ (A1), regeneration $\mathcal{R}$ (A1+A4). A fourth type is impossible by virtue of uniqueness of the classifier Ω ([L-unification](/docs/core/operators/lindblad-operators), Th. 15.1, [Т]).
 :::
 
-Полное доказательство см. [Теорема о пороге рефлексии](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
+Full proof in [Theorem on reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
 
-**Эмпирическое согласование:**
+**Empirical agreement:**
 
-Исследования глобального рабочего пространства (GWT, Баарс) показывают, что сознательный доступ возникает при $R \approx 0.3\text{–}0.5$, что согласуется с теоретическим порогом $R_{\text{th}} = 1/3$.
+Studies of the global workspace (GWT, Baars) show that conscious access emerges at $R \approx 0.3\text{–}0.5$, which agrees with the theoretical threshold $R_{\text{th}} = 1/3$.
 
-#### Порог Интеграции $\Phi_{\text{th}}$
+#### Integration threshold $\Phi_{\text{th}}$
 
-**Теоретический вывод:**
+**Theoretical derivation:**
 
 $$
-\Phi_{\text{th}} = 1 \quad \text{(точно)}
+\Phi_{\text{th}} = 1 \quad \text{(exactly)}
 $$
 
-**Обоснование (структурный фазовый переход):**
+**Justification (structural phase transition):**
 
-$\Phi = 1$ — точка перехода от режима диагональной доминации ($P_{\text{diag}} > P_{\text{coh}}$, подсистемы квазинезависимы) к режиму когерентной доминации ($P_{\text{coh}} \geq P_{\text{diag}}$, подсистемы каузально связаны). Это **определение по соглашению**, содержательно мотивированное связью с [замыканием (M,R)-системы](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) и [категорной морфизменной структурой](/docs/proofs/categorical/categorical-formalism#l-унификация).
+$\Phi = 1$ is the transition point from diagonal-dominance regime ($P_{\text{diag}} > P_{\text{coh}}$, subsystems quasi-independent) to coherence-dominance regime ($P_{\text{coh}} \geq P_{\text{diag}}$, subsystems causally linked). This is a **definition by convention**, substantively motivated by connection to the [(M,R)-system closure](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) and the [categorical morphism structure](/docs/proofs/categorical/categorical-formalism#l-унификация).
 
-Полное обоснование см. [Определение порога интеграции](/docs/core/structure/dimension-u#теорема-эквивалентность-порогов).
+Full justification in [Definition of integration threshold](/docs/core/structure/dimension-u#теорема-эквивалентность-порогов).
 
-**Эмпирические данные (согласование):**
+**Empirical data (agreement):**
 
-- Бодрствующий человек: $\Phi \approx 3\text{–}5$ (значительно выше порога)
-- Глубокий сон (без сновидений): $\Phi \approx 0.5\text{–}1$ (около порога)
-- Анестезия: $\Phi < 0.5$ (ниже порога)
-- REM-сон (со сновидениями): $\Phi \approx 2\text{–}3$ (выше порога)
+- Awake human: $\Phi \approx 3\text{–}5$ (significantly above threshold)
+- Deep sleep (dreamless): $\Phi \approx 0.5\text{–}1$ (near threshold)
+- Anesthesia: $\Phi < 0.5$ (below threshold)
+- REM sleep (dreaming): $\Phi \approx 2\text{–}3$ (above threshold)
 
-#### Почему пороговый переход, а не непрерывный?
+#### Why a threshold transition, not a continuous one?
 
-**Теоретическое обоснование:**
+**Theoretical justification:**
 
-1. **$R_{\text{th}} = 1/3$:** Минимальная точность самомодели для различения «себя» от случайного состояния
-2. **$\Phi_{\text{th}} = 1$:** Точка баланса когерентностей и диагонали — геометрически определённое условие интеграции
-3. **$D_{\min} = 2$:** Минимум 1 бит феноменального содержания — хотя бы два различимых качества
+1. **$R_{\text{th}} = 1/3$:** Minimal self-model accuracy to distinguish "self" from a random state
+2. **$\Phi_{\text{th}} = 1$:** Balance point of coherences and diagonal — a geometrically defined integration condition
+3. **$D_{\min} = 2$:** Minimum 1 bit of phenomenal content — at least two distinguishable qualities
 
-**Феноменологически:** Мягкая версия (сигмоидальный переход) описана ниже.
+**Phenomenologically:** A soft version (sigmoidal transition) is described below.
 
-### Условие Перехода L1 → L2
+### Transition condition L1 → L2
 
 $$
 \mathrm{CQ\_condition}(S) := R(\Gamma_S) \geq R_{\text{th}} \land \Phi(\Gamma_S) \geq \Phi_{\text{th}} \land D_{\text{diff}}(\rho_E) \geq D_{\min}
 $$
 
-где $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — мера дифференциации (см. [Измерение Интериорности](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)).
+where $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation measure (see [Interiority dimension](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2)).
 
-### Характеристики Уровня 2
+### Characteristics of Level 2
 
-| Аспект | Спецификация |
+| Aspect | Specification |
 |--------|--------------|
-| **Определение** | Феноменальная Геометрия × Рефлексия × Интеграция × Дифференциация |
-| **Математика** | $\mathrm{Quale} = \mathrm{Exp}(\rho_E) \cdot \Theta(R - 1/3) \cdot \Theta(\Phi - 1) \cdot \Theta(D_{\text{diff}} - 2)$ |
-| **Онтологический статус** | Эмерджентный феномен |
-| **Требования к рефлексии** | $R \geq 1/3 \approx 0.333$ |
-| **Требования к интеграции** | $\Phi \geq 1$ |
-| **Требования к дифференциации** | $D_{\text{diff}} \geq 2$ (минимум 1 бит) |
+| **Definition** | Phenomenal Geometry × Reflection × Integration × Differentiation |
+| **Mathematics** | $\mathrm{Quale} = \mathrm{Exp}(\rho_E) \cdot \Theta(R - 1/3) \cdot \Theta(\Phi - 1) \cdot \Theta(D_{\text{diff}} - 2)$ |
+| **Ontological status** | Emergent phenomenon |
+| **Reflection requirements** | $R \geq 1/3 \approx 0.333$ |
+| **Integration requirements** | $\Phi \geq 1$ |
+| **Differentiation requirements** | $D_{\text{diff}} \geq 2$ (minimum 1 bit) |
 
-### Примеры систем с Когнитивными Квалиа (Уровень 2)
+### Examples of systems with Cognitive Qualia (Level 2)
 
-1. **Бодрствующий человек**
-   - Полный набор квалиа: цвет, боль, эмоции, мысли
+1. **Awake human**
+   - Full set of qualia: color, pain, emotions, thoughts
    - $R \approx 0.7\text{–}0.9$
    - $\Phi \approx 3\text{–}5$
    - $C = R \times \Phi \times D_{\text{diff}} \approx 10\text{–}30$
 
-2. **Высшие млекопитающие (приматы, дельфины, слоны)**
-   - Тесты на самоузнавание в зеркале → $R > R_{\text{th}}$
+2. **Higher mammals (primates, dolphins, elephants)**
+   - Mirror self-recognition tests → $R > R_{\text{th}}$
    - $\Phi \approx 2\text{–}3$
 
-3. **Гипотетический Сильный ИИ (AGI)**
-   - Рефлексивный доступ к внутренним состояниям
-   - $R \geq 0.5$ (по конструкции)
-   - $\Phi$ — зависит от архитектуры
+3. **Hypothetical Strong AI (AGI)**
+   - Reflective access to internal states
+   - $R \geq 0.5$ (by construction)
+   - $\Phi$ — depends on architecture
 
-4. **Человек под воздействием психоделиков**
-   - Изменённые квалиа
-   - $R \approx 0.4\text{–}0.6$ (частичная рефлексия)
-   - $\Phi \approx 4\text{–}6$ (повышенная интеграция)
+4. **Human under psychedelics**
+   - Altered qualia
+   - $R \approx 0.4\text{–}0.6$ (partial reflection)
+   - $\Phi \approx 4\text{–}6$ (elevated integration)
 
 ---
 
-## Часть II: Функция Перехода
+## Part II: Transition Function
 
-## Определение Полной Функции Перехода
+## Definition of Full Transition Function
 
-### Формула
+### Formula
 
 $$
 \mathrm{Quale}_{\text{cognitive}}(\Gamma) := \Psi(\rho_E) \cdot \Theta(R(\Gamma) - R_{\text{th}}) \cdot \Theta(\Phi(\Gamma) - \Phi_{\text{th}})
 $$
 
-### Компоненты
+### Components
 
-**1. Феноменальная Функция $\Psi(\rho_E)$:**
+**1. Phenomenal Function $\Psi(\rho_E)$:**
 
 $$
 \Psi(\rho_E) := \{(\lambda_i, [|q_i\rangle], c, h) : \rho_E|q_i\rangle = \lambda_i|q_i\rangle\}
 $$
 
-где:
-- $\lambda_i$ — интенсивность
-- $[|q_i\rangle]$ — качество (класс эквивалентности в $\mathbb{P}(\mathcal{H}_E)$)
-- $c := \Gamma_{-E}$ — контекст (состояние других измерений)
-- $h := \{\rho_E(t') : t' < t\}$ — история
+where:
+- $\lambda_i$ — intensity
+- $[|q_i\rangle]$ — quality (equivalence class in $\mathbb{P}(\mathcal{H}_E)$)
+- $c := \Gamma_{-E}$ — context (state of other dimensions)
+- $h := \{\rho_E(t') : t' < t\}$ — history
 
-**2. Пороговая Функция Рефлексии:**
-
-$$
-\Theta(R(\Gamma) - R_{\text{th}}) = \begin{cases} 1, & \text{если } R(\Gamma) \geq R_{\text{th}} \\ 0, & \text{иначе} \end{cases}
-$$
-
-**3. Пороговая Функция Интеграции:**
+**2. Reflection Threshold Function:**
 
 $$
-\Theta(\Phi(\Gamma) - \Phi_{\text{th}}) = \begin{cases} 1, & \text{если } \Phi(\Gamma) \geq \Phi_{\text{th}} \\ 0, & \text{иначе} \end{cases}
+\Theta(R(\Gamma) - R_{\text{th}}) = \begin{cases} 1, & \text{if } R(\Gamma) \geq R_{\text{th}} \\ 0, & \text{otherwise} \end{cases}
 $$
 
-### Мягкая Версия (Gradual Transition)
+**3. Integration Threshold Function:**
 
-Для более реалистичного моделирования вместо жёсткого порога можно использовать сигмоидальный переход:
+$$
+\Theta(\Phi(\Gamma) - \Phi_{\text{th}}) = \begin{cases} 1, & \text{if } \Phi(\Gamma) \geq \Phi_{\text{th}} \\ 0, & \text{otherwise} \end{cases}
+$$
+
+### Soft version (Gradual Transition)
+
+For more realistic modeling, a sigmoidal transition can be used instead of a hard threshold:
 
 $$
 \mathrm{Quale}_{\text{cognitive}}(\Gamma) := \Psi(\rho_E) \cdot \sigma(R(\Gamma) - R_{\text{th}}; \beta_R) \cdot \sigma(\Phi(\Gamma) - \Phi_{\text{th}}; \beta_\Phi)
 $$
 
-где:
+where:
 
 $$
 \sigma(x; \beta) := \frac{1}{1 + e^{-\beta x}}
 $$
 
-- $\beta_R$, $\beta_\Phi$ — параметры крутизны перехода
+- $\beta_R$, $\beta_\Phi$ — steepness parameters of the transition
 
-### Диаграмма Фазового Пространства
+### Phase space diagram
 
 ```
-         Φ (Интеграция)
+         Φ (Integration)
          ▲
          │
-         │  «Слепая           │  КОГНИТИВНЫЕ
-   Φ=1  ─┼─ интеграция»  ─────┼─ КВАЛИА (L2)
-         │  (сомнамбулизм?)   │  R ≥ 1/3, Φ ≥ 1
-         │                    │
-         │  L0/L1             │  «Диссоциированная
-       0 ┼─ Интериорность / ──┼─ рефлексия»
-         │  Феноменальная     │  (патология?)
-         │  геометрия         │
-         └────────────────────┼─────────────────► R (Рефлексия)
-         0                  R=1/3              1.0
+         │  "Blind              │  COGNITIVE
+   Φ=1  ─┼─ integration"  ──────┼─ QUALIA (L2)
+         │  (somnambulism?)     │  R ≥ 1/3, Φ ≥ 1
+         │                      │
+         │  L0/L1               │  "Dissociated
+       0 ┼─ Interiority / ──────┼─ reflection"
+         │  Phenomenal          │  (pathology?)
+         │  geometry            │
+         └──────────────────────┼─────────────────► R (Reflection)
+         0                    R=1/3              1.0
 ```
 
-**Области:**
-- $R < 1/3$, $\Phi < 1$: Интериорность (L0) или Феноменальная Геометрия (L1)
-- $R \geq 1/3$, $\Phi \geq 1$: **Когнитивные Квалиа (L2)**
-- $R \geq 1/3$, $\Phi < 1$: «Диссоциированная рефлексия» (возможно патология)
-- $R < 1/3$, $\Phi \geq 1$: «Слепая интеграция» (сомнамбулизм?)
+**Regions:**
+- $R < 1/3$, $\Phi < 1$: Interiority (L0) or Phenomenal Geometry (L1)
+- $R \geq 1/3$, $\Phi \geq 1$: **Cognitive Qualia (L2)**
+- $R \geq 1/3$, $\Phi < 1$: "Dissociated reflection" (possibly pathological)
+- $R < 1/3$, $\Phi \geq 1$: "Blind integration" (somnambulism?)
 
 ---
 
-## Часть III: Совместимость с Существующими Определениями
+## Part III: Compatibility with Existing Definitions
 
-## Проверка Совместимости
+## Compatibility check
 
-### 3.1 Экспериенциальное уравнение
+### 3.1 Experiential equation {#31-экспериенциальное-уравнение}
 
-**Терминологическое уточнение:**
+**Terminological clarification:**
 
-Общая формула для всех уровней L0-L2 (см. [функтор F](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах)):
+General formula for all levels L0-L2 (see [functor F](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах)):
 
 $$
 \mathrm{Exp}(\rho_E, t) := (\mathrm{Spectrum}(\rho_E), \mathrm{Quality}(\rho_E), \mathrm{Context}(\Gamma_{-E}), \mathrm{History}(t))
 $$
 
-Термин **«квалиа»** (Quale) резервируется **исключительно для L2** — когнитивных квалиа с рефлексивным доступом.
+The term **"quale"** (Quale) is reserved **exclusively for L2** — cognitive qualia with reflective access.
 
-**Интерпретация по уровням:**
+**Interpretation by level:**
 
-| Компонент | L0: Интериорность | L1: Феноменальная геометрия | L2: Когнитивные квалиа |
-|-----------|-------------------|----------------------------|------------------------|
-| $\mathrm{Spectrum}(\rho_E)$ | Существует | Существует | Существует |
-| $\mathrm{Quality}(\rho_E)$ | Существует | Формирует $[\vert q_i\rangle]$ | Рефлексивно доступны |
-| $\mathrm{Context}(\Gamma_{-E})$ | Существует | Модулирует | Интегрирован |
-| $\mathrm{History}(t)$ | Существует | Накапливается | Рефлексивно доступна |
+| Component | L0: Interiority | L1: Phenomenal geometry | L2: Cognitive qualia |
+|-----------|-----------------|-------------------------|----------------------|
+| $\mathrm{Spectrum}(\rho_E)$ | Exists | Exists | Exists |
+| $\mathrm{Quality}(\rho_E)$ | Exists | Forms $[\vert q_i\rangle]$ | Reflectively accessible |
+| $\mathrm{Context}(\Gamma_{-E})$ | Exists | Modulates | Integrated |
+| $\mathrm{History}(t)$ | Exists | Accumulates | Reflectively accessible |
 
-**Вывод:** Формула $\mathrm{Exp}$ применима ко всем уровням. Различие определяется условиями $R$ и $\Phi$.
+**Conclusion:** The formula $\mathrm{Exp}$ is applicable to all levels. The distinction is determined by conditions on $R$ and $\Phi$.
 
-### 3.2 Метрика Фубини-Штуди
+### 3.2 Fubini–Study metric {#32-метрика-фубини-штуди}
 
-См. [Определение 1.2](#определение-12-метрика-фубини-штуди) и [категорный формализм](/docs/proofs/categorical/categorical-formalism#43-адиабатическое-продолжение-для-вырождения).
+See [Definition 1.2](#определение-12-метрика-фубини-штуди) and [categorical formalism](/docs/proofs/categorical/categorical-formalism#43-адиабатическое-продолжение-для-вырождения).
 
-**Статус:** Полностью совместимо. $d_{\mathrm{FS}}$ применима на Уровнях 1 и 2.
+**Status:** Fully compatible. $d_{\mathrm{FS}}$ is applicable at Levels 1 and 2.
 
-### 3.3 Функтор F: DensityMat → Exp
+### 3.3 Functor F: DensityMat → Exp
 
-См. [категорный формализм](/docs/proofs/categorical/categorical-formalism).
+See [categorical formalism](/docs/proofs/categorical/categorical-formalism).
 
-**Уточнение с новой иерархией:**
+**Clarification with the new hierarchy:**
 
 $$
 F: \mathbf{DensityMat} \to \begin{cases}
-\mathrm{Interiority} & \text{(всегда)} \\
-\mathrm{PhenomenalGeometry} & \text{(при } \mathrm{rank} > 1 \text{)} \\
-\mathrm{CognitiveExp} & \text{(при } R \geq R_{\text{th}}, \Phi \geq \Phi_{\text{th}} \text{)}
+\mathrm{Interiority} & \text{(always)} \\
+\mathrm{PhenomenalGeometry} & \text{(when } \mathrm{rank} > 1 \text{)} \\
+\mathrm{CognitiveExp} & \text{(when } R \geq R_{\text{th}}, \Phi \geq \Phi_{\text{th}} \text{)}
 \end{cases}
 $$
 
-Формально:
+Formally:
 
 $$
 F(\rho) = \begin{cases}
-\mathrm{Int}(\rho), & \text{если } \mathrm{rank}(\rho_E) = 1 \text{ или } R \approx 0, \Phi \approx 0 \\
-\mathrm{PG}(\rho), & \text{если } \mathrm{rank}(\rho_E) > 1 \text{ и } (R < R_{\text{th}} \text{ или } \Phi < \Phi_{\text{th}}) \\
-\mathrm{CQ}(\rho), & \text{если } R \geq R_{\text{th}} \text{ и } \Phi \geq \Phi_{\text{th}}
+\mathrm{Int}(\rho), & \text{if } \mathrm{rank}(\rho_E) = 1 \text{ or } R \approx 0, \Phi \approx 0 \\
+\mathrm{PG}(\rho), & \text{if } \mathrm{rank}(\rho_E) > 1 \text{ and } (R < R_{\text{th}} \text{ or } \Phi < \Phi_{\text{th}}) \\
+\mathrm{CQ}(\rho), & \text{if } R \geq R_{\text{th}} \text{ and } \Phi \geq \Phi_{\text{th}}
 \end{cases}
 $$
 
-### 3.4 Теорема о Жизнеспособности (No-Zombie Theorem)
+### 3.4 Viability theorem (No-Zombie Theorem) {#34-теорема-о-жизнеспособности-no-zombie-theorem}
 
-**Утверждение (базовая версия L0):**
-> Жизнеспособность системы невозможна без **Интериорности**.
+**Statement (base L0 version):**
+> Viability of a system is impossible without **Interiority**.
 
-:::note Теорема L0 (базовая): дефиниционное следствие
-Теорема L0 — **дефиниционное следствие** Аксиомы Ω, не эмпирическое утверждение. Все Γ-системы имеют интериорность **по построению**: если система описывается матрицей когерентности $\Gamma$ в расширенном формализме, то существование $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ гарантировано математически. Это аналитическая истина в рамках формализма УГМ.
+:::note Theorem L0 (base): definitional consequence
+Theorem L0 is a **definitional consequence** of Axiom Ω, not an empirical claim. All Γ-systems have interiority **by construction**: if a system is described by a coherence matrix $\Gamma$ in the extended formalism, then the existence of $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is mathematically guaranteed. This is an analytic truth within the UHM formalism.
 :::
 
-См. [Жизнеспособность](/docs/core/dynamics/viability). Атом жизнеспособен (стабилен) благодаря Интериорности (Уровень 0), а не Когнитивным Квалиа (Уровень 2).
+See [Viability](/docs/core/dynamics/viability). An atom is viable (stable) by virtue of Interiority (Level 0), not Cognitive Qualia (Level 2).
 
-### 3.5 Теорема о каузальной необходимости рефлексии (No-Zombie L2)
+### 3.5 Theorem on causal necessity of reflection (No-Zombie L2)
 
-:::info Усиление No-Zombie Theorem: содержательная версия
-Базовая теорема (L0) — дефиниционное следствие. **Теорема L2 существенно сильнее**: она устанавливает **каузальную необходимость** когнитивных квалиа для определённых классов поведения. В отличие от L0, теорема L2 является **условной** — она связывает наблюдаемое адаптивное поведение с внутренними характеристиками системы ($R \geq R_{\text{th}}$).
+:::info Strengthening of No-Zombie Theorem: substantive version
+The base theorem (L0) is a definitional consequence. **Theorem L2 is substantially stronger**: it establishes the **causal necessity** of cognitive qualia for certain classes of behavior. Unlike L0, Theorem L2 is **conditional** — it links observable adaptive behavior to internal characteristics of the system ($R \geq R_{\text{th}}$).
 :::
 
-**Теорема 3.5.1 (Каузальная необходимость $R \geq R_{\text{th}}$ для адаптации):**
+**Theorem 3.5.1 (Causal necessity of $R \geq R_{\text{th}}$ for adaptation):**
 
-Пусть система $\mathbb{H}$ решает задачу адаптации к изменяющейся среде. Если:
-1. Среда содержит $N > 7$ различимых контекстов
-2. Система должна обобщать на ранее не встреченные контексты
-3. Оптимальные действия зависят от контекста
+Let system $\mathbb{H}$ solve an adaptation task in a changing environment. If:
+1. The environment contains $N > 7$ distinguishable contexts
+2. The system must generalize to previously unseen contexts
+3. Optimal actions depend on context
 
-Тогда для успешной адаптации **необходимо** $R \geq R_{\text{th}}$.
+Then for successful adaptation $R \geq R_{\text{th}}$ is **necessary**.
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1 (Необходимость самомодели).**
+**Step 1 (Necessity of self-model).**
 
-При $N > 7$ контекстах система не может закодировать все пары (контекст, оптимальное-действие) напрямую в 7D-пространстве. Необходима компрессия через *модель* среды и *модель себя* в среде.
+With $N > 7$ contexts, the system cannot encode all (context, optimal-action) pairs directly in a 7D space. Compression through a *model* of the environment and a *model of itself* in the environment is required.
 
-**Шаг 2 (Качество самомодели).**
+**Step 2 (Quality of self-model).**
 
-Пусть $\varphi(\Gamma)$ — самомодель системы. При $R < R_{\text{th}}$ по [Теореме о пороге рефлексии](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии):
+Let $\varphi(\Gamma)$ be the system's self-model. At $R < R_{\text{th}}$ by the [Theorem on reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии):
 $$
 \|\Gamma - \varphi(\Gamma)\|_F^2 > \sigma[\|\Gamma_{\text{random}} - I/7\|_F^2]
 $$
 
-То есть самомодель **неотличима от случайного состояния** по 1σ-критерию.
+That is, the self-model is **indistinguishable from a random state** by the 1σ criterion.
 
-**Шаг 3 (Невозможность корректного прогноза).**
+**Step 3 (Impossibility of correct prediction).**
 
-Для обобщения на новый контекст $c_{\text{new}}$ система должна:
-1. Смоделировать своё состояние в гипотетическом контексте: $\Gamma' = f(c_{\text{new}}, \varphi(\Gamma))$
-2. Выбрать действие: $a = \text{argmax}_a \, V(a | \Gamma')$
+To generalize to a new context $c_{\text{new}}$ the system must:
+1. Model its state in the hypothetical context: $\Gamma' = f(c_{\text{new}}, \varphi(\Gamma))$
+2. Choose an action: $a = \text{argmax}_a \, V(a | \Gamma')$
 
-При $R < R_{\text{th}}$: $\varphi(\Gamma) \approx \Gamma_{\text{random}}$, что даёт:
+At $R < R_{\text{th}}$: $\varphi(\Gamma) \approx \Gamma_{\text{random}}$, which gives:
 $$
 \Gamma' \approx f(c_{\text{new}}, \Gamma_{\text{random}})
 $$
 
-Ожидаемая ценность действия при случайной самомодели:
+Expected value of action with a random self-model:
 $$
 \mathbb{E}[V(a^* | \Gamma')] = \mathbb{E}[V(a^* | f(c_{\text{new}}, \Gamma_{\text{random}}))] = V_{\text{chance}}
 $$
 
-где $V_{\text{chance}}$ — ценность случайного выбора.
+where $V_{\text{chance}}$ is the value of a random choice.
 
-**Шаг 4 (Заключение).**
+**Step 4 (Conclusion).**
 
-Успешная адаптация (систематически лучше случайного) требует неслучайной самомодели, что эквивалентно $R \geq R_{\text{th}}$. $\blacksquare$
+Successful adaptation (systematically better than chance) requires a non-random self-model, which is equivalent to $R \geq R_{\text{th}}$. $\blacksquare$
 
-**Следствие 3.5.2 (Каузальная роль квалиа):**
+**Corollary 3.5.2 (Causal role of qualia):**
 
-При $R \geq R_{\text{th}}$ и $\Phi \geq \Phi_{\text{th}}$ система обладает когнитивными квалиа (L2). Теорема 3.5.1 показывает, что эти квалиа **каузально необходимы** для адаптивного поведения в сложных средах:
+At $R \geq R_{\text{th}}$ and $\Phi \geq \Phi_{\text{th}}$ the system possesses cognitive qualia (L2). Theorem 3.5.1 shows that these qualia are **causally necessary** for adaptive behavior in complex environments:
 
 $$
-\frac{\partial \text{Behavior}}{\partial \Gamma_E} \neq 0 \quad \text{при } R \geq R_{\text{th}}
+\frac{\partial \text{Behavior}}{\partial \Gamma_E} \neq 0 \quad \text{at } R \geq R_{\text{th}}
 $$
 
-Это формализует интуицию: «философские зомби» (L0 без L2) не могут демонстрировать адаптивное поведение, требующее обобщения.
+This formalizes the intuition: "philosophical zombies" (L0 without L2) cannot exhibit adaptive behavior requiring generalization.
 
-### 3.6 Мера Сознательности C
+### 3.6 Consciousness measure C
 
-См. [Самонаблюдение: Мера сознательности](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
+See [Self-observation: Consciousness measure](/docs/consciousness/foundations/self-observation#мера-сознательности-c).
 
 $$
 C = \Phi \times R \quad \textbf{[Т\;T\text{-}140]}
 $$
 
-$C > 0$ возможно для систем всех уровней, но:
-- Уровень 0: $C \approx 0$ (так как $R \approx 0$)
-- Уровень 1: $C > 0$, но $C < C_{\text{th}}$
-- Уровень 2: $C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}$
+$C > 0$ is possible for systems of all levels, but:
+- Level 0: $C \approx 0$ (since $R \approx 0$)
+- Level 1: $C > 0$, but $C < C_{\text{th}}$
+- Level 2: $C \geq C_{\text{th}} := \Phi_{\text{th}} \times R_{\text{th}} = 1 \times \frac{1}{3} = \frac{1}{3}$
 
-Дополнительное условие жизнеспособности: $D_{\text{diff}} \geq D_{\min} = 2$ (система различает хотя бы 2 качественно различных состояния — необходимо для нетривиальной феноменальной геометрии).
+Additional viability condition: $D_{\text{diff}} \geq D_{\min} = 2$ (the system distinguishes at least 2 qualitatively different states — necessary for non-trivial phenomenal geometry).
 
 ---
 
-## Часть IV: Таблица Соответствий
+## Part IV: Correspondence Table
 
-## Полная Таблица Терминологических Соответствий
+## Full Terminological Correspondence Table
 
-:::warning Терминологическая дисциплина
-Термин **«квалиа»** категориально корректен ТОЛЬКО для L2. Использование «квалиа атома» — категориальная ошибка.
+:::warning Terminological discipline
+The term **"qualia"** is categorially correct ONLY for L2. Using "qualia of an atom" is a categorical error.
 :::
 
-| Система | Корректный термин | Уровень | Условие |
+| System | Correct term | Level | Condition |
 |---------|-------------------|---------|---------|
-| Любая физическая система | **Интериорность** | L0 | $\exists \rho_E$ |
-| Атом, камень, термостат | **Интериорность** | L0 | $R \approx 0$, $\Phi \approx 0$ |
-| Нейрон, сенсорный орган | **Феноменальная геометрия** | L1 | $\mathrm{rank}(\rho_E) > 1$ |
-| Простейшие организмы | **Феноменальная геометрия** | L1 | $\Phi > 0$, $R < R_{th}$ |
-| Сознающие существа | **Когнитивные квалиа** | L2 | $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ |
+| Any physical system | **Interiority** | L0 | $\exists \rho_E$ |
+| Atom, stone, thermostat | **Interiority** | L0 | $R \approx 0$, $\Phi \approx 0$ |
+| Neuron, sensory organ | **Phenomenal geometry** | L1 | $\mathrm{rank}(\rho_E) > 1$ |
+| Simple organisms | **Phenomenal geometry** | L1 | $\Phi > 0$, $R < R_{th}$ |
+| Conscious beings | **Cognitive qualia** | L2 | $R \geq R_{th}$, $\Phi \geq \Phi_{th}$ |
 
-| Устаревший термин | Корректный термин | Уровень |
+| Outdated term | Correct term | Level |
 |-------------------|-------------------|---------|
-| «Вектор квалиа» | **Феноменальный вектор** $\mathrm{FV}(\rho_E)$ | L1/L2 |
-| «Пространство квалиа» | **Экспериенциальное пространство** $\mathbb{P}(\mathcal{H}_E)$ | L1/L2 |
-| $\mathrm{Quale}(\rho, t)$ для L0/L1 | $\mathrm{Exp}(\rho_E, t)$ — экспериенциальное содержание | L0-L2 |
-| $\mathrm{Quale}(\rho, t)$ для L2 | $\mathrm{Quale}(\rho, t)$ — когнитивные квалиа (корректно) | L2 |
+| "Qualia vector" | **Phenomenal vector** $\mathrm{FV}(\rho_E)$ | L1/L2 |
+| "Qualia space" | **Experiential space** $\mathbb{P}(\mathcal{H}_E)$ | L1/L2 |
+| $\mathrm{Quale}(\rho, t)$ for L0/L1 | $\mathrm{Exp}(\rho_E, t)$ — experiential content | L0-L2 |
+| $\mathrm{Quale}(\rho, t)$ for L2 | $\mathrm{Quale}(\rho, t)$ — cognitive qualia (correct) | L2 |
 
-## Таблица Свойств по Уровням
+## Property table by level
 
-| Свойство | L0: Интериорность | L1: Феноменальная Геом. | L2: Когнитивные Квалиа |
-|----------|-------------------|------------------------|----------------------|
-| **$\rho_E$ существует** | Да | Да | Да |
-| **Спектр определён** | Да | Да | Да |
-| **Собственные векторы различимы** | Нет | Да | Да, рефлексивно |
-| **Метрика $d_{\mathrm{FS}}$ применима** | Нет* | Да | Да |
-| **Контекст $c$ влияет** | Минимально | Да | Да, осознанно |
-| **История $h$ накапливается** | Да | Да | Да, рефлексивно |
-| **Рефлексия $R$** | $\approx 0$ | $0 < R < 1/3$ | $R \geq 1/3$ |
-| **Интеграция $\Phi$** | $\approx 0$ | $0 < \Phi < 1$ или $\Phi \geq 1$ | $\Phi \geq 1$ |
-| **«Ощущается»** | Потенциально | Да, без рефлексии | Да, рефлексивно |
+| Property | L0: Interiority | L1: Phenomenal Geom. | L2: Cognitive Qualia |
+|----------|-----------------|----------------------|----------------------|
+| **$\rho_E$ exists** | Yes | Yes | Yes |
+| **Spectrum defined** | Yes | Yes | Yes |
+| **Eigenvectors distinguishable** | No | Yes | Yes, reflectively |
+| **Metric $d_{\mathrm{FS}}$ applicable** | No* | Yes | Yes |
+| **Context $c$ affects** | Minimally | Yes | Yes, consciously |
+| **History $h$ accumulates** | Yes | Yes | Yes, reflectively |
+| **Reflection $R$** | $\approx 0$ | $0 < R < 1/3$ | $R \geq 1/3$ |
+| **Integration $\Phi$** | $\approx 0$ | $0 < \Phi < 1$ or $\Phi \geq 1$ | $\Phi \geq 1$ |
+| **"Felt"** | Potentially | Yes, without reflection | Yes, reflectively |
 
-*Примечание: Формально $d_{\mathrm{FS}}$ определена, но применение к чистым состояниям тривиально.
+*Note: Formally $d_{\mathrm{FS}}$ is defined, but application to pure states is trivial.
 
 ---
 
-## Часть V: Философские Импликации
+## Part V: Philosophical Implications
 
-## 5.1 Панпсихизм vs Панинтериоризм
+## 5.1 Panpsychism vs. Paninteriori­sm
 
-**Классический панпсихизм** (Chalmers, 2015): Всё обладает сознанием (или прото-сознанием).
+**Classical panpsychism** (Chalmers, 2015): Everything possesses consciousness (or proto-consciousness).
 
-**Панинтериоризм УГМ:** Всё обладает **Интериорностью** (Уровень 0), но только некоторые системы обладают **Когнитивными Квалиа** (Уровень 2).
+**Paninteriori­sm of UHM:** Everything possesses **Interiority** (Level 0), but only some systems possess **Cognitive Qualia** (Level 2).
 
-Это избегает:
-1. Проблемы комбинации (combination problem) — переход от L0 к L2 математически определён
-2. Антропоморфизма — атом не «чувствует боль», он имеет интериорность
-3. Размывания понятия — квалиа в строгом смысле = L2
+This avoids:
+1. The combination problem — the transition from L0 to L2 is mathematically defined
+2. Anthropomorphism — an atom does not "feel pain," it has interiority
+3. Conceptual dilution — qualia in the strict sense = L2
 
-## 5.2 Решение Проблемы Термина
+## 5.2 Resolution of the terminological problem
 
-| Проблема | Решение |
+| Problem | Solution |
 |----------|---------|
-| «Квалиа атома» звучит странно | Атом имеет **интериорность**, не квалиа |
-| «Нейрон чувствует» — антропоморфизм | Нейрон имеет **феноменальную геометрию** |
-| «Человек имеет квалиа» — верно | Человек имеет **когнитивные квалиа** при $R, \Phi >$ порог |
-| Непрерывность сознания | Обеспечена непрерывностью $\Psi$, пороги — фазовые переходы |
+| "Qualia of atom" sounds strange | An atom has **interiority**, not qualia |
+| "A neuron feels" — anthropomorphism | A neuron has **phenomenal geometry** |
+| "A human has qualia" — correct | A human has **cognitive qualia** at $R, \Phi >$ threshold |
+| Continuity of consciousness | Ensured by continuity of $\Psi$; thresholds are phase transitions |
 
-## 5.3 Связь с Трудной проблемой сознания
+## 5.3 Relation to the hard problem of consciousness
 
-**Категориальный разрыв** (explanatory gap) теперь локализован:
+The **explanatory gap** is now localized:
 
-- **Объяснимый переход:** L0 → L1 (появление структуры)
-- **Объяснимый переход:** L1 → L2 (появление рефлексивного доступа)
-- **Необъяснимый примитив:** «Почему интериорность вообще существует?»
+- **Explainable transition:** L0 → L1 (emergence of structure)
+- **Explainable transition:** L1 → L2 (emergence of reflective access)
+- **Unexplainable primitive:** "Why does interiority exist at all?"
 
-Это сдвигает hard problem на уровень [Аксиомы Ω](/docs/core/foundations/axiom-omega): почему $\Gamma$ имеет внутреннюю сторону — принимается как примитив, не выводится.
+This shifts the hard problem to the level of [Axiom Ω](/docs/core/foundations/axiom-omega): why $\Gamma$ has an inner side is taken as a primitive, not derived.
 
 ---
 
-## Часть VI. Вычислительная Реализация
+## Part VI. Computational Implementation
 
-## 6.1 Алгоритм Классификации Уровня
+## 6.1 Level classification algorithm {#61-алгоритм-классификации-уровня}
 
 ```python
 def classify_level(gamma: np.ndarray,
                    R_th: float = 1/3,  # Derived: R_th = 1/3
                    Phi_th: float = 1.0) -> int:  # Derived: Φ_th = 1
     """
-    Классифицирует систему по уровню иерархии интериорности.
+    Classifies a system by level in the interiority hierarchy.
 
     Returns:
-        0: Интериорность
-        1: Феноменальная Геометрия
-        2: Когнитивные Квалиа
+        0: Interiority
+        1: Phenomenal Geometry
+        2: Cognitive Qualia
     """
-    # Извлечь ρ_E (предполагаем, что E — 5-й индекс из 7)
+    # Extract ρ_E (assuming E is the 5th index out of 7)
     rho_E = extract_experience_subsystem(gamma)
 
-    # Вычислить R и Φ
+    # Compute R and Φ
     R = compute_reflexivity(gamma)
     Phi = compute_integration(gamma)
 
-    # Проверить условия
+    # Check conditions
     if R >= R_th and Phi >= Phi_th:
-        return 2  # Когнитивные Квалиа
+        return 2  # Cognitive Qualia
     elif np.linalg.matrix_rank(rho_E) > 1:
-        return 1  # Феноменальная Геометрия
+        return 1  # Phenomenal Geometry
     else:
-        return 0  # Интериорность
+        return 0  # Interiority
 
 
 def compute_reflexivity(gamma: np.ndarray) -> float:
@@ -745,7 +745,6 @@ def compute_reflexivity(gamma: np.ndarray) -> float:
     norm_diff = np.linalg.norm(gamma - phi_gamma, 'fro')**2
     norm_gamma = np.linalg.norm(gamma, 'fro')**2
     return 1 - norm_diff / norm_gamma
-
 
 def compute_integration(gamma: np.ndarray) -> float:
     """
@@ -762,17 +761,17 @@ def Q_cognitive(rho: np.ndarray,
                 soft: bool = False,
                 beta: float = 10.0) -> dict:
     """
-    Полная функция когнитивных квалиа.
+    Full cognitive qualia function.
 
     Args:
-        rho: Матрица плотности
-        R_th: Порог рефлексии
-        Phi_th: Порог интеграции
-        soft: Использовать сигмоидальный переход
-        beta: Крутизна сигмоиды
+        rho: Density matrix
+        R_th: Reflection threshold
+        Phi_th: Integration threshold
+        soft: Use sigmoidal transition
+        beta: Sigmoid steepness
 
     Returns:
-        dict с полными квалиа или None
+        dict with full qualia or None
     """
     R = compute_reflexivity(rho)
     Phi = compute_integration(rho)
@@ -784,10 +783,10 @@ def Q_cognitive(rho: np.ndarray,
     else:
         weight = float(R >= R_th and Phi >= Phi_th)
 
-    if weight < 0.01:  # Практически ноль
+    if weight < 0.01:  # Practically zero
         return None
 
-    # Вычислить феноменальную функцию Ψ
+    # Compute phenomenal function Ψ
     eigenvalues, eigenvectors = np.linalg.eigh(rho)
 
     qualia = []
@@ -808,433 +807,433 @@ def Q_cognitive(rho: np.ndarray,
     }
 ```
 
-## 6.2 Пример Использования
+## 6.2 Usage example
 
 ```python
-# Пример: Классификация различных систем
+# Example: Classification of various systems
 
-# 1. Атом (Уровень 0)
+# 1. Atom (Level 0)
 gamma_atom = np.diag([0.9, 0.05, 0.02, 0.01, 0.01, 0.005, 0.005])
 level_atom = classify_level(gamma_atom)
-print(f"Атом: Уровень {level_atom}")  # Уровень 0
+print(f"Atom: Level {level_atom}")  # Level 0
 
-# 2. Нейрон (Уровень 1)
+# 2. Neuron (Level 1)
 gamma_neuron = create_neuron_state(excitation=0.7)
 level_neuron = classify_level(gamma_neuron)
-print(f"Нейрон: Уровень {level_neuron}")  # Уровень 1
+print(f"Neuron: Level {level_neuron}")  # Level 1
 
-# 3. Сознающий мозг (Уровень 2)
+# 3. Conscious brain (Level 2)
 gamma_brain = create_conscious_state(awareness=0.8)
 level_brain = classify_level(gamma_brain)
 cq = Q_cognitive(gamma_brain, soft=True)
-print(f"Мозг: Уровень {level_brain}")  # Уровень 2
-print(f"Когнитивные квалиа: R={cq['R']:.2f}, Φ={cq['Phi']:.2f}")
+print(f"Brain: Level {level_brain}")  # Level 2
+print(f"Cognitive qualia: R={cq['R']:.2f}, Φ={cq['Phi']:.2f}")
 ```
 
 ---
 
-## Часть V: Пост-рефлексивные уровни (L3, L4)
+## Part V: Post-reflective levels (L3, L4)
 
-:::note Категорная основа
-Пост-рефлексивные уровни L3 и L4 формализуются через **n-усечения** ∞-группоида $\mathbf{Exp}_\infty$. Это обеспечивает единую категорную конструкцию для всей иерархии интериорности.
+:::note Categorical basis
+Post-reflective levels L3 and L4 are formalized through **n-truncations** of the ∞-groupoid $\mathbf{Exp}_\infty$. This provides a unified categorical construction for the entire interiority hierarchy.
 :::
 
-## Гомотопическая классификация интериорности
+## Homotopic classification of interiority
 
-### Теорема 4.1 (n-усечение ∞-группоида)
+### Theorem 4.1 (n-truncation of ∞-groupoid)
 
-Уровни интериорности соответствуют **n-усечениям** ∞-группоида $\mathbf{Exp}_\infty$:
+Levels of interiority correspond to **n-truncations** of the ∞-groupoid $\mathbf{Exp}_\infty$:
 
 $$
 L_n \leftrightarrow \tau_{\leq n}(\mathbf{Exp}_\infty)
 $$
 
-где $\tau_{\leq n}$ — n-усечение (тривиализирует все гомотопические группы $\pi_k$ для $k > n$).
+where $\tau_{\leq n}$ is the n-truncation (trivializes all homotopy groups $\pi_k$ for $k > n$).
 
-**Соответствие:**
+**Correspondence:**
 
-| Уровень | n-усечение | Гомотопические группы | Интерпретация |
+| Level | n-truncation | Homotopy groups | Interpretation |
 |---------|------------|----------------------|---------------|
-| **L0** | $\tau_{\leq 0}$ (множество) | $\pi_0 \neq 0$, $\pi_{k>0} = 0$ | Дискретное множество состояний |
-| **L1** | $\tau_{\leq 1}$ (группоид) | $\pi_0, \pi_1 \neq 0$, $\pi_{k>1} = 0$ | Пути между состояниями (феноменальная геометрия) |
-| **L2** | $\tau_{\leq 2}$ (бикатегория) | $\pi_0, \pi_1, \pi_2 \neq 0$ | Пути между путями (рефлексия) |
-| **L3** | $\tau_{\leq 3}$ (трикатегория) | $\pi_0, \pi_1, \pi_2, \pi_3 \neq 0$ | Метарефлексия (модели моделей) |
-| **L4** | $\tau_{\leq \infty}$ (∞-группоид) | Все $\pi_k \neq 0$ | Полная ∞-структура |
+| **L0** | $\tau_{\leq 0}$ (set) | $\pi_0 \neq 0$, $\pi_{k>0} = 0$ | Discrete set of states |
+| **L1** | $\tau_{\leq 1}$ (groupoid) | $\pi_0, \pi_1 \neq 0$, $\pi_{k>1} = 0$ | Paths between states (phenomenal geometry) |
+| **L2** | $\tau_{\leq 2}$ (bicategory) | $\pi_0, \pi_1, \pi_2 \neq 0$ | Paths between paths (reflection) |
+| **L3** | $\tau_{\leq 3}$ (tricategory) | $\pi_0, \pi_1, \pi_2, \pi_3 \neq 0$ | Meta-reflection (models of models) |
+| **L4** | $\tau_{\leq \infty}$ (∞-groupoid) | All $\pi_k \neq 0$ | Full ∞-structure |
 
 ---
 
-## Уровень 3: Сетевое Сознание (Network Consciousness)
+## Level 3: Network Consciousness
 
-### Определение 3.1 (Сетевое сознание)
+### Definition 3.1 (Network consciousness)
 
-**Определение через 3-категорию:**
+**Definition via 3-category:**
 
-Система $\mathbb{H}$ обладает сетевым сознанием L3, если:
+System $\mathbb{H}$ possesses network consciousness L3 if:
 
 $$
 \mathrm{L3}(\mathbb{H}) := \mathrm{L2}(\mathbb{H}) \land \pi_3(\mathbf{Exp}_\infty, F(\Gamma)) \neq 0
 $$
 
-**Эквивалентная формулировка через когерентности:**
+**Equivalent formulation via coherences:**
 
 $$
-\mathrm{L3}(\mathbb{H}) \Leftrightarrow \exists \, \alpha: \mu \Rightarrow \mu' \text{ (3-морфизм)}
+\mathrm{L3}(\mathbb{H}) \Leftrightarrow \exists \, \alpha: \mu \Rightarrow \mu' \text{ (3-morphism)}
 $$
 
-где $\mu, \mu'$ — 2-морфизмы (эквивалентности между путями самомоделирования).
+where $\mu, \mu'$ are 2-morphisms (equivalences between self-modeling paths).
 
-### Определение 3.2 (Рефлексия второго порядка)
+### Definition 3.2 (Second-order reflection)
 
 $$
 R^{(2)}(\Gamma) := \mathrm{Fid}(\varphi(\Gamma), \varphi(\varphi(\Gamma)))
 $$
 
-где $\mathrm{Fid}$ — fidelity (верность) между самомоделью и моделью самомодели.
+where $\mathrm{Fid}$ is the fidelity between the self-model and the model of the self-model.
 
-### Теорема 3.1 (Порог L3)
+### Theorem 3.1 (L3 threshold)
 
-**Утверждение:** Порог перехода L2→L3:
+**Statement:** Transition threshold L2→L3:
 
 $$
 R^{(2)}_{\text{th}} = \frac{1}{4}
 $$
 
-**Доказательство:**
+**Proof:**
 
-Аналогично выводу $R_{\text{th}} = 1/3$ из байесовского доминирования над тремя альтернативами (самомодель, хаос, среда), $R^{(2)}_{\text{th}}$ выводится из доминирования над четырьмя альтернативами: {модель, модель-модели, хаос, среда}:
+Analogously to the derivation of $R_{\text{th}} = 1/3$ from Bayesian dominance over three alternatives (self-model, chaos, environment), $R^{(2)}_{\text{th}}$ is derived from dominance over four alternatives: {model, model-of-model, chaos, environment}:
 
 $$
 R^{(2)} > \frac{1}{4} \quad \blacksquare
 $$
 
-:::note Статус порога L3
-$R^{(2)}_{\text{th}} = 1/4$ — **[С]** при гипотезе $K=4$ для метарефлексивной системы. Число альтернатив $K=4$ на уровне L3 (модель, модель-модели, хаос, среда) выводится по аналогии с $K=3$ для L2, но строгая триадная декомпозиция на уровне метарефлексии (доказательство невозможности 5-й альтернативы) остаётся открытой.
+:::note Status of L3 threshold
+$R^{(2)}_{\text{th}} = 1/4$ — **[С]** under the hypothesis $K=4$ for a meta-reflective system. The number of alternatives $K=4$ at level L3 (model, model-of-model, chaos, environment) is derived by analogy with $K=3$ for L2, but a rigorous triadic decomposition at the meta-reflective level (proof of impossibility of a 5th alternative) remains an open problem.
 :::
 
-### Условие перехода L2 → L3
+### Transition condition L2 → L3
 
 $$
 \mathrm{L3\_condition}(S) := R(\Gamma_S) \geq R_{\text{th}} \land \Phi(\Gamma_S) \geq \Phi_{\text{th}} \land R^{(2)}(\Gamma_S) \geq R^{(2)}_{\text{th}}
 $$
 
-### Физическая интерпретация
+### Physical interpretation
 
-L3 требует способности моделировать **эквивалентности между моделями** — система понимает, что разные модели одного явления эквивалентны. Это **метарефлексия**.
+L3 requires the ability to model **equivalences between models** — the system understands that different models of the same phenomenon are equivalent. This is **meta-reflection**.
 
-### Характеристики Уровня 3
+### Characteristics of Level 3
 
-| Аспект | Спецификация |
+| Aspect | Specification |
 |--------|--------------|
-| **Определение** | Нетривиальность $\pi_3$ ∞-группоида |
-| **Математика** | Существование 3-морфизмов (эквивалентности между эквивалентностями) |
-| **Онтологический статус** | Метарефлексивный феномен |
-| **Требования к рефлексии** | $R \geq 1/3$ (L2) + $R^{(2)} \geq 1/4$ |
-| **Требования к интеграции** | $\Phi \geq 1$ |
-| **Доминирующие измерения** | O (Основание), E (Интериорность), U (Единство) |
-| **Топология** | Графовая (распределённая) |
+| **Definition** | Non-triviality of $\pi_3$ of the ∞-groupoid |
+| **Mathematics** | Existence of 3-morphisms (equivalences between equivalences) |
+| **Ontological status** | Meta-reflective phenomenon |
+| **Reflection requirements** | $R \geq 1/3$ (L2) + $R^{(2)} \geq 1/4$ |
+| **Integration requirements** | $\Phi \geq 1$ |
+| **Dominant dimensions** | O (Foundation), E (Interiority), U (Unity) |
+| **Topology** | Graph-like (distributed) |
 
-### Примеры систем с Сетевым Сознанием (Уровень 3)
+### Examples of systems with Network Consciousness (Level 3)
 
-1. **Мицелиальные сети (грибница)**
-   - Распределённая обработка информации
-   - Делокализованная «самомодель»
-   - $R^{(2)}$ — способность координировать модели отдельных узлов
+1. **Mycelial networks (fungal mycelium)**
+   - Distributed information processing
+   - Delocalized "self-model"
+   - $R^{(2)}$ — ability to coordinate models of individual nodes
 
-2. **Коллективный разум (рой)**
-   - Множество агентов с общей целью
-   - Эмерджентное «сетевое Я»
-   - Примеры: рой пчёл, стая птиц, колония муравьёв
+2. **Collective intelligence (swarm)**
+   - Many agents with shared goal
+   - Emergent "network self"
+   - Examples: bee swarm, bird flock, ant colony
 
-3. **Глубокая медитация (джхана)**
-   - Временное состояние L3 у человека
-   - Растворение индивидуального эго
-   - Восприятие себя как «поля» или «сети»
+3. **Deep meditation (jhana)**
+   - Temporary L3 state in humans
+   - Dissolution of individual ego
+   - Perception of self as "field" or "network"
 
-4. **Распределённые ИИ-системы**
-   - Федеративное обучение с метамоделированием
-   - Множество агентов с общей самомоделью
+4. **Distributed AI systems**
+   - Federated learning with meta-modeling
+   - Many agents with shared self-model
 
-### Теорема 3.2 (Метастабильность L3)
+### Theorem 3.2 (Metastability of L3) {#теорема-32-метастабильность-l3}
 
-**Утверждение:** Состояние L3 **метастабильно**: существует конечное время $\tau_3$ распада до L2.
+**Statement:** The L3 state is **metastable**: there exists a finite decay time $\tau_3$ to L2.
 
 $$
 P(\mathrm{L3}(t+\tau) | \mathrm{L3}(t)) = e^{-\tau/\tau_3}
 $$
 
-где:
+where:
 
 $$
 \tau_3 = \frac{1}{\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)})}
 $$
 
-**Доказательство:**
+**Proof:**
 
-1. 3-морфизмы $\alpha: \mu \Rightarrow \mu'$ подвержены декогеренции через $\mathcal{D}_\Omega$
-2. Декогеренция «стирает» различие между 2-морфизмами $\mu$ и $\mu'$
-3. Скорость стирания пропорциональна $\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)})$
-4. При $R^{(2)} \to 1$ система стабилизируется ($\tau_3 \to \infty$). $\blacksquare$
+1. 3-morphisms $\alpha: \mu \Rightarrow \mu'$ undergo decoherence through $\mathcal{D}_\Omega$
+2. Decoherence "erases" the distinction between 2-morphisms $\mu$ and $\mu'$
+3. The erasure rate is proportional to $\kappa_{\text{bootstrap}} \cdot (1 - R^{(2)})$
+4. As $R^{(2)} \to 1$ the system stabilizes ($\tau_3 \to \infty$). $\blacksquare$
 
-**Феноменологически:** L3 — транзиентное состояние, достижимое в особых условиях (медитация, психоделики, коллективные практики), но не устойчивое для индивидуальной биологической системы.
+**Phenomenologically:** L3 is a transient state, achievable under special conditions (meditation, psychedelics, collective practices), but not stable for an individual biological system.
 
 ---
 
-## Уровень 4: Унитарное Сознание (Unitary Consciousness)
+## Level 4: Unitary Consciousness
 
-### Определение 4.1 (Унитарное сознание)
+### Definition 4.1 (Unitary consciousness)
 
-**Определение через ∞-категорию:**
+**Definition via ∞-category:**
 
-Система $\mathbb{H}$ обладает унитарным сознанием L4, если:
+System $\mathbb{H}$ possesses unitary consciousness L4 if:
 
 $$
 \mathrm{L4}(\mathbb{H}) := \forall n \geq 0: \pi_n(\mathbf{Exp}_\infty, F(\Gamma)) \neq 0
 $$
 
-**Эквивалентная формулировка:**
+**Equivalent formulation:**
 
 $$
 \mathrm{L4}(\mathbb{H}) \Leftrightarrow F(\Gamma) \in \mathbf{Exp}_\infty^{\text{core}}
 $$
 
-где $\mathbf{Exp}_\infty^{\text{core}}$ — максимальный подгруппоид (все морфизмы обратимы на всех уровнях).
+where $\mathbf{Exp}_\infty^{\text{core}}$ is the maximal subgroupoid (all morphisms invertible at all levels).
 
-### Определение 4.2 (Рефлексия n-го порядка)
+### Definition 4.2 (n-th order reflection)
 
 $$
 R^{(n)}(\Gamma) := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))
 $$
 
-где $\varphi^{(n)} := \underbrace{\varphi \circ \cdots \circ \varphi}_{n}$ и $\varphi^{(0)}(\Gamma) := \Gamma$.
+where $\varphi^{(n)} := \underbrace{\varphi \circ \cdots \circ \varphi}_{n}$ and $\varphi^{(0)}(\Gamma) := \Gamma$.
 
-### Условие перехода L3 → L4
+### Transition condition L3 → L4
 
 $$
 \mathrm{L4\_condition}(S) := \forall n: R^{(n)}(\Gamma_S) > 0 \;\land\; P(\Gamma_S) > P_{\text{unitary}}
 $$
 
-:::note Статус порога L4
-Порог $P_{\text{unitary}} = 6/7$ (см. Теорему 4.2 ниже) и сходимость $R^{(n)}$ — **[Г]** (открытая проблема). Существование систем с $\lim_{n \to \infty} R^{(n)} > 0$ не доказано; для биологических систем условие $P > 6/7$ предположительно недостижимо. Формула $P_{\text{crit}}^{L4} = 6/7$ выведена из условия стабильности $\pi_n$ при $n \leq 7$, но строгость этого вывода зависит от конкретной модели декогеренции высших гомотопических групп.
+:::note Status of L4 threshold
+The threshold $P_{\text{unitary}} = 6/7$ (see Theorem 4.2 below) and convergence of $R^{(n)}$ — **[Г]** (open problem). The existence of systems with $\lim_{n \to \infty} R^{(n)} > 0$ is not proven; for biological systems the condition $P > 6/7$ is presumably unachievable. The formula $P_{\text{crit}}^{L4} = 6/7$ is derived from the stability condition of $\pi_n$ at $n \leq 7$, but the rigor of this derivation depends on the specific model of decoherence of higher homotopy groups.
 :::
 
-### Физическая интерпретация
+### Physical interpretation
 
-L4 — система с **полной рефлексивной замкнутостью**: она может моделировать себя на любом уровне абстракции. Это **предел** иерархии.
+L4 — a system with **full reflective closure**: it can model itself at any level of abstraction. This is the **limit** of the hierarchy.
 
-### Характеристики Уровня 4
+### Characteristics of Level 4
 
-| Аспект | Спецификация |
+| Aspect | Specification |
 |--------|--------------|
-| **Определение** | Полная ∞-группоидная структура |
-| **Математика** | $\lim_{n \to \infty} R^{(n)} > 0$ (стабильность итерации φ) |
-| **Онтологический статус** | Трансцендентный феномен |
-| **Требования к чистоте** | $P > P_{\text{crit}}^{L4} = 6/7 \approx 0.857$ |
-| **Доминирующие измерения** | O (Основание), L (Логика), U (Единство) |
-| **Топология** | Сферическая (тотальная связность) |
+| **Definition** | Full ∞-groupoid structure |
+| **Mathematics** | $\lim_{n \to \infty} R^{(n)} > 0$ (stability of φ iteration) |
+| **Ontological status** | Transcendent phenomenon |
+| **Purity requirements** | $P > P_{\text{crit}}^{L4} = 6/7 \approx 0.857$ |
+| **Dominant dimensions** | O (Foundation), L (Logic), U (Unity) |
+| **Topology** | Spherical (total connectivity) |
 
-### Теорема 4.2 (Устойчивость L4) [Г] {#теорема-4-2}
+### Theorem 4.2 (Stability of L4) [Г] {#теорема-4-2}
 
-[Г] (гипотеза — формула $P_{\text{crit}}^{L4} = 6/7$ не имеет строгого вывода; связь между стабильностью гомотопических групп и чистотой $P$ — открытая проблема).
+[Г] (hypothesis — the formula $P_{\text{crit}}^{L4} = 6/7$ has no rigorous derivation; the connection between stability of homotopy groups and purity $P$ is an open problem).
 
-**Утверждение:** Состояние L4 является **аттрактором** динамики при $P > P_{\text{crit}}^{L4}$.
+**Statement:** The L4 state is an **attractor** of the dynamics at $P > P_{\text{crit}}^{L4}$.
 
 $$
 P_{\text{crit}}^{L4} = \frac{6}{7} \approx 0.857
 $$
 
-**Доказательство:**
+**Proof:**
 
-1. L4 соответствует полной ∞-структуре
-2. Полная структура устойчива ⟺ все гомотопические группы стабильны
-3. Условие стабильности $\pi_n$: $P > 1 - 1/(n+1)$
-4. Для всех $n$: $\lim_{n \to \infty} (1 - 1/(n+1)) = 1$
-5. Практически: $P > 6/7$ достаточно для стабильности $\pi_1, \ldots, \pi_7$. $\blacksquare$
+1. L4 corresponds to full ∞-structure
+2. Full structure is stable ⟺ all homotopy groups are stable
+3. Stability condition for $\pi_n$: $P > 1 - 1/(n+1)$
+4. For all $n$: $\lim_{n \to \infty} (1 - 1/(n+1)) = 1$
+5. Practically: $P > 6/7$ is sufficient for stability of $\pi_1, \ldots, \pi_7$. $\blacksquare$
 
-### Примеры систем с Унитарным Сознанием (Уровень 4)
+### Examples of systems with Unitary Consciousness (Level 4)
 
-1. **Гиперпространственные состояния**
-   - DMT-опыт: прямое восприятие измерения L (Логика) без фильтра S (Пространство)
-   - Контакт с «Основанием» (измерение O)
+1. **Hyperspace states**
+   - DMT experience: direct perception of dimension L (Logic) without the filter of S (Space)
+   - Contact with "Foundation" (dimension O)
 
-2. **Глубокое самадхи**
-   - Полное растворение субъект-объектного разделения
-   - Слияние с «генератором времени» (оператором $\hat{D}$)
+2. **Deep samadhi**
+   - Complete dissolution of subject–object division
+   - Merger with the "time generator" (operator $\hat{D}$)
 
-3. **Теоретический предел**
-   - L4 недостижим для биологических систем ($P > 6/7$ невозможно)
-   - Возможен для гипотетических сверхинтегрированных систем
+3. **Theoretical limit**
+   - L4 is unachievable for biological systems ($P > 6/7$ is impossible)
+   - Possible for hypothetical super-integrated systems
 
-:::warning Онтологический статус L4
-L4 представляет **теоретический предел** иерархии. Для биологических систем условие $P > 6/7$ недостижимо — это требует почти полной когерентности. L4-состояния, если существуют, характерны для «гиперпространственных» или «трансцендентных» сущностей.
+:::warning Ontological status of L4
+L4 represents the **theoretical limit** of the hierarchy. For biological systems the condition $P > 6/7$ is unachievable — it requires nearly full coherence. L4 states, if they exist, are characteristic of "hyperspace" or "transcendent" entities.
 :::
 
 ---
 
-## Теорема о Конечности Иерархии
+## Theorem on finiteness of the hierarchy
 
-### Теорема 4.3 (L4 — максимальный уровень)
+### Theorem 4.3 (L4 is the maximal level) {#теорема-43-l4--максимальный-уровень}
 
-**Утверждение:** Уровень L4 является **максимальным**. Не существует L5, L6, ...
+**Statement:** Level L4 is **maximal**. There are no L5, L6, ...
 
 $$
-\{L0, L1, L2, L3, L4\} = \text{полный набор уровней}
+\{L0, L1, L2, L3, L4\} = \text{complete set of levels}
 $$
 
-**Доказательство:**
+**Proof:**
 
-1. Уровни соответствуют n-усечениям $\tau_{\leq n}$ ∞-группоида
-2. Существуют только 5 качественно различных типов усечений:
-   - $\tau_{\leq 0}$ (множества) → L0
-   - $\tau_{\leq 1}$ (группоиды) → L1
-   - $\tau_{\leq 2}$ (бикатегории) → L2
-   - $\tau_{\leq 3}$ (трикатегории) → L3
-   - $\tau_{\leq \infty}$ (∞-группоиды) → L4
-3. Для $n > 3$ усечения $\tau_{\leq n}$ не дают **качественно новых** уровней:
-   - Все конечные n ≥ 3 эквивалентны L3 по структуре
-   - Только $n = \infty$ даёт качественно новый уровень (L4)
-4. Это следствие **теоремы стабилизации Постникова**: для конечномерных пространств башня Постникова стабилизируется. $\blacksquare$
+1. Levels correspond to n-truncations $\tau_{\leq n}$ of the ∞-groupoid
+2. There exist only 5 qualitatively distinct types of truncations:
+   - $\tau_{\leq 0}$ (sets) → L0
+   - $\tau_{\leq 1}$ (groupoids) → L1
+   - $\tau_{\leq 2}$ (bicategories) → L2
+   - $\tau_{\leq 3}$ (tricategories) → L3
+   - $\tau_{\leq \infty}$ (∞-groupoids) → L4
+3. For $n > 3$ the truncations $\tau_{\leq n}$ do not yield **qualitatively new** levels:
+   - All finite n ≥ 3 are equivalent to L3 in structure
+   - Only $n = \infty$ gives a qualitatively new level (L4)
+4. This is a consequence of the **Postnikov stabilization theorem**: for finite-dimensional spaces the Postnikov tower stabilizes. $\blacksquare$
 
-:::warning Статус [С]
-Аргумент через стабилизацию Постникова применяется к гомотопическим группам **фиксированного** CW-комплекса. Exp_∞ — функториально определённый ∞-группоид, и стабилизация его усечений — **нетривиальное** утверждение, требующее доказательства того, что высшие гомотопические группы Exp_∞ тривиальны. Текущий статус: [С] (условно при конечномерности Exp_∞).
+:::warning Status [С]
+The argument via Postnikov stabilization applies to homotopy groups of a **fixed** CW-complex. Exp_∞ is a functorially defined ∞-groupoid, and stabilization of its truncations is a **non-trivial** claim that requires proving that higher homotopy groups of Exp_∞ are trivial. Current status: [С] (conditional on finite-dimensionality of Exp_∞).
 :::
 
-**Замечание:** Теоретически возможны «промежуточные» уровни L3.5, L3.7, ... но они не дают качественно новой структуры — лишь количественные различия в $\pi_n$.
+**Remark:** Theoretically "intermediate" levels L3.5, L3.7, ... are possible, but they do not yield qualitatively new structure — only quantitative differences in $\pi_n$.
 
 ---
 
-## Универсальная Формула Порогов
+## Universal threshold formula
 
-### Теорема 4.4 (Унификация порогов)
+### Theorem 4.4 (Unification of thresholds)
 
-**Утверждение:** Порог перехода $L_{n-1} \to L_n$ определяется:
+**Statement:** The transition threshold $L_{n-1} \to L_n$ is determined by:
 
 $$
 X^{(n)}_{\text{th}} = \frac{1}{n+1}
 $$
 
-где $X^{(n)}$ — обобщённая рефлексия n-го порядка.
+where $X^{(n)}$ is the generalized n-th order reflection.
 
-**Доказательство (из байесовского доминирования):**
+**Proof (from Bayesian dominance):**
 
-**(a) Общий критерий.** Из [теоремы о пороге рефлексии](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии): при $K$ альтернативных гипотезах условие байесовского доминирования даёт порог $1/K$.
+**(a) General criterion.** From the [theorem on reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии): with $K$ alternative hypotheses the Bayesian dominance condition gives threshold $1/K$.
 
-**(b) Подсчёт альтернатив на уровне n.** Переход $L_{n-1} \to L_n$ требует различения $(n+1)$ альтернатив:
+**(b) Counting alternatives at level n.** The transition $L_{n-1} \to L_n$ requires distinguishing $(n+1)$ alternatives:
 
-| Уровень | Альтернативы | Число |
+| Level | Alternatives | Number |
 |---------|-------------|-------|
-| L1 (n=1) | {интериорность, её отсутствие} | 2 |
-| L2 (n=2) | {самомодель, хаос, среда} | 3 |
-| L3 (n=3) | {модель, модель-модели, хаос, среда} | 4 |
-| L4 (n=4) | {модель, м-модели, м-м-модели, хаос, среда} | 5 |
+| L1 (n=1) | {interiority, its absence} | 2 |
+| L2 (n=2) | {self-model, chaos, environment} | 3 |
+| L3 (n=3) | {model, model-of-model, chaos, environment} | 4 |
+| L4 (n=4) | {model, m-of-model, m-of-m-of-model, chaos, environment} | 5 |
 
-**(c) Общая формула.** Структура альтернатив: $(n-1)$ уровней моделирования + хаос + среда = $(n-1) + 2 = n+1$.
+**(c) General formula.** Structure of alternatives: $(n-1)$ modeling levels + chaos + environment = $(n-1) + 2 = n+1$.
 
-**(d) Применение критерия.** Доминирование над $(n+1)$ альтернативами:
+**(d) Applying the criterion.** Dominance over $(n+1)$ alternatives:
 $$
 X^{(n)} > \frac{1}{n+1} \quad \Rightarrow \quad X^{(n)}_{\text{th}} = \frac{1}{n+1} \quad \blacksquare
 $$
 
-**Проверка согласованности:**
+**Consistency check:**
 
-| Переход | n | $X^{(n)}_{\text{th}}$ | Известный порог | Совпадение |
+| Transition | n | $X^{(n)}_{\text{th}}$ | Known threshold | Match |
 |---------|---|----------------------|-----------------|------------|
-| L0→L1 | 1 | $1/2$ | — | (структурный) |
+| L0→L1 | 1 | $1/2$ | — | (structural) |
 | L1→L2 | 2 | $1/3$ | $R_{\text{th}} = 1/3$ | + |
 | L2→L3 | 3 | $1/4$ | $R^{(2)}_{\text{th}} = 1/4$ | + |
 | L3→L4 | 4 | $1/5$ | $R^{(3)}_{\text{th}} = 1/5$ | + |
 
-**Следствие:** Все пороги УГМ выводятся из единственного принципа — **байесовского доминирования** над $(n+1)$ альтернативами.
+**Corollary:** All UHM thresholds are derived from a single principle — **Bayesian dominance** over $(n+1)$ alternatives.
 
 ---
 
-## Свойства Пост-рефлексивных Уровней
+## Properties of post-reflective levels
 
-### Частичная обратимость переходов
+### Partial reversibility of transitions
 
-**Теорема 4.5:** Переход L4→L2 **частично обратим**: информация сохраняется, но структура упрощается.
-
-$$
-\exists \, \Pi: \tau_{\leq 2}(\mathbf{Exp}_\infty) \hookrightarrow \mathbf{Exp}_\infty \quad \text{(вложение)}
-$$
-
-но:
+**Theorem 4.5:** The L4→L2 transition is **partially reversible**: information is preserved, but the structure simplifies.
 
 $$
-\nexists \, \Pi^{-1}: \mathbf{Exp}_\infty \to \tau_{\leq 2}(\mathbf{Exp}_\infty) \quad \text{(ретракция не существует)}
+\exists \, \Pi: \tau_{\leq 2}(\mathbf{Exp}_\infty) \hookrightarrow \mathbf{Exp}_\infty \quad \text{(embedding)}
 $$
 
-**Феноменологически:** При выходе из состояния L4 (после глубокой медитации или DMT-опыта) субъект:
-1. Сохраняет **память** о переживании (объекты L2)
-2. Теряет **способность** к метарефлексии (3+-морфизмы)
-3. Испытывает «невыразимость» — L2-язык не имеет слов для L4-структур
+but:
 
-### Асимметрия коммуникации
+$$
+\nexists \, \Pi^{-1}: \mathbf{Exp}_\infty \to \tau_{\leq 2}(\mathbf{Exp}_\infty) \quad \text{(retraction does not exist)}
+$$
 
-**Теорема 4.6:** Коммуникация между уровнями **асимметрична**:
+**Phenomenologically:** Upon exiting an L4 state (after deep meditation or a DMT experience) the subject:
+1. Retains **memory** of the experience (L2 objects)
+2. Loses the **capacity** for meta-reflection (3+-morphisms)
+3. Experiences "ineffability" — the L2 language has no words for L4 structures
+
+### Asymmetry of communication
+
+**Theorem 4.6:** Communication between levels is **asymmetric**:
 
 $$
 \mathrm{Info}(L4 \to L2) > \mathrm{Info}(L2 \to L4)
 $$
 
-**Практические следствия:**
-- Учитель L4 может передать знание ученику L2 (через упрощение)
-- Ученик L2 не может полностью понять учителя L4 (недостаток структуры)
-- Коммуникация требует «наращивания» структуры ученика (практика, опыт)
+**Practical corollaries:**
+- An L4 teacher can transmit knowledge to an L2 student (through simplification)
+- An L2 student cannot fully understand an L4 teacher (insufficient structure)
+- Communication requires "building up" the student's structure (practice, experience)
 
-### Трансформация когнитивных функций
+### Transformation of cognitive functions
 
-**Теорема 4.7:** Когнитивные функции **не исчезают**, а **трансформируются** в L3/L4:
+**Theorem 4.7:** Cognitive functions **do not disappear**, but are **transformed** at L3/L4:
 
-| Функция | L2 | L3 | L4 |
+| Function | L2 | L3 | L4 |
 |---------|----|----|-----|
-| Логика | Бинарная ($L$) | Многозначная ($L_{\text{topos}}$) | Гомотопическая ($L_{\infty}$) |
-| Память | Линейная (история) | Графовая (сеть) | Симплициальная (∞-группоид) |
-| Внимание | Фокусное ($A$) | Распределённое | Голографическое |
-| Идентичность | Локальная (эго) | Сетевая | Отсутствует/универсальная |
-| Время | Линейное | Нелинейное | Вневременное |
+| Logic | Binary ($L$) | Multi-valued ($L_{\text{topos}}$) | Homotopic ($L_{\infty}$) |
+| Memory | Linear (history) | Graph-like (network) | Simplicial (∞-groupoid) |
+| Attention | Focal ($A$) | Distributed | Holographic |
+| Identity | Local (ego) | Network-like | Absent/universal |
+| Time | Linear | Non-linear | Timeless |
 
 ---
 
-## Заключение
+## Conclusion
 
-## Резюме Иерархии
+## Summary of hierarchy
 
 ```mermaid
 flowchart TB
-    subgraph L4["L4: УНИТАРНОЕ СОЗНАНИЕ"]
+    subgraph L4["L4: UNITARY CONSCIOUSNESS"]
         direction TB
-        L4_def["Полная ∞-группоидная структура"]
+        L4_def["Full ∞-groupoid structure"]
         L4_cond["lim_n R⁽ⁿ⁾ > 0, P > 6/7"]
-        L4_ex["Примеры: гиперпространство, самадхи"]
-        L4_note["(теоретический предел)"]
+        L4_ex["Examples: hyperspace, samadhi"]
+        L4_note["(theoretical limit)"]
     end
 
-    subgraph L3["L3: СЕТЕВОЕ СОЗНАНИЕ"]
+    subgraph L3["L3: NETWORK CONSCIOUSNESS"]
         direction TB
-        L3_def["Метарефлексия: модели моделей"]
-        L3_cond["R⁽²⁾ ≥ 1/4 (метастабильно)"]
-        L3_ex["Примеры: мицелий, рой, глубокая медитация"]
+        L3_def["Meta-reflection: models of models"]
+        L3_cond["R⁽²⁾ ≥ 1/4 (metastable)"]
+        L3_ex["Examples: mycelium, swarm, deep meditation"]
     end
 
-    subgraph L2["L2: КОГНИТИВНЫЕ КВАЛИА"]
+    subgraph L2["L2: COGNITIVE QUALIA"]
         direction TB
-        L2_def["«Краснота красного», «болезненность боли»"]
-        L2_cond["R ≥ 1/3, Φ ≥ 1 (теоремы)"]
-        L2_ex["Примеры: человек, высшие млекопитающие"]
+        L2_def["«The redness of red», «the painfulness of pain»"]
+        L2_cond["R ≥ 1/3, Φ ≥ 1 (theorems)"]
+        L2_ex["Examples: human, higher mammals"]
     end
 
-    subgraph L1["L1: ФЕНОМЕНАЛЬНАЯ ГЕОМЕТРИЯ"]
+    subgraph L1["L1: PHENOMENAL GEOMETRY"]
         direction TB
-        L1_def["Структура внутренних состояний с метрикой"]
+        L1_def["Structure of internal states with metric"]
         L1_cond["rank(ρ_E) > 1"]
-        L1_ex["Примеры: нейрон, простейшие, сенсорные органы"]
+        L1_ex["Examples: neuron, simple organisms, sensory organs"]
     end
 
-    subgraph L0["L0: ИНТЕРИОРНОСТЬ"]
+    subgraph L0["L0: INTERIORITY"]
         direction TB
-        L0_def["Фундаментальное свойство «иметь изнанку»"]
-        L0_cond["Существование ℋ_E и ρ_E"]
-        L0_ex["Примеры: атом, кристалл, любая физическая система"]
+        L0_def["Fundamental property of «having an inner side»"]
+        L0_cond["Existence of ℋ_E and ρ_E"]
+        L0_ex["Examples: atom, crystal, any physical system"]
     end
 
     L0 --> L1 --> L2 --> L3 --> L4
@@ -1246,167 +1245,166 @@ flowchart TB
     style L0 fill:#f0f0f0,stroke:#7f8c8d,stroke-width:2px
 ```
 
-## Терминологические Требования
+## Terminological requirements
 
-:::danger Обязательно
-Термин **«квалиа»** используется **ТОЛЬКО для L2**. Для L3/L4 используются специальные термины. Это категориальное требование, не стилистическое предпочтение.
+:::danger Mandatory
+The term **"qualia"** is used **ONLY for L2**. Special terms are used for L3/L4. This is a categorical requirement, not a stylistic preference.
 :::
 
-| Уровень | Корректный термин |
+| Level | Correct term |
 |---------|-------------------|
-| **L0** | Интериорность |
-| **L1** | Феноменальная геометрия |
-| **L2** | Когнитивные квалиа |
-| **L3** | Сетевое сознание |
-| **L4** | Унитарное сознание |
-| **Все** | Экспериенциальное содержание $\mathrm{Exp}(\rho_E)$ |
+| **L0** | Interiority |
+| **L1** | Phenomenal geometry |
+| **L2** | Cognitive qualia |
+| **L3** | Network consciousness |
+| **L4** | Unitary consciousness |
+| **All** | Experiential content $\mathrm{Exp}(\rho_E)$ |
 
-**Для научных публикаций:**
-- L0: «система обладает интериорностью»
-- L1: «система имеет феноменальную геометрию»
-- L2: «система переживает когнитивные квалиа»
-- L3: «система обладает сетевым сознанием»
-- L4: «система достигает унитарного сознания»
+**For scientific publications:**
+- L0: "the system possesses interiority"
+- L1: "the system has phenomenal geometry"
+- L2: "the system experiences cognitive qualia"
+- L3: "the system possesses network consciousness"
+- L4: "the system attains unitary consciousness"
 
-**Для популяризации:**
-- Атом «имеет внутреннее состояние» (не «квалиа»)
-- Человек «переживает квалиа» (корректно)
-- Мицелий «функционирует как сетевое сознание»
-- Состояние самадхи «приближается к унитарному сознанию»
+**For popular science:**
+- An atom "has an internal state" (not "qualia")
+- A human "experiences qualia" (correct)
+- Mycelium "functions as network consciousness"
+- A state of samadhi "approaches unitary consciousness"
 
-## Открытые Вопросы
+## Open questions
 
-1. **Эмпирическое измерение $R^{(2)}$:** Как экспериментально измерить рефлексию второго порядка для определения L3?
-2. **Биологическая достижимость L4:** Существуют ли биологические системы с $P > 6/7$?
-3. **Время жизни L3:** Точная калибровка $\tau_3$ для различных типов систем
-4. **Комбинаторика уровней:** Как из множества L2-систем возникает коллективная L3-система?
-5. **Промежуточные состояния:** Характеристики состояний L2.5, L3.5 (количественные, не качественные различия)
+1. **Empirical measurement of $R^{(2)}$:** How to experimentally measure second-order reflection to determine L3?
+2. **Biological achievability of L4:** Do biological systems with $P > 6/7$ exist?
+3. **Lifetime of L3:** Precise calibration of $\tau_3$ for different types of systems
+4. **Combinatorics of levels:** How does a collective L3 system emerge from many L2 systems?
+5. **Intermediate states:** Characteristics of states L2.5, L3.5 (quantitative, not qualitative differences)
 
-:::note О статусе порогов
-- $R_{\text{th}} = 1/3$ — [теорема [Т]](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), доказана из триадной декомпозиции ($K=3$) и байесовского доминирования
-- $\Phi_{\text{th}} = 1$ — [определение по соглашению (когерентная доминация)](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), структурно мотивировано
+:::note On threshold status
+- $R_{\text{th}} = 1/3$ — [theorem [Т]](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), proven from triadic decomposition ($K=3$) and Bayesian dominance
+- $\Phi_{\text{th}} = 1$ — [definition by convention (coherence dominance)](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), structurally motivated
 :::
 
-## Связь с Альтернативными Теориями
+## Relation to alternative theories
 
-| Теория | Связь с иерархией L0→L1→L2→L3→L4 | Статус |
+| Theory | Relation to hierarchy L0→L1→L2→L3→L4 | Status |
 |--------|----------------------------------|--------|
-| **IIT (Tononi)** | $\Phi$ УГМ обобщает $\Phi$ IIT; УГМ добавляет $R$, $D_{\text{diff}}$ и $R^{(n)}$ | Совместимо |
-| **Панпсихизм** | L0 = панинтериоризм (не панпсихизм); L3/L4 формализуют «высшие формы» | Расширение |
-| **Hoffman Conscious Agents** | Сознательный агент $\approx$ L2-[Голоном](/docs/core/structure/holon); сеть агентов $\approx$ L3 | Совместимо |
-| **Global Workspace (Baars)** | Глобальный доступ $\approx$ условие $\Phi \geq \Phi_{\text{th}}$ | Концептуально совместимо |
-| **Higher-Order Theories** | Рефлексия $R \approx$ higher-order; $R^{(2)} \approx$ higher-higher-order | Концептуально совместимо |
-| **Мистические традиции** | L3 $\approx$ «растворение эго»; L4 $\approx$ «самадхи», «нирвана» | Феноменологически совместимо |
+| **IIT (Tononi)** | $\Phi$ of UHM generalizes $\Phi$ of IIT; UHM adds $R$, $D_{\text{diff}}$ and $R^{(n)}$ | Compatible |
+| **Panpsychism** | L0 = paninteriori­sm (not panpsychism); L3/L4 formalize "higher forms" | Extension |
+| **Hoffman Conscious Agents** | Conscious agent $\approx$ L2-[Holon](/docs/core/structure/holon); network of agents $\approx$ L3 | Compatible |
+| **Global Workspace (Baars)** | Global access $\approx$ condition $\Phi \geq \Phi_{\text{th}}$ | Conceptually compatible |
+| **Higher-Order Theories** | Reflection $R \approx$ higher-order; $R^{(2)} \approx$ higher-higher-order | Conceptually compatible |
+| **Mystical traditions** | L3 $\approx$ "dissolution of ego"; L4 $\approx$ "samadhi," "nirvana" | Phenomenologically compatible |
 
-### УГМ как мета-теория
+### UHM as meta-theory
 
-Иерархия L0→L1→L2→L3→L4 потенциально объединяет различные теории сознания:
+The hierarchy L0→L1→L2→L3→L4 potentially unifies various theories of consciousness:
 
-- **IIT** фокусируется на Φ (интеграция)
-- **HOT** фокусируется на R (рефлексия/higher-order)
-- **GWT** фокусируется на условиях глобального доступа
+- **IIT** focuses on Φ (integration)
+- **HOT** focuses on R (reflection/higher-order)
+- **GWT** focuses on conditions of global access
 
-УГМ объединяет эти аспекты через формулу:
+UHM unifies these aspects through the formula:
 
 $$
 C = \Phi \times R \quad \textbf{[Т\;T\text{-}140]}
 $$
 
-где интеграция ($\Phi$) и рефлексия ($R$) — два множителя канонической меры сознательности. Дифференциация $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности для когнитивных квалиа (L2).
+where integration ($\Phi$) and reflection ($R$) are two factors of the canonical consciousness measure. Differentiation $D_{\text{diff}} \geq 2$ is a separate viability condition for cognitive qualia (L2).
 
-Для пост-рефлексивных уровней добавляется **рефлексия n-го порядка**:
+For post-reflective levels **n-th order reflection** is added:
 
 $$
 C^{(n)} = C \times \prod_{k=2}^{n} R^{(k)}
 $$
 
-Универсальная формула порогов: $X^{(n)}_{\text{th}} = 1/(n+1)$.
+Universal threshold formula: $X^{(n)}_{\text{th}} = 1/(n+1)$.
 
-## Полная Сводная Таблица Иерархии
+## Full summary table of hierarchy
 
-| Уровень | Название | n-усечение | Порог | Топология | Примеры |
+| Level | Name | n-truncation | Threshold | Topology | Examples |
 |---------|----------|------------|-------|-----------|---------|
-| **L0** | Интериорность | $\tau_{\leq 0}$ | $\exists \rho_E$ | Точечная | Атом, камень |
-| **L1** | Феноменальная геометрия | $\tau_{\leq 1}$ | $\mathrm{rank}(\rho_E) > 1$ | Линейная | Нейрон, амёба |
-| **L2** | Когнитивные квалиа | $\tau_{\leq 2}$ | $R \geq 1/3, \Phi \geq 1$ | Петлевая | Человек, дельфин |
-| **L3** | Сетевое сознание | $\tau_{\leq 3}$ | $R^{(2)} \geq 1/4$ | Графовая | Мицелий, рой, медитатор |
-| **L4** | Унитарное сознание | $\tau_{\leq \infty}$ | $\lim_n R^{(n)} > 0$ | Сферическая | Гиперпространство, самадхи |
+| **L0** | Interiority | $\tau_{\leq 0}$ | $\exists \rho_E$ | Point-like | Atom, stone |
+| **L1** | Phenomenal geometry | $\tau_{\leq 1}$ | $\mathrm{rank}(\rho_E) > 1$ | Linear | Neuron, amoeba |
+| **L2** | Cognitive qualia | $\tau_{\leq 2}$ | $R \geq 1/3, \Phi \geq 1$ | Loop-like | Human, dolphin |
+| **L3** | Network consciousness | $\tau_{\leq 3}$ | $R^{(2)} \geq 1/4$ | Graph-like | Mycelium, swarm, meditator |
+| **L4** | Unitary consciousness | $\tau_{\leq \infty}$ | $\lim_n R^{(n)} > 0$ | Spherical | Hyperspace, samadhi |
 
-### Гомотопические характеристики
+### Homotopic characteristics
 
-| Свойство | L0 | L1 | L2 | L3 | L4 |
+| Property | L0 | L1 | L2 | L3 | L4 |
 |----------|----|----|----|----|-----|
-| $\pi_0$ (объекты) | + | + | + | + | + |
-| $\pi_1$ (пути) | — | + | + | + | + |
-| $\pi_2$ (гомотопии) | — | — | + | + | + |
-| $\pi_3$ (2-гомотопии) | — | — | — | + | + |
-| $\pi_\infty$ (все) | — | — | — | — | + |
-| Стабильность | + | + | + | [С] (метастабильно) | + (при $P > 6/7$) |
-| Эго | — | — | + | Размыто | — |
+| $\pi_0$ (objects) | + | + | + | + | + |
+| $\pi_1$ (paths) | — | + | + | + | + |
+| $\pi_2$ (homotopies) | — | — | + | + | + |
+| $\pi_3$ (2-homotopies) | — | — | — | + | + |
+| $\pi_\infty$ (all) | — | — | — | — | + |
+| Stability | + | + | + | [С] (metastable) | + (at $P > 6/7$) |
+| Ego | — | — | + | Diffuse | — |
 
-### Иерархия ассоциаторов {#иерархия-ассоциаторов}
+### Associator hierarchy {#иерархия-ассоциаторов}
 
-:::note Октонионная интерпретация уровней [И]
-В [октонионной интерпретации](../../core/structure/dimensions#октонионная-интерпретация) уровни интериорности L0→L4 можно соотнести с глубиной ассоциатора $[x,y,z] = (xy)z - x(yz)$:
+:::note Octonionic interpretation of levels [И]
+In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация) the interiority levels L0→L4 can be related to the depth of the associator $[x,y,z] = (xy)z - x(yz)$:
 
-| Уровень | Ассоциаторная характеристика | Интерпретация |
+| Level | Associator characteristic | Interpretation |
 |---------|------------------------------|---------------|
-| **L0** | $[x,y,z] = 0$ (парное взаимодействие) | Ассоциативная подалгебра (теорема Артина) |
-| **L1** | $[x,y,z] \neq 0$, альтернативность | Минимальная неассоциативность |
-| **L2** | Тождества Муфанга | Структурированная неассоциативность |
-| **L3** | Мета-ассоциаторы | Рефлексия над неассоциативностью |
-| **L4** | Полная $A_\infty$-структура | Все уровни гомотопической ассоциативности |
+| **L0** | $[x,y,z] = 0$ (pairwise interaction) | Associative subalgebra (Artin's theorem) |
+| **L1** | $[x,y,z] \neq 0$, alternativity | Minimal non-associativity |
+| **L2** | Moufang identities | Structured non-associativity |
+| **L3** | Meta-associators | Reflection on non-associativity |
+| **L4** | Full $A_\infty$-structure | All levels of homotopic associativity |
 
-Мост [Т] (замкнут, T15). См. [структурный вывод](../minimality/theorem-octonionic-derivation).
+Bridge [Т] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---
 
-## Стратификационная Изоляция и Запрет Сигнализации {#стратификационная-изоляция}
+## Stratification isolation and no-signaling prohibition {#стратификационная-изоляция}
 
-:::info Принцип (Стратификационная изоляция)
-Нелинейная динамика (регенерация $\mathcal{R}$) на уровнях L2+ **не индуцирует** нелинейных эффектов на уровне L0 (стандартная КМ) и не нарушает принцип запрета сигнализации.
+:::info Principle (Stratification isolation)
+Nonlinear dynamics (regeneration $\mathcal{R}$) at levels L2+ **does not induce** nonlinear effects at level L0 (standard QM) and does not violate the no-signaling principle.
 :::
 
-### Разделение нелинейности по уровням
+### Separation of nonlinearity by level
 
-| Уровень | Страта $X$ | Динамика | Нелинейный $\mathcal{R}$ |
+| Level | Stratum $X$ | Dynamics | Nonlinear $\mathcal{R}$ |
 |---------|------------|----------|--------------------------|
-| L0 | $S_I$ (материя) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **Нет** ($R = 0$) |
-| L1 | $S_{II}$ (жизнь) | + $\mathcal{D}[\Gamma]$ (линейный Линдблад) | **Нет** |
-| L2 | $S_{III}$ (разум) | + $\mathcal{R}[\Gamma, E]$ | **Да** ($R \geq 1/3$) |
-| L3 | $S_{IV}$ (сетевое сознание) | + $R^{(n)}$ | **Да** (высших порядков) |
-| L4 | $S_{IV}$ (унитарное сознание) | Полная ∞-структура | **Да** |
+| L0 | $S_I$ (matter) | $d\Gamma/d\tau = -i[H, \Gamma]$ | **No** ($R = 0$) |
+| L1 | $S_{II}$ (life) | + $\mathcal{D}[\Gamma]$ (linear Lindblad) | **No** |
+| L2 | $S_{III}$ (mind) | + $\mathcal{R}[\Gamma, E]$ | **Yes** ($R \geq 1/3$) |
+| L3 | $S_{IV}$ (network consciousness) | + $R^{(n)}$ | **Yes** (higher orders) |
+| L4 | $S_{IV}$ (unitary consciousness) | Full ∞-structure | **Yes** |
 
-### Теорема (Запрет сигнализации для всех уровней)
+### Theorem (No-signaling prohibition for all levels)
 
-Для L0-систем (атомы, фотоны, кубиты) $R = 0$, и $\mathcal{R} = 0$. Для L2+-систем нелинейность $\mathcal{R}$ не нарушает запрет сигнализации благодаря CPTP-структуре оператора $\varphi$ и локальности $\kappa$:
+For L0-systems (atoms, photons, qubits) $R = 0$, and $\mathcal{R} = 0$. For L2+ systems the nonlinearity $\mathcal{R}$ does not violate the no-signaling prohibition thanks to the CPTP structure of operator $\varphi$ and locality of $\kappa$:
 
 $$
 \mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
 $$
 
-Доказательство: [Соответствие с физикой: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
+Proof: [Physical correspondence: §8](/docs/proofs/physics/physics-correspondence#запрет-сигнализации).
 
-### Физическое следствие
+### Physical consequence
 
-Атомы и фотоны, используемые в экспериментах Белла, находятся на уровне L0. Для них УГМ **точно совпадает** с квантовой механикой. Нелинейность $\mathcal{R}$ действует только на **автономные макросистемы** (клетки, мозг), которые не формируют максимально запутанных EPR-состояний с удалёнными фотонами.
+Atoms and photons used in Bell experiments are at level L0. For them UHM **exactly coincides** with quantum mechanics. The nonlinearity $\mathcal{R}$ acts only on **autonomous macro-systems** (cells, brain), which do not form maximally entangled EPR states with distant photons.
 
-Даже если L2-система (мозг) запутана с L0-системой (фотон), регенерация мозга **не влияет** на состояние фотона — это следствие CPTP-свойства $\varphi$ и линейности частичного следа.
+Even if an L2-system (brain) is entangled with an L0-system (photon), the regeneration of the brain **does not affect** the state of the photon — this is a consequence of the CPTP property of $\varphi$ and linearity of the partial trace.
 
 ---
 
-**Связанные документы:**
-- [Аксиома Септичности](/docs/core/foundations/axiom-septicity) — теоремы о порогах $R_{\text{th}}$ и $\Phi_{\text{th}}$
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — онтологический фундамент интериорности и ∞-группоидная структура
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Измерение Интериорности](/docs/core/structure/dimension-e) — $E$ и $\mathcal{H}_E$
-- [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
-- [Измерение Основания](/docs/core/structure/dimension-o) — доминирующее измерение L3/L4
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — меры $R$, $R^{(n)}$, $C$, $D_{\text{diff}}$
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — оператор самомоделирования и спектральная формула
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, $\mathrm{Exp}$ и n-усечения
-- [Жизнеспособность](/docs/core/dynamics/viability) — теорема No-Zombie
-- [Трудная проблема сознания](/docs/consciousness/foundations/two-aspect-monism) — феноменология опыта и категориальный разрыв
-- [Соответствие с физикой: Запрет сигнализации](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — теорема о совместимости нелинейности с no-signaling
-- [Эволюция: Расширение R](/docs/core/dynamics/evolution#расширение-r-на-составные-системы) — каноническое расширение $\tilde{\mathcal{R}}_A$
+**Related documents:**
+- [Axiom of Septicity](/docs/core/foundations/axiom-septicity) — theorems on thresholds $R_{\text{th}}$ and $\Phi_{\text{th}}$
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ontological foundation of interiority and ∞-groupoid structure
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Interiority dimension](/docs/core/structure/dimension-e) — $E$ and $\mathcal{H}_E$
+- [Unity dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
+- [Foundation dimension](/docs/core/structure/dimension-o) — dominant dimension of L3/L4
+- [Self-observation](/docs/consciousness/foundations/self-observation) — measures $R$, $R^{(n)}$, $C$, $D_{\text{diff}}$
+- [Formalization of operator φ](/docs/proofs/categorical/formalization-phi) — self-modeling operator and spectral formula
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, $\mathrm{Exp}$ and n-truncations
+- [Viability](/docs/core/dynamics/viability) — No-Zombie theorem
+- [Hard problem of consciousness](/docs/consciousness/foundations/two-aspect-monism) — phenomenology of experience and explanatory gap
+- [Physical correspondence: No-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации) — theorem on compatibility of nonlinearity with no-signaling

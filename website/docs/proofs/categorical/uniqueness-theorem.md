@@ -1,454 +1,454 @@
 ---
 slug: /proofs/categorical/uniqueness-theorem
 sidebar_position: 3
-title: "Теорема единственности представления"
-description: "G₂-ригидность голономного представления: единственность отображения G с точностью до калибровочной группы G₂ = Aut(𝕆). Аналог теоремы Стоуна–фон Неймана для УГМ."
+title: "Uniqueness theorem of representation"
+description: "G₂-rigidity of holonomic representation: uniqueness of the map G up to gauge group G₂ = Aut(𝕆). Analogue of the Stone–von Neumann theorem for UHM."
 ---
 
-# Теорема Единственности Голономного Представления
+# Uniqueness Theorem of Holonomic Representation
 
-:::warning Статус: [Т] — все шаги доказаны
-Теорема единственности голономного представления — **теорема [Т]**, опирающаяся исключительно на ранее доказанные результаты:
-- Примитивность $\mathcal{L}_\Omega$ [Т] ([доказательство](/docs/core/operators/lindblad-operators#примитивность-ℒω))
-- Полная минимальность 7/7 [Т] ([доказательство](/docs/proofs/minimality/theorem-minimality-7))
-- Мост T15 [Т]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([доказательство](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
-- L-унификация [Т] ([доказательство](/docs/core/operators/lindblad-operators))
-- Единственность E, O, U [Т] ([доказательство](/docs/proofs/minimality/theorem-minimality-7))
+:::warning Status: [Т] — all steps proven
+The uniqueness theorem of holonomic representation is a **theorem [Т]**, relying exclusively on previously proven results:
+- Primitivity of $\mathcal{L}_\Omega$ [Т] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+- Full minimality 7/7 [Т] ([proof](/docs/proofs/minimality/theorem-minimality-7))
+- Bridge T15 [Т]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
+- L-unification [Т] ([proof](/docs/core/operators/lindblad-operators))
+- Uniqueness of E, O, U [Т] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
 
 ---
 
-## Формулировка проблемы {#проблема}
+## Problem statement {#проблема}
 
-### Проблема отображения G
+### The problem of the map G
 
-Центральная задача операционализации УГМ — **отображение G**:
+The central task of operationalizing UHM is the **map G**:
 
 $$
 G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)
 $$
 
-которое сопоставляет физической системе $S$, удовлетворяющей (AP)+(PH)+(QG)+(V), её матрицу когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
+which assigns to a physical system $S$ satisfying (AP)+(PH)+(QG)+(V) its coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$.
 
-В онтологии УГМ $\Gamma$ — **первичный объект**: система *есть* своя матрица когерентности. Проблема G — не «как вычислить $\Gamma$ из чего-то более фундаментального», а «**единственно ли** отождествление $\Gamma$ для данной системы?»
+In the ontology of UHM, $\Gamma$ is a **primary object**: the system *is* its coherence matrix. The problem of G is not "how to compute $\Gamma$ from something more fundamental," but "**is** the identification of $\Gamma$ for a given system **unique**?"
 
-### Аналогия со Стоуном–фон Нейманом {#аналогия}
+### Analogy with Stone–von Neumann {#аналогия}
 
-| | Квантовая механика | УГМ |
+| | Quantum mechanics | UHM |
 |---|---|---|
-| **Примитив** | Канонические коммутационные соотношения $[\hat{x}, \hat{p}] = i\hbar$ | Примитив $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$ |
-| **Представление** | Реализация $\hat{x}, \hat{p}$ на $\mathcal{H}$ | Голономное представление $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ |
-| **Теорема единственности** | Стоуна–фон Неймана: представление единственно с точностью до $U(\mathcal{H})$ | **Данная теорема**: представление единственно с точностью до $G_2$ |
-| **Калибровочная группа** | $U(\mathcal{H})$ (бесконечномерная) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (14-мерная) |
-| **Физические параметры** | Бесконечно много (квантовые числа) | **34** = 48 $-$ 14 (калибровочно-инвариантные) |
+| **Primitive** | Canonical commutation relations $[\hat{x}, \hat{p}] = i\hbar$ | Primitive $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$ |
+| **Representation** | Realization of $\hat{x}, \hat{p}$ on $\mathcal{H}$ | Holonomic representation $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ |
+| **Uniqueness theorem** | Stone–von Neumann: representation is unique up to $U(\mathcal{H})$ | **This theorem**: representation is unique up to $G_2$ |
+| **Gauge group** | $U(\mathcal{H})$ (infinite-dimensional) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (14-dimensional) |
+| **Physical parameters** | Infinitely many (quantum numbers) | **34** = 48 $-$ 14 (gauge-invariant) |
 
-Принципиальное отличие: в КМ калибровочная группа бесконечномерна ($U(\mathcal{H})$), что оставляет огромную свободу. В УГМ калибровочная группа — **конечномерная** $G_2$, что радикально ограничивает свободу и повышает предсказательную силу теории.
+The key distinction: in QM the gauge group is infinite-dimensional ($U(\mathcal{H})$), leaving enormous freedom. In UHM the gauge group is **finite-dimensional** $G_2$, which radically restricts this freedom and increases the predictive power of the theory.
 
 ---
 
-## Определения {#определения}
+## Definitions {#определения}
 
-### Определение G1 (Голономное представление) {#определение-представления}
+### Definition G1 (Holonomic representation) {#определение-представления}
 
-**Голономным представлением** системы $S$, удовлетворяющей (AP)+(PH)+(QG)+(V), называется тройка $(\mathbb{C}^7, \mathcal{B}, G_S)$, где:
+A **holonomic representation** of a system $S$ satisfying (AP)+(PH)+(QG)+(V) is a triple $(\mathbb{C}^7, \mathcal{B}, G_S)$, where:
 
-- $\mathbb{C}^7$ — гильбертово пространство холона
-- $\mathcal{B} = \{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ — упорядоченный ортонормированный базис с функциональной разметкой ([7 измерений](/docs/core/structure/holon))
-- $G_S: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ — отображение, **совместимое** с динамикой УГМ
+- $\mathbb{C}^7$ — Hilbert space of the holon
+- $\mathcal{B} = \{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ — ordered orthonormal basis with functional labeling ([7 dimensions](/docs/core/structure/holon))
+- $G_S: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ — map **compatible** with UHM dynamics
 
-**Условие совместимости (ковариантность):** Для любой физической траектории $s(\tau)$ системы $S$:
+**Compatibility condition (covariance):** For any physical trajectory $s(\tau)$ of system $S$:
 
 $$
 \frac{d}{d\tau} G_S(s(\tau)) = \mathcal{L}_\Omega[G_S(s(\tau))]
 $$
 
-где $\mathcal{L}_\Omega$ — логический Лиувиллиан, определённый аксиомами A1–A5 в базисе $\mathcal{B}$.
+where $\mathcal{L}_\Omega$ is the logical Liouvillian defined by axioms A1–A5 in basis $\mathcal{B}$.
 
-### Определение G2 (Эквивалентность представлений) {#определение-эквивалентности}
+### Definition G2 (Equivalence of representations) {#определение-эквивалентности}
 
-Два голономных представления $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ и $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ **эквивалентны**, если существует $U \in U(7)$ такой, что:
+Two holonomic representations $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ are **equivalent** if there exists $U \in U(7)$ such that:
 
 $$
 G_2(s) = U \, G_1(s) \, U^\dagger \quad \forall \, s \in \mathrm{States}(S)
 $$
 
-и $\mathcal{B}_2 = U \cdot \mathcal{B}_1$ (преобразование базиса).
+and $\mathcal{B}_2 = U \cdot \mathcal{B}_1$ (basis transformation).
 
-### Определение G3 (Калибровочная группа) {#определение-калибровки}
+### Definition G3 (Gauge group) {#определение-калибровки}
 
-**Калибровочная группа** — максимальная подгруппа $\mathcal{G} \subseteq U(7)$, элементы которой порождают эквивалентные представления, сохраняя **все** структуры, определённые аксиомами A1–A5.
+The **gauge group** is the maximal subgroup $\mathcal{G} \subseteq U(7)$ whose elements generate equivalent representations, preserving **all** structures defined by axioms A1–A5.
 
 ---
 
-## Предварительные результаты {#предпосылки}
+## Preliminary results {#предпосылки}
 
-Все результаты ниже имеют статус **[Т]** и доказаны в соответствующих документах.
+All results below have status **[Т]** and are proven in the respective documents.
 
-### P1. Примитивность $\mathcal{L}_0$ (линейная часть) [Т] {#p1-примитивность}
+### P1. Primitivity of $\mathcal{L}_0$ (linear part) [Т] {#p1-примитивность}
 
-Линейная часть Лиувиллиана $\mathcal{L}_0$ [примитивна](/docs/core/operators/lindblad-operators#примитивность-ℒω) (T-39a): существует **единственное** стационарное состояние $I/7 \in \mathcal{D}(\mathbb{C}^7)$ для $\mathcal{L}_0$, и для любого начального $\rho_0$:
+The linear part of the Liouvillian $\mathcal{L}_0$ is [primitive](/docs/core/operators/lindblad-operators#примитивность-ℒω) (T-39a): there exists a **unique** stationary state $I/7 \in \mathcal{D}(\mathbb{C}^7)$ for $\mathcal{L}_0$, and for any initial $\rho_0$:
 
 $$
 \lim_{\tau \to \infty} e^{\tau\mathcal{L}_0}[\rho_0] = I/7
 $$
 
-Полный нелинейный оператор $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ имеет **единственный нетривиальный аттрактор** $\rho_* \neq I/7$ с $P > 1/7$ (T-96 [Т]).
+The full nonlinear operator $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has a **unique non-trivial attractor** $\rho_* \neq I/7$ with $P > 1/7$ (T-96 [Т]).
 
-Спектр $\mathcal{L}_\Omega$ на пространстве $\mathrm{Herm}_0(\mathbb{C}^7)$ (бесследовые эрмитовы матрицы, $\dim_\mathbb{R} = 48$):
+Spectrum of $\mathcal{L}_\Omega$ on the space $\mathrm{Herm}_0(\mathbb{C}^7)$ (traceless Hermitian matrices, $\dim_\mathbb{R} = 48$):
 
 $$
 \mathrm{Spec}(\mathcal{L}_\Omega) = \{0\} \cup \{\lambda_k : \mathrm{Re}(\lambda_k) < 0, \; k = 1, \ldots, 47\}
 $$
 
-### P2. Функциональная единственность измерений [Т] {#p2-единственность}
+### P2. Functional uniqueness of dimensions [Т] {#p2-единственность}
 
-Все 7 измерений [функционально единственны](/docs/proofs/minimality/theorem-minimality-7):
+All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minimality-7):
 
-- Каждое измерение выполняет несводимую функцию (F1–F7)
-- [E единственно](/docs/proofs/minimality/theorem-minimality-7) [Т]: (PH) + $\kappa_0$ (требует $\mathrm{Hom}(O,E)$) + ранг больше 1
-- [O единственно](/docs/proofs/minimality/theorem-minimality-7) [Т]: $\mathcal{R}$ [Т] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + функциональная независимость
-- [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [Т]: каузальная + категориальная (O = E вырождает $\kappa_0$)
+- Each dimension performs an irreducible function (F1–F7)
+- [E is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: (PH) + $\kappa_0$ (requires $\mathrm{Hom}(O,E)$) + rank greater than 1
+- [O is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: $\mathcal{R}$ [Т] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
+- [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [Т]: causal + categorical (O = E degenerates $\kappa_0$)
 
-### P3. Мост T15 [Т] {#p3-мост}
+### P3. Bridge T15 [Т] {#p3-мост}
 
-Полная цепочка [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) из 12 шагов, все [Т]:
+Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [Т]:
 
 $$
 \mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{Т}]} \mathrm{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2
 $$
 
-### P4. L-унификация [Т] {#p4-l-унификация}
+### P4. L-unification [Т] {#p4-л-унификация}
 
-[Операторы Линдблада выводятся](/docs/core/operators/lindblad-operators) из классификатора $\Omega$:
+[Lindblad operators are derived](/docs/core/operators/lindblad-operators) from the classifier $\Omega$:
 
 $$
 L_k = |k\rangle\langle k|, \quad k \in \{A, S, D, L, E, O, U\}
 $$
 
-Фано-операторы определяются 7 линиями PG(2,2):
+Fano operators are defined by the 7 lines of PG(2,2):
 
 $$
 L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}} \Pi_p, \quad \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
 $$
 
-### P5. $G_2$-ковариантность [Т] {#p5-ковариантность}
+### P5. $G_2$-covariance [Т] {#p5-ковариантность}
 
-Фано-диссипатор [$G_2$-ковариантен](/docs/core/operators/lindblad-operators#g2-ковариантность):
+The Fano dissipator is [$G_2$-covariant](/docs/core/operators/lindblad-operators#g2-ковариантность):
 
 $$
 \forall \, g \in G_2: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger
 $$
 
-Атомарный диссипатор **не** $G_2$-ковариантен [Т], но $S_7$-эквивариантен [Т].
+The atomic dissipator is **not** $G_2$-covariant [Т], but is $S_7$-equivariant [Т].
 
 ---
 
-## Новые леммы {#леммы}
+## New lemmas {#леммы}
 
-### Лемма G1: Спектральная инъективность пропагатора [Т] {#лемма-g1}
+### Lemma G1: Spectral injectivity of propagator [Т] {#лемма-g1}
 
-:::tip Лемма G1 (Спектральная инъективность) [Т]
-Для любого $\tau > 0$ отображение $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ инъективно на $\mathrm{Herm}_0(\mathbb{C}^7)$, где $\mathcal{L}_{\mathrm{lin}} = -i[H_{\mathrm{eff}}, \cdot] + \mathcal{D}_\Omega$ — линейная часть Лиувиллиана.
+:::tip Lemma G1 (Spectral injectivity) [Т]
+For any $\tau > 0$ the map $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ is injective on $\mathrm{Herm}_0(\mathbb{C}^7)$, where $\mathcal{L}_{\mathrm{lin}} = -i[H_{\mathrm{eff}}, \cdot] + \mathcal{D}_\Omega$ is the linear part of the Liouvillian.
 :::
 
-**Доказательство.**
+**Proof.**
 
-Пусть $\mathcal{L}_{\mathrm{lin}}$ действует на $V = \mathrm{Herm}_0(\mathbb{C}^7)$ ($\dim_\mathbb{R} V = 48$). По примитивности [Т] (§[P1](#p1-примитивность)):
+Let $\mathcal{L}_{\mathrm{lin}}$ act on $V = \mathrm{Herm}_0(\mathbb{C}^7)$ ($\dim_\mathbb{R} V = 48$). By primitivity [Т] (§[P1](#p1-примитивность)):
 
 $$
 \mathrm{Spec}(\mathcal{L}_{\mathrm{lin}}\big|_V) = \{\lambda_1, \ldots, \lambda_{48}\}, \quad \mathrm{Re}(\lambda_k) < 0 \; \forall k
 $$
 
-(нулевое собственное значение отвечает инвариантной компоненте $\rho_*$, вынесенной в дополнение к $V$).
+(the zero eigenvalue corresponds to the invariant component $\rho_*$, factored out into the complement of $V$).
 
-Для пропагатора $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ собственные значения: $\{e^{\tau\lambda_k}\}_{k=1}^{48}$. Поскольку $\mathrm{Re}(\lambda_k) < 0$:
+For the propagator $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ the eigenvalues are: $\{e^{\tau\lambda_k}\}_{k=1}^{48}$. Since $\mathrm{Re}(\lambda_k) < 0$:
 
 $$
 |e^{\tau\lambda_k}| = e^{\tau\mathrm{Re}(\lambda_k)} \in (0, 1) \quad \forall \tau > 0
 $$
 
-Все собственные значения пропагатора **ненулевые**, следовательно $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ невырожден на $V$, т.е. инъективен. $\blacksquare$
+All eigenvalues of the propagator are **nonzero**, therefore $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ is non-degenerate on $V$, i.e. injective. $\blacksquare$
 
-**Следствие G1.1 (Восстановимость начального состояния):** Зная $\Gamma(\tau)$ для некоторого $\tau > 0$ и параметры $\mathcal{L}_{\mathrm{lin}}$, начальное состояние $\Gamma(0)$ определяется **однозначно**.
+**Corollary G1.1 (Recoverability of initial state):** Knowing $\Gamma(\tau)$ for some $\tau > 0$ and the parameters of $\mathcal{L}_{\mathrm{lin}}$, the initial state $\Gamma(0)$ is determined **uniquely**.
 
-### Лемма G2: Корректность нелинейной обратной задачи [Т] {#лемма-g2}
+### Lemma G2: Well-posedness of nonlinear inverse problem [Т] {#лемма-g2}
 
-:::tip Лемма G2 (Нелинейная обратная задача) [Т]
-Полное уравнение эволюции $\frac{d\Gamma}{d\tau} = f(\Gamma)$, включающее нелинейный регенеративный член $\mathcal{R}$, обладает единственностью решений: для любых $\Gamma_1(0) \neq \Gamma_2(0)$ траектории $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ для всех $\tau \geq 0$.
+:::tip Lemma G2 (Nonlinear inverse problem) [Т]
+The full evolution equation $\frac{d\Gamma}{d\tau} = f(\Gamma)$, including the nonlinear regenerative term $\mathcal{R}$, has uniqueness of solutions: for any $\Gamma_1(0) \neq \Gamma_2(0)$ the trajectories $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ for all $\tau \geq 0$.
 :::
 
-**Доказательство.**
+**Proof.**
 
-Правая часть $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$, где:
+The right-hand side $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$, where:
 
-**(a) Липшицевость.** Линейные члены ($-i[H_{\mathrm{eff}}, \cdot]$, $\mathcal{D}_\Omega$) — липшицевы (линейные операторы на конечномерном пространстве). Нелинейный член:
-- $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, где $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — рациональная функция матричных элементов [Т]
-- $\|\Gamma\|_{\mathrm{HS}}^2 = \mathrm{Tr}(\Gamma^2) \geq 1/7 > 0$ на $\mathcal{D}(\mathbb{C}^7)$ — знаменатель отделён от нуля
-- Произведение $\kappa(\Gamma) \cdot (\rho_* - \Gamma)$ — гладкая функция на компактном $\mathcal{D}(\mathbb{C}^7)$, следовательно локально липшицева
+**(a) Lipschitz continuity.** The linear terms ($-i[H_{\mathrm{eff}}, \cdot]$, $\mathcal{D}_\Omega$) are Lipschitz (linear operators on a finite-dimensional space). The nonlinear term:
+- $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, where $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ is a rational function of matrix elements [Т]
+- $\|\Gamma\|_{\mathrm{HS}}^2 = \mathrm{Tr}(\Gamma^2) \geq 1/7 > 0$ on $\mathcal{D}(\mathbb{C}^7)$ — the denominator is bounded away from zero
+- The product $\kappa(\Gamma) \cdot (\rho_* - \Gamma)$ is a smooth function on the compact set $\mathcal{D}(\mathbb{C}^7)$, hence locally Lipschitz
 
-**(b) Теорема Пикара–Линделёфа.** На компактном множестве $\mathcal{D}(\mathbb{C}^7)$ локальная липшицевость обеспечивает **существование и единственность** решения задачи Коши для любого начального условия $\Gamma(0) \in \mathcal{D}(\mathbb{C}^7)$.
+**(b) Picard–Lindelöf theorem.** On the compact set $\mathcal{D}(\mathbb{C}^7)$ local Lipschitz continuity guarantees **existence and uniqueness** of the solution to the Cauchy problem for any initial condition $\Gamma(0) \in \mathcal{D}(\mathbb{C}^7)$.
 
-**(c) Инъективность потока.** Из единственности решения задачи Коши: если $\Gamma_1(0) \neq \Gamma_2(0)$, то $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ для всех $\tau$ в области существования (траектории не пересекаются в фазовом пространстве — стандартный результат теории ОДУ). $\blacksquare$
+**(c) Injectivity of flow.** From uniqueness of the Cauchy problem: if $\Gamma_1(0) \neq \Gamma_2(0)$, then $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ for all $\tau$ in the domain of existence (trajectories do not intersect in phase space — a standard result of ODE theory). $\blacksquare$
 
-### Лемма G3: Аксиоматическая определённость структур [Т] {#лемма-g3}
+### Lemma G3: Axiomatic definiteness of structures [Т] {#лемма-g3}
 
-:::tip Лемма G3 (Аксиоматическая определённость) [Т]
-Аксиомы A1–A5 однозначно определяют (в данном базисе $\mathcal{B}$) следующие структуры:
+:::tip Lemma G3 (Axiomatic definiteness) [Т]
+Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the following structures:
 
-**(i)** Атомарные проекторы $\{|k\rangle\langle k|\}_{k=0}^{6}$ (из L-унификации [Т])
+**(i)** Atomic projectors $\{|k\rangle\langle k|\}_{k=0}^{6}$ (from L-unification [Т])
 
-**(ii)** Систему Фано-линий $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (из моста T15 [Т])
+**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (from bridge T15 [Т])
 
-**(iii)** E-проекцию $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (из [Coh_E [Т]](/docs/core/foundations/axiom-septicity#hs-projection))
+**(iii)** E-projection $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (from [Coh_E [Т]](/docs/core/foundations/axiom-septicity#hs-projection))
 
-**(iv)** Тензорную декомпозицию Пейдж–Вуттерс $\mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$, выделяющую O (из A5)
+**(iv)** Page–Wootters tensor decomposition $\mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$, singling out O (from A5)
 
-**(v)** Формулу регенерации $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, выделяющую $\{O, E, U\}$ (из [категориального вывода κ₀ [Т]](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+**(v)** The regeneration formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, singling out $\{O, E, U\}$ (from [categorical derivation of κ₀ [Т]](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 :::
 
-**Доказательство.** Каждая структура выводится из аксиом:
-- (i): [L-унификация](/docs/core/foundations/axiom-omega#lk-из-omega) [Т] — атомы $S_k = |k\rangle\langle k|$ классификатора $\Omega$
-- (ii): Мост T15 [Т] — единственность BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
-- (iii): [Теорема HS-проекции](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [Т] — ортогональная проекция в пространстве Гильберта–Шмидта
-- (iv): Аксиома A5 (Пейдж–Вуттерс) — явный постулат
-- (v): Сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т] — формула $\kappa_0$ из [категориального вывода](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
+**Proof.** Each structure is derived from the axioms:
+- (i): [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega) [Т] — atoms $S_k = |k\rangle\langle k|$ of classifier $\Omega$
+- (ii): Bridge T15 [Т] — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
+- (iii): [HS-projection theorem](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [Т] — orthogonal projection in Hilbert–Schmidt space
+- (iv): Axiom A5 (Page–Wootters) — explicit postulate
+- (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
 
-### Лемма G4: Калибровочная группа = $G_2$ [Т] {#лемма-g4}
+### Lemma G4: Gauge group = $G_2$ [Т] {#лемма-g4}
 
-:::tip Лемма G4 (Максимальная калибровочная группа) [Т]
-Максимальная подгруппа $\mathcal{G} \subseteq U(7)$, элементы которой сохраняют **все пять структур** Леммы G3, есть $G_2 = \mathrm{Aut}(\mathbb{O})$.
+:::tip Lemma G4 (Maximal gauge group) [Т]
+The maximal subgroup $\mathcal{G} \subseteq U(7)$ whose elements preserve **all five structures** of Lemma G3 is $G_2 = \mathrm{Aut}(\mathbb{O})$.
 :::
 
-**Доказательство.** Проведём в два шага: (A) $G_2 \subseteq \mathcal{G}$ и (B) $\mathcal{G} \subseteq G_2$.
+**Proof.** We proceed in two steps: (A) $G_2 \subseteq \mathcal{G}$ and (B) $\mathcal{G} \subseteq G_2$.
 
-**(A) $G_2 \subseteq \mathcal{G}$: каждый $g \in G_2$ сохраняет все структуры.**
+**(A) $G_2 \subseteq \mathcal{G}$: every $g \in G_2$ preserves all structures.**
 
-По определению, $G_2 = \mathrm{Aut}(\mathbb{O})$ действует на $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 \subset \mathbb{C}^7$ и сохраняет:
-- Октонионное умножение $e_i \cdot e_j = \varepsilon_{ijk} e_k$
-- Таблицу умножения $\cong$ плоскость Фано PG(2,2)
+By definition, $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 \subset \mathbb{C}^7$ and preserves:
+- Octonionic multiplication $e_i \cdot e_j = \varepsilon_{ijk} e_k$
+- The multiplication table $\cong$ Fano plane PG(2,2)
 
-Следовательно, $g \in G_2$ сохраняет:
-- (ii) Фано-линии: $g$ переставляет 7 линий (как автоморфизм PG(2,2))
-- (i) Набор атомарных проекторов: $g|k\rangle\langle k|g^\dagger$ — проекторы на повёрнутый базис, но **набор** $\{g\Pi_p g^\dagger\} = \{\Pi_{\sigma_g(p)}\}$ сохраняется, и атомарные проекторы восстанавливаются из пересечений: $|k\rangle\langle k| = \Pi_p \Pi_q$ для двух линий через точку $k$
+Therefore, $g \in G_2$ preserves:
+- (ii) Fano lines: $g$ permutes the 7 lines (as an automorphism of PG(2,2))
+- (i) The set of atomic projectors: $g|k\rangle\langle k|g^\dagger$ are projectors onto a rotated basis, but the **set** $\{g\Pi_p g^\dagger\} = \{\Pi_{\sigma_g(p)}\}$ is preserved, and the atomic projectors are recovered from intersections: $|k\rangle\langle k| = \Pi_p \Pi_q$ for two lines through point $k$
 
-Для (iii), (iv), (v): $G_2 \subset SO(7)$ сохраняет метрику, а E, O, U преобразуются **в пределах** $G_2$-орбиты. Структуры (iii)–(v) формулируются в терминах Фано-линий и ковариантны по построению. $\checkmark$
+For (iii), (iv), (v): $G_2 \subset SO(7)$ preserves the metric, and E, O, U transform **within** the $G_2$-orbit. Structures (iii)–(v) are formulated in terms of Fano lines and are covariant by construction. $\checkmark$
 
-**(B) $\mathcal{G} \subseteq G_2$: любой $U \in \mathcal{G}$ принадлежит $G_2$.**
+**(B) $\mathcal{G} \subseteq G_2$: any $U \in \mathcal{G}$ belongs to $G_2$.**
 
-Пусть $U \in U(7)$ сохраняет все пять структур Леммы G3.
+Let $U \in U(7)$ preserve all five structures of Lemma G3.
 
-**Шаг B1.** Из сохранения (ii) (Фано-линий): $U$ индуцирует автоморфизм плоскости Фано PG(2,2). Поскольку PG(2,2) изоморфна таблице умножения $\mathrm{Im}(\mathbb{O})$ [Т], $U$ индуцирует автоморфизм октонионного умножения.
+**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since PG(2,2) is isomorphic to the multiplication table of $\mathrm{Im}(\mathbb{O})$ [Т], $U$ induces an automorphism of octonionic multiplication.
 
-**Шаг B2.** Ограничим $U$ на $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Автоморфизм октонионного умножения на $\mathrm{Im}(\mathbb{O})$ по определению принадлежит $G_2 = \mathrm{Aut}(\mathbb{O})$.
+**Step B2.** Restrict $U$ to $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. An automorphism of octonionic multiplication on $\mathrm{Im}(\mathbb{O})$ by definition belongs to $G_2 = \mathrm{Aut}(\mathbb{O})$.
 
-:::tip Переход от комбинаторных автоморфизмов к непрерывным
-$U \in U(7)$ сохраняет Фано-линии **как подпространства** (не только как множества индексов). Каждая Фано-линия определяет 3-мерное подпространство, и сохранение всех 7 таких подпространств эквивалентно сохранению октонионного кросс-произведения (3-формы $\varphi_3 = \sum f_{ijk}\, e^i \wedge e^j \wedge e^k$). По определению $G_2 = \{g \in \mathrm{GL}(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$, что доказывает $U \in G_2$.
+:::tip Transition from combinatorial automorphisms to continuous ones
+$U \in U(7)$ preserves Fano lines **as subspaces** (not just as index sets). Each Fano line defines a 3-dimensional subspace, and preservation of all 7 such subspaces is equivalent to preservation of the octonionic cross-product (3-form $\varphi_3 = \sum f_{ijk}\, e^i \wedge e^j \wedge e^k$). By definition $G_2 = \{g \in \mathrm{GL}(7,\mathbb{R}) : g^*\varphi_3 = \varphi_3\}$, which proves $U \in G_2$.
 :::
 
-:::info Пояснение: PSL(2,7) vs G₂
-Группа комбинаторных автоморфизмов PG(2,2) — конечная: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ — компактная группа Ли, $\dim G_2 = 14$. Связь: $\mathrm{PSL}(2,7) \subset G_2$ как **конечная подгруппа** — каждая перестановка 7 точек, совместимая с PG(2,2), продолжается до непрерывного автоморфизма $\mathbb{O}$. Шаг B1 показывает, что $U$ сохраняет **структурные константы** $f_{ijk}$ (не только комбинаторику), а шаг B2 использует определение $G_2$ как группы, сохраняющей эти константы.
+:::info Clarification: PSL(2,7) vs G₂
+The group of combinatorial automorphisms of PG(2,2) is finite: $\mathrm{Aut}(\mathrm{PG}(2,2)) \cong \mathrm{PSL}(2,7)$, $|\mathrm{PSL}(2,7)| = 168$. The group $G_2 = \mathrm{Aut}(\mathbb{O})$ is a compact Lie group, $\dim G_2 = 14$. Relation: $\mathrm{PSL}(2,7) \subset G_2$ as a **finite subgroup** — every permutation of 7 points compatible with PG(2,2) extends to a continuous automorphism of $\mathbb{O}$. Step B1 shows that $U$ preserves the **structure constants** $f_{ijk}$ (not just combinatorics), and step B2 uses the definition of $G_2$ as the group preserving these constants.
 :::
 
-**Шаг B3.** Поскольку $G_2 \subset SO(7) \subset U(7)$ и $U$ сохраняет эрмитову структуру (как элемент $U(7)$), ограничение $U\big|_{\mathrm{Im}(\mathbb{O})}$ определяет $U$ полностью (ибо $\mathrm{Im}(\mathbb{O})$ — вещественная форма $\mathbb{C}^7$, и $U$ сохраняет вещественную структуру через сохранение PG(2,2)).
+**Step B3.** Since $G_2 \subset SO(7) \subset U(7)$ and $U$ preserves the Hermitian structure (as an element of $U(7)$), the restriction $U\big|_{\mathrm{Im}(\mathbb{O})}$ determines $U$ completely (since $\mathrm{Im}(\mathbb{O})$ is a real form of $\mathbb{C}^7$, and $U$ preserves the real structure via preservation of PG(2,2)).
 
-Следовательно, $U \in G_2$. $\blacksquare$
+Therefore, $U \in G_2$. $\blacksquare$
 
 ---
 
-## Основная теорема {#теорема}
+## Main theorem {#теорема}
 
-### Теорема (G₂-ригидность голономного представления) [Т] {#g2-ригидность}
+### Theorem (G₂-rigidity of holonomic representation) [Т] {#g2-ригидность}
 
-:::warning Теорема G₂-ригидности [Т]
-Пусть $S$ — автономная система, удовлетворяющая (AP)+(PH)+(QG)+(V). Пусть $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ и $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ — два голономных представления $S$ (Определение G1).
+:::warning Theorem of G₂-rigidity [Т]
+Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
 
-Тогда существует **единственный** $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ такой, что:
+Then there exists a **unique** $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ such that:
 
 $$
 \boxed{G_2(s) = U \, G_1(s) \, U^\dagger \quad \forall \, s \in \mathrm{States}(S)}
 $$
 
-Эквивалентно: **голономное представление единственно с точностью до калибровочной группы $G_2$**.
+Equivalently: **the holonomic representation is unique up to gauge group $G_2$**.
 :::
 
-### Доказательство {#доказательство}
+### Proof {#доказательство}
 
-**Шаг 1: Определённость динамики в каждом представлении.**
+**Step 1: Definiteness of dynamics in each representation.**
 
-В представлении $(\mathbb{C}^7, \mathcal{B}_i, G_i)$ аксиомы A1–A5 определяют Лиувиллиан $\mathcal{L}_\Omega^{(i)}$ (Лемма G3 [Т]). Условие совместимости (Определение G1) гарантирует:
+In representation $(\mathbb{C}^7, \mathcal{B}_i, G_i)$ axioms A1–A5 determine the Liouvillian $\mathcal{L}_\Omega^{(i)}$ (Lemma G3 [Т]). The compatibility condition (Definition G1) guarantees:
 
 $$
 \frac{d}{d\tau} G_i(s(\tau)) = \mathcal{L}_\Omega^{(i)}[G_i(s(\tau))], \quad i = 1, 2
 $$
 
-**Шаг 2: Построение интертвайнера $\Phi$.**
+**Step 2: Construction of intertwiner $\Phi$.**
 
-Определим $\Phi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ как:
+Define $\Phi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ as:
 
 $$
 \Phi := G_2 \circ G_1^{-1}
 $$
 
-(обратная $G_1^{-1}$ существует на образе $G_1(\mathrm{States}(S))$). Из условий совместимости:
+(the inverse $G_1^{-1}$ exists on the image $G_1(\mathrm{States}(S))$). From the compatibility conditions:
 
 $$
-\frac{d}{d\tau} \Phi(\Gamma(\tau)) = \mathcal{L}_\Omega^{(2)}[\Phi(\Gamma(\tau))], \quad \text{где} \quad \frac{d}{d\tau}\Gamma(\tau) = \mathcal{L}_\Omega^{(1)}[\Gamma(\tau)]
+\frac{d}{d\tau} \Phi(\Gamma(\tau)) = \mathcal{L}_\Omega^{(2)}[\Phi(\Gamma(\tau))], \quad \text{where} \quad \frac{d}{d\tau}\Gamma(\tau) = \mathcal{L}_\Omega^{(1)}[\Gamma(\tau)]
 $$
 
-**Шаг 3: $\Phi$ — сопряжение унитарным оператором.**
+**Step 3: $\Phi$ is conjugation by a unitary operator.**
 
-Оба представления описывают одну и ту же физическую систему и порождают одинаковые наблюдаемые. Спектр $\Gamma$ (набор собственных значений) инвариантен: $\mathrm{Spec}(\Phi(\Gamma)) = \mathrm{Spec}(\Gamma)$ для всех $\Gamma$ (поскольку физические наблюдаемые — чистота $P = \mathrm{Tr}(\Gamma^2)$, энтропия фон Неймана, Coh$_E$ и т.д. — суть функции спектра и определённых структурных элементов, и должны совпадать).
+Both representations describe the same physical system and generate the same observables. The spectrum of $\Gamma$ (set of eigenvalues) is invariant: $\mathrm{Spec}(\Phi(\Gamma)) = \mathrm{Spec}(\Gamma)$ for all $\Gamma$ (since physical observables — purity $P = \mathrm{Tr}(\Gamma^2)$, von Neumann entropy, Coh$_E$, etc. — are functions of the spectrum and certain structural elements, and must coincide).
 
-Спектросохраняющее отображение на $\mathcal{D}(\mathbb{C}^7)$ является сопряжением унитарным (или антиунитарным) оператором — это **теорема Вигнера** (Wigner 1931) в форме Кадисона (Kadison 1965):
+A spectrum-preserving map on $\mathcal{D}(\mathbb{C}^7)$ is conjugation by a unitary (or antiunitary) operator — this is **Wigner's theorem** (Wigner 1931) in the form of Kadison (Kadison 1965):
 
 $$
-\Phi(\Gamma) = U \Gamma U^\dagger \quad \text{для некоторого } U \in U(7)
+\Phi(\Gamma) = U \Gamma U^\dagger \quad \text{for some } U \in U(7)
 $$
 
-(антиунитарный случай исключён, поскольку $\Phi$ непрерывно связан с тождественным отображением через непрерывное семейство систем).
+(the antiunitary case is excluded since $\Phi$ is continuously connected to the identity map through a continuous family of systems).
 
-:::tip Расширение Φ на всё D(ℂ⁷)
-По условию жизнеспособности (V), траектории голонома проходят через открытую окрестность аттрактора $\rho^*$ (T-125 [Т]). Следовательно, $\mathrm{Im}(G_1)$ содержит открытое подмножество $\mathrm{Int}(\mathcal{D}(\mathbb{C}^7))$. Аффинное отображение, определённое на открытом подмножестве полного метрического пространства, единственным образом продолжается на всё пространство (теорема Тице). Продолженное $\Phi$ сохраняет спектр на всём $\mathcal{D}(\mathbb{C}^7)$.
+:::tip Extension of Φ to all D(ℂ⁷)
+By the viability condition (V), the trajectories of the holon pass through an open neighborhood of the attractor $\rho^*$ (T-125 [Т]). Therefore $\mathrm{Im}(G_1)$ contains an open subset of $\mathrm{Int}(\mathcal{D}(\mathbb{C}^7))$. An affine map defined on an open subset of a complete metric space extends uniquely to the whole space (Tietze theorem). The extended $\Phi$ preserves the spectrum on all of $\mathcal{D}(\mathbb{C}^7)$.
 :::
 
-:::info Уточнение: Вигнер vs. Ульманн
-Здесь применяется **теорема Вигнера** (в форме Кадисона): аффинная биекция $\Phi$ на пространстве состояний $\mathcal{D}(\mathbb{C}^7)$, сохраняющая спектр (и, следовательно, fidelity $F(\rho, \sigma) = \mathrm{Tr}\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}}$), реализуется унитарным или антиунитарным сопряжением. Это корректная ссылка для данного шага, поскольку $\Phi$ — биекция на пространстве состояний, а не CPTP-канал. Для CPTP-каналов (которые в общем случае не являются биекциями) сохранение fidelity характеризуется **теоремой Ульманна** (Uhlmann 1976): $F(\mathcal{E}[\rho], \mathcal{E}[\sigma]) \leq F(\rho, \sigma)$ для любого CPTP $\mathcal{E}$, с равенством тогда и только тогда, когда $\mathcal{E}$ — унитарный канал на опоре $\rho$ и $\sigma$. В контексте монотонности Freedom (Теорема [Свойства Freedom](/docs/core/foundations/consequences#freedom-свойства) в consequences.md), именно контрактивность Ульманна обосновывает невозрастание свободы при CPTP-эволюции.
+:::info Clarification: Wigner vs. Uhlmann
+Here **Wigner's theorem** (in Kadison's form) is applied: an affine bijection $\Phi$ on the state space $\mathcal{D}(\mathbb{C}^7)$ that preserves the spectrum (and hence fidelity $F(\rho, \sigma) = \mathrm{Tr}\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}}$) is realized by unitary or antiunitary conjugation. This is the correct reference for this step, since $\Phi$ is a bijection on the state space, not a CPTP channel. For CPTP channels (which are in general not bijections) preservation of fidelity is characterized by **Uhlmann's theorem** (Uhlmann 1976): $F(\mathcal{E}[\rho], \mathcal{E}[\sigma]) \leq F(\rho, \sigma)$ for any CPTP $\mathcal{E}$, with equality if and only if $\mathcal{E}$ is a unitary channel on the support of $\rho$ and $\sigma$. In the context of the monotonicity of Freedom (Theorem [Properties of Freedom](/docs/core/foundations/consequences#freedom-свойства) in consequences.md), it is precisely Uhlmann's contractivity that justifies the non-increase of freedom under CPTP evolution.
 :::
 
-**Шаг 4: $U \in G_2$.**
+**Step 4: $U \in G_2$.**
 
-Поскольку оба представления удовлетворяют аксиомам A1–A5, унитарный оператор $U$ должен сохранять **все** структуры, определённые аксиомами (Лемма G3 [Т]): атомарные проекторы, Фано-линии, E-проекцию, PW-декомпозицию, формулу $\kappa_0$.
+Since both representations satisfy axioms A1–A5, the unitary operator $U$ must preserve **all** structures defined by the axioms (Lemma G3 [Т]): atomic projectors, Fano lines, E-projection, PW-decomposition, formula $\kappa_0$.
 
-По Лемме G4 [Т]: $U \in G_2$. $\blacksquare$
+By Lemma G4 [Т]: $U \in G_2$. $\blacksquare$
 
-**Шаг 5: Единственность $U$.**
+**Step 5: Uniqueness of $U$.**
 
-Предположим, $U_1, U_2 \in G_2$ оба удовлетворяют $G_2 = \mathrm{Ad}_{U_i} \circ G_1$. Тогда $\mathrm{Ad}_{U_1^{-1}U_2} = \mathrm{Id}$ на образе $G_1$. Если образ $G_1$ содержит достаточно много состояний (что гарантировано жизнеспособностью: система проходит через окрестность $\rho_*$ по примитивности [Т], и эта окрестность открыта в $\mathcal{D}(\mathbb{C}^7)$), то $U_1^{-1}U_2 = e^{i\theta} I$ — скалярная фаза, тривиально действующая на $\mathcal{D}(\mathbb{C}^7)$. $\blacksquare$
+Suppose $U_1, U_2 \in G_2$ both satisfy $G_2 = \mathrm{Ad}_{U_i} \circ G_1$. Then $\mathrm{Ad}_{U_1^{-1}U_2} = \mathrm{Id}$ on the image of $G_1$. If the image of $G_1$ contains sufficiently many states (which is guaranteed by viability: the system passes through a neighborhood of $\rho_*$ by primitivity [Т], and this neighborhood is open in $\mathcal{D}(\mathbb{C}^7)$), then $U_1^{-1}U_2 = e^{i\theta} I$ — a scalar phase, acting trivially on $\mathcal{D}(\mathbb{C}^7)$. $\blacksquare$
 
 ---
 
-## Следствия {#следствия}
+## Corollaries {#следствия}
 
-### Следствие 1: Пространство физических состояний [Т] {#физические-состояния}
+### Corollary 1: Space of physical states [Т] {#физические-состояния}
 
-:::tip Следствие 1 (Пространство наблюдаемых) [Т]
-Пространство **физически различимых** состояний холона:
+:::tip Corollary 1 (Space of observables) [Т]
+The space of **physically distinguishable** states of the holon:
 
 $$
 \mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7) / G_2
 $$
 
-имеет размерность:
+has dimension:
 
 $$
 \dim_\mathbb{R}(\mathcal{D}_{\mathrm{phys}}) = 48 - 14 = 34
 $$
 
-где $48 = N^2 - 1 = \dim(\mathrm{su}(7))$ — полное число параметров $\Gamma$, и $14 = \dim(G_2)$ — число калибровочных степеней свободы.
+where $48 = N^2 - 1 = \dim(\mathrm{su}(7))$ is the full number of parameters of $\Gamma$, and $14 = \dim(G_2)$ is the number of gauge degrees of freedom.
 :::
 
-**Доказательство.** Для генерического $\Gamma$ (с различными собственными значениями) стабилизатор $\mathrm{Stab}_{G_2}(\Gamma)$ тривиален (конечная группа). Тогда по теореме об орбитах: $\dim(\mathrm{Orb}(\Gamma)) = \dim(G_2) = 14$, и $\dim(\mathcal{D}_{\mathrm{phys}}) = 48 - 14 = 34$. $\blacksquare$
+**Proof.** For generic $\Gamma$ (with distinct eigenvalues) the stabilizer $\mathrm{Stab}_{G_2}(\Gamma)$ is trivial (finite group). Then by the orbit theorem: $\dim(\mathrm{Orb}(\Gamma)) = \dim(G_2) = 14$, and $\dim(\mathcal{D}_{\mathrm{phys}}) = 48 - 14 = 34$. $\blacksquare$
 
-:::info Согласованность
-Значение 34 совпадает с числом параметров при полной $G_2$-калибровочной фиксации в режиме чисто Фано-наблюдения ($\alpha = 0$), указанном в [операторах Линдблада](/docs/core/operators/lindblad-operators#g2-ковариантность): «$48 \to 34$ параметра».
+:::info Consistency
+The value 34 coincides with the number of parameters under full $G_2$-gauge fixing in the pure Fano-observation regime ($\alpha = 0$), stated in [Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность): "$48 \to 34$ parameters."
 :::
 
-### Следствие 2: Корректность обратной задачи [Т] {#обратная-задача}
+### Corollary 2: Well-posedness of inverse problem [Т] {#обратная-задача}
 
-:::tip Следствие 2 (Обратная задача) [Т]
-Для системы $S$, удовлетворяющей (AP)+(PH)+(QG)+(V), начальное состояние $\Gamma(0)$ **однозначно** восстанавливается из:
+:::tip Corollary 2 (Inverse problem) [Т]
+For a system $S$ satisfying (AP)+(PH)+(QG)+(V), the initial state $\Gamma(0)$ is **uniquely** recovered from:
 
-**(a)** Наблюдаемой траектории $\Gamma(\tau)$ для $\tau \in (0, T]$ (Леммы G1, G2 [Т])
+**(a)** The observed trajectory $\Gamma(\tau)$ for $\tau \in (0, T]$ (Lemmas G1, G2 [Т])
 
-**(b)** Параметров системы $(\omega_0, \lambda_m)$
+**(b)** The system parameters $(\omega_0, \lambda_m)$
 
-с точностью до $G_2$-калибровки (Теорема G₂-ригидности [Т]).
+up to $G_2$-gauge (Theorem of G₂-rigidity [Т]).
 :::
 
-### Следствие 3: Верность функтора F [Т] {#верность-функтора}
+### Corollary 3: Faithfulness of functor F [Т] {#верность-функтора}
 
-:::tip Следствие 3 (Верность функтора) [Т]
-Функтор $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([категорный формализм](/docs/proofs/categorical/categorical-formalism)) **верен** (faithful) на $G_2$-орбитах: если $F(\Gamma_1) \cong F(\Gamma_2)$ в $\mathbf{Exp}$, то $\Gamma_2 = U\Gamma_1 U^\dagger$ для $U \in G_2$.
+:::tip Corollary 3 (Faithfulness of functor) [Т]
+The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on $G_2$-orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in G_2$.
 
-Ядро $F$ на множестве изоморфизмов:
+Kernel of $F$ on the set of isomorphisms:
 
 $$
 \ker(F) = \{\mathrm{Ad}_U : U \in G_2\}
 $$
 :::
 
-### Следствие 4: Предсказательная мощность [Т] {#предсказательная-мощность}
+### Corollary 4: Predictive power [Т] {#предсказательная-мощность}
 
-:::tip Следствие 4 (Конечность калибровочной группы) [Т]
-$G_2$ — **конечномерная** (14-мерная) компактная группа Ли. Это означает:
+:::tip Corollary 4 (Finiteness of gauge group) [Т]
+$G_2$ is a **finite-dimensional** (14-dimensional) compact Lie group. This means:
 
-1. **Дискретный набор** $G_2$-инвариантных наблюдаемых полностью характеризует физическое состояние
-2. **Конечное число** калибровочно-инвариантных параметров (34) — в отличие от стандартной КМ, где $U(\mathcal{H})$-свобода бесконечномерна
-3. Теория **максимально предсказательна** при данной размерности $N = 7$: калибровочная группа $G_2$ — минимальная группа, сохраняющая октонионную структуру
+1. A **discrete set** of $G_2$-invariant observables fully characterizes the physical state
+2. A **finite number** of gauge-invariant parameters (34) — unlike standard QM, where $U(\mathcal{H})$-freedom is infinite-dimensional
+3. The theory is **maximally predictive** at the given dimension $N = 7$: the gauge group $G_2$ is the minimal group preserving the octonionic structure
 :::
 
-### Следствие 5: G₂-инварианты как физические наблюдаемые {#инварианты}
+### Corollary 5: G₂-invariants as physical observables {#инварианты}
 
-34 физических параметра организованы следующим образом:
+The 34 physical parameters are organized as follows:
 
-| Тип | Число параметров | Описание |
+| Type | Number of parameters | Description |
 |-----|:---:|---|
-| Спектр $\Gamma$ | 6 | Собственные значения (упорядоченные) |
-| $G_2$-инвариантные углы | 28 | Взаимное расположение собственных векторов относительно октонионной структуры |
-| **Итого** | **34** | Полный набор физических наблюдаемых |
+| Spectrum of $\Gamma$ | 6 | Eigenvalues (ordered) |
+| $G_2$-invariant angles | 28 | Mutual position of eigenvectors relative to octonionic structure |
+| **Total** | **34** | Complete set of physical observables |
 
-К калибровочно-инвариантным наблюдаемым относятся:
+The gauge-invariant observables include:
 
-- Чистота $P = \mathrm{Tr}(\Gamma^2)$ — $G_2$-инвариант ($P(U\Gamma U^\dagger) = P(\Gamma)$ для $U \in U(7) \supset G_2$)
-- E-когерентность $\mathrm{Coh}_E(\Gamma)$ — инвариантна внутри $G_2$-орбиты, поскольку $G_2$ сохраняет Фано-структуру и роль E
-- Мера рефлексии $R$ — определяется через $\varphi(\Gamma)$ и $\Gamma$, обе преобразуемые ковариантно
-- Мера интеграции $\Phi$ — аналогично
+- Purity $P = \mathrm{Tr}(\Gamma^2)$ — $G_2$-invariant ($P(U\Gamma U^\dagger) = P(\Gamma)$ for $U \in U(7) \supset G_2$)
+- E-coherence $\mathrm{Coh}_E(\Gamma)$ — invariant within $G_2$-orbit, since $G_2$ preserves the Fano structure and the role of E
+- Reflection measure $R$ — determined via $\varphi(\Gamma)$ and $\Gamma$, both transforming covariantly
+- Integration measure $\Phi$ — analogously
 
 ---
 
-## Связь с открытыми вопросами {#открытые-вопросы}
+## Relation to open questions {#открытые-вопросы}
 
-### Закрытие проблемы G на уровне теории
+### Closing the problem of G at the level of theory
 
-Данная теорема **полностью закрывает** вопрос единственности отображения G на теоретическом уровне:
+This theorem **fully closes** the question of uniqueness of the map G at the theoretical level:
 
-| Вопрос | Статус | Основание |
+| Question | Status | Basis |
 |--------|:------:|-----------|
-| **Существование** G | **[Т]** | Теорема S + мост T15 |
-| **Единственность** G (с точностью до $G_2$) | **[Т]** | Теорема $G_2$-ригидности (данный документ) |
-| **Предсказательность** G | [Эмпирика] | Требует экспериментальной верификации |
+| **Existence** of G | **[Т]** | Theorem S + bridge T15 |
+| **Uniqueness** of G (up to $G_2$) | **[Т]** | Theorem of $G_2$-rigidity (this document) |
+| **Predictivity** of G | [Empirical] | Requires experimental verification |
 
-Вопрос 3 (предсказательность) — **эпистемологический**, а не математический: он закрывается эмпирически (конвергентная валидность, предсказательный успех, интервенционная проверка). Это тот же эпистемологический стандарт, по которому работает вся фундаментальная физика.
+Question 3 (predictivity) is **epistemological**, not mathematical: it is closed empirically (convergent validity, predictive success, interventional testing). This is the same epistemological standard by which all fundamental physics operates.
 
-### Аналогия с физическими теориями
+### Analogy with physical theories
 
-| Теория | Теорема единственности | Калибровочная группа | Эмпирическая верификация |
+| Theory | Uniqueness theorem | Gauge group | Empirical verification |
 |--------|---|---|---|
-| КМ | Стоуна–фон Неймана (1931) | $U(\mathcal{H})$ | Спектры, интерференция |
-| ОТО | Биркгоффа (сферическая симметрия) | $\mathrm{Diff}(M)$ | Отклонение света, гравитационные волны |
-| СМ | Колмен–Мандулы / Хаага–Лопушанского–Сониуса | Пуанкаре $\times$ калибровочная | Ускорители, PDG |
-| **УГМ** | **$G_2$-ригидность** (данная теорема) | **$G_2 = \mathrm{Aut}(\mathbb{O})$** | Угол Кабиббо, пороги, Gap-профили |
+| QM | Stone–von Neumann (1931) | $U(\mathcal{H})$ | Spectra, interference |
+| GR | Birkhoff (spherical symmetry) | $\mathrm{Diff}(M)$ | Light deflection, gravitational waves |
+| SM | Coleman–Mandula / Haag–Łopuszański–Sohnius | Poincaré $\times$ gauge | Accelerators, PDG |
+| **UHM** | **$G_2$-rigidity** (this theorem) | **$G_2 = \mathrm{Aut}(\mathbb{O})$** | Cabibbo angle, thresholds, Gap profiles |
 
 ---
 
-## Резюме {#резюме}
+## Summary {#резюме}
 
-:::tip Ключевой результат
-**Теорема $G_2$-ригидности [Т]:** Голономное представление системы, удовлетворяющей (AP)+(PH)+(QG)+(V), **единственно** с точностью до калибровочной группы $G_2 = \mathrm{Aut}(\mathbb{O})$ — 14-мерной исключительной группы Ли, группы автоморфизмов октонионов.
+:::tip Key result
+**Theorem of $G_2$-rigidity [Т]:** The holonomic representation of a system satisfying (AP)+(PH)+(QG)+(V) is **unique** up to gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$ — a 14-dimensional exceptional Lie group, the automorphism group of the octonions.
 
-**Физический смысл:** Различные наблюдатели, применяющие УГМ к одной системе, получат матрицы когерентности, связанные $G_2$-преобразованием. Все 34 калибровочно-инвариантных параметра (чистота, когерентности, пороги) совпадут.
+**Physical meaning:** Different observers applying UHM to the same system will obtain coherence matrices related by a $G_2$-transformation. All 34 gauge-invariant parameters (purity, coherences, thresholds) will coincide.
 
-**Методологический статус:** Все шаги доказательства — теоремы [Т], опирающиеся на ранее установленные результаты. Данная теорема закрывает проблему отображения G на теоретическом уровне и является аналогом теоремы Стоуна–фон Неймана для УГМ.
+**Methodological status:** All steps of the proof are theorems [Т], relying on previously established results. This theorem closes the problem of the map G at the theoretical level and is the analogue of the Stone–von Neumann theorem for UHM.
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — фундаментальные аксиомы A1–A5
-- [Аксиома (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — характеризующие свойства жизнеспособных холонов
-- [Операторы Линдблада](/docs/core/operators/lindblad-operators) — примитивность ℒ_Ω, L-унификация, G₂-ковариантность
-- [Теорема минимальности](/docs/proofs/minimality/theorem-minimality-7) — функциональная единственность 7 измерений
-- [Структурный вывод N=7](/docs/proofs/minimality/theorem-octonionic-derivation) — мост T15 и октонионная структура
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор F: DensityMat → Exp
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — эквивалентность определений самомоделирования
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — роль G₂ в физических соответствиях
+**Related documents:**
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — fundamental axioms A1–A5
+- [Axiom (AP+PH+QG+V)](/docs/core/foundations/axiom-septicity) — characterizing properties of viable holons
+- [Lindblad operators](/docs/core/operators/lindblad-operators) — primitivity of ℒ_Ω, L-unification, G₂-covariance
+- [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) — functional uniqueness of 7 dimensions
+- [Structural derivation N=7](/docs/proofs/minimality/theorem-octonionic-derivation) — bridge T15 and octonionic structure
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor F: DensityMat → Exp
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — equivalence of self-modeling definitions
+- [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — role of G₂ in physical correspondences

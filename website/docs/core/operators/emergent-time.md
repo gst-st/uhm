@@ -6,7 +6,7 @@ description: "Derivation of time from the structure of category 𝒞 — definit
 
 # Emergent Time
 
-This chapter is one of the most revolutionary in the Universal Holonomic Model. We are accustomed to thinking of time as something that "simply exists" — an invisible river carrying everything forward. Newton regarded time as absolute — a cosmic clock ticking uniformly for everyone. Einstein showed that time is relative: it flows differently for observers moving at different speeds. But even in relativity, time **exists** as a background structure — flexible, yet imposed from outside.
+This chapter is one of the most revolutionary in the Unitary Holonomic Monism. We are accustomed to thinking of time as something that "simply exists" — an invisible river carrying everything forward. Newton regarded time as absolute — a cosmic clock ticking uniformly for everyone. Einstein showed that time is relative: it flows differently for observers moving at different speeds. But even in relativity, time **exists** as a background structure — flexible, yet imposed from outside.
 
 UHM takes the next, radical step: **time does not exist as a background**. Time is not stage scenery but part of the performance. It *emerges* from the internal structure of reality, like a pattern appearing on fabric in a certain light.
 

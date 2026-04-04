@@ -1,66 +1,66 @@
 ---
 slug: /proofs/minimality/theorem-octonionic-derivation
 sidebar_position: 2
-title: "Структурный вывод N = 7 через октонионы"
-description: "Каноническое доказательство: P1 [Т] + P2 [Т] → 𝕆 → N = 7 через теорему Гурвица. Мост (AP)+(PH)+(QG)+(V) → P1+P2 полностью замкнут [Т] (цепочка T15, 15 шагов)"
+title: "Structural Derivation of N = 7 via Octonions"
+description: "Canonical proof: P1 [Т] + P2 [Т] → 𝕆 → N = 7 via the Hurwitz theorem. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [Т] (T15 chain, 15 steps)"
 ---
 
-# Структурный Вывод N = 7 через Октонионы
+# Structural Derivation of N = 7 via Octonions
 
-## Методология и маркеры статуса
+## Methodology and status markers
 
-:::warning Маркеры статуса утверждений
-Каждое утверждение маркировано одним из четырёх статусов:
-- **[Т]** — **Теорема**: доказано в чистой математике или выведено из аксиом
-- **[С]** — **Следствие**: логически следует из [Т]
-- **[И]** — **Интерпретация**: содержательная связь с УГМ
+:::warning Status markers for statements
+Each statement is marked with one of three statuses:
+- **[Т]** — **Theorem**: proven in pure mathematics or derived from axioms
+- **[С]** — **Consequence**: logically follows from [Т]
+- **[И]** — **Interpretation**: substantive connection with UHM
 :::
 
-:::info Двухтрековый статус N = 7
-Размерность $N = 7$ имеет **два независимых обоснования**:
+:::info Dual-track status of N = 7
+The dimensionality $N = 7$ has **two independent justifications**:
 
-| Трек | Путь | Статус |
+| Track | Path | Status |
 |---|---|---|
-| **Трек A** | [Аксиома 3](../../core/foundations/axiom-omega#аксиоматика) + [Теорема S](./theorem-minimality-7): (AP)+(PH)+(QG) → N ≥ 7 | [Т] Доказано |
-| **Трек B** | P1 + P2 → 𝕆 → dim Im(𝕆) = 7 (данный документ) | [Т] Математически строго |
-| **Мост** | (AP)+(PH)+(QG)+(V) → P1 + P2 | **[Т]** — полная цепочка T15, 15 шагов, все [Т] |
+| **Track A** | [Axiom 3](../../core/foundations/axiom-omega#аксиоматика) + [Theorem S](./theorem-minimality-7): (AP)+(PH)+(QG) → N ≥ 7 | [Т] Proven |
+| **Track B** | P1 + P2 → 𝕆 → dim Im(𝕆) = 7 (this document) | [Т] Mathematically rigorous |
+| **Bridge** | (AP)+(PH)+(QG)+(V) → P1 + P2 | **[Т]** — complete T15 chain, 15 steps, all [Т] |
 
-Треки сходятся: оба дают N = 7. Мост **[Т]** — [полностью замкнут](#мост).
+The tracks converge: both give N = 7. The bridge is **[Т]** — [fully closed](#мост).
 :::
 
 ---
 
-## §1. Чистая математика [Т] {#чистая-математика}
+## §1. Pure Mathematics [Т] {#чистая-математика}
 
-### 1.1 Теорема Гурвица (1898) [Т] {#теорема-гурвица}
+### 1.1 Hurwitz Theorem (1898) [Т] {#теорема-гурвица}
 
-**Теорема (Гурвиц).** Нормированные алгебры с делением над $\mathbb{R}$ существуют только в размерностях 1, 2, 4 и 8:
+**Theorem (Hurwitz).** Normed division algebras over $\mathbb{R}$ exist only in dimensions 1, 2, 4, and 8:
 
 $$
 \mathbb{R}, \quad \mathbb{C}, \quad \mathbb{H}, \quad \mathbb{O}
 $$
 
-Других нет.
+No others exist.
 
-**Доказательство:** Классическое — через квадратичные формы и тождество Гурвица. Алгебра $\mathcal{A}$ с нормой $|ab| = |a||b|$ требует, чтобы $n = \dim(\mathcal{A})$ удовлетворяло тождеству сумм квадратов. По теореме Гурвица это возможно лишь при $n \in \{1, 2, 4, 8\}$.
+**Proof:** Classical — via quadratic forms and the Hurwitz identity. An algebra $\mathcal{A}$ with norm $|ab| = |a||b|$ requires that $n = \dim(\mathcal{A})$ satisfy the sum-of-squares identity. By the Hurwitz theorem this is only possible for $n \in \{1, 2, 4, 8\}$.
 
-### 1.2 Теорема Адамса (1960) [Т] {#теорема-адамса}
+### 1.2 Adams Theorem (1960) [Т] {#теорема-адамса}
 
-**Теорема (Адамс).** Сфера $S^{n-1}$ допускает структуру $H$-пространства (непрерывное умножение с единицей) тогда и только тогда, когда $n \in \{1, 2, 4, 8\}$.
+**Theorem (Adams).** The sphere $S^{n-1}$ admits an $H$-space structure (continuous multiplication with a unit) if and only if $n \in \{1, 2, 4, 8\}$.
 
-**Эквивалентная формулировка:** Параллелизуемые сферы — только $S^0, S^1, S^3, S^7$.
+**Equivalent formulation:** Parallelizable spheres are only $S^0, S^1, S^3, S^7$.
 
-**Следствие:** Мнимая единичная сфера в $\text{Im}(\mathcal{A})$ для алгебры с делением $\mathcal{A}$ — это $S^{n-2}$, параллелизуемая лишь при $n \in \{1, 2, 4, 8\}$.
+**Corollary:** The imaginary unit sphere in $\text{Im}(\mathcal{A})$ for a division algebra $\mathcal{A}$ is $S^{n-2}$, parallelizable only for $n \in \{1, 2, 4, 8\}$.
 
-### 1.3 Конструкция Кэли-Диксона [Т] {#кэли-диксон}
+### 1.3 Cayley–Dickson Construction [Т] {#кэли-диксон}
 
-Алгебры с делением выстраиваются в цепочку удвоений:
+Division algebras form a chain of doublings:
 
 $$
 \mathbb{R} \xrightarrow{\text{CD}} \mathbb{C} \xrightarrow{\text{CD}} \mathbb{H} \xrightarrow{\text{CD}} \mathbb{O} \xrightarrow{\text{CD}} \mathbb{S}
 $$
 
-| Алгебра | dim | Коммутативность | Ассоциативность | Альтернативность | Делимость |
+| Algebra | dim | Commutativity | Associativity | Alternativity | Divisibility |
 |---|---|---|---|---|---|
 | $\mathbb{R}$ | 1 | + | + | + | + |
 | $\mathbb{C}$ | 2 | + | + | + | + |
@@ -68,34 +68,34 @@ $$
 | $\mathbb{O}$ | 8 | — | — | + | + |
 | $\mathbb{S}$ | 16 | — | — | — | — |
 
-**Граница Кэли-Диксона [Т]:** На каждом шаге теряется алгебраическое свойство. $\mathbb{O}$ — последняя алгебра с делением. Седенионы $\mathbb{S}$ и все дальнейшие удвоения содержат делители нуля.
+**Cayley–Dickson boundary [Т]:** At each step an algebraic property is lost. $\mathbb{O}$ is the last division algebra. Sedenions $\mathbb{S}$ and all further doublings contain zero divisors.
 
-### 1.4 Октонионы $\mathbb{O}$ [Т] {#октонионы}
+### 1.4 Octonions $\mathbb{O}$ [Т] {#октонионы}
 
-**Определение.** Октонионы — 8-мерная нормированная алгебра с делением над $\mathbb{R}$:
+**Definition.** Octonions are the 8-dimensional normed division algebra over $\mathbb{R}$:
 
 $$
 \mathbb{O} = \{a_0 + a_1 e_1 + a_2 e_2 + \cdots + a_7 e_7 \mid a_i \in \mathbb{R}\}
 $$
 
-где $e_1, \ldots, e_7$ — мнимые единицы.
+where $e_1, \ldots, e_7$ are imaginary units.
 
-**Таблица умножения** определяется 7 ассоциативным триплетам (циклам плоскости Фано):
+**Multiplication table** is defined by 7 associative triples (cycles of the Fano plane):
 
 $$
 e_i \cdot e_j = -\delta_{ij} + \varepsilon_{ijk} e_k
 $$
 
-где $\varepsilon_{ijk}$ — полностью антисимметричный тензор, ненулевой на 7 триплетах Фано.
+where $\varepsilon_{ijk}$ is the fully antisymmetric tensor, nonzero on the 7 Fano triples.
 
-**Ключевые свойства:**
-- **Неассоциативность:** $(e_i e_j) e_k \neq e_i (e_j e_k)$ в общем случае
-- **Альтернативность:** $x(xy) = x^2 y$ и $(xy)y = x y^2$ (теорема Артина)
-- **Норма:** $|xy| = |x||y|$ (нормированная алгебра с делением)
+**Key properties:**
+- **Non-associativity:** $(e_i e_j) e_k \neq e_i (e_j e_k)$ in general
+- **Alternativity:** $x(xy) = x^2 y$ and $(xy)y = x y^2$ (Artin's theorem)
+- **Norm:** $|xy| = |x||y|$ (normed division algebra)
 
-### 1.5 Плоскость Фано PG(2,2) [Т] {#плоскость-фано}
+### 1.5 Fano Plane PG(2,2) [Т] {#плоскость-фано}
 
-**Определение.** Плоскость Фано — минимальная конечная проективная плоскость с 7 точками и 7 линиями.
+**Definition.** The Fano plane is the minimal finite projective plane with 7 points and 7 lines.
 
 ```
         e₁
@@ -109,478 +109,478 @@ $$
        e₇
 ```
 
-**Свойства [Т]:**
-- 7 точек, 7 линий
-- Каждая линия содержит 3 точки
-- Каждая точка лежит на 3 линиях
-- Через любые 2 точки проходит ровно 1 линия
-- Группа автоморфизмов: $\text{Aut}(\text{PG}(2,2)) = GL(3, \mathbb{F}_2) \cong PSL(2,7)$, порядок 168
+**Properties [Т]:**
+- 7 points, 7 lines
+- Each line contains 3 points
+- Each point lies on 3 lines
+- Through any 2 points there passes exactly 1 line
+- Automorphism group: $\text{Aut}(\text{PG}(2,2)) = GL(3, \mathbb{F}_2) \cong PSL(2,7)$, order 168
 
-**Связь с $\mathbb{O}$:** 7 триплетов (линий) плоскости Фано определяют таблицу умножения мнимых единиц октонионов. Каждая линия $(e_i, e_j, e_k)$ задаёт правило: $e_i \cdot e_j = e_k$ (с учётом ориентации).
+**Connection with $\mathbb{O}$:** The 7 triples (lines) of the Fano plane define the multiplication table of the imaginary units of the octonions. Each line $(e_i, e_j, e_k)$ specifies the rule: $e_i \cdot e_j = e_k$ (with orientation taken into account).
 
-### 1.6 Группа $G_2$ [Т] {#группа-g2}
+### 1.6 Group $G_2$ [Т] {#группа-g2}
 
-**Теорема.** Группа автоморфизмов алгебры октонионов:
+**Theorem.** The automorphism group of the octonion algebra:
 
 $$
 \text{Aut}(\mathbb{O}) = G_2
 $$
 
-$G_2$ — минимальная исключительная группа Ли, 14-мерная, ранга 2.
+$G_2$ is the minimal exceptional Lie group, 14-dimensional, of rank 2.
 
-**Свойства $G_2$ [Т]:**
+**Properties of $G_2$ [Т]:**
 - $\dim(G_2) = 14$
 - $\text{rank}(G_2) = 2$
-- $G_2 \subset SO(7)$ — подгруппа вращений в $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$
-- $G_2$ сохраняет структуру умножения октонионов и плоскость Фано
-- $G_2$-многообразия допускают метрику с голономией $G_2$ (единственная исключительная голономия по классификации Бергера)
+- $G_2 \subset SO(7)$ — subgroup of rotations in $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$
+- $G_2$ preserves the multiplication structure of the octonions and the Fano plane
+- $G_2$-manifolds admit a metric with $G_2$ holonomy (the unique exceptional holonomy by Berger's classification)
 
-### 1.7 Код Хэмминга H(7,4) [Т] {#код-хэмминга}
+### 1.7 Hamming Code H(7,4) [Т] {#код-хэмминга}
 
-**Теорема.** Код Хэмминга $H(7,4)$ — совершенный линейный двоичный код:
-- 7 битов, 4 информационных + 3 проверочных
-- Исправляет 1 ошибку
-- Граница Хэмминга достигается (совершенный код)
+**Theorem.** The Hamming code $H(7,4)$ is a perfect linear binary code:
+- 7 bits, 4 information + 3 check
+- Corrects 1 error
+- The Hamming bound is achieved (perfect code)
 
-**Связь с плоскостью Фано [Т]:** Проверочная матрица $H(7,4)$ определяется 7 ненулевыми столбцами $\mathbb{F}_2^3$, которые соответствуют 7 точкам плоскости Фано.
+**Connection with the Fano plane [Т]:** The parity-check matrix of $H(7,4)$ is defined by the 7 nonzero columns of $\mathbb{F}_2^3$, which correspond to the 7 points of the Fano plane.
 
-**Структура 4+3:** Информационная часть (4 бита) + проверочная часть (3 бита) = 7 битов.
+**Structure 4+3:** Information part (4 bits) + check part (3 bits) = 7 bits.
 
-### 1.8 Теорема Артина [Т] {#теорема-артина}
+### 1.8 Artin's Theorem [Т] {#теорема-артина}
 
-**Теорема (Артин).** Любые два элемента альтернативной алгебры порождают ассоциативную подалгебру.
+**Theorem (Artin).** Any two elements of an alternative algebra generate an associative subalgebra.
 
-**Следствие для $\mathbb{O}$:** Неассоциативность октонионов — **минимальная**: она проявляется только при взаимодействии трёх и более элементов. Любая пара элементов ведёт себя ассоциативно.
+**Corollary for $\mathbb{O}$:** The non-associativity of octonions is **minimal**: it manifests only when three or more elements interact. Any pair of elements behaves associatively.
 
 ---
 
-## §2. Теоремы P1, P2 [Т] {#постулаты}
+## §2. Theorems P1, P2 [Т] {#постулаты}
 
-### 2.1 Теорема P1 (Алгебра с делением) [Т] {#постулат-p1}
+### 2.1 Theorem P1 (Division Algebra) [Т] {#постулат-p1}
 
-:::info Теорема P1 [Т] (выводится по цепочке моста T15)
-Пространство внутренних степеней свободы жизнеспособной системы изоморфно $\text{Im}(\mathcal{A})$ — мнимой части некоторой нормированной алгебры с делением $\mathcal{A}$ над $\mathbb{R}$.
+:::info Theorem P1 [Т] (derived via the T15 bridge chain)
+The space of internal degrees of freedom of a viable system is isomorphic to $\text{Im}(\mathcal{A})$ — the imaginary part of some normed division algebra $\mathcal{A}$ over $\mathbb{R}$.
 :::
 
-**Вывод P1:** P1 выводится из (AP)+(PH)+(QG)+(V) по цепочке T15 [Т] (§5). Исходная мотивация:
-- Алгебра с делением гарантирует обратимость: каждое преобразование имеет обратное (нет «ловушек» в пространстве состояний)
-- Нормированность даёт метрику: $|ab| = |a||b|$ обеспечивает согласованную меру расстояний
-- Мнимая часть: вещественная компонента выделена (аналог скалярного «единства», измерение $U$), внутренние степени свободы — мнимые направления
+**Derivation of P1:** P1 is derived from (AP)+(PH)+(QG)+(V) via the T15 chain [Т] (§5). Original motivation:
+- A division algebra guarantees invertibility: every transformation has an inverse (no "traps" in the state space)
+- Normedness provides a metric: $|ab| = |a||b|$ ensures a consistent distance measure
+- Imaginary part: the real component is singled out (analogue of scalar "unity", dimension $U$), the internal degrees of freedom are the imaginary directions
 
-### 2.2 Теорема P2 (Неассоциативность) [Т] {#постулат-p2}
+### 2.2 Theorem P2 (Non-associativity) [Т] {#постулат-p2}
 
-:::info Теорема P2 [Т] (выводится по цепочке моста T15)
-Алгебра $\mathcal{A}$ неассоциативна:
+:::info Theorem P2 [Т] (derived via the T15 bridge chain)
+The algebra $\mathcal{A}$ is non-associative:
 
 $$
 \exists \, a, b, c \in \mathcal{A}: \quad (ab)c \neq a(bc)
 $$
 :::
 
-**Вывод P2:** P2 выводится из (AP)+(PH)+(QG)+(V) по цепочке T15 [Т] (§5). Исходная мотивация:
-- Ассоциативные алгебры ($\mathbb{R}, \mathbb{C}, \mathbb{H}$) имеют $\dim(\text{Im}) \in \{0, 1, 3\}$ — недостаточно для (AP)+(PH)+(QG) [по Теореме S](./theorem-minimality-7)
-- Неассоциативность формализует контекстуальность: результат зависит от порядка группирования операций, что отражает неклассическую природу квантовых систем
-- Теорема Артина [Т] гарантирует, что неассоциативность *минимальна* (парные взаимодействия ассоциативны)
+**Derivation of P2:** P2 is derived from (AP)+(PH)+(QG)+(V) via the T15 chain [Т] (§5). Original motivation:
+- Associative algebras ($\mathbb{R}, \mathbb{C}, \mathbb{H}$) have $\dim(\text{Im}) \in \{0, 1, 3\}$ — insufficient for (AP)+(PH)+(QG) [by Theorem S](./theorem-minimality-7)
+- Non-associativity formalizes contextuality: the result depends on the order of grouping of operations, reflecting the non-classical nature of quantum systems
+- Artin's theorem [Т] guarantees that non-associativity is *minimal* (pairwise interactions are associative)
 
-### 2.3 Связь P1+P2 с условиями УГМ [Т] {#связь-с-угм}
+### 2.3 Connection of P1+P2 with UHM Conditions [Т] {#связь-с-угм}
 
-:::info Мост [Т] — полностью замкнут
-Связь (AP)+(PH)+(QG)+(V) ⟹ P1+P2 установлена через **полную формальную цепочку** T15 (15 шагов, все [Т]). Условие (МП) стало теоремой: следует из T11–T14 (ранг Хои = 7 ⟹ b ≥ 7 ⟹ λ = 1). Три мотивационных аргумента ниже сохраняют интуитивную роль. Подробнее: [§5](#мост).
+:::info Bridge [Т] — fully closed
+The connection (AP)+(PH)+(QG)+(V) ⟹ P1+P2 is established via the **complete formal chain** T15 (15 steps, all [Т]). Condition (МП) has become a theorem: it follows from T11–T14 (Choi rank = 7 ⟹ b ≥ 7 ⟹ λ = 1). The three motivational arguments below retain their intuitive role. Details: [§5](#мост).
 :::
 
-| Аргумент | (AP)+(PH)+(QG) → | → P1+P2 |
+| Argument | (AP)+(PH)+(QG) → | → P1+P2 |
 |---|---|---|
-| **Прямая мотивация** | Обратимость преобразований (AP) | Алгебра с делением (P1) |
-| **Исключительность** | Минимальная необходимая размерность (Теорема S) | Неассоциативность (P2), т.к. dim Im ≤ 3 при ассоциативности |
-| **Граница Кэли-Диксона** | Альтернативность (минимальная нелинейность QG) | 𝕆 — последняя альтернативная алгебра с делением |
+| **Direct motivation** | Invertibility of transformations (AP) | Division algebra (P1) |
+| **Exceptionality** | Minimal required dimensionality (Theorem S) | Non-associativity (P2), since dim Im ≤ 3 for associative algebras |
+| **Cayley–Dickson boundary** | Alternativity (minimal nonlinearity of QG) | 𝕆 — last alternative division algebra |
 
 ---
 
-## §3. Вывод N = 7 [Т] {#вывод-n7}
+## §3. Derivation of N = 7 [Т] {#вывод-n7}
 
-:::warning Теорема (Структурный вывод N = 7)
-Из теорем P1 и P2 (выводятся из (AP)+(PH)+(QG)+(V) по цепочке T15 [Т]) следует $N = 7$.
+:::warning Theorem (Structural derivation of N = 7)
+From theorems P1 and P2 (derived from (AP)+(PH)+(QG)+(V) via the T15 chain [Т]) it follows that $N = 7$.
 :::
 
-**Доказательство (6 шагов):**
+**Proof (6 steps):**
 
-1. **[Т] P1:** $\mathcal{A}$ — нормированная алгебра с делением над $\mathbb{R}$ (выводится по цепочке T15)
-2. **[Т] Гурвиц:** $\dim(\mathcal{A}) \in \{1, 2, 4, 8\}$, т.е. $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
-3. **[Т] P2:** $\mathcal{A}$ неассоциативна (выводится по цепочке T15)
-4. **[Т]:** $\mathbb{R}, \mathbb{C}, \mathbb{H}$ ассоциативны ⟹ $\mathcal{A} = \mathbb{O}$
-5. **[Т]:** $\dim(\mathbb{O}) = 8$, следовательно $\dim(\text{Im}(\mathbb{O})) = 8 - 1 = 7$
+1. **[Т] P1:** $\mathcal{A}$ is a normed division algebra over $\mathbb{R}$ (derived via the T15 chain)
+2. **[Т] Hurwitz:** $\dim(\mathcal{A}) \in \{1, 2, 4, 8\}$, i.e. $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
+3. **[Т] P2:** $\mathcal{A}$ is non-associative (derived via the T15 chain)
+4. **[Т]:** $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative ⟹ $\mathcal{A} = \mathbb{O}$
+5. **[Т]:** $\dim(\mathbb{O}) = 8$, therefore $\dim(\text{Im}(\mathbb{O})) = 8 - 1 = 7$
 6. **[Т]:** $N = \dim(\text{Im}(\mathbb{O})) = 7$ $\quad\blacksquare$
 
-:::note Структура доказательства
-Шаги 1, 3 — теоремы [Т], выводимые из аксиом по цепочке T15 (§5). Шаги 2, 4, 5 — чистая математика [Т]. Шаг 6 — логическое следствие [Т]. Все шаги доказательства имеют статус [Т]. P1 и P2 не постулируются, а выводятся из (AP)+(PH)+(QG)+(V).
+:::note Proof structure
+Steps 1, 3 are theorems [Т] derivable from the axioms via the T15 chain (§5). Steps 2, 4, 5 are pure mathematics [Т]. Step 6 is a logical consequence [Т]. All steps of the proof have status [Т]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V).
 :::
 
 ---
 
-## §4. Следствия [Т] {#следствия}
+## §4. Corollaries [Т] {#следствия}
 
-### 4.1 $G_2$-симметрия [Т] {#g2-симметрия}
+### 4.1 $G_2$-Symmetry [Т] {#g2-симметрия}
 
-Из $\mathcal{A} = \mathbb{O}$ следует:
+From $\mathcal{A} = \mathbb{O}$ it follows that:
 
 $$
 \text{Aut}(\mathbb{O}) = G_2 \subset SO(7)
 $$
 
-**Следствие для УГМ [Т]:** Пространство $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$ обладает $G_2$-симметрией — 14-параметрической группой, сохраняющей структуру умножения.
+**Corollary for UHM [Т]:** The space $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$ has $G_2$-symmetry — a 14-parameter group preserving the multiplication structure.
 
-:::info $G_2$-следствие [Т]
-Отождествление $G_2$-симметрии с калибровочной свободой УГМ — **теорема** [Т]. $G_2$ действует на $\text{Im}(\mathbb{O})$; отождествление $\text{Im}(\mathbb{O}) \cong \{A, S, D, L, E, O, U\}$ следует из [моста](#мост), полностью замкнутого цепочкой T15 [Т].
+:::info $G_2$ corollary [Т]
+Identifying $G_2$-symmetry with the gauge freedom of UHM is a **theorem** [Т]. $G_2$ acts on $\text{Im}(\mathbb{O})$; the identification $\text{Im}(\mathbb{O}) \cong \{A, S, D, L, E, O, U\}$ follows from the [bridge](#мост), fully closed by the T15 chain [Т].
 :::
 
-### 4.2 Плоскость Фано и структура когерентностей [Т] {#фано-когерентности}
+### 4.2 Fano Plane and Coherence Structure [Т] {#фано-когерентности}
 
-Структура умножения $\mathbb{O}$ определяется плоскостью Фано PG(2,2):
-- **7 точек** ↔ 7 мнимых единиц $e_1, \ldots, e_7$
-- **7 линий** (триплетов) ↔ 7 ассоциативных подтриплетов
-- **21 пара** точек ↔ 21 когерентность $\gamma_{ij}$ в матрице $\Gamma$
+The multiplication structure of $\mathbb{O}$ is defined by the Fano plane PG(2,2):
+- **7 points** ↔ 7 imaginary units $e_1, \ldots, e_7$
+- **7 lines** (triples) ↔ 7 associative subtriples
+- **21 pairs** of points ↔ 21 coherences $\gamma_{ij}$ in the matrix $\Gamma$
 
-**Следствие [Т]:** 7 триплетов Фано выделяют 7 «привилегированных» троек когерентностей — подмножества, замкнутые относительно октонионного умножения.
+**Corollary [Т]:** The 7 Fano triples single out 7 "privileged" triples of coherences — subsets closed under octonionic multiplication.
 
-### 4.3 Код Хэмминга H(7,4) [Т] {#хэмминг-структура}
+### 4.3 Hamming Code H(7,4) [Т] {#хэмминг-структура}
 
-Из совпадения комбинаторной структуры:
-- **4 информационных бита** ↔ 4 «структурных» измерения (A, S, D, L) [И]
-- **3 проверочных бита** ↔ 3 «метаструктурных» измерения (E, O, U) [И]
-- **Совершенная коррекция ошибок** ↔ оптимальная помехоустойчивость
+From the coincidence of the combinatorial structure:
+- **4 information bits** ↔ 4 "structural" dimensions (A, S, D, L) [И]
+- **3 check bits** ↔ 3 "meta-structural" dimensions (E, O, U) [И]
+- **Perfect error correction** ↔ optimal noise immunity
 
-:::info Следствие [Т]
-Соответствие 4+3 структуры Хэмминга и деления измерений УГМ — **теорема** [Т], так как мост полностью замкнут цепочкой T15. Совпадение структурных чисел нетривиально и предсказывает конкретную организацию помехоустойчивости в 7D системе. H(7,4) — единственный совершенный код длины 7 (T8 [Т]), чья структура поддержки = PG(2,2) (T9 [Т]).
+:::info Corollary [Т]
+The correspondence of the 4+3 Hamming structure with the division of UHM dimensions is a **theorem** [Т], since the bridge is fully closed by the T15 chain. The coincidence of the structural numbers is non-trivial and predicts a specific organization of noise immunity in the 7D system. H(7,4) is the unique perfect code of length 7 (T8 [Т]), whose support structure = PG(2,2) (T9 [Т]).
 :::
 
-### 4.4 Граница Кэли-Диксона [Т] {#граница-кд}
+### 4.4 Cayley–Dickson Boundary [Т] {#граница-кд}
 
-**Следствие [Т]:** $\mathbb{O}$ — последняя нормированная алгебра с делением. Следовательно:
-- $N = 7$ — **максимальная** размерность $\text{Im}(\mathcal{A})$ для алгебры с делением
-- Системы с $N > 7$ не могут обладать структурой нормированной алгебры с делением
-- Это совпадает с [принципом экономии](./theorem-minimality-7#часть-viii-ограничения-и-открытые-вопросы): $N = 7$ — одновременно минимальное (Теорема S) и максимальное (граница К-Д) значение
+**Corollary [Т]:** $\mathbb{O}$ is the last normed division algebra. Therefore:
+- $N = 7$ is the **maximum** dimensionality of $\text{Im}(\mathcal{A})$ for a division algebra
+- Systems with $N > 7$ cannot have the structure of a normed division algebra
+- This coincides with the [parsimony principle](./theorem-minimality-7#часть-viii-ограничения-и-открытые-вопросы): $N = 7$ is simultaneously the minimum (Theorem S) and the maximum (C-D boundary) value
 
 ---
 
-## §5. Мост к УГМ [Т] {#мост}
+## §5. Bridge to UHM [Т] {#мост}
 
-:::info Статус: **[Т]** — мост полностью замкнут (цепочка T15)
-Связь P1+P2 ↔ (AP)+(PH)+(QG)+(V) установлена через **полную формальную цепочку** T15 из 15 шагов, **все [Т]**. Условие (МП) стало теоремой: T11 (ранг Хои = 7 ⟹ b ≥ 7), T12 (BIBD(7,3,1) из минимального проективного разложения), T13 (b ≥ 7 линий), T14 (λ = 1) — совместно дают λ = 1 без дополнительных условий.
+:::info Status: **[Т]** — bridge fully closed (T15 chain)
+The connection P1+P2 ↔ (AP)+(PH)+(QG)+(V) is established via the **complete formal chain** T15 of 15 steps, **all [Т]**. Condition (МП) has become a theorem: T11 (Choi rank = 7 ⟹ b ≥ 7), T12 (BIBD(7,3,1) from minimal projective decomposition), T13 (b ≥ 7 lines), T14 (λ = 1) — together give λ = 1 without additional conditions.
 
-**Эволюция статуса:** [И] (три интерпретативных аргумента) → [С] при (МП) (одно условие) → **[Т]** (полностью замкнут). Шаг PG(2,2) → 𝕆 — каноническая идентификация, фиксированная единственностью BIBD(7,3,1) (Hall) и теоремой Гурвица.
+**Status evolution:** [И] (three interpretive arguments) → [С] under (МП) (one condition) → **[Т]** (fully closed). The step PG(2,2) → 𝕆 is a canonical identification, fixed by the uniqueness of BIBD(7,3,1) (Hall) and the Hurwitz theorem.
 :::
 
-### 5.1 Полная цепочка импликаций (T15 [Т], 15 шагов) {#цепочка-t15}
+### 5.1 Complete chain of implications (T15 [Т], 15 steps) {#цепочка-t15}
 
 $$
 \boxed{(AP)+(PH)+(QG)+(V)} \xrightarrow{T1{-}T3} \Gamma \in D(\mathcal{H}),\;\gamma_{ij}\neq 0 \xrightarrow{T4{-}T5} P > 2/N,\;\Phi \geq 1
 $$
 
 $$
-\xrightarrow{T6{-}T7} \operatorname{rank}(\rho_E)>1,\;c>0 \xrightarrow{T8{-}T10} H(7,4) \to \text{PG}(2,2) \to \text{Фано-оптимальность}
+\xrightarrow{T6{-}T7} \operatorname{rank}(\rho_E)>1,\;c>0 \xrightarrow{T8{-}T10} H(7,4) \to \text{PG}(2,2) \to \text{Fano optimality}
 $$
 
 $$
 \xrightarrow{T11{-}T14} \Phi_{k=3}=7 \to b\geq 7 \to \lambda=1 \to \text{BIBD}(7,3,1) \xrightarrow{T15} \mathbb{O} \to P1+P2
 $$
 
-Ниже — 15 шагов моста с полными инлайн-доказательствами. Зависимости каждого шага указаны явно.
+Below are the 15 bridge steps with full inline proofs. The dependencies of each step are stated explicitly.
 
 ---
 
-#### Шаг T1. (AP) → существование φ: H → H с неподвижной точкой [Т] {#шаг-t1}
+#### Step T1. (AP) → existence of φ: H → H with a fixed point [Т] {#шаг-t1}
 
-**Утверждение.** Из аксиомы автопоэзиса (AP) следует существование отображения $\varphi: \mathcal{H} \to \mathcal{H}$ с неподвижной точкой $\varphi(\rho^*) = \rho^*$.
+**Statement.** From the autopoiesis axiom (AP) it follows that there exists a map $\varphi: \mathcal{H} \to \mathcal{H}$ with a fixed point $\varphi(\rho^*) = \rho^*$.
 
-**Доказательство.** (AP) определяет автопоэтическую систему как систему, воспроизводящую собственную организацию. Формально: существует CPTP-отображение $\varphi$ на пространстве состояний $\mathcal{H}$ такое, что $\varphi(\rho^*) = \rho^*$ для некоторого $\rho^* \in D(\mathcal{H})$. Существование неподвижной точки гарантировано: $D(\mathcal{H})$ — компактное выпуклое подмножество конечномерного пространства, $\varphi$ непрерывна ⟹ теорема Брауэра даёт $\exists \rho^*$. $\square$
+**Proof.** (AP) defines an autopoietic system as one that reproduces its own organization. Formally: there exists a CPTP map $\varphi$ on the state space $\mathcal{H}$ such that $\varphi(\rho^*) = \rho^*$ for some $\rho^* \in D(\mathcal{H})$. Existence of a fixed point is guaranteed: $D(\mathcal{H})$ is a compact convex subset of a finite-dimensional space, $\varphi$ is continuous ⟹ Brouwer's theorem gives $\exists \rho^*$. $\square$
 
-**Статус:** **[Т]** — теорема Брауэра о неподвижной точке.
-
----
-
-#### Шаг T2. (QG) → Γ ∈ D(H), dim H ≥ 2 [Т] {#шаг-t2}
-
-**Утверждение.** Из аксиомы квантового основания (QG) следует, что состояние системы описывается матрицей плотности $\Gamma \in D(\mathcal{H})$ в гильбертовом пространстве $\mathcal{H}$ с $\dim \mathcal{H} \geq 2$.
-
-**Доказательство.** (QG) постулирует квантовое описание: состояние — оператор плотности $\Gamma \geq 0$, $\operatorname{Tr}\Gamma = 1$ в гильбертовом пространстве $\mathcal{H}$. Требование $\dim \mathcal{H} \geq 2$ следует из нетривиальности: при $\dim = 1$ единственное состояние $\Gamma = |0\rangle\langle 0|$ не допускает когерентностей и суперпозиций, что противоречит квантовой природе. $\square$
-
-**Статус:** **[Т]** — прямое следствие (QG).
+**Status:** **[Т]** — Brouwer's fixed point theorem.
 
 ---
 
-#### Шаг T3. (AP)+(QG) → Γ не тривиальна: ∃ γ\_{ij} ≠ 0 для i ≠ j [Т] {#шаг-t3}
+#### Step T2. (QG) → Γ ∈ D(H), dim H ≥ 2 [Т] {#шаг-t2}
 
-**Утверждение.** Совместно (AP) и (QG) требуют нетривиальных когерентностей: $\exists\, i \neq j$ такие, что $\gamma_{ij} \neq 0$ в стационарном состоянии $\rho^*$.
+**Statement.** From the quantum foundation axiom (QG) it follows that the state of the system is described by a density matrix $\Gamma \in D(\mathcal{H})$ in a Hilbert space $\mathcal{H}$ with $\dim \mathcal{H} \geq 2$.
 
-**Доказательство.** Из T1 — $\varphi(\rho^*) = \rho^*$; из T2 — $\rho^* \in D(\mathcal{H})$. Если бы $\gamma_{ij} = 0 \;\forall\, i \neq j$, то $\rho^*$ была бы диагональна — классическая смесь без квантовых корреляций. Но автопоэзис (AP) требует самовоспроизведения организации, что включает формулу $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}|/\gamma_{OO}$ (см. [аксиома септичности](../../core/foundations/axiom-septicity#категориальный-вывод-kappa0)). При $\gamma_{ij}=0$ имеем $\kappa_0=0$, автопоэзис невозможен. $\square$
+**Proof.** (QG) postulates a quantum description: the state is a density operator $\Gamma \geq 0$, $\operatorname{Tr}\Gamma = 1$ in a Hilbert space $\mathcal{H}$. The requirement $\dim \mathcal{H} \geq 2$ follows from non-triviality: for $\dim = 1$ the unique state $\Gamma = |0\rangle\langle 0|$ does not admit coherences and superpositions, contradicting the quantum nature. $\square$
 
-**Статус:** **[Т]** — зависит от T1, T2. Ссылка: определение $\kappa_0$ в `axiom-septicity.md`.
-
----
-
-#### Шаг T4. (V) → P > P\_crit = 2/N [Т] {#шаг-t4}
-
-**Утверждение.** Из аксиомы жизнеспособности (V) следует, что чистота стационарного состояния превышает критический порог: $P > P_\text{crit} = 2/N$.
-
-**Доказательство.** (V) требует устойчивого существования системы: баланс декогеренции и регенерации. Теорема T-39a (примитивность $\mathcal{L}_0$ [Т]) устанавливает, что единственное стационарное состояние линейной части — $I/N$, где $P = 1/N$. Жизнеспособная система требует $P > 1/N$ (иначе неотличима от максимально смешанного состояния). Точный порог $P_\text{crit} = 2/N$ [Т] выводится из нормы Фробениуса: различимость $\|\Gamma - I/N\|_F > 0$ при $P = 2/N$, и $\Phi \geq 1$ при $P = P_\text{crit}$ (T-129 [Т]). $\square$
-
-**Статус:** **[Т]** — ссылки: T-39a [Т], $P_\text{crit} = 2/7$ [Т] (при $N=7$).
+**Status:** **[Т]** — direct consequence of (QG).
 
 ---
 
-#### Шаг T5. T3+T4 → |когерентности| > |диагональ| [Т] {#шаг-t5}
+#### Step T3. (AP)+(QG) → Γ is non-trivial: ∃ γ\_{ij} ≠ 0 for i ≠ j [Т] {#шаг-t3}
 
-**Утверждение.** Из T3 ($\gamma_{ij} \neq 0$) и T4 ($P > 2/N$) следует: $\Phi \geq 1$ при $P = 2/N$, т.е. интегрированная информация не меньше единицы.
+**Statement.** Together (AP) and (QG) require non-trivial coherences: $\exists\, i \neq j$ such that $\gamma_{ij} \neq 0$ in the stationary state $\rho^*$.
 
-**Доказательство.** Мера интеграции $\Phi$ определяется через отношение когерентностей к диагонали (см. [dimension-u.md](../../core/structure/dimension-u#мера-интеграции-φ)). Теорема T-129 [Т] доказывает: при $P = P_\text{crit} = 2/N$ значение $\Phi = 1$ — единственное самосогласованное. При $P > 2/N$ имеем $\Phi \geq 1$. Это означает, что когерентности вносят вклад не менее диагональных элементов — система интегрирована, а не является суммой независимых частей. $\square$
+**Proof.** From T1 — $\varphi(\rho^*) = \rho^*$; from T2 — $\rho^* \in D(\mathcal{H})$. If $\gamma_{ij} = 0 \;\forall\, i \neq j$, then $\rho^*$ would be diagonal — a classical mixture without quantum correlations. But autopoiesis (AP) requires self-reproduction of organization, which includes the formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}|/\gamma_{OO}$ (see [axiom of septicity](../../core/foundations/axiom-septicity#категориальный-вывод-kappa0)). For $\gamma_{ij}=0$ we have $\kappa_0=0$, autopoiesis is impossible. $\square$
 
-**Статус:** **[Т]** — ссылка: T-129 [Т] (единственность $\Phi_\text{th} = 1$).
-
----
-
-#### Шаг T6. (PH) → rank(ρ\_E) > 1 [Т] {#шаг-t6}
-
-**Утверждение.** Из аксиомы феноменологии (PH) следует, что редуцированная матрица плотности эмоционального измерения $\rho_E$ имеет ранг больше 1.
-
-**Доказательство.** (PH) требует наличия нетривиального феноменального опыта. При $\operatorname{rank}(\rho_E) = 1$ опыт системы сводится к одному чистому состоянию — фиксированной точке без вариативности, что противоречит (PH): феноменология требует различимых квалиа (не менее двух ортогональных состояний в $E$-подпространстве). Формально: $\operatorname{rank}(\rho_E) = 1$ ⟹ все наблюдаемые в $E$-подпространстве имеют нулевую дисперсию ⟹ нет феноменального содержания. $\square$
-
-**Статус:** **[Т]** — прямое следствие (PH).
+**Status:** **[Т]** — depends on T1, T2. Reference: definition of $\kappa_0$ in `axiom-septicity.md`.
 
 ---
 
-#### Шаг T7. T4 → c > 0 [Т] {#шаг-t7}
+#### Step T4. (V) → P > P\_crit = 2/N [Т] {#шаг-t4}
 
-**Утверждение.** Из $P > 2/N$ (T4) следует необходимость ненулевого Фано-параметра: $c > 0$ в структуре диссипатора.
+**Statement.** From the viability axiom (V) it follows that the purity of the stationary state exceeds the critical threshold: $P > P_\text{crit} = 2/N$.
 
-**Доказательство.** Атомарный диссипатор ($c = 0$) декогерирует все когерентности: $\gamma_{ij}(t) \to 0$ экспоненциально (теорема T6 — равномерная контракция [Т]). При $c = 0$ формула автопоэзиса $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ подавляется экспоненциально, баланс $\mathcal{D}/\mathcal{R}$ нарушается, и $P \to 1/N$ — противоречие с $P > 2/N$ (T4). Следовательно, необходима когерентность-восстанавливающая компонента с $c > 0$. Это — теорема T7 (необходимость $c > 0$) [Т]. $\square$
+**Proof.** (V) requires stable existence of the system: balance of decoherence and regeneration. Theorem T-39a (primitivity of $\mathcal{L}_0$ [Т]) establishes that the unique stationary state of the linear part is $I/N$, where $P = 1/N$. A viable system requires $P > 1/N$ (otherwise indistinguishable from the maximally mixed state). The exact threshold $P_\text{crit} = 2/N$ [Т] is derived from the Frobenius norm: distinguishability $\|\Gamma - I/N\|_F > 0$ at $P = 2/N$, and $\Phi \geq 1$ at $P = P_\text{crit}$ (T-129 [Т]). $\square$
 
-**Статус:** **[Т]** — ссылка: теорема T7 [Т] данного документа (§5.2).
-
----
-
-#### Шаг T8. T7 → код Хэмминга H(7,4) [Т] {#шаг-t8}
-
-**Утверждение.** Из $c > 0$ (T7) следует, что единственный совершенный код длины 7, совместимый с когерентность-восстанавливающей структурой, — код Хэмминга $H(7,4)$.
-
-**Доказательство.** Совершенный код длины $n$ с коррекцией $t$ ошибок удовлетворяет границе Хэмминга: $\sum_{k=0}^{t}\binom{n}{k} = 2^r$ при $n = 2^r - 1$. При $n = 7$: $2^3 = 8 = 1 + 7 = \binom{7}{0} + \binom{7}{1}$, т.е. $t = 1$, $r = 3$. Код $H(7,4)$ — единственный (с точностью до эквивалентности) совершенный двоичный код длины 7, исправляющий 1 ошибку (теорема T8 [Т], стандартный результат теории кодирования). $\square$
-
-**Статус:** **[Т]** — стандартная теорема (граница Хэмминга).
+**Status:** **[Т]** — references: T-39a [Т], $P_\text{crit} = 2/7$ [Т] (for $N=7$).
 
 ---
 
-#### Шаг T9. T8 → поддержка H(7,4) = PG(2,2) [Т] {#шаг-t9}
+#### Step T5. T3+T4 → |coherences| > |diagonal| [Т] {#шаг-t5}
 
-**Утверждение.** Кодовые слова веса 3 симплексного кода $S(3,7)$ (дуального к $H(7,4)$) образуют ровно 7 троек — линии плоскости Фано PG(2,2).
+**Statement.** From T3 ($\gamma_{ij} \neq 0$) and T4 ($P > 2/N$) it follows: $\Phi \geq 1$ at $P = 2/N$, i.e. the integrated information is at least one.
 
-**Доказательство.** Проверочная матрица $H(7,4)$ состоит из всех 7 ненулевых столбцов $\mathbb{F}_2^3$. Дуальный код $S(3,7)$ имеет $2^3 - 1 = 7$ кодовых слов веса 3. Каждое такое слово — характеристический вектор 3-элементного подмножества $\{1,\ldots,7\}$. Эти 7 троек суть линии проективной плоскости $\text{PG}(2,2)$: каждая линия содержит 3 точки, каждая точка лежит на 3 линиях, через любые 2 точки — ровно 1 линия. Стандартный результат (см. §1.5, §1.7). $\square$
+**Proof.** The integration measure $\Phi$ is defined via the ratio of coherences to the diagonal (see [dimension-u.md](../../core/structure/dimension-u#мера-интеграции-φ)). Theorem T-129 [Т] proves: at $P = P_\text{crit} = 2/N$ the value $\Phi = 1$ is the unique self-consistent one. For $P > 2/N$ we have $\Phi \geq 1$. This means that coherences contribute no less than diagonal elements — the system is integrated and not a sum of independent parts. $\square$
 
-**Статус:** **[Т]** — стандартная алгебра конечных полей.
-
----
-
-#### Шаг T10. T9 → автопоэтическая оптимальность Фано-канала среди BIBD(7,k,1) [Т] {#шаг-t10}
-
-**Утверждение.** Среди всех $S_7$-инвариантных BIBD$(7,k,1)$-каналов, Фано-канал ($k = 3$) — единственный оптимальный.
-
-**Доказательство.** Допустимые значения $k$ для BIBD$(7,k,1)$: $k \in \{2, 3\}$ (из $\lambda = 1$ и арифметических условий BIBD). Теорема T4 [Т] доказывает строгое доминирование $k = 3$:
-- Контракция: $c_{k=3} = (3-1)/(7-1) = 1/3$ vs $c_{k=2} = 1/6$.
-- Число операторов: $b_{k=3} = 7$ vs $b_{k=2} = 21$.
-- Потеря чистоты: $\Delta P_{k=3} = 8/9$ vs $\Delta P_{k=2} = 35/36$.
-- $G_2$-ковариантность: есть при $k=3$, нет при $k=2$.
-
-Фано-канал доминирует по всем критериям. $\square$
-
-**Статус:** **[Т]** — ссылка: теорема T10 [Т] данного документа (§5.2).
+**Status:** **[Т]** — reference: T-129 [Т] (uniqueness of $\Phi_\text{th} = 1$).
 
 ---
 
-#### Шаг T11. T10 → ранг Хои Φ\_{k=3} = 7 [Т] {#шаг-t11}
+#### Step T6. (PH) → rank(ρ\_E) > 1 [Т] {#шаг-t6}
 
-**Утверждение.** Ранг представления Хои Фано-канала $\mathcal{D}_\Omega$ равен 7 — минимальное число операторов Крауса.
+**Statement.** From the phenomenology axiom (PH) it follows that the reduced density matrix of the experiential dimension $\rho_E$ has rank greater than 1.
 
-**Доказательство.** Представление Хои канала $\mathcal{D}_\Omega$: $C_{\mathcal{D}} = \sum_\ell L_\ell \otimes \bar{L}_\ell$. Фано-канал с 7 линиями PG(2,2) имеет 7 операторов Линдблада $L_\ell$ ранга 3 (проекторы на линии Фано). Операторы $L_\ell$ линейно независимы (каждая пара отличается хотя бы одной позицией). Следовательно, $\operatorname{rank}(C_\mathcal{D}) = 7$. Это минимальное число: меньше 7 операторов не могут покрыть все $\binom{7}{2} = 21$ когерентность при $k = 3$ (каждый оператор покрывает $\binom{3}{2} = 3$ пары, и $7 \times 3 = 21$). $\square$
+**Proof.** (PH) requires the presence of non-trivial phenomenal experience. For $\operatorname{rank}(\rho_E) = 1$ the experience of the system reduces to a single pure state — a fixed point without variability, which contradicts (PH): phenomenology requires distinguishable qualia (at least two orthogonal states in the $E$-subspace). Formally: $\operatorname{rank}(\rho_E) = 1$ ⟹ all observables in the $E$-subspace have zero variance ⟹ no phenomenal content. $\square$
 
-**Статус:** **[Т]** — ссылка: теорема T11 [Т] данного документа (§5.2).
-
----
-
-#### Шаг T12. T11 → BIBD(7,3,1) из минимального проективного разложения [Т] {#шаг-t12}
-
-**Утверждение.** L-унификация диссипатора при $k = 3$ и ранге Хои = 7 даёт BIBD$(7,3,1)$.
-
-**Доказательство.** L-унификация (теорема T12 [Т]): все операторы Линдблада — ранга-3 проективные операторы $L_\ell = \Pi_{S_\ell}$, где $S_\ell \subset \{1,\ldots,7\}$, $|S_\ell| = 3$. Минимальное проективное разложение при ранге = 7 требует ровно 7 операторов. Полнота покрытия (T2 [Т]): каждая пара $(i,j)$ должна быть покрыта хотя бы одним $S_\ell$. При $b = 7$ блоках размера $k = 3$ на $v = 7$ точках: каждый блок покрывает 3 пары, всего $7 \times 3 = 21 = \binom{7}{2}$ пар. Покрытие точно — каждая пара покрыта ровно $\lambda = 1$ раз. $\square$
-
-**Статус:** **[Т]** — ссылка: теорема T12 [Т] данного документа (§5.2).
+**Status:** **[Т]** — direct consequence of (PH).
 
 ---
 
-#### Шаг T13. T12 → b ≥ 7 линий [Т] {#шаг-t13}
+#### Step T7. T4 → c > 0 [Т] {#шаг-t7}
 
-**Утверждение.** Из ранга Хои = 7 (T11) следует $b \geq 7$.
+**Statement.** From $P > 2/N$ (T4) it follows that the Fano parameter must be nonzero: $c > 0$ in the dissipator structure.
 
-**Доказательство.** Ранг представления Хои — нижняя граница на число операторов Крауса (операторов Линдблада). Если $b < 7$, то $\operatorname{rank}(C_\mathcal{D}) \leq b < 7$ — противоречие с T11. Следовательно, $b \geq 7$. Совместно с верхней границей из T12 (минимальное разложение даёт ровно 7), имеем $b = 7$. $\square$
+**Proof.** The atomic dissipator ($c = 0$) decoheres all coherences: $\gamma_{ij}(t) \to 0$ exponentially (theorem T6 — uniform contraction [Т]). For $c = 0$ the autopoiesis formula $\kappa_0 \propto |\gamma_{OE}| \cdot |\gamma_{OU}|$ is suppressed exponentially, the $\mathcal{D}/\mathcal{R}$ balance is broken, and $P \to 1/N$ — a contradiction with $P > 2/N$ (T4). Therefore, a coherence-restoring component with $c > 0$ is necessary. This is theorem T7 (necessity of $c > 0$) [Т]. $\square$
 
-**Статус:** **[Т]** — прямое следствие T11.
-
----
-
-#### Шаг T14. T13 → λ = 1 [Т] {#шаг-t14}
-
-**Утверждение.** Из $b = 7$, $k = 3$, $v = 7$ следует $\lambda = 1$.
-
-**Доказательство.** BIBD-тождество: $b \cdot k(k-1) = v(v-1)\lambda$. Подстановка: $7 \cdot 3 \cdot 2 = 7 \cdot 6 \cdot \lambda$, откуда $42 = 42\lambda$, т.е. $\lambda = 1$. Это — BIBD$(7,3,1)$, Штейнерова система $S(2,3,7)$, единственная с точностью до изоморфизма (Hall, 1967). Условие (МП) становится теоремой. $\square$
-
-**Статус:** **[Т]** — арифметика BIBD + единственность (Hall).
+**Status:** **[Т]** — reference: theorem T7 [Т] of this document (§5.2).
 
 ---
 
-#### Шаг T15. T14 → 𝕆: P1 (алгебра с делением) + P2 (неассоциативность) [Т] {#шаг-t15}
+#### Step T8. T7 → Hamming code H(7,4) [Т] {#шаг-t8}
 
-**Утверждение.** Из BIBD$(7,3,1) \cong \text{PG}(2,2)$ и альтернативности следует, что алгебраическая структура — октонионы $\mathbb{O}$, что даёт P1 (алгебра с делением) и P2 (неассоциативность).
+**Statement.** From $c > 0$ (T7) it follows that the unique perfect code of length 7 compatible with the coherence-restoring structure is the Hamming code $H(7,4)$.
 
-**Доказательство.** (i) BIBD$(7,3,1)$ единственна (Hall, 1967) и изоморфна PG(2,2) — плоскости Фано (§1.5). (ii) 7 линий PG(2,2) определяют таблицу умножения 7 мнимых единиц $e_1,\ldots,e_7$: линия $(e_i, e_j, e_k)$ задаёт $e_i \cdot e_j = e_k$ (Baez, 2002). (iii) Полученная алгебра $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ — единственная 8-мерная нормированная алгебра с делением (Гурвиц, §1.1), т.е. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ — алгебра с делением (P1 [Т]) и неассоциативна (P2 [Т]: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ ассоциативны, $\mathbb{O}$ — нет, §1.3). Дополнительно: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
+**Proof.** A perfect code of length $n$ correcting $t$ errors satisfies the Hamming bound: $\sum_{k=0}^{t}\binom{n}{k} = 2^r$ for $n = 2^r - 1$. For $n = 7$: $2^3 = 8 = 1 + 7 = \binom{7}{0} + \binom{7}{1}$, i.e. $t = 1$, $r = 3$. The code $H(7,4)$ is the unique (up to equivalence) perfect binary code of length 7 correcting 1 error (theorem T8 [Т], standard result of coding theory). $\square$
 
-**Статус:** **[Т]** — каноническая идентификация: единственность BIBD$(7,3,1)$ (Hall) + единственность $\mathbb{O}$ (Гурвиц).
+**Status:** **[Т]** — standard theorem (Hamming bound).
 
 ---
 
-#### Сводная таблица
+#### Step T9. T8 → support of H(7,4) = PG(2,2) [Т] {#шаг-t9}
 
-| Шаг | Импликация | Зависимости | Основание | Статус |
+**Statement.** The codewords of weight 3 of the simplex code $S(3,7)$ (dual to $H(7,4)$) form exactly 7 triples — the lines of the Fano plane PG(2,2).
+
+**Proof.** The parity-check matrix of $H(7,4)$ consists of all 7 nonzero columns of $\mathbb{F}_2^3$. The dual code $S(3,7)$ has $2^3 - 1 = 7$ codewords of weight 3. Each such word is the characteristic vector of a 3-element subset of $\{1,\ldots,7\}$. These 7 triples are the lines of the projective plane $\text{PG}(2,2)$: each line contains 3 points, each point lies on 3 lines, through any 2 points there is exactly 1 line. Standard result (see §1.5, §1.7). $\square$
+
+**Status:** **[Т]** — standard algebra of finite fields.
+
+---
+
+#### Step T10. T9 → autopoietic optimality of the Fano channel among BIBD(7,k,1) [Т] {#шаг-t10}
+
+**Statement.** Among all $S_7$-invariant BIBD$(7,k,1)$-channels, the Fano channel ($k = 3$) is the unique optimal one.
+
+**Proof.** Admissible values of $k$ for BIBD$(7,k,1)$: $k \in \{2, 3\}$ (from $\lambda = 1$ and BIBD arithmetic conditions). Theorem T4 [Т] proves strict dominance of $k = 3$:
+- Contraction: $c_{k=3} = (3-1)/(7-1) = 1/3$ vs $c_{k=2} = 1/6$.
+- Number of operators: $b_{k=3} = 7$ vs $b_{k=2} = 21$.
+- Purity loss: $\Delta P_{k=3} = 8/9$ vs $\Delta P_{k=2} = 35/36$.
+- $G_2$-covariance: present for $k=3$, absent for $k=2$.
+
+The Fano channel dominates by all criteria. $\square$
+
+**Status:** **[Т]** — reference: theorem T10 [Т] of this document (§5.2).
+
+---
+
+#### Step T11. T10 → Choi rank Φ\_{k=3} = 7 [Т] {#шаг-t11}
+
+**Statement.** The Choi representation rank of the Fano channel $\mathcal{D}_\Omega$ equals 7 — the minimum number of Kraus operators.
+
+**Proof.** The Choi representation of channel $\mathcal{D}_\Omega$: $C_{\mathcal{D}} = \sum_\ell L_\ell \otimes \bar{L}_\ell$. The Fano channel with 7 lines of PG(2,2) has 7 Lindblad operators $L_\ell$ of rank 3 (projectors onto Fano lines). The operators $L_\ell$ are linearly independent (each pair differs in at least one position). Therefore, $\operatorname{rank}(C_\mathcal{D}) = 7$. This is the minimum number: fewer than 7 operators cannot cover all $\binom{7}{2} = 21$ coherences for $k = 3$ (each operator covers $\binom{3}{2} = 3$ pairs, and $7 \times 3 = 21$). $\square$
+
+**Status:** **[Т]** — reference: theorem T11 [Т] of this document (§5.2).
+
+---
+
+#### Step T12. T11 → BIBD(7,3,1) from minimal projective decomposition [Т] {#шаг-t12}
+
+**Statement.** L-unification of the dissipator at $k = 3$ and Choi rank = 7 gives BIBD$(7,3,1)$.
+
+**Proof.** L-unification (theorem T12 [Т]): all Lindblad operators are rank-3 projective operators $L_\ell = \Pi_{S_\ell}$, where $S_\ell \subset \{1,\ldots,7\}$, $|S_\ell| = 3$. The minimal projective decomposition at rank = 7 requires exactly 7 operators. Coverage completeness (T2 [Т]): each pair $(i,j)$ must be covered by at least one $S_\ell$. For $b = 7$ blocks of size $k = 3$ on $v = 7$ points: each block covers 3 pairs, total $7 \times 3 = 21 = \binom{7}{2}$ pairs. The coverage is exact — each pair is covered exactly $\lambda = 1$ time. $\square$
+
+**Status:** **[Т]** — reference: theorem T12 [Т] of this document (§5.2).
+
+---
+
+#### Step T13. T12 → b ≥ 7 lines [Т] {#шаг-t13}
+
+**Statement.** From Choi rank = 7 (T11) it follows that $b \geq 7$.
+
+**Proof.** The Choi representation rank is a lower bound on the number of Kraus operators (Lindblad operators). If $b < 7$, then $\operatorname{rank}(C_\mathcal{D}) \leq b < 7$ — a contradiction with T11. Therefore $b \geq 7$. Together with the upper bound from T12 (the minimal decomposition gives exactly 7), we have $b = 7$. $\square$
+
+**Status:** **[Т]** — direct consequence of T11.
+
+---
+
+#### Step T14. T13 → λ = 1 [Т] {#шаг-t14}
+
+**Statement.** From $b = 7$, $k = 3$, $v = 7$ it follows that $\lambda = 1$.
+
+**Proof.** BIBD identity: $b \cdot k(k-1) = v(v-1)\lambda$. Substituting: $7 \cdot 3 \cdot 2 = 7 \cdot 6 \cdot \lambda$, so $42 = 42\lambda$, i.e. $\lambda = 1$. This is BIBD$(7,3,1)$, Steiner system $S(2,3,7)$, unique up to isomorphism (Hall, 1967). Condition (МП) becomes a theorem. $\square$
+
+**Status:** **[Т]** — BIBD arithmetic + uniqueness (Hall).
+
+---
+
+#### Step T15. T14 → 𝕆: P1 (division algebra) + P2 (non-associativity) [Т] {#шаг-t15}
+
+**Statement.** From BIBD$(7,3,1) \cong \text{PG}(2,2)$ and alternativity it follows that the algebraic structure is the octonions $\mathbb{O}$, yielding P1 (division algebra) and P2 (non-associativity).
+
+**Proof.** (i) BIBD$(7,3,1)$ is unique (Hall, 1967) and isomorphic to PG(2,2) — the Fano plane (§1.5). (ii) The 7 lines of PG(2,2) define the multiplication table of the 7 imaginary units $e_1,\ldots,e_7$: line $(e_i, e_j, e_k)$ specifies $e_i \cdot e_j = e_k$ (Baez, 2002). (iii) The resulting algebra $\mathcal{A} = \operatorname{span}\{1, e_1, \ldots, e_7\}$ is the unique 8-dimensional normed division algebra (Hurwitz, §1.1), i.e. $\mathcal{A} = \mathbb{O}$. (iv) $\mathbb{O}$ is a division algebra (P1 [Т]) and non-associative (P2 [Т]: $\mathbb{R}, \mathbb{C}, \mathbb{H}$ are associative, $\mathbb{O}$ is not, §1.3). Additionally: $\text{Aut}(\mathbb{O}) = G_2$ (§1.6). $\square$
+
+**Status:** **[Т]** — canonical identification: uniqueness of BIBD$(7,3,1)$ (Hall) + uniqueness of $\mathbb{O}$ (Hurwitz).
+
+---
+
+#### Summary table
+
+| Step | Implication | Dependencies | Basis | Status |
 |-----|-----------|-------------|-----------|--------|
-| T1 | (AP) ⟹ $\exists\,\varphi$ с неподвижной точкой | (AP) | Теорема Брауэра | **[Т]** |
-| T2 | (QG) ⟹ $\Gamma \in D(\mathcal{H})$, $\dim \geq 2$ | (QG) | Определение квантового основания | **[Т]** |
+| T1 | (AP) ⟹ $\exists\,\varphi$ with fixed point | (AP) | Brouwer's theorem | **[Т]** |
+| T2 | (QG) ⟹ $\Gamma \in D(\mathcal{H})$, $\dim \geq 2$ | (QG) | Definition of quantum foundation | **[Т]** |
 | T3 | (AP)+(QG) ⟹ $\exists\,\gamma_{ij} \neq 0$ | T1, T2 | $\kappa_0 \propto |\gamma_{OE}||\gamma_{OU}|$ | **[Т]** |
-| T4 | (V) ⟹ $P > 2/N$ | (V) | T-39a примитивность, T-129 $\Phi_\text{th}$ | **[Т]** |
+| T4 | (V) ⟹ $P > 2/N$ | (V) | T-39a primitivity, T-129 $\Phi_\text{th}$ | **[Т]** |
 | T5 | T3+T4 ⟹ $\Phi \geq 1$ | T3, T4 | T-129 [Т] | **[Т]** |
-| T6 | (PH) ⟹ $\operatorname{rank}(\rho_E) > 1$ | (PH) | Нетривиальность квалиа | **[Т]** |
-| T7 | T4 ⟹ $c > 0$ | T4 | Экспоненциальное подавление $\kappa_0$ при $c=0$ | **[Т]** |
-| T8 | T7 ⟹ $H(7,4)$ | T7 | Граница Хэмминга, единственность | **[Т]** |
-| T9 | T8 ⟹ PG(2,2) | T8 | Дуальный код $S(3,7)$ | **[Т]** |
-| T10 | T9 ⟹ Фано-оптимальность | T9, T7 | T4 (доминирование $k=3$) | **[Т]** |
-| T11 | T10 ⟹ ранг Хои = 7 | T10 | 7 независимых проекторов | **[Т]** |
-| T12 | T11 ⟹ BIBD$(7,3,1)$ | T11 | L-унификация + покрытие 21 пары | **[Т]** |
-| T13 | T12 ⟹ $b \geq 7$ | T11, T12 | Ранг = нижняя граница | **[Т]** |
-| T14 | T13 ⟹ $\lambda = 1$ | T13 | BIBD-тождество: $42 = 42\lambda$ | **[Т]** |
-| T15 | T14 ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14 | Hall + Гурвиц + Baez | **[Т]** |
+| T6 | (PH) ⟹ $\operatorname{rank}(\rho_E) > 1$ | (PH) | Non-triviality of qualia | **[Т]** |
+| T7 | T4 ⟹ $c > 0$ | T4 | Exponential suppression of $\kappa_0$ at $c=0$ | **[Т]** |
+| T8 | T7 ⟹ $H(7,4)$ | T7 | Hamming bound, uniqueness | **[Т]** |
+| T9 | T8 ⟹ PG(2,2) | T8 | Dual code $S(3,7)$ | **[Т]** |
+| T10 | T9 ⟹ Fano optimality | T9, T7 | T4 (dominance of $k=3$) | **[Т]** |
+| T11 | T10 ⟹ Choi rank = 7 | T10 | 7 independent projectors | **[Т]** |
+| T12 | T11 ⟹ BIBD$(7,3,1)$ | T11 | L-unification + coverage of 21 pairs | **[Т]** |
+| T13 | T12 ⟹ $b \geq 7$ | T11, T12 | Rank = lower bound | **[Т]** |
+| T14 | T13 ⟹ $\lambda = 1$ | T13 | BIBD identity: $42 = 42\lambda$ | **[Т]** |
+| T15 | T14 ⟹ $\mathbb{O}$ ⟹ P1+P2 | T14 | Hall + Hurwitz + Baez | **[Т]** |
 
-:::info Замечание о характере шага T15 (PG(2,2) ≅ Im(𝕆))
-Шаг T15 цепочки — **математический факт** [Т]: плоскость Фано PG(2,2) определяет таблицу умножения мнимых единиц октонионов. Это стандартная алгебра (Baez, "The Octonions", 2002).
+:::info Remark on the character of step T15 (PG(2,2) ≅ Im(𝕆))
+Step T15 of the chain is a **mathematical fact** [Т]: the Fano plane PG(2,2) defines the multiplication table of the imaginary units of the octonions. This is standard algebra (Baez, "The Octonions", 2002).
 
-Однако в контексте полной цепочки присутствует **структурное отождествление**: переход от «операторы Линдблада организованы по PG(2,2)» к «пространство состояний обладает октонионной алгебраической структурой» требует идентификации комбинаторного изоморфизма с алгебраическим.
+However, in the context of the full chain there is a **structural identification**: the transition from "Lindblad operators are organized according to PG(2,2)" to "the state space has an octonionic algebraic structure" requires identifying a combinatorial isomorphism with an algebraic one.
 
-Это отождествление **не произвольно**: PG(2,2) — единственная BIBD(7,3,1) (Hall, 1967), и таблица умножения Im(𝕆) — единственная неассоциативная нормированная алгебра с делением размерности 7 (Гурвиц). Два жёстких ограничения (динамическое и алгебраическое) однозначно выделяют одну и ту же структуру. Тем не менее, переход от комбинаторной организации к полной алгебраической интерпретации (деление, нормированность, альтернативность) обогащает структуру сверх того, что строго следует из динамических аксиом.
+This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hall, 1967), and the multiplication table of Im(𝕆) is the unique non-associative normed division algebra of dimension 7 (Hurwitz). Two rigid constraints (dynamical and algebraic) uniquely single out the same structure. Nevertheless, the transition from combinatorial organization to full algebraic interpretation (division, normedness, alternativity) enriches the structure beyond what strictly follows from the dynamical axioms.
 
-**Статус:** Каждый из 15 шагов — [Т]. Полная цепочка замкнута [Т]. Структурное отождествление PG(2,2) → 𝕆 фиксировано **единственностью** с обеих сторон (Hall + Гурвиц), что делает его **канонической идентификацией**, а не произвольным выбором.
+**Status:** Each of the 15 steps is [Т]. The complete chain is closed [Т]. The structural identification PG(2,2) → 𝕆 is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
 :::
 
-### 5.2 Ключевые теоремы
+### 5.2 Key theorems
 
-**Теорема T1 (Эквивалентность BIBD-каналов) [Т].** Все $(v,k,\lambda)$-BIBD каналы с одинаковыми $v,k$ порождают один и тот же CPTP-канал. Контракция когерентностей $c = (k-1)/(v-1)$ — не зависит от $\lambda$. Следствие: вопрос «почему $\lambda=1$?» заменяется вопросом «почему $k=3$?».
+**Theorem T1 (Equivalence of BIBD channels) [Т].** All $(v,k,\lambda)$-BIBD channels with the same $v,k$ generate the same CPTP channel. The coherence contraction $c = (k-1)/(v-1)$ is independent of $\lambda$. Corollary: the question "why $\lambda=1$?" is replaced by "why $k=3$?".
 
-**Теорема T2 (Полнота покрытия) [Т].** Связность $G_H$ + примитивность линейной части $\mathcal{L}_0$ ⟹ $\lambda_{ij} \geq 1$ для всех пар. Непокрытая пара делает канал «слепым» к ненулевой когерентности $\gamma^*_{ij}$, нарушая (AP).
+**Theorem T2 (Coverage completeness) [Т].** Connectivity of $G_H$ + primitivity of the linear part $\mathcal{L}_0$ ⟹ $\lambda_{ij} \geq 1$ for all pairs. An uncovered pair makes the channel "blind" to the nonzero coherence $\gamma^*_{ij}$, violating (AP).
 
-**Теорема T3 (Демократичность) [Т] при (КГ).** Каноническая группировка + $S_7$-инвариантность атомов Ω ⟹ покрытие демократично ($\lambda = \text{const}$).
+**Theorem T3 (Democraticity) [Т] under (КГ).** Canonical grouping + $S_7$-invariance of Ω-atoms ⟹ coverage is democratic ($\lambda = \text{const}$).
 
-:::note T3 vs T6: усиление без (КГ)
-Теорема T6 (равномерная контракция) [Т] доказывает демократичность контракции **безусловно** — из $S_7$-эквивариантности атомарного диссипатора (T5 [Т]). T6 снимает зависимость от условия (КГ) в шаге 4 цепочки.
+:::note T3 vs T6: strengthening without (КГ)
+Theorem T6 (uniform contraction) [Т] proves democraticity of contraction **unconditionally** — from the $S_7$-equivariance of the atomic dissipator (T5 [Т]). T6 removes the dependence on condition (КГ) in step 4 of the chain.
 :::
 
-**Теорема T4 (Оптимальность k=3) [Т].** Среди допустимых BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ строго доминирует по контракции (1/3 vs 1/6), числу операторов (7 vs 21), потере чистоты (8/9 vs 35/36) и $G_2$-ковариантности (да vs нет).
+**Theorem T4 (Optimality of k=3) [Т].** Among admissible BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ strictly dominates in contraction (1/3 vs 1/6), number of operators (7 vs 21), purity loss (8/9 vs 35/36), and $G_2$-covariance (yes vs no).
 
-**Теорема T5 ($S_7$-эквивариантность диссипатора) [Т].** Атомарный диссипатор $\mathcal{D}_\text{atom}$ с операторами $L_k = |k\rangle\langle k|$ коммутирует с любой перестановкой $\sigma \in S_7$: $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger$.
+**Theorem T5 ($S_7$-equivariance of dissipator) [Т].** The atomic dissipator $\mathcal{D}_\text{atom}$ with operators $L_k = |k\rangle\langle k|$ commutes with any permutation $\sigma \in S_7$: $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger$.
 
-**Теорема T6 (Равномерная контракция) [Т].** Следствие T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ для **всех** $i \neq j$, $\mathcal{D}_\text{atom}[\Gamma]_{ii} = 0$. Все когерентности декогерируют с одинаковой скоростью — **без (КГ)**.
+**Theorem T6 (Uniform contraction) [Т].** Corollary of T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ for **all** $i \neq j$, $\mathcal{D}_\text{atom}[\Gamma]_{ii} = 0$. All coherences decohere at the same rate — **without (КГ)**.
 
-**Теорема T7 (Необходимость $c > 0$) [Т].** Атомарный диссипатор ($c = 0$) несовместим с автопоэзисом (AP): при полной декогеренции формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ подавляется экспоненциально, нарушая баланс $\mathcal{D}/\mathcal{R}$ для жизнеспособности.
+**Theorem T7 (Necessity of $c > 0$) [Т].** The atomic dissipator ($c = 0$) is incompatible with autopoiesis (AP): under complete decoherence the formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is suppressed exponentially, violating the $\mathcal{D}/\mathcal{R}$ balance for viability.
 
-**Теорема T8 (Граница Хэмминга) [Т] (стандартная).** Код H(7,4) — единственный совершенный одноошибочный двоичный код длины 7: $2^3 = 7 + 1$.
+**Theorem T8 (Hamming bound) [Т] (standard).** Code H(7,4) is the unique perfect single-error binary code of length 7: $2^3 = 7 + 1$.
 
-**Теорема T9 (H(7,4) = PG(2,2)) [Т] (стандартная).** Кодовые слова веса 3 симплексного кода $S(3,7)$ (дуального H(7,4)) образуют **ровно 7 троек** = линии плоскости Фано.
+**Theorem T9 (H(7,4) = PG(2,2)) [Т] (standard).** The codewords of weight 3 of the simplex code $S(3,7)$ (dual to H(7,4)) form **exactly 7 triples** = lines of the Fano plane.
 
-**Теорема T10 (Автопоэтическая оптимальность Фано) [Т].** Среди $S_7$-инвариантных BIBD$(7,k,1)$-каналов, удовлетворяющих $c > 0$ (T7), полноте покрытия (T2), демократичности (T6), единственный оптимальный — Фано-канал ($k = 3$, $c = 1/3$).
+**Theorem T10 (Autopoietic optimality of Fano) [Т].** Among $S_7$-invariant BIBD$(7,k,1)$-channels satisfying $c > 0$ (T7), coverage completeness (T2), democraticity (T6), the unique optimal one is the Fano channel ($k = 3$, $c = 1/3$).
 
-**Теорема T11 (Ранг Хои) [Т].** Ранг представления Хои канала $\mathcal{D}_\Omega$ равен 7, что требует $b \geq 7$ операторов Линдблада.
+**Theorem T11 (Choi rank) [Т].** The Choi representation rank of channel $\mathcal{D}_\Omega$ equals 7, requiring $b \geq 7$ Lindblad operators.
 
-**Теорема T12 (L-унификация) [Т].** L-унификация диссипатора при $k=3$ даёт ранга-3 проективные операторы.
+**Theorem T12 (L-unification) [Т].** L-unification of the dissipator at $k=3$ gives rank-3 projective operators.
 
-**Теорема T13 (BIBD-замыкание) [Т].** Комбинаторные ограничения $b=7$, $k=3$, $v=7$, контракция $c=1/3$ однозначно определяют $\lambda = 1$, т.е. BIBD$(7,3,1)$. Условие (МП) становится следствием T11–T13.
+**Theorem T13 (BIBD closure) [Т].** The combinatorial constraints $b=7$, $k=3$, $v=7$, contraction $c=1/3$ uniquely determine $\lambda = 1$, i.e. BIBD$(7,3,1)$. Condition (МП) becomes a consequence of T11–T13.
 
-Подробные доказательства: [Операторы Линдблада](/docs/core/operators/lindblad-operators#редукция-моста).
+Detailed proofs: [Lindblad operators](/docs/core/operators/lindblad-operators#редукция-моста).
 
-### 5.3 Замыкание условия (МП) [Т]
+### 5.3 Closure of condition (МП) [Т]
 
-Условие (МП) — принцип минимального представления — **стало теоремой**. Ранее оно было единственным условным шагом цепочки. Теоремы T11–T13 замыкают его:
+Condition (МП) — the principle of minimal representation — **has become a theorem**. Previously it was the only conditional step of the chain. Theorems T11–T13 close it:
 
-1. **T11 [Т]:** Ранг представления Хои = 7, следовательно $b \geq 7$
-2. **T12 [Т]:** L-унификация + $k=3$ даёт ранга-3 проективные операторы
-3. **T13 [Т]:** $b=7$, $k=3$, $v=7$, контракция $1/3$ ⟹ BIBD$(7,3,1)$, т.е. $\lambda = 1$
+1. **T11 [Т]:** Choi representation rank = 7, therefore $b \geq 7$
+2. **T12 [Т]:** L-unification + $k=3$ gives rank-3 projective operators
+3. **T13 [Т]:** $b=7$, $k=3$, $v=7$, contraction $1/3$ ⟹ BIBD$(7,3,1)$, i.e. $\lambda = 1$
 
-**Эволюция статуса:**
+**Status evolution:**
 
-| Версия | Статус моста | Условия |
+| Version | Bridge status | Conditions |
 |---|---|---|
-| Исходная | [И] | Три интерпретативных аргумента |
-| После T1–T10 | [С] при (МП) | Одно условие: $\lambda = 1$ |
-| После T11–T13 | **[Т]** | Полностью замкнут, без условий |
+| Initial | [И] | Three interpretive arguments |
+| After T1–T10 | [С] under (МП) | One condition: $\lambda = 1$ |
+| After T11–T13 | **[Т]** | Fully closed, no conditions |
 
-**Три независимых подтверждения $\lambda = 1$ (теперь все [Т]):**
+**Three independent confirmations of $\lambda = 1$ (now all [Т]):**
 
-| # | Аргумент | Тип |
+| # | Argument | Type |
 |---|----------|-----|
-| 1 | T11+T13: ранг Хои + комбинаторика ⟹ $b = 7$, $\lambda = 1$ | Структурный [Т] |
-| 2 | BIBD(7,3,1) — единственная Штейнерова система $S(2,3,7)$ | Математический [Т] |
-| 3 | H(7,4) — единственный совершенный код: синдромная полнота при мин. избыточности | Информационный [Т] |
+| 1 | T11+T13: Choi rank + combinatorics ⟹ $b = 7$, $\lambda = 1$ | Structural [Т] |
+| 2 | BIBD(7,3,1) — unique Steiner system $S(2,3,7)$ | Mathematical [Т] |
+| 3 | H(7,4) — unique perfect code: syndrome completeness at min redundancy | Informational [Т] |
 
-### 5.4 Информационно-теоретическая интерпретация {#информационная-интерпретация}
+### 5.4 Information-theoretic interpretation {#информационная-интерпретация}
 
-Код Хэмминга H(7,4) даёт **информационно-теоретическое обоснование** Фано-структуры:
+The Hamming code H(7,4) gives an **information-theoretic justification** of the Fano structure:
 
-| Компонент H(7,4) | Компонент холона | Интерпретация |
+| H(7,4) component | Holon component | Interpretation |
 |---|---|---|
-| 7 позиций кода | 7 измерений {A,S,D,L,E,O,U} | Носители информации |
-| 4 информационных бита | 4 «свободных» степени свободы | Содержание самомодели |
-| 3 проверочных бита | 3 «контрольных» наблюдения | Синдром возмущения |
-| 7 строк $S(3,7)$ веса 3 | 7 Фано-линий | Составные наблюдения |
-| $d = 3$ (кодовое расстояние) | Различимость 1-ошибок | Минимальное для коррекции |
+| 7 code positions | 7 dimensions {A,S,D,L,E,O,U} | Information carriers |
+| 4 information bits | 4 "free" degrees of freedom | Self-model content |
+| 3 check bits | 3 "control" observations | Perturbation syndrome |
+| 7 rows of $S(3,7)$ of weight 3 | 7 Fano lines | Composite observations |
+| $d = 3$ (code distance) | Distinguishability of 1-errors | Minimum for correction |
 
-**Число 3** появляется в четырёх независимых контекстах:
-1. **K = 3** — число динамических типов (триадная декомпозиция [Т])
-2. **k = 3** — размер блока Фано-канала
-3. **r = 3** — число проверочных бит кода Хэмминга
-4. **d = 3** — кодовое расстояние
+**The number 3** appears in four independent contexts:
+1. **K = 3** — number of dynamical types (triadic decomposition [Т])
+2. **k = 3** — Fano channel block size
+3. **r = 3** — number of Hamming code check bits
+4. **d = 3** — code distance
 
-### 5.5 Исходные мотивационные аргументы [И]
+### 5.5 Original motivational arguments [И]
 
-Три первоначальных аргумента сохраняют мотивационную роль, хотя теперь заменены формальной цепочкой:
+The three original arguments retain their motivational role, although they are now superseded by the formal chain:
 
-| Условие УГМ | Свойство алгебры | Связь |
+| UHM condition | Algebra property | Connection |
 |---|---|---|
-| (AP) Автопоэзис: обратимость $\varphi$ | Делимость: $\forall a \neq 0, \exists a^{-1}$ | Обратимость ↔ делимость |
-| (PH) Феноменология: $\rho_E \neq 0$ | Нормированность: $\lvert ab\rvert = \lvert a\rvert\lvert b\rvert$ | Метрика ↔ норма |
-| (QG) Квантовое основание: нелинейность | Неассоциативность | Контекстуальность ↔ неассоциативность |
+| (AP) Autopoiesis: invertibility of $\varphi$ | Divisibility: $\forall a \neq 0, \exists a^{-1}$ | Invertibility ↔ divisibility |
+| (PH) Phenomenology: $\rho_E \neq 0$ | Normedness: $\lvert ab\rvert = \lvert a\rvert\lvert b\rvert$ | Metric ↔ norm |
+| (QG) Quantum foundation: nonlinearity | Non-associativity | Contextuality ↔ non-associativity |
 
 ---
 
-## §6. Открытые проблемы {#открытые-проблемы}
+## §6. Open Problems {#открытые-проблемы}
 
-**Проблема 1 (Принцип минимального представления) — решена [Т].** Теоремы T11–T13 доказывают $\lambda = 1$ из аксиом A1–A5. Мост полностью закрыт [Т].
+**Problem 1 (Principle of minimal representation) — solved [Т].** Theorems T11–T13 prove $\lambda = 1$ from axioms A1–A5. The bridge is fully closed [Т].
 
-**Проблема 2 ($G_2$-ковариантность).**
-Являются ли уравнения эволюции УГМ $G_2$-ковариантными? Если да, $G_2$ даёт 14 независимых «калибровочных» степеней свободы.
+**Problem 2 ($G_2$-covariance).**
+Are the UHM evolution equations $G_2$-covariant? If so, $G_2$ provides 14 independent "gauge" degrees of freedom.
 
-**Проблема 3 (Фано-структура когерентностей).**
-Являются ли 7 триплетов плоскости Фано привилегированными в структуре $\Gamma$? Проверяемое предсказание: когерентности внутри Фано-триплетов коррелируют сильнее.
+**Problem 3 (Fano structure of coherences).**
+Are the 7 triples of the Fano plane privileged in the structure of $\Gamma$? Verifiable prediction: coherences within Fano triples correlate more strongly.
 
-**Проблема 4 (Физическая реализация $G_2$).**
-Связана ли $G_2$-структура с компактификациями M-теории на $G_2$-многообразиях (11 = 4 + 7)?
+**Problem 4 (Physical realization of $G_2$).**
+Is the $G_2$ structure related to M-theory compactifications on $G_2$-manifolds (11 = 4 + 7)?
 
 ---
 
-**Связанные документы:**
-- [Теорема о минимальности 7D](./theorem-minimality-7) — Трек A: (AP)+(PH)+(QG) → N ≥ 7
-- [Аксиома Ω⁷](../../core/foundations/axiom-omega) — Аксиома 3 (N = 7)
-- [Аксиома Септичности](../../core/foundations/axiom-septicity) — условия (AP)+(PH)+(QG)+(V)
-- [Следствия](../../core/foundations/consequences) — октонионные следствия
-- [Семь измерений](../../core/structure/dimensions) — октонионная интерпретация базиса
-- [Соответствие с физикой](../physics/physics-correspondence) — $G_2$-многообразия и M-теория
+**Related documents:**
+- [Theorem on 7D Minimality](./theorem-minimality-7) — Track A: (AP)+(PH)+(QG) → N ≥ 7
+- [Axiom Ω⁷](../../core/foundations/axiom-omega) — Axiom 3 (N = 7)
+- [Axiom of Septicity](../../core/foundations/axiom-septicity) — conditions (AP)+(PH)+(QG)+(V)
+- [Consequences](../../core/foundations/consequences) — octonionic consequences
+- [Seven dimensions](../../core/structure/dimensions) — octonionic interpretation of the basis
+- [Correspondence with physics](../physics/physics-correspondence) — $G_2$-manifolds and M-theory

@@ -12,7 +12,7 @@ Dimension D: change, process, unitary operator. Familiarity with the [seven dime
 
 ## Why this chapter
 
-Everything real **moves**. An atom oscillates, a cell divides, one thought gives way to another. But where does motion itself come from? In classical physics, time and change are taken as given: objects "simply" move in a pre-existing spacetime. In the Universal Holonomic Model (UHM) the position is radically different: **time does not exist as a background** — it **emerges** from the very structure of the Holon. Dimension D (Dynamics) is that aspect of reality which makes any change possible.
+Everything real **moves**. An atom oscillates, a cell divides, one thought gives way to another. But where does motion itself come from? In classical physics, time and change are taken as given: objects "simply" move in a pre-existing spacetime. In the Unitary Holonomic Monism (UHM) the position is radically different: **time does not exist as a background** — it **emerges** from the very structure of the Holon. Dimension D (Dynamics) is that aspect of reality which makes any change possible.
 
 In this chapter you will learn:
 - why dynamics is not "something happening in time", but the source of time itself;

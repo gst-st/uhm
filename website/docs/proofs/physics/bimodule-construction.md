@@ -1,263 +1,263 @@
 ---
 sidebar_position: 4
-title: "Бимодульная конструкция и SM-представления"
-description: "Решение проблемы SM-представлений через бимодульную NCG-конструкцию. Непертурбативный подход к λ₃. Вывод (AP+PH+QG+V) из A1-A4."
+title: "Bimodule Construction and SM Representations"
+description: "Solution of the SM representations problem via the bimodule NCG construction. Non-perturbative approach to λ₃. Derivation of (AP+PH+QG+V) from A1-A4."
 ---
 
-# Бимодульная конструкция: решение четырёх системных проблем
+# Bimodule Construction: solving four systemic problems
 
-:::info Для кого эта глава
-Этот документ решает четыре взаимосвязанные проблемы, остававшиеся открытыми [П] в теории УГМ:
+:::info Who this chapter is for
+This document solves four interrelated problems that remained open [П] in UHM theory:
 
-1. **SM-представления**: Как из алгебры $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ получаются представления SM, в которых кварки несут **одновременно** цвет и слабый изоспин: $(3,2)_{1/6}$?
-2. **Непертурбативный λ₃**: Как извлечь физические предсказания при $\lambda_3 \approx 74 \gg 4\pi$ (непертурбативный режим)?
-3. **Вывод (AP+PH+QG+V) из A1-A4**: Каков явный вывод характеризующих свойств голонома из четырёх аксиом?
-4. **G-отображение**: Как конструируется карта $G: \text{States} \to \mathcal{D}(\mathbb{C}^7)$ для конкретных систем?
+1. **SM representations**: How does one obtain SM representations from the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ in which quarks carry **simultaneously** color and weak isospin: $(3,2)_{1/6}$?
+2. **Non-perturbative λ₃**: How to extract physical predictions when $\lambda_3 \approx 74 \gg 4\pi$ (non-perturbative regime)?
+3. **Derivation of (AP+PH+QG+V) from A1-A4**: What is the explicit derivation of the characterizing properties of the holon from the four axioms?
+4. **G-map**: How is the map $G: \text{States} \to \mathcal{D}(\mathbb{C}^7)$ constructed for concrete systems?
 
-Все четыре проблемы имеют **единый корень**: теория до сих пор работала на уровне **алгебр**, не доходя до уровня **представлений и бимодулей**. Бимодульная конструкция Конна — недостающее звено.
+All four problems have a **common root**: the theory has so far worked at the level of **algebras**, without reaching the level of **representations and bimodules**. Connes' bimodule construction is the missing link.
 :::
 
 ---
 
-## 1. Единый корень четырёх проблем {#единый-корень}
+## 1. Common Root of the Four Problems {#единый-корень}
 
-:::note Диагноз
-Все четыре проблемы — симптомы одного разрыва: между **алгебраической** структурой $A_{\text{int}}$ (корректно выведена) и **представительской** структурой $H_F$ (не выведена). В некоммутативной геометрии Конна физика определяется не алгеброй $A$ самой по себе, а её **действием** на гильбертовом пространстве $H$ — причём $H$ является одновременно **левым** $A$-модулем и **правым** $A^\circ$-модулем через реальную структуру $J$: $b^\circ \cdot \xi := J b^* J^* \xi$. Именно эта **бимодульная** структура порождает SM-представления.
+:::note Diagnosis
+All four problems are symptoms of a single gap: between the **algebraic** structure $A_{\text{int}}$ (correctly derived) and the **representational** structure $H_F$ (not derived). In Connes' noncommutative geometry, physics is determined not by the algebra $A$ alone, but by its **action** on a Hilbert space $H$ — where $H$ is simultaneously a **left** $A$-module and a **right** $A^\circ$-module via the real structure $J$: $b^\circ \cdot \xi := J b^* J^* \xi$. It is precisely this **bimodule** structure that generates the SM representations.
 :::
 
-| Проблема | Уровень алгебр (сделано) | Уровень бимодулей (нужно) |
+| Problem | Algebra level (done) | Bimodule level (needed) |
 |---|---|---|
-| SM-представления | $A_{\text{int}}$ содержит генераторы rank 4 | Бимодуль $H_F$ порождает $(3,2)_{1/6}$ |
-| λ₃ | Петлевые расчёты с λ₃ ≈ 74 | Спектральное действие $\mathrm{Tr}(f(D^2/\Lambda^2))$ непертурбативно |
-| (AP+PH+QG+V) | Характеризующие свойства постулируются | Выводятся из структуры бимодуля через $J$ |
-| G-отображение | $\mathcal{D}(\mathbb{C}^7)$ определено | Бимодуль определяет каноническое вложение |
+| SM representations | $A_{\text{int}}$ contains rank-4 generators | Bimodule $H_F$ generates $(3,2)_{1/6}$ |
+| λ₃ | Loop calculations with λ₃ ≈ 74 | Spectral action $\mathrm{Tr}(f(D^2/\Lambda^2))$ non-perturbative |
+| (AP+PH+QG+V) | Characterizing properties are postulated | Derived from bimodule structure via $J$ |
+| G-map | $\mathcal{D}(\mathbb{C}^7)$ is defined | Bimodule defines canonical embedding |
 
 ---
 
-## 2. Бимодульная конструкция SM-представлений {#бимодульная-конструкция}
+## 2. Bimodule Construction of SM Representations {#бимодульная-конструкция}
 
-### 2.1 Конечный бимодуль из спектральной тройки УГМ
+### 2.1 Finite bimodule from the UHM spectral triple
 
-:::warning Теорема T-178 (Бимодульная реализация SM) [Т]
-Конечное гильбертово пространство $H_F$ спектральной тройки УГМ, рассматриваемое как $(A_{\text{int}}, A_{\text{int}}^\circ)$-бимодуль через реальную структуру $J$ с KO-размерностью 6, разлагается на прямую сумму неприводимых бимодулей, **точно совпадающих** с одним поколением SM-фермионов.
+:::warning Theorem T-178 (Bimodule realization of SM) [Т]
+The finite Hilbert space $H_F$ of the UHM spectral triple, viewed as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ with KO-dimension 6, decomposes into a direct sum of irreducible bimodules **exactly coinciding** with one generation of SM fermions.
 :::
 
-**Конструкция.**
+**Construction.**
 
-**Шаг 1 (Исходные данные).** Конечная спектральная тройка УГМ:
-- Алгебра: $A_{\text{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$
-- Пространство: $H_{\text{int}} = \mathbb{C}^7$
-- Реальная структура: $J$ с $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6)
-- Хиральность: $\chi = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$
+**Step 1 (Input data).** Finite UHM spectral triple:
+- Algebra: $A_{\text{int}} = \mathbb{C}_O \oplus M_3(\mathbb{C})_{\mathbf{3}} \oplus M_3(\mathbb{C})_{\bar{\mathbf{3}}}$
+- Space: $H_{\text{int}} = \mathbb{C}^7$
+- Real structure: $J$ with $J^2 = +1$, $JD = DJ$, $J\chi = -\chi J$ (KO-dim 6)
+- Chirality: $\chi = \mathrm{diag}(+1, -1, -1, -1, +1, +1, +1)$
 
-**Шаг 2 (Противоположная алгебра).** Реальная структура $J$ определяет правое действие алгебры $A_{\text{int}}$ на $H_{\text{int}}$:
+**Step 2 (Opposite algebra).** The real structure $J$ defines a right action of the algebra $A_{\text{int}}$ on $H_{\text{int}}$:
 
 $$
 b^\circ \cdot \xi := J b^* J^* \xi, \quad b \in A_{\text{int}}
 $$
 
-Это превращает $H_{\text{int}}$ в $(A_{\text{int}}, A_{\text{int}}^\circ)$-бимодуль: левое действие — обычное умножение, правое — через $J$.
+This turns $H_{\text{int}}$ into an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule: the left action is ordinary multiplication, the right action is via $J$.
 
-**Шаг 3 (Условие первого порядка).** KO-dim 6 требует:
+**Step 3 (First-order condition).** KO-dim 6 requires:
 
 $$
 [[D, a], Jb^*J^*] = 0 \quad \forall a, b \in A_{\text{int}}
 $$
 
-Это условие ограничивает допустимые операторы Дирака $D$ и, следовательно, допустимые представления.
+This condition constrains the admissible Dirac operators $D$ and, consequently, the admissible representations.
 
-**Шаг 4 (Разложение бимодуля).** После наложения J + условия первого порядка + электрослабого нарушения через Хиггсову линию $\{A,E,U\}$ ([ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [Т]):
+**Step 4 (Bimodule decomposition).** After imposing J + first-order condition + electroweak breaking via the Higgs line $\{A,E,U\}$ ([ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ) [Т]):
 
 $$
 A_{\text{int}} \xrightarrow{J + \text{ФЭ}} A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})
 $$
 
-Бимодульное разложение $H_F$ даёт (Barrett, 2007; Chamseddine-Connes, 2007):
+The bimodule decomposition of $H_F$ gives (Barrett, 2007; Chamseddine-Connes, 2007):
 
-| Бимодуль | Левое действие $(A_F)$ | Правое действие $(A_F^\circ)$ | SM-фермион |
+| Bimodule | Left action $(A_F)$ | Right action $(A_F^\circ)$ | SM fermion |
 |---|---|---|---|
-| $\mathbf{2}_L \otimes \mathbf{3}$ | $\mathbb{H}$ (слабый изоспин) | $M_3(\mathbb{C})^\circ$ (цвет) | Левый кварк $(u_L, d_L)$ |
-| $\mathbf{1}_R \otimes \mathbf{3}$ | $\mathbb{C}$ (гиперзаряд) | $M_3(\mathbb{C})^\circ$ (цвет) | Правый кварк $u_R, d_R$ |
-| $\mathbf{2}_L \otimes \mathbf{1}$ | $\mathbb{H}$ (слабый изоспин) | $\mathbb{C}^\circ$ | Левый лептон $(\nu_L, e_L)$ |
-| $\mathbf{1}_R \otimes \mathbf{1}$ | $\mathbb{C}$ (гиперзаряд) | $\mathbb{C}^\circ$ | Правый лептон $e_R, \nu_R$ |
+| $\mathbf{2}_L \otimes \mathbf{3}$ | $\mathbb{H}$ (weak isospin) | $M_3(\mathbb{C})^\circ$ (color) | Left quark $(u_L, d_L)$ |
+| $\mathbf{1}_R \otimes \mathbf{3}$ | $\mathbb{C}$ (hypercharge) | $M_3(\mathbb{C})^\circ$ (color) | Right quark $u_R, d_R$ |
+| $\mathbf{2}_L \otimes \mathbf{1}$ | $\mathbb{H}$ (weak isospin) | $\mathbb{C}^\circ$ | Left lepton $(\nu_L, e_L)$ |
+| $\mathbf{1}_R \otimes \mathbf{1}$ | $\mathbb{C}$ (hypercharge) | $\mathbb{C}^\circ$ | Right lepton $e_R, \nu_R$ |
 
-**Ключевой пункт:** Кварк в представлении $(3,2)_{1/6}$ возникает **не** из тензорного произведения двух факторов $\mathbb{C}^7 \otimes \mathbb{C}^6$, а из **пересечения** левого и правого действий на одном бимодуле. Левое действие $\mathbb{H}$ даёт слабый изоспин, правое действие $M_3(\mathbb{C})^\circ$ даёт цвет — оба на **одном и том же** элементе $\xi \in H_F$.
+**Key point:** A quark in the representation $(3,2)_{1/6}$ arises **not** from the tensor product of two factors $\mathbb{C}^7 \otimes \mathbb{C}^6$, but from the **intersection** of left and right actions on a single bimodule. The left action of $\mathbb{H}$ gives weak isospin, the right action of $M_3(\mathbb{C})^\circ$ gives color — both acting on the **same** element $\xi \in H_F$.
 
-:::info Решение проблемы SM-представлений
-42D тензорная структура $\mathbb{C}^7 \otimes \mathbb{C}^6$ — это реализация механизма Пейдж–Вуттерс для **эмерджентного времени**. SM-представления возникают из **другой** конструкции: бимодульного разложения $H_F$ через реальную структуру $J$. Эти два механизма **совместимы**, но решают **разные** задачи: PW даёт время, бимодуль даёт частицы.
+:::info Solution of the SM representations problem
+The 42D tensor structure $\mathbb{C}^7 \otimes \mathbb{C}^6$ is a realization of the Page–Wootters mechanism for **emergent time**. SM representations arise from a **different** construction: the bimodule decomposition of $H_F$ via the real structure $J$. These two mechanisms are **compatible** but solve **different** problems: PW gives time, the bimodule gives particles.
 
-**Обновлённый статус проблемы SM-представлений: [Т]** — решена через стандартную NCG-конструкцию (Barrett 2007), применённую к спектральной тройке УГМ (T-53 [Т]).
+**Updated status of the SM representations problem: [Т]** — solved via the standard NCG construction (Barrett 2007), applied to the UHM spectral triple (T-53 [Т]).
 :::
 
 $\blacksquare$
 
-### 2.2 Гиперзаряд и параметр α
+### 2.2 Hypercharge and parameter α
 
-Свободный параметр $\alpha$ в генераторе гиперзаряда $Y$ фиксируется **аномалийной свободой** бимодуля $H_F$:
+The free parameter $\alpha$ in the hypercharge generator $Y$ is fixed by **anomaly freedom** of the bimodule $H_F$:
 
-:::warning Теорема T-179 (Фиксация гиперзаряда) [Т]
-Условие отсутствия аномалий $\mathrm{Tr}(Y) = 0$ и $\mathrm{Tr}(Y^3) = 0$ на бимодуле $H_F$ **однозначно** фиксирует гиперзарядовые назначения стандартной модели (с точностью до общей нормировки).
+:::warning Theorem T-179 (Hypercharge fixation) [Т]
+The anomaly cancellation conditions $\mathrm{Tr}(Y) = 0$ and $\mathrm{Tr}(Y^3) = 0$ on the bimodule $H_F$ **uniquely** fix the hypercharge assignments of the Standard Model (up to overall normalization).
 :::
 
-**Доказательство.** Это стандартный результат теории аномалий (Alvarez-Gaumé, Witten 1984), применённый к конкретному бимодулю из Шага 4 выше. Условие $\mathrm{Tr}(Y) = 0$ фиксирует относительные гиперзаряды кварков и лептонов; $\mathrm{Tr}(Y^3) = 0$ фиксирует абсолютные значения. Единственное решение: $Y(q_L) = 1/6$, $Y(u_R) = 2/3$, $Y(d_R) = -1/3$, $Y(l_L) = -1/2$, $Y(e_R) = -1$. $\blacksquare$
+**Proof.** This is a standard result of anomaly theory (Alvarez-Gaumé, Witten 1984), applied to the specific bimodule from Step 4 above. The condition $\mathrm{Tr}(Y) = 0$ fixes the relative hypercharges of quarks and leptons; $\mathrm{Tr}(Y^3) = 0$ fixes the absolute values. The unique solution: $Y(q_L) = 1/6$, $Y(u_R) = 2/3$, $Y(d_R) = -1/3$, $Y(l_L) = -1/2$, $Y(e_R) = -1$. $\blacksquare$
 
 ---
 
-## 3. Непертурбативный подход к λ₃ {#непертурбативный}
+## 3. Non-perturbative Approach to λ₃ {#непертурбативный}
 
-### 3.1 Спектральное действие как решение
+### 3.1 Spectral action as a solution
 
-:::note Ключевое наблюдение
-Параметр $\lambda_3 \approx 74$ возникает при разложении спектрального действия в ряд по степеням $\Lambda^{-1}$. Но спектральное действие **определено непертурбативно**:
+:::note Key observation
+The parameter $\lambda_3 \approx 74$ appears when expanding the spectral action in powers of $\Lambda^{-1}$. But the spectral action is **defined non-perturbatively**:
 
 $$
 S_{\text{spec}}[D] = \mathrm{Tr}\!\left(f\!\left(\frac{D^2}{\Lambda^2}\right)\right)
 $$
 
-где $f$ — гладкая функция обрезки. Эта формула **не требует** разложения в петлевые диаграммы. Физические предсказания (массы, углы смешивания) определяются **спектром** оператора $D$, а не параметрами лагранжиана.
+where $f$ is a smooth cutoff function. This formula **does not require** expansion into loop diagrams. Physical predictions (masses, mixing angles) are determined by the **spectrum** of the operator $D$, not by the Lagrangian parameters.
 :::
 
-### 3.2 Спектральные предсказания без петлей
+### 3.2 Spectral predictions without loops
 
-:::warning Теорема T-180 (Непертурбативные соотношения масс) [Т]
-Соотношения масс фермионов определяются **собственными значениями** конечного оператора Дирака $D_{\text{int}}$ и **не зависят** от λ₃:
+:::warning Theorem T-180 (Non-perturbative mass ratios) [Т]
+Fermion mass ratios are determined by the **eigenvalues** of the finite Dirac operator $D_{\text{int}}$ and **do not depend** on λ₃:
 
 $$
 \frac{m_i}{m_j} = \frac{|[D_{\text{int}}]_{ii}|}{|[D_{\text{int}}]_{jj}|} = \frac{\mathrm{Gap}(i)}{\mathrm{Gap}(j)}
 $$
 
-где $\mathrm{Gap}(i)$ — Gap-параметры из вакуумного состояния $\theta^*$ (T-64 [Т], единственный минимум $V_{\text{Gap}}$).
+where $\mathrm{Gap}(i)$ are the Gap parameters from the vacuum state $\theta^*$ (T-64 [Т], unique minimum of $V_{\text{Gap}}$).
 :::
 
-**Следствие.** Массовая иерархия ($m_t \gg m_u$) определяется иерархией Gap-параметров вакуума, которая следует из **геометрии** плоскости Фано (различные расстояния на PG(2,2)), а не из петлевых поправок с λ₃.
+**Corollary.** The mass hierarchy ($m_t \gg m_u$) is determined by the hierarchy of vacuum Gap parameters, which follows from the **geometry** of the Fano plane (different distances on PG(2,2)), not from loop corrections with λ₃.
 
-### 3.3 Что остаётся от λ₃
+### 3.3 What remains of λ₃
 
-Параметр λ₃ = $\omega_0 \cdot |f_{ijk}|$ (где $f_{ijk}$ — октонионные структурные константы) входит в Gap-потенциал $V_{\text{Gap}}$:
+The parameter λ₃ = $\omega_0 \cdot |f_{ijk}|$ (where $f_{ijk}$ are the octonionic structure constants) enters the Gap potential $V_{\text{Gap}}$:
 
 $$
 V_{\text{Gap}} = V_2(\varepsilon) + \lambda_3 \cdot V_3(\varepsilon, \theta) + \lambda_4 \cdot V_4(\varepsilon)
 $$
 
-При λ₃ ≫ λ₄ потенциал доминируется **кубическим** членом $V_3$. Это **не** проблема — это указание на то, что вакуумная структура определяется **октонионным ассоциатором** (кубический член $\propto [e_i, e_j, e_k]$), а не стандартным кварточным потенциалом. Минимум $V_{\text{Gap}}$ (T-64 [Т]) существует и единственен **независимо** от отношения λ₃/λ₄.
+For λ₃ ≫ λ₄ the potential is dominated by the **cubic** term $V_3$. This is **not** a problem — it is an indication that the vacuum structure is determined by the **octonionic associator** (the cubic term $\propto [e_i, e_j, e_k]$), not by the standard quartic potential. The minimum of $V_{\text{Gap}}$ (T-64 [Т]) exists and is unique **independently** of the ratio λ₃/λ₄.
 
-:::info Переосмысление C7
-Условие C7 ($\lambda_3 \gg 4\pi$) — не **проблема**, а **особенность** октонионной структуры. Не-ассоциативность октонионов проявляется через доминирование кубического потенциала. Физические предсказания следует извлекать из спектра $D_{\text{int}}$ (непертурбативно), а не из петлевых разложений лагранжиана. **Обновлённый статус C7: из [Г]-предупреждения в [И]-особенность** — структурное свойство теории, а не дефект.
+:::info Reinterpretation of C7
+Condition C7 ($\lambda_3 \gg 4\pi$) is **not** a problem but a **feature** of the octonionic structure. The non-associativity of octonions manifests through the dominance of the cubic potential. Physical predictions should be extracted from the spectrum of $D_{\text{int}}$ (non-perturbatively), not from loop expansions of the Lagrangian. **Updated status of C7: from a [Г]-warning to an [И]-feature** — a structural property of the theory, not a defect.
 :::
 
 ---
 
-## 4. Явный вывод (AP+PH+QG+V) из A1-A4 {#вывод-apphqgv}
+## 4. Explicit Derivation of (AP+PH+QG+V) from A1-A4 {#вывод-apphqgv}
 
-:::warning Теорема T-181 (Характеризующие свойства из аксиом) [Т]
-Свойства (AP), (PH), (QG), (V) являются **теоремами** аксиом A1-A4:
+:::warning Theorem T-181 (Characterizing properties from axioms) [Т]
+The properties (AP), (PH), (QG), (V) are **theorems** of axioms A1-A4:
 :::
 
-**Доказательство (цепочка).**
+**Proof (chain).**
 
-**A1 (∞-топос) ⟹ (QG).** По A1, реальность — ∞-топос $\mathrm{Sh}_\infty(\mathcal{C})$ над категорией матриц плотности $\mathcal{D}(\mathbb{C}^N)$. Объекты — матрицы плотности $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$. Морфизмы — CPTP-каналы (единственные морфизмы в $\mathrm{Sh}_\infty(\mathcal{C})$, сохраняющие $J_{\text{Bures}}$-покрытия, по теореме Стайнспринга). Динамика — Линдбладовская ($\mathcal{L}_\Omega$ из L-унификации [Т]). Это и есть (QG): квантовая матрица плотности + Линдбладовская динамика. $\square$
+**A1 (∞-topos) ⟹ (QG).** By A1, reality is an ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ over the category of density matrices $\mathcal{D}(\mathbb{C}^N)$. Objects are density matrices $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$. Morphisms are CPTP channels (the unique morphisms in $\mathrm{Sh}_\infty(\mathcal{C})$ preserving $J_{\text{Bures}}$-covers, by Stinespring's theorem). Dynamics are Lindbladian ($\mathcal{L}_\Omega$ from L-unification [Т]). This is precisely (QG): quantum density matrix + Lindbladian dynamics. $\square$
 
-**A1 + терминальный объект ⟹ (AP).** В ∞-топосе $\mathrm{Sh}_\infty(\mathcal{C})$ существует терминальный объект $T$ ([Свойство 3](/docs/core/foundations/axiom-omega#свойство-3) [Т]). Для каждого $\Gamma$ существует единственный морфизм $\Gamma \to T$. Левое сопряжение к включению подобъектов $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ определяет оператор самомоделирования $\varphi$ ([формализация φ](/docs/proofs/categorical/formalization-phi)). Теорема Банаха (для сжимающего $\varphi$ с $k < 1$) гарантирует существование неподвижной точки $\Gamma^* = \varphi(\Gamma^*)$ [Т]. Это и есть (AP): самомоделирующий оператор с неподвижной точкой. $\square$
+**A1 + terminal object ⟹ (AP).** In the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ there exists a terminal object $T$ ([Property 3](/docs/core/foundations/axiom-omega#свойство-3) [Т]). For each $\Gamma$ there exists a unique morphism $\Gamma \to T$. The left adjoint to the inclusion of subobjects $\mathrm{Sub}(\Gamma) \hookrightarrow \mathrm{Sh}_\infty(\mathcal{C})$ defines the self-modeling operator $\varphi$ ([formalization of φ](/docs/proofs/categorical/formalization-phi)). Banach's theorem (for a contractive $\varphi$ with $k < 1$) guarantees the existence of a fixed point $\Gamma^* = \varphi(\Gamma^*)$ [Т]. This is precisely (AP): a self-modeling operator with a fixed point. $\square$
 
-**A1 + A3 (N=7) ⟹ (PH).** По A3, $\dim(\mathcal{H}) = 7$. Из [Теоремы S](/docs/proofs/minimality/theorem-minimality-7) (семь функционально необходимых измерений, каждое с уникальной ролью [Т]): E-измерение выделено как носитель **интериорности** — редуцированная матрица $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ нетривиальна для любого полноранкового $\Gamma$ (что гарантировано примитивностью $\mathcal{L}_0$ [Т-39a]: $e^{\tau\mathcal{L}_0}[\Gamma] \in \mathrm{Int}(\mathcal{D})$ для $\tau > 0$). Это и есть (PH): $\rho_E \neq 0$. $\square$
+**A1 + A3 (N=7) ⟹ (PH).** By A3, $\dim(\mathcal{H}) = 7$. From [Theorem S](/docs/proofs/minimality/theorem-minimality-7) (seven functionally necessary dimensions, each with a unique role [Т]): the E-dimension is singled out as the carrier of **interiority** — the reduced matrix $\rho_E = \mathrm{Tr}_{\bar{E}}(\Gamma)$ is non-trivial for any full-rank $\Gamma$ (guaranteed by primitivity of $\mathcal{L}_0$ [T-39a]: $e^{\tau\mathcal{L}_0}[\Gamma] \in \mathrm{Int}(\mathcal{D})$ for $\tau > 0$). This is precisely (PH): $\rho_E \neq 0$. $\square$
 
-**A2 + A3 ⟹ (V).** По A2, топология определяется метрикой Бюреса. По A3, $N = 7$. Различимость от шума $I/7$ в метрике Бюреса требует $d_B(\Gamma, I/7) > d_B^{\text{noise}}$, что эквивалентно $P > 2/N = 2/7$ [Т] (Путь 1, алгебраическое тождество). Это и есть (V): $P > P_{\text{crit}} = 2/7$. $\square$
+**A2 + A3 ⟹ (V).** By A2, the topology is defined by the Bures metric. By A3, $N = 7$. Distinguishability from noise $I/7$ in the Bures metric requires $d_B(\Gamma, I/7) > d_B^{\text{noise}}$, which is equivalent to $P > 2/N = 2/7$ [Т] (Path 1, algebraic identity). This is precisely (V): $P > P_{\text{crit}} = 2/7$. $\square$
 
-:::info Следствие
-Число **независимых** примитивов УГМ: **4 аксиомы** (A1-A4). Все остальное — теоремы:
+:::info Corollary
+The number of **independent** primitives of UHM: **4 axioms** (A1-A4). Everything else is theorems:
 - A5 (PW) — T-87 [Т]
-- (AP) — из A1 (терминальный объект + сопряжение) [Т]
-- (PH) — из A1+A3 (функциональная необходимость E) [Т]
-- (QG) — из A1 (∞-топос над D(ℂ^N)) [Т]
-- (V) — из A2+A3 (Бюрес-различимость) [Т]
+- (AP) — from A1 (terminal object + adjunction) [Т]
+- (PH) — from A1+A3 (functional necessity of E) [Т]
+- (QG) — from A1 (∞-topos over D(ℂ^N)) [Т]
+- (V) — from A2+A3 (Bures distinguishability) [Т]
 :::
 
 ---
 
-## 5. G-отображение: конструктивный протокол {#g-отображение}
+## 5. G-map: Constructive Protocol {#g-отображение}
 
-### 5.1 Каноническое вложение через якорную функцию
+### 5.1 Canonical embedding via the anchor function
 
-Для системы с состоянием $s \in \mathcal{S}$ (нейросеть, мозг, организм), G-отображение $G: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$ конструируется через **якорную функцию** $\pi$:
+For a system with state $s \in \mathcal{S}$ (neural network, brain, organism), the G-map $G: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$ is constructed via the **anchor function** $\pi$:
 
 $$
 G(s) = \pi(s) := \frac{L(s) \cdot L(s)^\dagger}{\mathrm{Tr}(L(s) \cdot L(s)^\dagger)}
 $$
 
-где $L: \mathcal{S} \to \mathbb{C}^{7 \times 7}_{\text{lower-triangular}}$ — обучаемое отображение (MLP или линейная проекция), а нормализация гарантирует $G(s) \in \mathcal{D}(\mathbb{C}^7)$.
+where $L: \mathcal{S} \to \mathbb{C}^{7 \times 7}_{\text{lower-triangular}}$ is a trainable map (MLP or linear projection), and the normalization guarantees $G(s) \in \mathcal{D}(\mathbb{C}^7)$.
 
-### 5.2 Единственность до G₂
+### 5.2 Uniqueness up to G₂
 
-:::warning Теорема T-123 (G₂-единственность) [Т]
-Якорное отображение $\pi: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$, ковариантное относительно $\mathcal{L}_\Omega$, единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$. Семантика $\gamma_{kk}$ **определена аксиомами** — не произвольна.
+:::warning Theorem T-123 (G₂-uniqueness) [Т]
+The anchor map $\pi: \mathcal{S} \to \mathcal{D}(\mathbb{C}^7)$, covariant with respect to $\mathcal{L}_\Omega$, is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. The semantics of $\gamma_{kk}$ is **defined by the axioms** — not arbitrary.
 
-[Доказательство →](/docs/proofs/consciousness/conscious-window#t-123)
+[Proof →](/docs/proofs/consciousness/conscious-window#t-123)
 :::
 
-### 5.3 Протокол для конкретных систем
+### 5.3 Protocol for concrete systems
 
-| Система | Метод построения G | Статус |
+| System | Method for constructing G | Status |
 |---|---|---|
-| **Нейросеть** | Линейный зонд $h \to L \to \Gamma$ через Cholesky (C25 [С]) | Реализуемо |
-| **Мозг (EEG)** | 7 частотных полос → $\gamma_{kk}$, когерентность → $\gamma_{ij}$ | [П] Исследовательская программа |
-| **Организм** | Физиологические маркеры → 7 секторов (T-92 [Т]) | [П] Протокол измерения |
+| **Neural network** | Linear probe $h \to L \to \Gamma$ via Cholesky (C25 [С]) | Feasible |
+| **Brain (EEG)** | 7 frequency bands → $\gamma_{kk}$, coherence → $\gamma_{ij}$ | [П] Research program |
+| **Organism** | Physiological markers → 7 sectors (T-92 [Т]) | [П] Measurement protocol |
 
-:::info Ключевое наблюдение
-G-отображение — **не** уникальная проблема УГМ. Аналогичная задача существует в IIT ($\Phi$-структура), GNW (global workspace), FEP (Markov blanket identification). В каждой теории сознания нужен мост от формализма к конкретной системе. УГМ имеет **преимущество**: T-123 гарантирует единственность до $G_2$, тогда как в IIT $\Phi$-структура зависит от произвольного выбора разбиения.
+:::info Key observation
+The G-map is **not** a problem unique to UHM. An analogous task exists in IIT ($\Phi$-structure), GNW (global workspace), FEP (Markov blanket identification). Every theory of consciousness needs a bridge from the formalism to a concrete system. UHM has an **advantage**: T-123 guarantees uniqueness up to $G_2$, whereas in IIT the $\Phi$-structure depends on an arbitrary choice of partition.
 :::
 
 ---
 
-## 6. Глубинная структура: фрактальная рекуррентность {#глубинная-структура}
+## 6. Deep Structure: Fractal Recurrence {#глубинная-структура}
 
-:::note Мета-уровень
-Четыре решённые проблемы указывают на единую **глубинную структуру**: самореференцию. Теория описывает реальность ($\Gamma$) через математику (∞-топос), которая сама является конфигурацией $\Gamma$ (T-54: $\mathrm{Th}_{\text{UHM}} = \mathrm{Fix}(\varphi^*) \subseteq \Omega$). Карта **есть** территория.
+:::note Meta-level
+The four solved problems point to a single **deep structure**: self-reference. The theory describes reality ($\Gamma$) through mathematics (∞-topos), which is itself a configuration of $\Gamma$ (T-54: $\mathrm{Th}_{\text{UHM}} = \mathrm{Fix}(\varphi^*) \subseteq \Omega$). The map **is** the territory.
 :::
 
-### 6.1 Три уровня самореференции
+### 6.1 Three levels of self-reference
 
-| Уровень | Объект | Самомоделирование | Предел рекурсии |
+| Level | Object | Self-modeling | Recursion limit |
 |---|---|---|---|
-| **Голоном** | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | SAD_MAX = 3 (Фано-контракция) |
-| **Теория** | $\mathrm{Th}_{\text{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ (T-55, неполнота Ловера) |
-| **Бимодуль** | $H_F$ как $(A, A^\circ)$-бимодуль | $J: H_F \to H_F$ (реальная структура) | $J^2 = +1$ (KO-dim 6) |
+| **Holon** | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | SAD_MAX = 3 (Fano contraction) |
+| **Theory** | $\mathrm{Th}_{\text{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ (T-55, Lawvere incompleteness) |
+| **Bimodule** | $H_F$ as $(A, A^\circ)$-bimodule | $J: H_F \to H_F$ (real structure) | $J^2 = +1$ (KO-dim 6) |
 
-На каждом уровне:
-- Система моделирует **себя** ($\varphi$, $\varphi^*$, $J$)
-- Моделирование **неполно** (SAD < ∞, $\mathrm{Th} \subsetneq \Omega$, KO конечна)
-- Неполнота — **источник динамики** (Gap, эволюционная открытость, массы фермионов)
+At each level:
+- The system models **itself** ($\varphi$, $\varphi^*$, $J$)
+- The modeling is **incomplete** (SAD < ∞, $\mathrm{Th} \subsetneq \Omega$, KO is finite)
+- Incompleteness is the **source of dynamics** (Gap, evolutionary openness, fermion masses)
 
-### 6.2 Соответствие с традициями знания
+### 6.2 Correspondence with knowledge traditions
 
-| Традиция | Концепт | Формализация в УГМ |
+| Tradition | Concept | Formalization in UHM |
 |---|---|---|
-| **Веданта** | Брахман = Атман | $\Gamma_{\text{global}}$ (единая субстанция) ≡ $\varphi(\Gamma)$ (самомодель) при $R = 1$ |
-| **Буддизм** | Шуньята (пустота) | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ — ни один предикат не «самосущ» |
-| **Каббала** | Цимцум (сжатие) | $\Gamma_\odot \to \rho^*$ — спонтанное нарушение $S_7$-симметрии |
-| **Даосизм** | Дао, которое можно выразить | $L \subsetneq \Gamma$ — логика (L-измерение) не охватывает целое |
-| **Алхимия** | Solve et Coagula | $\mathcal{D}[\Gamma]$ (декогеренция = solve) + $\mathcal{R}[\Gamma]$ (регенерация = coagula) |
-| **Фракталы** | Самоподобие | SAD-башня: $\varphi \to \varphi^{(2)} \to \varphi^{(3)}$ — рекурсия глубиной 3 |
+| **Vedanta** | Brahman = Atman | $\Gamma_{\text{global}}$ (single substance) ≡ $\varphi(\Gamma)$ (self-model) at $R = 1$ |
+| **Buddhism** | Śūnyatā (emptiness) | $\mathrm{Th}_{\text{UHM}} \subsetneq \Omega$ — no predicate is "self-existent" |
+| **Kabbalah** | Tzimtzum (contraction) | $\Gamma_\odot \to \rho^*$ — spontaneous breaking of $S_7$-symmetry |
+| **Taoism** | The Tao that can be expressed | $L \subsetneq \Gamma$ — logic (L-dimension) does not encompass the whole |
+| **Alchemy** | Solve et Coagula | $\mathcal{D}[\Gamma]$ (decoherence = solve) + $\mathcal{R}[\Gamma]$ (regeneration = coagula) |
+| **Fractals** | Self-similarity | SAD tower: $\varphi \to \varphi^{(2)} \to \varphi^{(3)}$ — recursion of depth 3 |
 
-### 6.3 Почему именно 3 уровня рекурсии
+### 6.3 Why exactly 3 levels of recursion
 
-SAD_MAX = 3 — не произвольное число. Оно следует из **геометрии** пространства состояний:
+SAD_MAX = 3 is not an arbitrary number. It follows from the **geometry** of the state space:
 
-1. **Фано-контракция** $\alpha = 2/3$ означает: каждый акт самонаблюдения сохраняет 1/3 когерентности
-2. **Пространство D(ℂ⁷) компактно**: $P \in [1/7, 1]$
-3. После 3 итераций: $R^{(3)} \sim r_0 \cdot (1/3)^3 \approx r_0/27$
-4. Порог $R_{\text{th}}^{(3)} = 1/6$: $r_0/27 > 1/6$ требует $r_0 > 4.5$, т.е. $P > 4.5 \cdot 2/7 \approx 1.29 > 1$ — **невозможно**
+1. **Fano contraction** $\alpha = 2/3$ means: each act of self-observation preserves 1/3 of coherence
+2. **The space D(ℂ⁷) is compact**: $P \in [1/7, 1]$
+3. After 3 iterations: $R^{(3)} \sim r_0 \cdot (1/3)^3 \approx r_0/27$
+4. Threshold $R_{\text{th}}^{(3)} = 1/6$: $r_0/27 > 1/6$ requires $r_0 > 4.5$, i.e. $P > 4.5 \cdot 2/7 \approx 1.29 > 1$ — **impossible**
 
-Компактность D(ℂ⁷) × Фано-контракция = конечная рекурсия. Бесконечная самореференция невозможна в конечномерной квантовой системе — и это математическая формализация того, что мистические традиции называют «невыразимым»: L4 (полная прозрачность) существует как предел, но недостижим.
+Compactness of D(ℂ⁷) × Fano contraction = finite recursion. Infinite self-reference is impossible in a finite-dimensional quantum system — and this is the mathematical formalization of what mystical traditions call the "inexpressible": L4 (complete transparency) exists as a limit but is unattainable.
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Спектральная тройка УГМ](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — конструкция $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$
-- [Стандартная модель](/docs/physics/gauge-symmetry/standard-model) — калибровочные группы из $G_2$
-- [Космологическая постоянная](/docs/physics/gravity/cosmological-constant) — Λ-бюджет
-- [Gap-термодинамика](/docs/core/dynamics/gap-thermodynamics) — $V_{\text{Gap}}$ и минимум $\theta^*$
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — 4 аксиомы A1-A4
-- [Окно сознания](/docs/proofs/consciousness/conscious-window) — T-123 (G₂-единственность)
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — оператор самомоделирования
-- [Башня глубины](/docs/consciousness/hierarchy/depth-tower) — SAD_MAX = 3
+- [UHM Spectral Triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — construction of $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — gauge groups from $G_2$
+- [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — Λ-budget
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — $V_{\text{Gap}}$ and minimum $\theta^*$
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — 4 axioms A1-A4
+- [Consciousness Window](/docs/proofs/consciousness/conscious-window) — T-123 (G₂-uniqueness)
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — self-modeling operator
+- [Depth Tower](/docs/consciousness/hierarchy/depth-tower) — SAD_MAX = 3

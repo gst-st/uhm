@@ -58,7 +58,7 @@ Jackson argued: **yes**. Mary learns what it is *like* to see red. Hence physica
 
 ### UHM position: qualia as coherence structure
 
-The Unified Holonomic Model offers a **third path**, coinciding with neither Jackson's dualism nor Dennett's eliminativism:
+The Unitary Holonomic Monism offers a **third path**, coinciding with neither Jackson's dualism nor Dennett's eliminativism:
 
 - Qualia are **not an illusion** — they have a precise mathematical structure (coherences $\gamma_{ij}$)
 - Qualia are **not a separate substance** — they are the off-diagonal elements of the same matrix $\Gamma$ that describes the "physics" of the system

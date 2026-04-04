@@ -12,7 +12,7 @@ Dimension L: coordination, commutators, logical closure. Assumes familiarity wit
 
 ## Why this chapter
 
-We are accustomed to thinking of logic as something abstract — a set of rules for "correct thinking". At school one learns: if A then B; if B then C; therefore, if A then C. But in the Universal Holonomic Model (UHM) logic is something far more fundamental. It is an **aspect of reality itself**, determining which configurations are possible and which are contradictory and therefore cannot exist.
+We are accustomed to thinking of logic as something abstract — a set of rules for "correct thinking". At school one learns: if A then B; if B then C; therefore, if A then C. But in the Unitary Holonomic Monism (UHM) logic is something far more fundamental. It is an **aspect of reality itself**, determining which configurations are possible and which are contradictory and therefore cannot exist.
 
 In this chapter you will learn:
 - why logic in UHM is not a tool of human thinking but a **filter of reality**, sieving out the impossible;

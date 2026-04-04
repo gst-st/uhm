@@ -1,362 +1,362 @@
 ---
 sidebar_position: 3
-title: "Вложения альтернативных ToE"
+title: "Embeddings of Alternative ToEs"
 slug: /proofs/physics/toe-embeddings
-description: "Формальные вложения M-теории, петлевой квантовой гравитации и каузальных множеств в УГМ. Универсальное свойство ∞-топоса."
+description: "Formal embeddings of M-theory, loop quantum gravity, and causal sets into UHM. Universal property of the ∞-topos."
 ---
 
-# Вложения Альтернативных Теорий-Кандидатов в УГМ
+# Embeddings of Alternative Candidate Theories into UHM
 
-:::info Статус
-Для обоснования статуса Мета-ToE необходимо показать, что конкурирующие подходы к квантовой гравитации восстанавливаются как пределы или частные случаи УГМ. Данный документ содержит четыре конструкции с различным уровнем строгости: от [Т] (стандартная математика) до [Г] (требует дополнительного обоснования).
+:::info Status
+To substantiate the Meta-ToE status, it is necessary to show that competing approaches to quantum gravity are recovered as limits or special cases of UHM. This document contains four constructions with varying levels of rigor: from [Т] (standard mathematics) to [Г] (requires additional justification).
 :::
 
 ---
 
-## 1. M-теория на $G_2$-многообразиях {#m-теория}
+## 1. M-Theory on $G_2$-Manifolds {#m-теория}
 
-### 1.1 Математический контекст
+### 1.1 Mathematical Context
 
-M-теория, компактифицированная на 7-мерном многообразии $M_7$ с голономией $\mathrm{Hol}(M_7) = G_2$, даёт $N=1$ суперсимметрию в 4D (Acharya, 1998; Atiyah–Witten, 2001; Joyce, 2000). Ключевые результаты:
+M-theory compactified on a 7-dimensional manifold $M_7$ with holonomy $\mathrm{Hol}(M_7) = G_2$ gives $N=1$ supersymmetry in 4D (Acharya, 1998; Atiyah–Witten, 2001; Joyce, 2000). Key results:
 
-- **Acharya (1998, hep-th/9812011):** M-теория на компактном $G_2$-многообразии → $N=1$ 4D, калибровочные группы из сингулярностей.
-- **Atiyah–Witten (2001, hep-th/0107177):** M-теория на $G_2$-многообразиях с коническими сингулярностями → хиральные фермионы.
-- **Halverson–Morrison (2015, 1507.05965):** Систематическое извлечение калибровочных групп из $G_2$-компактификаций. $SU(3) \times SU(2) \times U(1)$ из $A$-$D$-$E$ сингулярностей на кокомпактных подмногообразиях.
-- **Acharya–Witten (2001, hep-th/0109152):** $G_2$-компактификация как «M-theory on $G_2$» — систематический обзор.
+- **Acharya (1998, hep-th/9812011):** M-theory on a compact $G_2$-manifold → $N=1$ 4D, gauge groups from singularities.
+- **Atiyah–Witten (2001, hep-th/0107177):** M-theory on $G_2$-manifolds with conical singularities → chiral fermions.
+- **Halverson–Morrison (2015, 1507.05965):** Systematic extraction of gauge groups from $G_2$-compactifications. $SU(3) \times SU(2) \times U(1)$ from $A$-$D$-$E$ singularities on co-compact submanifolds.
+- **Acharya–Witten (2001, hep-th/0109152):** $G_2$-compactification as «M-theory on $G_2$» — a systematic review.
 
-### 1.2 Соответствие UHM ↔ M-теория {#uhm-m-theory}
+### 1.2 UHM ↔ M-Theory Correspondence {#uhm-m-theory}
 
-#### T-170: Восстановление M-теоретического предела [С при C27, C28] {#t-170}
+#### T-170: Recovery of the M-Theoretic Limit [С при C27, C28] {#t-170}
 
-:::tip Теорема T-170
-При следующих условиях:
+:::tip Theorem T-170
+Under the following conditions:
 
-**(C27)** (Непрерывный предел Gap): существует предел $a \to 0$ решётки Gap-полей $\theta_{ij}(x)$, в котором $\sigma$-модель на $(S^1)^{21}/G_2$ определяет гладкое 7-мерное целевое пространство $\mathcal{M}_7$;
+**(C27)** (Continuous Gap limit): the limit $a \to 0$ of the lattice of Gap fields $\theta_{ij}(x)$ exists, in which the $\sigma$-model on $(S^1)^{21}/G_2$ defines a smooth 7-dimensional target space $\mathcal{M}_7$;
 
-**(C28)** (Суперсимметрическое расширение): SUSY-расширение Gap-интеграла ([SUSY из $G_2$](/docs/physics/particle-physics/susy)) является корректным квантовым суперсимметричным функциональным интегралом;
+**(C28)** (Supersymmetric extension): the SUSY extension of the Gap integral ([SUSY from $G_2$](/docs/physics/particle-physics/susy)) is a well-defined quantum supersymmetric functional integral;
 
-Gap-функциональный интеграл УГМ:
+the UHM Gap functional integral:
 
 $$
 Z_{\text{UHM}} = \int_{(S^1)^{21}} \mathcal{D}[\theta]\, \mathcal{D}[\tilde{\theta}]\, e^{-S_{\text{Gap}}[\theta, \tilde{\theta}]}
 $$
 
-восстанавливает M-теоретическую статистическую сумму на $G_2$-многообразии:
+recovers the M-theoretic partition function on a $G_2$-manifold:
 
 $$
 Z_{\text{M}} = \int_{\mathcal{M}_7} \mathcal{D}[C_3]\, \mathcal{D}[g]\, e^{-S_{11D}[g, C_3]}
 $$
 
-через отождествление:
+via the identification:
 
-**(a)** Целевое пространство: $(S^1)^{21}/G_2$ (7-мерный орбифолд) отождествляется с модулями $G_2$-метрики на $\mathcal{M}_7$;
+**(a)** Target space: $(S^1)^{21}/G_2$ (7-dimensional orbifold) is identified with the moduli of the $G_2$-metric on $\mathcal{M}_7$;
 
-**(b)** Gap-фазы: 21 фаза $\theta_{ij}$ ↔ деформации ассоциативной 3-формы $\varphi \in \Omega^3(\mathcal{M}_7)$, параметризующей $G_2$-структуру. Размерность пространства деформаций = $b_3(\mathcal{M}_7)$, и для $b_3 = 21$ соответствие биективно;
+**(b)** Gap phases: 21 phases $\theta_{ij}$ ↔ deformations of the associative 3-form $\varphi \in \Omega^3(\mathcal{M}_7)$ parametrizing the $G_2$-structure. The dimension of the deformation space = $b_3(\mathcal{M}_7)$, and for $b_3 = 21$ the correspondence is bijective;
 
-**(c)** Калибровочная симметрия: $G_2 = \mathrm{Aut}(\mathbb{O})$ в УГМ ↔ группа голономии $\mathrm{Hol}(\mathcal{M}_7) = G_2$. Обе определяют одну и ту же исключительную структуру;
+**(c)** Gauge symmetry: $G_2 = \mathrm{Aut}(\mathbb{O})$ in UHM ↔ holonomy group $\mathrm{Hol}(\mathcal{M}_7) = G_2$. Both define the same exceptional structure;
 
-**(d)** Суперпартнёры: Gap-суперпартнёры $\tilde{\theta}_{ij}$ ↔ фермионные модули $G_2$-многообразия (ковариантно постоянный спинор $\eta_0 = 1_{\mathbb{O}}$).
+**(d)** Superpartners: Gap superpartners $\tilde{\theta}_{ij}$ ↔ fermionic moduli of the $G_2$-manifold (covariantly constant spinor $\eta_0 = 1_{\mathbb{O}}$).
 :::
 
-**Набросок доказательства.**
+**Proof sketch.**
 
-**Шаг 1 (Размерностное соответствие).** M-теория: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). УГМ: $M^4$ выведено (T-120 [Т]), а 7D внутреннее пространство параметризуется $\mathcal{D}(\mathbb{C}^7)$. Спектральная тройка $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ с KO-dim = 6 (T-53 [Т]) при суперсимметричном расширении даёт KO-dim = 6 + 1 = 7 (стандартный $\mathbb{Z}_8$-сдвиг).
+**Step 1 (Dimensional correspondence).** M-theory: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). UHM: $M^4$ is derived (T-120 [Т]), and the 7D internal space is parametrized by $\mathcal{D}(\mathbb{C}^7)$. The spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with KO-dim = 6 (T-53 [Т]) upon supersymmetric extension gives KO-dim = 6 + 1 = 7 (standard $\mathbb{Z}_8$-shift).
 
-**Шаг 2 (Gap-модули = $G_2$-модули).** Физическое конфигурационное пространство УГМ:
+**Step 2 (Gap moduli = $G_2$ moduli).** The physical configuration space of UHM:
 
 $$
 \mathcal{M}_{\text{phys}} = (S^1)^{21}/G_2, \quad \dim = 21 - 14 = 7
 $$
 
-M-теоретические модули $G_2$-многообразия параметризуются гармоническими 3-формами: $\dim(\mathcal{M}_{G_2}) = b_3(\mathcal{M}_7)$. Для компактного $G_2$-многообразия с $b_3 = 21$ (напр., $G_2$-разрешение $T^7/\Gamma$ Джойса) размерности совпадают.
+The M-theoretic moduli of a $G_2$-manifold are parametrized by harmonic 3-forms: $\dim(\mathcal{M}_{G_2}) = b_3(\mathcal{M}_7)$. For a compact $G_2$-manifold with $b_3 = 21$ (e.g., Joyce's $G_2$-resolution $T^7/\Gamma$) the dimensions coincide.
 
-**Шаг 3 (Действие).** Спектральное действие Конна–Шамседдина:
+**Step 3 (Action).** The Connes–Chamseddine spectral action:
 
 $$
 S_{\text{spec}} = \mathrm{Tr}(f(D/\Lambda))
 $$
 
-для спектральной тройки $(C^\infty(M^4) \otimes A_{\text{int}},\, H,\, D)$ воспроизводит (T-65 [Т]):
+for the spectral triple $(C^\infty(M^4) \otimes A_{\text{int}},\, H,\, D)$ reproduces (T-65 [Т]):
 
 $$
 S_{\text{spec}} = \int_{M^4} \left[ a_0 \Lambda^4 + a_2 \Lambda^2 R + a_4 (\alpha R^2 + \beta |F|^2 + \gamma |\nabla\phi|^2 + \ldots) \right]
 $$
 
-Коэффициенты $a_k$ определяются внутренней тройкой. Gap-переменные $\theta_{ij}$ при минимизации $V_{\text{Gap}}$ (T-64 [Т]) фиксируют вакуум, аналогичный фиксации модулей $G_2$-многообразия в M-теории.
+The coefficients $a_k$ are determined by the internal triple. The Gap variables $\theta_{ij}$ upon minimization of $V_{\text{Gap}}$ (T-64 [Т]) fix the vacuum, analogous to the moduli fixing of the $G_2$-manifold in M-theory.
 
-**Шаг 4 (SUSY-нарушение).** Механизм SUSY-нарушения через $V_3 \neq 0$ ([SUSY](/docs/physics/particle-physics/susy#нарушение-susy)) ↔ не-Фано ассоциатор (28 из 35 троек). В M-теории аналогичное SUSY-нарушение через поток 4-формы $G_4 \neq 0$ (Acharya–Kane, 2006): $\langle G_4 \rangle \neq 0$ на не-ассоциативных 4-циклах ↔ $V_3 \neq 0$ от не-Фано-троек.
+**Step 4 (SUSY breaking).** The SUSY breaking mechanism via $V_3 \neq 0$ ([SUSY](/docs/physics/particle-physics/susy#нарушение-susy)) ↔ non-Fano associator (28 out of 35 triples). In M-theory, analogous SUSY breaking via 4-form flux $G_4 \neq 0$ (Acharya–Kane, 2006): $\langle G_4 \rangle \neq 0$ on non-associative 4-cycles ↔ $V_3 \neq 0$ from non-Fano triples.
 
-### 1.3 Формальный функтор {#функтор-m-theory}
+### 1.3 Formal Functor {#функтор-m-theory}
 
-**Определение (Функтор восстановления M-теории).**
+**Definition (M-theory recovery functor).**
 
 $$
 \mathcal{F}_M: \mathbf{Hol}_{\text{comp}} \to \mathbf{G_2\text{-}Mfld}
 $$
 
-На объектах: композитная система $M$ голономов $\mapsto$ $G_2$-многообразие $\mathcal{M}_7(M)$, спектр Гельфанда алгебры $A_{\text{int}}^{\otimes M}/G_2$.
+On objects: a composite system of $M$ holons $\mapsto$ $G_2$-manifold $\mathcal{M}_7(M)$, the Gelfand spectrum of the algebra $A_{\text{int}}^{\otimes M}/G_2$.
 
-На морфизмах: CPTP-канал $\Phi: \Gamma_1 \to \Gamma_2$ $\mapsto$ диффеоморфизм $f: \mathcal{M}_7 \to \mathcal{M}_7$, сохраняющий $G_2$-структуру (при $\Phi \in G_2$-сектор).
+On morphisms: a CPTP channel $\Phi: \Gamma_1 \to \Gamma_2$ $\mapsto$ a diffeomorphism $f: \mathcal{M}_7 \to \mathcal{M}_7$ preserving the $G_2$-structure (when $\Phi \in G_2$-sector).
 
-**Статус функтора:** [Г]. Для полного доказательства функториальности требуется:
-- Доказательство гладкости предела $(S^1)^{21N}/G_2^N \to \mathcal{M}_7$ при $N \to \infty$ (C27);
-- Контроль SUSY-расширения на квантовом уровне (C28).
+**Functor status:** [Г]. For a full proof of functoriality one needs:
+- A proof of smoothness of the limit $(S^1)^{21N}/G_2^N \to \mathcal{M}_7$ as $N \to \infty$ (C27);
+- Control of the SUSY extension at the quantum level (C28).
 
-### 1.4 Оценка вложения
+### 1.4 Embedding Assessment
 
-| Аспект | Статус | Комментарий |
-|--------|--------|-------------|
-| $G_2$-симметрия совпадает | **[Т]** | Тождественная группа: $\mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ |
-| $N=1$ SUSY | **[Т]** | Один ковариантно постоянный спинор $\eta_0 = 1_{\mathbb{O}}$ |
-| SM из сингулярностей $\leftrightarrow$ SM из $G_2$ | **[Т]** | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ — идентичный механизм |
-| Модулярное пространство 21D | **[С при C27]** | Требует непрерывный предел $a \to 0$ |
-| Полное соответствие $Z_{\text{UHM}} = Z_M$ | **[С при C27, C28]** | Требует оба условия |
+| Aspect | Status | Comment |
+|--------|--------|---------|
+| $G_2$-symmetry coincides | **[Т]** | Identical group: $\mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ |
+| $N=1$ SUSY | **[Т]** | One covariantly constant spinor $\eta_0 = 1_{\mathbb{O}}$ |
+| SM from singularities $\leftrightarrow$ SM from $G_2$ | **[Т]** | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ — identical mechanism |
+| 21D modular space | **[С при C27]** | Requires continuous limit $a \to 0$ |
+| Full correspondence $Z_{\text{UHM}} = Z_M$ | **[С при C27, C28]** | Requires both conditions |
 
 ---
 
-## 2. Петлевая квантовая гравитация {#пкг}
+## 2. Loop Quantum Gravity {#пкг}
 
-### 2.1 Математический контекст
+### 2.1 Mathematical Context
 
-Петлевая квантовая гравитация (ПКГ/LQG) основана на:
-- **Спиновые сети** (Penrose, 1971; Rovelli–Smolin, 1995): графы с рёбрами, помеченными представлениями $SU(2)$, и вершинами — интертвайнерами.
-- **Спиновые пены** (Baez, 1998; Perez, 2013): 2-комплексы как «эволюция» спиновых сетей, определяющие амплитуды перехода.
-- **Ключевая алгебра:** $SU(2)$ — калибровочная группа в формализме Аштекара.
+Loop quantum gravity (LQG) is based on:
+- **Spin networks** (Penrose, 1971; Rovelli–Smolin, 1995): graphs with edges labeled by $SU(2)$ representations and vertices labeled by intertwiners.
+- **Spin foams** (Baez, 1998; Perez, 2013): 2-complexes as the «evolution» of spin networks, defining transition amplitudes.
+- **Key algebra:** $SU(2)$ — gauge group in the Ashtekar formalism.
 
-Связь $SU(2) \subset G_2$: цепочка вложений
+Connection $SU(2) \subset G_2$: the chain of embeddings
 
 $$
 SU(2) \subset SU(3) \subset G_2
 $$
 
-где $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ (T-42e [Т]) и $SU(2) \subset SU(3)$ — стандартное вложение.
+where $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ (T-42e [Т]) and $SU(2) \subset SU(3)$ is the standard embedding.
 
-### 2.2 Конструкция вложения {#lqg-embedding}
+### 2.2 Embedding Construction {#lqg-embedding}
 
-#### T-171: Функтор вложения ПКГ [С при C29] {#t-171}
+#### T-171: LQG Embedding Functor [С при C29] {#t-171}
 
-:::tip Теорема T-171
-При условии:
+:::tip Theorem T-171
+Under the condition:
 
-**(C29)** (Пространственный предел): предел $M \to \infty$ композитной системы голономов с конечнодействующей Gap-связью порождает спиновую сеть на графе $\mathcal{G}_M$ (граф смежности голономов);
+**(C29)** (Spatial limit): the limit $M \to \infty$ of a composite system of holons with finite-range Gap coupling generates a spin network on the graph $\mathcal{G}_M$ (the adjacency graph of holons);
 
-существует функтор
+there exists a functor
 
 $$
 \mathcal{F}_{\text{LQG}}: \mathbf{SpinNet}_{SU(2)} \to \mathbf{Hol}_{\text{comp}}
 $$
 
-со следующими свойствами:
+with the following properties:
 
-**(a)** На объектах: спиновая сеть $(\mathcal{G}, j_e, i_v)$ (граф $\mathcal{G}$, спины $j_e$ на рёбрах, интертвайнеры $i_v$ на вершинах) отображается в композитную систему голономов:
+**(a)** On objects: the spin network $(\mathcal{G}, j_e, i_v)$ (graph $\mathcal{G}$, spins $j_e$ on edges, intertwiners $i_v$ on vertices) maps to a composite system of holons:
 
 $$
 (\mathcal{G}, j_e, i_v) \mapsto \bigotimes_{v \in V(\mathcal{G})} \Gamma_v
 $$
 
-где каждый голоном $\Gamma_v \in \mathcal{D}(\mathbb{C}^7)$ ассоциирован вершине $v$, а Gap-когерентности $\gamma_{ij}^{(v,w)}$ между соседними голономами $(v,w)$ кодируют спин ребра:
+where each holon $\Gamma_v \in \mathcal{D}(\mathbb{C}^7)$ is associated with vertex $v$, and the Gap-coherences $\gamma_{ij}^{(v,w)}$ between adjacent holons $(v,w)$ encode the edge spin:
 
 $$
 j_e = \frac{1}{2} \left\lfloor 7 \cdot |\gamma_{\{A,S,D\}}^{(v,w)}|^2 \right\rfloor
 $$
 
-**(b)** Ограничение $G_2 \to SU(3) \to SU(2)$: выбор O-направления (Пейдж–Вуттерс, A5) нарушает $G_2 \to SU(3)$ (T-42e [Т]). Дальнейшее ограничение на $\{A,S,D\}$-сектор (пространственные степени свободы) даёт $SU(2) \subset SU(3)$:
+**(b)** Restriction $G_2 \to SU(3) \to SU(2)$: the choice of O-direction (Page–Wootters, A5) breaks $G_2 \to SU(3)$ (T-42e [Т]). Further restriction to the $\{A,S,D\}$-sector (spatial degrees of freedom) gives $SU(2) \subset SU(3)$:
 
 $$
 \mathbf{3}_{SU(3)} \to \mathbf{2}_{SU(2)} \oplus \mathbf{1}
 $$
 
-Интертвайнеры $i_v$ восстанавливаются из $G_2$-инвариантов внутренней алгебры.
+Intertwiners $i_v$ are recovered from the $G_2$-invariants of the internal algebra.
 
-**(c)** Спектр площади: оператор площади в ПКГ имеет дискретный спектр $A = 8\pi l_P^2 \gamma \sum_e \sqrt{j_e(j_e+1)}$. В УГМ дискретность следует из конечномерности $\mathcal{D}(\mathbb{C}^7)$ (спектр $D_{\text{int}}$ дискретен, T-53 [Т]).
+**(c)** Area spectrum: the area operator in LQG has a discrete spectrum $A = 8\pi l_P^2 \gamma \sum_e \sqrt{j_e(j_e+1)}$. In UHM, discreteness follows from the finite-dimensionality of $\mathcal{D}(\mathbb{C}^7)$ (the spectrum of $D_{\text{int}}$ is discrete, T-53 [Т]).
 :::
 
-**Набросок доказательства.**
+**Proof sketch.**
 
-**Шаг 1 (Граф из когерентностей).** Для $M$ голономов межголономная когерентность определяет граф $\mathcal{G}_M$: вершины — голономы, ребро $(v,w)$ существует $\Leftrightarrow$ $\|\Gamma_{vw}^{\text{cross}}\|_F > \epsilon$ (Gap-связь). Это прямой аналог графа спиновой сети.
+**Step 1 (Graph from coherences).** For $M$ holons, the inter-holon coherence defines the graph $\mathcal{G}_M$: vertices are holons, edge $(v,w)$ exists $\Leftrightarrow$ $\|\Gamma_{vw}^{\text{cross}}\|_F > \epsilon$ (Gap coupling). This is a direct analogue of the spin network graph.
 
-**Шаг 2 (Спин из сектора $\{A,S,D\}$).** Сектор $\{A,S,D\} \cong \mathbf{3}_{SU(3)}$ (T-53 [Т]). Ограничение на $SU(2) \subset SU(3)$: $\mathbf{3} \to \mathbf{2} \oplus \mathbf{1}$. Межголономная когерентность в $\{A,S,D\}$-секторе определяет элемент $SU(2)$-представления, т.е. спин $j$ ребра.
+**Step 2 (Spin from the $\{A,S,D\}$-sector).** The sector $\{A,S,D\} \cong \mathbf{3}_{SU(3)}$ (T-53 [Т]). Restriction to $SU(2) \subset SU(3)$: $\mathbf{3} \to \mathbf{2} \oplus \mathbf{1}$. The inter-holon coherence in the $\{A,S,D\}$-sector determines an element of the $SU(2)$-representation, i.e., the spin $j$ of the edge.
 
-**Шаг 3 (Интертвайнеры).** В каждой вершине $v$ свёртка входящих/исходящих $SU(2)$-представлений — стандартная конструкция интертвайнера. В УГМ это — сечение когерентной матрицы $\Gamma_v$ в $\{A,S,D\}$-секторе.
+**Step 3 (Intertwiners).** At each vertex $v$, the contraction of incoming/outgoing $SU(2)$-representations is the standard intertwiner construction. In UHM this is a section of the coherence matrix $\Gamma_v$ in the $\{A,S,D\}$-sector.
 
-**Шаг 4 (Динамика).** Спиновая пена = история спиновых сетей = 2-комплекс. В УГМ эволюция $\mathcal{L}_\Omega$ композитной системы = последовательность состояний $\{\Gamma_v(\tau)\}_{v,\tau}$, порождающая 2-комплекс (граф $\times$ время).
+**Step 4 (Dynamics).** Spin foam = history of spin networks = 2-complex. In UHM the evolution $\mathcal{L}_\Omega$ of the composite system = a sequence of states $\{\Gamma_v(\tau)\}_{v,\tau}$ generating a 2-complex (graph $\times$ time).
 
-### 2.3 Фано-амплитуды спиновых пен {#fano-spin-foam}
+### 2.3 Fano Spin Foam Amplitudes {#fano-spin-foam}
 
-Амплитуда вершины в модели EPRL/FK определяется 15$j$-символом. В УГМ аналогичная конструкция использует Фано-плоскость:
+The vertex amplitude in the EPRL/FK model is defined by the 15$j$-symbol. In UHM the analogous construction uses the Fano plane:
 
-**Определение (Фано-амплитуда).** Для вершины $v$ с 7 смежными рёбрами (Фано-конфигурация):
+**Definition (Fano amplitude).** For a vertex $v$ with 7 adjacent edges (Fano configuration):
 
 $$
 A_{\text{Fano}}(v) = \prod_{p=1}^{7} \left( \sum_{m} \begin{pmatrix} j_{i_p} & j_{j_p} & j_{k_p} \\ m_{i_p} & m_{j_p} & m_{k_p} \end{pmatrix} \right) \cdot W_7[\{j_e\}]
 $$
 
-где $(i_p, j_p, k_p)$ — Фано-линия $p$, 3$j$-символы — стандартные, а $W_7$ — весовой фактор из $G_2$-теории представлений.
+where $(i_p, j_p, k_p)$ is Fano line $p$, the 3$j$-symbols are standard, and $W_7$ is a weight factor from $G_2$ representation theory.
 
-**Статус:** [Г]. Требуется: (a) доказать, что $A_{\text{Fano}}$ удовлетворяет аксиомам амплитуды спиновой пены; (b) показать сходимость к классической геометрии.
+**Status:** [Г]. Required: (a) prove that $A_{\text{Fano}}$ satisfies the axioms of a spin foam amplitude; (b) show convergence to classical geometry.
 
-### 2.4 Оценка вложения
+### 2.4 Embedding Assessment
 
-| Аспект | Статус | Комментарий |
-|--------|--------|-------------|
-| $SU(2) \subset SU(3) \subset G_2$ | **[Т]** | Стандартная теория представлений |
-| Граф из когерентностей | **[Т]** | Прямая конструкция |
-| Спин из $\{A,S,D\}$-сектора | **[Т]** | Секторная декомпозиция (T-53 [Т]) |
-| Полный функтор $\mathcal{F}_{\text{LQG}}$ | **[С при C29]** | Требует контроль предела $M \to \infty$ |
-| Фано-амплитуды | **[Г]** | Конструкция предложена, строгое доказательство отсутствует |
+| Aspect | Status | Comment |
+|--------|--------|---------|
+| $SU(2) \subset SU(3) \subset G_2$ | **[Т]** | Standard representation theory |
+| Graph from coherences | **[Т]** | Direct construction |
+| Spin from $\{A,S,D\}$-sector | **[Т]** | Sector decomposition (T-53 [Т]) |
+| Full functor $\mathcal{F}_{\text{LQG}}$ | **[С при C29]** | Requires control of the limit $M \to \infty$ |
+| Fano amplitudes | **[Г]** | Construction proposed, rigorous proof absent |
 
 ---
 
-## 3. Каузальные множества {#каузальные-множества}
+## 3. Causal Sets {#каузальные-множества}
 
-### 3.1 Математический контекст
+### 3.1 Mathematical Context
 
-Теория каузальных множеств (Bombelli–Lee–Meyer–Sorkin, 1987) постулирует:
-- Дискретное множество событий $(C, \preceq)$ с частичным порядком;
-- Каузальная структура фундаментальна; метрика и топология — производные;
-- Число элементов каузального множества ↔ объём ($V \sim N$ — гипотеза Hauptvermutung);
-- Д'Аламбертиан на каузальном множестве → кривизна в непрерывном пределе.
+The theory of causal sets (Bombelli–Lee–Meyer–Sorkin, 1987) postulates:
+- A discrete set of events $(C, \preceq)$ with a partial order;
+- Causal structure is fundamental; metric and topology are derived;
+- The number of elements of a causal set ↔ volume ($V \sim N$ — the Hauptvermutung);
+- The d'Alembertian on a causal set → curvature in the continuum limit.
 
-### 3.2 Конструкция вложения {#causal-embedding}
+### 3.2 Embedding Construction {#causal-embedding}
 
-#### T-172: Вложение каузальных множеств [С при C30] {#t-172}
+#### T-172: Causal Sets Embedding [С при C30] {#t-172}
 
-:::tip Теорема T-172
-При условии:
+:::tip Theorem T-172
+Under the condition:
 
-**(C30)** (Каузальная полнота): для любого конечного каузального множества $(C, \preceq)$, верно вкладывающегося (faithfully) в $M^4$ (T-120 [Т]), существует конфигурация $M = |C|$ голономов с Gap-связью, воспроизводящая каузальный порядок;
+**(C30)** (Causal completeness): for any finite causal set $(C, \preceq)$ that faithfully embeds into $M^4$ (T-120 [Т]), there exists a configuration of $M = |C|$ holons with Gap coupling reproducing the causal order;
 
-каждое конечное каузальное множество $(C, \preceq)$ вкладывается в ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ через нерв:
+every finite causal set $(C, \preceq)$ embeds into the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ via the nerve:
 
 $$
 \mathcal{F}_{\text{CS}}: \mathbf{CausalSet}_{\text{fin}} \to \mathbf{Sh}_\infty(\mathcal{C})
 $$
 
-**(a)** На объектах: $(C, \preceq) \mapsto N_\bullet(C)$ — нерв категории $(C, \preceq)$ (рассматриваемой как категория), который является симплициальным множеством и определяет объект в $\mathbf{Sh}_\infty(\mathcal{C})$.
+**(a)** On objects: $(C, \preceq) \mapsto N_\bullet(C)$ — the nerve of the category $(C, \preceq)$ (viewed as a category), which is a simplicial set and defines an object in $\mathbf{Sh}_\infty(\mathcal{C})$.
 
-**(b)** Каузальный порядок из $\mathbb{Z}_7$-часов: эмерджентное время $\tau \in \mathbb{Z}_7$ (A5, Пейдж–Вуттерс) [Т] определяет для каждого голонома «часовую позицию» $\tau_v$. Каузальный порядок:
+**(b)** Causal order from $\mathbb{Z}_7$-clocks: emergent time $\tau \in \mathbb{Z}_7$ (A5, Page–Wootters) [Т] defines a «clock position» $\tau_v$ for each holon. Causal order:
 
 $$
 v \preceq w \quad \Leftrightarrow \quad \tau_v \leq \tau_w \;\land\; d_{\mathcal{G}}(v,w) \leq c \cdot |\tau_w - \tau_v|
 $$
 
-где $d_{\mathcal{G}}$ — расстояние Конна (T-119 [Т]) и $c$ — максимальная скорость связи (конечнодействующая Gap-связь).
+where $d_{\mathcal{G}}$ is the Connes distance (T-119 [Т]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
 
-**(c)** Дискретность: временны́е часы $\mathbb{Z}_{7^M}$ и конечное число голономов $M$ обеспечивают дискретность каузального множества. В непрерывном пределе (T-118, T-119, T-120 [Т]) восстанавливается лоренцево многообразие $M^4$.
+**(c)** Discreteness: the temporal clocks $\mathbb{Z}_{7^M}$ and the finite number of holons $M$ ensure the discreteness of the causal set. In the continuum limit (T-118, T-119, T-120 [Т]) the Lorentzian manifold $M^4$ is recovered.
 :::
 
-**Набросок доказательства.**
+**Proof sketch.**
 
-**Шаг 1 (Частичный порядок из Пейдж–Вуттерс).** Каждый голоном имеет эмерджентные часы $\tau_v \in \mathbb{Z}_{7^M}$ (T-38b [Т]). Это задаёт каноническое временно́е упорядочение.
+**Step 1 (Partial order from Page–Wootters).** Each holon has emergent clocks $\tau_v \in \mathbb{Z}_{7^M}$ (T-38b [Т]). This defines a canonical temporal ordering.
 
-**Шаг 2 (Пространственная структура).** Конечнодействующая Gap-связь определяет «световой конус»: $v$ может повлиять на $w$ $\Leftrightarrow$ $d(v,w) \leq c \cdot \Delta\tau$. Это — стандартная каузальная структура.
+**Step 2 (Spatial structure).** The finite-range Gap coupling defines a «light cone»: $v$ can influence $w$ $\Leftrightarrow$ $d(v,w) \leq c \cdot \Delta\tau$. This is the standard causal structure.
 
-**Шаг 3 (Нерв как объект ∞-топоса).** Нерв $N_\bullet(C, \preceq)$ — каноническое вложение частично упорядоченного множества в ∞-категорию. Поскольку $\mathbf{Sh}_\infty(\mathcal{C})$ — ∞-топос (A1), $N_\bullet(C)$ определяет объект в нём (как ∞-пучок на $\mathcal{C}$ с бюресовой топологией).
+**Step 3 (Nerve as an object of the ∞-topos).** The nerve $N_\bullet(C, \preceq)$ is the canonical embedding of a partially ordered set into an ∞-category. Since $\mathbf{Sh}_\infty(\mathcal{C})$ is an ∞-topos (A1), $N_\bullet(C)$ defines an object in it (as an ∞-sheaf on $\mathcal{C}$ with Bures topology).
 
-**Шаг 4 (Восстановление метрики).** Объёмно-элементное соответствие каузальных множеств ($V \sim N$) ↔ термодинамический предел УГМ ($M \to \infty$, T-117 [Т]).
+**Step 4 (Metric recovery).** The volume-element correspondence of causal sets ($V \sim N$) ↔ the thermodynamic limit of UHM ($M \to \infty$, T-117 [Т]).
 
-### 3.3 Оценка вложения
+### 3.3 Embedding Assessment
 
-| Аспект | Статус | Комментарий |
-|--------|--------|-------------|
-| Дискретная структура времени | **[Т]** | $\mathbb{Z}_{7^M}$ — дискретные часы (T-38b [Т]) |
-| Каузальный порядок | **[Т]** | Конечнодействующая Gap-связь + эмерджентное время |
-| Непрерывный предел → $M^4$ | **[Т]** | T-118 + T-119 + T-120 [Т] |
-| Полный функтор | **[С при C30]** | Требует доказать каузальную полноту |
-| Вложение в ∞-топос | **[Т]** | Нерв — стандартная конструкция |
+| Aspect | Status | Comment |
+|--------|--------|---------|
+| Discrete time structure | **[Т]** | $\mathbb{Z}_{7^M}$ — discrete clocks (T-38b [Т]) |
+| Causal order | **[Т]** | Finite-range Gap coupling + emergent time |
+| Continuum limit → $M^4$ | **[Т]** | T-118 + T-119 + T-120 [Т] |
+| Full functor | **[С при C30]** | Requires proof of causal completeness |
+| Embedding into ∞-topos | **[Т]** | Nerve — standard construction |
 
 ---
 
-## 4. Универсальное свойство ∞-топоса УГМ {#универсальное-свойство}
+## 4. Universal Property of the UHM ∞-Topos {#универсальное-свойство}
 
-### 4.1 Математический контекст
+### 4.1 Mathematical Context
 
-Для утверждения статуса Мета-ToE необходимо категорно-теоретическое обоснование: ∞-топос $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ должен обладать **универсальным свойством** в подходящей категории физических теорий.
+To assert the Meta-ToE status, a category-theoretic justification is required: the ∞-topos $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}})$ must possess a **universal property** in an appropriate category of physical theories.
 
-Ключевые работы:
-- **Schreiber (2013, 1310.7930):** Дифференциальная когомология в когезивном ∞-топосе. Калибровочные поля, ТКП, формализм BV-BRST — всё в рамках когезивных ∞-топосов.
-- **Baez (1995, q-alg/9503002):** Высшая алгебра и топологическая КТП. Расширенные ТКП как функторы из nCob.
-- **Lurie (2009):** Классификация расширенных ТКП: полностью дуализируемые объекты.
+Key references:
+- **Schreiber (2013, 1310.7930):** Differential cohomology in a cohesive ∞-topos. Gauge fields, QFT, BV-BRST formalism — all within cohesive ∞-toposes.
+- **Baez (1995, q-alg/9503002):** Higher algebra and topological QFT. Extended TQFTs as functors from nCob.
+- **Lurie (2009):** Classification of extended TQFTs: fully dualizable objects.
 
-### 4.2 Категория физических теорий {#категория-phys}
+### 4.2 Category of Physical Theories {#категория-phys}
 
-**Определение (Категория $\mathbf{PhysTheory}$).** Объекты — тройки $(E, \mathcal{A}, D)$:
-- $E$ — ∞-топос (пространство состояний);
-- $\mathcal{A}$ — алгебра наблюдаемых (C*-алгебра или её ∞-категорная версия);
-- $D$ — динамика (автоморфизм или поток на $\mathcal{A}$).
+**Definition (Category $\mathbf{PhysTheory}$).** Objects are triples $(E, \mathcal{A}, D)$:
+- $E$ — ∞-topos (state space);
+- $\mathcal{A}$ — observable algebra (C*-algebra or its ∞-categorical version);
+- $D$ — dynamics (automorphism or flow on $\mathcal{A}$).
 
-Морфизмы — тройки $(f^*, \alpha, \beta)$:
-- $f^*: E_1 \to E_2$ — геометрический морфизм ∞-топосов;
-- $\alpha: \mathcal{A}_1 \to f^*\mathcal{A}_2$ — гомоморфизм алгебр;
-- $\beta: D_1 \to f^* D_2 \circ \alpha$ — совместимость с динамикой.
+Morphisms are triples $(f^*, \alpha, \beta)$:
+- $f^*: E_1 \to E_2$ — geometric morphism of ∞-toposes;
+- $\alpha: \mathcal{A}_1 \to f^*\mathcal{A}_2$ — algebra homomorphism;
+- $\beta: D_1 \to f^* D_2 \circ \alpha$ — compatibility with dynamics.
 
-### 4.3 Теорема единственности {#теорема-единственности-мета}
+### 4.3 Uniqueness Theorem {#теорема-единственности-мета}
 
-#### T-173: Ригидность примитива УГМ [Т] {#t-173}
+#### T-173: Rigidity of the UHM Primitive [Т] {#t-173}
 
-:::tip Теорема T-173
-Структурированный примитив $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$ единственен (с точностью до эквивалентности ∞-топосов) среди тех ∞-топосов вида $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^N), J)$, которые удовлетворяют:
+:::tip Theorem T-173
+The structured primitive $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$ is unique (up to equivalence of ∞-toposes) among those ∞-toposes of the form $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^N), J)$ that satisfy:
 
-**(i)** $J$ — индуцирована монотонной метрикой (теорема Ченцова–Петца: $J = J_{\text{Bures}}$ — единственная минимальная [Т]);
+**(i)** $J$ is induced by a monotone metric (Chentsov–Petz theorem: $J = J_{\text{Bures}}$ — the unique minimal one [Т]);
 
-**(ii)** Классификатор $\Omega$ порождает L-операторы $L_k = |k\rangle\langle k|$, дающие примитивный Лиувиллиан (T-39a [Т]);
+**(ii)** The classifier $\Omega$ generates L-operators $L_k = |k\rangle\langle k|$, yielding a primitive Liouvillian (T-39a [Т]);
 
-**(iii)** Минимальность: $N = 7$ (теорема S [Т], октонионная деривация [Т]);
+**(iii)** Minimality: $N = 7$ (Theorem S [Т], octonionic derivation [Т]);
 
-**(iv)** $G_2$-ригидность: голономное представление единственно с точностью до $G_2$ (T-42a [Т]).
+**(iv)** $G_2$-rigidity: the holonomic representation is unique up to $G_2$ (T-42a [Т]).
 
-Следовательно: $\mathfrak{T}$ единственен (с точностью до $G_2$, $\omega_0$).
+Therefore: $\mathfrak{T}$ is unique (up to $G_2$, $\omega_0$).
 :::
 
-**Доказательство.**
+**Proof.**
 
-Каждое из условий (i)–(iv) фиксирует соответствующую структуру:
+Each of the conditions (i)–(iv) fixes the corresponding structure:
 
-**(i)** Теорема Петца (1996): класс монотонных рисмановых метрик на $\mathcal{D}(\mathcal{H})$ параметризуется операторно-монотонными функциями $f$. Метрика Бюреса — минимальная ($g_{\text{Bures}} \leq g_f$ для всех $f$). Выбор минимальной метрики каноничен и единственен [Т] ([Эмерджентная геометрия](/docs/physics/gravity/emergent-geometry)).
+**(i)** Petz's theorem (1996): the class of monotone Riemannian metrics on $\mathcal{D}(\mathcal{H})$ is parametrized by operator-monotone functions $f$. The Bures metric is minimal ($g_{\text{Bures}} \leq g_f$ for all $f$). The choice of minimal metric is canonical and unique [Т] ([Emergent Geometry](/docs/physics/gravity/emergent-geometry)).
 
-**(ii)** L-унификация определяет $L_k$ из $\Omega$ (T-16 [Т]). Примитивность $\mathcal{L}_0$ при данных $L_k$ — теорема (T-39a [Т]). Эти условия фиксируют Лиувиллиан.
+**(ii)** L-unification determines $L_k$ from $\Omega$ (T-16 [Т]). Primitivity of $\mathcal{L}_0$ for given $L_k$ is a theorem (T-39a [Т]). These conditions fix the Liouvillian.
 
-**(iii)** $N = 7$ — минимальная размерность, удовлетворяющая (AP)+(PH)+(QG)+(V) (Теорема S [Т]) и одновременно реализующая октонионную структуру P1+P2 → $\mathbb{O}$ (Трек B [Т]). Единственность $N$ фиксирует категорию $\mathcal{C}$.
+**(iii)** $N = 7$ is the minimal dimension satisfying (AP)+(PH)+(QG)+(V) (Theorem S [Т]) and simultaneously realizing the octonionic structure P1+P2 → $\mathbb{O}$ (Track B [Т]). The uniqueness of $N$ fixes the category $\mathcal{C}$.
 
-**(iv)** $G_2$-ригидность (T-42a [Т]) показывает, что представление единственно с точностью до 14-мерной $G_2$. Следовательно, два ∞-топоса, удовлетворяющие (i)–(iii), связаны $G_2$-преобразованием.
+**(iv)** $G_2$-rigidity (T-42a [Т]) shows that the representation is unique up to the 14-dimensional $G_2$. Consequently, two ∞-toposes satisfying (i)–(iii) are related by a $G_2$-transformation.
 
-Итого: $\mathfrak{T}$ определён однозначно до $G_2 \times \mathbb{R}_{>0}$ (калибровка + масштаб $\omega_0$). $\blacksquare$
+In total: $\mathfrak{T}$ is determined uniquely up to $G_2 \times \mathbb{R}_{>0}$ (gauge + scale $\omega_0$). $\blacksquare$
 
-### 4.4 Универсальное свойство: приёмное отображение {#приёмное-отображение}
+### 4.4 Universal Property: Receiving Map {#приёмное-отображение}
 
-#### T-174: Приёмное отображение [Г] {#t-174}
+#### T-174: Receiving Map [Г] {#t-174}
 
-:::tip Теорема T-174
-Для любого объекта $(E, \mathcal{A}, D)$ в $\mathbf{PhysTheory}$, удовлетворяющего:
+:::tip Theorem T-174
+For any object $(E, \mathcal{A}, D)$ in $\mathbf{PhysTheory}$ satisfying:
 
-**(a)** $\mathcal{A}$ содержит C*-подалгебру, изоморфную $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$;
+**(a)** $\mathcal{A}$ contains a C*-subalgebra isomorphic to $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$;
 
-**(b)** Динамика $D$ — CPTP (полностью положительна и сохраняет след);
+**(b)** The dynamics $D$ is CPTP (completely positive and trace-preserving);
 
-**(c)** Существует выделенная подалгебра наблюдаемых размерности $\leq 7$;
+**(c)** There exists a distinguished observable subalgebra of dimension $\leq 7$;
 
-существует по существу единственный морфизм:
+there exists an essentially unique morphism:
 
 $$
 (f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathbf{Sh}_\infty(\mathcal{C}), A_{\text{int}}, \mathcal{L}_\Omega)
 $$
 
-в $\mathbf{PhysTheory}$.
+in $\mathbf{PhysTheory}$.
 :::
 
-**Набросок доказательства.**
+**Proof sketch.**
 
-**Шаг 1.** Условие (a) фиксирует секторную декомпозицию $1 \oplus 3 \oplus \bar{3}$ (T-53 [Т]).
+**Step 1.** Condition (a) fixes the sector decomposition $1 \oplus 3 \oplus \bar{3}$ (T-53 [Т]).
 
-**Шаг 2.** Условие (b) + (c): CPTP-динамика на $\leq 7$-мерном пространстве. По теореме S [Т], минимальная полная реализация — $N = 7$. Отображение $\alpha: \mathcal{A} \to A_{\text{int}}$ — факторизация через проекцию на 7D подалгебру.
+**Step 2.** Condition (b) + (c): CPTP dynamics on a $\leq 7$-dimensional space. By Theorem S [Т], the minimal complete realization is $N = 7$. The map $\alpha: \mathcal{A} \to A_{\text{int}}$ is a factorization through projection onto the 7D subalgebra.
 
-**Шаг 3.** Совместимость динамики: $\mathcal{L}_\Omega$ — единственный примитивный CPTP-Лиувиллиан при данных $L_k$ (T-39a [Т]) с $G_2$-ковариантным Фано-диссипатором. Отображение $\beta$ определяется единственно с точностью до $G_2$.
+**Step 3.** Dynamical compatibility: $\mathcal{L}_\Omega$ is the unique primitive CPTP Liouvillian for given $L_k$ (T-39a [Т]) with a $G_2$-covariant Fano dissipator. The map $\beta$ is determined uniquely up to $G_2$.
 
-**Шаг 4.** Индуцированный геометрический морфизм $f^*: E \to \mathbf{Sh}_\infty(\mathcal{C})$ следует из универсальности ∞-топоса пучков: по теореме Жирара, для любого локального отображения $\alpha$ существует единственный геометрический морфизм.
+**Step 4.** The induced geometric morphism $f^*: E \to \mathbf{Sh}_\infty(\mathcal{C})$ follows from the universality of the ∞-topos of sheaves: by Giraud's theorem, for any local map $\alpha$ there exists a unique geometric morphism.
 
-**Статус:** [Г]. Полное доказательство требует: (i) формализации $\mathbf{PhysTheory}$ как (∞,1)-категории; (ii) проверки всех условий теоремы Жирара для данного контекста; (iii) явного построения $\beta$ для конкретных физических теорий (КМ, КТП, ОТО).
+**Status:** [Г]. A full proof requires: (i) formalization of $\mathbf{PhysTheory}$ as an (∞,1)-category; (ii) verification of all conditions of Giraud's theorem in this context; (iii) explicit construction of $\beta$ for specific physical theories (QM, QFT, GR).
 
-### 4.5 Схема вложений {#схема-вложений}
+### 4.5 Embedding Diagram {#схема-вложений}
 
 ```
                     Sh_∞(D(C⁷), J_Bures)
@@ -366,62 +366,62 @@ $$
               F_M   │    │ F_CS       │ F_LQG
             [С]     │    │ [С]        │ [С]
                     ▼    ▼            ▼
-              M-теория  CausalSet   SpinNet
-              на G₂     ∞-топос     SU(2)⊂G₂
+              M-theory  CausalSet   SpinNet
+              on G₂     ∞-topos     SU(2)⊂G₂
                     │                 │
-                    │    G₂-голономия │ SU(2)⊂SU(3)⊂G₂
+                    │    G₂-holonomy  │ SU(2)⊂SU(3)⊂G₂
                     │                 │
                     ▼                 ▼
-              11D = 4D + 7D      спин = {A,S,D}
+              11D = 4D + 7D      spin = {A,S,D}
               [Т: T-120+T-53]    [Т: T-53]
 ```
 
 ---
 
-## 5. Сводная таблица {#сводная-таблица}
+## 5. Summary Table {#сводная-таблица}
 
-| Теория | Функтор | Ключевой механизм | Статус | Условия |
-|--------|---------|-------------------|--------|---------|
-| **M-теория** | $\mathcal{F}_M: \mathbf{Hol}_{\text{comp}} \to \mathbf{G_2\text{-}Mfld}$ | $G_2 = \mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ | **[С при C27, C28]** | Непрерывный предел, SUSY-расширение |
-| **ПКГ (LQG)** | $\mathcal{F}_{\text{LQG}}: \mathbf{SpinNet} \to \mathbf{Hol}_{\text{comp}}$ | $SU(2) \subset SU(3) \subset G_2$, спин из $\{A,S,D\}$ | **[С при C29]** | Пространственный предел |
-| **Каузальные множества** | $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet} \to \mathbf{Sh}_\infty(\mathcal{C})$ | $\mathbb{Z}_{7^M}$-часы, конечная Gap-связь | **[С при C30]** | Каузальная полнота |
-| **Универсальное свойство** | Приёмное отображение в $\mathbf{PhysTheory}$ | $G_2$-ригидность + минимальность 7 | **[Г]** | Формализация $\mathbf{PhysTheory}$ |
+| Theory | Functor | Key mechanism | Status | Conditions |
+|--------|---------|---------------|--------|------------|
+| **M-theory** | $\mathcal{F}_M: \mathbf{Hol}_{\text{comp}} \to \mathbf{G_2\text{-}Mfld}$ | $G_2 = \mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ | **[С при C27, C28]** | Continuous limit, SUSY extension |
+| **LQG** | $\mathcal{F}_{\text{LQG}}: \mathbf{SpinNet} \to \mathbf{Hol}_{\text{comp}}$ | $SU(2) \subset SU(3) \subset G_2$, spin from $\{A,S,D\}$ | **[С при C29]** | Spatial limit |
+| **Causal sets** | $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet} \to \mathbf{Sh}_\infty(\mathcal{C})$ | $\mathbb{Z}_{7^M}$-clocks, finite-range Gap coupling | **[С при C30]** | Causal completeness |
+| **Universal property** | Receiving map in $\mathbf{PhysTheory}$ | $G_2$-rigidity + minimality 7 | **[Г]** | Formalization of $\mathbf{PhysTheory}$ |
 
-### 5.1 Честная оценка
+### 5.1 Honest Assessment
 
-Все три вложения (Tasks 1–3) имеют статус **[С]** — условные теоремы. Условия C27–C30 — содержательные математические утверждения, а не тривиальности. Универсальное свойство (Task 4) — **[Г]**: формулировка предложена, полное доказательство требует существенной дополнительной работы.
+All three embeddings (Tasks 1–3) have status **[С]** — conditional theorems. Conditions C27–C30 are substantive mathematical statements, not trivialities. The universal property (Task 4) is **[Г]**: the formulation is proposed, but a full proof requires substantial additional work.
 
-Что **доказано безусловно [Т]**:
-1. $G_2$-симметрия тождественна между УГМ и M-теорией на $G_2$-многообразиях;
-2. Цепочка вложений $SU(2) \subset SU(3) \subset G_2$ связывает ПКГ с УГМ алгебраически;
-3. Дискретная структура времени ($\mathbb{Z}_{7^M}$) + непрерывный предел ($M^4$) охватывает каузальные множества как промежуточный этап;
-4. Ригидность примитива (T-173) показывает единственность УГМ-конструкции.
+What is **proven unconditionally [Т]**:
+1. The $G_2$-symmetry is identical between UHM and M-theory on $G_2$-manifolds;
+2. The chain of embeddings $SU(2) \subset SU(3) \subset G_2$ connects LQG with UHM algebraically;
+3. The discrete time structure ($\mathbb{Z}_{7^M}$) + continuum limit ($M^4$) encompasses causal sets as an intermediate stage;
+4. Primitive rigidity (T-173) shows the uniqueness of the UHM construction.
 
-Что **не доказано**:
-1. Полная эквивалентность $Z_{\text{UHM}} = Z_M$ на квантовом уровне;
-2. Конкретная форма Фано-амплитуд спиновых пен;
-3. Универсальное свойство в строгом категорном смысле.
-
----
-
-## 6. Регистрация результатов {#регистрация}
-
-| Теорема | Формулировка | Статус | Условия |
-|---------|-------------|--------|---------|
-| **T-170** | Восстановление M-теоретического предела | [С при C27, C28] | Непрерывный предел Gap, SUSY-расширение |
-| **T-171** | Функтор вложения ПКГ | [С при C29] | Пространственный предел |
-| **T-172** | Вложение каузальных множеств | [С при C30] | Каузальная полнота |
-| **T-173** | Ригидность примитива УГМ | [Т] | — |
-| **T-174** | Приёмное отображение в $\mathbf{PhysTheory}$ | [Г] | Формализация категории |
-| **C27** | Непрерывный предел Gap | [П] | — |
-| **C28** | Суперсимметрическое расширение | [П] | — |
-| **C29** | Пространственный предел | [П] | — |
-| **C30** | Каузальная полнота | [П] | — |
+What is **not proven**:
+1. Full equivalence $Z_{\text{UHM}} = Z_M$ at the quantum level;
+2. The specific form of Fano spin foam amplitudes;
+3. The universal property in the strict categorical sense.
 
 ---
 
-## Связи
+## 6. Results Registration {#регистрация}
 
-- **Опирается на:** [Спектральная тройка (T-53)](/docs/proofs/physics/physics-correspondence), [Эмерджентное $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [$G_2$-ригидность (T-42a)](/docs/proofs/categorical/uniqueness-theorem), [SUSY из $G_2$](/docs/physics/particle-physics/susy), [Gap-функциональный интеграл](/docs/physics/gravity/quantum-gravity), [Секторная декомпозиция](/docs/physics/gauge-symmetry/standard-model)
-- **Обосновывает:** Мета-ToE статус УГМ
-- **Статус-реестр:** T-170 — T-174, C27 — C30 ([Реестр](/docs/reference/status-registry))
+| Theorem | Statement | Status | Conditions |
+|---------|-----------|--------|------------|
+| **T-170** | Recovery of the M-theoretic limit | [С при C27, C28] | Continuous Gap limit, SUSY extension |
+| **T-171** | LQG embedding functor | [С при C29] | Spatial limit |
+| **T-172** | Causal sets embedding | [С при C30] | Causal completeness |
+| **T-173** | Rigidity of the UHM primitive | [Т] | — |
+| **T-174** | Receiving map in $\mathbf{PhysTheory}$ | [Г] | Formalization of the category |
+| **C27** | Continuous Gap limit | [П] | — |
+| **C28** | Supersymmetric extension | [П] | — |
+| **C29** | Spatial limit | [П] | — |
+| **C30** | Causal completeness | [П] | — |
+
+---
+
+## Links
+
+- **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [$G_2$-rigidity (T-42a)](/docs/proofs/categorical/uniqueness-theorem), [SUSY from $G_2$](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Sector decomposition](/docs/physics/gauge-symmetry/standard-model)
+- **Justifies:** Meta-ToE status of UHM
+- **Status registry:** T-170 — T-174, C27 — C30 ([Registry](/docs/reference/status-registry))

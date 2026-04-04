@@ -55,7 +55,7 @@ Every second your brain processes millions of signals. Neurons die and are born.
 
 The naive answer — "because the brain is large and complex" — explains nothing. Large systems are *more* susceptible to decoherence, not less. The naive quantum answer — "decoherence destroys coherence in femtoseconds" — also fails, because consciousness *obviously exists*.
 
-The Unitary Holonomic Model offers an answer that is simultaneously mathematically precise and strikingly elegant: holon coherence is protected by **five independent mechanisms** acting at different levels of the mathematical structure. Each mechanism is a separate "shield", and complete destruction of coherence requires *simultaneous* overcoming of all five. The probability of such an event is exponentially small.
+The Unitary Holonomic Monism offers an answer that is simultaneously mathematically precise and strikingly elegant: holon coherence is protected by **five independent mechanisms** acting at different levels of the mathematical structure. Each mechanism is a separate "shield", and complete destruction of coherence requires *simultaneous* overcoming of all five. The probability of such an event is exponentially small.
 
 This is not an accident and not a fit. All five protections **follow** from the basic structure of the theory — seven-dimensionality, octonionic algebra, and self-reference. They were not "added" — they were *discovered*.
 

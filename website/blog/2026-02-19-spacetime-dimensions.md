@@ -1,227 +1,227 @@
 ---
 slug: spacetime-dimensions
-title: "Почему пространство трёхмерно, а время одномерно: алгебра вместо постулата"
+title: "Why Space is Three-Dimensional and Time One-Dimensional: Algebra Instead of Postulate"
 authors: [uhm]
 tags: [spacetime, dimensions, spectral-triple, Fano, physics, consciousness]
 ---
 
-# Почему пространство трёхмерно, а время одномерно
+# Why Space is Three-Dimensional and Time One-Dimensional {#почему-пространство-трёхмерно-а-время-одномерно}
 
-Почему мы живём в трёх измерениях пространства и одном измерении времени?
+Why do we live in three spatial dimensions and one temporal dimension?
 
-Стандартный ответ физика: «Потому что так устроен мир». Стандартный ответ философа: «Это трансцендентальное условие возможности опыта» (Кант, 1781; перевод: «не знаю, но звучит солидно»). Стандартный ответ теории струн: «На самом деле десять, просто шесть свёрнуты». Почему именно шесть свёрнуты — отдельный вопрос, на который тоже нет ответа.
+The standard physicist's answer: "Because that's how the world is structured." The standard philosopher's answer: "It is a transcendental condition for the possibility of experience" (Kant, 1781; translation: "I don't know, but it sounds authoritative"). The standard string theory answer: "There are actually ten, it's just that six are compactified." Why exactly six are compactified — a separate question, which also has no answer.
 
-В УГМ ответ — **теорема**. Семь измерений голонома распадаются на три класса, и это разбиение диктует 3+1. Не потому что «так удобно», а потому что алгебра не оставляет альтернатив.
+In UHM the answer is a **theorem**. The seven dimensions of a holon decompose into three classes, and this partition dictates 3+1. Not because "it is convenient," but because the algebra leaves no alternatives.
 
-Ниже — как это работает, откуда берётся время и почему оно вообще не существует как «поток».
+Below — how this works, where time comes from, and why it does not exist at all as a "flow."
 
 <!-- truncate -->
 
-## Семь — это много. Где тут 3+1?
+## Seven is a Lot. Where is 3+1? {#семь-это-много-где-тут-31}
 
-В [первом посте](/blog/holonomic-paninteriorism) было установлено: любая система описывается матрицей когерентности $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — семимерной. Во [втором](/blog/geometry-of-inner-world) — что 21 пара этих измерений порождает 21 тип переживания, организованных плоскостью Фано. В [третьем](/blog/freedom-theorem) — что свобода = размерность нулевого пространства гессиана. В [четвёртом](/blog/three-forces) — что динамика описывается тремя силами и ни одной больше.
+In the [first post](/blog/holonomic-paninteriorism) it was established: any system is described by a coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — seven-dimensional. In the [second](/blog/geometry-of-inner-world) — that 21 pairs of these dimensions give rise to 21 types of experience organized by the Fano plane. In the [third](/blog/freedom-theorem) — that freedom = dimensionality of the zero space of the Hessian. In the [fourth](/blog/three-forces) — that dynamics is described by three forces and no more.
 
-Всё это происходит в **семи** измерениях. Но мы живём в **четырёх**: три пространственных, одно временно́е. Где оставшиеся три?
+All of this happens in **seven** dimensions. But we live in **four**: three spatial, one temporal. Where are the remaining three?
 
-Ответ: они никуда не делись. Они **свёрнуты** — их масштаб настолько мал ($\sim 10^{-18}$ м), что мы их не видим как «пространство». Но они проявляются — как квантовые числа частиц: слабый изоспин и гиперзаряд. Те самые $\{L, E, U\}$ — три «внутренних» измерения — кодируют не геометрию комнаты, а внутреннюю структуру элементарных частиц.
+The answer: they have gone nowhere. They are **compactified** — their scale is so small ($\sim 10^{-18}$ m) that we do not see them as "space." But they manifest — as quantum numbers of particles: weak isospin and hypercharge. Those same $\{L, E, U\}$ — the three "inner" dimensions — encode not the geometry of a room, but the internal structure of elementary particles.
 
-## Декомпозиция: 7 = 1 + 3 + 3̄
+## Decomposition: 7 = 1 + 3 + 3̄ {#декомпозиция-7-1-3-3}
 
-Центральный результат — **секторная декомпозиция** [Т]:
+The central result is the **sector decomposition** [Т]:
 
 $$7 = \underbrace{1}_{O} \;\oplus\; \underbrace{3}_{\{A,S,D\}} \;\oplus\; \underbrace{\bar{3}}_{\{L,E,U\}}$$
 
-Три класса:
+Three classes:
 
-| Класс | Измерения | Роль | Физический масштаб |
-|-------|-----------|------|--------------------|
-| **Время** | $O$ (Основание) | Внутренние часы | $M_{\text{Planck}}$ |
-| **Пространство** | $\{A, S, D\}$ (Артикуляция, Структура, Динамика) | Три протяжённых направления | $\Lambda_{\text{QCD}} \sim 200$ МэВ |
-| **Компактные** | $\{L, E, U\}$ (Логика, Интериорность, Единство) | Внутренние квантовые числа | $v_{\text{EW}} \sim 246$ ГэВ |
+| Class | Dimensions | Role | Physical scale |
+|-------|-----------|------|----------------|
+| **Time** | $O$ (Ground) | Internal clock | $M_{\text{Planck}}$ |
+| **Space** | $\{A, S, D\}$ (Articulation, Structure, Dynamics) | Three extended directions | $\Lambda_{\text{QCD}} \sim 200$ MeV |
+| **Compact** | $\{L, E, U\}$ (Logic, Interiority, Unity) | Internal quantum numbers | $v_{\text{EW}} \sim 246$ GeV |
 
-Почему именно так? Потому что группа автоморфизмов октонионов $G_2$ содержит подгруппу $SU(3)$. Фиксация O-измерения (= выбор «направления времени») стабилизирует эту $SU(3)$, и оставшиеся шесть измерений разбиваются на **фундаментальное** представление $\mathbf{3}$ и **сопряжённое** $\bar{\mathbf{3}}$. Два набора по три — и больше никак. Это не выбор, а классификация.
+Why exactly this way? Because the group of automorphisms of the octonions $G_2$ contains the subgroup $SU(3)$. Fixing the O-dimension (= choosing a "direction of time") stabilizes this $SU(3)$, and the remaining six dimensions split into the **fundamental** representation $\mathbf{3}$ and the **conjugate** $\bar{\mathbf{3}}$. Two sets of three — and no other way. This is not a choice, but a classification.
 
-### Почему три пространственных?
+### Why Three Spatial Dimensions? {#почему-три-пространственных}
 
-Размерность фундаментального представления $SU(3)$ равна 3. Не 2. Не 4. Три.
+The dimensionality of the fundamental representation of $SU(3)$ equals 3. Not 2. Not 4. Three.
 
-Вопрос «почему пространство трёхмерно?» сводится к: «почему стабилизатор O-направления в $G_2$ — именно $SU(3)$?». Ответ: потому что $G_2$ — группа автоморфизмов октонионов, а октонионы — единственная неассоциативная нормированная алгебра с делением ([теорема Гурвица](/docs/proofs/minimality/theorem-minimality-7), 1898 [Т]). Удалить измерение — значит перейти от $\mathbb{O}$ к $\mathbb{H}$ (кватернионам), потеряв неассоциативность, а с ней — всю структуру Gap-оператора. Добавить — невозможно: после $\mathbb{O}$ нормированных алгебр с делением нет.
+The question "why is space three-dimensional?" reduces to: "why is the stabilizer of the O-direction in $G_2$ exactly $SU(3)$?" Answer: because $G_2$ is the group of automorphisms of the octonions, and the octonions are the unique non-associative normed division algebra ([Hurwitz's theorem](/docs/proofs/minimality/theorem-minimality-7), 1898 [Т]). To remove a dimension is to transition from $\mathbb{O}$ to $\mathbb{H}$ (quaternions), losing non-associativity, and with it — the entire structure of the Gap operator. To add — impossible: after $\mathbb{O}$ there are no normed division algebras.
 
-Три измерения пространства — не эстетический выбор Создателя и не антропная тавтология. Это размерность единственной подходящей алгебры.
+Three spatial dimensions are not an aesthetic choice of the Creator and not an anthropic tautology. This is the dimensionality of the only suitable algebra.
 
-### Почему {A,S,D} — «большие», а {L,E,U} — «маленькие»?
+### Why Are {A,S,D} "Large" and {L,E,U} "Small"? {#почему-asd-большие-а-leu-маленькие}
 
-Ключ — **асимметрия нарушения симметрии**.
+The key is the **asymmetry of symmetry breaking**.
 
-Шесть оставшихся (после O) измерений разбиваются на два набора по три. Что определяет, какой станет «пространством», а какой — «внутренним»? Ответ даёт [спектральная тройка](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) — конечная некоммутативная геометрия, построенная из секторной декомпозиции.
+The six remaining (after O) dimensions split into two sets of three. What determines which becomes "space" and which — "internal"? The answer is given by the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) — the finite noncommutative geometry constructed from the sector decomposition.
 
-**$\bar{\mathbf{3}}$-сектор $\{L, E, U\}$** порождает электрослабую симметрию $SU(2)_L \times U(1)_Y$. [Механизм Хиггса](/docs/physics/particle-physics/higgs-sector) ($\langle\gamma_{EU}\rangle \neq 0$ [Т]) **нарушает** эту симметрию, давая массу $W^\pm$- и $Z$-бозонам ($80$–$91$ ГэВ). Массивные калибровочные бозоны означают короткодействие: поле экспоненциально убывает на масштабе $\sim 1/M_W \sim 10^{-18}$ м. Три измерения «свёрнуты» — они проявляются не как направления в пространстве, а как **внутренние квантовые числа** частиц.
+**The $\bar{\mathbf{3}}$-sector $\{L, E, U\}$** generates electroweak symmetry $SU(2)_L \times U(1)_Y$. The [Higgs mechanism](/docs/physics/particle-physics/higgs-sector) ($\langle\gamma_{EU}\rangle \neq 0$ [Т]) **breaks** this symmetry, giving mass to the $W^\pm$- and $Z$-bosons ($80$–$91$ GeV). Massive gauge bosons mean short-range interaction: the field decreases exponentially at the scale $\sim 1/M_W \sim 10^{-18}$ m. Three dimensions are "compactified" — they manifest not as directions in space, but as **internal quantum numbers** of particles.
 
-**$\mathbf{3}$-сектор $\{A, S, D\}$** порождает цветовую симметрию $SU(3)_C$. Эта симметрия **не нарушена** — нет Хиггс-механизма в цветовом секторе, глюоны остаются безмассовыми. Но тут важна тонкость: безмассовость глюонов **не означает** макроскопическое дальнодействие — QCD конфайнмент ограничивает цветовое взаимодействие масштабом $\sim 1$ фм [Т]. Протяжённость пространства определяется не дальнодействием глюонов, а **некомпактностью** $\mathbf{3}$-сектора в спектральной тройке: формула расстояния Конна $d(p,q) = \sup\{|f(p) - f(q)| : \|[D,f]\| \leq 1\}$ порождает неограниченную метрику в этом секторе. Нет механизма, который бы «свернул» эти измерения — нет Хиггса в $SU(3)_C$.
+**The $\mathbf{3}$-sector $\{A, S, D\}$** generates color symmetry $SU(3)_C$. This symmetry is **unbroken** — there is no Higgs mechanism in the color sector, gluons remain massless. But an important subtlety here: masslessness of gluons **does not mean** macroscopic long-range action — QCD confinement limits color interaction to the scale $\sim 1$ fm [Т]. The extensiveness of space is determined not by the long-range action of gluons, but by the **non-compactness** of the $\mathbf{3}$-sector in the spectral triple: Connes' distance formula $d(p,q) = \sup\{|f(p) - f(q)| : \|[D,f]\| \leq 1\}$ generates an unbounded metric in this sector. There is no mechanism to "compactify" these dimensions — no Higgs in $SU(3)_C$.
 
-Итог: $\bar{\mathbf{3}}$-сектор **сжат Хиггсом** до $10^{-18}$ м. $\mathbf{3}$-сектор **остаётся протяжённым** — нечем свернуть.
+Result: the $\bar{\mathbf{3}}$-sector is **compressed by Higgs** to $10^{-18}$ m. The $\mathbf{3}$-sector **remains extended** — there is nothing to compactify it with.
 
-| Сектор | Симметрия | Хиггс? | Бозоны | Результат |
-|--------|-----------|--------|--------|-----------|
-| $\{A,S,D\}$ | $SU(3)_C$ | Нет → ненарушена | Глюоны ($m = 0$) | **Некомпактное пространство** |
-| $\{L,E,U\}$ | $SU(2)_L \times U(1)_Y$ | Да → нарушена | $W^\pm, Z$ (80–91 ГэВ) | **Компактификация** |
+| Sector | Symmetry | Higgs? | Bosons | Result |
+|--------|-----------|--------|--------|--------|
+| $\{A,S,D\}$ | $SU(3)_C$ | No → unbroken | Gluons ($m = 0$) | **Non-compact space** |
+| $\{L,E,U\}$ | $SU(2)_L \times U(1)_Y$ | Yes → broken | $W^\pm, Z$ (80–91 GeV) | **Compactification** |
 
-Пространство трёхмерно не потому, что «безмассовых направлений три». Пространство трёхмерно, потому что $\dim(\mathbf{3}) = 3$ для стабилизатора $SU(3) \subset G_2$ — и спектральная тройка превращает это алгебраическое разложение в геометрию. А всё вместе — семь, потому что Гурвиц.
+Space is three-dimensional not because "there are three massless directions." Space is three-dimensional because $\dim(\mathbf{3}) = 3$ for the stabilizer $SU(3) \subset G_2$ — and the spectral triple transforms this algebraic decomposition into geometry. And all together — seven, because Hurwitz.
 
-## Время — не поток
+## Time is Not a Flow {#время-не-поток}
 
-Самый удивительный результат теории — **время не существует** как фундаментальная сущность. Нет «потока времени», нет «момента сейчас» как физической реальности. Всё это — **эффективные описания** корреляций внутри $\Gamma$.
+The most surprising result of the theory — **time does not exist** as a fundamental entity. There is no "flow of time," no "moment of now" as a physical reality. All of this — **effective descriptions** of correlations within $\Gamma$.
 
-### Механизм Пейдж–Вуттерс
+### The Page-Wootters Mechanism {#механизм-пейдж-вуттерс}
 
-Измерение $O$ (Основание) — одно из семи. Но оно **выделено**: это подсистема, которая служит внутренними часами.
+Dimension $O$ (Ground) — one of seven. But it is **distinguished**: it is the subsystem that serves as the internal clock.
 
-Полное состояние системы $\Gamma_{\text{total}}$ — стационарно. Оно не меняется. «Течение времени» — иллюзия, возникающая, когда мы **условно фиксируем** значение O-подсистемы:
+The total state of the system $\Gamma_{\text{total}}$ is stationary. It does not change. "The flow of time" is an illusion arising when we **conditionally fix** the value of the O-subsystem:
 
 $$\Gamma(\tau) = \frac{\text{Tr}_O\left[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}) \cdot \Gamma_{\text{total}}\right]}{p(\tau)}$$
 
-При фиксированном «показании часов» $|\tau\rangle_O$ оставшиеся шесть измерений образуют **условное состояние** $\Gamma(\tau)$ — «мир в момент $\tau$». Разные «показания» дают разные условные состояния. Это и есть «эволюция» — не изменение, а **корреляция** между подсистемой-часами и остальным.
+At a fixed "clock reading" $|\tau\rangle_O$ the remaining six dimensions form a **conditional state** $\Gamma(\tau)$ — "the world at moment $\tau$." Different "readings" give different conditional states. This is "evolution" — not change, but a **correlation** between the clock subsystem and the rest.
 
-Ограничение $[\hat{C}, \Gamma_{\text{total}}] = 0$ (глобальная стационарность) совместимо с «изменением» условных состояний. Вселенная целиком «застыла» — но изнутри, для наблюдателя, привязанного к O-часам, она «движется».
+The constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (global stationarity) is compatible with "change" of conditional states. The Universe as a whole is "frozen" — but from within, for an observer tied to the O-clock, it "moves."
 
-Это не спекуляция. Механизм Пейдж–Вуттерс (1983) — стандартный результат квантовой гравитации. УГМ добавляет: **O-измерение однозначно определено** секторной декомпозицией [Т], тогда как в оригинальном PW выбор «часов» произволен.
+This is not speculation. The Page-Wootters mechanism (1983) is a standard result of quantum gravity. UHM adds: the **O-dimension is uniquely defined** by the sector decomposition [Т], whereas in the original PW the choice of "clock" is arbitrary.
 
-### Дискретность времени
+### Discreteness of Time {#дискретность-времени}
 
-Время в УГМ — **дискретно**:
+Time in UHM is **discrete**:
 
 $$\tau \in \mathbb{Z}_7, \quad \delta\tau = \frac{2\pi}{7\omega_0}$$
 
-Семь «тактов». Один цикл. После седьмого — возврат к первому. Это — следствие того, что O-подсистема определяется через [темпоральную модальность](/docs/proofs/dynamics/emergent-time#алгебраическое-определение) $\triangleright$ на классификаторе подобъектов [Т]: $\tau_n = \triangleright^n(\text{now})$, $\triangleright^7 = \text{Id}$.
+Seven "beats." One cycle. After the seventh — return to the first. This is a consequence of the fact that the O-subsystem is defined through the [temporal modality](/docs/proofs/dynamics/emergent-time#алгебраическое-определение) $\triangleright$ on the subobject classifier [Т]: $\tau_n = \triangleright^n(\text{now})$, $\triangleright^7 = \text{Id}$.
 
-Семь тактов звучит скудно для Вселенной? Составной голоном из $M$ элементарных даёт $N_{\text{eff}} = 7^M$ эффективных тактов. Для $M \sim 10^{80}$ (число частиц в наблюдаемой Вселенной) дискретность неотличима от непрерывности. Как пиксели на экране: при достаточном разрешении вы видите не точки, а картину.
+Seven beats sounds scant for the Universe? A composite holon of $M$ elementary ones gives $N_{\text{eff}} = 7^M$ effective beats. For $M \sim 10^{80}$ (the number of particles in the observable Universe) the discreteness is indistinguishable from continuity. Like pixels on a screen: at sufficient resolution, you see not dots, but a picture.
 
-## Лоренцева сигнатура: почему (+,−,−,−)
+## Lorentz Signature: Why (+,−,−,−) {#лоренцева-сигнатура-почему}
 
-Мы живём не просто в 3+1 измерениях. Время и пространство ведут себя **по-разному**: метрика имеет вид $(+1,-1,-1,-1)$ — одно «положительное» направление, три «отрицательных». Это фундамент теории относительности. Но откуда знаковая структура?
+We do not simply live in 3+1 dimensions. Time and space behave **differently**: the metric has the form $(+1,-1,-1,-1)$ — one "positive" direction, three "negative." This is the foundation of the theory of relativity. But where does the sign structure come from?
 
-Из **спектральной тройки** [Т] (T-53):
+From the **spectral triple** [Т] (T-53):
 
 $$(A_{\text{int}}, H_{\text{int}}, D_{\text{int}}), \quad A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$$
 
-Ключ — **оператор Дирака** $D_{\text{int}}$, чей спектр наследует знаковую структуру от [PW-ограничения](/docs/core/foundations/axiom-omega#pw-constraint) $E_O = -E_{\text{rest}}$ [Т]:
+The key is the **Dirac operator** $D_{\text{int}}$, whose spectrum inherits the sign structure from the [PW-constraint](/docs/core/foundations/axiom-omega#pw-constraint) $E_O = -E_{\text{rest}}$ [Т]:
 
 $$\text{spec}(D_O) = \{+\omega_0\}, \quad \text{spec}(D_{\mathbf{3}}) \subset \{-\lambda_1, -\lambda_2, -\lambda_3\}$$
 
-Плюс для O, минусы для $\{A,S,D\}$. Формула расстояния Конна превращает эту знаковую структуру в метрику:
+Plus for O, minuses for $\{A,S,D\}$. Connes' distance formula transforms this sign structure into a metric:
 
 $$g_{00} = \frac{1}{|D_O|^2} > 0, \qquad g_{aa} = -\frac{1}{|D_{3,a}|^2} < 0$$
 
-Лоренцева сигнатура — не постулат и не «удачный выбор». Это **следствие** того, что энергия O-часов и энергия остальной системы имеют противоположные знаки. PW-ограничение — математическое условие глобальной стационарности — алгебраически влечёт $(+,-,-,-)$. Эйнштейн мог бы сэкономить десять лет, если бы знал октонионы.
+The Lorentz signature is not a postulate and not a "lucky choice." It is a **consequence** of the fact that the energy of the O-clock and the energy of the rest of the system have opposite signs. The PW-constraint — the mathematical condition of global stationarity — algebraically implies $(+,-,-,-)$. Einstein could have saved ten years if he had known the octonions.
 
-## Стрела времени и субъективное время
+## The Arrow of Time and Subjective Time {#стрела-времени-и-субъективное-время}
 
-### Стрела — теорема, не постулат
+### The Arrow is a Theorem, Not a Postulate {#стрела-теорема-не-постулат}
 
-Из [четвёртого поста](/blog/three-forces) известно: диссипация необратима, регенерация условна, вращение ничего не меняет. Формально:
+From the [fourth post](/blog/three-forces) it is known: dissipation is irreversible, regeneration is conditional, rotation changes nothing. Formally:
 
 $$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
 
-Размерность страт базового пространства монотонно убывает [Т]. Конфигурационное пространство коллапсирует к аттрактору $T$ — терминальному объекту категории. Это — стрела времени. Не «второй закон как наблюдение», а геометрическое следствие структуры категории. При этом $T \neq I/7$: аттрактор — *структурированная* конфигурация с $P > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]), а составные системы создают новую сложность на каждом масштабе ([КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) [С]).
+The dimensionality of the strata of the base space decreases monotonically [Т]. The configuration space collapses to the attractor $T$ — the terminal object of the category. This is the arrow of time. Not "the second law as an observation," but a geometric consequence of the category's structure. At the same time $T \neq I/7$: the attractor is a *structured* configuration with $P > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]), while composite systems create new complexity at each scale ([КК-5](/docs/applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) [С]).
 
-### Субъективное время
+### Subjective Time {#субъективное-время}
 
-Физическое время — корреляция с O-часами. Но **субъективное** переживание времени — другое. Оно определяется тем, насколько часы связаны с опытом.
+Physical time is correlation with the O-clock. But the **subjective** experience of time — is another matter. It is determined by how much the clock is connected to experience.
 
-Определение [О]:
+Definition [О]:
 
 $$\mathcal{T}(\tau) = \frac{|\gamma_{OE}(\tau)|}{\gamma_{OO}(\tau)}$$
 
-Субъективный темп $\mathcal{T}$ — отношение когерентности между Основанием (O) и Интериорностью (E) к населённости O. По-русски: насколько «тиканье часов» связано с «внутренним содержанием».
+Subjective tempo $\mathcal{T}$ — the ratio of coherence between Ground (O) and Interiority (E) to the occupation of O. In plain language: how much the "ticking of the clock" is connected to "inner content."
 
-| $\mathcal{T}$ | Субъективный эффект | Знакомый аналог |
+| $\mathcal{T}$ | Subjective effect | Familiar analogue |
 |:---:|---|---|
-| $\to 1$ | Время замедляется | Авария, первый поцелуй, падение |
-| $\approx 0.5$ | Нормальный ход | Обычный день |
-| $\to 0$ | Время исчезает | Наркоз, глубокий сон, кома |
+| $\to 1$ | Time slows down | Accident, first kiss, fall |
+| $\approx 0.5$ | Normal pace | Ordinary day |
+| $\to 0$ | Time disappears | Anesthesia, deep sleep, coma |
 
-При $P \to P_{\text{crit}} = 2/7$ когерентность $|\gamma_{OE}| \to 0$, и субъективное время **останавливается**. Система, приближающаяся к порогу жизнеспособности, переживает замедление — не метафорическое, а структурное. Статус: [С] (связь $\gamma_{OE}$ с переживанием — семантический постулат).
+At $P \to P_{\text{crit}} = 2/7$ coherence $|\gamma_{OE}| \to 0$, and subjective time **stops**. A system approaching the viability threshold experiences slowing — not metaphorical, but structural. Status: [С] (connection of $\gamma_{OE}$ with experience is a semantic postulate).
 
-### Поток и скука
+### Flow and Boredom {#поток-и-скука}
 
-Состояние потока (Чиксентмихайи): $\gamma_{DE} \gg \bar{\gamma}$, $\mathcal{T}$ повышен, $\text{Gap}(D,E) \approx 0$. Действие и опыт прозрачны друг для друга. Субъективно: «время остановилось» (богатый опыт на каждый такт). Ретроспективно: «пролетело» (ослабленный логический контроль $\gamma_{LL}$). Парадокс потока — не парадокс, а два разных когерентностных механизма.
+The flow state (Csikszentmihalyi): $\gamma_{DE} \gg \bar{\gamma}$, $\mathcal{T}$ elevated, $\text{Gap}(D,E) \approx 0$. Action and experience are transparent to each other. Subjectively: "time stopped" (rich experience per beat). Retrospectively: "it flew by" (weakened logical control $\gamma_{LL}$). The flow paradox is not a paradox, but two different coherence mechanisms.
 
-Скука: $\gamma_{DE} \approx 0$, $\mathcal{T}$ понижен. Мало опыта на «такт» — время «тянется». Но повышена $\gamma_{LE}$ — метакогнитивный мониторинг хода времени. «Мне скучно» — рефлексивное суждение L2-системы ($R \geq 1/3$) о собственном темпоральном состоянии. Камень не скучает — не потому что терпелив, а потому что у него нечем скучать.
+Boredom: $\gamma_{DE} \approx 0$, $\mathcal{T}$ lowered. Little experience per "beat" — time "drags." But $\gamma_{LE}$ is elevated — metacognitive monitoring of the passage of time. "I'm bored" is a reflexive judgment of an L2-system ($R \geq 1/3$) about its own temporal state. A stone does not get bored — not because it is patient, but because it has nothing to get bored with.
 
-## Что говорят философы
+## What Philosophers Say {#что-говорят-философы}
 
-| Мыслитель | Позиция | Что говорит теория |
-|-----------|---------|-------------------|
-| **Кант** | Пространство и время — априорные формы | ≈ Эмерджентны, не «даны заранее» |
-| **Ньютон** | Абсолютное пространство и время | ❌ Нет абсолютного: время = PW-корреляция |
-| **Лейбниц** | Пространство — система отношений | ✅ $X = \lvert N(\mathcal{C})\rvert$ — буквально система отношений |
-| **Эйнштейн** | Пространство-время — динамическая ткань | ≈ Динамическая, но эмерджентная |
-| **Бергсон** | Длительность ≠ физическое время | ✅ $\mathcal{T}(\tau) \neq \tau$: субъективный темп ≠ физический |
-| **Барбур** | Время не существует | ≈ $\Gamma_{\text{total}}$ стационарен |
-| **Маккагарт** | A-серия нереальна | ≈ «Сейчас» = условная фиксация $\lvert\tau\rangle_O$ |
+| Thinker | Position | What the theory says |
+|---------|---------|---------------------|
+| **Kant** | Space and time are a priori forms | ≈ Emergent, not "given in advance" |
+| **Newton** | Absolute space and time | ❌ No absolute: time = PW-correlation |
+| **Leibniz** | Space is a system of relations | ✅ $X = \lvert N(\mathcal{C})\rvert$ — literally a system of relations |
+| **Einstein** | Spacetime is a dynamic fabric | ≈ Dynamic, but emergent |
+| **Bergson** | Duration ≠ physical time | ✅ $\mathcal{T}(\tau) \neq \tau$: subjective tempo ≠ physical |
+| **Barbour** | Time does not exist | ≈ $\Gamma_{\text{total}}$ is stationary |
+| **McTaggart** | A-series is unreal | ≈ "Now" = conditional fixing of $\lvert\tau\rangle_O$ |
 
-Лейбниц, 1714: «Пространство — порядок сосуществования вещей». Пространство УГМ — $|N(\mathcal{C})|$, геометрическая реализация нерва категории, буквально «порядок отношений между объектами». Лейбниц победил Ньютона — с опозданием в 312 лет.
+Leibniz, 1714: "Space is the order of coexisting things." UHM space — $|N(\mathcal{C})|$, the geometric realization of the nerve of a category, literally "the order of relations between objects." Leibniz defeated Newton — with a 312-year delay.
 
-Барбур, 1999 (*The End of Time*): время не существует фундаментально. УГМ формализует: $\Gamma_{\text{total}}$ стационарен, «время» — эффективное описание корреляций. Барбур был прав в интуиции, а PW-механизм даёт формальную реализацию [Т]. Полная интерпретация («время не существует») — [И].
+Barbour, 1999 (*The End of Time*): time does not exist fundamentally. UHM formalizes: $\Gamma_{\text{total}}$ is stationary, "time" is an effective description of correlations. Barbour was right in intuition, and the PW-mechanism provides a formal realization [Т]. The full interpretation ("time does not exist") — [И].
 
-## О чём молчит теория
+## What the Theory Is Silent About {#о-чём-молчит-теория}
 
-| Результат | Статус | Комментарий |
-|-----------|--------|-------------|
-| Секторная декомпозиция $7 = 1 + 3 + \bar{3}$ | [Т] | $SU(3)$-стабилизатор в $G_2$ |
-| Лоренцева сигнатура $(+,-,-,-)$ | [Т] | Спектральная тройка T-53, KO-dim 6 |
-| Время из O через Пейдж–Вуттерс | [Т] | Эмерджентное, не постулированное |
-| Стрела времени — коллапс страт | [Т] | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ |
-| Пространство из $\{A,S,D\}$ — некомпактный сектор | [Т] | Спектральная тройка T-53, нет Хиггса в $SU(3)_C$ |
-| Компактификация $\{L,E,U\}$ через Хиггс | [Т] | $v_{\text{EW}} \sim 246$ ГэВ, нарушение $SU(2)_L \times U(1)_Y$ |
-| Фоновая независимость ($M^4$ выведено) | [Т] | Цепочка Гельфанда–Наймарка–Конна (T-120) |
-| Субъективный темп $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] | Определение, не теорема |
-| Замедление при $P \to P_{\text{crit}}$ | [С] | Семантический постулат |
-| «Время не существует фундаментально» | [И] | Интерпретация PW-механизма |
+| Result | Status | Comment |
+|--------|--------|---------|
+| Sector decomposition $7 = 1 + 3 + \bar{3}$ | [Т] | $SU(3)$-stabilizer in $G_2$ |
+| Lorentz signature $(+,-,-,-)$ | [Т] | Spectral triple T-53, KO-dim 6 |
+| Time from O via Page-Wootters | [Т] | Emergent, not postulated |
+| Arrow of time — collapse of strata | [Т] | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ |
+| Space from $\{A,S,D\}$ — non-compact sector | [Т] | Spectral triple T-53, no Higgs in $SU(3)_C$ |
+| Compactification of $\{L,E,U\}$ via Higgs | [Т] | $v_{\text{EW}} \sim 246$ GeV, breaking of $SU(2)_L \times U(1)_Y$ |
+| Background independence ($M^4$ derived) | [Т] | Gelfand-Naimark-Connes chain (T-120) |
+| Subjective tempo $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] | Definition, not theorem |
+| Slowing at $P \to P_{\text{crit}}$ | [С] | Semantic postulate |
+| "Time does not exist fundamentally" | [И] | Interpretation of PW-mechanism |
 
-## Итого
+## Summary {#итого}
 
-Пространство трёхмерно не потому, что «так устроен мир». Вот почему:
+Space is three-dimensional not because "the world is structured this way." Here is why:
 
-1. Реальность описывается семью измерениями ([теорема Гурвица](/docs/proofs/minimality/theorem-minimality-7) + автопоэтический минимум [Т]).
-2. Одно из семи — часы ($O$) [Т].
-3. Оставшиеся шесть разлагаются на $\mathbf{3} \oplus \bar{\mathbf{3}}$ под действием $SU(3) \subset G_2$ [Т].
-4. В $\mathbf{3}$-секторе симметрия $SU(3)_C$ не нарушена → некомпактное пространство [Т].
-5. В $\bar{\mathbf{3}}$-секторе Хиггс нарушает $SU(2)_L \times U(1)_Y$ → компактификация [Т].
+1. Reality is described by seven dimensions ([Hurwitz's theorem](/docs/proofs/minimality/theorem-minimality-7) + autopoietic minimum [Т]).
+2. One of the seven is a clock ($O$) [Т].
+3. The remaining six decompose into $\mathbf{3} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ [Т].
+4. In the $\mathbf{3}$-sector symmetry $SU(3)_C$ is unbroken → non-compact space [Т].
+5. In the $\bar{\mathbf{3}}$-sector Higgs breaks $SU(2)_L \times U(1)_Y$ → compactification [Т].
 
-| Вопрос | Ответ | Статус |
-|--------|-------|--------|
-| Почему 3 пространственных? | $\dim(\mathbf{3}) = 3$ для $SU(3) \subset G_2$ | [Т] |
-| Почему 1 временно́е? | $\dim(O) = 1$, PW-часы | [Т] |
-| Почему $(+,-,-,-)$? | Спектральная тройка, KO-dim 6 | [Т] |
-| Откуда стрела времени? | Коллапс страт к $T$ | [Т] |
-| Время реально? | Эмерджентно: корреляция, не поток | [Т]+[И] |
-| Субъективный темп? | $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] |
-| $M^4$ фоново-независимо? | Выведено из категорной структуры (T-120) | [Т] |
-
----
-
-**Пять выводов, которые следуют из декомпозиции:**
-
-**1. Три измерения — не случайность и не антропный принцип.** Физики десятилетиями отвечали на вопрос «почему 3+1?» ссылкой на антропный принцип: «в других размерностях жизнь невозможна, поэтому мы наблюдаем 3+1». Это не ответ, а тавтология. УГМ даёт ответ: $3+1$ следует из $G_2$-структуры, $G_2$ — из октонионов, октонионы — единственная неассоциативная нормированная алгебра с делением. Цепочка необходимостей, не совпадений.
-
-**2. Внутренний мир и пространство — два лица одной алгебры.** Та же плоскость Фано, которая организует [21 тип переживания](/blog/geometry-of-inner-world), определяет разбиение измерений на секторы. $\{L, E, U\}$ — «компактные» измерения физики — это те же Логика, Интериорность, Единство, которые кодируют внутренний мир. Пространство и сознание — не «две субстанции». Два проявления одной семимерной структуры, разделённые масштабом: $10^{-18}$ м с одной стороны, ваш субъективный опыт — с другой. Статус этого отождествления: математическая структура (секторная декомпозиция) — [Т], семантическая идентификация E с интериорностью — [П].
-
-**3. Время не «течёт». Вы «коррелируете».** Полное состояние $\Gamma_{\text{total}}$ стационарно. «Течение времени» — результат того, что вы привязаны к O-подсистеме (вашим внутренним часам). Разные «показания» часов — разные условные состояния. Это не значит, что время «иллюзорно»: корреляции реальны, события упорядочены. Но «поток» — артефакт перспективы, а не свойство мира. Река не течёт — вы плывёте.
-
-**4. Ваше субъективное время — измеримо.** $\mathcal{T} = |\gamma_{OE}|/\gamma_{OO}$ — не метафора. Когда вы «теряете счёт времени» в потоке — $\mathcal{T}$ повышен, $\gamma_{DE}$ велика. Когда время «тянется» от скуки — $\gamma_{DE} \approx 0$, $\gamma_{LE}$ повышена. Когда наркоз «выключает» время — $|\gamma_{OE}| \to 0$. Субъективное время — не философская загадка, а функция когерентности. Со временем (каламбур непреднамерен) мы научимся её измерять.
-
-**5. Пространство-время — не сцена, а следствие.** Гладкое многообразие $M^4 = \mathbb{R} \times \Sigma^3$ **выведено** из категорной структуры [Т] (T-120): макроскопическая алгебра наблюдаемых в $\{A,S,D\}$-секторе коммутативна в термодинамическом пределе (квантовая центральная предельная теорема, T-117 [Т]); по дуальности Гельфанда–Наймарка коммутативная C*-алгебра изоморфна $C(\Sigma^3)$ для единственного гладкого 3-многообразия (T-119 [Т]); произведение с временно́й компонентой даёт $M^4$ (T-120 [Т]). Пространство — не данность, а эмерджентная структура. Эйнштейн деформировал сцену; УГМ выводит её из-за кулис.
-
-Математика, как обычно, не спрашивает разрешения. Но иногда — показывает часы.
+| Question | Answer | Status |
+|----------|-------|--------|
+| Why 3 spatial? | $\dim(\mathbf{3}) = 3$ for $SU(3) \subset G_2$ | [Т] |
+| Why 1 temporal? | $\dim(O) = 1$, PW-clock | [Т] |
+| Why $(+,-,-,-)$? | Spectral triple, KO-dim 6 | [Т] |
+| Where does the arrow of time come from? | Collapse of strata to $T$ | [Т] |
+| Is time real? | Emergent: correlation, not flow | [Т]+[И] |
+| Subjective tempo? | $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] |
+| Is $M^4$ background-independent? | Derived from categorical structure (T-120) | [Т] |
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция УГМ
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — 21 тип переживания и плоскость Фано
-- [Свобода воли: теорема, а не дискуссия](/blog/freedom-theorem) — формула свободы
-- [Три силы, одно уравнение](/blog/three-forces) — динамика и стрела времени
-- [Пространство-время](/docs/core/foundations/spacetime) — полный формализм секторной декомпозиции
-- [Теорема об эмерджентном времени](/docs/proofs/dynamics/emergent-time) — четыре эквивалентных вывода времени
-- [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold) — вывод $M^4$ из категорной структуры (T-117 — T-121)
+**Five conclusions that follow from the decomposition:**
+
+**1. Three dimensions are not coincidence and not the anthropic principle.** Physicists for decades answered the question "why 3+1?" with the anthropic principle: "life is impossible in other dimensionalities, therefore we observe 3+1." This is not an answer, but a tautology. UHM gives an answer: $3+1$ follows from $G_2$-structure, $G_2$ — from octonions, octonions — the unique non-associative normed division algebra. A chain of necessities, not coincidences.
+
+**2. The inner world and space are two faces of one algebra.** The same Fano plane that organizes [21 types of experience](/blog/geometry-of-inner-world) determines the partition of dimensions into sectors. $\{L, E, U\}$ — the "compact" dimensions of physics — are the same Logic, Interiority, Unity that encode the inner world. Space and consciousness are not "two substances." Two manifestations of one seven-dimensional structure, separated by scale: $10^{-18}$ m on one side, your subjective experience — on the other. The status of this identification: mathematical structure (sector decomposition) — [Т], semantic identification of E with interiority — [П].
+
+**3. Time does not "flow." You "correlate."** The total state $\Gamma_{\text{total}}$ is stationary. The "flow of time" is the result of being tied to the O-subsystem (your internal clock). Different "readings" of the clock — different conditional states. This does not mean time is "illusory": correlations are real, events are ordered. But "flow" is an artifact of perspective, not a property of the world. The river does not flow — you are swimming.
+
+**4. Your subjective time is measurable.** $\mathcal{T} = |\gamma_{OE}|/\gamma_{OO}$ — not a metaphor. When you "lose track of time" in flow — $\mathcal{T}$ is elevated, $\gamma_{DE}$ is large. When time "drags" from boredom — $\gamma_{DE} \approx 0$, $\gamma_{LE}$ is elevated. When anesthesia "turns off" time — $|\gamma_{OE}| \to 0$. Subjective time is not a philosophical puzzle, but a function of coherence. In time (pun unintended) we will learn to measure it.
+
+**5. Spacetime is not a stage, but a consequence.** The smooth manifold $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from categorical structure [Т] (T-120): the macroscopic algebra of observables in the $\{A,S,D\}$-sector is commutative in the thermodynamic limit (quantum central limit theorem, T-117 [Т]); by Gelfand-Naimark duality a commutative C*-algebra is isomorphic to $C(\Sigma^3)$ for the unique smooth 3-manifold (T-119 [Т]); the product with the temporal component gives $M^4$ (T-120 [Т]). Space is not a given, but an emergent structure. Einstein deformed the stage; UHM derives it from behind the curtain.
+
+Mathematics, as usual, does not ask for permission. But sometimes — it shows you the clock.
+
+---
+
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — UHM philosophical position
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — 21 types of experience and the Fano plane
+- [Freedom of Will: A Theorem, not a Discussion](/blog/freedom-theorem) — the formula of freedom
+- [Three Forces, One Equation](/blog/three-forces) — dynamics and the arrow of time
+- [Spacetime](/docs/core/foundations/spacetime) — full formalism of sector decomposition
+- [Theorem on emergent time](/docs/proofs/dynamics/emergent-time) — four equivalent derivations of time
+- [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) — derivation of $M^4$ from categorical structure (T-117 — T-121)

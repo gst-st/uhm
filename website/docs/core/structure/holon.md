@@ -10,7 +10,7 @@ description: Self-sustaining configuration Γ
 The central concept of UHM: the self-sustaining configuration Γ. A basic familiarity with the [coherence matrix](/docs/core/dynamics/coherence-matrix) and [Axiom Ω⁷](/docs/core/foundations/axiom-omega) is assumed.
 :::
 
-This chapter is the heart of the Universal Holonomic Model. Here we learn what a Holon is — the central concept of the theory around which everything else is built. A Holon is not a thing or a particle, but a **self-sustaining pattern** in the unified substance of reality $\Gamma$. To understand this idea, one must abandon the habit of thinking about the world as a set of separate objects and see reality as a unified field of configurations in which stable structures arise. By the end of the chapter you will understand what makes a configuration $\Gamma$ "alive", how Holons nest inside one another, and why there is a sharp mathematical boundary between "life" and "noise".
+This chapter is the heart of the Unitary Holonomic Monism. Here we learn what a Holon is — the central concept of the theory around which everything else is built. A Holon is not a thing or a particle, but a **self-sustaining pattern** in the unified substance of reality $\Gamma$. To understand this idea, one must abandon the habit of thinking about the world as a set of separate objects and see reality as a unified field of configurations in which stable structures arise. By the end of the chapter you will understand what makes a configuration $\Gamma$ "alive", how Holons nest inside one another, and why there is a sharp mathematical boundary between "life" and "noise".
 
 ## Historical precursors
 

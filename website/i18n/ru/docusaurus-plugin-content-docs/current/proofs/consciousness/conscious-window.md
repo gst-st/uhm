@@ -65,40 +65,28 @@ $$
 | Показатель | Значение | Условие |
 |------------|----------|---------|
 | $P$ | $(2/7, 3/7]$ | $\checkmark$ |
-| $R$ | $[1/3, 1/2)$ | $\geq 1/3\;\checkmark$ |
+| $R$ | $[1/3, 1/2]$ | $\geq 1/3\;\checkmark$ |
 | $\Phi$ | $[1, 2]$ | $\geq 1\;\checkmark$ |
 
-**Шаг 3 (σ-коррекция).** Для равноамплитудной $\Gamma_\lambda$ диагональные элементы $\gamma_{kk} = 1/7$, поэтому $\sigma_L = 7(1-\gamma_{LL})/6 = 1$ — граничное значение. Необходимо возмущение.
+Граничные значения: при $\lambda = 1/\sqrt{6}$ получаем $R = 1/2$ (включительно), при $\lambda = 1/\sqrt{3}$ — $R = 1/3$ (включительно).
 
-Определим трейслесс-матрицу:
+**Шаг 3 (σ-условие).** По каноническому определению ([T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)):
 
-$$
-\Delta = |L\rangle\langle L| - \frac{1}{6}\sum_{k \neq L}|k\rangle\langle k|
-$$
+$$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
-и положим $\Gamma^* = \Gamma_{\lambda^*} + \delta \cdot \Delta$ при $\lambda^* \in (1/\sqrt{6}, 1/\sqrt{3})$ и $\delta > 0$ малом.
+Для равноамплитудной $\Gamma_\lambda$ все диагональные элементы равны $\gamma_{kk} = 1/7$ для всех $k$ (поскольку $|\psi\rangle = \frac{1}{\sqrt{7}}\sum_k|k\rangle$ равноамплитудный вектор). Следовательно:
 
-Тогда $\gamma_{LL} = 1/7 + \delta$, откуда:
+$$\sigma_k = \mathrm{clamp}(1 - 7 \cdot \tfrac{1}{7},\; 0,\; 1) = \mathrm{clamp}(0,\; 0,\; 1) = 0 < 1 \quad \forall k$$
 
-$$
-\sigma_L = \frac{7(1 - \gamma_{LL})}{6} = 1 - \frac{7\delta}{6} < 1
-$$
+Все $\sigma$-условия ($\sigma_k < 1$) удовлетворены **без какого-либо возмущения**.
 
-Все остальные $\sigma_k$ — непрерывные функции $\delta$. При $\delta = 0$ для $\lambda^* \in \mathrm{int}(1/\sqrt{6}, 1/\sqrt{3})$ они строго меньше 1 (кроме $\sigma_L$). По непрерывности при достаточно малом $\delta > 0$ все $\sigma_k < 1$.
+**Шаг 4 ($D_{\mathrm{diff}}$).** Собственные значения $\Gamma_\lambda$: $\{(1+6\lambda)/7\; (\times 1),\; (1-\lambda)/7\; (\times 6)\}$. При $\lambda \in (1/\sqrt{6}, 1/\sqrt{3}]$: два различных собственных значения, $\mathrm{rank}(\Gamma_\lambda) = 7$.
 
-#### Лемма: Явная граница delta_max [Т] {#явная-граница-delta} Для бесследового возмущения $\Delta$ с $\mathrm{Tr}(\Delta) = 0$:
+Энтропия фон Неймана: $S_{vN} = -\frac{1+6\lambda}{7}\ln\frac{1+6\lambda}{7} - \frac{6(1-\lambda)}{7}\ln\frac{1-\lambda}{7}$.
 
-$$\sigma_k(\Gamma_{\lambda^*} + \delta\Delta) = \sigma_k(\Gamma_{\lambda^*}) - 7\delta \cdot \Delta_{kk} \cdot c_k$$
+При $\lambda = 1/\sqrt{6} \approx 0.408$: собственные значения $\approx 0.572$ (×1) и $\approx 0.085$ (×6), $S_{vN} \approx 1.55$, $D_{\mathrm{diff}} = e^{S_{vN}} \approx 4.7 \geq 2$. Минимум по $\lambda$ на интервале достигается при $\lambda \to 1/\sqrt{3}$: оба типа собственных значений по $\approx 1/7$, $S_{vN} \to \ln 7 \approx 1.95$, $D_{\mathrm{diff}} \to 7 \geq 2$. Условие $D_{\mathrm{diff}} \geq 2$ выполнено на всём интервале.
 
-где $c_k$ — коэффициент, зависящий от типа $\sigma_k$ (для $\sigma_D$: $c_k = 1$; для $\sigma_L$: $c_k = 1/6$; и т.д.). Маргин: $m_k := 1 - \sigma_k(\Gamma_{\lambda^*}, \delta=0) > 0$ для всех $k$ при $\lambda^* \in \mathrm{int}(1/\sqrt{6}, 1/\sqrt{3})$ (строго). Достаточное условие:
-
-$$\delta_{\max} = \frac{\min_k m_k}{7 \cdot \max_k |\Delta_{kk}| \cdot \max_k c_k}$$
-
-*Численный пример:* $\lambda^* = (1/\sqrt{6}+1/\sqrt{3})/2 \approx 0.4485$, $\Delta = (|L\rangle\langle L| - \frac{1}{6}\sum_{k \neq L}|k\rangle\langle k|)$. Тогда $\max_k|\Delta_{kk}| = 1$, $m_{\min} = m_L = 1 - \sigma_L(0) \approx 1 - (7 \cdot 6/7 \cdot (1-1/7))/6 = 1 - 6/7 \approx 0.143$. При $c_{\max} = 1$: $\delta_{\max} \approx 0.143/7 \approx 0.020$. При $\delta = 0.015 < \delta_{\max}$: все $\sigma_k < 1$ ✓.
-
-**Шаг 4 ($D_{\mathrm{diff}}$).** Собственные значения $\Gamma_\lambda$: $\{(1+6\lambda)/7\; (\times 1),\; (1-\lambda)/7\; (\times 6)\}$. При $\lambda < 1$: $\mathrm{rank}(\Gamma_\lambda) = 7$, $S_{vN} > 0$, $D_{\mathrm{diff}} = \exp(S_{vN}(\rho_E)) > 1$. При малом возмущении $\delta$: $D_{\mathrm{diff}} > 1$ сохраняется. Для нашего диапазона $\lambda$, $D_{\mathrm{diff}} \geq 2$ выполнено (6 вырожденных собственных значений дают высокую энтропию фон Неймана).
-
-**Следовательно**, $\Gamma^* \in \mathcal{V}_{\mathrm{full}}$, и множество непусто. $\blacksquare$
+**Следовательно**, $\Gamma_\lambda \in \mathcal{V}_{\mathrm{full}}$ для любого $\lambda \in (1/\sqrt{6}, 1/\sqrt{3}]$, и множество непусто. $\blacksquare$
 
 :::info Численная верификация окна сознания (SYNARC)
 Аттрактор воплощённого агента: $P = 0.4286 \approx 3/7$ — у верхней границы

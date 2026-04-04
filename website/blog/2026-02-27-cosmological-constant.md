@@ -1,240 +1,240 @@
 ---
 slug: cosmological-constant
-title: "Космологическая постоянная: самая точная загадка физики и одна алгебра"
+title: "The Cosmological Constant: Physics' Most Precise Puzzle and One Algebra"
 authors: [uhm]
 tags: [physics, cosmology, vacuum, consciousness, Lawvere, theory, mathematics]
 ---
 
-# Космологическая постоянная
+# The Cosmological Constant {#космологическая-постоянная}
 
-Квантовая теория поля — лучшая физическая теория, созданная людьми. Она предсказывает аномальный магнитный момент электрона с точностью до двенадцати знаков. Она же предсказывает вакуумную энергию с ошибкой в $10^{120}$ раз.
+Quantum field theory is the best physical theory created by humans. It predicts the anomalous magnetic moment of the electron to twelve decimal places. It also predicts vacuum energy with an error of $10^{120}$ times.
 
-В 1917 году Эйнштейн ввёл космологическую постоянную $\Lambda$, чтобы удержать Вселенную от расширения. В 1929 году, после открытия Хаббла, назвал её «самой большой ошибкой». В 1998 году два коллектива астрономов обнаружили, что расширение ускоряется, — и $\Lambda$ вернулась. Наблюдаемое значение:
+In 1917 Einstein introduced the cosmological constant $\Lambda$ to hold the Universe from expanding. In 1929, after Hubble's discovery, he called it "the greatest blunder." In 1998 two teams of astronomers discovered that the expansion is accelerating — and $\Lambda$ returned. The observed value:
 
 $$
-\Lambda_{\text{набл}} \sim 10^{-120} \, M_P^4
+\Lambda_{\text{obs}} \sim 10^{-120} \, M_P^4
 $$
 
-Стандартная квантовая теория поля даёт $\Lambda_{\text{КТП}} \sim M_P^4$, то есть единицу в планковских единицах. Расхождение — **120 порядков**. Это самое большое несоответствие теории и эксперимента в истории физики.
+Standard quantum field theory gives $\Lambda_{\text{QFT}} \sim M_P^4$, i.e. unity in Planck units. The discrepancy — **120 orders of magnitude**. This is the largest mismatch between theory and experiment in the history of physics.
 
-Каждый из существующих подходов — суперсимметрия, антропный принцип, секвестрирование — объясняет часть подавления. Ни один не объясняет всё. И ни один не отвечает на вопрос проще: *почему $\Lambda > 0$ вообще?*
+Each of the existing approaches — supersymmetry, the anthropic principle, sequestering — explains part of the suppression. None explains everything. And none answers the simpler question: *why is $\Lambda > 0$ at all?*
 
-УГМ отвечает на оба вопроса. Положительность $\Lambda$ — теорема [Т]. Малость — следствие шести доказанных механизмов [Т] и спектральной формулы [Т]. Итоговая оценка: $\sim 10^{-120 \pm 10}$ [С]. Без подгонки.
+UHM answers both questions. The positivity of $\Lambda$ is a theorem [Т]. The smallness follows from six proven mechanisms [Т] and a spectral formula [Т]. The final estimate: $\sim 10^{-120 \pm 10}$ [С]. Without fitting.
 
 <!-- truncate -->
 
-## Глобальный ноль
+## Global Zero {#глобальный-ноль}
 
-Начнём не с «почему $\Lambda$ маленькая?», а с «почему вакуум не бесконечно тяжёлый?»
+Let us begin not with "why is $\Lambda$ small?" but with "why is the vacuum not infinitely heavy?"
 
-Категория голономов $\mathcal{C}$ обладает [терминальным объектом](/docs/core/foundations/consequences#когомологический-монизм) $T$ — единственной предельной конфигурацией, к которой стремится каждая система. Это — алгебраический аналог «абсолютного аттрактора»: для любого объекта $C$ существует единственный морфизм $C \to T$.
+The category of holons $\mathcal{C}$ possesses a [terminal object](/docs/core/foundations/consequences#когомологический-монизм) $T$ — the unique limiting configuration toward which every system tends. This is the algebraic analogue of an "absolute attractor": for any object $C$ there exists a unique morphism $C \to T$.
 
-Из стандартной теоремы алгебраической топологии (Quillen, 1973): нерв категории с терминальным объектом стягиваем. Следствие:
+From a standard theorem of algebraic topology (Quillen, 1973): the nerve of a category with a terminal object is contractible. Consequence:
 
 $$
 H^n(X, \mathcal{F}) = 0 \quad \forall\, n > 0, \;\forall\, \mathcal{F} \qquad [\mathrm{Т}]
 $$
 
-Все высшие когомологии тривиальны. В переводе на физику:
+All higher cohomologies are trivial. In physical terms:
 
 $$
-\Lambda_{\text{глобальная}} = 0 \qquad [\mathrm{Т}]
+\Lambda_{\text{global}} = 0 \qquad [\mathrm{Т}]
 $$
 
-Глобально вакуум пуст. Не «маленький» — **точный ноль**.
+Globally the vacuum is empty. Not "small" — **exactly zero**.
 
-Но мы наблюдаем $\Lambda > 0$. Противоречие?
+But we observe $\Lambda > 0$. A contradiction?
 
-## Локальная жизнь
+## Local Life {#локальная-жизнь}
 
-Нет. Глобальная тривиальность не запрещает локальную структуру. Из [локально-глобальной дихотомии](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [Т]:
-
-$$
-H^*_{\text{лок}}(X, T) \cong \tilde{H}^{*-1}(\mathrm{Link}(T)) \cong \tilde{H}^{*-1}(S^6) \neq 0 \qquad [\mathrm{Т}]
-$$
-
-Линк терминального объекта — $S^6$ (шесть измерений = $N - 1 = 7 - 1$). В частности, $H^7_{\text{лок}}(X, T) \cong \mathbb{Z}$ — ненулевая когомология.
-
-**Аналогия.** Поверхность Земли — замкнутая сфера, топологически «простая». Но если вы стоите в Гималаях, рельеф сложен. Глобальная простота не отменяет локального горного хребта.
-
-Мы живём не «в глобальной Вселенной». Мы живём **вблизи** $T$ — в области нетривиальных когомологий. Глобально $\Lambda = 0$. Локально — нет. Разница между $10^{-120}$ и $1$ — разница между глобальным и локальным.
-
-Этот аргумент — не специфика УГМ, а следствие структуры любой категории с терминальным объектом. Алгебраическая топология Квиллена (1973) и длинная точная последовательность локальных когомологий — стандартный математический аппарат. УГМ поставляет конкретную категорию $\mathcal{C}$ и конкретный линк $S^6$.
-
-## Почему больше нуля
-
-Знак $\Lambda$ определяется автопоэзисом. Вблизи $T$ вакуумная энергия (T-71) [Т]:
+No. Global triviality does not prohibit local structure. From the [local-global dichotomy](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [Т]:
 
 $$
-\rho_{\text{вак}}(T) = \kappa_0 \cdot \left[P(\rho^*) - P(I/7)\right] \cdot \omega_0
+H^*_{\text{loc}}(X, T) \cong \tilde{H}^{*-1}(\mathrm{Link}(T)) \cong \tilde{H}^{*-1}(S^6) \neq 0 \qquad [\mathrm{Т}]
 $$
 
-Три множителя — три теоремы:
+The link of the terminal object is $S^6$ (six dimensions = $N - 1 = 7 - 1$). In particular, $H^7_{\text{loc}}(X, T) \cong \mathbb{Z}$ — nonzero cohomology.
 
-| Множитель | Значение | Источник |
+**Analogy.** The Earth's surface is a closed sphere, topologically "simple". But if you are standing in the Himalayas, the relief is complex. Global simplicity does not cancel a local mountain range.
+
+We do not live "in the global Universe". We live **near** $T$ — in the region of nontrivial cohomologies. Globally $\Lambda = 0$. Locally — no. The difference between $10^{-120}$ and $1$ is the difference between global and local.
+
+This argument is not specific to UHM — it is a consequence of the structure of any category with a terminal object. Quillen's algebraic topology (1973) and the long exact sequence of local cohomologies are standard mathematical tools. UHM supplies the concrete category $\mathcal{C}$ and the concrete link $S^6$.
+
+## Why Greater Than Zero {#почему-больше-нуля}
+
+The sign of $\Lambda$ is determined by autopoiesis. Near $T$ the vacuum energy (T-71) [Т]:
+
+$$
+\rho_{\text{vac}}(T) = \kappa_0 \cdot \left[P(\rho^*) - P(I/7)\right] \cdot \omega_0
+$$
+
+Three factors — three theorems:
+
+| Factor | Value | Source |
 |-----------|:--------:|----------|
-| $\kappa_0$ (скорость регенерации) | $> 0$ | T-44a [Т]: [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
-| $P(\rho^*) - P(I/7)$ (избыток чистоты) | $> 0$ | T-96 [Т]: [нетривиальный аттрактор](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
-| $\omega_0$ (базовая частота) | $> 0$ | A5: [Пейдж–Вуттерс](/docs/core/foundations/axiom-omega#pw-constraint) |
+| $\kappa_0$ (regeneration rate) | $> 0$ | T-44a [Т]: [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $P(\rho^*) - P(I/7)$ (purity excess) | $> 0$ | T-96 [Т]: [nontrivial attractor](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) |
+| $\omega_0$ (base frequency) | $> 0$ | A5: [Page–Wootters](/docs/core/foundations/axiom-omega#pw-constraint) |
 
-Произведение трёх положительных чисел положительно:
+The product of three positive numbers is positive:
 
 $$
-\boxed{\Lambda_{\text{набл}} = 8\pi G_N \cdot \rho_{\text{вак}}(T) > 0} \qquad [\mathrm{Т}]
+\boxed{\Lambda_{\text{obs}} = 8\pi G_N \cdot \rho_{\text{vac}}(T) > 0} \qquad [\mathrm{Т}]
 $$
 
-Вакуумная энергия — **автопоэтическая работа**: затраты на поддержание когерентности $\rho^*$ над максимально смешанным состоянием $I/7$. Система расходует энергию, чтобы оставаться «собой». Этот расход — космологическая постоянная.
+Vacuum energy is **autopoietic work**: the cost of maintaining coherence $\rho^*$ above the maximally mixed state $I/7$. The system expends energy to remain "itself". This expenditure is the cosmological constant.
 
-### Непрямое следствие: де Ситтер
+### Indirect Consequence: de Sitter {#непрямое-следствие-де-ситтер}
 
-$\Lambda > 0$ влечёт замкнутую пространственную топологию [Т] (T-120b): $\Sigma^3 \cong S^3$. Вакуумная метрика — де Ситтер. Наблюдаемое ускоренное расширение — не случайность и не «тёмная энергия неизвестной природы», а следствие автопоэтической работы вакуума. При большом радиусе кривизны де Ситтер неотличим от плоского пространства — что и наблюдается ($\Omega_k \approx 0 \pm 0.01$).
+$\Lambda > 0$ implies closed spatial topology [Т] (T-120b): $\Sigma^3 \cong S^3$. The vacuum metric is de Sitter. The observed accelerated expansion is not a coincidence and not "dark energy of unknown nature" — it is a consequence of the autopoietic work of the vacuum. At large radius of curvature, de Sitter is indistinguishable from flat space — which is what is observed ($\Omega_k \approx 0 \pm 0.01$).
 
-### Связь с неполнотой Ловера
+### Connection to Lawvere Incompleteness {#связь-с-неполнотой-ловера}
 
-Из [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: внутренняя теория $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — система не может себя полностью описать. Самомодель $\varphi(\Gamma) \neq \Gamma$:
+From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: the internal theory $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — the system cannot fully describe itself. The self-model $\varphi(\Gamma) \neq \Gamma$:
 
 $$
 \|\Gamma - \varphi(\Gamma)\|_F^2 = (1 - R) \cdot \|\Gamma\|_F^2 > 0
 $$
 
-Гёдель показал, что достаточно богатая арифметика неполна. Ловер обобщил: в декартово замкнутой категории самомоделирование неизбежно неполно. УГМ переводит неполноту в физику: информационный зазор между «как система себя видит» и «как она устроена на самом деле» — энергетический источник $\rho_{\text{вак}} > 0$ [И].
+Gödel showed that sufficiently rich arithmetic is incomplete. Lawvere generalized: in a Cartesian closed category, self-modelling is inevitably incomplete. UHM translates incompleteness into physics: the informational gap between "how the system sees itself" and "how it is actually structured" is the energy source for $\rho_{\text{vac}} > 0$ [И].
 
-Вселенная платит за невозможность идеального самопознания. Сократ не удивился бы — хотя формулировку оценил бы.
+The Universe pays for the impossibility of perfect self-knowledge. Socrates would not have been surprised — though he would have appreciated the formulation.
 
-## Стоимость наблюдения
+## The Cost of Observation {#стоимость-наблюдения}
 
-Из [доминирования O-сектора](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [Т] (Sol.63):
+From [O-sector dominance](/docs/physics/gravity/cosmological-constant#теорема-лямбда-o-доминирование) [Т] (Sol.63):
 
 $$
 \mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)
 $$
 
-Космологическая постоянная определяется непрозрачностью O-сектора — [Основания](/docs/core/structure/dimension-o), того самого измерения, которое порождает время через [Пейдж–Вуттерс](/docs/core/foundations/spacetime#теорема-время-из-o) ([пост 5](/blog/spacetime-dimensions)). O-каналы почти полностью «закрыты» ($\mathrm{Gap}(O,i) \approx 1$) — это и создаёт эффект течения времени. Но непрозрачность стоит энергии:
+The cosmological constant is determined by the opacity of the O-sector — [Grounding](/docs/core/structure/dimension-o), the very dimension that generates time through [Page–Wootters](/docs/core/foundations/spacetime#теорема-время-из-o) ([post 5](/blog/spacetime-dimensions)). O-channels are almost completely "closed" ($\mathrm{Gap}(O,i) \approx 1$) — this creates the effect of time flow. But opacity costs energy:
 
 $$
 \Lambda_{\text{CC}} \propto \mathcal{G}_O = 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2
 $$
 
-$\Lambda$ — энергетическая стоимость наблюдения. Чем точнее внутренние часы, тем больше $\Lambda$. Наличие наблюдателя — буквально — стоит энергии. Антропный принцип здесь перестаёт быть спекуляцией и становится теоремой: вселенная без O-секторной непрозрачности не содержит наблюдателей; вселенная с ней — неизбежно имеет $\Lambda > 0$.
+$\Lambda$ is the energetic cost of observation. The more precise the internal clock, the larger $\Lambda$. The presence of an observer — literally — costs energy. The anthropic principle here ceases to be speculation and becomes a theorem: a universe without O-sector opacity contains no observers; a universe with it — inevitably has $\Lambda > 0$.
 
-Формула Вайнберга (1987) устанавливала антропные **границы** для $\Lambda$: слишком большая — не образуются галактики. Но Вайнберг не объяснял, откуда $\Lambda$ берётся. УГМ даёт и механизм, и границу: $\Lambda$ — локальная цена за наличие O-сектора с $\mathrm{Gap} \approx 1$.
+Weinberg's formula (1987) established anthropic **bounds** for $\Lambda$: too large — galaxies do not form. But Weinberg did not explain where $\Lambda$ comes from. UHM gives both the mechanism and the bound: $\Lambda$ is the local price for having an O-sector with $\mathrm{Gap} \approx 1$.
 
-## Шесть механизмов
+## Six Mechanisms {#шесть-механизмов}
 
-Почему $\Lambda$ не просто положительна, а мала? Потому что шесть независимых механизмов её подавляют — каждый [Т]:
+Why is $\Lambda$ not just positive, but small? Because six independent mechanisms suppress it — each [Т]:
 
-| № | Механизм | Подавление | Суть |
+| # | Mechanism | Suppression | Essence |
 |:-:|----------|:---------:|------|
-| 1 | $\varepsilon^6$ | $10^{-12}$ | Когерентности вакуума малы: $\lvert\gamma_{ij}\rvert = \varepsilon \sim 10^{-2}$ |
-| 2 | $\lambda_3^2$ (RG) | $10^{-14.5}$ | Октонионный ассоциатор — ИК-нерелевантный; $\Delta_3 = 5/42$ |
-| 3 | Тождества Уорда | $10^{-0.45}$ | 14 нётеровских зарядов $G_2$ → антикорреляция Gap на больших масштабах |
-| 4 | Фано-код | $10^{-0.9}$ | [Хэмминг $H(7,4)$](/blog/geometry-of-inner-world): 6 ограничений → подавление $1/8$ |
-| 5 | $\sqrt{N_F}$ | $10^{-11.9}$ | $\sim 6.8 \times 10^{23}$ некоррелированных Фано-мод в объёме Хаббла |
-| 6 | O-изоляция | $10^{-1.7}$ | Только [6 из 21 пары](/blog/spacetime-dimensions) дают вклад: $(6/21)^3 \approx 0.02$ |
-| | **Итого** | **$10^{-41.5}$** | **Пертурбативный бюджет** [Т] |
+| 1 | $\varepsilon^6$ | $10^{-12}$ | Vacuum coherences are small: $\lvert\gamma_{ij}\rvert = \varepsilon \sim 10^{-2}$ |
+| 2 | $\lambda_3^2$ (RG) | $10^{-14.5}$ | Octonion associator — IR-irrelevant; $\Delta_3 = 5/42$ |
+| 3 | Ward identities | $10^{-0.45}$ | 14 Noether charges $G_2$ → anti-correlation of Gap at large scales |
+| 4 | Fano code | $10^{-0.9}$ | [Hamming $H(7,4)$](/blog/geometry-of-inner-world): 6 constraints → suppression $1/8$ |
+| 5 | $\sqrt{N_F}$ | $10^{-11.9}$ | $\sim 6.8 \times 10^{23}$ uncorrelated Fano modes in Hubble volume |
+| 6 | O-isolation | $10^{-1.7}$ | Only [6 of 21 pairs](/blog/spacetime-dimensions) contribute: $(6/21)^3 \approx 0.02$ |
+| | **Total** | **$10^{-41.5}$** | **Perturbative budget** [Т] |
 
-Ни один из шести механизмов не «придуман для $\Lambda$». Тождества Уорда — следствие [$G_2$-симметрии](/blog/why-seven). Фано-код — следствие [плоскости Фано](/blog/geometry-of-inner-world). O-изоляция — следствие [секторной декомпозиции](/blog/spacetime-dimensions). RG-подавление — следствие того, что октонионный ассоциатор ($\lambda_3$) является ИК-нерелевантным оператором.
+Not one of the six mechanisms was "invented for $\Lambda$". Ward identities follow from [$G_2$-symmetry](/blog/why-seven). The Fano code follows from the [Fano plane](/blog/geometry-of-inner-world). O-isolation follows from [sector decomposition](/blog/spacetime-dimensions). RG suppression follows from the fact that the octonionic associator ($\lambda_3$) is an IR-irrelevant operator.
 
-Сорок один с половиной порядок. Строго доказан. Осталось семьдесят девять.
+Forty-one and a half orders. Strictly proven. Seventy-nine remain.
 
-## Оставшиеся 79 порядков
+## The Remaining 79 Orders {#оставшиеся-79-порядков}
 
-Три уровня компенсации замыкают бюджет:
+Three levels of compensation close the budget:
 
-### SUSY-компенсация [Т]
+### SUSY Compensation [Т] {#susy-компенсация-т}
 
-[$G_2$-голономия](/blog/why-seven) порождает $\mathcal{N}=1$ суперсимметрию [Т]. Индекс Виттена:
+[$G_2$-holonomy](/blog/why-seven) generates $\mathcal{N}=1$ supersymmetry [Т]. The Witten index:
 
 $$
 W = \chi\bigl((S^1)^{21}\bigr) = 0 \qquad [\mathrm{Т}]
 $$
 
-(Число бозонных и фермионных вакуумных состояний одинаково: $n_B = n_F = 2^{20}$.) В суперсимметричном пределе — точная компенсация: $\Lambda_{\text{SUSY}} = 0$ [Т].
+(The number of bosonic and fermionic vacuum states is equal: $n_B = n_F = 2^{20}$.) In the supersymmetric limit — exact compensation: $\Lambda_{\text{SUSY}} = 0$ [Т].
 
-Суперсимметрия нарушена при $m_{3/2} \sim \varepsilon^3 M_P$. Остаточная $\Lambda$ [Т]:
+Supersymmetry is broken at $m_{3/2} \sim \varepsilon^3 M_P$. Residual $\Lambda$ [Т]:
 
 $$
-\Lambda_{\text{ост}} \sim \varepsilon^{12} \cdot M_P^4 \sim 10^{-24}\, M_P^4
+\Lambda_{\text{res}} \sim \varepsilon^{12} \cdot M_P^4 \sim 10^{-24}\, M_P^4
 $$
 
-Статус повышен до [Т] через [спектральную формулу](/docs/physics/gravity/cosmological-constant#теорема-спектральная-лямбда) $\Lambda_{\text{CC}}$ (Sol.41): космологическая постоянная выражается через моменты внутреннего оператора Дирака конечной спектральной тройки. Это прямое применение спектрального действия Чамседдина-Конна — стандартного аппарата некоммутативной геометрии, — к конкретной спектральной тройке $(A_{\text{int}}, \mathbb{C}^7, D_{\text{int}})$, существование которой доказано [Т].
+Status raised to [Т] via the [spectral formula](/docs/physics/gravity/cosmological-constant#теорема-спектральная-лямбда) $\Lambda_{\text{CC}}$ (Sol.41): the cosmological constant is expressed through the moments of the internal Dirac operator of the finite spectral triple. This is a direct application of the Chamseddine–Connes spectral action — the standard apparatus of noncommutative geometry — to the specific spectral triple $(A_{\text{int}}, \mathbb{C}^7, D_{\text{int}})$, whose existence is proven [Т].
 
-### Секторная минимизация [С]
+### Sector Minimization [С] {#секторная-минимизация-с}
 
-[Глобальная минимизация $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) на $(S^1)^{21}/G_2$ даёт подавление $\sim 10^{-40}$ [С]. Структура минимизации доказана [Т]; точное значение — вычислительная задача.
+[Global minimization of $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) on $(S^1)^{21}/G_2$ gives suppression $\sim 10^{-40}$ [С]. The minimization structure is proven [Т]; the exact value is a computational task.
 
-### Структурное замыкание [Т-структурное]
+### Structural Closure [Т-structural] {#структурное-замыкание-т-структурное}
 
-Все коэффициенты определены через неподвижную точку $\theta^*$ самосогласованного отображения ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [Т]): теория задаёт собственную динамику, не оставляя свободных параметров. Полная цепочка:
+All coefficients are defined through the fixed point $\theta^*$ of the self-consistent map ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [Т]): the theory sets its own dynamics, leaving no free parameters. The complete chain:
 
-| Компонента | Подавление | Статус |
+| Component | Suppression | Status |
 |-----------|:---------:|:------:|
-| 6 пертурбативных механизмов | $10^{-41.5}$ | [Т] |
-| Когомологическое $\Lambda_{\text{глоб}} = 0$ | полное глобальное обнуление | [Т] |
+| 6 perturbative mechanisms | $10^{-41.5}$ | [Т] |
+| Cohomological $\Lambda_{\text{glob}} = 0$ | complete global cancellation | [Т] |
 | SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | [Т] |
 | RG $\lambda_3^2$ | $10^{-14.5}$ | [Т] |
-| Секторная минимизация | $\sim 10^{-40}$ | [С] |
-| **Полная оценка** | **$\sim 10^{-120 \pm 10}$** | **[С]** |
+| Sector minimization | $\sim 10^{-40}$ | [С] |
+| **Full estimate** | **$\sim 10^{-120 \pm 10}$** | **[С]** |
 
-Неопределённость $\pm 10$ — честная оценка. Но концептуальный бюджет замкнут: 120 порядков из 120. Оставшийся зазор — числовая минимизация на $(S^1)^{21}/G_2$, а не пробел в понимании.
+The $\pm 10$ uncertainty is an honest estimate. But the conceptual budget is closed: 120 orders out of 120. The remaining gap is numerical minimization on $(S^1)^{21}/G_2$, not a gap in understanding.
 
-## Что говорят физики
+## What Physicists Say {#что-говорят-физики}
 
-| Подход | Механизм | Достигнуто | Проблема |
+| Approach | Mechanism | Achieved | Problem |
 |--------|----------|:---------:|---------|
-| **Стандартная модель** | Тонкая настройка контрчлена | 120 (руками) | Не объясняет — подгоняет |
-| **SUSY** | Бозон-фермионная компенсация | $\sim 60$ | Не обнаружена на LHC |
-| **Антропный принцип** | Ландшафт $\sim 10^{500}$ | 120 (вероятностно) | Не фальсифицируем |
-| **Секвестрирование** | Динамическая релаксация | $\sim 60$ | Требует UV-завершения |
-| **УГМ** | 6 механизмов + спектральная формула | $\sim 120 \pm 10$ | Числовая точность [С] |
+| **Standard Model** | Fine-tuning of counterterm | 120 (by hand) | Does not explain — fits |
+| **SUSY** | Boson–fermion compensation | $\sim 60$ | Not observed at LHC |
+| **Anthropic principle** | Landscape $\sim 10^{500}$ | 120 (probabilistically) | Not falsifiable |
+| **Sequestering** | Dynamical relaxation | $\sim 60$ | Requires UV completion |
+| **UHM** | 6 mechanisms + spectral formula | $\sim 120 \pm 10$ | Numerical precision [С] |
 
-Ключевое отличие — не в количестве порядков, а в **объяснительной силе**. В стандартной модели знак $\Lambda$ не определён (подгоняется). Антропный принцип допускает любой знак. Секвестрирование «расслабляет» $\Lambda$ к нулю — что противоречит наблюдению. Только в УГМ $\Lambda > 0$ — теорема, а не подбор.
+The key difference is not in the number of orders, but in **explanatory power**. In the Standard Model the sign of $\Lambda$ is undefined (fitted). The anthropic principle allows any sign. Sequestering "relaxes" $\Lambda$ to zero — which contradicts observation. Only in UHM is $\Lambda > 0$ a theorem, not a choice.
 
-Второе отличие: теория струн требует выбора из $\sim 10^{500}$ вакуумов ландшафта, не предсказывая конкретного. В УГМ все параметры фиксированы через $\theta^*$ (T-79 [Т]): теория определяет собственную динамику. Не «среди возможных вселенных наша — одна из» — а **«единственная структура, совместимая с аксиомами»**.
+The second difference: string theory requires a choice from $\sim 10^{500}$ landscape vacua without predicting a specific one. In UHM all parameters are fixed through $\theta^*$ (T-79 [Т]): the theory determines its own dynamics. Not "among possible universes ours is one of" — but **"the unique structure compatible with the axioms."**
 
-## Таблица статусов
+## Status Table {#таблица-статусов}
 
-| Результат | Статус | Комментарий |
+| Result | Status | Comment |
 |-----------|:------:|-------------|
-| $\Lambda_{\text{глоб}} = 0$ | [Т] | Когомологический монизм: $H^n(X) = 0$ |
-| $H^*_{\text{лок}}(X, T) \neq 0$ | [Т] | $\tilde{H}^6(S^6) \cong \mathbb{Z}$ |
-| $\Lambda_{\text{набл}} > 0$ (T-71) | [Т] | Автопоэзис + локальные когомологии |
-| $\rho_{\text{вак}} = \kappa_0[P(\rho^*) - P(I/7)]\omega_0 > 0$ | [Т] | Каждый множитель $> 0$ |
-| $\Sigma^3 \cong S^3$ (де Ситтер) (T-120b) | [Т] | Следствие $\Lambda > 0$ |
-| O-секторное доминирование (Sol.63) | [Т] | $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar\varepsilon^2)$ |
-| 6 пертурбативных механизмов | [Т] | При $\varepsilon = 10^{-2}$ [Г] |
-| Пертурбативный бюджет $10^{-41.5}$ | [С] | Зависит от $\varepsilon$ |
-| Спектральная формула $\Lambda_{\text{CC}}$ (Sol.41) | [Т] | Моменты $D_{\text{int}}$ |
-| SUSY-компенсация $\varepsilon^{12}$ | [Т] | Спектральное действие |
-| Секторная минимизация $\sim 10^{-40}$ | [С] | Структура [Т]; точное значение — вычислительная задача |
-| Полная оценка $\sim 10^{-120 \pm 10}$ | [С] | Структурное замыкание; числовая точность [С] |
-| Связь с неполнотой Ловера | [И] | Информационный зазор → $\rho_{\text{вак}}$ |
-| $\varepsilon = 10^{-2}$ | [Г] | Не выведено из первых принципов |
+| $\Lambda_{\text{glob}} = 0$ | [Т] | Cohomological monism: $H^n(X) = 0$ |
+| $H^*_{\text{loc}}(X, T) \neq 0$ | [Т] | $\tilde{H}^6(S^6) \cong \mathbb{Z}$ |
+| $\Lambda_{\text{obs}} > 0$ (T-71) | [Т] | Autopoiesis + local cohomologies |
+| $\rho_{\text{vac}} = \kappa_0[P(\rho^*) - P(I/7)]\omega_0 > 0$ | [Т] | Each factor $> 0$ |
+| $\Sigma^3 \cong S^3$ (de Sitter) (T-120b) | [Т] | Consequence of $\Lambda > 0$ |
+| O-sector dominance (Sol.63) | [Т] | $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar\varepsilon^2)$ |
+| 6 perturbative mechanisms | [Т] | At $\varepsilon = 10^{-2}$ [Г] |
+| Perturbative budget $10^{-41.5}$ | [С] | Depends on $\varepsilon$ |
+| Spectral formula $\Lambda_{\text{CC}}$ (Sol.41) | [Т] | Moments of $D_{\text{int}}$ |
+| SUSY compensation $\varepsilon^{12}$ | [Т] | Spectral action |
+| Sector minimization $\sim 10^{-40}$ | [С] | Structure [Т]; exact value — computational task |
+| Full estimate $\sim 10^{-120 \pm 10}$ | [С] | Structural closure; numerical precision [С] |
+| Connection to Lawvere incompleteness | [И] | Informational gap → $\rho_{\text{vac}}$ |
+| $\varepsilon = 10^{-2}$ | [Г] | Not derived from first principles |
 
-## Выводы
+## Conclusions {#выводы}
 
-**1. Глобально — точный ноль.** Когомологический монизм [Т]: стягиваемость пространства состояний к терминальному объекту обнуляет глобальную вакуумную энергию. Не «маленькая» — **ноль**. Наблюдаемая $\Lambda$ — локальный эффект из $H^*_{\text{лок}}(X, T) \neq 0$ [Т].
+**1. Globally — exact zero.** Cohomological monism [Т]: contractibility of the state space to the terminal object cancels global vacuum energy. Not "small" — **zero**. The observed $\Lambda$ is a local effect from $H^*_{\text{loc}}(X, T) \neq 0$ [Т].
 
-**2. Локально — строго положительна.** $\Lambda_{\text{набл}} > 0$ — теорема T-71 [Т]. Три множителя ($\kappa_0$, $P(\rho^*) - P(I/7)$, $\omega_0$) — каждый положителен по отдельной теореме. Вселенная с $\Lambda \leq 0$ не может содержать автопоэтических систем — это не антропный принцип как аргумент вероятности, а **запрет** как следствие алгебры.
+**2. Locally — strictly positive.** $\Lambda_{\text{obs}} > 0$ is theorem T-71 [Т]. Three factors ($\kappa_0$, $P(\rho^*) - P(I/7)$, $\omega_0$) — each positive by a separate theorem. A universe with $\Lambda \leq 0$ cannot contain autopoietic systems — this is not the anthropic principle as a probability argument, but a **prohibition** as a consequence of algebra.
 
-**3. $\Lambda$ — стоимость наблюдения.** O-секторная непрозрачность определяет $\Lambda$ [Т] (Sol.63). Тот же сектор порождает время через Пейдж–Вуттерс. Наличие наблюдателя — буквально — стоит энергии. Космологическая постоянная — счёт за существование внутренних часов.
+**3. $\Lambda$ is the cost of observation.** O-sector opacity determines $\Lambda$ [Т] (Sol.63). The same sector generates time through Page–Wootters. The presence of an observer — literally — costs energy. The cosmological constant is the bill for existing internal clocks.
 
-**4. 120 порядков — не одна тайна, а цепочка механизмов.** Шесть пертурбативных механизмов [Т] дают $10^{-41.5}$. SUSY-компенсация [Т], спектральная формула [Т] и секторная минимизация [С] замыкают бюджет до $\sim 10^{-120 \pm 10}$. Без подгонки. Без ландшафта. Без антропной вероятности.
+**4. 120 orders — not one mystery, but a chain of mechanisms.** Six perturbative mechanisms [Т] give $10^{-41.5}$. SUSY compensation [Т], spectral formula [Т], and sector minimization [С] close the budget to $\sim 10^{-120 \pm 10}$. Without fitting. Without a landscape. Without anthropic probability.
 
-**5. Неполнота как источник энергии.** Теорема Ловера (T-55 [Т]): система не может полностью себя описать. Информационный зазор $\|\Gamma - \varphi(\Gamma)\| > 0$ транслируется в $\rho_{\text{вак}} > 0$ [И]. Вакуумная энергия — плата за фундаментальную неполноту самомоделирования. Гёдель, Тарский, Ловер — три уровня неполноты; третий оказывается физическим.
+**5. Incompleteness as energy source.** Lawvere's theorem (T-55 [Т]): the system cannot fully describe itself. The informational gap $\|\Gamma - \varphi(\Gamma)\| > 0$ translates into $\rho_{\text{vac}} > 0$ [И]. Vacuum energy is the payment for the fundamental incompleteness of self-modelling. Gödel, Tarski, Lawvere — three levels of incompleteness; the third turns out to be physical.
 
-**6. Первое объяснение — не первое число.** $\pm 10$ порядков — честная неопределённость. Но впервые в истории проблемы: знак объяснён [Т], структура подавления замкнута [Т], все коэффициенты определены через $\theta^*$ [Т], свободных параметров нет. Осталась вычислительная задача. Концептуальная — решена.
+**6. First explanation — not first number.** $\pm 10$ orders is an honest uncertainty. But for the first time in the history of this problem: the sign is explained [Т], the suppression structure is closed [Т], all coefficients are defined through $\theta^*$ [Т], there are no free parameters. A computational task remains. The conceptual one is solved.
 
-Математика, как обычно, не спрашивает разрешения. Но иногда — выставляет счёт.
+Mathematics, as usual, does not ask permission. But sometimes — it presents a bill.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция и автопоэзис
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — плоскость Фано и код Хэмминга
-- [Три силы, одно уравнение](/blog/three-forces) — динамика: регенерация и $\kappa(\Gamma)$
-- [Почему пространство трёхмерно](/blog/spacetime-dimensions) — O-измерение и время из Пейдж–Вуттерс
-- [Почему ровно семь](/blog/why-seven) — октонионная алгебра и $G_2$-симметрия
-- [Смерть, когерентность и время](/blog/death-coherence-time) — $P_{\text{crit}} = 2/7$ и необратимость
-- [Космологическая постоянная](/docs/physics/gravity/cosmological-constant) — полный формализм
-- [Бюджет $\Lambda$: доказательства](/docs/proofs/gap/lambda-budget) — шесть механизмов подробно
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — philosophical position and autopoiesis
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — Fano plane and Hamming code
+- [Three Forces, One Equation](/blog/three-forces) — dynamics: regeneration and $\kappa(\Gamma)$
+- [Why Space is Three-Dimensional](/blog/spacetime-dimensions) — O-dimension and time from Page–Wootters
+- [Why Exactly Seven](/blog/why-seven) — octonionic algebra and $G_2$-symmetry
+- [Death, Coherence and Time](/blog/death-coherence-time) — $P_{\text{crit}} = 2/7$ and irreversibility
+- [Cosmological Constant](/docs/physics/gravity/cosmological-constant) — full formalism
+- [$\Lambda$ Budget: Proofs](/docs/proofs/gap/lambda-budget) — six mechanisms in detail

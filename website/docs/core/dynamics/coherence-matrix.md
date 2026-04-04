@@ -6,7 +6,7 @@ description: Complete description of the Holonom's state
 
 # Coherence Matrix (Γ)
 
-This chapter is dedicated to the central object of the Universal Holonomic Model — the **coherence matrix** $\Gamma$. If the entire theory describes how reality is structured, then $\Gamma$ is its **complete description** for any specific system (holonom). After studying this chapter, the reader will understand: what $\Gamma$ is and why it is $7 \times 7$; what the diagonal elements and coherences mean; how to extract information about viability, consciousness, and the internal structure of a system from a single matrix.
+This chapter is dedicated to the central object of the Unitary Holonomic Monism — the **coherence matrix** $\Gamma$. If the entire theory describes how reality is structured, then $\Gamma$ is its **complete description** for any specific system (holonom). After studying this chapter, the reader will understand: what $\Gamma$ is and why it is $7 \times 7$; what the diagonal elements and coherences mean; how to extract information about viability, consciousness, and the internal structure of a system from a single matrix.
 
 :::info Historical Precursors
 The idea of describing a system's state with a matrix has deep roots in physics:

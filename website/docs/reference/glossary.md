@@ -1,416 +1,416 @@
 ---
 sidebar_position: 1
-title: Глоссарий
-description: Определения основных терминов теории УГМ
+title: Glossary
+description: Definitions of the main terms of UHM theory
 ---
 
-# Глоссарий
+# Glossary
 
-:::tip Навигация
-Для математических обозначений см. [Нотация](./notation). Для критериев проверки см. [Фальсифицируемость](./falsifiability).
+:::tip Navigation
+For mathematical notation see [Notation](./notation). For verification criteria see [Falsifiability](./falsifiability).
 :::
 
-## Основные Термины
+## Core Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **$\mathcal{C}$ (Категория)** | [Примитивная категория](/docs/core/foundations/axiom-omega#примитив) — **единственный примитив**; малая категория с конечным числом объектов |
-| **$\Gamma$ (Гамма)** | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — эрмитова положительно полуопределённая матрица с $\mathrm{Tr}(\Gamma) = 1$ |
-| **$\mathbb{H}$ (Голоном)** | [Минимальная самодостаточная единица](/docs/core/structure/holon) реальности, содержащая образ целого |
-| **$\Gamma_\odot$ (Источник)** | [Изначальное чистое состояние](/docs/physics/cosmology-phys/origin) — суперпозиция всех измерений |
-| **$P$ (Чистота)** | $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$ — [мера когерентности](/docs/core/dynamics/viability#определение-чистоты) |
-| **$S_{vN}$** | Энтропия фон Неймана $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) \in [0, \log 7]$ |
-| **Когерентность** | Квантовые корреляции между измерениями — недиагональные элементы $\gamma_{ij}$ матрицы $\Gamma$ |
-| **Декогеренция** | Процесс потери когерентности через взаимодействие с окружением — см. [диссипативный член](/docs/core/dynamics/evolution#логический-лиувиллиан) |
-| **Унитарная эволюция** | Детерминистическая эволюция замкнутой системы, сохраняющая $P$ |
-| **Внутреннее время τ** | Эмерджентный параметр, возникающий из корреляций между O и остальными измерениями — [теорема](/docs/proofs/dynamics/emergent-time) |
-| **Пейдж–Вуттерс механизм** | Конструкция для вывода времени из структуры $\Gamma_{total}$ с ограничением $\hat{C} \cdot \Gamma_{total} = 0$ |
-| **Метрика Бурес** | $d_B(\Gamma_1, \Gamma_2) = \arccos(\sqrt{F})$, где $F = \left(\text{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ — [верность Ульмана](/docs/proofs/dynamics/emergent-time#41-метрика-бурес); угловое расстояние в пространстве состояний |
-| **∞-группоид Exp_∞** | Расширение категории Exp с 1-морфизмами (время) и n-морфизмами (гомотопии) |
-| **∞-топос Sh_∞(Exp)** | Категория ∞-пучков на Exp_∞ с внутренней темпоральной модальной логикой |
+| Term | Definition |
+|------|------------|
+| **$\mathcal{C}$ (Category)** | [Primitive category](/docs/core/foundations/axiom-omega#примитив) — **sole primitive**; small category with a finite number of objects |
+| **$\Gamma$ (Gamma)** | [Coherence matrix](/docs/core/dynamics/coherence-matrix) — Hermitian positive semi-definite matrix with $\mathrm{Tr}(\Gamma) = 1$ |
+| **$\mathbb{H}$ (Holon)** | [Minimal self-sufficient unit](/docs/core/structure/holon) of reality, containing an image of the whole |
+| **$\Gamma_\odot$ (Source)** | [Primordial pure state](/docs/physics/cosmology-phys/origin) — superposition of all dimensions |
+| **$P$ (Purity)** | $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$ — [coherence measure](/docs/core/dynamics/viability#определение-чистоты) |
+| **$S_{vN}$** | Von Neumann entropy $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) \in [0, \log 7]$ |
+| **Coherence** | Quantum correlations between dimensions — off-diagonal elements $\gamma_{ij}$ of matrix $\Gamma$ |
+| **Decoherence** | Process of losing coherence through interaction with the environment — see [dissipative term](/docs/core/dynamics/evolution#логический-лиувиллиан) |
+| **Unitary evolution** | Deterministic evolution of a closed system that preserves $P$ |
+| **Internal time τ** | Emergent parameter arising from correlations between O and the remaining dimensions — [theorem](/docs/proofs/dynamics/emergent-time) |
+| **Page–Wootters mechanism** | Construction for deriving time from the structure of $\Gamma_{total}$ with the constraint $\hat{C} \cdot \Gamma_{total} = 0$ |
+| **Bures metric** | $d_B(\Gamma_1, \Gamma_2) = \arccos(\sqrt{F})$, where $F = \left(\text{Tr}\sqrt{\sqrt{\Gamma_1}\Gamma_2\sqrt{\Gamma_1}}\right)^2$ — [Uhlmann fidelity](/docs/proofs/dynamics/emergent-time#41-метрика-бурес); angular distance in state space |
+| **∞-groupoid Exp_∞** | Extension of the Exp category with 1-morphisms (time) and n-morphisms (homotopies) |
+| **∞-topos Sh_∞(Exp)** | Category of ∞-sheaves on Exp_∞ with internal temporal modal logic |
 
-## Термины базового пространства и стратификации
+## Base Space and Stratification Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **Базовое пространство X** | $X = \|N(\mathcal{C})\|$ — [геометрическая реализация нерва](/docs/core/foundations/spacetime#базовое-пространство) категории $\mathcal{C}$; выводится эндогенно, не постулируется |
-| **Нерв N(𝒞)** | [Симплициальное множество](/docs/core/foundations/spacetime#нерв-категории): 0-симплексы = объекты, n-симплексы = цепочки морфизмов |
-| **Терминальный объект T** | $T = \Gamma^*$ — [глобальный аттрактор](/docs/core/foundations/axiom-omega#свойство-3); $\forall\Gamma, \exists! f: \Gamma \to T$; обеспечивает стягиваемость X |
-| **Стратификация** | Разбиение $X = \bigsqcup_\alpha S_\alpha$ на [страты](/docs/core/foundations/spacetime#стратификация-x); $S_0 = \{T\}$ |
-| **Локально-глобальная дихотомия** | [Принцип](/docs/core/foundations/spacetime#локально-глобальная-дихотомия): $H^*(X) = 0$ глобально (монизм), $H^*_{loc}(X,T) \neq 0$ локально (физика) |
-| **Когомологический монизм** | [Теорема](/docs/core/foundations/consequences#когомологический-монизм): $H^n(X, \mathcal{F}) = 0$ для $n > 0$ — монизм как математический факт |
-| **Стратифицированная метрика d_strat** | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ — [метрика Конна](/docs/core/foundations/spacetime#метрика-конна) на стратах |
-| **Линк Link(T)** | Топологическая структура вблизи T; $\text{Link}(T) \cong S^6$ — 6-сфера |
-| **Стрела времени (геометрическая)** | [Коллапс страт](/docs/core/dynamics/evolution#стрела-времени-эволюция): $\dim(X_\tau) \geq \dim(X_{\tau+1})$ к терминальному T |
-| **IC-когомологии** | [Intersection cohomology](/docs/proofs/categorical/categorical-formalism#производные-категории) — когомологии страт, захватывающие «скрытую топологию» |
-| **Производная категория D^b(X)** | [Ограниченная производная категория](/docs/proofs/categorical/categorical-formalism#производные-категории) пучков на стратифицированном X |
+| Term | Definition |
+|------|------------|
+| **Base space X** | $X = \|N(\mathcal{C})\|$ — [geometric realisation of the nerve](/docs/core/foundations/spacetime#базовое-пространство) of category $\mathcal{C}$; derived endogenously, not postulated |
+| **Nerve N(𝒞)** | [Simplicial set](/docs/core/foundations/spacetime#нерв-категории): 0-simplices = objects, n-simplices = chains of morphisms |
+| **Terminal object T** | $T = \Gamma^*$ — [global attractor](/docs/core/foundations/axiom-omega#свойство-3); $\forall\Gamma, \exists! f: \Gamma \to T$; ensures contractibility of X |
+| **Stratification** | Decomposition $X = \bigsqcup_\alpha S_\alpha$ into [strata](/docs/core/foundations/spacetime#стратификация-x); $S_0 = \{T\}$ |
+| **Local–global dichotomy** | [Principle](/docs/core/foundations/spacetime#локально-глобальная-дихотомия): $H^*(X) = 0$ globally (monism), $H^*_{loc}(X,T) \neq 0$ locally (physics) |
+| **Cohomological monism** | [Theorem](/docs/core/foundations/consequences#когомологический-монизм): $H^n(X, \mathcal{F}) = 0$ for $n > 0$ — monism as a mathematical fact |
+| **Stratified metric d_strat** | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ — [Connes metric](/docs/core/foundations/spacetime#метрика-конна) on strata |
+| **Link Link(T)** | Topological structure near T; $\text{Link}(T) \cong S^6$ — 6-sphere |
+| **Arrow of time (geometric)** | [Stratum collapse](/docs/core/dynamics/evolution#стрела-времени-эволюция): $\dim(X_\tau) \geq \dim(X_{\tau+1})$ towards terminal T |
+| **IC cohomology** | [Intersection cohomology](/docs/proofs/categorical/categorical-formalism#производные-категории) — cohomology of strata capturing the "hidden topology" |
+| **Derived category D^b(X)** | [Bounded derived category](/docs/proofs/categorical/categorical-formalism#производные-категории) of sheaves on stratified X |
 
-## Измерения Голонома
+## Holon Dimensions
 
-См. [Семь измерений](/docs/core/structure/dimensions) для полного описания.
+See [Seven dimensions](/docs/core/structure/dimensions) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **Измерение** | Один из 7 фундаментальных аспектов [Голонома](/docs/core/structure/holon) |
-| **[$A$ — Артикуляция](/docs/core/structure/dimension-a)** | Измерение I — способность различать |
-| **[$S$ — Структура](/docs/core/structure/dimension-s)** | Измерение II — способность удерживать форму |
-| **[$D$ — Динамика](/docs/core/structure/dimension-d)** | Измерение III — способность изменяться |
-| **[$L$ — Логика](/docs/core/structure/dimension-l)** | Измерение IV — способность быть согласованным |
-| **[$E$ — Интериорность](/docs/core/structure/dimension-e)** | Измерение V — способность переживать |
-| **[$O$ — Основание](/docs/core/structure/dimension-o)** | Измерение VI — связь с Источником и **внутренние часы** (Пейдж–Вуттерс) |
-| **[$U$ — Единство](/docs/core/structure/dimension-u)** | Измерение VII — интеграция всех измерений |
+| Term | Definition |
+|------|------------|
+| **Dimension** | One of the 7 fundamental aspects of the [Holon](/docs/core/structure/holon) |
+| **[$A$ — Articulation](/docs/core/structure/dimension-a)** | Dimension I — capacity to differentiate |
+| **[$S$ — Structure](/docs/core/structure/dimension-s)** | Dimension II — capacity to hold form |
+| **[$D$ — Dynamics](/docs/core/structure/dimension-d)** | Dimension III — capacity to change |
+| **[$L$ — Logic](/docs/core/structure/dimension-l)** | Dimension IV — capacity to be consistent |
+| **[$E$ — Interiority](/docs/core/structure/dimension-e)** | Dimension V — capacity to experience |
+| **[$O$ — Ground](/docs/core/structure/dimension-o)** | Dimension VI — connection to the Source and **internal clock** (Page–Wootters) |
+| **[$U$ — Unity](/docs/core/structure/dimension-u)** | Dimension VII — integration of all dimensions |
 
-## Иерархия интериорности (L0→L1→L2→L3→L4)
+## Interiority Hierarchy (L0→L1→L2→L3→L4)
 
-См. [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) для формальных определений и доказательств.
+See [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) for formal definitions and proofs.
 
-:::warning Терминологическая дисциплина
-Термин **«квалиа»** используется ТОЛЬКО для уровня L2 (когнитивные квалиа). Для L0 и L1 используются термины «интериорность» и «феноменальная геометрия» соответственно. L3 и L4 — пост-рефлексивные уровни. Это категориально корректное разграничение.
+:::warning Terminological discipline
+The term **"qualia"** is used ONLY for level L2 (cognitive qualia). For L0 and L1, the terms "interiority" and "phenomenal geometry" are used respectively. L3 and L4 are post-reflexive levels. This is a categorically correct distinction.
 :::
 
-| Термин | Уровень | Определение |
-|--------|---------|-------------|
-| **Интериорность** | L0 | Фундаментальное свойство «иметь изнанку»; $\mathrm{Int}(S) := \exists \rho_E = \mathrm{Tr}_{-E}(\Gamma_S)$; соответствует $\tau_{\leq 0}(\mathrm{Exp}_\infty)$ |
-| **Феноменальная геометрия** | L1 | Структура с метрикой; $\mathrm{PG}(S) := (\mathbb{P}(\mathcal{H}_E), d_{\mathrm{FS}}, \rho_E)$, где $\mathrm{rank}(\rho_E) > 1$; соответствует $\tau_{\leq 1}$ |
-| **Когнитивные квалиа** | L2 | Рефлексивно доступный опыт; $R \geq 1/3$, $\Phi \geq 1$; соответствует $\tau_{\leq 2}$ |
-| **Сетевое сознание** | L3 | Распределённая когнитивная сеть; $\pi_3 \neq 0$, $R^{(2)} \geq 1/4$; **метастабильное** с $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$ |
-| **Унитарное сознание** | L4 | Полноценный ∞-группоид; $\forall k: \pi_k \neq 0$, $\lim_n R^{(n)} > 0$, $P > 6/7$; максимальный уровень (стабилизация Постникова) |
-| **Экспериенциальное содержание** | L0–L4 | $\mathcal{Q} := (\mathrm{Intensity}, \mathrm{Quality}, \mathrm{Context}, \mathrm{History})$ |
-| **n-усечение $\tau_{\leq n}$** | — | Операция на ∞-группоиде, обнуляющая $\pi_k$ для $k > n$; связывает уровни Ln с гомотопической структурой |
-| **Универсальный порог рефлексии** | — | Формула $X^{(n)}_{\mathrm{th}} = 1/(n+1)$: L2 ($n=2$): $R_{\mathrm{th}} = 1/3$, L3 ($n=3$): $R^{(2)}_{\mathrm{th}} = 1/4$, L4 ($n=4$): $R^{(3)}_{\mathrm{th}} = 1/5$. Порог интеграции: $\Phi_{\mathrm{th}} = 1$ |
+| Term | Level | Definition |
+|------|-------|------------|
+| **Interiority** | L0 | Fundamental property of "having an inside"; $\mathrm{Int}(S) := \exists \rho_E = \mathrm{Tr}_{-E}(\Gamma_S)$; corresponds to $\tau_{\leq 0}(\mathrm{Exp}_\infty)$ |
+| **Phenomenal geometry** | L1 | Structure with a metric; $\mathrm{PG}(S) := (\mathbb{P}(\mathcal{H}_E), d_{\mathrm{FS}}, \rho_E)$, where $\mathrm{rank}(\rho_E) > 1$; corresponds to $\tau_{\leq 1}$ |
+| **Cognitive qualia** | L2 | Reflexively accessible experience; $R \geq 1/3$, $\Phi \geq 1$; corresponds to $\tau_{\leq 2}$ |
+| **Network consciousness** | L3 | Distributed cognitive network; $\pi_3 \neq 0$, $R^{(2)} \geq 1/4$; **metastable** with $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$ |
+| **Unitary consciousness** | L4 | Full ∞-groupoid; $\forall k: \pi_k \neq 0$, $\lim_n R^{(n)} > 0$, $P > 6/7$; maximal level (Postnikov stabilisation) |
+| **Experiential content** | L0–L4 | $\mathcal{Q} := (\mathrm{Intensity}, \mathrm{Quality}, \mathrm{Context}, \mathrm{History})$ |
+| **n-truncation $\tau_{\leq n}$** | — | Operation on an ∞-groupoid that zeroes out $\pi_k$ for $k > n$; connects Ln levels to homotopy structure |
+| **Universal reflection threshold** | — | Formula $X^{(n)}_{\mathrm{th}} = 1/(n+1)$: L2 ($n=2$): $R_{\mathrm{th}} = 1/3$, L3 ($n=3$): $R^{(2)}_{\mathrm{th}} = 1/4$, L4 ($n=4$): $R^{(3)}_{\mathrm{th}} = 1/5$. Integration threshold: $\Phi_{\mathrm{th}} = 1$ |
 
-## Компоненты экспериенциального содержания
+## Components of Experiential Content
 
-См. [Категория Exp](/docs/proofs/categorical/categorical-formalism#2-категория-exp) для формального описания.
+See [Exp category](/docs/proofs/categorical/categorical-formalism#2-категория-exp) for a formal description.
 
-| Термин | Определение |
-|--------|-------------|
-| **Интенсивность** | $\{\lambda_i\}$ — спектр $\Gamma$; определяет *силу* состояния |
-| **Качество** | $\{[\lvert q_i\rangle]\} \subset \mathbb{P}(\mathcal{H}_E)$ — определяет *характер* состояния |
-| **Контекст** | $\Gamma_{-E}$ — состояния всех измерений кроме $E$ |
-| **История** | Выводится как пространство петель в ∞-группоиде: $\mathrm{Hist}(\mathcal{Q}) := \Omega_\mathcal{Q}(\mathbf{Exp}_\infty)$ — [теорема](/docs/proofs/dynamics/emergent-time#5-категорное-время-через-infty-группоид) |
-| **$\mathbb{P}(\mathcal{H}_E)$** | [Проективное пространство](/docs/reference/specification#проективное-пространство-качеств) качеств |
-| **$d_{\mathrm{FS}}$** | [Метрика Фубини-Штуди](/docs/reference/specification#метрика-фубини-штуди): $d_{\mathrm{FS}}([\lvert\psi\rangle],[\lvert\phi\rangle]) = \arccos(\lvert\langle\psi\vert\phi\rangle\rvert)$ |
-| **Реляционная идентичность квалиа** | [Теорема](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): по лемме Ёнеды, идентичность квалиа $[\lvert q\rangle]$ полностью определяется его реляционной позицией в категории Exp. Инвертированные квалиа невозможны. |
-| **Феноменальный вектор FV** | $\text{FV}(\rho_E) := \{(\lambda_i, [\lvert q_i\rangle])\}$ — [единственный функтор](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), извлекающий содержание опыта из $\rho_E$. Не произвольный постулат, а вынужденная структура. |
+| Term | Definition |
+|------|------------|
+| **Intensity** | $\{\lambda_i\}$ — spectrum of $\Gamma$; defines the *strength* of the state |
+| **Quality** | $\{[\lvert q_i\rangle]\} \subset \mathbb{P}(\mathcal{H}_E)$ — defines the *character* of the state |
+| **Context** | $\Gamma_{-E}$ — states of all dimensions except $E$ |
+| **History** | Derived as the loop space in the ∞-groupoid: $\mathrm{Hist}(\mathcal{Q}) := \Omega_\mathcal{Q}(\mathbf{Exp}_\infty)$ — [theorem](/docs/proofs/dynamics/emergent-time#5-категорное-время-через-infty-группоид) |
+| **$\mathbb{P}(\mathcal{H}_E)$** | [Projective space](/docs/reference/specification#проективное-пространство-качеств) of qualities |
+| **$d_{\mathrm{FS}}$** | [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди): $d_{\mathrm{FS}}([\lvert\psi\rangle],[\lvert\phi\rangle]) = \arccos(\lvert\langle\psi\vert\phi\rangle\rvert)$ |
+| **Relational identity of qualia** | [Theorem](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность): by Yoneda's lemma, the identity of qualia $[\lvert q\rangle]$ is fully determined by its relational position in the Exp category. Inverted qualia are impossible. |
+| **Phenomenal vector FV** | $\text{FV}(\rho_E) := \{(\lambda_i, [\lvert q_i\rangle])\}$ — [unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв), extracting experiential content from $\rho_E$. Not an arbitrary postulate, but a forced structure. |
 
-## Термины калибровки
+## Calibration Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **Изоспектральность** | $\mathrm{Spec}(\rho_1) = \mathrm{Spec}(\rho_2)$, но $\mathrm{Eigvec}(\rho_1) \neq \mathrm{Eigvec}(\rho_2)$ |
-| **Калибровка** | Процедура установления соответствия между математикой и феноменологией |
-| **Контрастный спектр** | $\log(\lambda_i / \lambda_i^{\text{ref}})$ — относительные интенсивности |
-| **Категориальный разрыв** | Граница объяснения: невозможность дедуцировать «почему есть опыт» — см. [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) |
-| **Аксиома Ω⁷** | [Фундаментальная аксиоматика](/docs/core/foundations/axiom-omega): ∞-топос $\mathbf{Sh}_\infty(\mathcal{C})$ как единственный примитив |
+| Term | Definition |
+|------|------------|
+| **Isospectrality** | $\mathrm{Spec}(\rho_1) = \mathrm{Spec}(\rho_2)$, but $\mathrm{Eigvec}(\rho_1) \neq \mathrm{Eigvec}(\rho_2)$ |
+| **Calibration** | Procedure for establishing correspondence between mathematics and phenomenology |
+| **Contrast spectrum** | $\log(\lambda_i / \lambda_i^{\text{ref}})$ — relative intensities |
+| **Categorical gap** | Boundary of explanation: impossibility of deducing "why there is experience" — see [Axiom Ω⁷](/docs/core/foundations/axiom-omega) |
+| **Axiom Ω⁷** | [Fundamental axiomatics](/docs/core/foundations/axiom-omega): ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ as the sole primitive |
 
-## Категорные Термины
+## Categorical Terms {#категорные-термины}
 
-См. [Категорный формализм](/docs/proofs/categorical/categorical-formalism) для полного описания.
+See [Categorical formalism](/docs/proofs/categorical/categorical-formalism) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **$\mathbf{DensityMat}$** | [Категория матриц плотности](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat) с CPTP-морфизмами |
-| **$\mathbf{Exp}$** | [Категория экспериенциальных состояний](/docs/proofs/categorical/categorical-formalism#2-категория-exp) |
-| **$\mathbf{Exp}_\infty$** | [∞-группоид путей](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) — время как 1-морфизм |
-| **$\mathbf{Sh}_\infty(\mathbf{Exp})$** | [∞-топос пучков](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) — внутренняя темпоральная логика |
-| **Функтор $F$** | [Функтор опыта](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах): $F: \mathbf{DensityMat} \to \mathbf{Exp}$ |
-| **CPTP** | Completely Positive Trace-Preserving — квантовые каналы, см. [Формализация φ](/docs/proofs/categorical/formalization-phi) |
-| **∞-топос (∞-topos)** | ∞-категория, удовлетворяющая аксиомам Гиро. В УГМ: $\mathrm{Sh}_\infty(\mathcal{C})$ — единственный примитив теории в формулировке Ω⁷ |
-| **Топология Гротендика** | [Сайт](/docs/core/foundations/axiom-omega#топология-гротендика) $(\mathcal{C}, J_{Bures})$ — функция покрытий, превращающая $\mathcal{C}$ в основу для построения топоса |
-| **Bures-покрытие** | Семейство $\{\Phi_i: \Gamma_i \to \Gamma\}$ покрывает $\Gamma$, если $B_B(\Gamma, \delta) \subseteq \bigcup_i \Phi_i(B_B(\Gamma_i, \epsilon))$ |
-| **Метрика Бурес $d_B$** | $d_B(\Gamma_1, \Gamma_2) = \arccos(\sqrt{F})$; [монотонна](/docs/proofs/categorical/categorical-formalism#631-bures-топология-на-densitymat) при CPTP |
-| **Fidelity (Fid)** | $\mathrm{Fid}(\rho, \sigma) = (\mathrm{Tr}\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}})^2$ — мера близости квантовых состояний. Обозначение $\mathrm{Fid}$ используется для отличия от функтора $F$ |
-| **Сайт (site)** | Категория с функцией покрытий $J$, удовлетворяющей аксиомам: идентичность, стабильность, транзитивность |
-| **∞-терминальный объект** | Объект $T$ в ∞-категории, такой что $\mathrm{Map}(\Gamma, T) \simeq *$ для всех $\Gamma$. Допускает множество эквивалентных путей |
-| **Map(Γ, T)** | Пространство морфизмов (mapping space) в ∞-категории. В отличие от $\mathrm{Hom}(\Gamma, T)$ в 1-категории, является ∞-группоидом |
-| **Гомотопия** | 2-морфизм между 1-морфизмами. Связывает различные пути между объектами |
-| **HoTT (Гомотопическая теория типов)** | Внутренняя логика ∞-топоса. Формализует идентичность через пути |
-| **Свобода воли (Freedom)** | $\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1$ **[Т]** — число нулевых мод гессиана свободно-энергетического функционала + 1. ∞-категорная мотивация: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$. Монотонна под CPTP, $G_2$-инвариантна. См. [Следствия](/docs/core/foundations/consequences#freedom-конечномерное), [Свобода воли](/docs/consciousness/ethics-meaning/freedom#количественная-мера) |
-| **Энтропия свободы** | $S_{\text{freedom}} := \log(\text{Freedom}(\Gamma)) = \log(\dim\ker(\mathcal{H}_\Gamma) + 1) \in [0, \log 7]$ — количественная мера пространства выбора |
+| Term | Definition |
+|------|------------|
+| **$\mathbf{DensityMat}$** | [Category of density matrices](/docs/proofs/categorical/categorical-formalism#1-категория-densitymat) with CPTP morphisms |
+| **$\mathbf{Exp}$** | [Category of experiential states](/docs/proofs/categorical/categorical-formalism#2-категория-exp) |
+| **$\mathbf{Exp}_\infty$** | [∞-groupoid of paths](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) — time as a 1-morphism |
+| **$\mathbf{Sh}_\infty(\mathbf{Exp})$** | [∞-topos of sheaves](/docs/proofs/categorical/categorical-formalism#104-infty-топос-пучков) — internal temporal logic |
+| **Functor $F$** | [Experience functor](/docs/proofs/categorical/categorical-formalism#3-функтор-f-на-объектах): $F: \mathbf{DensityMat} \to \mathbf{Exp}$ |
+| **CPTP** | Completely Positive Trace-Preserving — quantum channels, see [Formalisation of φ](/docs/proofs/categorical/formalization-phi) |
+| **∞-topos (∞-topos)** | ∞-category satisfying Giraud's axioms. In UHM: $\mathrm{Sh}_\infty(\mathcal{C})$ — sole primitive of the theory in the Ω⁷ formulation |
+| **Grothendieck topology** | [Site](/docs/core/foundations/axiom-omega#топология-гротендика) $(\mathcal{C}, J_{Bures})$ — coverage function turning $\mathcal{C}$ into a basis for constructing the topos |
+| **Bures covering** | Family $\{\Phi_i: \Gamma_i \to \Gamma\}$ covers $\Gamma$ if $B_B(\Gamma, \delta) \subseteq \bigcup_i \Phi_i(B_B(\Gamma_i, \epsilon))$ |
+| **Bures metric $d_B$** | $d_B(\Gamma_1, \Gamma_2) = \arccos(\sqrt{F})$; [monotone](/docs/proofs/categorical/categorical-formalism#631-bures-топология-на-densitymat) under CPTP |
+| **Fidelity (Fid)** | $\mathrm{Fid}(\rho, \sigma) = (\mathrm{Tr}\sqrt{\sqrt{\rho}\sigma\sqrt{\rho}})^2$ — measure of proximity of quantum states. The notation $\mathrm{Fid}$ is used to distinguish from functor $F$ |
+| **Site (site)** | Category with a coverage function $J$ satisfying the axioms: identity, stability, transitivity |
+| **∞-terminal object** | Object $T$ in an ∞-category such that $\mathrm{Map}(\Gamma, T) \simeq *$ for all $\Gamma$. Admits a multitude of equivalent paths |
+| **Map(Γ, T)** | Morphism space (mapping space) in an ∞-category. Unlike $\mathrm{Hom}(\Gamma, T)$ in a 1-category, it is an ∞-groupoid |
+| **Homotopy** | 2-morphism between 1-morphisms. Connects different paths between objects |
+| **HoTT (Homotopy Type Theory)** | Internal logic of the ∞-topos. Formalises identity through paths |
+| **Free will (Freedom)** | $\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** — number of zero modes of the free-energy functional's Hessian + 1. ∞-categorical motivation: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$. Monotone under CPTP, $G_2$-invariant. See [Consequences](/docs/core/foundations/consequences#freedom-конечномерное), [Free will](/docs/consciousness/ethics-meaning/freedom#количественная-мера) |
+| **Freedom entropy** | $S_{\text{freedom}} := \log(\text{Freedom}(\Gamma)) = \log(\dim\ker(\mathcal{H}_\Gamma) + 1) \in [0, \log 7]$ — quantitative measure of the space of choice |
 
-## Термины L-унификации
+## L-Unification Terms
 
-См. [L-унификация](/docs/core/structure/dimension-l#категориальное-определение) и [Категорный формализм](/docs/proofs/categorical/categorical-formalism) для полного описания.
+See [L-unification](/docs/core/structure/dimension-l#категориальное-определение) and [Categorical formalism](/docs/proofs/categorical/categorical-formalism) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **L-унификация** | Центральная теорема УГМ: $L \cong \Omega \cap \Gamma$ — измерение Логики тождественно проекции классификатора подобъектов на состояние |
-| **$\Omega$ (классификатор)** | [Классификатор подобъектов](/docs/core/foundations/axiom-omega#внутренняя-логика) ∞-топоса $\mathrm{Sh}_\infty(\mathcal{C})$ — определяет внутреннюю логику теории |
-| **$\chi_S$ (характеристика)** | Характеристический морфизм $\chi_S: \Gamma \to \Omega$ подобъекта $S$ — «предикат принадлежности» |
-| **$L_k$ (Линдблад)** | Операторы диссипации: $L_k^{\text{atom}} = \lvert k\rangle\langle k\rvert$ — проекторы, выведенные из атомов классификатора Ω. Историческая запись $L_k = \sqrt{\chi_{S_k}}$ — конвенция ($\sqrt{P} = P$ для проекторов). См. [операторы Линдблада](/docs/core/operators/lindblad-operators) |
-| **$\mathcal{L}_\Omega$ (Лиувиллиан)** | [Логический Лиувиллиан](/docs/core/dynamics/evolution#логический-лиувиллиан) — супероператор эволюции, выведенный из Ω |
-| **$\triangleright$ (темпоральная модальность)** | [Модальный оператор](/docs/proofs/dynamics/emergent-time#время-из-модальности) «будет истинно завтра» на Ω; порождает дискретное время $\tau_n = \triangleright^n(\mathrm{now})$ |
-| **$\mathcal{D}_\Omega \dashv \mathcal{R}$ (сопряжение)** | [Сопряжение диссипации-регенерации](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0): $\mathcal{D}_\Omega$ — диссипативный функтор, $\mathcal{R}$ — регенеративный функтор; из него выводится $\kappa_0$ |
-| **CPTP автоматически** | Следствие L-унификации: $\sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}$ — условие CPTP выводится из структуры классификатора |
+| Term | Definition |
+|------|------------|
+| **L-unification** | Central theorem of UHM: $L \cong \Omega \cap \Gamma$ — the Logic dimension is identical to the projection of the subobject classifier onto the state |
+| **$\Omega$ (classifier)** | [Subobject classifier](/docs/core/foundations/axiom-omega#внутренняя-логика) of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ — defines the internal logic of the theory |
+| **$\chi_S$ (characteristic)** | Characteristic morphism $\chi_S: \Gamma \to \Omega$ of the subobject $S$ — "membership predicate" |
+| **$L_k$ (Lindblad)** | Dissipation operators: $L_k^{\text{atom}} = \lvert k\rangle\langle k\rvert$ — projectors derived from the atoms of the classifier Ω. Historical notation $L_k = \sqrt{\chi_{S_k}}$ — convention ($\sqrt{P} = P$ for projectors). See [Lindblad operators](/docs/core/operators/lindblad-operators) |
+| **$\mathcal{L}_\Omega$ (Liouvillian)** | [Logical Liouvillian](/docs/core/dynamics/evolution#логический-лиувиллиан) — evolution superoperator derived from Ω |
+| **$\triangleright$ (temporal modality)** | [Modal operator](/docs/proofs/dynamics/emergent-time#время-из-модальности) "will be true tomorrow" on Ω; generates discrete time $\tau_n = \triangleright^n(\mathrm{now})$ |
+| **$\mathcal{D}_\Omega \dashv \mathcal{R}$ (adjunction)** | [Dissipation–regeneration adjunction](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0): $\mathcal{D}_\Omega$ — dissipative functor, $\mathcal{R}$ — regenerative functor; $\kappa_0$ is derived from it |
+| **CPTP automatically** | Consequence of L-unification: $\sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}$ — the CPTP condition is derived from the classifier's structure |
 
-## Термины Формализации
+## Formalisation Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **$R$ (рефлексия)** | $R = R_{\text{canonical}} := 1/(7P)$ — каноническое определение, используемое во всех порогах. Не путать с $Q_\varphi := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (мера качества самомоделирования). Подробнее: [формализация φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) |
-| **$R_{\text{th}}$** | Порог рефлексии $= 1/3$ **[Т]** ($K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)) |
-| **$\Phi_{\text{th}}$** | Порог интеграции $= 1$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)) — единственное самосогласованное значение при $P_{\text{crit}} = 2/7$; [когерентная доминация](/docs/core/structure/dimension-u#мера-интеграции-φ) |
-| **$D_{\min}$** | Минимальная дифференциация $= 2$ **[Т]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — безусловное следствие $\Phi_{\text{th}} = 1$ [Т]; [определение](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
-| **$C_{\text{th}}$** | Порог сознательности $= \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$ **[Т]** (T-140); $D_{\text{diff}} \geq D_{\min} = 2$ — отдельное условие жизнеспособности [Т] (T-151) |
-| **$\varphi$ (оператор)** | [Оператор самомоделирования](/docs/proofs/categorical/formalization-phi); $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ |
-| **$K_m$** | Операторы Крауса; $\sum_m K_m^\dagger K_m = I$ |
-| **Неподвижная точка** | $\Gamma^* = \varphi(\Gamma^*)$ — состояние идеального самопознания |
-| **Сходимость** | $\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F$, $k \in [0,1)$ |
-| **(M,R)-система** | Система Розена: Метаболизм, Репарация, $\beta$-замыкание |
-| **[Теорема минимальности](/docs/proofs/minimality/theorem-minimality-7)** | Из (AP)+(PH)+(QG) следует $\dim(\mathcal{H}) = 7$ минимально |
-| **[Теорема единственности](/docs/proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса)** | Базис $\{A,S,D,L,E,O,U\}$ уникален **[Т]**: A,S,D,L,U — алгебраически; E,O — через κ₀ и функциональную независимость |
-| **(AP)** | Автопоэзис: $\exists\varphi$ с неподвижной точкой |
-| **(PH)** | Феноменология: $\exists\rho_E$ с нетривиальной интериорностью |
-| **(QG)** | Квантовое основание: уравнение Линдблада с регенерацией |
-| **(V) Жизнеспособность** | Четвёртое условие определения Голонома: $P(\Gamma) > P_{\text{crit}} = 2/7$. Совместно с (AP), (PH), (QG) образует полное определение — см. [Жизнеспособность](/docs/core/dynamics/viability) |
-| **ПИР (Принцип Информационной Различимости)** | Определение **[О]** (T16): различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости — встроено в A1+A2. Каждый Голоном содержит подструктуру, моделирующую его собственное целое. Формально: $\exists\varphi: \Gamma \to \Gamma$, $\varphi$ — CPTP-канал с $F(\Gamma, \varphi(\Gamma)) > 0$ |
-| **$P_{\text{crit}}$ (критическая чистота)** | Порог жизнеспособности $P_{\text{crit}} = 2/N = 2/7$. Выводится из пяти независимых путей — см. [Теорема P_crit](/docs/proofs/dynamics/theorem-purity-critical) |
-| **$\mathrm{Coh}_E$ (E-когерентность)** | HS-проекция **[Т]**: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2 = (\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2) / \mathrm{Tr}(\Gamma^2)$, $\in [1/7, 1]$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection). Формальная эквивалентность $\mathrm{Coh}_E \approx P_E = \mathrm{Tr}(\rho_E^2)$ — **структурная гипотеза [Г]** |
-| **$\kappa_0$ (базовый коэффициент регенерации)** | Масштаб сопряжения Голонома с окружением в регенеративном члене $\mathcal{R}[\Gamma, E]$ — см. [категориальный вывод κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
-| **$D_{\text{diff}}$ (дифференцировочная размерность)** | Количество измерений, в которых $\Gamma$ отклоняется от максимально смешанного состояния. Порог L2: $D_{\text{diff}} \geq 2$ — см. [определение](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
-| **$\mathcal{R}_\alpha$ (регенеративный оператор)** | CPTP-оператор: $\mathcal{R}_\alpha(\rho) = (1-\alpha)\rho + \alpha\rho_*$ [Т] — единственная CPTP-интерполяция с замещающим каналом; см. [вывод формы ℛ](/docs/core/dynamics/evolution#вывод-формы-регенерации) |
-| **Условие корректности** | $\alpha = \kappa \cdot \Delta\tau < 1$ — гарантия положительности при численном интегрировании |
-| **Интерполяционная формулировка** | Следствие [Т] CPTP-единственности замещающего канала: регенерация как выпуклая комбинация $\mathrm{Id}$ и $\mathcal{C}_{\rho_*}$; доказывает сохранение $\Gamma \geq 0$ |
-| **$R^{(n)}$ (рефлексия n-го порядка)** | $R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ — мера согласованности между последовательными уровнями самомоделирования |
-| **Спектральная формула $\varphi$** | $\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k \vert \Gamma \rangle R_k$ — проекция на ядро $\mathcal{L}_\Omega$; см. [формализация φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление) |
-| **Вариационная характеризация φ** | **Теорема 3.1:** $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$; см. [доказательство](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации) |
-| **$S_{spec}$ (спектральная энтропия)** | Для матриц плотности $S_{spec} = S_{vN}$ ([Теорема 5.1](/docs/proofs/dynamics/fep-derivation#5-s_spec-vs-s_vn-обоснование-выбора)). Общее: $S_{spec}(A) = -\sum_i \lvert\lambda_i\rvert \log\lvert\lambda_i\rvert$ |
-| **Каноническое $\Delta F$** | $\Delta F(\Gamma) := d_B^2(\Gamma, \Gamma_{\mathrm{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ — унифицированное определение через метрику Бурес |
-| **Метастабильность L3** | Время жизни сетевого сознания: $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$; конечное без активного поддержания |
-| **$H_{\mathrm{eff}}$ (эффективный гамильтониан)** | Гамильтониан системы после интегрирования по времени: $H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau\lvert H_{\mathrm{int}}\rvert\tau\rangle_O$; см. [Пейдж–Вуттерс](/docs/core/dynamics/evolution#вывод-h_eff) |
-| **Уравнение Линдблада** | $\frac{d\Gamma}{d\tau} = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$; три члена: унитарный, диссипативный, регенеративный |
-| **Bootstrap-парадокс** | Проблема: регенерация требует когерентности ($\kappa \propto \mathrm{Coh}_E$), но низкокогерентная система не может регенерировать. Решение: $\kappa_{\mathrm{bootstrap}} > 0$ обеспечивает минимальную регенерацию; см. [Genesis Protocol](/docs/core/foundations/axiom-omega#genesis-protocol) |
-| **$\kappa_{\mathrm{bootstrap}}$** | Минимальная скорость регенерации: $\kappa_{\mathrm{bootstrap}} := \|\eta\| > 0$, где $\eta$ — единица сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$; разрешает bootstrap-парадокс |
+| Term | Definition |
+|------|------------|
+| **$R$ (reflection)** | $R = R_{\text{canonical}} := 1/(7P)$ — canonical definition used in all thresholds. Not to be confused with $Q_\varphi := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (quality measure of self-modelling). Details: [formalisation of φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) |
+| **$R_{\text{th}}$** | Reflection threshold $= 1/3$ **[T]** ($K = 3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)) |
+| **$\Phi_{\text{th}}$** | Integration threshold $= 1$ **[T]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)) — unique self-consistent value at $P_{\text{crit}} = 2/7$; [coherent dominance](/docs/core/structure/dimension-u#мера-интеграции-φ) |
+| **$D_{\min}$** | Minimum differentiation $= 2$ **[T]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — unconditional consequence of $\Phi_{\text{th}} = 1$ [T]; [definition](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
+| **$C_{\text{th}}$** | Consciousness threshold $= \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$ **[T]** (T-140); $D_{\text{diff}} \geq D_{\min} = 2$ — separate viability condition [T] (T-151) |
+| **$\varphi$ (operator)** | [Self-modelling operator](/docs/proofs/categorical/formalization-phi); $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ |
+| **$K_m$** | Kraus operators; $\sum_m K_m^\dagger K_m = I$ |
+| **Fixed point** | $\Gamma^* = \varphi(\Gamma^*)$ — state of ideal self-knowledge |
+| **Convergence** | $\|\varphi^n(\Gamma_0) - \Gamma^*\|_F \leq k^n \cdot \|\Gamma_0 - \Gamma^*\|_F$, $k \in [0,1)$ |
+| **(M,R)-system** | Rosen's system: Metabolism, Repair, $\beta$-closure |
+| **[Minimality theorem](/docs/proofs/minimality/theorem-minimality-7)** | From (AP)+(PH)+(QG) it follows that $\dim(\mathcal{H}) = 7$ minimally |
+| **[Uniqueness theorem](/docs/proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса)** | Basis $\{A,S,D,L,E,O,U\}$ is unique **[T]**: A,S,D,L,U — algebraically; E,O — via κ₀ and functional independence |
+| **(AP)** | Autopoiesis: $\exists\varphi$ with a fixed point |
+| **(PH)** | Phenomenology: $\exists\rho_E$ with non-trivial interiority |
+| **(QG)** | Quantum ground: Lindblad equation with regeneration |
+| **(V) Viability** | Fourth condition in the definition of the Holon: $P(\Gamma) > P_{\text{crit}} = 2/7$. Together with (AP), (PH), (QG) forms the complete definition — see [Viability](/docs/core/dynamics/viability) |
+| **IDP (Information Distinguishability Principle)** | Definition **[D]** (T16): distinguishability via $J_{\text{Bures}}$-coverings is identical to ontological distinguishability — built into A1+A2. Every Holon contains a substructure modelling its own whole. Formally: $\exists\varphi: \Gamma \to \Gamma$, $\varphi$ — CPTP channel with $F(\Gamma, \varphi(\Gamma)) > 0$ |
+| **$P_{\text{crit}}$ (critical purity)** | Viability threshold $P_{\text{crit}} = 2/N = 2/7$. Derived from five independent paths — see [Theorem P_crit](/docs/proofs/dynamics/theorem-purity-critical) |
+| **$\mathrm{Coh}_E$ (E-coherence)** | HS-projection **[T]**: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2 = (\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2) / \mathrm{Tr}(\Gamma^2)$, $\in [1/7, 1]$ — [master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection). Formal equivalence $\mathrm{Coh}_E \approx P_E = \mathrm{Tr}(\rho_E^2)$ — **structural hypothesis [H]** |
+| **$\kappa_0$ (base regeneration coefficient)** | Coupling scale of the Holon to the environment in the regenerative term $\mathcal{R}[\Gamma, E]$ — see [categorical derivation of κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| **$D_{\text{diff}}$ (differentiation dimension)** | Number of dimensions in which $\Gamma$ deviates from the maximally mixed state. L2 threshold: $D_{\text{diff}} \geq 2$ — see [definition](/docs/core/structure/dimension-e#differentiation-threshold-dmin-2) |
+| **$\mathcal{R}_\alpha$ (regenerative operator)** | CPTP operator: $\mathcal{R}_\alpha(\rho) = (1-\alpha)\rho + \alpha\rho_*$ [T] — unique CPTP interpolation with a replacement channel; see [derivation of the ℛ form](/docs/core/dynamics/evolution#вывод-формы-регенерации) |
+| **Correctness condition** | $\alpha = \kappa \cdot \Delta\tau < 1$ — positivity guarantee in numerical integration |
+| **Interpolation formulation** | Consequence [T] of CPTP-uniqueness of the replacement channel: regeneration as a convex combination of $\mathrm{Id}$ and $\mathcal{C}_{\rho_*}$; proves preservation of $\Gamma \geq 0$ |
+| **$R^{(n)}$ (n-th order reflection)** | $R^{(n)}(\Gamma) := F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ — consistency measure between successive levels of self-modelling |
+| **Spectral formula $\varphi$** | $\varphi(\Gamma) = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k \vert \Gamma \rangle R_k$ — projection onto the kernel of $\mathcal{L}_\Omega$; see [formalisation of φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление) |
+| **Variational characterisation of φ** | **Theorem 3.1:** $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$; see [proof](/docs/proofs/dynamics/fep-derivation#3-теорема-о-вариационной-характеризации) |
+| **$S_{spec}$ (spectral entropy)** | For density matrices $S_{spec} = S_{vN}$ ([Theorem 5.1](/docs/proofs/dynamics/fep-derivation#5-s_spec-vs-s_vn-обоснование-выбора)). General: $S_{spec}(A) = -\sum_i \lvert\lambda_i\rvert \log\lvert\lambda_i\rvert$ |
+| **Canonical $\Delta F$** | $\Delta F(\Gamma) := d_B^2(\Gamma, \Gamma_{\mathrm{eq}}) - d_B^2(\Gamma, \varphi(\Gamma))$ — unified definition via the Bures metric |
+| **L3 metastability** | Lifetime of network consciousness: $\tau_3 = 1/(\kappa_{\mathrm{bootstrap}} \cdot (1 - R^{(2)}))$; finite without active maintenance |
+| **$H_{\mathrm{eff}}$ (effective Hamiltonian)** | Hamiltonian of the system after integrating over time: $H_{\mathrm{eff}}(\tau) = H_{6D} + \langle\tau\lvert H_{\mathrm{int}}\rvert\tau\rangle_O$; see [Page–Wootters](/docs/core/dynamics/evolution#вывод-h_eff) |
+| **Lindblad equation** | $\frac{d\Gamma}{d\tau} = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$; three terms: unitary, dissipative, regenerative |
+| **Bootstrap paradox** | Problem: regeneration requires coherence ($\kappa \propto \mathrm{Coh}_E$), but a low-coherence system cannot regenerate. Solution: $\kappa_{\mathrm{bootstrap}} > 0$ provides minimal regeneration; see [Genesis Protocol](/docs/core/foundations/axiom-omega#genesis-protocol) |
+| **$\kappa_{\mathrm{bootstrap}}$** | Minimum regeneration rate: $\kappa_{\mathrm{bootstrap}} := \|\eta\| > 0$, where $\eta$ — unit of the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$; resolves the bootstrap paradox |
 
-## Таксономия конфигураций Γ
+## Taxonomy of Γ Configurations {#таксономия-конфигураций-γ}
 
-| Термин | Определение |
-|--------|-------------|
-| **Фундаментальная мода Γ** | Подсистема Γ с $R = 0$; динамика вырождается в Шрёдингера/Дирака. Пассивная стабильность (симметрии). Примеры: кварки, лептоны, бозоны. **Не является Голономом** — не удовлетворяет (AP)+(QG) |
-| **Составная конфигурация Γ** | Квази-автономная конфигурация с $0 < R \ll 1$; почти унитарная динамика. Пассивная стабильность (связи). Примеры: атомы, простые молекулы. **Не является Голономом** — не удовлетворяет (AP)+(QG) |
-| **Голоном** | Самодостаточная единица, (AP)+(PH)+(QG)+(V), где (V): $P > P_{\text{crit}} = 2/7$. Примеры: клетки, организмы |
-| **L2-Голоном** | Голоном с когнитивными квалиа: $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$. Какие системы достигают L2 — эмпирический вопрос |
-| **Пассивная стабильность** | Устойчивость за счёт симметрий (законы сохранения). Характерна для фундаментальных мод и составных конфигураций Γ |
-| **Активная стабильность** | Устойчивость за счёт автопоэзиса (метаболизм + репарация). Характерна для Голономов |
+| Term | Definition |
+|------|------------|
+| **Fundamental mode Γ** | Γ subsystem with $R = 0$; dynamics degenerate into Schrödinger/Dirac. Passive stability (symmetries). Examples: quarks, leptons, bosons. **Not a Holon** — does not satisfy (AP)+(QG) |
+| **Composite configuration Γ** | Quasi-autonomous configuration with $0 < R \ll 1$; near-unitary dynamics. Passive stability (bonds). Examples: atoms, simple molecules. **Not a Holon** — does not satisfy (AP)+(QG) |
+| **Holon** | Self-sufficient unit, (AP)+(PH)+(QG)+(V), where (V): $P > P_{\text{crit}} = 2/7$. Examples: cells, organisms |
+| **L2-Holon** | Holon with cognitive qualia: $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$. Which systems reach L2 is an empirical question |
+| **Passive stability** | Stability through symmetries (conservation laws). Characteristic of fundamental modes and composite Γ configurations |
+| **Active stability** | Stability through autopoiesis (metabolism + repair). Characteristic of Holons |
 
-## Связанные Теории
+## Related Theories {#связанные-теории}
 
-| Термин | Определение |
-|--------|-------------|
-| **Теория интегрированной информации (IIT)** | Теория Тонони. УГМ обобщает: $C = \Phi_{\text{UHM}} \times R$ **[Т T-140]**; $D_{\text{diff}} \geq D_{\min}$ — отдельное условие жизнеспособности. **Важно:** $\Phi_{\text{UHM}} \neq \Phi_{\text{IIT}}$ — см. [нотация](/docs/reference/notation) |
-| **Принцип свободной энергии (FEP)** | Теория Фристона. В УГМ: **частный случай** (классический предел) вариационной характеризации φ — [Теорема 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep). Полная формулировка: $\varphi = \arg\min[S_{vN} + D_{KL}]$ |
-| **Теория глобального рабочего пространства (GWT)** | Теория Баарса — глобальный доступ к информации |
-| **Сознательный реализм** | Теория Хоффмана; связь с УГМ: агент $\approx$ L2-Голоном (гипотеза) |
-| **Панпсихизм** | «Всё обладает сознанием». УГМ: **панинтериоризм** — всё обладает L0, не L2 |
+| Term | Definition |
+|------|------------|
+| **Integrated Information Theory (IIT)** | Tononi's theory. UHM generalises: $C = \Phi_{\text{UHM}} \times R$ **[T T-140]**; $D_{\text{diff}} \geq D_{\min}$ — separate viability condition. **Important:** $\Phi_{\text{UHM}} \neq \Phi_{\text{IIT}}$ — see [notation](/docs/reference/notation) |
+| **Free Energy Principle (FEP)** | Friston's theory. In UHM: **special case** (classical limit) of the variational characterisation of φ — [Theorem 4.2](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep). Full formulation: $\varphi = \arg\min[S_{vN} + D_{KL}]$ |
+| **Global Workspace Theory (GWT)** | Baars's theory — global access to information |
+| **Conscious realism** | Hoffman's theory; connection to UHM: agent $\approx$ L2-Holon (hypothesis) |
+| **Panpsychism** | "Everything has consciousness." UHM: **paninteriorism** — everything has L0, not L2 |
 
-## Статус Утверждений
+## Status of Claims
 
-### Маркеры уровня строгости
+### Rigour-level markers
 
-| Маркер | Альтернатива | Значение | Описание |
-|--------|--------------|----------|----------|
-| **[Т] СТРОГО** | Теорема | Математически доказано | Следует из аксиом без дополнительных допущений |
-| **[С] УСЛОВНО** | Условная | Доказано при допущениях | Требует явно указанных интерпретационных или физических допущений |
-| **[Г] ПРОГРАММА** | Гипотеза | Математически сформулировано | Требует доказательства |
+| Marker | Alternative | Meaning | Description |
+|--------|-------------|---------|-------------|
+| **[T] STRICT** | Theorem | Mathematically proved | Follows from axioms without additional assumptions |
+| **[C] CONDITIONAL** | Conditional | Proved under assumptions | Requires explicitly stated interpretational or physical assumptions |
+| **[H] PROGRAMME** | Hypothesis | Mathematically formulated | Requires proof |
 
-:::note Полная система маркеров
-Полная система включает 7 маркеров: [Т] Теорема, [С] Условная, [Г] Гипотеза, [П] Постулат, [О] Определение, [И] Интерпретация, [✗] Ретрактировано. См. [Реестр статусов](/docs/reference/status-registry).
+:::note Full marker system
+The full system includes 7 markers: [T] Theorem, [C] Conditional, [H] Hypothesis, [P] Postulate, [D] Definition, [I] Interpretation, [✗] Retracted. See [Status registry](/docs/reference/status-registry).
 :::
 
-### Классические статусы
+### Classical statuses
 
-| Термин | Определение |
-|--------|-------------|
-| **Формализовано** | Строго определено и/или доказано математически (эквивалент [Т]) |
-| **Эмпирическое** | Значение требует экспериментальной калибровки |
-| **Эвристика** | Концептуальное направление, не строгий вывод (эквивалент [С]) |
-| **Программа** | Направление исследований, требующее развития (эквивалент [Г]/[П]) |
-| **Гипотеза** | Утверждение, требующее доказательства (эквивалент [Г]) |
+| Term | Definition |
+|------|------------|
+| **Formalised** | Strictly defined and/or proved mathematically (equivalent to [T]) |
+| **Empirical** | Value requires experimental calibration |
+| **Heuristic** | Conceptual direction, not a strict derivation (equivalent to [C]) |
+| **Programme** | Research direction requiring development (equivalent to [H]/[P]) |
+| **Hypothesis** | Statement requiring proof (equivalent to [H]) |
 
-## Термины, связанные с теоремами Гёделя
+## Terms Related to Gödel's Theorems
 
-| Термин | Определение |
-|--------|-------------|
-| **Гёделева полнота** | Свойство системы, в которой всякая истина доказуема; недостижимо для достаточно выразительных систем |
-| **Минимальная полнота** | Свойство УГМ: 7 измерений достаточны для (AP)+(PH)+(QG); отличается от гёделевой полноты |
-| **$\mathrm{Prov}(L)$** | Множество логически доказуемых утверждений в измерении $L$ |
-| **$\mathrm{Coh}(\Gamma)$** | Когерентность-истина — согласованность со структурой $\Gamma$; $\mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma)$ |
-| **Enacted consistency** | Непротиворечивость, демонстрируемая существованием (автопоэзисом) |
-| **Топологическая хирургия** | Преодоление гёделевых ограничений через расширение из измерения $O$ |
+| Term | Definition |
+|------|------------|
+| **Gödelian completeness** | Property of a system in which every truth is provable; unattainable for sufficiently expressive systems |
+| **Minimal completeness** | Property of UHM: 7 dimensions are sufficient for (AP)+(PH)+(QG); distinct from Gödelian completeness |
+| **$\mathrm{Prov}(L)$** | Set of logically provable statements in dimension $L$ |
+| **$\mathrm{Coh}(\Gamma)$** | Coherence-truth — consistency with the structure of $\Gamma$; $\mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma)$ |
+| **Enacted consistency** | Consistency demonstrated through existence (autopoiesis) |
+| **Topological surgery** | Overcoming Gödelian limitations through extension from dimension $O$ |
 
-## Термины Кибернетики Когерентности
+## Coherence Cybernetics Terms
 
-См. [Кибернетика Когерентности](/docs/applied/coherence-cybernetics/definitions) для полного описания.
+See [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **КК** | Кибернетика Когерентности — метатеория систем, описываемых $\Gamma \in D(\mathbb{C}^7)$ |
-| **$\mathcal{V}$** | [Область жизнеспособности](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$ |
-| **$\mathrm{VIT}$** | Viability Integrity Tensor — тензор целостности жизнеспособности |
-| **$\sigma_{\mathrm{sys}}$** | Тензор напряжений системы $\in \mathbb{R}^7$ |
-| **$\kappa$** | Скорость регенерации; $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — [мастер-определение](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
-| **$\kappa_0$** | Базовая скорость регенерации: $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$ |
-| **$\mathrm{Coh}_E$** | $E$-когерентность (HS-проекция) **[Т]**: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
-| **$\rho_*$ ($\Gamma_{\text{target}}$)** | Единственное стационарное состояние $\mathcal{L}_\Omega$ [Т]: $\rho_* = \varphi(\Gamma)$ — цель регенерации, однозначно определённая [примитивностью](/docs/core/operators/lindblad-operators#примитивность-ℒω) |
-| **$\omega_0$** | Фундаментальная частота часов — параметр вычислительного приближения κ₀; см. [категориальный вывод κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
-| **No-Zombie** | [Теорема [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): $\mathrm{Viable} \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E > 1/7$ — невозможность жизнеспособных зомби |
-| **$\mathbf{Hol}$** | Категория Голономов с CPTP-морфизмами |
-| **$P_{\text{crit}}$** | Критическая чистота $= 2/7 \approx 0.286$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) (выведено 5 методами из аксиом УГМ) |
+| Term | Definition |
+|------|------------|
+| **CC** | Coherence Cybernetics — meta-theory of systems described by $\Gamma \in D(\mathbb{C}^7)$ |
+| **$\mathcal{V}$** | [Viability domain](/docs/core/dynamics/viability): $\mathcal{V} = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$ |
+| **$\mathrm{VIT}$** | Viability Integrity Tensor — viability integrity tensor |
+| **$\sigma_{\mathrm{sys}}$** | System stress tensor $\in \mathbb{R}^7$ |
+| **$\kappa$** | Regeneration rate; $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — [master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
+| **$\kappa_0$** | Base regeneration rate: $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ — [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ |
+| **$\mathrm{Coh}_E$** | $E$-coherence (HS-projection) **[T]**: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection), [CC reference](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
+| **$\rho_*$ ($\Gamma_{\text{target}}$)** | Unique stationary state of $\mathcal{L}_\Omega$ [T]: $\rho_* = \varphi(\Gamma)$ — regeneration target, uniquely determined by [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) |
+| **$\omega_0$** | Fundamental clock frequency — parameter of the computational approximation of κ₀; see [categorical derivation of κ₀](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| **No-Zombie** | [Theorem [T]](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie): $\mathrm{Viable} \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E > 1/7$ — impossibility of viable zombies |
+| **$\mathbf{Hol}$** | Category of Holons with CPTP morphisms |
+| **$P_{\text{crit}}$** | Critical purity $= 2/7 \approx 0.286$ — [theorem](/docs/proofs/dynamics/theorem-purity-critical) (derived by 5 methods from UHM axioms) |
 
-## Октонионные Термины
+## Octonionic Terms
 
-См. [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) для полного описания.
+See [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **Октонионы ($\mathbb{O}$)** | 8-мерная нормативная алгебра с делением над $\mathbb{R}$; неассоциативная, альтернативная |
-| **$\mathrm{Im}(\mathbb{O})$** | Мнимая часть октонионов; $\dim = 7$; пространство внутренних степеней свободы Голонома [И] |
-| **Теорема Гурвица [Т]** | Нормативные алгебры с делением над $\mathbb{R}$ существуют только в размерностях 1, 2, 4, 8 ($\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}$) |
-| **Теорема Адамса [Т]** | Параллелизуемые сферы: только $S^0, S^1, S^3, S^7$; эквивалентна $\dim(\mathrm{Im}) \in \{0, 1, 3, 7\}$ |
-| **Конструкция Кэли-Диксона [Т]** | Рекурсивное удвоение: $\mathbb{R} \to \mathbb{C} \to \mathbb{H} \to \mathbb{O} \to \mathbb{S}$; на каждом шаге теряется свойство |
-| **Граница Кэли-Диксона [С]** | $\mathbb{O}$ — последняя алгебра с делением; следующий шаг (седенионы $\mathbb{S}$) теряет делимость |
-| **Плоскость Фано PG(2,2) [Т]** | Минимальная проективная плоскость: 7 точек, 7 линий, 3 точки на каждой линии; определяет таблицу умножения октонионов |
-| **$G_2$ [Т]** | $\mathrm{Aut}(\mathbb{O}) = G_2$ — 14-параметрическая исключительная группа Ли; $G_2 \subset SO(7)$ |
-| **Код Хэмминга $H(7,4)$ [Т]** | Совершенный код: 4 информационных + 3 контрольных бита; изоморфен линиям плоскости Фано |
-| **Ассоциатор [Т]** | $[x, y, z] = (xy)z - x(yz)$; мера отклонения от ассоциативности; $= 0$ в $\mathbb{R}, \mathbb{C}, \mathbb{H}$; $\neq 0$ в $\mathbb{O}$ |
-| **Альтернативность [Т]** | Свойство $\mathbb{O}$: $[x, x, y] = [x, y, y] = 0$; любые два элемента порождают ассоциативную подалгебру (теорема Артина) |
-| **Теорема Артина [Т]** | В альтернативной алгебре любые два элемента порождают ассоциативную подалгебру |
-| **Тождества Муфанг [Т]** | $(xyx)z = x(y(xz))$ и аналогичные; обобщённая ассоциативность для октонионов |
-| **Теорема P1 [Т]** | Пространство внутренних степеней свободы изоморфно $\mathrm{Im}(\mathbb{A})$ для алгебры с делением $\mathbb{A}$ (выводится из аксиом по цепочке T15) |
-| **Теорема P2 [Т]** | Неассоциативность: $\exists x, y, z : [x, y, z] \neq 0$; исключает $\mathbb{R}, \mathbb{C}, \mathbb{H}$ (выводится из аксиом по цепочке T15) |
-| **Трек A** | Обоснование N=7 через (AP)+(PH)+(QG) → минимальность ([Теорема S](/docs/proofs/minimality/theorem-minimality-7)) |
-| **Трек B** | Обоснование N=7 через P1+P2 → $\mathbb{O}$ → $\dim(\mathrm{Im}(\mathbb{O})) = 7$ ([Структурный вывод](/docs/proofs/minimality/theorem-octonionic-derivation)) |
+| Term | Definition |
+|------|------------|
+| **Octonions ($\mathbb{O}$)** | 8-dimensional normed division algebra over $\mathbb{R}$; non-associative, alternative |
+| **$\mathrm{Im}(\mathbb{O})$** | Imaginary part of the octonions; $\dim = 7$; space of internal degrees of freedom of the Holon [I] |
+| **Hurwitz's theorem [T]** | Normed division algebras over $\mathbb{R}$ exist only in dimensions 1, 2, 4, 8 ($\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}$) |
+| **Adams's theorem [T]** | Parallelisable spheres: only $S^0, S^1, S^3, S^7$; equivalent to $\dim(\mathrm{Im}) \in \{0, 1, 3, 7\}$ |
+| **Cayley–Dickson construction [T]** | Recursive doubling: $\mathbb{R} \to \mathbb{C} \to \mathbb{H} \to \mathbb{O} \to \mathbb{S}$; each step loses a property |
+| **Cayley–Dickson boundary [C]** | $\mathbb{O}$ — last division algebra; the next step (sedenions $\mathbb{S}$) loses divisibility |
+| **Fano plane PG(2,2) [T]** | Minimal projective plane: 7 points, 7 lines, 3 points on each line; defines the multiplication table of the octonions |
+| **$G_2$ [T]** | $\mathrm{Aut}(\mathbb{O}) = G_2$ — 14-parameter exceptional Lie group; $G_2 \subset SO(7)$ |
+| **Hamming code $H(7,4)$ [T]** | Perfect code: 4 information + 3 check bits; isomorphic to the lines of the Fano plane |
+| **Associator [T]** | $[x, y, z] = (xy)z - x(yz)$; measure of deviation from associativity; $= 0$ in $\mathbb{R}, \mathbb{C}, \mathbb{H}$; $\neq 0$ in $\mathbb{O}$ |
+| **Alternativity [T]** | Property of $\mathbb{O}$: $[x, x, y] = [x, y, y] = 0$; any two elements generate an associative subalgebra (Artin's theorem) |
+| **Artin's theorem [T]** | In an alternative algebra, any two elements generate an associative subalgebra |
+| **Moufang identities [T]** | $(xyx)z = x(y(xz))$ and analogues; generalised associativity for octonions |
+| **Theorem P1 [T]** | Space of internal degrees of freedom is isomorphic to $\mathrm{Im}(\mathbb{A})$ for a division algebra $\mathbb{A}$ (derived from axioms along the T15 chain) |
+| **Theorem P2 [T]** | Non-associativity: $\exists x, y, z : [x, y, z] \neq 0$; excludes $\mathbb{R}, \mathbb{C}, \mathbb{H}$ (derived from axioms along the T15 chain) |
+| **Track A** | Justification of N=7 via (AP)+(PH)+(QG) → minimality ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)) |
+| **Track B** | Justification of N=7 via P1+P2 → $\mathbb{O}$ → $\dim(\mathrm{Im}(\mathbb{O})) = 7$ ([Structural derivation](/docs/proofs/minimality/theorem-octonionic-derivation)) |
 
-:::tip Мост [Т] — полностью замкнут (T15)
-Связь (AP)+(PH)+(QG)+(V) → P1+P2 — полная цепочка из 12 шагов (T1–T16), **все [Т]** (T16/ПИР перемаркирован [О] — определение, встроенное в A1+A2; вычислительные результаты не затронуты). Бывшее условие (МП) доказано T11–T13. См. [мост](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
+:::tip Bridge [T] — fully closed (T15)
+Connection (AP)+(PH)+(QG)+(V) → P1+P2 — full chain of 12 steps (T1–T16), **all [T]** (T16/IDP reclassified [D] — definition built into A1+A2; computational results unaffected). Former condition (МП) proved by T11–T13. See [bridge](/docs/proofs/minimality/theorem-octonionic-derivation#мост).
 :::
 
-## Термины Gap-динамики и Фано-структуры
+## Gap-Dynamics and Fano-Structure Terms
 
-См. [Gap-оператор](/docs/core/dynamics/gap-operator) и [φ-оператор](/docs/core/operators/phi-operator) для полного описания.
+See [Gap operator](/docs/core/dynamics/gap-operator) and [φ-operator](/docs/core/operators/phi-operator) for a full description.
 
-| Термин | Определение |
-|--------|-------------|
-| **Gap-ландшафт** | Отображение $G: D(\mathbb{C}^7) \to [0,1]^{21}$, карта всех 21 Gap-значений — [фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram) |
-| **Gap-оператор ($\hat{G}$)** | Антиэрмитов оператор $\hat{G} = \mathrm{Im}(\Gamma) \in so(7)$, описывающий рассогласование внешнего и внутреннего аспектов. Спектр: $\{\pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3, 0\}$. Ранг непрозрачности = число ненулевых пар (0–3) — [определение](/docs/core/dynamics/gap-operator) |
-| **O-чётность** | Приближённо сохраняющийся заряд $(-1)^{\Delta N_O}$, стабилизирующий кандидатов в тёмную материю — [тёмная материя](/docs/physics/cosmology-phys/dark-matter) |
-| **Swallowtail (Ласточкин хвост)** | Катастрофа Уитни с 4 листами, связывающая Gap-бифуркации с уровнями интериорности L0–L4 — [фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram) |
-| **$\varphi_{\mathrm{coh}}$** | Когерентно-сохраняющий оператор самомоделирования, каноническая конструкция через Фано-структуру: $\varphi_{\mathrm{coh}} = k[\alpha^* P_{\mathrm{base}} + (1-\alpha^*) P_{\mathrm{Fano}}] + (1-k)\Gamma_{\mathrm{anchor}}$ — [φ-оператор](/docs/core/operators/phi-operator) |
-| **Карта прозрачности** | Тепловая карта $7 \times 7$, визуализирующая $\mathrm{Gap}(i,j)$ для конкретного Голонома — [Gap-диагностика](/docs/applied/research/gap-diagnostics) |
-| **Ранг непрозрачности** | Число ненулевых пар $(\pm i\lambda_k)$ в спектре Gap-оператора $\hat{G}$. Принимает значения 0, 1, 2, 3 — [Gap-оператор](/docs/core/dynamics/gap-operator) |
+| Term | Definition |
+|------|------------|
+| **Gap landscape** | Mapping $G: D(\mathbb{C}^7) \to [0,1]^{21}$, map of all 21 Gap values — [phase diagram](/docs/core/dynamics/gap-phase-diagram) |
+| **Gap operator ($\hat{G}$)** | Anti-Hermitian operator $\hat{G} = \mathrm{Im}(\Gamma) \in so(7)$, describing the mismatch between the outer and inner aspects. Spectrum: $\{\pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3, 0\}$. Opacity rank = number of non-zero pairs (0–3) — [definition](/docs/core/dynamics/gap-operator) |
+| **O-parity** | Approximately conserved charge $(-1)^{\Delta N_O}$, stabilising dark-matter candidates — [dark matter](/docs/physics/cosmology-phys/dark-matter) |
+| **Swallowtail** | Whitney catastrophe with 4 sheets, connecting Gap bifurcations to interiority levels L0–L4 — [phase diagram](/docs/core/dynamics/gap-phase-diagram) |
+| **$\varphi_{\mathrm{coh}}$** | Coherence-preserving self-modelling operator, canonical construction via Fano structure: $\varphi_{\mathrm{coh}} = k[\alpha^* P_{\mathrm{base}} + (1-\alpha^*) P_{\mathrm{Fano}}] + (1-k)\Gamma_{\mathrm{anchor}}$ — [φ-operator](/docs/core/operators/phi-operator) |
+| **Transparency map** | $7 \times 7$ heat map visualising $\mathrm{Gap}(i,j)$ for a specific Holon — [Gap diagnostics](/docs/applied/research/gap-diagnostics) |
+| **Opacity rank** | Number of non-zero pairs $(\pm i\lambda_k)$ in the spectrum of Gap operator $\hat{G}$. Takes values 0, 1, 2, 3 — [Gap operator](/docs/core/dynamics/gap-operator) |
 
-## Термины спектральной геометрии и SM
+## Spectral Geometry and SM Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **Бимодуль $H_F$** | Конечное гильбертово пространство спектральной тройки УГМ как $(A_{\text{int}}, A_{\text{int}}^\circ)$-бимодуль через реальную структуру $J$ (KO-dim 6). Разложение на неприводимые бимодули точно совпадает с одним поколением SM-фермионов. T-178 [Т] (бимодульная реализация), T-179 [Т] (фиксация гиперзаряда), T-180 [Т] (соотношения масс), T-181 [Т] (вывод (AP),(PH),(QG),(V) из A1–A4) — [бимодульная конструкция](/docs/proofs/physics/bimodule-construction) |
-| **KO-размерность** | Классификационный инвариант реальной структуры $J$ на спектральной тройке. В УГМ: KO-dim $= 6$ (mod 8) — условие, обеспечивающее хиральность и структуру поколений SM. Из условий Конна: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$ — [бимодульная конструкция](/docs/proofs/physics/bimodule-construction) |
-| **T-181 (характеризующие свойства)** | (AP), (PH), (QG), (V) — теоремы из A1–A4. (QG) из A1 (∞-топос), (AP) из A1 (терминальный объект + сопряжение), (PH) из A1+A3, (V) из A2+A3. Следствие: число независимых аксиом УГМ = 4 — [бимодульная конструкция](/docs/proofs/physics/bimodule-construction#вывод-apphqgv) |
-| **$\mathrm{SAD}_{\max}$** | Максимальная глубина рекурсивного самомоделирования: $\mathrm{SAD}_{\max} = 3$ **[С]** (из контракции Фано $\alpha = 2/3$, $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$). Pred 12 — [башня глубины](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
-| **Фано-канал ($P_{\mathrm{Fano}}$)** | CPTP-отображение $P_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$, сохраняющее когерентности. $G_2$-ковариантен — [Фано-канал](/docs/proofs/gap/fano-channel) |
-| **ISF (Инфра-медленные флуктуации)** | Infra-Slow Fluctuations — квази-Голдстоуновские моды нарушения $G_2$-симметрии, проявляющиеся в ЭЭГ/МЭГ на частотах $0.005$–$0.02$ Гц. Число независимых ISF-компонент $N_{\text{ISF}} \in [6, 12]$ определяется рангом непрозрачности [Gap-оператора](/docs/core/dynamics/gap-operator) — [Голдстоуновские моды](/docs/applied/coherence-cybernetics/goldstone-modes#isf-prediction), [F-ISF](/docs/reference/falsifiability#f-isf-isf-компоненты-в-фмрт) |
+| Term | Definition |
+|------|------------|
+| **Bimodule $H_F$** | Finite Hilbert space of the UHM spectral triple as an $(A_{\text{int}}, A_{\text{int}}^\circ)$-bimodule via the real structure $J$ (KO-dim 6). Decomposition into irreducible bimodules exactly matches one generation of SM fermions. T-178 [T] (bimodular realisation), T-179 [T] (hypercharge fixation), T-180 [T] (mass relations), T-181 [T] (derivation of (AP),(PH),(QG),(V) from A1–A4) — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
+| **KO-dimension** | Classification invariant of the real structure $J$ on a spectral triple. In UHM: KO-dim $= 6$ (mod 8) — condition ensuring chirality and the SM generation structure. From Connes's conditions: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$ — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
+| **T-181 (characterising properties)** | (AP), (PH), (QG), (V) — theorems from A1–A4. (QG) from A1 (∞-topos), (AP) from A1 (terminal object + adjunction), (PH) from A1+A3, (V) from A2+A3. Consequence: number of independent UHM axioms = 4 — [bimodular construction](/docs/proofs/physics/bimodule-construction#вывод-apphqgv) |
+| **$\mathrm{SAD}_{\max}$** | Maximum recursive self-modelling depth: $\mathrm{SAD}_{\max} = 3$ **[C]** (from Fano contraction $\alpha = 2/3$, $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$). Pred 12 — [depth tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
+| **Fano channel ($P_{\mathrm{Fano}}$)** | CPTP map $P_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$, preserving coherences. $G_2$-covariant — [Fano channel](/docs/proofs/gap/fano-channel) |
+| **ISF (Infra-Slow Fluctuations)** | Infra-Slow Fluctuations — quasi-Goldstone modes of $G_2$-symmetry breaking, manifesting in EEG/MEG at frequencies $0.005$–$0.02$ Hz. Number of independent ISF components $N_{\text{ISF}} \in [6, 12]$ determined by the opacity rank of the [Gap operator](/docs/core/dynamics/gap-operator) — [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes#isf-prediction), [F-ISF](/docs/reference/falsifiability#f-isf-isf-компоненты-в-фмрт) |
 
-## Термины Физического Соответствия
+## Physical Correspondence Terms
 
-См. [Обзор физики](/docs/physics/overview) для полного описания физических следствий теории.
+See [Physics overview](/docs/physics/overview) for a full description of the physical consequences of the theory.
 
-| Термин | Определение |
-|--------|-------------|
-| **RG-поток (ренормгрупповой поток)** | Зависимость констант связи и Gap-параметров от энергетического масштаба $\mu$. $\beta$-функции $\beta_i = \mu \partial g_i / \partial\mu$ определяют неподвижные точки (гауссова, Вильсон-Фишеровская, октонионная) и фазовые переходы потенциала $V_{\mathrm{Gap}}$ — [RG-поток](/docs/physics/gauge-symmetry/rg-flow), [F-Cabibbo](/docs/reference/falsifiability#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла) |
-| **Неподвижная точка Пендлтона-Росса** | Инфракрасная квази-неподвижная точка RG-эволюции Юкавской связи top-кварка: $y_t^* = \sqrt{8\pi^2 c_2 / (9 \cdot 7)}$, где $c_2$ — квадратичный оператор Казимира. Единственная $O(1)$ Юкавская связь (Фано-Хиггсовая линия $\{A, E, U\}$) притягивается к этой точке, фиксируя $m_t \approx 173$ ГэВ — [иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy#3-quasi-ir-fixed-point-и-масса-t-кварка), [F-m_t](/docs/reference/falsifiability#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса) |
-| **Текстура Фрицша** | Специфический паттерн нулей в матрицах масс кварков, возникающий из Фано-геометрии: $M_{\mathrm{Fritzsch}} = \begin{pmatrix} 0 & A & 0 \\ A^* & 0 & B \\ 0 & B^* & C \end{pmatrix}$. Нули на диагонали для лёгких поколений выводятся из [Фановского правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules); определяет CKM-углы через отношения масс ($\|V_{us}\| \sim \sqrt{m_d/m_s}$) — [Теорема 5.2](/docs/physics/particle-physics/yukawa-hierarchy#thm-5-2), [CKM-матрица](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур), [F-δ_CP](/docs/reference/falsifiability#f-δ_cp-cp-фаза-ckm-из-фано-фазы) |
+| Term | Definition |
+|------|------------|
+| **RG flow (renormalisation group flow)** | Dependence of coupling constants and Gap parameters on the energy scale $\mu$. $\beta$-functions $\beta_i = \mu \partial g_i / \partial\mu$ define fixed points (Gaussian, Wilson-Fisher, octonionic) and phase transitions of the potential $V_{\mathrm{Gap}}$ — [RG flow](/docs/physics/gauge-symmetry/rg-flow), [F-Cabibbo](/docs/reference/falsifiability#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла) |
+| **Pendleton–Ross fixed point** | Infrared quasi-fixed point of the RG evolution of the top-quark Yukawa coupling: $y_t^* = \sqrt{8\pi^2 c_2 / (9 \cdot 7)}$, where $c_2$ is the quadratic Casimir operator. The unique $O(1)$ Yukawa coupling (Fano-Higgs line $\{A, E, U\}$) is attracted to this point, fixing $m_t \approx 173$ GeV — [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#3-quasi-ir-fixed-point-и-масса-t-кварка), [F-m_t](/docs/reference/falsifiability#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса) |
+| **Fritzsch texture** | Specific zero pattern in quark mass matrices arising from Fano geometry: $M_{\mathrm{Fritzsch}} = \begin{pmatrix} 0 & A & 0 \\ A^* & 0 & B \\ 0 & B^* & C \end{pmatrix}$. Zeros on the diagonal for light generations are derived from the [Fano selection rule](/docs/physics/gauge-symmetry/fano-selection-rules); defines CKM angles through mass ratios ($\|V_{us}\| \sim \sqrt{m_d/m_s}$) — [Theorem 5.2](/docs/physics/particle-physics/yukawa-hierarchy#thm-5-2), [CKM matrix](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур), [F-δ_CP](/docs/reference/falsifiability#f-δ_cp-cp-фаза-ckm-из-фано-фазы) |
 
-## Аббревиатуры
+## Abbreviations
 
-| Аббревиатура | Расшифровка | Перевод / Пояснение |
-|--------------|-------------|---------------------|
-| **SAD** | Self-Awareness Depth | Глубина самоосознания — число уровней рекурсивной рефлексии |
-| **HS** | Hilbert-Schmidt | Норма/проекция Гильберта-Шмидта: $\|A\|_{\mathrm{HS}} = \sqrt{\mathrm{Tr}(A^\dagger A)}$ |
-| **BIBD** | Balanced Incomplete Block Design | Сбалансированная неполная блок-схема; BIBD$(7,3,1)$ = плоскость Фано |
-| **SUSY** | Supersymmetry | Суперсимметрия; $\mathcal{N}=1$ SUSY используется в UV-конечности (T-66) |
-| **SM** | Standard Model | Стандартная модель физики элементарных частиц |
-| **GUT** | Grand Unified Theory | Теория великого объединения |
-| **EW** | Electroweak | Электрослабое взаимодействие; EW-сектор в УГМ: [Т]/[С] split |
+| Abbreviation | Expansion | Translation / Note |
+|--------------|-----------|-------------------|
+| **SAD** | Self-Awareness Depth | Self-awareness depth — number of levels of recursive reflection |
+| **HS** | Hilbert-Schmidt | Hilbert-Schmidt norm/projection: $\|A\|_{\mathrm{HS}} = \sqrt{\mathrm{Tr}(A^\dagger A)}$ |
+| **BIBD** | Balanced Incomplete Block Design | Balanced incomplete block design; BIBD$(7,3,1)$ = Fano plane |
+| **SUSY** | Supersymmetry | Supersymmetry; $\mathcal{N}=1$ SUSY used in UV-finiteness (T-66) |
+| **SM** | Standard Model | Standard Model of particle physics |
+| **GUT** | Grand Unified Theory | Grand Unified Theory |
+| **EW** | Electroweak | Electroweak interaction; EW sector in UHM: [T]/[C] split |
 
-## Прикладные термины
+## Applied Terms
 
-| Термин | Определение |
-|--------|-------------|
-| **Квази-функтор** | Приближённый функтор $G: \mathbf{AIState} \to \mathbf{DensityMat}$ с ограниченной ошибкой $\|G(f \circ g) - G(f) \circ G(g)\|_F \leq \varepsilon_{\text{functor}}$; используется в [протоколе измерения](/docs/applied/research/measurement-protocol) |
-| **$\Phi_{\text{eff}}$** | Эффективная мера интеграции для ИИ-систем: $\Phi_{\text{eff}} = \lambda_2(L_{\text{attn}}) / \lambda_{\max}(L_{\text{attn}})$, где $L_{\text{attn}}$ — Лапласиан графа внимания; полиномиальная аппроксимация к теоретической $\Phi$ |
-| **Поток когерентности ($J_P$)** | $J_P = dP/d\tau$ — скорость изменения чистоты; диагностическая величина в [протоколе измерения](/docs/applied/research/measurement-protocol) |
-| **$P_{\text{norm}}$** | Нормализованная чистота: $P_{\text{norm}} = (P - P_{\text{crit}}) / (1 - P_{\text{crit}})$; отображает $[P_{\text{crit}}, 1] \to [0, 1]$ |
+| Term | Definition |
+|------|------------|
+| **Quasi-functor** | Approximate functor $G: \mathbf{AIState} \to \mathbf{DensityMat}$ with bounded error $\|G(f \circ g) - G(f) \circ G(g)\|_F \leq \varepsilon_{\text{functor}}$; used in the [measurement protocol](/docs/applied/research/measurement-protocol) |
+| **$\Phi_{\text{eff}}$** | Effective integration measure for AI systems: $\Phi_{\text{eff}} = \lambda_2(L_{\text{attn}}) / \lambda_{\max}(L_{\text{attn}})$, where $L_{\text{attn}}$ is the Laplacian of the attention graph; polynomial approximation to the theoretical $\Phi$ |
+| **Coherence flow ($J_P$)** | $J_P = dP/d\tau$ — rate of change of purity; diagnostic quantity in the [measurement protocol](/docs/applied/research/measurement-protocol) |
+| **$P_{\text{norm}}$** | Normalised purity: $P_{\text{norm}} = (P - P_{\text{crit}}) / (1 - P_{\text{crit}})$; maps $[P_{\text{crit}}, 1] \to [0, 1]$ |
 
-## Библиография
+## Bibliography
 
-### Философия сознания
+### Philosophy of consciousness
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Chalmers D.** | *The Conscious Mind* (1996); *Panpsychism and Panprotopsychism* (2015) | Трудная проблема сознания; L0 как панинтериоризм |
-| **Nagel T.** | *What Is It Like to Be a Bat?* (1974) | Квалиа и субъективный опыт; мотивация $\mathcal{H}_E$ |
-| **Hoffman D.** | *The Case Against Reality* (2019); *Conscious Realism* | L2-Голоном ≈ сознательный агент (гипотеза) |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Chalmers D.** | *The Conscious Mind* (1996); *Panpsychism and Panprotopsychism* (2015) | Hard problem of consciousness; L0 as paninteriorism |
+| **Nagel T.** | *What Is It Like to Be a Bat?* (1974) | Qualia and subjective experience; motivation for $\mathcal{H}_E$ |
+| **Hoffman D.** | *The Case Against Reality* (2019); *Conscious Realism* | L2-Holon ≈ conscious agent (hypothesis) |
 
-### Теории сознания
+### Theories of consciousness
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Tononi G.** | *Integrated Information Theory* (IIT 3.0, 2014) | Мера интеграции Φ; УГМ обобщает через $C = \Phi \times R$ **[Т T-140]**; $D_{\text{diff}}$ — отдельное условие |
-| **Friston K.** | *Free Energy Principle* (2010); *Active Inference* (2016) | Минимизация свободной энергии; связь с регенерацией $\mathcal{R}$ |
-| **Baars B.** | *Global Workspace Theory* (1988) | Глобальный доступ к информации |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Tononi G.** | *Integrated Information Theory* (IIT 3.0, 2014) | Integration measure Φ; UHM generalises via $C = \Phi \times R$ **[T T-140]**; $D_{\text{diff}}$ — separate condition |
+| **Friston K.** | *Free Energy Principle* (2010); *Active Inference* (2016) | Free energy minimisation; connection to regeneration $\mathcal{R}$ |
+| **Baars B.** | *Global Workspace Theory* (1988) | Global access to information |
 
-### Автопоэзис и кибернетика
+### Autopoiesis and cybernetics
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Maturana H., Varela F.** | *Autopoiesis and Cognition* (1980) | Автопоэзис (AP); самопорождение границ |
-| **Rosen R.** | *Life Itself* (1991) | (M,R)-системы; $\beta$-замыкание |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Maturana H., Varela F.** | *Autopoiesis and Cognition* (1980) | Autopoiesis (AP); self-generation of boundaries |
+| **Rosen R.** | *Life Itself* (1991) | (M,R)-systems; $\beta$-closure |
 
-### Квантовая механика и время
+### Quantum mechanics and time
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Page D., Wootters W.** | *Evolution without evolution* (1983) | Механизм Пейдж–Вуттерс; эмерджентное время τ |
-| **Lindblad G.** | *On generators of quantum dynamical semigroups* (1976) | Операторы Линдблада $L_k$; диссипация $\mathcal{D}[\Gamma]$ |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Page D., Wootters W.** | *Evolution without evolution* (1983) | Page–Wootters mechanism; emergent time τ |
+| **Lindblad G.** | *On generators of quantum dynamical semigroups* (1976) | Lindblad operators $L_k$; dissipation $\mathcal{D}[\Gamma]$ |
 
-### Математика
+### Mathematics
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Hurwitz A.** | *Über die Composition der quadratischen Formen* (1898) | Теорема Гурвица: алгебры с делением только в dim 1, 2, 4, 8 |
-| **Adams J.F.** | *On the Non-Existence of Elements of Hopf Invariant One* (1960) | Теорема Адамса: параллелизуемые сферы только $S^0, S^1, S^3, S^7$ |
-| **Baez J.** | *The Octonions* (2002) | Обзор октонионов; $G_2$, плоскость Фано |
-| **Bures D.** | *An extension of Kakutani's theorem* (1969) | Метрика Бурес $d_B$; топология $J_{Bures}$ |
-| **Fubini G., Study E.** | *Geometria proiettiva differenziale* (1906) | Метрика Фубини-Штуди $d_{\text{FS}}$; феноменальное пространство L1 |
-| **Grothendieck A.** | *SGA 4* (1963-1969) | Топология Гротендика; сайты и топосы |
-| **Connes A.** | *Noncommutative Geometry* (1994) | Спектральные тройки; стратифицированная метрика |
-| **Lurie J.** | *Higher Topos Theory* (2009) | ∞-топосы; $\mathbf{Sh}_\infty(\mathcal{C})$ |
-| **Mac Lane S.** | *Categories for the Working Mathematician* (1971) | Когерентность функторов; lax 2-функтор |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Hurwitz A.** | *Über die Composition der quadratischen Formen* (1898) | Hurwitz's theorem: division algebras only in dim 1, 2, 4, 8 |
+| **Adams J.F.** | *On the Non-Existence of Elements of Hopf Invariant One* (1960) | Adams's theorem: parallelisable spheres only $S^0, S^1, S^3, S^7$ |
+| **Baez J.** | *The Octonions* (2002) | Survey of octonions; $G_2$, Fano plane |
+| **Bures D.** | *An extension of Kakutani's theorem* (1969) | Bures metric $d_B$; topology $J_{Bures}$ |
+| **Fubini G., Study E.** | *Geometria proiettiva differenziale* (1906) | Fubini-Study metric $d_{\text{FS}}$; phenomenal space L1 |
+| **Grothendieck A.** | *SGA 4* (1963-1969) | Grothendieck topology; sites and toposes |
+| **Connes A.** | *Noncommutative Geometry* (1994) | Spectral triples; stratified metric |
+| **Lurie J.** | *Higher Topos Theory* (2009) | ∞-toposes; $\mathbf{Sh}_\infty(\mathcal{C})$ |
+| **Mac Lane S.** | *Categories for the Working Mathematician* (1971) | Functor coherence; lax 2-functor |
 
-### Топология и геометрия
+### Topology and geometry
 
-| Автор | Работа | Релевантность для УГМ |
-|-------|--------|----------------------|
-| **Perelman G.** | *Ricci flow with surgery* (2002-2003) | Доказательство гипотезы Пуанкаре; аналогия с регенерацией |
-| **Goresky M., MacPherson R.** | *Intersection Homology* (1980) | IC-когомологии; стратификация X |
+| Author | Work | Relevance for UHM |
+|--------|------|-------------------|
+| **Perelman G.** | *Ricci flow with surgery* (2002-2003) | Proof of the Poincaré conjecture; analogy with regeneration |
+| **Goresky M., MacPherson R.** | *Intersection Homology* (1980) | IC cohomology; stratification of X |
 
 ---
 
-**Связанные документы:**
-- [Нотация](./notation) — математические обозначения
-- [Фальсифицируемость](./falsifiability) — критерии проверки теории
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — фундаментальная аксиоматика с ∞-топосом как единственным примитивом
-- [Следствия](/docs/core/foundations/consequences) — когомологический монизм, локально-глобальная дихотомия
-- [Теорема об эмерджентном времени](/docs/proofs/dynamics/emergent-time) — вывод времени, включая стратификационное
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Семь измерений](/docs/core/structure/dimensions) — базис $\mathcal{H}$
-- [Измерение O](/docs/core/structure/dimension-o) — внутренние часы
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Эволюция](/docs/core/dynamics/evolution) — терминальный объект T и стрела времени
-- [Пространство-время](/docs/core/foundations/spacetime) — базовое пространство X, метрика d_strat
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4 и n-усечения ∞-группоида
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — функтор $F$, ∞-группоид, ∞-топос, производные категории
-- [Формализация оператора φ](/docs/proofs/categorical/formalization-phi) — CPTP-каналы
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7
+**Related documents:**
+- [Notation](./notation) — mathematical notation
+- [Falsifiability](./falsifiability) — theory verification criteria
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — fundamental axiomatics with the ∞-topos as the sole primitive
+- [Consequences](/docs/core/foundations/consequences) — cohomological monism, local–global dichotomy
+- [Theorem on emergent time](/docs/proofs/dynamics/emergent-time) — derivation of time, including stratificational
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Seven dimensions](/docs/core/structure/dimensions) — basis $\mathcal{H}$
+- [Dimension O](/docs/core/structure/dimension-o) — internal clock
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Evolution](/docs/core/dynamics/evolution) — terminal object T and the arrow of time
+- [Spacetime](/docs/core/foundations/spacetime) — base space X, metric d_strat
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4 and n-truncations of the ∞-groupoid
+- [Categorical formalism](/docs/proofs/categorical/categorical-formalism) — functor $F$, ∞-groupoid, ∞-topos, derived categories
+- [Formalisation of operator φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — P1+P2 → 𝕆 → N=7

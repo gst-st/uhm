@@ -17,7 +17,7 @@ This is the "hard problem of consciousness." Not "how does the brain process inf
 
 Neuroscience has found correlates of consciousness — brain regions active during conscious perception. But correlation is not explanation. A scanner shows which neurons are excited when you see red — but does not explain **why** neural excitation is experienced as red.
 
-**Unified Holonomic Model (UHM)** offers a fundamentally different approach. Instead of trying to "derive" consciousness from physics (which has failed for 350 years), UHM shows that **physics and consciousness are two sides of a single mathematical object** — the coherence matrix $\Gamma$.
+**Unitary Holonomic Monism (UHM)** offers a fundamentally different approach. Instead of trying to "derive" consciousness from physics (which has failed for 350 years), UHM shows that **physics and consciousness are two sides of a single mathematical object** — the coherence matrix $\Gamma$.
 
 :::info Where We Come From
 This section is a continuation of the [core theory](/docs/intro): the axioms $\Omega^7$, the seven dimensions of the Holon, the coherence matrix $\Gamma$ and its dynamics. If you are not yet familiar with the [axioms](/docs/core/foundations/axiom-omega) and the [coherence matrix](/docs/core/dynamics/coherence-matrix), we recommend starting with them.

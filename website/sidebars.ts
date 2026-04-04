@@ -372,6 +372,7 @@ const sidebars: SidebarsConfig = {
     'applied/research/poincare-perelman',
     'applied/research/gap-diagnostics',
     'applied/research/symbolic-correspondence',
+    'applied/research/theory-ide',
   ],
 
   reference: [

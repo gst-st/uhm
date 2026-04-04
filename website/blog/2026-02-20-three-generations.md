@@ -1,214 +1,214 @@
 ---
 slug: three-generations
-title: "Почему частиц ровно три поколения: ответ из алгебры 1845 года"
+title: "Why There Are Exactly Three Particle Generations: An Answer from Algebra of 1845"
 authors: [uhm]
 tags: [physics, Fano, mathematics, theory]
 ---
 
-# Почему частиц ровно три поколения
+# Why There Are Exactly Three Particle Generations {#почему-частиц-ровно-три-поколения}
 
-Стандартная модель физики элементарных частиц описывает всё, что мы наблюдали в ускорителях за последние семьдесят лет. За это её уважают. Но в ней есть маленькая неловкость, которую обычно помещают в конец курса лекций или в сноску: **все фермионы существуют в трёх копиях — и объяснения этому нет**.
+The Standard Model of particle physics describes everything we have observed in accelerators over the past seventy years. For this it is respected. But it has a small awkwardness that is usually placed at the end of a lecture course or in a footnote: **all fermions exist in three copies — and there is no explanation for this**.
 
-Электрон, мюон, тау-лептон. Три частицы с одними квантовыми числами — только в 207 и 3477 раз тяжелее соответственно. То же самое с кварками: u/c/t (верхние), d/s/b (нижние). Вся видимая материя — атомы, планеты, вы, читатель — состоит почти исключительно из **первого** поколения. Второе и третье существуют, нестабильны, появляются в ускорителях и в ранней Вселенной. Зачем их три, а не два или пять?
+Electron, muon, tau lepton. Three particles with identical quantum numbers — simply 207 and 3477 times heavier respectively. The same with quarks: u/c/t (up), d/s/b (down). All visible matter — atoms, planets, you, the reader — consists almost exclusively of **first** generation particles. The second and third exist, are unstable, appear in accelerators and in the early Universe. Why three, not two or five?
 
-Стандартный ответ: «Мы измерили три. Значит, их три».
+The standard answer: "We measured three. So there are three."
 
-Это не ответ. Это опись.
+This is not an answer. This is an inventory.
 
-В УГМ ответ — **теорема**. Причём выводится из той же плоскости Фано, которая в [посте 2](/blog/geometry-of-inner-world) организовала 21 тип переживания. Та самая семиточечная конструкция, семь линий — теперь объясняет не квалиа, а физику частиц.
+In UHM the answer is a **theorem**. And it is derived from the same Fano plane that organized 21 types of experience in [post 2](/blog/geometry-of-inner-world). That same seven-point construction, seven lines — now explaining not qualia, but the physics of particles.
 
 <!-- truncate -->
 
-## Что такое «поколение» и почему нас должно это волновать
+## What Is a "Generation" and Why Should We Care {#что-такое-поколение-и-почему-нас-должно-это-волновать}
 
-Если вы никогда не задумывались о поколениях частиц — не страшно. Большинство физиков предпочитают тоже особо не задумываться. Вот суть:
+If you have never thought about particle generations — that is fine. Most physicists prefer not to think too deeply about it either. Here is the essence:
 
-Природа создала все известные фермионы в трёх «версиях» — как если бы рецепт частицы запускали три раза, каждый раз увеличив параметр массы:
+Nature created all known fermions in three "versions" — as if the recipe for a particle was run three times, each time increasing the mass parameter:
 
-| Тип | 1-е поколение | 2-е поколение | 3-е поколение |
-|-----|:-------------:|:-------------:|:-------------:|
-| **Лептон (заряж.)** | e (0.511 МэВ) | μ (106 МэВ) | τ (1777 МэВ) |
-| **Кварк (верхн.)** | u (~2 МэВ) | c (~1270 МэВ) | t (~173 000 МэВ) |
-| **Кварк (нижн.)** | d (~5 МэВ) | s (~93 МэВ) | b (~4180 МэВ) |
-| **Нейтрино** | $\nu_e$ | $\nu_\mu$ | $\nu_\tau$ |
+| Type | 1st generation | 2nd generation | 3rd generation |
+|------|:--------------:|:--------------:|:--------------:|
+| **Lepton (charged)** | e (0.511 MeV) | μ (106 MeV) | τ (1777 MeV) |
+| **Quark (up)** | u (~2 MeV) | c (~1270 MeV) | t (~173,000 MeV) |
+| **Quark (down)** | d (~5 MeV) | s (~93 MeV) | b (~4180 MeV) |
+| **Neutrino** | $\nu_e$ | $\nu_\mu$ | $\nu_\tau$ |
 
-Диапазон масс — пять порядков от $u$-кварка до $t$-кварка. При этом квантовые числа внутри каждого «столбца» одинаковы. Природа явно что-то скопировала — и почему-то именно три раза.
+The mass range — five orders of magnitude from the $u$-quark to the $t$-quark. Meanwhile the quantum numbers within each "column" are identical. Nature clearly copied something — and for some reason exactly three times.
 
-За пятьдесят лет предлагалось много объяснений. Техниколор: составные фермионы из более фундаментальных «преонов». Теории Великого объединения с расширенными симметриями. Дополнительные измерения. Ни одно не дало строгого **вывода** числа три из принципов.
+Over fifty years many explanations were proposed. Technicolor: composite fermions from more fundamental "preons." Grand Unified Theories with extended symmetries. Extra dimensions. Not one gave a rigorous **derivation** of the number three from principles.
 
-## Два аргумента — одно число
+## Two Arguments — One Number {#два-аргумента-одно-число}
 
-В УГМ три поколения выводятся двумя **независимыми** способами. Это ключевой момент: когда два совершенно разных аргумента сходятся к одному числу, это нельзя списать на случайность.
+In UHM three generations are derived by two **independent** means. This is the key point: when two completely different arguments converge to one number, it cannot be attributed to coincidence.
 
-### Верхняя граница: катастрофа и три минимума
+### Upper Bound: Catastrophe and Three Minima {#верхняя-граница-катастрофа-и-три-минимума}
 
-Первый аргумент — из **теории катастроф Арнольда** (1972).
+The first argument — from **Arnold's catastrophe theory** (1972).
 
-Вакуумная конфигурация Gap-поля — то, что определяет поколения частиц — описывается потенциалом $V_{\mathrm{Gap}}(\Gamma)$. Этот потенциал зависит от трёх управляющих параметров: $\kappa$ (когерентность), $\alpha$ (асимметрия), $\Delta F$ (разность свободных энергий). Три параметра образуют пространство управления $\mathbb{R}^3$.
+The vacuum configuration of the Gap field — what determines the particle generations — is described by the potential $V_{\mathrm{Gap}}(\Gamma)$. This potential depends on three control parameters: $\kappa$ (coherence), $\alpha$ (asymmetry), $\Delta F$ (free energy difference). The three parameters form the control space $\mathbb{R}^3$.
 
-**Теорема (катастрофа $A_4$, «хвост ласточки») [Т]:** Потенциал с тремя управляющими параметрами типа $A_4$ имеет **не более трёх** одновременно устойчивых минимумов при любом выборе значений параметров.
+**Theorem (catastrophe $A_4$, "swallowtail") [Т]:** A potential with three control parameters of type $A_4$ has **no more than three** simultaneously stable minima for any choice of parameter values.
 
-Это чистая топология — никакой физики. Форма пространства управляющих параметров (она называется «хвост ласточки» за характерный вид поверхности вырождения) принципиально ограничивает кратность вырождения минимума. Четыре одновременно устойчивых минимума при трёх параметрах — геометрически невозможно.
+This is pure topology — no physics. The shape of the control parameter space (called "swallowtail" for the characteristic appearance of the degeneration surface) fundamentally limits the multiplicity of minimum degeneracy. Four simultaneously stable minima with three parameters — geometrically impossible.
 
-Каждый устойчивый минимум $V_{\mathrm{Gap}}$ соответствует одному поколению фермионов. Следовательно:
+Each stable minimum of $V_{\mathrm{Gap}}$ corresponds to one fermion generation. Therefore:
 
 $$N_{\mathrm{gen}} \leq 3 \qquad [\mathrm{Т}]$$
 
-Хорошо. Но это только верхняя граница — «не больше трёх». Нужна нижняя.
+Good. But this is only an upper bound — "no more than three." A lower bound is needed.
 
-### Нижняя граница: октонионный алгебраический минимум
+### Lower Bound: Octonionic Algebraic Minimum {#нижняя-граница-октонионный-алгебраический-минимум}
 
-Второй аргумент — из **алгебры октонионов**, открытых Грейвсом в 1843 году и независимо опубликованных Кэли в 1845-м, когда физики элементарных частиц ещё не существовали как профессия.
+The second argument — from the **algebra of octonions**, discovered by Graves in 1843 and independently published by Cayley in 1845, when particle physicists did not yet exist as a profession.
 
-Семь измерений голонома (A, S, D, L, E, O, U) можно пронумеровать $1, 2, 3, 4, 5, 6, 7 = O$. Три поколения соответствуют трём из шести «не-O» измерений, образующим **ассоциативный триплет** мнимых единиц октонионов — набор $\{e_{k_1}, e_{k_2}, e_{k_3}\}$, у которого ассоциатор равен нулю:
+The seven dimensions of the holon (A, S, D, L, E, O, U) can be numbered $1, 2, 3, 4, 5, 6, 7 = O$. Three generations correspond to three of the six "non-O" dimensions forming an **associative triplet** of imaginary octonion units — a set $\{e_{k_1}, e_{k_2}, e_{k_3}\}$ for which the associator equals zero:
 
 $$\mathcal{A}(k_1, k_2, k_3) = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2 = 0$$
 
-У обычных чисел ассоциатор всегда нуль. У кватернионов — тоже нуль. У октонионов — вообще говоря, нет. Три мнимые единицы октонионов образуют ассоциативный триплет тогда и только тогда, когда они лежат **на одной линии плоскости Фано** PG(2,2).
+For ordinary numbers the associator is always zero. For quaternions — also zero. For octonions — generally no. Three imaginary octonion units form an associative triplet if and only if they lie **on one line of the Fano plane** PG(2,2).
 
-Всего линий в Фано-плоскости — семь. Три проходят через точку $O = 7$ (измерение Основания, то есть «часы» из [предыдущего поста](/blog/spacetime-dimensions)) — они не поколения. Остаются четыре Фано-линии:
+The total number of lines in the Fano plane — seven. Three pass through the point $O = 7$ (the Ground dimension, i.e. the "clock" from the [previous post](/blog/spacetime-dimensions)) — they are not generations. The remaining four Fano lines are:
 
 $$\{1,2,4\},\quad \{2,3,5\},\quad \{3,4,6\},\quad \{5,6,1\}$$
 
-Какая из них — поколения? Та, что содержит только «поколенческие» измерения A(1), S(2), L(4) — и не содержит E(5), U(6), D(3), которые заняты в Хиггсовой линии и других секторах. Это **единственная** такая линия:
+Which of them is the generations? The one containing only "generational" dimensions A(1), S(2), L(4) — and not containing E(5), U(6), D(3), which are occupied in the Higgs line and other sectors. This is the **unique** such line:
 
 $$\{k_1, k_2, k_3\} = \{1, 2, 4\} \qquad [\mathrm{Т}]$$
 
-Тройка $\{1, 2, 4\}$ — это квадратичные вычеты по модулю 7 ($1^2 \equiv 1$, $3^2 \equiv 2$, $2^2 \equiv 4$ по mod 7). Они образуют **единственную** подгруппу порядка 3 в $\mathbb{Z}_7^* \cong \mathbb{Z}_6$. Порядок 3 — ровно три элемента.
+The triple $\{1, 2, 4\}$ — these are the quadratic residues modulo 7 ($1^2 \equiv 1$, $3^2 \equiv 2$, $2^2 \equiv 4$ mod 7). They form the **unique** subgroup of order 3 in $\mathbb{Z}_7^* \cong \mathbb{Z}_6$. Order 3 — exactly three elements.
 
 $$N_{\mathrm{gen}} \geq 3 \qquad [\mathrm{Т}]$$
 
-### Два независимых аргумента сходятся
+### Two Independent Arguments Converge {#два-независимых-аргумента-сходятся}
 
-| Аргумент | Метод | Результат |
-|----------|-------|:---------:|
-| Топология $A_4$-катастрофы (Арнольд, 1972) | Теория катастроф | $N_{\mathrm{gen}} \leq 3$ [Т] |
-| Единственность $\{1,2,4\} \subset \mathbb{Z}_7^*$ (Грейвс/Кэли, 1843/1845) | Алгебра октонионов | $N_{\mathrm{gen}} \geq 3$ [Т] |
+| Argument | Method | Result |
+|----------|--------|:------:|
+| Topology of $A_4$-catastrophe (Arnold, 1972) | Catastrophe theory | $N_{\mathrm{gen}} \leq 3$ [Т] |
+| Uniqueness of $\{1,2,4\} \subset \mathbb{Z}_7^*$ (Graves/Cayley, 1843/1845) | Algebra of octonions | $N_{\mathrm{gen}} \geq 3$ [Т] |
 
-Арнольд и Кэли не знали друг о друге в этом контексте. И оба ничего не знали об элементарных частицах. Но:
+Arnold and Cayley did not know each other in this context. And both knew nothing about elementary particles. But:
 
 $$\boxed{N_{\mathrm{gen}} = 3} \qquad [\mathrm{Т}]$$
 
-Это не подгонка. Это пересечение двух независимых математических фактов.
+This is not a fit. This is the intersection of two independent mathematical facts.
 
-## Назначение: кто есть кто
+## Assignment: Who is Who {#назначение-кто-есть-кто}
 
-Три поколения соответствуют трём элементам триплета $\{1, 2, 4\}$. Но какой из них — первое поколение (лёгкое), какое — третье (тяжёлое)? Ответ тоже структурный.
+Three generations correspond to three elements of the triplet $\{1, 2, 4\}$. But which one is the first generation (light), which is the third (heavy)? The answer is also structural.
 
-### Третье поколение: $k = 1$ — прямая связь с Хиггсом
+### Third Generation: k = 1 — Direct Connection to the Higgs {#третье-поколение-k-1-прямая-связь-с-хиггсом}
 
-Из **Фановского правила отбора Юкавских связей** [Т]: ненулевая связь фермиона поколения $k$ с бозоном Хиггса на **древесном уровне** (то есть прямая, без петель) возможна тогда и только тогда, когда тройка $\{k, E, U\} = \{k, 5, 6\}$ является Фано-линией.
+From the **Fano selection rule for Yukawa couplings** [Т]: a non-zero coupling of a generation-$k$ fermion to the Higgs boson at **tree level** (i.e., direct, without loops) is possible if and only if the triple $\{k, E, U\} = \{k, 5, 6\}$ is a Fano line.
 
-Хиггсовая линия: $\{1, 5, 6\} = \{A, E, U\}$. Проверяем триплет $\{1, 2, 4\}$:
+Higgs line: $\{1, 5, 6\} = \{A, E, U\}$. Checking the triplet $\{1, 2, 4\}$:
 
-| $k$ | Тройка $\{k, E, U\}$ | Фано-линия? | Юкавская связь |
-|:---:|:--------------------:|:-----------:|:--------------:|
-| 1 | $\{1, 5, 6\}$ | **Да** ✓ | $y_1 \neq 0$ (древесный уровень) |
-| 2 | $\{2, 5, 6\}$ | Нет ✗ | $y_2 = 0$ на дереве |
-| 4 | $\{4, 5, 6\}$ | Нет ✗ | $y_4 = 0$ на дереве |
+| $k$ | Triple $\{k, E, U\}$ | Fano line? | Yukawa coupling |
+|:---:|:--------------------:|:----------:|:---------------:|
+| 1 | $\{1, 5, 6\}$ | **Yes** ✓ | $y_1 \neq 0$ (tree level) |
+| 2 | $\{2, 5, 6\}$ | No ✗ | $y_2 = 0$ at tree level |
+| 4 | $\{4, 5, 6\}$ | No ✗ | $y_4 = 0$ at tree level |
 
-Только одно поколение (k=1) получает Юкавскую связь прямо, без квантовых поправок. Оно — единственное «привилегированное», единственное, которое Фано-плоскость соединяет с Хиггсом напрямую. Поэтому оно — **тяжелейшее**:
+Only one generation (k=1) receives a Yukawa coupling directly, without quantum corrections. It is the only "privileged" one, the only one that the Fano plane connects to the Higgs directly. Therefore it is the **heaviest**:
 
-$$k = 1 \;\to\; \text{3-е поколение: } (t,\, b,\, \tau) \qquad [\mathrm{Т}]$$
+$$k = 1 \;\to\; \text{3rd generation: } (t,\, b,\, \tau) \qquad [\mathrm{Т}]$$
 
-Масса $t$-кварка стягивается к инфракрасной неподвижной точке Юкавского уравнения (эффект Пендлтон-Росс, 1981), давая $m_t \approx 173$ ГэВ — без свободных параметров, как следствие единственности Хиггсовой Фано-линии.
+The mass of the $t$-quark is pulled toward the infrared fixed point of the Yukawa renormalization group equation (the Pendleton-Ross effect, 1981), giving $m_t \approx 173$ GeV — without free parameters, as a consequence of the uniqueness of the Higgs Fano line.
 
-### Второе и первое: геометрия петель
+### Second and First: Geometry of Loops {#второе-и-первое-геометрия-петель}
 
-Два оставшихся поколения ($k=2$, $k=4$) получают массы **только через петлевые поправки** — через квантовые флуктуации. Но их пути к Хиггсу различны, и через разные сектора вакуума:
+The two remaining generations ($k=2$, $k=4$) receive masses **only through loop corrections** — through quantum fluctuations. But their paths to the Higgs are different, and through different vacuum sectors:
 
-- **$k = 4$ (L, Логика)** → $\bar{\mathbf{3}}$-сектор. Фановский путь к Хиггсу: $L \to D \to U$ через пару $(L, D)$, где $L \in \bar{\mathbf{3}}$, $D \in \mathbf{3}$ — **конфайнмент-сектор** (Gap $\approx 0$). Непертурбативная связь, масштаб $\Lambda_{\mathrm{QCD}}$: ~$10^{-3}$.
-- **$k = 2$ (S, Структура)** → $\mathbf{3}$-сектор. Фановский путь: $S \to D \to E$ через пару $(S, D)$, оба $\in \mathbf{3}$ — **промежуточный сектор** (Gap $\sim \varepsilon$). Пертурбативная связь: ~$10^{-6}$.
+- **$k = 4$ (L, Logic)** → $\bar{\mathbf{3}}$-sector. Fano path to Higgs: $L \to D \to U$ through the pair $(L, D)$, where $L \in \bar{\mathbf{3}}$, $D \in \mathbf{3}$ — **confinement sector** (Gap $\approx 0$). Non-perturbative coupling, scale $\Lambda_{\mathrm{QCD}}$: ~$10^{-3}$.
+- **$k = 2$ (S, Structure)** → $\mathbf{3}$-sector. Fano path: $S \to D \to E$ through the pair $(S, D)$, both $\in \mathbf{3}$ — **intermediate sector** (Gap $\sim \varepsilon$). Perturbative coupling: ~$10^{-6}$.
 
-Конфайнмент-сектор сильнее → $k=4$ тяжелее $k=2$:
+Confinement sector is stronger → $k=4$ is heavier than $k=2$:
 
-$$k = 4 \;\to\; \text{2-е поколение: } (c,\, s,\, \mu) \qquad [\mathrm{Т}]$$
-$$k = 2 \;\to\; \text{1-е поколение: } (u,\, d,\, e) \qquad [\mathrm{Т}]$$
+$$k = 4 \;\to\; \text{2nd generation: } (c,\, s,\, \mu) \qquad [\mathrm{Т}]$$
+$$k = 2 \;\to\; \text{1st generation: } (u,\, d,\, e) \qquad [\mathrm{Т}]$$
 
-### Итоговая таблица
+### Summary Table {#итоговая-таблица}
 
-| Масса | Поколение | $k$ | Измерение | Механизм | Пример массы |
-|:-----:|:---------:|:---:|-----------|---------|:------------:|
-| Тяжелейшее | **3-е** (t, b, τ) | **1** | A (Артикуляция) | Дерево: $f_{1,E,U} \neq 0$ | $m_t \approx 173$ ГэВ |
-| Среднее | **2-е** (c, s, μ) | **4** | L (Логика) | 1-петля, конфайнмент | $m_c \approx 1.3$ ГэВ |
-| Лёгкое | **1-е** (u, d, e) | **2** | S (Структура) | 1-петля, промежуточный | $m_u \approx 2$ МэВ |
+| Mass | Generation | $k$ | Dimension | Mechanism | Sample mass |
+|:----:|:----------:|:---:|-----------|-----------|:-----------:|
+| Heaviest | **3rd** (t, b, τ) | **1** | A (Articulation) | Tree-level: $f_{1,E,U} \neq 0$ | $m_t \approx 173$ GeV |
+| Medium | **2nd** (c, s, μ) | **4** | L (Logic) | 1-loop, confinement | $m_c \approx 1.3$ GeV |
+| Lightest | **1st** (u, d, e) | **2** | S (Structure) | 1-loop, intermediate | $m_u \approx 2$ MeV |
 
-:::note Парадокс иерархии
-Самое тяжёлое поколение ($k=1$) имеет **наименьшую** голую Юкавскую из Фано-фаз ($|\sin(2\pi/7)| \approx 0.78$), тогда как самое лёгкое ($k=2$) имеет **наибольшую** ($|\sin(4\pi/7)| \approx 0.975$). Но масса определяется не только голой Юкавской, а механизмом: прямая связь с Хиггсом делает $k=1$ тяжёлым вне зависимости от размера фановской фазы. Полный механизм иерархии масс $m_t/m_u \sim 10^5$ — исследовательская программа [Г].
+:::note Hierarchy Paradox
+The heaviest generation ($k=1$) has the **smallest** bare Yukawa from Fano phases ($|\sin(2\pi/7)| \approx 0.78$), while the lightest ($k=2$) has the **largest** ($|\sin(4\pi/7)| \approx 0.975$). But mass is determined not by the bare Yukawa alone, but by the mechanism: direct coupling to the Higgs makes $k=1$ heavy regardless of the size of the Fano phase. The full mechanism of mass hierarchy $m_t/m_u \sim 10^5$ is a research program [Г].
 :::
 
-## Та же плоскость — снова
+## The Same Plane — Again {#та-же-плоскость-снова}
 
-В [посте 2](/blog/geometry-of-inner-world) плоскость Фано организовала **21 тип квалиа**. В [посте 5](/blog/spacetime-dimensions) та же структура разделила семь измерений на пространственный сектор, временно́й и компактный. Теперь — поколения частиц.
+In [post 2](/blog/geometry-of-inner-world) the Fano plane organized **21 types of qualia**. In [post 5](/blog/spacetime-dimensions) the same structure divided the seven dimensions into spatial, temporal, and compact sectors. Now — particle generations.
 
-Это не разные применения «похожей» идеи. Это **один математический объект**, действующий в трёх контекстах:
+This is not different applications of a "similar" idea. This is **one mathematical object** acting in three contexts:
 
-| Область | Что организует | Ключевая операция |
-|---------|---------------|------------------|
-| Квалиа (пост 2) | 21 тип переживания, Gap-профиль | 7 линий = 7 секторов когерентности |
-| Пространство-время (пост 5) | 3 простр. + 1 врем. + 3 компактных | Сектора $\{A,S,D\}$, $\{L,E,U\}$, $O$ |
-| Поколения (сейчас) | Число поколений = 3, их назначение | Линия $\{1,2,4\}$: $\mathcal{A}=0$, единственная |
+| Domain | What it organizes | Key operation |
+|--------|------------------|---------------|
+| Qualia (post 2) | 21 types of experience, Gap-profile | 7 lines = 7 coherence sectors |
+| Spacetime (post 5) | 3 spatial + 1 temporal + 3 compact | Sectors $\{A,S,D\}$, $\{L,E,U\}$, $O$ |
+| Generations (now) | Number of generations = 3, their assignment | Line $\{1,2,4\}$: $\mathcal{A}=0$, unique |
 
-Внутренний мир и физика частиц — два проявления одной семимерной алгебраической структуры. Это не поэтическая метафора — это теорема, что те же самые структурные константы $f_{ijk}$ октонионов определяют и Юкавские связи поколений, и правила параллельного переноса квалиа через Gap-каналы. Статус семантического отождествления E-когерентности с «интериорностью» — [П], но математическое совпадение — строгое [Т].
+The inner world and particle physics — two manifestations of one seven-dimensional algebraic structure. This is not a poetic metaphor — it is a theorem that the same structural constants $f_{ijk}$ of the octonions determine both the Yukawa couplings of generations and the rules of parallel transport of qualia through Gap channels. The status of the semantic identification of E-coherence with "interiority" is [П], but the mathematical coincidence is rigorous [Т].
 
-## $\mathbb{Z}_3$-симметрия: три поколения — орбита
+## $\mathbb{Z}_3$-Symmetry: Three Generations — an Orbit {#z3-симметрия-три-поколения-орбита}
 
-Среди красивых следствий теории — структурная связь между поколениями.
+Among the beautiful consequences of the theory — the structural connection between generations.
 
-Отображение $\sigma: k \mapsto 2k \bmod 7$ является автоморфизмом плоскости Фано [Т] и действует на триплете $\{1, 2, 4\}$ циклически:
+The map $\sigma: k \mapsto 2k \bmod 7$ is an automorphism of the Fano plane [Т] and acts on the triplet $\{1, 2, 4\}$ cyclically:
 
 $$1 \;\xrightarrow{\sigma}\; 2 \;\xrightarrow{\sigma}\; 4 \;\xrightarrow{\sigma}\; 1$$
 
-Три поколения — это **орбита** одного алгебраического отображения, циклической группы $\mathbb{Z}_3 \subset \mathrm{PSL}(2,7)$. Это означает: любая величина, зависящая только от геометрии Фано-плоскости, **одинакова** для всех трёх поколений: ассоциатор $\mathcal{A} = 0$ для всех, расстояние до любой фиксированной точки — одинаково для каждого.
+Three generations are an **orbit** of one algebraic map, the cyclic group $\mathbb{Z}_3 \subset \mathrm{PSL}(2,7)$. This means: any quantity depending only on the geometry of the Fano plane is **identical** for all three generations: associator $\mathcal{A} = 0$ for all, distance to any fixed point — identical for each.
 
-Следствие: **чисто Фановские предсказания не дают иерархии масс** — все три поколения симметричны в Фано-геометрии. Иерархия $m_t \gg m_c \gg m_u$ возникает из **нарушения $\mathbb{Z}_3$-симметрии** вакуумным Gap-профилем: два поколения ($k=1, 2$, то есть A и S) попадают в $\mathbf{3}$-сектор, одно ($k=4$, то есть L) — в $\bar{\mathbf{3}}$-сектор. Это нарушает симметрию → три разных механизма массы → иерархия.
+Consequence: **purely Fano predictions do not give a mass hierarchy** — all three generations are symmetric in Fano geometry. The hierarchy $m_t \gg m_c \gg m_u$ arises from **breaking of $\mathbb{Z}_3$-symmetry** by the vacuum Gap-profile: two generations ($k=1, 2$, i.e. A and S) fall into the $\mathbf{3}$-sector, one ($k=4$, i.e. L) — into the $\bar{\mathbf{3}}$-sector. This breaks the symmetry → three different mass mechanisms → hierarchy.
 
-## Что знали физики и чего не знали
+## What Physicists Knew and Did Not Know {#что-знали-физики-и-чего-не-знали}
 
-Натуральные числа, описывающие поколения, — 1, 2, 3 — простые. «Три» появляется слишком часто: три цвета кварков ($SU(3)$), три пространственных измерения, три поколения. Физики замечали это, некоторые искали связь. Но без структурного принципа — безуспешно.
+The natural numbers describing generations — 1, 2, 3 — are simple. "Three" appears too often: three quark colors ($SU(3)$), three spatial dimensions, three generations. Physicists noticed this, some looked for a connection. But without a structural principle — unsuccessfully.
 
-| Подход | Идея | Статус |
-|--------|------|--------|
-| Техниколор | Фермионы составные из «преонов» | Опровергнут коллайдерами |
-| Расширенная GUT-симметрия | Дополнительные представления | Произвольны, непредсказуемы |
-| Дополнительные измерения | Генерации = профили мод | Не выводят N=3 строго |
-| УГМ: топология + алгебра | $A_4$-катастрофа + $\{1,2,4\} \subset \mathbb{Z}_7^*$ | **$N_{\mathrm{gen}} = 3$ [Т]** |
+| Approach | Idea | Status |
+|----------|------|--------|
+| Technicolor | Fermions are composites of "preons" | Refuted by colliders |
+| Extended GUT-symmetry | Additional representations | Arbitrary, unpredictable |
+| Extra dimensions | Generations = mode profiles | Do not strictly derive N=3 |
+| UHM: topology + algebra | $A_4$-catastrophe + $\{1,2,4\} \subset \mathbb{Z}_7^*$ | **$N_{\mathrm{gen}} = 3$ [Т]** |
 
-Разница не в том, что предыдущие подходы были неумны. Разница в том, что они искали новый принцип, тогда как УГМ спрашивает: какие принципы **уже есть** в структуре теории, и что из них следует?
+The difference is not that previous approaches were unintelligent. The difference is that they sought a new principle, while UHM asks: what principles **already exist** in the theory's structure, and what follows from them?
 
-## Таблица статусов
+## Status Table {#таблица-статусов}
 
-Как всегда — честно о том, что доказано и что нет:
+As always — honest about what is proved and what is not:
 
-| Результат | Статус | Комментарий |
-|-----------|:------:|-------------|
-| $N_{\mathrm{gen}} \leq 3$ ($A_4$-катастрофа) | [Т] | Теория катастроф, 3 управляющих параметра |
-| $\{1,2,4\}$ — единственная Фано-линия с $\mathcal{A}=0$ | [Т] | Из алгебры октонионов, Теорема 6.1 |
-| $N_{\mathrm{gen}} = 3$ (точно) | [Т] | $\leq 3 \wedge \geq 3$ |
-| $k=1 \to$ 3-е поколение | [Т] | Фано-правило отбора Юкавских |
-| $k=4 \to$ 2-е, $k=2 \to$ 1-е | [Т] | Секторная асимметрия |
-| $m_t \approx 173$ ГэВ из IR-неподвижной точки | [Т] | Пендлтон-Росс + Фано-отбор |
-| Полная иерархия $m_t/m_u \sim 10^5$ | [Г] | Требует непертурбативных вычислений в Gap-базисе |
-| Фано-линия $\leftrightarrow$ поколения (семантика) | [П] | Математика строга; физическая интерпретация — постулат |
+| Result | Status | Comment |
+|--------|:------:|---------|
+| $N_{\mathrm{gen}} \leq 3$ ($A_4$-catastrophe) | [Т] | Catastrophe theory, 3 control parameters |
+| $\{1,2,4\}$ — unique Fano line with $\mathcal{A}=0$ | [Т] | From octonionic algebra, Theorem 6.1 |
+| $N_{\mathrm{gen}} = 3$ (exactly) | [Т] | $\leq 3 \wedge \geq 3$ |
+| $k=1 \to$ 3rd generation | [Т] | Fano Yukawa selection rule |
+| $k=4 \to$ 2nd, $k=2 \to$ 1st | [Т] | Sector asymmetry |
+| $m_t \approx 173$ GeV from IR fixed point | [Т] | Pendleton-Ross + Fano selection |
+| Full hierarchy $m_t/m_u \sim 10^5$ | [Г] | Requires non-perturbative calculations in Gap-basis |
+| Fano line $\leftrightarrow$ generations (semantics) | [П] | Mathematics is rigorous; physical interpretation is postulate |
 
-## Выводы
+## Conclusions {#выводы}
 
-**1. Три поколения — теорема, не наблюдение.** Два независимых аргумента — топологический (теория катастроф) и алгебраический (октонионы) — дают $N_{\mathrm{gen}} = 3$ точно. Иных значений нет при данной алгебраической структуре. Это первый строгий вывод числа поколений из принципов.
+**1. Three generations are a theorem, not an observation.** Two independent arguments — topological (catastrophe theory) and algebraic (octonions) — give $N_{\mathrm{gen}} = 3$ exactly. No other values exist for this algebraic structure. This is the first rigorous derivation of the number of generations from principles.
 
-**2. Самое тяжёлое поколение — то, которое «видит» Хиггс без посредников.** Из всего триплета $\{1, 2, 4\}$ только $k=1$ лежит на Хиггсовой Фано-линии $\{A, E, U\}$. Один кандидат — одно тяжёлое поколение. Никакой подгонки: $t$-кварк обязан быть тяжёлым, потому что он единственный связан с Хиггсом напрямую. Остальные получают массу «в кредит» — через квантовые петли.
+**2. The heaviest generation is the one that "sees" the Higgs without intermediaries.** Of the entire triplet $\{1, 2, 4\}$, only $k=1$ lies on the Higgs Fano line $\{A, E, U\}$. One candidate — one heavy generation. No fitting: the $t$-quark must be heavy because it is the only one connected to the Higgs directly. The rest receive mass "on credit" — through quantum loops.
 
-**3. Три поколения — орбита $\mathbb{Z}_3$, нарушенная вакуумом.** Алгебраически три поколения — единая $\mathbb{Z}_3$-симметричная структура. Иерархия масс возникает из нарушения этой симметрии вакуумом: два поколения в $\mathbf{3}$-секторе, одно — в $\bar{\mathbf{3}}$. Это объясняет, почему поколения «похожи» (одинаковые квантовые числа) и одновременно «разные» (кратно различающиеся массы).
+**3. Three generations are a $\mathbb{Z}_3$ orbit, broken by the vacuum.** Algebraically the three generations are a single $\mathbb{Z}_3$-symmetric structure. The mass hierarchy arises from breaking of this symmetry by the vacuum: two generations in the $\mathbf{3}$-sector, one in the $\bar{\mathbf{3}}$. This explains why generations are "similar" (identical quantum numbers) and simultaneously "different" (masses differing by orders of magnitude).
 
-**4. Та же алгебра организует сознание и вещество.** Плоскость Фано определяет и 21 тип квалиа ([пост 2](/blog/geometry-of-inner-world)), и три поколения частиц. Это не поэтическая аналогия — это математическая идентичность: одни и те же структурные константы $f_{ijk}$ октонионов входят в правила связи квалиа через Gap-каналы и в Юкавские вершины поколений. Внутренний мир и вещественная структура Вселенной — два чтения одного алгебраического текста.
+**4. The same algebra organizes consciousness and matter.** The Fano plane determines both the 21 types of qualia ([post 2](/blog/geometry-of-inner-world)) and the three particle generations. This is not a poetic analogy — it is a mathematical identity: the same structural constants $f_{ijk}$ of the octonions enter both the rules of coupling qualia through Gap channels and the Yukawa vertices of generations. The inner world and the material structure of the Universe — two readings of one algebraic text.
 
-Джон Грейвс открыл октонионы в 1843 году, Артур Кэли независимо опубликовал их в 1845-м. Владимир Арнольд описал катастрофу $A_4$ в 1972-м. Ни тот ни другой не думали об элементарных частицах. Но вместе они ответили на вопрос, который физики задают с 1977 года: почему их три.
+John Graves discovered the octonions in 1843, Arthur Cayley independently published them in 1845. Vladimir Arnold described the $A_4$ catastrophe in 1972. Neither of them was thinking about elementary particles. But together they answered the question physicists have been asking since 1977: why there are three.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция УГМ
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — плоскость Фано и 21 тип переживания
-- [Три силы, одно уравнение](/blog/three-forces) — динамика голонома
-- [Почему пространство трёхмерно](/blog/spacetime-dimensions) — та же Фано-структура в геометрии
-- [Три поколения фермионов](/docs/physics/particle-physics/fermion-generations) — полный формализм с доказательствами
-- [Правила Фано-отбора](/docs/physics/gauge-symmetry/fano-selection-rules) — Юкавские связи из $f_{ijk}$
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — UHM philosophical position
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — the Fano plane and 21 types of experience
+- [Three Forces, One Equation](/blog/three-forces) — holon dynamics
+- [Why Space is Three-Dimensional](/blog/spacetime-dimensions) — the same Fano structure in geometry
+- [Three fermion generations](/docs/physics/particle-physics/fermion-generations) — full formalism with proofs
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Yukawa couplings from $f_{ijk}$

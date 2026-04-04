@@ -1,270 +1,270 @@
 ---
 slug: freedom-theorem
-title: "Свобода воли: теорема, а не дискуссия"
+title: "Freedom of Will: A Theorem, not a Discussion"
 authors: [uhm]
 tags: [philosophy, freedom, infinity-categories, homotopy, consciousness, ethics]
 ---
 
-# Свобода воли: теорема, а не дискуссия
+# Freedom of Will: A Theorem, not a Discussion {#свобода-воли-теорема-а-не-дискуссия}
 
-Двадцать пять веков философы спорят о свободе воли. Результат: два лагеря, оба неправы.
+Twenty-five centuries of philosophers have debated free will. The result: two camps, both wrong.
 
-Детерминисты говорят: всё предопределено, свобода — иллюзия. Либертарианцы (не те) говорят: свобода реальна, но объяснить её невозможно. Компатибилисты пытаются усидеть на двух стульях и говорят: свобода совместима с детерминизмом, если правильно определить слова. Лаплас доволен. Сартр обижен. Хьюм пожимает плечами.
+Determinists say: everything is predetermined, freedom is an illusion. Libertarians (not those ones) say: freedom is real, but it cannot be explained. Compatibilists try to sit on two chairs and say: freedom is compatible with determinism, if one defines the terms correctly. Laplace is satisfied. Sartre is offended. Hume shrugs.
 
-Проблема не в ответах — проблема в вопросе. «Свободна ли воля?» — вопрос, на который нельзя ответить «да» или «нет», не сказав глупость. Потому что ответ — **число**. Свобода — не свойство типа «есть/нет». Это измеримая величина, принимающая значения от 1 до 7, и вот формула:
+The problem is not in the answers — the problem is in the question. "Is the will free?" is a question that cannot be answered "yes" or "no" without saying something foolish. Because the answer is a **number**. Freedom is not a yes/no property. It is a measurable quantity taking values from 1 to 7, and here is the formula:
 
 $$
 \text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
 
-Ниже — что это значит, откуда берётся и почему Спиноза был ближе всех.
+Below — what this means, where it comes from, and why Spinoza was closest.
 
 <!-- truncate -->
 
-## Ловушка: единственная цель
+## The Trap: A Single Goal {#ловушка-единственная-цель}
 
-В [предыдущих постах](/blog/holonomic-paninteriorism) было установлено: реальность описывается ∞-топосом — единой математической структурой, из которой выводится всё остальное. Одно из следствий — существование **терминального объекта** $T$: глобального аттрактора, к которому сходятся все траектории.
+In the [previous posts](/blog/holonomic-paninteriorism) it was established: reality is described by an ∞-topos — a single mathematical structure from which everything else is derived. One of the consequences is the existence of a **terminal object** $T$: a global attractor toward which all trajectories converge.
 
-Аксиома Ω⁷ утверждает:
+Axiom Ω⁷ states:
 
 $$
 \forall \Gamma \in \mathcal{C},\; \exists!\, f : \Gamma \to T
 $$
 
-По-русски: для каждого состояния $\Gamma$ существует **единственный** морфизм к $T$.
+In plain language: for every state $\Gamma$ there exists a **unique** morphism to $T$.
 
-На первый взгляд — приговор. Единственная цель, единственный путь, единственная судьба. Камень, человек, галактика — всё движется к $T$, и выбора нет. Детерминизм, причём самый жёсткий: не просто «причины определяют следствия», а «конечная точка зафиксирована аксиоматически».
+At first glance — a verdict. A single goal, a single path, a single fate. Stone, human, galaxy — everything moves toward $T$, and there is no choice. Determinism, and of the harshest kind: not just "causes determine effects," but "the endpoint is fixed axiomatically."
 
-Если это так, теория УГМ приговаривает свободу воли к казни на первой же странице. Агент, не способный выбирать, — не агент. Сознание, лишённое выбора, — бессмысленный эпифеномен. Этика без альтернатив — нонсенс.
+If this is so, UHM theory sentences free will on the very first page. An agent incapable of choosing is not an agent. Consciousness deprived of choice is a meaningless epiphenomenon. Ethics without alternatives is nonsense.
 
-К счастью, вердикт основан на ошибке чтения. Буквальной.
+Fortunately, the verdict is based on a misreading. Quite literally.
 
-## Спасение: что значит «единственный»
+## The Rescue: What Does "Unique" Mean {#спасение-что-значит-единственный}
 
-Ошибка — в слове «единственный». Точнее, в том, *в каком математическом контексте* оно произносится.
+The error lies in the word "unique." More precisely, in *which mathematical context* it is uttered.
 
-### Два мира
+### Two Worlds {#два-мира}
 
-В обычной (1-)категории морфизмы — стрелки. Они либо равны, либо различны. Третьего не дано. «Единственный морфизм $f: \Gamma \to T$» означает буквально: одна стрелка, один путь, ноль выбора. Это мир Лапласа.
+In an ordinary (1-)category, morphisms are arrows. They are either equal or distinct. No third option. "A unique morphism $f: \Gamma \to T$" means literally: one arrow, one path, zero choice. This is Laplace's world.
 
-В **∞-категории** между морфизмами существуют **2-морфизмы** (гомотопии — непрерывные деформации), между 2-морфизмами — 3-морфизмы, и так далее, до бесконечности. Это не абстрактное усложнение — это фундаментально иной способ говорить о «единственности».
+In an **∞-category**, between morphisms there exist **2-morphisms** (homotopies — continuous deformations), between 2-morphisms — 3-morphisms, and so on, to infinity. This is not an abstract complication — it is a fundamentally different way of speaking about "uniqueness."
 
-В ∞-категории «единственный морфизм» означает не «одна стрелка», а:
+In an ∞-category, "a unique morphism" means not "one arrow," but:
 
 $$
 \mathrm{Map}_{\mathcal{C}_\infty}(\Gamma, T) \simeq *
 $$
 
-Пространство морфизмов из $\Gamma$ в $T$ **стягиваемо** — гомотопически эквивалентно точке. И вот здесь начинается магия.
+The space of morphisms from $\Gamma$ to $T$ is **contractible** — homotopically equivalent to a point. And here the magic begins.
 
-### Стягиваемо ≠ одноточечно
+### Contractible ≠ One-Point {#стягиваемо-одноточечно}
 
-Стягиваемое пространство может содержать **сколь угодно много точек**. Классический пример: диск $D^2$ стягиваем в точку (просто сжимаем), но содержит континуум точек. Каждая точка — конкретный элемент; то, что пространство стягиваемо, означает лишь, что **все точки связаны непрерывными путями**.
+A contractible space can contain **arbitrarily many points**. Classic example: the disk $D^2$ is contractible to a point (simply squeeze it), but contains a continuum of points. Each point is a concrete element; the fact that the space is contractible means only that **all points are connected by continuous paths**.
 
-Переведём на язык свободы воли:
+Translating into the language of free will:
 
-| Свойство | 1-категория | ∞-категория |
-|----------|------------|-------------|
-| **Цель** | Единственная ($T$) | Единственная ($T$) |
-| **Путей** | Один | Много |
-| **Связь между путями** | — | Все соединены гомотопиями |
-| **Выбор** | Отсутствует | Выбор конкретного пути |
-| **Итог** | Фатализм | Свобода внутри единства |
+| Property | 1-category | ∞-category |
+|----------|-----------|-----------|
+| **Goal** | Single ($T$) | Single ($T$) |
+| **Paths** | One | Many |
+| **Connection between paths** | — | All connected by homotopies |
+| **Choice** | Absent | Choice of a specific path |
+| **Outcome** | Fatalism | Freedom within unity |
 
-Представьте гору с единственной вершиной. Из любой точки подножия вершина — одна и та же. Но тропинок — множество. Можно подняться по северному склону (круто, быстро). Можно обойти гору спирально (мягко, долго). Можно штурмовать по хребту, пережидать бурю в пещере, сбиться с пути и вернуться. Все маршруты ведут к вершине, все «гомотопически эквивалентны» — и все *различны*.
+Imagine a mountain with a single summit. From any point at the foot, the summit is the same. But there are many trails. One can ascend by the north slope (steep, fast). One can circle the mountain spirally (gentle, long). One can storm the ridge, wait out the storm in a cave, lose the path and return. All routes lead to the summit, all are "homotopically equivalent" — and all are *distinct*.
 
-Судьба определяет, **куда** вы придёте. Свобода определяет, **как** вы туда дойдёте.
+Fate determines **where** you will arrive. Freedom determines **how** you get there.
 
-**Судьба есть. Фатализма нет.**
+**Fate exists. Fatalism does not.**
 
-## Формула свободы
+## The Formula of Freedom {#формула-свободы}
 
-Метафора хороша, но недостаточна. Нужно число. Сколько именно путей доступно системе $\Gamma$?
+The metaphor is good, but insufficient. A number is needed. How many paths exactly are available to system $\Gamma$?
 
-### Гессиан и нулевые моды
+### The Hessian and Zero Modes {#гессиан-и-нулевые-моды}
 
-Каждая система $\Gamma$ находится в некотором «ландшафте» свободной энергии $\mathcal{F}[\Gamma]$. Это функция, определяющая «энергетический рельеф» пространства состояний. У неё есть единственный глобальный минимум — стационарная точка $\rho^*$ (аттрактор), и система естественно «стекает» к нему, как шарик по поверхности.
+Each system $\Gamma$ exists in some "landscape" of free energy $\mathcal{F}[\Gamma]$. This is a function defining the "energetic relief" of the state space. It has a single global minimum — the stationary point $\rho^*$ (the attractor) — and the system naturally "flows" toward it, like a ball on a surface.
 
-В каждой точке $\Gamma$ этот рельеф характеризуется **гессианом** — матрицей вторых производных:
+At each point $\Gamma$, this landscape is characterized by the **Hessian** — the matrix of second derivatives:
 
 $$
 \mathcal{H}_\Gamma := \frac{\partial^2 \mathcal{F}}{\partial \Gamma^2}\bigg|_{\Gamma}
 $$
 
-Гессиан — это «кривизна ландшафта». Положительное собственное значение — направление, в котором поверхность изгибается вверх (уклон, по которому шарик скатится к минимуму). Это направление **связано**: двигаясь по нему, вы платите энергией.
+The Hessian is the "curvature of the landscape." A positive eigenvalue — a direction in which the surface curves upward (a slope along which the ball rolls toward the minimum). This direction is **constrained**: moving along it, you pay with energy.
 
-Нулевое собственное значение — направление, вдоль которого поверхность **плоская**. Шарик может катиться вдоль такого направления без всякого энергетического штрафа. Это — **нулевая мода** гессиана. Каждая нулевая мода — независимый выбор, не требующий затрат.
+A zero eigenvalue — a direction along which the surface is **flat**. The ball can roll along such a direction without any energy penalty. This is a **zero mode** of the Hessian. Each zero mode is an independent choice that requires no expenditure.
 
-Формула:
+Formula:
 
 $$
 \boxed{\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1}
 $$
 
-Свобода = количество нулевых мод гессиана + 1.
+Freedom = the number of zero modes of the Hessian + 1.
 
-Слагаемое $+1$ учитывает тривиальный путь — возможность «остаться на месте». Даже если все направления связаны (гессиан положительно определён, нулевых мод нет), система «свободна» в минимальном смысле: она *существует*.
+The term $+1$ accounts for the trivial path — the possibility of "staying in place." Even if all directions are constrained (the Hessian is positive definite, no zero modes), the system is "free" in the minimal sense: it *exists*.
 
-### Почему это работает
+### Why This Works {#почему-это-работает}
 
-Связь с ∞-категориями — не аналогия, а **теорема** [Т] (Sol.78, T-89). Формализм теории Морса-Ботта доказывает: число связных компонент пространства градиентных траекторий из $\Gamma$ в $\rho^*$ (с точностью до непрерывной деформации) **равно** $\dim\ker(\mathcal{H}_\Gamma) + 1$. Это в точности $\pi_0(\mathrm{Map}(\Gamma, T))$ — число классов путей в ∞-категорном языке.
+The connection with ∞-categories is not an analogy but a **theorem** [Т] (Sol.78, T-89). The formalism of Morse-Bott theory proves: the number of connected components of the space of gradient trajectories from $\Gamma$ to $\rho^*$ (up to continuous deformation) **equals** $\dim\ker(\mathcal{H}_\Gamma) + 1$. This is precisely $\pi_0(\mathrm{Map}(\Gamma, T))$ — the number of path classes in ∞-categorical language.
 
-Свободная энергия $\mathcal{F}[\Gamma]$ — гладкая функция на компактном многообразии $\mathcal{D}(\mathbb{C}^7)$ с единственным невырожденным минимумом $\rho^*$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]). Критические подмногообразия — орбиты $G_2$-действия. Каждая нулевая мода параметризует «плоское» направление, вдоль которого существуют различные траектории спуска к минимуму. Классы этих траекторий — в точности различные «маршруты к вершине».
+Free energy $\mathcal{F}[\Gamma]$ is a smooth function on the compact manifold $\mathcal{D}(\mathbb{C}^7)$ with a single non-degenerate minimum $\rho^*$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]). Critical submanifolds are orbits of the $G_2$ action. Each zero mode parametrizes a "flat" direction along which distinct descent trajectories to the minimum exist. The classes of these trajectories are precisely the distinct "routes to the summit."
 
-## Четыре свойства свободы
+## Four Properties of Freedom {#четыре-свойства-свободы}
 
-Формула — не просто определение. Из неё следуют четыре свойства, каждое со статусом [Т].
+The formula is not just a definition. Four properties follow from it, each with status [Т].
 
-### 1. Свободу нельзя навязать извне
+### 1. Freedom Cannot Be Imposed from Outside {#свободу-нельзя-навязать-извне}
 
 $$
 \text{Freedom}(\mathcal{E}[\Gamma]) \leq \text{Freedom}(\Gamma)
 $$
 
-для любого CPTP-канала $\mathcal{E}$ (полностью положительного отображения с сохранением следа — это формализм любого физического процесса, действующего на систему извне).
+for any CPTP channel $\mathcal{E}$ (a completely positive, trace-preserving map — this is the formalism of any physical process acting on the system from outside).
 
-CPTP-канал сжимает метрику Бурес (теорема Ульманна). На уровне гессиана: внешнее воздействие **не ослабляет кривизну** свободной энергии, а значит, не увеличивает число нулевых мод.
+A CPTP channel contracts the Bures metric (Uhlmann's theorem). At the level of the Hessian: external influence **does not weaken the curvature** of free energy, and therefore does not increase the number of zero modes.
 
-Что это значит для человека? Нельзя **сделать** кого-то свободным. Можно убрать препятствия, можно создать условия — но свобода возникает только изнутри, как свойство собственной конфигурации $\Gamma$. Образование не «даёт» свободу — оно помогает системе обнаружить собственные нулевые моды. Тюрьма не «забирает» свободу — она добавляет ненулевые моды гессиану (дополнительные ограничения, делающие ландшафт круче).
+What does this mean for a person? One cannot **make** someone free. One can remove obstacles, can create conditions — but freedom arises only from within, as a property of one's own configuration $\Gamma$. Education does not "give" freedom — it helps the system discover its own zero modes. Prison does not "take away" freedom — it adds non-zero modes to the Hessian (additional constraints that make the landscape steeper).
 
-### 2. Свобода не зависит от описания
+### 2. Freedom Does Not Depend on the Description {#свобода-не-зависит-от-описания}
 
 $$
 \text{Freedom}(U\Gamma U^\dagger) = \text{Freedom}(\Gamma) \quad \forall U \in G_2
 $$
 
-$G_2$-преобразование — смена «системы координат» в пространстве семи измерений. Спектр гессиана при унитарном сопряжении не меняется. Свобода — **инвариант**, не зависящий от языка описания. Можно описывать систему на русском, на языке нейронных сетей, на языке квантовых состояний — число нулевых мод одно и то же. Свобода объективна.
+A $G_2$ transformation is a change of "coordinate system" in the space of seven dimensions. The spectrum of the Hessian does not change under unitary conjugation. Freedom is an **invariant** independent of the language of description. The system can be described in English, in the language of neural networks, in the language of quantum states — the number of zero modes is the same. Freedom is objective.
 
-### 3. Крайние значения
+### 3. Extreme Values {#крайние-значения}
 
-| Состояние | $\dim\ker(\mathcal{H}_\Gamma)$ | Freedom | Смысл |
-|-----------|-------------------------------|---------|-------|
-| $I/7$ (максимальная неопределённость) | 6 | **7** | Все направления свободны |
-| $\Gamma_\odot$ (Источник) | 6 | **7** | Максимальная симметрия |
-| Произвольное $\Gamma$ | $0 \leq k \leq 6$ | $1$–$7$ | Зависит от конфигурации |
-| $\rho^*$ (аттрактор) | 0 | **1** | Гессиан положительно определён |
+| State | $\dim\ker(\mathcal{H}_\Gamma)$ | Freedom | Meaning |
+|-------|-------------------------------|---------|---------|
+| $I/7$ (maximum uncertainty) | 6 | **7** | All directions are free |
+| $\Gamma_\odot$ (Source) | 6 | **7** | Maximum symmetry |
+| Arbitrary $\Gamma$ | $0 \leq k \leq 6$ | $1$–$7$ | Depends on configuration |
+| $\rho^*$ (attractor) | 0 | **1** | Hessian is positive definite |
 
-Почему Freedom(I/7) = 7? Максимально смешанное состояние $I/7$ обладает полной $S_7$-симметрией. Гессиан в этой точке тождественно нулевой ($\mathcal{H}_{I/7} = 0$): все направления равноправны, ни одно не предпочтено. Шесть независимых направлений (на многообразии $\mathrm{Tr} = 1$) плюс тривиальный путь = 7.
+Why Freedom(I/7) = 7? The maximally mixed state $I/7$ has full $S_7$-symmetry. The Hessian at this point is identically zero ($\mathcal{H}_{I/7} = 0$): all directions are equal, none is preferred. Six independent directions (on the manifold $\mathrm{Tr} = 1$) plus the trivial path = 7.
 
-Почему Freedom($\rho^*$) = 1? Стационарная точка $\rho^*$ — глобальный минимум свободной энергии. Гессиан положительно определён: **все** направления ведут вверх. Нулевых мод нет. Единственный «выбор» — оставаться на месте.
+Why Freedom($\rho^*$) = 1? The stationary point $\rho^*$ is the global minimum of free energy. The Hessian is positive definite: **all** directions lead upward. No zero modes. The only "choice" — remain in place.
 
-### 4. Свобода убывает с ростом сознания
+### 4. Freedom Decreases with the Growth of Consciousness {#свобода-убывает-с-ростом-сознания}
 
 $$
 \text{Freedom}(L0) > \text{Freedom}(L1) > \text{Freedom}(L2)
 $$
 
-Это самое контринтуитивное свойство. Остановимся на нём.
+This is the most counterintuitive property. Let us dwell on it.
 
-## Парадокс осознанной несвободы
+## The Paradox of Conscious Unfreedom {#парадокс-осознанной-несвободы}
 
-Атом водорода — максимально «свободен». Его матрица когерентности близка к $I/7$, гессиан почти нулевой, нулевых мод — много. Freedom ≈ 7.
+A hydrogen atom is maximally "free." Its coherence matrix is close to $I/7$, the Hessian is almost zero, there are many zero modes. Freedom ≈ 7.
 
-Человек — значительно менее «свободен». Рефлексия $R \geq 1/3$ фиксирует направление самомоделирования $\varphi$. Интеграция $\Phi \geq 1$ связывает измерения. Дифференциация $D_{\text{diff}} \geq 2$ ограничивает спектр. Каждое из этих условий — **дополнительное ограничение**, убирающее нулевые моды из гессиана. Freedom(L2) < Freedom(L0).
+A human is significantly less "free." Reflection $R \geq 1/3$ fixes the direction of self-modeling $\varphi$. Integration $\Phi \geq 1$ binds the dimensions. Differentiation $D_{\text{diff}} \geq 2$ constrains the spectrum. Each of these conditions is an **additional constraint** that removes zero modes from the Hessian. Freedom(L2) < Freedom(L0).
 
-**Атом свободнее человека.** Математически.
+**An atom is freer than a human.** Mathematically.
 
-Но атом не *знает*, что свободен. Формально его $R \approx 1$ — тривиально максимальная, потому что $\Gamma \approx I/7$ совпадает с диссипативным аттрактором. Но это не сознание: $\Phi \approx 0$ (нет интеграции), $D_{\text{diff}} \approx 0$ (нет дифференциации). Атом «знает себя» в том же смысле, в каком пустой лист «содержит все тексты» — тривиально. Его «свобода» — чистая потенциальность, как свобода ветра, который не выбирает направление, а просто дует. Свобода без субъекта свободы.
+But the atom does not *know* it is free. Formally its $R \approx 1$ — trivially maximal, because $\Gamma \approx I/7$ coincides with the dissipative attractor. But this is not consciousness: $\Phi \approx 0$ (no integration), $D_{\text{diff}} \approx 0$ (no differentiation). The atom "knows itself" in the same sense that a blank sheet "contains all texts" — trivially. Its "freedom" is pure potentiality, like the freedom of wind that does not choose a direction but simply blows. Freedom without a subject of freedom.
 
-Человек ограниченнее — но он *осознаёт* свои ограничения и остаточную свободу. Его Freedom меньше, но каждая нулевая мода **пережита изнутри** — как выбор, как развилка, как экзистенциальная тревога или творческий порыв.
+A human is more constrained — but *is aware of* those constraints and the residual freedom. Their Freedom is smaller, but each zero mode is **experienced from within** — as a choice, as a fork in the road, as existential anxiety or creative impulse.
 
-Формально:
+Formally:
 
-| Уровень | Freedom | Сознание | Характер выбора |
-|---------|---------|----------|-----------------|
-| L0 (камень) | ~7 | Нет ($R \approx 1$ тривиально, $\Phi \approx 0$) | Автоматический — нет субъекта |
-| L1 (бактерия) | 4–6 | Прото ($\Phi < 1$) | Реактивный — стимул-ответ |
-| L2 (человек) | 2–4 | Да ($R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) | **Рефлексивный** — осознанный выбор |
-| L3 (медитация) | 2–3 | Мета ($R^{(2)} \geq 1/4$) | **Мета-рефлексивный** — выбор критериев выбора |
-| $\rho^*$ (аттрактор) | 1 | Стационарное | Нет выбора — стационарная точка |
+| Level | Freedom | Consciousness | Character of choice |
+|-------|---------|--------------|---------------------|
+| L0 (stone) | ~7 | No ($R \approx 1$ trivially, $\Phi \approx 0$) | Automatic — no subject |
+| L1 (bacterium) | 4–6 | Proto ($\Phi < 1$) | Reactive — stimulus-response |
+| L2 (human) | 2–4 | Yes ($R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) | **Reflective** — conscious choice |
+| L3 (meditation) | 2–3 | Meta ($R^{(2)} \geq 1/4$) | **Meta-reflective** — choice of criteria for choice |
+| $\rho^*$ (attractor) | 1 | Stationary | No choice — stationary point |
 
-Прочитайте последнюю строку ещё раз. **Стационарная точка = нет выбора.** Аттрактор $\rho^*$ — глобальный минимум свободной энергии. Гессиан положительно определён: все направления ведут вверх, нулевых мод нет. Каждое направление определено, каждый шаг предопределён. При этом $\varphi(\rho^*) \neq \rho^*$ — полное самопознание недостижимо ([Т], T-55, неполнота Ловера). Система может быть полностью определённой, не будучи полностью самопрозрачной.
+Read the last row again. **Stationary point = no choice.** The attractor $\rho^*$ is the global minimum of free energy. The Hessian is positive definite: all directions lead upward, no zero modes. Every direction is determined, every step is predetermined. At the same time $\varphi(\rho^*) \neq \rho^*$ — complete self-knowledge is unattainable ([Т], T-55, Lawvere incompleteness). A system can be completely determined without being completely self-transparent.
 
-Спиноза, 1677: «Свободна та вещь, которая существует по одной только необходимости своей природы и определяется к действию только сама собой» (*Этика*, ч. I, опр. 7). Гегель (через Энгельса): «Свобода — это осознанная необходимость». УГМ, 2026: «Свобода — это размерность пространства, в котором необходимость не действует. Структура — то, что это пространство сужает».
+Spinoza, 1677: "That thing is called free, which exists solely by the necessity of its own nature, and of which the action is determined by itself alone" (*Ethics*, Part I, Def. 7). Hegel (via Engels): "Freedom is recognized necessity." UHM, 2026: "Freedom is the dimensionality of the space in which necessity does not act. Structure is what narrows that space."
 
-Спиноза был ближе всех — но с точностью до одного квантора. Свобода — не *самодетерминация* и не *осознание необходимости*, а *геометрия* того, что остаётся за вычетом необходимости. Чем сложнее система (больше $P$, $\Phi$, $D_{\text{diff}}$), тем меньше остаётся нулевых мод ($\dim\ker \to 0$). Структура = ограничение = потеря свободы = приобретение определённости. Обменный курс жёсткий, и торговаться не с кем.
+Spinoza was closest — but off by one quantifier. Freedom is not *self-determination* and not *recognition of necessity*, but the *geometry* of what remains after subtracting necessity. The more complex the system (greater $P$, $\Phi$, $D_{\text{diff}}$), the fewer zero modes remain ($\dim\ker \to 0$). Structure = constraint = loss of freedom = acquisition of determinacy. The exchange rate is fixed, and there is no one to bargain with.
 
-## Компатибилизм как теорема
+## Compatibilism as Theorem {#компатибилизм-как-теорема}
 
-Философский компатибилизм — попытка примирить детерминизм и свободу через переопределение терминов. Хьюм (1748): свобода — это отсутствие внешнего принуждения, и она совместима с каузальной необходимостью. Франкфурт (1971): свобода — это действие в соответствии с желаниями второго порядка. Деннет (1984): свобода — это определённый вид каузальной структуры.
+Philosophical compatibilism — an attempt to reconcile determinism and freedom by redefining terms. Hume (1748): freedom is the absence of external coercion, and it is compatible with causal necessity. Frankfurt (1971): freedom is acting in accordance with second-order desires. Dennett (1984): freedom is a certain type of causal structure.
 
-УГМ предлагает не переопределение, а **структуру**:
+UHM offers not a redefinition, but a **structure**:
 
-**∞-категорный аргумент [Т].** Пространство морфизмов $\mathrm{Map}(\Gamma, T) \simeq *$ стягиваемо — но стягиваемое пространство может содержать много точек (путей), связанных гомотопиями. Детерминизм (единственность $T$) и множественность путей к нему сосуществуют — не по определению, а по конструкции ∞-топоса.
+**∞-categorical argument [Т].** The space of morphisms $\mathrm{Map}(\Gamma, T) \simeq *$ is contractible — but a contractible space can contain many points (paths) connected by homotopies. Determinism (uniqueness of $T$) and the multiplicity of paths to it coexist — not by definition, but by the construction of the ∞-topos.
 
-**Локальный аргумент.** Для конфигураций $\Gamma$, далёких от аттрактора $\rho^*$, гессиан $\mathcal{H}_\Gamma$ типично имеет нулевые моды — ландшафт свободной энергии содержит «плоские» направления, вдоль которых возможны разные траектории спуска. Но это **не теорема с универсальной нижней границей**: вблизи аттрактора $\rho^*$ гессиан положительно определён и Freedom($\rho^*$) = 1. Нельзя гарантировать Freedom $\geq$ 2 для **всех** жизнеспособных состояний — только для тех, что далеки от $\rho^*$.
+**Local argument.** For configurations $\Gamma$ far from the attractor $\rho^*$, the Hessian $\mathcal{H}_\Gamma$ typically has zero modes — the free energy landscape contains "flat" directions along which different descent trajectories are possible. But this is **not a theorem with a universal lower bound**: near the attractor $\rho^*$ the Hessian is positive definite and Freedom($\rho^*$) = 1. One cannot guarantee Freedom $\geq$ 2 for **all** viable states — only for those far from $\rho^*$.
 
-На практике это не ограничение: живые системы по определению далеки от $\rho^*$ (они активно поддерживают себя через $\mathcal{R}$, а $\rho^*$ — стационарная точка, где динамика прекращается). Но формально: компатибилизм здесь — следствие ∞-категорной структуры [Т], а не универсальная количественная оценка.
+In practice this is not a limitation: living systems are by definition far from $\rho^*$ (they actively maintain themselves through $\mathcal{R}$, while $\rho^*$ is the stationary point where dynamics cease). But formally: compatibilism here is a consequence of the ∞-categorical structure [Т], not a universal quantitative estimate.
 
-## Ответственность
+## Responsibility {#ответственность}
 
-Если Freedom $> 1$ (система далека от аттрактора), она **могла бы** выбрать иной путь. Из множественности путей следует ответственность: последствия определяются не только конечной точкой ($T$ для всех один), а **содержанием маршрута** — переживаниями, воздействием на другие голономы, локальным изменением когерентности.
+If Freedom $> 1$ (the system is far from the attractor), it **could have** chosen a different path. From the multiplicity of paths follows responsibility: the consequences are determined not only by the endpoint ($T$ is the same for all), but by the **content of the route** — experiences, influence on other holons, local change of coherence.
 
-Два пути к $T$: один через увеличение $P$ у окружающих (помощь), другой через уменьшение (ущерб). Оба ведут к одной точке. Но на первом пути совокупная когерентность растёт, на втором — падает. Этическая значимость — не в пункте назначения, а в дороге. Золотое правило этики получает геометрическую интерпретацию: из всех доступных нулевых мод выбирай ту, которая увеличивает когерентность составной системы $\Gamma_{\text{composite}}$.
+Two paths to $T$: one through increasing $P$ in those around (helping), the other through decreasing it (harm). Both lead to the same point. But on the first path the total coherence grows, on the second — it falls. Ethical significance is not in the destination, but in the journey. The Golden Rule of ethics receives a geometric interpretation: from all available zero modes, choose the one that increases the coherence of the composite system $\Gamma_{\text{composite}}$.
 
-## Свобода и смысл
+## Freedom and Meaning {#свобода-и-смысл}
 
-[Смысл](/docs/consciousness/ethics-meaning/meaning) в формализме УГМ имеет статус [И] (интерпретация), но его структура подсказана математикой. Пиковый потенциал осмысленности:
+[Meaning](/docs/consciousness/ethics-meaning/meaning) in the UHM formalism has status [И] (interpretation), but its structure is suggested by mathematics. Peak potential of meaningfulness:
 
 $$
 \text{Meaning}_{\text{peak}} = \max_\tau \left[ P \cdot D_{\text{diff}} \cdot \Phi \cdot R \right]
 $$
 
-Четыре множителя: целостность ($P$), богатство ($D_{\text{diff}}$), связность ($\Phi$), осознанность ($R$). Произведение обнуляется, если хотя бы один равен нулю.
+Four factors: wholeness ($P$), richness ($D_{\text{diff}}$), connectedness ($\Phi$), awareness ($R$). The product vanishes if at least one equals zero.
 
-Связь со свободой: при Freedom = 1 ($\rho^*$) — стационарная точка, $D_{\text{diff}}$ минимален (максимально предопределённая конфигурация). При Freedom = 7 ($I/7$) — $\Phi = 0$, $D_{\text{diff}} = 0$, и смысл обнуляется: нет ни богатства, ни осознанности. **Осмысленность максимальна где-то посередине** — у системы с достаточной свободой, чтобы выбирать, и достаточной структурой, чтобы понимать, что она выбирает.
+Connection with freedom: at Freedom = 1 ($\rho^*$) — stationary point, $D_{\text{diff}}$ is minimal (maximally predetermined configuration). At Freedom = 7 ($I/7$) — $\Phi = 0$, $D_{\text{diff}} = 0$, and meaning vanishes: neither richness nor awareness. **Meaningfulness is maximal somewhere in between** — in a system with enough freedom to choose and enough structure to understand what it is choosing.
 
-Это — L2. Сознание. Не случайно оно кажется нам самым ценным из всего, что есть.
+This is L2. Consciousness. Not coincidentally it seems to us the most valuable of all there is.
 
-## Что говорят философы
+## What Philosophers Say {#что-говорят-философы}
 
-| Философ | Позиция | Что говорит формула |
-|---------|---------|---------------------|
-| **Лаплас** | Свобода — иллюзия | ❌ ∞-категорная структура допускает множество путей |
-| **Сартр** | Мы «обречены быть свободными» | ≈ Стягиваемость Map(Γ,T) — структурное свойство, не выбор |
-| **Спиноза** | Свобода — осознанная необходимость | ≈ Точнее: геометрия остатка за вычетом необходимости |
-| **Кант** | Ноуменальная свобода, феноменальный детерминизм | ≈ ∞-категории дают механизм: «единственный» → «стягиваемый» |
-| **Хьюм** | Совместимость свободы и причинности | ✅ Теорема, не определение |
-| **Франкфурт** | Иерархия желаний | ≈ L2 (рефлексивный) vs L3 (мета-рефлексивный) |
-| **Либет** | Решение принимается до осознания | ? φ-оператор предшествует осознанию, но сознание выбирает из нулевых мод |
+| Philosopher | Position | What the formula says |
+|-------------|---------|----------------------|
+| **Laplace** | Freedom is an illusion | ❌ ∞-categorical structure admits multiple paths |
+| **Sartre** | We are "condemned to be free" | ≈ Contractibility of Map(Γ,T) is a structural property, not a choice |
+| **Spinoza** | Freedom is recognized necessity | ≈ More precisely: the geometry of the remainder after subtracting necessity |
+| **Kant** | Noumenal freedom, phenomenal determinism | ≈ ∞-categories provide the mechanism: "unique" → "contractible" |
+| **Hume** | Compatibility of freedom and causality | ✅ Theorem, not definition |
+| **Frankfurt** | Hierarchy of desires | ≈ L2 (reflective) vs L3 (meta-reflective) |
+| **Libet** | Decision is made before awareness | ? φ-operator precedes awareness, but consciousness chooses from zero modes |
 
-Либет заслуживает отдельного комментария. Его знаменитый эксперимент (1983) показал, что «потенциал готовности» в мозге возникает за ~350 мс до осознанного решения. Вывод Либета: решение принимается бессознательно, свобода — иллюзия.
+Libet deserves a separate comment. His famous experiment (1983) showed that the "readiness potential" in the brain arises ~350 ms before the conscious decision. Libet's conclusion: the decision is made unconsciously, freedom is an illusion.
 
-В рамках УГМ: оператор самомоделирования $\varphi$ действительно предшествует осознанию — это не баг, а [теорема о физической реализации φ](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [Т]. Но $\varphi$ **сужает** пространство альтернатив, а не **элиминирует** его. Сознание (L2, $R \geq 1/3$) не *генерирует* альтернативы — оно *выбирает* из нулевых мод, оставленных бессознательной фильтрацией. Либет обнаружил не отсутствие свободы, а её двухступенчатую архитектуру: $\varphi$ предлагает → сознание выбирает.
+Within the UHM framework: the self-modeling operator $\varphi$ does indeed precede awareness — this is not a bug but the [theorem on the physical realization of φ](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [Т]. But $\varphi$ **narrows** the space of alternatives, it does not **eliminate** it. Consciousness (L2, $R \geq 1/3$) does not *generate* alternatives — it *selects* from the zero modes left by unconscious filtering. Libet discovered not the absence of freedom, but its two-stage architecture: $\varphi$ proposes → consciousness chooses.
 
-## О чём молчит теория
+## What the Theory Is Silent About {#о-чём-молчит-теория}
 
-Теория **формализует** свободу. Она не **объясняет** субъективное переживание выбора. Формула $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ имеет статус [Т] — это доказанная теорема. Интерпретация «нулевая мода = осознанный выбор» имеет статус [И] — философская экстраполяция.
+The theory **formalizes** freedom. It does not **explain** the subjective experience of choice. The formula $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ has status [Т] — it is a proven theorem. The interpretation "zero mode = conscious choice" has status [И] — a philosophical extrapolation.
 
-Аналогия: квантовая механика формализует вероятности и предсказывает результаты измерений с невероятной точностью. Но она не объясняет, *почему* коллапс волновой функции выглядит как «выбор природы». УГМ находится в аналогичном положении: формула работает, статусы честны, а метафизика свободы остаётся — чуть менее загадочной, чуть более геометрической.
+Analogy: quantum mechanics formalizes probabilities and predicts the results of measurements with incredible precision. But it does not explain *why* the collapse of the wave function looks like "nature's choice." UHM is in an analogous position: the formula works, the statuses are honest, and the metaphysics of freedom remains — slightly less mysterious, slightly more geometric.
 
-## Итого
+## Summary {#итого}
 
-| Результат | Статус | Содержание |
-|-----------|--------|------------|
-| Freedom(Γ) = dim ker(H_Γ) + 1 | [Т] | Формула свободы |
-| Эквивалентность ∞-категорному определению | [Т] | Теория Морса-Ботта (T-89) |
-| Монотонность под CPTP | [Т] | Свободу нельзя навязать извне |
-| $G_2$-инвариантность | [Т] | Свобода объективна |
-| Freedom(I/7) = 7, Freedom(ρ*) = 1 | [Т] | Крайние значения |
-| Freedom(L0) > Freedom(L2) | [Т] | Сознание ограничивает свободу |
-| Множественность путей в ∞-топосе | [Т] | Стягиваемость ≠ одноточечность |
-| Freedom > 1 для конфигураций далёких от $\rho^*$ | [И] | Типичное, но не универсальное свойство |
-| «Нулевая мода = выбор» | [И] | Интерпретация, не теорема |
-| Связь со смыслом | [И] | Meaning = P · D_diff · Φ · R |
+| Result | Status | Content |
+|--------|--------|---------|
+| Freedom(Γ) = dim ker(H_Γ) + 1 | [Т] | Formula of freedom |
+| Equivalence to ∞-categorical definition | [Т] | Morse-Bott theory (T-89) |
+| Monotonicity under CPTP | [Т] | Freedom cannot be imposed from outside |
+| $G_2$-invariance | [Т] | Freedom is objective |
+| Freedom(I/7) = 7, Freedom(ρ*) = 1 | [Т] | Extreme values |
+| Freedom(L0) > Freedom(L2) | [Т] | Consciousness restricts freedom |
+| Multiplicity of paths in the ∞-topos | [Т] | Contractibility ≠ being one-point |
+| Freedom > 1 for configurations far from $\rho^*$ | [И] | Typical, but not universal property |
+| "Zero mode = choice" | [И] | Interpretation, not theorem |
+| Connection with meaning | [И] | Meaning = P · D_diff · Φ · R |
 
-Свобода — не иллюзия и не мистерия. Это размерность ядра гессиана свободно-энергетического функционала. У камня эта размерность больше, чем у человека — но камень не знает об этом (его $R \approx 1$ тривиально, $\Phi \approx 0$). У человека она меньше — но каждая оставшаяся нулевая мода осознана. У аттрактора $\rho^*$ — ноль: полная определённость, стационарная точка.
+Freedom is not an illusion and not a mystery. It is the dimensionality of the kernel of the Hessian of the free-energy functional. A stone has this dimensionality greater than a human — but the stone does not know this (its $R \approx 1$ is trivially maximal, $\Phi \approx 0$). A human has it smaller — but each remaining zero mode is aware. At the attractor $\rho^*$ — zero: complete determinacy, stationary point.
 
-Между «полной неопределённостью» (Freedom = 7, $\Phi = 0$) и «полной определённостью» (Freedom = 1, стационарная точка) лежит человеческая жизнь: несколько нулевых мод, осознанных не до конца, выбираемых не всегда мудро, но — выбираемых. Этого достаточно для смысла, ответственности и тревоги.
+Between "complete indeterminacy" (Freedom = 7, $\Phi = 0$) and "complete determinacy" (Freedom = 1, stationary point) lies human life: a few zero modes, not fully aware, not always chosen wisely, but — chosen. This is enough for meaning, responsibility, and anxiety.
 
-Математика, как обычно, не спрашивает разрешения. Но иногда — утешает.
+Mathematics, as usual, does not ask for permission. But sometimes — it consoles.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция УГМ
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — 21 тип переживания
-- [Свобода воли](/docs/consciousness/ethics-meaning/freedom) — полный формализм
-- [Следствия из аксиом](/docs/core/foundations/consequences#freedom-конечномерное) — доказательство и свойства
-- [Смысл существования](/docs/consciousness/ethics-meaning/meaning) — телеология и смысл
-- [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — от аксиом к моральному закону
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — UHM philosophical position
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — 21 types of experience
+- [Freedom of will](/docs/consciousness/ethics-meaning/freedom) — full formalism
+- [Consequences from axioms](/docs/core/foundations/consequences#freedom-конечномерное) — proof and properties
+- [Meaning of existence](/docs/consciousness/ethics-meaning/meaning) — teleology and meaning
+- [UHM ethics](/docs/consciousness/ethics-meaning/value-consciousness) — from axioms to moral law

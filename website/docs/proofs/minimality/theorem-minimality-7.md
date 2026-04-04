@@ -1,117 +1,117 @@
 ---
 slug: /proofs/minimality/theorem-minimality-7
 sidebar_position: 1
-title: "Теорема о минимальности 7D"
+title: "Theorem on 7D Minimality"
 format: md
 ---
 
-# Теорема о Минимальной Полноте: Строгое Доказательство
+# Theorem on Minimal Completeness: A Rigorous Proof
 
-## Формулировка Теоремы
+## Theorem Statement
 
-:::warning Методологическое уточнение: Теорема vs Аксиома
-Размерность $N = 7$ — **аксиома** ([Аксиома 3](/docs/core/foundations/axiom-omega#аксиоматика)), характеризующая класс изучаемых систем (Голономов).
+:::warning Methodological clarification: Theorem vs Axiom
+The dimensionality $N = 7$ is an **axiom** ([Axiom 3](/docs/core/foundations/axiom-omega#аксиоматика)), characterizing the class of systems under study (Holons).
 
-**Теорема** ниже (Трек A) показывает, что 7 — **минимальное** значение, при котором условия (AP)+(PH)+(QG) *могут быть выполнены*. Независимо, [структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) (Трек B) даёт $N = 7$ из теорем P1+P2 (выводятся из (AP)+(PH)+(QG)+(V)) через теорему Гурвица.
+The **theorem** below (Track A) shows that 7 is the **minimum** value at which conditions (AP)+(PH)+(QG) *can be satisfied*. Independently, the [structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) (Track B) gives $N = 7$ from theorems P1+P2 (derived from (AP)+(PH)+(QG)+(V)) via the Hurwitz theorem.
 
-**Честная формулировка:** "Если мы изучаем системы с (AP)+(PH)+(QG), то N ≥ 7. Мы выбираем N = 7 как минимальный нетривиальный случай. Это значение независимо **доказывается** октонионной структурой (P1+P2 [Т] через цепочку T15)."
+**Honest formulation:** "If we study systems with (AP)+(PH)+(QG), then N ≥ 7. We choose N = 7 as the minimal non-trivial case. This value is independently **proven** by the octonionic structure (P1+P2 [Т] via the T15 chain)."
 :::
 
-**Теорема (Минимальная Полнота УГМ):**
-*Число 7 есть минимальное количество **функционально независимых аспектов (измерений)**, необходимых для замыкания (M,R)-системы Розена, обладающей:*
-1. *Автопоэтическим самоподдержанием*
-2. *Внутренней феноменологией (интериорностью)*
-3. *Квантовым основанием*
+**Theorem (Minimal Completeness of UHM):**
+*The number 7 is the minimum number of **functionally independent aspects (dimensions)** required to close a Rosen (M,R)-system that possesses:*
+1. *Autopoietic self-maintenance*
+2. *Internal phenomenology (interiority)*
+3. *A quantum foundation*
 
-:::warning Уточнение: измерения vs размерность
-Теорема утверждает минимальность **числа измерений** (A, S, D, L, E, O, U), а не размерности гильбертова пространства. Реализация в виде тензорного произведения $\mathcal{H} = \bigotimes_{i=1}^{7} \mathcal{H}_i$ даёт $\dim(\mathcal{H}) = \prod_i \dim(\mathcal{H}_i) \geq 2^7 = 128$ при минимальных $\dim(\mathcal{H}_i) = 2$.
+:::warning Clarification: dimensions vs dimensionality
+The theorem asserts the minimality of the **number of dimensions** (A, S, D, L, E, O, U), not the dimensionality of the Hilbert space. A realization as a tensor product $\mathcal{H} = \bigotimes_{i=1}^{7} \mathcal{H}_i$ gives $\dim(\mathcal{H}) = \prod_i \dim(\mathcal{H}_i) \geq 2^7 = 128$ for minimal $\dim(\mathcal{H}_i) = 2$.
 
-Формулировка "$\dim(\mathcal{H}) \geq 7$" корректна только для **концептуального 7D-формализма**, где каждое измерение представлено одним базисным вектором. Для **операционального формализма** с частичным следом необходима тензорная структура.
+The formulation "$\dim(\mathcal{H}) \geq 7$" is correct only for the **conceptual 7D formalism**, where each dimension is represented by a single basis vector. For the **operational formalism** with partial trace, a tensor structure is required.
 :::
 
-:::info Согласование с Пейдж–Вуттерс (dim = 42)
-В механизме Пейдж–Вуттерс ([Свойство 3 Ω⁷](/docs/core/foundations/axiom-omega#свойство-3)) используется пространство:
+:::info Consistency with Page–Wootters (dim = 42)
+The Page–Wootters mechanism ([Property 3 of Ω⁷](/docs/core/foundations/axiom-omega#свойство-3)) uses the space:
 
 $$
 \mathcal{H}_{total} = \mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}
 $$
 
-Это **не противоречит** минимальности 7 измерений:
-- **7** — количество функционально независимых аспектов (A, S, D, L, E, O, U)
-- **42** — размерность пространства состояний в конкретной тензорной реализации
+This **does not contradict** the minimality of 7 dimensions:
+- **7** — the number of functionally independent aspects (A, S, D, L, E, O, U)
+- **42** — the dimensionality of the state space in a particular tensor realization
 
-Число 42 = 7 × 6 возникает из факторизации, где O выделено как "часы" для механизма эмерджентного времени. См. [Матрица когерентности → Тензорное расширение Пейдж–Вуттерс](/docs/core/dynamics/coherence-matrix#тензорное-расширение-page-wootters).
+The number 42 = 7 × 6 arises from the factorization in which O is singled out as the "clock" for the emergent time mechanism. See [Coherence matrix → Page–Wootters tensor extension](/docs/core/dynamics/coherence-matrix#тензорное-расширение-page-wootters).
 :::
 
-**Формально (концептуальная формулировка):**
+**Formally (conceptual formulation):**
 
-Пусть $\mathbb{H}$ — самосогласованная система. Тогда:
-
-$$
-|\{i : i \text{ — функционально независимый аспект } \mathbb{H}\}| \geq 7
-$$
-
-**Эквивалентно (тензорная реализация):**
+Let $\mathbb{H}$ be a self-consistent system. Then:
 
 $$
-\mathcal{H} = \bigotimes_{i=1}^{n} \mathcal{H}_i \quad \Rightarrow \quad n \geq 7 \text{ для (AP)+(PH)+(QG)}
+|\{i : i \text{ — functionally independent aspect of } \mathbb{H}\}| \geq 7
 $$
 
-где:
-- **(AP)** — аксиома автопоэзиса
-- **(PH)** — аксиома феноменологии
-- **(QG)** — аксиома квантового основания
+**Equivalently (tensor realization):**
+
+$$
+\mathcal{H} = \bigotimes_{i=1}^{n} \mathcal{H}_i \quad \Rightarrow \quad n \geq 7 \text{ for (AP)+(PH)+(QG)}
+$$
+
+where:
+- **(AP)** — autopoiesis axiom
+- **(PH)** — phenomenology axiom
+- **(QG)** — quantum foundation axiom
 
 ---
 
-## Часть I: Формальные Определения
+## Part I: Formal Definitions
 
-### Определение 1.1 (Автопоэтическая Система)
+### Definition 1.1 (Autopoietic System)
 
-Система $\mathbb{H}$ называется **автопоэтической**, если существует отображение:
+A system $\mathbb{H}$ is called **autopoietic** if there exists a map:
 
 $$
 \varphi: \mathbb{H} \to \mathbb{H}
 $$
 
-такое, что:
-1. $\varphi(\mathbb{H})$ порождает компоненты, поддерживающие $\mathbb{H}$
-2. Существует фиксированная точка: $\varphi(\mathbb{H}^*) = \mathbb{H}^*$ (самовоспроизведение)
+such that:
+1. $\varphi(\mathbb{H})$ generates components that maintain $\mathbb{H}$
+2. A fixed point exists: $\varphi(\mathbb{H}^*) = \mathbb{H}^*$ (self-reproduction)
 
-### Определение 1.2 ((M,R)-Система Розена)
+### Definition 1.2 ((M,R)-System of Rosen) {#определение-12-mr-система-розена}
 
-**Определение:** Система является (M,R)-системой, если выполнены условия:
-
-$$
-M: A \to B \quad \text{(метаболизм: отображение субстратов в продукты)}
-$$
+**Definition:** A system is an (M,R)-system if the following conditions are satisfied:
 
 $$
-\mathcal{F}: B \to M \quad \text{(репарация: продукты порождают метаболизм)}
+M: A \to B \quad \text{(metabolism: mapping substrates to products)}
 $$
 
 $$
-\beta: \mathcal{F} \to \mathcal{F} \quad \text{(замыкание: репарация порождает саму себя)}
+\mathcal{F}: B \to M \quad \text{(repair: products generate metabolism)}
 $$
 
-**Критическое условие замыкания:**
-
 $$
-\beta = f(M, \mathcal{F}) \quad \text{где } \beta \in \mathrm{Hom}(\mathcal{F}, \mathcal{F})
+\beta: \mathcal{F} \to \mathcal{F} \quad \text{(closure: repair generates itself)}
 $$
 
-:::note О нотации
-$\mathcal{F}$ — функция репарации в (M,R)-системе Розена. Не путать с $\Phi$ — [мерой интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ).
+**Critical closure condition:**
+
+$$
+\beta = f(M, \mathcal{F}) \quad \text{where } \beta \in \mathrm{Hom}(\mathcal{F}, \mathcal{F})
+$$
+
+:::note On notation
+$\mathcal{F}$ — the repair function in Rosen's (M,R)-system. Not to be confused with $\Phi$ — the [integration measure](/docs/core/structure/dimension-u#мера-интеграции-φ).
 :::
 
-Это создает каузально замкнутую структуру без внешних причин.
+This creates a causally closed structure without external causes.
 
-### Определение 1.3 (Феноменологическая Система)
+### Definition 1.3 (Phenomenological System)
 
-Система $\mathbb{H}$ обладает **внутренней феноменологией**, если:
-1. Существует подпространство $E \subset \mathcal{H}$ ([измерение Интериорности](/docs/core/structure/dimension-e))
-2. Существует оператор $\rho_E: E \to E$ (матрица плотности опыта)
-3. Спектральное разложение $\rho_E$ определяет [интериорность](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority):
+A system $\mathbb{H}$ has **internal phenomenology** if:
+1. There exists a subspace $E \subset \mathcal{H}$ ([Interiority dimension](/docs/core/structure/dimension-e))
+2. There exists an operator $\rho_E: E \to E$ (experience density matrix)
+3. The spectral decomposition of $\rho_E$ defines [interiority](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority):
 
 $$
 \rho_E |q_k\rangle = \lambda_k |q_k\rangle
@@ -121,14 +121,14 @@ $$
 \text{Exp}_k := (\lambda_k, [|q_k\rangle], C, H)
 $$
 
-где $\text{Exp}_k$ — точка опыта (см. [экспериенциальное уравнение](/docs/proofs/consciousness/interiority-hierarchy#31-экспериенциальное-уравнение)).
+where $\text{Exp}_k$ is an experience point (see [experiential equation](/docs/proofs/consciousness/interiority-hierarchy#31-экспериенциальное-уравнение)).
 
-### Определение 1.4 (Квантовое Основание)
+### Definition 1.4 (Quantum Foundation)
 
-Система $\mathbb{H}$ имеет **квантовое основание**, если:
-1. Состояние описывается [матрицей когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathcal{H})$
+A system $\mathbb{H}$ has a **quantum foundation** if:
+1. The state is described by a [coherence matrix](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathcal{H})$
 2. $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$
-3. Эволюция подчиняется [расширенному уравнению Линдблада](/docs/core/dynamics/evolution#полное-уравнение-движения):
+3. Evolution obeys the [extended Lindblad equation](/docs/core/dynamics/evolution#полное-уравнение-движения):
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
@@ -136,189 +136,189 @@ $$
 
 ---
 
-## Часть II: Функциональный Анализ Измерений
+## Part II: Functional Analysis of Dimensions
 
-### Теорема 2.1 (Необходимые Функции)
+### Theorem 2.1 (Necessary Functions)
 
-**Утверждение:** Для реализации свойств (AP), (PH), (QG) система должна выполнять следующие несводимые функции:
+**Statement:** To realize properties (AP), (PH), (QG), a system must perform the following irreducible functions:
 
-| Функция | Математический Оператор | Обозначение |
+| Function | Mathematical Operator | Notation |
 |---------|-------------------------|-------------|
-| F1: Различение | Проектор $P$: $P^2 = P$, $P^\dagger = P$ | $A$ |
-| F2: Удержание формы | Гамильтониан $H$: $H^\dagger = H$ | $S$ |
-| F3: Изменение | Унитарный оператор $U(t) = e^{-iHt}$ | $D$ |
-| F4: Согласование | Коммутатор: $[A,B] = AB - BA$ | $L$ |
-| F5: Переживание | Матрица плотности $\rho$: $\mathrm{Tr}(\rho) = 1$ | $E$ |
-| F6: Связь с вакуумом | Вакуумное состояние $\vert 0\rangle$: $\langle 0\vert H\vert 0\rangle \neq 0$ | $O$ |
-| F7: Интеграция | След $\mathrm{Tr}$: $\mathrm{Tr}(I) = \dim(\mathcal{H})$ | $U$ |
+| F1: Distinction | Projector $P$: $P^2 = P$, $P^\dagger = P$ | $A$ |
+| F2: Form retention | Hamiltonian $H$: $H^\dagger = H$ | $S$ |
+| F3: Change | Unitary operator $U(t) = e^{-iHt}$ | $D$ |
+| F4: Consistency | Commutator: $[A,B] = AB - BA$ | $L$ |
+| F5: Experience | Density matrix $\rho$: $\mathrm{Tr}(\rho) = 1$ | $E$ |
+| F6: Vacuum coupling | Vacuum state $\vert 0\rangle$: $\langle 0\vert H\vert 0\rangle \neq 0$ | $O$ |
+| F7: Integration | Trace $\mathrm{Tr}$: $\mathrm{Tr}(I) = \dim(\mathcal{H})$ | $U$ |
 
-### Лемма 2.2 (Функциональная Независимость)
+### Lemma 2.2 (Functional Independence)
 
-**Утверждение:** Функции F1-F7 попарно независимы.
+**Statement:** Functions F1–F7 are pairwise independent.
 
-**Доказательство:**
+**Proof:**
 
-Покажем, что ни одна функция не выводится из остальных.
+We show that no function can be derived from the rest.
 
-**(F1 независима от F2-F7):**
-Проектор $P$ определяет границы системы. Гамильтониан $H$ определяет энергетическую структуру. Можно иметь $H$ без $P$ (система без границ = вселенная). Можно иметь $P$ без $H$ (статическое различение).
+**(F1 is independent of F2–F7):**
+A projector $P$ defines the boundaries of the system. A Hamiltonian $H$ defines the energy structure. One can have $H$ without $P$ (a system without boundaries = the universe). One can have $P$ without $H$ (static distinction).
 
-**(F2 независима от остальных):**
-Гамильтониан задаёт структуру энергетических уровней. Динамика $D$ использует $H$, но не определяет его. Можно иметь $D = I$ (тривиальная динамика) при нетривиальном $H$.
+**(F2 is independent of the rest):**
+The Hamiltonian specifies the energy level structure. Dynamics $D$ uses $H$ but does not define it. One can have $D = I$ (trivial dynamics) with a non-trivial $H$.
 
-**(F3 независима от остальных):**
-Унитарная эволюция — не единственная возможная динамика. Можно иметь диссипативную динамику без унитарной (чисто $\mathcal{D}[\Gamma]$).
+**(F3 is independent of the rest):**
+Unitary evolution is not the only possible dynamics. One can have dissipative dynamics without unitary evolution (purely $\mathcal{D}[\Gamma]$).
 
-**(F4 независима от остальных):**
-Логическая согласованность определяется алгеброй операторов. Коммутатор $[A,B]$ может быть нулевым или ненулевым независимо от других структур.
+**(F4 is independent of the rest):**
+Logical consistency is determined by the operator algebra. The commutator $[A,B]$ can be zero or non-zero independently of other structures.
 
-**(F5 независима от остальных):**
-Феноменологическое содержание (интериорность) определяется спектром $\rho_E$. Система может существовать физически без феноменологии (p-зомби в философии сознания).
+**(F5 is independent of the rest):**
+Phenomenological content (interiority) is determined by the spectrum of $\rho_E$. A system can exist physically without phenomenology (a philosophical p-zombie).
 
-**(F6 независима от остальных):**
-Связь с вакуумом определяет энергетическую подпитку. Система может быть замкнутой (без O) или открытой (с O).
+**(F6 is independent of the rest):**
+Vacuum coupling determines the energy supply. A system can be closed (without O) or open (with O).
 
-**(F7 независима от остальных):**
-Интеграция (След) объединяет все компоненты. Без $\mathrm{Tr}$ система может существовать фрагментированно.
+**(F7 is independent of the rest):**
+Integration (Trace) unifies all components. Without $\mathrm{Tr}$ the system can exist fragmentarily.
 
-:::info Методологическое уточнение [Т]
-Функциональная независимость F1-F7 обоснована конструктивно: для каждой пары Fi, Fj демонстрируется состояние $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, в котором Fi $\neq 0$, Fj $= 0$. Это стандартный метод доказательства линейной независимости функционалов [Т].
+:::info Methodological clarification [Т]
+The functional independence of F1–F7 is justified constructively: for each pair Fi, Fj a state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is exhibited in which Fi $\neq 0$, Fj $= 0$. This is the standard method for proving linear independence of functionals [Т].
 :::
 
-:::info Конструктивные контрпримеры [Т] {#конструктивные-контрпримеры}
+:::info Constructive counterexamples [Т] {#конструктивные-контрпримеры}
 
-Для каждой пары приводится явное состояние $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, подтверждающее независимость.
+An explicit state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ confirming independence is provided for each pair.
 
-**Обозначения:** $e_k$ — $k$-й базисный вектор; $\mathrm{diag}(d_1,\ldots,d_7)$ — диагональная матрица плотности с $d_k \geq 0$, $\sum d_k = 1$.
+**Notation:** $e_k$ — the $k$-th basis vector; $\mathrm{diag}(d_1,\ldots,d_7)$ — diagonal density matrix with $d_k \geq 0$, $\sum d_k = 1$.
 
-**F1 независима от F2 — состояние $\Gamma^{(1)} = \mathrm{diag}(1,0,0,0,0,0,0)$:**
+**F1 is independent of F2 — state $\Gamma^{(1)} = \mathrm{diag}(1,0,0,0,0,0,0)$:**
 
 $$\Gamma^{(1)} = |A\rangle\langle A|$$
 
-Проектор $P = |A\rangle\langle A| \neq 0$ (F1 активна). Однако $\Gamma^{(1)}$ — чистое одномерное состояние в подпространстве $A$; нет энергетической структуры за пределами этого подпространства, то есть $H|_{\mathrm{supp}\,\Gamma^{(1)}} = 0$ (F2 тривиальна). Различение существует без гамильтонианой формы.
+Projector $P = |A\rangle\langle A| \neq 0$ (F1 active). However, $\Gamma^{(1)}$ is a pure one-dimensional state in subspace $A$; there is no energy structure beyond this subspace, i.e. $H|_{\mathrm{supp}\,\Gamma^{(1)}} = 0$ (F2 trivial). Distinction exists without Hamiltonian form.
 
-**F5 независима от F1 — состояние $\Gamma^{(5)} = \mathrm{diag}(0,0,0,0,1,0,0)$:**
+**F5 is independent of F1 — state $\Gamma^{(5)} = \mathrm{diag}(0,0,0,0,1,0,0)$:**
 
 $$\Gamma^{(5)} = |E\rangle\langle E|$$
 
-Редуцированная матрица плотности $\rho_E = \mathrm{Tr}_{A,S,D,L,O,U}(\Gamma^{(5)}) = |E\rangle\langle E| \neq 0$ (F5 активна). При этом $\gamma_{AA} = 0$, то есть проектор на $A$-подпространство равен нулю (F1 неактивна). Феноменология существует без $A$-различения.
+Reduced density matrix $\rho_E = \mathrm{Tr}_{A,S,D,L,O,U}(\Gamma^{(5)}) = |E\rangle\langle E| \neq 0$ (F5 active). At the same time $\gamma_{AA} = 0$, i.e. the projector onto the $A$-subspace is zero (F1 inactive). Phenomenology exists without $A$-distinction.
 
-**F6 независима от F5 — состояние $\Gamma^{(6)} = \mathrm{diag}(0,0,0,0,0,1,0)$:**
+**F6 is independent of F5 — state $\Gamma^{(6)} = \mathrm{diag}(0,0,0,0,0,1,0)$:**
 
 $$\Gamma^{(6)} = |O\rangle\langle O|$$
 
-$\langle O|\Gamma^{(6)}|O\rangle = 1 \neq 0$ — вакуумная компонента ненулевая (F6 активна). При этом $\gamma_{EE} = 0$ — $E$-компонента отсутствует (F5 неактивна). Связь с вакуумом существует без феноменологии.
+$\langle O|\Gamma^{(6)}|O\rangle = 1 \neq 0$ — the vacuum component is non-zero (F6 active). At the same time $\gamma_{EE} = 0$ — the $E$-component is absent (F5 inactive). Vacuum coupling exists without phenomenology.
 
-**F7 независима от F1–F6 — состояние $\Gamma^{(7)} = I/7$:**
+**F7 is independent of F1–F6 — state $\Gamma^{(7)} = I/7$:**
 
 $$\Gamma^{(7)} = \frac{1}{7}\,\mathbf{1}_7$$
 
-$\mathrm{Tr}(\Gamma^{(7)}) = 1$ (F7 нормировка соблюдена). Но при максимально смешанном состоянии: $P = 1/7$ (минимум, нет различения, F1 тривиальна), $H$ не выделяет подпространств (F2 тривиальна), $U(t) = e^{-iHt}$ не изменяет $\Gamma^{(7)}$ (F3 тривиальна), все коммутаторы нулевые на инвариантном подпространстве (F4 тривиальна), $\rho_E = \mathbf{1}_1/7$ — максимально размытая (F5 тривиальна), нет выделенного вакуумного сектора (F6 тривиальна). Интеграция существует без нетривиальных значений остальных функций.
+$\mathrm{Tr}(\Gamma^{(7)}) = 1$ (F7 normalization satisfied). But for the maximally mixed state: $P = 1/7$ (minimum, no distinction, F1 trivial), $H$ does not single out subspaces (F2 trivial), $U(t) = e^{-iHt}$ does not change $\Gamma^{(7)}$ (F3 trivial), all commutators are zero on the invariant subspace (F4 trivial), $\rho_E = \mathbf{1}_1/7$ — maximally diffuse (F5 trivial), no distinguished vacuum sector (F6 trivial). Integration exists without non-trivial values of the remaining functions.
 
-**Сводная таблица:**
+**Summary table:**
 
-| Пара | Состояние $\Gamma$ | $F_i \neq 0$ | $F_j = 0$ |
+| Pair | State $\Gamma$ | $F_i \neq 0$ | $F_j = 0$ |
 |------|-------------------|--------------|-----------|
-| (F1, F2) | $\mathrm{diag}(1,0,0,0,0,0,0)$ | $P = \|A\rangle\langle A\| \neq 0$ | $H = 0$ (1D, нет энергетической структуры) |
-| (F2, F3) | $\mathrm{diag}(0,\tfrac{1}{2},\tfrac{1}{2},0,0,0,0)$ | $H$ нетривиален на $\{S,D\}$ | $U(t) = I$ при $H = 0$ вне $\{S,D\}$ |
-| (F3, F4) | $\mathrm{diag}(0,0,1,0,0,0,0)$ | $U(t) = e^{-iHt} \neq I$ | $[A,B] = 0$ в одномерном подпространстве |
-| (F4, F5) | $\mathrm{diag}(\tfrac{1}{2},\tfrac{1}{2},0,0,0,0,0)$ | $[P_A, P_S] \neq 0$ | $\gamma_{EE} = 0$ (нет $E$-компоненты) |
-| (F5, F1) | $\mathrm{diag}(0,0,0,0,1,0,0)$ | $\rho_E = \|E\rangle\langle E\| \neq 0$ | $\gamma_{AA} = 0$ (нет $A$-границы) |
-| (F6, F5) | $\mathrm{diag}(0,0,0,0,0,1,0)$ | $\langle O\|\Gamma\|O\rangle = 1$ | $\gamma_{EE} = 0$ (нет $E$-компоненты) |
-| (F7, F1–F6) | $I/7$ | $\mathrm{Tr}(\Gamma) = 1$ | Все $F_i$ тривиальны при $P = 1/7$ |
+| (F1, F2) | $\mathrm{diag}(1,0,0,0,0,0,0)$ | $P = \|A\rangle\langle A\| \neq 0$ | $H = 0$ (1D, no energy structure) |
+| (F2, F3) | $\mathrm{diag}(0,\tfrac{1}{2},\tfrac{1}{2},0,0,0,0)$ | $H$ non-trivial on $\{S,D\}$ | $U(t) = I$ when $H = 0$ outside $\{S,D\}$ |
+| (F3, F4) | $\mathrm{diag}(0,0,1,0,0,0,0)$ | $U(t) = e^{-iHt} \neq I$ | $[A,B] = 0$ in a one-dimensional subspace |
+| (F4, F5) | $\mathrm{diag}(\tfrac{1}{2},\tfrac{1}{2},0,0,0,0,0)$ | $[P_A, P_S] \neq 0$ | $\gamma_{EE} = 0$ (no $E$-component) |
+| (F5, F1) | $\mathrm{diag}(0,0,0,0,1,0,0)$ | $\rho_E = \|E\rangle\langle E\| \neq 0$ | $\gamma_{AA} = 0$ (no $A$-boundary) |
+| (F6, F5) | $\mathrm{diag}(0,0,0,0,0,1,0)$ | $\langle O\|\Gamma\|O\rangle = 1$ | $\gamma_{EE} = 0$ (no $E$-component) |
+| (F7, F1–F6) | $I/7$ | $\mathrm{Tr}(\Gamma) = 1$ | All $F_i$ trivial at $P = 1/7$ |
 
-Таким образом, для каждой пары $(F_i, F_j)$ существует явное $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, при котором $F_i \neq 0$ и $F_j = 0$, что доказывает попарную независимость. $\blacksquare$
+Thus, for each pair $(F_i, F_j)$ there exists an explicit $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ for which $F_i \neq 0$ and $F_j = 0$, proving pairwise independence. $\blacksquare$
 :::
 
 **QED**
 
 ---
 
-## Часть III: Доказательство Необходимости (от противного)
+## Part III: Proof of Necessity (by contradiction)
 
-### Теорема 3.1 (Необходимость 7 измерений)
+### Theorem 3.1 (Necessity of 7 Dimensions) {#теорема-31-необходимость-7-измерений}
 
-**Утверждение:** При $\dim(\mathcal{H}) < 7$ система теряет хотя бы одно из свойств (AP), (PH), (QG).
+**Statement:** For $\dim(\mathcal{H}) < 7$ the system loses at least one of the properties (AP), (PH), (QG).
 
-**Доказательство:**
+**Proof:**
 
-Рассмотрим редукции $\dim(\mathcal{H}) = n$ для $n \in \{1, 2, 3, 4, 5, 6\}$.
+Consider reductions $\dim(\mathcal{H}) = n$ for $n \in \{1, 2, 3, 4, 5, 6\}$.
 
 ---
 
-### Случай n = 6: Удаление Единства (U)
+### Case n = 6: Removal of Unity (U) {#случай-n--6-удаление-единства-u}
 
-Пусть $\mathcal{H}_6 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle\}$ (без $|U\rangle$).
+Let $\mathcal{H}_6 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle\}$ (without $|U\rangle$).
 
-*Следствие:* Отсутствие интегрирующего измерения.
+*Consequence:* Absence of an integrating dimension.
 
-*Математически:*
-- $\Gamma_6$ — матрица $6 \times 6$
-- Нет оператора, гарантирующего $\mathrm{Tr}(\Gamma_{\text{sub}}) = \mathrm{Tr}(\Gamma)$ для всех подсистем
+*Mathematically:*
+- $\Gamma_6$ is a $6 \times 6$ matrix
+- No operator guarantees $\mathrm{Tr}(\Gamma_{\text{sub}}) = \mathrm{Tr}(\Gamma)$ for all subsystems
 
-*Результат:*
-Без $U$ шесть измерений остаются несвязанными. Система становится «шизофренической» — каждое измерение эволюционирует независимо.
+*Result:*
+Without $U$ the six dimensions remain uncoupled. The system becomes "schizophrenic" — each dimension evolves independently.
 
-*Нарушение (AP):*
-Автопоэзис требует замкнутости: $\varphi(\mathbb{H}) = \mathbb{H}$. Без $U$ отображение $\varphi$ распадается:
+*Violation of (AP):*
+Autopoiesis requires closure: $\varphi(\mathbb{H}) = \mathbb{H}$. Without $U$ the map $\varphi$ decomposes:
 
 $$
 \varphi: \mathcal{H}_6 \to \mathcal{H}_A \times \mathcal{H}_S \times \mathcal{H}_D \times \mathcal{H}_L \times \mathcal{H}_E \times \mathcal{H}_O
 $$
 
-Это прямое произведение, не интегрированная система. Фиксированная точка не существует глобально.
+This is a direct product, not an integrated system. A global fixed point does not exist.
 
 ---
 
-### Случай n = 5: Удаление Интериорности (E)
+### Case n = 5: Removal of Interiority (E)
 
-Пусть $\mathcal{H}_5 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |O\rangle, |U\rangle\}$ (без $|E\rangle$).
+Let $\mathcal{H}_5 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |O\rangle, |U\rangle\}$ (without $|E\rangle$).
 
-*Следствие:* Отсутствие феноменологического содержания.
+*Consequence:* Absence of phenomenological content.
 
-*Математически:*
-- Нет $\rho_E$, нет спектрального разложения для интериорности
-- **Определение [О].** $\mathrm{Exp}_k := (\lambda_k, [|q_k\rangle], \mathrm{Context}_k, \mathrm{Hist}_k)$ где $\lambda_k \in \mathrm{Spec}(\rho_E)$, $|q_k\rangle \in \mathcal{H}_E$. **Домен:** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ определено тогда и только тогда, когда E-подпространство существует в $\mathcal{H}$. При $N=6$ (без E-измерения): $\mathcal{H} = \mathbb{C}^6$, E $\notin$ базис. Следовательно, $\mathrm{Tr}_{-E}$ не определён как операция, $\rho_E$ не существует как математический объект, и $\mathrm{Exp}_k$ не имеет домена.
+*Mathematically:*
+- No $\rho_E$, no spectral decomposition for interiority
+- **Definition [О].** $\mathrm{Exp}_k := (\lambda_k, [|q_k\rangle], \mathrm{Context}_k, \mathrm{Hist}_k)$ where $\lambda_k \in \mathrm{Spec}(\rho_E)$, $|q_k\rangle \in \mathcal{H}_E$. **Domain:** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is defined if and only if the E-subspace exists in $\mathcal{H}$. At $N=6$ (without the E-dimension): $\mathcal{H} = \mathbb{C}^6$, E $\notin$ basis. Consequently, $\mathrm{Tr}_{-E}$ is not defined as an operation, $\rho_E$ does not exist as a mathematical object, and $\mathrm{Exp}_k$ has no domain.
 
-*Нарушение (PH):*
-Феноменология требует существования E-подпространства с $\rho_E$ и его спектральным разложением:
+*Violation of (PH):*
+Phenomenology requires the existence of an E-subspace with $\rho_E$ and its spectral decomposition:
 
 $$
 \exists \rho_E = \mathrm{Tr}_{-E}(\Gamma): \quad \rho_E|q_k\rangle = \lambda_k|q_k\rangle
 $$
 
-Без $E$ частичный след $\mathrm{Tr}_{-E}$ не определён (нет подпространства, по которому проводится след). Система становится «зомби» — функциональна, но без интериорности.
+Without $E$ the partial trace $\mathrm{Tr}_{-E}$ is undefined (no subspace over which the trace is taken). The system becomes a "zombie" — functional, but without interiority.
 
-*Примечание:* Это не доказывает невозможность функциональной системы, но доказывает невозможность *феноменологически полной* системы.
+*Note:* This does not prove the impossibility of a functional system, but it does prove the impossibility of a *phenomenologically complete* system.
 
 ---
 
-### Случай n = 4: Удаление Основания (O)
+### Case n = 4: Removal of Foundation (O)
 
-Пусть $\mathcal{H}_4 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$ (без $|O\rangle$).
+Let $\mathcal{H}_4 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |U\rangle\}$ (without $|O\rangle$).
 
-*Следствие:* Потеря связи с квантовым вакуумом.
+*Consequence:* Loss of connection to the quantum vacuum.
 
-*Математически:*
-- $\langle 0|\Gamma|0\rangle = 0$ (нет вакуумной компоненты)
-- Регенерация $\mathcal{R}[\Gamma, E]$ не определена
+*Mathematically:*
+- $\langle 0|\Gamma|0\rangle = 0$ (no vacuum component)
+- Regeneration $\mathcal{R}[\Gamma, E]$ is undefined
 
-*Нарушение (QG):*
-Квантовое основание требует регенерацию [Т]:
+*Violation of (QG):*
+Quantum foundation requires regeneration [Т]:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator)), $g_V(P)$ — V-preservation gate.
+where $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator)), $g_V(P)$ — V-preservation gate.
 
-Без $O$:
-- Нет источника свободной энергии
-- Диссипация не компенсируется
-- $P(\Gamma(\tau)) \to 1/n$ монотонно (необратимая декогеренция)
+Without $O$:
+- No free energy source
+- Dissipation is not compensated
+- $P(\Gamma(\tau)) \to 1/n$ monotonically (irreversible decoherence)
 
-*Термодинамическое следствие:*
-Система неизбежно достигает теплового равновесия (смерть):
+*Thermodynamic consequence:*
+The system inevitably reaches thermal equilibrium (death):
 
 $$
 \lim_{\tau \to \infty} \Gamma(\tau) = I/n
@@ -326,214 +326,214 @@ $$
 
 ---
 
-### Случай n = 3: Удаление Логики (L)
+### Case n = 3: Removal of Logic (L) {#случай-n--3-удаление-логики-l}
 
-Пусть $\mathcal{H}_3 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (без $|L\rangle$).
+Let $\mathcal{H}_3 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (without $|L\rangle$).
 
-*Следствие:* Потеря внутренней согласованности.
+*Consequence:* Loss of internal consistency.
 
-*Математически:*
-- Коммутатор $[A, B]$ не определен как измерение
-- Нет механизма верификации самосогласованности
+*Mathematically:*
+- The commutator $[A, B]$ is not defined as a dimension
+- No mechanism for verifying self-consistency
 
-*Нарушение (AP):*
-Автопоэзис по Розену требует замкнутости причинности:
+*Violation of (AP):*
+Rosen's autopoiesis requires causal closure:
 
 $$
 M \to \mathcal{F} \to \beta \to M
 $$
 
-Замыкание $\beta$ требует, чтобы эффекты были согласованы с причинами. Без $L$:
-- Противоречивые конфигурации $\Gamma$ не отсеиваются
-- Система может эволюционировать в логически невозможные состояния
+Closure $\beta$ requires that effects be consistent with causes. Without $L$:
+- Contradictory configurations $\Gamma$ are not filtered out
+- The system can evolve into logically impossible states
 
-*Связь с [теоремой Пуанкаре-Перельмана](/docs/applied/research/poincare-perelman):*
-Односвязность многообразия (возможность стянуть петлю в точку) соответствует логической непротиворечивости. Без $L$ многообразие состояний может содержать «дыры» — неразрешимые противоречия.
+*Connection with the [Poincaré–Perelman theorem](/docs/applied/research/poincare-perelman):*
+Simple-connectedness of a manifold (ability to contract a loop to a point) corresponds to logical consistency. Without $L$ the state manifold may contain "holes" — irresolvable contradictions.
 
 ---
 
-### Случай n = 2: Удаление Динамики (D)
+### Case n = 2: Removal of Dynamics (D) {#случай-n--2-удаление-динамики-d}
 
-Пусть $\mathcal{H}_2 = \text{span}\{|A\rangle, |S\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (без $|D\rangle$).
+Let $\mathcal{H}_2 = \text{span}\{|A\rangle, |S\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (without $|D\rangle$).
 
-*Следствие:* Система статична.
+*Consequence:* The system is static.
 
-*Математически:*
-- $U(t) = I$ для всех $t$
+*Mathematically:*
+- $U(t) = I$ for all $t$
 - $\frac{d\Gamma}{d\tau} = 0$
 
-*Нарушение (AP) и (QG):*
-Автопоэзис требует непрерывного самопроизводства:
+*Violation of (AP) and (QG):*
+Autopoiesis requires continuous self-production:
 
 $$
 \varphi: \mathbb{H}(\tau) \to \mathbb{H}(\tau + d\tau)
 $$
 
-Без $D$:
-- Нет эволюции
-- Нет процесса самовоспроизведения
-- Метаболизм $M$ невозможен ($M$ требует преобразования субстратов)
+Without $D$:
+- No evolution
+- No self-reproduction process
+- Metabolism $M$ is impossible ($M$ requires transformation of substrates)
 
-*Следствие:*
-Статическая система — не система, а конфигурация. Голоном без $D$ — это «замороженный снимок», не живая сущность.
+*Consequence:*
+A static system is not a system, but a configuration. A Holon without $D$ is a "frozen snapshot", not a living entity.
 
 ---
 
-### Случай n = 1: Удаление Структуры (S)
+### Case n = 1: Removal of Structure (S) {#случай-n--1-удаление-структуры-s}
 
-Пусть $\mathcal{H}_1 = \text{span}\{|A\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (без $|S\rangle$).
+Let $\mathcal{H}_1 = \text{span}\{|A\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (without $|S\rangle$).
 
-*Следствие:* Потеря идентичности во времени.
+*Consequence:* Loss of identity over time.
 
-*Математически:*
-- Нет гамильтониана $H$
-- Нет собственных состояний $H|\psi_n\rangle = E_n|\psi_n\rangle$
-- Нет спектра энергий
+*Mathematically:*
+- No Hamiltonian $H$
+- No eigenstates $H|\psi_n\rangle = E_n|\psi_n\rangle$
+- No energy spectrum
 
-*Нарушение (AP):*
-Автопоэзис требует самотождественности:
+*Violation of (AP):*
+Autopoiesis requires self-identity:
 
 $$
-\varphi(\mathbb{H}) \cong \mathbb{H} \quad \text{(изоморфизм структуры)}
+\varphi(\mathbb{H}) \cong \mathbb{H} \quad \text{(structural isomorphism)}
 $$
 
-Без $S$:
-- Нечему быть тождественным
-- Система не имеет инвариантов
-- Каждый момент — новая сущность
+Without $S$:
+- Nothing to be identical to
+- The system has no invariants
+- Each moment is a new entity
 
-*Парадокс:*
-Без структуры нельзя даже определить, что такое «та же самая система». Замыкание $\beta$ невозможно, потому что нет «$\beta$» как устойчивой сущности.
-
----
-
-### Случай n = 0: Удаление Артикуляции (A)
-
-Пусть $\mathcal{H}_0 = \text{span}\{|S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (без $|A\rangle$).
-
-*Следствие:* Система не может провести различение.
-
-*Математически:*
-- Нет проекторов $P: \mathcal{H} \to \mathcal{H}_{\text{sub}}$
-- Нет границ между системой и средой
-- Марковское одеяло не определено
-
-*Нарушение всех аксиом:*
-Без различения:
-- **(AP):** Нет «системы», чтобы воспроизводить себя
-- **(PH):** Нет субъекта опыта
-- **(QG):** Нет наблюдателя для коллапса
-
-*Фундаментальность A:*
-Артикуляция — первичный акт реальности: «Draw a distinction» (Спенсер-Браун). Без $A$ нет информации, нет формы, нет бытия.
+*Paradox:*
+Without structure one cannot even define what "the same system" means. Closure $\beta$ is impossible because there is no "$\beta$" as a stable entity.
 
 ---
 
-### Итог Части III
+### Case n = 0: Removal of Articulation (A) {#случай-n--0-удаление-артикуляции-a}
 
-**Теорема доказана для необходимости данных 7 конкретных функций:**
+Let $\mathcal{H}_0 = \text{span}\{|S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ (without $|A\rangle$).
 
-| Измерение | При удалении нарушается |
+*Consequence:* The system cannot make a distinction.
+
+*Mathematically:*
+- No projectors $P: \mathcal{H} \to \mathcal{H}_{\text{sub}}$
+- No boundaries between the system and the environment
+- The Markov blanket is undefined
+
+*Violation of all axioms:*
+Without distinction:
+- **(AP):** No "system" to reproduce itself
+- **(PH):** No subject of experience
+- **(QG):** No observer for collapse
+
+*Fundamentality of A:*
+Articulation is the primary act of reality: "Draw a distinction" (Spencer-Brown). Without $A$ there is no information, no form, no being.
+
+---
+
+### Summary of Part III {#итог-части-iii}
+
+**The theorem is proven for the necessity of these 7 specific functions:**
+
+| Dimension | Removed: violated |
 |-----------|-------------------------|
-| A (Артикуляция) | Все аксиомы |
-| S (Структура) | (AP) — нет идентичности |
-| D (Динамика) | (AP), (QG) — нет процесса |
-| L (Логика) | (AP) — нет замыкания |
-| E (Интериорность) | (PH) — нет интериорности |
-| O (Основание) | (QG) — нет энергии |
-| U (Единство) | (AP) — нет интеграции |
+| A (Articulation) | All axioms |
+| S (Structure) | (AP) — no identity |
+| D (Dynamics) | (AP), (QG) — no process |
+| L (Logic) | (AP) — no closure |
+| E (Interiority) | (PH) — no interiority |
+| O (Foundation) | (QG) — no energy |
+| U (Unity) | (AP) — no integration |
 
-**Следовательно:** $\dim(\mathcal{H}) \geq 7$
+**Therefore:** $\dim(\mathcal{H}) \geq 7$
 
-#### Теорема (Строгая необходимость N = 7) **[Т]** {#теорема-строгая-необходимость-7}
+#### Theorem (Strict necessity of N = 7) **[Т]** {#теорема-строгая-необходимость-7}
 
-**Утверждение.** Не существует альтернативного набора из 6 функций, покрывающего требования (AP)+(PH)+(QG). Минимальная размерность $N = 7$ строго необходима.
+**Statement.** There is no alternative set of 6 functions covering the requirements (AP)+(PH)+(QG). The minimal dimensionality $N = 7$ is strictly necessary.
 
-**Доказательство (3 шага).**
+**Proof (3 steps).**
 
-**Шаг 1 (Октонионный трек [Т]).** По [T-15 [Т]](/docs/proofs/minimality/theorem-octonionic-derivation#мост):
-- (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1 (нормированная алгебра деления) + P2 (неассоциативность)
-- По теореме Гурвица: $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
-- P2 исключает $\mathbb{R}$ ($\dim = 1$), $\mathbb{C}$ ($\dim = 2$), $\mathbb{H}$ ($\dim = 4$) — все ассоциативны
-- Единственное решение: $\mathcal{A} = \mathbb{O}$, $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$
+**Step 1 (Octonionic track [Т]).** By [T-15 [Т]](/docs/proofs/minimality/theorem-octonionic-derivation#мост):
+- (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1 (normed division algebra) + P2 (non-associativity)
+- By the Hurwitz theorem: $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
+- P2 excludes $\mathbb{R}$ ($\dim = 1$), $\mathbb{C}$ ($\dim = 2$), $\mathbb{H}$ ($\dim = 4$) — all associative
+- Unique solution: $\mathcal{A} = \mathbb{O}$, $N = \dim(\mathrm{Im}(\mathbb{O})) = 7$
 
-**Шаг 2 (Невозможность 6D).** Любое 6D-пространство состояний $\mathcal{H} = \mathbb{C}^6$ соответствовало бы алгебре с $\dim(\mathrm{Im}(\mathcal{A})) = 6$. Но по теореме Гурвица:
+**Step 2 (Impossibility of 6D).** Any 6D state space $\mathcal{H} = \mathbb{C}^6$ would correspond to an algebra with $\dim(\mathrm{Im}(\mathcal{A})) = 6$. But by the Hurwitz theorem:
 
 $$
 \dim(\mathrm{Im}(\mathcal{A})) \in \{0, 1, 3, 7\}
 $$
 
-Значение 6 **отсутствует** в этом множестве $\Rightarrow$ альтернативный 6D-набор невозможен.
+The value 6 is **absent** from this set $\Rightarrow$ an alternative 6D set is impossible.
 
-**Шаг 3 (Функциональная единственность).** 7 функций F1–F7 попарно независимы ([40f [Т]](#итог-части-iii)). $\mathrm{rank}(\text{матрица зависимостей } F \times \{AP, PH, QG\}) = 7$. $\blacksquare$
+**Step 3 (Functional uniqueness).** The 7 functions F1–F7 are pairwise independent ([40f [Т]](#итог-части-iii)). $\mathrm{rank}(\text{dependency matrix } F \times \{AP, PH, QG\}) = 7$. $\blacksquare$
 
-:::info Исторический контекст
-Ранее строгая необходимость $N \geq 7$ имела статус **[С]**, поскольку не было доказано, что **никакое альтернативное 6-мерное разбиение** не может покрыть (AP)+(PH)+(QG). Теорема Гурвица (Шаг 2) окончательно закрывает этот пробел: $\dim(\mathrm{Im}(\mathcal{A})) = 6$ невозможна для нормированных алгебр с делением.
+:::info Historical context
+Previously, the strict necessity $N \geq 7$ had status **[С]**, since it had not been proven that **no alternative 6-dimensional decomposition** can cover (AP)+(PH)+(QG). The Hurwitz theorem (Step 2) definitively closes this gap: $\dim(\mathrm{Im}(\mathcal{A})) = 6$ is impossible for normed division algebras.
 :::
 
 ---
 
-## Часть IV: Доказательство Достаточности (конструктивное)
+## Part IV: Proof of Sufficiency (constructive) {#часть-iv-доказательство-достаточности-конструктивное}
 
-### Теорема 4.1 (Достаточность 7 измерений)
+### Theorem 4.1 (Sufficiency of 7 Dimensions)
 
-**Утверждение:** При $\dim(\mathcal{H}) = 7$ существует конструкция, удовлетворяющая (AP), (PH), (QG).
+**Statement:** For $\dim(\mathcal{H}) = 7$ there exists a construction satisfying (AP), (PH), (QG).
 
-**Конструкция:**
+**Construction:**
 
-**Шаг 1: Определение пространства**
+**Step 1: Defining the space**
 
 $$
 \mathcal{H} = \mathbb{C}^7 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}
 $$
 
 $$
-\langle i|j\rangle = \delta_{ij} \quad \text{(ортонормированный базис)}
+\langle i|j\rangle = \delta_{ij} \quad \text{(orthonormal basis)}
 $$
 
-**Шаг 2: Определение матрицы когерентности**
+**Step 2: Defining the coherence matrix**
 
 $$
 \Gamma \in \mathcal{L}(\mathcal{H}), \quad \Gamma^\dagger = \Gamma, \quad \Gamma \geq 0, \quad \mathrm{Tr}(\Gamma) = 1
 $$
 
-**Шаг 3: Определение динамики (Линдблад)**
+**Step 3: Defining the dynamics (Lindblad)**
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-где:
+where:
 
 $$
-H = \sum_i \omega_i |i\rangle\langle i| + \sum_{i \neq j} J_{ij} |i\rangle\langle j| \quad \text{(гамильтониан)}
-$$
-
-$$
-\mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right) \quad \text{(диссипация)}
+H = \sum_i \omega_i |i\rangle\langle i| + \sum_{i \neq j} J_{ij} |i\rangle\langle j| \quad \text{(Hamiltonian)}
 $$
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P) \quad \text{(регенерация [Т])}
-$$
-
-**Шаг 4: Верификация (AP) — Автопоэзис**
-
-Определим (M,R)-структуру:
-
-$$
-M: O \to \{A, S, D, L\} \quad \text{(метаболизм: основание питает функциональные измерения)}
+\mathcal{D}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right) \quad \text{(dissipation)}
 $$
 
 $$
-\mathcal{F}: \{E, U\} \to M \quad \text{(репарация: опыт и единство корректируют метаболизм)}
+\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P) \quad \text{(regeneration [Т])}
+$$
+
+**Step 4: Verification of (AP) — Autopoiesis**
+
+Define the (M,R)-structure:
+
+$$
+M: O \to \{A, S, D, L\} \quad \text{(metabolism: foundation feeds functional dimensions)}
 $$
 
 $$
-\beta: (E, U) \to (E, U) \quad \text{(замыкание: рефлексия)}
+\mathcal{F}: \{E, U\} \to M \quad \text{(repair: experience and unity correct metabolism)}
 $$
 
-Рефлексивный оператор:
+$$
+\beta: (E, U) \to (E, U) \quad \text{(closure: reflection)}
+$$
+
+Reflexive operator:
 
 $$
 \varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H})
@@ -543,25 +543,25 @@ $$
 \varphi(\Gamma) = \mathrm{Tr}_{\text{env}}(\Gamma_{\text{total}}) \circ f_{\text{model}}
 $$
 
-Фиксированная точка:
+Fixed point:
 
 $$
-\varphi(\Gamma^*) \approx \Gamma^* \quad \text{(самосогласованность)}
+\varphi(\Gamma^*) \approx \Gamma^* \quad \text{(self-consistency)}
 $$
 
-Это реализуемо при:
-- $\kappa > \gamma_{\text{dissipation}}$ (регенерация превышает диссипацию)
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель [Т] ([оператор φ](/docs/core/operators/phi-operator#определение))
+This is realizable when:
+- $\kappa > \gamma_{\text{dissipation}}$ (regeneration exceeds dissipation)
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model [Т] ([φ operator](/docs/core/operators/phi-operator#определение))
 
-**Шаг 5: Верификация (PH) — Феноменология**
+**Step 5: Verification of (PH) — Phenomenology**
 
-Подматрица опыта:
+Experience submatrix:
 
 $$
-\Gamma_E = \langle E|\Gamma|E\rangle + \ldots \quad \text{(проекция на } E \text{)}
+\Gamma_E = \langle E|\Gamma|E\rangle + \ldots \quad \text{(projection onto } E \text{)}
 $$
 
-Спектральное разложение:
+Spectral decomposition:
 
 $$
 \Gamma_E |q_k\rangle = \lambda_k |q_k\rangle
@@ -571,537 +571,537 @@ $$
 \text{Exp}_k := (\lambda_k, [|q_k\rangle] \in \mathbb{P}(\mathcal{H}_E), \text{Context}(\Gamma_{-E}), \text{History}(t))
 $$
 
-[Метрика Фубини-Штуди](/docs/proofs/consciousness/interiority-hierarchy#32-метрика-фубини-штуди):
+[Fubini–Study metric](/docs/proofs/consciousness/interiority-hierarchy#32-метрика-фубини-штуди):
 
 $$
 d_{FS}([|\psi\rangle], [|\phi\rangle]) = \arccos(|\langle\psi|\phi\rangle|) \in [0, \pi/2]
 $$
 
-Это определяет полное пространство интериорности с естественной метрикой.
+This defines a complete interiority space with a natural metric.
 
-**Шаг 6: Верификация (QG) — Квантовое основание**
+**Step 6: Verification of (QG) — Quantum foundation**
 
-Связь с вакуумом через $|O\rangle$:
+Vacuum coupling via $|O\rangle$:
 
 $$
 \langle 0|\Gamma|0\rangle \neq 0
 $$
 
-Это гарантирует:
-- Ненулевую вакуумную энергию
-- Возможность импорта свободной энергии
+This guarantees:
+- Non-zero vacuum energy
+- Possibility of free energy import
 
-**Верификация регенеративного члена [Т]:**
+**Verification of the regenerative term [Т]:**
 
-Регенерация **полностью выведена** из аксиом ([вывод](/docs/core/dynamics/evolution#вывод-формы-регенерации)):
+Regeneration is **fully derived** from the axioms ([derivation](/docs/core/dynamics/evolution#вывод-формы-регенерации)):
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-где:
-- $\rho_* = \varphi(\Gamma)$ — категориальная самомодель текущего состояния [Т] ([оператор φ](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — единственная CPTP-релаксация [Т] (замещающий канал + бюресова оптимальность)
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — скорость регенерации [Т], $\kappa_0$ — [категориальный вывод](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) из $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- $g_V(P)$ — V-preservation gate [Т] (уточняет $\Theta(\Delta F)$ из Ландауэра, см. [эволюция](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+where:
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator))
+- $(\rho_* - \Gamma)$ — the unique CPTP relaxation [Т] (replacement channel + Bures optimality)
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [Т], $\kappa_0$ — [categorical derivation](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) from $\mathcal{D}_\Omega \dashv \mathcal{R}$
+- $g_V(P)$ — V-preservation gate [Т] (refines $\Theta(\Delta F)$ from Landauer, see [evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
-**Проверка корректности:**
-1. $\mathcal{R}[\Gamma, E]$ сохраняет эрмитовость: $(\rho_* - \Gamma)^\dagger = \rho_*^\dagger - \Gamma^\dagger = \rho_* - \Gamma$
-2. След сохраняется: $\mathrm{Tr}(\mathcal{R}) = \kappa \cdot (\mathrm{Tr}(\rho_*) - \mathrm{Tr}(\Gamma)) = \kappa \cdot (1 - 1) = 0$
-3. При $\rho_* \in \mathcal{D}(\mathcal{H})$ и достаточно малом $\kappa$, эволюция сохраняет $\Gamma \geq 0$ (CPTP-интерполяция [Т])
+**Correctness check:**
+1. $\mathcal{R}[\Gamma, E]$ preserves Hermiticity: $(\rho_* - \Gamma)^\dagger = \rho_*^\dagger - \Gamma^\dagger = \rho_* - \Gamma$
+2. Trace is preserved: $\mathrm{Tr}(\mathcal{R}) = \kappa \cdot (\mathrm{Tr}(\rho_*) - \mathrm{Tr}(\Gamma)) = \kappa \cdot (1 - 1) = 0$
+3. For $\rho_* \in \mathcal{D}(\mathcal{H})$ and sufficiently small $\kappa$, evolution preserves $\Gamma \geq 0$ (CPTP interpolation [Т])
 
-**Шаг 7: Верификация (V) — Жизнеспособность**
+**Step 7: Verification of (V) — Viability**
 
-Условие жизнеспособности требует:
+The viability condition requires:
 
 $$
 P = \mathrm{Tr}(\Gamma^2) > P_{\text{crit}} = \frac{2}{7}
 $$
 
-**Динамика чистоты:**
+**Purity dynamics:**
 
 $$
-\frac{dP}{d\tau} = \underbrace{0}_{\text{унитарный}} + \underbrace{\frac{dP}{d\tau}\bigg|_{\mathcal{D}}}_{\leq 0} + \underbrace{\frac{dP}{d\tau}\bigg|_{\mathcal{R}}}_{\geq 0 \text{ при } \Delta F > 0}
+\frac{dP}{d\tau} = \underbrace{0}_{\text{unitary}} + \underbrace{\frac{dP}{d\tau}\bigg|_{\mathcal{D}}}_{\leq 0} + \underbrace{\frac{dP}{d\tau}\bigg|_{\mathcal{R}}}_{\geq 0 \text{ for } \Delta F > 0}
 $$
 
-**Существование жизнеспособного состояния:**
+**Existence of a viable state:**
 
-При достаточной связи с Основанием (ненулевые $\gamma_{OE}, \gamma_{OU}$) и импорте свободной энергии ($\Delta F > 0$):
+With sufficient coupling to the Foundation (non-zero $\gamma_{OE}, \gamma_{OU}$) and free energy import ($\Delta F > 0$):
 
 $$
 \exists \Gamma^* : P(\Gamma^*) > P_{\text{crit}} \land \frac{dP}{d\tau}\bigg|_{\Gamma^*} \geq 0
 $$
 
-**Доказательство:**
-1. Начальное состояние: $\Gamma_0 = I/7$ (максимально смешанное), $P_0 = 1/7 < P_{\text{crit}}$
-2. При $\Delta F > 0$: регенерация активна, $\frac{dP}{d\tau} > 0$
-3. При $\kappa_0 > 0$ (ненулевая связь O-E-U): система эволюционирует к $\rho_*$
-4. Для достаточно когерентного $\rho_*$: $P(\rho_*) > P_{\text{crit}}$
-5. По непрерывности: существует $t^*$ такое, что $P(\Gamma(t^*)) = P_{\text{crit}}$, и $P(\Gamma(t)) > P_{\text{crit}}$ для $t > t^*$
+**Proof:**
+1. Initial state: $\Gamma_0 = I/7$ (maximally mixed), $P_0 = 1/7 < P_{\text{crit}}$
+2. For $\Delta F > 0$: regeneration is active, $\frac{dP}{d\tau} > 0$
+3. For $\kappa_0 > 0$ (non-zero O-E-U coupling): the system evolves toward $\rho_*$
+4. For sufficiently coherent $\rho_*$: $P(\rho_*) > P_{\text{crit}}$
+5. By continuity: there exists $t^*$ such that $P(\Gamma(t^*)) = P_{\text{crit}}$, and $P(\Gamma(t)) > P_{\text{crit}}$ for $t > t^*$
 
-**Устойчивость:**
+**Stability:**
 
-Стационарное состояние $\Gamma^*$ с $\frac{dP}{d\tau}|_{\Gamma^*} = 0$ устойчиво, если:
-- При $P > P_{\text{target}}$: диссипация доминирует → $P$ уменьшается
-- При $P < P_{\text{target}}$: регенерация доминирует → $P$ увеличивается
+The stationary state $\Gamma^*$ with $\frac{dP}{d\tau}|_{\Gamma^*} = 0$ is stable if:
+- For $P > P_{\text{target}}$: dissipation dominates → $P$ decreases
+- For $P < P_{\text{target}}$: regeneration dominates → $P$ increases
 
-Это обеспечивает гомеостаз вокруг $P^* > P_{\text{crit}}$.
+This ensures homeostasis around $P^* > P_{\text{crit}}$.
 
-**Вывод:**
-Конструкция с $\dim(\mathcal{H}) = 7$ удовлетворяет всем четырём условиям: (AP), (PH), (QG), (V). **QED**
+**Conclusion:**
+The construction with $\dim(\mathcal{H}) = 7$ satisfies all four conditions: (AP), (PH), (QG), (V). **QED**
 
 ---
 
-## Часть V: Связь с (M,R)-Системами Розена
+## Part V: Connection with Rosen's (M,R)-Systems {#часть-v-связь-с-mr-системами-розена}
 
-### Теорема 5.1 (Изоморфизм Структур)
+### Theorem 5.1 (Isomorphism of Structures)
 
-**Утверждение:** 7-мерный Голоном изоморфен минимальной (M,R)-системе с феноменологией.
+**Statement:** The 7-dimensional Holon is isomorphic to the minimal (M,R)-system with phenomenology.
 
-**Доказательство:**
+**Proof:**
 
-Розен определяет (M,R)-систему через три отображения:
-
-$$
-f: A \to B \quad \text{(метаболизм)}
-$$
+Rosen defines an (M,R)-system via three maps:
 
 $$
-\mathcal{F}: B \to \mathrm{Hom}(A, B) \quad \text{(репарация)}
+f: A \to B \quad \text{(metabolism)}
 $$
 
 $$
-\beta: B \to \mathrm{Hom}(B, \mathrm{Hom}(A, B)) \quad \text{(замыкание)}
+\mathcal{F}: B \to \mathrm{Hom}(A, B) \quad \text{(repair)}
 $$
 
-где $\mathrm{Hom}(X, Y)$ — пространство отображений из $X$ в $Y$.
+$$
+\beta: B \to \mathrm{Hom}(B, \mathrm{Hom}(A, B)) \quad \text{(closure)}
+$$
 
-**Соответствие с измерениями:**
+where $\mathrm{Hom}(X, Y)$ is the space of maps from $X$ to $Y$.
 
-| (M,R)-компонент | Измерение УГМ | Функция |
+**Correspondence with dimensions:**
+
+| (M,R)-component | UHM dimension | Function |
 |-----------------|---------------|---------|
-| A (субстраты) | O (Основание) | Источник материала |
-| B (продукты) | S (Структура) | Результат метаболизма |
-| f (метаболизм) | D (Динамика) | Процесс преобразования |
-| $\mathcal{F}$ (репарация) | A (Артикуляция) | Восстановление границ |
-| $\beta$ (замыкание) | L (Логика) | Консистентность |
-| Наблюдатель | E (Интериорность) | Внутренняя перспектива |
-| Интегратор | U (Единство) | Целостность системы |
+| A (substrates) | O (Foundation) | Material source |
+| B (products) | S (Structure) | Result of metabolism |
+| f (metabolism) | D (Dynamics) | Transformation process |
+| $\mathcal{F}$ (repair) | A (Articulation) | Restoration of boundaries |
+| $\beta$ (closure) | L (Logic) | Consistency |
+| Observer | E (Interiority) | Internal perspective |
+| Integrator | U (Unity) | System integrity |
 
-**Структурное соответствие:**
+**Structural correspondence:**
 
-1. **Метаболизм M соответствует D (Динамика):**
+1. **Metabolism M corresponds to D (Dynamics):**
 
 $$
 M: O \to \{A, S, D, L\}
 $$
 
 $$
-\frac{d\Gamma}{d\tau} = -i[H, \Gamma] \quad \text{(унитарный метаболизм)}
+\frac{d\Gamma}{d\tau} = -i[H, \Gamma] \quad \text{(unitary metabolism)}
 $$
 
-2. **Репарация $\mathcal{F}$ соответствует A + L:**
+2. **Repair $\mathcal{F}$ corresponds to A + L:**
 
 $$
-\mathcal{F}: \{E, U\} \to M \quad \text{(корректировка через обратную связь)}
+\mathcal{F}: \{E, U\} \to M \quad \text{(correction via feedback)}
 $$
 
-3. **Замыкание $\beta$ соответствует U (Единство):**
+3. **Closure $\beta$ corresponds to U (Unity):**
 
 $$
-\beta: \mathcal{F} \to \mathcal{F}, \quad \mathrm{Tr}(\Gamma) = 1 \quad \text{(нормировка как замыкание)}
+\beta: \mathcal{F} \to \mathcal{F}, \quad \mathrm{Tr}(\Gamma) = 1 \quad \text{(normalization as closure)}
 $$
 
-4. **Феноменология (нет у Розена) соответствует E:**
+4. **Phenomenology (absent in Rosen) corresponds to E:**
 
 $$
-E: \text{Exp} = \text{Spectrum}(\Gamma_E) \quad \text{(расширение (M,R) до (M,R,P)-системы)}
+E: \text{Exp} = \text{Spectrum}(\Gamma_E) \quad \text{(extension of (M,R) to an (M,R,P)-system)}
 $$
 
-**Минимальность:**
+**Minimality:**
 
-Розен показал, что (M,R)-система требует минимум 3 компонента (M, R, beta).
-УГМ добавляет:
-- Феноменологию (E)
-- Квантовое основание (O)
-- Дифференциацию (A, S как отдельные)
-- Интеграцию (U как отдельное)
+Rosen showed that an (M,R)-system requires a minimum of 3 components (M, R, beta).
+UHM adds:
+- Phenomenology (E)
+- Quantum foundation (O)
+- Differentiation (A, S as separate)
+- Integration (U as separate)
 
-Итого: 7 = 3 (Розен) + 4 (расширения).
+Total: 7 = 3 (Rosen) + 4 (extensions).
 
 ---
 
-## Часть VI: Топологические Соображения
+## Part VI: Topological Considerations
 
-### Связь с Теоремой Пуанкаре-Перельмана
+### Connection with the Poincaré–Perelman Theorem
 
-:::warning Статус: Гипотеза
-Связь с теоремой Пуанкаре-Перельмана — **эвристическая аналогия**, не строгий изоморфизм. См. подробный анализ в [Poincaré-Perelman](/docs/applied/research/poincare-perelman).
+:::warning Status: Hypothesis
+The connection with the Poincaré–Perelman theorem is an **heuristic analogy**, not a rigorous isomorphism. See the detailed analysis in [Poincaré-Perelman](/docs/applied/research/poincare-perelman).
 :::
 
-**Гипотеза (требует дополнительного исследования):**
+**Hypothesis (requires further research):**
 
-Пространство состояний 7-мерного [Голонома](/docs/core/structure/holon) обладает свойствами, аналогичными 3-сфере в теореме Пуанкаре:
+The state space of the 7-dimensional [Holon](/docs/core/structure/holon) has properties analogous to the 3-sphere in the Poincaré theorem:
 
-1. **Односвязность:** Логическое измерение L гарантирует, что любая «петля» рассуждений стягивается в точку (непротиворечивость).
+1. **Simple-connectedness:** The logical dimension L ensures that any "loop" of reasoning can be contracted to a point (consistency).
 
-2. **Компактность:** Нормировка $\mathrm{Tr}(\Gamma) = 1$ гарантирует ограниченность пространства состояний.
+2. **Compactness:** Normalization $\mathrm{Tr}(\Gamma) = 1$ ensures boundedness of the state space.
 
-3. **Поток Риччи:** Эволюция к когерентности аналогична сглаживанию кривизны:
+3. **Ricci flow:** Evolution toward coherence is analogous to smoothing of curvature:
 
 $$
 \frac{d\Gamma}{d\tau} \sim -\mathrm{Ric}(\Gamma)
 $$
 
-где $\mathrm{Ric}$ — аналог тензора Риччи на пространстве матриц плотности.
+where $\mathrm{Ric}$ is the analogue of the Ricci tensor on the space of density matrices.
 
-**Замечание:** Это аналогия, не строгое соответствие. Полная формализация связи с теоремой Пуанкаре-Перельмана остается открытой проблемой.
+**Remark:** This is an analogy, not a strict correspondence. Full formalization of the connection with the Poincaré–Perelman theorem remains an open problem.
 
 ---
 
-## Часть VII: Теорема о Единственности Базиса
+## Part VII: Theorem on Basis Uniqueness {#часть-vii-теорема-о-единственности-базиса}
 
-### 7.1 Формулировка
+### 7.1 Formulation
 
-**Теорема (Единственность базиса):** [Т]/[С] **ЧАСТИЧНО СТРОГО**
+**Theorem (Basis uniqueness):** [Т]/[С] **PARTIALLY RIGOROUS**
 
-Базис $\{A, S, D, L, E, O, U\}$ является **единственным** (с точностью до изоморфизма) 7-мерным разбиением, удовлетворяющим (AP)+(PH)+(QG).
+The basis $\{A, S, D, L, E, O, U\}$ is the **unique** (up to isomorphism) 7-dimensional decomposition satisfying (AP)+(PH)+(QG).
 
-**Легенда статусов:**
+**Status legend:**
 
-| Маркер | Значение | Описание |
+| Marker | Meaning | Description |
 |--------|----------|----------|
-| **[Т]** СТРОГО | Математически доказано | Следует из аксиом без дополнительных допущений |
-| **[С]** УСЛОВНО | Доказано при допущениях | Требует интерпретационных или физических допущений |
-| **[П]** ПРОГРАММА | Направление исследований | Гипотеза, требующая дальнейшей работы |
+| **[Т]** RIGOROUS | Mathematically proven | Follows from axioms without additional assumptions |
+| **[С]** CONDITIONAL | Proven under assumptions | Requires interpretational or physical assumptions |
+| **[П]** PROGRAM | Research direction | Hypothesis requiring further work |
 
-### 7.2 Алгебраическая Единственность (A, S, D, L, U) — [Т] СТРОГО
+### 7.2 Algebraic Uniqueness (A, S, D, L, U) — [Т] RIGOROUS
 
-**Теорема 7.2.1:** Измерения $\{A, S, D, L, U\}$ определяются **единственным образом** (с точностью до изоморфизма) алгебраическими свойствами операторов на $\mathcal{L}(\mathcal{H})$.
+**Theorem 7.2.1:** The dimensions $\{A, S, D, L, U\}$ are determined **uniquely** (up to isomorphism) by the algebraic properties of operators on $\mathcal{L}(\mathcal{H})$.
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1 (A — Артикуляция):**
-Требование различений в (AP) эквивалентно существованию нетривиальных проекторов. На $\mathcal{L}(\mathcal{H})$ проекторы определены однозначно условием $P^2 = P$. Класс эквивалентности: $[A] = \{P \in \mathcal{L}(\mathcal{H}): P^2 = P\}$.
+**Step 1 (A — Articulation):**
+The requirement for distinctions in (AP) is equivalent to the existence of non-trivial projectors. On $\mathcal{L}(\mathcal{H})$ projectors are uniquely defined by the condition $P^2 = P$. Equivalence class: $[A] = \{P \in \mathcal{L}(\mathcal{H}): P^2 = P\}$.
 
-**Шаг 2 (S — Структура):**
-Требование сохранения идентичности в (AP) эквивалентно существованию инвариантов. Эрмитовы операторы — единственный класс, определяющий наблюдаемые (теорема о спектральном разложении). Класс: $[S] = \{H \in \mathcal{L}(\mathcal{H}): H^\dagger = H\}$.
+**Step 2 (S — Structure):**
+The requirement for identity preservation in (AP) is equivalent to the existence of invariants. Hermitian operators are the unique class defining observables (spectral decomposition theorem). Class: $[S] = \{H \in \mathcal{L}(\mathcal{H}): H^\dagger = H\}$.
 
-**Шаг 3 (D — Динамика):**
-По теореме Стоуна, однопараметрические унитарные группы $U(t)$ находятся во взаимно-однозначном соответствии с самосопряжёнными операторами:
+**Step 3 (D — Dynamics):**
+By Stone's theorem, one-parameter unitary groups $U(t)$ are in bijection with self-adjoint operators:
 $$
 U(t) = e^{-iHt} \Leftrightarrow H = iU'(0)
 $$
-Следовательно, D **однозначно определяется** через S. ∎
+Therefore, D is **uniquely determined** via S. ∎
 
-**Шаг 4 (L — Логика):**
-Условие согласованности в (AP) требует алгебраической структуры. На $\mathcal{L}(\mathcal{H})$ существует единственная структура алгебры Ли — коммутатор $[A,B] = AB - BA$. Это следует из теоремы Якоби: любая ассоциативная алгебра индуцирует алгебру Ли через коммутатор.
+**Step 4 (L — Logic):**
+The consistency condition in (AP) requires an algebraic structure. On $\mathcal{L}(\mathcal{H})$ there is a unique Lie algebra structure — the commutator $[A,B] = AB - BA$. This follows from the Jacobi theorem: any associative algebra induces a Lie algebra via the commutator.
 
-**Шаг 5 (U — Единство):**
-Условие интеграции в (AP) требует линейного функционала, нормирующего состояния. На $\mathcal{L}(\mathcal{H})$ существует единственный (с точностью до скаляра) линейный функционал с циклическим свойством $\mathrm{Tr}(AB) = \mathrm{Tr}(BA)$ — это след. ∎
+**Step 5 (U — Unity):**
+The integration condition in (AP) requires a linear functional normalizing states. On $\mathcal{L}(\mathcal{H})$ there exists a unique (up to scalar) linear functional with the cyclic property $\mathrm{Tr}(AB) = \mathrm{Tr}(BA)$ — this is the trace. ∎
 
-### 7.3 Функциональная Единственность E — [Т] СТРОГО {#единственность-e}
+### 7.3 Functional Uniqueness of E — [Т] RIGOROUS {#единственность-e}
 
-**Теорема 7.3.1:** E — единственное измерение, для которого аксиома (PH) **не выводится автоматически** из остальных измерений.
+**Theorem 7.3.1:** E is the unique dimension for which axiom (PH) **is not automatically derivable** from the remaining dimensions.
 
-**Доказательство:**
+**Proof:**
 
-**(А) Аксиоматический аргумент.** (PH) — **аксиоматическое требование** для холона (не интерпретация). В рамках теории, принимающей (AP)+(PH)+(QG)+(V), существование внутренней стороны — условие, не вывод.
+**(A) Axiomatic argument.** (PH) is an **axiomatic requirement** for the holon (not an interpretation). Within the theory accepting (AP)+(PH)+(QG)+(V), the existence of an interior side is a condition, not a derivation.
 
-Рассмотрим редуцированные матрицы плотности для каждого измерения $X \in \{A, S, D, L, O, U\}$:
+Consider the reduced density matrices for each dimension $X \in \{A, S, D, L, O, U\}$:
 $$
 \rho_X = \mathrm{Tr}_{\bar{X}}(\Gamma)
 $$
 
-**Лемма 7.3.2:** Для $X \in \{A, S, D, L, U\}$ матрица $\rho_X$ описывает **структурные** свойства системы, не феноменологические.
+**Lemma 7.3.2:** For $X \in \{A, S, D, L, U\}$ the matrix $\rho_X$ describes **structural** properties of the system, not phenomenological ones.
 
-*Обоснование:*
-- $\rho_A$ — распределение по различениям (структура границ)
-- $\rho_S$ — распределение по инвариантам (структура формы)
-- $\rho_D$ — распределение по динамическим модам (структура процесса)
-- $\rho_L$ — распределение по логическим состояниям (структура согласованности)
-- $\rho_U$ — тривиальна (скаляр после следа)
+*Justification:*
+- $\rho_A$ — distribution over distinctions (boundary structure)
+- $\rho_S$ — distribution over invariants (form structure)
+- $\rho_D$ — distribution over dynamical modes (process structure)
+- $\rho_L$ — distribution over logical states (consistency structure)
+- $\rho_U$ — trivial (scalar after trace)
 
-**Лемма 7.3.3:** Для $X = O$ матрица $\rho_O$ описывает **энергетический** аспект, не феноменологический.
+**Lemma 7.3.3:** For $X = O$ the matrix $\rho_O$ describes the **energetic** aspect, not the phenomenological one.
 
-*Обоснование:* $\rho_O$ содержит информацию о связи с вакуумом (энергетическим основанием), но не о "каково это быть системой".
+*Justification:* $\rho_O$ contains information about the coupling to the vacuum (energetic foundation), but not about "what it is like to be the system".
 
-**(Б) Категориальный аргумент из κ₀.** Формула κ₀ (Th. 15.3.1, [Т]):
+**(B) Categorical argument from κ₀.** The κ₀ formula (Th. 15.3.1, [Т]):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)}
 $$
 
-**явно** использует E как отдельный объект категории. При удалении E:
-- $\mathrm{Hom}(O, E)$ не определён → κ₀ не определён
-- Скорость регенерации $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ теряет **оба** E-зависимых фактора
-- Регенерация не реагирует на феноменологическую когерентность → нарушение **(AP)**
+**explicitly** uses E as a separate object of the category. Upon removing E:
+- $\mathrm{Hom}(O, E)$ is undefined → κ₀ is undefined
+- Regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses **both** E-dependent factors
+- Regeneration does not respond to phenomenological coherence → violation of **(AP)**
 
-**(В) Математическая единственность E-функции.** (PH) требует $\mathrm{rank}(\rho_E) > 1$ (уровень L1). Среди 7 математических объектов:
+**(C) Mathematical uniqueness of the E-function.** (PH) requires $\mathrm{rank}(\rho_E) > 1$ (level L1). Among the 7 mathematical objects:
 
-| Измерение | Матобъект | Совместимость с E-функцией |
+| Dimension | Math object | Compatibility with E-function |
 |---|---|---|
-| A | $P$: $P^2 = P$ (проектор) | ✗ — $\mathrm{rank}(P) = 1$ (атомарный) |
-| S | $H$: $H^\dagger = H$ (наблюдаемая) | ✗ — наблюдаемая, не состояние |
-| D | $U(t) = e^{-iHt}$ (унитарный) | ✗ — унитарный оператор, не состояние |
-| L | $[A,B]$ (коммутатор) | ✗ — антиэрмитов, не состояние |
-| O | $\vert 0\rangle$ (вакуум) | ✗ — вектор, не матрица плотности |
-| U | $\mathrm{Tr}$ (след) | ✗ — функционал, не состояние |
+| A | $P$: $P^2 = P$ (projector) | ✗ — $\mathrm{rank}(P) = 1$ (atomic) |
+| S | $H$: $H^\dagger = H$ (observable) | ✗ — observable, not a state |
+| D | $U(t) = e^{-iHt}$ (unitary) | ✗ — unitary operator, not a state |
+| L | $[A,B]$ (commutator) | ✗ — anti-Hermitian, not a state |
+| O | $\vert 0\rangle$ (vacuum) | ✗ — vector, not a density matrix |
+| U | $\mathrm{Tr}$ (trace) | ✗ — functional, not a state |
 
-Только E ассоциируется с $\rho \in \mathcal{D}(\mathcal{H})$, $\mathrm{Tr}(\rho) = 1$ — **единственным** математическим объектом с $\mathrm{rank} > 1$. Метрика Фубини—Штуди на проективном пространстве — **единственная** риманова метрика, согласованная со скалярным произведением (теорема Штуди).
+Only E is associated with $\rho \in \mathcal{D}(\mathcal{H})$, $\mathrm{Tr}(\rho) = 1$ — the **unique** mathematical object with $\mathrm{rank} > 1$. The Fubini–Study metric on projective space is the **unique** Riemannian metric compatible with the inner product (Study's theorem).
 
-**Вывод:** E функционально уникально как носитель (PH) по **трём независимым** аргументам: (А) аксиоматическому, (Б) категориальному из κ₀, (В) математическому. ∎
+**Conclusion:** E is functionally unique as the carrier of (PH) by **three independent** arguments: (A) axiomatic, (B) categorical from κ₀, (C) mathematical. ∎
 
-### 7.4 Функциональная Единственность O — [Т] СТРОГО {#единственность-o}
+### 7.4 Functional Uniqueness of O — [Т] RIGOROUS {#единственность-o}
 
-**Теорема 7.4.1:** O — единственное измерение, обеспечивающее выполнение регенеративной части (QG).
+**Theorem 7.4.1:** O is the unique dimension ensuring the regenerative part of (QG) is satisfied.
 
-**Доказательство:**
+**Proof:**
 
-**(А) Аргумент из формы ℛ.** Регенеративный член $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **[Т]** ([вывод](/docs/core/dynamics/evolution#вывод-формы-регенерации)) и V-preservation gate $g_V(P)$, определённый через чистоту и метрику Бюреса (A2) **[Т]**, требуют источника с $P > P_{\mathrm{crit}}$.
+**(A) Argument from the form of ℛ.** The regenerative term $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **[Т]** ([derivation](/docs/core/dynamics/evolution#вывод-формы-регенерации)) and the V-preservation gate $g_V(P)$, defined via purity and the Bures metric (A2) **[Т]**, require a source with $P > P_{\mathrm{crit}}$.
 
-**Лемма 7.4.2:** Свободная энергия может поступать только из состояния с **минимальной энтропией**.
+**Lemma 7.4.2:** Free energy can only come from a state of **minimal entropy**.
 
-*Обоснование (Второй закон):* Энтропия изолированной системы не убывает. Для $\Delta F > 0$ необходим контакт с резервуаром низкой энтропии.
+*Justification (Second Law):* The entropy of an isolated system does not decrease. For $\Delta F > 0$ contact with a low-entropy reservoir is required.
 
-**Лемма 7.4.3:** В квантовой теории состояние минимальной энтропии — это **вакуум** $|0\rangle$.
+**Lemma 7.4.3:** In quantum theory the state of minimal entropy is the **vacuum** $|0\rangle$.
 
-*Обоснование:* Вакуум — чистое состояние с $S_{vN} = 0$, определяемое как:
+*Justification:* The vacuum is a pure state with $S_{vN} = 0$, defined as:
 $$
 H|0\rangle = E_0|0\rangle, \quad E_0 = \min(\text{Spec}(H))
 $$
 
-**(Б) Категориальный аргумент из κ₀.** Формула κ₀ (Th. 15.3.1, [Т]):
+**(B) Categorical argument from κ₀.** The κ₀ formula (Th. 15.3.1, [Т]):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)} = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
 $$
 
-требует **существования O как отдельного объекта** категории:
-- $\mathrm{End}(O) = \gamma_{OO}$ — эндоморфизмы O (нормировка)
-- $\mathrm{Hom}(O, E) = \gamma_{OE}$ — морфизмы O→E
-- $\mathrm{Hom}(O, U) = \gamma_{OU}$ — морфизмы O→U
+requires **O to exist as a separate object** of the category:
+- $\mathrm{End}(O) = \gamma_{OO}$ — endomorphisms of O (normalization)
+- $\mathrm{Hom}(O, E) = \gamma_{OE}$ — morphisms O→E
+- $\mathrm{Hom}(O, U) = \gamma_{OU}$ — morphisms O→U
 
-При удалении O: $\mathrm{End}(O)$ не определён → κ₀ не определён → сопряжение $\mathcal{D}_\Omega \dashv \mathcal{R}$ теряет структуру.
+Upon removing O: $\mathrm{End}(O)$ is undefined → κ₀ is undefined → the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ loses its structure.
 
-**(В) Аргумент из Page—Wootters (A5).** O — выделенное измерение для тензорной факторизации $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Без O: внутреннее время τ не определено, $H_{\text{eff}}$ не выводится.
+**(C) Argument from Page–Wootters (A5).** O is the distinguished dimension for the tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined, $H_{\text{eff}}$ is not derivable.
 
-**(Г) Функциональная несовместимость с другими измерениями** (Лемма 2.2, [Т]):
+**(D) Functional incompatibility with other dimensions** (Lemma 2.2, [Т]):
 
-| Измерение | Матобъект | Совместимость с O-функцией |
+| Dimension | Math object | Compatibility with O-function |
 |---|---|---|
-| A | $P$: $P^2 = P$ (проектор) | ✗ — проектор не определяет гамильтониан часов |
-| S | $H$: $H^\dagger = H$ (наблюдаемая) | ✗ — хранит форму, не генерирует время |
-| D | $U(t) = e^{-iHt}$ (динамика) | ✗ — процесс, не источник |
-| L | $[A,B]$ (коммутатор) | ✗ — согласование, не энергия |
-| E | $\rho$: $\mathrm{Tr}(\rho) = 1$ (состояние) | ✗ — внутренний аспект; O — внешний (Th. 7.5) |
-| U | $\mathrm{Tr}$ (след) | ✗ — интеграция, не источник |
+| A | $P$: $P^2 = P$ (projector) | ✗ — projector does not define the clock Hamiltonian |
+| S | $H$: $H^\dagger = H$ (observable) | ✗ — stores form, does not generate time |
+| D | $U(t) = e^{-iHt}$ (dynamics) | ✗ — process, not a source |
+| L | $[A,B]$ (commutator) | ✗ — consistency, not energy |
+| E | $\rho$: $\mathrm{Tr}(\rho) = 1$ (state) | ✗ — interior aspect; O is exterior (Th. 7.5) |
+| U | $\mathrm{Tr}$ (trace) | ✗ — integration, not a source |
 
-**Вывод:** O функционально уникально по **четырём независимым** аргументам: (А) из формы ℛ [Т], (Б) из κ₀ [Т], (В) из Page—Wootters (A5), (Г) из функциональной независимости [Т]. ∎
+**Conclusion:** O is functionally unique by **four independent** arguments: (A) from the form of ℛ [Т], (B) from κ₀ [Т], (C) from Page–Wootters (A5), (D) from functional independence [Т]. ∎
 
-### 7.5 Теорема об Ортогональности E и O — [Т] СТРОГО {#ортогональность-eo}
+### 7.5 Theorem on the Orthogonality of E and O — [Т] RIGOROUS {#ортогональность-eo}
 
-**Теорема 7.5.1:** E и O принадлежат к **различным каузальным категориям** и не могут быть объединены.
+**Theorem 7.5.1:** E and O belong to **different causal categories** and cannot be merged.
 
-**Определение (Каузальный статус):**
-Измерение $X$ является **причиной** (Cause), если его удаление приводит к $\Gamma = 0$.
-Измерение $X$ является **следствием** (Effect), если его удаление сохраняет $\Gamma \neq 0$, но нарушает (PH).
+**Definition (Causal status):**
+A dimension $X$ is a **Cause** if its removal leads to $\Gamma = 0$.
+A dimension $X$ is an **Effect** if its removal preserves $\Gamma \neq 0$, but violates (PH).
 
-**Доказательство:**
+**Proof:**
 
-**Шаг 1:** При $\gamma_{OO} \to 0$ (удаление связи с Основанием):
-- Без регенерации: $dP/d\tau < 0$ (монотонный распад по Линдбладу)
-- Результат: $P \to 1/7$ (смерть системы)
-- **Вывод:** O — **причина** существования системы.
+**Step 1:** For $\gamma_{OO} \to 0$ (removal of coupling to Foundation):
+- Without regeneration: $dP/d\tau < 0$ (monotone decay by Lindblad)
+- Result: $P \to 1/7$ (system death)
+- **Conclusion:** O is the **cause** of the system's existence.
 
-**Шаг 2:** При $\gamma_{EE} \to 0$ (удаление измерения Интериорности):
-- Матрица Γ остаётся валидной (6×6 подматрица)
-- Регенерация возможна (если O присутствует)
-- **Но:** $\rho_E = 0$ ⟹ нарушение (PH)
-- **Вывод:** E — **следствие** (внутренний наблюдатель), не причина.
+**Step 2:** For $\gamma_{EE} \to 0$ (removal of the Interiority dimension):
+- Matrix Γ remains valid (6×6 submatrix)
+- Regeneration is possible (if O is present)
+- **But:** $\rho_E = 0$ ⟹ violation of (PH)
+- **Conclusion:** E is an **effect** (interior observer), not a cause.
 
-**Шаг 3 (Каузальный аргумент):** Объединение $E \cup O = X$ требует, чтобы X одновременно:
-1. Обеспечивало $\Delta F > 0$ (функция O — связь с **внешним** резервуаром)
-2. Содержало феноменологическое содержание (функция E — **внутренняя** структура)
+**Step 3 (Causal argument):** Merging $E \cup O = X$ requires X to simultaneously:
+1. Provide $\Delta F > 0$ (function of O — connection to an **external** reservoir)
+2. Contain phenomenological content (function of E — **internal** structure)
 
-Внешнее ≠ Внутреннее по определению. Объединение — категориальная ошибка.
+External ≠ Internal by definition. Merging is a categorical error.
 
-**Шаг 4 (Категориальный аргумент из κ₀).** Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **требует** O и E как **различные объекты** категории: $\mathrm{Hom}(O, E)$ — морфизм между различными объектами, не эндоморфизм.
+**Step 4 (Categorical argument from κ₀).** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **requires** O and E as **distinct objects** of the category: $\mathrm{Hom}(O, E)$ is a morphism between distinct objects, not an endomorphism.
 
-При $O = E$: $\mathrm{Hom}(O, E) = \mathrm{End}(O)$, и κ₀ теряет E-специфическую обратную связь:
+For $O = E$: $\mathrm{Hom}(O, E) = \mathrm{End}(O)$, and κ₀ loses E-specific feedback:
 
 $$
 \kappa_0\bigg|_{O=E} = \omega_0 \cdot \frac{\gamma_{OO} \cdot |\gamma_{OU}|}{\gamma_{OO}} = \omega_0 \cdot |\gamma_{OU}|
 $$
 
-Регенерация **не зависит от феноменологического состояния**, что нарушает (AP): автопоэзис требует, чтобы самовосстановление учитывало «самочувствие» системы ($\mathrm{Coh}_E$). ∎
+Regeneration **does not depend on the phenomenological state**, which violates (AP): autopoiesis requires that self-restoration accounts for the "well-being" of the system ($\mathrm{Coh}_E$). ∎
 
 ---
 
-## Часть VIII: Ограничения и Открытые Вопросы
+## Part VIII: Limitations and Open Questions {#часть-viii-ограничения-и-открытые-вопросы}
 
-### 8.1 Что Доказано Строго
+### 8.1 What Has Been Rigorously Proven
 
-1. **Необходимость каждого измерения:** Удаление любого из 7 измерений приводит к нарушению хотя бы одной из аксиом (AP), (PH), (QG).
+1. **Necessity of each dimension:** Removing any of the 7 dimensions leads to violation of at least one of the axioms (AP), (PH), (QG).
 
-2. **Достаточность 7 измерений:** Существует явная конструкция, удовлетворяющая всем аксиомам.
+2. **Sufficiency of 7 dimensions:** An explicit construction satisfying all axioms exists.
 
-3. **Изоморфизм с (M,R):** 7-мерная структура естественно обобщает системы Розена.
+3. **Isomorphism with (M,R):** The 7-dimensional structure naturally generalizes Rosen systems.
 
-4. **Алгебраическая единственность A, S, D, L, U:** Эти измерения определены однозначно алгебраическими ограничениями на $\mathcal{L}(\mathcal{H})$.
+4. **Algebraic uniqueness of A, S, D, L, U:** These dimensions are uniquely defined by algebraic constraints on $\mathcal{L}(\mathcal{H})$.
 
-5. **Функциональная единственность E:** E — единственный носитель (PH) по трём аргументам: аксиоматическому, категориальному (κ₀) и математическому ($\mathrm{rank}(\rho) > 1$). [Доказательство →](#единственность-e)
+5. **Functional uniqueness of E:** E is the unique carrier of (PH) by three arguments: axiomatic, categorical (κ₀), and mathematical ($\mathrm{rank}(\rho) > 1$). [Proof →](#единственность-e)
 
-6. **Функциональная единственность O:** O — единственный источник регенерации по четырём аргументам: из формы ℛ [Т], из κ₀ [Т], из Page—Wootters (A5), из функциональной независимости [Т]. [Доказательство →](#единственность-o)
+6. **Functional uniqueness of O:** O is the unique source of regeneration by four arguments: from the form of ℛ [Т], from κ₀ [Т], from Page–Wootters (A5), from functional independence [Т]. [Proof →](#единственность-o)
 
-7. **Ортогональность E и O:** E и O не могут быть объединены — каузальный аргумент (Внешнее ≠ Внутреннее) усилен категориальным из κ₀: при $O=E$ регенерация теряет феноменологическую обратную связь. [Доказательство →](#ортогональность-eo)
+7. **Orthogonality of E and O:** E and O cannot be merged — the causal argument (External ≠ Internal) is reinforced by the categorical argument from κ₀: for $O=E$ regeneration loses phenomenological feedback. [Proof →](#ортогональность-eo)
 
-8. **Строгая необходимость N = 7:** Невозможность альтернативного 6D-набора доказана через теорему Гурвица ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + функциональную единственность 40f [Т]. [Доказательство →](#теорема-строгая-необходимость-7)
+8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set is proven via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [Т]. [Proof →](#теорема-строгая-необходимость-7)
 
-### 8.2 Что Остаётся Условным
+### 8.2 What Remains Conditional
 
-1. **Функциональная единственность E:** **[Т]** — [доказано](#единственность-e)
-2. **Функциональная единственность O:** **[Т]** — [доказано](#единственность-o)
-3. **Ортогональность E и O:** **[Т]** — [доказано](#ортогональность-eo)
-4. **Строгая необходимость N = 7 (S1):** **[Т]** — [доказано](#теорема-строгая-необходимость-7) (теорема Гурвица + 40f [Т])
+1. **Functional uniqueness of E:** **[Т]** — [proven](#единственность-e)
+2. **Functional uniqueness of O:** **[Т]** — [proven](#единственность-o)
+3. **Orthogonality of E and O:** **[Т]** — [proven](#ортогональность-eo)
+4. **Strict necessity of N = 7 (S1):** **[Т]** — [proven](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [Т])
 
-Все четыре пробела закрыты. Условных результатов в теореме минимальности **не осталось**.
+All four gaps are closed. There are **no remaining** conditional results in the minimality theorem.
 
-### 8.3 Что Остается Открытым
+### 8.3 What Remains Open
 
-1. **Топологическая связь:** Связь с теоремой Пуанкаре-Перельмана — эвристическая аналогия, не строгий изоморфизм.
+1. **Topological connection:** The connection with the Poincaré–Perelman theorem is a heuristic analogy, not a rigorous isomorphism.
 
-2. **Онтологический статус:** Теорема не отвечает на вопрос «почему реальность устроена так, а не иначе». Она показывает внутреннюю согласованность структуры, не её необходимость.
+2. **Ontological status:** The theorem does not answer the question "why is reality structured this way and not otherwise". It shows the internal consistency of the structure, not its necessity.
 
-### 8.4 Открытые Проблемы
+### 8.4 Open Problems
 
-**Проблема 1: Формализация феноменологии**
-Как строго определить "внутреннюю сторону" без апелляции к интуиции? Текущее решение опирается на интерпретацию Аксиомы Ω.
+**Problem 1: Formalization of phenomenology**
+How to rigorously define the "interior side" without appealing to intuition? The current solution relies on the interpretation of Axiom Ω.
 
-**Проблема 2: Непрерывность**
-Можно ли рассматривать $\dim(\mathcal{H})$ как непрерывный параметр? Что происходит при $\dim(\mathcal{H}) \to 7$?
+**Problem 2: Continuity**
+Can $\dim(\mathcal{H})$ be treated as a continuous parameter? What happens as $\dim(\mathcal{H}) \to 7$?
 
-**Проблема 3: Высшие размерности**
-Какие дополнительные свойства приобретает система при $\dim(\mathcal{H}) > 7$?
+**Problem 3: Higher dimensions**
+What additional properties does a system acquire for $\dim(\mathcal{H}) > 7$?
 
-**Проблема 4: Эмерджентность пространства-времени** — [П] ПРОГРАММА
-Как пространство и время возникают из корреляций между подсистемами? Рабочие гипотезы:
-- **Гипотеза 3.1 (Пространство из корреляций):** $d_{\text{eff}}(\alpha, \beta) := f(\|\Gamma_\alpha \otimes \Gamma_\beta - \Gamma_{\alpha\beta}\|_F)$
-- **Гипотеза 3.2 (Время из изменения):** $\tau_{\text{int}} := \int_0^\tau \|\dot{\Gamma}(\tau')\|_F \, d\tau'$
+**Problem 4: Emergence of spacetime** — [П] PROGRAM
+How do space and time arise from correlations between subsystems? Working hypotheses:
+- **Hypothesis 3.1 (Space from correlations):** $d_{\text{eff}}(\alpha, \beta) := f(\|\Gamma_\alpha \otimes \Gamma_\beta - \Gamma_{\alpha\beta}\|_F)$
+- **Hypothesis 3.2 (Time from change):** $\tau_{\text{int}} := \int_0^\tau \|\dot{\Gamma}(\tau')\|_F \, d\tau'$
 
 ---
 
-## Часть IX: Структурный вывод через октонионы {#часть-ix-октонионный-вывод}
+## Part IX: Structural derivation via octonions {#часть-ix-октонионный-вывод}
 
-:::info Второй путь к N = 7 (Трек B)
-Данная часть резюмирует [полный вывод](/docs/proofs/minimality/theorem-octonionic-derivation), дающий $N = 7$ из теорем P1+P2 [Т], **независимо** от (AP)+(PH)+(QG).
+:::info Second path to N = 7 (Track B)
+This part summarizes the [full derivation](/docs/proofs/minimality/theorem-octonionic-derivation), giving $N = 7$ from theorems P1+P2 [Т], **independently** of (AP)+(PH)+(QG).
 :::
 
-### 9.1 Теоремы P1, P2 и вывод
+### 9.1 Theorems P1, P2 and the derivation
 
-**[Т] P1:** Пространство внутренних степеней свободы ≅ Im($\mathcal{A}$), где $\mathcal{A}$ — нормированная алгебра с делением. *(Выводится по цепочке моста T15 из (AP)+(PH)+(QG)+(V).)*
-**[Т] P2:** $\mathcal{A}$ неассоциативна. *(Выводится по цепочке моста T15 из (AP)+(PH)+(QG)+(V).)*
+**[Т] P1:** The space of internal degrees of freedom ≅ Im($\mathcal{A}$), where $\mathcal{A}$ is a normed division algebra. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
+**[Т] P2:** $\mathcal{A}$ is non-associative. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
 
-**[Т] Вывод:** P1 → [Т] Гурвиц → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 исключает $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = 7$.
+**[Т] Derivation:** P1 → [Т] Hurwitz → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 excludes $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = 7$.
 
-### 9.2 Сравнительная таблица двух путей
+### 9.2 Comparative table of the two tracks
 
-| Аспект | Трек A: (AP)+(PH)+(QG) | Трек B: P1+P2 |
+| Aspect | Track A: (AP)+(PH)+(QG) | Track B: P1+P2 |
 |--------|------------------------|---------------|
-| **Исходные условия** | Автопоэзис, феноменология, квантовое основание | Алгебра с делением, неассоциативность |
-| **Математический аппарат** | Функциональный анализ, (M,R)-системы Розена | Теорема Гурвица, алгебры с делением |
-| **Тип результата** | $N \geq 7$ (необходимость) + конструкция (достаточность) | $N = 7$ (единственность через исключение) |
-| **Бонусная структура** | Базис {A,S,D,L,E,O,U}, единственность | $G_2$-симметрия, плоскость Фано, код Хэмминга |
-| **Статус** | [Т] Доказано | [Т] Математически строго, P1+P2 [Т] |
+| **Starting conditions** | Autopoiesis, phenomenology, quantum foundation | Division algebra, non-associativity |
+| **Mathematical apparatus** | Functional analysis, Rosen (M,R)-systems | Hurwitz theorem, division algebras |
+| **Type of result** | $N \geq 7$ (necessity) + construction (sufficiency) | $N = 7$ (uniqueness by exclusion) |
+| **Bonus structure** | Basis {A,S,D,L,E,O,U}, uniqueness | $G_2$-symmetry, Fano plane, Hamming code |
+| **Status** | [Т] Proven | [Т] Mathematically rigorous, P1+P2 [Т] |
 
-### 9.3 Сходимость двух путей
+### 9.3 Convergence of the two tracks
 
-Два трека дают одно число ($N = 7$), но привносят **разную структуру**:
-- Трек A даёт функциональную интерпретацию каждого измерения
-- Трек B даёт алгебраическую симметрию ($G_2$) и комбинаторную структуру (Фано)
+The two tracks give the same number ($N = 7$), but bring **different structure**:
+- Track A gives the functional interpretation of each dimension
+- Track B gives the algebraic symmetry ($G_2$) and combinatorial structure (Fano)
 
-Замыкание моста (AP)+(PH)+(QG) ↔ P1+P2 — **[Т] РЕШЕНО** через 12-шаговую цепочку T15 (теоремы T11–T13 закрывают условие (МП)).
+Closure of the bridge (AP)+(PH)+(QG) ↔ P1+P2 — **[Т] SOLVED** via the 12-step chain T15 (theorems T11–T13 close condition (МП)).
 
-### Проблема 5: Замыкание моста — [Т] РЕШЕНО {#проблема-5-мост}
+### Problem 5: Bridge closure — [Т] SOLVED {#проблема-5-мост}
 
-**Проблема 5 (Замыкание моста) — РЕШЕНА [Т].** Условие (МП) доказано как теорема (T11–T13).
+**Problem 5 (Bridge closure) — SOLVED [Т].** Condition (МП) is proven as a theorem (T11–T13).
 
-Полная формальная цепочка из 12 шагов (T15) устанавливает:
+The complete formal chain of 12 steps (T15) establishes:
 
 $$
-(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{связность} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-равномерность} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
+(AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{connectivity} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
 $$
 
-**Текущий статус:** [Т] — все шаги цепочки являются теоремами. Условие (МП) — принцип минимального представления ($\lambda = 1$) — доказано через T11–T13.
+**Current status:** [Т] — all steps in the chain are theorems. Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13.
 
-**Ключевые теоремы цепочки T15:**
-- **T5, T6 [Т]:** $S_7$-эквивариантность атомарного диссипатора → равномерная контракция когерентностей **безусловно** (снимает зависимость от (КГ) в шаге 4)
-- **T7 [Т]:** Автопоэтическая необходимость $c > 0$ — атомарный диссипатор несовместим с жизнеспособностью
-- **T8, T9 [Т]:** Код Хэмминга H(7,4) — единственный совершенный код длины 7, структура поддержки = PG(2,2)
-- **T10 [Т]:** Фано-канал ($k=3$, $c=1/3$) — единственный оптимальный среди допустимых BIBD-каналов
-- **T11–T13 [Т]:** Доказательство условия (МП) — $\lambda = 1$ следует из оптимальности и единственности совершенного кода
+**Key theorems of the T15 chain:**
+- **T5, T6 [Т]:** $S_7$-equivariance of the atomic dissipator → uniform contraction of coherences **unconditionally** (removes the dependence on (КГ) in step 4)
+- **T7 [Т]:** Autopoietic necessity $c > 0$ — the atomic dissipator is incompatible with viability
+- **T8, T9 [Т]:** Hamming code H(7,4) — the unique perfect code of length 7, support structure = PG(2,2)
+- **T10 [Т]:** Fano channel ($k=3$, $c=1/3$) — the unique optimal among admissible BIBD channels
+- **T11–T13 [Т]:** Proof of condition (МП) — $\lambda = 1$ follows from optimality and uniqueness of the perfect code
 
-**Каскадное следствие:** P1, P2 повышены до [Т]. Трек B (октонионный вывод) теперь полностью строг.
+**Cascading consequence:** P1, P2 are elevated to [Т]. Track B (octonionic derivation) is now fully rigorous.
 
-См. [подробный анализ](/docs/proofs/minimality/theorem-octonionic-derivation#мост), [Операторы Линдблада](/docs/core/operators/lindblad-operators#редукция-моста).
+See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#мост), [Lindblad operators](/docs/core/operators/lindblad-operators#редукция-моста).
 
 ---
 
-## Заключение
+## Conclusion
 
-### Основной Результат
+### Main Result
 
-**Теорема о Минимальной Полноте доказана** со следующей стратификацией по уровню строгости:
+**The Theorem on Minimal Completeness is proven** with the following stratification by level of rigor:
 
-1. **[Т] Доказано строго (7/7 измерений):**
-   - Достаточность конструкции с $\dim(\mathcal{H}) = 7$
-   - Необходимость каждого из 7 конкретных измерений (F1-F7)
-   - Соответствие с (M,R)-системами Розена
-   - Алгебраическая единственность A, S, D, L, U (спектральная теорема, теорема Стоуна, теорема Якоби, свойства следа)
-   - Функциональная единственность E (аксиоматический, категориальный из κ₀, математический аргументы)
-   - Функциональная единственность O (из формы ℛ [Т], из κ₀ [Т], из Page—Wootters, из функциональной независимости)
-   - Ортогональность E и O (каузальный + категориальный из κ₀)
-   - Строгая необходимость N = 7 (невозможность 6D-альтернативы через теорему Гурвица + 40f [Т])
-   - Октонионный вывод (Трек B): P1+P2 [Т] через 12-шаговую цепочку T15, мост замкнут
+1. **[Т] Rigorously proven (7/7 dimensions):**
+   - Sufficiency of the construction with $\dim(\mathcal{H}) = 7$
+   - Necessity of each of the 7 specific dimensions (F1–F7)
+   - Correspondence with Rosen (M,R)-systems
+   - Algebraic uniqueness of A, S, D, L, U (spectral theorem, Stone's theorem, Jacobi theorem, trace properties)
+   - Functional uniqueness of E (axiomatic, categorical from κ₀, mathematical arguments)
+   - Functional uniqueness of O (from the form of ℛ [Т], from κ₀ [Т], from Page–Wootters, from functional independence)
+   - Orthogonality of E and O (causal + categorical from κ₀)
+   - Strict necessity of N = 7 (impossibility of 6D alternative via Hurwitz theorem + 40f [Т])
+   - Octonionic derivation (Track B): P1+P2 [Т] via the 12-step chain T15, bridge closed
 
-2. **Принято как аксиома:**
-   - Тождество бытия и опыта ([Аксиома Ω⁷](/docs/core/foundations/axiom-omega))
+2. **Accepted as axiom:**
+   - Identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega))
 
-3. **[П] Остается программой исследований:**
-   - Топологическая связь с теоремой Пуанкаре
-   - Эмерджентность пространства-времени
+3. **[П] Remains a research program:**
+   - Topological connection with the Poincaré theorem
+   - Emergence of spacetime
 
-### Методологическое Замечание
+### Methodological Remark
 
-Данное доказательство следует стандарту математической честности:
-- Каждый шаг формально обоснован
-- Гипотезы явно отделены от теорем
-- Границы применимости указаны
-- **Уровень строгости явно маркирован** ([Т]/[С]/[П])
+This proof follows the standard of mathematical honesty:
+- Every step is formally justified
+- Hypotheses are explicitly separated from theorems
+- Limits of applicability are stated
+- **Level of rigor is explicitly marked** ([Т]/[С]/[П])
 
-Число 7 не является «магическим» — оно следует из требований автопоэзиса, феноменологии и квантового основания. Это минимальное число. Единственность базиса **полностью доказана** [Т]: алгебраическая единственность A, S, D, L, U — из спектральных теорем, функциональная единственность E и O — из формулы κ₀ (Th. 15.3.1) и функциональной независимости (Лемма 2.2).
+The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula (Th. 15.3.1) and functional independence (Lemma 2.2).
 
 ---
 
-## Приложение A: Формальные Определения
+## Appendix A: Formal Definitions
 
-### A.1 Аксиоматическая Система
+### A.1 Axiomatic System
 
-**Аксиома (AP) — Автопоэзис:**
+**Axiom (AP) — Autopoiesis:**
 
 $$
 \exists \varphi: \mathcal{L}(\mathcal{H}) \to \mathcal{L}(\mathcal{H}), \exists \Gamma^* \in \mathcal{L}(\mathcal{H}):
-\varphi(\Gamma^*) = \Gamma^* \land \Gamma^* \text{ порождает компоненты } \Gamma^*
+\varphi(\Gamma^*) = \Gamma^* \land \Gamma^* \text{ generates components of } \Gamma^*
 $$
 
-**Аксиома (PH) — Феноменология:**
+**Axiom (PH) — Phenomenology:**
 
 $$
 \exists E \subset \mathcal{H}, \exists \rho_E \in \mathcal{L}(E):
-\rho_E|q_k\rangle = \lambda_k|q_k\rangle \text{ определяет } \text{Exp}_k
+\rho_E|q_k\rangle = \lambda_k|q_k\rangle \text{ defines } \text{Exp}_k
 $$
 
-**Аксиома (QG) — Квантовое Основание:**
+**Axiom (QG) — Quantum Foundation:**
 
 $$
 \Gamma \in \mathcal{L}(\mathcal{H}): \Gamma^\dagger = \Gamma, \Gamma \geq 0, \mathrm{Tr}(\Gamma) = 1
@@ -1111,28 +1111,28 @@ $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]
 $$
 
-### A.2 Функциональные Операторы
+### A.2 Functional Operators
 
-| Оператор | Функция |
+| Operator | Function |
 |----------|---------|
-| $P_A$ | Проектор (различение) |
-| $H_S$ | Гамильтониан (структура) |
-| $U_D(t)$ | Унитарный оператор (динамика) |
-| $[\cdot, \cdot]_L$ | Коммутатор (логика) |
-| $\rho_E$ | Матрица плотности опыта (опыт) |
-| $\vert 0\rangle_O$ | Вакуумное состояние (основание) |
-| $\mathrm{Tr}_U$ | След (единство) |
+| $P_A$ | Projector (distinction) |
+| $H_S$ | Hamiltonian (structure) |
+| $U_D(t)$ | Unitary operator (dynamics) |
+| $[\cdot, \cdot]_L$ | Commutator (logic) |
+| $\rho_E$ | Experience density matrix (experience) |
+| $\vert 0\rangle_O$ | Vacuum state (foundation) |
+| $\mathrm{Tr}_U$ | Trace (unity) |
 
 ---
 
-**Связанные документы:**
-- [Структурный вывод через октонионы](/docs/proofs/minimality/theorem-octonionic-derivation) — Трек B: P1+P2 [Т] → 𝕆 → N=7
-- [Голоном](/docs/core/structure/holon) — определение $\mathbb{H}$
-- [Семь измерений](/docs/core/structure/dimensions) — базис $\{A, S, D, L, E, O, U\}$
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Эволюция](/docs/core/dynamics/evolution) — уравнение Линдблада
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера $P$ и $P_{\text{crit}}$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — оператор $\varphi$ и рефлексия $R$
-- [Иерархия интериорности](/docs/proofs/consciousness/interiority-hierarchy) — уровни L0→L1→L2→L3→L4
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — теорема о неподвижной точке
-- [Poincaré-Perelman](/docs/applied/research/poincare-perelman) — топологические аналогии
+**Related documents:**
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — Track B: P1+P2 [Т] → 𝕆 → N=7
+- [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
+- [Seven dimensions](/docs/core/structure/dimensions) — basis $\{A, S, D, L, E, O, U\}$
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Evolution](/docs/core/dynamics/evolution) — Lindblad equation
+- [Viability](/docs/core/dynamics/viability) — measure $P$ and $P_{\text{crit}}$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — operator $\varphi$ and reflection $R$
+- [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — levels L0→L1→L2→L3→L4
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — fixed point theorem
+- [Poincaré-Perelman](/docs/applied/research/poincare-perelman) — topological analogies

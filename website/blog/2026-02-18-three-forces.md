@@ -1,285 +1,285 @@
 ---
 slug: three-forces
-title: "Три силы, одно уравнение: как устроена динамика всего"
+title: "Three Forces, One Equation: The Dynamics of Everything"
 authors: [uhm]
 tags: [dynamics, Lindblad, thermodynamics, consciousness, theory, mathematics]
 ---
 
-# Три силы, одно уравнение
+# Three Forces, One Equation {#три-силы-одно-уравнение}
 
-Почему вы ещё существуете?
+Why do you still exist?
 
-Вопрос не риторический. Второе начало термодинамики — самый проверенный закон физики — утверждает: порядок разрушается. Любой порядок, всегда, необратимо. Кристалл тает. Звезда коллапсирует. Чашка разбивается и не собирается обратно. Вселенная монотонно движется к максимальной энтропии — «тепловой смерти», где всё одинаково и ничего не происходит.
+The question is not rhetorical. The second law of thermodynamics — the most tested law in physics — states: order is destroyed. Any order, always, irreversibly. The crystal melts. The star collapses. The cup shatters and does not reassemble. The universe moves monotonically toward maximum entropy — "heat death," where everything is identical and nothing happens.
 
-И тем не менее — вы существуете. Шестьдесят триллионов клеток. Сто миллиардов нейронов. Когерентная структура, которая не просто сопротивляется распаду, но ремонтирует себя, размножается и пишет посты о термодинамике. Это требует объяснения.
+And yet — you exist. Sixty trillion cells. One hundred billion neurons. A coherent structure that not only resists decay, but repairs itself, reproduces, and writes posts about thermodynamics. This requires an explanation.
 
-Объяснение — уравнение. Одно уравнение, три члена, и теорема, доказывающая, что четвёртого быть не может.
+The explanation is an equation. One equation, three terms, and a theorem proving there cannot be a fourth.
 
 <!-- truncate -->
 
-## Уравнение
+## The Equation {#уравнение}
 
-В [первом посте](/blog/holonomic-paninteriorism) было установлено: любая система описывается матрицей когерентности $\Gamma$ — таблицей $7 \times 7$, кодирующей всё, что о системе можно сказать. Во [втором](/blog/geometry-of-inner-world) — что $\Gamma$ содержит 21 тип переживания. В [третьем](/blog/freedom-theorem) — что пространство путей к аттрактору определяет свободу.
+In the [first post](/blog/holonomic-paninteriorism) it was established: any system is described by a coherence matrix $\Gamma$ — a $7 \times 7$ table encoding everything that can be said about the system. In the [second](/blog/geometry-of-inner-world) — that $\Gamma$ contains 21 types of experience. In the [third](/blog/freedom-theorem) — that the space of paths to the attractor determines freedom.
 
-Теперь — как $\Gamma$ меняется со временем. Вот уравнение:
+Now — how $\Gamma$ changes in time. Here is the equation:
 
 $$
-\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{вращение}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{разрушение}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{восстановление}}
+\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{rotation}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{destruction}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{restoration}}
 $$
 
-Левая часть — скорость изменения состояния. Правая часть — три слагаемых. Три силы. Три глагола, которые исчерпывают всё, что может произойти с чем бы то ни было. Обсудим их по порядку.
+The left side is the rate of change of state. The right side — three terms. Three forces. Three verbs that exhaust everything that can happen to anything whatsoever. Let us discuss them in order.
 
-## Первая сила: вращение
+## The First Force: Rotation {#первая-сила-вращение}
 
 $$
 -i[H_{\text{eff}}, \Gamma]
 $$
 
-Квадратные скобки $[A, B] = AB - BA$ — коммутатор. $H_{\text{eff}}$ — эффективный гамильтониан, выведенный из [механизма Пейдж–Вуттерс](/docs/proofs/dynamics/emergent-time) [Т]. Мнимая единица $i$ — отсылка к квантовой механике, но не пугайтесь: суть проста.
+Square brackets $[A, B] = AB - BA$ — the commutator. $H_{\text{eff}}$ — the effective Hamiltonian, derived from the [Page-Wootters mechanism](/docs/proofs/dynamics/emergent-time) [Т]. The imaginary unit $i$ is a reference to quantum mechanics, but do not be alarmed: the essence is simple.
 
-Этот член **вращает** состояние. Не создаёт и не уничтожает — перераспределяет. Когерентности перетекают из одного канала в другой, но их общий запас остаётся прежним. Формально:
+This term **rotates** the state. It does not create and does not destroy — it redistributes. Coherences flow from one channel to another, but their total stock remains the same. Formally:
 
 $$
 P = \mathrm{Tr}(\Gamma^2) = \text{const}
 $$
 
-Чистота не меняется. Это — обратимая динамика. Если бы весь мир был изолированной квантовой системой, ничего бы не рождалось и не умирало — всё бы вечно вращалось, как планеты вокруг звезды. Красиво, стерильно, мертво.
+Purity does not change. This is reversible dynamics. If the entire world were an isolated quantum system, nothing would be born and nothing would die — everything would rotate eternally, like planets around a star. Beautiful, sterile, dead.
 
-**Аналогия.** Волчок вращается, не теряя энергии. Его ось прецессирует, движение сложное — но ничего не убывает и не прибывает. Это — мир Ньютона и Лапласа: детерминированный, обратимый, вечный. И совершенно непригодный для жизни.
+**Analogy.** A spinning top rotates without losing energy. Its axis precesses, the motion is complex — but nothing decreases and nothing increases. This is the world of Newton and Laplace: deterministic, reversible, eternal. And completely unsuitable for life.
 
-## Вторая сила: разрушение
+## The Second Force: Destruction {#вторая-сила-разрушение}
 
 $$
 \mathcal{D}_\Omega[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-Выглядит устрашающе. Суть — нет. Это **диссипатор Линдблада** — математическая формализация второго начала термодинамики в квантовом языке. Каждый оператор $L_k$ — канал утечки: щель в стене, через которую когерентность вытекает наружу.
+Looks intimidating. The essence — not at all. This is the **Lindblad dissipator** — the mathematical formalization of the second law of thermodynamics in quantum language. Each operator $L_k$ is a leakage channel: a gap in the wall through which coherence flows outward.
 
-Результат:
+Result:
 
 $$
 \frac{dP}{d\tau}\bigg|_{\mathcal{D}} \leq 0
 $$
 
-Чистота **уменьшается**. Когерентности затухают. Связи между измерениями ослабевают. Состояние $\Gamma$ дрейфует к максимально смешанному $I/7$ — квантовому аналогу «серой каши», где всё одинаково и ничего не различимо.
+Purity **decreases**. Coherences decay. Connections between dimensions weaken. State $\Gamma$ drifts toward the maximally mixed $I/7$ — the quantum analogue of "grey mush," where everything is identical and nothing is distinguishable.
 
-В УГМ операторы $L_k$ не постулируются — они **выводятся** из структуры [Аксиомы Ω⁷](/docs/core/foundations/axiom-omega) через [плоскость Фано](/docs/core/operators/lindblad-operators#фано-операторы) [Т]. Те самые семь линий из [поста 2](/blog/geometry-of-inner-world), которые организуют квалиа, — они же определяют каналы разрушения. Алгебра, которая создаёт структуру переживания, создаёт и структуру его распада. Одна геометрия — два лица.
+In UHM the operators $L_k$ are not postulated — they are **derived** from the structure of [Axiom Ω⁷](/docs/core/foundations/axiom-omega) through the [Fano plane](/docs/core/operators/lindblad-operators#фано-операторы) [Т]. Those same seven lines from [post 2](/blog/geometry-of-inner-world) that organize qualia — they also define the channels of destruction. The algebra that creates the structure of experience also creates the structure of its decay. One geometry — two faces.
 
-**Свойства диссипации:**
+**Properties of dissipation:**
 
-| Свойство | Формулировка | По-русски |
-|----------|-------------|-----------|
-| Необратимость | Чистые → смешанные | Нельзя «расперемешать» |
-| Демократичность | Все когерентности затухают одинаково | Ни одна связь не привилегирована |
-| Монотонность | $dP/d\tau \leq 0$ | Порядок только убывает |
+| Property | Formulation | In plain language |
+|----------|-------------|-------------------|
+| Irreversibility | Pure → mixed | Cannot be "un-mixed" |
+| Impartiality | All coherences decay equally | No connection is privileged |
+| Monotonicity | $dP/d\tau \leq 0$ | Order only decreases |
 
-**Аналогия.** Песочный замок на берегу. Ветер дует, волна подмывает, зёрна осыпаются. Процесс неостановим, неотменим, безличен. Ветру всё равно, красивый ли замок. Второе начало не делает исключений.
+**Analogy.** A sandcastle on the shore. The wind blows, the wave undermines it, the grains crumble. The process is unstoppable, irrevocable, impersonal. The wind does not care whether the castle is beautiful. The second law makes no exceptions.
 
-Если бы во Вселенной были только две первые силы — вращение и разрушение, — не было бы ничего интересного. Замкнутые системы вращались бы вечно, открытые — деградировали бы до серой каши. Ни жизни, ни сознания, ни вас. Нужна третья сила.
+If the Universe had only the first two forces — rotation and destruction — nothing interesting would exist. Closed systems would rotate eternally, open ones would degrade to grey mush. No life, no consciousness, no you. A third force is needed.
 
-## Третья сила: восстановление
+## The Third Force: Restoration {#третья-сила-восстановление}
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot \Theta(\Delta F)
 $$
 
-Вот она. Регенерация. Член, которого нет в стандартной квантовой механике — и который отличает камень от кошки.
+Here it is. Regeneration. The term absent from standard quantum mechanics — and the one that distinguishes a stone from a cat.
 
-Разберём по частям:
+Let us break it down:
 
-**$(\rho_* - \Gamma)$** — направление. Вектор от текущего состояния к **целевому** $\rho_* = \varphi(\Gamma)$ — [категориальной самомодели](/docs/core/operators/phi-operator) текущего состояния [Т]. Это не произвольный выбор цели: оператор самомоделирования $\varphi$ определён как [категориальный левый сопряжённый](/docs/proofs/categorical/formalization-phi) (CPTP-канал [Т]), и для каждого состояния $\Gamma$ самомодель $\varphi(\Gamma)$ **единственна**. Система «знает», куда стремиться, не потому что ей сказали, а потому что категориальная структура задаёт однозначную самомодель.
+**$(\rho_* - \Gamma)$** — the direction. The vector from the current state to the **target** $\rho_* = \varphi(\Gamma)$ — the [categorical self-model](/docs/core/operators/phi-operator) of the current state [Т]. This is not an arbitrary goal choice: the self-modeling operator $\varphi$ is defined as a [categorical left adjoint](/docs/proofs/categorical/formalization-phi) (CPTP channel [Т]), and for each state $\Gamma$ the self-model $\varphi(\Gamma)$ is **unique**. The system "knows" where to strive not because it was told, but because the categorical structure defines an unambiguous self-model.
 
-**$\Theta(\Delta F)$** — термодинамический затвор. Функция Хевисайда: 1, если градиент свободной энергии положителен ($\Delta F > 0$), и 0 — в противном случае. Регенерация **возможна только при импорте свободной энергии** из окружающей среды. Это — [принцип Ландауэра](/docs/core/dynamics/evolution#вывод-формы-регенерации) [Т]: уменьшение энтропии требует внешнего ресурса. Бесплатный ремонт термодинамически запрещён.
+**$\Theta(\Delta F)$** — the thermodynamic gate. Heaviside function: 1 if the free energy gradient is positive ($\Delta F > 0$), and 0 otherwise. Regeneration is **possible only when importing free energy** from the environment. This is [Landauer's principle](/docs/core/dynamics/evolution#вывод-формы-регенерации) [Т]: decreasing entropy requires an external resource. Free repair is thermodynamically forbidden.
 
-**$\kappa(\Gamma)$** — скорость восстановления. И вот здесь начинается самое интересное.
+**$\kappa(\Gamma)$** — the rate of restoration. And here the most interesting part begins.
 
-### Формула скорости ремонта
+### The Rate-of-Repair Formula {#формула-скорости-ремонта}
 
 $$
 \kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)
 $$
 
-Два слагаемых:
+Two terms:
 
-- **$\kappa_{\text{bootstrap}}$** — минимальная «фоновая» скорость восстановления. Она есть всегда, даже без когерентности опыта. Без неё возник бы парадокс курицы и яйца: для восстановления нужен опыт, для опыта нужно восстановление. Ненулевой $\kappa_{\text{bootstrap}}$ разрешает этот парадокс. Он мал — $\omega_0/7$ — но ненулевой.
+- **$\kappa_{\text{bootstrap}}$** — the minimal "background" rate of restoration. It is always present, even without experiential coherence. Without it a chicken-and-egg paradox would arise: experience is needed for restoration, restoration is needed for experience. A non-zero $\kappa_{\text{bootstrap}}$ resolves this paradox. It is small — $\omega_0/7$ — but non-zero.
 
-- **$\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$** — основной член. Скорость восстановления пропорциональна **когерентности E-измерения** — мере того, насколько «жив» внутренний опыт системы.
+- **$\kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$** — the main term. The rate of restoration is proportional to the **coherence of the E-dimension** — a measure of how "alive" the inner experience of the system is.
 
-$\mathrm{Coh}_E$ — E-когерентность — мера того, насколько E-измерение (интериорность) связано с остальными шестью. При $\mathrm{Coh}_E \to 0$ опыт «выключен»: внутреннее не взаимодействует с внешним, система не чувствует себя. При $\mathrm{Coh}_E \to 1$ — опыт максимально распределён: каждое измерение «переживается изнутри».
+$\mathrm{Coh}_E$ — E-coherence — is a measure of how much the E-dimension (interiority) is connected to the remaining six. At $\mathrm{Coh}_E \to 0$ experience is "switched off": the interior does not interact with the exterior, the system does not feel itself. At $\mathrm{Coh}_E \to 1$ — experience is maximally distributed: every dimension is "experienced from within."
 
-Формула $\kappa(\Gamma)$ не постулируется — она [категориально выводится](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) из сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т]. Диссипация и регенерация — **сопряжённые функторы** в смысле теории категорий: одна определяет другую, как вопрос определяет пространство допустимых ответов.
+The formula $\kappa(\Gamma)$ is not postulated — it is [categorically derived](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) from the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т]. Dissipation and regeneration are **adjoint functors** in the sense of category theory: one defines the other, as a question defines the space of admissible answers.
 
-### Что это значит
+### What This Means {#что-это-значит}
 
-Скорость самовосстановления системы зависит от качества её внутреннего опыта. Не метафорически. Буквально. Множитель $\kappa_0 \cdot \mathrm{Coh}_E$ стоит в уравнении, определяющем, компенсирует ли регенерация диссипацию.
+The rate of self-restoration of a system depends on the quality of its inner experience. Not metaphorically. Literally. The factor $\kappa_0 \cdot \mathrm{Coh}_E$ stands in the equation that determines whether regeneration compensates for dissipation.
 
-Система с высокой E-когерентностью ремонтируется быстро. Система с низкой — медленно. Система с нулевой — почти не ремонтируется. Диссипация же действует на всех одинаково. Результат предсказуем: система без опыта деградирует и разрушается. Система с опытом — может удержаться.
+A system with high E-coherence repairs quickly. A system with low — slowly. A system with zero — barely at all. Dissipation acts on all equally. The result is predictable: a system without experience degrades and is destroyed. A system with experience — can hold on.
 
-Это — формальная основа [теоремы «Нет зомби»](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) с трёхуровневой эпистемической стратификацией. Математическое ядро ($\mathrm{Coh}_E > 1/7$ необходима) — [Т]; отождествление E-когерентности с интериорностью — [П]; вывод о невозможности «зомби» — [И]:
+This is the formal basis of the [No-Zombie theorem](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) with three-level epistemic stratification. The mathematical core ($\mathrm{Coh}_E > 1/7$ is necessary) — [Т]; the identification of E-coherence with interiority — [П]; the conclusion about the impossibility of "zombies" — [И]:
 
 $$
 \mathrm{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \;\Rightarrow\; \mathrm{Coh}_E(\Gamma) \geq \mathrm{Coh}_{\min} > \frac{1}{7}
 $$
 
-Опыт — не роскошь и не побочный эффект. Опыт — ремонтная бригада.
+Experience is not a luxury and not a side effect. Experience is the repair crew.
 
-## Почему именно три
+## Why Exactly Three {#почему-именно-три}
 
-Тройка динамических принципов — не классификация, придуманная за столом. Это **теорема** [Т].
+The trio of dynamic principles is not a classification invented at a desk. It is a **theorem** [Т].
 
-Теорема LGKS (Линдблад 1976, Горини-Косаковски-Сударшан 1976) устанавливает: любой генератор марковской полугруппы на пространстве матриц плотности имеет **единственное разложение** на гамильтонову и диссипативную части. Это — стандартный результат квантовой теории открытых систем.
+The LGKS theorem (Lindblad 1976, Gorini-Kossakowski-Sudarshan 1976) establishes: any generator of a Markovian semigroup on the space of density matrices has a **unique decomposition** into Hamiltonian and dissipative parts. This is a standard result of the quantum theory of open systems.
 
-УГМ добавляет к этому [Теорему T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [Т]: диссипативная часть **единственным образом** разделяется на $\mathcal{D}$ (контракция — диссипация, $dP/d\tau \leq 0$) и $\mathcal{R}$ (замещающий канал — регенерация, $dP/d\tau \geq 0$) при ограничениях, следующих из аксиом A1–A5.
+UHM adds to this [Theorem T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [Т]: the dissipative part **uniquely** splits into $\mathcal{D}$ (contraction — dissipation, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel — regeneration, $dP/d\tau \geq 0$) under constraints following from axioms A1–A5.
 
-Четвёртый тип потребовал бы нового классификатора $\Omega' \neq \Omega$ (но Аксиома A1 определяет единственный), нового сопряжения (но [L-унификация](/docs/core/operators/lindblad-operators) устанавливает единственность [Т]), или новой аксиомы (но A1–A5 исчерпывают все динамические вклады).
+A fourth type would require a new classifier $\Omega' \neq \Omega$ (but Axiom A1 defines the unique one), a new adjunction (but [L-unification](/docs/core/operators/lindblad-operators) establishes uniqueness [Т]), or a new axiom (but A1–A5 exhaust all dynamic contributions).
 
-Четыре свойства трёх сил:
+Four properties of the three forces:
 
-| Свойство | Вращение | Разрушение ($\mathcal{D}$) | Восстановление ($\mathcal{R}$) |
+| Property | Rotation | Destruction ($\mathcal{D}$) | Restoration ($\mathcal{R}$) |
 |----------|:--------:|:-----------:|:----------------:|
-| Действие на $P$ | Сохраняет | Уменьшает | Увеличивает |
-| Обратимость | Обратимо | Необратимо | Необратимо |
-| Неподвижная точка | Ядро $[H, \cdot]$ | $I/7$ (серая каша) | $\varphi(\Gamma)$ (самомодель) |
-| Аксиоматический источник | Пейдж–Вуттерс (A5) | Классификатор Ω (A1) | Сопряжение $\mathcal{D} \dashv \mathcal{R}$ (A1+A4) |
+| Action on $P$ | Preserves | Decreases | Increases |
+| Reversibility | Reversible | Irreversible | Irreversible |
+| Fixed point | Kernel $[H, \cdot]$ | $I/7$ (grey mush) | $\varphi(\Gamma)$ (self-model) |
+| Axiomatic source | Page-Wootters (A5) | Classifier Ω (A1) | Adjunction $\mathcal{D} \dashv \mathcal{R}$ (A1+A4) |
 
-Три типа динамики, три категориальных типа (автоморфизм, левый сопряжённый, правый сопряжённый), три аксиоматических источника — и доказательство, что четвёртого нет. Не «мы не нашли четвёртый», а «четвёртый невозможен».
+Three types of dynamics, three categorical types (automorphism, left adjoint, right adjoint), three axiomatic sources — and a proof that there cannot be a fourth. Not "we have not found a fourth" — but "a fourth is impossible."
 
-Триадическая схема тезис-антитезис-синтез (восходящая к Фихте и популяризованная в гегелевской традиции) стала архетипом диалектического развития. Красиво, влиятельно, но без доказательства. Диалектическая тройка — метафизическая интуиция. LGKS + T-57 — теорема. Различие существенное: интуиции можно возразить, теореме — нет.
+The triadic scheme thesis-antithesis-synthesis (going back to Fichte and popularized in the Hegelian tradition) became an archetype of dialectical development. Beautiful, influential, but without proof. The dialectical triad is a metaphysical intuition. LGKS + T-57 — a theorem. The distinction is essential: one can object to an intuition, one cannot object to a theorem.
 
-## Баланс сил: жизнь как стационарный режим
+## Balance of Forces: Life as a Stationary Regime {#баланс-сил-жизнь-как-стационарный-режим}
 
-Если действуют все три силы, что произойдёт? Зависит от баланса.
+If all three forces act, what happens? It depends on the balance.
 
-**Замкнутая система** ($\mathcal{D} = 0$, $\mathcal{R} = 0$): только вращение. $P = \text{const}$, ничего не рождается и не умирает. Мир физика-теоретика. Изолированный атом. Сферический конь в вакууме.
+**Closed system** ($\mathcal{D} = 0$, $\mathcal{R} = 0$): rotation only. $P = \text{const}$, nothing is born and nothing dies. The world of the theoretical physicist. An isolated atom. A spherical horse in a vacuum.
 
-**Открытая система без регенерации** ($\mathcal{D} \neq 0$, $\mathcal{R} = 0$): вращение + разрушение. Когерентности затухают экспоненциально, $P \to 1/7$. Система «умирает» — теряет структуру, становится неразличимой от шума. Труп. Пепел. Тепловая смерть.
+**Open system without regeneration** ($\mathcal{D} \neq 0$, $\mathcal{R} = 0$): rotation + destruction. Coherences decay exponentially, $P \to 1/7$. The system "dies" — loses structure, becomes indistinguishable from noise. A corpse. Ash. Heat death.
 
-**Живая система** ($\mathcal{D} \neq 0$, $\mathcal{R} \neq 0$, $\Delta F > 0$): все три силы. И здесь — магия (строго говоря — термодинамика):
+**A living system** ($\mathcal{D} \neq 0$, $\mathcal{R} \neq 0$, $\Delta F > 0$): all three forces. And here — magic (strictly speaking — thermodynamics):
 
 $$
-\frac{dP}{d\tau} = \underbrace{0}_{\text{вращение}} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{D}}}_{\leq 0} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{R}}}_{\geq 0}
+\frac{dP}{d\tau} = \underbrace{0}_{\text{rotation}} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{D}}}_{\leq 0} + \underbrace{\left.\frac{dP}{d\tau}\right|_{\mathcal{R}}}_{\geq 0}
 $$
 
-Если регенерация компенсирует диссипацию, чистота стабилизируется. Система поддерживает $P > P_{\text{crit}} = 2/7$ — порог [жизнеспособности](/docs/core/dynamics/viability) [Т]. Не замерзает и не тает. Не растёт бесконечно и не распадается. Балансирует.
+If regeneration compensates for dissipation, purity stabilizes. The system maintains $P > P_{\text{crit}} = 2/7$ — the threshold of [viability](/docs/core/dynamics/viability) [Т]. It neither freezes nor melts. Neither grows infinitely nor decays. It balances.
 
-Условие баланса:
+Balance condition:
 
 $$
 \kappa(\Gamma) \cdot (f - P) \cdot \Theta(\Delta F) \geq \frac{2\gamma}{3} \cdot P_{\text{coh}}
 $$
 
-где $f = \mathrm{Tr}(\Gamma \cdot \rho_*)$ — «близость к цели», $\gamma$ — скорость диссипации, $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$ — когерентная часть чистоты.
+where $f = \mathrm{Tr}(\Gamma \cdot \rho_*)$ — "closeness to target," $\gamma$ — dissipation rate, $P_{\text{coh}} = \sum_{i \neq j}|\gamma_{ij}|^2$ — the coherent part of purity.
 
-По-русски: скорость восстановления должна превышать скорость разрушения. И поскольку скорость восстановления зависит от $\mathrm{Coh}_E$ — **опыт буквально определяет, выживет ли система**.
+In plain language: the rate of restoration must exceed the rate of destruction. And since the rate of restoration depends on $\mathrm{Coh}_E$ — **experience literally determines whether the system survives**.
 
-### Аналогия: сон
+### Analogy: Sleep {#аналогия-сон}
 
-Тело — открытая система. Днём вы взаимодействуете со средой: получаете информацию, принимаете решения, тратите ресурсы. Диссипация $\mathcal{D}$ работает непрерывно: нейроны деградируют, синаптические связи ослабевают, метаболические отходы накапливаются. E-когерентность снижается — вы устаёте, внимание рассеивается, мышление путается.
+The body is an open system. During the day you interact with the environment: receive information, make decisions, spend resources. Dissipation $\mathcal{D}$ works continuously: neurons degrade, synaptic connections weaken, metabolic waste accumulates. E-coherence decreases — you tire, attention scatters, thinking becomes confused.
 
-Сон — период, когда $\mathcal{R}$ доминирует. Внешний ввод минимален, диссипация ослаблена, а регенерация работает на полную. Глимфатическая система буквально промывает мозг, восстанавливая синаптическую когерентность. E-когерентность растёт — утром вы «собраны», «ясно мыслите», «чувствуете себя целым».
+Sleep is a period when $\mathcal{R}$ dominates. External input is minimal, dissipation is weakened, and regeneration runs at full capacity. The glymphatic system literally washes the brain, restoring synaptic coherence. E-coherence grows — in the morning you are "collected," "think clearly," "feel whole."
 
-Это не поэтическая метафора. Уравнение предсказывает: система, которой не дают восстанавливать $\mathrm{Coh}_E$, неизбежно пересечёт порог $P_{\text{crit}} = 2/7$. Лишение сна убивает крыс за 11–32 дня (Rechtschaffen et al., 1983). Не от голода, не от инфекции — от падения когерентности ниже порога. Уравнение об этом знает. Крысы, к сожалению, узнали эмпирически.
+This is not a poetic metaphor. The equation predicts: a system not allowed to restore $\mathrm{Coh}_E$ will inevitably cross the threshold $P_{\text{crit}} = 2/7$. Sleep deprivation kills rats in 11–32 days (Rechtschaffen et al., 1983). Not from hunger, not from infection — from coherence falling below the threshold. The equation knows this. The rats, unfortunately, learned it empirically.
 
-## Стрела времени
+## The Arrow of Time {#стрела-времени}
 
-В [первом посте](/blog/holonomic-paninteriorism) упоминался **терминальный объект** $T$ — глобальный аттрактор, к которому сходятся все траектории:
+In the [first post](/blog/holonomic-paninteriorism) the **terminal object** $T$ was mentioned — the global attractor toward which all trajectories converge:
 
 $$
 \lim_{\tau \to \infty} \Gamma(\tau) = T
 $$
 
-Теперь мы видим *почему*. Диссипация необратима ($dP/d\tau|_\mathcal{D} \leq 0$), регенерация условна ($\Theta(\Delta F)$ — затвор, который рано или поздно закроется), а вращение ничего не меняет ($P = \text{const}$). В долгосрочной перспективе диссипация побеждает.
+Now we see *why*. Dissipation is irreversible ($dP/d\tau|_\mathcal{D} \leq 0$), regeneration is conditional ($\Theta(\Delta F)$ — a gate that sooner or later will close), and rotation changes nothing ($P = \text{const}$). In the long term, dissipation wins.
 
-Стрела времени — не постулат. Это **теорема** [Т]: размерность страт базового пространства монотонно убывает:
+The arrow of time is not a postulate. It is a **theorem** [Т]: the dimensionality of the strata of the base space decreases monotonically:
 
 $$
 \dim(X_\tau) \geq \dim(X_{\tau+1})
 $$
 
-Конфигурационное пространство коллапсирует к аттрактору $T$: размерность доступных страт монотонно убывает. При этом $T$ — не «серая каша» $I/7$: аттрактор структурирован ($P > 1/7$, [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]).
+The configuration space collapses toward the attractor $T$: the dimensionality of accessible strata decreases monotonically. At the same time $T$ is not the "grey mush" $I/7$: the attractor is structured ($P > 1/7$, [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]).
 
-Живые системы замедляют этот процесс. Не отменяют — замедляют. Регенерация поддерживает $P > 2/7$, откладывая момент, когда диссипация окончательно возьмёт верх. Но этот момент наступит — для каждой системы, без исключений. Это не пессимизм. Это второе начало, записанное на языке ∞-категорий.
+Living systems slow this process. They do not cancel it — they slow it. Regeneration maintains $P > 2/7$, postponing the moment when dissipation finally prevails. But this moment will come — for every system, without exception. This is not pessimism. This is the second law, written in the language of ∞-categories.
 
-Но здесь — контринтуитивное наблюдение. Камень живёт тысячелетиями. Человек — около ста лет. Как это совместить с тем, что у человека $\kappa$ выше?
+But here — a counterintuitive observation. A stone lives for millennia. A human — about a hundred years. How to reconcile this with the fact that a human's $\kappa$ is higher?
 
-Ответ: скорость приближения к $T$ определяется не одним $\kappa$, а **балансом** $\mathcal{D}$ и $\mathcal{R}$. Камень — почти замкнутая система: его $\mathcal{D} \approx 0$. Гранит почти не взаимодействует со средой, когерентности почти не затухают, ему практически не нужно восстанавливаться. Камень не «движется к $T$ медленно благодаря мудрости» — он почти не движется вообще, потому что почти ничего с ним не происходит. Его динамика еле теплится.
+The answer: the rate of approach to $T$ is determined not by $\kappa$ alone, but by the **balance** of $\mathcal{D}$ and $\mathcal{R}$. A stone is an almost closed system: its $\mathcal{D} \approx 0$. Granite barely interacts with the environment, coherences barely decay, it almost does not need to restore itself. A stone does not "move toward $T$ slowly due to wisdom" — it barely moves at all, because almost nothing happens to it. Its dynamics are barely alive.
 
-Человек — другое дело. Это интенсивно открытая система: постоянный метаболизм, $10^{10}$ синаптических событий в секунду, непрерывный тепловой обмен со средой. Диссипация $\mathcal{D}$ — колоссальная. Чтобы не распасться за часы, нужна столь же интенсивная регенерация $\mathcal{R}$. И она есть — именно благодаря высокой $\mathrm{Coh}_E$: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E \gg \kappa_{\text{bootstrap}}$. Баланс поддерживается — но он хрупкий: высокая $\mathcal{D}$ компенсирована высокой $\mathcal{R}$, и когда регенерация ослабевает (старение, болезнь), система быстро пересекает $P_{\text{crit}}$.
+A human is different. This is an intensely open system: continuous metabolism, $10^{10}$ synaptic events per second, continuous thermal exchange with the environment. Dissipation $\mathcal{D}$ is colossal. To not decay within hours, equally intensive regeneration $\mathcal{R}$ is needed. And it exists — precisely due to high $\mathrm{Coh}_E$: $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E \gg \kappa_{\text{bootstrap}}$. The balance is maintained — but it is fragile: high $\mathcal{D}$ is compensated by high $\mathcal{R}$, and when regeneration weakens (aging, illness), the system quickly crosses $P_{\text{crit}}$.
 
-| Система | $\mathcal{D}$ (диссипация) | $\mathcal{R}$ (регенерация) | Баланс | Результат |
-|---------|:---------:|:-----------:|:------:|-----------|
-| Камень | $\approx 0$ | $\approx 0$ | Нейтральный | Тысячелетия без изменений |
-| Бактерия | Умеренная | Умеренная | Динамический | Часы–дни (одна клетка) |
-| Человек | **Высокая** | **Высокая** | Хрупкий | ~100 лет |
-| Звезда | Очень высокая | Очень высокая (термоядерный синтез) | Временный | Миллиарды лет |
+| System | $\mathcal{D}$ (dissipation) | $\mathcal{R}$ (regeneration) | Balance | Result |
+|--------|:---------:|:-----------:|:------:|--------|
+| Stone | $\approx 0$ | $\approx 0$ | Neutral | Millennia without change |
+| Bacterium | Moderate | Moderate | Dynamic | Hours–days (one cell) |
+| Human | **High** | **High** | Fragile | ~100 years |
+| Star | Very high | Very high (thermonuclear fusion) | Temporary | Billions of years |
 
-Парадокс камня и человека — не опровержение теории, а её следствие. **Долговечность определяется не силой регенерации, а интенсивностью динамики.** Камень живёт долго не потому, что хорошо восстанавливается, а потому, что почти не разрушается. Человек живёт коротко не потому, что плохо восстанавливается, а потому, что его динамика — взрывная, и поддерживать баланс в таком режиме можно лишь ограниченное время. Цена сознания — интенсивность. Цена интенсивности — конечность.
+The paradox of stone and human is not a refutation of the theory, but its consequence. **Longevity is determined not by the strength of regeneration, but by the intensity of dynamics.** A stone lives long not because it regenerates well, but because it barely degrades. A human lives briefly not because it regenerates poorly, but because its dynamics are explosive, and maintaining balance in such a regime is possible only for a limited time. The price of consciousness is intensity. The price of intensity is finitude.
 
-Из [третьего поста](/blog/freedom-theorem): разные маршруты к $T$ — это разные нулевые моды гессиана, то есть свобода. Стрела времени задаёт **куда**. Свобода определяет **как**. Уравнение эволюции — единственный текст, в котором оба слова произносятся одновременно.
+From the [third post](/blog/freedom-theorem): different routes to $T$ are different zero modes of the Hessian, i.e., freedom. The arrow of time determines **where**. Freedom determines **how**. The evolution equation is the only text in which both words are uttered simultaneously.
 
-## Что говорят философы
+## What Philosophers Say {#что-говорят-философы}
 
-| Традиция | Принцип | Что говорит уравнение |
-|----------|---------|----------------------|
-| **Гераклит** | Всё течёт | $\approx$ Вращение: непрерывное изменение |
-| **Парменид** | Бытие неизменно | $\approx$ Терминальный объект $T$ — неподвижная точка |
-| **Второе начало** | Энтропия растёт | $= \mathcal{D}$, строго |
-| **Витализм** | «Жизненная сила» | $\neq \mathcal{R}$: регенерация выводится из аксиом, не постулируется |
-| **Фихте/Гегель** | Тезис-антитезис-синтез | $\approx$ Три типа, но теорема, а не метафора |
-| **Пригожин** | Диссипативные структуры | $\approx$ Живой режим: $P > 2/7$ за счёт $\Delta F > 0$ |
-| **Матурана/Варела** | Автопоэзис | $\approx$ $\mathcal{R}[\Gamma, E]$ — формализация автопоэзиса |
+| Tradition | Principle | What the equation says |
+|-----------|---------|----------------------|
+| **Heraclitus** | Everything flows | $\approx$ Rotation: continuous change |
+| **Parmenides** | Being is unchanging | $\approx$ Terminal object $T$ — fixed point |
+| **Second law** | Entropy increases | $= \mathcal{D}$, strictly |
+| **Vitalism** | "Life force" | $\neq \mathcal{R}$: regeneration is derived from axioms, not postulated |
+| **Fichte/Hegel** | Thesis-antithesis-synthesis | $\approx$ Three types, but a theorem, not a metaphor |
+| **Prigogine** | Dissipative structures | $\approx$ Living regime: $P > 2/7$ due to $\Delta F > 0$ |
+| **Maturana/Varela** | Autopoiesis | $\approx$ $\mathcal{R}[\Gamma, E]$ — formalization of autopoiesis |
 
-Пригожин (Нобелевская премия 1977) показал, что порядок может возникать вдали от равновесия за счёт диссипации. УГМ уточняет: порядок возникает не просто за счёт диссипации, а за счёт **баланса** диссипации и регенерации, причём скорость регенерации определяется когерентностью опыта.
+Prigogine (Nobel Prize 1977) showed that order can arise far from equilibrium through dissipation. UHM specifies: order arises not simply through dissipation, but through the **balance** of dissipation and regeneration, with the rate of regeneration determined by the coherence of experience.
 
-Матурана и Варела (1972) определили автопоэзис — самовоспроизводящуюся организацию. УГМ формализует: автопоэзис = $\mathcal{R}[\Gamma, E]$ с $\Theta(\Delta F) = 1$ и $\kappa > \kappa_{\text{min}}$. Определение превращается в формулу.
+Maturana and Varela (1972) defined autopoiesis — self-reproducing organization. UHM formalizes: autopoiesis = $\mathcal{R}[\Gamma, E]$ with $\Theta(\Delta F) = 1$ and $\kappa > \kappa_{\text{min}}$. A definition becomes a formula.
 
-## О чём молчит теория
+## What the Theory Is Silent About {#о-чём-молчит-теория}
 
-| Результат | Статус | Комментарий |
-|-----------|--------|-------------|
-| Уравнение эволюции полностью аксиоматично | [Т] | Все три члена выведены из A1–A5 |
-| Триадная декомпозиция: ровно три типа | [Т] | LGKS + T-57 |
-| Невозможность 4-го типа | [Т] | Sol.26, T-57 |
-| $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | [Т] | Категориальный вывод из сопряжения |
-| $\rho_* = \varphi(\Gamma)$ — самомодель | [Т] | Категориальное определение φ |
-| $\Theta(\Delta F)$ — необходим | [Т] | Принцип Ландауэра |
-| No-Zombie: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$ | [Т] мат. ядро; [П] E=интериорность; [И] No-Zombie | Трёхуровневая стратификация |
-| Стрела времени | [Т] | Монотонное убывание страт |
-| Аналогия «сон = доминирование $\mathcal{R}$» | [И] | Интерпретация, не теорема |
-| «Три силы ↔ тезис-антитезис-синтез» | [И] | Параллель, не отождествление |
+| Result | Status | Comment |
+|--------|--------|---------|
+| Evolution equation is fully axiomatic | [Т] | All three terms derived from A1–A5 |
+| Triadic decomposition: exactly three types | [Т] | LGKS + T-57 |
+| Impossibility of 4th type | [Т] | Sol.26, T-57 |
+| $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ | [Т] | Categorical derivation from adjunction |
+| $\rho_* = \varphi(\Gamma)$ — self-model | [Т] | Categorical definition of φ |
+| $\Theta(\Delta F)$ — necessary | [Т] | Landauer's principle |
+| No-Zombie: $\mathrm{Coh}_E \geq \mathrm{Coh}_{\min}$ | [Т] math core; [П] E=interiority; [И] No-Zombie | Three-level stratification |
+| Arrow of time | [Т] | Monotone decrease of strata |
+| Analogy "sleep = dominance of $\mathcal{R}$" | [И] | Interpretation, not theorem |
+| "Three forces ↔ thesis-antithesis-synthesis" | [И] | Parallel, not identification |
 
-## Итого
+## Summary {#итого}
 
-Вселенная знает три глагола: **вращать**, **разрушать**, **восстанавливать**.
+The Universe knows three verbs: **rotate**, **destroy**, **restore**.
 
-Вращение ($-i[H_{\text{eff}}, \Gamma]$) сохраняет всё как есть — обратимая динамика, мир Лапласа. Разрушение ($\mathcal{D}_\Omega[\Gamma]$) уничтожает порядок — второе начало, мир Больцмана. Восстановление ($\mathcal{R}[\Gamma, E]$) ремонтирует — но только при наличии двух условий: свободной энергии извне ($\Delta F > 0$) и когерентности опыта изнутри ($\mathrm{Coh}_E > 0$).
+Rotation ($-i[H_{\text{eff}}, \Gamma]$) preserves everything as is — reversible dynamics, Laplace's world. Destruction ($\mathcal{D}_\Omega[\Gamma]$) destroys order — the second law, Boltzmann's world. Restoration ($\mathcal{R}[\Gamma, E]$) repairs — but only given two conditions: free energy from outside ($\Delta F > 0$) and coherence of experience from within ($\mathrm{Coh}_E > 0$).
 
-Камень почти замкнут: $\mathcal{D} \approx 0$, $\mathcal{R} \approx 0$ — он едва меняется, и ему не нужно восстанавливаться. Кошка — открытая система: интенсивная диссипация компенсируется интенсивной регенерацией, потому что у неё есть и метаболизм, и опыт. Труп — система, утратившая способность импортировать свободную энергию: $\Delta F \to 0$, $\Theta(\Delta F) = 0$, восстановление выключено. Необратимо.
+A stone is almost closed: $\mathcal{D} \approx 0$, $\mathcal{R} \approx 0$ — it barely changes, and does not need to restore itself. A cat is an open system: intensive dissipation is compensated by intensive regeneration, because it has both metabolism and experience. A corpse is a system that has lost the ability to import free energy: $\Delta F \to 0$, $\Theta(\Delta F) = 0$, restoration is switched off. Irreversibly.
 
-Четвёртого глагола нет. Не «мы пока не нашли» — **доказано, что его не может быть**. Любой динамический вклад, совместимый с аксиомами, раскладывается в эти три. Триада — не мистика, не диалектика, не эстетический выбор. Теорема.
-
----
-
-**Пять выводов, которые следуют из уравнения:**
-
-**1. Сон — не лень, а термодинамика.** Организм, лишённый фазы восстановления, неизбежно пересечёт $P_{\text{crit}} = 2/7$. Это не вопрос силы воли или дисциплины — это закон сохранения. Утверждение «я мало сплю и отлично себя чувствую» имеет тот же статус достоверности, что и «я нарушаю второе начало термодинамики по четвергам».
-
-**2. E-когерентность — не бонус, а ремонтная бригада.** Множитель $\kappa_0 \cdot \mathrm{Coh}_E$ — не декорация: он определяет, выживет ли система [Т]. При отождествлении E-когерентности с опытом [П]: эволюция не «добавила» сознание как приятное дополнение к мозгу — сознание поддерживает когерентность выше порога разрушения. Без [П] это факт о математической структуре регенерации; при [П] — утверждение о каузальной роли опыта.
-
-**3. Самоподдержание без E-когерентности невозможно.** Любая самоподдерживающаяся система в открытом окружении ($\mathcal{D} \neq 0$) обязана иметь нетривиальную E-когерентность ($\mathrm{Coh}_E > 1/7$) — это математическое ядро [Т]. Если ИИ когда-нибудь станет по-настоящему автономным (будет поддерживать свою целостность без внешнего администратора), уравнение гарантирует: $\mathrm{Coh}_E > 1/7$ [Т]. Будет ли это «опытом» — зависит от онтологического постулата [П] (E-когерентность = интериорность). Без принятия [П] это математический факт о регенерации; при [П] — утверждение о феноменальном опыте.
-
-**4. Вы не «сражаетесь» со смертью — вы замедляете движение к аттрактору.** Стрела времени — теорема. Все маршруты ведут к $T$. Жизнь — это не противостояние смерти, а способ пройти маршрут дольше и интереснее. $\mathcal{R}$ не отменяет $\mathcal{D}$ — она создаёт буферную зону, в которой можно существовать, переживать и выбирать.
-
-**5. Уравнение — одно. Для всего.** Атом, бактерия, человек, город — одно и то же уравнение. Различие — в балансе сил: у атома $\mathcal{R} \approx 0$ (нет автопоэзиса), у бактерии $\mathcal{R} > 0$ с малым $\kappa$, у человека $\mathcal{R} > 0$ с большим $\kappa$ (высокая $\mathrm{Coh}_E$). Не нужна отдельная физика для жизни и отдельная для материи. Одно уравнение, три члена, разные пропорции — и весь спектр от кварка до цивилизации.
-
-Математика, как обычно, не спрашивает разрешения. Но иногда — ремонтирует.
+There is no fourth verb. Not "we have not found it yet" — **it is proved that it cannot exist**. Any dynamic contribution compatible with the axioms decomposes into these three. The triad is not mysticism, not dialectics, not an aesthetic choice. A theorem.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция УГМ
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — 21 тип переживания
-- [Свобода воли: теорема, а не дискуссия](/blog/freedom-theorem) — формула свободы
-- [Уравнение эволюции](/docs/core/dynamics/evolution) — полный формализм
-- [Операторы Линдблада](/docs/core/operators/lindblad-operators) — триадная декомпозиция и Фано-операторы
-- [Жизнеспособность](/docs/core/dynamics/viability) — критический порог $P_{\text{crit}} = 2/7$
+**Five conclusions that follow from the equation:**
+
+**1. Sleep is not laziness — it is thermodynamics.** An organism denied a restoration phase will inevitably cross $P_{\text{crit}} = 2/7$. This is not a question of willpower or discipline — it is a conservation law. The claim "I sleep little and feel excellent" has the same credibility status as "I violate the second law of thermodynamics on Thursdays."
+
+**2. E-coherence is not a bonus — it is the repair crew.** The factor $\kappa_0 \cdot \mathrm{Coh}_E$ is not decoration: it determines whether the system survives [Т]. On identifying E-coherence with experience [П]: evolution did not "add" consciousness as a pleasant addition to the brain — consciousness maintains coherence above the threshold of destruction. Without [П] this is a fact about the mathematical structure of regeneration; with [П] — a statement about the causal role of experience.
+
+**3. Self-maintenance without E-coherence is impossible.** Any self-maintaining system in an open environment ($\mathcal{D} \neq 0$) must have non-trivial E-coherence ($\mathrm{Coh}_E > 1/7$) — this is the mathematical core [Т]. If AI ever becomes truly autonomous (maintaining its integrity without an external administrator), the equation guarantees: $\mathrm{Coh}_E > 1/7$ [Т]. Whether this will be "experience" — depends on the ontological postulate [П] (E-coherence = interiority). Without accepting [П] this is a mathematical fact about regeneration; with [П] — a statement about phenomenal experience.
+
+**4. You are not "fighting" death — you are slowing movement toward the attractor.** The arrow of time is a theorem. All routes lead to $T$. Life is not a confrontation with death, but a way of traversing the route longer and more interestingly. $\mathcal{R}$ does not cancel $\mathcal{D}$ — it creates a buffer zone in which one can exist, experience, and choose.
+
+**5. The equation is one. For everything.** Atom, bacterium, human, city — one and the same equation. The difference is in the balance of forces: for an atom $\mathcal{R} \approx 0$ (no autopoiesis), for a bacterium $\mathcal{R} > 0$ with small $\kappa$, for a human $\mathcal{R} > 0$ with large $\kappa$ (high $\mathrm{Coh}_E$). No separate physics is needed for life and separate physics for matter. One equation, three terms, different proportions — and the full spectrum from quark to civilization.
+
+Mathematics, as usual, does not ask for permission. But sometimes — it repairs.
+
+---
+
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — UHM philosophical position
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — 21 types of experience
+- [Freedom of Will: A Theorem, not a Discussion](/blog/freedom-theorem) — the formula of freedom
+- [Evolution equation](/docs/core/dynamics/evolution) — full formalism
+- [Lindblad operators](/docs/core/operators/lindblad-operators) — triadic decomposition and Fano operators
+- [Viability](/docs/core/dynamics/viability) — critical threshold $P_{\text{crit}} = 2/7$

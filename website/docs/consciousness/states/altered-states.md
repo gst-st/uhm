@@ -55,7 +55,7 @@ In 1969, American psychologist Charles Tart published *"Altered States of Consci
 
 ### 1.2 From Tart to UHM
 
-The UHM (Unified Holonomic Model) formalism takes up and refines Tart's intuition:
+The UHM (Unitary Holonomic Monism) formalism takes up and refines Tart's intuition:
 
 | Tart concept | UHM formalism |
 |--------------|---------------|

@@ -1,600 +1,600 @@
 ---
 slug: /proofs/dynamics/fep-derivation
 sidebar_position: 4
-title: Вывод FEP из УГМ
-description: Строгое доказательство вариационной характеризации φ и вывод принципа свободной энергии как классического предела
+title: Derivation of FEP from UHM
+description: Rigorous proof of the variational characterization of φ and derivation of the free energy principle as the classical limit
 ---
 
-# Вывод Принципа Свободной Энергии из УГМ
+# Derivation of the Free Energy Principle from UHM
 
-:::info Статус документа
-Данный документ содержит доказательства связи между категориальным определением φ и вариационным принципом, а также вывод FEP Фристона как классического предела УГМ. Теорема 3.1 — **[Т]** (примитивность линейной части $\mathcal{L}_0$ [доказана](/docs/core/operators/lindblad-operators#примитивность-ℒω)). Теорема 4.1 — **[Т]** (классический предел). Теорема 4.2 — **[Т]** (отождествление генеративной модели = определение самореференции). Теорема 4.3 — **[Т]** (полная редукция $S_{spec} + D_{KL}$ к $F_{FEP}$). Теорема 5.1 — **[Т]**.
+:::info Document status
+This document contains proofs of the connection between the categorical definition of φ and the variational principle, as well as the derivation of Friston's FEP as the classical limit of UHM. Theorem 3.1 — **[Т]** (primitivity of the linear part $\mathcal{L}_0$ [proven](/docs/core/operators/lindblad-operators#примитивность-ℒω)). Theorem 4.1 — **[Т]** (classical limit). Theorem 4.2 — **[Т]** (identification of generative model = definition of self-reference). Theorem 4.3 — **[Т]** (complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$). Theorem 5.1 — **[Т]**.
 :::
 
-## 1. Постановка проблемы
+## 1. Problem Statement
 
-### 1.1 Два определения φ
+### 1.1 Two definitions of φ
 
-В УГМ оператор самомоделирования φ имеет два представления:
+In UHM, the self-modeling operator φ has two representations:
 
-**Каноническое определение (категориальное):**
+**Canonical definition (categorical):**
 
 $$
 \varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})
 $$
 
-φ определяется как **левый сопряжённый** к каноническому включению подобъектов.
+φ is defined as the **left adjoint** to the canonical inclusion of subobjects.
 
-**Вариационная характеризация:**
+**Variational characterization:**
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-### 1.2 Вопросы, на которые отвечает этот документ
+### 1.2 Questions this document answers
 
-| Вопрос | Статус |
+| Question | Status |
 |--------|--------|
-| Доказательство эквивалентности двух определений | **Теорема 3.1 [Т]** (повышена с [С]) |
-| Классический предел вариационного принципа | **Теорема 4.1 [Т]** |
-| Связь с FEP Фристона | **Теорема 4.2 [Т]** (замкнуто: генеративная модель = определение самореференции) |
-| Полная редукция $S_{spec} + D_{KL}$ к $F_{FEP}$ | **Теорема 4.3 [Т]** |
-| Обоснование $S_{spec}$ vs $S_{vN}$ | **Теорема 5.1 [Т]** |
+| Proof of equivalence of the two definitions | **Theorem 3.1 [Т]** (upgraded from [С]) |
+| Classical limit of the variational principle | **Theorem 4.1 [Т]** |
+| Connection to Friston's FEP | **Theorem 4.2 [Т]** (closed: generative model = definition of self-reference) |
+| Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3 [Т]** |
+| Justification of $S_{spec}$ vs $S_{vN}$ | **Theorem 5.1 [Т]** |
 
 ---
 
-## 2. Категориальные основы
+## 2. Categorical Foundations {#2-категориальные-основы}
 
-### 2.1 Структура ∞-топоса
+### 2.1 ∞-topos structure
 
-Пусть $\mathcal{E} = \mathbf{Sh}_\infty(\mathcal{C})$ — ∞-топос пучков над категорией матриц плотности $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ с топологией Гротендика $J_{Bures}$.
+Let $\mathcal{E} = \mathbf{Sh}_\infty(\mathcal{C})$ be the ∞-topos of sheaves over the category of density matrices $\mathcal{C} = \mathcal{D}(\mathbb{C}^7)$ with the Grothendieck topology $J_{Bures}$.
 
-**Ключевые элементы:**
-- $\Omega$ — классификатор подобъектов
-- $\mathrm{Sub}(\Gamma) := \{S \hookrightarrow \Gamma : S \text{ — подобъект}\}$
-- Характеристический морфизм: $\chi_S: \Gamma \to \Omega$ для $S \in \mathrm{Sub}(\Gamma)$
+**Key elements:**
+- $\Omega$ — subobject classifier
+- $\mathrm{Sub}(\Gamma) := \{S \hookrightarrow \Gamma : S \text{ is a subobject}\}$
+- Characteristic morphism: $\chi_S: \Gamma \to \Omega$ for $S \in \mathrm{Sub}(\Gamma)$
 
-### 2.2 Категория подобъектов Sub(Γ)
+### 2.2 Subobject category Sub(Γ)
 
-**Определение 2.1.** $\mathrm{Sub}(\Gamma)$ — категория, объекты которой — мономорфизмы $S \hookrightarrow \Gamma$, морфизмы — коммутативные треугольники.
+**Definition 2.1.** $\mathrm{Sub}(\Gamma)$ is a category whose objects are monomorphisms $S \hookrightarrow \Gamma$, and morphisms are commutative triangles.
 
-В контексте УГМ, $\mathrm{Sub}(\Gamma)$ интерпретируется как категория **логически непротиворечивых** состояний — тех, которые удовлетворяют внутренней логике $\Omega$.
+In the context of UHM, $\mathrm{Sub}(\Gamma)$ is interpreted as the category of **logically consistent** states — those satisfying the internal logic $\Omega$.
 
-**Ключевое свойство:** В ∞-топосе $\mathrm{Sub}(\Gamma)$ является решёткой с наибольшим элементом $\Gamma$ и наименьшим $\emptyset$.
+**Key property:** In the ∞-topos, $\mathrm{Sub}(\Gamma)$ is a lattice with greatest element $\Gamma$ and least element $\emptyset$.
 
-### 2.3 Оператор φ как левый сопряжённый
+### 2.3 Operator φ as left adjoint
 
-**Определение 2.2 (Каноническое определение φ).**
+**Definition 2.2 (Canonical definition of φ).**
 
-$\varphi: \mathcal{E} \to \mathrm{Sub}(\Gamma)$ определяется как левый сопряжённый к каноническому включению $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$:
+$\varphi: \mathcal{E} \to \mathrm{Sub}(\Gamma)$ is defined as the left adjoint to the canonical inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$:
 
 $$
 \varphi \dashv i
 $$
 
-**Универсальное свойство:** Для всех $X \in \mathcal{E}$ и $S \in \mathrm{Sub}(\Gamma)$:
+**Universal property:** For all $X \in \mathcal{E}$ and $S \in \mathrm{Sub}(\Gamma)$:
 
 $$
 \mathrm{Hom}_{\mathrm{Sub}(\Gamma)}(\varphi(X), S) \cong \mathrm{Hom}_{\mathcal{E}}(X, i(S))
 $$
 
-**Интерпретация:** $\varphi(\Gamma)$ — наилучшее (минимальное) логически непротиворечивое приближение $\Gamma$.
+**Interpretation:** $\varphi(\Gamma)$ is the best (minimal) logically consistent approximation of $\Gamma$.
 
-### 2.4 φ как ко-рефлектор
+### 2.4 φ as co-reflector
 
-Из теории сопряжённых функторов следует:
+From the theory of adjoint functors it follows that:
 
-**Лемма 2.1.** $\varphi$ является ко-рефлектором:
+**Lemma 2.1.** $\varphi$ is a co-reflector:
 
 $$
 \varphi(\Gamma) = \mathrm{colim}_{S \in \mathrm{Sub}(\Gamma)} S
 $$
 
-где ко-предел берётся по диаграмме всех подобъектов $S \leq \Gamma$.
+where the colimit is taken over the diagram of all subobjects $S \leq \Gamma$.
 
 ---
 
-## 3. Теорема о вариационной характеризации
+## 3. Theorem on Variational Characterization {#3-теорема-о-вариационной-характеризации}
 
-### 3.1 Предварительные определения
+### 3.1 Preliminary definitions
 
-**Определение 3.1 (Спектральная энтропия).**
+**Definition 3.1 (Spectral entropy).**
 
-Для матрицы плотности $\rho$ с собственными значениями $\{\lambda_i\}$:
+For a density matrix $\rho$ with eigenvalues $\{\lambda_i\}$:
 
 $$
 S_{spec}(\rho) := -\sum_i \lambda_i \log \lambda_i = S_{vN}(\rho)
 $$
 
-**Замечание:** В данном контексте $S_{spec} = S_{vN}$ для матриц плотности. Различие возникает только для неэрмитовых операторов (см. [§5](#5-s_spec-vs-s_vn-обоснование-выбора)).
+**Remark:** In this context $S_{spec} = S_{vN}$ for density matrices. The distinction arises only for non-Hermitian operators (see [§5](#5-s_spec-vs-s_vn-обоснование-выбора)).
 
-**Определение 3.2 (Квантовая KL-дивергенция).**
+**Definition 3.2 (Quantum KL-divergence).**
 
-Для матриц плотности $\rho, \sigma$ с $\mathrm{supp}(\rho) \subseteq \mathrm{supp}(\sigma)$:
+For density matrices $\rho, \sigma$ with $\mathrm{supp}(\rho) \subseteq \mathrm{supp}(\sigma)$:
 
 $$
 D_{KL}(\rho \| \sigma) := \mathrm{Tr}(\rho(\log \rho - \log \sigma))
 $$
 
-**Определение 3.3 (Вариационный функционал).**
+**Definition 3.3 (Variational functional).**
 
 $$
 \mathcal{F}[\psi; \Gamma] := S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)
 $$
 
-где $\psi \in \mathcal{CPTP}$ — CPTP-канал (completely positive trace-preserving).
+where $\psi \in \mathcal{CPTP}$ is a CPTP channel (completely positive trace-preserving).
 
-### 3.2 Центральная теорема
+### 3.2 Central theorem {#32-центральная-теорема}
 
-:::tip Теорема 3.1 (Вариационная характеризация φ) [Т]
-Пусть $\varphi$ определён категориально как левый сопряжённый к включению $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$.
+:::tip Theorem 3.1 (Variational characterization of φ) [Т]
+Let $\varphi$ be defined categorically as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$.
 
-Тогда:
+Then:
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[\mathcal{F}[\psi; \Gamma]\right]
 $$
 
-где $\mu$ — инвариантная мера на пространстве состояний (единственность $\mu$ гарантирована [примитивностью линейной части $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]**).
+where $\mu$ is the invariant measure on the state space (uniqueness of $\mu$ is guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]**).
 :::
 
-### 3.3 Доказательство
+### 3.3 Proof
 
-**Шаг 1: Связь φ с логическим Лиувиллианом.**
+**Step 1: Connection of φ with the logical Liouvillian.**
 
-Из [теоремы о стационарном распределении](/docs/proofs/categorical/formalization-phi):
+From the [theorem on stationary distribution](/docs/proofs/categorical/formalization-phi):
 
 $$
 \varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]
 $$
 
-где $\mathcal{L}_\Omega$ — логический Лиувиллиан.
+where $\mathcal{L}_\Omega$ is the logical Liouvillian.
 
-**Шаг 2: Диссипативная структура $\mathcal{L}_\Omega$.**
+**Step 2: Dissipative structure of $\mathcal{L}_\Omega$.**
 
-$\mathcal{L}_\Omega$ имеет форму Линдблада:
+$\mathcal{L}_\Omega$ has Lindblad form:
 
 $$
 \mathcal{L}_\Omega[\Gamma] = -i[H_{eff}, \Gamma] + \sum_k \left(L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\}\right)
 $$
 
-где $L_k = \sqrt{\chi_{S_k}}$ — операторы, выведенные из атомов классификатора (см. [Аксиома Ω⁷ §атомы-классификатора](/docs/core/foundations/axiom-omega#атомы-классификатора)).
+where $L_k = \sqrt{\chi_{S_k}}$ are operators derived from the classifier atoms (see [Axiom Ω⁷ §classifier-atoms](/docs/core/foundations/axiom-omega#атомы-классификатора)).
 
-**Шаг 3: Связь диссипации с энтропией.**
+**Step 3: Connection of dissipation with entropy.**
 
-Для Линдблад-эволюции справедливо (Spohn, 1978):
+For Lindblad evolution the following holds (Spohn, 1978):
 
 $$
 \frac{dS_{vN}(\Gamma(t))}{dt} \geq 0
 $$
 
-с равенством в стационарном состоянии.
+with equality at the stationary state.
 
-**Шаг 4: Вариационная формулировка стационарности.**
+**Step 4: Variational formulation of stationarity.**
 
-Стационарное состояние $\Gamma_* = \varphi(\Gamma)$ характеризуется условием:
+The stationary state $\Gamma_* = \varphi(\Gamma)$ is characterized by the condition:
 
 $$
 \mathcal{L}_\Omega[\Gamma_*] = 0
 $$
 
-Это эквивалентно минимуму **производства энтропии**:
+This is equivalent to the minimum of **entropy production**:
 
 $$
 \Gamma_* = \arg\min_{\rho} \sigma[\rho; \Gamma]
 $$
 
-где $\sigma$ — функция производства энтропии.
+where $\sigma$ is the entropy production function.
 
-**Шаг 5: Явная форма функционала.**
+**Step 5: Explicit form of the functional.**
 
-Для CPTP-канала $\psi$ функция производства энтропии имеет вид (Lindblad, 1975):
+For a CPTP channel $\psi$, the entropy production function has the form (Lindblad, 1975):
 
 $$
 \sigma[\psi; \Gamma] = S_{vN}(\psi(\Gamma)) - S_{vN}(\Gamma) + D_{KL}(\psi(\Gamma) \| \Gamma_{ref})
 $$
 
-При выборе $\Gamma_{ref} = \Gamma$ (исходное состояние как референс):
+With the choice $\Gamma_{ref} = \Gamma$ (the initial state as reference):
 
-:::info Выбор Γ_ref = Γ
-Отождествление Γ_ref = Γ — **мотивированное определение** (самореферентная минимизация), а не вывод из L_Ω. Мотивация: автопоэзис (A1) требует, чтобы система минимизировала различие между собой и своей моделью, что отвечает Γ_ref = Γ. Альтернативные выборы (Γ_ref = I/7 или Γ_ref = ρ*) дают другие функционалы. Выбор Γ_ref = Γ — **единственный**, при котором минимум F совпадает с неподвижной точкой φ (теорема).
+:::info Choice of Γ_ref = Γ
+The identification Γ_ref = Γ is a **motivated definition** (self-referential minimization), not a derivation from L_Ω. Motivation: autopoiesis (A1) requires that the system minimize the difference between itself and its model, which corresponds to Γ_ref = Γ. Alternative choices (Γ_ref = I/7 or Γ_ref = ρ*) give different functionals. The choice Γ_ref = Γ is the **unique** one for which the minimum of F coincides with the fixed point of φ (theorem).
 :::
 
 $$
 \sigma[\psi; \Gamma] = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma) - S_{vN}(\Gamma)
 $$
 
-Поскольку $S_{vN}(\Gamma)$ не зависит от $\psi$:
+Since $S_{vN}(\Gamma)$ does not depend on $\psi$:
 
 $$
 \arg\min_\psi \sigma[\psi; \Gamma] = \arg\min_\psi \left[S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-**Шаг 6: Отождествление.**
+**Step 6: Identification.**
 
-Учитывая $S_{spec} = S_{vN}$ для матриц плотности (Теорема 5.1):
+Taking into account $S_{spec} = S_{vN}$ for density matrices (Theorem 5.1):
 
 $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathcal{F}[\psi; \Gamma] \quad \blacksquare
 $$
 
-### 3.4 Замечания к доказательству
+### 3.4 Remarks on the proof
 
-**Замечания:**
-1. Существование и единственность инвариантной меры $\mu$ гарантированы [примитивностью линейной части $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]** (Evans 1977, Spohn 1976)
-2. Равенство $S_{spec} = S_{vN}$ справедливо только для нормальных операторов (Теорема 5.1 **[Т]**)
+**Remarks:**
+1. Existence and uniqueness of the invariant measure $\mu$ are guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]** (Evans 1977, Spohn 1976)
+2. The equality $S_{spec} = S_{vN}$ holds only for normal operators (Theorem 5.1 **[Т]**)
 
-**Категориальная корректность:**
-- Шаги 1-2 следуют из L-унификации
-- Шаги 3-5 используют стандартную теорию открытых квантовых систем
-- Отождествление в Шаге 6 устанавливает искомую эквивалентность
+**Categorical correctness:**
+- Steps 1–2 follow from L-unification
+- Steps 3–5 use standard open quantum systems theory
+- The identification in Step 6 establishes the desired equivalence
 
 ---
 
-## 4. Классический предел: полный вывод FEP {#4-классический-предел-вывод-fep}
+## 4. Classical Limit: Complete Derivation of FEP {#4-классический-предел-вывод-fep}
 
-В этом разделе мы строго покажем, что FEP Фристона является **частным случаем** вариационного принципа УГМ, возникающим при переходе к классическому пределу. Вывод состоит из трёх этапов: (i) определение классического предела как $R \to 0$ (декогеренция), (ii) редукция квантового функционала к классическому, (iii) отождествление элементов УГМ с конструкциями Фристона. Завершает раздел анализ того, **что утрачивается** при классическом пределе.
+In this section we rigorously show that Friston's FEP is a **special case** of the UHM variational principle, arising in the transition to the classical limit. The derivation consists of three stages: (i) definition of the classical limit as $R \to 0$ (decoherence), (ii) reduction of the quantum functional to the classical one, (iii) identification of UHM elements with Friston's constructions. The section concludes with an analysis of **what is lost** in the classical limit.
 
-### 4.1 FEP Фристона (оригинальная формулировка)
+### 4.1 Friston's FEP (original formulation)
 
-Согласно Friston (2010), агент, взаимодействующий со средой, минимизирует **вариационную свободную энергию**:
-
-$$
-F = \int ds \, q(s) \ln \frac{q(s)}{p(s,o)} = \underbrace{\langle E(s,o) \rangle_q}_{\text{внутренняя энергия}} - \underbrace{H(q)}_{\text{энтропия}}
-$$
-
-где:
-- $s$ — скрытые (латентные) состояния мира
-- $o$ — наблюдения (сенсорные данные)
-- $q(s)$ — **распознающая плотность** (recognition density) — внутренняя модель агента
-- $p(s,o)$ — **генеративная плотность** (generative density) — совместная модель
-- $E(s,o) = -\ln p(s,o)$ — энергия генеративной модели
-- $H(q) = -\int q \ln q$ — энтропия Шеннона распознающей плотности
-
-**Ключевое неравенство (evidence lower bound, ELBO):**
+According to Friston (2010), an agent interacting with the environment minimizes **variational free energy**:
 
 $$
-F \geq -\ln p(o) \quad \text{(F ограничивает сюрприз снизу)}
+F = \int ds \, q(s) \ln \frac{q(s)}{p(s,o)} = \underbrace{\langle E(s,o) \rangle_q}_{\text{internal energy}} - \underbrace{H(q)}_{\text{entropy}}
 $$
 
-Доказательство: $F = D_{KL}(q(s) \| p(s|o)) - \ln p(o)$, а $D_{KL} \geq 0$.
+where:
+- $s$ — hidden (latent) states of the world
+- $o$ — observations (sensory data)
+- $q(s)$ — **recognition density** — the agent's internal model
+- $p(s,o)$ — **generative density** — joint model
+- $E(s,o) = -\ln p(s,o)$ — energy of the generative model
+- $H(q) = -\int q \ln q$ — Shannon entropy of the recognition density
 
-**Эквивалентная запись через KL-дивергенцию:**
+**Key inequality (evidence lower bound, ELBO):**
+
+$$
+F \geq -\ln p(o) \quad \text{(F bounds surprise from below)}
+$$
+
+Proof: $F = D_{KL}(q(s) \| p(s|o)) - \ln p(o)$, and $D_{KL} \geq 0$.
+
+**Equivalent form via KL-divergence:**
 
 $$
 F = D_{KL}(q(s) \| p(s|o)) - \ln p(o) = H(q) + D_{KL}(q \| p_{\text{prior}}) + \text{const}
 $$
 
-### 4.2 Классический предел УГМ: формализация через $R \to 0$ {#42-классический-предел}
+### 4.2 Classical limit of UHM: formalization via $R \to 0$ {#42-классический-предел}
 
-**Определение 4.1 (Классический предел УГМ).**
+**Definition 4.1 (Classical limit of UHM).**
 
-Классический предел УГМ определяется **двумя эквивалентными** условиями:
+The classical limit of UHM is defined by **two equivalent** conditions:
 
-**(a) Декогеренция внедиагональных элементов.** Матрица плотности теряет когерентности:
-
-$$
-\Gamma_{ij} \to 0 \quad \text{для } i \neq j, \qquad \Gamma \to \mathrm{diag}(p_1, \ldots, p_N)
-$$
-
-**(b) Предел нулевой рефлексии.** [Мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1/(7P)$ стремится к минимуму:
+**(a) Decoherence of off-diagonal elements.** The density matrix loses coherences:
 
 $$
-R \to R_{\min} = \frac{1}{7} \quad \text{(при } P \to 1, \text{ т.е. чистое диагональное состояние)}
+\Gamma_{ij} \to 0 \quad \text{for } i \neq j, \qquad \Gamma \to \mathrm{diag}(p_1, \ldots, p_N)
 $$
 
-**Лемма 4.1 (Классический предел).**
+**(b) Zero-reflection limit.** The [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1/(7P)$ tends to its minimum:
 
-(a) Декогеренция (γ_{ij} → 0 при i ≠ j) **влечёт** R → 1/(7·1) = 1/7 (поскольку P → max_i γ_{ii}² ≤ 1, и для равновесной диагональной Γ: P ≈ 1/7, R ≈ 1).
+$$
+R \to R_{\min} = \frac{1}{7} \quad \text{(when } P \to 1, \text{ i.e. pure diagonal state)}
+$$
 
-(b) Обратное **неверно**: R = 1/7 ⟺ P = 1, что достижимо для чистого когерентного состояния |ψ⟩⟨ψ| с максимальными когерентностями. Классический предел определяется условием (a) — декогеренция, а не через R.
+**Lemma 4.1 (Classical limit).**
 
-*Доказательство.* (a) При $\Gamma_{ij} \to 0$ для $i \neq j$ чистота $P = \mathrm{Tr}(\Gamma^2) = \sum_i p_i^2 + 2\sum_{i < j} |\Gamma_{ij}|^2$ редуцируется к $P = \sum_i p_i^2$. Внедиагональные когерентности непосредственно входят в Gap-оператор $\mathcal{G}_{ij}$ (см. [динамика Gap](/docs/core/dynamics/gap-dynamics)); при $\Gamma_{ij} \to 0$ все Gap-элементы обнуляются: $\mathcal{G}_{ij} \to 0$. Для равновесной диагональной матрицы $p_i = 1/N$: $P = 1/N$, $R = 1/(NP) = 1$. Для одного доминирующего $p_k \to 1$: $P \to 1$, $R = 1/(7P) \to 1/7$.
+(a) Decoherence (γ_{ij} → 0 for i ≠ j) **implies** R → 1/(7·1) = 1/7 (since P → max_i γ_{ii}² ≤ 1, and for equilibrium diagonal Γ: P ≈ 1/7, R ≈ 1).
 
-(b) Контрпример: чистое состояние $|ψ⟩ = \frac{1}{\sqrt{7}}\sum_{k=0}^{6} |k⟩$ даёт $P = 1$, $R = 1/7$, но имеет максимальные когерентности $|\Gamma_{ij}| = 1/7$ для всех $i \neq j$. Следовательно, $R = 1/7$ не эквивалентно декогеренции. $\blacksquare$
+(b) The converse is **false**: R = 1/7 ⟺ P = 1, which is achievable for a pure coherent state |ψ⟩⟨ψ| with maximal coherences. The classical limit is defined by condition (a) — decoherence, not through R.
 
-**Физический смысл.** Классический предел — это **полная декогеренция**: система теряет все квантовые корреляции между измерениями. В терминах сознания: система **не интегрирована** ($\Phi \to 0$), **не рефлексивна** ($R < R_{th}$), не обладает Gap-структурой. Это мир чисто классических вероятностей.
+*Proof.* (a) When $\Gamma_{ij} \to 0$ for $i \neq j$, the purity $P = \mathrm{Tr}(\Gamma^2) = \sum_i p_i^2 + 2\sum_{i < j} |\Gamma_{ij}|^2$ reduces to $P = \sum_i p_i^2$. Off-diagonal coherences enter directly into the Gap operator $\mathcal{G}_{ij}$ (see [Gap dynamics](/docs/core/dynamics/gap-dynamics)); at $\Gamma_{ij} \to 0$ all Gap elements vanish: $\mathcal{G}_{ij} \to 0$. For an equilibrium diagonal matrix $p_i = 1/N$: $P = 1/N$, $R = 1/(NP) = 1$. For a single dominant $p_k \to 1$: $P \to 1$, $R = 1/(7P) \to 1/7$.
 
-**(c) Ограничение CPTP-канала.** В классическом пределе CPTP-канал $\psi$ сохраняет диагональность:
+(b) Counterexample: pure state $|ψ⟩ = \frac{1}{\sqrt{7}}\sum_{k=0}^{6} |k⟩$ gives $P = 1$, $R = 1/7$, but has maximal coherences $|\Gamma_{ij}| = 1/7$ for all $i \neq j$. Therefore $R = 1/7$ is not equivalent to decoherence. $\blacksquare$
+
+**Physical meaning.** The classical limit is **complete decoherence**: the system loses all quantum correlations between dimensions. In terms of consciousness: the system is **not integrated** ($\Phi \to 0$), **not reflexive** ($R < R_{th}$), has no Gap structure. This is the world of purely classical probabilities.
+
+**(c) Restriction of the CPTP channel.** In the classical limit, the CPTP channel $\psi$ preserves diagonality:
 
 $$
 \psi(\mathrm{diag}(p)) = \mathrm{diag}(q), \qquad q_i = \sum_j T_{ij} p_j, \quad T_{ij} \geq 0, \quad \sum_i T_{ij} = 1
 $$
 
-Канал вырождается в **стохастическую матрицу** $T$ — классический марковский переход.
+The channel degenerates into a **stochastic matrix** $T$ — a classical Markov transition.
 
-### 4.3 Редукция квантового функционала {#43-редукция}
+### 4.3 Reduction of the quantum functional {#43-редукция}
 
-:::warning Теорема 4.1 (Классический предел вариационного принципа) [Т] {#теорема-41-классический-предел}
-В классическом пределе ($\Gamma_{ij} \to 0$ для $i \neq j$) вариационный функционал УГМ (Теорема 3.1) редуцируется к классической вариационной свободной энергии:
+:::warning Theorem 4.1 (Classical limit of the variational principle) [Т] {#теорема-41-классический-предел}
+In the classical limit ($\Gamma_{ij} \to 0$ for $i \neq j$), the UHM variational functional (Theorem 3.1) reduces to the classical variational free energy:
 
 $$
 \mathcal{F}[\psi; \Gamma] \xrightarrow[\Gamma_{ij}\to 0]{R \to R_{\min}} F_{cl}[q; p] = H(q) + D_{KL}(q \| p)
 $$
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Спектральная энтропия → энтропия Шеннона).** Для диагональных матриц собственные значения совпадают с диагональными элементами:
+**Step 1 (Spectral entropy → Shannon entropy).** For diagonal matrices, eigenvalues coincide with diagonal elements:
 
 $$
 S_{spec}(\psi(\Gamma)) = S_{vN}(\mathrm{diag}(q)) = -\sum_i q_i \log q_i = H(q)
 $$
 
-Это прямое следствие Теоремы 5.1 ($S_{spec} = S_{vN}$ для матриц плотности).
+This is a direct consequence of Theorem 5.1 ($S_{spec} = S_{vN}$ for density matrices).
 
-**Шаг 2 (Квантовая KL → классическая KL).** Для диагональных матриц квантовая дивергенция Умегаки редуцируется:
+**Step 2 (Quantum KL → classical KL).** For diagonal matrices, the Umegaki quantum divergence reduces:
 
 $$
 D_{KL}(\mathrm{diag}(q) \| \mathrm{diag}(p)) = \mathrm{Tr}\big(\mathrm{diag}(q)[\log \mathrm{diag}(q) - \log \mathrm{diag}(p)]\big) = \sum_i q_i (\log q_i - \log p_i) = D_{KL}(q \| p)
 $$
 
-**Шаг 3 (Подстановка).** Объединяя шаги 1 и 2:
+**Step 3 (Substitution).** Combining steps 1 and 2:
 
 $$
 \mathcal{F}[\psi; \Gamma] = H(q) + D_{KL}(q \| p) = F_{cl}[q; p] \quad \blacksquare
 $$
 
-**Замечание.** Усреднение $\mathbb{E}_{\Gamma \sim \mu}$ в Теореме 3.1 в классическом пределе сводится к обычному математическому ожиданию по стационарному распределению марковской цепи (единственность гарантирована примитивностью $\mathcal{L}_0$).
+**Remark.** The averaging $\mathbb{E}_{\Gamma \sim \mu}$ in Theorem 3.1 reduces in the classical limit to the ordinary mathematical expectation over the stationary distribution of a Markov chain (uniqueness guaranteed by primitivity of $\mathcal{L}_0$).
 
-### 4.4 Вывод классической вариационной свободной энергии Фристона {#44-вывод-fep}
+### 4.4 Derivation of Friston's classical variational free energy {#44-вывод-fep}
 
-Теперь выполним **полный вывод** $F = \mathbb{E}_q[\ln q(s) - \ln p(s,o)]$ из вариационной характеризации $\varphi$.
+Now we perform the **complete derivation** of $F = \mathbb{E}_q[\ln q(s) - \ln p(s,o)]$ from the variational characterization of $\varphi$.
 
-**Шаг 1 (Идентификация переменных).** В рамках УГМ введём отождествление:
+**Step 1 (Identification of variables).** Within UHM, introduce the identification:
 
-| УГМ | FEP (Фристон) | Смысл |
+| UHM | FEP (Friston) | Meaning |
 |-----|----------------|-------|
-| $\Gamma = \mathrm{diag}(p_1, \ldots, p_N)$ | $p(s,o)$ (генеративная плотность) | Полное состояние системы = генеративная модель мира |
-| $\psi(\Gamma) = \mathrm{diag}(q_1, \ldots, q_N)$ | $q(s)$ (распознающая плотность) | Самомодель = приблизительный вывод |
-| $\varphi(\Gamma)$ | $q^*(s\|o) = p(s\|o)$ | Оптимальная самомодель = истинный постериор |
-| $\mathcal{F}[\psi; \Gamma]$ | $F[q; p]$ | Вариационная свободная энергия |
-| $\min_\psi \mathcal{F}$ | $\min_q F$ | Вариационный вывод |
+| $\Gamma = \mathrm{diag}(p_1, \ldots, p_N)$ | $p(s,o)$ (generative density) | Full system state = generative model of the world |
+| $\psi(\Gamma) = \mathrm{diag}(q_1, \ldots, q_N)$ | $q(s)$ (recognition density) | Self-model = approximate inference |
+| $\varphi(\Gamma)$ | $q^*(s\|o) = p(s\|o)$ | Optimal self-model = true posterior |
+| $\mathcal{F}[\psi; \Gamma]$ | $F[q; p]$ | Variational free energy |
+| $\min_\psi \mathcal{F}$ | $\min_q F$ | Variational inference |
 
-**Шаг 2 (Раскрытие функционала).** Запишем $\mathcal{F}$ в классическом пределе:
+**Step 2 (Expanding the functional).** Write $\mathcal{F}$ in the classical limit:
 
 $$
 \mathcal{F}[q; p] = H(q) + D_{KL}(q \| p) = -\sum_i q_i \log q_i + \sum_i q_i \log \frac{q_i}{p_i}
 $$
 
-Упрощая:
+Simplifying:
 
 $$
 \mathcal{F}[q; p] = \sum_i q_i (\log q_i - \log p_i) = \mathbb{E}_q[\log q - \log p]
 $$
 
-В непрерывном пределе ($N \to \infty$, суммы → интегралы):
+In the continuous limit ($N \to \infty$, sums → integrals):
 
 $$
 \mathcal{F}[q; p] = \int ds \, q(s) \ln \frac{q(s)}{p(s,o)} = F_{FEP}
 $$
 
-Это **в точности** вариационная свободная энергия Фристона.
+This is **exactly** Friston's variational free energy.
 
-**Шаг 3 (Эквивалентные формы).** Раскладывая $p(s,o) = p(o|s) p(s)$:
+**Step 3 (Equivalent forms).** Expanding $p(s,o) = p(o|s) p(s)$:
 
 $$
 F_{FEP} = \int ds \, q(s) \ln \frac{q(s)}{p(s)} - \int ds \, q(s) \ln p(o|s) = D_{KL}(q(s) \| p(s)) - \langle \ln p(o|s) \rangle_q
 $$
 
-Первый член — сложность (отклонение от приора), второй — точность (ожидаемое правдоподобие). Минимизация $F$ = **баланс точности и сложности** — это классический аналог баланса спектральной энтропии и KL-дивергенции в Теореме 3.1.
+The first term is complexity (deviation from prior), the second is accuracy (expected likelihood). Minimization of $F$ = **balance of accuracy and complexity** — this is the classical analog of balancing spectral entropy and KL-divergence in Theorem 3.1.
 
-:::tip Теорема 4.2 (УГМ → FEP Фристона) [Т] {#теорема-42-угм-fep}
-Пусть $\Gamma$ — состояние голонома в классическом пределе ($\Gamma_{ij} = 0$ при $i \neq j$). Тогда:
+:::tip Theorem 4.2 (UHM → Friston's FEP) [Т] {#теорема-42-угм-fep}
+Let $\Gamma$ be the state of a holon in the classical limit ($\Gamma_{ij} = 0$ for $i \neq j$). Then:
 
-**(i)** Оператор самомоделирования $\varphi$ в классическом пределе отождествляется с **распознающей плотностью**: $\varphi(\Gamma) \leftrightarrow q^*(s|o)$.
+**(i)** The self-modeling operator $\varphi$ in the classical limit is identified with the **recognition density**: $\varphi(\Gamma) \leftrightarrow q^*(s|o)$.
 
-**(ii)** Матрица плотности $\Gamma$ отождествляется с **генеративной моделью**: $\Gamma \leftrightarrow p(s,o)$.
+**(ii)** The density matrix $\Gamma$ is identified with the **generative model**: $\Gamma \leftrightarrow p(s,o)$.
 
-**(iii)** Минимизация функционала УГМ совпадает с минимизацией свободной энергии Фристона:
+**(iii)** Minimization of the UHM functional coincides with minimization of Friston's free energy:
 
 $$
 \min_{\psi \in \mathcal{CPTP}} \mathcal{F}[\psi; \Gamma] = \min_{q} F_{FEP}[q; p]
 $$
 
-**(iv)** Ключевое неравенство (ELBO) выводится автоматически:
+**(iv)** The key inequality (ELBO) is derived automatically:
 
 $$
 \mathcal{F}[\psi; \Gamma] \geq S_{vN}(\Gamma) \quad \Longleftrightarrow \quad F \geq -\ln p(o)
 $$
 
-**Замкнутость отождествления [Т].** Отождествление $\Gamma \leftrightarrow p(s,o)$ — не внешнее допущение, а **определение самореференции**. В вариационной формулировке $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ дивергенция $D_{KL}(q \| \Gamma)$ измеряет отклонение от **собственного** состояния системы. Самореферентная система по определению использует себя как генеративную модель — это не предположение, а тавтология самомоделирования.
+**Closedness of identification [Т].** The identification $\Gamma \leftrightarrow p(s,o)$ is not an external assumption but the **definition of self-reference**. In the variational formulation $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ the divergence $D_{KL}(q \| \Gamma)$ measures deviation from the system's **own** state. A self-referential system by definition uses itself as a generative model — this is not an assumption but a tautology of self-modeling.
 :::
 
-**Доказательство (iv).** Из определения KL-дивергенции:
+**Proof of (iv).** From the definition of KL-divergence:
 
 $$
 D_{KL}(\psi(\Gamma) \| \Gamma) \geq 0
 $$
 
-Следовательно:
+Therefore:
 
 $$
 \mathcal{F}[\psi; \Gamma] = S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma) \geq S_{vN}(\psi(\Gamma))
 $$
 
-Поскольку стационарное состояние примитивного линдбладиана **максимизирует** энтропию среди достижимых состояний (Frigerio, 1978), справедливо $S_{vN}(\Gamma_*) \geq S_{vN}(\psi(\Gamma))$. Следовательно, нижняя граница ELBO принимает вид:
+Since the stationary state of a primitive Lindbladian **maximizes** entropy among reachable states (Frigerio, 1978), we have $S_{vN}(\Gamma_*) \geq S_{vN}(\psi(\Gamma))$. Therefore, the ELBO lower bound takes the form:
 
 $$
 \mathcal{F}[\psi; \Gamma] \geq D_{KL}(\psi(\Gamma) \| \Gamma) \geq 0
 $$
 
-В классическом пределе $S_{vN}(\Gamma) = H(p) = -\sum_i p_i \log p_i$, и неравенство принимает форму $F \geq -\ln p(o)$, если отождествить $-\ln p(o)$ с энтропией маргинальной вероятности наблюдений. $\blacksquare$
+In the classical limit $S_{vN}(\Gamma) = H(p) = -\sum_i p_i \log p_i$, and the inequality takes the form $F \geq -\ln p(o)$, if $-\ln p(o)$ is identified with the entropy of the marginal probability of observations. $\blacksquare$
 
-### 4.5 Спектральная энтропия + KL → вариационная свободная энергия {#45-редукция-доказательство}
+### 4.5 Spectral entropy + KL → variational free energy {#45-редукция-доказательство}
 
-Покажем **в явном виде**, как минимизация квантового функционала $S_{spec} + D_{KL}$ в классическом пределе становится минимизацией вариационной свободной энергии Фристона.
+We show **explicitly** how minimization of the quantum functional $S_{spec} + D_{KL}$ in the classical limit becomes minimization of Friston's variational free energy.
 
-:::warning Теорема 4.3 (Полная редукция) [Т] {#теорема-43-полная-редукция}
-Пусть $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ — диагональная матрица плотности, $\psi$ — CPTP-канал, сохраняющий диагональность. Тогда задача
+:::warning Theorem 4.3 (Complete reduction) [Т] {#теорема-43-полная-редукция}
+Let $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ be a diagonal density matrix, $\psi$ a CPTP channel preserving diagonality. Then the problem
 
 $$
 \min_{\psi \in \mathcal{CPTP}} \left[S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)\right]
 $$
 
-**тождественна** задаче
+is **identical** to the problem
 
 $$
 \min_{q \in \Delta^{N-1}} F_{FEP}[q; p] = \min_{q \in \Delta^{N-1}} \sum_i q_i \ln \frac{q_i}{p_i}
 $$
 
-где $\Delta^{N-1}$ — $(N-1)$-симплекс вероятностных распределений.
+where $\Delta^{N-1}$ is the $(N-1)$-simplex of probability distributions.
 
-Более того, минимум достигается при $q_i^* = p_i$ (распознающая плотность совпадает с генеративной), что соответствует $\psi^* = \mathrm{id}$ (тождественный канал).
+Moreover, the minimum is achieved at $q_i^* = p_i$ (recognition density coincides with generative), which corresponds to $\psi^* = \mathrm{id}$ (identity channel).
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Параметризация).** В классическом пределе оптимизация по CPTP-каналам, сохраняющим диагональность, эквивалентна оптимизации по стохастическим матрицам $T \in \mathbb{R}^{N \times N}_+$ с $\sum_i T_{ij} = 1$. Результат $\psi(\Gamma) = \mathrm{diag}(q)$, где $q_i = \sum_j T_{ij} p_j$. Множество достижимых $q$ при фиксированном $p$ — выпуклое подмножество $\Delta^{N-1}$, содержащее $p$ (при $T = I$).
+**Step 1 (Parameterization).** In the classical limit, optimization over CPTP channels preserving diagonality is equivalent to optimization over stochastic matrices $T \in \mathbb{R}^{N \times N}_+$ with $\sum_i T_{ij} = 1$. The result $\psi(\Gamma) = \mathrm{diag}(q)$, where $q_i = \sum_j T_{ij} p_j$. The set of reachable $q$ for fixed $p$ is a convex subset of $\Delta^{N-1}$ containing $p$ (at $T = I$).
 
-**Шаг 2 (Явный функционал).** По Теореме 4.1:
+**Step 2 (Explicit functional).** By Theorem 4.1:
 
 $$
 \mathcal{F}[q; p] = H(q) + D_{KL}(q \| p) = -\sum_i q_i \ln q_i + \sum_i q_i \ln \frac{q_i}{p_i} = -\sum_i q_i \ln p_i
 $$
 
-Это **перекрёстная энтропия** $H_\times(q, p) = -\sum_i q_i \ln p_i$.
+This is the **cross-entropy** $H_\times(q, p) = -\sum_i q_i \ln p_i$.
 
-**Шаг 3 (Минимизация).** Кросс-энтропия $H_\times(q, p) = -\sum_i q_i \ln p_i$ минимизируется при $q = p$ (методом множителей Лагранжа с ограничением $\sum_i q_i = 1$, или из свойства $H_\times(q, p) = H(q) + D_{KL}(q \| p) \geq H(p)$, с равенством при $q = p$).
+**Step 3 (Minimization).** The cross-entropy $H_\times(q, p) = -\sum_i q_i \ln p_i$ is minimized at $q = p$ (by the Lagrange multiplier method with the constraint $\sum_i q_i = 1$, or from the property $H_\times(q, p) = H(q) + D_{KL}(q \| p) \geq H(p)$, with equality at $q = p$).
 
-**Шаг 4 (Отождествление с FEP).** Свободная энергия Фристона:
+**Step 4 (Identification with FEP).** Friston's free energy:
 
 $$
 F_{FEP} = \int ds \, q(s) \ln \frac{q(s)}{p(s,o)}
 $$
 
-При дискретизации $s \to \{s_i\}_{i=1}^N$:
+Upon discretization $s \to \{s_i\}_{i=1}^N$:
 
 $$
 F_{FEP} = \sum_i q_i \ln \frac{q_i}{p_i} = D_{KL}(q \| p)
 $$
 
-Функционал УГМ в классическом пределе:
+UHM functional in the classical limit:
 
 $$
-\mathcal{F}_{\text{УГМ}} = H(q) + D_{KL}(q \| p) = D_{KL}(q \| p) + H(q)
+\mathcal{F}_{\text{UHM}} = H(q) + D_{KL}(q \| p) = D_{KL}(q \| p) + H(q)
 $$
 
-Разница — в аддитивном члене $H(q)$, который не зависит от $p$ и потому не влияет на оптимальное $q^*$ при фиксированном $p$:
+The difference is an additive term $H(q)$, which does not depend on $p$ and therefore does not affect the optimal $q^*$ for fixed $p$:
 
 $$
-\arg\min_q \mathcal{F}_{\text{УГМ}} = \arg\min_q F_{FEP} = p
+\arg\min_q \mathcal{F}_{\text{UHM}} = \arg\min_q F_{FEP} = p
 $$
 
-Таким образом, оптимальные распознающие плотности совпадают. $\blacksquare$
+Thus, the optimal recognition densities coincide. $\blacksquare$
 
-### 4.6 Соответствие конструкций {#46-соответствие}
+### 4.6 Correspondence of constructions {#46-соответствие}
 
-Полная таблица соответствий между УГМ и FEP:
+Full correspondence table between UHM and FEP:
 
-| Конструкция УГМ | Конструкция FEP | Предельный переход |
+| UHM construction | FEP construction | Limiting transition |
 |----------------|-----------------|-------------------|
-| $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $p(s,o)$ — генеративная модель | $\Gamma_{ij} \to 0$, $\gamma_{ii} \to p_i$ |
-| $\varphi(\Gamma)$ — категориальная самомодель | $q^*(s\|o)$ — оптимальная распознающая плотность | $\varphi \to$ байесовская инверсия |
-| $S_{spec}(\Gamma)$ — спектральная энтропия | $H(p)$ — энтропия Шеннона | $S_{spec}(\mathrm{diag}(p)) = H(p)$ |
-| $D_{KL}(\psi(\Gamma) \| \Gamma)$ — квантовая KL | $D_{KL}(q \| p)$ — классическая KL | Диагональный предел |
-| $\mathcal{F}[\psi; \Gamma]$ — вариационный функционал | $F[q; p]$ — свободная энергия | Теорема 4.1 |
-| Примитивность $\mathcal{L}_0$ | Эргодичность марковской цепи | Линдблад → марковский генератор |
-| CPTP-канал $\psi$ | Стохастическая матрица $T$ | Полная позитивность → позитивность |
-| $\rho^* = \varphi(\Gamma)$ — неподвижная точка | Апостериорное распределение $p(s\|o)$ | Самомоделирование → байесовский вывод |
-| Марковское одеяло (алгебраическое) | Марковское одеяло (графовое) | $\mathcal{B}(\Gamma)$ → граф условной независимости |
+| $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $p(s,o)$ — generative model | $\Gamma_{ij} \to 0$, $\gamma_{ii} \to p_i$ |
+| $\varphi(\Gamma)$ — categorical self-model | $q^*(s\|o)$ — optimal recognition density | $\varphi \to$ Bayesian inversion |
+| $S_{spec}(\Gamma)$ — spectral entropy | $H(p)$ — Shannon entropy | $S_{spec}(\mathrm{diag}(p)) = H(p)$ |
+| $D_{KL}(\psi(\Gamma) \| \Gamma)$ — quantum KL | $D_{KL}(q \| p)$ — classical KL | Diagonal limit |
+| $\mathcal{F}[\psi; \Gamma]$ — variational functional | $F[q; p]$ — free energy | Theorem 4.1 |
+| Primitivity of $\mathcal{L}_0$ | Ergodicity of Markov chain | Lindblad → Markov generator |
+| CPTP channel $\psi$ | Stochastic matrix $T$ | Complete positivity → positivity |
+| $\rho^* = \varphi(\Gamma)$ — fixed point | Posterior distribution $p(s\|o)$ | Self-modeling → Bayesian inference |
+| Markov blanket (algebraic) | Markov blanket (graphical) | $\mathcal{B}(\Gamma)$ → conditional independence graph |
 
-### 4.7 Что утрачивается в классическом пределе {#47-потери}
+### 4.7 What is lost in the classical limit {#47-потери}
 
-Переход $\Gamma \to \mathrm{diag}(p)$ уничтожает **три фундаментальные структуры** УГМ, не имеющие классических аналогов.
+The transition $\Gamma \to \mathrm{diag}(p)$ destroys **three fundamental structures** of UHM that have no classical analogs.
 
-#### 4.7.1 Когерентности (внедиагональные элементы) {#471-когерентности}
+#### 4.7.1 Coherences (off-diagonal elements) {#471-когерентности}
 
-**Квантовые когерентности** $\Gamma_{ij}$ ($i \neq j$) — это корреляции между измерениями голонома, не описываемые классическими вероятностями.
+**Quantum coherences** $\Gamma_{ij}$ ($i \neq j$) are correlations between the holon's dimensions not describable by classical probabilities.
 
-В полном функционале УГМ когерентности вносят вклад:
+In the full UHM functional, coherences contribute:
 
 $$
-\mathcal{F}_{\text{full}} = \underbrace{H(q)}_{\text{классика}} + \underbrace{D_{KL}^{\text{diag}}(q \| p)}_{\text{классика}} + \underbrace{D_{KL}^{\text{off-diag}}(\psi(\Gamma) \| \Gamma)}_{\text{квантовый остаток}}
+\mathcal{F}_{\text{full}} = \underbrace{H(q)}_{\text{classical}} + \underbrace{D_{KL}^{\text{diag}}(q \| p)}_{\text{classical}} + \underbrace{D_{KL}^{\text{off-diag}}(\psi(\Gamma) \| \Gamma)}_{\text{quantum remainder}}
 $$
 
-где квантовый остаток:
+where the quantum remainder:
 
 $$
 D_{KL}^{\text{off-diag}} = \mathrm{Tr}\left[\psi(\Gamma) \log \psi(\Gamma)\right] - \mathrm{Tr}\left[\psi(\Gamma) \log \Gamma\right] - \left(\sum_i q_i \log q_i - \sum_i q_i \log p_i\right)
 $$
 
-При $\Gamma_{ij} \to 0$ этот член обращается в ноль: $D_{KL}^{\text{off-diag}} \to 0$.
+At $\Gamma_{ij} \to 0$ this term vanishes: $D_{KL}^{\text{off-diag}} \to 0$.
 
-**Следствие.** Классический FEP не может описать **интеграцию информации** между измерениями ($\Phi$ зависит от когерентностей), **квантовые квалиа** (структура подпространств $\mathcal{H}_k$), а также **интерференцию** между разными аспектами самомодели.
+**Consequence.** Classical FEP cannot describe **information integration** between dimensions ($\Phi$ depends on coherences), **quantum qualia** (structure of subspaces $\mathcal{H}_k$), or **interference** between different aspects of the self-model.
 
-#### 4.7.2 Gap-оператор {#472-gap}
+#### 4.7.2 Gap operator {#472-gap}
 
-[Gap-оператор](/docs/core/dynamics/gap-dynamics) $\mathcal{G}_{ij} = \|\Gamma_{ij}\| / \sqrt{\gamma_{ii} \gamma_{jj}}$ описывает **непрозрачность** между измерениями. В классическом пределе:
+The [Gap operator](/docs/core/dynamics/gap-dynamics) $\mathcal{G}_{ij} = \|\Gamma_{ij}\| / \sqrt{\gamma_{ii} \gamma_{jj}}$ describes **opacity** between dimensions. In the classical limit:
 
 $$
 \mathcal{G}_{ij} \to 0 \quad \forall i \neq j
 $$
 
-Gap-структура полностью исчезает. Это означает потерю:
-- **Бифуркаций сознания** (скачкообразных переходов между режимами)
-- **Немарковских эффектов** памяти (Gap-осцилляции)
-- **Кода Хэмминга H(7,4)** в структуре ошибкокоррекции (см. [Gap-динамика](/docs/core/dynamics/gap-dynamics))
+The Gap structure disappears completely. This means loss of:
+- **Consciousness bifurcations** (discontinuous transitions between regimes)
+- **Non-Markovian memory effects** (Gap oscillations)
+- **Hamming code H(7,4)** in the error correction structure (see [Gap dynamics](/docs/core/dynamics/gap-dynamics))
 
-#### 4.7.3 Регенерация $\mathcal{R}$ {#473-регенерация}
+#### 4.7.3 Regeneration $\mathcal{R}$ {#473-регенерация}
 
-[Регенеративный член](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ уравнения эволюции $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ отвечает за **нелинейную** обратную связь: система активно восстанавливает когерентности, а не только пассивно диссипирует.
+The [regenerative term](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ of the evolution equation $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ is responsible for **nonlinear** feedback: the system actively restores coherences rather than passively dissipating.
 
-В классическом пределе ($\Gamma_{ij} \to 0$):
+In the classical limit ($\Gamma_{ij} \to 0$):
 
 $$
 \mathcal{R}[\Gamma] \to 0
 $$
 
-поскольку регенерация оперирует на внедиагональных элементах. Остаётся только линейная диссипация $\mathcal{L}_0$, которая в классическом пределе сводится к **марковскому генератору**:
+since regeneration operates on off-diagonal elements. Only the linear dissipation $\mathcal{L}_0$ remains, which in the classical limit reduces to a **Markov generator**:
 
 $$
-\mathcal{L}_0[\mathrm{diag}(p)] \to Q \cdot p, \qquad Q_{ij} \geq 0 \text{ при } i \neq j, \quad \sum_i Q_{ij} = 0
+\mathcal{L}_0[\mathrm{diag}(p)] \to Q \cdot p, \qquad Q_{ij} \geq 0 \text{ for } i \neq j, \quad \sum_i Q_{ij} = 0
 $$
 
-— стандартная Q-матрица непрерывной марковской цепи.
+— the standard Q-matrix of a continuous Markov chain.
 
-**Следствие.** Классический FEP описывает только **пассивную** минимизацию свободной энергии (диссипация). Квантовый FEP УГМ включает **активную регенерацию** — способность системы восстанавливать сложные структуры, утраченные при декогеренции.
+**Consequence.** Classical FEP describes only **passive** minimization of free energy (dissipation). The quantum FEP of UHM includes **active regeneration** — the system's ability to restore complex structures lost during decoherence.
 
-### 4.8 Что сохраняется: минимизация ошибки предсказания {#48-сохраняется}
+### 4.8 What is preserved: prediction error minimization {#48-сохраняется}
 
-Несмотря на потери, **ядро** вариационного принципа переживает классический предел:
+Despite the losses, the **core** of the variational principle survives the classical limit:
 
-:::tip Следствие 4.1 (Инвариантность принципа минимизации) {#следствие-41}
-Принцип «система минимизирует функционал, балансирующий точность и сложность» сохраняется во всех режимах:
+:::tip Corollary 4.1 (Invariance of the minimization principle) {#следствие-41}
+The principle "the system minimizes a functional balancing accuracy and complexity" is preserved across all regimes:
 
-| Режим | Функционал | Точность | Сложность |
+| Regime | Functional | Accuracy | Complexity |
 |-------|-----------|----------|-----------|
-| Квантовый (УГМ) | $S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ | $-D_{KL}(\psi(\Gamma) \| \Gamma)$ | $S_{spec}(\psi(\Gamma))$ |
-| Классический (FEP) | $\langle E \rangle_q - H(q)$ | $\langle \ln p(o\|s) \rangle_q$ | $D_{KL}(q \| p_{\text{prior}})$ |
+| Quantum (UHM) | $S_{spec}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ | $-D_{KL}(\psi(\Gamma) \| \Gamma)$ | $S_{spec}(\psi(\Gamma))$ |
+| Classical (FEP) | $\langle E \rangle_q - H(q)$ | $\langle \ln p(o\|s) \rangle_q$ | $D_{KL}(q \| p_{\text{prior}})$ |
 
-Минимизация ошибки предсказания (prediction error minimization, PEM) — это **классический предел** категориального самомоделирования $\varphi \dashv i$.
+Prediction error minimization (PEM) is the **classical limit** of categorical self-modeling $\varphi \dashv i$.
 :::
 
-Это объясняет, почему FEP Фристона **работает** для классических систем (мозг в нейровычислительном описании, биологические организмы): он захватывает инвариантное ядро, хотя теряет квантовую структуру.
+This explains why Friston's FEP **works** for classical systems (the brain in the neurocomputational description, biological organisms): it captures the invariant core, though losing quantum structure.
 
-### 4.9 Структурная диаграмма {#49-диаграмма}
+### 4.9 Structural diagram {#49-диаграмма}
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         УГМ (∞-топос)                           │
+│                         UHM (∞-topos)                           │
 │                                                                 │
-│  Уровень 0: Ω (примитив)                                        │
+│  Level 0: Ω (primitive)                                         │
 │       ↓                                                         │
-│  Уровень 1: φ ⊣ i (категориальное определение)                  │
+│  Level 1: φ ⊣ i (categorical definition)                        │
 │       ↓                                                         │
-│  Уровень 2: φ = lim e^{tℒ_Ω}[Γ] (динамический)                  │
+│  Level 2: φ = lim e^{tℒ_Ω}[Γ] (dynamical)                       │
 │       ↓                                                         │
-│  Уровень 3: φ = argmin [S_spec + D_KL] (вариационный, Т 3.1)   │
+│  Level 3: φ = argmin [S_spec + D_KL] (variational, T 3.1)      │
 │       ↓                                                         │
 │  ┌─────────────────────────────────────────────────────────┐    │
-│  │    Классический предел: Γ_ij → 0, R → 1/7              │    │
-│  │         (теряются: когерентности, Gap, ℛ)               │    │
+│  │    Classical limit: Γ_ij → 0, R → 1/7                  │    │
+│  │         (lost: coherences, Gap, ℛ)                      │    │
 │  │                      ↓                                  │    │
 │  │  ┌───────────────────────────────────────────────────┐  │    │
-│  │  │   FEP Фристона: min F = min [⟨E⟩ - H]             │  │    │
-│  │  │   (классические вероятности, ЧАСТНЫЙ СЛУЧАЙ)      │  │    │
-│  │  │   (сохраняется: минимизация ошибки предсказания)  │  │    │
+│  │  │   Friston's FEP: min F = min [⟨E⟩ - H]            │  │    │
+│  │  │   (classical probabilities, SPECIAL CASE)         │  │    │
+│  │  │   (preserved: prediction error minimization)      │  │    │
 │  │  └───────────────────────────────────────────────────┘  │    │
 │  └─────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────┘
@@ -602,170 +602,171 @@ $$
 
 ---
 
-## 5. S_spec vs S_vN: обоснование выбора
+## 5. S_spec vs S_vN: justification of the choice {#5-s_spec-vs-s_vn-обоснование-выбора}
 
-### 5.1 Определения
+### 5.1 Definitions
 
-**Энтропия фон Неймана:**
+**Von Neumann entropy:**
 
 $$
 S_{vN}(\rho) := -\mathrm{Tr}(\rho \log \rho) = -\sum_i \lambda_i \log \lambda_i
 $$
 
-**Спектральная энтропия:**
+**Spectral entropy:**
 
 $$
 S_{spec}(A) := -\sum_i |\lambda_i| \log |\lambda_i|
 $$
 
-где $\{\lambda_i\}$ — собственные значения оператора $A$.
+where $\{\lambda_i\}$ are eigenvalues of operator $A$.
 
-### 5.2 Когда они совпадают
+### 5.2 When they coincide
 
-:::warning Теорема 5.1 (Эквивалентность для матриц плотности)
-Для матриц плотности $\rho$ (эрмитовых, положительно полуопределённых, с единичным следом):
+:::warning Theorem 5.1 (Equivalence for density matrices)
+For density matrices $\rho$ (Hermitian, positive semi-definite, unit trace):
 
 $$
 S_{spec}(\rho) = S_{vN}(\rho)
 $$
 :::
 
-**Доказательство:** Для $\rho \geq 0$ все $\lambda_i \geq 0$, поэтому $|\lambda_i| = \lambda_i$. $\blacksquare$
+**Proof:** For $\rho \geq 0$ all $\lambda_i \geq 0$, therefore $|\lambda_i| = \lambda_i$. $\blacksquare$
 
-### 5.3 Зачем использовать S_spec в УГМ?
+### 5.3 Why use S_spec in UHM?
 
-**Причина 1: Обобщение на неэрмитовы операторы.**
+**Reason 1: Generalization to non-Hermitian operators.**
 
-В некоторых формализмах (операторы Крауса, нефизические состояния) встречаются неэрмитовы операторы. $S_{spec}$ определена для них, $S_{vN}$ — нет.
+In some formalisms (Kraus operators, non-physical states), non-Hermitian operators appear. $S_{spec}$ is defined for them; $S_{vN}$ is not.
 
-**Причина 2: Связь с колмогоровской сложностью.**
+**Reason 2: Connection to Kolmogorov complexity.**
 
-В оригинальной формулировке УГМ ([axiom-omega.md](/docs/core/foundations/axiom-omega)):
+In the original UHM formulation ([axiom-omega.md](/docs/core/foundations/axiom-omega)):
 
-> $S_{spec}(\cdot)$ — спектральная энтропия (замена невычислимой колмогоровской сложности)
+> $S_{spec}(\cdot)$ — spectral entropy (replacing uncomputable Kolmogorov complexity)
 
-Колмогоровская сложность $K(\cdot)$ невычислима. $S_{spec}$ служит вычислимой верхней оценкой:
+Kolmogorov complexity $K(\cdot)$ is uncomputable. $S_{spec}$ serves as a computable upper bound:
 
 $$
 S_{spec}(\rho) \leq K(\rho) + O(1)
 $$
 
-### 5.4 Рекомендация
+### 5.4 Recommendation
 
-Для практических целей в УГМ:
-- Использовать $S_{vN}$ для матриц плотности (стандартная квантовая теория)
-- Обозначение $S_{spec}$ сохранить для указания на связь с теорией сложности
-- В документации указывать: **"$S_{spec} = S_{vN}$ для матриц плотности"**
+For practical purposes in UHM:
+- Use $S_{vN}$ for density matrices (standard quantum theory)
+- Keep the notation $S_{spec}$ to indicate the connection with complexity theory
+- In documentation indicate: **"$S_{spec} = S_{vN}$ for density matrices"**
 
 ---
 
-## 6. Сравнение с FEP Фристона
+## 6. Comparison with Friston's FEP
 
-### 6.1 Таблица соответствий
+### 6.1 Correspondence table
 
-| Аспект | FEP (Фристон) | УГМ |
+| Aspect | FEP (Friston) | UHM |
 |--------|---------------|-----|
-| **Статус** | Постулат (феноменологический) | Теорема (выводится из Ω) |
-| **Домен** | Классические распределения | Квантовые состояния |
-| **Оператор** | Неявный | Явный CPTP-канал |
-| **Обоснование** | Термодинамика + байесовский вывод | Категориальное сопряжение |
-| **Цикличность** | Не разрешена | Разрешена (иерархия Ω → φ) |
-| **Время** | Внешний параметр | Эмерджентное (▷ на Ω) |
+| **Status** | Postulate (phenomenological) | Theorem (derived from Ω) |
+| **Domain** | Classical distributions | Quantum states |
+| **Operator** | Implicit | Explicit CPTP channel |
+| **Justification** | Thermodynamics + Bayesian inference | Categorical adjunction |
+| **Circularity** | Not resolved | Resolved (hierarchy Ω → φ) |
+| **Time** | External parameter | Emergent (▷ on Ω) |
 
-### 6.2 Как Фристон вывел FEP без УГМ?
+### 6.2 How did Friston derive FEP without UHM?
 
-Фристон использовал **три независимых аргумента**:
+Friston used **three independent arguments**:
 
-**1. Информационно-теоретический (байесовский):**
+**1. Information-theoretic (Bayesian):**
 
 $$
 F = D_{KL}(q \| P(\cdot|S)) - \ln P(S)
 $$
 
-Это тождество — следствие определения KL-дивергенции. FEP постулирует, что системы **минимизируют** F.
+This is an identity — a consequence of the definition of KL-divergence. FEP postulates that systems **minimize** F.
 
-**2. Термодинамический:**
+**2. Thermodynamic:**
 
-Флуктуационные теоремы (Jarzynski, Crooks) связывают свободную энергию с неравновесной работой. Стационарные системы минимизируют F по термодинамическим причинам.
+Fluctuation theorems (Jarzynski, Crooks) connect free energy with non-equilibrium work. Stationary systems minimize F for thermodynamic reasons.
 
-**3. Кибернетический (самоорганизация):**
+**3. Cybernetic (self-organization):**
 
-Системы, не минимизирующие сюрприз, «рассеиваются» — теряют идентичность. Выживание ≡ минимизация F.
+Systems that do not minimize surprise "dissipate" — lose their identity. Survival ≡ minimization of F.
 
-### 6.3 Почему УГМ глубже?
+### 6.3 Why is UHM deeper?
 
-**1. Категориальное обоснование:**
+**1. Categorical justification:**
 
-В УГМ φ **определяется** структурой ∞-топоса, вариационный принцип — **следствие**. В FEP вариационный принцип — аксиома.
+In UHM, φ is **defined** by the structure of the ∞-topos; the variational principle is a **consequence**. In FEP, the variational principle is an axiom.
 
-**2. Квантовое обобщение:**
+**2. Quantum generalization:**
 
-УГМ работает с матрицами плотности (квантовые системы). FEP — только с классическими распределениями.
+UHM works with density matrices (quantum systems). FEP — only with classical distributions.
 
-**3. Разрешение цикличности:**
+**3. Resolution of circularity:**
 
-УГМ явно строит иерархию: Ω → L_k → ℒ_Ω → φ (см. [DAG зависимостей](/docs/core/foundations/axiom-omega#иерархия-зависимостей)). В FEP связь генеративной модели и динамики неявна.
+UHM explicitly constructs the hierarchy: Ω → L_k → ℒ_Ω → φ (see [dependency DAG](/docs/core/foundations/axiom-omega#иерархия-зависимостей)). In FEP the connection between generative model and dynamics is implicit.
 
-**4. Эмерджентное время:**
+**4. Emergent time:**
 
-В УГМ время выводится из темпоральной модальности ▷ на Ω. В FEP время — внешний параметр.
+In UHM, time is derived from the temporal modality ▷ on Ω. In FEP, time is an external parameter.
 
 ---
 
-## 7. Следствия для УГМ
+## 7. Consequences for UHM
 
-### 7.1 Подтверждение согласованности
+### 7.1 Confirmation of consistency
 
-Доказательство Теоремы 3.1 подтверждает:
-1. Вариационная характеризация — **следствие** категориального определения
-2. Классический предел воспроизводит FEP Фристона
-3. УГМ **обобщает** FEP на квантовый случай
+The proof of Theorem 3.1 confirms:
 
-### 7.2 Уточнение статуса утверждений
+1. The variational characterization is a **consequence** of the categorical definition
+2. The classical limit reproduces Friston's FEP
+3. UHM **generalizes** FEP to the quantum case
 
-| Утверждение | Старый статус | Новый статус |
+### 7.2 Clarification of statement status
+
+| Statement | Old status | New status |
 |-------------|---------------|--------------|
-| φ = argmin [S_spec + D_KL] | «Свойство 4» | **Теорема 3.1** [Т] (доказана) |
-| Классический предел функционала | Неявно | **Теорема 4.1** [Т] (полная статмех-редукция) |
-| FEP ⊂ УГМ | Заявлено | **Теорема 4.2** [Т] (отождествление генеративной модели = определение самореференции) |
-| $S_{spec} + D_{KL} \to F_{FEP}$ | Не доказано | **Теорема 4.3** [Т] (полная редукция) |
-| S_spec = S_vN для ρ | Не уточнено | **Теорема 5.1** [Т] (доказана) |
+| φ = argmin [S_spec + D_KL] | "Property 4" | **Theorem 3.1** [Т] (proven) |
+| Classical limit of the functional | Implicit | **Theorem 4.1** [Т] (full stat-mech reduction) |
+| FEP ⊂ UHM | Claimed | **Theorem 4.2** [Т] (identification of generative model = definition of self-reference) |
+| $S_{spec} + D_{KL} \to F_{FEP}$ | Not proven | **Theorem 4.3** [Т] (complete reduction) |
+| S_spec = S_vN for ρ | Not clarified | **Theorem 5.1** [Т] (proven) |
 
-### 7.3 Новые следствия
+### 7.3 New corollaries
 
-**Следствие 7.1 (Квантовый FEP).**
+**Corollary 7.1 (Quantum FEP).**
 
-Для квантовых систем верен обобщённый принцип:
+For quantum systems, the generalized principle holds:
 
 $$
 \Gamma_* = \arg\min_{\Gamma} \left[S_{vN}(\Gamma) + D_{KL}(\Gamma \| \Gamma_0)\right]
 $$
 
-где $\Gamma_0$ — начальное/референсное состояние.
+where $\Gamma_0$ is the initial/reference state.
 
-**Следствие 7.2 (Термодинамическая интерпретация).**
+**Corollary 7.2 (Thermodynamic interpretation).**
 
-Минимизация $\mathcal{F}$ эквивалентна минимизации **производства энтропии** в открытой квантовой системе.
+Minimization of $\mathcal{F}$ is equivalent to minimization of **entropy production** in an open quantum system.
 
 ---
 
-## 8. Технические леммы
+## 8. Technical Lemmas
 
-### Лемма A.1 (Производство энтропии в Линдблад-динамике)
+### Lemma A.1 (Entropy production in Lindblad dynamics)
 
-Для $\mathcal{L}[\rho] = \sum_k (L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\})$:
+For $\mathcal{L}[\rho] = \sum_k (L_k \rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\})$:
 
 $$
 \frac{dS_{vN}(\rho)}{dt} = -\mathrm{Tr}(\mathcal{L}[\rho] \log \rho) \geq 0
 $$
 
-### Лемма A.2 (Единственность стационарного состояния)
+### Lemma A.2 (Uniqueness of stationary state)
 
-Если $\mathcal{L}_\Omega$ примитивен (нет нетривиальных подпространств), то $\exists! \rho_*: \mathcal{L}_\Omega[\rho_*] = 0$.
+If $\mathcal{L}_\Omega$ is primitive (no non-trivial subspaces), then $\exists! \rho_*: \mathcal{L}_\Omega[\rho_*] = 0$.
 
-### Лемма A.3 (Сходимость к стационарному)
+### Lemma A.3 (Convergence to stationary)
 
-Для примитивного $\mathcal{L}_\Omega$:
+For primitive $\mathcal{L}_\Omega$:
 
 $$
 \lim_{\tau \to \infty} e^{\tau\mathcal{L}_\Omega}[\rho] = \rho_* \quad \forall \rho
@@ -773,7 +774,7 @@ $$
 
 ---
 
-## 9. Ссылки
+## 9. References
 
 1. **Friston K.** "The free-energy principle: a unified brain theory?" Nature Reviews Neuroscience 11, 127-138 (2010)
 2. **Spohn H.** "Entropy production for quantum dynamical semigroups" Journal of Mathematical Physics 19, 1227 (1978)
@@ -782,26 +783,26 @@ $$
 
 ---
 
-## 10. Резюме
+## 10. Summary
 
-:::tip Ключевые результаты
-**Теоремы:**
-1. **Теорема 3.1 [Т]:** Категориально определённый φ минимизирует функционал $S_{spec} + D_{KL}$ ([примитивность линейной части $\mathcal{L}_0$ доказана](/docs/core/operators/lindblad-operators#примитивность-ℒω))
-2. **Теорема 4.1 [Т]:** В классическом пределе ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) функционал УГМ редуцируется к $H(q) + D_{KL}(q \| p)$
-3. **Теорема 4.2 [Т]:** Классический предел УГМ воспроизводит FEP Фристона (отождествление генеративной модели = определение самореференции)
-4. **Теорема 4.3 [Т]:** Минимизация $S_{spec} + D_{KL}$ тождественна минимизации $F_{FEP}$ в классическом пределе (оптимальные распознающие плотности совпадают)
-5. **Теорема 5.1 [Т]:** $S_{spec} = S_{vN}$ для матриц плотности
+:::tip Key results
+**Theorems:**
+1. **Theorem 3.1 [Т]:** Categorically defined φ minimizes the functional $S_{spec} + D_{KL}$ ([primitivity of the linear part $\mathcal{L}_0$ proven](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+2. **Theorem 4.1 [Т]:** In the classical limit ($\Gamma_{ij} \to 0$, $R \to R_{\min}$) the UHM functional reduces to $H(q) + D_{KL}(q \| p)$
+3. **Theorem 4.2 [Т]:** The classical limit of UHM reproduces Friston's FEP (identification of generative model = definition of self-reference)
+4. **Theorem 4.3 [Т]:** Minimization of $S_{spec} + D_{KL}$ is identical to minimization of $F_{FEP}$ in the classical limit (optimal recognition densities coincide)
+5. **Theorem 5.1 [Т]:** $S_{spec} = S_{vN}$ for density matrices
 
-**Главный вывод:** FEP Фристона — не независимый принцип, а **частный случай** (классический предел) более фундаментальной структуры УГМ.
+**Main conclusion:** Friston's FEP is not an independent principle but a **special case** (classical limit) of the more fundamental structure of UHM.
 :::
 
-:::tip Совместимость с октонионной нормой [Т]
-Вариационный принцип $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ совместим с [октонионной интерпретацией](../../core/structure/dimensions#октонионная-интерпретация): нормированность 𝕆 ($|xy| = |x||y|$) обеспечивает согласованность метрики, используемой в $D_{KL}$, с алгебраической структурой пространства состояний. Мост [Т] (Т15). См. [структурный вывод](../minimality/theorem-octonionic-derivation#мост).
+:::tip Compatibility with octonionic norm [Т]
+The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of 𝕆 ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [Т] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---
 
-**Связанные документы:**
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — определение φ
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — конструктивная реализация
-- [Теории сознания](/docs/consciousness/comparative/consciousness-theories) — сравнение с FEP
+**Related documents:**
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — definition of φ
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — constructive realization
+- [Theories of consciousness](/docs/consciousness/comparative/consciousness-theories) — comparison with FEP

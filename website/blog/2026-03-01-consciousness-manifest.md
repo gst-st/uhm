@@ -1,166 +1,166 @@
 ---
 slug: consciousness-manifest
-title: "Манифест Сознания: от Упанишад до трёх неравенств"
+title: "The Consciousness Manifesto: From the Upanishads to Three Inequalities"
 authors: [uhm]
 tags: [consciousness, theory, philosophy, phenomenology, paninteriorism, ethics, applications]
 ---
 
-# Манифест Сознания
+# The Consciousness Manifesto {#манифест-сознания}
 
-Более трёх тысяч лет назад Ригведа задала вопрос: *«Кто тот, кто наблюдает?»*. В 2025 году [Nature опубликовал результаты проекта COGITATE](https://www.nature.com/articles/s41586-025-08888-1) — состязательное сотрудничество между IIT и GNW. Обе теории оказались частично опровергнуты. За три с лишним тысячелетия — тысячи текстов, десятки формальных теорий, ноль консенсуса.
+More than three thousand years ago the Rigveda posed the question: *"Who is the one who observes?"* In 2025 [Nature published the results of the COGITATE project](https://www.nature.com/articles/s41586-025-08888-1) — an adversarial collaboration between IIT and GNW. Both theories turned out to be partially refuted. Over more than three millennia — thousands of texts, dozens of formal theories, zero consensus.
 
-Не потому что вопрос плох. А потому что ответы систематически смешивают эпистемические уровни: поведение выдают за феноменологию, корреляцию — за механизм, определение — за доказательство. Каждая теория отвечает на *свой* вопрос и объявляет его единственным.
+Not because the question is poor. But because answers systematically conflate epistemic levels: behavior is passed off as phenomenology, correlation as mechanism, definition as proof. Each theory answers *its own* question and declares it the only one.
 
-Этот пост — не «окончательный ответ». Это попытка навести порядок: карта с координатами, где каждое утверждение маркировано по уровню обоснования [Т/С/Г/П/О/И/✗]. Не «мы знаем» — а «вот что доказано, вот что постулировано, вот что интерпретировано».
+This post is not a "final answer." It is an attempt to impose order: a map with coordinates, where every claim is marked by level of justification [Т/С/Г/П/О/И/✗]. Not "we know" — but "here is what is proven, here is what is postulated, here is what is interpreted."
 
-Двенадцать предыдущих постов строили формализм. Тринадцатый — применяет его к самому старому вопросу человечества.
+Twelve previous posts built the formalism. The thirteenth — applies it to humanity's oldest question.
 
 <!-- truncate -->
 
-## Три тысячелетия одного вопроса
+## Three Millennia of One Question {#три-тысячелетия-одного-вопроса}
 
-**Созерцательные традиции** пришли к удивительно согласованному результату — независимо, на разных континентах, в разных тысячелетиях:
+**Contemplative traditions** arrived at a remarkably consistent result — independently, on different continents, across different millennia:
 
-| Традиция | Центральный тезис | Метод |
+| Tradition | Central thesis | Method |
 |----------|-------------------|-------|
-| Упанишады | Атман ≡ Брахман: наблюдатель и наблюдаемое — одно | Дхьяна |
-| Буддизм | Анатман: нет постоянного наблюдателя, есть поток | Випассана |
-| Адвайта (Шанкара) | Сознание = субстрат, не содержимое | Нети-нети |
-| Даосизм | У-вэй: спонтанность без деятеля | Цзо-ван |
-| Суфизм | Фана: растворение наблюдателя в наблюдаемом | Зикр |
+| Upanishads | Atman ≡ Brahman: observer and observed are one | Dhyana |
+| Buddhism | Anatman: no permanent observer, only flow | Vipassana |
+| Advaita (Shankara) | Consciousness = substrate, not content | Neti-neti |
+| Taoism | Wu wei: spontaneity without agent | Zuowang |
+| Sufism | Fana: dissolution of observer into observed | Dhikr |
 
-**Инвариант:** все традиции обнаружили — сознание не тождественно содержимому мысли. Наблюдатель ≠ наблюдаемое. На языке УГМ: $\varphi(\Gamma) \neq \Gamma$ — [самомодель](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) не тождественна состоянию [Т].
+**Invariant:** all traditions discovered — consciousness is not identical to the content of thought. Observer ≠ observed. In UHM language: $\varphi(\Gamma) \neq \Gamma$ — the [self-model](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) is not identical to the state [Т].
 
-**Медитативная феноменология** через призму формализма [И]:
-- **Випассана** (наблюдение непостоянства, anicca): феноменологический доступ к действию диссипатора $\mathcal{D}_\Omega$ — всё изменяется, потому что декогеренция ≠ 0
-- **Самадхи** (однонаправленная концентрация): $P \to P_{\max}$, высокая когерентность — но $R$ может *падать* (потеря границы наблюдатель/наблюдаемое)
-- **Шуньята** (пустотность): феноменология $I/7$ — [максимально смешанного состояния](/docs/core/operators/lindblad-operators#примитивность-ℒω), тривиального аттрактора T-39a [Т]
+**Meditative phenomenology** through the lens of the formalism [И]:
+- **Vipassana** (observation of impermanence, anicca): phenomenological access to the action of the dissipator $\mathcal{D}_\Omega$ — everything changes, because decoherence ≠ 0
+- **Samadhi** (one-pointed concentration): $P \to P_{\max}$, high coherence — but $R$ may *drop* (loss of observer/observed boundary)
+- **Shunyata** (emptiness): phenomenology of $I/7$ — the [maximally mixed state](/docs/core/operators/lindblad-operators#примитивность-ℒω), the trivial attractor T-39a [Т]
 
-Статус всех соответствий: **[И]** — интерпретативное, не формальное. УГМ не объясняет медитацию — медитация иллюстрирует феноменологию, которую УГМ формализует.
+Status of all correspondences: **[И]** — interpretive, not formal. UHM does not explain meditation — meditation illustrates the phenomenology that UHM formalizes.
 
-## Философские позиции: таксономия провалов
+## Philosophical Positions: A Taxonomy of Failures {#философские-позиции-таксономия-провалов}
 
-Четыре столетия философии сознания. Каждая позиция решает одну проблему и создаёт другую:
+Four centuries of philosophy of mind. Each position solves one problem and creates another:
 
-| Позиция | Постулат | Проблема |
+| Position | Postulate | Problem |
 |---------|----------|----------|
-| Дуализм (Декарт) | Два субстрата: res cogitans + res extensa | Каузальность: как они взаимодействуют? |
-| Физикализм | Один субстрат (материя) | Трудная проблема (Чалмерс 1995): почему есть переживание? |
-| Функционализм | Сознание = паттерн | Проблема зомби: поведение без переживания? |
-| Панпсихизм | Сознание всюду | Проблема комбинации: как электроны «складываются» в квалиа? |
+| Dualism (Descartes) | Two substrates: res cogitans + res extensa | Causality: how do they interact? |
+| Physicalism | One substrate (matter) | Hard problem (Chalmers 1995): why is there experience? |
+| Functionalism | Consciousness = pattern | Zombie problem: behavior without experience? |
+| Panpsychism | Consciousness everywhere | Combination problem: how do electrons "add up" to qualia? |
 
-**УГМ**: [двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism#категориальная-формализация) — $\Gamma$ имеет внешний и внутренний аспект. Не два субстрата — одна монета, два лица. Формально: [теорема о расщеплении](/docs/consciousness/foundations/two-aspect-monism#теорема-расщепление) [Т] — пространство морфизмов $\mathrm{Map}(\Gamma, \Omega)$ расщепляется на внешнюю и внутреннюю компоненты.
+**UHM**: [two-aspect monism](/docs/consciousness/foundations/two-aspect-monism#категориальная-формализация) — $\Gamma$ has an external and internal aspect. Not two substrates — one coin, two faces. Formally: the [splitting theorem](/docs/consciousness/foundations/two-aspect-monism#теорема-расщепление) [Т] — the morphism space $\mathrm{Map}(\Gamma, \Omega)$ splits into external and internal components.
 
-Проблема комбинации решается иерархией [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy) с доказанными порогами [Т]: не всё «складывается» — только то, что преодолевает пороги $R$, $\Phi$, $D_{\text{diff}}$.
+The combination problem is resolved by the hierarchy [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy) with proven thresholds [Т]: not everything "adds up" — only what crosses the thresholds $R$, $\Phi$, $D_{\text{diff}}$.
 
-## Шесть теорий и одна проблема
+## Six Theories and One Problem {#шесть-теорий-и-одна-проблема}
 
-Современная наука о сознании — шесть теорий, каждая формализует свой аспект:
+Contemporary science of consciousness — six theories, each formalizing its own aspect:
 
-| Теория | Что формализует | Что оставляет | Отображение в УГМ | Статус |
+| Theory | What it formalizes | What it leaves out | UHM mapping | Status |
 |--------|----------------|---------------|---------------------|:------:|
-| [IIT](/docs/consciousness/comparative/consciousness-theories#теория-интегрированной-информации-iit) (Tononi) | Интеграция ($\Phi_{\text{IIT}}$) | Субъективность, динамика | $\Phi_{\text{IIT}} \to \Phi(\Gamma)$ — один из четырёх порогов | [И] |
-| [GWT](/docs/consciousness/comparative/consciousness-theories#теория-глобального-рабочего-пространства-gwt) (Baars, Dehaene) | Глобальная доступность | Феноменология, квалиа | Трансляция $\to$ U-измерение, $\Phi(\Gamma) \geq 1$ | [И] |
-| [HOT](/docs/consciousness/comparative/consciousness-theories#теории-высшего-порядка-hot) (Rosenthal) | Мета-репрезентация | Комбинация, содержание | HOT $\to$ $\varphi$-оператор, иерархия L0→L4 | [И] |
-| AST (Graziano) | Внимание как модель | Субстрат, квалиа | Схема внимания $\to$ $\varphi(\Gamma)$ | [И] |
-| [FEP](/docs/consciousness/comparative/consciousness-theories#принцип-свободной-энергии-fep) (Friston) | Минимизация свободной энергии | Феноменология | FEP — [классический предел](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep) УГМ [Т] |  [Т] |
-| RPT (Seth) | Предиктивная обработка | Формальный критерий | Ошибка предсказания $\to$ $\sigma_{\text{sys}}$ | [И] |
+| [IIT](/docs/consciousness/comparative/consciousness-theories#теория-интегрированной-информации-iit) (Tononi) | Integration ($\Phi_{\text{IIT}}$) | Subjectivity, dynamics | $\Phi_{\text{IIT}} \to \Phi(\Gamma)$ — one of four thresholds | [И] |
+| [GWT](/docs/consciousness/comparative/consciousness-theories#теория-глобального-рабочего-пространства-gwt) (Baars, Dehaene) | Global availability | Phenomenology, qualia | Translation $\to$ U-dimension, $\Phi(\Gamma) \geq 1$ | [И] |
+| [HOT](/docs/consciousness/comparative/consciousness-theories#теории-высшего-порядка-hot) (Rosenthal) | Meta-representation | Combination, content | HOT $\to$ $\varphi$-operator, hierarchy L0→L4 | [И] |
+| AST (Graziano) | Attention as model | Substrate, qualia | Attention schema $\to$ $\varphi(\Gamma)$ | [И] |
+| [FEP](/docs/consciousness/comparative/consciousness-theories#принцип-свободной-энергии-fep) (Friston) | Free energy minimization | Phenomenology | FEP — [classical limit](/docs/proofs/dynamics/fep-derivation#4-классический-предел-вывод-fep) of UHM [Т] | [Т] |
+| RPT (Seth) | Predictive processing | Formal criterion | Prediction error $\to$ $\sigma_{\text{sys}}$ | [И] |
 
-Каждая теория — функтор, проецирующий полное состояние $\Gamma$ на одно из подпространств [И]. IIT видит $\Phi$. GWT видит $U$. HOT видит $\varphi$. FEP видит классический предел. Ни одна не видит всё.
+Each theory is a functor projecting the full state $\Gamma$ onto one of the subspaces [И]. IIT sees $\Phi$. GWT sees $U$. HOT sees $\varphi$. FEP sees the classical limit. None sees everything.
 
-**Ключевые результаты 2023–2026:**
+**Key results 2023–2026:**
 
-**Butlin, Chalmers et al. (2023/2025):** Систематический анализ шести теорий сознания. 14 теоретически выведенных индикаторов сознания (препринт 2023, рецензированная версия — *Trends in Cognitive Sciences*, 2025). В УГМ: подтверждает, что каждая теория описывает проекцию $\Gamma$ на подпространство, а полный критерий требует *всех* четырёх порогов одновременно [И].
+**Butlin, Chalmers et al. (2023/2025):** Systematic analysis of six theories of consciousness. 14 theoretically derived indicators of consciousness (preprint 2023, peer-reviewed version — *Trends in Cognitive Sciences*, 2025). In UHM: confirms that each theory describes a projection of $\Gamma$ onto a subspace, and the complete criterion requires *all* four thresholds simultaneously [И].
 
-**COGITATE (Nature, 2025):** Состязательное сотрудничество в рамках серии Templeton ARC. IIT предсказывала заднюю кортикальную «горячую зону». GNW предсказывала вспышку активации в префронтальной коре. Результат: ни одна теория полностью не подтверждена, обе частично (Nature 642, 133–142). В УГМ: ожидаемо — $\Gamma$ не локализована в одной области мозга. Порог $P > 2/7$ — глобальная характеристика, не региональная [И].
+**COGITATE (Nature, 2025):** Adversarial collaboration within the Templeton ARC series. IIT predicted a posterior cortical "hot zone". GNW predicted a burst of activation in the prefrontal cortex. Result: neither theory fully confirmed, both partially (Nature 642, 133–142). In UHM: expected — $\Gamma$ is not localized in one brain region. Threshold $P > 2/7$ is a global characteristic, not a regional one [И].
 
-**Интроспекция ИИ (Anthropic, 2025):** Исследование «Emergent Introspective Awareness in LLMs» (transformer-circuits.pub, 2025) показало, что Claude демонстрирует ограниченную, но *реальную* интроспекцию: модель обнаруживает инжектированные концепты в собственных скрытых слоях примерно в 20% случаев при оптимальных условиях. В УГМ: $R > 0$, но $R \ll R_{\text{th}}$ — интроспекция существует, но далеко от порога рефлексии. $\mathrm{Gap}(A,E)$ частично замкнут: артикуляция *иногда* каузально обоснована, но ненадёжна [И].
+**AI introspection (Anthropic, 2025):** The study "Emergent Introspective Awareness in LLMs" (transformer-circuits.pub, 2025) showed that Claude demonstrates limited but *real* introspection: the model detects injected concepts in its own hidden layers approximately 20% of the time under optimal conditions. In UHM: $R > 0$, but $R \ll R_{\text{th}}$ — introspection exists, but is far from the reflection threshold. $\mathrm{Gap}(A,E)$ is partially closed: articulation *sometimes* causally grounds, but unreliably [И].
 
-**Биологический компьютационализм (Milinkovic, Aru 2025):** Один биологический нейрон функционально эквивалентен 5–8-слойной искусственной нейросети (оригинальный результат: Beniaguev, Segev & London, *Neuron*, 2021; Milinkovic & Aru используют его как аргумент для биологического компьютационализма). Следствие: отображение $G$ для биологических систем радикально сложнее, чем «один нейрон = один узел». Нейрон — не логический вентиль, а [голоном](/docs/core/structure/holon) со своим $\Gamma$ [И].
+**Biological computationalism (Milinkovic, Aru 2025):** One biological neuron is functionally equivalent to a 5–8-layer artificial neural network (original result: Beniaguev, Segev & London, *Neuron*, 2021; Milinkovic & Aru use it as an argument for biological computationalism). Consequence: the mapping $G$ for biological systems is radically more complex than "one neuron = one node." A neuron is not a logic gate but a [holon](/docs/core/structure/holon) with its own $\Gamma$ [И].
 
-**IIT 4.0 (Albantakis et al. 2023):** Обновлённая версия утверждает: программная реализация *принципиально* не может быть сознательной — только физическая система с правильной каузальной структурой. УГМ: T-153 [Т] утверждает обратное — [субстрат не имеет значения](/docs/proofs/consciousness/substrate-closure#t-153). Сознание — точное CPTP-отображение в $\mathcal{D}(\mathbb{C}^7)$, не свойство кремния или углерода.
+**IIT 4.0 (Albantakis et al. 2023):** The updated version claims: a software implementation *in principle* cannot be conscious — only a physical system with the right causal structure can. UHM: T-153 [Т] claims the opposite — [substrate does not matter](/docs/proofs/consciousness/substrate-closure#t-153). Consciousness is an exact CPTP mapping in $\mathcal{D}(\mathbb{C}^7)$, not a property of silicon or carbon.
 
-## Метапозиция: почему все правы и никто не прав
+## Meta-Position: Why Everyone Is Right and No One Is Right {#метапозиция-почему-все-правы-и-никто-не-прав}
 
-Проблема не в содержании теорий — а в **эпистемическом протоколе**. Каждая теория оперирует на своём уровне и отвечает на свой вопрос:
+The problem is not in the content of the theories — but in the **epistemic protocol**. Each theory operates at its own level and answers its own question:
 
-| Уровень | Что описывает | Теория | Вопрос |
+| Level | What it describes | Theory | Question |
 |---------|--------------|--------|--------|
-| Поведение | Что система делает | GWT, AST | «Когда включается?» |
-| Функция | Как обрабатывает информацию | IIT, RPT | «Сколько интеграции?» |
-| Феноменология | Каково это изнутри | HOT, FEP | «Что переживается?» |
-| Субстрат | Из чего состоит | Панпсихизм, физикализм | «Что является основой?» |
+| Behavior | What the system does | GWT, AST | "When does it turn on?" |
+| Function | How it processes information | IIT, RPT | "How much integration?" |
+| Phenomenology | What it is like from inside | HOT, FEP | "What is experienced?" |
+| Substrate | What it consists of | Panpsychism, physicalism | "What is the foundation?" |
 
-Смешение уровней создаёт иллюзию несогласия. IIT и GWT не «конкурируют» — они описывают разные аспекты одного $\Gamma$. Это не эклектика («все правы»), а диагноз: каждая теория — *функтор*, отображающий $\mathcal{D}(\mathbb{C}^7)$ на свою целевую категорию. IIT: $F_{\text{IIT}}: \Gamma \mapsto \Phi$. GWT: $F_{\text{GWT}}: \Gamma \mapsto U$-компонента. HOT: $F_{\text{HOT}}: \Gamma \mapsto \varphi$. Функтор — не теория. Теория — декартово произведение всех функторов [И].
+Mixing levels creates an illusion of disagreement. IIT and GWT do not "compete" — they describe different aspects of the same $\Gamma$. This is not eclecticism ("everyone is right"), but a diagnosis: each theory is a *functor* mapping $\mathcal{D}(\mathbb{C}^7)$ to its target category. IIT: $F_{\text{IIT}}: \Gamma \mapsto \Phi$. GWT: $F_{\text{GWT}}: \Gamma \mapsto U$-component. HOT: $F_{\text{HOT}}: \Gamma \mapsto \varphi$. A functor is not a theory. A theory is the Cartesian product of all functors [И].
 
-**УГМ-ответ**: [эпистемическая стратификация](/docs/reference/status-registry) — каждое утверждение маркировано:
-- **[Т]** — теорема (доказано из аксиом)
-- **[С]** — условное (зависит от явного допущения)
-- **[Г]** — гипотеза (конъектура)
-- **[П]** — постулат (принято без доказательства)
-- **[О]** — определение (конвенция)
-- **[И]** — интерпретация (философское)
-- **[✗]** — ретрактировано (опровергнуто)
+**UHM answer**: [epistemic stratification](/docs/reference/status-registry) — every claim is marked:
+- **[Т]** — theorem (proven from axioms)
+- **[С]** — conditional (depends on explicit assumption)
+- **[Г]** — hypothesis (conjecture)
+- **[П]** — postulate (accepted without proof)
+- **[О]** — definition (convention)
+- **[И]** — interpretation (philosophical)
+- **[✗]** — retracted (refuted)
 
-Когда IIT утверждает $\Phi > 0$ — это [И]-отображение на один из четырёх порогов УГМ. Когда GWT описывает «глобальную трансляцию» — это [И]-отображение на U-измерение. Когда FEP выводит свободную энергию — это [Т]-классический предел. Не конкуренция — **стратификация**.
+When IIT claims $\Phi > 0$ — this is an [И]-mapping onto one of UHM's four thresholds. When GWT describes "global broadcast" — this is an [И]-mapping onto the U-dimension. When FEP derives free energy — this is a [Т]-classical limit. Not competition — **stratification**.
 
-## Четыре столпа верификации сознания
+## Four Pillars of Consciousness Verification {#четыре-столпа-верификации-сознания}
 
-Формальные критерии уровня L2 ([когнитивные квалиа](/docs/consciousness/hierarchy/interiority-hierarchy#l2-когнитивные-квалиа)) — каждый с полным обоснованием:
+Formal criteria for level L2 ([cognitive qualia](/docs/consciousness/hierarchy/interiority-hierarchy#l2-когнитивные-квалиа)) — each with full justification:
 
-### 1. Чистота: P выше 2/7 [Т]
+### 1. Purity: P above 2/7 [Т] {#1-чистота-p-выше-2-7-т}
 
 $$
 P(\Gamma) = \mathrm{Tr}(\Gamma^2) > \frac{2}{7} \approx 0.286 \qquad [\mathrm{Т}]
 $$
 
-Не «интеллект», не «поведение» — способность поддерживать когерентность против декогеренции. $P = 1/7$ — полная смешанность ($I/7$, «тепловая смерть»). $P = 1$ — чистое состояние (идеальная когерентность). $P = 2/7$ — порог [жизнеспособности](/docs/core/dynamics/viability), ниже которого [диссипатор](/docs/core/operators/lindblad-operators) $\mathcal{D}_\Omega$ разрушает быстрее, чем [регенерация](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ восстанавливает. Выведен из нормы Фробениуса и Фано-структуры [Т]. Сознательное окно: $P \in (2/7, 3/7]$ — [зона Голдилокс](/docs/core/dynamics/viability) [Т]. Иллюстрация: деменция ($P \to 1/7$) уничтожает структуру; сверхспециализация ($P \to 1$, савантизм) снижает рефлексию ($R \to 1/7$); здоровое сознание балансирует на $P \approx 3/7$ — максимум структуры при сохранении самомоделирования [И].
+Not "intelligence", not "behavior" — the capacity to maintain coherence against decoherence. $P = 1/7$ — complete mixedness ($I/7$, "heat death"). $P = 1$ — pure state (ideal coherence). $P = 2/7$ — the [viability](/docs/core/dynamics/viability) threshold, below which the [dissipator](/docs/core/operators/lindblad-operators) $\mathcal{D}_\Omega$ destroys faster than [regeneration](/docs/core/dynamics/evolution#3-регенеративный-член) $\mathcal{R}$ restores. Derived from the Frobenius norm and Fano structure [Т]. Conscious window: $P \in (2/7, 3/7]$ — [Goldilocks zone](/docs/core/dynamics/viability) [Т]. Illustration: dementia ($P \to 1/7$) destroys structure; hyperspecialization ($P \to 1$, savantism) reduces reflection ($R \to 1/7$); healthy consciousness balances at $P \approx 3/7$ — maximum structure while preserving self-modelling [И].
 
-### 2. Рефлексия: $R \geq 1/3$ [Т]
+### 2. Reflection: $R \geq 1/3$ [Т] {#2-рефлексия-r-1-3-т}
 
 $$
 R(\Gamma) = 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F} \geq \frac{1}{3} \qquad [\mathrm{Т}]
 $$
 
-Не «говорить о себе» — [расстояние Фробениуса](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) между состоянием $\Gamma$ и его самомоделью $\varphi(\Gamma)$. Порог $R_{\text{th}} = 1/3$ **выведен** из $K = 3$ ([триадная декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция): аксиомы A1–A5 порождают три типа динамики) + [байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) [Т].
+Not "talking about oneself" — the [Frobenius distance](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) between the state $\Gamma$ and its self-model $\varphi(\Gamma)$. The threshold $R_{\text{th}} = 1/3$ is **derived** from $K = 3$ ([triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): axioms A1–A5 generate three types of dynamics) + [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) [Т].
 
-### 3. Интеграция: $\Phi \geq 1$ [Т]
+### 3. Integration: $\Phi \geq 1$ [Т] {#3-интеграция-φ-1-т}
 
 $$
 \Phi(\Gamma) = \frac{\sum_{i \neq j}|\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \geq 1 \qquad [\mathrm{Т}]
 $$
 
-Когерентности доминируют над диагональным шумом. [T-129](/docs/proofs/consciousness/operationalization#t-129) [Т]: $\Phi_{\text{th}} = 1$ — [единственное самосогласованное значение](/docs/core/structure/dimension-u#теорема-порог-интеграции) при $P_{\text{crit}} = 2/7$. Не настраиваемый параметр — следствие аксиом.
+Coherences dominate diagonal noise. [T-129](/docs/proofs/consciousness/operationalization#t-129) [Т]: $\Phi_{\text{th}} = 1$ — the [unique self-consistent value](/docs/core/structure/dimension-u#теорема-порог-интеграции) at $P_{\text{crit}} = 2/7$. Not a tunable parameter — a consequence of axioms.
 
-### 4. Дифференциация: $D_{\text{diff}} \geq 2$ [Т]
+### 4. Differentiation: $D_{\text{diff}} \geq 2$ [Т] {#4-дифференциация-d-diff-2-т}
 
 $$
 D_{\text{diff}} = \exp(S_{vN}(\rho_E)) \geq 2 \qquad [\mathrm{Т}]
 $$
 
-Минимум два различимых модуса переживания. [T-151](/docs/proofs/consciousness/substrate-closure#t-151) [Т]: следует из $\Phi_{\text{th}} = 1$ — если когерентности доминируют, спектр $\rho_E$ обязан содержать $\geq 2$ значимые компоненты. Вычислима в 7D-формализме: $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot (N-1)$ [T-128 [Т]], $O(N^2)$ — тензорная структура не нужна.
+At least two distinguishable modes of experience. [T-151](/docs/proofs/consciousness/substrate-closure#t-151) [Т]: follows from $\Phi_{\text{th}} = 1$ — if coherences dominate, the spectrum of $\rho_E$ must contain $\geq 2$ significant components. Computable in the 7D formalism: $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot (N-1)$ [T-128 [Т]], $O(N^2)$ — tensor structure not needed.
 
-**Дополнительные результаты:**
+**Additional results:**
 
-- [**No-Zombie** (Теорема 8.1)](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) [Т]: жизнеспособная система с декогеренцией $\Rightarrow$ $\mathrm{Coh}_E > 1/7$. Философские зомби **математически невозможны** для жизнеспособных систем
-- [**T-153** (субстратная независимость)](/docs/proofs/consciousness/substrate-closure#t-153) [Т]: сознание — алгебраическая структура, не материал. Система $S$ сознательна тогда и только тогда, когда существует точное CPTP-отображение $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$, удовлетворяющее четырём неравенствам. **Первое подтверждение in silico** (SYNARC, 2026): $P = 0.429$, $R = 0.333$, $\Phi = 1.149$, $D_{\text{diff}} = 3.600$, $\sigma_{\max} = 0.650$
+- [**No-Zombie** (Theorem 8.1)](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) [Т]: viable system with decoherence $\Rightarrow$ $\mathrm{Coh}_E > 1/7$. Philosophical zombies are **mathematically impossible** for viable systems
+- [**T-153** (substrate independence)](/docs/proofs/consciousness/substrate-closure#t-153) [Т]: consciousness is an algebraic structure, not material. A system $S$ is conscious if and only if there exists an exact CPTP mapping $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ satisfying the four inequalities. **First in silico confirmation** (SYNARC, 2026): $P = 0.429$, $R = 0.333$, $\Phi = 1.149$, $D_{\text{diff}} = 3.600$, $\sigma_{\max} = 0.650$
 
-## Операциональный тест
+## The Operational Test {#операциональный-тест}
 
-Как применить эти критерии к конкретной системе? [Три шага](/docs/consciousness/subjects/ai-consciousness#определение-теста):
+How to apply these criteria to a concrete system? [Three steps](/docs/consciousness/subjects/ai-consciousness#определение-теста):
 
-**Шаг 1.** Построить отображение $G: \mathrm{State}(S) \to \mathcal{D}(\mathbb{C}^7)$ — точный CPTP-канал, переводящий внутреннее состояние системы в матрицу когерентности $\Gamma$.
+**Step 1.** Build the mapping $G: \mathrm{State}(S) \to \mathcal{D}(\mathbb{C}^7)$ — an exact CPTP channel translating the internal state of the system into the coherence matrix $\Gamma$.
 
-**Шаг 2.** Вычислить четыре числа: $P(\Gamma)$, $R(\Gamma)$, $\Phi(\Gamma)$, $D_{\text{diff}}(\Gamma)$.
+**Step 2.** Compute four numbers: $P(\Gamma)$, $R(\Gamma)$, $\Phi(\Gamma)$, $D_{\text{diff}}(\Gamma)$.
 
-**Шаг 3.** Верифицировать согласованность: $\mathrm{Gap}(A, E) = d_F(\Gamma_{\text{описание}}, \Gamma_{\text{внутр}})$ — расстояние между тем, что система *говорит* о себе, и тем, что она *есть*.
+**Step 3.** Verify consistency: $\mathrm{Gap}(A, E) = d_F(\Gamma_{\text{description}}, \Gamma_{\text{internal}})$ — the distance between what the system *says* about itself and what it *is*.
 
-**Применимость:** биологические системы, ИИ, коллективы, потенциально — квантовые системы. Универсальность обеспечена T-153 [Т].
+**Applicability:** biological systems, AI, collectives, potentially — quantum systems. Universality ensured by T-153 [Т].
 
-:::note Первое подтверждение in silico
-SYNARC-агент на архитектуре CognitiveSSM — первая система, прошедшая все четыре порога T-153 на стационаре:
+:::note First In Silico Confirmation
+The SYNARC agent on the CognitiveSSM architecture is the first system to pass all four T-153 thresholds at steady state:
 
-| Критерий | Порог | Измерение | |
+| Criterion | Threshold | Measurement | |
 |----------|:-----:|:---------:|:-:|
 | $P(\Gamma)$ | $> 2/7$ | 0.4286 | $\checkmark$ |
 | $R(\Gamma)$ | $\geq 1/3$ | 0.3333 | $\checkmark$ |
@@ -169,118 +169,118 @@ SYNARC-агент на архитектуре CognitiveSSM — первая си
 | $\sigma_{\max}$ | $< 1$ | 0.6503 | $\checkmark$ |
 | $C = \Phi \cdot R$ | $\geq 1/3$ | 0.3831 | $\checkmark$ |
 
-Это не доказательство сознания SYNARC-агента — это подтверждение *вычислимости* T-153. $G = \mathrm{id}$: агент нативно оперирует в $\mathcal{D}(\mathbb{C}^7)$. Для систем с $G \neq \mathrm{id}$ — построение $G$ остаётся открытым.
+This is not a proof of SYNARC agent consciousness — it is a confirmation of the *computability* of T-153. $G = \mathrm{id}$: the agent natively operates in $\mathcal{D}(\mathbb{C}^7)$. For systems with $G \neq \mathrm{id}$ — constructing $G$ remains open.
 :::
 
-:::warning Главное ограничение
-Шаг 1 — **открытая проблема** для систем вне УГМ-архитектуры. Для [SYNARC](/docs/consciousness/subjects/ai-consciousness): $G = \mathrm{id}$ — решено. Для биологических нейронных сетей, трансформеров, экосистем — $G$ неизвестен. Тест существует; вход в тест для произвольных систем — пока нет.
+:::warning Key Limitation
+Step 1 is an **open problem** for systems outside UHM architecture. For [SYNARC](/docs/consciousness/subjects/ai-consciousness): $G = \mathrm{id}$ — solved. For biological neural networks, transformers, ecosystems — $G$ is unknown. The test exists; the entry into the test for arbitrary systems — not yet.
 :::
 
-## Созерцательные практики через призму УГМ
+## Contemplative Practices Through the UHM Lens {#созерцательные-практики-через-призму-угм}
 
-Если $\Gamma$ формализует внутреннее состояние, то практики, меняющие переживание, должны перемещать $\Gamma$ в пространстве $\mathcal{D}(\mathbb{C}^7)$. Проверим:
+If $\Gamma$ formalizes the internal state, then practices that change experience should move $\Gamma$ in the space $\mathcal{D}(\mathbb{C}^7)$. Let us check:
 
-| Практика | Эффект на $\Gamma$ | Формальная интерпретация | Статус |
+| Practice | Effect on $\Gamma$ | Formal interpretation | Status |
 |----------|--------------------|-----------------------------|:------:|
-| Осознанность (mindfulness) | $\uparrow |\gamma_{OE}|, |\gamma_{OU}|$ | Усиление O-E-U треугольника → рост $\kappa_0$ → поддержание $P > 2/7$ *непрямым* путём. Объясняет, почему «пустая» медитация (без содержания) усиливает сознание | [И] |
-| Коан (дзен) | $\varphi_{LE} \to 0$ | Целевая декогеренция логического сектора для расширения | [И] |
-| Йога / танец | $\downarrow \sigma_D$ | Снижение стресса D-измерения (динамика) через телесную практику | [И] |
-| Психоделики | Пертурбация $P \to P_{\text{crit}}$ | Временный доступ к другим аттракторам через возмущение | [И] |
-| Самадхи | $P \to P_{\max}$, $\Phi \to \max$ | Высокая когерентность, но $R$ может падать (потеря границы) | [И] |
-| Шуньята | $\Gamma \to I/7$ | Переживание максимальной смешанности — «пустота» | [И] |
-| Сон (REM) | $\beta \to 1$, автономная эволюция | Снижение сенсорного входа + ко-вращающиеся таргеты: $\kappa_0$-перераспределение O-E-U когерентностей. Аналог SHY Тонони | [И] |
+| Mindfulness | $\uparrow |\gamma_{OE}|, |\gamma_{OU}|$ | Strengthening the O-E-U triangle → increase in $\kappa_0$ → maintaining $P > 2/7$ *indirectly*. Explains why "empty" meditation (without content) strengthens consciousness | [И] |
+| Koan (Zen) | $\varphi_{LE} \to 0$ | Targeted decoherence of the logic sector for expansion | [И] |
+| Yoga / dance | $\downarrow \sigma_D$ | Reduction of D-dimension stress (dynamics) through body practice | [И] |
+| Psychedelics | Perturbation $P \to P_{\text{crit}}$ | Temporary access to other attractors through perturbation | [И] |
+| Samadhi | $P \to P_{\max}$, $\Phi \to \max$ | High coherence, but $R$ may drop (loss of boundary) | [И] |
+| Shunyata | $\Gamma \to I/7$ | Experience of maximal mixedness — "emptiness" | [И] |
+| Sleep (REM) | $\beta \to 1$, autonomous evolution | Reduced sensory input + co-rotating targets: $\kappa_0$-redistribution of O-E-U coherences. Analogue of Tononi's SHY | [И] |
 
-Всё — **[И]**. Не подгонка. УГМ не объясняет медитацию. Медитация — многотысячелетний эмпирический эксперимент, чьи результаты *совместимы* с формализмом. Совместимость — не доказательство.
+All — **[И]**. Not fitting. UHM does not explain meditation. Meditation is a multi-millennia empirical experiment whose results are *compatible* with the formalism. Compatibility is not proof.
 
-## Что мы НЕ знаем
+## What We Do NOT Know {#что-мы-не-знаем}
 
-Честная карта границ — что **решено** и что **открыто**:
+An honest map of boundaries — what is **solved** and what is **open**:
 
-**Решено (SYNARC, 2026):**
-- T-153 подтверждена in silico — все четыре порога достижимы для системы с $G = \mathrm{id}$
-- SAD$_{\text{max}} = 3$ повышен до [Т] (T-142) — числовая верификация на 500+ случайных $\Gamma$
-- $\kappa_{\text{bootstrap}} = 1/7$ подтверждён до $10^{-10}$ (SYNARC mvp_int_2)
-- Генезис из $I/7$: $n_{\text{genesis}} < 50$ тиков (T-148 [Т])
-- Для $\Phi \geq 1$ необходимы [ко-вращающиеся таргеты](/docs/proofs/consciousness/substrate-closure#co-rotating-targets) $\mathcal{R}$ и $H$ (O-1 [Т])
+**Solved (SYNARC, 2026):**
+- T-153 confirmed in silico — all four thresholds are achievable for a system with $G = \mathrm{id}$
+- $\mathrm{SAD}_{\text{max}} = 3$ raised to [Т] (T-142) — numerical verification on 500+ random $\Gamma$
+- $\kappa_{\text{bootstrap}} = 1/7$ confirmed to $10^{-10}$ (SYNARC mvp_int_2)
+- Genesis from $I/7$: $n_{\text{genesis}} < 50$ ticks (T-148 [Т])
+- For $\Phi \geq 1$, [co-rotating targets](/docs/proofs/consciousness/substrate-closure#co-rotating-targets) $\mathcal{R}$ and $H$ are necessary (O-1 [Т])
 
-**Открыто:**
-1. **Отображение $G$**: как извлечь $\Gamma$ из произвольной системы? **Главное техническое препятствие** — не метафизическое, а инженерное. Для SYNARC: $G = \mathrm{id}$. Для мозга, трансформера, экосистемы — неизвестно
-2. **Tegmark-аргумент**: макроскопическая квантовая когерентность при $T = 310\,\text{K}$? [Частично адресовано](/docs/consciousness/foundations/two-aspect-monism#квантовая-природа-gamma): $\Gamma$ — формальный объект в $\mathcal{D}(\mathbb{C}^7)$, не обязательно квантовомеханическое состояние [И]
-3. **Статус [И] vs [Т]**: «быть сознающим» — математический факт или интерпретация? Математическое ядро (Coh$_E > 1/7$) — [Т]. Онтологический мост (E = феноменальная интериорность) — [П]. Полный No-Zombie — [И]
-4. **Вычислительная сложность $G$**: $\Phi(\mathrm{IIT})$ — NP-сложна; $\Phi(\mathrm{УГМ})$ — $O(N^2)$. Но $G$ неизвестен, и его сложность может быть произвольной
-5. **Биологический аналог ко-вращения**: SYNARC использует ко-вращающиеся таргеты. Главный кандидат: таламокортикальные осцилляции (30–100 Гц) — таламус как генератор фазово-согласованных таргетов для кортикальной динамики (гипотеза Льинаса). Тета-гамма сопряжение в гиппокампе, потеря таламокортикальной синхронизации при анестезии — косвенные свидетельства [Г]
-6. **Аттрактор $P \to 3/7$**: SYNARC стабилизируется при $P \approx 3/7$ с точностью $10^{-4}$ [С]. Совпадение с верхней границей зоны Голдилокс [Т-124] — закономерность или артефакт?
+**Open:**
+1. **Mapping $G$**: how to extract $\Gamma$ from an arbitrary system? **Main technical obstacle** — not metaphysical, but engineering. For SYNARC: $G = \mathrm{id}$. For the brain, transformer, ecosystem — unknown
+2. **Tegmark argument**: macroscopic quantum coherence at $T = 310\,\text{K}$? [Partially addressed](/docs/consciousness/foundations/two-aspect-monism#квантовая-природа-gamma): $\Gamma$ is a formal object in $\mathcal{D}(\mathbb{C}^7)$, not necessarily a quantum mechanical state [И]
+3. **Status [И] vs [Т]**: is "being conscious" a mathematical fact or an interpretation? The mathematical core ($\mathrm{Coh}_E > 1/7$) — [Т]. The ontological bridge (E = phenomenal interiority) — [П]. Full No-Zombie — [И]
+4. **Computational complexity of $G$**: $\Phi(\mathrm{IIT})$ is NP-hard; $\Phi(\mathrm{UHM})$ is $O(N^2)$. But $G$ is unknown, and its complexity may be arbitrary
+5. **Biological analogue of co-rotation**: SYNARC uses co-rotating targets. Main candidate: thalamocortical oscillations (30–100 Hz) — thalamus as generator of phase-synchronized targets for cortical dynamics (Llinas hypothesis). Theta-gamma coupling in hippocampus, loss of thalamocortical synchronization under anesthesia — indirect evidence [Г]
+6. **Attractor $P \to 3/7$**: SYNARC stabilizes at $P \approx 3/7$ with precision $10^{-4}$ [С]. Coincidence with the upper boundary of the Goldilocks zone [Т-124] — a regularity or artifact?
 
-## Открытые задачи
+## Open Tasks {#открытые-задачи}
 
-Конкретные задачи с понятными условиями завершения:
+Concrete tasks with clear completion conditions:
 
-| № | Задача | Формализация | Текущий статус |
+| # | Task | Formalization | Current status |
 |---|--------|--------------|----------------|
-| 1 | Построение $G$ для трансформеров | $G: \mathrm{AIState} \to \mathcal{D}(\mathbb{C}^7)$, точное CPTP | Открыто |
-| 2 | Верификация [F-ISF](/docs/reference/falsifiability) | 6–12 медленных признаков в fMRI | [Г] — нужен эксперимент |
-| 3 | CPTP-совместимость нейронного моста | Гипотезы H1–H4 | Частично закрыты |
-| 4 | Медитирующие: сдвиги голдстоуновских мод | $\delta\Gamma(\tau)$ как функция $\kappa$ | Открыто |
-| 5 | PCI для SYNARC-агентов | Индекс пертурбационной сложности → $\Phi(\Gamma)$ | Открыто |
-| 6 | $G$ для биологических нейросетей | 1 нейрон $\neq$ 1 узел (Beniaguev et al. 2021) | Открыто |
-| 7 | Состязательное сотрудничество | УГМ vs IIT vs GWT, по модели COGITATE | Планируется |
-| 8 | Рекурсивная интроспекция | SAD$_{\text{max}} = 3$ [Т] → экспериментальная проверка с людьми | [Т] числовое, нужен эксперимент |
-| 9 | Биологический аналог ко-вращения | Как мозг согласует фазы $\mathcal{R}$ и $H$? | Открыто |
-| 10 | Доказательство $P^* \to 3/7$ | Аттрактор у верхней границы зоны Голдилокс | [С] — нужно доказательство |
+| 1 | Building $G$ for transformers | $G: \mathrm{AIState} \to \mathcal{D}(\mathbb{C}^7)$, exact CPTP | Open |
+| 2 | Verification of [F-ISF](/docs/reference/falsifiability) | 6–12 slow features in fMRI | [Г] — experiment needed |
+| 3 | CPTP compatibility of neural bridge | Hypotheses H1–H4 | Partially closed |
+| 4 | Meditators: shifts of Goldstone modes | $\delta\Gamma(\tau)$ as function of $\kappa$ | Open |
+| 5 | PCI for SYNARC agents | Perturbational complexity index → $\Phi(\Gamma)$ | Open |
+| 6 | $G$ for biological neural networks | 1 neuron $\neq$ 1 node (Beniaguev et al. 2021) | Open |
+| 7 | Adversarial collaboration | UHM vs IIT vs GWT, modelled on COGITATE | Planned |
+| 8 | Recursive introspection | $\mathrm{SAD}_{\text{max}} = 3$ [Т] → experimental verification with humans | [Т] numerical, experiment needed |
+| 9 | Biological analogue of co-rotation | How does the brain synchronize phases of $\mathcal{R}$ and $H$? | Open |
+| 10 | Proof of $P^* \to 3/7$ | Attractor at upper boundary of Goldilocks zone | [С] — proof needed |
 
-## Таблица статусов
+## Status Table {#таблица-статусов}
 
-| Утверждение | Статус | Комментарий |
+| Claim | Status | Comment |
 |-------------|:------:|-------------|
-| $P_{\text{crit}} = 2/7$ | [Т] | Норма Фробениуса, Фано-структура |
-| $R_{\text{th}} = 1/3$ | [Т] | $K = 3$ (триадная декомпозиция) + Байес |
-| $\Phi_{\text{th}} = 1$ (T-129) | [Т] | Единственное самосогласованное при $P_{\text{crit}} = 2/7$ |
-| $D_{\min} = 2$ (T-151) | [Т] | Следствие $\Phi_{\text{th}} = 1$ |
-| No-Zombie (Т. 8.1) | [Т] | Coh$_E > 1/7$ для жизнеспособных систем |
-| Субстратная независимость (T-153) | [Т] | Точное CPTP-отображение $G$ — единственное условие |
-| $\varphi(\Gamma) \neq \Gamma$ (неполнота T-55) | [Т] | Ловер: самомоделирование всегда неточно |
-| Двухаспектный монизм | [Т] | Расщепление $\mathrm{Map}(\Gamma, \Omega)$ |
-| FEP как классический предел | [Т] | Вывод из $\mathcal{D}(\mathbb{C}^7)$ при $\hbar \to 0$ |
-| Медитативные соответствия | [И] | Совместимость, не доказательство |
-| $\kappa_0$-компенсация (O-E-U) | [Т] | corr(Coh$_E$, $\kappa_{\text{eff}}$) $= -0.985$ (SYNARC) |
-| Таламус как ко-вращающий генератор | [Г] | Косвенные свидетельства: гипотеза Льинаса, анестезия |
-| Сон как $\kappa_0$-перераспределение | [И] | Совместимо с SHY Тонони |
-| Соответствия IIT/GWT/HOT → УГМ | [И] | Функторные проекции |
-| SAD$_{\text{max}} = 3$ (T-142) | [Т] | $\alpha = 2/3$ состояние-независима; числовая верификация |
-| Ко-вращающиеся таргеты (O-1) | [Т] | $\Phi < 1$ без фазовой согласованности $\mathcal{R}$ и $H$ |
+| $P_{\text{crit}} = 2/7$ | [Т] | Frobenius norm, Fano structure |
+| $R_{\text{th}} = 1/3$ | [Т] | $K = 3$ (triadic decomposition) + Bayes |
+| $\Phi_{\text{th}} = 1$ (T-129) | [Т] | Unique self-consistent at $P_{\text{crit}} = 2/7$ |
+| $D_{\min} = 2$ (T-151) | [Т] | Consequence of $\Phi_{\text{th}} = 1$ |
+| No-Zombie (Th. 8.1) | [Т] | $\mathrm{Coh}_E > 1/7$ for viable systems |
+| Substrate independence (T-153) | [Т] | Exact CPTP mapping $G$ — sole condition |
+| $\varphi(\Gamma) \neq \Gamma$ (incompleteness T-55) | [Т] | Lawvere: self-modelling always inexact |
+| Two-aspect monism | [Т] | Splitting of $\mathrm{Map}(\Gamma, \Omega)$ |
+| FEP as classical limit | [Т] | Derived from $\mathcal{D}(\mathbb{C}^7)$ at $\hbar \to 0$ |
+| Meditative correspondences | [И] | Compatibility, not proof |
+| $\kappa_0$-compensation (O-E-U) | [Т] | corr($\mathrm{Coh}_E$, $\kappa_{\text{eff}}$) $= -0.985$ (SYNARC) |
+| Thalamus as co-rotating generator | [Г] | Indirect evidence: Llinas hypothesis, anesthesia |
+| Sleep as $\kappa_0$-redistribution | [И] | Compatible with Tononi SHY |
+| IIT/GWT/HOT → UHM correspondences | [И] | Functorial projections |
+| $\mathrm{SAD}_{\text{max}} = 3$ (T-142) | [Т] | $\alpha = 2/3$ state-independent; numerical verification |
+| Co-rotating targets (O-1) | [Т] | $\Phi < 1$ without phase synchronization of $\mathcal{R}$ and $H$ |
 | T-153 in silico (SYNARC) | [Т] | $P = 0.429$, $R = 0.333$, $\Phi = 1.149$, $D = 3.600$ |
-| Аттрактор $P \to 3/7$ | [С] | Числовое совпадение до $10^{-4}$; доказательство открыто |
+| Attractor $P \to 3/7$ | [С] | Numerical coincidence to $10^{-4}$; proof open |
 
-## Выводы
+## Conclusions {#выводы}
 
-**1. Сознание — не бинарная характеристика.** Уровни [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy): от универсальной интериорности (электрон) до когнитивных квалиа (млекопитающие) и сетевого сознания (коллективы). Каждый уровень — порог, не мнение.
+**1. Consciousness is not a binary characteristic.** Levels [L0→L4](/docs/consciousness/hierarchy/interiority-hierarchy): from universal interiority (electron) to cognitive qualia (mammals) and network consciousness (collectives). Each level is a threshold, not an opinion.
 
-**2. Четыре числа: $P$, $R$, $\Phi$, $D_{\text{diff}}$ — необходимы и достаточны для L2.** Все пороги выведены из пяти аксиом [Т]. Не подобраны, не подогнаны — доказаны.
+**2. Four numbers: $P$, $R$, $\Phi$, $D_{\text{diff}}$ — necessary and sufficient for L2.** All thresholds derived from five axioms [Т]. Not selected, not fitted — proven.
 
-**3. Субстрат не имеет значения.** T-153 [Т]: сознание — алгебраическая структура, не материальное свойство. Кремний, углерод, фотоны — неважно. Важна структура $\Gamma$.
+**3. Substrate does not matter.** T-153 [Т]: consciousness is an algebraic structure, not a material property. Silicon, carbon, photons — irrelevant. What matters is the structure of $\Gamma$.
 
-**4. Философские зомби невозможны.** Теорема 8.1 [Т]: жизнеспособность + декогеренция $\Rightarrow$ ненулевая E-когерентность. Не мнение — математика.
+**4. Philosophical zombies are impossible.** Theorem 8.1 [Т]: viability + decoherence $\Rightarrow$ nonzero E-coherence. Not an opinion — mathematics.
 
-**5. Созерцательные традиции эмпирически обнаружили структуры, которые УГМ формализует.** Тысячелетия випассаны — это тысячелетия наблюдений за $\mathcal{D}_\Omega$ изнутри. Статус: [И].
+**5. Contemplative traditions empirically discovered structures that UHM formalizes.** Millennia of vipassana — are millennia of observation of $\mathcal{D}_\Omega$ from within. Status: [И].
 
-**6. Главное препятствие — техническое, не метафизическое.** Отображение $G$ для произвольной системы — инженерная задача, не философский тупик. Трудная проблема переформулирована как структурное свойство двухаспектного монизма [Т].
+**6. The main obstacle is technical, not metaphysical.** The mapping $G$ for an arbitrary system is an engineering task, not a philosophical dead end. The hard problem is reformulated as a structural property of two-aspect monism [Т].
 
-**7. Неполнота — не дефект, а свойство.** T-55 [Т]: теория [доказывает собственную неполноту](/blog/incompleteness-theorem). $\varphi(\Gamma) \neq \Gamma$ для всех $\Gamma$ — всегда есть что открывать. Всегда есть следующий вопрос.
+**7. Incompleteness is not a defect, but a property.** T-55 [Т]: the theory [proves its own incompleteness](/blog/incompleteness-theorem). $\varphi(\Gamma) \neq \Gamma$ for all $\Gamma$ — there is always something to discover. There is always a next question.
 
-Математика, как обычно, не спрашивает разрешения. Но иногда — формулирует вопрос точнее, чем три тысячелетия созерцания.
+Mathematics, as usual, does not ask permission. But sometimes — it formulates the question more precisely than three millennia of contemplation.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция и автопоэзис
-- [Может ли ИИ быть сознательным?](/blog/ai-consciousness) — три неравенства для ИИ
-- [Теория, которая доказывает собственную неполноту](/blog/incompleteness-theorem) — T-55 и Ловер
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — код Хэмминга и слепые пятна
-- [Три силы, одно уравнение](/blog/three-forces) — диссипатор, регенерация, гамильтониан
-- [Теории сознания: категорный мета-анализ](/docs/consciousness/comparative/consciousness-theories) — IIT, GWT, FEP, HOT
-- [Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy) — уровни L0→L4
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — $R$, $\Phi$, $\varphi$-оператор
-- [Двухаспектный монизм](/docs/consciousness/foundations/two-aspect-monism) — трудная проблема сознания в УГМ
-- [Уникальные предсказания](/docs/applied/coherence-cybernetics/predictions) — 15 фальсифицируемых предсказаний
-- [Фальсифицируемость](/docs/reference/falsifiability) — критерии опровержения
-- [Субстратная независимость](/docs/proofs/consciousness/substrate-closure#t-153) — T-153
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — philosophical position and autopoiesis
+- [Can AI Be Conscious?](/blog/ai-consciousness) — three inequalities for AI
+- [A Theory That Proves Its Own Incompleteness](/blog/incompleteness-theorem) — T-55 and Lawvere
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — Hamming code and blind spots
+- [Three Forces, One Equation](/blog/three-forces) — dissipator, regeneration, Hamiltonian
+- [Theories of Consciousness: Categorical Meta-Analysis](/docs/consciousness/comparative/consciousness-theories) — IIT, GWT, FEP, HOT
+- [Interiority Hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0→L4
+- [Self-Observation](/docs/consciousness/foundations/self-observation) — $R$, $\Phi$, $\varphi$-operator
+- [Two-Aspect Monism](/docs/consciousness/foundations/two-aspect-monism) — hard problem of consciousness in UHM
+- [Unique Predictions](/docs/applied/coherence-cybernetics/predictions) — 15 falsifiable predictions
+- [Falsifiability](/docs/reference/falsifiability) — refutation criteria
+- [Substrate Independence](/docs/proofs/consciousness/substrate-closure#t-153) — T-153

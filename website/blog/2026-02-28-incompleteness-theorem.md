@@ -1,236 +1,236 @@
 ---
 slug: incompleteness-theorem
-title: "Теория, которая доказывает собственную неполноту"
+title: "A Theory That Proves Its Own Incompleteness"
 authors: [uhm]
 tags: [incompleteness, Lawvere, Godel, consciousness, category-theory, theory, mathematics]
 ---
 
-# Неполнота как теорема
+# Incompleteness as a Theorem {#неполнота-как-теорема}
 
-В 1931 году Курт Гёдель доказал, что достаточно богатая непротиворечивая арифметика содержит истинные утверждения, которые нельзя доказать внутри неё. Результат разрушил мечту Гильберта о полной аксиоматизации математики. С тех пор «неполнота» стала культурным клише: неполнота разума, неполнота физики, неполнота общества. Почти всегда — некорректно.
+In 1931 Kurt Gödel proved that a sufficiently rich consistent arithmetic contains true statements that cannot be proven within it. The result destroyed Hilbert's dream of a complete axiomatization of mathematics. Since then "incompleteness" has become a cultural cliché: incompleteness of the mind, of physics, of society. Almost always — incorrectly.
 
-Теорема Гёделя доказана для **формальных систем определённого типа**. Нейросеть не является такой системой. Сознание — не является. Общество — не является. Применять к ним Гёделя — не «альтернативный взгляд», а категориальная ошибка: применение теоремы вне области её доказательства.
+Gödel's theorem is proven for **formal systems of a specific type**. A neural network is not such a system. Consciousness — is not. Society — is not. Applying Gödel to them is not an "alternative view" but a categorical error: applying a theorem outside its domain of proof.
 
-УГМ делает нечто иное. Она не применяет Гёделя метафорически. Она формулирует и *доказывает* собственную неполноту как **теорему категорной теории** — T-55 [Т], конкретную реализацию теоремы Ловера о неподвижной точке в ∞-топосе $\mathrm{Sh}_\infty(\mathcal{C})$. Неполнота — не из арифметики (Гёдель), не из семантики (Тарский), а из структуры самомоделирования.
+UHM does something different. It does not apply Gödel metaphorically. It formulates and *proves* its own incompleteness as a **theorem of category theory** — T-55 [Т], a concrete realization of Lawvere's fixed-point theorem in the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Incompleteness — not from arithmetic (Gödel), not from semantics (Tarski), but from the structure of self-modelling.
 
-И не «к сожалению, теория неполна» — а «неполнота необходима, и вот почему».
+And not "unfortunately, the theory is incomplete" — but "incompleteness is necessary, and here is why."
 
 <!-- truncate -->
 
-## Где живёт теория
+## Where the Theory Lives {#где-живёт-теория}
 
-Одиннадцать постов назад начался ∞-топос $\mathrm{Sh}_\infty(\mathcal{C})$ — [единственный примитив](/docs/core/foundations/axiom-omega#примитив) УГМ. Из него выводятся пространство, время, частицы, сознание. Но можно задать вопрос: а сама теория — где?
+Eleven posts ago the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$ began — the [single primitive](/docs/core/foundations/axiom-omega#примитив) of UHM. From it, space, time, particles, and consciousness are derived. But one can ask: where does the theory itself reside?
 
-Ответ даёт теорема T-54 [Т]:
+The answer is given by theorem T-54 [Т]:
 
 $$
 \mathrm{Th}_{\mathrm{UHM}} := \mathrm{Sub}_{\mathrm{closed}}(\Omega) = \{p \in \Omega \mid \varphi^*(p) = p\} \qquad [\mathrm{Т}]
 $$
 
-$\Omega$ — [субобъектный классификатор](/docs/core/foundations/axiom-omega#внутренняя-логика) ∞-топоса, содержащий все предикаты на $\mathcal{D}(\mathbb{C}^7)$. $\varphi$ — [оператор самомоделирования](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), CPTP-канал. $\varphi^*$ — его обратный образ на предикатах: $\varphi^*(p)(\Gamma) := p(\varphi(\Gamma))$.
+$\Omega$ is the [subobject classifier](/docs/core/foundations/axiom-omega#внутренняя-логика) of the ∞-topos, containing all predicates on $\mathcal{D}(\mathbb{C}^7)$. $\varphi$ is the [self-modelling operator](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), a CPTP channel. $\varphi^*$ is its pullback on predicates: $\varphi^*(p)(\Gamma) := p(\varphi(\Gamma))$.
 
-$\mathrm{Th}_{\mathrm{UHM}}$ — множество $\varphi$-инвариантных предикатов: истин, которые не меняются при самомоделировании. Все предикаты, выводимые из аксиом A1–A5, принадлежат $\mathrm{Th}_{\mathrm{UHM}}$ — доказано в шесть шагов.
+$\mathrm{Th}_{\mathrm{UHM}}$ is the set of $\varphi$-invariant predicates: truths that do not change under self-modelling. All predicates derivable from axioms A1–A5 belong to $\mathrm{Th}_{\mathrm{UHM}}$ — proven in six steps.
 
-Теория **живёт внутри** собственного ∞-топоса как подобъект $\Omega$.
+The theory **lives inside** its own ∞-topos as a subobject of $\Omega$.
 
-Это четвёртая роль $\Omega$ в УГМ. Из того же $\Omega$ [выводятся](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]:
-1. L-измерение (логика)
-2. Операторы Линдблада $L_k$
-3. Эмерджентное время $\tau$
-4. Сама теория $\mathrm{Th}_{\mathrm{UHM}}$
+This is the fourth role of $\Omega$ in UHM. From the same $\Omega$ are [derived](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]:
+1. L-dimension (logic)
+2. Lindblad operators $L_k$
+3. Emergent time $\tau$
+4. The theory $\mathrm{Th}_{\mathrm{UHM}}$ itself
 
-Один объект — четыре следствия.
+One object — four consequences.
 
-## Собственный подобъект
+## Its Own Subobject {#собственный-подобъект}
 
-Теперь центральный вопрос: $\mathrm{Th}_{\mathrm{UHM}} = \Omega$ или $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$? Описывает ли теория всё — или не всё?
+Now the central question: is $\mathrm{Th}_{\mathrm{UHM}} = \Omega$ or $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$? Does the theory describe everything — or not everything?
 
-Теорема T-55 [Т]:
+Theorem T-55 [Т]:
 
 $$
 \boxed{\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega} \qquad [\mathrm{Т}]
 $$
 
-Множество самосогласованных истин **строго меньше** множества всех предикатов.
+The set of self-consistent truths is **strictly less than** the set of all predicates.
 
-Доказательство — от противного, в шесть строк:
+Proof — by contradiction, in six lines:
 
-1. $\mathrm{Sh}_\infty(\mathcal{C})$ — локально декартово замкнутая ∞-категория (Lurie, HTT, Prop. 6.1.0.6).
-2. Допустим $\mathrm{Th}_{\mathrm{UHM}} = \Omega$, то есть $\varphi^* = \mathrm{id}_\Omega$: каждый предикат $\varphi$-инвариантен.
-3. $\Omega$ разделяет точки: для любых $\Gamma_1 \neq \Gamma_2$ существует предикат $p$ с $p(\Gamma_1) \neq p(\Gamma_2)$.
-4. Из $\varphi^* = \mathrm{id}_\Omega$ и разделения точек: $\varphi(\Gamma) = \Gamma$ для всех $\Gamma$, то есть $\varphi = \mathrm{id}$.
-5. Но [диссипатор](/docs/core/operators/lindblad-operators) $\mathcal{D}_\Omega \neq 0$ порождает нетривиальную динамику: $\exists\,\Gamma: \varphi(\Gamma) \neq \Gamma$.
-6. Противоречие. $\blacksquare$
+1. $\mathrm{Sh}_\infty(\mathcal{C})$ is a locally Cartesian closed ∞-category (Lurie, HTT, Prop. 6.1.0.6).
+2. Assume $\mathrm{Th}_{\mathrm{UHM}} = \Omega$, i.e. $\varphi^* = \mathrm{id}_\Omega$: every predicate is $\varphi$-invariant.
+3. $\Omega$ separates points: for any $\Gamma_1 \neq \Gamma_2$ there exists a predicate $p$ with $p(\Gamma_1) \neq p(\Gamma_2)$.
+4. From $\varphi^* = \mathrm{id}_\Omega$ and separation of points: $\varphi(\Gamma) = \Gamma$ for all $\Gamma$, i.e. $\varphi = \mathrm{id}$.
+5. But the [dissipator](/docs/core/operators/lindblad-operators) $\mathcal{D}_\Omega \neq 0$ generates nontrivial dynamics: $\exists\,\Gamma: \varphi(\Gamma) \neq \Gamma$.
+6. Contradiction. $\blacksquare$
 
-Ключевой шаг — пятый. Если бы $\varphi = \mathrm{id}$, самомоделирование было бы идеальным: система видит себя в точности такой, какая она есть. Но диссипатор $\mathcal{D}_\Omega$ — [Фано-структурированный](/docs/core/operators/lindblad-operators#теорема-единственность-фано) — создаёт нетривиальную эволюцию. Состояния меняются. Идеальное самомоделирование невозможно.
+The key step is the fifth. If $\varphi = \mathrm{id}$, self-modelling would be perfect: the system sees itself exactly as it is. But the dissipator $\mathcal{D}_\Omega$ — [Fano-structured](/docs/core/operators/lindblad-operators#теорема-единственность-фано) — creates nontrivial evolution. States change. Perfect self-modelling is impossible.
 
-## Гёдель, Тарский, Ловер
+## Gödel, Tarski, Lawvere {#гёдель-тарский-ловер}
 
-Три уровня неполноты — три теоремы, каждая глубже предыдущей:
+Three levels of incompleteness — three theorems, each deeper than the previous:
 
-| Уровень | Автор | Год | Утверждение | Область |
+| Level | Author | Year | Statement | Domain |
 |:-------:|-------|:---:|-------------|---------|
-| 1 | Гёдель | 1931 | $\mathrm{Prov}(L) \subsetneq \mathrm{True}(L)$ | Арифметика |
-| 2 | Тарский | 1936 | Истина не определима в собственном языке | Семантика |
-| 3 | Ловер | 1969 | $A \not\twoheadrightarrow \Omega^A$ (нет сюръекции) | Декартово замкнутые категории |
+| 1 | Gödel | 1931 | $\mathrm{Prov}(L) \subsetneq \mathrm{True}(L)$ | Arithmetic |
+| 2 | Tarski | 1936 | Truth is not definable in its own language | Semantics |
+| 3 | Lawvere | 1969 | $A \not\twoheadrightarrow \Omega^A$ (no surjection) | Cartesian closed categories |
 
-Гёдель: не все истины доказуемы. Тарский: нельзя определить «истину» на языке, о котором говоришь. Ловер: ни один объект не может перечислить все свои предикаты.
+Gödel: not all truths are provable. Tarski: one cannot define "truth" in the language one is talking about. Lawvere: no object can enumerate all its predicates.
 
-Теорема T-55 — **конкретная реализация** теоремы Ловера. Объект $\mathrm{Th}_{\mathrm{UHM}}$ — максимальный $\varphi$-замкнутый подобъект $\Omega$. Но он строго меньше $\Omega$, потому что полное перечисление предикатов потребовало бы $\varphi = \mathrm{id}$, а это запрещено динамикой.
+Theorem T-55 is a **concrete realization** of Lawvere's theorem. The object $\mathrm{Th}_{\mathrm{UHM}}$ is the maximal $\varphi$-closed subobject of $\Omega$. But it is strictly less than $\Omega$, because complete enumeration of predicates would require $\varphi = \mathrm{id}$, which is forbidden by the dynamics.
 
-Гёдель получил неполноту из самореференции в арифметике. Ловер — из структуры категории. В УГМ неполнота возникает не из кодирования, а из **физики**: диссипатор $\mathcal{D}_\Omega$ создаёт зазор между $\Gamma$ и $\varphi(\Gamma)$. Мир меняется; значит, самомодель отстаёт. Всегда.
+Gödel obtained incompleteness from self-reference in arithmetic. Lawvere — from the structure of a category. In UHM incompleteness arises not from encoding, but from **physics**: the dissipator $\mathcal{D}_\Omega$ creates a gap between $\Gamma$ and $\varphi(\Gamma)$. The world changes; hence the self-model lags behind. Always.
 
-## Два уровня самореференции
+## Two Levels of Self-Reference {#два-уровня-самореференции}
 
-Самомоделирование в УГМ работает на двух уровнях. На обоих — неполно:
+Self-modelling in UHM operates at two levels. At both — it is incomplete:
 
-| Уровень | Объект | Самомоделирование | Неподвижная точка | Неполнота |
+| Level | Object | Self-modelling | Fixed point | Incompleteness |
 |---------|--------|-------------------|-------------------|-----------|
-| Голоном | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | $\rho^* = \varphi(\rho^*)$ [Т] | $R < 1$ [Т] |
-| Теория | $\mathrm{Th}_{\mathrm{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Fix}(\varphi^*)$ [Т] | $\mathrm{Th} \subsetneq \Omega$ [Т] |
+| Holon | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$ | $\rho^* = \varphi(\rho^*)$ [Т] | $R < 1$ [Т] |
+| Theory | $\mathrm{Th}_{\mathrm{UHM}} \subseteq \Omega$ | $\varphi^*: \Omega \to \Omega$ | $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Fix}(\varphi^*)$ [Т] | $\mathrm{Th} \subsetneq \Omega$ [Т] |
 
-Голоном моделирует себя через $\varphi$ — и [мера рефлексии](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ всегда меньше единицы. Теория моделирует себя через $\varphi^*$ — и множество самосогласованных истин всегда меньше множества всех предикатов.
+The holon models itself through $\varphi$ — and the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) $R = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ is always less than one. The theory models itself through $\varphi^*$ — and the set of self-consistent truths is always less than the set of all predicates.
 
-Один и тот же механизм. Одна и та же причина. Одно и то же следствие.
+The same mechanism. The same reason. The same consequence.
 
-## Слепые пятна — снова
+## Blind Spots — Again {#слепые-пятна-снова}
 
-Во [втором посте](/blog/geometry-of-inner-world) было установлено: [код Хэмминга $H(7,4)$](/docs/core/dynamics/gap-dynamics#код-хэмминга) требует минимум 3 непрозрачных каналов ($\mathrm{Gap} > 0$) из 21 для целостности самомоделирования. Полная прозрачность ($\mathrm{Gap} = 0$ для всех каналов) несовместима с коррекцией ошибок: оператор $\varphi$ не может одновременно быть идеальным и проверять собственную работу.
+In the [second post](/blog/geometry-of-inner-world) it was established: the [Hamming code $H(7,4)$](/docs/core/dynamics/gap-dynamics#код-хэмминга) requires at least 3 opaque channels ($\mathrm{Gap} > 0$) out of 21 for the integrity of self-modelling. Full transparency ($\mathrm{Gap} = 0$ for all channels) is incompatible with error correction: the operator $\varphi$ cannot simultaneously be perfect and verify its own work.
 
-Из [теоремы о неполной прозрачности](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность) [С]:
+From the [theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность) [С]:
 
 $$
 |\mathcal{U}(\Gamma)| \geq 3 \qquad [\mathrm{С}]
 $$
 
-Каждое сознательное существо **неизбежно** обладает бессознательным. Не дефект — структурная необходимость. Как контрольные биты в коде Хэмминга обеспечивают целостность информации, так непрозрачные каналы обеспечивают целостность самомоделирования.
+Every conscious being **inevitably** possesses an unconscious. Not a defect — a structural necessity. Just as check bits in the Hamming code ensure information integrity, opaque channels ensure the integrity of self-modelling.
 
-Теорема T-55 — **то же самое**, но на уровне теории. Слепые пятна голонома ($\mathrm{Gap} > 0$ для ≥ 3 каналов) — частный случай слепых пятен теории ($\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$). Оператор $\varphi$ не может быть идеальным. $\varphi^*$ тоже. Это один принцип на двух масштабах:
+Theorem T-55 is **the same thing**, but at the level of the theory. The blind spots of the holon ($\mathrm{Gap} > 0$ for ≥ 3 channels) are a special case of the blind spots of the theory ($\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$). The operator $\varphi$ cannot be perfect. $\varphi^*$ either. This is one principle at two scales:
 
-| Масштаб | Что не видно | Почему |
+| Scale | What is unseen | Why |
 |---------|-------------|--------|
-| Голоном | ≥ 3 канала когерентности | Хэмминг $H(7,4)$: коррекция ошибок [С] |
-| Теория | $\Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$ | Ловер: декартова замкнутость [Т] |
+| Holon | ≥ 3 coherence channels | Hamming $H(7,4)$: error correction [С] |
+| Theory | $\Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$ | Lawvere: Cartesian closedness [Т] |
 
-**Аналогия.** Глаз не может видеть собственную сетчатку — не потому что недостаточно мощный, а потому что наблюдатель не может быть собственным объектом наблюдения. Это не ограничение зрения — это свойство наблюдения.
+**Analogy.** The eye cannot see its own retina — not because it is insufficiently powerful, but because the observer cannot be its own object of observation. This is not a limitation of vision — it is a property of observation.
 
-## L ⊊ Γ
+## L ⊊ Γ {#l-подмножество-гамма}
 
-Гёдель доказал неполноту для формальных систем. В УГМ измерение L (Логика) — [по определению](/docs/core/structure/dimension-l) — формальная структура: алгебра операторов с отношениями коммутации. К L-измерению теоремы Гёделя применимы. К остальным шести измерениям и к $\Gamma$ в целом — нет: они не удовлетворяют условиям теорем.
+Gödel proved incompleteness for formal systems. In UHM the L-dimension (Logic) — [by definition](/docs/core/structure/dimension-l) — is a formal structure: an algebra of operators with commutation relations. Gödel's theorems apply to the L-dimension. To the other six dimensions and to $\Gamma$ as a whole — they do not: these do not satisfy the theorem conditions.
 
 $$
 L \subsetneq \Gamma \quad \Longrightarrow \quad \mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma) \qquad [\mathrm{И}]
 $$
 
-Истины, требующие доступа к измерениям $\{A, S, D, E, O, U\}$, **принципиально** недоступны чистой логике.
+Truths requiring access to dimensions $\{A, S, D, E, O, U\}$ are **in principle** inaccessible to pure logic.
 
-Три типа истины в УГМ:
+Three types of truth in UHM:
 
-| Тип | Определение | Область |
+| Type | Definition | Domain |
 |-----|-------------|---------|
-| Логическая доказуемость | $p \in \mathrm{Prov}(L)$ | Только L |
-| Когерентность-истина | $\mathrm{Coh}(p, \Gamma) > 0$ | Все 7 измерений |
-| Экзистенциальная | $\exists\,\Gamma: p(\Gamma)$ | Демонстрируется существованием |
+| Logical provability | $p \in \mathrm{Prov}(L)$ | L only |
+| Coherence-truth | $\mathrm{Coh}(p, \Gamma) > 0$ | All 7 dimensions |
+| Existential | $\exists\,\Gamma: p(\Gamma)$ | Demonstrated by existence |
 
-Когда L-измерение достигает гёделева предела — неразрешимая проблема — система не застревает. Она обращается к [измерению O](/docs/core/structure/dimension-o) (Основание), которое вбрасывает новую информацию. Происходит расширение. Неполнота — **двигатель эволюции**, не тупик.
+When the L-dimension reaches its Gödelian limit — an undecidable problem — the system does not get stuck. It turns to the [O-dimension](/docs/core/structure/dimension-o) (Grounding), which injects new information. Expansion occurs. Incompleteness is an **engine of evolution**, not a dead end.
 
-Это конкретизирует свойство (d) теоремы T-56.
+This concretizes property (d) of theorem T-56.
 
-## Структурная теория всего
+## A Structural Theory of Everything {#структурная-теория-всего}
 
-Теорема T-56 [Т] — итоговый результат. Объект $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ обладает четырьмя свойствами:
+Theorem T-56 [Т] — the final result. The object $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ possesses four properties:
 
-| Свойство | Формулировка | Следствие |
+| Property | Statement | Consequence |
 |----------|-------------|-----------|
-| **(a) Замкнутость** | $\varphi^*(\mathrm{Th}_{\mathrm{UHM}}) = \mathrm{Th}_{\mathrm{UHM}}$ | Теория самосогласована |
-| **(b) Конечная аксиоматизируемость** | Порождается из $\{A_1, \ldots, A_5\}$ | 5 аксиом — достаточно |
-| **(c) Неполнота** | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ (T-55) | Не всё описывает |
-| **(d) Эволюционная открытость** | $\forall\, p \in \Omega \setminus \mathrm{Th}: \exists\, \mathrm{Th}' \supset \mathrm{Th} \cup \{p\}$ | Всегда расширяема |
+| **(a) Closure** | $\varphi^*(\mathrm{Th}_{\mathrm{UHM}}) = \mathrm{Th}_{\mathrm{UHM}}$ | The theory is self-consistent |
+| **(b) Finite axiomatizability** | Generated from $\{A_1, \ldots, A_5\}$ | 5 axioms are sufficient |
+| **(c) Incompleteness** | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ (T-55) | Does not describe everything |
+| **(d) Evolutionary openness** | $\forall\, p \in \Omega \setminus \mathrm{Th}: \exists\, \mathrm{Th}' \supset \mathrm{Th} \cup \{p\}$ | Always extensible |
 
-Четыре свойства одновременно. Это не привычная «теория всего» в смысле формулы на футболке. Это **структурная** ToE: конечно аксиоматизируемая, принципиально неполная и бесконечно расширяемая.
+Four properties simultaneously. This is not the familiar "theory of everything" in the sense of a formula on a t-shirt. It is a **structural** ToE: finitely axiomatizable, principally incomplete, and infinitely extensible.
 
-Свойство (d) — самое неожиданное. Для любого предиката $p$, недоступного текущей теории ($p \in \Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$), существует расширение $\mathrm{Th}'$, которое включает $p$ и остаётся $\varphi'$-замкнутым. Механизм расширения — [O-инжекция](/docs/core/structure/dimension-o): измерение Основания модифицирует самомоделирование $\varphi \to \varphi'$, делая ранее недоступный предикат инвариантным.
+Property (d) is the most unexpected. For any predicate $p$ inaccessible to the current theory ($p \in \Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$), there exists an extension $\mathrm{Th}'$ that includes $p$ and remains $\varphi'$-closed. The extension mechanism is [O-injection](/docs/core/structure/dimension-o): the Grounding dimension modifies self-modelling $\varphi \to \varphi'$, making the previously inaccessible predicate invariant.
 
-Структурная ToE — не статическая формула, а **растущий объект**. Каждое расширение — фазовый переход теории.
+A structural ToE is not a static formula but a **growing object**. Each extension is a phase transition of the theory.
 
-## Физическая цена неполноты
+## The Physical Price of Incompleteness {#физическая-цена-неполноты}
 
-В [предыдущем посте](/blog/cosmological-constant) было показано: космологическая постоянная $\Lambda > 0$ [Т] — следствие автопоэтической работы. Но можно взглянуть глубже.
+In the [previous post](/blog/cosmological-constant) it was shown: the cosmological constant $\Lambda > 0$ [Т] is a consequence of autopoietic work. But one can look deeper.
 
-Из T-55 следует: $\varphi \neq \mathrm{id}$, то есть самомоделирование всегда неточно. Информационный зазор:
+From T-55 it follows: $\varphi \neq \mathrm{id}$, i.e. self-modelling is always inexact. The informational gap:
 
 $$
 \|\Gamma - \varphi(\Gamma)\|_F^2 = (1 - R) \cdot \|\Gamma\|_F^2 > 0
 $$
 
-Этот зазор транслируется в положительную вакуумную энергию [И]:
+This gap translates into positive vacuum energy [И]:
 
 $$
-\rho_{\text{вак}} = \kappa_0 \cdot [P(\rho^*) - P(I/7)] \cdot \omega_0 > 0 \qquad [\mathrm{Т}]
+\rho_{\text{vac}} = \kappa_0 \cdot [P(\rho^*) - P(I/7)] \cdot \omega_0 > 0 \qquad [\mathrm{Т}]
 $$
 
-Вселенная платит за неполноту самомоделирования. Платит буквально — энергией.
+The Universe pays for the incompleteness of self-modelling. It pays literally — with energy.
 
-Три уровня этой связи:
+Three levels of this connection:
 
-| Теорема | Утверждение | Физический эффект |
+| Theorem | Statement | Physical effect |
 |---------|-------------|-------------------|
-| Гёдель (1931) | $\mathrm{Prov}(L) \subsetneq \mathrm{True}(L)$ | L-измерение конечно → нужны другие измерения |
-| Тарский (1936) | Истина не определима в собственном языке | Мета-уровень необходим → иерархия L0→L4 |
-| Ловер (1969) → T-55 | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ | Самомоделирование неточно → $\rho_{\text{вак}} > 0$ [И] |
+| Gödel (1931) | $\mathrm{Prov}(L) \subsetneq \mathrm{True}(L)$ | L-dimension is finite → other dimensions needed |
+| Tarski (1936) | Truth is not definable in its own language | Meta-level is necessary → hierarchy L0→L4 |
+| Lawvere (1969) → T-55 | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ | Self-modelling is inexact → $\rho_{\text{vac}} > 0$ [И] |
 
-Первые два — про ограничения. Третий — про **следствия** ограничений: неполнота порождает ненулевую вакуумную энергию, которая и есть космологическая постоянная.
+The first two are about limitations. The third is about **consequences** of limitations: incompleteness generates nonzero vacuum energy, which is the cosmological constant.
 
-## Что это значит
+## What This Means {#что-это-значит}
 
-Мозг не может полностью понять мозг — не из-за сложности, а по теореме. Это не Гёдель (мозг — не формальная система). Это Ловер: $\varphi^*(p) \neq p$ для предикатов $p \in \Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$. Самомоделирование по определению отстаёт от реальности — и никакое увеличение вычислительных мощностей не поможет.
+The brain cannot fully understand the brain — not because of complexity, but by theorem. This is not Gödel (the brain is not a formal system). This is Lawvere: $\varphi^*(p) \neq p$ for predicates $p \in \Omega \setminus \mathrm{Th}_{\mathrm{UHM}}$. Self-modelling by definition lags behind reality — and no increase in computational power will help.
 
-Всегда будут вопросы, на которые нет ответа *изнутри*. Но:
+There will always be questions with no answer *from within*. But:
 
-- Это не поражение. Это **структурное свойство** реальности (T-56(c) [Т]).
-- Это не тупик. Это **двигатель эволюции** (T-56(d) [Т]): O-инжекция расширяет теорию.
-- Это не произвол. Это **теорема** с точными условиями, не метафора.
+- This is not a defeat. It is a **structural property** of reality (T-56(c) [Т]).
+- This is not a dead end. It is an **engine of evolution** (T-56(d) [Т]): O-injection extends the theory.
+- This is not arbitrary. It is a **theorem** with precise conditions, not a metaphor.
 
-Мечта Гильберта — полная аксиоматизация — невозможна. Но возможна структура лучше: конечно аксиоматизируемая, самосогласованная, принципиально неполная и бесконечно расширяемая. Не «формула всего» — а **грамматика всего**: правила, по которым формулы пишутся и переписываются.
+Hilbert's dream — complete axiomatization — is impossible. But a better structure is possible: finitely axiomatizable, self-consistent, principally incomplete, and infinitely extensible. Not a "formula of everything" — but a **grammar of everything**: rules by which formulas are written and rewritten.
 
-## Таблица статусов
+## Status Table {#таблица-статусов}
 
-| Результат | Статус | Комментарий |
+| Result | Status | Comment |
 |-----------|:------:|-------------|
-| T-54: $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ | [Т] | Теория как внутренний объект ∞-топоса |
-| T-55: $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ | [Т] | Ловер: декартова замкнутость + $\mathcal{D}_\Omega \neq 0$ |
-| T-56(a): $\varphi^*$-замкнутость | [Т] | По определению |
-| T-56(b): конечная аксиоматизируемость | [Т] | 5 аксиом порождают $\mathrm{Th}_{\mathrm{UHM}}$ |
-| T-56(c): принципиальная неполнота | [Т] | Следствие T-55 |
-| T-56(d): эволюционная открытость | [Т] | O-инжекция расширяет $\mathrm{Th}$ |
-| Неполная прозрачность (≥ 3 каналов) | [С] | Аналогия с $H(7,4)$ |
-| $L \subsetneq \Gamma \Rightarrow \mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma)$ | [И] | Перенос Гёделя на структуру $\Gamma$ |
-| $\rho_{\text{вак}} > 0$ из неполноты | [И] | Информационный зазор → вакуумная энергия |
+| T-54: $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ | [Т] | Theory as internal object of ∞-topos |
+| T-55: $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ | [Т] | Lawvere: Cartesian closedness + $\mathcal{D}_\Omega \neq 0$ |
+| T-56(a): $\varphi^*$-closure | [Т] | By definition |
+| T-56(b): finite axiomatizability | [Т] | 5 axioms generate $\mathrm{Th}_{\mathrm{UHM}}$ |
+| T-56(c): principal incompleteness | [Т] | Consequence of T-55 |
+| T-56(d): evolutionary openness | [Т] | O-injection extends $\mathrm{Th}$ |
+| Incomplete transparency (≥ 3 channels) | [С] | Analogy with $H(7,4)$ |
+| $L \subsetneq \Gamma \Rightarrow \mathrm{Prov}(L) \subsetneq \mathrm{Coh}(\Gamma)$ | [И] | Transfer of Gödel to structure of $\Gamma$ |
+| $\rho_{\text{vac}} > 0$ from incompleteness | [И] | Informational gap → vacuum energy |
 
-## Выводы
+## Conclusions {#выводы}
 
-**1. Теория живёт внутри себя.** T-54 [Т]: $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ — множество $\varphi$-инвариантных предикатов. Тот же субобъектный классификатор $\Omega$, из которого выводятся операторы Линдблада и эмерджентное время, содержит и саму теорию как подобъект.
+**1. The theory lives inside itself.** T-54 [Т]: $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ — the set of $\varphi$-invariant predicates. The same subobject classifier $\Omega$, from which the Lindblad operators and emergent time are derived, contains the theory itself as a subobject.
 
-**2. Неполнота — теорема, не ограничение.** T-55 [Т]: $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$. Доказательство — шесть строк от противного. Если бы теория описывала всё, самомоделирование было бы идеальным ($\varphi = \mathrm{id}$), но динамика ($\mathcal{D}_\Omega \neq 0$) это запрещает.
+**2. Incompleteness is a theorem, not a limitation.** T-55 [Т]: $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$. The proof is six lines by contradiction. If the theory described everything, self-modelling would be perfect ($\varphi = \mathrm{id}$), but the dynamics ($\mathcal{D}_\Omega \neq 0$) forbids this.
 
-**3. Три уровня неполноты.** Гёдель (арифметика), Тарский (семантика), Ловер (категорная теория). Каждый следующий — глубже. T-55 — конкретная реализация Ловера: $\mathrm{Th}_{\mathrm{UHM}}$ — максимальный $\varphi$-замкнутый подобъект, но строго меньше $\Omega$.
+**3. Three levels of incompleteness.** Gödel (arithmetic), Tarski (semantics), Lawvere (category theory). Each next is deeper. T-55 is a concrete realization of Lawvere: $\mathrm{Th}_{\mathrm{UHM}}$ is the maximal $\varphi$-closed subobject, but strictly less than $\Omega$.
 
-**4. Слепые пятна голонома — частный случай неполноты теории.** Код Хэмминга $H(7,4)$ требует ≥ 3 непрозрачных каналов [С] — бессознательное структурно необходимо. T-55 [Т] — та же логика на уровне ∞-топоса: $\Omega \setminus \mathrm{Th}_{\mathrm{UHM}} \neq \varnothing$ — теория структурно неполна.
+**4. Blind spots of the holon are a special case of incompleteness of the theory.** Hamming code $H(7,4)$ requires ≥ 3 opaque channels [С] — the unconscious is structurally necessary. T-55 [Т] — the same logic at the level of the ∞-topos: $\Omega \setminus \mathrm{Th}_{\mathrm{UHM}} \neq \varnothing$ — the theory is structurally incomplete.
 
-**5. Эволюционная открытость.** T-56(d) [Т]: для любого недоступного предиката существует расширение $\mathrm{Th}'$, включающее его. Механизм — O-инжекция. Неполнота — не тупик, а **двигатель**: система, достигшая предела в L-измерении, обращается к Основанию (O) и расширяется.
+**5. Evolutionary openness.** T-56(d) [Т]: for any inaccessible predicate there exists an extension $\mathrm{Th}'$ that includes it. The mechanism is O-injection. Incompleteness is not a dead end but an **engine**: a system that has reached its limit in the L-dimension turns to Grounding (O) and expands.
 
-**6. Неполнота стоит энергии.** $\|\Gamma - \varphi(\Gamma)\| > 0$ — информационный зазор между реальностью и самомоделью — транслируется в $\rho_{\text{вак}} > 0$ [И]. Космологическая постоянная — плата за то, что мир интереснее любой теории о нём.
+**6. Incompleteness costs energy.** $\|\Gamma - \varphi(\Gamma)\| > 0$ — the informational gap between reality and the self-model — translates into $\rho_{\text{vac}} > 0$ [И]. The cosmological constant is the price of the world being more interesting than any theory about it.
 
-Математика, как обычно, не спрашивает разрешения. Но иногда — доказывает, что спрашивать бесполезно.
+Mathematics, as usual, does not ask permission. But sometimes — it proves that asking is pointless.
 
 ---
 
-**Связанные материалы:**
-- [Голономный Панинтериоризм](/blog/holonomic-paninteriorism) — философская позиция и автопоэзис
-- [Геометрия внутреннего мира](/blog/geometry-of-inner-world) — код Хэмминга и слепые пятна
-- [Три силы, одно уравнение](/blog/three-forces) — диссипатор $\mathcal{D}_\Omega$ и регенерация
-- [Почему ровно семь](/blog/why-seven) — октонионная алгебра и теорема Ловера (бегло)
-- [Космологическая постоянная](/blog/cosmological-constant) — $\Lambda > 0$ из неполноты
-- [Следствия из аксиом](/docs/core/foundations/consequences#самореферентное-замыкание) — T-54, T-55, T-56 полные доказательства
-- [Категорный формализм](/docs/proofs/categorical/categorical-formalism) — ∞-топос, L-унификация, субобъектный классификатор
-- [Бессознательное](/docs/consciousness/states/unconscious) — неполная прозрачность и Gap-структура
+**Related materials:**
+- [Holonomic Paninteriorism](/blog/holonomic-paninteriorism) — philosophical position and autopoiesis
+- [Geometry of the Inner World](/blog/geometry-of-inner-world) — Hamming code and blind spots
+- [Three Forces, One Equation](/blog/three-forces) — dissipator $\mathcal{D}_\Omega$ and regeneration
+- [Why Exactly Seven](/blog/why-seven) — octonionic algebra and Lawvere's theorem (briefly)
+- [Cosmological Constant](/blog/cosmological-constant) — $\Lambda > 0$ from incompleteness
+- [Consequences from Axioms](/docs/core/foundations/consequences#самореферентное-замыкание) — T-54, T-55, T-56 full proofs
+- [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — ∞-topos, L-unification, subobject classifier
+- [The Unconscious](/docs/consciousness/states/unconscious) — incomplete transparency and Gap-structure

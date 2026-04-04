@@ -1,57 +1,57 @@
 ---
 sidebar_position: 1
-title: "Фано-канал и Gap-теоремы"
+title: "Fano Channel and Gap Theorems"
 slug: /proofs/gap/fano-channel
-description: "Строгие доказательства: Фано-канал сохраняет когерентности, G₂-ковариантность Фано-диссипатора, атомарный не G₂-ковариантен, равновесный Gap, L4 ≠ Gap=0, необходимость обобщённого φ"
+description: "Rigorous proofs: Fano channel preserves coherences, G₂-covariance of Fano dissipator, atomic is not G₂-covariant, equilibrium Gap, L4 ≠ Gap=0, necessity of generalized φ"
 ---
 
-# Доказательства: Фано-канал и ключевые Gap-теоремы
+# Proofs: Fano Channel and Key Gap Theorems
 
-:::info Для кого эта глава
-Читатель найдёт здесь строгие доказательства центральных теорем Gap-динамики: сохранение когерентностей Фано-каналом, G₂-ковариантность, равновесный Gap, оптимальность Фано-канала и связь с кодом Хэмминга H(7,4). Все результаты имеют статус [Т].
+:::info Who this chapter is for
+The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, G₂-covariance, equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [Т].
 :::
 
-Данный документ содержит **строгие доказательства** центральных теорем Gap-динамики. Все результаты имеют статус **[Т]** (безупречно строгие теоремы, см. [реестр статусов](/docs/reference/status-registry)).
+This document contains **rigorous proofs** of the central theorems of Gap dynamics. All results have status **[Т]** (impeccably rigorous theorems, see the [status registry](/docs/reference/status-registry)).
 
 ---
 
-## 1. Фано-предиктивный канал {#фано-канал}
+## 1. Fano Predictive Channel {#фано-канал}
 
-### 1.1 Полнота атомов Фано
+### 1.1 Completeness of Fano atoms
 
-:::tip Теорема 1.1 (Полнота атомов Фано) [Т]
-Для 7 линий [плоскости Фано](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ определены проекции на 3-мерные подпространства:
+:::tip Theorem 1.1 (Completeness of Fano atoms) [Т]
+For the 7 lines of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$, projections onto 3-dimensional subspaces are defined:
 
 $$
 \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
 $$
 
-Каждое измерение лежит на ровно 3 Фано-линиях, следовательно:
+Each dimension lies on exactly 3 Fano lines, therefore:
 
 $$
 \sum_{p=1}^{7} \Pi_p = 3I
 $$
 :::
 
-**Доказательство.** Свойство плоскости Фано: каждая из 7 точек инцидентна ровно 3 линиям. Для любого $i$: $\sum_p \Pi_p |i\rangle\langle i| = \sum_{p: i \in \mathrm{line}_p} |i\rangle\langle i| = 3|i\rangle\langle i|$. Суммируя по $i$: $\sum_p \Pi_p = 3I$. $\square$
+**Proof.** Property of the Fano plane: each of the 7 points is incident to exactly 3 lines. For any $i$: $\sum_p \Pi_p |i\rangle\langle i| = \sum_{p: i \in \mathrm{line}_p} |i\rangle\langle i| = 3|i\rangle\langle i|$. Summing over $i$: $\sum_p \Pi_p = 3I$. $\square$
 
-### 1.2 Фано-структурированные операторы Линдблада
+### 1.2 Fano-structured Lindblad operators
 
-:::tip Определение (Фано-операторы Линдблада) [Т]
-Для каждой Фано-линии $p = (i,j,k)$ определяется оператор Линдблада:
+:::tip Definition (Fano Lindblad operators) [Т]
+For each Fano line $p = (i,j,k)$ a Lindblad operator is defined:
 
 $$
 L_p^{\text{Fano}} := \frac{1}{\sqrt{3}}\,\Pi_p = \frac{1}{\sqrt{3}}(|i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|)
 $$
 
-**Проверка CPTP:**
+**CPTP check:**
 
 $$
 \sum_{p=1}^{7} (L_p^{\text{Fano}})^\dagger L_p^{\text{Fano}} = \frac{1}{3}\sum_{p=1}^{7} \Pi_p = \frac{1}{3} \cdot 3I = I \quad \checkmark
 $$
 :::
 
-### 1.3 Фано-предиктивный канал
+### 1.3 Fano predictive channel
 
 $$
 \mathcal{P}_{\text{Fano}}(\Gamma) := \sum_{p=1}^{7} L_p^{\text{Fano}}\,\Gamma\,(L_p^{\text{Fano}})^\dagger = \frac{1}{3}\sum_{p=1}^{7} \Pi_p\,\Gamma\,\Pi_p
@@ -59,68 +59,68 @@ $$
 
 ---
 
-## 2. Теорема: Фано-канал сохраняет когерентности [Т] {#теорема-фано-канал}
+## 2. Theorem: Fano Channel Preserves Coherences [Т] {#теорема-фано-канал}
 
-:::tip Теорема 2.1 (Фано-канал сохраняет когерентности) [Т]
-Для произвольной матрицы когерентности $\Gamma$:
+:::tip Theorem 2.1 (Fano channel preserves coherences) [Т]
+For an arbitrary coherence matrix $\Gamma$:
 
-**(a)** Диагональные элементы сохраняются точно:
+**(a)** Diagonal elements are preserved exactly:
 
 $$
 [\mathcal{P}_{\text{Fano}}(\Gamma)]_{ii} = \gamma_{ii}
 $$
 
-**(b)** Недиагональные элементы сохраняются с коэффициентом $1/3$:
+**(b)** Off-diagonal elements are preserved with coefficient $1/3$:
 
 $$
-[\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{для всех } i \neq j
+[\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{for all } i \neq j
 $$
 
-**(c)** Фазы когерентностей сохраняются в точности:
+**(c)** The phases of coherences are preserved exactly:
 
 $$
 \arg([\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij}) = \theta_{ij}
 $$
 :::
 
-**Доказательство.**
+**Proof.**
 
-**(a)** $[\sum_p \Pi_p\,\Gamma\,\Pi_p]_{ii} = \sum_{p: i \in \mathrm{line}_p} \gamma_{ii} = 3\gamma_{ii}$. С множителем $1/3$: $\gamma_{ii}$. $\checkmark$
+**(a)** $[\sum_p \Pi_p\,\Gamma\,\Pi_p]_{ii} = \sum_{p: i \in \mathrm{line}_p} \gamma_{ii} = 3\gamma_{ii}$. With factor $1/3$: $\gamma_{ii}$. $\checkmark$
 
-**(b)** В $PG(2,2)$ любые две различные точки лежат на **ровно одной** линии. Для пары $(i,j)$, $i \neq j$, ровно одна линия $p^*$ содержит обе точки:
+**(b)** In $PG(2,2)$ any two distinct points lie on **exactly one** line. For a pair $(i,j)$, $i \neq j$, exactly one line $p^*$ contains both points:
 
 $$
 \left[\sum_p \Pi_p\,\Gamma\,\Pi_p\right]_{ij} = \sum_{p: \{i,j\} \subseteq \mathrm{line}_p} \gamma_{ij} = 1 \cdot \gamma_{ij}
 $$
 
-С множителем $1/3$: $\gamma_{ij}/3$. $\checkmark$
+With factor $1/3$: $\gamma_{ij}/3$. $\checkmark$
 
-**(c)** $\arg(\gamma_{ij}/3) = \arg(\gamma_{ij})$, поскольку $1/3 > 0$. $\checkmark$ $\square$
+**(c)** $\arg(\gamma_{ij}/3) = \arg(\gamma_{ij})$, since $1/3 > 0$. $\checkmark$ $\square$
 
-:::info Следствие (Фундаментальное)
-В отличие от канонического $\varphi_{\text{base}}$, который [уничтожает все когерентности](/docs/core/dynamics/gap-dynamics#чой-ямиолковский), Фано-канал **масштабирует** амплитуды когерентностей без фазового искажения. Это делает его основой для когерентно-сохраняющего самомоделирования $\varphi_{\text{coh}}$.
+:::info Corollary (Fundamental)
+Unlike the canonical $\varphi_{\text{base}}$, which [destroys all coherences](/docs/core/dynamics/gap-dynamics#чой-ямиолковский), the Fano channel **scales** the amplitudes of coherences without phase distortion. This makes it the basis for coherence-preserving self-modeling $\varphi_{\text{coh}}$.
 :::
 
-### Числовой пример {#числовой-пример-фано}
+### Numerical example {#числовой-пример-фано}
 
-:::note Пример: действие Фано-канала на конкретную матрицу
-Рассмотрим $7 \times 7$ матрицу когерентности $\Gamma$ с диагональю $\gamma_{ii} = 1/7$ (равновесное распределение) и несколькими ненулевыми когерентностями:
+:::note Example: action of the Fano channel on a specific matrix
+Consider a $7 \times 7$ coherence matrix $\Gamma$ with diagonal $\gamma_{ii} = 1/7$ (equilibrium distribution) and several non-zero coherences:
 
 $$
 \gamma_{12} = 0.05 + 0.03i, \quad \gamma_{13} = 0.04, \quad \gamma_{45} = -0.02 + 0.01i
 $$
 
-(остальные недиагональные элементы равны нулю или малы).
+(the remaining off-diagonal elements are zero or small).
 
-**Шаг 1.** Вычисляем диагональные элементы $\mathcal{P}_{\text{Fano}}(\Gamma)$:
+**Step 1.** Compute the diagonal elements of $\mathcal{P}_{\text{Fano}}(\Gamma)$:
 
 $$
 [\mathcal{P}_{\text{Fano}}(\Gamma)]_{ii} = \gamma_{ii} = \frac{1}{7} \approx 0.1429
 $$
 
-Диагональ не изменилась — вероятности секторов сохранены точно.
+The diagonal is unchanged — sector probabilities are preserved exactly.
 
-**Шаг 2.** Вычисляем недиагональные элементы. По теореме 2.1(b):
+**Step 2.** Compute the off-diagonal elements. By Theorem 2.1(b):
 
 $$
 [\mathcal{P}_{\text{Fano}}(\Gamma)]_{12} = \frac{1}{3}(0.05 + 0.03i) = 0.0167 + 0.01i
@@ -134,7 +134,7 @@ $$
 [\mathcal{P}_{\text{Fano}}(\Gamma)]_{45} = \frac{1}{3}(-0.02 + 0.01i) = -0.0067 + 0.0033i
 $$
 
-**Шаг 3.** Проверяем сохранение фаз (теорема 2.1(c)):
+**Step 3.** Verify phase preservation (Theorem 2.1(c)):
 
 $$
 \arg(\gamma_{12}) = \arctan(0.03/0.05) \approx 30.96° \quad \Rightarrow \quad \arg(\gamma_{12}/3) = 30.96° \;\checkmark
@@ -144,348 +144,348 @@ $$
 \arg(\gamma_{45}) = \arctan(0.01/(-0.02)) + \pi \approx 153.43° \quad \Rightarrow \quad \arg(\gamma_{45}/3) = 153.43° \;\checkmark
 $$
 
-**Итог:** модули когерентностей уменьшились ровно в 3 раза, фазы сохранились без искажения, диагональ не тронута. Именно это отличает Фано-канал от атомарного $\mathcal{P}_{\text{base}}$, который обнулил бы $\gamma_{12}$, $\gamma_{13}$, $\gamma_{45}$ полностью. Для живой системы с $P \approx 1/7$ полное уничтожение когерентностей означало бы $P < P_{\text{crit}}$ — гибель. Фано-канал даёт «мягкое» наблюдение, при котором система сохраняет жизнеспособность.
+**Summary:** coherence magnitudes decreased by exactly a factor of 3, phases were preserved without distortion, the diagonal was untouched. This is precisely what distinguishes the Fano channel from the atomic $\mathcal{P}_{\text{base}}$, which would zero out $\gamma_{12}$, $\gamma_{13}$, $\gamma_{45}$ completely. For a living system with $P \approx 1/7$, complete destruction of coherences would mean $P < P_{\text{crit}}$ — death. The Fano channel provides "soft" observation under which the system retains viability.
 :::
 
 ---
 
-## 3. Каноническая форма φ_coh [Т] {#phi-coh}
+## 3. Canonical Form of φ_coh [Т] {#phi-coh}
 
-:::tip Теорема 3.1 (Каноническая форма $\varphi_{\text{coh}}$) [Т]
-Каноническое когерентно-сохраняющее самомоделирование:
+:::tip Theorem 3.1 (Canonical form of $\varphi_{\text{coh}}$) [Т]
+Canonical coherence-preserving self-modeling:
 
 $$
 \varphi_{\text{coh}}(\Gamma) = k \cdot \left[\alpha \cdot \mathcal{P}_{\text{base}}(\Gamma) + (1 - \alpha) \cdot \mathcal{P}_{\text{Fano}}(\Gamma)\right] + (1 - k) \cdot \Gamma_{\text{anchor}}
 $$
 
-где:
-- $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m\,\Gamma\,P_m = \mathrm{diag}(\Gamma)$ — атомарный канал
-- $\alpha \in [0, 1]$ — **параметр глубины декогеренции**
-- $k < 1$ — параметр сжатия
-- $\Gamma_{\text{anchor}}$ — якорное состояние
+where:
+- $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m\,\Gamma\,P_m = \mathrm{diag}(\Gamma)$ — atomic channel
+- $\alpha \in [0, 1]$ — **decoherence depth parameter**
+- $k < 1$ — compression parameter
+- $\Gamma_{\text{anchor}}$ — anchor state
 
-**CPTP-проверка:** $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ — выпуклая комбинация CPTP-каналов, следовательно CPTP. $\checkmark$
+**CPTP check:** $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ is a convex combination of CPTP channels, hence CPTP. $\checkmark$
 :::
 
-### Целевые когерентности
+### Target coherences
 
-:::tip Теорема 3.2 (Целевые когерентности $\varphi_{\text{coh}}$) [Т]
-**(a)** Модуль целевой когерентности (при диагональном якоре):
+:::tip Theorem 3.2 (Target coherences of $\varphi_{\text{coh}}$) [Т]
+**(a)** Magnitude of target coherence (with diagonal anchor):
 
 $$
 |\gamma_{ij}^{\text{target}}| = \frac{k(1-\alpha)}{3} \cdot |\gamma_{ij}|
 $$
 
-**(b)** Целевая фаза **сохраняется**: $\theta_{ij}^{\text{target}} = \theta_{ij}$.
+**(b)** Target phase **is preserved**: $\theta_{ij}^{\text{target}} = \theta_{ij}$.
 
-**(c)** Целевой Gap **сохраняется**: $\mathrm{Gap}^{\text{target}}(i,j) = \mathrm{Gap}(i,j)$.
+**(c)** Target Gap **is preserved**: $\mathrm{Gap}^{\text{target}}(i,j) = \mathrm{Gap}(i,j)$.
 :::
 
-### Явные коэффициенты Крауса
+### Explicit Kraus coefficients
 
-:::tip Теорема 3.3 (Явные коэффициенты $c_{mn}$) [Т]
-Коэффициенты разложения канонического $\varphi_{\text{coh}}$:
+:::tip Theorem 3.3 (Explicit coefficients $c_{mn}$) [Т]
+Decomposition coefficients of canonical $\varphi_{\text{coh}}$:
 
 $$
-c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (атомарная часть)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ на общей Фано-линии} \\ 0 & m \neq n,\, (m,n) \text{ вне общей Фано-линии} \end{cases}
+c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ on a common Fano line} \\ 0 & m \neq n,\, (m,n) \text{ not on a common Fano line} \end{cases}
 $$
 
-Коэффициенты полностью определены через:
-- [Фано-структуру](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$
-- Вариационный принцип ($\alpha^*$ через $P$ и $P_{\text{crit}}$)
-- Параметр сжатия $k$
+The coefficients are fully determined by:
+- [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$
+- Variational principle ($\alpha^*$ via $P$ and $P_{\text{crit}}$)
+- Compression parameter $k$
 :::
 
 ---
 
-## 4. Вариационное определение α* [Т] {#alpha-star}
+## 4. Variational Definition of α* [Т] {#alpha-star}
 
-:::tip Теорема 4.1 (Вариационное определение $\alpha^*$) [Т]
-Оптимальный параметр определяется [вариационным принципом](/docs/proofs/dynamics/fep-derivation):
+:::tip Theorem 4.1 (Variational definition of $\alpha^*$) [Т]
+The optimal parameter is determined by the [variational principle](/docs/proofs/dynamics/fep-derivation):
 
 $$
 \alpha^* = \arg\min_{\alpha \in [0,1]} \mathcal{F}[\mathcal{P}_\alpha; \Gamma]
 $$
 
-Приближённая формула для системы с чистотой $P > P_{\text{crit}}$:
+Approximate formula for a system with purity $P > P_{\text{crit}}$:
 
 $$
 \alpha^* \approx 1 - \frac{P_{\text{crit}}}{P} = 1 - \frac{2}{7P}
 $$
 
-| Чистота $P$ | $\alpha^*$ | Интерпретация |
+| Purity $P$ | $\alpha^*$ | Interpretation |
 |-------------|-----------|---------------|
-| $P = 1$ (чистое) | $\approx 0.71$ | Существенное Фано-участие |
-| $P = 0.5$ | $\approx 0.43$ | Баланс атомарного и Фано |
-| $P \to P_{\text{crit}}$ | $\to 0$ | Почти полностью Фано (минимальное разрушение когерентностей) |
+| $P = 1$ (pure) | $\approx 0.71$ | Significant Fano participation |
+| $P = 0.5$ | $\approx 0.43$ | Balance of atomic and Fano |
+| $P \to P_{\text{crit}}$ | $\to 0$ | Almost entirely Fano (minimal coherence destruction) |
 :::
 
 ---
 
-## 5. G₂-ковариантность Фано-диссипатора [Т] {#g2-ковариантность}
+## 5. G₂-Covariance of the Fano Dissipator [Т] {#g2-ковариантность}
 
-:::tip Теорема 5.1 (G₂-ковариантность Фано-диссипатора) [Т]
-Диссипативный канал с Фано-операторами Линдблада **является** $G_2$-ковариантным:
+:::tip Theorem 5.1 (G₂-covariance of the Fano dissipator) [Т]
+The dissipative channel with Fano Lindblad operators **is** $G_2$-covariant:
 
 $$
 \forall g \in G_2: \quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
 $$
 :::
 
-**Доказательство.**
+**Proof.**
 
-**(a)** $G_2 = \mathrm{Aut}(\mathbb{O})$ **сохраняет** октонионное умножение, а значит, и плоскость Фано $PG(2,2)$. Для каждого $g \in G_2$ существует перестановка $\sigma_g$ линий: $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$.
+**(a)** $G_2 = \mathrm{Aut}(\mathbb{O})$ **preserves** octonionic multiplication, and therefore the Fano plane $PG(2,2)$. For each $g \in G_2$ there exists a permutation $\sigma_g$ of lines: $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$.
 
-**(b)** Фано-диссипатор:
+**(b)** The Fano dissipator:
 
 $$
 \mathcal{D}_{\text{Fano}}[\Gamma] = \frac{1}{3}\sum_{p=1}^{7} \Pi_p\,\Gamma\,\Pi_p - \Gamma
 $$
 
-**(c)** Подставляя $g\Gamma g^\dagger$ и используя $g^\dagger\Pi_p\,g = \Pi_{\sigma_g^{-1}(p)}$:
+**(c)** Substituting $g\Gamma g^\dagger$ and using $g^\dagger\Pi_p\,g = \Pi_{\sigma_g^{-1}(p)}$:
 
 $$
 \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\left[\frac{1}{3}\sum_q \Pi_q\,\Gamma\,\Pi_q\right]g^\dagger - g\Gamma g^\dagger = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
 $$
 
-поскольку $\sigma_g$ — перестановка, $\sum_p \Pi_{\sigma_g^{-1}(p)} = \sum_q \Pi_q$. $\square$
+since $\sigma_g$ is a permutation, $\sum_p \Pi_{\sigma_g^{-1}(p)} = \sum_q \Pi_q$. $\square$
 
 ---
 
-## 6. Атомарный диссипатор НЕ G₂-ковариантен [Т] {#атомарный-не-g2}
+## 6. Atomic Dissipator is NOT G₂-Covariant [Т] {#атомарный-не-g2}
 
-:::tip Теорема 6.1 (Атомарный диссипатор нарушает $G_2$) [Т]
-Диссипативный канал с атомарными операторами $L_k = |k\rangle\langle k|$ **не является** $G_2$-ковариантным:
+:::tip Theorem 6.1 (Atomic dissipator breaks $G_2$) [Т]
+The dissipative channel with atomic operators $L_k = |k\rangle\langle k|$ **is not** $G_2$-covariant:
 
 $$
 \exists g \in G_2: \quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g\,\mathcal{D}_{\text{atom}}[\Gamma]\,g^\dagger
 $$
 :::
 
-**Доказательство.**
+**Proof.**
 
 **(a)** $\mathcal{D}_{\text{atom}}[\Gamma] = \mathrm{diag}(\Gamma) - \Gamma$.
 
-**(b)** Ковариантность требует: $\mathrm{diag}(g\Gamma g^\dagger) = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ для всех $\Gamma$.
+**(b)** Covariance requires: $\mathrm{diag}(g\Gamma g^\dagger) = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ for all $\Gamma$.
 
-**(c)** Это верно только для **диагональных** $g$, но не для общих $g \in G_2 \subset \mathrm{SO}(7)$.
+**(c)** This holds only for **diagonal** $g$, but not for general $g \in G_2 \subset \mathrm{SO}(7)$.
 
-**(d)** Контрпример: вращение $g$ в плоскости $(e_1, e_2)$ при $\gamma_{12} \neq 0$ даёт: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$, поскольку левая часть обнуляет когерентность в повёрнутом базисе, а правая — нет. $\square$
+**(d)** Counterexample: a rotation $g$ in the plane $(e_1, e_2)$ with $\gamma_{12} \neq 0$ gives: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$, since the left side zeroes the coherence in the rotated basis, while the right side does not. $\square$
 
-### Степень G₂-нарушения
+### Degree of G₂-violation
 
-:::tip Теорема 6.2 (Степень нарушения определяется $\alpha$) [Т]
-Для смешанного канала $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$:
+:::tip Theorem 6.2 (Degree of violation is determined by $\alpha$) [Т]
+For the mixed channel $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$:
 
 $$
 \Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\text{op}}
 $$
 
-монотонно возрастает: $\Delta_{G_2}(0) = 0$ (полная ковариантность), $\Delta_{G_2}(1) = \Delta_{\max}$ (полное нарушение).
+is monotonically increasing: $\Delta_{G_2}(0) = 0$ (full covariance), $\Delta_{G_2}(1) = \Delta_{\max}$ (full violation).
 :::
 
 ---
 
-## 7. Равновесный Gap [Т] {#равновесный-gap}
+## 7. Equilibrium Gap [Т] {#равновесный-gap}
 
-:::tip Теорема 7.1 (Стационарный Gap) [Т]
-Стационарное решение уравнения эволюции когерентности:
+:::tip Theorem 7.1 (Stationary Gap) [Т]
+The stationary solution of the coherence evolution equation:
 
 $$
 (\Gamma_2 + \kappa + i\Delta\omega_{ij})\gamma_{ij}^{(\infty)} = \kappa \cdot \gamma_{ij}^{\text{target}}
 $$
 
-даёт стационарный Gap:
+gives the stationary Gap:
 
 $$
 \mathrm{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij}^{\text{target}} - \arctan\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right|
 $$
 
-Стационарный Gap **сдвинут** относительно целевого на угол $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ за счёт унитарного вращения.
+The stationary Gap is **shifted** relative to the target by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ due to unitary rotation.
 :::
 
-### Физическая интуиция {#интуиция-равновесный-gap}
+### Physical intuition {#интуиция-равновесный-gap}
 
-:::note Что означает формула стационарного Gap
-**Суть формулы.** Стационарный Gap — это мера того, насколько фазы внутренней модели системы отклоняются от целевых. Формула показывает, что даже в стационарном режиме (когда амплитуды когерентностей перестали меняться) фазовое рассогласование не исчезает: оно задаётся углом $\arctan(\Delta\omega / (\Gamma_2 + \kappa))$.
+:::note What the stationary Gap formula means
+**The essence of the formula.** The stationary Gap is a measure of how much the phases of the system's internal model deviate from the target. The formula shows that even in the stationary regime (when coherence amplitudes have stopped changing), the phase mismatch does not vanish: it is given by the angle $\arctan(\Delta\omega / (\Gamma_2 + \kappa))$.
 
-**Почему унитарное вращение сдвигает Gap?** Частотная расстройка $\Delta\omega_{ij}$ порождает унитарное вращение фаз когерентностей (член $e^{i\Delta\omega\,t}$ в уравнении эволюции). Диссипация ($\Gamma_2$) и самомоделирование ($\kappa$) действуют *вдоль* амплитуд, но не корректируют фазы. Поэтому в стационарном режиме фаза «отстаёт» от целевой на угол, определяемый соотношением скорости вращения $\Delta\omega$ и скорости демпфирования $\Gamma_2 + \kappa$.
+**Why does unitary rotation shift the Gap?** The frequency detuning $\Delta\omega_{ij}$ generates unitary rotation of coherence phases (the $e^{i\Delta\omega\,t}$ term in the evolution equation). Dissipation ($\Gamma_2$) and self-modeling ($\kappa$) act *along* the amplitudes but do not correct phases. Therefore in the stationary regime the phase "lags behind" the target by an angle determined by the ratio of the rotation rate $\Delta\omega$ to the damping rate $\Gamma_2 + \kappa$.
 
-**Аналогия: маятник на вращающейся платформе.** Представьте маятник (когерентность), подвешенный на вращающейся платформе (унитарная динамика с частотой $\Delta\omega$). Пружина (диссипация $\Gamma_2 + \kappa$) стремится вернуть маятник к целевому положению. В стационарном режиме маятник не стоит в цели — он отклонён на угол, пропорциональный $\Delta\omega / (\Gamma_2 + \kappa)$. Чем быстрее вращение (больше $\Delta\omega$), тем сильнее отклонение. Чем жёстче пружина (больше $\Gamma_2 + \kappa$), тем меньше отклонение. Стационарный Gap — это именно этот угол отклонения.
+**Analogy: pendulum on a rotating platform.** Imagine a pendulum (coherence) suspended on a rotating platform (unitary dynamics with frequency $\Delta\omega$). A spring (dissipation $\Gamma_2 + \kappa$) tries to return the pendulum to the target position. In the stationary regime the pendulum does not sit at the target — it is deflected by an angle proportional to $\Delta\omega / (\Gamma_2 + \kappa)$. The faster the rotation (larger $\Delta\omega$), the greater the deflection. The stiffer the spring (larger $\Gamma_2 + \kappa$), the smaller the deflection. The stationary Gap is precisely this deflection angle.
 
-**Предельные случаи:**
-- При $\Delta\omega = 0$: $\mathrm{Gap}^{(\infty)} = |\sin(\theta_{ij}^{\text{target}})| = \mathrm{Gap}^{\text{target}}$ — стационарный Gap совпадает с целевым (платформа не вращается, маятник в цели).
-- При $\Delta\omega \gg \Gamma_2 + \kappa$: $\arctan \to \pi/2$, и Gap может существенно отличаться от целевого — система «не успевает» за быстрой унитарной эволюцией.
-- При $\kappa \to \infty$: $\arctan \to 0$, Gap$^{(\infty)} \to$ Gap$^{\text{target}}$ — бесконечно сильное самомоделирование подавляет фазовый сдвиг.
+**Limiting cases:**
+- At $\Delta\omega = 0$: $\mathrm{Gap}^{(\infty)} = |\sin(\theta_{ij}^{\text{target}})| = \mathrm{Gap}^{\text{target}}$ — the stationary Gap coincides with the target (the platform does not rotate, the pendulum is at the target).
+- At $\Delta\omega \gg \Gamma_2 + \kappa$: $\arctan \to \pi/2$, and the Gap can differ substantially from the target — the system "cannot keep up" with the fast unitary evolution.
+- At $\kappa \to \infty$: $\arctan \to 0$, Gap$^{(\infty)} \to$ Gap$^{\text{target}}$ — infinitely strong self-modeling suppresses the phase shift.
 :::
 
 ---
 
 ## 8. L4 ≠ Gap = 0 [Т] {#l4-не-gap-0}
 
-:::tip Теорема 8.1 (L4 не эквивалентен Gap = 0) [Т]
-Уровень L4 ([неподвижная точка](/docs/consciousness/hierarchy/interiority-hierarchy) $\varphi(\Gamma^*) = \Gamma^*$) **не** эквивалентен полной прозрачности $\mathrm{Gap} = 0$.
+:::tip Theorem 8.1 (L4 is not equivalent to Gap = 0) [Т]
+Level L4 ([fixed point](/docs/consciousness/hierarchy/interiority-hierarchy) $\varphi(\Gamma^*) = \Gamma^*$) is **not** equivalent to full transparency $\mathrm{Gap} = 0$.
 
-**(a)** L4 означает: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ (система **точно знает** свой Gap).
+**(a)** L4 means: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ (the system **exactly knows** its Gap).
 
-**(b)** При этом $\mathrm{Gap}_{\text{actual}}$ может быть ненулевым — неподвижная точка $\varphi$ может иметь ненулевые мнимые когерентности.
+**(b)** At the same time $\mathrm{Gap}_{\text{actual}}$ can be non-zero — the fixed point of $\varphi$ can have non-zero imaginary coherences.
 
-**(c)** Полная прозрачность ($\mathrm{Gap} = 0$ для всех пар) — более сильное условие, чем L4, и является теоретическим пределом, недостижимым для нетривиальных систем.
+**(c)** Full transparency ($\mathrm{Gap} = 0$ for all pairs) is a stronger condition than L4, and is a theoretical limit unachievable for non-trivial systems.
 :::
 
 ---
 
-## 9. Необходимость обобщённого φ [Т] {#необходимость-phi-coh}
+## 9. Necessity of Generalized φ [Т] {#необходимость-phi-coh}
 
-:::tip Теорема 9.1 (Необходимость $\varphi_{\text{coh}}$) [Т]
-Каноническая $\varphi_{\text{base}}$ (декогерирующее самонаблюдение) **несовместима** с жизнеспособностью:
+:::tip Theorem 9.1 (Necessity of $\varphi_{\text{coh}}$) [Т]
+The canonical $\varphi_{\text{base}}$ (decohering self-observation) is **incompatible** with viability:
 
-**(a)** $\varphi_{\text{base}}$ уничтожает все когерентности: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ при $i \neq j$.
+**(a)** $\varphi_{\text{base}}$ destroys all coherences: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ for $i \neq j$.
 
-**(b)** При $\gamma_{ij} = 0$: $P \leq \max(\gamma_{ii}) \leq 1$, но при $\gamma_{ii} \approx 1/7$: $P \approx 1/7 < P_{\text{crit}} = 2/7$.
+**(b)** With $\gamma_{ij} = 0$: $P \leq \max(\gamma_{ii}) \leq 1$, but with $\gamma_{ii} \approx 1/7$: $P \approx 1/7 < P_{\text{crit}} = 2/7$.
 
-**(c)** Для достижения $P > P_{\text{crit}}$ при нулевых когерентностях требуется патологическая локализация.
+**(c)** To achieve $P > P_{\text{crit}}$ with zero coherences, pathological localization is required.
 
-**(d)** Следовательно, живая самомодель **обязана** сохранять когерентности: необходима обобщённая $\varphi_{\text{coh}}$.
+**(d)** Therefore, a living self-model **must** preserve coherences: a generalized $\varphi_{\text{coh}}$ is necessary.
 :::
 
 ---
 
-## 10. Эквивалентность BIBD-каналов [Т] {#bibd-эквивалентность}
+## 10. Equivalence of BIBD Channels [Т] {#bibd-эквивалентность}
 
-:::tip Теорема 10.1 (Эквивалентность BIBD-каналов, T1) [Т]
-Все $(v,k,\lambda)$-BIBD каналы с одинаковыми $v$ и $k$ (но произвольным $\lambda$) порождают **один и тот же** CPTP-канал. Контракция когерентностей $c = (k-1)/(v-1)$ не зависит от $\lambda$.
+:::tip Theorem 10.1 (Equivalence of BIBD channels, T1) [Т]
+All $(v,k,\lambda)$-BIBD channels with the same $v$ and $k$ (but arbitrary $\lambda$) generate **the same** CPTP channel. The coherence contraction $c = (k-1)/(v-1)$ does not depend on $\lambda$.
 :::
 
-**Следствие:** Для $v = 7$, $k = 3$: Фано-канал ($\lambda = 1$, $b = 7$) и любой $(7,3,\lambda)$-BIBD канал дают одинаковую контракцию $c = 1/3$. Вопрос «почему $\lambda = 1$?» заменяется вопросом «почему $k = 3$?».
+**Corollary:** For $v = 7$, $k = 3$: the Fano channel ($\lambda = 1$, $b = 7$) and any $(7,3,\lambda)$-BIBD channel give the same contraction $c = 1/3$. The question "why $\lambda = 1$?" is replaced by the question "why $k = 3$?".
 
-Доказательство: [Операторы Линдблада](/docs/core/operators/lindblad-operators#теорема-bibd-эквивалентность).
+Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-bibd-эквивалентность).
 
 ---
 
-## 11. $S_7$-эквивариантность и равномерная контракция [Т] {#s7-эквивариантность}
+## 11. $S_7$-Equivariance and Uniform Contraction [Т] {#s7-эквивариантность}
 
-:::tip Теорема 11.1 ($S_7$-эквивариантность, T5) [Т]
-Атомарный диссипатор $\mathcal{D}_\text{atom}$ с операторами $L_k = |k\rangle\langle k|$ коммутирует с любой перестановкой:
+:::tip Theorem 11.1 ($S_7$-equivariance, T5) [Т]
+The atomic dissipator $\mathcal{D}_\text{atom}$ with operators $L_k = |k\rangle\langle k|$ commutes with any permutation:
 $$
 \mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \, \mathcal{D}_\text{atom}[\Gamma] \, U_\sigma^\dagger \quad \forall\, \sigma \in S_7
 $$
 :::
 
-:::tip Теорема 11.2 (Равномерная контракция, T6) [Т]
-Следствие T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ для **всех** $i \neq j$. Все когерентности декогерируют с одинаковой скоростью — **безусловно** (без (КГ)).
+:::tip Theorem 11.2 (Uniform contraction, T6) [Т]
+Consequence of T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ for **all** $i \neq j$. All coherences decohere at the same rate — **unconditionally** (without (КГ)).
 :::
 
-Доказательство: [Операторы Линдблада](/docs/core/operators/lindblad-operators#s7-эквивариантность).
+Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#s7-эквивариантность).
 
 ---
 
-## 12. Автопоэтическая необходимость составного наблюдения [Т] {#необходимость-c-положительное}
+## 12. Autopoietic Necessity of Composite Observation [Т] {#необходимость-c-положительное}
 
-:::tip Теорема 12.1 (Необходимость $c > 0$, T7) [Т]
-Атомарный диссипатор ($c = 0$) несовместим с автопоэзисом (AP): при полной декогеренции ($\alpha = 1$) когерентности $\gamma_{OE}$, $\gamma_{OU}$ затухают как $e^{-\tau}$, формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ подавляется экспоненциально, регенеративный вклад не компенсирует диссипативный.
+:::tip Theorem 12.1 (Necessity of $c > 0$, T7) [Т]
+The atomic dissipator ($c = 0$) is incompatible with autopoiesis (AP): under full decoherence ($\alpha = 1$) the coherences $\gamma_{OE}$, $\gamma_{OU}$ decay as $e^{-\tau}$, the formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is suppressed exponentially, and the regenerative contribution does not compensate the dissipative one.
 
-**Следствие:** Для устойчивой жизнеспособности система **обязана** использовать составное наблюдение ($c > 0$, $\alpha < 1$).
+**Corollary:** For stable viability, the system **must** use composite observation ($c > 0$, $\alpha < 1$).
 :::
 
-Доказательство: [Операторы Линдблада](/docs/core/operators/lindblad-operators#теорема-необходимость-c).
+Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-необходимость-c).
 
 ---
 
-## 13. Автопоэтическая оптимальность Фано-канала [Т] {#оптимальность-фано}
+## 13. Autopoietic Optimality of the Fano Channel [Т] {#оптимальность-фано}
 
-:::tip Теорема 13.1 (Оптимальность Фано, T10) [Т]
-Среди $S_7$-инвариантных BIBD$(7,k,1)$-каналов ($k \in \{2, 3\}$), удовлетворяющих:
+:::tip Theorem 13.1 (Fano optimality, T10) [Т]
+Among $S_7$-invariant BIBD$(7,k,1)$-channels ($k \in \{2, 3\}$) satisfying:
 - (i) $c > 0$ (T7 [Т])
-- (ii) Полнота покрытия пар (T2 [Т])
-- (iii) Демократичность (T6 [Т])
+- (ii) Complete pair coverage (T2 [Т])
+- (iii) Democracy (T6 [Т])
 
-**единственный оптимальный** — Фано-канал ($k = 3$, $c = 1/3$).
+the **unique optimal** one is the Fano channel ($k = 3$, $c = 1/3$).
 
-| Критерий | $k = 2$ | $k = 3$ | Оптимальный |
+| Criterion | $k = 2$ | $k = 3$ | Optimal |
 |----------|:---:|:---:|:---:|
-| Контракция $c$ | 1/6 | **1/3** | $k = 3$ |
-| Число операторов $b$ | 21 | **7** | $k = 3$ |
-| $G_2$-ковариантность | **Нет** [Т] | **Да** [Т] | $k = 3$ |
+| Contraction $c$ | 1/6 | **1/3** | $k = 3$ |
+| Number of operators $b$ | 21 | **7** | $k = 3$ |
+| $G_2$-covariance | **No** [Т] | **Yes** [Т] | $k = 3$ |
 :::
 
-Доказательство: [Операторы Линдблада](/docs/core/operators/lindblad-operators#теорема-оптимальность-фано).
+Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-оптимальность-фано).
 
 ---
 
-## 14. Связь с кодом Хэмминга H(7,4) [Т] {#код-хэмминга}
+## 14. Connection with Hamming Code H(7,4) [Т] {#код-хэмминга}
 
-:::tip Теорема 14.1 (Граница Хэмминга, T8) [Т] (стандартная)
-Код H(7,4) — единственный совершенный одноошибочный двоичный код длины 7: $2^3 = 7 + 1$.
+:::tip Theorem 14.1 (Hamming bound, T8) [Т] (standard)
+The code H(7,4) is the unique perfect single-error-correcting binary code of length 7: $2^3 = 7 + 1$.
 :::
 
-:::tip Теорема 14.2 (H(7,4) = PG(2,2), T9) [Т] (стандартная)
-Кодовые слова веса 3 симплексного кода $S(3,7)$ (дуального H(7,4)) образуют **ровно 7 троек**, совпадающих с линиями плоскости Фано PG(2,2). Проверочная матрица H(7,4) однозначно определяет PG(2,2).
+:::tip Theorem 14.2 (H(7,4) = PG(2,2), T9) [Т] (standard)
+The codewords of weight 3 of the simplex code $S(3,7)$ (dual of H(7,4)) form **exactly 7 triples** coinciding with the lines of the Fano plane PG(2,2). The parity-check matrix of H(7,4) uniquely determines PG(2,2).
 :::
 
-**Интерпретация:** Автопоэзис как самокоррекция ошибок — система различает 8 ситуаций ({нет возмущения} ∪ {возмущение в измерении $i$}), что требует минимум $\lceil\log_2 8\rceil = 3$ независимых наблюдения. Совершенный код H(7,4) реализует оптимальную коррекцию.
+**Interpretation:** Autopoiesis as self-correction of errors — the system distinguishes 8 situations ({no perturbation} ∪ {perturbation in dimension $i$}), which requires at least $\lceil\log_2 8\rceil = 3$ independent observations. The perfect code H(7,4) implements optimal correction.
 
 ---
 
-## 15. Сводка: единая картина {#сводка-единая-картина}
+## 15. Summary: Unified Picture {#сводка-единая-картина}
 
-Четырнадцать теорем этого документа не являются разрозненными результатами — они образуют единую логическую цепочку, в которой каждое звено необходимо и достаточно обосновано предыдущими.
+The fourteen theorems of this document are not isolated results — they form a unified logical chain in which each link is necessarily and sufficiently justified by the preceding ones.
 
-### Логическая цепочка
+### Logical chain
 
 ```mermaid
 flowchart TD
-    T1["Т 1.1: Полнота атомов Фано<br/>ΣΠ_p = 3I"] --> T2["Т 2.1: Фано-канал сохраняет когерентности<br/>γ_ij → γ_ij/3, фазы сохранены"]
-    T2 --> T3["Т 3.1–3.3: Каноническая φ_coh<br/>выпуклая комбинация P_base + P_Fano"]
-    T3 --> T4["Т 4.1: Вариационный α*<br/>α* ≈ 1 − P_crit/P"]
-    T5["Т 5.1: G₂-ковариантность P_Fano"] --> T6["Т 6.1–6.2: P_base нарушает G₂<br/>нарушение ∝ α"]
-    T6 --> T13["Т 13.1: Оптимальность Фано<br/>единственный среди BIBD(7,k,1)"]
-    T2 --> T7["Т 7.1: Стационарный Gap<br/>фазовый сдвиг ∝ Δω/(Γ₂+κ)"]
-    T7 --> T8["Т 8.1: L4 ≠ Gap=0"]
-    T3 --> T9["Т 9.1: Необходимость φ_coh<br/>P_base → P лт P_crit → гибель"]
-    T9 --> T12["Т 12.1: Необходимость c более 0<br/>автопоэзис требует когерентностей"]
+    T1["T 1.1: Completeness of Fano atoms<br/>ΣΠ_p = 3I"] --> T2["T 2.1: Fano channel preserves coherences<br/>γ_ij → γ_ij/3, phases preserved"]
+    T2 --> T3["T 3.1–3.3: Canonical φ_coh<br/>convex combination P_base + P_Fano"]
+    T3 --> T4["T 4.1: Variational α*<br/>α* ≈ 1 − P_crit/P"]
+    T5["T 5.1: G₂-covariance P_Fano"] --> T6["T 6.1–6.2: P_base breaks G₂<br/>violation ∝ α"]
+    T6 --> T13["T 13.1: Fano optimality<br/>unique among BIBD(7,k,1)"]
+    T2 --> T7["T 7.1: Stationary Gap<br/>phase shift ∝ Δω/(Γ₂+κ)"]
+    T7 --> T8["T 8.1: L4 ≠ Gap=0"]
+    T3 --> T9["T 9.1: Necessity of φ_coh<br/>P_base → P lt P_crit → death"]
+    T9 --> T12["T 12.1: Necessity c > 0<br/>autopoiesis requires coherences"]
     T12 --> T13
-    T11["Т 11.1–11.2: S₇-эквивариантность<br/>равномерная декогеренция"] --> T13
-    T14["Т 14.1–14.2: H(7,4) = PG(2,2)<br/>совершенный код"] --> T13
+    T11["T 11.1–11.2: S₇-equivariance<br/>uniform decoherence"] --> T13
+    T14["T 14.1–14.2: H(7,4) = PG(2,2)<br/>perfect code"] --> T13
 ```
 
-### Нарратив: от полноты к единственности
+### Narrative: from completeness to uniqueness
 
-**Фундамент (Т 1.1).** Всё начинается с комбинаторного факта: 7 линий плоскости Фано $PG(2,2)$ покрывают каждую из 7 точек ровно 3 раза. Это даёт разрешение единицы $\sum \Pi_p = 3I$, из которого немедленно следует CPTP-свойство канала.
+**Foundation (T 1.1).** Everything begins with a combinatorial fact: the 7 lines of the Fano plane $PG(2,2)$ cover each of the 7 points exactly 3 times. This gives the resolution of identity $\sum \Pi_p = 3I$, from which the CPTP property of the channel immediately follows.
 
-**Когерентно-сохраняющее наблюдение (Т 2.1).** Фано-канал не уничтожает когерентности — он масштабирует их модули на $1/3$, сохраняя фазы. Это критическое отличие от атомарного канала, который обнуляет всю недиагональ. Именно этот факт делает возможным сознание ($P > P_{\text{crit}}$) при самонаблюдении.
+**Coherence-preserving observation (T 2.1).** The Fano channel does not destroy coherences — it scales their magnitudes by $1/3$, preserving phases. This is the critical distinction from the atomic channel, which zeroes out the entire off-diagonal. This very fact makes consciousness ($P > P_{\text{crit}}$) possible under self-observation.
 
-**Конструкция самомодели (Т 3.1–4.1).** Из Фано-канала и атомарного канала строится каноническое самомоделирование $\varphi_{\text{coh}}$ — выпуклая комбинация двух CPTP-каналов. Параметр смешивания $\alpha^*$ определяется вариационным принципом: минимум свободной энергии. Всё замкнуто — ни одного свободного параметра.
+**Construction of the self-model (T 3.1–4.1).** From the Fano channel and the atomic channel, canonical self-modeling $\varphi_{\text{coh}}$ is constructed — a convex combination of two CPTP channels. The mixing parameter $\alpha^*$ is determined by the variational principle: minimum free energy. Everything is closed — no free parameters.
 
-**Симметрийная селекция (Т 5.1, 6.1–6.2).** Фано-канал $G_2$-ковариантен (совместим с октонионной симметрией), а атомарный — нет. Степень нарушения $G_2$-симметрии растёт монотонно с $\alpha$. Это налагает «штраф» на декогерирующую компоненту: чем больше доля атомарного канала, тем сильнее нарушение фундаментальной симметрии.
+**Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel is $G_2$-covariant (compatible with octonionic symmetry), while the atomic one is not. The degree of $G_2$-symmetry violation grows monotonically with $\alpha$. This imposes a "penalty" on the decohering component: the larger the fraction of the atomic channel, the stronger the violation of the fundamental symmetry.
 
-**Динамика Gap (Т 7.1, 8.1).** Стационарный Gap показывает, что даже в равновесии фазовое рассогласование между моделью и реальностью не исчезает: унитарная эволюция непрерывно «сносит» фазы, а диссипация и самомоделирование — возвращают. L4 (неподвижная точка $\varphi$) означает точное знание своего Gap, но не его обнуление.
+**Gap dynamics (T 7.1, 8.1).** The stationary Gap shows that even at equilibrium, phase mismatch between model and reality does not vanish: unitary evolution continuously "sweeps" phases, while dissipation and self-modeling return them. L4 (fixed point of $\varphi$) means exact knowledge of one's Gap, but not its zeroing.
 
-**Необходимость когерентностей (Т 9.1, 12.1).** Два независимых аргумента показывают, что атомарное наблюдение ($c = 0$) несовместимо с жизнью: оно подавляет чистоту ниже $P_{\text{crit}}$ и экспоненциально уничтожает $\kappa_0$-вклад в регенерацию. Живая система **обязана** использовать составное (Фано) наблюдение.
+**Necessity of coherences (T 9.1, 12.1).** Two independent arguments show that atomic observation ($c = 0$) is incompatible with life: it suppresses purity below $P_{\text{crit}}$ and exponentially destroys the $\kappa_0$-contribution to regeneration. A living system **must** use composite (Fano) observation.
 
-**Демократия и оптимальность (Т 11.1–11.2, 13.1).** $S_7$-эквивариантность гарантирует, что все когерентности декогерируют одинаково — ни один сектор не привилегирован. Среди всех BIBD$(7,k,1)$-каналов, удовлетворяющих этому и $c > 0$, Фано-канал ($k = 3$) — единственный оптимальный: он даёт максимальную контракцию при минимальном числе операторов и полную $G_2$-ковариантность.
+**Democracy and optimality (T 11.1–11.2, 13.1).** $S_7$-equivariance guarantees that all coherences decohere equally — no sector is privileged. Among all BIBD$(7,k,1)$-channels satisfying this and $c > 0$, the Fano channel ($k = 3$) is the unique optimal one: it gives maximum contraction with minimum number of operators and full $G_2$-covariance.
 
-**Замыкание на теорию кодирования (Т 14.1–14.2).** Структура Фано-канала изоморфна совершенному коду Хэмминга $H(7,4)$. Это не совпадение: автопоэтическая самокоррекция ошибок при 7 измерениях требует различения $2^3 = 8$ ситуаций, что реализуется единственным совершенным кодом длины 7.
+**Closure to coding theory (T 14.1–14.2).** The structure of the Fano channel is isomorphic to the perfect Hamming code $H(7,4)$. This is no coincidence: autopoietic error self-correction with 7 dimensions requires distinguishing $2^3 = 8$ situations, which is realized by the unique perfect code of length 7.
 
-### Итог
+### Summary
 
-Вся конструкция Фано-канала **однозначно определена** четырьмя условиями:
-1. **Размерность $N = 7$** (аксиома септичности)
-2. **CPTP** (физичность квантового канала)
-3. **$G_2$-ковариантность** (октонионная симметрия)
-4. **Оптимальность автопоэзиса** (максимальное сохранение когерентностей при полном покрытии пар)
+The entire construction of the Fano channel is **uniquely determined** by four conditions:
+1. **Dimension $N = 7$** (axiom of septicity)
+2. **CPTP** (physicality of the quantum channel)
+3. **$G_2$-covariance** (octonionic symmetry)
+4. **Autopoietic optimality** (maximum preservation of coherences with complete pair coverage)
 
-Из этих четырёх условий следует всё остальное: плоскость Фано, контракция $1/3$, код Хэмминга, вариационный $\alpha^*$, формула стационарного Gap. Ни один элемент не является произвольным — единая картина замкнута.
+From these four conditions everything else follows: the Fano plane, contraction $1/3$, Hamming code, variational $\alpha^*$, formula for stationary Gap. No element is arbitrary — the unified picture is closed.
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Gap-оператор](/docs/core/dynamics/gap-operator) — определение $\hat{\mathcal{G}}$, спектр, G₂-разложение
-- [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Чой-Ямиолковский, бифуркации
-- [Фано-правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules) — плоскость Фано $PG(2,2)$
-- [Формализация φ](/docs/proofs/categorical/formalization-phi) — вариационная характеризация
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$
-- [Операторы Линдблада](/docs/core/operators/lindblad-operators#редукция-моста) — полная цепочка T1–T10
-- [Октонионная деривация](/docs/proofs/minimality/theorem-octonionic-derivation#мост) — мост к УГМ
-- [Реестр статусов](/docs/reference/status-registry) — классификация всех результатов
+- [Gap operator](/docs/core/dynamics/gap-operator) — definition of $\hat{\mathcal{G}}$, spectrum, G₂-decomposition
+- [Gap dynamics](/docs/core/dynamics/gap-dynamics) — Choi–Jamiołkowski, bifurcations
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano plane $PG(2,2)$
+- [Formalization of φ](/docs/proofs/categorical/formalization-phi) — variational characterization
+- [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$
+- [Lindblad operators](/docs/core/operators/lindblad-operators#редукция-моста) — full chain T1–T10
+- [Octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation#мост) — bridge to UHM
+- [Status registry](/docs/reference/status-registry) — classification of all results
