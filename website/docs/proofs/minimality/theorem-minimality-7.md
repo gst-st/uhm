@@ -128,7 +128,7 @@ $$
 Система $\mathbb{H}$ имеет **квантовое основание**, если:
 1. Состояние описывается [матрицей когерентности](/docs/core/dynamics/coherence-matrix) $\Gamma \in \mathcal{L}(\mathcal{H})$
 2. $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$
-3. Эволюция подчиняется [расширенному уравнению Линдблада](/docs/core/dynamics/evolution#full-equation-of-motion):
+3. Эволюция подчиняется [расширенному уравнению Линдблада](/docs/core/dynamics/evolution#полное-уравнение-движения):
 
 $$
 \frac{d\Gamma}{d\tau} = -i[H, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]

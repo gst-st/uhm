@@ -353,7 +353,7 @@ Systems at level L0–L1 may demonstrate growth of $P$, but do not have reflexiv
 
 ---
 
-## Part IV. Moral Theory
+## Part IV. Moral Theory {#part-iv-moral-theory}
 
 Morality is not a set of rules granted from above. In UHM morality **grows** from the structure of interaction between systems — from $\Gamma_{\text{composite}}$.
 

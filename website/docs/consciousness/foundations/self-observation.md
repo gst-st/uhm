@@ -275,7 +275,7 @@ $$
 R(\Gamma) := 1 - \frac{\|\Gamma - \rho^*_{\mathrm{diss}}\|^2_F}{\|\Gamma\|^2_F} = \frac{1}{7P(\Gamma)}
 $$
 
-where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F$ — [Frobenius norm](/docs/core/dynamics/coherence-matrix#frobenius-norm), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([purity](/docs/core/dynamics/viability#определение-чистоты)).
+where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F$ — [Frobenius norm](/docs/core/dynamics/coherence-matrix#норма-фробениуса), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([purity](/docs/core/dynamics/viability#определение-чистоты)).
 
 ### Step-by-Step Derivation of $R = 1/(7P)$
 
@@ -452,7 +452,7 @@ Self-observation is organised into **five levels** (L0→L1→L2→L3→L4). Eac
 | Level | Name | Condition | Description | Example |
 |-------|------|-----------|-------------|---------|
 | L0 | Interiority | $\Gamma \in \mathcal{D}(\mathcal{H})$, $\mathcal{H} \neq \{0\}$ | Fundamental property of 'having an inside' | Electron |
-| L1 | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Structure with [Fubini-Study metric](./interiority-theory#fubini-study-metric) | Bacterium |
+| L1 | Phenomenal geometry | $\mathrm{rank}(\rho_E) > 1$ | Structure with [Fubini-Study metric](./interiority-theory#метрика-фубини-штуди) | Bacterium |
 | L2 | Cognitive qualia | $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$ | Reflexively accessible conscious experience | Human |
 | L3 | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection — models of models | Meditator |
 | L4 | Unitary consciousness | $\lim_n R^{(n)} > 0$ | Complete reflexive closure | Theoretical limit |

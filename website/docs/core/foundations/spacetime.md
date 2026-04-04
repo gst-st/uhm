@@ -445,7 +445,7 @@ graph TD
 
 ### Quantum correlations
 
-[Coherences](../dynamics/coherence-matrix#off-diagonal-elements-coherences) $\gamma_{ij}$ between distant parts of $\Gamma$ mean **non-local connections**:
+[Coherences](../dynamics/coherence-matrix#недиагональные-элементы-когерентности) $\gamma_{ij}$ between distant parts of $\Gamma$ mean **non-local connections**:
 
 $$
 \gamma_{AB} \neq 0 \Rightarrow A \text{ and } B \text{ are quantum-correlated}
@@ -459,7 +459,7 @@ $$
 \Gamma_{AB} \neq \Gamma_A \otimes \Gamma_B
 $$
 
-where $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$ is the [partial trace](/docs/consciousness/foundations/interiority-theory#reduced-matrix-of-experience) over subsystem $B$.
+where $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$ is the [partial trace](/docs/consciousness/foundations/interiority-theory#редуцированная-матрица-опыта) over subsystem $B$.
 
 Violation of Bell inequalities is a consequence of non-zero coherences in the structure of $\Gamma$.
 

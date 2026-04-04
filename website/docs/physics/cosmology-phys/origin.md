@@ -162,7 +162,7 @@ $$
 \Gamma \to \sum_i p_i |i\rangle\langle i| + \sum_{i \neq j} \gamma_{ij} |i\rangle\langle j|
 $$
 
-где $p_i = \gamma_{ii}$ — населённости измерений, $\gamma_{ij}$ — [когерентности](/docs/core/dynamics/coherence-matrix#off-diagonal-elements-coherences) между ними.
+где $p_i = \gamma_{ii}$ — населённости измерений, $\gamma_{ij}$ — [когерентности](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности) между ними.
 
 ## Эволюция от Источника
 

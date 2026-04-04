@@ -48,7 +48,7 @@ In this document:
 - $h^{\text{ext}} = h^{(H)} + h^{(D)} + h^{(R)}$ — [3-channel decomposition](./lagrangian#внешний-член) [T]
 - $P = \mathrm{Tr}(\Gamma^2)$ — [purity](/docs/core/dynamics/viability#определение-чистоты)
 - $\varphi$ — [self-modelling operator](/docs/proofs/categorical/formalization-phi)
-- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#target-state)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние)
 :::
 
 This document describes the **formal theory of sensorimotor encoding** — how a holon perceives its environment and acts upon it, remaining within the canonical 3-term evolution equation.

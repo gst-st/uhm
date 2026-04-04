@@ -409,7 +409,7 @@ The measure of violation is **linear** in $\alpha$ — from the linearity of bot
 ## 7. Unified theorem on self-observation and Gap {#единая-теорема}
 
 :::note DRY
-The canonical formulation is also in the [φ operator](/docs/core/operators/phi-operator#unified-theorem-of-self-observation).
+The canonical formulation is also in the [φ operator](/docs/core/operators/phi-operator#единая-теорема-самонаблюдения).
 :::
 
 :::tip Theorem 12.1 (Fano-coherent self-modelling) [Т]

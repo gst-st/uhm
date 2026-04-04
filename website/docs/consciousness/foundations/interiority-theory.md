@@ -218,7 +218,7 @@ $$
 \mathrm{Context}(\Gamma) := \{\gamma_{EA}, \gamma_{ES}, \gamma_{ED}, \gamma_{EL}, \gamma_{EO}, \gamma_{EU}\}
 $$
 
-Context modulates experience through [coherences](/docs/core/dynamics/coherence-matrix#off-diagonal-elements-coherences):
+Context modulates experience through [coherences](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности):
 
 | Coherence | Description of modulation |
 |-----------|--------------------------|

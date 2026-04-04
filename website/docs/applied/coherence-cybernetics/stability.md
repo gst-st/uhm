@@ -40,7 +40,7 @@ In this document:
 - $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate
 - $\Gamma_2$ — decoherence rate
 - $\Delta F$ — [free energy](/docs/core/dynamics/evolution#каноническое-delta-f) (regeneration gate)
-- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#target-state)
+- $\rho_* = \varphi(\Gamma)$ — [target state](./definitions#целевое-состояние)
 :::
 
 This document analyses the **stability conditions** of a coherent system: under what conditions a holon maintains viability ($P > 2/7$), how it responds to external perturbations, and what the recovery mechanisms are.

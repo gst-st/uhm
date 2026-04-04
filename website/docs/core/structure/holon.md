@@ -102,7 +102,7 @@ What does "partial trace" mean? Imagine looking at a city from above. You see ev
 
 ### Level 2: Autonomy
 
-Not every subsystem "has a life of its own". A stone in a river is a subsystem of the river, but it is not autonomous in the sense that a living cell is autonomous. A subsystem is **autonomous** if conditions (A1)+(A2)+(A3) are satisfied, which define a sufficient degree of separation from the environment. See [Prerequisite: Autonomy](../foundations/axiom-septicity#prerequisite-autonomy).
+Not every subsystem "has a life of its own". A stone in a river is a subsystem of the river, but it is not autonomous in the sense that a living cell is autonomous. A subsystem is **autonomous** if conditions (A1)+(A2)+(A3) are satisfied, which define a sufficient degree of separation from the environment. See [Prerequisite: Autonomy](../foundations/axiom-septicity#предварительное-условие-автономность).
 
 Autonomy means: the subsystem has its own dynamics that are not entirely determined by the environment. It can "act" on its own, not merely "react".
 
@@ -235,7 +235,7 @@ $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma(\tau)] + \mathcal{D}[\Gamma(\tau)] + \mathcal{R}[\Gamma(\tau), E]
 $$
 
-> For the canonical definition and derivation of the equation's terms see [Evolution of Γ](../dynamics/evolution#full-equation-of-motion).
+> For the canonical definition and derivation of the equation's terms see [Evolution of Γ](../dynamics/evolution#полное-уравнение-движения).
 
 where:
 - $\tau$ — internal time arising from correlations with the O dimension

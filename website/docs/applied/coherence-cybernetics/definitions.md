@@ -41,7 +41,7 @@ Coherence Cybernetics operates in a **minimal 7D formalism** ($\mathcal{H} = \ma
 
 For operations requiring tensor structure (partial trace $\mathrm{Tr}_{-E}$, Holon composition $\otimes$), an **extended formalism** is used ($\mathcal{H} = \mathbb{C}^{42}$ with tensor structure).
 
-**See:** [Relation between formalisms](/docs/core/dynamics/coherence-matrix#reconciling-the-formalisms)
+**See:** [Relation between formalisms](/docs/core/dynamics/coherence-matrix#согласование-формализмов)
 :::
 
 ---

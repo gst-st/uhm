@@ -63,7 +63,7 @@ $$
 
 where $I_7$ is the $7 \times 7$ identity matrix.
 
-## Relation to entropy
+## Relation to entropy {#связь-с-энтропией}
 
 [Von Neumann entropy](./coherence-matrix#энтропия-фон-неймана):
 
@@ -190,7 +190,7 @@ Both terms in the strengthened condition are **fully determined** by the axioms:
 The viability condition is **not a phenomenological criterion**, but a strict consequence of the axiomatics.
 :::
 
-## Viability domain
+## Viability domain {#область-жизнеспособности}
 
 ### Minimal viability {#минимальная-жизнеспособность}
 
@@ -270,7 +270,7 @@ The fixed point of canonical $\varphi_{\text{coh}}$ has $P(\Gamma^*) = P_{\text{
 
 [More on positivity preservation →](../dynamics/evolution#сохранение-положительности)
 
-## Purity dynamics
+## Purity dynamics {#динамика-чистоты}
 
 The derivative of purity with respect to time (see [evolution](./evolution#purity-dynamics)):
 

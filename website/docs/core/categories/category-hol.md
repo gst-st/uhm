@@ -143,7 +143,7 @@ The category $\mathbf{DensityMat}$ is too "broad" for describing conscious syste
 
 | Condition | Name | Meaning |
 |---------|----------|----------|
-| **(AP)** | [Autopoiesis](/docs/core/foundations/axiom-septicity#prerequisite-autonomy) | A self-modeling $\varphi$ with a fixed point exists |
+| **(AP)** | [Autopoiesis](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) | A self-modeling $\varphi$ with a fixed point exists |
 | **(PH)** | Phenomenology | $\rho_E \neq 0$ — the [Interiority dimension](/docs/core/structure/dimension-e) is non-trivial |
 | **(QG)** | Quantum grounding | Dynamics includes [regeneration](/docs/core/dynamics/evolution) |
 | **(V)** | Viability | $P(\Gamma) > P_{\text{crit}} = 2/7$ **[T]** — [purity](/docs/core/dynamics/viability#определение-чистоты) is above the threshold |
@@ -184,7 +184,7 @@ The four conditions (AP)+(PH)+(QG)+(V) are not an arbitrary set. Each of them an
 
 **(AP) Autopoiesis — "Can the system sustain itself?"**
 
-Autopoiesis (from Greek αὐτο — "self" and ποίησις — "creation") is the ability of a system to self-reproduce its organization. Formally: there exists an endomorphism $\varphi: \Gamma \to \Gamma$ (self-modeling) with a fixed point $\varphi(\Gamma^*) = \Gamma^*$. This means the system possesses an "internal model of itself" and can return to its characteristic configuration after perturbations. More details: [Axiom of septicity — autonomy condition](/docs/core/foundations/axiom-septicity#prerequisite-autonomy).
+Autopoiesis (from Greek αὐτο — "self" and ποίησις — "creation") is the ability of a system to self-reproduce its organization. Formally: there exists an endomorphism $\varphi: \Gamma \to \Gamma$ (self-modeling) with a fixed point $\varphi(\Gamma^*) = \Gamma^*$. This means the system possesses an "internal model of itself" and can return to its characteristic configuration after perturbations. More details: [Axiom of septicity — autonomy condition](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность).
 
 **(PH) Phenomenology — "Does the system have inner experience?"**
 

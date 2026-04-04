@@ -54,7 +54,7 @@ The operator φ defines the "self-model" of the system, i.e. φ(Γ) ≈ Γ — t
 
 ---
 
-## Definition
+## Definition {#определение}
 
 The self-modelling operator $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ is defined in three equivalent ways:
 
@@ -319,7 +319,7 @@ The self-model retains ~15% of each coherence amplitude — a "defocused" but no
 
 ---
 
-## Unified theorem of self-observation
+## Unified theorem of self-observation {#единая-теорема-самонаблюдения}
 
 :::tip Theorem: Fano-coherent self-modelling (unified theorem)
 The canonical coherence-preserving self-modelling for UHM is determined **completely uniquely** (the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [Т]) through:

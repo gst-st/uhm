@@ -192,7 +192,7 @@ Formally: $\mathrm{rank}(\rho_E) > 1$ means that the partial trace $\rho_E = \ma
 
 **Condition:** $\mathrm{rank}(\rho_E) > 1$ — stably.
 
-At level L1 there is **structured experience**: the [Fubini–Study](/docs/consciousness/foundations/interiority-theory#fubini-study-metric) metric on the space of qualities is non-trivial. The system 'distinguishes' interiority states but does not reflect them ($R < R_{\text{th}}$).
+At level L1 there is **structured experience**: the [Fubini–Study](/docs/consciousness/foundations/interiority-theory#метрика-фубини-штуди) metric on the space of qualities is non-trivial. The system 'distinguishes' interiority states but does not reflect them ($R < R_{\text{th}}$).
 
 This is like the difference between a camera that records video (L0 — data exists, but no one is 'watching'), and a viewer who **sees** the picture but is not aware of watching (L1 — there is experience, but no reflection). A fish probably **feels** pain, but does not **know** that it feels pain.
 

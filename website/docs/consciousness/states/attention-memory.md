@@ -167,7 +167,7 @@ $$
 |\gamma_{AE}(\tau)| \geq |\gamma_{AE}|_{\text{th}} \quad \forall\, \tau \in [\tau_0, \tau_0 + \Delta\tau]
 $$
 
-Energy cost — maintaining $\gamma_{AA}$ against [dissipation](/docs/core/dynamics/evolution#full-equation-of-motion). Over time $\gamma_{AA}$ decreases due to dissipation, and attention 'tires' — active maintenance is required (effort of will).
+Energy cost — maintaining $\gamma_{AA}$ against [dissipation](/docs/core/dynamics/evolution#полное-уравнение-движения). Over time $\gamma_{AA}$ decreases due to dissipation, and attention 'tires' — active maintenance is required (effort of will).
 
 Example: driving a car on a long straight road. $|\gamma_{AE}| > \theta$ must be maintained continuously, which requires constant 'expenditure' of $\gamma_{AA}$.
 

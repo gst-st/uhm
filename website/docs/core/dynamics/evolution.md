@@ -62,7 +62,7 @@ The arrow of time is the **progressive collapse of higher strata** toward termin
 
 ---
 
-## Full equation of motion
+## Full equation of motion {#полное-уравнение-движения}
 
 :::info Emergent time
 Time τ is **derived** from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism, not postulated as an external parameter. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
@@ -120,6 +120,8 @@ The scheme converges to the fixed point by the Banach theorem, since φ is a con
 :::
 
 ## Components of the equation
+
+<span id="1-унитарный-член"></span>
 
 ### 1. Unitary term {#1-unitary-term}
 
@@ -881,7 +883,9 @@ $$\lim_{\tau \to \infty} \Gamma(\tau) = T$$
 
 if $\mathcal{D} \neq 0$ (system is not fully isolated).
 
-## Purity dynamics
+<a id="purity-dynamics"></a>
+
+## Purity dynamics {#динамика-чистоты}
 
 Time derivative of purity:
 

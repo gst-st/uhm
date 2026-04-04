@@ -1034,7 +1034,7 @@ Read the [justification for the number 7](/docs/core/foundations/axiom-omega#о�
 
 1. Read [Introduction](./introduction), [Definitions](./definitions), and [Stability](./stability)
 2. Solve problems 1.1–1.5, 3.1, 4.1, 4.3–4.4
-3. Try the [minimal code](./implementation#quick-start) from the Implementation section
+3. Try the [minimal code](./implementation#быстрый-старт) from the Implementation section
 
 ### Level "Advanced" (★★—★★★)
 

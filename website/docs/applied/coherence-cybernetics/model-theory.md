@@ -154,7 +154,7 @@ The predicates of CC are *classifiers*. They divide the space of all possible Ho
 | $\mathrm{Viable}$ | $\mathbb{H} \to \mathrm{Bool}$ | Viable | [→](/docs/core/dynamics/viability) |
 | $\mathrm{Conscious}$ | $\mathbb{H} \to \mathrm{Bool}$ | Conscious (L2) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-2-когнитивные-квалиа-cognitive-qualia) |
 | $\mathrm{HasInteriority}$ | $\mathbb{H} \to \mathrm{Bool}$ | Has interiority (L0) | [→](/docs/proofs/consciousness/interiority-hierarchy#уровень-0-интериорность-interiority) |
-| $\mathrm{InV}$ | $\Gamma \to \mathrm{Bool}$ | In region $\mathcal{V}$ | [→](/docs/core/dynamics/viability#viability-domain) |
+| $\mathrm{InV}$ | $\Gamma \to \mathrm{Bool}$ | In region $\mathcal{V}$ | [→](/docs/core/dynamics/viability#область-жизнеспособности) |
 
 These predicates form a *hierarchy*: every conscious Holon is viable, but not every viable Holon is conscious. Every conscious Holon has interiority, but not vice versa. This hierarchy reflects the [interiority levels L0→L1→L2→L3→L4](/docs/proofs/consciousness/interiority-hierarchy) in the language of predicates.
 

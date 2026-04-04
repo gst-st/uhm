@@ -58,7 +58,7 @@ The conditions (AP+PH+QG+V) are **characterizing properties** of viable configur
 - **(PH)** is the interpretation of the E dimension (Axiom 3)
 - **(V)** is the mathematical condition ($P > P_{\text{crit}}$ [T]); its ontological reading is via PID ([definition [O] (T16 [T])](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2)
 
-## Prerequisite: Autonomy
+## Prerequisite: Autonomy {#предварительное-условие-автономность}
 
 :::warning Individuation criterion
 Before applying (AP)+(PH)+(QG)+(V), one must fix **the boundaries of the system**. This is handled by the **autonomy** criterion.
@@ -72,7 +72,7 @@ $$
 \Gamma_S := \mathrm{Tr}_E(\Gamma_{\text{global}})
 $$
 
-### Definition (Autonomous sub-system)
+### Definition (Autonomous sub-system) {#определение-автономная-подсистема}
 
 Sub-system $S$ is **autonomous** if three conditions hold:
 
@@ -289,7 +289,7 @@ All three UHM thresholds admit an **ontological reading** through PID:
 
 ## Formal statement
 
-### (AP) Autopoiesis
+### (AP) Autopoiesis {#ap-автопоэзис}
 
 :::note Intuition: mirror inside the mirror
 *Autopoiesis* literally means self-production (Greek *auto*—self, *poiesis*—making). Chilean biologists Maturana and Varela introduced the term in 1972 for living cells. In UHM autopoiesis is formalized by the operator $\varphi$—the system’s “internal mirror.” The system regards itself ($\varphi(\Gamma)$ models $\Gamma$), compares image to original, and corrects itself. When image and original coincide ($\varphi(\Gamma^*) = \Gamma^*$), the system reaches self-consistency—a fixed point. This is not “freeze” but dynamical balance: the system ceaselessly reproduces itself, like a candle flame that is ever new yet “the same.”

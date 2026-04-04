@@ -100,7 +100,7 @@ $$
 $\Gamma$ is formally equivalent to the **density matrix** $\rho$ in quantum mechanics. The difference is ontological: in QM $\rho$ is a statistical description of an ensemble; in UHM $\Gamma$ is the substance of reality itself.
 :::
 
-## Matrix Representation
+## Matrix Representation {#матричное-представление}
 
 In the basis $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$, the coherence matrix is written as a $7 \times 7$ Hermitian matrix:
 
@@ -384,7 +384,7 @@ $$
 
 **Properties:**
 - [Purity](./viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma^2) = 1$
-- [von Neumann entropy](./viability#relation-to-entropy): $S_{vN} = 0$
+- [von Neumann entropy](./viability#связь-с-энтропией): $S_{vN} = 0$
 - Maximum coherence
 
 ### Mixed State
@@ -397,6 +397,8 @@ $$
 - $\mathrm{rank}(\Gamma) > 1$
 - $P < 1$
 - $S_{vN} > 0$
+
+<span id="максимально-смешанное-состояние"></span>
 
 ### Maximally Mixed State {#maximally-mixed-state}
 
@@ -413,7 +415,7 @@ where $I_7$ is the $7 \times 7$ identity matrix.
 
 ## Connection with State Measures
 
-### Frobenius Norm
+### Frobenius Norm {#норма-фробениуса}
 
 The **Frobenius norm** is the standard metric on the space of matrices:
 
@@ -434,6 +436,8 @@ P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2 = \sum_{i} \gamma_{ii}^2 + \sum_{i \n
 $$
 
 Purity is a measure of the [viability](./viability) of the Holonom.
+
+<span id="связь-с-энтропией"></span>
 
 ### von Neumann Entropy {#энтропия-фон-неймана}
 
@@ -506,6 +510,8 @@ The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the [Fano plane](/
 This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [Т].
 :::
 
+<span id="два-уровня-формализации"></span>
+
 ## Two Levels of Formalization {#two-levels-of-formalization}
 
 :::warning Important Clarification: minimal vs. extended formalism
@@ -542,7 +548,7 @@ $$
 
 **Application:** Partial trace $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$, interiority hierarchy, operational definitions.
 
-### Reconciling the Formalisms
+### Reconciling the Formalisms {#согласование-формализмов}
 
 | Aspect | Minimal (7D) | Extended (tensor) |
 |---|---|---|

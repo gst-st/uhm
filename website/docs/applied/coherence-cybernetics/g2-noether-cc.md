@@ -450,7 +450,7 @@ Step 2 of the protocol (mapping channels to 7 dimensions) **presupposes** a know
 ### Stage 1: Data Collection
 
 1. Record multi-channel data (EEG/fMRI, 64+ channels, $\geq 30$ min)
-2. Map channels to the 7 holonomic dimensions (based on [neurobiological correlates](./definitions#neurobiological-correlates))
+2. Map channels to the 7 holonomic dimensions (based on [neurobiological correlates](./definitions#нейробиологические-корреляты))
 3. Compute all 21 pairwise coherences $\gamma_{ij}(t)$
 
 ### Stage 2: Building the Correlation Matrix
