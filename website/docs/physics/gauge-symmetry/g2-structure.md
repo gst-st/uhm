@@ -1,32 +1,32 @@
 ---
 sidebar_position: 1
-title: "G₂-структура и плоскость Фано"
+title: "G₂-Structure and the Fano Plane"
 ---
 
-# G₂-структура и плоскость Фано
+# G₂-Structure and the Fano Plane
 
-:::info Для кого эта глава
-Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ и плоскость Фано $\mathrm{PG}(2,2)$ как центральные алгебраические структуры УГМ. Читатель узнает, как таблица умножения октонионов определяет физическую архитектуру теории.
+:::info For whom this chapter is intended
+The group $G_2 = \mathrm{Aut}(\mathbb{O})$ and the Fano plane $\mathrm{PG}(2,2)$ as the central algebraic structures of UHM theory. The reader will learn how the multiplication table of the octonions determines the physical architecture of the theory.
 :::
 
 
-## Обзор
+## Overview
 
-Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ — группа автоморфизмов октонионов — является центральной алгебраической структурой УГМ. Плоскость Фано $\mathrm{PG}(2,2)$ кодирует таблицу умножения мнимых единиц $\mathbb{O}$ и определяет всю физическую архитектуру теории: от операторов Линдблада до калибровочных симметрий и правил отбора.
+The group $G_2 = \mathrm{Aut}(\mathbb{O})$ — the automorphism group of the octonions — is the central algebraic structure of UHM theory. The Fano plane $\mathrm{PG}(2,2)$ encodes the multiplication table of the imaginary units of $\mathbb{O}$ and determines the entire physical architecture of the theory: from Lindblad operators to gauge symmetries and selection rules.
 
 ---
 
-## 1. Плоскость Фано PG(2,2)
+## 1. Fano Plane PG(2,2)
 
-### 1.1 Определение
+### 1.1 Definition
 
-**Плоскость Фано** $\mathrm{PG}(2,2)$ — минимальная конечная проективная плоскость. Она содержит:
-- **7 точек**, отождествляемых с 7 мнимыми единицами октонионов $e_1, \ldots, e_7$, а в УГМ — с 7 измерениями $\{A, S, D, L, E, U, O\} = \{1, 2, 3, 4, 5, 6, 7\}$
-- **7 линий**, каждая содержащая ровно 3 точки
+The **Fano plane** $\mathrm{PG}(2,2)$ is the minimal finite projective plane. It contains:
+- **7 points**, identified with the 7 imaginary units of the octonions $e_1, \ldots, e_7$, and in UHM theory — with the 7 dimensions $\{A, S, D, L, E, U, O\} = \{1, 2, 3, 4, 5, 6, 7\}$
+- **7 lines**, each containing exactly 3 points
 
-### 1.2 Таблица Фано-линий
+### 1.2 Table of Fano Lines {#12-таблица-фано-линий}
 
-| № | Фано-линия | Измерения |
+| # | Fano line | Dimensions |
 |---|-----------|-----------|
 | 1 | $\{1, 2, 4\}$ | $\{A, S, L\}$ |
 | 2 | $\{2, 3, 5\}$ | $\{S, D, E\}$ |
@@ -36,45 +36,45 @@ title: "G₂-структура и плоскость Фано"
 | 6 | $\{6, 7, 2\}$ | $\{U, O, S\}$ |
 | 7 | $\{7, 1, 3\}$ | $\{O, A, D\}$ |
 
-### 1.3 Фундаментальные свойства
+### 1.3 Fundamental Properties
 
-1. **Через любые две точки проходит ровно одна линия.** Это означает, что каждая пара измерений $(i, j)$ однозначно определяет Фано-линию $(i, j, k)$.
+1. **Through any two points there passes exactly one line.** This means that every pair of dimensions $(i, j)$ uniquely determines a Fano line $(i, j, k)$.
 
-2. **Каждая точка лежит ровно на 3 линиях.** Следовательно:
+2. **Each point lies on exactly 3 lines.** Consequently:
 
 $$\sum_{p=1}^{7} \Pi_p = 3I$$
 
-где $\Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|$ — проектор на подпространство, соответствующее Фано-линии $p$.
+where $\Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|$ is the projector onto the subspace corresponding to Fano line $p$.
 
-3. **Структурные константы октонионов** $f_{ijk}$: $f_{ijk} = \pm 1$ тогда и только тогда, когда $\{i, j, k\}$ — Фано-линия, и $f_{ijk} = 0$ иначе. Таблица умножения $\mathbb{O}$:
+3. **Octonion structure constants** $f_{ijk}$: $f_{ijk} = \pm 1$ if and only if $\{i, j, k\}$ is a Fano line, and $f_{ijk} = 0$ otherwise. The multiplication table of $\mathbb{O}$:
 
 $$e_i \cdot e_j = f_{ijk}\, e_k - \delta_{ij}$$
 
-### 1.4 Группа автоморфизмов
+### 1.4 Automorphism Group
 
 $$\mathrm{Aut}(\mathrm{PG}(2,2)) = \mathrm{PSL}(2,7)$$
 
-Это группа порядка 168, изоморфная $\mathrm{GL}(3, \mathbb{F}_2)$. Она действует транзитивно на точках и на линиях.
+This is the group of order 168, isomorphic to $\mathrm{GL}(3, \mathbb{F}_2)$. It acts transitively on both points and lines.
 
 ---
 
-## 2. Октонионное умножение и $G_2$ {#октонионное-умножение-и-g2}
+## 2. Octonionic Multiplication and $G_2$ {#октонионное-умножение-и-g2}
 
-### 2.1 Алгебра октонионов $\mathbb{O}$
+### 2.1 The Octonion Algebra $\mathbb{O}$
 
-Октонионы — 8-мерная вещественная алгебра с делением. Каждый октонион записывается как:
+The octonions are an 8-dimensional real division algebra. Each octonion is written as:
 
 $$x = x_0 \cdot 1 + \sum_{i=1}^{7} x_i \, e_i, \quad x_0, x_i \in \mathbb{R}$$
 
-где $1$ — вещественная единица, а $e_1, \ldots, e_7$ — мнимые единицы, удовлетворяющие:
+where $1$ is the real unit, and $e_1, \ldots, e_7$ are imaginary units satisfying:
 
 $$e_i^2 = -1, \quad e_i \cdot e_j = -e_j \cdot e_i \;\; (i \neq j)$$
 
-В УГМ мнимые единицы отождествляются с 7 измерениями: $e_1 = A$, $e_2 = S$, $e_3 = D$, $e_4 = L$, $e_5 = E$, $e_6 = U$, $e_7 = O$.
+In UHM theory the imaginary units are identified with the 7 dimensions: $e_1 = A$, $e_2 = S$, $e_3 = D$, $e_4 = L$, $e_5 = E$, $e_6 = U$, $e_7 = O$.
 
-### 2.2 Таблица октонионного умножения
+### 2.2 Octonion Multiplication Table
 
-Умножение мнимых единиц определяется **полностью** плоскостью Фано. Для каждой Фано-линии $(i, j, k)$ с каноническим порядком:
+The multiplication of imaginary units is **completely** determined by the Fano plane. For each Fano line $(i, j, k)$ with canonical ordering:
 
 $$e_i \cdot e_j = e_k, \quad e_j \cdot e_k = e_i, \quad e_k \cdot e_i = e_j$$
 
@@ -88,567 +88,567 @@ $$e_i \cdot e_j = e_k, \quad e_j \cdot e_k = e_i, \quad e_k \cdot e_i = e_j$$
 | $e_6$ (U) | $e_5$ | $-e_7$ | $e_4$ | $-e_3$ | $-e_1$ | $-1$ | $e_2$ |
 | $e_7$ (O) | $-e_3$ | $e_6$ | $e_1$ | $e_5$ | $-e_4$ | $-e_2$ | $-1$ |
 
-Каждая строка и столбец содержит все 7 мнимых единиц ровно по одному разу (с точностью до знака) — алгебра с делением.
+Each row and column contains all 7 imaginary units exactly once (up to sign) — a division algebra.
 
-### 2.3 Группа $G_2 = \mathrm{Aut}(\mathbb{O})$
+### 2.3 The Group $G_2 = \mathrm{Aut}(\mathbb{O})$
 
-**Определение.** Группа $G_2$ — это группа всех $\mathbb{R}$-линейных биекций $g: \mathbb{O} \to \mathbb{O}$, сохраняющих умножение:
+**Definition.** The group $G_2$ is the group of all $\mathbb{R}$-linear bijections $g: \mathbb{O} \to \mathbb{O}$ preserving multiplication:
 
 $$G_2 = \{g \in \mathrm{GL}(\mathbb{O}) : g(xy) = g(x)g(y) \; \forall x, y \in \mathbb{O}\}$$
 
-Поскольку $g(1) = 1$ для любого автоморфизма, $g$ действует на 7-мерное подпространство мнимых октонионов $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$.
+Since $g(1) = 1$ for any automorphism, $g$ acts on the 7-dimensional subspace of imaginary octonions $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$.
 
-:::tip[Статус: Теорема \[Т\]]
-$G_2$ — исключительная компактная простая группа Ли со следующими характеристиками:
+:::tip[Status: Theorem \[T\]]
+$G_2$ is an exceptional compact simple Lie group with the following characteristics:
 - $\dim(G_2) = 14$
 - $\mathrm{rank}(G_2) = 2$
-- $G_2 \subset \mathrm{SO}(7)$ — собственная подгруппа группы вращений $\mathbb{R}^7$
+- $G_2 \subset \mathrm{SO}(7)$ — a proper subgroup of the rotation group of $\mathbb{R}^7$
 :::
 
-**Почему $\dim(G_2) = 14$?** Группа $\mathrm{SO}(7)$ имеет размерность $7 \cdot 6 / 2 = 21$. Условие сохранения октонионного умножения накладывает 7 независимых ограничений (по одному на каждую Фано-линию): $g(e_i \cdot e_j) = g(e_i) \cdot g(e_j)$ для всех $(i,j,k) \in \mathrm{PG}(2,2)$. Итого:
+**Why $\dim(G_2) = 14$?** The group $\mathrm{SO}(7)$ has dimension $7 \cdot 6 / 2 = 21$. The condition of preserving octonionic multiplication imposes 7 independent constraints (one per Fano line): $g(e_i \cdot e_j) = g(e_i) \cdot g(e_j)$ for all $(i,j,k) \in \mathrm{PG}(2,2)$. Total:
 
 $$\dim(G_2) = 21 - 7 = 14$$
 
-**Почему $\mathrm{rank}(G_2) = 2$?** Максимальный тор $G_2$ — двумерный: он порождается двумя коммутирующими вращениями в $\mathbb{R}^7$, совместимыми со всеми 7 Фано-линиями. Два независимых угла $(\theta_1, \theta_2)$ параметризуют максимальный тор, давая 2 квантовых числа — зарядов Нётер (см. [G₂-заряды Нётер](/docs/physics/gauge-symmetry/noether-charges)).
+**Why $\mathrm{rank}(G_2) = 2$?** The maximal torus of $G_2$ is two-dimensional: it is generated by two commuting rotations in $\mathbb{R}^7$ compatible with all 7 Fano lines. Two independent angles $(\theta_1, \theta_2)$ parametrise the maximal torus, yielding 2 quantum numbers — Noether charges (see [G₂-Noether Charges](/docs/physics/gauge-symmetry/noether-charges)).
 
-### 2.4 Четырнадцать генераторов $G_2$ {#генераторы-g2}
+### 2.4 Fourteen Generators of $G_2$ {#генераторы-g2}
 
-Алгебра Ли $\mathfrak{g}_2$ имеет 14 генераторов, которые можно разложить по представлениям подгруппы $\mathrm{SU}(3) \subset G_2$:
+The Lie algebra $\mathfrak{g}_2$ has 14 generators, which can be decomposed with respect to the representations of the subgroup $\mathrm{SU}(3) \subset G_2$:
 
 $$\mathfrak{g}_2 = \mathfrak{su}(3) \oplus \mathbb{C}^3$$
 
-| Тип | Число | Представление $\mathrm{SU}(3)$ | Физическая интерпретация в УГМ |
+| Type | Count | $\mathrm{SU}(3)$ representation | Physical interpretation in UHM |
 |-----|-------|-------------------------------|-------------------------------|
-| Генераторы $\mathrm{SU}(3)$ | 8 | $\mathbf{8}$ (присоединённое) | Калибровочные преобразования между тройками измерений на одной Фано-линии; аналог глюонных полей |
-| Дополнительные генераторы | 6 | $\mathbf{3} \oplus \bar{\mathbf{3}}$ | Преобразования, смешивающие измерения из **разных** Фано-линий; «межлинейные» вращения |
+| $\mathrm{SU}(3)$ generators | 8 | $\mathbf{8}$ (adjoint) | Gauge transformations between triples of dimensions on a single Fano line; analogue of gluon fields |
+| Additional generators | 6 | $\mathbf{3} \oplus \bar{\mathbf{3}}$ | Transformations mixing dimensions from **different** Fano lines; 'inter-line' rotations |
 
-Все 14 генераторов — антиэрмитовы $7 \times 7$ матрицы $T_a \in \mathfrak{so}(7)$, удовлетворяющие:
+All 14 generators are anti-Hermitian $7 \times 7$ matrices $T_a \in \mathfrak{so}(7)$ satisfying:
 
 $$[T_a, T_b] = f_{ab}^{\;\;c}\, T_c, \quad a, b, c = 1, \ldots, 14$$
 
-где $f_{ab}^{\;\;c}$ — структурные константы $\mathfrak{g}_2$.
+where $f_{ab}^{\;\;c}$ are the structure constants of $\mathfrak{g}_2$.
 
-### 2.5 Пример: октонионное умножение и неассоциативность {#пример-октонионное-умножение}
+### 2.5 Example: Octonionic Multiplication and Non-associativity {#пример-октонионное-умножение}
 
-Октонионы — **единственная** нормированная алгебра с делением, которая **неассоциативна**. Покажем это на конкретном примере.
+The octonions are the **unique** normed division algebra that is **non-associative**. Let us demonstrate this with a concrete example.
 
-**Задача.** Вычислить $(e_1 \cdot e_2) \cdot e_3$ и $e_1 \cdot (e_2 \cdot e_3)$ и убедиться, что результаты различны.
+**Problem.** Compute $(e_1 \cdot e_2) \cdot e_3$ and $e_1 \cdot (e_2 \cdot e_3)$ and verify that the results differ.
 
-**Шаг 1.** По таблице умножения (Фано-линия $\{1,2,4\}$):
+**Step 1.** From the multiplication table (Fano line $\{1,2,4\}$):
 
 $$e_1 \cdot e_2 = e_4 \quad (\text{A} \cdot \text{S} = \text{L})$$
 
-**Шаг 2.** Теперь умножаем результат на $e_3$ (Фано-линия $\{3,4,6\}$):
+**Step 2.** Now multiply the result by $e_3$ (Fano line $\{3,4,6\}$):
 
 $$(e_1 \cdot e_2) \cdot e_3 = e_4 \cdot e_3 = -e_6 \quad (\text{L} \cdot \text{D} = -\text{U})$$
 
-(знак минус — поскольку каноническая ориентация линии $\{3,4,6\}$ даёт $e_3 \cdot e_4 = e_6$, а мы умножаем в обратном порядке).
+(the minus sign — because the canonical orientation of line $\{3,4,6\}$ gives $e_3 \cdot e_4 = e_6$, and we are multiplying in the reverse order).
 
-**Шаг 3.** Отдельно вычислим правую скобку (Фано-линия $\{2,3,5\}$):
+**Step 3.** Separately compute the right bracket (Fano line $\{2,3,5\}$):
 
 $$e_2 \cdot e_3 = e_5 \quad (\text{S} \cdot \text{D} = \text{E})$$
 
-**Шаг 4.** Умножаем $e_1$ на результат (Фано-линия $\{5,6,1\}$):
+**Step 4.** Multiply $e_1$ by the result (Fano line $\{5,6,1\}$):
 
 $$e_1 \cdot (e_2 \cdot e_3) = e_1 \cdot e_5 = e_6 \quad (\text{A} \cdot \text{E} = \text{U})$$
 
-**Результат:**
+**Result:**
 
 $$(e_1 \cdot e_2) \cdot e_3 = -e_6, \quad e_1 \cdot (e_2 \cdot e_3) = +e_6$$
 
-Разница: $(e_1 \cdot e_2) \cdot e_3 - e_1 \cdot (e_2 \cdot e_3) = -2e_6$. Неассоциативность явная.
+The difference: $(e_1 \cdot e_2) \cdot e_3 - e_1 \cdot (e_2 \cdot e_3) = -2e_6$. The non-associativity is manifest.
 
-:::tip[Физическая интерпретация]
-В терминах УГМ-измерений: последовательность взаимодействий $A \to S \to D$ даёт **различные** результаты в зависимости от порядка группировки. Это означает, что октонионная структура кодирует **контекстную зависимость** когерентных переходов: результат зависит не только от участвующих измерений, но и от порядка их вовлечения.
+:::tip[Physical Interpretation]
+In terms of UHM dimensions: the sequence of interactions $A \to S \to D$ yields **different** results depending on the grouping order. This means that the octonionic structure encodes the **contextual dependence** of coherent transitions: the result depends not only on the participating dimensions, but also on the order of their involvement.
 :::
 
 ---
 
-## 3. $G_2 = \mathrm{Aut}(\mathbb{O})$ и её действие на когерентности {#g2-действие}
+## 3. $G_2 = \mathrm{Aut}(\mathbb{O})$ and its Action on Coherences {#g2-действие}
 
-### 3.1 Действие $G_2$ на пространство когерентностей
+### 3.1 Action of $G_2$ on the Space of Coherences
 
-При отождествлении $e_i \leftrightarrow$ измерения (из таблицы `dimensions.md`) группа $G_2$ действует на $7D$-пространство:
+Upon identifying $e_i \leftrightarrow$ dimensions (from the `dimensions.md` table), the group $G_2$ acts on the $7D$ space:
 
 $$g \in G_2: \quad |i\rangle \mapsto \sum_j D_{ji}(g) |j\rangle$$
 
-где $D(g)$ — 7-мерное (фундаментальное) представление $G_2$.
+where $D(g)$ is the 7-dimensional (fundamental) representation of $G_2$.
 
-**Действие на матрицу когерентности:**
+**Action on the coherence matrix:**
 
 $$g: \Gamma \mapsto D(g)\, \Gamma\, D(g)^\dagger$$
 
-**Действие на когерентности:**
+**Action on coherences:**
 
 $$g: \gamma_{ij} \mapsto \sum_{k,l} D_{ki}(g)\, D_{lj}^*(g)\, \gamma_{kl}$$
 
-### 3.2 $G_2$ сохраняет Фано-структуру
+### 3.2 $G_2$ Preserves the Fano Structure
 
-Поскольку $G_2 = \mathrm{Aut}(\mathbb{O})$ сохраняет октонионное умножение, она сохраняет структурные константы $f_{ijk}$ и, следовательно, плоскость Фано:
+Since $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication, it preserves the structure constants $f_{ijk}$ and hence the Fano plane:
 
-$$g \in G_2 \quad \Rightarrow \quad g \text{ переставляет Фано-линии}$$
+$$g \in G_2 \quad \Rightarrow \quad g \text{ permutes the Fano lines}$$
 
-Точнее: для каждого $g \in G_2$ существует перестановка $\sigma_g$ на множестве $\{1, \ldots, 7\}$ линий:
+More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines:
 
 $$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
 
 ---
 
-## 3b. Физическая интерпретация $G_2$-симметрии {#физическая-интерпретация-g2}
+## 3b. Physical Interpretation of $G_2$-Symmetry {#физическая-интерпретация-g2}
 
-### Что сохраняет $G_2$-инвариантность
+### What $G_2$-Invariance Preserves
 
-$G_2$-симметрия — это **калибровочная свобода** УГМ: преобразования из $G_2$ не меняют физику, а лишь переименовывают базис измерений $\{A, S, D, L, E, U, O\}$, сохраняя при этом октонионную алгебраическую структуру.
+$G_2$-symmetry is the **gauge freedom** of UHM theory: $G_2$ transformations do not change the physics, but merely rename the basis of dimensions $\{A, S, D, L, E, U, O\}$, preserving the octonionic algebraic structure.
 
-:::tip[Статус: Теорема \[Т\]]
-$G_2$-преобразование $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ сохраняет следующие физические величины:
+:::tip[Status: Theorem \[T\]]
+The $G_2$-transformation $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ preserves the following physical quantities:
 
-| Инвариант | Формула | Физический смысл |
+| Invariant | Formula | Physical meaning |
 |-----------|---------|-----------------|
-| Суммарная чистота | $P = \mathrm{Tr}(\Gamma^2)$ | Степень интеграции сознания |
-| Мера рефлексии | $R = R(\Gamma)$ | Глубина самонаблюдения |
-| Интеграция | $\Phi = \Phi(\Gamma)$ | Неразложимость системы |
-| Спектр $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | Собственные населённости |
-| Суммарная когерентность | $\sum_{i < j} |\gamma_{ij}|^2$ | Общая связность измерений |
-| Фано-структура | $f_{ijk}$ | Таблица умножения октонионов |
+| Total purity | $P = \mathrm{Tr}(\Gamma^2)$ | Degree of consciousness integration |
+| Reflection measure | $R = R(\Gamma)$ | Depth of self-observation |
+| Integration | $\Phi = \Phi(\Gamma)$ | System irreducibility |
+| Spectrum of $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | Eigenvalue populations |
+| Total coherence | $\sum_{i < j} |\gamma_{ij}|^2$ | Overall connectivity of dimensions |
+| Fano structure | $f_{ijk}$ | Octonion multiplication table |
 :::
 
-### Что $G_2$ НЕ сохраняет
+### What $G_2$ Does NOT Preserve
 
-$G_2$-преобразование **перемешивает** конкретные измерения. В общем случае:
+The $G_2$-transformation **mixes** specific dimensions. In general:
 
-- **Населённости отдельных измерений** $\gamma_{ii}$ не инвариантны: $G_2$ может перенести населённость из $A$ в $S$.
-- **Конкретные когерентности** $\gamma_{ij}$ не инвариантны: связь $A \leftrightarrow S$ может перейти в $D \leftrightarrow L$.
-- **Gap-профиль** $\{\mathrm{Gap}(i,j)\}_{i<j}$ не инвариантен поэлементно (хотя суммарный Gap инвариантен).
-- **Стресс-вектор** $\sigma_k = 1 - 7\gamma_{kk}$ не инвариантен покомпонентно.
+- **Populations of individual dimensions** $\gamma_{ii}$ are not invariant: $G_2$ can transfer population from $A$ to $S$.
+- **Specific coherences** $\gamma_{ij}$ are not invariant: the $A \leftrightarrow S$ coupling can transform into $D \leftrightarrow L$.
+- **Gap profile** $\{\mathrm{Gap}(i,j)\}_{i<j}$ is not invariant elementwise (although the total Gap is invariant).
+- **Stress vector** $\sigma_k = 1 - 7\gamma_{kk}$ is not invariant componentwise.
 
-### Геометрический смысл: вращения в $\{A, S, D, L, E, U, O\}$
+### Geometric Meaning: Rotations in $\{A, S, D, L, E, U, O\}$
 
-$G_2$-преобразование можно представить как **вращение** 7-мерного пространства, которое:
+A $G_2$-transformation can be viewed as a **rotation** of the 7-dimensional space that:
 
-1. **Совместимо с Фано-плоскостью:** если $\{i, j, k\}$ — Фано-линия, то образ $\{g(i), g(j), g(k)\}$ — тоже Фано-линия.
-2. **Не произвольно:** из 21 возможного вращения в $\mathrm{SO}(7)$ только 14-мерное подмногообразие $G_2$ сохраняет октонионное умножение.
-3. **Физически:** $G_2$-преобразование — это смена «системы координат» в пространстве измерений, при которой все алгебраические соотношения (Фано-линии, знаки структурных констант, тройки связанных измерений) остаются неизменными.
+1. **Is compatible with the Fano plane:** if $\{i, j, k\}$ is a Fano line, then the image $\{g(i), g(j), g(k)\}$ is also a Fano line.
+2. **Is not arbitrary:** of the 21 possible rotations in $\mathrm{SO}(7)$, only the 14-dimensional submanifold $G_2$ preserves octonionic multiplication.
+3. **Physically:** a $G_2$-transformation is a change of 'coordinate system' in the space of dimensions, under which all algebraic relations (Fano lines, signs of structure constants, triples of related dimensions) remain unchanged.
 
-:::warning[Принцип $G_2$-ковариантности]
-Физические законы УГМ (эволюция, пороги сознания, операторы Линдблада) должны быть формулируемы в терминах $G_2$-инвариантов. Конкретная «метка» измерения ($A$, $S$, $D$, ...) — вопрос выбора базиса, а не физики.
+:::warning[$G_2$-Covariance Principle]
+The physical laws of UHM theory (evolution, consciousness thresholds, Lindblad operators) must be formulated in terms of $G_2$-invariants. The specific 'label' of a dimension ($A$, $S$, $D$, ...) is a matter of basis choice, not of physics.
 :::
 
-### Аналогия с калибровочными теориями
+### Analogy with Gauge Theories
 
-| Теория | Калибровочная группа | Что сохраняется | Что перемешивается |
+| Theory | Gauge group | What is preserved | What is mixed |
 |--------|---------------------|-----------------|-------------------|
-| Электродинамика | $U(1)$ | Заряд | Фаза волновой функции |
-| Хромодинамика | $SU(3)$ | Цветовой синглет | Цвет кварков (r, g, b) |
-| **УГМ** | $G_2$ | $P$, $R$, $\Phi$, спектр, Фано-структура | Метки измерений $\{A,S,D,L,E,U,O\}$ |
+| Electrodynamics | $U(1)$ | Charge | Phase of the wave function |
+| Chromodynamics | $SU(3)$ | Color singlet | Quark color (r, g, b) |
+| **UHM** | $G_2$ | $P$, $R$, $\Phi$, spectrum, Fano structure | Dimension labels $\{A,S,D,L,E,U,O\}$ |
 
-В этом смысле $G_2$ для УГМ — аналог $SU(3)_c$ для КХД: конкретные «цвета» (измерения) не наблюдаемы напрямую, наблюдаемы лишь инвариантные комбинации.
+In this sense $G_2$ for UHM theory is the analogue of $SU(3)_c$ for QCD: specific 'colors' (dimensions) are not directly observable; only invariant combinations are observable.
 
 ---
 
-## 4. $G_2$-инварианты Gap-профиля
+## 4. $G_2$-Invariants of the Gap Profile
 
-### Теорема 2.1 ($G_2$-инварианты Gap-профиля)
+### Theorem 2.1 ($G_2$-Invariants of the Gap Profile)
 
-:::tip[Статус: Теорема \[Т\]]
-Следующие величины являются $G_2$-инвариантами (не изменяются при преобразованиях из $G_2$).
+:::tip[Status: Theorem \[T\]]
+The following quantities are $G_2$-invariants (unchanged under $G_2$ transformations).
 :::
 
-**(a)** Суммарная чистота: $P = \mathrm{Tr}(\Gamma^2)$ — инвариантна при $\mathrm{SO}(7) \supset G_2$.
+**(a)** Total purity: $P = \mathrm{Tr}(\Gamma^2)$ — invariant under $\mathrm{SO}(7) \supset G_2$.
 
-**(b)** Полный Gap:
+**(b)** Total Gap:
 
 $$\mathcal{G}_{\mathrm{total}} := \sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \sum_{i<j} |\mathrm{Im}(\gamma_{ij})|^2$$
 
-Суммарная «мнимая энергия» когерентностей инвариантна при $\mathrm{SO}(7)$.
+The total 'imaginary energy' of coherences is invariant under $\mathrm{SO}(7)$.
 
-**(c)** Однако **распределение** Gap по парам $(i,j)$ **не** является $G_2$-инвариантом. $G_2$ «перемешивает» Gap между парами, сохраняя только суммарный.
+**(c)** However, the **distribution** of Gap over pairs $(i,j)$ is **not** a $G_2$-invariant. $G_2$ 'mixes' Gap between pairs, preserving only the total.
 
-**Доказательство.** (a) и (b) следуют из унитарной инвариантности нормы Фробениуса. (c) следует из того, что $G_2$ не диагональна в базисе $\{|i\rangle\}$. $\blacksquare$
+**Proof.** (a) and (b) follow from the unitary invariance of the Frobenius norm. (c) follows from the fact that $G_2$ is not diagonal in the basis $\{|i\rangle\}$. $\blacksquare$
 
-### Теорема 2.2 ($G_2$-орбиты Gap-профилей)
+### Theorem 2.2 ($G_2$-Orbits of Gap Profiles)
 
-:::tip[Статус: Теорема \[Т\]]
-Множество всех возможных Gap-профилей $\{\mathrm{Gap}(i,j)\}_{i<j}$ для фиксированного $\Gamma$ разбивается на $G_2$-орбиты.
+:::tip[Status: Theorem \[T\]]
+The set of all possible Gap profiles $\{\mathrm{Gap}(i,j)\}_{i<j}$ for a fixed $\Gamma$ decomposes into $G_2$-orbits.
 :::
 
-**(a)** Общее число $G_2$-инвариантов для эрмитовой $7 \times 7$ матрицы: $48 - 14 = 34$, где $14 = \dim(G_2)$. Следовательно, $G_2$-калибровочная свобода редуцирует 48-мерное пространство параметров до **34-мерного** пространства физически различимых конфигураций. [Теорема $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [Т] доказывает, что $G_2$ — **максимальная** калибровочная группа (Лемма G4): никакая большая подгруппа $U(7)$ не сохраняет все аксиоматические структуры A1–A5. Редукция $48 \to 34$ — не произвольный выбор калибровки, а **необходимое** следствие единственности голономного представления.
+**(a)** The total number of $G_2$-invariants for a Hermitian $7 \times 7$ matrix: $48 - 14 = 34$, where $14 = \dim(G_2)$. Consequently, $G_2$ gauge freedom reduces the 48-dimensional parameter space to a **34-dimensional** space of physically distinguishable configurations. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [T] proves that $G_2$ is the **maximal** gauge group (Lemma G4): no larger subgroup of $U(7)$ preserves all axiomatic structures A1–A5. The reduction $48 \to 34$ is not an arbitrary gauge choice, but a **necessary** consequence of the uniqueness of the holonomy representation.
 
-**(b)** Из 21 Gap-значения только $34 - 7 = $ **до 27** являются «физически различимыми» (7 населённостей вычитаются из инвариантов).
+**(b)** Of the 21 Gap values, only $34 - 7 = $ **up to 27** are 'physically distinguishable' (7 populations are subtracted from the invariants).
 
-**(c)** Это означает, что 21 − (27 − 21) = **все 21 Gap** могут быть различимы, но с 14 соотношениями между ними. Фактически, зная 7 Gap'ов, можно (при $G_2$-ковариантности) восстановить остальные 14.
+**(c)** This means that $21 - (27 - 21) = $ **all 21 Gaps** can be distinguishable, but with 14 relations between them. In practice, knowing 7 Gaps, one can (under $G_2$-covariance) recover the remaining 14.
 
-### Следствие: $G_2$-редукция диагностики
+### Corollary: $G_2$-Reduction of Diagnostics
 
-Если уравнения эволюции УГМ $G_2$-ковариантны, то для полной диагностики достаточно измерить:
+If the UHM evolution equations are $G_2$-covariant, a full diagnostic requires measuring only:
 
-- 7 населённостей $\gamma_{ii}$
-- 7 модулей $|\gamma_{ij}|$ для одного «базового набора» пар
-- 7 фаз $\theta_{ij}$ для того же набора
+- 7 populations $\gamma_{ii}$
+- 7 moduli $|\gamma_{ij}|$ for one 'base set' of pairs
+- 7 phases $\theta_{ij}$ for the same set
 
-Остальные 27 параметров вычисляются из $G_2$-соотношений.
+The remaining 27 parameters are computed from $G_2$ relations.
 
-:::warning[Статус: Открытая проблема \[Г\]]
-$G_2$-ковариантность уравнений эволюции не доказана в полной общности. Степень $G_2$-нарушения определяется параметром $\alpha$ (см. Теорему 11.3 ниже).
+:::warning[Status: Open Problem \[H\]]
+$G_2$-covariance of the evolution equations has not been proved in full generality. The degree of $G_2$ breaking is determined by the parameter $\alpha$ (see Theorem 11.3 below).
 :::
 
 ---
 
-## 5. Фано-структурированные операторы Линдблада
+## 5. Fano-Structured Lindblad Operators
 
-### 5.1 Два типа атомов классификатора
+### 5.1 Two Types of Classifier Atoms
 
-Из L-унификации: операторы Линдблада $L_k = \sqrt{\chi_{S_k}}$ выводятся из **атомов** классификатора $\Omega$. Существуют два типа:
+From L-unification: Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ are derived from **atoms** of the classifier $\Omega$. There are two types:
 
-**Базисные атомы** (7 штук):
+**Basis atoms** (7 in total):
 
 $$S_k = |k\rangle\langle k|, \quad k \in \{A, S, D, L, E, U, O\}$$
 
-**Составные атомы** (7 штук): Фано-линии определяют 7 **линейных подобъектов** — проекции на 3-мерные подпространства:
+**Composite atoms** (7 in total): the Fano lines define 7 **linear subobjects** — projections onto 3-dimensional subspaces:
 
 $$\Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7$$
 
-Каждая Фано-линия $p = (i, j, k)$ порождает **составной атом** $S_p = \mathrm{span}\{|i\rangle, |j\rangle, |k\rangle\}$.
+Each Fano line $p = (i, j, k)$ generates a **composite atom** $S_p = \mathrm{span}\{|i\rangle, |j\rangle, |k\rangle\}$.
 
-### Теорема 10.0 (Полнота атомов Фано)
+### Theorem 10.0 (Completeness of Fano Atoms)
 
-:::tip[Статус: Теорема \[Т\]]
-Каждое измерение лежит на ровно 3 Фано-линиях.
+:::tip[Status: Theorem \[T\]]
+Each dimension lies on exactly 3 Fano lines.
 :::
 
 $$\sum_{p=1}^{7} \Pi_p = 3I$$
 
-**Доказательство.** Свойство плоскости Фано: каждая из 7 точек инцидентна ровно 3 линиям. $\blacksquare$
+**Proof.** A property of the Fano plane: each of the 7 points is incident to exactly 3 lines. $\blacksquare$
 
-### 5.2 Определение (Фано-структурированные операторы Линдблада)
+### 5.2 Definition (Fano-Structured Lindblad Operators)
 
-Для каждой Фано-линии $p = (i, j, k)$ определяется оператор Линдблада:
+For each Fano line $p = (i, j, k)$, a Lindblad operator is defined:
 
 $$L_p^{\mathrm{Fano}} := \frac{1}{\sqrt{3}} \Pi_p = \frac{1}{\sqrt{3}}(|i\rangle\langle i| + |j\rangle\langle j| + |k\rangle\langle k|)$$
 
-**Проверка CPTP:**
+**CPTP verification:**
 
 $$\sum_{p=1}^{7} (L_p^{\mathrm{Fano}})^\dagger L_p^{\mathrm{Fano}} = \frac{1}{3}\sum_{p=1}^{7} \Pi_p = \frac{1}{3} \cdot 3I = I \quad \checkmark$$
 
-### 5.3 Определение (Фано-предиктивный канал)
+### 5.3 Definition (Fano Predictive Channel)
 
 $$\mathcal{P}_{\mathrm{Fano}}(\Gamma) := \sum_{p=1}^{7} L_p^{\mathrm{Fano}} \, \Gamma \, (L_p^{\mathrm{Fano}})^\dagger = \frac{1}{3}\sum_{p=1}^{7} \Pi_p \, \Gamma \, \Pi_p$$
 
 ---
 
-## 6. Свойства Фано-канала
+## 6. Properties of the Fano Channel
 
-### Теорема 10.1 (Фано-канал сохраняет когерентности)
+### Theorem 10.1 (Fano Channel Preserves Coherences)
 
-:::tip[Статус: Теорема \[Т\]]
-Для произвольной матрицы когерентности $\Gamma$:
+:::tip[Status: Theorem \[T\]]
+For an arbitrary coherence matrix $\Gamma$:
 :::
 
-**(a)** Диагональные элементы сохраняются точно:
+**(a)** Diagonal elements are preserved exactly:
 
 $$[\mathcal{P}_{\mathrm{Fano}}(\Gamma)]_{ii} = \gamma_{ii}$$
 
-**(b)** Недиагональные элементы (когерентности) сохраняются с коэффициентом $1/3$:
+**(b)** Off-diagonal elements (coherences) are preserved with a factor of $1/3$:
 
-$$[\mathcal{P}_{\mathrm{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{для всех } i \neq j$$
+$$[\mathcal{P}_{\mathrm{Fano}}(\Gamma)]_{ij} = \frac{1}{3}\gamma_{ij} \quad \text{for all } i \neq j$$
 
-**(c)** Фазы когерентностей сохраняются в точности:
+**(c)** Phases of coherences are preserved exactly:
 
 $$\arg([\mathcal{P}_{\mathrm{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij}) = \theta_{ij}$$
 
-**Доказательство.**
+**Proof.**
 
-**(a)** $[\sum_p \Pi_p \Gamma \Pi_p]_{ii} = \sum_{p:\, i \in \mathrm{line}_p} \gamma_{ii} = 3\gamma_{ii}$. С множителем $1/3$: $\gamma_{ii}$. $\checkmark$
+**(a)** $[\sum_p \Pi_p \Gamma \Pi_p]_{ii} = \sum_{p:\, i \in \mathrm{line}_p} \gamma_{ii} = 3\gamma_{ii}$. With factor $1/3$: $\gamma_{ii}$. $\checkmark$
 
-**(b)** В $\mathrm{PG}(2,2)$ любые две точки лежат на ровно одной линии. Для пары $(i,j)$, $i \neq j$: ровно одна линия $p^*$ содержит обе точки.
+**(b)** In $\mathrm{PG}(2,2)$ any two points lie on exactly one line. For the pair $(i,j)$, $i \neq j$: exactly one line $p^*$ contains both points.
 
 $$\left[\sum_p \Pi_p \Gamma \Pi_p\right]_{ij} = \sum_{p:\, i,j \in \mathrm{line}_p} \gamma_{ij} = 1 \cdot \gamma_{ij}$$
 
-С множителем $1/3$: $\gamma_{ij}/3$. $\checkmark$
+With factor $1/3$: $\gamma_{ij}/3$. $\checkmark$
 
-**(c)** $\arg(\gamma_{ij}/3) = \arg(\gamma_{ij})$, поскольку $1/3 > 0$. $\checkmark$ $\blacksquare$
+**(c)** $\arg(\gamma_{ij}/3) = \arg(\gamma_{ij})$, since $1/3 > 0$. $\checkmark$ $\blacksquare$
 
-### Теорема 10.2 (Каноническая форма $\varphi_{\mathrm{coh}}$)
+### Theorem 10.2 (Canonical Form of $\varphi_{\mathrm{coh}}$)
 
-:::tip[Статус: Теорема \[Т\]]
-Каноническое когерентно-сохраняющее самомоделирование определяется двухкомпонентной структурой.
+:::tip[Status: Theorem \[T\]]
+Canonical coherence-preserving self-modelling is determined by a two-component structure.
 :::
 
 $$\varphi_{\mathrm{coh}}(\Gamma) = k \cdot \left[\alpha \cdot \mathcal{P}_{\mathrm{base}}(\Gamma) + (1 - \alpha) \cdot \mathcal{P}_{\mathrm{Fano}}(\Gamma)\right] + (1 - k) \cdot \Gamma_{\mathrm{anchor}}$$
 
-где:
-- $\mathcal{P}_{\mathrm{base}}(\Gamma) = \sum_m P_m \Gamma P_m = \mathrm{diag}(\Gamma)$ — атомарный канал (декогерирующее наблюдение)
-- $\mathcal{P}_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$ — Фано-канал
-- $\alpha \in [0, 1]$ — **параметр глубины декогеренции** (баланс атомарного и Фано-наблюдения)
-- $k < 1$ — параметр сжатия
-- $\Gamma_{\mathrm{anchor}}$ — E-акцентированный якорь
+where:
+- $\mathcal{P}_{\mathrm{base}}(\Gamma) = \sum_m P_m \Gamma P_m = \mathrm{diag}(\Gamma)$ — atomic channel (decohering observation)
+- $\mathcal{P}_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$ — Fano channel
+- $\alpha \in [0, 1]$ — **decoherence depth parameter** (balance between atomic and Fano observation)
+- $k < 1$ — contraction parameter
+- $\Gamma_{\mathrm{anchor}}$ — E-accented anchor
 
-**Проверка CPTP:** Для произвольного $\alpha \in [0,1]$:
+**CPTP verification:** For arbitrary $\alpha \in [0,1]$:
 
 $$\varphi_{\mathrm{coh}} = k \cdot \mathcal{P}_\alpha + (1-k) \cdot \mathrm{const}$$
 
-где $\mathcal{P}_\alpha = \alpha \mathcal{P}_{\mathrm{base}} + (1-\alpha) \mathcal{P}_{\mathrm{Fano}}$ — выпуклая комбинация CPTP-каналов, следовательно CPTP. $\checkmark$
+where $\mathcal{P}_\alpha = \alpha \mathcal{P}_{\mathrm{base}} + (1-\alpha) \mathcal{P}_{\mathrm{Fano}}$ is a convex combination of CPTP channels, hence CPTP. $\checkmark$
 
-### Теорема 10.3 (Целевые когерентности $\varphi_{\mathrm{coh}}$)
+### Theorem 10.3 (Target Coherences of $\varphi_{\mathrm{coh}}$)
 
-:::tip[Статус: Теорема \[Т\]]
-Для канонического $\varphi_{\mathrm{coh}}$ целевые когерентности определяются следующим образом.
+:::tip[Status: Theorem \[T\]]
+For canonical $\varphi_{\mathrm{coh}}$ the target coherences are determined as follows.
 :::
 
-**(a)** Модуль целевой когерентности:
+**(a)** Modulus of the target coherence:
 
 $$|\gamma_{ij}^{\mathrm{target}}| = \left[\frac{k(1-\alpha)}{3}\right] \cdot |\gamma_{ij}| + (1-k) \cdot [\Gamma_{\mathrm{anchor}}]_{ij}$$
 
-Для диагонального якоря ($[\Gamma_{\mathrm{anchor}}]_{ij} = 0$ при $i \neq j$):
+For a diagonal anchor ($[\Gamma_{\mathrm{anchor}}]_{ij} = 0$ for $i \neq j$):
 
 $$|\gamma_{ij}^{\mathrm{target}}| = \frac{k(1-\alpha)}{3} \cdot |\gamma_{ij}|$$
 
-**(b)** Целевая фаза:
+**(b)** Target phase:
 
-$$\theta_{ij}^{\mathrm{target}} = \theta_{ij} \quad \text{(фаза сохраняется!)}$$
+$$\theta_{ij}^{\mathrm{target}} = \theta_{ij} \quad \text{(phase is preserved!)}$$
 
-**(c)** Целевой Gap:
+**(c)** Target Gap:
 
-$$\mathrm{Gap}^{\mathrm{target}}(i,j) = |\sin(\theta_{ij})| = \mathrm{Gap}(i,j) \quad \text{(Gap сохраняется!)}$$
+$$\mathrm{Gap}^{\mathrm{target}}(i,j) = |\sin(\theta_{ij})| = \mathrm{Gap}(i,j) \quad \text{(Gap is preserved!)}$$
 
-**Фундаментальное следствие.** Каноническая $\varphi_{\mathrm{coh}}$ **не стремится изменить Gap** — она стремится воспроизвести Gap с ослабленной амплитудой. Целевое состояние **не уничтожает** когерентности, а масштабирует их.
+**Fundamental corollary.** Canonical $\varphi_{\mathrm{coh}}$ **does not tend to change the Gap** — it tends to reproduce the Gap with reduced amplitude. The target state does **not destroy** coherences, but scales them.
 
-### Теорема 10.4 (Вариационное определение $\alpha^*$)
+### Theorem 10.4 (Variational Determination of $\alpha^*$)
 
-:::tip[Статус: Теорема \[Т\]]
-Оптимальный параметр $\alpha^*$ определяется вариационным принципом.
+:::tip[Status: Theorem \[T\]]
+The optimal parameter $\alpha^*$ is determined by a variational principle.
 :::
 
 $$\alpha^* = \arg\min_{\alpha \in [0,1]} \mathcal{F}[\mathcal{P}_\alpha; \Gamma] = \arg\min_{\alpha} \left[S_{\mathrm{spec}}(\mathcal{P}_\alpha(\Gamma)) + D_{KL}(\mathcal{P}_\alpha(\Gamma) \| \Gamma)\right]$$
 
-**(a)** При $\alpha = 1$ (чисто атомарный): $\mathcal{P}_1 = \mathcal{P}_{\mathrm{base}}$, уничтожает все когерентности. $D_{KL}$ велика (теряется информация о когерентностях). $S_{\mathrm{spec}}$ максимальна (полная декогеренция).
+**(a)** At $\alpha = 1$ (purely atomic): $\mathcal{P}_1 = \mathcal{P}_{\mathrm{base}}$, destroys all coherences. $D_{KL}$ is large (information about coherences is lost). $S_{\mathrm{spec}}$ is maximal (complete decoherence).
 
-**(b)** При $\alpha = 0$ (чисто Фано): $\mathcal{P}_0 = \mathcal{P}_{\mathrm{Fano}}$, сохраняет когерентности с коэффициентом $1/3$. $D_{KL}$ мала (мало информации теряется). Но $S_{\mathrm{spec}}$ — не минимальна (предсказательная модель менее точна).
+**(b)** At $\alpha = 0$ (purely Fano): $\mathcal{P}_0 = \mathcal{P}_{\mathrm{Fano}}$, preserves coherences with factor $1/3$. $D_{KL}$ is small (little information is lost). But $S_{\mathrm{spec}}$ is not minimal (the predictive model is less precise).
 
-**(c)** Оптимум $\alpha^* \in (0, 1)$ — баланс между предсказательной точностью (атомарное наблюдение) и сохранением структуры (Фано-наблюдение).
+**(c)** The optimum $\alpha^* \in (0, 1)$ is a balance between predictive accuracy (atomic observation) and structure preservation (Fano observation).
 
-**(d)** Для системы с чистотой $P > P_{\mathrm{crit}}$:
+**(d)** For a system with purity $P > P_{\mathrm{crit}}$:
 
 $$\alpha^* \approx 1 - \frac{P_{\mathrm{crit}}}{P} = 1 - \frac{2}{7P}$$
 
-При $P = 1$ (чистое состояние): $\alpha^* \approx 5/7 \approx 0.71$ — существенное Фано-участие.
+At $P = 1$ (pure state): $\alpha^* \approx 5/7 \approx 0.71$ — significant Fano contribution.
 
-При $P \to P_{\mathrm{crit}}$: $\alpha^* \to 0$ — почти полностью Фано (минимальное разрушение когерентностей для выживания).
+At $P \to P_{\mathrm{crit}}$: $\alpha^* \to 0$ — almost entirely Fano (minimal destruction of coherences for survival).
 
-**Доказательство.** Минимизация $\mathcal{F}$ по $\alpha$ при фиксированной $P$ определяет баланс: увеличение $\alpha$ повышает предсказательную точность ($S_{\mathrm{spec}}$ уменьшается), но увеличивает потерю когерентностей ($D_{KL}$ растёт). Условие $P > P_{\mathrm{crit}}$ требует сохранения достаточного числа когерентностей, что ограничивает $\alpha$ сверху. Оптимум находится из $\partial \mathcal{F}/\partial \alpha = 0$. $\blacksquare$
+**Proof.** Minimisation of $\mathcal{F}$ over $\alpha$ at fixed $P$ determines the balance: increasing $\alpha$ improves predictive accuracy ($S_{\mathrm{spec}}$ decreases), but increases coherence loss ($D_{KL}$ grows). The condition $P > P_{\mathrm{crit}}$ requires preserving a sufficient number of coherences, which bounds $\alpha$ from above. The optimum is found from $\partial \mathcal{F}/\partial \alpha = 0$. $\blacksquare$
 
-### Теорема 10.5 (Явные коэффициенты $\varphi_{\mathrm{coh}}$)
+### Theorem 10.5 (Explicit Coefficients of $\varphi_{\mathrm{coh}}$)
 
-:::tip[Статус: Теорема \[Т\]]
-Операторы Крауса канонического $\varphi_{\mathrm{coh}}$ получают конкретную форму.
+:::tip[Status: Theorem \[T\]]
+The Kraus operators of canonical $\varphi_{\mathrm{coh}}$ take a specific form.
 :::
 
-**Атомарные операторы (7 штук):**
+**Atomic operators (7 in total):**
 
 $$K_m^{(\mathrm{atom})} = \sqrt{\alpha^* k / 7} \cdot |m\rangle\langle m|, \quad m = 1, \ldots, 7$$
 
-**Фано-операторы (7 штук):**
+**Fano operators (7 in total):**
 
 $$K_p^{(\mathrm{Fano})} = \sqrt{(1-\alpha^*) k / 3} \cdot \Pi_p, \quad p = 1, \ldots, 7$$
 
-**Якорный оператор:**
+**Anchor operator:**
 
 $$K_0^{(\mathrm{anch})} = \sqrt{1-k} \cdot \Gamma_{\mathrm{anchor}}^{1/2}$$
 
-**Проверка CPTP:**
+**CPTP verification:**
 
 $$\sum_{m=1}^{7} (K_m^{(\mathrm{atom})})^\dagger K_m^{(\mathrm{atom})} + \sum_{p=1}^{7} (K_p^{(\mathrm{Fano})})^\dagger K_p^{(\mathrm{Fano})} + (K_0^{(\mathrm{anch})})^\dagger K_0^{(\mathrm{anch})}$$
 
-Первый член: $\alpha^* k / 7 \cdot 7I = \alpha^* k \cdot I$.
+First term: $\alpha^* k / 7 \cdot 7I = \alpha^* k \cdot I$.
 
-Второй член: $(1-\alpha^*) k / 3 \cdot 3I = (1-\alpha^*) k \cdot I$.
+Second term: $(1-\alpha^*) k / 3 \cdot 3I = (1-\alpha^*) k \cdot I$.
 
-Третий член: $(1-k) \cdot I$.
+Third term: $(1-k) \cdot I$.
 
-**Итого = $I$. $\checkmark$**
+**Total = $I$. $\checkmark$**
 
-**Следствие.** Коэффициенты $c_{mn}$ определяются:
+**Corollary.** The coefficients $c_{mn}$ are determined by:
 
-$$c_{mn} = \begin{cases} \alpha^* k & \text{при } m = n \text{ (атомарная часть)} \\ (1-\alpha^*) k / 3 & \text{при } m \neq n, (m,n) \text{ на общей Фано-линии} \\ 0 & \text{при } m \neq n, (m,n) \text{ вне общей Фано-линии} \end{cases}$$
+$$c_{mn} = \begin{cases} \alpha^* k & \text{for } m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & \text{for } m \neq n, (m,n) \text{ on a common Fano line} \\ 0 & \text{for } m \neq n, (m,n) \text{ not on a common Fano line} \end{cases}$$
 
-Коэффициенты полностью определены через:
-- Фано-структуру $\mathrm{PG}(2,2)$ (алгебраическая геометрия)
-- Вариационный принцип ($\alpha^*$ через $P$ и $P_{\mathrm{crit}}$)
-- Параметр сжатия $k$
+The coefficients are fully determined by:
+- The Fano structure $\mathrm{PG}(2,2)$ (algebraic geometry)
+- The variational principle ($\alpha^*$ via $P$ and $P_{\mathrm{crit}}$)
+- The contraction parameter $k$
 
 ---
 
-## 7. $G_2$-ковариантность
+## 7. $G_2$-Covariance
 
-### Теорема 11.1 (Атомарный диссипатор НЕ $G_2$-ковариантен)
+### Theorem 11.1 (Atomic Dissipator is NOT $G_2$-Covariant)
 
-:::danger[Статус: Теорема — отрицательный результат \[Т\]]
-Диссипативный канал с атомарными операторами Линдблада $L_k = |k\rangle\langle k|$ **не является** $G_2$-ковариантным.
+:::danger[Status: Theorem — negative result \[T\]]
+The dissipative channel with atomic Lindblad operators $L_k = |k\rangle\langle k|$ is **not** $G_2$-covariant.
 :::
 
 $$\exists g \in G_2: \quad \mathcal{D}_{\mathrm{atom}}[g\Gamma g^\dagger] \neq g \, \mathcal{D}_{\mathrm{atom}}[\Gamma] \, g^\dagger$$
 
-**Доказательство.**
+**Proof.**
 
-**(a)** Атомарный диссипатор:
+**(a)** Atomic dissipator:
 
 $$\mathcal{D}_{\mathrm{atom}}[\Gamma] = \sum_{k=1}^{7} L_k \Gamma L_k^\dagger - \Gamma = \sum_k |k\rangle\langle k| \Gamma |k\rangle\langle k| - \Gamma = \mathrm{diag}(\Gamma) - \Gamma$$
 
-**(b)** Действие $G_2$: для $g \in G_2$, $g\Gamma g^\dagger \mapsto D(g)\Gamma D(g)^\dagger$, где $D(g)$ — 7-мерное представление $G_2$.
+**(b)** Action of $G_2$: for $g \in G_2$, $g\Gamma g^\dagger \mapsto D(g)\Gamma D(g)^\dagger$, where $D(g)$ is the 7-dimensional representation of $G_2$.
 
-**(c)** Проверяем ковариантность:
+**(c)** We check covariance:
 
 $$\mathcal{D}_{\mathrm{atom}}[g\Gamma g^\dagger] = \mathrm{diag}(g\Gamma g^\dagger) - g\Gamma g^\dagger$$
 
 $$g \, \mathcal{D}_{\mathrm{atom}}[\Gamma] \, g^\dagger = g[\mathrm{diag}(\Gamma) - \Gamma]g^\dagger = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger - g\Gamma g^\dagger$$
 
-**(d)** Равенство требует:
+**(d)** Equality requires:
 
 $$\mathrm{diag}(g\Gamma g^\dagger) = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger \quad \forall \Gamma$$
 
-Это означает: «диагональ преобразованной матрицы = преобразование диагонали». Это верно **только** для диагональных $g$ (перестановки + фазы), но НЕ для общих $g \in G_2$.
+This means: 'diagonal of the transformed matrix = transform of the diagonal'. This holds **only** for diagonal $g$ (permutations + phases), but NOT for general $g \in G_2$.
 
-**(e)** Контрпример: возьмём $g$ = вращение на угол $\pi/4$ в плоскости $(e_1, e_2)$. Для матрицы $\Gamma$ с $\gamma_{12} \neq 0$:
+**(e)** Counterexample: take $g$ = rotation by angle $\pi/4$ in the plane $(e_1, e_2)$. For a matrix $\Gamma$ with $\gamma_{12} \neq 0$:
 
 $$\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$$
 
-поскольку левая часть обнуляет когерентность $\gamma_{12}$ в повёрнутом базисе, а правая — нет. $\blacksquare$
+since the left-hand side annihilates the coherence $\gamma_{12}$ in the rotated basis, while the right-hand side does not. $\blacksquare$
 
-### Теорема 11.2 (Фано-диссипатор $G_2$-ковариантен)
+### Theorem 11.2 (Fano Dissipator is $G_2$-Covariant)
 
-:::tip[Статус: Теорема \[Т\]]
-Диссипативный канал с Фано-структурированными операторами Линдблада $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ **является** $G_2$-ковариантным.
+:::tip[Status: Theorem \[T\]]
+The dissipative channel with Fano-structured Lindblad operators $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ **is** $G_2$-covariant.
 :::
 
 $$\forall g \in G_2: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger$$
 
-**Доказательство.**
+**Proof.**
 
-**(a)** Группа $G_2 = \mathrm{Aut}(\mathbb{O})$ **сохраняет** октонионное умножение. Плоскость Фано $\mathrm{PG}(2,2)$ определяется структурными константами $\mathbb{O}$. Следовательно, $G_2$ **сохраняет** Фано-структуру:
+**(a)** The group $G_2 = \mathrm{Aut}(\mathbb{O})$ **preserves** octonionic multiplication. The Fano plane $\mathrm{PG}(2,2)$ is defined by the structure constants of $\mathbb{O}$. Therefore $G_2$ **preserves** the Fano structure:
 
-$$g \in G_2 \quad \Rightarrow \quad g \text{ переставляет Фано-линии}$$
+$$g \in G_2 \quad \Rightarrow \quad g \text{ permutes the Fano lines}$$
 
-Точнее: для каждого $g \in G_2$ существует перестановка $\sigma_g$ на множестве $\{1, \ldots, 7\}$ линий:
+More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines:
 
 $$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
 
-**(b)** Фано-диссипатор:
+**(b)** Fano dissipator:
 
 $$\mathcal{D}_{\mathrm{Fano}}[\Gamma] = \frac{1}{3}\sum_{p=1}^{7} \Pi_p \Gamma \Pi_p - \Gamma$$
 
-**(c)** Подставляем $g\Gamma g^\dagger$:
+**(c)** Substituting $g\Gamma g^\dagger$:
 
 $$\mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = \frac{1}{3}\sum_p \Pi_p (g\Gamma g^\dagger) \Pi_p - g\Gamma g^\dagger$$
 
-**(d)** Используя $g^\dagger \Pi_p g = \Pi_{\sigma_g^{-1}(p)}$ (следствие (a)):
+**(d)** Using $g^\dagger \Pi_p g = \Pi_{\sigma_g^{-1}(p)}$ (from (a)):
 
 $$= \frac{1}{3}\sum_p \Pi_p g \Gamma g^\dagger \Pi_p = \frac{1}{3}\sum_p g (g^\dagger \Pi_p g) \Gamma (g^\dagger \Pi_p g) g^\dagger$$
 
 $$= \frac{1}{3}g\left[\sum_p \Pi_{\sigma_g^{-1}(p)} \Gamma \Pi_{\sigma_g^{-1}(p)}\right]g^\dagger$$
 
-Поскольку $\sigma_g$ — перестановка: $\sum_p \Pi_{\sigma_g^{-1}(p)} = \sum_q \Pi_q$ (переиндексация). Следовательно:
+Since $\sigma_g$ is a permutation: $\sum_p \Pi_{\sigma_g^{-1}(p)} = \sum_q \Pi_q$ (reindexing). Therefore:
 
 $$= g \left[\frac{1}{3}\sum_q \Pi_q \Gamma \Pi_q\right] g^\dagger = g \, \mathcal{P}_{\mathrm{Fano}}(\Gamma) \, g^\dagger$$
 
-И:
+And:
 
 $$\mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{P}_{\mathrm{Fano}}(\Gamma) \, g^\dagger - g\Gamma g^\dagger = g[\mathcal{P}_{\mathrm{Fano}}(\Gamma) - \Gamma]g^\dagger = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger$$
 
 $\blacksquare$
 
-### Теорема 11.3 (Степень $G_2$-нарушения определяется $\alpha$)
+### Theorem 11.3 (Degree of $G_2$ Breaking is Determined by $\alpha$)
 
-:::tip[Статус: Теорема \[Т\]]
-Для канонического $\varphi_{\mathrm{coh}}$ с параметром $\alpha$ степень $G_2$-ковариантности определяется следующим образом.
+:::tip[Status: Theorem \[T\]]
+For canonical $\varphi_{\mathrm{coh}}$ with parameter $\alpha$, the degree of $G_2$-covariance is determined as follows.
 :::
 
-**(a)** При $\alpha = 0$ (чисто Фано): **полная** $G_2$-ковариантность. Калибровочная редукция $48 \to 34$ справедлива.
+**(a)** At $\alpha = 0$ (purely Fano): **full** $G_2$-covariance. The gauge reduction $48 \to 34$ is valid.
 
-**(b)** При $\alpha = 1$ (чисто атомарный): $G_2$ **полностью нарушена**. Никакой калибровочной редукции.
+**(b)** At $\alpha = 1$ (purely atomic): $G_2$ is **fully broken**. No gauge reduction.
 
-**(c)** При промежуточных $\alpha \in (0, 1)$: **частичная** $G_2$-ковариантность. Смешанный канал:
+**(c)** For intermediate $\alpha \in (0, 1)$: **partial** $G_2$-covariance. Mixed channel:
 
 $$\mathcal{P}_\alpha = \alpha \, \mathcal{P}_{\mathrm{base}} + (1 - \alpha) \, \mathcal{P}_{\mathrm{Fano}}$$
 
-Мера нарушения $G_2$-симметрии:
+Measure of $G_2$-symmetry breaking:
 
 $$\Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\mathrm{op}}$$
 
-где $\mathrm{Ad}_g(\Gamma) = g\Gamma g^\dagger$.
+where $\mathrm{Ad}_g(\Gamma) = g\Gamma g^\dagger$.
 
-**(d)** $\Delta_{G_2}(\alpha)$ монотонно возрастает с $\alpha$:
+**(d)** $\Delta_{G_2}(\alpha)$ increases monotonically with $\alpha$:
 
 $$\Delta_{G_2}(0) = 0, \quad \Delta_{G_2}(1) = \Delta_{\max} > 0$$
 
-**(e)** При оптимальном $\alpha^* \approx 1 - 2/(7P)$:
+**(e)** At optimal $\alpha^* \approx 1 - 2/(7P)$:
 
 $$\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$$
 
-**Доказательство.** (a)–(b): прямое следствие Теорем 11.1 и 11.2. (c)–(e): $\mathcal{P}_\alpha$ — выпуклая комбинация $G_2$-ковариантного ($\mathcal{P}_{\mathrm{Fano}}$) и $G_2$-нарушающего ($\mathcal{P}_{\mathrm{base}}$) каналов. Мера нарушения линейна по $\alpha$ (из линейности обоих каналов). $\blacksquare$
+**Proof.** (a)–(b): direct consequence of Theorems 11.1 and 11.2. (c)–(e): $\mathcal{P}_\alpha$ is a convex combination of the $G_2$-covariant ($\mathcal{P}_{\mathrm{Fano}}$) and $G_2$-breaking ($\mathcal{P}_{\mathrm{base}}$) channels. The measure of breaking is linear in $\alpha$ (from the linearity of both channels). $\blacksquare$
 
-:::warning Пределы $G_2$-ковариантности
-- Фано-диссипатор $\mathcal{D}_{\text{Fano}}$: $G_2$-ковариантен **[Т]** (T-11.2)
-- Атомарный диссипатор $\mathcal{D}_{\text{atom}}$: **НЕ** $G_2$-ковариантен **[Т]** (T-11.1)
-- Полная динамика $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: $G_2$-ковариантность полной эволюции — **[С]** (зависит от доли атомарной vs Фано компоненты)
+:::warning Limits of $G_2$-Covariance
+- Fano dissipator $\mathcal{D}_{\text{Fano}}$: $G_2$-covariant **[T]** (T-11.2)
+- Atomic dissipator $\mathcal{D}_{\text{atom}}$: **NOT** $G_2$-covariant **[T]** (T-11.1)
+- Full dynamics $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: $G_2$-covariance of the full evolution — **[C]** (depends on the fraction of atomic vs Fano component)
 :::
 
-### Теорема 11.4 (Модифицированная калибровочная редукция)
+### Theorem 11.4 (Modified Gauge Reduction)
 
-:::tip[Статус: Теорема \[Т\]]
-При частичной $G_2$-ковариантности ($\alpha \in (0,1)$) параметрическое пространство Gap-профилей редуцируется.
+:::tip[Status: Theorem \[T\]]
+Under partial $G_2$-covariance ($\alpha \in (0,1)$), the parameter space of Gap profiles is reduced.
 :::
 
-**(a)** Полная $G_2$ ($\alpha = 0$): $48 - 14 = $ **34** независимых параметра.
+**(a)** Full $G_2$ ($\alpha = 0$): $48 - 14 = $ **34** independent parameters.
 
-**(b)** Частичная $G_2$ (оптимальное $\alpha^*$): **$34 + 14\alpha^*$** параметров. Число «дополнительных» параметров $= 14\alpha^* \approx 14(1 - 2/(7P))$.
+**(b)** Partial $G_2$ (optimal $\alpha^*$): **$34 + 14\alpha^*$** parameters. The number of 'additional' parameters $= 14\alpha^* \approx 14(1 - 2/(7P))$.
 
-**(c)** Нет $G_2$ ($\alpha = 1$): **48** параметров (полное пространство).
+**(c)** No $G_2$ ($\alpha = 1$): **48** parameters (full space).
 
-**Для типичной живой системы** с $P \approx 0.5$: $\alpha^* \approx 0.43$, число параметров $\approx 34 + 6 = $ **40**. Редукция с 48 до 40 — умеренная, но значимая.
+**For a typical living system** with $P \approx 0.5$: $\alpha^* \approx 0.43$, number of parameters $\approx 34 + 6 = $ **40**. Reduction from 48 to 40 — moderate but significant.
 
-**Для высококогерентной системы** с $P \approx 0.8$: $\alpha^* \approx 0.64$, число параметров $\approx 34 + 9 = $ **43**. Редукция ещё более умеренная.
+**For a highly coherent system** with $P \approx 0.8$: $\alpha^* \approx 0.64$, number of parameters $\approx 34 + 9 = $ **43**. The reduction is even more moderate.
 
-**Интерпретация.** Самонаблюдение (ненулевое $\alpha$) **частично ломает** алгебраическую симметрию октонионов. Чем глубже самопознание (больше $\alpha$), тем больше нарушена $G_2$-симметрия, и тем больше параметров нужно для описания системы. Это — фундаментальная «цена самопознания»: знание о себе увеличивает сложность самоописания.
+**Interpretation.** Self-observation (nonzero $\alpha$) **partially breaks** the algebraic symmetry of the octonions. The deeper the self-knowledge (larger $\alpha$), the more broken the $G_2$-symmetry, and the more parameters are needed to describe the system. This is the fundamental 'price of self-knowledge': knowledge about oneself increases the complexity of self-description.
 
-### Обновлённый диагностический протокол
+### Updated Diagnostic Protocol
 
-С учётом частичной $G_2$-ковариантности:
+Taking into account partial $G_2$-covariance:
 
-| Режим | Число параметров | Протокол |
+| Mode | Number of parameters | Protocol |
 |-------|-----------------|----------|
-| $\alpha = 0$ (нет самопознания, L0) | 34 (полная $G_2$) | Минимальная томография: 7 населённостей + 7 модулей + 7 фаз + $G_2$-соотношения |
-| $\alpha^* \approx 0.4$ (типичная L2 система) | $\sim$40 | Расширенная томография: 7 + 12 модулей + 12 фаз + частичные $G_2$-соотношения |
-| $\alpha = 1$ (полное L4) | 48 (нет $G_2$) | Полная томография: все 48 параметров |
+| $\alpha = 0$ (no self-knowledge, L0) | 34 (full $G_2$) | Minimal tomography: 7 populations + 7 moduli + 7 phases + $G_2$ relations |
+| $\alpha^* \approx 0.4$ (typical L2 system) | $\sim$40 | Extended tomography: 7 + 12 moduli + 12 phases + partial $G_2$ relations |
+| $\alpha = 1$ (full L4) | 48 (no $G_2$) | Full tomography: all 48 parameters |
 
 ---
 
-## 8. Единая теорема самонаблюдения и Gap
+## 8. Unified Theorem of Self-Observation and Gap
 
-### Теорема 12.1 (Фано-когерентное самомоделирование)
+### Theorem 12.1 (Fano-Coherent Self-Modelling)
 
-:::tip[Статус: Теорема \[Т\]]
-Каноническое когерентно-сохраняющее самомоделирование для УГМ определяется однозначно (с точностью до параметра сжатия $k$).
+:::tip[Status: Theorem \[T\]]
+Canonical coherence-preserving self-modelling for UHM theory is determined uniquely (up to the contraction parameter $k$).
 :::
 
-**(a)** **Алгебраическая структура:** Фано-плоскость $\mathrm{PG}(2,2)$ определяет составные атомы классификатора $\Omega$, порождающие Фано-Линдблад-операторы $L_p^{\mathrm{Fano}}$.
+**(a)** **Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the composite atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\mathrm{Fano}}$.
 
-**(b)** **Вариационный принцип:** Баланс атомарного и Фано-наблюдения $\alpha^*$ минимизирует функционал $\mathcal{F} = S_{\mathrm{spec}} + D_{KL}$.
+**(b)** **Variational principle:** The balance of atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\mathrm{spec}} + D_{KL}$.
 
-**(c)** **Фазовые свойства:** Каноническая $\varphi_{\mathrm{coh}}$ **сохраняет** фазы когерентностей. Целевой Gap совпадает с текущим Gap (масштабирование амплитуды без фазового искажения).
+**(c)** **Phase properties:** Canonical $\varphi_{\mathrm{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap (amplitude scaling without phase distortion).
 
-**(d)** **Симметрия:** $G_2$-ковариантность частично нарушена атомарной компонентой. Степень нарушения $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ зависит от чистоты $P$.
+**(d)** **Symmetry:** $G_2$-covariance is partially broken by the atomic component. The degree of breaking $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ depends on the purity $P$.
 
-**(e)** **Стационарный Gap:** Подстановка в стационарное уравнение с $\theta_{ij}^{\mathrm{target}} = \theta_{ij}$ даёт:
+**(e)** **Stationary Gap:** Substituting into the stationary equation with $\theta_{ij}^{\mathrm{target}} = \theta_{ij}$ gives:
 
 $$\mathrm{Gap}^{(\infty)}(i,j) = \left|\sin\left(\theta_{ij} - \arctan\left(\frac{\Delta\omega_{ij}}{\Gamma_2 + \kappa}\right)\right)\right|$$
 
-Стационарный Gap **сдвинут** относительно текущего на угол $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ — даже при фазосохраняющей $\varphi_{\mathrm{coh}}$, унитарное вращение создаёт разность между целевым и стационарным.
+The stationary Gap is **shifted** relative to the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ — even with phase-preserving $\varphi_{\mathrm{coh}}$, unitary rotation creates a difference between the target and the stationary.
 
 
 ---
 
-**Связанные документы:**
-- [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
-- [G₂-заряды Нётер](/docs/physics/gauge-symmetry/noether-charges)
-- [Конфайнмент](/docs/physics/gauge-symmetry/confinement)
+**Related documents:**
+- [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model)
+- [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [G₂-Noether Charges](/docs/physics/gauge-symmetry/noether-charges)
+- [Confinement](/docs/physics/gauge-symmetry/confinement)

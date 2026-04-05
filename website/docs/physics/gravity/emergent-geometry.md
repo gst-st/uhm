@@ -1,93 +1,93 @@
 ---
 sidebar_position: 1
-title: "Эмерджентная геометрия"
+title: "Emergent Geometry"
 slug: /physics/gravity/emergent-geometry
-description: "Метрика пространства-времени из матрицы когерентности: метрика Фробениуса, информационная геометрия Фишера-Рао, вывод размерности 3+1 и связь с ОТО"
+description: "Spacetime metric from the coherence matrix: Frobenius metric, Fisher–Rao information geometry, derivation of 3+1 dimensions, and connection with GR"
 ---
 
-# Эмерджентная геометрия
+# Emergent Geometry
 
-:::info Для кого эта глава
-Эта глава показывает, как из матрицы когерентности $\Gamma$ — чисто алгебраического объекта — **возникает** привычное нам пространство-время с метрикой, расстояниями и кривизной. Пространство в УГМ — не контейнер, в который помещены объекты, а **структура различий** между конфигурациями когерентности. Читатель узнает: как метрика Фробениуса на $\mathcal{D}(\mathbb{C}^7)$ порождает предметрику; как информационная геометрия Фишера-Рао связывает квантовые различимости с пространственными расстояниями; как размерность 3+1 **выводится** из секторного разложения $G_2$; и как из этого следуют уравнения Эйнштейна.
+:::info Who this chapter is for
+This chapter shows how from the coherence matrix $\Gamma$ — a purely algebraic object — the familiar spacetime with metric, distances, and curvature **emerges**. Space in UHM is not a container in which objects are placed, but a **structure of distinctions** between coherence configurations. The reader will learn: how the Frobenius metric on $\mathcal{D}(\mathbb{C}^7)$ generates a pre-metric; how Fisher–Rao information geometry connects quantum distinguishability with spatial distances; how the 3+1 dimensionality is **derived** from the sector decomposition of $G_2$; and how the Einstein equations follow from this.
 
-**Одно предложение.** Геометрия пространства-времени — не фундаментальная данность, а эмерджентное свойство матрицы когерентности: расстояние между точками = информационная различимость соответствующих конфигураций $\Gamma$.
+**In one sentence.** Spacetime geometry is not a fundamental given, but an emergent property of the coherence matrix: distance between points = informational distinguishability of the corresponding configurations $\Gamma$.
 :::
 
-:::note Историческая предтеча
-Идея эмерджентности геометрии восходит к нескольким традициям:
+:::note Historical precursors
+The idea of the emergence of geometry traces back to several traditions:
 
-- **Бернхард Риман** (1854) предположил, что метрика пространства может определяться физическим содержимым — «связующая сила» определяет геометрию.
-- **Джон Уилер** (1960-е) сформулировал программу «геометродинамики»: пространство-время — это не арена, а участник физики.
-- **Ален Конн** (1994) показал, что вся геометрия (метрика, дифференциальная структура, интегрирование) может быть восстановлена из **алгебраических данных** — спектральной тройки $(\mathcal{A}, \mathcal{H}, D)$.
-- **Тед Якобсон** (1995) вывел уравнения Эйнштейна из термодинамики горизонта — первый пример «гравитации из энтропии».
+- **Bernhard Riemann** (1854) suggested that the metric of space could be determined by the physical content — the "binding force" determines the geometry.
+- **John Wheeler** (1960s) formulated the program of "geometrodynamics": spacetime is not an arena but a participant in physics.
+- **Alain Connes** (1994) showed that all geometry (metric, differential structure, integration) can be recovered from **algebraic data** — the spectral triple $(\mathcal{A}, \mathcal{H}, D)$.
+- **Ted Jacobson** (1995) derived the Einstein equations from horizon thermodynamics — the first example of "gravity from entropy".
 
-УГМ синтезирует эти подходы: метрика определяется квантовой информационной геометрией (Фишер-Рао / Бюрес), размерность фиксируется алгеброй октонионов, а уравнения Эйнштейна следуют из спектрального действия Конна.
+UHM synthesizes these approaches: the metric is determined by quantum information geometry (Fisher–Rao / Bures), the dimensionality is fixed by the algebra of octonions, and the Einstein equations follow from Connes' spectral action.
 :::
 
 
-## Обзор
+## Overview
 
-В УГМ пространство-время не является фундаментальной структурой, а **эмерджирует** из матрицы когерентности $\Gamma$. Метрика отражает «логическое расстояние» между конфигурациями $\Gamma$ — геометрия пространства определяется **структурой различений**, задаваемой классификатором $\Omega$.
+In UHM, spacetime is not a fundamental structure but **emerges** from the coherence matrix $\Gamma$. The metric reflects the "logical distance" between configurations $\Gamma$ — the geometry of space is determined by the **structure of distinctions** imposed by the classifier $\Omega$.
 
-:::tip Статус: полностью выведено [Т]
-Пространственное многообразие $\Sigma^3$ выведено из категорной структуры (T-119 [Т]), произведение $M^4 = \mathbb{R} \times \Sigma^3$ доказано (T-120 [Т]), уравнения Эйнштейна получены из спектрального действия (T-65 [Т]). Подробности: [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold).
+:::tip Status: fully derived [T]
+The spatial manifold $\Sigma^3$ is derived from the categorical structure (T-119 [T]), the product $M^4 = \mathbb{R} \times \Sigma^3$ is proved (T-120 [T]), and the Einstein equations are obtained from the spectral action (T-65 [T]). Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold).
 :::
 
 ---
 
-## 1. Пространство как структура различий
+## 1. Space as a Structure of Distinctions
 
-:::note Интуитивное объяснение
-Представьте огромный зал, заполненный людьми. Каждый человек — голоном с собственной матрицей $\Gamma_m$. «Расстояние» между двумя людьми определяется не тем, где они стоят (пространства ещё нет!), а тем, насколько **различны** их внутренние состояния. Двое близнецов с похожими $\Gamma$ — «рядом». Человек в экстазе и человек в депрессии — «далеко», даже если физически в одной комнате. Пространство **возникает** как карта этих различий.
+:::note Intuitive explanation
+Imagine a large hall filled with people. Each person is a holon with its own matrix $\Gamma_m$. The "distance" between two people is determined not by where they stand (there is no space yet!), but by how **different** their internal states are. Two twins with similar $\Gamma$ are "nearby". A person in ecstasy and a person in depression are "far apart", even if physically in the same room. Space **emerges** as a map of these distinctions.
 :::
 
-### 1.1 Предметрика из когерентности
+### 1.1 Pre-metric from Coherence
 
-Для композитной системы $M$ голономов определяется **предметрика** — расстояние между голономами, из которого в термодинамическом пределе эмерджирует пространственная метрика:
+For a composite system of $M$ holons, a **pre-metric** is defined — a distance between holons from which the spatial metric emerges in the thermodynamic limit:
 
 $$
 d_{\mathcal{G}}(m, n) := \|\Gamma_m - \Gamma_n\|_F = \sqrt{\mathrm{Tr}\!\left((\Gamma_m - \Gamma_n)^2\right)}
 $$
 
-Ключевое ограничение: расстояние определяется только через когерентности **пространственного сектора** $\{A,S,D\}$. Это не произвольный выбор — он следует из секторного разложения (§4.3).
+Key constraint: the distance is defined only through the coherences of the **spatial sector** $\{A,S,D\}$. This is not an arbitrary choice — it follows from the sector decomposition (§4.3).
 
-### 1.2 От предметрики к метрике: термодинамический предел
+### 1.2 From Pre-metric to Metric: Thermodynamic Limit
 
-:::warning Теорема T-117 (Коммутативность макроалгебры) [Т]
-В термодинамическом пределе $M \to \infty$, алгебра макроскопических наблюдаемых $\mathcal{A}_{\text{macro}}$ в $\{A,S,D\}$-секторе становится **коммутативной**:
+:::warning Theorem T-117 (Commutativity of the macro-algebra) [T]
+In the thermodynamic limit $M \to \infty$, the algebra of macroscopic observables $\mathcal{A}_{\text{macro}}$ in the $\{A,S,D\}$-sector becomes **commutative**:
 
 $$
-[a, b] = O(1/\sqrt{M}) \to 0 \quad \text{для } a, b \in \mathcal{A}_{\{A,S,D\}}
+[a, b] = O(1/\sqrt{M}) \to 0 \quad \text{for } a, b \in \mathcal{A}_{\{A,S,D\}}
 $$
 
-Это следует из квантовой ЦПТ (центральной предельной теоремы): флуктуации некоммутативности подавляются как $1/\sqrt{M}$.
+This follows from the quantum CLT (central limit theorem): the fluctuations of non-commutativity are suppressed as $1/\sqrt{M}$.
 
-[Доказательство →](/docs/proofs/physics/emergent-manifold#теорема-коммутативность-макроалгебры) | Статус: **[Т]**
+[Proof →](/docs/proofs/physics/emergent-manifold#теорема-коммутативность-макроалгебры) | Status: **[T]**
 :::
 
-:::warning Теорема T-119 (Эмерджентное пространство) [Т]
-Из коммутативности $\mathcal{A}_{\text{macro}}$ по **дуальности Гельфанда–Наймарка** следует:
+:::warning Theorem T-119 (Emergent space) [T]
+From the commutativity of $\mathcal{A}_{\text{macro}}$ by **Gelfand–Naimark duality** it follows that:
 
 $$
 \mathcal{A}_{\text{macro}} \cong C(\Sigma^3)
 $$
 
-для единственного (с точностью до гомеоморфизма) компактного хаусдорфова пространства $\Sigma^3$. По **теореме реконструкции Конна** (2008), спектральная тройка $(\mathcal{A}_{\text{macro}}, \mathcal{H}, D)$ восстанавливает $\Sigma^3$ как **гладкое** 3-многообразие.
+for the unique (up to homeomorphism) compact Hausdorff space $\Sigma^3$. By **Connes' reconstruction theorem** (2008), the spectral triple $(\mathcal{A}_{\text{macro}}, \mathcal{H}, D)$ recovers $\Sigma^3$ as a **smooth** 3-manifold.
 
-[Доказательство →](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) | Статус: **[Т]**
+[Proof →](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство) | Status: **[T]**
 :::
 
-**Цепочка вывода:**
+**Derivation chain:**
 
 ```mermaid
 graph LR
-    A["M голономов<br/>Γ₁, ..., Γ_M"] --> B["Макроалгебра<br/>A_macro"]
-    B --> |"M→∞<br/>квант. ЦПТ"| C["Коммутативная<br/>C*-алгебра"]
-    C --> |"Гельфанд–<br/>Наймарк"| D["C(Σ³)<br/>топол. пространство"]
-    D --> |"Конн<br/>реконструкция"| E["Гладкое<br/>3-многообразие Σ³"]
+    A["M holons<br/>Γ₁, ..., Γ_M"] --> B["Macro-algebra<br/>A_macro"]
+    B --> |"M→∞<br/>quantum CLT"| C["Commutative<br/>C*-algebra"]
+    C --> |"Gelfand–<br/>Naimark"| D["C(Σ³)<br/>topological space"]
+    D --> |"Connes<br/>reconstruction"| E["Smooth<br/>3-manifold Σ³"]
 ```
 
-Геометрия пространства определяется тем, насколько **различны** конфигурации когерентности в соседних точках. Расстояние Конна на $\Sigma^3$:
+The geometry of space is determined by how **different** the coherence configurations are at neighboring points. Connes distance on $\Sigma^3$:
 
 $$
 d_{\text{Connes}}(x, y) = \sup\{|f(x) - f(y)| : \|[D, f]\| \leq 1, \; f \in \mathcal{A}_{\text{macro}}\}
@@ -95,167 +95,167 @@ $$
 
 ---
 
-## 2. Предметрика на пространстве состояний
+## 2. Pre-metric on the Space of States
 
-### 2.1 Метрика Фробениуса
+### 2.1 Frobenius Metric
 
-:::tip Теорема 4.1 [Т]
-Пространство $\mathcal{D}(\mathcal{H})$ матриц плотности с метрикой
+:::tip Theorem 4.1 [T]
+The space $\mathcal{D}(\mathcal{H})$ of density matrices with metric
 
 $$
 d_F(\rho_1, \rho_2) := \|\rho_1 - \rho_2\|_F = \sqrt{\mathrm{Tr}\!\left((\rho_1 - \rho_2)^2\right)}
 $$
 
-является полным метрическим пространством.
+is a complete metric space.
 :::
 
-**Доказательство.** Норма Фробениуса — норма Гильберта-Шмидта, индуцирующая полную метрику на $\mathcal{L}(\mathcal{H})$. Ограничение на $\mathcal{D}(\mathcal{H})$ (замкнутое подмножество) сохраняет полноту. $\blacksquare$
+**Proof.** The Frobenius norm is the Hilbert–Schmidt norm, inducing a complete metric on $\mathcal{L}(\mathcal{H})$. Restriction to $\mathcal{D}(\mathcal{H})$ (a closed subset) preserves completeness. $\blacksquare$
 
-Метрика Фробениуса задаёт **предметрику** — расстояние между квантовыми состояниями, из которого эмерджирует пространственная метрика при локализации $\Gamma$.
+The Frobenius metric defines a **pre-metric** — a distance between quantum states from which the spatial metric emerges upon localization of $\Gamma$.
 
 ---
 
-## 3. Информационная геометрия
+## 3. Information Geometry
 
-### 3.1 Метрика Фишера-Рао
+### 3.1 Fisher–Rao Metric
 
-:::tip [Т] Квантовая метрика Фишера (стандартный результат)
-Естественная риманова метрика на $\mathcal{D}(\mathcal{H})$ — квантовая метрика Фишера:
+:::tip [T] Quantum Fisher metric (standard result)
+The natural Riemannian metric on $\mathcal{D}(\mathcal{H})$ is the quantum Fisher metric:
 
 $$
 g_{ij}^{(F)}(\rho) = \frac{1}{2}\mathrm{Tr}\!\left(\rho\{L_i, L_j\}\right)
 $$
 
-где $L_i$ — логарифмические производные: $\partial_i \rho = \frac{1}{2}\{\rho, L_i\}$.
+where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L_i\}$.
 :::
 
-Эта метрика определяет «расстояние» между квантовыми состояниями и связана с квантовыми оценками через неравенство Крамера-Рао:
+This metric defines the "distance" between quantum states and is connected to quantum estimation via the Cramér–Rao inequality:
 
 $$
 \mathrm{Var}(\hat{\theta}_i) \geq [g^{(F)}(\rho)]^{-1}_{ii}
 $$
 
-### 3.2 Единственность метрики Бюреса
+### 3.2 Uniqueness of the Bures Metric
 
-В **классическом** случае метрика Фишера-Рао — единственная (с точностью до нормировки) монотонная риманова метрика на симплексе вероятностных распределений (теорема Ченцова, 1982). В **квантовом** случае уникальность нарушается: по теореме Петца (1996), на $\mathcal{D}(\mathcal{H})$ существует целое **семейство** монотонных метрик, параметризованных операторно-монотонными функциями $f$.
+In the **classical** case the Fisher–Rao metric is the unique (up to normalization) monotone Riemannian metric on the simplex of probability distributions (Chentsov theorem, 1982). In the **quantum** case uniqueness is broken: by the Petz theorem (1996), on $\mathcal{D}(\mathcal{H})$ there exists an entire **family** of monotone metrics, parametrized by operator-monotone functions $f$.
 
-:::warning Теорема (Привилегированность метрики Бюреса) [Т]
-Метрика Бюреса (Аксиома A2 УГМ) выделена внутри класса Петца как **минимальная** монотонная метрика:
+:::warning Theorem (Privileged status of the Bures metric) [T]
+The Bures metric (Axiom A2 of UHM) is distinguished within the Petz class as the **minimal** monotone metric:
 
-$$g_{\text{Bures}}(\rho) \leq g_f(\rho) \quad \text{для любой монотонной } g_f \text{ (Petz, 1996)}$$
+$$g_{\text{Bures}}(\rho) \leq g_f(\rho) \quad \text{for any monotone } g_f \text{ (Petz, 1996)}$$
 
-Явная формула:
+Explicit formula:
 $$d_B(\rho_1, \rho_2) = \sqrt{2\left(1 - \mathrm{Tr}\sqrt{\sqrt{\rho_1}\rho_2\sqrt{\rho_1}}\right)}$$
 :::
 
-**Физический смысл минимальности.** Бюрес — наиболее «консервативная» метрика: она даёт наименьшее расстояние между состояниями. Это означает, что эмерджентная геометрия пространства-времени определяется **минимальной различимостью** — расстояние между точками пространства = минимальное информационное различие между соответствующими конфигурациями $\Gamma$.
+**Physical meaning of minimality.** Bures is the most "conservative" metric: it gives the smallest distance between states. This means that the emergent geometry of spacetime is determined by the **minimal distinguishability** — distance between points of space = minimal informational difference between the corresponding configurations $\Gamma$.
 
-### 3.3 От информационной геометрии к метрике пространства-времени
+### 3.3 From Information Geometry to the Spacetime Metric
 
-Связь между квантовой информационной геометрией на $\mathcal{D}(\mathbb{C}^7)$ и метрикой пространства-времени на $M^4$ реализуется через **спектральную тройку**:
+The connection between quantum information geometry on $\mathcal{D}(\mathbb{C}^7)$ and the spacetime metric on $M^4$ is realized through the **spectral triple**:
 
 $$
 (\mathcal{A}_{\text{int}}, \mathcal{H}_{\text{int}}, D_{\text{int}}) = \left(\mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}), \; \mathbb{C}^7, \; D_{\text{Gap}}\right)
 $$
 
-где $D_{\text{Gap}}$ — оператор Дирака, элементы которого определяются [Gap-параметрами](/docs/core/dynamics/gap-operator). Формула расстояния Конна транслирует информационную метрику в пространственную:
+where $D_{\text{Gap}}$ is the Dirac operator whose elements are determined by the [Gap parameters](/docs/core/dynamics/gap-operator). The Connes distance formula translates the information metric into a spatial one:
 
-| Уровень | Метрика | Пространство | Определяет |
+| Level | Metric | Space | Determines |
 |---------|---------|--------------|------------|
-| Квантовый | $d_B(\rho_1, \rho_2)$ | $\mathcal{D}(\mathbb{C}^7)$ | Различимость состояний |
-| Спектральный | $d_{\text{Connes}}(x, y)$ | $\Sigma^3$ | Пространственное расстояние |
-| Полный | $ds^2 = g_{\mu\nu}dx^\mu dx^\nu$ | $M^4$ | Метрика пространства-времени |
+| Quantum | $d_B(\rho_1, \rho_2)$ | $\mathcal{D}(\mathbb{C}^7)$ | State distinguishability |
+| Spectral | $d_{\text{Connes}}(x, y)$ | $\Sigma^3$ | Spatial distance |
+| Full | $ds^2 = g_{\mu\nu}dx^\mu dx^\nu$ | $M^4$ | Spacetime metric |
 
 ---
 
-## 4. Эмерджентная размерность
+## 4. Emergent Dimensionality
 
-### 4.1 Вывод размерности 3+1 [Т]
+### 4.1 Derivation of 3+1 Dimensions [T]
 
-:::tip [Т] Размерность из реконструкции Гельфанда–Конна (T-119)
-Размерность макроскопического пространства **выведена**: коммутативность макроалгебры (T-117 [Т]) + спектральная размерность $\{A,S,D\}$-сектора = 3 + реконструкция Конна (2008) $\Rightarrow$ $\Sigma^3$ — гладкое 3-многообразие. Подробности: [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
+:::tip [T] Dimensionality from Gelfand–Connes reconstruction (T-119)
+The dimension of macroscopic space is **derived**: commutativity of the macro-algebra (T-117 [T]) + spectral dimension of the $\{A,S,D\}$-sector = 3 + Connes reconstruction (2008) $\Rightarrow$ $\Sigma^3$ is a smooth 3-manifold. Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
 :::
 
-:::tip Статус вывода размерности 3+1: [Т] (T-119, T-120)
-Разложение $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{R}^3 \oplus \mathbb{R}^3$ следует из $\mathrm{SU}(3) \subset G_2$ — стабилизатора O-направления. Выбор вложения **однозначен** — фиксируется PW-механизмом (A5): O определяет временно́е направление [Т] (T-87). Компактификация $\bar{\mathbf{3}}$-сектора обеспечивается массивностью $W,Z$ [Т]. Произведение $M^4 = \mathbb{R} \times \Sigma^3$ **выведено** из категорной структуры ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)).
+:::tip Status of the 3+1 dimension derivation: [T] (T-119, T-120)
+The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{R}^3 \oplus \mathbb{R}^3$ follows from $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction. The choice of embedding is **unique** — fixed by the PW mechanism (A5): O determines the temporal direction [T] (T-87). Compactification of the $\bar{\mathbf{3}}$-sector is ensured by the massiveness of $W,Z$ [T]. The product $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from the categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)).
 :::
 
-### 4.2 Решённые вопросы
+### 4.2 Resolved Questions
 
-| Вопрос | Ответ | Теорема |
+| Question | Answer | Theorem |
 |--------|-------|---------|
-| Почему $\dim_{\mathrm{eff}} = 3$ для пространства? | Из $\{A,S,D\}$-сектора: $\dim(\mathbf{3}) = 3$ | T-119 [Т] |
-| Как возникает лоренцева сигнатура $(+,-,-,-)$? | Из KO-dim 6 спектральной тройки | T-53 [Т] |
-| Как 3+1 связано с 7 измерениями голонома? | Секторная декомпозиция + реконструкция Гельфанда–Конна | T-120 [Т] |
+| Why $\dim_{\mathrm{eff}} = 3$ for space? | From the $\{A,S,D\}$-sector: $\dim(\mathbf{3}) = 3$ | T-119 [T] |
+| How does Lorentzian signature $(+,-,-,-)$ arise? | From KO-dim 6 of the spectral triple | T-53 [T] |
+| How is 3+1 connected to the 7 dimensions of the holon? | Sector decomposition + Gelfand–Connes reconstruction | T-120 [T] |
 
-### 4.3 Секторное разложение
+### 4.3 Sector Decomposition
 
-Разложение $\mathrm{SU}(3) \subset G_2$:
+Decomposition $\mathrm{SU}(3) \subset G_2$:
 
 $$
 \mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1_{\mathrm{time}} \oplus \mathbb{R}^3_{\mathrm{space}} \oplus \mathbb{R}^3_{\mathrm{gap}}
 $$
 
-где $\mathbb{R}^1_{\mathrm{time}}$ — $O$-измерение (эмерджентное время), $\mathbb{R}^3_{\mathrm{space}}$ — вещественная часть $\mathbb{C}^3$ (пространственные координаты), $\mathbb{R}^3_{\mathrm{gap}}$ — мнимая часть $\mathbb{C}^3$ (Gap-импульсные сопряжённые). Подробнее это разложение используется при [выводе уравнений Эйнштейна](/docs/physics/gravity/einstein-equations).
+where $\mathbb{R}^1_{\mathrm{time}}$ is the $O$-dimension (emergent time), $\mathbb{R}^3_{\mathrm{space}}$ is the real part of $\mathbb{C}^3$ (spatial coordinates), $\mathbb{R}^3_{\mathrm{gap}}$ is the imaginary part of $\mathbb{C}^3$ (Gap momentum conjugates). This decomposition is used in more detail in the [derivation of the Einstein equations](/docs/physics/gravity/einstein-equations).
 
 ---
 
-## 5. Связь с общей теорией относительности
+## 5. Connection with General Relativity
 
-### 5.1 Спектральное действие
+### 5.1 Spectral Action
 
-Уравнения Эйнштейна **не постулируются** — они следуют из **спектрального действия** Шамседдина–Конна на полной спектральной тройке $M^4 \times F_{\text{int}}$:
+The Einstein equations are **not postulated** — they follow from the **spectral action** of Chamseddine–Connes on the full spectral triple $M^4 \times F_{\text{int}}$:
 
 $$
 S_{\text{spec}}[\mathcal{A}, D] = \mathrm{Tr}\!\left(f(D^2/\Lambda^2)\right) + \frac{1}{2}\langle\psi, D\psi\rangle
 $$
 
-где $f$ — гладкая функция обрезки, $\Lambda$ — масштаб. Разложение в ряд по $\Lambda$ даёт:
+where $f$ is a smooth cutoff function, $\Lambda$ is the scale. Expansion in a series in $\Lambda$ gives:
 
 $$
 S_{\text{spec}} = \frac{1}{16\pi G}\int_{M^4}\!(R - 2\Lambda_{\text{CC}})\sqrt{g}\,d^4x + S_{\text{SM}} + O(\Lambda^{-2})
 $$
 
-Первый член — **действие Эйнштейна-Гильберта** с космологической постоянной. Второй — действие Стандартной модели. Все константы ($G$, $\Lambda_{\text{CC}}$, массы бозонов) определяются спектром оператора Дирака $D_{\text{int}}$, который в свою очередь определяется Gap-параметрами.
+The first term is the **Einstein–Hilbert action** with cosmological constant. The second is the Standard Model action. All constants ($G$, $\Lambda_{\text{CC}}$, boson masses) are determined by the spectrum of the Dirac operator $D_{\text{int}}$, which in turn is determined by the Gap parameters.
 
-### 5.2 Сводка результатов
+### 5.2 Summary of Results
 
-| Результат | Статус | Теорема |
+| Result | Status | Theorem |
 |-----------|--------|---------|
-| Многообразие $M^4 = \mathbb{R} \times \Sigma^3$ выведено | **[Т]** | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
-| Уравнения Эйнштейна из спектрального действия | **[Т]** | [T-65](/docs/physics/gravity/einstein-equations) |
-| Космологическая постоянная $\Lambda_{\text{CC}} > 0$ | **[Т]** | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
-| Пробелы Лавлока закрыты | **[Т]** | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
-| Вакуумная топология $\Sigma^3 \cong S^3$ | **[Т]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
+| Manifold $M^4 = \mathbb{R} \times \Sigma^3$ derived | **[T]** | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
+| Einstein equations from spectral action | **[T]** | [T-65](/docs/physics/gravity/einstein-equations) |
+| Cosmological constant $\Lambda_{\text{CC}} > 0$ | **[T]** | [T-71](/docs/core/foundations/consequences#теорема-лямбда-положительна) |
+| Lovelock gaps closed | **[T]** | [T-121](/docs/proofs/physics/emergent-manifold#теорема-лавлок-замыкание) |
+| Vacuum topology $\Sigma^3 \cong S^3$ | **[T]** | [T-120b](/docs/proofs/physics/emergent-manifold#следствие-вакуумная-топология) |
 
-### 5.3 Пробелы Лавлока и их закрытие
+### 5.3 Lovelock Gaps and Their Closure
 
-Теорема Лавлока (1971) утверждает: единственный тензор второго порядка, строящийся из метрики и её производных до второго порядка, дивергенционно свободный — это тензор Эйнштейна $G_{\mu\nu} + \Lambda g_{\mu\nu}$. Но теорема **не объясняет**:
+The Lovelock theorem (1971) states: the unique second-order tensor constructed from the metric and its derivatives up to second order, that is divergence-free, is the Einstein tensor $G_{\mu\nu} + \Lambda g_{\mu\nu}$. But the theorem **does not explain**:
 
-| Пробел | Вопрос | Ответ УГМ | Теорема |
+| Gap | Question | UHM answer | Theorem |
 |--------|--------|-----------|---------|
-| 1 | Почему $d = 4$? | Секторное разложение $7 = 1 + 3 + 3$ | T-120 [Т] |
-| 2 | Почему лоренцева сигнатура? | KO-размерность 6 спектральной тройки | T-53 [Т] |
-| 3 | Почему $\Lambda > 0$? | Автопоэзис требует $\rho_{\text{vac}} > 0$ | T-71 [Т] |
+| 1 | Why $d = 4$? | Sector decomposition $7 = 1 + 3 + 3$ | T-120 [T] |
+| 2 | Why Lorentzian signature? | KO-dimension 6 of the spectral triple | T-53 [T] |
+| 3 | Why $\Lambda > 0$? | Autopoiesis requires $\rho_{\text{vac}} > 0$ | T-71 [T] |
 
 ---
 
-## 6. Связь с другими разделами
+## 6. Connection with Other Sections
 
-| Тема | Страница | Связь |
+| Topic | Page | Connection |
 |------|----------|-------|
-| Эмерджентное многообразие $M^4$ | [Эмерджентное многообразие](/docs/proofs/physics/emergent-manifold) | Вывод $M^4$ из категорной структуры (T-117 — T-121) |
-| Уравнения Эйнштейна | [Уравнения Эйнштейна из Gap](/docs/physics/gravity/einstein-equations) | Вывод $G_{\mu\nu}$ из спектрального действия |
-| Космологическая постоянная | [Космологическая постоянная](/docs/physics/gravity/cosmological-constant) | Вычисление $\Lambda$ и механизмы подавления |
-| Фаза Берри | [Фаза Берри и топологическая защита](/docs/physics/cosmology-phys/berry-phase) | Топологическая защита Gap и эмерджентная геометрия |
-| $G_2$-структура | [$G_2$-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure) | Алгебраическая основа разложения 7 = 1 + 3 + 3 |
-| Матрица когерентности | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | Определение $\Gamma$ и когерентностей $\gamma_{ij}$ |
+| Emergent manifold $M^4$ | [Emergent manifold](/docs/proofs/physics/emergent-manifold) | Derivation of $M^4$ from categorical structure (T-117 — T-121) |
+| Einstein equations | [Einstein equations from Gap](/docs/physics/gravity/einstein-equations) | Derivation of $G_{\mu\nu}$ from spectral action |
+| Cosmological constant | [Cosmological constant](/docs/physics/gravity/cosmological-constant) | Computation of $\Lambda$ and suppression mechanisms |
+| Berry phase | [Berry phase and topological protection](/docs/physics/cosmology-phys/berry-phase) | Topological protection of Gap and emergent geometry |
+| $G_2$-structure | [$G_2$-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure) | Algebraic basis of the decomposition 7 = 1 + 3 + 3 |
+| Coherence matrix | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | Definition of $\Gamma$ and coherences $\gamma_{ij}$ |
 
 
 ---
 
-**Связанные документы:**
-- [Уравнения Эйнштейна из Gap](/docs/physics/gravity/einstein-equations)
-- [Квантовая гравитация](/docs/physics/gravity/quantum-gravity)
-- [Пространство-время](/docs/core/foundations/spacetime)
-- [Эмерджентное многообразие $M^4$](/docs/proofs/physics/emergent-manifold)
+**Related documents:**
+- [Einstein equations from Gap](/docs/physics/gravity/einstein-equations)
+- [Quantum gravity](/docs/physics/gravity/quantum-gravity)
+- [Spacetime](/docs/core/foundations/spacetime)
+- [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold)

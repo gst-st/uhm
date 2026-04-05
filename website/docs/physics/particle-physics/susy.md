@@ -1,76 +1,76 @@
 ---
 sidebar_position: 6
-title: "Суперсимметрия из G₂"
+title: "Supersymmetry from G₂"
 slug: /physics/particle-physics/susy
-description: "N=1 SUSY из G₂-голономии, ковариантно постоянный спинор η₀, суперпартнёрный спектр, нарушение SUSY через V₃, масса гравитино"
+description: "N=1 SUSY from G₂-holonomy, covariantly constant spinor η₀, superpartner spectrum, SUSY breaking via V₃, gravitino mass"
 ---
 
-# Суперсимметрия из $G_2$
+# Supersymmetry from $G_2$
 
-:::info Для кого эта глава
-Суперсимметрия $N=1$ из $G_2$-голономии и высокомасштабное нарушение SUSY. Читатель узнает, как масштаб суперпартнёров определяется кубическим потенциалом $V_3$.
+:::info Who this chapter is for
+$N=1$ supersymmetry from $G_2$-holonomy and high-scale SUSY breaking. The reader will learn how the superpartner mass scale is determined by the cubic potential $V_3$.
 :::
 
 
-$N=1$ суперсимметрия в 4D возникает из [G₂-голономии](/docs/physics/gauge-symmetry/g2-structure) через ковариантно постоянный спинор $\eta_0 = 1_\mathbb{O}$. Нарушение SUSY через кубический потенциал $V_3$ определяет масштаб масс суперпартнёров и [массу гравитино](#масса-гравитино).
+$N=1$ supersymmetry in 4D arises from [$G_2$-holonomy](/docs/physics/gauge-symmetry/g2-structure) via the covariantly constant spinor $\eta_0 = 1_\mathbb{O}$. SUSY breaking via the cubic potential $V_3$ determines the superpartner mass scale and the [gravitino mass](#масса-гравитино).
 
-:::warning Экспериментальный статус суперсимметрии
-LHC при $\sqrt{s} = 13\text{--}14$ ТэВ **не обнаружил** суперпартнёров. Нижние пределы масс (ATLAS/CMS, 2024): глюино $m_{\tilde{g}} > 2.3$ ТэВ, скварки $m_{\tilde{q}} > 1.8$ ТэВ, стопы $m_{\tilde{t}} > 1.4$ ТэВ. Модель УГМ предсказывает $m_\text{SUSY} \sim 10^{13}$ ГэВ (high-scale SUSY), что **совместимо** с null-результатами LHC: суперпартнёры находятся на 10 порядков выше доступных энергий. Однако high-scale SUSY не решает проблему иерархии масс (основную мотивацию для SUSY на электрослабом масштабе) и не предоставляет WIMP-кандидата на тёмную материю.
+:::warning Experimental status of supersymmetry
+The LHC at $\sqrt{s} = 13\text{--}14$ TeV **has not detected** superpartners. Lower mass bounds (ATLAS/CMS, 2024): gluino $m_{\tilde{g}} > 2.3$ TeV, squarks $m_{\tilde{q}} > 1.8$ TeV, stops $m_{\tilde{t}} > 1.4$ TeV. The UHM model predicts $m_\text{SUSY} \sim 10^{13}$ GeV (high-scale SUSY), which is **compatible** with null results at the LHC: superpartners lie 10 orders of magnitude above accessible energies. However, high-scale SUSY does not solve the hierarchy problem (the primary motivation for SUSY at the electroweak scale) and does not provide a WIMP dark matter candidate.
 :::
 
 ---
 
-## 1. $N=1$ SUSY из параллельного спинора [Т] {#n1-susy}
+## 1. $N=1$ SUSY from a Parallel Spinor [T] {#n1-susy}
 
-:::tip Теорема 1.1 (N=1 SUSY из параллельного спинора) [Т]
-**(a)** Из M-теории: компактификация $11D \to 4D$ на 7-мерном $G_2$-многообразии $M_7$ ($\text{Hol}(M_7) = G_2$) даёт число суперсимметрий = число ковариантно постоянных спиноров на $M_7$.
+:::tip Theorem 1.1 (N=1 SUSY from a parallel spinor) [T]
+**(a)** From M-theory: compactification $11D \to 4D$ on a 7-dimensional $G_2$-manifold $M_7$ ($\text{Hol}(M_7) = G_2$) gives a number of supersymmetries equal to the number of covariantly constant spinors on $M_7$.
 
-**(b)** Разложение спинорного представления $G_2 \subset \text{Spin}(7)$:
+**(b)** Decomposition of the spinor representation $G_2 \subset \text{Spin}(7)$:
 
 $$
 \Delta_7 = \mathbb{R}^8 \to 1 \oplus 7
 $$
 
-Ровно **один** параллельный спинор $\eta_0$ → **$N=1$ SUSY** в 4D.
+Exactly **one** parallel spinor $\eta_0$ → **$N=1$ SUSY** in 4D.
 
-**(c)** SUSY-алгебра:
+**(c)** SUSY algebra:
 
 $$
 \{Q_\alpha, \bar{Q}_{\dot{\beta}}\} = 2\sigma^\mu_{\alpha\dot{\beta}} P_\mu
 $$
 
-где $Q_\alpha = \eta_0 \otimes \psi_\alpha^{(4D)}$.
+where $Q_\alpha = \eta_0 \otimes \psi_\alpha^{(4D)}$.
 :::
 
-Это — стандартный математический результат теории $G_2$-компактификаций (Joyce-Karigiannis, 2017; Acharya-Witten, 2001).
+This is a standard mathematical result of $G_2$-compactification theory (Joyce–Karigiannis, 2017; Acharya–Witten, 2001).
 
-### 1.1 Ковариантно постоянный спинор и суперзаряд [Т] {#covariantly-constant-spinor}
+### 1.1 Covariantly Constant Spinor and Supercharge [T] {#covariantly-constant-spinor}
 
-Ковариантно постоянный спинор $\eta_0 = 1_\mathbb{O}$ определяет единственную сохраняющуюся суперсимметрию. Условие параллельности:
+The covariantly constant spinor $\eta_0 = 1_\mathbb{O}$ defines the unique preserved supersymmetry. The parallelism condition:
 
 $$
-\nabla \eta_0 = 0 \quad \text{на } M_7
+\nabla \eta_0 = 0 \quad \text{on } M_7
 $$
 
-эквивалентно $\text{Hol}(M_7) \subseteq G_2$ (теорема Бергера). Спинор $\eta_0$ отождествляется с единицей октонионной алгебры $1_\mathbb{O}$, что является конструктивной реализацией $G_2$-синглета в разложении $\mathbf{8}_s \to \mathbf{1} \oplus \mathbf{7}$.
+is equivalent to $\text{Hol}(M_7) \subseteq G_2$ (Berger's theorem). The spinor $\eta_0$ is identified with the unit of the octonion algebra $1_\mathbb{O}$, which is the constructive realization of the $G_2$-singlet in the decomposition $\mathbf{8}_s \to \mathbf{1} \oplus \mathbf{7}$.
 
-Генератор суперсимметрии (суперзаряд) строится как тензорное произведение внутреннего спинора $\eta_0$ и 4D-спинора $\psi_\alpha$:
+The supersymmetry generator (supercharge) is constructed as the tensor product of the internal spinor $\eta_0$ and the 4D spinor $\psi_\alpha$:
 
 $$
 Q_\alpha = \eta_0 \otimes \psi_\alpha^{(4D)}, \quad \alpha = 1, 2
 $$
 
-Единственность $\eta_0$ (один $G_2$-синглет) гарантирует ровно $N=1$ в четырёх измерениях — не $N=2$ и не $N=0$.
+The uniqueness of $\eta_0$ (one $G_2$-singlet) guarantees exactly $N=1$ in four dimensions — neither $N=2$ nor $N=0$.
 
-### 1.2 SUSY-преобразования Gap-полей [Т] {#susy-transformations}
+### 1.2 SUSY Transformations of Gap Fields [T] {#susy-transformations}
 
-Для Gap-поля $\theta_{ij}$ (бозон, спин 0) и его суперпартнёра $\tilde{\theta}_{ij}$ (гапсино, фермион, спин 1/2) SUSY-преобразования принимают стандартный вид:
+For a Gap field $\theta_{ij}$ (boson, spin 0) and its superpartner $\tilde{\theta}_{ij}$ (gapsino, fermion, spin 1/2), the SUSY transformations take the standard form:
 
 $$
 \delta_\epsilon \theta_{ij} = \bar{\epsilon}\, \tilde{\theta}_{ij}, \quad \delta_\epsilon \tilde{\theta}_{ij} = i\sigma^\mu \bar{\epsilon}\, \partial_\mu \theta_{ij}
 $$
 
-где $\epsilon$ — грассманов параметр преобразования. Эти преобразования замыкаются на алгебру $N=1$ суперсимметрии, порождая трансляции:
+where $\epsilon$ is the Grassmann transformation parameter. These transformations close onto the $N=1$ supersymmetry algebra, generating translations:
 
 $$
 [\delta_{\epsilon_1}, \delta_{\epsilon_2}] \theta_{ij} = 2i\,\epsilon_1 \sigma^\mu \bar{\epsilon}_2\, \partial_\mu \theta_{ij}
@@ -78,445 +78,445 @@ $$
 
 ---
 
-## 2. Суперпартнёрный спектр [Г] {#суперпартнёрный-спектр}
+## 2. Superpartner Spectrum [H] {#суперпартнёрный-спектр}
 
-:::tip Теорема 2.1 (Суперпартнёрный спектр из Gap) [Г]
-$N=1$ SUSY удваивает Gap-спектр:
+:::tip Theorem 2.1 (Superpartner spectrum from Gap) [H]
+$N=1$ SUSY doubles the Gap spectrum:
 
-| Частица SM | Gap-конфигурация | Суперпартнёр | Спин |
-|------------|-----------------|--------------|------|
-| Кварк $q_L$ | $\text{Gap}(E,U)=0$, $\text{Gap}(3\text{-}\bar{3})\neq 0$ | Скварк $\tilde{q}_L$ | 0 |
-| Глюон $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Глюино $\tilde{g}$ | 1/2 |
-| $W^\pm, Z$ | $\delta\theta_{EU}$, $\delta\theta_{LE,LU}$ | Вино, Зино | 1/2 |
-| Хиггс $H$ | $\gamma_{EU}$ (VEV) | Хиггсино $\tilde{H}$ | 1/2 |
-| Гравитон $g_{\mu\nu}$ | Метрика из Gap | Гравитино $\psi_{3/2}$ | 3/2 |
+| SM Particle | Gap Configuration | Superpartner | Spin |
+|-------------|------------------|--------------|------|
+| Quark $q_L$ | $\text{Gap}(E,U)=0$, $\text{Gap}(3\text{-}\bar{3})\neq 0$ | Squark $\tilde{q}_L$ | 0 |
+| Gluon $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Gluino $\tilde{g}$ | 1/2 |
+| $W^\pm, Z$ | $\delta\theta_{EU}$, $\delta\theta_{LE,LU}$ | Wino, Zino | 1/2 |
+| Higgs $H$ | $\gamma_{EU}$ (VEV) | Higgsino $\tilde{H}$ | 1/2 |
+| Graviton $g_{\mu\nu}$ | Metric from Gap | Gravitino $\psi_{3/2}$ | 3/2 |
 
-В ненарушенной SUSY: $m_{\text{суперпартнёр}} = m_{\text{частица}}$.
+In unbroken SUSY: $m_{\text{суперпартнёр}} = m_{\text{частица}}$.
 :::
 
-### 2.1 Гапсино — суперпартнёры Gap-полей [Г] {#gapsino}
+### 2.1 Gapsinos — Superpartners of Gap Fields [H] {#gapsino}
 
-Для каждого из 21 Gap-полей $\theta_{ij}$ (бозон, спин 0) существует суперпартнёр — **гапсино** $\tilde{\theta}_{ij}$ (фермион, спин 1/2). Гапсино наследуют квантовые числа Gap-полей: калибровочные заряды, секторальную принадлежность и Фано-структуру. Суперсимметричный мультиплет объединяет бозонную и фермионную степени свободы в кирального суперполя:
+For each of the 21 Gap fields $\theta_{ij}$ (boson, spin 0) there exists a superpartner — a **gapsino** $\tilde{\theta}_{ij}$ (fermion, spin 1/2). Gapsinos inherit the quantum numbers of the Gap fields: gauge charges, sector membership, and Fano structure. The supersymmetric multiplet unites the bosonic and fermionic degrees of freedom into a chiral superfield:
 
 $$
 \Theta_{ij} = \theta_{ij} + \sqrt{2}\,\bar{\vartheta}\,\tilde{\theta}_{ij} + \bar{\vartheta}^2 F_{\theta_{ij}}
 $$
 
-где $\vartheta$ — грассманова координата суперпространства, а $F_{\theta_{ij}}$ — вспомогательное поле. Наблюдательное несовпадение масс ($m_{\tilde{q}} \gg m_q$) свидетельствует о нарушении SUSY.
+where $\vartheta$ is the Grassmann superspace coordinate and $F_{\theta_{ij}}$ is the auxiliary field. The observed mass mismatch ($m_{\tilde{q}} \gg m_q$) is evidence for SUSY breaking.
 
-### 2.2 Расширенная таблица Gap-конфигураций суперпартнёров [Г] {#extended-spectrum}
+### 2.2 Extended Table of Gap Configurations for Superpartners [H] {#extended-spectrum}
 
-Каждый суперпартнёр имеет Gap-конфигурацию, двойственную исходной частице:
+Each superpartner has a Gap configuration dual to that of the original particle:
 
-| Частица SM | Gap-конфигурация | Суперпартнёр | Gap-конфигурация суперпартнёра |
-|------------|-----------------|--------------|-------------------------------|
-| Кварк $q_L$ | $\text{Gap}(E,U)=0$, $\text{Gap}(3\text{-}\bar{3})\neq 0$ | Скварк $\tilde{q}_L$ | $\theta_\text{Gap} \to$ бозон |
-| Глюон $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Глюино $\tilde{g}$ | $\tilde{\theta}_{ij}^{(3\bar{3})}$ |
-| $W^\pm, Z$ | $\delta\theta_{EU}$, $\delta\theta_{LE,LU}$ | Вино, Зино | $\tilde{\theta}_{EU}$, $\tilde{\theta}_{LE,LU}$ |
-| Хиггс $H$ | $\gamma_{EU}$ (VEV) | Хиггсино $\tilde{H}$ | $\tilde{\gamma}_{EU}$ |
-| Гравитон $g_{\mu\nu}$ | Метрика из Gap | Гравитино $\psi_{3/2}$ | $\tilde{g}_{\mu\nu}$ |
+| SM Particle | Gap Configuration | Superpartner | Superpartner Gap Configuration |
+|-------------|------------------|--------------|-------------------------------|
+| Quark $q_L$ | $\text{Gap}(E,U)=0$, $\text{Gap}(3\text{-}\bar{3})\neq 0$ | Squark $\tilde{q}_L$ | $\theta_\text{Gap} \to$ boson |
+| Gluon $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Gluino $\tilde{g}$ | $\tilde{\theta}_{ij}^{(3\bar{3})}$ |
+| $W^\pm, Z$ | $\delta\theta_{EU}$, $\delta\theta_{LE,LU}$ | Wino, Zino | $\tilde{\theta}_{EU}$, $\tilde{\theta}_{LE,LU}$ |
+| Higgs $H$ | $\gamma_{EU}$ (VEV) | Higgsino $\tilde{H}$ | $\tilde{\gamma}_{EU}$ |
+| Graviton $g_{\mu\nu}$ | Metric from Gap | Gravitino $\psi_{3/2}$ | $\tilde{g}_{\mu\nu}$ |
 
-Суммарное число степеней свободы суперсимметричной Gap-теории: 21 бозонных поля $\times$ 2 (с суперпартнёрами) = **42 переменных** на каждом сайте. Компактность целевого пространства $(S^1)^{21}$ обеспечивает $\theta_{ij} \in [0, 2\pi)$ для каждого поля.
+The total number of degrees of freedom of the supersymmetric Gap theory: 21 bosonic fields $\times$ 2 (with superpartners) = **42 variables** per site. The compactness of the target space $(S^1)^{21}$ ensures $\theta_{ij} \in [0, 2\pi)$ for each field.
 
 ---
 
-## 3. Нарушение SUSY через $V_3$ [Г] {#нарушение-susy}
+## 3. SUSY Breaking via $V_3$ [H] {#нарушение-susy}
 
-### 3.1 Механизм
+### 3.1 Mechanism
 
-$V_3$ (PT-нечётный, из [октонионного ассоциатора](/docs/core/dynamics/gap-thermodynamics)) нарушает SUSY: бозонный и фермионный вклады в $V_3$ **не компенсируются**, поскольку $V_3$ нечётен по PT, а SUSY-преобразование не сохраняет PT.
+$V_3$ (PT-odd, from the [octonion associator](/docs/core/dynamics/gap-thermodynamics)) breaks SUSY: the bosonic and fermionic contributions to $V_3$ **do not cancel**, since $V_3$ is odd under PT, and the SUSY transformation does not preserve PT.
 
-Формально: бозонный ($\theta_{ij}$) и фермионный ($\tilde{\theta}_{ij}$) вклады в кубический потенциал не сокращаются:
+Formally: the bosonic ($\theta_{ij}$) and fermionic ($\tilde{\theta}_{ij}$) contributions to the cubic potential do not cancel:
 
 $$
 V_3^{(\text{bos})} + V_3^{(\text{ferm})} \neq 0
 $$
 
-поскольку суперзаряд $Q_\alpha$ — спинор (нечётен по Лоренцу) и не коммутирует с PT-отражением. Это различие между бозонным и фермионным минимумами $V_\text{Gap}$ определяет параметр SUSY-нарушения:
+since the supercharge $Q_\alpha$ is a spinor (odd under Lorentz) and does not commute with PT reflection. This difference between the bosonic and fermionic minima of $V_\text{Gap}$ defines the SUSY-breaking parameter:
 
 $$
 F = \langle \partial V_{\text{Gap}} / \partial \theta \rangle_{\text{ferm}} \neq 0
 $$
 
-### 3.2 Нарушение SUSY через $V_3 \neq 0$ [Г] {#v3-breaking}
+### 3.2 SUSY Breaking via $V_3 \neq 0$ [H] {#v3-breaking}
 
-Ключевой механизм нарушения: кубический потенциал $V_3$, порождённый октонионным ассоциатором, **не обращается в ноль** в вакууме. В отличие от $V_2$ (квадратичного, PT-чётного), который допускает бозон-фермионную компенсацию, $V_3$ содержит вклады от всех 35 троек индексов (7 Фано-троек + 28 не-Фано-троек):
+The key breaking mechanism: the cubic potential $V_3$, generated by the octonion associator, **does not vanish** in the vacuum. Unlike $V_2$ (quadratic, PT-even), which admits boson–fermion cancellation, $V_3$ contains contributions from all 35 index triples (7 Fano triples + 28 non-Fano triples):
 
 $$
 V_3 = \lambda_3 \sum_{(ijk)} \mathcal{A}(e_i, e_j, e_k) \cdot |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \cdot \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})
 $$
 
-Не-Фано-тройки (28 из 35) имеют $\mathcal{A} \neq 0$, и их совокупный вклад в вакууме даёт $\langle V_3 \rangle \neq 0$. Именно этот ненулевой вакуумный вклад порождает спонтанное нарушение SUSY.
+Non-Fano triples (28 out of 35) have $\mathcal{A} \neq 0$, and their combined vacuum contribution gives $\langle V_3 \rangle \neq 0$. It is precisely this nonzero vacuum contribution that generates spontaneous SUSY breaking.
 
-:::info Статус [Т]
-Суперпотенциал $W(\Theta_{ij})$ **однозначно** определён $G_2$-инвариантностью (лемма Шура, T-50). Кубическая структура $V_3 \subset |\partial W / \partial \Theta|^2$ следует из единственности ассоциативной 3-формы $\varphi$. Механизм SUSY-нарушения через $F \neq 0$ — доказанное следствие конструкции $W$ ([Теорема 3.2](#теорема-суперпотенциал)).
+:::info Status [T]
+The superpotential $W(\Theta_{ij})$ is **uniquely** determined by $G_2$-invariance (Schur's lemma, T-50). The cubic structure $V_3 \subset |\partial W / \partial \Theta|^2$ follows from the uniqueness of the associative 3-form $\varphi$. The SUSY-breaking mechanism via $F \neq 0$ is a proven consequence of the construction of $W$ ([Theorem 3.2](#теорема-суперпотенциал)).
 :::
 
-### 3.3 Суперпотенциал из калибровочной 3-формы $\varphi$ {#superpotential}
+### 3.3 Superpotential from the Gauge 3-Form $\varphi$ {#superpotential}
 
-#### Теорема (Единственность кубического суперпотенциала) [Т] {#гипотеза-минимального-суперпотенциала}
+#### Theorem (Uniqueness of the Cubic Superpotential) [T] {#гипотеза-минимального-суперпотенциала}
 
-Единственная $G_2$-инвариантная голоморфная трилинейная форма на $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ — ассоциативная 3-форма $\varphi$ (лемма Шура на $\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$, $\dim \mathrm{Hom}_{G_2}(\Lambda^3(\mathbf{7}), \mathbb{R}) = 1$). Высшие порядки подавлены: $|W_n|/|W_3| \sim \varepsilon^{n-3}$. Суперпотенциал $W$ определяется $G_2$-калибровочной 3-формой $\varphi$ и не требует дополнительных постулатов.
+The unique $G_2$-invariant holomorphic trilinear form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$ is the associative 3-form $\varphi$ (Schur's lemma on $\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$, $\dim \mathrm{Hom}_{G_2}(\Lambda^3(\mathbf{7}), \mathbb{R}) = 1$). Higher orders are suppressed: $|W_n|/|W_3| \sim \varepsilon^{n-3}$. The superpotential $W$ is determined by the $G_2$ gauge 3-form $\varphi$ and requires no additional postulates.
 
-:::tip Теорема (Единственность кубического суперпотенциала) [Т]
-(МП) доказана как теорема. Единственная $G_2$-инвариантная трилинейная форма на $\mathrm{Im}(\mathbb{O})$ — ассоциативная 3-форма $\varphi$ (Шур на $\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$). Высшие порядки подавлены: $|W_n|/|W_3| \sim \varepsilon^{n-3}$. Доказательство: лемма Шура + $G_2$-ригидность (T-50).
+:::tip Theorem (Uniqueness of the Cubic Superpotential) [T]
+(MP) is proved as a theorem. The unique $G_2$-invariant trilinear form on $\mathrm{Im}(\mathbb{O})$ is the associative 3-form $\varphi$ (Schur on $\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$). Higher orders are suppressed: $|W_n|/|W_3| \sim \varepsilon^{n-3}$. Proof: Schur's lemma + $G_2$-rigidity (T-50).
 :::
 
-#### Теорема 3.2 (Суперпотенциал из $\varphi$) [Т] {#теорема-суперпотенциал}
+#### Theorem 3.2 (Superpotential from $\varphi$) [T] {#теорема-суперпотенциал}
 
-:::tip Теорема 3.2 (Суперпотенциал из $\varphi$) [Т]
-Суперпотенциал Gap-теории **однозначно** определён $G_2$-инвариантностью и леммой Шура ($\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$, единственный тривиальный подмодуль). Строго доказано (T-50).
+:::tip Theorem 3.2 (Superpotential from $\varphi$) [T]
+The superpotential of the Gap theory is **uniquely** determined by $G_2$-invariance and Schur's lemma ($\Lambda^3(\mathbf{7}) = \mathbf{1} \oplus \mathbf{7} \oplus \mathbf{27}$, unique trivial submodule). Strictly proved (T-50).
 :::
 
-:::info Замечание: ассоциативность
-Лемма Шура применяется к **линейному** $G_2$-представлению на $\Lambda^3(\mathrm{Im}\,\mathbb{O})$, а не к октонионному умножению. Суперполя $\Theta_{ij}$ — элементы Грассмановой алгебры, их произведение **ассоциативно**. Структурные константы $f_{ijk}$ — числовые коэффициенты ассоциативной 3-формы $\varphi$ (калибровочной формы $G_2$), а не сами октонионные произведения.
+:::info Remark: associativity
+Schur's lemma is applied to the **linear** $G_2$-representation on $\Lambda^3(\mathrm{Im}\,\mathbb{O})$, not to the octonion multiplication. The superfields $\Theta_{ij}$ are elements of a Grassmann algebra; their product is **associative**. The structure constants $f_{ijk}$ are the numerical coefficients of the associative 3-form $\varphi$ (the $G_2$ gauge form), not the octonion products themselves.
 :::
 
-#### Голоморфность суперпотенциала и теорема Зайберга (T-175c) [Т] {#голоморфность-суперпотенциала}
+#### Holomorphicity of the Superpotential and Seiberg's Theorem (T-175c) [T] {#голоморфность-суперпотенциала}
 
-:::tip Теорема (Голоморфность и не-ренормализация W) [Т]
-Суперпотенциал $W(\Theta)$ голоморфен по киральным суперполям $\Theta_{ij}$ и защищён от пертурбативных квантовых поправок теоремой Зайберга (1993).
+:::tip Theorem (Holomorphicity and non-renormalization of W) [T]
+The superpotential $W(\Theta)$ is holomorphic in the chiral superfields $\Theta_{ij}$ and is protected from perturbative quantum corrections by Seiberg's theorem (1993).
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Автоматическая голоморфность).** В $\mathcal{N}=1$ суперпространстве суперпотенциал $W$ входит в лагранжиан как
+**Step 1 (Automatic holomorphicity).** In $\mathcal{N}=1$ superspace the superpotential $W$ enters the Lagrangian as
 
-$$\mathcal{L} \supset \int d^2\vartheta\, W(\Theta) + \text{э.с.}$$
+$$\mathcal{L} \supset \int d^2\vartheta\, W(\Theta) + \text{h.c.}$$
 
-По определению $W$ зависит от $\Theta_{ij}$, но **не** от $\Theta_{ij}^\dagger$ (интегрирование только по $d^2\vartheta$, а не $d^4\vartheta$). Кубический полином $W = \mu_W \sum f_{ijk}\,\Theta_{ij}\Theta_{jk}\Theta_{ik}$ с постоянными коэффициентами $f_{ijk} \in \{-1, 0, +1\}$ есть полиномиальная функция от $\Theta_{ij}$ — **тривиально голоморфна**.
+By definition $W$ depends on $\Theta_{ij}$ but **not** on $\Theta_{ij}^\dagger$ (integration over $d^2\vartheta$ only, not $d^4\vartheta$). The cubic polynomial $W = \mu_W \sum f_{ijk}\,\Theta_{ij}\Theta_{jk}\Theta_{ik}$ with constant coefficients $f_{ijk} \in \{-1, 0, +1\}$ is a polynomial function of $\Theta_{ij}$ — **trivially holomorphic**.
 
-**Шаг 2 (Условия Зайберга).** Теорема о не-ренормализации (Seiberg, 1993; Grisaru-Siegel-Rocek, 1979) требует:
-- (i) $\mathcal{N}=1$ SUSY — выполнено (T-1.1 [Т]: один параллельный спинор из $G_2$-голономии)
-- (ii) $W$ голоморфна по киральным суперполям — выполнено (Шаг 1)
-- (iii) Глобальные симметрии определяют $W$ — выполнено ($G_2$-инвариантность + Шур, T-50 [Т])
+**Step 2 (Seiberg conditions).** The non-renormalization theorem (Seiberg, 1993; Grisaru–Siegel–Rocek, 1979) requires:
+- (i) $\mathcal{N}=1$ SUSY — satisfied (T-1.1 [T]: one parallel spinor from $G_2$-holonomy)
+- (ii) $W$ is holomorphic in chiral superfields — satisfied (Step 1)
+- (iii) Global symmetries determine $W$ — satisfied ($G_2$-invariance + Schur, T-50 [T])
 
-Следовательно, вильсоновский эффективный суперпотенциал $W_{\text{eff}}$ не получает пертурбативных поправок: $W_{\text{eff}} = W_{\text{tree}}$ с точностью до непертурбативных вкладов.
+Consequently, the Wilsonian effective superpotential $W_{\text{eff}}$ receives no perturbative corrections: $W_{\text{eff}} = W_{\text{tree}}$ up to non-perturbative contributions.
 
-**Шаг 3 (Непертурбативные поправки).** Gap-инстантоны на $(S^1)^{21}$ дают вклады $\sim e^{-2\pi/\alpha_{\text{GUT}}} \sim e^{-150} \sim 10^{-65}$ ([разд. 4 quantum-gravity.md](/docs/physics/gravity/quantum-gravity#уф-конечность)) — пренебрежимо малы.
+**Step 3 (Non-perturbative corrections).** Gap instantons on $(S^1)^{21}$ give contributions $\sim e^{-2\pi/\alpha_{\text{GUT}}} \sim e^{-150} \sim 10^{-65}$ ([sect. 4 quantum-gravity.md](/docs/physics/gravity/quantum-gravity#уф-конечность)) — negligibly small.
 
-**Шаг 4 (Замыкание).** Комбинация: единственность $W$ (T-50 [Т]) + автоматическая голоморфность (Шаг 1) + теорема Зайберга (Шаг 2) + подавление инстантонов (Шаг 3) $\Rightarrow$ суперпотенциал $W$ **точен** и **защищён**. УФ-конечность Gap-теории ([Теорема 4.1](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [Т]) корректно опирается на этот результат. $\blacksquare$
+**Step 4 (Closure).** Combining: uniqueness of $W$ (T-50 [T]) + automatic holomorphicity (Step 1) + Seiberg's theorem (Step 2) + instanton suppression (Step 3) $\Rightarrow$ the superpotential $W$ is **exact** and **protected**. The UV-finiteness of the Gap theory ([Theorem 4.1](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]) correctly relies on this result. $\blacksquare$
 
-**Теорема.** Суперпотенциал Gap-теории однозначно определён $G_2$-инвариантностью и имеет вид:
+**Theorem.** The superpotential of the Gap theory is uniquely determined by $G_2$-invariance and takes the form:
 
 $$W(\Theta) = \mu_W \sum_{(i,j,k) \in \text{Fano}} f_{ijk} \, \Theta_{ij} \, \Theta_{jk} \, \Theta_{ik}$$
 
-где:
-- $\Theta_{ij}$ — киральные суперполя: $\Theta_{ij} = \theta_{ij} + \sqrt{2}\,\bar{\vartheta}\,\tilde{\theta}_{ij} + \bar{\vartheta}^2 F_{ij}$
-- $f_{ijk}$ — структурные константы октонионов ($f_{ijk} = \pm 1$ на Фано-линиях, 0 иначе)
-- $\mu_W$ — масштаб суперпотенциала, определяемый $\lambda_3$ и $M_{\text{Planck}}$
+where:
+- $\Theta_{ij}$ — chiral superfields: $\Theta_{ij} = \theta_{ij} + \sqrt{2}\,\bar{\vartheta}\,\tilde{\theta}_{ij} + \bar{\vartheta}^2 F_{ij}$
+- $f_{ijk}$ — octonion structure constants ($f_{ijk} = \pm 1$ on Fano lines, 0 otherwise)
+- $\mu_W$ — superpotential scale, determined by $\lambda_3$ and $M_{\text{Planck}}$
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1. Калибровочная 3-форма $\varphi$ [Т].**
+**Step 1. Gauge 3-form $\varphi$ [T].**
 
-На $G_2$-многообразии $M_7$ существует единственная (с точностью до масштаба) ковариантно постоянная 3-форма:
+On the $G_2$-manifold $M_7$ there exists a unique (up to scale) covariantly constant 3-form:
 
 $$\varphi = \sum_{(i,j,k) \in \text{Fano}} f_{ijk}\, \omega^i \wedge \omega^j \wedge \omega^k$$
 
-где $\omega^i$ — каноническая кобаза на $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Единственность $\varphi$ (с точностью до $G_2$-преобразования) — стандартный результат $G_2$-геометрии [Т].
+where $\omega^i$ is the canonical cobasis on $\text{Im}(\mathbb{O}) \cong \mathbb{R}^7$. The uniqueness of $\varphi$ (up to $G_2$-transformation) is a standard result of $G_2$-geometry [T].
 
-**Шаг 2. $G_2$-инвариантность суперпотенциала [Т].**
+**Step 2. $G_2$-invariance of the superpotential [T].**
 
-$W$ должен быть $G_2$-инвариантным голоморфным функционалом на пространстве суперполей. Единственный $G_2$-инвариантный трилинейный тензор на $\text{Im}(\mathbb{O})$ — структурные константы $f_{ijk}$ (из неприводимости представления $\mathbf{7}$ группы $G_2$) [Т]. Следовательно, кубический суперпотенциал однозначно определён $G_2$-симметрией:
+$W$ must be a $G_2$-invariant holomorphic functional on the space of superfields. The unique $G_2$-invariant trilinear tensor on $\text{Im}(\mathbb{O})$ is the structure constants $f_{ijk}$ (from the irreducibility of the representation $\mathbf{7}$ of $G_2$) [T]. Therefore, the cubic superpotential is uniquely determined by $G_2$-symmetry:
 
 $$W = \mu_W \cdot \varphi(\Theta, \Theta, \Theta)$$
 
-**Шаг 3. F-член и SUSY-нарушение [Т].**
+**Step 3. F-term and SUSY breaking [T].**
 
-F-член:
+F-term:
 
 $$F_{ij} = \frac{\partial W}{\partial \Theta_{ij}} = \mu_W \sum_{k:\,(i,j,k) \in \text{Fano}} f_{ijk}\, \Theta_{jk}\, \Theta_{ik}$$
 
-В вакууме ($\langle \Theta_{jk} \rangle = \varepsilon \cdot e^{i\phi_{jk}}$):
+In the vacuum ($\langle \Theta_{jk} \rangle = \varepsilon \cdot e^{i\phi_{jk}}$):
 
 $$\langle F_{ij} \rangle = \mu_W \cdot N_{\text{Fano}}(ij) \cdot \varepsilon^2 \cdot e^{i(\phi_{jk} + \phi_{ik})}$$
 
-где $N_{\text{Fano}}(ij)$ — число Фано-линий, содержащих пару $(i,j)$. Для любой пары $(i,j)$: ровно одна Фано-линия проходит через 2 точки → $N_{\text{Fano}}(ij) = 1$.
+where $N_{\text{Fano}}(ij)$ is the number of Fano lines containing the pair $(i,j)$. For any pair $(i,j)$: exactly one Fano line passes through 2 points → $N_{\text{Fano}}(ij) = 1$.
 
 $$\langle F_{ij} \rangle = \mu_W \cdot \varepsilon^2 \neq 0$$
 
-**SUSY нарушена спонтанно** ($F \neq 0$), что согласуется с разделом [3.1](#нарушение-susy).
+**SUSY is broken spontaneously** ($F \neq 0$), consistent with section [3.1](#нарушение-susy).
 
-**Шаг 4. Скалярный потенциал [Т].**
+**Step 4. Scalar potential [T].**
 
-Из $N=1$ супергравитации (Cremmer et al., 1979):
+From $N=1$ supergravity (Cremmer et al., 1979):
 
 $$V = e^{K/M_P^2} \left( K^{i\bar{j}} D_i W \overline{D_j W} - \frac{3|W|^2}{M_P^2} \right)$$
 
-где $K$ — кэлерова метрика, $D_i W = \partial_i W + (\partial_i K/M_P^2) W$.
+where $K$ is the Kähler metric, $D_i W = \partial_i W + (\partial_i K/M_P^2) W$.
 
-Для канонического кэлера $K = \sum_{ij} |\Theta_{ij}|^2$:
+For canonical Kähler $K = \sum_{ij} |\Theta_{ij}|^2$:
 
 $$V \supset \sum_{ij} \left|\frac{\partial W}{\partial \Theta_{ij}}\right|^2 = \mu_W^2 \sum_{ij} \left|\sum_{k:\,(ijk) \in \text{Fano}} f_{ijk}\, \Theta_{jk}\, \Theta_{ik}\right|^2$$
 
-Этот член — **квартичный** по $\theta$, воспроизводящий $V_4$-член потенциала $V_{\text{Gap}}$.
+This term is **quartic** in $\theta$, reproducing the $V_4$ term of the $V_{\text{Gap}}$ potential.
 
-**Шаг 5. Связь с $V_3$ [Т].**
+**Step 5. Connection to $V_3$ [T].**
 
-Кубический потенциал $V_3$ возникает из **гравитационной** поправки $-3|W|^2/M_P^2$. Не-Фано тройки ($\mathcal{A} \neq 0$) возникают из **D-членов** калибровочного сектора $SU(3)_C \subset G_2$. Полный потенциал:
+The cubic potential $V_3$ arises from the **gravitational** correction $-3|W|^2/M_P^2$. Non-Fano triples ($\mathcal{A} \neq 0$) arise from **D-terms** of the gauge sector $SU(3)_C \subset G_2$. The full potential:
 
 $$V_{\text{Gap}} = V_F + V_D + V_{\text{grav}}$$
 
-- $V_F = \sum |F_{ij}|^2$ → даёт квартичные Фано-члены
-- $V_D = \frac{1}{2} g^2 \sum_a D^a D^a$ → даёт не-Фано квартичные члены
-- $V_{\text{grav}} = -3|W|^2/M_P^2$ → даёт кубический $V_3$
+- $V_F = \sum |F_{ij}|^2$ → gives quartic Fano terms
+- $V_D = \frac{1}{2} g^2 \sum_a D^a D^a$ → gives non-Fano quartic terms
+- $V_{\text{grav}} = -3|W|^2/M_P^2$ → gives cubic $V_3$
 
-**Шаг 6. Масштаб суперпотенциала.**
+**Step 6. Superpotential scale.**
 
-Из отождествления: $V_3 \sim 3\mu_W^2 \varepsilon^3 / M_P^2 = \lambda_3 \varepsilon^3$ (по определению $\lambda_3$):
+From the identification: $V_3 \sim 3\mu_W^2 \varepsilon^3 / M_P^2 = \lambda_3 \varepsilon^3$ (by definition of $\lambda_3$):
 
 $$\mu_W = M_P \sqrt{\frac{\lambda_3}{3}} = M_P \sqrt{\frac{2\mu^2}{9|\bar{\gamma}|}}$$
 
-С $\mu^2 \approx 3$, $|\bar{\gamma}| \approx \varepsilon \approx 0.01$:
+With $\mu^2 \approx 3$, $|\bar{\gamma}| \approx \varepsilon \approx 0.01$:
 
 $$\mu_W \approx M_P \sqrt{\frac{6}{9 \times 0.01}} = M_P \sqrt{66.7} \approx 8.2 \, M_P$$
 
-$\mu_W \sim M_P$ — масштаб Планка, что согласуется с high-scale SUSY [Т]. $\blacksquare$
+$\mu_W \sim M_P$ — Planck scale, consistent with high-scale SUSY [T]. $\blacksquare$
 
-:::warning Открытый вопрос: Кэлерова метрика [С]
-Кэлерова метрика на модульном пространстве $G_2$-структур:
+:::warning Open question: Kähler metric [C]
+The Kähler metric on the moduli space of $G_2$-structures:
 
 $$
 K = -\ln\!\left(V_7^{-1}\int \varphi \wedge *\varphi\right)
 $$
 
-где $V_7$ — объём $G_2$-многообразия, $\varphi$ — ассоциативная 3-форма [С]. Нормировочный фактор $V_7^{-1}$ требует уточнения из полной $G_2$-компактификации (Joyce, 2000; Halverson-Morrison, 2015).
+where $V_7$ is the volume of the $G_2$-manifold and $\varphi$ is the associative 3-form [C]. The normalization factor $V_7^{-1}$ requires clarification from the full $G_2$-compactification (Joyce, 2000; Halverson–Morrison, 2015).
 
-T-50 (единственность $W$) **не затрагивается** поправками к $K$: суперпотенциал определяется $G_2$-инвариантностью голоморфной 3-формы, а не кэлеровым потенциалом. Однако $m_{3/2}$ зависит от $e^{K/(2M_P^2)}$ и сохраняет статус **[С при K]**: поправки от нетривиального $K$ могут модифицировать масштаб $\mu_W$ и F-член на $O(1)$-множитель.
+T-50 (uniqueness of $W$) is **not affected** by corrections to $K$: the superpotential is determined by the $G_2$-invariance of the holomorphic 3-form, not by the Kähler potential. However, $m_{3/2}$ depends on $e^{K/(2M_P^2)}$ and retains the status **[C at K]**: corrections from a non-trivial $K$ may modify the scale $\mu_W$ and the F-term by an $O(1)$ factor.
 :::
 
-### 3.4 F-член из суперпотенциала [Т] {#f-term}
+### 3.4 F-Term from the Superpotential [T] {#f-term}
 
-:::tip Теорема 3.3 (F-член из суперпотенциала) [Т]
-**(a)** Из Теоремы 3.2: F-член определяется суперпотенциалом:
+:::tip Theorem 3.3 (F-term from the superpotential) [T]
+**(a)** From Theorem 3.2: the F-term is determined by the superpotential:
 
 $$F_{ij} = \frac{\partial W}{\partial \Theta_{ij}} = \mu_W \sum_{k:\,(ijk) \in \text{Fano}} f_{ijk}\, \Theta_{jk}\, \Theta_{ik}$$
 
-**(b)** В вакууме: $\langle F_{ij} \rangle = \mu_W \cdot \varepsilon^2 \neq 0$ для всех 21 пар $(i,j)$.
+**(b)** In the vacuum: $\langle F_{ij} \rangle = \mu_W \cdot \varepsilon^2 \neq 0$ for all 21 pairs $(i,j)$.
 
-**(c)** Масштаб SUSY-нарушения:
+**(c)** SUSY-breaking scale:
 
-$$\sqrt{F} = \sqrt{\mu_W \cdot \varepsilon^2} \cdot M_P \sim \varepsilon \cdot M_P \sim 10^{-2} \times 10^{19} \text{ ГэВ} \sim 10^{17} \text{ ГэВ}$$
+$$\sqrt{F} = \sqrt{\mu_W \cdot \varepsilon^2} \cdot M_P \sim \varepsilon \cdot M_P \sim 10^{-2} \times 10^{19} \text{ GeV} \sim 10^{17} \text{ GeV}$$
 
-Промежуточный масштаб, близкий к GUT.
+An intermediate scale, close to the GUT scale.
 :::
 
-:::info Прогресс относительно предыдущей версии
-В предыдущей версии F-член вычислялся **без** явного суперпотенциала (эвристика через $V_3$). Теперь F-член **следует** из конструкции $W(\Theta)$ ([Теорема 3.2](#теорема-суперпотенциал)):
-- Механизм нарушения SUSY: $F \neq 0$ следует из $W \neq 0$ в вакууме
-- Тройная структура $V = V_2 + V_3 + V_4$ **мотивирована** суперсимметричным формализмом ($V_F + V_D + V_{\text{grav}}$)
-- Масса гравитино: $m_{3/2} \sim \varepsilon^3 M_P$ — следствие кубической структуры $W$
-- Спектр суперпартнёров: все массы определяются через $m_{3/2}$ по стандартным формулам gravity mediation
+:::info Progress relative to the previous version
+In the previous version the F-term was computed **without** an explicit superpotential (a heuristic via $V_3$). Now the F-term **follows** from the construction of $W(\Theta)$ ([Theorem 3.2](#теорема-суперпотенциал)):
+- SUSY-breaking mechanism: $F \neq 0$ follows from $W \neq 0$ in the vacuum
+- The triple structure $V = V_2 + V_3 + V_4$ is **motivated** by the supersymmetric formalism ($V_F + V_D + V_{\text{grav}}$)
+- Gravitino mass: $m_{3/2} \sim \varepsilon^3 M_P$ — a consequence of the cubic structure of $W$
+- Superpartner spectrum: all masses are determined via $m_{3/2}$ by standard gravity-mediation formulas
 :::
 
 ---
 
-## 4. Масса гравитино [Г] {#масса-гравитино}
+## 4. Gravitino Mass [H] {#масса-гравитино}
 
-:::tip Теорема 4.1 (Масса гравитино) [Г]
-**(a)** Стандартная формула супергравитации:
+:::tip Theorem 4.1 (Gravitino mass) [H]
+**(a)** Standard supergravity formula:
 
 $$
 m_{3/2} = \frac{F}{\sqrt{3} \, M_{\text{Planck}}}
 $$
 
-**(b)** Из Gap-параметров ($F \approx (1.4 \times 10^{-3})^2 M_\text{Planck}^2 \approx 2 \times 10^{-6} M_\text{Planck}^2$):
+**(b)** From Gap parameters ($F \approx (1.4 \times 10^{-3})^2 M_\text{Planck}^2 \approx 2 \times 10^{-6} M_\text{Planck}^2$):
 
 $$
-m_{3/2} \approx \frac{2 \times 10^{-6}\, M_\text{Planck}^2}{\sqrt{3}\, M_\text{Planck}} \approx 1.2 \times 10^{-6} \, M_{\text{Planck}} \approx 2.9 \times 10^{13} \; \text{ГэВ}
+m_{3/2} \approx \frac{2 \times 10^{-6}\, M_\text{Planck}^2}{\sqrt{3}\, M_\text{Planck}} \approx 1.2 \times 10^{-6} \, M_{\text{Planck}} \approx 2.9 \times 10^{13} \; \text{GeV}
 $$
 
-**(c)** **Сверхтяжёлый** гравитино — характерно для high-scale SUSY.
+**(c)** **Super-heavy** gravitino — characteristic of high-scale SUSY.
 :::
 
-#### Следствие 4.1 (Масса гравитино из суперпотенциала) [Т] {#масса-гравитино-из-суперпотенциала}
+#### Corollary 4.1 (Gravitino mass from the superpotential) [C at K=canonical] {#масса-гравитино-из-суперпотенциала}
 
-Из стандартной формулы $N=1$ супергравитации и конструкции $W$ ([Теорема 3.2](#теорема-суперпотенциал)):
+From the standard $N=1$ supergravity formula with **canonical** Kähler potential $K = \Phi^\dagger \Phi$ and the construction of $W$ ([Theorem 3.2](#теорема-суперпотенциал)):
 
 $$m_{3/2} = \frac{e^{K/(2M_P^2)} |W|}{M_P^2} \approx \frac{\mu_W \varepsilon^3}{M_P^2} \cdot M_P = \frac{\mu_W \varepsilon^3}{M_P}$$
 
-С $\mu_W \sim M_P$:
+With $\mu_W \sim M_P$:
 
-$$m_{3/2} \sim \varepsilon^3 \cdot M_P \sim 10^{-6} \times 10^{19} \text{ ГэВ} \sim 10^{13} \text{ ГэВ}$$
+$$m_{3/2} \sim \varepsilon^3 \cdot M_P \sim 10^{-6} \times 10^{19} \text{ GeV} \sim 10^{13} \text{ GeV}$$
 
-Формула $m_{3/2} \sim \varepsilon^3 M_P$ демонстрирует, что масса гравитино определяется **кубической** структурой суперпотенциала (три Фано-поля в каждом члене $W$) и малостью вакуумных когерентностей $\varepsilon$.
+The formula $m_{3/2} \sim \varepsilon^3 M_P$ demonstrates that the gravitino mass is determined by the **cubic** structure of the superpotential (three Fano fields in each term of $W$) and the smallness of the vacuum coherences $\varepsilon$.
 
-### 4.2 Следствия для масс суперпартнёров [Г] {#gravitino-consequences}
+### 4.2 Consequences for Superpartner Masses [H] {#gravitino-consequences}
 
-Масса гравитино $m_{3/2} \sim 10^{13}$ ГэВ задаёт масштаб масс всех суперпартнёров через gravity mediation. Скварки и слептоны приобретают массы того же порядка:
+The gravitino mass $m_{3/2} \sim 10^{13}$ GeV sets the mass scale for all superpartners via gravity mediation. Squarks and sleptons acquire masses of the same order:
 
 $$
-m_{\tilde{q}} \sim m_{\tilde{l}} \sim m_{3/2} \sim 10^{13} \; \text{ГэВ}
+m_{\tilde{q}} \sim m_{\tilde{l}} \sim m_{3/2} \sim 10^{13} \; \text{GeV}
 $$
 
-Это объясняет ненаблюдение суперпартнёров на LHC ($\sqrt{s} = 14$ ТэВ) и предсказывает их недоступность для любых коллайдерных экспериментов обозримого будущего. Модель относится к классу **high-scale SUSY**, где масштаб нарушения суперсимметрии значительно превышает электрослабый масштаб.
+This explains the non-observation of superpartners at the LHC ($\sqrt{s} = 14$ TeV) and predicts their inaccessibility to any collider experiments in the foreseeable future. The model belongs to the class of **high-scale SUSY**, where the SUSY-breaking scale significantly exceeds the electroweak scale.
 
-:::warning Замечание о размерностях [Г]
-В формуле для F-члена безразмерная величина $F_0 = \lambda_3 \cdot 28 \cdot \varepsilon^3$ восстанавливает размерность через $F_\text{phys} = F_0 \cdot \mu_\text{phys}^2$, где $\mu_\text{phys} \sim M_\text{Planck}$ постулируется. Если $\mu_\text{phys} = M_\text{GUT} \sim 10^{-3} M_\text{Planck}$, масса гравитино смещается на 3–6 порядков. Привязка $\mu_\text{phys}$ к конкретному масштабу — открытый вопрос.
+:::warning Remark on dimensions [H]
+In the formula for the F-term, the dimensionless quantity $F_0 = \lambda_3 \cdot 28 \cdot \varepsilon^3$ recovers its dimension via $F_\text{phys} = F_0 \cdot \mu_\text{phys}^2$, where $\mu_\text{phys} \sim M_\text{Planck}$ is postulated. If $\mu_\text{phys} = M_\text{GUT} \sim 10^{-3} M_\text{Planck}$, the gravitino mass shifts by 3–6 orders of magnitude. Anchoring $\mu_\text{phys}$ to a specific scale is an open question.
 :::
 
 ---
 
-## 5. Спектр масс суперпартнёров [Г] {#спектр-масс}
+## 5. Superpartner Mass Spectrum [H] {#спектр-масс}
 
-:::tip Теорема 5.1 (Полный SUSY-спектр) [Г]
-С gravity mediation:
+:::tip Theorem 5.1 (Full SUSY spectrum) [H]
+With gravity mediation:
 
-| Частица | Масса | Наблюдаемость |
-|---------|-------|---------------|
-| Скварки $\tilde{q}$ | $\sim 10^{13}$ ГэВ | Ненаблюдаемы на LHC |
-| Слептоны $\tilde{l}$ | $\sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Глюино $\tilde{g}$ | $\sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Вино/Бино | $\sim 10^{11}$ ГэВ | Ненаблюдаемы |
-| Хиггсино | $\sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Гравитино $\psi_{3/2}$ | $\sim 10^{13}$ ГэВ | Ненаблюдаемы |
+| Particle | Mass | Observability |
+|----------|------|---------------|
+| Squarks $\tilde{q}$ | $\sim 10^{13}$ GeV | Unobservable at LHC |
+| Sleptons $\tilde{l}$ | $\sim 10^{13}$ GeV | Unobservable |
+| Gluino $\tilde{g}$ | $\sim 10^{13}$ GeV | Unobservable |
+| Wino/Bino | $\sim 10^{11}$ GeV | Unobservable |
+| Higgsino | $\sim 10^{13}$ GeV | Unobservable |
+| Gravitino $\psi_{3/2}$ | $\sim 10^{13}$ GeV | Unobservable |
 
-Массы вино/бино подавлены петлевым фактором $\alpha/(4\pi)$ по отношению к $m_{3/2}$:
+Wino/bino masses are suppressed by a loop factor $\alpha/(4\pi)$ relative to $m_{3/2}$:
 
 $$
-m_{\text{wino/bino}} \sim m_{3/2} \cdot \frac{\alpha}{4\pi} \sim 10^{13} \times 10^{-2} = 10^{11} \; \text{ГэВ}
+m_{\text{wino/bino}} \sim m_{3/2} \cdot \frac{\alpha}{4\pi} \sim 10^{13} \times 10^{-2} = 10^{11} \; \text{GeV}
 $$
 :::
 
-### 5.1 Проблема тёмной материи [Г] {#dark-matter-problem}
+### 5.1 Dark Matter Problem [H] {#dark-matter-problem}
 
-При $m_\text{SUSY} \sim 10^{13}$ ГэВ нет стабильного лёгкого суперпартнёра (WIMP). Если вино/бино ($\sim 10^{11}$ ГэВ) — наилегчайший суперпартнёр (LSP), его масса на много порядков превышает масштаб тёмной материи ($\sim$ ТэВ). Gap-теория не предлагает SUSY-кандидата на тёмную материю; см. [тёмная материя](/docs/physics/cosmology-phys/dark-matter) для альтернативных механизмов.
+At $m_\text{SUSY} \sim 10^{13}$ GeV there is no stable light superpartner (WIMP). If the wino/bino ($\sim 10^{11}$ GeV) is the lightest superpartner (LSP), its mass exceeds the dark matter scale ($\sim$ TeV) by many orders of magnitude. The Gap theory does not offer a SUSY dark matter candidate; see [dark matter](/docs/physics/cosmology-phys/dark-matter) for alternative mechanisms.
 
-### Фальсифицируемое предсказание
+### Falsifiable Prediction
 
-Gap-теория предсказывает **отсутствие** суперпартнёров на масштабах LHC и будущих коллайдеров ($\sqrt{s} < 10^5$ ГэВ). Обнаружение любого суперпартнёра с массой $\ll 10^{13}$ ГэВ **фальсифицирует** Gap-оценку $\varepsilon_{\text{GUT}} \sim 10^{-3}$.
+The Gap theory predicts the **absence** of superpartners at the scales of the LHC and future colliders ($\sqrt{s} < 10^5$ GeV). The discovery of any superpartner with mass $\ll 10^{13}$ GeV **falsifies** the Gap estimate $\varepsilon_{\text{GUT}} \sim 10^{-3}$.
 
-Косвенные следы SUSY:
-1. Объединение калибровочных констант при $\mu_{\text{GUT}} \sim 2 \times 10^{16}$ ГэВ
-2. Масса Хиггса $m_H \approx 125$ ГэВ — в пределах MSSM с тяжёлыми стопами
+Indirect signatures of SUSY:
+1. Unification of gauge couplings at $\mu_{\text{GUT}} \sim 2 \times 10^{16}$ GeV
+2. Higgs mass $m_H \approx 125$ GeV — within the MSSM with heavy stops
 
-:::info Замечание об объединении констант [Г]
-При $m_\text{SUSY} \sim 10^{13}$ ГэВ бета-функции калибровочных взаимодействий содержат **пороговые поправки**: ниже $10^{13}$ ГэВ бегут по правилам SM, выше — по правилам MSSM. Предсказание объединения при $\mu_\text{GUT} \sim 2 \times 10^{16}$ ГэВ требует точного учёта этих пороговых эффектов.
+:::info Remark on gauge coupling unification [H]
+At $m_\text{SUSY} \sim 10^{13}$ GeV the gauge coupling beta functions contain **threshold corrections**: below $10^{13}$ GeV they run according to SM rules, above — according to MSSM rules. The prediction of unification at $\mu_\text{GUT} \sim 2 \times 10^{16}$ GeV requires precise accounting of these threshold effects.
 :::
 
 ---
 
-## 6. SUSY-компенсация $\Lambda$ [✗/Г] {#susy-lambda}
+## 6. SUSY Compensation of $\Lambda$ [✗/H] {#susy-lambda}
 
-### 6.1 Бозонно-фермионное сокращение [Т] {#boson-fermion}
+### 6.1 Boson–Fermion Cancellation [T] {#boson-fermion}
 
-$N=1$ SUSY из $G_2$ обеспечивает компенсацию квадратичных расходимостей вакуумной энергии:
+$N=1$ SUSY from $G_2$ provides cancellation of quadratic divergences in the vacuum energy:
 
-**(a)** В ненарушенной SUSY: $\Lambda_\text{SUSY} = 0$ (точная компенсация бозон-фермион для каждого суперпартнёрного мультиплета).
+**(a)** In unbroken SUSY: $\Lambda_\text{SUSY} = 0$ (exact boson–fermion cancellation for each superpartner multiplet).
 
-**(b)** После SUSY-нарушения: остаточная вакуумная энергия определяется стандартной формулой:
+**(b)** After SUSY breaking: the residual vacuum energy is given by the standard formula:
 
 $$
 \Lambda_\text{residual} \sim \frac{F^2}{M_\text{Planck}^2} \sim m_{3/2}^2 \, M_\text{Planck}^2
 $$
 
-**(c)** С $m_{3/2} \sim 10^{13}$ ГэВ:
+**(c)** With $m_{3/2} \sim 10^{13}$ GeV:
 
 $$
-\Lambda_\text{residual} \sim (10^{13})^2 \times (10^{19})^2 = 10^{64} \; \text{ГэВ}^4
+\Lambda_\text{residual} \sim (10^{13})^2 \times (10^{19})^2 = 10^{64} \; \text{GeV}^4
 $$
 
-Наблюдаемое значение $\Lambda_\text{obs} \sim 10^{-47}$ ГэВ$^4$. Расхождение $\sim 10^{111}$ — gravity mediation с $m_{3/2} \sim 10^{13}$ ГэВ **не решает** проблему $\Lambda$. SUSY компенсирует лишь $\sim 12$ порядков из 120.
+The observed value $\Lambda_\text{obs} \sim 10^{-47}$ GeV$^4$. The discrepancy is $\sim 10^{111}$ — gravity mediation with $m_{3/2} \sim 10^{13}$ GeV **does not solve** the $\Lambda$ problem. SUSY compensates only $\sim 12$ orders out of 120.
 
-Детализация подавления: в безразмерных единицах ($M_\text{Planck} = 1$):
+Detailed breakdown of the suppression: in dimensionless units ($M_\text{Planck} = 1$):
 
 $$
 \frac{\Lambda_\text{residual}}{\Lambda_\text{bare}} \sim \frac{F^2 / M_\text{Planck}^2}{M_\text{Planck}^4} = \frac{(2 \times 10^{-6})^2}{1} \approx 4 \times 10^{-12}
 $$
 
-то есть SUSY компенсирует квадратичные расходимости на $\sim 12$ порядков (из необходимых $\sim 120$). Оставшиеся $\sim 108$ порядков требуют иных механизмов, обсуждаемых в [бюджете $\Lambda$](/docs/proofs/gap/lambda-budget).
+i.e., SUSY compensates quadratic divergences by $\sim 12$ orders of magnitude (out of the required $\sim 120$). The remaining $\sim 108$ orders require other mechanisms, discussed in the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget).
 
-### 6.2 Секторальная точная SUSY [✗] {#sectoral-susy}
+### 6.2 Sectoral Exact SUSY [✗] {#sectoral-susy}
 
-:::danger Ретрактировано [✗]
-«Секторальная SUSY» (точная компенсация в секторе $3$-to-$\bar{3}$ при нарушенной в O-секторах) — **ошибочна**. В стандартной супергравитации SUSY нарушается **глобально**: если $F_i \neq 0$ для хотя бы одного поля, **все** суперпартнёры получают массы. Невозможно иметь «SUSY-нарушение только в некоторых секторах» без механизма секвестрирования.
+:::danger Retracted [✗]
+"Sectoral SUSY" (exact cancellation in the $3$-to-$\bar{3}$ sector with breaking in the O-sectors) — **is incorrect**. In standard supergravity, SUSY is broken **globally**: if $F_i \neq 0$ for at least one field, **all** superpartners acquire masses. It is impossible to have "SUSY breaking only in some sectors" without a sequestering mechanism.
 
-Заявление «9/21 пар точно компенсированы» — завышено. Более аккуратно: $m_{\text{SUSY}}^{(3\bar{3})} \sim \varepsilon_{\text{soft}} \cdot m_{3/2}$, но **не ноль**.
+The claim "9/21 pairs are exactly compensated" — is overstated. More accurately: $m_{\text{SUSY}}^{(3\bar{3})} \sim \varepsilon_{\text{soft}} \cdot m_{3/2}$, but **not zero**.
 :::
 
-Идея секторальной точной SUSY предполагала, что в конфайнмент-секторе ($3$-to-$\bar{3}$, 9 пар из 21) при Gap $\to 0$ суперсимметрия остаётся **точной**, а нарушение затрагивает только O-секторы. Это давало бы SUSY-компенсированную долю $9/21 \approx 43\%$. Однако:
+The idea of sectoral exact SUSY assumed that in the confinement sector ($3$-to-$\bar{3}$, 9 pairs out of 21) as Gap $\to 0$, supersymmetry remains **exact**, while breaking only affects the O-sectors. This would give a SUSY-compensated fraction of $9/21 \approx 43\%$. However:
 
-- Глобальное нарушение SUSY передаётся во все секторы через гравитационные взаимодействия (gravity-mediated SUSY breaking)
-- Точная компенсация в отдельном секторе невозможна при $m_{3/2} \neq 0$
-- В Gap-формализме все 21 когерентность связаны через $V_\text{Gap}$, что исключает изоляцию секторов
+- Global SUSY breaking is transmitted to all sectors via gravitational interactions (gravity-mediated SUSY breaking)
+- Exact cancellation in a single sector is impossible when $m_{3/2} \neq 0$
+- In the Gap formalism all 21 coherences are coupled via $V_\text{Gap}$, which rules out sector isolation
 
-### 6.3 SUSY-компенсация через секвестрирование [Г] {#sequestering}
+### 6.3 SUSY Compensation via Sequestering [H] {#sequestering}
 
-Взамен опровергнутой секторальной SUSY предлагается механизм **приближённого секвестрирования** (sequestering):
+In place of the refuted sectoral SUSY, a mechanism of **approximate sequestering** is proposed:
 
-**(a)** При Gap $\to 0$ в секторе $3$-to-$\bar{3}$: связность между этим сектором и O-секторами (где SUSY нарушена) **подавлена**:
+**(a)** As Gap $\to 0$ in the $3$-to-$\bar{3}$ sector: the coupling between this sector and the O-sectors (where SUSY is broken) is **suppressed**:
 
 $$
 m_{\text{soft}}^{(3\bar{3})} \sim m_{3/2} \cdot \text{Gap}_{\text{link}} \sim 10^{13} \cdot \varepsilon
 $$
 
-где $\text{Gap}_{\text{link}} \sim \varepsilon$ — Gap между конфайнмент-сектором и O-сектором.
+where $\text{Gap}_{\text{link}} \sim \varepsilon$ is the Gap between the confinement sector and the O-sector.
 
-**(b)** При $\varepsilon \sim 10^{-3}$: $m_{\text{soft}}^{(3\bar{3})} \sim 10^{10}$ ГэВ $\neq 0$. Компенсация **не точная**, но подавлена.
+**(b)** At $\varepsilon \sim 10^{-3}$: $m_{\text{soft}}^{(3\bar{3})} \sim 10^{10}$ GeV $\neq 0$. The cancellation is **not exact**, but suppressed.
 
-**(c)** Вклад конфайнмент-сектора в $\Lambda$:
+**(c)** Confinement-sector contribution to $\Lambda$:
 
 $$
-\Lambda_{3\bar{3}} \sim \left(m_{\text{soft}}^{(3\bar{3})}\right)^2 \cdot M_\text{Planck}^2 \sim 10^{20} \cdot 10^{38} = 10^{58} \; \text{ГэВ}^4
+\Lambda_{3\bar{3}} \sim \left(m_{\text{soft}}^{(3\bar{3})}\right)^2 \cdot M_\text{Planck}^2 \sim 10^{20} \cdot 10^{38} = 10^{58} \; \text{GeV}^4
 $$
 
-Это подавлено на $\sim 6$ порядков по сравнению с $\Lambda_\text{bare} \sim 10^{64}$ ГэВ$^4$ (из прямого SUSY-нарушения), но **не** нулевое.
+This is suppressed by $\sim 6$ orders of magnitude compared to $\Lambda_\text{bare} \sim 10^{64}$ GeV$^4$ (from direct SUSY breaking), but is **not** zero.
 
-**(d)** Точная компенсация «$9/21 = 0$» заменяется на «9/21 подавлены на $\varepsilon^2$».
+**(d)** Exact cancellation "9/21 = 0" is replaced by "9/21 suppressed by $\varepsilon^2$".
 
-Различие с секвестрированием типа Рэндалл-Сандрум (Randall-Sundrum, 1999): в классическом секвестрировании секторы физически разделены в дополнительных измерениях. В Gap-формализме все 21 когерентность связаны через $V_\text{Gap}$, и подавление обеспечивается не геометрическим разделением, а малостью Gap-параметра $\varepsilon$ в межсекторных связях. Оценка $\varepsilon_\text{soft}$ (определяющая точность секвестра) через структуру $V_\text{Gap}$ остаётся открытой задачей.
+The distinction from Randall–Sundrum-type sequestering (Randall–Sundrum, 1999): in classical sequestering the sectors are physically separated in extra dimensions. In the Gap formalism all 21 coherences are coupled via $V_\text{Gap}$, and the suppression is provided not by geometric separation but by the smallness of the Gap parameter $\varepsilon$ in inter-sector couplings. Estimating $\varepsilon_\text{soft}$ (which determines the accuracy of sequestering) through the structure of $V_\text{Gap}$ remains an open problem.
 
-:::info Итог
-SUSY **не вносит** нового мультипликативного подавления в [бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) в текущей формулировке. В gravity mediation с $m_{3/2} \sim 10^{13}$ ГэВ SUSY-нарушение максимально в O-секторах. Приближённый секвестр даёт дополнительное подавление $\sim \varepsilon^2 \sim 10^{-6}$ только в конфайнмент-секторе, что не меняет порядок итогового бюджета $\Lambda$.
+:::info Summary
+SUSY **does not contribute** a new multiplicative suppression to the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) in the current formulation. In gravity mediation with $m_{3/2} \sim 10^{13}$ GeV, SUSY breaking is maximal in the O-sectors. Approximate sequestering gives an additional suppression of $\sim \varepsilon^2 \sim 10^{-6}$ only in the confinement sector, which does not change the order of the total $\Lambda$ budget.
 :::
 
 ---
 
-## 7. SUSY-защита в УФ [Г] {#susy-uv}
+## 7. SUSY Protection in the UV [H] {#susy-uv}
 
-$N=1$ суперсимметрия обеспечивает частичную защиту от ультрафиолетовых расходимостей. Теорема о неперенормировке (Seiberg, 1993) гарантирует, что суперпотенциал $W$ не получает пертурбативных поправок. Однако SUSY нарушена при $m_{3/2} \sim 10^{13}$ ГэВ, поэтому SUSY-защита работает только **выше** этого масштаба.
+$N=1$ supersymmetry provides partial protection against ultraviolet divergences. The non-renormalization theorem (Seiberg, 1993) guarantees that the superpotential $W$ receives no perturbative corrections. However, SUSY is broken at $m_{3/2} \sim 10^{13}$ GeV, so SUSY protection only operates **above** this scale.
 
-В суперсимметричной Gap-теории некоторые расходимости сокращаются. Для скалярных масс:
-- Выше $10^{13}$ ГэВ: квадратичные расходимости отсутствуют (SUSY-сокращение)
-- Ниже $10^{13}$ ГэВ: стандартная квадратичная чувствительность к УФ-обрезанию
+In the supersymmetric Gap theory some divergences cancel. For scalar masses:
+- Above $10^{13}$ GeV: no quadratic divergences (SUSY cancellation)
+- Below $10^{13}$ GeV: standard quadratic sensitivity to the UV cutoff
 
-Это не решает проблему иерархии в её классической формулировке (защита электрослабого масштаба), но ограничивает расходимости в Gap-секторе на планковских энергиях.
+This does not solve the hierarchy problem in its classical formulation (protection of the electroweak scale), but limits divergences in the Gap sector at Planck energies.
 
-В суперсимметричной Gap-теории с 21 скаляром и 21 гапсино полное число переменных (42) конечно на каждом сайте. Компактность целевого пространства $(S^1)^{21}$ и $G_2$-симметрия, действующая на фазах, дополнительно ограничивают структуру расходимостей. Непертурбативная конечность Gap-теории остаётся **гипотезой [Г]**, опирающейся на совокупность этих свойств.
-
----
-
-## Сводная таблица результатов {#summary}
-
-| Результат | Статус | Зависимость |
-|-----------|--------|-------------|
-| $N=1$ SUSY из ковариантно постоянного спинора $\eta_0$ | [Т] | $G_2$-голономия |
-| Суперпотенциал $W = \mu_W \sum f_{ijk} \Theta\Theta\Theta$ | **[Т]** | $G_2$-инвариантность + Шур (T-50) |
-| Суперпартнёрный спектр из Gap-полей | **[Т]** | Следует из $W$ |
-| Нарушение SUSY: $F = \partial W / \partial \Theta \neq 0$ | **[Т]** | $W \neq 0$ в вакууме |
-| $\sqrt{F} \sim \varepsilon \cdot M_\text{Pl}$ | **[Т]** | Из суперпотенциала |
-| $m_{3/2} \sim \varepsilon^3 M_P \approx 10^{13}$ ГэВ | **[Т]** | Кубическая структура $W$ |
-| $m_{\tilde{q}} \sim 10^{13}$ ГэВ (gravity mediation) | **[Т]** | Следует из $m_{3/2}$ |
-| Секторальная точная SUSY | [✗] | **Ретрактировано** |
-| Приближённый секвестр ($\varepsilon^2$-подавление) | [Г] | Замена секторальной SUSY |
-| SUSY-защита в УФ (выше $10^{13}$ ГэВ) | [Г] | Компактность $(S^1)^{21}$ + $G_2$ |
-
-### Открытые вопросы {#open-questions}
-
-1. **Кэлерова метрика.** Кэлер $K$ на модулях $G_2$-компактификации в общем случае неканонический. Поправки к $K$ могут модифицировать масштаб $\mu_W$ и спектр на $O(1)$-множитель.
-2. **Привязка $\mu_\text{phys}$.** Физический масштаб, восстанавливающий размерность F-члена, постулируется как $M_\text{Planck}$, но не выводится из первых принципов.
-3. **Оценка $\varepsilon_\text{soft}$.** Параметр связности между конфайнмент-сектором и O-секторами определяет точность приближённого секвестра, но пока не вычислен.
-4. **Объединение констант.** Пороговые поправки от тяжёлых суперпартнёров ($m_\text{SUSY} \sim 10^{13}$ ГэВ) на бегущие калибровочные константы требуют точного вычисления.
+In the supersymmetric Gap theory with 21 scalars and 21 gapsinos, the total number of variables (42) is finite at each site. The compactness of the target space $(S^1)^{21}$ and the $G_2$-symmetry acting on the phases further constrain the structure of divergences. The non-perturbative finiteness of the Gap theory remains a **hypothesis [H]**, relying on the combined effect of these properties.
 
 ---
 
-## Связанные документы
+## Summary Table {#summary}
 
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — автоморфизмы октонионов
-- [Стандартная модель](/docs/physics/gauge-symmetry/standard-model) — SM из $G_2$
-- [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) — космологическая постоянная
-- [Распад протона](/docs/physics/particle-physics/proton-decay) — $X,Y$-лептокварки
-- [Тёмная материя](/docs/physics/cosmology-phys/dark-matter) — альтернативные кандидаты
-- [Gap-термодинамика](/docs/core/dynamics/gap-thermodynamics) — октонионный ассоциатор и $V_3$
-- [Реестр статусов](/docs/reference/status-registry) — классификация результатов
+| Result | Status | Dependence |
+|--------|--------|------------|
+| $N=1$ SUSY from covariantly constant spinor $\eta_0$ | [T] | $G_2$-holonomy |
+| Superpotential $W = \mu_W \sum f_{ijk} \Theta\Theta\Theta$ | **[T]** | $G_2$-invariance + Schur (T-50) |
+| Superpartner spectrum from Gap fields | **[T]** | Follows from $W$ |
+| SUSY breaking: $F = \partial W / \partial \Theta \neq 0$ | **[T]** | $W \neq 0$ in vacuum |
+| $\sqrt{F} \sim \varepsilon \cdot M_\text{Pl}$ | **[T]** | From superpotential |
+| $m_{3/2} \sim \varepsilon^3 M_P \approx 10^{13}$ GeV | **[T]** | Cubic structure of $W$ |
+| $m_{\tilde{q}} \sim 10^{13}$ GeV (gravity mediation) | **[T]** | Follows from $m_{3/2}$ |
+| Sectoral exact SUSY | [✗] | **Retracted** |
+| Approximate sequestering ($\varepsilon^2$-suppression) | [H] | Replacement for sectoral SUSY |
+| SUSY protection in UV (above $10^{13}$ GeV) | [H] | Compactness $(S^1)^{21}$ + $G_2$ |
+
+### Open Questions {#open-questions}
+
+1. **Kähler metric.** The Kähler potential $K$ on the moduli of $G_2$-compactification is generally non-canonical. Corrections to $K$ may modify the scale $\mu_W$ and the spectrum by an $O(1)$ factor.
+2. **Anchoring $\mu_\text{phys}$.** The physical scale that restores the dimension of the F-term is postulated as $M_\text{Planck}$, but is not derived from first principles.
+3. **Estimating $\varepsilon_\text{soft}$.** The coupling parameter between the confinement sector and the O-sectors determines the accuracy of approximate sequestering, but has not yet been computed.
+4. **Gauge coupling unification.** Threshold corrections from heavy superpartners ($m_\text{SUSY} \sim 10^{13}$ GeV) on running gauge constants require precise computation.
+
+---
+
+## Related Documents
+
+- [G₂ Structure](/docs/physics/gauge-symmetry/g2-structure) — octonion automorphisms
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — SM from $G_2$
+- [$\Lambda$ Budget](/docs/proofs/gap/lambda-budget) — cosmological constant
+- [Proton Decay](/docs/physics/particle-physics/proton-decay) — $X,Y$-leptoquarks
+- [Dark Matter](/docs/physics/cosmology-phys/dark-matter) — alternative candidates
+- [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics) — octonion associator and $V_3$
+- [Status Registry](/docs/reference/status-registry) — classification of results

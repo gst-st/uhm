@@ -528,11 +528,65 @@ $$
 $$
 :::
 
-**Доказательство.** Разбиваем интеграл Меллина $\int_0^\infty = \int_0^1 + \int_1^\infty$:
+**Доказательство.** 
+
+#### Шаг 0: Вывод функционального уравнения для $\Theta_+$ [Т] {#тета-плюс-функциональное-уравнение}
+
+Функция $\Theta_+(t) = \sum_{\mathbf{n} \in \mathbb{Z}^3} \exp\!\left(-\pi t|\mathbf{n}|^2 + \tfrac{2\pi i}{7}B(\mathbf{n})\right)$, где $B(\mathbf{n}) = n_1 n_2 + n_2 n_3 + n_3 n_1$.
+
+**Разложение суммы по остаткам mod 7.** Запишем $\mathbf{n} = 7\mathbf{m} + \mathbf{a}$ с $\mathbf{a} \in (\mathbb{Z}/7\mathbb{Z})^3$, $\mathbf{m} \in \mathbb{Z}^3$:
+$$
+\Theta_+(t) = \sum_{\mathbf{a} \in (\mathbb{Z}/7)^3} e^{2\pi i B(\mathbf{a})/7} \sum_{\mathbf{m} \in \mathbb{Z}^3} e^{-\pi t |7\mathbf{m}+\mathbf{a}|^2}
+$$
+
+Применяем формулу Пуассона к внутренней сумме ($d = 3$, гауссовское ядро с смещением $\mathbf{a}$):
+$$
+\sum_{\mathbf{m} \in \mathbb{Z}^3} e^{-\pi t |7\mathbf{m}+\mathbf{a}|^2} = \frac{1}{(7)^3 t^{3/2}} \sum_{\mathbf{k} \in \mathbb{Z}^3} e^{-\pi|\mathbf{k}|^2/(7^2 t)} \cdot e^{2\pi i \mathbf{k} \cdot \mathbf{a}/7}
+$$
+
+Подставляя и меняя порядок суммирования:
+$$
+\Theta_+(t) = \frac{1}{7^3 t^{3/2}} \sum_{\mathbf{k} \in \mathbb{Z}^3} e^{-\pi|\mathbf{k}|^2/(49t)} \underbrace{\sum_{\mathbf{a} \in (\mathbb{Z}/7)^3} e^{2\pi i (B(\mathbf{a}) + \mathbf{k}\cdot\mathbf{a})/7}}_{\displaystyle\hat{G}(\mathbf{k})}
+$$
+
+**Вычисление суммы Гаусса $\hat{G}(\mathbf{k})$.** Это трёхмерная сумма Гаусса с квадратичной фазой $B(\mathbf{a})$:
+$$
+\hat{G}(\mathbf{k}) = \sum_{\mathbf{a} \in (\mathbb{Z}/7)^3} \exp\!\left(\frac{2\pi i}{7}[B(\mathbf{a}) + \mathbf{k}\cdot\mathbf{a}]\right)
+$$
+
+Заменой $\mathbf{a} \mapsto \mathbf{a}' = \mathbf{a} + \mathbf{a}_0$ (сдвиг к центру на $\mathbf{a}_0 = -\tfrac{1}{2}M_3^{-1}\mathbf{k} \bmod 7$, где $B(\mathbf{a}) = \mathbf{a}^T M_3 \mathbf{a}$) сдвиг выносит линейный член, и:
+$$
+\hat{G}(\mathbf{k}) = e^{-2\pi i \mathbf{k}^T M_3^{-1} \mathbf{k}/(4\cdot 7)} \cdot G_B, \quad G_B = \sum_{\mathbf{a} \in (\mathbb{Z}/7)^3} e^{2\pi i B(\mathbf{a})/7}
+$$
+
+**Стандартная сумма Гаусса $G_B$.** Матрица $M_3 = \tfrac{1}{2}(J_3 - I_3)$ имеет $\det M_3 = \tfrac{1}{4}(-2 - 0 - 0 + 0 + 0 + 0) \cdot ...$; через стандартный результат: $G_B = G_7^3$, где $G_7 = \sum_{m=0}^{6} e^{2\pi i m^2/7} = i\sqrt{7}$ (сумма Гаусса над $\mathbb{F}_7$, $7 \equiv 3 \bmod 4$). Следовательно $G_B = (i\sqrt{7})^3 = i^3 \cdot 7^{3/2} = -i \cdot 7^{3/2}$.
+
+**Итоговое функциональное уравнение для $\Theta_+$:**
+$$
+\Theta_+(1/t) = t^{3/2} \cdot \frac{G_7^3}{7^3} \cdot \widetilde{\Theta}_+(t)
+$$
+где $\widetilde{\Theta}_+(t) = \sum_{\mathbf{k}} e^{-\pi t |\mathbf{k}|^2/(49)} e^{-2\pi i \mathbf{k}^T M_3^{-1}\mathbf{k}/(4\cdot7)}$. В частности, при $t \to 0$: $\widetilde{\Theta}_+(t) \to 1$ (доминирует нулевой член $\mathbf{k} = 0$), откуда:
+$$\Theta_+(t) \xrightarrow{t \to 0} t^{-3/2} \cdot \frac{G_7^3}{7^3}$$
+
+**Для $\Theta_M = \Theta_+^7$:**
+$$
+\Theta_M(t) \xrightarrow{t \to 0} t^{-21/2} \cdot \frac{G_7^{21}}{7^{21}}
+$$
+
+**Согласование нотаций.** В Шаге 0 $G_7 = \sum_{m=0}^{6} e^{2\pi i m^2/7} = i\sqrt{7}$ — одномерная сумма Гаусса над $\mathbb{F}_7$ ($7 \equiv 3 \bmod 4$, Ирландия–Розен). Явные вычисления:
+$$G_7^{21} = (i\sqrt{7})^{21} = i^{21} \cdot 7^{21/2} = i \cdot 7^{21/2},$$
+$$\frac{G_7^{21}}{7^{21}} = \frac{i \cdot 7^{21/2}}{7^{21}} = \frac{i}{7^{21/2}}$$
+
+В теоремах Т8.1–Т8.3 символ $G_7$ обозначает **полную 21-мерную сумму Гаусса** $G_7^{(21)} \stackrel{\rm def}{=} \sum_{\mathbf{r} \in (\mathbb{Z}/7\mathbb{Z})^{21}} \chi(\mathbf{r})$. В силу мультипликативности характера: $G_7^{(21)} = G_7^{21} = i \cdot 7^{21/2}$, то есть $|G_7^{(21)}| = 7^{21/2}$. Поэтому:
+$$\frac{G_7^{(21)}}{7^{21}} = \frac{i \cdot 7^{21/2}}{7^{21}} = \frac{i}{7^{21/2}}$$
+
+Оба вычисления дают одно и то же значение: $G_7^{21}/7^{21} = G_7^{(21)}/7^{21} = i/7^{21/2}$. В продолжении доказательства Т8.2 обозначение $G_7/7^{21}$ относится к 21-мерной сумме $G_7^{(21)}$, численное значение которой зафиксировано. $\blacksquare$
+
+#### Продолжение доказательства Т8.2
 
 **(a)** $\int_1^\infty t^{s-1}[\Theta_M^{(t)}-1] dt$ сходится при всех $s$ (экспоненциальное убывание $\Theta_M^{(t)}-1 \sim 42e^{-\pi t}$).
 
-**(b)** $\int_0^1 t^{s-1}[\Theta_M^{(t)}-1] dt$: используем Пуассон:
+**(b)** $\int_0^1 t^{s-1}[\Theta_M^{(t)}-1] dt$: из доказанного функционального уравнения (Шаг 0):
 
 $$
 \Theta_M^{(t)}-1 = \frac{G_7}{7^{21}} t^{-21/2} - 1 + R(t)

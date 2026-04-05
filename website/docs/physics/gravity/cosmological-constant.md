@@ -1,790 +1,833 @@
 ---
 sidebar_position: 3
-title: "Космологическая постоянная"
+title: "Cosmological Constant"
 slug: /physics/gravity/cosmological-constant
-description: "Вычисление Λ из Gap: спектральная формула [Т], O-секторное доминирование [Т], тройное подавление, тождества Уорда, дзета-регуляризация, когомологическое обнуление и SUSY-компенсация [Т] -- оценка ~10⁻¹²⁰±¹⁰"
+description: "Computation of Λ from Gap: spectral formula [T], O-sector dominance [T], triple suppression, Ward identities, zeta-regularization, cohomological cancellation, and SUSY compensation [H] — estimate ~10⁻¹²⁰±¹⁰"
 ---
 
-# Космологическая постоянная
+# Cosmological Constant
 
-:::info Для кого эта глава
-Вычисление космологической постоянной из Gap-формализма. Читатель узнает о шести пертурбативных механизмах подавления и спектральной формуле для $\Lambda_{\text{CC}}$.
+:::info Who this chapter is for
+Computation of the cosmological constant from the Gap formalism. The reader will learn about six perturbative suppression mechanisms and the spectral formula for $\Lambda_{\text{CC}}$.
 :::
 
 
-## Обзор
+## Overview
 
-Космологическая постоянная в УГМ определяется суммарной непрозрачностью $O$-сектора: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [Доминирование O-сектора](#теорема-лямбда-o-доминирование) **[Т]** доказывает, что $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — космологическая постоянная = «стоимость наблюдения». Серия исследований установила **6 пертурбативных механизмов** подавления, дающих в совокупности $10^{-41.5}$ из требуемых $10^{-120}$. [Спектральная формула для $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[Т]** устанавливает структурную формулу через моменты внутреннего оператора Дирака и повышает SUSY-компенсацию ($\varepsilon^{12}$) с [С] до **[Т]**. Когомологическое обнуление ($\Lambda_{\text{global}} = 0$ [Т]), SUSY-компенсация **[Т]** и секторная структура из [глобальной минимизации](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т] дополняют бюджет до оценки **$\sim 10^{-120 \pm 10}$** [С]. Оставшийся зазор — **вычислительная** задача, а не концептуальный пробел. Также исследованы непертурбативные механизмы: сумма Гаусса для Фано-фаз (опровергнута при физическом $S_0$) и дзета-регуляризация с Фано-характером (структурное обнуление $Z_\Phi(-k) = 0$, физическая интерпретация открыта).
+The cosmological constant in UHM is determined by the total opacity of the $O$-sector: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [O-sector dominance](#теорема-лямбда-o-доминирование) **[T]** proves that $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — the cosmological constant = "cost of observation". A series of investigations has established **6 perturbative suppression mechanisms**, yielding a combined $10^{-41.5}$ out of the required $10^{-120}$. The [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[T]** establishes the structural formula via moments of the internal Dirac operator; SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ remains **[H]** (the adjoint representation **14** of G₂ is irreducible, the 7+7 decomposition is not justified — see §4a). Cohomological cancellation ($\Lambda_{\text{global}} = 0$ [T]), SUSY compensation **[H]**, and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] supplement the budget to an estimate of **$\sim 10^{-120 \pm 10}$** [C]. The remaining gap is a **computational** task, not a conceptual one. Non-perturbative mechanisms are also investigated: the Gauss sum for Fano phases (refuted at physical $S_0$) and zeta-regularization with Fano character (structural cancellation $Z_\Phi(-k) = 0$, physical interpretation open).
 
 ---
 
-## 1. Вычисление $\Lambda$ для вакуумной конфигурации
+## 1. Computation of $\Lambda$ for the Vacuum Configuration
 
-### 1.1 Вакуумная конфигурация
+### 1.1 Vacuum Configuration
 
-Вакуумная конфигурация — голоном $\mathfrak{H}_{\mathrm{vac}}$ с минимальной интериорностью (L0):
-- Диагональ: $\gamma_{ii} = 1/7$ (максимально смешанное)
-- Когерентности: $|\gamma_{ij}| = \epsilon \ll 1$ (равномерные)
-- Фазы: стационарные, определяемые минимумом $V_{\mathrm{Gap}}$
+The vacuum configuration is a holon $\mathfrak{H}_{\mathrm{vac}}$ with minimal interiority (L0):
+- Diagonal: $\gamma_{ii} = 1/7$ (maximally mixed)
+- Coherences: $|\gamma_{ij}| = \epsilon \ll 1$ (uniform)
+- Phases: stationary, determined by the minimum of $V_{\mathrm{Gap}}$
 
-### 1.2 $\Lambda$ в вакууме
+### 1.2 $\Lambda$ in the Vacuum
 
-:::tip Теорема 7.1 [Т]
-Для вакуумной конфигурации:
+:::tip Theorem 7.1 [T]
+For the vacuum configuration:
 
-**(a)** $O$-сектор Gap (6 пар):
+**(a)** $O$-sector Gap (6 pairs):
 
 $$
 \mathcal{G}_{\mathrm{total}}^{(O)} = \sum_{i \neq O} \mathrm{Gap}(O,i)^2 \cdot |\gamma_{Oi}|^2
 $$
 
-**(b)** Стационарный Gap из спонтанного нарушения:
+**(b)** Stationary Gap from spontaneous breaking:
 
 $$
 \mathrm{Gap}(O,i)_{\min}^2 \approx \left(\frac{\lambda_3 \bar{A}_{Oi}}{\mu^2}\right)^2, \quad \bar{A}_{Oi} \approx 4\epsilon^2
 $$
 
-**(c)** Суммарная непрозрачность:
+**(c)** Total opacity:
 
 $$
 \mathcal{G}_{\mathrm{total}}^{(O)} = \frac{96\lambda_3^2\epsilon^6}{\mu^4}
 $$
 
-**(d)** Космологическая постоянная:
+**(d)** Cosmological constant:
 
 $$
 \Lambda_{\mathrm{Gap}} = \frac{96\lambda_3^2\epsilon^6}{\mu^2}
 $$
 :::
 
-:::danger Предупреждение C7: непертурбативный режим
-Параметр λ₃ ≈ 74 ≫ 4π означает, что октонионный кубический вертекс находится в **сильной связи**. Все петлевые вычисления, использующие λ₃ как пертурбативный параметр, формально ненадёжны. Количественные результаты данного раздела (массы, отношения ветвления, числовые коэффициенты) имеют статус **[Г]** до проведения непертурбативного анализа.
+:::danger Warning C7: non-perturbative regime
+The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in the **strong coupling** regime. All loop computations using λ₃ as a perturbative parameter are formally unreliable. Quantitative results in this section (masses, branching ratios, numerical coefficients) have status **[H]** pending non-perturbative analysis.
 
-**Непертурбативный подход:** Соотношения масс определяются спектром $D_{\text{int}}$ и **не зависят** от λ₃ — теорема T-180 [Т]. C7 переосмыслен как структурное свойство октонионной алгебры [И], а не дефект теории. См. [Бимодульная конструкция §3](/docs/proofs/physics/bimodule-construction#непертурбативный).
+**Non-perturbative approach:** Mass ratios are determined by the spectrum of $D_{\text{int}}$ and are **independent** of λ₃ — Theorem T-180 [T]. C7 is reinterpreted as a structural property of the octonionic algebra [I], not a defect of the theory. See [Bimodule Construction §3](/docs/proofs/physics/bimodule-construction#непертурбативный).
 :::
 
 ---
 
-## 2. Тройное подавление
+## 2. Triple Suppression
 
-:::warning Теорема 7.2 [С при C12, T-64]
-**Статус [С при C12, T-64]:** Порядок величины $\epsilon \sim 10^{-2}$ структурно мотивирован секторной иерархией вакуума (C12 [Т] + T-64 [Т]): $\bar{\varepsilon} \approx 0.023$. Корректный бюджет — в разделе 5.
+:::warning Theorem 7.2 [C under C12, T-64]
+**Status [C under C12, T-64]:** The order of magnitude $\epsilon \sim 10^{-2}$ is structurally motivated by the vacuum sector hierarchy (C12 [T] + T-64 [T]): $\bar{\varepsilon} \approx 0.023$. The correct budget is in Section 5.
 
-Малость наблюдаемой $\Lambda$ объясняется тройным подавлением:
+The smallness of the observed $\Lambda$ is explained by triple suppression:
 :::
 
-| Механизм | Фактор | Описание |
+| Mechanism | Factor | Description |
 |----------|--------|----------|
-| $\epsilon^6$ | $10^{-12}$ | Малость когерентностей вакуума: $\epsilon \sim e^{-S_{\mathrm{Bekenstein}}/7}$ |
-| $\lambda_3^2/\mu^2$ | Подавление | Октонионный ассоциатор — ИК-нерелевантный оператор |
-| RG-эволюция $\lambda_3$ | $10^{-14.5}$ | Подавление при течении от Планка к космологии |
+| $\epsilon^6$ | $10^{-12}$ | Smallness of vacuum coherences: $\epsilon \sim e^{-S_{\mathrm{Bekenstein}}/7}$ |
+| $\lambda_3^2/\mu^2$ | Suppression | Octonionic associator — an IR-irrelevant operator |
+| RG-evolution of $\lambda_3$ | $10^{-14.5}$ | Suppression under flow from Planck to cosmological scale |
 
 ---
 
-## 3. RG-мост для $\Lambda$
+## 3. RG Bridge for $\Lambda$
 
-### 3.1 Размерный анализ
+### 3.1 Dimensional Analysis
 
-:::tip Теорема 12.1 [Т]
-Все параметры Gap-теории приобретают физические размерности через Аксиому 4 ($\omega_0$):
+:::tip Theorem 12.1 [T]
+All parameters of Gap theory acquire physical dimensions through Axiom 4 ($\omega_0$):
 
 $$
 \mu_{\mathrm{phys}} = \mu \cdot \omega_0, \quad \Lambda_{\mathrm{phys}} = \frac{\Lambda_{\mathrm{Gap}} \cdot \omega_0^2}{c^2}, \quad G_{\mathrm{phys}} = \frac{c^4}{2\mu_{\mathrm{phys}}^2 \langle|\gamma_{\mathrm{ST}}|^2\rangle}
 $$
 
-Для космологического вакуума: $\omega_0^{(\mathrm{Planck})} = c^5/(\hbar G) \approx 1.855 \times 10^{43}$ с$^{-1}$.
+For the cosmological vacuum: $\omega_0^{(\mathrm{Planck})} = c^5/(\hbar G) \approx 1.855 \times 10^{43}$ s$^{-1}$.
 :::
 
-### 3.2 RG-эволюция $\lambda_3$
+### 3.2 RG Evolution of $\lambda_3$
 
-:::tip Теорема 12.2 [Т]
-При интегрировании RG-потока от планковского до космологического масштаба:
+:::tip Theorem 12.2 [T]
+Upon integrating the RG flow from the Planck to the cosmological scale:
 
 $$
 \frac{\lambda_3^{(\mathrm{IR})}}{\lambda_3^{(\mathrm{UV})}} = \left(\frac{H_0}{\omega_{\mathrm{Planck}}}\right)^{5/42} \approx 10^{-7.26}
 $$
 :::
 
-В Вильсон-Фишеровской точке ($\lambda_4^* = 4\pi^2/63$): аномальная размерность $\Delta_3 = 5/42 \approx 0.119$. Отношение масштабов $H_0/\omega_{\mathrm{Planck}} \approx 1.2 \times 10^{-61}$.
+At the Wilson-Fisher fixed point ($\lambda_4^* = 4\pi^2/63$): anomalous dimension $\Delta_3 = 5/42 \approx 0.119$. Scale ratio $H_0/\omega_{\mathrm{Planck}} \approx 1.2 \times 10^{-61}$.
 
-Кубический член подавлен в $\sim 2 \times 10^7$ раз при переходе от Планка к космологии.
+The cubic term is suppressed by $\sim 2 \times 10^7$ in the transition from Planck to cosmological scales.
 
 ---
 
-## 4. Компенсация из тождеств Уорда
+## 4. Compensation from Ward Identities
 
-### 4.1 Вакуумный коррелятор
+### 4.1 Vacuum Correlator
 
-:::tip Теорема 10.1 [Т]
-14 тождеств Уорда однозначно фиксируют вакуумный двухточечный коррелятор:
+:::tip Theorem 10.1 [T]
+The 14 Ward identities uniquely fix the vacuum two-point correlator:
 
 $$
 C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2
 $$
 
-где $\mathbf{F}_{21}$ — оператор Фано, и тождества Уорда фиксируют:
+where $\mathbf{F}_{21}$ is the Fano operator, and the Ward identities fix:
 
 $$
 \beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}
 $$
 :::
 
-### 4.2 Антикорреляция Gap-флуктуаций
+### 4.2 Anti-correlation of Gap Fluctuations
 
-:::tip Теорема 10.2 [Т]
-Собственные значения коррелятора $C = \lambda_+ P_7 + \lambda_- P_{14}$ с $\lambda_+ = 19\alpha/49$ и $\lambda_- = 73\alpha/49$ (из тождеств Уорда, см. [оператор $F_{21}$](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)) удовлетворяют $\lambda_+ < \lambda_-$. Поскольку вектор $\mathbf{1}_{21}$ целиком лежит в Фано-симметричном секторе $V_7$ (так как $P_7 \mathbf{1} = \mathbf{1}$), суммарный вклад Gap-флуктуаций в $\Lambda$ определяется только «малым» собственным значением $\lambda_+$:
+:::tip Theorem 10.2 [T]
+The eigenvalues of the correlator $C = \lambda_+ P_7 + \lambda_- P_{14}$ with $\lambda_+ = 19\alpha/49$ and $\lambda_- = 73\alpha/49$ (from Ward identities, see [operator $F_{21}$](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)) satisfy $\lambda_+ < \lambda_-$. Since the vector $\mathbf{1}_{21}$ lies entirely in the Fano-symmetric sector $V_7$ (because $P_7 \mathbf{1} = \mathbf{1}$), the total contribution of Gap fluctuations to $\Lambda$ is determined only by the "small" eigenvalue $\lambda_+$:
 
 $$
 \sum_{(ij),(kl)} C_{(ij),(kl)} = \mathbf{1}^T C \mathbf{1} = 21 \lambda_+ = \frac{399\alpha}{49} = \frac{57\alpha}{7}
 $$
 
-Сравнение с неограниченным коррелятором ($C = \alpha\, I_{21}$, сумма $= 21\alpha$) даёт подавление.
+Comparison with the unconstrained correlator ($C = \alpha\, I_{21}$, sum $= 21\alpha$) gives the suppression.
 :::
 
-### 4.3 Степень компенсации
+### 4.3 Degree of Compensation
 
-:::tip Теорема 10.3 [Т]
-Тождества Уорда подавляют суммарный вклад Gap-флуктуаций в $\Lambda$ на множитель:
+:::tip Theorem 10.3 [T]
+The Ward identities suppress the total contribution of Gap fluctuations to $\Lambda$ by a factor:
 
 $$
 \frac{\mathbf{1}^T C \mathbf{1}}{\mathbf{1}^T (\alpha\,I_{21}) \mathbf{1}} = \frac{21\lambda_+}{21\alpha} = \frac{\lambda_+}{\alpha} = \frac{19}{49} \approx 0.39 \quad \Rightarrow \quad 10^{-0.41}
 $$
 
-Подавление на фактор $\sim 2.6$ (или $10^{-0.41}$). Число $19/49$ следует непосредственно из спектра $F_{21}$ и тождеств Уорда — свободных параметров нет.
+Suppression by a factor of $\sim 2.6$ (or $10^{-0.41}$). The number $19/49$ follows directly from the spectrum of $F_{21}$ and the Ward identities — there are no free parameters.
 :::
 
 ---
 
-## 4a. Спектральная формула для $\Lambda_{\text{CC}}$ {#спектральная-формула}
+## 4a. Spectral Formula for $\Lambda_{\text{CC}}$ {#спектральная-формула}
 
-#### Теорема (Спектральная формула для $\Lambda_{\text{CC}}$) [Т] {#теорема-спектральная-лямбда}
+#### Theorem (Spectral Formula for $\Lambda_{\text{CC}}$) [T] {#теорема-спектральная-лямбда}
 
-:::tip Теорема (Спектральная формула для $\Lambda_{\text{CC}}$) [Т]
-Космологическая постоянная выражается через моменты внутреннего оператора Дирака $D_{\text{int}}$ конечной спектральной тройки $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [Т] ([спектральная тройка](/docs/core/foundations/spacetime#теорема-спектральная-тройка)):
+:::tip Theorem (Spectral Formula for $\Lambda_{\text{CC}}$) [T]
+The cosmological constant is expressed via moments of the internal Dirac operator $D_{\text{int}}$ of the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [T] ([spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка)):
 
 $$
 \Lambda_{\text{CC}} = \frac{f_0 \Lambda^4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(1) - \frac{f_2 \Lambda^2}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^2) + \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)
 $$
 
-Все следы берутся по внутреннему пространству $H_{\text{int}} = \mathbb{C}^7$.
+All traces are taken over the internal space $H_{\text{int}} = \mathbb{C}^7$.
 
-**Доказательство.** Прямое следствие разложения коэффициента $a_0$ спектрального действия $S = \mathrm{Tr}(f(D/\Lambda))$ ([спектральное действие](/docs/physics/gravity/quantum-gravity)). Конечная спектральная тройка существует [Т] . $\blacksquare$
+**Proof.** Direct consequence of the Seeley–DeWitt expansion of the spectral action $S = \mathrm{Tr}(f(D/\Lambda))$, where $f: \mathbb{R}_{\geq 0} \to [0,1]$ is a smooth decreasing cutoff function. Moments $f_n$ are defined as:
+$$f_0 = \int_0^\infty f(u)\,u\,du, \quad f_2 = \int_0^\infty f(u)\,du, \quad f_4 = f(0) > 0$$
+The index $n$ corresponds to the degree of UV divergence: $f_0$ — with the $\Lambda^4$ term, $f_2$ — with $\Lambda^2$, $f_4 = f(0)$ — with $\Lambda^0$ (UV-finite, independent of the regulator choice). All three moments are finite for any rapidly decaying $f$ (e.g., $f(u) = e^{-u}$). The finite spectral triple exists by T-53 [T]. $\blacksquare$
 :::
 
-#### Численное вычисление [С] {#числовое-вычисление-лямбда}
+#### Theorem (Independence of the Scale $\varepsilon^{12}$ from SUSY Compensation) [T] {#теорема-независимость-varepsilon12}
 
-| Шаг | Содержание | Результат |
+:::tip Theorem [T]
+The physical observable cosmological constant $\Lambda_{\text{CC}}^{\text{phys}}$, defined by the **finite** (UV-regular) term of the spectral formula:
+$$\Lambda_{\text{CC}}^{\text{phys}} = \frac{f_4}{16\pi G_N} \cdot \mathrm{Tr}_{\text{int}}(D_{\text{int}}^4)$$
+is of order $\varepsilon^{12} M_P^4$ from T-53 **independently** of the status of SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H].
+:::
+
+**Proof.** The Seeley–DeWitt expansion contains three types of terms:
+
+1. **UV-quartic:** $\dfrac{f_0 \Lambda^4}{16\pi G_N} \mathrm{Tr}(1)$ — divergence $O(\Lambda^4)$, absorbed into the renormalization of the bare cosmological constant. The value of $\mathrm{Tr}(1)$ (0 or 7) only changes the constant subtracted in renormalization, not the physical result.
+
+2. **UV-quadratic:** $\dfrac{f_2\Lambda^2}{16\pi G_N} \mathrm{Tr}(D_{\text{int}}^2)$ — divergence $O(\Lambda^2)$, absorbed into the renormalization of Newton's constant $G_N$. Independent of SUSY compensation, provided the UV regulator $\Lambda$ is fixed.
+
+3. **UV-finite:** $\dfrac{f_4}{16\pi G_N} \mathrm{Tr}(D_{\text{int}}^4)$ — a finite contribution independent of $\Lambda$ as $\Lambda \to \infty$. This is the **only physically observable term**.
+
+**Derivation of the scale $m_k \sim \varepsilon^3 M_P$.** By T-53 [T], $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is a finite spectral triple with $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ and $H_{\text{int}} = \mathbb{C}^7$. The internal Dirac operator $D_{\text{int}}$ is a Hermitian $7 \times 7$ operator on $H_{\text{int}}$, whose matrix elements encode the Yukawa couplings of the internal geometry in the NCG formalism (Chamseddine–Connes).
+
+The UHM superpotential is cubic in the 7 Fano fields $\Phi_i$ ($i \in \{A,S,D,L,E,O,U\}$):
+$$W = \sum_{\ell \in \mathrm{Fano}} \lambda_\ell\,\Phi_{i(\ell)}\,\Phi_{j(\ell)}\,\Phi_{k(\ell)}, \quad [\Phi_i] = M_P$$
+
+By T-53, $W \sim \varepsilon^3 M_P^3$ with canonical field normalization, whence the dimensionless coupling constants:
+$$\lambda_\ell \sim \frac{\varepsilon^3 M_P^3}{M_P^3} = \varepsilon^3$$
+
+The matrix elements of $D_{\text{int}}$ are defined as second derivatives of the superpotential at the internal Planck vacuum $\langle\Phi_k\rangle = M_P$ (the fundamental scale of the UHM internal space):
+$$(D_{\text{int}})_{ij} \equiv \frac{\partial^2 W}{\partial\Phi_i\,\partial\Phi_j}\bigg|_{\langle\Phi\rangle = M_P} = \sum_k \lambda_{ijk}\,\langle\Phi_k\rangle \sim \varepsilon^3 \cdot M_P = \varepsilon^3 M_P$$
+
+Since $(D_{\text{int}})_{ij} = O(\varepsilon^3 M_P)$ for all $i,j$ (both diagonal and off-diagonal elements), all 7 eigenvalues $m_k$ are of the same order by the Gershgorin theorem:
+$$|m_k - (D_{\text{int}})_{kk}| \leq \sum_{j \neq k}|(D_{\text{int}})_{kj}| = O(\varepsilon^3 M_P) \implies m_k = O(\varepsilon^3 M_P)$$
+
+Therefore:
+$$\mathrm{Tr}(D_{\text{int}}^4) = \sum_{k=1}^{7} m_k^4 \sim 7 \cdot (\varepsilon^3 M_P)^4 = 7\varepsilon^{12} M_P^4 \quad [\text{T, from T-53 + cubic structure of } W]$$
+
+Independence from $\mathrm{Tr}(1)_{\text{total}}$: if $\mathrm{Tr}(1)_{\text{total}} = 0$ [H] holds — UV terms 1 and 2 vanish **naturally** (without fine-tuning). If not — UV terms 1 and 2 require counterterm subtraction, but the physical result (term 3) remains the same $O(\varepsilon^{12} M_P^4)$.
+
+In both cases $\Lambda_{\text{CC}}^{\text{phys}} \sim \varepsilon^{12} M_P^4$ **[T]**. SUSY compensation [H] determines **naturalness** (absence of fine-tuning), not the scale itself. $\blacksquare$
+
+:::note Remark on fine-tuning
+If SUSY compensation [H] does not hold, then UV terms $O(\Lambda^4)$ and $O(\Lambda^2)$ must be subtracted by counterterms. Standard physics allows this procedure, but the theory then requires **fine-tuning** $\sim (\varepsilon^{12} M_P^4)/(\Lambda^4) \sim 10^{-120}$ on the bare constant. Thus: *the result is [T] regardless, naturalness depends on [H]*.
+:::
+
+#### Numerical Computation [C] {#числовое-вычисление-лямбда}
+
+| Step | Content | Result |
 |-----|-----------|----------|
-| Бозонный | $\mathrm{Tr}(1) = 7$ | $H_{\text{int}} = \mathbb{C}^7$ |
-| Фермионный | $H_{\text{ferm}}^{\text{int}} = \mathbb{C}^7$ (внутренние фермионные моды, $G_2$-сингл.) | При точной внутренней SUSY: $\mathrm{Tr}(1)_{\text{total}} = 7 - 7 = 0$ [Г] |
-| SUSY-нарушение | $m_{3/2} \sim \varepsilon^3 M_P$ | $\Lambda_{\text{CC}} \sim \varepsilon^{12} M_P^4 \sim 10^{-24} M_P^4$ |
-| Секторная структура | $Z_\Phi(-2) = 0$ [Т] | Намоточное обнуление; остаток из $Z'_\Phi(-2)$ |
-| RG-подавление | $\lambda_3 \sim 10^{-7.26}$ | $\lambda_3^2 \sim 10^{-14.5}$ |
-| Когомологическое | $\Lambda_{\text{global}} = 0$ [Т] | Физическая $\Lambda$ — локальный эффект |
-| Секторная минимизация | [Глобальная минимизация](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т] | $\sim 10^{-40}$ [С] |
+| Bosonic | $\mathrm{Tr}(1) = 7$ | $H_{\text{int}} = \mathbb{C}^7$ |
+| Fermionic | $H_{\text{ferm}}^{\text{int}} = \mathbb{C}^7$ (internal fermionic modes, $G_2$-singlets) | With exact internal SUSY: $\mathrm{Tr}(1)_{\text{total}} = 7 - 7 = 0$ [H] |
+| SUSY breaking | $m_{3/2} \sim \varepsilon^3 M_P$ | $\Lambda_{\text{CC}} \sim \varepsilon^{12} M_P^4 \sim 10^{-24} M_P^4$ |
+| Sector structure | $Z_\Phi(-2) = 0$ [T] | Winding cancellation; residual from $Z'_\Phi(-2)$ |
+| RG suppression | $\lambda_3 \sim 10^{-7.26}$ | $\lambda_3^2 \sim 10^{-14.5}$ |
+| Cohomological | $\Lambda_{\text{global}} = 0$ [T] | Physical $\Lambda$ is a local effect |
+| Sector minimization | [Global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] | $\sim 10^{-40}$ [C] |
 
-#### Структура фермионного сектора {#структура-фермионного-сектора}
+#### Structure of the Fermionic Sector {#структура-фермионного-сектора}
 
-:::note Компенсация $\mathrm{Tr}(1)_{\text{total}} = 0$ [Г]
+:::note Compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ [H]
 
-**Проблема.** Внутреннее пространство задано спектральной тройкой T-53 [Т]: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, $H_{\text{int}} = \mathbb{C}^7$. Бозонный след равен $\mathrm{Tr}(1)|_{\text{bos}} = 7$. Для компенсации $\mathrm{Tr}(1)_{\text{total}} = 0$ необходимо $\dim H_{\text{int}}^{\text{ferm}} = 7$.
+**Problem.** The internal space is specified by spectral triple T-53 [T]: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, $H_{\text{int}} = \mathbb{C}^7$. The bosonic trace equals $\mathrm{Tr}(1)|_{\text{bos}} = 7$. For compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ one needs $\dim H_{\text{int}}^{\text{ferm}} = 7$.
 
-**Полный фермионный спектр.** В рамках $\mathcal{N}=1$ SUSY с $G_2$-голономией фермионный спектр включает два класса:
+**Full fermionic spectrum.** Within $\mathcal{N}=1$ SUSY with $G_2$-holonomy the fermionic spectrum includes two classes:
 
-1. **Гравитино** (спин $3/2$, 4D): 4 степени свободы. Эти моды живут на $M^4$, а не во внутреннем пространстве, и **не входят** в $\mathrm{Tr}_{\text{int}}(1)$.
+1. **Gravitino** (spin $3/2$, 4D): 4 degrees of freedom. These modes live on $M^4$, not in the internal space, and **do not enter** $\mathrm{Tr}_{\text{int}}(1)$.
 
-2. **Гаугино** (спин $1/2$, внутренние): алгебра $\mathfrak{g}_2$ имеет размерность $\dim \mathfrak{g}_2 = 14$. Разложение по $G_2$-сингл.: $\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}'$. Из 14 гаугинных мод **7 являются $G_2$-синглетами** (нулевые моды, не спаренные с потенциалом Хиггса) и вносят вклад во внутренний след, тогда как остальные 7 приобретают массы порядка $M_P$ и подавляются.
+2. **Gaugino** (spin $1/2$, internal): the algebra $\mathfrak{g}_2$ has dimension $\dim \mathfrak{g}_2 = 14$. Decomposition by $G_2$-singlets: $\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}'$. Of the 14 gaugino modes, **7 are $G_2$-singlets** (zero modes, not paired with the Higgs potential) and contribute to the internal trace, while the remaining 7 acquire masses of order $M_P$ and are suppressed.
 
-**Внутренняя компенсация.** В спектральном действии след $\mathrm{Tr}_{\text{int}}(1)$ берётся только по внутреннему $H_{\text{int}}$:
+**Internal compensation.** In the spectral action the trace $\mathrm{Tr}_{\text{int}}(1)$ is taken only over the internal $H_{\text{int}}$:
 
 $$
-\mathrm{Tr}_{\text{int}}(1) = \underbrace{7}_{\text{бозоны}, H_{\text{int}}^{\text{bos}}} - \underbrace{7}_{\text{фермионы}, H_{\text{int}}^{\text{ferm}} \text{ (7 синглетов из } \mathbf{14})} = 0
+\mathrm{Tr}_{\text{int}}(1) = \underbrace{7}_{\text{bosons}, H_{\text{int}}^{\text{bos}}} - \underbrace{7}_{\text{fermions}, H_{\text{int}}^{\text{ferm}} \text{ (7 singlets from } \mathbf{14})} = 0
 $$
 
-**Статус [Г].** Точность компенсации $7 - 7 = 0$ обусловлена предположением о точном внутреннем спаривании $\mathbf{14} \to \mathbf{7}_{\text{лёгких}} + \mathbf{7}_{\text{тяжёлых}}$ при $G_2$-голономии. Подтверждение полного спектра в конечной спектральной тройке T-53 требует явного построения оператора Дирака на $H_{\text{int}}^{\text{ferm}} = \mathbb{C}^7$. До этого компенсация остаётся **[Г]** (гипотеза, требующая непертурбативного анализа).
+**Status [H].** The exactness of the compensation $7 - 7 = 0$ rests on the assumption of exact internal pairing $\mathbf{14} \to \mathbf{7}_{\text{light}} + \mathbf{7}_{\text{heavy}}$ under $G_2$-holonomy. Confirming the full spectrum in the finite spectral triple T-53 requires an explicit construction of the Dirac operator on $H_{\text{int}}^{\text{ferm}} = \mathbb{C}^7$. Until then, the compensation remains **[H]** (a hypothesis requiring non-perturbative analysis).
 
-:::danger Математическая ошибка в декомпозиции [Г]
-Присоединённое представление **14** группы G₂ **неприводимо** — оно не разлагается как 7+7 ни при каком стандартном вложении. Разложение 14→8+3+3̄ происходит при ограничении на SU(3)⊂G₂ (присоединённое SU(3) + фундаментальное + антифундаментальное), но НЕ как 7+7. Утверждение Tr_int(1)_total = 7−7 = 0 **не обосновано**. Статус SUSY-компенсации: **[Г]** (гипотеза, требующая непертурбативного анализа на конкретном G₂-многообразии).
+:::danger Mathematical error in the decomposition [H]
+The adjoint representation **14** of G₂ is **irreducible** — it does not decompose as 7+7 under any standard embedding. The decomposition 14→8+3+3̄ occurs when restricting to SU(3)⊂G₂ (adjoint SU(3) + fundamental + antifundamental), but NOT as 7+7. The claim Tr_int(1)_total = 7−7 = 0 is **not justified**. Status of SUSY compensation: **[H]** (hypothesis requiring non-perturbative analysis on a concrete G₂-manifold).
 :::
 :::
 
-:::info Статус
-Структурная формула $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[Т]** (спектральное действие). Компенсация $\mathrm{Tr}(1)_{\text{total}} = 0$ — [С]. Секторная компонента уточнена через [глобальную минимизацию](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]. Подробнее: [полный бюджет с доказательствами](/docs/proofs/gap/lambda-budget#спектральная-формула).
+:::info Status
+Structural formula $\Lambda_{\text{CC}} \sim \varepsilon^{12}$ **[T]** (spectral action). Compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ — **[H]** (the adjoint representation **14** of G₂ is irreducible, the **7+7** decomposition is not mathematically justified). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]. Details: [full budget with proofs](/docs/proofs/gap/lambda-budget#спектральная-формула).
 :::
 
 ---
 
-## 4b. Структурная необходимость $\Lambda_{\text{obs}} > 0$ [Т] {#структурная-необходимость}
+## 4b. Structural Necessity of $\Lambda_{\text{obs}} > 0$ [T] {#структурная-необходимость}
 
-#### Теорема (Структурная необходимость $\Lambda > 0$) [Т] {#теорема-лямбда-положительна}
+#### Theorem (Structural Necessity of $\Lambda > 0$) [T] {#теорема-лямбда-положительна}
 
-:::tip Теорема (Структурная необходимость $\Lambda > 0$) [Т]
-В УГМ наблюдаемая космологическая постоянная строго положительна: $\Lambda_{\text{obs}} > 0$.
+:::tip Theorem (Structural Necessity of $\Lambda > 0$) [T]
+In UHM the observed cosmological constant is strictly positive: $\Lambda_{\text{obs}} > 0$.
 
-**Доказательство.** Комбинация трёх строго доказанных результатов:
+**Proof.** A combination of three rigorously proved results:
 
-1. **Глобальное обнуление** [Т]: Из когомологического монизма ([Т](/docs/core/foundations/consequences#когомологический-монизм)): $\Lambda_{\text{global}} = 0$.
+1. **Global cancellation** [T]: From cohomological monism ([T](/docs/core/foundations/consequences#когомологический-монизм)): $\Lambda_{\text{global}} = 0$.
 
-2. **Локальная ненулевость** [Т]: Из [локально-глобальной дихотомии](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [Т]: $H^7_{\text{loc}}(X, T) \cong \mathbb{Z} \neq 0$, следовательно $\rho_{\text{vac}}(T) \neq 0$.
+2. **Local non-vanishing** [T]: From the [local-global dichotomy](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [T]: $H^7_{\text{loc}}(X, T) \cong \mathbb{Z} \neq 0$, therefore $\rho_{\text{vac}}(T) \neq 0$.
 
-3. **Положительность из автопоэзиса** [Т]: В стационарном состоянии $\rho_*$:
+3. **Positivity from autopoiesis** [T]: In the stationary state $\rho_*$:
 
 $$
 \rho_{\text{vac}}(T) = \kappa_0 \cdot \left[P(\rho_*) - P(I/7)\right] \cdot \omega_0 > 0
 $$
 
-поскольку $\kappa_0 > 0$ [Т] (T-44a), $P(\rho_*) > 2/7 > 1/7 = P(I/7)$ [Т] (T-5), $\omega_0 > 0$ (A5). Положительность вакуумной энергии — **автопоэтическая работа** по поддержанию когерентности $\rho_*$ над $I/7$.
+since $\kappa_0 > 0$ [T] (T-44a), $P(\rho_*) > 2/7 > 1/7 = P(I/7)$ [T] (T-5), $\omega_0 > 0$ (A5). The positivity of vacuum energy is the **autopoietic work** of maintaining coherence of $\rho_*$ above $I/7$.
 
-Тогда $\Lambda_{\text{obs}} = 8\pi G_N \cdot \rho_{\text{vac}}(T) > 0$. $\blacksquare$
+Then $\Lambda_{\text{obs}} = 8\pi G_N \cdot \rho_{\text{vac}}(T) > 0$. $\blacksquare$
 :::
 
-:::info Связь с неполнотой Ловера
-Из [T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]: $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — неполнота самомоделирования порождает информационный зазор $\|\Gamma - \varphi(\Gamma)\| > 0$, энергетический эквивалент которого — $\rho_{\text{vac}} > 0$. Полное доказательство: [Следствия из аксиом](/docs/core/foundations/consequences#теорема-лямбда-положительна).
+:::info Connection with Lawvere incompleteness
+From [T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]: $\text{Th}_{\text{UHM}} \subsetneq \Omega$ — the incompleteness of self-modeling generates an information gap $\|\Gamma - \varphi(\Gamma)\| > 0$, whose energy equivalent is $\rho_{\text{vac}} > 0$. Full proof: [Consequences of the Axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна).
 :::
 
 ---
 
-## 4c. Доминирование O-сектора в $\Lambda$ [Т] {#доминирование-o-сектора}
+## 4c. O-Sector Dominance in $\Lambda$ [T] {#доминирование-o-сектора}
 
-#### Теорема (Доминирование O-сектора в $\Lambda$) [Т] {#теорема-лямбда-o-доминирование}
+#### Theorem (O-Sector Dominance in $\Lambda$) [T] {#теорема-лямбда-o-доминирование}
 
-:::tip Теорема (Доминирование O-сектора в $\Lambda$) [Т]
-В [спектральной формуле](#теорема-спектральная-лямбда) $\Lambda_{\text{CC}}$ O-секторная непрозрачность $\mathcal{G}_O$ обеспечивает доминирующий вклад:
+:::tip Theorem (O-Sector Dominance in $\Lambda$) [T]
+In the [spectral formula](#теорема-спектральная-лямбда) for $\Lambda_{\text{CC}}$, the O-sector opacity $\mathcal{G}_O$ provides the dominant contribution:
 
 $$
 \Lambda_{\text{CC}} = \frac{\omega_0^2}{16\pi G_N}\left[f_0\Lambda^4 \cdot 7 - f_2\Lambda^2 \cdot \omega_0^2 \cdot \mathcal{G}_{\text{total}}\right] + O(\omega_0^4)
 $$
 
-с $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$, где $\mathcal{G}_O := 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2$.
+with $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$, where $\mathcal{G}_O := 2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2$.
 
-**Доказательство (4 шага).**
+**Proof (4 steps).**
 
-**Шаг 1 (Секторное разложение $\mathrm{Tr}(D_{\text{int}}^2)$).** Из [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [Т] и [T-74](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [Т]:
+**Step 1 (Sector decomposition of $\mathrm{Tr}(D_{\text{int}}^2)$).** From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] and [T-74](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T]:
 
 $$
 \mathrm{Tr}(D_{\text{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\text{total}} = \omega_0^2 \cdot 2\sum_{i<j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 
-Разложим по секторам:
+Decomposing by sectors:
 
 $$
 \mathcal{G}_{\text{total}} = \underbrace{2\sum_{i \neq O} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2}_{\mathcal{G}_O} + \underbrace{2\sum_{\substack{i<j \\ i,j \neq O}} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2}_{\mathcal{G}_{\text{non-O}}}
 $$
 
-**Шаг 2 (Оценка секторов).** Из [секторной Gap-границы](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [Т]:
+**Step 2 (Sector estimates).** From the [sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]:
 
 - $\mathcal{G}_O = 2\sum_{i=1}^{6} |\gamma_{Oi}|^2 \cdot \mathrm{Gap}(O,i)^2 \approx 2 \cdot 6 \cdot \frac{1}{7^2} \cdot 1^2 \approx 0.24$
 - $\mathcal{G}_{\text{non-O}} \leq 2 \cdot 15 \cdot \frac{1}{7^2} \cdot \bar{\varepsilon}^2 \approx 0.0003$
 
-Таким образом: $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O \approx 10^{-3}$, т.е. $\mathcal{G}_{\text{total}} = \mathcal{G}_O \cdot (1 + O(10^{-3}))$.
+Thus: $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O \approx 10^{-3}$, i.e. $\mathcal{G}_{\text{total}} = \mathcal{G}_O \cdot (1 + O(10^{-3}))$.
 
-**Шаг 3 (Доминирование в $\Lambda_{\text{CC}}$).** Подставляя в спектральную формулу:
+**Step 3 (Dominance in $\Lambda_{\text{CC}}$).** Substituting into the spectral formula:
 
 $$
 \Lambda_{\text{CC}} \propto f_0\Lambda^4 \cdot 7 - f_2\Lambda^2 \cdot \omega_0^2 \cdot \mathcal{G}_O + O(\bar{\varepsilon}^2)
 $$
 
-Тонкая компенсация между первым и вторым членами (обеспечивающая малость $\Lambda$) определяется **O-секторной непрозрачностью** $\mathcal{G}_O$.
+The fine cancellation between the first and second terms (ensuring the smallness of $\Lambda$) is determined by the **O-sector opacity** $\mathcal{G}_O$.
 
-**Шаг 4 (Физическая интерпретация).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ означает: космологическая постоянная = **энергетическая стоимость наблюдения**. Чем непрозрачнее O-канал (т.е. чем точнее внутренние часы), тем больше $\Lambda$. Малость $\Lambda$ — следствие почти идеальной компенсации $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, которая гарантирована UV-конечностью ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [Т]) и каноническим $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [Т]). $\blacksquare$
+**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]). $\blacksquare$
 :::
 
-:::warning Статус подавления Λ
-Малость $\mathcal{G}_O$ (Gap-непрозрачность O-сектора), необходимая для $\Lambda \sim 10^{-123}$, **не выводится** из первых принципов УГМ — наследует fine-tuning стандартной модели. Статус: **[С при $f_0$]**.
+:::warning Status of Λ suppression
+The smallness of $\mathcal{G}_O$ (Gap opacity of the O-sector), required for $\Lambda \sim 10^{-123}$, is **not derived** from the first principles of UHM — it inherits the fine-tuning of the Standard Model. Status: **[C under $f_0$]**.
 :::
 
-:::info Космологическая постоянная как стоимость наблюдения
-Результат устанавливает глубокую связь: $\Lambda$ определяется O-сектором — тем же сектором, который порождает время через [Пейдж–Вуттерс механизм](/docs/core/foundations/spacetime#теорема-время-из-o). Наличие наблюдателя (O-сектор с $\mathrm{Gap}(O,i) \approx 1$) неизбежно генерирует положительную вакуумную энергию. Перекрёстная ссылка: [структурная необходимость $\Lambda > 0$](#теорема-лямбда-положительна) [Т] .
+:::info Cosmological constant as the cost of observation
+The result establishes a deep connection: $\Lambda$ is determined by the O-sector — the same sector that generates time via the [Page–Wootters mechanism](/docs/core/foundations/spacetime#теорема-время-из-o). The presence of an observer (O-sector with $\mathrm{Gap}(O,i) \approx 1$) inevitably generates positive vacuum energy. Cross-reference: [structural necessity of $\Lambda > 0$](#теорема-лямбда-положительна) [T].
 :::
 
 ---
 
-## 5. Полный бюджет подавления $\Lambda$
+## 5. Full Suppression Budget for $\Lambda$
 
-### 5.1 Пертурбативные механизмы
+### 5.1 Perturbative Mechanisms
 
-:::tip Строгий бюджет [Т]
+:::tip Strict budget [T]
 
-| Механизм | Подавление | Источник | Статус |
+| Mechanism | Suppression | Source | Status |
 |----------|-----------|----------|--------|
-| $\epsilon^6$ (малость когерентностей) | $10^{-12}$ | [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) §7.3 | [Т] |
-| RG-подавление $\lambda_3$ | $10^{-14.5}$ | [RG-поток](/docs/physics/gauge-symmetry/rg-flow) §12.3 | [Т] |
-| Тождества Уорда (антикорреляция, $19/49$) | $10^{-0.41}$ | [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) §10.4 | [Т] |
-| Фано-код (6 ограничений) | $10^{-0.9}$ | [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) §12.5d | [Т] |
-| $\sqrt{N_F}$ (некоррелированные моды) | $10^{-11.9}$ | [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) §9.3 | [Т] |
-| $O$-сектор $(6/21)^3$ | $10^{-1.7}$ | [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) §10.2 | [Т] |
-| **Пертурбативный итог** | **$10^{-41.5}$** | | **[Т]** |
+| $\epsilon^6$ (smallness of coherences) | $10^{-12}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §7.3 | [T] |
+| RG suppression of $\lambda_3$ | $10^{-14.5}$ | [RG flow](/docs/physics/gauge-symmetry/rg-flow) §12.3 | [T] |
+| Ward identities (anti-correlation, $19/49$) | $10^{-0.41}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.4 | [T] |
+| Fano code (6 constraints) | $10^{-0.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §12.5d | [T] |
+| $\sqrt{N_F}$ (uncorrelated modes) | $10^{-11.9}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §9.3 | [T] |
+| $O$-sector $(6/21)^3$ | $10^{-1.7}$ | [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) §10.2 | [T] |
+| **Perturbative total** | **$10^{-41.5}$** | | **[T]** |
 :::
 
-:::info Полный разбор бюджета
-Детальное обоснование каждого механизма с доказательствами см. в [Полный бюджет $\Lambda$: доказательства](/docs/proofs/gap/lambda-budget).
+:::info Full budget breakdown
+Detailed justification of each mechanism with proofs: [Full $\Lambda$ budget: proofs](/docs/proofs/gap/lambda-budget).
 :::
 
-### 5.2 Когомологический + SUSY + спектральный сектор
+### 5.2 Cohomological + SUSY + Spectral Sector
 
-| Механизм | Подавление | Статус | Примечание |
+| Mechanism | Suppression | Status | Note |
 |----------|-----------|--------|------------|
-| Когомологическое $\Lambda_{\text{global}} = 0$ | полное глобальное обнуление | **[Т]** | $H^n(X) = 0$ для $n > 0$ ([подробнее](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
-| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[Т]** | [Спектральная формула](#теорема-спектральная-лямбда); $m_{3/2} \propto \varepsilon^3$ ([подробнее](/docs/proofs/gap/lambda-budget#susy-компенсация)) |
-| $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[Т]** (мат.) | Остаточный намоточный вклад |
-| RG $\lambda_3^2$ | $10^{-14.5}$ | **[Т]** | RG-подавление кубической связи |
-| Секторная ([глобальная минимизация](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[С]** | Глобальная минимизация $V_{\text{Gap}}$ [Т]; точное значение — вычислительная задача |
+| Cohomological $\Lambda_{\text{global}} = 0$ | full global cancellation | **[T]** | $H^n(X) = 0$ for $n > 0$ ([details](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
+| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[H]** | [Spectral formula](#теорема-спектральная-лямбда) gives the scale **[T]**; compensation $\mathrm{Tr}(1)=0$ — **[H]** (G₂-adj **14** is irreducible, 7+7 decomposition not justified) |
+| $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[T]** (math.) | Residual winding contribution |
+| RG $\lambda_3^2$ | $10^{-14.5}$ | **[T]** | RG suppression of the cubic coupling |
+| Sector ([global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[C]** | Global minimization of $V_{\text{Gap}}$ [T]; exact value is a computational task |
 
-### 5.3 Непертурбативные механизмы
+### 5.3 Non-Perturbative Mechanisms
 
-| Механизм | Подавление | Статус | Примечание |
+| Mechanism | Suppression | Status | Note |
 |----------|-----------|--------|------------|
-| Инстантон ($e^{-150}$) | $10^{-65.5}$ | [Т] | **Аддитивен**, не мультипликативен |
-| Сумма Гаусса (намоточная интерференция) | — | **[О]** | Не работает при $S_0 = 20$ (см. §7) |
-| Дзета-обнуление $Z_\Phi(-2) = 0$ | $\infty$ (формально) | [Т], физ. смысл [Г*] | Структурное обнуление (см. §10) |
+| Instanton ($e^{-150}$) | $10^{-65.5}$ | [T] | **Additive**, not multiplicative |
+| Gauss sum (winding interference) | — | **[R]** | Does not work at $S_0 = 20$ (see §7) |
+| Zeta cancellation $Z_\Phi(-2) = 0$ | $\infty$ (formally) | [T], phys. meaning [H*] | Structural cancellation (see §10) |
 
-### 5.4 Итог
+### 5.4 Summary
 
 $$
-\Lambda_{\mathrm{перт}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{полный}} \sim 10^{-120 \pm 10} \cdot M_P^4, \quad \Lambda_{\mathrm{наблюд}} \sim 10^{-120} \cdot M_P^4
+\Lambda_{\mathrm{pert}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{full}} \sim 10^{-120 \pm 10} \cdot M_P^4, \quad \Lambda_{\mathrm{obs}} \sim 10^{-120} \cdot M_P^4
 $$
 
-**Структурное замыкание [Т-структурное, С-числовое].** Пертурбативный бюджет: $10^{-41.5}$. С учётом [спектральной формулы](#теорема-спектральная-лямбда) **[Т]** (повышение SUSY до [Т]), когомологического обнуления [Т] и секторной минимизации [С] — полный оценочный бюджет составляет **$\sim 10^{-120 \pm 10}$**, что **совпадает** с наблюдаемым значением. Вся цепочка замкнута: каждый коэффициент определён через $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[Т]**), $\theta^*$ — следствие T-53 и T-66. Оставшийся зазор — **вычислительная** задача (числовая минимизация на $(S^1)^{21}/G_2$), а не концептуальный пробел. Подробнее: [обновлённый бюджет](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [структурное замыкание](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
+**Structural closure [T-structural, C-numerical].** Perturbative budget: $10^{-41.5}$. Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]** (scale $\varepsilon^{12}$ [T]; compensation $\mathrm{Tr}(1)=0$ — **[H]**), cohomological cancellation [T], and sector minimization [C] — the full estimated budget is **$\sim 10^{-120 \pm 10}$**, which **matches** the observed value. The entire chain is closed: every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[T]**), and $\theta^*$ follows from T-53 and T-66. The remaining gap is a **computational** task (numerical minimization on $(S^1)^{21}/G_2$), not a conceptual one. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
 
 ---
 
-## 6. Инстантонный сектор
+## 6. Instanton Sector
 
-### 6.1 Gap-инстантоны
+### 6.1 Gap Instantons
 
-:::tip Теорема 8.1 [Т]
-Минимальное действие SU(3)-инстантона ($\nu = 1$) в Gap-формализме:
+:::tip Theorem 8.1 [T]
+Minimal action of an SU(3)-instanton ($\nu = 1$) in the Gap formalism:
 
 $$
 S_{\mathrm{inst}} = \frac{2\pi}{\alpha_s(\mu)}
 $$
 
-На масштабе GUT ($\alpha_{\mathrm{GUT}} \approx 1/24$): $S_{\mathrm{inst}} \approx 150.8$.
+At the GUT scale ($\alpha_{\mathrm{GUT}} \approx 1/24$): $S_{\mathrm{inst}} \approx 150.8$.
 :::
 
-Инстантонная амплитуда:
+Instanton amplitude:
 
 $$
 \mathcal{A}_{\mathrm{inst}} \sim M_{\mathrm{GUT}}^4 \cdot K \cdot e^{-150.8} \sim M_{\mathrm{GUT}}^4 \cdot 10^8 \cdot 10^{-65.5}
 $$
 
-Инстантонный вклад — **аддитивный** и $\ll \Lambda_{\mathrm{pert}}$. Инстантон не решает проблему $\Lambda$ напрямую.
+The instanton contribution is **additive** and $\ll \Lambda_{\mathrm{pert}}$. The instanton does not directly solve the $\Lambda$ problem.
 
 ---
 
-## 7. Тета-функция $\Theta_M$ и сумма Гаусса для Фано-фаз {#7-сумма-гаусса-для-фано-фаз}
+## 7. Theta Function $\Theta_M$ and Gauss Sum for Fano Phases {#7-сумма-гаусса-для-фано-фаз}
 
-### 7.1 Факторизация $\Theta_M = \Theta_+^7$
+### 7.1 Factorization $\Theta_M = \Theta_+^7$
 
-:::tip Теорема 1.1 (Факторизация) [Т]
-В стандартной октонионной таблице умножения все 7 Фано-линий имеют $\varepsilon_l = +1$. Тета-функция решётки $\mathbb{Z}^{21}$ с Фано-характеристикой факторизуется:
+:::tip Theorem 1.1 (Factorization) [T]
+In the standard octonionic multiplication table all 7 Fano lines have $\varepsilon_l = +1$. The theta function of the lattice $\mathbb{Z}^{21}$ with Fano characteristic factorizes:
 
 $$
 \Theta_M(S_0) = \left[\Theta_+(S_0)\right]^7
 $$
 
-где $\Theta_+$ — единственная 3-мерная тета-функция:
+where $\Theta_+$ is the unique 3-dimensional theta function:
 
 $$
 \Theta_+(S_0) = \sum_{\mathbf{n} \in \mathbb{Z}^3} \exp\!\left(-S_0|\mathbf{n}|^2 + \frac{2\pi i}{7}(n_1 n_2 + n_2 n_3 + n_3 n_1)\right)
 $$
 :::
 
-**Обоснование.** $G_2$-автоморфизмы сохраняют 3-форму $\varphi$, следовательно сохраняют все $\varepsilon_l$. Блоки $\Theta_l$ одинаковы для всех 7 линий ($G_2$-эквивалентность). При перемене ориентации $\varphi \to -\varphi$: $\Theta_- = \overline{\Theta_+}$, и $|\Theta_M| = |\Theta_+|^7$ в обоих случаях.
+**Justification.** $G_2$-automorphisms preserve the 3-form $\varphi$, hence preserve all $\varepsilon_l$. The blocks $\Theta_l$ are identical for all 7 lines ($G_2$-equivariance). Under orientation reversal $\varphi \to -\varphi$: $\Theta_- = \overline{\Theta_+}$, and $|\Theta_M| = |\Theta_+|^7$ in both cases.
 
-:::info Следствие
-Вся информация о намоточном подавлении содержится в **одной** функции $\Theta_+(S_0)$ трёх целочисленных переменных. Вычисление $\Theta_+$ при $S_0 = 20$ — конечная задача с экспоненциальной сходимостью.
+:::info Corollary
+All information about winding suppression is contained in **one** function $\Theta_+(S_0)$ of three integer variables. Computing $\Theta_+$ at $S_0 = 20$ is a finite task with exponential convergence.
 :::
 
-### 7.2 Математический результат: сумма Гаусса
+### 7.2 Mathematical Result: Gauss Sum
 
-:::tip Теорема 4.1 [Т]
-Для невырожденной квадратичной формы $B^{(b)}$ на $\mathbb{Z}_7^{21}$:
+:::tip Theorem 4.1 [T]
+For the non-degenerate quadratic form $B^{(b)}$ on $\mathbb{Z}_7^{21}$:
 
 $$
 |G_7| = 7^{21/2}, \quad \frac{|G_7|}{7^{21}} = 7^{-21/2} \approx 10^{-8.87}
 $$
 :::
 
-### 7.3 Точное вычисление $\Theta_M / \Theta_0$: опровержение при физическом $S_0$
+### 7.3 Exact Computation of $\Theta_M / \Theta_0$: Refutation at Physical $S_0$
 
-:::danger Теорема 4.1 (Отношение $\Theta_M/\Theta_0$) — Статус: [О]
-Точное вычисление при $S_0 = 20$ (используя факторизацию $\Theta_M = \Theta_+^7$) показывает:
+:::danger Theorem 4.1 (Ratio $\Theta_M/\Theta_0$) — Status: [R]
+Exact computation at $S_0 = 20$ (using factorization $\Theta_M = \Theta_+^7$) shows:
 
 $$
 \frac{|\Theta_M(S_0)|}{\Theta_0(S_0)} = 1 - \delta, \quad |\delta| < 2 \times 10^{-9}
 $$
 
-Фано-фазовое подавление при физическом $S_0$ **пренебрежимо**. Механизм суммы Гаусса (9 порядков) **опровергнут**.
+The Fano-phase suppression at physical $S_0$ is **negligible**. The Gauss sum mechanism (9 orders) has been **refuted**.
 :::
 
-**Причины отсутствия подавления** [Т]:
+**Reasons for the absence of suppression** [T]:
 
-**(a)** Доминирующий сектор $k=1$ (один ненулевой компонент) имеет **нулевую** фазу ($\sigma_1 = \sigma_1^{\mathrm{no\,phase}} = 6$, без подавления).
+**(a)** The dominant sector $k=1$ (one nonzero component) has **zero** phase ($\sigma_1 = \sigma_1^{\mathrm{no\,phase}} = 6$, no suppression).
 
-**(b)** Первый сектор с ненулевой фазой ($k=2$) подавлен множителем $e^{-S_0} \approx 2 \times 10^{-9}$ относительно $k=1$.
+**(b)** The first sector with a non-zero phase ($k=2$) is suppressed by a factor $e^{-S_0} \approx 2 \times 10^{-9}$ relative to $k=1$.
 
-**(c)** Даже в секторе $k=2$ подавление составляет лишь $|\sigma_2|/\sigma_2^{\mathrm{no\,phase}} = 7.48/12 = 0.624$ (не экспоненциальное).
+**(c)** Even in sector $k=2$ the suppression is only $|\sigma_2|/\sigma_2^{\mathrm{no\,phase}} = 7.48/12 = 0.624$ (not exponential).
 
-**(d)** Сумма Гаусса $|G_7| = 7^{21/2}$ — результат для **равных** весов ($S_0 = 0$), нерелевантный при $S_0 = 20$.
+**(d)** The Gauss sum $|G_7| = 7^{21/2}$ is a result for **equal** weights ($S_0 = 0$), irrelevant at $S_0 = 20$.
 
-Оболочечные коэффициенты $\Theta_+$ при $S_0 = 20$:
+Shell coefficients of $\Theta_+$ at $S_0 = 20$:
 
-| Оболочка $k$ | $e^{-kS_0}$ | $\lvert\sigma_k\rvert$ | Вклад $\lvert\sigma_k\rvert e^{-kS_0}$ |
+| Shell $k$ | $e^{-kS_0}$ | $\lvert\sigma_k\rvert$ | Contribution $\lvert\sigma_k\rvert e^{-kS_0}$ |
 |---|---|---|---|
 | 0 | 1 | 1 | 1 |
 | 1 | $2.06 \times 10^{-9}$ | 6 | $1.24 \times 10^{-8}$ |
 | 2 | $4.25 \times 10^{-18}$ | 7.48 | $3.18 \times 10^{-17}$ |
 | 3 | $8.76 \times 10^{-27}$ | 4.29 | $3.76 \times 10^{-26}$ |
 
-:::warning Ключевой вывод
-Результат «9 порядков из суммы Гаусса» формально верен для $S_0 \to 0$, но **физически нереализуем** при $S_0 = 20$. Статус: **[О]** (опровергнуто). Физический механизм деструктивной интерференции намоточных секторов **не работает** при $S_0 \sim 20$.
+:::warning Key conclusion
+The result "9 orders from the Gauss sum" is formally correct for $S_0 \to 0$, but **physically unrealizable** at $S_0 = 20$. Status: **[R]** (refuted). The physical mechanism of destructive interference of winding sectors **does not work** at $S_0 \sim 20$.
 :::
 
 ---
 
-## 8. Топологические ограничения
+## 8. Topological Constraints
 
-### 8.1 Эйлерова характеристика
+### 8.1 Euler Characteristic
 
-:::tip Теорема 6.1 [Т]
+:::tip Theorem 6.1 [T]
 $$
 \chi\bigl((S^1)^{21}\bigr) = \chi(S^1)^{21} = 0^{21} = 0
 $$
 :::
 
-### 8.2 Индекс Виттена
+### 8.2 Witten Index
 
-:::tip Теорема 6.2 [Т]
-Для $N=1$ суперсимметричной $\sigma$-модели с целевым пространством $(S^1)^{21}$:
+:::tip Theorem 6.2 [T]
+For the $N=1$ supersymmetric $\sigma$-model with target space $(S^1)^{21}$:
 
 $$
 W = \mathrm{Tr}(-1)^F = \chi\bigl((S^1)^{21}\bigr) = 0
 $$
 
-Число бозонных и фермионных вакуумных состояний: $n_B = n_F = 2^{20} = 1\,048\,576$ (из $\sum_{k\;\mathrm{even}} \binom{21}{k} = 2^{20}$).
+Number of bosonic and fermionic vacuum states: $n_B = n_F = 2^{20} = 1\,048\,576$ (from $\sum_{k\;\mathrm{even}} \binom{21}{k} = 2^{20}$).
 
-**Следствие:** В суперсимметричном пределе $\Lambda_{\mathrm{SUSY}} = 0$ **точно** — из топологии целевого пространства.
+**Corollary:** In the supersymmetric limit $\Lambda_{\mathrm{SUSY}} = 0$ **exactly** — from the topology of the target space.
 :::
 
-### 8.3 Резидуальная Λ при нарушении SUSY
+### 8.3 Residual Λ under SUSY Breaking {#83-резидуальная-λ-при-нарушении-susy}
 
-:::tip Теорема 6.3 [Т]
-При нарушении SUSY ($V_3$ нарушает через $F$-член, $m_{3/2} \sim 10^{13}$ ГэВ):
+:::tip Theorem 6.3 [T]
+Under SUSY breaking ($V_3$ breaks via $F$-term, $m_{3/2} \sim 10^{13}$ GeV):
 
 $$
 \Lambda_{\mathrm{residual}} \sim m_{3/2}^2 \cdot M_P^2 \sim 10^{-12}\, M_P^4
 $$
 
-SUSY-компенсация (12 порядков) и $\epsilon^6$-подавление (12 порядков) — **один и тот же** механизм: подавление определяется малостью когерентностей $\epsilon \sim 10^{-2}$, и $m_{3/2} \propto \epsilon^3$.
+SUSY compensation (12 orders) and $\epsilon^6$-suppression (12 orders) are **the same** mechanism: the suppression is determined by the smallness of the coherences $\epsilon \sim 10^{-2}$, and $m_{3/2} \propto \epsilon^3$.
 
-Следовательно, SUSY-аргумент **не добавляет** новых порядков к бюджету §5, но обеспечивает **структурное обоснование** подавления $\epsilon^6$.
+Therefore, the SUSY argument **adds no** new orders to the budget of §5, but provides the **structural justification** of the $\epsilon^6$ suppression.
 
-**Статус [Т]**: [спектральная формула для $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) строго обосновывает SUSY-компенсацию через разложение коэффициента $a_0$ спектрального действия из конечной спектральной тройки [Т].
+**Status [T]**: the [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) rigorously justifies SUSY compensation through the expansion of coefficient $a_0$ of the spectral action from the finite spectral triple [T].
 :::
 
 ---
 
-## 9. Коллективная компенсация Gap
+## 9. Collective Gap Compensation
 
-:::warning Гипотеза 9.1 [Г]
-Наблюдаемая $\Lambda$ — **коллективный** эффект $\sim 10^{80}$ голономов Вселенной:
+:::warning Hypothesis 9.1 [H]
+The observed $\Lambda$ is a **collective** effect of $\sim 10^{80}$ holons of the Universe:
 
 $$
 \Lambda_{\mathrm{obs}} = \frac{1}{N_{\mathrm{total}}} \sum_{A=1}^{N_{\mathrm{total}}} \Lambda_A - \Lambda_{\mathrm{counter}}
 $$
 
-Межсистемные Gap-корреляции создают **антикорреляцию** вакуумных флуктуаций:
+Inter-system Gap correlations create **anti-correlation** of vacuum fluctuations:
 
 $$
 \langle\mathcal{G}_A^{(O)} \cdot \mathcal{G}_B^{(O)}\rangle = -\frac{\sigma^2}{N_{\mathrm{total}}}
 $$
 
-Итоговая $\Lambda$:
+The resulting $\Lambda$:
 
 $$
 \Lambda_{\mathrm{obs}} = \Lambda_{\mathrm{individual}} \cdot \left(1 - \frac{N_{\mathrm{total}} \sigma^2}{\Lambda_{\mathrm{individual}}}\right)
 $$
 
-При тонкой настройке $N_{\mathrm{total}} \sigma^2 \approx \Lambda_{\mathrm{individual}}$ получается малая $\Lambda$.
+With fine-tuning $N_{\mathrm{total}} \sigma^2 \approx \Lambda_{\mathrm{individual}}$ a small $\Lambda$ is obtained.
 
-Это аналог механизма Бусса-Полчинского, но с конкретной физической природой: антикорреляция Gap-вакуумов через коллективный фазовый переход.
+This is analogous to the Bousso–Polchinski mechanism, but with a concrete physical nature: anti-correlation of Gap vacua through a collective phase transition.
 :::
 
 ---
 
-## 10. Дзета-регуляризация с Фано-характером
+## 10. Zeta-Regularization with Fano Character
 
-### 10.1 Эпштейновская дзета-функция
+### 10.1 Epstein Zeta Function
 
-Дзета-функция с Фано-характером:
+Zeta function with Fano character:
 
 $$
 Z_\Phi(s) = \sum_{\mathbf{n} \in \mathbb{Z}^{21} \setminus \{0\}} \chi(\mathbf{n})\, |\mathbf{n}|^{-2s}
 $$
 
-где $\chi(\mathbf{n}) = \exp\!\left(\frac{2\pi i}{7} B^{(b)}(\mathbf{n})\right)$ — квадратичный характер, периодический с периодом 7. Ряд абсолютно сходится при $\mathrm{Re}(s) > 21/2$.
+where $\chi(\mathbf{n}) = \exp\!\left(\frac{2\pi i}{7} B^{(b)}(\mathbf{n})\right)$ is a quadratic character, periodic with period 7. The series converges absolutely for $\mathrm{Re}(s) > 21/2$.
 
-### 10.2 Связь с $\Theta_M$ через преобразование Меллина
+### 10.2 Connection with $\Theta_M$ via Mellin Transform
 
-:::tip Теорема 7.1 (Меллин-связь) [Т]
-Завершённая дзета-функция
+:::tip Theorem 7.1 (Mellin connection) [T]
+The completed zeta function
 
 $$
 \Lambda_\Phi(s) := \pi^{-s} \Gamma(s) Z_\Phi(s)
 $$
 
-связана с $\Theta_M$ преобразованием Меллина:
+is connected to $\Theta_M$ by the Mellin transform:
 
 $$
 \Lambda_\Phi(s) = \int_0^\infty t^{s-1} \left[\Theta_M^{(t)} - 1\right] dt
 $$
 
-где $\Theta_M^{(t)} = \sum_{\mathbf{n}} \chi(\mathbf{n}) e^{-\pi t |\mathbf{n}|^2}$.
+where $\Theta_M^{(t)} = \sum_{\mathbf{n}} \chi(\mathbf{n}) e^{-\pi t |\mathbf{n}|^2}$.
 :::
 
-### 10.3 Мероморфная структура и функциональное уравнение
+### 10.3 Meromorphic Structure and Functional Equation
 
-:::tip Теорема 8.2 [Т]
-$\Lambda_\Phi(s)$ продолжается до мероморфной функции на $\mathbb{C}$ с **единственным** простым полюсом при $s = 21/2$:
+:::tip Theorem 8.2 [T]
+$\Lambda_\Phi(s)$ extends to a meromorphic function on $\mathbb{C}$ with a **unique** simple pole at $s = 21/2$:
 
 $$
 \mathrm{Res}_{s=21/2}\, \Lambda_\Phi(s) = \frac{G_7}{7^{21}}
 $$
 :::
 
-:::tip Теорема 8.3 (Функциональное уравнение) [Т]
-Завершённая дзета-функция удовлетворяет:
+:::tip Theorem 8.3 (Functional equation) [T]
+The completed zeta function satisfies:
 
 $$
 \Lambda_\Phi(s) = \gamma \cdot 7^{21/2-2s} \cdot \Lambda_{\Phi^*}(21/2 - s)
 $$
 
-где $\gamma = G_7/|G_7| = e^{i\alpha}$ — фаза суммы Гаусса, $\Phi^*$ — дуальная фаза.
+where $\gamma = G_7/|G_7| = e^{i\alpha}$ is the phase of the Gauss sum, $\Phi^*$ is the dual phase.
 :::
 
-### 10.4 Тривиальные нули $Z_\Phi(-k) = 0$
+### 10.4 Trivial Zeros $Z_\Phi(-k) = 0$
 
-:::tip Теорема 9.1 [Т]
-$Z_\Phi(s)$ имеет **простые нули** при всех целых $s = -k$, $k \geq 1$:
+:::tip Theorem 9.1 [T]
+$Z_\Phi(s)$ has **simple zeros** at all integers $s = -k$, $k \geq 1$:
 
 $$
-Z_\Phi(-k) = 0 \quad \text{для } k = 1, 2, 3, \ldots
+Z_\Phi(-k) = 0 \quad \text{for } k = 1, 2, 3, \ldots
 $$
 
-В частности, $Z_\Phi(-2) = 0$ — дзета-регуляризованная вакуумная энергия от намоточных секторов **обнуляется точно**.
+In particular, $Z_\Phi(-2) = 0$ — the zeta-regularized vacuum energy from winding sectors **vanishes exactly**.
 :::
 
-**Доказательство.** $\Lambda_\Phi(s) = \pi^{-s}\Gamma(s)Z_\Phi(s)$ мероморфна с единственным полюсом при $s = 21/2$ (Теорема 8.2). $\Gamma(s)$ имеет простые полюсы при $s = -k$ ($k = 0, 1, 2, \ldots$). Поскольку $\Lambda_\Phi(-k)$ конечна при $k \geq 1$, необходимо $Z_\Phi(-k) = 0$. $\blacksquare$
+**Proof.** $\Lambda_\Phi(s) = \pi^{-s}\Gamma(s)Z_\Phi(s)$ is meromorphic with a unique pole at $s = 21/2$ (Theorem 8.2). $\Gamma(s)$ has simple poles at $s = -k$ ($k = 0, 1, 2, \ldots$). Since $\Lambda_\Phi(-k)$ is finite for $k \geq 1$, we must have $Z_\Phi(-k) = 0$. $\blacksquare$
 
-:::info Природа обнуления
-Нули $Z_\Phi(-k) = 0$ — **тривиальные нули**, аналогичные тривиальным нулям дзета-функции Римана $\zeta(-2n) = 0$. Однако в отличие от обычной дзета Эпштейна без характера, наличие Фано-характера ($\chi \neq 1$) изменяет мероморфную структуру $\Lambda_\Phi$: фаза $\gamma = e^{i\alpha}$ в функциональном уравнении может приводить к дополнительным сокращениям в $Z'_\Phi(-2)$.
+:::info Nature of the cancellation
+The zeros $Z_\Phi(-k) = 0$ are **trivial zeros**, analogous to the trivial zeros of the Riemann zeta function $\zeta(-2n) = 0$. However, unlike the ordinary Epstein zeta without character, the presence of the Fano character ($\chi \neq 1$) changes the meromorphic structure of $\Lambda_\Phi$: the phase $\gamma = e^{i\alpha}$ in the functional equation may lead to additional cancellations in $Z'_\Phi(-2)$.
 :::
 
-### 10.5 Остаточный вклад через $Z'_\Phi(-2)$
+### 10.5 Residual Contribution via $Z'_\Phi(-2)$
 
-:::warning Статус: [Г*]
-Физическая вакуумная энергия в дзета-регуляризации:
+:::warning Status: [H*]
+The physical vacuum energy in zeta-regularization:
 
 $$
 \Lambda_{\mathrm{wind}}^{\mathrm{reg}} = -\tfrac{1}{2}\mu^{-4} Z'_\Phi(-2)
 $$
 
-Численная оценка: $|Z'_\Phi(-2)| \approx 2.6 \times 10^{10}$ (через функциональное уравнение и абсолютно сходящийся ряд дуальной дзета-функции).
+Numerical estimate: $|Z'_\Phi(-2)| \approx 2.6 \times 10^{10}$ (via the functional equation and the absolutely convergent series of the dual zeta function).
 
-Обнуление $Z_\Phi(-2) = 0$ — **структурное**, от Фано-характера, не зависящее от $S_0$. Однако физическая интерпретация через $Z'_\Phi(-2)$ — гипотеза, требующая полного КТП-вычисления (бозоны + фермионы + SUSY в намоточных секторах).
+The cancellation $Z_\Phi(-2) = 0$ is **structural**, from the Fano character, independent of $S_0$. However, the physical interpretation via $Z'_\Phi(-2)$ is a hypothesis requiring a full QFT computation (bosons + fermions + SUSY in winding sectors).
 :::
 
-### 10.6 Два режима намоточного подавления
+### 10.6 Two Regimes of Winding Suppression
 
-Исследование [дзета-регуляризации](/docs/physics/dual-aspect/zeta-regularization) выявило **два качественно различных режима**:
+The investigation of [zeta-regularization](/docs/physics/dual-aspect/zeta-regularization) revealed **two qualitatively different regimes**:
 
-| Режим | Результат | Статус |
+| Regime | Result | Status |
 |-------|-----------|--------|
-| Наивное суммирование | $\Theta_M(S_0) \approx \Theta_0(S_0)$ при $S_0 \gg 1$ | [Т] — фазы не работают |
-| Дзета-регуляризация | $Z_\Phi(-k) = 0$ точно для $k \geq 1$ | [Т] — структурное обнуление |
+| Naive summation | $\Theta_M(S_0) \approx \Theta_0(S_0)$ for $S_0 \gg 1$ | [T] — phases do not work |
+| Zeta-regularization | $Z_\Phi(-k) = 0$ exactly for $k \geq 1$ | [T] — structural cancellation |
 
-:::info Ключевой сдвиг
-Проблема $\Lambda$ в Gap-теории переходит из парадигмы «намоточная интерференция» в парадигму «дзета-регуляризация с Фано-характером». Разрыв между наивным суммированием и аналитическим продолжением отражает принципиальную разницу между прямым вычислением ряда и его регуляризованным значением.
+:::info Key shift
+The $\Lambda$ problem in Gap theory transitions from the paradigm of "winding interference" to the paradigm of "zeta-regularization with Fano character". The gap between naive summation and analytic continuation reflects the fundamental difference between direct series computation and its regularized value.
 :::
 
 ---
 
-## 11. Единственность билинейной формы $B^{(b)}$
+## 11. Uniqueness of the Bilinear Form $B^{(b)}$
 
-### 11.1 Стабилизатор Фано-линии
+### 11.1 Stabilizer of a Fano Line
 
-:::tip Теорема 5.1 (Структура стабилизатора) [Т]
-Стабилизатор Фано-линии $\{a,b,c\}$ в $\mathrm{Aut}(\mathrm{Fano}) \cong \mathrm{PSL}(2,7)$ содержит полную симметрическую группу $S_3$, действующую на три точки линии.
+:::tip Theorem 5.1 (Stabilizer structure) [T]
+The stabilizer of the Fano line $\{a,b,c\}$ in $\mathrm{Aut}(\mathrm{Fano}) \cong \mathrm{PSL}(2,7)$ contains the full symmetric group $S_3$ acting on the three points of the line.
 :::
 
-**Доказательство.** $|\mathrm{PSL}(2,7)| = 168$. Число Фано-линий: 7. По формуле орбит-стабилизатор: $|\mathrm{Stab}(l)| = 168/7 = 24$. Ограничение на 3 точки линии даёт сюръективный гомоморфизм $\mathrm{Stab}(l) \to S_3$ (в $\mathrm{PG}(2,q)$ коллинеации действуют 3-транзитивно на точках линии при $q \geq 2$). $\blacksquare$
+**Proof.** $|\mathrm{PSL}(2,7)| = 168$. Number of Fano lines: 7. By the orbit-stabilizer formula: $|\mathrm{Stab}(l)| = 168/7 = 24$. Restriction to the 3 points of the line gives a surjective homomorphism $\mathrm{Stab}(l) \to S_3$ (in $\mathrm{PG}(2,q)$, collineations act 3-transitively on points of a line for $q \geq 2$). $\blacksquare$
 
-Стабилизатор содержит:
-- **$\mathbb{Z}_3$** (циклические перестановки): $(a,b,c) \to (b,c,a) \to (c,a,b)$
-- **$\mathbb{Z}_2$** (транспозиция): $(a,b,c) \to (a,c,b)$ (обращение ориентации)
+The stabilizer contains:
+- **$\mathbb{Z}_3$** (cyclic permutations): $(a,b,c) \to (b,c,a) \to (c,a,b)$
+- **$\mathbb{Z}_2$** (transposition): $(a,b,c) \to (a,c,b)$ (orientation reversal)
 
-### 11.2 Теорема единственности
+### 11.2 Uniqueness Theorem
 
-:::tip Теорема 6.1 (Единственность $B^{(b)}$) [Т]
-$B^{(b)}$ — единственная (с точностью до скалярного множителя) ненулевая $G_2$-ковариантная квадратичная форма с Фано-контракцией.
+:::tip Theorem 6.1 (Uniqueness of $B^{(b)}$) [T]
+$B^{(b)}$ is the unique (up to a scalar factor) non-zero $G_2$-covariant quadratic form with Fano contraction.
 :::
 
-**Доказательство** через $S_3$-симметрию стабилизатора (не использует теорию представлений $G_2$):
+**Proof** via $S_3$-symmetry of the stabilizer (does not use representation theory of $G_2$):
 
-**(a)** $S_3$-инвариантность: 6 перестановок линии $(a,b,c)$ разбиваются на 3 **чётные** (циклические, $\varepsilon = +1$) и 3 **нечётные** (антициклические, $\varepsilon = -1$).
+**(a)** $S_3$-invariance: the 6 permutations of the line $(a,b,c)$ split into 3 **even** (cyclic, $\varepsilon = +1$) and 3 **odd** (anti-cyclic, $\varepsilon = -1$).
 
-**(b)** Тождество $n_{ij} = n_{ji}$: антициклические члены с $\varepsilon = -1$ дают $-(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab})$, т.е. **минус** циклическая сумма.
+**(b)** Identity $n_{ij} = n_{ji}$: anti-cyclic terms with $\varepsilon = -1$ give $-(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab})$, i.e. **minus** the cyclic sum.
 
-**(c)** $S_3$-инвариантность требует единых коэффициентов $\alpha$ (циклические) и $\beta$ (антициклические). Полная форма на линии:
+**(c)** $S_3$-invariance requires uniform coefficients $\alpha$ (cyclic) and $\beta$ (anti-cyclic). The full form on the line:
 
 $$
 Q_l = (\alpha - \beta)\,\varepsilon_l\,(n_{ab}n_{bc} + n_{bc}n_{ca} + n_{ca}n_{ab})
 $$
 
-**(d)** Обозначая $c = \alpha - \beta$: $Q = c \cdot B^{(b)}$. Ненулевая форма единственна с точностью до масштаба. $\blacksquare$
+**(d)** Setting $c = \alpha - \beta$: $Q = c \cdot B^{(b)}$. The non-zero form is unique up to scale. $\blacksquare$
 
-:::info Замечание
-Доказательство использует три факта: (1) $G_2$-транзитивность на линиях Фано, (2) $S_3$-инвариантность стабилизатора, (3) тождество $n_{ij} = n_{ji}$. Пробел M-1 **закрыт**.
+:::info Remark
+The proof uses three facts: (1) $G_2$-transitivity on Fano lines, (2) $S_3$-invariance of the stabilizer, (3) the identity $n_{ij} = n_{ji}$. Gap M-1 is **closed**.
 :::
 
 ---
 
-## 12. Модулярная программа
+## 12. Modular Program
 
-### 12.1 Модулярная инвариантность уровня 7
+### 12.1 Modular Invariance at Level 7
 
-:::warning Гипотеза 12.1 [Г]
-Статсумма $\Theta_M$ удовлетворяет модулярным соотношениям подгруппы $\Gamma_0(7) \subset SL(2,\mathbb{Z})$:
+:::warning Hypothesis 12.1 [H]
+The partition function $\Theta_M$ satisfies modular relations of the subgroup $\Gamma_0(7) \subset SL(2,\mathbb{Z})$:
 
-- **$T$-инвариантность** ($\tau \to \tau + 1$): требует $(S_0/\pi)|\mathbf{n}|^2 + B(\mathbf{n}) \equiv 0 \pmod{2}$
-- **$S$-инвариантность** ($\tau \to -1/\tau$): чётная самодвойственная решётка в $\mathbb{R}^{21}$ **не существует** ($d = 21 \not\equiv 0 \pmod{8}$)
+- **$T$-invariance** ($\tau \to \tau + 1$): requires $(S_0/\pi)|\mathbf{n}|^2 + B(\mathbf{n}) \equiv 0 \pmod{2}$
+- **$S$-invariance** ($\tau \to -1/\tau$): an even self-dual lattice in $\mathbb{R}^{21}$ **does not exist** ($d = 21 \not\equiv 0 \pmod{8}$)
 
-Полная модулярная инвариантность невозможна, но $\Gamma_0(7)$-структура может давать дополнительные арифметические ограничения через Гекке-операторы.
+Full modular invariance is impossible, but the $\Gamma_0(7)$-structure may give additional arithmetic constraints through Hecke operators.
 :::
 
-### 12.2 Связь с кодом Хэмминга
+### 12.2 Connection with the Hamming Code
 
-:::warning Гипотеза 12.2 [Г]
-7 Фано-линий определяют $[7,3,4]$-симплексный код $\mathcal{C}$ (дуальный к $[7,4,3]$-коду Хэмминга $\mathcal{H}$):
+:::warning Hypothesis 12.2 [H]
+The 7 Fano lines define a $[7,3,4]$-simplex code $\mathcal{C}$ (dual to the $[7,4,3]$-Hamming code $\mathcal{H}$):
 
 $$
-\mathcal{C} = \{c \in \mathbb{F}_2^7 : \mathrm{supp}(c) \text{ — объединение Фано-линий}\}, \quad \dim \mathcal{C} = 3
+\mathcal{C} = \{c \in \mathbb{F}_2^7 : \mathrm{supp}(c) \text{ is a union of Fano lines}\}, \quad \dim \mathcal{C} = 3
 $$
 
-Конструкция A Лича из $\mathcal{H}$ строит решётку $\Lambda_{\mathcal{H}}$, чья тета-функция обладает модулярными свойствами уровня 2. 21-мерная решётка разбивается Фано-структурой на $7 \times 3$ блоков, и кодовые ограничения из $\mathcal{H}$ связывают блоки.
+Leech's Construction A from $\mathcal{H}$ builds a lattice $\Lambda_{\mathcal{H}}$ whose theta function has modular properties at level 2. The 21-dimensional lattice is divided by the Fano structure into $7 \times 3$ blocks, and code constraints from $\mathcal{H}$ link the blocks.
 :::
 
-### 12.3 Ландшафт Gap-вакуумов
+### 12.3 Landscape of Gap Vacua
 
-Дискретный набор вакуумов $\sim 168$ ($|PSL(2,7)|$) — слишком мало для антропного решения (ландшафт струнных теорий: $\sim 10^{500}$). Однако с учётом выбора непрерывных модулей $(S^1)^{21}$: ландшафт становится непрерывным, и антропная селекция возможна.
+The discrete set of vacua $\sim 168$ ($|PSL(2,7)|$) is too small for the anthropic solution (string landscape: $\sim 10^{500}$). However, accounting for the choice of continuous moduli $(S^1)^{21}$: the landscape becomes continuous and anthropic selection is possible.
 
 ---
 
-## 13. Стратегия замыкания: три уровня {#стратегия-замыкания}
+## 13. Closure Strategy: Three Levels {#стратегия-замыкания}
 
-:::info Статус: [С] со структурным замыканием
-С учётом [спектральной формулы](#теорема-спектральная-лямбда) **[Т]**, [когомологического аргумента](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) ($\Lambda_{\text{global}} = 0$ [Т]) и [секторной минимизации](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т] — оценочный бюджет сводится к **$\sim 10^{-120 \pm 10}$** [С]. Структурное замыкание достигнуто; оставшийся зазор — **вычислительная** задача (числовая минимизация на $(S^1)^{21}$ с $G_2$), а не концептуальный пробел.
+:::info Status: [C] with structural closure
+Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) ($\Lambda_{\text{global}} = 0$ [T]) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] — the estimated budget reduces to **$\sim 10^{-120 \pm 10}$** [C]. Structural closure is achieved; the remaining gap is a **computational** task (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
 :::
 
-Стратегия разделяется на три уровня.
+The strategy is divided into three levels.
 
-### Уровень A: Структурное обнуление + когомологический аргумент (наиболее перспективен) {#уровень-a}
+### Level A: Structural Cancellation + Cohomological Argument (most promising) {#уровень-a}
 
-**A1. Дзета-обнуление.** $Z_\Phi(-2) = 0$ [Т] — дзета-регуляризованная вакуумная энергия намоточных секторов обращается в нуль **точно** (Теорема 9.1). Физическая интерпретация: при **правильной** регуляризации (аналитическое продолжение, а не обрезание) намоточные секторы **не вносят вклад** в Λ.
+**A1. Zeta cancellation.** $Z_\Phi(-2) = 0$ [T] — the zeta-regularized vacuum energy of winding sectors vanishes **exactly** (Theorem 9.1). Physical interpretation: with the **correct** regularization (analytic continuation, not cutoff) winding sectors **contribute nothing** to Λ.
 
-**A2. Когомологическое обнуление.** $\Lambda_{\text{global}} = 0$ [Т] — глобальная стягиваемость $X = |N(\mathcal{C})|$ к терминальному объекту $T$ даёт $H^n(X, \mathcal{F}) = 0$ для $n > 0$. Наблюдаемая $\Lambda_{\text{obs}} \neq 0$ — **локальный** эффект из $H^*_{\text{loc}}(X, T) \neq 0$. См. [полный аргумент](/docs/proofs/gap/lambda-budget#когомологическое-обнуление).
+**A2. Cohomological cancellation.** $\Lambda_{\text{global}} = 0$ [T] — global contractibility of $X = |N(\mathcal{C})|$ to the terminal object $T$ gives $H^n(X, \mathcal{F}) = 0$ for $n > 0$. The observed $\Lambda_{\text{obs}} \neq 0$ is a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$. See [full argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление).
 
-**A3. SUSY-компенсация.** $G_2$-голономия → $\mathcal{N}=1$ SUSY [Т]. Бозон-фермионная компенсация до масштаба $M_{\text{SUSY}} \sim \varepsilon^3 M_P$. Остаточная: $\Lambda_{\text{residual}} \sim \varepsilon^{12} \sim 10^{-24}$ **[Т]** ([спектральная формула](#теорема-спектральная-лямбда)). См. [SUSY-аргумент](/docs/proofs/gap/lambda-budget#susy-компенсация).
+**A3. SUSY compensation.** $G_2$-holonomy → $\mathcal{N}=1$ SUSY [T]. Boson-fermion compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ — **[H]** (G₂-adj **14** is irreducible, the 7+7 decomposition is not justified; see §4a). Scale of the residual: $\Lambda_{\text{residual}} \sim \varepsilon^{12}$ **[T]** as a structural result of the [spectral formula](#теорема-спектральная-лямбда) — independent of the [H]-compensation. See [SUSY argument](/docs/proofs/gap/lambda-budget#susy-компенсация).
 
-Если принять дзета-регуляризацию как физически корректную (как в теории Казимира):
-- Намоточный вклад: $10^0 \to 0$ (точное обнуление, формально $\infty$ порядков подавления)
-- Остаточный: через $Z'_\Phi(-2)$, масштаб $|Z'_\Phi(-2)| \sim 10^{10}$
+If zeta-regularization is accepted as physically correct (as in Casimir theory):
+- Winding contribution: $10^0 \to 0$ (exact cancellation, formally $\infty$ orders of suppression)
+- Residual: via $Z'_\Phi(-2)$, scale $|Z'_\Phi(-2)| \sim 10^{10}$
 
-Эффективный бюджет с дзета-регуляризацией:
+Effective budget with zeta-regularization:
 
 $$\Lambda_{\text{phys}} \sim Z'_\Phi(-2) \cdot \varepsilon^6 / \mu^4$$
 
-— требует полного вычисления.
+— requires a full computation.
 
-**Открыто**: Физическая интерпретация $Z'_\Phi(-2)$ — ключевая задача.
+**Open**: Physical interpretation of $Z'_\Phi(-2)$ — the key task.
 
-### Уровень B: Модулярная программа (открыто) {#уровень-b}
+### Level B: Modular Program (open) {#уровень-b}
 
-$\Gamma_0(7)$-структура тета-функции $\Theta_M$ может давать дополнительные арифметические ограничения через Гекке-операторы. Связь с кодом Хэмминга $[7,4,3]$ даёт 6 линейных ограничений на 21-мерную решётку.
+The $\Gamma_0(7)$-structure of the theta function $\Theta_M$ may give additional arithmetic constraints through Hecke operators. The connection with the Hamming code $[7,4,3]$ gives 6 linear constraints on the 21-dimensional lattice.
 
-Конкретная программа:
-1. Вычислить полное разложение $\Theta_+$ по формам Гекке уровня 7
-2. Исследовать арифметические свойства коэффициентов Фурье
-3. Связать модулярные ограничения с физическим подавлением Λ
+Concrete program:
+1. Compute the full decomposition of $\Theta_+$ into Hecke forms of level 7
+2. Investigate the arithmetic properties of Fourier coefficients
+3. Connect modular constraints to physical suppression of Λ
 
-### Уровень C: Динамический $S_0$ (открыто) {#уровень-c}
+### Level C: Dynamical $S_0$ (open) {#уровень-c}
 
-Радион/модуль $S_0$ — не фиксированный параметр, а **динамическая переменная**. Потенциал $V(S_0)$ включает Казимировскую энергию, и его минимум определяет физическое $S_0$. Связь: при динамическом $S_0$ значение $\Theta_M(S_0^*)$ на минимуме может быть экспоненциально подавлено.
+The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. The potential $V(S_0)$ includes Casimir energy, and its minimum determines the physical $S_0$. Connection: with dynamical $S_0$, the value of $\Theta_M(S_0^*)$ at the minimum may be exponentially suppressed.
 
-### Существующие ресурсы {#существующие-ресурсы-λ}
+### Existing Resources {#существующие-ресурсы-λ}
 
-1. **Спектральная формула $\Lambda_{\text{CC}}$ [Т]**: Структурная формула через моменты $D_{\text{int}}$; SUSY-компенсация [Т]
-2. **Индекс Виттена $W = 0$ [Т]**: $\Lambda_{\text{SUSY}} = 0$ точно → 12 порядков (= ε⁶, уже учтены)
-3. **Дзета-обнуление $Z_\Phi(-2) = 0$ [Т]**: Регуляризованная намоточная энергия = 0 точно
-4. **Факторизация $\Theta_M = \Theta_+^7$ [Т]**: Полная функция разделяется на 7 идентичных блоков
-5. **Глобальная минимизация $V_{\text{Gap}}$ [Т]** : Секторный вклад $\sim 10^{-40}$ [С]
-6. **Наивное суммирование**: НЕ даёт подавления при $S_0 = 20$ [Т]
+1. **Spectral formula for $\Lambda_{\text{CC}}$ [T]**: Structural formula via moments of $D_{\text{int}}$; scale $\varepsilon^{12}$ [T]; SUSY compensation $\mathrm{Tr}(1)=0$ — **[H]**
+2. **Witten index $W = 0$ [T]**: $\Lambda_{\text{SUSY}} = 0$ exactly → 12 orders (= ε⁶, already counted)
+3. **Zeta cancellation $Z_\Phi(-2) = 0$ [T]**: Regularized winding energy = 0 exactly
+4. **Factorization $\Theta_M = \Theta_+^7$ [T]**: The full function splits into 7 identical blocks
+5. **Global minimization of $V_{\text{Gap}}$ [T]**: Sector contribution $\sim 10^{-40}$ [C]
+6. **Naive summation**: Does NOT give suppression at $S_0 = 20$ [T]
 
-### Что требуется для полного решения {#требования-полного-решения}
+### What Is Required for a Complete Solution {#требования-полного-решения}
 
-1. Физическая интерпретация $Z'_\Phi(-2)$
-2. Модулярные свойства $\Theta_+$ при $S_0 = 20$
-3. Полное КТП-вычисление (бозоны + фермионы + SUSY)
+1. Physical interpretation of $Z'_\Phi(-2)$
+2. Modular properties of $\Theta_+$ at $S_0 = 20$
+3. Full QFT computation (bosons + fermions + SUSY)
 
-### Дополнительные направления {#дополнительные-направления}
+### Additional Directions {#дополнительные-направления}
 
-5. **Когерентная сумма инстантонов** — деструктивная интерференция по топологическим секторам
-6. **Решёточное Монте-Карло** — прямое вычисление статсуммы на $(S^1)^{21}$ с $G_2$-симметрией
+5. **Coherent instanton sum** — destructive interference over topological sectors
+6. **Lattice Monte Carlo** — direct computation of the partition function on $(S^1)^{21}$ with $G_2$-symmetry
 
-**Статус: [С] со структурным замыканием** ($\sim 10^{-120 \pm 10}$). Все коэффициенты определены через $\theta^*$ (T-79 [Т]) — свободных параметров нет. Оставшийся зазор — вычислительная задача (числовая минимизация на $(S^1)^{21}/G_2$).
+**Status: [C] with structural closure** ($\sim 10^{-120 \pm 10}$). All coefficients are determined by $\theta^*$ (T-79 [T]) — no free parameters. The remaining gap is a computational task (numerical minimization on $(S^1)^{21}/G_2$).
 
 ---
 
-## 13b. Совместимость с DESI (2024–2025) {#desi-совместимость}
+## 13b. Compatibility with DESI (2024–2025) {#desi-совместимость}
 
-:::warning Результаты DESI: динамическая тёмная энергия
-Результаты обзора DESI (2024–2025) указывают на возможное отклонение параметра состояния от $w = -1$ на уровне $\sim 4.2\sigma$. Если подтвердится ($> 5\sigma$), это создаёт вызов для УГМ, где $\Lambda$ определяется стационарной Gap-конфигурацией.
+:::warning DESI results: dynamical dark energy
+The DESI survey results (2024–2025) indicate a possible deviation of the equation-of-state parameter from $w = -1$ at the level of $\sim 4.2\sigma$. If confirmed ($> 5\sigma$), this poses a challenge for UHM, where $\Lambda$ is determined by the stationary Gap configuration.
 
-**Возможные механизмы динамической $\Lambda$ в УГМ:**
-1. **Медленная эволюция вакуумных Gap-фаз**: если $\theta^*$ не является строго стационарным, а испытывает космологически медленный дрейф, $\Lambda(\tau)$ становится функцией космического времени
-2. **Немарковские поправки**: ядро памяти $K(\tau)$ ([T-88](/docs/core/dynamics/gap-dynamics)) может индуцировать космологический drifting term
-3. **Переход между Gap-минимумами**: если $V_{\text{Gap}}$ имеет несколько близких минимумов, квантовое туннелирование даёт $w(z)$ зависимость от красного смещения
+**Possible mechanisms of dynamical $\Lambda$ in UHM:**
+1. **Slow evolution of vacuum Gap phases**: if $\theta^*$ is not strictly stationary but undergoes a cosmologically slow drift, $\Lambda(\tau)$ becomes a function of cosmic time
+2. **Non-Markovian corrections**: the memory kernel $K(\tau)$ ([T-88](/docs/core/dynamics/gap-dynamics)) may induce a cosmological drifting term
+3. **Transition between Gap minima**: if $V_{\text{Gap}}$ has several nearby minima, quantum tunneling gives $w(z)$ dependence on redshift
 
-**Статус:** [П] (программа). Текущая формулировка УГМ совместима с постоянной $\Lambda$ ([С] в бюджете). Динамическое расширение требует явного моделирования эволюции $\theta^*(z)$.
+**Status:** [P] (program). The current UHM formulation is compatible with constant $\Lambda$ ([C] in the budget). A dynamical extension requires explicit modeling of $\theta^*(z)$ evolution.
 :::
 
-## 14. Связь с другими разделами
+## 14. Connection with Other Sections
 
-| Тема | Страница | Связь |
+| Topic | Page | Connection |
 |------|----------|-------|
-| Полный бюджет $\Lambda$ | [Бюджет $\Lambda$: доказательства](/docs/proofs/gap/lambda-budget) | Детальные доказательства всех 6 механизмов + спектральная формула |
-| Спектральная тройка | [Спектральная тройка](/docs/core/foundations/spacetime#теорема-спектральная-тройка) | Конечная $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [Т] |
-| Квантовая гравитация | [Квантовая гравитация](/docs/physics/gravity/quantum-gravity) | Спектральное действие Чамседдина-Конна |
-| Глобальная минимизация | [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | Секторная структура [Т] |
-| Уравнения Эйнштейна | [Уравнения Эйнштейна из Gap](/docs/physics/gravity/einstein-equations) | Определение $\Lambda_{\mathrm{Gap}}$ и $G_{\mathrm{Gap}}$ |
-| Эмерджентная геометрия | [Эмерджентная геометрия](/docs/physics/gravity/emergent-geometry) | Метрика из когерентностей |
-| Тёмная материя | [Тёмная материя из Gap](/docs/physics/cosmology-phys/dark-matter) | $O$-сектор и вакуумная структура |
-| Дзета-регуляризация | [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization) | $\Theta_M$-факторизация, $Z_\Phi(-k) = 0$ |
-| $G_2$-структура | [$G_2$-структура](/docs/physics/gauge-symmetry/g2-structure) | Плоскость Фано и тождества Уорда |
-| Фаза Берри | [Фаза Берри](/docs/physics/cosmology-phys/berry-phase) | Единственность $B^{(b)}$ и ориентационная симметрия |
-| Правила отбора Фано | [Правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules) | Код Хэмминга, Фано-ограничения |
-| Структурная необходимость $\Lambda > 0$ | [Следствия из аксиом](/docs/core/foundations/consequences#теорема-лямбда-положительна) | Автопоэзис + локальная когомология [Т] |
-| Каноническое $f_0$ | [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) | UV-конечность + дзета-детерминант [Т] |
-| Топологическая защита | [Композитные системы](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, барьер $\geq 6\mu^2$ [Т] |
-| Секторная Gap-граница | [Berry-фаза](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) | $\mathrm{Gap}(O,i) \approx 1$, $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ [Т] |
-| O-секторное доминирование | [§4c](#теорема-лямбда-o-доминирование) | $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ = «стоимость наблюдения» [Т] |
+| Full $\Lambda$ budget | [$\Lambda$ budget: proofs](/docs/proofs/gap/lambda-budget) | Detailed proofs of all 6 mechanisms + spectral formula |
+| Spectral triple | [Spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) | Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ [T] |
+| Quantum gravity | [Quantum gravity](/docs/physics/gravity/quantum-gravity) | Chamseddine–Connes spectral action |
+| Global minimization | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | Sector structure [T] |
+| Einstein equations | [Einstein equations from Gap](/docs/physics/gravity/einstein-equations) | Definition of $\Lambda_{\mathrm{Gap}}$ and $G_{\mathrm{Gap}}$ |
+| Emergent geometry | [Emergent geometry](/docs/physics/gravity/emergent-geometry) | Metric from coherences |
+| Dark matter | [Dark matter from Gap](/docs/physics/cosmology-phys/dark-matter) | $O$-sector and vacuum structure |
+| Zeta-regularization | [Zeta-regularization](/docs/physics/dual-aspect/zeta-regularization) | $\Theta_M$-factorization, $Z_\Phi(-k) = 0$ |
+| $G_2$-structure | [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) | Fano plane and Ward identities |
+| Berry phase | [Berry phase](/docs/physics/cosmology-phys/berry-phase) | Uniqueness of $B^{(b)}$ and orientational symmetry |
+| Fano selection rules | [Selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) | Hamming code, Fano constraints |
+| Structural necessity of $\Lambda > 0$ | [Consequences of the axioms](/docs/core/foundations/consequences#теорема-лямбда-положительна) | Autopoiesis + local cohomology [T] |
+| Canonical $f_0$ | [Higgs sector](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) | UV-finiteness + zeta-determinant [T] |
+| Topological protection | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, barrier $\geq 6\mu^2$ [T] |
+| Sector Gap bound | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) | $\mathrm{Gap}(O,i) \approx 1$, $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ [T] |
+| O-sector dominance | [§4c](#теорема-лямбда-o-доминирование) | $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ = "cost of observation" [T] |
 
 
 ---
 
-**Связанные документы:**
-- [Gap-термодинамика](/docs/core/dynamics/gap-thermodynamics)
-- [Уравнения Эйнштейна из Gap](/docs/physics/gravity/einstein-equations)
-- [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization)
-- [Эмерджентная геометрия](/docs/physics/gravity/emergent-geometry)
+**Related documents:**
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics)
+- [Einstein equations from Gap](/docs/physics/gravity/einstein-equations)
+- [Zeta-regularization](/docs/physics/dual-aspect/zeta-regularization)
+- [Emergent geometry](/docs/physics/gravity/emergent-geometry)

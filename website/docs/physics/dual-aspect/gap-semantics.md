@@ -1,105 +1,105 @@
 ---
 sidebar_position: 1
-title: "Gap-семантика: 49 элементов"
-description: "Дуально-аспектная семантика матрицы когерентности: 49 элементов, внешнее и внутреннее, мера зазора"
+title: "Gap Semantics: 49 Elements"
+description: "Dual-aspect semantics of the coherence matrix: 49 elements, exterior and interior, gap measure"
 ---
 
-# Gap-семантика: 49 элементов
+# Gap Semantics: 49 Elements
 
-:::info Для кого эта глава
-Полная семантика 49 элементов матрицы когерентности. Читатель узнает, как наддиагональные и поддиагональные элементы несут различную семантику экстериорного и интериорного аспектов.
+:::info Who This Chapter Is For
+Complete semantics of the 49 elements of the coherence matrix. The reader will learn how the super-diagonal and sub-diagonal elements carry distinct semantics of the exterior and interior aspects.
 :::
 
 
-## Постановка проблемы
+## Problem Statement
 
-Матрица когерентности $\Gamma \in \mathbb{C}^{7 \times 7}$ — эрмитова. Стандартная интерпретация: 7 населённостей (диагональ) + 21 "пара" когерентностей (верхний треугольник), связанных с нижним через $\gamma_{ij} = \gamma_{ji}^*$. Принятый подход рассматривает $\gamma_{ij}$ и $\gamma_{ji}$ как "одну и ту же" когерентность, записанную с двух сторон.
+The coherence matrix $\Gamma \in \mathbb{C}^{7 \times 7}$ is Hermitian. The standard interpretation: 7 populations (diagonal) + 21 "pairs" of coherences (upper triangle), related to the lower via $\gamma_{ij} = \gamma_{ji}^*$. The conventional approach treats $\gamma_{ij}$ and $\gamma_{ji}$ as "the same" coherence written from two sides.
 
-:::warning Тезис
-Этот подход теряет фундаментальную информацию. В контексте УГМ, где каждая сущность обладает как внешним ($\mathrm{Map}_{\mathrm{ext}}$), так и внутренним ($\mathrm{Map}_{\mathrm{int}}$) аспектом, наддиагональные и поддиагональные элементы несут **различную семантику**:
+:::warning Thesis
+This approach loses fundamental information. In the context of UHM, where every entity has both an exterior ($\mathrm{Map}_{\mathrm{ext}}$) and an interior ($\mathrm{Map}_{\mathrm{int}}$) aspect, the super-diagonal and sub-diagonal elements carry **distinct semantics**:
 
-- **Наддиагональные $\gamma_{ij}$ ($i < j$):** внешний аспект когерентности — как связь измерений $i \leftrightarrow j$ проявляется для внешнего наблюдателя
-- **Поддиагональные $\gamma_{ji}$ ($j > i$):** интериорный аспект той же когерентности — как связь представлена со стороны самой системы (сопряжённая проекция)
+- **Super-diagonal $\gamma_{ij}$ ($i < j$):** exterior aspect of coherence — how the connection of dimensions $i \leftrightarrow j$ appears to an external observer
+- **Sub-diagonal $\gamma_{ji}$ ($j > i$):** interior aspect of the same coherence — how the connection is represented from the system's own side (conjugate projection)
 
-Эрмитово сопряжение $*: \gamma_{ij} \mapsto \gamma_{ji}$ — это **функтор дуальности**, переводящий экстериорное описание в интериорное. Матрица из 49 клеток — это полная карта бытия сущности: 7 населённостей + 21 экстериорная проекция + 21 интериорная проекция.
+Hermitian conjugation $*: \gamma_{ij} \mapsto \gamma_{ji}$ is the **duality functor**, translating the exterior description into the interior. The matrix of 49 cells is the complete map of the entity's being: 7 populations + 21 exterior projections + 21 interior projections.
 :::
 
 ---
 
-## Математическое основание
+## Mathematical Foundation
 
-### Декомпозиция когерентности
+### Coherence Decomposition
 
-Любой недиагональный элемент $\gamma_{ij}$ ($i \neq j$) — комплексное число:
+Any off-diagonal element $\gamma_{ij}$ ($i \neq j$) is a complex number:
 
 $$
-\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}} = \underbrace{\mathrm{Re}(\gamma_{ij})}_{\text{симметричная часть}} + i \underbrace{\mathrm{Im}(\gamma_{ij})}_{\text{направленная часть}}
+\gamma_{ij} = |\gamma_{ij}| \cdot e^{i\theta_{ij}} = \underbrace{\mathrm{Re}(\gamma_{ij})}_{\text{symmetric part}} + i \underbrace{\mathrm{Im}(\gamma_{ij})}_{\text{directed part}}
 $$
 
-Эрмитовость $\Gamma^\dagger = \Gamma$ означает $\gamma_{ji} = \gamma_{ij}^*$, что даёт:
+Hermiticity $\Gamma^\dagger = \Gamma$ means $\gamma_{ji} = \gamma_{ij}^*$, giving:
 
-| Компонента | Свойство | Семантика |
+| Component | Property | Semantics |
 |---|---|---|
-| $\lvert\gamma_{ij}\rvert = \lvert\gamma_{ji}\rvert$ | Модули равны | Сила связи одна и та же для внешнего и внутреннего |
-| $\mathrm{Re}(\gamma_{ij}) = \mathrm{Re}(\gamma_{ji})$ | Действительные части равны | **Общее**: то, что совпадает между внешним и внутренним |
-| $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ | Мнимые части противоположны | **Зазор (Gap)**: то, чем внешнее отличается от внутреннего |
-| $\arg(\gamma_{ij}) = -\arg(\gamma_{ji})$ | Фазы противоположны | Направление «стрелы дуальности» обратно для экстериорной и интериорной проекций |
+| $\lvert\gamma_{ij}\rvert = \lvert\gamma_{ji}\rvert$ | Moduli are equal | The coupling strength is the same for exterior and interior |
+| $\mathrm{Re}(\gamma_{ij}) = \mathrm{Re}(\gamma_{ji})$ | Real parts are equal | **Common**: what coincides between exterior and interior |
+| $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ | Imaginary parts are opposite | **Gap**: what distinguishes exterior from interior |
+| $\arg(\gamma_{ij}) = -\arg(\gamma_{ji})$ | Phases are opposite | The direction of the "duality arrow" is reversed for exterior and interior projections |
 
-### Теорема 2.1: Эрмитово сопряжение как дуально-аспектный функтор
+### Theorem 2.1: Hermitian Conjugation as Dual-Aspect Functor
 
-:::info Интерпретация / постулат [И]
-Отождествление "верхний треугольник = $\mathrm{Map}_{\mathrm{ext}}$, нижний = $\mathrm{Map}_{\mathrm{int}}$" — семантическая интерпретация математической структуры (эрмитовости), а не выводимая теорема. Эрмитовость — свойство любой матрицы плотности; двойственная интерпретация — дополнительный постулат УГМ.
+:::info Interpretation / postulate [I]
+The identification "upper triangle = $\mathrm{Map}_{\mathrm{ext}}$, lower = $\mathrm{Map}_{\mathrm{int}}$" is a semantic interpretation of the mathematical structure (Hermiticity), not a derivable theorem. Hermiticity is a property of any density matrix; the dual interpretation is an additional UHM postulate.
 :::
 
-Пусть $\Gamma \in \mathrm{Ob}(\mathcal{C})$ — матрица когерентности в $\infty$-топосе $\mathrm{Sh}_\infty(\mathcal{C})$. Тогда эрмитово сопряжение $*$ реализует функтор дуальности:
+Let $\Gamma \in \mathrm{Ob}(\mathcal{C})$ be the coherence matrix in the $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Then Hermitian conjugation $*$ realizes the duality functor:
 
 $$
 *: \mathrm{Map}_{\mathrm{ext}}(i, j) \longrightarrow \mathrm{Map}_{\mathrm{int}}(j, i)
 $$
 
-удовлетворяющий:
+satisfying:
 
-1. **Инволютивность:** $** = \mathrm{id}$ (внешнее от внутреннего = обратно внешнее)
-2. **Сохранение модуля:** $|*(\gamma_{ij})| = |\gamma_{ij}|$ (сила связи инвариантна относительно перспективы)
-3. **Обращение фазы:** $\arg(*(\gamma_{ij})) = -\arg(\gamma_{ij})$ (перспектива "изнутри" инвертирует фазовую ориентацию)
+1. **Involutivity:** $** = \mathrm{id}$ (exterior of interior = reverse exterior)
+2. **Modulus preservation:** $|*(\gamma_{ij})| = |\gamma_{ij}|$ (coupling strength is invariant under perspective)
+3. **Phase reversal:** $\arg(*(\gamma_{ij})) = -\arg(\gamma_{ij})$ (the "inside" perspective inverts the phase orientation)
 
-**Аргумент.** В УГМ каждая карта $\mathrm{Map}(\Gamma, \Omega)$ расщепляется на внешнюю и внутреннюю компоненту:
+**Argument.** In UHM every map $\mathrm{Map}(\Gamma, \Omega)$ splits into exterior and interior components:
 
 $$
 \mathrm{Map}(\Gamma, \Omega) \simeq \mathrm{Map}_{\mathrm{ext}}(\Gamma, \Omega) \oplus \mathrm{Map}_{\mathrm{int}}(\Gamma, \Omega)
 $$
 
-Для матричного элемента $\gamma_{ij} = \langle i|\Gamma|j\rangle$:
-- $\langle i|\Gamma|j\rangle$ — "как состояние $|j\rangle$ проецируется на $|i\rangle$" (внешнее: наблюдатель в базисе $|i\rangle$ измеряет $|j\rangle$)
-- $\langle j|\Gamma|i\rangle = \gamma_{ij}^*$ — "как состояние $|i\rangle$ проецируется на $|j\rangle$" (внутреннее: то же взаимодействие, но с точки зрения $|j\rangle$)
+For the matrix element $\gamma_{ij} = \langle i|\Gamma|j\rangle$:
+- $\langle i|\Gamma|j\rangle$ — "how state $|j\rangle$ projects onto $|i\rangle$" (exterior: observer in basis $|i\rangle$ measures $|j\rangle$)
+- $\langle j|\Gamma|i\rangle = \gamma_{ij}^*$ — "how state $|i\rangle$ projects onto $|j\rangle$" (interior: same interaction, but from the perspective of $|j\rangle$)
 
-Эрмитовость гарантирует, что оба аспекта описывают **одну и ту же реальность**, но с **двух перспектив**. $\blacksquare$
+Hermiticity guarantees that both aspects describe **the same reality**, but from **two perspectives**. $\blacksquare$
 
-### Мера зазора для каждой пары
+### Gap Measure for Each Pair
 
-**Определение.** Зазор (Gap) между внешним и внутренним аспектом когерентности $\gamma_{ij}$:
+**Definition.** The Gap between the exterior and interior aspects of coherence $\gamma_{ij}$:
 
 $$
 \mathrm{Gap}(i,j) := \frac{|\mathrm{Im}(\gamma_{ij})|}{|\gamma_{ij}|} = |\sin(\arg(\gamma_{ij}))| \in [0, 1]
 $$
 
-**Интерпретация:**
+**Interpretation:**
 
-- **Gap = 0** ($\gamma_{ij} \in \mathbb{R}$): полная прозрачность. Экстериорная и интериорная проекции совпадают. Нет скрытого содержания.
-- **Gap = 1** ($\gamma_{ij} \in i\mathbb{R}$): максимальная непрозрачность. Экстериорный и интериорный аспекты полностью ортогональны.
-- **Gap $\in (0, 1)$**: частичный зазор — норма для систем с ненулевой мнимой частью когерентностей.
+- **Gap = 0** ($\gamma_{ij} \in \mathbb{R}$): complete transparency. Exterior and interior projections coincide. No hidden content.
+- **Gap = 1** ($\gamma_{ij} \in i\mathbb{R}$): maximal opacity. Exterior and interior aspects are fully orthogonal.
+- **Gap $\in (0, 1)$**: partial gap — the norm for systems with non-zero imaginary part of coherences.
 
-:::note Уровне-зависимая семантика
-Структурная интерпретация Gap универсальна (применима к любому голону от атома до социальной системы). Феноменологическая интерпретация зависит от [уровня интериорности](/docs/consciousness/hierarchy/interiority-hierarchy):
-- **L0–L1** (атом, молекула, клетка): Gap описывает фазовую асимметрию без субъективного содержания
-- **L2+** (организмы с ЦНС): Gap коррелирует с рассогласованием между наблюдаемым поведением и субъективным переживанием (алекситимия, диссоциация и т.д.)
+:::note Level-dependent semantics
+The structural interpretation of Gap is universal (applicable to any holon from atom to social system). The phenomenological interpretation depends on the [level of interiority](/docs/consciousness/hierarchy/interiority-hierarchy):
+- **L0–L1** (atom, molecule, cell): Gap describes phase asymmetry without subjective content
+- **L2+** (organisms with CNS): Gap correlates with mismatch between observable behaviour and subjective experience (alexithymia, dissociation, etc.)
 :::
 
-### Квантовый ток вероятности между измерениями
+### Quantum Probability Current Between Dimensions
 
-**Теорема 2.2 (Межизмеренческий ток вероятности) [Т].**
+**Theorem 2.2 (Inter-Dimensional Probability Current) [T].**
 
-Для пары измерений $(i, j)$ ток вероятности определяется:
+For a pair of dimensions $(i, j)$ the probability current is defined by:
 
 $$
 J_{i \leftarrow j} = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ji}) = \frac{2}{\hbar} \, \mathrm{Im}(H_{ij} \cdot \gamma_{ij}^*)
@@ -109,502 +109,502 @@ $$
 J_{\mathrm{net}}(i,j) = 2|H_{ij}| \cdot |\gamma_{ij}| \cdot \sin(\alpha_{ij} - \theta_{ij})
 $$
 
-где $\alpha_{ij} = \arg(H_{ij})$, $\theta_{ij} = \arg(\gamma_{ij})$.
+where $\alpha_{ij} = \arg(H_{ij})$, $\theta_{ij} = \arg(\gamma_{ij})$.
 
-**Следствия:**
+**Corollaries:**
 
-1. **Направление тока** определяется разностью фаз $(\alpha - \theta)$:
-   - $\sin(\alpha - \theta) > 0$: ток течёт от $j$ к $i$ (измерение $i$ "получает" от $j$)
-   - $\sin(\alpha - \theta) < 0$: ток течёт от $i$ к $j$
-   - $\sin(\alpha - \theta) = 0$: равновесие, ток отсутствует
+1. **Current direction** is determined by the phase difference $(\alpha - \theta)$:
+   - $\sin(\alpha - \theta) > 0$: current flows from $j$ to $i$ (dimension $i$ "receives" from $j$)
+   - $\sin(\alpha - \theta) < 0$: current flows from $i$ to $j$
+   - $\sin(\alpha - \theta) = 0$: equilibrium, no current
 
-2. **Под воздействием унитарной эволюции** фаза вращается:
+2. **Under unitary evolution** the phase rotates:
 
 $$
 \theta_{ij}(\tau) = \theta_{ij}(0) + (\omega_i - \omega_j) \cdot \tau
 $$
 
-где $\omega_i, \omega_j$ — собственные частоты гамильтониана. Ток **осциллирует** с частотой $|\omega_i - \omega_j|$.
+where $\omega_i, \omega_j$ are the Hamiltonian eigenfrequencies. The current **oscillates** with frequency $|\omega_i - \omega_j|$.
 
-3. **Нормировка сохраняется:**
+3. **Normalisation is preserved:**
 
 $$
 \frac{d}{d\tau} \mathrm{Tr}(\Gamma) = 0 \quad \Rightarrow \quad \sum_{j \neq i} J_{\mathrm{net}}(i,j) = -\frac{d\gamma_{ii}}{d\tau}\bigg|_{\text{unitary}}
 $$
 
-Это уравнение непрерывности: что уходит из населённости $\gamma_{ii}$, распределяется по токам к другим измерениям.
+This is the continuity equation: what leaves population $\gamma_{ii}$ is distributed across currents to other dimensions.
 
 ---
 
-## Октонионная некоммутативность как источник фазовой асимметрии
+## Octonionic Non-Commutativity as the Source of Phase Asymmetry
 
-### Антикоммутатор и фаза
+### Anticommutator and Phase
 
-Октонионное умножение:
+Octonionic multiplication:
 
 $$
 e_i \cdot e_j = -\delta_{ij} + \varepsilon_{ijk} \, e_k
 $$
 
-Некоммутативность:
+Non-commutativity:
 
 $$
-e_i \cdot e_j - e_j \cdot e_i = 2\varepsilon_{ijk} \, e_k \neq 0 \quad \text{(для } i \neq j\text{)}
+e_i \cdot e_j - e_j \cdot e_i = 2\varepsilon_{ijk} \, e_k \neq 0 \quad \text{(for } i \neq j\text{)}
 $$
 
-Это означает, что **порядок множителей существенен**: произведение $e_i \cdot e_j$ и $e_j \cdot e_i$ отличаются знаком антисимметричной части. Именно поэтому $\arg(\gamma_{ij}) \neq \arg(\gamma_{ji})$ — фазы когерентностей "в прямом" и "обратном" направлении **противоположны**. Некоммутативное умножение в $\mathbb{O}$ является алгебраическим источником того, что "вид снаружи" и "вид изнутри" дают разные фазовые ориентации.
+This means that **the order of factors matters**: the product $e_i \cdot e_j$ and $e_j \cdot e_i$ differ in the sign of the antisymmetric part. This is precisely why $\arg(\gamma_{ij}) \neq \arg(\gamma_{ji})$ — the phases of coherences in the "forward" and "reverse" directions are **opposite**. Non-commutative multiplication in $\mathbb{O}$ is the algebraic source of the fact that "the view from outside" and "the view from inside" yield different phase orientations.
 
-В [матрице когерентности](/docs/core/dynamics/coherence-matrix):
+In the [coherence matrix](/docs/core/dynamics/coherence-matrix):
 
 $$
 \gamma_{ij} - \gamma_{ji} = \gamma_{ij} - \gamma_{ij}^* = 2i \cdot \mathrm{Im}(\gamma_{ij})
 $$
 
-:::tip Изоморфизм [Т]
-Антисимметричная часть октонионного умножения (структурные константы $\varepsilon_{ijk}$) отображается на антисимметричную часть матрицы (мнимые части когерентностей). Октонионная некоммутативность — это **алгебраический источник** зазора между внешним и внутренним.
+:::tip Isomorphism [T]
+The antisymmetric part of octonionic multiplication (structure constants $\varepsilon_{ijk}$) maps onto the antisymmetric part of the matrix (imaginary parts of coherences). Octonionic non-commutativity is the **algebraic source** of the gap between exterior and interior.
 
-Более того, помимо некоммутативности, октонионы обладают **неассоциативностью**: $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ для не-Фано-триплетов. Это порождает **второй, независимый источник** Gap — даже если все двухточечные когерентности действительны, трёхточечные корреляции могут содержать неустранимый фазовый сдвиг через ассоциатор $[e_i, e_j, e_k]$.
+Moreover, beyond non-commutativity, octonions possess **non-associativity**: $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ for non-Fano triplets. This produces a **second, independent source** of Gap — even if all two-point coherences are real, three-point correlations may contain an irreducible phase shift via the associator $[e_i, e_j, e_k]$.
 :::
 
-### Фано-триплеты: два типа когерентностей
+### Fano Triplets: Two Types of Coherences
 
-Плоскость Фано $\mathrm{PG}(2,2)$ определяет 7 триплетов. Внутри каждого триплета $(e_i, e_j, e_k)$ умножение **ассоциативно** (подалгебра $\cong \mathrm{Im}(\mathbb{H})$). Между триплетами — **неассоциативно**.
+The Fano plane $\mathrm{PG}(2,2)$ defines 7 triplets. Within each triplet $(e_i, e_j, e_k)$ multiplication is **associative** (subalgebra $\cong \mathrm{Im}(\mathbb{H})$). Between triplets — **non-associative**.
 
-Разбиение когерентностей определяется Фано-структурой на двух уровнях:
+The partition of coherences is determined by the Fano structure at two levels:
 
-**На уровне пар (21 = 21).** В плоскости Фано $\mathrm{PG}(2,2)$ любые две точки лежат на **ровно одной** линии. Каждая из 7 линий содержит $\binom{3}{2} = 3$ пары, итого $7 \times 3 = 21$ — все 21 пара измерений принадлежат какой-либо Фано-линии.
+**At the pair level (21 = 21).** In the Fano plane $\mathrm{PG}(2,2)$ any two points lie on **exactly one** line. Each of the 7 lines contains $\binom{3}{2} = 3$ pairs, giving $7 \times 3 = 21$ — all 21 dimension pairs belong to some Fano line.
 
-**На уровне триплетов ($\binom{7}{3} = 35 = 7 + 28$).** Из 35 возможных троек измерений ровно **7 триплетов** лежат на Фано-линиях (ассоциативные подалгебры $\cong \mathrm{Im}(\mathbb{H})$), а **28 триплетов** — не-Фано (неассоциативные, с ненулевым ассоциатором $[e_i, e_j, e_k] \neq 0$).
+**At the triplet level ($\binom{7}{3} = 35 = 7 + 28$).** Of the 35 possible triples of dimensions, exactly **7 triplets** lie on Fano lines (associative subalgebras $\cong \mathrm{Im}(\mathbb{H})$), and **28 triplets** are non-Fano (non-associative, with non-zero associator $[e_i, e_j, e_k] \neq 0$).
 
-Это разбиение триплетов определяет свойства когерентностей — для пары $(i,j)$ критерием служит ассоциативность триплета, содержащего $(i,j)$:
+This partition of triplets determines the properties of coherences — for a pair $(i,j)$ the criterion is the associativity of the triplet containing $(i,j)$:
 
-| Свойство | Когерентности внутри Фано-триплетов | Когерентности с неассоциативным контекстом |
+| Property | Coherences within Fano triplets | Coherences with non-associative context |
 |---|---|---|
-| Алгебра | Ассоциативная подалгебра $\cong \mathrm{Im}(\mathbb{H})$ | Полная неассоциативность октонионов |
-| Фазовая характеристика | **Re-доминированные** ("прозрачные") | **Im-доминированные** ("непрозрачные") |
-| Граница Gap | $\mathrm{Gap}_{\mathrm{intra}}(i,j) \leq \frac{1}{2}$ **[✗ — ретрактировано, см. ниже]** | $\mathrm{Gap}_{\mathrm{inter}}(i,j) > 0$ (ненулевой снизу) |
-| Устойчивость | Более устойчивые к декогеренции | Менее устойчивые |
-| Роль | Каркас когерентной структуры | Зоны потенциального роста и уязвимости |
+| Algebra | Associative subalgebra $\cong \mathrm{Im}(\mathbb{H})$ | Full non-associativity of octonions |
+| Phase characteristic | **Re-dominated** ("transparent") | **Im-dominated** ("opaque") |
+| Gap bound | $\mathrm{Gap}_{\mathrm{intra}}(i,j) \leq \frac{1}{2}$ **[✗ — retracted, see below]** | $\mathrm{Gap}_{\mathrm{inter}}(i,j) > 0$ (non-zero from below) |
+| Stability | More resistant to decoherence | Less resistant |
+| Role | Scaffold of coherent structure | Zones of potential growth and vulnerability |
 
-:::info Пояснение терминологии [И]
-Термины "прозрачные" (Re-доминированные) и "непрозрачные" (Im-доминированные) отражают Gap-семантику: действительная часть $\mathrm{Re}(\gamma_{ij})$ — общее между внешним и внутренним, мнимая часть $\mathrm{Im}(\gamma_{ij})$ — зазор. Когерентности в ассоциативных триплетах имеют тенденцию к малой мнимой части (низкий Gap), поэтому они "прозрачнее".
+:::info Terminology note [I]
+The terms "transparent" (Re-dominated) and "opaque" (Im-dominated) reflect Gap semantics: the real part $\mathrm{Re}(\gamma_{ij})$ is what is common between exterior and interior, the imaginary part $\mathrm{Im}(\gamma_{ij})$ is the gap. Coherences in associative triplets tend to have small imaginary parts (low Gap), hence they are "more transparent".
 :::
 
-#### Карта 7 Фано-триплетов
+#### Map of the 7 Fano Triplets
 
-Конкретное отождествление $e_i \leftrightarrow$ измерения и стандартные структурные константы октонионов определяют:
+The specific identification $e_i \leftrightarrow$ dimensions and the standard octonionic structure constants determine:
 
-| # | Триплет | Измерения | Фано-пары (когерентности) | Интерпретация |
+| # | Triplet | Dimensions | Fano pairs (coherences) | Interpretation |
 |---|---|---|---|---|
-| 1 | $(e_1, e_2, e_3)$ | A, S, D | $\gamma_{AS}$, $\gamma_{AD}$, $\gamma_{SD}$ | Материальный блок |
-| 2 | $(e_1, e_4, e_5)$ | A, L, E | $\gamma_{AL}$, $\gamma_{AE}$, $\gamma_{LE}$ | Когнитивный блок |
-| 3 | $(e_1, e_6, e_7)$ | A, O, U | $\gamma_{AO}$, $\gamma_{AU}$, $\gamma_{OU}$ | Трансцендентный блок |
-| 4 | $(e_2, e_4, e_6)$ | S, L, O | $\gamma_{SL}$, $\gamma_{SO}$, $\gamma_{LO}$ | Структурно-логический блок |
-| 5 | $(e_2, e_5, e_7)$ | S, E, U | $\gamma_{SE}$, $\gamma_{SU}$, $\gamma_{EU}$ | Соматически-интегративный блок |
-| 6 | $(e_3, e_4, e_7)$ | D, L, U | $\gamma_{DL}$, $\gamma_{DU}$, $\gamma_{LU}$ | Деятельно-целостный блок |
-| 7 | $(e_3, e_5, e_6)$ | D, E, O | $\gamma_{DE}$, $\gamma_{DO}$, $\gamma_{EO}$ | Витально-динамический блок |
+| 1 | $(e_1, e_2, e_3)$ | A, S, D | $\gamma_{AS}$, $\gamma_{AD}$, $\gamma_{SD}$ | Material block |
+| 2 | $(e_1, e_4, e_5)$ | A, L, E | $\gamma_{AL}$, $\gamma_{AE}$, $\gamma_{LE}$ | Cognitive block |
+| 3 | $(e_1, e_6, e_7)$ | A, O, U | $\gamma_{AO}$, $\gamma_{AU}$, $\gamma_{OU}$ | Transcendent block |
+| 4 | $(e_2, e_4, e_6)$ | S, L, O | $\gamma_{SL}$, $\gamma_{SO}$, $\gamma_{LO}$ | Structural-logical block |
+| 5 | $(e_2, e_5, e_7)$ | S, E, U | $\gamma_{SE}$, $\gamma_{SU}$, $\gamma_{EU}$ | Somatic-integrative block |
+| 6 | $(e_3, e_4, e_7)$ | D, L, U | $\gamma_{DL}$, $\gamma_{DU}$, $\gamma_{LU}$ | Active-holistic block |
+| 7 | $(e_3, e_5, e_6)$ | D, E, O | $\gamma_{DE}$, $\gamma_{DO}$, $\gamma_{EO}$ | Vital-dynamic block |
 
-Каждое измерение лежит ровно на 3 Фано-линиях, откуда $\sum_{p=1}^{7} \Pi_p = 3I$.
+Each dimension lies on exactly 3 Fano lines, hence $\sum_{p=1}^{7} \Pi_p = 3I$.
 
-#### Теорема о Фано-границе Gap
+#### Theorem on the Fano Gap Bound
 
-:::danger Ретрактировано: Фано-граница Gap [✗]
-Исходная формулировка ($\mathrm{Gap} \leq 1/2$ для **всех** пар) **опровергнута**: O-секторные Фано-пары (6 из 21) имеют $\mathrm{Gap}(O,i) \approx 1 > 1/2$ — прямой контрпример.
+:::danger Retracted: Fano Gap Bound [✗]
+The original formulation ($\mathrm{Gap} \leq 1/2$ for **all** pairs) has been **refuted**: O-sector Fano pairs (6 of 21) have $\mathrm{Gap}(O,i) \approx 1 > 1/2$ — a direct counterexample.
 
-**Замена**: секторная Gap-граница **[Т]** (T-80): $\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023$ для не-O пар; $\mathrm{Gap}(O,i) \approx 1$ для O-пар — [Berry-фаза](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница).
+**Replacement**: sectoral Gap bound **[T]** (T-80): $\mathrm{Gap}(i,j) \leq \bar{\varepsilon} \approx 0.023$ for non-O pairs; $\mathrm{Gap}(O,i) \approx 1$ for O-pairs — [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница).
 
 <details>
-<summary>Исходная формулировка (историческая)</summary>
+<summary>Original formulation (historical)</summary>
 
-Пусть $\gamma_{ij}$ — когерентность между измерениями $i$ и $j$ (отождествлёнными с мнимыми единицами $e_i, e_j \in \mathrm{Im}(\mathbb{O})$). Тогда:
+Let $\gamma_{ij}$ be the coherence between dimensions $i$ and $j$ (identified with imaginary units $e_i, e_j \in \mathrm{Im}(\mathbb{O})$). Then:
 
-**(a)** Если $(i, j, k)$ — Фано-триплет (ассоциативный случай):
+**(a)** If $(i, j, k)$ is a Fano triplet (associative case):
 
 $$
 \mathrm{Gap}_{\mathrm{intra}}(i,j) \leq \frac{|\varepsilon_{ijk}|}{1 + |\varepsilon_{ijk}|} = \frac{1}{2}
 $$
 
-**(b)** Если $(i, j)$ входит в триплет с ненулевым ассоциатором (неассоциативный случай):
+**(b)** If $(i, j)$ belongs to a triplet with non-zero associator (non-associative case):
 
 $$
 \mathrm{Gap}_{\mathrm{inter}}(i,j) \geq \frac{|[e_i, e_j, e_k]|}{2 + |[e_i, e_j, e_k]|} > 0
 $$
 
-где $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k)$ — ассоциатор.
+where $[e_i, e_j, e_k] = (e_i \cdot e_j) \cdot e_k - e_i \cdot (e_j \cdot e_k)$ is the associator.
 </details>
 :::
 
-:::info Корректные предсказания из секторной Gap-границы [Т] (T-80)
-**F1.** Средний Gap для не-O когерентностей (15 пар) **строго ниже** $\bar{\varepsilon} \approx 0.023$, тогда как O-секторные когерентности (6 пар) имеют $\mathrm{Gap}(O,i) \approx 1$.
+:::info Correct predictions from the sectoral Gap bound [T] (T-80)
+**F1.** The average Gap for non-O coherences (15 pairs) is **strictly below** $\bar{\varepsilon} \approx 0.023$, while O-sector coherences (6 pairs) have $\mathrm{Gap}(O,i) \approx 1$.
 
-**F2.** Связи **внутри** каждого блока (например, $A \leftrightarrow S \leftrightarrow D$) более осознаваемы (ниже Gap), чем O-секторные связи. Секторная структура заменяет прежнее деление на «внутри-Фано» vs «между триплетами».
+**F2.** Connections **within** each block (e.g., $A \leftrightarrow S \leftrightarrow D$) are more conscious (lower Gap) than O-sector connections. The sectoral structure replaces the former division into "intra-Fano" vs "between triplets".
 
-Оба предсказания фальсифицируемы при наличии достоверного Gap-профиля субъекта.
+Both predictions are falsifiable given a reliable Gap profile of the subject.
 :::
 
-#### G₂-декомпозиция Gap-оператора: 14 + 7
+#### $G_2$-Decomposition of the Gap Operator: 14 + 7
 
-Gap-оператор $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ — вещественная антисимметричная матрица, принадлежащая алгебре Ли $\mathfrak{so}(7)$ (размерность 21). Группа $G_2 = \mathrm{Aut}(\mathbb{O}) \subset SO(7)$ имеет размерность 14, что определяет разложение $21 = 14 + 7$:
+The Gap operator $\hat{\mathcal{G}} = \mathrm{Im}(\Gamma)$ is a real antisymmetric matrix, belonging to the Lie algebra $\mathfrak{so}(7)$ (dimension 21). The group $G_2 = \mathrm{Aut}(\mathbb{O}) \subset SO(7)$ has dimension 14, determining the decomposition $21 = 14 + 7$:
 
-| Компонента | Размерность | Свойство | Интерпретация |
+| Component | Dimension | Property | Interpretation |
 |---|---|---|---|
-| $\hat{\mathcal{G}}_{G_2}$ | 14 | Структуросохраняющая | "Когерентный" Gap, совместимый с алгебраической структурой $\mathbb{O}$. Не нарушает [Фано-симметрию](/docs/physics/gauge-symmetry/fano-selection-rules) |
-| $\hat{\mathcal{G}}_{\perp}$ | 7 | Структуроразрушающая | "Декогерентный" Gap, нарушающий Фано-симметрию. Ровно по одному "нарушающему" направлению на каждое измерение |
+| $\hat{\mathcal{G}}_{G_2}$ | 14 | Structure-preserving | "Coherent" Gap, compatible with the algebraic structure of $\mathbb{O}$. Does not break [Fano symmetry](/docs/physics/gauge-symmetry/fano-selection-rules) |
+| $\hat{\mathcal{G}}_{\perp}$ | 7 | Structure-breaking | "Decoherent" Gap, breaking Fano symmetry. Exactly one "breaking" direction per dimension |
 
-**Следствие.** Gap-профиль полностью определяется двумя компонентами:
+**Corollary.** The Gap profile is fully determined by two components:
 
-1. **$G_2$-Gap** ($\hat{\mathcal{G}}_{G_2}$, 14 параметров): структуросохраняющая непрозрачность, совместимая с алгебраической структурой $\mathbb{O}$.
-2. **Нарушающий Gap** ($\hat{\mathcal{G}}_{\perp}$, 7 параметров): структуроразрушающая непрозрачность, связанная с потерей алгебраической структуры.
+1. **$G_2$-Gap** ($\hat{\mathcal{G}}_{G_2}$, 14 parameters): structure-preserving opacity, compatible with the algebraic structure of $\mathbb{O}$.
+2. **Breaking Gap** ($\hat{\mathcal{G}}_{\perp}$, 7 parameters): structure-breaking opacity, associated with loss of algebraic structure.
 
-:::info Интерпретация [И]
-Здоровая система имеет Gap преимущественно в $G_2$-секторе (структуросохраняющий). Патологический Gap — в $\perp$-секторе (структуроразрушающий). Терапевтическая цель: $\hat{\mathcal{G}}_{\perp} \to 0$, оставив $\hat{\mathcal{G}}_{G_2}$ (который может быть ненулевым и полезным).
+:::info Interpretation [I]
+A healthy system has Gap predominantly in the $G_2$-sector (structure-preserving). Pathological Gap is in the $\perp$-sector (structure-breaking). Therapeutic goal: $\hat{\mathcal{G}}_{\perp} \to 0$, leaving $\hat{\mathcal{G}}_{G_2}$ (which can be non-zero and beneficial).
 
-Непрозрачность ($\mathrm{Gap} > 0$) — "энтропийный балласт": система с высоким Gap **быстрее теряет** когерентность. Поддержание Gap стоит энергии — это термодинамическая формализация "тёмной когерентности".
+Opacity ($\mathrm{Gap} > 0$) is "entropic ballast": a system with high Gap **loses coherence faster**. Maintaining Gap costs energy — this is a thermodynamic formalisation of "dark coherence".
 :::
 
-### Код Хэмминга H(7,4) и корреляционная устойчивость
+### Hamming Code H(7,4) and Correlation Stability
 
-7 [измерений](/docs/core/structure/dimensions) = 4 "информационных" (A, S, D, L) + 3 "проверочных" (E, O, U).
+7 [dimensions](/docs/core/structure/dimensions) = 4 "information" (A, S, D, L) + 3 "check" (E, O, U).
 
-Проверочная матрица:
+Parity-check matrix:
 
 $$
 H = \begin{pmatrix} 1 & 0 & 1 & 0 & 1 & 0 & 1 \\ 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 & 1 & 1 & 1 \end{pmatrix}
 $$
 
-:::info Замечание о статусе [И]
-Аналогия с кодом Хэмминга H(7,4) мотивационна, но формального отождествления когерентностной динамики с блочным кодом не установлено. В частности: (a) Хэмминговский код оперирует над $\mathrm{GF}(2)$, а когерентности — непрерывные комплексные величины; (b) "синдром" через $(\Delta\gamma_{iE}, \Delta\gamma_{iO}, \Delta\gamma_{iU})$ не определён формально; (c) граница Хэмминга применена по аналогии, а не строго. Статус всех результатов: **[И]** (интерпретация/аналогия).
+:::info Status note [I]
+The analogy with Hamming code H(7,4) is motivational, but no formal identification of coherence dynamics with a block code has been established. In particular: (a) the Hamming code operates over $\mathrm{GF}(2)$, while coherences are continuous complex quantities; (b) the "syndrome" via $(\Delta\gamma_{iE}, \Delta\gamma_{iO}, \Delta\gamma_{iU})$ is not formally defined; (c) the Hamming bound is applied by analogy, not rigorously. Status of all results: **[I]** (interpretation/analogy).
 :::
 
-#### Структура Фано и Хэмминг
+#### Fano Structure and Hamming
 
-Фано-структура определяет **когерентностный каркас** системы. 4 информационных бита (A, S, D, L) несут содержание, 3 проверочных (E, O, U) — обеспечивают целостность. Фано-триплеты задают правила, по которым проверочные измерения связаны с информационными:
-- Каждое проверочное измерение участвует в определённых триплетах с информационными
-- Нарушение когерентности в информационном канале "проявляется" как аномалия в проверочных когерентностях $\gamma_{iE}, \gamma_{iO}, \gamma_{iU}$
+The Fano structure defines the **coherence scaffold** of the system. 4 information bits (A, S, D, L) carry content, 3 check bits (E, O, U) ensure integrity. Fano triplets set the rules by which check dimensions are connected to information ones:
+- Each check dimension participates in certain triplets with information dimensions
+- A coherence violation in an information channel "manifests" as an anomaly in the check coherences $\gamma_{iE}, \gamma_{iO}, \gamma_{iU}$
 
-Корреляционная устойчивость определяется минимальным расстоянием кода $d = 3$:
-- Система способна **обнаружить** нарушение в 2 когерентностях
-- Система способна **исправить** нарушение в 1 когерентности
+Correlation stability is determined by the minimum code distance $d = 3$:
+- The system can **detect** a violation in 2 coherences
+- The system can **correct** a violation in 1 coherence
 
-**Следствие для практики:** При диагностике достаточно восстановить **одну** нарушенную когерентность — система автоматически скорректирует остальные через механизм самомоделирования $\varphi$.
+**Practical corollary:** In diagnostics it is sufficient to restore **one** violated coherence — the system will automatically correct the rest through the self-modelling mechanism $\varphi$.
 
-:::warning Предупреждение [И]
-При нарушении $\geq 2$ когерентностей система **не может** автоматически восстановиться — требуется внешняя коррекция по нескольким каналам одновременно.
+:::warning Warning [I]
+When $\geq 2$ coherences are violated the system **cannot** recover automatically — external correction is required across multiple channels simultaneously.
 :::
 
-#### Квантовая граница Хэмминга для Gap
+#### Quantum Hamming Bound for Gap
 
-:::tip Теорема (квантовая граница Хэмминга для Gap) [И]
-Число одновременно "прозрачных" каналов ($\mathrm{Gap} \approx 0$) ограничено:
+:::tip Theorem (quantum Hamming bound for Gap) [I]
+The number of simultaneously "transparent" channels ($\mathrm{Gap} \approx 0$) is bounded:
 
 $$
 |\{(i,j): \mathrm{Gap}(i,j) < \varepsilon\}| \leq 21 - 3 = 18
 $$
 
-Минимум **3 когерентности** из 21 **должны** иметь ненулевой Gap. Это соответствует 3 проверочным битам H(7,4).
+At least **3 coherences** out of 21 **must** have non-zero Gap. This corresponds to the 3 check bits of H(7,4).
 :::
 
-**Интерпретация.** Минимум 3 Gap'а из 21 принципиально ненулевые — система **должна** поддерживать ненулевой зазор между внешним и внутренним хотя бы в 3 каналах. Это "цена" помехоустойчивости: **полная прозрачность несовместима с устойчивостью к ошибкам**.
+**Interpretation.** At least 3 Gaps out of 21 are fundamentally non-zero — the system **must** maintain a non-zero gap between exterior and interior in at least 3 channels. This is the "price" of error resistance: **complete transparency is incompatible with error correction**.
 
 ---
 
-## Полная 49-клеточная карта
+## The Complete 49-Cell Map {#полная-49-клеточная-карта}
 
-### Диагональ: 7 населённостей
+### Diagonal: 7 Populations
 
-Общие для внешнего и внутреннего ($\gamma_{ii} \in \mathbb{R}$, Gap = 0):
+Common to exterior and interior ($\gamma_{ii} \in \mathbb{R}$, Gap = 0):
 
-| Элемент | Измерение | Экстериорное проявление | Интериорный аспект | L2+ феноменология |
+| Element | Dimension | Exterior manifestation | Interior aspect | L2+ phenomenology |
 |---|---|---|---|---|
-| $\gamma_{AA}$ | [Артикуляция](/docs/core/structure/dimension-a) | Коммуникативная активность | Степень дифференцированности внутреннего пространства | Ясность различения |
-| $\gamma_{SS}$ | [Структура](/docs/core/structure/dimension-s) | Физическая устойчивость | Структурная связность компонентов | Ощущение стабильности |
-| $\gamma_{DD}$ | [Динамика](/docs/core/structure/dimension-d) | Наблюдаемая активность | Интенсивность внутренних процессов | Ощущение энергии |
-| $\gamma_{LL}$ | [Логика](/docs/core/structure/dimension-l) | Когнитивная производительность | Степень согласованности внутренних правил | Ощущение ясности мысли |
-| $\gamma_{EE}$ | [Интериорность](/docs/core/structure/dimension-e) | Эмоциональная реактивность | Интегрированность интериорных состояний | Глубина переживания |
-| $\gamma_{OO}$ | [Основание](/docs/core/structure/dimension-o) | Жизненная сила | Связь с источником ресурсов | Ощущение укоренённости |
-| $\gamma_{UU}$ | [Единство](/docs/core/structure/dimension-u) | Поведенческая интегрированность | Степень глобальной связности | Ощущение целостности |
+| $\gamma_{AA}$ | [Articulation](/docs/core/structure/dimension-a) | Communicative activity | Degree of differentiation of inner space | Clarity of distinction |
+| $\gamma_{SS}$ | [Structure](/docs/core/structure/dimension-s) | Physical stability | Structural connectedness of components | Sense of stability |
+| $\gamma_{DD}$ | [Dynamics](/docs/core/structure/dimension-d) | Observable activity | Intensity of internal processes | Sense of energy |
+| $\gamma_{LL}$ | [Logic](/docs/core/structure/dimension-l) | Cognitive productivity | Degree of consistency of internal rules | Sense of mental clarity |
+| $\gamma_{EE}$ | [Interiority](/docs/core/structure/dimension-e) | Emotional reactivity | Integration of interior states | Depth of experience |
+| $\gamma_{OO}$ | [Foundation](/docs/core/structure/dimension-o) | Vital force | Connection to the resource source | Sense of groundedness |
+| $\gamma_{UU}$ | [Unity](/docs/core/structure/dimension-u) | Behavioural integration | Degree of global connectedness | Sense of wholeness |
 
 :::note
-Для диагонали Gap = 0 тождественно, поскольку $\gamma_{ii} \in \mathbb{R}$. Населённость — то единственное, что полностью совпадает между экстериорной и интериорной проекциями. Именно поэтому «уровень энергии» — наиболее объективная (перспективо-инвариантная) мера. Столбец «L2+ феноменология» применим только к системам уровня L2 и выше (организмы с ЦНС).
+For the diagonal Gap = 0 identically, since $\gamma_{ii} \in \mathbb{R}$. Population is the one thing that fully coincides between the exterior and interior projections. This is why "energy level" is the most objective (perspective-invariant) measure. The "L2+ phenomenology" column applies only to systems of level L2 and above (organisms with CNS).
 :::
 
-### Верхний треугольник: 21 внешняя проекция ($\mathrm{Map}_{\mathrm{ext}}$)
+### Upper Triangle: 21 Exterior Projections ($\mathrm{Map}_{\mathrm{ext}}$)
 
-Как связь между измерениями **выглядит** для наблюдателя. Наблюдаемое поведение, измеримые корреляции, объективные показатели.
+How the connection between dimensions **appears** to an observer. Observable behaviour, measurable correlations, objective indicators.
 
-:::note Уровне-зависимая интерпретация
-Описания в столбце «Внешнее проявление» сформулированы в терминах, универсальных для всех голонов (от атома до социальной системы). Имена когерентностей (Аффекция, Эвиденция и т.д.) отражают категориальную семантику морфизма Hom(i,j) и используются как кросс-доменные метки.
+:::note Level-dependent interpretation
+Descriptions in the "Exterior manifestation" column are formulated in terms universal for all holons (from atom to social system). The names of coherences (Affection, Evidence, etc.) reflect the categorical semantics of the morphism Hom(i,j) and are used as cross-domain labels.
 :::
 
-| $\gamma_{ij}$ | Пара | Имя | Внешнее проявление |
+| $\gamma_{ij}$ | Pair | Name | Exterior manifestation |
 |---|---|---|---|
-| $\gamma_{AS}$ | A$\leftrightarrow$S | Морфогенез | Формообразование: различения кристаллизуются в наблюдаемые структуры |
-| $\gamma_{AD}$ | A$\leftrightarrow$D | Актуализация | Инициация: различение актуализируется в наблюдаемый процесс |
-| $\gamma_{AL}$ | A$\leftrightarrow$L | Предикация | Классификация: различение становится логическим предикатом |
-| $\gamma_{AE}$ | A$\leftrightarrow$E | Апперцепция | Осознание: различение входит в интериорность |
-| $\gamma_{AO}$ | A$\leftrightarrow$O | Спонтанность | Появление новых различений из основания без внешней причины |
-| $\gamma_{AU}$ | A$\leftrightarrow$U | Дифференциация | Анализ: расчленение целого на наблюдаемые части |
-| $\gamma_{SD}$ | S$\leftrightarrow$D | Персистенция | Гомеостаз: наблюдаемое сохранение формы через процесс |
-| $\gamma_{SL}$ | S$\leftrightarrow$L | Номос | Закономерность: наблюдаемая логическая необходимость структуры |
-| $\gamma_{SE}$ | S$\leftrightarrow$E | Репрезентация | Психофизика: измеримая представленность структуры в интериорности |
-| $\gamma_{SO}$ | S$\leftrightarrow$O | Архетип | Инвариант: устойчивые паттерны, сохраняющиеся во времени |
-| $\gamma_{SU}$ | S$\leftrightarrow$U | Симметрия | Гармония: наблюдаемая пропорциональность частей в целом |
-| $\gamma_{DL}$ | D$\leftrightarrow$L | Регуляция | Управление: наблюдаемое следование процесса логическим правилам |
-| $\gamma_{DE}$ | D$\leftrightarrow$E | Аффекция | Экспрессия: наблюдаемое действие процесса на интериорность |
-| $\gamma_{DO}$ | D$\leftrightarrow$O | Генезис | Творчество: наблюдаемое порождение нового из глубины |
-| $\gamma_{DU}$ | D$\leftrightarrow$U | Телеология | Наблюдаемая направленность действия к цели |
-| $\gamma_{LE}$ | L$\leftrightarrow$E | Эвиденция | Инсайт: наблюдаемая логическая связность в интериорности |
-| $\gamma_{LO}$ | L$\leftrightarrow$O | Фундирование | Аксиома: наблюдаемая укоренённость логики в основании |
-| $\gamma_{LU}$ | L$\leftrightarrow$U | Консистентность | Непротиворечивость: наблюдаемая логическая связность целого |
-| $\gamma_{EO}$ | E$\leftrightarrow$O | Имманентность | Наблюдаемое присутствие основания внутри интериорности |
-| $\gamma_{EU}$ | E$\leftrightarrow$U | Синтез | Наблюдаемая интеграция интериорного содержания в целое |
-| $\gamma_{OU}$ | O$\leftrightarrow$U | Полнота | Завершённость: наблюдаемая самодостаточность системы |
+| $\gamma_{AS}$ | A$\leftrightarrow$S | Morphogenesis | Form-giving: distinctions crystallise into observable structures |
+| $\gamma_{AD}$ | A$\leftrightarrow$D | Actualisation | Initiation: a distinction actualises into an observable process |
+| $\gamma_{AL}$ | A$\leftrightarrow$L | Predication | Classification: a distinction becomes a logical predicate |
+| $\gamma_{AE}$ | A$\leftrightarrow$E | Apperception | Awareness: a distinction enters interiority |
+| $\gamma_{AO}$ | A$\leftrightarrow$O | Spontaneity | Emergence of new distinctions from the foundation without external cause |
+| $\gamma_{AU}$ | A$\leftrightarrow$U | Differentiation | Analysis: decomposition of the whole into observable parts |
+| $\gamma_{SD}$ | S$\leftrightarrow$D | Persistence | Homeostasis: observable preservation of form through process |
+| $\gamma_{SL}$ | S$\leftrightarrow$L | Nomos | Lawfulness: observable logical necessity of structure |
+| $\gamma_{SE}$ | S$\leftrightarrow$E | Representation | Psychophysics: measurable representation of structure in interiority |
+| $\gamma_{SO}$ | S$\leftrightarrow$O | Archetype | Invariant: stable patterns preserved over time |
+| $\gamma_{SU}$ | S$\leftrightarrow$U | Symmetry | Harmony: observable proportionality of parts within the whole |
+| $\gamma_{DL}$ | D$\leftrightarrow$L | Regulation | Control: observable adherence of process to logical rules |
+| $\gamma_{DE}$ | D$\leftrightarrow$E | Affection | Expression: observable action of process on interiority |
+| $\gamma_{DO}$ | D$\leftrightarrow$O | Genesis | Creativity: observable generation of novelty from depth |
+| $\gamma_{DU}$ | D$\leftrightarrow$U | Teleology | Observable directedness of action toward a goal |
+| $\gamma_{LE}$ | L$\leftrightarrow$E | Evidence | Insight: observable logical coherence within interiority |
+| $\gamma_{LO}$ | L$\leftrightarrow$O | Grounding | Axiom: observable rootedness of logic in the foundation |
+| $\gamma_{LU}$ | L$\leftrightarrow$U | Consistency | Non-contradiction: observable logical coherence of the whole |
+| $\gamma_{EO}$ | E$\leftrightarrow$O | Immanence | Observable presence of the foundation within interiority |
+| $\gamma_{EU}$ | E$\leftrightarrow$U | Synthesis | Observable integration of interior content into the whole |
+| $\gamma_{OU}$ | O$\leftrightarrow$U | Wholeness | Completeness: observable self-sufficiency of the system |
 
-### Нижний треугольник: 21 интериорная проекция ($\mathrm{Map}_{\mathrm{int}}$)
+### Lower Triangle: 21 Interior Projections ($\mathrm{Map}_{\mathrm{int}}$)
 
-Сопряжённая проекция той же когерентности — как связь представлена со стороны самой системы. Математически: $\gamma_{ji} = \gamma_{ij}^*$ (эрмитово сопряжение инвертирует фазу, сохраняя модуль).
+The conjugate projection of the same coherence — how the connection is represented from the system's own side. Mathematically: $\gamma_{ji} = \gamma_{ij}^*$ (Hermitian conjugation inverts the phase, preserving the modulus).
 
-:::note Уровне-зависимая интерпретация
-Столбец «Интериорный аспект» описывает структурное значение сопряжённой проекции, универсальное для всех голонов (от атома до социальной системы). Столбец «L2+ феноменология» — субъективная интерпретация, применимая только к системам [уровня L2+](/docs/consciousness/hierarchy/interiority-hierarchy) (организмы с ЦНС).
+:::note Level-dependent interpretation
+The "Interior aspect" column describes the structural meaning of the conjugate projection, universal for all holons (from atom to social system). The "L2+ phenomenology" column is a subjective interpretation, applicable only to systems of [level L2+](/docs/consciousness/hierarchy/interiority-hierarchy) (organisms with CNS).
 :::
 
-| $\gamma_{ji}$ | Пара | Имя | Интериорный аспект | L2+ феноменология |
+| $\gamma_{ji}$ | Pair | Name | Interior aspect | L2+ phenomenology |
 |---|---|---|---|---|
-| $\gamma_{SA}$ | S$\to$A | Фильтр | Структурные ограничения на пространство различений | «Мои привычки ограничивают различения» |
-| $\gamma_{DA}$ | D$\to$A | Поток | Динамические процессы раскрывают новые различения | «Процесс сам раскрывает новое» |
-| $\gamma_{LA}$ | L$\to$A | Рамка | Логические правила определяют доступные различения | «Логика определяет, что я способен различить» |
-| $\gamma_{EA}$ | E$\to$A | Экспрессия | Интериорные состояния стремятся к выражению | «Переживание требует выражения» |
-| $\gamma_{OA}$ | O$\to$A | Призвание | Базовые паттерны модулируют артикуляцию | «Нечто глубинное толкает к различению» |
-| $\gamma_{UA}$ | U$\to$A | Интуиция целого | Глобальная связность направляет артикуляцию | «Целое подсказывает, куда направить внимание» |
-| $\gamma_{DS}$ | D$\to$S | Формирование | Динамический процесс порождает новую структуру | «Процесс создаёт новую структуру» |
-| $\gamma_{LS}$ | L$\to$S | Конструкция | Логические правила определяют форму организации | «Правила определяют форму бытия» |
-| $\gamma_{ES}$ | E$\to$S | Психосоматика | Интериорные состояния влияют на структуру | «Переживания влияют на тело» |
-| $\gamma_{OS}$ | O$\to$S | Манифестация | Базовые паттерны определяют морфологию | «Нечто глубинное определяет форму» |
-| $\gamma_{US}$ | U$\to$S | Воплощение | Глобальная связность выражается через конкретную форму | «Целостность воплощается в форме» |
-| $\gamma_{LD}$ | L$\to$D | Управление | Логические правила направляют динамику | «Логика управляет действиями» |
-| $\gamma_{ED}$ | E$\to$D | Мотивация | Интериорные состояния активируют динамику | «Переживание движет к действию» |
-| $\gamma_{OD}$ | O$\to$D | Импульс | Базовые паттерны инициируют динамические процессы | «Нечто глубинное порождает движение» |
-| $\gamma_{UD}$ | U$\to$D | Миссия | Глобальная связность направляет действие | «Целое направляет действия» |
-| $\gamma_{EL}$ | E$\to$L | Инсайт | Интериорные состояния кристаллизуются в правила | «Переживание кристаллизуется в понимание» |
-| $\gamma_{OL}$ | O$\to$L | Очевидность | Базовые паттерны предшествуют логическому выводу | «Некоторые истины даны до рассуждения» |
-| $\gamma_{UL}$ | U$\to$L | Гармония | Глобальная связность задаёт внутреннюю логику | «Целое задаёт логику» |
-| $\gamma_{OE}$ | O$\to$E | Откровение | Базовые паттерны порождают интериорные состояния | «Из глубины приходит незапланированное переживание» |
-| $\gamma_{UE}$ | U$\to$E | Интеграция опыта | Глобальная связность модулирует интериорные состояния | «Целостность переживается как особое качество» |
-| $\gamma_{UO}$ | U$\to$O | Возвращение | Глобальная связность и источник замыкаются | «Целое и источник — одно» |
+| $\gamma_{SA}$ | S$\to$A | Filter | Structural constraints on the space of distinctions | "My habits constrain my distinctions" |
+| $\gamma_{DA}$ | D$\to$A | Flow | Dynamic processes reveal new distinctions | "The process itself discloses the new" |
+| $\gamma_{LA}$ | L$\to$A | Frame | Logical rules determine available distinctions | "Logic determines what I am able to distinguish" |
+| $\gamma_{EA}$ | E$\to$A | Expression | Interior states seek expression | "Experience demands expression" |
+| $\gamma_{OA}$ | O$\to$A | Calling | Basic patterns modulate articulation | "Something deep drives toward distinction" |
+| $\gamma_{UA}$ | U$\to$A | Intuition of the whole | Global connectedness directs articulation | "The whole hints where to direct attention" |
+| $\gamma_{DS}$ | D$\to$S | Formation | Dynamic process generates new structure | "The process creates new structure" |
+| $\gamma_{LS}$ | L$\to$S | Construction | Logical rules determine the form of organisation | "Rules determine the form of being" |
+| $\gamma_{ES}$ | E$\to$S | Psychosomatics | Interior states influence structure | "Experiences affect the body" |
+| $\gamma_{OS}$ | O$\to$S | Manifestation | Basic patterns determine morphology | "Something deep determines form" |
+| $\gamma_{US}$ | U$\to$S | Embodiment | Global connectedness expresses through concrete form | "Wholeness is embodied in form" |
+| $\gamma_{LD}$ | L$\to$D | Governance | Logical rules direct dynamics | "Logic governs actions" |
+| $\gamma_{ED}$ | E$\to$D | Motivation | Interior states activate dynamics | "Experience drives to action" |
+| $\gamma_{OD}$ | O$\to$D | Impulse | Basic patterns initiate dynamic processes | "Something deep generates movement" |
+| $\gamma_{UD}$ | U$\to$D | Mission | Global connectedness directs action | "The whole directs actions" |
+| $\gamma_{EL}$ | E$\to$L | Insight | Interior states crystallise into rules | "Experience crystallises into understanding" |
+| $\gamma_{OL}$ | O$\to$L | Self-evidence | Basic patterns precede logical inference | "Some truths are given before reasoning" |
+| $\gamma_{UL}$ | U$\to$L | Harmony | Global connectedness sets internal logic | "The whole sets the logic" |
+| $\gamma_{OE}$ | O$\to$E | Revelation | Basic patterns generate interior states | "From depth comes an unplanned experience" |
+| $\gamma_{UE}$ | U$\to$E | Integration of experience | Global connectedness modulates interior states | "Wholeness is experienced as a special quality" |
+| $\gamma_{UO}$ | U$\to$O | Return | Global connectedness and source close the loop | "Whole and source are one" |
 
-### Теорема 4.1: Принцип сопряжённой пары
+### Theorem 4.1: Principle of the Conjugate Pair
 
-:::info Интерпретация [И]
-Принцип сопряжённой пары — семантическое утверждение (интерпретация модуля как "общего", фазы как "перспективы"), не математическая теорема. Математическое содержание — тривиальное следствие полярного разложения комплексного числа.
+:::info Interpretation [I]
+The principle of the conjugate pair is a semantic statement (interpretation of the modulus as "common", the phase as "perspective"), not a mathematical theorem. The mathematical content is a trivial consequence of the polar decomposition of a complex number.
 :::
 
-Для каждой когерентности $\gamma_{ij}$:
+For each coherence $\gamma_{ij}$:
 
 $$
-\underbrace{\gamma_{ij}}_{\text{внешнее}} = \underbrace{|\gamma_{ij}|}_{\text{общее}} \cdot \underbrace{e^{i\theta}}_{\text{перспектива}}, \qquad \underbrace{\gamma_{ji}}_{\text{внутреннее}} = \underbrace{|\gamma_{ij}|}_{\text{общее}} \cdot \underbrace{e^{-i\theta}}_{\text{обратная перспектива}}
+\underbrace{\gamma_{ij}}_{\text{exterior}} = \underbrace{|\gamma_{ij}|}_{\text{common}} \cdot \underbrace{e^{i\theta}}_{\text{perspective}}, \qquad \underbrace{\gamma_{ji}}_{\text{interior}} = \underbrace{|\gamma_{ij}|}_{\text{common}} \cdot \underbrace{e^{-i\theta}}_{\text{reverse perspective}}
 $$
 
-1. **Модуль** $|\gamma_{ij}|$ — **инвариант** дуальности: сила связи не зависит от перспективы
-2. **Фаза** $\theta$ — **индекс перспективы**: "угол зрения" на одну и ту же связь
-3. **$\mathrm{Gap}(i,j) = |\sin\theta|$** — мера несовпадения внешнего и внутреннего
+1. **Modulus** $|\gamma_{ij}|$ — **invariant** of duality: coupling strength does not depend on perspective
+2. **Phase** $\theta$ — **perspective index**: the "viewing angle" on the same connection
+3. **$\mathrm{Gap}(i,j) = |\sin\theta|$** — measure of mismatch between exterior and interior
 
-**Следствие:** Полностью «прозрачная» система (все $\gamma_{ij} \in \mathbb{R}$) — теоретический предел, в котором экстериорный и интериорный аспекты совпадают. Это состояние эквивалентно **Уровню L4** (унитарное сознание), при котором $\varphi(\Gamma) = \Gamma$ и все фазы обнуляются.
+**Corollary:** A fully "transparent" system (all $\gamma_{ij} \in \mathbb{R}$) is a theoretical limit in which exterior and interior aspects coincide. This state is equivalent to **Level L4** (unitary consciousness), where $\varphi(\Gamma) = \Gamma$ and all phases vanish.
 
 ---
 
-## Фазовая диагностика
+## Phase Diagnostics
 
-### Карта прозрачности
+### Transparency Map
 
-Для конкретной системы $\Gamma$ вычисляем $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ для всех 21 пары. Результат — **карта прозрачности**:
+For a specific system $\Gamma$ we compute $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ for all 21 pairs. The result is a **transparency map**:
 
-- **Зелёные зоны** (Gap $\approx 0$): Экстериорный и интериорный аспекты согласованы.
-- **Жёлтые зоны** (Gap $\in (0.3, 0.7)$): Частичное рассогласование. Зоны потенциального роста.
-- **Красные зоны** (Gap $\approx 1$): Полная диссоциация экстериорного и интериорного.
+- **Green zones** (Gap $\approx 0$): Exterior and interior aspects are aligned.
+- **Yellow zones** (Gap $\in (0.3, 0.7)$): Partial misalignment. Zones of potential growth.
+- **Red zones** (Gap $\approx 1$): Complete dissociation of exterior and interior.
 
-### Диагностические паттерны
+### Diagnostic Patterns
 
-| Паттерн | Gap-профиль | Интерпретация |
+| Pattern | Gap profile | Interpretation |
 |---|---|---|
-| **Алекситимия** | $\mathrm{Gap}(S,E) \approx 1$ | Тело и переживание разорваны: пациент не чувствует тело |
-| **Невроз расщепления** | $\mathrm{Gap}(L,E) \approx 1$ | Логика и переживание разорваны: всё понимает, но не чувствует |
-| **Импульсивность** | $\mathrm{Gap}(D,L) \approx 1$ | Действие и логика разорваны: действует без размышления |
-| **Экзистенциальный кризис** | $\mathrm{Gap}(O,U) \approx 1$ | Источник и целое разорваны: потеря смысла |
-| **Аутентичность** | $\mathrm{Gap}(A,O) \approx 0$ | Различение и основание согласованы: слова = суть |
-| **Мудрость** | $\mathrm{Gap}(L,O) \approx 0$ | Логика и основание согласованы: понимание укоренено |
+| **Alexithymia** | $\mathrm{Gap}(S,E) \approx 1$ | Body and experience are severed: patient does not feel the body |
+| **Splitting neurosis** | $\mathrm{Gap}(L,E) \approx 1$ | Logic and experience are severed: understands everything but feels nothing |
+| **Impulsivity** | $\mathrm{Gap}(D,L) \approx 1$ | Action and logic are severed: acts without reflection |
+| **Existential crisis** | $\mathrm{Gap}(O,U) \approx 1$ | Source and whole are severed: loss of meaning |
+| **Authenticity** | $\mathrm{Gap}(A,O) \approx 0$ | Distinction and foundation are aligned: words = essence |
+| **Wisdom** | $\mathrm{Gap}(L,O) \approx 0$ | Logic and foundation are aligned: understanding is grounded |
 
-### Пример развёрнутой диагностики
+### Extended Diagnostic Example
 
-> **Субъект**: высокая $|\gamma_{LE}|$ (сильная связь логика-опыт), но $\arg(\gamma_{LE}) \approx \pi/2$ (Gap $\approx 1$).
+> **Subject**: high $|\gamma_{LE}|$ (strong logic–experience connection), but $\arg(\gamma_{LE}) \approx \pi/2$ (Gap $\approx 1$).
 >
-> **Внешнее** ($\gamma_{LE}$): Наблюдатель видит моменты инсайта — человек "понимает".
-> **Внутреннее** ($\gamma_{EL}$): Субъект ощущает, что переживания не становятся пониманием. Знание есть, ощущения есть, но между ними стена.
+> **Exterior** ($\gamma_{LE}$): Observer sees moments of insight — the person "understands".
+> **Interior** ($\gamma_{EL}$): Subject feels that experiences do not become understanding. Knowledge is there, feelings are there, but there is a wall between them.
 >
-> **Диагноз:** Интеллектуализация аффекта. Максимальный зазор при максимальной силе связи — энергия тратится на поддержание разрыва.
+> **Diagnosis:** Intellectualisation of affect. Maximum gap at maximum coupling strength — energy is spent maintaining the rupture.
 >
-> **Коррекция:** Практики, объединяющие логику и переживание (телесно-ориентированная терапия, практика коан в дзен). Цель: $\arg(\gamma_{LE}) \to 0$, сохраняя $|\gamma_{LE}|$ высоким.
+> **Correction:** Practices that unite logic and experience (body-oriented therapy, koan practice in Zen). Goal: $\arg(\gamma_{LE}) \to 0$, keeping $|\gamma_{LE}|$ high.
 
 ---
 
-## Фазовая прогностика
+## Phase Prognostics
 
-### Эволюция фазы и осцилляция Gap
+### Phase Evolution and Gap Oscillation
 
-Под действием унитарной эволюции фаза когерентности вращается:
+Under unitary evolution the phase of a coherence rotates:
 
 $$
 \theta_{ij}(\tau) = \theta_{ij}(0) + (\omega_i - \omega_j) \cdot \tau
 $$
 
-Это означает, что **Gap осциллирует** с частотой $|\omega_i - \omega_j|$:
+This means that **Gap oscillates** with frequency $|\omega_i - \omega_j|$:
 
 $$
 \mathrm{Gap}(i,j;\tau) = |\sin(\theta_{ij}(0) + \Delta\omega_{ij} \cdot \tau)|
 $$
 
-**Практические следствия:**
+**Practical corollaries:**
 
-1. **Окна прозрачности:** Периоды, когда $\mathrm{Gap}(i,j) \approx 0$. В эти моменты внешнее и внутреннее согласованы — оптимальное время для осознания, терапии, принятия решений.
+1. **Transparency windows:** Periods when $\mathrm{Gap}(i,j) \approx 0$. At these moments exterior and interior are aligned — optimal time for awareness, therapy, decision-making.
 
-2. **Зоны турбулентности:** Периоды, когда $\mathrm{Gap}(i,j) \approx 1$. Максимальное рассогласование — риск дезориентации, но также потенциал для глубинной трансформации (кризис = возможность).
+2. **Turbulence zones:** Periods when $\mathrm{Gap}(i,j) \approx 1$. Maximal misalignment — risk of disorientation, but also potential for deep transformation (crisis = opportunity).
 
-3. **Фазовые резонансы:** Когда несколько пар одновременно проходят через Gap $\approx 0$ — момент "тотального просветления" (все каналы прозрачны).
+3. **Phase resonances:** When several pairs simultaneously pass through Gap $\approx 0$ — a moment of "total clarity" (all channels transparent).
 
-### Диссипация и регенерация
+### Dissipation and Regeneration
 
-Помимо унитарного вращения:
+Beyond unitary rotation:
 
-- **Диссипация** $\mathcal{D}[\Gamma]$: уменьшает $|\gamma_{ij}|$ (ослабляет связи), сдвигает $\theta \to 0$ (стирает различие перспектив, но ценой потери когерентности)
-- **Регенерация** $\mathcal{R}[\Gamma, E]$: восстанавливает $|\gamma_{ij}|$ к целевому значению $\varphi(\Gamma)$, устанавливает $\theta \to \theta_{\mathrm{target}}$
+- **Dissipation** $\mathcal{D}[\Gamma]$: decreases $|\gamma_{ij}|$ (weakens connections), shifts $\theta \to 0$ (erases the distinction of perspectives, but at the cost of losing coherence)
+- **Regeneration** $\mathcal{R}[\Gamma, E]$: restores $|\gamma_{ij}|$ to the target value $\varphi(\Gamma)$, sets $\theta \to \theta_{\mathrm{target}}$
 
-:::tip Ключевое отличие [Т]
-Эволюция **НЕ** циклична. Регенерация через $\varphi(\Gamma)$ создаёт **спиральную** динамику: каждый цикл фазового вращения изменяет систему через самомоделирование. Система может "выучить" более прозрачные состояния.
+:::tip Key distinction [T]
+Evolution is **NOT** cyclic. Regeneration through $\varphi(\Gamma)$ creates **spiral** dynamics: each cycle of phase rotation changes the system through self-modelling. The system can "learn" more transparent states.
 :::
 
-### Предсказание фазовых переходов
+### Predicting Phase Transitions
 
-**Бифуркация** происходит, когда:
+**Bifurcation** occurs when:
 
 $$
 \lambda_{\max}\left(\frac{\partial^2 P}{\partial \Gamma^2}\right) = 0
 $$
 
-В этот момент малое возмущение одной когерентности может изменить всю фазовую карту. Это аналог "критического транзита" в астрологии, но с точным вычислением момента и вектора бифуркации.
+At this moment a small perturbation of one coherence can change the entire phase map. This is the analogue of the "critical transit" in astrology, but with exact computation of the moment and bifurcation vector.
 
 ---
 
-## Терапевтический протокол коррекции Gap
+## Therapeutic Protocol for Gap Correction
 
-### Диагностический протокол
+### Diagnostic Protocol
 
-**Ввод:**
-1. Внешние измерения (наблюдатель): опросники, биометрия, поведенческие маркеры — оценка $\gamma_{ij}$ (верхний треугольник)
-2. Внутренние отчёты (субъект): интроспекция, шкалы переживания — оценка $\gamma_{ji}$ (нижний треугольник)
-3. Вычисление $\mathrm{Gap}(i,j)$ для всех 21 пары
+**Input:**
+1. External measurements (observer): questionnaires, biometrics, behavioural markers — estimation of $\gamma_{ij}$ (upper triangle)
+2. Internal reports (subject): introspection, experience scales — estimation of $\gamma_{ji}$ (lower triangle)
+3. Computation of $\mathrm{Gap}(i,j)$ for all 21 pairs
 
-**Вывод:**
-- Карта прозрачности (тепловая карта $7 \times 7$)
-- Вектор населённостей (гистограмма 7)
-- Профиль токов (направления потоков между измерениями)
+**Output:**
+- Transparency map (heat map $7 \times 7$)
+- Population vector (histogram of 7)
+- Current profile (directions of flows between dimensions)
 
-### Прогностический протокол
+### Prognostic Protocol
 
-1. Оценить текущее $\Gamma(\tau_0)$
-2. Вычислить эффективный гамильтониан $H_{\mathrm{eff}}$ (из контекста/среды)
-3. Проинтегрировать $d\Gamma/d\tau$ на горизонт прогноза
-4. Определить окна прозрачности, зоны турбулентности и точки бифуркации
+1. Estimate current $\Gamma(\tau_0)$
+2. Compute effective Hamiltonian $H_{\mathrm{eff}}$ (from context/environment)
+3. Integrate $d\Gamma/d\tau$ over the forecast horizon
+4. Determine transparency windows, turbulence zones, and bifurcation points
 
-### Коррекционный протокол
+### Correction Protocol
 
-Для каждой красной зоны (Gap $\approx 1$) определить коррекционный оператор:
+For each red zone (Gap $\approx 1$) define the correction operator:
 
-| Проблемный канал | Gap | Коррекционная практика | Цель |
+| Problematic channel | Gap | Corrective practice | Goal |
 |---|---|---|---|
-| S$\leftrightarrow$E | $\approx 1$ | Телесные практики (йога, танец) | $\arg(\gamma_{SE}) \to 0$ |
-| L$\leftrightarrow$E | $\approx 1$ | Медитация на коан, логотерапия | $\arg(\gamma_{LE}) \to 0$ |
-| D$\leftrightarrow$L | $\approx 1$ | GTD, пошаговое планирование | $\arg(\gamma_{DL}) \to 0$ |
-| A$\leftrightarrow$O | $\approx 1$ | Практика искренности, молчание | $\arg(\gamma_{AO}) \to 0$ |
-| O$\leftrightarrow$U | $\approx 1$ | Созерцание, via negativa | $\arg(\gamma_{OU}) \to 0$ |
-| D$\leftrightarrow$E | $\approx 1$ | Спорт + осознанность | $\arg(\gamma_{DE}) \to 0$ |
-| A$\leftrightarrow$U | $\approx 1$ | Холистические практики | $\arg(\gamma_{AU}) \to 0$ |
+| S$\leftrightarrow$E | $\approx 1$ | Body practices (yoga, dance) | $\arg(\gamma_{SE}) \to 0$ |
+| L$\leftrightarrow$E | $\approx 1$ | Koan meditation, logotherapy | $\arg(\gamma_{LE}) \to 0$ |
+| D$\leftrightarrow$L | $\approx 1$ | GTD, step-by-step planning | $\arg(\gamma_{DL}) \to 0$ |
+| A$\leftrightarrow$O | $\approx 1$ | Practice of sincerity, silence | $\arg(\gamma_{AO}) \to 0$ |
+| O$\leftrightarrow$U | $\approx 1$ | Contemplation, via negativa | $\arg(\gamma_{OU}) \to 0$ |
+| D$\leftrightarrow$E | $\approx 1$ | Sport + mindfulness | $\arg(\gamma_{DE}) \to 0$ |
+| A$\leftrightarrow$U | $\approx 1$ | Holistic practices | $\arg(\gamma_{AU}) \to 0$ |
 
 ---
 
-## Сравнение с оккультными системами [И]
+## Comparison with Occult Systems [I]
 
-| Параметр | Иц-Цзин | Астрология | Human Design | Каббала | **УГМ Матрица** |
+| Parameter | I Ching | Astrology | Human Design | Kabbalah | **UHM Matrix** |
 |---|---|---|---|---|---|
-| Элементы | 64 гексаграммы | ~50 (планеты $\times$ знаки $\times$ дома) | 64 ворот, 36 каналов | 10 сфирот, 22 пути | **49 клеток** (7 + 21 + 21) |
-| Двойственность | Инь/Ян (бинарная) | Знак/Дом (дискретная) | Тип/Профиль (дискретная) | Сфира/Путь (дискретная) | **Фаза $\theta \in [0, 2\pi)$** (непрерывная) |
-| Направленность | Неявная | Неявная (аспекты) | Частичная (каналы) | Частичная (пути) | **Явная** ($\mathrm{Im}(\gamma_{ij})$, ток $J$) |
-| Динамика | Статическая | Циклическая | Статическая | Статическая | **Эволюционная** ($d\Gamma/d\tau$) |
-| Самокоррекция | Нет | Нет | Нет | Нет | **Да** ($\varphi$-оператор) |
-| Прогноз | Символический | Символический | Описательный | Символический | **Количественный** (фазовые траектории) |
-| Фальсифицируемость | Нет | Нет | Нет | Нет | **Да** |
-| Интер/Экстра | Нет | Нет | Нет | Нет | **Да** ($\mathrm{Map}_{\mathrm{ext}}/\mathrm{Map}_{\mathrm{int}}$) |
+| Elements | 64 hexagrams | ~50 (planets $\times$ signs $\times$ houses) | 64 gates, 36 channels | 10 sefirot, 22 paths | **49 cells** (7 + 21 + 21) |
+| Duality | Yin/Yang (binary) | Sign/House (discrete) | Type/Profile (discrete) | Sefirah/Path (discrete) | **Phase $\theta \in [0, 2\pi)$** (continuous) |
+| Directionality | Implicit | Implicit (aspects) | Partial (channels) | Partial (paths) | **Explicit** ($\mathrm{Im}(\gamma_{ij})$, current $J$) |
+| Dynamics | Static | Cyclic | Static | Static | **Evolutionary** ($d\Gamma/d\tau$) |
+| Self-correction | No | No | No | No | **Yes** ($\varphi$-operator) |
+| Forecast | Symbolic | Symbolic | Descriptive | Symbolic | **Quantitative** (phase trajectories) |
+| Falsifiability | No | No | No | No | **Yes** |
+| Int/Ext | No | No | No | No | **Yes** ($\mathrm{Map}_{\mathrm{ext}}/\mathrm{Map}_{\mathrm{int}}$) |
 
-### Почему УГМ строго сильнее
+### Why UHM Is Strictly Stronger
 
-1. **Формализация:** Каждое понятие имеет математическое определение, а не символическую ассоциацию.
-2. **Непрерывность:** Вместо дискретных "типов" (12 знаков, 64 гексаграммы) — непрерывное пространство состояний с 48 степенями свободы.
-3. **Двойственность экстериорное/интериорное:** Ни одна оккультная система не формализует различие между экстериорной ($\gamma_{ij}$) и интериорной ($\gamma_{ji}$) проекциями связи. УГМ делает это через эрмитово сопряжение.
-4. **Динамика:** Уравнение эволюции $d\Gamma/d\tau = -i[H,\Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma,E]$ даёт точные траектории, а не "транзиты" по аналогии.
-5. **Самокоррекция:** Оператор $\varphi$ обеспечивает обратную связь. Система не просто описывает, но указывает путь к оптимальному состоянию.
-6. **Фальсифицируемость:** Предсказания $\mathrm{Gap}(i,j;\tau)$ измеримы и проверяемы. Если матрица построена правильно, прогнозы должны подтверждаться.
+1. **Formalisation:** Every concept has a mathematical definition, not a symbolic association.
+2. **Continuity:** Instead of discrete "types" (12 signs, 64 hexagrams) — a continuous state space with 48 degrees of freedom.
+3. **Exterior/interior duality:** No occult system formalises the distinction between the exterior ($\gamma_{ij}$) and interior ($\gamma_{ji}$) projections of a connection. UHM does this through Hermitian conjugation.
+4. **Dynamics:** The evolution equation $d\Gamma/d\tau = -i[H,\Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma,E]$ gives exact trajectories, not "transits" by analogy.
+5. **Self-correction:** The operator $\varphi$ provides feedback. The system does not merely describe, but points the way to the optimal state.
+6. **Falsifiability:** Predictions $\mathrm{Gap}(i,j;\tau)$ are measurable and testable. If the matrix is constructed correctly, forecasts must be confirmed.
 
-### Как традиционные системы "проецируются" на $\Gamma$
+### How Traditional Systems "Project" onto $\Gamma$
 
-Каждая оккультная система — это **частная проекция** полной 49-клеточной матрицы:
+Each occult system is a **partial projection** of the full 49-cell matrix:
 
-| Оккультная система | Что видит | Что теряет |
+| Occult system | What it sees | What it loses |
 |---|---|---|
-| **Астрология** | Внешние когерентности (верхний треугольник) через символику планет | Внутренний аспект (нижний треугольник), фазовую динамику |
-| **Иц-Цзин** | 6 из 7 измерений (без U?), бинарную проекцию фазы (инь/ян) | Непрерывность фазы, 7-е измерение |
-| **Каббала** | 10 из 49 элементов (сфирот $\approx$ суперпозиции измерений) | Большую часть когерентностей, динамику |
-| **Human Design** | Гибрид: часть диагонали + часть когерентностей | Полную фазовую структуру, внутренний аспект |
+| **Astrology** | Exterior coherences (upper triangle) via planetary symbolism | Interior aspect (lower triangle), phase dynamics |
+| **I Ching** | 6 of 7 dimensions (without U?), binary projection of phase (yin/yang) | Continuity of phase, 7th dimension |
+| **Kabbalah** | 10 of 49 elements (sefirot $\approx$ superpositions of dimensions) | Most coherences, dynamics |
+| **Human Design** | Hybrid: part of diagonal + part of coherences | Full phase structure, interior aspect |
 
 ---
 
-## Выводы
+## Conclusions
 
-### Главный результат
+### Main Result
 
-Эрмитово сопряжение $\gamma_{ij} = \gamma_{ji}^*$ — не просто математическое свойство, а **формальное выражение дуально-аспектного монизма УГМ**. Верхний треугольник = внешнее ($\mathrm{Map}_{\mathrm{ext}}$), нижний = внутреннее ($\mathrm{Map}_{\mathrm{int}}$), а функтор $*$ — мост между ними.
+Hermitian conjugation $\gamma_{ij} = \gamma_{ji}^*$ is not merely a mathematical property, but the **formal expression of the dual-aspect monism of UHM**. The upper triangle = exterior ($\mathrm{Map}_{\mathrm{ext}}$), the lower = interior ($\mathrm{Map}_{\mathrm{int}}$), and the functor $*$ is the bridge between them.
 
-Это даёт:
-- **49 содержательных элементов** (не 28): 7 населённостей + 21 экстериорная проекция + 21 интериорная проекция
-- **Меру зазора** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ для каждой пары
-- **Квантовый ток** $J_{\mathrm{net}}(i,j)$ — направленный поток между измерениями
-- **Фазовую прогностику** — предсказание окон прозрачности и турбулентности
-- **Секторную границу Gap** [Т] (T-80) — секторные Gap-ограничения
-- **Границу Хэмминга** [И] — минимум 3 из 21 когерентности должны быть непрозрачны (цена помехоустойчивости)
-- **$G_2$-декомпозицию** — 14 структуросохраняющих + 7 структуроразрушающих направлений Gap
+This yields:
+- **49 meaningful elements** (not 28): 7 populations + 21 exterior projections + 21 interior projections
+- **Gap measure** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ for each pair
+- **Quantum current** $J_{\mathrm{net}}(i,j)$ — directed flow between dimensions
+- **Phase prognostics** — prediction of transparency windows and turbulence zones
+- **Sectoral Gap bound** [T] (T-80) — sectoral Gap constraints
+- **Hamming bound** [I] — at least 3 of 21 coherences must be opaque (the price of error resistance)
+- **$G_2$-decomposition** — 14 structure-preserving + 7 structure-breaking Gap directions
 
-### Открытые вопросы
+### Open Questions
 
-1. **Измерение фазы:** Как практически измерить $\arg(\gamma_{ij})$? Нужен протокол, сопоставляющий внешние наблюдения и внутренние отчёты.
-2. **Секторная Gap-граница** T-80 [Т] — заменяет исходную Фано-проверку (X3 [✗]).
-3. **Калибровка $H_{\mathrm{eff}}$:** Как определить эффективный гамильтониан для конкретного человека в конкретном контексте?
-4. **Масштабирование:** Применима ли 49-элементная карта к коллективам (семья, организация, общество)?
-5. **G₂-ковариантность:** Доказать или опровергнуть $G_2$-ковариантность уравнений эволюции. При подтверждении — реализовать $G_2$-редукцию диагностики (48 параметров $\to$ 34).
-6. **Хэмминг-синдром:** Построить конкретный протокол вычисления "синдрома нарушенной когерентности" по наблюдаемым данным.
-
----
-
-## Перекрёстные ссылки
-
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — формальное определение $\Gamma$ и её свойства
-- [7 измерений](/docs/core/structure/dimensions) — семантика базисных состояний $|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle$
-- [Измерение D (Динамика)](/docs/core/structure/dimension-d) — пример измерения с внешним/внутренним аспектом
-- [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — автоморфизмы октонионов и калибровочная теория Gap
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — Фано-плоскость и разрешённые/запрещённые связи
-- [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization) — факторизация по Фано-линиям и регуляризация Gap
-
+1. **Phase measurement:** How to practically measure $\arg(\gamma_{ij})$? A protocol mapping external observations and internal reports is needed.
+2. **Sectoral Gap bound** T-80 [T] — replaces the original Fano bound (X3 [✗]).
+3. **Calibration of $H_{\mathrm{eff}}$:** How to determine the effective Hamiltonian for a specific person in a specific context?
+4. **Scaling:** Is the 49-element map applicable to collectives (family, organisation, society)?
+5. **$G_2$-covariance:** Prove or disprove $G_2$-covariance of the evolution equations. If confirmed — implement $G_2$-reduction of diagnostics (48 parameters $\to$ 34).
+6. **Hamming syndrome:** Construct a concrete protocol for computing the "syndrome of violated coherence" from observable data.
 
 ---
 
-**Связанные документы:**
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix)
-- [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization)
-- [Gap-диагностика](/docs/applied/research/gap-diagnostics)
-- [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure)
+## Cross-References
+
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — formal definition of $\Gamma$ and its properties
+- [7 dimensions](/docs/core/structure/dimensions) — semantics of basis states $|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle$
+- [Dimension D (Dynamics)](/docs/core/structure/dimension-d) — example of a dimension with exterior/interior aspect
+- [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — octonionic automorphisms and gauge theory of Gap
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano plane and allowed/forbidden connections
+- [Zeta regularisation](/docs/physics/dual-aspect/zeta-regularization) — factorisation over Fano lines and Gap regularisation
+
+
+---
+
+**Related documents:**
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix)
+- [Zeta regularisation](/docs/physics/dual-aspect/zeta-regularization)
+- [Gap diagnostics](/docs/applied/research/gap-diagnostics)
+- [G₂-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure)

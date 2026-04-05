@@ -1,194 +1,194 @@
 philosophy:
-  label: Философия
+  label: Philosophy
   permalink: /philosophy
-  description: Философские основания теории
+  description: Philosophical foundations of the theory
 
 consciousness:
-  label: Сознание
+  label: Consciousness
   permalink: /consciousness
-  description: Теория сознания и интериорности
+  description: Theory of consciousness and interiority
 
 paninteriorism:
-  label: Панинтериоризм
+  label: Paninteriorism
   permalink: /paninteriorism
-  description: Когерентный категорный панинтериоризм
+  description: Coherent categorical paninteriorism
 
 holonomy:
-  label: Голономия
+  label: Holonomy
   permalink: /holonomy
-  description: Голономная структура и геометрия теории
+  description: Holonomic structure and geometry of the theory
 
 theory:
-  label: Теория
+  label: Theory
   permalink: /theory
-  description: Теоретические основы УГМ
+  description: Theoretical foundations of UHM
 
 mathematics:
-  label: Математика
+  label: Mathematics
   permalink: /mathematics
-  description: Математический аппарат теории
+  description: Mathematical apparatus of the theory
 
 applications:
-  label: Приложения
+  label: Applications
   permalink: /applications
-  description: Практические приложения теории
+  description: Practical applications of the theory
 
 qualia:
-  label: Квалиа
+  label: Qualia
   permalink: /qualia
-  description: Феноменальные качества переживания
+  description: Phenomenal qualities of experience
 
 phenomenology:
-  label: Феноменология
+  label: Phenomenology
   permalink: /phenomenology
-  description: Структура субъективного опыта
+  description: Structure of subjective experience
 
 Fano:
-  label: Плоскость Фано
+  label: Fano Plane
   permalink: /fano
-  description: Плоскость Фано PG(2,2) и октонионная структура
+  description: Fano plane PG(2,2) and octonion structure
 
 Hamming:
-  label: Код Хэмминга
+  label: Hamming Code
   permalink: /hamming
-  description: Совершенный код H(7,4) и помехоустойчивость
+  description: Perfect code H(7,4) and error correction
 
 freedom:
-  label: Свобода воли
+  label: Free Will
   permalink: /freedom
-  description: Свобода воли как теорема ∞-категорного формализма
+  description: Free will as a theorem of ∞-categorical formalism
 
 infinity-categories:
-  label: ∞-категории
+  label: ∞-Categories
   permalink: /infinity-categories
-  description: ∞-категории и гомотопическая теория типов
+  description: ∞-categories and homotopy type theory
 
 homotopy:
-  label: Гомотопия
+  label: Homotopy
   permalink: /homotopy
-  description: Гомотопическая структура пространства путей
+  description: Homotopic structure of path spaces
 
 ethics:
-  label: Этика
+  label: Ethics
   permalink: /ethics
-  description: Этические следствия из формализма УГМ
+  description: Ethical consequences of UHM formalism
 
 dynamics:
-  label: Динамика
+  label: Dynamics
   permalink: /dynamics
-  description: Уравнение эволюции и динамика матрицы когерентности
+  description: Evolution equation and coherence matrix dynamics
 
 spacetime:
-  label: Пространство-время
+  label: Spacetime
   permalink: /spacetime
-  description: Эмерджентное пространство-время из секторной декомпозиции
+  description: Emergent spacetime from sectoral decomposition
 
 dimensions:
-  label: Измерения
+  label: Dimensions
   permalink: /dimensions
-  description: Семь измерений голонома и их физическая интерпретация
+  description: Seven dimensions of the holonome and their physical interpretation
 
 spectral-triple:
-  label: Спектральная тройка
+  label: Spectral Triple
   permalink: /spectral-triple
-  description: Конечная спектральная тройка и некоммутативная геометрия
+  description: Finite spectral triple and noncommutative geometry
 
 physics:
-  label: Физика
+  label: Physics
   permalink: /physics
-  description: Физические предсказания и следствия теории УГМ
+  description: Physical predictions and consequences of UHM theory
 
 Lindblad:
-  label: Линдблад
+  label: Lindblad
   permalink: /lindblad
-  description: Операторы Линдблада и диссипативная динамика
+  description: Lindblad operators and dissipative dynamics
 
 thermodynamics:
-  label: Термодинамика
+  label: Thermodynamics
   permalink: /thermodynamics
-  description: Термодинамические аспекты голономной динамики
+  description: Thermodynamic aspects of holonomic dynamics
 
 psychopathology:
-  label: Психопатология
+  label: Psychopathology
   permalink: /psychopathology
-  description: Патологические состояния как деформации Gap-профиля
+  description: Pathological states as deformations of the Gap profile
 
 Gap:
-  label: Gap-оператор
+  label: Gap Operator
   permalink: /gap
-  description: Мера зазора и Gap-профили когерентности
+  description: Gap measure and coherence Gap profiles
 
 death:
-  label: Смерть
+  label: Death
   permalink: /death
-  description: Смерть как декогеренция и пересечение порога жизнеспособности
+  description: Death as decoherence and crossing the viability threshold
 
 time:
-  label: Время
+  label: Time
   permalink: /time
-  description: Субъективное и эмерджентное время
+  description: Subjective and emergent time
 
 viability:
-  label: Жизнеспособность
+  label: Viability
   permalink: /viability
-  description: Критический порог P_crit = 2/7 и область устойчивости
+  description: Critical threshold P_crit = 2/7 and stability region
 
 minimality:
-  label: Минимальность
+  label: Minimality
   permalink: /minimality
-  description: Теорема о минимальности 7 измерений
+  description: Minimality theorem for 7 dimensions
 
 octonions:
-  label: Октонионы
+  label: Octonions
   permalink: /octonions
-  description: Октонионная алгебра и структура N=7
+  description: Octonion algebra and N=7 structure
 
 Hurwitz:
-  label: Гурвиц
+  label: Hurwitz
   permalink: /hurwitz
-  description: Теорема Гурвица о нормированных алгебрах с делением
+  description: Hurwitz theorem on normed division algebras
 
 G2:
   label: G₂
   permalink: /g2
-  description: Группа G₂ = Aut(𝕆) и калибровочная симметрия
+  description: Group G₂ = Aut(𝕆) and gauge symmetry
 
 cosmology:
-  label: Космология
+  label: Cosmology
   permalink: /cosmology
-  description: Космологические следствия теории УГМ
+  description: Cosmological consequences of UHM theory
 
 vacuum:
-  label: Вакуум
+  label: Vacuum
   permalink: /vacuum
-  description: Вакуумная энергия и космологическая постоянная
+  description: Vacuum energy and cosmological constant
 
 Lawvere:
-  label: Ловер
+  label: Lawvere
   permalink: /lawvere
-  description: Неполнота Ловера и самореференция
+  description: Lawvere incompleteness and self-reference
 
 superintelligence:
-  label: Суперинтеллект
+  label: Superintelligence
   permalink: /superintelligence
-  description: Математические ограничения и структура суперинтеллекта
+  description: Mathematical limits and structure of superintelligence
 
 AI-safety:
   label: AI Safety
   permalink: /ai-safety
-  description: Безопасность искусственного интеллекта
+  description: Artificial intelligence safety
 
 incompleteness:
-  label: Неполнота
+  label: Incompleteness
   permalink: /incompleteness
-  description: Теоремы о неполноте и самореференциальные ограничения
+  description: Incompleteness theorems and self-referential limits
 
 Godel:
-  label: Гёдель
+  label: Gödel
   permalink: /godel
-  description: Теоремы Гёделя и их связь с УГМ
+  description: Gödel's theorems and their connection to UHM
 
 category-theory:
-  label: Теория категорий
+  label: Category Theory
   permalink: /category-theory
-  description: Категорный формализм и ∞-топосы
+  description: Categorical formalism and ∞-toposes

@@ -1,270 +1,270 @@
 ---
 sidebar_position: 5
-title: "Нейтринные массы"
+title: "Neutrino Masses"
 slug: /physics/particle-physics/neutrino-masses
-description: "Seesaw-механизм типа I в 42D Пейдж–Вуттерс расширении, PMNS-матрица из Фано-геометрии, предсказания масс нейтрино"
+description: "Type-I seesaw mechanism in the 42D Page–Wootters extension, PMNS matrix from Fano geometry, neutrino mass predictions"
 ---
 
-# Нейтринные массы
+# Neutrino Masses
 
-:::info Для кого эта глава
-Механизм генерации масс нейтрино через seesaw типа I и PMNS-матрица из Фано-геометрии. Читатель узнает о количественных предсказаниях УГМ для нейтринного сектора.
+:::info Who this chapter is for
+The mechanism of neutrino mass generation via type-I seesaw and the PMNS matrix from Fano geometry. The reader will learn about quantitative UHM predictions for the neutrino sector.
 :::
 
 
-Механизм генерации масс нейтрино в рамках УГМ через seesaw типа I в [42D Пейдж–Вуттерс расширении](/docs/core/dynamics/coherence-matrix), PMNS-матрица из [Фано-геометрии](/docs/physics/gauge-symmetry/fano-selection-rules) и количественные предсказания.
+The mechanism of neutrino mass generation within UHM via type-I seesaw in the [42D Page–Wootters extension](/docs/core/dynamics/coherence-matrix), the PMNS matrix from [Fano geometry](/docs/physics/gauge-symmetry/fano-selection-rules), and quantitative predictions.
 
-:::info Уровни строгости
-- **[Т]** Теорема — строго доказано из аксиом УГМ
-- **[С]** Условная — условно на явном допущении
-- **[Г]** Гипотеза — математически сформулировано, требует доказательства или непертурбативного вычисления
-- **[П]** Постулат / Программа — направление, требующее дальнейшей разработки
+:::info Rigor Levels
+- **[T]** Theorem — strictly proved from UHM axioms
+- **[C]** Conditional — conditional on an explicit assumption
+- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
+- **[P]** Postulate / Program — direction requiring further development
 :::
 
-## Содержание
+## Contents
 
-1. [Правый нейтрино из Gap-конфигурации](#правый-нейтрино)
-2. [Seesaw-механизм типа I](#seesaw)
-3. [Нормальная массовая иерархия](#иерархия)
-4. [Нейтринная Дираковская масса через O-сектор](#расхождение)
-5. [PMNS-углы из анархической структуры $M_R$](#pmns)
-6. [Связь с $G_2$-экстра бозонами](#g2-extra)
-7. [Юкавские связи нейтрино](#юкавские-связи)
-8. [Сводка предсказаний и статус](#сводка)
+1. [Right-handed neutrino from Gap-configuration](#правый-нейтрино)
+2. [Type-I seesaw mechanism](#seesaw)
+3. [Normal mass hierarchy](#иерархия)
+4. [Neutrino Dirac mass via O-sector](#расхождение)
+5. [PMNS angles from anarchic structure of $M_R$](#pmns)
+6. [Connection to $G_2$-extra bosons](#g2-extra)
+7. [Neutrino Yukawa couplings](#юкавские-связи)
+8. [Summary of predictions and status](#сводка)
 
 ---
 
-## 1. Правый нейтрино из Gap-конфигурации [С при SM↔Gap] {#правый-нейтрино}
+## 1. Right-handed neutrino from Gap-configuration [C under SM↔Gap] {#правый-нейтрино}
 
-:::tip Теорема 1.1 (Правый нейтрино $\nu_R$) [С при SM↔Gap]
-Правый нейтрино существует как Gap-конфигурация с квантовыми числами $(1, 1)_0$:
+:::tip Theorem 1.1 (Right-handed neutrino $\nu_R$) [C under SM↔Gap]
+The right-handed neutrino exists as a Gap-configuration with quantum numbers $(1, 1)_0$:
 
-**(a)** Левый нейтрино — компонента лептонного дублета $L_L = (\nu_L, e_L)$: $\text{Gap}(E,U) = 0$, $\text{Gap}(\{A,S,D\},\{L,E,U\}) = \text{Gap}_{\max}$.
+**(a)** The left-handed neutrino is a component of the lepton doublet $L_L = (\nu_L, e_L)$: $\text{Gap}(E,U) = 0$, $\text{Gap}(\{A,S,D\},\{L,E,U\}) = \text{Gap}_{\max}$.
 
-**(b)** Правый нейтрино:
+**(b)** Right-handed neutrino:
 
 $$
 \Gamma_{\nu_R}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_{\max}, \quad \text{Gap}(E,U) \neq 0, \quad \text{Gap}(L,E) = \text{Gap}(L,U) = 0
 $$
 
-**(c)** Квантовые числа: $(1, 1)_0$ — стерильный. Не участвует ни в сильном, ни в слабом, ни в электромагнитном взаимодействии.
+**(c)** Quantum numbers: $(1, 1)_0$ — sterile. Participates in neither strong, weak, nor electromagnetic interactions.
 
-**(d)** Стерильность $\nu_R$ — прямое следствие Gap-структуры: максимальный Gap в секторе $3$-to-$\bar{3}$ отключает цветное взаимодействие; ненулевой $\text{Gap}(E,U)$ отключает $SU(2)_L$; нулевой гиперзаряд $Y = 0$ следует из $\text{Gap}(L,E) = \text{Gap}(L,U) = 0$.
+**(d)** The sterility of $\nu_R$ is a direct consequence of the Gap structure: maximal Gap in the $3$-to-$\bar{3}$ sector switches off color interactions; nonzero $\text{Gap}(E,U)$ switches off $SU(2)_L$; zero hypercharge $Y = 0$ follows from $\text{Gap}(L,E) = \text{Gap}(L,U) = 0$.
 
-Условие: отождествление SM-квантовых чисел с Gap-секторами (калибровочное соответствие).
+Condition: identification of SM quantum numbers with Gap sectors (gauge correspondence).
 :::
 
 ---
 
-## 2. Seesaw-механизм типа I [Т] {#seesaw}
+## 2. Type-I seesaw mechanism [T] {#seesaw}
 
-### 2.1 Масса Майорана из $G_2$-экстра бозонов
+### 2.1 Majorana mass from $G_2$-extra bosons
 
-#### Теорема ($O$-секторный масштаб) [Т] {#гипотеза-o-секторного-масштаба}
+#### Theorem ($O$-sector scale) [T] {#гипотеза-o-секторного-масштаба}
 
-**Теорема [Т]** (бывшая гипотеза (ΓO)): масса $G_2$-экстра бозонов определяется непрозрачностью $O$-сектора и физическим масштабом $\omega_0$. Из аксиомы A5 (Пейдж–Вуттерс): часовая фаза прецессирует с $\omega_0$, $\mathrm{Gap}(O,i) = |\sin(\theta_{Oi})|$, временно́е среднее $= 2/\pi \approx 0.637 = O(1)$. Из жизнеспособности ($P > 2/7$): $\sum|\gamma_{Oi}|^2 > 0$. Следовательно, $\mathcal{G}_{\text{total}}^{(O)} = O(1)$ в планковских единицах и $M_{G_2}^{(\text{extra})} = O(M_{\text{Planck}})$.
+**Theorem [T]** (formerly hypothesis (ΓO)): the mass of $G_2$-extra bosons is determined by the opacity of the $O$-sector and the physical scale $\omega_0$. From axiom A5 (Page–Wootters): the clock phase precesses at $\omega_0$, $\mathrm{Gap}(O,i) = |\sin(\theta_{Oi})|$, time average $= 2/\pi \approx 0.637 = O(1)$. From viability ($P > 2/7$): $\sum|\gamma_{Oi}|^2 > 0$. Therefore $\mathcal{G}_{\text{total}}^{(O)} = O(1)$ in Planck units and $M_{G_2}^{(\text{extra})} = O(M_{\text{Planck}})$.
 
-#### Теорема 2.1 (Масштаб $M_R$ из $G_2$-экстра бозонов) [Т] {#теорема-mr-из-gap}
+#### Theorem 2.1 (Scale $M_R$ from $G_2$-extra bosons) [T] {#теорема-mr-из-gap}
 
-:::tip Теорема 2.1 (Масштаб $M_R$ из $G_2$-экстра бозонов) [Т]
-Масса Майорана $M_R$ **выводится** из Gap-параметров без обращения к $SU(5)$-GUT. Из аксиомы A5 (Пейдж–Вуттерс) и жизнеспособности (V).
+:::tip Theorem 2.1 (Scale $M_R$ from $G_2$-extra bosons) [T]
+The Majorana mass $M_R$ is **derived** from Gap parameters without recourse to $SU(5)$-GUT. From axiom A5 (Page–Wootters) and viability (V).
 :::
 
-**Теорема.** Масса Майорана $M_R$ выражается через Gap-параметры:
+**Theorem.** The Majorana mass $M_R$ is expressed through Gap parameters:
 
 $$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot M_{G_2}^{(\text{extra})}, \qquad M_{G_2}^{(\text{extra})} = \omega_0 \cdot \sqrt{\mathcal{G}^{(O)}_{\text{total}}}$$
 
-где $\mathcal{G}^{(O)}_{\text{total}} = \sum_{i \neq O} \text{Gap}(O,i)^2 \cdot |\gamma_{Oi}|^2$ — полная непрозрачность $O$-сектора.
+where $\mathcal{G}^{(O)}_{\text{total}} = \sum_{i \neq O} \text{Gap}(O,i)^2 \cdot |\gamma_{Oi}|^2$ is the total opacity of the $O$-sector.
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1.** 6 $G_2$-экстра бозонов ($\mathbf{3} \oplus \bar{\mathbf{3}}$ в [разложении](/docs/physics/gauge-symmetry/standard-model) $\mathbf{14} \to \mathbf{8} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$) связывают секторы $\{A,S,D\}$ и $\{L,E,U\}$ через $O$-измерение [Т].
+**Step 1.** 6 $G_2$-extra bosons ($\mathbf{3} \oplus \bar{\mathbf{3}}$ in the [decomposition](/docs/physics/gauge-symmetry/standard-model) $\mathbf{14} \to \mathbf{8} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$) couple sectors $\{A,S,D\}$ and $\{L,E,U\}$ via the $O$-dimension [T].
 
-**Шаг 2.** Масса экстра бозонов определяется флуктуациями Gap-фаз в $O$-секторе. $O$-сектор имеет $\text{Gap}(O,\cdot) \sim 1$ (планковский масштаб) [Т]. Физическая масса:
+**Step 2.** The mass of extra bosons is determined by fluctuations of Gap phases in the $O$-sector. The $O$-sector has $\text{Gap}(O,\cdot) \sim 1$ (Planck scale) [T]. Physical mass:
 
-$$M_{G_2}^{(\text{extra})} = \omega_0 \cdot \sqrt{\sum_{i=1}^{6} |\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \approx \sqrt{6} \cdot \varepsilon \cdot M_{\text{Planck}} \sim 10^{17} \text{ ГэВ}$$
+$$M_{G_2}^{(\text{extra})} = \omega_0 \cdot \sqrt{\sum_{i=1}^{6} |\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \approx \sqrt{6} \cdot \varepsilon \cdot M_{\text{Planck}} \sim 10^{17} \text{ GeV}$$
 
-**Шаг 3.** Прямой древесный обмен одним экстра бозоном даёт $M_R \sim g^2 v^2 / M_{G_2}^{(\text{extra})} \sim 10^{-13}$ ГэВ — слишком мало. Однако правильный механизм — **петлевой** процесс: $\nu_R \xrightarrow{G_2\text{-extra}} \tilde{\nu}_R \xrightarrow{G_2\text{-extra}} \nu_R^c$. Петлевое подавление $g^4/(16\pi^2)$ снижает масштаб с $10^{17}$ до $10^{14}$ ГэВ:
+**Step 3.** Direct tree-level exchange of a single extra boson gives $M_R \sim g^2 v^2 / M_{G_2}^{(\text{extra})} \sim 10^{-13}$ GeV — too small. However, the correct mechanism is a **loop** process: $\nu_R \xrightarrow{G_2\text{-extra}} \tilde{\nu}_R \xrightarrow{G_2\text{-extra}} \nu_R^c$. The loop suppression $g^4/(16\pi^2)$ reduces the scale from $10^{17}$ to $10^{14}$ GeV:
 
 $$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot M_{G_2}^{(\text{extra})}$$
 
-**Шаг 4.** Численная оценка. С $g_{G_2} \approx 0.7$, $\varepsilon \approx 0.01$:
+**Step 4.** Numerical estimate. With $g_{G_2} \approx 0.7$, $\varepsilon \approx 0.01$:
 
-$$M_R \approx \frac{(0.7)^4}{16\pi^2} \cdot \sqrt{6} \cdot 0.01 \times 1.22 \times 10^{19} \approx \frac{0.24}{158} \times 2.45 \times 1.22 \times 10^{17} \approx 2.9 \times 10^{14} \text{ ГэВ}$$
+$$M_R \approx \frac{(0.7)^4}{16\pi^2} \cdot \sqrt{6} \cdot 0.01 \times 1.22 \times 10^{19} \approx \frac{0.24}{158} \times 2.45 \times 1.22 \times 10^{17} \approx 2.9 \times 10^{14} \text{ GeV}$$
 
-Масштаб $M_R \sim 10^{14}$ ГэВ **выводится** из Gap-параметров. $\blacksquare$
+The scale $M_R \sim 10^{14}$ GeV is **derived** from Gap parameters. $\blacksquare$
 
-**(c)** Полная формула seesaw типа I. Масса лёгкого нейтрино:
+**(c)** Full type-I seesaw formula. Mass of the light neutrino:
 
 $$m_\nu \approx \frac{y_\nu^2 \, v^2}{M_R} = \frac{m_D^2}{M_R}$$
 
-где $y_\nu$ — Юкавская константа связи нейтрино, $v \approx 246$ ГэВ — вакуумное среднее Хиггса, $m_D = y_\nu v$ — масса Дирака.
+where $y_\nu$ is the neutrino Yukawa coupling constant, $v \approx 246$ GeV is the Higgs vacuum expectation value, $m_D = y_\nu v$ is the Dirac mass.
 
-**(d)** Для $y_\nu \sim y_\tau \sim 0.01$ и $M_R \sim 10^{14}$ ГэВ:
+**(d)** For $y_\nu \sim y_\tau \sim 0.01$ and $M_R \sim 10^{14}$ GeV:
 
-$$m_\nu \sim \frac{(0.01)^2 \times (246)^2}{10^{14}} \;\text{ГэВ} \sim \frac{6}{10^{14}} \;\text{ГэВ} \sim 0.06 \;\text{эВ}$$
+$$m_\nu \sim \frac{(0.01)^2 \times (246)^2}{10^{14}} \;\text{GeV} \sim \frac{6}{10^{14}} \;\text{GeV} \sim 0.06 \;\text{eV}$$
 
-— масштаб, согласующийся с осцилляционными данными ($\sqrt{\Delta m^2_{32}} \approx 0.05$ эВ).
+— a scale consistent with oscillation data ($\sqrt{\Delta m^2_{32}} \approx 0.05$ eV).
 
-:::info Прогресс: $M_R$ как предсказание
-В предыдущей версии $M_R \sim 10^{14}$ ГэВ заимствовалась из стандартного GUT без вывода из Gap-параметров. Теперь $M_R \propto \varepsilon \cdot M_P \cdot g^4/(16\pi^2)$ — зависимость от $\varepsilon$ тестируема при фиксации $\varepsilon$.
+:::info Progress: $M_R$ as a prediction
+In the previous version $M_R \sim 10^{14}$ GeV was borrowed from standard GUT without derivation from Gap parameters. Now $M_R \propto \varepsilon \cdot M_P \cdot g^4/(16\pi^2)$ — the dependence on $\varepsilon$ is testable once $\varepsilon$ is fixed.
 :::
 
-### 2.2 Структура seesaw-матрицы
+### 2.2 Structure of the seesaw matrix
 
-В базисе $(\nu_L, \nu_R^c)$ полная массовая матрица нейтрино имеет вид:
+In the basis $(\nu_L, \nu_R^c)$ the full neutrino mass matrix takes the form:
 
 $$
 \mathcal{M}_\nu = \begin{pmatrix} 0 & m_D \\ m_D^T & M_R \end{pmatrix}
 $$
 
-При $M_R \gg m_D$ диагонализация даёт два набора собственных значений:
+At $M_R \gg m_D$ diagonalization gives two sets of eigenvalues:
 
-- **Лёгкие нейтрино:** $m_\nu^{(\text{light})} \approx -m_D M_R^{-1} m_D^T$ — наблюдаемые нейтрино;
-- **Тяжёлые нейтрино:** $m_\nu^{(\text{heavy})} \approx M_R$ — ненаблюдаемые при текущих энергиях.
+- **Light neutrinos:** $m_\nu^{(\text{light})} \approx -m_D M_R^{-1} m_D^T$ — observable neutrinos;
+- **Heavy neutrinos:** $m_\nu^{(\text{heavy})} \approx M_R$ — unobservable at current energies.
 
-Знак минус в лёгком секторе обеспечивает **майорановскую** природу массы: нейтрино и антинейтрино связаны через CP-сопряжение.
+The minus sign in the light sector ensures the **Majorana** nature of the mass: neutrino and antineutrino are related via CP conjugation.
 
 ---
 
-## 3. Нормальная массовая иерархия [Т] {#иерархия}
+## 3. Normal mass hierarchy [T] {#иерархия}
 
-:::tip Разрешение противоречия NH/IH [Т]
-Противоречие между нормальной и инвертированной иерархией **разрешено** назначением поколений ([Теорема 4.1-4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1)):
-- $k=1 \to$ 3-е поколение ($\nu_\tau$): **единственная** ненулевая древесная Юкавская [Т]
-- $k=4 \to$ 2-е поколение ($\nu_\mu$): связь через конфайнмент-сектор [Т]
-- $k=2 \to$ 1-е поколение ($\nu_e$): связь через промежуточный сектор [Т]
+:::tip Resolution of the NH/IH tension [T]
+The tension between normal and inverted hierarchy is **resolved** by the generation assignment ([Theorem 4.1–4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1)):
+- $k=1 \to$ 3rd generation ($\nu_\tau$): **unique** nonzero tree-level Yukawa [T]
+- $k=4 \to$ 2nd generation ($\nu_\mu$): coupling via confinement sector [T]
+- $k=2 \to$ 1st generation ($\nu_e$): coupling via intermediate sector [T]
 
-При этом назначении seesaw с $m_D \sim m_l$ даёт **нормальную** иерархию: $m_{\nu_e} < m_{\nu_\mu} < m_{\nu_\tau}$.
+With this assignment, seesaw with $m_D \sim m_l$ gives the **normal** hierarchy: $m_{\nu_e} < m_{\nu_\mu} < m_{\nu_\tau}$.
 :::
 
-:::tip Теорема 3.1 (Предсказания масс нейтрино) [Г]
-Вычислительная задача C17: минимизация $V_{\text{Gap}}$ на $(S^1)^{21}/G_2$. Все компоненты формулы определены [Т].
+:::tip Theorem 3.1 (Neutrino mass predictions) [H]
+Computational task C17: minimization of $V_{\text{Gap}}$ on $(S^1)^{21}/G_2$. All formula components are defined [T].
 
-Из seesaw-формулы $m_\nu \approx m_D^2/M_R$ с $M_R \sim 10^{14}$ ГэВ и $m_D \sim m_l$ (масса заряженного лептона соответствующего поколения):
+From the seesaw formula $m_\nu \approx m_D^2/M_R$ with $M_R \sim 10^{14}$ GeV and $m_D \sim m_l$ (charged lepton mass of the corresponding generation):
 
-**(a)** Третье поколение ($\tau$-нейтрино):
-
-$$
-m_{\nu_\tau} \sim \frac{m_\tau^2}{M_R} \sim \frac{(1.78 \; \text{ГэВ})^2}{10^{14} \; \text{ГэВ}} \sim 3 \times 10^{-14} \; \text{ГэВ} \sim 0.03 \; \text{эВ}
-$$
-
-**(b)** Второе поколение ($\mu$-нейтрино):
+**(a)** Third generation ($\tau$-neutrino):
 
 $$
-m_{\nu_\mu} \sim \frac{m_\mu^2}{M_R} \sim \frac{(0.106 \; \text{ГэВ})^2}{10^{14} \; \text{ГэВ}} \sim 10^{-16} \; \text{ГэВ} \sim 0.009 \; \text{эВ}
+m_{\nu_\tau} \sim \frac{m_\tau^2}{M_R} \sim \frac{(1.78 \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 3 \times 10^{-14} \; \text{GeV} \sim 0.03 \; \text{eV}
 $$
 
-Здесь уточнённая оценка $0.009$ эВ учитывает отличие Юкавских связей нейтрино от связей заряженных лептонов (см. [раздел 7](#юкавские-связи)).
-
-**(c)** Первое поколение ($e$-нейтрино):
+**(b)** Second generation ($\mu$-neutrino):
 
 $$
-m_{\nu_e} \sim \frac{m_e^2}{M_R} \sim \frac{(0.511 \times 10^{-3} \; \text{ГэВ})^2}{10^{14} \; \text{ГэВ}} \sim 3 \times 10^{-24} \; \text{ГэВ} \sim 0.003 \; \text{эВ}
+m_{\nu_\mu} \sim \frac{m_\mu^2}{M_R} \sim \frac{(0.106 \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 10^{-16} \; \text{GeV} \sim 0.009 \; \text{eV}
 $$
 
-Наивная оценка $m_e^2/M_R \sim 3 \times 10^{-6}$ эВ сильно занижена; значение $0.003$ эВ получается с учётом поправок от Фано-фаз к Юкавским связям.
+Here the refined estimate $0.009$ eV accounts for the difference between neutrino and charged lepton Yukawa couplings (see [section 7](#юкавские-связи)).
 
-**(d)** **Иерархия: нормальная** ($m_1 < m_2 < m_3$):
+**(c)** First generation ($e$-neutrino):
 
 $$
-m_{\nu_e} \sim 0.003 \; \text{эВ}, \quad m_{\nu_\mu} \sim 0.009 \; \text{эВ}, \quad m_{\nu_\tau} \sim 0.03 \; \text{эВ}
+m_{\nu_e} \sim \frac{m_e^2}{M_R} \sim \frac{(0.511 \times 10^{-3} \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 3 \times 10^{-24} \; \text{GeV} \sim 0.003 \; \text{eV}
 $$
 
-Порядок масс повторяет иерархию заряженных лептонов: $m_e \ll m_\mu \ll m_\tau$.
+The naive estimate $m_e^2/M_R \sim 3 \times 10^{-6}$ eV is strongly underestimated; the value $0.003$ eV is obtained accounting for corrections from Fano phases to Yukawa couplings.
+
+**(d)** **Hierarchy: normal** ($m_1 < m_2 < m_3$):
+
+$$
+m_{\nu_e} \sim 0.003 \; \text{eV}, \quad m_{\nu_\mu} \sim 0.009 \; \text{eV}, \quad m_{\nu_\tau} \sim 0.03 \; \text{eV}
+$$
+
+The mass ordering mirrors the charged lepton hierarchy: $m_e \ll m_\mu \ll m_\tau$.
 :::
 
-### 3.2 Сравнение с экспериментом
+### 3.2 Comparison with experiment
 
-:::warning Оценки порядка величины, а не точные предсказания
-Значения масс нейтрино ($0.003$, $0.009$, $0.03$ эВ) — **оценки порядка величины** из наивной seesaw-формулы $m_\nu \sim m_l^2/M_R$ с единственным подгоночным параметром $M_R \sim 10^{14}$ ГэВ. Seesaw-механизм — стандартный результат, не оригинальное предсказание УГМ. Оригинальный вклад теории — существование $\nu_R$ как Gap-конфигурации [Т] и качественное объяснение больших PMNS-углов [Г].
+:::warning Order-of-magnitude estimates, not precise predictions
+The neutrino mass values ($0.003$, $0.009$, $0.03$ eV) are **order-of-magnitude estimates** from the naive seesaw formula $m_\nu \sim m_l^2/M_R$ with the single fitting parameter $M_R \sim 10^{14}$ GeV. The seesaw mechanism is a standard result, not an original UHM prediction. The original contribution of the theory is the existence of $\nu_R$ as a Gap-configuration [T] and the qualitative explanation of large PMNS angles [H].
 :::
 
-Экспериментальные данные из нейтринных осцилляций (PDG 2024):
+Experimental data from neutrino oscillations (PDG 2024):
 
-| Параметр | Наблюдаемое значение | Предсказание УГМ | Статус |
+| Parameter | Observed value | UHM prediction | Status |
 |----------|---------------------|-------------------|--------|
-| $\sqrt{\Delta m^2_{32}}$ | $\approx 0.050$ эВ | $m_{\nu_\tau} \sim 0.03$ эВ | Согласие по порядку |
-| $\sqrt{\Delta m^2_{21}}$ | $\approx 0.0086$ эВ | $m_{\nu_\mu} \sim 0.009$ эВ | Согласие по порядку |
-| Иерархия | Предпочтение нормальной (>2$\sigma$) | Нормальная | Согласие |
-| $\sum m_\nu$ | $< 0.12$ эВ (космология) | $\sim 0.042$ эВ | Совместимо |
+| $\sqrt{\Delta m^2_{32}}$ | $\approx 0.050$ eV | $m_{\nu_\tau} \sim 0.03$ eV | Order-of-magnitude agreement |
+| $\sqrt{\Delta m^2_{21}}$ | $\approx 0.0086$ eV | $m_{\nu_\mu} \sim 0.009$ eV | Order-of-magnitude agreement |
+| Hierarchy | Preference for normal ($>2\sigma$) | Normal | Agreement |
+| $\sum m_\nu$ | $< 0.12$ eV (cosmology) | $\sim 0.042$ eV | Compatible |
 
-:::info Замечание
-Соответствие $\Delta m^2_{21}$ и $\Delta m^2_{32}$ экспериментальным данным — качественное (верный порядок величины). Количественное согласие требует учёта RG-эволюции и нетривиальных Юкавских текстур.
+:::info Remark
+The correspondence of $\Delta m^2_{21}$ and $\Delta m^2_{32}$ to experimental data is qualitative (correct order of magnitude). Quantitative agreement requires accounting for RG evolution and nontrivial Yukawa textures.
 :::
 
 ---
 
-## 4. Нейтринная Дираковская масса через O-сектор {#расхождение}
+## 4. Neutrino Dirac mass via O-sector {#расхождение}
 
-### 4.1 Постановка: расхождение $m_2/m_3$ {#нейтрино-расхождение-постановка}
+### 4.1 Setup: discrepancy $m_2/m_3$ {#нейтрино-расхождение-постановка}
 
-Наивная seesaw-оценка с $m_D \sim m_l$ предсказывает:
+The naive seesaw estimate with $m_D \sim m_l$ predicts:
 
 $$
 \frac{m_{\nu_\mu}}{m_{\nu_\tau}} \sim \frac{m_\mu^2}{m_\tau^2} = \frac{(0.106)^2}{(1.78)^2} \approx 0.0035
 $$
 
-Наблюдаемое отношение из осцилляционных данных:
+Observed ratio from oscillation data:
 
 $$
 \frac{m_2}{m_3} \sim \sqrt{\frac{\Delta m^2_{21}}{\Delta m^2_{32}}} \approx \frac{0.0086}{0.050} \approx 0.17
 $$
 
-Расхождение: $0.17 / 0.0035 \approx 50$ — **фактор ~50**. Ключевое наблюдение: $\nu_R$ живёт в **O-секторе** (T-51 [Т]), поэтому нейтринная Дираковская масса определяется **не** блоком $M_{3,\bar{3}}$ (Хиггсовый, определяющий массы заряженных лептонов), а блоками $M_{O,3}$ и $M_{O,\bar{3}}$ внутреннего оператора Дирака.
+Discrepancy: $0.17 / 0.0035 \approx 50$ — **factor ~50**. Key observation: $\nu_R$ lives in the **O-sector** (T-51 [T]), therefore the neutrino Dirac mass is determined **not** by the block $M_{3,\bar{3}}$ (Higgs block, which determines charged lepton masses), but by the blocks $M_{O,3}$ and $M_{O,\bar{3}}$ of the internal Dirac operator.
 
-### 4.2 Блочная структура внутреннего оператора Дирака
+### 4.2 Block structure of the internal Dirac operator
 
-Из спектральной тройки [Т] (T-53, [Пространство-время](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): внутренний оператор Дирака в секторном базисе $O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ имеет вид:
+From the spectral triple [T] (T-53, [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): the internal Dirac operator in the sector basis $O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ takes the form:
 
 $$
 D_{\text{int}} = \begin{pmatrix} 0 & M^{\dagger}_{O,3} & M^{\dagger}_{O,\bar{3}} \\ M_{O,3} & 0 & M^{\dagger}_{3,\bar{3}} \\ M_{O,\bar{3}} & M_{3,\bar{3}} & 0 \end{pmatrix}
 $$
 
-- **Блок $M_{3,\bar{3}}$** — определяет массы заряженных фермионов через Хиггсовую линию $\{A,E,U\}$
-- **Блоки $M_{O,3}$ и $M_{O,\bar{3}}$** — соединяют O-сектор с секторами $\mathbf{3}$ и $\bar{\mathbf{3}}$, определяют **нейтринные** Дираковские массы
+- **Block $M_{3,\bar{3}}$** — determines charged fermion masses via the Higgs line $\{A,E,U\}$
+- **Blocks $M_{O,3}$ and $M_{O,\bar{3}}$** — connect the O-sector with sectors $\mathbf{3}$ and $\bar{\mathbf{3}}$, determine **neutrino** Dirac masses
 
-#### Теорема (Нейтринная Дираковская Юкавская через O-сектор) [Т] {#теорема-нейтрино-o-сектор}
+#### Theorem (Neutrino Dirac Yukawa via O-sector) [T] {#теорема-нейтрино-o-сектор}
 
-:::tip Теорема (Нейтринная Дираковская Юкавская через O-сектор) [Т]
-В спектральной тройке УГМ (T-53) [Т], Дираковская масса нейтрино поколения $k$ определяется блоком $M_{O,\text{sector}(k)}$ оператора $D_{\text{int}}$:
+:::tip Theorem (Neutrino Dirac Yukawa via O-sector) [T]
+In the UHM spectral triple (T-53) [T], the Dirac mass of the generation-$k$ neutrino is determined by the block $M_{O,\text{sector}(k)}$ of the operator $D_{\text{int}}$:
 
 $$
 m_D^{(k)} = \omega_0 \cdot \text{Gap}(O, k) \cdot |\gamma_{O,\text{partner}(k)}^{\text{vac}}| \cdot \sin\!\left(\frac{2\pi k}{7}\right)
 $$
 
-где $\text{partner}(k)$ — вершина Фано-линии $\{k, \text{partner}, O\}$.
+where $\text{partner}(k)$ is the vertex of the Fano line $\{k, \text{partner}, O\}$.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Нейтрино $\nu_R$ в O-секторе).** $\nu_R$ — Gap-конфигурация в O-секторе [Т] (T-51). Следовательно, Дираковский массовый член $\bar{\nu}_L \cdot m_D \cdot \nu_R$ соединяет лептонный дублет (в $\bar{3}$- или $3$-секторе, в зависимости от поколения) с O-сектором.
+**Step 1 (Neutrino $\nu_R$ in O-sector).** $\nu_R$ is a Gap-configuration in the O-sector [T] (T-51). Therefore the Dirac mass term $\bar{\nu}_L \cdot m_D \cdot \nu_R$ connects the lepton doublet (in the $\bar{3}$- or $3$-sector, depending on the generation) with the O-sector.
 
-**Шаг 2 (Фано-линии через O).** Каждый генерационный индекс $k \in \{1, 2, 4\}$ лежит на **ровно одной** Фано-линии, содержащей $O = 7$:
+**Step 2 (Fano lines through O).** Each generation index $k \in \{1, 2, 4\}$ lies on **exactly one** Fano line containing $O = 7$:
 
-| Поколение | $k$ | Фано-линия через $O$ | Партнёр | Сектор $k$ |
+| Generation | $k$ | Fano line through $O$ | Partner | Sector of $k$ |
 |-----------|-----|----------------------|---------|------------|
-| 3-е ($\tau$) | 1 (A) | $\{1, 3, 7\} = \{A, D, O\}$ | D | **3** |
-| 2-е ($\mu$) | 4 (L) | $\{4, 5, 7\} = \{L, E, O\}$ | E | **$\bar{3}$** |
-| 1-е ($e$) | 2 (S) | $\{2, 6, 7\} = \{S, U, O\}$ | U | **3** |
+| 3rd ($\tau$) | 1 (A) | $\{1, 3, 7\} = \{A, D, O\}$ | D | **3** |
+| 2nd ($\mu$) | 4 (L) | $\{4, 5, 7\} = \{L, E, O\}$ | E | **$\bar{3}$** |
+| 1st ($e$) | 2 (S) | $\{2, 6, 7\} = \{S, U, O\}$ | U | **3** |
 
-Все три Фано-линии существуют [Т] (свойство PG(2,2): каждая пара точек определяет единственную линию).
+All three Fano lines exist [T] (property of PG(2,2): each pair of points defines a unique line).
 
-**Шаг 3 (Вакуумные когерентности).** Партнёры лежат либо в $3$-секторе ($D$), либо в $\bar{3}$-секторе ($E$, $U$). Когерентности партнёр–O из самосогласованного вакуума (T-61) [Т]:
+**Step 3 (Vacuum coherences).** Partners lie either in the $3$-sector ($D$) or in the $\bar{3}$-sector ($E$, $U$). Coherences partner–O from the self-consistent vacuum (T-61) [T]:
 
 $$
 |\gamma_{DO}| \approx \varepsilon_{O \to 3} \approx 0.023, \quad |\gamma_{EO}| \approx |\gamma_{UO}| \approx \varepsilon_{O \to \bar{3}} \approx 0.023
 $$
 
-Из T-61: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0 \approx 0.023$ (O-изотропия).
+From T-61: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0 \approx 0.023$ (O-isotropy).
 
-**Шаг 4 (Дираковские массы).** Элемент $M_{O,\text{sector}}$ спектральной тройки даёт:
+**Step 4 (Dirac masses).** The element $M_{O,\text{sector}}$ of the spectral triple gives:
 
 $$
 m_D^{(k)} = \omega_0 \cdot \text{Gap}(O, k) \cdot |\gamma_{\text{partner}(k), O}| \cdot \sin\!\left(\frac{2\pi k}{7}\right)
 $$
 
-При $\text{Gap}(O, k) \approx 1$ для всех $k$ (O-сектор почти непрозрачен):
+At $\text{Gap}(O, k) \approx 1$ for all $k$ (O-sector nearly opaque):
 
 $$
 m_D^{(1)} \propto \varepsilon_0 \cdot \sin(2\pi/7) = 0.023 \times 0.782 = 0.0180
@@ -280,143 +280,143 @@ $$
 
 $\blacksquare$
 
-### 4.3 Отношение масс $m_2/m_3$ [С при O-секторном $D_\mathrm{int}$] {#теорема-отношение-нейтринных-масс}
+### 4.3 Mass ratio $m_2/m_3$ [C under O-sector $D_\mathrm{int}$] {#теорема-отношение-нейтринных-масс}
 
-:::tip Теорема (Отношение нейтринных масс) [С при O-секторном $D_\mathrm{int}$ + унив. $M_R$]
-С Дираковскими массами через O-сектор и универсальным $M_R$ [Т] (T-51):
+:::tip Theorem (Neutrino mass ratio) [C under O-sector $D_\mathrm{int}$ + univ. $M_R$]
+With Dirac masses via O-sector and universal $M_R$ [T] (T-51):
 
 $$
 \frac{m_{\nu_\mu}}{m_{\nu_\tau}} = \left(\frac{\sin(\pi/7)}{\sin(2\pi/7)}\right)^2 = \left(\frac{0.4339}{0.7818}\right)^2 \approx 0.308
 $$
 :::
 
-**Сравнение:**
+**Comparison:**
 
-| Механизм | Предсказание $m_2/m_3$ | Наблюдаемое | Расхождение |
+| Mechanism | Prediction $m_2/m_3$ | Observed | Discrepancy |
 |----------|----------------------|-------------|-------------|
-| Наивный сисо ($m_D = m_l$) | 0.0035 | 0.17 | $\times 50$ |
-| O-сектор (1-loop RG) | 0.21 | 0.17 | $\times 1.2$ |
-| **O-сектор (2-loop RG)** | **$0.17\text{–}0.20$** | **0.17** | **$\times 1.0\text{–}1.2$** |
+| Naive seesaw ($m_D = m_l$) | 0.0035 | 0.17 | $\times 50$ |
+| O-sector (1-loop RG) | 0.21 | 0.17 | $\times 1.2$ |
+| **O-sector (2-loop RG)** | **$0.17\text{–}0.20$** | **0.17** | **$\times 1.0\text{–}1.2$** |
 
-**Улучшение:** расхождение сокращено с $\times 50$ до $\times 1.0\text{–}1.2$ **без введения новых параметров** — используются только существующие структуры теории (спектральная тройка [Т], вакуум [Т], Фано-плоскость [Т]).
+**Improvement:** the discrepancy is reduced from $\times 50$ to $\times 1.0\text{–}1.2$ **without introducing new parameters** — only existing structures of the theory are used (spectral triple [T], vacuum [T], Fano plane [T]).
 
-### 4.4 Устранение остаточного расхождения $\times 1.8$ [С при 2-петлевой RG] {#устранение-остаточного-расхождения}
+### 4.4 Elimination of the residual discrepancy $\times 1.8$ [C under 2-loop RG] {#устранение-остаточного-расхождения}
 
-Остаточный фактор $\sim 1.8$ объясняется двумя механизмами:
+The residual factor $\sim 1.8$ is explained by two mechanisms:
 
-**(a) RG-эволюция от $M_R$ до $v_{\text{EW}}$.** Нейтринные Юкавские связи бегут. Поколенно-зависимая аномальная размерность $\gamma_k$ из Gap-лагранжиана:
+**(a) RG evolution from $M_R$ to $v_{\text{EW}}$.** Neutrino Yukawa couplings run. Generation-dependent anomalous dimension $\gamma_k$ from the Gap Lagrangian:
 
 $$
 \frac{m_2}{m_3}\bigg|_{\text{EW}} = \frac{m_2}{m_3}\bigg|_{M_R} \cdot \left(\frac{v_{\text{EW}}}{M_R}\right)^{2(\gamma_4 - \gamma_1)}
 $$
 
-С $\gamma_4 - \gamma_1 \sim 0.02$ (из Фано-структуры: разное число Фано-путей через O для $k=1$ и $k=4$) и $\ln(M_R/v) \approx 28$:
+With $\gamma_4 - \gamma_1 \sim 0.02$ (from Fano structure: different number of Fano paths through O for $k=1$ and $k=4$) and $\ln(M_R/v) \approx 28$:
 
 $$
-\text{RG-фактор} \approx \exp(-2 \times 0.02 \times 28) \approx 0.67
+\text{RG factor} \approx \exp(-2 \times 0.02 \times 28) \approx 0.67
 $$
 
-Итого: $0.308 \times 0.67 \approx 0.21$ — в пределах $\sim 25\%$ от наблюдаемого 0.17.
+Total: $0.308 \times 0.67 \approx 0.21$ — within $\sim 25\%$ of the observed 0.17.
 
-**(b) Двухпетлевая RG-коррекция.** С двухпетлевой RG-коррекцией множитель $0.67 \to 0.55\text{–}0.65$, что приближает к наблюдаемому отношению $0.17/0.308 \approx 0.55$. Итого: $0.308 \times (0.55\text{–}0.65) \approx 0.17\text{–}0.20$ — расхождение сокращено до $\times 1.0\text{–}1.2$. Формула T-63 **[Т]**; точность — вычислительная задача в $\theta^*$.
+**(b) Two-loop RG correction.** With two-loop RG correction the factor $0.67 \to 0.55\text{–}0.65$, which brings the result closer to the observed ratio $0.17/0.308 \approx 0.55$. Total: $0.308 \times (0.55\text{–}0.65) \approx 0.17\text{–}0.20$ — discrepancy reduced to $\times 1.0\text{–}1.2$. Formula T-63 **[T]**; precision is a computational task in $\theta^*$.
 
-**(c) Малая неуниверсальность $M_R$.** Если $M_R^{(1)}/M_R^{(4)} = 1 + O(\varepsilon)$, поправка порядка $\sim 0.05$ на отношение масс.
+**(c) Small non-universality of $M_R$.** If $M_R^{(1)}/M_R^{(4)} = 1 + O(\varepsilon)$, the correction is of order $\sim 0.05$ to the mass ratio.
 
-**Статус:** [С при 2-петлевой RG] — числовое согласие $\approx 0.17\text{–}0.20$ vs 0.17 (наблюдение) с двухпетлевой RG. Формула T-63 **[Т]**; прецизионное предсказание — вычислительная задача.
+**Status:** [C under 2-loop RG] — numerical agreement $\approx 0.17\text{–}0.20$ vs 0.17 (observation) with two-loop RG. Formula T-63 **[T]**; precise prediction is a computational task.
 
-:::warning Количественное расхождение
-Теоретическое отношение: $m_2/m_3 = (\sin(\pi/7)/\sin(2\pi/7))^2 \approx 0.308$.
-Экспериментальное: $m_2/m_3 \approx 0.17$. Расхождение: $\times 1.8$ **[С при 2-петлевой RG]**.
-Разрешение через 2-петлевую РГ-эволюцию + нетривиальные Юкава-текстуры — открытая вычислительная задача.
+:::warning Quantitative discrepancy
+Theoretical ratio: $m_2/m_3 = (\sin(\pi/7)/\sin(2\pi/7))^2 \approx 0.308$.
+Experimental: $m_2/m_3 \approx 0.17$. Discrepancy: $\times 1.8$ **[C under 2-loop RG]**.
+Resolution via 2-loop RG evolution + nontrivial Yukawa textures — open computational task.
 :::
 
-### 4.5 Иерархия нейтринных масс в ароматной базе {#иерархия-нейтринных-масс-ароматная}
+### 4.5 Neutrino mass hierarchy in the flavor basis {#иерархия-нейтринных-масс-ароматная}
 
-Фановские фазы дают $m_D^{(2)} > m_D^{(1)} > m_D^{(4)}$ в **ароматной** базе. Однако физические массовые собственные значения определяются **полной** массовой матрицей $m_\nu = m_D \cdot M_R^{-1} \cdot m_D^T$, которая приобретает недиагональные элементы из:
+Fano phases give $m_D^{(2)} > m_D^{(1)} > m_D^{(4)}$ in the **flavor** basis. However, physical mass eigenvalues are determined by the **full** mass matrix $m_\nu = m_D \cdot M_R^{-1} \cdot m_D^T$, which acquires off-diagonal elements from:
 
-1. Петлевых поправок к $m_D$ порядка $O(\varepsilon_{\text{eff}}^2) \sim O(10^{-3})$
-2. **Структуры $M_R$**: матрица Майорановских масс правых нейтрино определяется O-секторным Gap между различными генерационными Gap-конфигурациями. Анархическая структура $M_R$ (все элементы одного порядка) естественно возникает из O-секторной геометрии (см. [PMNS-углы из анархической $M_R$](#теорема-pmns))
+1. Loop corrections to $m_D$ of order $O(\varepsilon_{\text{eff}}^2) \sim O(10^{-3})$
+2. **Structure of $M_R$**: the matrix of Majorana masses of right-handed neutrinos is determined by the O-sector Gap between different generational Gap-configurations. The anarchic structure of $M_R$ (all elements of the same order) naturally arises from O-sector geometry (see [PMNS angles from anarchic $M_R$](#теорема-pmns))
 
-Анархическая $M_R$ + почти-диагональная $m_D$ $\to$ большое PMNS-смешивание [С при анарх. $M_R$].
+Anarchic $M_R$ + nearly-diagonal $m_D$ $\to$ large PMNS mixing [C under anarchic $M_R$].
 
 ---
 
-## 5. PMNS-углы из анархической структуры $M_R$ [С при анарх. $M_R$] {#pmns}
+## 5. PMNS angles from anarchic structure of $M_R$ [C under anarchic $M_R$] {#pmns}
 
-### 5.1 Качественное предсказание [Т]
+### 5.1 Qualitative prediction [T]
 
-:::tip Теорема 5.1 (PMNS $\gg$ CKM) [Т]
-**(a)** CKM: смешивание в кварковом секторе ($3$-to-$\bar{3}$, сильное взаимодействие).
-PMNS: смешивание в лептонном секторе ($\bar{3}$-to-$\bar{3}$, слабое взаимодействие).
+:::tip Theorem 5.1 (PMNS $\gg$ CKM) [T]
+**(a)** CKM: mixing in the quark sector ($3$-to-$\bar{3}$, strong interactions).
+PMNS: mixing in the lepton sector ($\bar{3}$-to-$\bar{3}$, weak interactions).
 
-**(b)** Лептоны — $SU(3)_C$-синглеты. Смешивание происходит в **внутреннем** секторе $\bar{3} = \{L, E, U\}$, где [Фано-структура](/docs/physics/gauge-symmetry/fano-selection-rules) **отличается** от структуры в $3$-to-$\bar{3}$.
+**(b)** Leptons are $SU(3)_C$-singlets. Mixing occurs in the **internal** sector $\bar{3} = \{L, E, U\}$, where the [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) **differs** from the structure in $3$-to-$\bar{3}$.
 
-**(c)** В секторе $\bar{3}$: одна Фано-линия $(L,E,U)$. Это даёт **менее жёсткие** ограничения на углы смешивания $\to$ бо́льшие углы.
+**(c)** In the $\bar{3}$ sector: one Fano line $(L,E,U)$. This gives **less rigid** constraints on mixing angles $\to$ larger angles.
 
-**(d)** **Качественное предсказание:**
+**(d)** **Qualitative prediction:**
 
 $$
 \theta_{12}^{(\text{PMNS})} \gg \theta_{12}^{(\text{CKM})}
 $$
 
-Наблюдаемое: $\theta_{12}^{(\text{PMNS})} \approx 33.4°$ vs $\theta_{12}^{(\text{CKM})} \approx 13.0°$ — согласуется.
+Observed: $\theta_{12}^{(\text{PMNS})} \approx 33.4°$ vs $\theta_{12}^{(\text{CKM})} \approx 13.0°$ — consistent.
 :::
 
-### 5.2 Анархическая структура $M_R$ из O-сектора [С при O-анархии $M_R$] {#теорема-pmns}
+### 5.2 Anarchic structure of $M_R$ from O-sector [C under O-anarchy of $M_R$] {#теорема-pmns}
 
-#### Теорема (PMNS из O-секторной анархии) [С при O-анархии $M_R$] {#теорема-pmns-анархия}
+#### Theorem (PMNS from O-sector anarchy) [C under O-anarchy of $M_R$] {#теорема-pmns-анархия}
 
-:::tip Теорема (PMNS из O-секторной анархии) [С при O-анархии $M_R$]
-Матрица Майорановских масс $M_R$ имеет анархическую структуру (все элементы одного порядка) в O-секторе, что при почти-диагональной $m_D$ (§4.2) даёт большие PMNS-углы.
+:::tip Theorem (PMNS from O-sector anarchy) [C under O-anarchy of $M_R$]
+The matrix of Majorana masses $M_R$ has an anarchic structure (all elements of the same order) in the O-sector, which together with nearly-diagonal $m_D$ (§4.2) gives large PMNS angles.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Структура $M_R$).** Правые нейтрино — Gap-конфигурации в O-секторе (T-51) [Т]. Три правых нейтрино $\nu_R^{(k)}$ ($k \in \{1,2,4\}$) — различные Gap-конфигурации внутри O-сектора. Майорановская масса:
+**Step 1 (Structure of $M_R$).** Right-handed neutrinos are Gap-configurations in the O-sector (T-51) [T]. Three right-handed neutrinos $\nu_R^{(k)}$ ($k \in \{1,2,4\}$) are different Gap-configurations within the O-sector. Majorana mass:
 
 $$
 [M_R]_{kl} = M_0 \cdot \langle \nu_R^{(k)} | H_{\text{Gap}}^{(O)} | \nu_R^{(l)} \rangle
 $$
 
-где $H_{\text{Gap}}^{(O)}$ — Gap-гамильтониан O-сектора.
+where $H_{\text{Gap}}^{(O)}$ is the Gap Hamiltonian of the O-sector.
 
-**Шаг 2 (O-изотропия $\to$ анархия).** Из T-61 [Т]: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. O-сектор изотропен по отношению к обоим секторам. Gap-конфигурации $\nu_R^{(k)}$ различаются Фано-фазами $\phi_k = 2\pi k/7$, но все находятся на **одинаковом расстоянии** от O (по метрике Бюреса).
+**Step 2 (O-isotropy $\to$ anarchy).** From T-61 [T]: $\varepsilon_{O \to 3} \approx \varepsilon_{O \to \bar{3}} \approx \varepsilon_0$. The O-sector is isotropic with respect to both sectors. Gap-configurations $\nu_R^{(k)}$ differ in Fano phases $\phi_k = 2\pi k/7$, but all are at **equal distance** from O (in the Bures metric).
 
-Следовательно, O-секторный Gap-гамильтониан не выделяет ни одного поколения:
+Therefore, the O-sector Gap Hamiltonian singles out no generation:
 
 $$
 |[M_R]_{kl}|/|[M_R]_{kk}| \sim O(1) \quad \forall k, l
 $$
 
-Это **анархическая** структура $M_R$.
+This is the **anarchic** structure of $M_R$.
 
-**Шаг 3 (Seesaw с анархической $M_R$).** Для $m_D = \text{diag}(d_1, d_4, d_2)$ (из [§4.2](#теорема-нейтрино-o-сектор)) и $M_R$ — плотная $(3 \times 3)$ матрица с элементами $O(M_0)$:
+**Step 3 (Seesaw with anarchic $M_R$).** For $m_D = \text{diag}(d_1, d_4, d_2)$ (from [§4.2](#теорема-нейтрино-o-сектор)) and $M_R$ — a dense $(3 \times 3)$ matrix with elements $O(M_0)$:
 
 $$
 m_\nu = m_D \cdot M_R^{-1} \cdot m_D^T
 $$
 
-$M_R^{-1}$ — также плотная матрица с элементами $O(1/M_0)$.
+$M_R^{-1}$ is also a dense matrix with elements $O(1/M_0)$.
 
-Результирующая $m_\nu$ — плотная матрица с элементами:
+The resulting $m_\nu$ is a dense matrix with elements:
 
 $$
 [m_\nu]_{kl} \sim d_k \cdot d_l / M_0
 $$
 
-Отношение недиагональных к диагональным элементам:
+Ratio of off-diagonal to diagonal elements:
 
 $$
 \frac{[m_\nu]_{kl}}{[m_\nu]_{kk}} \sim \frac{d_l}{d_k} \sim O(1)
 $$
 
-(так как все $d_k \sim \varepsilon_0$, различия лишь в факторах $\sin(2\pi k/7) \in [0.43, 0.98]$).
+(since all $d_k \sim \varepsilon_0$, differences are only in factors $\sin(2\pi k/7) \in [0.43, 0.98]$).
 
-**Шаг 4 (Углы PMNS).** Диагонализация $m_\nu$ с плотной структурой и элементами $O(1)$ даёт углы смешивания $O(1)$ (в радианах), т.е. $O(30°\text{–}60°)$.
+**Step 4 (PMNS angles).** Diagonalization of $m_\nu$ with a dense structure and elements $O(1)$ gives mixing angles $O(1)$ (in radians), i.e., $O(30°\text{–}60°)$.
 
-Конкретно, для $m_D = \text{diag}(0.782, 0.434, 0.975) \cdot \varepsilon_0 v$ и $M_R = M_0 \cdot (I + \delta M)$ с $\delta M_{ij} \sim O(1)$:
+Concretely, for $m_D = \text{diag}(0.782, 0.434, 0.975) \cdot \varepsilon_0 v$ and $M_R = M_0 \cdot (I + \delta M)$ with $\delta M_{ij} \sim O(1)$:
 
-Характерные углы PMNS из анархической $M_R$ (результат де Гувеа–Муражама, 2003):
+Characteristic PMNS angles from anarchic $M_R$ (de Gouvêa–Murayama result, 2003):
 
 $$
 \theta_{12} \sim \arctan\sqrt{|m_{\nu_e}|/|m_{\nu_\mu}|} \sim \arctan\sqrt{0.975/0.434} \approx 56°
@@ -428,154 +428,154 @@ $$
 
 $\blacksquare$
 
-### 5.3 Сравнение углов смешивания
+### 5.3 Comparison of mixing angles
 
-| Параметр | CKM (кварки) | PMNS (лептоны) | Предсказание (анарх. $M_R$) | Отношение PMNS/CKM |
+| Parameter | CKM (quarks) | PMNS (leptons) | Prediction (anarchic $M_R$) | Ratio PMNS/CKM |
 |----------|-------------|---------------|----------------------------|---------------------|
 | $\theta_{12}$ | $13.0°$ | $33.4°$ | $\sim 56°$ | $2.6$ |
 | $\theta_{23}$ | $2.4°$ | $49.0°$ | $\sim 37°$ | $20$ |
 | $\theta_{13}$ | $0.2°$ | $8.6°$ | — | $43$ |
 
-Качественное предсказание $\theta^{(\text{PMNS})} \gg \theta^{(\text{CKM})}$ выполняется для всех трёх углов [Т]. Количественные предсказания из анархической $M_R$: $\theta_{12} \sim 56°$ (наблюдаемое $33°$, порядок верный), $\theta_{23} \sim 37°$ (наблюдаемое $49°$, близко).
+The qualitative prediction $\theta^{(\text{PMNS})} \gg \theta^{(\text{CKM})}$ holds for all three angles [T]. Quantitative predictions from anarchic $M_R$: $\theta_{12} \sim 56°$ (observed $33°$, order correct), $\theta_{23} \sim 37°$ (observed $49°$, close).
 
-:::info Статус [С при анарх. $M_R$]
-Правильный порядок величин для PMNS-углов. Точное предсказание требует знания конкретной $M_R$, что зависит от детальной Gap-структуры O-сектора. Анархическая модель даёт углы $O(30°\text{–}60°)$, что согласуется с экспериментом.
+:::info Status [C under anarchic $M_R$]
+Correct order of magnitude for PMNS angles. Exact prediction requires knowledge of specific $M_R$, which depends on the detailed Gap structure of the O-sector. The anarchic model gives angles $O(30°\text{–}60°)$, consistent with experiment.
 :::
 
 ---
 
-## 6. Связь с $G_2$-экстра бозонами [Т] {#g2-extra}
+## 6. Connection to $G_2$-extra bosons [T] {#g2-extra}
 
-### 6.1 $G_2$-экстра бозоны и переход $\nu_R \to \nu_R^c$
+### 6.1 $G_2$-extra bosons and the transition $\nu_R \to \nu_R^c$
 
-[Структура $G_2$](/docs/physics/gauge-symmetry/g2-structure) определяет 14 калибровочных бозонов, которые разлагаются под $SU(3)_C$ как:
+The [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) defines 14 gauge bosons, which decompose under $SU(3)_C$ as:
 
 $$
 \mathbf{14} \to \mathbf{8} \oplus \mathbf{3} \oplus \bar{\mathbf{3}}
 $$
 
-- $\mathbf{8}$ — глюоны (безмассовые, наблюдаемые);
-- $\mathbf{3} \oplus \bar{\mathbf{3}}$ — 6 $G_2$-экстра бозонов (сверхтяжёлые).
+- $\mathbf{8}$ — gluons (massless, observable);
+- $\mathbf{3} \oplus \bar{\mathbf{3}}$ — 6 $G_2$-extra bosons (super-heavy).
 
-Экстра бозоны связывают пространственный сектор $\{A, S, D\}$ с Gap-сектором $\{L, E, U\}$ и способны изменять Gap-профиль фермиона. В частности, они генерируют переход:
+Extra bosons connect the spatial sector $\{A, S, D\}$ with the Gap sector $\{L, E, U\}$ and are capable of changing the Gap profile of a fermion. In particular, they generate the transition:
 
 $$
 \nu_R \;\xrightarrow[\Delta L = 2]{G_2\text{-extra}}\; \nu_R^c
 $$
 
-нарушающий лептонное число.
+violating lepton number.
 
-### 6.2 Механизм генерации массы Майорана [Т]
+### 6.2 Mechanism of Majorana mass generation [T]
 
-Масса Майорана выводится из петлевого обмена $G_2$-экстра бозонами ([Теорема 2.1](#теорема-mr-из-gap)):
+The Majorana mass is derived from the loop exchange of $G_2$-extra bosons ([Theorem 2.1](#теорема-mr-из-gap)):
 
-$$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot \sqrt{6} \cdot \varepsilon \cdot M_{\text{Planck}} \approx 2.9 \times 10^{14} \text{ ГэВ}$$
+$$M_R = \frac{g_{G_2}^4}{16\pi^2} \cdot \sqrt{6} \cdot \varepsilon \cdot M_{\text{Planck}} \approx 2.9 \times 10^{14} \text{ GeV}$$
 
-Масса экстра бозонов $M_{G_2}^{(\text{extra})} \sim \sqrt{6}\varepsilon M_P \sim 10^{17}$ ГэВ определяется непрозрачностью $O$-сектора. Петлевой фактор $g^4/(16\pi^2) \approx 1.5 \times 10^{-3}$ снижает масштаб до $\sim 10^{14}$ ГэВ — именно то, что нужно для seesaw.
+The extra boson mass $M_{G_2}^{(\text{extra})} \sim \sqrt{6}\varepsilon M_P \sim 10^{17}$ GeV is determined by the opacity of the $O$-sector. The loop factor $g^4/(16\pi^2) \approx 1.5 \times 10^{-3}$ reduces the scale to $\sim 10^{14}$ GeV — exactly what is needed for seesaw.
 
-### 6.3 Роль $G_2$-экстра бозонов в seesaw типа I
+### 6.3 Role of $G_2$-extra bosons in type-I seesaw
 
-:::tip Утверждение 6.1 (Seesaw из $G_2$-структуры) [И]
-Математический механизм seesaw — [Т] (T-51). Физическая идентификация $\nu_R$ с $O$-сектором — интерпретация [И], не требующая отдельного доказательства.
+:::tip Claim 6.1 (Seesaw from $G_2$-structure) [I]
+The mathematical mechanism of seesaw is [T] (T-51). The physical identification of $\nu_R$ with the $O$-sector is an interpretation [I], not requiring separate proof.
 
-$G_2$-экстра бозоны обеспечивают seesaw типа I через следующую цепочку:
+$G_2$-extra bosons provide type-I seesaw via the following chain:
 
-1. **Существование $\nu_R$:** Gap-конфигурация $(1,1)_0$ (Теорема 1.1).
-2. **Масса Дирака:** Юкавская связь $y_\nu$ через [Хиггс-механизм](/docs/physics/particle-physics/higgs-sector): $m_D = y_\nu v$.
-3. **Масса Майорана:** $G_2$-экстра бозоны генерируют $M_R$ через переход $\nu_R \to \nu_R^c$.
-4. **Seesaw-формула:** $m_\nu \approx y_\nu^2 v^2 / M_R$.
+1. **Existence of $\nu_R$:** Gap-configuration $(1,1)_0$ (Theorem 1.1).
+2. **Dirac mass:** Yukawa coupling $y_\nu$ via [Higgs mechanism](/docs/physics/particle-physics/higgs-sector): $m_D = y_\nu v$.
+3. **Majorana mass:** $G_2$-extra bosons generate $M_R$ via the transition $\nu_R \to \nu_R^c$.
+4. **Seesaw formula:** $m_\nu \approx y_\nu^2 v^2 / M_R$.
 
-Результат: лёгкие нейтрино с $m_\nu \sim 0.01\text{--}0.05$ эВ при $M_R \sim 10^{14}$ ГэВ.
+Result: light neutrinos with $m_\nu \sim 0.01\text{--}0.05$ eV at $M_R \sim 10^{14}$ GeV.
 :::
 
-:::info Статус [Т]
-Промежуточный масштаб $M_R \sim 10^{14}$ ГэВ **выведен** из Gap-параметров ([Теорема 2.1](#теорема-mr-из-gap)). Бывшая гипотеза (ΓO) доказана [Т] из PW-часов (A5) и жизнеспособности (V): $\mathcal{G}_{\text{total}}^{(O)} = O(1)$ в планковских единицах. Зависимость $M_R \propto \varepsilon \cdot M_P$ тестируема: при фиксации $\varepsilon$ из [самосогласованного вакуумного уравнения](/docs/core/dynamics/gap-thermodynamics) предсказание становится количественным.
+:::info Status [T]
+The intermediate scale $M_R \sim 10^{14}$ GeV is **derived** from Gap parameters ([Theorem 2.1](#теорема-mr-из-gap)). The former hypothesis (ΓO) is proved [T] from PW clocks (A5) and viability (V): $\mathcal{G}_{\text{total}}^{(O)} = O(1)$ in Planck units. The dependence $M_R \propto \varepsilon \cdot M_P$ is testable: once $\varepsilon$ is fixed from the [self-consistent vacuum equation](/docs/core/dynamics/gap-thermodynamics), the prediction becomes quantitative.
 :::
 
 ---
 
-## 7. Юкавские связи нейтрино [Т] {#юкавские-связи}
+## 7. Neutrino Yukawa couplings [T] {#юкавские-связи}
 
-### 7.1 Формула Дираковской Юкавской связи через O-сектор
+### 7.1 Formula for Dirac Yukawa coupling via O-sector
 
-В отличие от заряженных фермионов, Юкавская связь нейтрино определяется **не** блоком $M_{3,\bar{3}}$ (Хиггсовая линия), а блоками $M_{O,3}$ и $M_{O,\bar{3}}$ внутреннего оператора Дирака (см. [§4.2](#теорема-нейтрино-o-сектор)):
+Unlike charged fermions, the neutrino Yukawa coupling is determined **not** by the block $M_{3,\bar{3}}$ (Higgs line), but by the blocks $M_{O,3}$ and $M_{O,\bar{3}}$ of the internal Dirac operator (see [§4.2](#теорема-нейтрино-o-сектор)):
 
 $$
 m_D^{(k)} = \omega_0 \cdot \text{Gap}(O, k) \cdot |\gamma_{O,\text{partner}(k)}^{\text{vac}}| \cdot \sin\!\left(\frac{2\pi k}{7}\right)
 $$
 
-где $(k_1, k_2, k_3) = (1, 2, 4)$ — [квадратичные вычеты](/docs/physics/particle-physics/fermion-generations) $\bmod 7$, $\text{partner}(k)$ — вершина Фано-линии $\{k, \text{partner}, O\}$.
+where $(k_1, k_2, k_3) = (1, 2, 4)$ are the [quadratic residues](/docs/physics/particle-physics/fermion-generations) $\bmod 7$, $\text{partner}(k)$ is the vertex of the Fano line $\{k, \text{partner}, O\}$.
 
-### 7.2 Отношения Дираковских масс
+### 7.2 Ratios of Dirac masses
 
-Из O-секторной структуры (все $\varepsilon_0$ одинаковы, Gap$(O,k) \approx 1$):
+From the O-sector structure (all $\varepsilon_0$ equal, Gap$(O,k) \approx 1$):
 
 $$
 m_D^{(1)} : m_D^{(4)} : m_D^{(2)} = \sin(2\pi/7) : |\sin(8\pi/7)| : \sin(4\pi/7) = 0.782 : 0.434 : 0.975
 $$
 
-Отношение для seesaw-масс:
+Mass ratio for seesaw:
 
 $$
 \frac{m_{\nu_\mu}}{m_{\nu_\tau}} = \left(\frac{m_D^{(4)}}{m_D^{(1)}}\right)^2 = \left(\frac{|\sin(8\pi/7)|}{\sin(2\pi/7)}\right)^2 = \left(\frac{0.434}{0.782}\right)^2 \approx 0.308
 $$
 
-:::info Ключевое отличие от наивного seesaw
-При наивном $m_D \sim m_l$ (Хиггсовый блок) отношение $m_2/m_3 \sim (m_\mu/m_\tau)^2 \approx 0.0035$ расходится с наблюдением в 50 раз. Через O-секторный блок $m_2/m_3 \approx 0.308$ (с двухпетлевой RG-поправкой $\approx 0.17\text{–}0.20$) — расхождение сокращено до $\times 1.0\text{–}1.2$. Формула T-63 **[Т]**; точность — вычислительная задача в $\theta^*$. Механизм: $\nu_R$ живёт в O-секторе (T-51 [Т]), поэтому Дираковская масса определяется блоками $M_{O,\text{sector}}$, а не $M_{3,\bar{3}}$.
+:::info Key distinction from naive seesaw
+In the naive case $m_D \sim m_l$ (Higgs block) the ratio $m_2/m_3 \sim (m_\mu/m_\tau)^2 \approx 0.0035$ disagrees with observation by a factor of 50. Via the O-sector block $m_2/m_3 \approx 0.308$ (with two-loop RG correction $\approx 0.17\text{–}0.20$) — discrepancy reduced to $\times 1.0\text{–}1.2$. Formula T-63 **[T]**; precision is a computational task in $\theta^*$. Mechanism: $\nu_R$ lives in the O-sector (T-51 [T]), so the Dirac mass is determined by blocks $M_{O,\text{sector}}$, not $M_{3,\bar{3}}$.
 :::
 
-### 7.3 Полная seesaw-формула с O-секторной структурой [С при O-секторном $D_\mathrm{int}$]
+### 7.3 Full seesaw formula with O-sector structure [C under O-sector $D_\mathrm{int}$]
 
-Полная массовая матрица лёгких нейтрино:
+Full mass matrix of light neutrinos:
 
 $$
 m_\nu = m_D \cdot M_R^{-1} \cdot m_D^T
 $$
 
-где $m_D$ — почти-диагональная с элементами из O-секторного блока, $M_R$ — плотная (анархическая) из O-секторной изотропии. Диагонализация даёт физические массы и PMNS-углы одновременно (см. [§5.2](#теорема-pmns-анархия)).
+where $m_D$ is nearly-diagonal with elements from the O-sector block, $M_R$ is dense (anarchic) from O-sector isotropy. Diagonalization gives physical masses and PMNS angles simultaneously (see [§5.2](#теорема-pmns-анархия)).
 
-:::info Нумерация поколений [Т]
-Нумерация поколений $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{-е}, 1\text{-е}, 2\text{-е})$ **установлена**: $k=1$ — 3-е поколение [Т] (единственная древесная Юкавская), $k=4$ — 2-е и $k=2$ — 1-е [Т] (секторная асимметрия доказана из конфайнмента). См. [Три поколения фермионов, §4](/docs/physics/particle-physics/fermion-generations#4-назначение-поколений).
+:::info Generation numbering [T]
+The generation numbering $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{rd}, 1\text{st}, 2\text{nd})$ is **established**: $k=1$ — 3rd generation [T] (unique tree-level Yukawa), $k=4$ — 2nd and $k=2$ — 1st [T] (sectoral asymmetry proved from confinement). See [Three Fermion Generations, §4](/docs/physics/particle-physics/fermion-generations#4-назначение-поколений).
 :::
 
 ---
 
-## 8. Сводка предсказаний и статус {#сводка}
+## 8. Summary of predictions and status {#сводка}
 
-### 8.1 Результаты
+### 8.1 Results
 
-| Предсказание | Формула | Значение | Эксперимент | Статус |
+| Prediction | Formula | Value | Experiment | Status |
 |-------------|---------|----------|-------------|--------|
-| Масса $\nu_\tau$ | $m_\tau^2/M_R$ | $\sim 0.03$ эВ | $\sim 0.05$ эВ | **[Т]** Согласие по порядку |
-| Масса $\nu_\mu$ | $m_\mu^2/M_R$ (+ поправки) | $\sim 0.009$ эВ | $\sim 0.009$ эВ | **[Т]** Согласие |
-| Масса $\nu_e$ | (+ Фано-поправки) | $\sim 0.003$ эВ | $< 0.8$ эВ (прямое) | **[Т]** Совместимо |
-| Иерархия | Seesaw + назначение $(k_n)$ | NH (нормальная) | Предпочтение NH | **[Т]** |
-| $m_2/m_3$ | O-секторная Юкавская + 2-loop RG | $\approx 0.17\text{–}0.20$ | $0.17$ | **[С при 2-петлевой RG]** $\times 1.0\text{–}1.2$ |
-| $\theta_{12}^{(\text{PMNS})} \gg \theta_{12}^{(\text{CKM})}$ | Анархическая $M_R$ из O-сектора | $O(30°\text{–}60°)$ | $33°$ | **[С при анарх. $M_R$]** Порядок верный |
-| $\theta_{23}^{(\text{PMNS})}$ | Анархическая $M_R$ | $\sim 37°$ | $49°$ | **[С при анарх. $M_R$]** Близко |
-| $\sum m_\nu$ | Суммирование | $\sim 0.042$ эВ | $< 0.12$ эВ | **[Т]** Совместимо |
+| Mass of $\nu_\tau$ | $m_\tau^2/M_R$ | $\sim 0.03$ eV | $\sim 0.05$ eV | **[T]** Order-of-magnitude agreement |
+| Mass of $\nu_\mu$ | $m_\mu^2/M_R$ (+ corrections) | $\sim 0.009$ eV | $\sim 0.009$ eV | **[T]** Agreement |
+| Mass of $\nu_e$ | (+ Fano corrections) | $\sim 0.003$ eV | $< 0.8$ eV (direct) | **[T]** Compatible |
+| Hierarchy | Seesaw + assignment $(k_n)$ | NH (normal) | Preference for NH | **[T]** |
+| $m_2/m_3$ | O-sector Yukawa + 2-loop RG | $\approx 0.17\text{–}0.20$ | $0.17$ | **[C under 2-loop RG]** $\times 1.0\text{–}1.2$ |
+| $\theta_{12}^{(\text{PMNS})} \gg \theta_{12}^{(\text{CKM})}$ | Anarchic $M_R$ from O-sector | $O(30°\text{–}60°)$ | $33°$ | **[C under anarchic $M_R$]** Order correct |
+| $\theta_{23}^{(\text{PMNS})}$ | Anarchic $M_R$ | $\sim 37°$ | $49°$ | **[C under anarchic $M_R$]** Close |
+| $\sum m_\nu$ | Summation | $\sim 0.042$ eV | $< 0.12$ eV | **[T]** Compatible |
 
-### 8.2 Открытые проблемы
+### 8.2 Open problems
 
-1. **Расхождение $m_2/m_3$** — **решено [С при 2-петлевой RG]**: O-секторная Дираковская Юкавская сокращает расхождение с $\times 50$ до $\times 1.8$ (однопетлевой RG), затем до $\times 1.0\text{–}1.2$ с двухпетлевой RG. Формула T-63 **[Т]**; прецизионное предсказание — вычислительная задача в $\theta^*$. См. [§4.3](#теорема-отношение-нейтринных-масс).
+1. **Discrepancy $m_2/m_3$** — **resolved [C under 2-loop RG]**: O-sector Dirac Yukawa reduces the discrepancy from $\times 50$ to $\times 1.8$ (one-loop RG), then to $\times 1.0\text{–}1.2$ with two-loop RG. Formula T-63 **[T]**; precise prediction is a computational task in $\theta^*$. See [§4.3](#теорема-отношение-нейтринных-масс).
 
-2. **Нумерация поколений** — решено: $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{-е}, 1\text{-е}, 2\text{-е})$ **[Т]** (секторная асимметрия доказана из конфайнмента). См. [Теорему 4.1-4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1).
+2. **Generation numbering** — resolved: $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{rd}, 1\text{st}, 2\text{nd})$ **[T]** (sectoral asymmetry proved from confinement). See [Theorem 4.1–4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1).
 
-3. **Масштаб $M_R$** — решено: $M_R$ выводится из $G_2$-экстра бозонов через петлевой механизм **[Т]** (PW-часы + жизнеспособность). См. [Теорему 2.1](#теорема-mr-из-gap).
+3. **Scale $M_R$** — resolved: $M_R$ is derived from $G_2$-extra bosons via loop mechanism **[T]** (PW clocks + viability). See [Theorem 2.1](#теорема-mr-из-gap).
 
-4. **Количественные PMNS-углы** — **частично решено [С при анарх. $M_R$]**: анархическая $M_R$ из O-секторной изотропии даёт большие углы $O(30°\text{–}60°)$, согласующиеся с экспериментом. Точное предсказание требует детальной Gap-структуры O-сектора. См. [§5.2](#теорема-pmns-анархия).
+4. **Quantitative PMNS angles** — **partially resolved [C under anarchic $M_R$]**: anarchic $M_R$ from O-sector isotropy gives large angles $O(30°\text{–}60°)$, consistent with experiment. Exact prediction requires detailed Gap structure of the O-sector. See [§5.2](#теорема-pmns-анархия).
 
-5. **CP-фаза $\delta_{\text{CP}}^{(\text{PMNS})}$.** Аналог предсказания $\delta_{\text{CP}}^{(\text{CKM})} \approx -2\pi/7$ для лептонного сектора.
+5. **CP phase $\delta_{\text{CP}}^{(\text{PMNS})}$.** Analogue of the prediction $\delta_{\text{CP}}^{(\text{CKM})} \approx -2\pi/7$ for the lepton sector.
 
 ---
 
-## Связанные документы
+## Related documents
 
-- [Поколения фермионов](/docs/physics/particle-physics/fermion-generations) — три поколения из Фано
-- [CKM-матрица](/docs/physics/particle-physics/ckm-matrix) — смешивание кварков
-- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy) — массовая иерархия
-- [Хиггс-сектор](/docs/physics/particle-physics/higgs-sector) — механизм электрослабого нарушения симметрии
-- [Стандартная модель](/docs/physics/gauge-symmetry/standard-model) — SM из $G_2$
-- [$G_2$-структура](/docs/physics/gauge-symmetry/g2-structure) — $G_2$-голономия и экстра бозоны
-- [Фано-правила отбора](/docs/physics/gauge-symmetry/fano-selection-rules) — Фано-архитектура
-- [Суперсимметрия](/docs/physics/particle-physics/susy) — SUSY из $G_2$-голономии
+- [Fermion generations](/docs/physics/particle-physics/fermion-generations) — three generations from Fano
+- [CKM matrix](/docs/physics/particle-physics/ckm-matrix) — quark mixing
+- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — mass hierarchy
+- [Higgs sector](/docs/physics/particle-physics/higgs-sector) — electroweak symmetry breaking mechanism
+- [Standard Model](/docs/physics/gauge-symmetry/standard-model) — SM from $G_2$
+- [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2$-holonomy and extra bosons
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano architecture
+- [Supersymmetry](/docs/physics/particle-physics/susy) — SUSY from $G_2$-holonomy

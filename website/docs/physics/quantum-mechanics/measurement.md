@@ -1,195 +1,213 @@
 ---
 sidebar_position: 2
-title: "Квантовое измерение"
-description: Теория квантового измерения из структуры Ω — редукция волновой функции, правило Борна, связь с самонаблюдением
+title: "Quantum Measurement"
+description: Theory of quantum measurement from the Ω structure — wavefunction reduction, Born rule, connection to self-observation
 ---
 
-# Квантовое Измерение в УГМ
+# Quantum Measurement in UHM
 
-:::info Статус раздела
-Результаты раздела имеют различные статусы:
-- **[Т]** — строго доказано (редукция как проекция на атом $\chi_{S_k}$)
-- **[И]** — интерпретация (правило Борна из структуры $\Gamma$ — содержит скрытую цикличность)
-- **[Г]** — содержательные гипотезы (наблюдатель как самоизмерение)
-- **[П]** — программа исследований (полная теория измерения для живых систем)
+:::info Section Status
+The results in this section have different statuses:
+- **[T]** — strictly proved (reduction as projection onto atom $\chi_{S_k}$)
+- **[I]** — interpretation (Born rule from the $\Gamma$ structure — contains a hidden circularity)
+- **[H]** — substantive hypotheses (observer as self-measurement)
+- **[P]** — research program (complete theory of measurement for living systems)
 :::
 
-## Содержание
+## Contents
 
-1. [Постановка проблемы измерения](#1-постановка-проблемы)
-2. [Измерение из структуры Ω](#2-измерение-из-omega)
-3. [Правило Борна из УГМ](#3-правило-борна)
-4. [Связь с самонаблюдением (φ-оператор)](#4-связь-с-самонаблюдением)
-5. [Декогеренция как логическая динамика](#5-декогеренция)
-6. [Проблема предпочтительного базиса](#6-предпочтительный-базис)
-7. [Измерение для систем с ненулевой регенерацией ($R > 0$)](#7-живые-системы)
-8. [Запрет сигнализации](#8-запрет-сигнализации)
+1. [Statement of the Measurement Problem](#1-постановка-проблемы)
+2. [Measurement from the $\Omega$ Structure](#2-измерение-из-omega)
+3. [Born Rule from UHM](#3-правило-борна)
+4. [Connection to Self-Observation ($\varphi$-Operator)](#4-связь-с-самонаблюдением)
+5. [Decoherence as Logical Dynamics](#5-декогеренция)
+6. [Preferred Basis Problem](#6-предпочтительный-базис)
+7. [Measurement for Systems with Nonzero Regeneration ($R > 0$)](#7-живые-системы)
+8. [No-Signaling](#8-запрет-сигнализации)
 
 ---
 
-## 1. Постановка проблемы измерения {#1-постановка-проблемы}
+## 1. Statement of the Measurement Problem {#1-постановка-проблемы}
 
-### 1.1 Стандартная проблема
+### 1.1 The Standard Problem
 
-В стандартной квантовой механике **проблема измерения** состоит из трёх взаимосвязанных вопросов:
+In standard quantum mechanics, the **measurement problem** consists of three interrelated questions:
 
-1. **Проблема редукции:** Почему при измерении состояние $|\psi\rangle = \sum_k c_k |a_k\rangle$ «коллапсирует» к конкретному $|a_k\rangle$?
-2. **Проблема вероятностей (правило Борна):** Почему вероятность исхода $k$ равна $p_k = |c_k|^2$?
-3. **Проблема предпочтительного базиса:** Что определяет базис $\{|a_k\rangle\}$, в котором происходит «редукция»?
+1. **The reduction problem:** Why does the state $|\psi\rangle = \sum_k c_k |a_k\rangle$ "collapse" to a specific $|a_k\rangle$ upon measurement?
+2. **The probability problem (Born rule):** Why is the probability of outcome $k$ equal to $p_k = |c_k|^2$?
+3. **The preferred basis problem:** What determines the basis $\{|a_k\rangle\}$ in which "reduction" occurs?
 
-### 1.2 Подход УГМ
+### 1.2 The UHM Approach
 
-УГМ предлагает **логическую** интерпретацию измерения через структуру классификатора подобъектов $\Omega$. Ключевая идея:
+UHM proposes a **logical** interpretation of measurement through the structure of the subobject classifier $\Omega$. The key idea:
 
-:::warning Центральный тезис
-Квантовое измерение — это **проекция состояния на атом классификатора $\Omega$**. Редукция волновой функции — не мистический процесс, а **логическая операция** определения значения характеристического морфизма $\chi_{S_k}$.
+:::warning Central Thesis
+Quantum measurement is **a projection of the state onto an atom of the classifier $\Omega$**. Wavefunction reduction is not a mystical process, but a **logical operation** of determining the value of the characteristic morphism $\chi_{S_k}$.
 :::
 
-Эта интерпретация вписывается в общую L-унификацию:
+This interpretation fits into the general L-unification:
 
 $$
-\Omega \xrightarrow{\chi_S} L_k = \sqrt{\chi_{S_k}} \xrightarrow{} \mathcal{L}_\Omega \xrightarrow{} \text{декогеренция + измерение}
+\Omega \xrightarrow{\chi_S} L_k = \sqrt{\chi_{S_k}} \xrightarrow{} \mathcal{L}_\Omega \xrightarrow{} \text{decoherence + measurement}
 $$
 
 ---
 
-## 2. Измерение из структуры $\Omega$ {#2-измерение-из-omega}
+## 2. Measurement from the $\Omega$ Structure {#2-измерение-из-omega}
 
-### 2.1 Атомы классификатора как исходы измерения
+### 2.1 Classifier Atoms as Measurement Outcomes
 
-В ∞-топосе $\text{Sh}_\infty(\mathcal{C})$ классификатор подобъектов $\Omega$ разлагается на **атомы** — минимальные нетривиальные подобъекты:
+In the ∞-topos $\text{Sh}_\infty(\mathcal{C})$, the subobject classifier $\Omega$ decomposes into **atoms** — minimal nontrivial subobjects:
 
 $$
 \mathcal{T}_\Omega = \{S_0, S_1, \ldots, S_{N-1}\}
 $$
 
-Для базовой категории $\mathcal{C} = \mathcal{D}(\mathbb{C}^N)$ каждый атом — проектор на базисное состояние:
+For the base category $\mathcal{C} = \mathcal{D}(\mathbb{C}^N)$, each atom is a projector onto a basis state:
 
 $$
 S_k = |k\rangle\langle k|, \quad k \in \{0, 1, \ldots, N-1\}
 $$
 
-**Физическая интерпретация:** Атомы $S_k$ — это **возможные исходы измерения**. Измерение — процесс определения того, какому атому «принадлежит» состояние.
+**Physical interpretation:** The atoms $S_k$ are the **possible measurement outcomes**. Measurement is the process of determining which atom the state "belongs to."
 
-### 2.2 Характеристический морфизм как акт измерения
+### 2.2 The Characteristic Morphism as an Act of Measurement
 
-:::tip [Т] Теорема 2.1 (Измерение как характеристический морфизм)
-Для подобъекта $S \hookrightarrow \Gamma$ характеристический морфизм
+:::tip [T] Theorem 2.1 (Measurement as characteristic morphism)
+For a subobject $S \hookrightarrow \Gamma$, the characteristic morphism
 
 $$
 \chi_S: \Gamma \to \Omega
 $$
 
-определяет **значение истинности** утверждения «состояние $\Gamma$ принадлежит подпространству $S$». Квантовое измерение наблюдаемой $\hat{A}$ с собственными значениями $\{a_k\}$ и собственными подпространствами $\{S_k\}$ — это вычисление набора характеристических морфизмов:
+determines the **truth value** of the statement "state $\Gamma$ belongs to subspace $S$." Quantum measurement of an observable $\hat{A}$ with eigenvalues $\{a_k\}$ and eigenspaces $\{S_k\}$ is the computation of the set of characteristic morphisms:
 
 $$
 \{\chi_{S_k}(\Gamma)\}_{k=0}^{N-1}
 $$
 :::
 
-*Доказательство:*
+*Proof:*
 
-**Шаг 1.** Наблюдаемая $\hat{A}$ определяет спектральное разложение:
+**Step 1.** The observable $\hat{A}$ defines the spectral decomposition:
 
 $$
 \hat{A} = \sum_k a_k P_k, \quad P_k = |a_k\rangle\langle a_k|
 $$
 
-где $P_k$ — проекторы на собственные подпространства.
+where $P_k$ are projectors onto the eigenspaces.
 
-**Шаг 2.** Каждый проектор $P_k$ определяет подобъект $S_k \hookrightarrow \mathcal{H}$ с характеристическим морфизмом:
+**Step 2.** Each projector $P_k$ defines a subobject $S_k \hookrightarrow \mathcal{H}$ with characteristic morphism:
 
 $$
 \chi_{S_k}(\Gamma) = P_k \Gamma P_k
 $$
 
-**Шаг 3.** Набор $\{\chi_{S_k}\}$ полностью определяет результат измерения: вероятность исхода $k$ равна:
+**Step 3.** The set $\{\chi_{S_k}\}$ completely determines the measurement result: the probability of outcome $k$ is:
 
 $$
 p_k = \text{Tr}(\chi_{S_k}(\Gamma)) = \text{Tr}(P_k \Gamma P_k) = \text{Tr}(P_k \Gamma)
 $$
 
-**Шаг 4.** Постизмерительное состояние при исходе $k$:
+**Step 4.** Post-measurement state upon outcome $k$:
 
 $$
 \Gamma_k = \frac{\chi_{S_k}(\Gamma)}{\text{Tr}(\chi_{S_k}(\Gamma))} = \frac{P_k \Gamma P_k}{\text{Tr}(P_k \Gamma)}
 $$
 
-Это стандартный постулат редукции фон Неймана, **выведенный** из структуры $\Omega$. $\blacksquare$
+This is the standard von Neumann reduction postulate, **derived** from the $\Omega$ structure. $\blacksquare$
 
-### 2.3 Операторы Линдблада как каналы декогеренции
+### 2.3 Lindblad Operators as Decoherence Channels
 
-Операторы Линдблада $L_k = \sqrt{\chi_{S_k}}$ — квадратные корни характеристических морфизмов — определяют **процесс декогеренции** в базисе измерения:
+The Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ — square roots of characteristic morphisms — define the **decoherence process** in the measurement basis:
 
 $$
 \mathcal{D}_{\text{meas}}[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-:::tip [Т] Теорема 2.2 (Декогеренция в базисе указателя)
-Под действием $\mathcal{D}_{\text{meas}}$ внедиагональные элементы $\Gamma$ в базисе $\{|a_k\rangle\}$ экспоненциально подавляются:
+:::tip [T] Theorem 2.2 (Decoherence in the pointer basis)
+Under the action of $\mathcal{D}_{\text{meas}}$, the off-diagonal elements of $\Gamma$ in the basis $\{|a_k\rangle\}$ are exponentially suppressed:
 
 $$
 \Gamma_{kl}(t) = \Gamma_{kl}(0) \cdot e^{-\gamma_{kl} t}, \quad k \neq l
 $$
 
-где $\gamma_{kl} = \frac{1}{2}\sum_m \gamma_m |(\chi_{S_m})_{kk} - (\chi_{S_m})_{ll}|^2 > 0$.
+where $\gamma_{kl} = \frac{1}{2}\sum_m \gamma_m |(\chi_{S_m})_{kk} - (\chi_{S_m})_{ll}|^2 > 0$.
 
-В пределе $t \to \infty$:
+In the limit $t \to \infty$:
 
 $$
 \Gamma(t) \to \sum_k p_k |a_k\rangle\langle a_k|
 $$
 
-что соответствует «коллапсу» в классическую смесь.
+which corresponds to "collapse" into a classical mixture.
 :::
 
-*Доказательство:* Прямое вычисление из уравнения Линдблада с $L_k = |a_k\rangle\langle a_k|$. Антикоммутатор $\{L_k^\dagger L_k, \Gamma\}$ даёт подавление внедиагональных элементов с темпом $\gamma_{kl}$. $\blacksquare$
+*Proof.* Suppose the Lindblad operators $L_m = \chi_{S_m}$ are diagonal in the pointer basis $\{|a_k\rangle\}$ (ensured by the fact that $\{|a_k\rangle\}$ is a simultaneous eigenbasis of all characteristic morphisms $\chi_{S_m}$). Denote $(L_m)_{kk} \equiv \langle a_k | L_m | a_k \rangle \in \mathbb{R}$ (real, since $L_m$ is Hermitian).
+
+Computing the matrix element of the Lindblad equation for $k \neq l$:
+$$
+\frac{d}{dt}\Gamma_{kl} = \sum_m \gamma_m \Bigl[\underbrace{\langle a_k | L_m \Gamma L_m^\dagger | a_l \rangle}_{(L_m)_{kk}(L_m)_{ll}\,\Gamma_{kl}} - \frac{1}{2}\underbrace{\langle a_k | \{L_m^\dagger L_m, \Gamma\} | a_l \rangle}_{(|(L_m)_{kk}|^2 + |(L_m)_{ll}|^2)\,\Gamma_{kl}}\Bigr]
+$$
+
+Since $L_m$ is diagonal:
+$$
+= \sum_m \gamma_m \Bigl[(L_m)_{kk}(L_m)_{ll} - \tfrac{1}{2}\bigl((L_m)_{kk}^2 + (L_m)_{ll}^2\bigr)\Bigr]\Gamma_{kl}
+= -\frac{1}{2}\sum_m \gamma_m \bigl[(L_m)_{kk} - (L_m)_{ll}\bigr]^2 \Gamma_{kl}
+$$
+
+where the last equality is the identity $ab - \tfrac{1}{2}(a^2+b^2) = -\tfrac{1}{2}(a-b)^2$ for real $a,b$. Therefore:
+$$
+\Gamma_{kl}(t) = \Gamma_{kl}(0)\,e^{-\gamma_{kl} t}, \quad \gamma_{kl} = \frac{1}{2}\sum_m \gamma_m \bigl|({\chi_{S_m}})_{kk} - ({\chi_{S_m}})_{ll}\bigr|^2
+$$
+
+**Positivity $\gamma_{kl} > 0$:** since $\gamma_m > 0$ (Lindblad rates), it suffices to show that for at least one $m$ we have $(\chi_{S_m})_{kk} \neq (\chi_{S_m})_{ll}$. This is guaranteed by the fact that $|a_k\rangle$ and $|a_l\rangle$ are **distinct** eigenvectors of $\hat{A}$, which the operators $\chi_{S_m}$ nontrivially distinguish (i.e., $\hat{A}$ is a non-neutral measurable quantity). As $t \to \infty$, all $\Gamma_{kl} \to 0$ ($k \neq l$), leaving the classical mixture $\sum_k p_k |a_k\rangle\langle a_k|$. $\blacksquare$
 
 ---
 
-## 3. Правило Борна из УГМ {#3-правило-борна}
+## 3. Born Rule from UHM {#3-правило-борна}
 
-:::warning Цикличность «вывода» правила Борна
-Утверждение, что правило Борна «выводится» из структуры $\Gamma$, содержит скрытую цикличность. Формула $p_k = \mathrm{Tr}(P_k \Gamma)$ — это **определение** вероятности через спаривание состояние-наблюдаемая (trace-state pairing), которое уже **заложено** в интерпретацию $\Gamma$ как матрицы плотности. Чтобы $\Gamma$ была матрицей плотности (а не произвольным эрмитовым оператором), необходимо постулировать, что её диагональные элементы в базисе измерения имеют смысл вероятностей — т.е. правило Борна. Ссылка на теорему Глисона (раздел 3.3) корректна для $\dim \geq 3$, но переносит вопрос на обоснование $\sigma$-аддитивности меры на проекторах.
+:::warning Circularity of the Born rule "derivation"
+The claim that the Born rule is "derived" from the $\Gamma$ structure contains a hidden circularity. The formula $p_k = \mathrm{Tr}(P_k \Gamma)$ is the **definition** of probability via the state-observable pairing (trace-state pairing), which is already **built into** the interpretation of $\Gamma$ as a density matrix. For $\Gamma$ to be a density matrix (rather than an arbitrary Hermitian operator), one must postulate that its diagonal elements in the measurement basis have the meaning of probabilities — i.e., the Born rule. The reference to Gleason's theorem (section 3.3) is valid for $\dim \geq 3$, but shifts the question to justifying $\sigma$-additivity of the measure on projectors.
 :::
 
-### 3.1 Вывод из структуры $\Gamma$
+### 3.1 Derivation from the $\Gamma$ Structure
 
-:::warning [И] Интерпретация 3.1 (Правило Борна из матрицы когерентности)
-Для состояния $\Gamma$ и наблюдаемой $\hat{A}$ с собственными проекторами $\{P_k\}$ вероятность исхода $k$ определяется:
+:::warning [I] Interpretation 3.1 (Born rule from the coherence matrix)
+For a state $\Gamma$ and an observable $\hat{A}$ with eigenprojectors $\{P_k\}$, the probability of outcome $k$ is defined by:
 
 $$
 p_k = \text{Tr}(P_k \Gamma)
 $$
 
-Для чистого состояния $\Gamma = |\psi\rangle\langle\psi|$:
+For a pure state $\Gamma = |\psi\rangle\langle\psi|$:
 
 $$
 p_k = \text{Tr}(P_k |\psi\rangle\langle\psi|) = |\langle a_k|\psi\rangle|^2
 $$
 
-что совпадает с правилом Борна.
+which coincides with the Born rule.
 :::
 
-*Доказательство:*
+*Proof:*
 
-**Шаг 1.** В формализме УГМ состояние полностью описывается матрицей когерентности $\Gamma$ — эрмитовым неотрицательно определённым оператором с $\text{Tr}(\Gamma) = 1$.
+**Step 1.** In the UHM formalism, the state is fully described by the coherence matrix $\Gamma$ — a Hermitian non-negative definite operator with $\text{Tr}(\Gamma) = 1$.
 
-**Шаг 2.** Измерение наблюдаемой $\hat{A}$ — это определение значений характеристических морфизмов $\chi_{S_k}$, т.е. проекция $\Gamma$ на собственные подпространства $\hat{A}$:
+**Step 2.** Measurement of $\hat{A}$ consists of determining the values of the characteristic morphisms $\chi_{S_k}$, i.e., projecting $\Gamma$ onto the eigenspaces of $\hat{A}$:
 
 $$
 \chi_{S_k}(\Gamma) = P_k \Gamma P_k
 $$
 
-**Шаг 3.** Нормировка требует $\sum_k p_k = 1$. Из полноты системы проекторов ($\sum_k P_k = I$):
+**Step 3.** Normalization requires $\sum_k p_k = 1$. From completeness of the projector system ($\sum_k P_k = I$):
 
 $$
 \sum_k \text{Tr}(P_k \Gamma) = \text{Tr}\left(\sum_k P_k \cdot \Gamma\right) = \text{Tr}(\Gamma) = 1 \quad \checkmark
 $$
 
-**Шаг 4.** Неотрицательность: $p_k = \text{Tr}(P_k \Gamma) = \text{Tr}(\Gamma^{1/2} P_k \Gamma^{1/2}) \geq 0$, поскольку $\Gamma^{1/2} P_k \Gamma^{1/2}$ — неотрицательно определённый оператор.
+**Step 4.** Non-negativity: $p_k = \text{Tr}(P_k \Gamma) = \text{Tr}(\Gamma^{1/2} P_k \Gamma^{1/2}) \geq 0$, since $\Gamma^{1/2} P_k \Gamma^{1/2}$ is a non-negative definite operator.
 
-**Шаг 5.** Подстановка $\Gamma = |\psi\rangle\langle\psi|$:
+**Step 5.** Substituting $\Gamma = |\psi\rangle\langle\psi|$:
 
 $$
 p_k = \text{Tr}(P_k |\psi\rangle\langle\psi|) = \langle\psi| P_k |\psi\rangle = \langle\psi|a_k\rangle\langle a_k|\psi\rangle = |\langle a_k|\psi\rangle|^2
@@ -197,242 +215,242 @@ $$
 
 $\blacksquare$
 
-### 3.2 Глубинный смысл: вероятность из логики
+### 3.2 Deeper Meaning: Probability from Logic
 
-:::info [И] Интерпретация через L-унификацию
-В стандартной КМ правило Борна — **постулат**. В УГМ оно **переформулируется** через логическую структуру (но не выводится без цикличности — см. предупреждение выше):
+:::info [I] Interpretation via L-unification
+In standard QM, the Born rule is a **postulate**. In UHM it is **reformulated** through the logical structure (but not derived without circularity — see the warning above):
 
-1. $\Omega$ определяет «пространство истинности»
-2. Характеристический морфизм $\chi_{S_k}$ — «степень принадлежности» к подобъекту
-3. $\text{Tr}(P_k \Gamma)$ — мера того, насколько «истинно» утверждение «система в состоянии $S_k$»
-4. Правило Борна = **логическая мера истинности**, определяемая структурой $\Omega$
+1. $\Omega$ defines the "truth space"
+2. The characteristic morphism $\chi_{S_k}$ — the "degree of membership" in the subobject
+3. $\text{Tr}(P_k \Gamma)$ — a measure of how "true" it is that the system is in state $S_k$
+4. Born rule = **logical truth measure**, determined by the structure of $\Omega$
 
-Вероятность — не фундаментальная случайность, а **мера логической неопределённости** состояния относительно выбранного разложения классификатора.
+Probability is not fundamental randomness, but a **measure of logical uncertainty** of the state with respect to the chosen decomposition of the classifier.
 :::
 
-### 3.3 Глюбовский аргумент
+### 3.3 Gleason's Argument
 
-:::tip Теорема 3.1 (Единственность правила Борна) [Т]
-Правило Борна — **единственная** мера вероятности, совместимая со структурой $\Omega$-классификатора в ∞-топосе $\text{Sh}_\infty(\mathcal{C})$.
+:::tip Theorem 3.1 (Uniqueness of the Born rule) [T]
+The Born rule is the **unique** probability measure compatible with the structure of the $\Omega$-classifier in the ∞-topos $\text{Sh}_\infty(\mathcal{C})$.
 
-**Доказательство:**
+**Proof:**
 
-1. Классификатор $\Omega$ в топосе $\mathbf{Set}$ — двузначный: $\{0, 1\}$ (классическая логика)
-2. Классификатор $\Omega$ в $\text{Sh}_\infty(\mathcal{C})$ — многозначный, его значения — элементы алгебры эффектов
-3. Единственная мера, согласованная с алгеброй эффектов на $\mathcal{D}(\mathcal{H})$, — это $p_k = \text{Tr}(P_k \Gamma)$ (теорема Глисона для $\dim \geq 3$)
+1. The classifier $\Omega$ in the topos $\mathbf{Set}$ is two-valued: $\{0, 1\}$ (classical logic)
+2. The classifier $\Omega$ in $\text{Sh}_\infty(\mathcal{C})$ is multi-valued; its values are elements of the effects algebra
+3. The unique measure consistent with the effects algebra on $\mathcal{D}(\mathcal{H})$ is $p_k = \text{Tr}(P_k \Gamma)$ (Gleason's theorem for $\dim \geq 3$)
 
-Теорема Глисона (1957) применима к $\mathcal{D}(\mathbb{C}^7)$ при $\dim \geq 3$: единственная $\sigma$-аддитивная мера на проекторах — $\mu(P) = \text{Tr}(\rho P)$ для некоторого $\rho$. В УГМ $\rho = \Gamma$, $\dim = 7 \geq 3$ — условие выполнено.
+Gleason's theorem (1957) applies to $\mathcal{D}(\mathbb{C}^7)$ at $\dim \geq 3$: the unique $\sigma$-additive measure on projectors is $\mu(P) = \text{Tr}(\rho P)$ for some $\rho$. In UHM, $\rho = \Gamma$, $\dim = 7 \geq 3$ — the condition is satisfied.
 :::
 
-:::info Эпистемический статус
-Правило Борна $p_k = \mathrm{Tr}(P_k \Gamma)$ реформулировано через $\Omega$-структуру **[И]**, но не выведено из первых принципов: теорема Глисона предполагает $\sigma$-аддитивность на решётке проекторов, что эквивалентно правилу Борна (циклическая зависимость).
+:::info Epistemic status
+The Born rule $p_k = \mathrm{Tr}(P_k \Gamma)$ is reformulated through the $\Omega$-structure **[I]**, but is not derived from first principles: Gleason's theorem assumes $\sigma$-additivity on the projector lattice, which is equivalent to the Born rule (circular dependence).
 :::
 
 ---
 
-## 4. Связь с самонаблюдением ($\varphi$-оператор) {#4-связь-с-самонаблюдением}
+## 4. Connection to Self-Observation ($\varphi$-Operator) {#4-связь-с-самонаблюдением}
 
-### 4.1 $\varphi$ как обобщённое измерение
+### 4.1 $\varphi$ as a Generalized Measurement
 
-В УГМ оператор самомоделирования $\varphi$ определяется как CPTP-канал:
+In UHM, the self-modeling operator $\varphi$ is defined as a CPTP channel:
 
 $$
 \varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})
 $$
 
-с представлением Крауса:
+with Kraus representation:
 
 $$
 \varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger, \quad \sum_m K_m^\dagger K_m = I
 $$
 
-:::tip [Т] Теорема 4.1 (φ как обобщённое измерение)
-Оператор самомоделирования $\varphi$ — **обобщённое квантовое измерение** (quantum instrument) в смысле Дэвиса-Льюиса:
+:::tip [T] Theorem 4.1 (φ as a generalized measurement)
+The self-modeling operator $\varphi$ is a **generalized quantum measurement** (quantum instrument) in the sense of Davies-Lewis:
 
 $$
 \varphi = \sum_k \mathcal{E}_k
 $$
 
-где $\mathcal{E}_k(\Gamma) = K_k \Gamma K_k^\dagger$ — операции, соответствующие различным «аспектам» самомоделирования.
+where $\mathcal{E}_k(\Gamma) = K_k \Gamma K_k^\dagger$ are operations corresponding to different "aspects" of self-modeling.
 :::
 
-*Доказательство:*
+*Proof:*
 
-1. $\varphi$ — CPTP-канал по определению
-2. Любой CPTP-канал с конечным числом операторов Крауса — квантовый инструмент
-3. Разложение $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ — это сумма по «исходам» обобщённого измерения
-4. Полнота $\sum_m K_m^\dagger K_m = I$ обеспечивает сохранение следа $\blacksquare$
+1. $\varphi$ is a CPTP channel by definition
+2. Any CPTP channel with a finite number of Kraus operators is a quantum instrument
+3. The decomposition $\varphi(\Gamma) = \sum_m K_m \Gamma K_m^\dagger$ is a sum over the "outcomes" of the generalized measurement
+4. Completeness $\sum_m K_m^\dagger K_m = I$ ensures trace preservation $\blacksquare$
 
-### 4.2 Измерение в классической КМ vs самонаблюдение в УГМ
+### 4.2 Measurement in Standard QM vs Self-Observation in UHM
 
-| Аспект | Стандартное измерение ($R = 0$) | Самонаблюдение ($R > 0$) |
-|--------|-------------------------------|--------------------------|
-| Агент | Внешний наблюдатель (прибор) | Система сама (автореферентность) |
-| Оператор | Проектор $P_k = \lvert a_k\rangle\langle a_k\rvert$ | CPTP-канал $\varphi$ |
-| Результат | Проекция: $\Gamma \to P_k \Gamma P_k / \text{Tr}(P_k \Gamma)$ | Регенерация: $\Gamma \to \varphi(\Gamma)$ |
-| Обратимость | Необратимо (проекция) | Частично обратимо (CPTP-канал) |
-| Информация | Уничтожается (внедиагональные) | Перераспределяется ($\varphi$ — канал) |
-| Когда активно | При взаимодействии с прибором | При $\Delta F > 0$ и $R \geq 1/3$ |
+| Aspect | Standard measurement ($R = 0$) | Self-observation ($R > 0$) |
+|--------|-------------------------------|---------------------------|
+| Agent | External observer (device) | The system itself (self-reference) |
+| Operator | Projector $P_k = \lvert a_k\rangle\langle a_k\rvert$ | CPTP channel $\varphi$ |
+| Result | Projection: $\Gamma \to P_k \Gamma P_k / \text{Tr}(P_k \Gamma)$ | Regeneration: $\Gamma \to \varphi(\Gamma)$ |
+| Reversibility | Irreversible (projection) | Partially reversible (CPTP channel) |
+| Information | Destroyed (off-diagonal) | Redistributed ($\varphi$ is a channel) |
+| When active | Upon interaction with device | When $\Delta F > 0$ and $R \geq 1/3$ |
 
-### 4.3 Регенеративный член как «ответ» на самоизмерение
+### 4.3 The Regenerative Term as a "Response" to Self-Measurement
 
-Полное уравнение эволюции:
+The full evolution equation:
 
 $$
 \frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \underbrace{\kappa(\Gamma) \cdot (\varphi(\Gamma) - \Gamma) \cdot g_V(P)}_{\mathcal{R}[\Gamma, E]}
 $$
 
-:::info Интерпретация регенеративного члена
-Регенеративный член $\mathcal{R}$ — это **реакция системы на собственное самоизмерение**:
+:::info Interpretation of the regenerative term
+The regenerative term $\mathcal{R}$ is the **system's response to its own self-measurement**:
 
-1. **$\varphi(\Gamma)$** — «модель себя», построенная через самоизмерение
-2. **$\varphi(\Gamma) - \Gamma$** — разница между моделью и реальностью (ошибка самомоделирования)
-3. **$\kappa(\Gamma)$** — темп коррекции (пропорционален когерентностям)
-4. **$g_V(P)$** — V-preservation gate (уточняет $\Theta(\Delta F)$ из Ландауэра): коррекция возможна только при $P > P_{\mathrm{crit}}$
+1. **$\varphi(\Gamma)$** — "model of itself," constructed through self-measurement
+2. **$\varphi(\Gamma) - \Gamma$** — the difference between the model and reality (self-modeling error)
+3. **$\kappa(\Gamma)$** — the correction rate (proportional to coherences)
+4. **$g_V(P)$** — V-preservation gate (refines $\Theta(\Delta F)$ from Landauer): correction is only possible when $P > P_{\mathrm{crit}}$
 
-Живая система **постоянно измеряет себя** через $\varphi$ и **корректирует** своё состояние в направлении модели.
+A living system **constantly measures itself** through $\varphi$ and **corrects** its state toward the model.
 :::
 
-### 4.4 Мера рефлексии и качество самоизмерения
+### 4.4 Reflection Measure and Quality of Self-Measurement
 
-Мера рефлексии $R$ определяет качество самомоделирования:
+The reflection measure $R$ determines the quality of self-modeling:
 
 $$
 R = R(\varphi, \Gamma) \in [0, 1]
 $$
 
-| $R$ | Качество самоизмерения | Тип системы |
-|-----|------------------------|-------------|
-| $R = 0$ | Нет самоизмерения | Элементарные частицы, кубиты |
-| $0 < R < 1/3$ | Примитивное (не превышает порог) | Молекулы, простые системы |
-| $R = 1/3$ | Пороговое (критическое значение) | Граница «живого» |
-| $R > 1/3$ | Полноценное (активная регенерация) | Клетки, организмы, сознание |
-| $R \to 1$ | Идеальное (полная модель) | Теоретический предел |
+| $R$ | Quality of self-measurement | System type |
+|-----|-----------------------------|-------------|
+| $R = 0$ | No self-measurement | Elementary particles, qubits |
+| $0 < R < 1/3$ | Primitive (does not exceed threshold) | Molecules, simple systems |
+| $R = 1/3$ | Threshold (critical value) | Boundary of "living" |
+| $R > 1/3$ | Full (active regeneration) | Cells, organisms, consciousness |
+| $R \to 1$ | Ideal (complete model) | Theoretical limit |
 
 ---
 
-## 5. Декогеренция как логическая динамика {#5-декогеренция}
+## 5. Decoherence as Logical Dynamics {#5-декогеренция}
 
-### 5.1 Логическое происхождение декогеренции
+### 5.1 Logical Origin of Decoherence
 
-:::tip [Т] Теорема 5.1 (Диссипация как логическая неопределённость)
-Диссипативный член $\mathcal{D}_\Omega[\Gamma]$ отражает **логическую неопределённость** состояния относительно структуры различений $\Omega$:
+:::tip [T] Theorem 5.1 (Dissipation as logical uncertainty)
+The dissipative term $\mathcal{D}_\Omega[\Gamma]$ reflects the **logical uncertainty** of the state with respect to the distinction structure $\Omega$:
 
 $$
 \mathcal{D}_\Omega[\Gamma] = \sum_k \gamma_k \left( L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\} \right)
 $$
 
-где $L_k = \sqrt{\chi_{S_k}}$ — операторы Линдблада, **выведенные** из атомов классификатора $\Omega$.
+where $L_k = \sqrt{\chi_{S_k}}$ are Lindblad operators **derived** from the atoms of classifier $\Omega$.
 
-*Физическое следствие:* Декогеренция — не внешний шум, а **внутренняя логическая динамика** системы.
+*Physical corollary:* Decoherence is not external noise, but the **internal logical dynamics** of the system.
 :::
 
-### 5.2 Связь декогеренции с измерением
+### 5.2 Connection Between Decoherence and Measurement
 
-Процесс декогеренции и процесс измерения — **два аспекта одного механизма**:
+The decoherence process and the measurement process are **two aspects of the same mechanism**:
 
 $$
-\underbrace{\text{Атомы } \Omega}_{\text{логическая структура}} \xrightarrow{L_k = \sqrt{\chi_{S_k}}} \underbrace{\text{Операторы Линдблада}}_{\text{декогеренция}} \xleftrightarrow{\text{dual}} \underbrace{\text{Проекторы } P_k}_{\text{измерение}}
+\underbrace{\text{Atoms of } \Omega}_{\text{logical structure}} \xrightarrow{L_k = \sqrt{\chi_{S_k}}} \underbrace{\text{Lindblad operators}}_{\text{decoherence}} \xleftrightarrow{\text{dual}} \underbrace{\text{Projectors } P_k}_{\text{measurement}}
 $$
 
-| Процесс | Механизм | Результат | Темп |
-|---------|----------|-----------|------|
-| **Декогеренция** | $\mathcal{D}_\Omega[\Gamma]$ | Подавление когерентностей | $\gamma_k$ (непрерывный) |
-| **Измерение** | $\chi_{S_k}(\Gamma) = P_k \Gamma P_k$ | Проекция на исход | Мгновенный (в пределе $\gamma_k \to \infty$) |
+| Process | Mechanism | Result | Rate |
+|---------|-----------|--------|------|
+| **Decoherence** | $\mathcal{D}_\Omega[\Gamma]$ | Suppression of coherences | $\gamma_k$ (continuous) |
+| **Measurement** | $\chi_{S_k}(\Gamma) = P_k \Gamma P_k$ | Projection onto outcome | Instantaneous (in the limit $\gamma_k \to \infty$) |
 
-:::info Объединяющий принцип
-Измерение — это **предел быстрой декогеренции**: при $\gamma_k \to \infty$ непрерывная декогеренция $\mathcal{D}_\Omega$ стягивается к мгновенной проекции на атом $S_k$.
+:::info Unifying principle
+Measurement is the **limit of fast decoherence**: as $\gamma_k \to \infty$, continuous decoherence $\mathcal{D}_\Omega$ contracts to instantaneous projection onto atom $S_k$.
 
 $$
 \lim_{\gamma_k \to \infty} e^{\mathcal{D}_\Omega t} (\Gamma) = \sum_k p_k P_k \Gamma P_k / \text{Tr}(P_k \Gamma)
 $$
 :::
 
-### 5.3 Энтропия и измерение
+### 5.3 Entropy and Measurement
 
-:::tip [Т] Теорема 5.2 (Рост энтропии при декогеренции)
-Под действием логического Лиувиллиана энтропия фон Неймана не убывает:
+:::tip [T] Theorem 5.2 (Entropy growth under decoherence)
+Under the action of the logical Liouvillian, the von Neumann entropy does not decrease:
 
 $$
 \frac{dS_{vN}}{d\tau} \geq 0, \quad S_{vN} = -\text{Tr}(\Gamma \log \Gamma)
 $$
 
-для чисто диссипативной динамики ($\mathcal{R} = 0$).
+for purely dissipative dynamics ($\mathcal{R} = 0$).
 :::
 
-Это стандартное следствие CPTP-структуры: полностью положительные каналы, сохраняющие след, не уменьшают энтропию фон Неймана (контрактивность CPTP).
+This is a standard consequence of CPTP structure: completely positive trace-preserving channels do not decrease the von Neumann entropy (CPTP contractivity).
 
 ---
 
-## 6. Проблема предпочтительного базиса {#6-предпочтительный-базис}
+## 6. Preferred Basis Problem {#6-предпочтительный-базис}
 
-### 6.1 Стандартная проблема
+### 6.1 The Standard Problem
 
-В стандартной теории декогеренции базис, в котором происходит «коллапс», определяется **взаимодействием с окружением** (einselection, Zurek). Однако это оставляет вопрос: что определяет тип взаимодействия?
+In standard decoherence theory, the basis in which "collapse" occurs is determined by **interaction with the environment** (einselection, Zurek). However, this leaves the question: what determines the type of interaction?
 
-### 6.2 Решение через $\Omega$
+### 6.2 Solution via $\Omega$
 
-:::tip [Т] Теорема 6.1 (Предпочтительный базис из $\Omega$)
-Предпочтительный базис измерения определяется **атомарной структурой классификатора $\Omega$**. Атомы $\mathcal{T}_\Omega = \{S_0, S_1, \ldots, S_{N-1}\}$ задают «естественное» разложение пространства состояний.
+:::tip [T] Theorem 6.1 (Preferred basis from $\Omega$)
+The preferred measurement basis is determined by the **atomic structure of the classifier $\Omega$**. The atoms $\mathcal{T}_\Omega = \{S_0, S_1, \ldots, S_{N-1}\}$ define the "natural" decomposition of the state space.
 
-Для системы с гамильтонианом $H$ и структурой $\Omega$:
+For a system with Hamiltonian $H$ and structure $\Omega$:
 
 $$
-\text{Базис измерения} = \text{Атомы } \Omega \cap \text{Собственные подпространства } H
+\text{Measurement basis} = \text{Atoms of } \Omega \cap \text{Eigenspaces of } H
 $$
 :::
 
-*Доказательство:*
+*Proof:*
 
-**Шаг 1.** Операторы Линдблада $L_k = |k\rangle\langle k|$ — атомы $\Omega$ [Т] (L-унификация: $\Omega \to \chi_S \to L_k$).
+**Step 1.** Lindblad operators $L_k = |k\rangle\langle k|$ — atoms of $\Omega$ [T] (L-unification: $\Omega \to \chi_S \to L_k$).
 
-**Шаг 2.** Декогеренция $\mathcal{D}_\Omega[\Gamma]_{ij} \to 0$ для $i \neq j$ — подавление внедиагональных элементов в базисе $\{|k\rangle\}$ [Т] (Теорема 2.2).
+**Step 2.** Decoherence $\mathcal{D}_\Omega[\Gamma]_{ij} \to 0$ for $i \neq j$ — suppression of off-diagonal elements in the basis $\{|k\rangle\}$ [T] (Theorem 2.2).
 
-**Шаг 3.** Состояния, диагональные в $\{|k\rangle\}$, являются неподвижными точками $\mathcal{D}_\Omega$ [Т]: $\mathcal{D}_\Omega[\sum_k p_k |k\rangle\langle k|] = 0$.
+**Step 3.** States diagonal in $\{|k\rangle\}$ are fixed points of $\mathcal{D}_\Omega$ [T]: $\mathcal{D}_\Omega[\sum_k p_k |k\rangle\langle k|] = 0$.
 
-**Шаг 4.** По критерию Цурека (einselection, 1981): предпочтительный базис = неподвижные точки канала декогеренции. Из шагов 1–3: $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ **является** предпочтительным базисом измерения. $\blacksquare$
+**Step 4.** By Zurek's criterion (einselection, 1981): preferred basis = fixed points of the decoherence channel. From steps 1–3: $\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |E\rangle, |O\rangle, |U\rangle\}$ **is** the preferred measurement basis. $\blacksquare$
 
-### 6.3 Связь с 7 измерениями
+### 6.3 Connection to the 7 Dimensions
 
-В 7D формализме УГМ атомы $\Omega$ соответствуют 7 измерениям Голонома:
+In the 7D UHM formalism, the atoms of $\Omega$ correspond to the 7 Holon dimensions:
 
-| Измерение | Атом $\Omega$ | Физический оператор | Тип наблюдаемой |
-|-----------|---------------|---------------------|-----------------|
-| **A** (Артикуляция) | $S_A$ | Проектор $P: P^2 = P, P^\dagger = P$ | Структура подпространств |
-| **S** (Структура) | $S_S$ | Гамильтониан $H: H^\dagger = H$ | Энергия |
-| **D** (Динамика) | $S_D$ | $U(\tau) = e^{-iH_{eff}\tau}$ | Эволюция |
-| **L** (Логика) | $S_L$ | $[A, B]$, $\{A, B\}$ | Коммутационные соотношения |
-| **E** (Интериорность) | $S_E$ | $\rho_E = \text{Tr}_{-E}(\Gamma)$ | Редуцированное состояние |
-| **O** (Основание) | $S_O$ | $|0\rangle\langle 0|$ | Вакуум |
-| **U** (Единство) | $S_U$ | $\text{Tr}(\cdot)$ | Нормировка |
+| Dimension | $\Omega$ Atom | Physical Operator | Observable Type |
+|-----------|---------------|-------------------|-----------------|
+| **A** (Articulation) | $S_A$ | Projector $P: P^2 = P, P^\dagger = P$ | Subspace structure |
+| **S** (Structure) | $S_S$ | Hamiltonian $H: H^\dagger = H$ | Energy |
+| **D** (Dynamics) | $S_D$ | $U(\tau) = e^{-iH_{eff}\tau}$ | Evolution |
+| **L** (Logic) | $S_L$ | $[A, B]$, $\{A, B\}$ | Commutation relations |
+| **E** (Interiority) | $S_E$ | $\rho_E = \text{Tr}_{-E}(\Gamma)$ | Reduced state |
+| **O** (Foundation) | $S_O$ | $|0\rangle\langle 0|$ | Vacuum |
+| **U** (Unity) | $S_U$ | $\text{Tr}(\cdot)$ | Normalization |
 
 ---
 
-## 7. Измерение для систем с ненулевой регенерацией ($R > 0$) {#7-живые-системы}
+## 7. Measurement for Systems with Nonzero Regeneration ($R > 0$) {#7-живые-системы}
 
-### 7.1 Принципиальное отличие
+### 7.1 The Fundamental Difference
 
-Для систем с $R \geq 1/3$ (системы с ненулевой регенерацией; в биологическом контексте — живые системы) процесс измерения **качественно отличается** от стандартного квантового измерения:
+For systems with $R \geq 1/3$ (systems with nonzero regeneration; in the biological context — living systems), the measurement process **qualitatively differs** from standard quantum measurement:
 
-:::info [П] Программа 7.1 (Теория измерения для систем с $R > 0$)
-При $R \geq 1/3$ система способна к **активному самоизмерению** через оператор $\varphi$. Процесс включает три фазы:
+:::info [P] Program 7.1 (Theory of measurement for systems with $R > 0$)
+At $R \geq 1/3$, the system is capable of **active self-measurement** via the operator $\varphi$. The process involves three phases:
 
-1. **Декогеренция** (логическая): $\mathcal{D}_\Omega[\Gamma]$ подавляет когерентности
-2. **Самоизмерение**: $\varphi(\Gamma)$ строит внутреннюю модель
-3. **Регенерация**: $\mathcal{R}[\Gamma, E]$ корректирует состояние в направлении модели
+1. **Decoherence** (logical): $\mathcal{D}_\Omega[\Gamma]$ suppresses coherences
+2. **Self-measurement**: $\varphi(\Gamma)$ builds an internal model
+3. **Regeneration**: $\mathcal{R}[\Gamma, E]$ corrects the state toward the model
 
-В отличие от стандартного измерения, **информация не теряется необратимо**, а перераспределяется через $\varphi$.
+Unlike standard measurement, **information is not lost irreversibly** but is redistributed through $\varphi$.
 :::
 
-### 7.2 Формальное описание
+### 7.2 Formal Description
 
-Полная динамика измерения для системы с $R > 0$:
+The full measurement dynamics for a system with $R > 0$:
 
 $$
 \Gamma(0) \xrightarrow{\mathcal{D}_\Omega} \Gamma_{decoh} \xrightarrow{\varphi} \Gamma_{model} \xrightarrow{\mathcal{R}} \Gamma_{regen}
 $$
 
-где:
+where:
 
 $$
 \Gamma_{decoh} = \Gamma(0) + \mathcal{D}_\Omega[\Gamma(0)] \cdot \delta\tau
@@ -446,61 +464,61 @@ $$
 \Gamma_{regen} = \Gamma_{decoh} + \kappa \cdot (\Gamma_{model} - \Gamma_{decoh}) \cdot g_V(P) \cdot \delta\tau
 $$
 
-### 7.3 Условие самосогласованности
+### 7.3 Self-Consistency Condition
 
-:::tip [Т] Теорема 7.1 (Самосогласованное измерение)
-Для систем с $R \geq 1/3$ существует **единственное стационарное решение** самоизмерения:
+:::tip [T] Theorem 7.1 (Self-consistent measurement)
+For systems with $R \geq 1/3$, there exists a **unique stationary solution** to self-measurement:
 
 $$
 \varphi(\Gamma^*) = \Gamma^*
 $$
 
-т.е. неподвижная точка оператора самомоделирования. Эта неподвижная точка — **терминальный объект** $T$ в категории Голономов.
+i.e., a fixed point of the self-modeling operator. This fixed point is the **terminal object** $T$ in the category of Holons.
 
-Физический смысл: система, достигшая $\Gamma^*$, находится в неподвижной точке $\varphi$-оператора — её самомодель совпадает с реальностью (полная самосогласованность).
+Physical meaning: a system that has reached $\Gamma^*$ is at the fixed point of the $\varphi$-operator — its self-model coincides with reality (complete self-consistency).
 
-**Доказательство.** Самосогласованность самоизмерения $\varphi(\Gamma) = (1-k)\Gamma + k\rho^*$ следует из трёх установленных теорем:
+**Proof.** Self-consistency of self-measurement $\varphi(\Gamma) = (1-k)\Gamma + k\rho^*$ follows from three established theorems:
 
-1. **Существование и единственность $\rho^*$** ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [Т]): нетривиальный аттрактор $\rho^*$ существует и единственен в $\mathcal{D}(\mathbb{C}^7)$. Неподвижная точка $\varphi(\Gamma^*) = \Gamma^*$ реализуется при $\Gamma^* = \rho^*$.
+1. **Existence and uniqueness of $\rho^*$** ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]): the nontrivial attractor $\rho^*$ exists and is unique in $\mathcal{D}(\mathbb{C}^7)$. The fixed point $\varphi(\Gamma^*) = \Gamma^*$ is realized at $\Gamma^* = \rho^*$.
 
-2. **CPTP-свойство** ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [Т]): оператор $\varphi$ является CPTP-каналом (completely positive, trace-preserving), поэтому $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ — корректно определённое отображение, не выводящее из пространства состояний. Самореферентность (система измеряет себя) не порождает парадокса: $\varphi$ — сжимающее отображение в бюресовой метрике.
+2. **CPTP property** ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T]): the operator $\varphi$ is a CPTP channel (completely positive, trace-preserving), so $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ is a well-defined map that does not leave the state space. Self-reference (the system measures itself) does not generate a paradox: $\varphi$ is a contracting map in the Bures metric.
 
-3. **Неполнота** ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [Т]): $\varphi \neq \mathrm{id}$, то есть самомодель всегда отличается от реальности (аналог теоремы Гёделя). Параметр $k \in (0,1)$ обеспечивает $\Gamma^* \neq I/7$ (нетривиальность) и $\Gamma^* \neq \Gamma$ для $\Gamma \neq \rho^*$ (несовпадение модели с состоянием вне неподвижной точки).
+3. **Incompleteness** ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]): $\varphi \neq \mathrm{id}$, meaning the self-model always differs from reality (an analogue of Gödel's theorem). The parameter $k \in (0,1)$ ensures $\Gamma^* \neq I/7$ (nontriviality) and $\Gamma^* \neq \Gamma$ for $\Gamma \neq \rho^*$ (non-coincidence of model and state outside the fixed point).
 
-Таким образом, самоизмерение $\varphi$ **хорошо определено** (CPTP), имеет **единственную неподвижную точку** $\rho^*$ (T-96), и **нетривиально** (T-55). Самореферентный парадокс разрешён структурой канала замещения. $\blacksquare$
+Thus, self-measurement $\varphi$ is **well-defined** (CPTP), has a **unique fixed point** $\rho^*$ (T-96), and is **nontrivial** (T-55). The self-referential paradox is resolved by the structure of the replacement channel. $\blacksquare$
 :::
 
 ---
 
-## 8. Запрет сигнализации {#8-запрет-сигнализации}
+## 8. No-Signaling {#8-запрет-сигнализации}
 
-### 8.1 Проблема нелинейности
+### 8.1 The Nonlinearity Problem
 
-Введение нелинейности в квантовую механику обычно нарушает принцип запрета сигнализации (Gisin, 1990; Polchinski, 1991). Регенеративный член $\mathcal{R}[\Gamma, E]$ нелинеен по $\Gamma$ через $\kappa(\Gamma)$ и $\varphi(\Gamma)$.
+Introducing nonlinearity into quantum mechanics typically violates the no-signaling principle (Gisin, 1990; Polchinski, 1991). The regenerative term $\mathcal{R}[\Gamma, E]$ is nonlinear in $\Gamma$ through $\kappa(\Gamma)$ and $\varphi(\Gamma)$.
 
-### 8.2 Центральная теорема
+### 8.2 The Central Theorem
 
-:::tip [Т] Теорема 8.1 (Запрет сигнализации в УГМ)
-Для двух пространственно разделённых автономных голономов $A$ и $B$ с совместным состоянием $\Gamma_{AB}$:
+:::tip [T] Theorem 8.1 (No-signaling in UHM)
+For two spatially separated autonomous Holons $A$ and $B$ with joint state $\Gamma_{AB}$:
 
 $$
 \text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0
 $$
 
-где каноническое расширение регенерации:
+where the canonical extension of regeneration is:
 
 $$
 \tilde{\mathcal{R}}_A[\Gamma_{AB}] := \kappa_A(\Gamma_A) \cdot \left((\varphi_A \otimes \text{id}_B)(\Gamma_{AB}) - \Gamma_{AB}\right) \cdot g_V(P_A)
 $$
 :::
 
-*Доказательство:*
+*Proof:*
 
 $$
 \text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot \left(\text{Tr}_A[(\varphi_A \otimes \text{id}_B)(\Gamma_{AB})] - \text{Tr}_A[\Gamma_{AB}]\right)
 $$
 
-Для CPTP-канала $\varphi_A$ с представлением Крауса $\varphi_A(\cdot) = \sum_m K_m (\cdot) K_m^\dagger$:
+For CPTP channel $\varphi_A$ with Kraus representation $\varphi_A(\cdot) = \sum_m K_m (\cdot) K_m^\dagger$:
 
 $$
 \text{Tr}_A[(\varphi_A \otimes \text{id}_B)(\Gamma_{AB})] = \text{Tr}_A\left[\sum_m (K_m \otimes I_B)\Gamma_{AB}(K_m^\dagger \otimes I_B)\right]
@@ -510,7 +528,7 @@ $$
 = \text{Tr}_A\left[(\sum_m K_m^\dagger K_m \otimes I_B)\Gamma_{AB}\right] = \text{Tr}_A[(I_A \otimes I_B)\Gamma_{AB}] = \Gamma_B
 $$
 
-Следовательно:
+Therefore:
 
 $$
 \text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot (\Gamma_B - \Gamma_B) = 0
@@ -518,60 +536,60 @@ $$
 
 $\blacksquare$
 
-### 8.3 Структурные условия
+### 8.3 Structural Conditions
 
-Доказательство опирается на три структурных условия:
+The proof relies on three structural conditions:
 
-| Условие | Формулировка | Следует из |
-|---------|--------------|------------|
-| **NS1** (Локальность $\varphi$) | $\tilde{\varphi}_A = \varphi_A \otimes \text{id}_B$ | [Автономность (A1)](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема) |
-| **NS2** (Локальность $\kappa$) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\text{Tr}_B(\Gamma_{AB}))$ | [Определение $\kappa_0$](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
-| **NS3** (CPTP $\varphi$) | $\varphi$ — CPTP-канал | [Определение $\varphi$](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
+| Condition | Statement | Follows from |
+|-----------|-----------|--------------|
+| **NS1** (Locality of $\varphi$) | $\tilde{\varphi}_A = \varphi_A \otimes \text{id}_B$ | [Autonomy (A1)](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема) |
+| **NS2** (Locality of $\kappa$) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\text{Tr}_B(\Gamma_{AB}))$ | [Definition of $\kappa_0$](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) |
+| **NS3** (CPTP $\varphi$) | $\varphi$ is a CPTP channel | [Definition of $\varphi$](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 
-### 8.4 Ансамблевая независимость
+### 8.4 Ensemble Independence
 
-:::tip [Т] Теорема 8.2 (Ансамблевая независимость)
-Эволюция УГМ определена на матрице плотности $\Gamma$, а не на ансамблевом разложении. Два разных приготовления одного $\Gamma$ эволюционируют идентично.
+:::tip [T] Theorem 8.2 (Ensemble independence)
+UHM evolution is defined on the density matrix $\Gamma$, not on the ensemble decomposition. Two different preparations of the same $\Gamma$ evolve identically.
 
-*Доказательство:* Все компоненты уравнения ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) — функции от $\Gamma$, а не от конкретного разложения $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
+*Proof:* All components of the equation ($H_{eff}$, $\mathcal{D}_\Omega$, $\kappa$, $\varphi$, $g_V(P)$) are functions of $\Gamma$, not of the specific decomposition $\Gamma = \sum_i p_i |\psi_i\rangle\langle\psi_i|$. $\blacksquare$
 :::
 
-### 8.5 Вычислительное ограничение
+### 8.5 Computational Constraint
 
-:::tip [Т] Теорема 8.3 (Отсутствие вычислительного ускорения)
-Нелинейный регенеративный член $\mathcal{R}$ не обеспечивает вычислительного ускорения сверх класса BQP:
+:::tip [T] Theorem 8.3 (Absence of computational speedup)
+The nonlinear regenerative term $\mathcal{R}$ does not provide computational speedup beyond the class BQP:
 
-1. **Пороговое ограничение:** $\mathcal{R}$ активен только для L2+ систем ($R \geq 1/3$), кубиты ($N = 2$) имеют $R \approx 0$
-2. **Термодинамическое ограничение:** Каждый шаг регенерации требует $\Delta F > 0$
-3. **CPTP-ограничение:** $\varphi$ не увеличивает квантовую информацию (data processing inequality)
-4. **Масштабное разделение:** Декогеренция подавляет экспоненциально малые различия
+1. **Threshold constraint:** $\mathcal{R}$ is active only for L2+ systems ($R \geq 1/3$); qubits ($N = 2$) have $R \approx 0$
+2. **Thermodynamic constraint:** Each regeneration step requires $\Delta F > 0$
+3. **CPTP constraint:** $\varphi$ does not increase quantum information (data processing inequality)
+4. **Scale separation:** Decoherence suppresses exponentially small differences
 :::
 
 ---
 
-## Сводная таблица соответствий
+## Summary Table of Correspondences
 
-| Стандартная КМ | УГМ-интерпретация | Статус |
-|----------------|-------------------|--------|
-| Редукция волновой функции | Проекция на атом $\chi_{S_k}$ | [Т] |
-| Правило Борна $p_k = \lvert\langle a_k\rvert\psi\rangle\rvert^2$ | $p_k = \text{Tr}(P_k \Gamma)$ из структуры $\Omega$ | [И] (цикличность) |
-| Декогеренция | Логическая неопределённость: $\mathcal{D}_\Omega[\Gamma]$ | [Т] |
-| Предпочтительный базис | Атомы $\Omega$: $\mathcal{T}_\Omega = \{S_k\}$ | [Т] |
-| Коллапс (мгновенный) | Предел быстрой декогеренции $\gamma_k \to \infty$ | [Т] |
-| Наблюдатель (внешний) | Самоизмерение через $\varphi$ (при $R > 0$) | [Г] |
-| Необратимость измерения | $dS_{vN}/d\tau \geq 0$ из CPTP | [Т] |
-| Запрет сигнализации | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [Т] |
-| Ансамблевая независимость | Эволюция определена на $\Gamma$ | [Т] |
+| Standard QM | UHM Interpretation | Status |
+|-------------|-------------------|--------|
+| Wavefunction reduction | Projection onto atom $\chi_{S_k}$ | [T] |
+| Born rule $p_k = \lvert\langle a_k\rvert\psi\rangle\rvert^2$ | $p_k = \text{Tr}(P_k \Gamma)$ from $\Omega$ structure | [I] (circularity) |
+| Decoherence | Logical uncertainty: $\mathcal{D}_\Omega[\Gamma]$ | [T] |
+| Preferred basis | Atoms of $\Omega$: $\mathcal{T}_\Omega = \{S_k\}$ | [T] |
+| Collapse (instantaneous) | Limit of fast decoherence $\gamma_k \to \infty$ | [T] |
+| Observer (external) | Self-measurement via $\varphi$ (when $R > 0$) | [H] |
+| Irreversibility of measurement | $dS_{vN}/d\tau \geq 0$ from CPTP | [T] |
+| No-signaling | $\text{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] |
+| Ensemble independence | Evolution defined on $\Gamma$ | [T] |
 
 ---
 
-**Связанные документы:**
-- [Редукция к квантовой механике](/docs/physics/quantum-mechanics/qm-reduction) — теоремы 3.1-3.4
-- [Соответствие с физикой](/docs/proofs/physics/physics-correspondence) — полный контекст, L-унификация
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — L-унификация: $\Omega \to \chi_S \to L_k \to \mathcal{L}_\Omega$
-- [Эволюция Γ](/docs/core/dynamics/evolution) — уравнение движения, логический Лиувиллиан
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — оператор $\varphi$, мера рефлексии $R$
-- [Эмерджентное время](/docs/proofs/dynamics/emergent-time) — модальность ▷ и Пейдж–Вуттерс
-- [Измерение L](/docs/core/structure/dimension-l) — логическое измерение, $L = \Omega \cap \Gamma$
-- [Критическая чистота](/docs/proofs/dynamics/theorem-purity-critical) — порог $P_{crit} = 2/7$
-- [Физика — обзор](/docs/physics/overview) — полная карта результатов
+**Related Documents:**
+- [Reduction to Quantum Mechanics](/docs/physics/quantum-mechanics/qm-reduction) — theorems 3.1-3.4
+- [Physics Correspondence](/docs/proofs/physics/physics-correspondence) — full context, L-unification
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — L-unification: $\Omega \to \chi_S \to L_k \to \mathcal{L}_\Omega$
+- [Evolution of Γ](/docs/core/dynamics/evolution) — equation of motion, logical Liouvillian
+- [Self-Observation](/docs/consciousness/foundations/self-observation) — operator $\varphi$, reflection measure $R$
+- [Emergent Time](/docs/proofs/dynamics/emergent-time) — modality ▷ and Page–Wootters
+- [Dimension L](/docs/core/structure/dimension-l) — logical dimension, $L = \Omega \cap \Gamma$
+- [Critical Purity](/docs/proofs/dynamics/theorem-purity-critical) — threshold $P_{crit} = 2/7$
+- [Physics — Overview](/docs/physics/overview) — complete results map

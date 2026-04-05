@@ -1,724 +1,724 @@
 ---
 sidebar_position: 4
-title: "Сектор Хиггса"
-description: "Единственность Хиггсовой линии {A,E,U}, масса Хиггса с октонионной коррекцией, хиггсовская квартика из спектрального действия [С], Gap(E,U) → 0 и электрослабое нарушение"
+title: "Higgs Sector"
+description: "Uniqueness of the Higgs line {A,E,U}, Higgs mass with octonionic correction, Higgs quartic from spectral action [C], Gap(E,U) → 0 and electroweak breaking"
 ---
 
-# Сектор Хиггса
+# Higgs Sector
 
-:::info Уровни строгости
-- **[Т]** Теорема — строго доказано из аксиом УГМ
-- **[С]** Условная — условно на явном допущении
-- **[Г]** Гипотеза — математически сформулировано, требует доказательства или непертурбативного вычисления
-- **[И]** Интерпретация — философская / качественная аналогия
-- **[О]** Определение — определение по соглашению
+:::info Rigor Levels
+- **[T]** Theorem — strictly proved from UHM axioms
+- **[C]** Conditional — conditional on an explicit assumption
+- **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
+- **[I]** Interpretation — philosophical / qualitative analogy
+- **[R]** Definition — definition by convention
 :::
 
-## Содержание
+## Contents
 
-1. [Единственность Хиггсовой линии {A,E,U}](#1-единственность-хиггсовой-линии-aeu)
-2. [Механизм Хиггса из Gap-конденсации](#2-механизм-хиггса-из-gap-конденсации)
-3. [Gap(E,U) → 0: электрослабое нарушение симметрии](#3-gapeu--0-электрослабое-нарушение-симметрии)
-4. [Масса Хиггса с октонионной коррекцией](#4-масса-хиггса-с-октонионной-коррекцией) (вкл. [хиггсовская квартика из спектрального действия](#теорема-хиггсовская-квартика) [С])
-5. [Связь с калибровочной структурой SM (ФЭ-конструкция)](#5-связь-с-калибровочной-структурой-sm)
-6. [Фальсифицируемые предсказания](#6-фальсифицируемые-предсказания)
-7. [Может ли УГМ предсказать массу Хиггса?](#7-может-ли-угм-предсказать-массу-хиггса) — анализ цепочки вывода, статус каждого звена
+1. [Uniqueness of the Higgs line {A,E,U}](#1-единственность-хиггсовой-линии-aeu)
+2. [Higgs mechanism from Gap-condensation](#2-механизм-хиггса-из-gap-конденсации)
+3. [Gap(E,U) → 0: electroweak symmetry breaking](#3-gapeu--0-электрослабое-нарушение-симметрии)
+4. [Higgs mass with octonionic correction](#4-масса-хиггса-с-октонионной-коррекцией) (incl. [Higgs quartic from spectral action](#теорема-хиггсовская-квартика) [C])
+5. [Connection to SM gauge structure (EW-construction)](#5-связь-с-калибровочной-структурой-sm)
+6. [Falsifiable predictions](#6-фальсифицируемые-предсказания)
+7. [Can UHM predict the Higgs mass?](#7-может-ли-угм-предсказать-массу-хиггса) — analysis of the derivation chain, status of each link
 
 ---
 
-## 1. Единственность Хиггсовой линии {A,E,U}
+## 1. Uniqueness of the Higgs line \{A,E,U\} {#1-единственность-хиггсовой-линии-aeu}
 
-### 1.1 Отождествление поля Хиггса [Т] {#отождествление-хиггса}
+### 1.1 Identification of the Higgs field [T] {#отождествление-хиггса}
 
-В УГМ поле Хиггса отождествляется с когерентностью $E$-$U$ в секторе $\bar{3}$-to-$\bar{3}$:
+In UHM the Higgs field is identified with the $E$-$U$ coherence in the $\bar{3}$-to-$\bar{3}$ sector:
 
 $$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
 
-Измерения $E$ (evaluation, оценка) и $U$ (unity, единство) принадлежат $\bar{3}$-сектору $\{L, E, U\} = \{4, 5, 6\}$. Пара $(E, U)$ определяет электрослабый канал: $\text{Gap}(E,U) = 0$ соответствует слабому дублету, $\text{Gap}(E,U) \neq 0$ — синглету.
+Dimensions $E$ (evaluation) and $U$ (unity) belong to the $\bar{3}$-sector $\{L, E, U\} = \{4, 5, 6\}$. The pair $(E, U)$ defines the electroweak channel: $\text{Gap}(E,U) = 0$ corresponds to a weak doublet, $\text{Gap}(E,U) \neq 0$ — to a singlet.
 
-#### Теорема 1.0 (Отождествление $H \sim \gamma_{EU}$) [Т] {#теорема-отождествление-хиггса}
+#### Theorem 1.0 (Identification $H \sim \gamma_{EU}$) [T] {#теорема-отождествление-хиггса}
 
-:::tip [Т] Теорема
-Отождествление $H \sim \gamma_{EU}$ строго доказано из четырёх независимых [Т]-результатов: категориальной единственности пары $(E,U)$, единственности Хиггсовой линии, квантовых чисел $SU(2)_L \times U(1)_Y$ и ненулевого вакуумного среднего из единственного вакуума.
+:::tip [T] Theorem
+The identification $H \sim \gamma_{EU}$ is strictly proved from four independent [T]-results: categorical uniqueness of the pair $(E,U)$, uniqueness of the Higgs line, $SU(2)_L \times U(1)_Y$ quantum numbers, and nonzero vacuum expectation value from the unique vacuum.
 :::
 
-**Теорема.** Когерентность $\gamma_{EU}$ является единственным кандидатом на поле Хиггса в УГМ, и идентификация $H \sim \gamma_{EU}$ доказывается из следующей цепочки.
+**Theorem.** The coherence $\gamma_{EU}$ is the unique candidate for the Higgs field in UHM, and the identification $H \sim \gamma_{EU}$ is proved from the following chain.
 
-**Шаг 1. Категориальная единственность пары $(E,U)$ [Т] (T-42a).**
+**Step 1. Categorical uniqueness of the pair $(E,U)$ [T] (T-42a).**
 
-Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ категориально выделяет ровно пару $(E,U)$ через морфизмы $\mathrm{Hom}(O,E)$ и $\mathrm{Hom}(O,U)$. Ни одна другая пара измерений не обладает этим свойством: замена на $\{L,U\}$ убирает $\mathrm{Hom}(O,L)$ из $\kappa_0$; замена на $\{L,E\}$ исключает $U$, разрушая нормировку $\mathrm{Tr}(\Gamma) = 1$. Единственность доказана — см. [Теорему единственности ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [Т].
+The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ categorically singles out exactly the pair $(E,U)$ via morphisms $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$. No other pair of dimensions has this property: replacing with $\{L,U\}$ removes $\mathrm{Hom}(O,L)$ from $\kappa_0$; replacing with $\{L,E\}$ excludes $U$, breaking the normalization $\mathrm{Tr}(\Gamma) = 1$. Uniqueness is proved — see [Theorem of FE-uniqueness](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [T].
 
-**Шаг 2. Единственность Хиггсовой линии $\{A,E,U\}$ [Т] (Теорема 1.1).**
+**Step 2. Uniqueness of the Higgs line $\{A,E,U\}$ [T] (Theorem 1.1).**
 
-Через любые две точки $\mathrm{PG}(2,2)$ проходит ровно одна линия. Единственная Фано-линия, содержащая обе точки $E = 5$ и $U = 6$: $\{5,6,1\} = \{A,E,U\}$. Эта линия определяет электрослабый сектор — см. [Теорему 1.1](#thm-1-1) [Т].
+Through any two points of $\mathrm{PG}(2,2)$ there passes exactly one line. The unique Fano line containing both points $E = 5$ and $U = 6$: $\{5,6,1\} = \{A,E,U\}$. This line defines the electroweak sector — see [Theorem 1.1](#thm-1-1) [T].
 
-**Шаг 3. Квантовые числа $\gamma_{EU}$ совпадают с квантовыми числами дублета Хиггса СМ [Т].**
+**Step 3. Quantum numbers of $\gamma_{EU}$ coincide with those of the SM Higgs doublet [T].**
 
-Из теоремы единственности электрослабой конструкции ([§2.3a](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [Т]): пара $(E,U)$ образует дублет $2_{EU}$ под $SU(2)_L$. Когерентность $\gamma_{EU}$ — билинейная форма, связывающая $E$ и $U$, — преобразуется как $(2, +1/2)$ под $SU(2)_L \times U(1)_Y$. Это в точности квантовые числа дублета Хиггса Стандартной Модели.
+From the electroweak uniqueness theorem ([§2.3a](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ) [T]): the pair $(E,U)$ forms the doublet $2_{EU}$ under $SU(2)_L$. The coherence $\gamma_{EU}$ — a bilinear form connecting $E$ and $U$ — transforms as $(2, +1/2)$ under $SU(2)_L \times U(1)_Y$. This is exactly the quantum numbers of the SM Higgs doublet.
 
-**Шаг 4. Ненулевое ВСЗ $\langle\gamma_{EU}\rangle \neq 0$ нарушает $SU(2)_L \times U(1)_Y \to U(1)_\text{ем}$ [Т].**
+**Step 4. Nonzero VEV $\langle\gamma_{EU}\rangle \neq 0$ breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$ [T].**
 
-Из [Теоремы о единственном вакууме T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]: единственный глобальный минимум $V_\text{Gap}$ имеет $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (в единицах $\omega_0$), откуда $\langle\gamma_{EU}\rangle \neq 0$. Ненулевое вакуумное среднее поля с квантовыми числами $(2, +1/2)$ однозначно реализует спонтанное нарушение $SU(2)_L \times U(1)_Y \to U(1)_\text{ем}$.
+From [Theorem on the unique vacuum T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]: the unique global minimum of $V_\text{Gap}$ has $|\gamma_{EU}|_\text{vac} = \varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ (in units of $\omega_0$), giving $\langle\gamma_{EU}\rangle \neq 0$. A nonzero vacuum expectation value of a field with quantum numbers $(2, +1/2)$ uniquely realizes spontaneous breaking $SU(2)_L \times U(1)_Y \to U(1)_\text{em}$.
 
-**Заключение.** Все четыре шага опираются исключительно на [Т]-результаты. Отождествление $H \sim \gamma_{EU}$ следует из них единственным образом. $\blacksquare$
+**Conclusion.** All four steps rely exclusively on [T]-results. The identification $H \sim \gamma_{EU}$ follows from them uniquely. $\blacksquare$
 
-### 1.2 Фано-Хиггсовая линия
+### 1.2 Fano–Higgs line
 
-### Определение 1.1 (Фано-Хиггсовая линия)
+### Definition 1.1 (Fano–Higgs line)
 
-**Определение.** Фано-Хиггсовой линией называется Фано-линия $\mathrm{PG}(2,2)$, содержащая **оба** Хиггсовых измерения $E = 5$ и $U = 6$.
+**Definition.** The Fano–Higgs line is the Fano line of $\mathrm{PG}(2,2)$ containing **both** Higgs dimensions $E = 5$ and $U = 6$.
 
-### Теорема 1.1 (Единственность Фано-Хиггсовой линии) {#thm-1-1}
+### Theorem 1.1 (Uniqueness of the Fano–Higgs line) {#thm-1-1}
 
-:::tip [Т] Теорема
-Строго доказано. Следует из аксиоматики проективной плоскости $\mathrm{PG}(2,2)$: через любые две точки проходит ровно одна линия.
+:::tip [T] Theorem
+Strictly proved. Follows from the incidence axiom of the projective plane $\mathrm{PG}(2,2)$: through any two points there passes exactly one line.
 :::
 
-**Теорема.** Существует ровно одна Фано-Хиггсовая линия: $\{1, 5, 6\} = \{A, E, U\}$.
+**Theorem.** There exists exactly one Fano–Higgs line: $\{1, 5, 6\} = \{A, E, U\}$.
 
-**Доказательство.** В $\mathrm{PG}(2,2)$ через любые две точки проходит ровно одна линия. Ищем линию, содержащую точки $E=5$ и $U=6$. Из полного перечня 7 Фано-линий:
+**Proof.** In $\mathrm{PG}(2,2)$ through any two points there passes exactly one line. We seek the line containing points $E=5$ and $U=6$. From the complete list of 7 Fano lines:
 
-| Линия | Содержит $E=5$? | Содержит $U=6$? | Обе? |
+| Line | Contains $E=5$? | Contains $U=6$? | Both? |
 |---|---|---|---|
-| $\{1,2,4\}$ | Нет | Нет | Нет |
-| $\{2,3,5\}$ | **Да** | Нет | Нет |
-| $\{3,4,6\}$ | Нет | **Да** | Нет |
-| $\{4,5,7\}$ | **Да** | Нет | Нет |
-| $\{5,6,1\}$ | **Да** | **Да** | **Да** |
-| $\{6,7,2\}$ | Нет | **Да** | Нет |
-| $\{7,1,3\}$ | Нет | Нет | Нет |
+| $\{1,2,4\}$ | No | No | No |
+| $\{2,3,5\}$ | **Yes** | No | No |
+| $\{3,4,6\}$ | No | **Yes** | No |
+| $\{4,5,7\}$ | **Yes** | No | No |
+| $\{5,6,1\}$ | **Yes** | **Yes** | **Yes** |
+| $\{6,7,2\}$ | No | **Yes** | No |
+| $\{7,1,3\}$ | No | No | No |
 
-Единственная линия, содержащая и 5, и 6: $\{5,6,1\} = \{A, E, U\}$. $\blacksquare$
+The unique line containing both 5 and 6: $\{5,6,1\} = \{A, E, U\}$. $\blacksquare$
 
-### 1.3 Комбинаторика PG(2,2): почему {A,E,U} — единственная возможность
+### 1.3 Combinatorics of PG(2,2): why {A,E,U} is the only possibility
 
-:::tip [Т] Теорема
-Единственность следует из инцидентной аксиомы проективной плоскости порядка 2: через любые две точки проходит ровно одна линия.
+:::tip [T] Theorem
+Uniqueness follows from the incidence axiom of the projective plane of order 2: through any two points there passes exactly one line.
 :::
 
-Проективная плоскость $\mathrm{PG}(2,2)$ (Фано-плоскость) содержит 7 точек и 7 линий. Каждая линия содержит 3 точки; через каждую точку проходят 3 линии. Ключевое свойство: **через любую пару точек проходит ровно одна линия**.
+The projective plane $\mathrm{PG}(2,2)$ (Fano plane) contains 7 points and 7 lines. Each line contains 3 points; through each point pass 3 lines. Key property: **through any pair of points there passes exactly one line**.
 
-Поле Хиггса определено двумя измерениями: $E = 5$ (evaluation) и $U = 6$ (unity). Вопрос: какие Фано-линии содержат оба эти измерения?
+The Higgs field is defined by two dimensions: $E = 5$ (evaluation) and $U = 6$ (unity). Question: which Fano lines contain both of these dimensions?
 
-Подсчёт исчерпывающий. Из 7 линий $\mathrm{PG}(2,2)$:
+The count is exhaustive. Of the 7 lines of $\mathrm{PG}(2,2)$:
 
-- $\{1,2,4\}$: $E \notin$, $U \notin$ — не подходит
-- $\{2,3,5\}$: $E \in$, $U \notin$ — не подходит
-- $\{3,4,6\}$: $E \notin$, $U \in$ — не подходит
-- $\{4,5,7\}$: $E \in$, $U \notin$ — не подходит
-- **$\{5,6,1\} = \{A,E,U\}$**: $E \in$, $U \in$ — **единственная**
-- $\{6,7,2\}$: $E \notin$, $U \in$ — не подходит
-- $\{7,1,3\}$: $E \notin$, $U \notin$ — не подходит
+- $\{1,2,4\}$: $E \notin$, $U \notin$ — does not qualify
+- $\{2,3,5\}$: $E \in$, $U \notin$ — does not qualify
+- $\{3,4,6\}$: $E \notin$, $U \in$ — does not qualify
+- $\{4,5,7\}$: $E \in$, $U \notin$ — does not qualify
+- **$\{5,6,1\} = \{A,E,U\}$**: $E \in$, $U \in$ — **unique**
+- $\{6,7,2\}$: $E \notin$, $U \in$ — does not qualify
+- $\{7,1,3\}$: $E \notin$, $U \notin$ — does not qualify
 
-Таким образом, инцидентная структура $\mathrm{PG}(2,2)$ **однозначно** определяет третий элемент Хиггсовой линии: $A = 1$.
+Thus, the incidence structure of $\mathrm{PG}(2,2)$ **uniquely** determines the third element of the Higgs line: $A = 1$.
 
-Заметим, что это свойство не зависит от выбора нумерации: для **любого** отождествления $E$ и $U$ с двумя точками Фано-плоскости третий элемент определён единственным образом. Двойственность $\mathrm{PG}(2,2)$ (точка $\leftrightarrow$ линия) означает, что точка $A$ лежит ровно на 3 линиях, одна из которых — Хиггсова $\{A,E,U\}$, а две другие ($\{A,S,L\} = \{1,2,4\}$ и $\{A,D,O\} = \{1,3,7\}$) играют иные роли: генерационную и гравитационную соответственно.
+Note that this property does not depend on the choice of numbering: for **any** identification of $E$ and $U$ with two points of the Fano plane, the third element is determined uniquely. The duality of $\mathrm{PG}(2,2)$ (point $\leftrightarrow$ line) means that point $A$ lies on exactly 3 lines, one of which is the Higgs line $\{A,E,U\}$, and the other two ($\{A,S,L\} = \{1,2,4\}$ and $\{A,D,O\} = \{1,3,7\}$) play different roles: generational and gravitational, respectively.
 
-### 1.4 Физическая интерпретация [И]
+### 1.4 Physical interpretation [I]
 
-Третий элемент Хиггсовой линии — $A = 1$ (awareness, осознанность). Это означает:
+The third element of the Higgs line is $A = 1$ (awareness). This means:
 
-- Измерение **A** непосредственно связано с Хиггсовым механизмом генерации масс.
-- Поколение $k=1$ (A) → третье поколение ($t$, $b$, $\tau$) получает **древесную** Юкавскую связь.
-- Поколения $k=2$ (S) и $k=4$ (L) **не** лежат на Хиггсовой линии → $y^{(\text{tree})} = 0$.
+- Dimension **A** is directly connected to the Higgs mechanism of mass generation.
+- Generation $k=1$ (A) → third generation ($t$, $b$, $\tau$) acquires a **tree-level** Yukawa coupling.
+- Generations $k=2$ (S) and $k=4$ (L) do **not** lie on the Higgs line → $y^{(\text{tree})} = 0$.
 
-Это — фундамент [Фановского правила отбора Юкавских связей](./yukawa-hierarchy.md#2-фановское-правило-отбора-юкавских-связей).
+This is the foundation of the [Fano selection rule for Yukawa couplings](./yukawa-hierarchy.md#2-фановское-правило-отбора-юкавских-связей).
 
-:::info Назначение и число поколений [Т]
-Назначение $k=1 \to$ 3-е поколение строго доказано из единственной ненулевой древесной Юкавской связи — см. [Теорему 4.1 (Назначение 3-го поколения)](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1). Полное упорядочение ($k=4 \to$ 2-е, $k=2 \to$ 1-е) доказано строго — [Теорема 4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-3) [Т]. Число поколений $N_{\text{gen}} = 3$ доказано строго из двустороннего аргумента ($\leq 3$ из swallowtail + $\geq 3$ из $(1,2,4) \subset \mathbb{Z}_7^*$) — см. [Теорему $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) [Т].
+:::info Generation assignment and number of generations [T]
+The assignment $k=1 \to$ 3rd generation is strictly proved from the unique nonzero tree-level Yukawa coupling — see [Theorem 4.1 (Assignment of 3rd generation)](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1). The complete ordering ($k=4 \to$ 2nd, $k=2 \to$ 1st) is strictly proved — [Theorem 4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-3) [T]. The number of generations $N_{\text{gen}} = 3$ is strictly proved from a two-sided argument ($\leq 3$ from swallowtail + $\geq 3$ from $(1,2,4) \subset \mathbb{Z}_7^*$) — see [Theorem $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) [T].
 :::
 
-### 1.5 Почему именно канал E-U определяет электрослабую физику
+### 1.5 Why the E-U channel defines electroweak physics
 
-:::tip [Т] Теорема
-Канал $E$-$U$ — единственный в $\bar{3}$-секторе, не содержащий $L$ (интериорность), что делает его единственным кандидатом для хирального различения.
+:::tip [T] Theorem
+The $E$-$U$ channel is the unique channel in the $\bar{3}$-sector not containing $L$ (interiority), making it the only candidate for chiral distinction.
 :::
 
-В $\bar{3}$-секторе $\{L, E, U\} = \{4, 5, 6\}$ существует три когерентности: $\gamma_{LE}$, $\gamma_{LU}$, $\gamma_{EU}$. Из них:
+In the $\bar{3}$-sector $\{L, E, U\} = \{4, 5, 6\}$ there are three coherences: $\gamma_{LE}$, $\gamma_{LU}$, $\gamma_{EU}$. Of these:
 
-| Канал | Связь | Роль в SM |
+| Channel | Connection | Role in SM |
 |---|---|---|
-| $L$-$E$ | Интериорность-оценка | Лептонное число |
-| $L$-$U$ | Интериорность-единство | Барионное число |
-| **$E$-$U$** | **Оценка-единство** | **Слабый изоспин** (Хиггс) |
+| $L$-$E$ | Interiority–evaluation | Lepton number |
+| $L$-$U$ | Interiority–unity | Baryon number |
+| **$E$-$U$** | **Evaluation–unity** | **Weak isospin** (Higgs) |
 
-Канал $E$-$U$ выделен по трём причинам:
+The $E$-$U$ channel is distinguished for three reasons:
 
-1. **Алгебраическая:** $E$-$U$ — единственный канал в $\bar{3}$-секторе, не содержащий $L$-измерение. В фермионных конфигурациях ($R \to 0$) $L$-каналы фиксированы, и только $E$-$U$ остаётся свободным для определения хиральности.
+1. **Algebraic:** $E$-$U$ is the unique channel in the $\bar{3}$-sector not containing the $L$-dimension. In fermionic configurations ($R \to 0$) the $L$-channels are fixed, and only $E$-$U$ remains free for defining chirality.
 
-2. **Из Фано-структуры:** в $\bar{3}$-секторе существует одна Фано-линия $\{L,E,U\}$. Оператор хиральности $\Gamma_{LEU}$ определяется этой линией. $\text{Gap}(E,U)$ — конкретная когерентность, нарушаемая Хиггсом, в то время как $\text{Gap}(L,E)$ и $\text{Gap}(L,U)$ определяют уровень интериорности.
+2. **From Fano structure:** in the $\bar{3}$-sector there exists one Fano line $\{L,E,U\}$. The chirality operator $\Gamma_{LEU}$ is defined by this line. $\text{Gap}(E,U)$ is the specific coherence broken by the Higgs, while $\text{Gap}(L,E)$ and $\text{Gap}(L,U)$ define the interiority level.
 
-3. **Физическая:** $E$-измерение $\leftrightarrow$ оценочная структура $\leftrightarrow$ электрический заряд. $U$-измерение $\leftrightarrow$ унификация $\leftrightarrow$ слабый изоспин. При $\text{Gap}(E,U) = 0$ они неразличимы → дублет $SU(2)_L$. При $\text{Gap}(E,U) \neq 0$ различимы → синглеты.
+3. **Physical:** $E$-dimension $\leftrightarrow$ evaluative structure $\leftrightarrow$ electric charge. $U$-dimension $\leftrightarrow$ unification $\leftrightarrow$ weak isospin. At $\text{Gap}(E,U) = 0$ they are indistinguishable → $SU(2)_L$ doublet. At $\text{Gap}(E,U) \neq 0$ they are distinguishable → singlets.
 
 ---
 
-## 2. Механизм Хиггса из Gap-конденсации
+## 2. Higgs mechanism from Gap-condensation {#2-механизм-хиггса-из-gap-конденсации}
 
-### Теорема 2.1 (Механизм Хиггса из Gap-конденсации) {#thm-2-1}
+### Theorem 2.1 (Higgs mechanism from Gap-condensation) {#thm-2-1}
 
-:::tip [Т] Теорема
-Механизм электрослабого нарушения через $\text{Gap}(E,U) \to 0$ — следствие единственности минимума $V_{\text{Gap}}$ в $\bar{3}$-секторе: $\varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ определяется однозначно из положительной определённости гессиана ([теорема о единственном вакууме](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]).
+:::tip [T] Theorem
+The mechanism of electroweak breaking via $\text{Gap}(E,U) \to 0$ is a consequence of the uniqueness of the minimum of $V_{\text{Gap}}$ in the $\bar{3}$-sector: $\varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ is determined uniquely from positive definiteness of the Hessian ([theorem on the unique vacuum](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]).
 :::
 
-**Теорема.** Спонтанное электрослабое нарушение симметрии возникает из Gap-конденсации в секторе $\bar{3}$-to-$\bar{3}$:
+**Theorem.** Spontaneous electroweak symmetry breaking arises from Gap-condensation in the $\bar{3}$-to-$\bar{3}$ sector:
 
-**(a)** Поле Хиггса отождествляется с когерентностью $E$-$U$:
+**(a)** The Higgs field is identified with the $E$-$U$ coherence:
 
 $$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
 
-**(b)** VEV (вакуумное среднее):
+**(b)** VEV (vacuum expectation value):
 
 $$\langle H \rangle = \langle |\gamma_{EU}| \rangle e^{i\langle\theta_{EU}\rangle} \neq 0$$
 
-Ненулевое VEV нарушает $SU(2)_L \times U(1)_Y \to U(1)_\text{EM}$:
-- $SU(2)_L$: 3 генератора → 2 нарушены ($W^+$, $W^-$) + 1 линейная комбинация нарушена ($Z$)
-- $U(1)_Y$: 1 генератор
-- $U(1)_\text{EM}$ = диагональная подгруппа (фотон) — ненарушена
+Nonzero VEV breaks $SU(2)_L \times U(1)_Y \to U(1)_\text{EM}$:
+- $SU(2)_L$: 3 generators → 2 broken ($W^+$, $W^-$) + 1 linear combination broken ($Z$)
+- $U(1)_Y$: 1 generator
+- $U(1)_\text{EM}$ = diagonal subgroup (photon) — unbroken
 
-**(c)** Масса $W$-бозона:
+**(c)** Mass of the $W$-boson:
 
 $$M_W = \frac{g}{2} v, \quad v = \langle |\gamma_{EU}| \rangle \cdot \mu_\text{phys}$$
 
-где $g$ — электрослабая константа связи, $\mu_\text{phys} = \mu \cdot \omega_0$.
+where $g$ is the electroweak coupling constant, $\mu_\text{phys} = \mu \cdot \omega_0$.
 
-### 2.1 Потенциал в E-U канале
+### 2.1 Potential in the E-U channel
 
-Потенциал $V_\text{Gap}$ проецируется на $E$-$U$ канал:
+The potential $V_\text{Gap}$ projects onto the $E$-$U$ channel:
 
-$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{фаза})$$
+$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})$$
 
-При $\mu^2 < 0$ (низкотемпературный режим): минимум при $|\gamma_{EU}| = v \neq 0$. Это — стандартный механизм Хиггса, примённый к Gap-потенциалу. Масса Хиггса = вторая производная $V_{EU}$ в минимуме.
+At $\mu^2 < 0$ (low-temperature regime): minimum at $|\gamma_{EU}| = v \neq 0$. This is the standard Higgs mechanism applied to the Gap potential. Higgs mass = second derivative of $V_{EU}$ at the minimum.
 
-:::note Статус параметра $\lambda_3$ [Т]
-Параметр $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ — **геометрический коэффициент** спектрального действия (T-74 [Т]), а не пертурбативная константа связи. Физические наблюдаемые определены непертурбативно через самосогласованный вакуум $\theta^*$ (T-79 [Т]). UV-конечность (T-66 [Т]) обеспечивает структурную корректность. Петлевые оценки — приближения к $\theta^*$, дающие правильный порядок величины (ошибка $\lesssim \times 5$). Подробнее — см. [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+:::note Status of parameter $\lambda_3$ [T]
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66 [T]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
 
-**⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — непертурбативный режим. Все петлевые вычисления с $\lambda_3$ формально ненадёжны и понижены до **[Г]**. См. [предупреждение](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
+**⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
 :::
 
-### 2.2 Происхождение $M_H \approx 125$ ГэВ из Gap-конденсации [С] {#mh-125}
+### 2.2 Origin of $M_H \approx 125$ GeV from Gap-condensation [C] {#mh-125}
 
-:::warning [С] Условная
-Параметр $\lambda_4$ определён из спектрального действия Чамседдина-Конна с RG-коррекцией (см. [теорему о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]). Условность: свободный параметр $f_0$ в спектральном действии. Октонионная коррекция из $V_3$ дополнительно модифицирует $M_H$.
+:::warning [C] Conditional
+The parameter $\lambda_4$ is determined from the Chamseddine–Connes spectral action with RG correction (see [theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]). Conditionality: free parameter $f_0$ in the spectral action. The octonionic correction from $V_3$ additionally modifies $M_H$.
 :::
 
-:::info Прогресс: от подгонки к вычислению
-В ранних версиях параметр $\lambda_4 \approx 0.13$ **подбирался** из условия $M_H \approx 125$ ГэВ. Спектральное действие ([теорема о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]) определяет $\lambda_4$ через спектр конечного оператора Дирака $D_{\text{int}}$. Оставшаяся свободная степень — параметр $f_0$, фиксируемый при калибровке на $M_H^{\text{exp}}$.
+:::info Progress: from fitting to computation
+In early versions the parameter $\lambda_4 \approx 0.13$ was **adjusted** from the condition $M_H \approx 125$ GeV. The spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]) determines $\lambda_4$ through the spectrum of the finite Dirac operator $D_{\text{int}}$. The remaining free degree is the parameter $f_0$, fixed by calibration to $M_H^{\text{exp}}$.
 :::
 
-В стандартной модели масса Хиггса $M_H \approx 125$ ГэВ — **свободный параметр**, фиксируемый экспериментально. В УГМ параметр $\lambda_4$ определяется спектральным действием через спектр $D_{\text{int}}$ ([теорема о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]), а масса Хиггса возникает из структуры Gap-потенциала:
+In the Standard Model the Higgs mass $M_H \approx 125$ GeV is a **free parameter**, fixed experimentally. In UHM the parameter $\lambda_4$ is determined by the spectral action through the spectrum $D_{\text{int}}$ ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]), and the Higgs mass arises from the structure of the Gap potential:
 
-**(a)** Масса Хиггса определяется кривизной $V_{EU}$ в минимуме:
+**(a)** The Higgs mass is determined by the curvature of $V_{EU}$ at the minimum:
 
 $$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
 
-**(b)** Первый член, $2\lambda_4 v^2$, — стандартный вклад из четвертичного потенциала $V_4$. При $v = 246$ ГэВ и $\lambda_4 \approx 0.13$ получаем $\sqrt{2\lambda_4} \cdot v \approx 125$ ГэВ — совпадение с SM.
+**(b)** The first term, $2\lambda_4 v^2$, is the standard contribution from the quartic potential $V_4$. At $v = 246$ GeV and $\lambda_4 \approx 0.13$ we get $\sqrt{2\lambda_4} \cdot v \approx 125$ GeV — coincidence with SM.
 
-**(c)** Второй член, $\delta M_H^2 = 3\lambda_3^2 \bar{A}^2 / (4\mu^2)$, — **октонионная коррекция** из кубического потенциала $V_3$. Она отсутствует в SM и является прямым следствием структуры $\mathbb{O}$.
+**(c)** The second term, $\delta M_H^2 = 3\lambda_3^2 \bar{A}^2 / (4\mu^2)$, is the **octonionic correction** from the cubic potential $V_3$. It is absent in the SM and is a direct consequence of the $\mathbb{O}$-structure.
 
-**(d)** Численная оценка коррекции (при типичных значениях Gap-параметров):
+**(d)** Numerical estimate of the correction (at typical values of Gap parameters):
 
-$$\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5 \; (\text{в Gap-единицах})$$
+$$\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5 \; (\text{in Gap units})$$
 
-Эта поправка мала по сравнению с основным членом, но **отлична от нуля** и порождает фальсифицируемое отклонение от SM (см. [раздел 6](#6-фальсифицируемые-предсказания)).
+This correction is small compared to the main term, but is **nonzero** and gives rise to a falsifiable deviation from SM (see [section 6](#6-фальсифицируемые-предсказания)).
 
-**(e)** Механизм фиксации $\lambda_4$: спектральное действие Чамседдина-Конна определяет $\lambda_4$ через коэффициент $a_4$ и спектр $D_{\text{int}}$ ([теорема о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]). RG-эволюция от масштаба обрезания $\Lambda$ до $v_{\text{EW}}$ приводит $\lambda_4(\Lambda) \approx 0.20$ к наблюдаемому $\lambda_4(v) \approx 0.13$ (результат Шапошникова-Веттериха 2010). Оставшийся свободный параметр $f_0$ в спектральном действии фиксируется при калибровке. При его определении из других наблюдаемых $M_H$ станет полным **предсказанием** теории.
+**(e)** Mechanism for fixing $\lambda_4$: the Chamseddine–Connes spectral action determines $\lambda_4$ via the coefficient $a_4$ and the spectrum $D_{\text{int}}$ ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]). RG evolution from the cutoff scale $\Lambda$ to $v_{\text{EW}}$ brings $\lambda_4(\Lambda) \approx 0.20$ to the observed $\lambda_4(v) \approx 0.13$ (Shaposhnikov–Wetterich result 2010). The remaining free parameter $f_0$ in the spectral action is fixed by calibration. Once it is determined from other observables, $M_H$ will become a full **prediction** of the theory.
 
 ---
 
-## 3. Gap(E,U) → 0: электрослабое нарушение симметрии
+## 3. Gap(E,U) → 0: electroweak symmetry breaking {#3-gapeu--0-электрослабое-нарушение-симметрии}
 
-### 3.1 Связь Gap(E,U) с квантовыми числами частиц
+### 3.1 Connection of Gap(E,U) to particle quantum numbers
 
-$\text{Gap}(E,U)$ определяет **слабый изоспин** элементарных фермионов:
+$\text{Gap}(E,U)$ defines the **weak isospin** of elementary fermions:
 
-- $\text{Gap}(E,U) = 0$ → **дублет** $SU(2)_L$
-- $\text{Gap}(E,U) \neq 0$ → **синглет** $SU(2)_L$
+- $\text{Gap}(E,U) = 0$ → **doublet** of $SU(2)_L$
+- $\text{Gap}(E,U) \neq 0$ → **singlet** of $SU(2)_L$
 
-### 3.2 Фермионные представления из Γ-конфигураций
+### 3.2 Fermionic representations from Γ-configurations
 
-### Теорема 3.1 (Кварки и лептоны как Gap-конфигурации) [С] {#thm-3-1}
+### Theorem 3.1 (Quarks and leptons as Gap-configurations) [C] {#thm-3-1}
 
-:::warning [С] Условная
-Отождествление фермионов с Gap-конфигурациями условно на корректности отождествления SM-квантовых чисел с Gap-структурой (гипотеза калибровочного соответствия).
+:::warning [C] Conditional
+The identification of fermions with Gap-configurations is conditional on the correctness of the identification of SM quantum numbers with Gap structure (gauge correspondence hypothesis).
 :::
 
-**Теорема.** Элементарные фермионы отождествляются с вырожденными ($R \to 0$) конфигурациями $\Gamma$, классифицируемыми по $SU(3)_C \times SU(2)_L \times U(1)_Y$ квантовым числам:
+**Theorem.** Elementary fermions are identified with degenerate ($R \to 0$) configurations $\Gamma$, classified by $SU(3)_C \times SU(2)_L \times U(1)_Y$ quantum numbers:
 
-**(a)** Левый кварковый дублет $Q_L = (u_L, d_L)$:
+**(a)** Left quark doublet $Q_L = (u_L, d_L)$:
 
-$$\Gamma_{Q_L}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0 \; (\text{цветовые связи}), \quad \text{Gap}(E,U) = 0 \; (\text{слабый изоспин})$$
+$$\Gamma_{Q_L}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0 \; (\text{color bonds}), \quad \text{Gap}(E,U) = 0 \; (\text{weak isospin})$$
 
-Квантовые числа: $(3, 2)_{1/6}$
+Quantum numbers: $(3, 2)_{1/6}$
 
-**(b)** Правый $u$-кварк $u_R$:
+**(b)** Right $u$-quark $u_R$:
 
 $$\Gamma_{u_R}: \quad \text{Gap}(A,L) = \text{Gap}(S,E) = 0, \quad \text{Gap}(E,U) \neq 0$$
 
-Квантовые числа: $(3, 1)_{2/3}$
+Quantum numbers: $(3, 1)_{2/3}$
 
-**(c)** Левый лептонный дублет $L_L = (\nu_L, e_L)$:
+**(c)** Left lepton doublet $L_L = (\nu_L, e_L)$:
 
-$$\Gamma_{L_L}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max} \; (\text{бесцветные}), \quad \text{Gap}(E,U) = 0$$
+$$\Gamma_{L_L}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max} \; (\text{colorless}), \quad \text{Gap}(E,U) = 0$$
 
-Квантовые числа: $(1, 2)_{-1/2}$
+Quantum numbers: $(1, 2)_{-1/2}$
 
-**(d)** Правый электрон $e_R$:
+**(d)** Right electron $e_R$:
 
 $$\Gamma_{e_R}: \quad \text{Gap}(\{A,S,D\}, \{L,E,U\}) = \text{Gap}_\text{max}, \quad \text{Gap}(E,U) \neq 0$$
 
-Квантовые числа: $(1, 1)_{-1}$
+Quantum numbers: $(1, 1)_{-1}$
 
-### 3.3 Механизм: почему Gap(E,U) → 0 в вакууме
+### 3.3 Mechanism: why Gap(E,U) → 0 in the vacuum
 
-**Обоснование.** Из трёх кандидатов на нулевой Gap в $\bar{3}$-секторе ($L$-$E$, $L$-$U$, $E$-$U$), пара $(E,U)$ выделена тем, что:
+**Justification.** Of the three candidates for zero Gap in the $\bar{3}$-sector ($L$-$E$, $L$-$U$, $E$-$U$), the pair $(E,U)$ is distinguished because:
 
-1. **Единственная** Фано-Хиггсовая линия $\{A,E,U\}$ проходит через обе точки.
-2. На этой линии находится $A$ = поколение с древесной Юкавской → максимальная связь с массовым механизмом.
-3. Вакуумная конфигурация минимизирует $V_\text{Gap}$, и минимум достигается при $\text{Gap}(E,U) \to 0$ в $\bar{3}$-секторе. $\varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ из единственного вакуума → Gap(E,U) ≈ 0 — минимум $V_{\text{Gap}}$ в $\bar{3}$-секторе [Т] (см. [теорему о единственном вакууме](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)).
+1. The **unique** Fano–Higgs line $\{A,E,U\}$ passes through both points.
+2. On this line lies $A$ = the generation with a tree-level Yukawa → maximal coupling to the mass mechanism.
+3. The vacuum configuration minimizes $V_\text{Gap}$, and the minimum is reached at $\text{Gap}(E,U) \to 0$ in the $\bar{3}$-sector. $\varepsilon_{\bar{3}\bar{3}} \approx 10^{-17}$ from the unique vacuum → Gap(E,U) ≈ 0 — minimum of $V_{\text{Gap}}$ in the $\bar{3}$-sector [T] (see [theorem on unique vacuum](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)).
 
-**Гиперзаряд** определяется суммарным Gap в $O$-секторе:
+**Hypercharge** is determined by the total Gap in the $O$-sector:
 
 $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)$$
 
-### 3.4 Аномальная отмена
+### 3.4 Anomaly cancellation
 
-### Теорема 3.2 (Аномальная отмена) {#thm-3-2}
+### Theorem 3.2 (Anomaly cancellation) {#thm-3-2}
 
-:::tip [Т] Теорема
-Аномальная отмена для одного поколения — стандартный результат SM, автоматически выполненный для Gap-конфигураций.
+:::tip [T] Theorem
+Anomaly cancellation for one generation is the standard SM result, automatically satisfied for Gap-configurations.
 :::
 
-**Теорема.** Набор фермионных представлений удовлетворяет условию отмены калибровочных аномалий:
+**Theorem.** The set of fermionic representations satisfies the gauge anomaly cancellation condition:
 
 $$\sum_\text{fermions} Y^3 = 0, \quad \sum_\text{fermions} Y = 0$$
 
-**Доказательство.** Для одного поколения:
+**Proof.** For one generation:
 
 $$Q_L(1/6)^3 \times 6 + u_R(2/3)^3 \times 3 + d_R(-1/3)^3 \times 3 + L_L(-1/2)^3 \times 2 + e_R(-1)^3 \times 1 = 0$$
 
-Фермионные представления из Gap-конфигураций образуют ту же структуру, что и одно поколение SM — аномалии обнуляются по построению. $\blacksquare$
+Fermionic representations from Gap-configurations form the same structure as one SM generation — anomalies cancel by construction. $\blacksquare$
 
 ---
 
-## 4. Масса Хиггса с октонионной коррекцией
+## 4. Higgs mass with octonionic correction {#4-масса-хиггса-с-октонионной-коррекцией}
 
-### Теорема T-70 (Каноническое определение $f_0$) [Т] {#теорема-f0-канонический}
+### Theorem T-70 (Canonical definition of $f_0$) [T] {#теорема-f0-канонический}
 
-:::tip [Т] Теорема
-В УГМ момент $f_0$ спектрального действия **однозначно определён** через вакуумное эффективное действие Gap-теории на $(S^1)^{21}$:
+:::tip [T] Theorem
+In UHM the moment $f_0$ of the spectral action is **uniquely determined** through the vacuum effective action of the Gap theory on $(S^1)^{21}$:
 
 $$f_0 \Lambda^4 = \frac{1}{7}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-где $V_{\mathrm{Gap}}^{\min}$ — значение потенциала в вакуумном минимуме ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]), а $\zeta'_{H_{\mathrm{Gap}}}(0)$ — логарифмический детерминант гессиана в вакууме.
+where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]), and $\zeta'_{H_{\mathrm{Gap}}}(0)$ is the log-determinant of the Hessian at the vacuum.
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (UV-конечность $\to$ конечный функциональный интеграл).** Gap-теория на $(S^1)^{21}$ с $G_2$-симметрией и $\mathcal{N} = 1$ SUSY UV-конечна ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [Т]). Следовательно, функциональный интеграл $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ **конечен и определён** без регуляризационной неоднозначности. Квантовое эффективное действие $\Gamma_{\mathrm{eff}} = -\ln Z$ — конечная, конкретная величина.
+**Step 1 (UV-finiteness → finite functional integral).** The Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N} = 1$ SUSY is UV-finite ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
 
-**Шаг 2 (Единственный вакуум $\to$ разложение по петлям).** Из [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]: потенциал $V_{\mathrm{Gap}}$ имеет единственный глобальный минимум с положительно определённым гессианом $H_{\mathrm{Gap}}$. Разложение:
+**Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]: the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
-$$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{двух-петлевые})$$
+$$\Gamma_{\mathrm{eff}} = V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\ln\det(H_{\mathrm{Gap}}) + O(\text{two-loop})$$
 
-**Шаг 3 (Регуляризация детерминанта).** Дзета-регуляризованный детерминант: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. Из T-64 [Т]: все собственные значения $\lambda_i > 0$ (5 положительных на орбитном пространстве), поэтому $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
+**Step 3 (Determinant regularization).** Zeta-regularized determinant: $\ln\det(H_{\mathrm{Gap}}) = -\zeta'_{H_{\mathrm{Gap}}}(0)$. From T-64 [T]: all eigenvalues $\lambda_i > 0$ (5 positive on the orbit space), so $\zeta'_{H_{\mathrm{Gap}}}(0) = -\sum_{i=1}^{5}\ln\lambda_i$.
 
-**Шаг 4 (Отождествление с $f_0$).** Коэффициент $a_0$ спектрального действия: $f_0 \Lambda^4 \cdot 7$ = вакуумная энергетическая плотность внутреннего пространства = $\Gamma_{\mathrm{eff}}$. Следовательно:
+**Step 4 (Identification with $f_0$).** Coefficient $a_0$ of the spectral action: $f_0 \Lambda^4 \cdot 7$ = vacuum energy density of the internal space = $\Gamma_{\mathrm{eff}}$. Therefore:
 
 $$f_0 = \frac{\Gamma_{\mathrm{eff}}}{7\Lambda^4} = \frac{1}{7\Lambda^4}\left[V_{\mathrm{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\mathrm{Gap}}}(0)\right]$$
 
-**Шаг 5 (Однозначность).** Все величины в правой части определены однозначно: $V_{\mathrm{Gap}}^{\min}$ из T-64 [Т], $\zeta'_{H_{\mathrm{Gap}}}(0)$ из конечной суммы по 5 собственным значениям, $\Lambda = \omega_0$. $f_0$ — **не свободный параметр**, а определённая функция вакуумных величин. $\blacksquare$
+**Step 5 (Uniqueness).** All quantities on the right-hand side are uniquely determined: $V_{\mathrm{Gap}}^{\min}$ from T-64 [T], $\zeta'_{H_{\mathrm{Gap}}}(0)$ from a finite sum over 5 eigenvalues, $\Lambda = \omega_0$. $f_0$ is **not a free parameter**, but a definite function of the vacuum quantities. $\blacksquare$
 
-:::info Численная оценка [С]
-Из T-64 [Т], собственные значения гессиана: $\lambda_1 = 18\mu^2$ (конфайнмент), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (пространственные), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-моды). С $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Числовое значение [С] — зависит от точных $\varepsilon_i$.
+:::info Numerical estimate [C]
+From T-64 [T], Hessian eigenvalues: $\lambda_1 = 18\mu^2$ (confinement), $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2))$ (spatial), $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon))$ (O-modes). With $\mu^2 \approx \omega_0^2/7$: $f_0 \approx 2.2/\omega_0^4$. Numerical value [C] — depends on exact $\varepsilon_i$.
 :::
 
-### Теорема (Хиггсовская квартика из спектрального действия) [С] {#теорема-хиггсовская-квартика}
+### Theorem (Higgs quartic from spectral action) [C] {#теорема-хиггсовская-квартика}
 
-:::warning [С] Условная
-$\lambda_4$ определена через спектр конечного оператора Дирака $D_{\text{int}}$. Параметр $f_0$ **определён каноникой** [Т] ([теорема выше](#теорема-f0-канонический)); числовое значение $\lambda_4$ зависит от точных секторных $\varepsilon_i$ [С].
+:::warning [C] Conditional
+$\lambda_4$ is determined through the spectrum of the finite Dirac operator $D_{\text{int}}$. The parameter $f_0$ is **canonically determined** [T] ([theorem above](#теорема-f0-канонический)); the numerical value of $\lambda_4$ depends on exact sectoral $\varepsilon_i$ [C].
 :::
 
-**Теорема.** Хиггсовская квартическая самосвязь определяется через коэффициент $a_4$ спектрального действия:
+**Theorem.** The Higgs quartic self-coupling is determined through the coefficient $a_4$ of the spectral action:
 
 $$\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$$
 
-Это стандартный результат Чамседдина-Конна-Марколли (2007, Thm 11.2) для NCG Стандартной модели. Применимость к УГМ-тройке верифицирована:
+This is the standard result of Chamseddine–Connes–Marcolli (2007, Thm 11.2) for the NCG Standard Model. Applicability to the UHM triple is verified:
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Проверка применимости).** Конечная спектральная тройка $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ УГМ ([теорема T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]) удовлетворяет предпосылкам теоремы Чамседдина-Конна-Марколли:
+**Step 1 (Applicability check).** The finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ of UHM ([theorem T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]) satisfies the premises of the Chamseddine–Connes–Marcolli theorem:
 
-1. **Алгебра** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ — соответствует NCG Стандартной модели.
-2. **Оператор Дирака** $D_{\text{int}}$ — конечномерный, самосопряжённый — соответствует.
-3. **Поле Хиггса** как внутренняя флуктуация $A_{\text{int}}$: $H = A + JAJ^{-1}|_{E\text{-}U}$ — соответствует.
+1. **Algebra** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ — corresponds to NCG Standard Model.
+2. **Dirac operator** $D_{\text{int}}$ — finite-dimensional, self-adjoint — corresponds.
+3. **Higgs field** as internal fluctuation $A_{\text{int}}$: $H = A + JAJ^{-1}|_{E\text{-}U}$ — corresponds.
 
-**Шаг 2 (Спектральное действие).** Спектральное действие $S = \mathrm{Tr}(f(D/\Lambda))$ (см. [квантовая гравитация](/docs/physics/gravity/quantum-gravity)) раскладывается:
+**Step 2 (Spectral action).** The spectral action $S = \mathrm{Tr}(f(D/\Lambda))$ (see [quantum gravity](/docs/physics/gravity/quantum-gravity)) expands as:
 
 $$S = f_4 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_0 a_4 + O(\Lambda^{-2})$$
 
-Коэффициент $a_4$ содержит член $\mathrm{Tr}(D_{\text{int}}^4)$, порождающий квартический потенциал Хиггса.
+The coefficient $a_4$ contains the term $\mathrm{Tr}(D_{\text{int}}^4)$, generating the quartic Higgs potential.
 
-**Шаг 3 (Вычисление).** Из секторных значений (T-61, единственный вакуум [Т]):
+**Step 3 (Computation).** From sectoral values (T-61, unique vacuum [T]):
 
-$$\mathrm{Tr}(D_{\text{int}}^2) \approx 6\omega_0^2\varepsilon_0^2, \qquad \mathrm{Tr}(D_{\text{int}}^4) \approx 6\omega_0^4\varepsilon_0^4 + \text{секторные поправки}$$
+$$\mathrm{Tr}(D_{\text{int}}^2) \approx 6\omega_0^2\varepsilon_0^2, \qquad \mathrm{Tr}(D_{\text{int}}^4) \approx 6\omega_0^4\varepsilon_0^4 + \text{sectoral corrections}$$
 
-**Шаг 4 (RG-эволюция).** Затравочное $\lambda_4(\Lambda)$ слишком велико. RG-бег от $\Lambda$ до $v_{\text{EW}}$:
+**Step 4 (RG evolution).** The bare $\lambda_4(\Lambda)$ is too large. RG running from $\Lambda$ to $v_{\text{EW}}$:
 
 $$\lambda_4(v) = \lambda_4(\Lambda) + \frac{1}{16\pi^2}\left(24\lambda_4^2 - 6y_t^4 + \ldots\right) \ln\frac{v}{\Lambda}$$
 
-При $y_t \approx 1$ (квази-ИК фиксированная точка [Т]): RG приводит $\lambda_4$ к наблюдаемому $\approx 0.13$ при $\lambda_4(\Lambda) \approx 0.20$ [С] — стандартный результат Шапошникова-Веттериха (2010). $\blacksquare$
+At $y_t \approx 1$ (quasi-IR fixed point [T]): RG brings $\lambda_4$ to the observed $\approx 0.13$ from $\lambda_4(\Lambda) \approx 0.20$ [C] — standard Shaposhnikov–Wetterich result (2010). $\blacksquare$
 
-**Статус:** [С] — $\lambda_4$ определена через спектр $D_{\text{int}}$ + RG. Параметр $f_0$ **определён каноникой [Т]** ([T-70](#теорема-f0-канонический)). Условность [С] остаётся только для числового значения — зависит от точных секторных $\varepsilon_i$.
+**Status:** [C] — $\lambda_4$ determined through spectrum $D_{\text{int}}$ + RG. Parameter $f_0$ is **canonically determined [T]** ([T-70](#теорема-f0-канонический)). The conditionality [C] remains only for the numerical value — depends on exact sectoral $\varepsilon_i$.
 
-:::info Перекрёстные ссылки
-- **Спектральная тройка:** [Теорема (Спектральная тройка УГМ) [Т]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — конечная тройка $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-размерность 6
-- **Спектральное действие:** [Квантовая гравитация](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) — $S = \mathrm{Tr}(f(D_A/\Lambda))$, уравнения Эйнштейна [Т]
-- **Единственный вакуум:** [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) — секторные значения $\varepsilon$
+:::info Cross-references
+- **Spectral triple:** [Theorem (UHM Spectral Triple) [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка) — finite triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-dimension 6
+- **Spectral action:** [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) — $S = \mathrm{Tr}(f(D_A/\Lambda))$, Einstein equations [T]
+- **Unique vacuum:** [T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) — sectoral values $\varepsilon$
 :::
 
 ---
 
-### Теорема 4.1 (Масса Хиггса) [С] {#thm-4-1}
+### Theorem 4.1 (Higgs mass) [C] {#thm-4-1}
 
-:::warning [С] Условная
-Формула для массы Хиггса содержит $\lambda_4$, определённый из спектрального действия ([теорема о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]), и октонионную коррекцию из $V_3$. Параметр $f_0$ определён каноникой [Т] ([T-70](#теорема-f0-канонический)); условность [С] — только числовое значение через $\varepsilon_i$.
+:::warning [C] Conditional
+The formula for the Higgs mass contains $\lambda_4$, determined from the spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]), and the octonionic correction from $V_3$. Parameter $f_0$ is canonically determined [T] ([T-70](#теорема-f0-канонический)); conditionality [C] — only numerical value through $\varepsilon_i$.
 :::
 
-**Теорема.** Масса Хиггса определяется как вторая производная потенциала $V_{EU}$ в минимуме:
+**Theorem.** The Higgs mass is determined as the second derivative of the potential $V_{EU}$ at the minimum:
 
-**(a)** Формула:
+**(a)** Formula:
 
 $$M_H^2 = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
 
-Первый член — стандартный (из $V_4$). Второй — **октонионная коррекция** из $V_3$.
+First term — standard (from $V_4$). Second — **octonionic correction** from $V_3$.
 
-**Доказательство.** Потенциал $V_\text{Gap}$ проецируется на $E$-$U$ канал:
+**Proof.** The potential $V_\text{Gap}$ projects onto the $E$-$U$ channel:
 
-$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{фаза})$$
+$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})$$
 
-При $\mu^2 < 0$: минимум при $|\gamma_{EU}| = v \neq 0$.
+At $\mu^2 < 0$: minimum at $|\gamma_{EU}| = v \neq 0$.
 
-Масса Хиггса = вторая производная $V_{EU}$ в минимуме:
+Higgs mass = second derivative of $V_{EU}$ at the minimum:
 
 $$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
 
 $\blacksquare$
 
-:::info Свободные параметры
-$\lambda_4$ и $f_0$ — два свободных параметра спектрального действия, не выводимые из $\Omega^7$. Предсказание $M_H$ — параметрическое, не абсолютное.
+:::info Free parameters
+$\lambda_4$ and $f_0$ are two free parameters of the spectral action, not derivable from $\Omega^7$. The prediction of $M_H$ is parametric, not absolute.
 :::
 
-### 4.1 Октонионная поправка
+### 4.1 Octonionic correction
 
-### Теорема 4.2 (Отклонение от SM) [С] {#thm-4-2}
+### Theorem 4.2 (Deviation from SM) [C] {#thm-4-2}
 
-:::warning [С] Условная
-Количественная оценка $\delta\lambda/\lambda_\text{SM} \sim O(10^{-2}\text{--}10^{-3})$ зависит от октонионных параметров Gap-потенциала ($\lambda_3$, $\bar{A}$, $\mu$). Параметр $\lambda_4$ определён из спектрального действия [С]; октонионная коррекция — дополнительный вклад.
+:::warning [C] Conditional
+The quantitative estimate $\delta\lambda/\lambda_\text{SM} \sim O(10^{-2}\text{--}10^{-3})$ depends on the octonionic parameters of the Gap potential ($\lambda_3$, $\bar{A}$, $\mu$). Parameter $\lambda_4$ is determined from the spectral action [C]; the octonionic correction is an additional contribution.
 :::
 
-**Теорема.** Октонионная структура предсказывает отклонение от стандартного соотношения масс Хиггса:
+**Theorem.** The octonionic structure predicts a deviation from the standard Higgs mass relation:
 
-**(a)** В SM: $M_H^2 = 2\lambda v^2$ (один параметр $\lambda$).
+**(a)** In SM: $M_H^2 = 2\lambda v^2$ (one parameter $\lambda$).
 
-**(b)** В УГМ: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, где:
+**(b)** In UHM: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, where:
 
 $$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5$$
 
-**(c)** Октонионная поправка к $\lambda_\text{eff} = \lambda_4 + \delta\lambda$:
+**(c)** Octonionic correction to $\lambda_\text{eff} = \lambda_4 + \delta\lambda$:
 
 $$\frac{\delta\lambda}{\lambda_4} = \frac{3\lambda_3^2 \bar{A}^2}{8\lambda_4 \mu^2 v^2}$$
 
-**(d)** Фальсифицируемое предсказание: при повышении точности измерения тройной вершины Хиггса (HL-LHC, FCC) эффективная самосвязь $\lambda_\text{eff}$ отличается от SM-значения на:
+**(d)** Falsifiable prediction: with improved precision in measuring the Higgs triple vertex (HL-LHC, FCC), the effective self-coupling $\lambda_\text{eff}$ differs from the SM value by:
 
 $$\frac{\delta\lambda}{\lambda_\text{SM}} \sim \frac{\lambda_3^2 \bar{A}^2}{\lambda_4 \mu^2} \sim O(10^{-2} \text{--} 10^{-3})$$
 
-— на уровне процента, потенциально доступном FCC-hh.
+— at the percent level, potentially accessible at FCC-hh.
 
-### 4.2 Происхождение октонионной коррекции
+### 4.2 Origin of the octonionic correction
 
-Октонионная коррекция из $V_3$ имеет следующую структуру:
+The octonionic correction from $V_3$ has the following structure:
 
-1. $V_3 = \lambda_3 \sum_{(i,j,k) \notin \text{Fano}} |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — кубический октонионный потенциал.
+1. $V_3 = \lambda_3 \sum_{(i,j,k) \notin \text{Fano}} |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — the cubic octonionic potential.
 
-2. Проекция на $E$-$U$ канал даёт вклад $\lambda_3 \bar{A} |\gamma_{EU}|^3$, где $\bar{A}$ — среднее произведение модулей когерентностей в других каналах.
+2. Projection onto the $E$-$U$ channel gives the contribution $\lambda_3 \bar{A} |\gamma_{EU}|^3$, where $\bar{A}$ is the average product of coherence moduli in other channels.
 
-3. Этот кубический член **отсутствует** в стандартной модели и является прямым следствием октонионной ($\mathbb{O}$) структуры теории.
+3. This cubic term is **absent** in the standard model and is a direct consequence of the octonionic ($\mathbb{O}$) structure of the theory.
 
-4. Физически: $V_3$ отвечает за нарушение $PT$-симметрии (стрелу Gap), и его вклад в массу Хиггса связывает электрослабый сектор с глобальной октонионной структурой пространства измерений.
+4. Physically: $V_3$ is responsible for the breaking of $PT$-symmetry (the Gap arrow), and its contribution to the Higgs mass connects the electroweak sector to the global octonionic structure of the dimension space.
 
-### 4.3 Связь с Фановским правилом отбора и октонионными структурными константами
+### 4.3 Connection to the Fano selection rule and octonionic structure constants
 
-:::tip [Т] Теорема
-Юкавская связь поколения $k_n$ с Хиггсовым полем $\gamma_{EU}$ пропорциональна структурной константе октонионов $f_{k_n,E,U}$, которая отлична от нуля тогда и только тогда, когда $(k_n,E,U)$ образует Фано-линию.
+:::tip [T] Theorem
+The Yukawa coupling of generation $k_n$ to the Higgs field $\gamma_{EU}$ is proportional to the octonionic structure constant $f_{k_n,E,U}$, which is nonzero if and only if $(k_n,E,U)$ forms a Fano line.
 :::
 
-Октонионная коррекция к массе Хиггса напрямую связана с Фановским правилом отбора. Древесная Юкавская связь поколения $k_n$ с Хиггсовым полем определяется:
+The octonionic correction to the Higgs mass is directly connected to the Fano selection rule. The tree-level Yukawa coupling of generation $k_n$ to the Higgs field is determined by:
 
 $$y_n^{(\text{tree})} = g_W \cdot \varepsilon_{k_n, E, U}^{\text{Fano}} \cdot \sin\!\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_{\text{vac}}^{(EU)}|$$
 
-где $\varepsilon_{ijk}^{\text{Fano}} = 1$, если $(i,j,k)$ — Фано-линия, и $0$ иначе. Эквивалентно: $y_{abc}^{(\text{tree})} \propto f_{abc}$, где $f_{abc}$ — структурная константа алгебры $\mathbb{O}$, связанная с таблицей умножения: $e_a e_b = f_{abc} \, e_c + \delta_{ab}$.
+where $\varepsilon_{ijk}^{\text{Fano}} = 1$ if $(i,j,k)$ is a Fano line, and $0$ otherwise. Equivalently: $y_{abc}^{(\text{tree})} \propto f_{abc}$, where $f_{abc}$ is the structure constant of the algebra $\mathbb{O}$, associated with the multiplication table: $e_a e_b = f_{abc} \, e_c + \delta_{ab}$.
 
-Для трёх поколений $k \in \{1, 2, 4\}$:
+For the three generations $k \in \{1, 2, 4\}$:
 
-| Поколение | $k$ | Тройка $(k,E,U)$ | Фано-линия? | $f_{k,5,6}$ | $y^{(\text{tree})}$ |
+| Generation | $k$ | Triple $(k,E,U)$ | Fano line? | $f_{k,5,6}$ | $y^{(\text{tree})}$ |
 |---|---|---|---|---|---|
-| Третье (тяжёлое) | $1$ | $(1,5,6)$ | **Да**: $\{A,E,U\}$ | $1$ | $\neq 0$ |
-| Второе | $2$ | $(2,5,6)$ | Нет | $0$ | $= 0$ |
-| Первое | $4$ | $(4,5,6)$ | Нет | $0$ | $= 0$ |
+| Third (heavy) | $1$ | $(1,5,6)$ | **Yes**: $\{A,E,U\}$ | $1$ | $\neq 0$ |
+| Second | $2$ | $(2,5,6)$ | No | $0$ | $= 0$ |
+| First | $4$ | $(4,5,6)$ | No | $0$ | $= 0$ |
 
-**Следствие для массы Хиггса.** Массу Хиггса формирует петля с виртуальным $t$-кварком (единственный фермион с $y^{(\text{tree})} \neq 0$). Радиативные поправки к $M_H^2$ от топ-кварка:
+**Consequence for Higgs mass.** The Higgs mass is generated by a loop with a virtual $t$-quark (the only fermion with $y^{(\text{tree})} \neq 0$). Radiative corrections to $M_H^2$ from the top quark:
 
 $$\delta M_H^2 \Big|_{\text{top}} = -\frac{3 y_t^2}{8\pi^2} \Lambda^2 + \ldots$$
 
-В УГМ роль ультрафиолетового обрезания $\Lambda$ играет масштаб $\mu_\text{phys}$ — физическая единица Gap-когерентности. Октонионная коррекция из $V_3$ **частично компенсирует** квадратичную расходимость, поскольку кубический потенциал модифицирует структуру вакуума. Это — зачаток решения проблемы иерархии масс изнутри Gap-формализма.
+In UHM the role of the UV cutoff $\Lambda$ is played by the scale $\mu_\text{phys}$ — the physical unit of Gap coherence. The octonionic correction from $V_3$ **partially compensates** the quadratic divergence, since the cubic potential modifies the vacuum structure. This is the germ of a solution to the hierarchy problem from within the Gap formalism.
 
-### 4.4 Нарушение чётности из $V_3$ и устойчивость хирального вакуума {#4-4}
+### 4.4 Parity breaking from $V_3$ and stability of the chiral vacuum {#4-4}
 
-:::tip [Т] Теорема
-Динамическая устойчивость хирального вакуума доказана из существующих [Т]-результатов.
+:::tip [T] Theorem
+Dynamical stability of the chiral vacuum is proved from existing [T]-results.
 :::
 
-Кубический потенциал $V_3$ (и связанный с ним ориентационный $V_\varphi$-вклад) обеспечивает **динамическую устойчивость** хирального различения в $E$-$U$ канале:
+The cubic potential $V_3$ (and the associated orientational $V_\varphi$-contribution) ensures **dynamical stability** of chiral distinction in the $E$-$U$ channel:
 
-**(a)** В $\bar{3}$-секторе $V_\varphi$ имеет вид:
+**(a)** In the $\bar{3}$-sector $V_\varphi$ takes the form:
 
 $$V_\varphi^{(\bar{3})} = \lambda_\varphi \cdot \varphi_{LEU} \cdot |\gamma_{LE}||\gamma_{EU}||\gamma_{LU}| \cdot \sin(\theta_{LE} + \theta_{EU} - \theta_{LU})$$
 
-**(b)** $PT$-свойство: $V_\varphi \to -V_\varphi$ при $PT$-преобразовании ($\theta \to -\theta$). Это создаёт **асимметрию** минимума $V_\text{Gap}$ в $E$-$U$ канале.
+**(b)** $PT$-property: $V_\varphi \to -V_\varphi$ under $PT$-transformation ($\theta \to -\theta$). This creates an **asymmetry** of the minimum of $V_\text{Gap}$ in the $E$-$U$ channel.
 
-**(c)** Энергетическая разница между левым ($\text{Gap}(E,U) = 0$) и правым ($\text{Gap}(E,U) \neq 0$) фермионными вакуумами:
+**(c)** Energy difference between the left ($\text{Gap}(E,U) = 0$) and right ($\text{Gap}(E,U) \neq 0$) fermionic vacua:
 
 $$\Delta V = V_\varphi^{(\pi)} - V_\varphi^{(0)} = 2\lambda_\varphi |\gamma_{LE}||\gamma_{LU}| \cdot |\gamma_{EU}|$$
 
-**(d)** Без $V_3$ хиральность была бы неустойчива к радиативным поправкам. $PT$-нечётный потенциал предотвращает релаксацию левого фермиона в правый, обеспечивая наблюдаемое нарушение чётности в слабых взаимодействиях.
+**(d)** Without $V_3$, chirality would be unstable to radiative corrections. The $PT$-odd potential prevents relaxation of a left-handed fermion into a right-handed one, ensuring the observed parity violation in weak interactions.
 
-*Доказательство:*
+*Proof:*
 
-**Шаг 1.** $V_3$ — единственный $PT$-нечётный член в $V_{\mathrm{Gap}}$ [Т] ([T-99](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), шаг 2). Он различает хиральные вакуумы: $\theta = 0$ и $\theta = \pi$ дают разные знаки кубической комбинации $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$.
+**Step 1.** $V_3$ is the unique $PT$-odd term in $V_{\mathrm{Gap}}$ [T] ([T-99](/docs/physics/gauge-symmetry/confinement#теорема-структурное-theta-qcd), step 2). It distinguishes chiral vacua: $\theta = 0$ and $\theta = \pi$ give different signs of the cubic combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$.
 
-**Шаг 2.** Вакуум $V_{\mathrm{Gap}}$ единственен с положительно определённым гессианом [Т] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). Нет плоских направлений → хиральный минимум невырожден.
+**Step 2.** The vacuum of $V_{\mathrm{Gap}}$ is unique with positive definite Hessian [T] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). No flat directions → the chiral minimum is non-degenerate.
 
-**Шаг 3.** Топологический барьер [Т] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ предотвращает туннелирование между хиральными вакуумами.
+**Step 3.** Topological barrier [T] ([T-69](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\Delta V \geq 6\mu^2 > 0$ prevents tunneling between chiral vacua.
 
-**Заключение.** $V_3$ выделяет хиральный вакуум (шаг 1), гессиан обеспечивает локальную устойчивость (шаг 2), топологический барьер — глобальную защиту от туннелирования (шаг 3). $\blacksquare$
+**Conclusion.** $V_3$ selects the chiral vacuum (step 1), the Hessian ensures local stability (step 2), the topological barrier — global protection from tunneling (step 3). $\blacksquare$
 
 ---
 
-## 5. Связь с калибровочной структурой SM
+## 5. Connection to SM gauge structure {#5-связь-с-калибровочной-структурой-sm}
 
-### 5.1 Иерархия масс калибровочных бозонов
+### 5.1 Gauge boson mass hierarchy
 
-### Теорема 5.1 (Иерархия масс из Gap-иерархии) [Т] {#thm-5-1}
+### Theorem 5.1 (Mass hierarchy from Gap hierarchy) [T] {#thm-5-1}
 
-:::tip [Т] Теорема
-Иерархия калибровочных масс следует из Фано-электрослабой (ФЭ) конструкции [Т]: единственность пары $(E,U)$ доказана из $\kappa_0$ [Т] — см. [теорему единственности](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ). Отождествление Gap-секторов с калибровочными группами SM определяется однозначно.
+:::tip [T] Theorem
+The gauge mass hierarchy follows from the Fano–electroweak (FE) construction [T]: uniqueness of the pair $(E,U)$ is proved from $\kappa_0$ [T] — see [uniqueness theorem](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ). The identification of Gap sectors with SM gauge groups is determined uniquely.
 :::
 
-**Теорема.** Масштабная иерархия калибровочных бозонов определяется Gap-иерархией вакуума:
+**Theorem.** The scale hierarchy of gauge bosons is determined by the Gap hierarchy of the vacuum:
 
-**(a)** Безмассовые ($\text{Gap} = 0$ в соответствующем секторе):
-- Глюоны: $\text{Gap} = 0$ в $3$-to-$\bar{3}$ → конфайнмент (нелинейная динамика при $\text{Gap} \to 0$)
-- Фотон: $\text{Gap} = 0$ для диагональной $U(1)_\text{EM}$ комбинации
+**(a)** Massless ($\text{Gap} = 0$ in the corresponding sector):
+- Gluons: $\text{Gap} = 0$ in $3$-to-$\bar{3}$ → confinement (nonlinear dynamics as $\text{Gap} \to 0$)
+- Photon: $\text{Gap} = 0$ for the diagonal $U(1)_\text{EM}$ combination
 
-**(b)** Электрослабая шкала ($\text{Gap} \sim 10^{-17}$ от Планка):
+**(b)** Electroweak scale ($\text{Gap} \sim 10^{-17}$ from Planck):
 - $W^\pm$, $Z$: $\text{Gap}(E,U) \sim v/M_\text{Planck} \sim 10^{-17}$
 
-**(c)** Планковская шкала:
-- $G_2$-экстра: $\text{Gap} \sim 1$ → масса $\sim M_\text{Planck}$
+**(c)** Planck scale:
+- $G_2$-extra: $\text{Gap} \sim 1$ → mass $\sim M_\text{Planck}$
 
-**Следствие.** Иерархия масс $M_\gamma = 0 \ll M_W \ll M_{G_2}$ следует из иерархии Gap-значений $0 \ll 10^{-17} \ll 1$ в соответствующих секторах когерентности.
+**Corollary.** The mass hierarchy $M_\gamma = 0 \ll M_W \ll M_{G_2}$ follows from the Gap hierarchy $0 \ll 10^{-17} \ll 1$ in the corresponding coherence sectors.
 
-:::info Примечание
-В ранних версиях данный раздел включал GUT-шкалу с $X$, $Y$-лептокварками ($M_X \sim v_\text{GUT}$), что опиралось на вложение $SU(5) \subset SU(6)$ из 42D Пейдж–Вуттерс расширения. В рамках Фано-электрослабой (ФЭ) конструкции электрослабый сектор выводится непосредственно из Фано-геометрии $\bar{3}$-сектора без привлечения $SU(5)$-GUT, и предсказание $X$, $Y$-лептокварков **не является следствием** (ФЭ)-фреймворка. Вопрос существования GUT-масштаба остаётся открытым.
+:::info Note
+In early versions this section included the GUT scale with $X$, $Y$ leptoquarks ($M_X \sim v_\text{GUT}$), based on the embedding $SU(5) \subset SU(6)$ from the 42D Page–Wootters extension. Within the Fano–electroweak (FE) construction the electroweak sector is derived directly from the Fano geometry of the $\bar{3}$-sector without invoking $SU(5)$-GUT, and the prediction of $X$, $Y$-leptoquarks is **not a consequence** of the (FE)-framework. The question of the existence of a GUT scale remains open.
 :::
 
-### 5.2 Полная таблица калибровочных полей
+### 5.2 Complete table of gauge fields
 
-| Поле | Группа | Число | Масса | Gap-источник | Статус |
+| Field | Group | Number | Mass | Gap source | Status |
 |---|---|---|---|---|---|
-| Глюоны $g$ | $SU(3)_C$ | 8 | 0 (конфайнмент) | $\text{Gap}_{3\to\bar{3}} \approx 0$ | [Т] |
-| $W^\pm$, $Z$ | $SU(2)_L$ | 3 | $M_W$, $M_Z$ | $\text{Gap}(E,U) \sim 10^{-17}$ | [Т] |
-| Фотон $\gamma$ | $U(1)_\text{EM}$ | 1 | 0 | Диагональная $U(1)$ | [Т] |
-| $G_2$-экстра | $G_2/SU(3)$ | 6 | $M_{G_2} \sim \mu_\text{phys}$ | $\text{Gap}^{(O)} \sim 1$ | [С] |
+| Gluons $g$ | $SU(3)_C$ | 8 | 0 (confinement) | $\text{Gap}_{3\to\bar{3}} \approx 0$ | [T] |
+| $W^\pm$, $Z$ | $SU(2)_L$ | 3 | $M_W$, $M_Z$ | $\text{Gap}(E,U) \sim 10^{-17}$ | [T] |
+| Photon $\gamma$ | $U(1)_\text{EM}$ | 1 | 0 | Diagonal $U(1)$ | [T] |
+| $G_2$-extra | $G_2/SU(3)$ | 6 | $M_{G_2} \sim \mu_\text{phys}$ | $\text{Gap}^{(O)} \sim 1$ | [C] |
 
-:::info Примечание о лептокварках
-В прежней версии таблица включала $X$, $Y$-лептокварки ($SU(5)/\text{SM}$, 12 полей, $M_X \sim v_\text{GUT}$). Эти частицы специфичны для $SU(5)$-GUT вложения и не следуют из Фано-электрослабой (ФЭ) конструкции. Они удалены из основной таблицы.
+:::info Note on leptoquarks
+In the previous version the table included $X$, $Y$-leptoquarks ($SU(5)/\text{SM}$, 12 fields, $M_X \sim v_\text{GUT}$). These particles are specific to the $SU(5)$-GUT embedding and do not follow from the Fano–electroweak (FE) construction. They have been removed from the main table.
 :::
 
-### 5.3 Электрослабый сектор: Фано-электрослабая (ФЭ) конструкция [Т] {#фано-электрослабая-конструкция}
+### 5.3 Electroweak sector: Fano–electroweak (FE) construction [T] {#фано-электрослабая-конструкция}
 
-:::warning Замена прежнего вывода через SU(6)
-В ранних версиях электрослабый сектор выводился из Пейдж–Вуттерс расширения $\mathcal{H}_\text{total} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$, где $6D$-фактор нёс $SU(6)$-симметрию, и через вложение $SU(5) \subset SU(6)$ (аналог модели Джорджи-Глэшоу) извлекались $SU(2)_L \times U(1)_Y$. Этот подход имел проблему ранга ($\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$) и приводил к лишним предсказаниям ($X$, $Y$-лептокварки).
+:::warning Replacement of the former SU(6) derivation
+In early versions the electroweak sector was derived from the Page–Wootters extension $\mathcal{H}_\text{total} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$, where the $6D$-factor carried $SU(6)$-symmetry, and via the embedding $SU(5) \subset SU(6)$ (analogue of the Georgi–Glashow model) $SU(2)_L \times U(1)_Y$ was extracted. This approach had a rank problem ($\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$) and led to spurious predictions ($X$, $Y$-leptoquarks).
 
-**Фано-электрослабая (ФЭ) конструкция** заменяет $SU(6)/SU(5)$-вывод, извлекая электрослабую структуру непосредственно из геометрии $\bar{3}$-сектора Фано-плоскости.
+**The Fano–electroweak (FE) construction** replaces the $SU(6)/SU(5)$ derivation, extracting the electroweak structure directly from the geometry of the $\bar{3}$-sector of the Fano plane.
 :::
 
-В (ФЭ)-конструкции электрослабый сектор $SU(2)_L \times U(1)_Y$ возникает из структуры $\bar{3}$-сектора $\{L, E, U\}$ плоскости $\mathrm{PG}(2,2)$:
+In the (FE)-construction the electroweak sector $SU(2)_L \times U(1)_Y$ arises from the structure of the $\bar{3}$-sector $\{L, E, U\}$ of the plane $\mathrm{PG}(2,2)$:
 
-**(a)** $SU(2)_L$ отождествляется с группой, действующей на дублет $(E, U)$ при $\text{Gap}(E,U) = 0$. Единственность Хиггсовой линии $\{A, E, U\}$ [Т] гарантирует однозначность выбора электрослабого канала.
+**(a)** $SU(2)_L$ is identified with the group acting on the doublet $(E, U)$ at $\text{Gap}(E,U) = 0$. The uniqueness of the Higgs line $\{A, E, U\}$ [T] guarantees unambiguity in the choice of the electroweak channel.
 
-**(b)** $U(1)_Y$ определяется суммарным Gap в $O$-секторе (см. [раздел 3.3](#3-gapeu--0-электрослабое-нарушение-симметрии)):
+**(b)** $U(1)_Y$ is determined by the total Gap in the $O$-sector (see [section 3.3](#3-gapeu--0-электрослабое-нарушение-симметрии)):
 
 $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \text{Gap}(O,j)\right)$$
 
-**(c)** $SU(3)_C$ — по-прежнему из $G_2$-стабилизатора ($G_2 \supset SU(3)$, разложение $14 \to 8+3+\bar{3}$) [Т].
+**(c)** $SU(3)_C$ — still from the $G_2$-stabilizer ($G_2 \supset SU(3)$, decomposition $14 \to 8+3+\bar{3}$) [T].
 
-**Преимущества (ФЭ) перед $SU(6)/SU(5)$:**
-- Не требует привлечения дополнительной структуры ($SU(6)$ из 42D)
-- Не порождает $X$, $Y$-лептокварки как обязательное предсказание
-- Электрослабый сектор привязан к той же Фано-геометрии, что и Хиггсовый механизм
-- Проблема ранга ($\text{rank}(G_2) = 2 < 4 = \text{rank}(SM)$) решается: недостающие генераторы берутся из HS-проекции $\bar{3}$-сектора [Т], а не из внешней $SU(6)$
+**Advantages of (FE) over $SU(6)/SU(5)$:**
+- Does not require additional structure ($SU(6)$ from 42D)
+- Does not generate $X$, $Y$-leptoquarks as a mandatory prediction
+- The electroweak sector is tied to the same Fano geometry as the Higgs mechanism
+- The rank problem ($\text{rank}(G_2) = 2 < 4 = \text{rank}(SM)$) is resolved: the missing generators are taken from the HS-projection of the $\bar{3}$-sector [T], not from an external $SU(6)$
 
 ---
 
-## 6. Фальсифицируемые предсказания
+## 6. Falsifiable predictions {#6-фальсифицируемые-предсказания}
 
-### 6.1 Отклонение тройной вершины Хиггса [С]
+### 6.1 Deviation of the Higgs triple vertex [C]
 
-:::warning [С] Условная
-Количественное предсказание зависит от октонионных параметров Gap-теории ($\lambda_3$, $\bar{A}$) и параметра $f_0$ спектрального действия.
+:::warning [C] Conditional
+The quantitative prediction depends on the octonionic parameters of the Gap theory ($\lambda_3$, $\bar{A}$) and the spectral action parameter $f_0$.
 :::
 
-**Предсказание.** Эффективная самосвязь Хиггса отличается от SM-значения:
+**Prediction.** The effective Higgs self-coupling differs from the SM value:
 
 $$\frac{\delta\lambda}{\lambda_\text{SM}} \sim O(10^{-2} \text{--} 10^{-3})$$
 
-Проверка: HL-LHC (точность $\sim 50\%$ на тройную вершину), FCC-hh (точность $\sim 5\%$).
+Test: HL-LHC (precision $\sim 50\%$ on triple vertex), FCC-hh (precision $\sim 5\%$).
 
-### 6.2 Связь массы Хиггса с октонионной структурой [С]
+### 6.2 Connection of Higgs mass to octonionic structure [C]
 
-В SM масса Хиггса $m_H \approx 125$ ГэВ — свободный параметр. В УГМ:
+In the SM the Higgs mass $m_H \approx 125$ GeV is a free parameter. In UHM:
 
 $$m_H^2 = 2\lambda_4 v^2 + \delta m_H^2(\lambda_3, \bar{A}, \mu)$$
 
-Первый член определяется спектральным действием ([теорема о хиггсовской квартике](#теорема-хиггсовская-квартика) [С]). Октонионная коррекция $\delta m_H^2$ связывает массу Хиггса с параметрами октонионного потенциала. При фиксации $f_0$ из других наблюдаемых (массы кварков, CKM-элементы) масса Хиггса становится **вычислимой** — это потенциально мощное предсказание.
+The first term is determined by the spectral action ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]). The octonionic correction $\delta m_H^2$ connects the Higgs mass to the octonionic potential parameters. When $f_0$ is fixed from other observables (quark masses, CKM elements), the Higgs mass becomes **computable** — this is a potentially powerful prediction.
 
-### 6.3 Проблема иерархии масс [Г]
+### 6.3 Mass hierarchy problem [H]
 
-**Следствие.** Проблема иерархии масс ($M_W / M_\text{Planck} \sim 10^{-17}$) сводится к вопросу: **почему Gap-вакуум имеет столь различные значения в разных секторах?** Ответ: секторные значения $\varepsilon_X$ определяются единственным минимумом $V_{\text{Gap}}$ ([теорема о единственном вакууме](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]).
+**Corollary.** The mass hierarchy problem ($M_W / M_\text{Planck} \sim 10^{-17}$) reduces to the question: **why does the Gap-vacuum have such different values in different sectors?** Answer: sectoral values $\varepsilon_X$ are determined by the unique minimum of $V_{\text{Gap}}$ ([theorem on unique vacuum](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]).
 
-Гипотетическое решение через RG-эволюцию: на планковском масштабе все $\text{Gap} \sim O(1)$ (демократическое начальное условие). RG-поток от Планка к ИК: различные секторы текут с различными аномальными размерностями:
+Hypothetical solution via RG evolution: at the Planck scale all $\text{Gap} \sim O(1)$ (democratic initial condition). RG flow from Planck to IR: different sectors flow with different anomalous dimensions:
 
-| Сектор | Аномальная размерность | Gap на ИК-масштабе |
+| Sector | Anomalous dimension | Gap at IR scale |
 |---|---|---|
-| $3$-to-$\bar{3}$ (цвет) | $\Delta_{3\bar{3}} = 0$ (маргинальный) | $\sim 0$ (конфайнмент) |
-| $\bar{3}$-to-$\bar{3}$ (EW) | $\Delta_{\bar{3}\bar{3}} = \Delta_3 = 5/42$ | $\sim 10^{-17}$ (EW-шкала) |
-| $O$-to-$3$ (гравитация) | $\Delta_{O3} \gg 1$ (ИК-релевантный) | $\sim 1$ (Планк-шкала) |
+| $3$-to-$\bar{3}$ (color) | $\Delta_{3\bar{3}} = 0$ (marginal) | $\sim 0$ (confinement) |
+| $\bar{3}$-to-$\bar{3}$ (EW) | $\Delta_{\bar{3}\bar{3}} = \Delta_3 = 5/42$ | $\sim 10^{-17}$ (EW scale) |
+| $O$-to-$3$ (gravity) | $\Delta_{O3} \gg 1$ (IR-relevant) | $\sim 1$ (Planck scale) |
 
-Различие аномальных размерностей определяется Фано-комбинаторикой: число Фано-линий, проходящих через пару $(i,j)$, влияет на $\Delta_{ij}$.
+The difference in anomalous dimensions is determined by Fano combinatorics: the number of Fano lines passing through a pair $(i,j)$ affects $\Delta_{ij}$.
 
-### 6.4 Динамическая тёмная энергия [П]
+### 6.4 Dynamical dark energy [P]
 
-Открытая программа: связь RG-масштаба Gap с космологической эволюцией $H(t)$ не установлена из аксиом A1-A4. Оценка $w_a \sim -10^{-2}$ — мотивированный анзац, не предсказание. Статус: [П].
+Open program: the connection between the RG scale of Gap and the cosmological evolution $H(t)$ has not been established from axioms A1–A4. The estimate $w_a \sim -10^{-2}$ is a motivated ansatz, not a prediction. Status: [P].
 
-Из нелинейной системы Gap-гравитации следует: уравнение состояния тёмной энергии зависит от космологической эпохи. Хиггсовый сектор (Gap в $\bar{3}$-to-$\bar{3}$) вносит вклад в эффективную космологическую постоянную:
+From the nonlinear Gap-gravity system it follows: the dark energy equation of state depends on the cosmological epoch. The Higgs sector (Gap in $\bar{3}$-to-$\bar{3}$) contributes to the effective cosmological constant:
 
 $$w(z = 0) = -1 + \delta w, \quad \delta w = \frac{\kappa \cdot \langle|\gamma|^2\rangle}{V_\text{Gap}} \sim \frac{\kappa \cdot \epsilon^2}{\mu^2 \text{Gap}^2}$$
 
-Численная оценка $w_a \sim -10^{-2}$ проверяема миссиями Euclid, Roman, DESI, однако её вывод из Gap-аксиом остаётся открытой программой.
+The numerical estimate $w_a \sim -10^{-2}$ is testable by Euclid, Roman, DESI missions, but its derivation from Gap axioms remains an open program.
 
 ---
 
-## 7. Может ли УГМ предсказать массу Хиггса? {#7-может-ли-угм-предсказать-массу-хиггса}
+## 7. Can UHM predict the Higgs mass? {#7-может-ли-угм-предсказать-массу-хиггса}
 
-### 7.1 Постановка задачи
+### 7.1 Problem statement
 
-Экспериментальное значение: $M_H^{\text{exp}} = 125.09 \pm 0.24$ ГэВ. В Стандартной модели $M_H$ — свободный параметр. В некоммутативной геометрии (NCG) Чамседдина-Конна масса Хиггса **вычисляется** из спектральной тройки. Вопрос: может ли УГМ сделать то же самое?
+Experimental value: $M_H^{\text{exp}} = 125.09 \pm 0.24$ GeV. In the Standard Model $M_H$ is a free parameter. In Chamseddine–Connes noncommutative geometry (NCG) the Higgs mass is **computed** from the spectral triple. Question: can UHM do the same?
 
-### 7.2 Цепочка вывода $M_H$ в УГМ {#цепочка-mh}
+### 7.2 Derivation chain for $M_H$ in UHM {#цепочка-mh}
 
-Полная цепочка от аксиом до $M_H$ состоит из пяти звеньев:
+The full chain from axioms to $M_H$ consists of five links:
 
-| Звено | Утверждение | Статус | Зависимость |
+| Link | Statement | Status | Dependency |
 |---|---|---|---|
-| (1) Спектральная тройка | $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ существует, KO-dim = 6 | **[Т]** (T-53) | Аксиомы |
-| (2) Спектральное действие | $S = \mathrm{Tr}(f(D_A/\Lambda))$ раскладывается в Зейберга-Виттена ряд | **[Т]** (T-65) | (1) |
-| (3) $f_0$ определён канонически | $f_0 = \Gamma_{\text{eff}} / (7\Lambda^4)$ через вакуум Gap-теории | **[Т]** (T-70) | (2) + единственный вакуум T-64 [Т] |
-| (4) $\lambda_4$ из $D_{\text{int}}$ + RG | $\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$, RG: $\Lambda \to v_{\text{EW}}$ | **[С]** | (3) + числовые $\varepsilon_i$ |
-| (5) $M_H$ из потенциала | $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2(\lambda_3, \bar{A}, \mu)$ | **[С]** | (4) + октонионная коррекция |
+| (1) Spectral triple | $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ exists, KO-dim = 6 | **[T]** (T-53) | Axioms |
+| (2) Spectral action | $S = \mathrm{Tr}(f(D_A/\Lambda))$ expands in Seeley–DeWitt series | **[T]** (T-65) | (1) |
+| (3) $f_0$ canonically determined | $f_0 = \Gamma_{\text{eff}} / (7\Lambda^4)$ through Gap theory vacuum | **[T]** (T-70) | (2) + unique vacuum T-64 [T] |
+| (4) $\lambda_4$ from $D_{\text{int}}$ + RG | $\lambda_4 = \frac{\pi^2}{2f_0\Lambda^4} \cdot \frac{\mathrm{Tr}(D_{\text{int}}^4)}{[\mathrm{Tr}(D_{\text{int}}^2)]^2}$, RG: $\Lambda \to v_{\text{EW}}$ | **[C]** | (3) + numerical $\varepsilon_i$ |
+| (5) $M_H$ from potential | $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2(\lambda_3, \bar{A}, \mu)$ | **[C]** | (4) + octonionic correction |
 
-**Вердикт: [С]** — условно на числовых значениях секторных параметров $\varepsilon_i$, определяющих спектр $D_{\text{int}}$.
+**Verdict: [C]** — conditional on numerical values of sectoral parameters $\varepsilon_i$ determining the spectrum $D_{\text{int}}$.
 
-### 7.3 Почему $g_4^* = 4\pi^2/63$ — это НЕ хиггсовская квартика {#gap-vs-higgs-quartic}
+### 7.3 Why $g_4^* = 4\pi^2/63$ is NOT the Higgs quartic {#gap-vs-higgs-quartic}
 
-:::danger Частая ошибка
-Неподвижная точка Вильсона-Фишера Gap-теории $g_4^* = 4\pi^2/63 \approx 0.063$ **не** является хиггсовской квартикой $\lambda_H$ Стандартной модели. Наивное отождествление даёт $M_H = \sqrt{2 g_4^*} \cdot v \approx 87$ ГэВ — **неверный** результат.
+:::danger Common error
+The Wilson–Fisher fixed point of the Gap theory $g_4^* = 4\pi^2/63 \approx 0.063$ is **not** the Higgs quartic $\lambda_H$ of the Standard Model. The naive identification gives $M_H = \sqrt{2 g_4^*} \cdot v \approx 87$ GeV — an **incorrect** result.
 :::
 
-Различие:
+Distinction:
 
-| | Gap-квартика $g_4^*$ | Хиггсовская квартика $\lambda_H$ |
+| | Gap quartic $g_4^*$ | Higgs quartic $\lambda_H$ |
 |---|---|---|
-| Теория | (0+1)D Gap на $(S^1)^{21}$ | 4D QFT на $M^4$ |
-| Число полей | 21 когерентность | 1 дублет (4 вещ. поля) |
-| Множитель в $\beta$ | 63 (из комбинаторики $\binom{21}{2} \cdot 3$) | $\sim 24$ (петля с $W$, $Z$, $t$) |
-| ИК-значение | $4\pi^2/63 \approx 0.063$ | $\approx 0.13$ (из $M_H = 125$ ГэВ) |
-| Происхождение | Вильсон-Фишеровская точка RG Gap | Спектр $D_{\text{int}}$ + SM RG-пробег |
+| Theory | (0+1)D Gap on $(S^1)^{21}$ | 4D QFT on $M^4$ |
+| Number of fields | 21 coherences | 1 doublet (4 real fields) |
+| Factor in $\beta$ | 63 (from combinatorics $\binom{21}{2} \cdot 3$) | $\sim 24$ (loop with $W$, $Z$, $t$) |
+| IR value | $4\pi^2/63 \approx 0.063$ | $\approx 0.13$ (from $M_H = 125$ GeV) |
+| Origin | Wilson–Fisher RG fixed point of Gap | Spectrum $D_{\text{int}}$ + SM RG running |
 
-**Связь между ними**: $g_4^*$ определяет ИК-значение квартичной связи Gap-потенциала $V_{\text{Gap}}$. Хиггсовская квартика $\lambda_H$ определяется *проекцией* $V_{\text{Gap}}$ на $E$-$U$ канал через спектральное действие, а затем эволюционирует по 4D SM RG-уравнениям.
+**Connection between them**: $g_4^*$ determines the IR value of the quartic coupling of the Gap potential $V_{\text{Gap}}$. The Higgs quartic $\lambda_H$ is determined by the *projection* of $V_{\text{Gap}}$ onto the $E$-$U$ channel via the spectral action, and then evolves under 4D SM RG equations.
 
-### 7.4 Сравнение с NCG Чамседдина-Конна {#сравнение-ncg}
+### 7.4 Comparison with Chamseddine–Connes NCG {#сравнение-ncg}
 
-В подходе Чамседдина-Конна-Марколли (CCM) история предсказания $M_H$ прошла три этапа:
+In the Chamseddine–Connes–Marcolli (CCM) approach the history of predicting $M_H$ went through three stages:
 
-**(a) Древесный уровень (CCM 2007)**: $M_H = \sqrt{8\lambda_H} \cdot v$ с $\lambda_H$ из $\mathrm{Tr}(D_{\text{int}}^4)/[\mathrm{Tr}(D_{\text{int}}^2)]^2$. При доминировании топ-кварка:
+**(a) Tree level (CCM 2007)**: $M_H = \sqrt{8\lambda_H} \cdot v$ with $\lambda_H$ from $\mathrm{Tr}(D_{\text{int}}^4)/[\mathrm{Tr}(D_{\text{int}}^2)]^2$. With top quark dominance:
 
-$$M_H^{(\text{tree})} \approx \frac{M_t}{\sqrt{2}} \approx \frac{173}{\sqrt{2}} \approx 122 \text{ ГэВ}$$
+$$M_H^{(\text{tree})} \approx \frac{M_t}{\sqrt{2}} \approx \frac{173}{\sqrt{2}} \approx 122 \text{ GeV}$$
 
-Однако без RG-коррекции точная формула Чамседдина-Конна (2012) давала $\sim 170$ ГэВ — **неверный** результат.
+However, without RG correction the exact Chamseddine–Connes formula (2012) gave $\sim 170$ GeV — an **incorrect** result.
 
-**(b) С RG-пробегом (Шапошников-Веттерих 2010)**: RG-эволюция от $\Lambda_{\text{GUT}}$ до $v_{\text{EW}}$ уменьшает $\lambda_H(\Lambda) \approx 0.20$ до $\lambda_H(v) \approx 0.13$, давая $M_H \approx 125$ ГэВ. Но это фиксирует $\Lambda_{\text{GUT}}$, а не предсказывает.
+**(b) With RG running (Shaposhnikov–Wetterich 2010)**: RG evolution from $\Lambda_{\text{GUT}}$ to $v_{\text{EW}}$ reduces $\lambda_H(\Lambda) \approx 0.20$ to $\lambda_H(v) \approx 0.13$, giving $M_H \approx 125$ GeV. But this fixes $\Lambda_{\text{GUT}}$, not predicts it.
 
-**(c) Со скалярным полем $\sigma$ (Чамседдин-Конн-ван Сёйлеком 2013)**: введение $\sigma$-поля из внутренних флуктуаций изменяет граничное условие при $\Lambda$, приводя к $M_H \approx 126$ ГэВ — первое корректное предсказание из NCG.
+**(c) With scalar field $\sigma$ (Chamseddine–Connes–van Suijlekom 2013)**: introduction of the $\sigma$-field from internal fluctuations changes the boundary condition at $\Lambda$, leading to $M_H \approx 126$ GeV — the first correct prediction from NCG.
 
-**Позиция УГМ**: октонионная коррекция из $V_3$ играет структурно аналогичную роль $\sigma$-полю в CCM-2013. Кубический потенциал $V_3$ модифицирует эффективный потенциал Хиггса, смещая древесное значение $M_H$ ближе к экспериментальному. Однако точное числовое значение коррекции зависит от вакуумных параметров $\varepsilon_i$, которые пока не вычислены.
+**UHM position**: the octonionic correction from $V_3$ plays a structurally analogous role to the $\sigma$-field in CCM-2013. The cubic potential $V_3$ modifies the effective Higgs potential, shifting the tree-level value of $M_H$ closer to the experimental value. However, the exact numerical value of the correction depends on vacuum parameters $\varepsilon_i$, which have not yet been computed.
 
-### 7.5 Что нужно для полного предсказания {#что-нужно}
+### 7.5 What is needed for a full prediction {#что-нужно}
 
-Для превращения $M_H$ из [С] в [Т] необходимо:
+For converting $M_H$ from [C] to [T] one needs:
 
-1. **Численное решение** вакуумных уравнений на $(S^1)^{21}/G_2$: определить точные значения $\varepsilon_i$ для всех 5 орбитных параметров (задача C16 в [реестре статусов](/docs/reference/status-registry)).
+1. **Numerical solution** of vacuum equations on $(S^1)^{21}/G_2$: determine exact values of $\varepsilon_i$ for all 5 orbital parameters (task C16 in the [status registry](/docs/reference/status-registry)).
 
-2. **Вычисление $f_0$**: подставить $\varepsilon_i$ в каноническую формулу T-70 и найти числовое значение $f_0$.
+2. **Computation of $f_0$**: substitute $\varepsilon_i$ into the canonical formula T-70 and find the numerical value of $f_0$.
 
-3. **Вычисление $\mathrm{Tr}(D_{\text{int}}^4)$**: определить $\lambda_4(\Lambda)$ из спектра $D_{\text{int}}$ с известными $\varepsilon_i$.
+3. **Computation of $\mathrm{Tr}(D_{\text{int}}^4)$**: determine $\lambda_4(\Lambda)$ from the spectrum $D_{\text{int}}$ with known $\varepsilon_i$.
 
-4. **SM RG-пробег**: эволюция $\lambda_4(\Lambda) \to \lambda_4(v_{\text{EW}})$ — стандартная процедура, не содержащая дополнительных свободных параметров.
+4. **SM RG running**: evolution $\lambda_4(\Lambda) \to \lambda_4(v_{\text{EW}})$ — standard procedure containing no additional free parameters.
 
-5. **Октонионная коррекция**: вычислить $\delta M_H^2$ из Gap-параметров.
+5. **Octonionic correction**: compute $\delta M_H^2$ from Gap parameters.
 
-Все формулы **определены** [Т]; задача — **вычислительная** [С]. Это аналогично ситуации в решёточной КХД, где формулы точные, но числовые предсказания требуют вычислений.
+All formulas are **defined** [T]; the task is **computational** [C]. This is analogous to the situation in lattice QCD, where the formulas are exact, but numerical predictions require computation.
 
-### 7.6 Итоговая оценка [С] {#итоговая-оценка-mh}
+### 7.6 Final assessment [C] {#итоговая-оценка-mh}
 
-:::warning [С] Условная
-УГМ определяет массу Хиггса через цепочку (1)-(5), в которой звенья (1)-(3) имеют статус [Т], а звенья (4)-(5) — статус [С] из-за незавершённого вычисления секторных параметров $\varepsilon_i$. Никаких дополнительных постулатов или гипотез не требуется: задача чисто вычислительная.
+:::warning [C] Conditional
+UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) have status [T], and links (4)–(5) — status [C] due to incomplete computation of sectoral parameters $\varepsilon_i$. No additional postulates or hypotheses are required: the task is purely computational.
 :::
 
-**Резюме:**
+**Summary:**
 
-- **Может ли УГМ в принципе предсказать $M_H$?** Да — формулы полностью определены.
-- **Предсказывает ли сейчас?** Нет — требуется решение задачи C16 (числовое вычисление на $(S^1)^{21}/G_2$).
-- **Наивное $g_4^* \to M_H$**: неверно ($g_4^* \neq \lambda_H$), даёт $\sim 87$ ГэВ.
-- **Статус**: **[С]** — условно на вычислении $\varepsilon_i$.
-- **Сравнение с NCG**: УГМ воспроизводит структуру CCM, но добавляет октонионную $V_3$-коррекцию, аналогичную $\sigma$-полю Чамседдина-Конна-ван Сёйлека.
-
----
-
-## Связь с другими разделами
-
-- **Единственность Хиггсовой линии:** Основа Фановского правила отбора → [Иерархия масс Юкавы](./yukawa-hierarchy.md)
-- **Три поколения:** Генерационная линия $\{A,S,L\}$ ортогональна Хиггсовой → [Три поколения фермионов](./fermion-generations.md)
-- **CKM-матрица:** Несовпадение $Y^u$ и $Y^d$ через сопряжённый Хиггс → [CKM-матрица](./ckm-matrix.md)
-- **Спектральная тройка:** Конечная $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ с KO-размерностью 6 → [Пространство-время](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]
-- **Спектральное действие:** $S = \mathrm{Tr}(f(D/\Lambda))$, определяет $\lambda_4$ → [Квантовая гравитация](/docs/physics/gravity/quantum-gravity)
-- **Единственный вакуум:** Секторные значения $\varepsilon$ из T-61 → [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]
-
+- **Can UHM in principle predict $M_H$?** Yes — the formulas are fully determined.
+- **Does it predict now?** No — requires solving task C16 (numerical computation on $(S^1)^{21}/G_2$).
+- **Naive $g_4^* \to M_H$**: incorrect ($g_4^* \neq \lambda_H$), gives $\sim 87$ GeV.
+- **Status**: **[C]** — conditional on computation of $\varepsilon_i$.
+- **Comparison with NCG**: UHM reproduces the CCM structure, but adds the octonionic $V_3$-correction, analogous to the $\sigma$-field of Chamseddine–Connes–van Suijlekom.
 
 ---
 
-**Связанные документы:**
-- [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
-- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy)
-- [Суперсимметрия из G₂](/docs/physics/particle-physics/susy)
+## Connection to other sections
+
+- **Uniqueness of the Higgs line:** Foundation of the Fano selection rule → [Yukawa Mass Hierarchy](./yukawa-hierarchy.md)
+- **Three generations:** Generation line $\{A,S,L\}$ orthogonal to Higgs line → [Three Fermion Generations](./fermion-generations.md)
+- **CKM matrix:** Mismatch of $Y^u$ and $Y^d$ via conjugate Higgs → [CKM Matrix](./ckm-matrix.md)
+- **Spectral triple:** Finite $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with KO-dimension 6 → [Spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]
+- **Spectral action:** $S = \mathrm{Tr}(f(D/\Lambda))$, determines $\lambda_4$ → [Quantum Gravity](/docs/physics/gravity/quantum-gravity)
+- **Unique vacuum:** Sectoral values $\varepsilon$ from T-61 → [Gap Thermodynamics](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]
+
+
+---
+
+**Related documents:**
+- [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model)
+- [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)
+- [Supersymmetry from G₂](/docs/physics/particle-physics/susy)

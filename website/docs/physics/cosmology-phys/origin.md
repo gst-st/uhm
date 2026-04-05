@@ -1,180 +1,180 @@
 ---
 sidebar_position: 0
-title: Происхождение Вселенной
-description: Изначальное состояние и спонтанное нарушение симметрии
+title: Origin of the Universe
+description: The primordial state and spontaneous symmetry breaking
 ---
 
-# Происхождение Вселенной
+# Origin of the Universe
 
-:::warning Статус раздела: Теоремы + Философская интерпретация
-Этот раздел содержит **доказанную теорему** (нестабильность Источника **[Т]**), **постулаты** (сам Источник) и **философские интерпретации** (происхождение "ничто"). Аргументы о происхождении Источника носят **метафизический характер**, но нестабильность $\Gamma_{\odot}$ под действием полной динамики УГМ — строгий математический результат.
+:::warning Section Status: Theorems + Philosophical Interpretation
+This section contains a **proven theorem** (instability of the Source **[T]**), **postulates** (the Source itself), and **philosophical interpretations** (origin of "nothing"). Arguments about the origin of the Source are **metaphysical in nature**, but the instability of $\Gamma_{\odot}$ under the full UHM dynamics is a rigorous mathematical result.
 :::
 
-## Проблема начала
+## The Problem of Beginning
 
-Традиционно спрашивают: "Что было до Большого Взрыва?"
+Traditionally one asks: "What was before the Big Bang?"
 
-В УГМ вопрос трансформируется:
+In UHM the question transforms:
 
-> Какова структура $\Gamma$ в пределе минимальной дифференциации?
+> What is the structure of $\Gamma$ in the limit of minimal differentiation?
 
-## Изначальное состояние
+## The Primordial State
 
-### Источник
+### The Source {#источник}
 
-:::note Статус: Постулат
-Источник **постулируется**, не выводится. Это начальное условие теории, не её следствие. Вопрос "почему этот конкретный Источник?" — открытый.
+:::note Status: Postulate
+The Source is **postulated**, not derived. It is the initial condition of the theory, not a consequence of it. The question "why this particular Source?" remains open.
 :::
 
-**Чистое недифференцированное состояние [П]** — суперпозиция всех измерений с равными амплитудами:
+**Pure undifferentiated state [P]** — superposition of all dimensions with equal amplitudes:
 
 $$
 \Gamma_{\odot} = |\psi_{\odot}\rangle\langle\psi_{\odot}|, \quad |\psi_{\odot}\rangle = \frac{1}{\sqrt{7}} \sum_i |i\rangle
 $$
 
-**Свойства:**
-- [Чистота](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma_{\odot}^2) = 1$ (чистое состояние)
-- Максимальная [когерентность](/docs/core/dynamics/coherence-matrix): все $|\gamma_{ij}| = 1/7$
-- Минимальная [дифференциация](/docs/consciousness/foundations/self-observation#мера-сознательности-c): $D_{\text{diff}} = 1$
+**Properties:**
+- [Purity](/docs/core/dynamics/viability#определение-чистоты): $P = \mathrm{Tr}(\Gamma_{\odot}^2) = 1$ (pure state)
+- Maximal [coherence](/docs/core/dynamics/coherence-matrix): all $|\gamma_{ij}| = 1/7$
+- Minimal [differentiation](/docs/consciousness/foundations/self-observation#мера-сознательности-c): $D_{\text{diff}} = 1$
 
-:::info Почему не смешанное состояние?
-[Максимально смешанное состояние](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $\Gamma = I_7/7$ имело бы $P = 1/7$ — это **не** когерентное состояние, а классический ансамбль без квантовых корреляций. УГМ принимает **чистую суперпозицию** как Источник.
+:::info Why not a mixed state?
+The [maximally mixed state](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $\Gamma = I_7/7$ would have $P = 1/7$ — this is **not** a coherent state, but a classical ensemble without quantum correlations. UHM takes a **pure superposition** as the Source.
 :::
 
-**Открытые вопросы:**
-- Почему именно равные амплитуды $1/\sqrt{7}$?
-- Возможны ли альтернативные начальные состояния?
-- Связь с проблемой Больцмановского мозга?
+**Open questions:**
+- Why equal amplitudes $1/\sqrt{7}$ specifically?
+- Are alternative initial states possible?
+- Connection to the Boltzmann Brain problem?
 
-## Спонтанное нарушение симметрии
+## Spontaneous Symmetry Breaking
 
-### Нестабильность Источника
+### Instability of the Source
 
-Источник нестабилен **[Т]** под действием полной [динамики](/docs/core/dynamics/evolution) УГМ. Любое начальное условие $\Gamma(0) = \Gamma_{\odot}$ при $\Delta F > 0$ неизбежно эволюционирует к структурированному аттрактору $\rho^*$.
+The Source is unstable **[T]** under the full [dynamics](/docs/core/dynamics/evolution) of UHM. Any initial condition $\Gamma(0) = \Gamma_{\odot}$ with $\Delta F > 0$ inevitably evolves toward the structured attractor $\rho^*$.
 
-#### Теорема (Нестабильность Источника) {#доказательство-нестабильности}
+#### Theorem (Source Instability) {#доказательство-нестабильности}
 
-**Теорема.** Состояние $\Gamma_{\odot}$ нестабильно под действием полной динамики УГМ: $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot} \neq 0$, система дрейфует от $\Gamma_{\odot}$ с конечной скоростью, а $\kappa_0$ создаёт положительную обратную связь, нарушающую $S_7$-симметрию.
+**Theorem.** The state $\Gamma_{\odot}$ is unstable under the full UHM dynamics: $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot} \neq 0$, the system drifts from $\Gamma_{\odot}$ at a finite rate, and $\kappa_0$ creates positive feedback that breaks $S_7$-symmetry.
 
-**Доказательство** (три шага).
+**Proof** (three steps).
 
-**Шаг 1. $\Gamma_{\odot}$ — не стационарное состояние.**
+**Step 1. $\Gamma_{\odot}$ is not a stationary state.**
 
-Вычислим $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot}$ по трём членам [уравнения эволюции](/docs/core/dynamics/evolution):
+Compute $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot}$ from the three terms of the [evolution equation](/docs/core/dynamics/evolution):
 
-**(a) Унитарный член:** $-i[H_{\text{eff}}, \Gamma_{\odot}]$. Поскольку $H_{\text{eff}} = \sum_i \omega_i |i\rangle\langle i| + \ldots$, при неравных $\omega_i$ (что гарантируется $G_2$-структурой: $\lambda_E > \lambda_U > \lambda_L \geq \lambda_D \geq \lambda_S \geq \lambda_A \geq 0$ из [A5](/docs/core/foundations/axiom-omega#pw-constraint)) коммутатор **ненулевой** — $\Gamma_{\odot}$ не коммутирует с $H_{\text{eff}}$.
+**(a) Unitary term:** $-i[H_{\text{eff}}, \Gamma_{\odot}]$. Since $H_{\text{eff}} = \sum_i \omega_i |i\rangle\langle i| + \ldots$, with unequal $\omega_i$ (guaranteed by the $G_2$-structure: $\lambda_E > \lambda_U > \lambda_L \geq \lambda_D \geq \lambda_S \geq \lambda_A \geq 0$ from [A5](/docs/core/foundations/axiom-omega#pw-constraint)), the commutator is **non-zero** — $\Gamma_{\odot}$ does not commute with $H_{\text{eff}}$.
 
-**(b) Диссипативный член:** $\mathcal{D}_\Omega[\Gamma_{\odot}]$. По [теореме T6](/docs/core/operators/lindblad-operators#теорема-равномерная-контракция) (равномерная контракция):
+**(b) Dissipative term:** $\mathcal{D}_\Omega[\Gamma_{\odot}]$. By [theorem T6](/docs/core/operators/lindblad-operators#теорема-равномерная-контракция) (uniform contraction):
 
 $$
 \mathcal{D}[\Gamma_{\odot}]_{ij} = \begin{cases} -\alpha \cdot \gamma_{ij} = -\alpha/7, & i \neq j \\ 0, & i = j \end{cases}
 $$
 
-Это **ненулевой** оператор: $\|\mathcal{D}[\Gamma_{\odot}]\|_F^2 = \alpha^2 \cdot 42/49 > 0$. Диссипация разрушает когерентности, уменьшая чистоту.
+This is a **non-zero** operator: $\|\mathcal{D}[\Gamma_{\odot}]\|_F^2 = \alpha^2 \cdot 42/49 > 0$. Dissipation destroys coherences, reducing purity.
 
-**(c) Регенеративный член:** $\mathcal{R}[\Gamma_{\odot}, E] = \kappa(\Gamma_{\odot}) \cdot (\rho^* - \Gamma_{\odot}) \cdot g_V(P)$. При $P > P_{\mathrm{crit}}$ этот член **ненулевой**, т.к. $\rho^* \neq \Gamma_{\odot}$ ([примитивность](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]: единственный стационар $\rho^*$ не является чистым $S_7$-симметричным состоянием).
+**(c) Regenerative term:** $\mathcal{R}[\Gamma_{\odot}, E] = \kappa(\Gamma_{\odot}) \cdot (\rho^* - \Gamma_{\odot}) \cdot g_V(P)$. For $P > P_{\mathrm{crit}}$ this term is **non-zero**, since $\rho^* \neq \Gamma_{\odot}$ ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]: the unique stationary point $\rho^*$ is not a pure $S_7$-symmetric state).
 
-**Итого:** $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot} \neq 0$ — $\Gamma_{\odot}$ **не стационарная точка**.
+**Result:** $\frac{d\Gamma}{d\tau}\big|_{\Gamma_\odot} \neq 0$ — $\Gamma_{\odot}$ is **not a fixed point**.
 
-**Шаг 2. Линеаризация вокруг $\Gamma_{\odot}$.**
+**Step 2. Linearization around $\Gamma_{\odot}$.**
 
-Запишем $\Gamma = \Gamma_{\odot} + \delta\Gamma$, $\text{Tr}(\delta\Gamma) = 0$, $\delta\Gamma^\dagger = \delta\Gamma$. Линеаризованная динамика:
+Write $\Gamma = \Gamma_{\odot} + \delta\Gamma$, $\text{Tr}(\delta\Gamma) = 0$, $\delta\Gamma^\dagger = \delta\Gamma$. Linearized dynamics:
 
 $$
-\frac{d\delta\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \delta\Gamma]}_{\text{вращение}} + \underbrace{\mathcal{D}_{\text{lin}}[\delta\Gamma]}_{\text{контракция}} + \underbrace{F_0 + \mathcal{R}_{\text{lin}}[\delta\Gamma]}_{\text{сдвиг + регенерация}}
+\frac{d\delta\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \delta\Gamma]}_{\text{rotation}} + \underbrace{\mathcal{D}_{\text{lin}}[\delta\Gamma]}_{\text{contraction}} + \underbrace{F_0 + \mathcal{R}_{\text{lin}}[\delta\Gamma]}_{\text{shift + regeneration}}
 $$
 
-- **Унитарный вклад:** чисто мнимые собственные значения $\pm i(\omega_i - \omega_j)$ — вращения, не меняют расстояние от $\Gamma_{\odot}$.
-- **Диссипативный вклад:** $\mathcal{D}_{\text{lin}}[\delta\Gamma]_{ij} = -\alpha \cdot \delta\gamma_{ij}$ ($i \neq j$), $= 0$ ($i = j$). Собственные значения: $-\alpha < 0$ для 42 недиагональных компонент, $0$ для 6 диагональных.
-- **Постоянный сдвиг:** $F_0 = \kappa(\Gamma_{\odot})(\rho^* - \Gamma_{\odot}) \cdot g_V(P) \neq 0$ — **постоянный** вектор, не зависящий от $\delta\Gamma$. Это дрейф от $\Gamma_{\odot}$ в направлении $\rho^*$.
+- **Unitary contribution:** purely imaginary eigenvalues $\pm i(\omega_i - \omega_j)$ — rotations, do not change the distance from $\Gamma_{\odot}$.
+- **Dissipative contribution:** $\mathcal{D}_{\text{lin}}[\delta\Gamma]_{ij} = -\alpha \cdot \delta\gamma_{ij}$ ($i \neq j$), $= 0$ ($i = j$). Eigenvalues: $-\alpha < 0$ for 42 off-diagonal components, $0$ for 6 diagonal ones.
+- **Constant shift:** $F_0 = \kappa(\Gamma_{\odot})(\rho^* - \Gamma_{\odot}) \cdot g_V(P) \neq 0$ — a **constant** vector, independent of $\delta\Gamma$. This is a drift from $\Gamma_{\odot}$ in the direction of $\rho^*$.
 
-**Шаг 3. Механизм нестабильности: дрейф + нарушение $S_7$-симметрии.**
+**Step 3. Mechanism of instability: drift + breaking of $S_7$-symmetry.**
 
-Даже если линеаризованные собственные значения имеют $\text{Re}(\lambda) \leq 0$ (что верно для $\mathcal{D}$), нестабильность возникает из двух механизмов:
+Even if linearized eigenvalues have $\text{Re}(\lambda) \leq 0$ (true for $\mathcal{D}$), instability arises from two mechanisms:
 
-**(I) Нестационарность.** $F_0 \neq 0$ означает, что система дрейфует от $\Gamma_{\odot}$ с конечной скоростью:
+**(I) Non-stationarity.** $F_0 \neq 0$ means the system drifts from $\Gamma_{\odot}$ at a finite rate:
 
 $$
 \|\Gamma(\delta\tau) - \Gamma_{\odot}\| \geq \|F_0\| \cdot \delta\tau - O(\delta\tau^2)
 $$
 
-для малых $\delta\tau > 0$. Дрейф линеен по времени.
+for small $\delta\tau > 0$. The drift is linear in time.
 
-**(II) Нарушение $S_7$-симметрии через $\kappa_0$.** Как только $\Gamma$ отклоняется от $\Gamma_{\odot}$, формула $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ (см. [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)) **нарушает $S_7$-симметрию**: E и O выделены функционально. Это создаёт положительную обратную связь: отклонение в E-направлении увеличивает $\text{Coh}_E \to$ увеличивает $\kappa \to$ увеличивает регенерацию в E-направлении.
+**(II) Breaking of $S_7$-symmetry via $\kappa_0$.** As soon as $\Gamma$ deviates from $\Gamma_{\odot}$, the formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ (see [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)) **breaks $S_7$-symmetry**: E and O are functionally distinguished. This creates positive feedback: deviation in the E-direction increases $\text{Coh}_E \to$ increases $\kappa \to$ increases regeneration in the E-direction.
 
-Формально: компонента $\delta\gamma_{EE}$ подчиняется уравнению (в линейном порядке):
+Formally: the component $\delta\gamma_{EE}$ obeys the equation (to linear order):
 
 $$
 \frac{d\delta\gamma_{EE}}{d\tau} = \kappa_0 \cdot (\rho^*_{EE} - 1/7) + \text{terms} \propto \delta\gamma_{EE}
 $$
 
-Первый член — постоянный сдвиг ($\rho^*_{EE} > 1/7$ для живых систем). Второй — обратная связь через $\partial\kappa/\partial\gamma_{EE} > 0$. Оба увеличивают $\delta\gamma_{EE}$.
+The first term is a constant shift ($\rho^*_{EE} > 1/7$ for living systems). The second is feedback via $\partial\kappa/\partial\gamma_{EE} > 0$. Both increase $\delta\gamma_{EE}$.
 
-**(III) Результат.** Расстояние от $\Gamma_{\odot}$ растёт монотонно:
+**(III) Result.** The distance from $\Gamma_{\odot}$ grows monotonically:
 
-Из шагов I–II получаем $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ для всех $\tau > 0$. Поскольку $d_B(\Gamma_1, \Gamma_2) > 0 \Leftrightarrow \Gamma_1 \neq \Gamma_2$ (метрика Бюреса невырождена), из $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ следует:
+From steps I–II we obtain $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ for all $\tau > 0$. Since $d_B(\Gamma_1, \Gamma_2) > 0 \Leftrightarrow \Gamma_1 \neq \Gamma_2$ (the Bures metric is non-degenerate), from $\|\Gamma(\tau) - \Gamma_{\odot}\|_F > 0$ it follows:
 
 $$
 d_B(\Gamma(\tau), \Gamma_{\odot}) > 0 \quad \forall \tau > 0
 $$
 
-при любом начальном условии $\Gamma(0) = \Gamma_{\odot}$ с $\Delta F > 0$. Система неизбежно покидает $\Gamma_{\odot}$ и стремится к $\rho^*$. $\blacksquare$
+for any initial condition $\Gamma(0) = \Gamma_{\odot}$ with $\Delta F > 0$. The system inevitably leaves $\Gamma_{\odot}$ and converges to $\rho^*$. $\blacksquare$
 
-#### Следствие: космогенезис как неизбежность {#космогенезис-неизбежность}
+#### Corollary: cosmogenesis as inevitability {#космогенезис-неизбежность}
 
-Переход от недифференцированного Источника к структурированным конфигурациям — не случайное событие, а **математическая неизбежность** динамики УГМ. Из $\Gamma_{\odot}$ система **всегда** эволюционирует к $\rho^*$ (при $\Delta F > 0$).
+The transition from the undifferentiated Source to structured configurations is not a random event, but a **mathematical inevitability** of UHM dynamics. From $\Gamma_{\odot}$ the system **always** evolves to $\rho^*$ (given $\Delta F > 0$).
 
-:::warning Открытый вопрос
-Механизм возникновения $\Delta F > 0$ в изначальном контексте — **открытая проблема [П]**. Теорема нестабильности предполагает $\Delta F > 0$; вопрос о том, почему это условие выполнено, лежит за пределами данного результата.
+:::warning Open question
+The mechanism by which $\Delta F > 0$ arises in the primordial context is an **open problem [P]**. The instability theorem assumes $\Delta F > 0$; the question of why this condition holds lies beyond the scope of this result.
 :::
 
-### Самоусиление {#самоусиление}
+### Self-Amplification {#самоусиление}
 
-:::tip Статус: [Т] (через $\kappa_0$)
-Положительная обратная связь доказана в шаге 3(II) [теоремы нестабильности](#доказательство-нестабильности): формула $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ нарушает $S_7$-симметрию и создаёт усиление в E-направлении.
+:::tip Status: [T] (via $\kappa_0$)
+Positive feedback is proved in step 3(II) of the [instability theorem](#доказательство-нестабильности): the formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ breaks $S_7$-symmetry and creates amplification in the E-direction.
 :::
 
-Нарушение симметрии **самоусиливается [Т]** через положительную обратную связь $\kappa_0$:
+Symmetry breaking **self-amplifies [T]** via positive feedback through $\kappa_0$:
 
 ```mermaid
 graph LR
-    F["δΓ (отклонение)"] --> C["Coh_E растёт"]
-    C --> K["κ₀ растёт"]
-    K --> R["Регенерация ℛ усиливается"]
+    F["δΓ (deviation)"] --> C["Coh_E grows"]
+    C --> K["κ₀ grows"]
+    K --> R["Regeneration ℛ amplifies"]
     R --> F
 ```
 
-Механизм: $\kappa_0$ функционально выделяет E и O среди семи измерений (см. [категориальный вывод $\kappa_0$](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)), что направляет эволюцию от $S_7$-симметричного $\Gamma_{\odot}$ к структурированному $\rho^*$ с выраженной E-когерентностью.
+Mechanism: $\kappa_0$ functionally distinguishes E and O among the seven dimensions (see [categorical derivation of $\kappa_0$](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0)), directing evolution from the $S_7$-symmetric $\Gamma_{\odot}$ toward the structured $\rho^*$ with pronounced E-coherence.
 
-## Рождение измерений
+## Birth of Dimensions
 
-Из изначальной суперпозиции выделяются [семь измерений](/docs/core/structure/dimensions):
+From the primordial superposition the [seven dimensions](/docs/core/structure/dimensions) emerge:
 
 $$
 |\psi_{\odot}\rangle = \frac{1}{\sqrt{7}}(|A\rangle + |S\rangle + |D\rangle + |L\rangle + |E\rangle + |O\rangle + |U\rangle)
 $$
 
 $$
-\downarrow \text{декогеренция через } \mathcal{D}[\Gamma]
+\downarrow \text{decoherence via } \mathcal{D}[\Gamma]
 $$
 
 $$
 \Gamma \to \sum_i p_i |i\rangle\langle i| + \sum_{i \neq j} \gamma_{ij} |i\rangle\langle j|
 $$
 
-где $p_i = \gamma_{ii}$ — населённости измерений, $\gamma_{ij}$ — [когерентности](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности) между ними.
+where $p_i = \gamma_{ii}$ are the dimension populations, $\gamma_{ij}$ are the [coherences](/docs/core/dynamics/coherence-matrix#недиагональные-элементы-когерентности) between them.
 
-## Эволюция от Источника
+## Evolution from the Source {#эволюция-от-источника}
 
-### Направление эволюции
+### Direction of Evolution {#направление-эволюции}
 
-:::danger Предупреждение: Нефальсифицируемость
-Утверждение $dD_{\text{diff}}/d\tau > 0$ **нефальсифицируемо**: любое наблюдаемое уменьшение дифференциации можно интерпретировать как локальное явление в рамках глобального роста. Это **телеологическое допущение**, не эмпирический закон.
+:::danger Warning: Non-Falsifiability
+The statement $dD_{\text{diff}}/d\tau > 0$ is **non-falsifiable**: any observed decrease in differentiation can be interpreted as a local phenomenon within a global growth. This is a **teleological assumption**, not an empirical law.
 
-**Честный статус:** Это философская позиция (направленность эволюции), не формальная теорема УГМ.
+**Honest status:** This is a philosophical position (directionality of evolution), not a formal UHM theorem.
 :::
 
-Вселенная эволюционирует в направлении **увеличения дифференциации при сохранении интеграции**:
+The universe evolves in the direction of **increasing differentiation while preserving integration**:
 
 $$
 \frac{dD_{\text{diff}}}{d\tau} > 0
@@ -184,136 +184,136 @@ $$
 \frac{d\Phi}{d\tau} \geq 0
 $$
 
-где:
-- $D_{\text{diff}} = \exp(S_{vN})$ — [мера дифференциации](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (разнообразие состояний)
-- $\Phi$ — [мера интеграции](/docs/core/structure/dimension-u#мера-интеграции-φ) (связность измерений)
+where:
+- $D_{\text{diff}} = \exp(S_{vN})$ — [measure of differentiation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (diversity of states)
+- $\Phi$ — [measure of integration](/docs/core/structure/dimension-u#мера-интеграции-φ) (connectedness of dimensions)
 
-**Статус:** [Г] Гипотеза. Связь с вторым законом термодинамики концептуальна, не формализована.
+**Status:** [H] Hypothesis. The connection to the second law of thermodynamics is conceptual, not formalized.
 
-:::note О нотации
-$D_{\text{diff}}$ — мера **дифференциации**. Не путать с измерением **Динамики** $D$ (одно из семи измерений Голонома).
+:::note On notation
+$D_{\text{diff}}$ is the measure of **differentiation**. Not to be confused with the **Dynamics** dimension $D$ (one of the seven Holon dimensions).
 :::
 
-### Феноменология эволюции
+### Phenomenology of Evolution
 
-- **Усложнение материи:** от кварков к галактикам
-- **Эволюция жизни:** от прокариот к разуму
-- **Развитие культуры:** от племён к цивилизациям
+- **Complexification of matter:** from quarks to galaxies
+- **Evolution of life:** from prokaryotes to minds
+- **Development of culture:** from tribes to civilizations
 
-## Диаграмма космогенеза
+## Cosmogenesis Diagram
 
 ```mermaid
 graph TD
-    S["☉ Источник<br/>P = 1, D_diff = 1"]
-    F["Флуктуация δΓ"]
-    DIM["Дифференциация<br/>7 измерений"]
-    G["Голономы ℍ"]
-    C["Сознание<br/>φ#40;Γ#41; ≈ Γ"]
-    U["Вселенная<br/>познаёт себя"]
+    S["☉ Source<br/>P = 1, D_diff = 1"]
+    F["Fluctuation δΓ"]
+    DIM["Differentiation<br/>7 dimensions"]
+    G["Holons ℍ"]
+    C["Consciousness<br/>φ#40;Γ#41; ≈ Γ"]
+    U["Universe<br/>knows itself"]
 
-    S --> |"квантовая флуктуация"| F
-    F --> |"спонтанное нарушение симметрии"| DIM
-    DIM --> |"самоорганизация"| G
-    G --> |"эволюция"| C
-    C --> |"рефлексия"| U
+    S --> |"quantum fluctuation"| F
+    F --> |"spontaneous symmetry breaking"| DIM
+    DIM --> |"self-organization"| G
+    G --> |"evolution"| C
+    C --> |"reflection"| U
 ```
 
-**Обозначения диаграммы:**
-- $P = 1$ — [чистота](/docs/core/dynamics/viability#определение-чистоты) (максимальная когерентность)
-- $D_{\text{diff}} = 1$ — минимальная дифференциация (чистое состояние)
-- $\varphi(\Gamma) \approx \Gamma$ — [самомоделирование](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) близко к неподвижной точке
+**Diagram notation:**
+- $P = 1$ — [purity](/docs/core/dynamics/viability#определение-чистоты) (maximal coherence)
+- $D_{\text{diff}} = 1$ — minimal differentiation (pure state)
+- $\varphi(\Gamma) \approx \Gamma$ — [self-modeling](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) close to fixed point
 
-## Количественные оценки эпохи космогенеза {#количественные-оценки}
+## Quantitative Estimates for the Cosmogenesis Epoch {#количественные-оценки}
 
-:::warning Статус: [С] Условные оценки
-Следующие оценки зависят от значения $\omega_0$ (Аксиома A4 [П]) и модели связи $\Delta F$ с физическими масштабами. Порядки величин — ориентировочные.
+:::warning Status: [C] Conditional estimates
+The following estimates depend on the value of $\omega_0$ (Axiom A4 [P]) and on the model relating $\Delta F$ to physical scales. The orders of magnitude are approximate.
 :::
 
-### Время дифференциации
+### Differentiation Time
 
-Характерный масштаб нестабильности определяется спектральной щелью линеаризованной динамики:
+The characteristic instability scale is set by the spectral gap of the linearized dynamics:
 
 $$
 \tau_{\text{diff}} \sim \frac{1}{\kappa_0} = \frac{7}{\omega_0} \cdot \frac{\gamma_{OO}}{|\gamma_{OE}||\gamma_{OU}|}
 $$
 
-Для Источника ($|\gamma_{OE}| = |\gamma_{OU}| = \gamma_{OO} = 1/7$):
+For the Source ($|\gamma_{OE}| = |\gamma_{OU}| = \gamma_{OO} = 1/7$):
 
 $$
 \tau_{\text{diff}} \sim \frac{7}{\omega_0} \cdot \frac{1/7}{(1/7)^2} = \frac{7}{\omega_0}
 $$
 
-При $\omega_0 \sim M_{\text{Planck}} = 1.22 \times 10^{19}$ ГэВ: $\tau_{\text{diff}} \sim 7 t_{\text{Planck}} \approx 3.8 \times 10^{-43}$ с.
+At $\omega_0 \sim M_{\text{Planck}} = 1.22 \times 10^{19}$ GeV: $\tau_{\text{diff}} \sim 7 t_{\text{Planck}} \approx 3.8 \times 10^{-43}$ s.
 
-### Последовательность событий
+### Sequence of Events
 
-| Эпоха | $\tau$ | Событие | Наблюдаемый аналог |
-|-------|--------|---------|-------------------|
-| $0$ | $0$ | Источник $\Gamma_\odot$ | Планковская сингулярность |
-| $\sim 7 t_P$ | $\sim 10^{-43}$ с | Нарушение $S_7 \to G_2$ | Инфляция (?) |
-| $\sim 10^2 t_P$ | $\sim 10^{-42}$ с | Секторное разложение $7 = 1+3+3$ | Формирование пространства-времени |
-| $\sim 10^{10} t_P$ | $\sim 10^{-34}$ с | Электрослабый масштаб | Хиггсовский переход |
+| Epoch | $\tau$ | Event | Observable analogue |
+|-------|--------|-------|---------------------|
+| $0$ | $0$ | Source $\Gamma_\odot$ | Planck singularity |
+| $\sim 7 t_P$ | $\sim 10^{-43}$ s | Breaking $S_7 \to G_2$ | Inflation (?) |
+| $\sim 10^2 t_P$ | $\sim 10^{-42}$ s | Sector decomposition $7 = 1+3+3$ | Spacetime formation |
+| $\sim 10^{10} t_P$ | $\sim 10^{-34}$ s | Electroweak scale | Higgs transition |
 
-:::note Связь с инфляцией
-Нарушение $S_7$-симметрии через $\kappa_0$ порождает экспоненциальный рост дифференциации — это **структурный аналог** инфляции. Однако в УГМ инфляция — не отдельное поле (инфлатон), а следствие автопоэтической обратной связи. Детальная связь с наблюдаемыми параметрами ($n_s$, $r$) — [открытая проблема [П]](/docs/reference/status-registry).
+:::note Connection to inflation
+The breaking of $S_7$-symmetry via $\kappa_0$ generates exponential growth of differentiation — this is the **structural analogue** of inflation. However in UHM, inflation is not a separate field (inflaton) but a consequence of autopoietic feedback. The detailed connection to observable parameters ($n_s$, $r$) is an [open problem [P]](/docs/reference/status-registry).
 :::
 
 ---
 
-## Отсутствие «до»
+## Absence of "Before"
 
-В УГМ нет «до Большого Взрыва»:
-- Время [возникает](/docs/core/operators/emergent-time) **вместе** с дифференциацией — через механизм Пейдж–Вуттерс, требующий выделения O-измерения
-- «До» — это концепция, требующая времени — в Источнике все измерения эквивалентны, O не выделено
-- Источник $\odot$ — **вне времени** (атемпоральный): $\tau$ не определено для $S_7$-симметричного состояния
+In UHM there is no "before the Big Bang":
+- Time [arises](/docs/core/operators/emergent-time) **together** with differentiation — via the Page–Wootters mechanism, which requires the O-dimension to be distinguished
+- "Before" is a concept that requires time — in the Source all dimensions are equivalent, O is not distinguished
+- The Source $\odot$ is **outside of time** (atemporal): $\tau$ is not defined for an $S_7$-symmetric state
 
-## Почему вообще что-то есть?
+## Why Is There Something Rather Than Nothing? {#почему-вообще-что-то-есть}
 
-Традиционный вопрос: "Почему есть нечто, а не ничто?"
+Traditional question: "Why is there something rather than nothing?"
 
-:::info Статус: Философский аргумент
-Это **не формальная теорема**, а философская позиция, согласованная с аксиоматикой УГМ. Формальное доказательство невозможно — вопрос лежит за пределами любой формальной системы.
+:::info Status: Philosophical argument
+This is **not a formal theorem**, but a philosophical position consistent with the UHM axiomatics. Formal proof is impossible — the question lies beyond any formal system.
 :::
 
-**Позиция УГМ:**
-"Ничто" нестабильно — оно не может быть самосогласованным, потому что для самосогласованности нужно "нечто", что согласуется с собой.
+**UHM position:**
+"Nothing" is unstable — it cannot be self-consistent, because self-consistency requires "something" that is consistent with itself.
 
 $$
-\text{Ничто} \Rightarrow \text{несамосогласованность} \Rightarrow \text{невозможность}
+\text{Nothing} \Rightarrow \text{inconsistency} \Rightarrow \text{impossibility}
 $$
 
-$\Gamma$ существует, потому что **самосогласованность требует существования** **[И]**.
+$\Gamma$ exists because **self-consistency requires existence** **[I]**.
 
-**Альтернативные позиции:**
-- Вопрос бессмысленный (логические позитивисты)
-- Ответ лежит за пределами рационального (мистицизм)
-- Случайность без причины (некоторые интерпретации КМ)
+**Alternative positions:**
+- The question is meaningless (logical positivists)
+- The answer lies beyond the rational (mysticism)
+- Random without cause (some interpretations of QM)
 
-УГМ выбирает позицию самосогласованности как наиболее экономную и объяснительно мощную.
+UHM chooses the position of self-consistency as the most economical and explanatorily powerful.
 
-## Что формализовано vs Программа исследований
+## What Is Formalized vs. Research Programme
 
-| Утверждение | Статус | Комментарий |
-|-------------|--------|-------------|
-| **Источник $\Gamma_{\odot}$ как начальное условие** | ⚙️ Постулат | Не выводится, принимается как аксиома |
-| **Нестабильность Источника** | **[Т]** Теорема | [Доказана](#доказательство-нестабильности): нестационарность + дрейф $F_0 \neq 0$ |
-| **Самоусиление нарушения $S_7$-симметрии** | **[Т]** Теорема | Положительная обратная связь через $\kappa_0$ ([шаг 3](#доказательство-нестабильности)) |
-| **Условие $\Delta F > 0$** | [П] Открытый вопрос | Почему свободная энергия окружения больше системной? |
-| **$dD_{\text{diff}}/d\tau > 0$** | [И] Нефальсифицируемо | Телеологическое допущение |
-| **"Ничто" нестабильно** | [И] Философия | Метафизический аргумент, не теорема |
+| Statement | Status | Comment |
+|-----------|--------|---------|
+| **Source $\Gamma_{\odot}$ as initial condition** | ⚙️ Postulate | Not derived, accepted as an axiom |
+| **Instability of the Source** | **[T]** Theorem | [Proved](#доказательство-нестабильности): non-stationarity + drift $F_0 \neq 0$ |
+| **Self-amplification of $S_7$-symmetry breaking** | **[T]** Theorem | Positive feedback via $\kappa_0$ ([step 3](#доказательство-нестабильности)) |
+| **Condition $\Delta F > 0$** | [P] Open question | Why is the free energy of the environment greater than the system's? |
+| **$dD_{\text{diff}}/d\tau > 0$** | [I] Non-falsifiable | Teleological assumption |
+| **"Nothing" is unstable** | [I] Philosophy | Metaphysical argument, not a theorem |
 
-:::info Резюме
-Этот раздел содержит **теоремы** (нестабильность Источника [Т], самоусиление через $\kappa_0$ [Т]), **постулаты** (сам Источник, условие $\Delta F > 0$), и **философские позиции** ("почему есть нечто").
+:::info Summary
+This section contains **theorems** (instability of the Source [T], self-amplification via $\kappa_0$ [T]), **postulates** (the Source itself, the condition $\Delta F > 0$), and **philosophical positions** ("why is there something").
 :::
 
 ---
 
-**Связанные документы:**
-- [Пространство-время](/docs/core/foundations/spacetime) — эмерджентность пространства-времени
-- [Матрица когерентности](/docs/core/dynamics/coherence-matrix) — определение $\Gamma$
-- [Эволюция](/docs/core/dynamics/evolution) — динамика $\Gamma$
-- [Жизнеспособность](/docs/core/dynamics/viability) — мера чистоты $P$
-- [Самонаблюдение](/docs/consciousness/foundations/self-observation) — оператор $\varphi$ и мера $D_{\text{diff}}$
-- [Измерение Единства](/docs/core/structure/dimension-u) — мера интеграции $\Phi$
-- [Основание (O)](/docs/core/structure/dimension-o) — связь с источником
-- [Аксиома Ω⁷](/docs/core/foundations/axiom-omega) — ∞-топос Sh_∞(𝒞) как примитив
+**Related documents:**
+- [Spacetime](/docs/core/foundations/spacetime) — emergence of spacetime
+- [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$
+- [Evolution](/docs/core/dynamics/evolution) — dynamics of $\Gamma$
+- [Viability](/docs/core/dynamics/viability) — purity measure $P$
+- [Self-observation](/docs/consciousness/foundations/self-observation) — operator $\varphi$ and measure $D_{\text{diff}}$
+- [Unity dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
+- [Foundation (O)](/docs/core/structure/dimension-o) — connection to the Source
+- [Axiom Ω⁷](/docs/core/foundations/axiom-omega) — ∞-topos Sh_∞(𝒞) as primitive

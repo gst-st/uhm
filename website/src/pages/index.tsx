@@ -450,6 +450,7 @@ function MatrixSection() {
 }
 
 type DocSection = {
+  id: string;
   title: string;
   description: string;
   link: string;
@@ -458,72 +459,84 @@ type DocSection = {
 
 const docSections: DocSection[] = [
   {
+    id: 'primitive',
     title: 'The Single Primitive',
     description: 'Five Axioms Ω⁷',
     link: '/docs/core/foundations/axiom-omega',
     items: ['∞-topos Sh∞(𝒞) — everything else is derived', 'Logic, time and space are consequences', 'Principle of informational distinguishability'],
   },
   {
+    id: 'structure',
     title: 'Structure',
     description: 'Seven Dimensions of the Holon',
     link: '/docs/core/structure/holon',
     items: ['Holon — integral unit of being', 'Seven dimensions: A, S, D, L, E, O, U', 'Coherence matrix Γ ∈ ℂ⁷ˣ⁷'],
   },
   {
+    id: 'octonionic',
     title: 'Octonionic Foundation',
     description: 'Why Exactly 7',
     link: '/docs/proofs/minimality/theorem-octonionic-derivation',
     items: ['P1 + P2 → 𝕆 → dim(Im(𝕆)) = 7', 'Fano plane and G₂ symmetry', 'Hamming code H(7,4) and Cayley-Dickson boundary'],
   },
   {
+    id: 'dynamics',
     title: 'Dynamics',
     description: 'Evolution Equation',
     link: '/docs/core/dynamics/evolution',
     items: ['dΓ/dτ = −i[H,Γ] + 𝒟[Γ] + ℛ[Γ,E]', 'Dissipation from decoherence, regeneration from interiority', 'Global attractor'],
   },
   {
+    id: 'time',
     title: 'Emergent Time',
     description: 'Time from Structure',
     link: '/docs/proofs/dynamics/emergent-time',
     items: ['Time is not postulated — it is derived', 'O-dimension as internal clock', 'Discreteness τ ∈ ℤ₇ and arrow of time'],
   },
   {
+    id: 'viability',
     title: 'Viability',
     description: 'Conditions of Existence',
     link: '/docs/core/dynamics/viability',
     items: ['Purity P — measure of integrity', 'P_crit = 2/7 (theorem, five paths)', 'Domain of stability'],
   },
   {
+    id: 'gap',
     title: 'Gap Semantics',
     description: 'Interiority / Exteriority',
     link: '/docs/core/dynamics/gap-operator',
     items: ['Gap(i,j) = |sin(arg(γᵢⱼ))| — duality', 'Fano channel: dissipation via PG(2,2)', 'Phase diagram of coherent states'],
   },
   {
+    id: 'consciousness',
     title: 'Consciousness',
     description: 'From Qualia to Collective Mind',
     link: '/docs/consciousness/overview',
     items: ['21-pair qualia taxonomy from Γ', 'Emotions, attention, memory — from formalism', 'AI consciousness: operational criteria'],
   },
   {
+    id: 'physics',
     title: 'Physical Correspondence',
     description: 'From Γ to the Standard Model',
     link: '/docs/physics/overview',
     items: ['G₂ gauge symmetry and generations', 'Yukawa hierarchy from Fano textures', 'Cosmological constant: Λ budget'],
   },
   {
+    id: 'proofs',
     title: 'Proofs',
     description: 'Formal Theorems',
     link: '/docs/proofs/minimality/theorem-minimality-7',
     items: ['Minimality of 7 dimensions (Track A)', '180+ results: from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
   },
   {
+    id: 'cybernetics',
     title: 'Coherence Cybernetics',
     description: 'Engineering Applications',
     link: '/docs/applied/coherence-cybernetics/introduction',
     items: ['Measurement protocol for Γ in AI', 'Conditional No-Zombie theorem', 'Paninteriorism ≠ panpsychism'],
   },
   {
+    id: 'reference',
     title: 'Reference',
     description: 'Verification & Notation',
     link: '/docs/reference/falsifiability',
@@ -537,12 +550,16 @@ function DocumentationSection() {
       <div className="container">
         <div className={styles.docsGrid}>
           {docSections.map((section) => (
-            <Link key={section.title} to={section.link} className={styles.docCard}>
-              <h3>{section.title}</h3>
-              <p className={styles.docDescription}>{section.description}</p>
+            <Link key={section.id} to={section.link} className={styles.docCard}>
+              <h3>{translate({id: `homepage.docs.${section.id}.title`, message: section.title})}</h3>
+              <p className={styles.docDescription}>
+                {translate({id: `homepage.docs.${section.id}.description`, message: section.description})}
+              </p>
               <ul className={styles.docItems}>
                 {section.items.map((item, i) => (
-                  <li key={i}>{item}</li>
+                  <li key={i}>
+                    {translate({id: `homepage.docs.${section.id}.item.${i}`, message: item})}
+                  </li>
                 ))}
               </ul>
             </Link>

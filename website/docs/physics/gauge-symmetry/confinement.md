@@ -1,561 +1,561 @@
 ---
 sidebar_position: 4
-title: "Конфайнмент"
+title: "Confinement"
 ---
 
-# Конфайнмент
+# Confinement
 
-:::info Для кого эта глава
-Топологический вывод конфайнмента в Gap-формализме. Читатель узнает о цветовых Gap-трубках, струнном натяжении и структурном решении $\theta_{\text{QCD}} = 0$.
+:::info Who This Chapter Is For
+Topological derivation of confinement in the Gap formalism. The reader will learn about colour Gap tubes, string tension, and the structural resolution of $\theta_{\text{QCD}} = 0$.
 :::
 
 
-## Обзор
+## Overview
 
-:::tip[Статусы раздела]
-Вывод конфайнмента в Gap-формализме доказан **топологически**. Ключевые результаты:
-- Топологический закон площади — **[Т]**: T-73 (Gap = кривизна Серра) + T-69 (топологическая защита $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + секторная $\sigma$-коррекция
-- Струнное натяжение $\sqrt{\sigma} \approx 457$ МэВ — **[С при T-64]**: секторная иерархия [Т] (мягкая мода гессиана), численное значение $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$ зависит от параметров вакуума T-64
-- Диагностика расхождения $\sqrt{\sigma}$ — **[Т]**: наивное расхождение $\sim 7\times$ объяснено использованием средних параметров вместо секторных ([подробнее](#диагностика-расхождения-σ))
-- Асимптотическая свобода, ABJ-аномалия — **[Т]** (стандартная физика)
-- $\theta_{\mathrm{QCD}} = 0$ — **[Т]** (T-99: 7-шаговое структурное доказательство из аксиом A1–A5)
+:::tip[Section statuses]
+The derivation of confinement in the Gap formalism is proved **topologically**. Key results:
+- Topological area law — **[T]**: T-73 (Gap = Serre curvature) + T-69 (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + sectoral $\sigma$-correction
+- String tension $\sqrt{\sigma} \approx 457$ MeV — **[C at T-64]**: sectoral hierarchy [T] (soft Hessian mode), numerical value $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$ depends on vacuum parameters T-64
+- Diagnostics of the $\sqrt{\sigma}$ discrepancy — **[T]**: the naive $\sim 7\times$ discrepancy is explained by using average parameters instead of sectoral ones ([details](#диагностика-расхождения-σ))
+- Asymptotic freedom, ABJ anomaly — **[T]** (standard physics)
+- $\theta_{\mathrm{QCD}} = 0$ — **[T]** (T-99: 7-step structural proof from axioms A1–A5)
 :::
 
-Конфайнмент — непертурбативное явление, при котором цветные частицы (кварки и глюоны) не наблюдаются как свободные состояния. В Gap-формализме конфайнмент **доказан топологически**: T-73 [Т] (Gap = кривизна Серра) обеспечивает энергетическую плотность потока, T-69 [Т] (топологическая защита $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) стабилизирует цветовые трубки потока, а секторная коррекция из единственного вакуума T-64 [Т] даёт конкретное числовое значение $\sqrt{\sigma} \approx 457$ МэВ. В секторе 3-to-$\bar{3}$ ($\{A,S,D\} \times \{L,E,U\}$) Gap стремится к нулю, кубический потенциал $V_3$ (октонионный ассоциатор) генерирует линейный потенциал между кварками, формируя цветовые Gap-трубки — аналоги хромоэлектрических струн.
+Confinement is a non-perturbative phenomenon in which coloured particles (quarks and gluons) are not observed as free states. In the Gap formalism confinement is **proved topologically**: T-73 [T] (Gap = Serre curvature) provides the flux energy density, T-69 [T] (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) stabilises the colour flux tubes, and the sectoral correction from the unique vacuum T-64 [T] gives the specific numerical value $\sqrt{\sigma} \approx 457$ MeV. In the 3-to-$\bar{3}$ sector ($\{A,S,D\} \times \{L,E,U\}$) Gap tends to zero, the cubic potential $V_3$ (octonionic associator) generates a linear potential between quarks, forming colour Gap tubes — analogues of chromoelectric strings.
 
-:::info Ключевое отличие от стандартного QCD
-В стандартном QCD конфайнмент — открытая проблема тысячелетия (Clay). В Gap-теории конфайнмент **доказан топологически**: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (T-69 [Т]) обеспечивает нерасщепляемость цветовых трубок потока, а T-64 [Т] (единственный вакуум) даёт конкретное числовое значение натяжения.
+:::info Key distinction from standard QCD
+In standard QCD confinement is an open Millennium Problem (Clay). In Gap theory confinement is **proved topologically**: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ (T-69 [T]) ensures the non-splittability of colour flux tubes, and T-64 [T] (unique vacuum) gives a specific numerical value of the tension.
 :::
 
 ---
 
-## 1. Петля Вильсона и непертурбативная Gap-динамика
+## 1. Wilson Loop and Non-Perturbative Gap Dynamics
 
-### 1.1 Постановка
+### 1.1 Setup
 
-Из вывода Стандартной Модели: $\mathrm{SU}(3)_C$ — стабилизатор O-направления в $G_2$. 8 глюонных полей — флуктуации Gap-фаз $\theta_{ij}$ в секторе 3-to-$\bar{3}$ ($\{A,S,D\} \times \{L,E,U\}$). Конфайнмент — непертурбативное явление, требующее $\mathrm{Gap} \to 0$ в этом секторе.
+From the derivation of the Standard Model: $\mathrm{SU}(3)_C$ is the stabiliser of the O-direction in $G_2$. The 8 gluon fields are fluctuations of Gap phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector ($\{A,S,D\} \times \{L,E,U\}$). Confinement is a non-perturbative phenomenon requiring $\mathrm{Gap} \to 0$ in this sector.
 
-Глюоны безмассовые при $\mathrm{Gap} = 0$ в секторе 3-to-$\bar{3}$. При $\mathrm{Gap} \to 0$ связность расслоения Серра **становится плоской** — но с нетривиальной голономией. Это — ключ к конфайнменту.
+Gluons are massless at $\mathrm{Gap} = 0$ in the 3-to-$\bar{3}$ sector. As $\mathrm{Gap} \to 0$ the Serre bundle connection **becomes flat** — but with non-trivial holonomy. This is the key to confinement.
 
-### 1.2 Определение (Gap-петля Вильсона)
+### 1.2 Definition (Gap Wilson Loop)
 
-Gap-петля Вильсона — голономия Gap-связности вдоль замкнутого контура $C$ в секторе 3-to-$\bar{3}$:
+The Gap Wilson loop is the holonomy of the Gap connection along a closed contour $C$ in the 3-to-$\bar{3}$ sector:
 
 $$W_{\mathrm{Gap}}(C) = \mathrm{Tr}\left[\mathcal{P}\exp\left(\oint_C \sum_{a=1}^{8} A_\mu^a(x)\, T_a^{(\mathrm{color})}\, dx^\mu\right)\right]$$
 
-где $A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x)$ — глюонное поле, $T_a^{(\mathrm{color})}$ — генераторы $\mathrm{SU}(3)_C$.
+where $A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x)$ is the gluon field, $T_a^{(\mathrm{color})}$ are the generators of $\mathrm{SU}(3)_C$.
 
-В Gap-формализме: $A_\mu^a$ определяется через пространственную зависимость фаз когерентностей $\theta_{ij}(x)$ в секторе 3-to-$\bar{3}$. Пространственная зависимость возникает из эмерджентной геометрии: координата $x$ связана с O-измерением через Пейдж–Вуттерс.
+In the Gap formalism: $A_\mu^a$ is defined via the spatial dependence of the coherence phases $\theta_{ij}(x)$ in the 3-to-$\bar{3}$ sector. The spatial dependence arises from emergent geometry: the coordinate $x$ is related to the O-dimension via Page–Wootters.
 
-### 1.3 Теорема 1.1 (Топологический закон площади) [Т] {#теорема-закон-площади}
+### 1.3 Theorem 1.1 (Topological Area Law) [T] {#теорема-закон-площади}
 
-:::tip[Статус: Теорема \[Т\]]
-Доказано топологически через T-73 (Gap = кривизна Серра) + T-69 (топологическая защита $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + T-64 (единственный вакуум) + T-65 (спектральное действие).
+:::tip[Status: Theorem \[T\]]
+Proved topologically via T-73 (Gap = Serre curvature) + T-69 (topological protection $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$) + T-64 (unique vacuum) + T-65 (spectral action).
 :::
 
-**Теорема.** В Gap-теории на $(S^1)^{21}/G_2$ петля Вильсона в $\mathbf{3}$-$\bar{\mathbf{3}}$ секторе удовлетворяет закону площади:
+**Theorem.** In Gap theory on $(S^1)^{21}/G_2$ the Wilson loop in the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector satisfies the area law:
 
 $$\langle W_{\mathrm{Gap}}(C) \rangle \leq \exp(-\sigma \cdot \mathrm{Area}(C)), \quad \sigma > 0$$
 
-с натяжением струны $\sqrt{\sigma} \approx 457$ МэВ (при секторной коррекции $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$, выводимой из мягкой моды гессиана $V_{\text{Gap}}$, T-64 [Т]; численное значение [С при T-64]).
+with string tension $\sqrt{\sigma} \approx 457$ MeV (with sectoral correction $|\gamma_{3\to\bar{3}}| \approx 2.8\bar{\varepsilon}$, derived from the soft mode of the Hessian of $V_{\text{Gap}}$, T-64 [T]; numerical value [C at T-64]).
 
-**Доказательство (топологическое, ).**
+**Proof (topological).**
 
-**Шаг 1 (Калибровочная связность из спектрального действия).** Спектральная тройка (T-53 [Т]) генерирует калибровочные поля через внутренние флуктуации $D_A = D_{\text{int}} + A + JAJ^{-1}$. В $\mathbf{3}$-$\bar{\mathbf{3}}$ секторе, $A_\mu^a$ — поля $SU(3)_C$ глюонов (T-65 [Т]: спектральное действие воспроизводит лагранжиан Янга-Миллса).
+**Step 1 (Gauge connection from the spectral action).** The spectral triple (T-53 [T]) generates gauge fields via inner fluctuations $D_A = D_{\text{int}} + A + JAJ^{-1}$. In the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector, $A_\mu^a$ are the $SU(3)_C$ gluon fields (T-65 [T]: the spectral action reproduces the Yang–Mills Lagrangian).
 
-**Шаг 2 (Gap = кривизна → энергетическая плотность потока).** Из T-73 [Т] ([Gap = кривизна Серра](/docs/core/dynamics/gap-operator#теорема-gap-серра)):
+**Step 2 (Gap = curvature → flux energy density).** From T-73 [T] ([Gap = Serre curvature](/docs/core/dynamics/gap-operator#теорема-gap-серра)):
 
 $$\|F\|_{ij}^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$$
 
-Для $\mathbf{3}$-$\bar{\mathbf{3}}$ сектора, $\mathrm{Gap}(3,\bar{3}) = \varepsilon_{3\bar{3}} \approx 0$, но **ненулевой** (из единственного вакуума T-64 [Т]). Цветовой поток между источниками создаёт трубку с поперечной плотностью энергии $\propto \|F\|^2$.
+For the $\mathbf{3}$-$\bar{\mathbf{3}}$ sector, $\mathrm{Gap}(3,\bar{3}) = \varepsilon_{3\bar{3}} \approx 0$, but **non-zero** (from the unique vacuum T-64 [T]). The colour flux between sources creates a tube with transverse energy density $\propto \|F\|^2$.
 
-**Шаг 3 (Топологическая стабильность трубки потока).** Из T-69 [Т] ([топологическая защита](/docs/core/dynamics/composite-systems#теорема-тополог-защита)):
+**Step 3 (Topological stability of the flux tube).** From T-69 [T] ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита)):
 
 $$\pi_2(G_2/T^2) \cong \mathbb{Z}^2$$
 
-Цветовая трубка потока — **топологически нетривиальная** конфигурация, которая не может быть непрерывно деформирована в конфигурацию с $\mathrm{Gap} = 0$. Энергетический барьер:
+The colour flux tube is a **topologically non-trivial** configuration that cannot be continuously deformed into a configuration with $\mathrm{Gap} = 0$. Energy barrier:
 
 $$\Delta V \geq 6\mu^2 > 0$$
 
-Это означает, что трубка потока **стабильна**: нет туннелирования при $T \ll \mu$ (что выполняется в конфайнмент-фазе).
+This means the flux tube is **stable**: no tunnelling at $T \ll \mu$ (which holds in the confinement phase).
 
-**Шаг 4 (Линейный потенциал из $V_3$).** Кубический потенциал $V_3$ создаёт линейно растущую энергию разделения кварк-антикваркой пары. Для $\mathbf{3}$-$\bar{\mathbf{3}}$ трубки длины $L$:
+**Step 4 (Linear potential from $V_3$).** The cubic potential $V_3$ creates a linearly growing energy of quark–antiquark separation. For a $\mathbf{3}$-$\bar{\mathbf{3}}$ tube of length $L$:
 
 $$E(L) = \sigma \cdot L, \quad \sigma = \lambda_3 \cdot \frac{|\varepsilon_{3\bar{3}}|}{2} \cdot \mu_{\text{phys}}^2$$
 
-Gap-трубка (аналог цветовой струны):
+Gap tube (analogue of a colour string):
 
 ```
  q ════════════════════ q̄
  ← L →
- ↑ Gap ≈ ε → 0, но V₃ ∝ ε — ненулевая энергия
+ ↑ Gap ≈ ε → 0, but V₃ ∝ ε — non-zero energy
 ```
 
-**Шаг 5 (Секторная коррекция из гессиана $V_{\text{Gap}}$).** Из T-64 [Т] (единственный вакуум с положительно определённым гессианом) следует **иерархия секторных когерентностей**, выводимая из собственных значений $\mathrm{Hess}(V_{\mathrm{Gap}})|_{\min}$.
+**Step 5 (Sectoral correction from the Hessian of $V_{\text{Gap}}$).** From T-64 [T] (unique vacuum with positive-definite Hessian) the **hierarchy of sectoral coherences** follows, derivable from the eigenvalues of $\mathrm{Hess}(V_{\mathrm{Gap}})|_{\min}$.
 
-**Иерархия гессиана.** Потенциал $V_{\mathrm{Gap}}$ разложен на секторы разложения $7 = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$. Собственные значения гессиана в минимуме T-64 [Т] группируются по секторам:
+**Hessian hierarchy.** The potential $V_{\mathrm{Gap}}$ is decomposed into sectors of the decomposition $7 = \mathbf{1}_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$. The eigenvalues of the Hessian at the minimum T-64 [T] group by sectors:
 
-- Сектор $O$-направления: $\lambda_O = 18\mu^2$ (жёсткий, наибольшее собственное значение)
-- Сектор диагональный ($\mathbf{3}$-внутренний): $\lambda_{\text{diag}} \sim 4\mu^2$ (промежуточный)
-- Сектор $\mathbf{3}\to\bar{\mathbf{3}}$ (9 когерентностей): $\lambda_{3\bar{3}} \approx \mu^2$ (наименьшее собственное значение — **мягкая мода**)
+- O-direction sector: $\lambda_O = 18\mu^2$ (hard, largest eigenvalue)
+- Diagonal sector ($\mathbf{3}$-internal): $\lambda_{\text{diag}} \sim 4\mu^2$ (intermediate)
+- $\mathbf{3}\to\bar{\mathbf{3}}$ sector (9 coherences): $\lambda_{3\bar{3}} \approx \mu^2$ (smallest eigenvalue — **soft mode**)
 
-**Связь с $|\gamma|$:** В минимуме вакуума флуктуации вдоль мягкой моды наибольшие. Из условия равновесия $\partial V / \partial |\gamma_{ij}| = 0$ в секторе $\mathbf{3}\to\bar{\mathbf{3}}$:
+**Relation to $|\gamma|$:** At the vacuum minimum the fluctuations along the soft mode are largest. From the equilibrium condition $\partial V / \partial |\gamma_{ij}| = 0$ in the $\mathbf{3}\to\bar{\mathbf{3}}$ sector:
 
 $$2\mu^2 |\gamma_{3\bar{3}}| - \lambda_3 |\gamma_{3\bar{3}}|^2 - \lambda_4 |\gamma_{3\bar{3}}|^3 = 0$$
 
-При малом Gap ($\varepsilon_{3\bar{3}} \approx 0$, режим конфайнмента) баланс $\mu^2$ против $\lambda_4$ даёт:
+At small Gap ($\varepsilon_{3\bar{3}} \approx 0$, confinement regime) the balance of $\mu^2$ against $\lambda_4$ gives:
 
-$$|\gamma_{3\bar{3}}|^2 \approx \frac{2\mu^2}{\lambda_4} = \frac{9}{2\pi^2} \cdot \mu^2 \quad (\text{при } \lambda_4^* = 4\pi^2/63)$$
+$$|\gamma_{3\bar{3}}|^2 \approx \frac{2\mu^2}{\lambda_4} = \frac{9}{2\pi^2} \cdot \mu^2 \quad (\text{at } \lambda_4^* = 4\pi^2/63)$$
 
-Для остальных секторов ($O$-направление, диагональные): $|\gamma_{\text{avg}}|^2 \approx \mu^2/\lambda_4^{(O)}$ с $\lambda_4^{(O)} \approx 9\lambda_4/\text{N}_{\text{eff}}$. Отсюда иерархия:
+For the remaining sectors (O-direction, diagonal): $|\gamma_{\text{avg}}|^2 \approx \mu^2/\lambda_4^{(O)}$ with $\lambda_4^{(O)} \approx 9\lambda_4/N_{\text{eff}}$. This gives the hierarchy:
 
 $$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} = \sqrt{\frac{\lambda_4^{(\text{avg})}}{\lambda_4^{(3\bar{3})}}} \approx \sqrt{\frac{\lambda_{3\bar{3}}}{\lambda_O}} \cdot \sqrt{N_{\text{eff}}}$$
 
-С $N_{\text{eff}} = 9$ когерентностями сектора $\mathbf{3}\to\bar{\mathbf{3}}$ и отношением собственных значений $\lambda_{3\bar{3}}/\lambda_O \approx 1/18$:
+With $N_{\text{eff}} = 9$ coherences of the $\mathbf{3}\to\bar{\mathbf{3}}$ sector and eigenvalue ratio $\lambda_{3\bar{3}}/\lambda_O \approx 1/18$:
 
 $$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} \approx \sqrt{9/18} \cdot \sqrt{9} \approx \frac{1}{\sqrt{2}} \cdot 3 \approx 2.1$$
 
-Более точный учёт $V_3$-вклада в мягкую моду (кубический потенциал понижает эффективную жёсткость $\mathbf{3}\to\bar{\mathbf{3}}$ сектора дополнительно на $\sim 70\%$) даёт:
+More precise accounting of the $V_3$ contribution to the soft mode (the cubic potential lowers the effective stiffness of the $\mathbf{3}\to\bar{\mathbf{3}}$ sector by an additional $\sim 70\%$) gives:
 
 $$\frac{|\gamma_{3\bar{3}}|}{|\bar{\gamma}|} \approx 2.8, \quad |\gamma_{3\bar{3}}| \approx 0.13, \quad |\bar{\gamma}| \approx 0.047$$
 
-**Числовая коррекция.** Поскольку $\sigma \propto |\gamma|^4$:
+**Numerical correction.** Since $\sigma \propto |\gamma|^4$:
 
-$$\sqrt{\sigma_{\text{corrected}}} = \sqrt{\sigma_{\text{naive}}} \cdot \left(\frac{|\gamma_{3\to\bar{3}}|}{|\bar{\gamma}|}\right)^2 \approx 60 \cdot (2.8)^2 \approx 60 \cdot 7.6 \approx 457 \text{ МэВ}$$
+$$\sqrt{\sigma_{\text{corrected}}} = \sqrt{\sigma_{\text{naive}}} \cdot \left(\frac{|\gamma_{3\to\bar{3}}|}{|\bar{\gamma}|}\right)^2 \approx 60 \cdot (2.8)^2 \approx 60 \cdot 7.6 \approx 457 \text{ MeV}$$
 
-Экспериментальное значение: $\sqrt{\sigma}_{\text{exp}} \approx 440$ МэВ. Расхождение $< 4\%$.
+Experimental value: $\sqrt{\sigma}_{\text{exp}} \approx 440$ MeV. Discrepancy $< 4\%$.
 
-:::note Статус секторной коррекции
-Отношение $|\gamma_{3\to\bar{3}}|/|\bar{\gamma}| \approx 2.8$ **выводится** из иерархии гессиана $V_{\text{Gap}}$ в уникальном вакууме (T-64 [Т]): сектор $\mathbf{3}\to\bar{\mathbf{3}}$ соответствует наименьшему собственному значению гессиана (мягкая мода). Качественный аргумент — мягкая мода $\Rightarrow$ наибольший $|\gamma|$ — **является следствием** T-64. Однако **численное значение** 2.8 зависит от конкретных параметров вакуума ($\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$) и точного вклада $V_3$ в жёсткость. Статус: **[С при T-64]**.
+:::note Status of the sectoral correction
+The ratio $|\gamma_{3\to\bar{3}}|/|\bar{\gamma}| \approx 2.8$ is **derived** from the Hessian hierarchy of $V_{\text{Gap}}$ at the unique vacuum (T-64 [T]): the $\mathbf{3}\to\bar{\mathbf{3}}$ sector corresponds to the smallest eigenvalue of the Hessian (soft mode). The qualitative argument — soft mode $\Rightarrow$ largest $|\gamma|$ — **is a consequence** of T-64. However the **numerical value** 2.8 depends on the specific vacuum parameters ($\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$) and the precise $V_3$ contribution to the stiffness. Status: **[C at T-64]**.
 :::
 
-**Шаг 6 (Закон площади).** Линейный потенциал $E(L) = \sigma L$ + топологическая стабильность трубки потока + компактность $(S^1)^{21}$ (нет утечки потока) → для минимальной поверхности $\Sigma$ с $\partial\Sigma = C$:
+**Step 6 (Area law).** Linear potential $E(L) = \sigma L$ + topological stability of the flux tube + compactness of $(S^1)^{21}$ (no flux leakage) → for the minimal surface $\Sigma$ with $\partial\Sigma = C$:
 
 $$\langle W_{\text{Gap}}(C) \rangle = \exp\left(-\sigma \cdot \mathrm{Area}(\Sigma_{\min})\right) \cdot \left(1 + O(e^{-6\mu^2/T})\right)$$
 
-Экспоненциальная коррекция от туннелирования через топологический барьер $6\mu^2 \sim M_P^2$ пренебрежимо мала.
+The exponential correction from tunnelling through the topological barrier $6\mu^2 \sim M_P^2$ is negligibly small.
 
 $\blacksquare$
 
 ---
 
-## 2. Струнное натяжение $\sigma$ из Gap-параметров
+## 2. String Tension $\sigma$ from Gap Parameters
 
-### 2.1 Теорема 1.2 (Струнное натяжение из Gap-параметров)
+### 2.1 Theorem 1.2 (String tension from Gap parameters)
 
-:::tip[Статус: \[С при T-64\]]
-Количественная оценка. Секторная иерархия [Т] (мягкая мода гессиана из T-64), численное значение коррекции $|\gamma_{3\bar{3}}| \approx 0.13$ зависит от параметров вакуума — статус [С при T-64]. Расхождение с экспериментом $< 4\%$.
+:::tip[Status: \[C at T-64\]]
+Quantitative estimate. Sectoral hierarchy [T] (soft Hessian mode from T-64), numerical value of the correction $|\gamma_{3\bar{3}}| \approx 0.13$ depends on vacuum parameters — status [C at T-64]. Discrepancy with experiment $< 4\%$.
 :::
 
-**(a)** Формула:
+**(a)** Formula:
 
 $$\sigma = \frac{\lambda_3^2 \bar{A}^2}{\mu^2} \cdot \mu_{\mathrm{phys}}^2$$
 
-где $\mu_{\mathrm{phys}} = \mu \cdot \omega_0$ — физический масштаб.
+where $\mu_{\mathrm{phys}} = \mu \cdot \omega_0$ is the physical scale.
 
-**(a')** Альтернативная форма через Gap-параметр трубки [Т]. В Gap-трубке между кварком и антикварком $\mathrm{Gap} = \varepsilon \ll 1$. Из вывода закона площади (Теорема 1.1, шаг 4) следует:
+**(a')** Alternative form via the Gap parameter of the tube [T]. In the Gap tube between quark and antiquark $\mathrm{Gap} = \varepsilon \ll 1$. From the derivation of the area law (Theorem 1.1, step 4) it follows:
 
 $$\sigma \sim \frac{\lambda_3 \cdot |\varepsilon|}{2}$$
 
-Эта формула непосредственно связывает конфайнмент-масштаб с кубической связью $\lambda_3$ и величиной Gap-щели $\varepsilon$ внутри цветовой трубки. При $\varepsilon \to 0$ натяжение обращается в нуль — конфайнмент исчезает (деконфайнмент, разд. 4). При конечном $\varepsilon$ величина $\sigma$ определяется конкуренцией октонионного ассоциатора $V_3$ и квадратичного потенциала $V_2$. Переход к полной формуле (a) требует перевода $\varepsilon$ в модули когерентностей $\bar{A}$ и физический масштаб $\mu_{\mathrm{phys}}$.
+This formula directly connects the confinement scale to the cubic coupling $\lambda_3$ and the size of the Gap gap $\varepsilon$ inside the colour tube. As $\varepsilon \to 0$ the tension vanishes — confinement disappears (deconfinement, §4). At finite $\varepsilon$ the value of $\sigma$ is determined by the competition between the octonionic associator $V_3$ and the quadratic potential $V_2$. The transition to the full formula (a) requires translating $\varepsilon$ into coherence moduli $\bar{A}$ and the physical scale $\mu_{\mathrm{phys}}$.
 
-**(b)** Из параметров теории: $\lambda_3 = 2\mu^2/(3\bar{|\gamma|})$, $\bar{A} \sim \bar{|\gamma|}^3$, поэтому:
+**(b)** From theory parameters: $\lambda_3 = 2\mu^2/(3\bar{|\gamma|})$, $\bar{A} \sim \bar{|\gamma|}^3$, therefore:
 
 $$\sigma \sim \frac{4\mu^4 \bar{|\gamma|}^6}{9\bar{|\gamma|}^2 \mu^2} \cdot \mu_{\mathrm{phys}}^2 = \frac{4\mu^2 \bar{|\gamma|}^4}{9} \cdot \mu_{\mathrm{phys}}^2$$
 
-**(c)** Численная оценка. $\sqrt{\sigma}_{\mathrm{exp}} \approx 440$ МэВ (из решёточных вычислений QCD). В Gap-единицах:
+**(c)** Numerical estimate. $\sqrt{\sigma}_{\mathrm{exp}} \approx 440$ MeV (from lattice QCD computations). In Gap units:
 
 $$\sqrt{\sigma} = \frac{2\mu \bar{|\gamma|}^2}{3} \cdot \mu_{\mathrm{phys}}$$
 
-С параметрами: $\mu^2 \approx 16.6$ $\to$ $\mu \approx 4.1$, $\bar{|\gamma|} \approx 0.047$, $\mu_{\mathrm{phys}} \approx 10$ ГэВ (QCD-масштаб):
+With parameters: $\mu^2 \approx 16.6$ $\to$ $\mu \approx 4.1$, $\bar{|\gamma|} \approx 0.047$, $\mu_{\mathrm{phys}} \approx 10$ GeV (QCD scale):
 
-$$\sqrt{\sigma} \approx \frac{2 \times 4.1 \times (0.047)^2}{3} \times 10 \approx \frac{2 \times 4.1 \times 0.0022}{3} \times 10 \approx 0.06 \text{ ГэВ}$$
+$$\sqrt{\sigma} \approx \frac{2 \times 4.1 \times (0.047)^2}{3} \times 10 \approx \frac{2 \times 4.1 \times 0.0022}{3} \times 10 \approx 0.06 \text{ GeV}$$
 
-**(d)** Результат $\sim 60$ МэВ, экспериментальное значение $\sim 440$ МэВ (фактор $\sim 7$). Источники расхождения:
-- $\bar{|\gamma|}$ в QCD-вакууме может отличаться от типичного значения
-- Непертурбативные поправки к $\sigma$ (инстантонные конфигурации, разд. 3)
-- Необходимость самосогласованного определения $\mu_{\mathrm{phys}}$ через $\Lambda_{\mathrm{QCD}}$
+**(d)** Result $\sim 60$ MeV, experimental value $\sim 440$ MeV (factor $\sim 7$). Sources of the discrepancy:
+- $\bar{|\gamma|}$ in the QCD vacuum may differ from the typical value
+- Non-perturbative corrections to $\sigma$ (instanton configurations, §3)
+- Necessity of a self-consistent determination of $\mu_{\mathrm{phys}}$ via $\Lambda_{\mathrm{QCD}}$
 
-### 2.2 Адронный спектр
+### 2.2 Hadron Spectrum
 
-Из конфайнмент-механизма следует, что наблюдаемые адроны — бесцветные Gap-конфигурации:
+From the confinement mechanism it follows that observable hadrons are colourless Gap configurations:
 
-**(a)** **Мезоны:** $q$-$\bar{q}$ пара, связанная Gap-трубкой в секторе 3-to-$\bar{3}$. Масса мезона $\sim \sqrt{\sigma} \cdot n$ (возбуждения струны, $n = 0, 1, 2, \ldots$).
+**(a)** **Mesons:** $q$-$\bar{q}$ pair bound by a Gap tube in the 3-to-$\bar{3}$ sector. Meson mass $\sim \sqrt{\sigma} \cdot n$ (string excitations, $n = 0, 1, 2, \ldots$).
 
-**(b)** **Барионы:** три кварка, связанные Y-образной Gap-трубкой. Три цветовых Gap-трубки сходятся в одной точке (барионная вершина).
+**(b)** **Baryons:** three quarks bound by a Y-shaped Gap tube. Three colour Gap tubes converge at a single point (baryon vertex).
 
-**(c)** **Глюболы:** замкнутые Gap-трубки (петли в секторе 3-to-$\bar{3}$) без кварков. Масса $\sim 2\sqrt{\sigma} \sim 1$ ГэВ.
+**(c)** **Glueballs:** closed Gap tubes (loops in the 3-to-$\bar{3}$ sector) without quarks. Mass $\sim 2\sqrt{\sigma} \sim 1$ GeV.
 
-### 2.3 Диагностика расхождения 7x {#диагностика-расхождения-σ}
+### 2.3 Diagnostics of the 7x Discrepancy {#диагностика-расхождения-σ}
 
-:::tip[Теорема (Диагностика расхождения $\sqrt{\sigma}$) [Т]]
-Расхождение фактора $\sim 7$ в $\sqrt{\sigma}$ (т.е. $\sim 49$ в $\sigma$) объясняется тремя источниками:
+:::tip[Theorem (Diagnostics of the $\sqrt{\sigma}$ discrepancy) [T]]
+The factor-$\sim 7$ discrepancy in $\sqrt{\sigma}$ (i.e. $\sim 49$ in $\sigma$) is explained by three sources:
 :::
 
-**Источник 1: Коллективные моды vs naive Gap-tube.**
+**Source 1: Collective modes vs naive Gap tube.**
 
-Формула $\sigma \sim \lambda_3|\varepsilon|/2$ использует одно-компонентную Gap-трубку. В секторе 3-to-$\bar{3}$ имеются 9 пар когерентностей $(A,L)$, $(A,E)$, $(A,U)$, $(S,L)$, …, каждая вносящая вклад в цветовую трубку. Коллективное натяжение:
+The formula $\sigma \sim \lambda_3|\varepsilon|/2$ uses a single-component Gap tube. In the 3-to-$\bar{3}$ sector there are 9 pairs of coherences $(A,L)$, $(A,E)$, $(A,U)$, $(S,L)$, …, each contributing to the colour tube. Collective tension:
 
 $$\sigma_{\text{collective}} = N_{\text{eff}}^{(\sigma)} \cdot \sigma_{\text{single}}$$
 
-Эффективное число коллективных мод: 8 глюонных каналов из 9 пар (одна комбинация — $U(1)$-синглет). $N_{\text{eff}} = 8$ для $\mathrm{SU}(3)_C$ конфайнмента:
+Effective number of collective modes: 8 gluon channels out of 9 pairs (one combination is the $U(1)$ singlet). $N_{\text{eff}} = 8$ for $\mathrm{SU}(3)_C$ confinement:
 
-$$\sqrt{\sigma_{\text{collective}}} = \sqrt{8} \times 60 \approx 170 \text{ МэВ}$$
+$$\sqrt{\sigma_{\text{collective}}} = \sqrt{8} \times 60 \approx 170 \text{ MeV}$$
 
-Расхождение уменьшается: $440/170 \approx 2.6$, фактор $\sim 2.5$, а не 7.
+The discrepancy decreases: $440/170 \approx 2.6$, factor $\sim 2.5$, not 7.
 
-**Источник 2: Нелинейные поправки к $V_3$.**
+**Source 2: Non-linear corrections to $V_3$.**
 
-При $\mathrm{Gap} \to 0$ в секторе 3-to-$\bar{3}$ приближение $\sin\theta \approx \theta$ не является точным (фазы $\bar{\theta} \sim O(1)$). Полный синус-потенциал даёт:
+As $\mathrm{Gap} \to 0$ in the 3-to-$\bar{3}$ sector the approximation $\sin\theta \approx \theta$ is not exact (phases $\bar{\theta} \sim O(1)$). The full sine potential gives:
 
 $$\sigma_{\text{exact}} = \lambda_3 \cdot |\bar{A}|_{\text{non-Fano}} \cdot \langle|\sin(3\bar{\theta})|\rangle$$
 
-При $\langle|\sin(3\bar{\theta})|\rangle \sim 2/\pi \approx 0.64$ — это **не помогает**, среднее снижается.
+At $\langle|\sin(3\bar{\theta})|\rangle \sim 2/\pi \approx 0.64$ — this **does not help**, the average decreases.
 
-**Источник 3 (ключевой): Значение $|\bar{\gamma}|$ в конфайнмент-секторе.**
+**Source 3 (key): Value of $|\bar{\gamma}|$ in the confinement sector.**
 
-Формула использует $|\bar{\gamma}| \approx 0.047$ — **средний** модуль когерентности. Но в конфайнмент-секторе $|\gamma|_{3\to\bar{3}}$ может отличаться. Из минимизации $V_{\text{Gap}}$ в секторе 3-to-$\bar{3}$ (см. [секторная иерархия $\varepsilon$](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)):
+The formula uses $|\bar{\gamma}| \approx 0.047$ — the **average** coherence modulus. But in the confinement sector $|\gamma|_{3\to\bar{3}}$ may differ. From minimisation of $V_{\text{Gap}}$ in the 3-to-$\bar{3}$ sector (see [sectoral hierarchy of $\varepsilon$](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε)):
 
-Если $|\gamma|_{3\to\bar{3}} \approx 0.13$ (в 2.8 раза выше среднего):
+If $|\gamma|_{3\to\bar{3}} \approx 0.13$ (2.8 times above average):
 
 $$\sqrt{\sigma} \propto |\gamma|^2 \quad \Rightarrow \quad \frac{\sigma_{\text{corrected}}}{\sigma_{\text{naive}}} = \left(\frac{0.13}{0.047}\right)^4 \approx 58$$
 
-$$\sqrt{\sigma_{\text{corrected}}} \approx 60 \times \sqrt{58} \approx 60 \times 7.6 \approx 457 \text{ МэВ}$$
+$$\sqrt{\sigma_{\text{corrected}}} \approx 60 \times \sqrt{58} \approx 60 \times 7.6 \approx 457 \text{ MeV}$$
 
-**Точное согласие!** Расхождение $7\times$ в $\sqrt{\sigma}$ = $49\times$ в $\sigma$ объясняется отношением $|\gamma|_{3\to\bar{3}} / |\bar{\gamma}|_{\text{avg}} \approx 2.8$ — фактором менее 3 в модуле когерентности (выводится из мягкой моды гессиана $V_{\text{Gap}}$, T-64 [Т]; численно [С при T-64]).
+**Exact agreement!** The $7\times$ discrepancy in $\sqrt{\sigma}$ = $49\times$ in $\sigma$ is explained by the ratio $|\gamma|_{3\to\bar{3}} / |\bar{\gamma}|_{\text{avg}} \approx 2.8$ — a factor of less than 3 in the coherence modulus (derived from the soft mode of the Hessian of $V_{\text{Gap}}$, T-64 [T]; numerically [C at T-64]).
 
-:::info[Вывод]
-Расхождение $7\times$ ($49\times$ в $\sigma$) объясняется тем, что:
-1. Конфайнмент-сектор $\mathbf{3}\to\bar{\mathbf{3}}$ соответствует **мягкой моде** гессиана $V_{\text{Gap}}$ — наименьшему собственному значению (из T-64 [Т])
-2. Мягкая мода $\Rightarrow$ наибольший $|\gamma_{3\bar{3}}| \approx 2.8\,\bar{\varepsilon}$ — вывод из гессиана (структурно [Т])
-3. Наивная формула использует средний $|\bar{\gamma}|$ вместо секторного
+:::info[Conclusion]
+The $7\times$ discrepancy ($49\times$ in $\sigma$) is explained by:
+1. The confinement sector $\mathbf{3}\to\bar{\mathbf{3}}$ corresponds to the **soft mode** of the Hessian of $V_{\text{Gap}}$ — the smallest eigenvalue (from T-64 [T])
+2. Soft mode $\Rightarrow$ largest $|\gamma_{3\bar{3}}| \approx 2.8\,\bar{\varepsilon}$ — derived from the Hessian (structurally [T])
+3. The naive formula uses the average $|\bar{\gamma}|$ instead of the sectoral one
 
-Согласие $\sqrt{\sigma} \approx 457$ МэВ vs наблюдаемое 440 МэВ ($< 4\%$) — следствие единого $V_{\text{Gap}}$ из [теоремы о единственном вакууме](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум).
+Agreement $\sqrt{\sigma} \approx 457$ MeV vs observed 440 MeV ($< 4\%$) — a consequence of the single $V_{\text{Gap}}$ from the [unique vacuum theorem](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум).
 
-Статус секторной иерархии: **[Т]** (мягкая мода = $\mathbf{3}\to\bar{\mathbf{3}}$ следует из T-64). Статус численного значения $|\gamma_{3\bar{3}}| \approx 0.13$: **[С при T-64]** (зависит от конкретных параметров вакуума $\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$).
+Status of the sectoral hierarchy: **[T]** (soft mode = $\mathbf{3}\to\bar{\mathbf{3}}$ follows from T-64). Status of the numerical value $|\gamma_{3\bar{3}}| \approx 0.13$: **[C at T-64]** (depends on specific vacuum parameters $\varepsilon_{33}$, $\varepsilon_{3\bar{3}}$).
 :::
 
 ---
 
-## 3. Структурное решение сильной CP-проблемы
+## 3. Structural Resolution of the Strong CP Problem
 
-### 3.0 Постановка проблемы {#постановка-сильного-cp}
+### 3.0 Problem Statement {#постановка-сильного-cp}
 
-В Стандартной модели лагранжиан QCD допускает $\theta$-член:
+In the Standard Model the QCD Lagrangian allows a $\theta$-term:
 
 $$\mathcal{L}_\theta = \frac{\theta_{\mathrm{QCD}}}{32\pi^2}\, G_{\mu\nu}^a \tilde{G}^{a,\mu\nu}$$
 
-Экспериментальное ограничение из нейтронного электрического дипольного момента (nEDM): $|\theta_{\mathrm{QCD}}| < 10^{-10}$ (PSI 2020). Необъяснённая малость $\theta$ — **проблема сильного CP** (одна из центральных нерешённых проблем физики частиц).
+Experimental bound from the neutron electric dipole moment (nEDM): $|\theta_{\mathrm{QCD}}| < 10^{-10}$ (PSI 2020). The unexplained smallness of $\theta$ is the **strong CP problem** (one of the central unsolved problems of particle physics).
 
-Три стандартных подхода: (1) аксион Печчеи-Куинн (динамическая релаксация), (2) безмассовый $u$-кварк (исключён данными по массам), (3) тонкая настройка (неэстетично).
+Three standard approaches: (1) Peccei–Quinn axion (dynamical relaxation), (2) massless $u$-quark (excluded by mass data), (3) fine-tuning (inelegant).
 
-**Gap-подход:** $\theta_{\mathrm{QCD}} = 0$ **точно** — структурное следствие октонионной алгебры. Не требуется аксион для CP, не тонкая настройка. Это подлинное предсказание теории, отличающее её от стандартных подходов.
+**Gap approach:** $\theta_{\mathrm{QCD}} = 0$ **exactly** — a structural consequence of the octonionic algebra. No axion required for CP, no fine-tuning. This is a genuine prediction of the theory, distinguishing it from standard approaches.
 
-### 3.1 Теорема T-99 (Структурное обращение $\theta_{\mathrm{QCD}}$) [Т] {#теорема-структурное-theta-qcd}
+### 3.1 Theorem T-99 (Structural vanishing of $\theta_{\mathrm{QCD}}$) [T] {#теорема-структурное-theta-qcd}
 
-:::tip[Статус: Теорема \[Т\] (T-99)]
-Строгий 7-шаговый вывод $\theta_{\mathrm{QCD}} = 0$ из аксиом A1–A5. Реальность $f_{ijk} \in \mathbb{R}$ (A1) → единственность PT-нечётного $V_3$ → единственный вакуум (T-64) → изотропность фаз → $\theta = 0$ точно. Непертурбативная стабильность из T-69, радиативная из T-66.
+:::tip[Status: Theorem \[T\] (T-99)]
+Rigorous 7-step derivation of $\theta_{\mathrm{QCD}} = 0$ from axioms A1–A5. Reality of $f_{ijk} \in \mathbb{R}$ (A1) → uniqueness of the PT-odd $V_3$ → unique vacuum (T-64) → isotropy of phases → $\theta = 0$ exactly. Non-perturbative stability from T-69, radiative from T-66.
 :::
 
-**Теорема.** В Gap-формализме $\theta_{\mathrm{QCD}} = 0$ **точно** (не приближённо). Доказательство в 7 шагов:
+**Theorem.** In the Gap formalism $\theta_{\mathrm{QCD}} = 0$ **exactly** (not approximately). Proof in 7 steps:
 
-**Шаг 1** (Реальность структурных констант). Аксиома A1 (септичность) фиксирует внутреннее пространство $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Октонионные структурные константы $f_{ijk} \in \{0, \pm 1\} \subset \mathbb{R}$ определены плоскостью Фано $\mathrm{PG}(2,2)$. Все коэффициенты потенциала $V_{\mathrm{Gap}}$ — вещественные. Кросс-ссылки: [Аксиома септичности](/docs/core/foundations/axiom-septicity), [правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk).
+**Step 1** (Reality of structure constants). Axiom A1 (septicity) fixes the inner space $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. The octonionic structure constants $f_{ijk} \in \{0, \pm 1\} \subset \mathbb{R}$ are defined by the Fano plane $\mathrm{PG}(2,2)$. All coefficients of the potential $V_{\mathrm{Gap}}$ are real. Cross-references: [Septicity axiom](/docs/core/foundations/axiom-septicity), [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk).
 
-**Шаг 2** (Единственность PT-нечётного потенциала). Потенциал $V_{\mathrm{Gap}}$ содержит три члена: $V_2$, $V_3$, $V_4$. Из них:
+**Step 2** (Uniqueness of the PT-odd potential). The potential $V_{\mathrm{Gap}}$ contains three terms: $V_2$, $V_3$, $V_4$. Of these:
 
-- $V_2 = \mu^2 \sum_{i < j} |\gamma_{ij}|^2 (1 - \cos 2\theta_{ij})$ — **PT-чётный** (зависит от $\cos\theta$, инвариантен при $\theta \to -\theta$).
-- $V_4 = \lambda_4 \sum |\gamma_{ij}|^4$ — **PT-чётный** (зависит только от модулей).
-- $V_3 = \lambda_3 \sum_{(i,j,k) \notin \mathrm{Fano}} |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — **единственный PT-нечётный** член ($\sin$ меняет знак при $T$-обращении).
+- $V_2 = \mu^2 \sum_{i < j} |\gamma_{ij}|^2 (1 - \cos 2\theta_{ij})$ — **PT-even** (depends on $\cos\theta$, invariant under $\theta \to -\theta$).
+- $V_4 = \lambda_4 \sum |\gamma_{ij}|^4$ — **PT-even** (depends only on moduli).
+- $V_3 = \lambda_3 \sum_{(i,j,k) \notin \mathrm{Fano}} |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ — the **unique PT-odd** term ($\sin$ changes sign under $T$-reversal).
 
-Следовательно, $V_3$ — **единственный** источник фазовой зависимости в потенциале. Кросс-ссылка: [термодинамика Gap](/docs/core/dynamics/gap-thermodynamics).
+Consequently, $V_3$ is the **unique** source of phase dependence in the potential. Cross-reference: [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics).
 
-**Шаг 3** (Единственность вакуума). Из T-64 [Т] ([глобальная минимизация $V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)): $G_2$-орбитная редукция $21D \to 5D$ приводит к **единственному** глобальному минимуму с положительно определённым гессианом ($\mathrm{Hess}(V_{\mathrm{Gap}})|_{\min} > 0$). Вакуум определён однозначно.
+**Step 3** (Uniqueness of the vacuum). From T-64 [T] ([global minimisation of $V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)): $G_2$-orbital reduction $21D \to 5D$ leads to a **unique** global minimum with positive-definite Hessian ($\mathrm{Hess}(V_{\mathrm{Gap}})|_{\min} > 0$). The vacuum is uniquely determined.
 
-**Шаг 4** (Изотропность фаз в минимуме). В минимуме $V_{\mathrm{Gap}}$:
+**Step 4** (Isotropy of phases at the minimum). At the minimum of $V_{\mathrm{Gap}}$:
 
-- Из $V_2$: $\sin^2\theta_{ij}$ минимизируется при $\theta_{ij} = 0$ или $\pi$ для всех $(i,j) \in 3\text{-to-}\bar{3}$.
-- Из $V_3$: для Фано-триплетов $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ минимизируется при $\theta_{ij} = \theta_{jk} = \theta_{ik} = 0$ (а не $\pi$, что увеличивает $V_3$).
-- Гессиан: собственное значение $\lambda_1 = 18\mu^2 > 0$ подтверждает, что $\theta_{ij} = 0 \;\forall (i,j) \in 3\text{-to-}\bar{3}$ — **устойчивый** минимум.
+- From $V_2$: $\sin^2\theta_{ij}$ is minimised at $\theta_{ij} = 0$ or $\pi$ for all $(i,j) \in 3\text{-to-}\bar{3}$.
+- From $V_3$: for Fano triplets $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ is minimised at $\theta_{ij} = \theta_{jk} = \theta_{ik} = 0$ (not $\pi$, which increases $V_3$).
+- Hessian: eigenvalue $\lambda_1 = 18\mu^2 > 0$ confirms that $\theta_{ij} = 0 \;\forall (i,j) \in 3\text{-to-}\bar{3}$ is a **stable** minimum.
 
-Вывод: **все фазы обращаются в нуль** в вакууме.
+Conclusion: **all phases vanish** in the vacuum.
 
-**Шаг 5** (Обращение $\theta_{\mathrm{QCD}}$). Параметр $\theta_{\mathrm{QCD}}$ в Gap-формализме:
+**Step 5** (Vanishing of $\theta_{\mathrm{QCD}}$). The parameter $\theta_{\mathrm{QCD}}$ in the Gap formalism:
 
 $$\theta_{\mathrm{QCD}} = \arg\left(\det(M_u \cdot M_d)\right) = \arg\left(\lambda_3^2 \cdot \prod_{(i,j) \in 3\text{-to-}\bar{3}} |\gamma_{ij}|\right)$$
 
-Из шагов 1–4: $\lambda_3 \in \mathbb{R}$ (шаг 1), $|\gamma_{ij}| \in \mathbb{R}_+$ (модули вещественны), все фазы $\theta_{ij} = 0$ (шаг 4). Следовательно, аргумент произведения вещественных положительных чисел **тождественно равен нулю**:
+From steps 1–4: $\lambda_3 \in \mathbb{R}$ (step 1), $|\gamma_{ij}| \in \mathbb{R}_+$ (moduli are real), all phases $\theta_{ij} = 0$ (step 4). Consequently, the argument of the product of real positive numbers is **identically zero**:
 
-$$\theta_{\mathrm{QCD}} = 0 \quad \text{(точно, не приближённо)}$$
+$$\theta_{\mathrm{QCD}} = 0 \quad \text{(exactly, not approximately)}$$
 
-**Шаг 6** (Непертурбативная стабильность). Из T-69 [Т] ([топологическая защита](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ гарантирует **топологическую стабильность** вакуума. Энергетический барьер:
+**Step 6** (Non-perturbative stability). From T-69 [T] ([topological protection](/docs/core/dynamics/composite-systems#теорема-тополог-защита)): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ guarantees **topological stability** of the vacuum. Energy barrier:
 
 $$\Delta V \geq 6\mu^2 > 0$$
 
-Инстантонные конфигурации (§3.3) **не нарушают** изотропность фаз: они перестраивают обмотки $\theta_{ij}$ при фиксированном вакууме $\theta_{ij} = 0$. Топологический заряд $\mathbb{Z}_2$ запрещает непрерывную деформацию к $\theta \neq 0$.
+Instanton configurations (§3.3) do **not violate** the isotropy of phases: they rearrange the windings $\theta_{ij}$ with the vacuum fixed at $\theta_{ij} = 0$. The topological charge $\mathbb{Z}_2$ forbids a continuous deformation to $\theta \neq 0$.
 
-**Шаг 7** (Радиативная устойчивость). Из T-66 [Т] ([UV-конечность](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)): радиативные поправки конечны и сохраняют $G_2$-симметрию. Коэффициент $\lambda_3$ бежит по RG, но **остаётся вещественным** (RG сохраняет реальность коэффициентов вещественного потенциала). Фазовая изотропность $\theta_{ij} = 0$ — свойство минимума, не нарушаемое петлевыми поправками.
+**Step 7** (Radiative stability). From T-66 [T] ([UV finiteness](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)): radiative corrections are finite and preserve $G_2$-symmetry. The coefficient $\lambda_3$ runs under RG but **remains real** (RG preserves the reality of coefficients of a real potential). Phase isotropy $\theta_{ij} = 0$ is a property of the minimum, not violated by loop corrections.
 
 $\blacksquare$
 
-### 3.2 Следствие: аксион без PQ-механизма {#следствие-аксион-без-pq}
+### 3.2 Corollary: Axion without PQ Mechanism {#следствие-аксион-без-pq}
 
-:::info[Переосмысление роли аксиона]
-В стандартной физике аксион Печчеи-Куинн решает проблему сильного CP через динамическую релаксацию $\theta \to 0$. В Gap-формализме $\theta_{\mathrm{QCD}} = 0$ следует **структурно** (T-99), поэтому аксион **не нужен** для CP. Его роль — чисто DM-кандидат.
+:::info[Reinterpretation of the axion's role]
+In standard physics the Peccei–Quinn axion solves the strong CP problem via dynamical relaxation $\theta \to 0$. In the Gap formalism $\theta_{\mathrm{QCD}} = 0$ follows **structurally** (T-99), so an axion is **not needed** for CP. Its role is purely as a DM candidate.
 :::
 
-Gap-аксион (§3.4, определение в [тёмная материя, §3.1](/docs/physics/cosmology-phys/dark-matter#31-определение)) — псевдоскалярное поле $a(x)$, нулевая мода фаз $\theta_{ij}$ в секторе $3$-to-$\bar{3}$ — **существует** как частица (голдстоуновский бозон из $(S^1)^{21}$ компактификации). Но его роль **принципиально другая**:
+The Gap axion (§3.4, definition in [dark matter, §3.1](/docs/physics/cosmology-phys/dark-matter#31-определение)) — a pseudoscalar field $a(x)$, the zero mode of phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector — **exists** as a particle (Goldstone boson from the $(S^1)^{21}$ compactification). But its role is **fundamentally different**:
 
-| | Стандартный аксион | Gap-аксион |
+| | Standard axion | Gap axion |
 |---|---|---|
-| Решает сильное CP? | Да (динамическая релаксация) | **Нет** (T-99: $\theta = 0$ структурно) |
-| DM-кандидат? | Да ($\sim 100\%$ при $f_a \sim 10^{12}$ ГэВ) | Да, **субдоминантный** ($\sim 1\%$ DM) |
-| Масса | $m_a \sim 10^{-5}$ эВ | $m_a \sim 3$ нэВ (из $f_a \sim 2 \times 10^{15}$ ГэВ) |
-| $f_a$ | Свободный параметр | **Фиксирован**: $f_a = \varepsilon \cdot M_P$ |
+| Solves strong CP? | Yes (dynamical relaxation) | **No** (T-99: $\theta = 0$ structurally) |
+| DM candidate? | Yes ($\sim 100\%$ at $f_a \sim 10^{12}$ GeV) | Yes, **subdominant** ($\sim 1\%$ DM) |
+| Mass | $m_a \sim 10^{-5}$ eV | $m_a \sim 3$ neV (from $f_a \sim 2 \times 10^{15}$ GeV) |
+| $f_a$ | Free parameter | **Fixed**: $f_a = \varepsilon \cdot M_P$ |
 
-Кросс-ссылка: [тёмная материя из Gap, §3](/docs/physics/cosmology-phys/dark-matter#3-qcd-аксион-из-компактификации-s121).
+Cross-reference: [dark matter from Gap, §3](/docs/physics/cosmology-phys/dark-matter#3-qcd-аксион-из-компактификации-s121).
 
-### 3.3 Следствие: двойная роль $V_3$ {#следствие-двойная-роль-v3}
+### 3.3 Corollary: Dual Role of $V_3$ {#следствие-двойная-роль-v3}
 
-Кубический потенциал $V_3$ (октонионный ассоциатор) играет **двойную роль**:
+The cubic potential $V_3$ (octonionic associator) plays a **dual role**:
 
-**(a)** Причина $\theta_{\mathrm{QCD}} = 0$. $V_3$ — единственный PT-нечётный член потенциала. В минимуме $V_{\mathrm{Gap}}$ он фиксирует **все** фазы на $\theta_{ij} = 0$, что делает $\theta_{\mathrm{QCD}} = 0$ структурным результатом (T-99, шаги 2 и 4).
+**(a)** Cause of $\theta_{\mathrm{QCD}} = 0$. $V_3$ is the unique PT-odd term of the potential. At the minimum of $V_{\mathrm{Gap}}$ it fixes **all** phases to $\theta_{ij} = 0$, making $\theta_{\mathrm{QCD}} = 0$ a structural result (T-99, steps 2 and 4).
 
-**(b)** Единственный источник CP-нарушения в CKM. Тот же $V_3$ генерирует комплексные фазы в Юкавских матрицах $Y^u$, $Y^d$ через смешивание поколений, что даёт ненулевую фазу $\delta_{\mathrm{CP}} \neq 0$ в CKM-матрице.
+**(b)** Unique source of CP violation in CKM. The same $V_3$ generates complex phases in the Yukawa matrices $Y^u$, $Y^d$ via generation mixing, giving a non-zero phase $\delta_{\mathrm{CP}} \neq 0$ in the CKM matrix.
 
-Это объясняет **CP-парадокс**: почему сильное CP-нарушение **равно нулю** ($\theta_{\mathrm{QCD}} = 0$), а слабое CP-нарушение **ненулевое** ($\delta_{\mathrm{CP}} \approx 69°$). Ответ: $V_3$ обнуляет **фазы вакуума** ($\theta_{ij} = 0$), но генерирует **межпоколенческие** фазы через петлевые поправки. Кросс-ссылка: [CKM-матрица, §4](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения).
+This explains the **CP paradox**: why strong CP violation is **zero** ($\theta_{\mathrm{QCD}} = 0$), while weak CP violation is **non-zero** ($\delta_{\mathrm{CP}} \approx 69°$). Answer: $V_3$ sets the **vacuum phases** to zero ($\theta_{ij} = 0$), but generates **inter-generational** phases via loop corrections. Cross-reference: [CKM matrix, §4](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения).
 
-### 3.4 Gap-инстантоны и $\theta$-вакуум {#gap-инстантоны}
+### 3.4 Gap Instantons and the $\theta$-Vacuum {#gap-инстантоны}
 
-**(a)** Топология: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$. Инстантон — отображение $S^3 \to \mathrm{SU}(3)$ с ненулевым числом намотки $n$.
+**(a)** Topology: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$. An instanton is a map $S^3 \to \mathrm{SU}(3)$ with non-zero winding number $n$.
 
-**(b)** Gap-инстантон. В Gap-терминах: инстантон — конфигурация $\theta_{ij}(x)$ в секторе 3-to-$\bar{3}$, при которой все 8 фаз совершают полный оборот от 0 до $2\pi$ при обходе трёхмерной сферы в пространственных координатах.
+**(b)** Gap instanton. In Gap language: an instanton is a configuration $\theta_{ij}(x)$ in the 3-to-$\bar{3}$ sector in which all 8 phases complete a full rotation from 0 to $2\pi$ upon traversal of a three-dimensional sphere in spatial coordinates.
 
-**(c)** Инстантонное действие:
+**(c)** Instanton action:
 
 $$S_{\mathrm{inst}} = \frac{8\pi^2}{g_s^2} = \frac{8\pi^2}{4\pi\,\alpha_s} = \frac{2\pi}{\alpha_s}$$
 
-В Gap-параметрах: $\alpha_s = g_s^2/(4\pi)$ определяется через Gap-константу связи в секторе 3-to-$\bar{3}$. Из связи $g_s \sim 1/\sqrt{\lambda_4 \cdot N_{\mathrm{eff}}}$:
+In Gap parameters: $\alpha_s = g_s^2/(4\pi)$ is determined via the Gap coupling constant in the 3-to-$\bar{3}$ sector. From the relation $g_s \sim 1/\sqrt{\lambda_4 \cdot N_{\mathrm{eff}}}$:
 
 $$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9}$$
 
-где 9 — число когерентностей сектора 3-to-$\bar{3}$.
+where 9 is the number of coherences in the 3-to-$\bar{3}$ sector.
 
-**(d)** $\theta$-вакуум. Полный вакуум — суперпозиция инстантонных секторов:
+**(d)** $\theta$-vacuum. The full vacuum is a superposition of instanton sectors:
 
 $$|\theta\rangle = \sum_{n=-\infty}^{\infty} e^{in\theta} |n\rangle$$
 
-Из T-99 (шаг 5): $\theta_{\mathrm{QCD}} = 0$ **точно**, поэтому физический вакуум = $|0\rangle$ — единственный инстантонный сектор без фазового множителя.
+From T-99 (step 5): $\theta_{\mathrm{QCD}} = 0$ **exactly**, so the physical vacuum = $|0\rangle$ — the unique instanton sector without a phase factor.
 
 ---
 
-## 4. Деконфайнмент и фазовый переход
+## 4. Deconfinement and Phase Transition
 
-### 4.1 Теорема 2.1 (Деконфайнмент как фазовый переход Gap)
+### 4.1 Theorem 2.1 (Deconfinement as a Gap Phase Transition)
 
-:::warning[Статусы раздела 4]
-Петля Полякова как параметр порядка — **[Т]** (из $\mathbb{Z}_3$-центра $\mathrm{SU}(3)_C$ [T-42e]). Критическая температура $T_c \sim 170$ МэВ — **[С при T-64]** (зависит от параметров вакуума). Кроссовер с динамическими кварками — **[Г]** (качественная модель).
+:::warning[Statuses of §4]
+Polyakov loop as order parameter — **[T]** (from the $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ [T-42e]). Critical temperature $T_c \sim 170$ MeV — **[C at T-64]** (depends on vacuum parameters). Crossover with dynamical quarks — **[H]** (qualitative model).
 :::
 
-При повышении $T_{\mathrm{eff}}$ выше критической $T_{\mathrm{deconf}}$ система проходит фазовый переход от конфайнмент-фазы к деконфайнмент-фазе:
+As $T_{\mathrm{eff}}$ rises above the critical value $T_{\mathrm{deconf}}$ the system undergoes a phase transition from the confinement phase to the deconfinement phase:
 
-**(a)** **Конфайнмент-фаза** ($T < T_{\mathrm{deconf}}$):
-- $\mathrm{Gap} \to 0$ в секторе 3-to-$\bar{3}$
-- Закон площади
-- Линейный потенциал $V(L) = \sigma \cdot L$
-- Кварки заключены в бесцветные адроны
+**(a)** **Confinement phase** ($T < T_{\mathrm{deconf}}$):
+- $\mathrm{Gap} \to 0$ in the 3-to-$\bar{3}$ sector
+- Area law
+- Linear potential $V(L) = \sigma \cdot L$
+- Quarks confined in colourless hadrons
 
-**(b)** **Деконфайнмент-фаза** ($T > T_{\mathrm{deconf}}$):
-- $\mathrm{Gap} > 0$ в секторе 3-to-$\bar{3}$ (тепловые флуктуации нарушают изотропию)
-- Закон периметра: $W(C) \sim \exp(-\mu \cdot P(C))$
-- Потенциал экранирован: $V(L) = \sigma \cdot L \cdot \exp(-L/\lambda_D)$
-- Свободные кварки и глюоны
+**(b)** **Deconfinement phase** ($T > T_{\mathrm{deconf}}$):
+- $\mathrm{Gap} > 0$ in the 3-to-$\bar{3}$ sector (thermal fluctuations break isotropy)
+- Perimeter law: $W(C) \sim \exp(-\mu \cdot P(C))$
+- Potential screened: $V(L) = \sigma \cdot L \cdot \exp(-L/\lambda_D)$
+- Free quarks and gluons
 
-**(c)** Критическая температура:
+**(c)** Critical temperature:
 
 $$T_{\mathrm{deconf}} = T_c^{(3\bar{3})} = \frac{\mu^2_{3\bar{3}}}{\Gamma_2 / \kappa_0 \cdot k_B \ln 9}$$
 
-из фазовой диаграммы Gap-теории, ограниченной на сектор 3-to-$\bar{3}$ ($N_{\mathrm{eff}} = 9$, а не 21).
+from the Gap-theory phase diagram restricted to the 3-to-$\bar{3}$ sector ($N_{\mathrm{eff}} = 9$, not 21).
 
-**(d)** Предсказание. Для 3-to-$\bar{3}$: $N_{\mathrm{eff}} = 9$, $\mu^2 \approx 16.6$ в Gap-единицах. Перевод в физические единицы через $\Lambda_{\mathrm{QCD}}$:
+**(d)** Prediction. For 3-to-$\bar{3}$: $N_{\mathrm{eff}} = 9$, $\mu^2 \approx 16.6$ in Gap units. Translation to physical units via $\Lambda_{\mathrm{QCD}}$:
 
-$$T_{\mathrm{deconf}} \sim \Lambda_{\mathrm{QCD}} \sim 170 \text{ МэВ}$$
+$$T_{\mathrm{deconf}} \sim \Lambda_{\mathrm{QCD}} \sim 170 \text{ MeV}$$
 
-— согласуется с решёточными вычислениями QCD ($T_c \approx 150\text{--}170$ МэВ для переходного кроссовера).
+— consistent with lattice QCD computations ($T_c \approx 150\text{--}170$ MeV for the crossover transition).
 
-### 4.2 Параметр порядка деконфайнмента (петля Полякова)
+### 4.2 Order Parameter of Deconfinement (Polyakov Loop)
 
-Фазовый переход конфайнмент–деконфайнмент характеризуется параметром порядка — петлёй Полякова $\langle P \rangle$:
+The confinement–deconfinement phase transition is characterised by an order parameter — the Polyakov loop $\langle P \rangle$:
 
 $$P = \frac{1}{N_c}\mathrm{Tr}\left[\mathcal{P}\exp\left(i\oint_0^{1/T} A_0^a T_a \, d\tau\right)\right]$$
 
-В Gap-формализме $A_0^a \sim \partial_\tau \theta_{ij}^{(a)}$, и петля Полякова измеряет голономию Gap-связности вдоль временно́й компактифицированной координаты $\tau \in [0, 1/T]$.
+In the Gap formalism $A_0^a \sim \partial_\tau \theta_{ij}^{(a)}$, and the Polyakov loop measures the holonomy of the Gap connection along the temporally compactified coordinate $\tau \in [0, 1/T]$.
 
-:::tip Теорема (Петля Полякова как параметр порядка) [Т] {#теорема-полякова-порядок}
-Петля Полякова $\langle P \rangle$ является параметром порядка деконфайнмента для чистого $\mathrm{SU}(3)_C$. Доказательство: $\mathrm{SU}(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T-42e [Т]]. Центр $Z(\mathrm{SU}(3)) = \mathbb{Z}_3$ действует на петлю Полякова как $P \mapsto e^{2\pi i k/3} P$, $k=0,1,2$. В конфайнмент-фазе $\mathbb{Z}_3$-симметрия точна → $\langle P \rangle = 0$ (единственное $\mathbb{Z}_3$-инвариантное значение). Деконфайнмент = спонтанное нарушение $\mathbb{Z}_3$ → $\langle P \rangle \neq 0$. Это стандартный результат (Светицкий–Яффе, 1982), применённый к $\mathrm{SU}(3)_C$, выведенному из $G_2$-структуры. $\blacksquare$
+:::tip Theorem (Polyakov loop as order parameter) [T] {#теорема-полякова-порядок}
+The Polyakov loop $\langle P \rangle$ is the order parameter of deconfinement for pure $\mathrm{SU}(3)_C$. Proof: $\mathrm{SU}(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T-42e [T]]. The centre $Z(\mathrm{SU}(3)) = \mathbb{Z}_3$ acts on the Polyakov loop as $P \mapsto e^{2\pi i k/3} P$, $k=0,1,2$. In the confinement phase $\mathbb{Z}_3$-symmetry is exact → $\langle P \rangle = 0$ (the unique $\mathbb{Z}_3$-invariant value). Deconfinement = spontaneous breaking of $\mathbb{Z}_3$ → $\langle P \rangle \neq 0$. This is the standard result (Svetitsky–Yaffe, 1982), applied to $\mathrm{SU}(3)_C$ derived from the $G_2$-structure. $\blacksquare$
 :::
 
-**(a)** При $T < T_c$: $\langle P \rangle = 0$ — центральная $\mathbb{Z}_3$-симметрия $\mathrm{SU}(3)_C$ не нарушена. Gap-фазы $\theta_{ij}$ усредняются до нуля при обходе термального круга. Свободная энергия одиночного кварка бесконечна: $F_q = -T\ln\langle P \rangle \to \infty$.
+**(a)** At $T < T_c$: $\langle P \rangle = 0$ — the centre $\mathbb{Z}_3$-symmetry of $\mathrm{SU}(3)_C$ is unbroken. The Gap phases $\theta_{ij}$ average to zero upon traversal of the thermal circle. The free energy of a single quark is infinite: $F_q = -T\ln\langle P \rangle \to \infty$.
 
-**(b)** При $T > T_c$: $\langle P \rangle \neq 0$ — центральная $\mathbb{Z}_3$-симметрия спонтанно нарушена. Тепловые флуктуации нарушают изотропию Gap-вакуума в секторе 3-to-$\bar{3}$, Gap приобретает ненулевое значение, и голономия становится нетривиальной. Свободная энергия кварка конечна.
+**(b)** At $T > T_c$: $\langle P \rangle \neq 0$ — the centre $\mathbb{Z}_3$-symmetry is spontaneously broken. Thermal fluctuations break the isotropy of the Gap vacuum in the 3-to-$\bar{3}$ sector, Gap acquires a non-zero value, and the holonomy becomes non-trivial. The quark free energy is finite.
 
-**(c)** Критическая температура [С при T-64]. Формула $T_c$ (§4.1) зависит от параметров вакуума T-64 [Т]; качественно $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ МэВ.
+**(c)** Critical temperature [C at T-64]. The formula for $T_c$ (§4.1) depends on the vacuum parameters T-64 [T]; qualitatively $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ MeV.
 
-**(d)** Природа перехода [Г]. Для чистой $\mathrm{SU}(3)$ (без динамических кварков) переход первого рода — $\langle P \rangle$ испытывает скачок. С $N_f = 2+1$ динамическими кварками переход размывается в кроссовер. В Gap-формализме: динамические кварки — фермионные Gap-конфигурации, их присутствие нарушает $\mathbb{Z}_3$-симметрию явно ($\langle P \rangle \neq 0$ уже при $T < T_c$), превращая фазовый переход в аналитический кроссовер.
+**(d)** Nature of the transition [H]. For pure $\mathrm{SU}(3)$ (without dynamical quarks) the transition is first order — $\langle P \rangle$ undergoes a jump. With $N_f = 2+1$ dynamical quarks the transition broadens into a crossover. In the Gap formalism: dynamical quarks are fermionic Gap configurations, their presence explicitly breaks $\mathbb{Z}_3$-symmetry ($\langle P \rangle \neq 0$ already at $T < T_c$), turning the phase transition into an analytic crossover.
 
-Вычислительная задача C18: конечно-температурная Gap-решётка. Реализуема как MVP-12 в SYNARC.
+Computational problem C18: finite-temperature Gap lattice. Realisable as MVP-12 in SYNARC.
 
-**(d)** Кварк-глюонная плазма (КГП). При $T \gg T_c$ система переходит в фазу кварк-глюонной плазмы, где:
-- $\mathrm{Gap}(\text{3-to-}\bar{3}) \sim O(1)$ — цветовые степени свободы деконфайнированы
-- Давление КГП: $p \approx \frac{\pi^2}{90}\left(2(N_c^2-1) + \frac{7}{2}N_c N_f\right)T^4$ — идеальный газ Стефана-Больцмана
-- Поправки $\sim \alpha_s(T)$ вычисляются стандартным пертурбативным RG (см. [ренормгруппу Gap](/docs/physics/gauge-symmetry/rg-flow))
+**(d)** Quark–gluon plasma (QGP). At $T \gg T_c$ the system enters the quark–gluon plasma phase, where:
+- $\mathrm{Gap}(\text{3-to-}\bar{3}) \sim O(1)$ — colour degrees of freedom are deconfined
+- QGP pressure: $p \approx \frac{\pi^2}{90}\left(2(N_c^2-1) + \frac{7}{2}N_c N_f\right)T^4$ — ideal Stefan–Boltzmann gas
+- Corrections $\sim \alpha_s(T)$ are computed by standard perturbative RG (see [Gap renormalisation group](/docs/physics/gauge-symmetry/rg-flow))
 
 ---
 
-## 5. Асимптотическая свобода
+## 5. Asymptotic Freedom
 
-Асимптотическая свобода — уменьшение константы связи $\alpha_s$ при росте энергии — фундаментальное свойство $\mathrm{SU}(3)_C$, обеспечивающее переход от конфайнмента (ИК) к свободным кваркам (УФ). В Gap-формализме асимптотическая свобода следует из [общей RG-структуры](/docs/physics/gauge-symmetry/rg-flow): бета-функция $\lambda_4$ в секторе 3-to-$\bar{3}$ при ограничении на $N_{\mathrm{eff}} = 9$ когерентностей воспроизводит стандартный однопетлевой результат QCD.
+Asymptotic freedom — the decrease of the coupling constant $\alpha_s$ with increasing energy — is a fundamental property of $\mathrm{SU}(3)_C$, ensuring the transition from confinement (IR) to free quarks (UV). In the Gap formalism asymptotic freedom follows from the [general RG structure](/docs/physics/gauge-symmetry/rg-flow): the beta function of $\lambda_4$ in the 3-to-$\bar{3}$ sector, restricted to $N_{\mathrm{eff}} = 9$ coherences, reproduces the standard one-loop QCD result.
 
-### 5.1 Теорема 3.1 (Бегущая константа связи)
+### 5.1 Theorem 3.1 (Running Coupling Constant)
 
-:::tip[Статус: Теорема \[Т\]]
-Константа связи $\mathrm{SU}(3)_C$ в Gap-формализме бежит по RG согласно стандартной формуле.
+:::tip[Status: Theorem \[T\]]
+The $\mathrm{SU}(3)_C$ coupling constant in the Gap formalism runs under RG according to the standard formula.
 :::
 
-**(a)** Однопетлевая бета-функция для $\alpha_s$ в секторе 3-to-$\bar{3}$:
+**(a)** One-loop beta function for $\alpha_s$ in the 3-to-$\bar{3}$ sector:
 
 $$\beta_{\alpha_s} = -\frac{\alpha_s^2}{2\pi}\left(\frac{11}{3}N_c - \frac{2}{3}N_f\right)$$
 
-В Gap-формализме: $N_c = 3$ (число цветов $= \dim(\text{3-сектор})$), $N_f$ — число активных фермионных поколений.
+In the Gap formalism: $N_c = 3$ (number of colours $= \dim(\text{3-sector})$), $N_f$ — number of active fermion generations.
 
-**(b)** Знак: при $N_f < 33/2 = 16.5$ (выполнено для SM с $N_f = 6$): $\beta_{\alpha_s} < 0$ $\to$ **асимптотическая свобода**. При понижении энергии (увеличении расстояния) $\alpha_s$ растёт $\to$ конфайнмент.
+**(b)** Sign: for $N_f < 33/2 = 16.5$ (satisfied for the SM with $N_f = 6$): $\beta_{\alpha_s} < 0$ $\to$ **asymptotic freedom**. At lower energy (larger distance) $\alpha_s$ grows $\to$ confinement.
 
-**(c)** Связь с Gap-параметрами:
+**(c)** Relation to Gap parameters:
 
 $$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9} = \frac{4\pi/63}{4\pi \cdot 9} \cdot \left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1}$$
 
-используя Вильсон-Фишеровское значение $\lambda_4^* = 4\pi^2/63$.
+using the Wilson–Fisher value $\lambda_4^* = 4\pi^2/63$.
 
-**(d)** $\Lambda_{\mathrm{QCD}}$ из Gap:
+**(d)** $\Lambda_{\mathrm{QCD}}$ from Gap:
 
 $$\Lambda_{\mathrm{QCD}} = \mu_{\mathrm{phys}} \cdot \exp\left(-\frac{2\pi}{(11 - 2N_f/3)\, \alpha_s(\mu_{\mathrm{phys}})}\right)$$
 
-### 5.1a Связь с RG-потоком Gap [Т]
+### 5.1a Relation to the Gap RG Flow [T]
 
-Бегущая константа связи $\alpha_s$ — частный случай [RG-потока параметров $V_{\mathrm{Gap}}$](/docs/physics/gauge-symmetry/rg-flow). Соответствие устанавливается следующим образом:
+The running coupling constant $\alpha_s$ is a special case of the [RG flow of $V_{\mathrm{Gap}}$ parameters](/docs/physics/gauge-symmetry/rg-flow). The correspondence is established as follows:
 
-**(a)** Общая однопетлевая $\beta$-функция для $\lambda_4$ (см. [ренормгруппу Gap, §2](/docs/physics/gauge-symmetry/rg-flow#однопетлевые)):
+**(a)** General one-loop $\beta$-function for $\lambda_4$ (see [Gap renormalisation group, §2](/docs/physics/gauge-symmetry/rg-flow#однопетлевые)):
 
 $$\beta_{\lambda_4} = -\epsilon\lambda_4 + \frac{(N+8)}{6}\frac{\lambda_4^2}{8\pi^2}$$
 
-При ограничении на сектор 3-to-$\bar{3}$: $N = N_{\mathrm{eff}} = 9$. Связь $\alpha_s = \lambda_4/(4\pi \cdot 9)$ и подстановка $\epsilon = 0$ (физические $d=4$ измерения) дают стандартную QCD-бету с правильным коэффициентом.
+Upon restriction to the 3-to-$\bar{3}$ sector: $N = N_{\mathrm{eff}} = 9$. The relation $\alpha_s = \lambda_4/(4\pi \cdot 9)$ and substitution of $\epsilon = 0$ (physical $d=4$ dimensions) give the standard QCD beta with the correct coefficient.
 
-**(b)** Вильсон-Фишеровская неподвижная точка $\lambda_4^* = 4\pi^2/63$ (из [RG-анализа](/docs/physics/gauge-symmetry/rg-flow)) определяет значение $\alpha_s$ на масштабе конфайнмента:
+**(b)** The Wilson–Fisher fixed point $\lambda_4^* = 4\pi^2/63$ (from [RG analysis](/docs/physics/gauge-symmetry/rg-flow)) determines the value of $\alpha_s$ at the confinement scale:
 
 $$\alpha_s^* = \frac{\lambda_4^*}{4\pi \cdot 9} = \frac{4\pi^2}{63 \cdot 36\pi} = \frac{\pi}{567} \approx 0.0055$$
 
-Это значение соответствует глубоко пертурбативному режиму. При RG-потоке к ИК ($\mu \to \Lambda_{\mathrm{QCD}}$) константа растёт до $\alpha_s \sim 1$, сигнализируя о конфайнменте.
+This value corresponds to the deep perturbative regime. Under RG flow to the IR ($\mu \to \Lambda_{\mathrm{QCD}}$) the coupling grows to $\alpha_s \sim 1$, signalling confinement.
 
-**(c)** Двухпетлевые поправки (см. [RG-поток, §3](/docs/physics/gauge-symmetry/rg-flow)) модифицируют бег $\alpha_s$ при промежуточных энергиях. RG-подавление $\lambda_3$ при потоке от $\mu_{\mathrm{Planck}}$ к $\mu_{\mathrm{EW}}$ (фактор $\sim 10^{-14.5}$) критично для количественных предсказаний углов смешивания CKM и бюджета $\Lambda$.
+**(c)** Two-loop corrections (see [RG flow, §3](/docs/physics/gauge-symmetry/rg-flow)) modify the running of $\alpha_s$ at intermediate energies. RG suppression of $\lambda_3$ in the flow from $\mu_{\mathrm{Planck}}$ to $\mu_{\mathrm{EW}}$ (factor $\sim 10^{-14.5}$) is critical for quantitative predictions of CKM mixing angles and the $\Lambda$ budget.
 
-### 5.2 Следствие (Бег масс кварков)
+### 5.2 Corollary (Running of Quark Masses)
 
-Массы кварков (определённые через Хиггс-связь) бегут по RG:
+Quark masses (defined via the Higgs coupling) run under RG:
 
 $$m_q(\mu) = m_q(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33 - 2N_f)}$$
 
-Аномальная размерность массы $\gamma_m = 12/(33 - 2N_f)$ — стандартный результат QCD. В Gap-формализме: $12 = 4 \cdot 3$, где 4 — число компонент кваркового дублета $Q_L$ в одном цвете, 3 — число цветов. Совпадение обеспечивается тем, что Gap-теория в секторе 3-to-$\bar{3}$ **сводится** к стандартной QCD.
+The anomalous mass dimension $\gamma_m = 12/(33 - 2N_f)$ is the standard QCD result. In the Gap formalism: $12 = 4 \cdot 3$, where 4 is the number of components of the quark doublet $Q_L$ in one colour, 3 is the number of colours. The agreement is ensured by the fact that Gap theory in the 3-to-$\bar{3}$ sector **reduces** to standard QCD.
 
 ---
 
-## 6. Аксиальная аномалия ABJ из Cliff(7)
+## 6. ABJ Axial Anomaly from Cliff(7)
 
-Аксиальная аномалия Адлера–Белла–Джекива (ABJ, 1969) — квантовое нарушение классической сохраняемости аксиального тока — воспроизводится в Gap-формализме через алгебру Клиффорда $\mathrm{Cliff}(7)$, лежащую в основе 7-мерной внутренней структуры.
+The Adler–Bell–Jackiw (ABJ, 1969) axial anomaly — quantum violation of the classical conservation of the axial current — is reproduced in the Gap formalism via the Clifford algebra $\mathrm{Cliff}(7)$ underlying the 7-dimensional internal structure.
 
-### 6.1 Аксиальный ток в Gap-формализме [Т]
+### 6.1 Axial Current in the Gap Formalism [T]
 
-:::tip[Статус: Теорема \[Т\]]
-Аксиальный ток и его аномалия полностью воспроизводятся из $\mathrm{Cliff}(7)$-структуры Gap-фермионов.
+:::tip[Status: Theorem \[T\]]
+The axial current and its anomaly are fully reproduced from the $\mathrm{Cliff}(7)$-structure of Gap fermions.
 :::
 
-**(a)** Хиральный оператор в Gap-формализме определяется через $\mathrm{Cliff}(7)$-элементы:
+**(a)** The chiral operator in the Gap formalism is defined via $\mathrm{Cliff}(7)$-elements:
 
 $$\gamma_5 = i\,\Gamma_O\,\Gamma_A\,\Gamma_S\,\Gamma_D$$
 
-где $\Gamma_X$ — генераторы $\mathrm{Cliff}(7)$, ассоциированные с 7 измерениями когерентности. Аксиальный ток:
+where $\Gamma_X$ are generators of $\mathrm{Cliff}(7)$ associated with the 7 coherence dimensions. Axial current:
 
 $$j_5^\mu = \sum_{\mathrm{fermions}} \bar{\chi}\,\gamma^\mu\,\gamma_5\,\chi = n_L^\mu - n_R^\mu$$
 
-где $n_L$ — число конфигураций с $\mathrm{Gap}(E,U) = 0$ (левые), $n_R$ — с $\mathrm{Gap}(E,U) \neq 0$ (правые).
+where $n_L$ is the number of configurations with $\mathrm{Gap}(E,U) = 0$ (left-handed), $n_R$ — with $\mathrm{Gap}(E,U) \neq 0$ (right-handed).
 
-**(b)** Классическая сохраняемость: в отсутствие калибровочных полей хиральность сохраняется ($\partial_\mu j_5^\mu = 0$). В Gap-терминах: $\mathrm{Gap}(E,U) = 0$ не может спонтанно стать $\mathrm{Gap}(E,U) \neq 0$ без взаимодействия.
+**(b)** Classical conservation: in the absence of gauge fields chirality is conserved ($\partial_\mu j_5^\mu = 0$). In Gap language: $\mathrm{Gap}(E,U) = 0$ cannot spontaneously become $\mathrm{Gap}(E,U) \neq 0$ without interaction.
 
-### 6.2 Квантовая аномалия из индексной теоремы [Т]
+### 6.2 Quantum Anomaly from the Index Theorem [T]
 
-**(a)** Оператор Дирака на Gap-пространстве:
+**(a)** Dirac operator on Gap space:
 
 $$D_{\mathrm{Gap}} = \sum_{\mu=0}^{3}\gamma^\mu D_\mu, \qquad D_\mu = \partial_\mu + A_\mu^a T_a$$
 
-где $A_\mu^a$ — Gap-калибровочное поле (как в разд. 1.2).
+where $A_\mu^a$ is the Gap gauge field (as in §1.2).
 
-**(b)** Индекс Дирака (теорема Атьи–Зингера):
+**(b)** Dirac index (Atiyah–Singer theorem):
 
 $$\mathrm{ind}(D) = n_+ - n_- = \frac{1}{32\pi^2}\int d^4x\, F_{\mu\nu}^a\,\tilde{F}^{a,\mu\nu}$$
 
-где $n_\pm$ — числа нулевых мод с положительной/отрицательной хиральностью, $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$ — дуальный тензор.
+where $n_\pm$ are the numbers of zero modes with positive/negative chirality, $\tilde{F}^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\rho\sigma}F_{\rho\sigma}$ is the dual tensor.
 
-**(c)** Аномальная дивергенция аксиального тока:
+**(c)** Anomalous divergence of the axial current:
 
 $$\partial_\mu j_5^\mu = \frac{N_f \cdot g_s^2}{16\pi^2}\, G_{\mu\nu}^a\,\tilde{G}^{a,\mu\nu}$$
 
-Коэффициент $N_f = 3$ — число фермионных поколений. В Gap-формализме: $g_s^2/(16\pi^2) = \alpha_s/(4\pi)$, где $\alpha_s = \lambda_4/(4\pi \cdot 9)$ (из разд. 5.1).
+The coefficient $N_f = 3$ is the number of fermion generations. In the Gap formalism: $g_s^2/(16\pi^2) = \alpha_s/(4\pi)$, where $\alpha_s = \lambda_4/(4\pi \cdot 9)$ (from §5.1).
 
-**(d)** Роль $\mathrm{Cliff}(7)$ [Т]. Стандартное доказательство аномалии (Фуджикава, 1979) основано на неинвариантности меры функционального интеграла. Адаптация к Gap-формализму: замена обычного оператора Дирака на Gap-Дирак не меняет топологической природы аномалии. Коэффициент определяется структурой алгебры Клиффорда; для физического подпространства $\mathrm{Cliff}(1,3) \subset \mathrm{Cliff}(7)$ результат совпадает со стандартным. Ключевой момент: $\gamma_5$ определён через **четыре** из семи генераторов $\mathrm{Cliff}(7)$ ($O, A, S, D$), и его антикоммутация с $D_{\mathrm{Gap}}$ гарантирует существование хиральной симметрии, нарушаемой на квантовом уровне.
+**(d)** Role of $\mathrm{Cliff}(7)$ [T]. The standard proof of the anomaly (Fujikawa, 1979) is based on the non-invariance of the path integral measure. Adaptation to the Gap formalism: replacing the ordinary Dirac operator by the Gap-Dirac operator does not change the topological nature of the anomaly. The coefficient is determined by the structure of the Clifford algebra; for the physical subspace $\mathrm{Cliff}(1,3) \subset \mathrm{Cliff}(7)$ the result coincides with the standard one. Key point: $\gamma_5$ is defined via **four** of the seven generators of $\mathrm{Cliff}(7)$ ($O, A, S, D$), and its anticommutation with $D_{\mathrm{Gap}}$ guarantees the existence of a chiral symmetry, broken at the quantum level.
 
-### 6.3 Распад $\pi^0 \to \gamma\gamma$ [Т]
+### 6.3 Decay $\pi^0 \to \gamma\gamma$ [T]
 
-Распад нейтрального пиона — классическое подтверждение ABJ-аномалии и числа цветов $N_c = 3$.
+The decay of the neutral pion is the classical confirmation of the ABJ anomaly and the number of colours $N_c = 3$.
 
-**(a)** Амплитуда:
+**(a)** Amplitude:
 
 $$\mathcal{A}(\pi^0 \to \gamma\gamma) = \frac{\alpha\, N_c}{2\pi\, f_\pi}\,\epsilon_{\mu\nu\rho\sigma}\,\epsilon_1^\mu\, k_1^\nu\, \epsilon_2^\rho\, k_2^\sigma$$
 
-где $N_c = 3 = \dim(\{A,S,D\})$ — число цветов из Gap-структуры, $f_\pi \approx 93$ МэВ — константа распада пиона.
+where $N_c = 3 = \dim(\{A,S,D\})$ is the number of colours from the Gap structure, $f_\pi \approx 93$ MeV is the pion decay constant.
 
-**(b)** Время жизни:
+**(b)** Lifetime:
 
-$$\tau(\pi^0) = \frac{64\pi}{\left(\alpha N_c / (\pi f_\pi)\right)^2 m_\pi^3} \approx 8.4 \times 10^{-17}\;\text{с}$$
+$$\tau(\pi^0) = \frac{64\pi}{\left(\alpha N_c / (\pi f_\pi)\right)^2 m_\pi^3} \approx 8.4 \times 10^{-17}\;\text{s}$$
 
-Наблюдаемое значение: $(8.5 \pm 0.5) \times 10^{-17}$ с. **Точное согласие** — подтверждает $N_c = 3$ из $G_2$-разложения.
+Observed value: $(8.5 \pm 0.5) \times 10^{-17}$ s. **Exact agreement** — confirms $N_c = 3$ from the $G_2$ decomposition.
 
-**(c)** Интерпретация в Gap-формализме. $\pi^0$ — суперпозиция кварк-антикварковых Gap-конфигураций $(u\bar{u} - d\bar{d})/\sqrt{2}$. Распад $\pi^0 \to \gamma\gamma$ — перестройка Gap-профиля: из конфигурации с $\mathrm{Gap}(\text{3-to-}\bar{3}) \neq 0$ (кварковая пара) в конфигурацию с $\mathrm{Gap} = 0$ (фотоны — безмассовые, бесцветные). Аномалия обеспечивает несохранение аксиального тока, разрешая этот переход.
+**(c)** Interpretation in the Gap formalism. $\pi^0$ is a superposition of quark–antiquark Gap configurations $(u\bar{u} - d\bar{d})/\sqrt{2}$. The decay $\pi^0 \to \gamma\gamma$ is a rearrangement of the Gap profile: from a configuration with $\mathrm{Gap}(\text{3-to-}\bar{3}) \neq 0$ (quark pair) to a configuration with $\mathrm{Gap} = 0$ (photons — massless, colourless). The anomaly ensures non-conservation of the axial current, permitting this transition.
 
-### 6.4 Аномальные тождества Уорда [Т]
+### 6.4 Anomalous Ward Identities [T]
 
-Из ABJ-аномалии следуют модифицированные тождества Уорда для аксиальных вершин:
+From the ABJ anomaly the modified Ward identities for axial vertices follow:
 
 $$q_\mu\,\Gamma_5^{\mu,ab}(p,q) = 2m\,\Gamma_5^{ab}(p,q) + \frac{\alpha_s}{2\pi}\,\delta^{ab}\,\epsilon_{\mu\nu\rho\sigma}\,p^\mu q^\nu\epsilon_1^\rho\epsilon_2^\sigma$$
 
-Второй член — аномальный вклад, отсутствующий классически. В Gap-формализме этот член возникает из нетривиальной топологии пространства Gap-конфигураций: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$ порождает инстантонные конфигурации (разд. 3), которые связывают аксиальную аномалию с $\theta$-вакуумом.
+The second term is the anomalous contribution, absent classically. In the Gap formalism this term arises from the non-trivial topology of the space of Gap configurations: $\pi_3(\mathrm{SU}(3)) = \mathbb{Z}$ generates instanton configurations (§3) that connect the axial anomaly with the $\theta$-vacuum.
 
-### 6.5 Отмена калибровочных аномалий (T-175b) [Т] {#теорема-отмена-калибровочных-аномалий}
+### 6.5 Cancellation of Gauge Anomalies (T-175b) [T] {#теорема-отмена-калибровочных-аномалий}
 
-:::tip Теорема (Отмена калибровочных аномалий УГМ) [Т] {#t-175b}
-Спектральная тройка УГМ ([T-53 [Т]](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) с унимодулярностью гарантирует **полную отмену** калибровочных аномалий $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$:
+:::tip Theorem (Cancellation of UHM gauge anomalies) [T] {#t-175b}
+The UHM spectral triple ([T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка)) with unimodularity guarantees **complete cancellation** of the $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ gauge anomalies:
 
-$$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{для всех калибровочных генераторов}$$
+$$\mathrm{tr}(T^a \{T^b, T^c\}) = 0 \quad \text{for all gauge generators}$$
 :::
 
-**Доказательство.**
+**Proof.**
 
-**Шаг 1 (Унимодулярность = отмена аномалий).** Alvarez, Gracia-Bondia, Martin (Phys. Lett. B364, 1995) доказали: в NCG-модели Стандартной модели условие унимодулярности $\det(u)|_{\mathcal{H}_{\text{int}}} = 1$ **строго эквивалентно** отмене калибровочных аномалий (при отсутствии правых нейтрино; с правым нейтрино — тоже верно с автоматической подстройкой гиперзарядов).
+**Step 1 (Unimodularity = anomaly cancellation).** Alvarez, Gracia-Bondia, Martin (Phys. Lett. B364, 1995) proved: in the NCG model of the Standard Model the unimodularity condition $\det(u)|_{\mathcal{H}_{\text{int}}} = 1$ is **strictly equivalent** to the cancellation of gauge anomalies (in the absence of right-handed neutrinos; with right-handed neutrinos — also true with automatic adjustment of hypercharges).
 
-**Шаг 2 (УГМ удовлетворяет унимодулярности).** Спектральная тройка T-53 [Т] имеет $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, реальную структуру $J$ (KO-dim 6) и Морита-эквивалентна алгебре Конна $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ ([T-175a](/docs/core/foundations/spacetime#алгебра-морита)). Унитарная группа $U(A_{\text{int}}) = U(1) \times U(3) \times U(3)$ после унимодулярности даёт:
+**Step 2 (UHM satisfies unimodularity).** The spectral triple T-53 [T] has $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$, real structure $J$ (KO-dim 6) and is Morita-equivalent to the Connes algebra $\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$ ([T-175a](/docs/core/foundations/spacetime#алгебра-морита)). The unitary group $U(A_{\text{int}}) = U(1) \times U(3) \times U(3)$ after unimodularity gives:
 
 $$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$$
 
-**Шаг 3 (Явная проверка).** Фермионное представление УГМ (из секторной декомпозиции + [ФЭ](/docs/physics/gauge-symmetry/standard-model#теорема-фэ)) для одного поколения:
+**Step 3 (Explicit verification).** The UHM fermion representation (from the sectoral decomposition + [HE](/docs/physics/gauge-symmetry/standard-model#теорема-фэ)) for one generation:
 
-| Фермион | $(\mathrm{SU}(3)_C, \mathrm{SU}(2)_L, Y)$ | Множественность |
+| Fermion | $(\mathrm{SU}(3)_C, \mathrm{SU}(2)_L, Y)$ | Multiplicity |
 |---------|------|------|
 | $Q_L$ | $(3, 2, +1/6)$ | 6 |
 | $u_R$ | $(3, 1, +2/3)$ | 3 |
@@ -563,85 +563,85 @@ $$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \math
 | $L_L$ | $(1, 2, -1/2)$ | 2 |
 | $e_R$ | $(1, 1, -1)$ | 1 |
 
-Проверка всех 5 условий отмены ($N_g = 3$ поколения выносятся как множитель):
+Verification of all 5 cancellation conditions ($N_g = 3$ generations factor out):
 
 - $\mathrm{tr}(Y) = 6 \cdot \frac{1}{6} + 3 \cdot \frac{2}{3} + 3 \cdot (-\frac{1}{3}) + 2 \cdot (-\frac{1}{2}) + 1 \cdot (-1) = 1 + 2 - 1 - 1 - 1 = 0$ $\checkmark$
 - $\mathrm{tr}(Y^3) = 6 \cdot \frac{1}{216} + 3 \cdot \frac{8}{27} + 3 \cdot (-\frac{1}{27}) + 2 \cdot (-\frac{1}{8}) + (-1) = 0$ $\checkmark$
 - $\mathrm{SU}(3)^2 \times \mathrm{U}(1)_Y$: $2 \cdot \frac{1}{6} - \frac{2}{3} + \frac{1}{3} = 0$ $\checkmark$
 - $\mathrm{SU}(2)^2 \times \mathrm{U}(1)_Y$: $3 \cdot \frac{1}{6} + (-\frac{1}{2}) = 0$ $\checkmark$
-- Гравитационная $\mathrm{tr}(Y) = 0$ — совпадает с первым. $\checkmark$
+- Gravitational $\mathrm{tr}(Y) = 0$ — coincides with the first. $\checkmark$
 
-Все аномальные коэффициенты обращаются в ноль. $\blacksquare$
+All anomaly coefficients vanish. $\blacksquare$
 
-:::info Связь с ABJ-аномалией
-Разд. 6.1–6.4 доказывают **хиральную** ABJ-аномалию ($\partial_\mu j_5^\mu \neq 0$) — корректную аномалию, которая **должна** существовать. T-175b доказывает **отмену калибровочных** аномалий ($\mathrm{tr}(T^a\{T^b,T^c\}) = 0$) — условие непротиворечивости, которое должно быть **выполнено**. Оба результата согласованы: хиральная аномалия нарушает глобальную симметрию, калибровочные аномалии отменены для локальной симметрии.
+:::info Relation to the ABJ anomaly
+Sections 6.1–6.4 prove the **chiral** ABJ anomaly ($\partial_\mu j_5^\mu \neq 0$) — the correct anomaly that **must** exist. T-175b proves the **cancellation of gauge** anomalies ($\mathrm{tr}(T^a\{T^b,T^c\}) = 0$) — the consistency condition that **must be satisfied**. Both results are consistent: the chiral anomaly breaks a global symmetry, the gauge anomalies are cancelled for the local symmetry.
 :::
 
 ---
 
-## 7. Полная картина конфайнмента в Gap-формализме
+## 7. Complete Picture of Confinement in the Gap Formalism
 
-### 7.1 Схема
+### 7.1 Diagram
 
 ```
- UV (высокие энергии) IR (низкие энергии)
+ UV (high energies) IR (low energies)
  Gap(3-to-3̄) ~ O(1) Gap(3-to-3̄) → 0
  αs ≪ 1 αs ~ 1
  ─────────────────────────────────────────────────→
- Свободные кварки Конфайнмент
- Закон периметра W(C) Закон площади W(C)
+ Free quarks Confinement
+ Perimeter law W(C) Area law W(C)
  V(L) → const V(L) = σ·L
 
- ←── Асимптотическая свобода ───→
+ ←── Asymptotic freedom ───→
  ←── RG: βα < 0 ───────────────→
 ```
 
-### 7.2 Самосогласованность
+### 7.2 Self-Consistency
 
-Конфайнмент в Gap-теории самосогласован:
+Confinement in Gap theory is self-consistent:
 
-1. $\mathrm{SU}(3)_C$ возникает из $G_2$ как стабилизатор O-направления [Т]
-2. 8 глюонов — флуктуации Gap-фаз в секторе 3-to-$\bar{3}$ [Т]
-3. $\mathrm{Gap} \to 0$ в этом секторе создаёт условия для конфайнмента [Т]
-4. $V_3$ генерирует линейный потенциал (закон площади) [Т] (: топологическое доказательство); струнное натяжение $\sigma \sim \lambda_3|\varepsilon|/2$ [Т]
-5. Струнное натяжение выражается через Gap-параметры [С при T-64] (наивное расхождение $\sim 7\times$; [диагностика](#диагностика-расхождения-σ): секторная коррекция из мягкой моды гессиана $\to$ $\sim 457$ МэВ; иерархия [Т], численное значение [С при T-64])
-6. $\theta_{\mathrm{QCD}} = 0$ точно — структурное следствие реальности $f_{ijk}$ и единственности вакуума (T-99 [Т])
-7. Деконфайнмент при $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ МэВ [С при T-64]; параметр порядка — петля Полякова [Т] (из $\mathbb{Z}_3$-центра $\mathrm{SU}(3)_C$ = Stab$_{G_2}(e_O)$ [T-42e]); кроссовер с кварками [Г]
-8. Асимптотическая свобода воспроизводится стандартно [Т]; связь с [RG-потоком](/docs/physics/gauge-symmetry/rg-flow) через $\lambda_4$ [Т]
-9. ABJ-аномалия из $\mathrm{Cliff}(7)$: $\partial_\mu j_5^\mu = (N_f g_s^2/16\pi^2)\,G\tilde{G}$ [Т]
-10. Распад $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ с (согласие с PDG) [Т]
-11. Отмена **калибровочных** аномалий: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ из спектральной тройки + унимодулярность (T-175b [Т])
+1. $\mathrm{SU}(3)_C$ arises from $G_2$ as the stabiliser of the O-direction [T]
+2. 8 gluons are fluctuations of Gap phases in the 3-to-$\bar{3}$ sector [T]
+3. $\mathrm{Gap} \to 0$ in this sector creates the conditions for confinement [T]
+4. $V_3$ generates a linear potential (area law) [T] (topological proof); string tension $\sigma \sim \lambda_3|\varepsilon|/2$ [T]
+5. String tension expressed via Gap parameters [C at T-64] (naive discrepancy $\sim 7\times$; [diagnostics](#диагностика-расхождения-σ): sectoral correction from the soft Hessian mode $\to$ $\sim 457$ MeV; hierarchy [T], numerical value [C at T-64])
+6. $\theta_{\mathrm{QCD}} = 0$ exactly — structural consequence of the reality of $f_{ijk}$ and the uniqueness of the vacuum (T-99 [T])
+7. Deconfinement at $T_c \sim \Lambda_{\mathrm{QCD}} \sim 170$ MeV [C at T-64]; order parameter — Polyakov loop [T] (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ = Stab$_{G_2}(e_O)$ [T-42e]); crossover with quarks [H]
+8. Asymptotic freedom reproduced in the standard way [T]; relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow) via $\lambda_4$ [T]
+9. ABJ anomaly from $\mathrm{Cliff}(7)$: $\partial_\mu j_5^\mu = (N_f g_s^2/16\pi^2)\,G\tilde{G}$ [T]
+10. Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s (agreement with PDG) [T]
+11. Cancellation of **gauge** anomalies: $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ from the spectral triple + unimodularity (T-175b [T])
 
 ---
 
-## 8. Сводка статусов
+## 8. Status Summary
 
-| Результат | Статус |
+| Result | Status |
 |-----------|--------|
-| Петля Вильсона: топологический закон площади | [Т] |
-| Струнное натяжение $\sqrt{\sigma} \approx 457$ МэВ из Gap-трубки: иерархия гессиана [Т], численное значение [С при T-64] | [С при T-64] |
-| Струнное натяжение из Gap-параметров (наивная $\sim 60$ МэВ; секторная коррекция из мягкой моды гессиана $\sim 457$ МэВ vs 440 МэВ) | [С при T-64] |
-| Структурное $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-шаговый вывод из A1–A5 | [Т] |
-| Петля Полякова как параметр порядка деконфайнмента (из $\mathbb{Z}_3$-центра $\mathrm{SU}(3)_C$ [T-42e]) | [Т] |
-| Критическая температура $T_c \sim 170$ МэВ | [С при T-64] |
-| Кроссовер с динамическими кварками ($N_f = 2+1$) | [Г] |
-| Асимптотическая свобода (связь с [RG-потоком](/docs/physics/gauge-symmetry/rg-flow)) | [Т] |
-| Бег масс кварков | [Т] |
-| ABJ-аномалия (хиральная) из $\mathrm{Cliff}(7)$; индексная теорема | [Т] |
-| Отмена калибровочных аномалий $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ (T-175b) | [Т] |
-| Распад $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ с | [Т] |
-| Аномальные тождества Уорда для аксиальных вершин | [Т] |
+| Wilson loop: topological area law | [T] |
+| String tension $\sqrt{\sigma} \approx 457$ MeV from Gap tube: Hessian hierarchy [T], numerical value [C at T-64] | [C at T-64] |
+| String tension from Gap parameters (naive $\sim 60$ MeV; sectoral correction from soft Hessian mode $\sim 457$ MeV vs 440 MeV) | [C at T-64] |
+| Structural $\theta_{\mathrm{QCD}} = 0$ (T-99): 7-step derivation from A1–A5 | [T] |
+| Polyakov loop as deconfinement order parameter (from $\mathbb{Z}_3$ centre of $\mathrm{SU}(3)_C$ [T-42e]) | [T] |
+| Critical temperature $T_c \sim 170$ MeV | [C at T-64] |
+| Crossover with dynamical quarks ($N_f = 2+1$) | [H] |
+| Asymptotic freedom (relation to [RG flow](/docs/physics/gauge-symmetry/rg-flow)) | [T] |
+| Running of quark masses | [T] |
+| ABJ anomaly (chiral) from $\mathrm{Cliff}(7)$; index theorem | [T] |
+| Cancellation of gauge anomalies $\mathrm{tr}(T^a\{T^b,T^c\}) = 0$ (T-175b) | [T] |
+| Decay $\pi^0 \to \gamma\gamma$: $\tau = 8.4 \times 10^{-17}$ s | [T] |
+| Anomalous Ward identities for axial vertices | [T] |
 
-:::warning[Открытые проблемы]
-1. **Глюбольный спектр.** Предсказание масс глюболов из Gap-параметров — непертурбативная задача.
-2. **Аномалия в гравитационном секторе.** Смешанная гравитационно-аксиальная аномалия $\partial_\mu j_5^\mu \supset R\tilde{R}$ в Gap-формализме требует полного учёта $\mathrm{Cliff}(7)$-спектра, включая O-направление. Связь с эмерджентной гравитацией — открытый вопрос [О].
+:::warning[Open problems]
+1. **Glueball spectrum.** Prediction of glueball masses from Gap parameters is a non-perturbative problem.
+2. **Anomaly in the gravitational sector.** The mixed gravitational–axial anomaly $\partial_\mu j_5^\mu \supset R\tilde{R}$ in the Gap formalism requires full accounting of the $\mathrm{Cliff}(7)$-spectrum, including the O-direction. The connection to emergent gravity is an open question [O].
 :::
 
 
 ---
 
-**Связанные документы:**
-- [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure)
-- [Стандартная модель из G₂](/docs/physics/gauge-symmetry/standard-model)
-- [РГ-поток](/docs/physics/gauge-symmetry/rg-flow)
-- [Единственность вакуума](/docs/proofs/categorical/uniqueness-theorem)
+**Related documents:**
+- [G₂-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure)
+- [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model)
+- [RG flow](/docs/physics/gauge-symmetry/rg-flow)
+- [Vacuum uniqueness](/docs/proofs/categorical/uniqueness-theorem)

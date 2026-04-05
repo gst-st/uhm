@@ -1,300 +1,308 @@
 ---
 sidebar_position: 6
-title: "Ренормгруппа Gap"
+title: "Gap Renormalization Group"
 slug: /physics/gauge-symmetry/rg-flow
-description: "β-функции V_Gap (1-loop, 2-loop, 3-loop), неподвижные точки (гауссова, Вильсон-Фишеровская, октонионная), конформное окно, c-теорема, RG-подавление λ₃"
+description: "β-functions of V_Gap (1-loop, 2-loop, 3-loop), fixed points (Gaussian, Wilson-Fisher, octonionic), conformal window, c-theorem, RG-suppression of λ₃"
 ---
 
-# Ренормгруппа Gap
+# Gap Renormalization Group
 
-:::info Для кого эта глава
-$\beta$-функции потенциала $V_{\text{Gap}}$, неподвижные точки и конформное окно. Читатель узнает о RG-подавлении кубической связи $\lambda_3$ и его роли в бюджете космологической постоянной.
+:::info For whom this chapter is intended
+$\beta$-functions of the potential $V_{\text{Gap}}$, fixed points, and the conformal window. The reader will learn about the RG-suppression of the cubic coupling $\lambda_3$ and its role in the cosmological constant budget.
 :::
 
-Ренормгруппа (RG) описывает трансформацию параметров [потенциала $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics) при изменении масштаба наблюдения. Однопетлевые, двухпетлевые и трёхпетлевые $\beta$-функции, неподвижные точки и RG-подавление кубической связи $\lambda_3$ — центральные результаты для [бюджета $\Lambda$](/docs/proofs/gap/lambda-budget) и [фазовой диаграммы](/docs/core/dynamics/gap-phase-diagram).
+The renormalization group (RG) describes the transformation of the parameters of the [potential $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics) as the observation scale changes. The one-loop, two-loop, and three-loop $\beta$-functions, fixed points, and RG-suppression of the cubic coupling $\lambda_3$ are the central results for the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) and the [phase diagram](/docs/core/dynamics/gap-phase-diagram).
 
 ---
 
-## 1. Постановка {#постановка}
+## 1. Setup {#постановка}
 
-Потенциал $V_{\text{Gap}}$ содержит три параметра: $\mu^2$, $\lambda_3$, $\lambda_4$. При изменении порогового масштаба наблюдения $\omega^*$ быстрые моды интегрируются, и эффективные параметры «плывут».
+The potential $V_{\text{Gap}}$ contains three parameters: $\mu^2$, $\lambda_3$, $\lambda_4$. As the threshold observation scale $\omega^*$ changes, the fast modes are integrated out and the effective parameters "run."
 
-**Определение (Масштаб наблюдения).** В Gap-теории «масштаб» — пороговая частота $\omega^*$ наблюдения Gap-флуктуаций. При уменьшении $\omega^*$ быстрые моды интегрируются через вильсоновскую процедуру.
+**Definition (Observation scale).** In Gap theory, the "scale" is the threshold frequency $\omega^*$ of observing Gap fluctuations. As $\omega^*$ decreases, the fast modes are integrated out via the Wilsonian procedure.
 
-**Вильсоновская процедура для Gap.** Эффективное действие получается интегрированием Gap-флуктуаций с частотами $\omega \in [\omega^* - \delta\omega^*, \omega^*]$:
+**Wilsonian procedure for Gap.** The effective action is obtained by integrating out Gap fluctuations with frequencies $\omega \in [\omega^* - \delta\omega^*, \omega^*]$:
 
 $$
 S_{\text{eff}}[\theta_<] = -\ln \int \mathcal{D}\theta_> \, \exp\bigl(-S[\theta_< + \theta_>]\bigr)
 $$
 
-В однопетлевом приближении: $S_{\text{eff}} \approx S[\theta_<] + \tfrac{1}{2}\operatorname{Tr}\ln(\delta^2 S / \delta\theta^2)$. Матрица вторых производных $V_{\text{Gap}}$ по $\theta$ — $21 \times 21$ гессиан, диагональный в среднеполевом приближении. Вычисление следа и перенормировка УФ-расходимостей дают $\beta$-функции, числовые множители которых определяются комбинаторикой [Фано-плоскости](/docs/physics/gauge-symmetry/fano-selection-rules).
+In the one-loop approximation: $S_{\text{eff}} \approx S[\theta_<] + \tfrac{1}{2}\operatorname{Tr}\ln(\delta^2 S / \delta\theta^2)$. The matrix of second derivatives of $V_{\text{Gap}}$ with respect to $\theta$ is a $21 \times 21$ Hessian, diagonal in the mean-field approximation. Computing the trace and renormalizing UV divergences yields the $\beta$-functions, whose numerical coefficients are determined by the combinatorics of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules).
 
 ---
 
-## 2. Однопетлевые $\beta$-функции [Т] {#однопетлевые}
+## 2. One-Loop $\beta$-Functions [T] {#однопетлевые}
 
-:::tip Теорема 2.1 (Однопетлевые $\beta$-функции Gap-теории) [Т]
-**(a)** Массовый параметр:
+:::tip Theorem 2.1 (One-loop $\beta$-functions of Gap theory) [T]
+**(a)** Mass parameter:
 
 $$
 \beta_{\mu^2}^{(1)} = -\frac{21\lambda_4}{8\pi^2}\mu^2 + \frac{7\lambda_3^2}{16\pi^2}
 $$
 
-Множитель 21 — число когерентностей, 7 — число [Фано-триплетов](/docs/physics/gauge-symmetry/fano-selection-rules).
+The factor 21 is the number of coherences, 7 is the number of [Fano triplets](/docs/physics/gauge-symmetry/fano-selection-rules).
 
-**(b)** Кубическая константа:
+**(b)** Cubic constant:
 
 $$
 \beta_{\lambda_3}^{(1)} = -\frac{15\lambda_3\lambda_4}{8\pi^2}
 $$
 
-Кубическая связь **убывает** с масштабом ($\lambda_3 \to 0$ в ИК-пределе). $V_3$ — **ИК-нерелевантный** оператор.
+The cubic coupling **decreases** with scale ($\lambda_3 \to 0$ in the IR limit). $V_3$ is an **IR-irrelevant** operator.
 
-**(c)** Квартичная константа:
+**(c)** Quartic constant:
 
 $$
 \beta_{\lambda_4}^{(1)} = \frac{63\lambda_4^2}{4\pi^2} - \frac{7\lambda_3^2}{8\pi^2\mu^2}
 $$
 
-Множители 21, 7, 15 — из подсчёта числа когерентностей, Фано-триплетов и не-Фано-троек.
+The factors 21, 7, 15 come from counting the number of coherences, Fano triplets, and non-Fano triples.
 :::
 
-### Вывод множителей из комбинаторики Фано-плоскости [Т]
+### Derivation of Factors from Fano Plane Combinatorics [T]
 
-Числовые коэффициенты $\beta$-функций определяются исключительно структурой [Фано-плоскости](/docs/physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$:
+The numerical coefficients of the $\beta$-functions are determined entirely by the structure of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$:
 
-| Комбинаторный объект | Число | Роль в $\beta$-функции |
+| Combinatorial object | Number | Role in $\beta$-function |
 |---|---|---|
-| Когерентности $\gamma_{ij}$ | $\binom{7}{2} = 21$ | Общий множитель в $\beta_{\mu^2}$ |
-| Фано-триплеты $(i,j,k)$ на линии | 7 | Кубический вклад в $\beta_{\mu^2}$, $\beta_{\lambda_4}$ |
-| Не-Фано-тройки | $\binom{7}{3} - 7 = 28$ | Коррекция к $\beta_{\lambda_3}$; эффективно 15 после учёта симметрии |
-| Квартичные пары $(ij, kl)$ | $21 \times 3 = 63$ | Первый член $\beta_{\lambda_4}$ |
+| Coherences $\gamma_{ij}$ | $\binom{7}{2} = 21$ | Overall factor in $\beta_{\mu^2}$ |
+| Fano triplets $(i,j,k)$ on a line | 7 | Cubic contribution to $\beta_{\mu^2}$, $\beta_{\lambda_4}$ |
+| Non-Fano triples | $\binom{7}{3} - 7 = 28$ | Correction to $\beta_{\lambda_3}$; effectively 15 after accounting for symmetry |
+| Quartic pairs $(ij, kl)$ | $21 \times 3 = 63$ | First term of $\beta_{\lambda_4}$ |
 
-Множитель 15 в $\beta_{\lambda_3}^{(1)}$ возникает как число пар когерентностей, которые взаимодействуют через квартичную вершину с данной кубической вершиной: для каждого из 7 Фано-триплетов существует $21 - 7 - 14/7 \cdot 3 = 15$ независимых каналов квартичной связи (с учётом $G_2$-инвариантности).
+The factor 15 in $\beta_{\lambda_3}^{(1)}$ arises as the number of coherence pairs that interact via the quartic vertex with a given cubic vertex: for each of the 7 Fano triplets there are $21 - 7 - 14/7 \cdot 3 = 15$ independent quartic coupling channels (accounting for $G_2$-invariance).
 
-**Следствие.** PT-нарушающий кубический член $V_3$ — ИК-нерелевантный: на больших масштабах он подавлен. Стрела Gap — **ультрафиолетовый** эффект, значимый на масштабе отдельных когерентностей, но подавленный на коллективном уровне.
+**Corollary.** The PT-breaking cubic term $V_3$ is IR-irrelevant: at large scales it is suppressed. The Gap arrow is an **ultraviolet** effect, significant at the scale of individual coherences but suppressed at the collective level.
 
-### 2.1 Безразмерные связи {#безразмерные-связи}
+### 2.1 Dimensionless Couplings {#безразмерные-связи}
 
-$\beta$-функции в §2 записаны для **размерных** связей $\lambda_3$, $\lambda_4$, $\mu^2$. Однако неподвижные точки RG-потока определяются для **безразмерных** связей, в которых убрана инженерная размерность:
+The $\beta$-functions in §2 are written for **dimensionful** couplings $\lambda_3$, $\lambda_4$, $\mu^2$. However, the fixed points of the RG-flow are defined for **dimensionless** couplings, in which the engineering dimension has been removed:
 
 $$
 g_i = \lambda_i \cdot (\omega^*)^{-d_i}
 $$
 
-где $d_i$ — инженерная размерность связи $\lambda_i$, а $\omega^*$ — масштаб наблюдения.
+where $d_i$ is the engineering dimension of the coupling $\lambda_i$ and $\omega^*$ is the observation scale.
 
-**Инженерные размерности.** В (0+1)-мерной теории на $(S^1)^{21}$ с частотным масштабом $[\omega^*] = \text{с}^{-1}$:
+**Engineering dimensions.** In (0+1)-dimensional theory on $(S^1)^{21}$ with frequency scale $[\omega^*] = \text{s}^{-1}$:
 
 $$
 [\lambda_4] = [\omega^*]^{1} \quad (d_{\lambda_4} = 1), \qquad [\lambda_3] = [\omega^*]^{1/2} \quad (d_{\lambda_3} = 1/2)
 $$
 
-**$\beta$-функция безразмерной связи.** При переходе к безразмерной $g_4 = \lambda_4 / \omega^*$ появляется дополнительный «инженерный» член:
+**$\beta$-function of the dimensionless coupling.** When transitioning to dimensionless $g_4 = \lambda_4 / \omega^*$, an additional "engineering" term appears:
 
 $$
 \beta_{g_4} \equiv \omega^* \frac{dg_4}{d\omega^*} = -g_4 + \frac{63 g_4^2}{4\pi^2}
 $$
 
-Первое слагаемое $-g_4$ — вклад инженерной размерности ($d_{\lambda_4} = 1$), второе — однопетлевая поправка из Теоремы 2.1(c) при $\lambda_3 = 0$.
+The first term $-g_4$ is the contribution of the engineering dimension ($d_{\lambda_4} = 1$), the second is the one-loop correction from Theorem 2.1(c) at $\lambda_3 = 0$.
 
-**Нетривиальный нуль.** Из $\beta_{g_4} = 0$:
+**Non-trivial zero.** From $\beta_{g_4} = 0$:
 
 $$
 g_4^* = \frac{4\pi^2}{63}
 $$
 
-Это и есть Вильсон-Фишеровская неподвижная точка. Она не существует для размерной $\lambda_4$ (где $\beta_{\lambda_4}^{(1)}\big|_{\lambda_3=0} = 63\lambda_4^2/(4\pi^2) = 0$ лишь при $\lambda_4 = 0$), но возникает естественно в безразмерных переменных.
+This is the Wilson-Fisher fixed point. It does not exist for the dimensionful $\lambda_4$ (where $\beta_{\lambda_4}^{(1)}\big|_{\lambda_3=0} = 63\lambda_4^2/(4\pi^2) = 0$ only at $\lambda_4 = 0$), but arises naturally in dimensionless variables.
 
-Аналогично, для безразмерной $g_{\mu^2} = \mu^2 / (\omega^*)^2$:
+Similarly, for dimensionless $g_{\mu^2} = \mu^2 / (\omega^*)^2$:
 
 $$
 \beta_{g_{\mu^2}} = -2 g_{\mu^2} - \frac{21 g_4}{8\pi^2} g_{\mu^2}
 $$
 
-В Вильсон-Фишеровской точке ($g_3 = 0$, $g_4 = g_4^*$) условие $\beta_{g_{\mu^2}} = 0$ даёт:
+At the Wilson-Fisher point ($g_3 = 0$, $g_4 = g_4^*$) the condition $\beta_{g_{\mu^2}} = 0$ gives:
 
 $$
-g_{\mu^2}^* = 0 \qquad \text{или} \qquad g_{\mu^2}^* = -\frac{2 \cdot 8\pi^2}{21 g_4^*} = -\frac{16\pi^2}{21 \cdot 4\pi^2/63} = -12
+g_{\mu^2}^* = 0 \qquad \text{or} \qquad g_{\mu^2}^* = -\frac{2 \cdot 8\pi^2}{21 g_4^*} = -\frac{16\pi^2}{21 \cdot 4\pi^2/63} = -12
 $$
 
-Физически значимое решение: $g_{\mu^2}^* = g_4^* / 21$ (при выборе знака, совместимого со стабилизацией потенциала), что в размерных переменных соответствует $\mu^{2*} = \lambda_4^* / 21$.
+The physically meaningful solution: $g_{\mu^2}^* = g_4^* / 21$ (choosing the sign compatible with potential stabilization), which in dimensionful variables corresponds to $\mu^{2*} = \lambda_4^* / 21$.
 
 ---
 
-## 3. Неподвижные точки [Т] {#неподвижные-точки}
+## 3. Fixed Points [T] {#неподвижные-точки}
 
-:::tip Теорема 3.1 (Неподвижные точки RG-потока) [Т]
-Система $\beta$-функций имеет три неподвижные точки:
+:::tip Theorem 3.1 (Fixed points of the RG-flow) [T]
+The system of $\beta$-functions has three fixed points:
 
-**(a) Гауссова** (свободная): $\mu^2 = 0$, $\lambda_3 = 0$, $\lambda_4 = 0$. ИК-устойчива по $\lambda_3$, неустойчива по $\lambda_4$ и $\mu^2$. Интерпретация: полностью прозрачная система без взаимодействий Gap. Нестабильна.
+**(a) Gaussian** (free): $\mu^2 = 0$, $\lambda_3 = 0$, $\lambda_4 = 0$. IR-stable in $\lambda_3$, unstable in $\lambda_4$ and $\mu^2$. Interpretation: a completely transparent system with no Gap interactions. Unstable.
 
-**(b) Вильсон-Фишеровская:** $g_3 = 0$, $g_4^* = 4\pi^2/63$, $g_{\mu^2}^* = g_4^*/21$ (в безразмерных переменных §2.1; в размерных: $\lambda_4^* = g_4^* \cdot \omega^*$, $\mu^{2*} = \lambda_4^*/21$). ИК-устойчива по всем параметрам. Интерпретация: система с ненулевым Gap, но **без** PT-нарушения. Октонионная неассоциативность нерелевантна на больших масштабах.
+**(b) Wilson-Fisher:** $g_3 = 0$, $g_4^* = 4\pi^2/63$, $g_{\mu^2}^* = g_4^*/21$ (in dimensionless variables of §2.1; in dimensionful: $\lambda_4^* = g_4^* \cdot \omega^*$, $\mu^{2*} = \lambda_4^*/21$). IR-stable in all parameters. Interpretation: a system with non-zero Gap, but **without** PT-breaking. Octonionic non-associativity is irrelevant at large scales.
 
-**(c) Октонионная:** $\lambda_3^* \neq 0$ — **не существует** в однопетлевом приближении ($\beta_{\lambda_3} = 0 \Rightarrow \lambda_4^* = 0$, несовместимо со стабилизацией).
+**(c) Octonionic:** $\lambda_3^* \neq 0$ — **does not exist** in the one-loop approximation ($\beta_{\lambda_3} = 0 \Rightarrow \lambda_4^* = 0$, incompatible with stabilization).
 :::
 
-### Связь с фазовой диаграммой
+### Connection with the Phase Diagram
 
-:::tip Теорема 3.2 (RG-поток и фазовый переход) [Т]
-**(a)** Фазовый переход [I↔II](/docs/core/dynamics/gap-phase-diagram#три-фазы) при $t = 1$ соответствует переходу через $\mu^2 = 0$ в RG-потоке.
+:::tip Theorem 3.2 (RG-flow and phase transition) [T]
+**(a)** The phase transition [I↔II](/docs/core/dynamics/gap-phase-diagram#три-фазы) at $t = 1$ corresponds to crossing $\mu^2 = 0$ in the RG-flow.
 
-**(b)** Вильсон-Фишеровская неподвижная точка определяет класс универсальности перехода I↔II:
+**(b)** The Wilson-Fisher fixed point determines the universality class of the I↔II transition:
 
 $$
 \nu = \frac{1}{2} + O(\lambda^2) \approx \frac{1}{2}
 $$
 
-(среднеполевой с малыми поправками).
+(mean-field with small corrections).
 
-**(c)** Аномальная размерность Gap-поля: $\eta = O(\lambda^2) \approx 0$.
+**(c)** Anomalous dimension of the Gap field: $\eta = O(\lambda^2) \approx 0$.
 :::
 
-### Анализ устойчивости неподвижных точек [Т]
+### Stability Analysis of Fixed Points [T]
 
-Линеаризация RG-потока вблизи каждой неподвижной точки определяет матрицу устойчивости $M_{ij} = \partial\beta_i / \partial g_j$:
+Linearization of the RG-flow near each fixed point determines the stability matrix $M_{ij} = \partial\beta_i / \partial g_j$:
 
-**Гауссова точка.** Собственные значения матрицы устойчивости:
+**Gaussian point.** Eigenvalues of the stability matrix:
 
 $$
 \sigma_1 = 0, \quad \sigma_2 = 0, \quad \sigma_3 = 0
 $$
 
-Все маргинальные; устойчивость определяется знаком нелинейных членов. По $\lambda_3$ — ИК-устойчива ($\beta_{\lambda_3} \propto -\lambda_3$), по $\lambda_4$ — неустойчива ($\beta_{\lambda_4} \propto +\lambda_4^2$). Физически: полностью прозрачная система без Gap-взаимодействий нестабильна к возмущениям.
+All marginal; stability is determined by the sign of the nonlinear terms. In $\lambda_3$ — IR-stable ($\beta_{\lambda_3} \propto -\lambda_3$), in $\lambda_4$ — unstable ($\beta_{\lambda_4} \propto +\lambda_4^2$). Physically: a completely transparent system with no Gap interactions is unstable to perturbations.
 
-**Вильсон-Фишеровская точка.** Собственные значения:
+**Wilson-Fisher point.** Eigenvalues:
 
 $$
 \sigma_1 = -\frac{15\lambda_4^*}{8\pi^2} < 0, \quad \sigma_2 = -2\lambda_4^* < 0, \quad \sigma_3 \propto -\mu^{2*} < 0
 $$
 
-Все отрицательные: ИК-устойчивый аттрактор. Это означает, что на макроскопических масштабах система стремится к PT-инвариантному состоянию с фиксированным $\lambda_4^*$ и $\lambda_3 = 0$.
+All negative: an IR-stable attractor. This means that at macroscopic scales the system tends toward a PT-invariant state with fixed $\lambda_4^*$ and $\lambda_3 = 0$.
 
-**Октонионная точка (1-loop).** Условие $\beta_{\lambda_3}^{(1)} = 0$ при $\lambda_3 \neq 0$ требует $\lambda_4 = 0$, что несовместимо с $\beta_{\lambda_4}^{(1)} = 0$. Противоречие указывает, что октонионная неподвижная точка — артефакт недостаточного петлевого приближения. Она появляется начиная с двухпетлевого порядка (см. [раздел 4](#двухпетлевые)).
+**Octonionic point (1-loop).** The condition $\beta_{\lambda_3}^{(1)} = 0$ at $\lambda_3 \neq 0$ requires $\lambda_4 = 0$, which is incompatible with $\beta_{\lambda_4}^{(1)} = 0$. The contradiction indicates that the octonionic fixed point is an artifact of an insufficient loop approximation. It appears starting from the two-loop order (see [section 4](#двухпетлевые)).
 
 ---
 
-## 4. Двухпетлевые $\beta$-функции [Т при принятии модели] {#двухпетлевые}
+## 4. Two-Loop $\beta$-Functions [T under model assumption] {#двухпетлевые}
 
-:::tip Теорема 4.1 (Двухпетлевые $\beta$-функции) [Т при принятии модели]
-**(a)** Массовый параметр:
+:::note Adopted model
+Section 4 assumes the **Gap Lagrangian** with a scalar field $\Gamma \in D(\mathbb{C}^7)$ and potential:
+$$
+V_{\text{Gap}} = \mu^2 \|\Gamma\|^2 + \lambda_3 \sum_{\text{Fano}} \gamma_{ij}\gamma_{jk}\gamma_{ki} + \lambda_4 \sum_{i<j} |\gamma_{ij}|^4
+$$
+with parameters $(\mu^2, \lambda_3, \lambda_4)$ as the only independent couplings ($G_2$-symmetry forbids others). It is this field theory that is referred to here as the "adopted model."
+:::
+
+:::tip Theorem 4.1 (Two-loop $\beta$-functions) [T under model assumption]
+**(a)** Mass parameter:
 
 $$
 \beta_{\mu^2}^{(2)} = \beta_{\mu^2}^{(1)} + \frac{1}{(8\pi^2)^2}\left[-\frac{441\lambda_4^2}{2}\mu^2 + 147\lambda_3^2\lambda_4 - \frac{49\lambda_3^4}{4\mu^2}\right]
 $$
 
-Множители: 441 = 21² (пары-в-парах), 147 = 21×7 (тройки-в-парах), 49 = 7² (тройки-в-тройках).
+Factors: 441 = 21² (pairs-in-pairs), 147 = 21×7 (triples-in-pairs), 49 = 7² (triples-in-triples).
 
-**(b)** Кубическая константа:
+**(b)** Cubic constant:
 
 $$
 \beta_{\lambda_3}^{(2)} = \beta_{\lambda_3}^{(1)} + \frac{1}{(8\pi^2)^2}\left[-\frac{315\lambda_3\lambda_4^2}{2} + \frac{35\lambda_3^3}{2\mu^2}\right]
 $$
 
-315 = 15×21, 35 = $C(7,3)$ (тройки Фано-дополнения).
+315 = 15×21, 35 = $C(7,3)$ (triples of the Fano complement).
 
-**(c)** Квартичная константа:
+**(c)** Quartic constant:
 
 $$
 \beta_{\lambda_4}^{(2)} = \beta_{\lambda_4}^{(1)} + \frac{1}{(8\pi^2)^2}\left[-\frac{63^2\lambda_4^3}{3} + 441\frac{\lambda_3^2\lambda_4}{\mu^2} - \frac{49\lambda_3^4}{4\mu^4}\right]
 $$
 :::
 
-### Происхождение двухпетлевых множителей [Т при принятии модели]
+### Origin of Two-Loop Factors [T under model assumption]
 
-Двухпетлевое вычисление требует интегрирования пар Gap-флуктуаций $\theta_{ij}$, $\theta_{kl}$ с частотами в оболочке $[\omega^* - \delta\omega^*, \omega^*]$. Для каждой пары $(ij, kl)$:
+The two-loop calculation requires integrating pairs of Gap fluctuations $\theta_{ij}$, $\theta_{kl}$ with frequencies in the shell $[\omega^* - \delta\omega^*, \omega^*]$. For each pair $(ij, kl)$:
 
-- Если $(ij)$ и $(kl)$ связаны [Фано-линией](/docs/physics/gauge-symmetry/fano-selection-rules): вклад пропорционален $\lambda_3^2$ (через кубический вершинный фактор).
-- Если $(ij)$ и $(kl)$ не связаны: вклад пропорционален $\lambda_4^2$ (через два квартичных вершинных фактора).
-- Смешанные вклады: пропорциональны $\lambda_3 \cdot \lambda_4$.
+- If $(ij)$ and $(kl)$ are connected by a [Fano line](/docs/physics/gauge-symmetry/fano-selection-rules): the contribution is proportional to $\lambda_3^2$ (through the cubic vertex factor).
+- If $(ij)$ and $(kl)$ are not connected: the contribution is proportional to $\lambda_4^2$ (through two quartic vertex factors).
+- Mixed contributions: proportional to $\lambda_3 \cdot \lambda_4$.
 
-Подсчёт комбинаторики:
+Combinatorial count:
 
-| Объект | Число | Формула |
+| Object | Number | Formula |
 |---|---|---|
-| Пары когерентностей | $\binom{21}{2} = 210$ | |
-| Пары, связанные Фано-линией | $7 \times \binom{3}{2} = 21$ | |
-| Пары, не связанные | $210 - 21 = 189$ | |
-| Число Фано-триплетов в двухпетлевых диаграммах | $\binom{7}{2} = 21$ (для $\lambda_3^2$) | |
+| Pairs of coherences | $\binom{21}{2} = 210$ | |
+| Pairs connected by a Fano line | $7 \times \binom{3}{2} = 21$ | |
+| Unconnected pairs | $210 - 21 = 189$ | |
+| Number of Fano triplets in two-loop diagrams | $\binom{7}{2} = 21$ (for $\lambda_3^2$) | |
 
-Множители $441 = 21^2$, $147 = 21 \times 7$, $49 = 7^2$, $315 = 15 \times 21$, $35 = \binom{7}{3}$, $63^2 = 3969$ — все определяются комбинаторикой Фано-плоскости.
+The factors $441 = 21^2$, $147 = 21 \times 7$, $49 = 7^2$, $315 = 15 \times 21$, $35 = \binom{7}{3}$, $63^2 = 3969$ — all determined by the combinatorics of the Fano plane.
 
-### Судьба октонионной неподвижной точки (2-loop) [Т при принятии модели]
+### Fate of the Octonionic Fixed Point (2-loop) [T under model assumption]
 
-:::tip Теорема 4.2 (Октонионная неподвижная точка в двух петлях) [Т при принятии модели]
-**(a)** Гауссова неподвижная точка: остаётся неизменной ($\mu^2 = \lambda_3 = \lambda_4 = 0$). Стабильность не меняется.
+:::tip Theorem 4.2 (Octonionic fixed point at two loops) [T under model assumption]
+**(a)** Gaussian fixed point: remains unchanged ($\mu^2 = \lambda_3 = \lambda_4 = 0$). Stability does not change.
 
-**(b)** Вильсон-Фишеровская неподвижная точка получает двухпетлевую поправку:
+**(b)** The Wilson-Fisher fixed point receives a two-loop correction:
 
 $$
 \lambda_4^{*(2)} = \frac{4\pi^2}{63} - \frac{16\pi^2}{63^3} \approx 0.0629 - 0.0002 = 0.0627
 $$
 
-Коррекция составляет $\sim 0.3\%$ — неподвижная точка **устойчива** к высшим поправкам.
+The correction is $\sim 0.3\%$ — the fixed point is **stable** against higher corrections.
 
-**(c)** Октонионная неподвижная точка ($\lambda_3^* \neq 0$): **возникает** в двухпетлевом приближении. Из $\beta_{\lambda_3}^{(2)} = 0$ при $\lambda_4 \neq 0$:
+**(c)** Octonionic fixed point ($\lambda_3^* \neq 0$): **appears** in the two-loop approximation. From $\beta_{\lambda_3}^{(2)} = 0$ at $\lambda_4 \neq 0$:
 
 $$
 \lambda_3^{*} = \pm\sqrt{\frac{15\lambda_4 \mu^2}{35/(2 \cdot 8\pi^2) - 315\lambda_4/(2 \cdot 8\pi^2)}} \cdot 8\pi^2
 $$
 
-Неподвижная точка существует при:
+The fixed point exists when:
 
 $$
 \lambda_4 < \lambda_4^{(\text{crit})} = \frac{(8\pi^2)}{9 \cdot 315} \approx 0.0028
 $$
 
-**(d)** Устойчивость: октонионная точка — **седловая** (1 неустойчивое + 2 устойчивых направления). Она лежит на границе между Вильсон-Фишеровской и Гауссовой точками.
+**(d)** Stability: the octonionic point is a **saddle point** (1 unstable + 2 stable directions). It lies on the boundary between the Wilson-Fisher and Gaussian points.
 :::
 
-Октонионная неподвижная точка описывает универсальный класс «октонионного фазового перехода», при котором система переходит от PT-инвариантного ($\lambda_3 = 0$) к PT-нарушающему ($\lambda_3 \neq 0$) режиму.
+The octonionic fixed point describes the universality class of the "octonionic phase transition," in which the system transitions from the PT-invariant ($\lambda_3 = 0$) to the PT-breaking ($\lambda_3 \neq 0$) regime.
 
-### Аномальная размерность Gap-поля (2-loop) [Т при принятии модели]
+### Anomalous Dimension of the Gap Field (2-loop) [T under model assumption]
 
-:::tip Теорема 4.3 (Аномальная размерность Gap-поля) [Т при принятии модели]
-Аномальная размерность Gap-поля в двухпетлевом приближении:
+:::tip Theorem 4.3 (Anomalous dimension of the Gap field) [T under model assumption]
+The anomalous dimension of the Gap field in the two-loop approximation:
 
 $$
 \eta_{\text{Gap}} = \frac{7\lambda_4^2}{2(8\pi^2)^2} - \frac{\lambda_3^2}{4(8\pi^2)^2 \mu^2} \approx 1.1 \times 10^{-4}
 $$
 
-**(a)** В Вильсон-Фишеровской точке ($\lambda_3 = 0$): $\eta = 7\lambda_4^{*2}/(2 \cdot 64\pi^4) \approx 10^{-4}$ — пренебрежимо малая.
+**(a)** At the Wilson-Fisher point ($\lambda_3 = 0$): $\eta = 7\lambda_4^{*2}/(2 \cdot 64\pi^4) \approx 10^{-4}$ — negligibly small.
 
-**(b)** В октонионной точке ($\lambda_3^* \neq 0$): $\eta$ может быть **отрицательной** ($\lambda_3$-коррекция доминирует). Отрицательная $\eta$ означает, что Gap-корреляции затухают медленнее, чем в среднеполевом приближении.
+**(b)** At the octonionic point ($\lambda_3^* \neq 0$): $\eta$ can be **negative** (the $\lambda_3$-correction dominates). Negative $\eta$ means that Gap correlations decay slower than in the mean-field approximation.
 
-**(c)** Критический показатель $\nu = 1/2 + O(\eta)$ получает малую поправку. Среднеполевое приближение остаётся точным до $\sim 0.01\%$.
+**(c)** The critical exponent $\nu = 1/2 + O(\eta)$ receives a small correction. The mean-field approximation remains accurate to $\sim 0.01\%$.
 :::
 
 ---
 
-## 5. Трёхпетлевые $\beta$-функции и стабильность [Т при принятии модели] {#трёхпетлевые}
+## 5. Three-Loop $\beta$-Functions and Stability [T under model assumption] {#трёхпетлевые}
 
-Трёхпетлевые поправки $O(\lambda^3)$ необходимы для подтверждения устойчивости октонионной неподвижной точки, определения конформного окна и вычисления $c$-функции Замолодчикова.
+Three-loop corrections $O(\lambda^3)$ are needed to confirm the stability of the octonionic fixed point, determine the conformal window, and compute the Zamolodchikov $c$-function.
 
-### 5.1. Трёхпетлевая структура $\beta$-функций
+### 5.1. Three-Loop Structure of the $\beta$-Functions
 
-:::tip Теорема 5.1 (Трёхпетлевые $\beta$-функции Gap-теории) [Т при принятии модели]
-С учётом трёхпетлевых поправок:
+:::tip Theorem 5.1 (Three-loop $\beta$-functions of Gap theory) [T under model assumption]
+Including three-loop corrections:
 
-**(a)** Квартичная константа:
+**(a)** Quartic constant:
 
 $$
 \beta_{\lambda_4}^{(3)} = \beta_{\lambda_4}^{(2)} + \frac{1}{(8\pi^2)^3}\left[C_1 \lambda_4^4 + C_2 \frac{\lambda_3^2 \lambda_4^2}{\mu^2} + C_3 \frac{\lambda_3^4}{\mu^4}\right]
 $$
 
-где коэффициенты $C_1, C_2, C_3$ определяются трёхпетлевой комбинаторикой Фано-плоскости.
+where the coefficients $C_1, C_2, C_3$ are determined by the three-loop combinatorics of the Fano plane.
 
-**(b)** Трёхпетлевые диаграммы классифицируются по топологии:
+**(b)** Three-loop diagrams are classified by topology:
 
-| Тип диаграммы | Число | Множитель |
+| Diagram type | Number | Factor |
 |---|---|---|
-| Цепочка (chain) | $3 \times \binom{21}{2} = 630$ | $\lambda_4^3$ |
-| Восьмёрка (sunset) | $\binom{21}{3} = 1330$ | $\lambda_4^3$ |
-| Треугольник (triangle) | $7 \times \binom{21}{2} = 1470$ | $\lambda_3^2 \lambda_4$ |
-| Двойной Фано | $\binom{7}{2} \times 21 = 441$ | $\lambda_3^2 \lambda_4$ |
-| Тройной Фано | $\binom{7}{3} = 35$ | $\lambda_3^3 / \mu$ |
+| Chain | $3 \times \binom{21}{2} = 630$ | $\lambda_4^3$ |
+| Sunset | $\binom{21}{3} = 1330$ | $\lambda_4^3$ |
+| Triangle | $7 \times \binom{21}{2} = 1470$ | $\lambda_3^2 \lambda_4$ |
+| Double Fano | $\binom{7}{2} \times 21 = 441$ | $\lambda_3^2 \lambda_4$ |
+| Triple Fano | $\binom{7}{3} = 35$ | $\lambda_3^3 / \mu$ |
 
-Суммирование с учётом симметрийных множителей:
+Summation with symmetry factors:
 
 $$
 C_1 = -\frac{63^3}{6} + 1330 \cdot 63 = 42115.5
@@ -308,182 +316,182 @@ $$
 C_3 = 35 \cdot 49 = 1715
 $$
 
-**(c)** Коррекция к Вильсон-Фишеровской точке:
+**(c)** Correction to the Wilson-Fisher point:
 
 $$
 \frac{\delta\lambda_4^{(3)}}{\lambda_4^{*(2)}} \sim \frac{C_1 \, \lambda_4^{*(2)\,3}}{(8\pi^2)^3} \sim \frac{42115 \cdot (0.063)^3}{(248)^3} \sim 7 \times 10^{-7}
 $$
 
-Трёхпетлевая коррекция к ВФ-точке $\sim 10^{-4}\%$ — пренебрежимо малая.
+The three-loop correction to the WF-point is $\sim 10^{-4}\%$ — negligibly small.
 :::
 
-### 5.2. Устойчивость октонионной неподвижной точки (3-loop) [Т при принятии модели]
+### 5.2. Stability of the Octonionic Fixed Point (3-loop) [T under model assumption]
 
-:::tip Теорема 5.2 (Октонионная неподвижная точка: трёхпетлевая устойчивость) [Т при принятии модели]
-В $O(\lambda^3)$ порядке октонионная неподвижная точка **устойчива**:
+:::tip Theorem 5.2 (Octonionic fixed point: three-loop stability) [T under model assumption]
+At $O(\lambda^3)$ order the octonionic fixed point is **stable**:
 
-**(a)** Из $\beta_{\lambda_3}^{(3)} = 0$:
+**(a)** From $\beta_{\lambda_3}^{(3)} = 0$:
 
 $$
 \lambda_3^{*(3)} = \lambda_3^{*(2)} \cdot \left(1 + \frac{C_2' \, \lambda_4^{*(2)\,2}}{(8\pi^2)^2}\right)
 $$
 
-где $C_2' \approx -85995 / (15 \cdot 63) \approx -91$, откуда:
+where $C_2' \approx -85995 / (15 \cdot 63) \approx -91$, giving:
 
 $$
 \frac{\delta\lambda_3^{(3)}}{\lambda_3^{*(2)}} \approx \frac{-91 \cdot (0.063)^2}{(248)^2} \approx -6 \times 10^{-6}
 $$
 
-Коррекция $\sim 10^{-3}\%$ — октонионная точка устойчива в трёх петлях.
+Correction $\sim 10^{-3}\%$ — the octonionic point is stable at three loops.
 
-**(b)** Значение отношения связей на октонионной неподвижной точке:
+**(b)** Value of the coupling ratio at the octonionic fixed point:
 
 $$
 \frac{\lambda_3^*}{\lambda_4^*} \sim \frac{1}{8\pi^2} \approx 0.013
 $$
 
-Кубическая связь **подавлена** относительно квартичной на $\sim 2$ порядка.
+The cubic coupling is **suppressed** relative to the quartic by $\sim 2$ orders of magnitude.
 
-**(c)** Устойчивость обоих типов неподвижных точек (ВФ и октонионной) подтверждает:
-- Критические показатели точны до $\sim 10^{-6}$.
-- Среднеполевой подход оправдан ($d_{\text{eff}} = 21 \gg d_c = 4$).
-- Фазовый переход к октонионной точке ($\lambda_3 \neq 0$) — **робастное** явление, не зависящее от петлевого порядка.
+**(c)** The stability of both types of fixed points (WF and octonionic) confirms:
+- Critical exponents are accurate to $\sim 10^{-6}$.
+- The mean-field approach is justified ($d_{\text{eff}} = 21 \gg d_c = 4$).
+- The phase transition to the octonionic point ($\lambda_3 \neq 0$) is a **robust** phenomenon, independent of the loop order.
 :::
 
-### 5.3. Сводка неподвижных точек по петлевым порядкам
+### 5.3. Summary of Fixed Points by Loop Order
 
-| Неподвижная точка | 1-loop | 2-loop | 3-loop | Характер |
+| Fixed point | 1-loop | 2-loop | 3-loop | Character |
 |---|---|---|---|---|
-| **Гауссова** ($\lambda_3 = \lambda_4 = 0$) | Существует | Без изменений | Без изменений | Неустойчива |
-| **Вильсон-Фишеровская** ($\lambda_3 = 0$, $\lambda_4^* \neq 0$) | Существует | Поправка 0.3% | Поправка $10^{-4}\%$ | ИК-устойчивый аттрактор |
-| **Октонионная** ($\lambda_3^* \neq 0$) | Не существует | Появляется (седловая) | Устойчива ($10^{-3}\%$ коррекция) | Критическая (PT-переход) |
+| **Gaussian** ($\lambda_3 = \lambda_4 = 0$) | Exists | Unchanged | Unchanged | Unstable |
+| **Wilson-Fisher** ($\lambda_3 = 0$, $\lambda_4^* \neq 0$) | Exists | 0.3% correction | $10^{-4}\%$ correction | IR-stable attractor |
+| **Octonionic** ($\lambda_3^* \neq 0$) | Does not exist | Appears (saddle) | Stable ($10^{-3}\%$ correction) | Critical (PT-transition) |
 
 ---
 
-## 6. Конформное окно [Т] {#конформное-окно}
+## 6. Conformal Window [T] {#конформное-окно}
 
-:::tip Теорема 6.1 (Конформное окно Gap-теории) [Т]
-**(a)** При $N_f$ фермионных поколений в [Линдбладовском](/docs/core/operators/lindblad-operators) секторе, бета-функция $\lambda_4$ имеет нуль при:
+:::tip Theorem 6.1 (Conformal window of Gap theory) [T]
+**(a)** With $N_f$ fermionic generations in the [Lindblad](/docs/core/operators/lindblad-operators) sector, the $\beta$-function of $\lambda_4$ has a zero at:
 
 $$
 N_f^{(\text{crit})} = \frac{63}{2c_f} \approx 3.5
 $$
 
-**(b)** Для $N_f = 3$ (реальный мир): система **вне** конформного окна — нет ИК-конформной симметрии.
+**(b)** For $N_f = 3$ (real world): the system is **outside** the conformal window — no IR conformal symmetry.
 
-**(c)** Конформное окно: $3.5 < N_f < 7$. В этом диапазоне Gap-теория обладает ИК-конформной фазой.
+**(c)** Conformal window: $3.5 < N_f < 7$. In this range, Gap theory possesses an IR conformal phase.
 :::
 
-### Конформная симметрия в неподвижных точках [Т]
+### Conformal Symmetry at Fixed Points [T]
 
-В неподвижных точках RG-потока Gap-теория обладает конформной симметрией. В Вильсон-Фишеровской точке ($\lambda_3^* = 0$, $\lambda_4^* = 4\pi^2/63$) теория становится конформной теорией поля (КТП) на 21-мерном пространстве когерентностей с $G_2$-симметрией.
+At the fixed points of the RG-flow, Gap theory possesses conformal symmetry. At the Wilson-Fisher point ($\lambda_3^* = 0$, $\lambda_4^* = 4\pi^2/63$) the theory becomes a conformal field theory (CFT) on the 21-dimensional space of coherences with $G_2$-symmetry.
 
-Эффективная центральная функция ($c$-функция Замолодчикова):
+The effective central function (Zamolodchikov $c$-function):
 
 $$
 c(\mu) = c_{\text{UV}} - \int_\mu^{\Lambda} \frac{d\mu'}{\mu'} \, \beta_i(\mu') \frac{\partial^2 \mathcal{F}}{\partial g_i \partial g_j} \beta_j(\mu') \geq 0
 $$
 
-где $\mathcal{F}$ — свободная энергия Gap-теории. В точке ВФ:
+where $\mathcal{F}$ is the free energy of Gap theory. At the WF-point:
 
 $$
 c_{\text{WF}} = 21 - \frac{1}{2}\eta_{\text{Gap}} \cdot 21 \approx 21 - 0.001 \approx 21
 $$
 
-(21 — число Gap-полей, $\eta$ — аномальная размерность). В октонионной точке:
+(21 is the number of Gap fields, $\eta$ is the anomalous dimension). At the octonionic point:
 
 $$
 c_{\text{oct}} = 21 - \frac{1}{2}\eta_{\text{oct}} \cdot 21 < c_{\text{WF}}
 $$
 
-Значение $\eta_{\text{oct}}$ может быть отрицательным (см. Теорему 4.3(b)), что увеличивает $c_{\text{oct}}$. Однако $c$-теорема гарантирует $c_{\text{UV}} > c_{\text{oct}} > c_{\text{IR}}$.
+The value $\eta_{\text{oct}}$ can be negative (see Theorem 4.3(b)), which increases $c_{\text{oct}}$. However, the $c$-theorem guarantees $c_{\text{UV}} > c_{\text{oct}} > c_{\text{IR}}$.
 
-### Физические следствия конформного окна
+### Physical Consequences of the Conformal Window
 
-Для $N_f = 3$ (реальный мир) система находится **вне** конформного окна. Это означает:
-- Нет ИК-конформной фазы, но ВФ-неподвижная точка управляет критическими показателями вблизи фазового перехода I↔II.
-- Конформная инвариантность в точке фазового перехода предсказывает **масштабную инвариантность** Gap-корреляций — степенной закон затухания без характерного масштаба.
-- При $N_f = 4$ (гипотетическое четвёртое поколение) система попадает в конформное окно, что радикально меняет ИК-поведение.
+For $N_f = 3$ (real world) the system lies **outside** the conformal window. This means:
+- There is no IR conformal phase, but the WF-fixed point governs the critical exponents near the I↔II phase transition.
+- Conformal invariance at the phase transition point predicts **scale invariance** of Gap correlations — a power-law decay with no characteristic scale.
+- At $N_f = 4$ (hypothetical fourth generation) the system falls into the conformal window, which radically changes the IR behavior.
 
 ---
 
-## 7. $c$-теорема [Т] {#c-теорема}
+## 7. $c$-Theorem [T] {#c-теорема}
 
-:::tip Теорема 7.1 ($c$-теорема для Gap) [Т]
-**(a)** Центральный заряд Gap-теории:
+:::tip Theorem 7.1 ($c$-theorem for Gap) [T]
+**(a)** Central charge of Gap theory:
 
 $$
 c(\mu) = 21 + N_f \cdot 7 - \frac{\lambda_4^2}{(4\pi)^2} \cdot C_{\text{Fano}} + O(\lambda^3)
 $$
 
-где $C_{\text{Fano}} = 7$ — вклад от Фано-ограничений.
+where $C_{\text{Fano}} = 7$ is the contribution from Fano constraints.
 
-**(b)** $c(\mu)$ монотонно убывает в ИК-направлении: $dc/d\ln\mu \leq 0$.
+**(b)** $c(\mu)$ decreases monotonically in the IR direction: $dc/d\ln\mu \leq 0$.
 :::
 
-### Доказательство монотонности [Т]
+### Proof of Monotonicity [T]
 
-Монотонное убывание $c(\mu)$ следует из положительной определённости метрики Замолодчикова $\partial^2 \mathcal{F} / \partial g_i \partial g_j$ в пространстве связей. Для Gap-теории:
+The monotonic decrease of $c(\mu)$ follows from the positive definiteness of the Zamolodchikov metric $\partial^2 \mathcal{F} / \partial g_i \partial g_j$ in the space of couplings. For Gap theory:
 
 $$
 \frac{dc}{d\ln\mu} = -\beta_i \frac{\partial^2 \mathcal{F}}{\partial g_i \partial g_j} \beta_j \leq 0
 $$
 
-Равенство достигается только в неподвижных точках ($\beta_i = 0$). Физически это означает, что число эффективных степеней свободы уменьшается при переходе к бо́льшим масштабам: информация о микроскопических Gap-корреляциях теряется при грублении наблюдения.
+Equality is achieved only at fixed points ($\beta_i = 0$). Physically this means that the number of effective degrees of freedom decreases as one moves to larger scales: information about microscopic Gap correlations is lost when coarsening the observation.
 
-Значения $c$ в неподвижных точках:
+Values of $c$ at the fixed points:
 
-| Точка | $c$ | Интерпретация |
+| Point | $c$ | Interpretation |
 |---|---|---|
-| УФ (свободная) | $21 + 7N_f$ | Все 21 когерентность + $7N_f$ фермионных мод |
-| Вильсон-Фишеровская | $\approx 21$ | Квартичное взаимодействие слабо уменьшает число мод |
-| Октонионная | $< 21$ | Кубическое взаимодействие дополнительно уменьшает $c$ |
+| UV (free) | $21 + 7N_f$ | All 21 coherences + $7N_f$ fermionic modes |
+| Wilson-Fisher | $\approx 21$ | Quartic interaction weakly reduces the number of modes |
+| Octonionic | $< 21$ | Cubic interaction additionally reduces $c$ |
 
-Строгое неравенство $c_{\text{UV}} > c_{\text{WF}} > c_{\text{oct}}$ подтверждает, что RG-поток направлен от свободной теории к октонионной точке при уменьшении масштаба.
+The strict inequality $c_{\text{UV}} > c_{\text{WF}} > c_{\text{oct}}$ confirms that the RG-flow is directed from the free theory toward the octonionic point as the scale decreases.
 
 ---
 
-## 8. RG-подавление $\lambda_3$ [Т] {#rg-подавление}
+## 8. RG-Suppression of $\lambda_3$ [T] {#rg-подавление}
 
-:::tip Теорема 8.1 (RG-подавление кубической связи) [Т]
-При пробеге от планковского масштаба до масштаба электрослабого нарушения:
+:::tip Theorem 8.1 (RG-suppression of the cubic coupling) [T]
+Over the running from the Planck scale to the electroweak breaking scale:
 
 $$
 \lambda_3(\mu_{\text{EW}}) = \lambda_3(M_{\text{Pl}}) \cdot \left(\frac{\mu_{\text{EW}}}{M_{\text{Pl}}}\right)^{15\lambda_4^*/(8\pi^2)}
 $$
 
-Аномальная размерность $\gamma_{\lambda_3} = 15\lambda_4^*/(8\pi^2) \approx 7.26$. Подавление:
+Anomalous dimension $\gamma_{\lambda_3} = 15\lambda_4^*/(8\pi^2) \approx 7.26$. Suppression:
 
 $$
 \lambda_3^2 \sim \left(\frac{\mu_{\text{EW}}}{M_{\text{Pl}}}\right)^{14.52} \sim 10^{-14.5}
 $$
 
-Это даёт **14.5 порядков** подавления в [бюджете $\Lambda$](/docs/proofs/gap/lambda-budget).
+This gives **14.5 orders** of suppression in the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget).
 :::
 
-### Детальный вывод подавления [Т]
+### Detailed Derivation of Suppression [T]
 
-Из $\beta_{\lambda_3}^{(1)} = -15\lambda_3\lambda_4 / (8\pi^2)$ следует, что при фиксированном $\lambda_4 = \lambda_4^*$ (вблизи Вильсон-Фишеровской точки) уравнение для $\lambda_3$ линейно:
+From $\beta_{\lambda_3}^{(1)} = -15\lambda_3\lambda_4 / (8\pi^2)$ it follows that with fixed $\lambda_4 = \lambda_4^*$ (near the Wilson-Fisher point) the equation for $\lambda_3$ is linear:
 
 $$
 \frac{d\lambda_3}{d\ln\omega} = -\frac{15\lambda_4^*}{8\pi^2} \lambda_3 \equiv -\Delta_3 \cdot \lambda_3
 $$
 
-Решение:
+Solution:
 
 $$
 \lambda_3(\omega) = \lambda_3(\omega_0) \cdot \left(\frac{\omega}{\omega_0}\right)^{\Delta_3}
 $$
 
-где $\Delta_3 = 15\lambda_4^* / (8\pi^2)$ — **аномальная размерность** оператора $V_3$.
+where $\Delta_3 = 15\lambda_4^* / (8\pi^2)$ is the **anomalous dimension** of the operator $V_3$.
 
-Подставляя $\lambda_4^* = 4\pi^2/63$:
+Substituting $\lambda_4^* = 4\pi^2/63$:
 
 $$
 \Delta_3 = \frac{15 \cdot 4\pi^2/63}{8\pi^2} = \frac{60}{504} = \frac{5}{42} \approx 0.119
 $$
 
-При интегрировании от планковского масштаба $\omega_{\text{UV}} = \omega_{\text{Planck}} \approx 1.855 \times 10^{43} \text{ с}^{-1}$ до космологического $\omega_{\text{IR}} = H_0 \approx 2.2 \times 10^{-18} \text{ с}^{-1}$:
+Integrating from the Planck scale $\omega_{\text{UV}} = \omega_{\text{Planck}} \approx 1.855 \times 10^{43} \text{ s}^{-1}$ to the cosmological scale $\omega_{\text{IR}} = H_0 \approx 2.2 \times 10^{-18} \text{ s}^{-1}$:
 
 $$
 \frac{\omega_{\text{IR}}}{\omega_{\text{UV}}} \approx 1.2 \times 10^{-61}
@@ -493,208 +501,208 @@ $$
 \frac{\lambda_3^{(\text{IR})}}{\lambda_3^{(\text{UV})}} = (1.2 \times 10^{-61})^{5/42} \approx 10^{-61 \cdot 0.119} \approx 10^{-7.26}
 $$
 
-Квадрат $\lambda_3$ (который входит в бюджет $\Lambda$) подавлен в $10^{-14.5}$ раз. Это — **ключевой механизм** для объяснения малости космологической постоянной в Gap-теории.
+The square of $\lambda_3$ (which enters the $\Lambda$ budget) is suppressed by a factor of $10^{-14.5}$. This is the **key mechanism** for explaining the smallness of the cosmological constant in Gap theory.
 
-### Роль RG-подавления в бюджете $\Lambda$ [Т]
+### Role of RG-Suppression in the $\Lambda$ Budget [T]
 
-Полная иерархия подавления космологической постоянной складывается из нескольких механизмов:
+The full hierarchy of suppression of the cosmological constant is composed of several mechanisms:
 
-| Механизм | Фактор подавления | Статус |
+| Mechanism | Suppression factor | Status |
 |---|---|---|
-| $\varepsilon^6$ (малость вакуумных когерентностей) | $10^{-12}$ | [Т] |
-| RG-подавление $\lambda_3$ (ИК-нерелевантность) | $10^{-14.5}$ ($\lambda_3^2$ подавлен) | [Т] |
-| Тождества Уорда (антикорреляция) | $\times 19/49 \approx 0.39$ | [Т] |
-| [Фано-код](/docs/physics/gauge-symmetry/fano-selection-rules) (6 линейных ограничений) | $\times 1/8$ | [Т] |
+| $\varepsilon^6$ (smallness of vacuum coherences) | $10^{-12}$ | [T] |
+| RG-suppression of $\lambda_3$ (IR-irrelevance) | $10^{-14.5}$ ($\lambda_3^2$ suppressed) | [T] |
+| Ward identities (anticorrelation) | $\times 19/49 \approx 0.39$ | [T] |
+| [Fano code](/docs/physics/gauge-symmetry/fano-selection-rules) (6 linear constraints) | $\times 1/8$ | [T] |
 
-RG-подавление $\lambda_3$ обеспечивает **наибольший вклад** среди строго обоснованных механизмов. Подробный анализ — в [бюджете $\Lambda$](/docs/proofs/gap/lambda-budget).
+RG-suppression of $\lambda_3$ provides the **largest contribution** among the rigorously justified mechanisms. Detailed analysis — in the [$\Lambda$ budget](/docs/proofs/gap/lambda-budget).
 
 ---
 
-## 9. Аномальная размерность Фано-оператора [Т] {#аномальная-размерность}
+## 9. Anomalous Dimension of the Fano Operator [T] {#аномальная-размерность}
 
-:::tip Теорема 9.1 (Аномальная размерность $\Delta_3$) [Т]
-Фано-триплетный оператор $F_{ijk} = \varepsilon_{ijk}^{\text{Fano}} \cdot \text{Gap}(i,j) \cdot \text{Gap}(j,k) \cdot \text{Gap}(i,k)$ имеет аномальную размерность:
+:::tip Theorem 9.1 (Anomalous dimension $\Delta_3$) [T]
+The Fano-triplet operator $F_{ijk} = \varepsilon_{ijk}^{\text{Fano}} \cdot \text{Gap}(i,j) \cdot \text{Gap}(j,k) \cdot \text{Gap}(i,k)$ has anomalous dimension:
 
 $$
 \Delta_3 = 3 - \frac{5}{42} \approx 2.881
 $$
 
-Отклонение $5/42 \approx 0.119$ от канонической размерности 3 определяет [корреляционную длину](/docs/physics/cosmology-phys/dark-matter) $\xi_F \sim 160$ пк через RG-уравнение.
+The deviation $5/42 \approx 0.119$ from the canonical dimension 3 determines the [correlation length](/docs/physics/cosmology-phys/dark-matter) $\xi_F \sim 160$ pc via the RG-equation.
 :::
 
-### Спектр масштабных размерностей операторов Gap-КТП [Т]
+### Spectrum of Scaling Dimensions of Gap-CFT Operators [T]
 
-Полный спектр составных операторов в конформной теории поля на Gap:
+Full spectrum of composite operators in the conformal field theory on Gap:
 
-| Оператор | Инженерная dim | Аномальная dim | Полная $\Delta$ |
+| Operator | Engineering dim | Anomalous dim | Full $\Delta$ |
 |---|---|---|---|
 | $\text{Gap}(i,j)$ | 1 | $+\eta/2 \approx 5 \times 10^{-5}$ | $\approx 1$ |
 | $\text{Gap}^2(i,j)$ | 2 | $+2\eta \approx 2 \times 10^{-4}$ | $\approx 2$ |
-| $\text{Gap}^3$ (Фано-триплет) | 3 | $-5/42 \approx -0.119$ | $\approx 2.881$ |
-| $\sum \text{Gap}^2$ (тотальный, $G_2$-синглет) | 2 | 0 | 2 |
+| $\text{Gap}^3$ (Fano triplet) | 3 | $-5/42 \approx -0.119$ | $\approx 2.881$ |
+| $\sum \text{Gap}^2$ (total, $G_2$-singlet) | 2 | 0 | 2 |
 
-Фано-триплетный оператор
+The Fano-triplet operator
 
 $$
 \mathcal{O}_{\text{Fano}} = \sum_{\text{Fano}} \text{Gap}(i,j)\,\text{Gap}(j,k)\,\text{Gap}(i,k)
 $$
 
-имеет $\Delta_3 < 3$, что означает: он **релевантный** в ИК. Это принципиально важный результат — октонионная структура ($V_3$) **не** просто подавляется на макроскопических масштабах, а определяет доминирующие корреляции вблизи октонионной неподвижной точки.
+has $\Delta_3 < 3$, which means: it is **relevant** in the IR. This is a crucially important result — the octonionic structure ($V_3$) does **not** simply get suppressed at macroscopic scales, but determines the dominant correlations near the octonionic fixed point.
 
-### Связь $\Delta_3$ с корреляционной длиной [Т]
+### Connection of $\Delta_3$ with the Correlation Length [T]
 
-Из RG-уравнения для Фано-оператора вблизи ВФ-точки:
+From the RG-equation for the Fano operator near the WF-point:
 
 $$
 \mathcal{O}_{\text{Fano}}(r) \sim r^{-2\Delta_3} = r^{-5.762}
 $$
 
-Переход к экспоненциальному спаду происходит на масштабе Фано-корреляционной длины:
+The transition to exponential decay occurs at the scale of the Fano correlation length:
 
 $$
 \xi_F = \frac{1}{\mu} \left(\frac{\lambda_4^*}{\lambda_3^*}\right)^{1/(3 - \Delta_3)} \sim \frac{1}{\mu} \left(\frac{1}{\lambda_3^*}\right)^{42/5}
 $$
 
-Значение $\xi_F$ определяет масштаб, на котором Фано-корреляции (и связанные с ними тёмно-материальные эффекты) становятся существенными. Оценка $\xi_F \sim 160$ пк даётся при подстановке вакуумных значений параметров.
+The value $\xi_F$ determines the scale at which Fano correlations (and the dark-matter effects associated with them) become significant. The estimate $\xi_F \sim 160$ pc is obtained upon substituting the vacuum values of the parameters.
 
-### Дуальность ИК-релевантности [Т]
+### Duality of IR-Relevance [T]
 
-Существует тонкая дуальность в поведении Фано-оператора:
+There is a subtle duality in the behavior of the Fano operator:
 
-- **Кубическая связь** $\lambda_3$ (коэффициент при $V_3$) — **ИК-нерелевантен**: $\lambda_3 \to 0$ при $\omega \to 0$.
-- **Фано-оператор** $\mathcal{O}_{\text{Fano}}$ (составной оператор) — **ИК-релевантен**: $\Delta_3 < 3$.
+- **Cubic coupling** $\lambda_3$ (coefficient of $V_3$) — **IR-irrelevant**: $\lambda_3 \to 0$ as $\omega \to 0$.
+- **Fano operator** $\mathcal{O}_{\text{Fano}}$ (composite operator) — **IR-relevant**: $\Delta_3 < 3$.
 
-Разрешение: $\lambda_3$ убывает, но корреляции, порождённые Фано-структурой, нарастают. На октонионной неподвижной точке оба эффекта балансируют, порождая нетривиальную конформную теорию с $c_{\text{oct}} < c_{\text{WF}}$.
+Resolution: $\lambda_3$ decreases, but the correlations generated by the Fano structure grow. At the octonionic fixed point both effects balance, producing a non-trivial conformal theory with $c_{\text{oct}} < c_{\text{WF}}$.
 
 ---
 
-## 10. RG-эволюция от Планка до космологии [Т] {#rg-эволюция}
+## 10. RG-Evolution from Planck to Cosmology [T] {#rg-эволюция}
 
-Полная картина RG-эволюции параметров Gap-теории от планковского масштаба до космологического:
+The complete picture of the RG-evolution of Gap theory parameters from the Planck scale to the cosmological scale:
 
-### 10.1. Размерный анализ [Т]
+### 10.1. Dimensional Analysis [T]
 
-Все параметры Gap-теории приобретают физические размерности через системную частоту $\omega_0$ (Аксиома 4):
+All parameters of Gap theory acquire physical dimensions through the system frequency $\omega_0$ (Axiom 4):
 
 $$
 \mu_{\text{phys}} = \mu \cdot \omega_0, \qquad \Lambda_{\text{phys}} = \frac{\Lambda_{\text{Gap}} \cdot \omega_0^2}{c^2}
 $$
 
-Для космологического вакуума: $\omega_0^{(\text{Planck})} = c^5/(\hbar G) \approx 1.855 \times 10^{43} \text{ с}^{-1}$.
+For the cosmological vacuum: $\omega_0^{(\text{Planck})} = c^5/(\hbar G) \approx 1.855 \times 10^{43} \text{ s}^{-1}$.
 
-### 10.2. Эволюция $\lambda_3$ от Планка до Хаббла [Т]
+### 10.2. Evolution of $\lambda_3$ from Planck to Hubble [T]
 
-При интегрировании RG-потока на полном пробеге $\omega_{\text{Planck}} \to H_0$:
+Integrating the RG-flow over the full running $\omega_{\text{Planck}} \to H_0$:
 
 $$
 \lambda_3^{(\text{IR})} = \lambda_3^{(\text{UV})} \cdot \left(\frac{H_0}{\omega_{\text{Planck}}}\right)^{5/42}
 $$
 
-Кубический член подавлен в $\sim 2 \times 10^7$ раз при переходе от Планка к космологии.
+The cubic term is suppressed by $\sim 2 \times 10^7$ in the transition from Planck to cosmological scales.
 
-### 10.3. Эволюция $\lambda_4$ [Т при принятии модели]
+### 10.3. Evolution of $\lambda_4$ [T under model assumption]
 
-В отличие от $\lambda_3$, квартичная связь $\lambda_4$ быстро выходит на Вильсон-Фишеровскую неподвижную точку:
+In contrast to $\lambda_3$, the quartic coupling $\lambda_4$ quickly reaches the Wilson-Fisher fixed point:
 
 $$
-\lambda_4(\omega) \to \lambda_4^* = \frac{4\pi^2}{63} \approx 0.063 \quad \text{при } \omega \ll \omega_{\text{Planck}}
+\lambda_4(\omega) \to \lambda_4^* = \frac{4\pi^2}{63} \approx 0.063 \quad \text{at } \omega \ll \omega_{\text{Planck}}
 $$
 
-Выход на плато происходит уже при $\omega \sim \omega_{\text{Planck}} / 10$ — квартичная связь «замораживается» на масштабах, существенно превышающих планковский.
+The plateau is reached already at $\omega \sim \omega_{\text{Planck}} / 10$ — the quartic coupling "freezes" at scales substantially exceeding the Planck scale.
 
-### 10.4. Эволюция массового параметра $\mu^2$ [Т при принятии модели]
+### 10.4. Evolution of the Mass Parameter $\mu^2$ [T under model assumption]
 
-Массовый параметр определяет положение фазового перехода I↔II. При RG-эволюции:
+The mass parameter determines the position of the I↔II phase transition. Under RG-evolution:
 
 $$
 \mu^2(\omega) = \mu^2(\omega_0) \cdot \left(\frac{\omega}{\omega_0}\right)^{2 - \gamma_{\mu^2}}
 $$
 
-где $\gamma_{\mu^2} = 21\lambda_4^*/(8\pi^2) \approx 0.017$ — аномальная размерность массы. Массовый параметр эволюционирует почти каноническим образом (малая аномальная размерность).
+where $\gamma_{\mu^2} = 21\lambda_4^*/(8\pi^2) \approx 0.017$ is the anomalous dimension of the mass. The mass parameter evolves in an almost canonical fashion (small anomalous dimension).
 
 ---
 
-## 11. Космологическая постоянная с учётом RG-потока [Т] {#космологическая-постоянная}
+## 11. Cosmological Constant with RG-Flow Taken into Account [T] {#космологическая-постоянная}
 
-:::tip Теорема 11.1 (Λ с учётом RG-эволюции) [Т]
-С учётом размерного анализа и RG-эволюции:
+:::tip Theorem 11.1 (Λ with RG-evolution taken into account) [T]
+With dimensional analysis and RG-evolution taken into account:
 
 $$
 \Lambda_{\text{phys}} = \frac{96[\lambda_3^{(\text{IR})}]^2 \varepsilon^6}{\mu^2} \cdot \frac{\omega_0^2}{c^2}
 $$
 
-Без RG-подавления: $\Lambda \sim 10^{54}$ м$^{-2}$. С RG-подавлением ($\lambda_3^{(\text{IR})} \sim 10^{-7.26} \lambda_3^{(\text{UV})}$): RG-поток улучшает на $\sim 14.5$ порядков (через $\lambda_3^2$).
+Without RG-suppression: $\Lambda \sim 10^{54}$ m$^{-2}$. With RG-suppression ($\lambda_3^{(\text{IR})} \sim 10^{-7.26} \lambda_3^{(\text{UV})}$): the RG-flow improves by $\sim 14.5$ orders (through $\lambda_3^2$).
 
-Оставшееся расхождение с наблюдаемым $\Lambda_{\text{obs}} \approx 10^{-52}$ м$^{-2}$ — стандартная проблема космологической постоянной, дополнительно компенсируемая тождествами Уорда и Фано-ограничениями (см. [бюджет $\Lambda$](/docs/proofs/gap/lambda-budget)).
+The remaining discrepancy with the observed $\Lambda_{\text{obs}} \approx 10^{-52}$ m$^{-2}$ is the standard cosmological constant problem, additionally compensated by Ward identities and Fano constraints (see [$\Lambda$ budget](/docs/proofs/gap/lambda-budget)).
 :::
 
 ---
 
-## 12. Связь RG-потока со Стандартной моделью [Т] {#стандартная-модель}
+## 12. Connection of RG-Flow with the Standard Model [T] {#стандартная-модель}
 
-RG-поток Gap-теории связан с иерархией масс частиц Стандартной модели.
+The RG-flow of Gap theory is connected with the particle mass hierarchy of the Standard Model.
 
-### 12.1. Однородность аномальной размерности когерентностей [Т] {#однородность-аномальной-размерности}
+### 12.1. Uniformity of the Anomalous Dimension of Coherences [T] {#однородность-аномальной-размерности}
 
-:::tip Теорема 12.1 (Однородность $\Delta_{ij}$) [Т]
-Все 21 когерентность $\gamma_{ij}$ имеют **одинаковую** аномальную размерность в Вильсон-Фишеровской неподвижной точке:
+:::tip Theorem 12.1 (Uniformity of $\Delta_{ij}$) [T]
+All 21 coherences $\gamma_{ij}$ have the **same** anomalous dimension at the Wilson-Fisher fixed point:
 
 $$
 \Delta_{ij} = \frac{\eta}{2} \approx 5 \times 10^{-5} \quad \forall\; i \neq j
 $$
 
-где $\eta$ — аномальная размерность Gap-поля (Теорема 4.3).
+where $\eta$ is the anomalous dimension of the Gap field (Theorem 4.3).
 :::
 
-**Доказательство.** В $\mathrm{PG}(2,2)$ через любые две точки $i,j \in \{0,\ldots,6\}$ проходит ровно одна линия (аксиома проективной плоскости). Следовательно, число Фано-линий через пару $n_{\text{Fano}}(i,j) = 1$ для **всех** 21 пар — нет пар «вне Фано-линий».
+**Proof.** In $\mathrm{PG}(2,2)$ exactly one line passes through any two points $i,j \in \{0,\ldots,6\}$ (axiom of a projective plane). Consequently, the number of Fano lines through a pair $n_{\text{Fano}}(i,j) = 1$ for **all** 21 pairs — there are no pairs "outside Fano lines."
 
-Однопетлевая собственная энергия когерентности $\gamma_{ij}$ с кубической вершиной $V_3$:
+The one-loop self-energy of the coherence $\gamma_{ij}$ with the cubic vertex $V_3$:
 
 $$
 \Sigma_{ij}^{(1)}(k) = \frac{\lambda_3^2}{8\pi^2} \sum_{k:\, f_{ijk} \neq 0} G_0(k) = \frac{\lambda_3^2}{8\pi^2} \cdot G_0(k)
 $$
 
-Сумма содержит ровно **один** член (единственный третий индекс $k$ на линии через $i,j$), одинаковый для всех пар. Следовательно, аномальная размерность $\Delta_{ij}$ **одинакова** для всех когерентностей. В ВФ-точке ($\lambda_3 = 0$) аномальная размерность определяется квартичным сектором и равна $\eta/2$ (Теорема 4.3). $\blacksquare$
+The sum contains exactly **one** term (the unique third index $k$ on the line through $i,j$), identical for all pairs. Consequently, the anomalous dimension $\Delta_{ij}$ is **the same** for all coherences. At the WF-point ($\lambda_3 = 0$) the anomalous dimension is determined by the quartic sector and equals $\eta/2$ (Theorem 4.3). $\blacksquare$
 
-### 12.2. Иерархия масс из правила отбора Юкавы [Т] {#иерархия-масс}
+### 12.2. Mass Hierarchy from the Yukawa Selection Rule [T] {#иерархия-масс}
 
-:::tip Теорема 12.2 (Механизм иерархии масс) [Т]
-Иерархия масс фермионов в Gap-теории порождается **не** различием аномальных размерностей когерентностей, а тремя механизмами:
+:::tip Theorem 12.2 (Mass hierarchy mechanism) [T]
+The fermion mass hierarchy in Gap theory is generated **not** by differences in the anomalous dimensions of coherences, but by three mechanisms:
 
-**(a)** **Правило отбора (T-43d [Т])**: древесная Юкавская связь $y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$, где $f_{ijk}$ — октонионные структурные константы. Единственная ненулевая: $f_{1,5,6} = 1$ (Хиггсова линия $\{A,E,U\}$), откуда $y_1 \sim O(1)$, $y_2 = y_4 = 0$.
+**(a)** **Selection rule (T-43d [T])**: tree-level Yukawa coupling $y_k^{(\text{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$, where $f_{ijk}$ are the octonionic structure constants. The unique non-zero one: $f_{1,5,6} = 1$ (Higgs line $\{A,E,U\}$), giving $y_1 \sim O(1)$, $y_2 = y_4 = 0$.
 
-**(b)** **Quasi-IR fixed point [Т]**: единственная $O(1)$ Юкавская $y_1$ притягивается к фиксированной точке Пендлтона–Росса, давая $m_t \approx 173$ ГэВ.
+**(b)** **Quasi-IR fixed point [T]**: the unique $O(1)$ Yukawa $y_1$ is attracted to the Pendleton–Ross fixed point, giving $m_t \approx 173$ GeV.
 
-**(c)** **$V_3$-индуцированное смешивание [Г]**: массы лёгких поколений ($k=2,4$) возникают через петлевое смешивание по генерационной линии $\{1,2,4\}$, подавленное фактором $\varepsilon \sim 10^{-2}$ на каждый порядок.
+**(c)** **$V_3$-induced mixing [H]**: masses of the light generations ($k=2,4$) arise through loop-level mixing along the generation line $\{1,2,4\}$, suppressed by a factor $\varepsilon \sim 10^{-2}$ per order.
 :::
 
-Отношение масс поколений определяется степенями подавления $\varepsilon$:
+The mass ratios of the generations are determined by powers of suppression $\varepsilon$:
 
 $$
 \frac{m_2}{m_1} \sim \varepsilon, \qquad \frac{m_3}{m_1} \sim \varepsilon^2
 $$
 
-где $m_1$ — масса 3-го поколения ($k=1$), $m_2$ — 2-го ($k=4$), $m_3$ — 1-го ($k=2$). Подробный вывод — в [иерархии Юкавы](/docs/physics/particle-physics/yukawa-hierarchy).
+where $m_1$ is the mass of the 3rd generation ($k=1$), $m_2$ of the 2nd ($k=4$), $m_3$ of the 1st ($k=2$). Detailed derivation — in [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy).
 
-### 12.3. RG-усиление иерархии [Т] {#rg-усиление}
+### 12.3. RG-Enhancement of the Hierarchy [T] {#rg-усиление}
 
-RG-эволюция **сохраняет** иерархию, установленную правилом отбора на масштабе GUT:
+RG-evolution **preserves** the hierarchy established by the selection rule at the GUT scale:
 
-**(a)** Малые Юкавские $y_{2,4} \ll 1$ бегут с аномальной размерностью $\gamma_n = (c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2)/(16\pi^2)$. При $c_2 y_1^2 \approx c_3 g_s^2 + c_4 g_W^2$: $\gamma_n \approx 0$, малые Юкавские **сохраняют** свои значения от GUT до EW.
+**(a)** Small Yukawa couplings $y_{2,4} \ll 1$ run with anomalous dimension $\gamma_n = (c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2)/(16\pi^2)$. At $c_2 y_1^2 \approx c_3 g_s^2 + c_4 g_W^2$: $\gamma_n \approx 0$, small Yukawa couplings **preserve** their values from GUT to EW.
 
-**(b)** Подавление $\lambda_3$ (Теорема 8.1 [Т]) дополнительно уменьшает петлевые поправки к $y_{2,4}$ в ИК, усиливая иерархию.
+**(b)** Suppression of $\lambda_3$ (Theorem 8.1 [T]) additionally reduces the loop corrections to $y_{2,4}$ in the IR, enhancing the hierarchy.
 
-Результат: иерархия масс — следствие $G_2$-инвариантности октонионных структурных констант (правило отбора), а не различия аномальных размерностей отдельных когерентностей.
+Result: the mass hierarchy is a consequence of the $G_2$-invariance of the octonionic structure constants (selection rule), not of differences in the anomalous dimensions of individual coherences.
 
 ---
 
-## Связанные документы
+## Related Documents
 
-- [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) — потенциал $V_{\text{Gap}}$
-- [Фазовая диаграмма](/docs/core/dynamics/gap-phase-diagram) — критические явления
-- [Бюджет $\Lambda$](/docs/proofs/gap/lambda-budget) — RG-подавление в бюджете
-- [Нётеровские заряды](/docs/physics/gauge-symmetry/noether-charges) — 14 сохраняющихся зарядов
-- [Дзета-регуляризация](/docs/physics/dual-aspect/zeta-regularization) — $Z_\Phi(-k) = 0$
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — комбинаторика Фано-плоскости
-- [Иерархия Юкавы](/docs/physics/particle-physics/yukawa-hierarchy) — иерархия масс из RG-потока
-- [Составные системы](/docs/core/dynamics/composite-systems) — коллективные RG-эффекты
+- [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) — potential $V_{\text{Gap}}$
+- [Phase diagram](/docs/core/dynamics/gap-phase-diagram) — critical phenomena
+- [$\Lambda$ budget](/docs/proofs/gap/lambda-budget) — RG-suppression in the budget
+- [Noether charges](/docs/physics/gauge-symmetry/noether-charges) — 14 conserved charges
+- [Zeta regularization](/docs/physics/dual-aspect/zeta-regularization) — $Z_\Phi(-k) = 0$
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano plane combinatorics
+- [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) — mass hierarchy from RG-flow
+- [Composite systems](/docs/core/dynamics/composite-systems) — collective RG-effects

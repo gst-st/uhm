@@ -1,75 +1,75 @@
 ---
 sidebar_position: 2
-title: "Стандартная модель из G₂"
+title: "Standard Model from G₂"
 ---
 
-# Стандартная модель из G₂
+# Standard Model from G₂
 
-:::info Для кого эта глава
-Вывод калибровочной группы Стандартной Модели из $G_2 = \mathrm{Aut}(\mathbb{O})$. Читатель узнает о стратегии двойственного извлечения $\mathrm{SU}(3)_C$ и электрослабого сектора.
+:::info For whom this chapter is intended
+Derivation of the Standard Model gauge group from $G_2 = \mathrm{Aut}(\mathbb{O})$. The reader will learn about the dual extraction strategy for $\mathrm{SU}(3)_C$ and the electroweak sector.
 :::
 
 
-## Обзор
+## Overview
 
-:::info[Корректность заголовка — [Т]]
-$\mathrm{rank}(G_2) = 2 < \mathrm{rank}(\mathrm{SM}) = 4$, поэтому калибровочная группа SM **не является подгруппой** $G_2$. Однако полная SM-группа **единственна** и выводится из аксиом:
-- $\mathrm{SU}(3)_C$ из $G_2$ как стабилизатор O-направления — **[Т]** (стандартный математический факт)
-- Электрослабый сектор $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ из Фано-электрослабой конструкции (ФЭ) — **[Т]** (комбинаторика: единственность $(E,U)$); **[С]** (динамическая калибровочная структура)
-- Полное соответствие «SM из $G_2$ + (ФЭ)» — **[С]** (электрослабая динамика условна)
+:::info[Correctness of the heading — [T]]
+$\mathrm{rank}(G_2) = 2 < \mathrm{rank}(\mathrm{SM}) = 4$, so the SM gauge group **is not a subgroup** of $G_2$. However, the full SM group **is unique** and is derived from the axioms:
+- $\mathrm{SU}(3)_C$ from $G_2$ as the stabilizer of the O-direction — **[T]** (standard mathematical fact)
+- Electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE) — **[T]** (combinatorics: uniqueness of $(E,U)$); **[C]** (dynamical gauge structure)
+- Full correspondence "SM from $G_2$ + (FE)" — **[C]** (electroweak dynamics is conditional)
 :::
 
-Центральная задача — вывод калибровочной группы Стандартной Модели $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ из $G_2 = \mathrm{Aut}(\mathbb{O})$. Стратегия двойственна: $\mathrm{SU}(3)_C$ извлекается из стабилизатора O-направления в $G_2$, а электрослабый сектор $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ — из Фано-электрослабой конструкции (ФЭ): Хиггсова линия $\{A,E,U\}$ канонически разлагает $\bar{3} \to \{E,U\} \oplus \{L\}$.
+The central task is the derivation of the Standard Model gauge group $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$. The strategy is dual: $\mathrm{SU}(3)_C$ is extracted from the stabilizer of the O-direction in $G_2$, while the electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ comes from the Fano-electroweak construction (FE): the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$.
 
-:::tip[Статус: \[Т\] для SU(3)\_C]
-$\mathrm{SU}(3)_C$ из $G_2$ — стандартный математический факт.
+:::tip[Status: \[T\] for SU(3)\_C]
+$\mathrm{SU}(3)_C$ from $G_2$ is a standard mathematical fact.
 :::
 
-:::tip[Статус: \[Т\] для комбинаторики электрослабого сектора]
-Электрослабый сектор $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ выводится из Фано-электрослабой конструкции (ФЭ): формула $\kappa_0$ [Т] категориально выделяет **единственную** пару $(E,U)$ через $\mathrm{Hom}(O,E)$ и $\mathrm{Hom}(O,U)$, Хиггсова линия $\{A,E,U\}$ канонически разлагает $\bar{3} \to \{E,U\} \oplus \{L\}$, что определяет $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. Полное доказательство единственности: [разд. 2.3a](#теорема-единственности-фэ).
+:::tip[Status: \[T\] for the combinatorics of the electroweak sector]
+The electroweak sector $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is derived from the Fano-electroweak construction (FE): the formula $\kappa_0$ [T] categorically singles out the **unique** pair $(E,U)$ via $\mathrm{Hom}(O,E)$ and $\mathrm{Hom}(O,U)$, the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$, which determines $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. Full proof of uniqueness: [sect. 2.3a](#теорема-единственности-фэ).
 :::
 
-:::warning Разграничение [Т] и [С] в электрослабом секторе {#электрослабое-разграничение}
-Следует чётко разделять два уровня результатов:
+:::warning Distinction between [T] and [C] in the electroweak sector {#электрослабое-разграничение}
+Two levels of results must be clearly separated:
 
-- **[Т] (доказано):** комбинаторная единственность пары $(E,U)$ из $\kappa_0$, единственность Хиггсовой линии $\{A,E,U\}$, каноническая декомпозиция $\bar{3} \to 2_{EU} \oplus 1_L$
-- **[С] (условно):** полная динамическая калибровочная структура $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ с корректным бегом констант связи — зависит от динамического содержания (Gap-потенциал, RG-уравнения), выходящего за рамки чистой комбинаторики
-- **Свободный параметр:** генератор гиперзаряда $Y$ содержит параметр $\alpha$ (относительный вес барионного числа и слабого изоспина внутри $\bar{3}$), значение которого не фиксируется Фано-структурой и требует дополнительного условия (например, из аномальной свободы или феноменологии)
+- **[T] (proven):** combinatorial uniqueness of the pair $(E,U)$ from $\kappa_0$, uniqueness of the Higgs line $\{A,E,U\}$, canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$
+- **[C] (conditional):** full dynamical gauge structure $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ with correct running of coupling constants — depends on dynamical content (Gap potential, RG equations) going beyond pure combinatorics
+- **Free parameter:** the hypercharge generator $Y$ contains the parameter $\alpha$ (relative weight of baryon number and weak isospin within $\bar{3}$), whose value is not fixed by the Fano structure and requires an additional condition (e.g., from anomaly freedom or phenomenology)
 :::
 
 ---
 
-## 1. Анатомия $G_2$ и проблема ранга
+## 1. Anatomy of $G_2$ and the Rank Problem
 
-### 1.1 Постановка
+### 1.1 Setup
 
-**Фундаментальное препятствие.** $\mathrm{rank}(G_2) = 2$, а $\mathrm{rank}(\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)) = 2 + 1 + 1 = 4$. Следовательно, SM-группа **не является подгруппой** $G_2$.
+**Fundamental obstacle.** $\mathrm{rank}(G_2) = 2$, while $\mathrm{rank}(\mathrm{SU}(3) \times \mathrm{SU}(2) \times \mathrm{U}(1)) = 2 + 1 + 1 = 4$. Consequently, the SM group **is not a subgroup** of $G_2$.
 
-**Стратегия.** Преодолеть препятствие через два механизма:
-- (A) $\mathrm{SU}(3)_C$ из стабилизатора O-направления в $G_2$ — **[Т]** (структурная симметрия, rank $2 \to$ rank 2)
-- (B) $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ из Фано-электрослабой конструкции (ФЭ): Хиггсова линия $\{A,E,U\}$ канонически разлагает $\bar{3} \to \{E,U\} \oplus \{L\}$ — **[Т]** (единственность пары $(E,U)$ из $\kappa_0$ [Т]; добавляет rank 2 в 42D PW-расширении)
+**Strategy.** Overcome the obstacle through two mechanisms:
+- (A) $\mathrm{SU}(3)_C$ from the stabilizer of the O-direction in $G_2$ — **[T]** (structural symmetry, rank $2 \to$ rank 2)
+- (B) $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from the Fano-electroweak construction (FE): the Higgs line $\{A,E,U\}$ canonically decomposes $\bar{3} \to \{E,U\} \oplus \{L\}$ — **[T]** (uniqueness of the pair $(E,U)$ from $\kappa_0$ [T]; adds rank 2 in the 42D PW extension)
 
-### 1.2 Теорема 1.1 (Разложение $G_2$-генераторов под $\mathrm{SU}(3)$)
+### 1.2 Theorem 1.1 (Decomposition of $G_2$-generators under $\mathrm{SU}(3)$)
 
-:::tip[Статус: Теорема \[Т\]]
-Максимальное вложение $\mathrm{SU}(3) \subset G_2$ (стабилизатор вектора в $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$) определяет разложение.
+:::tip[Status: Theorem \[T\]]
+The maximal embedding $\mathrm{SU}(3) \subset G_2$ (stabilizer of a vector in $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$) determines the decomposition.
 :::
 
-**(a)** Представление **7** (фундаментальное):
+**(a)** Representation **7** (fundamental):
 
 $$7 \to 1_O \oplus 3_{ASD} \oplus \bar{3}_{LEU}$$
 
-где: $1$ — выделенное O-направление (время, Пейдж–Вуттерс); $3$ — пространственный триплет $\{A, S, D\}$; $\bar{3}$ — Gap-триплет $\{L, E, U\}$.
+where: $1$ — distinguished O-direction (time, Page–Wootters); $3$ — spatial triplet $\{A, S, D\}$; $\bar{3}$ — Gap triplet $\{L, E, U\}$.
 
-**(b)** Присоединённое представление **14** (алгебра $\mathfrak{g}_2$):
+**(b)** Adjoint representation **14** (algebra $\mathfrak{g}_2$):
 
 $$14 \to 8 \oplus 3 \oplus \bar{3}$$
 
-где $8$ — присоединённое представление $\mathrm{SU}(3)$ (генераторы $\mathrm{SU}(3)$), $3$ и $\bar{3}$ — фундаментальные представления.
+where $8$ is the adjoint representation of $\mathrm{SU}(3)$ (generators of $\mathrm{SU}(3)$), $3$ and $\bar{3}$ are fundamental representations.
 
-**(c)** 21 когерентность $\gamma_{ij}$ разлагается на секторы:
+**(c)** The 21 coherences $\gamma_{ij}$ decompose into sectors:
 
-| Сектор | Пары | Число | $\mathrm{SU}(3)$-представление |
+| Sector | Pairs | Number | $\mathrm{SU}(3)$-representation |
 |---|---|---|---|
 | O-to-3 | $\{A\text{-}O, S\text{-}O, D\text{-}O\}$ | 3 | $3$ |
 | O-to-$\bar{3}$ | $\{L\text{-}O, E\text{-}O, U\text{-}O\}$ | 3 | $\bar{3}$ |
@@ -77,1079 +77,1079 @@ $$14 \to 8 \oplus 3 \oplus \bar{3}$$
 | $\bar{3}$-to-$\bar{3}$ | $\{L\text{-}E, L\text{-}U, E\text{-}U\}$ | 3 | $3$ ($\wedge^2 \bar{3}$) |
 | **3-to-$\bar{3}$** | **$\{A\text{-}L, A\text{-}E, A\text{-}U, S\text{-}L, S\text{-}E, S\text{-}U, D\text{-}L, D\text{-}E, D\text{-}U\}$** | **9** | **$8 \oplus 1$** |
 
-**(d)** Сектор 3-to-$\bar{3}$ содержит **присоединённое представление $\mathrm{SU}(3)$** (8 генераторов) плюс **$\mathrm{SU}(3)$-синглет** (1 генератор). Восемь — это в точности число глюонов в QCD.
+**(d)** The 3-to-$\bar{3}$ sector contains the **adjoint representation of $\mathrm{SU}(3)$** (8 generators) plus the **$\mathrm{SU}(3)$-singlet** (1 generator). Eight is precisely the number of gluons in QCD.
 
-**Доказательство.** Стандартная теория представлений исключительных алгебр Ли. Вложение $\mathrm{SU}(3) \subset G_2$ определяется стабилизатором: $\mathrm{Stab}_{G_2}(e_1) \cong \mathrm{SU}(3)$ для любого единичного вектора $e_1 \in S^6 \subset \mathrm{Im}(\mathbb{O})$. Разложение **7** следует из того, что $\mathrm{SU}(3)$ действует тривиально на $e_1$ (синглет) и как фундаментальное/антифундаментальное на ортогональном дополнении. Разложение **14** следует из структурной теоремы для пар $(G_2, \mathrm{SU}(3))$:
+**Proof.** Standard representation theory of exceptional Lie algebras. The embedding $\mathrm{SU}(3) \subset G_2$ is defined by the stabilizer: $\mathrm{Stab}_{G_2}(e_1) \cong \mathrm{SU}(3)$ for any unit vector $e_1 \in S^6 \subset \mathrm{Im}(\mathbb{O})$. The decomposition of **7** follows from the fact that $\mathrm{SU}(3)$ acts trivially on $e_1$ (singlet) and as fundamental/antifundamental on the orthogonal complement. The decomposition of **14** follows from the structural theorem for the pair $(G_2, \mathrm{SU}(3))$:
 
 $$\mathfrak{g}_2 = \mathfrak{su}(3) \oplus \mathfrak{m}, \quad \mathfrak{m} \cong \mathbb{C}^3$$
 
-где $\mathfrak{m}$ — ортогональное дополнение, изоморфное $3 \oplus \bar{3}$ как $\mathrm{SU}(3)$-модуль (Бессе, 1987). Для сектора (c): 21 пара $= C(7,2)$ разлагается по правилам тензорного произведения представлений $\mathrm{SU}(3)$. Сектор $3 \otimes \bar{3} = 8 \oplus 1$ — стандартное разложение (Клебш-Гордан). $\blacksquare$
+where $\mathfrak{m}$ is the orthogonal complement, isomorphic to $3 \oplus \bar{3}$ as an $\mathrm{SU}(3)$-module (Besse, 1987). For sector (c): 21 pairs $= C(7,2)$ decompose by the rules of tensor products of $\mathrm{SU}(3)$ representations. The sector $3 \otimes \bar{3} = 8 \oplus 1$ is the standard decomposition (Clebsch-Gordan). $\blacksquare$
 
-### 1.3 Следствие 1.1 ($\mathrm{SU}(3)_C$ как стабилизатор времени)
+### 1.3 Corollary 1.1 ($\mathrm{SU}(3)_C$ as the Stabilizer of Time)
 
-:::tip[Статус: Теорема \[Т\]]
-Выбор O-измерения как «часов» (Пейдж–Вуттерс, Аксиома 4) спонтанно нарушает $G_2 \to \mathrm{SU}(3)$.
+:::tip[Status: Theorem \[T\]]
+The choice of the O-dimension as "clock" (Page–Wootters, Axiom 4) spontaneously breaks $G_2 \to \mathrm{SU}(3)$.
 :::
 
-:::info Фундаментальность $G_2$-калибровки [Т]
-$G_2$ — не произвольно выбранная симметрия, а **единственная максимальная калибровочная группа** УГМ, доказанная в [теореме $G_2$-ригидности](/docs/proofs/categorical/uniqueness-theorem#лемма-g4) [Т]: никакая большая подгруппа $U(7)$ не сохраняет все аксиоматические структуры. Следовательно, вся структура SM (нарушение $G_2 \to \mathrm{SU}(3)_C$, электрослабый сектор) — **необходимое** следствие единственности голономного представления, а не параметрический выбор.
+:::info Fundamentality of $G_2$-gauge symmetry [T]
+$G_2$ is not an arbitrarily chosen symmetry, but the **only maximal gauge group** of UHM, proven in the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#лемма-g4) [T]: no larger subgroup of $U(7)$ preserves all axiomatic structures. Consequently, the entire SM structure ($G_2 \to \mathrm{SU}(3)_C$ breaking, electroweak sector) is a **necessary** consequence of the uniqueness of the holonomy representation, not a parametric choice.
 :::
 
-Оставшаяся $\mathrm{SU}(3)$ отождествляется с **калибровочной группой сильного взаимодействия** $\mathrm{SU}(3)_C$:
+The remaining $\mathrm{SU}(3)$ is identified with the **gauge group of the strong interaction** $\mathrm{SU}(3)_C$:
 
-**(a)** 8 генераторов $\mathrm{SU}(3)_C$ = 8 когерентностей сектора 3-to-$\bar{3}$ (после вычитания синглета):
+**(a)** 8 generators of $\mathrm{SU}(3)_C$ = 8 coherences of the 3-to-$\bar{3}$ sector (after subtracting the singlet):
 
 $$T_a^{(\mathrm{color})} \in \{A\text{-}L, A\text{-}E, A\text{-}U, S\text{-}L, S\text{-}E, S\text{-}U, D\text{-}L, D\text{-}E, D\text{-}U\}_{\mathrm{traceless}}$$
 
-**(b)** «Глюонное поле» — флуктуации 8 Gap-фаз $\theta_{ij}$ в секторе 3-to-$\bar{3}$ вокруг вакуумного значения:
+**(b)** "Gluon field" — fluctuations of the 8 Gap phases $\theta_{ij}$ in the 3-to-$\bar{3}$ sector around the vacuum value:
 
 $$A_\mu^a(x) \sim \partial_\mu \theta_{ij}^{(a)}(x), \quad a = 1, \ldots, 8$$
 
-**(c)** $\mathrm{SU}(3)_C$ — **точная** симметрия (не нарушена в вакууме), потому что Gap-вакуум $\Gamma_{\mathrm{vac}}$ (L0) **изотропен** в секторе 3-to-$\bar{3}$:
+**(c)** $\mathrm{SU}(3)_C$ is an **exact** symmetry (not broken in the vacuum), because the Gap vacuum $\Gamma_{\mathrm{vac}}$ (L0) is **isotropic** in the 3-to-$\bar{3}$ sector:
 
 $$\mathrm{Gap}(A,L) = \mathrm{Gap}(A,E) = \cdots = \mathrm{Gap}(D,U) = \mathrm{Gap}_{\mathrm{vac}}^{(3\bar{3})}$$
 
-Все 9 когерентностей этого сектора имеют одинаковый Gap, и $\mathrm{SU}(3)$ не нарушена.
+All 9 coherences of this sector have the same Gap, and $\mathrm{SU}(3)$ is unbroken.
 
-**Обоснование отождествления.** Из всех возможных кандидатов на $\mathrm{SU}(3)$ (стабилизаторы $A, S, \ldots, U$), O — единственный, для которого:
-- (i) Стабилизатор имеет физический смысл (выбор «часовой» подсистемы)
-- (ii) Оставшаяся $\mathrm{SU}(3)$ действует на пространственный+Gap секторы
-- (iii) $G_2$-инвариантность лагранжиана гарантирует сохранение $\mathrm{SU}(3)_C$ зарядов (8 из 14 $G_2$-зарядов)
+**Justification of the identification.** Of all possible candidates for $\mathrm{SU}(3)$ (stabilizers of $A, S, \ldots, U$), O is the only one for which:
+- (i) The stabilizer has a physical meaning (choice of the "clock" subsystem)
+- (ii) The remaining $\mathrm{SU}(3)$ acts on the spatial + Gap sectors
+- (iii) $G_2$-invariance of the Lagrangian guarantees conservation of $\mathrm{SU}(3)_C$ charges (8 of the 14 $G_2$-charges)
 
 ---
 
-## 2. Электрослабый сектор из Фано-электрослабой конструкции (ФЭ) {#электрослабый-сектор-фэ}
+## 2. Electroweak Sector from the Fano-Electroweak Construction (FE) {#электрослабый-сектор-фэ}
 
-### 2.1 Проблема ранга и её решение {#проблема-ранга}
+### 2.1 The Rank Problem and Its Solution {#проблема-ранга}
 
-**Проблема.** $\mathrm{rank}(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y) = 2$, но после выделения $\mathrm{SU}(3) \subset G_2$ (rank 2) не осталось rank для электрослабого сектора — $G_2$ уже «израсходована».
+**Problem.** $\mathrm{rank}(\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y) = 2$, but after extracting $\mathrm{SU}(3) \subset G_2$ (rank 2) no rank remains for the electroweak sector — $G_2$ is already "exhausted."
 
-**Решение через два механизма:**
+**Solution through two mechanisms:**
 
-| Механизм | Источник | Результат | Статус |
+| Mechanism | Source | Result | Status |
 |---|---|---|---|
-| $G_2 \to \mathrm{SU}(3)_C$ | Стабилизатор O-направления | rank 2 — сильное взаимодействие | **[Т]** |
-| Фано-электрослабая конструкция (ФЭ) | Хиггсова линия $\{A,E,U\}$ | rank 2 — электрослабое взаимодействие | **[Т]** (комбинаторика); **[С]** (динамика) |
+| $G_2 \to \mathrm{SU}(3)_C$ | Stabilizer of the O-direction | rank 2 — strong interaction | **[T]** |
+| Fano-electroweak construction (FE) | Higgs line $\{A,E,U\}$ | rank 2 — electroweak interaction | **[T]** (combinatorics); **[C]** (dynamics) |
 
-**Анализ в 7D:** Генератор $T_3 = (\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert)/2$ группы $\mathrm{SU}(2)_L$ — диагональный оператор. В рамках $\mathfrak{su}(3)$, действующей на $\bar{3} = \{L,E,U\}$, генераторы Картана (аналоги $\lambda_3$, $\lambda_8$ Гелл-Манна) включают $\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert$ как один из двух Картановских. Следовательно, $T_3 \in \mathfrak{h}(\mathrm{SU}(3))$, и в 7D $\mathrm{SU}(2)_L$ — **подгруппа** $\mathrm{SU}(3)_{\bar{3}}$. Rank остаётся 2.
+**Analysis in 7D:** The generator $T_3 = (\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert)/2$ of $\mathrm{SU}(2)_L$ is a diagonal operator. Within $\mathfrak{su}(3)$ acting on $\bar{3} = \{L,E,U\}$, the Cartan generators (analogues of Gell-Mann's $\lambda_3$, $\lambda_8$) include $\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert$ as one of the two Cartans. Consequently, $T_3 \in \mathfrak{h}(\mathrm{SU}(3))$, and in 7D $\mathrm{SU}(2)_L$ is a **subgroup** of $\mathrm{SU}(3)_{\bar{3}}$. The rank remains 2.
 
-**Разрешение в 42D:** В Пейдж–Вуттерс расширении (Аксиома A5):
+**Resolution in 42D:** In the Page–Wootters extension (Axiom A5):
 
 $$\mathcal{H}_{\mathrm{total}} = \mathcal{H}_O \otimes \mathcal{H}_{6D} = \mathbb{C}^7 \otimes \mathbb{C}^6 = \mathbb{C}^{42}$$
 
-$\mathrm{SU}(3)_C$ (от $G_2$ на часовом факторе) и $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (от (ФЭ) на системном факторе) действуют на **разные** тензорные множители, поэтому коммутируют и rank складывается: $2 + 2 = 4 = \mathrm{rank}(\mathrm{SM})$. Статус: **[Т]** (при аксиоме A5 Пейдж–Вуттерс).
+$\mathrm{SU}(3)_C$ (from $G_2$ on the clock factor) and $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (from (FE) on the system factor) act on **different** tensor factors, so they commute and ranks add: $2 + 2 = 4 = \mathrm{rank}(\mathrm{SM})$. Status: **[T]** (under Axiom A5, Page–Wootters).
 
-:::tip Решено: бимодульная конструкция [Т]
-SM-представления $(3,2)_{1/6}$ возникают **не** из тензорного произведения $\mathbb{C}^7 \otimes \mathbb{C}^6$ (это реализация PW для эмерджентного времени), а из **бимодульного разложения** $H_F$ через реальную структуру $J$ (KO-dim 6): левое действие $\mathbb{H}$ даёт слабый изоспин, правое $M_3(\mathbb{C})^\circ$ — цвет. Оба на одном элементе $\xi \in H_F$. Полное доказательство: [Бимодульная конструкция T-176](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция).
+:::tip Resolved: bimodule construction [T]
+SM representations $(3,2)_{1/6}$ arise **not** from the tensor product $\mathbb{C}^7 \otimes \mathbb{C}^6$ (this is the PW realization for emergent time), but from the **bimodule decomposition** of $H_F$ via the real structure $J$ (KO-dim 6): the left action of $\mathbb{H}$ gives weak isospin, the right action of $M_3(\mathbb{C})^\circ$ gives color. Both act on the same element $\xi \in H_F$. Full proof: [Bimodule construction T-176](/docs/proofs/physics/bimodule-construction#бимодульная-конструкция).
 :::
 
-### 2.2 Фановская структура и Хиггсова линия {#фановская-структура}
+### 2.2 Fano Structure and the Higgs Line {#фановская-структура}
 
-Семь Фано-линий $\mathrm{PG}(2,2)$ (с отождествлением $\{1,2,3,4,5,6,7\} = \{A,S,D,L,E,U,O\}$):
+The seven Fano lines of $\mathrm{PG}(2,2)$ (with the identification $\{1,2,3,4,5,6,7\} = \{A,S,D,L,E,U,O\}$):
 
-| Фано-линия | Измерения | Тип |
+| Fano line | Dimensions | Type |
 |---|---|---|
-| $\{1,2,4\}$ | $\{A,S,L\}$ | Генерационный триплет |
-| $\{2,3,5\}$ | $\{S,D,E\}$ | Цветовой-Gap мост |
-| $\{3,4,6\}$ | $\{D,L,U\}$ | Цветовой-Gap мост |
-| $\{4,5,7\}$ | $\{L,E,O\}$ | Временной-Gap |
-| **$\{5,6,1\}$** | **$\{E,U,A\}$** | **Хиггсова линия** |
-| $\{6,7,2\}$ | $\{U,O,S\}$ | Временной-Gap |
-| $\{7,1,3\}$ | $\{O,A,D\}$ | Временной-пространственный |
+| $\{1,2,4\}$ | $\{A,S,L\}$ | Generation triplet |
+| $\{2,3,5\}$ | $\{S,D,E\}$ | Color-Gap bridge |
+| $\{3,4,6\}$ | $\{D,L,U\}$ | Color-Gap bridge |
+| $\{4,5,7\}$ | $\{L,E,O\}$ | Temporal-Gap |
+| **$\{5,6,1\}$** | **$\{E,U,A\}$** | **Higgs line** |
+| $\{6,7,2\}$ | $\{U,O,S\}$ | Temporal-Gap |
+| $\{7,1,3\}$ | $\{O,A,D\}$ | Temporal-spatial |
 
-Хиггсова линия $\{A,E,U\} = \{5,6,1\}$ — **единственная** Фано-линия, содержащая оба электрослабых измерения $E$ и $U$ (доказано в разд. 9.2, [Т]).
+The Higgs line $\{A,E,U\} = \{5,6,1\}$ is the **unique** Fano line containing both electroweak dimensions $E$ and $U$ (proven in sect. 9.2, [T]).
 
-**Классификация по отношению к разложению $7 = 1_O \oplus 3_{ASD} \oplus \bar{3}_{LEU}$:**
+**Classification with respect to the decomposition $7 = 1_O \oplus 3_{ASD} \oplus \bar{3}_{LEU}$:**
 
-| Тип | Фано-линии | Число | Характеристика |
+| Type | Fano lines | Number | Characteristic |
 |-----|-----------|-------|----------------|
-| O-линии | $\{L,E,O\}$, $\{U,O,S\}$, $\{O,A,D\}$ | 3 | Проходят через O |
-| Смешанные | $\{A,S,L\}$, $\{S,D,E\}$, $\{A,E,U\}$ | 3 | Содержат элементы из 3 и $\bar{3}$, не проходят через O |
-| Внутренняя $\bar{3}$ | $\{D,L,U\}$ | 1 | Целиком внутри $\bar{3}$ |
+| O-lines | $\{L,E,O\}$, $\{U,O,S\}$, $\{O,A,D\}$ | 3 | Pass through O |
+| Mixed | $\{A,S,L\}$, $\{S,D,E\}$, $\{A,E,U\}$ | 3 | Contain elements from both 3 and $\bar{3}$, do not pass through O |
+| Inner $\bar{3}$ | $\{D,L,U\}$ | 1 | Entirely within $\bar{3}$ |
 
-:::note Асимметрия 3 / 3̄ [Т]
-Ни одна Фано-линия не лежит целиком в $3 = \{A,S,D\}$: тройка $\{1,2,3\}$ **не является** Фано-линией. Единственная внутренняя линия — $\{D,L,U\} \subset \bar{3}$. Эта структурная асимметрия между $3$ и $\bar{3}$ — следствие инцидентной геометрии PG(2,2).
+:::note Asymmetry 3 / 3̄ [T]
+No Fano line lies entirely within $3 = \{A,S,D\}$: the triple $\{1,2,3\}$ is **not** a Fano line. The only inner line is $\{D,L,U\} \subset \bar{3}$. This structural asymmetry between $3$ and $\bar{3}$ is a consequence of the incidence geometry of PG(2,2).
 :::
 
-### 2.3 Теорема 2.1 (Фано-электрослабая конструкция) {#теорема-фэ}
+### 2.3 Theorem 2.1 (Fano-Electroweak Construction) {#теорема-фэ}
 
-:::tip[Статус: Теорема \[Т\]]
-Хиггсова линия $\{A,E,U\}$ канонически определяет электрослабую калибровочную симметрию $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. Единственность конструкции доказана: формула $\kappa_0$ [Т] категориально выделяет пару $(E,U)$ — см. [разд. 2.3a](#теорема-единственности-фэ).
+:::tip[Status: Theorem \[T\]]
+The Higgs line $\{A,E,U\}$ canonically defines the electroweak gauge symmetry $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$. The uniqueness of the construction is proven: the formula $\kappa_0$ [T] categorically singles out the pair $(E,U)$ — see [sect. 2.3a](#теорема-единственности-фэ).
 :::
 
-**Фано-электрослабая теорема единственности (ФЭ).** *Каноническая декомпозиция $\bar{3} \to 2_{EU} \oplus 1_L$, индуцированная Хиггсовой линией $\{A,E,U\}$, определяет **единственную** эффективную калибровочную симметрию электрослабого сектора [Т].*
+**Fano-electroweak uniqueness theorem (FE).** *The canonical decomposition $\bar{3} \to 2_{EU} \oplus 1_L$, induced by the Higgs line $\{A,E,U\}$, determines the **unique** effective gauge symmetry of the electroweak sector [T].*
 
-**(a)** Антифундаментальный триплет $\bar{3}_{LEU} = \{L, E, U\}$ разлагается по Хиггсовой линии:
+**(a)** The antifundamental triplet $\bar{3}_{LEU} = \{L, E, U\}$ decomposes along the Higgs line:
 
 $$\bar{3}_{LEU} \to 2_{EU} \oplus 1_L$$
 
-где $2_{EU} = \{E, U\}$ — дублет, $1_L = \{L\}$ — синглет. Декомпозиция каноническая: Хиггсова линия $\{A,E,U\}$ выделяет пару $\{E,U\}$ из $\bar{3}$ единственным образом (разд. 9.2).
+where $2_{EU} = \{E, U\}$ is the doublet, $1_L = \{L\}$ is the singlet. The decomposition is canonical: the Higgs line $\{A,E,U\}$ singles out the pair $\{E,U\}$ from $\bar{3}$ in a unique way (sect. 9.2).
 
-**(b)** Калибровочная структура с явными генераторами:
+**(b)** Gauge structure with explicit generators:
 
-$\mathrm{SU}(2)_L$ — 3 генератора (вращения в $\{E,U\}$-подпространстве):
+$\mathrm{SU}(2)_L$ — 3 generators (rotations in the $\{E,U\}$-subspace):
 
 $$
 T_1 = \frac{1}{2}(\lvert E\rangle\langle U\rvert + \lvert U\rangle\langle E\rvert), \quad T_2 = \frac{1}{2i}(\lvert E\rangle\langle U\rvert - \lvert U\rangle\langle E\rvert), \quad T_3 = \frac{1}{2}(\lvert E\rangle\langle E\rvert - \lvert U\rangle\langle U\rvert)
 $$
 
-$\mathrm{U}(1)_Y$ — 1 генератор (слабый гиперзаряд):
+$\mathrm{U}(1)_Y$ — 1 generator (weak hypercharge):
 
 $$
 Y = \frac{1}{3}\left(\sum_{i \in 3} \lvert i\rangle\langle i\rvert - \sum_{j \in \bar{3}} \lvert j\rangle\langle j\rvert\right) + \alpha\left(\lvert L\rangle\langle L\rvert - \frac{1}{2}(\lvert E\rangle\langle E\rvert + \lvert U\rangle\langle U\rvert)\right)
 $$
 
-где первое слагаемое — аналог барионного числа (различает 3 и $\bar{3}$), второе — слабый изоспин внутри $\bar{3}$ (различает $1_L$ и $2_{EU}$). Итого: 4 генератора = $\dim(\mathrm{SU}(2) \times \mathrm{U}(1))$.
+where the first term is an analogue of baryon number (distinguishes 3 and $\bar{3}$), the second is weak isospin within $\bar{3}$ (distinguishes $1_L$ and $2_{EU}$). Total: 4 generators = $\dim(\mathrm{SU}(2) \times \mathrm{U}(1))$.
 
-:::warning Нефиксированный параметр α
-Параметр α в генераторе гиперзаряда Y **не фиксирован** Фано-структурой. Единственность калибровочной группы SU(3)×SU(2)×U(1) — [Т]; единственность гиперзарядового вложения — [С при фиксации α из аномалийной свободы или феноменологии].
+:::warning Unfixed parameter α
+The parameter α in the hypercharge generator Y is **not fixed** by the Fano structure. The uniqueness of the gauge group SU(3)×SU(2)×U(1) is [T]; the uniqueness of the hypercharge embedding is [C, upon fixing α from anomaly freedom or phenomenology].
 :::
 
-**(c)** Преимущество перед SU(6)-конструкцией:
+**(c)** Advantage over the SU(6)-construction:
 
-| Критерий | Старый подход [Г] (SU(6)) | (ФЭ)-конструкция [Т] |
+| Criterion | Old approach [H] (SU(6)) | (FE)-construction [T] |
 |----------|--------------------------|--------------------------|
-| Число гипотез | $\geq 3$ (SU(6), SU(5)-вложение, GJ-разложение) | 0 (выводится из $\kappa_0$ [Т]) |
-| Использование Фано | Минимальное | Центральное (Хиггсова линия) |
-| Согласование SU(3) | Требует отдельной теоремы | Автоматическое (единая SU(3) из $G_2$) |
-| Предсказательная сила | X,Y-лептокварки (не наблюдены) | Юкавская иерархия (согласуется) |
-| Экономичность | 35 генераторов SU(6) | 12 генераторов SM |
-| Статус | [Г] | **[Т]** — теорема единственности |
+| Number of hypotheses | $\geq 3$ (SU(6), SU(5)-embedding, GJ-decomposition) | 0 (derived from $\kappa_0$ [T]) |
+| Use of Fano | Minimal | Central (Higgs line) |
+| SU(3) consistency | Requires a separate theorem | Automatic (single SU(3) from $G_2$) |
+| Predictive power | X,Y-leptoquarks (not observed) | Yukawa hierarchy (consistent) |
+| Economy | 35 generators of SU(6) | 12 generators of SM |
+| Status | [H] | **[T]** — uniqueness theorem |
 
-### 2.3a Теорема единственности электрослабой конструкции {#теорема-единственности-фэ}
+### 2.3a Uniqueness Theorem for the Electroweak Construction {#теорема-единственности-фэ}
 
-:::tip[Статус: Теорема \[Т\]+\[И\]]
-Калибровочная группа SM $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ является **единственной** калибровочной группой ранга 4, совместимой со структурой Фано-плоскости и $G_2$-симметрией. Ключевой элемент — категориальная единственность пары $(E,U)$ из формулы $\kappa_0$ [Т]. Отождествление абстрактных генераторов с физическими калибровочными полями SM — **[И]** (интерпретативный шаг).
+:::tip[Status: Theorem \[T\]+\[I\]]
+The SM gauge group $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry. The key element is the categorical uniqueness of the pair $(E,U)$ from the formula $\kappa_0$ [T]. Identification of the abstract generators with the physical SM gauge fields is **[I]** (an interpretive step).
 :::
 
-**Теорема (Единственность электрослабой конструкции).** При аксиомах A1–A5 калибровочная группа Стандартной Модели
+**Theorem (Uniqueness of the electroweak construction).** Under axioms A1–A5, the Standard Model gauge group
 $$G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$$
-является **единственной** калибровочной группой ранга 4, совместимой со структурой Фано-плоскости и $G_2$-симметрией.
+is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry.
 
-#### Доказательство {#доказательство-единственности-фэ}
+#### Proof {#доказательство-единственности-фэ}
 
-**Шаг 1. $\mathrm{SU}(3)_C$ из $G_2$ [Т] (существующий результат).**
+**Step 1. $\mathrm{SU}(3)_C$ from $G_2$ [T] (existing result).**
 
-Стабилизатор O-направления в $G_2$-представлении на $\mathbb{C}^7$ есть $\mathrm{SU}(3)$ [Т]. Под действием $G_2 \to \mathrm{SU}(3)$:
+The stabilizer of the O-direction in the $G_2$-representation on $\mathbb{C}^7$ is $\mathrm{SU}(3)$ [T]. Under $G_2 \to \mathrm{SU}(3)$:
 $$7 \to 3 \oplus \bar{3} \oplus 1$$
-где $1 = O$, $3 = \{A, S, D\}$, $\bar{3} = \{L, E, U\}$. Rank$(\mathrm{SU}(3)_C) = 2$, полностью исчерпывает rank$(G_2)$.
+where $1 = O$, $3 = \{A, S, D\}$, $\bar{3} = \{L, E, U\}$. Rank$(\mathrm{SU}(3)_C) = 2$, fully exhausting rank$(G_2)$.
 
-**Шаг 2. Необходимость тензорного расширения [Т].**
+**Step 2. Necessity of tensor extension [T].**
 
-Rank$(G_{\mathrm{SM}}) = 4 > 2 =$ rank$(G_2)$. Следовательно, $G_{\mathrm{SM}} \not\subset G_2$. Дополнительный rank 2 может появиться **только** из тензорного расширения Пейдж–Вуттерс (A5):
+Rank$(G_{\mathrm{SM}}) = 4 > 2 =$ rank$(G_2)$. Consequently, $G_{\mathrm{SM}} \not\subset G_2$. The additional rank 2 can arise **only** from the Page–Wootters tensor extension (A5):
 $$\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_S = \mathbb{C}^7 \otimes \mathbb{C}^6$$
-где $G_2$ действует на $\mathcal{H}_O$ (структурный фактор), а электрослабая группа — на $\mathcal{H}_S$ (системный фактор). Тензорная независимость гарантирует коммутативность:
+where $G_2$ acts on $\mathcal{H}_O$ (structural factor) and the electroweak group acts on $\mathcal{H}_S$ (system factor). Tensor independence guarantees commutativity:
 $$[\mathrm{SU}(3)_C^{(\text{struct})}, G_{\mathrm{EW}}^{(\text{sys})}] = 0$$
-и сложение рангов.
+and addition of ranks.
 
-**Шаг 3. Классификация возможных калибровочных групп на $\bar{3}$ [Т].**
+**Step 3. Classification of possible gauge groups on $\bar{3}$ [T].**
 
-На системном факторе электрослабая группа $G_{\mathrm{EW}}$ действует на $\bar{3} = \{L, E, U\} \cong \mathbb{C}^3$. Необходимый rank$= 2$. Максимальные подгруппы $\mathrm{U}(3)$ ранга 2:
+On the system factor, the electroweak group $G_{\mathrm{EW}}$ acts on $\bar{3} = \{L, E, U\} \cong \mathbb{C}^3$. Required rank $= 2$. Maximal subgroups of $\mathrm{U}(3)$ of rank 2:
 
-| Подгруппа | Rank | Фано-совместимость |
+| Subgroup | Rank | Fano-compatibility |
 |-----------|:----:|:------------------:|
-| $\mathrm{SU}(3)$ | 2 | Да, но тривиальная (вся $\bar{3}$-симметрия) |
-| $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 2 | **Требует** 2+1 декомпозиции $\bar{3}$ |
-| $\mathrm{U}(1) \times \mathrm{U}(1)$ | 2 | Абелева — недостаточна для массового спектра |
-| $\mathrm{U}(2)$ | 2 | Изоморфна $\mathrm{SU}(2) \times \mathrm{U}(1)$ с точностью до центра |
+| $\mathrm{SU}(3)$ | 2 | Yes, but trivial (full $\bar{3}$-symmetry) |
+| $\mathrm{SU}(2) \times \mathrm{U}(1)$ | 2 | **Requires** a 2+1 decomposition of $\bar{3}$ |
+| $\mathrm{U}(1) \times \mathrm{U}(1)$ | 2 | Abelian — insufficient for the mass spectrum |
+| $\mathrm{U}(2)$ | 2 | Isomorphic to $\mathrm{SU}(2) \times \mathrm{U}(1)$ up to center |
 
-**Шаг 4. Единственность декомпозиции $\bar{3} \to 2 \oplus 1$ [Т] (ключевой новый элемент).**
+**Step 4. Uniqueness of the decomposition $\bar{3} \to 2 \oplus 1$ [T] (key new element).**
 
-Каждая декомпозиция $\bar{3} = \{L, E, U\} \to (2) \oplus (1)$ определяется выделенной **парой** в $\bar{3}$. Пары в $\bar{3}$:
+Each decomposition $\bar{3} = \{L, E, U\} \to (2) \oplus (1)$ is defined by a distinguished **pair** in $\bar{3}$. Pairs in $\bar{3}$:
 
-| Пара | Остаток | Фано-линия через пару | Третья точка |
+| Pair | Remainder | Fano line through the pair | Third point |
 |------|---------|----------------------|-------------|
 | $\{E, U\}$ | $\{L\}$ | $\{A, E, U\}$ | $A \in 3$ |
 | $\{L, U\}$ | $\{E\}$ | $\{D, L, U\}$ | $D \in 3$ |
 | $\{L, E\}$ | $\{U\}$ | $\{L, E, O\}$ | $O = 1$ |
 
-Критерий единственности — **категориальная совместимость с $\kappa_0$ [Т]**.
+Uniqueness criterion — **categorical compatibility with $\kappa_0$ [T]**.
 
-Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ [Т] выделяет **ровно пару $(E, U)$** через морфизмы $\mathrm{Hom}(O, E)$ и $\mathrm{Hom}(O, U)$. Это пара, через которую осуществляется регенерация: $O$ (Основание) связано с $E$ (Интериорность) и $U$ (Единство) **функционально**, через единственную аксиоматическую формулу. Замена на другую пару:
+The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ [T] singles out **exactly the pair $(E, U)$** via the morphisms $\mathrm{Hom}(O, E)$ and $\mathrm{Hom}(O, U)$. This is the pair through which regeneration is carried out: $O$ (Ground) is connected to $E$ (Interiority) and $U$ (Unity) **functionally**, through the unique axiomatic formula. Substituting another pair:
 
-- Пара $\{L, U\}$: нет $\mathrm{Hom}(O, L)$ в $\kappa_0$ — $L$ не выделена категориально
-- Пара $\{L, E\}$: исключает $U$ из дублета — разрушает нормировку $\mathrm{Tr}(\Gamma) = 1$ (функция U)
+- Pair $\{L, U\}$: no $\mathrm{Hom}(O, L)$ in $\kappa_0$ — $L$ is not categorically singled out
+- Pair $\{L, E\}$: excludes $U$ from the doublet — destroys the normalization $\mathrm{Tr}(\Gamma) = 1$ (function of U)
 
-Следовательно, декомпозиция $\bar{3} \to \{E, U\} \oplus \{L\}$ **единственна**.
+Consequently, the decomposition $\bar{3} \to \{E, U\} \oplus \{L\}$ is **unique**.
 
-**Шаг 5. Единственность Фано-Хиггсовой линии [Т] (существующий результат).**
+**Step 5. Uniqueness of the Fano-Higgs line [T] (existing result).**
 
-В PG(2,2) через точки $E = 5$ и $U = 6$ проходит ровно одна линия: $\{A, E, U\} = \{1, 5, 6\}$. $\blacksquare$
+In PG(2,2), exactly one line passes through the points $E = 5$ and $U = 6$: $\{A, E, U\} = \{1, 5, 6\}$. $\blacksquare$
 
-**Шаг 6. Единственность $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ [Т].**
+**Step 6. Uniqueness of $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ [T].**
 
-На дублете $\{E, U\} \cong \mathbb{C}^2$:
-- $\mathrm{SU}(2)_L$ — единственная (с точностью до изоморфизма) группа ранга 1, действующая неприводимо на $\mathbb{C}^2$
-- $\mathrm{U}(1)_Y$ — единственный (с точностью до нормировки) генератор, коммутирующий с $\mathrm{SU}(2)_L$ и различающий $3$ и $\bar{3}$
+On the doublet $\{E, U\} \cong \mathbb{C}^2$:
+- $\mathrm{SU}(2)_L$ is the unique (up to isomorphism) rank-1 group acting irreducibly on $\mathbb{C}^2$
+- $\mathrm{U}(1)_Y$ is the unique (up to normalization) generator commuting with $\mathrm{SU}(2)_L$ and distinguishing $3$ and $\bar{3}$
 
-**Шаг 7. Итог: rank = 4 [Т].**
+**Step 7. Result: rank = 4 [T].**
 
 $$\text{rank}(\mathrm{SU}(3)_C) + \text{rank}(\mathrm{SU}(2)_L) + \text{rank}(\mathrm{U}(1)_Y) = 2 + 1 + 1 = 4$$
 
-Поскольку на каждом шаге выбор **единствен**, альтернативная калибровочная группа ранга 4 **не существует**. $\blacksquare$
+Since at each step the choice is **unique**, an alternative rank-4 gauge group **does not exist**. $\blacksquare$
 
-:::info[Ключевой новый элемент]
-Шаг 4 — **категориальная единственность пары $(E, U)$** из формулы $\kappa_0$ [Т]. Ранее (ФЭ) полагалась отдельной гипотезой; теперь она выводится из $\kappa_0$-теоремы. Формула $\kappa_0$ [Т] содержит **ровно** $|\gamma_{OE}|$ и $|\gamma_{OU}|$ — это не свободный параметр, а следствие сопряжения $\mathcal{D} \dashv \mathcal{R}$ [Т].
+:::info[Key new element]
+Step 4 — **categorical uniqueness of the pair $(E, U)$** from the formula $\kappa_0$ [T]. Previously, (FE) was treated as a separate hypothesis; now it is derived from the $\kappa_0$-theorem. The formula $\kappa_0$ [T] contains **exactly** $|\gamma_{OE}|$ and $|\gamma_{OU}|$ — this is not a free parameter, but a consequence of the adjunction $\mathcal{D} \dashv \mathcal{R}$ [T].
 :::
 
-### 2.4 Теорема 2.2 (Согласование двух $\mathrm{SU}(3)$) {#согласование-su3}
+### 2.4 Theorem 2.2 (Consistency of the Two $\mathrm{SU}(3)$'s) {#согласование-su3}
 
-:::tip[Статус: Теорема \[Т\]]
-Два пути к $\mathrm{SU}(3)_C$ — через $G_2$ (разд. 1.3) и через тензорную структуру 42D (разд. 2.1) — дают **одну и ту же** подгруппу.
+:::tip[Status: Theorem \[T\]]
+The two routes to $\mathrm{SU}(3)_C$ — through $G_2$ (sect. 1.3) and through the 42D tensor structure (sect. 2.1) — yield **the same** subgroup.
 :::
 
-**(a)** Определение согласования. $G_2$ действует на $\mathcal{H}_O \cong \mathbb{C}^7$ (7D формализм). В 42D PW-расширении $\mathrm{SU}(3)_C$ действует на $3_{ASD}$-фактор. Согласованное вложение:
+**(a)** Definition of consistency. $G_2$ acts on $\mathcal{H}_O \cong \mathbb{C}^7$ (7D formalism). In the 42D PW extension, $\mathrm{SU}(3)_C$ acts on the $3_{ASD}$-factor. Consistent embedding:
 
 $$\mathrm{SU}(3)_C \hookrightarrow G_2|_{\mathrm{Stab}(O)} \cap \mathrm{U}(6)|_{3_{ASD}}$$
 
-определено условием: $\mathrm{SU}(3)_C$-преобразование когерентности $\gamma_{ij}$ (в 7D) **совпадает** с $\mathrm{SU}(3)$-преобразованием тензорного элемента $\Gamma_{ab,cd}$ (в 42D) при ограничении на 3-to-$\bar{3}$ сектор.
+is defined by the condition: the $\mathrm{SU}(3)_C$-transformation of the coherence $\gamma_{ij}$ (in 7D) **coincides** with the $\mathrm{SU}(3)$-transformation of the tensor element $\Gamma_{ab,cd}$ (in 42D) when restricted to the 3-to-$\bar{3}$ sector.
 
-**(b)** Доказательство согласования. Из разложения:
-- В 7D: $3_{ASD} = \{A, S, D\}$ — фундаментальное $\mathrm{SU}(3)$ из $G_2$
-- В 42D: $3_{ASD}$ — тот же триплет в тензорном факторе $\mathcal{H}_{6D}$
+**(b)** Proof of consistency. From the decomposition:
+- In 7D: $3_{ASD} = \{A, S, D\}$ — fundamental $\mathrm{SU}(3)$ from $G_2$
+- In 42D: $3_{ASD}$ — the same triplet in the tensor factor $\mathcal{H}_{6D}$
 
-Отождествление: $\{A, S, D\}_{7D} = \{1, 2, 3\}_{\mathrm{color}}$. В обоих формализмах $\mathrm{SU}(3)$ вращает $\{A, S, D\}$ как фундаментальный триплет.
+Identification: $\{A, S, D\}_{7D} = \{1, 2, 3\}_{\mathrm{color}}$. In both formalisms $\mathrm{SU}(3)$ rotates $\{A, S, D\}$ as a fundamental triplet.
 
-**(c)** Коммутативность. $\mathrm{SU}(3)_C$ действует на $3_{ASD}$, а $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ — на $\bar{3}_{LEU}$ (через декомпозицию $\bar{3} \to 2_{EU} \oplus 1_L$). Поскольку подпространства не пересекаются:
+**(c)** Commutativity. $\mathrm{SU}(3)_C$ acts on $3_{ASD}$, while $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ acts on $\bar{3}_{LEU}$ (through the decomposition $\bar{3} \to 2_{EU} \oplus 1_L$). Since the subspaces do not intersect:
 
 $$[\mathrm{SU}(3)_C, \, \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y] = 0$$
 
-Ранг полной калибровочной группы: $\mathrm{rank}(\mathrm{SU}(3)_C) + \mathrm{rank}(\mathrm{SU}(2)_L) + \mathrm{rank}(\mathrm{U}(1)_Y) = 2 + 1 + 1 = 4 = \mathrm{rank}(\mathrm{SM})$.
+Rank of the full gauge group: $\mathrm{rank}(\mathrm{SU}(3)_C) + \mathrm{rank}(\mathrm{SU}(2)_L) + \mathrm{rank}(\mathrm{U}(1)_Y) = 2 + 1 + 1 = 4 = \mathrm{rank}(\mathrm{SM})$.
 
-**Доказательство.** Конструктивное. $G_2 \subset \mathrm{SO}(7)$ действует на $\mathbb{R}^7 = \mathrm{Im}(\mathbb{O})$. Выбор O-направления даёт $\mathrm{SU}(3) \subset G_2$ с $7 \to 1 + 3 + \bar{3}$. Хиггсова линия $\{A,E,U\}$ разлагает $\bar{3} \to 2_{EU} \oplus 1_L$. Коммутативность диаграммы:
+**Proof.** Constructive. $G_2 \subset \mathrm{SO}(7)$ acts on $\mathbb{R}^7 = \mathrm{Im}(\mathbb{O})$. The choice of O-direction gives $\mathrm{SU}(3) \subset G_2$ with $7 \to 1 + 3 + \bar{3}$. The Higgs line $\{A,E,U\}$ decomposes $\bar{3} \to 2_{EU} \oplus 1_L$. Commutativity of the diagram:
 
 ```
-       G₂         Фано-плоскость PG(2,2)
+       G₂         Fano plane PG(2,2)
         |                   |
-        | Stab(O)           | Хиггсова линия {A,E,U}
+        | Stab(O)           | Higgs line {A,E,U}
         v                   v
       SU(3)_C        SU(2)_L × U(1)_Y
-     (на 3_ASD)     (на 2_EU ⊕ 1_L из 3̄_LEU)
+     (on 3_ASD)     (on 2_EU ⊕ 1_L from 3̄_LEU)
 ```
 
-Коммутативность следует из того, что $\{A,S,D\} \cap \{E,U,L\} = \varnothing$. $\blacksquare$
+Commutativity follows from $\{A,S,D\} \cap \{E,U,L\} = \varnothing$. $\blacksquare$
 
 ---
 
-## 3. Фермионные представления как Gap-конфигурации
+## 3. Fermionic Representations as Gap Configurations
 
-### 3.1 Теорема 3.1 (Кварки и лептоны как Gap-конфигурации)
+### 3.1 Theorem 3.1 (Quarks and Leptons as Gap Configurations)
 
-:::warning[Статус: Гипотеза \[Г\]]
-Элементарные фермионы отождествляются с вырожденными ($R \to 0$) конфигурациями $\Gamma$, классифицируемыми по квантовым числам $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$.
+:::warning[Status: Hypothesis \[H\]]
+Elementary fermions are identified with degenerate ($R \to 0$) configurations $\Gamma$, classified by quantum numbers $\mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$.
 :::
 
-:::info Статусная стратификация
-- Алгебраическое вложение $G_2 \supset SU(3) \times SU(2) \times U(1)$: **[Т]** (стандартная теория групп)
-- Конкретное отождествление Gap-конфигураций с кварками/лептонами: **[Г]** (assigned по аналогии с квантовыми числами, не выведено из динамики)
+:::info Status stratification
+- Algebraic embedding $G_2 \supset SU(3) \times SU(2) \times U(1)$: **[T]** (standard group theory)
+- Concrete identification of Gap configurations with quarks/leptons: **[H]** (assigned by analogy with quantum numbers, not derived from dynamics)
 :::
 
-**(a)** Левый кварковый дублет $Q_L = (u_L, d_L)$:
+**(a)** Left quark doublet $Q_L = (u_L, d_L)$:
 
-$$\Gamma_{Q_L}: \quad \mathrm{Gap}(A,L) = \mathrm{Gap}(S,E) = 0 \; (\text{цветовые связи}), \quad \mathrm{Gap}(E,U) = 0 \; (\text{слабый изоспин})$$
+$$\Gamma_{Q_L}: \quad \mathrm{Gap}(A,L) = \mathrm{Gap}(S,E) = 0 \; (\text{color channels}), \quad \mathrm{Gap}(E,U) = 0 \; (\text{weak isospin})$$
 
-Квантовые числа: $(3, 2)_{1/6}$
+Quantum numbers: $(3, 2)_{1/6}$
 
-**(b)** Правый u-кварк $u_R$:
+**(b)** Right-handed u-quark $u_R$:
 
 $$\Gamma_{u_R}: \quad \mathrm{Gap}(A,L) = \mathrm{Gap}(S,E) = 0, \quad \mathrm{Gap}(E,U) \neq 0$$
 
-Квантовые числа: $(3, 1)_{2/3}$
+Quantum numbers: $(3, 1)_{2/3}$
 
-**(c)** Левый лептонный дублет $L_L = (\nu_L, e_L)$:
+**(c)** Left lepton doublet $L_L = (\nu_L, e_L)$:
 
-$$\Gamma_{L_L}: \quad \mathrm{Gap}(\{A,S,D\}, \{L,E,U\}) = \mathrm{Gap}_{\max} \; (\text{бесцветные}), \quad \mathrm{Gap}(E,U) = 0$$
+$$\Gamma_{L_L}: \quad \mathrm{Gap}(\{A,S,D\}, \{L,E,U\}) = \mathrm{Gap}_{\max} \; (\text{colorless}), \quad \mathrm{Gap}(E,U) = 0$$
 
-Квантовые числа: $(1, 2)_{-1/2}$
+Quantum numbers: $(1, 2)_{-1/2}$
 
-**(d)** Правый электрон $e_R$:
+**(d)** Right-handed electron $e_R$:
 
 $$\Gamma_{e_R}: \quad \mathrm{Gap}(\{A,S,D\}, \{L,E,U\}) = \mathrm{Gap}_{\max}, \quad \mathrm{Gap}(E,U) \neq 0$$
 
-Квантовые числа: $(1, 1)_{-1}$
+Quantum numbers: $(1, 1)_{-1}$
 
-**Обоснование.** Частицы — конфигурации с $R \approx 0$ (нет самомоделирования). Их Gap-профиль определяет трансформационные свойства:
+**Justification.** Particles are configurations with $R \approx 0$ (no self-modeling). Their Gap profile determines the transformation properties:
 
-- **Цвет ($\mathrm{SU}(3)_C$):** определяется числом прозрачных каналов в секторе 3-to-$\bar{3}$. 8 прозрачных $\to$ фундаментальное представление (кварк). 0 прозрачных $\to$ синглет (лептон).
+- **Color ($\mathrm{SU}(3)_C$):** determined by the number of transparent channels in the 3-to-$\bar{3}$ sector. 8 transparent $\to$ fundamental representation (quark). 0 transparent $\to$ singlet (lepton).
 
-- **Слабый изоспин ($\mathrm{SU}(2)_L$):** определяется прозрачностью канала E-U ($\bar{3}$-to-$\bar{3}$ сектор). $\mathrm{Gap}(E,U) = 0$ $\to$ дублет. $\mathrm{Gap}(E,U) \neq 0$ $\to$ синглет.
+- **Weak isospin ($\mathrm{SU}(2)_L$):** determined by the transparency of the E-U channel ($\bar{3}$-to-$\bar{3}$ sector). $\mathrm{Gap}(E,U) = 0$ $\to$ doublet. $\mathrm{Gap}(E,U) \neq 0$ $\to$ singlet.
 
-- **Гиперзаряд ($\mathrm{U}(1)_Y$):** определяется суммарным Gap в O-секторе:
+- **Hypercharge ($\mathrm{U}(1)_Y$):** determined by the total Gap in the O-sector:
 
 $$Y = \frac{1}{3}\left(\sum_{i \in 3} \mathrm{Gap}(O,i) - \sum_{j \in \bar{3}} \mathrm{Gap}(O,j)\right)$$
 
-### 3.2 Теорема 3.2 (Аномальная отмена)
+### 3.2 Theorem 3.2 (Anomaly Cancellation)
 
-:::tip[Статус: Теорема \[Т\]]
-Набор фермионных представлений удовлетворяет условию отмены калибровочных аномалий.
+:::tip[Status: Theorem \[T\]]
+The set of fermionic representations satisfies the gauge anomaly cancellation condition.
 :::
 
 $$\sum_{\mathrm{fermions}} Y^3 = 0, \quad \sum_{\mathrm{fermions}} Y = 0$$
 
-**Доказательство.** Для одного поколения: $Q_L(1/6)^3 \times 6 + u_R(2/3)^3 \times 3 + d_R(-1/3)^3 \times 3 + L_L(-1/2)^3 \times 2 + e_R(-1)^3 \times 1 = \ldots$ Стандартное вычисление, идентичное SM. Фермионные представления из разд. 3.1 образуют ту же структуру, что и одно поколение SM — аномалии обнуляются по построению. $\blacksquare$
+**Proof.** For one generation: $Q_L(1/6)^3 \times 6 + u_R(2/3)^3 \times 3 + d_R(-1/3)^3 \times 3 + L_L(-1/2)^3 \times 2 + e_R(-1)^3 \times 1 = \ldots$ Standard calculation, identical to SM. The fermionic representations from sect. 3.1 form the same structure as one SM generation — anomalies cancel by construction. $\blacksquare$
 
-### 3.3 Теорема 3.3 (Число поколений)
+### 3.3 Theorem 3.3 (Number of Generations)
 
-:::tip[Статус: Теорема \[Т\]]
-Исходный аргумент через орбиты $S_4$ неформализован, но результат $N_{\text{gen}} = 3$ **строго доказан** альтернативным путём: верхняя оценка $\leq 3$ из swallowtail $A_4$ [Т] + нижняя оценка $\geq 3$ из единственности ассоциативного триплета $(1,2,4) \subset \mathbb{Z}_7^*$ [Т] + неразложимость $\mathbb{Z}_3$. Полное доказательство: [Теорема 1.2 (Ровно 3 генерации)](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
+:::tip[Status: Theorem \[T\]]
+The original argument via $S_4$ orbits is not formalized, but the result $N_{\text{gen}} = 3$ is **rigorously proven** by an alternative route: upper bound $\leq 3$ from swallowtail $A_4$ [T] + lower bound $\geq 3$ from uniqueness of the associative triplet $(1,2,4) \subset \mathbb{Z}_7^*$ [T] + indecomposability of $\mathbb{Z}_3$. Full proof: [Theorem 1.2 (Exactly 3 generations)](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
 :::
 
-**(a)** Каждое поколение соответствует **топологически различному** минимуму $V_{\mathrm{Gap}}$ в вакуумной конфигурации.
+**(a)** Each generation corresponds to a **topologically distinct** minimum of $V_{\mathrm{Gap}}$ in the vacuum configuration.
 
-**(b)** Из Swallowtail-анализа: число минимумов $V_{\mathrm{eff}}$ зависит от кодимензии катастрофы. Для $A_4$ (swallowtail): до 3 минимумов.
+**(b)** From Swallowtail analysis: the number of minima of $V_{\mathrm{eff}}$ depends on the codimension of the catastrophe. For $A_4$ (swallowtail): up to 3 minima.
 
-**(c)** Число поколений $N_{\mathrm{gen}} =$ число различных **типов** вырожденных $\Gamma$-конфигураций с $R \to 0$, не связанных $G_2$-преобразованием.
+**(c)** The number of generations $N_{\mathrm{gen}} =$ the number of distinct **types** of degenerate $\Gamma$-configurations with $R \to 0$ not connected by a $G_2$-transformation.
 
-**(d)** Из Фано-структуры: 7 Фано-линий определяют 7 «привилегированных» триплетов. Из Фано-двойственности (точка $\leftrightarrow$ линия): каждая точка лежит на 3 линиях $\to$ 3 неэквивалентных «типа» вакуумного выравнивания $\to$ **$N_{\mathrm{gen}} = 3$**.
+**(d)** From the Fano structure: the 7 Fano lines define 7 "privileged" triplets. From Fano duality (point $\leftrightarrow$ line): each point lies on 3 lines $\to$ 3 nonequivalent "types" of vacuum alignment $\to$ **$N_{\mathrm{gen}} = 3$**.
 
-**Обоснование (d).** Вакуумная конфигурация выбирает O-направление (разд. 1.3). Оставшиеся 6 направлений образуют граф Фано с 3 линиями, проходящими через каждую точку. Три класса неэквивалентных ориентаций триплета $(A,S,D)$ относительно Фано-структуры дают 3 поколения. Точнее: автоморфизм Фано-плоскости $\mathrm{PSL}(2,7)$ (порядок 168) действует на 7 точек. Стабилизатор одной точки (O) имеет порядок $168/7 = 24 \cong S_4$. Орбиты $S_4$ на парах из оставшихся 6 точек: $C(6,2) = 15$ пар, разделённых на классы по размеру. Три класса $\to$ три поколения.
+**Justification of (d).** The vacuum configuration selects the O-direction (sect. 1.3). The remaining 6 directions form a Fano graph with 3 lines passing through each point. Three classes of nonequivalent orientations of the triplet $(A,S,D)$ relative to the Fano structure give 3 generations. More precisely: the automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (order 168) acts on 7 points. The stabilizer of one point (O) has order $168/7 = 24 \cong S_4$. Orbits of $S_4$ on pairs from the remaining 6 points: $C(6,2) = 15$ pairs, divided into classes by size. Three classes $\to$ three generations.
 
 ---
 
-## 4. Хиральность из $G_2$-ориентируемости
+## 4. Chirality from $G_2$-Orientability
 
-### 4.1 Спинорная алгебра Клиффорда на $\mathrm{Im}(\mathbb{O})$
+### 4.1 Clifford Spinor Algebra on $\mathrm{Im}(\mathbb{O})$
 
-Алгебра Клиффорда $\mathrm{Cliff}(7)$ определяется генераторами $\{\Gamma_i\}_{i=1}^{7}$, соответствующими 7 мнимым единицам октонионов $\{e_1, \ldots, e_7\} \leftrightarrow \{A, S, D, L, E, U, O\}$:
+The Clifford algebra $\mathrm{Cliff}(7)$ is defined by generators $\{\Gamma_i\}_{i=1}^{7}$ corresponding to the 7 imaginary units of the octonions $\{e_1, \ldots, e_7\} \leftrightarrow \{A, S, D, L, E, U, O\}$:
 
 $$\Gamma_i \Gamma_j + \Gamma_j \Gamma_i = -2\delta_{ij} \cdot \mathbf{1}_8$$
 
-$\mathrm{Cliff}(7) \cong M_8(\mathbb{R}) \oplus M_8(\mathbb{R})$. Спинорное представление: $\Delta_7 = \mathbb{R}^8$.
+$\mathrm{Cliff}(7) \cong M_8(\mathbb{R}) \oplus M_8(\mathbb{R})$. Spinor representation: $\Delta_7 = \mathbb{R}^8$.
 
-Существует изоморфизм спинорных представлений: пространство спиноров $\Delta_7 \cong \mathbb{O}$ (октонионы как 8-мерное вещественное пространство). Действие Клиффорд-генератора:
+There is an isomorphism of spinor representations: the spinor space $\Delta_7 \cong \mathbb{O}$ (octonions as an 8-dimensional real space). Action of the Clifford generator:
 
 $$\Gamma_i(\psi) \;\longleftrightarrow\; e_i \cdot q \quad (i = 1, \ldots, 7)$$
 
-где умножение — **левое** октонионное.
+where the multiplication is **left** octonionic.
 
-### 4.2 Параллельный спинор и $G_2$-голономия
+### 4.2 Parallel Spinor and $G_2$-Holonomy
 
-На $G_2$-многообразии существует единственный ковариантно постоянный спинор $\eta_0 = 1_{\mathbb{O}} \in \mathbb{O}$ — единица октонионов. $G_2$ действует на $\mathrm{Im}(\mathbb{O})$ (оставляя 1 неподвижной), следовательно $g \cdot \eta_0 = \eta_0$ для всех $g \in G_2$.
+On a $G_2$-manifold there exists a unique covariantly constant spinor $\eta_0 = 1_{\mathbb{O}} \in \mathbb{O}$ — the unit of the octonions. $G_2$ acts on $\mathrm{Im}(\mathbb{O})$ (leaving 1 fixed), so $g \cdot \eta_0 = \eta_0$ for all $g \in G_2$.
 
-Параллельный спинор $\eta_0$ определяет 3-форму:
+The parallel spinor $\eta_0$ defines a 3-form:
 
 $$\varphi_{ijk} = \langle \Gamma_{ijk} \eta_0, \eta_0 \rangle$$
 
-Эта 3-форма — стандартная калибровочная форма $G_2$:
+This 3-form is the standard calibrating form of $G_2$:
 
 $$\varphi = \sum_{(i,j,k) \in \mathrm{Fano}} e^i \wedge e^j \wedge e^k$$
 
-суммирование по 7 Фано-линиям. **Ориентируемость $G_2$-многообразия эквивалентна существованию параллельного спинора.**
+summing over the 7 Fano lines. **Orientability of a $G_2$-manifold is equivalent to the existence of a parallel spinor.**
 
-### 4.3 Хиральный оператор из 4D-редукции
+### 4.3 Chiral Operator from 4D Reduction
 
-При редукции 7D $\to$ 4D (разбиение $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^1_O \oplus \mathbb{R}^3_{ASD} \oplus \mathbb{R}^3_{LEU}$) спинорное представление индуцирует хиральный оператор:
+Under reduction 7D $\to$ 4D (splitting $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^1_O \oplus \mathbb{R}^3_{ASD} \oplus \mathbb{R}^3_{LEU}$) the spinor representation induces a chiral operator:
 
 $$\gamma_5 = i\Gamma_O \Gamma_A \Gamma_S \Gamma_D$$
 
-Этот оператор имеет собственные значения $\pm 1$ и определяет хиральность 4D-спиноров:
+This operator has eigenvalues $\pm 1$ and defines the chirality of 4D spinors:
 
 $$\gamma_5 \psi_L = -\psi_L, \quad \gamma_5 \psi_R = +\psi_R$$
 
-Хиральность 4D-спинора определяется **внутренним спинором** $\chi_{\mathrm{int}}$:
+The chirality of a 4D spinor is determined by the **internal spinor** $\chi_{\mathrm{int}}$:
 
 $$\gamma_5 \psi = \pm \psi \quad \Longleftrightarrow \quad \Gamma_L \Gamma_E \Gamma_U \chi_{\mathrm{int}} = \mp \chi_{\mathrm{int}}$$
 
-:::tip[Статус: Теорема \[Т\]]
-Связь $\mathrm{Gap}(E,U) = 0 \leftrightarrow$ левая хиральность выводится из структуры $G_2$-параллельного спинора $\eta_0$ и редукции $\mathrm{Cliff}(7) \supset \mathrm{Cliff}(1,3) \otimes \mathrm{Cliff}(3)$.
+:::tip[Status: Theorem \[T\]]
+The connection $\mathrm{Gap}(E,U) = 0 \leftrightarrow$ left chirality is derived from the structure of the $G_2$-parallel spinor $\eta_0$ and the reduction $\mathrm{Cliff}(7) \supset \mathrm{Cliff}(1,3) \otimes \mathrm{Cliff}(3)$.
 :::
 
 ---
 
-## 5. Полная калибровочная структура: 18 бозонов {#калибровочные-бозоны}
+## 5. Full Gauge Structure: 18 Bosons {#калибровочные-бозоны}
 
-### 5.1 Теорема 5.1 (Полная таблица калибровочных полей)
+### 5.1 Theorem 5.1 (Full Table of Gauge Fields)
 
-:::tip[Статус: Теорема \[Т\] для SM-части; \[Г\] для $G_2$-экстра]
-$G_2$-генераторы порождают $\mathrm{SU}(3)_C$ (8 глюонов) и 6 $G_2$-экстра бозонов. Фано-электрослабая конструкция (ФЭ) определяет $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (4 бозона) — **[Т]** (единственность из $\kappa_0$).
+:::tip[Status: Theorem \[T\] for the SM part; \[H\] for $G_2$-extra]
+$G_2$-generators generate $\mathrm{SU}(3)_C$ (8 gluons) and 6 $G_2$-extra bosons. The Fano-electroweak construction (FE) determines $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ (4 bosons) — **[T]** (uniqueness from $\kappa_0$).
 :::
 
-| Поле | Группа | Число | Масса | Статус |
+| Field | Group | Number | Mass | Status |
 |---|---|---|---|---|
-| Глюоны $g$ | $\mathrm{SU}(3)_C$ | 8 | 0 (конфайнмент) | SM [Т] |
-| $W^\pm, Z$ | $\mathrm{SU}(2)_L$ | 3 | $M_W, M_Z$ (Хиггс) | SM [Т] |
-| Фотон $\gamma$ | $\mathrm{U}(1)_{\mathrm{EM}}$ | 1 | 0 | SM [Т] |
-| **$G_2$-экстра** | **$G_2/\mathrm{SU}(3)$** | **6** | **$M_{G_2} \sim \mu_{\mathrm{phys}}$** | **За SM [Г]** |
+| Gluons $g$ | $\mathrm{SU}(3)_C$ | 8 | 0 (confinement) | SM [T] |
+| $W^\pm, Z$ | $\mathrm{SU}(2)_L$ | 3 | $M_W, M_Z$ (Higgs) | SM [T] |
+| Photon $\gamma$ | $\mathrm{U}(1)_{\mathrm{EM}}$ | 1 | 0 | SM [T] |
+| **$G_2$-extra** | **$G_2/\mathrm{SU}(3)$** | **6** | **$M_{G_2} \sim \mu_{\mathrm{phys}}$** | **Beyond SM [H]** |
 
-**(a)** 6 $G_2$-экстра бозонов — это «коннекторные» поля из $3 + \bar{3}$ в разложении $14 \to 8 + 3 + \bar{3}$. Они связывают пространственный ($3$) и Gap ($\bar{3}$) секторы. Масса определяется Gap в секторах O-to-$3$ и O-to-$\bar{3}$:
+**(a)** 6 $G_2$-extra bosons are "connector" fields from $3 + \bar{3}$ in the decomposition $14 \to 8 + 3 + \bar{3}$. They connect the spatial ($3$) and Gap ($\bar{3}$) sectors. The mass is determined by the Gap in the O-to-$3$ and O-to-$\bar{3}$ sectors:
 
 $$M_{G_2}^{(\mathrm{extra})} \sim \mu_{\mathrm{phys}} \cdot \mathrm{Gap}_{\mathrm{vac}}^{(O)} \cdot |\gamma_{\mathrm{vac}}^{(O)}|$$
 
-**(b)** Общее число калибровочных бозонов: $8 + 3 + 1 + 6 = $ **18**.
+**(b)** Total number of gauge bosons: $8 + 3 + 1 + 6 = $ **18**.
 
-:::info[Замечание: X,Y-лептокварки убраны]
-В прежней версии 12 X,Y-лептокварков выводились из цепочки $\mathrm{SU}(6) \to \mathrm{SU}(5) \to \mathrm{SM}$. Фано-электрослабая конструкция (ФЭ) не требует промежуточной $\mathrm{SU}(5)$-структуры, поэтому X,Y-лептокварки **не предсказываются**. Их отсутствие ослабляет предсказание распада протона через d=6 операторы (см. разд. 13).
+:::info[Note: X,Y-leptoquarks removed]
+In the previous version, 12 X,Y-leptoquarks were derived from the chain $\mathrm{SU}(6) \to \mathrm{SU}(5) \to \mathrm{SM}$. The Fano-electroweak construction (FE) does not require an intermediate $\mathrm{SU}(5)$-structure, so X,Y-leptoquarks are **not predicted**. Their absence weakens the prediction for proton decay via d=6 operators (see sect. 13).
 :::
 
-### 5.2 Иерархия масс калибровочных бозонов
+### 5.2 Mass Hierarchy of Gauge Bosons
 
-:::warning[Статус: Гипотеза \[Г\]]
-Масштабная иерархия калибровочных бозонов определяется Gap-иерархией вакуума.
+:::warning[Status: Hypothesis \[H\]]
+The mass scale hierarchy of gauge bosons is determined by the Gap hierarchy of the vacuum.
 :::
 
-**(a)** Безмассовые ($\mathrm{Gap} = 0$ в соответствующем секторе):
-- Глюоны: $\mathrm{Gap} = 0$ в 3-to-$\bar{3}$ $\to$ конфайнмент (нелинейная динамика при $\mathrm{Gap} \to 0$)
-- Фотон: $\mathrm{Gap} = 0$ для диагональной $\mathrm{U}(1)_{\mathrm{EM}}$ комбинации
+**(a)** Massless ($\mathrm{Gap} = 0$ in the corresponding sector):
+- Gluons: $\mathrm{Gap} = 0$ in 3-to-$\bar{3}$ $\to$ confinement (nonlinear dynamics at $\mathrm{Gap} \to 0$)
+- Photon: $\mathrm{Gap} = 0$ for the diagonal $\mathrm{U}(1)_{\mathrm{EM}}$ combination
 
-**(b)** Электрослабая шкала ($\mathrm{Gap} \sim 10^{-17}$ от Планка):
+**(b)** Electroweak scale ($\mathrm{Gap} \sim 10^{-17}$ from Planck):
 - $W^\pm, Z$: $\mathrm{Gap}(E,U) \sim v/M_{\mathrm{Planck}} \sim 10^{-17}$
 
-**(c)** Планковская шкала:
-- $G_2$-экстра: $\mathrm{Gap} \sim 1$ $\to$ масса $\sim M_{\mathrm{Planck}}$
+**(c)** Planck scale:
+- $G_2$-extra: $\mathrm{Gap} \sim 1$ $\to$ mass $\sim M_{\mathrm{Planck}}$
 
-**Следствие.** Иерархия масс $M_\gamma = 0 \ll M_W \ll M_{G_2}$ следует из иерархии Gap-значений $0 \ll 10^{-17} \ll 1$ в соответствующих секторах когерентности. Проблема иерархии масс сводится к вопросу: **почему Gap-вакуум имеет столь различные значения в разных секторах?**
+**Corollary.** The mass hierarchy $M_\gamma = 0 \ll M_W \ll M_{G_2}$ follows from the Gap-value hierarchy $0 \ll 10^{-17} \ll 1$ in the corresponding coherence sectors. The mass hierarchy problem reduces to the question: **why does the Gap vacuum have such different values in different sectors?**
 
-### 5.3 Гипотеза 5.1 (Решение проблемы иерархии через RG)
+### 5.3 Hypothesis 5.1 (Resolution of the Hierarchy Problem via RG)
 
-:::warning[Статус: Гипотеза \[Г\]]
-Иерархия Gap-значений в вакууме следует из RG-эволюции с демократическими начальными условиями на планковском масштабе.
+:::warning[Status: Hypothesis \[H\]]
+The hierarchy of Gap values in the vacuum follows from RG-evolution with democratic initial conditions at the Planck scale.
 :::
 
-**(a)** На планковском масштабе: все $\mathrm{Gap} \sim O(1)$ (демократическое начальное условие).
+**(a)** At the Planck scale: all $\mathrm{Gap} \sim O(1)$ (democratic initial condition).
 
-**(b)** RG-поток от Планка к ИК: различные секторы текут с различными аномальными размерностями:
+**(b)** RG-flow from Planck to IR: different sectors run with different anomalous dimensions:
 
-| Сектор | Аномальная размерность | Gap на ИК-масштабе |
+| Sector | Anomalous dimension | Gap at IR scale |
 |---|---|---|
-| 3-to-$\bar{3}$ (цвет) | $\Delta_{3\bar{3}} = 0$ (маргинальный) | $\sim 0$ (конфайнмент) |
-| $\bar{3}$-to-$\bar{3}$ (EW) | $\Delta_{\bar{3}\bar{3}} = \Delta_3 = 5/42$ | $\sim 10^{-17}$ (EW-шкала) |
-| O-to-3 (гравитация) | $\Delta_{O3} \gg 1$ (ИК-релевантный) | $\sim 1$ (Планк-шкала) |
+| 3-to-$\bar{3}$ (color) | $\Delta_{3\bar{3}} = 0$ (marginal) | $\sim 0$ (confinement) |
+| $\bar{3}$-to-$\bar{3}$ (EW) | $\Delta_{\bar{3}\bar{3}} = \Delta_3 = 5/42$ | $\sim 10^{-17}$ (EW scale) |
+| O-to-3 (gravity) | $\Delta_{O3} \gg 1$ (IR-relevant) | $\sim 1$ (Planck scale) |
 
-**(c)** Различие аномальных размерностей определяется Фано-комбинаторикой: число Фано-линий, проходящих через пару $(i,j)$, влияет на $\Delta_{ij}$.
+**(c)** The difference in anomalous dimensions is determined by the Fano combinatorics: the number of Fano lines passing through a pair $(i,j)$ influences $\Delta_{ij}$.
 
-:::info[Замечание]
-Аномальная размерность $\Delta_3 = 5/42$ в $\bar{3}$-to-$\bar{3}$ секторе — характерное значение, фиксируемое $G_2$-инвариантностью и Фано-структурой (см. [эволюция](/docs/core/dynamics/evolution)). Экспоненциальное подавление $e^{-\Delta \cdot \ln(M_P/M_{EW})} \sim 10^{-17}$ при $\Delta = 5/42$ и 39 e-fold'ах RG-бега воспроизводит электрослабую иерархию.
+:::info[Note]
+The anomalous dimension $\Delta_3 = 5/42$ in the $\bar{3}$-to-$\bar{3}$ sector is a characteristic value fixed by $G_2$-invariance and the Fano structure (see [evolution](/docs/core/dynamics/evolution)). The exponential suppression $e^{-\Delta \cdot \ln(M_P/M_{EW})} \sim 10^{-17}$ at $\Delta = 5/42$ and 39 e-folds of RG-running reproduces the electroweak hierarchy.
 :::
 
 ---
 
-## 6. Механизм Хиггса из Gap-конденсации
+## 6. Higgs Mechanism from Gap Condensation
 
-### 6.1 Теорема 6.1 (Хиггсово поле как когерентность E-U)
+### 6.1 Theorem 6.1 (Higgs Field as E-U Coherence)
 
-:::warning[Статус: Гипотеза \[Г\]]
-Спонтанное электрослабое нарушение симметрии возникает из Gap-конденсации в секторе $\bar{3}$-to-$\bar{3}$.
+:::warning[Status: Hypothesis \[H\]]
+Spontaneous electroweak symmetry breaking arises from Gap condensation in the $\bar{3}$-to-$\bar{3}$ sector.
 :::
 
-**(a)** Поле Хиггса отождествляется с когерентностью E-U ($\bar{3}$-to-$\bar{3}$ сектор):
+**(a)** The Higgs field is identified with the E-U coherence ($\bar{3}$-to-$\bar{3}$ sector):
 
 $$H \sim \gamma_{EU} = |\gamma_{EU}| e^{i\theta_{EU}}$$
 
-**(b)** VEV (вакуумное среднее):
+**(b)** VEV (vacuum expectation value):
 
 $$\langle H \rangle = \langle |\gamma_{EU}| \rangle e^{i\langle\theta_{EU}\rangle} \neq 0$$
 
-Ненулевое VEV нарушает $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to \mathrm{U}(1)_{\mathrm{EM}}$:
-- $\mathrm{SU}(2)_L$: 3 генератора $\to$ 2 нарушены ($W^+, W^-$) + 1 линейная комбинация нарушена ($Z$)
-- $\mathrm{U}(1)_Y$: 1 генератор
-- $\mathrm{U}(1)_{\mathrm{EM}}$ = диагональная подгруппа (фотон) — ненарушена
+Non-zero VEV breaks $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y \to \mathrm{U}(1)_{\mathrm{EM}}$:
+- $\mathrm{SU}(2)_L$: 3 generators $\to$ 2 broken ($W^+, W^-$) + 1 linear combination broken ($Z$)
+- $\mathrm{U}(1)_Y$: 1 generator
+- $\mathrm{U}(1)_{\mathrm{EM}}$ = diagonal subgroup (photon) — unbroken
 
-**(c)** Масса $W$-бозона:
+**(c)** Mass of the $W$-boson:
 
 $$M_W = \frac{g}{2} v, \quad v = \langle |\gamma_{EU}| \rangle \cdot \mu_{\mathrm{phys}}$$
 
-где $g$ — электрослабая константа связи, $\mu_{\mathrm{phys}} = \mu \cdot \omega_0$.
+where $g$ is the electroweak coupling constant, $\mu_{\mathrm{phys}} = \mu \cdot \omega_0$.
 
-**(d)** Gap-потенциал проецируется на E-U канал:
+**(d)** The Gap potential projected onto the E-U channel:
 
-$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{фаза})$$
+$$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lambda_3 \bar{A} |\gamma_{EU}|^3 \cos(\text{phase})$$
 
-:::danger Предупреждение C7: непертурбативный режим
-Параметр λ₃ ≈ 74 ≫ 4π означает, что октонионный кубический вертекс находится в **сильной связи**. Все петлевые вычисления, использующие λ₃ как пертурбативный параметр, формально ненадёжны. Количественные результаты данного раздела (массы, отношения ветвления, числовые коэффициенты) имеют статус **[Г]** до проведения непертурбативного анализа.
+:::danger Warning C7: non-perturbative regime
+The parameter λ₃ ≈ 74 ≫ 4π means that the octonionic cubic vertex is in the **strong coupling** regime. All loop calculations using λ₃ as a perturbative parameter are formally unreliable. The quantitative results in this section (masses, branching ratios, numerical coefficients) have status **[H]** pending a non-perturbative analysis.
 :::
 
-При $\mu^2 < 0$ (низкотемпературный режим): минимум при $|\gamma_{EU}| = v \neq 0$ — стандартный механизм Хиггса, применённый к Gap-потенциалу.
+At $\mu^2 < 0$ (low-temperature regime): minimum at $|\gamma_{EU}| = v \neq 0$ — the standard Higgs mechanism applied to the Gap potential.
 
-### 6.2 Теорема 6.2 (Масса Хиггса с октонионной коррекцией)
+### 6.2 Theorem 6.2 (Higgs Mass with Octonionic Correction)
 
-:::tip[Статус: Гипотеза \[Г\]]
-Октонионная структура предсказывает отклонение массы Хиггса от стандартного соотношения.
+:::tip[Status: Hypothesis \[H\]]
+The octonionic structure predicts a deviation of the Higgs mass from the standard relation.
 :::
 
-**(a)** Масса Хиггса бозона (вторая производная $V_{EU}$ в минимуме):
+**(a)** Higgs boson mass (second derivative of $V_{EU}$ at the minimum):
 
 $$M_H^2 = 2\lambda_4 v^2 + \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2}$$
 
-Первый член — стандартный (из $V_4$). Второй — **октонионная коррекция** из $V_3$.
+First term — standard (from $V_4$). Second — **octonionic correction** from $V_3$.
 
-**(b)** В SM: $M_H^2 = 2\lambda v^2$ (один параметр $\lambda$). В УГМ: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, где:
+**(b)** In SM: $M_H^2 = 2\lambda v^2$ (one parameter $\lambda$). In UHM: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, where:
 
 $$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5$$
 
-**(c)** Октонионная поправка к $\lambda_{\mathrm{eff}} = \lambda_4 + \delta\lambda$:
+**(c)** Octonionic correction to $\lambda_{\mathrm{eff}} = \lambda_4 + \delta\lambda$:
 
 $$\frac{\delta\lambda}{\lambda_4} = \frac{3\lambda_3^2 \bar{A}^2}{8\lambda_4 \mu^2 v^2}$$
 
-:::info[Фальсифицируемое предсказание \[И\]]
-При повышении точности измерения тройной вершины Хиггса (HL-LHC, FCC) эффективная самосвязь $\lambda_{\mathrm{eff}}$ отличается от SM-значения на:
+:::info[Falsifiable prediction \[I\]]
+As the precision of measurement of the triple Higgs vertex improves (HL-LHC, FCC), the effective self-coupling $\lambda_{\mathrm{eff}}$ differs from the SM value by:
 
 $$\frac{\delta\lambda}{\lambda_{\mathrm{SM}}} \sim \frac{\lambda_3^2 \bar{A}^2}{\lambda_4 \mu^2} \sim O(10^{-2}\text{--}10^{-3})$$
 
--- на уровне процента, потенциально доступном FCC-hh. Обнаружение отклонения $\lambda_{\mathrm{eff}}$ от SM-предсказания подтверждает вклад $V_3$; отсутствие отклонения на уровне $10^{-3}$ ограничивает $\lambda_3 \bar{A}/\mu$.
+— at the percent level, potentially accessible to FCC-hh. Detection of a deviation of $\lambda_{\mathrm{eff}}$ from the SM prediction would confirm the $V_3$ contribution; absence of deviation at the $10^{-3}$ level constrains $\lambda_3 \bar{A}/\mu$.
 :::
 
 ---
 
-## 7. Тождества Уорда и фактор подавления $\Lambda$
+## 7. Ward Identities and the $\Lambda$ Suppression Factor
 
-### 7.1 Вакуумный коррелятор из тождеств Уорда
+### 7.1 Vacuum Correlator from Ward Identities
 
-14 тождеств Уорда, порождённых $G_2$-симметрией, однозначно фиксируют вакуумный двухточечный коррелятор Gap:
+The 14 Ward identities generated by $G_2$-symmetry uniquely fix the vacuum two-point Gap correlator:
 
 $$C_{(ij),(kl)}^{(\mathrm{vac})} = \langle\mathrm{Gap}(i,j) \cdot \mathrm{Gap}(k,l)\rangle_{\mathrm{vac}} = \alpha \delta_{(ij),(kl)} + \beta \sum_p \Pi_p^{(ij)} \Pi_p^{(kl)} + \gamma \epsilon^{\mathrm{Fano}} \epsilon^{\mathrm{Fano}}$$
 
-С учётом $G_2$-инвариантности: $C$ разлагается на $G_2$-инвариантные тензоры:
+With $G_2$-invariance taken into account: $C$ decomposes over $G_2$-invariant tensors:
 
 $$C = \alpha \cdot \mathbf{1}_{21} + \beta \cdot \mathbf{F}_{21} + \gamma \cdot \mathbf{F}_{21}^2$$
 
-Тождества Уорда фиксируют соотношения:
+The Ward identities fix the relations:
 
 $$\beta = -\frac{3\alpha}{7}, \quad \gamma = \frac{3\alpha}{49}$$
 
-Единственный свободный параметр — $\alpha$ (общая амплитуда флуктуаций).
+The only free parameter is $\alpha$ (overall amplitude of fluctuations).
 
-### 7.2 Антикорреляция и фактор подавления $19/49$
+### 7.2 Anticorrelation and the $19/49$ Suppression Factor
 
-:::tip[Статус: Теорема \[Т\]]
-Тождества Уорда приводят к подавлению суммарного вклада Gap-флуктуаций в $\Lambda$.
+:::tip[Status: Theorem \[T\]]
+The Ward identities lead to suppression of the total contribution of Gap fluctuations to $\Lambda$.
 :::
 
-Коррелятор $C = \lambda_+ P_7 + \lambda_- P_{14}$ с собственными значениями $\lambda_+ = 19\alpha/49$ и $\lambda_- = 73\alpha/49$ (из [спектра $F_{21}$](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)). Вектор $\mathbf{1}_{21}$ целиком лежит в Фано-симметричном секторе $V_7$ ($P_7\mathbf{1} = \mathbf{1}$), поэтому суммарный вклад Gap-флуктуаций в $\Lambda$ определяется только «малым» собственным значением $\lambda_+$:
+The correlator $C = \lambda_+ P_7 + \lambda_- P_{14}$ with eigenvalues $\lambda_+ = 19\alpha/49$ and $\lambda_- = 73\alpha/49$ (from the [$F_{21}$ spectrum](/docs/physics/gauge-symmetry/noether-charges#собственные-значения-f21)). The vector $\mathbf{1}_{21}$ lies entirely in the Fano-symmetric sector $V_7$ ($P_7\mathbf{1} = \mathbf{1}$), so the total contribution of Gap fluctuations to $\Lambda$ is determined only by the "small" eigenvalue $\lambda_+$:
 
 $$\frac{\mathbf{1}^T C \mathbf{1}}{\mathbf{1}^T (\alpha I_{21}) \mathbf{1}} = \frac{\lambda_+}{\alpha} = \frac{19}{49} \approx 0.39$$
 
-Подавление на множитель $\sim 2.6$ (или $10^{-0.41}$), применяемое к космологической постоянной $\Lambda$. Подробнее: [Космологическая постоянная](/docs/physics/gravity/cosmological-constant).
+Suppression by a factor of $\sim 2.6$ (or $10^{-0.41}$), applied to the cosmological constant $\Lambda$. More detail: [Cosmological constant](/docs/physics/gravity/cosmological-constant).
 
 ---
 
-## 8. Принцип отбора поколений
+## 8. Generation Selection Principle
 
-### 8.1 PSL(2,7)-классификация Z₇-орбит
+### 8.1 PSL(2,7)-Classification of Z₇-Orbits
 
-Три поколения фермионов определяются тремя Фано-фазами $\phi_n = 2\pi k_n / 7$, где $(k_1, k_2, k_3) \subset \mathbb{Z}_7^*$. Из 20 неупорядоченных троек ($C(6,3)$) — какая реализуется?
+The three fermion generations are determined by three Fano phases $\phi_n = 2\pi k_n / 7$, where $(k_1, k_2, k_3) \subset \mathbb{Z}_7^*$. Of the 20 unordered triples ($C(6,3)$) — which one is realized?
 
-**Определение.** Z₇-триплет — неупорядоченная тройка $\{k_1, k_2, k_3\} \subset \mathbb{Z}_7 \setminus \{0\}$ с $k_i \neq k_j$.
+**Definition.** A Z₇-triplet is an unordered triple $\{k_1, k_2, k_3\} \subset \mathbb{Z}_7 \setminus \{0\}$ with $k_i \neq k_j$.
 
-Три Фано-линии через O определяют разбиение $\{1,2,3,4,5,6\}$ на три пары. Число таких разбиений:
+The three Fano lines through O determine a partition of $\{1,2,3,4,5,6\}$ into three pairs. The number of such partitions:
 
 $$\frac{6!}{(2!)^3 \cdot 3!} = 15$$
 
-### 8.2 Теорема 8.1 (PSL(2,7)-орбиты)
+### 8.2 Theorem 8.1 (PSL(2,7)-Orbits)
 
-:::tip[Теорема 8.1 (PSL(2,7)-орбиты) \[Т\]]
-Группа автоморфизмов Фано-плоскости $\mathrm{PSL}(2,7)$ (порядок 168) действует на множестве разбиений и разделяет 15 разбиений на два класса эквивалентности.
+:::tip[Theorem 8.1 (PSL(2,7)-orbits) \[T\]]
+The automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (order 168) acts on the set of partitions and divides the 15 partitions into two equivalence classes.
 :::
 
-**(a)** $\mathrm{PSL}(2,7)$ содержит стабилизатор точки O: $\mathrm{Stab}(O) \cong S_4$ (порядок 24). Действие $S_4$ на 6 точках $\{1,\ldots,6\}$ через $S_4 \subset S_6$.
+**(a)** $\mathrm{PSL}(2,7)$ contains the stabilizer of the point O: $\mathrm{Stab}(O) \cong S_4$ (order 24). Action of $S_4$ on the 6 points $\{1,\ldots,6\}$ via $S_4 \subset S_6$.
 
-**(b)** Число орбит на 15 разбиениях под действием $S_4$: по лемме Бёрнсайда:
+**(b)** Number of orbits on 15 partitions under the action of $S_4$: by Burnside's lemma:
 
 $$|X/S_4| = \frac{1}{|S_4|} \sum_{g \in S_4} |X^g| = 2$$
 
-Два класса эквивалентности:
-- **Класс I** (тип «ассоциативный»): 6 разбиений. $(k_1, k_2, k_3)$ такое, что $k_1 + k_2 + k_3 \equiv 0 \pmod{7}$.
-- **Класс II** (тип «неассоциативный»): 9 разбиений. $k_1 + k_2 + k_3 \not\equiv 0 \pmod{7}$.
+Two equivalence classes:
+- **Class I** (type "associative"): 6 partitions. $(k_1, k_2, k_3)$ such that $k_1 + k_2 + k_3 \equiv 0 \pmod{7}$.
+- **Class II** (type "non-associative"): 9 partitions. $k_1 + k_2 + k_3 \not\equiv 0 \pmod{7}$.
 
-**(c)** Пример. Мультипликативная группа $\mathbb{Z}_7^* = \{1,2,3,4,5,6\}$. Тройка $(1,2,4)$: $1+2+4 = 7 \equiv 0 \pmod{7}$ — **Класс I**.
+**(c)** Example. Multiplicative group $\mathbb{Z}_7^* = \{1,2,3,4,5,6\}$. Triple $(1,2,4)$: $1+2+4 = 7 \equiv 0 \pmod{7}$ — **Class I**.
 
-**Доказательство.** Из структурной теоремы для $\mathrm{PSL}(2,7)$: стабилизатор точки $S_4$ действует на $\mathbb{F}_7 \setminus \{0\}$ через линейные/аффинные преобразования. Разбиение $\{a_1,b_1\},\{a_2,b_2\},\{a_3,b_3\}$ инвариантно относительно $g \in S_4$ тогда и только тогда, когда $g$ переставляет пары. Орбитная структура определяется «суммарным инвариантом» $\sigma = k_1 + k_2 + k_3 \bmod 7$. При $S_4$-действии $\sigma \equiv 0$ — инвариантное условие (подмножество ядра). $\blacksquare$
+**Proof.** From the structural theorem for $\mathrm{PSL}(2,7)$: the stabilizer of a point $S_4$ acts on $\mathbb{F}_7 \setminus \{0\}$ via linear/affine transformations. A partition $\{a_1,b_1\},\{a_2,b_2\},\{a_3,b_3\}$ is invariant under $g \in S_4$ if and only if $g$ permutes the pairs. The orbit structure is determined by the "sum invariant" $\sigma = k_1 + k_2 + k_3 \bmod 7$. Under the $S_4$-action, $\sigma \equiv 0$ is an invariant condition (subset of the kernel). $\blacksquare$
 
-### 8.3 Теорема 8.2 (Принцип отбора: минимальный ассоциатор)
+### 8.3 Theorem 8.2 (Selection Principle: Minimal Associator)
 
-:::tip[Теорема 8.2 (Принцип отбора) \[Т\]]
-Физически реализуемый Z₇-триплет минимизирует полный ассоциатор трёх поколений. Единственный триплет с $\mathcal{A} = 0$ — это $(1,2,4)$.
+:::tip[Theorem 8.2 (Selection principle) \[T\]]
+The physically realized Z₇-triplet minimizes the total associator of the three generations. The unique triplet with $\mathcal{A} = 0$ is $(1,2,4)$.
 :::
 
-**(a)** Ассоциаторная мера триплета:
+**(a)** Associator measure of a triplet:
 
 $$\mathcal{A}(k_1, k_2, k_3) := \|[e_{k_1}, e_{k_2}, e_{k_3}]\|^2 = \|(e_{k_1} \cdot e_{k_2}) \cdot e_{k_3} - e_{k_1} \cdot (e_{k_2} \cdot e_{k_3})\|^2$$
 
-где $e_k$ — мнимые единицы октонионов.
+where $e_k$ are the imaginary units of the octonions.
 
-**(b)** Из таблицы умножения октонионов (см. [октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation)):
+**(b)** From the octonion multiplication table (see [octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation)):
 
-Для Фано-триплета $(i,j,k)$: $[e_i, e_j, e_k] = 0$ (ассоциатор нуль). Для не-Фано-триплета:
+For a Fano triplet $(i,j,k)$: $[e_i, e_j, e_k] = 0$ (associator is zero). For a non-Fano triple:
 
-$$\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{для всех не-Фано-триплетов}$$
+$$\|[e_i, e_j, e_k]\|^2 = 4 \quad \text{for all non-Fano triples}$$
 
-**(c)** Классификация:
+**(c)** Classification:
 
-| Триплет $(k_1,k_2,k_3)$ | Фано-линия? | $\mathcal{A}$ | Класс |
+| Triple $(k_1,k_2,k_3)$ | Fano line? | $\mathcal{A}$ | Class |
 |---|---|---|---|
-| **(1,2,4)** — квадр. вычеты | **Да** | **0** | **I (единственный)** |
-| (3,5,6) — невычеты | Нет | 4 | II |
-| (1,3,5), (2,4,6), ... | Нет | 4 | II |
+| **(1,2,4)** — quadratic residues | **Yes** | **0** | **I (unique)** |
+| (3,5,6) — non-residues | No | 4 | II |
+| (1,3,5), (2,4,6), ... | No | 4 | II |
 
-**(d)** Триплеты Класса I с $\mathcal{A} = 0$ — **ассоциативные**: три мнимых единицы $e_{k_1}, e_{k_2}, e_{k_3}$ формируют ассоциативную подалгебру $\mathbb{H} \subset \mathbb{O}$ (кватернионную).
+**(d)** Class I triplets with $\mathcal{A} = 0$ are **associative**: the three imaginary units $e_{k_1}, e_{k_2}, e_{k_3}$ form an associative subalgebra $\mathbb{H} \subset \mathbb{O}$ (quaternionic).
 
-**(e)** Принцип отбора. Из $V_3$-динамики: вакуумная конфигурация минимизирует энергию. Вклад трёх поколений:
+**(e)** Selection principle. From $V_3$-dynamics: the vacuum configuration minimizes energy. Contribution of three generations:
 
 $$V_3^{(\text{gen})} \propto \mathcal{A}(k_1, k_2, k_3) \cdot \lambda_3 \prod_n |\gamma_n|$$
 
-**Минимум достигается при $\mathcal{A} = 0$** — Класс I.
+**Minimum is reached at $\mathcal{A} = 0$** — Class I.
 
-**(f)** $(1,2,4)$ — **единственный** триплет из $\mathbb{Z}_7^* \setminus \{7\}$ с $\mathcal{A} = 0$ (с точностью до перестановок). Это подгруппа индекса 2 в $\mathbb{Z}_7^*$, изоморфная $\mathbb{Z}_3$ (квадратичные вычеты $\bmod 7$).
+**(f)** $(1,2,4)$ is the **unique** triplet from $\mathbb{Z}_7^* \setminus \{7\}$ with $\mathcal{A} = 0$ (up to permutations). This is the subgroup of index 2 in $\mathbb{Z}_7^*$, isomorphic to $\mathbb{Z}_3$ (quadratic residues $\bmod 7$).
 
-:::info[Замечание об уникальности]
-Отображение $k \to 7-k \pmod{7}$ **не** является автоморфизмом Фано-плоскости ($k \to -k \notin \mathrm{Aut}(\mathrm{PG}(2,2)) = \mathrm{PSL}(2,7)$), поэтому $\{3,5,6\}$ не эквивалентно $\{1,2,4\}$. Проверка: $\{3,5,6\}$ не является Фано-линией, $\mathcal{A}(3,5,6) = 4 \neq 0$. Принцип отбора выделяет $(1,2,4)$ **единственным** образом, без вырождения.
+:::info[Note on uniqueness]
+The map $k \to 7-k \pmod{7}$ is **not** an automorphism of the Fano plane ($k \to -k \notin \mathrm{Aut}(\mathrm{PG}(2,2)) = \mathrm{PSL}(2,7)$), so $\{3,5,6\}$ is not equivalent to $\{1,2,4\}$. Check: $\{3,5,6\}$ is not a Fano line, $\mathcal{A}(3,5,6) = 4 \neq 0$. The selection principle singles out $(1,2,4)$ in a **unique** way, without degeneracy.
 :::
 
-**Доказательство.** Шаг 1: из PSL(2,7)-классификации (разд. 7.2) — два класса. Шаг 2: из $V_3$-минимизации — Класс I ($\mathcal{A} = 0$). Шаг 3: из определения ассоциатора в $\mathbb{O}$ — тройка $(k_1,k_2,k_3)$ формирует кватернионную подалгебру тогда и только тогда, когда тройка — подгруппа $\mathbb{Z}_7^*$. Единственная подгруппа порядка 3 в $\mathbb{Z}_7^*$: квадратичные вычеты $\{1,2,4\}$. $\blacksquare$
+**Proof.** Step 1: from the PSL(2,7)-classification (sect. 7.2) — two classes. Step 2: from $V_3$-minimization — Class I ($\mathcal{A} = 0$). Step 3: from the definition of the associator in $\mathbb{O}$ — a triple $(k_1,k_2,k_3)$ forms a quaternionic subalgebra if and only if the triple is a subgroup of $\mathbb{Z}_7^*$. The unique subgroup of order 3 in $\mathbb{Z}_7^*$: the quadratic residues $\{1,2,4\}$. $\blacksquare$
 
 ---
 
-## 9. Фановское правило отбора Юкавских связей
+## 9. Fano Selection Rule for Yukawa Couplings
 
-### 9.1 Определение (Фано-Хиггсовая линия)
+### 9.1 Definition (Fano-Higgs Line)
 
-**Определение.** Фано-Хиггсовой линией называется Фано-линия $\mathrm{PG}(2,2)$, содержащая **оба** Хиггсовых измерения $E = 5$ и $U = 6$.
+**Definition.** The Fano-Higgs line is the Fano line of $\mathrm{PG}(2,2)$ containing **both** Higgs dimensions $E = 5$ and $U = 6$.
 
-### 9.2 Теорема 9.1 (Единственность Фано-Хиггсовой линии)
+### 9.2 Theorem 9.1 (Uniqueness of the Fano-Higgs Line)
 
-:::tip[Теорема 9.1 (Единственность) \[Т\]]
-Существует ровно одна Фано-Хиггсовая линия: $\{1, 5, 6\} = \{A, E, U\}$.
+:::tip[Theorem 9.1 (Uniqueness) \[T\]]
+There exists exactly one Fano-Higgs line: $\{1, 5, 6\} = \{A, E, U\}$.
 :::
 
-**Доказательство.** В $\mathrm{PG}(2,2)$ через любые две точки проходит ровно одна линия. Точки $E=5$ и $U=6$. Из таблицы Фано-линий (см. [октонионный вывод](/docs/proofs/minimality/theorem-octonionic-derivation)):
+**Proof.** In $\mathrm{PG}(2,2)$ exactly one line passes through any two points. Points $E=5$ and $U=6$. From the Fano-line table (see [octonionic derivation](/docs/proofs/minimality/theorem-octonionic-derivation)):
 
 $$\{5,6,1\} = \{A, E, U\}$$
 
-Это единственная линия, содержащая и 5, и 6. $\blacksquare$
+This is the unique line containing both 5 and 6. $\blacksquare$
 
-### 9.3 Теорема 9.2 (Фановское правило отбора)
+### 9.3 Theorem 9.2 (Fano Selection Rule)
 
-:::tip[Теорема 9.2 (Фановское правило отбора) \[Т\]]
-Древесная (tree-level) Юкавская связь поколения $k_n$ с Хиггсовым полем $\gamma_{EU}$ пропорциональна октонионной структурной константе $f_{k_n, E, U}$, которая ненулевая тогда и только тогда, когда $(k_n, E, U)$ — Фано-линия.
+:::tip[Theorem 9.2 (Fano selection rule) \[T\]]
+The tree-level Yukawa coupling of generation $k_n$ with the Higgs field $\gamma_{EU}$ is proportional to the octonionic structure constant $f_{k_n, E, U}$, which is non-zero if and only if $(k_n, E, U)$ is a Fano line.
 
-Статус **[Т]**: доказано через октонионные структурные константы $f_{ijk}$ — единственный $G_2$-инвариантный трилинейный оператор на $\mathrm{Im}(\mathbb{O})$. Полное доказательство: [Теорема 2.2](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk).
+Status **[T]**: proven through the octonionic structure constants $f_{ijk}$ — the unique $G_2$-invariant trilinear operator on $\mathrm{Im}(\mathbb{O})$. Full proof: [Theorem 2.2](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk).
 :::
 
 $$y_n^{(\text{tree})} = g_W \cdot f_{k_n, E, U} \cdot \sin\left(\frac{2\pi k_n}{7}\right) \cdot |\gamma_{\text{vac}}^{(EU)}|$$
 
-где $f_{ijk} = \pm 1$ если $(i,j,k)$ — Фано-линия, и $f_{ijk} = 0$ иначе.
+where $f_{ijk} = \pm 1$ if $(i,j,k)$ is a Fano line, and $f_{ijk} = 0$ otherwise.
 
-**(a)** Для $k_n = 1$: тройка $(1, 5, 6) = \{A, E, U\}$ — Фано-линия. $f_{1,5,6} = 1$.
+**(a)** For $k_n = 1$: the triple $(1, 5, 6) = \{A, E, U\}$ is a Fano line. $f_{1,5,6} = 1$.
 
 $$y_1^{(\text{tree})} = g_W \cdot 1 \cdot \sin(2\pi/7) \cdot |\gamma_{\text{vac}}| \neq 0$$
 
-**(b)** Для $k_n = 2$: тройка $(2, 5, 6)$. Линия через 2 и 5: $\{2,3,5\}$ (содержит 3, не 6). Линия через 2 и 6: $\{6,7,2\}$ (содержит 7, не 5). $f_{2,5,6} = 0$.
+**(b)** For $k_n = 2$: the triple $(2, 5, 6)$. Line through 2 and 5: $\{2,3,5\}$ (contains 3, not 6). Line through 2 and 6: $\{6,7,2\}$ (contains 7, not 5). $f_{2,5,6} = 0$.
 
 $$y_2^{(\text{tree})} = 0$$
 
-**(c)** Для $k_n = 4$: тройка $(4, 5, 6)$. Линия через 4 и 5: $\{4,5,7\}$ (содержит 7, не 6). Линия через 4 и 6: $\{3,4,6\}$ (содержит 3, не 5). $f_{4,5,6} = 0$.
+**(c)** For $k_n = 4$: the triple $(4, 5, 6)$. Line through 4 and 5: $\{4,5,7\}$ (contains 7, not 6). Line through 4 and 6: $\{3,4,6\}$ (contains 3, not 5). $f_{4,5,6} = 0$.
 
 $$y_4^{(\text{tree})} = 0$$
 
-**(d)** Резюме правила отбора:
+**(d)** Summary of the selection rule:
 
-| Поколение | $k_n$ | Измерение | $(k_n, E, U)$ Фано? | $y^{(\text{tree})}$ |
+| Generation | $k_n$ | Dimension | $(k_n, E, U)$ Fano? | $y^{(\text{tree})}$ |
 |---|---|---|---|---|
-| **Тяжелейшее** | **1** | **A (awareness)** | **Да: $\{1,5,6\}$** | **$\neq 0$** |
-| Лёгкое | 2 | S (stability) | Нет | $= 0$ |
-| Лёгкое | 4 | L (levels) | Нет | $= 0$ |
+| **Heaviest** | **1** | **A (awareness)** | **Yes: $\{1,5,6\}$** | **$\neq 0$** |
+| Light | 2 | S (stability) | No | $= 0$ |
+| Light | 4 | L (levels) | No | $= 0$ |
 
-**Доказательство.** Юкавская связь трёх измерений $(a,b,c)$ пропорциональна структурной константе октонионов:
+**Proof.** The Yukawa coupling of three dimensions $(a,b,c)$ is proportional to the octonionic structure constant:
 
 $$y_{abc}^{(\text{tree})} \propto f_{abc}$$
 
-где $f_{abc} = \pm 1$ тогда и только тогда, когда $\{a,b,c\}$ — Фановская линия $\mathrm{PG}(2,2)$, и $f_{abc} = 0$ иначе. Это следует из таблицы умножения $\mathbb{O}$: $e_a e_b = f_{abc} e_c + \delta_{ab}$.
+where $f_{abc} = \pm 1$ if and only if $\{a,b,c\}$ is a Fano line of $\mathrm{PG}(2,2)$, and $f_{abc} = 0$ otherwise. This follows from the multiplication table of $\mathbb{O}$: $e_a e_b = f_{abc} e_c + \delta_{ab}$.
 
-Для поколения $k=1$ (линия $\{1,5,6\}$): $f_{156} = 1$ — Юкавская $O(1)$.
-Для поколений $k=2,4$: тройки $(2,5,6)$ и $(4,5,6)$ — не Фановские линии, $f_{256} = f_{456} = 0$ — Юкавские равны нулю. $\blacksquare$
+For generation $k=1$ (line $\{1,5,6\}$): $f_{156} = 1$ — Yukawa $O(1)$.
+For generations $k=2,4$: the triples $(2,5,6)$ and $(4,5,6)$ are not Fano lines, $f_{256} = f_{456} = 0$ — Yukawa couplings vanish. $\blacksquare$
 
-### 9.4 Z₃-симметрия и её нарушение
+### 9.4 Z₃-Symmetry and Its Breaking
 
-Отображение $\sigma: k \mapsto 2k \bmod 7$ является автоморфизмом плоскости Фано и циклически переставляет элементы Фано-линии $\{1,2,4\}$:
+The map $\sigma: k \mapsto 2k \bmod 7$ is an automorphism of the Fano plane and cyclically permutes the elements of the Fano line $\{1,2,4\}$:
 
-$$\sigma: 1 \to 2 \to 4 \to 1 \quad (\text{цикл } (1\,2\,4))$$
+$$\sigma: 1 \to 2 \to 4 \to 1 \quad (\text{cycle } (1\,2\,4))$$
 
-**Следствие.** Любой Фано-инвариантный функционал $F(k_1, k_2, k_3)$ удовлетворяет $F(1,2,4) = F(2,4,1) = F(4,1,2)$, т.е. **одинаков** для всех трёх поколений. Следовательно, массовая иерархия $m_t \gg m_c \gg m_u$ **не может** быть объяснена только Фано-геометрией — необходим Z₃-нарушающий фактор.
+**Corollary.** Any Fano-invariant functional $F(k_1, k_2, k_3)$ satisfies $F(1,2,4) = F(2,4,1) = F(4,1,2)$, i.e., it is **the same** for all three generations. Consequently, the mass hierarchy $m_t \gg m_c \gg m_u$ **cannot** be explained by Fano geometry alone — a Z₃-breaking factor is required.
 
-Этот фактор предоставляет Фано-Хиггсовая линия $\{1,5,6\}$: среди элементов генерационного триплета $(1,2,4)$ только $k=1$ лежит на этой линии. Вакуумный Gap-профиль дополнительно нарушает Z₃, поскольку $k=1$ (A) и $k=2$ (S) лежат в 3-секторе, а $k=4$ (L) — в $\bar{3}$-секторе.
+This factor is provided by the Fano-Higgs line $\{1,5,6\}$: among the elements of the generation triplet $(1,2,4)$, only $k=1$ lies on this line. The vacuum Gap profile additionally breaks Z₃, since $k=1$ (A) and $k=2$ (S) lie in the 3-sector, while $k=4$ (L) lies in the $\bar{3}$-sector.
 
 ---
 
-## 10. Массовая иерархия поколений
+## 10. Mass Hierarchy of Generations
 
-### 10.1 Теорема 10.1 (Массовая иерархия: качественная)
+### 10.1 Theorem 10.1 (Mass Hierarchy: Qualitative)
 
-:::tip[Теорема 10.1 (Массовая иерархия) \[Т\]]
-Фановское правило отбора [Т] (разд. 9.3) порождает иерархию масс $m_t \gg m_c, m_u$, разрешая уязвимость К-1 (парадокс IR fixed point).
+:::tip[Theorem 10.1 (Mass hierarchy) \[T\]]
+The Fano selection rule [T] (sect. 9.3) generates the mass hierarchy $m_t \gg m_c, m_u$, resolving vulnerability K-1 (the IR fixed point paradox).
 :::
 
-**(a)** $k=1$ (A) — **третье поколение** (t, b, $\tau$): древесная Юкавская связь $y_1^{(\text{tree})} \sim O(1)$. При RG-эволюции $y_1$ притягивается к quasi-IR fixed point (Пендлтон-Росс, 1981):
+**(a)** $k=1$ (A) — **third generation** (t, b, $\tau$): tree-level Yukawa coupling $y_1^{(\text{tree})} \sim O(1)$. Under RG-evolution $y_1$ is attracted to the quasi-IR fixed point (Pendleton–Ross, 1981):
 
-$$m_t = y_t^{(\text{FP})} \cdot \frac{v}{\sqrt{2}} \approx 1.0 \times 174 \approx 173 \text{ ГэВ}$$
+$$m_t = y_t^{(\text{FP})} \cdot \frac{v}{\sqrt{2}} \approx 1.0 \times 174 \approx 173 \text{ GeV}$$
 
-**(b)** $k=2$ (S) и $k=4$ (L) — первое и второе поколения: $y_{2,4}^{(\text{tree})} = 0$. Массы генерируются **петлевыми** (loop) поправками через $V_3$-потенциал:
+**(b)** $k=2$ (S) and $k=4$ (L) — first and second generations: $y_{2,4}^{(\text{tree})} = 0$. Masses are generated by **loop** corrections through the $V_3$-potential:
 
 $$y_{2,4}^{(\text{eff})} \sim \epsilon_{\text{loop}} \ll 1$$
 
-**(c)** Петлевые Юкавские **не** притягиваются к IR fixed point (поскольку $y \ll 1$, квадратичный член $c_1 y^2$ пренебрежим по сравнению с калибровочным $c_3 g_s^2$). Их RG-бег определяется аномальной размерностью массы:
+**(c)** Loop Yukawa couplings are **not** attracted to the IR fixed point (since $y \ll 1$, the quadratic term $c_1 y^2$ is negligible compared to the gauge term $c_3 g_s^2$). Their RG-running is determined by the anomalous dimension of mass:
 
 $$y_n(\mu) = y_n(\mu_0) \cdot \left(\frac{\alpha_s(\mu)}{\alpha_s(\mu_0)}\right)^{12/(33-2N_f)} \quad (n = 2, 4)$$
 
-### 10.2 Разрешение парадокса IR fixed point
+### 10.2 Resolution of the IR Fixed Point Paradox
 
-:::info[Разрешение уязвимости К-1]
-Ранее постулировались три O(1) начальные Юкавские ($|y_1|:|y_2|:|y_3| = 0.78:0.98:0.43$), которые все стягиваются к единой IR fixed point, не порождая иерархии. Фановское правило отбора устраняет эту проблему: начальные Юкавские — $y_1^{(0)} \sim O(1)$, $y_2^{(0)} = 0$, $y_4^{(0)} = 0$.
+:::info[Resolution of vulnerability K-1]
+Previously, three O(1) initial Yukawa couplings were postulated ($|y_1|:|y_2|:|y_3| = 0.78:0.98:0.43$), all of which converge to a single IR fixed point, generating no hierarchy. The Fano selection rule eliminates this problem: initial Yukawa couplings are $y_1^{(0)} \sim O(1)$, $y_2^{(0)} = 0$, $y_4^{(0)} = 0$.
 :::
 
-RG-система с одной O(1) Юкавской + двумя малыми:
+RG-system with one O(1) Yukawa + two small ones:
 
 $$\frac{dy_1}{d\ln\mu} \approx \frac{y_1}{16\pi^2}(c_1 y_1^2 - c_3 g_s^2 - c_4 g_W^2)$$
 
 $$\frac{dy_n}{d\ln\mu} \approx \frac{y_n}{16\pi^2}(c_2 y_1^2 - c_3 g_s^2 - c_4 g_W^2) \quad (n = 2, 4;\; y_n \ll 1)$$
 
-$y_1$ притягивается к $y^{(\text{FP})} = \sqrt{(c_3 g_s^2 + c_4 g_W^2)/c_1} \approx 1$. Малые $y_{2,4}$ бегут с аномальной размерностью и **сохраняют** свою малость. Иерархия устойчива при RG-эволюции к электрослабому масштабу.
+$y_1$ is attracted to $y^{(\text{FP})} = \sqrt{(c_3 g_s^2 + c_4 g_W^2)/c_1} \approx 1$. Small $y_{2,4}$ run with anomalous dimension and **preserve** their smallness. The hierarchy is stable under RG-evolution to the electroweak scale.
 
-### 10.3 Механизм генерации масс лёгких поколений
+### 10.3 Mass Generation Mechanism for Light Generations
 
-Поколения $k=2$ (S) и $k=4$ (L) с $y^{(\text{tree})} = 0$ получают массы через **смешивание** с поколением $k=1$ (A), индуцированное $V_3$-вершинами на не-Фано тройках через промежуточное измерение $D=3$:
+Generations $k=2$ (S) and $k=4$ (L) with $y^{(\text{tree})} = 0$ acquire masses through **mixing** with generation $k=1$ (A), induced by $V_3$-vertices on non-Fano triples via the intermediate dimension $D=3$:
 
-- $V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{23}| |\gamma_{13}| \sin(\theta_{12} + \theta_{23} - \theta_{13})$ — тройка $\{1,2,3\} = \{A,S,D\}$
-- $V_3 \supset \lambda_3 |\gamma_{24}| |\gamma_{43}| |\gamma_{23}| \sin(\theta_{24} + \theta_{43} - \theta_{23})$ — тройка $\{2,4,3\} = \{S,L,D\}$
-- $V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{14} + \theta_{43} - \theta_{13})$ — тройка $\{1,4,3\} = \{A,L,D\}$
+- $V_3 \supset \lambda_3 |\gamma_{12}| |\gamma_{23}| |\gamma_{13}| \sin(\theta_{12} + \theta_{23} - \theta_{13})$ — triple $\{1,2,3\} = \{A,S,D\}$
+- $V_3 \supset \lambda_3 |\gamma_{24}| |\gamma_{43}| |\gamma_{23}| \sin(\theta_{24} + \theta_{43} - \theta_{23})$ — triple $\{2,4,3\} = \{S,L,D\}$
+- $V_3 \supset \lambda_3 |\gamma_{14}| |\gamma_{43}| |\gamma_{13}| \sin(\theta_{14} + \theta_{43} - \theta_{13})$ — triple $\{1,4,3\} = \{A,L,D\}$
 
-Все три — не-Фано тройки (содержат $D=3$ как посредник). Смешивание поколений проходит через **цветовое измерение D**, что связывает генерационный механизм с [конфайнментом](/docs/physics/gauge-symmetry/confinement).
+All three are non-Fano triples (containing $D=3$ as mediator). Generation mixing passes through the **color dimension D**, which connects the generation mechanism with [confinement](/docs/physics/gauge-symmetry/confinement).
 
-### 10.4 Теорема 10.2 (Назначение поколений и Фано-расстояние до Хиггса)
+### 10.4 Theorem 10.2 (Generation Assignment and Fano Distance to Higgs)
 
-:::warning[Гипотеза 10.2 (Назначение поколений) \[Г\]]
-Различие между $k=2$ и $k=4$ определяется типом промежуточного сектора в Фано-пути к Хиггсу. Строго — гипотеза, требующая решёточного подтверждения.
+:::warning[Hypothesis 10.2 (Generation assignment) \[H\]]
+The distinction between $k=2$ and $k=4$ is determined by the type of intermediate sector in the Fano path to the Higgs. Strictly — a hypothesis requiring lattice confirmation.
 :::
 
-Определим **О-свободное Фано-расстояние** $d_H(k_n)$ как минимальное число Фано-линий в пути от $k_n$ к Хиггсу $(E, U)$, не проходящем через $O = 7$ ($\mathrm{Gap} \sim 1$, подавленные пути).
+Define the **O-free Fano distance** $d_H(k_n)$ as the minimum number of Fano lines in the path from $k_n$ to the Higgs $(E, U)$, not passing through $O = 7$ ($\mathrm{Gap} \sim 1$, suppressed paths).
 
-**(a)** $k=1$ (A): прямая Фано-линия $\{1,5,6\}$. $d_H(1) = 0$ (древесный уровень).
+**(a)** $k=1$ (A): direct Fano line $\{1,5,6\}$. $d_H(1) = 0$ (tree level).
 
-**(b)** $k=2$ (S): путь $\{2,3,5\}: S \to D \to E$, затем $\{5,6,1\}: E \to U$. Один промежуточный шаг через $3$-to-$3$ сектор ($\mathrm{Gap} \sim \epsilon_{\text{space}} \neq 0$). $d_H(2) = 1$.
+**(b)** $k=2$ (S): path $\{2,3,5\}: S \to D \to E$, then $\{5,6,1\}: E \to U$. One intermediate step through the $3$-to-$3$ sector ($\mathrm{Gap} \sim \epsilon_{\text{space}} \neq 0$). $d_H(2) = 1$.
 
-**(c)** $k=4$ (L): путь $\{3,4,6\}: L \to D \to U$, затем $\{5,6,1\}: U \to E$. Один промежуточный шаг, целиком через конфайнмент-сектор ($\mathrm{Gap} \approx 0$). $d_H(4) = 1$.
+**(c)** $k=4$ (L): path $\{3,4,6\}: L \to D \to U$, then $\{5,6,1\}: U \to E$. One intermediate step, entirely through the confinement sector ($\mathrm{Gap} \approx 0$). $d_H(4) = 1$.
 
-**(d)** Ключевое различие: путь $k=2$ проходит через $3$-to-$3$ сектор ($\mathrm{Gap} \sim \epsilon_{\text{space}} \neq 0$), а путь $k=4$ — целиком через конфайнмент-сектор ($\mathrm{Gap} \approx 0$). Поэтому $k=4$ имеет бо&#769;льшую связность с Хиггсом:
+**(d)** Key distinction: the path $k=2$ passes through the $3$-to-$3$ sector ($\mathrm{Gap} \sim \epsilon_{\text{space}} \neq 0$), while the path $k=4$ passes entirely through the confinement sector ($\mathrm{Gap} \approx 0$). Therefore $k=4$ has greater connectivity to the Higgs:
 
 $$y_4^{(\text{eff})} > y_2^{(\text{eff})}$$
 
-**(e)** Предсказание назначения поколений:
+**(e)** Generation assignment prediction:
 
-| Масса | Поколение | Фано $k$ | Измерение | Механизм |
+| Mass | Generation | Fano $k$ | Dimension | Mechanism |
 |---|---|---|---|---|
-| **Тяжелейшее** | 3-е (t,b,$\tau$) | **1** | **A** | Tree-level, IR FP |
-| **Среднее** | 2-е (c,s,$\mu$) | **4** | **L** | 1-loop, конфайнмент |
-| **Лёгкое** | 1-е (u,d,e) | **2** | **S** | 1-loop, $3$-to-$3$ |
+| **Heaviest** | 3rd (t,b,$\tau$) | **1** | **A** | Tree-level, IR FP |
+| **Medium** | 2nd (c,s,$\mu$) | **4** | **L** | 1-loop, confinement |
+| **Light** | 1st (u,d,e) | **2** | **S** | 1-loop, $3$-to-$3$ |
 
-### 10.5 Теорема 10.3 (Феноменологическое ограничение)
+### 10.5 Theorem 10.3 (Phenomenological Bound)
 
-:::warning[Гипотеза 10.3 (Петлевое подавление масс) \[Г\]]
-Из наблюдаемых масс кварков извлекаются эффективные параметры подавления, согласующиеся с петлевым механизмом.
+:::warning[Hypothesis 10.3 (Loop suppression of masses) \[H\]]
+From the observed quark masses, effective suppression parameters are extracted, consistent with the loop mechanism.
 :::
 
-**(a)** Физические Юкавские связи ($y_n = m_n / 174$ ГэВ):
+**(a)** Physical Yukawa couplings ($y_n = m_n / 174$ GeV):
 
-| Поколение | Фано $k$ | Юкавская | Подавление $y_n/y_t$ |
+| Generation | Fano $k$ | Yukawa | Suppression $y_n/y_t$ |
 |---|---|---|---|
-| 3-е (t) | 1 (A) | $\approx 1.0$ | 1 (tree-level) |
-| 2-е | 4 (L) | $\approx 7.5 \times 10^{-3}$ | $\sim 10^{-2}$ |
-| 1-е | 2 (S) | $\approx 1.2 \times 10^{-5}$ | $\sim 10^{-5}$ |
+| 3rd (t) | 1 (A) | $\approx 1.0$ | 1 (tree-level) |
+| 2nd | 4 (L) | $\approx 7.5 \times 10^{-3}$ | $\sim 10^{-2}$ |
+| 1st | 2 (S) | $\approx 1.2 \times 10^{-5}$ | $\sim 10^{-5}$ |
 
-**(b)** Подавление $\sim 10^{-2}$ для второго поколения согласуется с **одним** петлевым фактором:
+**(b)** Suppression $\sim 10^{-2}$ for the second generation is consistent with **one** loop factor:
 
-$$\epsilon_{\text{1-loop}} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap-фактор}) \sim 10^{-2}$$
+$$\epsilon_{\text{1-loop}} \sim \frac{\lambda_3}{16\pi^2} \times (\text{Gap factor}) \sim 10^{-2}$$
 
-**(c)** Подавление $\sim 10^{-5}$ для первого поколения согласуется с **двумя** петлевыми факторами:
+**(c)** Suppression $\sim 10^{-5}$ for the first generation is consistent with **two** loop factors:
 
-$$\epsilon_{\text{2-loop}} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap-факторы}) \sim 10^{-4}\text{--}10^{-5}$$
+$$\epsilon_{\text{2-loop}} \sim \left(\frac{\lambda_3}{16\pi^2}\right)^2 \times (\text{Gap factors}) \sim 10^{-4}\text{--}10^{-5}$$
 
-### 10.6 Полная таблица масс
+### 10.6 Full Mass Table
 
-| Частица | Поколение | $k$ | Механизм | Предсказание | Наблюдение |
+| Particle | Generation | $k$ | Mechanism | Prediction | Observation |
 |---|---|---|---|---|---|
-| t | 3 | 1 (A) | Tree + IR FP | 173 ГэВ | 173 ГэВ |
-| c | 2 | 4 (L) | 1-loop | $\sim$ ГэВ | 1.3 ГэВ |
-| u | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ МэВ | 2.2 МэВ |
-| b | 3 | 1 (A) | Tree + RG | $\sim 4$ ГэВ | 4.2 ГэВ |
-| s | 2 | 4 (L) | 1-loop | $\sim 100$ МэВ | 95 МэВ |
-| d | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ МэВ | 4.7 МэВ |
-| $\tau$ | 3 | 1 (A) | Tree | $\sim 2$ ГэВ | 1.78 ГэВ |
-| $\mu$ | 2 | 4 (L) | 1-loop | $\sim 100$ МэВ | 106 МэВ |
-| e | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ МэВ | 0.511 МэВ |
+| t | 3 | 1 (A) | Tree + IR FP | 173 GeV | 173 GeV |
+| c | 2 | 4 (L) | 1-loop | $\sim$ GeV | 1.3 GeV |
+| u | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ MeV | 2.2 MeV |
+| b | 3 | 1 (A) | Tree + RG | $\sim 4$ GeV | 4.2 GeV |
+| s | 2 | 4 (L) | 1-loop | $\sim 100$ MeV | 95 MeV |
+| d | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ MeV | 4.7 MeV |
+| $\tau$ | 3 | 1 (A) | Tree | $\sim 2$ GeV | 1.78 GeV |
+| $\mu$ | 2 | 4 (L) | 1-loop | $\sim 100$ MeV | 106 MeV |
+| e | 1 | 2 (S) | 1-loop ($3$-to-$3$) | $\sim$ MeV | 0.511 MeV |
 
-:::info[Точность]
-Все предсказания — порядок величины. Точные значения требуют решёточного вычисления $V_3$-петлевых вкладов.
+:::info[Precision]
+All predictions are order-of-magnitude estimates. Exact values require lattice computation of $V_3$-loop contributions.
 :::
 
 ---
 
-## 11. N=1 суперсимметрия из $G_2$-голономии
+## 11. N=1 Supersymmetry from $G_2$-Holonomy
 
-### 11.1 Теорема 11.1 (N=1 SUSY из параллельного спинора)
+### 11.1 Theorem 11.1 (N=1 SUSY from the Parallel Spinor)
 
-:::tip[Теорема 11.1 (N=1 SUSY) \[Т\]]
-Параллельный спинор $\eta_0 = 1_\mathbb{O}$ определяет ровно одну сохраняющуюся суперсимметрию — N=1 SUSY в 4D. Стандартный результат теории $G_2$-компактификации.
+:::tip[Theorem 11.1 (N=1 SUSY) \[T\]]
+The parallel spinor $\eta_0 = 1_\mathbb{O}$ defines exactly one preserved supersymmetry — N=1 SUSY in 4D. Standard result of $G_2$-compactification theory.
 :::
 
-**(a)** Из M-теории (Аганагич-Витте, 2001; Аткия-Виттен, 2001): компактификация 11D $\to$ 4D на 7-мерном $G_2$-многообразии $M_7$:
+**(a)** From M-theory (Aganagic-Witten, 2001; Atiyah-Witten, 2001): compactification 11D $\to$ 4D on a 7-dimensional $G_2$-manifold $M_7$:
 
 $$\mathbb{R}^{1,3} \times M_7, \quad \mathrm{Hol}(M_7) = G_2$$
 
-Число суперсимметрий в 4D = число ковариантно постоянных спиноров на $M_7$ = число синглетов в разложении $8_s \to 1 \oplus 7$.
+Number of supersymmetries in 4D = number of covariantly constant spinors on $M_7$ = number of singlets in the decomposition $8_s \to 1 \oplus 7$.
 
-**(b)** $G_2 \subset \mathrm{Spin}(7)$: $\Delta_7 = \mathbb{R}^8 \to 1 \oplus 7$ — ровно **один** параллельный спинор $\eta_0$. Следовательно, **N=1 SUSY** в 4D.
+**(b)** $G_2 \subset \mathrm{Spin}(7)$: $\Delta_7 = \mathbb{R}^8 \to 1 \oplus 7$ — exactly **one** parallel spinor $\eta_0$. Consequently, **N=1 SUSY** in 4D.
 
-**(c)** Генератор суперсимметрии:
+**(c)** Supersymmetry generator:
 
 $$Q_\alpha = \eta_0 \otimes \psi_\alpha^{(4D)}$$
 
-Антикоммутатор:
+Anticommutator:
 
 $$\{Q_\alpha, \bar{Q}_{\dot{\beta}}\} = 2\sigma^\mu_{\alpha\dot{\beta}} P_\mu$$
 
-**(d)** SUSY-преобразования. Для Gap-поля $\theta_{ij}$ и его суперпартнёра $\tilde{\theta}_{ij}$ (гапсино):
+**(d)** SUSY transformations. For the Gap field $\theta_{ij}$ and its superpartner $\tilde{\theta}_{ij}$ (gapsino):
 
 $$\delta_\epsilon \theta_{ij} = \bar{\epsilon} \tilde{\theta}_{ij}, \quad \delta_\epsilon \tilde{\theta}_{ij} = i\sigma^\mu \bar{\epsilon} \partial_\mu \theta_{ij}$$
 
-**Доказательство.** Стандартный результат теории $G_2$-компактификации (Joyce-Karigiannis, 2017). Ковариантно постоянный спинор $\nabla \eta_0 = 0$ на $M_7$ тогда и только тогда, когда $\mathrm{Hol} \subseteq G_2$ (теорема Бергера). $\blacksquare$
+**Proof.** Standard result of $G_2$-compactification theory (Joyce-Karigiannis, 2017). A covariantly constant spinor $\nabla \eta_0 = 0$ on $M_7$ exists if and only if $\mathrm{Hol} \subseteq G_2$ (Berger's theorem). $\blacksquare$
 
-### 11.2 Теорема 11.2 (Суперпартнёрный спектр)
+### 11.2 Theorem 11.2 (Superpartner Spectrum)
 
-:::tip[Теорема 11.2 (Суперпартнёрный спектр) \[Т\]]
-N=1 SUSY удваивает Gap-спектр: каждому Gap-полю $\theta_{ij}$ (бозон, спин 0) соответствует суперпартнёр — гапсино $\tilde{\theta}_{ij}$ (фермион, спин 1/2).
+:::tip[Theorem 11.2 (Superpartner spectrum) \[T\]]
+N=1 SUSY doubles the Gap spectrum: to each Gap field $\theta_{ij}$ (boson, spin 0) there corresponds a superpartner — the gapsino $\tilde{\theta}_{ij}$ (fermion, spin 1/2).
 :::
 
-| Частица SM | Gap-конфигурация | Суперпартнёр | Gap-конфигурация |
+| SM particle | Gap configuration | Superpartner | Gap configuration |
 |---|---|---|---|
-| Кварк $q_L$ | $\mathrm{Gap}(E,U)=0$, $\mathrm{Gap}(3\text{-}\bar{3})\neq 0$ | Скварк $\tilde{q}_L$ | $\theta_{\text{Gap}} \to$ бозон |
-| Глюон $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Глюино $\tilde{g}$ | $\tilde{\theta}_{ij}^{(3\bar{3})}$ |
+| Quark $q_L$ | $\mathrm{Gap}(E,U)=0$, $\mathrm{Gap}(3\text{-}\bar{3})\neq 0$ | Squark $\tilde{q}_L$ | $\theta_{\text{Gap}} \to$ boson |
+| Gluon $g$ | $\delta\theta_{ij}^{(3\bar{3})}$ | Gluino $\tilde{g}$ | $\tilde{\theta}_{ij}^{(3\bar{3})}$ |
 | $W^\pm, Z$ | $\delta\theta_{EU}$, $\delta\theta_{LE,LU}$ | Wino, Zino | $\tilde{\theta}_{EU}$, ... |
-| Хиггс $H$ | $\gamma_{EU}$ (VEV) | Хиггсино $\tilde{H}$ | $\tilde{\gamma}_{EU}$ |
-| Гравитон $g_{\mu\nu}$ | Метрика из Gap | Гравитино $\psi_{3/2}$ | $\tilde{g}_{\mu\nu}$ |
+| Higgs $H$ | $\gamma_{EU}$ (VEV) | Higgsino $\tilde{H}$ | $\tilde{\gamma}_{EU}$ |
+| Graviton $g_{\mu\nu}$ | Metric from Gap | Gravitino $\psi_{3/2}$ | $\tilde{g}_{\mu\nu}$ |
 
-В незнарушенной SUSY: масса суперпартнёра = масса частицы. Наблюдательно: SUSY нарушена ($m_{\tilde{q}} \gg m_q$).
+In unbroken SUSY: superpartner mass = particle mass. Observationally: SUSY is broken ($m_{\tilde{q}} \gg m_q$).
 
-### 11.3 SUSY-нарушение в Gap-формализме
+### 11.3 SUSY Breaking in the Gap Formalism
 
-:::warning[Гипотеза 11.3 (SUSY-нарушение через $V_3$) \[Г\]]
-Нарушение SUSY в Gap-формализме — несовпадение бозонных и фермионных минимумов $V_{\text{Gap}}$. Конструкция суперпотенциала $W(\Theta)$ остаётся открытой задачей.
+:::warning[Hypothesis 11.3 (SUSY breaking via $V_3$) \[H\]]
+SUSY breaking in the Gap formalism is the mismatch between bosonic and fermionic minima of $V_{\text{Gap}}$. Construction of the superpotential $W(\Theta)$ remains an open problem.
 :::
 
-**(a)** $V_3$ (PT-нечётный) нарушает SUSY: бозонный и фермионный вклады в $V_3$ не компенсируются:
+**(a)** $V_3$ (PT-odd) breaks SUSY: the bosonic and fermionic contributions to $V_3$ do not compensate:
 
 $$V_3^{(\text{bos})} + V_3^{(\text{ferm})} \neq 0$$
 
-**(b)** Параметр SUSY-нарушения (F-член):
+**(b)** SUSY-breaking parameter (F-term):
 
 $$F = \langle \partial V_{\text{Gap}} / \partial \theta \rangle_{\text{ferm}} \neq 0$$
 
-**(c)** Масштаб SUSY-нарушения из $V_3$-динамики:
+**(c)** SUSY-breaking scale from $V_3$-dynamics:
 
 $$\sqrt{F} \sim \sqrt{\lambda_3 \cdot 28 \cdot \epsilon^3} \cdot \mu_{\text{phys}}$$
 
-Для космологического Gap: $\mu_{\text{phys}} \sim M_{\text{Planck}}$, $\epsilon \sim \epsilon_{\text{GUT}} \sim 10^{-3}$:
+For cosmological Gap: $\mu_{\text{phys}} \sim M_{\text{Planck}}$, $\epsilon \sim \epsilon_{\text{GUT}} \sim 10^{-3}$:
 
-$$\sqrt{F} \sim \sqrt{73.8 \times 28 \times 10^{-9}} \times M_{\text{Planck}} \approx 1.4 \times 10^{-3} \times M_{\text{Planck}} \approx 3.4 \times 10^{16} \text{ ГэВ}$$
+$$\sqrt{F} \sim \sqrt{73.8 \times 28 \times 10^{-9}} \times M_{\text{Planck}} \approx 1.4 \times 10^{-3} \times M_{\text{Planck}} \approx 3.4 \times 10^{16} \text{ GeV}$$
 
-Масштаб SUSY-нарушения $\sqrt{F} \sim 10^{16}$ ГэВ — промежуточный масштаб, близкий к GUT.
+SUSY-breaking scale $\sqrt{F} \sim 10^{16}$ GeV — an intermediate scale, close to GUT.
 
-### 11.4 Теорема 11.4 (Масса гравитино)
+### 11.4 Theorem 11.4 (Gravitino Mass)
 
-:::warning[Гипотеза 11.4 (Масса гравитино) \[Г\*\]]
-Предсказание $m_{3/2} \sim 10^{13}$ ГэВ условно на $\mu_{\text{phys}} = M_{\text{Planck}}$; при $\mu_{\text{phys}} = M_{\text{GUT}}$ значение смещается на 3-6 порядков.
+:::warning[Hypothesis 11.4 (Gravitino mass) \[H\*\]]
+The prediction $m_{3/2} \sim 10^{13}$ GeV is conditional on $\mu_{\text{phys}} = M_{\text{Planck}}$; at $\mu_{\text{phys}} = M_{\text{GUT}}$ the value shifts by 3-6 orders of magnitude.
 :::
 
-**(a)** Стандартная формула супергравитации:
+**(a)** Standard supergravity formula:
 
 $$m_{3/2} = \frac{F}{\sqrt{3} M_{\text{Planck}}}$$
 
-**(b)** Из оценки $F \approx (1.4 \times 10^{-3})^2 M_{\text{Planck}}^2 \approx 2 \times 10^{-6} M_{\text{Planck}}^2$:
+**(b)** From the estimate $F \approx (1.4 \times 10^{-3})^2 M_{\text{Planck}}^2 \approx 2 \times 10^{-6} M_{\text{Planck}}^2$:
 
-$$m_{3/2} \approx \frac{2 \times 10^{-6} M_{\text{Planck}}^2}{\sqrt{3} M_{\text{Planck}}} \approx 1.2 \times 10^{-6} M_{\text{Planck}} \approx 2.9 \times 10^{13} \text{ ГэВ}$$
+$$m_{3/2} \approx \frac{2 \times 10^{-6} M_{\text{Planck}}^2}{\sqrt{3} M_{\text{Planck}}} \approx 1.2 \times 10^{-6} M_{\text{Planck}} \approx 2.9 \times 10^{13} \text{ GeV}$$
 
-**(c)** $m_{3/2} \sim 10^{13}$ ГэВ — **сверхтяжёлый** гравитино. Характерно для моделей с SUSY-нарушением на высокоэнергетическом масштабе (high-scale SUSY).
+**(c)** $m_{3/2} \sim 10^{13}$ GeV — a **super-heavy** gravitino. Characteristic of models with SUSY breaking at a high-energy scale (high-scale SUSY).
 
-**(d)** Следствие: массы скварков и слептонов того же порядка:
+**(d)** Corollary: squark and slepton masses are of the same order:
 
-$$m_{\tilde{q}} \sim m_{\tilde{l}} \sim m_{3/2} \sim 10^{13} \text{ ГэВ}$$
+$$m_{\tilde{q}} \sim m_{\tilde{l}} \sim m_{3/2} \sim 10^{13} \text{ GeV}$$
 
-Недоступны для LHC ($\sqrt{s} = 14$ ТэВ). Это объясняет ненаблюдение суперпартнёров.
+Inaccessible to the LHC ($\sqrt{s} = 14$ TeV). This explains the non-observation of superpartners.
 
 ---
 
-## 12. SUSY-спектр и экспериментальные следствия
+## 12. SUSY Spectrum and Experimental Consequences
 
-### 12.1 Теорема 12.1 (Полный SUSY-спектр из Gap)
+### 12.1 Theorem 12.1 (Full SUSY Spectrum from Gap)
 
-:::warning[Гипотеза 12.1 (SUSY-спектр) \[Г\]]
-Массы суперпартнёров определяются SUSY-нарушением через $V_3$ (gravity mediation).
+:::warning[Hypothesis 12.1 (SUSY spectrum) \[H\]]
+Superpartner masses are determined by SUSY breaking through $V_3$ (gravity mediation).
 :::
 
-| Частица | Масса | Статус |
+| Particle | Mass | Status |
 |---|---|---|
-| Скварки $\tilde{q}$ | $\sim m_{3/2} \sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Слептоны $\tilde{l}$ | $\sim m_{3/2} \sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Глюино $\tilde{g}$ | $\sim m_{3/2} \sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Wino/Bino | $\sim m_{3/2} \cdot (\alpha / 4\pi) \sim 10^{11}$ ГэВ | Ненаблюдаемы |
-| Хиггсино | $\sim \mu_H \sim m_{3/2} \sim 10^{13}$ ГэВ | Ненаблюдаемы |
-| Гравитино $\psi_{3/2}$ | $m_{3/2} \sim 10^{13}$ ГэВ | Ненаблюдаемы |
+| Squarks $\tilde{q}$ | $\sim m_{3/2} \sim 10^{13}$ GeV | Unobservable |
+| Sleptons $\tilde{l}$ | $\sim m_{3/2} \sim 10^{13}$ GeV | Unobservable |
+| Gluino $\tilde{g}$ | $\sim m_{3/2} \sim 10^{13}$ GeV | Unobservable |
+| Wino/Bino | $\sim m_{3/2} \cdot (\alpha / 4\pi) \sim 10^{11}$ GeV | Unobservable |
+| Higgsino | $\sim \mu_H \sim m_{3/2} \sim 10^{13}$ GeV | Unobservable |
+| Gravitino $\psi_{3/2}$ | $m_{3/2} \sim 10^{13}$ GeV | Unobservable |
 
-**Фальсифицируемое предсказание.** Gap-теория предсказывает **отсутствие** суперпартнёров на масштабах LHC и будущих коллайдеров ($\sqrt{s} < 10^5$ ГэВ). Обнаружение любого суперпартнёра с массой $\ll 10^{13}$ ГэВ **фальсифицирует** Gap-значение $\epsilon_{\text{GUT}} \sim 10^{-3}$.
+**Falsifiable prediction.** Gap theory predicts the **absence** of superpartners at scales accessible to the LHC and future colliders ($\sqrt{s} < 10^5$ GeV). Discovery of any superpartner with mass $\ll 10^{13}$ GeV would **falsify** the Gap value $\epsilon_{\text{GUT}} \sim 10^{-3}$.
 
-### 12.2 Следы SUSY
+### 12.2 SUSY Traces
 
-Косвенные следы SUSY могут проявляться в:
+Indirect traces of SUSY may manifest in:
 
-1. **Объединении калибровочных констант** при $\mu_{\text{GUT}} \sim 2 \times 10^{16}$ ГэВ (предсказывается). При $m_{\text{SUSY}} \sim 10^{13}$ ГэВ бета-функции содержат пороговые поправки (SM ниже $10^{13}$ ГэВ, MSSM выше), и точность объединения требует отдельной проверки.
+1. **Gauge coupling unification** at $\mu_{\text{GUT}} \sim 2 \times 10^{16}$ GeV (predicted). At $m_{\text{SUSY}} \sim 10^{13}$ GeV, the beta functions contain threshold corrections (SM below $10^{13}$ GeV, MSSM above), and the precision of unification requires a separate check.
 
-2. **Массе Хиггса** $m_H \approx 125$ ГэВ — в пределах MSSM с тяжёлыми стопами.
+2. **Higgs mass** $m_H \approx 125$ GeV — within the MSSM with heavy stops.
 
-3. Объединение калибровочных констант. Из Gap-RG:
+3. Gauge coupling unification. From Gap-RG:
 
 $$\alpha_s(\mu_{\text{GUT}}) = \alpha_W(\mu_{\text{GUT}}) = \alpha_{\text{GUT}} \approx 1/24$$
 
-Масштаб объединения:
+Unification scale:
 
-$$\mu_{\text{GUT}} = M_Z \cdot \exp\left(\frac{2\pi}{\beta_1^{(1)}} \cdot \frac{1}{\alpha_1(M_Z) - \alpha_{\text{GUT}}}\right) \approx 2 \times 10^{16} \text{ ГэВ}$$
+$$\mu_{\text{GUT}} = M_Z \cdot \exp\left(\frac{2\pi}{\beta_1^{(1)}} \cdot \frac{1}{\alpha_1(M_Z) - \alpha_{\text{GUT}}}\right) \approx 2 \times 10^{16} \text{ GeV}$$
 
 ---
 
-## 13. Распад протона {#распад-протона}
+## 13. Proton Decay {#распад-протона}
 
-:::info[Замечание: пересмотр предсказаний распада протона]
-В рамках Фано-электрослабой конструкции (ФЭ) X,Y-лептокварки **не предсказываются** (они были артефактом промежуточной $\mathrm{SU}(5)$-структуры). Однако распад протона остаётся возможен через $G_2$-экстра бозоны и высшие операторы.
+:::info[Note: revision of proton decay predictions]
+Within the Fano-electroweak construction (FE), X,Y-leptoquarks are **not predicted** (they were an artifact of the intermediate $\mathrm{SU}(5)$-structure). However, proton decay remains possible through $G_2$-extra bosons and higher-dimensional operators.
 :::
 
-### 13.1 Распад протона через $G_2$-экстра бозоны
+### 13.1 Proton Decay via $G_2$-Extra Bosons
 
-:::warning[Статус: Гипотеза \[Г\]]
-Распад протона в рамках (ФЭ) опосредуется $G_2$-экстра бозонами планковской массы. Время жизни $\tau_p \sim 10^{72}$ лет — практически ненаблюдаемо.
+:::warning[Status: Hypothesis \[H\]]
+Proton decay within (FE) is mediated by $G_2$-extra bosons of Planck mass. Lifetime $\tau_p \sim 10^{72}$ years — practically unobservable.
 :::
 
-6 $G_2$-экстра бозонов с $M_{G_2} \sim M_{\text{Planck}}$ опосредуют каналы распада протона (d=6 операторы через обмен $G_2$-экстра). Время жизни:
+6 $G_2$-extra bosons with $M_{G_2} \sim M_{\text{Planck}}$ mediate proton decay channels (d=6 operators via $G_2$-extra exchange). Lifetime:
 
-$$\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 m_p^5} \sim 10^{72} \text{ лет}$$
+$$\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 m_p^5} \sim 10^{72} \text{ years}$$
 
-Это на $\sim 35$ порядков выше текущего экспериментального предела (Super-Kamiokande: $\tau_p > 2.4 \times 10^{34}$ лет). **Протон фактически стабилен** в рамках (ФЭ).
+This is $\sim 35$ orders of magnitude above the current experimental limit (Super-Kamiokande: $\tau_p > 2.4 \times 10^{34}$ years). **The proton is effectively stable** within (FE).
 
-### 13.2 Следствия для экспериментов
+### 13.2 Consequences for Experiments
 
-| Эксперимент | Канал | Чувствительность | Статус в (ФЭ) |
+| Experiment | Channel | Sensitivity | Status in (FE) |
 |---|---|---|---|
-| Super-Kamiokande | $p \to e^+\pi^0$ | $> 2.4 \times 10^{34}$ лет | Не ограничивает |
-| Hyper-Kamiokande | $p \to e^+\pi^0$ | до $10^{35}$ лет | Не ограничивает |
-| DUNE | $p \to K^+\bar{\nu}$ | до $10^{35}$ лет | Не ограничивает |
+| Super-Kamiokande | $p \to e^+\pi^0$ | $> 2.4 \times 10^{34}$ years | Not constraining |
+| Hyper-Kamiokande | $p \to e^+\pi^0$ | up to $10^{35}$ years | Not constraining |
+| DUNE | $p \to K^+\bar{\nu}$ | up to $10^{35}$ years | Not constraining |
 
-:::info[Фальсифицируемое следствие]
-Обнаружение распада протона на масштабах $\tau_p \lesssim 10^{40}$ лет **фальсифицировало бы** (ФЭ), поскольку указывало бы на промежуточную калибровочную структуру (типа $\mathrm{SU}(5)$) с бозонами масштаба $M_X \ll M_{\text{Planck}}$.
+:::info[Falsifiable consequence]
+Detection of proton decay at scales $\tau_p \lesssim 10^{40}$ years would **falsify** (FE), since it would indicate an intermediate gauge structure (of $\mathrm{SU}(5)$ type) with bosons at scale $M_X \ll M_{\text{Planck}}$.
 :::
 
 ---
 
-## 14. Обновлённая CKM-феноменология
+## 14. Updated CKM Phenomenology
 
-### 14.1 Теорема 14.1 (Обновлённая фаза $\delta_{\text{CP}}$)
+### 14.1 Theorem 14.1 (Updated Phase $\delta_{\text{CP}}$)
 
-:::warning[Гипотеза 14.1 (Фаза CP-нарушения) \[Г\]]
-Формула $\delta_{\text{CP}} = \arg(e^{2\pi i(k_{1\text{st}} + k_{2\text{nd}} - k_{3\text{rd}})/7})$ — эвристическая, не выведена из диагонализации Юкавских матриц.
+:::warning[Hypothesis 14.1 (CP-violation phase) \[H\]]
+The formula $\delta_{\text{CP}} = \arg(e^{2\pi i(k_{1\text{st}} + k_{2\text{nd}} - k_{3\text{rd}})/7})$ is heuristic, not derived from diagonalization of Yukawa matrices.
 :::
 
-С назначением $k_{\text{1st}}=2$, $k_{\text{2nd}}=4$, $k_{\text{3rd}}=1$:
+With the assignment $k_{\text{1st}}=2$, $k_{\text{2nd}}=4$, $k_{\text{3rd}}=1$:
 
-**(a)** Голое значение:
+**(a)** Bare value:
 
 $$\delta_{\text{CP}} = \arg(e^{2\pi i(2+4-1)/7}) = \arg(e^{10\pi i/7}) = -\frac{4\pi}{7} \approx -102.9°$$
 
-Модуль: $|\delta_{\text{CP}}| = 180° - 102.9° = 77.1°$ (приведение к первой полуплоскости; $\sin 77.1° = \sin 102.9°$).
+Modulus: $|\delta_{\text{CP}}| = 180° - 102.9° = 77.1°$ (reduction to the first half-plane; $\sin 77.1° = \sin 102.9°$).
 
-**(b)** Двухпетлевая RG-поправка:
+**(b)** Two-loop RG-correction:
 
 $$\delta^{(2)} \sim \frac{y_t^2}{16\pi^2} \cdot \ln\frac{\mu_{\text{GUT}}}{\mu_{\text{EW}}} \cdot \frac{2\pi}{7}$$
 
-$$|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \text{ рад} \approx 12.6°$$
+$$|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \text{ rad} \approx 12.6°$$
 
-**(c)** Итоговое предсказание (при отрицательном знаке поправки):
+**(c)** Final prediction (with negative sign of correction):
 
 $$|\delta_{\text{CP}}^{(\text{phys})}| \approx 77.1° - 12.6° = 64.5° \pm 5°$$
 
-Наблюдаемое: $69° \pm 4°$ (PDG). Расхождение $\sim 4.5°$ ($\sim 1\sigma$).
+Observed: $69° \pm 4°$ (PDG). Discrepancy $\sim 4.5°$ ($\sim 1\sigma$).
 
-:::info[Замечание о знаке]
-Знак двухпетлевой поправки определяется из $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). При положительном знаке: $77.1° + 12.6° = 89.7°$ — расхождение $> 4\sigma$. Новое назначение **предсказывает отрицательный знак** поправки. Полный диапазон: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (от $64.5°$ до $89.7°$).
+:::info[Note on the sign]
+The sign of the two-loop correction is determined from $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 4\sigma$. The new assignment **predicts a negative sign** of the correction. Full range: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (from $64.5°$ to $89.7°$).
 :::
 
-### 14.2 Обновлённые углы CKM
+### 14.2 Updated CKM Angles
 
-С назначением $k_{\text{1st}}=2$, $k_{\text{2nd}}=4$, $k_{\text{3rd}}=1$:
+With the assignment $k_{\text{1st}}=2$, $k_{\text{2nd}}=4$, $k_{\text{3rd}}=1$:
 
-**(a)** Фано-разности для CKM-углов:
+**(a)** Fano differences for CKM angles:
 
 $$\Delta k_{12} = |k_{\text{1st}} - k_{\text{2nd}}| = |2 - 4| = 2$$
 $$\Delta k_{23} = |k_{\text{2nd}} - k_{\text{3rd}}| = |4 - 1| = 3$$
 $$\Delta k_{13} = |k_{\text{1st}} - k_{\text{3rd}}| = |2 - 1| = 1$$
 
-**(b)** Отношения Фано-фаз: $\Delta k_{12} : \Delta k_{23} : \Delta k_{13} = 2 : 3 : 1$. Наблюдаемые отношения углов: $\theta_{12} : \theta_{23} : \theta_{13} \approx 13° : 2.4° : 0.2° \approx 65 : 12 : 1$. Различие обусловлено RG-подавлением через текстуру Фрича:
+**(b)** Ratios of Fano phases: $\Delta k_{12} : \Delta k_{23} : \Delta k_{13} = 2 : 3 : 1$. Observed angle ratios: $\theta_{12} : \theta_{23} : \theta_{13} \approx 13° : 2.4° : 0.2° \approx 65 : 12 : 1$. The difference is due to RG-suppression through the Fritzsch texture:
 
 $$\theta_{12} \sim \sqrt{m_u/m_c}, \quad \theta_{23} \sim \sqrt{m_c/m_t}, \quad \theta_{13} \sim \sqrt{m_u/m_t}$$
 
-Углы определяются эффективными Юкавскими связями, а не Фано-разностями напрямую.
+Angles are determined by effective Yukawa couplings, not by the Fano differences directly.
 
-### 14.3 Лептонный сектор
+### 14.3 Lepton Sector
 
-**(a)** Фановское правило отбора применяется и к заряженным лептонам:
-- $\tau$ (тяжелейший) — $k=1$ (A): древесная Юкавская.
-- $\mu, e$ — $k=4, k=2$: петлевые.
+**(a)** The Fano selection rule applies to charged leptons as well:
+- $\tau$ (heaviest) — $k=1$ (A): tree-level Yukawa.
+- $\mu, e$ — $k=4, k=2$: loop-level.
 
-**(b)** Нейтрино: массы определяются механизмом seesaw. Правило отбора даёт:
+**(b)** Neutrinos: masses are determined by the seesaw mechanism. The selection rule gives:
 
 $$y_{\nu_\tau}^{(\text{tree})} \neq 0, \quad y_{\nu_\mu}^{(\text{tree})} = y_{\nu_e}^{(\text{tree})} = 0$$
 
 $$m_\nu \sim \frac{y_\nu^2 v^2}{M_R} \implies m_{\nu_\tau} \gg m_{\nu_\mu} \gg m_{\nu_e}$$
 
-Согласуется с нормальной иерархией масс нейтрино.
+Consistent with the normal neutrino mass hierarchy.
 
-:::warning[Гипотеза (PMNS) \[Г\]]
-Большие углы смешивания PMNS ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) объясняются тем, что массовая матрица правых нейтрино $M_R$ не подчиняется Фановскому правилу отбора (правые нейтрино — синглеты, не связаны с Хиггсом через E-U). Обоснование частичное: правило отбора специфично для электрослабых Юкавских связей.
+:::warning[Hypothesis (PMNS) \[H\]]
+The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) are explained by the fact that the right-handed neutrino mass matrix $M_R$ does not obey the Fano selection rule (right-handed neutrinos are singlets, not connected to the Higgs through E-U). The justification is partial: the selection rule is specific to electroweak Yukawa couplings.
 :::
 
 ---
 
-## 15. Сводка статусов
+## 15. Status Summary
 
-| Результат | Статус |
+| Result | Status |
 |---|---|
-| $\mathrm{SU}(3)_C$ из стабилизатора O в $G_2$ | [Т] |
-| Разложение $14 \to 8 + 3 + \bar{3}$ (глюоны + доп.) | [Т] |
-| $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ из Фано-электрослабой конструкции (ФЭ) | [Т] (комбинаторика: единственность $(E,U)$, Хиггсова линия); [С] (динамическая калибровочная структура, бег констант) |
-| Согласование двух $\mathrm{SU}(3)$ ($G_2$ и 42D PW) | [Т] |
-| Полное SM из $G_2$ + (ФЭ) | [С] (электрослабая динамика условна) |
-| Кварки и лептоны как Gap-конфигурации | [Г] |
-| Три поколения из Фано-структуры ($N_{\text{gen}} = 3$ точно) | **[Т]** ([доказательство](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
-| Хиральность из $\eta_0$ и $\mathrm{Gap}(E,U) = 0$ | [Т] |
-| 18 калибровочных бозонов (SM + 6 $G_2$-экстра) | [Т] для SM; [Г] за SM |
-| Иерархия масс из Gap-иерархии вакуума | [Г] |
-| Решение иерархии через RG с аномальными размерностями | [Г] |
-| Хиггс как Gap-конденсат когерентности E-U | [Т] (#9: единственность {A,E,U} + T-70: каноническое $f_0$) |
-| $M_H^2 = 2\lambda_4 v^2 + 3\lambda_3^2 \bar{A}^2/(4\mu^2)$ (октонионная коррекция) | [Г] |
-| $\delta\lambda/\lambda_{\text{SM}} \sim O(10^{-2}\text{--}10^{-3})$ (FCC-предсказание) | [И] |
-| Антикорреляция Gap (Ward), фактор $19/49$ | [Т] |
-| Принцип отбора поколений $(1,2,4)$ из ассоциатора | [Т] (единственность) |
-| Фановское правило отбора Юкавских | **[Т]** (через $f_{ijk}$ — единственный $G_2$-инвариантный трилинейный оператор) |
-| Массовая иерархия $m_t \gg m_c \gg m_u$ из Фано-отбора | **[Т]** (следствие правила отбора [Т]) |
-| $m_t \approx 173$ ГэВ из IR fixed point (единственная O(1) Юкавская) | [Т] |
-| Массы лёгких поколений через петлевое подавление | [Г] (порядок величины) |
-| Назначение поколений: $k=1 \to 3$-е, $k=4 \to 2$-е, $k=2 \to 1$-е | **[Т]** (45a, 45b: единственность из Фано-правила отбора) |
-| N=1 SUSY из параллельного спинора $\eta_0$ | [Т] |
-| SUSY-нарушение через $V_3$ | **[Т]** (T-50: суперпотенциал $W$ единственен, лемма Шура) |
-| $m_{3/2} \sim 10^{13}$ ГэВ | **[Т]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ из единственности $W$, лемма Шура) |
-| $m_{\tilde{q}} \sim 10^{13}$ ГэВ (отсутствие на LHC) | [Г] |
-| $\tau_p \sim 10^{72}$ лет ($G_2$-экстра канал) | [Г] (протон практически стабилен) |
-| $\delta_{\text{CP}} \approx 64.5°$ | [Г] ($1\sigma$ от $69°$) |
-| Нормальная иерархия нейтрино | **[С]** (O-секторная Юкавская; C14: $m_2/m_3$ с RG-коррекцией) |
+| $\mathrm{SU}(3)_C$ from the stabilizer of O in $G_2$ | [T] |
+| Decomposition $14 \to 8 + 3 + \bar{3}$ (gluons + extra) | [T] |
+| $\mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ from Fano-electroweak construction (FE) | [T] (combinatorics: uniqueness of $(E,U)$, Higgs line); [C] (dynamical gauge structure, running of couplings) |
+| Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | [T] |
+| Full SM from $G_2$ + (FE) | [C] (electroweak dynamics is conditional) |
+| Quarks and leptons as Gap configurations | [H] |
+| Three generations from Fano structure ($N_{\text{gen}} = 3$ exactly) | **[T]** ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
+| Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | [T] |
+| 18 gauge bosons (SM + 6 $G_2$-extra) | [T] for SM; [H] beyond SM |
+| Mass hierarchy from Gap hierarchy of the vacuum | [H] |
+| Resolution of hierarchy via RG with anomalous dimensions | [H] |
+| Higgs as Gap condensate of E-U coherence | [T] (#9: uniqueness of {A,E,U} + T-70: canonical $f_0$) |
+| $M_H^2 = 2\lambda_4 v^2 + 3\lambda_3^2 \bar{A}^2/(4\mu^2)$ (octonionic correction) | [H] |
+| $\delta\lambda/\lambda_{\text{SM}} \sim O(10^{-2}\text{--}10^{-3})$ (FCC prediction) | [I] |
+| Gap anticorrelation (Ward), factor $19/49$ | [T] |
+| Generation selection principle $(1,2,4)$ from associator | [T] (uniqueness) |
+| Fano Yukawa selection rule | **[T]** (via $f_{ijk}$ — unique $G_2$-invariant trilinear operator) |
+| Mass hierarchy $m_t \gg m_c \gg m_u$ from Fano selection | **[T]** (consequence of selection rule [T]) |
+| $m_t \approx 173$ GeV from IR fixed point (unique O(1) Yukawa) | [T] |
+| Light generation masses via loop suppression | [H] (order of magnitude) |
+| Generation assignment: $k=1 \to 3$rd, $k=4 \to 2$nd, $k=2 \to 1$st | **[T]** (45a, 45b: uniqueness from Fano selection rule) |
+| N=1 SUSY from parallel spinor $\eta_0$ | [T] |
+| SUSY breaking via $V_3$ | **[T]** (T-50: superpotential $W$ is unique, Schur's lemma) |
+| $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |
+| $m_{\tilde{q}} \sim 10^{13}$ GeV (absence at LHC) | [H] |
+| $\tau_p \sim 10^{72}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
+| $\delta_{\text{CP}} \approx 64.5°$ | [H] ($1\sigma$ from $69°$) |
+| Normal neutrino mass hierarchy | **[C]** (O-sector Yukawa; C14: $m_2/m_3$ with RG-correction) |
 
 
 ---
 
-**Связанные документы:**
-- [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure)
-- [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules)
-- [Конфайнмент](/docs/physics/gauge-symmetry/confinement)
-- [Сектор Хиггса](/docs/physics/particle-physics/higgs-sector)
+**Related documents:**
+- [G₂-structure and Fano plane](/docs/physics/gauge-symmetry/g2-structure)
+- [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)
+- [Confinement](/docs/physics/gauge-symmetry/confinement)
+- [Higgs sector](/docs/physics/particle-physics/higgs-sector)
