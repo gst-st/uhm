@@ -135,7 +135,7 @@ $$
 \mathrm{Var}(\hat{\theta}_i) \geq [g^{(F)}(\rho)]^{-1}_{ii}
 $$
 
-### 3.2 Uniqueness of the Bures Metric
+### 3.2 Uniqueness of the Bures Metric {#единственность-метрики-бюреса}
 
 In the **classical** case the Fisher–Rao metric is the unique (up to normalization) monotone Riemannian metric on the simplex of probability distributions (Chentsov theorem, 1982). In the **quantum** case uniqueness is broken: by the Petz theorem (1996), on $\mathcal{D}(\mathcal{H})$ there exists an entire **family** of monotone metrics, parametrized by operator-monotone functions $f$.
 

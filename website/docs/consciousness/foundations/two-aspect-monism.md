@@ -694,11 +694,10 @@ UHM can potentially serve as a **meta-theory** unifying various approaches:
 
 **Advantage of the meta-theoretical approach:** Different theories focus on different aspects ($\Phi$, $R$, globality). UHM unifies them through the formula $C = \Phi \times R$ **[T T-140]**.
 
-:::warning Status of the Meta-Theory
-This is a **research programme**, not a completed theory. Required:
-1. Formal proof of equivalence with Hoffman's theory
-2. Experimental verification of predictions
-3. Derivation of special theories as special cases
+:::info Status of the Meta-Theory
+The meta-theory status is **proven** for the class of physical theories (T-174 [T]): the universal property of $\mathbf{PhysTheory}$ gives a receiving morphism from any physical theory $(E, \mathcal{A}, D)$ with $A_{\text{int}} \subset \mathcal{A}$ into UHM's primitive $\mathfrak{T}$. Specific embeddings: **T-170 [T]** (M-theory on $G_2$), **T-171/T-171' [T]** (LQG), **T-172 [T]** (causal sets). Remaining tasks:
+1. Experimental verification of predictions (22+ predictions of CC)
+2. Extension to non-physical theories of consciousness (IIT, GWT, HOT, Hoffmann) — research programme
 :::
 
 ## Conclusion
