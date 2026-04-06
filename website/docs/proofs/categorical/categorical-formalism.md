@@ -2256,10 +2256,16 @@ The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is the **true primitive** of the
 |---------------|--------------------------|
 | State Γ | Object (∞-sheaf) |
 | Morphism φ | Morphism of ∞-sheaves |
+| **Composite system** $\Gamma_{AB}$ | $\iota(\Gamma_A) \otimes_{\text{Day}} \iota(\Gamma_B)$ (**Day convolution**, not Cartesian product $\times$) |
+| **Entanglement** | Indecomposability with respect to $\otimes_{\text{Day}}$ (Day 1970, Lurie HA §3.2) |
 | Time τ | 1-morphism in $\mathrm{Map}(\Gamma, T)$ |
 | History h | 2-morphism (homotopy between paths) |
 | Evolution | Functor $\mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Sh}_\infty(\mathcal{C})$ |
 | Freedom | $\dim\ker(\mathcal{H}_\Gamma) + 1$ [Т]; ∞-categorically: $\pi_*(\mathrm{Map}(\Gamma, T))$ |
+
+:::warning Fundamental distinction: ⊗_Day ≠ ×_T
+The tensor product of quantum states $\otimes$ is **not** the Cartesian product $\times$ in the topos (Abramsky-Coecke theorem: CPTP category is **non-Cartesian** monoidal). Cartesian $\times$ = separable states. Quantum entanglement is encoded via **Day convolution** $\otimes_{\text{Day}}$: a non-Cartesian monoidal structure on $\mathbf{Sh}_\infty(\mathcal{C})$, canonically lifting $\otimes$ from the base category $\mathcal{C}$ into the sheaf category. Bell's theorem and quantum teleportation are correctly described via $\otimes_{\text{Day}}$.
+:::
 
 #### 14.5.2 Minimality
 
@@ -2330,7 +2336,38 @@ $$
 
 **Interpretation:** L is the set of logical predicates that are true for the given configuration Γ. This is not a separate axiom, but a **consequence** of the existence of Ω in the ∞-topos.
 
-#### 15.2.2 Lindblad operators as L_k = √χ_S
+#### 15.2.2 Lindblad operators as L_k = √χ_S {#l-ops-from-omega}
+
+:::warning Resolution of the logic conflict (Heyting vs. orthomodular) {#logic-conflict}
+In any topos (including ∞-topoi) the subobject classifier Ω has the structure of a **Heyting algebra** (intuitionistic logic). Quantum projectors on ℂ⁷ form a **non-distributive orthomodular lattice** (non-commutative quantum logic, Kochen-Specker theorem). These logics are **incompatible** in full generality.
+
+**Resolution:** Operators $L_k$ are taken **not from full Ω**, but from the **decidable fragment**:
+
+$$
+\mathrm{Dec}(\Omega) := \{p \in \Omega : p \vee \neg p = \top\} \cong 2^7 \quad \text{(Boolean algebra)}
+$$
+
+The Boolean subalgebra $\mathrm{Dec}(\Omega)$ is the **common fragment** of both logics:
+- In Ω: complemented elements of the Heyting algebra
+- In Proj(ℂ⁷): commuting projectors = **pointer basis**
+
+**Why Dec(Ω) ≅ 2⁷, not an arbitrary Boolean subalgebra:**
+1. **$G_2$-rigidity** (T-42a [T]) fixes the basis {|A⟩,...,|U⟩} uniquely (up to $G_2$-rotation)
+2. **Einselection** (T-164 [T]) selects the pointer basis — fixed points of decoherence $\mathcal{D}_\Omega$
+3. **Atoms of Dec(Ω) = {|k⟩⟨k|}** — minimal projectors in the pointer basis
+
+This is **not postulating a privileged basis**, but its **derivation** from $G_2$-rigidity + einselection. The "classicality" of the dissipative core is **decoherence** (standard physics, Zurek 2003), formalized through Dec(Ω).
+
+**Resolution of the circularity L_k ↔ Dec(Ω).** The derivation order is **not** circular:
+
+1. $G_2 = \mathrm{Aut}(\mathbb{O})$ — defined **algebraically** (Cartan's theorem), outside dynamics [T]
+2. Fano plane $\mathrm{PG}(2,2) \subset \mathrm{Im}(\mathbb{O})$ — **discrete** combinatorial structure fixed by the structure constants of octonions [T]
+3. $L_k = \sqrt{\chi_{S_k}}$ — Lindblad operators = projectors onto 7 Fano lines (T-82 [T]: uniqueness)
+4. $\mathrm{Dec}(\Omega) = \{\chi_{S_k}\}_{k=1}^7$ — **follows** from steps 1-3, does not define them
+5. Einselection (T-164 [T]) — **confirms** (does not define) that $\{|k\rangle\}$ is the pointer basis
+
+$G_2$ is a continuous (14-dimensional) group, but it fixes the **combinatorics** of the Fano plane (7 lines, 7 points), not a specific basis. $\mathrm{Dec}(\Omega) \cong 2^7$ is determined by Fano **combinatorics**, not by basis choice. $G_2$-rotation renames vertices but preserves the line structure.
+:::
 
 The dissipation operators in the [evolution equation](/docs/core/dynamics/evolution) are **defined** by the atoms of the classifier:
 

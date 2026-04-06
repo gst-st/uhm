@@ -140,8 +140,21 @@ $$
 
 —the category of locally constant ∞-functors from $\mathcal{C}^{\mathrm{op}}$ to the category of spaces (∞-groupoids).
 
-:::info Remark (∞-topos vs. 1-topos)
+:::info Remark (∞-topos vs. 1-topos: absence of pullbacks and representability gap)
 Unlike 1-categorical Grothendieck topoi, where $\mathcal{C}$ must have finite limits (in particular pullbacks) to define intersection of covers, the ∞-categorical construction $\text{Fun}(\mathcal{C}^{op}, \mathbf{Spaces})^{loc}$ **does not require** pullbacks in $\mathcal{C}$ (Lurie, HTT, Prop. 6.2.2.7). The sheaf category $\mathbf{Sh}_\infty(\mathcal{C})$ has all (∞,1)-limits and colimits even if $\mathcal{C}$ does not. It suffices to specify a Grothendieck topology (covers) on $\mathcal{C}$.
+
+**Representability gap and its resolution.** Limits in $\mathbf{Sh}_\infty(\mathcal{C})$ are abstract topos objects, not necessarily realizable as concrete density matrices $\Gamma \in \mathcal{C}$. This is **not a defect but an architectural decision** of UHM:
+
+1. **Axiom Ω⁷ postulates the ∞-topos as primitive**, not $\mathcal{C}$. Physical states are objects of $\mathbf{Sh}_\infty(\mathcal{C})$, not $\mathcal{C}$.
+2. **Analogy with AG**: global sections of a sheaf on a scheme X need not be "functions on X" — they live in the **sheaf category**, which is strictly richer. Similarly: composite quantum states are topos objects, not C objects.
+3. **Sieve stability** via CPTP-contractivity of the Bures metric is defined through **composition of morphisms** (always defined), not through pullbacks of objects. This is the standard method for defining Grothendieck topologies (cf. étale, fppf topology in AG).
+4. **Entanglement via Day convolution.** The tensor product of quantum states $\otimes$ is **not** the Cartesian product $\times$ in the topos (Abramsky-Coecke theorem: CPTP category is non-Cartesian monoidal). The correct monoidal structure on $\mathbf{Sh}_\infty(\mathcal{C})$ is given by **Day convolution** (Day 1970):
+   
+   $$(\mathcal{F} \otimes_{\text{Day}} \mathcal{G})(\rho) = \int^{\rho_1, \rho_2} \mathcal{F}(\rho_1) \times \mathcal{G}(\rho_2) \times \mathcal{C}(\rho_1 \otimes \rho_2, \rho)$$
+   
+   Day convolution lifts the monoidal structure $\otimes$ from the base category $\mathcal{C}$ to the sheaf category, preserving **non-Cartesianness** and hence **entanglement**. The Bures metric $d_B(\rho_{AB}, \rho_A \otimes \rho_B) > 0 \Leftrightarrow \rho_{AB}$ is entangled (Uhlmann 1976) — distinguishes entangled and factorized states at the topological level.
+
+5. **Extracting observables.** Computing $\mathrm{Tr}(\Gamma \cdot A)$ — via global sections of the geometric morphism $\mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Spaces}$. For representable objects $\iota(\Gamma) \in \mathbf{Sh}_\infty(\mathcal{C})$ — coincides with the standard quantum-mechanical trace.
 :::
 
 :::info Smallness of the site

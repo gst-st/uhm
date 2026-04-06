@@ -985,6 +985,7 @@ Could this convergence have been foreseen? In hindsight—yes: all three lines s
 | Subobject classifier $\Omega$ | Lawvere, Tierney | 1964–72 | $L_k$ from $\Omega$ | [Definition](./axiom-omega#lk-из-omega) | [T] |
 | Fixed point in a topos | Lawvere | 1969 | $\varphi(\Gamma^*) = \Gamma^*$ | [$\varphi$ operator](../operators/phi-operator) | [T] |
 | $\infty$-topoi | Lurie | 2006/2009 | Unique primitive $\mathfrak{T}$ | A1 | [T] |
+| Day convolution | Day | 1970 | Non-Cartesian monoidal structure $\otimes_{\text{Day}}$ on $\mathbf{Sh}_\infty(\mathcal{C})$: encoding entanglement in the ∞-topos. $\otimes_{\text{Day}} \neq \times_{\mathfrak{T}}$ (Abramsky-Coecke) | [Axiom Ω⁷](./axiom-omega#топология-гротендика), [Categorical formalism](/docs/proofs/categorical/categorical-formalism#1451-completeness) | [T] |
 | Octonions | Cayley / Graves | 1843–45 | $\mathbb{O}$, imaginary part $\mathbb{R}^7$ | A3 | [T] |
 | Cayley–Dickson doubling | Dickson | 1919 | Chain stops at $\mathbb{O}$ | A3 | [T] |
 | $\dim \in \{1,2,4,8\}$ | Hurwitz | 1898 | $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^7 \Rightarrow N=7$ | A3 (Track B) | [T] |

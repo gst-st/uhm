@@ -1625,8 +1625,24 @@ This is consistent with the fixed point property $\varphi(\Gamma^*) = \Gamma^*$:
 
 ## Tensor factorization of φ for composite systems {#тензорная-факторизация}
 
-:::info Relation to no-signaling prohibition
-Tensor factorization of $\varphi$ is a key property ensuring [compatibility of $\mathcal{R}$ with no-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). It guarantees that self-modeling of autonomous subsystems does not create channels of superluminal communication.
+:::info Relation to no-signaling prohibition and preservation of holonomic character
+Tensor factorization of $\varphi$ is a key property ensuring [compatibility of $\mathcal{R}$ with no-signaling prohibition](/docs/proofs/physics/physics-correspondence#запрет-сигнализации). It guarantees that self-modeling of autonomous subsystems does not create channels of superluminal communication (Gisin, Polchinski 1991).
+
+**Preservation of holonomic character.** Factorization $\varphi_{A \otimes B} = \varphi_A \otimes \varphi_B$ concerns **only** the regenerative term $\mathcal{R}$. The full dynamics $\mathcal{L}_\Omega = -i[H, \cdot] + \mathcal{D}[\cdot] + \mathcal{R}[\cdot]$ contains:
+- **$H$ (Hamiltonian):** creates and preserves entanglement — **non-local** ✓
+- **$\mathcal{D}$ (dissipation):** may destroy entanglement, but through **common** decoherence — **non-local** in general
+- **$\mathcal{R}$ (regeneration via $\varphi$):** local (factorizes) — ensures no-signaling
+
+"Holonomy" (the whole > sum of parts) is realized through $H + \mathcal{D}$, not through $\mathcal{R}$. Self-modeling ($\varphi$) is a **local** process (each agent models itself, not another). Entanglement is a property of $H$ (Hamiltonian dynamics). The theory is **not** a "local hidden variable theory": only $\mathcal{R}$ is local, while $H + \mathcal{D}$ are non-local.
+
+**Refinement: SSB, not gauge freedom.** The more precise qualification is **spontaneous symmetry breaking** (SSB), not gauge freedom:
+
+1. **Before $V_{\text{Gap}}$ minimization:** $G_2$-symmetry **unbroken**, all bases equivalent.
+2. **Upon $V_{\text{Gap}}$ minimization** (T-64 [T]): system "rolls" into a **specific** vacuum $\Gamma_{\text{vac}}$ on the manifold of minima $(S^1)^{21}/G_2$. One minimum is selected.
+3. **After SSB:** $G_2 \to H$ (vacuum stabilizer). Boolean fragment $\mathrm{Dec}(\Omega)$ **crystallizes** as pointer basis fixed by the vacuum.
+4. **Goldstone modes** (see [goldstone-modes](/docs/applied/coherence-cybernetics/goldstone-modes)): massless excitations along broken directions $G_2/H$.
+
+Analogy: not coordinates in GR, but the **Higgs mechanism** — $SU(2) \times U(1) \to U(1)_{\text{em}}$ generates W/Z masses. In UHM: $G_2 \to H$ generates **classical objectivity** (Dec(Ω) = Boolean logic).
 :::
 
 ### Canonical extension of φ to composite system

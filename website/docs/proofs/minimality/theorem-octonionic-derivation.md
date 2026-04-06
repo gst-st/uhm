@@ -474,6 +474,25 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
 **Status:** Each of the 15 steps is [Т]. The complete chain is closed [Т]. The structural identification PG(2,2) → 𝕆 is fixed by **uniqueness** on both sides (Hall + Hurwitz), making it a **canonical identification**, not an arbitrary choice.
 :::
 
+:::warning Resolution of the ℝ⁷ → ℂ⁷ problem (complexification of octonions) {#complexification}
+**Problem.** Octonions $\mathbb{O}$ are a real algebra, $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Quantum mechanics requires $\mathbb{C}^7$. Complexification "doubles the degrees of freedom". How does the imaginary unit $i$ of quantum mechanics "coherently embed" into $\mathbb{O}$ without loss of the division algebra property?
+
+**Resolution [T]:**
+
+1. **Complexification is standard and necessary.** $\mathbb{C}^7 = \mathbb{R}^7 \otimes_{\mathbb{R}} \mathbb{C}$. The group $G_2 \subset SO(7)$ canonically embeds into $SU(7)$ (since $G_2$ preserves a real structure compatible with the complex one). All $G_2$-invariants are inherited.
+
+2. **"Doubling" = emergence of quantum content.** The Hermitian matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ contains:
+   - **Diagonal** $\gamma_{kk} \in \mathbb{R}$ (7 real): populations (probabilities)
+   - **Off-diagonal** $\gamma_{ij} \in \mathbb{C}$ (21 complex): coherences (interference)
+   - $|\gamma_{ij}|$ = coherence amplitude, $\arg(\gamma_{ij})$ = phase → $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$
+   
+   Phase IS the quantum content. Without complexification there are no phases, no interference, no quantum mechanics.
+
+3. **Division in $\mathbb{C}^7$ and non-associativity.** $\mathbb{O}_{\mathbb{C}} = \mathbb{O} \otimes_{\mathbb{R}} \mathbb{C}$ is **not** a division algebra (by Hurwitz's theorem, the only normed division algebras are ℝ, ℂ, ℍ, 𝕆 — all over ℝ). But this is **not needed**: UHM uses the **automorphism group** $G_2 = \mathrm{Aut}(\mathbb{O})$ and the **Fano plane** $\mathrm{PG}(2,2)$, not the algebra $\mathbb{O}$ itself for calculations. $G_2$ is a compact Lie group defined over $\mathbb{R}$, canonically acting on $\mathbb{C}^7$. The Fano plane is a combinatorial structure independent of the coefficient field.
+
+4. **Spectral triple (T-53 [T])** works in $\mathbb{C}^7$: $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with $H_{\text{int}} = \mathbb{C}^7$ and KO-dim = 6 — standard NCG construction (Connes 1994). The real structure $J: \mathbb{C}^7 \to \mathbb{C}^7$ (antilinear involution) provides the connection to $\mathbb{R}^7$.
+:::
+
 ### 5.2 Key theorems
 
 **Theorem T1 (Equivalence of BIBD channels) [Т].** All $(v,k,\lambda)$-BIBD channels with the same $v,k$ generate the same CPTP channel. The coherence contraction $c = (k-1)/(v-1)$ is independent of $\lambda$. Corollary: the question "why $\lambda=1$?" is replaced by "why $k=3$?".

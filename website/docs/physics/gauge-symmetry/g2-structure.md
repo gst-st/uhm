@@ -198,7 +198,7 @@ $$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
 
 ### What $G_2$-Invariance Preserves
 
-$G_2$-symmetry is the **gauge freedom** of UHM theory: $G_2$ transformations do not change the physics, but merely rename the basis of dimensions $\{A, S, D, L, E, U, O\}$, preserving the octonionic algebraic structure.
+$G_2$-symmetry is the **continuous kinematic symmetry** of UHM theory, which is **spontaneously broken** upon dynamical vacuum fixation. Before minimization of $V_{\text{Gap}}$: $G_2$ transformations rename the basis $\{A, S, D, L, E, U, O\}$, preserving the octonionic structure and all $G_2$-invariants ($P$, $R$, $\Phi$, spectrum of $\Gamma$). **After** minimization (T-64 [T]): a specific vacuum $\Gamma_{\text{vac}}$ is fixed, breaking $G_2 \to H$ (vacuum stabilizer). The Boolean fragment $\mathrm{Dec}(\Omega) \cong 2^7$ crystallizes as the pointer basis selected by spontaneous symmetry breaking — analogous to the Higgs mechanism $SU(2) \times U(1) \to U(1)_{\text{em}}$. [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes) — massless excitations along the broken directions $G_2/H$.
 
 :::tip[Status: Theorem \[T\]]
 The $G_2$-transformation $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ preserves the following physical quantities:

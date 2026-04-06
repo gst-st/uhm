@@ -985,6 +985,7 @@ $$
 | Классификатор подобъектов $\Omega$ | Лавёр, Тирни | 1964–72 | $L_k$ из $\Omega$ | [Определение](./axiom-omega#lk-из-omega) | [Т] |
 | Неподвижная точка в топосе | Лавёр | 1969 | $\varphi(\Gamma^*) = \Gamma^*$ | [phi-оператор](../operators/phi-operator) | [Т] |
 | $\infty$-топосы | Лурье | 2006/2009 | Единственный примитив $\mathfrak{T}$ | A1 | [Т] |
+| Свёртка Дэя (Day convolution) | Дэй | 1970 | Недекартова моноидальная структура $\otimes_{\text{Day}}$ на $\mathbf{Sh}_\infty(\mathcal{C})$: кодирование запутанности в ∞-топосе. $\otimes_{\text{Day}} \neq \times_{\mathfrak{T}}$ (Абрамски-Кук) | [Axiom Ω⁷](./axiom-omega#топология-гротендика), [Категорный формализм](/docs/proofs/categorical/categorical-formalism#1451-полнота) | [Т] |
 | Октонионы | Кэли / Грейвс | 1843–45 | $\mathbb{O}$, мнимая часть $\mathbb{R}^7$ | A3 | [Т] |
 | Удвоение Кэли–Диксона | Диксон | 1919 | Обрыв цепочки на $\mathbb{O}$ | A3 | [Т] |
 | $\dim \in \{1,2,4,8\}$ | Гурвиц | 1898 | $\mathrm{Im}(\mathbb{O}) = \mathbb{R}^7 \Rightarrow N=7$ | A3 (Трек B) | [Т] |
