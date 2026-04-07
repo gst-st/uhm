@@ -16,7 +16,7 @@ For researchers working with complex theoretical constructions — physicists, n
 
 ### 1.1. Scale of Modern Theory
 
-A mature scientific theory is an object that exceeds the cognitive capacity of a single agent. As an example: the documentation of CC (Coherence Cybernetics, the applied layer of UHM) spans ~400 pages, ~150 theorems with 7 epistemic statuses, 22+ falsifiable predictions, 30+ comparisons with competing theories, ~270 cross-references. Integrated Information Theory (IIT 4.0) is a comparable volume with its own formalism ($\Phi$, Q-shape, postulates). Anokhin's cognitome is a qualitative theory with an 80-year experimental background. And there are [more than 325](https://www.consciousnessatlas.com/) such theories of consciousness (according to the Consciousness Atlas catalogue, visualizing the landscape mapped by Robert Kuhn: materialism, functionalism, quantum theories, panpsychism, dualism, idealism, etc.).
+A mature scientific theory is an object that exceeds the cognitive capacity of a single agent. As an example: the documentation of CC (Coherence Cybernetics, the applied layer of UHM) spans ~400 pages, ~185 theorems with 7 epistemic statuses, 23+ falsifiable predictions, 30+ comparisons with competing theories, ~270 cross-references. Integrated Information Theory (IIT 4.0) is a comparable volume with its own formalism ($\Phi$, Q-shape, postulates). Anokhin's cognitome is a qualitative theory with an 80-year experimental background. And there are [more than 325](https://www.consciousnessatlas.com/) such theories of consciousness (according to the Consciousness Atlas catalogue, visualizing the landscape mapped by Robert Kuhn: materialism, functionalism, quantum theories, panpsychism, dualism, idealism, etc.).
 
 No single person can simultaneously hold in working memory:
 - the internal structure of even one theory (which claims depend on which)
@@ -54,6 +54,132 @@ An environment is needed that:
 4. **Supports multiple theories** simultaneously: UHM, IIT, GWT/GNWT, FEP, cognitome, autopoiesis, HOT, RPT — in one workspace (all [325+](https://www.consciousnessatlas.com/))
 5. **Translates between theories**: "what does Tononi's $\Phi$ mean in UHM terms?" → a formal answer: $\Phi \leftrightarrow$ integration measure, with specification of divergences and losses
 6. **Integrates LLM** not as a chatbot, but as an agent operating inside the structure
+
+---
+
+## 1½. Meta-Epistemological Grounding {#метаэпистемология}
+
+:::info Why this section is needed
+§1 described the **problem** (cognitive limit). §2 will propose the **solution** (Grothendieck fibration). This intermediate section answers the meta-level question: **why this particular solution** — and why alternatives are fundamentally insufficient. The grounding draws on three sources: (1) A. Churilov's metastemological programme, (2) the three-tier theorem T-182 from the UHM ∞-topos, (3) the reflexive architecture of cohesive modalities T-185.
+:::
+
+### 1½.1. Metastemology: beyond rationality protocols
+
+Andrey Churilov (["Metastemology. Instead of a Manifesto"](https://anticomplexity.org/posts/metastemologiya-vmesto-manifesta/), 2025) advances a radical thesis: the problem of contemporary knowledge is **not** a shortage of data and **not** errors in reasoning, but the **architecture of cognitive protocols themselves**. Analytic philosophy has spent decades patching holes in the JTB formula (justified true belief), remaining **inside** the prior rationality protocol. But the protocol itself is an object subject to reconfiguration.
+
+Key Churilov concepts resonating with Theory IDE:
+
+| Churilov | Theory IDE | Mathematical analogue |
+|---------|-----------|----------------------|
+| **Stem** — a terminological bridge linking constructs from different theories | **Functor** $F: T_A \to T_B$ — Cartesian lifting of claims | Morphism in the base $\mathbf{B}$ |
+| **Impulse network** — a dynamic network with normative/generative mechanics | **Typed hypergraph** with status propagation | Fibre $p^{-1}(T)$ with functor $\varepsilon$ |
+| **Metatextual processor** — a new class of devices for working with complex knowledge | **Theory IDE** as a whole: fibration + epistemic engine + LLM agent | ∞-topos $\mathbf{Sh}_\infty(\mathbf{E})$ |
+| **Reconfiguration of rationality** — changing protocols, not working within them | **Double loop** (§9): L-II by Bateson, $T_{\text{meta}}$ | Postnikov tower: $\tau_{\leq n+1} \to \tau_{\leq n}$ |
+| **Executable knowledge on an actant network bus** | **MCP integration**: Theory Server as an executable theory model | Sheaf $\mathcal{F} \in \mathbf{Sh}_\infty(\mathcal{C})$ |
+
+Churilov does not use categorical mathematics explicitly, but his architecture is **isomorphic** to the categorical one: stems = functors, impulse network = fibre of the fibration, metatextual processor = ∞-topos. Theory IDE is the **realisation** of the metastemological programme on a categorical foundation.
+
+### 1½.2. Three tiers of Ω as three tiers of Theory IDE
+
+Theorem T-182 [T] (Axiom Ω⁷, [proof](/docs/core/foundations/axiom-omega#необходимость-трёхуровневой-структуры)) establishes that three tiers of the subobject classifier are strictly necessary: $\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$. This structure **projects** onto the Theory IDE architecture:
+
+| Tier of $\Omega$ | Theory IDE tier | What it formalises |
+|-------------------|-------|-----------------|
+| $\mathrm{Dec}(\Omega) \cong 2^7$ (Boolean) | **Fibration Engine**: typed hypergraph, claim and dependency types | Static structure: "which claims exist and how they are connected" |
+| $\tau_{\leq 0}(\Omega)$ (Heyting) | **Epistemic Engine**: threshold predicates, status propagation, coherence audit | Thresholds and logic: "which claims are reliable and where the boundaries lie" |
+| Full $\Omega$ (∞-groupoid) | **Reflexive cycles**: $T_{\text{meta}}$, double loop, meta-audit | Dynamics: "how the system observes and restructures itself" |
+
+This is **not an analogy** but a **projection**: Theory IDE structurally reproduces the UHM ∞-topos one categorical level higher — from the space of quantum states to the space of theories.
+
+**Fundamental irreducibility.** Just as T-182 proves that Dec(Ω) is insufficient for threshold predicates ($P > 2/7 \notin 2^7$), so the Fibration Engine is insufficient without the Epistemic Engine: the dependency structure contains no information about claim **reliability**. Just as the Heyting algebra is insufficient for L2 consciousness ($\pi_2 = 0$ in the 0-truncation), so the Epistemic Engine is insufficient without reflexive cycles: checking claim coherence does not include checking the coherence of **the rules of checking**.
+
+### 1½.3. Cohesive modalities as IDE operations
+
+Theorem T-185 [T] ([Seven Dimensions](/docs/core/structure/dimensions#категориальная-семантика)) establishes 7 canonical modalities of the differentially cohesive ∞-topos. Six of them (excluding Id) map to fundamental Theory IDE operations:
+
+| Modality | Definition | IDE operation |
+|----------|------------|---------------|
+| $\Pi$ (Shape) | Extracts distinguishable components | `theory/audit` — detecting differences and inconsistencies |
+| $\flat$ (Flat) | Extracts discrete invariants | `claim/dependencies` — dependency skeleton (without dynamics) |
+| $\Im$ (Infinitesimal shape) | Captures infinitesimal change | `claim/setStatus` + propagation — response to a local change |
+| $\sharp$ (Sharp) | Computes logical closure | `fibration/coherence` — transitive check of the entire fibration |
+| $\&$ (Infinitesimal flat) | Internalises infinitesimal structure | `meta/audit` — IDE observes its own structure |
+| $\mathrm{Rh}$ (de Rham) | Integrates local to global | `claim/translate` — Cartesian lifting, inter-theoretic synthesis |
+
+This table is **not a post-hoc fit** but a consequence of the cohesive ∞-topos structure: if the IDE operates on sheaves over a site of theories, its fundamental operations **necessarily** decompose into cohesive and infinitesimal modalities (Schreiber 2013). Theory IDE is not an arbitrary set of functions but a **projection of the categorical foundation** onto a programmatic interface.
+
+### 1½.4. Fundamental grounding: why ∞-categories are the only adequate apparatus
+
+Churilov diagnoses the problem correctly (rationality protocols are subject to reconfiguration), but his toolkit (stems, impulse networks) remains at the **conceptual** level — it describes *what* needs to be done but does not provide a **mathematical apparatus** guaranteeing the coherence of the reconfiguration. We must descend one level deeper: to the **mathematics of mathematics itself**.
+
+**Thesis.** Working with knowledge about knowledge is an operation on the **category of categories** $\mathbf{Cat}$. Working with knowledge about knowledge about knowledge is an operation on the **∞-category of ∞-categories** $\mathbf{Cat}_\infty$. This is not a metaphor but a precise statement:
+
+| Operation | Mathematical object | Level |
+|----------|----------------------|---------|
+| Formulating claims inside a theory | Objects and morphisms in a category $\mathcal{C}$ | Object |
+| Comparing theories | Functors $F: \mathcal{C} \to \mathcal{D}$ | Meta |
+| Checking coherence of comparisons | Natural transformations $\alpha: F \Rightarrow G$ | Meta² |
+| Reconfiguring the checking system itself | Modifications $\Theta: \alpha \Rrightarrow \beta$ (3-morphisms) | Meta³ |
+| ... | ... (∞-morphisms) | Meta^n |
+
+In a 1-category (ordinary mathematics) only objects and morphisms are available — **one** level of abstraction. In a 2-category — two. In an ∞-category — **all** levels simultaneously. Theorem T-182 proves that UHM **requires** the three lowest levels. Theory IDE, operating on **theories as objects**, requires even more: each reflexive cycle (§9) adds one level.
+
+**Lurie's theorem (HTT, Theorem 1.1.2.2):** The category $\mathbf{Cat}_\infty$ of all small ∞-categories is itself an ∞-category. This means: a system working with theories (each of which is a category) automatically **lives** in an ∞-category, whether or not we realise it.
+
+**Corollary for Theory IDE:** Any tool for working with multiple interconnected theories that supports reflexive cycles of arbitrary depth **necessarily** implements (possibly implicitly) a structure from $\mathbf{Cat}_\infty$. The ∞-topos is not a "choice of formalism" but the **only** mathematical structure containing:
+- objects (claims)
+- morphisms (dependencies)
+- 2-morphisms (theory comparisons)
+- 3-morphisms (meta-audit of comparisons)
+- ...
+- n-morphisms (n-th order reflexion)
+
+with guaranteed coherence at all levels simultaneously.
+
+Alternatives:
+- **Graph databases** (Neo4j) — 1-category, no 2-morphisms. Can store theories and links, but cannot formally compare two translations between theories.
+- **Relational databases** — not even a category (no composition). Can store data, but cannot express functoriality or coherence.
+- **Obsidian / Roam** — untyped graph. Cannot distinguish `requires` from `contradicts`.
+- **RAG + LLM** — operates on text, not structure. No coherence guarantees.
+
+Only the ∞-topos contains all levels, and Theory IDE is its computational realisation.
+
+### 1½.5. Three-tier grounding architecture
+
+Combining the fundamental argument (§1½.4), the metastemological context (§1½.1), and the categorical projections (§1½.2–1½.3), we obtain:
+
+```mermaid
+graph TD
+    subgraph META3["Meta-meta-level: WHY"]
+        M3["Reconfiguration of rationality<br/>protocols (Churilov)<br/>= ∞-topos of ∞-topoi"]
+    end
+    
+    subgraph META2["Meta-level: HOW"]
+        M2a["Grothendieck fibration<br/>= parameterised<br/>families of theories"]
+        M2b["Three tiers of Ω (T-182)<br/>= structure ↔ thresholds ↔ reflexion"]
+        M2c["Cohesive modalities (T-185)<br/>= 7 fundamental operations"]
+    end
+
+    subgraph META1["Object level: WHAT"]
+        M1a["Concrete theories<br/>(UHM, IIT, GWT, FEP, ...)"]
+        M1b["Claims, statuses,<br/>dependencies, translations"]
+    end
+
+    META3 -->|"grounds"| META2
+    META2 -->|"organises"| META1
+    
+    style META3 fill:#9b59b6,color:#fff
+    style META2 fill:#e67e22,color:#fff
+    style META1 fill:#3498db,color:#fff
+```
+
+**Meta-meta-level** (§1½): *why* Theory IDE is structured this way — because cognitive rationality protocols (Churilov) require reconfiguration rather than repair, and the only mathematical apparatus for working with **structures of structures** is ∞-category theory.
+
+**Meta-level** (§2–§9): *how* Theory IDE is structured — Grothendieck fibration for organising theories, three tiers of Ω for organising checks, cohesive modalities for organising operations.
+
+**Object level** (§10–§11): *what* Theory IDE does — concrete operations on concrete theories.
+
+Each level is **irreducible** to the previous — a direct consequence of T-182 ($\mathcal{T}_0 \subsetneq \mathcal{T}_1 \subsetneq \mathcal{T}_2$): it is impossible to build an adequate IDE working only at the object level (thresholds are needed), and it is impossible to stop at the meta-level (reflexion about reflexion is needed).
 
 ---
 
@@ -736,7 +862,7 @@ Theory IDE occupies a niche between full formalization (Lean 4, where everything
 - [Panpsychism](/docs/consciousness/comparative/panpsychism-analysis) — panpsychism analysis and Hoffman's conscious realism
 - [General Systems Theory](/docs/consciousness/comparative/general-systems-theory) — from von Bertalanffy to CC
 - [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — ∞-topos and categorical structure of UHM
-- [Predictions](/docs/applied/coherence-cybernetics/predictions) — 22+ falsifiable predictions of CC
+- [Predictions](/docs/applied/coherence-cybernetics/predictions) — 23+ falsifiable predictions of CC
 - [Status Registry](/docs/reference/status-registry) — complete list of claims with statuses
 
 **External resources:**
