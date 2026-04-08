@@ -36,7 +36,7 @@ Leibniz could not realize his project: he lacked (1) category theory (Eilenberg�
 
 **Mathesis is not a program that uses mathematics. Mathesis IS a mathematical object — an ∞-topos — that has a computational approximation.**
 
-The software code (Rust + TypeScript) is a finite approximation of the infinite object $\mathfrak{M}$, just as a numerical solution of a differential equation approximates continuous dynamics. The approximation can improve; $\mathfrak{M}$ remains unchanged.
+The software code (Verum) is a finite approximation of the infinite object $\mathfrak{M}$, just as a numerical solution of a differential equation approximates continuous dynamics. The approximation can improve; $\mathfrak{M}$ remains unchanged.
 
 ---
 
@@ -314,7 +314,7 @@ The Grothendieck construction (straightening/unstraightening, HTT 3.2) establish
 
 ## 3. Three limiting generalizations {#generalizations}
 
-The current computational realization (hypergraph, SQLite, Rust) approximates $\mathfrak{M}$ at the 1-categorical level. Three directions of extension eliminate fundamental limitations.
+The current computational realization (hypergraph, SQLite, Verum) approximates $\mathfrak{M}$ at the 1-categorical level. Three directions of extension eliminate fundamental limitations.
 
 ### 3.1. Topological: from graph to homotopy type {#topological}
 
@@ -424,7 +424,7 @@ graph TD
 ```
 
 - **Presentation Layer** — multiple synchronized panels (projections of a single fibration). Connected to the core through **MP** (Mathesis Protocol — an analogue of LSP for theories).
-- **Mathesis Core** — three engines: the Fibration Engine stores and traverses the hypergraph; the Epistemic Engine checks and propagates statuses; the Claude Agent Layer performs semantic operations. Language: Rust (core) + TypeScript (MP wrapper).
+- **Mathesis Core** — three engines: the Fibration Engine stores and traverses the hypergraph; the Epistemic Engine checks and propagates statuses; the Claude Agent Layer performs semantic operations. Language: **Verum** (entire core + MP wrapper).
 - **Storage Layer** — markdown files with YAML frontmatter (backward compatible with Docusaurus), SQLite index, Git.
 
 ### 4.2. Mathesis Protocol (MP) {#mathesis-protocol}
@@ -767,8 +767,8 @@ Phases correspond to the three levels of Ω (T-182):
 
 ### Phase 1: Mathesis Core as MCP server (4 weeks)
 
-- Rust crate `mathesis-core`: hypergraph, fibration, coherence, propagation
-- Rust crate `mathesis-index`: scanning markdown → hypergraph
+- Verum crate `mathesis-core`: hypergraph, fibration, coherence, propagation
+- Verum crate `mathesis-index`: scanning markdown → hypergraph
 - MCP wrapper: Mathesis Core available from Claude Code as a set of MCP tools
 - Claude Opus receives tools: `query_graph`, `check_coherence`, `propose_functor`
 
