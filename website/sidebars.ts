@@ -373,6 +373,7 @@ const sidebars: SidebarsConfig = {
     'applied/research/gap-diagnostics',
     'applied/research/symbolic-correspondence',
     'applied/research/mathesis',
+    'applied/research/experimental-protocol',
   ],
 
   reference: [
