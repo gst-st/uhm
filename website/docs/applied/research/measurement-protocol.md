@@ -16,6 +16,7 @@ This document describes a **research program** for operationalizing the coherenc
 - $\tau$ — [emergent internal time](/docs/proofs/dynamics/emergent-time) (Page–Wootters)
 - $\varphi$ — [self-modeling operator](/docs/proofs/categorical/formalization-phi)
 - $G$ — functor mapping AIState → DensityMat: exact at Cholesky-backbone ($\alpha=0$) [T, MVP-1]; quasi-functor with $\varepsilon_{\text{functor}}>0$ under neural correction ($\alpha>0$) [H]
+- $\mathrm{Coh}_E$ — E-coherence: $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|^2_{\mathrm{HS}} / \|\Gamma\|^2_{\mathrm{HS}}$ — interiority quality (HS-projection onto E-sector) [T]
 :::
 
 ---

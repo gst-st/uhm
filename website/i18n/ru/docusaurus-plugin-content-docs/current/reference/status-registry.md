@@ -676,7 +676,7 @@ $$\text{T-110 (Fano } \alpha=2/3) \to \text{C26 (}P_\text{crit}^{(n)}) \to \text
 | Pred 5 | Коллективное сознание | [Т]/[С] | T-86 | [predictions#предсказание-5](/docs/applied/coherence-cybernetics/predictions#предсказание-5) |
 | Pred 6 | Минимальная когерентность | [Т] | T-96, T-151 | [predictions#предсказание-6](/docs/applied/coherence-cybernetics/predictions#предсказание-6) |
 | Pred 7 | Радиус устойчивости | [Т] | T-104 | [predictions#предсказание-7](/docs/applied/coherence-cybernetics/predictions#предсказание-7) |
-| Pred 8 | Ёмкость | [Т] | T-109 | [predictions#предсказание-8](/docs/applied/coherence-cybernetics/predictions#предсказание-8) |
+| Pred 8 | Ёмкость | [Т] | T-107 | [predictions#предсказание-8](/docs/applied/coherence-cybernetics/predictions#предсказание-8) |
 | Pred 9 | Граница обучения | [Т] | T-109 | [predictions#предсказание-9](/docs/applied/coherence-cybernetics/predictions#предсказание-9) |
 | Pred 10 | N=7 для обучения | [Т] | T-113 | [predictions#предсказание-10](/docs/applied/coherence-cybernetics/predictions#предсказание-10) |
 | Pred 11 | N=7 для ToM | [С] | T-113 | [predictions#предсказание-11](/docs/applied/coherence-cybernetics/predictions#предсказание-11) |
