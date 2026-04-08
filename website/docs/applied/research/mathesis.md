@@ -473,28 +473,19 @@ graph TD
 
 ### 4.2. Mathesis Protocol (MP) {#mathesis-protocol}
 
-MP is the protocol for client interaction with the Mathesis Core. An analogue of **LSP** (Language Server Protocol), but for theories. Format: JSON-RPC via stdio or TCP.
+MP is the protocol for client (UI, CLI, LLM agent) interaction with the Mathesis Core. An analogue of **LSP** (Language Server Protocol), but for theories. Format: JSON-RPC via stdio or TCP. Full command list — 25 endpoints in 5 groups:
 
-**Navigation:**
-- `theory/list` — list of all theories in the workspace
-- `theory/claims { theory_id }` — all statements of a theory
-- `claim/dependencies { claim_id }` — what the statement depends on
-- `claim/dependents { claim_id }` — what depends on the statement
-- `claim/translate { claim_id, target_theory }` — Kan extension: translation into another theory
+**Navigation** (7): `theory/list`, `theory/claims`, `claim/get`, `claim/dependencies`, `claim/dependents`, `claim/translations`, `query_graph`
 
-**Mutations:**
-- `claim/setStatus { claim_id, new_status, reason }` — change status (with automatic propagation)
-- `claim/addDependency { source, target, type }` — add a dependency
-- `theory/addFunctor { source, target, mappings }` — add an inter-theoretic bridge
+**Mutations** (7): `claim/create`, `claim/set_status`, `claim/add_dependency`, `claim/remove`, `theory/create`, `theory/import`, `theory/add_functor`
 
-**Diagnostics:**
-- `theory/audit { theory_id }` — full coherence audit
-- `fibration/coherence` — check the entire fibration (all theories + all functors)
+**Verification** (4): `theory/audit`, `fibration/coherence`, `propagation/preview`, `propagation/apply`
 
-**Self-reference (§8):**
-- `meta/audit` — audit of the $T_{\text{meta}}$ layer
-- `meta/boundaries` — $T_{\text{meta}}$ statements limited by Lawvere's theorem (status ≤ [H])
-- `meta/suggest_extension` — agent proposes model extensions
+**Translation** (4): `claim/translate`, `functor/compute_kan`, `functor/obstruction`, `functor/propose`
+
+**Self-reference** (4): `meta/audit`, `meta/boundaries`, `meta/suggest_extension`, `meta/patterns`
+
+All endpoints are available as MCP tools for the LLM agent (§6.2) and as JSON-RPC commands for the UI (§7).
 
 ### 4.3. Storage format
 
@@ -586,15 +577,56 @@ In the "Obsidian + RAG + LLM" combination, the model operates on **text**. In Ma
 
 Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 
+**Navigation and queries:**
+
 | Tool | Purpose |
 |------|---------|
-| `query_graph` | Query the hypergraph |
-| `get_claim` | Full content of a statement |
-| `get_dependencies` | Dependency graph (N levels deep) |
-| `find_translations` | All translations of a statement into other theories |
-| `check_coherence` | Coherence check of a subgraph |
-| `propose_status_change` | Propose a status change |
-| `propose_functor` | Propose a functorial correspondence (Kan approximation) |
+| `theory/list` | List all theories in the workspace |
+| `theory/claims` | All claims of a theory with status/type filters |
+| `claim/get` | Full content of a claim by ID |
+| `claim/dependencies` | Dependency graph (N levels deep, direction: up/down) |
+| `claim/dependents` | What depends on the given claim |
+| `claim/translations` | All translations of a claim into other theories |
+| `query_graph` | Arbitrary hypergraph query (Cypher-like language) |
+
+**Mutations:**
+
+| Tool | Purpose |
+|------|---------|
+| `claim/create` | Create a claim (with type, status, dependencies) |
+| `claim/set_status` | Change status (with automatic propagation and preview of affected claims) |
+| `claim/add_dependency` | Add a dependency between claims |
+| `claim/remove` | Remove a claim (with dependent check) |
+| `theory/create` | Create a new theory |
+| `theory/import` | Import a theory from markdown + YAML |
+| `theory/add_functor` | Add an inter-theoretic bridge (functor) |
+
+**Verification and audit:**
+
+| Tool | Purpose |
+|------|---------|
+| `theory/audit` | Full coherence audit of a single theory (5 violation types) |
+| `fibration/coherence` | Check the entire fibration (all theories + all functors) |
+| `propagation/preview` | Preview: which claims will be affected by a status change |
+| `propagation/apply` | Apply propagation (after user confirmation) |
+
+**Inter-theoretic translation (Kan extensions, §2.5):**
+
+| Tool | Purpose |
+|------|---------|
+| `claim/translate` | Translate a claim into another theory (approximation of $\mathrm{Lan}_f$) |
+| `functor/compute_kan` | Compute left/right Kan extension for a functor |
+| `functor/obstruction` | Compute obstruction $\mathrm{Obs}(f)$ — untranslatability measure |
+| `functor/propose` | Propose a functorial correspondence (LLM + verification) |
+
+**Self-reference ($T_{\text{meta}}$, §8):**
+
+| Tool | Purpose |
+|------|---------|
+| `meta/audit` | Audit the $T_{\text{meta}}$ layer: check adequacy of the data model itself |
+| `meta/boundaries` | $T_{\text{meta}}$ claims bounded by Lawvere's theorem (status ≤ [H]) |
+| `meta/suggest_extension` | Agent proposes model extension (new edge type, new status) |
+| `meta/patterns` | Detect patterns of recurring diagnostics (L-II, §10) |
 
 ### 6.3. Five modes
 
