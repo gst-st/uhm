@@ -705,7 +705,7 @@ where:
 - $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator) [Т])
 - Both terms are density matrices
 
-**Theorem (CPTP structure of regeneration) [Т]:**
+**Theorem (CPTP structure of regeneration) [Т]:** {#теорема-cptp-закрытость}
 
 The regenerative operator $\mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\rho_*$ is a CPTP channel for $\alpha \in [0,1]$.
 

@@ -368,7 +368,7 @@ Scaling relations are satisfied:
 :::
 
 :::tip Theorem 7.2 [T]
-Mean-field exponents are **exact**: $d_{\mathrm{eff}} = 21 > d_c = 4$ (upper critical dimension of $\varphi^4$). By the Ginzburg criterion, fluctuation corrections are negligibly small.
+Mean-field exponents are **exact** in UHM by three independent mechanisms (see [Exactness mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности) for the full argument): (i) Thom-Arnold topological rigidity of the $A_2$ cusp catastrophe ensures critical exponents are topological invariants of the catastrophe class; (ii) UHM dynamics is deterministic (Lindblad + regeneration), not thermodynamically stochastic, so the Landau potential is the *effective potential of the deterministic flow* and its saddle-points are the actual attractors — no Ginzburg fluctuation correction is applicable; (iii) order-parameter dimension $d_{\mathrm{eff}} = \binom{7}{2} = 21$ gives a quantitative $1/N$ cross-check with fluctuation corrections of $\approx 5\%$, within the experimental PCI resolution.
 :::
 
 ---

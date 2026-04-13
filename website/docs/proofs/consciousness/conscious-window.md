@@ -154,44 +154,65 @@ $$
 R(\Gamma) = \frac{1}{7P(\Gamma)}
 $$
 
-always using $\rho^*_{\mathrm{diss}} = I/7$ as reference. There are no "three inconsistent formulas" — the three expressions are one algebraic identity.
+always using $\rho^*_{\mathrm{diss}} = I/7$ as reference. **Logical status.** The equality $R = 1 - \|\Gamma-I/7\|_F^2/\|\Gamma\|_F^2 = 1/(7P)$ is an **algebraic identity** (one definition, three equivalent expressions), not a derivation from independent axioms. The substantive content is **why this definition of $R$ is canonical**, which we establish by three independent characterizations below.
 
-### Proof {#доказательство-t126}
+### Three independent characterizations of $R$ {#тройная-характеризация-r}
 
-The original [master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r):
+:::tip Theorem T-126 (Triple canonicity of R) [Т]
+
+The map $R: \mathcal D(\mathbb C^7) \to [1/7, 1]$ with $R(\Gamma) = 1/(7P(\Gamma))$ is uniquely characterized by each of the following three independent mathematical properties, which all select the same function:
+:::
+
+**(Char-R-I) Hilbert–Schmidt angular projection.** $R(\Gamma)$ is the squared cosine of the Hilbert–Schmidt angle between $\Gamma$ and $I/7$:
+$$
+R(\Gamma) = \cos^2 \theta_{\mathrm{HS}}(\Gamma, I/7) = \frac{\langle \Gamma, I/7\rangle_F^2}{\|\Gamma\|_F^2 \cdot \|I/7\|_F^2}.
+$$
+Equivalently, writing $\Gamma = I/7 + \Delta$ with $\Delta := \Gamma - I/7$ traceless, Pythagoras in HS gives $\|\Gamma\|_F^2 = \|I/7\|_F^2 + \|\Delta\|_F^2$, so $R$ is the fraction of HS-mass concentrated in the trivial (scalar) sector. Uniqueness: the $\cos^2$ form is the unique $[0,1]$-valued bilinear invariant of a pair of HS-vectors satisfying $R(x,x)=1$ and the Cauchy–Schwarz normalization.
+
+**(Char-R-II) $G_2$-invariant canonical reference.** Let $G_2 = \mathrm{Aut}(\mathbb O) \subset SO(7)$ act on $\mathcal D(\mathbb C^7)$ via its fundamental 7-dimensional irreducible representation on $\mathbb C^7$. Then $I/7$ is the **unique** $G_2$-invariant density matrix.
+
+*Proof.* $\Gamma$ is $G_2$-invariant iff $\Gamma \in \mathrm{End}_{G_2}(\mathbb C^7)$. Since $\mathbb C^7$ is an irreducible $G_2$-module (Cartan 1894), by Schur's lemma $\mathrm{End}_{G_2}(\mathbb C^7) = \mathbb C \cdot I$. Trace normalization: $\mathrm{Tr}(\lambda I) = 7\lambda = 1 \Rightarrow \lambda = 1/7$. $\square$
+
+Consequence: any observer-independent ($G_2$-covariant) reflection-to-reference quantity must use $\rho^* = I/7$ and a $G_2$-invariant norm. The Frobenius norm is $G_2$-invariant (unitary invariance of HS). Hence the canonical form of $R$ is $G_2$-invariant, delivering **observer independence**: $R(U\Gamma U^\dagger) = R(\Gamma)$ for every $U \in G_2$.
+
+**(Char-R-III) $K=3$ Bayesian-dominance threshold.** The triadic decomposition of Lindblad operators on $M_7(\mathbb C)$ (T-40b [Т], [lindblad-operators#триадная-декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) partitions any CPTP channel into exactly $K=3$ channel classes. The Bayesian-dominance condition among $K$ equiprobable alternatives is $R > 1/K$. For $K=3$, this yields the L2 threshold $R_{\mathrm{th}} = 1/3$ directly from the combinatorial structure — not a postulate. Inversion: $R \ge 1/3 \iff P \le 3/7$, giving the upper edge of the Goldilocks zone $P \in (2/7, 3/7]$.
+
+**Equivalence and mutual consistency.** All three characterizations select the same function. Char-R-I fixes the *form* ($\cos^2$ of HS-angle to a reference). Char-R-II fixes the *reference* ($I/7$ as unique $G_2$-invariant). Char-R-III fixes the *threshold* ($R_{\mathrm{th}} = 1/3$ from $K=3$). Together they pin down $R$ up to algebraic identity.
+
+### Algebraic expansion: $R = 1/(7P)$ from the definition {#алгебраическая-экспансия}
+
+Given the canonical definition fixed by Char-R-I + Char-R-II (Frobenius form with reference $I/7$):
 
 $$
-R = 1 - \frac{\|\Gamma - I/7\|^2_F}{\|\Gamma\|^2_F}
+R := 1 - \frac{\|\Gamma - I/7\|^2_F}{\|\Gamma\|^2_F}.
 $$
 
-Compute the numerator:
-
+Numerator: since $\Delta := \Gamma - I/7$ is traceless and $\langle\Delta, I/7\rangle_F = \mathrm{Tr}(\Delta/7) = 0$, Pythagoras gives
 $$
-\|\Gamma - I/7\|^2_F = \mathrm{Tr}(\Gamma^2 - 2\Gamma/7 + I/49)
-= \mathrm{Tr}(\Gamma^2) - \frac{2}{7}\mathrm{Tr}(\Gamma) + \frac{1}{7}
-= P - \frac{2}{7} + \frac{1}{7} = P - \frac{1}{7}
+\|\Delta\|_F^2 = \|\Gamma\|_F^2 - \|I/7\|_F^2 = P - 1/7.
 $$
 
-Denominator: $\|\Gamma\|^2_F = \mathrm{Tr}(\Gamma^2) = P$.
+Denominator: $\|\Gamma\|_F^2 = P$.
 
-Therefore:
-
-$$
-R = 1 - \frac{P - 1/7}{P} = \frac{1/7}{P} = \frac{1}{7P}
-$$
-$\blacksquare$
+Therefore $R = 1 - (P - 1/7)/P = (1/7)/P = 1/(7P)$. $\blacksquare$
 
 ### Explanation: uniqueness of canonical form {#пояснение-единственность-r}
 
 | Expression | Formula | Identical to |
 |--------|---------|-------------|
-| Master definition | $R = 1 - \|\Gamma - I/7\|^2_F / P$ | $= 1/(7P)$ |
+| Master definition (Char-R-I+II) | $R = 1 - \|\Gamma - I/7\|^2_F / P$ | $= 1/(7P)$ |
 | Formula via purity | $R = 1/(7P)$ | algebraic identity |
 | Formula via $k$ | $R = 1 - k$, $k = 1 - 1/(7P)$ | [Т](/docs/consciousness/foundations/self-observation#теорема-k-из-r) |
 
-**Key explanation.** The reference $\rho^*_{\mathrm{diss}} = I/7$ is used **always**: $R$ measures the distance from thermal death. The non-trivial attractor $\rho^*_\Omega$ enters the regeneration $\mathcal{R}$ and the formula for $\varphi$, but **not** the definition of $R$.
+**Key explanation.** The reference $\rho^*_{\mathrm{diss}} = I/7$ is used **always**: $R$ measures normalized HS-proximity to the unique $G_2$-fixed state. The non-trivial attractor $\rho^*_\Omega$ enters the regeneration $\mathcal{R}$ and the formula for $\varphi$, but **not** the definition of $R$.
 
-Implementation approximations ($R_{\mathrm{impl}}$, $\rho_{RC}$) are separate quantities in a different space, related to the canonical $R$ via a CPTP bridge $\pi$. Transfer of thresholds is proven: [T-130+T-133 [Т]](/docs/proofs/consciousness/operationalization#t-130) (H3 CLOSED). The canonical $R$ is unambiguous.
+### Independent observability of $R$ {#независимая-наблюдаемость-r}
+
+Since $R(\Gamma) = 1/(7P(\Gamma))$ is a strictly decreasing function of purity $P$ on $[1/7, 1]$, at first order $n=1$ the canonical $R$ carries **no information beyond $P$**. This is by design: Char-R-I+II enforce $R$ as the HS-cos² of $\Gamma$ to the unique $G_2$-fixed reference, which on $\mathcal D(\mathbb C^7)$ reduces to $1/(7P)$.
+
+**Independent observability at $n \ge 2$.** The higher-order reflection $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ (fidelity of successive self-model iterates) depends on $\varphi(\Gamma)$ and is **not** a function of $P$ alone. Measuring $R^{(2)}$ requires independent access to the self-model operator $\varphi$ — e.g., via the categorical reconstruction protocol of [formalization-phi](/docs/proofs/categorical/formalization-phi).
+
+**Implementation approximations** ($R_{\mathrm{impl}}$, $\rho_{RC}$) are separate quantities in a different space, related to the canonical $R$ via a CPTP bridge $\pi$. Transfer of thresholds is proven: [T-130+T-133 [Т]](/docs/proofs/consciousness/operationalization#t-130) (H3 CLOSED). The canonical $R$ is unambiguous.
 
 ### Physical interpretation {#физическая-интерпретация-r}
 
@@ -205,6 +226,42 @@ As $P$ (purity) grows:
 **Savant analogy.** As $P \to 1$ the neural network is maximally specialized. A huge brain structure — but it is all "dedicated" to one thing: no "mirror," no balance for self-modeling. $R \to 1/7$. Conversely: at $P = 1/7$ (maximally mixed) $R = 1$ trivially — $\Gamma = I/7 = \rho^*_{\mathrm{diss}}$, the self-model is ideal, but only because there is nothing to model.
 
 **Consciousness = balance, not maximization.** The consciousness measure $C = \Phi \cdot R$ ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)) combines integration and reflection. As $P$ grows: $\Phi$ grows (more coherence), $R$ falls (worse self-modeling). $C = \Phi \cdot R$ has an **optimum** inside the Goldilocks zone — consciousness requires balance, not maximization of a single parameter.
+
+#### Semantic clarification: what $R$ actually measures {#семантика-r}
+
+The colloquial label "quality of self-knowledge" attached to $R$ is a useful intuition pump but is technically misleading. Char-R-I (above) gives the precise semantics:
+
+$$R(\Gamma) \;=\; \cos^2\theta_{\mathrm{HS}}(\Gamma, I/7) \;=\; \frac{\text{HS-mass of }\Gamma\text{ in the trivial (scalar) sector}}{\text{total HS-mass of }\Gamma}.$$
+
+This is the **fraction of $\Gamma$'s Hilbert–Schmidt content that lies along the maximally symmetric reference $I/7$**. Equivalently: how much "thermal reserve" / "categorical-self-modelling room" $\Gamma$ retains relative to its total structure.
+
+**Counterintuitive corollary:** $R$ is *largest* (= 1) at heat death ($\Gamma = I/7$) where literally no information is present, and *smallest* (= 1/7) at pure states where structure is maximal. The naïve reading "more structure = better self-knowledge" gets the **wrong sign** for $R$. The correct reading is that structure **uses up** thermal reserve, leaving less room for non-trivial self-modelling. The Goldilocks zone $P \in (2/7, 3/7]$ is where structure (purity) and reserve (thermal slack) balance.
+
+**Recommended terminology going forward:**
+- "$R$ = HS-projection coefficient onto $I/7$" (precise).
+- "$R$ = thermal reserve for self-modelling" (intuitive but technically correct).
+- "$R$ = quality of self-knowledge" — **avoid**, as the sign is misleading.
+
+The "self-knowledge" intuition is more accurately captured by higher-order $R^{(n)}$ ($n\ge 2$, fidelity of successive self-model iterates $\varphi^{(n-1)}\Gamma, \varphi^{(n)}\Gamma$), which actually does measure how stably $\Gamma$ knows itself under the categorical self-model $\varphi$.
+
+#### Why consciousness has an UPPER bound on purity (Goldilocks zone defense) {#верхняя-граница-чистоты}
+
+A frequent objection: "if more structure (higher purity) means more organization, why would consciousness *decrease* above $P = 3/7$?" The answer follows directly from the Char-R-I + Char-R-III construction:
+
+- $R = 1/(7P)$ is the thermal reserve / categorical-self-modelling room (Char-R-I clarification above).
+- $R \ge 1/3$ is the $K=3$ Bayesian dominance threshold (Char-R-III) — required for the categorical self-model $\varphi$ to converge non-trivially.
+- Together: $1/(7P) \ge 1/3 \iff P \le 3/7$.
+
+So $P > 3/7$ has $R < 1/3$, meaning $\varphi$-iterations have insufficient "room" to maintain stable self-reference: any candidate self-model collapses to the dominant pure-state component, eliminating the meta-cognitive layer.
+
+**Phenomenological intuition:**
+- $P \to 1$ (rank-one): hyper-synchronized brain — peak performance on one task, but no flexibility for meta-cognition. Savant-like specialization, not consciousness.
+- $P \in (2/7, 3/7]$: enough structure to be distinguishable from noise (lower edge $2/7$) plus enough thermal reserve for self-modelling (upper edge $3/7$). Wakeful conscious regime.
+- $P \to 1/7$ (heat death): no structure to model. Anesthesia-like.
+
+The upper bound is **mathematical**, not philosophical: it follows from $R$-formula + $K=3$-decomposition. Phenomenologically it matches the well-known empirical observation that hyper-synchronized brain states (e.g., absence epileptic seizures) lose consciousness, just as hypo-synchronized states (deep NREM sleep) do. Consciousness genuinely lives in the middle.
+
+This is **not** an artificial fine-tuning. The window $(2/7, 3/7]$ has natural width $1/7 \approx 14\%$ — finite and structurally protected. Numerical robustness (Q9 R1) ensures both bounds survive choice of any Petz metric.
 
 ---
 

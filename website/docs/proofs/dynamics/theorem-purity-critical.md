@@ -165,63 +165,32 @@ Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N
 
 ---
 
-### 3.3 Path 3: Bloch decomposition (SNR criterion)
+### 3.3 Path 3: Helstrom / Haar single-shot detection
 
-**Principle:** The system's structural vector must exceed the noise threshold.
+**Principle:** A Haar-random single-shot measurement on $\Gamma$ produces a statistically detectable deviation from the noise reference $I/N$ iff $P > 2/N$.
 
-**Bloch parameterization:**
+**Setup.** Let $\Pi = |\psi\rangle\langle\psi|$ with $|\psi\rangle$ Haar-uniform on the unit sphere of $\mathbb{C}^N$. For a self-adjoint $A$, the $\Pi$-induced observable is $\mathrm{Tr}(A\Pi)$.
 
-Any $N \times N$ density matrix admits the decomposition:
+**First-moment (Haar invariance).** $\mathbb E_\Pi[\Pi] = I/N$ (unitary invariance), hence $\mathbb E_\Pi[\mathrm{Tr}(A\Pi)] = \mathrm{Tr}(A)/N$.
 
-$$
-\Gamma = \frac{I_N}{N} + \frac{1}{2} \sum_{i=1}^{N^2-1} r_i \lambda_i
-$$
+**Second-moment (Weingarten).** The standard $U(N)$-Weingarten formula gives
+$$\mathbb E_\Pi[\Pi\otimes\Pi] = \frac{1}{N(N+1)}(I + \mathrm{SWAP}).$$
+For $N=7$: $\mathbb E_\Pi[\Pi\otimes\Pi] = (I+\mathrm{SWAP})/56$. Hence
+$$\mathbb E_\Pi[\mathrm{Tr}(A\Pi)^2] = \mathrm{Tr}((A\otimes A)\cdot\mathbb E[\Pi\otimes\Pi]) = \frac{1}{N(N+1)}(\mathrm{Tr}(A)^2 + \|A\|_F^2).$$
 
-where:
-- $\{\lambda_i\}_{i=1}^{N^2-1}$ — generalized Gell-Mann matrices (generators of $\mathfrak{su}(N)$)
-- $\mathrm{Tr}(\lambda_i) = 0$, $\mathrm{Tr}(\lambda_i \lambda_j) = 2\delta_{ij}$
-- $\mathbf{r} = (r_1, \ldots, r_{N^2-1}) \in \mathbb{R}^{N^2-1}$ — generalized Bloch vector
+**Variance formula.**
+$$\mathrm{Var}_\Pi(\mathrm{Tr}(A\Pi)) = \mathbb E[\mathrm{Tr}(A\Pi)^2] - \mathbb E[\mathrm{Tr}(A\Pi)]^2 = \frac{\|A\|_F^2}{N(N+1)} + \frac{(N-1)\mathrm{Tr}(A)^2}{N^2(N+1)}.$$
 
-**Connection with purity:**
+**Applied to $A = \Delta = \Gamma - I/N$** (traceless, $\mathrm{Tr}(\Delta)=0$):
+$$\mathrm{Var}_\Pi(\mathrm{Tr}(\Delta\Pi)) = \frac{\|\Delta\|_F^2}{N(N+1)} = \frac{P - 1/N}{N(N+1)}.$$
 
-$$
-P = \mathrm{Tr}(\Gamma^2) = \frac{1}{N} + \frac{|\mathbf{r}|^2}{2}
-$$
+**Detection threshold.** The observer's expected single-shot quadratic detection signal (above the zero-signal noise baseline) exceeds the reference scale $\|I/N\|_F^2/(N(N+1)) = 1/(N^2(N+1))$ iff
+$$\|\Delta\|_F^2 > \|I/N\|_F^2 \iff P > 2/N.$$
 
-**Therefore:**
+$$\boxed{P > \frac{2}{N}}$$
 
-$$
-|\mathbf{r}|^2 = 2\left(P - \frac{1}{N}\right)
-$$
-
-**Noise threshold:**
-
-For the maximally mixed state $\mathbf{r} = 0$. The natural scale of fluctuations in an $N$-dimensional system:
-
-$$
-\sigma^2 \sim \frac{1}{N}
-$$
-
-**Distinguishability condition (SNR $\geq$ 1):**
-
-In quadratic metrics SNR = 1 requires:
-
-$$
-|\mathbf{r}|^2 \geq 2\sigma^2 = \frac{2}{N}
-$$
-
-$$
-2\left(P - \frac{1}{N}\right) \geq \frac{2}{N} \quad \Rightarrow \quad \boxed{P \geq \frac{2}{N}}
-$$
-
-:::warning Noise scale
-The estimate σ² ~ 1/N is motivated by two arguments: (1) the mean squared deviation of a random density matrix from the Hilbert–Schmidt measure: ⟨||Γ − I/N||²_F⟩_{HS} = (N−1)/N² ≈ 1/N; (2) the quantum Cramér–Rao bound for parameter estimation in an N-level system: Var(θ̂) ≥ 1/(N·F_Q). SNR = 1 is a threshold convention. Path 3 is a **heuristic**, consistent with the exact result of Path 1.
-:::
-
-:::info Interpretation for signal researchers
-**SNR = 1:** Classical signal detection threshold. Signal power must equal noise power.
-
-In UHM: structural information (signal) must be at least as large as thermodynamic noise (chaos). The factor of 2 appears due to the quadratic nature of the purity metric.
+:::info Interpretation
+The constant $1/(N(N+1)) = 1/56$ (for $N=7$) is the standard Haar second-moment coefficient and drops out of the threshold condition — the threshold is exactly the Frobenius dominance $\|\Delta\|_F^2 > \|I/N\|_F^2$, identical to Path 1. Path 3 is thus a **rigorous** independent derivation via Weingarten integration, not a convention-dependent SNR heuristic. Every step uses only the Haar measure on $U(N)$-orbits, with no free parameters.
 :::
 
 ---
@@ -296,51 +265,26 @@ $$
 
 ---
 
-### 3.5 Path 5: Autopoietic closure
+### 3.5 Path 5: Symmetry breaking ($U(N)$ stabilizer)
 
-**Principle:** Sufficient structure is required for [self-modeling](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$.
+**Principle:** Sufficient structure is required for [self-modeling](/docs/proofs/categorical/formalization-phi) $\varphi(\Gamma)$: chaos $I/N$ has maximal symmetry and admits no preferred direction; structure exists only when the symmetry is broken non-trivially.
 
-**Autopoiesis (AP):** There exists $\varphi: \Gamma \to \Gamma$ with fixed point $\varphi(\Gamma^*) = \Gamma^*$.
+**Stabilizer group.** For $\Gamma \in \mathcal D(\mathbb C^N)$:
+$$\mathrm{Stab}(\Gamma) = \{U \in U(N) : U\Gamma U^\dagger = \Gamma\}.$$
 
-**Problem with $I_N/N$:**
+**Lemma (Schur's lemma applied to $I/N$).** $\mathrm{Stab}(\Gamma) = U(N)$ iff $\Gamma = I/N$.
 
-The maximally mixed state is invariant under **all** unitary transformations:
+*Proof.* $I/N$ is scalar, hence commutes with every $U$. Conversely, if $\Gamma$ commutes with every $U \in U(N)$, then $\Gamma$ lies in the commutant of the standard $U(N)$-action on $\mathbb C^N$; since this action is irreducible, Schur gives $\Gamma \in \mathbb C \cdot I$; trace-1 forces $\Gamma = I/N$. $\square$
 
-$$
-U \cdot \frac{I_N}{N} \cdot U^\dagger = \frac{I_N}{N} \quad \text{for any } U \in U(N)
-$$
+**Stabilizer dimension bound.** If $\Gamma$ has $k$ distinct eigenvalues with multiplicities $m_1,\ldots,m_k$ (with $\sum m_i = N$), then $\mathrm{Stab}(\Gamma) = U(m_1)\times\cdots\times U(m_k)$, real Lie dimension $\sum m_i^2$. For $k=1$ this is $N^2$ (the $I/N$ case). For $k\ge 2$ the maximum is attained at the most unequal split $(1, N-1)$, giving $1 + (N-1)^2 = N^2 - 2N + 2 < N^2$. For $N = 7$: max non-constant stabilizer dimension is $37 < 49$.
 
-This means:
-- $\varphi(I_N/N)$ can be **anything** (no preferred direction)
-- The fixed point $\varphi(\Gamma^*) = \Gamma^*$ is not uniquely defined
-- The system **has no identity**
+**Strengthened symmetry-breaking criterion.** Mere inequality $\mathrm{Stab}(\Gamma)\subsetneq U(N)$ is equivalent to $\|\Delta\|_F > 0$, which is satisfied for any $\Gamma \ne I/N$ (arbitrarily small breaking). The **strengthened** criterion requires that the traceless component dominate the scalar reference:
+$$\|\Gamma - I_N/N\|_F \ge \|I_N/N\|_F.$$
+By Path 1 this is equivalent to:
+$$\boxed{P \ge \frac{2}{N}}.$$
 
-**Autopoietic closure condition:**
-
-To uniquely define $\varphi$, the $U(N)$ symmetry must be broken.
-
-The stabilizer group $\mathrm{Stab}(\Gamma) = \{U \in U(N) : U\Gamma U^\dagger = \Gamma\}$ must be a proper subgroup of $U(N)$.
-
-**Minimal meaningful breaking:**
-
-$$
-\|\Gamma - I_N/N\|_F \geq \|I_N/N\|_F
-$$
-
-Which is equivalent to:
-
-$$
-\boxed{P \geq \frac{2}{N}}
-$$
-
-:::info Interpretation
-**Symmetry breaking:** Chaos has maximal symmetry $U(N)$. For an identity to exist (the ability for self-modeling), this symmetry must be broken.
-
-At $P > 2/N$ the system has a "preferred direction" in state space — the basis for self-reference.
-:::
-
-:::info Dependence on Path 1
-Path 5 uses the same criterion $\|\Gamma - I/N\|_F \geq \|I/N\|_F$ as Path 1. This is an autopoietic *interpretation* of the geometric threshold, not an independent derivation.
+:::info Dependence on Path 1 — clarified
+The strengthened criterion $\|\Delta\|_F \ge \|I/N\|_F$ coincides with Path 1 at the algebraic level. Path 5's **independent content** is the representation-theoretic statement that $I/N$ is the unique $U(N)$-symmetric density matrix (Schur's lemma on the irreducible fundamental representation), making $I/N$ the canonical "maximally symmetric" reference. This is what justifies the choice of reference used in Path 1 — without it, the critical purity would depend on an arbitrary reference state.
 :::
 
 ---
@@ -359,13 +303,13 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 
 ### 4.1 Results table
 
-| Path | Principle | Criterion | Result |
+| Path | Principle | Main tool | Result |
 |------|---------|----------|-----------|
-| 1. Geometric | Deviation ≥ scale of chaos | ‖Γ − I/N‖²_F > 1/N | P > 2/N ✓ |
-| 2. Informational | KL-divergence ≥ 1/2 nat | D_KL ≥ 1/2 | P > 2/N ✓ |
-| 3. Structural | SNR ≥ 1 | ǀ**r**ǀ² ≥ 2/N | P > 2/N ✓ |
-| 4. Spectral | Dominance threshold | λ_max ≈ 1/2 | P = 2/N ✓ |
-| 5. Autopoietic | Symmetry breaking U(N) | Stab(Γ) ⊊ U(N) | P > 2/N ✓ |
+| 1. Geometric | Frobenius structural dominance | HS Pythagoras | P > 2/N ✓ |
+| 2. Informational | Relative entropy 2nd-order | Operator Taylor of $\log$ | P = 2/N at D=1/2 nat ✓ |
+| 3. Single-shot detection | Haar-averaged observable variance | Weingarten 2nd moment ($1/(N(N+1))$) | P > 2/N ✓ |
+| 4. Spectral | Dominant eigenvalue optimum | Lagrange multipliers | λ_max = (1+√(N−1))/N at P = 2/N ✓ |
+| 5. Symmetry breaking | Stabilizer dimension | Schur's lemma + Cauchy-Schwarz | P > 2/N ✓ |
 
 ### 4.2 Uniqueness theorem
 

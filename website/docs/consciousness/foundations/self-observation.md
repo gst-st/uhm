@@ -277,26 +277,32 @@ $$
 
 where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F$ — [Frobenius norm](/docs/core/dynamics/coherence-matrix#норма-фробениуса), $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ ([purity](/docs/core/dynamics/viability#определение-чистоты)).
 
-### Step-by-Step Derivation of $R = 1/(7P)$
+### Algebraic Equivalence: $R = 1/(7P)$ {#алгебраическая-эквивалентность-r}
 
-Let us derive the formula step by step, starting from the definition:
+:::info Logical status
+The equality $R = 1/(7P)$ is an **algebraic identity** of the Frobenius definition above with $\rho^*_{\mathrm{diss}} = I/7$ on the compact $\mathcal D(\mathbb C^7)$ — not a derivation from independent axioms. The substantive claim is that this definition is canonical, established by three independent characterizations (HS-angular, $G_2$-invariance, $K=3$ Bayesian threshold) in [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126).
+:::
 
-**Step 1.** Begin with the definition: $R = 1 - \|\Gamma - \rho^*\|_F^2 / \|\Gamma\|_F^2$
+Starting from the Frobenius master definition:
 
-**Step 2.** Denominator: $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ (this is the definition of purity)
+**Step 1.** $R = 1 - \|\Gamma - I/7\|_F^2 / \|\Gamma\|_F^2$.
 
-**Step 3.** Numerator: $\|\Gamma - I/7\|_F^2 = \mathrm{Tr}((\Gamma - I/7)^2)$
+**Step 2.** Denominator: $\|\Gamma\|_F^2 = \mathrm{Tr}(\Gamma^2) = P$ (purity).
 
-Expanding:
-$$\mathrm{Tr}(\Gamma^2 - 2\Gamma \cdot I/7 + (I/7)^2) = \mathrm{Tr}(\Gamma^2) - \frac{2}{7}\mathrm{Tr}(\Gamma) + \frac{1}{7^2}\mathrm{Tr}(I)$$
+**Step 3.** Numerator — Pythagoras in HS. Write $\Gamma = I/7 + \Delta$ with $\Delta$ traceless. Then $\langle\Delta, I/7\rangle_F = \mathrm{Tr}(\Delta)/7 = 0$, so
+$$\|\Delta\|_F^2 = \|\Gamma\|_F^2 - \|I/7\|_F^2 = P - 1/7.$$
+Equivalent direct expansion: $\mathrm{Tr}((\Gamma - I/7)^2) = P - 2/7 + 7/49 = P - 1/7$.
 
-**Step 4.** Using: $\mathrm{Tr}(\Gamma^2) = P$, $\mathrm{Tr}(\Gamma) = 1$, $\mathrm{Tr}(I) = 7$:
-$$= P - \frac{2}{7} + \frac{7}{49} = P - \frac{2}{7} + \frac{1}{7} = P - \frac{1}{7}$$
+**Step 4.** Substitution:
+$$R = 1 - \frac{P - 1/7}{P} = \frac{1/7}{P} = \frac{1}{7P}.$$
 
-**Step 5.** Substituting:
-$$R = 1 - \frac{P - 1/7}{P} = 1 - 1 + \frac{1}{7P} = \frac{1}{7P}$$
+**Geometric interpretation.** Equivalent closed form: $R(\Gamma) = \cos^2\theta_{\mathrm{HS}}(\Gamma, I/7)$, the squared cosine of the Hilbert–Schmidt angle between $\Gamma$ and $I/7$. This identifies $R$ as the normalized projection of $\Gamma$ onto the unique $G_2$-fixed reference.
 
 Result: **$R = 1/(7P)$** — an elegant formula linking reflection to purity.
+
+:::note Is $R$ independently measurable from data?
+At first order $n=1$, the canonical $R = 1/(7P)$ is by design a strictly decreasing reparameterization of purity $P$ — it carries **no information beyond $P$**. Genuine independence appears only at **higher orders** $R^{(n)}$ for $n\ge 2$ (fidelity of successive self-model iterates $\varphi^{(n-1)}\Gamma, \varphi^{(n)}\Gamma$), which depend on the categorical self-model $\varphi$ and are not functions of $P$ alone. Full discussion: [T-126 independent-observability clause](/docs/proofs/consciousness/conscious-window#независимая-наблюдаемость-r).
+:::
 
 ### Why Does $R$ Decrease as $P$ Increases?
 

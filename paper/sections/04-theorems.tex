@@ -6,9 +6,10 @@
 \label{sec:theorems}
 
 This section presents the central results of UHM. Each theorem is stated
-precisely, with references to full proofs at \url{https://holon.sh}.
-Falsifiability is emphasised throughout: for each theorem, the experimental
-outcome that would refute it is indicated explicitly.
+precisely; flagship proofs are given in full in the appendices, and remaining
+proofs are documented in the online supplement. Falsifiability is emphasised
+throughout: for each theorem, the experimental outcome that would refute it
+is indicated explicitly.
 
 \subsection{No-Zombie Theorem (T-8.1)}
 \label{subsec:no-zombie}
@@ -137,8 +138,10 @@ Bures distance from $\rho^*_\Omega$ to the viability boundary $\partial\mathcal{
 For a perturbation $\Gam \to \Gam + \delta\Gam$ with $\|\delta\Gam\|_F = h$, the purity
 changes by $\delta P \approx 2\Tr(\Gam\,\delta\Gam)$. At the attractor, the critical
 perturbation satisfies $P - h_{\mathrm{crit}}^2 = 2/7$, yielding
-$r_{\mathrm{stab}} = \sqrt{P - 2/7}$. (Full proof: T-104~\status{T} at
-\url{https://holon.sh/docs/applied/coherence-cybernetics/stability}.)
+$r_{\mathrm{stab}} = \sqrt{P - 2/7}$. The full Lyapunov-stability analysis
+(T-104~\status{T}) combines this radius with the spectral gap $\lambda_\mathrm{gap}$
+of the linearized dissipator: trajectories within $r_\mathrm{stab}$ converge
+exponentially with rate $c \ge \min(\lambda_\mathrm{gap}, \kappa\cdot g_V) > 0$.
 
 \paragraph{Examples.}
 A system with $P = 0.5$ has $r_{\mathrm{stab}} = \sqrt{0.5 - 0.286}
@@ -264,22 +267,28 @@ Landau functional
     \;+\; v\, m^6 \;-\; h\, m,
   \qquad r_0, v > 0.
 \end{equation*}
-The absence of a quartic term is not an ad hoc assumption but the universal
-normal form of an $A_4$ swallowtail catastrophe: the UHM evolution has exactly
-three physically independent control parameters --- regeneration rate
-$\kappa$, dissipation rate, and free-energy budget $\Delta F$ --- which by
-Thom--Arnold classification places the transition in the codimension-3
-$A_4$ class, whose even-sector normal form is $\varphi^{6}$
-(Section~\ref{subsec:sad-ceiling}; canonical proof at
-\url{https://holon.sh/docs/consciousness/hierarchy/swallowtail-transitions}).
-The effective dimension $d_{\mathrm{eff}} = 21$ (the number of independent
-off-diagonal coherences $|\gamma_{ij}|$, $i \neq j$) vastly exceeds the upper
-critical dimension $d_c = 3$ for tricritical systems, so mean-field
-tricritical exponents are exact (no logarithmic corrections). The full
-derivation, including all five exponents and the verification of Rushbrooke,
-Widom, and Fisher scaling relations, is given in
-Appendix~\ref{app:exponents}; see also T-161~\status{T} at
-\url{https://holon.sh}.
+The transition belongs to the $\varphi^6$ tricritical Landau universality class
+(Griffiths 1970, Lawrie–Sarbach 1984), characterised by an even-parity potential
+with $\mathbb{Z}_2$ symmetry $m \to -m$ inherited from the $G_2$-canonical involution
+on the order-parameter direction. UHM has exactly three physically independent
+control parameters --- regeneration rate $\kappa$, dissipation rate $\gamma$, and
+free-energy budget $\Delta F$ --- matching the codimension of the $\varphi^6$ tricritical
+deformation $(r, u, h)$. The reduction from the 21-dimensional configuration space
+to the 1-dimensional scalar order parameter $m$ is justified by the Mather Splitting
+Lemma (Mather 1968): the Hessian of the effective Landau potential at the critical
+point has corank 1, so $V \simeq_\mathrm{smooth} V_\mathrm{red}(m) + Q(\xi_1,\ldots,\xi_{20})$,
+with $Q$ a non-degenerate quadratic in the 20 transverse modes. Mean-field exactness
+follows from three independent pillars: (I) topological rigidity of the $\varphi^6$
+class under smooth deformations; (II) deterministic UHM dynamics at the master-equation
+(Lindblad) level, which is representation-equivalent to stochastic unraveling for
+saddle-point exponents and contains no separate fluctuating field requiring renormalisation;
+(III) order-parameter dimension $d_\mathrm{eff} = 21$ giving $1/N \approx 5\%$ corrections
+under any stochastic reinterpretation. Note: the historical name "$A_4$-tricritical"
+sometimes used in the physics literature conflates the Arnold $A_4$ swallowtail
+($V_0 = x^5/5$, $\beta = 1/2$) with the $\varphi^6$ Landau tricritical ($V = rm^2/2 + vm^6$,
+$\beta = 1/4$); UHM transitions belong to the latter. The full derivation, including
+all five exponents and verification of Rushbrooke, Widom, and Fisher scaling relations,
+is given in Appendix~\ref{app:exponents}.
 
 \paragraph{Physical meaning.}
 \begin{itemize}[leftmargin=2em]

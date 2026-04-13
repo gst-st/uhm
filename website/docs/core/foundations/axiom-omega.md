@@ -219,7 +219,7 @@ If $\{\Phi_i: \Gamma_i \to \Gamma\}_{i \in I}$ is a $J_{Bures}$-cover of $\Gamma
 6. Hence $\Sigma' \to \Sigma \xrightarrow{f} \Gamma$ factors through $\Phi_j$, i.e. lies in the sieve $f^*(S)$
 7. For all $\Sigma'$ in $B_B(\Sigma, \delta)$ $\Longrightarrow$ $f^*(S)$ covers $\Sigma$ $\quad\blacksquare$
 
-**Key point:** **Bures contractivity under CPTP** (minimality of the Bures metric among monotone metrics, Petz classification) forces stability of covers.
+**Key point:** **CPTP-contractivity** of any Petz-admissible metric (a property shared by the whole Petz family, with Bures as its distinguished minimum — see [T-187](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)) forces **stability** of covers. The pair (identity + stability) constitutes a Grothendieck **coverage** (Johnstone, *Elephant* C2.1.1); the full Grothendieck topology $J_{Bures}$ is then the topology **generated** by this coverage (Elephant C2.1.10), and **transitivity** of $J_{Bures}$ is automatic from the generation — it does not require a direct ε-δ argument.
 
 **Corollary (meaning of “loc”):**
 

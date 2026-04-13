@@ -882,6 +882,81 @@ def pi_bio(
     return Gamma
 ```
 
+### Готовая к воспроизведению спецификация для TMS-EEG PCI {#replication-ready-tms-eeg}
+
+:::tip Цель воспроизведения
+Этот подраздел фиксирует референсную имплементацию $\pi_{\mathrm{bio}}$ для TMS-EEG PCI парадигмы — достаточно детально для независимой попытки воспроизведения end-to-end из публичного датасета.
+:::
+
+**R1. Публичные датасеты.** Кандидаты для независимого воспроизведения; ни один не имеет универсального открытого доступа, но каждый получаем по запросу авторов или через институциональное разделение данных:
+
+| # | Датасет | Источник | Субъекты | Состояния | Доступ |
+|---|---------|--------|---------|--------|--------|
+| R1.a | Casali et al. 2013 PCI benchmark | Massimini lab (Milan) | 52 здоровых + 98 клинических | Wake / NREM / REM / анестезия / VS / MCS / LIS | По запросу |
+| R1.b | OpenNeuro ds004504 (TMS-EEG benchmark, 2023) | Rogasch lab | 20 здоровых | Wake (baseline) | Открытый |
+| R1.c | Comsa et al. 2019 (OSF "TMS-EEG sleep") | Lausanne CHUV | 12 здоровых | Wake / NREM N2 / N3 | OSF restricted |
+| R1.d | Bodart et al. 2018 (clinical PCI extension) | Liège | 141 DoC пациентов | Wake / UWS / MCS / EMCS | По запросу |
+
+Для первой попытки воспроизведения рекомендован датасет R1.b (полностью открытый, стандартизованный одно-импульсный TMS-EEG на здоровых бодрствующих субъектах, ожидаемый PCI ≈ 0.40-0.48).
+
+**R2. Pre-processing pipeline (MNE-Python канонический).** Референсный препроцессинг для сырого EEG (60-канальный монтаж, 1 кГц sampling, TMS-triggered эпохи $[-1, +1]\,\mathrm{s}$):
+
+| Шаг | Операция | Tool / параметры |
+|------|-----------|-------------------|
+| R2.1 | Удаление TMS pulse артефакта | Кубическая интерполяция $[-2, +12]\,\mathrm{ms}$ вокруг импульса (`mne.preprocessing.fix_stim_artifact`) |
+| R2.2 | Downsample | 1 кГц → 250 Гц (`mne.Epochs.resample`) |
+| R2.3 | Re-reference | Average reference, исключая TMS-сторону frontal channels |
+| R2.4 | Bandpass filter | 0.5–80 Гц, 4-й порядок Butterworth zero-phase (`mne.filter.filter_data`) |
+| R2.5 | Notch filter | 50 Гц (или 60 Гц), Q = 30 |
+| R2.6 | ICA artefact rejection | FastICA, 30 компонент; reject TMS-locked decay, eye-blink, ECG (`mne.preprocessing.ICA`) |
+| R2.7 | Epoch-level rejection | $|\text{max}-\text{min}| > 120\,\mu\mathrm V$ → отбросить эпоху |
+| R2.8 | Спектральная декомпозиция | Morlet wavelets, 1–80 Гц log-spaced, 5-cycle wavelet, baseline $[-600,-100]\,\mathrm{ms}$ |
+
+Канонические полосы, используемые $\pi_{\mathrm{bio}}$, затем извлекаются из вейвлет-спектрограммы (интегрированы по post-TMS окну $[0, +300]\,\mathrm{ms}$, усреднены по каналам для диагонального feature-вектора; cross-channel pairwise для CFC-вычислений).
+
+**R3. Feature extraction.** Из preprocessed данных вычислить:
+- Семь скалярных спектральных features $S_A, S_S, S_D, S_L, S_E, S_O, S_U$ согласно [Step-1 band table](#шаг-1-диагональ).
+- Cross-frequency-coupling матрицу $\mathrm{CFC}_{ij}$ ($7\times 7$) согласно [Step-2 table](#шаг-2-когерентности) используя Tort Modulation Index (`mne_connectivity`).
+- 21 reaction-time surrogates $\mathrm{RT}_{ij}$ из paradoxical probes если behavioral data доступна; иначе установить $\mathrm{RT}_{ij}$ как pairwise phase-locking value (PLV) как proxy.
+- HRV features $\mathrm{LF}, \mathrm{HF}$ из одновременной ECG (требуется для $O$ и $U$ измерений).
+
+**R4. Калибровка.** Веса $w_k$ определяются подгонкой $\pi_{\mathrm{bio}}$ на **healthy-waking референсной cohort** ($\ge 20$ субъектов) так, что популяционное среднее $\gamma_{kk}$ — равномерно $= 1/7 \pm 0.02$. Cross-validation: leave-one-subject-out, цель консистентности реконструированного $P$ через субъектов ($\mathrm{CV} < 15\%$).
+
+**R5. Реконструкция.** Запустить MLE алгоритм (Step 4 выше) с:
+- Cholesky инициализацией из калиброванной диагонали.
+- Optimizer: `scipy.optimize.minimize(method='L-BFGS-B', options={'ftol': 1e-9, 'maxiter': 500})`.
+- Regularizer: $\lambda_1 = 0.1$, $\lambda_2 = 100$ (эмпирические defaults; субъекты должны попробовать $\lambda_1 \in \{0.01, 0.1, 1\}$ и отчитать чувствительность).
+
+**R6. Вычисление наблюдаемых (канонически):**
+- $P = \mathrm{Tr}(\Gamma^2)$ — **$G_2$-инвариантна**.
+- $R = 1/(7P)$ ([T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126)) — **$G_2$-инвариантна**.
+- $\Phi = (\sum_{i\ne j}|\gamma_{ij}|^2)/(\sum_i\gamma_{ii}^2)$ — **базис-зависима**, инвариантна в $G_2$-стабилизированном Фано-фрейме.
+- $\mathrm{Coh}_E = (\gamma_{EE}^2 + 2\sum_{i\ne E}|\gamma_{Ei}|^2)/\mathrm{Tr}(\Gamma^2)$ — **$E$-фиксированная**, инвариантна под $G_2^{(E)}$.
+
+**Gauge-фиксация:** (i) выровнять labelling к Fano-convention; (ii) привязать $|E\rangle$ к γ-high×θ PAC.
+
+**R7. Валидация против PCI.**
+- Вычислить PCI субъекта на тех же TMS-EEG данных через алгоритм Massimini (Lempel–Ziv complexity значимых источников; reference implementation доступна через PCIst package).
+- Тест монотонной гипотезы $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 теорема).
+- Pre-register: $r_{\mathrm{Spearman}} \ge 0.5$ через $\ge 20$ субъектов составляет corroboration; $r < 0.3$ составляет фальсификацию P8.3.
+
+**R8. Reference implementation stub.** Python-код в следующем подразделе — *референсный* только: документирует алгоритм точно, но не turn-key pipeline. Полная MNE-Python имплементация с:
+- `mne.Raw` загрузчиком, обёрнутым вокруг BIDS-форматированного EEG,
+- `mne_connectivity` интеграцией для CFC,
+- `scipy.optimize.minimize` MLE wrapper,
+- `pyphi`-совместимым $\Phi$ вычислением (опционально),
+- CI-репортингом,
+планируется как отдельный пакет `uhm-neurocalib` (релиз привязан к R1.b пилотным результатам). До доступности этого пакета независимые имплементаторы должны использовать pseudocode как specification, и подавать issues/PRs на несоответствия со спецификацией здесь.
+
+**Требования воспроизводимости.** Любая претензия на успешное или неуспешное воспроизведение должна публиковать:
+- (i) сырые данные (BIDS-формат) и pre-processing scripts (воспроизводимые из R2);
+- (ii) реконструированные $\Gamma$-матрицы и сделанный gauge-fixing выбор;
+- (iii) значения $P, R, \Phi, \mathrm{Coh}_E$ на субъекта;
+- (iv) PCI значения, вычисленные на тех же эпохах;
+- (v) протокол статистического теста и seed для случайных splits.
+
+Без пунктов (i)-(v) попытка воспроизведения не может быть аудирована.
+
 ### Тестируемые предсказания протокола $\pi_{\mathrm{bio}}$ {#тестируемые-предсказания-p8}
 
 | № | Предсказание | Метод проверки | Критерий фальсификации |

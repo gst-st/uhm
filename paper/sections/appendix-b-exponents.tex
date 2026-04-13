@@ -78,21 +78,50 @@ defining condition of a tricritical point: three coexisting minima of the
 effective potential coalesce at $\varepsilon = 0$, corresponding to the
 tip of the swallowtail caustic.
 
-Full canonical derivation of the $A_{4}$ classification is at
-\url{https://holon.sh/docs/consciousness/hierarchy/swallowtail-transitions#фазовый-переход}
-(T-160 for $\Pcrit$, T-161 for the exponents).
+\textbf{Important terminological clarification.} The transition belongs to the
+$\varphi^6$ \emph{tricritical Landau} universality class (Griffiths 1970,
+Lawrie--Sarbach 1984~\cite{lawrie1984}), characterised by an even-parity potential
+$V(m) = \tfrac{1}{2}r m^2 + v m^6$ with $\mathbb Z_2$ symmetry $m \to -m$. This is
+distinct from the $A_4$ swallowtail catastrophe of Arnold's classification (which
+has normal form $V = x^5/5$, no $\mathbb Z_2$, and gives $\beta = 1/2$, \emph{not}
+$1/4$). The naming "$A_4$-tricritical" sometimes used in physics literature
+conflates these; we use $\varphi^6$ tricritical to be unambiguous.
 
 \subsection{Effective dimension and exactness of mean-field exponents}
 
 The effective dimension of the system is $d_{\mathrm{eff}} = 21$: the number of
 independent off-diagonal coherences $|\gamma_{ij}|$ ($i \neq j$, $\binom{7}{2} = 21$).
-Each coherence is an independent fluctuating degree of freedom in the Landau expansion.
+This count matches the off-diagonal sector of $\mathfrak{su}(7)$:
+$\dim\mathfrak{su}(7) = 48 = 6_\mathrm{diag} + 42_\mathrm{off}$, with the 42 real
+off-diagonal components pairing into $21$ complex modes (each pair $(i,j)$ lies
+on a unique Fano line of $\mathrm{PG}(2,2)$).
 
-For tricritical systems, the upper critical dimension is $d_c = 3$~(see, e.g.,
-\cite{lawrie1984}). Since $d_{\mathrm{eff}} = 21 \gg d_c = 3$, the Ginzburg
-criterion is overwhelmingly satisfied: fluctuation corrections to mean-field theory are
-suppressed by a factor $(d_c/d_{\mathrm{eff}})^{(d_c-d)/2}$, which is astronomically
-small. There are no logarithmic corrections (those appear only at $d = d_c$).
+\textbf{Reduction from 21D to 1D via Mather Splitting.} The relevant order parameter
+is the scalar $m = \mathrm{Coh}_E - 1/7$ (or equivalently $P - 2/7$). The Hessian of
+the effective Landau potential at the critical point has corank 1: exactly one
+zero eigenvalue (the critical mode), with the remaining 20 modes massive. By the
+Mather Splitting Lemma (Mather 1968, Arnold 1974~\S3.2), $V$ is smoothly equivalent
+to $V_\mathrm{red}(m) + Q(\xi_1,\ldots,\xi_{20})$, where $Q$ is a non-degenerate
+quadratic form. Codim-3 catastrophes of $V_\mathrm{red}: \mathbb R \to \mathbb R$
+in the $\mathbb Z_2$-symmetric sector are uniquely $\varphi^6$ tricritical.
+Transverse modes contribute Gaussian fluctuations that do not modify exponents.
+
+\textbf{Mean-field exactness} rests on three independent pillars:
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item \emph{Topological rigidity}: critical exponents are universality-class
+    invariants of the $\varphi^6$ family (Lawrie--Sarbach 1984), independent
+    of smooth coordinate changes.
+  \item \emph{Deterministic dynamics}: the UHM master equation
+    $d\Gamma/d\tau = \mathcal L_\Omega(\Gamma) + \mathcal R(\Gamma)$ is a
+    deterministic ODE for $\Gamma$. The Lindblad-encoded environmental noise
+    (Born--Markov) is local in time and contributes to the deterministic
+    generator, not to a fluctuating field requiring Ginzburg renormalisation.
+    UHM is $(0+1)$-dimensional with no spatial integral, so the spatial form
+    of the Ginzburg criterion does not apply.
+  \item \emph{Large-$N$ cross-check}: $d_\mathrm{eff} = 21$ as an order-parameter
+    count gives leading $1/N \approx 5\%$ corrections under any stochastic
+    reinterpretation, within experimental PCI resolution.
+\end{enumerate}
 Mean-field tricritical exponents are therefore \emph{exact}.
 
 \subsection{Derivation of $\beta = 1/4$}

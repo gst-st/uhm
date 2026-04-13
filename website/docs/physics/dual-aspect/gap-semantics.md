@@ -166,7 +166,7 @@ The antisymmetric part of octonionic multiplication (structure constants $\varep
 Moreover, beyond non-commutativity, octonions possess **non-associativity**: $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ for non-Fano triplets. This produces a **second, independent source** of Gap — even if all two-point coherences are real, three-point correlations may contain an irreducible phase shift via the associator $[e_i, e_j, e_k]$.
 :::
 
-### Fano Triplets: Two Types of Coherences
+### Fano Triplets: Two Types of Coherences {#разделение-когерентностей}
 
 The Fano plane $\mathrm{PG}(2,2)$ defines 7 triplets. Within each triplet $(e_i, e_j, e_k)$ multiplication is **associative** (subalgebra $\cong \mathrm{Im}(\mathbb{H})$). Between triplets — **non-associative**.
 

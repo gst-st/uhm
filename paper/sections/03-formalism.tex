@@ -8,9 +8,10 @@
 This section develops the mathematical machinery of UHM from the axioms
 stated in Section~\ref{sec:axioms}. Every definition and formula is derived
 from the primitive $\mathfrak{T} = (\ShInf(\mathcal{C}),\; J_{\mathrm{Bures}},\; \omega_0)$;
-nothing is postulated ad hoc. The complete proofs are available at
-\url{https://holon.sh}; the key results are presented here with sufficient
-detail for verification.
+nothing is postulated ad hoc. The flagship results — $\Pcrit = 2/7$, the
+critical exponents, the spectral-action derivation — are proved fully in the
+appendices. The complete formalization (180+ theorems) is documented in the
+companion online supplement.
 
 \subsection{The coherence matrix $\Gam$}
 \label{subsec:gamma}
@@ -231,9 +232,15 @@ of regeneration per dimension at scale $\omega_0$. The adaptive amplification
   \label{eq:kappa-0}
 \end{equation}
 is the categorical norm $\|\mathrm{Nat}(\mathcal{D}_\Omega,\Regen)\|$ of the natural
-transformation between the dissipation and regeneration functors (T-88~\status{T}, Yoneda
-$+$ Bures $+$ Stinespring; see the master definition at
-\url{https://holon.sh/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0}).
+transformation between the dissipation and regeneration functors (T-88~\status{T}).
+The derivation uses Yoneda's embedding to identify $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$,
+the Bures metric on $\mathcal{C}_7$ to make this identification quantitative, and
+Stinespring's dilation theorem to ensure CPTP-compatibility. The factor structure
+$|\gamma_{OE}|\cdot|\gamma_{OU}|/\gamma_{OO}$ comes directly from the adjunction
+$\mathcal{D}_\Omega \dashv \mathcal{R}$ between dissipation and regeneration: $|\gamma_{OE}|$
+quantifies the $O\to E$ morphism strength (sensing of interiority), $|\gamma_{OU}|$
+the $O\to U$ morphism strength (integration coupling), and $\gamma_{OO}$ the $O$-self-loop
+(ground anchoring).
 Both $\kappa_{\mathrm{boot}}$ and $\kappa_0$ are \emph{derived}, not fitted. The full
 regeneration term is
 \begin{equation}
@@ -370,8 +377,10 @@ $\Dmin = 2$~\status{T} (T-151) means the system must distinguish at least two qu
 different experiences for consciousness to obtain.\footnote{The partial trace
 $\rho_E = \Tr_{-E}(\Gam)$ requires the extended 42D formalism (since 7 is prime and
 $\Hil$ does not factor as a tensor product). In the minimal 7D setting, $D_{\mathrm{diff}}$
-is approximated via the spectrum of $\Gam$ restricted to the E-sector. See
-\url{https://holon.sh/docs/core/structure/dimension-e} for the full treatment.}
+is exactly representable via T-128~\status{T}: $D_\mathrm{diff}^\mathrm{7D} = 1 + \mathrm{Coh}_E(\Gam)/\mathrm{Coh}_E^{\max}\cdot(N-1)$,
+which agrees with the 42D partial-trace expression by Morita equivalence (T-58~\status{T}):
+$\ShInf(\mathcal{C}_7) \simeq \ShInf(\mathcal{C}_{42}^\mathrm{PW})$. All UHM observables
+$P, R, \Phi, D_\mathrm{diff}$ are computable in the minimal 7D formalism.}
 
 \subsection{Consciousness measure $C$}
 \label{subsec:consciousness-measure}

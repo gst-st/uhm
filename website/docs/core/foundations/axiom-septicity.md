@@ -285,7 +285,7 @@ All three UHM thresholds admit an **ontological reading** through PID:
 | $R_{\text{th}}$ | $d_B(\Gamma, \varphi(\Gamma)) \leq d_B^{\text{ref}}$ | $1/3$ |
 | $\Phi_{\text{th}}$ | $d_B(\Gamma, \Gamma_{\text{diag}}) \geq d_B^{\text{class}}$ | $1$ |
 
-**Theorem (unity of thresholds) [T]:** All thresholds descend from a single metric—the Bures metric, which is the [unique monotone Riemannian metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес) on quantum state space (Čencov–Petz theorem). PID is definition [O] (T16) built into A1+A2.
+**Theorem (unity of thresholds) [T]:** All thresholds descend from a single metric—the Bures metric, which is the [canonical monotone Riemannian metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес) on quantum state space: classically unique (Chentsov 1982), and in the quantum case the **minimal** element of the Petz family of monotone Riemannian metrics (Petz 1996), uniquely characterized by three independent properties — Petz extremality, Uhlmann purification universality, and SLD-Fisher/Cramér-Rao saturation (T-187 [T], see [Cohesive Closure §5.3](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)). PID is definition [O] (T16) built into A1+A2.
 
 ## Formal statement
 

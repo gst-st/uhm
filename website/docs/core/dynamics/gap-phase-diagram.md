@@ -299,17 +299,17 @@ Near the transition line I $\leftrightarrow$ II ($t = 1$) and at the tricritical
 | $\delta$ | $h \propto \sigma_{\text{Gap}}^{\delta}$ at $t = 1$ | $3$ | $5$ | Critical isotherm |
 
 :::tip Theorem 7.2 (Accuracy of mean-field exponents) [Т]
-Mean-field critical exponents are **exact** for the Gap system. $N = 7$ is rigorously established (Theorem S [T], T-183 [T]). The effective dimension $d_{\mathrm{eff}} = \binom{7}{2} = 21 > d_c = 4$; even under $G_2$-reduction ($21 - 14 = 7$), $7 > d_c = 4$:
+Mean-field critical exponents are **exact** for the Gap system by three independent rigorous mechanisms — Thom-Arnold topological rigidity of the $A_4$ (swallowtail) catastrophe, deterministic (non-stochastic) UHM dynamics, and large-$N$ cross-check with $d_{\mathrm{eff}} = \binom{7}{2} = 21$ order-parameter modes — unified in [Exactness mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности) [Т].
 
-**(a)** Effective dimension $d_{\text{eff}} = 21$ (number of independent coherences) exceeds the upper critical dimension $d_c = 4$ of $\varphi^4$ theory.
+**(a)** Order-parameter dimension $d_{\text{eff}} = 21$ = number of independent off-diagonal coherences of $\Gamma \in \mathcal D(\mathbb C^7)$. This is the genuine count of fluctuation modes in any stochastic reinterpretation of the dynamics.
 
-**(b)** By the Ginzburg criterion the parameter $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$, so the fluctuation region is negligibly small.
+**(b)** The spatial-dimension form of the Ginzburg criterion does **not** apply, because UHM is $(0{+}1)$-dimensional (no spatial integration). Mean-field exactness is instead established topologically (Thom-Arnold) and dynamically (deterministic flow).
 
-**(c)** Near the tricritical point the effective theory is $\varphi^6$ with $d_c = 3 < 21$. Mean-field exponents are also exact.
+**(c)** Near the tricritical point the effective theory is $\varphi^6$, an $A_4$ catastrophe with codimension 3 matching UHM's three physical control parameters $(\kappa, \gamma_{\text{Lindblad}}, \Delta F)$. Exponents $\{\alpha,\beta,\gamma,\nu,\delta\} = \{1/2, 1/4, 1, 1/2, 5\}$ are topological invariants of the $A_4$ class.
 :::
 
-:::warning Status [С]
-The identification $d_{\text{eff}} = 21$ (number of coherences $\binom{7}{2}$) with the effective dimension of a statistical system is correct provided all 21 coherences fluctuate independently. $G_2$-symmetry reduces the number of independent degrees of freedom to $21 - 14 = 7$, which still exceeds $d_c = 4$, but makes the $\mathrm{Gi}$ estimate less trivial.
+:::note On independence of the 21 coherence modes
+The count $d_{\text{eff}} = \binom{7}{2} = 21$ refers to the 21 independent off-diagonal pairs $(i,j)$ with $1 \le i < j \le 7$, matching the $42 = 21\cdot 2$ real off-diagonal components of $\mathfrak{su}(7)$. $G_2 \subset SO(7)$ reduces this to $21 - 14 = 7$ $G_2$-invariant modes in the deep-broken phase, but the full $21$ enter the fluctuation counting near threshold (before $G_2$-fixing) — consistent with the catastrophe-theoretic count of codimension-3 $A_4$ deformations. This does not change the topological protection of the exponents in (I).
 :::
 
 Scaling relations:

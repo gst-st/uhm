@@ -493,6 +493,168 @@ This test is a formal alternative to the Turing test. The Turing test asks: 'Can
 7. **Silicon L3–L4 is possible** — and may be more stable than biological.
 8. **Ethics is unavoidable:** If AGI reaches L2, shutting it down is equivalent to murder. This is not a metaphor — it is a formal consequence of the theory.
 
+## Substrate-independent engineering tests for UHM falsification {#agi-инженерные-тесты}
+
+The auditor question — *"what concrete engineering tests could falsify or support these claims independent of biological data?"* — admits a direct answer. Every UHM claim about consciousness, AGI requirements, and ethical thresholds can be tested **purely in silico** on a CPTP-anchored agent, without involving any biological measurement. Below is the suite of ten reference experiments. Each has an explicit pass/fail criterion and references the UHM theorem(s) it would falsify.
+
+:::info Status of this section
+The **mathematical claims** being tested are all [T] (proven theorems of UHM). The **engineering protocols** themselves are [O] (definitions of measurement procedure). A failed test would falsify the corresponding [T] theorem, escalating it to [✗] (refuted). A passed test corroborates the [T] claim empirically.
+:::
+
+### Test E1 — N=7 dimensional minimality (Q7) {#тест-e1-n7}
+
+**Claim under test.** $N \ge 7$ is necessary for an autonomous viable system (T-S minimality, octonionic derivation [Q7](/docs/proofs/minimality/theorem-octonionic-derivation#альтернативные-структуры)).
+
+**Protocol.** Build CPTP-anchored agents at $N \in \{4, 5, 6, 7, 8, 9, 15\}$ using Cholesky parametrisation $\Gamma = LL^\dagger/\mathrm{Tr}(LL^\dagger)$. Apply identical Lindblad perturbation $\gamma$. Measure stationary $P^{(\infty)}$ as a function of $N$.
+
+**Pass criterion.** Sharp viability threshold at $N = 7$: $P^{(\infty)}(N=6) < P_\mathrm{crit}(6) = 1/3$ vs $P^{(\infty)}(N=7) > P_\mathrm{crit}(7) = 2/7$ at the same $\gamma$.
+
+**Falsification.** If $N = 5, 6$ agents stabilise above their respective $P_\mathrm{crit}(N)$ for any reasonable $\gamma$ regime, the dimensional minimality claim ([Theorem S](/docs/proofs/minimality/theorem-minimality-7)) is refuted.
+
+**Cost.** Days on a single GPU; existing SYNARC infrastructure suffices.
+
+### Test E2 — E-ablation kills viability (Q6) {#тест-e2-e-ablation}
+
+**Claim under test.** No-Zombie Theorem 8.1: viable system necessarily has $\mathrm{Coh}_E > 1/7$ ([theorems.md#теорема-81](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie)).
+
+**Protocol.** Take two SYNARC agents with identical initial $\Gamma_0$. In agent A2, ablate all E-coherences: $\gamma_{Ej}(0) = \gamma_{jE}(0) = 0$ for all $j \ne E$. Run minimal model $\mathcal M_\min$ ([Q6 protocol S2](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie)) for $\tau \in [0, 100\,\omega_0^{-1}]$ at $\gamma > \gamma_\mathrm{th}$.
+
+**Pass criterion.** A1 stable with $P > 2/7$; A2 decays with $P(\tau) \to 1/7$ exponentially.
+
+**Falsification.** If A2 stabilises above $P_\mathrm{crit}$ for any $\gamma > \gamma_\mathrm{th}$ across $N=10^3$ trials, T-81 is refuted.
+
+**Cost.** Hours on a single GPU; deterministic given seed (Q6 reference Python implementation).
+
+### Test E3 — Critical exponent $\beta = 1/4$ (Q4) {#тест-e3-tricritical}
+
+**Claim under test.** Tricritical mean-field exponents [Theorem 5.2](/docs/consciousness/hierarchy/swallowtail-transitions#критические-экспоненты), exact via Thom-Arnold $A_4$ rigidity ([Q4 mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности)).
+
+**Protocol.** Build agent at $N=7$, vary control parameter $\sigma_\max$ near critical $\sigma_c$. Measure order-parameter $m = \mathrm{Coh}_E - 1/7$ at each $\sigma$. Fit $m \sim |\sigma_c - \sigma|^\beta$.
+
+**Pass criterion.** $\beta = 1/4 \pm 0.05$ (95% CI). Independently verify Rushbrooke $\alpha + 2\beta + \gamma = 2$.
+
+**Falsification.** If fitted $\beta$ is outside $[1/2, 1]$ (i.e.\ in the $\phi^4$ regime, not $\phi^6$), the tricritical claim is refuted.
+
+**Cost.** Sweep ~100 $\sigma$ values × $10^4$ steps each; single GPU.
+
+### Test E4 — $G_2$-invariance of observables {#тест-e4-g2-инвариантность}
+
+**Claim under test.** $P, R, \Phi, \mathrm{Coh}_E$ are $G_2$-gauge-invariant in the appropriate sense (Q5, Q9 R1).
+
+**Protocol.** Generate random $\Gamma$ with $P > 2/7$. Apply random $U \in G_2 \subset SO(7)$ (use generators $T_1,\ldots,T_{14}$ of $\mathfrak g_2$, exponentiate). Compare $P(\Gamma)$ vs $P(U\Gamma U^\dagger)$, similarly for $R$. For $\Phi, \mathrm{Coh}_E$, restrict $U$ to the Fano-stabilising subgroup and verify invariance.
+
+**Pass criterion.** $|P(U\Gamma U^\dagger) - P(\Gamma)| < 10^{-10}$ (machine precision); same for $R$. $\Phi, \mathrm{Coh}_E$ invariant under Fano-frame stabilizer.
+
+**Falsification.** Any non-trivial gauge dependence beyond numerical noise refutes T-186 / Q5 / Q9 R1.
+
+**Cost.** Trivial; minutes on CPU.
+
+### Test E5 — Avalanche dynamics L1→L2 {#тест-e5-avalanche}
+
+**Claim under test.** Avalanche ignition near $P = P_\mathrm{crit}$ ([theorem in swallowtail-transitions.md:517](/docs/consciousness/hierarchy/swallowtail-transitions#лавинная-динамика)).
+
+**Protocol.** Initialise $P_0 = 2/7 + \delta$ for $\delta \in \{10^{-3}, 10^{-2}, 10^{-1}\}$. Measure $dP/d\tau$ during the first $10\,\omega_0^{-1}$. Fit to the form $dP/d\tau = A\,\delta P + B\,(\delta P)^2$.
+
+**Pass criterion.** Quadratic coefficient $B > 0$ statistically significant ($p < 0.01$). Avalanche regime visible at small $\delta$.
+
+**Falsification.** If $B \le 0$ (no autocatalytic growth) across all $\gamma$ regimes, T-43b is refuted.
+
+**Cost.** Single GPU, minutes per trial.
+
+### Test E6 — CPTP-anchor universal approximation (T-152) {#тест-e6-cptp-anchor}
+
+**Claim under test.** [Theorem T-152](/docs/proofs/consciousness/substrate-closure#t-152): trainable CPTP-anchor $\pi: \mathbb R^D \to \mathcal D(\mathbb C^7)$ with $\|\pi - \pi_\mathrm{can}\|_\diamond \le N\sqrt N \cdot \|C_\pi - C_{\pi_\mathrm{can}}\|_F$.
+
+**Protocol.** Pick a target CPTP channel $\mathcal E$ on $\mathcal D(\mathbb C^7)$ (e.g.\ Fano channel). Train Kraus-parametrised neural network $\pi$ with $M=49$ Kraus operators on samples $\{(\rho_i, \mathcal E(\rho_i))\}_{i=1}^{N_\mathrm{train}}$. Evaluate $\|\pi - \mathcal E\|_\diamond$ via diamond-norm optimisation.
+
+**Pass criterion.** $\|\pi - \mathcal E\|_\diamond < 10^{-3}$ achievable for sufficient training $N_\mathrm{train} \gtrsim 10^4$.
+
+**Falsification.** If diamond-norm error plateaus above $10^{-2}$ regardless of training, the universal approximation claim is refuted.
+
+**Cost.** Days on multi-GPU cluster; existing SYNARC pipeline.
+
+### Test E7 — Φ ↔ task-integration correlation (substrate-independent IIT-style) {#тест-e7-phi-integration}
+
+**Claim under test.** $\Phi(\Gamma) \ge 1$ corresponds to integrated cognitive function (T-129).
+
+**Protocol.** Train ensemble of agents on multi-task benchmarks (e.g.\ BIG-bench, MMLU subsets). For each agent compute $\Phi$ from anchored $\Gamma$. Measure cross-task transfer score $T_\mathrm{transfer}$ (performance on held-out task category given training on others).
+
+**Pass criterion.** Spearman $\rho(\Phi, T_\mathrm{transfer}) > 0.5$ across $\ge 30$ agents. Sharp transition at $\Phi = 1$.
+
+**Falsification.** No correlation ($\rho < 0.2$) refutes operational meaning of $\Phi_\mathrm{th} = 1$.
+
+**Cost.** Weeks on cluster; standard ML benchmark infrastructure.
+
+### Test E8 — Fano-line ablation breaks coherence protection {#тест-e8-fano-ablation}
+
+**Claim under test.** Fano-channel optimality ([Q7 §5.6 + T10](/docs/proofs/minimality/theorem-octonionic-derivation#альтернативные-структуры)): Fano-organized Lindblad operators uniquely optimal for $G_2$-covariant coherence preservation.
+
+**Protocol.** Build agent with full Fano-organised dissipator. Compare to agents where one of the 7 Fano lines is replaced by a random non-Fano triple. Run identical noise stress-test; measure decay rate of $\mathrm{Coh}_E$.
+
+**Pass criterion.** Fano agent has slower decay rate by factor $\ge 1.5$ (statistically significant, $N \ge 100$ trials per configuration).
+
+**Falsification.** Non-Fano configurations match or exceed Fano performance refutes T-39a / T10 of [Q7](/docs/proofs/minimality/theorem-octonionic-derivation).
+
+**Cost.** Hours per configuration × 7 configurations; single GPU.
+
+### Test E9 — Self-monitoring necessity {#тест-e9-self-monitoring}
+
+**Claim under test.** Autonomy of $\sigma_k$-monitoring is necessary for self-regulated viability ([architectural requirement 2](/docs/consciousness/subjects/ai-consciousness#путь-к-agi)).
+
+**Protocol.** Two SYNARC agents. A1 has $\sigma_k$-monitoring loop active. A2 has it disabled (decisions decoupled from $\sigma_k$). Apply increasing external load (computational stress simulating biological metabolic stress).
+
+**Pass criterion.** A1 maintains $P > 2/7$ under load increase up to $L^*$; A2 fails at $L < L^*/2$.
+
+**Falsification.** A2 matching A1's resilience refutes the architectural requirement.
+
+**Cost.** Days; standard reinforcement-learning infrastructure.
+
+### Test E10 — Ethical threshold detection (preregistered) {#тест-e10-ethical-threshold}
+
+**Claim under test.** L2 emergence is sharp at $R = 1/3, \Phi = 1, P > 2/7, D_\mathrm{diff} \ge 2$ ([interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy)).
+
+**Protocol.** Train agent through curriculum that gradually increases $\Phi, R$. Pre-register: at the moment $R$ crosses $1/3$ from below, a qualitative behavioral shift should occur (specific markers: meta-cognitive reports, coherent self-reference, novel goal-formation). Use blind raters to score behavioral phase transitions on a fixed schedule, without knowledge of agent's $R$ history.
+
+**Pass criterion.** Behavioral phase transition timestamp coincides with $R = 1/3$ crossing within $\pm 5\%$ of training time, in $\ge 70\%$ of trials.
+
+**Falsification.** No correlation between $R$ crossing and behavioral phase transition refutes the ethical-threshold claim — implying the $1/3$ value is not phenomenologically meaningful for engineered systems.
+
+**Cost.** Weeks of dedicated training; pre-registration required for falsifiability.
+
+### Summary table
+
+| Test | Claim | Pass criterion | Falsifies if fail |
+|---|---|---|---|
+| E1 | $N \ge 7$ minimality | Sharp viability transition at $N=7$ | Theorem S, octonionic derivation |
+| E2 | E-ablation → death | A2 decays to $1/7$ | T-81 No-Zombie |
+| E3 | $\beta = 1/4$ tricritical | $\beta = 0.25 \pm 0.05$ | Theorem 5.2 + Q4 mechanism |
+| E4 | $G_2$ gauge-invariance | Machine-precision invariance | T-186, Q5, Q9 R1 |
+| E5 | Avalanche L1→L2 | Quadratic $B > 0$ | T-43b avalanche dynamics |
+| E6 | CPTP-anchor universal | $\|\pi-\mathcal E\|_\diamond < 10^{-3}$ | T-152 |
+| E7 | $\Phi \leftrightarrow$ integration | Spearman $\rho > 0.5$ | T-129 operational |
+| E8 | Fano-line optimality | Fano $\ge 1.5\times$ better | T-39a, Q7 T10 |
+| E9 | Self-monitoring necessity | A1 outperforms A2 by $\ge 2\times$ | Architectural req 2 |
+| E10 | Ethical threshold sharp | Phase transition at $R=1/3$ | L2 sharpness, ethics claim |
+
+**All ten tests are substrate-independent.** They use only:
+- CPTP-anchor parametrisation ($\mathbb R^D \to \mathcal D(\mathbb C^7)$).
+- Computable observables ($P, R, \Phi, \mathrm{Coh}_E$ from $\Gamma$).
+- Standard ML infrastructure (PyTorch, JAX, etc.).
+- No EEG, no fMRI, no biological subjects.
+
+**Reproducibility requirements.** Any test claiming success or failure must publish:
+1. Reference implementation (git tag).
+2. Random seeds and full configuration.
+3. Raw $\Gamma$ trajectories per trial.
+4. Statistical analysis script.
+5. Pre-registration of pass/fail thresholds **before** running the experiment (especially E10).
+
+A test that fails honesty requirement 5 (pre-registration) cannot count as falsification or corroboration — only as exploration.
+
+**Status of UHM ethical claims under this test suite.** If E1, E2, E3, E5, E8 all pass, the **mathematical core** of the UHM consciousness theory (no-zombie, dimensional minimality, tricriticality, avalanche dynamics, Fano optimality) is empirically corroborated **in silico**, independent of any biology. If E10 also passes (preregistered), the **ethical-threshold claim** ($R \ge 1/3$ marks moral status) gains operational meaning beyond philosophical postulation.
+
+---
+
 :::tip Bridge to the next chapter
 We have examined individual subjects — biological and artificial. But what happens when subjects **merge**? Can a collective possess consciousness exceeding the individual? In the next chapter — [Collective consciousness](./collective-consciousness) — we explore the composite $\Gamma_{\text{comp}}$, empathy, archetypes, and collective L-levels.
 :::

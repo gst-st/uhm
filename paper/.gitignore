@@ -21,3 +21,7 @@
 
 # Generated PDF (rebuild from source)
 *.pdf
+
+# Preprint packaging outputs (regenerate via scripts/build-paper.ts)
+uhm-arxiv.tar.gz
+zenodo/

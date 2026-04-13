@@ -581,6 +581,54 @@ The three original arguments retain their motivational role, although they are n
 
 ---
 
+## §5.6 Comparative test against alternative incidence structures {#альтернативные-структуры}
+
+A skeptical reading of the T15 chain may ask: is there a **competing** incidence structure (graph, design, or finite geometry) with $N \neq 7$ that also satisfies the constraints? This subsection answers explicitly by enumerating the leading candidates and checking each against the seven structural constraints required by UHM.
+
+**The seven structural constraints (extracted from T1–T15):**
+
+| # | Constraint | Source step | Required value |
+|---|---|---|---|
+| C1 | Hurwitz dimension: $N+1 \in \{1,2,4,8\}$ | T15 + §1.1 | $N \in \{0,1,3,7\}$ |
+| C2 | E-dimension non-trivial: $N \ge 4$ | T6 (rank $\rho_E > 1$) | $N \ge 4$ |
+| C3 | Perfect Hamming code of length $N$: $N = 2^r - 1$ | T8 + §1.7 | $N \in \{1,3,7,15,31,\ldots\}$ |
+| C4 | Steiner triple system $STS(N)$: $N \equiv 1$ or $3 \pmod 6$ | T9 + Hall | $N \in \{3,7,9,13,15,19,21,\ldots\}$ |
+| C5 | BIBD closure $b=v$, $k=3$, $\lambda=1$: $bk(k-1) = v(v-1)\lambda$ with $b=v$ | T11–T14 | $N=7$ only (Hall, [Hall67]) |
+| C6 | Normed division algebra exists at $N+1$ | T15 + §1.3 | $N \in \{0,1,3,7\}$ |
+| C7 | $G_2$-rigidity: $\mathrm{Aut}$ = exceptional simple Lie group | §1.6 + uniqueness-theorem | $N=7$ only |
+
+**Pass/fail table for candidate structures.**
+
+| $N$ | Candidate | C1 | C2 | C3 | C4 | C5 | C6 | C7 | UHM-viable? |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1 | $\mathbb R$, trivial | ✓ | ✗ | ✓ ($H(1,1)$) | ✗ | ✗ | ✓ ($\mathbb R$) | ✗ | **No** (C2, C4, C5, C7 fail) |
+| 3 | $\mathbb H$, $STS(3)$ trivial | ✓ | ✓ | ✓ ($H(3,1)$ rep) | ✓ ($b=1$) | ✗ ($b=1\ne 3$) | ✓ ($\mathbb H$) | ✗ ($\mathrm{Aut}\mathbb H = SO(3)$) | **No** (C5, C7 fail) |
+| **7** | **$\mathbb O$, PG(2,2)** | **✓** | **✓** | **✓ ($H(7,4)$)** | **✓ ($STS(7)$)** | **✓ ($b=7,\lambda=1$)** | **✓ ($\mathbb O$)** | **✓ ($G_2$)** | **YES** |
+| 9 | $AG(2,3)$ ternary affine | ✗ | ✓ | ✗ | ✓ ($STS(9)$) | ✗ ($b=12$) | ✗ | ✗ | **No** (C1, C3, C5, C6, C7 fail) |
+| 13 | PG(2,3) | ✗ | ✓ | ✗ | ✓ ($STS(13)$) | ✗ ($b=26$) | ✗ | ✗ | **No** (C1, C3, C5, C6, C7 fail) |
+| 15 | PG(3,2) + $\mathbb S$ sedenions | ✗ ($16\notin$ Hurwitz beyond $\mathbb O$) | ✓ | ✓ ($H(15,11)$) | ✓ ($STS(15)$) | ✗ ($b=35$) | ✗ ($\mathbb S$ has zero divisors) | ✗ ($\mathrm{Aut}\mathbb S \neq$ simple) | **No** (C1, C5, C6, C7 fail) |
+| 21 | PG(2,4) | ✗ | ✓ | ✗ | ✓ ($STS(21)$) | ✗ ($b=70$) | ✗ | ✗ | **No** (5 constraints fail) |
+
+**Conclusion (Theorem on uniqueness of $N=7$ under (AP)+(PH)+(QG)+(V)) [Т].** The conjunction $C1 \cap C2 \cap C3 \cap C4 \cap C5 \cap C6 \cap C7$ is satisfied by **exactly one** value of $N$, namely $N=7$.
+
+**Proof.** $C1 \cap C3 = \{N : N+1\in\{2,4,8\} \wedge N = 2^r - 1\} = \{1,3,7\}$ (intersection of Hurwitz and Mersenne-1 sets). $C2$ adds $N\ge 4$, removing $1$ and $3$, leaving $\{7\}$. $C5$ independently isolates $N=7$ via Hall's BIBD closure theorem. $C6$ confirms $\mathbb O$ is the relevant division algebra. $C7$ locks the gauge group to $G_2$ via uniqueness of $\mathrm{Aut}(\mathbb O)$ as the unique exceptional simple Lie group obtainable as automorphisms of a Hurwitz algebra at this dimension. All seven constraints converge on $N=7$. $\square$
+
+**Notable near-misses (and why they fail):**
+
+- **$N=3$ ($\mathbb H$ quaternions, $STS(3)$).** Passes C1, C2, C3, C4, C6 but fails C5 (Steiner triple system on 3 points has only one block, $b=1\ne 3$) and C7 ($\mathrm{Aut}(\mathbb H) = SO(3)$, classical not exceptional). Insufficient combinatorial richness for the UHM dynamics.
+- **$N=9$ ($AG(2,3)$ ternary affine plane).** A Steiner triple system $STS(9)$ exists with 12 blocks of size 3 covering all 36 pairs. Fails C1 (no normed division algebra of dim 10), C3 (no perfect Hamming code of length 9), C5 (block count $b=12\ne v=9$), C6 and C7. Mathematically fine as a design but cannot host UHM physics.
+- **$N=15$ ($PG(3,2)$, $H(15,11)$, $\mathbb S$ sedenions).** Passes C2, C3, C4. Fails C1 (Hurwitz cuts off at dimension 8; $\mathbb S$ has zero divisors), C5 ($b=35$ blocks for $STS(15)$), C6, C7. The sedenion case is particularly instructive: passing the Cayley–Dickson boundary, one loses divisibility, and the automorphism group splits ($\mathrm{Aut}(\mathbb S) = G_2 \times S_3$, no longer simple) — both C6 and C7 fail.
+
+**Operational replication test.** An independent investigator can verify the table by:
+1. Running the BIBD identity $b\cdot k(k-1) = v(v-1)\lambda$ for $(v,k,\lambda) = (N,3,1)$ and checking $b = v$.
+2. Checking $N+1 \in \{2,4,8\}$ for normed-division-algebra existence (Hurwitz, finite check).
+3. Checking $N = 2^r - 1$ for Hamming-code length (finite check).
+4. Looking up $\mathrm{Aut}$ of the candidate algebra in any standard reference (e.g., Baez 2002 *The Octonions*, §3) and verifying it is one of the five exceptional simple Lie groups.
+
+The pass/fail outcome of these four mechanical checks is what fixes $N=7$ uniquely. There is no fitting freedom.
+
+---
+
 ## §6. Open Problems {#открытые-проблемы}
 
 **Problem 1 (Principle of minimal representation) — solved [Т].** Theorems T11–T13 prove $\lambda = 1$ from axioms A1–A5. The bridge is fully closed [Т].

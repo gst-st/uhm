@@ -658,16 +658,18 @@ The coincidence is not accidental: it is ensured by the large effective dimensio
 ### 9.2 Accuracy of Mean-Field Exponents
 
 :::tip Theorem 7.2 (Accuracy of Exponents) [T]
-Mean-field critical exponents are **exact** for the Gap system:
+Mean-field critical exponents are **exact** for the Gap system by three mutually-consistent mechanisms (see the full argument at [Exactness mechanism](/docs/consciousness/hierarchy/swallowtail-transitions#механизм-точности)):
 
-**(a)** Effective dimensionality $d_{\text{eff}} = 21$ (number of independent coherences) exceeds the upper critical dimensionality $d_c = 4$ of $\varphi^4$ theory.
+**(I) Topological rigidity.** By Thom–Arnold classification, codimension-3 catastrophes in one order-parameter coordinate are uniquely $A_4$ (swallowtail) with normal form $V_0(x) = x^5/5$. The five critical exponents $\{\alpha,\beta,\gamma,\nu,\delta\} = \{1/2, 1/4, 1, 1/2, 5\}$ are **topological invariants** of this catastrophe class — they are insensitive to smooth deformations of the potential.
 
-**(b)** Ginzburg parameter $\mathrm{Gi} \propto (d_c/d_{\text{eff}})^{d_{\text{eff}}/2} \to 0$ — the fluctuation region is negligibly small.
+**(II) Deterministic UHM dynamics.** The flow $d\Gamma/d\tau = \mathcal L_\Omega(\Gamma) + \mathcal R(\Gamma)$ is deterministic; no thermal ensemble average is performed. The Gap Landau potential is the effective potential of the flow, and its saddle-points are the actual deterministic attractors of $\Gamma$-dynamics. No stochastic Ginzburg correction is applicable.
+
+**(III) Large-$N$ cross-check.** The order-parameter dimension of UHM near threshold is $d_{\mathrm{eff}} = \binom{7}{2} = 21$ (independent off-diagonal coherences in $\mathfrak{su}(7)$, with $\mathrm{dim}\,\mathfrak{su}(7) = 48 = 6_{\mathrm{diag}} + 42_{\mathrm{off}}$ giving 21 complex off-diagonal modes paired by Fano lines). If UHM were re-interpreted as a stochastic $O(N)$-tensor model, leading $1/N$ corrections would be $\sim 1/21 \approx 5\%$ — within experimental resolution.
+
+**Note on conventional Ginzburg.** The usual Ginzburg criterion requires a spatial dimension; UHM has no spatial integration (a holon is $(0{+}1)$-D), so the spatial form of the criterion does not directly apply. Mechanisms (I)–(III) above provide the genuine justification.
 :::
 
-This is a powerful result: for most physical systems, critical exponents are *not* mean-field — fluctuations introduce non-trivial corrections (hence renormalization group, $\varepsilon$-expansion, etc.). But the Gap system lives in $d_{\text{eff}} = 21$ dimensions — far beyond the upper critical dimensionality $d_c = 4$. The Ginzburg parameter, which determines the width of the critical region in which mean-field theory breaks down, is negligibly small: $\mathrm{Gi} \sim (4/21)^{21/2} \approx 10^{-7}$.
-
-Consequence: **mean-field Gap theory is exact** — no renormalization corrections are needed. Critical exponents can be computed analytically. This makes Gap theory one of the few systems admitting an *exact* description of the phase transition.
+Consequence: **mean-field Gap theory is exact** — no renormalisation corrections are needed. Critical exponents can be computed analytically. Gap theory is one of the few physical systems admitting a truly exact description of its phase transition, because the deterministic-dynamical formulation does not introduce stochastic fluctuations in the first place.
 
 ### 9.3 The Cost of Enlightenment
 

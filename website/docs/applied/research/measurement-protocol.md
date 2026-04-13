@@ -667,7 +667,11 @@ The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}
 ### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}
 
 :::info Theorem ($G_2$-uniqueness of $\pi_{\mathrm{bio}}$) [T given $G_2$-rigidity]
-If a homomorphism $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}^7)$ exists that is compatible with (AP)+(PH)+(QG)+(V), then it is unique up to $G_2$-gauge (14-dimensional freedom). All physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are gauge-invariant.
+If a continuous map $\pi_{\mathrm{bio}}: \mathcal X \to \mathcal{D}(\mathbb{C}^7)$ exists on a neural-feature space $\mathcal X$ that is compatible with (AP autopoiesis)+(PH phenomenological thresholds)+(QG $G_2$-covariance)+(V continuity), then it is unique up to the $G_2$-gauge action $\Gamma \mapsto U\Gamma U^\dagger$ with $U \in G_2$ (14-dimensional freedom). All physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are gauge-invariant.
+
+**Proof sketch.** Suppose $\pi_{\mathrm{bio}}^{(1)}$ and $\pi_{\mathrm{bio}}^{(2)}$ both satisfy (AP)+(PH)+(QG)+(V). The map $\varphi := \pi_{\mathrm{bio}}^{(2)} \circ (\pi_{\mathrm{bio}}^{(1)})^{-1}$ is a continuous automorphism of $\mathcal D(\mathbb C^7)$ preserving $P,R,\Phi$ pointwise and compatible with (AP). By the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T], the group of continuous $\mathcal D(\mathbb C^7)$-automorphisms preserving the holonomic structure ($P$, $R$, $\Phi$, self-model operator $\varphi_{\text{AP}}$, Fano-plane gauge structure) is precisely $G_2 = \mathrm{Aut}(\mathbb O)$ of real dimension 14. Hence $\varphi(\Gamma) = U\Gamma U^\dagger$ for a unique $U \in G_2$, i.e.\ $\pi_{\mathrm{bio}}^{(2)}(x) = U\,\pi_{\mathrm{bio}}^{(1)}(x)\,U^\dagger$.
+
+Gauge-invariance of observables: $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ and $R(\Gamma) = 1/(7P(\Gamma))$ depend only on spectral data, invariant under unitary conjugation. $\Phi$ and $\mathrm{Coh}_E$ are Hilbert–Schmidt functions of $\Gamma$ and the self-model $\varphi$, both $G_2$-covariant, hence invariant under $U \in G_2$. $\square$
 :::
 
 Basic idea: neural activity in different EEG frequency bands projects onto the 7 dimensions of $\Gamma$. Cross-frequency coupling (CFC) determines the coherences $|\gamma_{ij}|$, and phase mismatches determine the Gap profile.
@@ -881,6 +885,83 @@ def pi_bio(
 
     return Gamma
 ```
+
+### Replication-Ready Specification for TMS-EEG PCI Data {#replication-ready-tms-eeg}
+
+:::tip Replication target
+This subsection fixes the reference implementation of $\pi_{\mathrm{bio}}$ applied to the TMS-EEG Perturbational Complexity Index (PCI) paradigm, in enough detail that an independent laboratory can attempt replication end-to-end from a publicly available dataset. Replication here refers to computing $P$, $R$, $\Phi$ from raw EEG and checking the monotonic relation to PCI (Prediction P8.3) — **not** to re-proving the mathematical core, which remains fixed by the $G_2$-uniqueness theorem above.
+:::
+
+**R1. Public datasets.** The following TMS-EEG datasets are candidates for independent replication; none has universal open-access but each is obtainable on request from the authors or through institutional data-sharing:
+
+| # | Dataset | Source | Subjects | States | Access |
+|---|---------|--------|---------|--------|--------|
+| R1.a | Casali et al. 2013 PCI benchmark | Massimini lab (Milan) | 52 healthy + 98 clinical | Wake / NREM / REM / anesthesia / VS / MCS / LIS | On request |
+| R1.b | OpenNeuro ds004504 (TMS-EEG benchmark, 2023) | Rogasch lab | 20 healthy | Wake (baseline) | Open |
+| R1.c | Comsa et al. 2019 (OSF registration "TMS-EEG sleep") | Lausanne CHUV | 12 healthy | Wake / NREM N2 / N3 | OSF restricted |
+| R1.d | Bodart et al. 2018 (clinical PCI extension) | Liège | 141 DoC patients | Wake / UWS / MCS / EMCS | Per-request |
+
+For first-pass replication, dataset R1.b is recommended (fully open, standardized single-pulse TMS-EEG on healthy waking subjects, expected PCI ≈ 0.40-0.48).
+
+**R2. Pre-processing pipeline (MNE-Python canonical).** The reference preprocessing chain, to be applied to raw EEG (60-channel montage, 1 kHz sampling, TMS-triggered epochs $[-1, +1]\,\mathrm{s}$):
+
+| Step | Operation | Tool / parameters |
+|------|-----------|-------------------|
+| R2.1 | TMS pulse artefact removal | Cubic interpolation over $[-2, +12]\,\mathrm{ms}$ around the pulse (`mne.preprocessing.fix_stim_artifact`) |
+| R2.2 | Downsample | 1 kHz → 250 Hz (`mne.Epochs.resample`) |
+| R2.3 | Re-reference | Average reference, exclude TMS-side frontal channels |
+| R2.4 | Bandpass filter | 0.5–80 Hz, 4th-order Butterworth zero-phase (`mne.filter.filter_data`) |
+| R2.5 | Notch filter | 50 Hz (or 60 Hz), Q = 30 |
+| R2.6 | ICA artefact rejection | FastICA, 30 components; reject TMS-locked decay, eye-blink, ECG (`mne.preprocessing.ICA`) |
+| R2.7 | Epoch-level rejection | $|\text{max}-\text{min}| > 120\,\mu\mathrm V$ → drop epoch |
+| R2.8 | Spectral decomposition | Morlet wavelets, 1–80 Hz log-spaced, 5-cycle wavelet, baseline $[-600,-100]\,\mathrm{ms}$ |
+
+The canonical bands used by $\pi_{\mathrm{bio}}$ are then extracted from the wavelet spectrogram (integrated over post-TMS window $[0, +300]\,\mathrm{ms}$, averaged across channels for diagonal feature vector; cross-channel pairwise for CFC computations).
+
+**R3. Feature extraction.** From the preprocessed data, compute:
+- Seven scalar spectral features $S_A, S_S, S_D, S_L, S_E, S_O, S_U$ per the [Step-1 band table](#шаг-1-диагональ).
+- Cross-frequency-coupling matrix $\mathrm{CFC}_{ij}$ ($7\times 7$) per the [Step-2 table](#шаг-2-когерентности) using the Tort Modulation Index (`mne_connectivity`).
+- 21 reaction-time surrogates $\mathrm{RT}_{ij}$ from paradoxical probes if behavioural data is available; otherwise set $\mathrm{RT}_{ij}$ to the pairwise phase-locking value (PLV) as a proxy.
+- HRV features $\mathrm{LF}, \mathrm{HF}$ from simultaneous ECG (required for $O$ and $U$ dimensions).
+
+**R4. Calibration.** Weights $w_k$ are determined by fitting $\pi_{\mathrm{bio}}$ on a **healthy-waking reference cohort** ($\ge 20$ subjects) such that the population mean of $\gamma_{kk}$ is uniform $= 1/7 \pm 0.02$. Cross-validation: leave-one-subject-out, target consistency of reconstructed $P$ across subjects ($\mathrm{CV} < 15\%$).
+
+**R5. Reconstruction.** Run the MLE algorithm (Step 4 above) with:
+- Cholesky initialization from the calibrated diagonal.
+- Optimizer: `scipy.optimize.minimize(method='L-BFGS-B', options={'ftol': 1e-9, 'maxiter': 500})`.
+- Regularizer: $\lambda_1 = 0.1$, $\lambda_2 = 100$ (empirical defaults; subjects should try $\lambda_1 \in \{0.01, 0.1, 1\}$ and report sensitivity).
+
+**R6. Observable computation.** From the reconstructed $\Gamma$ (canonical definitions):
+- $P = \mathrm{Tr}(\Gamma^2) = \|\Gamma\|_F^2$ (purity) — **$G_2$-gauge-invariant** (trace of $\Gamma^2$ under unitary conjugation).
+- $R = 1/(7P)$ (reflection, [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126)) — **$G_2$-gauge-invariant** (function of $P$).
+- $\Phi = \dfrac{\sum_{i\ne j}|\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} = \dfrac{\|\Gamma - \Gamma_\mathrm{diag}\|_F^2}{\|\Gamma_\mathrm{diag}\|_F^2}$ (integration, [Φ canonical](/docs/core/structure/dimension-u#мера-интеграции-φ)) — **basis-dependent**: invariant under permutations and sign flips within the $G_2$-stabilised Fano frame (7-point labelling of $\{A,S,D,L,E,O,U\}$), which is the gauge residue relevant for empirical replication.
+- $\mathrm{Coh}_E = \dfrac{\gamma_{EE}^2 + 2\sum_{i\ne E}|\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}$ (E-coherence, [Coh_E canonical](/docs/core/foundations/axiom-septicity#coh-e-canonical)) — **$E$-fixed-frame quantity**: invariant under the stabiliser $G_2^{(E)} \subset G_2$ that fixes $|E\rangle$. For cross-laboratory replication, pin the $|E\rangle$-direction to the phenomenological interiority axis (γ-high × θ PAC), as specified in [Step 1](#шаг-1-диагональ).
+
+**Gauge-fixing protocol for replication.** Two implementations applied to the same EEG recording will yield $P$ and $R$ in full agreement (by strict $G_2$-invariance) but may differ on $\Phi, \mathrm{Coh}_E$ if the Fano-frame orientation or the $E$-axis assignment is not fixed. The canonical gauge-fixing rule is: (i) align the 7-axis labelling to the Fano-plane convention of [Dimensions §Fano](/docs/core/structure/dimensions), and (ii) anchor $|E\rangle$ to the phenomenological γ-high×θ feature as per R3. Replicators must publish their gauge-fixing choices explicitly (item (ii) in R8 below).
+
+All four quantities are $G_2$-gauge-invariant by the uniqueness theorem above.
+
+**R7. Validation against PCI.**
+- Compute the subject's PCI on the same TMS-EEG data via the Massimini algorithm (Lempel–Ziv complexity of significant sources; reference implementation available via PCIst package).
+- Test the monotonic hypothesis $\Phi(\Gamma) \approx \alpha_\mathrm{PCI}\cdot \mathrm{PCI} + \beta_\mathrm{PCI}$ (Step 5 theorem).
+- Pre-register: $r_{\mathrm{Spearman}} \ge 0.5$ across $\ge 20$ subjects constitutes corroboration; $r < 0.3$ constitutes falsification of P8.3.
+
+**R8. Reference implementation stub.** The Python code in the next subsection is *reference* only: it documents the algorithm faithfully but is not a turn-key pipeline. A complete MNE-Python implementation with:
+- `mne.Raw` loader wrapped around BIDS formatted EEG,
+- `mne_connectivity` integration for CFC,
+- `scipy.optimize.minimize` MLE wrapper,
+- `pyphi`-compatible $\Phi$ computation (optional),
+- CI reporting,
+is planned as a separate package `uhm-neurocalib` (release gated on R1.b pilot results). Until that package is available, independent implementers should use the pseudocode as specification, and file issues/PRs on mismatches to the specification here.
+
+**Reproducibility requirements.** Any claim of successful or failed replication should publish:
+- (i) raw data (BIDS format) and preprocessing scripts (reproducible from R2);
+- (ii) reconstructed $\Gamma$ matrices and gauge-fixing choice made;
+- (iii) $P, R, \Phi, \mathrm{Coh}_E$ values per subject;
+- (iv) PCI values computed on same epochs;
+- (v) statistical test protocol and seed for random splits.
+
+Without items (i)-(v), a replication attempt cannot be audited.
 
 ### Testable Predictions of the $\pi_{\mathrm{bio}}$ Protocol {#тестируемые-предсказания-p8}
 
