@@ -19,7 +19,7 @@ We fix the following data once and for all.
 \begin{enumerate}[leftmargin=2em,nosep]
   \item The holon Hilbert space is $\Hil = \mathbb{C}^7$ (Axiom A3 in
     Section~\ref{sec:axioms}; independent derivation of $N=7$ from octonionic
-    minimality is given in Appendix~\ref{app:minimality-hint} and is not used
+    minimality is given in Section~\ref{subsec:why-seven} and is not used
     in this appendix).
   \item $\Dens := \Dens(\mathbb{C}^7) = \{\Gam \in M_7(\mathbb{C}) : \Gam = \Gam^{\dagger},\ \Gam \geq 0,\ \Tr\Gam = 1\}$
     is the compact convex set of density matrices.
@@ -306,7 +306,7 @@ they provide \emph{cross-validation} of a single structural constant of
 $\Dens(\mathbb{C}^7)$. The value $\Pcrit = 2/7$ has no free parameters:
 it is determined, uniquely and without fit, by the choice of Hilbert-space
 dimension $N = 7$ (Axiom A3, derived independently in
-Appendix~\ref{app:minimality-hint}).
+Section~\ref{subsec:why-seven}).
 
 \subsection{Explicit assumptions for auditor reference}
 \label{app:pcrit-assumptions}
@@ -318,8 +318,7 @@ For transparency, the complete list of assumptions used in this appendix is:
   \item Density matrices are self-adjoint PSD trace-one operators on $\mathbb{C}^7$.
   \item The Frobenius norm is $\|A\|_F^2 = \Tr(A^{\dagger}A)$.
   \item The reference state is the maximally mixed state $I/7$
-    (justified independently in Section~\ref{subsec:reflection-canonicity}
-    and Appendix~\ref{app:rcanon}: $I/7$ is the unique
+    (justified independently by the $G_2$-invariance argument: $I/7$ is the unique
     $G_2$-invariant density matrix).
   \item The Haar measure on rank-one projectors on $\mathbb{C}^7$ (Weingarten formula used only in A.4).
 \end{enumerate}
@@ -329,10 +328,10 @@ No other assumption, postulate, or empirical input is used. In particular:
   \item No \emph{ad hoc} numerical thresholds (every numerical value in the
     appendix is derived from $N=7$).
   \item No reliance on the website, on other documents of the project, or
-    on results labeled ``[И]'' (interpretation).
+    on results labeled ``[I]'' (interpretation).
   \item The statement ``$I/7$ is the canonical reference'' is used only in
     A.4 and A.5 and is justified by the $G_2$-invariance argument
-    (Appendix~\ref{app:rcanon}, Theorem R.2); all other routes (A.1, A.2, A.3)
+    (Schur's lemma on the irreducible $G_2$-module, Section~\ref{subsec:why-seven}); all other routes (A.1, A.2, A.3)
     are independent of the choice of reference and work for any density
     matrix with trace $1$ on $\mathbb{C}^7$.
 \end{itemize}
