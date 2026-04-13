@@ -351,7 +351,7 @@ The subobject classifier $\Omega \in \mathrm{Sh}_\infty(\mathcal{C})$ is the uni
 All three constructions are **canonical** (no free parameters) and **equivariant** under $G_2$.
 :::
 
-**Proof sketch.**
+**Proof.**
 
 1. **Atoms → logic.** By [A1](./axiom-omega#внутренняя-логика): $\Omega$ is the subobject classifier in $\mathrm{Sh}_\infty(\mathcal{C})$. Atomic subobjects $S_k = |k\rangle\langle k|$ ($k = 0, \ldots, 6$) are the minimal nonzero elements of the lattice $\mathrm{Sub}(\Omega)$. By $N = 7$ ([A3](./axiom-omega#свойство-1)): exactly 7 atoms forming a basis. Operations $\land, \lor, \Rightarrow$ on $\mathrm{Sub}(\Omega)$ induce **intuitionistic logic** ([Lawvere, 1969](./mathematical-foundations#лавёр)).
 

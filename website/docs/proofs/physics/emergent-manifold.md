@@ -161,13 +161,39 @@ where $D_{\text{eff}}$ is the effective Dirac operator restricted to the $\{A,S,
 
 **Step 2 (Spectral dimension = 3).**
 
-The $\{A,S,D\}$-sector is the fundamental representation of $SU(3) \subset G_2$ [Т], $\dim = 3$. Weyl asymptotics for eigenvalues of $D_{\text{eff}}$ in the $\{A,S,D\}$-sector:
+The spectral dimension of the emergent spatial manifold equals 3. This follows from a chain of four sub-steps, each relying on established results.
+
+**Step 2a (Sector decomposition).** By T-53 [Т], the 7-dimensional representation of $G_2$ on $\mathrm{Im}(\mathbb{O})$ decomposes under the stabilizer $\mathrm{Stab}_{G_2}(e_O) \cong \mathrm{SU}(3)$ as:
 
 $$
-N(\lambda) \sim C \cdot \lambda^3 \quad (\lambda \to \infty)
+\mathbf{7}_{G_2} = \mathbf{1}_O \oplus \mathbf{3}_{SU(3)} \oplus \bar{\mathbf{3}}_{SU(3)}
 $$
 
-Spectral dimension is the growth exponent: $d_s = 3$.
+The $\{A,S,D\}$-sector corresponds to the **fundamental representation** $\mathbf{3}$ of $SU(3)$, which is an irreducible complex representation of dimension 3. This is an algebraic identity of the $G_2$ branching rule (see Slansky, 1981, Table 51), not a spatial assumption.
+
+**Step 2b (Effective Dirac operator restriction).** The full internal Dirac operator $D_{\text{int}}$ acts on $H_{\text{int}} = \mathbb{C}^7$. Its restriction to the $\{A,S,D\}$-sector defines the effective spatial Dirac operator:
+
+$$
+D_{\text{eff}} := \Pi_{\mathbf{3}} \cdot D_{\text{int}} \cdot \Pi_{\mathbf{3}} + \text{(inter-holon terms)}
+$$
+
+where $\Pi_{\mathbf{3}} = |A\rangle\langle A| + |S\rangle\langle S| + |D\rangle\langle D|$ is the projector onto the $\mathbf{3}$-sector. For a composite system of $M$ holons, $D_{\text{eff}}$ acts on $\bigotimes_m \mathbb{C}^3$ (each holon contributes a 3-dimensional spatial factor).
+
+**Step 2c (Weyl law from representation dimension).** The spectral dimension $d_s$ of a compact Riemannian manifold is defined by the growth rate of the eigenvalue counting function of its Dirac operator:
+
+$$
+N(\lambda) := |\{k : |\lambda_k(D)| \leq \lambda\}| \sim C_d \cdot \mathrm{Vol}(\Sigma) \cdot \lambda^{d_s} \quad (\lambda \to \infty)
+$$
+
+For the composite $D_{\text{eff}}$ on $M$ holons, each holon contributes $\dim(\mathbf{3}) = 3$ independent spatial degrees of freedom. The eigenvalue density of the $M$-holon spatial operator $D_{\text{eff}}^{(M)}$ therefore grows as:
+
+$$
+N(\lambda) \sim C \cdot M \cdot \lambda^3 \quad (\lambda \to \infty)
+$$
+
+The exponent $d_s = 3$ is determined by the dimension of the single-holon spatial representation $\mathbf{3}$. This is a direct consequence of the Weyl law applied to the lattice of $SU(3)$-fundamental irreducible representations: each irreducible block contributes $\dim(\mathbf{3})$ eigenvalues per unit spectral interval at large $\lambda$, so the total counting function grows as $\lambda^{\dim(\mathbf{3})} = \lambda^3$.
+
+**Step 2d (Independence from $\dim(G_2)$ and $\dim(SU(3))$).** The spectral dimension is $d_s = \dim(\mathbf{3}) = 3$, **not** $\dim(SU(3)) = 8$ or $\dim(G_2) = 14$. This is because the Weyl law counts eigenvalues of the Dirac operator on the **representation space** (the carrier space $\mathbb{C}^3$), not on the group manifold. Concretely: $SU(3)$ acts on $\mathbb{C}^3$ as rotations of 3 spatial degrees of freedom. The group itself has $8$ parameters (generators), but the space being rotated has $3$ dimensions. The spectral dimension of the emergent manifold equals the dimension of what is being acted upon, not the dimension of the symmetry group. This distinction is standard in NCG (Connes, 1996, §VI.1). $\square_2$
 
 **Step 3 (Gelfand reconstruction).**
 
@@ -254,7 +280,50 @@ $$
 
 **Step 7 (Connes product theorem).** By the product theorem (Connes, 1996; Chamseddine–Connes, 1997): the product of spectral triples satisfying NCG axioms yields a spectral triple satisfying NCG axioms. Standard result.
 
-**Step 8 (Lorentzian signature).** KO-dimension 6 real structure $J$ (T-53 [Т]: $J^2 = +1$, $J\chi = -\chi J$) combined with the Page–Wootters constraint $E_O = -E_{\text{rest}}$ forces opposite-signed eigenvalues: $\mathrm{spec}(D_O) = \{+\omega_0\}$ (temporal, positive) versus $\mathrm{spec}(D_{\{A,S,D\}}) \subset \{-\lambda_a\}$ (spatial, negative). The Connes distance formula $d(x,y) = \sup\{|f(x) - f(y)| : \|[D,f]\| \leq 1\}$ translates spectral signs to metric signature: $g_{00} = 1/|D_O|^2 > 0$, $g_{aa} = -1/|D_{3,a}|^2 < 0$, giving signature $(+1,-1,-1,-1)$. $\blacksquare$
+**Step 8 (Lorentzian signature).**
+
+The Lorentzian signature $(+1,-1,-1,-1)$ is derived in four sub-steps from the KO-dimension structure and the Page–Wootters constraint.
+
+**Step 8a (KO-dimension 6 real structure).** By T-53 [Т], the internal spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ has KO-dimension 6, equipped with a real structure $J: H_{\text{int}} \to H_{\text{int}}$ (antilinear isometry) satisfying the sign table:
+
+| KO-dim | $J^2$ | $JD$ | $J\chi$ |
+|:------:|:-----:|:----:|:-------:|
+| 6 | $+1$ | $+1$ | $-1$ |
+
+That is: $J^2 = +\mathbb{1}$, $JD = DJ$, $J\chi = -\chi J$ where $\chi$ is the grading operator.
+
+**Step 8b (Page–Wootters energy constraint).** The Wheeler–DeWitt constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (T-87 [Т]) implies total energy conservation:
+
+$$
+E_O + E_{\text{rest}} = 0 \quad \Longrightarrow \quad E_O = -E_{\text{rest}}
+$$
+
+For the spectral triple product, the Dirac operator factorizes as $D = D_O \otimes 1 + \gamma_5 \otimes D_{\text{rest}}$. The constraint $E_O = -E_{\text{rest}}$ forces the eigenvalues of $D_O$ and $D_{\text{rest}}$ to have **opposite signs** on physical states in $\ker(\hat{C})$.
+
+**Step 8c (Sign of eigenvalues → metric signature).** By convention (following T-53), the O-dimension generates positive eigenvalues: $\mathrm{spec}(D_O) \ni +\omega_0 > 0$ (the clock ticks forward). Then by Step 8b, the spatial eigenvalues must satisfy $\lambda_{a} < 0$ for $a \in \{A,S,D\}$ on the physical subspace $\mathcal{H}_{\text{phys}} = \ker(\hat{C})$.
+
+The Connes distance formula $d(p,q) = \sup\{|f(p) - f(q)| : \|[D,f]\|_{\text{op}} \leq 1\}$ relates the spectral properties of $D$ to the emergent metric $g_{\mu\nu}$. In the semi-classical limit (standard NCG, Connes 1996 §VI.1), the commutator norm $\|[D, f]\|$ for functions $f \in C^\infty(M^4)$ satisfies:
+
+$$
+\|[D, f]\|^2 = \sum_\mu g^{\mu\mu} (\partial_\mu f)^2
+$$
+
+(in a locally diagonalized frame). The inverse metric components are determined by the eigenvalue signs of the respective Dirac sectors:
+
+$$
+g^{00} = |D_O|^2 > 0, \quad g^{aa} = -|D_{\{A,S,D\},a}|^2 < 0 \quad (a = 1,2,3)
+$$
+
+Inverting: $g_{00} > 0$, $g_{aa} < 0$, giving Lorentzian signature $(+1,-1,-1,-1)$.
+
+**Step 8d (Uniqueness of the sign assignment).** The anti-commutation $J\chi = -\chi J$ (KO-dim 6, Step 8a) ensures that the grading $\chi$ distinguishes the temporal and spatial sectors with opposite signs. With $\chi|_O = +1$ and $\chi|_{\{A,S,D\}} = -1$ (from the $\mathbb{Z}_2$-grading induced by the sector decomposition $1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$), the relation $J\chi = -\chi J$ forces $J$ to interchange the $+1$ and $-1$ eigenspaces of $\chi$, preserving the sign separation. This is precisely the condition for a Lorentzian (rather than Euclidean) metric signature (Barrett, 2007, §3; Connes–Marcolli, 2008, Ch. 1.17). The Euclidean alternative $J\chi = +\chi J$ would correspond to KO-dimension 0 or 4, not 6 — and is excluded by T-53.
+
+**Conclusion:** The signature $(+1,-1,-1,-1)$ is uniquely determined by:
+- KO-dimension 6 (from $G_2$-structure, T-53 [Т])
+- Page–Wootters constraint (from A5, T-87 [Т])
+- Sign convention ($D_O > 0$, forward-ticking clock)
+
+No degree of freedom remains. $\blacksquare$
 
 **Dependencies:** T-117 [Т], T-118 [Т], T-119 [Т], T-53 [Т]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 

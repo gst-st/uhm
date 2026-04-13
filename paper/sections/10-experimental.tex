@@ -76,6 +76,23 @@ $\pi_{\mathrm{bio}}: (\mathrm{EEG}, \mathrm{fMRI}, \mathrm{HRV}) \to \Gam \in
 \Dens(\mathbb{C}^7)$ and verify that $\Pcrit = 2/7$ coincides with the empirical PCI
 threshold $\mathrm{PCI}^* = 0.31$~\cite{casali2013}.
 
+\paragraph{Formal definition of $\pi_{\mathrm{bio}}$.}
+The neural anchor map is a CPTP channel
+$\pi_{\mathrm{bio}}: \mathcal{O}_{\mathrm{neural}} \to \Dens(\mathbb{C}^7)$
+constructed in four steps:
+(1)~extract 7 canonical neural observables (spectral edge, DFA exponent, permutation
+entropy, theta-gamma coupling, PCI, HRV, mean PLI) corresponding to the 7 UHM
+dimensions $\{A,S,D,L,E,O,U\}$;
+(2)~normalise to a density matrix diagonal via softmax:
+$\gamma_{kk} = \exp(\beta z_k)/\sum_j \exp(\beta z_j)$, where $z_k = (x_k - \mu_k)/\sigma_k$
+is standardised and $\beta$ is calibrated to match PCI$^* \leftrightarrow \Pcrit$;
+(3)~reconstruct off-diagonal coherences from pairwise coherence and phase-locking values,
+regularised by Cholesky decomposition to guarantee positivity;
+(4)~align to canonical gauge via $G_2$-covariant Procrustes (T-123~\status{T}).
+The construction is CPTP by composition (softmax $+$ Cholesky $=$ positive, trace-preserving).
+The calibration parameter $\beta$ is empirical~[H]; after Phase~II validation, the full
+map becomes a validated instrument~[T].
+
 \paragraph{Equipment.}
 All required instruments are commercially available and standard in
 neuroscience labs (Table~\ref{tab:equipment}). No custom hardware is needed.

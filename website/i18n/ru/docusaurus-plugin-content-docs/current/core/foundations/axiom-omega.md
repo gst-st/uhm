@@ -689,12 +689,19 @@ $$e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^* + O(\delta\ta
 
 где $\triangleright^*$ — индуцированное действие на состояниях, $\delta\tau = 2\pi/(7\omega_0)$.
 
-**Эскиз доказательства:**
-1. Генератор ▷-действия: $T := (\omega_0/2\pi i) \cdot \log(\triangleright)$, определённый на конечномерном $\text{Spec}(\Omega)$
-2. На конечномерном пространстве $\log$ определён через жорданову форму
-3. Разложение: $e^{i\delta\tau \cdot T} = \triangleright$ (точно для $\delta\tau = 2\pi/(7\omega_0)$)
-4. Линеаризация $\mathcal{L}_\Omega$ вблизи равновесия: $\mathcal{L}_\Omega \approx -i[H_{eff}, \cdot] + O(\text{декогеренция})$
-5. Сравнение: $T \leftrightarrow H_{eff}$ с точностью до масштаба $\omega_0$ ∎
+**Доказательство.**
+
+**Шаг 1 (Генератор $\triangleright$).** Сдвиг $\triangleright$ действует на 7-элементном множестве атомов $\{S_0, \ldots, S_6\}$ как циклическая перестановка порядка 7. Его матричное представление в базисе атомов — матрица перестановки $P_\sigma$ с собственными значениями $\zeta^k = e^{2\pi i k/7}$, $k = 0, \ldots, 6$. Определим эрмитов генератор:
+
+$$T := \frac{\omega_0}{2\pi i} \log(\triangleright) = \omega_0 \sum_{k=0}^{6} \frac{k}{7} |\tilde{k}\rangle\langle\tilde{k}|$$
+
+где $|\tilde{k}\rangle = \frac{1}{\sqrt{7}} \sum_{j=0}^{6} e^{-2\pi i jk/7} |S_j\rangle$ — собственные состояния после преобразования Фурье. Логарифм определён корректно, поскольку $\triangleright$ не имеет вырождения собственных значений (все корни 7-й степени из единицы различны) и $\log(\zeta^k) = 2\pi i k/7$.
+
+**Шаг 2 (Точное воспроизведение).** По построению: $e^{i \cdot (2\pi/(7\omega_0)) \cdot T} = e^{i \cdot (2\pi/(7\omega_0)) \cdot \omega_0 \sum_k (k/7) |\tilde{k}\rangle\langle\tilde{k}|} = \sum_k e^{2\pi i k/7} |\tilde{k}\rangle\langle\tilde{k}| = \triangleright$ точно. Следовательно, $\delta\tau = 2\pi/(7\omega_0)$ — канонический шаг времени.
+
+**Шаг 3 (Отождествление с $H_{\text{eff}}$).** Эффективный гамильтониан $H_{\text{eff}}$ из [вывода Пейдж–Вуттерса](../dynamics/evolution#вывод-h_eff) действует на 6D пространстве условных состояний. Унитарная часть лиувиллиана: $\mathcal{L}_{\text{unit}}[\Gamma] = -i[H_{\text{eff}}, \Gamma]$. По теореме $S_7$-эквивариантности [Т-41d]: $H_{\text{eff}}$, ограниченный на диагональ, генерирует ту же циклическую перестановку, что и $T$. Следовательно, $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}} = \triangleright^*$ точно.
+
+**Шаг 4 (Ошибка от неунитарных членов).** Полный лиувиллиан $\mathcal{L}_\Omega = \mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R}$. По формуле Бейкера–Кэмпбелла–Хаусдорфа: $e^{\delta\tau(\mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R})} = e^{\delta\tau \mathcal{L}_{\text{unit}}} \cdot e^{\delta\tau(\mathcal{D}_\Omega + \mathcal{R})} \cdot e^{-\frac{1}{2}\delta\tau^2[\mathcal{L}_{\text{unit}}, \mathcal{D}_\Omega + \mathcal{R}] + \cdots}$. Поскольку $\|\mathcal{D}_\Omega\| + \|\mathcal{R}\| \leq C$ для ограниченных операторов на $M_7(\mathbb{C})$: $\|e^{\delta\tau \mathcal{L}_\Omega} - \triangleright^*\|_{\text{op}} \leq \delta\tau \cdot (\|\mathcal{D}_\Omega\| + \|\mathcal{R}\|) + O(\delta\tau^2) \leq 5\delta\tau + O(\delta\tau^2)$, где множитель 5 возникает из $\|\mathcal{D}_\Omega\| \leq \gamma \cdot 4/3$ (Фано-декогеренция, T-39a) плюс $\|\mathcal{R}\| \leq \kappa_{\max} \cdot 2$ (норма канала замещения). $\blacksquare$
 
 #### Теорема (Алгебра→динамика с оценкой ошибки) [Т] {#теорема-алгебра-динамика-ошибка}
 

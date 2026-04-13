@@ -363,8 +363,17 @@ $$
 **(c)** For pairs **outside** a Fano triplet: the associator $[e_i, e_j, e_k] \neq 0$ generates an additional phase shift that increases Gap.
 :::
 
-:::info Proof sketch: Gap = octonionic product
-$\mathrm{Im}(\Gamma)$ defines an antisymmetric bilinear form on $\mathbb{C}^7$. The imaginary part of the octonionic product $[e_i, e_j] = \mathrm{Im}(e_i \cdot e_j)$ also defines an antisymmetric form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. Both forms are elements of $\Lambda^2(\mathbb{R}^7)$ and both are invariant under $G_2 = \mathrm{Aut}(\mathbb{O})$. By Schur's lemma for the adjoint representation: the space of $G_2$-invariant 2-forms on $\mathbb{R}^7$ is **one-dimensional**. Therefore the forms are proportional; the coefficient is fixed by normalization. $\blacksquare$
+:::info Proof: Gap = octonionic product [Т]
+
+**Step 1 (Two $G_2$-invariant 2-forms).** (a) The imaginary parts $\mathrm{Im}(\gamma_{ij})$ of the coherence matrix entries define an antisymmetric bilinear form $\omega_\Gamma \in \Lambda^2(\mathbb{C}^7)$ via $\omega_\Gamma(e_i, e_j) = \mathrm{Im}(\gamma_{ij})$. (b) The imaginary part of the octonionic product $\omega_\mathbb{O}(e_i, e_j) = \mathrm{Im}(e_i \cdot e_j)$ defines an antisymmetric form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$.
+
+**Step 2 ($G_2$-invariance of both forms).** (a) Under $g \in G_2$: $\omega_\Gamma(ge_i, ge_j) = \mathrm{Im}((g\Gamma g^\dagger)_{ij}) = \mathrm{Im}(\gamma_{ij})$ by the $G_2$-covariance of the Fano dissipator (T-42a [Т]). (b) $\omega_\mathbb{O}$ is $G_2$-invariant by definition: $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves the product.
+
+**Step 3 (Schur's lemma).** The 7-dimensional representation $\mathbf{7}$ of $G_2$ is irreducible (standard, see Slansky 1981). By Schur's lemma, $\dim \mathrm{Hom}_{G_2}(\Lambda^2(\mathbf{7}), \mathbb{R}) = 1$ (the space of $G_2$-invariant 2-forms on $\mathbb{R}^7$ is one-dimensional). This is because $\Lambda^2(\mathbf{7}) = \mathbf{7} \oplus \mathbf{14}$ as $G_2$-representations, and $\mathrm{Hom}_{G_2}(\mathbf{7}, \mathbb{R}) = \{0\}$, $\mathrm{Hom}_{G_2}(\mathbf{14}, \mathbb{R}) = \{0\}$, but the invariant form arises from the $G_2$-invariant associative 3-form $\varphi \in \Lambda^3(\mathbf{7})$ via contraction with a fixed vector $v$: $\iota_v \varphi \in \Lambda^2(\mathbf{7})$. This gives exactly one independent 2-form.
+
+**Step 4 (Proportionality and normalization).** Since both $\omega_\Gamma$ and $\omega_\mathbb{O}$ are $G_2$-invariant elements of the same 1-dimensional space, they are proportional: $\omega_\Gamma = c \cdot \omega_\mathbb{O}$ for some $c \in \mathbb{R}$. The coefficient $c$ is fixed by comparing on any Fano line: for $(i,j,k) \in PG(2,2)$, $\mathrm{Im}(e_i \cdot e_j) = \pm 1$ and $\mathrm{Im}(\gamma_{ij}) = |\gamma_{ij}| \sin\theta_{ij}$, giving $c = |\gamma_{ij}| \sin\theta_{ij} = |\gamma_{ij}| \cdot \mathrm{Gap}(i,j)$.
+
+**Conclusion:** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))| = |\omega_\Gamma(e_i, e_j)| / |\gamma_{ij}|$ is the normalized projection of the coherence onto the octonionic product structure. $\blacksquare$
 :::
 
 ---

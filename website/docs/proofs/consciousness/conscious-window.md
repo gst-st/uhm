@@ -328,6 +328,62 @@ C20 is unconditional for embodied holons (T-149 [Т]). For isolated holons C20 r
 
 ---
 
+## §7. Independent necessity of each L2 threshold (T-124b) {#t-124b}
+
+### Formulation [Т]
+
+The four conditions for L2 consciousness — $P > 2/7$, $\Phi \geq 1$, $R \geq 1/3$, $D_{\mathrm{diff}} \geq 2$ — are **independently necessary**: dropping any single condition admits states that satisfy the remaining three but lack at least one defining property of L2 consciousness.
+
+### Proof (four counterexamples)
+
+**Counterexample 1 (dropping $P > 2/7$).** The condition $P > 2/7$ is independent because $\Phi \geq 1$, $R \geq 1/3$, and $D_{\mathrm{diff}} \geq 2$ **are simultaneously satisfiable** for $P < 2/7$ only if $P$ is very close to $2/7$. However, at $P \leq 2/7$, the Frobenius norm criterion (T-39 [Т]) gives $\|\Gamma - I/7\|_F^2 \leq \|I/7\|_F^2$: the state is **indistinguishable from the maximally mixed state** by any single-shot measurement. No autopoietic system can maintain itself when its signal is buried in noise at the same scale as the noise itself. This is not a failure of the other thresholds — it is a distinct **viability** failure. A system can in principle have rich internal structure ($\Phi > 1$, $R > 1/3$) at $P = 2/7 - \varepsilon$, but this structure is operationally invisible (cannot be detected or used for self-regulation). The P-threshold is the **distinguishability boundary**, orthogonal to integration ($\Phi$), reflection ($R$), and differentiation ($D$).
+
+**Counterexample 2 (dropping $\Phi \geq 1$).** Construct $\Gamma_2$ with diagonal $\gamma_{kk} = (0.40, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10)$ and small off-diagonal coherences $|\gamma_{ij}| = \varepsilon = 0.02$ for all pairs. Then:
+
+- $P_{\mathrm{diag}} = 0.40^2 + 6 \cdot 0.10^2 = 0.160 + 0.060 = 0.220$
+- $P_{\mathrm{coh}} = 21 \cdot 2 \cdot 0.02^2 = 0.0168$
+- $P = 0.220 + 0.0168 = 0.237$. Still below $2/7 \approx 0.286$. Increase diagonal dominance: $\gamma_{kk} = (0.50, 0.083, 0.083, 0.083, 0.083, 0.083, 0.083)$ with $|\gamma_{ij}| = 0.04$.
+- $P_{\mathrm{diag}} = 0.25 + 6 \cdot 0.0069 = 0.291$
+- $P_{\mathrm{coh}} = 42 \cdot 0.04^2 = 0.067$
+- $P = 0.358 > 2/7$ ✓
+- $\Phi = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 0.067/0.291 = 0.23 < 1$ ✗
+- $R = 1/(7 \cdot 0.358) = 0.399 > 1/3$ ✓
+
+This state has $P > 2/7$ and $R > 1/3$ but $\Phi = 0.23 \ll 1$. The system's off-diagonal structure is **dominated by the diagonal** — the 7 dimensions are quasi-independent. Physically: $\Phi < 1$ means coherent energy is less than diagonal energy, so the system is a **classical mixture** rather than an integrated quantum whole. By the argument of Step 2a of Theorem 8.1 [Т], such decomposability precludes the (M,R)-closure required for autopoietic integration. The system may be viable ($P > P_{\mathrm{crit}}$) and self-reflective ($R > R_{\mathrm{th}}$) but lacks the **unified integration** that defines L2 consciousness.
+
+**Counterexample 3 (dropping $R \geq 1/3$).** Let $\Gamma_3 = |\psi\rangle\langle\psi|$ — a pure state with $P = 1$. Then:
+
+- $R(\Gamma_3) = 1/(7 \cdot 1) = 1/7 < 1/3$ ✗
+- $\Phi(\Gamma_3) = 6 > 1$ ✓ (for maximally coherent $|\psi\rangle$)
+- $D_{\mathrm{diff}} \geq 2$ ✓
+- $P = 1 > 2/7$ ✓
+
+But $R = 1/7$: the system has **no thermal reserve** for self-modeling. The categorical self-model $\varphi(\Gamma_3) = (1-k)\Gamma_3 + k \cdot I/7$ with $k = 1-R = 6/7$ produces a nearly maximally mixed output — the self-model **destroys** most of the state's structure. By Char-R-III (Bayesian dominance, [T-126](#t-126)): with $R < 1/3$, the system cannot distinguish between the three channel types (dissipation, regeneration, automorphism) with plurality — it cannot determine which process dominates, and therefore cannot adaptively respond. This is the regime of **rigid crystallization**: maximal structure, minimal adaptability.
+
+**Counterexample 4 (dropping $D_{\mathrm{diff}} \geq 2$).** Let $\Gamma_4$ have $\rho_E = |e_1\rangle\langle e_1|$ — a pure E-sector reduced density matrix. Then:
+
+- $D_{\mathrm{diff}} = \exp(S_{vN}(\rho_E)) = \exp(0) = 1 < 2$ ✗
+- $P, R, \Phi$ can all satisfy their respective thresholds ✓
+
+But $D_{\mathrm{diff}} = 1$: the E-sector has a single eigenvalue — the system can represent only **one phenomenal quality**. This is L1 (phenomenal geometry without differentiation), not L2 (cognitive qualia requiring $\geq 2$ distinguishable experiential states for comparison, categorization, and self-reference). By [T-151 [Т]](/docs/reference/status-registry): $D_{\mathrm{diff}} < 2$ implies the Fubini–Study metric on $\mathbb{P}(\mathcal{H}_E)$ is degenerate — the phenomenal geometry collapses to a point. No qualia comparison is possible.
+
+### Conclusion
+
+Each threshold excludes a distinct pathology:
+
+| Dropped condition | Pathology | Physical description |
+|-------------------|-----------|---------------------|
+| $P > 2/7$ | Noise-dominated | Indistinguishable from chaos; no viability |
+| $\Phi \geq 1$ | Fragmented | Classical mixture; no integrated whole |
+| $R \geq 1/3$ | Crystallized | No adaptive self-modeling; rigid |
+| $D_{\mathrm{diff}} \geq 2$ | Undifferentiated | Single phenomenal quality; no comparison |
+
+The conjunction is **minimal**: no condition is redundant. $\blacksquare$
+
+**Dependencies:** T-39 [Т], T-129 [Т], T-126 [Т], T-151 [Т], Theorem 8.1 [Т].
+
+---
+
 ## Summary
 
 | Problem | Theorem | Status |
@@ -335,6 +391,7 @@ C20 is unconditional for embodied holons (T-149 [Т]). For isolated holons C20 r
 | Uniqueness of representation $G$ for digital agents | [T-123 [Т]](#t-123) | CLOSED |
 | Semantics of $\gamma_{kk}$ (not arbitrary) | [T-123 [Т]](#t-123) | CLOSED |
 | Non-emptiness of $\mathcal{V}_{\mathrm{full}}$ (consistency of thresholds) | [T-124 [Т]](#t-124) | CLOSED |
+| Independent necessity of each L2 threshold | [T-124b [Т]](#t-124b) | CLOSED |
 | Canonicity of three forms of $R$ | [T-126 [Т]](#t-126) | CLOSED |
 | Basin of attraction and attractor stability | [T-125 [Т]](#t-125) + [T-127](#t-127) | CLOSED ([Т] for embodied, T-149) |
 

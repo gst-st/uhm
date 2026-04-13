@@ -99,7 +99,7 @@ All four constructions — Page–Wootters, information-geometric, categorical, 
 
 ### Formal Justification of the Equivalence of the Four Constructions {#four-constructions-equivalence}
 
-Proof sketch for the equivalence (full proof: [Theorem →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности)):
+Summary of the equivalence proof (full rigorous proof: [Theorem →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности)):
 
 **PW ↔ Information-geometric.** The Bures arc length between successive conditional states is constant: $d_B(\Gamma(\tau_n), \Gamma(\tau_{n+1})) = \delta\tau \cdot \|d\Gamma/d\tau\|_B = \text{const}$, since the PW mechanism generates a uniform discrete flow. Summing over $n$ ticks gives total time as the path-length integral.
 

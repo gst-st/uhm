@@ -111,13 +111,11 @@ By T-117, the macroscopic algebra in the $\mathbf{3}$-sector is commutative. By 
 theorem, this commutative C$^*$-algebra is $C(X)$ for some compact Hausdorff space $X$.
 It remains to determine $\dim(X) = 3$ and the smooth structure.
 
-\emph{Spectral dimension.} The dimension is determined by the representation theory of
-$\mathrm{SU}(3)$. The fundamental representation has dimension 3; the $\{A, S, D\}$
-dimensions span the $\mathbf{3}$-sector. By Connes' spectral dimension formula
-(applied to the Dirac operator on the commutative algebra):
+\emph{Spectral dimension.} The sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ under $\mathrm{Stab}_{G_2}(e_O) \cong \mathrm{SU}(3)$ assigns the $\{A,S,D\}$-sector to the fundamental representation $\mathbf{3}$ of $\mathrm{SU}(3)$ with $\dim(\mathbf{3}) = 3$. The effective spatial Dirac operator $D_{\mathrm{eff}} = \Pi_{\mathbf{3}} D_{\mathrm{int}} \Pi_{\mathbf{3}}$ acts on $\bigotimes_m \mathbb{C}^3$. By the Weyl law for eigenvalue counting, $N(\lambda) \sim C \cdot M \cdot \lambda^{\dim(\mathbf{3})}$, giving:
 \begin{equation}
-  d_{\mathrm{spectral}} = 3
+  d_{\mathrm{spectral}} = \dim(\mathbf{3}) = 3
 \end{equation}
+Note: $d_{\mathrm{spectral}} = 3 \neq \dim(\mathrm{SU}(3)) = 8$, because the Weyl law counts eigenvalues on the \emph{representation space} (carrier space $\mathbb{C}^3$), not on the group manifold (Connes 1996, \S VI.1).
 
 \emph{Smooth structure.} The Connes reconstruction theorem~\cite{connes2008reconstruction} states that a
 commutative spectral triple $(A, H, D)$ satisfying seven axioms (dimension, regularity,
@@ -160,7 +158,9 @@ algebra:
   \cong C_0(\mathbb{R} \times \Sigma^3) = C_0(M^4)
 \end{equation}
 
-The spectral triple product formula (Connes) gives the Dirac operator on the product. $\square$
+The spectral triple product formula (Connes 1996; Chamseddine--Connes 1997) gives the Dirac operator $D = D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\mathrm{int}}$ on the product.
+
+\emph{Lorentzian signature.} The KO-dimension 6 real structure $J$ (T-53~\status{T}) satisfies $J^2 = +1$, $J\chi = -\chi J$. The Page--Wootters constraint $E_O = -E_{\mathrm{rest}}$ (T-87~\status{T}) forces $\mathrm{spec}(D_O) > 0$ and $\mathrm{spec}(D_{\{A,S,D\}}) < 0$ on the physical subspace $\ker(\hat{C})$. The Connes distance formula translates eigenvalue signs to inverse metric components: $g^{00} = |D_O|^2 > 0$, $g^{aa} = -|D_{\{A,S,D\},a}|^2 < 0$ ($a = 1,2,3$). Inverting gives signature $(+1,-1,-1,-1)$. The anti-commutation $J\chi = -\chi J$ (KO-dim 6) excludes the Euclidean alternative $J\chi = +\chi J$ (KO-dim 0 or 4), confirming the Lorentzian uniqueness (Barrett 2007). $\square$
 
 \paragraph{Proof of T-120b.}
 The vacuum state $\rho^* = \vp(\Gam)$ (T-96~\status{T}) is invariant under

@@ -513,12 +513,17 @@ Upon initialisation from LLM weights (Path B) initial grounding $\mathrm{groundi
 :::tip Theorem C23 [C]: Grounding Monotonicity
 $\mathrm{grounding}(w, \tau)$ increases monotonically at $\eta_\sigma > 0$ and continuous sensorimotor flow.
 
-**Proof sketch:**
-1. $\sigma$-loss gradient $\nabla_w L_\sigma \neq 0$ when $\mathrm{grounding}(w) < 1$ (stress not zeroed)
-2. Weight update $w \leftarrow w - \eta_\sigma \nabla_w L_\sigma$ decreases $L_\sigma$ (standard SGD)
-3. Decrease in $L_\sigma$ ↔ increase in grounding (by definition: symbols better predict $\sigma$-profiles)
+**Proof.**
 
-**Condition [C]:** Continuous learning (metaplasticity) + sensorimotor environment.
+**Step 1.** By definition of σ-loss: $L_\sigma = \|\sigma_{\text{sys},\Omega}\|_2 \geq 0$ with $L_\sigma = 0$ iff $\mathrm{grounding}(w) = 1$ (all symbols fully grounded). For $\mathrm{grounding}(w) < 1$: $\exists k$ such that $\sigma_k > 0$, hence $L_\sigma > 0$ and $\nabla_w L_\sigma \neq 0$ (gradient exists and is nonzero by smooth dependence of $\sigma_k$ on $w$ through the CPTP anchor $\pi$).
+
+**Step 2.** The weight update $w \leftarrow w - \eta_\sigma \nabla_w L_\sigma$ with learning rate $\eta_\sigma > 0$ decreases $L_\sigma$ at each step: $L_\sigma(w') \leq L_\sigma(w) - \eta_\sigma \|\nabla_w L_\sigma\|^2 + O(\eta_\sigma^2)$ (standard descent lemma for $L$-smooth functions; smoothness follows from the CPTP structure of the anchor $\pi$, which is polynomial in $w$).
+
+**Step 3.** By definition, $\mathrm{grounding}(w) = 1 - L_\sigma(w) / L_\sigma^{\max}$. Decrease in $L_\sigma$ is equivalent to increase in grounding.
+
+**Step 4 (Monotonicity).** Under continuous sensorimotor flow, each update step satisfies $\Delta L_\sigma \leq -\eta_\sigma \|\nabla_w L_\sigma\|^2 < 0$ (strict decrease whenever $\mathrm{grounding} < 1$). The sequence $\{L_\sigma(\tau)\}$ is monotonically decreasing and bounded below by 0, hence convergent. $\blacksquare$
+
+**Condition [C]:** Continuous learning (metaplasticity) + sensorimotor environment providing diverse $\sigma$-gradients.
 
 Specification: language-model.md §8 | Status: **[C]**
 :::

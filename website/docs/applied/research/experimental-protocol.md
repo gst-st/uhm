@@ -226,6 +226,69 @@ Any implementation used for Phase I must satisfy:
 
 Central task: build the bridge **π_bio: (EEG, fMRI, HRV) → Γ ∈ D(ℂ⁷)** and verify that the theoretical threshold P_crit = 2/7 coincides with the empirical PCI* = 0.31.
 
+### 3.1b. Formal Definition of π_bio [H → T upon calibration] {#pi-bio-definition}
+
+:::warning Definition (Neural anchor map π_bio)
+The **neural anchor map** is a CPTP channel:
+
+$$
+\pi_{\text{bio}}: \mathcal{O}_{\text{neural}} \to \mathcal{D}(\mathbb{C}^7)
+$$
+
+where $\mathcal{O}_{\text{neural}} = \mathbb{R}^d$ is the space of neural observables (power spectral densities, TMS-evoked potentials, functional connectivity, autonomic indices). The map is defined by the following construction.
+:::
+
+**Construction (4 steps).**
+
+**Step 1 (Seven canonical observables).** Extract from neural data the 7 diagonal projections $\hat{\gamma}_{kk}$ corresponding to the 7 UHM dimensions via the following operationalization:
+
+| Dimension | Neural observable | Extraction |
+|-----------|------------------|------------|
+| A (Articulation) | Spectral edge frequency (95th percentile) | EEG power spectrum |
+| S (Structure) | Long-range temporal correlations (DFA exponent) | EEG time series |
+| D (Dynamics) | Permutation entropy | EEG complexity |
+| L (Logic) | Cross-frequency coupling (theta-gamma PAC) | Phase-amplitude coupling |
+| E (Interiority) | PCI (perturbational complexity index) | TMS-EEG |
+| O (Ground) | Heart rate variability (RMSSD) | ECG/HRV |
+| U (Unity) | Global functional connectivity (mean PLI) | EEG connectivity |
+
+**Step 2 (Normalization to density matrix diagonal).** Apply softmax normalization to ensure $\sum_k \hat{\gamma}_{kk} = 1$ and $\hat{\gamma}_{kk} > 0$:
+
+$$
+\gamma_{kk} = \frac{\exp(\beta \cdot z_k)}{\sum_{j=1}^{7} \exp(\beta \cdot z_j)}, \quad z_k = \frac{x_k - \mu_k}{\sigma_k}
+$$
+
+where $x_k$ is the raw observable, $\mu_k, \sigma_k$ are population mean and standard deviation (from calibration cohort), and $\beta > 0$ is a temperature parameter calibrated to match the empirical PCI* = 0.31 ↔ P_crit = 2/7.
+
+**Step 3 (Off-diagonal coherences via Cholesky).** Reconstruct off-diagonal elements from pairwise neural correlations:
+
+$$
+|\gamma_{ij}| = \sqrt{\mathrm{Coh}_{ij}^{\text{neural}}} \cdot \sqrt{\gamma_{ii} \gamma_{jj}}, \quad \arg(\gamma_{ij}) = \phi_{ij}^{\text{PLV}}
+$$
+
+where $\mathrm{Coh}_{ij}^{\text{neural}}$ is the magnitude-squared coherence between observables $i$ and $j$ (from cross-spectral density), and $\phi_{ij}^{\text{PLV}}$ is the phase-locking value between the corresponding neural signals. Regularize via Cholesky decomposition: $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ to ensure positivity and unit trace.
+
+**Step 4 (G₂-covariant Procrustes alignment).** By T-123 [Т], the representation is unique up to $G_2$. Fix the $G_2$ gauge freedom by aligning the reconstructed $\Gamma$ to a canonical reference via:
+
+$$
+\Gamma_{\text{aligned}} = \arg\min_{g \in G_2} \| g\Gamma g^\dagger - \Gamma_{\text{ref}} \|_F
+$$
+
+where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefulness baseline of the calibration cohort. This is a Procrustes problem on the $G_2$ manifold, solvable by gradient descent on the 14-dimensional Lie group (standard Riemannian optimization).
+
+**Properties of π_bio.**
+
+| Property | Status | Justification |
+|----------|--------|---------------|
+| CPTP | [Т] | Softmax + Cholesky → positive, trace-preserving; composition of CPTP channels is CPTP |
+| $G_2$-covariant | [Т] | Step 4 Procrustes alignment |
+| Unique up to $G_2$ | [Т] | T-123 |
+| Calibratable | [H] | Requires empirical $\beta$-fitting to PCI* ↔ P_crit matching |
+
+**Status:** The construction is **formally well-defined** [Т] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it requires the Phase II experiment (§3.3) to be completed. After calibration, π_bio becomes a validated measurement instrument [Т].
+
+**Falsification criterion:** If no value of $\beta$ exists such that $P_{\text{boundary}} = 2/7 \pm 0.05$ across all 50 subjects (p < 0.01), π_bio is falsified in its current form. This does not falsify UHM — only this specific operationalization. Alternative operationalizations (different neural observables, different normalization) would be explored.
+
 ### 3.2. Equipment
 
 | Component | Model | Purpose | Budget |

@@ -687,12 +687,19 @@ $$e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^* + O(\delta\ta
 
 where $\triangleright^*$ is the induced action on states and $\delta\tau = 2\pi/(7\omega_0)$.
 
-**Proof sketch:**
-1. Generator of $\triangleright$: $T := (\omega_0/2\pi i) \cdot \log(\triangleright)$ on finite-dimensional $\text{Spec}(\Omega)$
-2. On finite dimension, $\log$ is defined via Jordan form
-3. $e^{i\delta\tau \cdot T} = \triangleright$ exactly for $\delta\tau = 2\pi/(7\omega_0)$
-4. Linearize $\mathcal{L}_\Omega$ near equilibrium: $\mathcal{L}_\Omega \approx -i[H_{\text{eff}}, \cdot] + O(\text{decoherence})$
-5. Identify $T \leftrightarrow H_{\text{eff}}$ up to the scale $\omega_0$ ∎
+**Proof.**
+
+**Step 1 (Generator of $\triangleright$).** The shift $\triangleright$ acts on the 7-element set of atoms $\{S_0, \ldots, S_6\}$ as a cyclic permutation of order 7. Its matrix representation in the atom basis is the permutation matrix $P_\sigma$ with eigenvalues $\zeta^k = e^{2\pi i k/7}$, $k = 0, \ldots, 6$. Define the Hermitian generator:
+
+$$T := \frac{\omega_0}{2\pi i} \log(\triangleright) = \omega_0 \sum_{k=0}^{6} \frac{k}{7} |\tilde{k}\rangle\langle\tilde{k}|$$
+
+where $|\tilde{k}\rangle = \frac{1}{\sqrt{7}} \sum_{j=0}^{6} e^{-2\pi i jk/7} |S_j\rangle$ are the Fourier-transformed eigenstates. The logarithm is well-defined because $\triangleright$ has no eigenvalue degeneracies (all 7th roots of unity are distinct) and $\log(\zeta^k) = 2\pi i k/7$.
+
+**Step 2 (Exact reproduction).** By construction: $e^{i \cdot (2\pi/(7\omega_0)) \cdot T} = e^{i \cdot (2\pi/(7\omega_0)) \cdot \omega_0 \sum_k (k/7) |\tilde{k}\rangle\langle\tilde{k}|} = \sum_k e^{2\pi i k/7} |\tilde{k}\rangle\langle\tilde{k}| = \triangleright$ exactly. Therefore $\delta\tau = 2\pi/(7\omega_0)$ is the canonical time step.
+
+**Step 3 (Identification with $H_{\text{eff}}$).** The effective Hamiltonian $H_{\text{eff}}$ from the [Page–Wootters derivation](../dynamics/evolution#вывод-h_eff) acts on the 6D conditional state space. The unitary part of the Liouvillian is $\mathcal{L}_{\text{unit}}[\Gamma] = -i[H_{\text{eff}}, \Gamma]$. By the $S_7$-equivariance theorem [T-41d]: $H_{\text{eff}}$ restricted to the diagonal generates the same cyclic permutation as $T$. Therefore $e^{\delta\tau \cdot \mathcal{L}_{\text{unit}}} = \triangleright^*$ exactly.
+
+**Step 4 (Error from non-unitary terms).** The full Liouvillian $\mathcal{L}_\Omega = \mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R}$. By the Baker–Campbell–Hausdorff formula: $e^{\delta\tau(\mathcal{L}_{\text{unit}} + \mathcal{D}_\Omega + \mathcal{R})} = e^{\delta\tau \mathcal{L}_{\text{unit}}} \cdot e^{\delta\tau(\mathcal{D}_\Omega + \mathcal{R})} \cdot e^{-\frac{1}{2}\delta\tau^2[\mathcal{L}_{\text{unit}}, \mathcal{D}_\Omega + \mathcal{R}] + \cdots}$. Since $\|\mathcal{D}_\Omega\| + \|\mathcal{R}\| \leq C$ for bounded operators on $M_7(\mathbb{C})$: $\|e^{\delta\tau \mathcal{L}_\Omega} - \triangleright^*\|_{\text{op}} \leq \delta\tau \cdot (\|\mathcal{D}_\Omega\| + \|\mathcal{R}\|) + O(\delta\tau^2) \leq 5\delta\tau + O(\delta\tau^2)$, where the factor 5 comes from $\|\mathcal{D}_\Omega\| \leq \gamma \cdot 4/3$ (Fano decoherence, T-39a) plus $\|\mathcal{R}\| \leq \kappa_{\max} \cdot 2$ (replacement channel norm). $\blacksquare$
 
 #### Theorem (algebra→dynamics with error bound) [T] {#теорема-алгебра-динамика-ошибка}
 

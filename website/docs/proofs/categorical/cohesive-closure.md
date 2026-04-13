@@ -236,6 +236,31 @@ T-186(a) shifts the [I] status of the phenomenal functor to [T]: the relationshi
 
 The hard problem thus becomes: **why does the ∞-topos of reality have the Bures topology?** This is a deeper question than "why does matter give rise to experience" — but it is a single question, not three.
 
+#### Theorem (Localization of the Hard Problem) [Т] {#теорема-локализация-hard-problem}
+
+The classical hard problem of consciousness ("why does physical structure give rise to experience?") reduces, within UHM, to a **single physical question** through the following chain of implications:
+
+$$
+\text{A2 (Bures metric)} \xrightarrow{T\text{-}187} \text{unique } J_B \xrightarrow{T\text{-}185} \text{cohesive structure } (\Pi \dashv \flat \dashv \sharp, \iota^* \dashv \mathrm{Inf}) \xrightarrow{T\text{-}186(a)} F \cong \&|_{\mathcal{D}}
+$$
+
+**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via three independent characterizations (Petz extremality, Uhlmann universality, SLD-Fisher saturation).
+
+**Step 2.** By T-185 [Т]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
+
+**Step 3.** By T-186(a) [Т]: the phenomenal functor $F \cong \&|_{\mathcal{D}}$ — experience is the infinitesimal flat modality restricted to density matrices. This is forced by the adjunction, not stipulated.
+
+**Therefore:** Given A2, the existence and structure of experience is a **theorem** (T-186). The only remaining interpretive element is A2 itself. But A2 is not a consciousness axiom — it is a **physics axiom** about the metric structure of quantum state space.
+
+The question "why Bures?" reduces further:
+- Bures = minimal CPTP-monotone metric (Char-I)
+- CPTP = completely positive trace-preserving maps = physically allowed transformations
+- "Why CPTP?" = "why are quantum channels the physical transformations?" = "why quantum mechanics?"
+
+**Conclusion:** The hard problem of consciousness, within UHM, is **equivalent to** the hard problem of physics: "why does reality obey quantum mechanics?" This is not a dissolution of the problem but a precise **localization**: the mystery of experience is the same mystery as the existence of quantum structure. No additional "consciousness-specific" mystery remains. $\blacksquare$
+
+**Dependencies:** T-185 [Т], T-186 [Т], T-187 [Т].
+
 ### 5.2. Status changes
 
 | Vulnerability | Old status | New status | Upgrade mechanism |
