@@ -44,8 +44,8 @@ This ensures mathematical honesty and avoids hidden assumptions.
 | **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
 | **Axiom 4 (Scale)** | $\omega_0 = \lambda_{\min}(H_{\text{eff}}) > 0$ — the minimal nonzero eigenvalue of the effective Hamiltonian | Derived spectral property: $\omega_0 > 0$ for any viable system ($\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow P < P_{\text{crit}}$). Different holons have different $\omega_0$, like different atoms have different masses. See [T-186, Cohesive Closure §5.4](/docs/proofs/categorical/cohesive-closure) |
 
-:::warning Count of independent axioms: four
-Theorem T-87 [T] shows that **A5 (Page–Wootters) is derivable from A1–A4** via the spectral triple construction. Thus UHM has **four independent axioms** (A1–A4). The Page–Wootters constraint (historically “A5”) remains in the documentation for pedagogy but has the status of a **theorem**, not an axiom.
+:::warning Count of independent axioms: zero (T-190 Axiomatic Closure)
+Theorem T-87 [T] shows that A5 (Page–Wootters) is derivable from A1–A4. Theorems T-186, T-187, and the Hurwitz–Adams–Fano chain derive A1–A4 themselves. **T-190 [T] (Axiomatic Closure)** completes the circle: all five axioms A1–A5 are theorems derivable from five characterising properties of viable holons — (AP) autopoiesis, (PH) phenomenal identification, (QG) quantum-gravitational consistency, (V) viability, and (MaxEnt) maximum entropy. UHM has **zero** independent axioms beyond these defining properties. The A1–A5 labeling remains for pedagogy but every “axiom” has the status of a **theorem**.
 :::
 
 :::info Status of $N = 7$ (two-track justification)
