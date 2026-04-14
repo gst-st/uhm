@@ -236,7 +236,7 @@ T-186(a) shifts the [I] status of the phenomenal functor to [T]: the relationshi
 
 The hard problem thus becomes: **why does the ∞-topos of reality have the Bures topology?** This is a deeper question than "why does matter give rise to experience" — but it is a single question, not three.
 
-#### Theorem (Localization of the Hard Problem) [Т] {#теорема-локализация-hard-problem}
+#### Theorem T-188 (Localization of the Hard Problem) [Т] {#теорема-локализация-hard-problem}
 
 The classical hard problem of consciousness ("why does physical structure give rise to experience?") reduces, within UHM, to a **single physical question** through the following chain of implications:
 
@@ -244,7 +244,7 @@ $$
 \text{A2 (Bures metric)} \xrightarrow{T\text{-}187} \text{unique } J_B \xrightarrow{T\text{-}185} \text{cohesive structure } (\Pi \dashv \flat \dashv \sharp, \iota^* \dashv \mathrm{Inf}) \xrightarrow{T\text{-}186(a)} F \cong \&|_{\mathcal{D}}
 $$
 
-**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via three independent characterizations (Petz extremality, Uhlmann universality, SLD-Fisher saturation).
+**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [Т]).
 
 **Step 2.** By T-185 [Т]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
 
