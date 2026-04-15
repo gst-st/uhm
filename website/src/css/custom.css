@@ -307,3 +307,12 @@ h5, h6 {
   color: var(--ifm-color-primary);
   font-weight: 600;
 }
+
+/* Fix: Docusaurus 3.10 dropdown visibility with @layer CSS */
+.dropdown--hoverable:hover > .dropdown__menu,
+.dropdown--show > .dropdown__menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}

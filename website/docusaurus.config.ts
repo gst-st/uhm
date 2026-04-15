@@ -19,9 +19,10 @@ const config: Config = {
   tagline: 'Unitary Holonomic Monism — Унитарный Голономный Монизм',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: true,
-  },
+  // future.v4 disabled — causes i18n translated docs to not load in 3.10.0
+  // future: {
+  //   v4: true,
+  // },
 
   url: ghPagesUrl,
   baseUrl: ghPagesBaseUrl,
@@ -39,6 +40,8 @@ const config: Config = {
       ru: {
         label: 'Русский',
         htmlLang: 'ru-RU',
+        translate: true,
+        path: 'ru',
       },
       en: {
         label: 'English',
@@ -54,7 +57,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          rehypePlugins: [[rehypeKatex, {strict: false}]],
           showLastUpdateTime: false,
           showLastUpdateAuthor: false,
         },
@@ -66,7 +69,7 @@ const config: Config = {
           blogSidebarTitle: 'Posts',
           blogSidebarCount: 'ALL',
           remarkPlugins: [remarkMath],
-          rehypePlugins: [rehypeKatex],
+          rehypePlugins: [[rehypeKatex, {strict: false}]],
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -101,6 +104,21 @@ const config: Config = {
         indexBlog: true,
       },
     ],
+    function ignoreVscodeWarningsPlugin() {
+      return {
+        name: 'ignore-vscode-warnings',
+        configureWebpack() {
+          return {
+            ignoreWarnings: [
+              {module: /vscode-languageserver-types/},
+            ],
+            module: {
+              exprContextCritical: false,
+            },
+          };
+        },
+      };
+    },
   ],
 
   stylesheets: [

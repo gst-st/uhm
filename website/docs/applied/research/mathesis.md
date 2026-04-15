@@ -188,6 +188,29 @@ Examples: $T_{\text{UHM}}$ (~185 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}
 
 **Intuition.** A covering is a set of "perspectives" that collectively exhaust the content of a theory. For example, $T_{\text{IIT}}$ and $T_{\text{GWT}}$ can jointly cover the part of $T_{\text{UHM}}$ concerning integration.
 
+**Formal typing in Verum.** The Verum stdlib (`core/math/infinity_topos.vr`) already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (`core/math/epistemic.vr`, see `internal/verum-ext-2.md` §3.3) defines:
+
+```
+type Theory is {
+    claims: InfinityCategory,                           // C_T
+    epistemic: InfinityFunctor<claims, discrete(Status)>, // ε_T
+    statements: Set<claims.cells(0)>,                   // distinguished objects
+    dependencies: Set<claims.cells(1)>,                 // distinguished morphisms
+};
+```
+
+A morphism $f: T_1 \to T_2$ is typed as `InfinityFunctor<T_1.claims, T_2.claims>` with the contract `f.preserves(statements) && f.compatible(epistemic)`, where compatibility means: $\varepsilon_{T_2}(f(a)) \geq \varepsilon_{T_1}(a)$ — an interpretation cannot raise epistemic status. This is the **epistemic monotonicity** condition, formally verified by SMT at compile time.
+
+**Verification of Grothendieck axioms for $J_{\text{ep}}$.** The joint faithfulness topology $J_{\text{ep}}$ satisfies the three Grothendieck axioms:
+
+1. **Maximality.** The identity covering $\{\mathrm{id}: T \to T\}$ is a $J_{\text{ep}}$-covering: for any $a \neq b$, the identity functor sends $a$ to itself, which distinguishes $a$ from $b$. ✓
+
+2. **Stability under base change.** If $\{f_i: T_i \to T\}$ is a covering and $g: S \to T$ is any morphism, then the pullback family $\{f_i \times_T g: T_i \times_T S \to S\}$ is a covering of $S$. Proof: if $c \in T_i$ distinguishes $f_i(c)$ as $a \neq b$ in $T$, then for any $a', b' \in S$ with $g(a') = a, g(b') = b$, the pullback of $c$ distinguishes $a'$ from $b'$. Joint faithfulness is preserved under pullback because faithful functors are closed under base change. ✓
+
+3. **Transitivity.** If $\{f_i: T_i \to T\}$ is a covering and for each $i$, $\{g_{ij}: S_{ij} \to T_i\}$ is a covering, then the composed family $\{f_i \circ g_{ij}\}$ covers $T$. Proof: given $a \neq b$ in $T$, there exists $i$ and $c \in T_i$ with $f_i(c)$ distinguishing $a, b$. If $c$ is itself distinguished from some $c'$ in $T_i$, there exists $j$ and $d \in S_{ij}$ with $g_{ij}(d)$ distinguishing $c, c'$. The composition $f_i \circ g_{ij}$ maps $d$ to a distinguisher of $a, b$. ✓
+
+The resulting $(\mathbf{Th}, J_{\text{ep}})$ is therefore a legitimate Grothendieck site, and $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ is a well-defined ∞-topos by Lurie's existence theorem (HTT 6.2.2.7).
+
 **Analogy.** Imagine a multi-story building. Floors are theories (UHM, IIT, GWT, FEP). Rooms on a floor are claims within a theory. Doors between rooms are logical dependencies. Staircases between floors are translation functors. The epistemic topology $J_{\text{ep}}$ says: "if via staircases one can reach all rooms on the top floor, starting from different lower floors — the top floor is *covered*." Unlike the 1-categorical fibration (prior architecture), the ∞-version adds: corridors between staircases (2-morphisms), transitions between corridors (3-morphisms), and so on — all navigation levels simultaneously.
 
 ### 2.3. ∞-Topos of Mathesis {#infinity-topos}
@@ -265,6 +288,22 @@ where $f^*$ is the pullback functor and $\eta$ is the counit of the adjunction. 
 - $\mathrm{Lan}_f(P_{\text{crit}} = 2/7) = [\Phi > 0]$ — optimistic: "the thresholds correspond"
 - $\mathrm{Ran}_f(P_{\text{crit}} = 2/7) = \varnothing$ — conservative: IIT does not specify a numerical threshold
 - $\mathrm{Obs}(f) \neq 0$: the numerical value 2/7 is **untranslatable** into IIT
+
+**Algorithm for finite subsites.** On a finite subsite $\mathbf{Th}_0$ with $N$ theories and $M$ total claims, the pointwise Kan extension is computable:
+
+$$
+\mathrm{Lan}_f(X)(b) = \mathrm{colim}_{(a,\; f(a) \to b) \in (f \downarrow b)} X(a)
+$$
+
+**Algorithm** (`compute_pointwise_lan` in `core/math/epistemic.vr`):
+1. **Construct the comma category** $(f \downarrow b)$: objects are pairs $(a \in T_1,\; h: f(a) \to b)$ where $h$ is a morphism in $T_2$. On a finite theory, $|(f \downarrow b)| \leq M_1 \cdot D$ where $M_1$ is the number of claims in $T_1$ and $D$ is the maximum in-degree.
+2. **Restrict** the presheaf $X$ to the comma category: $X|_{(f \downarrow b)}(a, h) = X(a)$.
+3. **Compute the finite colimit** of the restricted diagram. For a finite category with $n$ objects, the colimit is computable in $O(n^2)$ by coequalizer iteration.
+4. **Return** the colimit object as $\mathrm{Lan}_f(X)(b)$.
+
+**Complexity.** For $N$ loaded theories with $M$ claims each and maximum dependency degree $D$: computing a full Kan extension is $O(N \cdot M \cdot D \cdot M^2) = O(N \cdot M^3 \cdot D)$. For UHM ($M \approx 185$, $D \approx 5$) translating into IIT ($M \approx 50$): $\sim 185 \times 50 \times 5 \times 50^2 \approx 10^8$ operations — feasible in seconds on modern hardware.
+
+**SMT verification.** The functoriality of the computed extension ($\mathrm{Lan}_f(\mathrm{id}) = \mathrm{id}$, $\mathrm{Lan}_f(g \circ h) = \mathrm{Lan}_f(g) \circ \mathrm{Lan}_f(h)$) is verified by the SMT backend at compile time via the `category_simp` tactic. The obstruction measure $\mathrm{Obs}(f)$ is computed as: for each claim $a \in T_2$, evaluate $\|\eta_a - \mathrm{id}\|$ where $\eta$ is the counit; aggregate as the mean deviation. Non-zero obstruction indicates structural untranslatability.
 
 ### 2.6. Descent condition: coherence as a sheaf property {#descent-condition}
 
@@ -371,6 +410,17 @@ $$
 
 **Why quantum logic, not classical?** In classical logic, checking a hypothesis is idempotent: check twice — get the same result. In scientific practice this is false. Proving theorem A can invalidate hypothesis B (if A and B are incompatible), and refuting B can *strengthen* C (if B and C were competitors). Epistemic measurements **do not commute**: the order of checking affects the outcome. This is precisely the structure of quantum mechanics — not by analogy, but because both domains operate on **context-dependent propositions** on an orthomodular lattice.
 
+**Construction of $\mathcal{H}_{\text{ep}}$.** The epistemic Hilbert space for a UHM-compatible site has dimension $k = 7$ (one basis vector per status: $|T\rangle, |C\rangle, |H\rangle, |P\rangle, |D\rangle, |I\rangle, |X\rangle$). For a general theory with $s$ distinct statuses, $k = s$. The orthomodular lattice $\mathcal{L}$ is the lattice of projectors on $\mathcal{H}_{\text{ep}}$; for $k = 7$ this is a $127$-element lattice (all subspaces of $\mathbb{C}^7$).
+
+**Algorithm for epistemic measurement** (`measure()` in `core/math/quantum_logic.vr`):
+1. **Input:** epistemic state $\rho_a \in \mathcal{D}(\mathbb{C}^k)$, projector $P_s$ (corresponding to status $s$).
+2. **Check non-degeneracy:** $\mathrm{Tr}(P_s \rho_a P_s) > 0$; if zero, measurement is impossible (the claim cannot have status $s$).
+3. **Apply Lüders rule:** $\rho_a \mapsto P_s \rho_a P_s / \mathrm{Tr}(P_s \rho_a P_s)$.
+4. **Propagate side effects:** for each claim $b$ dependent on $a$, compute the commutator $[P_a, P_b]$. If $\|[P_a, P_b]\|_F > \epsilon$, the measurement of $a$ nontrivially affects $b$ — recompute $\rho_b$ via the induced channel.
+5. **Output:** updated epistemic states $\{\rho_a', \rho_{b_1}', \ldots\}$ and the list of non-trivially affected claims.
+
+**Detection of non-commutativity.** Two claims $a, b$ are **epistemically complementary** if $[P_a, P_b] \neq 0$. Operationally: checking $a$ first vs $b$ first yields different final epistemic states. The Frobenius norm $\|[P_a, P_b]\|_F$ quantifies the degree of complementarity. This is computed in $O(k^3)$ per pair.
+
 **Connection with UHM.** $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ describes a conscious state; $\rho_{\text{ep}} \in \mathcal{D}(\mathbb{C}^k)$ describes an **epistemic state**. The formulas are identical because the mathematical structure is the same: an ∞-topos for physics ($\mathfrak{T}$) and for epistemology ($\mathfrak{M}$). This is not an analogy — it is a direct transfer.
 
 ### 3.3. Autopoietic: self-modifying formal apparatus {#autopoietic}
@@ -385,6 +435,16 @@ The topology $J_{\text{ep}}$ determines which families of translations count as 
 **Example.** Initial topology: "a theory is covered if for each statement there is a translation into at least one other theory." After loading 30 theories, the system discovers: dynamic statements are systematically not covered. L-III: add a requirement for separate coverage of static and dynamic statements. $J_{\text{ep}} \to J'_{\text{ep}}$, and $\mathfrak{M} \to \mathfrak{M}'$ — a **different ∞-topos**.
 
 **Autopoiesis.** In the terms of Maturana–Varela (1980), the system **produces the components** of which it itself consists. The layer $T_{\text{meta}}$ (§8) modifies Mathesis, Mathesis updates $T_{\text{meta}}$.
+
+**L-III algorithm** (topology modification procedure):
+1. **Trigger detection.** Agent Mode 5 discovers a systematic pattern via `meta/patterns`: e.g., "dynamic claims are systematically uncovered in 4 out of 5 theories — no covering family in $J_{\text{ep}}$ distinguishes temporal vs static aspects."
+2. **Proposal formulation.** Agent calls `meta/suggest_extension` → generates a candidate $J'_{\text{ep}}$ by strengthening the covering condition (e.g., requiring separate coverage of static and dynamic claims).
+3. **Verification of Grothendieck axioms.** The SMT backend checks that $J'_{\text{ep}}$ satisfies maximality, stability, and transitivity. If any axiom fails, the proposal is rejected with a counterexample.
+4. **Impact analysis.** Compute which sheaves in $\mathfrak{M}$ change under $J'_{\text{ep}}$: any presheaf that was a sheaf for $J_{\text{ep}}$ but violates descent for $J'_{\text{ep}}$ is flagged. The agent reports: "modifying topology will invalidate $k$ translations and require re-checking $m$ coherence conditions."
+5. **Human confirmation.** The researcher reviews the proposal, the impact, and the Lawvere boundary (any claim about "the new topology is complete" is automatically capped at [H]).
+6. **Application.** $J_{\text{ep}} \leftarrow J'_{\text{ep}}$; $\mathfrak{M} \leftarrow \mathfrak{M}' = \mathrm{Sh}_\infty(\mathbf{Th}, J'_{\text{ep}})$; descent conditions re-checked for affected sheaves; $T_{\text{meta}}$ updated with a record of the modification.
+
+The procedure preserves the ∞-topos structure at every step (the SMT check in step 3 is the gate), and the human-in-the-loop in step 5 ensures that autopoiesis does not run unsupervised.
 
 **Boundary.** Lawvere's theorem (1969): an autopoietic system cannot prove its own consistency. Statements of $T_{\text{meta}}$ about the completeness of $\mathfrak{M}$ have status no higher than [H]. A structural inevitability, not a bug.
 
@@ -404,6 +464,38 @@ Sections §2–§3 describe the **ideal** mathematical object $\mathfrak{M}$. Se
 | Autopoiesis ($J_{\text{ep}} \to J'_{\text{ep}}$) | Agent Mode 5 (meta-audit) + manual confirmation | Human-in-the-loop |
 
 The approximation improves with each implementation phase (§13). Phase 5 (HoTT core) brings the approximation to a fundamentally new level — from emulating ∞-structures on a hypergraph to native computation in cubical type theory.
+
+**Convergence of the approximation.** The finite subsite $\mathbf{Th}_0 \subset \mathbf{Th}$ with $N$ loaded theories approximates $\mathfrak{M}$ with error bounded by the coverage defect:
+
+$$
+\delta(N) := 1 - \frac{|\{a \in T : \exists\text{ covering in } \mathbf{Th}_0\}|}{|T|}
+$$
+
+As $N \to |\mathbf{Th}|$, $\delta(N) \to 0$ monotonically (adding theories can only increase coverage). On the finite subsite, the 1-categorical hypergraph is an exact representation of $\tau_{\leq 1}(\mathfrak{M})$ — the 1-truncation. The HoTT core (Phase 6) lifts this to a representation of $\tau_{\leq n}(\mathfrak{M})$ for arbitrary $n$.
+
+**Scalability analysis.** For $N$ theories with $M$ claims each, dependency degree $D$, and $K$ inter-theoretic functors:
+
+| Operation | Complexity | At $N=30, M=100, D=5, K=100$ |
+|---|---|---|
+| Status propagation (BFS) | $O(N \cdot M \cdot D)$ | ~15,000 ops, <1ms |
+| Full coherence audit | $O(K \cdot M^2)$ | ~1M ops, <100ms |
+| Single Kan extension | $O(M^3 \cdot D)$ | ~50M ops, <5s |
+| All pairwise Kan extensions | $O(K \cdot M^3 \cdot D)$ | ~5G ops, ~8min |
+| Descent check (single covering) | $O(K^2 \cdot M)$ | ~1M ops, <100ms |
+
+All operations are polynomial and parallelizable. The bottleneck (all pairwise Kan extensions) is embarrassingly parallel across $K$ functors. Lazy evaluation: Kan extensions are computed on-demand, not pre-computed for all pairs.
+
+**Proof obligations verified at compile time** (`@verify(proof)` in Verum):
+
+| Property | SMT encoding | Tactic |
+|---|---|---|
+| Associativity of functor composition | $F \circ (G \circ H) = (F \circ G) \circ H$ in Z3 EUF | `category_simp` |
+| Naturality of transformations | $\eta_B \circ F(f) = G(f) \circ \eta_A$ for all $f$ | `auto` |
+| Descent condition (finite) | Čech nerve → cosimplicial limit = equivalence | `descent_check` |
+| Propagation soundness | $\varepsilon(A) \leq \min(\varepsilon(\text{deps}(A)))$ preserved by BFS | `omega` |
+| Lawvere boundary for $T_{\text{meta}}$ | $\text{status}(c) \leq [\text{H}]$ if $c$ asserts consistency | `smt` |
+| Functoriality of translations | $F(\mathrm{id}) = \mathrm{id} \wedge F(g \circ f) = F(g) \circ F(f)$ | `category_simp` |
+| Epistemic monotonicity | $\varepsilon_{T_2}(f(a)) \geq \varepsilon_{T_1}(a)$ for all claims $a$ | `omega` |
 
 ---
 
@@ -502,6 +594,35 @@ tags: [purity, threshold, viability]
 
 **Statement.** For a system with Γ ∈ D(C⁷) ...
 ```
+
+**Inter-theoretic functors** are stored as separate YAML files in a `functors/` directory:
+
+```yaml
+---
+id: F_IIT_UHM
+source: iit
+target: uhm
+type: interpretation  # interpretation | embedding | retraction | equivalence
+status: H             # epistemic status of the functor itself
+confidence: 0.72      # p(F|context) from the Giry oracle (§6.4)
+mappings:
+  - { source_claim: iit:Phi, target_claim: uhm:integration-measure, type: translates_to, confidence: 0.85 }
+  - { source_claim: iit:Q-shape, target_claim: uhm:sector-profile, type: translates_to, confidence: 0.65 }
+  - { source_claim: iit:exclusion, target_claim: null, type: untranslatable, obstruction: 0.91 }
+natural_transformations:
+  - { id: alpha_Phi_P, from: F_IIT_UHM, to: F_IIT_UHM_v2, component_at: iit:Phi, witness: "Φ ↔ P via T-129" }
+obstruction:
+  total: 0.34          # mean ||η_a - id|| across all claims
+  worst: { claim: iit:exclusion, deviation: 0.91 }
+  best: { claim: iit:consciousness, deviation: 0.02 }
+verified: true         # passed SMT functoriality check
+certificate: "lean4://mathesis/F_IIT_UHM.lean"  # proof certificate location
+---
+```
+
+**Natural transformations** between functors (2-morphisms) are stored inline within the functor file or as separate files in `functors/transformations/`. The `natural_transformations` field stores component-wise data; the naturality condition $\eta_B \circ F(f) = G(f) \circ \eta_A$ is verified by SMT at import time.
+
+**Obstruction data** ($\mathrm{Obs}(f)$) is computed by `functor/obstruction` and stored in the `obstruction` field: `total` is the mean deviation, `worst`/`best` identify the extremal claims. A claim with `deviation: 0.0` is perfectly translated; `deviation: 1.0` is completely untranslatable.
 
 ---
 
@@ -638,6 +759,17 @@ Claude Opus connects to the Mathesis Core via MCP (Model Context Protocol):
 The LLM agent is formalized not merely functionally (executing MCP operations) but **categorically** — as a **stochastic oracle** via the Giry monad (Giry 1982).
 
 Instead of a deterministic functor $F: T_1 \to T_2$, the agent generates a **distribution** over the space of functors: $\mathcal{G}(\mathrm{Map}_{\mathbf{Th}}(T_1, T_2))$, where $\mathcal{G}$ is the Giry monad (probability measures on measurable spaces). The act of user confirmation of a mapping is the collapse of this distribution (analogous to epistemic measurement §3.2).
+
+**Algorithm for computing $p(F \mid \text{context})$** (`functor_density` in `core/math/giry.vr`):
+1. **Embedding.** Represent each claim $a \in T_1$ and each claim $b \in T_2$ as LLM embedding vectors $\mathbf{e}_a, \mathbf{e}_b \in \mathbb{R}^d$ (using the model's internal representations).
+2. **Candidate generation.** For each claim $a \in T_1$, compute cosine similarities $\mathrm{sim}(a, b) = \mathbf{e}_a \cdot \mathbf{e}_b / \|\mathbf{e}_a\| \|\mathbf{e}_b\|$ to all claims $b \in T_2$.
+3. **Softmax distribution.** For each $a$, define the candidate distribution $p(b \mid a) = \mathrm{softmax}(\mathrm{sim}(a, b_1), \ldots, \mathrm{sim}(a, b_m) / \tau)$ where $\tau$ is a temperature parameter.
+4. **Functor density.** The density of a full functor $F$ (mapping all claims) is: $p(F \mid \text{context}) = \prod_{a \in T_1} p(F(a) \mid a) \cdot \mathbb{1}[\text{F preserves dependencies}]$. The indicator function $\mathbb{1}$ enforces structural compatibility.
+5. **SMT gate.** Any candidate with $p(F \mid \text{context}) > \theta$ passes to SMT verification: check functoriality ($F(\mathrm{id}) = \mathrm{id}$, $F(g \circ h) = F(g) \circ F(h)$) and epistemic monotonicity ($\varepsilon(F(a)) \geq \varepsilon(a)$). Verification failure nullifies the candidate regardless of density.
+
+**Measure on functor space.** The measurable space structure on $\mathrm{Map}_{\mathbf{Th}}(T_1, T_2)$ is discrete for finite theories (each functor is a point); the Giry monad $\mathcal{G}$ reduces to the finite-probability simplex $\Delta^{|F|}$. For infinite theories, the $\sigma$-algebra is generated by cylinder sets of the form $\{F : F(a) = b\}$.
+
+**Collapse formalization.** User confirmation of a mapping $F_0$ is the epistemic measurement $\mathcal{G} \mapsto \delta_{F_0}$ (Dirac delta at $F_0$). This is the analogue of the Lüders rule from §3.2: the superposition over functor space collapses to a definite choice, and side effects propagate via the commutator structure.
 
 Consequences:
 - **LLM "hallucinations"** are not a bug but fluctuations in the path space of the ∞-groupoid. The agent does not search for a single "correct" answer — it probes topologically connected paths between theories.
@@ -967,8 +1099,16 @@ Lean 4 is the closest, but lacks systems performance and GPU. Agda has cubical, 
 - Higher Inductive Types (point + path constructors)
 - Dependent pattern matching with exhaustiveness checking
 
-**Standard library** (core/math/):
-- `category.vr` (738 lines): Category, Functor, NatTrans, Adjunction, Monad, Limit/Colimit, **Yoneda embedding**, Presheaf/Sheaf, **Kan extensions**, Topos, EnrichedCategory
+**Standard library** (core/math/ — 3,781 lines of ∞-categorical infrastructure):
+- `category.vr` (858 lines): Category, Functor, NatTrans, Adjunction, Monad, Limit/Colimit, **Yoneda embedding**, Presheaf/Sheaf, **Kan extensions** (1-cat), Topos, Monoidal/Abelian/Enriched
+- `simplicial.vr` (392 lines): **SimplicialSet, KanComplex, Horn, InfinityGroupoid, Nerve**
+- `infinity_category.vr` (386 lines): **QuasiCategory, InfinityCategory, InfinityFunctor, MappingSpace**
+- `infinity_topos.vr` (287 lines): **Sieve, GrothendieckTopology (3 axioms), Site, InfSheaf (descent), InfinityTopos (Giraud axioms), GeometricMorphism**
+- `kan_extension.vr` (229 lines): **InfLeftKanExtension (pointwise colimit), InfRightKanExtension, KanExtensionTriple**
+- `fibration.vr` (278 lines): **GrothendieckFibration, Opfibration, StraighteningEquivalence**
+- `model_category.vr` (295 lines): **QuillenModelStructure, QuillenAdjunction, QuillenEquivalence**
+- `operad.vr` (284 lines): **Multicategory, InfOperad, EnOperad**
+- `hott.vr` (446 lines): Equiv, IsContr/IsProp/IsSet, Fiber, univalence (axiom), funext
 - `algebra.vr`: full algebraic hierarchy from Magma to Field
 - `topology.vr`: TopologicalSpace, Manifold, FundamentalGroup, Homology
 - `logic.vr`: Curry-Howard (Prop, Proof\<P\>, Forall, Exists, Decidable)
@@ -980,21 +1120,28 @@ Lean 4 is the closest, but lacks systems performance and GPU. Agda has cubical, 
 
 ### 15.3. Extensions for Mathesis
 
-To realize $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ in Verum, the following extensions are needed (detailed specification: `internal/verum-ext.md`):
+:::info Audit result (2026-04-15)
+A deep audit revealed that **6 out of 7 originally planned modules already exist** in the Verum stdlib (totaling 3,781 lines). The gap is much smaller than initially estimated. See `internal/verum-ext-2.md` for the revised specification.
+:::
+
+To realize $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ in Verum, the following extensions are needed (detailed specification: `internal/verum-ext-2.md`):
 
 **Language:**
-- **Cubical primitives** (P0): Path type, `transport`, `hcomp` — computational model for paths in ∞-groupoids
-- **HKT** (P0): `F: Type → Type` in generic parameters — abstraction over Functor, Monad
-- **Extended tactic DSL** (P1): combinators (`try/else`, `repeat`, `first`), metatactics, LLM oracle
+- **Cubical surface activation** (P0): connect existing `cubical.rs` normalizer to surface syntax (Path type, `transport`, `hcomp`)
+- **Instance search** (P1): automatic protocol resolution for Category, Functor, Site structures
+- **Extended tactic DSL** (P1): combinators (`try/else`, `repeat`, `first`), category-specific tactics (`category_simp`, `descent_check`)
 
-**Library (7 new core/math/ modules):**
-- `hott.vr` — Equiv, IsContr/IsProp/IsSet, Univalence, funext
-- `simplicial.vr` — SimplicialSet, KanComplex, Horn
-- `infinity_category.vr` — QuasiCategory, InfinityFunctor, MappingSpace
-- `fibration.vr` — GrothendieckFibration, CartesianFibration, Straightening
-- `infinity_topos.vr` — Site, GrothendieckTopology, InfinitySheaf, **InfinityTopos**
-- `kan_ext.vr` — LeftKan, RightKan, KanObstruction
-- `quantum_logic.vr` — OrthomodularLattice, EpistemicState
+**New library modules (5):**
+- `quantum_logic.vr` — OrthomodularLattice, EpistemicState, EpistemicProjector, epistemic measurement (the only module from the original 7 that does not yet exist)
+- `giry.vr` — Giry monad, ProbabilityMeasure, LlmOracle, `sample_above()`, `functor_density()`
+- `epistemic.vr` — Theory type, EpistemicStatus, EpistemicTopology (with verified Grothendieck axioms), `theory_site`, `propagate_status()`, `compute_kan_extension()`
+- `cohesive.vr` — CohesiveStructure, DifferentiallyCohesive, 6 modalities (Π, ♭, ♯, Im, &, Rh)
+- `day_convolution.vr` — Day convolution on presheaf categories, `cognitive_extension()`
+
+**Enhancements to existing modules (3):**
+- `infinity_topos.vr` — add descent checker algorithm (`check_descent()`, 5 violation types)
+- `kan_extension.vr` — add computational algorithm for finite subsites (`compute_pointwise_lan()`)
+- `hott.vr` — migrate from Bool-witness placeholders to cubical Path types (when surface syntax activates)
 
 ### 15.4. Mathesis on Verum: architecture
 
