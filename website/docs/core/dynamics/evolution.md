@@ -594,6 +594,25 @@ In earlier versions ρ* was defined as "the unique stationary state of the full 
 
 The reflection measure $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ as **reference** (distance from thermal death), not as the regeneration target. More details: [self-observation](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
 
+:::tip Unified lemma: three contexts of $\rho_*$ are compatible [T] {#лемма-единство-rho-star}
+Three contexts in which the symbol $\rho_*$ (or $\rho^*$) appears in UHM dynamics are **related but distinct** objects; the iterative scheme above reconciles them unambiguously.
+
+| Context | Object | Definition | Role |
+|---|---|---|---|
+| (a) Dynamical attractor | $\rho^*_\Omega$ | Unique fixed point of $\mathcal L_\Omega[\Gamma] = 0$ in the viable region (T-96 [T]) | Long-time limit of evolution; $P(\rho^*_\Omega) > 1/7$ |
+| (b) Categorical self-model | $\varphi(\Gamma)$ | Left adjoint $\varphi \dashv i: \mathrm{Sub}(\Gamma)\hookrightarrow\mathbf{Sh}_\infty$ applied to current $\Gamma$ (T-62 [T]) | Instantaneous self-representation |
+| (c) Regeneration target | $\rho_*$ in $\mathcal R[\Gamma,E] = \kappa(\Gamma)(\rho_* - \Gamma) g_V(P)$ | Defined **as** $\varphi(\Gamma)$ via the iterative scheme above | Drives non-equilibrium relaxation |
+
+**Relations.**
+1. (c) **is** (b) by definition of the iterative scheme [iterative scheme](#итеративная-схема): the regeneration target equals the current categorical self-model.
+2. (a) is **not** equal to (b) at the stationary point: $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge — [resolution of the ρ* paradox](#теорема-нетривиальность-аттрактора)).
+3. (a) and (b) are **compatible at stationarity**: at $\rho^*_\Omega$, the regeneration term $\mathcal R[\rho^*_\Omega,E] = \kappa(\varphi(\rho^*_\Omega) - \rho^*_\Omega) g_V$ does not vanish; it balances dissipation exactly. The nontrivial fidelity $f^* = \operatorname{Tr}(\rho^*_\Omega \varphi(\rho^*_\Omega)) < 1$ measures the **imperfection of self-knowledge** and directly determines $P(\rho^*_\Omega)$ via the purity balance (§Attractor purity balance above).
+
+**Convergence of the iteration.** The sequence $\varphi^{(n)}$ defined in §Iterative scheme converges exponentially to the unique $\varphi^*$ ([T-191 [T]](/docs/proofs/categorical/formalization-phi#t-191-сходимость-φ-башни), Banach contraction with $q = \kappa_{\max}/(\lambda_{\mathrm{gap}} + \kappa_{\min}) < 1$). At convergence, $\varphi^{(\infty)} = \varphi^*$ matches the categorical self-model $\varphi$ of T-62. Hence the triple (a)–(c) is globally consistent.
+
+**Consequence.** Any document referencing "$\rho_*$" or "$\rho^*$" implicitly commits to one of these three contexts. This lemma serves as the cross-reference for all such occurrences.
+:::
+
 #### Theorem (Attractor purity balance) [Т] {#теорема-баланс-чистоты-аттрактора}
 
 At any nontrivial fixed point $\rho^*_\Omega \neq I/7$ the purity is given by the formula:

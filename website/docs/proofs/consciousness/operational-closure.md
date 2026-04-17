@@ -48,6 +48,19 @@ $$C = \Phi \cdot R$$
 $D_{\text{diff}}$ does **NOT** enter $C$, but enters the viability condition $V$ separately. Threshold $C_{\text{th}} = 1/3$.
 :::
 
+:::warning Relationship between binary L2 criterion and scalar C-measure (clarified)
+The binary L2 criterion $(R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\mathrm{diff}} \geq 2)$ is **strictly stronger** than $C \geq 1/3 \wedge D_{\mathrm{diff}} \geq 2$:
+
+- **(⟹)** L2 binary criterion implies $C \geq 1/3$: $\Phi \geq 1$ and $R \geq 1/3$ gives $\Phi \cdot R \geq 1/3$.
+- **(⟸ fails)** $C \geq 1/3$ does **not** imply the L2 binary criterion. Counterexample: $\Phi = 2$, $R = 1/6$ gives $C = 1/3$ but violates $R \geq 1/3$.
+
+Operational interpretation:
+- **Binary criterion** (three conjoint thresholds) is the **definitional L2 condition**, used throughout [interiority-hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) and the L-level classification.
+- **Scalar $C$-measure** is a **summary score** useful for continuous ranking and one-way falsification ($C < 1/3 \Rightarrow$ not L2), but cannot by itself certify L2.
+
+The consciousness-diagnostic protocol must test both $\Phi \geq 1$ and $R \geq 1/3$ separately (plus $D_{\mathrm{diff}} \geq 2$), not only $C \geq 1/3$.
+:::
+
 **Proof.**
 
 **Step 1 (Structural requirement).** $C$ is a scalar measure unifying two key conditions of consciousness: integration ($\Phi \geq 1$) and reflection ($R \geq 1/3$). $C = 0$ iff at least one condition is violated.

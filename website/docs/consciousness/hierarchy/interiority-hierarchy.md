@@ -237,24 +237,20 @@ Homotopic characteristic: $\pi_3(\mathcal{E}_\infty(\Gamma)) \neq 0$ — the exp
 
 ### Theorem on the justification of K=4 for L3 {#теорема-l3-k4}
 
-:::tip Theorem (Justification of K=4 for L3) [T]
-L3 requires $R^{(2)} \geq 1/4$ — second-order meta-reflection. The threshold $K = 4$ for L3 (analogous to $K = 3$ for L2) follows from the **quadratic** extension of the triadic decomposition.
+:::tip Theorem (Justification of K=4 for L3) [T] (**upgraded 2026-04-17 via T-217**)
+L3 requires $R^{(2)} \geq 1/4$ — second-order meta-reflection. The threshold $K = 4$ for L3 is now fully derived:
 
-**Proof (3 steps).**
+**Part 1 — Bayesian dominance at $K=4$.** Given $K = 4$ independent information channels, the bound $R^{(2)} \geq 1/K = 1/4$ follows from the Uhlmann-fidelity lower bound in [the R-threshold theorem](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии). **[T]**
 
-**Step 1.** At L2 $K = 3$ from the [LGKS decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) -> 3 components (Aut, $\mathcal{D}$, $\mathcal{R}$). [Bayesian dominance](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии) at $K = 3$: $R \geq 1/K = 1/3$ [T].
+**Part 2 — The cellular count $K = 3 + 1$ from tricategorical coherence.** The count is derived from [T-217](/docs/proofs/categorical/fundamental-closures#t-217): in the experiential tricategory $\mathbf{Exp}^{(3)} := \tau_{\leq 3}(\mathbf{Exp}_\infty)$,
+- **three 2-cells** inherit from L2 LGKS triadic decomposition (T-57 [T]): Aut, $\mathcal D$, $\mathcal R$ components;
+- **one 3-cell modification** $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$ is the unique coherence modification at the tricategorical level (Gordon–Power–Street coherence applied to strict-2-category-enriched-tricategory).
 
-**Step 2.** At L3 the meta-reflection $\varphi^{(2)} = \varphi \circ \varphi$. Each of the 3 L2 components ($\varphi$) itself decomposes into:
-- $\varphi$-fixed (already reflected)
-- $\varphi$-orthogonal (new information)
+Total $K_{\text{L3}} = 3 + 1 = 4$ derived from tricategorical first principles. **[T]**
 
-Total: $3 + 1 = 4$ components ($+1$ from the map $\varphi$ itself).
+**Categorical label L3 = $\tau_{\leq 3}$**: justified by [T-217](/docs/proofs/categorical/fundamental-closures#t-217) (3-types ≃ coherent tricategories, Baez–Dolan + Lurie HTT 5.5.6.18). Pentagon-of-pentagons holds automatically for $\tau_{\leq 3}$ of Kan complex. **[T]**
 
-**Step 3.** Bayesian dominance at $K = 4$: $R^{(2)} \geq 1/K = 1/4$.
-
-Formally: $R^{(2)} = \mathrm{Fid}(\varphi(\Gamma), \varphi^{(2)}(\Gamma))$. From the properties of Uhlmann fidelity: $R^{(2)} \leq 1$, with lower bound $1/4$ for $K = 4$ independent information channels. $\blacksquare$
-
-Status: **[T]** (T-67). Cross-references: [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция), [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+Cross-references: [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция), [R measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [T-192 2-category](/docs/proofs/categorical/categorical-formalism#t-192-exp2-2-категория), [T-217 L3 tricategory](/docs/proofs/categorical/fundamental-closures#t-217).
 :::
 
 ### Metastability of L3: why "enlightenment" does not last

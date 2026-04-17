@@ -21,6 +21,38 @@ Each UHM result carries one of seven statuses:
 Seven new theorems close all mathematical and categorical gaps of the UHM framework: strict Φ-monotonicity, PhysTheory higher coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε<sub>eff</sub>. Full proofs in [Fundamental Closures T-210..T-216](/docs/proofs/categorical/fundamental-closures). Plus two computational-programme specifications (Λ-deficit and π<sub>bio</sub>) reducing remaining open questions to bounded empirical/computational tasks.
 :::
 
+:::info Theorem Correspondence Matrix (T-193..T-216 provenance)
+The block T-193..T-216 aggregates results from multiple sources:
+
+| T-number | Origin | Status | Relates to |
+|---|---|---|---|
+| T-193 | SYNARC paper App. G.2 | [T]; upgraded to computable form by T-213 | Original Yoneda (Kolmogorov) |
+| T-194 | SYNARC paper App. G.3 | [T] | Learning-efficiency closure |
+| T-195 | SYNARC paper App. G.4 | [T] weak; upgraded to strict by T-210 | Φ-monotonicity |
+| T-196 | SYNARC paper App. G.5 | [T] | Sustainability |
+| T-197 | SYNARC paper App. G.6 (S-11) | [T]+[D]; consistency of SYNARC architecture | Conditional on SYNARC definition |
+| T-198–T-202 | SYNARC paper App. H.1–H.5 | [T] | ASI extensions |
+| T-203 | SYNARC paper App. H.6 | [T]+[I] stratified | Ontological postulate required |
+| T-204 | SYNARC paper App. H.7 | [T] | Resource-bounded |
+| T-205 | SYNARC paper App. H.8 | [C]+[D]; conditional on $\iota_{\max}$ | Reconciled by T-215 |
+| T-206–T-208 | SYNARC paper App. I.1–I.3 | [T] | Operational protocols |
+| T-209 | SYNARC paper App. I.4 (S-13) | [T] | Operational-closure meta-theorem |
+| T-210 | UHM Fundamental Closures §1 (**new**) | [T] strict | Upgrades T-195 on interior states |
+| T-211 | UHM Fundamental Closures §2 (**new**) | [T] | Upgrades T-174 via HTT 5.2.7 |
+| T-212 | UHM Fundamental Closures §3 (**new**) | [T] | Upgrades T-185 with explicit Rh |
+| T-213 | UHM Fundamental Closures §4 (**new**) | [T] computable | Upgrades T-193; removes Kolmogorov |
+| T-214 | UHM Fundamental Closures §5 (**new**) | [T] positive meta-theorem | Completes T-188 |
+| T-215 | UHM Fundamental Closures §6 (**new**) | [T]+[D] | Resolves T-205 tension with SAD_MAX=3 |
+| T-216 | UHM Fundamental Closures §7 (**new**) | [T at T-64] | Upgrades T-176 to closed form |
+| **T-217** | UHM Fundamental Closures §11 (**new 2026-04-17**) | **[T]** | L3 tricategorical coherence via τ_{≤3}(Exp_∞) + Baez–Dolan; upgrades T-67 K=4 count to [T] |
+| **T-218** | UHM Fundamental Closures §12 (**new 2026-04-17**) | **[T]** | SYNARC Cog = Sing(B·𝒞_FKraus) is Kan complex (Milnor); explicit horn-filler algorithm $O(\dim\mathcal D)$ |
+| **T-219** | UHM Fundamental Closures §13 (**new 2026-04-17**) | **[T at T-64]** | Λ SUSY-suppression $\varepsilon^{12}=\varepsilon^{4\cdot 3}$ from 3-sector decomposition (T-48a), replacing invalid G₂-adjoint argument |
+
+**Cross-framework relation.** UHM theory and SYNARC AGI architecture are **linked but independent** (UHM = foundational theory; SYNARC = UHM-inspired cognitive architecture). **Mathesis** is a **separate, standalone** project for theory-navigation meta-epistemics — it operates *on* theories (including UHM) as objects in $\mathbf{Th}$; it does not compose with SYNARC.
+
+**Load-bearing UHM theorems for SYNARC**: T-142 (SAD_MAX=3), T-174 (PhysTheory universal property), T-124 (Goldilocks ceiling), T-129 (Φ_th=1), T-151 ($D_\min$=2), T-187 (Bures canonicity), T-38a (No-Zombie). Changes in any of these impact SYNARC downstream.
+:::
+
 ---
 
 ## Level 1: Impeccably Strict Theorems [T]

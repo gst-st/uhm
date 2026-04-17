@@ -477,7 +477,16 @@ $$
 \Lambda_{\text{residual}} \sim \varepsilon^{12} \sim 10^{-24}
 $$
 
-**Status [Т]**: the [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) yields SUSY compensation as a direct consequence of the spectral action $S = \mathrm{Tr}(f(D/\Lambda))$ from the finite spectral triple [Т] ([spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка)). In the bosonic sector $\mathrm{Tr}_{\text{int}}(1) = 7$ (from $H_{\text{int}} = \mathbb{C}^7$, T-53 [Т]); in the fermionic sector from $\dim \mathfrak{g}_2 = 14$ gauginos the decomposition $\mathbf{14} \to \mathbf{7}_{\text{light}} \oplus \mathbf{7}_{\text{heavy}}$ gives $H_{\text{int}}^{\text{ferm}} = \mathbb{C}^7$ (7 $G_2$-singlets), gravitinos (4 modes) live on $M^4$. With exact internal SUSY: $\mathrm{Tr}_{\text{int}}(1)_{\text{total}} = 7 - 7 = 0$ [С] — exact compensation (for details: [fermionic sector structure](/docs/physics/gravity/cosmological-constant#структура-фермионного-сектора)). Breaking at $m_{3/2} \sim \varepsilon^3 M_P$ gives $\Lambda_{\text{CC}} \sim f_0 \cdot m_{3/2}^4 \sim \varepsilon^{12} \cdot M_P^4$.
+**Status [T at T-64] via T-219 (2026-04-17 replacement)**: the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** [T at T-64] ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219)) replaces this with a rigorous derivation:
+
+$$\Lambda_\mathrm{SUSY}\;\sim\;\varepsilon^{12}\,M_P^4 \;=\; \varepsilon^{4\cdot k_\mathrm{sec}}\,M_P^4, \qquad k_\mathrm{sec}=3.$$
+
+The exponent $12 = 4 \cdot 3$ arises **product-structurally** from:
+- $k_\mathrm{sec}=3$ sectors (O, $\mathbf 3$, $\bar{\mathbf 3}$) in UHM sector decomposition (T-48a [T]);
+- Factor $4$ per sector from $\operatorname{STr}(M_k^4) \sim (\delta m_k)^4 \sim (\varepsilon M_P)^4$ SUSY one-loop (Martin 2010);
+- Three-loop nested product: leading correction $\sim \varepsilon^{4+4+4} = \varepsilon^{12}$ (G₂-invariant Fano coupling T-43d [T] mandates one $\varepsilon^4$ per sector).
+
+This is a **genuine SUSY-sector mechanism**, not a reducible-group decomposition. Breaking at $m_{3/2} \sim \varepsilon^3 M_P$ independently yields $\Lambda_\mathrm{CC} \sim f_0 m_{3/2}^4 = f_0 \varepsilon^{12} M_P^4$, matching the sector product.
 
 The SUSY compensation $\varepsilon^{12}$ and the $\varepsilon^6$ suppression from §2.1 are **the same** mechanism ($m_{3/2} \propto \varepsilon^3$, see [Theorem 6.3](/docs/physics/gravity/cosmological-constant#83-резидуальная-λ-при-нарушении-susy)), so SUSY does not provide **new** multiplicative suppression. However, the $\varepsilon^{12}$ estimate becomes additional suppression if the SUSY-breaking contribution to the residual $\Lambda$ is accounted for **after** compensation.
 :::
