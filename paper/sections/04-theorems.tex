@@ -941,7 +941,7 @@ cubic term (T-50~\status{T}) supplying the combinatorial content.
 This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
 expression.
 
-\subsection{Extended closures: T-217--T-219 + clarifications}
+\subsection{Extended closures: T-217--T-220 + clarifications}
 \label{subsec:extended-closures}
 
 A follow-up audit (2026-04-17) identified three further open
@@ -1055,8 +1055,94 @@ reducibility that does not hold.
         needed only for pathological-state analysis.
 \end{itemize}
 
+\begin{theorembox}[{T-220: No-reduction theorem for $F_4$-UHM $\to$
+$G_2$-UHM \status{T, negative}}]
+\label{thm:t220-no-reduction}
+Let $\mathbf{C}_{F_4}$ denote the hypothetical base category of
+$F_4$-UHM --- states on the exceptional Jordan algebra
+$\mathcal J_3(\mathbb O)$ with $F_4$-equivariance and Jordan-triple
+dynamics --- and $\mathbf{C}_{G_2}$ the base category of $G_2$-UHM
+(states on $\mathbb C^7$ with $G_2$-equivariant CPTP dynamics). Then
+there exists \emph{no} functor $R\colon \mathbf{C}_{F_4} \to
+\mathbf{C}_{G_2}$ satisfying simultaneously: (S1) $F_4$-equivariant
+state-space projection $\mathcal J_3(\mathbb O) \twoheadrightarrow
+\mathbb C^7$; (S2) non-constant $F_4$-equivariant map $\mathbb O P^2
+\to \mathrm{PG}(2,2)$; (S3) algebra-homomorphism from Jordan-triple
+dynamics to Lindblad CPTP dynamics; (S4) preservation of the
+invariants $\{\Pcrit = 2/7,\ \alpha = 2/3,\ \mathrm{SAD}_{\max} = 3,\
+R_{\mathrm{th}} = 1/3,\ \Phi_{\mathrm{th}} = 1\}$.
+\end{theorembox}
+
+\emph{Proof sketch} (five independent obstructions; full proof with
+explicit branching rules in the UHM Fundamental Closures document,
+\S14, EN/RU):
+
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item \textbf{Representation theory (kills S1).} Via the
+        Borel--de~Siebenthal chain $F_4 \supset \mathrm{Spin}(9)
+        \supset \mathrm{Spin}(7) \supset G_2$,
+        \[
+          \mathcal J_3(\mathbb O)\big|_{G_2} \;=\; \mathbf{27} \;=\;
+          3 \cdot \mathbf 7 \,\oplus\, 6 \cdot \mathbf 1.
+        \]
+        Three $G_2$-isotypic copies of $\mathbf 7$ exist; under the
+        maximal $A_1 \times G_2 \subset F_4$ they form an
+        $A_1$-doublet $(\mathbf 2, \mathbf 7)$ plus a singlet
+        $(\mathbf 1, \mathbf 7)$. No $F_4$-equivariant selection is
+        possible.
+  \item \textbf{Geometry (kills S2).} $F_4$ acts transitively on the
+        16-dimensional Cayley plane $\mathbb O P^2$; any
+        $F_4$-equivariant map to the discrete 7-point Fano plane
+        $\mathrm{PG}(2,2)$ factors through $\mathbb O P^2 / F_4 =
+        \mathrm{pt}$ and is therefore constant, losing all
+        information.
+  \item \textbf{Jordan exceptionality (kills S3).} Zelmanov (1983):
+        $\mathcal J_3(\mathbb O)$ is exceptional (not special), hence
+        admits no embedding into any associative algebra. Lindblad
+        dynamics requires the associative algebra $M_7(\mathbb C)$;
+        no homomorphism exists.
+  \item \textbf{Numerical invariants (kills S4).} $\alpha^{F_4}$,
+        derived from sectional curvatures of the Freudenthal metric
+        on the rank-1 symmetric space $\mathbb O P^2$, lies in
+        $[\tfrac14, \tfrac12]$ --- distinct from $\tfrac23$.
+        Analogously $\Pcrit^{F_4} \sim c/27 \neq 2/7$, and
+        $\mathrm{SAD}_{\max}^{F_4}$, $R_{\mathrm{th}}^{F_4}$,
+        $\Phi_{\mathrm{th}}^{F_4}$ all differ.
+  \item \textbf{Cohomology (independent verification).}
+        $\chi(\mathbb C P^6) = 7 \neq 3 = \chi(\mathbb O P^2)$;
+        $K^0$-ranks $\mathbb Z^7$ and $\mathbb Z^3$ are
+        non-isomorphic abelian groups. No K-theory-preserving
+        retraction exists. \hfill$\blacksquare$
+\end{enumerate}
+
+\paragraph{Corollaries.}
+\begin{itemize}[leftmargin=2em,nosep]
+  \item \textbf{Category shift is not safe.} The na\"ive extension
+        $G_2$-UHM $\hookrightarrow F_4$-UHM as a functorial refinement
+        is impossible; any realised $F_4$-UHM is a distinct theory
+        requiring separate empirical calibration.
+  \item \textbf{Outcome-1 elimination.} Of the three possible
+        outcomes of an $F_4$ category shift (replacement / parallel
+        theory / meta-UHM), Outcome~1 (``$G_2$-UHM is a slice of
+        $F_4$-UHM'') is \emph{ruled out}. Only parallel theories or
+        $\infty$-topos-level comparison (Mathesis) remain.
+  \item \textbf{Mathesis-level comparison.} The only mechanism for
+        comparing $G_2$-UHM and $F_4$-UHM is as distinct objects in
+        the Mathesis $\infty$-topos $\mathfrak M$, aligning with M-10
+        (Lawvere fixed-point boundary): no theory contains its
+        complete self-description.
+\end{itemize}
+
+\paragraph{Open direction unlocked (T-220-H, speculative).}
+The three $G_2$-copies $\mathbf 7_{(a)}, \mathbf 7_{(b)}, \mathbf
+7_{(c)}$ of the fundamental representation --- one $A_1$-singlet, two
+forming an $A_1$-doublet --- may correspond to the three fermion
+generations of the Standard Model. This connects to the
+Dubois-Violette and Boyle--Farnsworth octonionic-SM programmes, but
+requires a separate empirical study.
+
 \paragraph{Summary.}
-After T-210--T-219, UHM's foundational framework has no remaining
+After T-210--T-220, UHM's foundational framework has no remaining
 mathematical or categorical gaps. Three classes of open questions
 persist, all with explicit specifications:
 \begin{itemize}[leftmargin=2em,nosep]
