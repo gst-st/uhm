@@ -499,6 +499,14 @@ See [Predictions](/docs/applied/coherence-cybernetics/predictions) for the 23+ f
 
 The structural inevitability of site-relativization in T-221 is consonant with [T-214](/docs/proofs/categorical/fundamental-closures#t-214) (hard-problem meta-theorem): any sufficiently rich self-referential system has **structurally irreducible external postulates** (Lawvere fixed-point). T-221 localises this irreducibility: what in List–DeBrota's framework appears as "conflict between FPR and objectivism" is, in UHM, the *positive* fact that the relativization parameter ($\Gamma$) lives *internally* to the ∞-topos rather than in a mysterious external metaphysical subject (which was Fine's 2005 worry with pure relationalism).
 
+### Independent convergence: Lerchner (2026, Google DeepMind)
+
+An independent argument by Alexander Lerchner (*The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness*, Google DeepMind working paper, 2026-03) reaches the same broad conclusion — that algorithmic symbol manipulation cannot **instantiate** experience, only **simulate** it — via a different route. Lerchner argues that computation is a "mapmaker-dependent" description of physics rather than an intrinsic physical process, and therefore inverts the standard chain "Physics → Computation → Consciousness" into "Physics → Consciousness → Concepts → Computation".
+
+In UHM terms this is the **negative** form of T-221 (rejection of naive non-relationalism in favour of an agent-indexed view of computation) combined with the Lawvere barrier of T-214. UHM supplies the **positive, constructive** counterpart that Lerchner's paper leaves open — "What physical conditions are needed for consciousness?" — namely the specific structure $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $G_2$-covariant Lindblad dynamics, the four measurable thresholds $(P, R, \Phi, D)$, and the $\pi_\text{bio}$ protocol as the operational discriminator. Lerchner's terminology (*abstraction fallacy*, *mapmaker*, *alphabetization*, *transduction fallacy*, *simulation vs. instantiation*) translates into UHM formalism via: simulation ↔ 1-truncation $\tau_{\leq 1}(\mathfrak{T})$; instantiation ↔ full cohesive section; causality gap ↔ T-214 Lawvere barrier; mapmaker-dependency ↔ site-relativization NR$_\text{site}$ of T-221.
+
+The independent convergence from a major industrial AI-research laboratory — arriving at a structurally similar conclusion without UHM's category-theoretic machinery — reinforces the view that UHM's categorical-monistic route (T-221) is not one philosophical option among many but a structurally forced reply to the no-go results, detectable from multiple starting points.
+
 ---
 
 ## Categorical Meta-Analysis of Theories of Consciousness
