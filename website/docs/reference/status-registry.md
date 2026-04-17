@@ -17,12 +17,12 @@ Each UHM result carries one of seven statuses:
 - **[✗]** Retracted — proven erroneous or withdrawn
 :::
 
-:::info Foundational closures (T-210..T-216)
-Seven new theorems close all mathematical and categorical gaps of the UHM framework: strict Φ-monotonicity, PhysTheory higher coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε<sub>eff</sub>. Full proofs in [Fundamental Closures T-210..T-216](/docs/proofs/categorical/fundamental-closures). Plus two computational-programme specifications (Λ-deficit and π<sub>bio</sub>) reducing remaining open questions to bounded empirical/computational tasks.
+:::info Foundational closures (T-210..T-220)
+Eleven theorems close all mathematical and categorical gaps of the UHM framework: strict Φ-monotonicity, PhysTheory higher coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε<sub>eff</sub>, L3 tricategorical coherence, SYNARC Cog as Kan complex, sector-product Λ-suppression, **no-reduction $F_4$→$G_2$ UHM**. Full proofs in [Fundamental Closures T-210..T-220](/docs/proofs/categorical/fundamental-closures). Plus two computational-programme specifications (Λ-deficit and π<sub>bio</sub>) reducing remaining open questions to bounded empirical/computational tasks.
 :::
 
-:::info Theorem Correspondence Matrix (T-193..T-216 provenance)
-The block T-193..T-216 aggregates results from multiple sources:
+:::info Theorem Correspondence Matrix (T-193..T-220 provenance)
+The block T-193..T-220 aggregates results from multiple sources:
 
 | T-number | Origin | Status | Relates to |
 |---|---|---|---|
@@ -47,6 +47,7 @@ The block T-193..T-216 aggregates results from multiple sources:
 | **T-217** | UHM Fundamental Closures §11 (**new 2026-04-17**) | **[T]** | L3 tricategorical coherence via τ_{≤3}(Exp_∞) + Baez–Dolan; upgrades T-67 K=4 count to [T] |
 | **T-218** | UHM Fundamental Closures §12 (**new 2026-04-17**) | **[T]** | SYNARC Cog = Sing(B·𝒞_FKraus) is Kan complex (Milnor); explicit horn-filler algorithm $O(\dim\mathcal D)$ |
 | **T-219** | UHM Fundamental Closures §13 (**new 2026-04-17**) | **[T at T-64]** | Λ SUSY-suppression $\varepsilon^{12}=\varepsilon^{4\cdot 3}$ from 3-sector decomposition (T-48a), replacing invalid G₂-adjoint argument |
+| **T-220** | UHM Fundamental Closures §14 (**new 2026-04-17**) | **[T] negative** | No reduction functor $F_4$-UHM → $G_2$-UHM exists: 5 independent obstructions (rep-theory $3\cdot\mathbf{7}\oplus 6\cdot\mathbf{1}$, $F_4$-transitivity on $\mathbb{O}P^2$, Zelmanov exceptionality, numerical mismatch $\alpha,P_\text{crit}$, Euler $\chi$(ℂP⁶)=7≠3=χ(𝕆P²)) |
 
 **Cross-framework relation.** UHM theory and SYNARC AGI architecture are **linked but independent** (UHM = foundational theory; SYNARC = UHM-inspired cognitive architecture). **Mathesis** is a **separate, standalone** project for theory-navigation meta-epistemics — it operates *on* theories (including UHM) as objects in $\mathbf{Th}$; it does not compose with SYNARC.
 

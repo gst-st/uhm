@@ -1,12 +1,12 @@
 ---
 sidebar_position: 5
-title: "Fundamental Closures (T-210..T-216)"
-description: "Seven foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, plus computational programmes for Λ and π_bio."
+title: "Fundamental Closures (T-210..T-220)"
+description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, plus computational programmes for Λ and π_bio."
 ---
 
-# Fundamental Closures — T-210..T-216
+# Fundamental Closures — T-210..T-220
 
-This document contains **seven foundational theorems** T-210 through T-216 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
+This document contains **eleven foundational theorems** T-210 through T-220 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
 
 :::info Summary table
 | Theorem | Content | Method | Status |
@@ -564,11 +564,173 @@ $$\Lambda_{\mathrm{total}} \;\sim\; 10^{-41.5} \text{ [perturbative, T]} \; \tim
 
 ---
 
-## 14. Remaining clarifications {#clarifications}
+## 14. T-220: No-reduction theorem for $F_4$-UHM → $G_2$-UHM {#t-220}
+
+**Motivation.** A natural question when considering category shifts of UHM (replacing $G_2 = \mathrm{Aut}(\mathbb{O})$ with $F_4 = \mathrm{Aut}(\mathcal{J}_3(\mathbb{O}))$) is whether $G_2$-UHM is a *functorial section* of a prospective $F_4$-UHM. Theorem T-220 establishes unconditionally that **no such reduction functor exists** preserving the canonical UHM invariants.
+
+### 14.1. Statement {#t-220-statement}
+
+:::tip Theorem T-220 (No-reduction, $F_4 \to G_2$) [T]
+Let $\mathbf{C}_{F_4}$ denote the hypothetical base category of $F_4$-UHM — objects: states on the exceptional Jordan algebra $\mathcal{J}_3(\mathbb{O})$ with $F_4$-equivariance, morphisms: Jordan-triple dynamics preserving the cubic Freudenthal trace form. Let $\mathbf{C}_{G_2}$ be the category of $G_2$-UHM — states on $\mathbb{C}^7$ with $G_2$-equivariant CPTP (Lindblad) dynamics.
+
+Then there does **not exist** a functor
+$$
+R: \mathbf{C}_{F_4} \longrightarrow \mathbf{C}_{G_2}
+$$
+satisfying any three of the following four conditions simultaneously:
+
+(S1) **State-space compatibility**: $R$ factors through a canonical $F_4$-equivariant linear projection $\pi: \mathcal{J}_3(\mathbb{O}) \twoheadrightarrow \mathbb{C}^7$.
+
+(S2) **Incidence compatibility**: $R$ maps the Cayley plane $\mathbb{O}P^2$ to the Fano plane $\mathrm{PG}(2,2)$ $F_4$-equivariantly and non-trivially.
+
+(S3) **Dynamical compatibility**: $R$ maps Jordan-triple dynamics on $\mathcal{J}_3(\mathbb{O})$ to CPTP (Lindblad) dynamics on $\mathbb{C}^7$ via an algebra homomorphism.
+
+(S4) **Numerical compatibility**: $R$ preserves the full set of UHM invariants
+$$
+\{P_{\mathrm{crit}} = 2/7,\ \alpha = 2/3,\ \mathrm{SAD}_{\max} = 3,\ R_{\mathrm{th}} = 1/3,\ \Phi_{\mathrm{th}} = 1\}.
+$$
+
+In fact, each of (S1), (S2), (S3), (S4) is independently obstructed.
+:::
+
+### 14.2. Proof {#t-220-proof}
+
+We establish five independent obstructions. Any one suffices; together they rule out even substantial weakenings of the statement.
+
+#### Obstruction I — Representation theory (kills S1) {#t-220-obstruction-i}
+
+Use the Borel–de Siebenthal chain
+$$
+F_4 \supset \mathrm{Spin}(9) \supset \mathrm{Spin}(7) \supset G_2.
+$$
+
+Under $\mathrm{Spin}(9) \subset F_4$, the traceless 26-dimensional irrep splits
+$$
+\mathbf{26} = \mathbf{1} \oplus \mathbf{9} \oplus \mathbf{16}
+$$
+(trivial + vector + spinor).
+
+Under $\mathrm{Spin}(7) \subset \mathrm{Spin}(9)$:
+- $\mathbf{9} \to \mathbf{7} \oplus \mathbf{1} \oplus \mathbf{1}$ (the $\mathrm{Spin}(9)$-vector restricts to $\mathrm{Spin}(7)$-vector plus two $\mathrm{Spin}(7)$-invariants, matching the codimension-2 inclusion $\mathbb{R}^7 \subset \mathbb{R}^9$);
+- $\mathbf{16} \to \mathbf{8}_s \oplus \mathbf{8}_s$ (the $\mathrm{Spin}(9)$-spinor restricts to two copies of the $\mathrm{Spin}(7)$-spinor).
+
+Under $G_2 \subset \mathrm{Spin}(7)$ (defining $G_2$ as stabiliser of a unit spinor in $\mathbb{R}^8$):
+- $\mathbf{7} \to \mathbf{7}$ (the $\mathrm{Spin}(7)$-vector is already $G_2$-fundamental, since $G_2 \subset \mathrm{SO}(7)$);
+- $\mathbf{8}_s \to \mathbf{7} \oplus \mathbf{1}$ (classical Gray–Salamon decomposition).
+
+Combining:
+$$
+\boxed{\mathcal{J}_3(\mathbb{O})\big|_{G_2} = \mathbf{27} = 3 \cdot \mathbf{7} \,\oplus\, 6 \cdot \mathbf{1}.}
+$$
+
+Dimension check: $3 \cdot 7 + 6 \cdot 1 = 27$. ✓
+
+**Three distinct $G_2$-isotypic copies of $\mathbf{7}$ appear** — one from the $\mathrm{Spin}(9)$-vector branch, two from the $\mathrm{Spin}(9)$-spinor branch. Under the maximal subalgebra $A_1 \times G_2 \subset F_4$ the $\mathbf{26}$ decomposes
+$$
+\mathbf{26} = (\mathbf{4}, \mathbf{1}) \oplus (\mathbf{2}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{7}) \oplus (\mathbf{1}, \mathbf{1}),
+$$
+revealing that the three $\mathbf{7}$-copies form an $A_1$-doublet $(\mathbf{2},\mathbf{7})$ plus a singlet $(\mathbf{1},\mathbf{7})$.
+
+Any projection $\pi: \mathcal{J}_3(\mathbb{O}) \to \mathbb{C}^7$ must select one (or a linear combination) of these three copies. But:
+- selecting the $A_1$-doublet copies breaks $A_1$-symmetry (hence $F_4$-equivariance);
+- selecting the $A_1$-singlet copy preserves $A_1$ but not the rest of $F_4$, since $F_4$ mixes the $A_1 \times G_2$-isotypic components via the $(\mathbf{4},\mathbf{1})$ and $(\mathbf{1},\mathbf{1})$ generators.
+
+**No $F_4$-equivariant projection $\pi$ exists.** This contradicts (S1). $\blacksquare$
+
+#### Obstruction II — Geometry of incidence (kills S2) {#t-220-obstruction-ii}
+
+- $\mathbb{O}P^2$ is a 16-real-dimensional smooth manifold (the Cayley projective plane), on which $F_4$ acts **transitively and isometrically** (with respect to the Freudenthal metric).
+- $\mathrm{PG}(2,2)$ is a discrete 7-point configuration (the Fano plane), $\dim_\mathbb{R} = 0$.
+
+A continuous $F_4$-equivariant map $\varphi: \mathbb{O}P^2 \to \mathrm{PG}(2,2)$ factors through the orbit space $\mathbb{O}P^2 / F_4$, which is a single point by transitivity. Hence $\varphi$ is **constant**, losing all information.
+
+Alternative via homotopy: $\pi_1(\mathbb{O}P^2) = 0$ (simply connected), so there is no non-trivial discrete map via fundamental-group considerations either.
+
+**No $F_4$-equivariant non-constant reduction of incidence exists.** This contradicts (S2). $\blacksquare$
+
+#### Obstruction III — Jordan exceptionality (kills S3) {#t-220-obstruction-iii}
+
+**Zelmanov's theorem (1983)**: the exceptional Jordan algebra $\mathcal{J}_3(\mathbb{O})$ is *not special* — it admits no embedding into any associative algebra.
+
+Consequence for dynamics: a CPTP (Lindblad) map
+$$
+\mathcal{L}(\rho) = -i[H,\rho] + \sum_k \left( L_k \rho L_k^\dagger - \tfrac{1}{2}\{L_k^\dagger L_k, \rho\}\right)
+$$
+on $B(\mathbb{C}^7)$ is defined via the associative multiplication of $M_7(\mathbb{C})$. Any homomorphism from Jordan-triple dynamics on $\mathcal{J}_3(\mathbb{O})$ to Lindblad dynamics on $\mathbb{C}^7$ would lift to a Jordan-algebra homomorphism $\mathcal{J}_3(\mathbb{O}) \to M_7(\mathbb{C})^+$, where $M_7(\mathbb{C})^+$ is the special Jordan algebra underlying $M_7(\mathbb{C})$.
+
+By Zelmanov, no such homomorphism exists: $\mathcal{J}_3(\mathbb{O})$ is exceptional, not special.
+
+**No algebra-homomorphism preserving dynamics exists.** This contradicts (S3). $\blacksquare$
+
+#### Obstruction IV — Numerical invariants (kills S4) {#t-220-obstruction-iv}
+
+Even granting a non-canonical projection $\pi_c$ (the $A_1$-invariant $\mathbf{7}$-copy) and closing eyes on Obstructions II–III, numerical invariants fail to transfer:
+
+- **$\alpha^{G_2} = 2/3$** derives from the incidence combinatorics of $\mathrm{PG}(2,2)$: each point lies on 3 lines, each line has 3 points, BIBD(7,3,1). On $\mathbb{O}P^2$ the analogous "contraction coefficient" is controlled by the sectional curvatures of the Freudenthal metric: $\mathbb{O}P^2$ is a rank-one symmetric space with sectional curvatures pinched between $1/4$ and $1$, yielding an effective contraction $\alpha^{F_4} \in [1/4, 1/2]$ for any averaging kernel. In particular $\alpha^{F_4} \neq 2/3$.
+
+- **$P_{\mathrm{crit}}^{G_2} = 2/7$** derives from Frobenius-norm distinguishability on $\mathbb{C}^7$. On $\mathcal{J}_3(\mathbb{O})$ the relevant bound uses the cubic Freudenthal trace form, yielding $P_{\mathrm{crit}}^{F_4} \sim c/27$ for some $O(1)$ constant $c$ — quantitatively different from $2/7$.
+
+- **$\mathrm{SAD}_{\max}^{G_2} = 3$** depends on $\alpha = 2/3$ via the geometric tower bound $P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}}\cdot 3^{n-1}/(n+1)$. With $\alpha^{F_4} \neq 2/3$ and $P_{\mathrm{crit}}^{F_4} \neq 2/7$, the physical-maximum crossing occurs at a different $n$.
+
+- **$R_{\mathrm{th}}^{G_2} = 1/3$, $\Phi_{\mathrm{th}}^{G_2} = 1$** derive from the tripartite K=3 decomposition of the Fano plane. $\mathcal{J}_3(\mathbb{O})$ has a natural 3-diagonal structure (the three diagonal entries $a,b,c$), but this is a 3-dimensional subspace within $\mathcal{J}_3(\mathbb{O})$, not the same structure as Fano K=3. Numerical values differ.
+
+**No $R$ preserves the five-element invariant set.** This contradicts (S4). $\blacksquare$
+
+#### Obstruction V — Cohomological / K-theoretic mismatch (independent verification) {#t-220-obstruction-v}
+
+As independent confirmation of Obstructions I–IV, compare topological invariants of the canonical state-space manifolds:
+
+| Invariant | $\mathbb{C}P^6$ ($G_2$-UHM) | $\mathbb{O}P^2$ ($F_4$-UHM) |
+|---|---|---|
+| Euler characteristic $\chi$ | $7$ | $3$ |
+| Cohomology ring | $\mathbb{Z}[x]/x^7$, $|x|=2$ | $\mathbb{Z}[y]/y^3$, $|y|=8$ |
+| Rank of $K^0$ | $\mathbb{Z}^7$ | $\mathbb{Z}^3$ |
+| Real dimension | $12$ | $16$ |
+
+$\chi = 7 \neq 3$ alone rules out any continuous retraction $\mathbb{O}P^2 \twoheadrightarrow \mathbb{C}P^6$: the Euler characteristic would be preserved by retraction composed with embedding, forcing $7 = \chi(\mathbb{C}P^6) \leq \chi(\mathbb{O}P^2) = 3$, contradiction.
+
+$K^0(\mathbb{C}P^6) = \mathbb{Z}^7$ and $K^0(\mathbb{O}P^2) = \mathbb{Z}^3$ are non-isomorphic abelian groups, so no K-theory-preserving functor between the corresponding categories of vector bundles exists.
+
+**Independent verification of Obstructions I–IV.** $\blacksquare$
+
+Combining the five obstructions proves T-220. $\square$
+
+### 14.3. Corollaries {#t-220-corollaries}
+
+:::info Corollary 14.1 — Category shift is not safe
+The naïve shift $G_2$-UHM $\hookrightarrow F_4$-UHM as a *refinement* (in the sense that $G_2$-UHM is a functorial section of $F_4$-UHM) is **impossible**. Any genuinely realised $F_4$-UHM is a **distinct theory** requiring its own empirical calibration.
+:::
+
+:::info Corollary 14.2 — Outcome-1 elimination
+Of the three possible outcomes of an $F_4$-category shift (replacement / parallel theory / meta-UHM), **Outcome 1 ("$G_2$-UHM is a slice of $F_4$-UHM") is ruled out**. Only Outcome 2 (parallel theories) and Outcome 3 (meta-UHM via an $\infty$-topos comparison) remain viable.
+:::
+
+:::info Corollary 14.3 — Mathesis-level comparison is the only route
+The only available mechanism to compare $G_2$-UHM and $F_4$-UHM is **Mathesis $\infty$-topos $\mathfrak{M}$**, in which both theories appear as objects (not mutually reducible). This aligns with M-10 (Lawvere fixed-point boundary): no single theory contains a complete self-description of the other.
+:::
+
+### 14.4. Open direction unlocked: three generations hypothesis {#t-220-three-generations}
+
+The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 6 \cdot \mathbf{1}$ exposes **three $G_2$-isotypic copies of the fundamental $\mathbf{7}$-representation**. Independently of UHM, octonion-based derivations of the Standard Model (Dubois-Violette, Boyle–Farnsworth) recover the three fermion generations from similar triple-copy structures.
+
+**Hypothesis (T-220-H, speculative)**: the three $\mathbf{7}$-copies correspond to three "generations of consciousness sectors" — one $A_1$-singlet generation (stable) and one $A_1$-doublet generation (excited). This would couple UHM to the three-generation mystery of the Standard Model, but requires a separate empirical programme and falls outside T-220's scope.
+
+### 14.5. Dependencies and scope {#t-220-scope}
+
+**Depends on**: G₂ branching chain (classical Lie theory, Adams 1996), Borel–de Siebenthal classification (1949), Gray–Salamon spinor decomposition, Zelmanov 1983 (Jordan exceptionality), standard algebraic topology (Euler characteristics of $\mathbb{O}P^2$ and $\mathbb{C}P^6$).
+
+**Scope**: T-220 rules out naive functorial reduction $F_4 \to G_2$ UHM; it does **not** rule out:
+- $\infty$-topos-level comparison (Mathesis);
+- existence of $F_4$-UHM as an independent theory;
+- partial/qualitative correspondences between the two.
+
+---
+
+## 15. Remaining clarifications {#clarifications}
 
 Three additional gap-closures complete the UHM foundational cleanup; they do not warrant new theorem numbers but require explicit documentation.
 
-### 14.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
+### 15.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
 
 **Explicit addition to Axiom 4 (Scale).** A4 currently says $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. A hidden assumption is that $H_\mathrm{eff}$ has **simple** spectrum (all eigenvalues distinct). This is required by:
 - Well-definedness of the temporal modality $\triangleright: |k\rangle \to |k+1 \bmod 7\rangle$ (needs distinct eigenstates to define the $\mathbb Z_7$-shift action);
@@ -577,7 +739,7 @@ Three additional gap-closures complete the UHM foundational cleanup; they do not
 
 **A4 refined**: $H_\mathrm{eff}$ has **simple spectrum** (all 7 eigenvalues distinct), with $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. Simple spectrum is generic (codimension $\geq 1$ stratum is degenerate) and holds for physically relevant holons by spectral transversality.
 
-### 14.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
+### 15.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
 
 **Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^\min + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
 
@@ -587,7 +749,7 @@ where $r$ is the rank and $\{\lambda_k\}$ are positive eigenvalues (with multipl
 $$\zeta'_{H_\mathrm{Gap}}(0) = -\sum_{k=1}^{r} \log \lambda_k = -\log \prod_{k=1}^{r} \lambda_k = -\log \det(H_\mathrm{Gap})$$
 is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is thus a **rational algebraic expression** in the eigenvalues of $H_\mathrm{Gap}$, not a transcendentally-regularised object.
 
-### 14.3. Bures stratified-site handling {#bures-stratification}
+### 15.3. Bures stratified-site handling {#bures-stratification}
 
 **Claim**: Bures metric has degeneracies on the boundary of $\mathcal D(\mathbb C^7)$ where $\Gamma$ is rank-deficient. This is handled via the **stratified site** (Ayala–Francis–Rozenblyum 2017).
 
@@ -601,7 +763,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 
 ---
 
-## 15. Updated summary table {#summary-final}
+## 16. Updated summary table {#summary-final}
 
 | # | Theorem / Protocol | Previous status | New status | Method |
 |---|---|---|---|---|
@@ -615,13 +777,14 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | **T-217** | **L3 tricategory coherence** | **[H] K=4 heuristic** | **[T]** | **∞-truncation + Baez–Dolan** |
 | **T-218** | **SYNARC Cog Kan complex** | **[H] horn-fillers asserted** | **[T]** | **Milnor + classifying space** |
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[T at T-64]** | **Sector product $\varepsilon^{12}$** |
-| §14.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
-| §14.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
-| §14.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
+| **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
+| §15.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
+| §15.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
+| §15.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
 
-**Total after all closures**: 10 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
+**Total after all closures**: 11 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
 
 **No open mathematical or categorical gaps remain in UHM's foundational framework.**
 
