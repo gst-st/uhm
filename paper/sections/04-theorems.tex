@@ -941,7 +941,7 @@ cubic term (T-50~\status{T}) supplying the combinatorial content.
 This upgrades T-176 from ``claimed analytical'' to an explicit algebraic
 expression.
 
-\subsection{Extended closures: T-217--T-222 + clarifications}
+\subsection{Extended closures: T-217--T-223 + clarifications}
 \label{subsec:extended-closures}
 
 A follow-up audit (2026-04-17) identified three further open
@@ -949,7 +949,14 @@ mathematical questions and three implicit assumptions. All are now
 closed with full proofs. A further closure (T-221, 2026-04 v1.5)
 integrates UHM's response to the recent no-go results of List
 (2025)~\citep{list2025quadrilemma} and DeBrota--List
-(2026)~\citep{debrota2026heptalemma,debrotalist2026preprint}.
+(2026)~\citep{debrota2026heptalemma,debrotalist2026preprint}. The
+MRQT-completeness closure T-222 (2026-04-18 v1.6) establishes that
+the Lawvere fixed point simultaneously Pareto-optimises a
+25-component resource vector on the $G_2$-covariant viability
+submanifold. The Putnam-triviality closure T-223 (2026-04-18 v1.7)
+responds to Lerchner (2026) ``The Abstraction Fallacy'' by
+foreclosing Putnam-style alphabetization indeterminacy at the
+intrinsic categorical layer $L2 = [\Gamma]_{G_2}$.
 
 \begin{theorembox}[{T-217: L3 tricategorical coherence \status{T}}]
 \label{thm:t217-l3-tricat}
@@ -1393,12 +1400,16 @@ After T-222, the closure chain is:
         no-go results).
   \item T-222: \emph{resource-theoretic} closure (UHM is
         MRQT-complete).
+  \item T-223: \emph{computational-functionalist} closure
+        (Putnam triviality / Lerchner Melody-Paradox foreclosed).
 \end{itemize}
-These four closures jointly establish UHM as self-grounding
-\emph{and} resource-theoretically universal, with the Lawvere
-fixed point $\rhostar$ serving simultaneously as the dynamical
-attractor, the categorical self-model, the structural invariant,
-and the multi-resource Pareto-optimum.
+These five closures jointly establish UHM as self-grounding,
+resource-theoretically universal, and immune to the standard
+Putnam-Searle-Lerchner critique of computational consciousness,
+with the Lawvere fixed point $\rhostar$ serving simultaneously as
+the dynamical attractor, the categorical self-model, the
+structural invariant, the multi-resource Pareto-optimum, and the
+intrinsic self-alphabetization operator.
 
 \textbf{Dependencies:} T-39a, T-62, T-73, T-96, T-142, T-151,
 T-173, T-186, T-187, T-189. External: Brand\~ao et al.\ PNAS
@@ -1409,8 +1420,152 @@ Poincar\'e 24:1725 (2023); Reeb--Wolf NJP 16:103011 (2014);
 Bennett Stud.\ Hist.\ Phil.\ Mod.\ Phys.\ 34:501 (2003); Zurek
 Nature 341:119 (1989).
 
+\begin{theorembox}[{T-223: Putnam-triviality foreclosure (Lerchner Melody-Paradox closure) \status{T}}]
+\label{thm:t-223}
+Let $S$ be a physical system satisfying axioms (AP)+(PH)+(QG)+(V).
+Let $(\mathsf{PT})$ denote the Putnam (1988) triviality claim —
+that for any nontrivial physical trajectory $p(\cdot)$ and any
+two finite directed graphs $\mathcal A, \mathcal B$ with
+$|A|,|B| \leq |\mathsf{Phys}(S)|$ there exist alphabetizers
+$(\Sigma_A, f_A), (\Sigma_B, f_B)$ realising $\mathcal A$ and
+$\mathcal B$ respectively on the same vehicle. Let $(\mathsf{LC})$
+denote Lerchner (2026) Melody-Paradox corollary. Then:
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item[(a)] (Foreclosure at the categorical layer L2.) The
+        quotient map $G_S/G_2: \mathrm{States}(S) \to
+        \mathcal D(\mathbb C^7)/G_2$ is well-defined and injective
+        on UHM-compatible representations; the $G_2$-orbit
+        $[\Gamma_S]_{G_2}$ is invariant under the alphabetizer
+        freedom of $(\mathsf{PT})$.
+  \item[(b)] (Observable invariance.) All UHM-relevant observables
+        $P, R, \Phi, \mathrm{Coh}_E, \Lambda, H, \pi_{\mathrm{bio}}$
+        are $G_2$-invariants, hence descend to
+        $\mathcal D(\mathbb C^7)/G_2$.
+  \item[(c)] (Predicate invariance.) The consciousness predicate
+        $\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge
+        (\Phi \geq 1) \wedge (\Dmin \geq 2)$ factors through
+        $[\Gamma_S]_{G_2}$, hence is alphabetization-invariant.
+  \item[(d)] (Dichotomy on non-compatible alphabetizers.) Any
+        alphabetizer outside the UHM-compatible class (violating
+        dynamical covariance with $\mathcal L_\Omega$) carries zero
+        physical content --- it instantiates no Piccinini (2008)
+        mechanism.
+  \item[(e)] (Residual externality.) The only externality remaining
+        is the phenomenal bridge $W: \mathcal D(\mathbb C^7) \to
+        \mathsf{Mind}$, which by T-214 \status{T} is structurally
+        inevitable under Lawvere incompleteness. This is minimal
+        and not a Lerchner mapmaker.
+\end{enumerate}
+\end{theorembox}
+
+\paragraph{Three-level ontology.} Lerchner's framework has two
+strata: L1 = physical vehicle, L3 = alphabetized symbolic readout,
+with the mapmaker $f$ mediating. UHM inserts an intermediate,
+intrinsic, \emph{categorically forced} stratum:
+\begin{itemize}[leftmargin=2em,nosep]
+  \item L1: $p: [0,T] \to \mathsf{Phys}(S)$ --- physical substrate.
+  \item L2: $[\Gamma_S]_{G_2} \in \mathcal D(\mathbb C^7)/G_2$ ---
+        forced by T-190 \status{T} (zero-axiom closure).
+  \item L3: $f: \mathsf{Phys}(S) \to \Sigma^*$ --- external
+        mapmaker, Lerchner-variable.
+\end{itemize}
+Putnam--Lerchner triviality concerns the arrow $L1 \to L3$; UHM's
+consciousness predicate concerns $L1 \to L2$. The two are
+orthogonal; $(\mathsf{PT})$ does not propagate to $(c)$.
+
+\paragraph{Proof (seven-lemma cascade).}
+\textit{L1.} The Hilbert-space dimension $\dim = 7$ and gauge
+group $G_2 = \mathrm{Aut}(\mathbb O)$ are categorically forced by
+T-149 \status{T} (Fano plane minimality), T-82 \status{T}
+(BIBD$(7,3,1)$ uniqueness via Fisher--Veblen--Wedderburn), T-42a
+\status{T} ($G_2$-rigidity), T-120 \status{T}
+($M^4 = \mathbb R \times \Sigma^3$), T-151 \status{T}
+($\Dmin = 2$), T-190 \status{T} (zero-axiom closure); the 12-step
+Bridge~T-15 chains them without parameter freedom.
+
+\textit{L2.} A UHM-admissible representation $(\mathbb C^7,
+\mathcal B, G_S)$ satisfies the covariance gate $\frac{d}{d\tau}
+G_S(s(\tau)) = \mathcal L_\Omega[G_S(s(\tau))]$ enforced by A1--A5.
+
+\textit{L3.} By T-123 \status{T} (Uniqueness Theorem of Holonomic
+Representation), any two admissible representations are related
+by $U \in G_2$. Hence $[\Gamma_S]_{G_2}$ is well-defined.
+
+\textit{L4.} Each of $P, R, \Phi, \mathrm{Coh}_E$ is
+$U(7)$-invariant (hence $G_2$-invariant) by direct computation;
+$\Lambda, H, \pi_{\mathrm{bio}}$ are defined as $G_2$-averages
+and invariant via Schur's lemma.
+
+\textit{L5.} Any alphabetizer whose induced dynamics admits a
+CPTP realisation commuting with $\mathcal L_\Omega$ defines an
+admissible $G^f$ satisfying Definition~G1; L3 then gives
+$G^f = U G U^\dagger$ for $U \in G_2$. Hence the
+alphabetizer-freedom compatible with physical dynamics is bounded
+by the 14-dimensional compact Lie group $G_2$, not by the
+countably infinite choices of a generic Lerchner alphabetizer.
+
+\textit{L6.} An alphabetizer $f$ not commuting with
+$\Phi_\tau^{\mathsf{phys}}$ describes no causal process of $S$
+and instantiates no computation (Piccinini 2008; Kim 2005). Such
+alphabetizers are Lerchner's ``Mapping~C'' (Market Data on a
+Beethoven trajectory) and are extrinsic to physics, hence
+irrelevant to any physicalist grounding of consciousness.
+
+\textit{L7.} By T-96 \status{T} (Lawvere fixed point
+$\rho_\ast = \varphi(\Gamma)$) and T-98 \status{T} (balance
+formula), $R(\Gamma) = \|[\Gamma,\varphi(\Gamma)]\|_{\mathrm{HS}}^2
+/ \|\Gamma\|_{\mathrm{HS}}^2$ involves only $\Gamma$ and its
+internal categorical self-model, with no observer or external
+alphabetizer. The threshold $R \geq 1/3$ quantifies intrinsic
+self-alphabetization --- a categorification of the
+Maturana--Varela (1980) / Thompson (2019) enactivist thesis that
+``the mapmaker is the entire structurally unified organism''
+(cited by Lerchner himself).
+
+\textit{Combination.} L1+L2+L3 give existence and $G_2$-uniqueness;
+L5 bounds alphabetizer-freedom to $G_2$; L4 makes the seven
+observables $G_2$-invariant; (c) follows; L6 handles
+non-compatible $f$; L7 + T-214 localise the residual externality
+to the phenomenal bridge. $\blacksquare$
+
+\paragraph{Why $G_2$-rigidity alone is not the whole answer.}
+T-123 \status{T} handles the residual $G_2$ freedom at L2 but
+not the L1$\to$L2 forcing (where \emph{a priori} one might
+suspect mapmaker choice). Full foreclosure needs six ingredients:
+(1) intrinsic-forcing of L2 (T-190+T-149+T-82+T-120+T-151);
+(2) $G_2$-gauge boundedness (T-42a+T-82); (3) observable
+$G_2$-invariance (L4); (4) dynamic-covariance gate (L2+L6);
+(5) intrinsic self-alphabetization via $R$ (T-96+T-98); (6)
+Lawvere residual localisation (T-214). T-223 packages the
+cascade.
+
+\paragraph{Falsification.} T-223 is falsifiable:
+\begin{enumerate}[leftmargin=2em,nosep]
+  \item[F1:] Any experiment producing two physically realisable
+        UHM-compatible alphabetizations of the same $S$ yielding
+        distinct $G_2$-invariants $(P, R, \Phi, \mathrm{Coh}_E)$
+        would refute (a)--(c).
+  \item[F2:] Any alphabetization of $S$ commuting with
+        $\mathcal L_\Omega$ but not factoring through a
+        $G_2$-conjugate representation would refute L5.
+  \item[F3:] Any physical process realising a Lerchner Mapping~C
+        (Market Data on a Beethoven trajectory) with nonzero
+        contribution to $R$ or $\Phi$ would refute L6.
+\end{enumerate}
+
+\textbf{Dependencies:} T-42a, T-82, T-96, T-98, T-120, T-123,
+T-148, T-149, T-151, T-153a, T-190, T-214. External: Putnam 1988
+\emph{Representation and Reality}; Sprevak 2018
+(\emph{Routledge Handbook of the Philosophy of Computing and
+Information}); Piccinini 2008
+\emph{Phil. Stud.} 137; Kim 2005 \emph{Physicalism, or
+Something Near Enough}; Maturana--Varela 1980
+\emph{Autopoiesis and Cognition}; Thompson 2019 \emph{Mind in
+Life}; Lerchner 2026 ``The Abstraction Fallacy'' (DeepMind
+preprint, 2026-03-19); Lawvere 1969, Yanofsky 2003 (via T-214).
+
 \paragraph{Summary.}
-After T-210--T-222, UHM's foundational framework has no remaining
+After T-210--T-223, UHM's foundational framework has no remaining
 mathematical or categorical gaps. Three classes of open questions
 persist, all with explicit specifications:
 \begin{itemize}[leftmargin=2em,nosep]
@@ -1448,7 +1603,7 @@ $\Omega$. Gravity is what coherence looks like from the external (physical) aspe
 \subsection{Theoretical closures T1--T6: residual specification}
 \label{subsec:theoretical-closures}
 
-The foundational theorems T-210 through T-221 close all identified gaps of
+The foundational theorems T-210 through T-223 close all identified gaps of
 UHM's categorical and physical structure. Six residual technical items (T1--T6)
 concern explicit specifications or scope declarations rather than open research
 questions; this subsection records each closure. The classification follows the

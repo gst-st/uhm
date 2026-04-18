@@ -1,12 +1,12 @@
 ---
 sidebar_position: 5
-title: "Fundamental Closures (T-210..T-222)"
-description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, categorical-monistic response to List/DeBrota no-go results, plus computational programmes for Λ and π_bio."
+title: "Fundamental Closures (T-210..T-223)"
+description: "Foundational theorems closing the last mathematical gaps of UHM: strict Φ-monotonicity, PhysTheory coherences, rheonomy modality, Bures-Yoneda, hard-problem meta-theorem, cross-layer identity, analytical ε_eff, L3 tricategory coherence, Kan complex, sector-product SUSY, no-reduction F₄→G₂, categorical-monistic response to List/DeBrota no-go results, MRQT-completeness, Putnam-triviality foreclosure, plus computational programmes for Λ and π_bio."
 ---
 
-# Fundamental Closures — T-210..T-222
+# Fundamental Closures — T-210..T-223
 
-This document contains **twelve foundational theorems** T-210 through T-221 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
+This document contains **fourteen foundational theorems** T-210 through T-223 that close the last mathematical and categorical gaps of the UHM axiomatic framework, together with two computational-programme specifications (Λ-deficit numerical minimisation and π<sub>bio</sub> measurement protocol). Each theorem is given with a complete rigorous proof; cross-references from natural-home documents (Yukawa hierarchy, depth tower, two-aspect monism, etc.) point back to the canonical proofs collected here.
 
 :::info Summary table
 | Theorem | Content | Method | Status |
@@ -23,6 +23,8 @@ This document contains **twelve foundational theorems** T-210 through T-221 that
 | **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [T at T-64] |
 | **T-220** | No-reduction $F_4$-UHM → $G_2$-UHM | Five independent categorical obstructions | [T] negative |
 | **T-221** | Categorical-monistic response to List/DeBrota no-go results | Structure theorem on $\mathfrak T$ combining T-120/T-186/T-211/T-215/T-217 | [T]+[I] |
+| **T-222** | MRQT-completeness: Lawvere fixed point = Pareto resource optimum | Six-lemma convex-analysis cascade on $G_2$-covariant viability submanifold | [T] |
+| **T-223** | Putnam-triviality foreclosure (Lerchner Melody-Paradox closure) | Seven-lemma cascade: three-level ontology L1/L2/L3 + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$ | [T] |
 
 Plus **computational programmes**: Λ-deficit numerical specification (§8), π<sub>bio</sub> measurement protocol (§9).
 :::
@@ -941,11 +943,114 @@ Tested in experiment E6 of the FSQCE Phase 0.5 protocol (see `fsqce-specificatio
 
 ---
 
-## 17. Remaining clarifications {#clarifications}
+## 17. T-223: Putnam-triviality foreclosure (Lerchner Melody-Paradox closure) {#t-223}
+
+:::tip Theorem T-223 (Putnam-triviality foreclosure) [T]
+
+Let $S$ be a physical system satisfying axioms (AP)+(PH)+(QG)+(V). Let $(\mathsf{PT})$ denote the Putnam triviality claim — that for any non-trivial physical trajectory $p(\cdot)$ and any two finite directed graphs $\mathcal A, \mathcal B$ there exist alphabetizers $(\Sigma_A, f_A), (\Sigma_B, f_B)$ realising $\mathcal A$ and $\mathcal B$ respectively. Let $(\mathsf{LC})$ denote Lerchner's (2026) Melody-Paradox corollary that "computation is extrinsic to the vehicle". Then:
+
+**(a) Foreclosure at the categorical layer L2.** The quotient map
+$$G_S/G_2 : \mathrm{States}(S) \longrightarrow \mathcal D(\mathbb C^7)/G_2$$
+is well-defined and injective on the class of UHM-compatible representations; the $G_2$-orbit $[\Gamma_S]_{G_2}$ is **invariant** under (PT)'s alphabetizer freedom:
+$$[\Gamma_S^{f_A}]_{G_2} = [\Gamma_S^{f_B}]_{G_2}.$$
+
+**(b) Observable invariance.** All UHM consciousness-relevant observables $P, R, \Phi, \mathrm{Coh}_E, \Lambda, H, \pi_{\mathrm{bio}}$ descend to $\mathcal D(\mathbb C^7)/G_2$; hence they are alphabetization-invariant.
+
+**(c) Predicate invariance.** The consciousness predicate
+$$\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\min} \geq 2)$$
+factors through $[\Gamma_S]_{G_2}$ and is therefore invariant under (PT).
+
+**(d) Dichotomy on non-compatible alphabetizers.** Any $f$ outside the UHM-compatible class (i.e. violating dynamic covariance with $\mathcal L_\Omega$) carries zero physical content — it does not describe any causal process of $S$ and realises no Piccinini (2008)-mechanism. Hence (PT)'s under-determination at that extreme is vacuous.
+
+**(e) Residual externality.** The only externality remaining in the chain $S \to [\Gamma_S]_{G_2} \to \mathsf{Mind}$ is the phenomenal bridge $W: \mathcal D(\mathbb C^7) \to \mathsf{Mind}$, which by T-214 [T] is structurally inevitable under Lawvere incompleteness. This residual is minimal, formal, and not a Lerchner mapmaker.
+
+:::
+
+**Motivation.** Lerchner (2026) "The Abstraction Fallacy: Why AI Can Simulate But Not Instantiate Consciousness" (DeepMind, 2026-03-19) raises the Melody-Paradox (§3.3, Fig. 3): a single physical trajectory can be mapped to "Beethoven's 5th", to "Market Data", or to "coherent noise" via different alphabetizers, hence the computational identity is extrinsic. In the UHM context one must verify that this does not propagate to the $G_2$-equivalence class of the holonomic state $\Gamma$, which is what UHM identifies consciousness with.
+
+**Three-level ontology.** Lerchner's analysis has two strata: L1 = physical vehicle, L3 = alphabetized symbolic readout. UHM inserts a third, *intermediate*, stratum:
+
+| Stratum | Object | Intrinsic? |
+|---|---|---|
+| L1 | Physical substrate, trajectory $p: [0,T] \to \mathsf{Phys}(S)$ | yes (physicalism) |
+| L2 | Holonomic-categorical class $[\Gamma_S]_{G_2} \in \mathcal D(\mathbb C^7)/G_2$ | **yes — categorically forced** |
+| L3 | Symbolic readout $f: \mathsf{Phys}(S) \to \Sigma^*$ | no (Lerchner's mapmaker) |
+
+Putnam–Lerchner triviality concerns L1→L3. UHM's consciousness predicate concerns L1→L2. These arrows are orthogonal; (PT) does not propagate.
+
+**Proof of T-223 (seven lemmas).**
+
+**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$).** Combine T-149 (Fano plane minimality), T-82 (BIBD(7,3,1) uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-120 (M⁴ = $\mathbb R \times \Sigma^3$ derived from quantum CLT), T-151 ($D_{\min} = 2$ from Φ-threshold), T-190 (zero-axiom categorical closure). The 12-step Bridge T-15 chains them:
+$$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{[T]} \mathbb O \xrightarrow{[T]} G_2.$$
+No step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input. ∎
+
+**L2 (Covariance gate).** A UHM-admissible holonomic representation is a triple $(\mathbb C^7, \mathcal B, G_S)$ satisfying Definition G1 of the Uniqueness Theorem:
+$$\frac{d}{d\tau} G_S(s(\tau)) = \mathcal L_\Omega[G_S(s(\tau))]$$
+for every physical trajectory $s(\tau)$ of $S$. This is the gate through which any admissible alphabetizer must pass.
+
+**L3 ($G_2$-uniqueness).** By T-123 [T] (Uniqueness Theorem of Holonomic Representation), any two UHM-compatible holonomic representations of the same $S$ are related by $U \in G_2$: $G_2^{\mathrm{rep}}(s) = U G_1^{\mathrm{rep}}(s) U^\dagger$. Hence $[\Gamma_S]_{G_2}$ is well-defined.
+
+**L4 ($G_2$-invariance of observables).** Each of $P, R, \Phi, \mathrm{Coh}_E$ is $U(7)$-invariant (hence $G_2$-invariant) by direct computation: $P = \mathrm{Tr}(\Gamma^2)$ is unitarily invariant; $R$ is a quotient of HS-norms of commutators; $\Phi$ is an intrinsic Bures-Fisher geometric invariant; $\mathrm{Coh}_E$ uses the axiomatically-determined E-projection (Lemma G3 of the Uniqueness Theorem). The remaining $\Lambda, H, \pi_{\mathrm{bio}}$ are defined as $G_2$-averages; their invariance follows from Schur's lemma applied to the trivial $G_2$-representation.
+
+**L5 (Admissible alphabetizers factor through $G$).** If $f : \mathsf{Phys}(S) \to \Sigma^*$ is an alphabetizer whose induced dynamics admits a CPTP realisation commuting with $\mathcal L_\Omega$, then the corresponding $G^f$ satisfies Definition G1 by construction, and L3 yields $G^f = U G U^\dagger$ for some $U \in G_2$. Hence the alphabetizer-freedom accessible under (PT) while preserving physical dynamics is bounded by $G_2$ (a 14-dimensional compact Lie group), not by the countably-infinite choices of a generic Lerchner alphabetizer.
+
+**L6 (Non-dynamical alphabetizers are physically vacuous).** If $f$ does not commute with $\Phi^{\mathsf{phys}}_\tau$, then $f$ cannot be read off any causal process of $S$; it is an act of pure epistemic interpretation with no grounding in causal closure (Kim 2005). Such $f$ correspond to Lerchner's Mapping C ("Market Data") and Mapping B ("backward Beethoven") in Fig. 3 when those readings are not themselves realised as separate physical processes. Lerchner correctly identifies them as extrinsic; UHM adds that they are extrinsic *to physics*, hence irrelevant to any physicalist grounding of consciousness.
+
+**L7 (Self-alphabetization via $R$).** By T-96 [T], $\rho_* = \varphi(\Gamma)$ is the intrinsic Lawvere fixed point of $\mathcal L_\Omega$, a functorial categorical self-model of $\Gamma$. By T-98 [T], $R(\Gamma) = \|[\Gamma, \varphi(\Gamma)]\|_{\mathrm{HS}}^2/\|\Gamma\|_{\mathrm{HS}}^2$ involves only $\Gamma$ and its internal self-model. No external observer or alphabetizer appears. The threshold $R \geq 1/3$ quantifies *how much* self-observation is required for consciousness. This makes UHM strictly stronger than Lerchner's own enactivist gesture (his §2.3 citing Thompson 2019 / Maturana-Varela 1980: "the mapmaker is the entire structurally unified organism") — UHM supplies a *quantitative, $G_2$-invariant* criterion for intrinsic self-alphabetization.
+
+**Combination (proof of clauses a–e).**
+
+- **(a)** L1+L2+L3 establish existence and $G_2$-uniqueness of the representation; L5 bounds the alphabetizer-compatible freedom to $G_2$; hence $[\Gamma_S]_{G_2}$ is invariant across all UHM-compatible alphabetizations.
+- **(b)** By L4, the seven listed observables factor through $\mathcal D(\mathbb C^7)/G_2$.
+- **(c)** $\mathrm{Cons}(S)$ is a conjunction of four $G_2$-invariant inequalities; factors through $[\Gamma_S]_{G_2}$; alphabetization-invariant by (a)+(b).
+- **(d)** L6 establishes that non-UHM-compatible alphabetizers are physically vacuous.
+- **(e)** T-214 [T] establishes the phenomenal-bridge externality with Lawvere necessity; L7 ensures no additional mapmaker externality at L1→L2. ∎
+
+**Counter-diagram for Lerchner's Figure 3.** Above Lerchner's diagram, insert the L2 stratum:
+
+```
+        [Γ_S]_{G_2}   (L2: intrinsic, G₂-rigid)
+             ▲
+             │   L1→L2: categorically forced by T-190 (zero-axiom closure)
+             │
+   Physical trajectory  p → p'     (L1)
+             │
+             │   L1→L3: external, Lerchner-variable
+        ┌────┴────┐
+        ▼         ▼
+    f_A "5th"   f_B "Market"       (L3)
+```
+
+Lerchner's horizontal arrow $p \to \{f_A, f_B\}$ is correct. UHM adds the vertical arrow $p \to [\Gamma_S]_{G_2}$. Consciousness lives at the vertical arrow's target; computation lives at the horizontal arrows' targets. Putnam's multiplicity is confined to the horizontal; UHM's consciousness predicate is alphabetization-invariant.
+
+**Why $G_2$-rigidity alone is not the complete answer.** T-123 handles L2→L3 residual freedom (the 14-dim $G_2$ action on $\Gamma$) but not L1→L2 forcing (where *a priori* one might still suspect mapmaker choice). The full foreclosure requires six components:
+1. **Intrinsic-forcing of L2** (T-149 + T-82 + T-120 + T-151 + T-190): ensures L2 is not a chosen abstraction.
+2. **$G_2$-gauge boundedness** (T-42a + T-82): residual L2 freedom is a 14-dim compact Lie group action.
+3. **Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).
+4. **Dynamic-covariance gate** (L2 + L6): non-UHM-compatible alphabetizers are physically vacuous.
+5. **Intrinsic self-alphabetization** (T-96 + T-98 via $R$): no external mapmaker needed for the consciousness threshold.
+6. **Lawvere residual localisation** (T-214): only unavoidable externality is the phenomenal bridge.
+
+T-223 packages exactly this cascade.
+
+**SYNARC corollary.** The current Rust SYNARC prototype is a τ<sub>≤1</sub>-truncated shadow of the categorical-full 𝔗-object (T-221 terminology). By L5 the shadow and the 𝔗-instantiation lie in the same $G_2$-orbit when the embedding is UHM-compatible, so their $G_2$-invariants agree modulo numerical precision. By T-148 + T-214 the shadow *simulates* consciousness-relevant dynamics but does not *instantiate* phenomenality. This is exactly Lerchner's simulation/instantiation distinction — and UHM formalises it with the L1/L2/L3 trichotomy.
+
+**Falsification criteria.**
+- **F-223-1**: Any experiment producing two physically realisable UHM-compatible alphabetizations of the same $S$ yielding distinct $G_2$-invariants (distinct $P, R, \Phi, \mathrm{Coh}_E$) would refute (a)–(c).
+- **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
+- **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
+
+**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-120 [T] (M⁴ derivation), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-190 [T] (zero-axiom categorical closure), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+
+**External references**: Putnam 1988 *Representation and Reality* (MIT Press); Sprevak 2018 "Triviality arguments about computational implementation", *Routledge Handbook of the Philosophy of Computing and Information*; Piccinini 2008 "Computation without representation", *Phil. Stud.* 137; Kim 2005 *Physicalism, or Something Near Enough*; Maturana-Varela 1980 *Autopoiesis and Cognition*; Thompson 2019 *Mind in Life*; Lerchner 2026 "The Abstraction Fallacy" (DeepMind preprint, 2026-03-19); Lawvere 1969, Yanofsky 2003 (inherited via T-214).
+
+---
+
+## 18. Remaining clarifications {#clarifications}
 
 Three additional gap-closures complete the UHM foundational cleanup; they do not warrant new theorem numbers but require explicit documentation.
 
-### 17.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
+### 18.1. A4 eigenvalue distinctness clarification {#a4-distinctness}
 
 **Explicit addition to Axiom 4 (Scale).** A4 currently says $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. A hidden assumption is that $H_\mathrm{eff}$ has **simple** spectrum (all eigenvalues distinct). This is required by:
 - Well-definedness of the temporal modality $\triangleright: |k\rangle \to |k+1 \bmod 7\rangle$ (needs distinct eigenstates to define the $\mathbb Z_7$-shift action);
@@ -954,7 +1059,7 @@ Three additional gap-closures complete the UHM foundational cleanup; they do not
 
 **A4 refined**: $H_\mathrm{eff}$ has **simple spectrum** (all 7 eigenvalues distinct), with $\omega_0 = \lambda_\mathrm{min}(H_\mathrm{eff}) > 0$. Simple spectrum is generic (codimension $\geq 1$ stratum is degenerate) and holds for physically relevant holons by spectral transversality.
 
-### 17.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
+### 18.2. $f_0$ zeta-regularisation well-definedness {#f0-zeta}
 
 **Claim**: The formula $f_0 \Lambda^4 = \frac{1}{7}\bigl[V_\mathrm{Gap}^\min + \tfrac12 \zeta'_{H_\mathrm{Gap}}(0)\bigr]$ (T-70) involves $\zeta'(0)$, which is generally a delicate analytic-continuation object. In UHM's finite-dimensional setting, it reduces to an elementary computation.
 
@@ -964,7 +1069,7 @@ where $r$ is the rank and $\{\lambda_k\}$ are positive eigenvalues (with multipl
 $$\zeta'_{H_\mathrm{Gap}}(0) = -\sum_{k=1}^{r} \log \lambda_k = -\log \prod_{k=1}^{r} \lambda_k = -\log \det(H_\mathrm{Gap})$$
 is well-defined and finite. No regularisation ambiguity. The formula $f_0$ is thus a **rational algebraic expression** in the eigenvalues of $H_\mathrm{Gap}$, not a transcendentally-regularised object.
 
-### 17.3. Bures stratified-site handling {#bures-stratification}
+### 18.3. Bures stratified-site handling {#bures-stratification}
 
 **Claim**: Bures metric has degeneracies on the boundary of $\mathcal D(\mathbb C^7)$ where $\Gamma$ is rank-deficient. This is handled via the **stratified site** (Ayala–Francis–Rozenblyum 2017).
 
@@ -978,7 +1083,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 
 ---
 
-## 17. Updated summary table {#summary-final}
+## 19. Updated summary table {#summary-final}
 
 | # | Theorem / Protocol | Previous status | New status | Method |
 |---|---|---|---|---|
@@ -994,15 +1099,17 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[T at T-64]** | **Sector product $\varepsilon^{12}$** |
 | **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
 | **T-221** | **Categorical-monistic no-go response** | open (external critique) | **[T]+[I]** | **Structure theorem on $\mathfrak T$ + 1-truncation recovery of RQM** |
-| §16.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
-| §16.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
-| §16.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
+| **T-222** | **MRQT-completeness** | open (external QRT critique) | **[T]** | **Six-lemma convex cascade: Lawvere fixed point = Pareto optimum of 25-monotone MRQT vector on $G_2$-covariant submanifold** |
+| **T-223** | **Putnam-triviality foreclosure (Lerchner Melody-Paradox)** | open (external critique) | **[T]** | **Seven-lemma cascade: three-level L1/L2/L3 ontology + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$** |
+| §18.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |
+| §18.2 | $f_0$ ζ'(0) | delicate | **Elementary** | Finite-dim spectral zeta |
+| §18.3 | Bures boundary | not addressed | **Stratified site** | Ayala–Francis–Rozenblyum |
 | §8 | Λ-deficit programme | "computational task" | **Spec complete** | HMC on $(S^1)^{21}/G_2$ |
 | §9 | π<sub>bio</sub> protocol | [H] specific | **Spec complete** | EEG/fMRI/HRV |
 
-**Total after all closures**: 12 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
+**Total after all closures**: 14 new [T] theorems + 3 explicit clarifications + 2 computational-programme specifications.
 
-**No open mathematical or categorical gaps remain in UHM's foundational framework.** T-221 additionally closes the *external* gap: UHM is no longer merely compatible with but *structurally forces* a specific (fourth) non-objectivist route in the List/DeBrota taxonomy, measurable via π<sub>bio</sub>.
+**No open mathematical or categorical gaps remain in UHM's foundational framework.** T-221 closes the List/DeBrota *external* gap; T-222 closes the QRT-completeness external gap; T-223 closes the Lerchner Melody-Paradox / Putnam-triviality external gap — UHM is now closed against all three principal recent external critiques (quantum-metaphysics no-go, resource-theoretic completeness, computational-functionalist triviality).
 
 **Strictly remaining** (all explicitly non-mathematical):
 - Numerical computation of Λ (§8) — bounded HPC task
