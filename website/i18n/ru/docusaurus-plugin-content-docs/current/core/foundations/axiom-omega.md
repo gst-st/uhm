@@ -1207,28 +1207,28 @@ $$
 
 **Метод эмпирической калибровки:**
 
-```python
-def calibrate_lambda(system, n_samples=1000):
-    """
-    Калибровка λ_m на основе наблюдаемых корреляций.
-
-    Метод: λ_m ∝ |∂γ_Om/∂τ| — скорость изменения
-           когерентности O↔m при эволюции.
-    """
-    lambdas = {}
-
-    for sample in range(n_samples):
-        Gamma_t = system.get_state()
-        Gamma_t1 = system.evolve(dtau=0.01)
-
-        for m in ['A', 'S', 'D', 'L', 'E', 'O', 'U']:
-            idx = dim_to_index(m)
-            delta_gamma = abs(Gamma_t1[5, idx] - Gamma_t[5, idx])  # O=5
-            lambdas[m] = lambdas.get(m, 0) + delta_gamma
-
-    # Нормализация: λ_E = 1 (референс)
-    max_lambda = max(lambdas.values())
-    return {m: v / max_lambda for m, v in lambdas.items()}
+```verum
+/// Calibrate λ_m from observed correlations.
+/// Method: λ_m ∝ |∂γ_Om/∂τ| — rate of change of O↔m coherence under evolution.
+pub fn calibrate_lambda<S: EvolvingSystem>(
+    system:    &mut S,
+    n_samples: Int { self > 0 },
+) -> Map<Dim, Float>
+{
+    let mut lambdas: Map<Dim, Float> = Map.new();
+    for _ in 0..n_samples {
+        let gamma_t  = system.get_state();
+        let gamma_t1 = system.evolve(0.01);
+        for m in [Dim.A, Dim.S, Dim.D, Dim.L, Dim.E, Dim.O, Dim.U] {
+            let idx = index(m);
+            let delta = (gamma_t1[5, idx] - gamma_t[5, idx]).abs();    // O = 5
+            lambdas[m] = lambdas.get(&m).unwrap_or(0.0) + delta;
+        }
+    }
+    // Normalise so that the maximum λ is 1 (E is the typical reference).
+    let max_l = lambdas.values().max().unwrap_or(1.0);
+    lambdas.iter().map(|(m, v)| (*m, v / max_l)).collect()
+}
 ```
 
 **Типичные значения:**

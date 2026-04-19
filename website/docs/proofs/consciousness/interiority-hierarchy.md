@@ -709,125 +709,126 @@ This shifts the hard problem to the level of [Axiom Ω](/docs/core/foundations/a
 
 ## 6.1 Level classification algorithm {#61-алгоритм-классификации-уровня}
 
-```python
-def classify_level(gamma: np.ndarray,
-                   R_th: float = 1/3,  # Derived: R_th = 1/3
-                   Phi_th: float = 1.0) -> int:  # Derived: Φ_th = 1
-    """
-    Classifies a system by level in the interiority hierarchy.
+```verum
+mount std.math.linalg.{matrix_rank, eigh};
 
-    Returns:
-        0: Interiority
-        1: Phenomenal Geometry
-        2: Cognitive Qualia
-    """
-    # Extract ρ_E (assuming E is the 5th index out of 7)
-    rho_E = extract_experience_subsystem(gamma)
+/// Interiority-hierarchy levels.
+pub type InteriorityLevel is Interiority | PhenomenalGeometry | CognitiveQualia;
 
-    # Compute R and Φ
-    R = compute_reflexivity(gamma)
-    Phi = compute_integration(gamma)
+/// Derived thresholds (see [T-129](./operationalization#t-129)).
+pub const R_TH:   Float = 1.0 / 3.0;     // Reflection threshold (derived)
+pub const PHI_TH: Float = 1.0;           // Integration threshold (derived)
 
-    # Check conditions
-    if R >= R_th and Phi >= Phi_th:
-        return 2  # Cognitive Qualia
-    elif np.linalg.matrix_rank(rho_E) > 1:
-        return 1  # Phenomenal Geometry
-    else:
-        return 0  # Interiority
+/// Classify a system by level in the interiority hierarchy.
+pub pure fn classify_level(gamma: &StaticMatrix<Complex, 7, 7>) -> InteriorityLevel {
+    let rho_e = extract_experience_subsystem(gamma);
+    let r     = compute_reflexivity(gamma);
+    let phi   = compute_integration(gamma);
 
-
-def compute_reflexivity(gamma: np.ndarray) -> float:
-    """
-    R = 1 - ||Γ - φ(Γ)||² / ||Γ||²
-    """
-    phi_gamma = self_model(gamma)
-    norm_diff = np.linalg.norm(gamma - phi_gamma, 'fro')**2
-    norm_gamma = np.linalg.norm(gamma, 'fro')**2
-    return 1 - norm_diff / norm_gamma
-
-def compute_integration(gamma: np.ndarray) -> float:
-    """
-    Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii²
-    """
-    diag_sum_sq = np.sum(np.diag(gamma)**2)
-    off_diag_sum_sq = np.sum(np.abs(gamma)**2) - diag_sum_sq
-    return off_diag_sum_sq / diag_sum_sq if diag_sum_sq > 0 else 0
-
-
-def Q_cognitive(rho: np.ndarray,
-                R_th: float = 1/3,  # Derived: R_th = 1/3
-                Phi_th: float = 1.0,  # Derived: Φ_th = 1
-                soft: bool = False,
-                beta: float = 10.0) -> dict:
-    """
-    Full cognitive qualia function.
-
-    Args:
-        rho: Density matrix
-        R_th: Reflection threshold
-        Phi_th: Integration threshold
-        soft: Use sigmoidal transition
-        beta: Sigmoid steepness
-
-    Returns:
-        dict with full qualia or None
-    """
-    R = compute_reflexivity(rho)
-    Phi = compute_integration(rho)
-
-    if soft:
-        theta_R = 1 / (1 + np.exp(-beta * (R - R_th)))
-        theta_Phi = 1 / (1 + np.exp(-beta * (Phi - Phi_th)))
-        weight = theta_R * theta_Phi
-    else:
-        weight = float(R >= R_th and Phi >= Phi_th)
-
-    if weight < 0.01:  # Practically zero
-        return None
-
-    # Compute phenomenal function Ψ
-    eigenvalues, eigenvectors = np.linalg.eigh(rho)
-
-    qualia = []
-    for i, (lam, vec) in enumerate(zip(eigenvalues[::-1], eigenvectors[:, ::-1].T)):
-        if lam > 1e-10:
-            qualia.append({
-                'intensity': float(lam),
-                'quality': to_projective(vec),
-                'weight': weight
-            })
-
-    return {
-        'qualia': qualia,
-        'R': R,
-        'Phi': Phi,
-        'level': 2,
-        'cognitive_weight': weight
+    match () {
+        _ if r >= R_TH && phi >= PHI_TH     => InteriorityLevel.CognitiveQualia,
+        _ if matrix_rank(&rho_e, 1.0e-10) > 1 => InteriorityLevel.PhenomenalGeometry,
+        _                                    => InteriorityLevel.Interiority,
     }
+}
+
+/// R = 1 − ‖Γ − φ(Γ)‖² / ‖Γ‖².
+pub pure fn compute_reflexivity(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { 0.0 <= self && self <= 1.0 }
+{
+    let phi_gamma = self_model(gamma);
+    1.0 - (gamma - phi_gamma).frobenius_norm_sq() / gamma.frobenius_norm_sq()
+}
+
+/// Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii².
+pub pure fn compute_integration(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 }
+{
+    let diag_sq: Float = (0..7).map(|i| gamma[i, i].real().pow(2)).sum();
+    let total_sq = gamma.frobenius_norm_sq();
+    let off_sq = total_sq - diag_sq;
+    if diag_sq > 0.0 { off_sq / diag_sq } else { 0.0 }
+}
+
+/// Cognitive-qualia evaluation — Ψ function.
+pub type Qualia is {
+    qualia:            List<QualeContent>,
+    r:                 Float,
+    phi:               Float,
+    level:             Int,
+    cognitive_weight:  Float { 0.0 <= self && self <= 1.0 },
+};
+
+pub type QualeContent is {
+    intensity: Float,
+    quality:   StaticVector<Complex, 7>,
+    weight:    Float,
+};
+
+pub type CognitiveOptions is { soft: Bool, beta: Float };
+
+implement Default for CognitiveOptions {
+    fn default() -> Self { CognitiveOptions { soft: false, beta: 10.0 } }
+}
+
+/// Full cognitive-qualia function with optional soft (sigmoidal) transitions.
+pub pure fn q_cognitive(
+    rho:  &StaticMatrix<Complex, 7, 7>,
+    opts: CognitiveOptions,
+) -> Maybe<Qualia>
+{
+    let r   = compute_reflexivity(rho);
+    let phi = compute_integration(rho);
+
+    let weight = if opts.soft {
+        let theta_r   = 1.0 / (1.0 + (-opts.beta * (r   - R_TH)).exp());
+        let theta_phi = 1.0 / (1.0 + (-opts.beta * (phi - PHI_TH)).exp());
+        theta_r * theta_phi
+    } else if r >= R_TH && phi >= PHI_TH { 1.0 } else { 0.0 };
+
+    if weight < 0.01 { return Maybe.None; }
+
+    // Phenomenal function Ψ: eigenpairs sorted by descending eigenvalue.
+    let (eigvals, eigvecs) = eigh(rho);
+    let mut qualia = List.new();
+    for i in (0..7).rev() {
+        let lam = eigvals[i];
+        if lam > 1.0e-10 {
+            qualia.push(QualeContent {
+                intensity: lam,
+                quality:   to_projective(&eigvecs.column(i)),
+                weight:    weight,
+            });
+        }
+    }
+
+    Maybe.Some(Qualia {
+        qualia: qualia, r: r, phi: phi, level: 2, cognitive_weight: weight,
+    })
+}
 ```
 
 ## 6.2 Usage example
 
-```python
-# Example: Classification of various systems
+```verum
+fn main() using [IO] {
+    // 1. Atom — Level 0 (Interiority).
+    let gamma_atom = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+        [0.9, 0.05, 0.02, 0.01, 0.01, 0.005, 0.005]
+    );
+    IO.println(f"Atom: Level {classify_level(&gamma_atom)}");
 
-# 1. Atom (Level 0)
-gamma_atom = np.diag([0.9, 0.05, 0.02, 0.01, 0.01, 0.005, 0.005])
-level_atom = classify_level(gamma_atom)
-print(f"Atom: Level {level_atom}")  # Level 0
+    // 2. Neuron — Level 1 (Phenomenal Geometry).
+    let gamma_neuron = create_neuron_state(0.7);
+    IO.println(f"Neuron: Level {classify_level(&gamma_neuron)}");
 
-# 2. Neuron (Level 1)
-gamma_neuron = create_neuron_state(excitation=0.7)
-level_neuron = classify_level(gamma_neuron)
-print(f"Neuron: Level {level_neuron}")  # Level 1
-
-# 3. Conscious brain (Level 2)
-gamma_brain = create_conscious_state(awareness=0.8)
-level_brain = classify_level(gamma_brain)
-cq = Q_cognitive(gamma_brain, soft=True)
-print(f"Brain: Level {level_brain}")  # Level 2
-print(f"Cognitive qualia: R={cq['R']:.2f}, Φ={cq['Phi']:.2f}")
+    // 3. Conscious brain — Level 2 (Cognitive Qualia).
+    let gamma_brain = create_conscious_state(0.8);
+    IO.println(f"Brain: Level {classify_level(&gamma_brain)}");
+    if let Maybe.Some(cq) = q_cognitive(&gamma_brain, CognitiveOptions { soft: true, beta: 10.0 }) {
+        IO.println(f"Cognitive qualia: R={cq.r:.2f}, Φ={cq.phi:.2f}");
+    }
+}
 ```
 
 ---

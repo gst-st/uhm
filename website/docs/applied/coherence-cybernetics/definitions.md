@@ -733,17 +733,19 @@ Organizational metrics are at the development stage.
 
 **Computation:**
 
-```python
-# Communication graph
-G = build_communication_graph(slack_data)
-Phi_org = algebraic_connectivity(G) / max_eigenvalue(G)
+```verum
+mount std.math.linalg.{Matrix, algebraic_connectivity, max_eigenvalue};
 
-# Reflection via retrospectives
-R_org = retrospectives_per_sprint / target_retrospectives
+// Communication graph from Slack traffic.
+let g: Matrix<Float> = build_communication_graph(&slack_data);
+let phi_org = algebraic_connectivity(&g) / max_eigenvalue(&g);
 
-# Stress tensor
-sigma_D = mean_ticket_time / target_time
-sigma_U = turnover_rate / baseline_rate
+// Reflection via retrospectives.
+let r_org = (retrospectives_per_sprint as Float) / (target_retrospectives as Float);
+
+// Stress tensor components.
+let sigma_d = mean_ticket_time / target_time;
+let sigma_u = turnover_rate / baseline_rate;
 ```
 
 **Interpretation:**

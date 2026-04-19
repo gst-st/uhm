@@ -156,21 +156,27 @@ $$
 
 L-унификация даёт **вычислимые** формулы:
 
-```python
-def characteristic_morphism(Gamma, S):
-    """χ_S: Γ → Ω для подобъекта S"""
-    P_S = projector_onto_subspace(S)
-    return P_S @ Gamma @ P_S
+```verum
+/// χ_S: Γ → Ω for the subobject S.
+pub pure fn characteristic_morphism<const N: Int>(
+    gamma: &StaticMatrix<Complex, N, N>,
+    s:     &Subspace<N>,
+) -> StaticMatrix<Complex, N, N>
+{
+    let p_s = projector_onto_subspace(s);
+    &p_s @ gamma @ &p_s
+}
 
-def lindblad_from_omega(Gamma):
-    """L_k = √χ_{S_k} для атомов Ω"""
-    N = Gamma.shape[0]
-    L_ops = []
-    for k in range(N):
-        chi_k = np.zeros((N, N), dtype=complex)
-        chi_k[k, k] = 1.0  # атом = базисный проектор
-        L_ops.append(chi_k)  # √P = P для проекторов
-    return L_ops
+/// L_k = √χ_{S_k} for atoms of Ω. For basis projectors √P = P, so L_k = χ_k.
+pub pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, N, N>)
+    -> [StaticMatrix<Complex, N, N>; N]
+{
+    (0..N).map(|k| {
+        let mut chi_k = StaticMatrix.<Complex, N, N>.zeros();
+        chi_k[k, k] = Complex.one();        // atom = basis projector
+        chi_k
+    }).to_array()
+}
 ```
 
 **См.:** [Конструктивные алгоритмы](/docs/reference/computational#конструктивные-алгоритмы-из-l-унификации)

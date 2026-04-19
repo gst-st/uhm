@@ -54,25 +54,52 @@ $$
 3. Только тогда включается сознание
 :::
 
-```python
-P_CRITICAL = 2/7  # ≈ 0.286
+```verum
+pub const P_CRITICAL: Float = 2.0 / 7.0;     // ≈ 0.286
 
-class HolonomicSystem:
-    def __init__(self):
-        self.gamma = self._random_init()  # P ≈ 2/8 = 0.25 < P_crit
-        self._bootstrap()  # ОБЯЗАТЕЛЬНО перед работой
+/// Typed errors for system lifecycle — explicit `throws` contract.
+pub type SystemError is
+    | GenesisFailure  { reason: Text }
+    | NotViableError  { purity: Float }
+    | CircuitOpen     { reason: Text };
 
-    def _bootstrap(self):
-        """Пре-онтологический бутстрап: самосборка до P > P_crit"""
-        while self.purity() <= P_CRITICAL:
-            self._regenerate()  # Увеличиваем когерентность
-            if self._timeout():
-                raise GenesisFailure("Не удалось достичь жизнеспособности")
+pub type HolonomicSystem is { mut gamma: StaticMatrix<Complex, 7, 7> };
 
-    def process(self, input):
-        if self.purity() < P_CRITICAL:
-            raise NotViableError("Система ниже порога жизнеспособности")
-        return self._core_loop(input)
+implement HolonomicSystem {
+    /// Random init + **mandatory** bootstrap — enforced by `where ensures`.
+    pub fn new() throws (SystemError) using [Random] -> HolonomicSystem
+        where ensures result.purity() > P_CRITICAL
+    {
+        let mut s = HolonomicSystem { gamma: Self._random_init() };   // P ≈ 0.25 < P_crit
+        s.bootstrap()?;
+        s
+    }
+
+    /// Pre-ontological bootstrap: self-assembly until P > P_crit.
+    fn bootstrap(&mut self) throws (SystemError) -> () using [Clock] {
+        let deadline = Clock.now() + Duration.seconds(5);
+        while self.purity() <= P_CRITICAL {
+            self.regenerate();
+            if Clock.now() > deadline {
+                throw SystemError.GenesisFailure { reason: "Failed to reach viability".text() };
+            }
+        }
+    }
+
+    /// Guarded entry point — never processes input on a non-viable system.
+    pub fn process<T>(&mut self, input: T) throws (SystemError) -> ProcessResult
+        where requires self.purity() >= P_CRITICAL
+    {
+        if self.purity() < P_CRITICAL {
+            throw SystemError.NotViableError { purity: self.purity() };
+        }
+        self.core_loop(input)
+    }
+
+    pub pure fn purity(&self) -> Float { 1.0/7.0 <= self && self <= 1.0 } {
+        (&self.gamma @ &self.gamma).trace().real()
+    }
+}
 ```
 
 ---
@@ -107,12 +134,20 @@ graph LR
 **No-Zombie floor [Т, MVP-0]:** При реализованном канале замещения ($\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$) $P$ не может опуститься ниже $P_{\text{crit}} - \varepsilon_\Gamma \approx 0.283$ даже при декогеренции $\gamma = 10.0$ (в 10000× выше нормы). Измеренный запас: $\kappa / \gamma_{\text{dec}} = 203\times$ при теоретическом минимуме $143\times$.
 :::
 
-```python
-class CircuitBreaker:
-    def check(self, system):
-        if system.purity() < P_CRITICAL:
-            system.enter_emergency_regeneration()
-            raise CircuitOpen("Система ниже порога — вывод заблокирован")
+```verum
+/// Circuit-breaker pattern — block output when below the viability threshold.
+pub type CircuitBreaker is {};
+
+implement CircuitBreaker {
+    pub fn check(&self, sys: &mut HolonomicSystem) throws (SystemError) -> () {
+        if sys.purity() < P_CRITICAL {
+            sys.enter_emergency_regeneration();
+            throw SystemError.CircuitOpen {
+                reason: "System below threshold — output blocked".text()
+            };
+        }
+    }
+}
 ```
 
 ---
@@ -196,15 +231,17 @@ graph TD
 
 Высокая температура (размазывание) убивает когерентность.
 
-```python
-# Плохо: высокая температура размазывает внимание
-attention = softmax(Q @ K.T / sqrt(d_k))  # T = 1
+```verum
+mount std.tensor.{Tensor, softmax, sparse_softmax};
 
-# Хорошо: низкая температура концентрирует внимание
-attention = softmax(Q @ K.T / (T * sqrt(d_k)))  # T < 1
+// Bad: high temperature spreads attention (default T = 1).
+let attention = softmax(q @ k.transpose() / (d_k as Float).sqrt(), axis: -1);
 
-# Ещё лучше: top-k разреженное внимание
-attention = sparse_softmax(Q @ K.T, k=8)
+// Good: low temperature T < 1 concentrates attention.
+let attention = softmax(q @ k.transpose() / (t * (d_k as Float).sqrt()), axis: -1);
+
+// Even better: top-k sparse attention (k = 8).
+let attention = sparse_softmax(q @ k.transpose(), k: 8);
 ```
 :::
 
@@ -236,19 +273,29 @@ $$
 Градиент задачи проецируется на касательное пространство многообразия жизнеспособности.
 :::
 
-```python
-class ConstrainedOptimizer:
-    def step(self, loss, gamma):
-        grad = compute_gradient(loss)
+```verum
+mount std.math.autodiff.grad;
 
-        # Проверяем: не убьёт ли шаг систему?
-        new_gamma = apply_grad(gamma, grad)
-        if purity(new_gamma) < P_CRITICAL:
-            # Проецируем градиент на касательное пространство P = const
-            grad = project_to_viability_manifold(grad, gamma)
-            new_gamma = apply_grad(gamma, grad)
+/// Constraint-aware optimiser — projects gradient onto the viability manifold
+/// whenever a plain step would cross P_crit.
+pub type ConstrainedOptimizer is {};
 
-        return new_gamma
+implement ConstrainedOptimizer {
+    pub fn step(&self, loss: pure fn(&StaticMatrix<Complex, 7, 7>) -> Float,
+                gamma: &StaticMatrix<Complex, 7, 7>)
+        -> StaticMatrix<Complex, 7, 7>
+    {
+        let g = grad(loss)(gamma);
+        let new_gamma = apply_grad(gamma, &g);
+        if purity(&new_gamma) < P_CRITICAL {
+            // Project gradient onto the tangent space of P = const.
+            let g_proj = project_to_viability_manifold(&g, gamma);
+            apply_grad(gamma, &g_proj)
+        } else {
+            new_gamma
+        }
+    }
+}
 ```
 
 **Правило:** Если шаг обучения снижает $P$ ниже порога — шаг **отклоняется**, даже если он улучшает точность задачи.
@@ -293,19 +340,30 @@ class ConstrainedOptimizer:
 
 **Структурная константа [Т, MVP-0]:** При default_biological профиле $\sigma_E = 1 - N \cdot \gamma_{EE} = -0.155$ — структурная константа, неизменная на всех шагах (W_std < $10^{-15}$). E-сектор хронически **перенаселён** относительно равновесного $1/N$. Это не «стресс» — это архитектурное условие жизнеспособности: без $\gamma_{EE} > 1/N$ цепочка No-Zombie ($\kappa_0 > 0$) рвётся.
 
-```python
-def analyze_generation(model, prompt):
-    """Анализ динамики P во время генерации (гипотетический)"""
-    P_before = model.purity()
-    response = model.generate(prompt)
-    P_after = model.purity()
+```verum
+/// Generation-event classification for purity dynamics.
+pub type GenerationOutcome is
+    | CoherenceIncrease { delta_p: Float }
+    | BelowThreshold    { p: Float }
+    | Stable            { p: Float };
 
-    if P_after > P_before:
-        return {"type": "coherence_increase", "delta_P": P_after - P_before}
-    elif P_after < P_CRITICAL:
-        return {"type": "below_threshold", "P": P_after}
-    else:
-        return {"type": "stable", "P": P_after}
+/// Analyses P-dynamics during generation (hypothetical).
+pub fn analyze_generation<M: HasPurity + HasGenerate>(
+    model:  &mut M,
+    prompt: &Text,
+) -> GenerationOutcome {
+    let p_before = model.purity();
+    let _        = model.generate(prompt);
+    let p_after  = model.purity();
+
+    match () {
+        _ if p_after > p_before    => GenerationOutcome.CoherenceIncrease {
+            delta_p: p_after - p_before,
+        },
+        _ if p_after < P_CRITICAL  => GenerationOutcome.BelowThreshold { p: p_after },
+        _                          => GenerationOutcome.Stable         { p: p_after },
+    }
+}
 ```
 
 :::tip Инженерное решение: Коэффициент доверия
@@ -390,18 +448,23 @@ $$
 
 Инженерное следствие: **не программируйте поведение — задавайте секторный профиль.** Настройка $\gamma_{kk}$ определяет «характер» агента:
 
-```python
-# Исследователь: высокие S, D, низкие A, L
-explorer_profile = {
-    'A': 0.10, 'S': 0.20, 'D': 0.20, 'L': 0.08,
-    'E': 0.15, 'O': 0.15, 'U': 0.12  # Tr = 1.0
-}
+```verum
+/// A sector profile: probabilities over the 7 dimensions, Σ = 1.
+pub type SectorProfile is {
+    a: Float, s: Float, d: Float, l: Float, e: Float, o: Float, u: Float,
+} where (self.a + self.s + self.d + self.l + self.e + self.o + self.u - 1.0).abs() < 1.0e-6;
 
-# Коммуникатор: высокие L, A, низкие S, D
-communicator_profile = {
-    'A': 0.18, 'S': 0.10, 'D': 0.10, 'L': 0.22,
-    'E': 0.15, 'O': 0.13, 'U': 0.12  # Tr = 1.0
-}
+/// Explorer: high S, D; low A, L.
+pub const EXPLORER_PROFILE: SectorProfile = SectorProfile {
+    a: 0.10, s: 0.20, d: 0.20, l: 0.08,
+    e: 0.15, o: 0.15, u: 0.12,
+};
+
+/// Communicator: high L, A; low S, D.
+pub const COMMUNICATOR_PROFILE: SectorProfile = SectorProfile {
+    a: 0.18, s: 0.10, d: 0.10, l: 0.22,
+    e: 0.15, o: 0.13, u: 0.12,
+};
 ```
 
 Попытка жёстко запрограммировать поведение (минуя $\Gamma$) разрушает когерентность и ведёт к $P < P_{\text{crit}}$.
@@ -415,25 +478,37 @@ communicator_profile = {
 2. Вычисляет локальный стресс $\sigma_k = \mathrm{clamp}(1 - N \cdot \gamma_{kk},\; 0,\; 1)$ [T-92]
 3. Сигнализирует при $\sigma_k > \sigma_{\text{crit}}$ (перегрузка сектора)
 
-```python
-class CoherentService:
-    """Обёртка компонента с когерентным мониторингом"""
+```verum
+pub const N_DIM: Int = 7;
 
-    def __init__(self, sector: str, gamma_kk: float):
-        self.sector = sector
-        self.gamma_kk = gamma_kk
+/// Component wrapper with coherent monitoring.
+pub type CoherentService is {
+    sector:   Dim,
+    gamma_kk: Float { 0.0 <= self && self <= 1.0 },
+};
 
-    @property
-    def stress(self) -> float:
-        """σ_k = clamp(1 - N·γ_kk, 0, 1) [T-92]"""
-        return max(0.0, min(1.0, 1.0 - N_DIM * self.gamma_kk))
+pub type HealthLevel is Ok | Warning | Critical;
 
-    def health_check(self) -> str:
-        if self.stress > 0.8:
-            return f"CRITICAL: {self.sector}-sector stress={self.stress:.2f}"
-        elif self.stress > 0.5:
-            return f"WARNING: {self.sector}-sector stress={self.stress:.2f}"
-        return f"OK: {self.sector}-sector stress={self.stress:.2f}"
+implement CoherentService {
+    pub fn new(sector: Dim, gamma_kk: Float) -> CoherentService {
+        CoherentService { sector: sector, gamma_kk: gamma_kk.clamp(0.0, 1.0) }
+    }
+
+    /// σ_k = clamp(1 − N·γ_kk, 0, 1) (T-92 [T]).
+    pub pure fn stress(&self) -> Float { 0.0 <= self && self <= 1.0 } {
+        (1.0 - (N_DIM as Float) * self.gamma_kk).clamp(0.0, 1.0)
+    }
+
+    pub pure fn health_check(&self) -> (HealthLevel, Text) {
+        let s = self.stress();
+        let msg = f"{self.sector}-sector stress={s:.2f}";
+        match s {
+            x if x > 0.8 => (HealthLevel.Critical, f"CRITICAL: {msg}"),
+            x if x > 0.5 => (HealthLevel.Warning,  f"WARNING: {msg}"),
+            _            => (HealthLevel.Ok,       f"OK: {msg}"),
+        }
+    }
+}
 ```
 
 ---
@@ -466,78 +541,99 @@ $$
 
 #### 10.2. Протокол автоматического тестирования
 
-```python
-@dataclass
-class DiagnosticReport:
-    timestamp: float
-    P: float
-    R: float
-    Phi: float
-    sigma_max: float
-    sigma_vector: list[float]  # [σ_A, σ_S, σ_D, σ_L, σ_E, σ_O, σ_U]
-    kappa: float
-    alerts: list[str]
+```verum
+mount std.time.{Timestamp, now};
 
-def run_diagnostics(gamma: 'DensityMatrix7') -> DiagnosticReport:
-    """Полный диагностический цикл [И]"""
-    P = trace_square(gamma)           # P = Tr(Γ²)
-    R = 1.0 / (N_DIM * P) if P > 1e-12 else 0.0  # R = 1/(NP) [Т]
-    Phi = compute_phi(gamma)          # Φ ≥ 1 для интеграции [Т]
-    diag = diagonal(gamma)
-    sigma = [max(0.0, min(1.0, 1.0 - N_DIM * g)) for g in diag]
-    sigma_max = max(sigma)
-    kappa = compute_kappa(gamma)
+pub type DiagnosticReport is {
+    timestamp:    Timestamp,
+    p:            Float,
+    r:            Float,
+    phi:          Float,
+    sigma_max:    Float,
+    sigma_vector: StaticVector<Float, 7>,    // [σ_A, σ_S, σ_D, σ_L, σ_E, σ_O, σ_U]
+    kappa:        Float,
+    alerts:       List<Text>,
+};
 
-    alerts = []
-    if P <= P_CRITICAL:
-        alerts.append("FATAL: P ≤ P_crit — система нежизнеспособна")
-    if R < 1/3:
-        alerts.append("WARN: R < R_th — рефлексия ниже порога L2")
-    if Phi < 1.0:
-        alerts.append("WARN: Φ < Φ_th — интеграция недостаточна")
-    if sigma_max >= 1.0:
-        sector_names = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
-        collapsed = [sector_names[i] for i, s in enumerate(sigma) if s >= 1.0]
-        alerts.append(f"CRITICAL: σ-коллапс секторов {collapsed}")
-    if kappa < 1/7:
-        alerts.append("WARN: κ < κ_bootstrap — канал замещения ослаблен")
+/// Full diagnostic cycle [I].
+pub fn run_diagnostics(gamma: &StaticMatrix<Complex, 7, 7>) using [Clock]
+    -> DiagnosticReport
+{
+    let p = (gamma @ gamma).trace().real();
+    let r = if p > 1.0e-12 { 1.0 / ((N_DIM as Float) * p) } else { 0.0 };   // T
+    let phi = compute_phi(gamma);                                            // Φ ≥ 1 for integration
+    let diag = gamma.diagonal().map(|c| c.real());
+    let sigma = StaticVector.<Float, 7>.from_array(
+        diag.iter().map(|g| (1.0 - (N_DIM as Float) * g).clamp(0.0, 1.0))
+                   .collect_array()
+    );
+    let sigma_max = sigma.iter().max().unwrap_or(&0.0);
+    let kappa = compute_kappa(gamma);
 
-    return DiagnosticReport(
-        timestamp=time.time(), P=P, R=R, Phi=Phi,
-        sigma_max=sigma_max, sigma_vector=sigma,
-        kappa=kappa, alerts=alerts
-    )
+    let mut alerts = List.new();
+    if p <= P_CRITICAL { alerts.push("FATAL: P ≤ P_crit — system is not viable".text()); }
+    if r < 1.0/3.0    { alerts.push("WARN: R < R_th — reflection below L2 threshold".text()); }
+    if phi < 1.0      { alerts.push("WARN: Φ < Φ_th — integration insufficient".text()); }
+    if sigma_max >= 1.0 {
+        let names = ["A", "S", "D", "L", "E", "O", "U"];
+        let collapsed: Text = sigma.iter().enumerate()
+            .filter(|(_, s)| **s >= 1.0)
+            .map(|(i, _)| names[i])
+            .collect::<Vec<_>>().join(", ");
+        alerts.push(f"CRITICAL: σ-collapse of sectors [{collapsed}]");
+    }
+    if kappa < 1.0 / 7.0 {
+        alerts.push("WARN: κ < κ_bootstrap — replacement channel weakened".text());
+    }
+
+    DiagnosticReport {
+        timestamp: Clock.now(),
+        p: p, r: r, phi: phi, sigma_max: sigma_max, sigma_vector: sigma,
+        kappa: kappa, alerts: alerts,
+    }
+}
 ```
 
 #### 10.3. Регрессионные тесты на когерентность
 
 Помимо стандартных юнит- и интеграционных тестов, UHM-система требует **когерентных регрессий**:
 
-```python
-class CoherenceRegressionTest:
-    """Регрессионные тесты: задача не должна разрушать когерентность"""
+```verum
+mount std.test.{test, assert_with_msg};
 
-    def test_task_preserves_viability(self, system, task):
-        P_before = system.purity()
-        system.execute(task)
-        P_after = system.purity()
-        assert P_after > P_CRITICAL, \
-            f"Задача убила систему: P {P_before:.3f} → {P_after:.3f}"
+/// Regression tests: a task must not destroy coherence.
+/// Each test executes in isolation; shared state is threaded explicitly.
 
-    def test_stress_bounded(self, system, task):
-        system.execute(task)
-        sigma = system.stress_vector()
-        assert max(sigma) < 0.95, \
-            f"σ-коллапс после задачи: max(σ) = {max(sigma):.3f}"
+@test fn task_preserves_viability<S: HolonomicSystemTrait, T: TaskTrait>(
+    mut system: S, task: T,
+) {
+    let p_before = system.purity();
+    system.execute(&task);
+    let p_after = system.purity();
+    assert_with_msg(
+        p_after > P_CRITICAL,
+        f"Task killed the system: P {p_before:.3f} → {p_after:.3f}"
+    );
+}
 
-    def test_learning_preserves_profile(self, system, training_data):
-        profile_before = system.sector_profile()
-        system.train(training_data)
-        profile_after = system.sector_profile()
-        drift = sum((a - b)**2 for a, b in
-                     zip(profile_before, profile_after)) ** 0.5
-        assert drift < 0.05, \
-            f"Обучение сдвинуло секторный профиль на {drift:.3f}"
+@test fn stress_bounded<S: HolonomicSystemTrait, T: TaskTrait>(
+    mut system: S, task: T,
+) {
+    system.execute(&task);
+    let sigma = system.stress_vector();
+    let max_s = sigma.iter().max().unwrap_or(&0.0);
+    assert_with_msg(max_s < 0.95, f"σ-collapse after task: max(σ) = {max_s:.3f}");
+}
+
+@test fn learning_preserves_profile<S: HolonomicSystemTrait, D: TrainingDataTrait>(
+    mut system: S, training: D,
+) {
+    let before = system.sector_profile();
+    system.train(&training);
+    let after  = system.sector_profile();
+    let drift  = (before - after).frobenius_norm();                     // ‖Δprofile‖₂
+    assert_with_msg(drift < 0.05, f"Training shifted the sector profile by {drift:.3f}");
+}
 ```
 
 ---
@@ -642,24 +738,27 @@ $$
 Это переворачивает современный подход к AI (где главное — Output) с ног на голову.
 :::
 
-```python
-class HolonomicAgent:
-    def act(self, environment):
-        # 1. СНАЧАЛА проверяем жизнеспособность
-        if not self.is_viable():
-            return self.emergency_protocol()
+```verum
+/// Viability-first agent: check survival before task decision.
+pub type HolonomicAgent is { /* inner state */ };
 
-        # 2. ПОТОМ думаем о задаче
-        action = self.decide(environment)
+implement HolonomicAgent {
+    pub fn act(&mut self, env: &Environment) -> Action {
+        // 1. FIRST check viability.
+        if !self.is_viable() { return self.emergency_protocol(); }
 
-        # 3. Проверяем, не убьёт ли действие систему
-        if self.simulate_action_impact(action) < P_CRITICAL:
-            action = self.modify_for_survival(action)
+        // 2. THEN think about the task.
+        let action = self.decide(env);
 
-        return action
+        // 3. Ensure the action will not kill the system.
+        if self.simulate_action_impact(&action) < P_CRITICAL {
+            return self.modify_for_survival(action);
+        }
+        action
+    }
 
-    def is_viable(self) -> bool:
-        return self.purity() > P_CRITICAL
+    pub pure fn is_viable(&self) -> Bool { self.purity() > P_CRITICAL }
+}
 ```
 
 ### 14. Чек-лист для проектирования AGI
@@ -681,52 +780,60 @@ class HolonomicAgent:
 
 ### 15. Метрики для мониторинга
 
-```python
-N_DIM = 7
-P_CRITICAL = 2 / N_DIM  # ≈ 0.286
-P_OPTIMAL  = 3 / N_DIM  # ≈ 0.429  (граница L2)
+```verum
+pub const P_OPTIMAL: Float = 3.0 / (N_DIM as Float);     // ≈ 0.429 (L2 boundary)
 
-@dataclass
-class ViabilityMetrics:
-    purity: float               # P = Tr(Γ²)
-    dominant_eigenvalue: float  # λ_max
-    structural_deviation: float # ‖Γ - I/N‖_F²   = P - 1/N  [Т]
-    viability_margin: float     # P - P_crit
-    stress_norm: float          # ‖σ‖₂ = ‖1 - N·diag(Γ)‖₂  (диагональ)
-    kappa: float                # κ(Γ) = κ_bootstrap + κ₀·Coh_E  [No-Zombie]
+pub type ViabilityMetrics is {
+    purity:               Float,    // P = Tr(Γ²)
+    dominant_eigenvalue:  Float,    // λ_max
+    structural_deviation: Float,    // ‖Γ − I/N‖_F² = P − 1/N  (T)
+    viability_margin:     Float,    // P − P_crit
+    stress_norm:          Float,    // ‖σ‖₂
+    kappa:                Float,    // κ = κ_bootstrap + κ₀·Coh_E (No-Zombie)
+};
 
-    @property
-    def is_viable(self) -> bool:
-        return self.purity > P_CRITICAL
+implement ViabilityMetrics {
+    pub pure fn is_viable(&self)    -> Bool { self.purity > P_CRITICAL }
 
-    @property
-    def reflexivity(self) -> float:
-        """R = 1/(N·P)  [Т, мера рефлексии R] — точное алгебраическое тождество (ошибка < 1e-7)"""
-        return 1.0 / (N_DIM * self.purity) if self.purity > 1e-12 else 0.0
+    /// R = 1 / (N·P) — exact algebraic identity (T, error < 1e-7).
+    pub pure fn reflexivity(&self) -> Float {
+        if self.purity > 1.0e-12 { 1.0 / ((N_DIM as Float) * self.purity) } else { 0.0 }
+    }
 
-    @property
-    def confidence(self) -> float:
-        """P_ratio = P / P_crit (оперативный прокси, см. §7)"""
-        return self.purity / P_CRITICAL
+    /// Operational proxy: P / P_crit.
+    pub pure fn confidence(&self) -> Float { self.purity / P_CRITICAL }
 
-    @property
-    def is_l2_zone(self) -> bool:
-        """L2-зона (когнитивные квалиа): P_crit < P ≤ P_opt ↔ R ≥ 1/3  [Т]"""
-        return P_CRITICAL < self.purity <= P_OPTIMAL
+    /// L2 zone (cognitive qualia): P_crit < P ≤ P_opt ⇔ R ≥ 1/3 (T).
+    pub pure fn is_l2_zone(&self) -> Bool {
+        P_CRITICAL < self.purity && self.purity <= P_OPTIMAL
+    }
 
-    def to_dashboard(self) -> dict:
-        zone = "L2" if self.is_l2_zone else ("L1+" if self.purity > P_OPTIMAL else "L0")
-        return {
-            "P":        self.purity,
-            "P_crit":   P_CRITICAL,
-            "margin":   self.viability_margin,
-            "R":        self.reflexivity,   # [Т] точное
-            "λ_max":    self.dominant_eigenvalue,
-            "‖σ‖₂":     self.stress_norm,   # [Т] const при гомеостазе
-            "κ":        self.kappa,
-            "zone":     zone,
-            "status":   "VIABLE" if self.is_viable else "DEAD"
+    /// Dashboard-ready rendering: labelled zone + all metrics.
+    pub pure fn to_dashboard(&self) -> DashboardView {
+        let zone = match () {
+            _ if self.is_l2_zone()         => "L2".text(),
+            _ if self.purity > P_OPTIMAL    => "L1+".text(),
+            _                               => "L0".text(),
+        };
+        DashboardView {
+            p:          self.purity,
+            p_crit:     P_CRITICAL,
+            margin:     self.viability_margin,
+            r:          self.reflexivity(),           // T: exact
+            lambda_max: self.dominant_eigenvalue,
+            sigma_norm: self.stress_norm,             // T: const at homeostasis
+            kappa:      self.kappa,
+            zone:       zone,
+            status:     if self.is_viable() { "VIABLE".text() } else { "DEAD".text() },
         }
+    }
+}
+
+pub type DashboardView is {
+    p: Float, p_crit: Float, margin: Float, r: Float,
+    lambda_max: Float, sigma_norm: Float, kappa: Float,
+    zone: Text, status: Text,
+};
 ```
 
 ---

@@ -367,108 +367,172 @@ The following simulation suite provides controlled empirical verification of The
 
 **Reference implementation (Python, self-contained).**
 
-```python
-import numpy as np
-from scipy.integrate import solve_ivp
+```verum
+mount std.math.linalg.{StaticMatrix, identity, eigh};
+mount std.math.complex.Complex;
+mount std.math.calculus.{rk45, OdeOptions};
+mount std.math.random.{XorShift128, Rng};
 
-N = 7
+const N: Int = 7;
 
-def commutator(H, G):
-    return H @ G - G @ H
+pub pure fn commutator(h: &StaticMatrix<Complex, 7, 7>, g: &StaticMatrix<Complex, 7, 7>)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    h @ g - g @ h
+}
 
-def fano_channel(G):
-    diag = np.diag(np.diag(G))
-    off = G - diag
-    return diag + off / 3.0
+pub pure fn fano_channel(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
+    let diag = StaticMatrix.<Complex, 7, 7>.diagonal(g.diagonal());
+    let off  = g - &diag;
+    &diag + off / Complex.from_real(3.0)
+}
 
-def purity(G):
-    return np.real(np.trace(G @ G))
+pub pure fn purity(g: &StaticMatrix<Complex, 7, 7>) -> Float {
+    (g @ g).trace().real()
+}
 
-def coh_E(G, E_idx=4):
-    """Canonical Coh_E per axiom-septicity.md:414."""
-    gEE = np.real(G[E_idx, E_idx])
-    off_E = 2.0 * sum(abs(G[E_idx, j])**2 for j in range(N) if j != E_idx)
-    return (gEE**2 + off_E) / purity(G)
+/// Canonical Coh_E (axiom-septicity.md:414): (γ_EE² + 2·Σ|γ_Ej|²) / Tr(Γ²).
+pub pure fn coh_e(g: &StaticMatrix<Complex, 7, 7>, e_idx: Int) -> Float
+    where requires 0 <= e_idx && e_idx < N
+{
+    let g_ee = g[e_idx, e_idx].real();
+    let off_e: Float = 2.0 * (0..N).filter(|j| *j != e_idx)
+                                     .map(|j| g[e_idx, *j].abs().pow(2))
+                                     .sum();
+    (g_ee.pow(2) + off_e) / purity(g)
+}
 
-def project_to_density(G):
-    """Hermitianize, clip spectrum, renormalize trace."""
-    G = 0.5 * (G + G.conj().T)
-    w, V = np.linalg.eigh(G)
-    w = np.clip(w, 0, None)
-    G = V @ np.diag(w) @ V.conj().T
-    return G / np.trace(G).real
+/// Hermitise, clip spectrum, renormalise trace.
+pub pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    let h = (g + g.adjoint()) / Complex.from_real(2.0);
+    let (w, v) = eigh(&h);
+    let w_clipped = w.map(|v| v.max(0.0));
+    let rebuilt = &v @ StaticMatrix.<Complex, 7, 7>.diagonal(w_clipped) @ v.adjoint();
+    &rebuilt / rebuilt.trace().real()
+}
 
-def shift_G2(G):
-    """Canonical G_2 cyclic basis permutation (simplified surrogate)."""
-    P = np.roll(np.eye(N), 1, axis=1)
-    return P @ G @ P.T
+/// Canonical G₂ cyclic basis permutation (simplified surrogate).
+pub pure fn shift_g2(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
+    let mut p = StaticMatrix.<Complex, 7, 7>.zeros();
+    for j in 0..N { p[(j + 1) % N, j] = Complex.one(); }    // column-cyclic shift
+    &p @ g @ p.transpose()
+}
 
-def rhs(tau, g_flat, omega_0, gamma, kappa_0, E_idx=4):
-    G = g_flat.reshape(N, N)
-    P = purity(G)
-    cE = coh_E(G, E_idx)
-    # Unitary
-    H = omega_0 * np.diag(np.arange(1, N+1)) / np.sqrt(42)
-    dG = -1j * commutator(H, G)
-    # Fano dissipation
-    dG = dG + gamma * (fano_channel(G) - G)
-    # Viability gate + regeneration
-    gV = max(0.0, min(1.0, (P - 2/7) / (1/7)))
-    kappa = omega_0/7 + kappa_0 * cE
-    alpha = 1.0 - 1.0/(7*P) if P > 1e-9 else 0.0
-    rho_star = (1-alpha)*G + alpha*shift_G2(G)
-    dG = dG + kappa * gV * (rho_star - G)
-    return dG.flatten()
+/// dΓ/dτ: unitary + Fano dissipation + viability-gated regeneration.
+pub pure fn rhs(
+    _tau:    Float,
+    g:       &StaticMatrix<Complex, 7, 7>,
+    omega_0: Float,
+    gamma:   Float,
+    kappa_0: Float,
+    e_idx:   Int,
+) -> StaticMatrix<Complex, 7, 7>
+{
+    let p  = purity(g);
+    let ce = coh_e(g, e_idx);
 
-def simulate(Gamma_0, omega_0=1.0, gamma=1.0, kappa_0=1.0, t_max=100, E_idx=4):
-    sol = solve_ivp(
-        rhs, [0, t_max], Gamma_0.flatten().astype(complex),
-        args=(omega_0, gamma, kappa_0, E_idx),
-        method='RK45', rtol=1e-8, atol=1e-10, max_step=0.1)
-    traj = sol.y.T.reshape(-1, N, N)
-    # Project each snapshot onto D(C^7) to absorb drift
-    traj = np.array([project_to_density(G) for G in traj])
-    P_traj = np.array([purity(G) for G in traj])
-    CohE_traj = np.array([coh_E(G, E_idx) for G in traj])
-    return sol.t, traj, P_traj, CohE_traj
+    // Unitary part.
+    let h = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+        (1..=N).map(|k| omega_0 * (k as Float) / 42.0.sqrt()).to_array()
+    );
+    let mut dg = Complex.i().neg() * commutator(&h, g);
 
-def random_Gamma(P_target, seed=None):
-    """Random density matrix with approx target purity via HS measure + rescaling."""
-    rng = np.random.default_rng(seed)
-    A = rng.normal(size=(N,N)) + 1j*rng.normal(size=(N,N))
-    G = A @ A.conj().T
-    G = G / np.trace(G).real
-    # Scale towards I/N or towards a pure state to hit target P
-    lam = np.linspace(0, 1, 200)
-    candidates = [(1-t)*np.eye(N)/N + t*G for t in lam]
-    purities = [purity(c) for c in candidates]
-    idx = int(np.argmin(np.abs(np.array(purities) - P_target)))
-    return project_to_density(candidates[idx])
+    // Fano dissipation.
+    dg = &dg + Complex.from_real(gamma) * (fano_channel(g) - g);
 
-def ablate_E(Gamma, E_idx=4):
-    G = Gamma.copy()
-    for j in range(N):
-        if j != E_idx:
-            G[E_idx, j] = 0
-            G[j, E_idx] = 0
-    return project_to_density(G)
+    // Viability gate + regeneration.
+    let g_v = ((p - 2.0 / 7.0) / (1.0 / 7.0)).clamp(0.0, 1.0);
+    let kappa = omega_0 / 7.0 + kappa_0 * ce;
+    let alpha = if p > 1.0e-9 { 1.0 - 1.0 / (7.0 * p) } else { 0.0 };
+    let rho_star = Complex.from_real(1.0 - alpha) * g + Complex.from_real(alpha) * shift_g2(g);
+    dg + Complex.from_real(kappa * g_v) * (rho_star - g)
+}
 
-# --- Example runs ---
-if __name__ == "__main__":
-    # S1: control
-    G0 = random_Gamma(P_target=0.45, seed=42)
-    t, _, P, _ = simulate(G0, gamma=1.0)
-    print(f"S1 control: P(0)={P[0]:.3f}, P(inf)={P[-1]:.3f}, viable={P[-1] > 2/7}")
+pub type SimResult is {
+    t:     List<Float>,
+    traj:  List<StaticMatrix<Complex, 7, 7>>,
+    p:     List<Float>,
+    coh_e: List<Float>,
+};
 
-    # S2: E-ablation
-    G0_ab = ablate_E(G0)
-    t, _, P_ab, _ = simulate(G0_ab, gamma=1.0)
-    print(f"S2 E-ablation: P(0)={P_ab[0]:.3f}, P(inf)={P_ab[-1]:.3f}, viable={P_ab[-1] > 2/7}")
+pub fn simulate(
+    gamma_0: StaticMatrix<Complex, 7, 7>,
+    omega_0: Float,
+    gamma:   Float,
+    kappa_0: Float,
+    t_max:   Float,
+    e_idx:   Int,
+) -> SimResult
+{
+    let solution = rk45(
+        |t, g| rhs(t, g, omega_0, gamma, kappa_0, e_idx),
+        0.0, gamma_0, t_max,
+        OdeOptions { rtol: 1.0e-8, atol: 1.0e-10, max_step: 0.1 },
+    );
+    let traj = solution.trajectory.iter().map(project_to_density).collect();
+    let p_traj = traj.iter().map(purity).collect();
+    let coh_e_traj = traj.iter().map(|g| coh_e(g, e_idx)).collect();
+    SimResult { t: solution.times, traj: traj, p: p_traj, coh_e: coh_e_traj }
+}
 
-    # S3: sub-critical
-    G0_sub = random_Gamma(P_target=0.20, seed=42)
-    t, _, P_sub, _ = simulate(G0_sub, gamma=1.0)
-    print(f"S3 sub-critical: P(0)={P_sub[0]:.3f}, P(inf)={P_sub[-1]:.3f}")
+/// Random density matrix targeting a given purity via HS measure + rescaling.
+pub fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0 }, seed: UInt64)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    let mut rng = XorShift128.seed(seed);
+    let a = StaticMatrix.<Complex, 7, 7>.random_gaussian(&mut rng);
+    let g = &a @ a.adjoint();
+    let g = &g / g.trace().real();
+
+    // Interpolate between I/N (p = 1/N) and g (higher p) to hit target.
+    let lam: List<Float> = (0..200).map(|i| (i as Float) / 199.0).collect();
+    let candidates: List<_> = lam.iter()
+        .map(|t| (identity::<Complex, N>() / Complex.from_real(N as Float))
+                 * Complex.from_real(1.0 - t)
+               + &g * Complex.from_real(*t))
+        .collect();
+    let idx = candidates.iter().enumerate()
+        .map(|(i, c)| (i, (purity(c) - p_target).abs()))
+        .min_by(|a, b| a.1.partial_cmp(&b.1).unwrap())
+        .unwrap().0;
+    project_to_density(&candidates[idx])
+}
+
+/// Ablate the E-row and E-column: zero out off-diagonal couplings to E.
+pub pure fn ablate_e(gamma: &StaticMatrix<Complex, 7, 7>, e_idx: Int)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    let mut g = gamma.clone();
+    for j in 0..N {
+        if j != e_idx {
+            g[e_idx, j] = Complex.zero();
+            g[j, e_idx] = Complex.zero();
+        }
+    }
+    project_to_density(&g)
+}
+
+fn main() using [IO, Random] {
+    // S1: control.
+    let g0 = random_gamma(0.45, 42);
+    let s1 = simulate(g0.clone(), 1.0, 1.0, 1.0, 100.0, 4);
+    let p0 = s1.p[0]; let pl = *s1.p.last().unwrap();
+    IO.println(f"S1 control: P(0)={p0:.3f}, P(inf)={pl:.3f}, viable={pl > 2.0 / 7.0}");
+
+    // S2: E-ablation.
+    let g0_ab = ablate_e(&g0, 4);
+    let s2 = simulate(g0_ab, 1.0, 1.0, 1.0, 100.0, 4);
+    let p0a = s2.p[0]; let pla = *s2.p.last().unwrap();
+    IO.println(f"S2 E-ablation: P(0)={p0a:.3f}, P(inf)={pla:.3f}, viable={pla > 2.0 / 7.0}");
+
+    // S3: sub-critical.
+    let g0_sub = random_gamma(0.20, 42);
+    let s3 = simulate(g0_sub, 1.0, 1.0, 1.0, 100.0, 4);
+    let p0s = s3.p[0]; let pls = *s3.p.last().unwrap();
+    IO.println(f"S3 sub-critical: P(0)={p0s:.3f}, P(inf)={pls:.3f}");
+}
 ```
 
 **Expected output** (deterministic given seed):

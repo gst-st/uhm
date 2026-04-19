@@ -663,42 +663,36 @@ $$
 
 **Алгоритм вычисления φ (спектральный метод):**
 
-```python
-import numpy as np
+```verum
+mount std.math.linalg.{StaticMatrix, StaticVector, eig, inverse};
 
-def compute_phi_spectral(Gamma: np.ndarray, L_Omega: np.ndarray) -> np.ndarray:
-    """
-    Вычисление φ(Γ) через спектральное разложение логического Лиувиллиана.
+/// Compute φ(Γ) via spectral decomposition of the logical Liouvillian.
+///
+/// The Liouvillian ℒ_Ω is vectorised as a 49×49 superoperator; φ projects Γ
+/// onto the kernel (stationary modes with Re(λ) ≈ 0).
+pub pure fn compute_phi_spectral(
+    gamma:   &StaticMatrix<Complex, 7, 7>,
+    l_omega: &StaticMatrix<Complex, 49, 49>,
+) -> StaticMatrix<Complex, 7, 7>
+{
+    let (eigvals, r_vectors) = eig(l_omega);
+    let l_vectors = inverse(&r_vectors).unwrap().transpose();        // left eigenvectors
 
-    Args:
-        Gamma: Матрица когерентности (7×7)
-        L_Omega: Логический Лиувиллиан (49×49, vectorized)
+    let gamma_vec = gamma.flatten();                                 // 49-vector
+    let mut phi_vec = StaticVector.<Complex, 49>.zeros();
+    const TOL: Float = 1.0e-10;
 
-    Returns:
-        phi_Gamma: Самомодель (7×7)
-    """
-    # Спектральное разложение
-    eigenvalues, R_vectors = np.linalg.eig(L_Omega)
-    L_vectors = np.linalg.inv(R_vectors).T  # Левые собственные векторы
+    for k in 0..49 {
+        if eigvals[k].real().abs() < TOL {                           // stationary mode
+            let coeff = l_vectors.column(k).conjugate().dot(&gamma_vec);
+            phi_vec  = &phi_vec + r_vectors.column(k) * coeff;
+        }
+    }
 
-    # Векторизация Γ
-    Gamma_vec = Gamma.flatten()
-
-    # Сумма по стационарным модам (Re(λ) ≈ 0)
-    phi_vec = np.zeros(49, dtype=complex)
-    tolerance = 1e-10
-
-    for k in range(49):
-        if np.abs(eigenvalues[k].real) < tolerance:  # Re(λ) ≈ 0
-            coeff = np.dot(L_vectors[:, k].conj(), Gamma_vec)
-            phi_vec += coeff * R_vectors[:, k]
-
-    # Reshape и нормализация
-    phi_Gamma = phi_vec.reshape(7, 7)
-    phi_Gamma = (phi_Gamma + phi_Gamma.conj().T) / 2  # Эрмитовость
-    phi_Gamma /= np.trace(phi_Gamma)  # Нормировка Tr = 1
-
-    return phi_Gamma.real
+    let phi_gamma = phi_vec.reshape::<7, 7>();
+    let hermitised = (&phi_gamma + phi_gamma.adjoint()) / Complex.from_real(2.0);
+    &hermitised / hermitised.trace()                                  // renormalise Tr = 1
+}
 ```
 
 **Вычислительная сложность:**
@@ -749,23 +743,24 @@ $$
 
 **Алгоритм вычисления $R^{(2)}$:**
 
-```python
-def compute_R2(Gamma: np.ndarray, L_Omega: np.ndarray) -> float:
-    """
-    Вычисление рефлексии второго порядка R^(2).
+```verum
+mount std.math.linalg.matrix_sqrt;
 
-    Returns:
-        R2: fidelity между φ(Γ) и φ(φ(Γ))
-    """
-    phi_Gamma = compute_phi_spectral(Gamma, L_Omega)
-    phi_phi_Gamma = compute_phi_spectral(phi_Gamma, L_Omega)
+/// Second-order reflection R^(2) = Fid(φ(Γ), φ(φ(Γ))).
+/// Fidelity F(ρ₁, ρ₂) = |Tr √(√ρ₁ ρ₂ √ρ₁)|².
+pub pure fn compute_r2(
+    gamma:   &StaticMatrix<Complex, 7, 7>,
+    l_omega: &StaticMatrix<Complex, 49, 49>,
+) -> Float { 0.0 <= self && self <= 1.0 }
+{
+    let phi_gamma     = compute_phi_spectral(gamma, l_omega);
+    let phi_phi_gamma = compute_phi_spectral(&phi_gamma, l_omega);
 
-    # Fidelity: F(ρ₁, ρ₂) = |Tr(√(√ρ₁ ρ₂ √ρ₁))|²
-    sqrt_phi = sqrtm(phi_Gamma)
-    inner = sqrt_phi @ phi_phi_Gamma @ sqrt_phi
-    F = np.abs(np.trace(sqrtm(inner)))**2
-
-    return float(F)
+    let sqrt_phi = matrix_sqrt(&phi_gamma);
+    let inner = &sqrt_phi @ phi_phi_gamma @ &sqrt_phi;
+    let trace_sqrt = matrix_sqrt(&inner).trace().abs();
+    (trace_sqrt * trace_sqrt).clamp(0.0, 1.0)
+}
 ```
 
 ---

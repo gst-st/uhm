@@ -882,35 +882,44 @@ T-113 asserts: $N = 7$ is the minimum dimensionality for full learning through r
 
 **Assignment:** Implement a simple holon simulation.
 
-```python
-# Skeleton (fill in the blanks)
-import numpy as np
+```verum
+// Skeleton — fill in the blanks as an exercise.
+mount std.math.linalg.{StaticMatrix, identity};
+mount std.math.complex.Complex;
+mount std.math.random.{XorShift128, Rng};
 
-N = 7
-dt = 0.01
-gamma_diss = 0.1  # dissipation rate
-kappa = 0.15       # regeneration rate
+fn main() using [IO, Random] {
+    const DT:         Float = 0.01;
+    const GAMMA_DISS: Float = 0.1;    // dissipation rate
+    const KAPPA:      Float = 0.15;   // regeneration rate
 
-# Initial state
-Gamma = np.eye(N) / N + 0.05 * np.random.randn(N, N)
-Gamma = (Gamma + Gamma.T.conj()) / 2  # Hermitian symmetry
-Gamma /= np.trace(Gamma)               # normalization
+    // Initial state — small Hermitian perturbation around I/7.
+    let mut rng = XorShift128.seed(Random.next_key());
+    let noise = StaticMatrix.<Complex, 7, 7>.random_gaussian(&mut rng) * Complex.from_real(0.05);
+    let mut gamma = identity::<Complex, 7>() / Complex.from_real(7.0) + noise;
+    gamma = (&gamma + gamma.adjoint()) / Complex.from_real(2.0);   // Hermitise
+    gamma = &gamma / gamma.trace();                                  // normalise
 
-# Target state (attractor)
-rho_star = np.diag([0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10])
+    // Target state (attractor) with decreasing eigenvalues.
+    let rho_star = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+        [0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10]
+    );
 
-# Evolution
-for step in range(10000):
-    # Dissipation: Gamma -> I/N
-    D = -gamma_diss * (Gamma - np.eye(N) / N)
-    # Regeneration: Gamma -> rho_star
-    R = kappa * (rho_star - Gamma)
-    # Update
-    Gamma = Gamma + dt * (D + R)
-    # Compute P every 100 steps
-    if step % 100 == 0:
-        P = np.trace(Gamma @ Gamma)
-        print(f"Step {step}: P = {P:.4f}")
+    // Evolution.
+    for step in 0..10000 {
+        // Dissipation: Γ → I/N.
+        let d = (&gamma - identity::<Complex, 7>() / Complex.from_real(7.0))
+              * Complex.from_real(-GAMMA_DISS);
+        // Regeneration: Γ → ρ*.
+        let r = (&rho_star - &gamma) * Complex.from_real(KAPPA);
+        gamma = &gamma + Complex.from_real(DT) * (d + r);
+
+        if step % 100 == 0 {
+            let p = (&gamma @ &gamma).trace().real();
+            IO.println(f"Step {step}: P = {p:.4f}");
+        }
+    }
+}
 ```
 
 **Questions:**

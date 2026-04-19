@@ -67,28 +67,40 @@ pip install numpy scipy
 
 Обратите внимание на инициализацию: $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$, где $L = I + 0.1 \cdot \text{шум}$. Это *параметризация Холецкого* — стандартный приём, гарантирующий, что $\Gamma$ положительно полуопределена и имеет единичный след. Без этой гарантии дальнейшие вычисления бессмысленны.
 
-```python
-import numpy as np
-from scipy.linalg import expm
+```verum
+mount std.math.linalg.{StaticMatrix, expm, identity};
+mount std.math.complex.Complex;
+mount std.math.random.{XorShift128, Rng};
 
-# Создаём случайный Голоном (демонстрация)
-N = 7
-# 0.1 * noise — небольшое возмущение для инициализации
-L = np.eye(N) + 0.1 * np.random.randn(N, N)
-gamma = L @ L.T.conj()
-gamma /= np.trace(gamma)
+fn main() using [IO, Random] {
+    let mut rng = XorShift128.seed(Random.next_key());
 
-# Эволюция (демонстрационные параметры)
-# H — гамильтониан. Принципиально: H = I (симметрия). Здесь показана вариация.
-H = np.diag([1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0])
-for step in range(100):
-    # dt = 0.01 — шаг дискретизации времени (малый для стабильности)
-    U = expm(-1j * H * 0.01)
-    gamma = U @ gamma @ U.T.conj()
-    gamma /= np.trace(gamma)
-    P = np.trace(gamma @ gamma).real
-    coh_E = (gamma[4, 4].real**2 + 2 * sum(abs(gamma[4, i])**2 for i in range(7) if i != 4)) / P
-    print(f"Step {step}: P={P:.3f}, Coh_E={coh_E:.3f}")
+    // Cholesky parametrisation: Γ = L L† / Tr(L L†) — guarantees Γ ≥ 0 and Tr = 1.
+    let noise: StaticMatrix<Complex, 7, 7> = StaticMatrix.random_gaussian(&mut rng);
+    let l = identity::<Complex, 7>() + noise * Complex.from_real(0.1);
+    let mut gamma = &l @ l.adjoint();
+    gamma = &gamma / gamma.trace();
+
+    // Diagonal Hamiltonian: natural frequencies of the 7 dimensions.
+    let h = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+        [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0]
+    );
+
+    for step in 0..100 {
+        // dt = 0.01 — small for numerical stability.
+        let u = expm(Complex.i().neg() * &h * Complex.from_real(0.01));
+        gamma = &u @ &gamma @ u.adjoint();
+        gamma = &gamma / gamma.trace();
+
+        let p = (gamma @ gamma).trace().real();
+        let e = 4;                                     // Experience index
+        let coh_e = (gamma[e, e].real().pow(2)
+                   + 2.0 * (0..7).filter(|i| *i != e)
+                                  .map(|i| gamma[e, *i].abs().pow(2))
+                                  .sum()) / p;
+        IO.println(f"Step {step}: P={p:.3f}, Coh_E={coh_e:.3f}");
+    }
+}
 ```
 
 При запуске вы увидите, что чистота $P$ остаётся постоянной при чисто унитарной эволюции — это ожидаемо, поскольку $U\Gamma U^\dagger$ сохраняет спектр. А вот $\mathrm{Coh}_E$ будет осциллировать: гамильтониан «перемешивает» когерентность между измерениями, и проекция на $E$-подпространство колеблется.
@@ -97,16 +109,18 @@ for step in range(100):
 
 Простейшая проверка: жива система или нет. Порог $P_{\text{crit}} = 2/7$ — это не настраиваемый параметр, а **следствие теоремы** о различимости в 7-мерном пространстве. Если чистота падает ниже этого значения, матрица $\Gamma$ становится неотличимой от максимально смешанного состояния $I/7$ по норме Фробениуса — система буквально теряет свою идентичность.
 
-```python
-P_CRIT = 2/7  # ≈ 0.286
+```verum
+/// Critical purity — not a tunable parameter but a theorem consequence (T-39a).
+pub const P_CRIT: Float = 2.0 / 7.0;          // ≈ 0.286
 
-def is_viable(gamma):
-    P = np.trace(gamma @ gamma).real
-    return P > P_CRIT
+pub pure fn is_viable(gamma: &StaticMatrix<Complex, 7, 7>) -> Bool {
+    (gamma @ gamma).trace().real() > P_CRIT
+}
 
-# Использование
-if not is_viable(gamma):
-    print("⚠️ Система нежизнеспособна!")
+// Usage.
+if !is_viable(&gamma) {
+    IO.println("⚠️ System is non-viable!");
+}
 ```
 
 ---
@@ -119,35 +133,41 @@ if not is_viable(gamma):
 
 Любая теорема КК оперирует матрицей когерентности $\Gamma \in D(\mathbb{C}^7)$ — множеством положительно полуопределённых эрмитовых матриц $7 \times 7$ с единичным следом. В коде это `np.ndarray` формы `(7, 7)` с dtype `complex128`. Три инварианта — эрмитовость, положительная полуопределённость и единичный след — должны проверяться после каждой операции.
 
-```python
-def validate_gamma(gamma: np.ndarray, label: str = "") -> bool:
-    """Проверяет три фундаментальных инварианта Γ.
+```verum
+mount std.math.linalg.eigvalsh;
 
-    Вызывайте после каждой операции, модифицирующей gamma.
-    В production-коде можно отключить через флаг DEBUG.
-    """
-    prefix = f"[{label}] " if label else ""
-    ok = True
+/// Validates the three fundamental invariants of Γ after every mutating operation.
+/// In release builds `@cfg(debug_assertions)` causes the call to be compiled out.
+@cfg(debug_assertions)
+pub fn validate_gamma(gamma: &StaticMatrix<Complex, 7, 7>, label: Text)
+    using [IO] -> Bool
+{
+    let prefix = if label.is_empty() { "".text() } else { f"[{label}] " };
+    let mut ok = true;
 
-    # Инвариант 1: Эрмитовость — Γ = Γ†
-    if not np.allclose(gamma, gamma.T.conj(), atol=1e-10):
-        print(f"{prefix}НАРУШЕНА эрмитовость: max|Γ - Γ†| = "
-              f"{np.max(np.abs(gamma - gamma.T.conj())):.2e}")
-        ok = False
+    // Invariant 1: Hermiticity — Γ = Γ†.
+    let diff_h = (gamma - gamma.adjoint()).max_abs_element();
+    if diff_h > 1.0e-10 {
+        IO.println(f"{prefix}Hermiticity VIOLATED: max|Γ - Γ†| = {diff_h:.2e}");
+        ok = false;
+    }
 
-    # Инвариант 2: Единичный след — Tr(Γ) = 1
-    tr = np.trace(gamma).real
-    if abs(tr - 1.0) > 1e-10:
-        print(f"{prefix}НАРУШЕН след: Tr(Γ) = {tr:.12f}")
-        ok = False
+    // Invariant 2: Unit trace — Tr(Γ) = 1.
+    let tr = gamma.trace().real();
+    if (tr - 1.0).abs() > 1.0e-10 {
+        IO.println(f"{prefix}Trace VIOLATED: Tr(Γ) = {tr:.12f}");
+        ok = false;
+    }
 
-    # Инвариант 3: Положительная полуопределённость — λ_min ≥ 0
-    eigs = np.linalg.eigvalsh(gamma)
-    if eigs[0] < -1e-10:
-        print(f"{prefix}НАРУШЕНА положительность: λ_min = {eigs[0]:.2e}")
-        ok = False
+    // Invariant 3: Positive semidefiniteness — λ_min ≥ 0.
+    let lam_min = eigvalsh(gamma).iter().min().unwrap();
+    if lam_min < -1.0e-10 {
+        IO.println(f"{prefix}Positivity VIOLATED: λ_min = {lam_min:.2e}");
+        ok = false;
+    }
 
-    return ok
+    ok
+}
 ```
 
 ### Шаг 2: Записать формулу буквально
@@ -160,19 +180,22 @@ $$
 
 Прямая запись на Python выглядит так:
 
-```python
-def coh_e_literal(gamma):
-    """Дословный перевод формулы Coh_E.
-
-    Множитель 2 появляется из эрмитовой симметрии: |γ_Ei|² = |γ_iE|²,
-    поэтому сумма по строке E и столбцу E удваивается.
-    """
-    E = 4  # Индекс измерения Experience (0-indexed: A=0,S=1,D=2,L=3,E=4,O=5,U=6)
-    numerator = gamma[E, E].real**2 + 2 * sum(
-        abs(gamma[E, i])**2 for i in range(7) if i != E
-    )
-    denominator = np.trace(gamma @ gamma).real
-    return numerator / denominator if denominator > 1e-12 else 1/7
+```verum
+/// Literal translation of the Coh_E formula (T-73 [T]).
+///
+/// Factor 2 comes from Hermitian symmetry: |γ_Ei|² = |γ_iE|²,
+/// so the sum over row E and column E is doubled.
+pub pure fn coh_e_literal(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { 1.0/7.0 <= self && self <= 1.0 }
+{
+    const E: Int = 4;                      // A=0, S=1, D=2, L=3, E=4, O=5, U=6
+    let numerator = gamma[E, E].real().pow(2)
+                  + 2.0 * (0..7).filter(|i| *i != E)
+                                 .map(|i| gamma[E, *i].abs().pow(2))
+                                 .sum();
+    let denom = (gamma @ gamma).trace().real();
+    if denom > 1.0e-12 { numerator / denom } else { 1.0 / 7.0 }
+}
 ```
 
 ### Шаг 3: Добавить числовую защиту
@@ -183,31 +206,40 @@ def coh_e_literal(gamma):
 
 Лучший тест — это случай, когда ответ известен аналитически:
 
-```python
-def test_coh_e_pure_E_state():
-    """Для чистого |E⟩ состояния Coh_E = 1."""
-    gamma = np.zeros((7, 7), dtype=complex)
-    gamma[4, 4] = 1.0  # Чистое |E⟩ состояние
-    assert abs(coh_e_literal(gamma) - 1.0) < 1e-10
+```verum
+mount std.test.{test, assert_close};
 
-def test_coh_e_maximally_mixed():
-    """Для I/7 Coh_E = 1/7."""
-    gamma = np.eye(7, dtype=complex) / 7
-    assert abs(coh_e_literal(gamma) - 1/7) < 1e-10
+@test fn coh_e_pure_e_state() {
+    // For the pure |E⟩ state, Coh_E = 1.
+    let mut gamma = StaticMatrix.<Complex, 7, 7>.zeros();
+    gamma[4, 4] = Complex.one();
+    assert_close(coh_e_literal(&gamma), 1.0, 1.0e-10);
+}
+
+@test fn coh_e_maximally_mixed() {
+    // For I/7, Coh_E = 1/7.
+    let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
+    assert_close(coh_e_literal(&gamma), 1.0 / 7.0, 1.0e-10);
+}
 ```
 
 ### Шаг 5: Оптимизировать (только если нужно)
 
 Генератор `sum(... for i in ...)` вычисляет за $O(N)$, но для $N = 7$ это не узкое место. Оптимизация через NumPy-векторизацию оправдана лишь при многократном вызове в горячем цикле:
 
-```python
-def coh_e_vectorized(gamma):
-    """Векторизованная версия (для горячих циклов)."""
-    E = 4
-    row_E = gamma[E, :]
-    numerator = gamma[E, E].real**2 + 2 * (np.sum(np.abs(row_E)**2) - np.abs(row_E[E])**2)
-    denominator = np.real(np.trace(gamma @ gamma))
-    return np.clip(numerator / max(denominator, 1e-12), 1/7, 1.0)
+```verum
+/// SIMD-vectorised Coh_E for hot loops. Semantically identical to `coh_e_literal`.
+pub pure fn coh_e_vectorized(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { 1.0/7.0 <= self && self <= 1.0 }
+{
+    const E: Int = 4;
+    let row_e   = gamma.row(E);                                // StaticVector<Complex, 7>
+    let norm_sq = row_e.frobenius_norm_sq();                   // Σ |γ_Ei|²
+    let diag_sq = gamma[E, E].abs().pow(2);
+    let numer   = gamma[E, E].real().pow(2) + 2.0 * (norm_sq - diag_sq);
+    let denom   = (gamma @ gamma).trace().real().max(1.0e-12);
+    (numer / denom).clamp(1.0 / 7.0, 1.0)
+}
 ```
 
 Этот пятишаговый протокол — **идентифицировать, записать, защитить, протестировать, оптимизировать** — применим к любой формуле КК.
@@ -249,48 +281,63 @@ def coh_e_vectorized(gamma):
 
 JAX позволяет автоматически компилировать Python-код в GPU-ядра через декоратор `@jit`. Для массовых симуляций (например, 10 000 голономов параллельно) это даёт ускорение в 100-1000 раз.
 
-```python
-import jax.numpy as jnp
-from jax import jit
-from jax.scipy.linalg import expm
+```verum
+mount std.math.gpu.{GPUBackend, device};
 
-@jit
-def evolve_step_gpu(gamma, H, dt):
-    U = expm(-1j * H * dt)
-    gamma_new = U @ gamma @ U.T.conj()
-    return gamma_new / jnp.trace(gamma_new)
+/// GPU-executed evolution step. `@kernel(gpu)` dispatches the body to a device.
+/// The same code path works on CPU if no GPU is available.
+@kernel(gpu)
+pub pure fn evolve_step_gpu(
+    gamma: &StaticMatrix<Complex, 7, 7>,
+    h:     &StaticMatrix<Complex, 7, 7>,
+    dt:    Float,
+) -> StaticMatrix<Complex, 7, 7>
+{
+    let u = expm(Complex.i().neg() * h * Complex.from_real(dt));
+    let g = &u @ gamma @ u.adjoint();
+    &g / g.trace()
+}
 ```
 
 ### Sparse матрицы для больших систем
 
 При композиции голономов тензорное произведение порождает разреженные матрицы. Вместо хранения полной $49 \times 49$ матрицы можно работать только с ненулевыми элементами.
 
-```python
-from scipy.sparse import csr_matrix
-from scipy.sparse.linalg import expm_multiply
+```verum
+mount std.math.linalg.sparse.{SparseMatrix, expm_multiply};
 
-# Для разреженного H
-H_sparse = csr_matrix(H)
-gamma_evolved = expm_multiply(-1j * H_sparse * dt, gamma.flatten())
+// For a sparse Hamiltonian: compute exp(-i H dt) |ψ⟩ without materialising expm(H).
+let h_sparse: SparseMatrix<Complex, 7, 7> = h.to_sparse();
+let gamma_evolved = expm_multiply(
+    Complex.i().neg() * h_sparse * Complex.from_real(dt),
+    gamma.flatten(),
+);
 ```
 
 ### Параллелизация Monte-Carlo
 
 Статистические свойства КК-систем (распределение $P$ в ансамбле, средняя $\mathrm{Coh}_E$) оцениваются через Monte-Carlo. Каждая траектория независима — идеальный случай для параллелизации.
 
-```python
-from multiprocessing import Pool
+```verum
+mount std.async.{nursery, spawn};
 
-def run_trajectory(seed):
-    np.random.seed(seed)
-    holon = initialize_holon({'random': True})
-    env = Environment({})
-    for _ in range(1000):
-        holon = evolve_holon(holon, dt=0.01, environment=env)
-    return {'purity': holon.purity, 'entropy': holon.entropy}
+pub async fn run_trajectory(seed: UInt64) -> TrajectoryResult using [Random] {
+    let mut rng = XorShift128.seed(seed);
+    let mut holon = initialize_holon(InitConfig { random: true, ..InitConfig.default() });
+    let mut env = Environment.new(EnvConfig.default());
+    for _ in 0..1000 {
+        holon = evolve_holon(holon, 0.01, &env);
+    }
+    TrajectoryResult { purity: holon.purity, entropy: holon.entropy }
+}
 
-with Pool(8) as p:
-    results = p.map(run_trajectory, range(100))
+/// Structured concurrency via `nursery`: 100 trajectories, ≤ 8 in parallel.
+pub async fn run_ensemble() -> List<TrajectoryResult> using [Random, Scheduler] {
+    nursery(|n| async {
+        let handles = (0..100).map(|i| n.spawn(run_trajectory(i as UInt64))).collect();
+        for h in handles { h.await }
+    }).await
+}
 ```
 
 ---
@@ -299,59 +346,67 @@ with Pool(8) as p:
 
 Тесты в КК играют роль **экспериментальной проверки**. Каждый тест кодирует математическую теорему: если тест проходит, реализация согласована с теорией. Если не проходит — либо в коде ошибка, либо (что интереснее) формула переведена неверно. Набор ниже покрывает фундаментальные инварианты: границы чистоты, сохранение следа, эрмитовость, положительность и пороговые значения.
 
-```python
-import pytest
-import numpy as np
+```verum
+mount std.test.{test, assert, assert_close, property};
 
-def _create_random_gamma(N=7):
-    """Вспомогательная функция: создаёт случайную Γ (для тестов)."""
-    L = np.eye(N, dtype=complex) + 0.1 * np.random.randn(N, N)
-    gamma = L @ L.conj().T
-    gamma /= np.trace(gamma)
-    return gamma
+/// Random valid Γ via Cholesky parametrisation (helper for tests).
+fn _random_gamma() using [Random] -> StaticMatrix<Complex, 7, 7> {
+    let mut rng = XorShift128.seed(Random.next_key());
+    let noise: StaticMatrix<Complex, 7, 7> = StaticMatrix.random_gaussian(&mut rng);
+    let l = identity::<Complex, 7>() + noise * Complex.from_real(0.1);
+    let g = &l @ l.adjoint();
+    &g / g.trace()
+}
 
-def _evolve_one_step(gamma, dt=0.01):
-    """Вспомогательная функция: один шаг эволюции (для тестов)."""
-    state = initialize_holon({'random': False})
-    state.gamma = gamma.copy()
-    env = Environment({})
-    new_state = evolve_holon(state, dt, env)
-    return new_state.gamma
+fn _evolve_one_step(gamma: StaticMatrix<Complex, 7, 7>, dt: Float)
+    using [Random] -> StaticMatrix<Complex, 7, 7>
+{
+    let mut state = initialize_holon(InitConfig { random: false, ..InitConfig.default() });
+    state.gamma = gamma;
+    evolve_holon(state, dt, &Environment.new(EnvConfig.default())).gamma
+}
 
-def test_purity_bounds():
-    """P ∈ [1/7, 1] для любого Γ."""
-    gamma = _create_random_gamma()
-    P = np.trace(gamma @ gamma).real
-    assert 1/7 - 1e-10 <= P <= 1 + 1e-10
+@test fn purity_bounds() using [Random] {
+    let gamma = _random_gamma();
+    let p = (gamma @ gamma).trace().real();
+    assert(1.0/7.0 - 1.0e-10 <= p && p <= 1.0 + 1.0e-10);
+}
 
-def test_trace_preservation():
-    """Tr(Γ) = 1 после эволюции."""
-    gamma = _create_random_gamma()
-    gamma_evolved = _evolve_one_step(gamma)
-    assert abs(np.trace(gamma_evolved) - 1) < 1e-10
+@test fn trace_preservation() using [Random] {
+    let evolved = _evolve_one_step(_random_gamma(), 0.01);
+    assert_close(evolved.trace().real(), 1.0, 1.0e-10);
+}
 
-def test_hermiticity_preservation():
-    """Γ остаётся эрмитовой."""
-    gamma = _create_random_gamma()
-    gamma_evolved = _evolve_one_step(gamma)
-    assert np.allclose(gamma_evolved, gamma_evolved.T.conj())
+@test fn hermiticity_preservation() using [Random] {
+    let evolved = _evolve_one_step(_random_gamma(), 0.01);
+    assert((&evolved - evolved.adjoint()).frobenius_norm() < 1.0e-10);
+}
 
-def test_positivity_preservation():
-    """Γ остаётся положительно полуопределённой."""
-    gamma = _create_random_gamma()
-    gamma_evolved = _evolve_one_step(gamma)
-    eigenvalues = np.linalg.eigvalsh(gamma_evolved)
-    assert all(eigenvalues >= -1e-10)
+@test fn positivity_preservation() using [Random] {
+    let evolved = _evolve_one_step(_random_gamma(), 0.01);
+    let eigs = eigvalsh(&evolved);
+    assert(eigs.iter().all(|v| *v >= -1.0e-10));
+}
 
-def test_viability_threshold():
-    """P_crit = 2/7."""
-    assert abs(P_CRITICAL - 2/7) < 1e-10
+@test fn viability_threshold() {
+    assert_close(P_CRITICAL, 2.0 / 7.0, 1.0e-10);
+}
 
-def test_coh_e_bounds():
-    """Coh_E ∈ [1/N, 1]."""
-    gamma = _create_random_gamma()
-    coh_E = compute_coherence_E(gamma)
-    assert 1/7 - 1e-10 <= coh_E <= 1 + 1e-10
+@test fn coh_e_bounds() using [Random] {
+    let coh = compute_coherence_e(&_random_gamma());
+    assert(1.0/7.0 - 1.0e-10 <= coh && coh <= 1.0 + 1.0e-10);
+}
+
+/// Property test: every evolution step preserves all three invariants of Γ.
+@property fn evolution_preserves_invariants(seed: UInt64) using [Random] {
+    let mut rng = XorShift128.seed(seed);
+    let gamma = _random_gamma();
+    let evolved = _evolve_one_step(gamma.clone(), 0.01);
+
+    assert_close(evolved.trace().real(), 1.0, 1.0e-10);
+    assert((&evolved - evolved.adjoint()).frobenius_norm() < 1.0e-10);
+    assert(eigvalsh(&evolved).iter().all(|v| *v >= -1.0e-10));
+}
 ```
 
 ---
@@ -405,42 +460,37 @@ graph TD
 
 Центральная структура данных — `HolonState` — является программным отражением математического объекта «голоном в состоянии $\Gamma$». Каждое поле соответствует определённой теоретической конструкции. Обратите внимание на то, что мы храним не только матрицу $\Gamma$, но и все производные метрики: это позволяет избежать повторных вычислений в горячем цикле.
 
-```python
-from dataclasses import dataclass
-import numpy as np
-from scipy.linalg import expm
-from typing import List, Callable
+```verum
+mount std.math.linalg.{StaticMatrix, StaticVector, expm, identity};
+mount std.math.complex.Complex;
 
-@dataclass
-class HolonState:
-    """
-    Состояние Голонома в Кибернетике Когерентности.
+/// State of a Holonom in Coherence Cybernetics.
+/// See the Holonom definition: /docs/core/structure/holon.
+pub type HolonState is {
+    // State core (with refinement predicates enforced at use-sites).
+    mut gamma:        StaticMatrix<Complex, 7, 7>,    // Γ: Hermitian, PSD, Tr=1
+    mut hamiltonian:  StaticMatrix<Complex, 7, 7>,    // H: Hermitian
+    mut lindblad_ops: [StaticMatrix<Complex, 7, 7>; 7],  // {L_k}
+    phi:              pure fn(&StaticMatrix<Complex, 7, 7>)
+                            -> StaticMatrix<Complex, 7, 7>,  // φ: CPTP self-model
 
-    См. определение Голонома: /docs/core/structure/holon
-    """
+    // Viability metrics.
+    mut purity:       Float { 1.0/7.0 <= self && self <= 1.0 },   // P = Tr(Γ²)
+    mut entropy:      Float { 0.0     <= self && self <= (7.0).ln() }, // S_vN
 
-    # Ядро состояния
-    gamma: np.ndarray          # Γ: матрица когерентности 7×7
-    hamiltonian: np.ndarray    # H: гамильтониан системы
-    lindblad_ops: List[np.ndarray]  # {L_k}: операторы декогеренции
-    phi: Callable              # φ: оператор самомоделирования (CPTP)
+    // Consciousness measures (see /docs/consciousness/foundations/self-observation).
+    mut integration:     Float { self >= 0.0  },   // Φ: integration measure
+    mut differentiation: Float { self >= 1.0  },   // D_diff = 1 + Coh_E·6  (T-128 [T])
+    mut reflection:      Float { 0.0 <= self && self <= 1.0 }, // R
+    mut consciousness:   Float { self >= 0.0  },   // C = Φ·R  (T-140 [T])
 
-    # Метрики жизнеспособности
-    purity: float              # P = Tr(Γ²) ∈ [1/7, 1]
-    entropy: float             # S_vN = -Tr(Γ log Γ) ∈ [0, log 7]
+    // Stress tensor (see definitions.md#тензор-напряжений).
+    mut stress_tensor: StaticVector<Float, 7>,    // σ_sys
 
-    # Меры сознательности (см. /docs/consciousness/foundations/self-observation)
-    integration: float         # Φ: мера интеграции
-    differentiation: float     # D_diff = 1 + Coh_E · (N−1) [T-128 [Т]]
-    reflection: float          # R: мера рефлексии ∈ [0, 1]
-    consciousness: float       # C = Φ × R [T-140 [Т]]; D_diff — отдельное условие V
-
-    # Тензор напряжений (см. definitions.md#тензор-напряжений)
-    stress_tensor: np.ndarray  # σ_sys ∈ ℝ⁷: [σ_A, σ_S, σ_D, σ_L, σ_E, σ_O, σ_U]
-
-    # Жизнеспособность
-    viable: bool               # P > P_critical ∧ dP/dτ > -ε
-    margin: float              # 1 - max(σ_sys)
+    // Viability.
+    mut viable: Bool,                             // P > P_crit ∧ dP/dτ > -ε
+    mut margin: Float { -1.0 <= self && self <= 1.0 },  // 1 - max(σ_sys)
+};
 ```
 
 ## Вывод операторов Линдблада из Ω
@@ -457,34 +507,23 @@ class HolonState:
 
 В упрощённой реализации каждый оператор Линдблада — проектор на одно из семи базисных состояний. Это соответствует декогеренции, которая «стирает» суперпозиции между измерениями, оставляя только диагональные элементы. Полная $G_2$-совместимая реализация использует проекторы на Фано-триплеты и сохраняет более тонкую структуру когерентности.
 
-```python
-def compute_lindblad_from_omega(gamma: np.ndarray) -> list:
-    """
-    Вычисляет операторы Линдблада из структуры Ω.
-
-    УПРОЩЕНИЕ: Возвращает диагональные проекторы L_k = |k><k|.
-    Полная G₂-реализация использует Фано-линии (см. /docs/proofs/gap/fano-channel).
-
-    Алгоритм:
-    1. Вычислить характеристические морфизмы χ_S для атомов Ω
-    2. L_k = √χ_{S_k} (корень из проектора)
-
-    См. /docs/reference/computational#конструктивные-алгоритмы-из-l-унификации
-    """
-    N = gamma.shape[0]  # = 7
-    lindblad_ops = []
-
-    # Атомы классификатора Ω — проекторы на базисные состояния
-    for k in range(N):
-        # χ_{S_k} — характеристический морфизм для атома S_k
-        chi_k = np.zeros((N, N), dtype=complex)
-        chi_k[k, k] = 1.0
-
-        # L_k = √χ_{S_k} = проектор (для атомов √P = P)
-        L_k = chi_k
-        lindblad_ops.append(L_k)
-
-    return lindblad_ops
+```verum
+/// Computes Lindblad operators from the Ω structure.
+///
+/// **Simplification**: returns diagonal projectors L_k = |k⟩⟨k|.
+/// The full G₂ implementation uses Fano lines (see /docs/proofs/gap/fano-channel).
+///
+/// Algorithm: L_k = √χ_{S_k}; for atom projectors √P = P.
+/// See /docs/reference/computational#конструктивные-алгоритмы-из-l-унификации.
+pub pure fn compute_lindblad_from_omega(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> [StaticMatrix<Complex, 7, 7>; 7]
+{
+    (0..7).map(|k| {
+        let mut l_k = StaticMatrix.<Complex, 7, 7>.zeros();
+        l_k[k, k] = Complex.one();       // projector onto |k⟩
+        l_k
+    }).to_array()
+}
 ```
 
 ## Алгоритм эволюции
@@ -501,129 +540,103 @@ $$
 Эволюция реализована через **последовательное** применение унитарного, диссипативного и регенеративного членов (расщепление Ли-Троттера). При конечном шаге $dt$ это расщепление **не гарантирует** сохранение положительной полуопределённости $\Gamma \geq 0$. Для малых $dt$ ошибка порядка $O(dt^2)$. При больших шагах рекомендуется: (1) уменьшить $dt$, (2) добавить проекцию на конус $\Gamma \geq 0$ после каждого шага, или (3) использовать методы типа Рунге-Кутты для открытых квантовых систем.
 :::
 
-```python
-def evolve_holon(state: HolonState, dt: float, environment) -> HolonState:
-    """
-    Один шаг эволюции по полному уравнению КК.
+```verum
+/// One evolution step according to the full CC equation.
+///
+/// `dt` — internal time τ step (see /docs/proofs/dynamics/emergent-time).
+///
+/// Three terms:
+/// 1. Unitary     —i[H_eff, Γ]  (see /docs/core/dynamics/evolution#1-unitary-term)
+/// 2. Dissipative  D[Γ]          (see /docs/core/dynamics/evolution#логический-лиувиллиан)
+/// 3. Regenerative ℛ[Γ, E]        (see /docs/core/dynamics/evolution#3-регенеративный-член)
+pub fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 0.1 },
+                    env: &Environment) -> HolonState
+{
+    let mut gamma = state.gamma.clone();
 
-    dt — шаг внутреннего времени τ (см. /docs/proofs/dynamics/emergent-time)
+    // 1. Unitary evolution.
+    let u = expm(Complex.i().neg() * &state.hamiltonian * Complex.from_real(dt));
+    gamma = &u @ &gamma @ u.adjoint();
 
-    Три члена:
-    1. Унитарный: -i[H_eff, Γ]  (см. /docs/core/dynamics/evolution#1-унитарный-член)
-    2. Диссипативный: D[Γ]  (см. /docs/core/dynamics/evolution#логический-лиувиллиан)
-    3. Регенеративный: ℛ[Γ, E]  (см. /docs/core/dynamics/evolution#3-регенеративный-член)
-    """
-    gamma = state.gamma.copy()
+    // 2. Dissipation: Lindblad equation.
+    for l_k in &state.lindblad_ops {
+        let l_dag = l_k.adjoint();
+        gamma = &gamma + Complex.from_real(dt) * (
+              l_k   @ &gamma @ &l_dag
+            - Complex.from_real(0.5) * (&l_dag @ l_k @ &gamma)
+            - Complex.from_real(0.5) * (&gamma @ &l_dag @ l_k)
+        );
+    }
 
-    # 1. Унитарная эволюция: -i[H_eff, Γ]
-    U = expm(-1j * state.hamiltonian * dt)
-    gamma = U @ gamma @ U.conj().T
+    // 3. Regeneration: κ = κ_bootstrap + κ₀·Coh_E (resolves the bootstrap paradox).
+    let coh_e = compute_coherence_e(&gamma);
+    let kappa = KAPPA_BOOTSTRAP + KAPPA_0 * coh_e;
+    let delta_f = compute_free_energy_gradient(&gamma, env);
 
-    # 2. Диссипация: D[Γ] (уравнение Линдблада)
-    for L_k in state.lindblad_ops:
-        gamma += dt * (
-            L_k @ gamma @ L_k.conj().T
-            - 0.5 * (L_k.conj().T @ L_k @ gamma + gamma @ L_k.conj().T @ L_k)
-        )
+    if delta_f > 0.0 {
+        let gamma_target = compute_target_state(&gamma, env);
+        gamma = &gamma + Complex.from_real(dt * kappa) * (gamma_target - &gamma);
+    }
 
-    # 3. Регенерация: ℛ[Γ, E]
-    # κ = κ_bootstrap + κ₀ · Coh_E (разрешение bootstrap-парадокса)
-    # См. /docs/core/foundations/axiom-omega#genesis-protocol
-    coh_E = compute_coherence_E(gamma)
-    kappa = KAPPA_BOOTSTRAP + KAPPA_0 * coh_E
-    delta_F = compute_free_energy_gradient(gamma, environment)
+    // Normalise: Tr(Γ) = 1.
+    gamma = &gamma / gamma.trace();
 
-    if delta_F > 0:
-        gamma_target = compute_target_state(gamma, environment)
-        gamma += dt * kappa * (gamma_target - gamma)
+    update_metrics(state, gamma)
+}
 
-    # Нормализация: Tr(Γ) = 1
-    gamma /= np.trace(gamma)
+/// E-coherence Coh_E(Γ) = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [1/7, 1] (T-73 [T]).
+pub pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { 1.0/7.0 <= self && self <= 1.0 }
+{
+    const E: Int = 4;
+    let diag_sq = gamma[E, E].real().pow(2);
+    let cross   = (0..7).filter(|i| *i != E)
+                         .map(|i| gamma[E, *i].abs().pow(2))
+                         .sum();
+    let p = (gamma @ gamma).trace().real();
+    if p < 1.0e-12 { 1.0 / 7.0 }
+    else           { ((diag_sq + 2.0 * cross) / p).clamp(1.0 / 7.0, 1.0) }
+}
 
-    # Обновление метрик
-    return update_metrics(state, gamma)
+/// Target state Γ_target = φ(Γ).
+/// **Simplification**: maximum-eigenvalue projector, interpolated with current Γ.
+/// Full φ — see /docs/proofs/categorical/formalization-phi.
+pub pure fn compute_target_state(gamma: &StaticMatrix<Complex, 7, 7>, _env: &Environment)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    let (eigvals, eigvecs) = eigh(gamma);
+    let max_idx = eigvals.argmax();
+    let psi_target = eigvecs.column(max_idx);
 
+    // α ∈ [0.01, 0.1] — attraction rate toward the target (hyperparameter).
+    const ALPHA: Float = 0.1;
+    let gamma_pure = psi_target.outer(psi_target.conjugate());
+    Complex.from_real(1.0 - ALPHA) * gamma + Complex.from_real(ALPHA) * gamma_pure
+}
 
-def compute_coherence_E(gamma: np.ndarray) -> float:
-    """
-    E-когерентность (HS-проекция π_E, [Т]): Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²).
+/// Free energy gradient ΔF = F_env − F_sys. ΔF > 0 activates regeneration.
+pub pure fn compute_free_energy_gradient(
+    gamma: &StaticMatrix<Complex, 7, 7>,
+    env:   &Environment,
+) -> Float
+{
+    let p = (gamma @ gamma).trace().real();
+    env.available_energy - (1.0 - p)
+}
 
-    Мастер-определение: Coh_E := Tr(ρ_E²), где ρ_E = Tr_{-E}(Γ).
-    Множитель 2 — из эрмитовой симметрии: |γ_Ei|² = |γ_iE|².
-    Нормализация на Tr(Γ²) гарантирует Coh_E ∈ [1/7, 1].
-
-    См. /docs/applied/coherence-cybernetics/definitions#e-когерентность
-    """
-    E = 4  # Индекс измерения Experience
-    gamma_EE_sq = np.real(gamma[E, E])**2
-    coherence_sum = sum(np.abs(gamma[E, i])**2 for i in range(7) if i != E)
-    purity = np.real(np.trace(gamma @ gamma))
-    if purity < 1e-12:
-        return 1/7
-    return np.clip((gamma_EE_sq + 2 * coherence_sum) / purity, 1/7, 1.0)
-
-
-def compute_target_state(gamma: np.ndarray, environment) -> np.ndarray:
-    """
-    Целевое состояние Γ_target = φ(Γ), где φ — оператор самомоделирования.
-
-    В упрощённой реализации: Γ_target = состояние с максимальной чистотой
-    в направлении текущей конфигурации.
-
-    Полная реализация φ см. /docs/proofs/categorical/formalization-phi
-    """
-    # Упрощение: используем спектральное разложение
-    eigenvalues, eigenvectors = np.linalg.eigh(gamma)
-
-    # Усиливаем доминантный собственный вектор (стремление к чистому состоянию)
-    max_idx = np.argmax(eigenvalues)
-    psi_target = eigenvectors[:, max_idx]
-
-    # Интерполяция: частично сохраняем структуру, частично стремимся к чистоте
-    # alpha — скорость сходимости к целевому состоянию
-    # Рекомендуемый диапазон: 0.01-0.1 (малые значения для стабильности)
-    # При α=0 система не регенерирует; при α→1 резкий скачок к чистому состоянию
-    alpha = 0.1  # Гиперпараметр: скорость притяжения к цели
-    gamma_pure = np.outer(psi_target, psi_target.conj())
-    return (1 - alpha) * gamma + alpha * gamma_pure
-
-
-def compute_free_energy_gradient(gamma: np.ndarray, environment) -> float:
-    """
-    Градиент свободной энергии ΔF = F_env - F_sys.
-
-    Положительный ΔF означает приток энергии из среды,
-    что активирует регенерацию.
-
-    Args:
-        gamma: Матрица когерентности Γ ∈ ℂ^{7×7}
-        environment: Объект среды с атрибутом available_energy
-
-    Returns:
-        ΔF: Градиент свободной энергии. ΔF > 0 → приток, ΔF < 0 → отток.
-
-    Note:
-        P_env по умолчанию 0.5 (нейтральная среда). В реальной реализации
-        available_energy должен отражать фактическую доступность ресурсов.
-
-    См. /docs/core/dynamics/evolution#3-регенеративный-член
-    """
-    P = np.trace(gamma @ gamma).real
-    # available_energy ∈ [0, 1]: доля доступных ресурсов среды
-    P_env = getattr(environment, 'available_energy', 0.5)  # Нейтральное значение
-    return P_env - (1 - P)  # ΔF > 0 если среда богата ресурсами
-
-
-def update_metrics(state: HolonState, gamma: np.ndarray) -> HolonState:
-    """
-    Обновляет все метрики состояния после шага эволюции.
-    """
-    state.gamma = gamma
-    state.purity = np.trace(gamma @ gamma).real
-    eigenvalues = np.linalg.eigvalsh(gamma)
-    eigenvalues = eigenvalues[eigenvalues > 1e-12]
-    state.entropy = -np.sum(eigenvalues * np.log(eigenvalues))
-    return state
+/// Update all derived metrics after a gamma change.
+pub pure fn update_metrics(mut state: HolonState, gamma: StaticMatrix<Complex, 7, 7>)
+    -> HolonState
+{
+    state.gamma = gamma;
+    state.purity = (&state.gamma @ &state.gamma).trace().real();
+    let eigs = eigvalsh(&state.gamma);
+    state.entropy = eigs.iter()
+        .filter(|v| **v > 1.0e-12)
+        .map(|v| -v * v.ln())
+        .sum();
+    state
+}
 ```
 
 ## Ловушки: типичные ошибки при реализации {#ловушки}
@@ -672,92 +685,104 @@ def update_metrics(state: HolonState, gamma: np.ndarray) -> HolonState:
 
 Каждый сенсорный сигнал классифицируется по характеру воздействия: информационные сигналы (A, S, L) модифицируют энергетический ландшафт через $\delta H$; нагрузочные сигналы (D, O) усиливают или ослабляют декогеренцию через $\delta D$; интегративные сигналы (E, U) модулируют регенерацию через $\delta R$. Эта классификация не произвольна — она следует из структуры семи измерений.
 
-```python
-def decompose_f_ext(observation, gamma: np.ndarray) -> tuple:
-    """
-    Декомпозирует внешнее воздействие в 3 канала (T-102 [Т]).
+```verum
+/// Environmental observation — three optional channels of influence.
+pub type Observation is {
+    sensory_input:       Maybe<Map<Text, Float>>,    // → δH (informational)
+    noise_level:         Maybe<Map<Text, Float>>,    // → δD (load)
+    integration_signal:  Maybe<Map<Text, Float>>,    // → δR (integrative)
+};
 
-    Вместо: dΓ = H + D + R + F_ext  (некорректно!)
-    Используем: dΓ = (H + δH) + (D + δD) + (R + δR)  (корректно)
+/// Decomposes the external influence into 3 channels (T-102 [T]).
+///
+/// Instead of `dΓ = H + D + R + F_ext` (incorrect), we use
+/// `dΓ = (H + δH) + (D + δD) + (R + δR)` (correct).
+///
+/// See /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала.
+pub pure fn decompose_f_ext(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
+    -> (StaticMatrix<Complex, 7, 7>,                     // δH
+        StaticMatrix<Complex, 7, 7>,                     // δD
+        StaticMatrix<Complex, 7, 7>)                     // δR
+{
+    let mut d_h = StaticMatrix.<Complex, 7, 7>.zeros();  // Hamiltonian channel
+    let mut d_d = StaticMatrix.<Complex, 7, 7>.zeros();  // Dissipative channel
+    let mut d_r = StaticMatrix.<Complex, 7, 7>.zeros();  // Regenerative channel
 
-    Args:
-        observation: наблюдение среды
-        gamma: текущая матрица когерентности
+    // Informational dimensions: A=0, S=1, L=3 → δH.
+    if let Maybe.Some(s) = &obs.sensory_input {
+        for (key, idx) in [("I_A", 0), ("I_S", 1), ("I_L", 3)] {
+            d_h[idx, idx] = Complex.from_real(s.get(key).unwrap_or(0.0));
+        }
+    }
 
-    Returns:
-        (delta_H, delta_D, delta_R) — три канала пертурбации
+    // Load dimensions: D=2, O=5 → δD.
+    if let Maybe.Some(n) = &obs.noise_level {
+        for (key, idx) in [("I_D", 2), ("I_O", 5)] {
+            d_d[idx, idx] = Complex.from_real(n.get(key).unwrap_or(0.0));
+        }
+    }
 
-    См. /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала
-    """
-    delta_H = np.zeros((7, 7), dtype=complex)  # Гамильтонов: δ(Δω_ij)
-    delta_D = np.zeros((7, 7), dtype=complex)  # Диссипативный: δΓ₂
-    delta_R = np.zeros((7, 7), dtype=complex)  # Регенеративный: δκ
+    // Integrative dimensions: E=4, U=6 → δR.
+    if let Maybe.Some(r) = &obs.integration_signal {
+        for (key, idx) in [("I_E", 4), ("I_U", 6)] {
+            d_r[idx, idx] = Complex.from_real(r.get(key).unwrap_or(0.0));
+        }
+    }
 
-    # Распределение по каналам (из таблицы индексов):
-    # h(H): информационные — A, S, L (изменяют энергетический ландшафт)
-    # h(D): нагрузочные — D, O (усиливают/ослабляют декогеренцию)
-    # h(R): интегративные — E, U (модулируют регенерацию)
-
-    if hasattr(observation, 'sensory_input'):
-        for key, idx in [('I_A', 0), ('I_S', 1), ('I_L', 3)]:
-            val = observation.sensory_input.get(key, 0)
-            delta_H[idx, idx] = val
-
-    if hasattr(observation, 'noise_level'):
-        for key, idx in [('I_D', 2), ('I_O', 5)]:
-            val = observation.noise_level.get(key, 0)
-            delta_D[idx, idx] = val
-
-    if hasattr(observation, 'integration_signal'):
-        for key, idx in [('I_E', 4), ('I_U', 6)]:
-            val = observation.integration_signal.get(key, 0)
-            delta_R[idx, idx] = val
-
-    return delta_H, delta_D, delta_R
+    (d_h, d_d, d_r)
+}
 ```
 
 ### Обновлённый evolve_holon (без F_ext)
 
 Каноническая версия эволюции принимает на вход три модификации каналов вместо абстрактного «внешнего воздействия». Это не просто стилистическое различие — это **правильная физика**: любое взаимодействие с внешним миром осуществляется через один из трёх существующих механизмов, а не через мифический четвёртый канал.
 
-```python
-def evolve_holon_canonical(state: HolonState, dt: float,
-                           delta_H=None, delta_D=None, delta_R=None) -> HolonState:
-    """
-    Каноническая эволюция: 3 модифицированных канала (T-102 [Т]).
+```verum
+/// Canonical evolution: three modified channels (T-102 [T]).
+///
+/// `F_ext` is NOT a separate term — the environment enters via δH, δD, δR.
+pub fn evolve_holon_canonical(
+    mut state:    HolonState,
+    dt:           Float { self > 0.0 && self <= 0.1 },
+    delta_h:      Maybe<StaticMatrix<Complex, 7, 7>>,
+    delta_d:      Maybe<StaticMatrix<Complex, 7, 7>>,
+    delta_r:      Maybe<StaticMatrix<Complex, 7, 7>>,
+) -> HolonState
+{
+    let zero_m = StaticMatrix.<Complex, 7, 7>.zeros();
+    let h_total = &state.hamiltonian + delta_h.unwrap_or(zero_m.clone());
 
-    НЕ используется отдельный F_ext — среда входит через δH, δD, δR.
-    """
-    gamma = state.gamma.copy()
-    H_total = state.hamiltonian + (delta_H if delta_H is not None else 0)
+    // 1. Modified unitary evolution.
+    let u = expm(Complex.i().neg() * &h_total * Complex.from_real(dt));
+    let mut gamma = &u @ &state.gamma @ u.adjoint();
 
-    # 1. Модифицированная унитарная эволюция
-    U = expm(-1j * H_total * dt)
-    gamma = U @ gamma @ U.conj().T
+    // 2. Modified dissipation.
+    let gamma2_factor = 1.0 + delta_d.as_ref()
+        .map_or(0.0, |m| m.diagonal().iter().map(|c| c.abs()).max().unwrap_or(0.0));
+    for l_k in &state.lindblad_ops {
+        let l_dag = l_k.adjoint();
+        gamma = &gamma + Complex.from_real(dt * gamma2_factor) * (
+              l_k   @ &gamma @ &l_dag
+            - Complex.from_real(0.5) * (&l_dag @ l_k @ &gamma)
+            - Complex.from_real(0.5) * (&gamma @ &l_dag @ l_k)
+        );
+    }
 
-    # 2. Модифицированная диссипация
-    gamma_2_factor = 1.0  # базовый
-    if delta_D is not None:
-        gamma_2_factor += np.max(np.abs(np.diag(delta_D)))
-    for L_k in state.lindblad_ops:
-        gamma += dt * gamma_2_factor * (
-            L_k @ gamma @ L_k.conj().T
-            - 0.5 * (L_k.conj().T @ L_k @ gamma + gamma @ L_k.conj().T @ L_k)
-        )
+    // 3. Modified regeneration.
+    let coh_e = compute_coherence_e(&gamma);
+    let mut kappa = KAPPA_BOOTSTRAP + compute_kappa_0(&gamma, 1.0) * coh_e;
+    kappa += delta_r.as_ref()
+        .map_or(0.0, |m| m.diagonal().iter().map(|c| c.abs()).max().unwrap_or(0.0));
 
-    # 3. Модифицированная регенерация
-    coh_E = compute_coherence_E(gamma)
-    kappa = KAPPA_BOOTSTRAP + compute_kappa_0(gamma) * coh_E
-    if delta_R is not None:
-        kappa += np.max(np.abs(np.diag(delta_R)))
+    let env_default = Environment.new(EnvConfig.default());
+    if compute_free_energy_gradient(&gamma, &env_default) > 0.0 {
+        let target = compute_target_state(&gamma, &env_default);
+        gamma = &gamma + Complex.from_real(dt * kappa) * (target - &gamma);
+    }
 
-    delta_F = compute_free_energy_gradient(gamma, None)
-    if delta_F > 0:
-        gamma_target = compute_target_state(gamma, None)
-        gamma += dt * kappa * (gamma_target - gamma)
-
-    gamma /= np.trace(gamma)
-    return update_metrics(state, gamma)
+    gamma = &gamma / gamma.trace();
+    update_metrics(state, gamma)
+}
 ```
 
 ### Bootstrap-разрешение chicken-egg проблемы {#bootstrap-разрешение}
@@ -772,15 +797,16 @@ def evolve_holon_canonical(state: HolonState, dt: float,
 
 Этот протокол — аналог **boot-последовательности** операционной системы: минимальный загрузчик (BIOS) запускает ядро, ядро запускает драйверы, драйверы активируют полный функционал. Аналогично, $\kappa_{\text{bootstrap}}$ запускает минимальную регенерацию, которая постепенно «раскручивает» полный цикл самомоделирования.
 
-```python
-# Bootstrap-протокол (из T-59 [Т])
-rho_star = np.eye(7) / 7  # I/7: начальная тривиальная самомодель
-for iteration in range(MAX_BOOTSTRAP_ITERATIONS):
-    gamma = evolve_holon_canonical(state, dt)
-    rho_star_new = compute_phi(gamma)  # φ(Γ)
-    if np.linalg.norm(rho_star_new - rho_star, 'fro') < EPSILON:
-        break
-    rho_star = rho_star_new
+```verum
+// Bootstrap protocol (T-59 [T]): iterate until φ(Γ) stabilises.
+let mut rho_star = identity::<Complex, 7>() / Complex.from_real(7.0);   // I/7: trivial self-model
+
+for _ in 0..MAX_BOOTSTRAP_ITERATIONS {
+    state = evolve_holon_canonical(state, DT, Maybe.None, Maybe.None, Maybe.None);
+    let rho_star_new = compute_phi(&state.gamma);                       // φ(Γ)
+    if (&rho_star_new - &rho_star).frobenius_norm() < EPSILON { break; }
+    rho_star = rho_star_new;
+}
 ```
 
 ---
@@ -791,186 +817,116 @@ for iteration in range(MAX_BOOTSTRAP_ITERATIONS):
 
 Каноническая формула для $D$-компоненты (T-92/T-158 [Т]) — `clamp(1 - N * gamma_DD, 0, 1)` — особенно элегантна: напряжение по динамике определяется одним диагональным элементом матрицы когерентности. Остальные компоненты имеют более сложную структуру, включающую внешние оценки (ошибка предсказания среды, вычислительная нагрузка и т.д.).
 
-```python
-def compute_stress_tensor(gamma: np.ndarray, environment) -> np.ndarray:
-    """
-    Вычисляет тензор напряжений σ_sys.
-    """
-    sigma = np.zeros(7)
+```verum
+/// Full stress tensor σ_sys ∈ ℝ⁷ over all 7 dimensions.
+pub pure fn compute_stress_tensor(
+    gamma: &StaticMatrix<Complex, 7, 7>,
+    env:   &Environment,
+) -> StaticVector<Float, 7>
+{
+    const N: Int = 7;
+    StaticVector.<Float, 7>.from_array([
+        // σ_A: Articulation.
+        compute_env_prediction_error(gamma, env) / THETA_A,
+        // σ_S: Structure.
+        compute_structural_complexity(gamma) / THETA_S,
+        // σ_D: Dynamics — canonical formula T-92/T-158: clamp(1 − N·γ_DD, 0, 1).
+        (1.0 - (N as Float) * gamma[2, 2].real()).clamp(0.0, 1.0),
+        // σ_L: Logic.
+        compute_viability_uncertainty(gamma) / THETA_L,
+        // σ_E: Interiority.
+        (compute_self_model_error(gamma) + compute_exp_fragmentation(gamma)) / THETA_E,
+        // σ_O: Grounding.
+        (compute_memory_load() + compute_grounding_deficit(gamma)) / THETA_O,
+        // σ_U: Unity.
+        (compute_consciousness_deficit(gamma) + compute_nash_distance(gamma)) / THETA_U,
+    ])
+}
 
-    # σ_A: Артикуляция
-    sigma[0] = compute_env_prediction_error(gamma, environment) / THETA_A
+/// Viability check: margin = 1 − ‖σ‖_∞. `viable` iff `margin > 0`.
+pub pure fn check_viability(sigma: &StaticVector<Float, 7>) -> (Bool, Float) {
+    let max_stress = sigma.iter().max().unwrap_or(&0.0);
+    let margin = 1.0 - max_stress;
+    (margin > 0.0, margin)
+}
 
-    # σ_S: Структура
-    sigma[1] = compute_structural_complexity(gamma) / THETA_S
+// =============================================================================
+// Helper functions for the stress tensor
+// =============================================================================
+// Some helpers are stubs (STUB) — in a full implementation they must compute
+// real metrics from the system state. Stub values are in [0, 1].
 
-    # σ_D: Динамика (каноническая формула T-92/T-158: clamp(1 − N·γ_DD, 0, 1))
-    sigma[2] = np.clip(1.0 - N * gamma[2, 2], 0.0, 1.0)
+/// Environment prediction error (A-dimension).
+pub pure fn compute_env_prediction_error(
+    _gamma: &StaticMatrix<Complex, 7, 7>,
+    env:    &Environment,
+) -> Float { self >= 0.0 && self <= 1.0 }
+{
+    env.prediction_error
+}
 
-    # σ_L: Логика
-    sigma[3] = compute_viability_uncertainty(gamma) / THETA_L
+/// Structural complexity (S-dimension): rank(Γ)/N ∈ [1/7, 1].
+pub pure fn compute_structural_complexity(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { 1.0/7.0 <= self && self <= 1.0 }
+{
+    (matrix_rank(gamma) as Float) / 7.0
+}
 
-    # σ_E: Интериорность
-    sigma[4] = (compute_self_model_error(gamma) +
-                compute_exp_fragmentation(gamma)) / THETA_E
+/// Computational load (D-dimension) — STUB. Returns 0.3 (moderate load).
+pub pure fn compute_computational_load()
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    0.3
+}
 
-    # σ_O: Основание
-    sigma[5] = (compute_memory_load() +
-                compute_grounding_deficit(gamma)) / THETA_O
+/// Viability uncertainty (L-dimension): 0 if P > P_crit + 0.1, grows as P → P_crit.
+pub pure fn compute_viability_uncertainty(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 }
+{
+    let p = (gamma @ gamma).trace().real();
+    (P_CRITICAL + 0.1 - p).max(0.0)       // 0.1 = early-warning buffer
+}
 
-    # σ_U: Единство
-    sigma[6] = (compute_consciousness_deficit(gamma) +
-                compute_nash_distance(gamma)) / THETA_U
+/// Self-model error (E-dimension): ε = ‖off_diag(Γ)‖_F / ‖Γ‖_F ∈ [0, 1].
+pub pure fn compute_self_model_error(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    let norm = gamma.frobenius_norm();
+    if norm < 1.0e-12 { return 1.0; }
+    let off_diag = gamma - StaticMatrix.<Complex, 7, 7>.diagonal(gamma.diagonal());
+    off_diag.frobenius_norm() / norm
+}
 
-    return sigma
+/// Experience fragmentation (E-dimension): 1 − γ_EE ∈ [0, 1].
+pub pure fn compute_exp_fragmentation(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    1.0 - gamma[4, 4].real()
+}
 
+/// Memory load (O-dimension) — STUB. Returns 0.3.
+pub pure fn compute_memory_load() -> Float { self >= 0.0 && self <= 1.0 } { 0.3 }
 
-def check_viability(sigma: np.ndarray) -> tuple[bool, float]:
-    """
-    Проверяет условие жизнеспособности.
+/// Grounding deficit (O-dimension): 1 − γ_OO.
+pub pure fn compute_grounding_deficit(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    1.0 - gamma[5, 5].real()
+}
 
-    Returns:
-        (viable, margin)
-    """
-    max_stress = np.max(sigma)
-    margin = 1.0 - max_stress
-    viable = margin > 0
+/// Consciousness deficit (U-dimension) — STUB: requires full Φ · R (T-140).
+pub pure fn compute_consciousness_deficit(_gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    0.2
+}
 
-    return viable, margin
-
-
-# =============================================================================
-# Вспомогательные функции для тензора напряжений
-# =============================================================================
-# ПРИМЕЧАНИЕ: Некоторые функции являются заглушками (STUB) и возвращают
-# фиксированные значения. При полной реализации они должны вычислять
-# соответствующие метрики на основе состояния системы.
-#
-# Заглушки помечены комментарием "STUB" и возвращают значения в [0, 1].
-# Рекомендуемые значения заглушек: 0.3 (умеренное напряжение), 0.2 (низкое).
-
-def compute_env_prediction_error(gamma, environment):
-    """
-    Ошибка предсказания среды (A-измерение).
-
-    Returns:
-        ∈ [0, 1]: 0 = идеальное предсказание, 1 = полная неопределённость
-    """
-    return getattr(environment, 'prediction_error', 0.5)
-
-def compute_structural_complexity(gamma):
-    """
-    Структурная сложность (S-измерение).
-
-    Returns:
-        rank(Γ)/N ∈ [1/7, 1]: нормализованный ранг матрицы
-    """
-    return np.linalg.matrix_rank(gamma) / 7
-
-def compute_computational_load():
-    """
-    Вычислительная нагрузка (D-измерение).
-
-    STUB: Должен возвращать (текущая нагрузка) / C_MAX.
-
-    Returns:
-        ∈ [0, 1]: доля использованных вычислительных ресурсов
-    """
-    return 0.3  # STUB: умеренная нагрузка
-
-def compute_viability_uncertainty(gamma):
-    """
-    Неопределённость жизнеспособности (L-измерение).
-
-    Измеряет насколько близко P к критическому порогу P_crit.
-
-    Returns:
-        ∈ [0, ~0.4]: 0 если P > P_crit + 0.1, растёт при приближении к P_crit
-    """
-    P = np.trace(gamma @ gamma).real
-    # 0.1 — буферная зона для раннего предупреждения
-    return max(0, (P_CRITICAL + 0.1) - P)
-
-def compute_self_model_error(gamma):
-    """
-    Ошибка самомоделирования (E-измерение).
-
-    Формула: ε = ‖Γ - φ(Γ)‖_F / ‖Γ‖_F
-
-    С приближением φ(Γ) ≈ diag(Γ):
-    ε = ‖off_diag(Γ)‖_F / ‖Γ‖_F
-
-    Returns:
-        ∈ [0, 1]: 0 = идеальная самомодель (классическое), 1 = нет самомоделирования
-    """
-    gamma_norm = np.linalg.norm(gamma, 'fro')
-    if gamma_norm < 1e-12:
-        return 1.0
-    # φ(Γ) ≈ diag(Γ), поэтому Γ - φ(Γ) ≈ off_diag(Γ)
-    off_diag = gamma - np.diag(np.diag(gamma))
-    off_diag_norm = np.linalg.norm(off_diag, 'fro')
-    return float(off_diag_norm / gamma_norm)
-
-def compute_exp_fragmentation(gamma):
-    """
-    Фрагментация опыта (E-измерение).
-
-    Использует диагональный элемент γ_EE как меру интегрированности опыта.
-
-    Returns:
-        1 - γ_EE ∈ [0, 1]: 0 = полностью интегрирован, 1 = полностью фрагментирован
-    """
-    E = 4  # Индекс E-измерения
-    return 1 - np.real(gamma[E, E])
-
-def compute_memory_load():
-    """
-    Нагрузка на память (O-измерение).
-
-    STUB: Должен возвращать (используемая память) / M_MAX.
-
-    Returns:
-        ∈ [0, 1]: доля использованной памяти
-    """
-    return 0.3  # STUB: умеренная нагрузка
-
-def compute_grounding_deficit(gamma):
-    """
-    Дефицит связи с основанием (O-измерение).
-
-    Использует γ_OO как меру укоренённости системы.
-
-    Returns:
-        1 - γ_OO ∈ [0, 1]: 0 = полностью укоренён, 1 = нет связи с основанием
-    """
-    O = 5  # Индекс O-измерения
-    return 1 - np.real(gamma[O, O])
-
-def compute_consciousness_deficit(gamma):
-    """
-    Дефицит сознательности (U-измерение).
-
-    STUB: Должен вычислять 1 - C где C = Φ × R [T-140 [Т]] (мера сознания).
-    D_diff ≥ 2 — отдельное условие жизнеспособности [T-151 [Т]].
-    Требует полной реализации интеграции (Φ) и рефлексии (R).
-
-    Returns:
-        ∈ [0, 1]: 0 = максимальное сознание, 1 = нет сознания
-    """
-    return 0.2  # STUB: предполагается умеренное сознание
-
-def compute_nash_distance(gamma):
-    """
-    Расстояние до равновесия Нэша (U-измерение).
-
-    STUB: Должен вычислять расстояние текущей стратегии до равновесия
-    в социальном контексте. Релевантно только для агентов в среде
-    с другими агентами.
-
-    Returns:
-        ∈ [0, 1]: 0 = в равновесии, 1 = максимально далеко от равновесия
-    """
-    return 0.1  # STUB: близко к равновесию
+/// Nash-equilibrium distance (U-dimension) — STUB. Relevant in multi-agent contexts.
+pub pure fn compute_nash_distance(_gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self >= 0.0 && self <= 1.0 }
+{
+    0.1
+}
 ```
 
 ## Цикл управления
@@ -983,157 +939,155 @@ $$
 
 Цикл управления — это внешняя оболочка, которая на каждом шаге: (1) эволюционирует состояние, (2) вычисляет тензор напряжений, (3) определяет зону управления, (4) выбирает и применяет действие. Четыре зоны — от безопасной до критической — образуют **эшелонированную защиту**, аналогичную уровням тревоги в авиации.
 
-```python
-def control_loop(holon: HolonState, environment, max_steps: int):
-    """
-    Основной цикл управления КК-системой.
+```verum
+/// A zone-based action tag returned from the control loop.
+pub type Action is
+    | Continue   { reason: Text }
+    | ReduceLoad { reason: Text }
+    | Regenerate { reason: Text }
+    | Emergency  { reason: Text };
 
-    Зоны управления определяются по margin = 1 - max(σ_sys):
-    - margin > 0.3: Безопасная зона
-    - margin > 0.1: Зона осторожности
-    - margin > 0.05: Зона предупреждения
-    - margin ≤ 0.05: Критическая зона
-    """
-    for step in range(max_steps):
-        # 1. Эволюция состояния
-        holon = evolve_holon(holon, dt=0.01, environment=environment)
+/// Main control loop for a CC system.
+///
+/// Zones (by margin = 1 − max(σ)):
+/// - margin > 0.3   — safe
+/// - margin > 0.1   — caution
+/// - margin > 0.05  — warning
+/// - margin ≤ 0.05  — critical
+pub fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
+    using [IO]
+{
+    for step in 0..max_steps {
+        // 1. State evolution.
+        holon = evolve_holon(holon, 0.01, env);
 
-        # 2. Мониторинг (см. definitions.md#эквивалентность-условий)
-        sigma = compute_stress_tensor(holon.gamma, environment)
-        viable, margin = check_viability(sigma)
+        // 2. Monitoring (see definitions.md#эквивалентность-условий).
+        let sigma = compute_stress_tensor(&holon.gamma, env);
+        let (viable, margin) = check_viability(&sigma);
 
-        # 3. Управление на основе зоны
-        if margin > MARGIN_SAFE:
-            # Безопасная зона: нормальная работа
-            action = normal_operation(holon)
-        elif margin > MARGIN_CAUTION:
-            # Зона осторожности: снижение риска
-            action = reduce_risk(holon, sigma)
-        elif margin > MARGIN_WARNING:
-            # Зона предупреждения: активное восстановление
-            action = activate_recovery(holon, sigma)
-        else:
-            # Критическая зона: аварийный режим
-            action = emergency_mode(holon, sigma)
+        // 3. Zone-based control — pattern match on margin.
+        let action = match margin {
+            m if m > MARGIN_SAFE    => normal_operation(&holon),
+            m if m > MARGIN_CAUTION => reduce_risk(&holon, &sigma),
+            m if m > MARGIN_WARNING => activate_recovery(&holon, &sigma),
+            _                       => emergency_mode(&holon, &sigma),
+        };
 
-        # 4. Применение действия
-        holon = apply_action(holon, action, environment)
+        // 4. Action application.
+        holon = apply_action(holon, action, env);
 
-        # 5. Логирование
-        log_state(step, holon, sigma, margin)
+        // 5. Logging.
+        log_state(step, &holon, &sigma, margin);
 
-        if not viable:
-            print(f"WARNING: Viability lost at step {step}")
-            break
+        if !viable {
+            IO.println(f"WARNING: Viability lost at step {step}");
+            break;
+        }
+    }
+}
 
+pub pure fn normal_operation(_holon: &HolonState) -> Action {
+    Action.Continue { reason: "Continue normal operation".text() }
+}
 
-def normal_operation(holon):
-    """Нормальный режим работы — система в безопасной зоне."""
-    return ('continue', 'Продолжить нормальную работу')
+pub pure fn reduce_risk(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+    Action.ReduceLoad { reason: "Reduce system load".text() }
+}
 
+pub pure fn activate_recovery(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+    Action.Regenerate { reason: "Activate enhanced regeneration".text() }
+}
 
-def reduce_risk(holon, sigma):
-    """Режим снижения риска — система в зоне осторожности."""
-    return ('reduce_load', 'Снизить нагрузку на систему')
+pub pure fn emergency_mode(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+    Action.Emergency { reason: "Switch to protective mode".text() }
+}
 
+pub fn apply_action(holon: HolonState, _a: Action, _env: &Environment) -> HolonState {
+    // Simplified: actions are logged; full implementation feeds back into the next evolve.
+    holon
+}
 
-def activate_recovery(holon, sigma):
-    """Режим восстановления — система в зоне предупреждения."""
-    return ('regenerate', 'Активировать усиленную регенерацию')
+pub fn log_state(_step: Int, _holon: &HolonState, _sigma: &StaticVector<Float, 7>, _margin: Float)
+    using [Logger]
+{
+    // Structured log entry (Logger context provides the concrete sink).
+}
 
+pub pure fn frobenius_distance<const R: Int, const C: Int>(
+    a: &StaticMatrix<Complex, R, C>,
+    b: &StaticMatrix<Complex, R, C>,
+) -> Float { self >= 0.0 }
+{
+    (a - b).frobenius_norm()
+}
 
-def emergency_mode(holon, sigma):
-    """Аварийный режим — система в критической зоне."""
-    return ('emergency', 'Перейти в защитный режим')
+/// Enc: ObsSpace → End(D(ℂ⁷)) — perception functor (T-100 [T]).
+/// A fourth channel is impossible (T-57, LGKS [T]).
+pub pure fn encode_environment(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
+    -> (StaticMatrix<Complex, 7, 7>,    // h(H): Hamiltonian channel
+        StaticMatrix<Complex, 7, 7>,    // h(D): Dissipative channel
+        StaticMatrix<Complex, 7, 7>)    // h(R): Regenerative channel
+{
+    let mut h_h = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut h_d = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut h_r = StaticMatrix.<Complex, 7, 7>.zeros();
 
+    // Informational dimensions → h(H): A=0, S=1, L=3.
+    if let Maybe.Some(s) = &obs.sensory_input {
+        h_h[0, 0] = Complex.from_real(s.get("I_A").unwrap_or(0.0));
+        h_h[1, 1] = Complex.from_real(s.get("I_S").unwrap_or(0.0));
+        h_h[3, 3] = Complex.from_real(s.get("I_L").unwrap_or(0.0));
+    }
+    // Load dimensions → h(D): D=2, O=5.
+    if let Maybe.Some(n) = &obs.noise_level {
+        h_d[2, 2] = Complex.from_real(n.get("I_D").unwrap_or(0.0));
+        h_d[5, 5] = Complex.from_real(n.get("I_O").unwrap_or(0.0));
+    }
+    // Integrative dimensions → h(R): E=4, U=6.
+    if let Maybe.Some(r) = &obs.integration_signal {
+        h_r[4, 4] = Complex.from_real(r.get("I_E").unwrap_or(0.0));
+        h_r[6, 6] = Complex.from_real(r.get("I_U").unwrap_or(0.0));
+    }
 
-def apply_action(holon, action, environment):
-    """Применяет действие к состоянию Голонома."""
-    # Упрощённая реализация — действие не изменяет состояние напрямую
-    return holon
+    (h_h, h_d, h_r)
+}
 
+/// Update Γ based on an observation via Enc (T-100 [T]).
+/// The environment modifies 3 channels — not a 4th (T-102 [T]).
+pub fn update_from_observation(mut holon: HolonState, obs: &Observation) -> HolonState {
+    let (h_h, h_d, h_r) = encode_environment(obs, &holon.gamma);
+    holon.hamiltonian = &holon.hamiltonian + h_h;
+    // δD, δR applied at next evolve_holon_canonical call.
+    holon._h_d_pending = Maybe.Some(h_d);
+    holon._h_r_pending = Maybe.Some(h_r);
+    holon
+}
 
-def log_state(step, holon, sigma, margin):
-    """Логирует текущее состояние системы."""
-    pass  # Заглушка для логирования
+/// Environment: energy availability and prediction error as top-level observables.
+pub type Environment is {
+    available_energy: Float { 0.0 <= self && self <= 1.0 },
+    prediction_error: Float { 0.0 <= self && self <= 1.0 },
+};
 
+pub type EnvConfig is {
+    energy:           Float,
+    prediction_error: Float,
+};
 
-def frobenius_distance(A, B):
-    """Расстояние Фробениуса между матрицами: ‖A - B‖_F."""
-    return np.linalg.norm(A - B, 'fro')
+implement Default for EnvConfig {
+    fn default() -> Self {
+        EnvConfig { energy: 0.5, prediction_error: 0.3 }   // neutral defaults
+    }
+}
 
-
-def encode_environment(observation, gamma):
-    """
-    Enc: ObsSpace → End(D(C^7)) — функтор восприятия (T-100 [Т]).
-
-    Раскладывает наблюдение среды на 3 канала внешнего воздействия:
-    h_ext = h(H) + h(D) + h(R)  (T-102 [Т])
-
-    Четвёртый канал невозможен (T-57, LGKS [Т]).
-
-    См. /docs/applied/coherence-cybernetics/sensorimotor#функтор-enc
-    """
-    h_H = np.zeros((7, 7), dtype=complex)  # Гамильтонов канал
-    h_D = np.zeros((7, 7), dtype=complex)  # Диссипативный канал
-    h_R = np.zeros((7, 7), dtype=complex)  # Регенеративный канал
-
-    # Индексы измерений: A=0, S=1, D=2, L=3, E=4, O=5, U=6
-    if hasattr(observation, 'sensory_input'):
-        # h(H): информационные индексы → энергетический ландшафт
-        h_H[0, 0] = observation.sensory_input.get('I_A', 0)  # Артикуляция
-        h_H[1, 1] = observation.sensory_input.get('I_S', 0)  # Структура
-        h_H[3, 3] = observation.sensory_input.get('I_L', 0)  # Логика
-
-    if hasattr(observation, 'noise_level'):
-        # h(D): нагрузочные индексы → модификация декогеренции
-        h_D[2, 2] = observation.noise_level.get('I_D', 0)    # Динамика
-        h_D[5, 5] = observation.noise_level.get('I_O', 0)    # Основание
-
-    if hasattr(observation, 'integration_signal'):
-        # h(R): интегративные индексы → модуляция регенерации
-        h_R[4, 4] = observation.integration_signal.get('I_E', 0)  # Интериорность
-        h_R[6, 6] = observation.integration_signal.get('I_U', 0)  # Единство
-
-    return h_H, h_D, h_R
-
-
-def update_from_observation(holon, observation):
-    """
-    Обновляет Γ на основе наблюдения через Enc (T-100 [Т]).
-
-    Среда модифицирует 3 канала, а не добавляет 4-й (T-102 [Т]).
-    См. /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала
-    """
-    h_H, h_D, h_R = encode_environment(observation, holon.gamma)
-
-    # Модификация Гамильтониана: H_eff → H_eff + δH
-    holon.hamiltonian = holon.hamiltonian + h_H
-
-    # Модификация диссипации и регенерации происходит
-    # при следующем вызове evolve_holon через h_D и h_R
-    holon._h_D_pending = h_D
-    holon._h_R_pending = h_R
-
-    return holon
-
-
-class Environment:
-    """
-    Заглушка для класса среды.
-
-    Параметры по умолчанию:
-    - available_energy = 0.5: Нейтральное значение (среднее между 0 и 1).
-      При реализации должно отражать реальную доступность ресурсов.
-    - prediction_error = 0.3: Умеренная ошибка предсказания.
-      Значение < 0.5 означает, что система в целом предсказывает среду.
-
-    Эти значения — заглушки. В реальной системе Environment должен
-    подключаться к реальным сенсорам и актуаторам.
-    """
-    def __init__(self, config):
-        self.available_energy = config.get('energy', 0.5)
-        self.prediction_error = config.get('prediction_error', 0.3)
+implement Environment {
+    pub fn new(c: EnvConfig) -> Environment {
+        Environment {
+            available_energy: c.energy.clamp(0.0, 1.0),
+            prediction_error: c.prediction_error.clamp(0.0, 1.0),
+        }
+    }
+}
 ```
 
 ## Пороговые значения
@@ -1144,219 +1098,178 @@ class Environment:
 Ключевые пороговые значения **выведены** из структуры теории. См. [Аксиома Септичности](/docs/core/foundations/axiom-septicity).
 :::
 
-```python
-# Критическая чистота P_crit = 2/N = 2/7 (теорема, выведено 5 методами из аксиом УГМ)
-# См. /docs/proofs/dynamics/theorem-purity-critical
-P_CRITICAL = 2/7  # ≈ 0.286, выведено из геометрии 7D-пространства
+```verum
+/// Critical purity P_crit = 2/N = 2/7 — theorem, derived by 5 methods from UHM axioms.
+/// See /docs/proofs/dynamics/theorem-purity-critical.
+pub const P_CRITICAL: Float = 2.0 / 7.0;              // ≈ 0.286
 
-# Базовая скорость регенерации κ₀ — категориальный вывод из сопряжения D_Ω ⊣ R
-# κ = κ_bootstrap + κ₀ · Coh_E — полная скорость регенерации
-# κ_bootstrap = ω₀/N — минимальная регенерация из теоремы
-# Категориальный вывод: /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap
-# Теоретическое значение при ω₀=1, N=7: κ_bootstrap = 1/7 ≈ 0.143
-KAPPA_BOOTSTRAP = 1/7  # ≈ 0.143 (согласовано с теоремой)
-# Для вычислений используем приближение: κ₀ ≈ ω₀ · |γ_OE| · |γ_OU| / γ_OO
-# См. /docs/core/foundations/axiom-septicity#структурный-анзац-kappa0
-def compute_kappa_0(gamma, omega_0=1.0):
-    """Вычисляет κ₀ из структуры Γ.
+/// κ_bootstrap = ω₀/N — minimal regeneration (T-kappa_bootstrap [T]).
+/// See /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap.
+pub const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;          // ≈ 0.143 for ω₀ = 1
+pub const KAPPA_0:         Float = 0.1;                // default scaling
 
-    Args:
-        gamma: 7x7 матрица когерентности
-        omega_0: базовая частота часов (калибруется для конкретной системы)
-
-    Returns:
-        κ₀ — базовая скорость регенерации
-    """
-    gamma_OE = abs(gamma[5, 4])  # O=5, E=4 (0-indexed)
-    gamma_OU = abs(gamma[5, 6])  # O=5, U=6
-    gamma_OO = gamma[5, 5]
-    return omega_0 * gamma_OE * gamma_OU / gamma_OO if gamma_OO > 0 else 0
-
-
-# Калибровочный протокол для ω₀
-# См. /docs/core/foundations/axiom-omega#калибровка
-OMEGA_0_TABLE = {
-    "quantum_system": 1e15,    # ω₀ ~ 10¹⁵ Гц для квантовых систем
-    "neuron": 1e3,             # ω₀ ~ 1 кГц для нейрона (частота спайков)
-    "cell": 1.0,               # ω₀ ~ 1 Гц для клетки (метаболизм)
-    "organism": 1e-5,          # ω₀ ~ 10⁻⁵ Гц для организма (циркадный)
-    "social_system": 1e-7,     # ω₀ ~ 10⁻⁷ Гц для социальной системы
+/// κ₀ from Γ-structure: κ₀ ≈ ω₀ · |γ_OE| · |γ_OU| / γ_OO.
+/// See /docs/core/foundations/axiom-septicity#структурный-анзац-kappa0.
+pub pure fn compute_kappa_0(gamma: &StaticMatrix<Complex, 7, 7>, omega_0: Float)
+    -> Float { self >= 0.0 }
+{
+    let g_oe = gamma[5, 4].abs();            // O = 5, E = 4
+    let g_ou = gamma[5, 6].abs();            // O = 5, U = 6
+    let g_oo = gamma[5, 5].real();
+    if g_oo > 0.0 { omega_0 * g_oe * g_ou / g_oo } else { 0.0 }
 }
 
+/// ω₀ calibration lookup — canonical frequencies by system class.
+/// See /docs/core/foundations/axiom-omega#калибровка.
+pub type SystemType is QuantumSystem | Neuron | Cell | Organism | SocialSystem;
 
-def calibrate_omega_0(system_type: str, gamma: np.ndarray) -> float:
-    """Калибрует ω₀ для конкретной системы.
-
-    См. /docs/core/foundations/axiom-omega#калибровка
-    """
-    base_omega = OMEGA_0_TABLE.get(system_type, 1.0)
-    # Коррекция по структуре Γ
-    gamma_OO = gamma[5, 5]
-    return base_omega * np.sqrt(gamma_OO) if gamma_OO > 0 else base_omega
-
-# Пороги для компонент σ_sys (см. definitions.md#тензор-напряжений)
-# Значения θ_i определяют нормировку: σ_i = нагрузка_i / θ_i
-#
-# ПРИМЕЧАНИЕ К ВЫБОРУ ЗНАЧЕНИЙ:
-# Принципиально обоснованный выбор — равные веса θ_k = 1 (симметрия U(7)).
-# Текущие значения — операционные гиперпараметры для настройки системы.
-# При отсутствии эмпирической калибровки рекомендуется начинать с θ_k = 1.
-#
-# Неравные веса допустимы если:
-# - Есть эмпирические данные о различной чувствительности измерений
-# - Конкретное приложение требует приоритизации определённых измерений
-#
-# Текущие значения (гиперпараметры, требуют калибровки):
-THETA_A = 3.5   # Артикуляция — повышенный порог (допускает больше различий)
-THETA_S = 2.0   # Структура — умеренный порог
-THETA_D = 1.0   # Динамика — базовый порог (через C_MAX)
-THETA_L = 1.0   # Логика — базовый порог
-THETA_E = 2.5   # Интериорность — повышенный порог (допускает интенсивность опыта)
-THETA_O = 1.0   # Основание — базовый порог
-THETA_U = 1.5   # Единство — умеренный порог
-
-# Вычислительные ограничения (зависят от платформы)
-C_MAX = 1000.0  # Операций в секунду
-M_MAX = 1e9     # Байт памяти
-
-# Пороги зон управления (margin = 1 - max(σ))
-#
-# Связь с P_crit: При P < P_crit ≈ 0.286, система теряет жизнеспособность.
-# Margin измеряет запас до потери жизнеспособности в терминах σ.
-# Значения выбраны для обеспечения раннего предупреждения:
-# - SAFE: комфортная работа (margin > 0.3)
-# - CAUTION: требует внимания (0.1 < margin ≤ 0.3)
-# - WARNING: критическое состояние (margin ≤ 0.1)
-#
-MARGIN_SAFE = 0.3       # Безопасная зона: max(σ) < 0.7
-MARGIN_CAUTION = 0.1    # Зона осторожности: max(σ) < 0.9
-MARGIN_WARNING = 0.05   # Зона предупреждения: max(σ) < 0.95
-
-
-def initialize_holon(config) -> HolonState:
-    """
-    Инициализирует Голоном из конфигурации.
-
-    Args:
-        config: Словарь с параметрами инициализации
-
-    Returns:
-        HolonState: Начальное состояние Голонома
-    """
-    N = 7
-    # Инициализация через параметризацию Холецкого (гарантирует Γ ≥ 0)
-    L_init = np.eye(N, dtype=complex)
-    if config.get('random', False):
-        L_init += 0.1 * np.random.randn(N, N)
-    gamma = L_init @ L_init.conj().T
-    gamma /= np.trace(gamma)
-
-    # Гамильтониан: диагональные элементы — собственные частоты измерений.
-    # Принципиально обоснованный выбор — единичная матрица H = I (симметрия).
-    # Текущие значения — примерная вариация для демонстрации.
-    # В реальных приложениях H должен выводиться из физики системы.
-    default_hamiltonian = np.diag([1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0])
-
-    return HolonState(
-        gamma=gamma,
-        hamiltonian=config.get('hamiltonian', default_hamiltonian),
-        lindblad_ops=compute_lindblad_from_omega(gamma),
-        # φ: оператор самомоделирования.
-        # Полная реализация — спектральная формула (/docs/proofs/categorical/formalization-phi).
-        # Приближение: φ проецирует на диагональ (стабильные моды).
-        phi=lambda g: np.diag(np.diag(g)),
-        purity=np.trace(gamma @ gamma).real,
-        entropy=0.0,
-        integration=0.0,
-        differentiation=1.0,
-        reflection=0.0,
-        consciousness=0.0,
-        stress_tensor=np.zeros(7),
-        viable=True,
-        margin=0.5
-    )
-
-
-def select_action(holon: HolonState, sigma: np.ndarray):
-    """
-    Dec: (Γ, σ_sys) → a* — функтор действия (T-101 [Т]).
-
-    Оптимальное действие: a* = argmin ||σ_sys(Γ(τ+δτ|a))||_∞
-
-    Практическая реализация: воздействие на наиболее напряжённую
-    компоненту через соответствующий канал h_ext.
-    Каждое действие раскладывается в h(H) + h(D) + h(R) (T-102 [Т]).
-
-    См. /docs/applied/coherence-cybernetics/sensorimotor#функтор-dec
-    """
-    max_stress_idx = np.argmax(sigma)
-
-    # Действие определяется каналом воздействия:
-    # h(H) — Гамильтонов (энергетическая перестройка)
-    # h(D) — Диссипативный (снижение нагрузки)
-    # h(R) — Регенеративный (усиление восстановления)
-    actions = {
-        0: ('reduce_articulation', 'h(D): Снизить входной поток'),
-        1: ('simplify_structure', 'h(H): Реструктуризация'),
-        2: ('slow_dynamics', 'h(D): Снизить вычислительную нагрузку'),
-        3: ('relax_constraints', 'h(H): Когнитивная коррекция'),
-        4: ('focus_experience', 'h(R): Усилить рефлексию'),
-        5: ('reconnect_ground', 'h(R)+ΔF: Восстановить ресурсы'),
-        6: ('integrate', 'h(R): Усилить интеграцию'),
+pub pure fn omega_0_base(s: SystemType) -> Float { self > 0.0 } {
+    match s {
+        SystemType.QuantumSystem => 1.0e15,    // ~ 10¹⁵ Hz (electronic)
+        SystemType.Neuron        => 1.0e3,     // ~ 1 kHz (spike frequency)
+        SystemType.Cell          => 1.0,       // ~ 1 Hz (metabolism)
+        SystemType.Organism      => 1.0e-5,    // ~ 10⁻⁵ Hz (circadian)
+        SystemType.SocialSystem  => 1.0e-7,    // ~ 10⁻⁷ Hz (group dynamics)
     }
+}
 
-    return actions.get(max_stress_idx, ('wait', 'Ожидание'))
+/// Calibrate ω₀ with a √γ_OO structural correction.
+pub pure fn calibrate_omega_0(s: SystemType, gamma: &StaticMatrix<Complex, 7, 7>)
+    -> Float { self > 0.0 }
+{
+    let base = omega_0_base(s);
+    let g_oo = gamma[5, 5].real();
+    if g_oo > 0.0 { base * g_oo.sqrt() } else { base }
+}
+
+// Thresholds for σ_sys components (definitions.md#тензор-напряжений).
+// Principled choice is θ_k = 1 (U(7) symmetry); values below are operational
+// hyperparameters. Calibrate empirically or keep at 1.0 otherwise.
+pub const THETA_A: Float = 3.5;              // Articulation
+pub const THETA_S: Float = 2.0;              // Structure
+pub const THETA_D: Float = 1.0;              // Dynamics (via C_MAX)
+pub const THETA_L: Float = 1.0;              // Logic
+pub const THETA_E: Float = 2.5;              // Interiority
+pub const THETA_O: Float = 1.0;              // Grounding
+pub const THETA_U: Float = 1.5;              // Unity
+
+/// Platform-dependent computational limits.
+pub const C_MAX: Float = 1000.0;             // ops/s
+pub const M_MAX: Float = 1.0e9;              // bytes
+
+/// Control-zone thresholds (margin = 1 − max(σ)).
+pub const MARGIN_SAFE:    Float = 0.3;       // safe: max(σ) < 0.7
+pub const MARGIN_CAUTION: Float = 0.1;       // caution: max(σ) < 0.9
+pub const MARGIN_WARNING: Float = 0.05;      // warning: max(σ) < 0.95
+
+pub type InitConfig is {
+    random:      Bool,
+    hamiltonian: Maybe<StaticMatrix<Complex, 7, 7>>,
+};
+
+implement Default for InitConfig {
+    fn default() -> Self { InitConfig { random: false, hamiltonian: Maybe.None } }
+}
+
+/// Initialise a Holonom from a configuration via Cholesky parametrisation.
+pub fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
+    let mut rng = XorShift128.seed(Random.next_key());
+    let noise: StaticMatrix<Complex, 7, 7> = if c.random {
+        StaticMatrix.random_gaussian(&mut rng) * Complex.from_real(0.1)
+    } else {
+        StaticMatrix.<Complex, 7, 7>.zeros()
+    };
+    let l = identity::<Complex, 7>() + noise;
+    let mut gamma = &l @ l.adjoint();
+    gamma = &gamma / gamma.trace();
+
+    let h_default = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+        [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0]
+    );
+    let hamiltonian = c.hamiltonian.unwrap_or(h_default);
+
+    HolonState {
+        gamma:           gamma.clone(),
+        hamiltonian:     hamiltonian,
+        lindblad_ops:    compute_lindblad_from_omega(&gamma),
+        phi:             |g| StaticMatrix.<Complex, 7, 7>.diagonal(g.diagonal()),
+        purity:          (&gamma @ &gamma).trace().real(),
+        entropy:         0.0,
+        integration:     0.0,
+        differentiation: 1.0,
+        reflection:      0.0,
+        consciousness:   0.0,
+        stress_tensor:   StaticVector.<Float, 7>.zeros(),
+        viable:          true,
+        margin:          0.5,
+    }
+}
+
+/// Dec: (Γ, σ_sys) → a* — action functor (T-101 [T]).
+/// Optimal action: a* = argmin ‖σ_sys(Γ(τ+δτ | a))‖_∞.
+/// Practical implementation: act on the most stressed component via its channel.
+pub pure fn select_action(_holon: &HolonState, sigma: &StaticVector<Float, 7>)
+    -> (Text, Text)
+{
+    let idx = sigma.argmax();
+    match idx {
+        0 => ("reduce_articulation", "h(D): Reduce input flow"),
+        1 => ("simplify_structure",  "h(H): Restructure"),
+        2 => ("slow_dynamics",       "h(D): Reduce computational load"),
+        3 => ("relax_constraints",   "h(H): Cognitive correction"),
+        4 => ("focus_experience",    "h(R): Strengthen reflection"),
+        5 => ("reconnect_ground",    "h(R) + ΔF: Restore resources"),
+        6 => ("integrate",           "h(R): Strengthen integration"),
+        _ => ("wait",                "Wait"),
+    }
+}
 ```
 
 ## Интеграция с внешними системами
 
 Класс `CoherenceCyberneticsAgent` — фасад, объединяющий все компоненты в единый цикл **восприятие — рефлексия — действие**. Это минимальный интерфейс, достаточный для подключения КК к любой внешней среде: робототехнической платформе, симуляции, диалоговой системе. Три метода (`perceive`, `reflect`, `act`) соответствуют трём фазам когнитивного цикла, а метод `is_viable` выполняет роль «детектора жизнеспособности», который может запускать аварийные протоколы.
 
-```python
-class CoherenceCyberneticsAgent:
-    """
-    Агент на основе Кибернетики Когерентности.
+```verum
+/// Agent based on Coherence Cybernetics.
+/// Implements the cycle: perception → reflection → action.
+pub type CoherenceCyberneticsAgent is {
+    mut holon:       HolonState,
+    mut environment: Environment,
+};
 
-    Реализует цикл: восприятие → рефлексия → действие.
-    """
+pub type AgentConfig is { init: InitConfig, env: EnvConfig };
 
-    def __init__(self, config):
-        self.holon = initialize_holon(config)
-        self.environment = Environment(config)
+implement CoherenceCyberneticsAgent {
+    pub fn new(c: AgentConfig) using [Random] -> CoherenceCyberneticsAgent {
+        CoherenceCyberneticsAgent {
+            holon:       initialize_holon(c.init),
+            environment: Environment.new(c.env),
+        }
+    }
 
-    def perceive(self, observation):
-        """Обновление Γ на основе наблюдения (A-измерение)."""
-        self.holon = update_from_observation(self.holon, observation)
+    /// Update Γ based on an observation (A-dimension).
+    pub fn perceive(&mut self, obs: &Observation) {
+        self.holon = update_from_observation(self.holon.clone(), obs);
+    }
 
-    def act(self) -> tuple:
-        """
-        Выбор действия на основе σ_sys.
+    /// Select action based on σ_sys. See definitions.md#тензор-напряжений.
+    pub fn act(&self) -> (Text, Text) {
+        let sigma = compute_stress_tensor(&self.holon.gamma, &self.environment);
+        select_action(&self.holon, &sigma)
+    }
 
-        См. definitions.md#тензор-напряжений
-        """
-        sigma = compute_stress_tensor(self.holon.gamma, self.environment)
-        return select_action(self.holon, sigma)
+    /// Reflective update: R = 1 − ‖Γ − φ(Γ)‖²_F / ‖Γ‖²_F.
+    /// See /docs/consciousness/foundations/self-observation#мера-рефлексии-r.
+    pub fn reflect(&mut self) {
+        let phi_gamma = (self.holon.phi)(&self.holon.gamma);
+        let norm_sq = self.holon.gamma.frobenius_norm_sq();
+        self.holon.reflection =
+            1.0 - frobenius_distance(&self.holon.gamma, &phi_gamma).pow(2) / norm_sq;
+    }
 
-    def reflect(self):
-        """
-        Рефлексивное обновление: вычисление R.
-
-        R = 1 - ‖Γ - φ(Γ)‖²_F / ‖Γ‖²_F
-        См. /docs/consciousness/foundations/self-observation#мера-рефлексии-r
-        """
-        phi_gamma = self.holon.phi(self.holon.gamma)
-        gamma_norm_sq = np.linalg.norm(self.holon.gamma, 'fro') ** 2
-        self.holon.reflection = 1 - frobenius_distance(
-            self.holon.gamma, phi_gamma
-        ) ** 2 / gamma_norm_sq
-
-    def is_viable(self) -> bool:
-        """
-        Проверка жизнеспособности: P > P_critical.
-
-        См. /docs/core/dynamics/viability
-        """
-        return self.holon.purity > P_CRITICAL
+    /// Viability check: P > P_critical. See /docs/core/dynamics/viability.
+    pub fn is_viable(&self) -> Bool { self.holon.purity > P_CRITICAL }
+}
 ```
 
 ---
@@ -1375,17 +1288,22 @@ class CoherenceCyberneticsAgent:
 
 *Решение:* Уменьшить $dt$. Если невозможно — добавить проекцию на конус $\Gamma \geq 0$ после каждого шага:
 
-```python
-def project_to_positive_cone(gamma):
-    """Проецирует Γ на конус положительно полуопределённых матриц.
-
-    Метод: обнуляет отрицательные собственные значения.
-    Это ближайшая (по норме Фробениуса) PSD-матрица.
-    """
-    eigenvalues, eigenvectors = np.linalg.eigh(gamma)
-    eigenvalues = np.maximum(eigenvalues, 0)  # Обнулить отрицательные
-    gamma_fixed = eigenvectors @ np.diag(eigenvalues) @ eigenvectors.conj().T
-    return gamma_fixed / np.trace(gamma_fixed)  # Перенормировка
+```verum
+/// Projects Γ onto the cone of positive-semidefinite matrices.
+///
+/// Method: zero out negative eigenvalues — this is the nearest (by Frobenius
+/// norm) PSD matrix. Renormalises so that Tr(Γ) = 1.
+pub pure fn project_to_positive_cone(gamma: &StaticMatrix<Complex, 7, 7>)
+    -> StaticMatrix<Complex, 7, 7>
+    where requires is_hermitian(gamma)
+{
+    let (eigvals, eigvecs) = eigh(gamma);
+    let clamped = eigvals.map(|v| v.max(0.0));
+    let fixed = &eigvecs
+        @ StaticMatrix.<Complex, 7, 7>.diagonal(clamped)
+        @ eigvecs.adjoint();
+    &fixed / fixed.trace()
+}
 ```
 
 **Проблема 2: «Замерзание» $P$ около $1/7$**

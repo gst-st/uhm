@@ -331,149 +331,125 @@ This section describes a **minimal viable implementation**. Many parameters requ
 
 ### Metric Computation Algorithm
 
-```python
-import numpy as np
-import itertools
+```verum
+mount std.math.linalg.{svd, eigvalsh, StaticMatrix};
+mount std.tensor.{Tensor, frobenius_norm};
+mount std.math.random.{XorShift128, Rng};
 
+/// Access protocol for deep models. Implementations provide hooks
+/// on activations, attention, and automatic differentiation.
+pub protocol ModelHooks {
+    type Activation;
+    fn get_activations(&self, batch: &Tensor<Float>) -> List<Self.Activation>;
+    fn get_attention_weights(&self, batch: &Tensor<Float>) -> Tensor<Float>;
+    fn get_jacobian(&self, batch: &Tensor<Float>) -> Tensor<Float>;
+    fn layer_commutator_norm(&self, i: Int, j: Int, batch: &Tensor<Float>) -> Float;
+    fn estimate_lyapunov(&self, batch: &Tensor<Float>) -> Float;
+}
 
-# ---------------------------------------------------------------------------
-# Helper functions (stubs — require implementation)
-# ---------------------------------------------------------------------------
+/// Helpers — specialised per architecture.
+pub pure fn estimate_mutual_info(x: &Tensor<Float>, y: &Tensor<Float>) -> Float
+    = unimplemented;
 
-def estimate_mutual_info(x: np.ndarray, y: np.ndarray) -> float:
-    """Mutual information I(x;y). Requires implementation for the specific architecture."""
-    raise NotImplementedError
+pub pure fn von_neumann_entropy(attn: &Tensor<Float>) -> Float
+    = unimplemented;
 
+pub pure fn build_attention_graph(attn: &Tensor<Float>) -> Tensor<Float>
+    = unimplemented;
 
-def compute_jacobian(model, input_batch: np.ndarray) -> np.ndarray:
-    """Model Jacobian ∂f/∂x. Requires implementation for the specific architecture."""
-    raise NotImplementedError
+/// 7-dimensional UHM metrics I_A…I_U for a neural network.
+pub type DimensionMetrics is {
+    i_a: Float, i_s: Float, i_d: Float, i_l: Float,
+    i_e: Float, i_o: Float, i_u: Float,
+};
 
+/// Compute 7 UHM dimensions for a neural network.
+pub fn compute_dimension_metrics<M: ModelHooks>(
+    model:         &M,
+    input_batch:   &Tensor<Float>,
+    layer_indices: Maybe<List<Int>>,
+) using [Random] -> DimensionMetrics
+{
+    let activations = model.get_activations(input_batch);
+    let attn = model.get_attention_weights(input_batch);
 
-def estimate_lyapunov(model, input_batch: np.ndarray) -> float:
-    """Maximum Lyapunov exponent. Requires implementation for the specific architecture."""
-    raise NotImplementedError
+    // I_A: mutual information input ↔ latent.
+    let i_a = estimate_mutual_info(input_batch, activations.last().unwrap());
 
+    // I_S: Jacobian rank fraction (via SVD, ε = 10⁻⁶).
+    let jac = model.get_jacobian(input_batch);
+    let sv = svd(&jac).singular_values();
+    const EPS_RANK: Float = 1.0e-6;
+    let i_s = (sv.iter().filter(|s| **s > EPS_RANK).count() as Float) / (sv.len() as Float);
 
-def layer_commutator_norm(
-    model, i: int, j: int, input_batch: np.ndarray
-) -> float:
-    """Layer commutator norm ||[f_i, f_j]||. Requires implementation for the specific architecture."""
-    raise NotImplementedError
+    // I_D: maximum Lyapunov exponent.
+    let i_d = model.estimate_lyapunov(input_batch);
 
+    // I_L: mean layer commutator norm; 1.0 if no pairs.
+    let idx = layer_indices.unwrap_or((0..activations.len()).collect());
+    let mut comms = List.new();
+    for i in 0..idx.len() { for j in (i + 1)..idx.len() {
+        comms.push(model.layer_commutator_norm(idx[i], idx[j], input_batch));
+    }}
+    let i_l = if comms.is_empty() { 1.0 }
+              else { 1.0 - comms.iter().sum::<Float>() / (comms.len() as Float) };
 
-def von_neumann_entropy(attention_weights: np.ndarray) -> float:
-    """Von Neumann entropy S_vN(ρ). Requires implementation for the specific architecture."""
-    raise NotImplementedError
+    // I_E: exp(von Neumann entropy of attention).
+    let i_e = von_neumann_entropy(&attn).exp();
 
+    // I_O: noise robustness.
+    let mut rng = XorShift128.seed(Random.next_key());
+    const NOISE_STD: Float = 0.01;
+    let perturbed = input_batch + Tensor.random_normal(input_batch.shape(), &mut rng) * NOISE_STD;
+    let delta_h = frobenius_norm(
+        model.get_activations(&perturbed).last().unwrap()
+      - activations.last().unwrap()
+    );
+    let i_o = (1.0 - delta_h / NOISE_STD).max(0.0);
 
-def build_attention_graph(attention_weights: np.ndarray) -> np.ndarray:
-    """Attention graph from attention weights. Requires implementation for the specific architecture."""
-    raise NotImplementedError
+    // I_U: Laplacian spectral gap (λ₂/λ_max).
+    let attn_graph = build_attention_graph(&attn);
+    let row_sums = attn_graph.sum(axis: 1);
+    let laplacian = Tensor.diagonal(row_sums) - &attn_graph;
+    let eigs = eigvalsh(&laplacian);
+    let lambda_2   = if eigs.len() > 1 { eigs[1] } else { 0.0 };
+    let lambda_max = eigs.last().unwrap_or(&0.0);
+    let i_u = if lambda_max > 0.0 { lambda_2 / lambda_max } else { 0.0 };
 
-
-# ---------------------------------------------------------------------------
-
-
-def compute_dimension_metrics(
-    model,
-    input_batch: np.ndarray,
-    layer_indices: list[int] = None
-) -> dict[str, float]:
-    """
-    Compute 7 UHM dimensions for a neural network.
-
-    Args:
-        model: Model with access to intermediate activations
-        input_batch: Input data batch (N, ...)
-        layer_indices: Layer indices for analysis (default — all)
-
-    Returns:
-        dict with keys I_A, I_S, I_D, I_L, I_E, I_O, I_U
-    """
-    activations = model.get_activations(input_batch)
-    attention_weights = model.get_attention_weights(input_batch)
-
-    # I_A: Mutual information input↔latent
-    I_A = estimate_mutual_info(input_batch, activations[-1])
-
-    # I_S: Jacobian rank (via SVD)
-    jacobian = compute_jacobian(model, input_batch)
-    singular_values = np.linalg.svd(jacobian, compute_uv=False)
-    eps_rank = 1e-6
-    I_S = np.sum(singular_values > eps_rank) / len(singular_values)
-
-    # I_D: Maximum Lyapunov exponent (estimate)
-    I_D = estimate_lyapunov(model, input_batch)
-
-    # I_L: Layer commutators
-    commutator_norms = []
-    for i, j in itertools.combinations(layer_indices or range(len(activations)), 2):
-        comm_norm = layer_commutator_norm(model, i, j, input_batch)
-        commutator_norms.append(comm_norm)
-    I_L = 1.0 - np.mean(commutator_norms) if commutator_norms else 1.0
-
-    # I_E: Differentiation (attention entropy exponent)
-    attn_entropy = von_neumann_entropy(attention_weights)
-    I_E = np.exp(attn_entropy)
-
-    # I_O: Noise robustness
-    noise_std = 0.01
-    perturbed = input_batch + np.random.randn(*input_batch.shape) * noise_std
-    delta_h = np.linalg.norm(
-        model.get_activations(perturbed)[-1] - activations[-1],
-        'fro'
-    )
-    I_O = max(0, 1.0 - delta_h / noise_std)
-
-    # I_U: Effective Φ (Laplacian spectral gap)
-    attn_graph = build_attention_graph(attention_weights)
-    laplacian = np.diag(attn_graph.sum(axis=1)) - attn_graph
-    eigenvalues = np.linalg.eigvalsh(laplacian)
-    lambda_2 = eigenvalues[1] if len(eigenvalues) > 1 else 0
-    lambda_max = eigenvalues[-1]
-    I_U = lambda_2 / lambda_max if lambda_max > 0 else 0
-
-    return {
-        'I_A': I_A, 'I_S': I_S, 'I_D': I_D, 'I_L': I_L,
-        'I_E': I_E, 'I_O': I_O, 'I_U': I_U
+    DimensionMetrics {
+        i_a: i_a, i_s: i_s, i_d: i_d, i_l: i_l,
+        i_e: i_e, i_o: i_o, i_u: i_u,
     }
+}
 ```
 
 ### Γ Reconstruction from Metrics
 
-```python
-def reconstruct_gamma(metrics: dict[str, float]) -> np.ndarray:
-    """
-    Reconstruction of the coherence matrix via Cholesky.
+```verum
+/// Reconstruct the coherence matrix via Cholesky from 7 dimension metrics.
+/// Simplest diagonal reconstruction — off-diagonal γ_ij requires additional
+/// correlation data from a regulariser L_off.
+pub pure fn reconstruct_gamma(m: &DimensionMetrics) -> StaticMatrix<Complex, 7, 7> {
+    let raw = StaticVector.<Float, 7>.from_array(
+        [m.i_a, m.i_s, m.i_d, m.i_l, m.i_e, m.i_o, m.i_u]
+    ).map(|v| v.clamp(0.01, 1.0));           // prevent degeneracy
+    let total: Float = raw.iter().sum();
+    let diag = raw.map(|v| v / total);
 
-    Returns a 7×7 density matrix.
-    """
-    # Diagonal elements — normalized metrics
-    I_vec = np.array([
-        metrics['I_A'], metrics['I_S'], metrics['I_D'],
-        metrics['I_L'], metrics['I_E'], metrics['I_O'], metrics['I_U']
-    ])
-    I_vec = np.clip(I_vec, 0.01, 1.0)  # Prevent degeneracy
-    diag = I_vec / I_vec.sum()
+    // Cholesky factor L = diag(√p_k).
+    let l = StaticMatrix.<Complex, 7, 7>.diagonal(
+        diag.map(|v| Complex.from_real(v.sqrt()))
+    );
+    let gamma = &l @ l.adjoint();
+    &gamma / gamma.trace()                                              // normalise
+}
 
-    # Initial Cholesky factorization
-    L = np.diag(np.sqrt(diag))
-
-    # Regularization (minimize off-diagonal)
-    # Simplest case — diagonal matrix
-    # Simplest diagonal reconstruction.
-    # To recover off-diagonal coherences γ_ij,
-    # correlations r_ij from regularizer L_off are required.
-    gamma = L @ L.conj().T
-    gamma = gamma / np.trace(gamma)  # Normalization
-
-    return gamma
-
-
-def compute_purity(gamma: np.ndarray) -> float:
-    """P = Tr(Γ²)"""
-    return np.trace(gamma @ gamma)
+/// Purity P = Tr(Γ²).
+pub pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
+    where ensures 1.0/7.0 <= result && result <= 1.0
+{
+    (gamma @ gamma).trace().real()
+}
 ```
 
 ### Threshold Values
@@ -602,41 +578,40 @@ The correspondence between dimensions and physiological frequencies is a **hypot
 
 ### Gap Profile Reconstruction from Interview
 
-```python
-import numpy as np
+```verum
+/// Dual-interview data bundle.
+pub type DualInterviewData is {
+    external_data: Map<Text, Float>,      // behavioural/physiological per pair
+    self_report:   Map<Text, Float>,      // verbal reports per pair
+    conflict_data: Map<Text, Float>,      // reaction times per pair
+};
 
+/// Reconstruct the 7×7 Gap matrix from dual-interview data.
+pub pure fn reconstruct_gap_profile(data: &DualInterviewData)
+    -> StaticMatrix<Float, 7, 7>
+{
+    const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
+    let median_rt = data.conflict_data.values().to_list().median().unwrap_or(1.0);
 
-def reconstruct_gap_profile(
-    external_data: dict,
-    self_report: dict,
-    conflict_data: dict,
-) -> np.ndarray:
-    """
-    Reconstruction of the 7×7 Gap matrix from dual interview data.
+    let mut gap = StaticMatrix.<Float, 7, 7>.zeros();
+    for i in 0..7 { for j in (i + 1)..7 {
+        let pair = f"{DIMS[i]}{DIMS[j]}";
 
-    Returns:
-        gap_matrix: 7×7 matrix Gap(i,j) ∈ [0, 1]
-    """
-    dimensions = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
-    n = len(dimensions)
-    gap = np.zeros((n, n))
+        // Mismatch between behavioural and self-report data → higher Gap.
+        let ext = data.external_data.get(&pair).unwrap_or(0.5);
+        let rep = data.self_report.get(&pair).unwrap_or(0.5);
+        let discrepancy = (ext - rep).abs();
 
-    for i in range(n):
-        for j in range(i + 1, n):
-            pair = f"{dimensions[i]}{dimensions[j]}"
-            # Mismatch between external and internal data → high Gap
-            ext = external_data.get(pair, 0.5)
-            rep = self_report.get(pair, 0.5)
-            discrepancy = abs(ext - rep)
+        // Reaction time → phase estimate → Gap.
+        let rt = data.conflict_data.get(&pair).unwrap_or(1.0);
+        let phase_estimate = (rt / median_rt).atan();
 
-            # Reaction time on conflict probes → phase θ_ij
-            rt = conflict_data.get(pair, 1.0)
-            phase_estimate = np.arctan(rt / np.median(list(conflict_data.values())))
-
-            gap[i, j] = abs(np.sin(phase_estimate)) * (0.5 + 0.5 * discrepancy)
-            gap[j, i] = gap[i, j]
-
-    return gap
+        let g = phase_estimate.sin().abs() * (0.5 + 0.5 * discrepancy);
+        gap[i, j] = g;
+        gap[j, i] = g;
+    }}
+    gap
+}
 ```
 
 ---
@@ -781,109 +756,127 @@ The Pothos-Busemeyer approach (Annual Review of Psychology, 2022) models cogniti
 
 ### Step 7: Full Algorithm $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
 
-```python
-import numpy as np
-from scipy.optimize import minimize
+```verum
+mount std.math.calculus.bfgs;
 
+/// Full biological data bundle for π_bio.
+pub type NeuralData is {
+    eeg_spectral:    Map<Text, Float>,    // {alpha, beta, gamma_low, gamma_high, theta, infraslow}
+    hrv_features:    Map<Text, Float>,    // {LF, HF, LF_HF_ratio}
+    cfc_matrix:      StaticMatrix<Float, 7, 7>,   // cross-frequency coupling values
+    reaction_times:  StaticVector<Float, 21>,      // RT values for the 21 off-diagonal pairs
+};
 
-def pi_bio(
-    eeg_spectral: dict[str, float],     # {alpha, beta, gamma_low, gamma_high, theta, infraslow}
-    hrv_features: dict[str, float],      # {LF, HF, LF_HF_ratio}
-    cfc_matrix: np.ndarray,              # 7x7 CFC values
-    reaction_times: np.ndarray,          # 21 RT values for pairs
-    calibration: dict,                   # {weights, linear_params, ...}
-) -> np.ndarray:
-    """
-    pi_bio: NeuralData -> D(C^7)
+pub type BioCalibration is {
+    weights:         StaticVector<Float, 7>,
+    linear_params:   StaticMatrix<Float, 7, 2>,    // (a_k, b_k) per dimension
+    lambda_phys:     Float,                         // physical regulariser weight
+};
 
-    Full reconstruction of coherence matrix Gamma from biological data.
+/// π_bio: NeuralData → D(ℂ⁷). Full reconstruction of Γ from biological data.
+/// Structural [T] via G₂-rigidity (T-42a); empirical calibration [H].
+pub fn pi_bio(
+    data:        &NeuralData,
+    calibration: &BioCalibration,
+) -> StaticMatrix<Complex, 7, 7>
+{
+    // Step 1: diagonal from spectral powers — one value per dimension.
+    let raw_diag = StaticVector.<Float, 7>.from_array([
+        data.eeg_spectral.get("alpha").unwrap_or(0.0),       // A
+        data.eeg_spectral.get("infraslow").unwrap_or(0.0),   // S  (fMRI BOLD proxy)
+        data.eeg_spectral.get("beta").unwrap_or(0.0),        // D
+        data.eeg_spectral.get("gamma_low").unwrap_or(0.0),   // L
+        data.eeg_spectral.get("gamma_high").unwrap_or(0.0)
+            * data.eeg_spectral.get("theta").unwrap_or(0.0),  // E  (PAC proxy)
+        data.hrv_features.get("LF").unwrap_or(0.0),          // O
+        data.hrv_features.get("HF").unwrap_or(0.0),          // U
+    ]);
 
-    Returns:
-        7x7 complex density matrix Gamma
-    """
-    # Step 1: Diagonal from spectral powers
-    raw_diag = np.array([
-        eeg_spectral['alpha'],           # A
-        eeg_spectral['infraslow'],       # S (fMRI BOLD proxy)
-        eeg_spectral['beta'],            # D
-        eeg_spectral['gamma_low'],       # L
-        eeg_spectral['gamma_high'] * eeg_spectral['theta'],  # E (PAC proxy)
-        hrv_features['LF'],              # O
-        hrv_features['HF'],              # U
-    ])
-    w = calibration['weights']
-    diag = (w * raw_diag) / (w * raw_diag).sum()
-    diag = np.clip(diag, 1e-4, 1.0)  # Prevent degeneracy
-    diag = diag / diag.sum()
+    let weighted = (0..7).map(|i| calibration.weights[i] * raw_diag[i]).to_array();
+    let total = weighted.iter().sum::<Float>();
+    let mut diag = StaticVector.<Float, 7>.from_array(
+        weighted.map(|v| (v / total).clamp(1.0e-4, 1.0))     // prevent degeneracy
+    );
+    let diag_sum: Float = diag.iter().sum();
+    diag = diag.map(|v| v / diag_sum);
 
-    # Step 2: Off-diagonal magnitudes from CFC
-    c_scale = calibration['cfc_scale']
-    off_diag_mag = c_scale * cfc_matrix[:7, :7]
+    // Step 2: off-diagonal magnitudes from CFC.
+    let c_scale = calibration.linear_params[0, 0];                       // cfc_scale stored here
+    let off_diag_mag = &data.cfc_matrix * c_scale;
 
-    # Step 3: Phases from reaction times
-    rt_mean = np.mean(reaction_times)
-    rt_std = np.std(reaction_times) + 1e-8
-    idx = 0
-    phases = np.zeros((7, 7))
-    for i in range(7):
-        for j in range(i + 1, 7):
-            gap = np.tanh((reaction_times[idx] - rt_mean) / rt_std)
-            phases[i, j] = np.arcsin(np.clip(gap, -1, 1))
-            phases[j, i] = -phases[i, j]
-            idx += 1
+    // Step 3: Phases from reaction times → Gap → θ_ij = arcsin(Gap).
+    let rt_mean: Float = data.reaction_times.iter().sum::<Float>() / 21.0;
+    let rt_std = (data.reaction_times.iter()
+                     .map(|r| (r - rt_mean).pow(2)).sum::<Float>() / 21.0)
+                     .sqrt() + 1.0e-8;
+    let mut phases = StaticMatrix.<Float, 7, 7>.zeros();
+    let mut idx = 0;
+    for i in 0..7 { for j in (i + 1)..7 {
+        let gap = ((data.reaction_times[idx] - rt_mean) / rt_std).tanh();
+        let phi = gap.clamp(-1.0, 1.0).asin();
+        phases[i, j] =  phi;
+        phases[j, i] = -phi;
+        idx += 1;
+    }}
 
-    # Step 4: MLE reconstruction via Cholesky
-    def neg_log_likelihood(params):
-        L = np.zeros((7, 7), dtype=complex)
-        k = 0
-        for i in range(7):
-            for j in range(i + 1):
-                if i == j:
-                    L[i, j] = max(params[k], 1e-6)
-                else:
-                    L[i, j] = params[k] + 1j * params[k + 1]
-                    k += 1
-                k += 1
-        Gamma = L @ L.conj().T
-        Gamma = Gamma / np.trace(Gamma)
+    // Step 4: MLE reconstruction via Cholesky. 48 real parameters:
+    //   7 real diagonal + 21·2 = 42 off-diagonal (Re, Im).
+    let neg_log_likelihood = |params: &StaticVector<Float, 48>| -> Float {
+        let mut l = StaticMatrix.<Complex, 7, 7>.zeros();
+        let mut k = 0;
+        for i in 0..7 { for j in 0..=i {
+            if i == j {
+                l[i, j] = Complex.from_real(params[k].max(1.0e-6));
+                k += 1;
+            } else {
+                l[i, j] = Complex(params[k], params[k + 1]);
+                k += 2;
+            }
+        }}
+        let gamma = &l @ l.adjoint();
+        let gamma = &gamma / gamma.trace();
 
-        # Log-likelihood: diagonal agreement
-        ll_diag = -np.sum((np.real(np.diag(Gamma)) - diag) ** 2) / 0.01
+        // LL: diagonal agreement.
+        let ll_diag: Float = (0..7)
+            .map(|i| -(gamma[i, i].real() - diag[i]).pow(2) / 0.01)
+            .sum();
 
-        # Log-likelihood: off-diagonal magnitude agreement
-        ll_off = 0.0
-        for i in range(7):
-            for j in range(i + 1, 7):
-                ll_off -= (abs(Gamma[i, j]) - off_diag_mag[i, j]) ** 2 / 0.05
+        // LL: off-diagonal magnitude agreement.
+        let mut ll_off = 0.0;
+        for i in 0..7 { for j in (i + 1)..7 {
+            ll_off -= (gamma[i, j].abs() - off_diag_mag[i, j]).pow(2) / 0.05;
+        }}
 
-        # Physical regularizer: P > P_crit
-        P = np.real(np.trace(Gamma @ Gamma))
-        P_penalty = -100 * max(0, 2 / 7 - P)
+        // Physical regulariser: hard floor at P > P_crit.
+        let p = (&gamma @ &gamma).trace().real();
+        let p_penalty = -100.0 * (2.0 / 7.0 - p).max(0.0);
 
-        return -(ll_diag + ll_off + P_penalty)
+        -(ll_diag + ll_off + p_penalty)
+    };
 
-    # Initialize from diagonal
-    x0 = np.zeros(48)
-    for i in range(7):
-        x0[i * (i + 1)] = np.sqrt(diag[i])
+    // Initialise from the diagonal (triangle-flattened index k = i·(i+1)).
+    let mut x0 = StaticVector.<Float, 48>.zeros();
+    for i in 0..7 { x0[i * (i + 1)] = diag[i].sqrt(); }
 
-    result = minimize(neg_log_likelihood, x0, method='L-BFGS-B')
+    let result = bfgs(neg_log_likelihood, &x0, BfgsOptions {
+        ftol: 1.0e-9, max_iter: 500,
+    });
 
-    # Reconstruct Gamma from optimal params
-    L = np.zeros((7, 7), dtype=complex)
-    k = 0
-    for i in range(7):
-        for j in range(i + 1):
-            if i == j:
-                L[i, j] = max(result.x[k], 1e-6)
-            else:
-                L[i, j] = result.x[k] + 1j * result.x[k + 1]
-                k += 1
-            k += 1
-    Gamma = L @ L.conj().T
-    Gamma = Gamma / np.trace(Gamma)
-
-    return Gamma
+    // Reconstruct Γ from the optimal parameters.
+    let mut l = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut k = 0;
+    for i in 0..7 { for j in 0..=i {
+        if i == j {
+            l[i, j] = Complex.from_real(result.x[k].max(1.0e-6));
+            k += 1;
+        } else {
+            l[i, j] = Complex(result.x[k], result.x[k + 1]);
+            k += 2;
+        }
+    }}
+    let gamma = &l @ l.adjoint();
+    &gamma / gamma.trace()
+}
 ```
 
 ### Replication-Ready Specification for TMS-EEG PCI Data {#replication-ready-tms-eeg}

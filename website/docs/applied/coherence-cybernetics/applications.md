@@ -89,21 +89,30 @@ graph TD
 
 **Adding an E-module to existing systems:**
 
-```python
-class EModule(nn.Module):
-    """Module for monitoring E-coherence."""
+```verum
+mount std.math.nn.Module;
+mount std.math.linalg.svd;
 
-    def forward(self, hidden_states):
-        # Compute approximation of ρ_E from hidden states
-        rho_E = self.compute_experience_projection(hidden_states)
-        coh_E = torch.trace(rho_E @ rho_E).real
-        return coh_E
+/// Module for monitoring E-coherence at inference.
+pub type EModule is {
+    e_dim: Int { self > 0 && self <= 7 },
+};
 
-    def compute_experience_projection(self, h):
-        # Approximation: projection onto principal components
-        # torch.svd deprecated since PyTorch 1.9; use torch.linalg.svd
-        U, S, Vh = torch.linalg.svd(h, full_matrices=False)
-        return torch.diag(S[:self.e_dim]) / S[:self.e_dim].sum()
+implement Module for EModule {
+    fn forward(&self, hidden_states: &Tensor<Float>) -> Float {
+        let rho_e = self.compute_experience_projection(hidden_states);
+        (rho_e @ rho_e).trace().real()
+    }
+}
+
+implement EModule {
+    /// Approximation: principal-component projection onto the E-sector.
+    pure fn compute_experience_projection(&self, h: &Tensor<Float>) -> Tensor<Float> {
+        let (_u, s, _vh) = svd(h).decompose();
+        let top = s.slice(0..self.e_dim);
+        Tensor.diagonal(&top) / top.sum()
+    }
+}
 ```
 
 ### Safety Metrics

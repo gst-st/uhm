@@ -2,16 +2,16 @@
 slug: /reference/computational
 sidebar_position: 5
 title: Computational Implementation
-description: Python implementation of the Holon
+description: Verum implementation of the Holon
 ---
 
 # Computational Implementation
 
 :::note On code notation
-The following correspondences are used in the Python code:
-- `Gamma` ($\Gamma$) — [coherence matrix](/docs/core/dynamics/coherence-matrix)
-- `H` — [Hamiltonian](/docs/core/dynamics/evolution#1-unitary-term)
-- `L` ($L_k$) — Lindblad operators
+The code is written in **[Verum](https://verum-lang.org)** — a dependently-typed systems language with built-in refinement types, effect tracking, protocols, and a proof DSL. Correspondences:
+- `gamma` ($\Gamma$) — [coherence matrix](/docs/core/dynamics/coherence-matrix), type `CoherenceMatrix<7>` refined to density-matrix constraints
+- `H` — [Hamiltonian](/docs/core/dynamics/evolution#1-unitary-term), type `HermitianMatrix<Complex, 7>`
+- `L` ($L_k$) — Lindblad operators, array of size 7
 - `purity` ($P$) — [viability measure](/docs/core/dynamics/viability#определение-чистоты)
 - `d_FS` ($d_{\mathrm{FS}}$) — [Fubini-Study metric](/docs/reference/specification#метрика-фубини-штуди)
 - `kappa_0` ($\kappa_0$) — [base regeneration rate](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) (categorical derivation)
@@ -70,562 +70,379 @@ All operations execute in microseconds on modern hardware.
 When extending to composite systems $\mathbb{H}_{1 \otimes \cdots \otimes n}$, dimensionality grows exponentially: $N = 7^n$. For $n = 3$: $N = 343$, which already requires optimised algorithms.
 :::
 
-## Holon class
-
-```python
-import numpy as np
-from scipy.linalg import expm
-
-class Holon:
-    """
-    Computational implementation of the Holon from UHM theory.
-
-    The Holon is the minimal self-contained unit of reality,
-    described by a 7-dimensional coherence matrix Γ ∈ C^{7×7}.
-
-    Holon evolution is described by the full equation:
-
-        dΓ/dτ = -i[H_eff, Γ] + D[Γ] + R[Γ, E]
-
-    where:
-        - -i[H_eff, Γ] : unitary evolution (Hamiltonian)
-        - D[Γ]         : dissipation (Lindblad equation)
-        - R[Γ, E]      : regeneration through connection with the Ground
-
-    Regenerative term [T] (fully derived from axioms):
-        R[Γ, E] = κ(Γ) · (ρ* - Γ) · g_V(P)
-
-    where g_V(P) = clamp((P - P_crit) / (P_opt - P_crit), 0, 1) — V-preservation gate [T],
-    regeneration rate:
-        κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
-        κ_bootstrap = ‖η‖ > 0 (minimal regeneration from the unit of adjunction,
-                              requires calibration for a specific system)
-        κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
-
-    Viability is determined by critical purity P_crit = 2/7 ≈ 0.286.
-    """
-
-    # Critical purity — viability threshold
-    P_CRIT = 2/7  # ≈ 0.2857
-
-    # Minimal regeneration: κ_bootstrap = ω₀/N where N=7
-    # Categorical derivation: /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap
-    # Theoretical value for ω₀=1: κ_bootstrap = 1/7 ≈ 0.143
-    KAPPA_BOOTSTRAP = 1/7  # ≈ 0.143 — consistent with theorem at ω₀=1
-
-    def __init__(self, pure=True, omega_0=1.0):
-        """
-        Holon initialisation.
-
-        Args:
-            pure: True for pure state (P=1), False for mixed
-            omega_0: Fundamental clock frequency (κ₀ scale)
-        """
-        if pure:
-            # Pure state: |ψ⟩ = (1/√7) Σ|i⟩
-            psi = np.ones(7, dtype=complex) / np.sqrt(7)
-            self.Gamma = np.outer(psi, psi.conj())
-        else:
-            # Mixed state via Cholesky parametrisation
-            self._L_cholesky = np.eye(7, dtype=complex)
-            self._update_gamma_from_L()
-
-        # Fundamental frequency for regeneration
-        self.omega_0 = omega_0
-
-        # Target state for regeneration (set via set_target_state)
-        self.Gamma_target = None
-
-        # System Hamiltonian
-        self.H = self._build_hamiltonian()
-
-        # Decoherence operators
-        self.L = self._build_lindblad_operators()
-
-    def _update_gamma_from_L(self):
-        """
-        Γ = L·L† / Tr(L·L†) — guarantees Γ ≥ 0 and Tr(Γ) = 1.
-        """
-        G = self._L_cholesky @ self._L_cholesky.conj().T
-        self.Gamma = G / np.trace(G)
-
-    def _build_hamiltonian(self):
-        """
-        Constructs the effective system Hamiltonian H_eff.
-
-        Structure: diagonal elements — eigenfrequencies of dimensions,
-        off-diagonal — couplings between adjacent dimensions (ring topology).
-        """
-        H = np.zeros((7, 7), dtype=complex)
-
-        # Eigenfrequencies of dimensions (A, S, D, L, E, O, U)
-        frequencies = [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0]
-        for i, w in enumerate(frequencies):
-            H[i, i] = w
-
-        # Couplings between adjacent dimensions
-        coupling = 0.1
-        for i in range(6):
-            H[i, i+1] = coupling
-            H[i+1, i] = coupling
-        H[6, 0] = coupling  # Ring closure
-        H[0, 6] = coupling
-
-        return H
-
-    def _build_lindblad_operators(self):
-        """
-        Constructs Lindblad operators L_k for the dissipative part D[Γ].
-
-        D[Γ] = Σ_k (L_k Γ L_k† - ½{L_k†L_k, Γ})
-
-        Simplest model: diagonal decoherence at equal rate.
-        """
-        L = []
-        gamma = 0.01  # Decoherence rate
-        for i in range(7):
-            L_i = np.zeros((7, 7), dtype=complex)
-            L_i[i, i] = np.sqrt(gamma)
-            L.append(L_i)
-        return L
-
-    def compute_kappa_0(self):
-        """
-        Base regeneration rate κ₀.
-
-        κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
-
-        Physical meaning: the regeneration rate is determined by the connection
-        of the Ground (O) dimension with Interiority (E) and Unity (U).
-
-        Dimension indices (0-indexed):
-            A=0, S=1, D=2, L=3, E=4, O=5, U=6
-
-        Returns:
-            κ₀ ≥ 0 — base regeneration rate
-        """
-        O, E, U = 5, 4, 6  # Dimension indices
-
-        gamma_OO = np.real(self.Gamma[O, O])
-        gamma_OE = np.abs(self.Gamma[O, E])
-        gamma_OU = np.abs(self.Gamma[O, U])
-
-        if gamma_OO < 1e-12:
-            return 0.0  # System lost connection with the Ground
-
-        return self.omega_0 * gamma_OE * gamma_OU / gamma_OO
-
-    def compute_e_coherence(self):
-        """
-        E-coherence (HS-projection π_E, [T]): Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²).
-
-        Master definition: Coh_E := Tr(ρ_E²), where ρ_E = Tr_{-E}(Γ).
-        In the minimal 7D formalism π_E is the orthogonal projection
-        in Hilbert-Schmidt space onto the E-subspace.
-        The factor 2 follows from Hermitian symmetry: |γ_Ei|² = |γ_iE|².
-
-        Normalisation by Tr(Γ²) guarantees Coh_E ∈ [1/7, 1].
-
-        See /docs/applied/coherence-cybernetics/definitions#e-когерентность
-
-        Returns:
-            Coh_E ∈ [1/7, 1] — measure of experience activation
-        """
-        E = 4  # Index of the Experience dimension
-
-        # Diagonal element E (squared)
-        gamma_EE_sq = np.real(self.Gamma[E, E])**2
-
-        # Sum of squared coherences of E with other dimensions
-        coherence_sum = 0.0
-        for i in range(7):
-            if i != E:
-                coherence_sum += np.abs(self.Gamma[E, i])**2
-
-        # Coh_E = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²)
-        purity = np.real(np.trace(self.Gamma @ self.Gamma))
-        if purity < 1e-12:
-            return 1/7
-        raw_coh_e = (gamma_EE_sq + 2 * coherence_sum) / purity
-
-        return np.clip(raw_coh_e, 1/7, 1.0)
-
-    def set_target_state(self, Gamma_target=None):
-        """
-        Sets the target state ρ* (Gamma_target) for regeneration.
-
-        In the full theory ρ* = φ(Γ) — the categorical self-model of the current
-        state [T]. The form ℛ = κ·(ρ*−Γ)·g_V(P) is fully
-        derived from axioms [T]. In the simplified version it can be set explicitly.
-
-        Args:
-            Gamma_target: Target coherence matrix.
-                         If None, the current state is used.
-        """
-        if Gamma_target is None:
-            self.Gamma_target = self.Gamma.copy()
-        else:
-            self.Gamma_target = Gamma_target
-
-    def _compute_regeneration(self, delta_F, dtau):
-        """
-        Computes the regenerative term R[Γ, E].
-
-        R[Γ, E] = κ(Γ) · (Γ_target - Γ) · g_V(P)
-
-        where:
-            κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
-            g_V(P) = clamp((P - P_crit) / (P_opt - P_crit), 0, 1)
-
-        κ_bootstrap > 0 guarantees regeneration at any Coh_E,
-        resolving the bootstrap paradox (see Genesis Protocol).
-
-        Args:
-            delta_F: Free energy gradient (>0 activates regeneration)
-            dtau: Time step (internal time τ)
-
-        Returns:
-            dΓ_regen: Regeneration contribution to the change in Γ
-        """
-        # g_V(P): V-preservation gate — regeneration only when P > P_crit
-        P = np.real(np.trace(self.Gamma @ self.Gamma))
-        P_OPT = 3/7
-        g_v = np.clip((P - self.P_CRIT) / (P_OPT - self.P_CRIT), 0.0, 1.0)
-        if g_v <= 0 or self.Gamma_target is None:
-            return np.zeros_like(self.Gamma)
-
-        # κ(Γ) = κ_bootstrap + κ₀ · Coh_E(Γ)
-        kappa_0 = self.compute_kappa_0()
-        coh_E = self.compute_e_coherence()
-        kappa = self.KAPPA_BOOTSTRAP + kappa_0 * coh_E
-
-        # Correctness condition: α = κ·g_V·dτ < 1 for positivity preservation
-        # See CPTP-structure theorem for regeneration in evolution.md
-        alpha = kappa * g_v * dtau
-        if alpha >= 1.0:
-            # Adaptive step to guarantee positivity
-            dtau = 0.9 / (kappa * g_v)  # α = 0.9 < 1
-            alpha = kappa * g_v * dtau
-
-        # R[Γ, E] = κ · (Γ_target - Γ) · g_V(P)
-        return kappa * g_v * (self.Gamma_target - self.Gamma) * dtau
-
-    def evolve(self, dtau, delta_F=0.0):
-        """
-        Full evolution step according to the UHM equation.
-
-        dΓ/dτ = -i[H_eff, Γ] + D[Γ] + R[Γ, E]
-
-        Three terms:
-            1. Unitary: -i[H_eff, Γ] — coherent evolution
-            2. Dissipative: D[Γ] — decoherence (Lindblad equation)
-            3. Regenerative: R[Γ, E] — restoration through the Ground
-
-        Args:
-            dtau: Time step (internal time τ)
-            delta_F: Free energy gradient (>0 activates regeneration)
-        """
-        # 1. Unitary part: -i[H, Γ]
-        U = expm(-1j * self.H * dtau)
-        self.Gamma = U @ self.Gamma @ U.conj().T
-
-        # 2. Dissipative part: D[Γ] (Lindblad equation)
-        for L_k in self.L:
-            self.Gamma += dtau * (
-                L_k @ self.Gamma @ L_k.conj().T
-                - 0.5 * L_k.conj().T @ L_k @ self.Gamma
-                - 0.5 * self.Gamma @ L_k.conj().T @ L_k
-            )
-
-        # 3. Regenerative part: R[Γ, E]
-        self.Gamma += self._compute_regeneration(delta_F, dtau)
-
-        # Renormalisation for numerical stability
-        self.Gamma /= np.trace(self.Gamma)
-
-    def compute_purity(self):
-        """
-        Computes purity P = Tr(Γ²).
-
-        Returns:
-            P ∈ [1/7, 1] — coherence measure
-        """
-        return np.real(np.trace(self.Gamma @ self.Gamma))
-
-    def compute_entropy(self):
-        """
-        Von Neumann entropy S = -Tr(Γ log Γ).
-
-        Returns:
-            S ∈ [0, log(7)] — uncertainty measure
-        """
-        eigvals = np.linalg.eigvalsh(self.Gamma)
-        eigvals = eigvals[eigvals > 1e-12]  # Avoid log(0)
-        return -np.sum(eigvals * np.log(eigvals))
-
-    def get_exp(self):
-        """
-        Returns the experience spectrum (intensities of experiential content).
-
-        Returns:
-            Array of eigenvalues sorted in descending order
-        """
-        eigenvalues = np.linalg.eigvalsh(self.Gamma)
-        return np.sort(eigenvalues)[::-1]
-
-    def get_full_exp(self):
-        """
-        Returns the full experiential content: (intensity, quality).
-
-        Quality = eigenvector in projective space ℙ(ℋ).
-        Applicable for all levels L0-L2.
-
-        Returns:
-            List of dicts with intensity, quality, quality_class
-        """
-        eigenvalues, eigenvectors = np.linalg.eigh(self.Gamma)
-        # Sort by descending eigenvalues
-        idx = np.argsort(eigenvalues)[::-1]
-        eigenvalues = eigenvalues[idx]
-        eigenvectors = eigenvectors[:, idx]
-
-        exp_contents = []
-        for i in range(len(eigenvalues)):
-            intensity = eigenvalues[i]
-            quality = eigenvectors[:, i]
-            # Normalise to unit vector
-            quality = quality / np.linalg.norm(quality)
-            exp_contents.append({
-                'intensity': float(np.real(intensity)),
-                'quality': quality,
-                'quality_class': self._to_projective(quality)
-            })
-        return exp_contents
-
-    def _to_projective(self, vector):
-        """
-        Canonical representation in projective space.
-
-        Choose the phase such that the first non-zero element
-        is real and positive.
-        """
-        for i, v in enumerate(vector):
-            if np.abs(v) > 1e-10:
-                phase = np.exp(-1j * np.angle(v))
-                return vector * phase
-        return vector
-
-    @staticmethod
-    def fubini_study_distance(v1, v2):
-        """
-        Fubini-Study metric between two qualities.
-
-        d_FS([|ψ⟩], [|φ⟩]) = arccos(|⟨ψ|φ⟩|) ∈ [0, π/2]
-
-        Args:
-            v1, v2: vectors in ℋ
-
-        Returns:
-            Distance d_FS ∈ [0, π/2]
-        """
-        v1 = v1 / np.linalg.norm(v1)
-        v2 = v2 / np.linalg.norm(v2)
-        overlap = np.abs(np.vdot(v1, v2))
-        overlap = np.clip(overlap, 0.0, 1.0)
-        return np.arccos(overlap)
-
-    def exp_distance(self, other, alpha=1.0):
-        """
-        Full distance between the experiential content of two Holons.
-
-        Accounts for both intensity and quality.
-
-        Args:
-            other: another Holon
-            alpha: weight of the qualitative component
-
-        Returns:
-            Distance in experiential space
-        """
-        e1 = self.get_full_exp()
-        e2 = other.get_full_exp()
-
-        intensity_dist = 0.0
-        quality_dist = 0.0
-
-        for i in range(min(len(e1), len(e2))):
-            intensity_dist += (e1[i]['intensity'] - e2[i]['intensity'])**2
-            quality_dist += self.fubini_study_distance(
-                e1[i]['quality'], e2[i]['quality']
-            )**2
-
-        return np.sqrt(intensity_dist + alpha * quality_dist)
-
-    def interact(self, other, coupling_strength=0.1):
-        """
-        Interaction with another Holon.
-
-        Simplest model: partial averaging of states.
-
-        Args:
-            other: another Holon
-            coupling_strength: coupling strength ∈ [0, 1]
-        """
-        # Information exchange (use temporary variables for symmetry)
-        new_self = (1 - coupling_strength) * self.Gamma + \
-                   coupling_strength * other.Gamma
-        new_other = (1 - coupling_strength) * other.Gamma + \
-                    coupling_strength * self.Gamma
-
-        self.Gamma = new_self
-        other.Gamma = new_other
-
-        # Renormalisation
-        self.Gamma /= np.trace(self.Gamma)
-        other.Gamma /= np.trace(other.Gamma)
-
-    def is_viable(self):
-        """
-        Viability check: P > P_crit.
-
-        The system is viable if its purity exceeds
-        the critical threshold P_crit = 2/7 ≈ 0.286.
-
-        Returns:
-            True if the system is viable
-        """
-        return self.compute_purity() > self.P_CRIT
-
-    def bootstrap(self, max_steps=1000, target_P=None):
-        """
-        Bootstrap algorithm: transition from P ≈ 1/7 to P > P_crit.
-
-        Solves the "stillbirth" problem — when a system is born
-        in the maximally mixed state with P ≈ 1/7 < P_crit.
-
-        The algorithm uses enhanced regeneration to reach
-        a viable state.
-
-        Args:
-            max_steps: Maximum number of evolution steps
-            target_P: Target purity (default P_crit + margin)
-
-        Returns:
-            success: True if P > P_crit is reached
-        """
-        if target_P is None:
-            target_P = self.P_CRIT + 0.05  # Small margin
-
-        # Initialise target state with high purity
-        psi_target = np.ones(7, dtype=complex) / np.sqrt(7)
-        self.Gamma_target = np.outer(psi_target, psi_target.conj())
-
-        for step in range(max_steps):
-            P = self.compute_purity()
-
-            if P >= target_P:
-                return True  # Bootstrap successful
-
-            # Free energy gradient is positive during bootstrap
-            delta_F = 1.0  # Artificial energy source
-
-            # Evolution with enhanced regeneration
-            self.evolve(dtau=0.01, delta_F=delta_F)
-
-        return self.compute_purity() >= target_P
+## Holon type
+
+```verum
+mount std.math.complex;
+mount std.math.linalg.{Matrix, HermitianMatrix, expm, eigvalsh, norm};
+
+/// Dimension labels (A, S, D, L, E, O, U).
+pub type Dim is A | S | D | L | E | O | U;
+
+/// A 7-dimensional coherence matrix — Hermitian, PSD, unit trace.
+/// Refinement predicate is checked by SMT at compile-time where possible,
+/// and by @verify(runtime) otherwise.
+pub type CoherenceMatrix is Matrix<Complex, 7, 7>
+    where is_hermitian(self)
+       && is_psd(self)
+       && (trace(self).real() - 1.0).abs() < 1.0e-10;
+
+/// A Holon: the minimal self-contained unit of reality
+/// (UHM T-15..T-82). Evolution follows
+/// `dΓ/dτ = -i[H_eff, Γ] + D[Γ] + R[Γ, E]` with
+/// regeneration R[Γ, E] = κ(Γ) · (ρ* - Γ) · g_V(P).
+pub type Holon is {
+    mut gamma: CoherenceMatrix,
+    mut gamma_target: Maybe<CoherenceMatrix>,
+    mut H: HermitianMatrix<Complex, 7>,
+    L: [Matrix<Complex, 7, 7>; 7],
+    omega_0: Float,
+};
+
+/// Critical purity — viability threshold (T-39a [T]).
+pub const P_CRIT: Float = 2.0 / 7.0;        // ≈ 0.2857
+
+/// Minimal regeneration: κ_bootstrap = ω₀/N where N = 7.
+/// Categorical derivation: /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap.
+pub const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;  // ≈ 0.143 (for ω₀ = 1)
+
+/// Optimal purity upper edge of the Goldilocks window (T-124 [T]).
+pub const P_OPT: Float = 3.0 / 7.0;
+
+/// Dimension index helper.
+pub fn index(d: Dim) -> Int { d as Int }
+
+implement Holon {
+    /// Initialise a pure Holon: |ψ⟩ = (1/√7) Σ|i⟩ (fully coherent attractor).
+    pub fn new_pure(omega_0: Float) -> Holon
+        where ensures result.purity() == 1.0
+    {
+        let psi = Vector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+        let g = psi.outer(psi.conjugate());
+        Holon {
+            gamma:        g,
+            gamma_target: Maybe.None,
+            H:            build_hamiltonian(),
+            L:            build_lindblad_operators(),
+            omega_0:      omega_0,
+        }
+    }
+
+    /// Initialise a maximally mixed Holon: Γ = I/7 (pre-viable state).
+    pub fn new_mixed(omega_0: Float) -> Holon
+        where ensures (result.purity() - 1.0/7.0).abs() < 1.0e-10
+    {
+        let g = (Matrix.<Complex, 7, 7>.identity()) / Complex.from_real(7.0);
+        Holon { gamma: g, gamma_target: Maybe.None,
+                H: build_hamiltonian(), L: build_lindblad_operators(),
+                omega_0: omega_0 }
+    }
+
+    /// Purity P = Tr(Γ²) — viability measure (T-39a).
+    pub fn purity(&self) -> Float
+        where ensures 1.0/7.0 <= result && result <= 1.0
+    {
+        (self.gamma @ self.gamma).trace().real()
+    }
+
+    /// Viability check: P > P_crit (T-39a).
+    pub fn is_viable(&self) -> Bool { self.purity() > P_CRIT }
+
+    /// Von Neumann entropy S = -Tr(Γ log Γ).
+    pub fn entropy(&self) -> Float
+        where ensures 0.0 <= result && result <= (7.0).ln()
+    {
+        let eigs = eigvalsh(&self.gamma)
+            |> filter(|x| *x > 1.0e-12);
+        -eigs.iter().map(|x| x * x.ln()).sum()
+    }
+
+    /// Base regeneration rate κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
+    /// (T-64 [T], categorical derivation via Coh_E → κ).
+    pub fn kappa_0(&self) -> Float where ensures result >= 0.0 {
+        let o = index(Dim.O); let e = index(Dim.E); let u = index(Dim.U);
+        let g_OO = self.gamma[o, o].real();
+        if g_OO < 1.0e-12 { return 0.0; }        // No Ground connection
+        let g_OE = self.gamma[o, e].abs();
+        let g_OU = self.gamma[o, u].abs();
+        self.omega_0 * g_OE * g_OU / g_OO
+    }
+
+    /// E-coherence (HS-projection π_E, T-73 [T]):
+    /// Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS
+    ///          = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [1/7, 1].
+    pub fn coh_e(&self) -> Float
+        where ensures 1.0/7.0 <= result && result <= 1.0
+    {
+        let e = index(Dim.E);
+        let g_EE_sq = self.gamma[e, e].real().pow(2);
+        let cross   = (0..7)
+            |> filter(|i| *i != e)
+            |> map(|i| self.gamma[e, *i].abs().pow(2))
+            |> sum();
+        let p = self.purity();
+        if p < 1.0e-12 { return 1.0 / 7.0; }
+        ((g_EE_sq + 2.0 * cross) / p).clamp(1.0 / 7.0, 1.0)
+    }
+
+    /// Set the regeneration target ρ* (full theory: ρ* = φ(Γ), T-96 [T]).
+    pub fn set_target(&mut self, target: Maybe<CoherenceMatrix>) {
+        self.gamma_target = match target {
+            Maybe.Some(t) => Maybe.Some(t),
+            Maybe.None    => Maybe.Some(self.gamma.clone()),
+        };
+    }
+
+    /// Regenerative increment dΓ_regen = κ·g_V·(ρ*−Γ)·dτ.
+    /// Positivity preservation: α = κ·g_V·dτ < 1 enforced by
+    /// adaptive step (see evolution.md CPTP-structure theorem).
+    fn regeneration(&self, dtau: Float) -> Matrix<Complex, 7, 7> {
+        let p = self.purity();
+        let g_v = ((p - P_CRIT) / (P_OPT - P_CRIT)).clamp(0.0, 1.0);
+
+        if g_v <= 0.0 { return Matrix.<Complex, 7, 7>.zeros(); }
+        let target = match self.gamma_target {
+            Maybe.Some(t) => t,
+            Maybe.None    => return Matrix.<Complex, 7, 7>.zeros(),
+        };
+
+        let kappa = KAPPA_BOOTSTRAP + self.kappa_0() * self.coh_e();
+        let alpha = kappa * g_v * dtau;
+        let dt_safe = if alpha >= 1.0 { 0.9 / (kappa * g_v) } else { dtau };
+
+        (target - self.gamma) * Complex.from_real(kappa * g_v * dt_safe)
+    }
+
+    /// Single evolution step: dΓ/dτ = -i[H, Γ] + D[Γ] + R[Γ, E].
+    pub fn evolve(&mut self, dtau: Float, delta_f: Float)
+        where requires dtau > 0.0 && dtau <= 0.1
+    {
+        // 1. Unitary: Γ ← U Γ U† where U = exp(-i H dτ).
+        let u = expm(Complex.i().neg() * &self.H * Complex.from_real(dtau));
+        self.gamma = &u @ &self.gamma @ u.adjoint();
+
+        // 2. Dissipative: Γ ← Γ + dτ · D[Γ].
+        for lk in &self.L {
+            let ldag = lk.adjoint();
+            self.gamma = &self.gamma + Complex.from_real(dtau) * (
+                lk @ &self.gamma @ &ldag
+                - Complex.from_real(0.5) * (&ldag @ lk @ &self.gamma)
+                - Complex.from_real(0.5) * (&self.gamma @ &ldag @ lk)
+            );
+        }
+
+        // 3. Regenerative: Γ ← Γ + dΓ_regen.
+        self.gamma = &self.gamma + self.regeneration(dtau);
+
+        // 4. Renormalise for numerical stability.
+        self.gamma = &self.gamma / self.gamma.trace();
+    }
+
+    /// Bootstrap: P ≈ 1/7 → P > P_crit via enhanced regeneration
+    /// (resolves the stillbirth paradox, see Genesis protocol).
+    pub fn bootstrap(&mut self, max_steps: Int, target_p: Float) -> Bool
+        where requires target_p > P_CRIT && target_p < 1.0
+    {
+        let psi = Vector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+        self.gamma_target = Maybe.Some(psi.outer(psi.conjugate()));
+
+        for _ in 0..max_steps {
+            if self.purity() >= target_p { return true; }
+            self.evolve(0.01, 1.0);
+        }
+        self.purity() >= target_p
+    }
+
+    /// Spectrum of experiential content (eigenvalues sorted descending).
+    pub fn spectrum(&self) -> [Float; 7] {
+        let eigs = eigvalsh(&self.gamma);
+        eigs.to_array().sort_by(|a, b| b.partial_cmp(a).unwrap())
+    }
+
+    /// Full experiential content: (intensity, quality) pairs.
+    pub fn full_exp(&self) -> [ExpContent; 7] {
+        let (eigs, vecs) = self.gamma.eigh();
+        let mut idx: [Int; 7] = (0..7).collect();
+        idx.sort_by(|i, j| eigs[*j].partial_cmp(&eigs[*i]).unwrap());
+        idx.map(|i| ExpContent {
+            intensity: eigs[i].real(),
+            quality:   canonical_projective(vecs.column(i)),
+        })
+    }
+
+    /// Interaction with another Holon: partial averaging, coupling ∈ [0, 1].
+    pub fn interact(&mut self, other: &mut Holon, coupling: Float)
+        where requires 0.0 <= coupling && coupling <= 1.0
+    {
+        let c = Complex.from_real(coupling);
+        let ic = Complex.from_real(1.0 - coupling);
+        let g1 = ic * &self.gamma + c * &other.gamma;
+        let g2 = ic * &other.gamma + c * &self.gamma;
+        self.gamma  = &g1 / g1.trace();
+        other.gamma = &g2 / g2.trace();
+    }
+}
+
+/// Single quale: intensity + projective-space quality.
+pub type ExpContent is {
+    intensity: Float,
+    quality:   Vector<Complex, 7>,
+};
+
+/// Build the effective Hamiltonian: diagonal eigenfrequencies + ring couplings.
+fn build_hamiltonian() -> HermitianMatrix<Complex, 7> {
+    let freqs: [Float; 7] = [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0];
+    let coupling = Complex.from_real(0.1);
+    let mut h = HermitianMatrix.<Complex, 7>.zeros();
+    for i in 0..7 { h[i, i] = Complex.from_real(freqs[i]); }
+    for i in 0..6 { h[i, i+1] = coupling; h[i+1, i] = coupling; }
+    h[6, 0] = coupling; h[0, 6] = coupling;           // ring closure
+    h
+}
+
+/// Build Lindblad operators L_k (diagonal decoherence at equal rate).
+fn build_lindblad_operators() -> [Matrix<Complex, 7, 7>; 7] {
+    let rate = 0.01;
+    (0..7).map(|k| {
+        let mut l = Matrix.<Complex, 7, 7>.zeros();
+        l[k, k] = Complex.from_real(rate.sqrt());
+        l
+    }).to_array()
+}
+
+/// Canonical projective representative: rotate phase so first
+/// non-zero component is real and positive.
+fn canonical_projective(v: Vector<Complex, 7>) -> Vector<Complex, 7> {
+    for i in 0..7 {
+        if v[i].abs() > 1.0e-10 {
+            let phase = (-v[i].arg() * Complex.i()).exp();
+            return v * phase;
+        }
+    }
+    v
+}
+
+/// Fubini-Study metric d_FS([|ψ⟩], [|φ⟩]) = arccos(|⟨ψ|φ⟩|) ∈ [0, π/2].
+pub pure fn fubini_study_distance(v1: &Vector<Complex, 7>, v2: &Vector<Complex, 7>) -> Float
+    where ensures 0.0 <= result && result <= Float.PI / 2.0
+{
+    let a = v1 / norm(v1);
+    let b = v2 / norm(v2);
+    let overlap = a.dot(&b).abs().clamp(0.0, 1.0);
+    overlap.acos()
+}
 ```
 
 ## Usage example
 
-```python
-# Creating a Holon in a pure state
-holon = Holon(pure=True)
-print(f"Initial purity: P = {holon.compute_purity():.4f}")  # P = 1.0
-print(f"Critical purity: P_crit = {Holon.P_CRIT:.4f}")  # ≈ 0.2857
+```verum
+fn demo_holon_evolution() using [IO] {
+    // Pure Holon.
+    let mut holon = Holon.new_pure(1.0);
+    IO.println(f"Initial purity: P = {holon.purity():.4f}");     // P = 1.0
+    IO.println(f"Critical purity: P_crit = {P_CRIT:.4f}");        // ≈ 0.2857
 
-# Set target state for regeneration
-holon.set_target_state()  # Save current as target
+    // Use current state as the regeneration target.
+    holon.set_target(Maybe.None);
 
-# Evolution with decoherence and regeneration
-for t in range(1000):
-    # delta_F > 0 activates regeneration
-    holon.evolve(dtau=0.01, delta_F=0.5)
+    // Evolution with decoherence + regeneration.
+    for t in 0..1000 {
+        holon.evolve(0.01, 0.5);
 
-    if t % 100 == 0:
-        P = holon.compute_purity()
-        S = holon.compute_entropy()
-        kappa_0 = holon.compute_kappa_0()
-        print(f"t={t}: P={P:.4f}, S={S:.4f}, κ₀={kappa_0:.4f}")
+        if t % 100 == 0 {
+            IO.println(f"t={t}: P={holon.purity():.4f}, \
+                        S={holon.entropy():.4f}, κ₀={holon.kappa_0():.4f}");
+        }
+    }
 
-# Viability check
-print(f"\nViable: {holon.is_viable()}")  # P > P_crit?
+    IO.println(f"\nViable: {holon.is_viable()}");                 // P > P_crit?
 
-# Full experiential content analysis
-full_exp = holon.get_full_exp()
-print("\nExperiential content:")
-for i, e in enumerate(full_exp[:3]):  # Top 3
-    print(f"  Exp {i}: intensity={e['intensity']:.4f}")
-    print(f"          quality={e['quality'][:3]}...")
+    // Top-3 experiential content items.
+    let full = holon.full_exp();
+    IO.println("\nExperiential content:");
+    for (i, e) in full[..3].enumerate() {
+        IO.println(f"  Exp {i}: intensity={e.intensity:.4f}");
+        IO.println(f"          quality={e.quality[..3]}...");
+    }
 
-# Comparison of two Holons
-holon2 = Holon(pure=True)
-holon2.evolve(dtau=0.5)
+    // Comparison of two Holons.
+    let mut holon2 = Holon.new_pure(1.0);
+    holon2.evolve(0.5, 0.0);
 
-d_intensity = np.linalg.norm(
-    np.array(holon.get_exp()) - np.array(holon2.get_exp())
-)
-d_full = holon.exp_distance(holon2, alpha=1.0)
+    let d_intensity = norm(holon.spectrum() - holon2.spectrum());
+    let d_full = exp_distance(&holon, &holon2, 1.0);
+    IO.println(f"\nIntensity distance: {d_intensity:.4f}");
+    IO.println(f"Full distance (with quality): {d_full:.4f}");
+}
 
-print(f"\nIntensity distance: {d_intensity:.4f}")
-print(f"Full distance (with quality): {d_full:.4f}")
+/// Full distance between the experiential content of two Holons.
+pub pure fn exp_distance(a: &Holon, b: &Holon, alpha: Float) -> Float
+    where requires alpha >= 0.0
+{
+    let ea = a.full_exp();
+    let eb = b.full_exp();
+    let (mut int_dist, mut qual_dist) = (0.0, 0.0);
+    for i in 0..7 {
+        int_dist  += (ea[i].intensity - eb[i].intensity).pow(2);
+        qual_dist += fubini_study_distance(&ea[i].quality, &eb[i].quality).pow(2);
+    }
+    (int_dist + alpha * qual_dist).sqrt()
+}
 ```
 
 ## Isospectral demonstration
 
-```python
-# Two states with identical spectrum but different qualities
-print("\n— Isospectral example —")
+```verum
+fn demo_isospectral() using [IO, Random] {
+    // Two states with identical spectra but different qualities.
+    IO.println("— Isospectral example —");
 
-holon = Holon(pure=True)
-holon.evolve(dtau=0.1)
-e1 = holon.get_full_exp()
+    let mut holon = Holon.new_pure(1.0);
+    holon.evolve(0.1, 0.0);
+    let exp1 = holon.full_exp();
 
-# Create isospectral state via unitary transformation
-U_random = np.linalg.qr(
-    np.random.randn(7, 7) + 1j*np.random.randn(7, 7)
-)[0]
-holon_iso = Holon(pure=True)
-holon_iso.Gamma = U_random @ holon.Gamma @ U_random.conj().T
+    // Random unitary via QR decomposition of a complex Gaussian matrix.
+    let noise = Matrix.<Complex, 7, 7>.random_gaussian();
+    let (u_random, _) = noise.qr();
 
-# Verification
-spectra_equal = np.allclose(holon.get_exp(), holon_iso.get_exp())
-quality_distance = Holon.fubini_study_distance(
-    e1[0]['quality'],
-    holon_iso.get_full_exp()[0]['quality']
-)
+    // Isospectral state via unitary transformation.
+    let mut holon_iso = Holon.new_pure(1.0);
+    holon_iso.gamma = &u_random @ &holon.gamma @ u_random.adjoint();
 
-print(f"Spectra equal: {spectra_equal}")
-print(f"Quality distance: d_FS = {quality_distance:.4f}")
+    // Verification.
+    let spectra_equal = (0..7).all(|i|
+        (holon.spectrum()[i] - holon_iso.spectrum()[i]).abs() < 1.0e-10
+    );
+    let quality_distance = fubini_study_distance(
+        &exp1[0].quality,
+        &holon_iso.full_exp()[0].quality,
+    );
+
+    IO.println(f"Spectra equal:    {spectra_equal}");
+    IO.println(f"Quality distance: d_FS = {quality_distance:.4f}");
+}
 ```
 
 ## Bootstrap example
 
-```python
-# Creating a "dead" system (P close to 1/7)
-holon = Holon(pure=False)
-holon.Gamma = np.eye(7, dtype=complex) / 7  # Maximally mixed
+```verum
+fn demo_bootstrap() using [IO] {
+    // "Dead" system — maximally mixed state.
+    let mut holon = Holon.new_mixed(1.0);
 
-print(f"Initial purity: P = {holon.compute_purity():.4f}")  # ≈ 0.143
-print(f"P_crit = {Holon.P_CRIT:.4f}")  # = 2/7 ≈ 0.2857
-print(f"Viable: {holon.is_viable()}")  # False
+    IO.println(f"Initial purity: P = {holon.purity():.4f}");   // ≈ 0.143
+    IO.println(f"P_crit = {P_CRIT:.4f}");                       // = 2/7
+    IO.println(f"Viable: {holon.is_viable()}");                 // false
 
-# Bootstrap: transition P: 1/7 → P_crit
-success = holon.bootstrap(max_steps=500)
+    // Bootstrap: P: 1/7 → > P_crit.
+    let target = P_CRIT + 0.05;
+    let success = holon.bootstrap(500, target);
 
-print(f"\nBootstrap successful: {success}")
-print(f"Final purity: P = {holon.compute_purity():.4f}")
-print(f"Viable: {holon.is_viable()}")
-print(f"κ₀ = {holon.compute_kappa_0():.4f}")
+    IO.println(f"\nBootstrap successful: {success}");
+    IO.println(f"Final purity: P = {holon.purity():.4f}");
+    IO.println(f"Viable: {holon.is_viable()}");
+    IO.println(f"κ₀ = {holon.kappa_0():.4f}");
+}
 ```
 
 ## Extended implementation: Consciousness measures
@@ -653,211 +470,141 @@ Levels correspond to n-truncations of the ∞-groupoid $\mathbf{Exp}_\infty$:
 - L4: full ∞-groupoid (unitary consciousness)
 :::
 
-```python
-class HolonExtended(Holon):
-    """
-    Extended implementation with consciousness measures.
+```verum
+/// Interiority levels (n-truncations of the ∞-groupoid Exp_∞).
+pub type Level is
+    | NonViable                         // P ≤ P_crit
+    | L0                                 // basic interiority
+    | L1                                 // phenomenal geometry (Φ > 0)
+    | L2                                 // cognitive qualia (R ≥ 1/3, Φ ≥ 1)
+    | L3                                 // network consciousness (metastable)
+    | L4;                                // unitary consciousness
 
-    Adds to the base Holon class:
-    - Integration measure Φ, reflection R, higher-order reflection R^(n)
-    - Classification of interiority levels L0/L1/L2/L3/L4
-    - Computation of consciousness measure C = Φ · D · R
+/// Integration threshold for L2 (coherences ≥ diagonal).
+pub const PHI_TH: Float = 1.0;
+/// Reflection threshold for L2 — universal formula R^(n)_th = 1/(n+1).
+pub const R_TH:   Float = 1.0 / 3.0;
+/// Second-order reflection threshold for L3.
+pub const R2_TH:  Float = 1.0 / 4.0;
+/// Purity threshold for L4 — see T-124 [T].
+pub const P_L4:   Float = 6.0 / 7.0;
 
-    Base functionality (evolution dΓ/dτ = -i[H,Γ] + D[Γ] + R[Γ,E],
-    bootstrap, viability check) is inherited from Holon.
+/// Extended Holon with consciousness measures Φ, R, R^(n), level classification.
+///
+/// Levels correspond to n-truncations of ∞-groupoid:
+/// L0: τ_≤0, L1: τ_≤1, L2: τ_≤2, L3: τ_≤3, L4: full ∞-groupoid.
+pub type HolonExtended is {
+    base: Holon,
+};
 
-    Levels correspond to n-truncations of the ∞-groupoid:
-    - L0: τ_≤0 (interiority)
-    - L1: τ_≤1 (phenomenal geometry), Φ > 0
-    - L2: τ_≤2 (cognitive qualia), R_th = 1/3, Φ_th = 1
-    - L3: τ_≤3 (network consciousness), R^(2)_th = 1/4, metastable
-    - L4: full ∞-groupoid (unitary consciousness), P > 6/7
-    """
+implement HolonExtended {
+    pub fn new_pure(omega_0: Float) -> HolonExtended {
+        HolonExtended { base: Holon.new_pure(omega_0) }
+    }
 
-    # Thresholds for level classification
-    # R-thresholds: universal formula R^(n)_th = 1/(n+1) from Bayesian dominance
-    # Φ_th = 1: defined by convention (coherent dominance)
-    PHI_TH = 1.0  # Integration threshold for L2 (coherences ≥ diagonal)
-    R_TH = 1/3    # Reflection threshold for L2
-    R2_TH = 1/4   # R^(2) threshold for L3
-    P_L4 = 6/7    # Purity threshold for L4
+    pub fn new_mixed(omega_0: Float) -> HolonExtended {
+        HolonExtended { base: Holon.new_mixed(omega_0) }
+    }
 
-    def compute_integration(self):
-        """
-        Integration measure Φ = Σ|γ_ij|² / Σγ_ii².
+    /// Integration measure Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii².
+    /// Ratio of off-diagonal to diagonal mass — connectivity of dimensions.
+    pub fn integration(&self) -> Float where ensures result >= 0.0 {
+        let g = &self.base.gamma;
+        let diag_sq: Float = (0..7).map(|i| g[i, i].real().pow(2)).sum();
+        let total_sq: Float = g.frobenius_norm_sq();
+        if diag_sq < 1.0e-12 { 0.0 }
+        else { (total_sq - diag_sq) / diag_sq }
+    }
 
-        Measures the degree of connectivity between dimensions.
-        High integration means dimensions are not isolated.
+    /// Reflection measure R = 1 - ‖Γ − φ(Γ)‖² / ‖Γ‖² (T-96 [T]).
+    /// **Approximation [C]**: φ(Γ) ≈ diag(Γ) for E-anchored systems.
+    /// Full version via logical Liouvillian — see /docs/proofs/categorical/formalization-phi.
+    pub fn reflection(&self) -> Float
+        where ensures 0.0 <= result && result <= 1.0
+    {
+        let total_sq = self.base.gamma.frobenius_norm_sq();
+        if total_sq < 1.0e-12 { return 0.0; }
+        let diag_sq: Float = (0..7).map(|i| self.base.gamma[i, i].abs().pow(2)).sum();
+        diag_sq / total_sq
+    }
 
-        Returns:
-            Φ ∈ [0, +∞) — measure of dimension connectivity
-        """
-        diag_sum = np.sum(np.diag(self.Gamma)**2)
-        off_diag_sum = np.sum(np.abs(self.Gamma)**2) - diag_sum
+    /// n-th order reflection R^(n) ≈ R + (1−R)·(1 − exp(−n)).
+    /// Exponential convergence to fixed point — stub for full spectral decomposition.
+    pub fn reflection_n(&self, n: Int) -> Float
+        where requires n >= 0, ensures 0.0 <= result && result <= 1.0
+    {
+        if n < 1 { return 1.0; }
+        let r = self.reflection();
+        let converge = 1.0 - (-n.as_float()).exp();
+        r + (1.0 - r) * converge
+    }
 
-        if diag_sum < 1e-12:
-            return 0.0
-        return off_diag_sum / diag_sum
+    /// Level classification — the central decision function.
+    pub fn classify(&self) -> Level {
+        let p = self.base.purity();
+        if p <= P_CRIT { return Level.NonViable; }
 
-    def compute_reflection(self):
-        """
-        Reflection measure R = 1 - ||Γ - φ(Γ)||² / ||Γ||².
+        let phi = self.integration();
+        let r   = self.reflection();
+        let r2  = self.reflection_n(2);
 
-        Approximate version without the full operator φ.
-        Full implementation requires spectral decomposition of
-        the logical Liouvillian L_Ω — see /docs/proofs/categorical/formalization-phi.
+        match (p > P_L4 && r2 >= R2_TH,
+               r >= R_TH && phi >= PHI_TH && r2 >= R2_TH,
+               r >= R_TH && phi >= PHI_TH,
+               phi > 0.0) {
+            (true,  _,    _,    _)    => Level.L4,
+            (false, true, _,    _)    => Level.L3,
+            (false, false, true, _)   => Level.L2,
+            (false, false, false, true) => Level.L1,
+            _                         => Level.L0,
+        }
+    }
 
-        **Approximation rationale:**
-        φ projects Γ onto the "stable" subsystem, which in the first
-        approximation corresponds to the diagonal part (eigenstates).
-        For E-anchored systems: φ(Γ) ≈ diag(Γ).
+    /// L3 lifetime: τ_3 = 1 / (κ_bootstrap · (1 − R^(2))).
+    /// Returns Float.INFINITY when the state is already stable.
+    pub fn l3_lifetime(&self) -> Float {
+        let r2 = self.reflection_n(2);
+        if r2 >= 1.0 { Float.INFINITY }
+        else { 1.0 / (KAPPA_BOOTSTRAP * (1.0 - r2)) }
+    }
+}
 
-        Consequently:
-        R ≈ ||diag(Γ)||²_F / ||Γ||²_F = Σ|γ_ii|² / Σ|γ_ij|²
-
-        This is the ratio of "occupancies" (diagonal) to the full norm.
-        As R → 1 the state is classical (diagonal).
-        As R < 1 quantum coherences are present.
-
-        Returns:
-            R ∈ [0, 1] — measure of self-reference (approximation)
-        """
-        # Frobenius norm of the full matrix
-        total_norm_sq = np.sum(np.abs(self.Gamma)**2)
-        if total_norm_sq < 1e-12:
-            return 0.0
-
-        # Norm of the diagonal part (stable subsystem)
-        diag_norm_sq = np.sum(np.abs(np.diag(self.Gamma))**2)
-
-        # R = ||diag(Γ)||² / ||Γ||²
-        return float(diag_norm_sq / total_norm_sq)
-
-    def compute_reflection_n(self, n: int = 1):
-        """
-        n-th order reflection R^(n).
-
-        R^(n)(Γ) := Fid(φ^(n-1)(Γ), φ^(n)(Γ))
-
-        where Fid — fidelity, φ^(k) — k-fold application of φ.
-
-        **Approximation rationale:**
-        φ projects Γ onto the stable part (≈ diagonal).
-        Under iteration: φ^(n)(Γ) → diag(Γ) exponentially fast.
-        Consequently: R^(n) → 1 as n → ∞ for stable systems.
-
-        Model: R^(n) ≈ 1 - (1-R)·exp(-n/τ_conv), where τ_conv = 1.
-        This means: R^(n) = R + (1-R)·(1 - e^{-n}).
-
-        For n=1: R^(1) = R
-        For n→∞: R^(n) → 1 (convergence to fixed point)
-
-        Full implementation — see /docs/proofs/categorical/formalization-phi#рефлексия-n-го-порядка.
-
-        Args:
-            n: Reflection order (1, 2, 3, ...)
-
-        Returns:
-            R^(n) ∈ [0, 1]
-        """
-        if n < 1:
-            return 1.0
-
-        R = self.compute_reflection()
-        # Model: exponential convergence to 1
-        # R^(n) = R + (1-R)·(1 - exp(-n))
-        # For n=1: R^(1) ≈ R + 0.632·(1-R)
-        # For n→∞: R^(n) → 1
-        convergence_factor = 1.0 - np.exp(-n)
-        return R + (1.0 - R) * convergence_factor
-
-    def classify_level(self):
-        """
-        Classification of interiority level: L0, L1, L2, L3, L4.
-
-        Levels correspond to n-truncations of the ∞-groupoid Exp_∞:
-            - non-viable: P ≤ P_crit (system is not viable)
-            - L0: P > P_crit, τ_≤0 (basic interiority)
-            - L1: L0 + Φ ≥ Φ_th, τ_≤1 (phenomenal geometry)
-            - L2: L1 + R ≥ R_th, τ_≤2 (cognitive qualia)
-            - L3: L2 + R^(2) ≥ R2_th, τ_≤3 (network consciousness, METASTABLE)
-            - L4: L3 + P > 6/7, full ∞-groupoid (unitary consciousness)
-
-        Universal threshold formula: X^(n)_th = 1/(n+1)
-
-        Returns:
-            String: "L0", "L1", "L2", "L3", "L4", or "non-viable"
-        """
-        P = self.compute_purity()
-
-        if P <= self.P_CRIT:
-            return "non-viable"
-
-        Phi = self.compute_integration()
-        R = self.compute_reflection()
-        R2 = self.compute_reflection_n(2)
-
-        # L4: Unitary consciousness (maximum level)
-        if P > self.P_L4 and R2 >= self.R2_TH:
-            return "L4"
-
-        # L3: Network consciousness (metastable!)
-        if R >= self.R_TH and Phi >= self.PHI_TH and R2 >= self.R2_TH:
-            return "L3"
-
-        # L2: Cognitive qualia (R ≥ 1/3, Φ ≥ 1)
-        if R >= self.R_TH and Phi >= self.PHI_TH:
-            return "L2"
-
-        # L1: Phenomenal geometry (Φ > 0, i.e. any integration)
-        if Phi > 0:
-            return "L1"
-
-        # L0: Basic interiority (Γ ≠ I/7)
-        return "L0"
-
-    def compute_l3_lifetime(self):
-        """
-        Lifetime of L3 (network consciousness).
-
-        τ_3 = 1 / (κ_bootstrap · (1 - R^(2)))
-
-        L3 is metastable: without active maintenance it decays over time τ_3.
-
-        Returns:
-            τ_3 — characteristic decay time of L3
-        """
-        R2 = self.compute_reflection_n(2)
-        if R2 >= 1.0:
-            return float('inf')  # Stable state
-        return 1.0 / (self.KAPPA_BOOTSTRAP * (1 - R2))
+// Delegate base Holon operations via the standard Deref protocol.
+implement Deref for HolonExtended {
+    type Target = Holon;
+    fn deref(&self) -> &Holon { &self.base }
+}
+implement DerefMut for HolonExtended {
+    fn deref_mut(&mut self) -> &mut Holon { &mut self.base }
+}
 ```
 
 ### Classification example
 
-```python
-# Creating and evolving a Holon
-holon = HolonExtended(pure=True)
-holon.set_target_state()
+```verum
+fn demo_classification() using [IO] {
+    let mut holon = HolonExtended.new_pure(1.0);
+    holon.set_target(Maybe.None);
 
-print(f"Initial level: {holon.classify_level()}")
+    IO.println(f"Initial level: {holon.classify()}");
 
-# Evolution in various modes
-for t in range(500):
-    holon.evolve(dtau=0.01, delta_F=0.3)
+    for t in 0..500 {
+        holon.evolve(0.01, 0.3);
 
-    if t % 100 == 0:
-        level = holon.classify_level()
-        P = holon.compute_purity()
-        Phi = holon.compute_integration()
-        R = holon.compute_reflection()
-        R2 = holon.compute_reflection_n(2)
-        print(f"t={t}: P={P:.4f}, Φ={Phi:.4f}, R={R:.4f}, R²={R2:.4f}, level={level}")
+        if t % 100 == 0 {
+            let level = holon.classify();
+            IO.println(f"t={t}: P={holon.purity():.4f}, \
+                        Φ={holon.integration():.4f}, \
+                        R={holon.reflection():.4f}, \
+                        R²={holon.reflection_n(2):.4f}, \
+                        level={level}");
 
-        # For L3: show lifetime
-        if level == "L3":
-            tau3 = holon.compute_l3_lifetime()
-            print(f"       τ_3 (L3 lifetime) = {tau3:.2f}")
+            if level is Level.L3 {
+                IO.println(f"       τ_3 (L3 lifetime) = {holon.l3_lifetime():.2f}");
+            }
+        }
+    }
+}
 ```
 
 :::danger Extended implementation limitations — L2/L3/L4 unreliable
@@ -883,258 +630,195 @@ The following algorithms implement constructions **derived** from the [subobject
 
 ### Characteristic morphism χ_S
 
-```python
-def characteristic_morphism(Gamma: np.ndarray, S: np.ndarray) -> np.ndarray:
-    """
-    Computation of χ_S: Γ → Ω for subobject S ↪ Γ.
+```verum
+/// A projector S on C^7: S² = S, S† = S.
+pub type Projector is Matrix<Complex, 7, 7>
+    where is_hermitian(self) && (self @ self - self).frobenius_norm() < 1.0e-10;
 
-    The characteristic morphism defines the "degree of membership"
-    of state Γ in the logically admissible subspace S.
-
-    Categorical definition:
-        χ_S = S @ Gamma @ S — restriction to subobject
-
-    Args:
-        Gamma: Coherence matrix [7, 7], Hermitian, PSD, Tr=1
-        S: Subobject projector [7, 7], S² = S, S† = S
-
-    Returns:
-        chi_S: Characteristic matrix [7, 7]
-
-    Raises:
-        AssertionError: if S is not a projector
-    """
-    # Check: S is a projector
-    assert np.allclose(S @ S, S, atol=1e-10), "S must be idempotent (S² = S)"
-    assert np.allclose(S, S.conj().T, atol=1e-10), "S must be Hermitian (S† = S)"
-
-    # Compute characteristic morphism
-    chi_S = S @ Gamma @ S
-
-    # Normalisation (if trace is non-zero)
-    trace = np.trace(chi_S)
-    if np.abs(trace) > 1e-12:
-        chi_S = chi_S / trace
-
-    return chi_S
+/// Characteristic morphism χ_S: Γ → Ω for the subobject S ↪ Γ.
+///
+/// χ_S(Γ) = S Γ S — restriction of Γ to the subobject, normalised.
+/// Measures the "degree of membership" of Γ in the admissible subspace S.
+pub pure fn characteristic_morphism(gamma: &CoherenceMatrix, s: &Projector)
+    -> Matrix<Complex, 7, 7>
+    where ensures is_hermitian(result)
+{
+    let chi = s @ gamma @ s;
+    let tr = chi.trace();
+    if tr.abs() > 1.0e-12 { &chi / tr } else { chi }
+}
 ```
 
 ### Temporal modality ▷
 
-```python
-def temporal_modality(omega_state: np.ndarray) -> np.ndarray:
-    """
-    Application of temporal modality ▷: Ω → Ω.
+```verum
+mount std.math.linalg.{StaticMatrix, identity};
+mount std.math.complex.Complex;
 
-    ▷ — the "later" operator, generating discrete time τ ∈ ℤ₇.
+/// Temporal modality ▷: Ω → Ω.
+/// "Later" operator generating discrete time τ ∈ ℤ₇: τ_n = ▷ⁿ(now).
+/// Implementation: cyclic shift V in the clock basis |k⟩ → |k+1 mod 7⟩,
+/// applied as ▷(ρ) = V ρ V†.
+pub pure fn temporal_modality(omega: &StaticMatrix<Complex, 7, 7>)
+    -> StaticMatrix<Complex, 7, 7>
+{
+    let v = cyclic_shift_7();
+    &v @ omega @ v.adjoint()
+}
 
-    Definition:
-        τ_n = ▷^n(now), where now = τ_0
+/// Clock-basis cyclic shift: V_{i,j} = δ_{i, (j+1) mod 7}.
+pure fn cyclic_shift_7() -> StaticMatrix<Complex, 7, 7> {
+    let mut v = StaticMatrix.<Complex, 7, 7>.zeros();
+    for j in 0..7 { v[(j + 1) % 7, j] = Complex.one(); }
+    v
+}
 
-    Implementation:
-        ▷ = cyclic shift in the clock basis |k⟩ → |k+1 mod 7⟩
-
-    Args:
-        omega_state: State in the classifier Ω [7, 7]
-
-    Returns:
-        Shifted state ▷(omega_state)
-    """
-    # Cyclic shift matrix
-    V_shift = np.roll(np.eye(7), 1, axis=0)
-
-    # Application: ▷(ρ) = V · ρ · V†
-    return V_shift @ omega_state @ V_shift.conj().T
-
-
-def time_sequence(initial_state: np.ndarray, n_steps: int = 7) -> list:
-    """
-    Generation of time sequence τ_0, τ_1, ..., τ_{n-1}.
-
-    Args:
-        initial_state: Initial state (now = τ_0)
-        n_steps: Number of steps (default 7 = full cycle)
-
-    Returns:
-        List of states [τ_0, τ_1, ..., τ_{n-1}]
-    """
-    states = [initial_state]
-    current = initial_state
-
-    for _ in range(n_steps - 1):
-        current = temporal_modality(current)
-        states.append(current)
-
-    return states
+/// Time sequence [τ_0, τ_1, …, τ_{n-1}] by iterated ▷.
+pub pure fn time_sequence(initial: &StaticMatrix<Complex, 7, 7>, n_steps: Int { self > 0 })
+    -> [StaticMatrix<Complex, 7, 7>]
+{
+    let mut out = [initial.clone()];
+    for _ in 1..n_steps {
+        out.push(temporal_modality(out.last().unwrap()));
+    }
+    out
+}
 ```
 
 ### Lindblad operators L_k from Ω
 
-```python
-def compute_lindblad_from_omega(Gamma: np.ndarray) -> list:
-    """
-    Derivation of Lindblad operators L_k from the subobject classifier Ω.
+```verum
+mount std.math.linalg.{StaticMatrix, eigh, matrix_sqrt, identity};
 
-    Categorical definition (L-unification):
-        L_k = √χ_{S_k}
+/// Derive 7 Lindblad operators L_k = √χ_{S_k} from the atoms of Ω
+/// (L-unification, T-82 [T]). Atoms are basis projectors S_k = |k⟩⟨k|.
+///
+/// **CPTP completeness**: Σ_k L_k† L_k = I — holds automatically for basis
+/// projectors. This guarantees trace and positivity preservation, but **not**
+/// viability: a CPTP channel may map P > P_crit → P < P_crit.
+pub pure fn compute_lindblad_from_omega(gamma: &CoherenceMatrix)
+    -> [StaticMatrix<Complex, 7, 7>; 7]
+{
+    (0..7).map(|k| {
+        // Atom projector S_k = |k⟩⟨k|.
+        let mut s_k = StaticMatrix.<Complex, 7, 7>.zeros();
+        s_k[k, k] = Complex.one();
 
-    where S_k — k-th atom (minimal subobject) of classifier Ω.
+        // χ_k = characteristic morphism of S_k on Γ.
+        let chi_k = characteristic_morphism(gamma, &s_k);
 
-    For the minimal 7D formalism atoms = projectors onto basis states:
-        S_k = |k⟩⟨k|, k ∈ {A, S, D, L, E, O, U}
+        // L_k = √χ_k via Hermitian PSD matrix square root.
+        matrix_sqrt_psd(&chi_k)
+    }).to_array()
+}
 
-    Args:
-        Gamma: Coherence matrix [7, 7]
+/// PSD matrix square root via spectral decomposition (eigenvalues clamped ≥ 0).
+pure fn matrix_sqrt_psd(m: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7>
+    where requires is_hermitian(m)
+{
+    let (eigvals, eigvecs) = eigh(m);
+    let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
+    &eigvecs @ StaticMatrix.<Complex, 7, 7>.diagonal(sqrt_eigs) @ eigvecs.adjoint()
+}
 
-    Returns:
-        L_operators: List of 7 Lindblad operators
-
-    Property (CPTP condition):
-        Σ_k L_k† L_k = 1 — holds for basis projectors S_k = |k⟩⟨k|.
-
-    IMPORTANT: CPTP channels in general do NOT preserve purity or viability.
-    A CPTP channel may map a viable state (P > P_crit) to a non-viable one.
-    Automatic satisfaction of the completeness condition (Σ L_k† L_k = 1) only
-    guarantees preservation of trace and positivity, but not P > P_crit.
-    """
-    L_operators = []
-
-    # Classifier atoms = basis projectors
-    for k in range(7):
-        # Projector onto k-th dimension
-        S_k = np.zeros((7, 7), dtype=complex)
-        S_k[k, k] = 1.0
-
-        # Characteristic morphism
-        chi_k = characteristic_morphism(Gamma, S_k)
-
-        # Matrix square root (for Hermitian PSD matrix)
-        eigvals, eigvecs = np.linalg.eigh(chi_k)
-        sqrt_eigvals = np.sqrt(np.maximum(eigvals, 0))
-        L_k = eigvecs @ np.diag(sqrt_eigvals) @ eigvecs.conj().T
-
-        L_operators.append(L_k)
-
-    return L_operators
-
-
-def verify_cptp_condition(L_operators: list) -> bool:
-    """
-    Verification of CPTP condition: Σ_k L_k† L_k = 1.
-
-    Returns:
-        True if condition is satisfied to within 1e-10
-    """
-    total = sum(L.conj().T @ L for L in L_operators)
-    return np.allclose(total, np.eye(7), atol=1e-10)
+/// Verify the CPTP completeness condition Σ_k L_k† L_k = I (tol = 1e-10).
+pub pure fn verify_cptp_condition(ops: &[StaticMatrix<Complex, 7, 7>; 7]) -> Bool {
+    let total = ops.iter().fold(
+        StaticMatrix.<Complex, 7, 7>.zeros(),
+        |acc, l| acc + (l.adjoint() @ l),
+    );
+    (total - identity::<Complex, 7>()).frobenius_norm() < 1.0e-10
+}
 ```
 
 ### Self-modelling operator φ via ℒ_Ω
 
-```python
-def logical_liouvillian(Gamma: np.ndarray, H: np.ndarray,
-                         gamma_rates: np.ndarray = None) -> np.ndarray:
-    """
-    Computation of the logical Liouvillian ℒ_Ω[Γ].
+```verum
+/// Logical Liouvillian ℒ_Ω[Γ] = -i[H, Γ] + Σ_k γ_k (L_k Γ L_k† − ½{L_k†L_k, Γ}).
+/// L_k derived from classifier Ω atoms (L-unification, T-82).
+pub pure fn logical_liouvillian(
+    gamma: &CoherenceMatrix,
+    h:     &StaticMatrix<Complex, 7, 7>,
+    rates: Maybe<StaticVector<Float, 7>>,
+) -> StaticMatrix<Complex, 7, 7>
+    where requires is_hermitian(h)
+{
+    let r = rates.unwrap_or(StaticVector.<Float, 7>.filled(0.01));
 
-    ℒ_Ω[Γ] = -i[H, Γ] + Σ_k γ_k (L_k Γ L_k† - ½{L_k†L_k, Γ})
+    // Unitary part: -i[H, Γ].
+    let unitary = Complex.i().neg() * (h @ gamma - gamma @ h);
 
-    where L_k = √χ_{S_k} — derived from classifier Ω.
+    // Dissipative part: D_Ω[Γ] via L-unified operators.
+    let ops = compute_lindblad_from_omega(gamma);
+    let dissipator = ops.iter().enumerate().fold(
+        StaticMatrix.<Complex, 7, 7>.zeros(),
+        |acc, (k, l_k)| {
+            let l_dag = l_k.adjoint();
+            let term =
+                  (l_k   @ gamma  @ &l_dag)
+                - (&l_dag @ l_k  @ gamma) * Complex.from_real(0.5)
+                - (gamma @ &l_dag @ l_k) * Complex.from_real(0.5);
+            acc + term * Complex.from_real(r[k])
+        },
+    );
 
-    Args:
-        Gamma: Coherence matrix [7, 7]
-        H: Hamiltonian [7, 7]
-        gamma_rates: Decoherence rates [7] (equal by default)
+    unitary + dissipator
+}
 
-    Returns:
-        ℒ_Ω[Γ]: Derivative of the coherence matrix
-    """
-    if gamma_rates is None:
-        gamma_rates = np.ones(7) * 0.01  # Typical rate
+/// Stationary self-model: φ(Γ) = lim_{τ→∞} exp(τ ℒ_Ω)[Γ] (T-96 [T]).
+/// Finite-τ approximation: orbit average over period τ.
+pub pure fn phi_from_liouvillian(
+    gamma:       &CoherenceMatrix,
+    h:           &StaticMatrix<Complex, 7, 7>,
+    tau_period:  Float { self > 0.0 },
+    dtau:        Float { 0.0 < self && self <= 0.1 },
+) -> CoherenceMatrix
+{
+    let n_steps = (tau_period / dtau) as Int;
+    let mut trajectory = [gamma.clone()];
+    let mut current = gamma.clone();
 
-    # 1. Unitary part: -i[H, Γ]
-    unitary = -1j * (H @ Gamma - Gamma @ H)
+    for _ in 0..n_steps {
+        let d = logical_liouvillian(&current, h, Maybe.None);
+        current = &current + d * Complex.from_real(dtau);
+        current = &current / current.trace();        // renormalise
+        trajectory.push(current.clone());
+    }
 
-    # 2. Dissipative part: D_Ω[Γ]
-    L_operators = compute_lindblad_from_omega(Gamma)
-    dissipator = np.zeros_like(Gamma)
-
-    for k, L_k in enumerate(L_operators):
-        L_dag = L_k.conj().T
-        dissipator += gamma_rates[k] * (
-            L_k @ Gamma @ L_dag
-            - 0.5 * (L_dag @ L_k @ Gamma + Gamma @ L_dag @ L_k)
-        )
-
-    return unitary + dissipator
-
-
-def phi_from_liouvillian(Gamma: np.ndarray, H: np.ndarray,
-                          tau_period: int = 7, dtau: float = 0.1) -> np.ndarray:
-    """
-    Computation of φ(Γ) as the stationary distribution of ℒ_Ω.
-
-    Theorem:
-        φ(Γ) = lim_{τ→∞} e^{τ·ℒ_Ω}[Γ]
-
-    For finite τ-period:
-        φ(Γ) ≈ average over orbit during period τ
-
-    Args:
-        Gamma: Coherence matrix [7, 7]
-        H: Hamiltonian [7, 7]
-        tau_period: Time period (default 7 = full ℤ₇ cycle)
-        dtau: Integration step (internal time τ)
-
-    Returns:
-        φ(Γ): Self-model — stationary state
-    """
-    trajectory = [Gamma]
-    current = Gamma.copy()
-
-    n_steps = int(tau_period / dtau)
-
-    for _ in range(n_steps):
-        # Evolution one step: Γ_{τ+dτ} = Γ_τ + dτ · ℒ_Ω[Γ_τ]
-        L_Omega = logical_liouvillian(current, H)
-        current = current + dtau * L_Omega
-
-        # Normalisation for numerical stability
-        current = current / np.trace(current)
-
-        trajectory.append(current)
-
-    # φ = average over orbit (stationary distribution)
-    phi_Gamma = np.mean(trajectory, axis=0)
-
-    # Normalise output
-    phi_Gamma = phi_Gamma / np.trace(phi_Gamma)
-
-    return phi_Gamma
+    // Orbit average.
+    let mut acc = StaticMatrix.<Complex, 7, 7>.zeros();
+    for m in &trajectory { acc = acc + m; }
+    let avg = &acc / Complex.from_real(trajectory.len().as_float());
+    &avg / avg.trace()
+}
 ```
 
 ### Example: Full L-unification
 
-```python
-# Demonstration of categorical derivation
-Gamma = Holon(pure=True).Gamma
-H = Holon()._build_hamiltonian()
+```verum
+fn demo_l_unification() using [IO] {
+    let holon = Holon.new_pure(1.0);
+    let gamma = &holon.gamma;
+    let h     = holon.H;
 
-# 1. Derive L_k from Ω
-L_operators = compute_lindblad_from_omega(Gamma)
-print(f"CPTP condition: {verify_cptp_condition(L_operators)}")  # True
+    // 1. Derive L_k from Ω.
+    let ops = compute_lindblad_from_omega(gamma);
+    IO.println(f"CPTP condition: {verify_cptp_condition(&ops)}");   // true
 
-# 2. Compute ℒ_Ω
-L_Omega = logical_liouvillian(Gamma, H)
-print(f"||ℒ_Ω[Γ]||_F = {np.linalg.norm(L_Omega):.4f}")
+    // 2. Compute ℒ_Ω.
+    let l_omega = logical_liouvillian(gamma, &h, Maybe.None);
+    IO.println(f"‖ℒ_Ω[Γ]‖_F = {l_omega.frobenius_norm():.4f}");
 
-# 3. Find φ(Γ)
-phi_Gamma = phi_from_liouvillian(Gamma, H)
-print(f"P(φ(Γ)) = {np.real(np.trace(phi_Gamma @ phi_Gamma)):.4f}")
+    // 3. Find φ(Γ) — stationary self-model.
+    let phi_gamma = phi_from_liouvillian(gamma, &h, 7.0, 0.1);
+    let p_phi = (phi_gamma @ phi_gamma).trace().real();
+    IO.println(f"P(φ(Γ)) = {p_phi:.4f}");
 
-# 4. Check convergence
-R = 1 - np.linalg.norm(Gamma - phi_Gamma)**2 / np.linalg.norm(Gamma)**2
-print(f"R(Γ) = {R:.4f}")  # Reflection measure
+    // 4. Reflection measure: R = 1 − ‖Γ − φ(Γ)‖² / ‖Γ‖².
+    let diff = gamma - phi_gamma;
+    let r = 1.0 - diff.frobenius_norm_sq() / gamma.frobenius_norm_sq();
+    IO.println(f"R(Γ) = {r:.4f}");
+}
 ```
 
 ## Grothendieck topology algorithms {#алгоритмы-топологии}
@@ -1145,322 +829,244 @@ The following algorithms implement the [Grothendieck topology](/docs/core/founda
 
 ### Bures metric
 
-```python
-from scipy.linalg import sqrtm
+```verum
+mount std.math.constants.{UnitInterval, NonNegative};
 
-def bures_distance(rho: np.ndarray, sigma: np.ndarray) -> float:
-    """
-    Computation of the Bures metric between density matrices (chord form).
+/// Bures fidelity F(ρ, σ) = (Tr √(√ρ σ √ρ))² ∈ [0, 1].
+pub pure fn bures_fidelity<const N: Int>(
+    rho:   &StaticMatrix<Complex, N, N>,
+    sigma: &StaticMatrix<Complex, N, N>,
+) -> UnitInterval
+{
+    let sqrt_rho   = matrix_sqrt_psd_n::<N>(rho);
+    let inner      = &sqrt_rho @ sigma @ sqrt_rho;
+    let sqrt_inner = matrix_sqrt_psd_n::<N>(&inner);
+    let fid = sqrt_inner.trace().real().pow(2);
+    fid.clamp(0.0, 1.0)
+}
 
-    Definition (chord form):
-        d_B^chord(ρ, σ) = √(2(1 - √F(ρ, σ)))
+/// Bures metric (chord form): d_B^chord(ρ, σ) = √(2(1 − √F(ρ, σ))) ∈ [0, √2].
+/// Monotone under CPTP maps; Riemannian metric on density-matrix manifold.
+pub pure fn bures_distance<const N: Int>(
+    rho:   &StaticMatrix<Complex, N, N>,
+    sigma: &StaticMatrix<Complex, N, N>,
+) -> NonNegative
+    where ensures result <= std.math.SQRT2
+{
+    let f = bures_fidelity(rho, sigma);
+    (2.0 * (1.0 - f.sqrt())).sqrt()
+}
 
-    where F(ρ, σ) = (Tr√(√ρ σ √ρ))² — fidelity.
-
-    Note: angular form d_B^angle = arccos(√F). See docs/reference/notation.
-
-    Properties:
-        - d_B^chord ∈ [0, √2]
-        - Monotonicity: d_B(Φ(ρ), Φ(σ)) ≤ d_B(ρ, σ) for CPTP Φ
-        - Riemannian metric on the manifold of density matrices
-
-    Args:
-        rho: First density matrix [N, N]
-        sigma: Second density matrix [N, N]
-
-    Returns:
-        Bures distance d_B(ρ, σ) ∈ [0, √2]
-    """
-    # Compute √ρ
-    sqrt_rho = sqrtm(rho)
-
-    # Compute √ρ σ √ρ
-    inner = sqrt_rho @ sigma @ sqrt_rho
-
-    # Compute fidelity F = (Tr√inner)²
-    sqrt_inner = sqrtm(inner)
-    fidelity = np.real(np.trace(sqrt_inner)) ** 2
-
-    # Clip fidelity to [0, 1] for numerical stability
-    fidelity = np.clip(fidelity, 0.0, 1.0)
-
-    # Bures metric
-    return np.sqrt(2 * (1 - np.sqrt(fidelity)))
-
-
-def bures_fidelity(rho: np.ndarray, sigma: np.ndarray) -> float:
-    """
-    Computation of fidelity between density matrices.
-
-    F(ρ, σ) = (Tr√(√ρ σ √ρ))²
-
-    Args:
-        rho, sigma: Density matrices [N, N]
-
-    Returns:
-        Fidelity F ∈ [0, 1]
-    """
-    sqrt_rho = sqrtm(rho)
-    inner = sqrt_rho @ sigma @ sqrt_rho
-    sqrt_inner = sqrtm(inner)
-    fidelity = np.real(np.trace(sqrt_inner)) ** 2
-    return np.clip(fidelity, 0.0, 1.0)
+/// Generic PSD sqrt (T-agnostic in N).
+pure fn matrix_sqrt_psd_n<const N: Int>(m: &StaticMatrix<Complex, N, N>)
+    -> StaticMatrix<Complex, N, N>
+    where requires is_hermitian(m)
+{
+    let (eigvals, eigvecs) = eigh(m);
+    let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
+    &eigvecs @ StaticMatrix.<Complex, N, N>.diagonal(sqrt_eigs) @ eigvecs.adjoint()
+}
 ```
 
 ### Bures coverings
 
-```python
-def generate_ball_samples(
-    Gamma: np.ndarray,
-    radius: float,
-    n_samples: int = 50
-) -> list:
-    """
-    Generation of random points in the Bures ball B_B(Γ, r).
+```verum
+mount std.math.random.{Rng, XorShift128};
 
-    Args:
-        Gamma: Ball centre — density matrix [N, N]
-        radius: Ball radius in the Bures metric
-        n_samples: Number of points
+/// A CPTP channel as an abstract first-class function.
+pub type CptpChannel<const N: Int> = pure fn(&StaticMatrix<Complex, N, N>)
+    -> StaticMatrix<Complex, N, N>;
 
-    Returns:
-        List of density matrices in the ball B_B(Γ, r)
-    """
-    samples = []
-    N = Gamma.shape[0]
+/// Sample points inside the Bures ball B_B(Γ, r).
+/// Rejection-sampling of Hermitian perturbations, projected to the density-matrix manifold.
+pub fn generate_ball_samples<const N: Int>(
+    gamma:     &StaticMatrix<Complex, N, N>,
+    radius:    Float { self > 0.0 },
+    n_samples: Int   { self > 0    },
+) -> List<StaticMatrix<Complex, N, N>>
+    using [Random]
+    where ensures result.len() <= n_samples
+{
+    let mut rng     = XorShift128.seed(Random.next_key());
+    let mut samples = List.new();
 
-    for _ in range(n_samples * 10):  # Sample with excess
-        # Random Hermitian perturbation
-        perturbation = np.random.randn(N, N) + 1j * np.random.randn(N, N)
-        perturbation = (perturbation + perturbation.conj().T) / 2
-        perturbation = perturbation / np.linalg.norm(perturbation) * radius * 0.5
+    for _ in 0..(n_samples * 10) {
+        // Random Hermitian perturbation, scaled to ~radius/2.
+        let raw = StaticMatrix.<Complex, N, N>.random_gaussian(&mut rng);
+        let pert_hermitian = (&raw + raw.adjoint()) / Complex.from_real(2.0);
+        let pert = &pert_hermitian
+            * Complex.from_real(radius * 0.5 / pert_hermitian.frobenius_norm());
 
-        # Perturbed state
-        sigma = Gamma + perturbation
+        // Project to density-matrix manifold: Hermitise, clamp eigenvalues ≥ 0, renormalise.
+        let perturbed = gamma + pert;
+        let sigma = project_to_density_matrix(&perturbed);
 
-        # Projection onto the space of density matrices
-        sigma = (sigma + sigma.conj().T) / 2  # Hermiticity
-        eigenvalues, eigenvectors = np.linalg.eigh(sigma)
-        eigenvalues = np.maximum(eigenvalues, 0)  # Positivity
-        eigenvalues = eigenvalues / np.sum(eigenvalues)  # Normalisation
-        sigma = eigenvectors @ np.diag(eigenvalues) @ eigenvectors.conj().T
+        if bures_distance(gamma, &sigma) < radius {
+            samples.push(sigma);
+            if samples.len() >= n_samples { break; }
+        }
+    }
+    samples
+}
 
-        # Check: is it inside the ball?
-        if bures_distance(Gamma, sigma) < radius:
-            samples.append(sigma)
-            if len(samples) >= n_samples:
-                break
+/// Project an arbitrary Hermitian matrix onto the density-matrix manifold.
+pure fn project_to_density_matrix<const N: Int>(m: &StaticMatrix<Complex, N, N>)
+    -> StaticMatrix<Complex, N, N>
+{
+    let herm = (m + m.adjoint()) / Complex.from_real(2.0);
+    let (eigvals, eigvecs) = eigh(&herm);
+    let clamped = eigvals.map(|v| v.max(0.0));
+    let total:   Float = clamped.iter().sum();
+    let norm_eigs = clamped.map(|v| v / total);
+    &eigvecs @ StaticMatrix.<Complex, N, N>.diagonal(norm_eigs) @ eigvecs.adjoint()
+}
 
-    return samples
+/// Check whether a family {(Γᵢ, Φᵢ)} of CPTP channels is a **Bures covering** of Γ:
+/// B_B(Γ, δ) ⊆ ⋃ᵢ Φᵢ(B_B(Γᵢ, ε)).
+pub fn is_bures_covering<const N: Int>(
+    gamma:         &StaticMatrix<Complex, N, N>,
+    channels:      &[(StaticMatrix<Complex, N, N>, CptpChannel<N>)],
+    epsilon:       Float { self > 0.0 },
+    delta:         Float { self > 0.0 },
+    n_test_points: Int   { self > 0   },
+) -> Bool using [Random]
+{
+    let test_points = generate_ball_samples(gamma, delta, n_test_points);
 
-
-def is_bures_covering(
-    Gamma: np.ndarray,
-    channels: list,  # List of (Gamma_i, Phi_i) tuples
-    epsilon: float = 0.1,
-    delta: float = 0.05,
-    n_test_points: int = 100
-) -> bool:
-    """
-    Check: does a family of CPTP channels form a Bures covering?
-
-    The covering holds if:
-        B_B(Γ, δ) ⊆ ⋃ᵢ Φᵢ(B_B(Γᵢ, ε))
-
-    Args:
-        Gamma: Target object [N, N]
-        channels: List of tuples (Gamma_i, Phi_i), where Phi_i is a CPTP function
-        epsilon: Radius of source balls
-        delta: Radius of target ball
-        n_test_points: Number of test points
-
-    Returns:
-        True if the family forms a covering
-    """
-    # Generate points in B_B(Gamma, delta)
-    test_points = generate_ball_samples(Gamma, delta, n_test_points)
-
-    for sigma in test_points:
-        covered = False
-        for Gamma_i, Phi_i in channels:
-            # Check reachability via channel
-            # ∃ρ ∈ B_B(Γᵢ, ε): Φᵢ(ρ) ≈ σ
-            source_points = generate_ball_samples(Gamma_i, epsilon, 20)
-            for source in source_points:
-                image = Phi_i(source)
-                if bures_distance(image, sigma) < delta / 2:
-                    covered = True
-                    break
-            if covered:
-                break
-
-        if not covered:
-            return False
-
-    return True
+    test_points.iter().all(|sigma| {
+        channels.iter().any(|(gamma_i, phi_i)| {
+            let sources = generate_ball_samples(gamma_i, epsilon, 20);
+            sources.iter().any(|src| bures_distance(&phi_i(src), sigma) < delta / 2.0)
+        })
+    })
+}
 ```
 
 ### Atomic coverings and the Ω classifier
 
-```python
-class OmegaClassifier:
-    """
-    Subobject classifier Ω for the category DensityMat.
+```verum
+/// Subobject classifier Ω for the category **DensityMat**.
+///
+/// Categorical definition:
+/// `Ω := O(C, d_B)` — lattice of open sets in the Bures topology.
+/// For UHM with N = 7 dimensions, |Ω| = 7 atoms (one per dimension A, S, D, L, E, O, U).
+pub type OmegaClassifier is {
+    atoms: [StaticMatrix<Complex, 7, 7>; 7],
+};
 
-    Categorical definition:
-        Ω := O(C, d_B) — lattice of open sets in the Bures topology
+/// Label map: atom index ↔ dimension name.
+pub const DIMENSION_NAMES: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
 
-    For UHM with N = 7 dimensions:
-        |Ω| = 7 atoms corresponding to dimensions A, S, D, L, E, O, U
-    """
+implement OmegaClassifier {
+    pub fn new() -> OmegaClassifier {
+        let atoms = (0..7).map(|k| {
+            let mut s_k = StaticMatrix.<Complex, 7, 7>.zeros();
+            s_k[k, k] = Complex.one();             // |k⟩⟨k|
+            s_k
+        }).to_array();
+        OmegaClassifier { atoms: atoms }
+    }
 
-    DIMENSIONS = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
+    /// Characteristic morphism χ_{S_k}: Γ → Ω.
+    /// For projector S_k = |k⟩⟨k|: χ_S(Γ) = √F(Γ, S) = √γ_kk ∈ [0, 1].
+    pub fn chi(&self, gamma: &CoherenceMatrix, d: Dim) -> UnitInterval {
+        let s_k = &self.atoms[index(d)];
+        let fid = (s_k @ gamma).trace().real().clamp(0.0, 1.0);
+        fid.sqrt()
+    }
 
-    def __init__(self, dimension: int = 7):
-        self.N = dimension
-        self.atoms = self._construct_atoms()
+    /// Lindblad operator L_k := √χ_{S_k} derived from classifier atom k.
+    pub pure fn lindblad_operator(&self, d: Dim) -> StaticMatrix<Complex, 7, 7> {
+        matrix_sqrt_psd(&self.atoms[index(d)])
+    }
 
-    def _construct_atoms(self) -> dict:
-        """
-        Construction of classifier atoms.
+    /// All 7 Lindblad operators (one per dimension).
+    pub pure fn all_lindblad_operators(&self) -> [StaticMatrix<Complex, 7, 7>; 7] {
+        (0..7).map(|k| self.lindblad_operator(Dim.from_index(k))).to_array()
+    }
 
-        Atom S_k = |k⟩⟨k| — projector onto k-th basis state.
-        """
-        atoms = {}
-        for k, name in enumerate(self.DIMENSIONS[:self.N]):
-            basis = np.zeros(self.N, dtype=complex)
-            basis[k] = 1.0
-            atoms[name] = np.outer(basis, basis.conj())
-        return atoms
+    /// Verify Σ_k L_k† L_k = I (CPTP completeness, tol = 1e-10).
+    /// For basis projectors this follows from partition of unity.
+    pub pure fn verify_cptp(&self) -> Bool {
+        verify_cptp_condition(&self.all_lindblad_operators())
+    }
 
-    def chi(self, Gamma: np.ndarray, dimension: str) -> float:
-        """
-        Characteristic morphism χ_{S_k}: Γ → Ω.
+    /// Atomic covering: list of (atom, projection-channel) with non-zero weight.
+    ///
+    /// **Theorem**: For Γ with P(Γ) > P_crit = 2/7 a full covering exists
+    /// (all 7 atoms carry non-zero weight).
+    pub pure fn atomic_covering(&self, gamma: &CoherenceMatrix)
+        -> List<(StaticMatrix<Complex, 7, 7>, CptpChannel<7>)>
+    {
+        let mut out = List.new();
+        for k in 0..7 {
+            let s_k = &self.atoms[k];
+            let weight = (s_k @ gamma).trace().real();
+            if weight > 1.0e-10 {
+                let proj = s_k.clone();
+                let channel: CptpChannel<7> = move |rho| {
+                    let result = &proj @ rho @ &proj;
+                    let tr = result.trace();
+                    if tr.abs() > 1.0e-12 { &result / tr } else { result }
+                };
+                out.push((s_k.clone(), channel));
+            }
+        }
+        out
+    }
+}
 
-        Computes the "degree of membership" of Γ in the k-th atom.
+impl Dim {
+    pub pure fn from_index(k: Int) -> Dim
+        where requires 0 <= k && k <= 6
+    {
+        match k {
+            0 => Dim.A, 1 => Dim.S, 2 => Dim.D, 3 => Dim.L,
+            4 => Dim.E, 5 => Dim.O, _ => Dim.U,
+        }
+    }
+}
 
-        Definition via Bures topology:
-            χ_S(Γ) = sup{r ∈ [0,1] : B_B(Γ, r) ∩ S ≠ ∅}
+/// Demonstration of Grothendieck-topology algorithms.
+fn demo_bures_topology() using [IO] {
+    let holon = Holon.new_pure(1.0);
+    let gamma = &holon.gamma;
 
-        For projector subobject S = |k⟩⟨k|:
-            χ_S(Γ) = √F(Γ, S) = √⟨k|Γ|k⟩ = √γ_kk
+    // 1. Classifier Ω.
+    let omega = OmegaClassifier.new();
+    IO.println("=== Classifier Ω ===");
+    IO.println(f"CPTP condition satisfied: {omega.verify_cptp()}");
 
-        Args:
-            Gamma: Coherence matrix [N, N]
-            dimension: Dimension name ('A', 'S', 'D', 'L', 'E', 'O', 'U')
+    // 2. Characteristic morphisms.
+    IO.println("\n=== Characteristic morphisms χ_S ===");
+    for d in [Dim.A, Dim.S, Dim.D, Dim.L, Dim.E, Dim.O, Dim.U] {
+        IO.println(f"χ_{d}(Γ) = {omega.chi(gamma, d):.4f}");
+    }
 
-        Returns:
-            χ_{S_k}(Γ) ∈ [0, 1]
-        """
-        S_k = self.atoms[dimension]
-        # Fidelity with projector = diagonal element
-        fidelity = np.real(np.trace(S_k @ Gamma))
-        return np.sqrt(np.clip(fidelity, 0.0, 1.0))
+    // 3. Bures metric between pure and mixed states.
+    let gamma2 = Holon.new_mixed(1.0).gamma;
+    let d_B = bures_distance(gamma, &gamma2);
+    IO.println("\n=== Bures metric ===");
+    IO.println(f"d_B(Γ_pure, Γ_mixed) = {d_B:.4f}");
 
-    def lindblad_operator(self, dimension: str) -> np.ndarray:
-        """
-        Lindblad operator L_k = √χ_{S_k}.
-
-        Categorical definition:
-            L_k := √χ_{S_k} — derived from the k-th classifier atom
-
-        Args:
-            dimension: Dimension name
-
-        Returns:
-            L_k [N, N] — Lindblad operator
-        """
-        S_k = self.atoms[dimension]
-        return sqrtm(S_k)
-
-    def all_lindblad_operators(self) -> dict:
-        """All Lindblad operators from atoms of Ω."""
-        return {dim: self.lindblad_operator(dim) for dim in self.DIMENSIONS[:self.N]}
-
-    def verify_cptp(self) -> bool:
-        """
-        Verification of CPTP condition: Σₖ L_k† L_k = I.
-
-        For basis projectors S_k = |k⟩⟨k| the condition holds from
-        the classifier structure (partition of unity into atoms).
-        Note: this guarantees preservation of trace and positivity,
-        but does NOT guarantee preservation of purity P or viability.
-        """
-        L_ops = self.all_lindblad_operators()
-        sum_LdagL = sum(L.conj().T @ L for L in L_ops.values())
-        return np.allclose(sum_LdagL, np.eye(self.N), atol=1e-10)
-
-    def construct_atomic_covering(self, Gamma: np.ndarray) -> list:
-        """
-        Construction of atomic covering for a density matrix.
-
-        Returns list of (S_k, P_k) where P_k is a projection channel.
-
-        Theorem: For Γ with P(Γ) > P_crit = 2/7 a full
-        atomic covering exists (all 7 atoms with non-zero weight).
-
-        Args:
-            Gamma: Coherence matrix [N, N]
-
-        Returns:
-            List of tuples (atom_projector, projection_channel)
-        """
-        covering = []
-
-        for dim in self.DIMENSIONS[:self.N]:
-            S_k = self.atoms[dim]
-            weight = np.real(np.trace(S_k @ Gamma))
-
-            if weight > 1e-10:  # Non-zero weight
-                # Projection channel: Φ_k(ρ) = S_k ρ S_k / Tr(S_k ρ S_k)
-                def projection_channel(rho, proj=S_k):
-                    result = proj @ rho @ proj
-                    trace = np.trace(result)
-                    if np.abs(trace) > 1e-12:
-                        return result / trace
-                    return result
-
-                covering.append((S_k, projection_channel))
-
-        return covering
-
-
-# Usage example
-def demo_bures_topology():
-    """Demonstration of Grothendieck topology algorithms."""
-    # Creating a Holon
-    holon = Holon(pure=True)
-    Gamma = holon.Gamma
-
-    # 1. Classifier Ω
-    omega = OmegaClassifier()
-    print("=== Classifier Ω ===")
-    print(f"CPTP condition satisfied: {omega.verify_cptp()}")
-
-    # 2. Characteristic morphisms
-    print("\n=== Characteristic morphisms χ_S ===")
-    for dim in omega.DIMENSIONS:
-        chi = omega.chi(Gamma, dim)
-        print(f"χ_{dim}(Γ) = {chi:.4f}")
-
-    # 3. Bures metric
-    Gamma2 = Holon().Gamma  # Mixed state
-    d_B = bures_distance(Gamma, Gamma2)
-    print(f"\n=== Bures metric ===")
-    print(f"d_B(Γ_pure, Γ_mixed) = {d_B:.4f}")
-
-    # 4. Atomic covering
-    covering = omega.construct_atomic_covering(Gamma)
-    print(f"\n=== Atomic covering ===")
-    print(f"Number of atoms with non-zero weight: {len(covering)}")
-
-    return omega
+    // 4. Atomic covering.
+    let covering = omega.atomic_covering(gamma);
+    IO.println("\n=== Atomic covering ===");
+    IO.println(f"Atoms with non-zero weight: {covering.len()}");
+}
 ```
 
 ## Dependencies
 
-```bash
-pip install numpy scipy
+```toml
+# Verum.toml — stdlib-only, no external dependencies.
+[package]
+name = "holon"
+version = "1.0.0"
+
+[dependencies]
+# std.math (linalg, complex, random, constants) is part of the Verum stdlib
+# and does not need to be listed explicitly.
 ```
 
 ---

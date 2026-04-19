@@ -141,38 +141,45 @@ The model is completely static. It does not answer: *how* does a system reach th
 
 ### 1.4 Python Implementation
 
-```python
-import numpy as np
+```verum
+mount std.math.linalg.{StaticMatrix, identity, eigvalsh};
+mount std.math.complex.Complex;
 
-def uniform_system():
-    """Model 1: Maximally mixed state Γ = I/7."""
-    N = 7
-    gamma = np.eye(N) / N
+pub type ModelReport is {
+    p:         Float,
+    s_vn:      Float,
+    gap_total: Float,
+    coh_e:     Float,
+    viable:    Bool,
+};
 
-    P = np.trace(gamma @ gamma).real  # 1/7
-    S_vN = -np.sum(np.linalg.eigvalsh(gamma) *
-                   np.log(np.linalg.eigvalsh(gamma) + 1e-30))
+/// Model 1: Maximally mixed state Γ = I/7.
+pub pure fn uniform_system() -> ModelReport {
+    let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
 
-    gap_operator = gamma.imag  # zero matrix
-    gap_total = np.linalg.norm(gap_operator, 'fro')**2
+    let p = (&gamma @ &gamma).trace().real();                     // 1/7
+    let s_vn = eigvalsh(&gamma).iter()
+        .map(|λ| -λ * (λ + 1.0e-30).ln())
+        .sum();
 
-    # E-coherence (HS-projection π_E) [T], E = index 4
-    E = 4
-    coh_E = (gamma[E, E].real**2
-             + 2 * sum(abs(gamma[E, i])**2 for i in range(N) if i != E)) / P
+    // Gap operator = Im(Γ) — zero matrix for real diagonal.
+    let gap_total = gamma.imag_part().frobenius_norm_sq();
 
-    P_CRIT = 2 / 7
-    viable = P > P_CRIT
+    const E: Int = 4;
+    let coh_e = (gamma[E, E].real().pow(2)
+                + 2.0 * (0..7).filter(|i| *i != E)
+                               .map(|i| gamma[E, *i].abs().pow(2))
+                               .sum()) / p;
 
-    return {
-        'P': P, 'S_vN': S_vN, 'gap_total': gap_total,
-        'coh_E': coh_E, 'viable': viable
-    }
+    ModelReport { p: p, s_vn: s_vn, gap_total: gap_total, coh_e: coh_e,
+                  viable: p > 2.0 / 7.0 }
+}
 
-result = uniform_system()
-print(f"P = {result['P']:.4f}, Coh_E = {result['coh_E']:.4f}, "
-      f"viable = {result['viable']}")
-# P = 0.1429, Coh_E = 0.1429, viable = False
+fn main() using [IO] {
+    let r = uniform_system();
+    IO.println(f"P = {r.p:.4f}, Coh_E = {r.coh_e:.4f}, viable = {r.viable}");
+    // P = 0.1429, Coh_E = 0.1429, viable = false
+}
 ```
 
 ---
@@ -255,31 +262,31 @@ This is not the maximum E-coherence: achieving $\mathrm{Coh}_E = 1$ requires con
 
 ### 2.5 Python Implementation
 
-```python
-import numpy as np
+```verum
+/// Model 2: Pure state with uniform superposition |ψ⟩ = (1/√7) Σ|k⟩.
+pub fn pure_uniform() using [IO]
+    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
+{
+    let psi = StaticVector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+    let gamma = psi.outer(psi.conjugate());
 
-def pure_uniform():
-    """Model 2: Pure state with uniform superposition."""
-    N = 7
-    psi = np.ones(N) / np.sqrt(N)
-    gamma = np.outer(psi, psi.conj())
+    let p = (&gamma @ &gamma).trace().real();                                       // 1.0
+    let theta = gamma.map(|c| c.arg());                                             // zero
+    let gap_matrix = theta.map(|φ| φ.sin().abs());                                  // zero
 
-    P = np.trace(gamma @ gamma).real  # 1.0
-    theta = np.angle(gamma)           # zero matrix
-    gap_matrix = np.abs(np.sin(theta))  # zero matrix
+    const E: Int = 4;
+    let coh_e = (gamma[E, E].real().pow(2)
+                + 2.0 * (0..7).filter(|i| *i != E)
+                               .map(|i| gamma[E, *i].abs().pow(2))
+                               .sum()) / p;
 
-    E = 4
-    coh_E = (gamma[E, E].real**2
-             + 2 * sum(abs(gamma[E, i])**2 for i in range(N) if i != E)) / P
-
-    print(f"P = {P:.4f}")
-    print(f"Coh_E = {coh_E:.4f}")
-    print(f"Gap (max) = {gap_matrix.max():.6f}")
-    print(f"All θ_ij = 0: {np.allclose(theta, 0)}")
-    return gamma, gap_matrix
-
-gamma, gap = pure_uniform()
-# P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
+    IO.println(f"P = {p:.4f}");
+    IO.println(f"Coh_E = {coh_e:.4f}");
+    IO.println(f"Gap (max) = {gap_matrix.max_element():.6f}");
+    IO.println(f"All θ_ij = 0: {gap_matrix.frobenius_norm() < 1.0e-12}");
+    (gamma, gap_matrix)
+}
+// Expected: P = 1.0000, Coh_E = 0.2653, Gap (max) = 0.000000
 ```
 
 ---
@@ -425,63 +432,65 @@ The model does not account for dynamics: the cluster {A, S, O} and the high Gap 
 
 ### 3.6 Python Implementation
 
-```python
-import numpy as np
+```verum
+mount std.math.constants.PI;
 
-def fibonacci_phases():
-    """Model 3: Pure state with Fibonacci phases mod 7."""
-    N = 7
-    fib_mod7 = [1, 1, 2, 3, 5, 1, 6]  # F_1..F_7 mod 7
-    phases = [2 * np.pi * f / 7 for f in fib_mod7]
-    psi = np.array([np.exp(1j * phi) for phi in phases]) / np.sqrt(N)
-    gamma = np.outer(psi, psi.conj())
+/// Model 3: Pure state with Fibonacci phases mod 7.
+pub fn fibonacci_phases() using [IO]
+    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
+{
+    // F₁…F₇ mod 7.
+    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
 
-    P = np.trace(gamma @ gamma).real
-    theta = np.angle(gamma)
-    gap_matrix = np.abs(np.sin(theta))
+    let psi = StaticVector.<Complex, 7>.from_array(
+        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
+    ) / Complex.from_real(7.0.sqrt());
 
-    dims = ['A', 'S', 'D', 'L', 'E', 'U', 'O']  # octonionic: U=e₆(idx 5), O=e₇(idx 6)
-    print("Gap matrix:")
-    print("    " + "  ".join(f"{d:>5}" for d in dims))
-    for i in range(N):
-        row = "  ".join(f"{gap_matrix[i,j]:5.3f}" for j in range(N))
-        print(f"{dims[i]:>2}  {row}")
+    let gamma = psi.outer(psi.conjugate());
+    let p = (&gamma @ &gamma).trace().real();
+    let theta = gamma.map(|c| c.arg());
+    let gap_matrix = theta.map(|φ| φ.sin().abs());
 
-    # Gap operator
-    G_hat = gamma.imag
-    G_total = np.linalg.norm(G_hat, 'fro')**2
-    print(f"\nP = {P:.4f}")
-    print(f"||G_hat||_F^2 = {G_total:.4f}")
+    // Octonionic labelling: U = e₆ (idx 5), O = e₇ (idx 6).
+    const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "U", "O"];
 
-    # E-coherence (E = index 4)
-    E = 4
-    coh_E = (gamma[E, E].real**2
-             + 2 * sum(abs(gamma[E, i])**2 for i in range(N) if i != E)) / P
-    print(f"Coh_E = {coh_E:.4f}")
+    IO.println("Gap matrix:");
+    IO.println(f"    {DIMS.map(|d| f"{d:>5}").join("  ")}");
+    for i in 0..7 {
+        let row = (0..7).map(|j| f"{gap_matrix[i, j]:5.3f}").join("  ");
+        IO.println(f"{DIMS[i]:>2}  {row}");
+    }
 
-    # Mean Gap
-    mean_gap = 0
-    count = 0
-    for i in range(N):
-        for j in range(i+1, N):
-            mean_gap += gap_matrix[i, j]
-            count += 1
-    print(f"Mean Gap = {mean_gap/count:.4f}")
+    // Gap operator: ‖Im Γ‖_F².
+    let g_total = gamma.imag_part().frobenius_norm_sq();
+    IO.println(f"\nP = {p:.4f}");
+    IO.println(f"||G_hat||_F^2 = {g_total:.4f}");
 
-    # Fano-line analysis
-    fano_lines = [(0,1,3), (1,2,4), (2,3,5), (3,4,6), (4,5,0), (5,6,1), (6,0,2)]
-    print("\nGap by Fano lines:")
-    for line in fano_lines:
-        i, j, k = line
-        pairs = [(i,j), (i,k), (j,k)]
-        gaps = [gap_matrix[a, b] for a, b in pairs]
-        mean = np.mean(gaps)
-        names = f"{{{dims[i]},{dims[j]},{dims[k]}}}"
-        print(f"  {names}: mean Gap = {mean:.3f}")
+    const E: Int = 4;
+    let coh_e = (gamma[E, E].real().pow(2)
+                + 2.0 * (0..7).filter(|i| *i != E)
+                               .map(|i| gamma[E, *i].abs().pow(2))
+                               .sum()) / p;
+    IO.println(f"Coh_E = {coh_e:.4f}");
 
-    return gamma, gap_matrix
+    // Mean Gap over 21 independent off-diagonal pairs.
+    let mut sum_gap = 0.0;
+    let mut count  = 0;
+    for i in 0..7 { for j in (i + 1)..7 { sum_gap += gap_matrix[i, j]; count += 1; } }
+    IO.println(f"Mean Gap = {sum_gap / (count as Float):.4f}");
 
-gamma_fib, gap_fib = fibonacci_phases()
+    // Fano-line analysis.
+    const FANO_LINES: [(Int, Int, Int); 7] = [
+        (0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 0), (5, 6, 1), (6, 0, 2),
+    ];
+    IO.println("\nGap by Fano lines:");
+    for (i, j, k) in FANO_LINES {
+        let mean = (gap_matrix[i, j] + gap_matrix[i, k] + gap_matrix[j, k]) / 3.0;
+        IO.println(f"  {{{DIMS[i]},{DIMS[j]},{DIMS[k]}}}: mean Gap = {mean:.3f}");
+    }
+
+    (gamma, gap_matrix)
+}
 ```
 
 ---
@@ -608,68 +617,66 @@ Minimality of rank ($r_G = 2$) — this is a *point* defect. One can imagine mor
 
 ### 4.7 Python Implementation
 
-```python
-import numpy as np
+```verum
+mount std.math.linalg.matrix_rank;
 
-def alexithymia_model(c=0.08):
-    """Model 4: Alexithymia — Gap(S,E) = 1."""
-    N = 7
-    # Base matrix: uniform diagonal + real coherences
-    gamma = np.full((N, N), c, dtype=complex)
-    np.fill_diagonal(gamma, 1/N)
+/// Model 4: Alexithymia — pure phase defect on the (S, E) channel, Gap = 1.
+pub fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [IO]
+    -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
+{
+    // Base matrix: uniform diagonal + real coherences.
+    let mut gamma = StaticMatrix.<Complex, 7, 7>.filled(Complex.from_real(c));
+    for i in 0..7 { gamma[i, i] = Complex.from_real(1.0 / 7.0); }
 
-    # Alexithymic defect: S=1, E=4 → purely imaginary coherence
-    S_idx, E_idx = 1, 4
-    gamma[S_idx, E_idx] = 1j * c    # γ_SE = ic
-    gamma[E_idx, S_idx] = -1j * c   # γ_ES = -ic (hermiticity)
+    // Alexithymic defect: S = 1, E = 4 → purely imaginary coherence.
+    const S_IDX: Int = 1;
+    const E_IDX: Int = 4;
+    gamma[S_IDX, E_IDX] = Complex.i() * Complex.from_real(c);   // γ_SE = ic
+    gamma[E_IDX, S_IDX] = -Complex.i() * Complex.from_real(c);  // γ_ES = −ic (Hermiticity)
 
-    # Hermiticity check
-    assert np.allclose(gamma, gamma.T.conj()), "Not Hermitian!"
+    // Hermiticity and positivity — runtime checks (invariants enforced by CoherenceMatrix refinement at use-site).
+    assert!((&gamma - gamma.adjoint()).frobenius_norm() < 1.0e-10, "not Hermitian");
+    let eigs = eigvalsh(&gamma);
+    assert!(eigs.iter().all(|λ| *λ >= -1.0e-12), "not positive");
 
-    # Positivity check
-    eigvals = np.linalg.eigvalsh(gamma)
-    assert all(eigvals >= -1e-12), f"Not positive: {eigvals}"
+    let p = (&gamma @ &gamma).trace().real();
+    let gap_se = gamma[S_IDX, E_IDX].arg().sin().abs();
+    let g_hat = gamma.imag_part();
+    let r_g = matrix_rank(&g_hat, 1.0e-10);
+    let g_total = g_hat.frobenius_norm_sq();
 
-    P = np.trace(gamma @ gamma).real
-    gap_SE = abs(np.sin(np.angle(gamma[S_idx, E_idx])))
+    let coh_e = (gamma[E_IDX, E_IDX].real().pow(2)
+                + 2.0 * (0..7).filter(|i| *i != E_IDX)
+                               .map(|i| gamma[E_IDX, *i].abs().pow(2))
+                               .sum()) / p;
 
-    # Gap operator
-    G_hat = gamma.imag
-    r_G = np.linalg.matrix_rank(G_hat, tol=1e-10)
-    G_total = np.linalg.norm(G_hat, 'fro')**2
+    // κ = κ_bootstrap + κ₀·Coh_E, with ω₀ = 1, κ₀ = ω₀.
+    const OMEGA_0: Float = 1.0;
+    const KAPPA_0: Float = OMEGA_0;
+    const KAPPA_BOOTSTRAP: Float = OMEGA_0 / 7.0;
+    let kappa = KAPPA_BOOTSTRAP + KAPPA_0 * coh_e;
 
-    # E-coherence
-    coh_E = (gamma[E_idx, E_idx].real**2
-             + 2 * sum(abs(gamma[E_idx, i])**2
-                       for i in range(N) if i != E_idx)) / P
+    const P_CRIT: Float = 2.0 / 7.0;
+    IO.println(f"P = {p:.4f}, P_crit = {P_CRIT:.4f}, margin = {p - P_CRIT:.4f}");
+    IO.println(f"Gap(S,E) = {gap_se:.4f}");
+    IO.println(f"Gap operator rank r_G = {r_g}");
+    IO.println(f"||G_hat||_F^2 = {g_total:.6f}");
+    IO.println(f"Coh_E = {coh_e:.4f}");
+    IO.println(f"kappa = {kappa:.4f}");
 
-    # κ
-    omega_0 = 1.0  # normalisation
-    kappa_0 = omega_0  # simplification
-    kappa_bootstrap = omega_0 / 7
-    kappa = kappa_bootstrap + kappa_0 * coh_E
+    // Compare against a normal reference (alexithymic defect removed).
+    let mut gamma_normal = StaticMatrix.<Complex, 7, 7>.filled(Complex.from_real(c));
+    for i in 0..7 { gamma_normal[i, i] = Complex.from_real(1.0 / 7.0); }
+    let g_total_normal = gamma_normal.imag_part().frobenius_norm_sq();
+    IO.println(f"\nComparison: ||G_hat||_F^2 normal = {g_total_normal:.6f}, \
+                 alexithymic = {g_total:.6f}");
 
-    P_CRIT = 2 / 7
-    margin = P - P_CRIT
+    (gamma, g_hat)
+}
 
-    print(f"P = {P:.4f}, P_crit = {P_CRIT:.4f}, margin = {margin:.4f}")
-    print(f"Gap(S,E) = {gap_SE:.4f}")
-    print(f"Gap operator rank r_G = {r_G}")
-    print(f"||G_hat||_F^2 = {G_total:.6f}")
-    print(f"Coh_E = {coh_E:.4f}")
-    print(f"kappa = {kappa:.4f}")
-
-    # Comparison with normal state (without alexithymia)
-    gamma_normal = np.full((N, N), c, dtype=complex)
-    np.fill_diagonal(gamma_normal, 1/N)
-    G_hat_normal = gamma_normal.imag
-    G_total_normal = np.linalg.norm(G_hat_normal, 'fro')**2
-    print(f"\nComparison: ||G_hat||_F^2 normal = {G_total_normal:.6f}, "
-          f"alexithymic = {G_total:.6f}")
-
-    return gamma, G_hat
-
-gamma_alex, G_alex = alexithymia_model()
+fn main() using [IO] {
+    let _ = alexithymia_model(0.08);
+}
 ```
 
 ---
@@ -789,79 +796,90 @@ The unitary model is beautiful but *non-physical* for living systems. Without di
 
 ### 5.8 Python Implementation
 
-```python
-import numpy as np
+```verum
+pub type RegimeKind is Rational | Irrational;
 
-def dynamic_system(rational=True, tau_max=100.0, dt=0.01):
-    """Model 5: Evolution with rational/irrational frequencies."""
-    N = 7
-    phi_golden = (1 + np.sqrt(5)) / 2
+/// Model 5: Evolution with rational/irrational frequencies.
+pub fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [IO]
+    -> (List<Float>, List<(Float, Float)>, List<Float>)
+    where requires tau_max > 0.0 && dt > 0.0 && dt < tau_max
+{
+    let phi_golden = (1.0 + 5.0.sqrt()) / 2.0;
 
-    if rational:
-        # Rational: all frequencies are integer multiples of ω₀
-        omega = np.array([0, 1, 2, 3, 4, 5, 6], dtype=float)
-        label = "rational"
-    else:
-        # Irrational: include the golden ratio
-        omega = np.array([0, 1, phi_golden, phi_golden**2,
-                          2*phi_golden, phi_golden+1, 2], dtype=float)
-        label = "irrational"
+    let (omega, label): (StaticVector<Float, 7>, Text) = match regime {
+        RegimeKind.Rational =>
+            (StaticVector.from_array([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0]), "rational".text()),
+        RegimeKind.Irrational =>
+            (StaticVector.from_array([
+                0.0, 1.0, phi_golden, phi_golden.pow(2),
+                2.0 * phi_golden, phi_golden + 1.0, 2.0,
+            ]), "irrational".text()),
+    };
 
-    # Initial state: pure with Fibonacci phases (model 3)
-    fib_mod7 = [1, 1, 2, 3, 5, 1, 6]
-    phases_init = [2 * np.pi * f / 7 for f in fib_mod7]
-    psi_0 = np.array([np.exp(1j * ph) for ph in phases_init]) / np.sqrt(N)
-    gamma_0 = np.outer(psi_0, psi_0.conj())
+    // Initial state: pure with Fibonacci phases (Model 3).
+    const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
+    let psi_0 = StaticVector.<Complex, 7>.from_array(
+        FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
+    ) / Complex.from_real(7.0.sqrt());
+    let gamma_0 = psi_0.outer(psi_0.conjugate());
 
-    steps = int(tau_max / dt)
-    gap_history = []  # store Gap(A,S) and Gap(S,E)
-    P_history = []
+    let n_steps = (tau_max / dt) as Int;
+    let mut gap_history = List.new();
+    let mut p_history   = List.new();
+    let mut tau_vals    = List.new();
 
-    tau_vals = np.arange(0, tau_max, dt)
-    for tau in tau_vals:
-        U = np.diag(np.exp(-1j * omega * tau))
-        gamma_t = U @ gamma_0 @ U.T.conj()
+    for step in 0..n_steps {
+        let tau = (step as Float) * dt;
+        let u_diag = omega.map(|w| (Complex.i().neg() * Complex.from_real(w * tau)).exp());
+        let u = StaticMatrix.<Complex, 7, 7>.diagonal(u_diag);
+        let gamma_t = &u @ &gamma_0 @ u.adjoint();
 
-        P = np.trace(gamma_t @ gamma_t).real
-        theta = np.angle(gamma_t)
-        gap_AS = abs(np.sin(theta[0, 1]))  # A-S
-        gap_SE = abs(np.sin(theta[1, 4]))  # S-E
+        let p = (&gamma_t @ &gamma_t).trace().real();
+        let gap_as = gamma_t[0, 1].arg().sin().abs();
+        let gap_se = gamma_t[1, 4].arg().sin().abs();
 
-        gap_history.append((gap_AS, gap_SE))
-        P_history.append(P)
+        gap_history.push((gap_as, gap_se));
+        p_history.push(p);
+        tau_vals.push(tau);
+    }
 
-    gap_history = np.array(gap_history)
+    let mean_gap_as: Float = gap_history.iter().map(|(a, _)| *a).sum::<Float>()
+                            / (gap_history.len() as Float);
+    let mean_gap_se: Float = gap_history.iter().map(|(_, b)| *b).sum::<Float>()
+                            / (gap_history.len() as Float);
 
-    # Time-averaged Gap
-    mean_gap_AS = np.mean(gap_history[:, 0])
-    mean_gap_SE = np.mean(gap_history[:, 1])
+    IO.println(f"Regime: {label}");
+    IO.println(f"Mean Gap(A,S) = {mean_gap_as:.4f}");
+    IO.println(f"Mean Gap(S,E) = {mean_gap_se:.4f}");
+    IO.println(f"Theoretical limit (2/π) = {2.0 / PI:.4f}");
+    IO.println(f"P = const = {p_history[0]:.4f} (unitary evolution preserves purity)");
 
-    print(f"Regime: {label}")
-    print(f"Mean Gap(A,S) = {mean_gap_AS:.4f}")
-    print(f"Mean Gap(S,E) = {mean_gap_SE:.4f}")
-    print(f"Theoretical limit (2/π) = {2/np.pi:.4f}")
-    print(f"P = const = {P_history[0]:.4f} "
-          f"(unitary evolution preserves purity)")
+    match regime {
+        RegimeKind.Rational => {
+            let t_period = 2.0 * PI;                    // period at ω₀ = 1
+            let idx = (t_period / dt) as Int;
+            if idx < gap_history.len() {
+                let (a0, b0) = gap_history[0];
+                let (a1, b1) = gap_history[idx];
+                let diff = ((a1 - a0).abs()).max((b1 - b0).abs());
+                IO.println(f"Deviation after period T=2π: {diff:.2e}");
+            }
+        },
+        RegimeKind.Irrational => {
+            // Quasiperiodic: the orbit does not close within the observation window.
+            let unique_gaps = gap_history.iter()
+                .map(|(a, b)| ((a * 1.0e4).round() as Int, (b * 1.0e4).round() as Int))
+                .collect::<Set>()
+                .len();
+            IO.println(f"Unique Gap configurations: {unique_gaps}/{gap_history.len()}");
+        },
+    }
 
-    # Periodicity check
-    if rational:
-        T_period = 2 * np.pi  # period at ω₀ = 1
-        idx_period = int(T_period / dt)
-        if idx_period < len(gap_history):
-            diff = np.max(np.abs(
-                gap_history[idx_period] - gap_history[0]))
-            print(f"Deviation after period T=2π: {diff:.2e}")
-    else:
-        # Quasiperiodic: check that the orbit does not close
-        # within the observation time
-        unique_gaps = len(set(
-            tuple(np.round(g, 4)) for g in gap_history))
-        print(f"Unique Gap configurations: {unique_gaps}/{len(gap_history)}")
+    (tau_vals, gap_history, p_history)
+}
 
-    return tau_vals, gap_history, P_history
-
-# Run both regimes
-print("=" * 50)
+fn main() using [IO] {
+    IO.println("=".repeat(50));
 tau_r, gap_r, P_r = dynamic_system(rational=True)
 print("=" * 50)
 tau_i, gap_i, P_i = dynamic_system(rational=False)
