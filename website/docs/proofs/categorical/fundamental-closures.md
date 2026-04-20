@@ -980,7 +980,7 @@ Putnam–Lerchner triviality concerns L1→L3. UHM's consciousness predicate con
 
 **Proof of T-223 (seven lemmas).**
 
-**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$).** Combine T-149 (Fano plane minimality), T-82 (BIBD(7,3,1) uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-120 (M⁴ = $\mathbb R \times \Sigma^3$ derived from quantum CLT), T-151 ($D_{\min} = 2$ from Φ-threshold), T-190 (zero-axiom categorical closure). The 12-step Bridge T-15 chains them:
+**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$).** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-120 (M⁴ = $\mathbb R \times \Sigma^3$ derived from quantum CLT), T-151 ($D_{\min} = 2$ from Φ-threshold), T-149 (unconditional viability of the embodied attractor), T-190 (zero-axiom categorical closure). The 12-step Bridge T-15 chains them:
 $$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{[T]} \mathbb O \xrightarrow{[T]} G_2.$$
 No step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input. ∎
 
@@ -1024,7 +1024,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 Lerchner's horizontal arrow $p \to \{f_A, f_B\}$ is correct. UHM adds the vertical arrow $p \to [\Gamma_S]_{G_2}$. Consciousness lives at the vertical arrow's target; computation lives at the horizontal arrows' targets. Putnam's multiplicity is confined to the horizontal; UHM's consciousness predicate is alphabetization-invariant.
 
 **Why $G_2$-rigidity alone is not the complete answer.** T-123 handles L2→L3 residual freedom (the 14-dim $G_2$ action on $\Gamma$) but not L1→L2 forcing (where *a priori* one might still suspect mapmaker choice). The full foreclosure requires six components:
-1. **Intrinsic-forcing of L2** (T-149 + T-82 + T-120 + T-151 + T-190): ensures L2 is not a chosen abstraction.
+1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-120 + T-151 + T-149 + T-190): ensures L2 is not a chosen abstraction.
 2. **$G_2$-gauge boundedness** (T-42a + T-82): residual L2 freedom is a 14-dim compact Lie group action.
 3. **Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).
 4. **Dynamic-covariance gate** (L2 + L6): non-UHM-compatible alphabetizers are physically vacuous.

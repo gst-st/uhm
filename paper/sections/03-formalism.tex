@@ -283,15 +283,38 @@ The self-modeling operator is a CPTP (Completely Positive Trace-Preserving) chan
 
 The system's self-model $\vp(\Gam)$ is an \emph{approximate} copy of $\Gam$, not an exact
 one (the no-cloning theorem forbids exact copying in quantum mechanics). The canonical
-physical realization (T-62~\status{T}):
+physical realization (T-62~\status{T}) is the replacement channel with dissipative target:
 \begin{equation}
-  \vp_k(\Gam) = (1-k)\Gam + k\rho^*
+  \vp_k(\Gam) = (1-k)\Gam + k\,\rho^*_{\mathrm{diss}},
+  \qquad \rho^*_{\mathrm{diss}} = I/7,
+  \qquad k = 1 - R
   \label{eq:phi-physical}
 \end{equation}
-where $\rho^* = \vp(\Gam)$ is the categorical self-model (the fixed point of the
-self-observation process, T-96~\status{T}) and $k = 1 - R$ is the compression parameter.
+where $\rho^*_{\mathrm{diss}} = I/7$ is the \emph{dissipative attractor} of the linear
+part $\Lind_0 = -i[H,\cdot] + \mathcal D_\Omega$ (T-39a~\status{T}: primitivity of
+$\Lind_0$) and $k = 1-R$ is the compression parameter.
 
-This definition is not circular: $\rho^*$ is constructed independently via the categorical left adjoint (T-96~\status{T}), yielding a fixed point that $\vp$ converges to iteratively. Starting from any initial guess $\rho^*_0 = I/7$, the sequence $\rho^*_{n+1} = \vp(\Gam; \rho^*_n)$ converges exponentially (Banach fixed-point theorem, Eq.~\ref{eq:fixed-point}).
+\paragraph{Three $\rho^*$ contexts: a canonical disambiguation.}
+UHM uses the symbol $\rho^*$ in three structurally distinct roles (matching the
+canonical doc hierarchy at \url{https://holon.sh/docs/core/dynamics/evolution}):
+(i)~$\rho^*_{\mathrm{diss}} = I/7$ --- unique attractor of $\Lind_0$, the Lindbladian
+\emph{without} regeneration; appears in the replacement channel of Eq.~\ref{eq:phi-physical}.
+(ii)~$\rho^*_\Omega = \vp(\Gam)$ --- Lawvere fixed point of the full $\Lind_\Omega$
+\emph{with} regeneration (T-96~\status{T}); a non-trivial categorical self-model,
+not a dynamical dissipative attractor.
+(iii)~$\rho^*_{\mathrm{coupled}}$ --- equilibrium of an embodied holon coupled to an
+environment (T-149~\status{T}: $P(\rho^*_{\mathrm{coupled}}) > 2/7$ unconditionally).
+In what follows, $\rho^*$ without subscript refers to context (i) when written inside
+$\vp_k$ and to context (ii) when written as $\vp(\Gam)$.
+
+The full evolution operator decomposes as $\Lind_\Omega = \Lind_0 + \mathcal R$
+(T-39a/b~\status{T}): T-39a applies to the \emph{linear} part $\Lind_0$ only, giving
+$\rho^*_{\mathrm{diss}} = I/7$; the categorical fixed point $\rho^*_\Omega = \vp(\Gam)$
+emerges from the full non-linear $\Lind_\Omega$ and is resolved iteratively. Starting
+from $\vp^{(0)} := \rho^*_{\mathrm{diss}} = I/7$, the sequence
+$\vp^{(n+1)} = \vp(\Gam;\vp^{(n)})$ converges exponentially to $\vp^*$ (T-191~\status{T};
+Eq.~\ref{eq:fixed-point}). No circularity arises: the definition is \emph{iterative},
+not recursive.
 
 \paragraph{Fixed-point theorem \status{T} (Banach).}
 Iterating $\vp$ converges to a fixed point:

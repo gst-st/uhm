@@ -45,8 +45,9 @@ statements are collected here.
         $P(\rhostar) > 1/7$ and $\kappa_{\max} < \lambda_{\mathrm{gap}}$.
   \item \textbf{T-185 \status{T} (Differentially cohesive $\infty$-topos):}
         The UHM $\infty$-topos $\mathfrak{T} = \ShInf(\mathcal{C}, J_B)$ admits
-        a differentially cohesive structure with seven canonical modalities
-        $\{\mathrm{Id}, \Pi, \flat, \mathrm{Im}, \sharp, \&, \mathrm{Rh}\}$
+        a differentially cohesive structure (in the sense of Lawvere's axiomatic
+        cohesion refined by Schreiber~\cite{schreiber2013}) with seven canonical
+        modalities $\{\mathrm{Id}, \Pi, \flat, \mathrm{Im}, \sharp, \&, \mathrm{Rh}\}$
         corresponding to the $1 \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$
         sector decomposition of the seven dimensions.
 \end{itemize}
@@ -415,7 +416,9 @@ postulates. The derivation chain:
         $\mathrm{SU}(3) \subset G_2$). Gelfand + Connes reconstruction yields a unique
         smooth compact orientable spin 3-manifold $\Sigma^3$.
   \item \textbf{T-120 \status{T}:} Product spectral triple $M^4 = \mathbb{R} \times \Sigma^3$.
-  \item \textbf{T-120b \status{T}:} Vacuum topology $\Sigma^3 \cong S^3$ (de Sitter metric).
+  \item \textbf{T-120b \status{T}:} Vacuum topology $\Sigma^3 \cong S^3$ (de Sitter metric),
+        from T-71~\status{T} ($\Lambda_{\mathrm{Gap}} > 0$) + T-64~\status{T} (unique minimum) +
+        $SU(3)$-invariance of the Fano dissipator.
   \item \textbf{T-121 \status{T}:} Closure of Lovelock gaps 1 and 2. The spectral action
         on $(M^4, A_{\mathrm{int}})$ yields the Einstein--Hilbert action $+$ Standard
         Model, closing the gaps in Lovelock's uniqueness argument (1971).
@@ -444,8 +447,11 @@ Fifteen results strengthen the foundations (nine new theorems + six structural u
         The maximum entropy principle on $\mathcal{D}(\mathbb{C}^7)$ uniquely identifies the
         inverse metric tensor with the quantum covariance matrix: $G^{ij} = C^{ij}$.
         Combined with SLD-Fisher $= 4g_B$ (Braunstein--Caves 1994), this derives $g_B$
-        from statistical structure without information-geometric choice. Fourth independent
-        characterization of Bures, strengthening T-187 to a \emph{quadruple} theorem.
+        from statistical structure without information-geometric choice. Char-IV is a
+        \emph{physical recasting} of Char-III rather than a logically independent fourth
+        witness (audit 2026-04-17): it strengthens the \emph{physical} motivation of
+        T-187 without adding mathematical redundancy; T-187 retains \status{T} on Char-I
+        (Petz extremality) alone.
   \item \textbf{T-190 \status{T} (Axiomatic Closure):}
         All five axioms A1--A5 are \emph{theorems} derivable from (AP)+(PH)+(QG)+(V)+MaxEnt:
         A1 via T-76+T-186, A2 via T-187+T-189, A3 via Theorem~S+T15, A4 from (AP) necessity,
@@ -559,9 +565,10 @@ $=$ ``why quantum mechanics?''
 \end{theorembox}
 
 \begin{proof}
-(i) T-187~\status{T}: axiom A2 uniquely determines $J_B$ (quadruple
-characterization). (ii) T-185~\status{T}: the Bures-enriched
-$\infty$-topos is differentially cohesive, generating modalities
+(i) T-187~\status{T}: axiom A2 uniquely determines $J_B$ (triple
+characterization Char-I/II/III plus T-189 MaxEnt physical recasting). (ii) T-185~\status{T}: the Bures-enriched
+$\infty$-topos is differentially cohesive (Lawvere axiomatic cohesion +
+Schreiber~\cite{schreiber2013} DCCT), generating modalities
 $\Pi \dashv \flat \dashv \sharp$ and $\iota^* \dashv \mathrm{Inf}$.
 (iii) T-186(a)~\status{T}: the phenomenal functor $F$ is naturally
 isomorphic to $\&\big|_{\Dens}$ (infinitesimal flat modality restricted
@@ -650,8 +657,9 @@ is necessary for autopoiesis.
 \emph{A1} ($\infty$-topos): T-76~\status{T} + T-186~\status{T}: the Bures
 topology on $\Dens(\mathbb{C}^7)$ generates a Grothendieck site whose
 sheaves form an $\infty$-topos (Lurie HTT 6.5.2.14).
-\emph{A2} ($J_B$): T-187~\status{T} + T-189~\status{T}: quadruple
-characterization uniquely selects Bures.
+\emph{A2} ($J_B$): T-187~\status{T} + T-189~\status{T}: triple mathematical
+characterization (Char-I Petz extremality + Char-II Uhlmann + Char-III
+SLD-Fisher) plus MaxEnt physical recasting (Char-IV) uniquely selects Bures.
 \emph{A5} (Page--Wootters): T-87~\status{T}: derived from A1--A4 via
 the spectral triple construction. $\blacksquare$
 \end{proof}
@@ -835,7 +843,8 @@ $(\infty,1)$-subcategories. $\blacksquare$
 \label{thm:t212-rh}
 The seventh canonical modality of T-185 is explicitly the right
 adjoint to the bosonic-grade forgetful functor in the super-cohesive
-extension (Schreiber DCCT \S3.10):
+extension (Schreiber DCCT~\cite{schreiber2013} \S3.10;
+Sati--Schreiber~\cite{sati-schreiber2018}):
 $\mathrm{Rh}(F)(\Gam) := \Tr(F(\Gam)) \cdot \mathbf{1}_{\mathcal C_7}$.
 All modal axioms --- idempotence $\mathrm{Rh}^2 = \mathrm{Rh}$, comonad
 unit $\eta: \mathrm{Id} \Rightarrow \mathrm{Rh}$, and commutation
@@ -1156,7 +1165,7 @@ no-go results \status{T}~formal + \status{I}~interpretive}]
 \label{thm:t221-categorical-monistic}
 Let $\mathfrak T = \mathbf{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}},
 \omega_0)$ be the UHM cohesive $\infty$-topos (A1--A5 + T-211~\status{T}
-Giraud). Formalise the five theses of List~\citep{list2025quadrilemma}
+Giraud; in the sense of Schreiber~\cite{schreiber2013}). Formalise the five theses of List~\citep{list2025quadrilemma}
 and DeBrota--List~\citep{debrota2026heptalemma,debrotalist2026preprint}
 as follows: \emph{FPR} (first-personal realism) --- the interior
 functor $\mathrm{Map}_{\mathrm{int}}(\Gam,-) = \&(\Gam) :
@@ -1476,12 +1485,13 @@ orthogonal; $(\mathsf{PT})$ does not propagate to $(c)$.
 \paragraph{Proof (seven-lemma cascade).}
 \textit{L1.} The Hilbert-space dimension $\dim = 7$ and gauge
 group $G_2 = \mathrm{Aut}(\mathbb O)$ are categorically forced by
-T-149 \status{T} (Fano plane minimality), T-82 \status{T}
-(BIBD$(7,3,1)$ uniqueness via Fisher--Veblen--Wedderburn), T-42a
-\status{T} ($G_2$-rigidity), T-120 \status{T}
+T-82 \status{T} (BIBD$(7,3,1)$ / Fano plane uniqueness via
+Fisher--Veblen--Wedderburn), T-42a \status{T} ($G_2$-rigidity of the
+Fano dissipator), T-120 \status{T}
 ($M^4 = \mathbb R \times \Sigma^3$), T-151 \status{T}
-($\Dmin = 2$), T-190 \status{T} (zero-axiom closure); the 12-step
-Bridge~T-15 chains them without parameter freedom.
+($\Dmin = 2$), T-149 \status{T} (unconditional viability of the
+embodied attractor), T-190 \status{T} (zero-axiom categorical closure);
+the 12-step Bridge~T-15 chains them without parameter freedom.
 
 \textit{L2.} A UHM-admissible representation $(\mathbb C^7,
 \mathcal B, G_S)$ satisfies the covariance gate $\frac{d}{d\tau}

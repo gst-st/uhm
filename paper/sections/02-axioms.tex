@@ -73,12 +73,12 @@ From these four, a fifth constraint is derived (T-87~\status{T}):
         O-dimension (Section~\ref{subsec:emergent-time}).
 \end{enumerate}
 
-\paragraph{Principle of Informational Distinguishability (PID, T-16~\status{T}).}
+\paragraph{Principle of Informational Distinguishability (PID, T-16~\status{O}).}
 Given A1 and A2, a further principle follows tautologically: two states are ontologically
 distinct if and only if they are distinguishable by $J_{\mathrm{Bures}}$-coverings. This
 connects the mathematical formalism to consciousness: subjective distinctness and physical
 distinguishability are the same relation. PID is not an additional axiom --- it is a
-consequence of taking A1 and A2 seriously~\status{O}.
+definition ~\status{O} (T-16 provides the tautological consequence under A1+A2).
 
 The Bures metric on $\Dens(\mathbb{C}^7)$ defines a topology in the point-set sense. This topology generates a Grothendieck site: coverings are families of open inclusions that jointly cover an open set. By Lurie's theorem (HTT 6.2.2.7), the $\infty$-category of sheaves on this site is an $\infty$-topos, provided the Giraud axioms (descent, universal colimits, disjoint coproducts, effective groupoid objects) are satisfied. For the site of density matrices with the Bures topology, these axioms hold by construction~\cite{lurie2009}. The site axioms (identity, stability under pullback, transitivity) are verified via CPTP contractivity of the Bures metric (Uhlmann 1976) and the essentially small presentation of the compact metrizable $\Dens(\mathbb{C}^7)$ (Johnstone, \emph{Elephant} C2.1.9--12).
 
@@ -196,7 +196,7 @@ The hard problem presupposes that physics and experience are ontologically
 distinct and asks how they interact. UHM reframes this presupposition
 (Figure~\ref{fig:two-aspect}):
 
-\begin{definition}[Two-aspect monism \status{P}]
+\begin{definition}[Two-aspect monism \status{T}/\status{O}]
 \label{def:two-aspect}
 $\Gam$ is a single ontological primitive. Its external aspect
 ($\mathrm{Map}_{\mathrm{ext}}(\Gam)$) is physics; its internal aspect
@@ -204,7 +204,9 @@ $\Gam$ is a single ontological primitive. Its external aspect
 $F: \mathbf{Phys} \to \mathbf{Phen}$ is an \emph{isomorphism} between the physical
 and interiority categories --- preserving the structure of morphisms (as proclaimed by
 Spinoza's E2P7 and constructed explicitly in UHM via T-186~\status{T}; see
-\S\ref{subsec:cohesive-closure}). However, the self-modeling operator $\vp$ is
+\S\ref{subsec:cohesive-closure}). The functorial part is \status{T}; the
+ontological identification "internal aspect = experience" is \status{O}
+(definitional; PH clause of the characterising properties). However, the self-modeling operator $\vp$ is
 \emph{not} an isomorphism: $\mathrm{Gap}(\Gam, \vp(\Gam)) > 0$ (T-55~\status{T}, Lawvere
 incompleteness~\cite{lawvere1969}). The categories are structurally identical; the
 system's self-knowledge of them is structurally incomplete.
@@ -266,6 +268,19 @@ topologically stable --- it cannot be ``smoothly erased.''
 
 \subsection{Cohesive closure: from interpretation to structural necessity (T-186)}
 \label{subsec:cohesive-closure}
+
+\paragraph{Attribution.} The cohesive-closure layer of UHM (theorems T-185 and beyond)
+rests on a specific mathematical lineage: Lawvere's axiomatic cohesion~\cite{lawvere1973}
+(1970s), refined and extended to the differential-cohesive $\infty$-topos framework by
+Schreiber~\cite{schreiber2013} (DCCT, 2013--2016), with further super-cohesive
+developments~\cite{sati-schreiber2018}. Every cohesion-dependent theorem that follows
+--- T-185 (7 modalities), T-186 (phenomenal functor $F \cong \&|_{\mathcal D}$),
+T-188 (hard-problem localization), T-212 (rheonomy modality $\mathrm{Rh}$), T-221
+(categorical-monistic response) --- uses Schreiber's modal calculus as its
+structural scaffolding. The pre-T-182 core of UHM (T-1 through T-181) stands
+independently on octonionic, Fano, Lindbladian, and Bures foundations; cohesion
+enters from T-185 onwards as a \emph{strengthening} that turns previously
+interpretive identifications into structural theorems.
 
 Theorem T-185~\status{T} establishes that the UHM $\infty$-topos is differentially cohesive
 with 7 canonical modalities. This structure has been used for dimension counting (matching
@@ -357,14 +372,40 @@ coverage (Johnstone, \emph{Elephant} C2.1.10); transitivity is automatic from th
 \textbf{Status upgrade:} A2 from \status{P} to \status{T}.
 \end{theorembox}
 
-\paragraph{All four axioms are now theorems.}
-With T-186 and T-187, the axiomatic foundation of UHM collapses to a single meta-axiom:
-\emph{reality is an $\infty$-topos} (A1). The remaining axioms are derived:
+\paragraph{All five axioms are now theorems (T-190 Axiomatic Closure).}
+With T-186, T-187, T-189, and T-190, the axiomatic foundation of UHM is
+\emph{self-grounding}: every axiom A1--A5 is derivable from the five
+characterising properties $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$
+of a viable holon, leaving \textbf{zero} independent postulates. The derivations are:
 \begin{itemize}[leftmargin=2em,nosep]
-  \item \textbf{A1 \status{T}:} Most general space with internal logic (any weaker structure
-        is strictly less powerful).
-  \item \textbf{A2 \status{T}:} Uniquely canonical Petz-enrichment (T-187, triple characterization).
-  \item \textbf{A3 \status{T}:} $N = 7$ from Hurwitz--Adams and Fano plane.
-  \item \textbf{A4 \status{T}:} $\omega_0 = \lambda_{\min}(H_{\mathrm{eff}}) > 0$, a
-        derived spectral property.
+  \item \textbf{A1 \status{T}:} $\infty$-topos $\ShInf(\mathcal{C})$ from T-76 (Grothendieck site
+        via Bures topology) + T-186 (cohesive closure). Most general space with internal
+        logic compatible with quantum-mechanical CPTP dynamics.
+  \item \textbf{A2 \status{T}:} Uniquely canonical Petz-enrichment via T-187 (triple
+        characterisation: Char-I Petz extremality, Char-II Uhlmann universality, Char-III
+        SLD-Fisher Cram\'er--Rao saturation) + T-189 (Char-IV, physical recasting via
+        MaxEnt: $g_B^{-1} = C_{\mathrm{SLD}}$).
+  \item \textbf{A3 \status{T}:} $N = 7$ from Theorem~S and the Bridge T-15 chain
+        $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{\text{T-15}} \mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to \mathbb O \to G_2$;
+        independent confirmation via Hurwitz--Adams + Fano plane minimality.
+  \item \textbf{A4 \status{T}:} $\omega_0 = \lambda_{\min}(H_{\mathrm{eff}}) > 0$ forced by
+        viability (V): $\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow$ (AP)
+        violated; a derived spectral property of $H_{\mathrm{eff}}$.
+  \item \textbf{A5 \status{T}:} Page--Wootters temporal constraint $[\hat C, \Gam_{\mathrm{total}}] = 0$
+        from T-87 applied to A1--A4 via the spectral-triple construction.
 \end{itemize}
+
+\begin{theorembox}[T-190: Axiomatic Closure of UHM \status{T}]
+\label{thm:t190-axiomatic-closure}
+All five axioms A1--A5 of $\Omega^7$ are theorems derivable from
+$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V})+\text{MaxEnt}$. Consequently UHM has
+\textbf{zero} independent axioms; every ``axiom'' is structurally forced by the
+characterising properties of a viable holon. The full derivation chain per axiom:
+A1 via T-76+T-186; A2 via T-187+T-189 (triple Petz/Uhlmann/SLD-Fisher + MaxEnt
+physical recasting); A3 via Theorem~S and Bridge T-15; A4 via (V) necessity;
+A5 via T-87. Proof details appear in Section~\ref{subsec:foundational-closure}
+(see also the companion localisation theorem T-188 reducing the hard problem
+to ``why CPTP?'', the $\vp$-tower convergence T-191 resolving the
+self-modelling circularity, and the target-category verification T-192 for
+$\mathbf{Exp}^{(2)}$).
+\end{theorembox}
