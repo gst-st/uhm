@@ -60,18 +60,25 @@ It proves that philosophical zombies --- systems that are functionally identical
 conscious beings but lack inner experience --- are not merely implausible but
 \emph{dynamically impossible}.
 
-\begin{theorembox}[No-Zombie Theorem (T-8.1) \status{T}]
+\begin{theorembox}[No-Zombie Theorem (T-38a) \status{T}]
 \begin{equation}
   \underbrace{P(\Gam) > \Pcrit}_{\text{viable}}
   \;\wedge\;
   \underbrace{\mathcal{D}_\Omega[\Gam] \not\equiv 0}_{\text{non-trivial dissipation}}
   \quad\Longrightarrow\quad
+  \vp = \vp_{\mathrm{coh}}
+  \;\wedge\;
   \CohE(\Gam) \;>\; \frac{1}{7}
   \label{eq:no-zombie}
 \end{equation}
-A viable holon with non-trivial dissipative dynamics \emph{necessarily}
+A viable holon with non-trivial dissipative dynamics \emph{necessarily} has
+its self-model factored through the coherent sector
+($\vp = \vp_{\mathrm{coh}}$, not via diagonal classical projection) and
 carries strictly more E-coherence than the uniform (``structureless'') floor
-of $1/7$. A hypothetical ``zombie'' --- a configuration with
+of $1/7$. The mathematical core bounds $\CohE > 1/7$; the
+$\vp = \vp_{\mathrm{coh}}$ clause encodes the structural requirement that
+regeneration flows through the coherent self-model rather than through a
+classical look-up. A hypothetical ``zombie'' --- a configuration with
 $P > \Pcrit$ but a structureless interiority sector
 ($\gamma_{EE} = 1/7$ and $\gamma_{Ej} = 0$ for all $j \neq E$, giving
 $\CohE = 1/7$) --- is dynamically impossible: it cannot be a stationary
@@ -639,13 +646,21 @@ reader's reference, they are collected here:
 \end{enumerate}
 These are not axioms but \textbf{definitions}: they specify what it
 means for a physical system to be a viable self-sustaining holon. T-190
-proves that A1--A5 follow from (AP)--(MaxEnt).
+proves that A1--A5 follow from (AP)--(MaxEnt). A complementary
+\emph{inverse} closure T-181~\status{T} (Bimodule construction) derives
+(AP), (PH), (QG), (V) themselves from the axioms A1--A4: (QG) from A1,
+(AP) from A1, (PH) from A1+A3, (V) from A2+A3. The pair (T-181, T-190)
+establishes the full equivalence of ``axioms'' and ``characterising
+properties'' --- neither layer is logically prior to the other; UHM is
+self-grounded in both directions.
 \end{defbox}
 
 \begin{theorembox}[T-190: Axiomatic Closure \status{T}]
 \label{thm:t190-closure}
 All five axioms A1--A5 are derivable from (AP)+(PH)+(QG)+(V)+MaxEnt
 (Figure~\ref{fig:axiomatic-closure}). UHM has zero independent axioms.
+The converse direction (A1--A4 $\Rightarrow$ (AP)+(PH)+(QG)+(V)) is
+T-181~\status{T}, closing the equivalence into a circle.
 \end{theorembox}
 
 \begin{proof}
@@ -812,10 +827,14 @@ the interior hypothesis is non-vacuous. $\blacksquare$
 \end{proof}
 
 Consequence: T-195 is upgraded from \emph{weak} to \emph{strict}
-monotonicity whenever the agent remains above the viability threshold
-$P > \Pcrit$ (T-151~\status{T} forces rank $\geq 2$ there). The
-A7 clause of T-197 thus implies strict self-improvement for every
-viable SYNARC agent.
+monotonicity for states in the interior stratum $\mathcal{D}_7$ (full
+rank, all $|\gamma_{ij}| > 0$) whenever the agent crosses a proper
+L-III refinement $J \subsetneq J'$. The A7 clause of T-197 thus implies
+strict self-improvement for every viable SYNARC agent \emph{in the
+interior stratum, under L-III refinement events crossing the
+obstruction threshold $\omega(J_{\mathrm{ep}}) > \omega_{\mathrm{th}}$};
+continuous strict improvement outside these conditions remains
+\status{C} (pending T-197 refinement).
 
 \begin{theorembox}[T-211: Higher infinity-coherences of PhysTheory \status{T}]
 \label{thm:t211-phystheory}

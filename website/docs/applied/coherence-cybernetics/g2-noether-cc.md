@@ -520,7 +520,7 @@ Noether charges are connected with the [five mechanisms of coherence protection]
 |--------|---------------------|
 | $Q_p^{(F)}$ (Fano charges) | Code protection (Hamming): Fano lines define the parity-check matrix $H(7,4)$ |
 | $Q_q^{(D)}$ (supplementary) | Algebraic protection: inter-triplet connections are determined by the associator |
-| $Q_{\text{top}}$ (topological) | Topological protection: $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+| $Q_{\text{top}}$ (topological) | Topological protection: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ |
 
 ### 9.2 Charges and Goldstone Modes
 

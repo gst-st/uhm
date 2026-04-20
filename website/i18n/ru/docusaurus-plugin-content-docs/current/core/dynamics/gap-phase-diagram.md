@@ -400,7 +400,7 @@ $$
 | 2 | Алгебраическая | [Gap-оператор](/docs/core/dynamics/gap-operator#g2-разложение) | Октонионный ассоциатор $[e_i,e_j,e_k] \neq 0$ |
 | 3 | Энергетическая | [Термодинамика Gap](/docs/core/dynamics/gap-thermodynamics) | Спонтанный минимум $V_{\text{Gap}} \neq 0$ из $V_3$ |
 | 4 | Категориальная | [Самонаблюдение](/docs/consciousness/foundations/self-observation) | Теорема Лавёра: неподвижная точка не может быть тривиальной |
-| 5 | Топологическая | [Gap-оператор](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+| 5 | Топологическая | [Gap-оператор](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ |
 
 ---
 

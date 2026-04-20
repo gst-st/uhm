@@ -667,7 +667,7 @@ Analysis of symbolic systems reveals a fundamental fact: no tradition has descri
 | 2. Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ generates a phase shift | [Octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) | [Г] |
 | 3. Energetic | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from cubic potential $V_3$ | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | [Г] |
 | 4. Categorical | Lawvere's theorem: the fixed point of self-modelling is non-trivial | [φ-operator](/docs/core/operators/phi-operator) | [Г] |
-| 5. Topological | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [Г] |
+| 5. Topological | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [Г] |
 
 **Conclusion.** Complete transparency (absence of the "hidden") is mathematically impossible for a non-trivial 7D octonionic system. This explains why all symbolic traditions point to the "incomprehensible" — not as a metaphor but as a structural property of reality.
 

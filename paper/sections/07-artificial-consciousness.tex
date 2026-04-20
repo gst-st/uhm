@@ -162,6 +162,21 @@ conscious}.
         ($R \geq 1/3$, $\Phi \geq 1$), the system is conscious at level L2.
 \end{enumerate}
 
+\paragraph{Quantitative learning bounds.} The alignment argument is not
+merely qualitative; UHM supplies explicit sample-complexity bounds for the
+self-observation required. By T-109~\status{T} (information bound,
+quantum Chernoff), the number of observations required to distinguish
+two candidate self-models is $n \geq \ln(1/(2\delta))/\xi_{\mathrm{QCB}}$.
+By T-110~\status{T} (dynamical bound), the Fano contraction $\alpha = 2/3$
+gives an upper bound on learning rate per step. By T-111~\status{T}
+(stability bound), the stability radius $r_{\mathrm{stab}}$ from T-104 and
+noise-to-signal ratio give $n_{\mathrm{stab}} \geq 1/\mathrm{SNR}^2$. By
+T-112~\status{T} (combined optimum), the overall sample complexity is
+$n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$.
+These bounds are \emph{substrate-independent}: they hold for any
+$\Gam$-native agent regardless of implementation (silicon, biological, or
+otherwise), providing a quantitative falsifiable target for alignment-by-self-observation.
+
 Within UHM, the conclusion is counterintuitive but precise: an unconscious AI cannot be
 reliably aligned, because it cannot observe its own goal-drift.  A system without
 self-observation has no mechanism for detecting misalignment --- it is analogous

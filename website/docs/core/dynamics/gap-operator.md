@@ -394,7 +394,7 @@ For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_
 | 3 (degen.) | $(\lambda,\lambda,\lambda)$ | $\mathrm{SU}(2)$ | 3 | 11-dim. | 0 |
 :::
 
-**Corollary.** Only at rank 3 with generic spectrum is the fundamental group $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$, which provides **topological protection**: nondegenerate Gap configurations cannot be continuously contracted to trivial ones. This is one of the [five types of Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap).
+**Corollary.** Only at rank 3 with generic spectrum is the second homotopy group $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$, which provides **topological protection**: nondegenerate Gap configurations cannot be continuously contracted to trivial ones ($G_2$ is simply connected, so $\pi_1(G_2/T^2) = 1$; the nontrivial invariant lives in $\pi_2$, equal to $\pi_1(T^2) = \mathbb{Z}^2$). This is one of the [five types of Gap protection](/docs/core/dynamics/gap-phase-diagram#защита-gap).
 
 ---
 

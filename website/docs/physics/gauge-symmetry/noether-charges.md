@@ -248,7 +248,7 @@ $$Q_{\mathrm{top}}[C] := \frac{1}{2\pi} \oint_C \sum_{\mathrm{Fano}} \epsilon_{i
 
 $$Q_{\mathrm{top}} = \deg\left(\tau \mapsto [\hat{\mathcal{G}}(\tau)] \in G_2/T^2\right)$$
 
-**(b)** $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ — two independent winding numbers corresponding to the two simple roots of the Lie algebra $\mathfrak{g}_2$.
+**(b)** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ — two independent winding numbers corresponding to the two simple roots of the Lie algebra $\mathfrak{g}_2$.
 
 **(c)** For a system with opacity rank $r$: $|Q_{\mathrm{top}}| \leq r \leq 3$.
 :::
@@ -280,9 +280,9 @@ Topological protection ($\pi_1 \neq 0$) exists **only** at rank 3 with generic s
 :::
 
 :::tip[Theorem 5.4 (Topological Protection of Gap) \[T\]]
-**(a)** $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ $\Rightarrow$ there exist non-degenerate Gap configurations that **cannot** be continuously deformed to trivial ones.
+**(a)** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ $\Rightarrow$ there exist non-degenerate Gap configurations that **cannot** be continuously deformed to trivial ones.
 
-**(b)** The configuration class $[\hat{\mathcal{G}}] \in \pi_1(G_2/T^2)$ is determined by two integers $(n_1, n_2)$ corresponding to the simple roots of $\mathfrak{g}_2$:
+**(b)** The configuration class $[\hat{\mathcal{G}}] \in \pi_2(G_2/T^2)$ is determined by two integers $(n_1, n_2)$ corresponding to the simple roots of $\mathfrak{g}_2$:
 - $\alpha_1$ (short root): $n_1 \in \mathbb{Z}$
 - $\alpha_2$ (long root): $n_2 \in \mathbb{Z}$
 
@@ -304,7 +304,7 @@ Taking topological protection into account, there are **five** independent mecha
 | 2 | Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ |
 | 3 | Energetic | Spontaneous minimum $V_{\mathrm{Gap}} \neq 0$ from $V_3$ |
 | 4 | Categorical | Lawvere's theorem: the fixed point cannot be trivial |
-| 5 | **Topological** | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$: a non-degenerate Gap cannot be continuously contracted |
+| 5 | **Topological** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: a non-degenerate Gap cannot be continuously contracted |
 
 Five **independent** arguments (code-theoretic, algebraic, variational, categorical, topological) establish the irreducibility of Gap as a **fundamental** fact of the 7-dimensional octonionic system.
 :::
@@ -715,7 +715,7 @@ With the proof of Step 6 the **bridge is fully closed**: all 8 steps have status
 | Goldstone modes $\leftrightarrow$ infra-slow neuronal fluctuations ($\sim$0.005–0.02 Hz) | [I] |
 | Topological charge $Q_{\mathrm{top}} \in \mathbb{Z}$; conservation under smooth evolution | [T] |
 | Classification of $G_2$ stabilizers by opacity rank | [T] |
-| Topological protection of Gap: $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ at rank 3 | [T] |
+| Topological protection of Gap: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ at rank 3 | [T] |
 | Five independent mechanisms of Gap irreducibility | [T] |
 | $\Lambda$ suppression factor: $19/49$ from Ward identities and spectrum of $F_{21}$ | [T] |
 | Experimental protocol for testing $G_2$-symmetry | [P] |

@@ -101,9 +101,9 @@ The stabiliser $H_{\hat{\mathcal{G}}}$ depends on the rank of the opacity operat
 :::tip Theorem 3.2 [T]
 Gap configurations of rank 3 with generic spectrum are **topologically protected**:
 
-**(a)** $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ — there exist non-degenerate Gap configurations that cannot be contracted to trivial ones.
+**(a)** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ — there exist non-degenerate Gap configurations that cannot be contracted to trivial ones.
 
-**(b)** The configuration class $[\hat{\mathcal{G}}] \in \pi_1(G_2/T^2)$ is determined by two integers $(n_1, n_2)$ corresponding to the simple roots of $\mathfrak{g}_2$:
+**(b)** The configuration class $[\hat{\mathcal{G}}] \in \pi_2(G_2/T^2)$ is determined by two integers $(n_1, n_2)$ corresponding to the simple roots of $\mathfrak{g}_2$:
 - $\alpha_1$ (short root): $n_1 \in \mathbb{Z}$
 - $\alpha_2$ (long root): $n_2 \in \mathbb{Z}$
 
@@ -134,7 +134,7 @@ Transition between sectors $(n_1, n_2)$ and $(n_1', n_2')$ requires surmounting 
 | 2 | Algebraic | Octonionic associator $[e_i,e_j,e_k] \neq 0$ |
 | 3 | Energetic | Spontaneous minimum $V_{\mathrm{Gap}} \neq 0$ from $V_3$ |
 | 4 | Categorical | Lawvere's theorem: the fixed point cannot be trivial |
-| 5 | **Topological** | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$: non-degenerate Gap is non-contractible |
+| 5 | **Topological** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: non-degenerate Gap is non-contractible |
 
 Five **independent** arguments (code-theoretic, algebraic, variational, categorical, topological) establish the irreducibility of the Gap as a **fundamental** fact of a 7-dimensional octonionic system.
 

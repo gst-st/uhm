@@ -219,7 +219,7 @@ Categorical protection lives in category theory — in the world of functors, na
 
 Imagine a rope tied in a knot. You can pull, compress, twist — but as long as you do not *cut* the rope, the knot remains a knot. No continuous deformation (without cuts) can turn a trefoil into a straight rope. This is the essence of topological protection: certain properties are invariant under continuous deformations.
 
-A Gap configuration of the holon with opacity rank 3 (three distinct nonzero eigenvalues) has precisely this property. The space of such configurations has a nontrivial fundamental group: $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$. This means there are loops in the configuration space that *cannot be contracted to a point*. A configuration with a nonzero topological charge cannot be continuously deformed to the trivial one — doing so would require a "tear", i.e. a phase transition.
+A Gap configuration of the holon with opacity rank 3 (three distinct nonzero eigenvalues) has precisely this property. The space of such configurations has a nontrivial fundamental group: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means there are loops in the configuration space that *cannot be contracted to a point*. A configuration with a nonzero topological charge cannot be continuously deformed to the trivial one — doing so would require a "tear", i.e. a phase transition.
 
 ### Topological Protection for Non-Mathematicians {#топология-для-нематематиков}
 
@@ -231,7 +231,7 @@ Two integers $(n_1, n_2)$ — winding numbers — count how many times the confi
 
 ### Mathematical Formulation
 
-At opacity rank $r = 3$ (generic spectrum): $\pi_1(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ — non-contractible loops exist, and non-degenerate Gap configurations cannot be continuously deformed to trivial ones. Topological protection "activates" only at maximal rank with distinct eigenvalues.
+At opacity rank $r = 3$ (generic spectrum): $\pi_2(G_2/T^2) \cong \mathbb{Z}^2 \neq 0$ — non-contractible loops exist, and non-degenerate Gap configurations cannot be continuously deformed to trivial ones. Topological protection "activates" only at maximal rank with distinct eigenvalues.
 
 :::info Canonical definition
 Full table of stabilisers by rank (0–3) and proofs: [Berry phase and topological charges](/docs/physics/cosmology-phys/berry-phase).
@@ -259,7 +259,7 @@ $$
 
 ### 5.2 Two Winding Numbers {#числа-намотки}
 
-The fundamental group $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ is specified by two integers $(n_1, n_2)$ corresponding to the two simple roots of the algebra $\mathfrak{g}_2$:
+The fundamental group $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ is specified by two integers $(n_1, n_2)$ corresponding to the two simple roots of the algebra $\mathfrak{g}_2$:
 
 - $\alpha_1$ (short root): winding number $n_1 \in \mathbb{Z}$
 - $\alpha_2$ (long root): winding number $n_2 \in \mathbb{Z}$
@@ -289,7 +289,7 @@ Clinically this corresponds to states of "diffuse identity" — when stable opac
 
 ### Independence from Other Mechanisms
 
-Topological protection rests on the properties of the fundamental group $\pi_1(G_2/T^2)$, which is determined exclusively by the *topology* of the configuration space. It does not use the Hamming code (shield I — discrete mathematics, shield V — continuous), does not depend on the associator (shield II may be zero for specific triples, but the topology is determined by the global structure of $G_2$), does not appeal to the potential (shield III — about the depth of the well, shield V — about the impossibility of a *path* out of the well), and is not connected to self-modelling (shield IV).
+Topological protection rests on the properties of the fundamental group $\pi_2(G_2/T^2)$, which is determined exclusively by the *topology* of the configuration space. It does not use the Hamming code (shield I — discrete mathematics, shield V — continuous), does not depend on the associator (shield II may be zero for specific triples, but the topology is determined by the global structure of $G_2$), does not appeal to the potential (shield III — about the depth of the well, shield V — about the impossibility of a *path* out of the well), and is not connected to self-modelling (shield IV).
 
 **See:** [Stabilisers of the Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы), [Fano channel](/docs/proofs/gap/fano-channel)
 
@@ -487,7 +487,7 @@ The Hamming code is significantly more efficient, but with limited distance ($d 
 | Octonionic associator $\neq 0$ for non-Fano triples | [T] |
 | Nonzero minimum $V_{\text{Gap}}^* > 0$ from $V_3$ | [T] |
 | Nontriviality of fixed point $\hat{\mathcal{G}}_* \neq 0$ | [T] |
-| $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ at rank 3 | [T] |
+| $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ at rank 3 | [T] |
 | Topological charge $Q_{\text{top}} \in \mathbb{Z}$ is conserved | [T] |
 | Independence of five mechanisms | [T] |
 | Joint probability $P_{\text{fail}} = \prod p_i$ | [C] (under independence assumption) |
@@ -502,7 +502,7 @@ The Hamming code is significantly more efficient, but with limited distance ($d 
 
 A summary of the key results:
 
-- **Holon coherence is protected by five independent mechanisms**, each resting on its own branch of mathematics: coding theory (Hamming code $H(7,4)$), non-associative algebra (octonionic associator), variational calculus (spontaneous minimum of $V_{\text{Gap}}$), category theory (Lawvere's theorem), algebraic topology ($\pi_1(G_2/T^2) \cong \mathbb{Z}^2$).
+- **Holon coherence is protected by five independent mechanisms**, each resting on its own branch of mathematics: coding theory (Hamming code $H(7,4)$), non-associative algebra (octonionic associator), variational calculus (spontaneous minimum of $V_{\text{Gap}}$), category theory (Lawvere's theorem), algebraic topology ($\pi_2(G_2/T^2) \cong \mathbb{Z}^2$).
 - **Three of the five shields are structurally irremovable** (code-theoretic, algebraic, categorical): they follow from the very fact of the existence of a 7-dimensional octonionic system with self-modelling. They cannot be "switched off" without destroying the holon.
 - **Complete destruction of coherence is impossible** for a viable holon: $P_{\text{fail}} = 0$ in the exact sense, since three structural mechanisms have $p_i = 0$.
 - **Pathological states** (psychosis, anaesthesia, coma) correspond not to *destruction* but to *weakening* of specific shields: the energetic (III) and topological (V), while the structural ones are preserved.

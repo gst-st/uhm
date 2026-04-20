@@ -400,7 +400,7 @@ Taking all results into account, **five independent mechanisms** of Gap irremova
 | 2 | Algebraic | [Gap operator](/docs/core/dynamics/gap-operator#g2-разложение) | Octonionic associator $[e_i,e_j,e_k] \neq 0$ |
 | 3 | Energetic | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from $V_3$ |
 | 4 | Categorical | [Self-observation](/docs/consciousness/foundations/self-observation) | Lawvere's theorem: the fixed point cannot be trivial |
-| 5 | Topological | [Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$ |
+| 5 | Topological | [Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ |
 
 ---
 

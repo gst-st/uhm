@@ -208,7 +208,7 @@ But the most dramatic change occurs in the fundamental group: at $r \leq 2$ the 
 | 3 | Full | All three planes of rotation are engaged | Global coherence crisis |
 
 :::info Interpretation (Topological Protection) [I]
-Only rank 3 with generic (non-degenerate) spectrum possesses a **nontrivial fundamental group** $\pi_1(G_2/T^2) \cong \mathbb{Z}^2$. This means that fully opaque configurations are **topologically protected**: it is impossible to continuously deform a rank-3 Gap profile into a trivial one ($r = 0$) without passing through a singularity. In cybernetic terms: a deep coherence crisis is not resolved by "gradual improvement" — structural reorganization (a topological transition) is required.
+Only rank 3 with generic (non-degenerate) spectrum possesses a **nontrivial fundamental group** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means that fully opaque configurations are **topologically protected**: it is impossible to continuously deform a rank-3 Gap profile into a trivial one ($r = 0$) without passing through a singularity. In cybernetic terms: a deep coherence crisis is not resolved by "gradual improvement" — structural reorganization (a topological transition) is required.
 :::
 
 **What topological protection means in practice.** Recall how it is impossible to smoothly turn a donut into a ball — one must "cut" and "glue." Similarly, a system in a state of full opacity ($r = 3$) cannot gradually, step by step, return to transparency. Any smooth path from $r = 3$ to $r = 0$ inevitably passes through a singularity — a point at which the old opacity structure is destroyed and a new one forms.
@@ -564,7 +564,7 @@ Let us summarize the chapter — from mathematical constructions to practical im
 
 2. **All opacity of a 7-dimensional system is described by three numbers** $(\lambda_1, \lambda_2, \lambda_3)$ — spectral parameters of the Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$. Opacity rank $r \in \{0, 1, 2, 3\}$ determines the qualitative nature of the self-understanding disorder.
 
-3. **Topological protection at $r = 3$**: at maximum rank with generic spectrum the fundamental group $\pi_1(G_2/T^2) = \mathbb{Z}^2$ forbids a smooth transition to transparency. A deep crisis requires a *phase transition*, not gradual improvement.
+3. **Topological protection at $r = 3$**: at maximum rank with generic spectrum the fundamental group $\pi_2(G_2/T^2) = \mathbb{Z}^2$ forbids a smooth transition to transparency. A deep crisis requires a *phase transition*, not gradual improvement.
 
 4. **The opacity paradox**: Gap raises purity $P$ (Theorem 2.3). A system needs opacity *for the sake of* its integrity — a perfectly transparent system is static and dead.
 
