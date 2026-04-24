@@ -1,4 +1,4 @@
-# UHM Theory Documentation
+# UHM Documentation
 
 Documentation website for **Unitary Holonomic Monism (UHM)** — a formal theory of reality and consciousness.
 

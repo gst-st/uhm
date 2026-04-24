@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 const BASE_URL = 'http://localhost:3000';
 
-test.describe('UHM Theory Site Debug', () => {
+test.describe('UHM Site Debug', () => {
   test('homepage loads correctly', async ({ page }) => {
     const errors: string[] = [];
     page.on('console', msg => {
@@ -21,7 +21,7 @@ test.describe('UHM Theory Site Debug', () => {
     await expect(page).toHaveTitle(/UHM/);
 
     // Check logo is visible
-    const logo = page.locator('nav img[alt="UHM Theory Logo"]');
+    const logo = page.locator('nav img[alt="UHM Logo"]');
     await expect(logo).toBeVisible();
 
     // Check hero section

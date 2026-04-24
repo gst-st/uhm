@@ -15,7 +15,7 @@ const ghPagesUrl = process.env.GH_PAGES_URL || 'https://holon.sh';
 const ghPagesBaseUrl = process.env.GH_PAGES_BASE_URL || '/';
 
 const config: Config = {
-  title: 'UHM Theory',
+  title: 'UHM',
   tagline: 'Unitary Holonomic Monism — Унитарный Голономный Монизм',
   favicon: 'img/favicon.ico',
 
@@ -171,7 +171,7 @@ const config: Config = {
     navbar: {
       // title: 'UHM',
       logo: {
-        alt: 'UHM Theory Logo',
+        alt: 'UHM Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -298,7 +298,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© 2024-${new Date().getFullYear()} UHM Theory · Max Sereda. Theory: CC BY-NC-SA 4.0 | Code: MIT`,
+      copyright: `© 2024-${new Date().getFullYear()} UHM · Max Sereda. Theory: CC BY-NC-SA 4.0 | Code: MIT`,
     },
     prism: {
       theme: prismThemes.github,
