@@ -216,7 +216,7 @@ $$
 **(c)** Lifetime via $G_2$-channel:
 
 $$
-\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 \, m_p^5} \sim 10^{72} \; \text{years}
+\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 \, m_p^5} \sim 4\times10^{47} \; \text{years}
 $$
 
 **Negligible** compared to the $SU(5)$-channel.
@@ -242,7 +242,7 @@ Full hierarchy of proton decay channels in the Gap formalism:
 |----------|----------|-------------------|---------------|--------|
 | $X,Y$-exchange ($SU(5)$) | $D=6$ | $M_X \sim 10^{16}$ GeV | $\sim 10^{37\text{–}38}$ | **Dominant** |
 | SUSY-Higgsino | $D=5$ | $m_{\tilde{q}} \sim 10^{13}$ GeV | $\sim 10^{60+}$ | Suppressed |
-| $G_2$-extra | $D=6$ | $M_{G_2} \sim 10^{19}$ GeV | $\sim 10^{72}$ | Negligible |
+| $G_2$-extra | $D=6$ | $M_{G_2} \sim 10^{19}$ GeV | $\sim 4\times10^{47}$ | Negligible |
 
 Thus, observable proton decay is entirely determined by the standard $D=6$ operators of $SU(5)$-GUT. Gap theory fixes the scale $M_X$ through the Gap hierarchy, turning $\tau_p$ from a parameter into a prediction.
 

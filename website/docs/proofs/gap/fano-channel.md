@@ -2,13 +2,13 @@
 sidebar_position: 1
 title: "Fano Channel and Gap Theorems"
 slug: /proofs/gap/fano-channel
-description: "Rigorous proofs: Fano channel preserves coherences, G₂-covariance of Fano dissipator, atomic is not G₂-covariant, equilibrium Gap, L4 ≠ Gap=0, necessity of generalized φ"
+description: "Rigorous proofs: Fano channel preserves coherences, Fano–atomic proportionality and the finite frame-group covariance, the canonical G₂-covariant dissipator, equilibrium Gap, L4 ≠ Gap=0, necessity of generalized φ"
 ---
 
 # Proofs: Fano Channel and Key Gap Theorems
 
 :::info Who this chapter is for
-The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, G₂-covariance, equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [Т].
+The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, the exact Fano–atomic proportionality $\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$ (with the finite frame-group covariance and the canonical $G_2$-covariant dissipator), equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [Т].
 :::
 
 This document contains **rigorous proofs** of the central theorems of Gap dynamics. All results have status **[Т]** (impeccably rigorous theorems, see the [status registry](/docs/reference/status-registry)).
@@ -233,66 +233,89 @@ $$
 
 ---
 
-## 5. G₂-Covariance of the Fano Dissipator [Т] {#g2-ковариантность}
+## 5. Covariance of the Fano Dissipator [Т] {#g2-ковариантность}
 
-:::tip Theorem 5.1 (G₂-covariance of the Fano dissipator) [Т]
-The dissipative channel with Fano Lindblad operators **is** $G_2$-covariant:
+:::tip Theorem 5.1a (Fano–atomic proportionality) [Т]
+The Fano dissipator is **exactly proportional** to the atomic dissipator on $\mathrm{Herm}(\mathbb{C}^7)$:
 
 $$
-\forall g \in G_2: \quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
+\mathcal{D}_{\text{Fano}} = \tfrac{2}{3}\,\mathcal{D}_{\text{atom}}.
 $$
 :::
 
-**Proof.**
-
-**(a)** $G_2 = \mathrm{Aut}(\mathbb{O})$ **preserves** octonionic multiplication, and therefore the Fano plane $PG(2,2)$. For each $g \in G_2$ there exists a permutation $\sigma_g$ of lines: $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$.
-
-**(b)** The Fano dissipator:
+**Proof.** The Fano channel $\mathcal{P}_{\text{Fano}}(\Gamma) = \tfrac13\sum_{p=1}^{7}\Pi_p\,\Gamma\,\Pi_p$ acts entrywise as follows. Each point of $PG(2,2)$ lies on $r=3$ lines, so a diagonal entry is retained three times: $\tfrac13\cdot 3\gamma_{ii} = \gamma_{ii}$ (diagonal preserved). Each pair $\{i,j\}$ lies on exactly $\lambda=1$ line, so an off-diagonal entry is retained once: $\tfrac13\gamma_{ij}$ (coherences contracted by $\tfrac13$). Hence $\mathcal{P}_{\text{Fano}} = \tfrac13\,\mathrm{Id} + \tfrac23\,\Delta$, where $\Delta(\Gamma) := \mathrm{diag}(\Gamma)$ is the pinching onto the diagonal. Since $\sum_p (L_p^{\text{Fano}})^\dagger L_p^{\text{Fano}} = \tfrac13\sum_p \Pi_p = I$, the Lindblad dissipator is the channel minus the identity:
 
 $$
-\mathcal{D}_{\text{Fano}}[\Gamma] = \frac{1}{3}\sum_{p=1}^{7} \Pi_p\,\Gamma\,\Pi_p - \Gamma
+\mathcal{D}_{\text{Fano}} = \mathcal{P}_{\text{Fano}} - \mathrm{Id} = \tfrac23(\Delta - \mathrm{Id}) = \tfrac23\,\mathcal{D}_{\text{atom}}. \qquad\square
 $$
 
-**(c)** Substituting $g\Gamma g^\dagger$ and using $g^\dagger\Pi_p\,g = \Pi_{\sigma_g^{-1}(p)}$:
+:::info Corollary — structural origin of $\alpha = 2/3$
+The mixing constant $\alpha = 2/3$ used throughout the corpus is **not a free parameter**: it is the BIBD$(7,3,1)$ uniformization constant, $\alpha = 1 - c = 1 - \tfrac{k-1}{v-1} = 1 - \tfrac13 = \tfrac23$ — the dissipated fraction of coherence per Fano step. Theorem 5.1a derives it from the incidence geometry alone.
+:::
+
+:::warning Theorem 5.1b (Covariance group of the pinching dissipators) [Т]
+Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, the two dissipators have **identical** symmetry groups. Both are $S_7$-equivariant and covariant under the finite **octonionic frame group** $\Gamma_{\!\text{oct}} := \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ (order 168), realised inside $G_2$ as the basis permutations preserving the seven Fano lines. **Neither is covariant under the full continuous $G_2$.**
+:::
+
+**Proof.** ($\Gamma_{\!\text{oct}}$-covariance.) For $g\in\Gamma_{\!\text{oct}}$, $g$ permutes the coordinate line-projectors, $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$, and since $\sum_p \Pi_{\sigma_g(p)} = \sum_q \Pi_q$ one gets $\mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger$.
+
+(Failure of full $G_2$-covariance.) $G_2$ is connected, so a continuous map $g\mapsto\sigma_g$ into the discrete 7-element set of coordinate lines is constant; $g\Pi_p g^\dagger = \Pi_p\ \forall g$ would make $\mathrm{span}(\text{line }p)$ a 3-dimensional $G_2$-invariant subspace. But the fundamental representation $\mathbf{7}$ of $G_2$ is **irreducible** (Cartan 1894), so by Schur's lemma it has no nonzero proper invariant subspace — contradiction. A generic $g\in G_2$ carries $\Pi_p$ to a rank-3 projector onto a *rotated* 3-subspace, not to any $\Pi_q$; equivalently $\mathrm{diag}(g\Gamma g^\dagger)\neq g\,\mathrm{diag}(\Gamma)\,g^\dagger$. Hence the pinching dissipators break $G_2$ down to $\Gamma_{\!\text{oct}}$. $\square$
+
+:::tip Theorem 5.1c (Canonical $G_2$-covariant dissipator) [Т]
+A genuinely $G_2$-covariant Lindblad dissipator on $\mathbb{C}^7$ exists, built from the associative calibration 3-form $\varphi$ (octonionic structure constants):
 
 $$
-\mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\left[\frac{1}{3}\sum_q \Pi_q\,\Gamma\,\Pi_q\right]g^\dagger - g\Gamma g^\dagger = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
+(A_a)_{bc} := \tfrac{1}{\sqrt 6}\,\varphi_{abc}\ (a=1,\dots,7), \qquad
+\mathcal{D}_{G_2}[\Gamma] = \sum_{a=1}^{7}\Big(A_a\Gamma A_a^\dagger - \tfrac12\{A_a^\dagger A_a,\Gamma\}\Big).
 $$
 
-since $\sigma_g$ is a permutation, $\sum_p \Pi_{\sigma_g^{-1}(p)} = \sum_q \Pi_q$. $\square$
+Then (i) $\sum_a A_a^\dagger A_a = I$ (CPTP), from the contraction identity $\sum_{a,b}\varphi_{abc}\varphi_{abd}=6\,\delta_{cd}$; and (ii) $\mathcal{D}_{G_2}[g\Gamma g^\dagger] = g\,\mathcal{D}_{G_2}[\Gamma]\,g^\dagger$ for **all** $g\in G_2$, because $\varphi$ (hence the operator set $\{A_a\}$) is a $G_2$-invariant tensor.
+:::
+
+**Proof.** (i) $\big(\sum_a A_a^\dagger A_a\big)_{cd} = \tfrac16\sum_{a,b}\varphi_{abc}\varphi_{abd} = \tfrac16\cdot 6\delta_{cd} = \delta_{cd}$. (ii) $g\in G_2 = \{g\in SO(7): g^\ast\varphi = \varphi\}$ preserves $\varphi$; as $A_a = \varphi(e_a,\cdot,\cdot)$ transforms in the $\mathbf 7$ under $G_2$, the contraction $\sum_a A_a(\cdot)A_a^\dagger$ commutes with $\mathrm{Ad}_g$. By Schur, $\mathcal{D}_{G_2}$ acts as a scalar on each isotypic component of $\mathrm{End}_0(\mathbb C^7) = \mathbf 7\oplus\mathbf{14}\oplus\mathbf{27}$ (three Casimir-determined decay rates). $\square$
+
+:::note Kinematics vs. dynamics — the precise role of $G_2$
+Theorems 5.1a–c remove the earlier over-claim ("the Fano dissipator is $G_2$-covariant") and replace it with the correct, stronger picture:
+
+- **Kinematically**, $G_2 = \mathrm{Stab}(\varphi)$ is the gauge group of the *holonomic representation* — the octonionic 3-form is the physical invariant. This is what underlies the $48\to34$ parameter count of the [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): only the spectrum (6) and the $\varphi$-relative angles (28) are $G_2$-invariant.
+- **Dynamically**, the physical UHM dissipator is the pinching (Fano) form, which selects the functional frame $\{A,S,D,L,E,O,U\}$ and therefore breaks $G_2$ to the finite frame group $\Gamma_{\!\text{oct}}$. The unbroken $\mathcal{D}_{G_2}$ (Theorem 5.1c) is the symmetric reference dynamics; UHM's is its frame-fixed realisation. This kinematic-$G_2$ / dynamical-$\Gamma_{\!\text{oct}}$ split **is** the "price of self-observation" tracked by the $\alpha$-parameter.
+- The selection of $k=3$ does **not** rely on $G_2$-covariance: it follows from Choi-rank minimality (rank $=7$, T11), BIBD$(7,3,1)$ closure (T13) and the perfect Hamming code $H(7,4)$ (T8–T9).
+:::
 
 ---
 
-## 6. Atomic Dissipator is NOT G₂-Covariant [Т] {#атомарный-не-g2}
+## 6. Pinching Dissipators are NOT fully G₂-Covariant [Т] {#атомарный-не-g2}
 
-:::tip Theorem 6.1 (Atomic dissipator breaks $G_2$) [Т]
-The dissipative channel with atomic operators $L_k = |k\rangle\langle k|$ **is not** $G_2$-covariant:
+:::tip Theorem 6.1 (Pinching dissipators break $G_2$) [Т]
+The atomic dissipator $\mathcal{D}_{\text{atom}}[\Gamma] = \mathrm{diag}(\Gamma) - \Gamma$ — and, by Theorem 5.1a, the Fano dissipator $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ — is **not** covariant under the full continuous $G_2$:
 
 $$
-\exists g \in G_2: \quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g\,\mathcal{D}_{\text{atom}}[\Gamma]\,g^\dagger
+\exists g \in G_2: \quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g\,\mathcal{D}_{\text{atom}}[\Gamma]\,g^\dagger.
 $$
+
+Both are covariant exactly under the finite frame group $\Gamma_{\!\text{oct}}\subset G_2$ (Theorem 5.1b); the fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (Theorem 5.1c).
 :::
 
 **Proof.**
 
 **(a)** $\mathcal{D}_{\text{atom}}[\Gamma] = \mathrm{diag}(\Gamma) - \Gamma$.
 
-**(b)** Covariance requires: $\mathrm{diag}(g\Gamma g^\dagger) = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ for all $\Gamma$.
+**(b)** Covariance requires $\mathrm{diag}(g\Gamma g^\dagger) = g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ for all $\Gamma$, i.e. $g$ commutes with the pinching $\Delta$.
 
-**(c)** This holds only for **diagonal** $g$, but not for general $g \in G_2 \subset \mathrm{SO}(7)$.
+**(c)** This holds iff $g$ permutes the coordinate basis (monomial $g$); a generic $g \in G_2 \subset \mathrm{SO}(7)$ is not monomial (irreducibility of $\mathbf 7$, Theorem 5.1b).
 
-**(d)** Counterexample: a rotation $g$ in the plane $(e_1, e_2)$ with $\gamma_{12} \neq 0$ gives: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$, since the left side zeroes the coherence in the rotated basis, while the right side does not. $\square$
+**(d)** Counterexample: a rotation $g$ in the plane $(e_1, e_2)$ with $\gamma_{12} \neq 0$ gives $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$, since the left side zeroes the coherence in the rotated basis while the right side does not. The maximal covariance group is therefore the finite $\Gamma_{\!\text{oct}}$. $\square$
 
 ### Degree of G₂-violation
 
 :::tip Theorem 6.2 (Degree of violation is determined by $\alpha$) [Т]
-For the mixed channel $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$:
+For the mixed channel $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ the $G_2$-non-covariance
 
 $$
 \Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\text{op}}
 $$
 
-is monotonically increasing: $\Delta_{G_2}(0) = 0$ (full covariance), $\Delta_{G_2}(1) = \Delta_{\max}$ (full violation).
+is **strictly positive for every** $\alpha\in[0,1]$. Since both pinching dissipators break $G_2$ (Theorem 5.1b), the mixed dissipator satisfies $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\,\mathcal{D}_{\text{atom}}$, hence $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\,\Delta_{\max}$, with minimum $\tfrac23\Delta_{\max}$ at the pure-Fano point $\alpha=0$. Full $G_2$-covariance is attained only by the structure-constant dissipator $\mathcal{D}_{G_2}$ (Theorem 5.1c), nowhere on the pinching family.
 :::
 
 ---
@@ -449,7 +472,7 @@ flowchart TD
     T1["T 1.1: Completeness of Fano atoms<br/>ΣΠ_p = 3I"] --> T2["T 2.1: Fano channel preserves coherences<br/>γ_ij → γ_ij/3, phases preserved"]
     T2 --> T3["T 3.1–3.3: Canonical φ_coh<br/>convex combination P_base + P_Fano"]
     T3 --> T4["T 4.1: Variational α*<br/>α* ≈ 1 − P_crit/P"]
-    T5["T 5.1: G₂-covariance P_Fano"] --> T6["T 6.1–6.2: P_base breaks G₂<br/>violation ∝ α"]
+    T5["T 5.1a–c: D_Fano=⅔D_atom<br/>frame-group Γ_oct; canonical D_G2"] --> T6["T 6.1–6.2: pinching breaks G₂<br/>violation = (2+α)/3·Δmax"]
     T6 --> T13["T 13.1: Fano optimality<br/>unique among BIBD(7,k,1)"]
     T2 --> T7["T 7.1: Stationary Gap<br/>phase shift ∝ Δω/(Γ₂+κ)"]
     T7 --> T8["T 8.1: L4 ≠ Gap=0"]

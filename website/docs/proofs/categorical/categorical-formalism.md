@@ -34,7 +34,7 @@ In this document:
 13. [Derived categories and IC-cohomologies](#производные-категории)
 14. [∞-topos as the true primitive](#infty-топос-как-истинный-примитив)
 15. [L-unification](#l-унификация)
-    - [15.3 Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](#сопряжение-adjunction)
+    - [15.3 The $(\mathcal{D}_\Omega, \mathcal{R})$ duality and κ₀](#сопряжение-adjunction)
 17. [Categorical completeness of UHM](#категориальная-полнота)
 
 ---
@@ -2259,15 +2259,15 @@ The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ possesses the following structur
 
 The ∞-topos structure allows formalizing [free will](/docs/consciousness/ethics-meaning/freedom).
 
-**Definition 14.2 (Freedom: ∞-categorical motivation):**
+**Definition 14.2 (Freedom):**
 
-For a state Γ ∈ $\mathrm{Ob}(\mathcal{C})$ the ∞-categorical definition:
+For a state Γ ∈ $\mathrm{Ob}(\mathcal{C})$, freedom is the dimension of the flat (zero-mode) directions of the free energy:
 
 $$
-\mathrm{Freedom}(\Gamma) := \pi_0\left(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}}\right)
+\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
 
-where:
+(**Note:** the earlier $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$ is **not** equivalent — $\mathrm{Map}(\Gamma,T)$ is contractible, so $\pi_0=1$; the correct ∞-categorical reading is the tangent dimension of the free-energy critical manifold, which equals $\dim\ker\mathcal H_\Gamma$. See [Consequences §Free will](/docs/core/foundations/consequences#freedom-конечномерное).) Here:
 - $\mathrm{Map}(\Gamma, T)$ — space of morphisms to the terminal object
 - $\pi_0$ — set of connected components
 - "non-trivial" — exclusion of zero/trivial paths
@@ -2456,7 +2456,7 @@ $$
 
 The evolution of predicates χ ∈ L under ▷ **is** the dynamics of the system. See [internal logic of Ω](/docs/core/foundations/axiom-omega#внутренняя-логика).
 
-### 15.3 Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and derivation of κ₀ {#сопряжение-adjunction}
+### 15.3 The $(\mathcal{D}_\Omega, \mathcal{R})$ duality and the derivation of κ₀ {#сопряжение-adjunction}
 
 :::warning Key theorem
 The regeneration rate $\kappa_0$ is **categorically derived** from the adjunction of dissipation and regeneration functors. This transforms a phenomenological parameter into a structural quantity.
@@ -2482,43 +2482,19 @@ $$
 
 where $\Omega_s$ is a copy of the classifier indexed by element s ∈ S.
 
-**Theorem 15.3 (Existence of the adjunction):**
+**Status of the pair $(\mathcal{D}_\Omega, \mathcal{R})$: a guiding duality reading [И], not an adjunction theorem.**
 
-There exists an adjunction:
+The pair $(\mathcal{D}_\Omega, \mathcal{R})$ organizes the "forgetting / restoring" duality of the dynamics, but it is **not** a genuine categorical adjunction, for two independent reasons:
 
-$$
-\mathcal{D}_\Omega \dashv \mathcal{R}: \mathbf{Sh}_\infty(\mathcal{C}) \rightleftarrows \mathbf{Set}
-$$
+1. **Variance.** $\mathcal{D}_\Omega(\Gamma) = \mathrm{Hom}(\Gamma, \Omega)$ is **contravariant** in $\Gamma$ (a morphism $\Gamma \to \Gamma'$ pulls predicates *back*, $\mathrm{Hom}(\Gamma',\Omega) \to \mathrm{Hom}(\Gamma,\Omega)$), so $\mathcal{D}_\Omega$ is a functor $\mathbf{Sh}_\infty(\mathcal{C})^{\mathrm{op}} \to \mathbf{Set}$ — not the covariant functor required on the left of an adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$.
 
-with natural isomorphism:
+2. **The Hom-set bijection fails.** Already in the topos $\mathbf{Set}$ with $\Omega = 2$: for $\Gamma = 1$, $S = 3$ one has $|\mathrm{Hom}(\mathcal{D}_\Omega(1), 3)| = |\mathrm{Hom}(2,3)| = 9$, while $|\mathrm{Hom}(1, \mathcal{R}(3))| = |{\textstyle\coprod_3} 2| = 6$; likewise $81 \neq 36$ for $\Gamma = 2$. A map *into* a coproduct does not factor through a single component in general, so the would-be correspondence $f \mapsto \tilde f$ is not a bijection.
 
-$$
-\text{Hom}_{\mathbf{Set}}(\mathcal{D}_\Omega(\Gamma), S) \cong \text{Hom}_{\mathbf{Sh}_\infty}(\Gamma, \mathcal{R}(S))
-$$
+**What survives, with its own independent basis:**
 
-**Proof:**
-
-(a) For any set $S$ and sheaf $\Gamma$, a morphism $f: \mathcal{D}_\Omega(\Gamma) \to S$ defines a map of predicates to the set.
-
-(b) Each such f induces a morphism $\tilde{f}: \Gamma \to \bigoplus_{s \in S} \Omega_s$ via the universal property of the coproduct.
-
-(c) Conversely, a morphism $g: \Gamma \to \mathcal{R}(S)$ projects onto each component $\Omega_s$, giving a map $\bar{g}: \mathcal{D}_\Omega(\Gamma) \to S$.
-
-(d) Naturality follows from functoriality of the constructions.
-
-**(e) Triangle identities [Т]:**
-
-For completeness of the adjunction one must verify two triangle (zig-zag) identities:
-
-**Identity 1:** $(\varepsilon_{\mathcal{R}(S)}) \circ (\mathcal{R}(\eta_S)) = \mathrm{id}_{\mathcal{R}(S)}$ for all $S \in \mathbf{Set}$.
-
-**Proof of Identity 1.** Let $S \in \mathbf{Set}$. Then $\mathcal{R}(S) = \bigoplus_{s \in S} \Omega_s$ is the free $\Omega$-sheaf on $S$. The unit $\eta_{\mathcal{R}(S)}: \mathcal{R}(S) \to \mathcal{R}(\mathcal{D}_\Omega(\mathcal{R}(S)))$ embeds $\bigoplus_s \Omega_s$ into $\bigoplus_{\chi \in \mathrm{Hom}(\mathcal{R}(S), \Omega)} \Omega_\chi$. Each generator $\Omega_s$ of the free sheaf is mapped to the component $\Omega_{\pi_s}$ where $\pi_s: \mathcal{R}(S) \to \Omega$ is the projection onto the $s$-th summand. The counit $\varepsilon_S: \mathcal{D}_\Omega(\mathcal{R}(S)) \to S$ maps each predicate $\chi$ to the element $s \in S$ indexing the summand that $\chi$ projects onto. The composition $\varepsilon_{\mathcal{R}(S)} \circ \mathcal{R}(\eta_S)$ sends $\Omega_s \xrightarrow{\eta} \Omega_{\pi_s} \xrightarrow{\varepsilon} \Omega_s$, which is the identity on each generator. By universality of the coproduct, the composition is $\mathrm{id}_{\mathcal{R}(S)}$. $\checkmark$
-
-**Identity 2:** $(\mathcal{D}_\Omega(\varepsilon_\Gamma)) \circ (\eta_{\mathcal{D}_\Omega(\Gamma)}) = \mathrm{id}_{\mathcal{D}_\Omega(\Gamma)}$ for all $\Gamma \in \mathbf{Sh}_\infty(\mathcal{C})$.
-
-**Proof of Identity 2.** Let $\Gamma \in \mathbf{Sh}_\infty(\mathcal{C})$ and $T = \mathcal{D}_\Omega(\Gamma) = \mathrm{Hom}(\Gamma, \Omega)$. The unit $\eta_T: T \to \mathcal{D}_\Omega(\mathcal{R}(T)) = \mathrm{Hom}(\bigoplus_{\chi \in T} \Omega_\chi, \Omega)$ maps each predicate $\chi \in T$ to the evaluation morphism $\mathrm{ev}_\chi: \bigoplus_{\chi'} \Omega_{\chi'} \to \Omega$ that projects onto the $\chi$-th component. The counit $\varepsilon_\Gamma: \Gamma \to \mathcal{R}(T)$ is the canonical embedding (from step (b)). The functor $\mathcal{D}_\Omega$ applied to $\varepsilon_\Gamma$ gives $\mathcal{D}_\Omega(\varepsilon_\Gamma): \mathrm{Hom}(\mathcal{R}(T), \Omega) \to \mathrm{Hom}(\Gamma, \Omega)$ by precomposition: $f \mapsto f \circ \varepsilon_\Gamma$. The composition $\mathcal{D}_\Omega(\varepsilon_\Gamma) \circ \eta_T$ sends $\chi \mapsto \mathrm{ev}_\chi \circ \varepsilon_\Gamma = \chi$ (since $\varepsilon_\Gamma$ embeds $\Gamma$ into $\bigoplus \Omega_\chi$ and $\mathrm{ev}_\chi$ extracts the $\chi$-component, recovering the original predicate). Therefore the composition is $\mathrm{id}_T$. $\checkmark$
-
-Both triangle identities hold, completing the proof that $\mathcal{D}_\Omega \dashv \mathcal{R}$ is a valid adjunction. $\blacksquare$
+- The **dynamical trichotomy** (Hamiltonian / dissipation toward $I/N$ / regeneration toward $\rho_*$) is a theorem **[Т]** on LGKS + fixed-point + purity-monotonicity grounds ([triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) — it never needed the adjunction.
+- The **κ₀ formula** is **[Т at the first-order-kinetics model]** via the rapid pre-equilibrium derivation ([axiom of septicity](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)) — independent of the categorical reading.
+- The **duality language** ($\mathcal{D}_\Omega$ "forgets" structure toward the classifier, $\mathcal{R}$ "freely restores" it) remains a useful organizing reading **[И]** of the same dynamics; the unit/counit formulas of §15.3.2 are the schematic form of this reading.
 
 #### 15.3.2 Unit and counit of the adjunction
 
@@ -2540,16 +2516,16 @@ This is the **projection** of the free sheaf onto the generating set.
 
 #### 15.3.3 Derivation of κ₀ and κ_bootstrap
 
-**Theorem 15.3.1 (Categorical derivation of κ₀):**
+**Theorem 15.3.1 (The κ₀ formula and its categorical reading):**
 
-The regeneration rate $\kappa_0$ is **derived** as the norm of the unit of the adjunction:
+The regeneration rate is
 
 $$
-\kappa_0 = \|\eta\|_{\text{op}} \cdot \omega_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
+\kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
+\qquad \textbf{[Т at the first-order-kinetics model]},
 $$
 
-where:
-- $\|\eta\|_{\text{op}}$ — operator norm of the unit η on a concrete state Γ
+**derived by rapid pre-equilibrium** (quasi-steady-state branching of the regeneration channels, [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)). The **categorical reading [И]**: within the $(\mathcal{D}_\Omega, \mathcal{R})$ duality (§15.3.1 status note), the same quantity plays the role of the "norm of the unit", $\kappa_0 = \|\eta\|_{\text{op}} \cdot \omega_0$ — an interpretive identification, not the derivation basis. Here:
 - $\omega_0$ — characteristic frequency of the system (parameter, analogous to mass in physics)
 - $\gamma_{ij}$ — elements of the coherence matrix
 
@@ -2567,7 +2543,7 @@ $$
 
 **Proof of positivity:**
 
-(a) The unit of the adjunction $\eta \neq 0$ for any nontrivial Γ (otherwise $\mathcal{D}_\Omega(\Gamma) = \varnothing$, which is impossible for a nonzero sheaf).
+(a) $\kappa_0(\Gamma) > 0$ for any viable Γ: viability requires nonzero coherences $\gamma_{OE}, \gamma_{OU}$ (a diagonal $\Gamma$ has no regeneration coupling — see [triadic step T3](/docs/proofs/minimality/theorem-octonionic-derivation#шаг-t3)), and $\gamma_{OO} > 0$ on $\mathcal{D}(\mathbb{C}^7)$ interior.
 
 (b) Compactness of the set $\{Γ: P(Γ) = P_{\text{crit}} + \varepsilon\}$ for small ε > 0 guarantees the infimum is achieved.
 
@@ -2585,7 +2561,7 @@ $$
 
 **Note:** κ₀ depends on state Γ through coherences $\gamma_{OE}, \gamma_{OU}, \gamma_{OO}$. See [master definition](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0).
 
-**Theorem 15.3.1 (CPTP structure of regeneration):**
+**Theorem 15.3.4 (CPTP structure of regeneration):**
 
 The regenerative operator $\mathcal{R}_\alpha: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\mathcal{H})$ of the form:
 
@@ -2609,9 +2585,9 @@ L-unification closes the following open questions:
 | Why 7 dimensions? | Minimal base for Ω ∩ Γ ≠ ∅ | [Theorem 7.1](/docs/proofs/minimality/theorem-minimality-7) |
 | Source of CPTP | Completeness of Ω | §15.2.2 |
 | Emergence of τ | Modality ▷ on Ω | §15.2.3 |
-| Derivation of κ₀ | Unit of adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ | §15.3 |
+| Derivation of κ₀ | Rapid pre-equilibrium [Т]; categorical reading — unit of the $(\mathcal{D}_\Omega, \mathcal{R})$ duality [И] | [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux), §15.3 |
 | Internal logic | Ω-types in HoTT | [Axiom Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика) |
-| Nonlinearity and positivity | CPTP-structure of $\mathcal{R}_\alpha$ | [§15.3.1](/docs/core/dynamics/evolution#сохранение-положительности) |
+| Nonlinearity and positivity | CPTP-structure of $\mathcal{R}_\alpha$ | [Th. 15.3.4](/docs/core/dynamics/evolution#сохранение-положительности) |
 
 ### 15.5 Commutative unification diagram
 

@@ -185,7 +185,7 @@ The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \op
 | Question | Answer | Theorem |
 |--------|-------|---------|
 | Why $\dim_{\mathrm{eff}} = 3$ for space? | From the $\{A,S,D\}$-sector: $\dim(\mathbf{3}) = 3$ | T-119 [T] |
-| How does Lorentzian signature $(+,-,-,-)$ arise? | From KO-dim 6 of the spectral triple | T-53 [T] |
+| How does Lorentzian signature $(+,-,-,-)$ arise? | $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign from reflection positivity (bounded-below PW generator) | T-53 [T]+[T at refl. positivity] |
 | How is 3+1 connected to the 7 dimensions of the holon? | Sector decomposition + Gelfand–Connes reconstruction | T-120 [T] |
 
 ### 4.3 Sector Decomposition
@@ -235,7 +235,7 @@ The Lovelock theorem (1971) states: the unique second-order tensor constructed f
 | Gap | Question | UHM answer | Theorem |
 |--------|--------|-----------|---------|
 | 1 | Why $d = 4$? | Sector decomposition $7 = 1 + 3 + 3$ | T-120 [T] |
-| 2 | Why Lorentzian signature? | KO-dimension 6 of the spectral triple | T-53 [T] |
+| 2 | Why Lorentzian signature? | $(1,3)$-split [T]; Lorentzian sign [T at reflection positivity] (bounded-below PW generator; KO-dim 6 alone does not fix it) | T-53 [T]+[T at r.p.] |
 | 3 | Why $\Lambda > 0$? | Autopoiesis requires $\rho_{\text{vac}} > 0$ | T-71 [T] |
 
 ---

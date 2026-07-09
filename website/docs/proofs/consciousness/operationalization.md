@@ -66,9 +66,29 @@ $$\frac{1 + \Phi}{7} > \frac{2}{7} \iff \Phi > 1$$
 
 **Step 6 (Uniqueness).** Any $\Phi_{\text{th}} \neq 1$ is not the smallest threshold compatible with $P_{\text{crit}} = 2/7$:
 - $\Phi_{\text{th}} < 1$: **too weak a threshold** — admits non-viable states (uniform diagonal with $\Phi \in (\Phi_{\text{th}}, 1)$ gives $P = (1+\Phi)/7 < 2/7$, violating viability despite $\Phi \geq \Phi_{\text{th}}$).
-- $\Phi_{\text{th}} > 1$: **too strict a threshold** — excludes states that are actually viable (uniform diagonal with $\Phi = 1 \in (1, \Phi_{\text{th}})$ gives $P = 2/7 = P_{\text{crit}}$ — a boundary viable state, yet $\Phi < \Phi_{\text{th}}$ erroneously signals "L2 not reached"). This violates necessity: $\Phi_{\text{th}}$ must be the **smallest** value guaranteeing $P \geq P_{\text{crit}}$.
+- $\Phi_{\text{th}} > 1$: **too strict a threshold** — excludes states that are actually viable (the uniform-diagonal state with $\Phi = 1 < \Phi_{\text{th}}$ gives $P = 2/7 = P_{\text{crit}}$ — a boundary viable state, yet $\Phi < \Phi_{\text{th}}$ erroneously signals "L2 not reached"). This violates necessity: $\Phi_{\text{th}}$ must be the **smallest** value guaranteeing $P \geq P_{\text{crit}}$.
 
 $\blacksquare$
+
+#### The two thresholds as nested majority criteria {#вложенные-мажоритарные-критерии}
+
+:::tip Theorem (nested dominance structure of $P_{\text{crit}}$ and $\Phi_{\text{th}}$) [Т]
+Decompose $\Gamma$ into **three mutually HS-orthogonal components**,
+
+$$
+\Gamma \;=\; \underbrace{\tfrac{I}{7}}_{\text{isotropic}} \;+\; \underbrace{\big(\mathrm{diag}(\Gamma)-\tfrac{I}{7}\big)}_{\text{population structure}} \;+\; \underbrace{\Gamma_{\text{hollow}}}_{\text{coherences}},
+\qquad P = \underbrace{\tfrac17}_{c_1} + \underbrace{\|\mathrm{diag}(\Gamma)-\tfrac I7\|_F^2}_{c_2} + \underbrace{P_{\text{coh}}}_{c_3}.
+$$
+
+Then the two L2 thresholds are **dominance criteria on this one decomposition**:
+
+- $P > P_{\text{crit}} = 2/7 \iff c_2 + c_3 > c_1$ — the **structural majority** (structure outweighs the isotropic part);
+- $\Phi \geq 1 \iff c_3 \geq c_1 + c_2$ — the **coherence majority** (coherences outweigh all diagonal weight).
+
+The coherence majority **implies** the structural majority: $c_3 \geq c_1 + c_2 \Rightarrow c_2 + c_3 \geq c_1 + 2c_2 \geq c_1$, with equality exactly when $c_2 = 0$ and $c_3 = c_1$ — the unique uniform-diagonal boundary state of T-129a. Thus T-129a is precisely the **nesting consistency** of the two majority criteria, and both thresholds are instances of the same plurality-dominance principle that yields $R_{\text{th}} = 1/3$ ($K=3$ hypotheses $\to$ plurality $1/3$; two-component splits $\to$ majority $1/2$ of the Frobenius weight). Verified numerically: no nesting violations over $2\times10^4$ random states; the boundary is attained by the PSD state $\tfrac I7 + c(J - I)$, $c = 1/\sqrt{294}$.
+:::
+
+**Frame note.** $P$ and the isotropic/traceless split are basis-invariant; the diagonal/hollow split (hence $\Phi$) is taken in the **canonical dimension frame** $(A,S,D,L,E,O,U)$ — the same frame data as $\mathrm{Coh}_E$ and $\kappa_0$ (see [Corollary 5 of the uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem)).
 
 **Status:** [О] → **[Т]**. $\Phi_{\text{th}} = 1$ is now derived from $P_{\text{crit}} = 2/7$ [Т], not postulated.
 

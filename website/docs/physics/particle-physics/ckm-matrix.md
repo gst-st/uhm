@@ -232,7 +232,7 @@ $$\delta_\text{CP} = \arg\left(e^{2\pi i(1+2-4)/7}\right) = \arg\left(e^{-2\pi i
 
 Magnitude: $|\delta_\text{CP}| \approx 51.4°$.
 
-**(e)** Observed value: $\delta_\text{CP} \approx 69° \pm 4°$ (PDG). Discrepancy ~25%. Sources:
+**(e)** Observed value: $\delta_\text{CP} \approx 65.7° \pm 1.5°$ (PDG 2024). Discrepancy of the raw Fano value ~17%. Sources:
 - RG corrections to $\delta$ ($V_3$ runs)
 - Two-loop contributions to the phase
 - Corrections from the generation mass hierarchy
@@ -251,7 +251,7 @@ $$= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°$$
 
 **(b)** Magnitude: $|\delta_\text{CP}| = 180° - 102.9° = 77.1°$ (reduction to the upper half-plane).
 
-Observed: $|\delta_\text{CP}| = 69° \pm 4°$. Discrepancy $\sim 8°$ ($\sim 2\sigma$).
+Observed: $|\delta_\text{CP}| = 65.7° \pm 1.5°$ (PDG 2024; the older "$69°\pm4°$" is superseded). Raw-value discrepancy $\sim 11°$ (removed by the two-loop correction below).
 
 **(c)** With two-loop correction: $|\delta^{(2)}| \sim 12.6°$. RG correction to $\delta$:
 
@@ -263,7 +263,7 @@ With a negative sign for the two-loop correction:
 
 $$|\delta_\text{CP}^{(\text{phys})}| \approx 77.1° - 12.6° = 64.5°$$
 
-Discrepancy from $69°$: $\sim 4.5°$ ($\sim 1\sigma$). **Improved agreement.**
+Discrepancy from the current $65.7°$: $\sim 1.2°$ ($< 1\sigma$). **Improved agreement** — and better against the current value than against the older $69°$ figure.
 
 **(d)** With a positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $\sim 20°$ ($> 4\sigma$). Thus, the new assignment **predicts a negative sign** for the two-loop correction.
 
@@ -286,7 +286,7 @@ The negative sign means that $J$ **decreases** when moving from IR to UV (i.e. i
 $$|\delta_\text{CP}| \approx 64.5° \quad \text{(sign of correction [C under SM 2-loop RG], magnitude [H])}$$
 
 :::warning Discrepancy with experiment
-Observed value $\delta_\text{CP} = 69° \pm 4°$ (PDG). Predicted value $\approx 64.5°$ deviates from the central experimental value by $\sim 4.5°$ ($\sim 1\sigma$). Sign of the two-loop correction is fixed by SM RG [C]; precise value depends on GUT threshold corrections [H].
+Observed value $\delta_\text{CP} = 65.7° \pm 1.5°$ (PDG 2024). Predicted value $\approx 64.5°$ deviates from the central experimental value by $\sim 1.2°$ ($< 1\sigma$). Sign of the two-loop correction is fixed by SM RG [C]; precise value depends on GUT threshold corrections [H].
 :::
 
 ---
@@ -323,10 +323,10 @@ $$\approx 3.1 \times 10^{-5}$$
 
 Observed: $J = (3.08 \pm 0.15) \times 10^{-5}$. **Agreement within 1%.**
 
-**(d)** Clarification: prediction $\delta = 64.5°$ vs observed $\delta = 69° \pm 4°$. Discrepancy $\sim 1\sigma$. At $\delta = 69°$: $J_\text{pred} \approx 3.2 \times 10^{-5}$ — also in agreement.
+**(d)** Clarification: prediction $\delta = 64.5°$ vs observed $\delta = 65.7° \pm 1.5°$. Discrepancy $< 1\sigma$. At $\delta = 65.7°$: $J_\text{pred} \approx 3.1 \times 10^{-5}$ — in agreement with the observed $J \approx 3.08\times10^{-5}$.
 
 :::info Honest assessment of the accuracy of J
-Of the 4 parameters in the formula ($s_{12}$, $s_{23}$, $s_{13}$, $\delta$) only **one** ($\delta$) is predicted by the theory. The remaining three are observables. The claim of "agreement within 1%" for $J$ is due to $\sin(64.5°)/\sin(69°) = 0.903/0.934 = 0.967$, i.e. the discrepancy is determined only by the phase ($\sim 3\%$).
+Of the 4 parameters in the formula ($s_{12}$, $s_{23}$, $s_{13}$, $\delta$) only **one** ($\delta$) is predicted by the theory. The remaining three are observables. The residual phase discrepancy is small: $\sin(64.5°)/\sin(65.7°) = 0.903/0.911 = 0.991$ ($\sim 1\%$).
 
 Correct formulation: with Fano-predicted phase $\delta = 64.5°$ and **observed** CKM angles: $J_\text{pred} = 0.967 \times J_\text{obs} \approx 3.0 \times 10^{-5}$. The only genuine prediction is $\sin\delta = 0.903$ vs observed $0.934$ ($\sim 3\%$ discrepancy).
 :::
@@ -419,7 +419,7 @@ Since $\sqrt{m_d/m_s} \approx 0.222 \gg \sqrt{m_u/m_c} \approx 0.041$, the leadi
 
 $$|V_{us}| \approx \sqrt{\frac{m_d}{m_s}} \approx 0.222$$
 
-Substituting experimental masses (PDG): $m_d = 4.7$ MeV, $m_s = 95$ MeV, $m_u = 2.2$ MeV, $m_c = 1.3$ GeV. Result $|V_{us}| \approx 0.222$ — in agreement with the observed $0.2243 \pm 0.0005$.
+Substituting experimental masses (PDG): $m_d = 4.7$ MeV, $m_s = 93.5$ MeV, $m_u = 2.2$ MeV, $m_c = 1.3$ GeV. Result $|V_{us}| \approx 0.222$ — in agreement with the observed $0.2243 \pm 0.0005$.
 
 :::info Distinction of rigor levels
 **What the theory predicts [T]:** hierarchical texture $M^d$ with $M^d_{11} = M^d_{22} = 0$ (zeros on the diagonal), from which $|V_{us}| \sim \sqrt{m_d/m_s}$ follows **structurally**.
@@ -481,7 +481,7 @@ For each CKM result it is necessary to clearly distinguish two levels:
 | Statement | Level | What it uses | Status |
 |---|---|---|---|
 | Yukawa matrix is Fritzsch texture | Structural [T] | Fano topology, $\mathbb{Z}_7$-symmetry | **Genuine prediction** |
-| $\lVert V_{us}\rVert \approx \sqrt{m_d/m_s} \approx 0.222$ | Consequence [H] | Texture + $m_d = 4.7$ MeV, $m_s = 95$ MeV (PDG) | Standard Fritzsch |
+| $\lVert V_{us}\rVert \approx \sqrt{m_d/m_s} \approx 0.222$ | Consequence [H] | Texture + $m_d = 4.7$ MeV, $m_s = 93.5$ MeV (PDG) | Standard Fritzsch |
 | $\lVert V_{cb}\rVert \approx \sqrt{m_c/m_t} \times f(\phi) \approx 0.044$ | Consequence [H] | Texture + $m_c$, $m_t$ (PDG) + Fano phase | Depends on $\lVert\phi_u - \phi_d\rVert$ |
 | $\lVert V_{ub}\rVert \approx \sqrt{m_u/m_t} \approx 0.0036$ | Consequence [H] | Texture + $m_u$, $m_t$ (PDG) | Standard Fritzsch |
 | $\sin\delta_\text{CP} \approx 0.903$ | Prediction [H] | $V_3$-phase from $\mathbb{Z}_7$ + two-loop correction | Only genuine numerical prediction |

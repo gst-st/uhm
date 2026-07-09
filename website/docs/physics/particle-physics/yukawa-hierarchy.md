@@ -106,8 +106,8 @@ Thus, the selection rule follows directly from the algebra $\mathbb{O}$, without
 
 ### Theorem 3.1 (Third-Generation Yukawa Coupling) {#thm-3-1}
 
-:::tip [T] Theorem
-$m_t \approx 173$ GeV from quasi-IR fixed point (Pendleton-Ross, 1981; Hill, 1981) — a standard QCD result, correctly applied to the unique $O(1)$ Yukawa coupling.
+:::tip [T] $y_t$ is the unique $O(1)$ Yukawa; [C] its precise value
+The Fano selection rule makes $y_t$ the **unique** $O(1)$ Yukawa coupling — this is the genuine [T] content (part (a)). The observed $m_t\approx173$ GeV corresponds to $y_t(m_t)\approx0.94$: $O(1)$, but **not** pinned at the Pendleton–Ross IR quasi-fixed point (which overshoots — see (b)). Status: "exactly one $O(1)$ Yukawa" **[T]**; the numerical $m_t\approx173$ GeV **[C]** (compatible, not fixed-point-predicted).
 :::
 
 **Theorem.** Generation $k=1$ (A) → third generation ($t$, $b$, $\tau$):
@@ -116,15 +116,11 @@ $m_t \approx 173$ GeV from quasi-IR fixed point (Pendleton-Ross, 1981; Hill, 198
 
 $$y_1^{(\text{tree})} = g_W \cdot \sin(2\pi/7) \cdot |\gamma_\text{vac}^{(EU)}| \approx 0.65 \cdot 0.78 \cdot |\gamma| \sim O(1)$$
 
-**(b)** Under RG evolution: $y_1$ is the unique $O(1)$ Yukawa coupling. Quasi-IR fixed point (Pendleton-Ross):
+**(b) The IR quasi-fixed point, honestly.** The Pendleton–Ross / Hill IR quasi-fixed point of a single $O(1)$ top Yukawa evaluates (with $c_1=9/2$, $c_3=8$, $c_4=9/4$, $g_s^2(\mu_\text{EW})\approx1.48$, $g_W^2\approx0.42$) to
 
-$$y_t^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_\text{EW}) + c_4 g_W^2}{c_1}} \approx 1.0$$
+$$y_t^{(\text{FP})} = \sqrt{\frac{c_3 g_s^2(\mu_\text{EW}) + c_4 g_W^2}{c_1}} \approx \sqrt{\frac{8\cdot1.48 + 2.25\cdot0.42}{4.5}} \approx 1.7,$$
 
-where $c_1 = 9/2$ (self-coupling), $c_3 = 8$ (QCD), $c_4 = 9/4$ (electroweak).
-
-$$m_t = y_t^{(\text{FP})} \times \frac{v}{\sqrt{2}} \approx 1.0 \times 174 \approx 173 \text{ GeV}$$
-
-In agreement with the observed $m_t \approx 173$ GeV.
+i.e. $m_t^{\text{FP}} = y_t^{\text{FP}}\,v/\sqrt2 \approx 210\text{–}230$ GeV — the well-known SM quasi-fixed-point **overshoot**. The physical top, $y_t(m_t)\approx0.94$ ($m_t\approx173$ GeV), sits **below** this attractor: it is $O(1)$ but not exactly at the fixed point. UHM therefore predicts the *qualitative* fact "exactly one $O(1)$ Yukawa" **[T]**; the precise $m_t$ is a boundary condition below the FP, status **[C]**.
 
 **(c)** The Pendleton-Ross mechanism now works **correctly**: only ONE Yukawa coupling is $\sim O(1)$, the rest are $\ll 1$. Problem K-1 (all three converge to the same fixed point) is **resolved**.
 

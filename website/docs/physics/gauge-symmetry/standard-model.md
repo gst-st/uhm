@@ -165,10 +165,10 @@ The Higgs line $\{A,E,U\} = \{5,6,1\}$ is the **unique** Fano line containing bo
 |-----|-----------|-------|----------------|
 | O-lines | $\{L,E,O\}$, $\{U,O,S\}$, $\{O,A,D\}$ | 3 | Pass through O |
 | Mixed | $\{A,S,L\}$, $\{S,D,E\}$, $\{A,E,U\}$ | 3 | Contain elements from both 3 and $\bar{3}$, do not pass through O |
-| Inner $\bar{3}$ | $\{D,L,U\}$ | 1 | Entirely within $\bar{3}$ |
+| $\bar{3}$-anchored | $\{D,L,U\}$ | 1 | Two points in $\bar{3}$ ($L,U$), one in $3$ ($D$) |
 
-:::note Asymmetry 3 / 3̄ [T]
-No Fano line lies entirely within $3 = \{A,S,D\}$: the triple $\{1,2,3\}$ is **not** a Fano line. The only inner line is $\{D,L,U\} \subset \bar{3}$. This structural asymmetry between $3$ and $\bar{3}$ is a consequence of the incidence geometry of PG(2,2).
+:::note Symmetry of 3 and 3̄ [T]
+**No** Fano line lies entirely within $3 = \{A,S,D\}=\{1,2,3\}$ **nor** within $\bar{3} = \{L,E,U\}=\{4,5,6\}$: neither $\{1,2,3\}$ nor $\{4,5,6\}$ is a Fano line. The four non-O lines each meet **both** sectors — e.g. $\{D,L,U\}=\{3,4,6\}$ has $D\in 3$ and $L,U\in\bar 3$. In particular $\{D,L,U\}$ is **not** entirely within $\bar 3$ (since $D\in 3$). The $3$/$\bar 3$ split is therefore symmetric at the incidence level; sector asymmetry enters only dynamically (via the O-sector coupling), not combinatorially.
 :::
 
 ### 2.3 Theorem 2.1 (Fano-Electroweak Construction) {#теорема-фэ}
@@ -391,7 +391,7 @@ $$\sum_{\mathrm{fermions}} Y^3 = 0, \quad \sum_{\mathrm{fermions}} Y = 0$$
 ### 3.3 Theorem 3.3 (Number of Generations)
 
 :::tip[Status: Theorem \[T\]]
-The original argument via $S_4$ orbits is not formalized, but the result $N_{\text{gen}} = 3$ is **rigorously proven** by an alternative route: upper bound $\leq 3$ from swallowtail $A_4$ [T] + lower bound $\geq 3$ from uniqueness of the associative triplet $(1,2,4) \subset \mathbb{Z}_7^*$ [T] + indecomposability of $\mathbb{Z}_3$. Full proof: [Theorem 1.2 (Exactly 3 generations)](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
+The result $N_{\text{gen}} = 3$ has **composite status: count [T], identification [I]**. The **count** is the exact cardinality $N_{\text{gen}} = |\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ **[T]** — the three generations are the quadratic-residue classes (equivalently charge-conjugation orbits, since $-1$ is a non-residue mod $7$) of the unique order-3 subgroup $\{1,2,4\}\subset\mathbb{Z}_7^*$; this is group-theoretic and **independent of the Gap-potential topology** (the older $A_4$-swallowtail bound is now only a consistency check). The physical identification of these classes with the observed generations remains **[I]**. Full discussion: [Theorem 1.2](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
 :::
 
 **(a)** Each generation corresponds to a **topologically distinct** minimum of $V_{\mathrm{Gap}}$ in the vacuum configuration.
@@ -574,7 +574,7 @@ First term — standard (from $V_4$). Second — **octonionic correction** from 
 
 **(b)** In SM: $M_H^2 = 2\lambda v^2$ (one parameter $\lambda$). In UHM: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, where:
 
-$$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5$$
+$$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54$$
 
 **(c)** Octonionic correction to $\lambda_{\mathrm{eff}} = \lambda_4 + \delta\lambda$:
 
@@ -1021,14 +1021,14 @@ Within the Fano-electroweak construction (FE), X,Y-leptoquarks are **not predict
 ### 13.1 Proton Decay via $G_2$-Extra Bosons
 
 :::warning[Status: Hypothesis \[H\]]
-Proton decay within (FE) is mediated by $G_2$-extra bosons of Planck mass. Lifetime $\tau_p \sim 10^{72}$ years — practically unobservable.
+Proton decay within (FE) is mediated by $G_2$-extra bosons of Planck mass. Lifetime $\tau_p \sim 4\times10^{47}$ years — practically unobservable.
 :::
 
 6 $G_2$-extra bosons with $M_{G_2} \sim M_{\text{Planck}}$ mediate proton decay channels (d=6 operators via $G_2$-extra exchange). Lifetime:
 
-$$\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 m_p^5} \sim 10^{72} \text{ years}$$
+$$\tau_p^{(G_2)} \sim \frac{M_{\text{Planck}}^4}{\alpha_{G_2}^2 m_p^5} \sim 4\times10^{47} \text{ years}$$
 
-This is $\sim 35$ orders of magnitude above the current experimental limit (Super-Kamiokande: $\tau_p > 2.4 \times 10^{34}$ years). **The proton is effectively stable** within (FE).
+This is $\sim 13$ orders of magnitude above the current experimental limit (Super-Kamiokande: $\tau_p > 2.4 \times 10^{34}$ years). **The proton is effectively stable** within (FE): evaluating $M_{\text{Planck}}^4/(\alpha_{G_2}^2 m_p^5)$ with $M_{\text{Planck}}=1.22\times10^{19}$ GeV, $\alpha_{G_2}\sim1/24$ gives $\sim4\times10^{47}$ yr — far beyond any detector.
 
 ### 13.2 Consequences for Experiments
 
@@ -1122,7 +1122,7 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 | Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | [T] |
 | Full SM from $G_2$ + (FE) | [C] (electroweak dynamics is conditional) |
 | Quarks and leptons as Gap configurations | [H] |
-| Three generations from Fano structure ($N_{\text{gen}} = 3$ exactly) | **[T]** ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
+| Three generations from Fano structure ($N_{\text{gen}} = 3$) | **count [T], identification [I]** — exact count $|\mathrm{QR}(7)|=3$ [T], physical identification [I] ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
 | Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | [T] |
 | 18 gauge bosons (SM + 6 $G_2$-extra) | [T] for SM; [H] beyond SM |
 | Mass hierarchy from Gap hierarchy of the vacuum | [H] |
@@ -1141,7 +1141,7 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 | SUSY breaking via $V_3$ | **[T]** (T-50: superpotential $W$ is unique, Schur's lemma) |
 | $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |
 | $m_{\tilde{q}} \sim 10^{13}$ GeV (absence at LHC) | [H] |
-| $\tau_p \sim 10^{72}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
+| $\tau_p \sim 4\times10^{47}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
 | $\delta_{\text{CP}} \approx 64.5°$ | [H] ($1\sigma$ from $69°$) |
 | Normal neutrino mass hierarchy | **[C]** (O-sector Yukawa; C14: $m_2/m_3$ with RG-correction) |
 

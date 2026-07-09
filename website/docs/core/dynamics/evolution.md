@@ -618,7 +618,7 @@ where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of
 
 :::info Distinction between attractors
 - $\rho^*_{\mathrm{diss}} = I/7$ — attractor of the linear part $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without regeneration), $P = 1/7$. Uniqueness from [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]. Used in [definition of R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [Т] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ unconditionally for embodied holons [Т] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)).
+- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [Т] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ for embodied holons [Т at backbone-injection lower-bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]).
 :::
 
 :::tip Definiteness of the regeneration target [Т]
@@ -789,7 +789,7 @@ the nontrivial attractor is viable: $P(\rho^*_\Omega) > P_{\mathrm{crit}} = 2/7$
 **Proof.** From the [balance formula](#теорема-баланс-чистоты-аттрактора) for $P_{\mathrm{diag}} = 1/7$ (uniform diagonal): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, whence $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. The condition depends on the overlap $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ with the self-model, hence status [С] for an isolated holon. ∎
 
 :::tip Elevation to [Т] for embodied holons (T-149)
-By [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **unconditionally** — backbone injection ensures $P > 2/7$ via [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [Т]).
+By [T-149](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **at the backbone-injection lower bound** (Step 3 of T-149 is **[C at backbone-injection lower-bound]** — the bound $f^*>2/7$ is a condition on the anchor, not proved from pure axioms) — backbone injection ensures $P > 2/7$ via [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [Т]).
 :::
 
 :::info Concrete thresholds

@@ -360,16 +360,19 @@ $$
 The diagonal projection (atomic observation) **does not commute** with $G_2$-transformations.
 :::
 
-### 6.2 Fano dissipator preserves $G_2$
+### 6.2 Fano dissipator: frame-group covariance {#fano-frame-covariance}
 
-:::tip Theorem 11.2 (Fano dissipator is $G_2$-covariant) [Т]
+:::tip Theorem 11.2 (Covariance group of the Fano dissipator) [Т]
+Since $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ (Fano–atomic proportionality), the Fano dissipator is covariant under the finite frame group $\Gamma_{\!\text{oct}}\cong PSL(2,7)\subset G_2$, **not** under the full continuous $G_2$:
 
 $$
-\forall g \in G_2:\quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger
+\forall g \in \Gamma_{\!\text{oct}}:\quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g\,\mathcal{D}_{\text{Fano}}[\Gamma]\,g^\dagger.
 $$
+
+The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure constants $\varphi_{abc}$).
 :::
 
-**Proof:** $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication $\Rightarrow$ $g$ permutes Fano lines $\Rightarrow$ $g\Pi_p g^\dagger = \Pi_{\sigma_g(p)}$ $\Rightarrow$ the sum $\sum_p \Pi_p \Gamma \Pi_p$ is invariant under reindexing $\Rightarrow$ Fano dissipator is covariant. $\blacksquare$
+**Proof:** For $g\in\Gamma_{\!\text{oct}}$, $g$ permutes Fano lines $\Rightarrow g\Pi_p g^\dagger = \Pi_{\sigma_g(p)} \Rightarrow \sum_p \Pi_p \Gamma \Pi_p$ is invariant under reindexing $\Rightarrow$ covariance holds. A generic $g\in G_2$ rotates the coordinate axes (irreducibility of $\mathbf 7$, Schur), so it does not permute the coordinate lines; full $G_2$-covariance fails for the pinching dissipator. Full treatment: [Fano channel §5](/docs/proofs/gap/fano-channel#g2-ковариантность). $\blacksquare$
 
 ### 6.3 Degree of $G_2$-violation
 
@@ -634,7 +637,7 @@ graph TD
 | Properties of Gap operator | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#свойства) |
 | Spectral interpretation of Gap | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
 | Atomic dissipator is not $G_2$-covariant | **[Т]** | [6.1](#g2-ковариантность) |
-| Fano dissipator is $G_2$-covariant | **[Т]** | [6.2](#g2-ковариантность) |
+| Fano dissipator: frame-group $\Gamma_{\!\text{oct}}$-covariant, not full $G_2$ ($\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$) | **[Т]** | [6.2](#fano-frame-covariance) |
 | Degree of $G_2$-violation $\propto \alpha^*$ | **[Т]** | [6.3](#g2-ковариантность) |
 | Modified gauge reduction | **[Т]** | [6.4](#g2-ковариантность) |
 | Fano-coherent self-modelling (unified theorem) | **[Т]** | [7](#единая-теорема) |

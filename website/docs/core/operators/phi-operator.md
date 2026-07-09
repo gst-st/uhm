@@ -61,8 +61,12 @@ The self-modelling operator $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\
 | # | Definition | Formula |
 |---|-------------|---------|
 | 1 | **Categorical** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ |
-| 2 | **Dynamical** | $\varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]$ |
+| 2 | **Dynamical** | $\varphi(\Gamma) = \Pi_0[\Gamma]$ — projector onto the multiplicity-1 zero mode of the linearised full generator $\mathcal{L}_\Omega'|_{\rho^*_\Omega}$ |
 | 3 | **Idempotent** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ |
+
+:::note Convention for definition 2 (self-referential-ρ* fix, T-96)
+"$\lim_{\tau\to\infty}e^{\tau\mathcal{L}_\Omega}$" must **not** be read as the constant map onto the dissipative attractor $I/7$: the full generator $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ is nonlinear and non-primitive, with a nontrivial fixed point $\rho^*_\Omega\neq I/7$. Definition 2 is the $\Gamma$-dependent projector onto the zero mode of the linearised generator; only the **linear part** $\mathcal{L}_0$ is primitive (with unique stationary state $I/7$) — a property of the dynamics, not of $\varphi$.
+:::
 
 ### The Three Definitions in Plain Language
 
@@ -71,8 +75,8 @@ Each of the three definitions answers the same question — "how does the system
 **Definition 1 (Categorical): "Best approximation from below".**
 Imagine you have a complex object (the Holon) and a collection of simpler objects (subobjects of the classifier). The categorical φ is the way to find the *best approximation* of the complex object through the simpler ones. "Left adjoint to inclusion" is the mathematical way of saying "optimal projection onto a subset". Analogy: you describe your appearance to a friend over the phone. From an infinite number of details you select the most important (height, hair colour, build). That is the "best approximation" — $\varphi$ of your full appearance.
 
-**Definition 2 (Dynamical): "What the system converges to in the end".**
-Run the evolution and wait infinitely long. The state the system converges to is $\varphi(\Gamma)$. Analogy: drop a ball into a funnel. Regardless of where you dropped it, it will end up at the lowest point. That lowest point is the fixed point $\Gamma^*$.
+**Definition 2 (Dynamical): "The self-model the dynamics singles out".**
+Linearise the full (regenerative) dynamics about its nontrivial fixed point $\rho^*_\Omega$ and project onto the surviving zero mode. Unlike a plain funnel — where every ball ends at the *same* lowest point (that would be the dissipative $I/7$, giving a trivial constant $\varphi$) — the regenerative term $\mathcal{R}$ keeps $\varphi(\Gamma)$ **dependent on $\Gamma$**: different inputs yield different self-models. The fixed point of $\varphi$ is $\rho^*_\Omega\neq I/7$.
 
 **Definition 3 (Idempotent): "A double reflection adds nothing new".**
 If you look in a mirror twice, you see the same thing as the first time. $\varphi \circ \varphi = \varphi$ means that the model of the model coincides with the model. Analogy: photograph a photograph — you get (approximately) the same photograph.

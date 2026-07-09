@@ -54,7 +54,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | | [Proton Decay](/docs/physics/particle-physics/proton-decay) | $\tau_p \sim 10^{37-38}$ years, channels $p \to e^+\pi^0$, comparison with Super-K/Hyper-K |
 | **Gravity** | [Emergent Geometry](/docs/physics/gravity/emergent-geometry) | 3+1 from sectoral decomposition $7 = 1 \oplus 3 \oplus \bar{3}$ [T], metric from Gap |
 | | [Einstein Equations](/docs/physics/gravity/einstein-equations) | $G_{\mu\nu}$ from Gap: full spectral action [T] + Lovelock theorem |
-| | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | $\Lambda$ budget: perturbative $10^{-41.5}$ [T] + cohomological + SUSY [T] + spectral formula [T] → estimate $\sim 10^{-120 \pm 10}$ [C] |
+| | [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | $\Lambda$ budget: perturbative $10^{-41.5}$ [T]; SUSY $\varepsilon^{12}$ absorbs $\varepsilon^6$ → net $10^{-53.5}$; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C], remaining $\gtrsim 27$ orders open |
 | | [Quantum Gravity](/docs/physics/gravity/quantum-gravity) | Gap functional integral on $(S^1)^{21}$, UV finiteness, information paradox |
 | **Cosmology** | [Dark Matter](/docs/physics/cosmology-phys/dark-matter) | O-relic, QCD axion, $\xi_F \sim 160$ pc |
 | | [Berry Phase](/docs/physics/cosmology-phys/berry-phase) | Berry-phase derivation of $L_{top}$ |
@@ -190,10 +190,10 @@ Gaussian (free), Wilson-Fisher ($\lambda_3 = 0$, $\lambda_4^* = 4\pi^2/63$), and
 **Current status:** The Fano-electroweak (FE) construction extracts $SU(2)_L \times U(1)_Y$ from the HS-projection of the $\bar{3}$-sector [T], bypassing the $SU(6)/SU(5)$ embedding. The uniqueness of the construction is proven: the $\kappa_0$ formula [T] categorically singles out the pair $(E,U)$ — see the [uniqueness theorem](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ). Status of the electroweak sector: **[T]**. $X$, $Y$-leptoquarks are not a mandatory prediction.
 :::
 
-:::tip Theorem: Exactly 3 generations ($N_{\text{gen}} = 3$) [T]
+:::tip Theorem: Three generations ($N_{\text{gen}} = 3$) — count [T], identification [I]
 **Details:** [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
 
-Upper bound $N_{\text{gen}} \leq 3$ from swallowtail $A_4$ [T] + lower bound $N_{\text{gen}} \geq 3$ from uniqueness of the associative triplet $(1,2,4) \subset \mathbb{Z}_7^*$ [T] + irreducibility of $\mathbb{Z}_3$. Proof via the multiplicative subgroup of order 3.
+Lower bound $N_{\text{gen}} \geq 3$ from uniqueness of the associative triplet $(1,2,4) \subset \mathbb{Z}_7^*$ + irreducibility of $\mathbb{Z}_3$ **[T]**. Upper bound $N_{\text{gen}} \leq 3$ **[C under Gap-potential topology]** (the $A_4$ swallowtail gives $\leq 2$ interior minima; a third needs a boundary minimum on the compact Gap domain). Physical identification of minima with generations **[I]**. Composite status **[C]+[I]**.
 
 **See:** [Standard Model from G₂](/docs/physics/gauge-symmetry/standard-model)
 :::
@@ -425,7 +425,7 @@ Key parameter of the $\Lambda$ budget (12 orders of magnitude). $G_2$-orbit redu
 :::
 
 :::tip Theorem: UV finiteness of Gap theory [T]
-Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV finite** [T]: compactness bounds amplitudes, $G_2$ Ward identities cancel $21 \to 7$ divergences, SUSY cancellations give $7 - 7 = 0$.
+Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV finite** [C] (structural argument): compactness bounds amplitudes and the $G_2$ Ward identities constrain the $21$-parameter space. The residual vacuum energy is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [T at T-64]). The earlier exact "$7-7=0$ bose–fermi trace" route is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal space $\mathbb{C}^7$ has $\mathrm{Tr}\in\{\pm1,\pm3,\pm5,\pm7\}$, never $0$, and the split $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist (the $G_2$ adjoint $\mathbf{14}$ is irreducible) — see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация).
 
 **See:** [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)
 :::
@@ -449,10 +449,10 @@ Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV 
 | **Total** | **$10^{-41.41}$** | | **[C]** at $\varepsilon = 10^{-2}$ |
 :::
 
-:::warning Conditional: Perturbative $\Lambda$ budget $= 10^{-41.5}$ [C], full budget $\sim 10^{-120 \pm 10}$ [C]
-**Details:** [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | [$\Lambda$ Budget](/docs/proofs/gap/lambda-budget)
+:::warning Conditional: Perturbative $\Lambda$ budget $= 10^{-41.5}$ [T], honest bracket $10^{-53.5}$–$10^{-93.5}$ [C]
+**Details:** [Cosmological Constant](/docs/physics/gravity/cosmological-constant) | [$\Lambda$ Budget — honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)
 
-Arithmetic converges. 41.5 orders out of 120 — confirmed perturbative contribution. **Status [C]:** 12 orders out of 41.5 are provided by the factor $\epsilon^6$ at $\epsilon = 10^{-2}$. The parameter $\epsilon$ is **resolved [T]**: global minimization of $V_{\text{Gap}}$ on $G_2$-orbits gives the unique vacuum with sectoral structure. The spectral formula for $\Lambda_{\text{CC}}$ justifies SUSY compensation **[T]**. Full estimate: $\sim 10^{-120 \pm 10}$ [C].
+41.5 orders — the confirmed perturbative contribution (12 of them from $\epsilon^6$ at $\epsilon = 10^{-2}$; the parameter $\epsilon$ is fixed by global minimization of $V_{\text{Gap}}$ on $G_2$-orbits). The SUSY-sector $\varepsilon^{12}$ ([T-219](/docs/proofs/categorical/fundamental-closures#t-219)) **absorbs** the perturbative $\varepsilon^6$, giving a net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ remains **[H]**. The composed honest bracket is $10^{-53.5}$–$10^{-93.5}$ [C]; the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ are an open computational + conceptual task.
 :::
 
 ### Non-perturbative sector
@@ -503,10 +503,10 @@ Also refuted at $S_0 = 20$. Extra factor of $\pi$ — ~15, not ~48 orders. Windi
 
 ### Open problem
 
-:::warning 79 orders of $\Lambda$ — structural closure [C]
-**Total:** 41.5 [C] out of 120 (at $\varepsilon = 10^{-2}$; 29.5 orders without $\varepsilon$ — [T]). Perturbative deficit: 79 orders.
+:::warning $\Lambda$: perturbative deficit 79 orders; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C]
+**Perturbative total:** 41.5 [T] out of 120 (at $\varepsilon = 10^{-2}$; 29.5 orders without $\varepsilon$). Perturbative deficit: 79 orders, of which the SUSY-sector absorption covers 12 more (net $10^{-53.5}$).
 
-**Cohomological + SUSY + spectral sector**: cohomological cancellation $\Lambda_{\text{global}} = 0$ [T] + SUSY compensation $\varepsilon^{12}$ **[H]** (spectral formula gives the scale [T]; compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible) + sectoral structure **[T]** (global minimization of $V_{\text{Gap}}$) give the estimate **~$10^{-120 \pm 10}$** [C]. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
+**Cohomological + SUSY + spectral sector**: the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T] (a separate class — it reframes the target as the *local* residual), the SUSY-sector $\varepsilon^{12}$ [T at T-64] (**absorbs** the perturbative $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible), and the sectoral-minimization programme **[C]** compose to the honest bracket **$10^{-53.5}$–$10^{-93.5}$** [C]; the remaining $\gtrsim 27$ orders are open. Details: [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
 
 Non-perturbative mechanisms:
 - Gaussian sum: refuted at physical $S_0$
@@ -514,7 +514,7 @@ Non-perturbative mechanisms:
 - Instanton: additive, not multiplicative
 - Zeta $Z_\Phi(-k) = 0$: mathematics correct, physical interpretation unclear
 
-**Status: [C]** — structural closure achieved; numerical estimate $\sim 10^{-120 \pm 10}$ [C]; full closure — a computational task (minimization on $(S^1)^{21}$). Strategy: three levels — (A) cohomological cancellation + SUSY [T], (B) modular $\Gamma_0(7)$ program, (C) dynamic $S_0$. See [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания).
+**Status: [C]** — structural mechanisms identified; honest bracket $10^{-53.5}$–$10^{-93.5}$ ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the remaining $\gtrsim 27$ orders — an open computational + conceptual task (minimization on $(S^1)^{21}$ + saturation of the cohomological bound). Strategy: three levels — (A) cohomological exact zero [T] + SUSY-sector $\varepsilon^{12}$ [T at T-64], (B) modular $\Gamma_0(7)$ program, (C) dynamic $S_0$. See [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания).
 :::
 
 ### Dark matter
@@ -766,7 +766,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 44. 3+1 from sectoral decomposition — **[T]**: $7 = 1 \oplus 3 \oplus \bar{3}$ [T]; compactification of $\bar{\mathbf{3}}$ at scale $v_{\text{EW}}$ (confinement [T] + asymptotic freedom) [T] — [Spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)
 45. Einstein equations from spectral action — **[T]** (T-65): full spectral action from finite spectral triple T-53 — [Einstein Equations](/docs/physics/gravity/einstein-equations)
 46. SM from $G_2$ — **[T]**: electroweak sector from HS-projection of $\bar{3}$-sector; uniqueness of pair $(E,U)$ proven from $\kappa_0$ — [Standard Model](/docs/physics/gauge-symmetry/standard-model#теорема-единственности-фэ)
-47. 3 generations from Fano — **[T]**: $N_{\text{gen}} = 3$ exactly (swallowtail $\leq 3$ + uniqueness of $(1,2,4)$ + $\mathbb{Z}_3$ irreducible) — [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
+47. 3 generations from Fano — **count [T], identification [I]**: $N_{\text{gen}} = 3$ is the exact count $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ **[T]** (group-theoretic, topology-independent); physical identification of the 3 classes with generations [I] — [Fermion Generations](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)
 48. Confinement from Gap — [Confinement](/docs/physics/gauge-symmetry/confinement) — **[C at T-64]**; $\sqrt{\sigma} \approx 457$ MeV **[C at T-64]** after sectoral correction
 49. Fano selection rule — **[T]**: proven via octonion structure constants $f_{ijk}$ (unique $G_2$-invariant trilinear operator) — [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk)
 50. Gap as Serre curvature — **[T]** (T-73): spectral triple T-53 + NCG curvature → exact identification — [Gap Operator](/docs/core/dynamics/gap-operator#теорема-gap-серра)
@@ -800,7 +800,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ### Fundamental
 
-1. **79 orders of $\Lambda$** — structural closure achieved [C]: spectral formula for $\Lambda_{\text{CC}}$ [T] + global minimization of $V_{\text{Gap}}$ [T] + SUSY compensation $\varepsilon^{12}$ [H] give estimate $\sim 10^{-120 \pm 10}$ [C]. Full closure — a computational task. Strategy: (A) cohomological cancellation + SUSY [T], (B) modular $\Gamma_0(7)$, (C) dynamic $S_0$ — see [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания)
+1. **$\gtrsim 27$ open orders of $\Lambda$** — structural mechanisms identified: spectral formula [T] + global minimization of $V_{\text{Gap}}$ [T] + SUSY-sector $\varepsilon^{12}$ [T at T-64] (exact compensation [H]) give the honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)); the rest to the observed $10^{-120}$ is an open computational + conceptual task. Strategy: (A) cohomological exact zero + SUSY-sector, (B) modular $\Gamma_0(7)$, (C) dynamic $S_0$ — see [closure strategy](/docs/physics/gravity/cosmological-constant#стратегия-замыкания)
 
 ### Quantum Gravity and SUSY
 
@@ -822,7 +822,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 | Criterion | Score | Comment |
 |-----------|-------|---------|
-| **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition [T], $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: 79 orders of $\Lambda$, Kähler metric $G_2$ |
+| **Completeness** | 9/10 | Theory covers from quantum gravity to consciousness. Added: RG flow, neutrino masses, SUSY, proton decay, quantum gravity, Fano-electroweak construction (FE), superpotential $W$ [T], generation counting [T], $M_R$ from loop mechanism [T], 3+1 from sectoral decomposition [T], $\varepsilon$ from sectoral hierarchy [C], Berry derivation of $L_{\text{top}}$ [T] (T-85). Unclosed: $\gtrsim 27$ orders of $\Lambda$ (beyond the net $10^{-53.5}$), Kähler metric $G_2$ |
 | **Consistency** | 9/10 | $\Lambda$ budget is arithmetically flawless. Bridge (AP)+(PH)+(QG)+(V) → P1+P2 fully closed [T] (T15). Superpotential $W$ closes the SUSY sector [T]. $\varepsilon$ partially from sectoral hierarchy [C]. $\sqrt{\sigma}$ after sectoral correction $\approx 457$ MeV (vs 440 MeV observed). $L_{\text{top}}$ from Keldysh [T] (T-85). Residual inconsistency: $T_{eff}$. Theory **self-corrects** |
 | **Mathematical rigor** | 8/10 | 140+ impeccable theorems [T] (Level 1) + ~20 conditional [C]. CS cascade closed (T-85) |
 | **Categorical rigor** | 5/10 | $\infty$-topos and dagger-category are mentioned but not rigorously formalized. Ehresmann connection, duality functor — postulated, not constructed |

@@ -342,7 +342,7 @@ L4 подобен горизонту в геометрии: можно идти 
 При $R \sim 0.7$ (человек) и декогеренции $\varepsilon_{\text{dec}} > 0$:
 
 $$
-R^{(n)} \sim R^n \sim 0.7^n \to 0 \quad \text{при} \quad n \to \infty
+S^{(n)} \sim (1-\alpha)^n \sim 3^{-n} \to 0 \quad \text{при} \quad n \to \infty \qquad (\text{выживание когерентности, не фиделити } R^{(n)}_{\mathrm{fid}}\to 1)
 $$
 
 Максимальная глубина рекурсии: $n_{\max} \leq \ln(1/\varepsilon_{\text{dec}})/\ln(1/R) \approx 111$.

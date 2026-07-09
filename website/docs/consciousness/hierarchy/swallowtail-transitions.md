@@ -226,7 +226,7 @@ This colimit is **unreachable** for finite systems ([Lawvere incompleteness](/do
 
 Full proof: [Theorem (Categorical unreachability of L4)](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная) [T].
 
-**Categorical reading of the A_4 / L3 boundary (2026-04-17 addition).**
+**Categorical reading of the A_4 / L3 boundary.**
 The swallowtail ($A_4$) bifurcation at L2 → L3 is not merely a finite catastrophe; it is the **last** such catastrophe before the cascade becomes transfinite. By [T-217 [T]](/docs/proofs/categorical/fundamental-closures#t-217), L3 = $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ is a coherent tricategory with exactly $K = 3+1$ structural cells and a closed Gordon–Power–Street pentagon-of-pentagons coherence. The three swallowtail control parameters $(\kappa, \alpha, \Delta F)$ align with the three inherited LGKS 2-cells (Aut/Dissipative/Regenerative), and the fourth "height" parameter aligns with the new 3-cell modification $\eta: \varphi^{(2)} \Rightarrow \varphi\circ\varphi$. This gives a **direct categorical interpretation of the $A_4$ unfolding dimension count**:
 
 $$\underbrace{\text{codim}(A_4) = 3}_{\text{Arnold classification}} \;\Longleftrightarrow\; \underbrace{K_{L2}^{\mathrm{LGKS}} = 3}_{\text{T-57, T-192}} \;\Longrightarrow\; \underbrace{K_{L3} = 3 + 1 = 4}_{\text{T-217 tricategory}}.$$

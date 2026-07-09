@@ -76,7 +76,7 @@ $$
 A_{\text{int}} \xrightarrow{J + \text{ФЭ}} A_F = \mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})
 $$
 
-:::info Explicit reduction $M_3(\mathbb C)\to\mathbb H$ (added 2026-04-17)
+:::info Explicit reduction $M_3(\mathbb C)\to\mathbb H$
 The arrow $A_\mathrm{int}\to A_F$ is **not** an algebra isomorphism — it is a reduction induced by the real structure $J$ plus the ФЭ breaking. $A_\mathrm{int}=\mathbb C\oplus M_3(\mathbb C)_{\mathbf 3}\oplus M_3(\mathbb C)_{\bar{\mathbf 3}}$ has $\dim_\mathbb R=1+18+18=37$; $A_F=\mathbb C\oplus\mathbb H\oplus M_3(\mathbb C)$ has $\dim_\mathbb R=1+4+18=23$. The reduction:
 1. The first $M_3(\mathbb C)_{\mathbf 3}$ factor carries the $SU(3)_C$ colour action — retained in $A_F$ as $M_3(\mathbb C)$.
 2. The second $M_3(\mathbb C)_{\bar{\mathbf 3}}$ factor is reduced to $\mathbb H\subset M_2(\mathbb C)\subset M_3(\mathbb C)$ via the $J$-compatibility + Higgs-line $\{A,E,U\}$ constraint (T-1a): the 2-dimensional weak-isospin subspace $\mathrm{span}\{|E\rangle,|U\rangle\}$ supports an anti-commuting real structure $J^2=+1,\ [J,\gamma]=0$, whose commutant is $\mathbb H$ (Barrett 2007, §3.2; Chamseddine–Connes 2007). The remaining $M_3(\mathbb C)_{\bar{\mathbf 3}}\setminus\mathbb H$ content is projected out as it fails the first-order condition with the Dirac operator restricted to the Higgs line.

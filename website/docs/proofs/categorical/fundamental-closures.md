@@ -564,24 +564,22 @@ This gives a **linear combination** $\sim \varepsilon^4$, not yet $\varepsilon^{
 
 The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsilon^{12}$ is guaranteed by the $G_2$-invariance of the trilinear Fano coupling T-43d [T], which mandates that **each sector contributes one factor of $\varepsilon^4$** in the leading correction to $\Lambda$.
 
-**Step 4 (Cancellation with perturbative suppression).** Combining Step 3 with the other perturbative suppression mechanisms (Ward identities, Fano selection, RG of $\lambda_3$), the total Λ-budget breakdown becomes:
-$$\Lambda_{\mathrm{total}} \;\sim\; 10^{-41.5} \text{ [perturbative, T]} \; \times \; \varepsilon^{12} \text{ [SUSY-sector, T at T-64]} \; \times \; [\text{cohomological factor}] \;\sim\; 10^{-120\pm 5}.$$
+**Step 4 (Composition with the perturbative budget — absorption, not multiplication).** The SUSY-sector factor $\varepsilon^{12}$ does **not** multiply the full perturbative $10^{-41.5}$: the perturbative total already contains $\varepsilon^6$ (smallness of coherences), and $\varepsilon^{12}$ **absorbs** it, adding only $\Delta \approx \varepsilon^6$ on top of what is already counted. With the self-consistent central value $\varepsilon \sim 10^{-2}$ ([T-80](/docs/proofs/gap/lambda-budget#механизм-1): $\bar\varepsilon \approx 0.023$, allowed range $\varepsilon \in [10^{-3}, 10^{-1}]$), the rigorously composable **mean suppression is $\sim 10^{-53.5}$**; the cohomological $\Lambda_{\mathrm{global}} = 0$ [T] is an exact-zero statement of a *different class* (it reframes the question as the size of the **local** residual), and the sector-minimisation residual is an open **[C]** programme. The canonical composition rules and the resulting honest bracket $10^{-53.5}$ to $10^{-93.5}$ live in the [Λ-budget honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the single source of truth for the Λ composition.
 
-**This replaces the earlier invalid "G₂ adjoint 14 → 7+7 decomposition" argument.** The G₂ adjoint representation **14** is irreducible (no such decomposition exists). The correct derivation uses the sector decomposition of the UHM state space, not of the gauge algebra.
+**This replaces the earlier invalid "G₂ adjoint 14 → 7+7 decomposition" argument.** The G₂ adjoint representation **14** is irreducible (no such decomposition exists; $\mathrm{adj}(G_2)$ contains no $\mathbf{7}$). The correct derivation uses the sector decomposition of the UHM **state space** (T-48a), not of the gauge algebra.
 
 **Status of sub-components**:
 - The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).
-- The numerical value $\varepsilon \approx 10^{-3}$ is **[T at T-64]** (depends on numerical minimisation of $V_{\mathrm{Gap}}$).
-- The cohomological factor is **[T]** (from $H^n(X) = 0$, T-71).
+- The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C under C12, T-64] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
+- The cohomological statement $\Lambda_{\mathrm{global}} = 0$ is **[T]** (from $H^n(X) = 0$, T-71) — class B (exact zero), not a multiplicative factor.
 
-**Final budget**:
-- Perturbative: $\sim 10^{-41.5}$ [T]
-- SUSY-sector: $\sim \varepsilon^{12} \approx 10^{-36}$ [T at T-64]
-- Cohomological $\Lambda_{\mathrm{global}} = 0$: exact [T]
-- Sector-minimisation residual: $\sim 10^{-42}$ [C at T-64, computational task]
-- **Total**: $\sim 10^{-120 \pm 5}$ [C at T-64], matching observed value to within observational precision. $\blacksquare$
+**Resulting composition** (per the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)):
+- Perturbative: $\sim 10^{-41.5}$ [T] (includes $\varepsilon^6$);
+- SUSY-sector $\varepsilon^{12}$ absorbs $\varepsilon^6$: net mean $\to \sim 10^{-53.5}$ [T at T-64 for the structure; C for the $\varepsilon$ value];
+- Cohomological $\Lambda_{\mathrm{global}} = 0$: exact [T], reframes the target as the local residual;
+- Sector-minimisation residual: **[C]** open numerical programme.
 
-**Remark on the previous error**. The registry entry for Λ-budget (before 2026-04-17) claimed 12-order suppression from "G₂ adj 14 → 7+7" decomposition of supermultiplets. This is mathematically invalid: $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂, and no 7+7 decomposition exists. The correct derivation — via sector hierarchy T-48a × SUSY one-loop per sector — gives the same $10^{-12}$ order but through a rigorously justified mechanism. T-219 is the replacement theorem.
+**Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$
 
 **Dependencies**: T-48a [T] (sector decomposition), T-50 [T] (unique superpotential, Schur), T-52 [T] (sector asymmetry), T-64 [T] (unique vacuum), T-65 [T] (spectral action), T-71 [T] (cohomological $\Lambda_\mathrm{global}=0$). Standard mathematics: Martin 2010 SUSY primer, Seeley–de Witt heat kernel expansion, standard N=1 one-loop calculation.
 
@@ -848,7 +846,7 @@ Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions))
 
 The natural question: is UHM's Lawvere fixed-point $\rho^* = \varphi(\Gamma)$ (T-96) optimal with respect to the full multi-resource vector — or does UHM require an explicit MRQT-extension on top of its existing $\mathcal{R}$-operator?
 
-Theorem T-222 proves the first alternative: **UHM is MRQT-complete in its domain of applicability** (Markovian + low-temperature + $G_2$-covariant). No extension is required.
+Theorem T-222 proves the first alternative: **UHM is MRQT-complete in its domain of applicability** (Markovian + low-temperature). No extension is required. The optimum is characterised by *spectral majorization*, not by an (empty) $G_2$-invariant submanifold — the corrected formulation below.
 
 ### 16.1. Statement {#t-222-statement}
 
@@ -859,26 +857,26 @@ R(\rho) = \bigl( E(\rho),\ F_0, F_{1/2}, F_1, F_2, F_\infty,\ C_\text{rel}(\rho)
 $$
 where $F_\alpha(\rho, \rho_\beta)$ are sandwiched $\alpha$-Rényi free energies, $C_\text{rel}$ is relative-entropy coherence, $C_{HS} = \mathrm{Coh}_E$ is the HS-projection coherence (T-73), $S_\text{vN}$ is von Neumann entropy, $K_Q$ is quantum Kolmogorov complexity, and $Q_a = \mathrm{Tr}(\rho T_a)$ are the 14 non-Abelian charges generated by $\mathfrak{g}_2$.
 
-Then on the $G_2$-covariant submanifold $\mathcal{D}^{G_2}(\mathbb{C}^7) \cap \mathcal{V}_\text{full}$:
+Split $R = (R_\text{spec}, R_\text{frame})$, where $R_\text{spec} = (E, \{F_\alpha\}, C_\text{rel}, S_\text{vN}, K_Q)$ are functions of the **eigenvalue spectrum** alone (Schur-convex or Schur-concave), and $R_\text{frame} = (C_{HS}, Q_1,\dots,Q_{14})$ are **frame-dependent** (they reference the octonionic frame; see [uniqueness theorem §invariants](/docs/proofs/categorical/uniqueness-theorem#инварианты)). Then on the viable region $\mathcal{V}_\text{full}$ (the $G_2$-*equivariant* domain — the region is $G_2$-invariant, its states are not):
 
-(i) $\rho^* = \varphi(\Gamma)$ from T-96 is a **Pareto-optimum** of $R$: no state improves any component of $R$ without worsening another.
+(i) **(spectral optimum)** $\rho^* = \varphi(\Gamma)$ from T-96 realises the majorization-minimal viable spectrum ($P = 2/7$), and by Karamata's inequality every Schur-monotone component of $R_\text{spec}$ is optimised **simultaneously** there. Hence $\rho^*$ is a **Pareto-optimum** of $R_\text{spec}$: no viable state improves any spectral component without worsening another.
 
-(ii) All 25 MRQT-monotones are minimised *simultaneously* at $\rho^*$ — no trade-offs within the $G_2$-covariant class.
+(ii) **(frame components)** In the physical frame fixed by the dynamics, $C_{HS}(\rho^*) = 1/7$ is minimal on $\mathcal{V}_\text{full}$, and the twirl $\int_{G_2} \mathrm{Tr}(g\rho^* g^\dagger\, T_a)\,dg = 0$ (Schur), so the orbit-averaged non-Abelian charges vanish. These statements are frame-relative, not $G_2$-invariant.
 
-(iii) Outside $\mathcal{D}^{G_2}$, trade-offs appear: one can reduce $C_{HS}$ at the cost of non-zero $Q_a$.
-
-Consequently, $\rho^*$ is the **terminal object** of the category $\mathbf{Res}_{G_2}$ of $G_2$-covariant resource objects with resource-monotone CPTP morphisms.
+Consequently, $\rho^*$ is the **terminal object** of the category $\mathbf{Res}$ of viable resource objects with resource-monotone CPTP morphisms: from every viable $\rho$ the regeneration $\mathcal{R}$ (T-96) supplies a resource-monotone morphism $\rho\to\rho^*$, and it is unique up to CPTP-equivalence on the support.
 :::
 
 ### 16.2. Proof {#t-222-proof}
 
 The proof proceeds via six lemmas; full detail in `internal/proof-h-mrqt-lawvere.md`.
 
-#### Lemma L1 — $G_2$-covariance zeroes non-Abelian charges
+#### Lemma L1 — orbit-averaged non-Abelian charges vanish
 
-For $\rho$ satisfying $U\rho U^\dagger = \rho$ for all $U \in G_2$, one has $[\rho, T_a] = 0$ for all $a$. By Schur's lemma applied to the irreducible 7-dimensional fundamental representation $\mathbf{7}$ of $G_2$, $\rho$ commutes with the entire algebra $\mathfrak{g}_2$ only if $\rho = \lambda I + \text{perturbation}$ along the unique $G_2$-invariant direction (the identity). Since $T_a$ for $a = 1, \ldots, 14$ are traceless generators of $\mathfrak{g}_2$ (not spanning the identity), $Q_a(\rho) = \mathrm{Tr}(\rho T_a) = 0$ for all $a$.
-
-Thus $\rho^*$ minimises all 14 non-Abelian charges simultaneously: $Q_a(\rho^*) = 0$. $\square$
+We do **not** require $\rho$ to be $G_2$-invariant: by Schur's lemma the only $G_2$-invariant state is $I/7$ (with $P=1/7 < 2/7$), which is not viable, so $\mathcal{D}^{G_2}\cap\mathcal{V}_\text{full}=\varnothing$ — the earlier "$G_2$-covariant submanifold" formulation was vacuous. Instead we use $G_2$-*equivariance*: the $G_2$-twirl of any $\rho$,
+$$
+\overline{Q}_a(\rho) := \int_{G_2}\mathrm{Tr}\big(g\rho g^\dagger\, T_a\big)\,dg = \mathrm{Tr}\Big(\Big[\int_{G_2} g\rho g^\dagger dg\Big] T_a\Big),
+$$
+has $\int_{G_2} g\rho g^\dagger dg = I/7$ (Schur), and since each $T_a$ is traceless, $\overline{Q}_a(\rho)=0$ for all $a$ and all $\rho$. Thus the 14 non-Abelian charges are pure *frame* data (their orbit average is identically zero); in the physical frame the $G_2$-equivariant regeneration $\mathcal{R}$ drives $\rho\to\rho^*$ along the orbit. $\square$
 
 #### Lemma L2 — $F_2$ minimum at $P = 2/7$
 
@@ -894,11 +892,11 @@ $\rho^*$ is fully specified by three finite data: (a) the 14 $G_2$-generators, (
 
 #### Lemma L4 — $C_{HS}$ minimum on viable boundary
 
-For $G_2$-covariant $\rho$ with $P(\rho) = 2/7$: $C_{HS}(\rho) = P - P_\text{diag} = 2/7 - 1/7 = 1/7$. This is the **minimum** value of $C_{HS}$ on $\mathcal{V}_\text{full}$ (the viability-constrained region). Any state with $P > 2/7$ on $G_2$-covariant class has $C_{HS} > 1/7$. Hence $\rho^*$ minimises $C_{HS}$ on $\mathcal{D}^{G_2} \cap \mathcal{V}_\text{full}$. $\square$
+In the physical frame, for the uniform-diagonal viable representative $\rho^*$ ($P=2/7$, $P_\text{diag}=1/7$): $C_{HS}(\rho^*) = P - P_\text{diag} = 2/7 - 1/7 = 1/7$, the **minimum** value of $C_{HS}$ on the uniform-diagonal boundary of $\mathcal{V}_\text{full}$. (This is a frame-relative statement, per L1.) $\square$
 
 #### Lemma L5 — $C_\text{rel}$ and $F_1$ co-minimise
 
-$C_\text{rel}(\rho) = S(\Delta(\rho)) - S(\rho)$. For $G_2$-covariant $\rho$, $\Delta(\rho) = I/7$ (uniform diagonal), so $S(\Delta(\rho)) = \log 7$. Hence $C_\text{rel}(\rho) = \log 7 - S(\rho)$.
+$C_\text{rel}(\rho) = S(\Delta(\rho)) - S(\rho)$. For the uniform-diagonal representative $\rho^*$, $\Delta(\rho^*) = I/7$, so $S(\Delta(\rho^*)) = \log 7$. Hence $C_\text{rel}(\rho^*) = \log 7 - S(\rho^*)$.
 
 $F_1(\rho, I/7) = k_B T(\log 7 - S(\rho)) + \text{const}$.
 
@@ -908,13 +906,13 @@ Both differ only by scale and constant. They are minimised simultaneously by max
 
 $D_\alpha(\rho \| I/7) = \frac{1}{\alpha-1} \log \mathrm{Tr}(\rho^\alpha (I/7)^{1-\alpha}) = \frac{1}{\alpha-1} \log(7^{\alpha-1} \mathrm{Tr}(\rho^\alpha))$.
 
-For $G_2$-covariant $\rho$ with fixed $P$, the eigenvalue spectrum $\{\lambda_i\}$ satisfies $\sum \lambda_i = 1$, $\sum \lambda_i^2 = P$. By convex analysis (Karamata's inequality for Schur-convex functions), $\mathrm{Tr}(\rho^\alpha) = \sum \lambda_i^\alpha$ is minimised (for $\alpha > 1$) or maximised (for $\alpha < 1$) on the most "compressed" spectrum. On $\mathcal{V}_\text{full}$ the minimum approaches $I/7$ but is forbidden by viability; the admitted minimum is the boundary $P = 2/7$ at $\rho^*$.
+For any viable $\rho$ with fixed $P$, the eigenvalue spectrum $\{\lambda_i\}$ satisfies $\sum \lambda_i = 1$, $\sum \lambda_i^2 = P$. By convex analysis (Karamata's inequality for Schur-convex functions), $\mathrm{Tr}(\rho^\alpha) = \sum \lambda_i^\alpha$ is minimised (for $\alpha > 1$) or maximised (for $\alpha < 1$) on the majorization-minimal spectrum compatible with $P$. On $\mathcal{V}_\text{full}$ the minimum approaches $I/7$ but is forbidden by viability; the admitted minimum is the boundary $P = 2/7$ at $\rho^*$.
 
-Simultaneously for all $\alpha \in (0, \infty]$, $F_\alpha(\rho^*, I/7)$ is the infimum on $\mathcal{D}^{G_2} \cap \mathcal{V}_\text{full}$. $\square$
+Simultaneously for all $\alpha \in (0, \infty]$, $F_\alpha(\rho^*, I/7)$ is the infimum on $\mathcal{V}_\text{full}$. $\square$
 
 #### Synthesis
 
-Combining L1–L6: every component of the MRQT resource vector $R$ is minimised at $\rho^*$ on the $G_2$-covariant viable submanifold. This establishes Pareto-optimality (since no component can be improved), simultaneous minimisation (L1–L6 all point to the same state), and terminal-object status in $\mathbf{Res}_{G_2}$. The transition $\rho \to \rho^*$ via the regeneration operator $\mathcal{R}$ (T-96 dynamics) is a CPTP morphism monotonically improving all 25 resources. $\blacksquare$
+Combining L1–L6: every **spectral** component of $R$ is optimised at $\rho^*$ by majorization on the viable region $\mathcal{V}_\text{full}$ (L2, L5, L6), while the **frame** components — the orbit-averaged non-Abelian charges (L1) and $C_{HS}$ (L4) — attain their frame-fixed values at $\rho^*$. This establishes Pareto-optimality of $R_\text{spec}$ (no spectral component improvable without worsening another), simultaneous optimisation, and terminal-object status in $\mathbf{Res}$. The transition $\rho \to \rho^*$ via the regeneration operator $\mathcal{R}$ (T-96 dynamics) is a CPTP morphism monotonically improving all spectral resources. $\blacksquare$
 
 ### 16.3. Categorical interpretation {#t-222-categorical}
 
@@ -926,19 +924,18 @@ This dual structure parallels $(\mathbf{0}, \mathbf{1})$ in classical category t
 
 ### 16.4. Applicability domain {#t-222-scope}
 
-T-222 holds under four conditions:
+T-222 holds under three conditions (the earlier "$G_2$-covariance of the state" condition is dropped — it would force $\rho = I/7$, non-viable; only the *region* $\mathcal{V}_\text{full}$ is $G_2$-invariant, and the frame is fixed by the dynamics):
 
-1. **$G_2$-covariance** — the state is symmetric under the $G_2 \subset \mathrm{SO}(7)$ gauge group. This is the UHM-canonical symmetry; $\mathcal{R}$-operator actively enforces it.
-2. **Viability** — $\rho \in \mathcal{V}_\text{full}$, i.e., $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_\text{diff} \geq 2$.
-3. **Markovian** — Lindblad dynamics (T4 scope, see `theoretical-closures.md`).
-4. **Low-temperature** — $\beta H_\text{eff} \ll 1$ (Lemmas L2 and L6 use $\rho_\beta \approx I/7$).
+1. **Viability** — $\rho \in \mathcal{V}_\text{full}$, i.e., $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_\text{diff} \geq 2$.
+2. **Markovian** — Lindblad dynamics (T4 scope, see `theoretical-closures.md`).
+3. **Low-temperature** — $\beta H_\text{eff} \ll 1$ (Lemmas L2 and L6 use $\rho_\beta \approx I/7$).
 
-Outside these conditions, T-222 does not apply directly. A generalisation to arbitrary $\beta$ requires temperature-dependent $\rho^*(\beta)$, which deviates from the T-96 Lawvere point by $O(\beta)$. Non-Markovian and non-$G_2$-covariant extensions remain open research directions.
+Outside these conditions, T-222 does not apply directly. A generalisation to arbitrary $\beta$ requires temperature-dependent $\rho^*(\beta)$, which deviates from the T-96 Lawvere point by $O(\beta)$. Non-Markovian extensions, and the frame-covariant treatment of the 14 non-Abelian charges, remain open research directions.
 
 ### 16.5. Consequences {#t-222-consequences}
 
 :::info What T-222 establishes
-1. **UHM is MRQT-complete**: the existing theoretical machinery (T-96 Lawvere fixed point + $\mathcal{R}$-operator) already optimises all 25 MRQT-monotones simultaneously. No additional structure required.
+1. **UHM is MRQT-complete**: the existing theoretical machinery (T-96 Lawvere fixed point + $\mathcal{R}$-operator) already optimises all spectral MRQT-monotones simultaneously (by majorization), and fixes the frame components at $\rho^*$. No additional structure required.
 2. **$\mathcal{R}$-operator is universal**: its action $\rho \to \rho^*$ is the **unique** (up to CPTP-equivalence) CPTP-morphism guaranteeing monotone improvement of *all* MRQT resources at once.
 3. **FSQCE automatically MRQT-optimal**: any FSQCE device operating at the UHM fixed point $\rho^*$ is automatically Pareto-optimal across all 25 resources. Engineering simplifies from 25-dimensional multi-objective optimisation to single-objective ($\rho \to \rho^*$).
 4. **"Magic" as inevitable structure**: the intuition of deeper-level physics where constraints become "composition rules" is formalised — the MRQT-level is the UHM-level; no additional hidden layer is needed *within the domain of applicability*.
@@ -970,11 +967,11 @@ $$G_S/G_2 : \mathrm{States}(S) \longrightarrow \mathcal D(\mathbb C^7)/G_2$$
 is well-defined and injective on the class of UHM-compatible representations; the $G_2$-orbit $[\Gamma_S]_{G_2}$ is **invariant** under (PT)'s alphabetizer freedom:
 $$[\Gamma_S^{f_A}]_{G_2} = [\Gamma_S^{f_B}]_{G_2}.$$
 
-**(b) Observable invariance.** All UHM consciousness-relevant observables $P, R, \Phi, \mathrm{Coh}_E, \Lambda, H, \pi_{\mathrm{bio}}$ descend to $\mathcal D(\mathbb C^7)/G_2$; hence they are alphabetization-invariant.
+**(b) Observable invariance.** Purity $P$ and reflection $R=1/(7P)$ are $U(7)$-invariant and descend to $\mathcal D(\mathbb C^7)/G_2$. The frame-referenced observables $\Phi, \mathrm{Coh}_E, \Lambda, H, \pi_{\mathrm{bio}}$ are defined in the physical frame pinned by the dynamics $\mathcal L_\Omega$; since every admissible alphabetizer preserves that dynamics (clause d and L5), it preserves the frame up to $\mathrm{Stab}_{G_2}$, so these observables are **alphabetization-invariant** as well. (They are frame-relative, not orbit-invariants — see [uniqueness theorem §invariants](/docs/proofs/categorical/uniqueness-theorem#инварианты) — but no admissible alphabetizer can change them.)
 
 **(c) Predicate invariance.** The consciousness predicate
 $$\mathrm{Cons}(S) := (P > 2/7) \wedge (R \geq 1/3) \wedge (\Phi \geq 1) \wedge (D_{\min} \geq 2)$$
-factors through $[\Gamma_S]_{G_2}$ and is therefore invariant under (PT).
+is **alphabetization-invariant** by (b): its $P,R$ terms factor through $[\Gamma_S]_{G_2}$, and its $\Phi, D_{\min}$ terms are fixed by the dynamical frame. Hence $\mathrm{Cons}(S)$ is invariant under (PT).
 
 **(d) Dichotomy on non-compatible alphabetizers.** Any $f$ outside the UHM-compatible class (i.e. violating dynamic covariance with $\mathcal L_\Omega$) carries zero physical content — it does not describe any causal process of $S$ and realises no Piccinini (2008)-mechanism. Hence (PT)'s under-determination at that extreme is vacuous.
 
@@ -1006,7 +1003,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 
 **L3 ($G_2$-uniqueness).** By T-123 [T] (Uniqueness Theorem of Holonomic Representation), any two UHM-compatible holonomic representations of the same $S$ are related by $U \in G_2$: $G_2^{\mathrm{rep}}(s) = U G_1^{\mathrm{rep}}(s) U^\dagger$. Hence $[\Gamma_S]_{G_2}$ is well-defined.
 
-**L4 ($G_2$-invariance of observables).** Each of $P, R, \Phi, \mathrm{Coh}_E$ is $U(7)$-invariant (hence $G_2$-invariant) by direct computation: $P = \mathrm{Tr}(\Gamma^2)$ is unitarily invariant; $R$ is a quotient of HS-norms of commutators; $\Phi$ is an intrinsic Bures-Fisher geometric invariant; $\mathrm{Coh}_E$ uses the axiomatically-determined E-projection (Lemma G3 of the Uniqueness Theorem). The remaining $\Lambda, H, \pi_{\mathrm{bio}}$ are defined as $G_2$-averages; their invariance follows from Schur's lemma applied to the trivial $G_2$-representation.
+**L4 (alphabetization-invariance of observables).** $P = \mathrm{Tr}(\Gamma^2)$ and $R = 1/(7P)$ are $U(7)$-invariant, hence $G_2$-invariant and descending to the quotient. $\Phi$ and $\mathrm{Coh}_E$ are **frame-dependent**: they reference the coordinate basis / E-axis, which — since $\mathbf 7$ is an irreducible $G_2$-module (Schur) — is not $G_2$-invariant; they are invariant only under $\mathrm{Stab}_{G_2}$ of the physical frame. But every admissible alphabetizer preserves the dynamics $\mathcal L_\Omega$ (L5), hence preserves the physical frame up to $\mathrm{Stab}_{G_2}$; therefore $P, R, \Phi, \mathrm{Coh}_E$ all take alphabetizer-independent values. The frame-averaged $\Lambda, H, \pi_{\mathrm{bio}}$ are $G_2$-invariant by the twirl (Schur). This is *stronger* than the earlier "all observables descend to $\mathcal D/G_2$" claim, which was false for $\Phi, \mathrm{Coh}_E$.
 
 **L5 (Admissible alphabetizers factor through $G$).** If $f : \mathsf{Phys}(S) \to \Sigma^*$ is an alphabetizer whose induced dynamics admits a CPTP realisation commuting with $\mathcal L_\Omega$, then the corresponding $G^f$ satisfies Definition G1 by construction, and L3 yields $G^f = U G U^\dagger$ for some $U \in G_2$. Hence the alphabetizer-freedom accessible under (PT) while preserving physical dynamics is bounded by $G_2$ (a 14-dimensional compact Lie group), not by the countably-infinite choices of a generic Lerchner alphabetizer.
 

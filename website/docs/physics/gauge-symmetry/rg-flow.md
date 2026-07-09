@@ -319,10 +319,10 @@ $$
 **(c)** Correction to the Wilson-Fisher point:
 
 $$
-\frac{\delta\lambda_4^{(3)}}{\lambda_4^{*(2)}} \sim \frac{C_1 \, \lambda_4^{*(2)\,3}}{(8\pi^2)^3} \sim \frac{42115 \cdot (0.063)^3}{(248)^3} \sim 7 \times 10^{-7}
+\frac{\delta\lambda_4^{(3)}}{\lambda_4^{*(2)}} \sim \frac{C_1 \, \lambda_4^{*(2)\,3}}{(8\pi^2)^3} \sim \frac{42115 \cdot (0.627)^3}{(8\pi^2)^3} = \frac{42115 \cdot 0.247}{(78.96)^3} \approx 2\times10^{-2}
 $$
 
-The three-loop correction to the WF-point is $\sim 10^{-4}\%$ — negligibly small.
+The three-loop correction to the WF-point is $\sim 2\%$ — small but not negligible. (With $\lambda_4^*=4\pi^2/63\approx0.627$ and $8\pi^2\approx78.96$, the correction is $\sim2\%$.) The coefficient $C_1$ is a model-dependent pattern estimate (see the perturbative-order caveat below), so the fixed point is stable to $\sim$ few percent, status **[T under model assumption]**.
 :::
 
 ### 5.2. Stability of the Octonionic Fixed Point (3-loop) [T under model assumption]
@@ -339,7 +339,7 @@ $$
 where $C_2' \approx -85995 / (15 \cdot 63) \approx -91$, giving:
 
 $$
-\frac{\delta\lambda_3^{(3)}}{\lambda_3^{*(2)}} \approx \frac{-91 \cdot (0.063)^2}{(248)^2} \approx -6 \times 10^{-6}
+\frac{\delta\lambda_3^{(3)}}{\lambda_3^{*(2)}} \approx \frac{-91 \cdot (0.627)^2}{(8\pi^2)^2} \approx \frac{-91\cdot0.393}{(78.96)^2} \approx -6 \times 10^{-3}
 $$
 
 Correction $\sim 10^{-3}\%$ — the octonionic point is stable at three loops.
@@ -605,7 +605,7 @@ The cubic term is suppressed by $\sim 2 \times 10^7$ in the transition from Plan
 In contrast to $\lambda_3$, the quartic coupling $\lambda_4$ quickly reaches the Wilson-Fisher fixed point:
 
 $$
-\lambda_4(\omega) \to \lambda_4^* = \frac{4\pi^2}{63} \approx 0.063 \quad \text{at } \omega \ll \omega_{\text{Planck}}
+\lambda_4(\omega) \to \lambda_4^* = \frac{4\pi^2}{63} \approx 0.627 \quad \text{at } \omega \ll \omega_{\text{Planck}}
 $$
 
 The plateau is reached already at $\omega \sim \omega_{\text{Planck}} / 10$ — the quartic coupling "freezes" at scales substantially exceeding the Planck scale.

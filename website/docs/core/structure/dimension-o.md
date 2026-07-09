@@ -74,7 +74,7 @@ The Ground is an **aspect** of configuration $\Gamma$, not a separate entity. "T
 Dimension $O$ is **necessary and functionally unique** by four independent arguments:
 
 1. **From the form of ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ loses its structure.
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the $(\mathcal{D}_\Omega, \mathcal{R})$ duality loses its structure.
 3. **From Page–Wootters (A5):** O is the distinguished dimension for the tensor factorisation $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined.
 4. **Functional independence [Т]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
 
@@ -349,7 +349,7 @@ Let us break down each component:
 2. **Connection with the inner world** ($\gamma_{OE}$) — one must "know" what to restore;
 3. **Connection with wholeness** ($\gamma_{OU}$) — a "blueprint" for restoration is needed (what to strive towards).
 
-The formula is **not postulated** but derived from the Čencov–Petz theorem as the unique metric compatible with quantum statistics. Details: [categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+The formula is **not postulated** but derived from the Čencov–Petz framework: Bures is the **Petz-minimal** metric compatible with quantum statistics (classical uniqueness by Chentsov; quantum selection by extremality within the Petz family). Details: [categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
 
 ## Connection with the Source
 

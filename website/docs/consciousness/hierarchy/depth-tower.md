@@ -116,27 +116,24 @@ This formula measures: how accurately the self-model at level $k$ reproduces the
 
 Now we are ready to give the central definition of this chapter.
 
-**Definition 3.1 (Self-Awareness Depth, SAD).** For a system with a representation tower of depth $L$:
+**Definition 3.1 (Self-Awareness Depth, SAD).** For a system with a representation tower of depth $L$, SAD is the deepest level $n$ whose reflection $R^{(n-1)}$ (reflection order $m=n-1$) exceeds the Bayesian-plurality threshold:
 
-$$\mathrm{SAD}(\mathcal{T}) = \max\{k \in \{0, \ldots, L\} : R^{(k)} > R_\text{th}^{(k)}\}$$
+$$\mathrm{SAD}(\mathcal{T}) = \max\{n \geq 1 : R^{(n-1)} > R_\text{th}^{(n-1)}\}, \qquad R_\text{th}^{(m)} = \frac{1}{m+2}.$$
 
-In words: SAD is the *maximum level of the tower* at which reflection still exceeds the threshold. The thresholds are given by the universal formula:
-
-$$R_\text{th}^{(k)} = \frac{1}{k+3}$$
-
-:::warning Formula Correction (index correction)
-The previous version contained the formula $R_\text{th}^{(k)} = 1/(k+2)$, which gave $R_\text{th}^{(0)} = 1/2$, contradicting the table and the canonical threshold $R_\text{th} = 1/3$ for L2 (T-126 [T]). The correct formula $R_\text{th}^{(k)} = 1/(k+3)$: at $k=0$ gives $1/3$ (coincides with $R_\text{th}$ [T]), at $k=1$ gives $1/4$ (coincides with $R_\text{th}^{(2)}$ for L3 [C]).
+:::note One consistent indexing convention
+The threshold is the single Bayesian-plurality rule $R_\text{th}^{(m)} = 1/(m+2)$ **as a function of reflection order $m$**: order $m$ discriminates $m+2$ hypotheses, so at $m=1$ (the base self-model, $R=1/(7P)$) it is $1/3$ = the canonical L2 threshold $R_\text{th}$ (T-126 [T]). A previous "correction" to $1/(m+3)$ mis-anchored L2 at order $m=0$ and is **withdrawn**: L2 sits at $m=1$, where $R_\text{th}^{(1)}=1/3$. With this convention SAD level $n$ is gated by $R^{(n-1)} > 1/((n-1)+2) = 1/(n+1)$, giving the critical-purity formula $P_\text{crit}^{(n)} = P_\text{crit}\cdot 3^{n-1}/(n+1)$ used in §3.5 and the registry — **fully self-consistent**, no separate SAD-level formula.
 :::
 
-This formula is a generalisation of the thresholds from the [L0–L4 hierarchy](./interiority-hierarchy):
+Correspondence with the [L0–L4 hierarchy](./interiority-hierarchy) (the L-labels are heuristic anchors):
 
-| SAD | Threshold $R_\text{th}$ | How it arises | Correspondence | Biological example |
-|-----|------------------------|---------------|---------------|--------------------|
+| SAD level $n$ | Gate (reflection order $m=n-1$) | Value $1/(n+1)$ | Correspondence | Biological example |
+|-----|------------------------|-------|---------------|--------------------|
 | 0 | — | — | L0 (basic interiority) | Bacterium |
-| 1 | $R^{(0)} > 1/3$ | $1/(0+3) = 1/3$ | L2 (cognitive qualia) | Insect |
-| 2 | $R^{(1)} > 1/4$ | $1/(1+3) = 1/4$ | L3-like (meta-reflection) | Mammal |
-| $k$ | $R^{(k-1)} > 1/(k+2)$ | $1/((k-1)+3) = 1/(k+2)$ | — | — |
-| $\infty$ | $\lim R^{(k)} > 0$ | Limiting transition | L4 (unreachable) | — |
+| 1 | $R^{(0)} > R_\text{th}^{(0)}=1/2$ | $1/2$ | L1 (phenomenal geometry) | Insect |
+| 2 | $R^{(1)} > R_\text{th}^{(1)}=1/3$ | $1/3$ | L2 (cognitive qualia) | Mammal |
+| 3 | $R^{(2)} > R_\text{th}^{(2)}=1/4$ | $1/4$ | L3-like (meta-reflection) | Higher mammal |
+| $n$ | $R^{(n-1)} > 1/(n+1)$ | $1/(n+1)$ | — | — |
+| $\infty$ | $S^{(n)} \to 0$ (T-86 categorical) | — | L4 (unreachable) | — |
 
 **Intuition.** SAD = 1 means: 'I know'. SAD = 2: 'I know that I know'. SAD = 3: 'I know that I know that I know'. With each level the threshold decreases (from 1/3 to 1/4, 1/5, ...), but reflection also decays exponentially, so that high levels quickly become unreachable.
 
@@ -171,11 +168,11 @@ Computing SAD does not require explicitly building the entire tower — it suffi
 
 $$\varphi^{(n)}(\Gamma) = \sum_{k:\, \mathrm{Re}(\lambda_k)=0} \langle L_k \,|\, \Gamma \rangle\, R_k$$
 
-where $\{R_k, L_k, \lambda_k\}$ — eigen-structures of the logical Liouvillian $\mathcal{L}_\Omega$. The reflection measure at level $n$:
+where $\{R_k, L_k, \lambda_k\}$ — eigen-structures of the logical Liouvillian $\mathcal{L}_\Omega$. The SAD depth is gated by the **coherence-survival ratio** — the *decaying* quantity, which must not be confused with the self-model **fidelity** $R^{(n)}_{\mathrm{fid}} = \mathrm{Fid}(\varphi^{(n-1)}\Gamma,\varphi^{(n)}\Gamma)$ of [Theorem 4.3](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3), which *increases* to 1:
 
-$$R^{(n)} = F\bigl(\varphi^{(n-1)}(\Gamma),\; \varphi^{(n)}(\Gamma)\bigr) \leq R^n \cdot (1 - \alpha)^n$$
+$$S^{(n)}(\Gamma) := \frac{\lVert\mathrm{offdiag}(\varphi^{(n)}\Gamma)\rVert_F}{\lVert\mathrm{offdiag}(\Gamma)\rVert_F} = (1-\alpha)^n = 3^{-n}$$
 
-under Fano contraction $\alpha = 2/3$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]). Geometric decay guarantees finite depth:
+under Fano contraction $\alpha = 2/3$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]). Geometric decay of $S^{(n)}$ guarantees finite depth:
 
 $$n_\text{max} \leq \frac{\ln(1/\varepsilon_\text{dec})}{\ln(1/R)} \approx 111 \quad \text{for } \varepsilon_\text{dec} \sim 10^{-7}$$
 
@@ -206,9 +203,9 @@ $$\mathrm{SAD}_\text{max} = 3$$
 
 **Proof (3 steps).**
 
-**Step 1 (Ratio of purity to critical).** Define the spectral ratio: $r_0 = P / P_{\text{crit}}$. From [Fano contraction](/docs/applied/coherence-cybernetics/learning-bounds#динамическая-граница) (T-110 [T]) with parameter $\alpha = 2/3$:
+**Step 1 (Ratio of purity to critical).** Define the spectral ratio: $r_0 = P / P_{\text{crit}}$. From [Fano contraction](/docs/applied/coherence-cybernetics/learning-bounds#динамическая-граница) (T-110 [T]) with parameter $\alpha = 2/3$, the coherence-survival gate is
 
-$$R^{(k)} = r_0 \cdot (1/3)^k$$
+$$S^{(k)} = r_0 \cdot (1/3)^k \qquad(\text{the decaying SAD quantity, not the fidelity } R^{(k)}_{\mathrm{fid}}\to 1)$$
 
 Why $1/3$? Because $1 - \alpha = 1 - 2/3 = 1/3$. Fano contraction with parameter $\alpha = 2/3$ means: at each level of recursion reflection decreases by a factor of 3.
 
@@ -235,7 +232,7 @@ Status: **[T]** — raised from [C] per [T-142](/docs/proofs/consciousness/opera
 **Verified:** SYNARC MVP-6 (61 tests, 0 failures, M6.4b PASS).
 :::
 
-:::info Double categorical foundation of SAD_MAX = 3 (2026-04-17)
+:::info Double categorical foundation of SAD_MAX = 3
 The ceiling $\mathrm{SAD}_\mathrm{max} = 3$ now rests on **two independent derivations** reaching the same conclusion from different directions:
 
 **(I) Dynamical derivation (T-142 [T])** — via the Fano contraction coefficient $\alpha = 2/3$ (state-independent, [Corollary 2.1a](/docs/proofs/gap/fano-channel#state-independence-alpha) from PG(2,2) combinatorics). The purity required to sustain an $n$-level tower, $P_\mathrm{crit}^{(n)} = \tfrac{2}{7}\cdot \tfrac{3^{n-1}}{n+1}$, exceeds the physical maximum $P \leq 1$ precisely at $n = 4$.

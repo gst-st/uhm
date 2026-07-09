@@ -174,27 +174,25 @@ is now **[Т]**: (1) commutativity of φ-tower [Т] (T-150) closes the dependenc
 
 ## §4. T-151: D_min = 2 from T-129 {#t-151}
 
-:::tip Theorem T-151 [Т]: D_min = 2 unconditionally
-$\Phi_{\mathrm{th}} = 1$ **[Т]** (T-129) + $P_{\mathrm{crit}} = 2/7$ **[Т]** $\Longrightarrow$ spectrum of $\rho_E$ has $\geq 2$ significant components $\Longrightarrow D_{\mathrm{diff}} \geq 2$.
-
-**Status upgrade:** C2 [С] → **[Т]**.
+:::tip Theorem T-151: $\Phi \geq 1 \Rightarrow D_\mathrm{diff} > 1$; $D_\mathrm{min} = 2$ is an independent L2 condition
+$\Phi_{\mathrm{th}} = 1$ **[Т]** (T-129) $\Longrightarrow$ nontrivial differentiation $D_{\mathrm{diff}} > 1$ whenever the E-row is coherent. The **strict** threshold $D_{\mathrm{min}} = 2$ is one of the **four independent** L2 conditions (T-124b [Т]), on a par with $R_{\mathrm{th}} = 1/3$ — it is **not** derivable from $\Phi_{\mathrm{th}} = 1$ alone. On the physical attractor $\rho^*_\Omega$, $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ (Step 3).
 :::
 
-**Proof (3 steps).**
+:::warning Correction: the earlier "unconditional derivation" was invalid
+The previous proof asserted "$\Phi \geq 1 \Rightarrow \mathrm{Coh}_E \geq 1/6$ by a uniform $G_2$-estimate [T-42a]", which is false on two counts: $\Phi \geq 1$ constrains only the *total* off-diagonal mass, not the E-row share; and no $G_2$-average forces a lower bound on a frame-referenced quantity, since $\mathbf 7$ is an irreducible $G_2$-module (Schur — see the corrected [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#лемма-g4)). Explicit counterexample (uniform diagonal $\gamma_{kk}=1/7$, coherence $0.07$ on the 15 non-E pairs only): $P \approx 0.290 \in (2/7,3/7]$, $R \approx 0.49$, $\Phi \approx 1.03$ — all three met — yet $\mathrm{Coh}_E \approx 0.070$ and $D_{\mathrm{diff}} \approx 1.42 < 2$. This is exactly the state T-124b Counterexample 4 asserts. Hence $D_{\mathrm{min}} = 2$ stands as an **independent** L2 condition, not a corollary of $\Phi_{\mathrm{th}}$.
+:::
 
-**Step 1.** By [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ is derived from first principles (not a definition, but a theorem).
+**Proof.**
 
-**Step 2 (Spectral bound).** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}} \cdot \Phi \geq P_{\mathrm{diag}} \geq 1/7$. Therefore $\|\Gamma_{\mathrm{off-diag}}\|_F^2 = P_{\mathrm{coh}} \geq P/2 > 0$.
+**Step 1.** By [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ is derived from first principles.
 
-For the dimensionality $D_{\mathrm{diff}}$: by [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128) $D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E \cdot (N-1)$. For $\Phi \geq 1$ the off-diagonal elements are non-trivial: $\|\Gamma_{\mathrm{off}}\|_F > 0$, which guarantees $\mathrm{Coh}_E(\Gamma) > 0$ (the HS-projection onto the E-subalgebra captures part of the coherence, since the $E$-correlated elements $\gamma_{Ek}$ for $k \neq E$ are non-zero when $\Phi$ is non-trivial). Therefore:
+**Step 2 (weak differentiation) [Т].** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. If the E-row carries nonzero coherence ($\mathrm{Coh}_E > 0$), then by [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128), $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *nontrivial* differentiation, but **not** the strict bound $\geq 2$ (which fails for states concentrating coherence off the E-row, per the correction box).
 
-$$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E \cdot 6 > 1 \Longrightarrow D_{\mathrm{diff}} \geq 1 + \varepsilon > 1$$
+**Step 3 (attractor bound) [Т для embodied at attractor] / [С at κ₀].** On the autopoietic attractor $\rho^*_\Omega$, viability requires $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, forcing $\gamma_{OE}\neq 0$, hence $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ and $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. The strict bound $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ holds at the E-accentuated fixed point (the viable anchor of [formalization-φ §2](/docs/proofs/categorical/formalization-phi), where $\mathrm{Coh}_E(\rho^*)\geq 1/6$) and is confirmed numerically for embodied attractors (SYNARC); it is [С at κ₀-structure] in full generality.
 
-For the strict bound $D_{\mathrm{diff}} \geq 2$: when $\mathrm{Coh}_E \geq 1/6$ (guaranteed for conscious states: $\Phi \geq 1$ means E-coherences contribute at least $1/(N-1) = 1/6$ to total coherence, by the uniform estimate from $G_2$-symmetry [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)): $D_{\mathrm{diff}}^{7D} \geq 1 + (1/6) \cdot 6 = 2$. $\blacksquare$
+**Status.** $D_{\mathrm{min}} = 2$: **[D]** independent L2 threshold (T-124b [Т] independence) + **[Т]** on the embodied attractor (Step 3). The former "C2 [С] → [Т] unconditional" is retracted.
 
-**Step 3 (Status inheritance).** The sole dependency of C2 was on the [О]-status of $\Phi_{\mathrm{th}} = 1$. Since T-129 upgraded [О] → [Т], the conditionality is removed: C2 → **[Т]**. $\blacksquare$
-
-**Dependencies:** [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129) ($\Phi_{\mathrm{th}} = 1$ from first principles).
+**Dependencies:** [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-124b [Т]](/docs/proofs/consciousness/conscious-window#t-124b) (independence), T-98 [Т] (attractor balance), $\kappa_0$ formula.
 
 ---
 

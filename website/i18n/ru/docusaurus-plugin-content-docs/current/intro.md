@@ -185,7 +185,7 @@ $$
 :::note Статус уровней
 - **L0–L2**: стабильные состояния для биологических систем
 - **L3**: метастабильное состояние (конечное время жизни $\tau_3$); порог $K = 4$ **[Т]** из квадратичной декомпозиции ([T-67](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4))
-- **L4**: теоретический предел **[С]**, недостижим для систем с ненулевой декогеренцией ($R^{(n)} \to 0$); аттрактор, не физическое состояние ([C19](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-недостижимость))
+- **L4**: теоретический предел; категорная недостижимость **[Т]** ([T-86](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная): $L4=\mathrm{colim}_{n}\tau_{\leq n}(\mathbf{Exp}_\infty)$ недостижим за конечное число шагов, + неполнота Ловера T-55) — аттрактор, не физическое состояние (коэффициент выживания когерентности $S^{(n)}\to 0$; фиделити $R^{(n)}_{\mathrm{fid}}\to 1$ — другая величина, см. [уточнение](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3))
 - **SAD-метрика** [Т], SAD_MAX = 3 [Т] (T-142): обобщение L0–L4 на непрерывный случай через репрезентационную башню; SAD = max{k : R^(k) > 1/(k+2)}, спектральная формула [Т], стресс-зависимый режим [Т] — [Башня глубины](/docs/consciousness/hierarchy/depth-tower#sad)
 :::
 
@@ -203,7 +203,7 @@ $$
 | **Необходимость интериорности** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [Т] | [Теорема 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-ригидность** | Голономное представление единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 физических параметра | [Т] | [Теорема](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 | **Единственность электрослабого сектора** | $SU(2)_L \times U(1)_Y$ — единственная конструкция rank 4 из $\kappa_0$ и аксиом A1–A5 | [Т] | [Теорема](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
-| **Ровно 3 поколения** | $N_{\text{gen}} = 3$: $\leq 3$ из swallowtail $A_4$ + $\geq 3$ из $(1,2,4) \subset \mathbb{Z}_7^*$ | [Т] | [Теорема](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
+| **Три поколения** | $N_{\text{gen}} = 3$: точный подсчёт $|\mathrm{QR}(7)| = (7-1)/2 = 3$ **[Т]**; физическое отождествление [И] | [Т]+[И] | [Теорема](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
 | **Фано-отбор Юкавы** | $y_k = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$ через октонионные $f_{ijk}$ | [Т] | [Теорема](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
 | **Нестабильность Источника** | $\Gamma_\odot = I/7$ нестационарен: $F_0 \neq 0$, дрейф к $\rho^*$, самоусиление | [Т] | [Доказательство](./physics/cosmology-phys/origin#доказательство-нестабильности) |
 | **Свобода воли** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; монотонность под CPTP, $G_2$-инвариантность | [Т] | [Теорема](./core/foundations/consequences#freedom-конечномерное) |
@@ -217,7 +217,7 @@ $$
 | **Когомологическое обнуление $\Lambda$** | $\Lambda_{\text{global}} = 0$ из $H^n(X) = 0$; наблюдаемая $\Lambda$ — локальный эффект | [Т] | [Теорема](./proofs/gap/lambda-budget#когомологическое-обнуление) |
 | **Уравнения Эйнштейна из спектрального действия** | Полная тройка (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [Т] | [Теорема](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
 | **УФ-конечность Gap-теории** | Компактность $(S^1)^{21}$ + $G_2$-Уорд ($21 \to 7$) + SUSY ($7-7=0$) + APS-индекс | [Т] | [Теорема](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
-| **Лоренцева сигнатура** | Конечная спектральная тройка $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-размерность 6 → (+,−,−,−) | [Т] | [Теорема](./core/foundations/spacetime#теорема-спектральная-тройка) |
+| **Лоренцева сигнатура** | расщепление $(1,3)$ [Т] (1 время из Пейджа–Вуттерса, 3 пространства из $S^3$); лоренцев знак [Т при рефлективной положительности] (ограниченный снизу PW-генератор / Остервальдер–Шрадер) | [Т]+[Т при р.п.] | [Теорема](./core/foundations/spacetime#теорема-спектральная-тройка) |
 | **Морита-эквивалентность 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$; все 7D формулы точны | [Т] | [Теорема](./core/structure/dimension-e) |
 | **Спектральный зазор Фано-диссипатора** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD-симметрия); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-оператор (замещающий канал)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, монотонность, неподвижная точка $\rho_*$ | [Т] | [Теорема](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
@@ -225,7 +225,7 @@ $$
 | **Нейтринная O-секторная Юкавская** | $m_D^{(k)} \propto \varepsilon_0 \sin(2\pi k/7)$; расхождение $m_2/m_3$: $\times 50 \to \times 1.8$ | [С] | [Теорема](./physics/particle-physics/neutrino-masses#теорема-нейтрино-o-сектор) |
 | **PMNS из анархической $M_R$** | O-изотропия → плотная $M_R$ → углы $O(30°\text{–}60°)$ | [С] | [Теорема](./physics/particle-physics/neutrino-masses#теорема-pmns-анархия) |
 | **Обоснование $K=4$ для L3** | Квадратичная декомпозиция $3+1=4$; байесовское доминирование $R^{(2)} \geq 1/4$ | [Т] | [Теорема](./consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4) |
-| **Недостижимость L4 для биосистем** | $R^{(n)} \sim R^n \to 0$ при $\varepsilon_{\text{dec}} > 0$; L4 = аттрактор | [С] | [Теорема](./consciousness/hierarchy/interiority-hierarchy#теорема-l4-недостижимость) |
+| **Недостижимость L4 для биосистем** | Категорно: $L4=\mathrm{colim}_n\tau_{\leq n}(\mathbf{Exp}_\infty)$ недостижим за конечное число шагов (T-86) + $S^{(n)}\sim 3^{-n}\to 0$; L4 = аттрактор | [Т] | [Теорема T-86](./consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная) |
 | **КК-5: Фрактальное замыкание** | Нетривиальность аттрактора композита $P > 1/7$ [Т]; жизнеспособность $P > 2/7$ [Т для воплощённых] (T-149) | [Т]+[С] | [Теорема](./applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) |
 | **Топологическая защита Gap-вакуума** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; барьер $\geq 6\mu^2$; вакуум отделён от $\text{Gap}=0$ | [Т] | [Теорема](./core/dynamics/composite-systems#теорема-тополог-защита) |
 | **Каноническое определение $f_0$** | $f_0\Lambda^4 = \frac{1}{7}[V_{\text{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\text{Gap}}}(0)]$; UV-конечность + единственный вакуум | [Т] | [Теорема](./physics/particle-physics/higgs-sector#теорема-f0-канонический) |
@@ -300,15 +300,15 @@ $$
 | **[Эмерджентное время](./proofs/dynamics/emergent-time)** | Пейдж–Вуттерс, стратификационное время |
 | **[Категорный формализм](./proofs/categorical/categorical-formalism)** | ∞-топос, производные категории, IC-когомологии |
 | **[Теорема единственности](./proofs/categorical/uniqueness-theorem)** | G₂-ригидность: 34 физических параметра |
-| **[Стандартная модель](./physics/gauge-symmetry/standard-model)** | SM из G₂: электрослабый сектор [Т], 3 поколения [Т] |
+| **[Стандартная модель](./physics/gauge-symmetry/standard-model)** | SM из G₂: электрослабый сектор [Т], 3 поколения (подсчёт [Т], отождествление [И]) |
 | **[Физика](/docs/physics/overview)** | Калибровочная симметрия, частицы, гравитация, космология |
-| **[Нейтринные массы](./physics/particle-physics/neutrino-masses)** | Seesaw из Gap, $M_R$ [Т], O-секторная Юкавская [Т], PMNS [С] |
+| **[Нейтринные массы](./physics/particle-physics/neutrino-masses)** | Seesaw из Gap, $M_R$ [Т], O-секторная Юкавская (формула [Т] / числа [С]), PMNS [С] |
 | **[SUSY из $G_2$](./physics/particle-physics/susy)** | Суперпотенциал [Т] (Шур), суперпартнёрный спектр, гравитино |
 | **[Термодинамика Gap](./core/dynamics/gap-thermodynamics)** | Потенциал $V_{\text{Gap}}$, глобальная минимизация [Т], секторная иерархия $\varepsilon$ |
 | **[Квантовая гравитация](./physics/gravity/quantum-gravity)** | Спектральное действие [Т], UV-конечность [Т], уравнения Эйнштейна [Т] |
-| **[Космологическая постоянная](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [Т], спектральная формула [Т], бюджет $\sim 10^{-120\pm10}$ [С] |
+| **[Космологическая постоянная](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [Т], спектральная формула [Т], честная вилка $10^{-53.5}$…$10^{-93.5}$ [С] ($\gtrsim 27$ порядков открыты) |
 | **[Композитные системы](./core/dynamics/composite-systems)** | КК-5 (нетривиальность [Т], жизнеспособность [С]), топологическая защита Gap [Т], эмерджентная геометрия |
-| **[Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ для L3 [Т], недостижимость L4 [С] |
+| **[Иерархия интериорности](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ для L3 [Т], категорная недостижимость L4 [Т] (T-86) |
 | **[Башня глубины](/docs/consciousness/hierarchy/depth-tower)** | SAD-метрика [Т], динамика глубины (A₄-бифуркация, энергия, стресс, социальная), морфологическая агностичность [Г] |
 | **[Глоссарий](./reference/glossary)** | Определения терминов |
 | **[Нотация](./reference/notation)** | Математические обозначения |

@@ -109,8 +109,22 @@ $$
 P - \frac{1}{N} > \frac{1}{N} \quad \Rightarrow \quad \boxed{P > \frac{2}{N}}
 $$
 
-:::info Interpretation
-**Structural doubling principle:** To be distinguishable from chaos, a system's structure must be at least as large as chaos itself. The factor of 2 arises naturally: structure + baseline level.
+**Exact reformulation (majority of the Frobenius weight).** The decomposition $\Gamma = I_N/N + \Delta$ is **orthogonal** in the Hilbert–Schmidt inner product ($\langle I_N/N, \Delta\rangle_F = \mathrm{Tr}(\Delta)/N = 0$), so Pythagoras gives the exact split of the state's total Frobenius weight into a noise part and a structural part:
+
+$$
+P = \|\Gamma\|_F^2 = \underbrace{\|I_N/N\|_F^2}_{1/N\ \text{(noise)}} + \underbrace{\|\Delta\|_F^2}_{\text{structure}}, \qquad s := \frac{\|\Delta\|_F^2}{P}\ \text{(structural share)}.
+$$
+
+The criterion $\|\Delta\|_F^2 > \|I_N/N\|_F^2$ is then **exactly** the statement that the structural component holds the **strict majority** of the state's Frobenius weight:
+
+$$
+P > \frac{2}{N} \iff s > \frac{1}{2}.
+$$
+
+Between exactly two orthogonal components, *majority* is the unique dominance threshold containing no free parameter — any other cut $s > c$ would introduce an arbitrary constant $c$. The apparent "factor 2" is therefore not a chosen constant: it is the arithmetic consequence of the majority criterion, $\tfrac1N + \tfrac1N = \tfrac2N$.
+
+:::info Interpretation: one dominance principle for both thresholds
+This is the same **plurality-dominance principle** that fixes the reflection threshold: for $R_{\mathrm{th}}$ the self-model must dominate each of $K = 3$ competing hypotheses (plurality $\Rightarrow 1/3$); for $P_{\mathrm{crit}}$ the structural component must dominate the single competing component, noise ($K = 2$ orthogonal parts $\Rightarrow$ majority $1/2$ of the weight $\Rightarrow P > 2/N$). One principle, two thresholds.
 :::
 
 ---
@@ -179,7 +193,9 @@ For $N=7$: $\mathbb E_\Pi[\Pi\otimes\Pi] = (I+\mathrm{SWAP})/56$. Hence
 $$\mathbb E_\Pi[\mathrm{Tr}(A\Pi)^2] = \mathrm{Tr}((A\otimes A)\cdot\mathbb E[\Pi\otimes\Pi]) = \frac{1}{N(N+1)}(\mathrm{Tr}(A)^2 + \|A\|_F^2).$$
 
 **Variance formula.**
-$$\mathrm{Var}_\Pi(\mathrm{Tr}(A\Pi)) = \mathbb E[\mathrm{Tr}(A\Pi)^2] - \mathbb E[\mathrm{Tr}(A\Pi)]^2 = \frac{\|A\|_F^2}{N(N+1)} + \frac{(N-1)\mathrm{Tr}(A)^2}{N^2(N+1)}.$$
+$$\mathrm{Var}_\Pi(\mathrm{Tr}(A\Pi)) = \mathbb E[\mathrm{Tr}(A\Pi)^2] - \mathbb E[\mathrm{Tr}(A\Pi)]^2 = \frac{\|A\|_F^2}{N(N+1)} - \frac{\mathrm{Tr}(A)^2}{N^2(N+1)}$$
+
+(using $\tfrac{1}{N(N+1)} - \tfrac{1}{N^2} = -\tfrac{1}{N^2(N+1)}$; verified numerically against Haar sampling).
 
 **Applied to $A = \Delta = \Gamma - I/N$** (traceless, $\mathrm{Tr}(\Delta)=0$):
 $$\mathrm{Var}_\Pi(\mathrm{Tr}(\Delta\Pi)) = \frac{\|\Delta\|_F^2}{N(N+1)} = \frac{P - 1/N}{N(N+1)}.$$
@@ -189,8 +205,8 @@ $$\|\Delta\|_F^2 > \|I/N\|_F^2 \iff P > 2/N.$$
 
 $$\boxed{P > \frac{2}{N}}$$
 
-:::info Interpretation
-The constant $1/(N(N+1)) = 1/56$ (for $N=7$) is the standard Haar second-moment coefficient and drops out of the threshold condition — the threshold is exactly the Frobenius dominance $\|\Delta\|_F^2 > \|I/N\|_F^2$, identical to Path 1. Path 3 is thus a **rigorous** independent derivation via Weingarten integration, not a convention-dependent SNR heuristic. Every step uses only the Haar measure on $U(N)$-orbits, with no free parameters.
+:::info Interpretation: operational realization of the majority criterion
+The Weingarten computation of the variance is exact **[T]**, and the Haar constant $1/(N(N+1)) = 1/56$ (for $N=7$) multiplies **both** sides of the comparison and drops out — so the threshold is basis-independent and realizable by a physical Haar-random single-shot probe. What Path 3 adds is thus **operational content**: the Frobenius-majority criterion of Path 1 is not merely geometric bookkeeping but the detectability condition of an implementable random-basis measurement. The comparison scale itself ($\|I/N\|_F^2$, i.e. the majority criterion) is the same dominance principle as in Path 1 — Path 3 realizes it operationally rather than forcing the constant independently.
 :::
 
 ---
@@ -318,26 +334,28 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 **Proof:**
 Uniqueness follows from the algebraic equivalence of conditions 1–4 (all express the same geometric requirement in different terms). The autopoietic criterion (5) yields the same threshold from an independent symmetry-breaking requirement. All five formulations lead to $P - 1/N = 1/N$. ∎
 
-:::info Independence structure of the five paths
+:::info Logical structure of the five paths
 
-**Tier A — fully independent rigorous derivations** (each alone proves $P_{\mathrm{crit}} = 2/N$ using different mathematical machinery):
+The derivation has **one load-bearing core and four structural supports**, each with a precisely delimited role:
 
-| Path | Mathematical apparatus | Assumptions beyond $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ |
-|------|----------------------|--------------------------------------------------------|
-| **1 (Frobenius)** | Hilbert–Schmidt Pythagoras | Reference = $I/N$ |
-| **3 (Haar detection)** | Weingarten 2nd-moment integration | Haar measure on $U(N)$ |
-| **4 (Spectral)** | Constrained Lagrange optimization | None (pure spectral algebra) |
+**Core (the derivation proper).** $P_{\mathrm{crit}} = 2/N$ follows from two ingredients, both parameter-free:
 
-Paths 1, 3, 4 use disjoint mathematical tools (HS norm identity, Haar integration, Lagrange multipliers). Path 3 arrives at the same inequality $\|\Delta\|_F^2 > \|I/N\|_F^2$ as Path 1 but via a probabilistic (Weingarten) route with no norm-theoretic input. Path 4 characterizes the spectrum at threshold without using norms at all.
+| Ingredient | Content | Status |
+|------|----------------------|--------|
+| **Reference canonicity (Path 5)** | $I/N$ is the *unique* $U(N)$-invariant density matrix (Schur's lemma on the irreducible fundamental representation) — the only canonical "chaos" reference | **[T]** |
+| **Majority criterion (Path 1)** | With the orthogonal split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$, distinguishability = the structural component holds the **strict majority** of the Frobenius weight, $s > 1/2$ — the unique dominance threshold between two orthogonal components containing no free constant | **[T]** equivalence; the majority principle is the same plurality-dominance rule that fixes $R_{\mathrm{th}} = 1/3$ |
 
-**Tier B — supporting confirmations** (consistent with $P_{\mathrm{crit}} = 2/N$ but not fully independent):
+Together: $s > \tfrac12 \iff P > 2/N$, with no adjustable parameter anywhere.
 
-| Path | Relation to Tier A | Own contribution |
+**Supports (delimited roles, per their own sections):**
+
+| Path | Role | Relation to the core |
 |------|-------------------|-----------------|
-| **2 (KL entropy)** | Algebraically reduces to Path 1 in quadratic approximation; threshold $D_{KL} = 1/2$ nat is a **convention** | Information-theoretic interpretation of the same geometric inequality |
-| **5 (Stabilizer)** | Strengthened criterion $\|\Delta\| \geq \|I/N\|$ is Path 1 restated | Justifies $I/N$ as the canonical reference via Schur's lemma (representation theory) |
+| **3 (Haar detection)** | **Operational realization [T]**: exact Weingarten variance; the Haar constant drops out of the comparison, so the majority criterion is basis-independent and physically measurable by a random single-shot probe | Realizes the Path-1 criterion operationally; does not force the constant independently |
+| **4 (Spectral)** | **Characterization [T]** (per §3.4: *not* an independent derivation): at $P = 2/N$ the extremal spectrum has $\lambda_{\max} = (1+\sqrt{N-1})/N \approx 1/2$ | Describes what the threshold state looks like spectrally |
+| **2 (KL entropy)** | **Interpretive confirmation**: reduces to Path 1 in the quadratic approximation; the $D_{KL} = 1/2$ nat cut is a **convention** | Information-theoretic reading of the same inequality |
 
-The convergence of 3 independent Tier-A derivations on $P_{\mathrm{crit}} = 2/N$ is a structural fact of $\mathcal{D}(\mathbb{C}^N)$ geometry [Т]. Tier-B paths provide interpretive depth (informational, symmetry-theoretic) without adding independent numerical content.
+The theorem-level content is therefore: *given the canonical reference (Schur) and the parameter-free majority criterion, $P_{\mathrm{crit}} = 2/N$ is forced* **[T]** — with operational measurability (Path 3), spectral shape (Path 4), and informational meaning (Path 2) established as corollaries, not as independent forcings.
 :::
 
 ---
@@ -533,23 +551,19 @@ To distinguish $\Gamma$ from $I_N/N$ one needs $\chi \geq 1/2$ nat, which requir
 
 ### 8.2 Physical meaning
 
-The factor of 2 arises from the **balance principle**:
+The factor of 2 is the arithmetic footprint of the **majority criterion**: with the orthogonal split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$, the boundary is exactly
 
 $$
-\text{Structure} = \text{Chaos}
+s = \frac{\|\Delta\|_F^2}{P} = \frac{1}{2} \quad\text{(structure holds half the total weight)},
 $$
 
-In the quadratic metric this means:
+equivalently $\|\text{deviation}\|^2 = \|\text{baseline}\|^2$, i.e.
 
 $$
-\|\text{deviation}\|^2 = \|\text{baseline}\|^2
+P = 2 \times P_{\min} = \frac{2}{N}.
 $$
 
-which is equivalent to doubling relative to the baseline level:
-
-$$
-P = 2 \times P_{\min} = \frac{2}{N}
-$$
+The "2" is thus not a tuned constant but the denominator of the parameter-free majority threshold $1/2$ — the $K=2$ instance of the same plurality-dominance principle whose $K=3$ instance gives $R_{\mathrm{th}} = 1/3$.
 
 ---
 

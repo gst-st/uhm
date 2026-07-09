@@ -126,7 +126,7 @@ See [Categorical formalism](/docs/proofs/categorical/categorical-formalism) for 
 | **Map(Γ, T)** | Morphism space (mapping space) in an ∞-category. Unlike $\mathrm{Hom}(\Gamma, T)$ in a 1-category, it is an ∞-groupoid |
 | **Homotopy** | 2-morphism between 1-morphisms. Connects different paths between objects |
 | **HoTT (Homotopy Type Theory)** | Internal logic of the ∞-topos. Formalises identity through paths |
-| **Free will (Freedom)** | $\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** — number of zero modes of the free-energy functional's Hessian + 1. ∞-categorical motivation: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$. Monotone under CPTP, $G_2$-invariant. See [Consequences](/docs/core/foundations/consequences#freedom-конечномерное), [Free will](/docs/consciousness/ethics-meaning/freedom#количественная-мера) |
+| **Free will (Freedom)** | $\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** — number of zero modes of the free-energy functional's Hessian + 1. ∞-categorical reading: tangent dimension of the free-energy critical manifold (**not** $\pi_0(\mathrm{Map}(\Gamma, T))$ — that space is contractible, $\pi_0=1$). Monotone under CPTP, $G_2$-invariant. See [Consequences](/docs/core/foundations/consequences#freedom-конечномерное), [Free will](/docs/consciousness/ethics-meaning/freedom#количественная-мера) |
 | **Freedom entropy** | $S_{\text{freedom}} := \log(\text{Freedom}(\Gamma)) = \log(\dim\ker(\mathcal{H}_\Gamma) + 1) \in [0, \log 7]$ — quantitative measure of the space of choice |
 
 ## L-Unification Terms

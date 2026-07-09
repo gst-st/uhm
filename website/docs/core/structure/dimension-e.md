@@ -58,7 +58,7 @@ Dimension $E$ is an **aspect** of the configuration $\Gamma$, not a separate ent
 Dimension $E$ is **necessary and functionally unique** by three independent arguments:
 
 1. **Axiomatic:** (PH) is an axiomatic requirement for a Holon. Removing E violates (PH). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ (Th. 15.3.1, [Т]) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
 3. **Mathematical:** Only E is associated with the density matrix $\rho \in \mathcal{D}(\mathcal{H})$ — the unique mathematical object with $\mathrm{rank} > 1$ (requirement L1). The Fubini–Study metric on the projective quality space is the unique consistent Riemannian metric.
 
 Status: **[Т]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)

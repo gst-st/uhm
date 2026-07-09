@@ -80,13 +80,13 @@ $$e_i \cdot e_j = e_k, \quad e_j \cdot e_k = e_i, \quad e_k \cdot e_i = e_j$$
 
 | $\times$ | $e_1$ (A) | $e_2$ (S) | $e_3$ (D) | $e_4$ (L) | $e_5$ (E) | $e_6$ (U) | $e_7$ (O) |
 |----------|-----------|-----------|-----------|-----------|-----------|-----------|-----------|
-| $e_1$ (A) | $-1$ | $e_4$ | $-e_7$ | $-e_2$ | $e_6$ | $-e_5$ | $e_3$ |
+| $e_1$ (A) | $-1$ | $e_4$ | $e_7$ | $-e_2$ | $e_6$ | $-e_5$ | $-e_3$ |
 | $e_2$ (S) | $-e_4$ | $-1$ | $e_5$ | $e_1$ | $-e_3$ | $e_7$ | $-e_6$ |
-| $e_3$ (D) | $e_7$ | $-e_5$ | $-1$ | $e_6$ | $e_2$ | $-e_4$ | $-e_1$ |
+| $e_3$ (D) | $-e_7$ | $-e_5$ | $-1$ | $e_6$ | $e_2$ | $-e_4$ | $e_1$ |
 | $e_4$ (L) | $e_2$ | $-e_1$ | $-e_6$ | $-1$ | $e_7$ | $e_3$ | $-e_5$ |
 | $e_5$ (E) | $-e_6$ | $e_3$ | $-e_2$ | $-e_7$ | $-1$ | $e_1$ | $e_4$ |
 | $e_6$ (U) | $e_5$ | $-e_7$ | $e_4$ | $-e_3$ | $-e_1$ | $-1$ | $e_2$ |
-| $e_7$ (O) | $-e_3$ | $e_6$ | $e_1$ | $e_5$ | $-e_4$ | $-e_2$ | $-1$ |
+| $e_7$ (O) | $e_3$ | $e_6$ | $-e_1$ | $e_5$ | $-e_4$ | $-e_2$ | $-1$ |
 
 Each row and column contains all 7 imaginary units exactly once (up to sign) — a division algebra.
 
@@ -184,9 +184,9 @@ $$g: \gamma_{ij} \mapsto \sum_{k,l} D_{ki}(g)\, D_{lj}^*(g)\, \gamma_{kl}$$
 
 ### 3.2 $G_2$ Preserves the Fano Structure
 
-Since $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication, it preserves the structure constants $f_{ijk}$ and hence the Fano plane:
+Since $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication, it preserves the structure constants $f_{ijk}$ as a **tensor** (the associative 3-form $\varphi$). It does **not** permute the seven coordinate Fano lines — that is done only by the finite frame subgroup $\Gamma_{\!\text{oct}}\cong PSL(2,7)\subset G_2$; a generic $g\in G_2$ rotates the coordinate axes (irreducibility of $\mathbf 7$):
 
-$$g \in G_2 \quad \Rightarrow \quad g \text{ permutes the Fano lines}$$
+$$g \in G_2 \ \Rightarrow\ g^\ast\varphi = \varphi; \qquad g \in \Gamma_{\!\text{oct}} \ \Rightarrow\ g \text{ permutes the Fano lines}.$$
 
 More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines:
 
@@ -514,23 +514,21 @@ $$\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\d
 
 since the left-hand side annihilates the coherence $\gamma_{12}$ in the rotated basis, while the right-hand side does not. $\blacksquare$
 
-### Theorem 11.2 (Fano Dissipator is $G_2$-Covariant)
+### Theorem 11.2 (Covariance group of the Fano dissipator)
 
 :::tip[Status: Theorem \[T\]]
-The dissipative channel with Fano-structured Lindblad operators $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ **is** $G_2$-covariant.
+By the Fano–atomic proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$, the Fano dissipator is covariant under the finite octonionic frame group $\Gamma_{\!\text{oct}}=\mathrm{Aut}(PG(2,2))\cong PSL(2,7)\subset G_2$, and **not** under the full continuous $G_2$. The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure-constant construction, $(A_a)_{bc}=\varphi_{abc}/\sqrt6$). Full treatment: [Fano channel §5](/docs/proofs/gap/fano-channel#g2-ковариантность).
 :::
 
-$$\forall g \in G_2: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger$$
+$$\forall g \in \Gamma_{\!\text{oct}}: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger$$
 
 **Proof.**
 
-**(a)** The group $G_2 = \mathrm{Aut}(\mathbb{O})$ **preserves** octonionic multiplication. The Fano plane $\mathrm{PG}(2,2)$ is defined by the structure constants of $\mathbb{O}$. Therefore $G_2$ **preserves** the Fano structure:
+**(a)** For $g\in\Gamma_{\!\text{oct}}$, $g$ permutes the seven coordinate Fano lines: there is a permutation $\sigma_g$ on $\{1,\ldots,7\}$ with
 
-$$g \in G_2 \quad \Rightarrow \quad g \text{ permutes the Fano lines}$$
+$$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}.$$
 
-More precisely: for each $g \in G_2$ there exists a permutation $\sigma_g$ on the set $\{1, \ldots, 7\}$ of lines:
-
-$$g\, \Pi_p\, g^\dagger = \Pi_{\sigma_g(p)}$$
+A generic $g\in G_2$ does **not** do this: $\mathbb{C}^7$ is an irreducible $G_2$-module (Schur), so no coordinate 3-subspace $\mathrm{span}(\text{line }p)$ is $G_2$-invariant. Hence the covariance below is exact only for the finite subgroup $\Gamma_{\!\text{oct}}$.
 
 **(b)** Fano dissipator:
 
@@ -587,8 +585,9 @@ $$\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$$
 **Proof.** (a)–(b): direct consequence of Theorems 11.1 and 11.2. (c)–(e): $\mathcal{P}_\alpha$ is a convex combination of the $G_2$-covariant ($\mathcal{P}_{\mathrm{Fano}}$) and $G_2$-breaking ($\mathcal{P}_{\mathrm{base}}$) channels. The measure of breaking is linear in $\alpha$ (from the linearity of both channels). $\blacksquare$
 
 :::warning Limits of $G_2$-Covariance
-- Fano dissipator $\mathcal{D}_{\text{Fano}}$: $G_2$-covariant **[T]** (T-11.2)
+- Fano dissipator $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$: covariant under the frame group $\Gamma_{\!\text{oct}}$, **not** full $G_2$ **[T]** (T-11.2)
 - Atomic dissipator $\mathcal{D}_{\text{atom}}$: **NOT** $G_2$-covariant **[T]** (T-11.1)
+- Canonical $G_2$-covariant dissipator $\mathcal{D}_{G_2}$ (structure constants $\varphi_{abc}$) **[T]**
 - Full dynamics $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: $G_2$-covariance of the full evolution — **[C]** (depends on the fraction of atomic vs Fano component)
 :::
 

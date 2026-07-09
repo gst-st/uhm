@@ -431,7 +431,7 @@ In the Gap formalism: $N_c = 3$ (number of colours $= \dim(\text{3-sector})$), $
 
 **(c)** Relation to Gap parameters:
 
-$$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9} = \frac{4\pi/63}{4\pi \cdot 9} \cdot \left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1}$$
+$$\alpha_s(\mu) = \frac{\lambda_4(\mu)}{4\pi \cdot 9} = \frac{4\pi^2/63}{4\pi \cdot 9} \cdot \left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1} = \frac{\pi}{567}\cdot\left(1 + \beta_{\lambda_4} \ln(\mu/\Lambda)\right)^{-1}$$
 
 using the Wilson–Fisher value $\lambda_4^* = 4\pi^2/63$.
 
@@ -566,7 +566,7 @@ $$SU(A_{\text{int}}) = \{u : \det(u)|_{\mathcal{H}_{\text{int}}} = 1\} \to \math
 Verification of all 5 cancellation conditions ($N_g = 3$ generations factor out):
 
 - $\mathrm{tr}(Y) = 6 \cdot \frac{1}{6} + 3 \cdot \frac{2}{3} + 3 \cdot (-\frac{1}{3}) + 2 \cdot (-\frac{1}{2}) + 1 \cdot (-1) = 1 + 2 - 1 - 1 - 1 = 0$ $\checkmark$
-- $\mathrm{tr}(Y^3) = 6 \cdot \frac{1}{216} + 3 \cdot \frac{8}{27} + 3 \cdot (-\frac{1}{27}) + 2 \cdot (-\frac{1}{8}) + (-1) = 0$ $\checkmark$
+- $\mathrm{tr}(Y^3) = 6 \cdot (\frac{1}{6})^3 + 3 \cdot (-\frac{2}{3})^3 + 3 \cdot (\frac{1}{3})^3 + 2 \cdot (-\frac{1}{2})^3 + 1\cdot(1)^3 = \frac{1}{36} - \frac{8}{9} + \frac{1}{9} - \frac{1}{4} + 1 = 0$ $\checkmark$ (all fields written as **left-handed** Weyl: the right-handed $u,d,e$ enter via their conjugates $Y\to-Y$; the earlier line used unconjugated $Y$ and summed to $-4/9$)
 - $\mathrm{SU}(3)^2 \times \mathrm{U}(1)_Y$: $2 \cdot \frac{1}{6} - \frac{2}{3} + \frac{1}{3} = 0$ $\checkmark$
 - $\mathrm{SU}(2)^2 \times \mathrm{U}(1)_Y$: $3 \cdot \frac{1}{6} + (-\frac{1}{2}) = 0$ $\checkmark$
 - Gravitational $\mathrm{tr}(Y) = 0$ — coincides with the first. $\checkmark$

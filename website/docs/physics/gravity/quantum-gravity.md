@@ -11,10 +11,10 @@ description: "Functional integral over Gap configurations, well-definedness on (
 The Gap functional integral as an alternative formulation of quantum gravity. The reader will learn about UV-finiteness, the spectral action, the resolution of the black hole information paradox, and the holographic principle.
 :::
 
-The Gap functional integral as an alternative formulation of quantum gravity: well-definedness on the compact target space $(S^1)^{21}$, UV-finiteness [T] from [$G_2$-symmetry](/docs/physics/gauge-symmetry/g2-structure) + SUSY, full spectral action [T], Gap resolution of the black hole information paradox.
+The Gap functional integral as an alternative formulation of quantum gravity: well-definedness on the compact target space $(S^1)^{21}$, **field-space finiteness [T]** (compact target), full order-by-order UV-finiteness **[C]** (structural), full spectral action [T], Gap resolution of the black hole information paradox.
 
 :::info Status
-Spectral action [T]: the full spectral triple from T-53 reproduces the Einstein–Hilbert action + Standard Model. UV-finiteness [T]: compactness + $G_2$ + SUSY → zero divergence count. Information paradox — [C] (unitarity [T], Gap description of the horizon — ansatz). Entropy $S_{\text{BH}}$ — [C under T-65, T-73, Wald]: leading term $A/(4G_N)$ [T] from Wald's formula + spectral action; Gap correction coefficient $c_{\mathrm{Gap}}$ explicitly computed [C under T-65, T-73, T-74] (§6.3). Lattice verification — [P].
+Spectral action [T]: the full spectral triple from T-53 reproduces the Einstein–Hilbert action + Standard Model. **Field-space (large-field) finiteness [T]:** the lattice partition function $Z_N$ is finite for every $N$ because the target $(S^1)^{21}/G_2$ is **compact** (finite volume, bounded integrand) — a rigorous result (§3), with the continuum limit remaining [P]. **Full order-by-order UV-finiteness [C]** (structural): compactness + $G_2$ Ward identities + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219) — **not** the retracted exact "$7-7=0$" trace. Information paradox — [C] (unitarity [T], Gap description of the horizon — ansatz). Entropy $S_{\text{BH}}$ — [C under T-65, T-73, Wald]: leading term $A/(4G_N)$ [T] from Wald's formula + spectral action; Gap correction coefficient $c_{\mathrm{Gap}}$ explicitly computed [C under T-65, T-73, T-74] (§6.3). Lattice verification — [P].
 :::
 
 ---
@@ -155,8 +155,8 @@ The choice $f(u) = e^{-u}$ is **adopted** (fixed by the theory as a definition) 
 :::
 
 With this choice:
-- $f_2 = \int_0^\infty e^{-u} \, du = 1! = 1$.
-- $f_4 = \int_0^\infty u \, e^{-u} \, du = 3! = 6$.
+- $f_2 = \int_0^\infty e^{-u} \, du = 0! = 1$.
+- $f_4 = \int_0^\infty u \, e^{-u} \, du = \Gamma(2) = 1! = 1$ (the earlier "$3!=6$" mis-identified this with $\int_0^\infty u^3 e^{-u}\,du$; here $\int_0^\infty u^{n}e^{-u}\,du = n!$, so $f_{2m}$ uses $n=m-1$). The spectral-action moment convention $(f_0,f_2,f_4)=(\text{reg},1,1)$ is used consistently below.
 - $f_0 = \zeta$-regularised (the integral $\int_0^\infty u^{-1} e^{-u}\, du$ diverges logarithmically; the canonical zeta regularisation yields $f_0 = -\gamma$ (Euler–Mascheroni) or zero, depending on scheme).
 
 Substituting into the spectral-action asymptotic expansion:
@@ -252,7 +252,7 @@ $$
 S = \int d^4x \sqrt{g}\left[\frac{1}{16\pi G_N} R + \Lambda_{CC} + \mathcal{L}_{\text{SM}}\right] + O(\Lambda^{-2})
 $$
 
-**Step 5 (Projection onto $M^{3+1}$).** Lorentzian signature $(+1,-1,-1,-1)$ from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка). The signature of the spectral triple ensures the correct Wick rotation.
+**Step 5 (Projection onto $M^{3+1}$).** Lorentzian signature $(+1,-1,-1,-1)$ from [T-53 — $(1,3)$-split [T] + sign [T at reflection positivity]](/docs/core/foundations/spacetime#лоренцева-сигнатура): the $(1,3)$-split is derived (PW time + $S^3$), and the Lorentzian relative sign is fixed by requiring the PW generator bounded below (Osterwalder–Schrader reflection positivity), not by an ad-hoc ansatz (KO-dim 6 alone does not determine it; rigorous route via Krein spectral triples). The Wick rotation is defined relative to this construction.
 
 T-53 [T] provides an **explicit** finite spectral triple. The existence condition for the full spectral triple is satisfied rigorously. $\blacksquare$
 
@@ -302,7 +302,7 @@ $$
 
 where $G_{\text{Gap}} = c^4 / (2\mu^2 \cdot \langle|\gamma_{\text{ST}}|^2\rangle)$ is the [emergent gravitational constant](/docs/physics/gravity/einstein-equations), $\Lambda_{\text{Gap}}$ is the [cosmological constant](/docs/physics/gravity/cosmological-constant).
 
-Thus, the Gap functional integral reproduces standard quantum gravity in the low-energy limit, but, unlike it, is **mathematically well-defined** due to the compactness of $(S^1)^{21}$ and the finite number of degrees of freedom. The main argument (spectral action) is fully rigorous **[T]** (T-53 → spectral triple → Chamseddine–Connes); the Lovelock argument is supplementary.
+Thus, the Gap functional integral reproduces standard quantum gravity in the low-energy limit, but, unlike it, has a **rigorously finite field-space measure** **[T]** due to the compactness of $(S^1)^{21}/G_2$ (finite target volume) — the one part of UV-finiteness that is unconditional; the full order-by-order finiteness is the structural **[C]** argument above. The spectral-action reconstruction is fully rigorous **[T]** (T-53 → spectral triple → Chamseddine–Connes); the Lovelock argument is supplementary.
 
 ### Projection of the Gap Action onto 4D
 
@@ -369,7 +369,7 @@ Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is renor
 
 **Step 2 ($G_2$ Ward identities).** The 14 generators of $G_2$ give 14 linear identities among the Green's functions. Of the 21 independent 4-point functions on $(S^1)^{21}$, the Ward identities leave only $21 - 14 = 7$ independent.
 
-**Step 3 ($\mathcal{N}=1$ SUSY cancellations).** By Seiberg's non-renormalization theorems (1993): $\mathcal{N}=1$ SUSY forbids renormalization of the superpotential (holomorphy theorem), and D-terms receive only finite corrections. The remaining $7$ divergences from step 2 cancel pairwise with fermionic loops: $7 - 7 = 0$ residual divergences.
+**Step 3 ($\mathcal{N}=1$ SUSY suppression).** By Seiberg's non-renormalization theorems (1993): $\mathcal{N}=1$ SUSY forbids renormalization of the superpotential (holomorphy theorem), and D-terms receive only finite corrections. The residual vacuum contribution is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [T at T-64]). *(The earlier exact "$7-7=0$ bose–fermi trace" is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ cannot have trace $0$, and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist since the $G_2$ adjoint is irreducible; see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация). Holomorphy + compactness, not an exact trace, carry the finiteness argument.)*
 
 **Step 4 (APS index).** The index of the Dirac operator on the compact space:
 
@@ -390,7 +390,7 @@ The proof of UV-finiteness (Theorem 4.1) rests on three mutually complementary m
 |----------|------|---------|
 | Compactness of $(S^1)^{21}$ | Bounding of amplitudes (step 1) | All scales |
 | $G_2$-symmetry | Ward identities: $21 \to 7$ (step 2) | All scales |
-| $\mathcal{N}=1$ SUSY | Cancellation of divergences: $7 - 7 = 0$ (step 3) | $E > m_{3/2} \sim 10^{13}$ GeV |
+| $\mathcal{N}=1$ SUSY | Sector-product suppression $\varepsilon^{12}$ (T-219); holomorphy (step 3) | $E > m_{3/2} \sim 10^{13}$ GeV |
 
 These three factors — **compactness + $G_2$ + SUSY** — jointly **prove** UV-finiteness. None of them individually is sufficient:
 
@@ -409,11 +409,11 @@ $$
 Such configurations — Gap instantons — represent tunneling transitions between different vacuum configurations on $(S^1)^{21}$. Their contribution is exponentially suppressed ($e^{-150} \sim 10^{-65}$) and does not violate finiteness, but may play a role in cosmology (e.g., in suppressing the cosmological constant).
 
 :::tip Status [T]
-UV-finiteness is rigorously proved for the scalar-fermion sector: compactness of $(S^1)^{21}$ + $G_2$ Ward identities ($21 \to 7$ divergences) + $\mathcal{N}=1$ SUSY cancellations ($7 - 7 = 0$). Gravitational UV-finiteness is automatic from the emergent nature of the metric.
+UV-finiteness for the scalar-fermion sector is a **structural** argument [C]: compactness of $(S^1)^{21}$ + $G_2$ Ward identities ($21 \to 7$ divergences) + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219). (The exact "$7-7=0$ trace" step is retracted — see the clarification box below.) Gravitational UV-finiteness is automatic from the emergent nature of the metric.
 :::
 
-:::warning Theoretical clarification: nature of the "7 - 7 = 0" argument
-The argument "7 bosonic − 7 fermionic = 0 divergences" (Step 3 of Theorem 4.1) is **structural/index-theoretic**, not a rigorous perturbative proof of finiteness in each order. The SUSY cancellation $7 - 7 = 0$ relies on a topological argument (APS index, Step 4): the $\hat{A}$-genus of the torus $(S^1)^{21}$ vanishes, guaranteeing the absence of anomalies. Non-renormalization of the superpotential (Seiberg's theorem) is a holomorphic, not perturbative, result. Full UV-finiteness beyond leading order requires non-perturbative justification, which in this construction is provided by the compactness of the target space, but is not formally reducible to diagrammatic techniques.
+:::warning Theoretical clarification: the "7 - 7 = 0" trace is retracted; finiteness rests on other legs
+The literal "7 bosonic − 7 fermionic = 0 divergences" trace is **retracted [✗]** (a $\mathbb{Z}_2$-grading on the odd internal $\mathbb{C}^7$ has trace $\in\{\pm1,\dots,\pm7\}$, never $0$; and $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist — the $G_2$ adjoint is irreducible; [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация)). What **does** hold is a **structural** finiteness argument [C], not an order-by-order perturbative proof: the $\hat{A}$-genus of the torus $(S^1)^{21}$ vanishes (APS index → no anomalies), superpotential non-renormalization is holomorphic (Seiberg), and the residual vacuum energy carries the sector-product scaling $\varepsilon^{12}M_P^4$ (T-219). Full UV-finiteness beyond leading order rests on the compactness of the target space, not on a bose–fermi trace.
 :::
 
 ---

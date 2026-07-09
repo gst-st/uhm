@@ -657,23 +657,26 @@ In UHM, free will is neither philosophical speculation nor subjective illusion b
 
 ### $\infty$-categorical motivation
 
-:::info Definition ($\infty$-categorical freedom)
-For configuration $\Gamma$, freedom is the set of connected components of the mapping space into the terminal object:
+:::info Definition (freedom = dimension of the flat directions)
+For configuration $\Gamma$, freedom is the **dimension of the zero-mode space** of the free-energy Hessian, plus one:
 
 $$
-\text{Freedom}(\Gamma) = \pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})
+\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
 
-where $T$ is the terminal object of $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$, and “non-trivial” means paths with nontrivial homotopical structure (see [Axiom Ω⁷](./axiom-omega)).
+i.e. the number of independent directions in which the free energy $\mathcal{F}$ is flat (motion incurs no energy penalty), plus the trivial "stay put" mode.
+
+:::warning Correction: not $\pi_0$ of a mapping space
+Note that $\pi_0(\mathrm{Map}(\Gamma,T)^{\text{non-trivial}})$ does **not** serve as the measure: $\mathrm{Map}(\Gamma,T)$ into the terminal object is **contractible**, so $\pi_0=1$ for every $\Gamma$ — it cannot equal $\dim\ker(\mathcal H_\Gamma)+1$. The correct categorical object is the **tangent dimension of the critical (zero-mode) manifold** of $\mathcal F$ at $\Gamma$, which is $\dim\ker(\mathcal H_\Gamma)$; the finite-dimensional formula above is the definition, and the $\infty$-categorical reading is this critical-manifold dimension, **not** $\pi_0$ of a contractible mapping space.
 :::
 
 **Freedom** is neither illusion nor a merely deterministic notion. In the $\infty$-categorical formalism, free will receives a strict mathematical definition:
 
 | Component | Mathematical meaning | Ontological reading |
 |---|---|---|
-| $\text{Map}(\Gamma, T)$ | Space of paths to $T$ | All possible trajectories of development |
-| $\pi_0(-)$ | Connected components | Equivalence classes of choices |
-| $\text{Freedom}(\Gamma)$ | Cardinality of $\pi_0$ | Number of fundamentally distinct paths |
+| $\mathcal{H}_\Gamma$ | Free-energy Hessian at $\Gamma$ | Local curvature of the effort landscape |
+| $\ker(\mathcal{H}_\Gamma)$ | Zero-mode (flat) directions | Directions of choice with no energy penalty |
+| $\text{Freedom}(\Gamma)$ | $\dim\ker(\mathcal{H}_\Gamma) + 1$ | Number of independent free directions (+ stay-put) |
 
 ### Finite-dimensional definition [T] {#freedom-конечномерное}
 
@@ -691,17 +694,17 @@ $$
 $$
 :::
 
-**Motivation.** In the $\infty$-categorical definition, $\pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})$ counts “distinct” trajectories to $T$ that cannot be continuously deformed into one another. In finite dimensions this matches: the number of **distinct** directions in state space along which free energy is flat (zero modes of the Hessian). Each zero mode is an **independent choice**: motion along it incurs no energy penalty. The $+1$ term accounts for the trivial path (staying put).
+**Motivation.** Freedom counts the **distinct directions in state space along which the free energy is flat** (zero modes of the Hessian $\mathcal H_\Gamma$). Each zero mode is an **independent choice**: motion along it incurs no energy penalty. The $+1$ term accounts for the trivial "stay-put" mode. (The $\infty$-categorical object that captures this is the tangent dimension of the free-energy critical manifold — **not** $\pi_0(\mathrm{Map}(\Gamma,T))$, which is trivial since that mapping space is contractible.)
 
 #### Theorem (Equivalence of Freedom definitions) [T] (T-89) {#теорема-freedom-эквивалентность}
 
-Equivalence of the $\infty$-categorical and finite-dimensional definitions of Freedom is proved **[T]**. By Morse–Bott theory: free energy $\mathcal{F}[\Gamma]$ is a Morse–Bott function on $\mathcal{D}(\mathbb{C}^7)$; the number of gradient trajectories from $\Gamma$ to $\rho^*$ (up to deformation) equals $\dim\ker(\mathcal{H}_\Gamma) + 1$. This is exactly $\pi_0(\text{Map}(\Gamma, T))$ in $\infty$-categorical language.
+The finite-dimensional definition $\text{Freedom}(\Gamma)=\dim\ker(\mathcal{H}_\Gamma)+1$ is well-posed **[T]**. By Morse–Bott theory: free energy $\mathcal{F}[\Gamma]$ is a Morse–Bott function on $\mathcal{D}(\mathbb{C}^7)$, and the **tangent dimension of the critical manifold** through $\Gamma$ equals $\dim\ker(\mathcal{H}_\Gamma)$. In $\infty$-categorical language this is the critical-manifold dimension — **not** $\pi_0(\text{Map}(\Gamma, T))$, which is trivial ($=1$) since $\text{Map}(\Gamma,T)$ is contractible.
 
 **Proof (outline).**
 
 1. **Morse–Bott on the interior.** $\mathcal{F}[\Gamma]$ is smooth on $\mathrm{Int}(\mathcal{D}(\mathbb{C}^7)) = \{\Gamma > 0\}$ (positive definite density matrices—an open manifold). Attractor $\rho^* \in \mathrm{Int}(\mathcal{D})$ by primitivity of $\mathcal{L}_0$ [T-39a]. All critical points of $\mathcal{F}[\Gamma]$ lie in the interior: $\mathcal{L}_0$ maps $\mathrm{Int}(\mathcal{D})$ to $\mathrm{Int}(\mathcal{D})$ (CPTP + primitivity), so gradient flows never leave $\mathrm{Int}(\mathcal{D})$. Critical submanifolds are orbits of the $G_2$ action. Morse–Bott theory applies without boundary issues.
-2. **Gradient trajectories.** Each connected component of $\pi_0(\text{Map}(\Gamma, T))$ corresponds to one class of equivalent gradient flows $\dot{\Gamma} = -\nabla\mathcal{F}$ from $\Gamma$ to attractor $\rho^*$. Nontrivial paths are nonconstant: $\gamma(0) = \Gamma$, $\gamma(1) = \rho^*$, $\gamma \not\equiv \rho^*$. The $+1$ term adds the class of the trivial (constant) path at $\rho^*$.
-3. **Counting.** By Morse–Bott, the number of such classes equals $\dim\ker(\mathcal{H}_\Gamma) + 1$: Hessian zero modes parametrize “flat” directions along which distinct descent trajectories exist. $\blacksquare$
+2. **Zero-mode (critical) manifold.** By Morse–Bott, the critical set of $\mathcal{F}$ through $\Gamma$ is a smooth submanifold whose tangent space is exactly $\ker(\mathcal{H}_\Gamma)$ — the "flat" directions along which $\mathcal F$ does not change to second order. (This is **not** a count of gradient trajectories: by Picard–Lindelöf the gradient flow $\dot\Gamma=-\nabla\mathcal F$ has a **unique** trajectory through each point, so "number of trajectories" is not the right invariant. The invariant is the *dimension of the flat directions*.)
+3. **Counting.** $\text{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1$: the dimension of the critical-manifold tangent space (flat directions) plus the trivial "stay-put" mode. This is the definition; the $\infty$-categorical reading is the tangent dimension of the critical manifold, not $\pi_0$ of the (contractible) mapping space. $\blacksquare$
 
 :::info Boundary states
 States on $\partial\mathcal{D}(\mathbb{C}^7)$ (rank $< 7$) are excluded: primitivity of $\mathcal{L}_0$ [T-39a] ensures $\exp(\tau\mathcal{L}_0)[\Gamma] \in \mathrm{Int}(\mathcal{D})$ for all $\tau > 0$—evolution flows enter the interior instantly. Freedom for boundary states is defined by continuity: $\mathrm{Freedom}(\Gamma) := \lim_{\varepsilon \to 0} \mathrm{Freedom}(\Gamma + \varepsilon I/7)$.
@@ -1195,7 +1198,7 @@ $$
 3. $D_{\mathrm{int}} \mapsto V_{\mathrm{Gap}}$: [spectral action](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) [T].
 4. $V_{\mathrm{Gap}} \mapsto \theta_{\mathrm{vac}}$: unique potential minimum ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]).
 
-**Fixed point existence.** $\mathcal{F}$ is a continuous map of the compact convex set $(S^1)^{21}/G_2$ (5-dimensional, T-64 [T]) to itself. By **Brouwer’s theorem**, $\mathcal{F}$ has a fixed point $\theta^*$.
+**Fixed point existence.** Brouwer's theorem requires a compact **convex** domain (equivalently, a closed ball); the orbit space $(S^1)^{21}/G_2$ is a torus quotient, **not** convex (a rotation of $S^1$ has no fixed point), so Brouwer does not apply to it directly. Instead, $G_2$-orbital reduction (T-64 [T]) expresses $V_{\mathrm{Gap}}$ through the **5 sector parameters** $\vec\varepsilon=(\varepsilon_{O3},\varepsilon_{O\bar3},\varepsilon_{33},\varepsilon_{\bar3\bar3},\varepsilon_{3\bar3})\in[0,1]^5$, a compact **convex box**. The composite $\mathcal F$ restricts to a continuous self-map $\mathcal F:[0,1]^5\to[0,1]^5$ (each step preserves the physical parameter ranges), and **Brouwer's theorem** applied to the convex box $[0,1]^5$ gives a fixed point $\vec\varepsilon^*$, equivalently $\theta^*$.
 
 **Uniqueness.** The attractor $\rho_*$ of full $\mathcal{L}_\Omega$ is unique (T-96 [T]; T-39a [T] gives uniqueness of $I/7$ for $\mathcal{L}_0$). The minimum of $V_{\mathrm{Gap}}$ is unique (T-64 [T]). If $\theta_1^* \neq \theta_2^*$ but $\rho_*(\theta_1^*) = \rho_*(\theta_2^*)$ then $D_{\mathrm{int}}(\theta_1^*) = D_{\mathrm{int}}(\theta_2^*)$ then $V_{\mathrm{Gap}}(\theta_1^*) = V_{\mathrm{Gap}}(\theta_2^*)$ then $\theta_1^* = \theta_2^*$. Contradiction. $\blacksquare$
 

@@ -1128,7 +1128,7 @@ and $R^{(n)}(\Gamma) > 0$ for all $n \in \mathbb{N}$.
 
 **Proof.**
 
-**Step 1 (Contractivity of $\varphi$).** By T-62 [T], $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ is a CPTP channel (completely positive, trace-preserving map). By the Petz-Chentsov theorem on monotone metrics ([uniqueness of the Bures metric](/docs/physics/gravity/emergent-geometry#единственность-метрики-бюреса) [T]), CPTP channels are **contractive** with respect to the Bures metric:
+**Step 1 (Contractivity of $\varphi$).** By T-62 [T], $\varphi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ is a CPTP channel (completely positive, trace-preserving map). By the Petz monotonicity theorem ([Bures = Petz-minimal monotone metric](/docs/physics/gravity/emergent-geometry#единственность-метрики-бюреса) [T]) — monotonicity holds for **every** metric in the Petz family, Bures included — CPTP channels are **contractive** with respect to the Bures metric:
 
 $$
 d_B(\varphi(\rho), \varphi(\sigma)) \leq d_B(\rho, \sigma) \quad \text{for all } \rho, \sigma \in \mathcal{D}(\mathbb{C}^7).
@@ -1192,6 +1192,14 @@ Total: $R^{(n)}(\Gamma) > 0$ for all $n \in \mathbb{N}$. $\blacksquare$
 
 **Corollary.** The L4 condition "$\forall n: R^{(n)}(\Gamma) > 0$" is **automatically satisfied** for all viable systems. Unitary consciousness (L4) is structurally achievable as the **asymptotic limit** $\Gamma \to \rho^*$.
 
+:::warning Two distinct quantities share the notation $R^{(n)}$ — disambiguation
+Theorem 4.3 concerns the **self-model fidelity** $R^{(n)}_{\mathrm{fid}}(\Gamma) := \mathrm{Fid}(\varphi^{(n-1)}\Gamma, \varphi^{(n)}\Gamma)$, which **increases to 1** because $\varphi$ is a contraction (successive self-models stabilise). This must **not** be confused with the **coherence-survival ratio**
+$$S^{(n)}(\Gamma) := \frac{\lVert \mathrm{offdiag}(\varphi^{(n)}\Gamma)\rVert_F}{\lVert \mathrm{offdiag}(\Gamma)\rVert_F} = 3^{-n},$$
+which **decreases to 0** under the Fano contraction and is the quantity that appears in the SAD ceiling and in the "$R^{(n)}\sim 0.7^n\to 0$" statements of [depth-tower](/docs/consciousness/hierarchy/depth-tower) and §on L4-unattainability. The two limits are compatible because the symbols denote different objects.
+
+**Consequence:** the clause "$\lim R^{(n)}_{\mathrm{fid}} > 0$" is *vacuously true* and therefore does **not** discriminate L4. The operative characterisation of L4 is the **categorical / Postnikov criterion** [T-86 [T]](/docs/reference/status-registry) (L4 as the $\tau_{\leq\infty}$ colimit), together with the purity condition $P > 6/7$ (Theorem 4.2); the depth ceiling SAD$_{\max}=3$ is stated in terms of $S^{(n)}$, not $R^{(n)}_{\mathrm{fid}}$.
+:::
+
 **Connection to Theorem 4.2.** When $P(\Gamma) > 6/7$:
 - $R^{(n)}(\Gamma) \to 1$ (Theorem 4.3);
 - Postnikov tower $\tau_{\leq 6}$ is stabilized (Theorem 4.2);
@@ -1202,7 +1210,7 @@ Total: $R^{(n)}(\Gamma) > 0$ for all $n \in \mathbb{N}$. $\blacksquare$
 **Results used:**
 - T-62 [T] ($\varphi$ is a CPTP channel with contractive fixed point);
 - T-96 [T] ($\rho^* \neq I/7$, full-rank attractor);
-- Petz-Chentsov theorem (Bures metric as the unique monotone metric);
+- Petz theorem (Bures metric as the Petz-minimal member of the monotone family; contractivity holds for all members);
 - Fuchs-van-de-Graaf inequality (continuity of Fidelity with respect to $d_B$, 1999);
 - Uhlmann Fidelity (standard quantum information definition).
 

@@ -1404,7 +1404,7 @@ Lean 4 is the closest, but lacks systems performance and GPU. Agda has cubical, 
 
 ### 15.3. Extensions for Mathesis
 
-:::info Audit result (2026-04-15)
+:::info Audit result
 A deep audit revealed that **6 out of 7 originally planned modules already exist** in the Verum stdlib (totaling 3,781 lines). The gap is much smaller than initially estimated. See `internal/verum-ext-2.md` for the revised specification.
 :::
 

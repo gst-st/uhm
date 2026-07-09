@@ -166,7 +166,7 @@ $$
 | [Дифференциация $D_{\text{diff}}$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $D_{\text{diff}}(\Gamma) = \exp(S_{vN}(\rho_E))$ | $[1, 7]$ |
 | [Рефлексия $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) | $R(\Gamma) = R_{\text{canonical}} = \dfrac{1}{7P(\Gamma)}$, где $P = \mathrm{Tr}(\Gamma^2)$; эквивалентно $1 - \dfrac{\|\Gamma - I/7\|_F^2}{P}$. Не путать с $Q_\varphi = 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (мера качества самомоделирования) | $[0, 1]$ |
 | [Сознательность $C$](/docs/consciousness/foundations/self-observation#мера-сознательности-c) | $C(\Gamma) = \Phi \times R$ **[Т]** (T-140); $D_{\text{diff}} \geq 2$ — отдельное условие жизнеспособности | $[0, +\infty)$ |
-| Свобода воли $\mathrm{Freedom}(\Gamma)$ **[Т]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [конечномерное определение](/docs/core/foundations/consequences#freedom-конечномерное). ∞-категорная мотивация: $\pi_0(\mathrm{Map}(\Gamma, T)^{\text{non-trivial}})$ | $\{1, \ldots, 7\}$ |
+| Свобода воли $\mathrm{Freedom}(\Gamma)$ **[Т]** | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, где $\mathcal{H}_\Gamma = \partial^2 \mathcal{F}/\partial\Gamma^2$ — [определение](/docs/core/foundations/consequences#freedom-конечномерное). ∞-категорное прочтение: касательная размерность критического многообразия свободной энергии (**не** $\pi_0(\mathrm{Map}(\Gamma, T))$, которое тривиально — стягиваемо) | $\{1, \ldots, 7\}$ |
 | Энтропия свободы $S_{\text{freedom}}$ | $S_{\text{freedom}} = \log(\text{Freedom}(\Gamma))$ | $[0, \log 7]$ |
 
 ## Оператор самомоделирования

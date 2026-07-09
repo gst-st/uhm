@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 title: "Lindblad Operators"
-description: "Master definition of the Lindblad operators L_k in UHM: atomic and Fano-structured operators, CPTP verification, G₂-covariance"
+description: "Master definition of the Lindblad operators L_k in UHM: atomic and Fano-structured operators, CPTP verification, Fano–atomic proportionality and the canonical G₂-covariant dissipator"
 ---
 
 # Lindblad Operators L_k
@@ -626,7 +626,7 @@ Status: **[Т]**
 
 **(b) Type 2: Dissipation from A1.** Axiom A1 (∞-topos) defines the classifier Ω with atoms $S_k$. [L-unification](#примитивность-ℒω) (Th. 15.1, [Т]): $L \cong \Omega \cong \text{source}(L_k)$ generates the Lindblad operators $L_k$ forming the dissipator. Stationary state: maximally mixed $I/N$ [Т].
 
-**(c) Type 3: Regeneration from A1+A4.** The adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ (Th. 15.3.1, [Т]) generates $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ with $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, where $\omega_0$ is from A4. Stationary state: $\rho_*$ (unique, [primitivity](#примитивность-ℒω) [Т]).
+**(c) Type 3: Regeneration from A1+A4.** The regeneration functor $\mathcal{R}$ — the restoring member of the $(\mathcal{D}_\Omega, \mathcal{R})$ duality (categorical reading [И], [§15.3](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction)) — generates $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ with $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **[Т at first-order kinetics]** ([derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)), where $\omega_0$ is from A4. Stationary state: $\rho_*$ (unique, [primitivity](#примитивность-ℒω) [Т]).
 
 **Step 2. Structural distinguishability.**
 
@@ -647,7 +647,7 @@ Status: **[Т]**
 :::tip Theorem (Impossibility of a 4th type of dynamics) [Т]
 An arbitrary generator of a Markovian semigroup on $M_7(\mathbb{C})$ compatible with A1–A5 decomposes into $\mathcal{L} = \mathcal{L}_{\text{Ham}} + \mathcal{L}_{\text{diss}} + \mathcal{L}_{\text{reg}}$ — no other components exist.
 
-**Proof:** The LGKS theorem (1976) gives a unique decomposition into Hamiltonian and dissipative parts. The dissipative part is uniquely split into $\mathcal{D}$ (Fano contraction, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel, $dP/d\tau \geq 0$) under the constraints of A5 (PW-anchoring of $\mathcal{R}$ to the O-sector), Fano-structuredness of $\mathcal{D}$, and $G_2$-covariance.
+**Proof:** The LGKS theorem (1976) gives a unique decomposition into Hamiltonian and dissipative parts. The dissipative part is uniquely split into $\mathcal{D}$ (Fano contraction, $dP/d\tau \leq 0$) and $\mathcal{R}$ (replacement channel, $dP/d\tau \geq 0$) under the constraints of A5 (PW-anchoring of $\mathcal{R}$ to the O-sector), Fano-structuredness of $\mathcal{D}$, and covariance under the octonionic frame group $\Gamma_{\text{oct}} = \mathrm{Aut}(\mathrm{PG}(2,2)) \cong PSL(2,7)$ (the covariance group of the Fano dissipator — see [Fano channel, Th. 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)).
 :::
 
 ### Corollary: K = 3 for the reflexion threshold {#следствие-k3}
@@ -700,58 +700,42 @@ Specification: language-limits-preveal.md §2.4–2.5 | Status: **[Т]**
 
 ---
 
-## $G_2$-Covariance of the Fano Dissipator {#g2-ковариантность}
+## Covariance of the Dissipators and the Gauge Group {#g2-ковариантность}
 
-The group $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication and therefore the [Fano structure](/docs/physics/gauge-symmetry/g2-structure). This gives rise to a fundamental distinction between the atomic and Fano dissipators.
+The group $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves octonionic multiplication and therefore the [Fano 3-form](/docs/physics/gauge-symmetry/g2-structure) $\varphi$. Its relation to the dissipators is precise, and stronger than the earlier "Fano is $G_2$-covariant" slogan.
 
-:::warning Theorem: The atomic dissipator is NOT $G_2$-covariant [Т]
-The dissipative channel with atomic operators $L_k = |k\rangle\langle k|$ **is not** $G_2$-covariant:
-
-$$
-\exists\, g \in G_2: \quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g \, \mathcal{D}_{\text{atom}}[\Gamma] \, g^\dagger
-$$
-
-The violation arises because the operation $\mathrm{diag}(\cdot)$ does not commute with $G_2$-transformations: $\mathrm{diag}(g\Gamma g^\dagger) \neq g \cdot \mathrm{diag}(\Gamma) \cdot g^\dagger$ for general $g \in G_2$.
-
-[Proof →](/docs/proofs/gap/fano-channel) | Status: **[Т]**
+:::tip Theorem: Fano–atomic proportionality [Т]
+$\mathcal{D}_{\text{Fano}} = \tfrac23\,\mathcal{D}_{\text{atom}}$ as superoperators (each point on $r=3$ lines, each pair on $\lambda=1$ line ⟹ $\mathcal{P}_{\text{Fano}}=\tfrac13\mathrm{Id}+\tfrac23\Delta$; and $\sum_p (L_p^{\text{Fano}})^\dagger L_p^{\text{Fano}}=I$). [Full proof →](/docs/proofs/gap/fano-channel#g2-ковариантность). This *derives* $\alpha=2/3$ from the incidence geometry.
 :::
 
-:::tip Theorem: The Fano dissipator is $G_2$-covariant [Т]
-The dissipative channel with Fano-structured operators $L_p^{\text{Fano}}$ **is** $G_2$-covariant:
+:::warning Theorem: the pinching dissipators break $G_2$ to the finite frame group [Т]
+Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, both dissipators have the **same** symmetry group: the finite octonionic frame group $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7) \subset G_2$ (plus $S_7$-equivariance for the atomic form). **Neither** is covariant under the full continuous $G_2$: since $\mathbb{C}^7$ is an irreducible $G_2$-module (Schur), a generic $g\in G_2$ carries a coordinate line-projector $\Pi_p$ to a rank-3 projector onto a *rotated* subspace, so $\mathrm{diag}(g\Gamma g^\dagger)\neq g\,\mathrm{diag}(\Gamma)\,g^\dagger$.
 
-$$
-\forall\, g \in G_2: \quad \mathcal{D}_{\text{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\text{Fano}}[\Gamma] \, g^\dagger
-$$
+[Proof →](/docs/proofs/gap/fano-channel#g2-ковариантность) | Status: **[Т]**
+:::
 
-The proof relies on the fact that $G_2$ **permutes** the Fano lines: $g \Pi_p g^\dagger = \Pi_{\sigma_g(p)}$, where $\sigma_g$ is a permutation of lines. When summing over all 7 lines, reindexing does not change the result.
-
-[Proof →](/docs/proofs/gap/fano-channel) | Status: **[Т]**
+:::tip Theorem: the canonical $G_2$-covariant dissipator $\mathcal{D}_{G_2}$ [Т]
+A genuinely $G_2$-covariant Lindblad dissipator exists, built from the structure constants $\varphi_{abc}$: $(A_a)_{bc} = \varphi_{abc}/\sqrt6$, $\mathcal{D}_{G_2}[\Gamma]=\sum_a(A_a\Gamma A_a^\dagger-\tfrac12\{A_a^\dagger A_a,\Gamma\})$. Then $\sum_a A_a^\dagger A_a=I$ (CPTP) and $\mathcal{D}_{G_2}[g\Gamma g^\dagger]=g\,\mathcal{D}_{G_2}[\Gamma]\,g^\dagger\ \forall g\in G_2$, since $\varphi$ is $G_2$-invariant. [Proof →](/docs/proofs/gap/fano-channel#g2-ковариантность).
 :::
 
 ### Degree of $G_2$-Violation under Mixed Observation
 
-For the canonical [coherence-preserving self-modelling](/docs/proofs/categorical/formalization-phi) with parameter $\alpha$ (balance between atomic and Fano observation):
+For the canonical [coherence-preserving self-modelling](/docs/proofs/categorical/formalization-phi) with parameter $\alpha$ (balance between atomic and Fano observation), $\mathcal{P}_\alpha = \alpha \, \mathcal{P}_{\text{base}} + (1 - \alpha) \, \mathcal{P}_{\text{Fano}}$, the dissipator is $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\,\mathcal{D}_{\text{atom}}$, and its $G_2$-non-covariance
 
 $$
-\mathcal{P}_\alpha = \alpha \, \mathcal{P}_{\text{base}} + (1 - \alpha) \, \mathcal{P}_{\text{Fano}}
+\Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\text{op}} = \tfrac{2+\alpha}{3}\,\Delta_{\max}
 $$
 
-the measure of $G_2$-symmetry violation is defined as:
+is **strictly positive for every** $\alpha\in[0,1]$:
 
-$$
-\Delta_{G_2}(\alpha) := \sup_{g \in G_2} \|\mathcal{P}_\alpha \circ \mathrm{Ad}_g - \mathrm{Ad}_g \circ \mathcal{P}_\alpha\|_{\text{op}}
-$$
+| $\alpha$ | Mode | $\Delta_{G_2}(\alpha)$ (dynamics) |
+|----------|-------|---------------------|
+| $0$ | Purely Fano | $\tfrac23\Delta_{\max} > 0$ (breaks $G_2$ to $\Gamma_{\!\text{oct}}$) |
+| $\alpha^* \in (0,1)$ | Mixed (optimal) | $\tfrac{2+\alpha^*}{3}\Delta_{\max}$ |
+| $1$ | Purely atomic | $\Delta_{\max}$ |
 
-| $\alpha$ | Mode | $G_2$-covariance | Gauge reduction |
-|----------|-------|---------------------|----------------------|
-| $0$ | Purely Fano | Full ($\Delta_{G_2} = 0$) | $48 \to 34$ parameters |
-| $\alpha^* \in (0,1)$ | Mixed (optimal) | Partial ($\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$) | Intermediate |
-| $1$ | Purely atomic | Broken ($\Delta_{G_2} = \Delta_{\max}$) | No reduction (48 parameters) |
-
-:::info Remark: The price of self-knowledge [И]
-Self-observation (non-zero $\alpha$) **partially breaks** the algebraic symmetry of the octonions. The deeper the self-knowledge (the larger $\alpha$), the more the $G_2$-symmetry is broken and the more parameters are needed to describe the system. This is the fundamental "price of self-knowledge": knowledge about oneself increases the complexity of self-description.
-
-The reduction $48 \to 34$ at $\alpha = 0$ is a consequence of the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]: the gauge group = $G_2$ (14 parameters), the physical space = $\mathcal{D}(\mathbb{C}^7)/G_2$.
+:::info Remark: kinematic $G_2$ vs. dynamical frame [И]
+Two distinct facts must be kept apart. **Kinematically**, the gauge group of the holonomic *representation* is $G_2=\mathrm{Stab}(\varphi)$; the physically invariant content is the spectrum (6) plus the $\varphi$-relative angles (28), giving $48\to34$ parameters ([uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). This count is a property of the representation and does **not** depend on $\alpha$. **Dynamically**, the pinching (Fano) dissipator selects the functional frame $\{A,S,D,L,E,O,U\}$ and therefore breaks the kinematic $G_2$ down to the finite $\Gamma_{\!\text{oct}}$ — this frame-selection is the genuine "price of self-observation", and the unbroken $\mathcal{D}_{G_2}$ is the symmetric reference dynamics. Frame-dependent observables ($\mathrm{Coh}_E$, $\Phi$, $\kappa_0$) are defined in this fixed physical frame, not among the 34 $G_2$-invariants.
 :::
 
 ## Connections

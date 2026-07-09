@@ -266,7 +266,7 @@ $$
 \frac{\partial |\gamma_{ij}^{(\infty)}|^2}{\partial \kappa} = \frac{2\kappa \cdot |\gamma_{ij}^*|^2 \cdot (\Gamma_2^2 + \Delta\omega_{ij}^2)}{\bigl[(\Gamma_2 + \kappa)^2 + \Delta\omega_{ij}^2\bigr]^2} > 0
 $$
 
-By the [connection between regeneration and E-coherence](/docs/applied/coherence-cybernetics/axiomatics#связь-регенерации-и-e-когерентности): $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, where $\kappa_0$ is **categorically derived** as the norm of the unit of the [adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) ([Theorem 15.3.1](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) [T]), and the identification $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ follows from [L-unification](/docs/core/operators/lindblad-operators) [T]. Hence $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$. By the chain rule:
+By the [connection between regeneration and E-coherence](/docs/applied/coherence-cybernetics/axiomatics#связь-регенерации-и-e-когерентности): $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, where $\kappa_0$ is **derived by rapid pre-equilibrium** ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)); the categorical reading — the norm of the unit of the [$(\mathcal{D}_\Omega, \mathcal{R})$ duality](/docs/proofs/categorical/categorical-formalism#сопряжение-adjunction) — is interpretive [И], and the identification $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ is motivated by [L-unification](/docs/core/operators/lindblad-operators). Hence $\partial\kappa/\partial\mathrm{Coh}_E = \kappa_0 > 0$. By the chain rule:
 
 $$
 \frac{\partial P^{(\infty)}}{\partial \mathrm{Coh}_E} = \frac{\partial P^{(\infty)}}{\partial \kappa} \cdot \kappa_0 > 0
@@ -623,7 +623,7 @@ Theorems 9.1–9.3 are the answer: yes, joint play is not only meaningful but **
 :::warning Status revised (session 25)
 The status of T-68 has been clarified following resolution of the self-referential paradox:
 - **Non-triviality** $P > 1/7$ — **[T]** (T-96, unconditional)
-- **Viability** $P > 2/7$ — **[T] for embodied** systems (T-149: backbone injection ensures κ-dominance unconditionally); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
+- **Viability** $P > 2/7$ — **[T at backbone-injection lower-bound] for embodied** systems (T-149: backbone injection ensures κ-dominance; Step 3 of T-149 is [C at that lower bound], not from pure axioms); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
 
 See [Status Registry](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
 :::
@@ -642,7 +642,7 @@ For a sociologist: this is the mathematical justification for what Luhmann intui
 Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5. Then their composite $\mathbb{H}_{12}$ (defined as an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$):
 
 1. **[T]** Has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
-2. **[T]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ unconditionally ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора))
+2. **[T at backbone-injection lower-bound]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
 :::
 
 **Proof (6 steps).**
@@ -673,7 +673,7 @@ A fourth type is impossible [T].
 
 **Step 6 (Attractor and viability).** Primitivity of $\mathcal{L}_0^{(12)}$ ensures a spectral gap $\lambda_{\mathrm{gap}}^{(12)} > 0$. The Fano channel with $c > 0$ generates off-diagonal coherences ([T-1, T-2, T-3](/docs/proofs/dynamics/theorem-purity-critical) [T]). Regeneration $\mathcal{R}$ with $\kappa_0 > 0$ and $\rho_* = \varphi(\Gamma)$ ([categorical self-model](/docs/core/operators/phi-operator#определение)) maintains coherences. From [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]: any non-trivial attractor $\rho_*^{(12)} \neq I/7$ has $P > 1/7$ and $P_{\mathrm{coh}} > 0$.
 
-**[T] Viability:** From the [balance formula T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) and [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора): $P(\rho_*^{(12)}) > 2/7$ unconditionally for embodied systems (the sensorimotor coupling ensures κ-dominance).
+**[T at backbone lower-bound] Viability:** From the [balance formula T-98](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) and [T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора): $P(\rho_*^{(12)}) > 2/7$ for embodied systems (the sensorimotor coupling ensures κ-dominance; T-149 Step 3 is [C at the backbone-injection lower bound]).
 
 Exponential convergence to the attractor from the spectral gap:
 
@@ -684,7 +684,7 @@ $$
 $\blacksquare$
 
 :::info Key observation
-Non-triviality of the attractor is an **unconditional** result [T]: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is unconditional [T] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)). Theorem CC-5 is a direct consequence of the **universality** of axioms A1–A5 within the ∞-topos.
+Non-triviality of the attractor is an **unconditional** result [T]: the spectral gap of the linear part $\mathcal{L}_0$ ensures convergence, and regeneration $\mathcal{R}$ keeps the system away from the trivial $I/7$. Viability ($P > 2/7$) for **embodied** holons is [T at the backbone-injection lower bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]). Theorem CC-5 is a direct consequence of the **universality** of axioms A1–A5 within the ∞-topos.
 :::
 
 :::note Corollary CC-7 (Emergence) [T]

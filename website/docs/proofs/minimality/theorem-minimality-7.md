@@ -826,7 +826,7 @@ $$
 
 *Justification:* $\rho_O$ contains information about the coupling to the vacuum (energetic foundation), but not about "what it is like to be the system".
 
-**(B) Categorical argument from κ₀.** The κ₀ formula (Th. 15.3.1, [Т]):
+**(B) Categorical argument from κ₀.** The κ₀ formula ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)}
@@ -871,7 +871,7 @@ $$
 H|0\rangle = E_0|0\rangle, \quad E_0 = \min(\text{Spec}(H))
 $$
 
-**(B) Categorical argument from κ₀.** The κ₀ formula (Th. 15.3.1, [Т]):
+**(B) Categorical argument from κ₀.** The κ₀ formula ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)} = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
@@ -1079,7 +1079,7 @@ This proof follows the standard of mathematical honesty:
 - Limits of applicability are stated
 - **Level of rigor is explicitly marked** ([Т]/[С]/[П])
 
-The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula (Th. 15.3.1) and functional independence (Lemma 2.2).
+The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula ([Т при кинетике первого порядка], Th. 15.3.1) and functional independence (Lemma 2.2).
 
 ---
 

@@ -6,6 +6,8 @@ description: Complete description of the Holonom's state
 
 # Coherence Matrix (Γ)
 
+import CoherenceTable from '@site/src/components/CoherenceTable';
+
 This chapter is dedicated to the central object of the Unitary Holonomic Monism — the **coherence matrix** $\Gamma$. If the entire theory describes how reality is structured, then $\Gamma$ is its **complete description** for any specific system (holonom). After studying this chapter, the reader will understand: what $\Gamma$ is and why it is $7 \times 7$; what the diagonal elements and coherences mean; how to extract information about viability, consciousness, and the internal structure of a system from a single matrix.
 
 :::info Historical Precursors
@@ -180,29 +182,11 @@ $$
 
 Each coherence $\gamma_{ij}$ ($i \neq j$) quantifies the degree of quantum correlation between dimensions $i$ and $j$. The modulus $|\gamma_{ij}|$ is the strength of the connection; the argument $\arg(\gamma_{ij})$ is the relative phase.
 
-| Coherence | Name | Fundamental Meaning |
-|---|---|---|
-| $\gamma_{AS}$ | **Morphogenesis** | Crystallization of distinctions into stable forms |
-| $\gamma_{AD}$ | **Actualization** | Potential distinction actualized in process |
-| $\gamma_{AL}$ | **Predication** | Distinction that has become a logical predicate |
-| $\gamma_{AE}$ | **Apperception** | Distinction that has entered interiority |
-| $\gamma_{AO}$ | **Spontaneity** | Arising of distinctions from the ground without external cause |
-| $\gamma_{AU}$ | **Differentiation** | Distinction that preserves wholeness |
-| $\gamma_{SD}$ | **Persistence** | Form maintained through process |
-| $\gamma_{SL}$ | **Nomos** | Structure possessing logical necessity |
-| $\gamma_{SE}$ | **Representation** | Structure represented in interiority |
-| $\gamma_{SO}$ | **Archetype** | Stable forms rooted in the ground |
-| $\gamma_{SU}$ | **Symmetry** | Structural expression of unity |
-| $\gamma_{DL}$ | **Regulation** | Logically governed process |
-| $\gamma_{DE}$ | **Affection** | Action of process on interiority |
-| $\gamma_{DO}$ | **Genesis** | Generative process from the ground |
-| $\gamma_{DU}$ | **Teleology** | Integrated directed change |
-| $\gamma_{LE}$ | **Evidence** | Logical coherence in interiority |
-| $\gamma_{LO}$ | **Grounding** | Logic rooted in the ground |
-| $\gamma_{LU}$ | **Consistency** | Logical non-contradiction of the whole |
-| $\gamma_{EO}$ | **Immanence** | Ground present within interiority |
-| $\gamma_{EU}$ | **Synthesis** | Integration of interior content into the whole |
-| $\gamma_{OU}$ | **Completeness** | Identity of source and whole |
+<CoherenceTable />
+
+{/* The 21 coherence names/meanings above are rendered from the single source of
+    truth src/data/coherences.ts — shared with the homepage matrix, so the two can
+    never drift apart. Edit names/meanings there. */}
 
 ### Semantics of Key Coherences {#семантика-когерентностей}
 

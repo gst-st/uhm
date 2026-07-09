@@ -342,7 +342,7 @@ L4 is like the horizon in geometry: one can walk towards it indefinitely but nev
 With $R \sim 0.7$ (human) and decoherence $\varepsilon_{\text{dec}} > 0$:
 
 $$
-R^{(n)} \sim R^n \sim 0.7^n \to 0 \quad \text{as} \quad n \to \infty
+S^{(n)} \sim (1-\alpha)^n \sim 3^{-n} \to 0 \quad \text{as} \quad n \to \infty \qquad (\text{coherence-survival, not fidelity } R^{(n)}_{\mathrm{fid}}\to 1)
 $$
 
 Maximum recursion depth: $n_{\max} \leq \ln(1/\varepsilon_{\text{dec}})/\ln(1/R) \approx 111$.
@@ -553,7 +553,7 @@ Input: Gamma in D(C^7) — coherence matrix
 ```
 
 :::warning Computability in 7D
-Levels L0, L1, L2 are fully computable in the minimal 7D formalism ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$). The definition of L1 via $\mathrm{rank}(\rho_E) > 1$ formally requires PW-reconstruction $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{42D})$, but in practice $\mathrm{rank}(\rho_E) > 1 \Leftrightarrow P > P_{\text{crit}}$ for viable systems. L3 requires double iteration of phi and fidelity computation — algorithmically computable. L4 is **not computable** in a finite number of steps (requires the infinite limit $n \to \infty$), but in practice $R^{(n)} \sim R^n \to 0$ for all systems with $\varepsilon_{\text{dec}} > 0$.
+Levels L0, L1, L2 are fully computable in the minimal 7D formalism ($\Gamma \in \mathcal{D}(\mathbb{C}^7)$). The definition of L1 via $\mathrm{rank}(\rho_E) > 1$ formally requires PW-reconstruction $\rho_E = \mathrm{Tr}_{-E}(\Gamma_{42D})$, but in practice $\mathrm{rank}(\rho_E) > 1 \Leftrightarrow P > P_{\text{crit}}$ for viable systems. L3 requires double iteration of phi and fidelity computation — algorithmically computable. L4 is **not computable** in a finite number of steps (requires the infinite limit $n \to \infty$), but in practice the coherence-survival ratio $S^{(n)} \sim 3^{-n} \to 0$ for all systems with $\varepsilon_{\text{dec}} > 0$ (whereas the self-model fidelity $R^{(n)}_{\mathrm{fid}} \to 1$; the two are distinct — see [Theorem 4.3 disambiguation](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3)).
 :::
 
 ---

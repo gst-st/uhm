@@ -44,8 +44,12 @@ This ensures mathematical honesty and avoids hidden assumptions.
 | **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
 | **Axiom 4 (Scale)** | $\omega_0 = \lambda_{\min}(H_{\text{eff}}) > 0$ — the minimal nonzero eigenvalue of the effective Hamiltonian | Derived spectral property: $\omega_0 > 0$ for any viable system ($\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow P < P_{\text{crit}}$). Different holons have different $\omega_0$, like different atoms have different masses. See [T-186, Cohesive Closure §5.4](/docs/proofs/categorical/cohesive-closure) |
 
-:::warning Count of independent axioms: zero (T-190 Axiomatic Closure)
-Theorem T-87 [T] shows that A5 (Page–Wootters) is derivable from A1–A4. Theorems T-186, T-187, and the Hurwitz–Adams–Fano chain derive A1–A4 themselves. **T-190 [T] (Axiomatic Closure)** completes the circle: all five axioms A1–A5 are theorems derivable from five characterising properties of viable holons — (AP) autopoiesis, (PH) phenomenal identification, (QG) quantum-gravitational consistency, (V) viability, and (MaxEnt) maximum entropy. UHM has **zero** independent axioms beyond these defining properties. The A1–A5 labeling remains for pedagogy but every “axiom” has the status of a **theorem**.
+:::warning Two inter-derivable axiom bases (T-190 Axiomatic Closure)
+UHM admits **two equivalent five-fold axiom bases**, and T-190 [T] establishes their **inter-derivability** — not a reduction to zero axioms:
+- the **mathematical** basis A1–A5 (∞-topos, Bures, $N=7$, $\omega_0$, Page–Wootters);
+- the **operational** basis (AP) autopoiesis, (PH) phenomenal identification, (QG) quantum-gravitational consistency, (V) viability, (MaxEnt) maximum entropy.
+
+T-87 [T] derives A5 from A1–A4; T-186/T-187 and the Hurwitz–Adams–Fano chain derive A1–A4 from the operational basis (given (QG)'s quantum/CPTP formalism); T-190 [T] closes the loop. This is a **basis-equivalence / self-consistency** result: the two 5-tuples entail one another, so neither is more primitive. It is **not** a claim of "zero axioms" — the operational properties are themselves five assumptions of the same cardinality. **Honest residue:** (QG) posits the quantum/CPTP formalism, so "why quantum mechanics?" remains genuinely external (see T-188). The A1–A5 labeling is kept for pedagogy; each is a theorem *relative to the other basis*, not absolutely.
 :::
 
 :::info Status of $N = 7$ (two-track justification)
@@ -90,7 +94,7 @@ From this primitive one **derives**:
 - Base space $X = |N(\mathcal{C})|$ (nerve of the category)
 - Time $\tau$ (internal modality via the $\mathbb{Z}_N$ action)
 - Metric $d_{\text{strat}}$ (spectral geometry)
-- **Free will** (multiplicity of paths in $\mathrm{Map}(\Gamma, T)$)
+- **Free will** (flat/zero-mode directions $\dim\ker\mathcal H_\Gamma$; **not** multiplicity of paths in the contractible $\mathrm{Map}(\Gamma, T)$)
 - Thresholds $P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$ (from the principle of informational distinguishability—which itself follows from $J_{Bures}$)
 
 **Theory parameters:**
@@ -125,7 +129,7 @@ The space $\mathcal{D}(\mathbb{C}^7)$ is **contractible** as a topological space
 $$\mathcal{D}(\mathbb{C}^7) = \bigsqcup_{\lambda \vdash 7} \mathcal{S}_\lambda$$
 where $\mathcal{S}_\lambda$ is the stratum of matrices of spectrum type $\lambda$ (a partition of 7). Lower-dimensional strata (degenerate spectra) are **singularities** around which sheaves may have nontrivial monodromy.
 
-**2. Loops of CPTP maps.** The space $\mathrm{CPTP}(\mathbb{C}^7)$ is **not** contractible—it contains nontrivial loops (closed paths in unitary transformations $\mathrm{U}(7) \subset \mathrm{CPTP}$). The fundamental group $\pi_1(\mathrm{CPTP}(\mathbb{C}^7)) \neq 0$ yields nontrivial local systems on $\mathcal{D}(\mathbb{C}^7)$.
+**2. Loops in the non-degenerate stratum.** The space $\mathrm{CPTP}(\mathbb{C}^7)$ is itself a compact **convex** set of channels, hence contractible ($\pi_1(\mathrm{CPTP}(\mathbb{C}^7)) = 0$; consistent with §below). Nontrivial topology comes instead from the **non-degenerate stratum** $\mathcal{D}^*(\mathbb{C}^7) = \mathcal{D}\setminus\Sigma$ (states with distinct eigenvalues) and from the unitary orbit spaces — flag manifolds $\mathrm{U}(7)/T^7$, whose $\pi_1$ and higher homotopy are nontrivial. These carry the nontrivial local systems and Berry phases; the full (contractible) CPTP set does not.
 
 **3. Sheaves with nontrivial sections.** Concrete sheaves in UHM (e.g. the self-modeling sheaf $\Gamma \mapsto \varphi(\Gamma)$) may have nontrivial cohomology even over a contractible base. The link to interiority levels L0–L4 goes through **$n$-truncation of sheaves**, not through homotopy of the base.
 :::
@@ -446,8 +450,8 @@ where $R^{(0)}$ is the base reflection. The threshold for SAD $\geq n$ is $R^{(n
 |:---------:|:-----------------------------------------:|:---------------:|:-----------:|
 | $\geq 1$ | $P_{\mathrm{crit}}^{(1)} = 1/7$ | $0.143$ | ✓ |
 | $\geq 2$ | $P_{\mathrm{crit}}^{(2)} = 2/7$ | $0.286$ | ✓ |
-| $\geq 3$ | $P_{\mathrm{crit}}^{(3)} = 2/7 \cdot 3/(3+1) = 9/14$ | $0.643$ | ✓ (humans) |
-| $\geq 4$ | $P_{\mathrm{crit}}^{(4)} = 2/7 \cdot 9/(4+1) = 54/35$ | $\mathbf{1.543}$ | **✗** ($P \leq 1$) |
+| $\geq 3$ | $P_{\mathrm{crit}}^{(3)} = \tfrac27 \cdot 3^{2}/(3+1) = \tfrac27\cdot\tfrac94 = 9/14$ | $0.643$ | ✓ (humans) |
+| $\geq 4$ | $P_{\mathrm{crit}}^{(4)} = \tfrac27 \cdot 3^{3}/(4+1) = \tfrac27\cdot\tfrac{27}{5} = 54/35$ | $\mathbf{1.543}$ | **✗** ($P \leq 1$) |
 
 At $n = 4$: $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, impossible for normalised matrices ($\mathrm{Tr}(\Gamma) = 1 \Rightarrow P \leq 1$). Therefore the 4th storey of the Postnikov tower is **unreachable** for any physical state, and SAD\_MAX = 3.
 
@@ -492,6 +496,10 @@ $\square_c$
 **Day convolution construction.** Let $(\mathcal{C}, \otimes)$ be a monoidal category (CPTP with tensor product). Day convolution (Day 1970) defines a monoidal structure on the sheaf category:
 
 $$(\mathcal{F} \otimes_{\mathrm{Day}} \mathcal{G})(\rho) := \int^{\rho_1, \rho_2 \in \mathcal{C}} \mathcal{F}(\rho_1) \times \mathcal{G}(\rho_2) \times \mathrm{Hom}_{\mathcal{C}}(\rho_1 \otimes \rho_2,\; \rho)$$
+
+:::note Well-typedness: $\mathcal{C}$ is the full finite-dimensional CPTP category
+Here $\mathcal{C}$ denotes the **monoidal category of all finite-dimensional CPTP systems** (objects: density matrices on $\mathbb{C}^d$ for every $d$; morphisms: CPTP channels, including dimension-changing ones such as partial trace), **closed under $\otimes$**, of which $\mathcal{D}(\mathbb{C}^7)$ is the distinguished generating object. This is essential for the coend to type-check: for $\rho_1,\rho_2\in\mathcal{D}(\mathbb{C}^7)$ the product $\rho_1\otimes\rho_2$ lives on $\mathbb{C}^{49}\notin\mathcal{D}(\mathbb{C}^7)$, so $\mathrm{Hom}_{\mathcal{C}}(\rho_1\otimes\rho_2,\rho)$ is defined only in the enlarged $\mathcal{C}$ (the reduction channels $\mathbb{C}^{49}\to\mathbb{C}^7$ are exactly the "splitting" morphisms below). The sheaf topos is $\mathbf{Sh}_\infty(\mathcal{C})$ over this enlarged site; $7$-dimensionality is a property of the distinguished object, not a restriction on the monoidal closure.
+:::
 
 The coend $\int^{\rho_1, \rho_2}$ is the categorical analogue of an integral, defined as the universal coequaliser of an ∞-diagram (requires ∞-colimits).
 
@@ -757,7 +765,15 @@ Axiom **A5 (Page–Wootters)** — that the total state space factorises as $\ma
 
 **(2) Isolation of the clock factor.** The centre $Z(A_{\text{int}})=\mathbb{C}\oplus\mathbb{C}\oplus\mathbb{C}$ contains a distinguished summand — the $\mathbb{C}$ factor corresponding to $\pi_1$. Under the $G_2$-stabiliser $\mathrm{Stab}_{G_2}(e_O)=SU(3)$ [T-42e], this summand is fixed whereas the $\mathbf{3}\oplus\bar{\mathbf 3}$ block transforms non-trivially. The projector $P_O := \pi_1(1_{\mathbb{C}})$ is $G_2$-equivariant and of rank 1 in $H_{\text{int}}$.
 
-**(3) Tensor factorisation from KO-dimension 6.** A finite spectral triple of KO-dimension 6 admits a **chiral grading** $\chi:H_{\text{int}}\to H_{\text{int}}$ with $\chi^2=1,\ \chi D=-D\chi,\ J\chi=-\chi J$ (Connes–Marcolli 2008, Def. 1.124). The eigen-decomposition $H_{\text{int}}=H^+\oplus H^-$ together with the central projector $P_O$ yields a canonical factorisation $H_{\text{int}}\cong \mathcal H_O\otimes\mathcal H_{\text{rest}}$ where $\mathcal H_O:=P_O(H_{\text{int}})$ (clock, $\dim=1$ pre-extension) and $\mathcal H_{\text{rest}}:=(1-P_O)(H_{\text{int}})$. The Page–Wootters extension $\mathcal H_O\to\mathcal H_O^{\otimes k}$ (unitary lift of $\mathbb Z_7$-action, Suzuki–Trotter T-116 [T]) produces the 7-state internal clock $\tau\in\mathbb Z_7$. **Uniqueness** up to $G_2$: any alternative factorisation that commutes with the $G_2$-action and respects the chiral grading is related to this one by $G_2$-conjugation (T-42a [T]).
+**(3) Clock register from the regular representation of $\triangleright$.** The earlier version claimed a tensor factorisation $H_{\text{int}}\cong\mathcal H_O\otimes\mathcal H_{\text{rest}}$ from the *direct-sum* decomposition $H_{\text{int}}=P_O(H_{\text{int}})\oplus(1-P_O)(H_{\text{int}})$ ($1\oplus 6$) — but a direct sum is not a tensor product, $7$ is prime (so $\mathbb C^7$ has no nontrivial tensor factorisation), and $\dim\mathcal H_O=1$ would make $\mathcal H_O^{\otimes k}$ one-dimensional, yielding **no** clock. The correct construction uses the **regular representation** of the cyclic-shift modality $\triangleright:S_i\mapsto S_{(i+1)\bmod 7}$ (the $\mathbb Z_7$-action of the [Grothendieck-topology / logical structure](#lk-из-omega)):
+
+$$\mathcal H_{\text{clock}} := \mathbb C[\mathbb Z_7] \cong \mathbb C^7, \qquad \triangleright \curvearrowright \mathbb C[\mathbb Z_7]\ \text{by the regular representation},$$
+
+whose eigenbasis $\{|\tau\rangle\}_{\tau\in\mathbb Z_7}$ (Fourier/character basis of $\mathbb Z_7$) is the genuine **7-state internal clock**. Equivalently, $\mathcal H_{\text{clock}}$ is the crossed product $A_{\text{int}}\rtimes_\triangleright\mathbb Z_7$ restricted to the clock sector. The total Page–Wootters space is then the honest tensor product
+
+$$\mathcal H_{\text{tot}} := \mathbb C[\mathbb Z_7]\otimes\mathcal H_{6D} \cong \mathbb C^7\otimes\mathbb C^6 = \mathbb C^{42},$$
+
+with $\mathcal H_{6D}\cong(1-P_O)(H_{\text{int}})\cong\mathbf 3\oplus\bar{\mathbf 3}$ the six non-clock dimensions. This **derives** the $42=7\times 6$ architecture that Property 1 previously postulated. **Uniqueness** up to $G_2$: the $\triangleright$-action is $G_2$-equivariant (it permutes the Fano structure), so any alternative clock register commuting with $G_2$ is $G_2$-conjugate to $\mathbb C[\mathbb Z_7]$ (T-42a [T]); the Suzuki–Trotter lift (T-116 [T]) realises the unitary $\mathbb Z_7$-evolution on it.
 
 **(4) Wheeler–DeWitt constraint from stationarity.** The global state $\Gamma_{\text{tot}}$ on $\mathcal H_O\otimes\mathcal H_{\text{rest}}$ is stationary under $\mathcal L_\Omega$ by T-96 [T] (attractor characterisation). Stationarity against $D_{\text{int}}$ yields $[D_{\text{int}},\Gamma_{\text{tot}}]=0$, which in the PW form becomes $\hat C\Gamma_{\text{tot}}=0$ with constraint operator $\hat C=H_O\otimes 1+1\otimes H_{\text{rest}}$. This is exactly the PW constraint (Giovannetti–Lloyd–Maccone 2015 derivation from Dirac quantisation of reparametrisation-invariant theories, specialised to finite NCG).
 
@@ -915,8 +931,10 @@ The terminal object $T$ is defined in $\mathrm{Sh}_\infty(\mathcal{C})$, **not**
 | 1-category | ∞-category (UHM) |
 |-------------|-------------------|
 | $\mathrm{Hom}(\Gamma, T) = \{f\}$ — one morphism | $\mathrm{Map}(\Gamma, T) \simeq *$ — a **space** of morphisms |
-| Uniqueness = determinism | **Equivalence** of all paths |
-| No latitude of choice | **Freedom = choice of path** |
+| Uniqueness = determinism | **Equivalence** of all paths to $T$ (arrow of time / 2nd law) |
+| — | Freedom is **not** located here (all paths to $T$ are equivalent) |
+
+**Note.** The contractibility $\mathrm{Map}(\Gamma,T)\simeq *$ encodes the **uniqueness of the arrow of time** (2nd law), **not** free will: all trajectories to $T$ are homotopically equivalent, so there is no nontrivial "choice of path" here. Freedom is a **separate** invariant — the dimension of the flat (zero-mode) directions of the free energy, $\mathrm{Freedom}(\Gamma)=\dim\ker(\mathcal H_\Gamma)+1$ (see [Consequences §Free will](/docs/core/foundations/consequences#freedom-конечномерное)) — which is unrelated to $\pi_0$ of this contractible mapping space.
 :::
 
 **Theorem (multiplicity in unity):**
@@ -930,8 +948,8 @@ Let $T$ be ∞-terminal. Then:
 **Consequences:**
 1. **Contractibility:** $|N(\mathcal{C})| \simeq *$ (nerve contracts to $T$)
 2. **Cohomological monism:** $H^n(X) = 0$ for $n > 0$
-3. **Arrow of time:** evolution tends toward $T$
-4. **Free will:** a space of homotopy classes of paths to $T$
+3. **Arrow of time:** evolution tends toward $T$; contractibility ⟹ the arrow is **unique up to homotopy** (2nd law)
+4. **Free will:** located **not** here (all paths to $T$ are homotopic) but in the flat directions $\dim\ker(\mathcal H_\Gamma)$ — see [Free will](#свобода-воли)
 
 ---
 
@@ -1100,43 +1118,32 @@ with $S_0 = \{T\}$ (terminal object—the zero-dimensional stratum).
 
 ### Formalization via ∞-structure
 
-:::info Definition (free will in UHM)
-For an agent $\Gamma \in \mathcal{C}$, **free will** is
+:::info Definition (free will in UHM) — corrected 2026-07
+For an agent $\Gamma \in \mathcal{C}$, **free will** is the **dimension of the flat (zero-mode) directions** of the free energy at $\Gamma$, plus one:
 
 $$
-\text{Freedom}(\Gamma) := \pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})
+\text{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
 
-—the set of connected components of the path space with nontrivial homotopy type.
+—the number of independent directions in which the agent may move without free-energy penalty (plus the trivial "stay-put" mode). See [Consequences §Free will [T]](/docs/core/foundations/consequences#freedom-конечномерное).
 :::
 
-**Reading:**
-- $\pi_0$ — coarse trajectory classes
-- each class — a genuinely different mode of approach to $T$
-- choice among classes = free will
-
-### Theorem on multiplicity of paths
-
-**Theorem:**
-
-For $\Gamma \neq T$, $\mathrm{Map}(\Gamma, T)$ contains many distinct 1-morphisms linked by 2-morphisms:
-
-- $\mathrm{Map}(\Gamma, T) \simeq *$ (contractible), hence $\pi_n = 0$
-- yet the set of concrete 1-morphisms $|\mathrm{Mor}_1(\Gamma, T)|$ can be arbitrarily large
-- freedom lies in choosing a particular path while all paths are globally equivalent
+:::warning Why not $\pi_0(\mathrm{Map}(\Gamma,T))$
+An earlier draft set $\text{Freedom}(\Gamma):=\pi_0(\mathrm{Map}(\Gamma,T)^{\text{non-trivial}})$. This is **incorrect**: by Property 3 the mapping space into the terminal object is **contractible**, $\mathrm{Map}(\Gamma,T)\simeq *$, so $\pi_0=1$ and $\pi_n=0$ for every $\Gamma$ — it cannot measure freedom. Counting *concrete* CPTP channels $|\mathrm{Mor}_1(\Gamma,T)|$ does not help either: that is a continuum, and $\log|\mathrm{Mor}_1|$ is not a well-defined real number. The contractibility is exactly the **uniqueness of the arrow of time** (2nd law), not latitude of choice. Freedom instead lives in the zero-mode geometry, $\dim\ker(\mathcal H_\Gamma)$.
+:::
 
 ### Quantitative measure of freedom
 
-**Definition (freedom entropy):**
+**Definition (freedom, well-posed):** the freedom of $\Gamma$ is the tangent dimension of the free-energy critical (flat) manifold through $\Gamma$,
 
 $$
-S_{\text{freedom}}(\Gamma) := \log |\text{Mor}_1(\Gamma, T)| + \log |\text{Mor}_2(f, g)|_{\text{avg}}
+\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1, \qquad \mathcal{H}_\Gamma = \text{Hess}\,\mathcal{F}[\Gamma].
 $$
 
 **Properties:**
-- at $\Gamma = T$: $S_{\text{freedom}} = 0$ (no freedom—the end is reached)
-- far from $T$: $S_{\text{freedom}}$ is large
-- arrow of time: $S_{\text{freedom}}(\Gamma(\tau)) \geq S_{\text{freedom}}(\Gamma(\tau+1))$
+- at $\Gamma = \rho^*$ (attractor): $\mathcal{H}$ is non-degenerate on the relevant sector, $\dim\ker$ is minimal — least latitude (the end is reached);
+- far from $\rho^*$: more flat directions open up, freedom is larger;
+- arrow of time: along the dissipative flow $\dim\ker(\mathcal H_{\Gamma(\tau)})$ is non-increasing (the flat directions contract as $\Gamma\to\rho^*$).
 
 ### Philosophical reading
 
@@ -1542,7 +1549,7 @@ $$
 | Arrow of time | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | Properties 3, 5 |
 | Multiplicity | orbits $\mathrm{U}(7)/\mathrm{Stab}$ | Properties 1, 4 |
 | Attractor | $\Gamma^* = \varphi(\Gamma^*)$ | Properties 3, 4 |
-| **Free will** | **$|\mathrm{Mor}_1(\Gamma, T)| > 1$** | **∞-structure (Property 3)** |
+| **Free will** | **$\dim\ker(\mathcal H_\Gamma)+1$** (flat directions; *not* $|\mathrm{Mor}_1|$) | **free-energy Hessian** |
 | **L-unification** | **$L$ from $\Omega$; source of $L_k$** | **Classifier $\Omega$** |
 | **$L_k$ from $\Omega$** | **$L_k = \sqrt{\chi_S}$** | **Classifier atoms** |
 | **$\kappa_{\text{bootstrap}} > 0$** | **minimal regeneration** | **adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$** |
@@ -1560,7 +1567,7 @@ $$
 - **The sole substance** — matter, energy, information, experience are aspects of objects and morphisms
 - **Its own form** — shape is fixed by the ∞-topos with Bures geometry
 - **Its own process** — evolution is internal morphism dynamics at scale $\omega_0$
-- **The source of freedom** — multiplicity of paths in $\mathrm{Map}(\Gamma, T)$
+- **The source of freedom** — flat (zero-mode) directions $\dim\ker(\mathcal H_\Gamma)$ of the free energy (not multiplicity of paths in the contractible $\mathrm{Map}(\Gamma, T)$)
 - **The source of thresholds** — $P_{\text{crit}}$, $R_{\text{th}}$, $\Phi_{\text{th}}$ follow from PID
 
 ### It **is not**:
@@ -1653,7 +1660,7 @@ In the Ω⁷ formulation UHM is:
 **Structural consequences:**
 - **Sole primitive:** $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$
 - **Cohomological monism:** $H^*(X) = 0$ is a theorem
-- **Free will:** $|\mathrm{Mor}_1(\Gamma, T)| > 1$ — multiplicity of paths to $T$
+- **Free will:** $\dim\ker(\mathcal H_\Gamma)+1$ — flat directions of the free energy (not $|\mathrm{Mor}_1|$; $\mathrm{Map}(\Gamma,T)$ is contractible)
 - **Canonical predicates:** $S_i = |i\rangle\langle i|$ — atomic subobject predicates ($\mathrm{Dec}(\Omega)$)
 - **L-unification:** $\Omega$ unifies logic ($L$), operators ($L_k$), and time ($\tau$)
 

@@ -88,7 +88,7 @@ graph TD
     LU["Lurie (2006/2009)<br/>∞-toposes"] --> A1["Axiom 1<br/>Sh∞(C)"]
 
     CH["Čencov (1978)<br/>Monotone metrics"] --> PE
-    PE["Petz (1996)<br/>Uniqueness of Bures"] --> A2["Axiom 2<br/>J_Bures"]
+    PE["Petz (1996)<br/>Bures = Petz-minimal"] --> A2["Axiom 2<br/>J_Bures"]
 
     CA["Cayley (1845)<br/>Octonions"] --> HU
     DI["Dickson (1919)<br/>Doubling of algebras"] --> HU
@@ -156,7 +156,7 @@ At first colleagues greeted the new formalism skeptically. Category theory was c
 
 Why CPTP and not arbitrary linear maps? Because CPTP is the unique class of maps preserving all physical properties of a density matrix: Hermiticity (observables are real), positive semidefiniteness (probabilities are nonnegative), unit trace (probabilities sum to 1). Any map violating even one of these produces physically meaningless states (negative probabilities, unnormalized distributions).
 
-**Terminal object** $T = I/7$—the maximally mixed state (uniform distribution over all 7 dimensions). For every $\Gamma$ there is a unique morphism $\Gamma \to T$—complete dissipation. In categorical terms $T$ is the endpoint of all trajectories if regeneration $\mathcal{R}$ is switched off.
+**Terminal object** $T = I/7$—the maximally mixed state (uniform distribution over all 7 dimensions). Terminality holds in the **unital-channel refinement** of the morphism structure: with morphisms restricted to *unital* CPTP maps (those fixing $I/7$), reachability is exactly **majorization** ($\sigma \prec \rho$, Uhlmann), $I/7$ is the unique sink (no unital channel leaves it), and the dissipative flow $e^{\tau\mathcal{L}_0}$ is the canonical trajectory to it. (In the *full* CPTP category $T=I/7$ is **not** terminal — the constant channel $X\mapsto\mathrm{Tr}(X)\,\Gamma'$ maps every state to any $\Gamma'$, so morphisms into a state are neither unique nor into $I/7$ only; the second-law/arrow-of-time reading requires the unital refinement.) $T$ is the endpoint of all *dissipative* trajectories when regeneration $\mathcal{R}$ is switched off.
 
 Besides objects and morphisms, **functors**—“maps between categories” preserving structure—play a fundamental role. A concrete example: the **forgetful functor** $U: \mathbf{QState}_7 \to \mathbf{Vect}$, which assigns to each density matrix a linear space, “forgetting” the conditions $\Gamma \geq 0$ and $\mathrm{Tr}(\Gamma) = 1$. This functor lets linear algebra be applied to quantum states—but the price of “forgetting” is that results must be checked for physicality.
 
@@ -188,7 +188,7 @@ A **topos** is the category of all sheaves: $\mathbf{Sh}(\mathcal{C}, J)$. It is
 
 **Concrete UHM example.** Take $\mathcal{C} = \mathbf{QState}_7$. An object is $\Gamma \in \mathcal{D}(\mathbb{C}^7)$. A cover $\{U_i \to \Gamma\}$ is a family of CPTP channels “sufficient to recover” $\Gamma$. The topology $J_{Bures}$: a family $\{U_i\}$ is a cover if Bures balls around the $U_i$ cover a neighborhood of $\Gamma$. A sheaf $\mathcal{F}$ assigns to each state a set of “observable properties” coherent when passing from one state to a neighboring one. The subobject classifier $\Omega$ of this topos yields the projectors $|k\rangle\langle k|$—the Lindblad operators.
 
-**Role in the UHM.** **Axiom 2**: the Grothendieck topology $J$ on the category of density matrices is induced by the Bures metric $d_B$. Covers fix when two states $\Gamma_1, \Gamma_2$ are distinguishable. This is not an arbitrary choice: the Bures metric is unique by the Čencov–Petz theorem (see [§4.5](#ченцов-петц)). Without that uniqueness the theory would depend on an arbitrary decision—which metric to choose. Different metrics yield different topologies, different sheaves, different operators $L_k$—and hence different physics. Uniqueness of Bures prevents this. See [Axiom Omega-7](./axiom-omega).
+**Role in the UHM.** **Axiom 2**: the Grothendieck topology $J$ on the category of density matrices is induced by the Bures metric $d_B$. Covers fix when two states $\Gamma_1, \Gamma_2$ are distinguishable. This is not an arbitrary choice: the Bures metric is the **canonically selected** (Petz-minimal / extremal) member of the monotone-metric family — see [§4.5](#ченцов-петц) and [T-187](/docs/reference/status-registry). Crucially, all members of the Petz family are **bi-Lipschitz equivalent** on the compact $\mathcal{D}(\mathbb{C}^7)$, so they induce the **same** Grothendieck topology $J$, the same sheaves, and Petz-robust physics — the theory does **not** depend on the choice within the family, and Bures is the distinguished representative. See [Axiom Omega-7](./axiom-omega).
 
 **Without Grothendieck’s toposes** in the UHM: one cannot define “local observation” of a quantum state. Ordinary topology (open sets) requires observables to be **continuous functions**—but quantum observables need not be continuous in the usual sense (projection measurements are discontinuous). Grothendieck topology fixes this by replacing “open sets” with “covers”—families of morphisms that may be discontinuous pointwise yet categorically coherent. Without this notion one cannot define a sheaf on $\mathcal{D}(\mathbb{C}^7)$—hence neither the subobject classifier $\Omega$, nor the operators $L_k$, nor the full dynamics.
 
@@ -659,7 +659,7 @@ We now have dynamics (Lindblad, GKLS), time (Page, Wootters), dimension (Hurwitz
 
 **Who.** Nikolai Čencov (1930–1992)—Soviet mathematician, co-founder of information geometry, at the Steklov Mathematical Institute. His monograph *Statistical Decision Rules and Optimal Inference* (1972) laid foundations for the geometric approach to statistics, although outside the USSR these ideas became widely known only after translation into English. Dénes Petz (1953–2018)—Hungarian mathematician at the Budapest University of Technology and Economics, specialist in quantum information theory.
 
-**What they did.** Čencov (1978) posed and answered a fundamental question: what is the **natural** metric on the space of probability distributions? “Natural” means: it does not increase under **coarse-graining** of observations (a Markov map). In the classical case the answer is the **Fisher metric**—the unique Riemannian metric with this property. Petz (1996) generalized this to the quantum case: the **Bures metric** is the unique (up to normalization) monotone Riemannian metric on the space of quantum states $\mathcal{D}(\mathcal{H})$.
+**What they did.** Čencov (1978) posed and answered a fundamental question: what is the **natural** metric on the space of probability distributions? “Natural” means: it does not increase under **coarse-graining** of observations (a Markov map). In the classical case the answer is the **Fisher metric**—the unique Riemannian metric with this property. Petz (1996) showed the quantum case is genuinely different: monotone Riemannian metrics form an **infinite family** indexed by operator-monotone functions; the **Bures metric** is the **minimal** element of that family (classical Chentsov uniqueness does *not* survive quantization). UHM's choice of Bures is justified by this minimality together with the further characterizations of T-187.
 
 $$
 d_B(\rho, \sigma)^2 = 2\left(1 - \mathrm{Tr}\sqrt{\sqrt{\rho}\,\sigma\,\sqrt{\rho}}\right)
@@ -693,9 +693,9 @@ $$
 d_B(\Phi(\rho), \Phi(\sigma)) \leq d_B(\rho, \sigma)
 $$
 
-Coarse-graining cannot increase distinguishability. Intuitively: if we view the world “through frosted glass,” we cannot resolve more than a direct view. Čencov and Petz proved that monotonicity **fully** fixes the metric—no other monotone Riemannian metrics on $\mathcal{D}(\mathcal{H})$ exist (up to normalization).
+Coarse-graining cannot increase distinguishability. Intuitively: if we view the world “through frosted glass,” we cannot resolve more than a direct view. Čencov proved that monotonicity **fully** fixes the metric in the **classical** case (Fisher). In the quantum case Petz showed monotonicity leaves an **infinite family**; the Bures metric is its **minimal** element, singled out canonically by the additional characterizations of T-187.
 
-**Role in the UHM.** **Axiom 2**: the Grothendieck topology $J_{Bures}$ is induced by the Bures metric. Without the Čencov–Petz theorem we would face an arbitrary choice of metric—and different metrics yield different topologies, different sheaves, different operators $L_k$, and ultimately different physics. Uniqueness of the Bures metric is not a technicality but a **guarantee** that the theory does not depend on arbitrary choices. This is one of those rare cases where mathematics says: “you have no choice—and that is good.” Details: [Axiom Omega-7](./axiom-omega#аксиоматика).
+**Role in the UHM.** **Axiom 2**: the Grothendieck topology $J_{Bures}$ is induced by the Bures metric. Different monotone metrics would in principle yield different topologies and sheaves; UHM fixes Bures by **minimality** within the Petz family plus the T-187 characterizations. Moreover, **Petz-robustness** (the R1-class of results that are invariant across the whole monotone family) guarantees that the dimensionless UHM predictions do not depend on this choice at all — a stronger guarantee than bare uniqueness would give. Details: [Axiom Omega-7](./axiom-omega#аксиоматика).
 
 ### 4.6 Berry (1984) {#берри}
 
@@ -966,7 +966,7 @@ Looking back, the UHM’s mathematical foundation folds from three independent h
 
 **Line 2: Dimension (How many dimensions?).** Cayley $\to$ Dickson $\to$ Hurwitz $\to$ Adams $\to$ Fano $\to$ Killing–Cartan. It starts with “what number systems exist?” and ends with: the largest division algebra is the octonions, $\dim = 8$, imaginary part $\dim = 7$, automorphisms $G_2$. Remarkably **every** step is an **impossibility** theorem: Hurwitz—no dimension beyond 8; Adams—no parallelization beyond $S^7$; Killing–Cartan—exactly five exceptional groups.
 
-**Line 3: Dynamics (How does everything change?).** von Neumann $\to$ Lindblad $\to$ GKLS $\to$ Čencov–Petz $\to$ Page–Wootters $\to$ Connes. It starts with “how do quantum states evolve?” and ends with: the unique CPTP dynamics (Lindblad), unique metric (Bures), internal time (Page–Wootters), emergent spacetime (Connes). The keyword is **uniqueness**: at each step mathematics leaves no choice.
+**Line 3: Dynamics (How does everything change?).** von Neumann $\to$ Lindblad $\to$ GKLS $\to$ Čencov–Petz $\to$ Page–Wootters $\to$ Connes. It starts with “how do quantum states evolve?” and ends with: the CPTP dynamics (Lindblad/GKLS), the canonically-selected metric (Bures = Petz-minimal within the monotone family), internal time (Page–Wootters), emergent spacetime (Connes). The keyword is **canonicity**: at each step mathematics leaves no *arbitrary* choice (the metric step is a selection within the Petz family, not a naive uniqueness).
 
 **Bridge** results tying the lines: Noether (Lines 2 and 3 via “symmetry $\to$ charge”), Shannon and Hamming (Lines 2 and 3 via “coding $\to$ 4+3 structure”), Berry (Line 3 to Line 1 topology via geometric phase).
 
@@ -997,7 +997,7 @@ Could this convergence have been foreseen? In hindsight—yes: all three lines s
 | Open-system equation | Lindblad | 1976 | Dissipation $\mathcal{D}[\Gamma]$ | [Lindblad operators](../operators/lindblad-operators) | [T] |
 | CPTP semigroups | GKLS | 1976 | Uniqueness of generator form | [Evolution](../dynamics/evolution) | [T] |
 | Internal time | Page, Wootters | 1983 | $\tau$ from correlations with $O$ | A5 | [T] |
-| Uniqueness of Bures metric | Čencov, Petz | 1978, 1996 | $J_{Bures}$ unique | A2 | [T] |
+| Canonical selection of Bures (Petz-minimal) | Čencov, Petz | 1978, 1996 | $J_{Bures}$ canonical (Petz-robust) | A2 | [T] |
 | Geometric phase | Berry | 1984 | Topological Gap protection | [Gap dynamics](../dynamics/gap-dynamics) | [T] |
 | $C^*$-algebra $\cong$ space | Gelfand, Naimark | 1943 | Emergence of $M^4$ | T-118, T-119 | [T] |
 | Spectral triples, action | Connes, Chamseddine | 1990–96 | $M^4$, SM Lagrangian | T-53, T-65, T-120 | [T] |
@@ -1013,7 +1013,7 @@ Could this convergence have been foreseen? In hindsight—yes: all three lines s
 
 ## 10. Two tracks to $N = 7$ {#два-трека}
 
-The dimension $N = 7$—**Axiom 3**—has two independent justifications. Their agreement is nontrivial evidence of internal consistency. The situation parallels Einstein’s two routes to general relativity: the equivalence principle (physical) and general covariance (mathematical). When two independent paths yield one answer, it is either coincidence or a sign of deep structure. In mathematics, coincidences of this kind are rare.
+The dimension $N = 7$—**Axiom 3**—is established by two tracks with complementary roles: Track A derives the **number** (seven functionally independent aspects, [Theorem S](/docs/proofs/minimality/theorem-minimality-7)); Track B derives the **structure** of the seven-dimensional system (Fano/octonionic, via the T15 bridge, which consumes the Track-A dimension at Step T8). The nontrivial fact is the **consistency closure**: the functionally derived count, 7, is exactly the imaginary dimension of the unique non-associative normed division algebra, $\dim\mathrm{Im}(\mathbb{O}) = 7$ — the functional requirement and the algebraic classification meet on the same number. The situation parallels Einstein’s two routes to general relativity: the equivalence principle (physical) supplies the demand, general covariance (mathematical) supplies the structure that satisfies it. When a functional count lands precisely on an exceptional algebraic object, it is either coincidence or a sign of deep structure. In mathematics, coincidences of this kind are rare.
 
 ### Track A: phenomenological {#трек-a}
 
@@ -1137,7 +1137,7 @@ From these five axioms (and nothing else) follow: consciousness thresholds ($P_{
 
 The pillars map onto the table as follows:
 - **Eilenberg–Grothendieck–Lurie** give A1: the single primitive in which the theory lives
-- **Čencov–Petz** give A2: the unique metric, ruling out arbitrariness
+- **Čencov–Petz** give A2: the canonically-selected metric (Bures = Petz-minimal within the monotone family; classical uniqueness by Chentsov, quantum selection by extremality), ruling out arbitrariness up to Petz-robust bi-Lipschitz equivalence
 - **Cayley–Hurwitz–Adams** give A3: the unique dimension compatible with algebra and consciousness
 - **Page–Wootters** give A5: time as an internal property, not external background
 

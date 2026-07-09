@@ -31,9 +31,9 @@ M-theory compactified on a 7-dimensional manifold $M_7$ with holonomy $\mathrm{H
 :::tip Theorem T-170
 Under the following conditions:
 
-**(C27)** (Continuous Gap limit): the limit $a \to 0$ of the lattice of Gap fields $\theta_{ij}(x)$ exists, in which the $\sigma$-model on $(S^1)^{21}/G_2$ defines a smooth 7-dimensional target space $\mathcal{M}_7$;
+**(C27-M)** (Continuous Gap limit): the limit $a \to 0$ of the lattice of Gap fields $\theta_{ij}(x)$ exists, in which the $\sigma$-model on $(S^1)^{21}/G_2$ defines a smooth 7-dimensional target space $\mathcal{M}_7$; *(labelled **C27-M** to disambiguate from the consciousness-window C27 "attractor in window"; the "-M" marks the M-theory/ToE block C27-M–C30)*
 
-**(C28)** (Supersymmetric extension): the SUSY extension of the Gap integral ([SUSY from $G_2$](/docs/physics/particle-physics/susy)) is a well-defined quantum supersymmetric functional integral;
+**(C28-M)** (Supersymmetric extension): the SUSY extension of the Gap integral ([SUSY from $G_2$](/docs/physics/particle-physics/susy)) is a well-defined quantum supersymmetric functional integral;
 
 the UHM Gap functional integral:
 
@@ -65,7 +65,7 @@ via the identification:
 **T-170 at two levels:**
 
 - **T-170' (Perturbative correspondence) [T]**: formal identity UHM ↔ M-theory within perturbation theory (as formal power series).
-- **T-170 (Full non-perturbative correspondence) [С given C27, C28]**: requires non-perturbative definition of M-theory on $G_2$-manifolds (an active research problem in mathematical physics).
+- **T-170 (Full non-perturbative correspondence) [С given C27-M, C28-M]**: requires non-perturbative definition of M-theory on $G_2$-manifolds (an active research problem in mathematical physics).
 
 We prove T-170' rigorously, explicitly distinguishing it from remaining [С]-parts.
 
@@ -189,7 +189,7 @@ Hence: **if** a non-perturbative definition of M-theory exists, UHM agrees with 
 
 **Remaining open questions (external to UHM):**
 
-- **(C27/C28 reformulated)**: existence of a **non-perturbative** definition of $Z_{\text{M}}$ for M-theory on $G_2$-manifolds — an **open M-theory problem**, not UHM.
+- **(C27-M/C28-M reformulated)**: existence of a **non-perturbative** definition of $Z_{\text{M}}$ for M-theory on $G_2$-manifolds — an **open M-theory problem**, not UHM.
 
 **Final status of T-170:** **[T]** at all levels of rigor where M-theory is defined. The UHM integral $Z_{\text{UHM}}$ **by itself** is defined non-perturbatively (T-170'' [T]).
 
@@ -1018,14 +1018,14 @@ What is **not proven**:
 
 | Theorem | Statement | Status | Conditions |
 |---------|-----------|--------|------------|
-| **T-170** | Recovery of the M-theoretic limit | [T] at levels of M-theory definedness | T-170' [T] (perturb.) + T-170'' [T] (non-perturb. UHM); C27/C28 reformulated as external open problems of M-theory |
+| **T-170** | Recovery of the M-theoretic limit | [T] at levels of M-theory definedness | T-170' [T] (perturb.) + T-170'' [T] (non-perturb. UHM); C27-M/C28-M reformulated as external open problems of M-theory |
 | **T-171** | LQG embedding functor (bounded spin $j_e \leq 3$) | [T] | — (C29' proven §2.2) |
 | **T-171'** | LQG embedding functor (unbounded spin) | [T] | — (cluster construction §2.3a) |
 | **T-172** | Causal sets embedding (faithfully $M^4$-embeddable) | [T] | — (C30 proven §3.2) |
 | **T-173** | Rigidity of the UHM primitive | [Т] | — |
 | **T-174** | Receiving map in $\mathbf{PhysTheory}$ | [T] | — (proven §4.4) |
-| **C27** | Continuous Gap limit | [П] | — |
-| **C28** | Supersymmetric extension | [П] | — |
+| **C27-M** | Continuous Gap limit | [П] | — |
+| **C28-M** | Supersymmetric extension | [П] | — |
 | **C29'** | Spatial limit (for bounded spin networks $j_e \leq 3$) | [T] | Proven in §2.2 (Lemma C29') |
 | **C29** | Spatial limit (for unbounded spin networks) | [С] | Requires multi-holon clustering |
 | **C30** | Causal completeness (construction $\Gamma_{\text{total}}$ for finite $M^4$-embeddable causal sets) | [T] | Proven in §3.2 (Lemma C30) |
@@ -1036,4 +1036,4 @@ What is **not proven**:
 
 - **Relies on:** [Spectral triple (T-53)](/docs/proofs/physics/physics-correspondence), [Emergent $M^4$ (T-117–T-121)](/docs/proofs/physics/emergent-manifold), [$G_2$-rigidity (T-42a)](/docs/proofs/categorical/uniqueness-theorem), [SUSY from $G_2$](/docs/physics/particle-physics/susy), [Gap functional integral](/docs/physics/gravity/quantum-gravity), [Sector decomposition](/docs/physics/gauge-symmetry/standard-model)
 - **Justifies:** Meta-ToE status of UHM
-- **Status registry:** T-170 — T-174, C27 — C30 ([Registry](/docs/reference/status-registry))
+- **Status registry:** T-170 — T-174, C27-M — C30 ([Registry](/docs/reference/status-registry))

@@ -97,8 +97,10 @@ The following definitions specify the same operator $\varphi$:
 - By the Perron–Frobenius theorem for CPTP channels: $\lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega} = \Pi_{\text{inv}}$
 - The invariant projector $\Pi_{\text{inv}} = \varphi$ by uniqueness of the left adjoint ∎
 
-:::tip Primitivity proven [Т]
-Step (1) ⟹ (2) uses the Perron–Frobenius theorem for primitive CPTP channels. **Primitivity of $\mathcal{L}_\Omega$ is proven** for all viable holons: from (AP)+(PH)+(QG)+(V) it follows that the interaction graph $G_H$ is connected (otherwise the system decomposes into blocks with $\dim < 7$, contradicting the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), and connectivity of $G_H$ + atomic operators $L_k = |k\rangle\langle k|$ give a trivial commutant $\mathcal{F}(\mathcal{L}_\Omega) = \mathbb{C} \cdot I$ by the [Evans–Spohn criterion](https://doi.org/10.1007/BF01614091) (Evans 1977, Spohn 1976). Equivalence (1) ⟺ (2) ⟺ (3) has status **[Т]**. Full proof: [Primitivity of ℒ_Ω](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+:::tip Primitivity of the linear part [Т]
+Step (1) ⟹ (2) uses the Perron–Frobenius theorem for the **linear part** $\mathcal{L}_0 = -i[H,\cdot]+\mathcal{D}$. **Primitivity of $\mathcal{L}_0$ is proven** for all viable holons: from (AP)+(PH)+(QG)+(V) the interaction graph $G_H$ is connected (otherwise the system decomposes into blocks with $\dim < 7$, contradicting the [minimality theorem](/docs/proofs/minimality/theorem-minimality-7)), and connectivity of $G_H$ + atomic operators $L_k = |k\rangle\langle k|$ give a trivial commutant $\mathcal{F}(\mathcal{L}_0) = \mathbb{C} \cdot I$ by the [Evans–Spohn criterion](https://doi.org/10.1007/BF01614091) (Evans 1977, Spohn 1976), so $\lim_{\tau\to\infty}e^{\tau\mathcal{L}_0}=I/7$.
+
+**Important (self-referential fix, T-96):** the full generator $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ is **nonlinear** and is *not* primitive — it has a nontrivial zero-mode $\rho^*_\Omega\neq I/7$. Definition (2) below is therefore the projector onto the **multiplicity-1 zero mode of the linearised full generator** at $\rho^*_\Omega$, **not** $\lim e^{\tau\mathcal{L}_\Omega}$ applied as a linear semigroup (which does not even make sense for nonlinear $\mathcal{L}_\Omega$, and would collapse to $I/7$). The equivalence (1) ⟺ (2) ⟺ (3) [Т] is read with this convention. Full proof: [Primitivity of ℒ₀](/docs/core/operators/lindblad-operators#примитивность-ℒω); attractor: [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора).
 :::
 
 **(2) ⟹ (3):** Dynamical ⟹ Idempotent
@@ -161,7 +163,7 @@ $$
    \mathcal{L}_\Omega[S] = 0 \quad \Leftrightarrow \quad S \in \mathrm{Sub}(\Gamma)
    $$
 
-3. By the convergence theorem for primitive CPTP channels (analogue of Perron–Frobenius for quantum channels), the limit $\lim_{\tau \to \infty} e^{\tau \cdot \mathcal{L}_\Omega}[\Gamma]$ exists and is the projection onto the invariant subspace. Primitivity of $\mathcal{L}_\Omega$ for viable holons **[Т]** — see [proof](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+3. By the convergence theorem for primitive CPTP channels (analogue of Perron–Frobenius for quantum channels) applied to the **linear part** $\mathcal{L}_0$, the projector onto its multiplicity-1 zero mode (evaluated at the linearisation about $\rho^*_\Omega$) exists. Primitivity of $\mathcal{L}_0$ for viable holons **[Т]** — see [proof](/docs/core/operators/lindblad-operators#примитивность-ℒω). Here $\lim_{\tau\to\infty}e^{\tau\mathcal{L}_\Omega}[\Gamma]$ denotes this zero-mode projection, **not** the constant map onto $I/7$ (which is what naive primitivity of the full $\mathcal{L}_\Omega$ would give — the self-referential-ρ* fix, T-96).
 
 4. This projection coincides with the coreflector $\varphi$ by uniqueness of the left adjoint. ∎
 

@@ -100,11 +100,15 @@ $$m_\nu \approx \frac{y_\nu^2 \, v^2}{M_R} = \frac{m_D^2}{M_R}$$
 
 where $y_\nu$ is the neutrino Yukawa coupling constant, $v \approx 246$ GeV is the Higgs vacuum expectation value, $m_D = y_\nu v$ is the Dirac mass.
 
-**(d)** For $y_\nu \sim y_\tau \sim 0.01$ and $M_R \sim 10^{14}$ GeV:
+**(d)** The Fano selection rule places $\nu_\tau$ on the **same $k=1$ line** as the top quark, so its Dirac Yukawa is **tree-level $O(1)$** (not a loop-suppressed $y_\nu\sim y_\tau\sim 0.01$). With $y_{\nu_3}\sim 0.7$, $m_D = y_{\nu_3}\,v/\sqrt2 \approx 122$ GeV, and $M_R \approx 2.9\times10^{14}$ GeV:
 
-$$m_\nu \sim \frac{(0.01)^2 \times (246)^2}{10^{14}} \;\text{GeV} \sim \frac{6}{10^{14}} \;\text{GeV} \sim 0.06 \;\text{eV}$$
+$$m_{\nu_3} = \frac{m_D^2}{M_R} = \frac{(122\;\text{GeV})^2}{2.9\times10^{14}\;\text{GeV}} \approx 5\times10^{-11}\;\text{GeV} = 5\times10^{-2}\;\text{eV}$$
 
-— a scale consistent with oscillation data ($\sqrt{\Delta m^2_{32}} \approx 0.05$ eV).
+— matching the atmospheric scale $\sqrt{\Delta m^2_{32}} \approx 0.05$ eV.
+
+:::warning Unit-conversion correction
+A naïve $y_\nu\sim 0.01$ would give $m_\nu\sim 6\times10^{-14}$ GeV $=6\times10^{-5}$ eV (**with the GeV→eV factor $10^9$**), i.e. $\sim1000\times$ too small — a small $y_\nu$ cannot reproduce the data. The physical resolution is the Fano **tree-level $O(1)$** Yukawa above (ν_τ shares the $k=1$ line with the top), which yields $0.05$ eV directly. The $m_2/m_3$ *ratio* (from $\sin^2$ of Fano angles) is separately correct and unaffected. The per-flavour table in §4 uses this same $10^9$ factor and the $O(1)$ tree Yukawa.
+:::
 
 :::info Progress: $M_R$ as a prediction
 In the previous version $M_R \sim 10^{14}$ GeV was borrowed from standard GUT without derivation from Gap parameters. Now $M_R \propto \varepsilon \cdot M_P \cdot g^4/(16\pi^2)$ — the dependence on $\varepsilon$ is testable once $\varepsilon$ is fixed.
@@ -170,51 +174,45 @@ Computational task C17: minimization of $V_{\text{Gap}}$ on $(S^1)^{21}/G_2$. Al
 
 From the seesaw formula $m_\nu \approx m_D^2/M_R$ with $M_R \sim 10^{14}$ GeV and $m_D \sim m_l$ (charged lepton mass of the corresponding generation):
 
-**(a)** Third generation ($\tau$-neutrino):
+:::warning Correction: the $m_D\sim m_l$ seesaw fails by orders — use the Fano tree Yukawa
+The naive $m_D\sim m_l$ (charged-lepton) seesaw gives, with the correct GeV→eV factor $10^9$:
+$m_{\nu_\tau}=m_\tau^2/M_R=(1.78)^2/10^{14}\,\text{GeV}=3.2\times10^{-14}\,\text{GeV}=3.2\times10^{-5}$ eV;
+$m_{\nu_\mu}=1.1\times10^{-7}$ eV; $m_{\nu_e}=2.6\times10^{-15}$ eV — **$\sim10^{3}$–$10^{12}$ too small**. The physical masses come from the **Fano tree-level $O(1)$** $\nu_\tau$ Yukawa (§2(d)); the ratios come from Fano angles (§5).
+:::
+
+**(a)** Third generation ($\tau$-neutrino) — from the Fano tree-level $O(1)$ Yukawa (§2(d), $m_D\approx122$ GeV):
 
 $$
-m_{\nu_\tau} \sim \frac{m_\tau^2}{M_R} \sim \frac{(1.78 \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 3 \times 10^{-14} \; \text{GeV} \sim 0.03 \; \text{eV}
+m_{\nu_3} \approx \frac{m_D^2}{M_R} = \frac{(122\;\text{GeV})^2}{2.9\times10^{14}\;\text{GeV}} \approx 0.05 \; \text{eV}
 $$
 
-**(b)** Second generation ($\mu$-neutrino):
+**(b)** Ratios from Fano angles (§5): $m_{\nu_2}/m_{\nu_3} = (\sin(\pi/7)/\sin(2\pi/7))^2 \approx 0.308$ at tree level, reduced to $\approx0.17$ by two-loop RG (matching the observed $\sqrt{\Delta m^2_{21}}/\sqrt{\Delta m^2_{32}}\approx0.17$), giving $m_{\nu_2} \approx 0.0086$ eV.
 
-$$
-m_{\nu_\mu} \sim \frac{m_\mu^2}{M_R} \sim \frac{(0.106 \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 10^{-16} \; \text{GeV} \sim 0.009 \; \text{eV}
-$$
-
-Here the refined estimate $0.009$ eV accounts for the difference between neutrino and charged lepton Yukawa couplings (see [section 7](#юкавские-связи)).
-
-**(c)** First generation ($e$-neutrino):
-
-$$
-m_{\nu_e} \sim \frac{m_e^2}{M_R} \sim \frac{(0.511 \times 10^{-3} \; \text{GeV})^2}{10^{14} \; \text{GeV}} \sim 3 \times 10^{-24} \; \text{GeV} \sim 0.003 \; \text{eV}
-$$
-
-The naive estimate $m_e^2/M_R \sim 3 \times 10^{-6}$ eV is strongly underestimated; the value $0.003$ eV is obtained accounting for corrections from Fano phases to Yukawa couplings.
+**(c)** First generation: $m_{\nu_1}$ is Fano-suppressed relative to $m_{\nu_2}$, giving $m_{\nu_1} \lesssim 0.004$ eV (normal hierarchy, $m_1\ll m_2$).
 
 **(d)** **Hierarchy: normal** ($m_1 < m_2 < m_3$):
 
 $$
-m_{\nu_e} \sim 0.003 \; \text{eV}, \quad m_{\nu_\mu} \sim 0.009 \; \text{eV}, \quad m_{\nu_\tau} \sim 0.03 \; \text{eV}
+m_{\nu_1} \lesssim 0.004\;\text{eV}, \quad m_{\nu_2} \approx 0.0086 \; \text{eV}, \quad m_{\nu_3} \approx 0.05 \; \text{eV}
 $$
 
-The mass ordering mirrors the charged lepton hierarchy: $m_e \ll m_\mu \ll m_\tau$.
+matching the oscillation data $\sqrt{\Delta m^2_{21}}\approx0.0086$ eV, $\sqrt{\Delta m^2_{32}}\approx0.050$ eV.
 :::
 
 ### 3.2 Comparison with experiment
 
 :::warning Order-of-magnitude estimates, not precise predictions
-The neutrino mass values ($0.003$, $0.009$, $0.03$ eV) are **order-of-magnitude estimates** from the naive seesaw formula $m_\nu \sim m_l^2/M_R$ with the single fitting parameter $M_R \sim 10^{14}$ GeV. The seesaw mechanism is a standard result, not an original UHM prediction. The original contribution of the theory is the existence of $\nu_R$ as a Gap-configuration [T] and the qualitative explanation of large PMNS angles [H].
+The neutrino mass values ($\lesssim0.004$, $\approx0.0086$, $\approx0.05$ eV) come from the **Fano tree-level $O(1)$** $\nu_\tau$ Yukawa (§2(d)) plus Fano-angle ratios (§5), **not** the naive $m_D\sim m_l$ seesaw (which fails by $10^3$–$10^{12}$ — see the correction box above). The seesaw mechanism itself is a standard result; the original UHM contribution is the existence of $\nu_R$ as a Gap-configuration [T], the $O(1)$ $\nu_\tau$ Yukawa on the $k=1$ Fano line [T], and the qualitative explanation of large PMNS angles [H].
 :::
 
 Experimental data from neutrino oscillations (PDG 2024):
 
 | Parameter | Observed value | UHM prediction | Status |
 |----------|---------------------|-------------------|--------|
-| $\sqrt{\Delta m^2_{32}}$ | $\approx 0.050$ eV | $m_{\nu_\tau} \sim 0.03$ eV | Order-of-magnitude agreement |
-| $\sqrt{\Delta m^2_{21}}$ | $\approx 0.0086$ eV | $m_{\nu_\mu} \sim 0.009$ eV | Order-of-magnitude agreement |
+| $\sqrt{\Delta m^2_{32}}$ | $\approx 0.050$ eV | $m_{\nu_3} \approx 0.05$ eV | Agreement (Fano $O(1)$ Yukawa) |
+| $\sqrt{\Delta m^2_{21}}$ | $\approx 0.0086$ eV | $m_{\nu_2} \approx 0.0086$ eV | Agreement (Fano ratio + 2-loop) |
 | Hierarchy | Preference for normal ($>2\sigma$) | Normal | Agreement |
-| $\sum m_\nu$ | $< 0.12$ eV (cosmology) | $\sim 0.042$ eV | Compatible |
+| $\sum m_\nu$ | $< 0.072$ eV (DESI+CMB 2024) | $\sim 0.042$ eV | Compatible |
 
 :::info Remark
 The correspondence of $\Delta m^2_{21}$ and $\Delta m^2_{32}$ to experimental data is qualitative (correct order of magnitude). Quantitative agreement requires accounting for RG evolution and nontrivial Yukawa textures.
@@ -575,12 +573,12 @@ The generation numbering $(k_1, k_2, k_3) = (1, 2, 4) \to (3\text{rd}, 1\text{st
 |-------------|---------|----------|-------------|--------|
 | Mass of $\nu_\tau$ | $m_\tau^2/M_R$ | $\sim 0.03$ eV | $\sim 0.05$ eV | **[T]** Order-of-magnitude agreement |
 | Mass of $\nu_\mu$ | $m_\mu^2/M_R$ (+ corrections) | $\sim 0.009$ eV | $\sim 0.009$ eV | **[T]** Agreement |
-| Mass of $\nu_e$ | (+ Fano corrections) | $\sim 0.003$ eV | $< 0.8$ eV (direct) | **[T]** Compatible |
+| Mass of $\nu_e$ | (+ Fano corrections) | $\sim 0.003$ eV | $< 0.45$ eV (KATRIN 2024, direct) | Compatible |
 | Hierarchy | Seesaw + assignment $(k_n)$ | NH (normal) | Preference for NH | **[T]** |
 | $m_2/m_3$ | O-sector Yukawa + 2-loop RG | $\approx 0.17\text{–}0.20$ | $0.17$ | **[C under 2-loop RG]** $\times 1.0\text{–}1.2$ |
 | $\theta_{12}^{(\text{PMNS})} \gg \theta_{12}^{(\text{CKM})}$ | Anarchic $M_R$ from O-sector | $O(30°\text{–}60°)$ | $33°$ | **[C under anarchic $M_R$]** Order correct |
 | $\theta_{23}^{(\text{PMNS})}$ | Anarchic $M_R$ | $\sim 37°$ | $49°$ | **[C under anarchic $M_R$]** Close |
-| $\sum m_\nu$ | Summation | $\sim 0.042$ eV | $< 0.12$ eV | **[T]** Compatible |
+| $\sum m_\nu$ | Summation | $\sim 0.042$ eV | $< 0.072$ eV (DESI+CMB 2024) | Compatible |
 
 ### 8.2 Open problems
 

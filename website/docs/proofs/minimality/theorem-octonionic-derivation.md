@@ -16,16 +16,16 @@ Each statement is marked with one of three statuses:
 - **[И]** — **Interpretation**: substantive connection with UHM
 :::
 
-:::info Dual-track status of N = 7
-The dimensionality $N = 7$ has **two independent justifications**:
+:::info Dual-track status of N = 7: the number and the structure
+The dimensionality $N = 7$ and its algebraic structure are established by **two tracks with distinct, complementary roles**:
 
-| Track | Path | Status |
-|---|---|---|
-| **Track A** | [Axiom 3](../../core/foundations/axiom-omega#аксиоматика) + [Theorem S](./theorem-minimality-7): (AP)+(PH)+(QG) → N ≥ 7 | [Т] Proven |
-| **Track B** | P1 + P2 → $\mathbb{O}$ → $\dim \mathrm{Im}(\mathbb{O})$ = 7 (this document) | [Т] Mathematically rigorous |
-| **Bridge** | (AP)+(PH)+(QG)+(V) → P1 + P2 | **[Т]** — complete T15 chain, 15 steps, all [Т] |
+| Track | Delivers | Path | Status |
+|---|---|---|---|
+| **Track A** | The **number**: $N = 7$ | [Axiom 3](../../core/foundations/axiom-omega#аксиоматика) + [Theorem S](./theorem-minimality-7): (AP)+(PH)+(QG) → 7 functionally independent aspects → $N \geq 7$, minimality → $N = 7$ | [Т] |
+| **Track B** | The **structure**: Fano/octonionic, P1 + P2 | The T15 bridge chain (this document): given $N = 7$ (consumed from Track A at [Step T8](#шаг-t8)), (AP)+(PH)+(QG)+(V) force the Fano organization BIBD$(7,3,1)$ and hence the octonionic algebra $\mathbb{O}$ | [Т given Track A] |
+| **Consistency closure** | $\dim \mathrm{Im}(\mathbb{O}) = 8 - 1 = 7$ | The structure returned by Track B has imaginary dimension exactly $7$ — the loop closes on the same number Track A supplied | [Т] |
 
-The tracks converge: both give N = 7. The bridge is **[Т]** — [fully closed](#мост).
+Track A proves the *number*; Track B proves the *structure* of the $N=7$ system; the octonionic closure confirms the two are one coherent whole. (Track B is **not** a second independent derivation of the number — its Step T8 takes $N = 7$ as input; what it derives independently is that the seven-dimensional system is forced to be Fano/octonionic.) The bridge is **[Т]** — [fully closed](#мост).
 :::
 
 ---
@@ -212,7 +212,7 @@ From theorems P1 and P2 (derived from (AP)+(PH)+(QG)+(V) via the T15 chain [Т])
 6. **[Т]:** $N = \dim(\text{Im}(\mathbb{O})) = 7$ $\quad\blacksquare$
 
 :::note Proof structure
-Steps 1, 3 are theorems [Т] derivable from the axioms via the T15 chain (§5). Steps 2, 4, 5 are pure mathematics [Т]. Step 6 is a logical consequence [Т]. All steps of the proof have status [Т]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V).
+Steps 1, 3 are theorems [Т] derivable from the axioms via the T15 chain (§5), which **consumes $N = 7$ from Track A at Step T8** (Theorem S, functional minimality). Steps 2, 4, 5 are pure mathematics [Т]. Step 6 is a logical consequence [Т]. P1 and P2 are not postulated but derived from (AP)+(PH)+(QG)+(V) given the Track-A dimension; the resulting $\dim\mathrm{Im}(\mathbb{O}) = 7$ closes the consistency loop with the number Track A supplied (see the dual-track box, §0).
 :::
 
 ---
@@ -358,13 +358,13 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 
 ---
 
-#### Step T8. T7 → Hamming code H(7,4) [Т] {#шаг-t8}
+#### Step T8. T7 + N=7 (Track A) → Hamming code H(7,4) [Т] {#шаг-t8}
 
-**Statement.** From $c > 0$ (T7) it follows that the unique perfect code of length 7 compatible with the coherence-restoring structure is the Hamming code $H(7,4)$.
+**Statement.** For the $N = 7$ system (the dimension is **consumed here from Track A**, [Theorem S](./theorem-minimality-7) — functional minimality) with a coherence-restoring structure required by $c > 0$ (T7), the unique minimal-redundancy error-correcting organization is the Hamming code $H(7,4)$.
 
-**Proof.** A perfect code of length $n$ correcting $t$ errors satisfies the Hamming bound: $\sum_{k=0}^{t}\binom{n}{k} = 2^r$ for $n = 2^r - 1$. For $n = 7$: $2^3 = 8 = 1 + 7 = \binom{7}{0} + \binom{7}{1}$, i.e. $t = 1$, $r = 3$. The code $H(7,4)$ is the unique (up to equivalence) perfect binary code of length 7 correcting 1 error (theorem T8 [Т], standard result of coding theory). $\square$
+**Proof.** (i) *Why a perfect code:* the coherence-restoring structure must cover every single-coherence error with **zero redundancy overhead** — coverings that saturate the Hamming bound $\sum_{k=0}^{t}\binom{n}{k} = 2^{n-m}$ are exactly the perfect codes; any non-perfect covering wastes restoring capacity (violates the minimality selector of (V)). (ii) *Why $t=1$:* single-error correction is the minimal nontrivial correction, and $c>0$ (T7) requires at least it. (iii) *Given $n = N = 7$ from Track A:* $2^3 = 8 = 1 + 7 = \binom{7}{0} + \binom{7}{1}$, i.e. $t = 1$, $r = 3$, and $H(7,4)$ is the unique (up to equivalence) perfect binary 1-error-correcting code of length 7 (standard coding theory). $\square$
 
-**Status:** **[Т]** — standard theorem (Hamming bound).
+**Status:** **[Т given N=7 (Track A)]** — Hamming bound + uniqueness; the length input is the Track-A dimension. (Perfect binary 1-error-correcting codes exist only for $n = 2^r - 1$; the functional count of Theorem S selects $n = 7$ among these.)
 
 ---
 
@@ -382,7 +382,7 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 
 **Statement.** Among all $S_7$-invariant BIBD$(7,k,\lambda)$-channels with $\lambda\geq 1$, the Fano channel ($v=7,k=3,\lambda=1$) is the unique optimal one.
 
-**Proof (revised 2026-04-17 — no circular appeal to $\lambda=1$).**
+**Proof (with $\lambda=1$ derived, not assumed).**
 
 *(Stage 1: $\lambda$ is forced.)* By T-39a [T] the linear Lindbladian $\mathcal L_0$ is primitive: its unique stationary state is $I/7$ and no repeated eigenspaces exist. A canonical BIBD channel with $\lambda>1$ contains $\lambda$-fold repeated blocks (pairs covered multiple times), which materialise as multiply-copied Lindblad generators and violate primitivity by introducing accidental degeneracies in the Lindbladian spectrum (Evans–Spohn criterion fails; see T-41b). Hence the **minimal** $S_7$-invariant block design compatible with primitivity has $\lambda=1$ — this is derived from T-39a, not assumed. For completeness, $\lambda=1$ is also re-derived in Steps T11–T14 from Choi-rank minimality as an independent check; the two arguments coincide.
 
@@ -392,7 +392,7 @@ Below are the 15 bridge steps with full inline proofs. The dependencies of each 
 - Contraction: $c_{k=3}=(k-1)/(v-1)=1/3$ vs $c_{k=2}=1/6$. ($k=3$ stronger.)
 - Number of Lindblad operators: $b_{k=3}=7$ vs $b_{k=2}=21$. ($k=3$ minimal.)
 - Purity loss: $\Delta P_{k=3}=8/9$ vs $\Delta P_{k=2}=35/36$. ($k=3$ smaller.)
-- $G_2$-covariance: present for $k=3$ via PG(2,2) (T-2), **absent** for $k=2$ (a 2-element block structure has $S_7\times S_2$-symmetry incompatible with $G_2\subset SO(7)$).
+- Frame-group covariance: the $k=3$ Fano design is covariant under the octonionic frame group $\Gamma_{\!\text{oct}}=\mathrm{Aut}(PG(2,2))\cong PSL(2,7)$ (it permutes the 7 lines); the $k=2$ design has only $S_7\times S_2$ block symmetry, which does not embed in $\Gamma_{\!\text{oct}}$. (Neither *pinching* design is fully $G_2$-covariant — the $k=3$ dissipator is $\tfrac23\mathcal{D}_{\text{atom}}$ and breaks $G_2$ to $\Gamma_{\!\text{oct}}$, Fano-channel Th. 5.1a–b — so the decisive selectors are Choi-rank minimality and BIBD closure, not $G_2$.)
 
 $k=3$ **strictly dominates** by all four criteria. $\square$
 
@@ -461,7 +461,7 @@ $k=3$ **strictly dominates** by all four criteria. $\square$
 | T5 | T3+T4 ⟹ $\Phi \geq 1$ | T3, T4 | T-129 [Т] | **[Т]** |
 | T6 | (PH) ⟹ $\operatorname{rank}(\rho_E) > 1$ | (PH) | Non-triviality of qualia | **[Т]** |
 | T7 | T4 ⟹ $c > 0$ | T4 | Exponential suppression of $\kappa_0$ at $c=0$ | **[Т]** |
-| T8 | T7 ⟹ $H(7,4)$ | T7 | Hamming bound, uniqueness | **[Т]** |
+| T8 | T7 + $N{=}7$ ⟹ $H(7,4)$ | T7, Theorem S (Track A: $N=7$) | Hamming bound, uniqueness | **[Т given Track A]** |
 | T9 | T8 ⟹ PG(2,2) | T8 | Dual code $S(3,7)$ | **[Т]** |
 | T10 | T9 ⟹ Fano optimality | T9, T7 | T4 (dominance of $k=3$) | **[Т]** |
 | T11 | T10 ⟹ Choi rank = 7 | T10 | 7 independent projectors | **[Т]** |
@@ -511,7 +511,7 @@ This identification is **not arbitrary**: PG(2,2) is the unique BIBD(7,3,1) (Hal
 Theorem T6 (uniform contraction) [Т] proves democraticity of contraction **unconditionally** — from the $S_7$-equivariance of the atomic dissipator (T5 [Т]). T6 removes the dependence on condition (КГ) in step 4 of the chain.
 :::
 
-**Theorem T4 (Optimality of k=3) [Т].** Among admissible BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ strictly dominates in contraction (1/3 vs 1/6), number of operators (7 vs 21), purity loss (8/9 vs 35/36), and $G_2$-covariance (yes vs no).
+**Theorem T4 (Optimality of k=3) [Т].** Among admissible BIBD$(7,k,1)$ ($k \in \{2,3\}$): $k=3$ strictly dominates in contraction (1/3 vs 1/6), number of operators (7 vs 21), purity loss (8/9 vs 35/36), and frame-group covariance ($\Gamma_{\!\text{oct}}$ vs $S_7\times S_2$). Full $G_2$-covariance is not a discriminator (neither pinching design has it; see Fano-channel Th. 5.1a–b) — the decisive minimal selectors are Choi-rank $=7$ (T11) and BIBD closure (T13).
 
 **Theorem T5 ($S_7$-equivariance of dissipator) [Т].** The atomic dissipator $\mathcal{D}_\text{atom}$ with operators $L_k = |k\rangle\langle k|$ commutes with any permutation $\sigma \in S_7$: $\mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \mathcal{D}_\text{atom}[\Gamma] U_\sigma^\dagger$.
 

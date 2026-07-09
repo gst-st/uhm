@@ -37,14 +37,14 @@ Each result is marked with one of the canonical statuses:
 ### Theorem 1.1 (Number of generations) {#thm-1-1}
 
 :::warning [H] Hypothesis (original argument 1.1)
-The original argument via $S_4$-orbits on 6 points is not strictly defined: the number of orbits depends on the action of $S_4$ on pairs vs. triplets; the claim "three classes → three generations" is not formalized. Moreover, the number of minima $V_\text{eff} \leq 3$ from the Swallowtail is an upper bound, not a lower one. **The full rigorous result $N_{\text{gen}} = 3$ [T]** — see [Theorem 1.2](#теорема-ровно-три-генерации).
+The original argument via $S_4$-orbits on 6 points is not strictly defined, and the catastrophe-theory route ($V_\text{eff}\leq 2$ interior minima from the $A_4$ swallowtail + a boundary minimum) was only conditional. **These are superseded: $N_{\text{gen}} = 3$ is now an exact group-theoretic count** $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$ — **[T]** — with only the physical identification remaining **[I]**; see [Theorem 1.2](#теорема-ровно-три-генерации).
 :::
 
 **Theorem.** The number of fermionic generations is determined by the topology of the Gap-vacuum:
 
 **(a)** Each generation corresponds to a **topologically distinct** minimum of $V_\text{Gap}$ in the vacuum configuration.
 
-**(b)** From Swallowtail analysis: the number of minima of $V_\text{eff}$ depends on the codimension of the catastrophe. For $A_4$ (swallowtail): up to 3 minima.
+**(b)** From swallowtail analysis: the number of minima of $V_\text{eff}$ depends on the catastrophe. For the $A_4$ swallowtail ($V\sim x^5$), $V' $ is a quartic with $\leq 4$ real roots, which alternate, giving **$\leq 2$ interior minima**. A **third** minimum requires either (i) a **boundary** minimum on the compact Gap domain $\mathrm{Gap}\in[0,1]$, or (ii) the **butterfly** $A_5$ ($V\sim x^6$, which was retracted as X4). Hence the "$\leq 3$" upper bound is **[C under Gap-potential topology]**, conditional on realizing route (i) on the compact domain — it is not an unconditional $A_4$ fact.
 
 **(c)** The number of generations $N_\text{gen}$ = the number of distinct **types** of degenerate $\Gamma$-configurations with $R \to 0$, not connected by a $G_2$-transformation.
 
@@ -58,8 +58,8 @@ More precisely: the automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (or
 
 ### Theorem 1.2 (Exactly 3 generations) {#теорема-ровно-три-генерации}
 
-:::tip Theorem 1.2 (Exactly 3 generations) [T]
-Strictly proved. Upper bound — from swallowtail $A_4$ [T]. Lower bound — from the structure of the multiplicative subgroup $\mathbb{Z}_7^*$ and uniqueness of the associative triplet [T]. The combination gives $N_{\text{gen}} = 3$ exactly.
+:::tip Theorem 1.2 (Exactly 3 generations) — count [T], identification [I]
+Lower bound $N_{\text{gen}}\geq 3$ — from the unique order-3 subgroup $(1,2,4)\subset\mathbb{Z}_7^*$ and irreducibility of $\mathbb{Z}_3$ **[T]**. Upper bound $N_{\text{gen}}\leq 3$ — **[C under Gap-potential topology]** (see the status box in §"Composite status"): the catastrophe-theory bound and the count of physical minima are conditional. Physical identification of minima with generations is **[I]**. Composite status: **[C]+[I]** (the flat "[T] strictly proved" of earlier drafts is retracted).
 :::
 
 **Theorem.** The number of fermionic generations in UHM equals **exactly 3**:
@@ -132,24 +132,32 @@ The generation triplet $(k_1, k_2, k_3) = (1, 2, 4)$ is the unique associative t
 
 All three elements are **distinct** ($k_1 \neq k_2 \neq k_3 \neq k_1$), which follows from the definition of the multiplicative subgroup $\{1, 2, 4\} \subset \mathbb{Z}_7^*$.
 
-**Step 4. Proof that 3 generations are inevitable [T].**
+**Step 4. Proof that $N_{\text{gen}} = 3$ exactly [T]** (both bounds simultaneously, from a group-theoretic count).
 
-Combining:
-1. **From above:** $N_{\text{gen}} \leq 3$ from swallowtail $A_4$ [T]
-2. **From below:** The triplet $(1, 2, 4)$ contains exactly 3 elements. Structurally: the multiplicative subgroup of order 3 in $\mathbb{Z}_7^*$ (order 6), index 2. Order of subgroup $= 3$ — the only possibility for a subgroup of index 2 in a group of order 6 [T]
-3. **Uniqueness:** The triplet $(1,2,4)$ is unique as a Fano line with $\mathcal{A} = 0$ [T] ([Theorem 6.1](#thm-6-1))
-4. **Irreducibility:** The three elements cannot be reduced to 2 (a subgroup of order 3 is irreducible: $\mathbb{Z}_3$ is a simple group) and cannot be extended to 4 (subgroup order $\leq 3$ under the swallowtail constraint)
+The generations are the elements of the **unique order-3 multiplicative subgroup** of $\mathbb{Z}_7^*$, i.e. the quadratic residues $\mathrm{QR}(7) = \{1,2,4\}$. Its cardinality is fixed with **no analytic input**:
 
-Therefore, $N_{\text{gen}} = 3$. $\blacksquare$
+$$
+N_{\text{gen}} = |\mathrm{QR}(7)| = \frac{7-1}{2} = 3 \qquad\textbf{[T, exact].}
+$$
+
+This is simultaneously the lower **and** upper bound — there is no "$\leq$" to prove separately:
+
+1. **$\mathbb{Z}_7^* \cong \mathbb{Z}_6$** (cyclic) has exactly one subgroup of each order dividing $6$: orders $1,2,3,6$. Order $1$ ($\{1\}$) is trivial; order $2$ ($\{1,6\}=\{\pm1\}$) is **charge conjugation**, not a family structure; order $6$ is the whole group. The **unique proper nontrivial subgroup closed under the octonionic (associative Fano) product** is the order-3 subgroup $\{1,2,4\}=\mathrm{QR}(7)$ ([Theorem 6.1](#thm-6-1): $(1,2,4)$ is the unique associator-free Fano line). Hence exactly $3$ elements — not $2$, not $4$, not $6$.
+
+2. **Charge-conjugation cross-check.** Because $7\equiv 3 \pmod 4$, $-1$ is a quadratic **non**-residue mod $7$ ($-1\equiv 6\notin\mathrm{QR}$). Therefore $C:k\mapsto -k$ maps $\mathrm{QR}\leftrightarrow\mathrm{QNR}$ bijectively, and the generations are exactly the **$C$-orbits** $\mathbb{Z}_7^*/\{\pm1\} = \{\{1,6\},\{2,5\},\{3,4\}\}$ — again $|\mathbb{Z}_7^*|/2 = 3$. The set $\{1,2,4\}$ is a complete transversal (one representative per orbit).
+
+3. **Irreducibility / non-extendability.** The order-3 subgroup is $\mathbb{Z}_3$ (simple) — it cannot be reduced to $2$; and it cannot be extended to $4$ or more, since $4,5$ do **not** divide $6=|\mathbb{Z}_7^*|$ (Lagrange), so no subgroup of order $4$ or $5$ exists.
+
+Therefore $N_{\text{gen}} = 3$ is an **exact count** [T], independent of the effective-potential topology. $\blacksquare$
+
+:::note Swallowtail $A_4$ is now a consistency check, not the bound
+The catastrophe-theory route (the Gap potential $V_{\text{Gap}}$ realises an $A_4$ swallowtail, giving $\leq 2$ interior minima plus a boundary minimum on the compact Gap domain) serves as a **consistency check** on the group-theoretic count above: the Morse structure of $V_{\text{Gap}}$ is compatible with exactly $3$ stationary generation-vacua, matching $|\mathrm{QR}(7)|=3$. The count itself is group-theoretic and independent of the potential's topology.
+:::
 
 :::warning Composite status
-The proof of $N_{\text{gen}} = 3$ contains two independent constraints on the status:
+$N_{\text{gen}} = 3$ as a **mathematical count** is now **[T]** — the exact cardinality $|\mathrm{QR}(7)| = |\mathbb{Z}_7^*/\{\pm1\}| = (7-1)/2 = 3$, group-theoretic and topology-independent (the earlier **[C under Gap-potential topology]** is retired). The **identification** of the three $\mathrm{QR}(7)$-classes (equivalently $C$-orbits) with the observed physical fermion generations remains **[I]** (an interpretive correspondence via minimal embeddability, not derivable from the axioms alone).
 
-1. **Upper bound** $\leq 3$ from swallowtail $A_4$ — **[C under Gap-potential topology]**: depends on the proved Morse structure of $V_{\text{Gap}}$.
-
-2. **Identification** of triplet elements $(1,2,4) \subset \mathbb{Z}_7^*$ with physical fermion generations — **[I]** (interpretation, not a theorem): this correspondence is established by the principle of minimal embeddability, but is not mathematically uniquely derivable from the axioms. It cannot be "conditionally accepted" — it is a philosophical choice of interpretation.
-
-**Final theorem status**: $N_{\text{gen}} = 3$ as a mathematical result — **[C under Gap-potential topology]**; connection to observed generations — **[I]**.
+**Final status**: count $N_{\text{gen}} = 3$ — **[T]**; connection to observed generations — **[I]**.
 :::
 
 :::info Clarification: lower bound and triplet (1,2,4)

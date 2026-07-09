@@ -69,8 +69,8 @@ $$
 - Linearization $h_{\mu\nu} \sim |\gamma_{ij}|^2 \sin^2(\theta_{ij})$: **[C under weak-field]** (valid in the weak-field approximation; the full nonlinear connection is an open problem)
 :::
 
-:::warning Origin of $\eta_{\mu\nu}$: resolved [T]
-The formula $h_{\mu\nu} = \sum |\gamma_{ij}|^2 \cdot \mathrm{Gap}^2$ yields only non-negative components. The Lorentzian signature $(+1,-1,-1,-1)$ is **derived** from the finite spectral triple [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка): the Page–Wootters mechanism gives $g_{00} > 0$ (temporal component), and the spatial components $g_{aa} < 0$ from the spectrum of $D_{\text{int}}$. The signature convention $(+1,-1,-1,-1)$ (east coast convention) is used consistently throughout all documents of the theory.
+:::warning Origin of $\eta_{\mu\nu}$: (1,3)-split [T], Lorentzian sign [T at reflection positivity]
+The formula $h_{\mu\nu} = \sum |\gamma_{ij}|^2 \cdot \mathrm{Gap}^2$ yields only non-negative components. The **$(1,3)$-split** is **derived** [T] (one timelike PW direction, three spacelike $S^3$). The **full Lorentzian signature** $(+1,-1,-1,-1)$ is **[T at reflection positivity]**: the spatial signs $g_{aa}<0$ follow from requiring the PW generator bounded below (Osterwalder–Schrader reflection positivity across the PW slice), not from an arbitrary ansatz — KO-dim 6 of the finite spectral triple [T-53](/docs/core/foundations/spacetime#лоренцева-сигнатура) fixes the *even/odd grading* but not the metric signature by itself (rigorous realisation via Krein spectral triples). The convention $(+1,-1,-1,-1)$ (east-coast) is used consistently throughout.
 :::
 
 **(c)** Connes distance:
@@ -97,13 +97,17 @@ where:
 
 **(a)** Scalar curvature: $\mathcal{R}^{(4D)} = g^{\mu\nu} R_{\mu\nu}^{(4D)}$
 
-**(b)** Gravitational constant:
+**(b)** Gravitational constant (consistent with the Fierz–Pauli derivation of §(b) below, $G\propto\mu^2$):
 
 $$
-G_{\mathrm{Gap}} = \frac{c^4}{2\mu^2 \cdot \langle|\gamma_{\mathrm{ST}}|^2\rangle}
+G_{\mathrm{Gap}} = \frac{4\pi\mu^2}{\langle|\gamma_{\mathrm{ST}}|^2\rangle}
 $$
 
-where $\langle|\gamma_{\mathrm{ST}}|^2\rangle = \frac{1}{6}\sum_{\substack{i,j \in \mathrm{ST} \\ i < j}} |\gamma_{ij}|^2$ is the mean squared modulus of the coherence in the spacetime sector (6 pairs from 4 directions).
+where $\langle|\gamma_{\mathrm{ST}}|^2\rangle = \frac{1}{6}\sum_{\substack{i,j \in \mathrm{ST} \\ i < j}} |\gamma_{ij}|^2 \sim \varepsilon_0^2$ is the mean squared coherence modulus in the spacetime sector (6 pairs from 4 directions).
+
+:::warning Single Newton constant: $G\propto\mu^2$, and $\mu$ is Planck-scale
+The linearized (Fierz–Pauli) derivation below gives $G_N^{(ST)}=4\pi\mu^2/\varepsilon_0^2$ ($G\propto\mu^2$), matching the form above. The **primary** Newton constant is the spectral-action result $G_N = 3\pi/(7 f_2\Lambda^2)$ with cutoff $\Lambda\sim M_P$ (§below, T-65 [T]); the $\mu$-based emergent-gravity formula is an effective relation in which $\mu$ is the **Planck-scale** Gap parameter ($\mu_{\text{phys}}=\mu\,\omega_0\sim M_P$), **not** the $\sim$meV scale used in the $\Lambda$ sector. Both then agree that $G_N^{-1/2}\sim M_P$.
+:::
 
 **(c)** Cosmological constant:
 
@@ -320,8 +324,10 @@ Specifically:
 From Theorem 1.2 (b), Newton's gravitational constant is expressed through microscopic Gap parameters:
 
 $$
-G = G_{\mathrm{Gap}} = \frac{c^4}{2\mu^2 \cdot \langle|\gamma_{\mathrm{space}}|^2\rangle}
+G = G_{\mathrm{Gap}} = \frac{4\pi\mu^2}{\langle|\gamma_{\mathrm{space}}|^2\rangle}
 $$
+
+(consistent with the Fierz–Pauli derivation $G\propto\mu^2$; the primary Newton constant remains the spectral-action $G_N=3\pi/(7f_2\Lambda^2)$ with $\Lambda\sim M_P$, and $\mu$ here is the **Planck-scale** Gap parameter — see the correction box in §3.1).
 
 This formula contains two scales:
 
@@ -330,7 +336,7 @@ This formula contains two scales:
 | $\mu^2$ | Mass of the Gap mode (quadratic potential $V_2$) | $\sim (10^{-3}$ eV$)^2$ (phenomenologically tuned; coincides with the neutrino mass scale) |
 | $\langle\lVert\gamma_{\mathrm{space}}\rVert^2\rangle$ | Mean coherence of the spatial sector | $\sim 1 - O(\varepsilon^2)$ (high coherence) |
 
-The relation $G \propto 1/(\mu^2 \cdot |\gamma_{\mathrm{space}}|^2)$ means that gravity is weaker the larger the Gap mode mass and the higher the coherence of the spatial sector. In the limit of full decoherence ($|\gamma_{\mathrm{space}}| \to 0$) the gravitational constant formally diverges — effective "enhancement of gravity" near singularities.
+The relation $G \propto \mu^2/|\gamma_{\mathrm{space}}|^2$ means that gravity is **stronger** the larger the Gap-mode scale $\mu$ and the **lower** the coherence of the spatial sector. In the limit of full decoherence ($|\gamma_{\mathrm{space}}| \to 0$) the gravitational constant formally diverges — effective "enhancement of gravity" near singularities.
 
 ### 3.3 Consistency of the Two Definitions of $G$ [T]
 
@@ -453,7 +459,7 @@ is an **asymptotic expansion in the regularisation parameter** $t \to 0^+$, not 
 
 $\lambda_3$ enters as a **spectral parameter**, not an expansion variable. The coefficients $a_k$ are polynomials in the eigenvalues of $D_{\mathrm{int}}^2$, finite for any $\lambda_3$. $\square_2$
 
-**Step 3 (Lorentzian signature from KO-dimension).** KO-dimension 6 of the internal spectral triple determines the real operator $J$ with $J^2 = -1$ (mod-8 table [T]). $J$ induces the fundamental symmetry $\beta$ of a Krein space, turning the Hilbert space into one with an indefinite inner product. The Wick rotation $\mathcal{W}: D_{\mathrm{Lor}} \mapsto iD_{\mathrm{Eucl}}$ transforms the spectral action:
+**Step 3 (Lorentzian signature — [T at reflection positivity]).** KO-dimension 6 of the internal spectral triple fixes the real structure $J$ with $J^2 = +1$, $J\chi = -\chi J$ (the correct mod-8 values for KO-dim 6; the earlier "$J^2=-1$" was a mod-8 table error, and is the value for KO-dim 2/6 only under the *opposite* convention — the Chamseddine–Connes SM uses $J^2=+1$ at KO-6, Euclidean). KO-dim 6 is **internal fermion-doubling data and does not by itself fix the spacetime signature.** The Lorentzian sign is fixed by the physical requirement that the Page–Wootters generator be bounded below (Osterwalder–Schrader reflection positivity); its rigorous realisation is a **Krein-space fundamental symmetry** $\beta$ (Franco–Eckstein; van den Dungen) with the PW constraint supplying the timelike direction (see [Spacetime §Lorentzian signature](/docs/core/foundations/spacetime#лоренцева-сигнатура)). Under that construction the Wick rotation $\mathcal{W}: D_{\mathrm{Lor}} \mapsto iD_{\mathrm{Eucl}}$ transforms the spectral action:
 
 $$S_{\mathrm{Lor}} = -i \cdot S_{\mathrm{Eucl}}$$
 

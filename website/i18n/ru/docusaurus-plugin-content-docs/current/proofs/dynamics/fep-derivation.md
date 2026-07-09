@@ -148,7 +148,7 @@ $$
 \varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]
 $$
 
-где $\mathcal{L}_\Omega$ — логический Лиувиллиан.
+где $\mathcal{L}_\Omega$ — логический Лиувиллиан, а предел понимается как проектор на нулевую моду **линеаризованного** генератора (примитивна лишь линейная часть $\mathcal{L}_0$; полный $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ имеет нетривиальную неподвижную точку $\rho^*_\Omega\neq I/7$ из T-96 — см. [замечание о соглашении](/docs/proofs/categorical/formalization-phi)).
 
 **Шаг 2: Диссипативная структура $\mathcal{L}_\Omega$.**
 

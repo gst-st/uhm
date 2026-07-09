@@ -477,7 +477,7 @@ $$
 \Lambda_{\text{residual}} \sim \varepsilon^{12} \sim 10^{-24}
 $$
 
-**Status [T at T-64] via T-219 (2026-04-17 replacement)**: the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** [T at T-64] ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219)) replaces this with a rigorous derivation:
+**Status [T at T-64] via T-219**: the earlier "14 → 7_light ⊕ 7_heavy" decomposition of the G₂ adjoint was **mathematically invalid** — $\mathrm{adj}(G_2) = \mathbf{14}$ is irreducible under G₂ and admits no such splitting. **T-219** [T at T-64] ([Fundamental Closures §13](/docs/proofs/categorical/fundamental-closures#t-219)) replaces this with a rigorous derivation:
 
 $$\Lambda_\mathrm{SUSY}\;\sim\;\varepsilon^{12}\,M_P^4 \;=\; \varepsilon^{4\cdot k_\mathrm{sec}}\,M_P^4, \qquad k_\mathrm{sec}=3.$$
 
@@ -493,20 +493,21 @@ The SUSY compensation $\varepsilon^{12}$ and the $\varepsilon^6$ suppression fro
 
 ### 4.3 Updated budget {#обновлённый-бюджет}
 
-| Component | Suppression | Status |
-|-----------|-----------|--------|
-| Perturbative (6 mechanisms) | $10^{-41.5}$ | [Т] |
-| Cohomological $\Lambda_{\text{global}} = 0$ | complete global cancellation | [Т] |
-| $Z_\Phi(-2) = 0$ | winding cancellation | [Т] |
-| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[Т]** (spectral action) |
-| $Z'_\Phi(-2)$ | $\times 10^{10}$ | [Т] (math.) |
-| RG $\lambda_3^2$ | $10^{-14.5}$ | [Т] |
-| Sector from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | $10^{-40}$ [С] | [С] (full minimization) |
-| $\Lambda > 0$ from autopoiesis | **sign determined** | **[Т]** ([theorem](/docs/core/foundations/consequences#теорема-лямбда-положительна)) |
-| $f_0$ canonical | **parameter determined** | **[Т]** ([theorem](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический)) |
-| **Total (estimate)** | **$\sim 10^{-120 \pm 10}$** | **[С]** |
+:::warning Honest ledger — the rows do **not** all multiply
+The mechanisms below fall into **three non-composable classes**; naively multiplying every row **double-counts** (the RG $\lambda_3^2$ is already inside the perturbative $10^{-41.5}$; the SUSY $\varepsilon^{12}$ **absorbs**, not multiplies, the perturbative $\varepsilon^6$; and $Z'_\Phi(-2)$ is an **enhancement** $\times10^{+10}$, not a suppression). The former "Total $\sim10^{-120\pm10}$" was exactly $41.5+24+14.5+40=120$ — i.e. the forbidden sum. It is retracted. (A second mask of the same sum: quoting $\varepsilon$ at the extreme lower edge $10^{-3}$ of its allowed range — $\varepsilon^{12}=10^{-36}$ — instead of the self-consistent central $\varepsilon\sim10^{-2}$ from [Mechanism 1 / T-80](#механизм-1), which likewise manufactures $41.5+36+42\approx120$. Central values only.)
 
-The SUSY component is **[Т]** ([spectral formula](#теорема-спектральная-лямбда)). The sector component is refined via [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]. The sign $\Lambda > 0$ is proven structurally [Т]. The parameter $f_0$ is determined uniquely [Т]. The remaining gap is a **computational** problem (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
+| Class | Component | Effect on $\langle\Lambda\rangle$ | Status |
+|---|---|---|---|
+| **(A) Mean, rigorous** | Perturbative (6 mechanisms, incl. $\varepsilon^6$ and RG $\lambda_3^2$) | $10^{-41.5}$ | **[Т]** |
+| (A) | SUSY-breaking $\varepsilon^{12}$ (**absorbs** $\varepsilon^6$, adds $\Delta\approx-12$ over the $\varepsilon^6$ already counted) | $\to 10^{-53.5}$ net | [Т at T-64] via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) |
+| **(B) Exact zero (separate)** | Cohomological $\Lambda_{\text{global}} = 0$ | global mean $=0$; observed $\Lambda$ is a **local** $H^*_{\text{loc}}\neq0$ effect | **[Т]** |
+| **(C) Fluctuation / programme** | Sector [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | $\sim10^{-40}$ residual | **[С]** (numerical, open) |
+| sign | $\Lambda > 0$ from autopoiesis | sign fixed | **[Т]** |
+| calibration | $f_0$ canonical | parameter fixed | **[Т]** |
+
+**Composed estimate under the stated absorption rules:** the rigorously-multipliable mean suppression is $10^{-53.5}$ (class A); combined with the cohomological exact-zero (class B, which reframes the problem as "why is the *local* residual small?") and the [С] sector-minimization programme (class C), the current honest bracket is $\Lambda \sim 10^{-53.5}\ \text{to}\ 10^{-93.5}$ depending on how much of the sector/fluctuation programme is realized — **not** the full $10^{-120}$. Closing the remaining $\gtrsim27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ **plus** a proof that the local residual saturates the cohomological bound), not a completed multiplication.
+
+$Z_\Phi(-2)=0$ and the enhancement $Z'_\Phi(-2)\times10^{+10}$ are structural [Т math.] but their physical interpretation is open; they are **not** included in the mean-suppression product.
 
 :::info Numerical programme specification ([Fundamental Closures §8](/docs/proofs/categorical/fundamental-closures#lambda-programme))
 The numerical closure of the Λ-deficit reduces to **Hybrid Monte-Carlo** on the $G_2$-reduced phase space $(S^1)^{21}/G_2$: $N=128$ points per circle, $G_2$-gauge-fixed (21→7 independent dims), Wilson-type lattice discretisation of $V_\mathrm{Gap}$, $10^4$ thermalisation sweeps + $10^4$ measurements. Total cost $\sim 2\times 10^{21}$ flops (≈ 23 CPU-days on 1000-GPU cluster, $<10^5$ USD on cloud HPC). Output validation: must reproduce known perturbative $10^{-41.5}$ at tree level, give unique minimum (T-64 Hessian positivity), and yield $\Lambda \approx 10^{-120}$ within ±5 orders (tighter than current ±10). No theoretical obstacle remains.
@@ -532,73 +533,20 @@ All traces are taken over the internal space $H_{\text{int}} = \mathbb{C}^7$.
 
 1. **Bosonic sector:** $\mathrm{Tr}(1) = 7$ (dimension of $H_{\text{int}} = \mathbb{C}^7$).
 
-2. **Fermionic sector:** From $\mathcal{N}=1$ SUSY ($G_2$-holonomy): the algebra $\mathfrak{g}_2$ has $\dim \mathfrak{g}_2 = 14$ gaugino modes. Gravitinos (spin $3/2$, 4 modes) live on $M^4$ and do not enter $\mathrm{Tr}_{\text{int}}(1)$. From 14 gaugino modes the decomposition $\mathbf{14} \to \mathbf{7}_{\text{light}} \oplus \mathbf{7}_{\text{heavy}}$ by $G_2$-singlets gives $H_{\text{int}}^{\text{ferm}} = \mathbb{C}^7$ (7 light modes). With exact internal SUSY: $\mathrm{Tr}_{\text{int}}(1)_{\text{total}} = 7 - 7 = 0$ — **exact internal compensation [T]** (see Theorem 4.4 below).
+2. **Fermionic sector:** From $\mathcal{N}=1$ SUSY ($G_2$-holonomy) the algebra $\mathfrak{g}_2$ carries $\dim \mathfrak{g}_2 = 14$ gaugino modes. Gravitinos (spin $3/2$, 4 modes) live on $M^4$ and do not enter $\mathrm{Tr}_{\text{int}}(1)$. The leading vacuum term is controlled by the **sector-product suppression** of [T-219](/docs/proofs/categorical/fundamental-closures#t-219), **not** by an exact bose–fermi trace cancellation (see the retraction of Theorem 4.4 below).
 
-#### Theorem 4.4 (Exact $G_2$-SUSY compensation in finite spectral triple) [T] {#теорема-susy-компенсация}
+#### Theorem 4.4 (Exact $G_2$-SUSY compensation) — **[✗] RETRACTED** {#теорема-susy-компенсация}
 
-:::tip Theorem 4.4
-In the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ of UHM with KO-dimension 6 (T-53 [T]), the **exact $G_2$-SUSY pairing** holds:
+:::warning Theorem 4.4 is retracted — the "$7-7=0$" argument is invalid
+The previous claim $\mathrm{Tr}_{\text{int}}(\gamma_{\text{int}}) = 7_{\text{bosons}} - 7_{\text{fermions}} = 0$ is **false** on two independent grounds:
 
-$$
-\mathrm{Tr}_{\text{int}}\bigl(\gamma_{\text{int}}\bigr) = \dim(\text{bosons}_+) - \dim(\text{fermions}_-) = 7 - 7 = 0,
-$$
+1. **Odd dimension.** A $\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ on the internal space $H_{\text{int}}\cong\mathbb{C}^7$ (odd) has $\dim H^+ + \dim H^- = 7$, so $\mathrm{Tr}(\gamma_{\text{int}}) = \dim H^+ - \dim H^- \in\{\pm1,\pm3,\pm5,\pm7\}$ — it can **never** be $0$. Indeed the T-53 grading $\chi_{\text{int}}=\mathrm{diag}(+,-,-,-,+,+,+)$ has $\mathrm{Tr}\,\chi_{\text{int}}=+1$. The old "Step 5" itself conceded $7/2\notin\mathbb{Z}$ and patched by tensoring with $\mathbb{C}^2$, which changes the space and proves nothing about $\mathrm{Tr}(\gamma_{\text{int}})$ on $\mathbb{C}^7$.
+2. **Irreducibility.** The decomposition $\mathbf{14}\to\mathbf{7}\oplus\mathbf{7}$ does not exist: the adjoint $\mathbf{14}$ of $G_2$ is **irreducible** (it does not contain $\mathbf{7}$). So there is no $G_2$-covariant $7$-boson $\leftrightarrow$ $7$-fermion pairing of gaugino modes.
 
-where $\gamma_{\text{int}}$ is the $\mathbb{Z}_2$-grading of the spectral triple. This gives an **exact cancellation** of the leading term of $\Lambda_{\text{CC}}$ in the spectral formula (Theorem 4.3) under exact internal SUSY.
+**Replacement (correct route).** The leading vacuum suppression is the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ of [T-219 [T at T-64]](/docs/proofs/categorical/fundamental-closures#t-219), derived from the $7=1\oplus3\oplus\bar 3$ decomposition — not from an exact bose–fermi trace. Consistent with `cosmological-constant.md` §4a, which already marks the SUSY-compensation route **[H]**.
+
+**Status:** **[✗] retracted**; superseded by T-219 [T at T-64] (structural $\varepsilon^{12}$) + the honest [H] for exact compensation.
 :::
-
-**Proof of Theorem 4.4.**
-
-**Step 1 (Spectral triple structure from T-53 [T]).** The internal Hilbert space:
-
-$$
-H_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})^{\text{opp}} \cong \mathbb{C}^7 \text{ (as a vector space)}.
-$$
-
-Observable algebra: $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$. The Dirac operator $D_{\text{int}}$ is self-adjoint, acting on $H_{\text{int}}$.
-
-**Step 2 ($\mathbb{Z}_2$-grading $\gamma_{\text{int}}$ at KO-dim = 6).** By Connes' classification theorem for finite spectral triples ([Connes 1994](https://alainconnes.org/), [Dungen 2016, *The Noncommutative Geometry of SM*](https://www.springer.com/gp/book/9783319247960)):
-
-For KO-dimension 6 there exists a **canonical** $\mathbb{Z}_2$-grading $\gamma_{\text{int}}: H_{\text{int}} \to H_{\text{int}}$ with properties:
-- $\gamma_{\text{int}}^2 = I$,
-- $\gamma_{\text{int}}^\dagger = \gamma_{\text{int}}$,
-- $\gamma_{\text{int}} \cdot D_{\text{int}} = -D_{\text{int}} \cdot \gamma_{\text{int}}$ (anticommutation),
-- $\gamma_{\text{int}} \cdot J_{\text{int}} = (-1)^6 \cdot J_{\text{int}} \cdot \gamma_{\text{int}} = J_{\text{int}} \cdot \gamma_{\text{int}}$ (commutation at KO-dim = 6).
-
-These conditions determine $\gamma_{\text{int}}$ **uniquely** up to sign.
-
-**Step 3 (Decomposition of $H_{\text{int}}$ into $\gamma_{\text{int}}$-eigenspaces).** By the spectral theorem:
-
-$$
-H_{\text{int}} = H_{\text{int}}^+ \oplus H_{\text{int}}^-, \quad \gamma_{\text{int}}|_{H_{\text{int}}^\pm} = \pm I.
-$$
-
-**Step 4 ($G_2$-covariant pairing $H_{\text{int}}^+ \cong H_{\text{int}}^-$).** By T-42a [T] ($G_2$-rigidity), $G_2$ acts on $H_{\text{int}} = \mathbb{C}^7$ via the 7-dimensional representation $\mathbf{7}_{G_2}$. This representation is **self-dual** (Cartan's classification of simple Lie groups): $\mathbf{7} \cong \mathbf{7}^*$.
-
-By T-83 [T] (Barrett KO-dim 6): the real structure $J_{\text{int}}$ realizes this self-duality, inducing the isomorphism $H_{\text{int}}^+ \cong H_{\text{int}}^-$ as **$G_2$-modules**.
-
-Hence:
-
-$$
-\dim H_{\text{int}}^+ = \dim H_{\text{int}}^- = \frac{\dim H_{\text{int}}}{2} = \frac{7}{2}.
-$$
-
-**Step 5 (Refinement: full $H_{\text{int}}$).** Formally $7/2 \notin \mathbb{Z}$. Refinement: the full internal Hilbert space includes **fermions** and **bosons** together: $H_{\text{int}}^{\text{full}} = H_{\text{int}} \otimes \mathbb{C}^2_{\text{Grassmann}}$, dimension $= 14$. After $G_2$-decomposition 14 = 7 + 7 (bosons + fermions).
-
-Applying the grading: $\gamma_{\text{int}}^{\text{full}} = \gamma_{\text{int}} \otimes \sigma_z$ (or an analogous $\mathbb{Z}_2$-grading operator on $\mathbb{C}^2$):
-
-$$
-\mathrm{Tr}(\gamma_{\text{int}}^{\text{full}}) = \mathrm{Tr}(\gamma_{\text{int}}) \cdot \mathrm{Tr}(\sigma_z) = \mathrm{Tr}(\gamma_{\text{int}}) \cdot 0 = 0.
-$$
-
-Or equivalently: $\mathrm{Tr}(\gamma_{\text{int}}) = 7_{\text{bosons}} - 7_{\text{fermions}} = 0$ directly. $\square$
-
-**Step 6 (Uniqueness of $G_2$-pairing).** The pairing $\mathbf{7}_B \leftrightarrow \mathbf{7}_F$ is **unique**: by Cartan's theorem, $G_2$ has a unique irreducible 7-dimensional representation. Any other 7-dimensional $G_2$-representation is isomorphic to $\mathbf{7}$, hence all 7-dimensional fermionic modes are **structurally equivalent** to the 7 bosonic ones.
-
-Under SUSY breaking (e.g., via $m_{3/2} \sim \varepsilon^3 M_P$), the pairing is **destroyed** in a controlled way — the gravitino mass gives a residual contribution $\Lambda_{\text{residual}} \sim f_0 \cdot m_{3/2}^4 \sim \varepsilon^{12} \cdot M_P^4$. $\blacksquare$
-
-**Corollary.** Under exact internal SUSY: $\mathrm{Tr}_{\text{int}}(\gamma_{\text{int}}) = 0 \Rightarrow$ the leading term $\Lambda^4 \cdot \mathrm{Tr}_{\text{int}}(1)$ in Theorem 4.3 **vanishes exactly**. The contribution to $\Lambda_{\text{CC}}$ comes only from **breaking** of SUSY (the $\varepsilon^{12}$ term), giving $10^{-24}$ in the budget.
-
-**Status:** [T] (upgraded from [С]). Exact $G_2$-SUSY compensation is proven structurally via the finite spectral triple with KO-dim 6.
 
 **Results used:**
 - T-42a [T] ($G_2$-rigidity, 7-dimensional representation $\mathbf{7}_{G_2}$);

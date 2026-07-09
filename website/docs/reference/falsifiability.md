@@ -220,17 +220,17 @@ The prediction $\tau_p \sim 10^{37}$–$10^{38}$ years **exceeds the sensitivity
 
 ---
 
-### F-m_t: Top quark mass from the Pendleton-Ross fixed point {#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса}
+### F-m_t: Exactly one $O(1)$ Yukawa (top) {#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса}
 
 $$
-m_t \approx 173 \; \text{GeV}
+\text{exactly one } O(1) \text{ Yukawa: } y_t(m_t) \approx 0.94, \quad m_t \approx 173\ \text{GeV}
 $$
 
-The top quark mass is derived from the quasi-IR [Pendleton-Ross fixed point](/docs/physics/particle-physics/yukawa-hierarchy#3-quasi-ir-fixed-point-и-масса-t-кварка). The unique Fano-Higgs line $\{A, E, U\}$ admits a tree-level Yukawa coupling [only for the third generation](/docs/physics/particle-physics/higgs-sector#1-единственность-хиггсовой-линии-aeu); the RG evolution of this coupling is attracted to the fixed point that fixes $m_t$.
+The unique Fano–Higgs line $\{A, E, U\}$ admits a tree-level Yukawa coupling [only for the third generation](/docs/physics/particle-physics/higgs-sector#1-единственность-хиггсовой-линии-aeu) — hence **exactly one $O(1)$ Yukawa** in the spectrum **[T]**. The Pendleton–Ross IR quasi-fixed point *overshoots* ($m_t^{\text{FP}} \approx 210$–$230$ GeV); the physical top sits below the attractor, so the numerical $m_t \approx 173$ GeV is a boundary condition, status **[C]** ([Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#3-quasi-ir-fixed-point-и-масса-t-кварка)).
 
-**Testability:** Already consistent with observations ($m_t^{\text{exp}} = 172.57 \pm 0.29$ GeV). The prediction is falsified by a significant shift in the experimental value.
+**Testability:** the [T] part is falsified by discovery of a **second** $O(1)$ Yukawa coupling (e.g. a fourth-generation or vector-like quark with $y \sim 1$ coupling to the same Higgs), or by $y_t$ drifting far from $O(1)$. The [C] part is falsified by a significant shift of $m_t^{\text{exp}}$ (current: $172.57 \pm 0.29$ GeV).
 
-**Status:** [T] Theorem — theorem 5.1 ([status registry](/docs/reference/status-registry), [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy)).
+**Status:** "exactly one $O(1)$ Yukawa" — **[T]**; numerical $m_t$ — **[C]**. **Current verdict: PASSING** (one and only one $O(1)$ Yukawa observed; $y_t \approx 0.94$).
 
 ---
 
@@ -275,14 +275,14 @@ The octonionic correction to the [Higgs sector](/docs/physics/particle-physics/h
 ### F-δ_CP: CKM CP-phase from the Fano phase {#f-δ_cp-cp-фаза-ckm-из-фано-фазы}
 
 $$
-\delta_{\text{CP}} \approx 64° \pm 5°
+\delta_{\text{CP}} \approx 64.5° \pm 5°
 $$
 
-The [CKM matrix](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения) CP-phase is derived from the geometric phase of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). Observed value: $\delta_{\text{CP}}^{\text{exp}} = 69° \pm 4°$. At combined uncertainty $\sigma_{\mathrm{comb}} = \sqrt{5^2 + 4^2} \approx 6.4°$ the discrepancy is $5°/6.4° \approx 0.8\sigma$.
+The [CKM matrix](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения) CP-phase is derived from the geometric phase of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). Observed value (PDG world average, CKM angle $\gamma$): $\delta_{\text{CP}}^{\text{exp}} = 65.9° \pm 3.3°$. At combined uncertainty $\sigma_{\mathrm{comb}} = \sqrt{5^2 + 3.3^2} \approx 6.0°$ the discrepancy is $1.4°/6.0° \approx 0.2\sigma$.
 
-**Testability:** Refinement of the experimental value at LHCb and Belle II. The prediction is falsified if $\delta_{\text{CP}}^{\text{exp}}$ shifts beyond $\sim 2\sigma$ from $64°$ (i.e. beyond $[54°, 74°]$).
+**Testability:** Refinement of the experimental value at LHCb and Belle II. The prediction is falsified if $\delta_{\text{CP}}^{\text{exp}}$ settles beyond $\sim 2\sigma$ from $64.5°$ (i.e. outside $[54°, 75°]$).
 
-**Status:** [H] Hypothesis — depends on the [Fritzsch texture](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур) and loop corrections.
+**Status:** [H] Hypothesis — depends on the [Fritzsch texture](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур) and loop corrections. **Current verdict: PASSING** ($0.2\sigma$).
 
 ---
 
@@ -322,21 +322,23 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 
 ---
 
-### Summary table of predictions
+### Summary table of predictions {#summary-table-of-predictions}
 
-| Code | Prediction | Falsification criterion | Experiment | Status |
-|-----|-------------|------------------------|-------------|--------|
-| **F-Gap-1** | $\langle\mathrm{Gap}_{\mathrm{intra}}\rangle < \langle\mathrm{Gap}_{\mathrm{inter}}\rangle$ | Systematically $\mathrm{Gap}_{\mathrm{intra}} \geq \mathrm{Gap}_{\mathrm{inter}}$ | fMRI (ISF) | [H] |
-| **F-Gap-2** | Block transparency by Fano triplets | Absence of block structure in coherences | fMRI | [T] |
-| **F-ξ** | $\xi_F \sim 160$ pc | Absence of preferred scale $\sim 160$ pc | LSS surveys | [T] |
-| **F-τ_p** | $\tau_p \sim 6.7 \times 10^{37}$ years | $\tau_p < 10^{36}$ years | Hyper-K | [H] |
-| **F-m_t** | $m_t \approx 173$ GeV | Significant shift in $m_t^{\text{exp}}$ | Colliders | [T] |
-| **F-ISF** | 6–12 ISF components | $N_{\text{ISF}} \notin [6, 12]$ | fMRI | [H] |
-| **F-Neural** | Threshold $P = 2/7$, monotonic $\Phi$(connectivity) | Gradual transition without threshold | fMRI/EEG (anaesthesia) | [C with bridge] |
-| **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] |
-| **F-δ_CP** | $\delta_{\text{CP}} \approx 64° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 74°]$ | LHCb, Belle II | [H] |
-| **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [H] |
-| **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] |
+| Code | Prediction | Falsification criterion | Experiment | Status | Current verdict (2026) |
+|-----|-------------|------------------------|-------------|--------|--------|
+| **F-Gap-1** | $\langle\mathrm{Gap}_{\mathrm{intra}}\rangle < \langle\mathrm{Gap}_{\mathrm{inter}}\rangle$ | Systematically $\mathrm{Gap}_{\mathrm{intra}} \geq \mathrm{Gap}_{\mathrm{inter}}$ | fMRI (ISF) | [H] | UNTESTED |
+| **F-Gap-2** | Block transparency by Fano triplets | Absence of block structure in coherences | fMRI | [T] | UNTESTED |
+| **F-ξ** | $\xi_F \sim 160$ pc | Absence of preferred scale $\sim 160$ pc | LSS surveys | [T] | UNTESTED |
+| **F-τ_p** | $\tau_p \sim 6.7 \times 10^{37}$ years | $\tau_p < 10^{36}$ years | Hyper-K | [H] | CONSISTENT (above sensitivity; $\tau_p > 2.4\times10^{34}$) |
+| **F-m_t** | Exactly one $O(1)$ Yukawa [T]; $m_t \approx 173$ GeV [C] | A second $O(1)$ Yukawa; significant $m_t$ shift | Colliders | [T]+[C] | **PASSING** ($y_t \approx 0.94$, unique) |
+| **F-ISF** | 6–12 ISF components | $N_{\text{ISF}} \notin [6, 12]$ | fMRI | [H] | PARTIAL (canonical resting-state decompositions report 7–17 networks) |
+| **F-Neural** | Threshold $P = 2/7$, monotonic $\Phi$(connectivity) | Gradual transition without threshold | fMRI/EEG (anaesthesia) | [C with bridge] | PARTIAL (clinical PCI threshold 0.31 maps to $P_{\text{crit}}$ — [calibration §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)) |
+| **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] | UNTESTED (current bounds $\sim O(1)$) |
+| **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [H] | **PASSING** ($65.9° \pm 3.3°$, $0.2\sigma$) |
+| **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [H] | **PASSING** ($\theta_{12}^{\text{exp}} \approx 12.96°$) |
+| **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] | **PASSING** ($|d_n| < 1.8\times10^{-26}\,e\cdot$cm, consistent with 0) |
+
+**Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
 :::warning Status of predictions
 Predictions marked [T] are based on rigorously proved theorems (see [status registry](/docs/reference/status-registry)). The [octonionic bridge](/docs/proofs/minimality/theorem-octonionic-derivation) is fully closed [T] (T15). Predictions marked [H] require additional computations or contain gaps in the physical arguments.

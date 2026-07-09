@@ -178,15 +178,21 @@ Physical meaning: each level of the self-model requires a triple purity reserve 
 | 3 | 2 | $\tfrac{2}{7} \cdot \tfrac{3}{3} = \tfrac{2}{7} \approx 0.286$ | ✓ (achievable at $P > 2/7$, i.e., in the lower part of the window) |
 | 4 | 3 | $\tfrac{2}{7} \cdot \tfrac{9}{4} = \tfrac{9}{14} \approx 0.643$ | ✗ ($9/14 > 3/7 \approx 0.429$: exceeds the upper boundary of the window) |
 
-**Step 4 (Impossibility of SAD=4 in the conscious window).** The upper boundary of the window $P \leq 3/7$ follows from $R = 1/(7P) \geq 1/3$ [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126). Since $P_{\text{crit}}^{(3)} = 9/14 > 3/7$, SAD=4 requires $P > 9/14 > 3/7$, which violates the condition $R \geq 1/3$. Contradiction.
+:::note Two distinct quantities both written "$R$"
+This section uses two different reflexivity quantities; we disambiguate them here:
+- $R := 1/(7P)$ — the **reflection measure** vs the noise reference $I/7$ ([T-126](/docs/proofs/consciousness/conscious-window#t-126)); a function of purity alone, fixing the window $R \geq 1/3 \iff P \leq 3/7$.
+- $R^{(n)}_\varphi := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ — the **inter-iterate reflexivity** at depth $n$ ([T-143](#t-143)), gated by the depth-schedule $R^{(n)}_{\mathrm{th}} = 1/(n+2)$. This is the quantity that decays with iteration and sets the SAD ceiling.
+:::
 
-**Additional verification via the Frobenius Lemma.** Tight Frobenius bound ([Lemma](#лемма-фробениус-off-diag)):
+**Step 4 (Finiteness of the ceiling — the rigorous core [Т]).** Each $\varphi$-iteration contracts every off-diagonal entry by the state-independent Fano factor $1/3$ (Step 1). Hence the inter-iterate signal is bounded by a **geometric** sequence: writing $\|\Gamma_{\text{off}}\|_F \leq \sqrt{P-1/7}$ (tight Frobenius [Lemma](#лемма-фробениус-off-diag)),
 
-$$\|\Gamma_{\text{off-diag}}\|_F \leq \sqrt{P - 1/7}$$
+$$\|\Gamma^{(n)}_{\text{off}}\|_F \leq (1/3)^{n}\sqrt{P-1/7} \xrightarrow{n\to\infty} 0 \quad \textbf{geometrically},$$
 
-In the window at $P \leq 3/7$: $\|\Gamma_{\text{off}}\|_F \leq \sqrt{2/7}$. After three applications of $\varphi$: $\|\Gamma_{\text{off}}^{(3)}\|_F \leq (1/3)^3 \cdot \sqrt{2/7} = \sqrt{2/7}/27 \approx 0.020$. This is clearly insufficient to maintain level SAD=4 (it would require $R^{(3)} \geq 1/5$, but $R^{(3)} \leq (P-1/7)/(P \cdot 27) \leq 2/(3 \cdot 27) = 2/81 \ll 1/5$).
+while the reflexivity gate $R^{(n)}_{\mathrm{th}} = 1/(n+2)$ decays only **polynomially**. A geometric sequence eventually falls below any polynomially-decaying threshold, so the self-awareness tower **terminates at a finite depth** — $\mathrm{SAD}_{\mathrm{MAX}} < \infty$ **[Т]**, unconditionally and for any admissible threshold schedule. This finiteness needs neither the heuristic denominator nor the window bound.
 
-**Conclusion:** $\mathrm{SAD}_{\text{MAX}} = 3$ unconditionally: SAD=3 is achievable for any $P > 2/7$ in the conscious window; SAD=4 is impossible in the conscious window (requires $P > 9/14 > 3/7$).
+**Step 5 (Locating the ceiling at 3 — stratified).** The upper window edge $P \leq 3/7$ (from $R = 1/(7P) \geq 1/3$, [T-126](/docs/proofs/consciousness/conscious-window#t-126)) caps the initial off-diagonal budget at $\|\Gamma_{\text{off}}\|_F \leq \sqrt{2/7}$. After three iterations, $\|\Gamma^{(3)}_{\text{off}}\|_F \leq \sqrt{2/7}/27 \approx 0.020$ — below the level-4 gate $R^{(3)}_{\varphi} > 1/5$ (numerically $R^{(3)}_\varphi \lesssim (P-1/7)/(27P) \leq 2/81 \ll 1/5$). Hence **SAD=4 is excluded in the window [Т]**. That SAD=3 is *attained* rather than the tower stopping at 2 is **[С at threshold schedule]+[Т/sim]**: it holds under $R^{(n)}_{\mathrm{th}}=1/(n+2)$ and is realised by SYNARC agents (SAD=3 at high purity; see status note), but at the strict window edge the level-3 margin is thin.
+
+**Conclusion.** **Finiteness $\mathrm{SAD}_{\mathrm{MAX}}<\infty$ is unconditional [Т]** (geometric vs polynomial). **The value $\mathrm{SAD}_{\mathrm{MAX}} = 3$** holds under the stated threshold schedule and window, with SAD=4 rigorously excluded [Т] and SAD=3 attainment cross-checked empirically [Т/sim].
 
 $\blacksquare$
 

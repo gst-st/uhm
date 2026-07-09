@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import Translate, {translate} from '@docusaurus/Translate';
+import {cellOf, tr} from '@site/src/data/coherences';
 
 import styles from './index.module.css';
 
@@ -292,42 +293,10 @@ function CoherenceVisualization() {
   );
 }
 
-// Интерпретации элементов матрицы когерентности
-const matrixInfo: Record<string, { name: string; desc: string }> = {
-  // Диагональ (населённости)
-  AA: { name: 'Articulation', desc: 'Distinguishing activity' },
-  SS: { name: 'Structure', desc: 'Form stability' },
-  DD: { name: 'Dynamics', desc: 'Process activity' },
-  LL: { name: 'Logic', desc: 'Internal consistency' },
-  EE: { name: 'Interiority', desc: 'Intensity of interior states' },
-  OO: { name: 'Ground', desc: 'Connection to source' },
-  UU: { name: 'Unity', desc: 'Integration' },
-  // Coherences (21 pairs)
-  AS: { name: 'Morphogenesis', desc: 'Distinctions → stable forms' },
-  AD: { name: 'Actualization', desc: 'Distinction → actual process' },
-  AL: { name: 'Predication', desc: 'Distinction → logical predicate' },
-  AE: { name: 'Apperception', desc: 'Distinction → interiority' },
-  AO: { name: 'Spontaneity', desc: 'Distinctions from ground' },
-  AU: { name: 'Differentiation', desc: 'Distinction within the whole' },
-  SD: { name: 'Persistence', desc: 'Form through process' },
-  SL: { name: 'Nomos', desc: 'Structure with necessity' },
-  SE: { name: 'Representation', desc: 'Structure in interiority' },
-  SO: { name: 'Archetype', desc: 'Forms from ground' },
-  SU: { name: 'Symmetry', desc: 'Structural unity' },
-  DL: { name: 'Regulation', desc: 'Logically governed process' },
-  DE: { name: 'Affection', desc: 'Process → interiority' },
-  DO: { name: 'Genesis', desc: 'Generation from ground' },
-  DU: { name: 'Teleology', desc: 'Directed change' },
-  LE: { name: 'Evidence', desc: 'Logic in interiority' },
-  LO: { name: 'Foundation', desc: 'Logic from ground' },
-  LU: { name: 'Consistency', desc: 'Non-contradiction of the whole' },
-  EO: { name: 'Immanence', desc: 'Ground in interiority' },
-  EU: { name: 'Synthesis', desc: 'Integration into whole' },
-  OU: { name: 'Plenitude', desc: 'Source ≡ whole' },
-};
-
-// Матрица когерентности Γ
+// Матрица когерентности Γ — имена/смыслы из единого источника (src/data/coherences.ts)
 function CoherenceMatrixVisualization() {
+  const {i18n} = useDocusaurusContext();
+  const locale = i18n.currentLocale;
   const dims = ['A', 'S', 'D', 'L', 'E', 'O', 'U'];
   const [tooltip, setTooltip] = useState<{
     row: string; col: string; name: string; desc: string;
@@ -335,20 +304,16 @@ function CoherenceMatrixVisualization() {
   } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const getInfo = (i: number, j: number) => {
-    const key = i <= j ? `${dims[i]}${dims[j]}` : `${dims[j]}${dims[i]}`;
-    return matrixInfo[key];
-  };
-
   const handleMouseEnter = (e: React.MouseEvent, i: number, j: number) => {
     const container = containerRef.current;
     if (!container) return;
     const cRect = container.getBoundingClientRect();
     const tRect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    const info = getInfo(i, j);
+    const cell = cellOf(dims[i], dims[j]);
     setTooltip({
       row: dims[i], col: dims[j],
-      name: info.name, desc: info.desc,
+      name: tr(cell.name, locale),
+      desc: tr(cell.meaning, locale),
       x: tRect.left - cRect.left + tRect.width / 2,
       y: tRect.top - cRect.top,
     });
@@ -384,7 +349,7 @@ function CoherenceMatrixVisualization() {
         </div>
       )}
       <div className={styles.matrixCaption}>
-        Coherence Matrix Γ ∈ ℂ⁷ˣ⁷
+        <Translate id="homepage.matrix.caption">Coherence Matrix Γ ∈ ℂ⁷ˣ⁷</Translate>
       </div>
     </div>
   );

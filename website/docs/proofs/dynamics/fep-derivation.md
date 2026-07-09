@@ -148,7 +148,7 @@ $$
 \varphi(\Gamma) = \lim_{\tau \to \infty} e^{\tau \mathcal{L}_\Omega}[\Gamma]
 $$
 
-where $\mathcal{L}_\Omega$ is the logical Liouvillian.
+where $\mathcal{L}_\Omega$ is the logical Liouvillian, and the limit is read as the projector onto the zero mode of the **linearised** generator (only the linear part $\mathcal{L}_0$ is primitive; the full $\mathcal{L}_\Omega=\mathcal{L}_0+\mathcal{R}$ has the nontrivial fixed point $\rho^*_\Omega\neq I/7$ of T-96 — see the [convention note](/docs/proofs/categorical/formalization-phi)).
 
 **Step 2: Dissipative structure of $\mathcal{L}_\Omega$.**
 

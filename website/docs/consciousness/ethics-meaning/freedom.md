@@ -53,7 +53,7 @@ UHM proposes a solution that fits none of the traditional positions:
 ## Chapter roadmap
 
 1. **The problem** — how to reconcile the determinism of equations with the experience of freedom
-2. **Resolution via ∞-categories** — multiplicity of paths with uniqueness of goal
+2. **Resolution** — uniqueness of goal ($T$ inevitable) with latitude in the flat directions of the free energy (philosophical reading: many trajectories, all homotopic)
 3. **Finite-dimensional Freedom measure** — Hessian of free energy [T]
 4. **Connection to consciousness** — L2 agents are aware of the multiplicity of trajectories
 5. **Ethical consequences** — responsibility and connection to meaning
@@ -69,7 +69,7 @@ In this document:
 :::
 
 :::info Status: Formalised [T]
-Freedom of will is formalised in two equivalent ways: (1) through the ∞-categorical structure of the theory (multiplicity of paths to terminal object T); (2) through the finite-dimensional definition $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$, where $\mathcal{H}_\Gamma$ is the Hessian of the free-energy functional. Monotonicity, extreme values, and $G_2$-invariance are proven — see [Consequences from the axioms](/docs/core/foundations/consequences#freedom-конечномерное).
+Freedom of will is formalised by the finite-dimensional measure $\text{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]**, where $\mathcal{H}_\Gamma$ is the Hessian of the free-energy functional — the number of **flat directions** along which the agent may move without energy penalty. Monotonicity, extreme values, and $G_2$-invariance are proven — see [Consequences from the axioms](/docs/core/foundations/consequences#freedom-конечномерное). The ∞-categorical "multiplicity of trajectories to $T$" is a **philosophical reading**, not a second technical definition: the mapping space $\mathrm{Map}(\Gamma,T)$ is contractible (all paths to $T$ are homotopically equivalent — this is the uniqueness of the arrow of time), so the measure lives in the zero-mode geometry $\dim\ker\mathcal H_\Gamma$, not in a path count.
 :::
 
 ---
@@ -226,7 +226,7 @@ $$
 - $\dim\ker(\mathcal{H}_\Gamma)$ — the number of independent 'flat' directions
 - $+1$ — accounts for the trivial path (staying in place)
 
-**Motivation.** In the $\infty$-categorical definition $\pi_0(\text{Map}(\Gamma, T)^{\text{non-trivial}})$ is the number of 'distinct' trajectories to $T$ that cannot be continuously deformed into one another. The finite-dimensional equivalent: the number of **distinct** directions in state space along which the free energy does not change (zero modes of the Hessian). Each zero mode is an **independent choice**: the system can move in that direction without an energy penalty.
+**Motivation.** Freedom is the number of **distinct directions in state space along which the free energy does not change** (zero modes of the Hessian). Each zero mode is an **independent choice**: the system can move in that direction without an energy penalty. (The ∞-categorical object is the tangent dimension of the free-energy critical manifold; it is **not** $\pi_0(\mathrm{Map}(\Gamma,T))$, which is trivial since that mapping space is contractible.)
 
 **Everyday analogy:** Standing on top of a hill (a saddle point), you can go in **any** downward direction — all zero modes, high Freedom. Standing in a deep valley (a minimum of $\mathcal{F}$), you have one 'path' — upward out of the valley (Freedom = 1). On a mountain pass — you can walk along the ridge or descend into one of two valleys (Freedom = 2–3).
 
@@ -447,7 +447,7 @@ A conscious agent (L2+) is aware of the **multiplicity** of trajectories and mak
 
 ### 7.1 Responsibility
 
-The multiplicity of paths grounds **moral responsibility**:
+The latitude among flat directions (genuine alternatives with no energy penalty) grounds **moral responsibility**:
 
 - An agent **could have** chosen a different path (Freedom > 1)
 - The choice of this path is the result of the agent's **decision** ($\varphi$ selects a specific trajectory)

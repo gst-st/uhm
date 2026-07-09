@@ -282,7 +282,7 @@ Collective [consciousness](/docs/consciousness/foundations/self-observation#ме
 
 **Epistemic stratification:**
 - **Non-triviality [T]:** The composite has $P > 1/7$ unconditionally ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T])
-- **Viability [T]:** $P > 2/7$ unconditionally for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора) [T])
+- **Viability [T at backbone lower-bound]:** $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound])
 
 **Limitation:** The specific threshold $\Phi_{\min}$ is an open question for empirical calibration.
 :::
@@ -770,6 +770,22 @@ Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If
 4. *Falsification:* computed $\lambda_{\text{gap}}$ lies outside the range of neural oscillations.
 
 **Status:** [H] (hypothesis). Requires: (1) calibration of $\omega_0$ from neurodata, (2) computation of $\lambda_{\text{gap}}$ for realistic Lindblad parameters.
+
+---
+
+## Decision Protocols: pass/fail for the near-term testable subset {#decision-protocols}
+
+A prediction earns scientific weight only with an explicit **decision rule**: what measured value counts as PASS, what counts as FAIL, at what sample size. Below are the protocols for the predictions testable with current instruments (the physics-sector pass/fail table lives in [Falsifiability](/docs/reference/falsifiability#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного)). Estimation of $\widehat\Gamma$, $\widehat P$ and the required $N$ follow the [Γ-tomography theorem §6.4](/docs/applied/coherence-cybernetics/measurement#оценка-gamma).
+
+| Pred | Protocol (observable → decision) | PASS | FAIL | Current status (2026) |
+|---|---|---|---|---|
+| **5–7** (thresholds) | Anaesthesia induction/emergence; estimate $\widehat P(t)$ via a calibrated PCI/EEG embedding; locate loss/recovery of consciousness (LOC/ROC) | LOC/ROC coincides with $\widehat P$ crossing $2/7$ within one anaesthetic time-constant | $\widehat P$ crosses $2/7$ with no behavioural transition, or LOC/ROC occurs at $\widehat P$ far from $2/7$ | PARTIAL — clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$ ([calibration §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)) |
+| **1** (No-Zombie) | For a system passing viability with $\mathcal{D}_\Omega \neq 0$, estimate $\widehat{\mathrm{Coh}}_E$ | every such system has $\widehat{\mathrm{Coh}}_E > 1/7$ (CI excludes $1/7$) | a viable dissipative system with $\widehat{\mathrm{Coh}}_E \leq 1/7$ | UNTESTED (needs $\pi_{\text{bio}}$) |
+| **2** ($\kappa \propto \mathrm{Coh}_E$) | Perturb interoceptive integration; measure recovery rate $\widehat\kappa$ against $\widehat{\mathrm{Coh}}_E$ across conditions | $\widehat\kappa$ monotone increasing in $\widehat{\mathrm{Coh}}_E$, slope $> 0$ at $p < 0.01$ | no dependence, or negative slope | UNTESTED |
+| **12** ($\mathrm{SAD}_{\max} = 3$) | In an AGI/SYNARC substrate, attempt to instantiate a stable 4th self-model level | no stable $\mathrm{SAD} > 3$ over $N \geq 500$ runs | one reproducible stable $\mathrm{SAD} = 4$ | CONSISTENT — SYNARC $500+$ Γ, none exceeded $3$ |
+| **21** ($\pi_{\mathrm{bio}}$) | Reconstruct $\widehat\Gamma$ from EEG per [Γ-tomography §6.4](/docs/applied/coherence-cybernetics/measurement#оценка-gamma); check PSD, unit trace, test–retest | $\widehat\Gamma \succeq 0$, reproducible across sessions (within the tomography CI) | non-PSD or irreproducible embedding | UNTESTED (reference implementation pending) |
+
+**Verdict legend.** **PASSING** — measurement inside the pass band; **CONSISTENT** — not excluded, but beyond current sensitivity; **PARTIAL** — indirect/calibration-dependent support; **UNTESTED** — no experiment has probed the band. A single FAIL falsifies the corresponding claim at its status level. The physics-sector pass/fail table (with current 2026 verdicts) lives in [Falsifiability →](/docs/reference/falsifiability#summary-table-of-predictions).
 
 ---
 

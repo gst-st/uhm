@@ -185,7 +185,7 @@ where:
 :::note Level statuses
 - **L0–L2**: stable states for biological systems
 - **L3**: metastable state (finite lifetime $\tau_3$); threshold $K = 4$ **[T]** from quadratic decomposition ([T-67](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4))
-- **L4**: theoretical limit **[C]**, unattainable for systems with nonzero decoherence ($R^{(n)} \to 0$); an attractor, not a physical state ([C19](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-недостижимость))
+- **L4**: theoretical limit; categorical unreachability **[T]** ([T-86](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная): $L4=\mathrm{colim}_{n}\tau_{\leq n}(\mathbf{Exp}_\infty)$ not reachable in finitely many steps, + Lawvere incompleteness T-55) — an attractor, not a physical state (the coherence-survival ratio $S^{(n)}\to 0$; the fidelity $R^{(n)}_{\mathrm{fid}}\to 1$ is a different quantity, see [disambiguation](/docs/proofs/consciousness/interiority-hierarchy#теорема-4-3))
 - **SAD metric** [T], SAD_MAX = 3 [T] (T-142): generalization of L0–L4 to the continuous case via the representational tower; SAD = max{k : R^(k) > 1/(k+2)}, spectral formula [T], stress-dependent regime [T] — [Depth tower](/docs/consciousness/hierarchy/depth-tower#sad)
 :::
 
@@ -203,7 +203,7 @@ where:
 | **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 physical parameters | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 | **Electroweak sector uniqueness** | $SU(2)_L \times U(1)_Y$ is the unique rank-4 construction from $\kappa_0$ and axioms A1–A5 | [T] | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
-| **Exactly 3 generations** | $N_{\text{gen}} = 3$: $\leq 3$ from swallowtail $A_4$ + $\geq 3$ from $(1,2,4) \subset \mathbb{Z}_7^*$ | [T] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
+| **Three generations** | $N_{\text{gen}} = 3$: exact count $|\mathrm{QR}(7)| = (7-1)/2 = 3$ **[T]**; physical identification [I] | [T]+[I] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
 | **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$ via octonionic $f_{ijk}$ | [T] | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
 | **Source instability** | $\Gamma_\odot = I/7$ is non-stationary: $F_0 \neq 0$, drift toward $\rho^*$, self-amplification | [T] | [Proof](./physics/cosmology-phys/origin#доказательство-нестабильности) |
 | **Free will** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; monotonicity under CPTP, $G_2$-invariance | [T] | [Theorem](./core/foundations/consequences#freedom-конечномерное) |
@@ -217,7 +217,7 @@ where:
 | **Cohomological vanishing of $\Lambda$** | $\Lambda_{\text{global}} = 0$ from $H^n(X) = 0$; observed $\Lambda$ is a local effect | [T] | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
 | **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [T] | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
 | **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + SUSY ($7-7=0$) + APS index | [T] | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
-| **Lorentzian signature** | Finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$, KO-dimension 6 → (+,−,−,−) | [T] | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
+| **Lorentzian signature** | $(1,3)$-split [T] (1 time from Page–Wootters, 3 space from $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader) | [T]+[T at r.p.] | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
 | **Morita equivalence 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$; all 7D formulas are exact | [T] | [Theorem](./core/structure/dimension-e) |
 | **Spectral gap of Fano dissipator** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD symmetry); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-operator (replacement channel)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, monotonicity, fixed point $\rho_*$ | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
@@ -225,7 +225,7 @@ where:
 | **Neutrino O-sector Yukawa** | $m_D^{(k)} \propto \varepsilon_0 \sin(2\pi k/7)$; discrepancy $m_2/m_3$: $\times 50 \to \times 1.8$ | [C] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-нейтрино-o-сектор) |
 | **PMNS from anarchic $M_R$** | O-isotropy → dense $M_R$ → angles $O(30°\text{–}60°)$ | [C] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-pmns-анархия) |
 | **Justification of $K=4$ for L3** | Quadratic decomposition $3+1=4$; Bayesian dominance $R^{(2)} \geq 1/4$ | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4) |
-| **Unattainability of L4 for biosystems** | $R^{(n)} \sim R^n \to 0$ for $\varepsilon_{\text{dec}} > 0$; L4 = attractor | [C] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-l4-недостижимость) |
+| **Unattainability of L4 for biosystems** | Categorical: $L4=\mathrm{colim}_n\tau_{\leq n}(\mathbf{Exp}_\infty)$ not finitely reachable (T-86) + $S^{(n)}\sim 3^{-n}\to 0$; L4 = attractor | [T] | [Theorem T-86](./consciousness/hierarchy/interiority-hierarchy#теорема-l4-категориальная) |
 | **CC-5: Fractal closure** | Nontriviality of composite attractor $P > 1/7$ [T]; viability $P > 2/7$ [T for embodied] (T-149) | [T]+[C] | [Theorem](./applied/coherence-cybernetics/theorems#теорема-91-фрактальное-замыкание) |
 | **Topological protection of Gap vacuum** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$; vacuum separated from $\text{Gap}=0$ | [T] | [Theorem](./core/dynamics/composite-systems#теорема-тополог-защита) |
 | **Canonical definition of $f_0$** | $f_0\Lambda^4 = \frac{1}{7}[V_{\text{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\text{Gap}}}(0)]$; UV-finiteness + unique vacuum | [T] | [Theorem](./physics/particle-physics/higgs-sector#теорема-f0-канонический) |
@@ -300,15 +300,15 @@ UHM's primitive is **minimal** among all possible axiomatic choices: one axiom i
 | **[Emergent time](./proofs/dynamics/emergent-time)** | Page–Wootters, stratificational time |
 | **[Categorical formalism](./proofs/categorical/categorical-formalism)** | ∞-topos, derived categories, IC cohomologies |
 | **[Uniqueness theorem](./proofs/categorical/uniqueness-theorem)** | G₂-rigidity: 34 physical parameters |
-| **[Standard Model](./physics/gauge-symmetry/standard-model)** | SM from G₂: electroweak sector [T], 3 generations [T] |
+| **[Standard Model](./physics/gauge-symmetry/standard-model)** | SM from G₂: electroweak sector [T], 3 generations (count [T], identification [I]) |
 | **[Physics](/docs/physics/overview)** | Gauge symmetry, particles, gravity, cosmology |
-| **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa [T], PMNS [C] |
+| **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |
 | **[SUSY from $G_2$](./physics/particle-physics/susy)** | Superpotential [T] (Schur), superpartner spectrum, gravitino |
 | **[Gap thermodynamics](./core/dynamics/gap-thermodynamics)** | Potential $V_{\text{Gap}}$, global minimization [T], sector hierarchy $\varepsilon$ |
 | **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness [T], Einstein equations [T] |
-| **[Cosmological constant](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [T], spectral formula [T], budget $\sim 10^{-120\pm10}$ [C] |
+| **[Cosmological constant](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [T], spectral formula [T], honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ($\gtrsim 27$ orders open) |
 | **[Composite systems](./core/dynamics/composite-systems)** | CC-5 (nontriviality [T], viability [C]), topological protection of Gap [T], emergent geometry |
-| **[Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ for L3 [T], unattainability of L4 [C] |
+| **[Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ for L3 [T], categorical unattainability of L4 [T] (T-86) |
 | **[Depth tower](/docs/consciousness/hierarchy/depth-tower)** | SAD metric [T], depth dynamics (A₄-bifurcation, energy, stress, social), morphological agnosticism [H] |
 | **[Glossary](./reference/glossary)** | Term definitions |
 | **[Notation](./reference/notation)** | Mathematical notation |

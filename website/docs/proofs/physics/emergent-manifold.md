@@ -245,7 +245,7 @@ Hence orientability holds, with explicit cycle. $\checkmark$
 
 **(v) Poincaré duality [Т].** For a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
 
-**(vi) Absolute continuity [Т] (added 2026-04-17).**
+**(vi) Absolute continuity [Т].**
 A spectral triple satisfies *absolute continuity* if the positive linear functional $\mathrm{Tr}_\omega(a|D|^{-p})$ on $A_\mathrm{macro}^\mathrm{spatial}$ (Dixmier trace, $p=3$) is absolutely continuous with respect to the Gelfand measure on $\mathrm{Spec}(A_\mathrm{macro}^\mathrm{spatial})$. **Proof**: on compact finite-dimensional stratum $\mathcal D_7$ the Dixmier trace coincides with the Wodzicki residue (Connes 1994, §IV), which admits a local density given by a smooth volume form derived from the Seeley–de Witt coefficients of $D_\mathrm{eff}$. Since $D_\mathrm{eff}$ is constructed as a direct limit of finite Hermitian operators with spectrum bounded below, its heat kernel $e^{-tD_\mathrm{eff}^2}$ has a well-defined small-$t$ expansion (Gilkey 1995, §1.7), giving a smooth volume density. Hence $\mathrm{Tr}_\omega$ is absolutely continuous. $\checkmark$
 
 **Step 6 (Connes reconstruction theorem).**
@@ -408,13 +408,17 @@ $$
 
 1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [Т], vacuum uniqueness T-64 [Т]).
 
-2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^2 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy group $\mathrm{SU}(2)$. The induced metric on $\Sigma^3$ inherits an isometry group containing the $\mathrm{SU}(3)/\mathrm{SU}(2)$ orbits, giving $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$.
+2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^5 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy $\mathrm{SU}(2)$, so $\mathrm{SU}(3)/\mathrm{SU}(2)\cong S^5$. The vacuum $3$-manifold $\Sigma^3$ is the fixed-radius orbit of the residual $\mathrm{SO}(4)\subset\mathrm{SU}(3)\ltimes(\text{phases})$ acting on the spatial section; its induced metric inherits an isometry group of dimension $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$. (The $\mathrm{SU}(3)$ orbit is $S^5$, not $S^2$; the $3$-manifold arises from the constant-curvature homogeneous structure, not directly as the $\mathrm{SU}(3)$-orbit.)
 
 3. **Maximal dimension.** For a 3-manifold, the maximum isometry-group dimension is $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (attained only on spaces of constant curvature). Hence $\mathrm{Isom}(\Sigma^3)$ has exactly the maximal dimension 6, and $\Sigma^3$ is a space of constant curvature.
 
 4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], T-186(c) [Т]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
 
-5. **Uniqueness.** By Thurston's classification (more precisely, the classification of model geometries), the unique compact orientable 3-manifold of constant positive curvature with a 6-dimensional isometry group is $S^3$ (the 3-sphere, $\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). $\blacksquare$
+5. **Uniqueness (up to spherical space form).** Constant positive curvature + $\dim\mathrm{Isom}=6$ singles out the round metric; the **simply-connected** such 3-manifold is $S^3$ ($\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). If $\pi_1(\Sigma^3)\neq 1$, $\Sigma^3$ could be a spherical space form $S^3/\Gamma$ (e.g. $\mathbb{RP}^3=S^3/\mathbb{Z}_2$, which also has $\dim\mathrm{Isom}=6$). The vacuum's simple-connectivity — from the contractibility of the Gap configuration space (T-64 unique vacuum + $H^1=0$) — selects $\Sigma^3\cong S^3$. $\blacksquare$
+
+:::note Cosmological consistency
+$k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 2018) permits a large but finite $S^3$.
+:::
 
 ---
 

@@ -125,7 +125,7 @@ The third element of the Higgs line is $A = 1$ (awareness). This means:
 This is the foundation of the [Fano selection rule for Yukawa couplings](./yukawa-hierarchy.md#2-фановское-правило-отбора-юкавских-связей).
 
 :::info Generation assignment and number of generations [T]
-The assignment $k=1 \to$ 3rd generation is strictly proved from the unique nonzero tree-level Yukawa coupling — see [Theorem 4.1 (Assignment of 3rd generation)](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1). The complete ordering ($k=4 \to$ 2nd, $k=2 \to$ 1st) is strictly proved — [Theorem 4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-3) [T]. The number of generations $N_{\text{gen}} = 3$ is strictly proved from a two-sided argument ($\leq 3$ from swallowtail + $\geq 3$ from $(1,2,4) \subset \mathbb{Z}_7^*$) — see [Theorem $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) [T].
+The assignment $k=1 \to$ 3rd generation is strictly proved from the unique nonzero tree-level Yukawa coupling — see [Theorem 4.1 (Assignment of 3rd generation)](/docs/physics/particle-physics/fermion-generations#thm-gen-4-1). The complete ordering ($k=4 \to$ 2nd, $k=2 \to$ 1st) is strictly proved — [Theorem 4.3](/docs/physics/particle-physics/fermion-generations#thm-gen-4-3) [T]. The number of generations $N_{\text{gen}} = 3$ has composite status **count [T], identification [I]**: the count is the exact cardinality $|\mathrm{QR}(7)| = (7-1)/2 = 3$ **[T]** (group-theoretic, topology-independent), and only the physical identification of the classes with generations is [I] — see [Theorem $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
 :::
 
 ### 1.5 Why the E-U channel defines electroweak physics
@@ -146,7 +146,7 @@ The $E$-$U$ channel is distinguished for three reasons:
 
 1. **Algebraic:** $E$-$U$ is the unique channel in the $\bar{3}$-sector not containing the $L$-dimension. In fermionic configurations ($R \to 0$) the $L$-channels are fixed, and only $E$-$U$ remains free for defining chirality.
 
-2. **From Fano structure:** in the $\bar{3}$-sector there exists one Fano line $\{L,E,U\}$. The chirality operator $\Gamma_{LEU}$ is defined by this line. $\text{Gap}(E,U)$ is the specific coherence broken by the Higgs, while $\text{Gap}(L,E)$ and $\text{Gap}(L,U)$ define the interiority level.
+2. **From Fano structure:** the unique Fano line through $E$ and $U$ is $\{A,E,U\}$ (the registry-canonical Higgs line, T.1.3; its third point $A$ lies in the $3$-sector — **no** Fano line lies entirely within $\bar 3=\{L,E,U\}$, since $\{L,E,U\}=\{4,5,6\}$ is not a line). The chirality operator $\Gamma_{AEU}$ is defined by this line. $\text{Gap}(E,U)$ is the specific coherence broken by the Higgs, while the remaining line-coherences $\text{Gap}(A,E)$ and $\text{Gap}(A,U)$ fix the doublet embedding.
 
 3. **Physical:** $E$-dimension $\leftrightarrow$ evaluative structure $\leftrightarrow$ electric charge. $U$-dimension $\leftrightarrow$ unification $\leftrightarrow$ weak isospin. At $\text{Gap}(E,U) = 0$ they are indistinguishable → $SU(2)_L$ doublet. At $\text{Gap}(E,U) \neq 0$ they are distinguishable → singlets.
 
@@ -217,9 +217,9 @@ $$M_H^2 = \frac{\partial^2 V_{EU}}{\partial |\gamma_{EU}|^2}\bigg|_{v} = 2\lambd
 
 **(d)** Numerical estimate of the correction (at typical values of Gap parameters):
 
-$$\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5 \; (\text{in Gap units})$$
+$$\delta M_H^2 \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54 \; (\text{in Gap units})$$
 
-This correction is small compared to the main term, but is **nonzero** and gives rise to a falsifiable deviation from SM (see [section 6](#6-фальсифицируемые-предсказания)).
+This correction is small compared to the main term, but is **nonzero** and gives rise to a falsifiable deviation from SM (see [section 6](#6-фальсифицируемые-предсказания)). (The stated inputs give $0.54$; $\approx 5.5$ would require $\bar A\approx0.15$, the confinement-sector coherence, rather than the average $0.047$.)
 
 **(e)** Mechanism for fixing $\lambda_4$: the Chamseddine–Connes spectral action determines $\lambda_4$ via the coefficient $a_4$ and the spectrum $D_{\text{int}}$ ([theorem on Higgs quartic](#теорема-хиггсовская-квартика) [C]). RG evolution from the cutoff scale $\Lambda$ to $v_{\text{EW}}$ brings $\lambda_4(\Lambda) \approx 0.20$ to the observed $\lambda_4(v) \approx 0.13$ (Shaposhnikov–Wetterich result 2010). The remaining free parameter $f_0$ in the spectral action is fixed by calibration. Once it is determined from other observables, $M_H$ will become a full **prediction** of the theory.
 
@@ -422,7 +422,7 @@ The quantitative estimate $\delta\lambda/\lambda_\text{SM} \sim O(10^{-2}\text{-
 
 **(b)** In UHM: $M_H^2 = 2\lambda_4 v^2 + \delta M_H^2$, where:
 
-$$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 5.5$$
+$$\delta M_H^2 = \frac{3\lambda_3^2 \bar{A}^2}{4\mu^2} \approx \frac{3 \cdot (73.8)^2 \cdot (0.047)^2}{4 \cdot 16.6} \approx 0.54$$
 
 **(c)** Octonionic correction to $\lambda_\text{eff} = \lambda_4 + \delta\lambda$:
 
@@ -645,7 +645,7 @@ In physical units with $\mu \sim M_{\text{Planck}}$: the exponent $e^{10.88 \cdo
 
 ### 7.1 Problem statement
 
-Experimental value: $M_H^{\text{exp}} = 125.09 \pm 0.24$ GeV. In the Standard Model $M_H$ is a free parameter. In Chamseddine–Connes noncommutative geometry (NCG) the Higgs mass is **computed** from the spectral triple. Question: can UHM do the same?
+Experimental value: $M_H^{\text{exp}} = 125.20 \pm 0.11$ GeV (PDG 2024). In the Standard Model $M_H$ is a free parameter. In Chamseddine–Connes noncommutative geometry (NCG) the Higgs mass is **computed** from the spectral triple. Question: can UHM do the same?
 
 ### 7.2 Derivation chain for $M_H$ in UHM {#цепочка-mh}
 
@@ -664,7 +664,7 @@ The full chain from axioms to $M_H$ consists of five links:
 ### 7.3 Why $g_4^* = 4\pi^2/63$ is NOT the Higgs quartic {#gap-vs-higgs-quartic}
 
 :::danger Common error
-The Wilson–Fisher fixed point of the Gap theory $g_4^* = 4\pi^2/63 \approx 0.063$ is **not** the Higgs quartic $\lambda_H$ of the Standard Model. The naive identification gives $M_H = \sqrt{2 g_4^*} \cdot v \approx 87$ GeV — an **incorrect** result.
+The Wilson–Fisher fixed point of the Gap theory $g_4^* = 4\pi^2/63 \approx 0.627$ is **not** the Higgs quartic $\lambda_H$ of the Standard Model. The naive identification gives $M_H = \sqrt{2 g_4^*} \cdot v \approx 275$ GeV — an **incorrect** result (the printed "$0.063$"/"$87$ GeV" in earlier drafts mis-evaluated $4\pi^2/63$ by a factor of 10; the correct value $0.627$ still fails to reproduce $M_H=125$ GeV, so the conclusion "$g_4^*\neq\lambda_H$" stands).
 :::
 
 Distinction:
@@ -674,7 +674,7 @@ Distinction:
 | Theory | (0+1)D Gap on $(S^1)^{21}$ | 4D QFT on $M^4$ |
 | Number of fields | 21 coherences | 1 doublet (4 real fields) |
 | Factor in $\beta$ | 63 (from combinatorics $\binom{21}{2} \cdot 3$) | $\sim 24$ (loop with $W$, $Z$, $t$) |
-| IR value | $4\pi^2/63 \approx 0.063$ | $\approx 0.13$ (from $M_H = 125$ GeV) |
+| IR value | $4\pi^2/63 \approx 0.627$ | $\approx 0.13$ (from $M_H = 125$ GeV) |
 | Origin | Wilson–Fisher RG fixed point of Gap | Spectrum $D_{\text{int}}$ + SM RG running |
 
 **Connection between them**: $g_4^*$ determines the IR value of the quartic coupling of the Gap potential $V_{\text{Gap}}$. The Higgs quartic $\lambda_H$ is determined by the *projection* of $V_{\text{Gap}}$ onto the $E$-$U$ channel via the spectral action, and then evolves under 4D SM RG equations.
@@ -721,7 +721,7 @@ UHM determines the Higgs mass through chain (1)–(5), in which links (1)–(3) 
 
 - **Can UHM in principle predict $M_H$?** Yes — the formulas are fully determined.
 - **Does it predict now?** No — requires solving task C16 (numerical computation on $(S^1)^{21}/G_2$).
-- **Naive $g_4^* \to M_H$**: incorrect ($g_4^* \neq \lambda_H$), gives $\sim 87$ GeV.
+- **Naive $g_4^* \to M_H$**: incorrect ($g_4^* \neq \lambda_H$), gives $\sim 275$ GeV.
 - **Status**: **[C]** — conditional on computation of $\varepsilon_i$.
 - **Comparison with NCG**: UHM reproduces the CCM structure, but adds the octonionic $V_3$-correction, analogous to the $\sigma$-field of Chamseddine–Connes–van Suijlekom.
 

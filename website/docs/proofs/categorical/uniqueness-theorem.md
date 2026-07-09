@@ -213,25 +213,26 @@ Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the followi
 - (iv): Axiom A5 (Page–Wootters) — explicit postulate
 - (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
 
-### Lemma G4: Gauge group = $G_2$ [Т] {#лемма-g4}
+### Lemma G4: The octonionic-structure gauge group is $G_2$ [Т] {#лемма-g4}
 
-:::tip Lemma G4 (Maximal gauge group) [Т]
-The maximal subgroup $\mathcal{G} \subseteq U(7)$ whose elements preserve **all five structures** of Lemma G3 is $G_2 = \mathrm{Aut}(\mathbb{O})$.
+:::tip Lemma G4 (Gauge group of the octonionic 3-form) [Т]
+The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is exactly $G_2 = \mathrm{Aut}(\mathbb{O})$.
+
+The remaining structures of Lemma G3 — the atomic projectors (i), the E-projection (iii), the PW clock $O$ (iv), the $\kappa_0$ formula (v) — are **not** $G_2$-invariant; they fix a **functional frame** (a choice of gauge) inside each $G_2$-orbit. Two representations related by $U\in G_2$ carry their frames into one another.
 :::
 
-**Proof.** We proceed in two steps: (A) $G_2 \subseteq \mathcal{G}$ and (B) $\mathcal{G} \subseteq G_2$.
+**Proof.** We show $\mathcal{G} = G_2$ in two inclusions.
 
-**(A) $G_2 \subseteq \mathcal{G}$: every $g \in G_2$ preserves all structures.**
+**(A) $G_2 \subseteq \mathcal{G}$.** By definition $G_2 = \{g\in GL(7,\mathbb{R}) : g^\ast\varphi_3 = \varphi_3\}$ preserves the 3-form, and $G_2\subset SO(7)\subset U(7)$ preserves the Hermitian structure. Hence every $g\in G_2$ preserves $\varphi_3$, i.e. $g\in\mathcal{G}$. $\checkmark$
 
-By definition, $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 \subset \mathbb{C}^7$ and preserves:
-- Octonionic multiplication $e_i \cdot e_j = \varepsilon_{ijk} e_k$
-- The multiplication table $\cong$ Fano plane PG(2,2)
+:::warning The functional labels are frame data, not $G_2$-invariants
+Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur's lemma it has **no** nonzero proper $G_2$-invariant subspace. Consequently:
+- no coordinate axis $|k\rangle$ — in particular the E, O, U axes — is $G_2$-invariant; a generic $g\in G_2$ rotates it;
+- the *set* of atomic projectors $\{|k\rangle\langle k|\}$ is preserved only by the **finite** frame subgroup $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2))\cong PSL(2,7)\subset G_2$ (order 168), not by all of $G_2$;
+- hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
 
-Therefore, $g \in G_2$ preserves:
-- (ii) Fano lines: $g$ permutes the 7 lines (as an automorphism of PG(2,2))
-- (i) The set of atomic projectors: $g|k\rangle\langle k|g^\dagger$ are projectors onto a rotated basis, but the **set** $\{g\Pi_p g^\dagger\} = \{\Pi_{\sigma_g(p)}\}$ is preserved, and the atomic projectors are recovered from intersections: $|k\rangle\langle k| = \Pi_p \Pi_q$ for two lines through point $k$
-
-For (iii), (iv), (v): $G_2 \subset SO(7)$ preserves the metric, and E, O, U transform **within** the $G_2$-orbit. Structures (iii)–(v) are formulated in terms of Fano lines and are covariant by construction. $\checkmark$
+The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\varphi_3$-relative angles (28) — the $48-14=34$ parameters of Corollary 1.
+:::
 
 **(B) $\mathcal{G} \subseteq G_2$: any $U \in \mathcal{G}$ belongs to $G_2$.**
 
@@ -317,9 +318,9 @@ Here **Wigner's theorem** (in Kadison's form) is applied: an affine bijection $\
 
 **Step 4: $U \in G_2$.**
 
-Since both representations satisfy axioms A1–A5, the unitary operator $U$ must preserve **all** structures defined by the axioms (Lemma G3 [Т]): atomic projectors, Fano lines, E-projection, PW-decomposition, formula $\kappa_0$.
+Since both representations satisfy axioms A1–A5, the unitary $U$ must preserve the **octonionic 3-form** $\varphi_3$ carried by the axiomatic Fano structure (Lemma G3(ii) [Т]). The functional labels (atomic projectors, E-projection, PW clock, $\kappa_0$) are carried covariantly: $U$ maps the frame of representation 1 to the frame of representation 2.
 
-By Lemma G4 [Т]: $U \in G_2$. $\blacksquare$
+By Lemma G4 [Т], preservation of $\varphi_3$ gives $U \in G_2$. $\blacksquare$
 
 **Step 5: Uniqueness of $U$.**
 
@@ -397,12 +398,19 @@ The 34 physical parameters are organized as follows:
 | $G_2$-invariant angles | 28 | Mutual position of eigenvectors relative to octonionic structure |
 | **Total** | **34** | Complete set of physical observables |
 
-The gauge-invariant observables include:
+Two classes of observable must be distinguished (irreducibility of $\mathbf 7$, Lemma G4):
 
-- Purity $P = \mathrm{Tr}(\Gamma^2)$ — $G_2$-invariant ($P(U\Gamma U^\dagger) = P(\Gamma)$ for $U \in U(7) \supset G_2$)
-- E-coherence $\mathrm{Coh}_E(\Gamma)$ — invariant within $G_2$-orbit, since $G_2$ preserves the Fano structure and the role of E
-- Reflection measure $R$ — determined via $\varphi(\Gamma)$ and $\Gamma$, both transforming covariantly
-- Integration measure $\Phi$ — analogously
+**Genuinely $G_2$-invariant** (descend to $\mathcal{D}(\mathbb{C}^7)/G_2$):
+- Purity $P = \mathrm{Tr}(\Gamma^2)$ — in fact $U(7)$-invariant, hence $G_2$-invariant
+- Reflection measure $R = 1/(7P)$ — a function of $P$, hence $G_2$-invariant
+- the spectrum (6) and the $\varphi_3$-relative angles (28) — the 34 parameters above
+
+**Frame-dependent** (defined only after the functional frame is fixed by the dynamics; invariant under $\mathrm{Stab}_{G_2}$ of the frame, *not* under all of $G_2$, since no axis is $G_2$-invariant):
+- E-coherence $\mathrm{Coh}_E(\Gamma)$ — references the E-axis
+- Integration measure $\Phi = \sum_{i\neq j}|\gamma_{ij}|^2/\sum_i\gamma_{ii}^2$ — references the coordinate basis
+- the regeneration coefficient $\kappa_0$ — references the O, E, U axes
+
+These frame-dependent quantities are physical because the dynamics ($\mathcal{L}_\Omega$-covariance, Definition G1) pins the frame; they are not among the 34 orbit-invariants.
 
 ---
 

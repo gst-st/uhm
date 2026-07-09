@@ -193,7 +193,7 @@ Let us examine each axiom in detail.
 
 **Formally:** The Grothendieck topology $J$ is induced by the Bures metric $d_B$.
 
-**What follows from it:** The choice of metric is **unique** by the Chentsov–Petz theorem: the Bures metric is the unique monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$. This is not an arbitrary choice — it is a mathematical necessity.
+**What follows from it:** The metric is **canonically selected** — but note the quantum subtlety. Classically (Chentsov 1982) the Fisher–Rao metric is the *unique* monotone metric. Quantum-mechanically (Petz 1996) there is an entire **family** of monotone metrics; the Bures metric is the distinguished **minimal (Petz-extremal)** member of that family, singled out by Uhlmann's purification variational principle and the SLD Cramér–Rao bound (see [T-187](/docs/reference/status-registry) and [emergent-geometry §Bures uniqueness](/docs/physics/gravity/emergent-geometry#единственность-метрики-бюреса)). So the choice is a **canonical selection within the Petz family**, not a naive uniqueness — and all Petz choices are bi-Lipschitz equivalent, so predictions are Petz-robust.
 
 ### Axiom 3: Dimensionality — N = 7
 

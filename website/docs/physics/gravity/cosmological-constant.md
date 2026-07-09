@@ -2,7 +2,7 @@
 sidebar_position: 3
 title: "Cosmological Constant"
 slug: /physics/gravity/cosmological-constant
-description: "Computation of Λ from Gap: spectral formula [T], O-sector dominance [T], triple suppression, Ward identities, zeta-regularization, cohomological cancellation, and SUSY compensation [H] — estimate ~10⁻¹²⁰±¹⁰"
+description: "Computation of Λ from Gap: spectral formula [T], O-sector dominance [T], triple suppression, Ward identities, zeta-regularization, cohomological cancellation, and SUSY compensation [H] — honest bracket 10⁻⁵³·⁵…10⁻⁹³·⁵, the remaining ≳27 orders open"
 ---
 
 # Cosmological Constant
@@ -14,7 +14,7 @@ Computation of the cosmological constant from the Gap formalism. The reader will
 
 ## Overview
 
-The cosmological constant in UHM is determined by the total opacity of the $O$-sector: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [O-sector dominance](#теорема-лямбда-o-доминирование) **[T]** proves that $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — the cosmological constant = "cost of observation". A series of investigations has established **6 perturbative suppression mechanisms**, yielding a combined $10^{-41.5}$ out of the required $10^{-120}$. The [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[T]** establishes the structural formula via moments of the internal Dirac operator; SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ remains **[H]** (the adjoint representation **14** of G₂ is irreducible, the 7+7 decomposition is not justified — see §4a). Cohomological cancellation ($\Lambda_{\text{global}} = 0$ [T]), SUSY compensation **[H]**, and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] supplement the budget to an estimate of **$\sim 10^{-120 \pm 10}$** [C]. The remaining gap is a **computational** task, not a conceptual one. Non-perturbative mechanisms are also investigated: the Gauss sum for Fano phases (refuted at physical $S_0$) and zeta-regularization with Fano character (structural cancellation $Z_\Phi(-k) = 0$, physical interpretation open).
+The cosmological constant in UHM is determined by the total opacity of the $O$-sector: $\Lambda_{\mathrm{Gap}} = \mu^2 \cdot \mathcal{G}_{\mathrm{total}}^{(O)}$. [O-sector dominance](#теорема-лямбда-o-доминирование) **[T]** proves that $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ — the cosmological constant = "cost of observation". A series of investigations has established **6 perturbative suppression mechanisms**, yielding a combined $10^{-41.5}$ out of the required $10^{-120}$. The [spectral formula for $\Lambda_{\text{CC}}$](#теорема-спектральная-лямбда) **[T]** establishes the structural formula via moments of the internal Dirac operator; SUSY compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ remains **[H]** (the adjoint representation **14** of G₂ is irreducible, the 7+7 decomposition is not justified — see §4a). Cohomological cancellation ($\Lambda_{\text{global}} = 0$ [T]) reframes the target as the size of the **local** residual; the SUSY-sector $\varepsilon^{12}$ **absorbs** the perturbative $\varepsilon^6$ (net mean $\sim 10^{-53.5}$), and the sector structure from [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] defines an open **[C]** programme. The honest composed bracket is **$\sim 10^{-53.5}$ to $10^{-93.5}$** ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) — the canonical composition); closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. Non-perturbative mechanisms are also investigated: the Gauss sum for Fano phases (refuted at physical $S_0$) and zeta-regularization with Fano character (structural cancellation $Z_\Phi(-k) = 0$, physical interpretation open).
 
 ---
 
@@ -219,7 +219,7 @@ If SUSY compensation [H] does not hold, then UV terms $O(\Lambda^4)$ and $O(\Lam
 | Step | Content | Result |
 |-----|-----------|----------|
 | Bosonic | $\mathrm{Tr}(1) = 7$ | $H_{\text{int}} = \mathbb{C}^7$ |
-| Fermionic | $H_{\text{ferm}}^{\text{int}} = \mathbb{C}^7$ (internal fermionic modes, $G_2$-singlets) | With exact internal SUSY: $\mathrm{Tr}(1)_{\text{total}} = 7 - 7 = 0$ [H] |
+| Fermionic | $H_{\text{ferm}}^{\text{int}} = \mathbb{C}^7$ (internal fermionic modes, $G_2$-singlets) | Exact "$\mathrm{Tr}(1)_{\text{total}} = 7 - 7 = 0$" is **retracted [✗]** (odd-dim grading trace $\neq 0$; $\mathbf{14}$ irreducible) — physical result via $\varepsilon^{12}$ (T-219), see independence theorem above |
 | SUSY breaking | $m_{3/2} \sim \varepsilon^3 M_P$ | $\Lambda_{\text{CC}} \sim \varepsilon^{12} M_P^4 \sim 10^{-24} M_P^4$ |
 | Sector structure | $Z_\Phi(-2) = 0$ [T] | Winding cancellation; residual from $Z'_\Phi(-2)$ |
 | RG suppression | $\lambda_3 \sim 10^{-7.26}$ | $\lambda_3^2 \sim 10^{-14.5}$ |
@@ -250,12 +250,12 @@ $$
 The adjoint representation **14** of G₂ is **irreducible** — it does not decompose as 7+7 under any standard embedding. The decomposition 14→8+3+3̄ occurs when restricting to SU(3)⊂G₂ (adjoint SU(3) + fundamental + antifundamental), but NOT as 7+7. The claim Tr_int(1)_total = 7−7 = 0 is **not justified**. Status of SUSY compensation: **[H]** (hypothesis requiring non-perturbative analysis on a concrete G₂-manifold).
 :::
 
-:::tip Replacement: T-219 sector-product derivation (2026-04-17)
+:::tip Replacement: T-219 sector-product derivation
 The invalid "$\mathbf{14} \to \mathbf{7} \oplus \mathbf{7}$" argument is replaced by **[T-219](/docs/proofs/categorical/fundamental-closures#t-219) [T at T-64]**, which derives the $\varepsilon^{12}$ suppression **rigorously** from the three-sector decomposition:
 $$\Lambda_\mathrm{SUSY} \sim \varepsilon^{12} M_P^4 = \varepsilon^{4 \cdot k_\mathrm{sec}} M_P^4, \quad k_\mathrm{sec} = 3$$
 via $G_2$-invariant Fano coupling (T-43d [T]) + three-loop nested product × one-loop $\operatorname{STr}(M_k^4) \sim (\varepsilon M_P)^4$ per sector (Martin 2010 SUSY primer). The three sectors are $\mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ (T-48a [T]), each contributing one $\varepsilon^4$ independently. This **does not rely** on any reducibility of the G₂ adjoint — it uses the sector decomposition of the **state space**, which is legitimate.
 
-After T-219, the Λ-budget becomes: perturbative $10^{-41.5}$ [T] + sector-product SUSY $\varepsilon^{12}$ [T at T-64] + cohomological $\Lambda_\mathrm{global} = 0$ [T] + sector minimisation residual [C at T-64] → total $\sim 10^{-120\pm 5}$ [C].
+After T-219 the composition follows the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет): perturbative $10^{-41.5}$ [T] (already includes $\varepsilon^6$); sector-product SUSY $\varepsilon^{12}$ [T at T-64] **absorbs** $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; cohomological $\Lambda_\mathrm{global} = 0$ [T] (exact zero, separate class); sector-minimisation residual [C] (open programme) → honest bracket $\sim 10^{-53.5}$ to $10^{-93.5}$; the rest to $10^{-120}$ is open.
 :::
 :::
 
@@ -376,9 +376,9 @@ Detailed justification of each mechanism with proofs: [Full $\Lambda$ budget: pr
 | Mechanism | Suppression | Status | Note |
 |----------|-----------|--------|------------|
 | Cohomological $\Lambda_{\text{global}} = 0$ | full global cancellation | **[T]** | $H^n(X) = 0$ for $n > 0$ ([details](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
-| SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[H]** | [Spectral formula](#теорема-спектральная-лямбда) gives the scale **[T]**; compensation $\mathrm{Tr}(1)=0$ — **[H]** (G₂-adj **14** is irreducible, 7+7 decomposition not justified) |
-| $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[T]** (math.) | Residual winding contribution |
-| RG $\lambda_3^2$ | $10^{-14.5}$ | **[T]** | RG suppression of the cubic coupling |
+| SUSY-breaking $\varepsilon^{12}$ ($\varepsilon\sim10^{-2}$ central) | $10^{-24}$, **absorbs** the perturbative $\varepsilon^6$ (net $\Delta \approx 10^{-12}$) | **[T at T-64]** scale via [T-219](/docs/proofs/categorical/fundamental-closures#t-219); exact compensation $\mathrm{Tr}(1)=0$ — **[H]** | G₂-adj **14** is irreducible, 7+7 decomposition not justified |
+| $Z'_\Phi(-2)$ | $\times 10^{10}$ — an **enhancement**, excluded from the mean-suppression product | **[T]** (math.) | Residual winding contribution; physical interpretation open |
+| RG $\lambda_3^2$ | $10^{-14.5}$ — **already inside** the perturbative $10^{-41.5}$ (§5.1); listed for reference, not multiplied again | **[T]** | RG suppression of the cubic coupling |
 | Sector ([global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)) | $10^{-40}$ | **[C]** | Global minimization of $V_{\text{Gap}}$ [T]; exact value is a computational task |
 
 ### 5.3 Non-Perturbative Mechanisms
@@ -392,10 +392,10 @@ Detailed justification of each mechanism with proofs: [Full $\Lambda$ budget: pr
 ### 5.4 Summary
 
 $$
-\Lambda_{\mathrm{pert}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{full}} \sim 10^{-120 \pm 10} \cdot M_P^4, \quad \Lambda_{\mathrm{obs}} \sim 10^{-120} \cdot M_P^4
+\Lambda_{\mathrm{pert}} \sim 10^{-41.5} \cdot M_P^4, \quad \Lambda_{\mathrm{bracket}} \sim 10^{-53.5}\ \text{to}\ 10^{-93.5} \cdot M_P^4, \quad \Lambda_{\mathrm{obs}} \sim 10^{-120} \cdot M_P^4
 $$
 
-**Structural closure [T-structural, C-numerical].** Perturbative budget: $10^{-41.5}$. Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]** (scale $\varepsilon^{12}$ [T]; compensation $\mathrm{Tr}(1)=0$ — **[H]**), cohomological cancellation [T], and sector minimization [C] — the full estimated budget is **$\sim 10^{-120 \pm 10}$**, which **matches** the observed value. The entire chain is closed: every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[T]**), and $\theta^*$ follows from T-53 and T-66. The remaining gap is a **computational** task (numerical minimization on $(S^1)^{21}/G_2$), not a conceptual one. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
+**Honest composition [T-structural, C-numerical].** The rows above do **not** all multiply — they fall into three classes ([honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), the canonical composition): **(A)** rigorous mean suppression — perturbative $10^{-41.5}$ [T] with the SUSY-sector $\varepsilon^{12}$ *absorbing* the $\varepsilon^6$ already inside it, net $\sim 10^{-53.5}$; **(B)** the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T], which reframes the question as the size of the *local* residual; **(C)** the sector-minimization programme [C], potentially adding up to $\sim 10^{-40}$. The honest bracket is $10^{-53.5}$–$10^{-93.5}$; the remaining $\gtrsim 27$ orders to $\Lambda_{\mathrm{obs}}$ are **open — computational (Hybrid Monte-Carlo on $(S^1)^{21}/G_2$) plus conceptual (proving the local residual saturates the cohomological bound)**. Every coefficient is determined by $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) **[T]**), so the programme has no free parameters — but it is a programme, not a completed multiplication. Details: [updated budget](/docs/proofs/gap/lambda-budget#обновлённый-бюджет), [structural closure](/docs/proofs/gap/lambda-budget#структурное-замыкание-лямбда).
 
 ---
 
@@ -734,8 +734,8 @@ The discrete set of vacua $\sim 168$ ($|PSL(2,7)|$) is too small for the anthrop
 
 ## 13. Closure Strategy: Three Levels {#стратегия-замыкания}
 
-:::info Status: [C] with structural closure
-Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) ($\Lambda_{\text{global}} = 0$ [T]) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] — the estimated budget reduces to **$\sim 10^{-120 \pm 10}$** [C]. Structural closure is achieved; the remaining gap is a **computational** task (numerical minimization on $(S^1)^{21}$ with $G_2$), not a conceptual one.
+:::info Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$
+Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) ($\Lambda_{\text{global}} = 0$ [T], an exact zero — a separate class) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) (a [C] programme) — the honest composed bracket is **$10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). The remaining $\gtrsim 27$ orders are an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
 :::
 
 The strategy is divided into three levels.
@@ -793,7 +793,7 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 5. **Coherent instanton sum** — destructive interference over topological sectors
 6. **Lattice Monte Carlo** — direct computation of the partition function on $(S^1)^{21}$ with $G_2$-symmetry
 
-**Status: [C] with structural closure** ($\sim 10^{-120 \pm 10}$). All coefficients are determined by $\theta^*$ (T-79 [T]) — no free parameters. The remaining gap is a computational task (numerical minimization on $(S^1)^{21}/G_2$).
+**Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). All coefficients are determined by $\theta^*$ (T-79 [T]) — no free parameters. The remaining $\gtrsim 27$ orders are an open computational + conceptual task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
 
 ---
 

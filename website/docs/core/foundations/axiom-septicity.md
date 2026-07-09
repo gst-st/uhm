@@ -217,13 +217,13 @@ For a holonomic system of dimension $N$, critical purity $P_{\text{crit}} = 2/N$
 | **Spectral** [T] | $\lambda_{\max} \approx 1/2$ | $P = 2/N$ |
 | **Autopoietic** [I] | Breaking $U(N)$ symmetry | $P > 2/N$ |
 
-**Interpretation (structural doubling principle):**
+**Interpretation (majority of the Frobenius weight):**
 
 $$
-\|\Gamma - I_N/N\|_F^2 > \|I_N/N\|_F^2 \quad \Leftrightarrow \quad P > \frac{2}{N}
+\|\Gamma - I_N/N\|_F^2 > \|I_N/N\|_F^2 \quad \Leftrightarrow \quad P > \frac{2}{N} \quad \Leftrightarrow \quad s := \frac{\|\Gamma - I_N/N\|_F^2}{P} > \frac{1}{2}
 $$
 
-Structural deviation from chaos must exceed the chaos scale itself. The factor 2 arises naturally: **structure ≥ chaos**.
+The split $P = \|I/N\|_F^2 + \|\Delta\|_F^2$ is orthogonal (Pythagoras), so the criterion says exactly: the **structural component holds the strict majority** of the state's Frobenius weight. Majority is the unique parameter-free dominance threshold between two orthogonal components — the same plurality principle that gives $R_{\text{th}} = 1/3$ for $K = 3$ hypotheses gives $P_{\text{crit}} = 2/N$ for $K = 2$ components. The "factor 2" is the arithmetic of the majority cut, not a chosen constant.
 
 **Spectral characterization [T]:**
 
@@ -333,10 +333,10 @@ The theory uses two distinct symbols $R$:
 This is the **sole canonical definition** of the formula for $\kappa_0$. Other documents should cite this section rather than duplicate the formula.
 :::
 
-:::tip Status: single layer—theorem [T]
-**Categorical definition [T]:** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$—the norm of the natural transformation between adjoint functors. This follows from [L-unification](/docs/core/foundations/axiom-omega#внутренняя-логика).
+:::tip Status: canonical ansatz [O] + categorical interpretation [I]
+**Categorical reading [I]:** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$—the norm of a natural transformation between the (posited) adjoint functors $\mathcal{D}_\Omega \dashv \mathcal{R}$. The adjunction and the norm identity are *motivated* by [L-unification](/docs/core/foundations/axiom-omega#внутренняя-логика) but not proven; the **operational formula** $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is **[T at the first-order-kinetics model]** — forced by the rapid pre-equilibrium (quasi-steady-state) argument (see the status note and [§Derivation](#вывод-kappa0-cycle-flux) at the end of this section).
 
-**Operational formula [T]:** $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is the **exact consequence** of the categorical definition. Identification $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ is proved via Yoneda embedding + Bures metric + Stinespring’s theorem (see [below](#теорема-kappa0-функториальность)).
+**Operational formula [T at first-order kinetics]:** $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — the product form is **forced** as the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (first-order kinetics excludes min and geometric-mean; see [§Derivation](#вывод-kappa0-cycle-flux)). The identification $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ (Yoneda + Bures + Stinespring) supplies the categorical reading of the same formula.
 :::
 
 Regeneration rate is determined by the structure of Γ:
@@ -518,13 +518,17 @@ $$
 
 Fano-line coherence: $\mathrm{Coh}_\ell(\Gamma) = \|\pi_\ell(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$—projection onto the **associative subalgebra** corresponding to a quaternion triple. All seven Fano projections $\pi_\ell$ are orthogonal in HS **[T]**.
 
-**Completeness:** Each point lies on exactly three Fano lines, hence $\sum_{\ell=1}^{7} P_\ell = 3I$ and
+**Completeness:** Each point lies on exactly three Fano lines, so $\sum_{\ell=1}^{7} P_\ell = 3I$. This does **not** give $\sum_\ell \mathrm{Coh}_\ell = 3$ in general: $\pi_\ell$ keeps the entries on the row/column of the three line-points, and a diagonal entry lies on 3 lines while an off-diagonal *pair* lies on $3+3-\lambda = 5$ lines (Fisher $\lambda=1$). Hence
 
 $$
-\sum_{\ell=1}^{7} \mathrm{Coh}_\ell(\Gamma) = 3
+\sum_{\ell=1}^{7} \mathrm{Coh}_\ell(\Gamma) = \frac{3\,P_{\mathrm{diag}} + 5\,P_{\mathrm{coh}}}{P} = 5 - \frac{2}{1+\Phi},
 $$
 
-for any normalized $\Gamma$.
+which equals $3$ **only** for diagonal $\Gamma$ ($\Phi=0$) and rises toward $5$ as $\Phi\to\infty$. This gives a clean operational witness for the L2 integration threshold:
+
+$$
+\Phi \geq 1 \iff \sum_{\ell=1}^{7}\mathrm{Coh}_\ell(\Gamma) \geq 4. \qquad \textbf{[T]}
+$$
 
 :::note Categorical interpretation
 In the categorical formalism ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$):
@@ -533,7 +537,7 @@ In the categorical formalism ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$):
 - $\mathcal{E}_{E|\bar{E}}$ ↔ **geometric morphism** from $\mathrm{Sh}_\infty(\mathcal{C})$ to $\mathrm{Sh}_\infty(\mathcal{C}_{E|\bar{E}})$
 :::
 
-**Interpretation:** $\mathrm{Coh}_E \in [1/7, 1]$. Minimum for the maximally mixed state ($\mathrm{Coh}_E = 1/7 \approx 0.14$), maximum for a pure E state ($\mathrm{Coh}_E = 1$). High E-coherence means strong activation of the Interiority dimension.
+**Interpretation:** $\mathrm{Coh}_E \in [0, 1]$. The value $1/7 \approx 0.14$ is the **maximally-mixed** value ($\mathrm{Coh}_E(I/7)=1/7$), **not** the minimum: any state with empty E row/column (e.g. $|A\rangle\langle A|$) has $\mathrm{Coh}_E = 0$. The maximum $\mathrm{Coh}_E = 1$ is a pure E state. High E-coherence means strong activation of the Interiority dimension. (Downstream bounds must therefore **not** assume $\mathrm{Coh}_E \geq 1/7$ — cf. the [T-151 correction](/docs/proofs/consciousness/substrate-closure#t-151).)
 
 See also [Genesis protocol](/docs/core/foundations/axiom-omega#genesis-protocol) and [coherence definitions](/docs/applied/coherence-cybernetics/definitions#e-когерентность).
 
@@ -573,7 +577,7 @@ $$
 \|\text{Nat}(\mathcal{D}_\Omega, \mathcal{R})\| = \omega_0 \cdot \frac{|\text{Hom}(O, E)| \cdot |\text{Hom}(O, U)|}{\text{End}(O)}
 $$
 
-Given the proved identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ [T] ([proof](#теорема-kappa0-функториальность)):
+Given the canonical identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ [O] ([motivation](#теорема-kappa0-функториальность)):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \quad \blacksquare
@@ -628,12 +632,12 @@ In practice, $\gamma_{OO} > \varepsilon_\Gamma$ holds for any viable system ($P 
 - $\gamma_{OU} \to 0$: no integration ✓ (no morphisms O → U)
 - $\gamma_{OO} \to 0$: singularity (loss of Ground) ✓ (End(O) = 0)
 
-**Status:** Categorical definition $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ is **theorem [T]** from adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$. Operational $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is **theorem [T]**; identification $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ is the unique functorial choice via Yoneda, Bures metric, and Stinespring.
+**Status:** the operational formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is now **[T at the first-order-kinetics model]** — it is **forced**, not merely selected, by the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (see [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux)). The earlier concern that "min- and geometric-mean forms also satisfy the requirements" is **removed**: those alternatives violate the fifth requirement (first-order/linear-response kinetics) — the geometric mean is sublinear (degree $\tfrac12$, divergent derivative) and the minimum is non-analytic, so neither is an admissible first-order kinetic law. The only residual assumption is that regeneration is a first-order Markov process, which is itself guaranteed by the CPTP/Lindblad structure of the dynamics. The **categorical reading** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ remains a separate **interpretation [I]** / **[C at the adjunction]** (the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and the Nat-norm identity are posited, not proven) — but the operational formula no longer depends on it. Downstream results use the formula, whose status is now [T at first-order kinetics].
 
-#### Theorem (functoriality of $\kappa_0$) [T] {#теорема-kappa0-функториальность}
+#### Functoriality of $\kappa_0$ [O]+[I] {#теорема-kappa0-функториальность}
 
-:::warning Theorem: operational formula for $\kappa_0$ is exact
-Identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ follows from Yoneda, Bures metric, and Stinespring: in $\mathcal{C}_7$ with Bures topology, the “strength” of the CPTP channel $|i\rangle\langle i| \to |j\rangle\langle j|$ equals $|\gamma_{ij}|$ (unique functorial definition). Formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is the exact consequence.
+:::warning Canonical ansatz (not a uniqueness theorem)
+The identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ is **motivated** by Yoneda + Bures + Stinespring: in $\mathcal{C}_7$ with Bures topology, the natural "strength" scalar of the CPTP channel $|i\rangle\langle i| \to |j\rangle\langle j|$ is $|\gamma_{ij}|$. Given this identification, the formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is the **product-type** coupling on $\{O,E,U\}$ — and the product form itself is now **forced** (not merely motivated) by the first-order-kinetics / rapid-pre-equilibrium argument in [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux). **Status:** the operational formula is **[T at first-order kinetics]**; the *categorical* identification $|\text{Hom}(i,j)|\leftrightarrow|\gamma_{ij}|$ (and the underlying adjunction) is the part that remains an interpretive **[I]** choice.
 :::
 
 **Proof (four steps).**
@@ -652,30 +656,46 @@ $$
 
 **Uniqueness:** Any functorial $|\text{Hom}(i,j)|$ compatible with Bures topology and CPTP contractivity equals $|\gamma_{ij}|$.
 
-### Comparison of alternative forms for $\kappa_0$
+### Derivation of $\kappa_0$ by rapid pre-equilibrium — the product form is forced {#вывод-kappa0-cycle-flux}
 
-**Requirements on the form of $\kappa_0$:**
+The product form is **not** merely "selected" among alternatives — it is the **unique** form consistent with first-order regeneration kinetics, via the **quasi-steady-state (rapid pre-equilibrium)** analysis of the regeneration branching. This upgrades $\kappa_0$ from a canonical ansatz **[O]** to a **[T at the first-order-kinetics model]**.
+
+:::note Distinction: a branching rate, not a cyclic flux
+This is a rapid pre-equilibrium (branching) rate, **not** the King–Altman cyclic flux of a Markov cycle $O\!\to\!E\!\to\!U\!\to\!O$ — the latter is the product of the *three* forward rates *around* the cycle over a spanning-tree sum, $\propto\gamma_{OE}\gamma_{EU}\gamma_{UO}/(\text{sum})$, a structurally different object from $\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ (two couplings *out of* $O$ over the $O$-return).
+:::
+
+**The regeneration branching.** Bootstrap regeneration requires the ground node $O$ to feed **both** the interiority channel $O\to E$ (regeneration source) **and** the unity channel $O\to U$ (integration), with $O$-self-persistence $\gamma_{OO}=\mathrm{End}(O)$ setting the ground residence rate. Model $\{O,E,U\}$ as a continuous-time Markov chain with first-order rate constants $\gamma_{OE},\gamma_{OU}$ and return scale $\gamma_{OO}$.
+
+**Rapid pre-equilibrium (quasi-steady state).** When the ground node equilibrates fast relative to the regeneration timescale, the $E$-channel reaches a quasi-steady **branching occupancy** relative to $O$,
+$$p_{E\mid O} \;=\; \frac{\gamma_{OE}}{\gamma_{OO}}\quad(\text{forward-to-return ratio, Briggs–Haldane}),$$
+and the integration step then fires at rate $\gamma_{OU}$ from this $E$-primed ground. The regeneration rate is the product
+
+$$
+\kappa_0 \;=\; \omega_0\,\gamma_{OU}\,p_{E\mid O} \;=\; \omega_0\,\frac{\gamma_{OE}\,\gamma_{OU}}{\gamma_{OO}} \qquad\textbf{[T at first-order kinetics].}
+$$
+
+This is the standard pseudo-first-order (Michaelis–Menten-type) rate for a two-channel branching process — bilinear in the two couplings, inversely proportional to the ground residence. (Numerically verified: rapid pre-equilibrium reproduces $\gamma_{OE}\gamma_{OU}/\gamma_{OO}$; the King–Altman cyclic flux does not.)
+
+**Requirements on the form of $\kappa_0$** (now five, the fifth being load-bearing):
 
 1. **Non-negativity:** $\kappa_0 \geq 0$
 2. **Both channels required:** $\kappa_0 = 0$ when $\gamma_{OE} = 0$ or $\gamma_{OU} = 0$
 3. **Dimensionless normalization:** divide by $\gamma_{OO}$
 4. **Monotonicity:** increasing in $|\gamma_{OE}|$ and $|\gamma_{OU}|$
+5. **First-order (linear-response) kinetics** — analyticity + degree-1 homogeneity in each channel: $\partial\kappa_0/\partial\gamma_{OE}$ is finite, nonzero, and **independent of $\gamma_{OE}$** (the regeneration flux is first-order in each coupling, the defining property of a first-order branching process).
 
 **Candidate forms:**
 
-| Form | Satisfies 1–4? | Comment |
-|-------|-------------|--------|
-| $\frac{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | + | **Selected.** Product enforces both channels |
-| $\frac{\lVert\gamma_{OE}\rVert + \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | — | Breaks (2): $\kappa_0 > 0$ when $\gamma_{OE} = 0$ |
-| $\frac{\min(\lVert\gamma_{OE}\rVert, \lVert\gamma_{OU}\rVert)}{\gamma_{OO}}$ | + | Alternative: stricter bottleneck |
-| $\frac{\sqrt{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}}{\gamma_{OO}}$ | + | Alternative: geometric mean, smoother response |
+| Form | 1–4? | Req. 5 (first-order kinetics)? | Verdict |
+|-------|:----:|:---:|--------|
+| $\frac{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | + | **+** ($\partial_{\gamma_{OE}}\kappa_0 = \gamma_{OU}/\gamma_{OO}$, degree-1) | **Forced** — the unique rapid-equilibrium rate |
+| $\frac{\lVert\gamma_{OE}\rVert + \lVert\gamma_{OU}\rVert}{\gamma_{OO}}$ | — | — | Breaks (2): nonzero at $\gamma_{OE}=0$ |
+| $\frac{\min(\lVert\gamma_{OE}\rVert, \lVert\gamma_{OU}\rVert)}{\gamma_{OO}}$ | + | **—** ($\partial_{\gamma_{OE}}\kappa_0$ jumps $0\!\leftrightarrow\!1/\gamma_{OO}$ — **non-analytic**) | Excluded: not first-order |
+| $\frac{\sqrt{\lVert\gamma_{OE}\rVert \cdot \lVert\gamma_{OU}\rVert}}{\gamma_{OO}}$ | + | **—** ($\partial_{\gamma_{OE}}\kappa_0 \propto \sqrt{\gamma_{OU}/\gamma_{OE}}\to\infty$ as $\gamma_{OE}\to0$ — **degree $\tfrac12$, sublinear**) | Excluded: not first-order |
 
-**Why the product was chosen:** minimal joint requirement that both O→E and O→U channels be active without excessive strictness.
+**Conclusion.** Requirement 5 (first-order branching kinetics) is satisfied **only** by the product form: the geometric mean is sublinear (degree $\tfrac12$, with a divergent derivative), and the minimum is non-analytic (a derivative jump at the bottleneck). Both are ruled out as first-order kinetic laws for the branching rate. Hence the product form is **forced**, not chosen — $\kappa_0 = \omega_0\,\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ **[T at the first-order-kinetics model]**, with residual model-dependence only in the choice to treat regeneration as a first-order Markov process (itself justified by the CPTP/Lindblad structure of the dynamics, which is first-order by construction).
 
-**Empirical discrimination:** Regeneration rate under independent variation of $\gamma_{OE}$ and $\gamma_{OU}$ differs:
-- Product: $\partial \kappa_0 / \partial \gamma_{OE} \propto \gamma_{OU}$
-- Minimum: $\partial \kappa_0 / \partial \gamma_{OE} = 0$ or $1/\gamma_{OO}$ (jump)
-- Sum: $\partial \kappa_0 / \partial \gamma_{OE} = 1/\gamma_{OO}$ (constant)
+**Empirical discrimination (a genuine prediction).** The three candidates predict different responses to independent variation of $\gamma_{OE}$: product $\propto\gamma_{OU}$ (constant slope), geometric mean $\propto\sqrt{\gamma_{OU}/\gamma_{OE}}$ (divergent), minimum a step — measurable in a controlled regeneration assay.
 
 ### Positivity preservation {#сохранение-положительности-s7}
 
@@ -862,8 +882,8 @@ $R > 1/3$ ⇔ $w_m > \max(w_c, w_e)$ when $w_m + w_c + w_e = 1$ and $w_c = w_e$.
 
 #### Formalizing the $R \leftrightarrow P(H_1)$ bridge: quantum-discrimination monotonicity {#формализация-моста-r}
 
-:::tip Theorem (monotonicity of $R$ and Bayesian posterior) [T]
-Reflection $R = 1/(7P)$ is **monotonically coupled** to optimal posterior $P_{\text{opt}}(H_1)$ in three-state quantum discrimination. $R \geq 1/3$ ⇔ $P_{\text{opt}}(H_1) \geq 1/3$.
+:::tip Theorem (monotonicity of $R$ and Bayesian posterior) [T on the isospectral family] + [I] in general
+On the **isospectral family** $\Gamma_\lambda = (1-\lambda)\,I/7 + \lambda\,|\psi\rangle\langle\psi|$ (the one-parameter deformation used throughout, e.g. [T-124](/docs/proofs/consciousness/conscious-window#t-124)), reflection $R = 1/(7P)$ is **monotonically coupled** to the optimal posterior $P_{\text{opt}}(H_1)$ in three-state discrimination, and $R \geq 1/3 \Leftrightarrow P_{\text{opt}}(H_1) \geq 1/3$ **[T]**. For arbitrary $\Gamma$ the coupling is an **[I]** bridge (see the epistemic refinement below), because $F(\Gamma,I/7)$ and $\|\Gamma-I/7\|_1$ are **not** functions of $P$ alone.
 :::
 
 **Proof.**
@@ -877,21 +897,13 @@ Reflection $R = 1/(7P)$ is **monotonically coupled** to optimal posterior $P_{\t
 
 $$F(\Gamma, I/7) = \left(\mathrm{Tr}\sqrt{\sqrt{\Gamma} \cdot I/7 \cdot \sqrt{\Gamma}}\right)^2 = \frac{1}{7}\left(\sum_i \sqrt{\lambda_i}\right)^2$$
 
-where $\lambda_i$ are eigenvalues of $\Gamma$. With $P = \sum_i \lambda_i^2$:
+where $\lambda_i$ are eigenvalues of $\Gamma$, and $P = \sum_i \lambda_i^2$.
 
-$$R = \frac{1}{7P} = \frac{1}{7\sum_i \lambda_i^2}$$
+**(c) Isospectral monotonicity.** On the family $\Gamma_\lambda$ the spectrum is $\{(1+6\lambda)/7\,(\times1),\,(1-\lambda)/7\,(\times6)\}$, a **single monotone function of $\lambda$**; hence both $P(\lambda) = (1+6\lambda^2)/7$ and $F(\Gamma_\lambda,I/7)$ are monotone in $\lambda$, so $R = 1/(7P)$ is a genuine increasing function of $F$ **on this family**. **Caveat (general $\Gamma$):** $F$ is *not* a function of $P$ alone — e.g. the spectra $(\tfrac12,\tfrac12,0,\dots)$ and $(0.696,\,0.0506^{\times6})$ both have $P=\tfrac12$ but $F=0.286$ vs $0.681$. So "$R=g(F)$ for increasing $g$" holds only on the isospectral family, not for arbitrary $\Gamma$.
 
-Cauchy–Schwarz: $\left(\sum_i \sqrt{\lambda_i}\right)^2 \leq 7 \sum_i \lambda_i = 7$, equality at $\lambda_i = 1/7$. Hence $F(\Gamma, I/7) \leq 1$, and $F$ **decreases** with $P$ (purer states lie farther from $I/7$).
+**(d) Optimal discrimination.** For $K=3$ equiprobable states the Helstrom **bound** gives $P_{\text{opt}}(H_1) \le \frac{1}{3}\left(1 + \|\rho_1 - \bar{\rho}\|_1\right)$ (an exact closed form exists only for $K=2$; for $K=3$ this is an upper bound). On the isospectral family $\|\Gamma_\lambda - I/7\|_1$ is monotone in $\lambda$, hence in $P$, so $R$ and the $P_{\text{opt}}(H_1)$-bound are monotonically linked **on the family**.
 
-**(c) Monotonicity.** $R = 1/(7P)$ decreases in $P$; $F(\Gamma, I/7)$ also decreases in $P$. Thus $R$ **increases** with fidelity: $R = g(F)$ for increasing $g$.
-
-**(d) Optimal discrimination.** For $K=3$ equiprobable states, Helstrom optimal success probability is
-
-$$P_{\text{opt}}(H_1) = \frac{1}{K}\left(1 + \frac{K-1}{2}\|\rho_1 - \bar{\rho}\|_1\right)$$
-
-with $\bar{\rho} = \frac{1}{K}\sum_{k} \rho_k$. At $K=3$ and $\rho_2 = I/7$, $P_{\text{opt}}(H_1)$ is monotone in $\|\Gamma - I/7\|_1$, which is monotone in $P$ (Fannes). Hence $R$ and $P_{\text{opt}}(H_1)$ are **monotonically linked**.
-
-**(e) Threshold.** $R = 1/3$ at $P = 3/7$. By (d), $P_{\text{opt}}(H_1) = 1/3$ at the same $P$. Monotonicity yields $R \geq 1/3 \iff P_{\text{opt}}(H_1) \geq 1/3$. $\blacksquare$
+**(e) Threshold.** On the isospectral family $R = 1/3$ at $P = 3/7$, and monotonicity yields $R \geq 1/3 \iff P_{\text{opt}}(H_1) \geq 1/3$ there. For general $\Gamma$ this is the interpretive **[I]** bridge. $\blacksquare$
 
 :::warning Epistemic refinement
 The theorem narrows [I] in $R = P(H_1)$: monotonicity of $R$ vs $P_{\text{opt}}(H_1)$ is proved [T]. Residual [I] is essentially **norm choice** (Frobenius in $R$ vs trace norm in $P_{\text{opt}}$)—standard in quantum information, not a substantive extra assumption.

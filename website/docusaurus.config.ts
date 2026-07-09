@@ -19,10 +19,23 @@ const config: Config = {
   tagline: 'Unitary Holonomic Monism — Унитарный Голономный Монизм',
   favicon: 'img/favicon.ico',
 
-  // future.v4 disabled — causes i18n translated docs to not load in 3.10.0
-  // future: {
-  //   v4: true,
-  // },
+  // future.v4 stays OFF — it breaks i18n translated-doc loading in 3.10.x.
+  // But experimental_faster is INDEPENDENT of v4 and gives the big build speedup:
+  // Rspack (instead of Webpack) + SWC (instead of Babel/Terser) + Lightning CSS +
+  // MDX cross-compiler cache (shared across the en/ru locales). ssgWorkerThreads is
+  // the only sub-flag that requires v4, so it stays off.
+  future: {
+    faster: {
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      mdxCrossCompilerCache: true,
+      ssgWorkerThreads: false,
+    },
+  },
 
   url: ghPagesUrl,
   baseUrl: ghPagesBaseUrl,

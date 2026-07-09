@@ -365,7 +365,7 @@ where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L
 
 The dimension of macroscopic space is **derived**:
 - $\dim(\Sigma^3) = 3$ — from the spectral dimension of the $\{A,S,D\}$-sector (T-119 [Т])
-- Lorentzian signature $(+,-,-,-)$ — from KO-dim 6 of the spectral triple (T-53 [Т])
+- Lorentzian signature $(+,-,-,-)$ — $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader; KO-dim 6 fixes the grading, not the signature; Krein route) (T-53 [T]+[T at r.p.])
 - Product $M^4 = \mathbb{R} \times \Sigma^3$ — from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [Т])
 
 See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)

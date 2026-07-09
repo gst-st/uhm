@@ -1117,7 +1117,7 @@ The four constructions of emergent time (PW, Bures, Categorical, Stratificationa
 **Results used:**
 - Page-Wootters equivalence §2.3 [T] ($\mathbb{Z}_7$-equivariant isomorphism $\mathcal{H}_O \simeq \Gamma(\Omega, \mathcal{O}_\Omega)$);
 - Petz-Uhlmann theorem on geodesics of the Bures metric (Uhlmann 1992);
-- Chentsov-Petz theorem on uniqueness of the monotone metric (Petz 1996);
+- Chentsov-Petz framework: Bures = Petz-minimal (extremal) metric within the monotone family (Petz 1996 — the quantum family is not a singleton; Bures is selected by extremality);
 - T-38b [T] (emergent clocks $\mathbb{Z}_{7^M}$);
 - Categorical formalism §5, §10 [T] (functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$);
 - Standard theory of $\mathbb{Z}_n$-sets (any two transitive free — canonically isomorphic).
@@ -1137,7 +1137,7 @@ In early versions of UHM there was a circularity problem: the CPTP structure **a
 
 1. **The arrow of time is derived** from the stratum collapse to terminal object T
 2. **The CPTP property is a consequence** of orientation towards T, not a postulate
-3. **Free will** arises from the multiplicity of paths in Map(Γ, T)
+3. **Free will** arises from the flat (zero-mode) directions $\dim\ker(\mathcal H_\Gamma)$ of the free energy (not the multiplicity of paths in the contractible Map(Γ, T))
 
 See [§7.4 ∞-categorical resolution](#74-infty-категорное-разрешение) for the complete proof.
 :::
@@ -1259,11 +1259,13 @@ provided all paths are connected by 2-morphisms (homotopies).
 | Choice | Absent | Choice of path |
 | Freedom | Illusion | Freedom = choice of homotopy class |
 
-**Free will** is not the choice of goal, but the **choice of trajectory** to reach that goal:
+**Free will** is not the choice of goal (the goal $T$ is inevitable), but the latitude among **flat directions** of the free energy:
 
 $$
-\mathcal{F}reedom(\Gamma) := \pi_0(\text{Map}(\Gamma, T)^{non-trivial})
+\mathrm{Freedom}(\Gamma) := \dim\ker(\mathcal{H}_\Gamma) + 1
 $$
+
+(Not $\pi_0(\mathrm{Map}(\Gamma, T))$: the mapping space into the terminal object is contractible, so $\pi_0=1$ — see [Consequences §Free will](/docs/core/foundations/consequences#freedom-конечномерное).)
 
 where π₀ is the set of connected components of the path space.
 
