@@ -95,7 +95,9 @@ const config: Config = {
 
   markdown: {
     mermaid: true,
-    format: 'md',
+    // 'detect': .md stays CommonMark (corpus-safe), .mdx gets true MDX (needed for
+    // pages that import React components, e.g. core/dynamics/coherence-matrix.mdx).
+    format: 'detect',
     hooks: {
       onBrokenMarkdownLinks: 'warn',
     },

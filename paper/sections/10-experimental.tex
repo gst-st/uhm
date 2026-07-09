@@ -93,6 +93,32 @@ The construction is CPTP by composition (softmax $+$ Cholesky $=$ positive, trac
 The calibration parameter $\beta$ is empirical~[H]; after Phase~II validation, the full
 map becomes a validated instrument~[T].
 
+\paragraph{Statistical layer: the $\Gam$-tomography estimator.}
+Everything downstream of the embedding is standard estimator theory rather
+than an unaccountable fit. With windowed embeddings $x_n = \pi(\text{window}_n)
+\in \mathbb{C}^7$, the coherence matrix is the normalized second moment
+$\Gam = M/\Tr M$, $M = \mathbb{E}[x x^{\dagger}]$, and the estimator
+$\widehat{\Gam}_N = \widehat{\Sigma}_N / \Tr\widehat{\Sigma}_N$ with
+$\widehat{\Sigma}_N = \tfrac{1}{N}\sum_n x_n x_n^{\dagger}$ is Hermitian,
+PSD, and unit-trace by construction. It is (i)~strongly consistent; (ii)~its
+error obeys a matrix-Bernstein bound, $N \gtrsim C B^2/(\tau^2\varepsilon^2)
+\ln(14/\delta)$ samples suffice for $\|\widehat{\Gam}_N - \Gam\|_{\mathrm{op}}
+\leq \varepsilon$ with probability $1-\delta$ (rate $O(N^{-1/2})$);
+(iii)~purity is estimated by the two-sample $U$-statistic
+$\widehat{P}_N = \sum_{m \neq n} |x_m^{\dagger} x_n|^2 / [N(N-1)
+(\Tr\widehat{\Sigma}_N)^2]$, whose numerator is exactly unbiased for
+$\Tr(M^2)$ (the normalized ratio keeps only a small residual $O(1/N)$
+denominator bias, opposite in sign and $\sim 3\times$ smaller than the
+na\"ive plug-in $\Tr(\widehat{\Gam}_N^2)$); and (iv)~for autocorrelated
+recordings all confidence statements use the effective sample size
+$N_{\mathrm{eff}} = N/(2\tau_{\mathrm{corr}} + 1)$, with the integrated
+autocorrelation time $\tau_{\mathrm{corr}}$ estimated by batch means. A
+self-tested reference implementation (\texttt{gamma\_tomography.py},
+$\sim$200 lines of NumPy) accompanies the project and reproduces the
+$O(N^{-1/2})$ rate, the $U$-statistic debiasing, and the $N_{\mathrm{eff}}$
+correction numerically. The single irreducible modelling choice is the
+7-channel embedding $\pi$ itself; the estimation below it is rigorous.
+
 \paragraph{Equipment.}
 All required instruments are commercially available and standard in
 neuroscience labs (Table~\ref{tab:equipment}). No custom hardware is needed.

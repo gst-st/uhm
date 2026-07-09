@@ -227,24 +227,29 @@ Hilbert--Schmidt projection of $\Gam$ onto the E-sector~\status{T}. The basal fl
   \label{eq:kappa-boot}
 \end{equation}
 is the innate (``bootstrap'') regeneration rate set by the convention that the
-minimal-symmetry unit of the adjunction $\mathcal{D}\dashv\Regen$ delivers one ``quantum''
+minimal-symmetry unit of the $(\mathcal{D}_\Omega,\Regen)$ duality delivers one ``quantum''
 of regeneration per dimension at scale $\omega_0$. The adaptive amplification
 \begin{equation}
   \kappa_0(\Gam) \;=\; \omega_0\,\frac{|\gamma_{OE}|\,|\gamma_{OU}|}{\gamma_{OO}}
-  \qquad\status{T}
+  \qquad\status{T at first-order kinetics}
   \label{eq:kappa-0}
 \end{equation}
-is the categorical norm $\|\mathrm{Nat}(\mathcal{D}_\Omega,\Regen)\|$ of the natural
-transformation between the dissipation and regeneration functors (T-88~\status{T}).
-The derivation uses Yoneda's embedding to identify $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$,
-the Bures metric on $\mathcal{C}_7$ to make this identification quantitative, and
-Stinespring's dilation theorem to ensure CPTP-compatibility. The factor structure
-$|\gamma_{OE}|\cdot|\gamma_{OU}|/\gamma_{OO}$ comes directly from the adjunction
-$\mathcal{D}_\Omega \dashv \mathcal{R}$ between dissipation and regeneration: $|\gamma_{OE}|$
-quantifies the $O\to E$ morphism strength (sensing of interiority), $|\gamma_{OU}|$
-the $O\to U$ morphism strength (integration coupling), and $\gamma_{OO}$ the $O$-self-loop
-(ground anchoring).
-Both $\kappa_{\mathrm{boot}}$ and $\kappa_0$ are \emph{derived}, not fitted. The full
+is derived by \emph{rapid pre-equilibrium} (quasi-steady-state branching of the
+regeneration channels): the equilibrium E-occupancy of the ground channel,
+$|\gamma_{OE}|/\gamma_{OO}$, gates the $O \to U$ regeneration flux of strength
+$|\gamma_{OU}|$, and $\omega_0$ sets the clock scale --- a standard
+Briggs--Haldane branching computation at first-order kinetics. The
+\emph{categorical reading}~\status{I} of the same quantity --- the norm of the
+unit of the dissipation--regeneration duality $(\mathcal{D}_\Omega, \Regen)$,
+with Yoneda identifying $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ ---
+is an interpretive organizing device, not the derivation basis (the pair
+$(\mathcal{D}_\Omega,\Regen)$ is a guiding duality, not a categorical
+adjunction; see Section~\ref{sec:theorems}). The morphism reading remains
+useful: $|\gamma_{OE}|$ quantifies the $O\to E$ coupling (sensing of
+interiority), $|\gamma_{OU}|$ the $O\to U$ coupling (integration), and
+$\gamma_{OO}$ the $O$-self-loop (ground anchoring).
+$\kappa_0$ is \emph{derived} (at the stated kinetic model), not fitted;
+$\kappa_{\mathrm{boot}}$ is a normalization convention~\status{O}. The full
 regeneration term is
 \begin{equation}
   \Regen[\Gam, E] \;=\; \kappa(\Gam) \,\bigl(\rho^* - \Gam\bigr)\, g_V(P),

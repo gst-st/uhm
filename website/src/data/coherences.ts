@@ -65,9 +65,12 @@ export const CELLS: Record<string, Cell> = Object.fromEntries(
   [...DIAGONAL, ...COHERENCES].map((c) => [c.key, c]),
 );
 
-/** Lookup by an unordered (i,j) pair, e.g. cellOf('O','L') === LO. */
+/** Lookup by an unordered (i,j) pair, e.g. cellOf('O','L') === LO.
+ * Keys are ordered by the canonical dimension order (A,S,D,L,E,O,U),
+ * not alphabetically — e.g. the (S,D) cell is 'SD', not 'DS'. */
 export function cellOf(a: string, b: string): Cell {
-  const key = a <= b ? `${a}${b}` : `${b}${a}`;
+  const ord = (d: string) => DIMENSIONS.indexOf(d as (typeof DIMENSIONS)[number]);
+  const key = ord(a) <= ord(b) ? `${a}${b}` : `${b}${a}`;
   return CELLS[key];
 }
 

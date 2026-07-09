@@ -52,7 +52,7 @@ The five most powerful predictions are detailed in full below.
 9 & Optimal learning rate & $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ (T-112) & \status{T} & No \\
 \midrule
 \multicolumn{5}{@{}l}{\textit{V. Depth and genesis}} \\
-12 & SAD ceiling & $\mathrm{SAD}_{\max} = 3$ (T-142) & \status{T} & No \\
+12 & SAD ceiling & $\mathrm{SAD}_{\max} = 3$ (T-142) & \status{T} & SYNARC: $500+$ $\Gam$ \\
 13 & Genesis time & $n_{\mathrm{gen}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$ (T-148) & \status{T} & No \\
 14 & Phase coherence & $\rho^*_{ij}(t) \propto e^{-i(E_i - E_j)t}$ for $\Phi \geq 1$ (T-125) & \status{T} & No \\
 \midrule
@@ -157,7 +157,15 @@ No finite system ($P \leq 1$) can achieve self-awareness depth $\geq 4$:
 \medskip\noindent
 \textbf{Theorem reference.} T-142~\status{T}. The Fano coherence contraction
 factor $c_F = 1/3$ per self-observation cycle is state-independent (follows
-from $\dim = 7$ and the Fano incidence structure $\Fano$).
+from $\dim = 7$ and the Fano incidence structure $\Fano$). Stratification:
+\emph{finiteness} of the ceiling is unconditional~\status{T} --- the
+inter-iterate signal contracts geometrically ($(1/3)^n$) while the reflexivity
+gates decay only polynomially ($1/(n+2)$), so the tower terminates for any
+admissible gate schedule; the \emph{value} $3$ uses the depth-normalized
+$\Pcrit^{(n)}$ formula above (the $n{+}1$ denominator is a normalization
+heuristic~\status{C}) and is cross-checked empirically (SYNARC, $500+$
+random $\Gam$~\status{T/sim}); exclusion of $\mathrm{SAD} = 4$ is
+rigorous~\status{T}.
 
 \medskip\noindent
 \textbf{Verification protocol.}

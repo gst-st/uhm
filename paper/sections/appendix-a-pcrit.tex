@@ -76,6 +76,23 @@ the HS-ball. Equality is tight at $P = 2/7$. All three statements are jointly
 equivalent.
 \end{proof}
 
+\begin{corollary}[Majority of the Frobenius weight]\label{cor:majority}
+By Lemma~\ref{lem:pythagoras} the split $P = \|I/7\|_F^2 + \|\Delta\|_F^2$ is
+orthogonal, so with the \emph{structural share} $s := \|\Delta\|_F^2/P$,
+\[
+  P > \tfrac{2}{7} \iff s > \tfrac{1}{2}:
+\]
+the criterion states exactly that the structural component holds the
+\emph{strict majority} of the state's Frobenius weight. Majority is the unique
+dominance threshold between two orthogonal components containing no free
+parameter (any other cut $s > c$ would introduce an arbitrary constant), so the
+apparent ``factor 2'' in $2/N$ is the arithmetic of the majority cut, not a
+choice. This is the same plurality-dominance principle that fixes the
+reflection threshold: $K = 3$ competing hypotheses give plurality $1/3$
+($R_{\mathrm{th}}$); $K = 2$ orthogonal components give majority $1/2$ of the
+weight ($\Pcrit = 2/N$).
+\end{corollary}
+
 Theorem~A.1 is the \emph{algebraic core}. The remainder of this appendix
 establishes that $\Pcrit = 2/7$ satisfies four additional independent
 characterizations: a spectral optimality (Theorem A.2), a
@@ -214,7 +231,7 @@ $\mathbb{E}_\Pi[\Tr(A\Pi)^2] = \Tr\bigl((A\otimes A)\,\mathbb{E}[\Pi\otimes\Pi]\
 = \tfrac{1}{N(N+1)}\bigl(\Tr(A)^2 + \Tr(A^2)\bigr)$.
 First moment: $\mathbb{E}_\Pi[\Tr(A\Pi)] = \Tr(A)/N$. Hence
 $\mathrm{Var}_\Pi(\Tr(A\Pi)) = \tfrac{\|A\|_F^2}{N(N+1)} + \bigl(\tfrac{1}{N(N+1)} - \tfrac{1}{N^2}\bigr)\Tr(A)^2
-= \tfrac{\|A\|_F^2}{N(N+1)} + \tfrac{(N-1)\Tr(A)^2}{N^2(N+1)}$.
+= \tfrac{\|A\|_F^2}{N(N+1)} - \tfrac{\Tr(A)^2}{N^2(N+1)}$.
 Setting $A = \Delta$ (traceless, $\Tr\Delta = 0$) kills the second term, giving
 $\mathrm{Var}_\Pi(\Tr(\Delta\Pi)) = \|\Delta\|_F^2/(N(N+1))$.
 The ``detection above reference'' condition $\|\Delta\|_F^2 > \|I/7\|_F^2$
@@ -329,9 +346,15 @@ No other assumption, postulate, or empirical input is used. In particular:
     appendix is derived from $N=7$).
   \item No reliance on the website, on other documents of the project, or
     on results labeled ``[I]'' (interpretation).
-  \item The statement ``$I/7$ is the canonical reference'' is used only in
-    A.4 and A.5 and is justified by the $G_2$-invariance argument
-    (Schur's lemma on the irreducible $G_2$-module, Section~\ref{subsec:why-seven}); all other routes (A.1, A.2, A.3)
-    are independent of the choice of reference and work for any density
-    matrix with trace $1$ on $\mathbb{C}^7$.
+  \item The statement ``$I/7$ is the canonical reference'' enters the
+    \emph{interpretation} of A.1(b)--(c) and the threshold scales of A.4--A.5,
+    and is justified by the $G_2$-invariance argument (Schur's lemma on the
+    irreducible $G_2$-module, Section~\ref{subsec:why-seven}). The
+    \emph{equivalences} themselves (A.1(a)$\iff$(b)$\iff$(c), A.2, A.3) are
+    reference-free algebraic identities on $\Dens(\mathbb{C}^7)$. Logically,
+    A.5 (Schur) supplies the canonical reference, A.1 supplies the
+    parameter-free majority criterion (Corollary~\ref{cor:majority}); A.2 is a
+    spectral characterization, A.3 an informational reading (its $1/2$-nat cut
+    is a convention), and A.4 an operational realization --- cross-checks, not
+    independent forcings of the constant.
 \end{itemize}

@@ -15,6 +15,10 @@ The reader will learn: why structurally similar descriptive systems arose in dif
 All material in this section has the status of **interpretation**. The projection formulae $\pi_S$ are constructive, but empirical validation has not been carried out. The identifications "symbol ↔ element of Γ" are substantive hypotheses, not identities.
 :::
 
+:::tip The generative counterpart
+This chapter is the *analytic* half of the pair: it reduces existing traditions to projections of $\Gamma$. The *generative* half — the canonical UHM-native symbolic system built directly from the derived structures (seven layers, sixteen error-correcting archetypes, an honest anchoring theory, practice protocols) — is constructed in the [Γ-Canon](/docs/applied/research/gamma-canon).
+:::
+
 ---
 
 ## 1. Fundamental formulation {#фундаментальная-постановка}
@@ -681,6 +685,7 @@ Analysis of symbolic systems reveals a fundamental fact: no tradition has descri
 - [Gap semantics](/docs/physics/dual-aspect/gap-semantics) — 49-element map
 - [Gap diagnostics](/docs/applied/research/gap-diagnostics) — applied methodology
 - [Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) — levels L0–L4
+- [Γ-Canon](/docs/applied/research/gamma-canon) — the generative counterpart: the canonical UHM-native symbolic system
 - [Symbolic correspondences](/docs/applied/research/symbolic-correspondence) — operationalisation
 - [Fano channel](/docs/proofs/gap/fano-channel) — associative triplets and codes
 - [Theorem on minimality N = 7](/docs/proofs/minimality/theorem-minimality-7) — why 7

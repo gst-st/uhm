@@ -104,17 +104,21 @@ via Lawvere's fixed-point theorem). No simpler structure provides all three.
 \subsection{Why seven dimensions: the Fano plane and octonions}
 \label{subsec:why-seven}
 
-The number 7 is not chosen --- it is \emph{derived}. Two independent mathematical arguments
-converge on the same value.
+The number 7 is not chosen --- it is \emph{derived}. Two complementary
+arguments fix it: a \emph{functional} count that determines the number, and an
+exceptional \emph{algebraic} structure that determines the shape of the
+seven-dimensional system (the octonions and the Fano plane are two faces of
+one object: the Fano plane is the incidence geometry of the octonion
+multiplication table).
 
-\paragraph{Argument 1: Octonion algebra.}
+\paragraph{Argument 1: Octonion algebra (the structure).}
 The octonions $\Oct$ form the unique normed division algebra in 8 dimensions (by the
 Hurwitz theorem~\cite{hurwitz1898}, the only normed division algebras are $\mathbb{R}$,
 $\mathbb{C}$, $\mathbb{H}$, and $\Oct$). The imaginary part of $\Oct$ has dimension 7:
 $\dim(\mathrm{Im}(\Oct)) = 7$. The automorphism group of $\Oct$ is the exceptional
 Lie group $G_2$, which has dimension 14.
 
-\paragraph{Argument 2: Fano plane $\Fano$.}
+\paragraph{Argument 2: Fano plane $\Fano$ (the same structure, incidence face).}
 The Fano plane is the smallest finite projective plane: 7 points and 7 lines,
 where each line passes through exactly 3 points, and each point lies on
 exactly 3 lines (Figure~\ref{fig:fano}). It is the incidence geometry of
@@ -387,9 +391,11 @@ of a viable holon, leaving \textbf{zero} independent postulates. The derivations
         characterisation: Char-I Petz extremality, Char-II Uhlmann universality, Char-III
         SLD-Fisher Cram\'er--Rao saturation) + T-189 (Char-IV, physical recasting via
         MaxEnt: $g_B^{-1} = C_{\mathrm{SLD}}$).
-  \item \textbf{A3 \status{T}:} $N = 7$ from Theorem~S and the Bridge T-15 chain
-        $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{\text{T-15}} \mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to \mathbb O \to G_2$;
-        independent confirmation via Hurwitz--Adams + Fano plane minimality.
+  \item \textbf{A3 \status{T}:} the \emph{number} $N = 7$ from Theorem~S
+        (functional minimality); the \emph{structure} from the Bridge T-15 chain
+        $(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{\text{T-15}} \mathrm{BIBD}(7,3,1) \to \mathrm{PG}(2,2) \to \mathbb O \to G_2$
+        (which consumes $N = 7$ from Theorem~S); Hurwitz--Adams closes the
+        consistency loop: $\dim\mathrm{Im}(\mathbb O) = 7$.
   \item \textbf{A4 \status{T}:} $\omega_0 = \lambda_{\min}(H_{\mathrm{eff}}) > 0$ forced by
         viability (V): $\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow$ (AP)
         violated; a derived spectral property of $H_{\mathrm{eff}}$.
