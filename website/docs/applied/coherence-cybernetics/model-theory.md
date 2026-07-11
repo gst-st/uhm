@@ -131,7 +131,7 @@ Functions are the central element of the signature, because all quantitative res
 |----------|-----------|----------------|-----|
 | $P$ | $\Gamma \to [1/7, 1]$ | Purity | [→](/docs/core/dynamics/viability#определение-чистоты) |
 | $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Von Neumann entropy | [→](/docs/reference/notation) |
-| $\mathrm{Coh}_E$ | $\Gamma \to [1/7, 1]$ | E-coherence | [→](./definitions#e-когерентность) |
+| $\mathrm{Coh}_E$ | $\Gamma \to [0, 1]$ (viable: $> 1/7$) | E-coherence | [→](./definitions#e-когерентность) |
 | $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Spectrum | — |
 | $\varphi$ | $\Gamma \to \Gamma$ | Self-modelling operator | [→](/docs/proofs/categorical/formalization-phi) |
 | $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Consciousness measure | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |

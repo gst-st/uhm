@@ -216,7 +216,7 @@ The master definition of E-coherence is in [axiom-septicity.md](/docs/core/found
 :::info Canonical Definition
 Master definition and formula: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#e-coherence-definition). HS-projection: [axiom-septicity.md](/docs/core/foundations/axiom-septicity#hs-projection).
 
-$\mathrm{Coh}_E \in [1/7, 1]$ — the fraction of E-contribution to purity via the Hilbert–Schmidt orthogonal projection $\pi_E$. The primary formalism is 7D (does not require tensor factorization).
+$\mathrm{Coh}_E \in [0, 1]$ — the fraction of E-contribution to purity via the Hilbert–Schmidt orthogonal projection $\pi_E$; the minimum $0$ is reached by states with an empty E-sector, and every *viable* state stays strictly above $1/7$ (No-Zombie, T-38a; the maximally mixed state sits exactly at $1/7$). The primary formalism is 7D (does not require tensor factorization).
 :::
 
 #### Geometric Intuition of the HS-Projection

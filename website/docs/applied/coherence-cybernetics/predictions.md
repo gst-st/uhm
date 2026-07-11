@@ -884,7 +884,7 @@ CC is falsified if a system is found satisfying at least one of the conditions:
 4. Learning in $n < n_{\mathrm{info}}$ observations (violation of the quantum Chernoff bound)
 5. A self-learning system with $N < 7$ internal degrees of freedom (without external tuning)
 
-**Note:** The condition $\mathrm{Coh}_E = 0$ is mathematically impossible, since $\mathrm{Coh}_E \in [1/7, 1]$ for normalised density matrices.
+**Note:** $\mathrm{Coh}_E = 0$ is attainable, but only by states with an empty E-sector (e.g. a pure state concentrated on another axis) — and precisely such states fail viability by T-38a. That is why condition 1 is phrased through $\mathrm{Spec}(\Gamma_E) = \{0\}$: a falsifying "zombie" must combine *viability* with an empty E-spectrum, which the No-Zombie theorem forbids. *(Corrected 2026-07-11: the earlier note declared $\mathrm{Coh}_E = 0$ impossible via the range $[1/7, 1]$; the global range is $[0, 1]$, with $1/7$ the viable-class floor.)*
 :::
 
 ### What does *not* falsify CC

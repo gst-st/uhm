@@ -131,7 +131,7 @@ $$
 |---------|-----------|---------------|--------|
 | $P$ | $\Gamma \to [1/7, 1]$ | Чистота | [→](/docs/core/dynamics/viability#определение-чистоты) |
 | $S_{vN}$ | $\Gamma \to [0, \log 7]$ | Энтропия фон Неймана | [→](/docs/reference/notation) |
-| $\mathrm{Coh}_E$ | $\Gamma \to [1/7, 1]$ | E-когерентность | [→](./definitions#e-когерентность) |
+| $\mathrm{Coh}_E$ | $\Gamma \to [0, 1]$ (жизнесп.: $> 1/7$) | E-когерентность | [→](./definitions#e-когерентность) |
 | $\mathrm{Spec}$ | $\Gamma \to \mathrm{List}(\mathbb{R} \times \mathcal{H})$ | Спектр | — |
 | $\varphi$ | $\Gamma \to \Gamma$ | Оператор самомоделирования | [→](/docs/proofs/categorical/formalization-phi) |
 | $C$ | $\Gamma \to \mathbb{R}_{\geq 0}$ | Мера сознательности | [→](/docs/consciousness/foundations/self-observation#мера-сознательности-c) |

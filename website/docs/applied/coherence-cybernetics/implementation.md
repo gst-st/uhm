@@ -202,7 +202,7 @@ pub pure fn coh_e_literal(gamma: &StaticMatrix<Complex, 7, 7>)
 
 ### Step 3: Add Numerical Protection
 
-The formula assumes $\mathrm{Tr}(\Gamma^2) > 0$, but in computations the denominator can become vanishingly small. Every division needs protection. Every `np.clip` needs a justification for its range. The theorem guarantees $\mathrm{Coh}_E \in [1/7, 1]$, so `np.clip` at the end is not a hack but **encoding a mathematical constraint**.
+The formula assumes $\mathrm{Tr}(\Gamma^2) > 0$, but in computations the denominator can become vanishingly small. Every division needs protection. Every `np.clip` needs a justification for its range. The theorem guarantees $\mathrm{Coh}_E \in [0, 1]$ globally, so `np.clip(..., 0.0, 1.0)` at the end is not a hack but **encoding a mathematical constraint**. The $1/7$ floor is a different kind of object: it holds only on the No-Zombie viable class (T-38a), so it must be a *check* (a viability diagnostic that may fail), never a clamp — clamping to $1/7$ would silently mask exactly the zombie states the diagnostic exists to catch.
 
 ### Step 4: Write a Test for the Analytic Case
 
@@ -586,7 +586,8 @@ pub fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 0.1
     update_metrics(state, gamma)
 }
 
-/// E-coherence Coh_E(Γ) = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [1/7, 1] (T-73 [T]).
+/// E-coherence Coh_E(Γ) = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [0, 1]
+/// (HS-projection theorem; ≥ 1/7 only on the No-Zombie viable class, T-38a).
 pub pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 1.0/7.0 <= self && self <= 1.0 }
 {
@@ -658,7 +659,7 @@ pub pure fn update_metrics(mut state: HolonState, gamma: StaticMatrix<Complex, 7
 :::danger Pitfall 3: Division by zero in Coh_E
 **Problem:** The formula $\mathrm{Coh}_E = (\gamma_{EE}^2 + 2\sum|\gamma_{Ei}|^2)/\mathrm{Tr}(\Gamma^2)$. If $\Gamma \to 0$ (impossible for a normalised matrix, but possible due to rounding errors), the denominator $\mathrm{Tr}(\Gamma^2) \to 0$.
 
-**Solution:** Always check the denominator: `max(denominator, 1e-12)`. The theorem guarantees $\mathrm{Coh}_E \in [1/7, 1]$, so `np.clip(..., 1/7, 1.0)` is not a hack but the encoding of a mathematical constraint.
+**Solution:** Always check the denominator: `max(denominator, 1e-12)`. The theorem guarantees $\mathrm{Coh}_E \in [0, 1]$ globally, so `np.clip(..., 0.0, 1.0)` is not a hack but the encoding of a mathematical constraint. Do **not** clip at $1/7$: the $1/7$ floor is a viability *diagnostic* (T-38a), and clamping to it masks zombie states.
 :::
 
 :::danger Pitfall 4: F_ext as a fourth term
@@ -1340,7 +1341,7 @@ When a problem arises, check in the following order:
 2. $\Gamma = \Gamma^\dagger$? If not — problem in conjugation.
 3. $\lambda_{\min}(\Gamma) \geq 0$? If not — problem in step $dt$.
 4. $P \in [1/7, 1]$? If not — problem in positivity.
-5. $\mathrm{Coh}_E \in [1/7, 1]$? If not — problem in the formula.
+5. $\mathrm{Coh}_E \in [0, 1]$? If not — problem in the formula. ($\mathrm{Coh}_E \le 1/7$ with a *viable* state claimed — problem in viability, not the formula.)
 6. $\kappa > 0$? If not — bootstrap is not working.
 7. $\Delta F \gtrless 0$? Determines whether regeneration is active.
 

@@ -429,7 +429,7 @@ $$
 $\mathrm{Coh}_E$ is an **exact** measure of the E contribution to purity, not a proxy. It is the ratio of squared Hilbert–Schmidt norms for the orthogonal projection $\pi_E$ (HS projection theorem below).
 :::
 
-**Range:** $\mathrm{Coh}_E \in [1/7, 1]$ (minimum for the maximally mixed state $\gamma_{ij} = \delta_{ij}/7$, maximum for a pure E state).
+**Range:** $\mathrm{Coh}_E \in [0, 1]$ globally: the minimum $0$ is attained by states with an empty E-sector (e.g. a pure state on any other axis, $\Gamma = |A\rangle\langle A|$), the maximum $1$ by a pure E state. The maximally mixed state sits at exactly $1/7$, and the No-Zombie floor (T-38a) keeps every **viable** state strictly above $1/7$ — so on the viable class the operational range is $(1/7, 1]$. *(Corrected 2026-07-11: earlier text stated the range as $[1/7, 1]$ with the minimum attributed to $I/7$ — the maximally mixed state is the viable-class minimizer, not the global one. Found by the SYNARC M1 machine self-test.)*
 
 ##### C*-algebraic justification: Hilbert–Schmidt projection {#hs-projection}
 
