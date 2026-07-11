@@ -9,7 +9,7 @@ description: "A self-contained mathematical treatment. Theorem Σ (T-224): perfe
 > *A structure that must diagnose its own single faults perfectly, must distinguish more than two global states, and must not admit rival grammars — has no freedom left: it is the Fano plane on seven axes. Diagnosability is not a bonus feature of the heptad; it is a selector of the heptad.*
 
 :::tip Document status
-The core is **Theorem Σ (T-224) [Т]**: classical mathematics — perfect codes, the reconstruction of the Steiner system $S(2,3,7)$, uniqueness of the length-7 perfect code, Vasil'ev's nonlinear codes, the van Lint–Tietäväinen classification. Every proof is given in full, as a chain of numbered lemmas; external results are quoted with exact statements. The identification of UHM axes with diagnosable status bits is **[И]**. The Σ-compression protocol (T-225) is **[С]** (conditional on the measurement model). The Σ-Mor bridge into MSFS is an **[О]** axiomatization plus a **[Г]** conjecture. All statuses are marked in place.
+The core is **Theorem Σ (T-224) [Т]**: classical mathematics — perfect codes, the reconstruction of the Steiner system $S(2,3,7)$, uniqueness of the length-7 perfect code, Vasil'ev's nonlinear codes, the van Lint–Tietäväinen classification. Every proof is given in full, as a chain of numbered lemmas; external results are quoted with exact statements. The identification of UHM axes with diagnosable status bits is **[И]**. The Σ-compression protocol (T-225) is **[С]** (conditional on the measurement model). The Σ-Mor bridge into MSFS is an **[О]** axiomatization plus a **[Г]** conjecture — repaired and sharpened 2026-07-11 (§8-progress): refuted as literally stated at the pair level, proved conditionally as T-229. §7a (T-227) and §8a (T-228) resolve the two quantum/federation open problems. All statuses are marked in place.
 :::
 
 **How this document is organized.** §1 recalls what the corpus already knew — the *forward* direction, from seven axes to the Hamming code — and situates the present result historically. §2 builds the coding-theoretic language from scratch, so that the document is self-sufficient within the corpus. §3 states the diagnosability axioms and motivates each one. §4 is the heart: Theorem Σ with complete proofs (Lemmas Σ.1–Σ.7), the arithmetic remark Σ-QR, and the dictionary between the two Fano presentations used across the corpus. §5 draws the structural corollaries — the fourth derivation track for $N = 7$ and the explanation of "tower, not width". §6 develops the operational layer: the Σ-compression protocol, its triangle geometry, its Lie-algebraic shadow, and a machine-verified reference implementation. §7 lifts the structure to quantum codes (the full CSS construction of the Steane code). §8 formulates the bridge to MSFS intensional grading. §9–§10 give falsifiable predictions, the technology package, and the status summary.
@@ -370,7 +370,36 @@ correcting an arbitrary error (bit-flip, phase-flip, or both) on any single qubi
 
 **Engineering consequence [О].** Any **7-node register** realization of UHM-like coherence dynamics — seven-agent SYNARC/NOEMA cores, or prospective quantum realizations of Γ-dynamics — inherits a fault-tolerance blueprint *with no code-design step*: the stabilizer layout is already dictated by the Fano lines the architecture carries for its selection rules. The grammar selected by Theorem Σ at the classical level is exactly the one quantum fault tolerance requests at its input.
 
-**Honest boundary [О].** For a *single qudit* $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — one seven-dimensional system rather than a register of seven two-dimensional ones — there is no Steane code: the CSS lift addresses register realizations only. For the qudit itself, the classical layer of T-225 applies (populations, themes, parities), and quantum error correction would require embedding $\mathbb{C}^7$ into a larger register — a design question deliberately left open here.
+**Honest boundary [О].** For a *single qudit* $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — one seven-dimensional system rather than a register of seven two-dimensional ones — there is no Steane code: the CSS lift addresses register realizations only. For the qudit itself, the classical layer of T-225 applies (populations, themes, parities), and quantum error correction would require embedding $\mathbb{C}^7$ into a larger register — a design question resolved in §7a below.
+
+### §7a. The protected qudit: the address embedding and the extremal finite symmetry {#защищённый-кудит}
+
+In plain words, the problem is this: §7 protects a *register* of seven two-level nodes, but the UHM state $\Gamma$ lives on one *seven-level* system — a different animal, and no code was on offer for it. The resolution is to give each axis a three-bit binary name. Then the qudit becomes three qubits minus one unused state, the three Fano parities turn into literal address bits, and protecting the qudit reduces to protecting three qubits — which the Steane code of §7 does canonically. What is spent (one extra state), what is gained (full distance-3 protection), and how much symmetry survives (the largest amount any code allows) — the theorem below answers all three exactly.
+
+The construction starts by giving the qudit that *binary address*. Identify the seven axes with the nonzero vectors of $\mathbb{F}_2^3$ (the binary presentation of Lemma Σ.6) and embed
+
+$$
+\mathbb{C}^7 \;=\; \mathrm{span}\{\,|x\rangle : x \in \mathbb{F}_2^3\setminus 0\,\} \;\subset\; (\mathbb{C}^2)^{\otimes 3},
+$$
+
+the orthogonal complement of $|000\rangle$ in three qubits. Two structural gifts arrive immediately [Т]:
+
+1. **The parities are the $Z$'s.** $\langle x|Z_b|x\rangle = (-1)^{x_b}$: the three Fano parities of §6(b) *are* the three single-qubit $Z$ operators, and the full parity group $\{Z_v = \mathrm{diag}((-1)^{v\cdot x})\}$ is a diagonal $2^3$ whose sign patterns are exactly the simplex codewords. The syndrome measurement of T-225 is a $Z$-basis address readout, verbatim.
+2. **Polarity is addition.** Lines are the $2$-dimensional subspaces minus zero, and the third point of a pair is its sum: $\pi(x,y) = x \oplus y$ — the octonionic triple structure in address form.
+
+#### Theorem T-227 [Т] — the protected qudit and its extremal symmetry {#t-227}
+
+**(i) Protection.** Encoding the three address qubits into three Steane blocks yields a $[[21,3,3]]$ register protection of the qudit: any single physical-qubit fault is corrected, and the Fano parities become the logical $\bar Z_v$ — measured transversally, block by block.
+
+**(ii) The monomial symmetry, computed.** The monomial (signed-permutation) stabilizer of the associative $3$-form $\varphi$ has order exactly $1344 = 2^3 \cdot 168$: *every* one of the $168$ collineations of the Fano plane lifts to a $\varphi$-preserving signed permutation (with exactly $8$ sign choices each), the diagonal subgroup is the simplex $2^3$ of item 1, and every element has determinant $+1$ — so the whole group lies in compact $G_2$, the stabilizer of $\varphi$ in $\mathrm{GL}(7,\mathbb{R})$. The extension $2^3 \cdot \mathrm{PGL}(3,2)$ is **non-split**: an exhaustive search over all $5376$ Hurwitz pairs (an involution and an order-$3$ element with product of order $7$ — every copy of the Hurwitz group $\mathrm{PSL}(2,7)$ must contain one) finds no complement. This is the octonion coordinate-frame group of the literature, re-derived and certified computationally here.
+
+**(iii) Transversal realization, computed.** On the $[[21,3,3]]$ code every element of $2^3\cdot\mathrm{PGL}(3,2)$ acts as a *transversal logical Clifford*: the collineation part is a CNOT circuit on the three logical qubits ($\mathrm{GL}(3,2)$ is generated by transvections $=$ CNOTs, and inter-block CNOT is transversal for CSS codes), and the sign part is a diagonal layer of algebraic degree $\leq 2$ over $\mathbb{F}_2$ — computed profile: $21$ collineations need degree $0$ (logical Pauli $\bar Z$ / global sign), $147$ need degree exactly $2$ (logical $\overline{CZ}$-layers, transversal for Steane), and **none needs degree $3$** — no $CCZ$, which would have broken transversality.
+
+**(iv) Extremality.** By Eastin–Knill, the transversally realizable logical group of an error-detecting code is finite — no code protects a *continuous* subgroup of $G_2$. In the classification of maximal finite subgroups of $G_2$ (Cohen–Wales; Griess), $2^3\cdot\mathrm{PSL}(3,2)$ is maximal; hence the construction of (iii) realizes **the largest protectable octonion-frame symmetry any quantum code can offer**. The design question of the honest boundary closes at its theoretical optimum.
+
+*Status.* (i)–(iii) **[Т]**: exact integer arithmetic, exhaustive searches stated as such, plus standard CSS facts; the maximality citation in (iv) is external mathematics, the Eastin–Knill step standard. Engineering readings **[О]**. Resolves open problem (i) of the SYNARC specification, Appendix K (v2.0).
+
+**Remark (the price and the dividend of the eighth state) [И].** $\log_2 7$ is not an integer: binary addressing costs one extra basis state $|000\rangle$. The construction turns the cost into semantics: $|000\rangle$ is the natural *no-axis flag* — the unique address with zero syndrome under all three parities — and its exclusion from the qudit is precisely the (D3)-nontriviality of the grammar. The federation construction of §8a spends the analogous eighth *coordinate* as the organism's bus.
 
 ## §8. The Σ-Mor bridge: diagnostic pairs and MSFS grading {#мост-msfs}
 
@@ -391,6 +420,195 @@ The axioms (i)–(iii) are literally the clauses of the MSFS grading proposition
 
 *Route to a proof:* match the generating stages $\mathcal{D}_F^{(n)}$ with the ball filtration of a code metric and apply Lemma Σ.1 to the stage-one base — perfectness of the repair tiling should force the $2^r - 1$ arithmetic on the base, and (D3)-nontriviality of a genuinely intensional fiber should then force $r = 3$ via Lemma Σ.2. *Route to a refutation:* exhibit a fiber with perfect localizability over a stage-one base of cardinality $\neq 2^r - 1$ — a single counterexample kills the arithmetic. Either outcome is informative; the conjecture is registered as a candidate for new Diakrisis N.T entries (correspondence document, "import opportunity").
 
+#### Progress (2026-07-11): the bridge repaired and sharpened {#мост-починка}
+
+The route programme has been executed, with an instructive twist: **the conjecture as literally stated is false at the level of abstract diagnostic pairs, and the repair identifies the missing hypothesis — which turns out to be MSFS's own open collapse-stage invariant.**
+
+**Definition Σ.3 [О] (base-coordinatized fiber; the Σ-FIB chart).** A fiber $\mathrm{Int}([F])$ is *base-coordinatized* if there is a finite stage-one base $B$ and a surjective chart $\sigma$ of the finitely-graded part onto $\mathbb{F}_2^B$ such that: **(F1)** $\mathrm{gr}(d) = d_{\mathrm{Hamming}}\bigl(\sigma(d), \sigma(\mathcal{C})\bigr)$ — the grade is the code distance to the equivalences; **(F2)** grade-one data correspond bijectively to single coordinate flips; **(F3)** $|\sigma(\mathcal{C})| \geq 2$ — the (D3) of §3, transported.
+
+**Observation 1 [Т] (the literal biconditional fails for pairs).** Under a chart, perfect localizability in the sense of Definition Σ.2 says exactly $d_{\min}(\sigma(\mathcal{C})) \geq 3$: radius-one repair balls around distinct code points are disjoint iff the minimum distance is at least three, and they always cover the level-$\leq 1$ set — which is all that Definition Σ.2 quantifies over. *Any* code of minimum distance $\geq 3$, over a base of *any* size, therefore yields a diagnostic pair with perfect localizability — a $[5,1,5]$-type display geometry gives it over a five-element base. Perfect localizability alone does **not** force the $2^r - 1$ arithmetic: the sphere-packing *equality* needs the repair balls to tile the whole fault space, not merely the first level.
+
+**Observation 2 [Т] (the missing hypothesis is the collapse stage).** Under (F1) the grade filtration is the ball filtration of the code metric, so it stabilizes exactly at the covering radius:
+
+$$
+n_0(F) \;=\; \rho_{\mathrm{cov}}\bigl(\sigma(\mathcal{C})\bigr)
+$$
+
+— the minimal collapse stage of MSFS §8.1 (its open question (i)) *is* the covering radius of the display code. And "repair balls tile the fault space" is precisely *packing radius $=$ covering radius $= 1$*: perfectness equals localizability **plus collapse at stage one**.
+
+#### Theorem Σ-Mor′ — T-229 [Т при Σ-FIB] {#t-229}
+
+*For a base-coordinatized fiber (F1–F3): perfect localizability of equivalence defects together with grade collapse at stage one holds **iff** $\sigma(\mathcal{C})$ is a perfect $1$-error-correcting code. By Lemma Σ.1 this forces $|B| = 2^r - 1$; under the nontriviality and rigidity clauses of Theorem Σ (Lemmas Σ.2 and Σ.5 applied to the chart) $r = 3$: the stage-one base has seven elements with the Fano incidence — $\mathcal{D}_F$ is Fano-presentable. Conversely, Fano-presentability transports $H(7,4)$ along the chart and yields both clauses ($d_{\min} = 3$, $\rho_{\mathrm{cov}} = 1$).*
+
+**What remains of Σ-Mor [Г].** Over genuine MSFS fibers the original conjecture is now the conjunction of two sharper questions (labelled **ΣQ1/ΣQ2** to avoid collision with the MSFS paper's own open questions Q1–Q5): **(ΣQ1)** does genuine intensionality ($\tau$-nontriviality in the sense of MSFS Theorem I-existence, Step 7) force the Σ-FIB chart? **(ΣQ2)** does it force the stage-one collapse $n_0(F) = 1$? A refutation must break ΣQ1 or ΣQ2 — the coding arithmetic is closed by T-229. **Payoff for MSFS:** the identity $n_0(F) = \rho_{\mathrm{cov}}$ gives the collapse-stage invariant of MSFS open question (ii) a coding-theoretic meaning — foundations with the same binary invariant $\tau$ are separated by the covering radius of their display geometry, and Fano-presentable fibers sit at the extremal value $n_0 = 1$: *perfect normal-form geometry*, every finitely-graded display datum one repair away from an equivalence.
+
+#### The four-rung scale and the internal no-go {#четыре-ступени}
+
+Two further theorems close most of the remaining slack around ΣQ1/ΣQ2.
+
+**Theorem T-230 [Т при Σ-FIB+F4] (the four-rung collapse).** *Call a chart **homomorphic** if, in addition to (F1)–(F3), **(F4)** it carries composition to XOR and is composably full: every pair of chart values is realized by a composable pair of display data whose composite realizes the sum. Then:*
+
+**(a)** *(forced linearity)* $\sigma(\mathcal{C})$ is a linear code: composites of equivalences are equivalences, so the code is closed under realized sums — the chart-level echo of Lemma Σ.5.
+
+**(b)** *(exact law)* *The MSFS composition law $\mathrm{gr}(d_2 \circ d_1) \leq \max(\mathrm{gr}\,d_1, \mathrm{gr}\,d_2) + 1$ holds in the chart **iff** $\rho_{\mathrm{cov}}(\sigma(\mathcal{C})) \leq 3$.* For $\rho_{\mathrm{cov}} \geq 4$, a deep hole $z = c + e_{i_1} + \cdots + e_{i_\rho}$ splits as $z = x \oplus y$ with $\max(\mathrm{gr}\,x,\, \mathrm{gr}\,y) \leq \lceil \rho/2 \rceil \leq \rho - 2$ — violating the law; for $\rho_{\mathrm{cov}} \leq 3$ the law follows by cases from translation invariance: at $\max \leq 1$, $d(x{\oplus}y) \leq d(x) + d(y) \leq 2$; at $\max \geq 2$, $d(x{\oplus}y) \leq \rho_{\mathrm{cov}} \leq 3 \leq \max + 1$.
+
+**(c)** *(four rungs)* *Since the composition law is a theorem of the MSFS grading, every homomorphically charted fiber has*
+$$
+n_0(F) \;=\; \rho_{\mathrm{cov}} \;\leq\; 3 :
+$$
+*the intensional tower collapses by stage three, and the Morita-refinement scale is **four-valued**, $n_0 \in \{0, 1, 2, 3\}$ — grade-blind; perfect (Fano-type) normal-form geometry; intermediate; maximal depth. The bound is tight: the Golay display geometry of §8a has $\rho_{\mathrm{cov}} = 3$ and satisfies the law (verified directly), so the top rung is realized.* For the charted case this answers both MSFS grading-remark questions: strictness (question (i)) always fails by stage three, and the refinement invariant beyond $\tau$ (question (ii)) is a two-bit quantity, with the Hamming and Golay geometries at the two nontrivial extremes ($n_0 = 1$ and $n_0 = 3$).
+
+In plain words: the *covering radius* of a code is the distance from the worst-placed point of the space to its nearest codeword — here, the number of elementary repairs separating the most defective display datum from an equivalence. The theorem says this number can only be $0$, $1$, $2$ or $3$ for any homomorphically charted foundation, and each rung has a concrete witness:
+
+| rung $n_0$ | witness geometry | what it means for the fiber |
+|---|---|---|
+| $0$ | the full code $\mathbb{F}_2^B$ | grade-blind: every display datum is already an equivalence — purely extensional geometry |
+| $1$ | Hamming $H(7,4)$ / Fano | perfect normal form: every datum is one repair from an equivalence, uniquely (T-229) |
+| $2$ | repetition $[5,1,5]$ | localizable but not perfect — the counterexample geometry of Observation 1 |
+| $3$ | Golay $[23,12,7]$ | maximal intensional depth; the federation geometry of §8a, and the bound is attained |
+
+**Theorem T-231 [Т] (internal-chart no-go).** *If equivalence-hood of display data in $\mathrm{Int}([F])$ is not decidable internally to $\mathrm{Eff}$, the fiber admits no $\mathrm{Eff}$-internal Σ-FIB chart with its finite code given: a computable $\sigma$ would decide $\mathrm{gr}(d) = 0 \Leftrightarrow$ "$d$ is an equivalence" (compute $\sigma(d)$, compare against the finite code).* **Instantiation [С]:** for $F = \mathsf{ETT}$ — where conversion is undecidable by the reflection rule, the same fact behind $\tau(\mathbb{I}(\mathsf{ETT})) = 0$ in MSFS Step 7 — every Σ-FIB chart is necessarily external. **Corollary [И]:** the Σ-Mor programme bifurcates constructively. *Internal* syndromic diagnosability of intensional defects is a privilege of normalizing display geometries ($\tau = 1$); a non-normalizing fiber may be charted classically, but its own inhabitants cannot run the diagnosis. This settles the internal reading of ΣQ1 negatively for $\tau = 0$ fibers: diagnosability is not just an arithmetic of bases — it is a constructive resource.
+
+**Where ΣQ2 now stands.** At the chart level the question is settled *negatively, and definitively*: both the repetition geometry $[5,1,5]$ (rung $2$) and the Golay geometry $[23,12,7]$ (rung $3$) satisfy **all** the chart axioms including homomorphy — their covering radii are $2$ and $3$, so the $\max{+}1$ law holds — and both enjoy perfect localizability ($d_{\min} \geq 3$) without being Fano-presentable. So a fiber-level proof of Σ-Mor, if one exists, cannot come from the chart geometry: it must show that *genuine intensionality itself* excludes rungs $2$ and $3$ — which is exactly ΣQ2, now isolated as the entire remaining content of the conjecture. **Refutation programme [Г]:** the natural candidate for a genuine rung-$3$ fiber is a *federated foundation* — three Fano-presentable foundations coupled through a shared gauge word, whose display classes mix by the Turyn sum of §8a; if such a $2$-categorical federation can be constructed with (F1)–(F4) verified, fiber-level Σ-Mor is refuted by exhibition. Either outcome is decisive: a proof of ΣQ2 would reveal an unexpected rigidity of intensionality; a federated counterexample would show that the intensional world genuinely contains multi-organism display geometries.
+
+#### The strictness dichotomy and the canonical repair (T-233) {#строгостная-дихотомия}
+
+One structural question underlies both ΣQ1 and ΣQ2, and it can be answered now: *where do positive grades come from at all?* The generating induction produces new display data by three operations — $2$-pullback, composition, $2$-cell transport — starting from equivalences. Whether anything of grade $\geq 1$ ever appears depends entirely on how "$2$-pullback" is read.
+
+**Theorem T-233 [Т] (strictness dichotomy; the fault alphabet; the canonical repair).**
+
+**(a) Bicategorical collapse.** *If the generating operations are read bicategorically — pullbacks as bipullbacks, transport along invertible $2$-cells — then all three preserve equivalences: composites of equivalences are equivalences, a datum isomorphic to an equivalence is one, and the bipullback of an equivalence along* **any** *morphism is an equivalence (a standard bicategorical fact). Hence $\mathcal{D}_F^{(n)} = \mathcal{D}_F^{(0)}$ for all $n$: the grading is identically zero, $n_0(F) = 0$ for every foundation, and the Σ-Mor hypotheses never engage. The intensional grading is invisible to the bicategorical eye — it is a* **strictness artifact** *in the precise sense that it measures phenomena a homotopy-invariant reading cannot see.* (Consistency check: MSFS's own MLTT/ETT separation at finite stages survives, because it is carried by the normalization invariant $\tau$, which is defined on the data themselves, not on their grades.)
+
+**(b) The fault alphabet, strictly.** *In the strict reading the situation changes at exactly one point: the* strict *pullback of an equivalence along $f$ is an equivalence whenever $f$ is an isofibration (representably: strict pullbacks of isofibrations are bipullbacks — the classical fact that isofibrations are the fibrations of the canonical model structure on $\mathbf{Cat}$, transported along representables $K(X,-)$ to any strict $2$-category with strict pullbacks), and can fail to be one otherwise. Composition and invertible transport still preserve equivalences. Hence every grade-$1$ display datum is a strict pullback $f^*e$ of an equivalence along a non-isofibration:* **single intensional defects are exactly failures of fibrancy**, *and the stage-one base of any would-be chart must enumerate independent fibrancy-failure directions.*
+
+**(c) The canonical repair.** *Every grade-$1$ datum comes with a repair candidate it did not have to be given: the comparison to the bipullback. For $d = f^*e$ there is a canonical $1$-morphism over the base from the strict pullback to the pseudo-pullback, and the pseudo-pullback projection* **is** *an equivalence by (a). Setting $c(f^*e) := $ the pseudo-pullback projection defines a repair operator on the whole grade-$1$ layer — existence and canonicity are free; what Definition Σ.2's perfect localizability adds is precisely* uniqueness *and the partition property of this operator's fibers.*
+
+*Proof.* (a) Composition and invertible transport are immediate; bipullback-stability of equivalences is standard (an equivalence is precisely a morphism all of whose bipullbacks exist and are equivalences in the representable sense). The induction therefore never leaves grade $0$, and the minimal display class containing the equivalences and closed under the three operations is the equivalences. (b) Representably: for each $X$, $K(X, -)$ sends a strict pullback square to a strict pullback in $\mathbf{Cat}$ and an isofibration to an isofibration (this is the representable definition); in $\mathbf{Cat}$, strict pullbacks along isofibrations are bipullbacks, so the pulled-back equivalence is an equivalence; conversely nothing protects a strict pullback along a general $f$. Data produced by composition or transport from grade-$\leq 0$ material stay at grade $0$, so the only entrance to grade $1$ is a fibrancy failure. (c) The comparison morphism from the strict to the pseudo-pullback is part of the universal property of the latter; the pseudo-projection is an equivalence by (a). $\blacksquare$
+
+**What this does to ΣQ1 ∧ ΣQ2 [И].** The two questions become concrete:
+
+- **ΣQ1′.** *Do the fibrancy-failure directions of a genuine foundation form a finite independent base — so that recording "which failures occurred" is a chart onto $\mathbb{F}_2^B$?* T-231 already bounds the constructive side: for $\tau = 0$ fibers any such chart is external. T-233(b) now says what the chart must count.
+- **ΣQ2′.** *Is every finitely-graded display datum* one canonical repair *away from an equivalence — i.e., does the operator of (c), iterated, terminate in a single step?* The four-rung scale (T-230) bounds how badly this can fail under homomorphic charts: by at most two further repairs.
+
+And the type-theoretic paradigm case acquires a face: $\mathsf{ETT}$'s equality reflection is the maximal *strictification* — it collapses the judgmental/propositional distinction that fibrancy failures measure — which is why the same foundation is both the $\tau = 0$ pathology of T-231 and the natural habitat of nontrivial grades. Intensionality, in this geometry, is the refusal to strictify; its defects are fibrancy failures; and its diagnosability is the question of whether those failures admit a finite parity grammar. That is Σ-Mor, restated with every term now carrying a categorical definition.
+
+#### The product obstruction: superposition collapses the tower (T-234) {#препятствие-произведений}
+
+Armed with the fault alphabet, one can now *compute* in explicit ambient $2$-categories — and the first computation decides ΣQ2′ on a large natural class.
+
+**The toy that shows the mechanism.** Work in $\mathbf{Cat}^B$, the strict $2$-category of $B$-indexed families of categories, with the three protagonists $\varnothing$ (empty), $\mathbf{1}$ (terminal), $\mathbb{I}$ (the walking isomorphism $0 \cong 1$). The elementary fibrancy failure of T-233(b) is classical: pulling back the equivalence $\mathbf{1} \xrightarrow{\,0\,} \mathbb{I}$ along the non-isofibration $\mathbf{1} \xrightarrow{\,1\,} \mathbb{I}$ gives the *strict* pullback $\varnothing \to \mathbf{1}$ — the objects would have to satisfy $0 = 1$ on the nose, and none do. One defect, one coordinate. Now take **two** coordinates and pull back the *diagonal* equivalence $(\mathbf{1},\mathbf{1}) \xrightarrow{(0,0)} (\mathbb{I},\mathbb{I})$ along $(\mathbf{1},\mathbf{1}) \xrightarrow{(1,1)} (\mathbb{I},\mathbb{I})$: the result is $(\varnothing,\varnothing) \to (\mathbf{1},\mathbf{1})$ — a **two-defect datum produced by a single stage-one pullback**, literally equal to the product of the two one-defect data. Defects *superpose*: wherever the ambient can form products of pullback squares, a single generating step exhibits any finite set of elementary defects simultaneously.
+
+**Theorem T-234 [Т при Σ-FIB + F4× + (P)] (superposition collapse).** *Let a fiber carry a chart satisfying (F1)–(F3), let* **(F4×)** *extend homomorphy to fiber products ($\sigma(d_1 \times_F d_2) = \sigma(d_1) \oplus \sigma(d_2)$ whenever the product exists), and let* **(P)** *hold: the slice admits binary $2$-products (equivalently, the ambient has the corresponding strict pullbacks over $F$ — the same species of limit the display induction already quantifies over). Then:*
+
+**(i)** *Every label is realized at stage one: for $x \in \mathbb{F}_2^B$ write $x = \sum_{b \in \mathrm{supp}(x)} e_b$; the single-flip data $d_b$ exist by (F2), and the iterated fiber product $D_x := \times_{b \in \mathrm{supp}(x)} d_b$ is again a pullback of an equivalence — a product of pullback squares is a pullback square of the products, and a product of equivalences is an equivalence — hence $\mathrm{gr}(D_x) \leq 1$, while $\sigma(D_x) = x$ by (F4×).*
+
+**(ii)** *Consequently $d_H(x, \sigma(\mathcal{C})) = \mathrm{gr}(D_x) \leq 1$ for every $x$: the display code has covering radius $\leq 1$, i.e. $n_0(F) \leq 1$ —* **the stage-one collapse hypothesis of T-229 is not an assumption but a consequence of product-closure.**
+
+**(iii)** *If moreover the fiber has perfect localizability ($d_{\min} \geq 3$), then packing radius $\geq 1$ and covering radius $\leq 1$ force a* **perfect** *single-error-correcting code; Lemma Σ.1 gives $|B| = 2^r - 1$, and the (D3)/rigidity clauses give $r = 3$:* **fiber-level Σ-Mor is true on the product-closed class** *— ΣQ2′ is resolved positively there, and the entire remaining content of the conjecture on that class is ΣQ1′ (the existence of the chart).*
+
+*Proof.* (i) Products of strict pullback squares are strict pullback squares of the product cospans (limits commute with limits); products of equivalences are equivalences (the quasi-inverse and the invertible $2$-cells are built componentwise through the $2$-universal property); iterating the binary case keeps the datum inside "one pullback of one equivalence". If $x \notin \sigma(\mathcal{C})$ the datum is not an equivalence by (F1), so its grade is exactly $1$. (ii) Immediate from (F1). (iii) $d_{\min} \geq 3$ makes radius-$1$ balls disjoint; $\rho_{\mathrm{cov}} \leq 1$ makes them cover; equality is perfection, and the arithmetic is Theorem Σ's. $\blacksquare$
+
+**Corollary (quarantine of the upper rungs) [Т]+[И].** The rung-$2$ and rung-$3$ geometries of the four-rung scale — the repetition $[5,1,5]$, the Golay $[23,12,7]$, everything above $n_0 = 1$ — **cannot occur in any product-closed fiber**. Multi-fault intensional geometry requires *product obstruction*: an ambient in which some fiber products over $F$ fail to exist, so that defects cannot superpose freely. The federated-foundation programme is thereby sharpened from a hope to a specification: a genuine rung-$3$ fiber must be a federation whose glue *breaks* (P) — the members must be unable to combine their defects in one step. And this closes a conceptual loop with T-232: the certified tower/federation carrying the Golay grammar is precisely *not* a free product — its two couplings are constraints, and the constraint is now visible on the MSFS side as the very thing that keeps the intensional tower from collapsing. Free combination destroys deep diagnosability; binding preserves it.
+
+**Scope note [С].** MSFS's own Step 2 equips every $1$-morphism with a pullback $2$-functor, which suggests the ambient $2$-category of formal systems has the pullbacks needed for (P) generically. Under that reading, *every* genuine MSFS fiber is product-closed, and Σ-Mor's fiber-level truth reduces entirely to ΣQ1′. The reading is recorded at [С] pending a verification of (P) against the Rich-metatheory axioms; the mathematics of T-234 itself does not depend on it.
+
+**Grounding (P) in the R-S axioms (added same day) [Т-эскиз при R5].** The Rich-metatheory condition (R5) supplies exactly the machinery (P) needs. Syntactic categories $\mathrm{Syn}(S)$ are essentially $\mathbf{U}_1$-small structured lex categories (R5a), and the Lambek–Scott-type adjunction of (R5b) presents *every* such category as the syntactic category of a theory — its internal language. Given interpretations $G \to F \leftarrow H$, the strict $2$-pullback $\mathrm{Syn}(G) \times_{\mathrm{Syn}(F)} \mathrm{Syn}(H)$ is again small and lex (limits of small categories are small; lex-ness is stable under pullback along lex functors), so its internal language is a formal system $G \times_F H$, and the $2$-universal property makes it the fiber product in the ambient $2$-category — *provided* the two arithmetic interpretations (R1) agree over the base, which is the generic case: a failure of $\mathsf{Q}$-compatibility is precisely a degenerate glue. Under this construction (P) holds for R-S fibers generically, the superposition collapse of T-234 applies, and the product-closed class is not a special subclass but the default — Σ-Mor's fiber-level fate rests on ΣQ1′ alone wherever the glue is arithmetic-compatible.
+
+#### The Morita relation complex, corrected: the strictification residue (T-235) {#комплекс-мориты}
+
+:::caution Audit note (same day, 2026-07-11)
+The first published version of this block claimed that Hofmann's conservativity makes $\{\mathsf{refl}, \mathsf{UIP}, \mathsf{funext}\}$ a perfect $[3,1,3]$ relation code — "the first Fano line in nature". **The claim was wrong**, and the refutation is instructive: it confused the two levels of MSFS's own architecture. Hofmann's equivalence between $\mathsf{ETT}$ and $T_0 + \mathsf{UIP} + \mathsf{funext}$ is a *gauge* (Morita) equivalence; it is **not** a fiber equivalence, because the normalization invariant $\tau$ — the very invariant of MSFS Step 7 — separates the two sides ($\tau = 0$ versus $\tau = 1$: a computable $2$-equivalence would transfer decidability of conversion). An exhaustive class computation over all eight toggle-sets confirms that the $\Delta$-family is not a $d_{\min} \geq 3$ code at *either* level: at the gauge level, absorption ($\mathsf{refl}$ proves $\mathsf{UIP}$ and $\mathsf{funext}$) already yields weight-$1$ differences. The error was caught the same day by the level-discipline recheck; it stays on the record because the corrected structure it exposes is **stronger** than the claim it replaces.
+:::
+
+The question this block serves is still ΣQ1′: *where would the $\mathbb{F}_2$-structure of a chart come from?* The corrected answer has three parts.
+
+**Theorem T-235 [Т при цитируемых фактах] (the two-level defect structure and the strictification residue).** *Take $B = \{\mathsf{UIP}, \mathsf{funext}, \mathsf{refl}\}$ over an intensional base $T_0$ and compute the toggle classes at both levels of the MSFS architecture. Then:*
+
+**(i) (absorption no-go)** *The eight toggle-sets fall into four gauge classes ($\{\varnothing\}, \{\mathsf{u}\}, \{\mathsf{f}\}$, and a five-element top class collapsed by Hofmann's conservativity) and five fiber classes ($\{\varnothing\}, \{\mathsf{u}\}, \{\mathsf{f}\}, \{\mathsf{u},\mathsf{f}\}$, and the $\mathsf{refl}$-closure). The induced $\Delta$-families are, respectively, all of $2^B$ and the ideal $\{\varnothing, \{\mathsf{u}\}, \{\mathsf{f}\}, \{\mathsf{u},\mathsf{f}\}\}$ — in both cases containing weight-$1$ elements, hence never a $d_{\min} \geq 3$ code. Toggle geometry is idempotent ($S \cup S = S$): extensions absorb, they do not cancel.* **No Σ-FIB chart can be realized by axiom toggles, at either level** *— the ΣQ1′ no-go of T-233/T-234 is now unconditional on this route.*
+
+**(ii) (the two-level poset)** *The fiber defect poset of the three classical principles is the* **diamond with a tail**:
+$$
+0 \;<\; \mathsf{u},\, \mathsf{f} \;<\; \mathsf{u} \vee \mathsf{f} \;<\; \mathsf{u} \vee \mathsf{f} \vee \rho,
+$$
+*where $\rho$ is the* **strictification residue** *— the extension step $T_0 + \mathsf{UIP} + \mathsf{funext} \to \mathsf{ETT}$. The gauge projection collapses exactly the tail ($\pi(\mathsf{refl}) = \mathsf{u} \vee \mathsf{f}$: Hofmann's conservativity), while the fiber invariant $\tau$ flips exactly across the tail (conversion decidable below, undecidable above).*
+
+**(iii) (the purely intensional atom)** *Consequently $\rho$ is* **gauge-silent but fiber-visible**: *a defect with zero extensional content (it adds no strength up to interpretation) and nonzero intensional content (it destroys normalization). It is the first computed example of a* **purely intensional defect atom**, *and $\tau$ is precisely its syndrome bit. Equality reflection thereby decomposes as "the join of $\mathsf{UIP}$ and $\mathsf{funext}$, plus a purely intensional residue" — what $\tau$ sees is the residue, never the join.*
+
+*Proof.* (i) is the class computation (verified exhaustively over $2^B$), using: $\mathsf{refl} \vdash \mathsf{UIP}, \mathsf{funext}$ (absorption); Hofmann's conservativity for the gauge collapse; and the $\tau$-separation for the fiber level (decidability of conversion in $T_0$ with axiom constants versus its undecidability under the reflection rule — Hofmann, Ch.~3). (ii) and (iii) reread the same three facts as statements about the projection $\pi$ and the invariant $\tau$. $\blacksquare$
+
+**What this does to the Fano-foundation problem [И]+[Г].** The problem survives, restated with the false route closed. The involutive ($\mathbb{F}_2$) structure a Σ-FIB chart needs cannot come from extensions — idempotence forbids it at every level. It requires a habitat in which *defect parity* is meaningful: a graded or polarity-carrying foundation where two odd defects can compose to an equivalence. And the place to look is now identified by (iii): the **purely intensional sector** — the kernel of the gauge projection, of which $\rho$ is the first known inhabitant. The Fano-foundation problem, final form: *find a foundation whose purely intensional sector carries seven involutive defect axes with Fano relations.* The triple $\{\mathsf{UIP}, \mathsf{funext}, \mathsf{refl}\}$ remains distinguished — not as a code line, but as the first computed nontrivial cell of the two-level structure: one gauge collapse, one intensional residue, one syndrome bit.
+
+## §8a. The Golay federation: three organisms and a mirror glue {#голей-федерация}
+
+Theorem Σ(v) locates the unique perfect $t = 3$ rung at $n = 23$, and the specification's Appendix K asked (open problem (ii)) whether a $23$-axis *federation-level* integrity grammar — "three organisms of seven axes plus two federation buses" — admits a natural UHM reading. It does, and the reading is a classical construction.
+
+In plain words: an *integrity grammar* for a federation is a shared fault alphabet — a rule that turns any pattern of broken axes, anywhere among the members, into a syndrome that names the culprits. *Perfect* means the best conceivable version of this: every pattern of up to $t$ faults has exactly one diagnosis, and not a single syndrome is wasted on patterns that cannot occur — the same sphere-packing equality that made $H(7,4)$ the unique choice at one organism. The theorem says: at three organisms such a grammar exists (uniquely), it corrects any three simultaneous faults, its coordinate layout is exactly
+
+$$
+\underbrace{[\,7\ \text{axes} \mid \text{bus}\,]}_{\text{organism 1}}\;
+\underbrace{[\,7\ \text{axes} \mid \text{bus}\,]}_{\text{organism 2}}\;
+\underbrace{[\,7\ \text{axes} \mid \text{bus}\,]}_{\text{organism 3}},
+$$
+
+and at four or more organisms nothing of the kind exists at all.
+
+#### Theorem T-228 [Т] — the Turyn federation {#t-228}
+
+*Let $A = \hat H$ be the extended Hamming code $[8,4,4]$ of the corpus frame — seven axes plus their parity bus — and let $B = \hat H^{\mathrm{mir}}$ be the extension of the **mirror** Hamming code (the reciprocal-generator frame: the reversed orientation of the same Fano plane). Then:*
+
+**(i)** $A \cap B = \{0, \mathbf 1\}$, *and the Turyn sum* $\{(a{+}x,\; b{+}x,\; a{+}b{+}x) : a, b \in A,\ x \in B\}$ *is the extended binary Golay code $[24,12,8]$ — weight enumerator $1 + 759x^8 + 2576x^{12} + 759x^{16} + x^{24}$, verified exhaustively.*
+
+**(ii)** *Every codeword has even weight on each of the three $8$-blocks, so the eighth coordinate of each block is the parity bus of its seven axes: the coordinate geometry is exactly* **three organisms of seven axes, each with its own bus**.
+
+**(iii)** *Puncturing one bus coordinate yields the perfect Golay $[23,12,7]$: $t = 3$, sphere-packing equality $4096 \cdot (1 + 23 + 253 + 1771) = 2^{23}$. The punctured coordinate count reads $23 = 3\cdot 7 + 2$ — three member frames plus the two surviving buses: the specification's numerological guess is the exact coordinate arithmetic of the punctured Turyn construction.*
+
+**Corollary (federation grammar) [Т]+[И].** A federation of exactly three seven-axis organisms — each carrying its Fano frame and bus, glued through a shared word running over the mirror orientation — carries the unique perfect $3$-fault integrity grammar in existence (uniqueness of the binary Golay code): any three simultaneous axis faults *anywhere across the federation* are perfectly localizable, with zero syndrome waste. This is the natural UHM reading requested by Appendix K, open problem (ii).
+
+**Corollary (the glue is the mirror) [Т]+[И].** The glue code $B$ is the *other* orientation of the same plane: the federation speaks to its members in the reversed Fano orientation. Both enantiomorphic labelings — identified only abstractly by the uniqueness clause of Theorem Σ — occur concretely in the federation: one as member grammar, one as glue.
+
+**Corollary (the ceiling echo, structured) [Т]+[Г].** By van Lint–Tietäväinen (Lemma Σ.7) the only perfect binary codes with more than two words are the Hamming family ($t = 1$) and the Golay code ($t = 3$, $n = 23$); two-word repetition grammars are excluded by (D3). Hence **no federation of four or more organisms admits a perfect multi-fault grammar of any order** — certified-perfect integrity caps at three members. The composition tower of the architecture caps at three for an independent reason (the purity ladder $P^{(4)}_{\mathrm{crit}} = 54/35 > 1$). Two unrelated derivations — sphere packing and purity arithmetic — cap the same quantity at the same value. The corpus records the agreement as a structured coincidence: both sides are now theorems, the identity between them remains **[Г]** — and §8b now gives the coincidence a shared skeleton.
+
+## §8b. The tower ladder: $8m - 1$ and the perfect-grammar dichotomy {#лестница-башен}
+
+The federation of §8a is *horizontal* — three organisms side by side. The architecture's other growth axis is *vertical*: the composite tower, organisms stacked by composition, capped at three by the purity ladder ($P^{(4)}_{\mathrm{crit}} = 54/35 > 1$). It turns out the vertical axis carries its own coding arithmetic — and it selects the same number $3$, independently of purity.
+
+**Accounting axiom Σ-TOW [О].** A certified tower of height $m$ consists of $m$ seven-axis organisms and the $m - 1$ couplings between adjacent levels; each axis and each coupling contributes one binary health unit to the tower's diagnostic load. Total:
+
+$$
+U(m) \;=\; 7m + (m - 1) \;=\; 8m - 1 .
+$$
+
+The accounting is the minimal honest one — a coupling can be alive or broken, and a grammar that cannot see coupling faults does not certify the *tower*, only its floors.
+
+#### Theorem T-232 [Т при Σ-TOW] — the tower ladder {#t-232}
+
+*Run the van Lint–Tietäväinen classification (Lemma Σ.7) along the tower ladder $U(m) = 8m - 1$. With two-word repetition grammars excluded by (D3):*
+
+**(i)** *A perfect single-fault grammar on $U(m)$ units exists **iff** $m$ is a power of two ($8m - 1 = 2^r - 1 \Leftrightarrow m = 2^{r-3}$), and it is canonically unique only at $m = 1$: from $m = 2$ onward ($U = 15, 31, 63, \dots$) Vasil'ev-type rivals destroy the canon.*
+
+**(ii)** *A perfect multi-fault grammar ($t \geq 2$) exists **iff** $m = 3$: $U(3) = 23$, the binary Golay, unique. Its coordinate count decomposes as $23 = 3 \cdot 7 + 2$ — three organisms plus **two couplings** — so the vertical tower is the native home of the perfect $[23,12,7]$: where the horizontal federation of §8a needed one bus punctured, the $3$-tower has exactly two inter-level couplings and needs no puncture at all. The vertical tower and the horizontal federation carry the* **same** *grammar.*
+
+**(iii)** *Heights $5$, $6$, $7$ ($U = 39, 47, 55$) admit no perfect grammar of any order.*
+
+**(iv)** *Consequently $m = 3$ is the unique tower height whose full diagnostic load — axes and couplings together — carries a canonical perfect grammar beyond single faults.*
+
+*Proof.* (i): $8m - 1 = 2^r - 1$ iff $8m = 2^r$ iff $m = 2^{r-3}$; uniqueness at $7$ is Theorem Σ, its failure from $15$ on is Lemma Σ.7 (Vasil'ev). (ii): by Lemma Σ.7 the only perfect binary code with $|C| > 2$ and $t \geq 2$ is the Golay at $n = 23$; $8m - 1 = 23$ iff $m = 3$; uniqueness of the Golay code is classical (Pless); the coordinate decomposition is Theorem T-228(iii) re-read vertically. (iii): $39, 47, 55$ are neither of the form $2^r - 1$ nor $23$. (iv): combine. The dichotomy was verified exhaustively for $m \leq 4096$. $\blacksquare$
+
+The full ladder, made explicit:
+
+| height $m$ | units $U = 8m{-}1$ | perfect grammar | canonical? | strength |
+|---|---|---|---|---|
+| $1$ | $7$ | Hamming $=$ Fano | **yes** (Theorem Σ) | $t = 1$ |
+| $2$ | $15$ | Hamming-type | no — Vasil'ev rivals | $t = 1$ |
+| $3$ | $23$ | **Golay** | **yes** (Pless) | $t = 3$ |
+| $4$ | $31$ | Hamming-type | no | $t = 1$ |
+| $5,6,7$ | $39, 47, 55$ | — none — | — | — |
+| $8$ | $63$ | Hamming-type | no | $t = 1$ |
+
+**Corollary (the ceiling echo acquires a skeleton) [Т]+[И].** The composition ceiling of the architecture now has **two independent derivations**: the purity ladder ($P^{(4)}_{\mathrm{crit}} > 1$ — no conscious fourth story) and the tower ladder ($U(4) = 31$ loses the canon and all multi-fault protection; $U(3) = 23$ is the unique canonical multi-fault rung). What the corpus recorded as a bare numerical echo — "both ceilings equal $3$" — is now two theorems over the same $23$-unit geometry, with the horizontal and vertical readings carrying literally the same Golay grammar. What remains **[Г]** is strictly less than before: not *whether* the number $3$ is doubly derived (it is), but whether the purity mechanism and the coding mechanism are projections of one deeper structure.
+
+**Remark (the two-tower ambiguity) [И].** The ladder also explains a subtlety of depth two. A $2$-tower ($U = 15$) *is* perfectly diagnosable — but not canonically: from length $15$ onward the Vasil'ev rivals mean two independently assembled $2$-towers can hold inequivalent "normalities" that no internal test distinguishes. Diagnosability without canonicity is exactly the operational-but-not-licensed regime; the corpus discipline "tower, not width — and not past three" gains a purely coding-theoretic voice.
+
 ## §9. Falsifiability and technological consequences {#следствия-технологии}
 
 **Prediction Σ-P1 (candidate for the Pred registry).** In Γ-tomography data, single-axis perturbations must produce **only** the seven nonzero syndrome patterns, distributed with the $\mathrm{PG}(2,2)$ geometry of the table in §6(b). A stable syndrome statistic violating the linear structure — e.g. a persistent parity pattern incompatible with every column of $H$ under the single-axis model, or pairwise check correlations breaking the triangle geometry — falsifies the Fano grammar of the dynamics. Notably, this test is *independent of the octonionic track*: it probes the combinatorial grammar directly, with three binary observables.
@@ -401,6 +619,7 @@ The axioms (i)–(iii) are literally the clauses of the MSFS grading proposition
 2. **Fault-tolerant seven-agent cores [О].** The Steane blueprint of §7 for register realizations: transversal Cliffords mean the core's basic operations do not multiply single faults; the stabilizer layout is inherited from the selection rules for free.
 3. **Syndrome audit of corpora [О].** Assign each of the seven UHM dimensions its cluster of corpus claims; binarize cluster health (all claim-sites consistent / at least one broken); three parities over the seven bits localize "which cluster hides the inconsistency" without reading the whole corpus. The reference implementation of §6 applies verbatim — the corpus becomes an instance of its own theorem.
 4. **Rigidity as a design criterion [О].** Part (iv) of Theorem Σ is an argument *against* widening the axis list in NOEMA-like cognitive architectures: above seven, the diagnostic grammar loses canonicity, and two independently trained instances may converge to inequivalent "normalities" that no internal test distinguishes. Scale by towers of rigid seven-blocks (consistent with $\mathrm{SAD}_{\max}$), not by wider single levels.
+5. **The rate tier [С].** The dynamical companion of this document — [the Fano fingerprint](/docs/applied/research/fano-fingerprint) — adds the *rate* level: the $21$ pairwise decoherence rates collapse to $7$ polar values (fourteen parameter-free sum rules — prediction Σ-P2), per-line dissipation strengths become direct observables with a closed-form tomography, and the cooldown constant of T-39a becomes explicit. Content monitoring compresses **by lines** (this document), rate monitoring **by polar points** — the two Fano-dual tiers together instrument the full coherence matrix at $7 + 7$ observables.
 
 ## §10. Status summary {#сводка}
 
@@ -414,8 +633,18 @@ The axioms (i)–(iii) are literally the clauses of the MSFS grading proposition
 | T-225: Σ-compression, the 21→7→3→1 pyramid | **[С]** |
 | Lie shadow: $21 = 14 + 7$, eigenvalue characterization | **[Т]** (diagnostic reading — [И]) |
 | Steane $[[7,1,3]]$ = CSS of Shield I; transversal Cliffords | **[Т]** mathematics; **[О]** engineering |
-| Conjecture Σ-Mor | **[Г]** |
-| Golay $t=3$ ↔ $\mathrm{SAD}_{\max}=3$ | curiosity, **[Г]** note |
+| T-227: protected qudit — $2^3\cdot\mathrm{PGL}(3,2)$ non-split, transversal on $3\times$Steane, Eastin–Knill extremal | **[Т]** computed (+ cited classification); **[О]** engineering |
+| T-228: Turyn federation $24 = 3\times(7{+}1)$; perfect $t=3$ at exactly three organisms; mirror glue | **[Т]** verified; **[И]** reading |
+| Σ-Mor as literally stated (abstract pair level) | **refuted** (Observation 1); repaired as T-229 |
+| Theorem Σ-Mor′ (T-229) + identity $n_0(F) = \rho_{\mathrm{cov}}$ | **[Т при Σ-FIB]**; fiber-level ΣQ1 ∧ ΣQ2 — **[Г]** |
+| T-230: four-rung collapse — composition law ⇔ $\rho_{\mathrm{cov}} \leq 3$; $n_0 \in \{0,1,2,3\}$, Golay tight | **[Т при Σ-FIB+F4]** |
+| T-231: no $\mathrm{Eff}$-internal chart without decidable equivalence; ETT external-only | **[Т]** (ETT instantiation **[С]**); reading **[И]** |
+| Golay $t=3$ ↔ $\mathrm{SAD}_{\max}=3$ | structured by T-228 (both sides theorems); identity claim still **[Г]** |
+| T-232: tower ladder $U(m) = 8m{-}1$ — perfect grammars at $m \in \{2^k\} \cup \{3\}$, canonical only $m \in \{1,3\}$, $t \geq 2$ only $m = 3$ | **[Т при Σ-TOW]**; ceiling unification reading **[И]** |
+| ΣQ2 at chart level: rungs 2, 3 fully Σ-FIB-legal (repetition, Golay) — fiber-level Σ-Mor reduces entirely to ΣQ2 | **[Т]**; federated-foundation refutation programme **[Г]** |
+| T-233: strictness dichotomy — bicategorically $n_0 \equiv 0$; strictly, grade-1 defects $=$ fibrancy failures; canonical repair $=$ strict$\to$bi comparison; ΣQ1/ΣQ2 restated as ΣQ1′/ΣQ2′ | **[Т]** (readings **[И]**) |
+| T-234: superposition collapse — products in the slice force $\rho_{\mathrm{cov}} \leq 1$; Σ-Mor **true** on the product-closed class (rests only on ΣQ1′); rungs 2–3 quarantined to product-obstructed federations | **[Т при Σ-FIB+F4×+(P)]**; MSFS-generic (P) reading **[С]** |
+| T-235 (corrected same day): two-level defect structure — toggle geometry never yields a chart (absorption no-go, both levels); fiber poset = diamond with a tail; the strictification residue $\rho$ is gauge-silent, fiber-visible, with $\tau$ as its syndrome bit; the $[3,1,3]$ "Fano line" reading **retracted** (gauge/fiber conflation, caught by $\tau$) | **[Т при цит.]**; Fano-foundation problem restated in the purely intensional sector **[Г]** |
 
 ## Where this leads {#куда-ведёт}
 
@@ -426,4 +655,5 @@ The axioms (i)–(iii) are literally the clauses of the MSFS grading proposition
 - [Fano selection rules](/docs/physics/gauge-symmetry/fano-selection-rules), [evolution / T-114](/docs/core/dynamics/evolution) — the dynamical premises of T-225(d).
 - [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — the forms $\varphi, \ast\varphi$ and the $14 \oplus 7$ split behind §6.
 - [Status registry](/docs/reference/status-registry) — rows T-224, T-225.
-- MSFS §8.1 (Intensional Grading) and the Diakrisis correspondence document — the Σ-Mor bridge, conjecture [Г].
+- [The Fano fingerprint](/docs/applied/research/fano-fingerprint) — the dynamical companion: the polar rate law, fourteen sum rules, line tomography, and the $\mathfrak g_2$-shadow in observable decoherence rates (T-226).
+- MSFS §8.1 (Intensional Grading) and the Diakrisis correspondence document — the Σ-Mor bridge: repaired and sharpened in §8-progress (T-229 [Т при Σ-FIB], $n_0(F) = \rho_{\mathrm{cov}}$); the fiber-level questions Q1 ∧ Q2 remain [Г].
