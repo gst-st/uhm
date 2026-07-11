@@ -90,8 +90,8 @@ The consolidated register — what the vertical does **not** yet know, in one pl
 | H2.2 | (P)-genericity for actual Rich-metatheories | II/III | [С] | verification of the fiber-product construction against R1–R5 edge cases |
 | H2.3 | K-P1–K-P4, Σ-P1/Σ-P2 unverified | II | falsifiable | the experiments (E4–E7 battery; Γ-tomography) |
 | H3.1 | ΣQ1′: charts forced by intensionality? | III | [Г] | proof from fibrancy-failure structure, or counterexample |
-| H3.2 | Blueprint syndrome completeness | III | [Г] | pseudo-relabelings realizing Hamming/simplex |
-| H3.3 | Designed metric = canonical display grading? | III | [Г] | computation of the canonical grading on the blueprint fiber |
+| H3.2 | Blueprint syndrome completeness | III | **closed** (2026-07-11, T-237) | closed by strict gauge: Wilson-loop soundness + exhaustive gauge completeness; the anticipated pseudo-relabelings proved unnecessary |
+| H3.3 | Designed metric = canonical display grading? | III | **closed at blueprint level** (T-237) | both metrics $\{0,1\}$-valued with the same zero set ($d_{\min}=3$, $\rho_{\mathrm{cov}}=1$ + T-234); general-fiber question remains inside H3.1 |
 | H3.4 | Natural Fano foundation | III | [Г] | exhibit one, or prove no natural principle-set realizes PG(2,2) |
 
 ## §7. The anti-numerology register {#резонансы}
