@@ -1047,6 +1047,16 @@ See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#м
 
 ---
 
+### 9.3 Track Σ: the diagnosability derivation {#трек-сигма}
+
+**Theorem Σ (T-224) [Т]** adds a fourth independent selector of seven, using no algebra at all — only sphere packing and design counting: perfect single-fault localizability (D1–D2) forces $n = 2^r - 1$; a nontrivial state grammar (D3) forces $n \geq 7$; and grammar rigidity (D4) holds **only** at $n = 7$ (nonlinear Vasil'ev perfect codes break uniqueness from $n = 15$ on). The identification of UHM axes with internally diagnosable status bits is the interpretive step [И]. See [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
+
+| Aspect | Track A | Track B | Track Σ |
+|--------|---------|---------|---------|
+| Input | (AP)+(PH)+(QG) | P1+P2 (division algebra) | (D1)–(D4) diagnosability |
+| Machinery | axiomatic closure | Hurwitz theorem | perfect codes, $S(2,3,7)$ |
+| Output | $N = 7$ | $N = 7$ via $\mathrm{Im}\,\mathbb{O}$ | $N = 7$ + Fano grammar, uniquely |
+
 ## Conclusion
 
 ### Main Result

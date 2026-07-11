@@ -144,6 +144,8 @@ The self-consistent equation $\varphi(\rho_*) = \rho_*$ may have **multiple solu
 The structure of Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ is isomorphic to the parity-check matrix of the Hamming code H(7,4) **[Т]**. The incidence "point $i \in$ line $k$" defines the matrix $H_{ki}$, which coincides exactly with the parity-check matrix of H(7,4) ($3 \times 7$, row weight 3, column weight 3). Isomorphism: $\mathrm{PG}(2,2) \cong H(7,4)$ — a classical result in coding theory.
 :::
 
+**Converse direction (selector).** Theorem Σ (T-224) shows this is not merely a feature of the heptad but a *selector*: perfect single-fault diagnosability + a nontrivial state grammar + rigidity of that grammar force $n = 7$ and the Fano/Hamming structure uniquely — see [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
+
 ### 2.1 Structure of the code H(7,4)
 
 The Hamming code H(7,4) is a linear code with parameters:

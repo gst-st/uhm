@@ -374,6 +374,8 @@ const sidebars: SidebarsConfig = {
     'applied/research/poincare-perelman',
     'applied/research/gap-diagnostics',
     'applied/research/symbolic-correspondence',
+    'applied/research/gamma-canon',
+    'applied/research/syndrome-calculus',
     'applied/research/mathesis',
     'applied/research/experimental-protocol',
   ],

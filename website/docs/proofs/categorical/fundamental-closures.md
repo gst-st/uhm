@@ -846,7 +846,7 @@ Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions))
 
 The natural question: is UHM's Lawvere fixed-point $\rho^* = \varphi(\Gamma)$ (T-96) optimal with respect to the full multi-resource vector — or does UHM require an explicit MRQT-extension on top of its existing $\mathcal{R}$-operator?
 
-Theorem T-222 proves the first alternative: **UHM is MRQT-complete in its domain of applicability** (Markovian + low-temperature). No extension is required. The optimum is characterised by *spectral majorization*, not by an (empty) $G_2$-invariant submanifold — the corrected formulation below.
+Theorem T-222 proves the first alternative: **UHM is MRQT-complete in its domain of applicability** (Markovian + high-temperature, $\beta H_\text{eff} \ll 1$). No extension is required. The optimum is characterised by *spectral majorization*, not by an (empty) $G_2$-invariant submanifold — the corrected formulation below.
 
 ### 16.1. Statement {#t-222-statement}
 
@@ -928,7 +928,7 @@ T-222 holds under three conditions (the earlier "$G_2$-covariance of the state" 
 
 1. **Viability** — $\rho \in \mathcal{V}_\text{full}$, i.e., $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_\text{diff} \geq 2$.
 2. **Markovian** — Lindblad dynamics (T4 scope, see `theoretical-closures.md`).
-3. **Low-temperature** — $\beta H_\text{eff} \ll 1$ (Lemmas L2 and L6 use $\rho_\beta \approx I/7$).
+3. **High-temperature (weak effective Hamiltonian)** — $\beta H_\text{eff} \ll 1$ (Lemmas L2 and L6 use $\rho_\beta \approx I/7$).
 
 Outside these conditions, T-222 does not apply directly. A generalisation to arbitrary $\beta$ requires temperature-dependent $\rho^*(\beta)$, which deviates from the T-96 Lawvere point by $O(\beta)$. Non-Markovian extensions, and the frame-covariant treatment of the 14 non-Abelian charges, remain open research directions.
 

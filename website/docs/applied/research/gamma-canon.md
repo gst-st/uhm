@@ -107,7 +107,7 @@ Read the rows as claims — they are not platitudes: *knowledge passes into acti
 
 This layer is the Canon's sharpest structural innovation, and it is a theorem.
 
-Consider the $2^7 = 128$ binary *activation signatures* of the alphabet (each dimension active or dormant). The GF(2)-span of the seven triads is the Hamming code $H(7,4)$ — sixteen codewords with weight distribution $1 + 7x^3 + 7x^4 + x^7$ and minimum distance 3 (verified by direct computation on the canonical lines):
+Consider the $2^7 = 128$ binary *activation signatures* of the alphabet (each dimension active or dormant). The GF(2)-span of the seven triads is the Hamming code $H(7,4)$ — sixteen codewords with weight distribution $1 + 7x^3 + 7x^4 + x^7$ and minimum distance 3 (verified by direct computation on the canonical lines). By Theorem Σ (T-224) this grammar is not one design choice among many: perfect single-fault diagnosability with a nontrivial rigid grammar *forces* exactly seven dimensions and exactly this code ([Σ-calculus](/docs/applied/research/syndrome-calculus#t-224); the Σ-compression protocol T-225 adds the operational 21→7→3→1 measurement pyramid):
 
 | Class | Count | Signatures | Canon name [О] |
 |---|---|---|---|

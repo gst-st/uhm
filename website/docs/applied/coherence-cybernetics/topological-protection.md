@@ -111,6 +111,8 @@ In neuroscience the analogue is the redundancy of neural ensembles. Damage to on
 
 Code-theoretic protection relies exclusively on the combinatorial structure of PG(2,2) — the Fano plane. It does not use octonion algebra (shield II), does not appeal to the potential (shield III), does not require self-modelling (shield IV), and does not depend on the topology of the configuration space (shield V). Even if by some miracle octonions became associative and the potential became flat, the Hamming code would still correct single errors.
 
+**Upgrade (T-224).** Shield I is also a *selector*: requiring perfect single-fault diagnosability with a nontrivial, rigid grammar already forces seven axes and the Fano structure — the diagnosability track of $N=7$ ([Σ-calculus](/docs/applied/research/syndrome-calculus#t-224)).
+
 **See:** [Hamming code in Gap dynamics](/docs/core/dynamics/gap-dynamics#код-хэмминга)
 
 ---
