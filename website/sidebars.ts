@@ -13,6 +13,7 @@ const sidebars: SidebarsConfig = {
         'core/foundations/axiom-septicity',
         'core/foundations/consequences',
         'core/foundations/spacetime',
+        'core/foundations/universe-as-holonom',
       ],
     },
     {
@@ -389,6 +390,7 @@ const sidebars: SidebarsConfig = {
     'reference/computational',
     'reference/status-registry',
     'reference/articulation-hygiene',
+    'reference/epistemic-vertical',
   ],
 };
 
