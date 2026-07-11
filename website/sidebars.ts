@@ -376,6 +376,7 @@ const sidebars: SidebarsConfig = {
     'applied/research/symbolic-correspondence',
     'applied/research/gamma-canon',
     'applied/research/syndrome-calculus',
+    'applied/research/fano-fingerprint',
     'applied/research/mathesis',
     'applied/research/experimental-protocol',
   ],
