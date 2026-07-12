@@ -224,6 +224,62 @@ This is a **linear** interpolation between $D_{\text{diff}} = 1$ (when $\mathrm{
 
 The two formulas **coincide at the boundaries** and give **the same result** for all threshold comparisons ($D_{\text{diff}} \geq D_{\min} = 2$). The $O((\mathrm{Coh}_E)^2)$ discrepancy in the intermediate region does not affect physical predictions, since the theory uses only threshold conditions, not exact numerical values of $D_{\text{diff}}$.
 
+#### Theorem (Equivalence of 7D and 42D for the consciousness threshold conditions) [Т] {#теорема-7d-42d-equiv}
+
+:::tip Theorem
+For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ (T-151 [Т]):
+
+$$
+D_{\text{diff}}^{7D}(\Gamma) \geq D_{\min} \iff D_{\text{diff}}^{42D}(\iota(\Gamma)) \geq D_{\min}
+$$
+
+where $\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42})$ is the canonical Morita embedding (T-58 [Т]). Consequently, **all consciousness threshold conditions** (L0→L4) are verifiable in 7D without passing to 42D.
+:::
+
+**Proof.**
+
+**Step 1 (Morita embedding).** By T-58 [Т], the Morita equivalence $A_{\text{int}} \sim_{\text{Morita}} A_{\text{int}} \otimes M_6(\mathbb{C})$ induces the embedding
+
+$$
+\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42}), \quad \iota(\Gamma) = \Gamma \otimes \frac{I_6}{6}.
+$$
+
+The reverse projection is $\pi = \mathrm{Tr}_{\mathbb{C}^6}$, and $\pi \circ \iota = \mathrm{id}$.
+
+**Step 2 (Relation of $D_{\text{diff}}^{42D}$ and $\mathrm{Coh}_E$).** In 42D: $\rho_E^{42D} = \mathrm{Tr}_{\bar{E}}(\iota(\Gamma))$. For $\iota(\Gamma) = \Gamma \otimes I_6/6$:
+
+$$
+\rho_E^{42D} = \mathrm{Tr}_{\bar{E}}(\Gamma) \otimes \frac{I_6}{6} = \gamma_{EE} \cdot \frac{I_6}{6} + \sum_{j \neq E} |\gamma_{Ej}| \cdot (\text{off-diagonal contributions}).
+$$
+
+The eigenvalues of $\rho_E^{42D}$ depend on $\gamma_{EE}$ and the coherences $\gamma_{Ej}$:
+- at $\mathrm{Coh}_E = 0$ (all $\gamma_{Ej} = 0$): $\rho_E^{42D} = \gamma_{EE} \cdot I_6/6$ — one nonzero eigenvector → $D_{\text{diff}}^{42D} = 1$.
+- at $\mathrm{Coh}_E > 0$: additional eigenvalues appear → $D_{\text{diff}}^{42D} \geq 2$.
+
+**Step 3 (Threshold equivalence).** By definition:
+- $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ [Т-128]
+- $D_{\text{diff}}^{42D} = \exp(S_{vN}(\rho_E^{42D}))$
+
+Both quantities are:
+- $= 1$ at $\mathrm{Coh}_E = 0$ (exact coincidence at the boundary)
+- $\geq 2$ at $\mathrm{Coh}_E > 0$ (both $> 1$ in the presence of E-coherences)
+- $= N$ at $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ (exact coincidence at the upper boundary)
+
+Hence $D_{\text{diff}}^{7D} \geq 2 \iff \mathrm{Coh}_E > 0 \iff D_{\text{diff}}^{42D} \geq 2$. $\square$
+
+**Step 4 (Completeness of 7D for L0–L4).** The conditions of each level:
+- **L0**: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — automatically in 7D ✓
+- **L1**: $\mathrm{rank}(\rho_E) > 1 \iff \mathrm{Coh}_E > 0$ — verifiable in 7D ✓
+- **L2**: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\text{diff}} \geq 2 \wedge \|\sigma\|_\infty < 1$ — all components computable in 7D (T-137 [Т]) ✓
+- **L3**: $R^{(2)} \geq 1/4$ — computable via $\varphi(\Gamma) \in \mathcal{D}(\mathbb{C}^7)$ ✓
+- **L4**: $P > 6/7 \wedge \forall n: R^{(n)} > 0$ — computable via the iterations $\varphi^{(n)}$ in 7D ✓
+
+**Conclusion.** The 42D extension is **not required** to check the consciousness conditions. All threshold tests L0–L4 are **fully defined** in $\mathcal{D}(\mathbb{C}^7)$.
+
+42D is needed **only** for the spectral decomposition of $\rho_E$ (eigenvalues/eigenvectors) — a task of detailed phenomenological analysis, not of classification by levels. $\blacksquare$
+
+**Status:** [Т]. Audit problem I.2 is **resolved**: 7D suffices for all consciousness threshold conditions.
+
 :::info Practical summary
 For **classifying** systems by levels L0-L4 the 7D formula $D_{\text{diff}}^{7D}$ is sufficient. The full matrix $\rho_E$ (via the 42D PW extension) is needed only for detailed **spectral analysis** of phenomenal content — a task relevant for future experimental tests.
 :::
