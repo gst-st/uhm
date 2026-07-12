@@ -45,12 +45,13 @@ Remove any one of the seven — and the system ceases to be "alive" in the full 
 Seven is the **minimum** number of such tools. Theorem S proves this rigorously: with 6 or fewer dimensions it is impossible to satisfy (AP)+(PH)+(QG) simultaneously.
 :::
 
-Remarkably, the number 7 arises in three **independent** contexts:
-1. **Functional** (Theorem S): 7 = minimum for (AP)+(PH)+(QG)
-2. **Algebraic** (octonions): 7 = dim(Im($\mathbb{O}$)), the unique maximal normed division algebra
-3. **Geometric** (Fano plane): 7 = number of points in the minimal projective plane PG(2,2)
+Remarkably, the number 7 arises in four **independent** contexts:
+1. **Functional** (Theorem S): 7 = the *minimum* for (AP)+(PH)+(QG)
+2. **Algebraic** (octonions): 7 = dim(Im($\mathbb{O}$)), the *maximal* normed division algebra
+3. **Geometric / diagnostic** (Fano plane): 7 = the points of the minimal projective plane PG(2,2), and — sharpened by Theorem Σ ([T-224](/docs/applied/research/syndrome-calculus#t-224)) — the unique size at which *every single fault is uniquely locatable*
+4. **Categorical** (T-185): 7 = the adjoint modalities of a cohesive ∞-topos
 
-The convergence of these three answers is strong evidence that 7 is not accidental but reflects a deep mathematical necessity.
+The convergence of these answers is strong evidence that 7 is not accidental but reflects a deep necessity — and between two of the tracks the convergence is now a *theorem*: perfect diagnosability is the division property (T-244), so "the last division algebra" and "the last perfectly self-diagnosing frame" name the same seven axes. The formal statement of all four tracks, with this identity, is given below (“Connection of the four derivation tracks”).
 
 ### Uniqueness of the basis
 
@@ -305,17 +306,20 @@ The seven modalities are not isolated — they are linked by a system of adjunct
 
 Covariant modalities "simplify" (lose information during observation), contravariant modalities "enrich" (add structure during reflection). This exactly reproduces UHM physics: the $\mathbf{3}$-sector (A, S, D) is "objective" (external description), the $\bar{\mathbf{3}}$-sector (L, E, U) is "subjective" (internal description).
 
-**Connection of the three derivation tracks for N = 7.**
+**Connection of the four derivation tracks for N = 7.**
 
-The number 7 dimensions is derived by three **independent** routes converging to a single result:
+The number 7 is not asserted; it is *forced*, and forced four separate times, by arguments that share no machinery. That a functional-analytic argument, an algebraic one, a categorical one, and a coding-theoretic one all land on the same integer is the strongest evidence a structural constant can carry — the opposite of a fitted parameter.
 
-| Track | Method | Result | Status |
-|-------|--------|--------|--------|
-| **Functional** (Theorem S) | (AP)+(PH)+(QG) → N ≥ 7 | Minimality | [T] |
-| **Algebraic** (octonions) | Hurwitz → $\mathrm{Im}(\mathbb{O})$ → dim = 7 | Maximality | [T] |
-| **Categorical** (T-185) | Cohesive ∞-topos → 7 modalities | Canonicity | [T] |
+| Track | The question it answers | Why the answer is 7 | Status |
+|-------|-------------------------|---------------------|--------|
+| **Functional** (Theorem S) | What is the *fewest* dimensions a self-maintaining system needs? | (AP)+(PH)+(QG) force $N \geq 7$ — **minimality** | [T] |
+| **Algebraic** (octonions) | What is the *largest* normed division algebra? | Hurwitz: the last one is $\mathbb{O}$, with $\dim\,\mathrm{Im}(\mathbb{O}) = 7$ — **maximality** | [T] |
+| **Categorical** (T-185) | How many independent *modalities* does a cohesive ∞-topos carry? | exactly seven adjoint modalities — **canonicity** | [T] |
+| **Diagnosability** (Theorem Σ, [T-224](/docs/applied/research/syndrome-calculus#t-224)) | For which $N$ can *every single fault be uniquely located*? | perfect single-fault codes $+$ rigidity force $N = 7$ — the **selector** | [T] |
 
-The coincidence of three answers is **not accidental** but reflects the unity of the mathematical structure: differential cohesion (T-185) reproduces the octonion algebra ($\mathrm{Im}(\mathbb{O})$) through functorial semantics, and functional minimality (Theorem S) ensures that no simpler structure is possible.
+Minimality and maximality meeting is already remarkable: 7 is at once the *fewest* a viable system can have and the *most* a division algebra can carry, so the viable and the maximal coincide with no room to spare. The categorical track adds that this is also the *canonical* count — read off pure adjunction structure, with no physics put in.
+
+And the fourth track is not a fourth coincidence: it is the *same fact* as the second, now proven. Theorem Σ selects seven by demanding **perfect diagnosability**, and [T-244](/docs/applied/research/syndrome-calculus#отбор-знака) shows that this demand simply *is* the division property. A frame is perfectly diagnosable exactly when it is **anisotropic** — has no "null" axis on which a fault would be silent; anisotropy is exactly the absence of zero-divisors; and the absence of zero-divisors is exactly what makes a normed algebra a *division* algebra, which Hurwitz caps at dimension eight, i.e. seven imaginary axes. So "the last division algebra" and "the last perfectly self-diagnosing frame" are two names for the same seven axes. The convergence of the tracks is therefore not merely observed: between these two it is a theorem, and the remaining agreement (functional, categorical) reflects the one underlying rigidity of the structure.
 
 **Corollary (Categorical status of semantic names).**
 The UHM dimensions are **not arbitrary conventions [О]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.

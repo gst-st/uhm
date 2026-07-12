@@ -23,7 +23,7 @@ This document describes a **maximally complete experimental protocol** for the e
 
 ### 1.1. The problem: empirical vacuum
 
-UHM is one of the most formally developed theories of consciousness: ~185 theorems, 22 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
+UHM is one of the most formally developed theories of consciousness: ~210 theorems, 22 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
 ### 1.2. Key observation: PCI* ≈ P_crit
 

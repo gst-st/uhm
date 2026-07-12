@@ -491,7 +491,7 @@ const docSections: DocSection[] = [
     title: 'Proofs',
     description: 'Formal Theorems',
     link: '/docs/proofs/minimality/theorem-minimality-7',
-    items: ['Minimality of 7 dimensions (Track A)', '180+ results: from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
+    items: ['Minimality of 7 dimensions (Track A)', '250+ formal results: from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
   },
   {
     id: 'cybernetics',

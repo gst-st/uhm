@@ -59,7 +59,7 @@ Each level builds on the previous and is irreducible to it — in exact correspo
 
 ### 1.1. The scale of modern theory
 
-A mature scientific theory is an object that exceeds the cognitive capacity of a single agent. For example: the CC (Coherence Cybernetics, the applied layer of UHM) documentation comprises ~400 pages, ~185 theorems with 7 epistemic statuses, 23+ falsifiable predictions, 30+ comparisons with competing theories, ~270 cross-references. Integrated Information Theory (IIT 4.0) is a comparable volume with its own formalism ($\Phi$, Q-shape, postulates). Anokhin's Cognitome is a qualitative theory with an 80-year experimental background. And there are [more than 325](https://www.consciousnessatlas.com/) such theories of consciousness (per the Consciousness Atlas catalog).
+A mature scientific theory is an object that exceeds the cognitive capacity of a single agent. For example: the CC (Coherence Cybernetics, the applied layer of UHM) documentation comprises ~400 pages, ~210 theorems with 7 epistemic statuses, 23+ falsifiable predictions, 30+ comparisons with competing theories, ~270 cross-references. Integrated Information Theory (IIT 4.0) is a comparable volume with its own formalism ($\Phi$, Q-shape, postulates). Anokhin's Cognitome is a qualitative theory with an 80-year experimental background. And there are [more than 325](https://www.consciousnessatlas.com/) such theories of consciousness (per the Consciousness Atlas catalog).
 
 No single person can hold simultaneously in working memory:
 - the internal structure of even one theory (which statements depend on which)
@@ -176,7 +176,7 @@ The hypergraph (SQLite) and typed edges are a **1-categorical emulation** of ∞
 - a distinguished subclass of morphisms (*dependencies*)
 - an epistemic functor $\varepsilon_T: \mathcal{C}_T \to \mathbf{Status}$
 
-Examples: $T_{\text{UHM}}$ (~185 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}}$ (5 postulates, $\Phi$, Q-shape), $T_{\text{GWT}}$ (global ignition, access), $T_{\text{FEP}}$ (free energy, Markov blanket).
+Examples: $T_{\text{UHM}}$ (~210 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}}$ (5 postulates, $\Phi$, Q-shape), $T_{\text{GWT}}$ (global ignition, access), $T_{\text{FEP}}$ (free energy, Markov blanket).
 
 **Morphisms.** A morphism $f: T_1 \to T_2$ is an *interpretation functor*: an ∞-functor $\mathcal{C}_{T_1} \to \mathcal{C}_{T_2}$, preserving statement types and compatible with $\varepsilon$.
 
