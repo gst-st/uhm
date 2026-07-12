@@ -263,7 +263,7 @@ Open mathematical problems: classification of $\Omega$-categories, connection be
 | 3 | [Self-Observation and Measure $R$](/docs/consciousness/foundations/self-observation) | Formalisation of reflection: $R \geq 1/3$ as a threshold, canonical definition of $R$ | 60 min |
 | 4 | [Interiority Theory](/docs/consciousness/foundations/interiority-theory) | Interiority as a fundamental aspect of $\Gamma$, connection with E-coherence | 45 min |
 | 5 | [Interiority Hierarchy L0--L4](/docs/consciousness/hierarchy/interiority-hierarchy) | Formal ladder of subjectivity: numerical criteria for each level | 60 min |
-| 6 | [SAD Depth Tower](/docs/consciousness/hierarchy/depth-tower) | Recursive depth of self-modelling, $\text{SAD}_{\max} = 3$ [C] | 45 min |
+| 6 | [SAD Depth Tower](/docs/consciousness/hierarchy/depth-tower) | Recursive depth of self-modelling, $\text{SAD}_{\max} = 3$ [T] | 45 min |
 | 7 | [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) | Formalisation of qualitative experience via spectral decomposition of $\Gamma$ | 60 min |
 | 8 | [Emotion Taxonomy](/docs/consciousness/phenomenology/emotional-taxonomy) | 7 basic emotional axes from the $\sigma$-profile, predictions for affective science | 45 min |
 | 9 | [AI Consciousness](/docs/consciousness/subjects/ai-consciousness) | Criteria for AI system consciousness: $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$ | 45 min |

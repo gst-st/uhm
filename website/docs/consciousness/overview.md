@@ -269,7 +269,7 @@ The section is organized into 7 subsections, each revealing a specific aspect of
 |---|----------|-------|------------|
 | 5 | [Interiority hierarchy](./hierarchy/interiority-hierarchy) | Levels L0→L4 | Formal definitions of 5 levels |
 | 6 | [Gap characterization](./hierarchy/gap-characterization) | Gap at each level | Quantitative profiles |
-| 7 | [Depth tower](./hierarchy/depth-tower) | SAD and recursion | SAD_MAX = 3 [C] |
+| 7 | [Depth tower](./hierarchy/depth-tower) | SAD and recursion | SAD_MAX = 3 [T] |
 
 ### Phenomenology (phenomenology/)
 

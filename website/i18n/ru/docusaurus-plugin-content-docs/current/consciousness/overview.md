@@ -269,7 +269,7 @@ $$P \in \left(\frac{2}{7},\; \frac{3}{7}\right]$$
 |---|----------|------|-------------------|
 | 5 | [Иерархия интериорности](./hierarchy/interiority-hierarchy) | Уровни L0→L4 | Формальные определения 5 уровней |
 | 6 | [Gap-характеристика](./hierarchy/gap-characterization) | Gap на каждом уровне | Количественные профили |
-| 7 | [Башня глубины](./hierarchy/depth-tower) | SAD и рекурсия | SAD_MAX = 3 [С] |
+| 7 | [Башня глубины](./hierarchy/depth-tower) | SAD и рекурсия | SAD_MAX = 3 [Т] |
 
 ### Феноменология (phenomenology/)
 

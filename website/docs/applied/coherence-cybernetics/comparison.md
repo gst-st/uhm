@@ -177,7 +177,7 @@ What does each theory predict and what does it not? This is the key table: a the
 | Exact consciousness threshold | ~Yes | No | No | No | No | No | No | No | **Yes [T]** |
 | Seven-dimensional stress classification | No | No | No | No | No | No | No | No | **Yes [T]** |
 | Experience–regeneration link | No | No | No | No | No | No | No | No | **Yes [T]** |
-| SAD ceiling = 3 | No | No | No | No | No | No | No | No | **Yes [C]** |
+| SAD ceiling = 3 | No | No | No | No | No | No | No | No | **Yes [T]** |
 | Pre-linguistic cognition | Yes | Yes | No | Yes | ? | No | Yes | No | **Yes [I]** |
 | Neural oscillations from gap | No | No | No | No | ? | No | No | No | **Yes [H]** |
 | Optimality N=7 for learning | No | No | No | No | No | No | No | No | **Yes [T]** |

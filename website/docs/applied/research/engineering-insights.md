@@ -852,7 +852,7 @@ Every engineering principle in this document **traces back** to a specific axiom
 | $N = 7$ minimal | [Minimality theorem](/docs/proofs/minimality/theorem-minimality-7) | [T] |
 | Sector profile = character | T-101 (sector profile), T-92 ($\sigma_k$) | [T] |
 | Constrained optimization | Separation principle (diagonal vs. coherences) | [T] |
-| SAD budget ($\leq 3$ levels) | T-110 (Fano contraction), [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) | [C] |
+| SAD budget ($\leq 3$ levels) | T-110 (Fano contraction), [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) | [T] (T-142) |
 | Sector diagnostics $\sigma_k$ | T-92 ($\sigma_k = 1 - N\gamma_{kk}$) | [T] |
 | Hierarchical scaling | Extrapolation [I] from the fixed $N = 7$ | [I] |
 | "Coherent microservice" pattern | Interpretation [I] of the sector structure | [I] |
