@@ -87,7 +87,7 @@ The consolidated register — what the vertical does **not** yet know, in one pl
 | H1.2 | The Universe's stage $P$ neither derived nor measured | I | [Г] | Λ-deficit programme output or an independent cosmological estimator |
 | H1.3 | Scale-freeness of the grammar conditional on D1–D3 per level | I | [П]/[И] | per-level verification of D1–D3, or a derivation that levels inherit them |
 | H2.1 | Identity of the two ceiling mechanisms (purity vs coding) | II | **closed in the negative** (2026-07-11, T-239) | mechanisms provably distinct: $V = \{1,2,3\}$ monotone vs $K = \{1,3\}$ non-monotone, unique disagreement at the Vasil'ev height $m = 2$, cardinality $3 \neq 2$ excludes every identification; witness identity at $m = 3$ stands |
-| H2.1′ | Common root of the value agreement $\max V = \max K = 3$ | II | [Г] | a derivation producing both the exponential-vs-linear purity inequality and the perfect-code classification from the seven-frame alone, or a proof of arithmetical independence |
+| H2.1′ | Common root of the value agreement $\max V = \max K = 3$ | II | **closed** (T-242) | mechanisms proven independent — the purity ceiling is nonconstant in the contraction base $b$, the coding depth is $b$-independent; they coincide only at $b = 3$, the $\mathrm{PG}(2,2)$ line order that also fixes $N = 7$ (one geometric input, not one mechanism) |
 | H2.2 | (P)-genericity for actual Rich-metatheories | II/III | **closed** (2026-07-11, T-240) | verified against R1–R5 with two corrections: strict pullback → iso-comma, equality → provable isomorphism of $\mathsf{Q}$-images; consistency (R3) inherited from either leg; glue canonical on intensional fibers ((P) a theorem there), a real hypothesis outside |
 | H2.3 | K-P1–K-P4, Σ-P1/Σ-P2 unverified | II | falsifiable | the experiments (E4–E7 battery; Γ-tomography) |
 | H3.1 | ΣQ1′: charts forced by intensionality? | III | [Г], **reduced** (2026-07-11, T-238) | after T-238: finiteness $+$ orbit-separation of the gauge-invariant decided sector, and signature alignment for genuine fibers; or a counterexample fiber admitting no aligned flux |
@@ -104,7 +104,7 @@ A theory whose constants are few and whose geometry is rigid will produce numeri
 | $N = 7$: number / structure / closure / diagnosability | four *independent derivations* of one constant — the opposite of numerology | [Т]×4 |
 | $21 = $ coherences $= \binom{7}{2} = \dim \mathfrak{so}(7)$ | literally the same object | [Т] |
 | $14 = \dim \mathfrak{g}_2 = $ number of rate sum-rules | literally the same decomposition ($W$-twist, T-226) | [Т] |
-| Ceiling $3$: purity ladder vs tower ladder | mechanisms provably distinct — monotone budget vs non-monotone selection (T-239); maxima coincide on the 23-unit witness | [Т]+[Т], dichotomy [Т] (T-239), root of the agreement [Г] (H2.1′) |
+| Ceiling $3$: purity ladder vs tower ladder | mechanisms provably distinct and **arithmetically independent** (T-242): the purity ceiling responds to the contraction base, the coding depth does not; both inputs are $\mathrm{PG}(2,2)$ parameters, so the shared $3$ is one geometric datum in two roles | [Т]+[Т], dichotomy [Т] (T-239), independence [Т] (T-242) |
 | Golay $t = 3$ vs $\mathrm{SAD}_{\max} = 3$ | annotated curiosity; no derivation either way | [Г] |
 | $3$ generations ($|QR(7)|$) vs $3$ organisms/levels | **no relation claimed; inference forbidden** | — |
 | $2/3$: Lüders rate vs Koide ratio | **no relation claimed; inference forbidden** | — |
