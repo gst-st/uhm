@@ -73,7 +73,7 @@ Accordingly, the phrase "monism closed over mathematics with three computed inst
 
 **K-scores.** K1 ✓ — delete the floor and T-230/T-231/T-234 vanish: real theorems about real foundations (the four-rung bound on intensional depth of charted foundations is not expressible elsewhere). K2 ✓ — inward: the tower arithmetic came from the organisms floor; outward: T-234's binding principle returned to the organisms floor as a design law for federations, and T-233's strict/pseudo mechanism is now the named candidate for closing the blueprint's own completeness gap. K3 ✓. K4 ✓ — exhaustive machine verifications (class computations, the 1344-group, the ladder to $m \leq 4096$); the blueprint itself is a checkable artifact (formalizable in Verum/Agda). K5 ✓ — fibrancy failures, $\tau$-syndromes, covering radii of display codes have no organism-floor or axiom-floor formulation. K6 ✓ — register below.
 
-**Holes (K6).** **H3.1** ΣQ1′ (does genuine intensionality force a chart?) [Г] — *reduced* by T-238: on fixed-signature families the chart is canonically the gauge-invariant decided sector of the term algebra, so what remains is finiteness/separation of that sector plus signature alignment for genuine fibers; **H3.2** syndrome completeness of the blueprint — **closed** by T-237 (strict gauge; the anticipated pseudo-relabelings proved unnecessary); **H3.3** coincidence of the designed toggle metric with the canonical display grading — **closed at the blueprint level** by T-237, the general-fiber question living inside H3.1; **H3.4** naturalness: does any *natural* foundation realize the grammar the blueprint constructs? [Г] — the Fano-foundation problem, the floor's central open object.
+**Holes (K6).** **H3.1** ΣQ1′ (does genuine intensionality force a chart?) [Г] — *reduced* by T-238: on fixed-signature families the chart is canonically the gauge-invariant decided sector of the term algebra, so what remains is finiteness/separation of that sector plus signature alignment for genuine fibers; **H3.2** syndrome completeness of the blueprint — **closed** by T-237 (strict gauge; the anticipated pseudo-relabelings proved unnecessary); **H3.3** coincidence of the designed toggle metric with the canonical display grading — **closed at the blueprint level** by T-237, the general-fiber question living inside H3.1; **H3.4** naturalness: does any *natural* foundation realize the grammar the blueprint constructs? [Г] — the Fano-foundation problem, the floor's central open object; *reduced* by T-241: the duality plane of the depth-3 doctrine is a native $\mathrm{PG}(2,2)$, and what remains is a nontrivial line-holonomy on a fiber.
 
 **Verdict.** *Legitimate*, with the designed/discovered split stated wherever the floor is presented.
 
@@ -93,7 +93,7 @@ The consolidated register — what the vertical does **not** yet know, in one pl
 | H3.1 | ΣQ1′: charts forced by intensionality? | III | [Г], **reduced** (2026-07-11, T-238) | after T-238: finiteness $+$ orbit-separation of the gauge-invariant decided sector, and signature alignment for genuine fibers; or a counterexample fiber admitting no aligned flux |
 | H3.2 | Blueprint syndrome completeness | III | **closed** (2026-07-11, T-237) | closed by strict gauge: Wilson-loop soundness + exhaustive gauge completeness; the anticipated pseudo-relabelings proved unnecessary |
 | H3.3 | Designed metric = canonical display grading? | III | **closed at blueprint level** (T-237) | both metrics $\{0,1\}$-valued with the same zero set ($d_{\min}=3$, $\rho_{\mathrm{cov}}=1$ + T-234); general-fiber question remains inside H3.1 |
-| H3.4 | Natural Fano foundation | III | [Г] | exhibit one, or prove no natural principle-set realizes PG(2,2) |
+| H3.4 | Natural Fano foundation | III | [Г], **reduced** (2026-07-11, T-241) | the depth-3 doctrine carries a native $\mathrm{PG}(2,2)$ — the duality plane; remaining: a depth-3 fiber with nontrivial duality-line holonomy, or a triviality proof refuting the candidate |
 
 ## §7. The anti-numerology register {#резонансы}
 
@@ -109,6 +109,7 @@ A theory whose constants are few and whose geometry is rigid will produce numeri
 | $3$ generations ($|QR(7)|$) vs $3$ organisms/levels | **no relation claimed; inference forbidden** | — |
 | $2/3$: Lüders rate vs Koide ratio | **no relation claimed; inference forbidden** | — |
 | $1344 = 2^3 \cdot 168$: monomial stabilizer vs blueprint rigidity group | the same group, same computation reused | [Т] |
+| Duality group $(\mathbb{Z}/2)^3$ of the depth-$3$ doctrine vs the blueprint's flux $\mathbb{F}_2^3$ | no identity claimed beyond the shared $\mathbb{F}_2^3$; establishing or refuting the match **is** reduced H3.4 (T-241) | native plane [Т]; match [Г] (H3.4) |
 
 ## §8. The standing canonization discipline {#дисциплина}
 
