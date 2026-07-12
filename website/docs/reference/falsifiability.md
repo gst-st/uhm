@@ -368,7 +368,7 @@ Systematic analysis of five main vulnerabilities of the theory (2026):
 | 1 | $\dim = 7$ as postulate | Not empirically verified | 15+ independent derivations [T]: Theorem S (minimality) + octonionic derivation + T15 (bridge) | **Closed** (theoretically) |
 | 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | T-129 [T]: $\Phi_{\mathrm{th}} = 1$ from first principles → T-151 [T]: $D_{\min} = 2$ unconditionally | **Closed** (fully) |
 | 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
-| 4 | No experiments | 157+ theorems without lab verification | ~30 testable [predictions](/docs/applied/coherence-cybernetics/predictions), 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
+| 4 | No experiments | 210+ theorems without lab verification | ~30 testable [predictions](/docs/applied/coherence-cybernetics/predictions), 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
 | 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | T-132 [T] (necessity of complex $\gamma_{ij}$) + T-153 [T] (substrate closure), but [Tegmark argument](/docs/consciousness/foundations/two-aspect-monism#квантовая-природа-gamma) not fully addressed | **Partially open** |
 
 **Summary:** 3 of 5 vulnerabilities closed theoretically; 1 is fundamentally experimental; 1 is deeply open (quantum nature of $\Gamma$).

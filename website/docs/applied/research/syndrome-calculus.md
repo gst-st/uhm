@@ -857,4 +857,4 @@ This closes the last question the two-ceilings arc left open: the agreement at $
 - [G₂-structure](/docs/physics/gauge-symmetry/g2-structure) — the forms $\varphi, \ast\varphi$ and the $14 \oplus 7$ split behind §6.
 - [Status registry](/docs/reference/status-registry) — rows T-224–T-241.
 - [The Fano fingerprint](/docs/applied/research/fano-fingerprint) — the dynamical companion: the polar rate law, fourteen sum rules, line tomography, and the $\mathfrak g_2$-shadow in observable decoherence rates (T-226).
-- MSFS §8.1 (Intensional Grading) and the Diakrisis correspondence document — the Σ-Mor bridge of §8: T-229 [Т при Σ-FIB], $n_0(F) = \rho_{\mathrm{cov}}$; the fiber-level residue ΣQ1′ (sector finiteness/separation + signature alignment) [Г].
+- MSFS §8.1 (Intensional Grading) and the Diakrisis correspondence document — the Σ-Mor bridge of §8: T-229 [Т при Σ-FIB], $n_0(F) = \rho_{\mathrm{cov}}$; the fiber-level residue ΣQ1′ **closed on the frame** (T-246: faithfulness is division), the only remainder being the N$=7$ selection per signature.

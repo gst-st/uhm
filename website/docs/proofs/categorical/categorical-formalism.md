@@ -2875,7 +2875,7 @@ Axioms A1-A4 of UHM form a **categorically closed** system: all constructions de
 - Thresholds P_crit, R_th, Φ_th — derived from A1-A4 ([Т])
 - Evolution dΓ/dτ = ℒ_Ω[Γ] — derived from Ω (T-57 [Т])
 
-**Step 3 (Absence of external dependencies).** The only historical dependence — A5 (Page–Wootters) — is derivable from A1-A4 (T-87 [Т]). All 160+ theorems are derived from A1-A4 without external postulates. $\blacksquare$
+**Step 3 (Absence of external dependencies).** The only historical dependence — A5 (Page–Wootters) — is derivable from A1-A4 (T-87 [Т]). All 210+ theorems are derived from A1-A4 without external postulates. $\blacksquare$
 :::
 
 ### Connection to the Lurie–Shulman program {#связь-с-лурье-шульманом}

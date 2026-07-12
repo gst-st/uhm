@@ -775,7 +775,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 53. PMNS from anarchic $M_R$ — **[C]**: O-sector isotropy → angles $\theta_{12} \approx 34°$, $\theta_{23} \approx 45°$, $\theta_{13} \approx 9°$ — [Neutrino Masses](/docs/physics/particle-physics/neutrino-masses#теорема-pmns-анархия)
 54. F-term SUSY breaking from $V_3$ — **[T]**: $F = \partial W / \partial \Theta \neq 0$, $\sqrt{F} \sim \varepsilon \cdot M_{\text{Planck}}$ from superpotential $W$, uniqueness from Schur's lemma — [Supersymmetry](/docs/physics/particle-physics/susy#теорема-суперпотенциал)
 55. Gravitino mass $m_{3/2} \sim 10^{13}$ GeV — **[T]**: $m_{3/2} \sim \varepsilon^3 M_P$ from cubic structure of $W$ — [Supersymmetry](/docs/physics/particle-physics/susy#масса-гравитино-из-суперпотенциала)
-56. Non-perturbative UV finiteness of Gap theory — **[T]** (T-66): compactness + $G_2$-Ward ($21 \to 7$) + SUSY ($7-7=0$) — [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)
+56. Non-perturbative UV finiteness of Gap theory — full order-by-order **[С]** (structural; T-66): compactness + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219); field-space finiteness **[T]**. The retracted "$7-7=0$" trace is **not** a leg — [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)
 57. Black hole information paradox via Gap profile on the horizon — **[H]** — [Quantum Gravity](/docs/physics/gravity/quantum-gravity#информационный-парадокс)
 
 ### Level 4: Refuted results [✗] (8 results)
