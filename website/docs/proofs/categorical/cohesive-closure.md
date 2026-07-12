@@ -265,13 +265,13 @@ The question "why Bures?" reduces further:
 
 **Dependencies:** T-185 [Т], T-186 [Т], T-187 [Т].
 
-### 5.2. Status changes
+### 5.2. Statuses of the closed vulnerabilities
 
-| Vulnerability | Old status | New status | Upgrade mechanism |
-|---|---|---|---|
-| $F = \&$: phenomenal functor | [I] interpretation | [T] from $\iota^* \dashv \mathrm{Inf}$ | Postnikov tower of $\&(\Gamma)$ |
-| Page-Wootters time | [T] with $O(H_{\text{int}})$ | [T] exact | Counit of $(\Pi \dashv \flat)$ |
-| $\Delta F > 0$, $\Lambda > 0$ | [C] on $D_{\text{int}}$ | [T] unconditional | Chern-Weil + Gap > 0 (T-55) |
+| Vulnerability | Status | Closure mechanism |
+|---|---|---|
+| $F = \&$: phenomenal functor | [T] from $\iota^* \dashv \mathrm{Inf}$ | Postnikov tower of $\&(\Gamma)$ |
+| Page-Wootters time | [T] exact | Counit of $(\Pi \dashv \flat)$ |
+| $\Delta F > 0$, $\Lambda > 0$ | [T] unconditional | Chern-Weil + Gap > 0 (T-55) |
 
 ### 5.3. Closing the last open question: why Bures? (T-187)
 

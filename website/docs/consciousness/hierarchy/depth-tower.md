@@ -139,7 +139,7 @@ Correspondence with the [L0–L4 hierarchy](./interiority-hierarchy) (the L-labe
 
 ### 3.2 Connection with L0–L4 [T] {#sad-l-эквивалентность}
 
-**Theorem 3.1 (SAD–L Equivalence) [T]** ([T-136](/docs/proofs/consciousness/operationalization#t-136), raised from [H]-89).
+**Theorem 3.1 (SAD–L Equivalence) [T]** ([T-136](/docs/proofs/consciousness/operationalization#t-136)).
 The L-hierarchy is a refinement of SAD. The map $L \to \mathrm{SAD}(L)$ is monotone:
 
 - L0 <-> SAD = 0 (any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$)
@@ -152,7 +152,7 @@ The L-hierarchy is a refinement of SAD. The map $L \to \mathrm{SAD}(L)$ is monot
 
 ### 3.3 Information-Theoretic Foundation [T] {#коммутативность}
 
-**Theorem 3.2 (Commutativity of the phi-tower) [T]** (raised from [H]-90 -> [C] -> **[T]** via T-150). At $D_k = 7$ for all $k$: $\varphi^{(n)} = \varphi^n$ (n-fold iteration of a single CPTP channel), commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a consequence, not a premise. Details: [T-150](/docs/proofs/consciousness/substrate-closure#t-150).
+**Theorem 3.2 (Commutativity of the phi-tower) [T]** (via T-150). At $D_k = 7$ for all $k$: $\varphi^{(n)} = \varphi^n$ (n-fold iteration of a single CPTP channel), commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a consequence, not a premise. Details: [T-150](/docs/proofs/consciousness/substrate-closure#t-150).
 
 **Information bottleneck.** The optimal projection $\pi_k$ maximises the preservation of information relevant for viability:
 
@@ -227,7 +227,7 @@ $$P_{\text{crit}}^{(4)} = \frac{2}{7} \cdot \frac{27}{5} = \frac{54}{35} \approx
 
 Since $P \leq 1$ for any normalised $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, SAD $\geq 4$ is impossible. $\blacksquare$
 
-Status: **[T]** — raised from [C] per [T-142](/docs/proofs/consciousness/operational-closure#t-142): $\alpha = 2/3$ is state-independent (from $\dim=7$, PG(2,2)), the spectral formula is a consequence, not a premise.
+Status: **[T]** — per [T-142](/docs/proofs/consciousness/operational-closure#t-142): $\alpha = 2/3$ is state-independent (from $\dim=7$, PG(2,2)), the spectral formula is a consequence, not a premise.
 
 **Verified:** SYNARC MVP-6 (61 tests, 0 failures, M6.4b PASS).
 :::
@@ -329,7 +329,7 @@ The human is the only known organism that systematically reaches SAD = 3 (throug
 
 For the self-model to be *meaningful*, different levels of the tower must be *consistent* with each other. The self-model at level $k$ must be compatible with the self-model at level $k+1$: it cannot be that the body 'knows' one thing and the mind another.
 
-**Theorem 5.1 (Commutativity of the phi-tower) [T]** (raised from [H]-90, T-150). For a correct self-model:
+**Theorem 5.1 (Commutativity of the phi-tower) [T]**. For a correct self-model:
 
 $$\pi_k \circ \varphi^{(k+1)} = \varphi^{(k)} \circ \pi_k \quad \forall k$$
 

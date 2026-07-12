@@ -1560,7 +1560,7 @@ $$
 \|G(f \circ g) - G(f)^{\text{lin}} \circ G(g)^{\text{lin}}\|_F = O(\|f\|_{C^2}^2 \cdot \|g\|_{C^2}^2 \cdot r^2).
 $$
 
-**Status:** [T] (upgraded from [С]). Theorem 9.1 is proven with an explicit error bound.
+**Status:** [T]. Theorem 9.1 is proven with an explicit error bound.
 
 **Results used:**
 - Taylor's formula with Lagrange remainder (standard, Rudin "Principles of Mathematical Analysis");

@@ -372,7 +372,7 @@ The inductive limit $\mathcal{G}_\infty = \varinjlim_M \mathcal{G}_M$ is a count
 
 **Conclusion.** The functor $\mathcal{F}_{\text{LQG}}: \mathbf{SpinNet}_{SU(2)}^{\text{bd}} \to \mathbf{Hol}_{\text{comp}}$ is well-defined for bounded spin networks. $\blacksquare$
 
-**Status:** [T] (upgraded from [С при C29]) within the scope $\mathbf{SpinNet}_{SU(2)}^{\text{bd}}$.
+**Status:** [T] within the scope $\mathbf{SpinNet}_{SU(2)}^{\text{bd}}$.
 
 **Scope:**
 - **For $j_e \leq 3$**: proven [T] — explicit construction of $\Gamma_{\text{total}}$.
@@ -447,7 +447,7 @@ $$
 
 **Corollary.** The functor $\mathcal{F}_{\text{LQG}}^{\text{unbnd}}$ extends to the **entire** category $\mathbf{SpinNet}_{SU(2)}$ (without the restriction $j_e \leq 3$).
 
-**Status:** [T] (upgraded from [С]). The cluster construction explicitly realizes **any** spin through a chain of holons. The cost is an increase in the number of holons: $M_{\text{total}} = O(|E| \cdot j_{\max})$ instead of $M = |V|$.
+**Status:** [T]. The cluster construction explicitly realizes **any** spin through a chain of holons. The cost is an increase in the number of holons: $M_{\text{total}} = O(|E| \cdot j_{\max})$ instead of $M = |V|$.
 
 **Results used:**
 - Lemma C29' [T] (bounded spin networks, §2.2);
@@ -550,7 +550,7 @@ By group-invariance of the Casimir, $W_7$ is a $G_2$-scalar. Hence $A_{\text{Fan
 
 Satisfaction of axioms (A1)-(A4) means that $A_{\text{Fano}}$ **is** a spin foam amplitude in the sense of standard LQG theory (Baez 1998, Perez 2013), adapted to the $G_2$-structure of UHM.
 
-**Status:** [T] (upgraded from [Г]) for axioms (A1)-(A4).
+**Status:** [T] for axioms (A1)-(A4).
 
 **Remains [С]:** convergence to classical geometry in the semi-classical limit $j \to \infty$. This limit gives the Wigner asymptotic of 3$j$-symbols:
 
@@ -726,7 +726,7 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 **Conclusion.** The functor $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet}_{\text{fin}}^{M^4} \to \mathbf{Sh}_\infty(\mathcal{C})$ is well-defined, where $\mathbf{CausalSet}_{\text{fin}}^{M^4}$ is the full subcategory of finite causal sets faithfully embedded into $M^4$. $\blacksquare$
 
-**Status:** [T] (upgraded from [С при C30]). The proof uses:
+**Status:** [T]. The proof uses:
 - T-38b [Т] (emergent clocks $\mathbb{Z}_{7^M}$);
 - T-117, T-118, T-119, T-120 [Т] (recovery of $M^4$);
 - [Lurie HTT 6.1.3.8](https://www.math.ias.edu/~lurie/papers/HTT.pdf) (embedding of simplicial sets);
@@ -954,7 +954,7 @@ Overall: $(f'^*, \alpha', \beta') = (g, \lambda) \cdot (f^*, \alpha, \beta)$ for
 
 The receiving morphism $(f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathrm{Sh}_\infty(\mathcal{C}), A_{\text{int}}, \mathcal{L}_\Omega)$ exists and is essentially unique (determined uniquely up to the gauge action of $G_2 \times \mathbb{R}_{>0}$). $\blacksquare$
 
-**Status:** [T] (upgraded from [H]). The proof uses:
+**Status:** [T]. The proof uses:
 - Standard theory of $(\infty,1)$-topoi (Lurie HTT, HA);
 - Takesaki's theorem on conditional expectations (1972);
 - Stinespring's theorem on representations of CPTP maps (1955);

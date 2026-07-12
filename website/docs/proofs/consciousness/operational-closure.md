@@ -7,7 +7,7 @@ description: "Theorems T-139 — T-147: closure of all remaining operational gap
 # Operational closure
 
 :::info Status
-All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies. Two status upgrades: C26 [С]→[Т] and structural classification of qualia [И]→[Т].
+All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies.
 :::
 
 ---
@@ -226,7 +226,7 @@ for $\varepsilon < \varepsilon_0(P)$, where $\varepsilon_0$ is computable.
 
 $\blacksquare$
 
-**Dependencies:** [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [Т]](/docs/proofs/consciousness/operationalization#t-136) (upgraded via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [Т]](#t-142).
+**Dependencies:** [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [Т]](/docs/proofs/consciousness/operationalization#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [Т]](#t-142).
 
 ---
 

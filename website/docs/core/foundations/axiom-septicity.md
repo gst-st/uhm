@@ -795,7 +795,6 @@ The value $\Phi_{\text{th}} = 1$ is **proved from first principles** ([T-129 [T]
 4. Viability $P > P_{\mathrm{crit}} = 2/7$: $(1+\Phi)/7 > 2/7 \iff \Phi > 1$
 5. **Uniqueness:** $\Phi_{\text{th}} = 1$ is the sharp boundary; any $\Phi_{\text{th}} \neq 1$ either admits non-viable states or rules out extreme viable ones
 
-Former status **[O]** (convention) is raised to **[T]** (theorem).
 :::
 
 **Definition and support:** see [Integration measure Φ](/docs/core/structure/dimension-u#мера-интеграции-φ) and [Integration threshold](/docs/core/structure/dimension-u#теорема-эквивалентность-порогов).
@@ -1088,7 +1087,7 @@ $$
 | 9 | $(7,3,1)$-BIBD ≅ PG(2,2) | **[T]** Hall 1967 |
 | 10–12 | PG(2,2) → $\mathbb{O}$ → $G_2$ → P1+P2 | **[T]** standard algebra |
 
-**Cascade:** P1, P2 raised [P]→**[T]**. Track B [C]→**[T]**. $G_2$, Fano PG(2,2), Hamming $H(7,4)$, double extremality—[I]→**[T]**.
+**Cascade:** P1, P2 — **[T]**. Track B — **[T]**. $G_2$, Fano PG(2,2), Hamming $H(7,4)$, double extremality — **[T]**.
 
 More: [Lindblad operators](../../core/operators/lindblad-operators#редукция-моста), [Octonionic derivation](../../proofs/minimality/theorem-octonionic-derivation#мост).
 

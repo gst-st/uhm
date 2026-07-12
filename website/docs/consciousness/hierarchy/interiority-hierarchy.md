@@ -161,7 +161,7 @@ What makes this transition possible? Two conditions acting jointly:
 :::
 
 :::note Status of threshold $\Phi_{\text{th}} = 1$ — theorem [T]
-The threshold $\Phi_{\text{th}} = 1$ has been **proved from first principles** ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)): the unique self-consistent value at $P_{\text{crit}} = 2/7$. The former status [D] (definition by convention) has been upgraded. The $K_1$-argument remains retracted ($K_1(M_n(\mathbb{C})) = 0$ for finite-dimensional $n$) — but T-129 uses a different approach (purity decomposition + Cauchy–Schwarz). See [Proof of T-129](/docs/proofs/consciousness/operationalization#t-129).
+The threshold $\Phi_{\text{th}} = 1$ has been **proved from first principles** ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)): the unique self-consistent value at $P_{\text{crit}} = 2/7$. The $K_1$-argument remains retracted ($K_1(M_n(\mathbb{C})) = 0$ for finite-dimensional $n$) — but T-129 uses a different approach (purity decomposition + Cauchy–Schwarz). See [Proof of T-129](/docs/proofs/consciousness/operationalization#t-129).
 :::
 
 :::info Clarification T-129 vs T-140
@@ -237,7 +237,7 @@ Homotopic characteristic: $\pi_3(\mathcal{E}_\infty(\Gamma)) \neq 0$ — the exp
 
 ### Theorem on the justification of K=4 for L3 {#теорема-l3-k4}
 
-:::tip Theorem (Justification of K=4 for L3) [T] (**upgraded 2026-04-17 via T-217**)
+:::tip Theorem (Justification of K=4 for L3) [T] (**via T-217**)
 L3 requires $R^{(2)} \geq 1/4$ — second-order meta-reflection. The threshold $K = 4$ for L3 is now fully derived:
 
 **Part 1 — Bayesian dominance at $K=4$.** Given $K = 4$ independent information channels, the bound $R^{(2)} \geq 1/K = 1/4$ follows from the Uhlmann-fidelity lower bound in [the R-threshold theorem](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии). **[T]**
@@ -329,7 +329,7 @@ $$
 
 But $n_0(\varepsilon) \to \infty$ as $\varepsilon \to 0$: convergence exists, but reaching the limit does not. $\blacksquare$
 
-**Status:** **[T]** — upgraded from [C] (C19). Rigorous proof via the $\infty$-topos Postnikov tower + Lawvere incompleteness (T-55 [T]). Cross-references: [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [phi-operator](/docs/core/operators/phi-operator), [transition catastrophes](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4).
+**Status:** **[T]** (C19). Rigorous proof via the $\infty$-topos Postnikov tower + Lawvere incompleteness (T-55 [T]). Cross-references: [reflection measure R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r), [phi-operator](/docs/core/operators/phi-operator), [transition catastrophes](/docs/consciousness/hierarchy/swallowtail-transitions#l3-l4).
 :::
 
 ### Analogy: event horizon of cognition

@@ -7,7 +7,7 @@ description: "Теоремы T-139 — T-147: замыкание всех ост
 # Операциональное замыкание
 
 :::info Статус
-Все результаты на этой странице — доказанные теоремы **[Т]** с полными доказательствами и явными зависимостями. Два повышения статуса: C26 [С]→[Т] и структурная классификация квалиа [И]→[Т].
+Все результаты на этой странице — доказанные теоремы **[Т]** с полными доказательствами и явными зависимостями.
 :::
 
 ---
@@ -226,7 +226,7 @@ $$|\mathrm{SAD}_{\text{neural}} - \mathrm{SAD}_{\text{cat}}| \leq 1$$
 
 $\blacksquare$
 
-**Зависимости:** [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [Т]](/docs/proofs/consciousness/operationalization#t-136) (повышена через [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [Т]](#t-142).
+**Зависимости:** [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [Т]](/docs/proofs/consciousness/operationalization#t-136) (через [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [Т]](#t-142).
 
 ---
 

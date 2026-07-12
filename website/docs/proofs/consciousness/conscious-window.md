@@ -304,7 +304,7 @@ This theorem applies to states **already above** $P_{\mathrm{crit}}$. Genesis fr
 
 ## §6. Attractor in conscious window (C27) {#c27}
 
-### Formulation [Т] (upgraded from [С] via T-149) {#формулировка-c27}
+### Formulation [Т] (via T-149) {#формулировка-c27}
 
 For **embodied** holons: the attractor $\rho^*_\Omega \in \mathcal{V}_{\mathrm{full}}$, namely $P(\rho^*_\Omega) \in (2/7, 3/7]$. C20 (κ-dominance) holds unconditionally for embodied holons by [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149).
 

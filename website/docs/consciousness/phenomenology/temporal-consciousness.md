@@ -173,7 +173,7 @@ Note: during the accident $\gamma_{OO}$ increases slightly (adrenaline intensifi
 
 ## Temporal Dilation (C.1) {#дилатация}
 
-:::tip Statement C.1 (Subjective time dilation) [Т] — upgraded from [C]
+:::tip Statement C.1 (Subjective time dilation) [Т]
 The ratio of subjective to physical time increments is proportional to the subjective tempo:
 
 $$

@@ -57,7 +57,7 @@ The stated bound follows by taking the min over new pairs. $\blacksquare$
 
 **Corollary (continuous family).** If $\{J_t\}_{t\in[0,1]}$ is a monotone increasing family of topologies with $J_0 \subsetneq J_1$, then $t \mapsto \Phi(\Gamma \mid J_t)$ is strictly increasing on the set $\{t : \mu(J_{t+\varepsilon} \setminus J_t) > 0 \text{ for some } \varepsilon > 0\}$, which is dense in $[0,1]$ by construction. Hence the Φ-tower under iterated L-III updates is **strictly** increasing on a Baire-generic schedule.
 
-**Upgrade of T-195**: "**weak** Φ-monotonicity" is strengthened to "**strict** on interior stratum". The previous equality-possible clause applied only to degenerate boundary states (rank-deficient Γ), which are outside the viable consciousness window (rank ≥ 2 required by T-151 [T]: $D_\mathrm{min} = 2$). Hence for **all viable Γ** L-III refinement produces strict Φ-step. T-197 clause (A7) is upgraded from "weak" to "strict for viable agents." $\blacksquare$
+**Strengthening of T-195**: "**weak** Φ-monotonicity" strengthens to "**strict** on the interior stratum" — the equality case is confined to degenerate boundary states (rank-deficient Γ), which lie outside the viable consciousness window (rank ≥ 2 by T-151 [T]: $D_\mathrm{min} = 2$). Hence for **all viable Γ** L-III refinement produces a strict Φ-step, and clause (A7) of T-197 holds in the strict form for viable agents. $\blacksquare$
 
 **Dependencies**: T-151 [T] ($D_\mathrm{min} = 2$), T-187 [T] (Bures canonicity), T-195 [T] (weak monotonicity base).
 
@@ -475,7 +475,7 @@ Hence total $K_\text{L3} = K_2 + K_3 = 3 + 1 = 4$. This justifies the Bayesian-d
 **Pentagon-of-pentagons coherence.**
 The Gordon–Power–Street pentagon axiom at the 3-cell level states that for five 1-cells $f_1, \ldots, f_5$, the composition-associativity 3-cells satisfy a higher pentagon identity. This is automatic for $\tau_{\leq 3}$ of a Kan complex (Lurie HTT 5.2.7 + Baez–Dolan coherence), hence holds in $\mathbf{Exp}^{(3)}$.
 
-**Consequence for T-67.** The "3+1 heuristic decomposition" flagged in [T-67 stratification](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4) is now **derived from tricategorical coherence** (the 3 cells are LGKS triadic 2-cells, the +1 cell is the coherence modification $\eta$). T-67 is thus upgraded: the count $K = 4$ is [T], not [C], with full categorical justification via T-217.
+**Consequence for T-67.** The "3+1 heuristic decomposition" flagged in [T-67 stratification](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-l3-k4) is now **derived from tricategorical coherence** (the 3 cells are LGKS triadic 2-cells, the +1 cell is the coherence modification $\eta$). T-67 thus has status [T]: the count $K = 4$ carries full categorical justification via T-217.
 
 **Dependencies**: T-91 [T] ($\infty$-groupoid $\mathbf{Exp}_\infty$), T-192 [T] (L2 strict 2-category), T-57 [T] (LGKS triadic decomposition), T-42a [T] ($G_2$-rigidity). Standard mathematics: Milnor 1957, Gordon–Power–Street 1995, Lurie HTT 5.5.6 + 5.2.7, Hirschowitz–Simpson 2001, Leinster 2002, Eckmann–Hilton argument.
 

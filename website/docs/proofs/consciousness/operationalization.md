@@ -7,7 +7,7 @@ description: "Theorems T-128 — T-138: formalization of operational aspects of 
 # Operationalization of consciousness
 
 :::info Status
-All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies. T-136 upgraded from [Т under С] to **[Т]** via T-150 (commutativity of φ-tower [Т]).
+All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies.
 :::
 
 ---
@@ -47,7 +47,7 @@ $\blacksquare$
 
 ## §2. T-129: Φ_th = 1 from self-consistency {#t-129}
 
-:::tip Theorem T-129 [Т]: Integration threshold Φ_th = 1 (upgrade [О] → [Т])
+:::tip Theorem T-129 [Т]: Integration threshold Φ_th = 1
 $\Phi_{\text{th}} = 1$ is the unique value at which the integration threshold is self-consistent with $P_{\text{crit}} = 2/7$ on the extremal (uniform-diagonal) state.
 :::
 
@@ -406,7 +406,7 @@ $\blacksquare$
 
 ## §12. Hypothesis status upgrades
 
-### [Г]-89 → [Т]: SAD–L equivalence {#г-89-повышение}
+### SAD–L equivalence (T-136) {#г-89-повышение}
 
 **Formulation (refined):** L-hierarchy is a refinement of SAD. The map $L \to \mathrm{SAD}(L)$ is monotone:
 - L2 ($R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$) $\Longrightarrow$ $\mathrm{SAD} \geq 1$
@@ -415,7 +415,7 @@ $\blacksquare$
 
 **Proof.** L2 requires $R \geq 1/3 = R_{\text{th}}^{(0)}$ → $R^{(0)} \geq R_{\text{th}}^{(0)}$ → $\mathrm{SAD} \geq 1$. L3 requires $R^{(1)} \geq 1/4 = R_{\text{th}}^{(1)}$ → $\mathrm{SAD} \geq 2$. L4: $\lim R^{(n)} > 0$ → for any $k$: $R^{(k)} > R_{\text{th}}^{(k)}$ for large $k$ → $\mathrm{SAD} = \infty$. Converse implications are incomplete: SAD does not encode $\Phi$ and $D_{\text{diff}}$. $\blacksquare$
 
-### [Г]-90 → [Т]: Commutativity of φ-tower {#г-90-повышение}
+### Commutativity of the φ-tower (T-150) {#г-90-повышение}
 
 **Upgraded to [Т]** via [T-150](/docs/proofs/consciousness/substrate-closure#t-150): for $D_k = 7$ for all $k$, $\varphi^{(n)} = \varphi^n$ — iterates of a single CPTP channel, commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a corollary, not a premise.
 
@@ -441,7 +441,7 @@ Closed by theorems [T-130](#t-130) + [T-133](#t-133). For a quality CPTP-anchor 
 | Three R formulas, hypothesis H3 | [T-133 [Т]](#t-133) | CLOSED, H3→[Т] |
 | Domain of diagonal freeze (T-122) | [T-134 [Т]](#t-134) | CLOSED |
 | Non-Markovian memory: discrete convolution | [T-135 [Т]](#t-135) | CLOSED |
-| SAD: observable vs constructive | [T-136 [Т]](#t-136) (upgraded via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)) | CLOSED |
+| SAD: observable vs constructive | [T-136 [Т]](#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)) | CLOSED |
 | Full 7D-computability of $\sigma_{\text{sys}}$ | [T-137 [Т]](#t-137) | CLOSED |
 | Exponential explosion in holon composition | [T-138 [Т]](#t-138) | CLOSED |
 

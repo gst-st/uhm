@@ -41,7 +41,7 @@ In this document:
 :::
 
 :::tip Document status
-The main results of this document have been upgraded to **[T]** — $A_4$-type (swallowtail) bifurcations are proved via Arnold's theorem (1972): three physically independent control parameters $(\kappa, \alpha, \Delta F)$ and approximate $\mathbb{Z}_2$-symmetry of purity uniquely determine the type of catastrophe. See [Theorem on $A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
+The main results of this document are **[T]** — $A_4$-type (swallowtail) bifurcations are proved via Arnold's theorem (1972): three physically independent control parameters $(\kappa, \alpha, \Delta F)$ and approximate $\mathbb{Z}_2$-symmetry of purity uniquely determine the type of catastrophe. See [Theorem on $A_4$-bifurcation](/docs/consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация).
 :::
 
 ---

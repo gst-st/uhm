@@ -7,7 +7,7 @@ description: "Theorems T-148 — T-158: closure of all open problems of consciou
 # Substrate-independent closure
 
 :::info Status
-All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies. **14 closures**, including upgrades of [Г]-91, [Г]-90, [Г]-92, C2, C20, C21, C27 and T-136.
+All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies.
 
 **Key conceptual shift:** from an **isolated** holon (where $I/7$ is a provably stable dead attractor, T-39a [Т]) to an **embodied** holon ([T-139 [Т]](/docs/proofs/consciousness/operational-closure#t-139): Γ-backbone duality), where environmental coupling enables genesis.
 :::

@@ -281,7 +281,7 @@ The isomorphism $\Psi$ is a special case of a general result: **every unitary ir
 
 The two pictures of time are **mathematically identical**. $\blacksquare$
 
-**Status:** [T] (upgraded from "proof sketch"). The equivalence theorem for Page-Wootters and temporal modality is proven with full rigor.
+**Status:** [T]. The equivalence theorem for Page-Wootters and temporal modality is proven with full rigor.
 
 **Results used:**
 - Peter-Weyl theorem for finite abelian groups (regular representation of $\mathbb{Z}_n$);
@@ -1112,7 +1112,7 @@ All four constructions are pairwise equivalent through the common parameter $\ta
 
 The four constructions of emergent time (PW, Bures, Categorical, Stratificational) are **equivalent** as mathematical objects describing one structure $\tau \in \mathbb{Z}_7$. $\blacksquare$
 
-**Status:** [T] (upgraded from [С] for full 4-way equivalence). The proof is complete: Lemmas 6.1, 6.2, 6.3 are explicitly established.
+**Status:** [T]. The proof is complete: Lemmas 6.1, 6.2, 6.3 are explicitly established.
 
 **Results used:**
 - Page-Wootters equivalence §2.3 [T] ($\mathbb{Z}_7$-equivariant isomorphism $\mathcal{H}_O \simeq \Gamma(\Omega, \mathcal{O}_\Omega)$);
@@ -1408,7 +1408,7 @@ $$
 
 The original statement of Theorem 8.1 $(P > P_{\text{crit}} \Leftrightarrow v_\tau > v_\tau^{\min})$ follows from the **combination** of the kinematic bound and the dynamical scaling law T-53d. $\blacksquare$
 
-**Status:** [T] (upgraded from "sketch"). Theorem 8.1 is fully proven: kinematic upper bound + dynamical scaling (T-53d [T]).
+**Status:** [T]. Theorem 8.1 is fully proven: kinematic upper bound + dynamical scaling (T-53d [T]).
 
 **Results used:**
 - Commutator inequality (Bhatia, *Matrix Analysis*, 1997, §IX.1);

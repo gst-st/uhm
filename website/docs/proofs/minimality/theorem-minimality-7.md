@@ -1041,7 +1041,7 @@ $$
 - **T10 [Т]:** Fano channel ($k=3$, $c=1/3$) — the unique optimal among admissible BIBD channels
 - **T11–T13 [Т]:** Proof of condition (МП) — $\lambda = 1$ follows from optimality and uniqueness of the perfect code
 
-**Cascading consequence:** P1, P2 are elevated to [Т]. Track B (octonionic derivation) is now fully rigorous.
+**Cascading consequence:** P1, P2 — [Т]. Track B (octonionic derivation) is fully rigorous.
 
 See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#мост), [Lindblad operators](/docs/core/operators/lindblad-operators#редукция-моста).
 

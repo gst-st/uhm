@@ -202,7 +202,7 @@ for $m_X = m_{3/2} \sim 10^{13}$ GeV, $H_I \sim 4 \times 10^{13}$ GeV.
 :::
 
 :::info Promotion of Order-of-Magnitude Estimate [C at T-50, CKR]
-The order of magnitude $\Omega_X h^2 \sim 0.1$–$0.4$ is promoted to **[C at T-50, CKR standard cosmology]**:
+The order of magnitude $\Omega_X h^2 \sim 0.1$–$0.4$ is **[C at T-50, CKR standard cosmology]**:
 - $m_X \sim m_{3/2} \sim \varepsilon^3 M_P \sim 10^{13}$ GeV — from T-50 [T] (uniqueness of the superpotential, Schur's lemma)
 - CKR formula (Chung–Kolb–Riotto, 1998) — standard result of non-thermal production
 - Structural coincidence $m_{3/2} \sim H_I$ (both $\sim \varepsilon^3 M_P$) — not fine-tuning, but a consequence of a unified SUSY-breaking scale

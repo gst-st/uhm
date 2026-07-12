@@ -996,7 +996,7 @@ $$
 R^{(2)} > \frac{1}{K} = \frac{1}{4}. \quad \blacksquare
 $$
 
-**Status:** [T] (upgraded from [С при K=4]). $R^{(2)}_{\text{th}} = 1/4$ proven via structural counting of linearly independent operators at the metareflective level + Lawvere's theorem on impossibility of a 5th alternative.
+**Status:** [T]. $R^{(2)}_{\text{th}} = 1/4$ proven via structural counting of linearly independent operators at the metareflective level + Lawvere's theorem on impossibility of a 5th alternative.
 
 **Results used:**
 - T-55 [T] (Lawvere incompleteness of self-modeling);
@@ -1205,7 +1205,7 @@ which **decreases to 0** under the Fano contraction and is the quantity that app
 - Postnikov tower $\tau_{\leq 6}$ is stabilized (Theorem 4.2);
 - The system is in the asymptotic L4 region.
 
-**Status:** [T] (upgraded from [Г]). The existence of $\lim R^{(n)} > 0$ is proven via contractivity of the CPTP channel $\varphi$ + continuity of Fidelity + regularity of the fixed point.
+**Status:** [T]. The existence of $\lim R^{(n)} > 0$ is proven via contractivity of the CPTP channel $\varphi$ + continuity of Fidelity + regularity of the fixed point.
 
 **Results used:**
 - T-62 [T] ($\varphi$ is a CPTP channel with contractive fixed point);
@@ -1318,7 +1318,7 @@ Combining Lemmas 4.2.1, 4.2.2, 4.2.3:
 
 The formula $P_{\text{crit}}^{L4} = (N-1)/N = 6/7$ for $N = 7$ is **structurally derived** as the threshold of Postnikov tower stabilization at $n = N - 1$. $\blacksquare$
 
-**Status:** [T] (upgraded from [Г]). The connection between stability of homotopy groups and purity $P$ is proven via the Postnikov tower + concentration of eigenvalues.
+**Status:** [T]. The connection between stability of homotopy groups and purity $P$ is proven via the Postnikov tower + concentration of eigenvalues.
 
 **Results used:**
 - T-55 [T] (Lawvere incompleteness);

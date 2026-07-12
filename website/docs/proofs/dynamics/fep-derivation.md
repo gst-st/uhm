@@ -35,7 +35,7 @@ $$
 
 | Question | Status |
 |--------|--------|
-| Proof of equivalence of the two definitions | **Theorem 3.1 [Т]** (upgraded from [С]) |
+| Proof of equivalence of the two definitions | **Theorem 3.1 [Т]** |
 | Classical limit of the variational principle | **Theorem 4.1 [Т]** |
 | Connection to Friston's FEP | **Theorem 4.2 [Т]** (closed: generative model = definition of self-reference) |
 | Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3 [Т]** |

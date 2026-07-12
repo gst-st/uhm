@@ -174,7 +174,7 @@ where $R$ is the [reflection measure](/docs/consciousness/foundations/self-obser
 
 ### Theorem: Integration threshold Φ_th = 1 [Т] {#теорема-порог-интеграции}
 
-:::info Status: [Т] Theorem (elevated from [О], T-129)
+:::info Status: [Т] Theorem (T-129)
 The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the integration threshold with $P_{\text{crit}} = 2/7$ on the extremal uniform-diagonal state. Previously — a definitional convention; now derived from first principles ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129)).
 :::
 
