@@ -413,6 +413,8 @@ The formula $\text{Meaning} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi
 
 **Numerical example:** Raising $R_\varphi$ from 0.1 to 0.5 at $P = 0.7$, $D_{\text{diff}} = 2$, $\Phi = 1.5$ increases Meaning from $0.21$ to $1.05$ — a 400% gain.
 
+**The dynamical law [C].** Practice raises $R_\varphi$ not by wish but by a proven law: under gradient-alignment training of the self-model toward a practiced state $\bar\Gamma$, the baseline follows the **exponential-saturation law** $R_\varphi^{\text{base}}(t) = 1 - k^2 e^{-4\eta t}\lVert\bar\Gamma - \rho_\theta(0)\rVert_F^2 / P$ ([training law, T-249–T-252](/docs/proofs/categorical/formalization-phi#механизмы-rφ)) — awareness approaches its ceiling exponentially, at a rate set by the slow learning channel (T-155). The cost is bounded below: raising $R_\varphi$ requires actual movement of the state, at least the [bandwidth path-length](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) (T-250). "Know thyself" is paid in state-space distance, not in intention.
+
 ### Identifying the Limiting Factor
 
 Which strategy to choose? **The one that increases the smallest factor.** Since $\frac{\partial \ln M}{\partial \ln x_i} = 1$ for each factor, the **relative** increase of any factor gives the same relative increase in Meaning. But **absolutely** it is easier to increase the factor that is small.

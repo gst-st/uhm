@@ -443,7 +443,7 @@ A conscious agent (L2+) is aware of the **multiplicity** of trajectories and mak
 
 ---
 
-## 7. Ethical consequences
+## 7. Ethical consequences {#этические-следствия}
 
 ### 7.1 Responsibility
 

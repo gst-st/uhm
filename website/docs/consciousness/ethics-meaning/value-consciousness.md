@@ -542,9 +542,11 @@ Ethical choice in the UHM formalism is **correction of the Gap-profile** in the 
 
 Mathematics does not **replace** moral choice — it shows its **structure**. The choice remains with the agent (Freedom > 1). But the formalism explains **why** an aligned choice leads to growth of coherence, while a misaligned one leads to suffering and decoherence.
 
+**The dynamics of self-correction [C].** Alignment is not only a static optimum (min Gap ⇔ max $P$) but a *trainable trajectory* with a proven rate and a proven price. Reorganising the self-model $\varphi$ toward alignment costs state-space path length ([T-250 bandwidth law](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ)), and sustained practice raises the **baseline** self-model quality by the [exponential-saturation training law](/docs/proofs/categorical/formalization-phi#механизмы-rφ) $R_\varphi^{\text{base}}(t) = 1 - k^2 e^{-4\eta t}\lVert\bar\Gamma - \rho_\theta(0)\rVert_F^2/P$ (T-249–T-252). This is the formal counterpart of why virtue is a **practice**, not a switch: the good is reachable, at a knowable rate, for a knowable cost.
+
 ---
 
-## Part V. Resolution of Ethical Dilemmas
+## Part V. Resolution of Ethical Dilemmas {#разрешение-дилемм}
 
 Real life poses tasks where the interests of different systems **conflict**. UHM proposes two principles of optimisation and shows their limits.
 
