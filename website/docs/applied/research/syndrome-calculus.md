@@ -234,6 +234,8 @@ Status discipline. The implication is **[Т]** — parts (i)–(iv), proved abov
 
 Under these readings, the heptad is not a numerological choice but the unique solution of a well-posed design problem. The track is logically independent of the octonionic one — a hypothetical universe with no division algebras would still be subject to Theorem Σ.
 
+**The classification built on Σ [Т].** If Σ fixes the *whole* grammar, then every partial view of it — every symbolic system in history — is a sub-configuration of the Fano plane, and those fall into a finite, computable list of orbit types under the collineation group ($|\mathrm{Aut}| = 168$). This is [T-256](/docs/applied/research/one-grammar#t-256): nine axis-orbit types plus the channel sectors, with the zodiac's 12-block, the I Ching's $2^6 = 64$, and the diagonal chakra chart all appearing as named orbits. The reason unrelated cultures keep rediscovering the same structures is now a theorem: there are only finitely many charts to draw.
+
 ### §5.2. Why above seven one builds a tower, not width {#башня-не-ширина}
 
 #### Corollary Σ.2 [И] {#следствие-башня}

@@ -566,7 +566,7 @@ where $H(\cdot|\cdot)$ is the conditional entropy and $\text{Res}_S$ is the reso
 
 ### 6.1 Fano structure and natural projections
 
-The [Fano plane](/docs/proofs/gap/fano-channel) PG(2,2) defines 7 associative triplets. Coherences **within** Fano triplets are more stable than those between them. This explains why certain groupings of dimensions recur across cultures:
+The [Fano plane](/docs/proofs/gap/fano-channel) PG(2,2) defines 7 associative triplets. Coherences **within** Fano triplets are more stable than those between them. This explains why certain groupings of dimensions recur across cultures. This taxonomy is completed by a classification theorem — [T-256](/docs/applied/research/one-grammar#t-256): every symbolic system is a sub-configuration of PG(2,2), and there are only finitely many orbit types under the collineation group, so the recurrence of the same structures across unrelated cultures is a theorem, not a coincidence:
 
 | # | Fano line | Dimensions | Cultural analogue |
 |---|---|---|---|
