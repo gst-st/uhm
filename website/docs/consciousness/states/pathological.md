@@ -17,7 +17,7 @@ In this document:
 - $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
 - $P = \mathrm{Tr}(\Gamma^2)$ — [purity (viability)](/docs/core/dynamics/viability#определение-чистоты)
 - $P_{\text{crit}} = 2/7$ — [viability threshold](/docs/core/dynamics/viability) **[T]**
-- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $R_\varphi$ — reflection as **self-model quality** $\in [0,1]$, working threshold $R_{\varphi,\text{th}} = 1/3$ **[I]**; distinct from the canonical $R = 1/(7P)$ — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
 - $\overline{\mathrm{Gap}} = \frac{1}{21}\sum_{i<j} \mathrm{Gap}(i,j)$ — mean Gap
 - L0–L4 — [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy)
 - Full notation table — see [Notation](/docs/reference/notation)
@@ -186,7 +186,7 @@ The connection between dynamics and logic **exists** (strong coherence $|\gamma_
 | $\arg(\gamma_{DL})$ | $1.45$ rad ($\approx \pi/2$) | Phase — maximum Gap |
 | $\mathrm{Gap}(L,D) = |\sin(1.45)|$ | $0.99$ | Channel almost fully opaque |
 | $\mathrm{Gap}(D,E)$ | $0.15$ | Feels the impulse |
-| $R$ | $0.35$ | Self-aware (above threshold) |
+| $R_\varphi$ | $0.35$ | Self-aware (above the working threshold) |
 
 This formalises the clinical observation: impulsive people often *know* that their behaviour is illogical (connection $|\gamma_{DL}|$ is high), but cannot *apply* this knowledge at the moment of action (the channel is opaque due to phase $\approx \pi/2$). 'I knew I shouldn't, but I couldn't stop' — a precise description of Gap(L,D) $\to 1$ with $|\gamma_{LD}| > 0$.
 
@@ -244,7 +244,7 @@ The system 'hangs' just above the viability threshold $P_{\text{crit}} = 2/7 \ap
 - $\overline{\mathrm{Gap}}$ is elevated (overall opacity)
 - $\mathrm{Gap}(D,E) \uparrow$ — dynamics disconnected from experience (*anhedonia*: inability to experience pleasure)
 - $\mathrm{Gap}(D,U) \uparrow$ — dynamics disconnected from unity (loss of purposiveness)
-- $R$ may be normal or even elevated — *depressive rumination* is a form of reflection, but directed at an unchanging Gap-profile
+- $R_\varphi$ may be normal or even elevated — *depressive rumination* is a form of reflection, but directed at an unchanging Gap-profile
 
 **Numerical example (detailed).**
 
@@ -255,22 +255,22 @@ The system 'hangs' just above the viability threshold $P_{\text{crit}} = 2/7 \ap
 | $dP/d\tau$ | $+0.005$ | $\approx 0$ | $\approx 0$ |
 | $\mathrm{Gap}(D,E)$ | $0.20$ | $0.50$ | $0.75$ |
 | $\overline{\mathrm{Gap}}$ | $0.28$ | $0.40$ | $0.52$ |
-| $R$ | $0.45$ | $0.45$ | $0.50$ (rumination) |
+| $R_\varphi$ | $0.45$ | $0.45$ | $0.50$ (rumination) |
 | Subjectively | 'Life is normal' | 'Everything is grey' | 'Grey emptiness' |
 
 The system literally 'balances on the edge' — too close to $P_{\text{crit}}$ to develop, but far enough not to die. The absence of positive $dP/d\tau$ is experienced as [anhedonia](/docs/consciousness/phenomenology/emotional-taxonomy#базовые-координаты): valence $\approx$ 0, activation $\approx$ 0 — 'grey emptiness'.
 
-**Important:** $R$ in depression can be *elevated*. Rumination (endless 'chewing over' of thoughts) raises reflection, but is directed at an unchanging Gap-profile. This explains the *depressive realism* paradox: depressed patients often have more accurate probability estimates and assessments of their own capabilities — their $\varphi(\Gamma)$ more accurately reflects $\Gamma$, but the $\Gamma$ itself is pathological.
+**Important:** $R_\varphi$ in depression can be *elevated*. Rumination (endless 'chewing over' of thoughts) raises the self-model quality, but is directed at an unchanging Gap-profile. This explains the *depressive realism* paradox: depressed patients often have more accurate probability estimates and assessments of their own capabilities — their $\varphi(\Gamma)$ more accurately reflects $\Gamma$, but the $\Gamma$ itself is pathological.
 
 **DSM-5 correspondence.** Major depressive disorder (F32/F33): depressed mood, anhedonia, sleep/appetite disturbances, suicidal ideation. In UHM: $P \to P_{\text{crit}}$, $\mathrm{Gap}(D,E) \uparrow$, $dP/d\tau \approx 0$.
 
 ### 2.6 Psychosis {#психоз}
 
 :::info Definition (Psychosis) [I]
-**Psychosis** — sudden global decrease of Gap while maintaining $R$:
+**Psychosis** — sudden global decrease of Gap while maintaining $R_\varphi$:
 
 $$
-\overline{\mathrm{Gap}} \to 0 \quad \text{(suddenly)}, \quad R \geq R_{\text{th}}
+\overline{\mathrm{Gap}} \to 0 \quad \text{(suddenly)}, \quad R_\varphi \geq R_{\varphi,\text{th}}
 $$
 
 All boundaries between dimensions **dissolve simultaneously** — the system becomes 'fully transparent', but without preparation and without noise immunity.
@@ -297,7 +297,7 @@ Unlike [samādhi](/docs/consciousness/states/altered-states#самадхи), in 
 |----------|:---:|:---:|:---:|
 | $\overline{\mathrm{Gap}}$ | $0.28$ | $0.05$ | $0.08$ |
 | Gaps $> \varepsilon_{\text{noise}}$ | $\sim 18$ | $\sim 1$ | $\sim 5$ |
-| $R$ | $0.45$ | $0.40$ | $0.92$ |
+| $R_\varphi$ | $0.45$ | $0.40$ | $0.92$ |
 | Noise immunity | Normal | Lost | Preserved |
 | Subjectively | Ordinary experience | 'Everything is connected, everything is significant' | 'Everything is clear, everything is one' |
 
@@ -311,7 +311,7 @@ In psychosis: 'everything is connected, everything is significant' — because G
 
 ## 3. Summary table of pathologies {#сводная-таблица}
 
-| Pathology | Key channels | $\overline{\mathrm{Gap}}$ | $P$ | $R$ | Level |
+| Pathology | Key channels | $\overline{\mathrm{Gap}}$ | $P$ | $R_\varphi$ | Level |
 |-----------|----------------|:-------------------------:|:---:|:---:|:-------:|
 | **Alexithymia** | Gap(L,E)↑, Gap(A,E)↑ | Moderate | Normal | Normal | L2 |
 | **Dissociation** | Gap within E-sector | High | Normal | Normal | L2 |
@@ -384,7 +384,7 @@ Key distinction: in alexithymia the 'higher-order' channels (attention, logic) a
 | Gap(D,E) | $\to 1$ (anhedonia) | Moderate | $> 0.3$ |
 | Gap(O,E) | Moderate | $\to 1$ (meaninglessness) | $> 0.3$ |
 | $P$ | $\to P_{\text{crit}}$ | Reduced, not critical | $> 0.02$ |
-| $R$ | Normal/↑ (rumination) | Normal/↑ | $\approx 0$ |
+| $R_\varphi$ | Normal/↑ (rumination) | Normal/↑ | $\approx 0$ |
 
 In depression, the key channel is dynamics ($D$); in crisis — the ground channel ($O$). Both can coexist (comorbidity, section 6).
 
@@ -462,7 +462,7 @@ $$
 \text{Goal:} \quad \mathbf{G}(\Gamma(\tau)) \to \mathbf{G}_{\text{target}} \quad \text{as} \quad \tau \to \infty
 $$
 
-while maintaining $P > P_{\text{crit}}$ and $R \geq R_{\text{th}}$ throughout the trajectory.
+while maintaining $P > P_{\text{crit}}$ and $R_\varphi \geq R_{\varphi,\text{th}}$ throughout the trajectory.
 
 **Key constraint:** $\mathbf{G}_{\text{target}} \neq \mathbf{0}$ — full transparency is impossible and dangerous (see [psychosis](#психоз)). The goal is not to 'cure everything' but to bring the Gap-profile to a functional state where all pathological channels are below the threshold and the 'check' channels (Hamming bound) are preserved.
 :::
@@ -593,7 +593,7 @@ Empirical verification: correlation between psychotic symptom scales and the num
 ```mermaid
 graph LR
     subgraph NORM["Normal"]
-        N["Wakefulness<br/>P=0.36, Gap̄=0.28<br/>R=0.45"]
+        N["Wakefulness<br/>P=0.36, Gap̄=0.28<br/>R_φ=0.45"]
     end
     subgraph PAT["Pathologies"]
         AL["Alexithymia<br/>Gap(L,E)=0.95<br/>Gap(A,E)=0.88"]

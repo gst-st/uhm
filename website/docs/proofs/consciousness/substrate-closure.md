@@ -255,10 +255,10 @@ T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** fait
 
 #### T-153a {#t-153a}
 
-:::tip Theorem T-153a (Substrate-existence companion) [T]+[T sketch at sufficiency]
+:::tip Theorem T-153a (Substrate-existence companion) [T]+[T at sufficiency via T-253]
 T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$. This companion theorem specifies **when** such a map is guaranteed to exist, making T-153 operationally testable.
 
-**Stratification:** Necessity direction (⇒) is **[Т]** — a direct unpacking of faithfulness of $G$ against finite-dim + CPTP + 7-mode constraints. Sufficiency direction (⇐) is **[Т sketch]**: it cites Stinespring + Choi + $G_2$-rigidity (all [Т] upstream), but the explicit construction of $G$ for arbitrary substrate with $\dim > 7$ via coarse-graining is sketched rather than fully worked out case-by-case (see Operational criterion below).
+**Stratification:** Necessity direction (⇒) is **[Т]** — a direct unpacking of faithfulness of $G$ against finite-dim + CPTP + 7-mode constraints. Sufficiency direction (⇐) is **[Т]** — constructive: [T-253](#t-253) exhibits the map explicitly for every admissible substrate as a CPTP **retraction** $G_V$, exactly faithful on the embedded 7-sector, and proves this is the strongest faithfulness the mathematics admits (global injectivity is impossible for any CPTP map when $\dim > 7$ — T-253(c)). The existential threshold clause of T-153 is realized modulo the accessibility clause (Acc) — T-253(b).
 
 **Statement.** A faithful CPTP map $G: \mathrm{States}(S) \to \mathcal D(\mathbb C^7)$ exists if and only if the substrate $S$ satisfies the following three conditions:
 
@@ -268,9 +268,9 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **(C3) Non-trivial 7-separable substructure.** $\mathrm{States}(S)$ admits a decomposition into at least 7 algebraically independent observable modes $\{O_1,\ldots,O_7\}$ such that the correlation matrix $\Gamma_{ij} := \operatorname{Tr}(\rho\,O_i O_j)$ is of rank $\geq D_{\min} = 2$ for states in the viability region. Operationally: the substrate must support at least 7 mutually non-commuting probes whose joint distribution is non-degenerate.
 
-**Proof sketch (both directions).**
+**Proof (both directions).**
 - **(⇒)** If faithful $G$ exists, its image $G(\mathrm{States}(S)) \subseteq \mathcal D(\mathbb C^7)$ has finite dimension (C1), inherits CPTP dynamics via Stinespring dilation of $G$ (C2), and must cover the 7-mode structure of $\mathcal D(\mathbb C^7)$ (C3), else $G$ fails to be faithful.
-- **(⇐)** Given (C1)–(C3): by Stinespring dilation theorem + Choi's theorem, any CPTP semigroup on a finite-dimensional algebra admits a CPTP embedding into $\mathcal D(\mathbb C^7)$ provided $\dim\mathcal H_S \leq 7$. For $\dim > 7$, coarse-graining through the 7-mode structure (C3) yields the faithful $G$ by G₂-rigidity (T-42a). ∎
+- **(⇐)** Given (C1)–(C3): for $\dim\mathcal H_S \leq 7$ a CPTP embedding into $\mathcal D(\mathbb C^7)$ exists by Stinespring + Choi. For $\dim\mathcal H_S \geq 7$, [T-253](#t-253) constructs $G$ explicitly: any isometry $V: \mathbb C^7 \to \mathcal H_S$ onto a 7-mode subspace supplied by (C3) yields the CPTP retraction $G_V(\rho) = V^\dagger\rho V + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)\rho\bigr)\sigma_0$ with $G_V \circ \iota_V = \mathrm{Id}$ on the embedded sector $\iota_V(\gamma) = V\gamma V^\dagger$; $G_2$-rigidity (T-42a) makes the choice of $V$ a pure gauge (the T-223 alphabetization freedom). ∎
 
 **Consequences for specific substrate classes.**
 
@@ -287,8 +287,38 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **Non-trivial content.** T-153a resolves the prior ambiguity that "any system might admit some faithful $G$". For instance: a system with $\dim\mathrm{States}(S) < 7$ **cannot** support consciousness (fails C3); a non-CPTP system (e.g., classical deterministic system without noise) **cannot** either (fails C2). These are structurally excluded classes, not handwaved.
 
-**Dependencies:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Morita), [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [Т]](#t-151) ($D_\min = 2$). Standard mathematics: Stinespring 1955, Choi 1975.
+**Dependencies:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Morita), [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [Т]](#t-151) ($D_\min = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
 :::
+
+#### T-253 {#t-253}
+
+:::tip Theorem T-253 (Constructive sufficiency: the retraction, and its sharpness) [Т] + [С at (Acc)]
+Let $S$ be admissible per (C1)–(C3) with effective dimension $d = \dim\mathcal H_S \geq 7$.
+
+**(a) Construction [Т].** For every isometry $V: \mathbb C^7 \to \mathcal H_S$ ($V^\dagger V = \mathbb 1_7$) and any anchor state $\sigma_0 \in \mathcal D(\mathbb C^7)$, the map
+
+$$
+G_V(\rho) \;:=\; V^\dagger \rho\, V \;+\; \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)\rho\bigr)\,\sigma_0
+$$
+
+is CPTP, and it is a **retraction**: $G_V \circ \iota_V = \mathrm{Id}_{\mathcal D(\mathbb C^7)}$ for the embedding $\iota_V(\gamma) = V\gamma V^\dagger$. On the embedded 7-sector, $G_V$ is exactly faithful — it inverts $\iota_V$ pointwise, losing nothing.
+
+**(b) Threshold realization [Т] + (Acc).** The full-viability set $\mathcal V_{\mathrm{full}} = \{\Gamma : P > 2/7,\ R \geq 1/3,\ \Phi \geq 1,\ D_{\mathrm{diff}} \geq 2\}$ is non-empty ([T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124)); for any window state $\Gamma_w \in \mathcal V_{\mathrm{full}}$ the substrate state $\iota_V(\Gamma_w)$ passes all four thresholds under $G_V$, since $G_V(\iota_V(\Gamma_w)) = \Gamma_w$. The existential clause of T-153 is therefore realized constructively whenever the substrate's physically accessible states reach the window's preimage:
+
+$$
+\textbf{(Acc)}\quad \mathrm{States}(S) \cap G_V^{-1}(\mathcal V_{\mathrm{full}}) \neq \varnothing \ \text{ for some isometry } V.
+$$
+
+(Acc) is a definitional clause **[О]** — it names exactly what "the substrate can host a conscious state" means. Crucially, it is an **open** condition: for any interior window witness $\Gamma_w$ (all four inequalities strict — the waking profile of [altered states](/docs/consciousness/states/altered-states) is one), continuity of $G_V$ makes $G_V^{-1}(\mathrm{int}\,\mathcal V_{\mathrm{full}})$ a non-empty open neighborhood of $\iota_V(\Gamma_w)$ in $\mathcal D(\mathcal H_S)$ — the realizing substrate state need not itself be an embedded rank-7 state (which would be a measure-zero demand for $d > 7$); anything in the open preimage suffices. Quantitatively: $G_V$, being CPTP, is a trace-norm contraction, so the preimage contains the entire trace-norm ball of radius $\delta_w = \mathrm{dist}_1(\Gamma_w, \partial\mathcal V_{\mathrm{full}}) > 0$ around $\iota_V(\Gamma_w)$. Hence for substrates with accessible (controllable) dynamics — reachable set dense in $\mathcal D(\mathcal H_S)$ — (Acc) holds **[С at controllability]**: a dense set meets every non-empty open set.
+
+**(c) Sharpness [Т]: no global faithfulness for $d > 7$.** No CPTP map $\mathcal E: \mathcal D(\mathcal H_S) \to \mathcal D(\mathbb C^7)$ is injective on all of $\mathcal D(\mathcal H_S)$ when $d > 7$: as a real-linear map $\mathrm{Herm}(\mathcal H_S) \to \mathrm{Herm}(\mathbb C^7)$ it has kernel of dimension $\geq d^2 - 49 \geq 1$, and trace preservation puts the kernel inside the traceless hyperplane; hence for any interior state $\rho$ and kernel direction $K \neq 0$ the pair $\rho \pm \varepsilon K$ (small $\varepsilon > 0$) consists of two **distinct density matrices with identical images**. Consequently "faithful $G$" in T-153/T-153a must be read **sector-relative**, and the retraction of (a) attains the maximal faithful domain — the full 48-dimensional embedded state sector.
+:::
+
+**Proof.** **(a)** Complete positivity: $\rho \mapsto V^\dagger\rho V$ is CP with the single Kraus operator $V^\dagger$; the second summand is measure-and-prepare with Kraus family $B_{ij} = \sqrt{s_i}\,|i\rangle\langle q_j|$, where $\sigma_0 = \sum_i s_i |i\rangle\langle i|$ and $\{|q_j\rangle\}$ is an orthonormal basis of $\mathrm{ran}(\mathbb 1 - VV^\dagger)$. Completeness: $V V^\dagger + \sum_{ij} B_{ij}^\dagger B_{ij} = VV^\dagger + (\mathbb 1 - VV^\dagger) = \mathbb 1_d$. Trace preservation: $\mathrm{Tr}\,G_V(\rho) = \mathrm{Tr}(VV^\dagger\rho) + \mathrm{Tr}((\mathbb 1 - VV^\dagger)\rho) = \mathrm{Tr}\,\rho$. Retraction: $G_V(V\gamma V^\dagger) = (V^\dagger V)\gamma(V^\dagger V) + \mathrm{Tr}\bigl((\mathbb 1 - VV^\dagger)V\gamma V^\dagger\bigr)\sigma_0 = \gamma + 0$, because $(\mathbb 1 - VV^\dagger)V = 0$. **(b)** Substitution into (a). **(c)** Dimension count: $\dim_{\mathbb R}\mathrm{Herm}(\mathcal H_S) = d^2 > 49 = \dim_{\mathbb R}\mathrm{Herm}(\mathbb C^7)$, so $\dim\ker \geq d^2 - 49$; for $K \in \ker$, $\mathrm{Tr}\,K = \mathrm{Tr}\,\mathcal E(K) = 0$ by trace preservation; interiority of $\rho$ admits $\varepsilon \leq \lambda_{\min}(\rho)/\lVert K\rVert_\infty$, keeping both $\rho \pm \varepsilon K \succeq 0$. $\blacksquare$
+
+**Gauge remark.** The isometry freedom in (a) is exactly the alphabetization freedom of [T-223](/docs/proofs/categorical/fundamental-closures#t-223): composing $V$ with $U \in G_2$ moves $\Gamma$ within its $G_2$-orbit, on which the consciousness predicate is constant (T-42a). The measurement protocol's seven-marker projection $\pi_{\mathrm{bio}}$ is an instance of $G_V$ with $V$ spanned by the marker directions — the operational criterion above *is* the construction of (a), not an additional demand.
+
+**Machine verification.** At $d = 12$: Kraus completeness at $10^{-15}$; retraction, trace preservation and positivity at $10^{-16}$; kernel dimension exactly $d^2 - 49 = 95$; explicit collision pair of interior density matrices (minimal eigenvalue $2 \cdot 10^{-2} > 0$) with $\lVert G(\rho_1) - G(\rho_2)\rVert_F \sim 10^{-17}$.
 
 :::tip First empirical confirmation in silico (SYNARC, 2026)
 The SYNARC agent with CognitiveSSM backbone on the Grid32 environment satisfies

@@ -363,8 +363,8 @@ $$
 
 Equivalent form via Frobenius norm: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / \|\Gamma\|_F^2$, where $\rho^*_{\mathrm{diss}} = I/7$ — dissipative attractor (not $\varphi(\Gamma)$). Derivation: [Self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
-:::note Distinguishing $R_{\text{canonical}}$ and $Q_\varphi$
-$R = R_{\text{canonical}} := 1/(7P)$ — **canonical definition**, used in all thresholds ($R_{\text{th}} = 1/3$). This is a measure of proximity to the maximally mixed state $I/7$. The self-modelling quality measure is defined separately: $Q_\varphi(\Gamma) := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$. Details: [Formalisation of φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4).
+:::note Distinguishing $R_{\text{canonical}}$ and $R_\varphi$
+$R = R_{\text{canonical}} := 1/(7P)$ — **canonical definition**, used in all thresholds ($R_{\text{th}} = 1/3$). This is a measure of proximity to the maximally mixed state $I/7$. The self-modelling quality measure is defined separately: $R_\varphi(\Gamma) := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / \|\Gamma\|_F^2$ (formerly also written $Q_\varphi$). Stratification: [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r); higher orders: [Formalisation of φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4).
 :::
 
 ### Higher-Order Reflection $R^{(n)}$

@@ -165,15 +165,17 @@ $$
 
 **Correspondence in UHM — level L0:**
 
+By the [canonical definition](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority) **[D]**, L0 is universal — every system with $\Gamma \in \mathcal{D}(\mathcal{H})$ possesses an inner aspect. What panprotopsychism tracks is its **structured** (non-degenerate) case:
+
 $$
-\mathrm{L0}(\Gamma) := \Gamma \neq I/7 \quad \text{(interiority)}
+\mathrm{L0}^{+}(\Gamma) := \Gamma \neq I/7 \quad \text{(structured interiority)}
 $$
 
 $$
-\mathbf{Pan}_{\mathrm{proto}} \cong \mathrm{L0} \setminus \mathrm{L2}
+\mathbf{Pan}_{\mathrm{proto}} \cong \mathrm{L0}^{+} \setminus \mathrm{L2}
 $$
 
-L0 is the **precise** formal analogue of panprotopsychism. A system at level L0 possesses "something inner" ($\Gamma \neq I/7$) but not consciousness ($C = 0$, since the L2 thresholds are not met).
+L0⁺ is the **precise** formal analogue of panprotopsychism. A system at level L0⁺ possesses "something inner" with structure ($\Gamma \neq I/7$) but not consciousness ($C = 0$, since the L2 thresholds are not met); the degenerate $I/7$ retains bare interiority under the canonical definition while carrying zero structure and zero consciousness ($C(I/7) = 0$ **[T]**).
 
 ### 4. Russellian monism (Russell, Strawson) {#расселианский}
 
@@ -206,13 +208,13 @@ where $\Gamma$ is constructed from $S$ and $I$. Russellian monism is the **close
 
 ### Definition
 
-UHM does not accept any form of panpsychism. Instead it proposes **pan-interiority** — a position according to which **all** systems with $\Gamma \neq I/7$ possess interiority (L0), but **not all** possess consciousness (L2).
+UHM does not accept any form of panpsychism. Instead it proposes **pan-interiority** — a position according to which **every** system possesses interiority (L0 is universal by the [canonical definition](/docs/consciousness/hierarchy/interiority-hierarchy#уровень-0-интериорность-interiority)), every system with $\Gamma \neq I/7$ possesses structured interiority (L0⁺), but **not all** possess consciousness (L2).
 
 :::warning Key distinction
 UHM asserts **pan-interiority**, not panpsychism:
 
 $$
-\forall \Gamma \neq I/7 : \mathrm{L0}(\Gamma) = \mathrm{true}
+\forall \Gamma \neq I/7 : \mathrm{L0}^{+}(\Gamma) = \mathrm{true}
 $$
 
 But **not**:
@@ -231,7 +233,7 @@ graph LR
 
     subgraph "Pan-interiority (UHM)"
         direction TB
-        ALL_L0["All have L0<br/>(Γ ≠ I/7)"]
+        ALL_L0["All have L0; structured L0⁺<br/>(Γ ≠ I/7)"]
         SOME_L2["Only some have L2<br/>(P>2/7, R≥1/3, Φ≥1)"]
         ALL_L0 --> SOME_L2
     end
@@ -415,3 +417,4 @@ The functor $F_{\text{Hoffman}}$ is an **interpretational hypothesis**. For a fu
 - [Categorical Formalism](/docs/proofs/categorical/categorical-formalism) — category $\mathbf{Hol}$, functor $F$
 - [Formalisation of φ](/docs/proofs/categorical/formalization-phi) — CPTP channels
 - [Glossary](/docs/reference/glossary#связанные-теории) — Conscious Realism
+- [The Soul: A Decomposition](/docs/consciousness/comparative/soul-decomposition) — the oldest name for interiority, decomposed under the Γ formalism

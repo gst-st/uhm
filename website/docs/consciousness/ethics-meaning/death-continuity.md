@@ -434,6 +434,8 @@ All three interpretations are compatible with the formalism. The choice between 
 | Stoicism | Return to the cosmos | Informational legacy (coherences redistributed) |
 | Transhumanism | Mind uploading | Transfer (not copying!); identity rupture |
 
+A component-by-component decomposition of the soul concept across these and other traditions — from the Egyptian ka to Sheldrake's morphic fields — is carried out in [The Soul: A Decomposition](/docs/consciousness/comparative/soul-decomposition).
+
 ---
 
 ## Summary
@@ -463,7 +465,7 @@ All three interpretations are compatible with the formalism. The choice between 
 8. **Heidegger formalised [I].** Sein-zum-Tode — an L2 system modelling $P \to P_{\text{crit}}$; the awareness of mortality modifies the meaning vector.
 
 :::tip Section conclusion
-This document concludes the 'Ethics and Meaning' section. We have traced the path from [the definition of the good](/docs/consciousness/ethics-meaning/value-consciousness) through [meaning](/docs/consciousness/ethics-meaning/meaning) and [freedom](/docs/consciousness/ethics-meaning/freedom) to the final question — about death. Each step followed from the $\Gamma$ formalism: the good — from $dP/d\tau$, meaning — from $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$, freedom — from the Hessian $\mathcal{H}_\Gamma$, death — from the irreversibility theorem. UHM offers not answers to all questions, but a **language** in which these questions can be posed precisely.
+This document concludes the 'Ethics and Meaning' section. We have traced the path from [the definition of the good](/docs/consciousness/ethics-meaning/value-consciousness) through [meaning](/docs/consciousness/ethics-meaning/meaning) and [freedom](/docs/consciousness/ethics-meaning/freedom) to the final question — about death. Each step followed from the $\Gamma$ formalism: the good — from $dP/d\tau$, meaning — from $P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$, freedom — from the Hessian $\mathcal{H}_\Gamma$, death — from the irreversibility theorem. UHM offers not answers to all questions, but a **language** in which these questions can be posed precisely.
 :::
 
 ---
@@ -478,3 +480,4 @@ This document concludes the 'Ethics and Meaning' section. We have traced the pat
 - [Meaning of existence](/docs/consciousness/ethics-meaning/meaning) — meaning as direction in $\Gamma$-space
 - [Freedom of will](/docs/consciousness/ethics-meaning/freedom) — multiplicity of trajectories towards T
 - [AI consciousness](/docs/consciousness/subjects/ai-consciousness) — ethics of AI shutdown
+- [The Soul: A Decomposition](/docs/consciousness/comparative/soul-decomposition) — six components of the soul concept, their formal objects and fates

@@ -487,3 +487,4 @@ We have completed the section on subjects of consciousness — from infants to c
 - [Viability](/docs/core/dynamics/viability) — $P > P_{\text{crit}}$ as a condition for existence
 - [AI Consciousness](./ai-consciousness) — the question of empathy between human and AI
 - [UHM Ethics](/docs/consciousness/ethics-meaning/value-consciousness) — ethical implications of collective consciousness
+- [The Soul: A Decomposition](/docs/consciousness/comparative/soul-decomposition) — the collective layer's role in what traditions called the soul

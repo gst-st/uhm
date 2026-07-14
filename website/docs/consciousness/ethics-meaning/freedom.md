@@ -329,7 +329,7 @@ We do not choose the endpoint (T is the [∞-terminal object](/docs/core/foundat
 
 UHM is closest to **compatibilism**, but goes further: not just the 'compatibility' of freedom and determinism, but a **quantitative measure** of freedom ($\text{Freedom}(\Gamma)$) that decreases with decoherence and depends on the level of consciousness.
 
-**From everyday life:** we all 'move' towards death (T is unique). But **how** we live our life — with care or indifference, with knowledge or ignorance, with love or hatred — this is our choice. And this choice **matters**, because it determines [meaning](/docs/consciousness/ethics-meaning/meaning) — $\text{Meaning}_{\text{total}} = \int P \cdot D_{\text{diff}} \cdot \Phi \cdot R\, d\tau$.
+**From everyday life:** we all 'move' towards death (T is unique). But **how** we live our life — with care or indifference, with knowledge or ignorance, with love or hatred — this is our choice. And this choice **matters**, because it determines [meaning](/docs/consciousness/ethics-meaning/meaning) — $\text{Meaning}_{\text{total}} = \int P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi\, d\tau$.
 
 ### 4.3 Connection to viability
 

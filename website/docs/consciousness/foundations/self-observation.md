@@ -334,6 +334,37 @@ $R = 1/(7P)$ measures the **normalised proximity to heat death** ($I/7$), not th
 - **Difference from $\varphi(\Gamma)$:** the measure $\|\Gamma - \varphi(\Gamma)\|_F$ characterises the quality of the categorical self-model (level 2 in the [attractor hierarchy](#иерархия-аттракторов)), while $R$ uses the fixed reference $I/7$ (level 0). These quantities are not interchangeable.
 :::
 
+### Three working forms of R {#формы-r}
+
+<!-- DRY: single disambiguation point for the three reflection quantities. Any document using R_φ or R^(n) alongside canonical R should link here. -->
+
+The corpus works with **three related but distinct** reflection quantities. Conflating them produces numerical paradoxes — a "samādhi $R$ of $0.92$" or an "anaesthetic $R$ of $0.02$", both impossible for the canonical form. This subsection is the single point where the three are told apart.
+
+| Form | Definition | Range | Threshold | Typical use |
+|------|------------|-------|-----------|-------------|
+| canonical $R$ | $1/(7P)$ — HS-proximity to $I/7$ | $[1/7,\ 1]$ | $R_{\text{th}} = 1/3$ **[T]** (T-126) | L2 predicate, $C = \Phi \times R$ (T-140), registry, measurement protocols |
+| self-model quality $R_\varphi$ | $1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2 / \lVert\Gamma\rVert_F^2$ — master definition in the [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | $[0,\ 1]$ | working $R_{\varphi,\text{th}} = 1/3$ **[I]** | phenomenology of states (sleep, meditation, psychedelics, pathology); the meaning functional |
+| fidelity tower $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$, $n \geq 2$ | $[0,\ 1]$ | $R^{(n)}_{\text{th}} = 1/(n+2)$ | L3/L4, [SAD depth](/docs/consciousness/hierarchy/depth-tower) |
+
+Four rules resolve every mixed case:
+
+1. **The band test.** Inverting the Goldilocks window: for any conscious system the canonical $R$ lies in $[1/3,\ 1/2)$, and for any state whatsoever $R \geq 1/7$. A quoted "reflection" outside these bounds — samādhi $0.92$, anaesthesia $0.02$, a trained meditator's $0.70$ — is necessarily $R_\varphi$.
+2. **$P$-dependence.** Canonical $R$ is a strictly decreasing function of purity and carries no information beyond $P$: it cannot be raised by practice except through $P$. Statements of the form "training strengthens reflection" concern $R_\varphi$ (with cumulative restructuring of $H_{\text{eff}}$) or the tower $R^{(n)}$ — never canonical $R$.
+3. **Formula ownership.** The consciousness measure $C = \Phi \times R$ (T-140) takes **canonical** $R$ — numerical witness: the T-153 empirical instance, $C = \Phi/(7P) = 1.149/3.003 = 0.383$. The meaning functional takes **$R_\varphi$**: $\text{Meaning}_{\text{peak}} = P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$ — with canonical $R$ the product would collapse to $D_{\text{diff}} \cdot \Phi / 7$, cancelling its $P$-dependence.
+4. **When the forms are linked — and when not.** For the dissipative replacement form (T-62) $\varphi_k(\Gamma) = (1-k)\Gamma + k \cdot I/7$ with $k = 1 - R$, direct computation gives $\lVert\Gamma - \varphi_k(\Gamma)\rVert_F^2 = k^2 (P - 1/7)$, whence $R_\varphi = 1 - (1-R)^3$ — a monotone link. For the **categorical** self-model the link breaks: $R_\varphi$ moves independently of $P$ (samādhi raises $P$ and $R_\varphi$ simultaneously). This independence is the signature that the categorical $\varphi(\Gamma)$ carries information beyond purity; quantitative transfer between the forms is bounded only by the [C] inequalities of the [higher-orders section](#рефлексия-высших-порядков-rn).
+
+**Statement (threshold transfer under the K = 3 reading) [C].** Char-R-III derives $R_{\text{th}} = 1/3$ from Bayesian dominance among the $K = 3$ Lindblad channel classes. If the discrimination of the three classes is gated by the accuracy of the self-model — the categorical reading, in which it is $\varphi(\Gamma)$ that must tell dissipation, regeneration and automorphism apart — the same dominance argument applies to $R_\varphi$ verbatim: plurality among three equiprobable alternatives requires accuracy above $1/K = 1/3$. Under this reading $R_{\varphi,\text{th}} = 1/3$ is a conditional theorem **[C]**, not a bare calibration — and the gating clause itself is now bounded at theorem level: any self-model-mediated decision loses at most $2\sqrt{3/7}\,\sqrt{P(1-R_\varphi)}$ of accuracy ([T-252](/docs/proofs/categorical/formalization-phi#гейт-теорема) **[T]**, tight constant), pinning the sufficient threshold to the band $[5/54,\ 32/81]$ across the window, with $1/3$ as the canonical alignment inside it **[C]**.
+
+**Dynamics of $R_\varphi$ — the exact first step.** Writing $R_\varphi = 1 - N/P$ with $N = \lVert\Gamma - \varphi(\Gamma)\rVert_F^2$ and differentiating along the flow:
+
+$$
+\frac{dR_\varphi}{d\tau} = (1 - R_\varphi)\,\frac{\dot P}{P} \;-\; \frac{2}{P}\,\bigl\langle \Gamma - \varphi(\Gamma),\; (\mathrm{Id} - D\varphi)[\dot\Gamma] \bigr\rangle_F,
+$$
+
+where $D\varphi$ is the derivative of the self-model map along the trajectory. Cross-check: for the dissipative replacement form $\varphi_k = (1-k)\Gamma + k \cdot I/7$ with constant $k$ one has $\Gamma - \varphi_k(\Gamma) = k(\Gamma - I/7)$ and $\mathrm{Id} - D\varphi_k = k\,\mathrm{Id}$, whence $\dot N = k^2 \dot P$ and $dR_\varphi/d\tau = -k^2 \dot P/(7P^2)$ — consistent with the closed form $R_\varphi = 1 - k^2(1 - R)$ above. For the **categorical** $\varphi$ the object $D\varphi$ is exactly where the theory of $R_\varphi$-dynamics remains to be developed; the identity is its fixed starting point. The module is developed in [Dφ and the dynamics of $R_\varphi$](/docs/proofs/categorical/formalization-phi#дф-производная): the explicit $D\varphi$ of the canonical family with two-route consistency (T-249 [Т]) and the bandwidth theorem with its path-length law (T-250 [Т]).
+
+**Status.** $R_\varphi$ is a definition **[D]**; its working threshold $R_{\varphi,\text{th}} = 1/3$ is a calibration **[I]** adopting the $K = 3$ Bayesian-dominance rationale for self-model quality. The canonical thresholds are theorems (T-126, T-124, T-129). Documents that plot state space in the $(P, R_\varphi)$ plane do so legitimately: the plane is two-dimensional exactly because $R_\varphi$ is not a function of $P$.
+
 ### Why $R_{\text{th}} = 1/3$: Not Arbitrary, But a Consequence of $K = 3$
 
 The threshold $R_{\text{th}} = 1/3$ is not an arbitrary choice. It follows from the **triadic decomposition** of Lindblad operators: $K = 3$ alternatives in Bayesian inference.

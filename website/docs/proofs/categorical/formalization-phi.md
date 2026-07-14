@@ -939,32 +939,32 @@ $$
 
 Equivalent form: $R = 1 - \|\Gamma - \rho^*_{\mathrm{diss}}\|_F^2 / P$, where $\rho^*_{\mathrm{diss}} = I/7$, $\|\Gamma\|_F = \sqrt{P}$ (square root of [purity](/docs/core/dynamics/viability#определение-чистоты)).
 
-:::warning Distinction between R_canonical and Q_φ
+:::warning Distinction between R_canonical and R_φ
 $R_{\text{canonical}} := 1/(7P)$ is the **canonical definition** used in all thresholds ($R_{\text{th}} = 1/3$). It is a measure of proximity to the maximally mixed state $I/7$, **NOT** a measure of quality of self-modeling.
 
-The quality of self-modeling is defined separately:
+The quality of self-modeling is defined separately (formerly also written $Q_\varphi$; unified notation — [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)):
 
 $$
-Q_\varphi(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}
+R_\varphi(\Gamma) := 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F}
 $$
 
 Comparison at characteristic states:
-- At $\Gamma = I/7$ (dissipative attractor): $R_{\text{canonical}} = 1$, $Q_\varphi = 1$.
-- At a pure state ($P = 1$): $R_{\text{canonical}} = 1/7$, $Q_\varphi$ depends on $\varphi$.
+- At $\Gamma = I/7$ (dissipative attractor): $R_{\text{canonical}} = 1$, $R_\varphi = 1$.
+- At a pure state ($P = 1$): $R_{\text{canonical}} = 1/7$, $R_\varphi$ depends on $\varphi$.
 
-In sections 4.2–4.3 below, $R$ is used in the sense of $Q_\varphi$ (quality of self-modeling), which is valid for convergence analysis. In all other sections and in threshold conditions $R = R_{\text{canonical}} = 1/(7P)$.
+Sections 4.2–4.3 below analyse the convergence of the self-model quality and are written in $R_\varphi$; in all other sections and in threshold conditions $R = R_{\text{canonical}} = 1/(7P)$.
 :::
 
-### 4.2 Convergence of R as fixed point is approached
+### 4.2 Convergence of R_φ as fixed point is approached
 
-**Theorem 4.1 ($R \to 1$ as $\Gamma \to \Gamma^*$):**
+**Theorem 4.1 ($R_\varphi \to 1$ as $\Gamma \to \Gamma^*$):**
 
 Let $\varphi$ be a contracting map with fixed point $\Gamma^*$.
 
 Then:
 
 $$
-\lim_{\Gamma \to \Gamma^*} R(\Gamma) = 1
+\lim_{\Gamma \to \Gamma^*} R_\varphi(\Gamma) = 1
 $$
 
 **Proof:**
@@ -978,19 +978,19 @@ $$
 Therefore:
 
 $$
-R(\Gamma) = \frac{1}{7P(\Gamma)} \to 1 \quad \text{(when } P(\Gamma^*) = 1/7 \text{, i.e. } \Gamma^* = I/7\text{)}
+R_\varphi(\Gamma) = 1 - \frac{\|\Gamma - \varphi(\Gamma)\|^2_F}{\|\Gamma\|^2_F} \to 1 - \frac{0}{P(\Gamma^*)} = 1
 $$
 
-(We assume $\Gamma^* \neq 0$, which holds for any density matrix: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
+(The denominator is bounded away from zero for any density matrix: $\|\Gamma^*\|^2_F = P(\Gamma^*) \geq 1/N > 0$.) ∎
 
-### 4.3 Estimate of rate of convergence of R
+### 4.3 Estimate of rate of convergence of R_φ
 
-**Theorem 4.2 (Rate of convergence of R):**
+**Theorem 4.2 (Rate of convergence of $R_\varphi$):**
 
 For contracting $\varphi$ with constant $k$ and sequence $\Gamma_n = \varphi^n(\Gamma_0)$:
 
 $$
-1 - R(\Gamma_n) \leq 4 k^{2n} \cdot \frac{\|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
+1 - R_\varphi(\Gamma_n) \leq 4 k^{2n} \cdot \frac{\|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
 $$
 
 where $P_{\min} = \min_{\rho \in \mathcal{D}(\mathcal{H})} P(\rho) = 1/N$.
@@ -998,7 +998,7 @@ where $P_{\min} = \min_{\rho \in \mathcal{D}(\mathcal{H})} P(\rho) = 1/N$.
 **Proof:**
 
 $$
-1 - R(\Gamma_n) = \frac{\|\Gamma_n - \varphi(\Gamma_n)\|^2_F}{\|\Gamma_n\|^2_F} = \frac{\|\varphi^n(\Gamma_0) - \varphi^{n+1}(\Gamma_0)\|^2_F}{P(\Gamma_n)}
+1 - R_\varphi(\Gamma_n) = \frac{\|\Gamma_n - \varphi(\Gamma_n)\|^2_F}{\|\Gamma_n\|^2_F} = \frac{\|\varphi^n(\Gamma_0) - \varphi^{n+1}(\Gamma_0)\|^2_F}{P(\Gamma_n)}
 $$
 
 $$
@@ -1016,31 +1016,164 @@ $$
 For $k < 1$: $(1 + k)^2 < 4$, giving the bound:
 
 $$
-1 - R(\Gamma_n) \leq \frac{4 \cdot k^{2n} \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
+1 - R_\varphi(\Gamma_n) \leq \frac{4 \cdot k^{2n} \cdot \|\Gamma_0 - \Gamma^*\|^2_F}{P_{\min}}
 $$
 ∎
 
 :::tip Strengthening: unconditional convergence [Т]
-[Primitivity of $\mathcal{L}_\Omega$](/docs/core/operators/lindblad-operators#примитивность-ℒω) guarantees exponential convergence $R \to 1$ for **any** initial state $\Gamma_0 \in \mathcal{D}(\mathbb{C}^7)$, without additional conditions on initial data.
+[Primitivity of $\mathcal{L}_\Omega$](/docs/core/operators/lindblad-operators#примитивность-ℒω) guarantees exponential convergence $R_\varphi \to 1$ for **any** initial state $\Gamma_0 \in \mathcal{D}(\mathbb{C}^7)$, without additional conditions on initial data.
 :::
 
 ### 4.4 Relation of R to consciousness measure C
 
-**Theorem 4.3 (R as a factor of consciousness):**
+**Theorem 4.3 (reflection factors at the fixed point):**
 
-From the definition of [consciousness](/docs/consciousness/foundations/self-observation#мера-сознательности-c) $C = \Phi \times R$ **[Т T-140]** it follows that:
+The consciousness measure $C = \Phi \times R$ **[Т T-140]** takes the **canonical** $R = 1/(7P)$; the convergence results of §4.2–4.3 concern the **self-model quality** $R_\varphi$. At the fixed point the two factor cleanly:
 
 $$
-C(\Gamma^*) = \Phi(\Gamma^*) \times 1 = \Phi(\Gamma^*)
+R_\varphi(\Gamma^*) = 1, \qquad C(\Gamma^*) = \Phi(\Gamma^*) \cdot \frac{1}{7P(\Gamma^*)},
 $$
 
-for the fixed point $\Gamma^*$ (at $R = 1$, i.e. ideal reflection).
+with $R(\Gamma^*) = 1/(7P(\Gamma^*)) \in [1/3, 1/2)$ whenever $\Gamma^*$ lies inside the conscious window. (An earlier reading substituted $R_\varphi(\Gamma^*) = 1$ into $C$, yielding $C(\Gamma^*) = \Phi(\Gamma^*)$; under the canonical $R$ that value is attained only at $\Gamma^* = I/7$, where $\Phi = 0$ — the reading is withdrawn.)
 
 :::note On notation
 Differentiation $D_{\text{diff}} \geq D_{\min} = 2$ enters as a separate viability condition, not as a factor of $C$.
 :::
 
-**Corollary:** Ideal self-knowledge ($\Gamma = \Gamma^*$) maximizes the contribution of reflection to consciousness.
+**Corollary:** Ideal self-knowledge ($\Gamma = \Gamma^*$) maximizes the self-model-quality factor $R_\varphi$ — the quantity carried by the meaning functional and the $R^{(n)}$-towers — while the canonical factor of $C$ is pinned by purity.
+
+### 4.5 The derivative of the self-model: Dφ {#дф-производная}
+
+Everything dynamical about $R_\varphi$ is carried by one object: how the self-model *responds* to a change of state. The exact flow identity of [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r),
+
+$$
+\frac{dR_\varphi}{d\tau} = (1 - R_\varphi)\,\frac{\dot P}{P} \;-\; \frac{2}{P}\,\bigl\langle \Gamma - \varphi(\Gamma),\; (\mathrm{Id} - D\varphi)[\dot\Gamma] \bigr\rangle_F,
+$$
+
+contains the derivative $D\varphi$ of the self-model map — the **response kernel of self-modelling**. This subsection computes it for the canonical family and verifies the identity by an independent route.
+
+**Definition ($D\varphi$) [D].** The Gateaux derivative of $\varphi$ at $\Gamma$ along a tangent direction $V$ (Hermitian, traceless): $D\varphi[V] := \lim_{\varepsilon \to 0} (\varphi(\Gamma + \varepsilon V) - \varphi(\Gamma))/\varepsilon$. For a Lipschitz (contracting) $\varphi$ it exists almost everywhere (Rademacher, finite dimension); for the smooth families below — everywhere.
+
+:::tip Theorem 4.4 (Dφ of the canonical family; T-249) [Т]
+For the canonical dissipative family $\varphi(\Gamma) = (1 - k(\Gamma))\,\Gamma + k(\Gamma)\, I/7$ with $k = 1 - 1/(7P)$:
+
+$$
+D\varphi[V] = R\,V \;-\; \frac{2}{7P^2}\,\langle \Gamma, V\rangle_F\,(\Gamma - I/7), \qquad R = \frac{1}{7P}.
+$$
+
+$D\varphi$ preserves the Hermitian-traceless tangent space and is $G_2$-equivariant.
+:::
+
+**Proof.** Product rule on $\varphi = (1-k)\Gamma + k\,I/7$: the $\Gamma$-slot contributes $(1-k)V = RV$; the $k$-slot contributes $Dk[V]\,(I/7 - \Gamma)$ with $Dk[V] = \tfrac{1}{7P^2}DP[V] = \tfrac{2}{7P^2}\langle\Gamma, V\rangle_F$ (since $DP[V] = 2\,\mathrm{Tr}(\Gamma V)$); the reference $I/7$ is constant. Trace preservation: $\mathrm{Tr}\,D\varphi[V] = R\cdot 0 - \tfrac{2}{7P^2}\langle\Gamma,V\rangle\,\mathrm{Tr}(\Gamma - I/7) = 0$. Equivariance: $P$, $R$, $\langle\cdot,\cdot\rangle_F$ are unitarily invariant and $I/7$ is the unique $G_2$-invariant state, so $D\varphi$ commutes with conjugation by $U \in G_2$. $\blacksquare$
+
+**Two-route consistency (part of T-249) [Т].** For this family the closed form $R_\varphi = 1 - (1-R)^3$ holds pointwise, whence directly $\dot R_\varphi = -3(1-R)^2 \dot P/(7P^2)$. Substituting Theorem 4.4 into the flow identity must give the same. Indeed, with $\Delta = \Gamma - \varphi(\Gamma) = k(\Gamma - I/7)$:
+
+$$
+(\mathrm{Id} - D\varphi)[\dot\Gamma] = k\,\dot\Gamma + \frac{\dot P}{7P^2}(\Gamma - I/7), \qquad
+\langle \Gamma - I/7, \dot\Gamma\rangle_F = \frac{\dot P}{2}
+$$
+
+(the latter by trace preservation, $\mathrm{Tr}\,\dot\Gamma = 0$), and $\|\Gamma - I/7\|_F^2 = P - 1/7 = kP$. Collecting terms with $1 - R_\varphi = k^3$:
+
+$$
+\dot R_\varphi = k^3\frac{\dot P}{P} - k^2\frac{\dot P}{P} - 2k^2 R\,\frac{\dot P}{P} = \frac{\dot P}{P}\,k^2\,(k - 1 - 2R) = -3R\,k^2\,\frac{\dot P}{P} = -\frac{3(1-R)^2\dot P}{7P^2}. \;\blacksquare
+$$
+
+**Machine verification.** Finite-difference check of $D\varphi$ and three-route agreement (identity / closed form / numerical derivative along random density-matrix paths): maximal discrepancy $\sim 10^{-10}$ over $200$ random states.
+
+### 4.6 The bandwidth theorem for R_φ {#теорема-полосы-rφ}
+
+:::tip Theorem 4.5 (Bandwidth bound; T-250) [Т — for φ differentiable along the trajectory]
+Along any trajectory of the dynamics,
+
+$$
+\Bigl|\dot R_\varphi - (1 - R_\varphi)\frac{\dot P}{P}\Bigr| \;\leq\; \frac{2}{\sqrt{P}}\,\sqrt{1 - R_\varphi}\;C_\varphi\,\|\dot\Gamma\|_F, \qquad C_\varphi := \|\mathrm{Id} - D\varphi\|_{\mathrm{op}}.
+$$
+
+For the canonical family, $C_\varphi \leq (1-R) + 2R\sqrt{1-R}$ (numerically $\approx 1.21$ across the conscious window).
+:::
+
+**Proof.** Cauchy–Schwarz on the flow identity, with $\|\Delta\|_F = \sqrt{(1 - R_\varphi)P}$ by the definition of $R_\varphi$. For the family bound: $\|(\mathrm{Id} - D\varphi)[V]\| \leq (1-R)\|V\| + \tfrac{2}{7P^2}\,\|\Gamma\|\,\|\Gamma - I/7\|\,\|V\|$ and $\|\Gamma\| = \sqrt P$, $\|\Gamma - I/7\| = \sqrt{kP} = \sqrt{1-R}\,\sqrt P$, so the second term is $2\sqrt{1-R}/(7P) = 2R\sqrt{1-R}$. $\blacksquare$
+
+**Corollary (path-length law) [Т].** Let $u := \sqrt{1 - R_\varphi}$ — the *mismatch amplitude*. On segments with $\dot P = 0$:
+
+$$
+\bigl|u(\tau_2) - u(\tau_1)\bigr| \;\leq\; \frac{C_\varphi}{\sqrt P}\,\int_{\tau_1}^{\tau_2}\|\dot\Gamma\|_F\,d\tau
+$$
+
+— **reorganizing the self-model is paid for in state-space path length**. *Proof:* $\dot u = -\dot R_\varphi/(2u)$, and the theorem's right side divided by $2u$ collapses to $C_\varphi\|\dot\Gamma\|/\sqrt P$. $\blacksquare$
+
+**Remark (discrete instance).** Theorem 4.2 above is exactly this law along the $\varphi$-tower: $u(\Gamma_n) \leq 2k^n\|\Gamma_0 - \Gamma^*\|_F/\sqrt{P_{\min}}$, with the geometric path $\sum_n \|\Gamma_{n+1} - \Gamma_n\| \leq \|\Gamma_1 - \Gamma_0\|/(1-k)$ (T-191 convergence). The continuous and discrete forms are two readings of one bandwidth constraint.
+
+**Remark ($G_2$).** $R_\varphi$, $u$, $C_\varphi$, $\|\dot\Gamma\|_F$ are $G_2$-invariant; the law is observer-independent.
+
+**Numerical anchor [И].** At the psychedelic-peak profile of [altered states](/docs/consciousness/states/altered-states) ($P \approx 0.32$; $R_\varphi: 0.45 \to 0.25$): $\Delta u = \sqrt{0.75} - \sqrt{0.55} \approx 0.124$, so the trajectory must traverse at least $\Delta u\,\sqrt P/C_\varphi \approx 0.058$ Frobenius units of state motion between onset and peak. The collapse of the "I" costs actual movement of the state; a short (micro-dose) trajectory cannot produce it.
+
+### 4.7 Mechanisms: dissolution, training, two timescales {#механизмы-rφ}
+
+**Ego dissolution [С].** Fast state motion with a lagging self-model — $\|\dot\Gamma\|$ large while $(\mathrm{Id} - D\varphi)[\dot\Gamma]$ stays comparable to $\dot\Gamma$ — drives $u$ up at the bandwidth-permitted rate: the phenomenological "φ does not have time to restructure" becomes the quantitative statement that $u$ grows no faster, and generically as fast, as $C_\varphi\|\dot\Gamma\|/\sqrt P$.
+
+**Two-timescale training model [С structure; [И] numbers].** Let the self-model carry a trainable target: $\varphi_\theta(\Gamma) = (1-k)\Gamma + k\,\rho_\theta$, with $\theta$ evolving on the slow timescale of $H_{\text{eff}}$-restructuring (procedural memory; the T-155 learning channel). Then $R_\varphi = 1 - k^2\|\Gamma - \rho_\theta\|_F^2/P$, and training that aligns $\rho_\theta$ with the practiced state raises the **baseline** $R_\varphi$ at fixed $P$ — the mechanism behind the cumulative shift in the shamatha progression. The samādhi signature ($P$ and $R_\varphi$ rising *simultaneously*) is thereby resolved: the information the categorical $\varphi$ carries beyond purity is exactly the learned target $\rho_\theta$.
+
+**Training law (exact within the alignment model) [С].** If the slow variable follows the gradient-alignment flow $\dot\rho_\theta = 2\eta\,(\bar\Gamma - \rho_\theta)$ toward a practiced state $\bar\Gamma$ (the gradient of the alignment loss $\lVert\bar\Gamma - \rho_\theta\rVert_F^2$ at mobility $\eta$), the solution is the convex path $\rho_\theta(t) = (1 - e^{-2\eta t})\,\bar\Gamma + e^{-2\eta t}\rho_\theta(0)$ — automatically a density matrix for every $t$ — and the baseline self-model quality obeys the **exponential saturation law**
+
+$$
+R_\varphi^{\text{base}}(t) \;=\; 1 \;-\; \frac{k^2\,e^{-4\eta t}\,\lVert\bar\Gamma - \rho_\theta(0)\rVert_F^2}{P}.
+$$
+
+Practice approaches its ceiling exponentially, at twice the flow rate ($e^{-4\eta t}$: the distance enters squared), with the rate constant set by the slow T-155 channel — the cumulative shift of the shamatha progression acquires a closed form. Status [С] at the gradient-alignment model; within the model the law is exact (machine-checked against direct integration of the flow, $2\cdot 10^5$ steps).
+
+**The gate condition and the threshold.** Define **(G) [О]**: *the $K = 3$ channel-class discriminator factors through the self-model readout, with classification accuracy bounded below by $R_\varphi$.* **Statement [С at (G)]:** (G) implies $R_{\varphi,\text{th}} = 1/3$ — Bayesian plurality among three equiprobable alternatives requires accuracy above $1/K$.
+
+**Register of the module (closed).** Both items of the original register are closed below: (i) the gate is now a theorem-level bound — §4.9 (T-252); the residual freedom is the accuracy model $A_D$ and the exact placement of the working threshold inside the derived band **[С]**; (ii) $D\varphi$ for implicitly defined $\varphi$ — §4.8 (T-251); the residual condition is $C^1$-smoothness of the abstract categorical generator in the Bures topology **[С]**, satisfied by every corpus-realized family.
+
+### 4.8 Dφ for implicitly defined self-models {#дф-неявная}
+
+Theorem 4.4 covers the explicit canonical family. The categorical $\varphi$, however, is given *implicitly* — as the fixed point of a generator whose iteration is the T-191 tower. Its derivative follows from the implicit function theorem with a Neumann series — which is also the categorical answer: differentiating a reflector along its universal property is inverting $\mathrm{Id}$ minus the derivative in the model slot.
+
+:::tip Theorem 4.6 (Dφ of an implicit self-model; T-251) [Т]
+Let $G: \mathcal{D}(\mathbb{C}^7) \times \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$ be $C^1$ with $\sup \lVert D_2 G\rVert_{\mathrm{op}} \leq q < 1$ (uniform contraction in the model slot), and let $\varphi(\Gamma)$ be the unique fixed point of $\rho \mapsto G(\Gamma, \rho)$. Then $\varphi$ is $C^1$ and, evaluated at $(\Gamma, \varphi(\Gamma))$,
+
+$$
+D\varphi \;=\; (\mathrm{Id} - D_2 G)^{-1} \circ D_1 G \;=\; \sum_{n \geq 0} (D_2 G)^n\, D_1 G,
+$$
+
+with $\lVert D\varphi\rVert_{\mathrm{op}} \leq \lVert D_1 G\rVert_{\mathrm{op}}/(1 - q)$; consequently $C_\varphi \leq 1 + \lVert D_1 G\rVert_{\mathrm{op}}/(1-q)$, and the bandwidth theorem T-250 applies to **every** contraction-defined self-model.
+:::
+
+**Proof.** Set $F(\Gamma, \rho) := \rho - G(\Gamma, \rho)$; then $D_2 F = \mathrm{Id} - D_2 G$ is invertible by the Neumann series ($q < 1$). The finite-dimensional $C^1$ implicit function theorem yields $\varphi \in C^1$ with $D\varphi = -(D_2 F)^{-1} D_1 F = (\mathrm{Id} - D_2 G)^{-1} D_1 G$; the series and the norm bound are the Neumann expansion. $\blacksquare$
+
+Three readings. **Tower:** the $n$-th term $(D_2 G)^n D_1 G$ is the sensitivity transmitted through $n$ storeys of the T-191 tower — the geometric decay of storey-sensitivities *is* the tower's convergence, differentiated. **Degenerate check:** for $G$ independent of $\rho$ ($q = 0$) the series collapses to $D_1 G$ — Theorem 4.4 (T-249) is the zeroth-order case. **Machine verification:** for a genuinely nonlinear generator ($q \approx 0.7$–$0.8$), the predicted $D\varphi$ and the brute-force finite-difference derivative of the re-solved fixed point agree at $\sim 10^{-10}$ (numeric $48 \times 48$ Jacobians); the degenerate case reproduces T-249 at $10^{-11}$.
+
+### 4.9 The gate theorem: discrimination through the self-model {#гейт-теорема}
+
+This closes the gate condition (G) of §4.7. First the structure **[Т — structural reading]**: in $\mathcal{L}_\Omega$ the *only* feedback channel computed from the self-model is the regeneration $\mathcal{R} = \kappa(\Gamma)(\varphi(\Gamma) - \Gamma)\,g_V$ — the system's sole endogenous corrective action reads the state through $\varphi(\Gamma)$. Endogenous *adaptive* discrimination — discrimination the system can act on — is therefore $\varphi$-mediated by construction (the identification of "adaptive" with "$\mathcal{R}$-actionable" is definitional **[О]**).
+
+:::tip Theorem 4.7 (Gate bound; T-252) [Т]
+Let $\{E_c\}_{c=1..K}$ be any POVM implementing a $K$-hypothesis decision, and $\Delta := \Gamma - \varphi(\Gamma)$ (traceless). Then:
+
+**(a)** $|\mathrm{Tr}(E_c \Delta)| \leq \tfrac{1}{2}\lVert\Delta\rVert_1$ for every $c$, and the outcome distributions satisfy $\mathrm{TV}\bigl(p(\Gamma), p(\varphi(\Gamma))\bigr) \leq \tfrac{1}{2}\lVert\Delta\rVert_1$;
+
+**(b)** $\lVert\Delta\rVert_1 \leq \sqrt{48/7}\,\lVert\Delta\rVert_F = 4\sqrt{3/7}\,\sqrt{P\,(1 - R_\varphi)}$, and the constant $\sqrt{48/7} = 4\sqrt{3/7} \approx 2.619$ is **tight** on traceless $\mathrm{Herm}(7)$;
+
+**(c)** hence the $\varphi$-mediated success probability obeys $p_\varphi \geq A_D - 2\sqrt{3/7}\,\sqrt{P(1-R_\varphi)}$, where $A_D$ is the true-state accuracy of the decision rule, and Bayesian dominance $p_\varphi > 1/K$ is **guaranteed** whenever
+
+$$
+R_\varphi \;\geq\; 1 - \frac{7}{12P}\,\Bigl(A_D - \frac{1}{K}\Bigr)^{2}.
+$$
+
+Both inequalities of the chain are individually saturated: (a) by the Jordan projector $E = \Pi_+$ of $\Delta$, (b) by the $(3,4)$-split spectrum — so no smaller constants exist.
+:::
+
+**Proof.** (a) Jordan-decompose $\Delta = \Delta_+ - \Delta_-$; tracelessness gives $\mathrm{Tr}\,\Delta_+ = \mathrm{Tr}\,\Delta_- = \tfrac{1}{2}\lVert\Delta\rVert_1$; with $0 \leq E_c \leq I$: $|\mathrm{Tr}\,E_c\Delta| \leq \max(\mathrm{Tr}\,E_c\Delta_+, \mathrm{Tr}\,E_c\Delta_-) \leq \tfrac{1}{2}\lVert\Delta\rVert_1$, and $\mathrm{TV} = \tfrac{1}{2}\sum_c |\mathrm{Tr}\,E_c\Delta| \leq \tfrac{1}{2}\sum_c \mathrm{Tr}\,E_c(\Delta_+ + \Delta_-) = \tfrac{1}{2}\lVert\Delta\rVert_1$. Equality at $E = \Pi_+$ (the positive-eigenspace projector): $\mathrm{Tr}(\Pi_+\Delta) = \mathrm{Tr}\,\Delta_+ = \tfrac12\lVert\Delta\rVert_1$. (b) Maximize $\lVert\lambda\rVert_1$ over $\sum_i\lambda_i = 0$, $\sum_i\lambda_i^2 = 1$ in dimension 7: the KKT condition $\mathrm{sign}(\lambda_i) = \alpha + 2\beta\lambda_i$ forces at most one positive value $a$ ($p$ copies) and one negative $-b$ ($q$ copies), $pa = qb$; then $\lVert\lambda\rVert_1^2/\lVert\lambda\rVert_2^2 = 4pq/(p+q)$, increasing in the support size $p + q \leq 7$ and maximal at the balanced split $\{p, q\} = \{3, 4\}$: $4 \cdot 12/7 = 48/7$. Witness attaining it exactly: $\Delta^* = \mathrm{diag}(4,4,4,-3,-3,-3,-3)$ ($\lVert\Delta^*\rVert_1 = 24$, $\lVert\Delta^*\rVert_F = \sqrt{84}$, ratio $= \sqrt{48/7}$). Finally $\lVert\Delta\rVert_F^2 = P(1 - R_\varphi)$ by the definition of $R_\varphi$. (c) Substitution. $\blacksquare$
+
+**Remark (the constant is an odd-dimension effect).** The generic $d$-dimensional constant is $\sqrt{4\lfloor d/2\rfloor\lceil d/2\rceil / d}$: in even dimension it equals $\sqrt d$ exactly, in odd dimension it sits strictly below. At $d = 7$ the balanced split is forced to be $(3,4)$ and gives $\sqrt{48/7} \approx 2.619 < \sqrt 7 \approx 2.646$. The naive rank bound $\sqrt 7$ (Cauchy–Schwarz) is therefore **not attainable**: tracelessness forbids the aligned spectra that would saturate it. (No structural weight is placed on the $(3,4)$ split here — it is the arithmetic of odd $d$, recorded per the anti-numerology register.)
+
+**Corollary (the working threshold) [С — canonical alignment].** For $K = 3$ with an ideal true-state discriminator ($A_D = 1$) the sufficient bound $R_\varphi \geq 1 - 7/(27P)$ sweeps the band $[5/54,\ 32/81]$ across the conscious window $P \in (2/7, 3/7]$ ($5/54 \approx 0.093$ at the viability edge, $32/81 \approx 0.395$ at the ceiling); the working threshold $R_{\varphi,\text{th}} = 1/3$ lies inside this derived band and is fixed at the canonical value by alignment with Char-R-III. What §4.7 posited as the bare condition (G) is now the theorem-level bound (a)–(c) with **tight** constants; the only remaining freedom is the accuracy model $A_D$ and the placement of the working value inside the band.
+
+**Corollary (sectoral gate: the per-channel threshold) [Т].** Fix a coherence channel $(i,j)$ and its canonical three-outcome readout $E_\pm = \tfrac12(\Pi_{ij} \pm X_{ij})$, $E_0 = \mathbb 1 - \Pi_{ij}$, where $\Pi_{ij}$ projects onto $\mathrm{span}\{e_i, e_j\}$ and $X_{ij} = |i\rangle\langle j| + |j\rangle\langle i|$ (a valid POVM: $E_\pm \succeq 0$, $E_+ + E_- + E_0 = \mathbb 1$). The $\varphi$-mediated shift of each outcome probability is bounded by $|\Delta_{ij}| + \tfrac12|\Delta_{ii} + \Delta_{jj}|$, and the off-diagonal part is **exactly** the sectoral reflection: $|\Delta_{ij}| = |\gamma_{ij}|\sqrt{1 - R_{ij}}$ by the definition of $R_{ij}$. In the coherence-dominated regime (diagonal mismatch negligible — precisely the regime in which the sectoral form is deployed) the per-channel discrimination loss is governed by $\sqrt{1 - R_{ij}}$ alone, so the $K = 3$ dominance argument transfers channel-wise verbatim: the sectoral working threshold $R_{ij} \geq 1/3$ carries the same theorem-level gate as the global $R_\varphi$. This derives the per-channel threshold previously inherited by analogy in [the unconscious](/docs/consciousness/states/unconscious).
+
+**Machine verification.** $500$ random $3$-outcome POVMs: (a) and (b) hold with margin; Jordan-projector saturation of (a) at $10^{-15}$; sharp constant confirmed — random traceless search reaches $2.504 < \sqrt{48/7} = 2.6186\ldots$, the $(3,4)$-witness attains it exactly; band endpoints $5/54$ and $32/81$; sectoral identity, POVM validity and shift bound on $200$ random states.
 
 ---
 

@@ -44,6 +44,10 @@ The Gap operator $\hat{\mathcal{G}}$ is the central object of [Gap dynamics](/do
 In this document $\hat{\mathcal{G}}$ denotes the Gap operator (antisymmetric matrix); $\mathcal{G}_{\text{total}}$ denotes its total magnitude.
 :::
 
+#### Convention: vanishing coherence {#конвенция-нулевой-когерентности}
+
+**[D]** For $|\gamma_{ij}| < \varepsilon_{\min}$ the phase $\arg(\gamma_{ij})$ — and with it $\sin(\arg\gamma_{ij})$ — is undefined, and operationally the channel carries no information flow. The convention is: $\mathrm{Gap}(i,j) := 1$ (maximal opacity) for vanishing coherence. This is the limit instantiated by the phenomenology of states ("$\gamma_{AE} \to 0 \Rightarrow \mathrm{Gap}(A,E) \to 1$" in sleep and anaesthesia). Note the distinction the convention encodes: $\mathrm{Gap}$ measures *phase* transparency, so a weak but in-phase channel above $\varepsilon_{\min}$ has small $\mathrm{Gap}$ (transparent) yet low capacity — transparency and strength are independent axes, and the convention closes the degenerate corner where the phase axis loses meaning.
+
 ---
 
 ## 1. Definition {#определение}

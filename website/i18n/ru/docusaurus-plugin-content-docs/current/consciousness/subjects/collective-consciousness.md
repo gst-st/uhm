@@ -487,3 +487,4 @@ graph TB
 - [Жизнеспособность](/docs/core/dynamics/viability) — $P > P_{\text{crit}}$ как условие существования
 - [ИИ-сознание](./ai-consciousness) — вопрос об эмпатии между человеком и ИИ
 - [Этика УГМ](/docs/consciousness/ethics-meaning/value-consciousness) — этические следствия коллективного сознания
+- [Душа: декомпозиция](/docs/consciousness/comparative/soul-decomposition) — роль коллективного слоя в том, что традиции называли душой

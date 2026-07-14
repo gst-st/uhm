@@ -445,26 +445,26 @@ radar
 
 ### Problem 4.1 ★★ The Triple-Lock Threshold
 
-A system has the following parameters: $P = 0.35$, $R = 0.25$, $\Phi = 1.5$.
+A system has the following parameters: $P = 0.45$, $\Phi = 1.5$.
 
-**(a)** Are all three consciousness conditions satisfied ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
+**(a)** Compute the canonical reflection $R = 1/(7P)$.
 
-**(b)** Which condition is violated?
+**(b)** Are all three consciousness conditions satisfied ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
 
-**(c)** What does this mean interpretively? What kind of system is this — one that is integrated and viable, but not reflective?
+**(c)** Which condition is violated, and what does this mean interpretively?
 
 **(d)** Give an example of a real system with such a profile.
 
 <details>
 <summary>Solution</summary>
 
-**(a)** $P = 0.35 > 2/7 \approx 0.286$ (ok), $R = 0.25 < 1/3 \approx 0.333$ (**not ok**), $\Phi = 1.5 \geq 1$ (ok). **No**, not all conditions are met.
+**(a)** $R = 1/(7 \times 0.45) \approx 0.317$.
 
-**(b)** $R < 1/3$ — insufficient reflection.
+**(b)** $P = 0.45 > 2/7 \approx 0.286$ (ok), $R = 0.317 < 1/3 \approx 0.333$ (**not ok**), $\Phi = 1.5 \geq 1$ (ok). **No**, not all conditions are met.
 
-**(c)** The system is viable (sufficiently organized) and integrated (does not break apart), but *does not know itself* — its self-model is inaccurate. It "lives," but does not "become aware."
+**(c)** $R < 1/3$ — insufficient reflection. Note *why*: $P = 0.45$ exceeds the Goldilocks ceiling $3/7 \approx 0.429$, and by the canonical identity $R = 1/(7P)$ the condition $R \geq 1/3$ is equivalent to $P \leq 3/7$. The system is viable and integrated but **over-ordered**: too little thermal reserve for adaptive self-modelling — the regime of rigid crystallization, the failure mode opposite to chaos.
 
-**(d)** An insect (bee): high organization (P > 2/7), complex social integration (Φ > 1), but limited metacognition (R < 1/3). Or: a well-functioning thermostat with feedback.
+**(d)** A hyper-rigid system: an over-trained automaton executing one frozen routine, or an organism in deep torpor with preserved structure — organized (high $P$), integrated ($\Phi > 1$), but incapable of flexible self-modelling. (Compare Problem 4.3, where the failures come from the opposite, chaotic side.)
 
 </details>
 
@@ -505,15 +505,15 @@ $$
 
 ### Problem 4.3 ★★ Consciousness Measure C
 
-Three systems:
+Three systems (the canonical reflection $R = 1/(7P)$ is determined by $P$; the differentiation $D_{\text{diff}}$ is given):
 
-| System | $P$ | $R$ | $\Phi$ |
-|--------|-----|-----|--------|
-| Bacterium | 0.20 | 0.05 | 0.3 |
-| Cat | 0.32 | 0.30 | 1.8 |
-| Human | 0.35 | 0.40 | 2.1 |
+| System | $P$ | $\Phi$ | $D_{\text{diff}}$ |
+|--------|-----|--------|-------------------|
+| Bacterium | 0.20 | 0.3 | 1.2 |
+| Cat | 0.32 | 1.8 | 1.8 |
+| Human | 0.35 | 2.1 | 2.6 |
 
-**(a)** For each: which thresholds are met ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$)?
+**(a)** For each: compute $R = 1/(7P)$ and check the four thresholds ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\text{diff}} \geq 2$).
 
 **(b)** Compute $C = \Phi \times R$ for each.
 
@@ -522,13 +522,13 @@ Three systems:
 <details>
 <summary>Solution</summary>
 
-**(a)** Bacterium: $P = 0.20 < 2/7$ (no), $R = 0.05 < 1/3$ (no), $\Phi = 0.3 < 1$ (no). 0 of 3.
-Cat: $P = 0.32 > 2/7$ (yes), $R = 0.30 < 1/3$ (no!), $\Phi = 1.8 > 1$ (yes). 2 of 3.
-Human: $P = 0.35 > 2/7$ (yes), $R = 0.40 > 1/3$ (yes), $\Phi = 2.1 > 1$ (yes). 3 of 3.
+**(a)** Bacterium: $R = 1/(7 \times 0.20) \approx 0.71$. $P = 0.20 < 2/7$ (no), $R = 0.71 \geq 1/3$ (yes — a large thermal reserve, but no viability to use it), $\Phi = 0.3 < 1$ (no), $D_{\text{diff}} = 1.2 < 2$ (no). 1 of 4.
+Cat: $R = 1/(7 \times 0.32) \approx 0.45$. $P = 0.32 > 2/7$ (yes), $R = 0.45 \geq 1/3$ (yes), $\Phi = 1.8 > 1$ (yes), $D_{\text{diff}} = 1.8 < 2$ (**no!**). 3 of 4.
+Human: $R = 1/(7 \times 0.35) \approx 0.41$. $P$ (yes), $R$ (yes), $\Phi = 2.1$ (yes), $D_{\text{diff}} = 2.6 \geq 2$ (yes). 4 of 4.
 
-**(b)** Bacterium: $C = 0.3 \times 0.05 = 0.015$. Cat: $C = 1.8 \times 0.30 = 0.54$. Human: $C = 2.1 \times 0.40 = 0.84$.
+**(b)** Bacterium: $C = 0.3 \times 0.71 = 0.21$. Cat: $C = 1.8 \times 0.45 = 0.81$. Human: $C = 2.1 \times 0.41 = 0.86$.
 
-**(c)** Only the **human** satisfies all three thresholds. The cat is "almost" — it lacks reflection ($R = 0.30$ instead of the required $0.33$). This is consistent with cats demonstrating *limited* metacognition.
+**(c)** Only the **human** satisfies all four thresholds. The cat is "almost" — it narrowly misses differentiation ($D_{\text{diff}} = 1.8$ instead of the required $2$): its experiential repertoire is a shade too poor for stable qualia comparison. This is consistent with cats demonstrating *limited* metacognition. Note also that $C$ alone does not decide the question: the cat's $C = 0.81$ is close to the human's $0.86$, yet the four-condition predicate separates them — the thresholds form a conjunction, not a score.
 
 </details>
 

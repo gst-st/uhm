@@ -191,7 +191,7 @@ graph TD
 | Документ | Содержание | Ключевые результаты |
 |----------|------------|---------------------|
 | [Этика УГМ](./ethics-meaning/value-consciousness) | Аксиология, эстетика, моральная теория | Благо $:= dP/d\tau > 0$ **[О]**, Золотое правило из $\Gamma_{\text{composite}}$ **[С]** |
-| [Смысл существования](./ethics-meaning/meaning) | Телеология и смысл в Γ-пространстве | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ **[И]** |
+| [Смысл существования](./ethics-meaning/meaning) | Телеология и смысл в Γ-пространстве | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi]$ **[И]** |
 | [Свобода воли](./ethics-meaning/freedom) | Свобода через гессиан свободной энергии | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[Т]** |
 | [Смерть и непрерывность](./ethics-meaning/death-continuity) | Что происходит при $P \to 0$ | Теорема о необратимости при $P < P_{\text{crit}}$ **[Т]** |
 

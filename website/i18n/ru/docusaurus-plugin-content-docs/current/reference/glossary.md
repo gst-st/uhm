@@ -148,7 +148,7 @@ description: Определения основных терминов теори
 
 | Термин | Определение |
 |--------|-------------|
-| **$R$ (рефлексия)** | $R = R_{\text{canonical}} := 1/(7P)$ — каноническое определение, используемое во всех порогах. Не путать с $Q_\varphi := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (мера качества самомоделирования). Подробнее: [формализация φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) |
+| **$R$ (рефлексия)** | $R = R_{\text{canonical}} := 1/(7P)$ — каноническое определение, используемое во всех порогах. Не путать с качеством самомодели $R_\varphi := 1 - \|\Gamma - \varphi(\Gamma)\|_F^2 / P$ (ранее также обозначалась $Q_\varphi$). Стратификация: [три рабочие формы R](/docs/consciousness/foundations/self-observation#формы-r); высшие порядки: [формализация φ](/docs/proofs/categorical/formalization-phi#28-рефлексия-n-го-порядка-для-l3l4) |
 | **$R_{\text{th}}$** | Порог рефлексии $= 1/3$ **[Т]** ($K = 3$ из [триадной декомпозиции](/docs/core/operators/lindblad-operators#триадная-декомпозиция) + [байесовское доминирование](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии)) |
 | **$\Phi_{\text{th}}$** | Порог интеграции $= 1$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)) — единственное самосогласованное значение при $P_{\text{crit}} = 2/7$; [когерентная доминация](/docs/core/structure/dimension-u#мера-интеграции-φ) |
 | **$D_{\min}$** | Минимальная дифференциация $= 2$ **[Т]** ([T-151](/docs/proofs/consciousness/substrate-closure#t-151)) — безусловное следствие $\Phi_{\text{th}} = 1$ [Т]; [определение](/docs/core/structure/dimension-e#порог-дифференциации-d_min--2) |

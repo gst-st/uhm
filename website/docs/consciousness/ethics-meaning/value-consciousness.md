@@ -72,7 +72,7 @@ In the "Republic" (Book VI, 508b–509c) Plato compares the Good to the Sun: as 
 
 Aristotle in the "Nicomachean Ethics" defines the highest good as **eudaimonia** — flourishing, the realisation of human nature. This is not a fleeting pleasure but a stable state. Virtue is a habitus, a skill leading to eudaimonia.
 
-**What UHM takes:** the Good is not an instantaneous state, but a **stable process** ($dP/d\tau > 0$ — a rate, not a point). Eudaimonia $\approx$ peak potential $P \cdot D_{\text{diff}} \cdot \Phi \cdot R$ (see [Meaning](/docs/consciousness/ethics-meaning/meaning#пиковый-потенциал)).
+**What UHM takes:** the Good is not an instantaneous state, but a **stable process** ($dP/d\tau > 0$ — a rate, not a point). Eudaimonia $\approx$ peak potential $P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi$ (see [Meaning](/docs/consciousness/ethics-meaning/meaning#пиковый-потенциал)).
 
 ### Kant: the Categorical Imperative
 
@@ -254,7 +254,7 @@ The upper levels (viability, homeostasis) are derived from the formalism [T]: $P
 | 1 | **Vital** | $P > P_{\text{crit}}$ | L0 | Immediate | Food, water, safety |
 | 2 | **Homeostatic** | $P \in [0.5, 1]$, $\lVert\sigma_{\mathrm{sys}}\rVert_\infty < 1$ | L0 | Short-term | Sleep, rest, warmth |
 | 3 | **Social** | $\Phi_{\text{composite}}\uparrow$, $\mathrm{Gap}_{AB}(E,E) \downarrow$ | L1 | Medium-term | Friendship, family, belonging |
-| 4 | **Cognitive** | $R\uparrow$, $D_{\text{diff}}\uparrow$, $\gamma_{LE}\uparrow$ | L2 | Long-term | Learning, knowledge, skills |
+| 4 | **Cognitive** | $R_\varphi\uparrow$, $D_{\text{diff}}\uparrow$, $\gamma_{LE}\uparrow$ | L2 | Long-term | Learning, knowledge, skills |
 | 5 | **Aesthetic** | $dP/d\tau > 0$ when $\Phi \gg \Phi_{\text{th}}$ | L2 | Structural | Music, art, mathematics |
 | 6 | **Transcendent** | $\gamma_{OE}\uparrow$, $\gamma_{OU}\uparrow$, $R \to 1$ | L3+ | Architectural | Contemplation, mystical experience |
 
@@ -270,7 +270,7 @@ Value levels are **not identified** with levels L0→L4. The value hierarchy des
 
 **Level 3 — Social.** Interaction with others increases $\Phi_{\text{composite}}$ (integration of the composite system). A decrease in $\mathrm{Gap}_{AB}(E,E)$ means: I begin to "see" the other's experiences. Loneliness — high Gap: no one "hears" my Γ.
 
-**Level 4 — Cognitive.** Growth of $R$ (reflection) and $D_{\text{diff}}$ (richness of states). Learning literally increases the dimensionality of the available state space.
+**Level 4 — Cognitive.** Growth of $R_\varphi$ (self-model quality) and $D_{\text{diff}}$ (richness of states). Learning literally increases the dimensionality of the available state space.
 
 **Level 5 — Aesthetic.** Beauty is not a luxury, but growth of $P$ at high $\Phi$. See §III for more.
 
@@ -663,7 +663,7 @@ graph TD
 | Tradition | Principle | Correspondence in UHM | Status of correspondence |
 |-----------|-----------|----------------------|--------------------------|
 | **Plato** | Good as Idea | $dP/d\tau > 0$ — objective structure | Formal analogy |
-| **Aristotle** | Eudaimonia (flourishing) | $\max_\tau [P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ | Formal analogy |
+| **Aristotle** | Eudaimonia (flourishing) | $\max_\tau [P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi]$ | Formal analogy |
 | **Spinoza** | Single substance (E1P14) | $\Gamma$ — the sole primitive (Ω⁷) | Structural [C] |
 | **Spinoza** | Conatus (E3P6) | $\mathcal{R}[\Gamma, E] = \kappa(\rho^* - \Gamma) \cdot g_V$ | Structural [C] |
 | **Spinoza** | Affects from nature (E3P56) | Emotions from $\nabla P$ and Γ-signature | Structural [C] |

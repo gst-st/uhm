@@ -16,7 +16,7 @@ In this document:
 - $\Gamma$ — [coherence matrix](/docs/core/dynamics/coherence-matrix), $\gamma_{ij}$ — its elements
 - $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$ — [gap measure](/docs/core/dynamics/gap-operator#определение)
 - $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ — [Gap-operator](/docs/core/dynamics/gap-operator)
-- $R$ — [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r)
+- $R_\varphi$ — reflection as **self-model quality**; $R_{ij}$ — its sectoral (per-channel) version used in the definition of the unconscious ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r))
 - $R_{\text{th}} = 1/3$ — [reflection threshold](/docs/consciousness/hierarchy/interiority-hierarchy)
 - $\varphi$ — [φ-operator](/docs/core/operators/phi-operator)
 - L0–L4 — [levels of interiority](/docs/consciousness/hierarchy/interiority-hierarchy)
@@ -109,6 +109,10 @@ The system 'possesses' coherence $\gamma_{ij} \neq 0$ (it is real and influences
 
 - $\mathrm{Gap}(i,j) \to 1$ means that the channel is *opaque*: the phase shift $\arg(\gamma_{ij})$ is close to $\pi/2$, and the 'inner' content of the coherence is inaccessible from 'outside'.
 - $R_{ij} < R_{\text{th}}$ means that the self-model $\varphi(\Gamma)$ does not reproduce this coherence: the system 'does not know' about it.
+
+:::note Status of the sectoral threshold [I]
+The sectoral reflection $R_{ij}$ carries the same theorem-level gate as the global $R_\varphi$: for the canonical channel readout, the $\varphi$-mediated shift of outcome probabilities is governed exactly by $|\gamma_{ij}|\sqrt{1 - R_{ij}}$ — the sectoral corollary of [T-252](/docs/proofs/categorical/formalization-phi#гейт-теорема) **[T]** — so the $K = 3$ dominance argument applies channel-wise, and $R_{\text{th}} = 1/3$ is the canonical alignment inside the derived gate, as for the global form. See [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r).
+:::
 - Both conditions usually correlate (high Gap leads to low partial reflection), but are formally independent: one can have high Gap with high $R_{ij}$ (if the self-model 'knows' about the opacity, but cannot eliminate it).
 
 ### 2.1 Key distinction: absence vs. opacity
@@ -265,12 +269,12 @@ Archetypes are structural regularities selected by [evolutionary dynamics](/docs
 The boundary between conscious and unconscious is **movable**. Gap can decrease under certain conditions:
 
 $$
-\frac{d\,\mathrm{Gap}(i,j)}{d\tau} = -\kappa_{\text{red}} \cdot f(R, \Phi, |\gamma_{ij}|) + \eta(\tau)
+\frac{d\,\mathrm{Gap}(i,j)}{d\tau} = -\kappa_{\text{red}} \cdot f(R_\varphi, \Phi, |\gamma_{ij}|) + \eta(\tau)
 $$
 
 where:
 - $\kappa_{\text{red}}$ — rate of Gap-reduction (depends on the intensity of therapy / practice)
-- $f(R, \Phi, |\gamma_{ij}|)$ — a function of the system state: the higher $R$ and $\Phi$, the easier it is to reduce Gap
+- $f(R_\varphi, \Phi, |\gamma_{ij}|)$ — a function of the system state: the higher $R_\varphi$ and $\Phi$, the easier it is to reduce Gap
 - $\eta(\tau)$ — stochastic noise (random fluctuations)
 
 The full Gap dynamics is described in [Gap-dynamics](/docs/core/dynamics/gap-dynamics).
@@ -280,7 +284,7 @@ The full Gap dynamics is described in [Gap-dynamics](/docs/core/dynamics/gap-dyn
 :::tip Theorem 2.1 (Conditions for Gap-reduction) [C]
 Condition: [non-Markovian Gap dynamics](/docs/core/dynamics/gap-dynamics#немарковские-эффекты). The channel $(i,j) \in \mathcal{U}(\Gamma)$ transitions from unconscious to conscious ($\mathrm{Gap}(i,j) \to 0$) when:
 
-**(a)** $R > R_{\text{th}}/2$ — minimal reflexive capacity preserved (the system is not fully decohered)
+**(a)** $R_\varphi > R_{\varphi,\text{th}}/2$ — minimal reflexive capacity preserved (the system is not fully decohered)
 
 **(b)** $|\gamma_{ij}| > \varepsilon_{\min}$ — coherence is sufficiently strong to be 'captured' by the $\varphi$-operator
 
@@ -289,7 +293,7 @@ Condition: [non-Markovian Gap dynamics](/docs/core/dynamics/gap-dynamics#нем�
 
 **Let us examine each condition:**
 
-**(a) Minimal reflection ($R > R_{\text{th}}/2 = 1/6 \approx 0.167$).** If $R$ is below this threshold, the self-model $\varphi(\Gamma)$ is so inaccurate that it cannot detect misalignment in channel $(i,j)$. Gap-reduction is impossible — the system 'does not know what it does not know'. This explains why under deep anaesthesia ($R \approx 0.02$) or severe psychosis ($R$ unstable) Gap-reduction does not occur.
+**(a) Minimal reflection ($R_\varphi > R_{\varphi,\text{th}}/2 = 1/6 \approx 0.167$).** If the self-model quality $R_\varphi$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)) is below this threshold, the self-model $\varphi(\Gamma)$ is so inaccurate that it cannot detect misalignment in channel $(i,j)$. Gap-reduction is impossible — the system 'does not know what it does not know'. This explains why under deep anaesthesia ($R_\varphi \approx 0.02$) or severe psychosis ($R_\varphi$ unstable) Gap-reduction does not occur.
 
 **(b) Sufficient coherence ($|\gamma_{ij}| > \varepsilon_{\min}$).** If coherence $\gamma_{ij}$ is too weak, the operator $\varphi$ cannot 'distinguish' it against the background noise. Formally: the signal-to-noise ratio $|\gamma_{ij}|^2 / \sigma^2_{\text{noise}}$ must exceed the detection threshold. At $|\gamma_{ij}| < \varepsilon_{\min}$, content has been lost through [kernel decoherence](/docs/consciousness/states/attention-memory#забывание) — this is no longer unconscious, but *forgotten*.
 
@@ -454,7 +458,7 @@ Even in the most 'enlightened' being (L4, samādhi) — at minimum 3 channels wi
 2. **The unconscious** = the set of channels $(i,j)$ with $\mathrm{Gap}(i,j) \to 1$ and $R_{ij} < R_{\text{th}}$ — not a repository, but the *opacity* of existing coherences
 3. **Theorem on incomplete transparency** [C]: at minimum 3 out of 21 channels must have $\mathrm{Gap} > 0$ — the unconscious is **ineliminable** and **structurally necessary**
 4. **Repression** (Freud) = $\mathrm{Gap}(L,E) \to 1$; **shadow** (Jung) = $\mathrm{Gap}(A,E) \to 1$ — precise Gap-differentiation
-5. Gap-reduction requires: (a) $R > R_{\text{th}}/2$, (b) $|\gamma_{ij}| > \varepsilon_{\min}$, (c) existence of a 'bridge' channel
+5. Gap-reduction requires: (a) $R_\varphi > R_{\varphi,\text{th}}/2$, (b) $|\gamma_{ij}| > \varepsilon_{\min}$, (c) existence of a 'bridge' channel
 6. **Manifestations**: slips of the tongue (Gap fluctuation), somatisation (redirection through transparent channel), projection (transfer to other in composite system), dreams (REM redistribution of Gap)
 7. Non-Markovian effects determine integration time: $\tau_{\text{integ}} \propto \tau_{\text{mem}} \cdot \mathrm{Gap}_{\text{init}}$
 8. **Therapy** = targeted Gap-reduction in specific channels: CBT → Gap(L,E), mindfulness → Gap(A,E), body therapy → Gap(S,E)

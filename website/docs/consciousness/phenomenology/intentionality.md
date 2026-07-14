@@ -361,7 +361,7 @@ $$
 
 At $R = 1$ ($P = 1/7$, $\Gamma = I/7$) the system is at the point of complete chaos. At small $R$ ($P \to 1$) the system is "frozen" in a single state. For reflective consciousness (L2+), $R \geq 1/3$ is required, i.e. $P \leq 3/7$. Master definition: [Self-observation](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
 
-**Numerical example.** In an ordinary state a human: $R \approx 0.4$–$0.6$. Self-consciousness is substantial, but far from perfect — much remains "off-screen" (the unconscious). For an experienced meditator in samadhi: $R \to 0.9$ — self-consciousness approaches complete transparency, yet even then, by the [theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), at least 3 channels remain opaque.
+**Numerical example.** In an ordinary state a human: $R_\varphi \approx 0.4$–$0.6$ (self-model quality — [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). Self-consciousness is substantial, but far from perfect — much remains "off-screen" (the unconscious). For an experienced meditator in samadhi: $R_\varphi \to 0.9$ — self-consciousness approaches complete transparency, yet even then, by the [theorem on incomplete transparency](/docs/consciousness/states/unconscious#теорема-неполная-прозрачность), at least 3 channels remain opaque.
 
 ## Intentionality and the L0–L4 Hierarchy {#иерархия}
 

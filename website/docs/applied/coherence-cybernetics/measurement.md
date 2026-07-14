@@ -321,7 +321,7 @@ $$
 C = 1.45 \times 0.40 = 0.58
 $$
 
-Wait — $C < 1$? This indicates that the calibration coefficients require refinement (or that $C \geq 1$ is a more demanding condition than it seems). Alternative calibration: $R \approx \text{meta-d'}/2$, then $R = 0.6$, $C = 0.87$ — closer, but still < 1.
+Wait — $C < 1$? This indicates that the calibration coefficients require refinement (or that $C \geq 1$ is a more demanding condition than it seems). Alternative calibration: $R \approx \text{meta-d'}/2$ would give $R = 0.6$, $C = 0.87$ — closer, but such a value lies outside the canonical band $[1/3, 1/2)$ that the conscious window imposes on $R = 1/(7P)$: a "reflection" of $0.6$ can only be the self-model quality $R_\varphi$, not the canonical $R$ that enters $C = \Phi \times R$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The calibration must map meta-d' into the canonical band.
 
 :::note Lesson
 Calibration is an empirical task. The theoretical CC thresholds ($P = 2/7$, $R = 1/3$, $\Phi = 1$) are precise *within the formalism*. But translating neural data into the formalism requires experimental fitting. The formulas given are starting points, not final answers.

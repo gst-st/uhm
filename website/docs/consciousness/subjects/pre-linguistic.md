@@ -288,7 +288,7 @@ Many species exhibit signs of L2 (or intermediate L1-L2) in the complete absence
 
 ### Table: cognitive abilities without language
 
-| Species | $R$ (estimate) | $\Phi$ (estimate) | $\gamma_{LL}$ | K1–K4 capabilities | L-level |
+| Species | $R_\varphi$ (estimate) | $\Phi$ (estimate) | $\gamma_{LL}$ | K1–K4 capabilities | L-level |
 |-----|-------------|-----------------|---------------|-------------------|-----------|
 | Crow | $\sim 0.3$–$0.4$ | $> 1$ | Low | K1–K4 (tools, planning) | L1–L2 |
 | Octopus | $\sim 0.25$–$0.35$ | $> 1$ | Low | K1–K3 (camouflage, categories) | L1–L2 |
@@ -313,7 +313,7 @@ A detailed taxonomy of L-levels for animals is in the next chapter: [Animal cons
 **Condition:** Proto-logic ($\gamma_{DL} > 0$) is functionally equivalent to the L-dimension for the purposes of R and Φ (interpretive assumption).
 
 Language raises $\gamma_{LL}$ and thereby:
-1. **Increases $R$:** a verbal self-model is more precise than a non-verbal one (symbolic compression promotes a reduction in $P$, and $R = 1/(7P)$ grows)
+1. **Increases $R_\varphi$:** a verbal self-model is more precise than a non-verbal one; independently, symbolic compression may lower $P$ within the window, nudging the canonical $R = 1/(7P)$ upward — two distinct effects ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r))
 2. **Increases $\Phi$:** new coherences $\gamma_{LE}$, $\gamma_{LU}$, $\gamma_{LA}$ create additional integration channels
 3. **Opens the path to L3:** recursive self-reference ($R^{(2)}$) is substantially facilitated by language
 
@@ -335,7 +335,7 @@ Without language (proto-logic):    With language:
 γ_DL → procedural "if-then"        γ_LL → symbolic "if-then"
 γ_SL → categorisation              γ_LL → verbal categories
 γ_AE → perceptual unity            γ_LE → named unity
-R ≈ 0.3 (threshold)                R ≈ 0.5–0.7 (amplified)
+R_φ ≈ 0.3 (working threshold)      R_φ ≈ 0.5–0.7 (amplified)
 Φ ≈ 1–2                            Φ ≈ 3–5
 ```
 

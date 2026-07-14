@@ -331,9 +331,9 @@ $$
 \text{Vipassanā:} \quad \gamma_{LE} \uparrow, \quad R \uparrow, \quad \gamma_{EO} \uparrow
 $$
 
-An increase in understanding ($\gamma_{LE}$) and reflection ($R$) with a deepening of the connection with the ground. Subjectively: time is simultaneously "saturated" and "transparent".
+An increase in understanding ($\gamma_{LE}$) and self-model quality ($R_\varphi$) with a deepening of the connection with the ground. Subjectively: time is simultaneously "saturated" and "transparent".
 
-**Numerical example.** An experienced vipassanā practitioner: $\gamma_{LE} = 0.28$, $R = 0.65$, $\gamma_{EO} = 0.20$, $\mathcal{T} = 0.60$. Subjective tempo is moderately elevated, but the key difference from flow is a high $\gamma_{LE}$ (awareness is present) and a high $R$ (reflection is deep). The meditator is simultaneously "in flow" and "observing themselves" — a state impossible without $R \geq 1/3$.
+**Numerical example.** An experienced vipassanā practitioner: $\gamma_{LE} = 0.28$, $R_\varphi = 0.65$, $\gamma_{EO} = 0.20$, $\mathcal{T} = 0.60$. Subjective tempo is moderately elevated, but the key difference from flow is a high $\gamma_{LE}$ (awareness is present) and a high self-model quality $R_\varphi$ ([the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)). The meditator is simultaneously "in flow" and "observing themselves" — a state impossible without $R_\varphi \geq R_{\varphi,\text{th}} = 1/3$.
 
 ## Temporal Memory Window {#окно-памяти}
 

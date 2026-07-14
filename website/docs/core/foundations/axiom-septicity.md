@@ -322,8 +322,9 @@ Full formalization of $\varphi$ (three equivalent definitions, equivalence proof
 - **Reflection** measures self-model quality: $R_\varphi = 1 - \|\Gamma - \varphi(\Gamma)\|^2 / \|\Gamma\|^2$
 
 :::note On the notation $R$
-The theory uses two distinct symbols $R$:
-- $R_\varphi$ (or simply $R$)—**reflection** (self-model quality), $R \in [0,1]$
+The theory uses three distinct symbols built on the letter R:
+- $R_\varphi$ — **reflection as self-model quality**, $R_\varphi \in [0,1]$. Not to be conflated with the canonical threshold measure: the two coincide neither numerically nor semantically — see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)
+- $R$ — the **canonical reflection measure** $R = 1/(7P) \in [1/7, 1]$ ([master definition](/docs/consciousness/foundations/self-observation#мера-рефлексии-r); T-126), owner of the threshold $R_{\text{th}} = 1/3$
 - $\mathcal{R}[\Gamma, E]$—the **regenerative term** in the evolution equation
 :::
 

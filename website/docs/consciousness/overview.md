@@ -191,7 +191,7 @@ Each document can be read independently, but the order above is the recommended 
 | Document | Content | Key results |
 |----------|---------|-------------|
 | [UHM ethics](./ethics-meaning/value-consciousness) | Axiology, aesthetics, moral theory | Good $:= dP/d\tau > 0$ **[D]**, Golden Rule from $\Gamma_{\text{composite}}$ **[C]** |
-| [Meaning of existence](./ethics-meaning/meaning) | Teleology and meaning in Γ-space | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R]$ **[I]** |
+| [Meaning of existence](./ethics-meaning/meaning) | Teleology and meaning in Γ-space | $\text{Meaning}_{\text{peak}} = \max[P \cdot D_{\text{diff}} \cdot \Phi \cdot R_\varphi]$ **[I]** |
 | [Freedom of will](./ethics-meaning/freedom) | Freedom via the Hessian of free energy | $\mathrm{Freedom}(\Gamma) = \dim\ker(\mathcal{H}_\Gamma) + 1$ **[T]** |
 | [Death and continuity](./ethics-meaning/death-continuity) | What happens as $P \to 0$ | Theorem on irreversibility at $P < P_{\text{crit}}$ **[T]** |
 
