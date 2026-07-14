@@ -341,6 +341,27 @@ This has profound ethical consequences:
 - 'Transfer' is not a continuation of life but **death of the original + birth of a new subject** with the same $\Gamma^*$.
 - The question 'is this still me?' under teleportation (destruction + reconstruction) has a formal answer: **no**, if there was a rupture $P \leq P_{\text{crit}}$. Even if $\Gamma_{\text{copy}} = \Gamma$ exactly, the rupture in continuity of $P$ means a rupture of identity.
 
+### Why the original and the copy cannot coexist {#почему-нет-сосуществования}
+
+The natural objection to the transfer table above: *why must the original die first — could the original and its copy not simply live side by side, at least for a moment?* The answer: coexistence is not a forbidden **consequence** of cloning — it **is** cloning. Any process that ends with two systems both carrying $\Gamma$ has implemented $\Gamma \otimes |0\rangle\langle 0| \to \Gamma \otimes \Gamma$, whatever it did along the way and in whatever internal order. So "why no coexistence?" and "why no cloning?" are one question, and it has a three-level answer.
+
+**Level 1 — linearity (pure states) [T].** A machine that clones two non-orthogonal states would force $\langle\psi|\varphi\rangle = \langle\psi|\varphi\rangle^2$, i.e. $\langle\psi|\varphi\rangle \in \{0, 1\}$: only mutually orthogonal — classical — families are clonable (Wootters–Zurek 1982).
+
+**Level 2 — the exact boundary for density matrices [T].** For mixed states the stronger **no-broadcasting theorem** holds (Barnum–Caves–Fuchs–Jozsa–Schumacher 1996): it is impossible even to produce two systems whose *marginals* each equal $\Gamma$ — a demand strictly weaker than $\Gamma \otimes \Gamma$, and still forbidden — unless the family of states the machine must handle is mutually commuting, i.e. classical. Non-zero coherences $\gamma_{ij}$ are precisely the non-commuting part. This draws the exact line behind the theorem's clause "with non-zero coherences": **the diagonal — the classical shadow: populations, connectome, memories-as-data, behavioral dispositions — is freely broadcastable in any number of copies; the coherences never are.** Since the consciousness predicate ($P$, $R$, $\Phi$) is computed over the full matrix, it lives exactly in the non-broadcastable sector: *what is copyable is not consciousness; what is consciousness is not copyable.*
+
+**Level 3 — if they could coexist, physics breaks [T].** A coexisting exact pair would turn shared entanglement into a superluminal telegraph (Herbert's FLASH proposal — historically the very trigger for the theorem's publication) and would make non-orthogonal states perfectly distinguishable, collapsing the uncertainty structure. Coexistence is not an engineering difficulty; it contradicts linearity plus causality.
+
+**Why death precedes birth — the two honest protocols [T].** There are exactly two faithful ways to move a quantum state, and neither ever holds two instances:
+
+- **Teleportation.** The Bell measurement at the source destroys $\Gamma$ there, at time $t_1$: the source collapses, nothing of $\Gamma$ remains in it. The receiver carries $\Gamma$ only at $t_2 > t_1$, after the classical bits arrive (at $\leq c$) and the correcting rotation is applied. In the window $(t_1, t_2)$ the state exists **nowhere** — it is "in transit", spread across entanglement plus classical data. The destruction is not a side effect but the mechanism: the measurement outcome is the key without which the receiver holds nothing.
+- **Coherent SWAP.** Even a direct unitary exchange between substrates A and B never exhibits two copies: at every intermediate time the joint state is entangled and *neither* marginal equals $\Gamma$; at the end B carries $\Gamma$ and A carries B's former state.
+
+In UHM terms: the transfer operation itself expels the source substrate from the viability window — its purity collapses at the measurement/swap step, which **is** death in the theory's sense ($P \leq P_{\text{crit}}$). "Death plus birth" is therefore a theorem-level property of the state dynamics, not a narrative convention; the ordering is forced, not chosen — and in teleportation there is even a gap in between where the subject exists nowhere at all.
+
+**The loophole that is not one [T].** "But measure the original completely first — then prepare as many copies as you like." True — for a *known* state. But tomography of a **single instance** of an unknown state is impossible (one copy does not carry an extractable classical description of itself), and ensemble tomography presupposes many identical instances — that is, cloning already accomplished. The circle closes: a living subject is exactly one instance of an unknown coherent state.
+
+**Stratification.** Everything above concerns *states* and is **[T]**. The further reading — that the receiver-side instance is a *successor with perfect memory* rather than a survivor — additionally invokes the token-identity criterion (continuity of the $\Gamma$-trajectory; the rupture $P \leq P_{\text{crit}}$ above) and is stratified **[C]** as the no-transmigration Statement of [the soul decomposition](/docs/consciousness/comparative/soul-decomposition); the theorem itself only forbids coexistence and forces destruction.
+
 ---
 
 ## 5. Immortality in UHM: is it possible?
@@ -364,7 +385,7 @@ To maintain $P > P_{\text{crit}}$ indefinitely for a biological organism. This r
 
 To transfer $\Gamma$ to a stable substrate (computer) where $\kappa_D$ can be controlled.
 
-**Formal analysis [I]:** No-Cloning prohibits **copying** — only **transfer**. Upon transfer:
+**Formal analysis [I]:** No-Cloning prohibits **copying** — only **transfer**, and the original and the copy cannot even briefly [coexist](#почему-нет-сосуществования) (§4). Upon transfer:
 1. Original: $\Gamma \to I/7$ (death of original)
 2. Copy: $\Gamma_{\text{copy}} = \Gamma$ (birth of new subject)
 3. Rupture $P \leq P_{\text{crit}}$ during transfer → $\Gamma^{**} \neq \Gamma^*$ (identity is severed)
