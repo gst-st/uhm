@@ -607,15 +607,13 @@ Hypothetical solution via RG evolution: at the Planck scale all $\text{Gap} \sim
 
 The difference in anomalous dimensions is determined by Fano combinatorics: the number of Fano lines passing through a pair $(i,j)$ affects $\Delta_{ij}$.
 
-### 6.4 Dynamical dark energy [P]
+### 6.4 Dynamical dark energy [T at the O-channel; P for the non-O residue]
 
-Open program: the connection between the RG scale of Gap and the cosmological evolution $H(t)$ has not been established from axioms A1–A4. The estimate $w_a \sim -10^{-2}$ is a motivated ansatz, not a prediction. Status: [P].
-
-From the nonlinear Gap-gravity system it follows: the dark energy equation of state depends on the cosmological epoch. The Higgs sector (Gap in $\bar{3}$-to-$\bar{3}$) contributes to the effective cosmological constant:
+The drift of the dark-energy equation of state is now **derived** at the state level: $1 + w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with a positive floor and a three-branch shape classification — [the Λ-drift law, T-254/T-255](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф). The Higgs-sector channels considered here ($\bar{3}$-to-$\bar{3}$ — non-O) contribute to that drift only through the sector-suppressed correction $O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O) \sim 10^{-3}$ ([sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) [T]) — a subdominant channel. The earlier ansatz is kept for the record:
 
 $$w(z = 0) = -1 + \delta w, \quad \delta w = \frac{\kappa \cdot \langle|\gamma|^2\rangle}{V_\text{Gap}} \sim \frac{\kappa \cdot \epsilon^2}{\mu^2 \text{Gap}^2}$$
 
-The numerical estimate $w_a \sim -10^{-2}$ is testable by Euclid, Roman, DESI missions, but its derivation from Gap axioms remains an open program.
+What remains open **[P]** is the RG-scale ↔ $H(t)$ bridge for the *non-O* channels; the O-channel drift needs no such bridge — it passes through the M3 identification $a = 1/\mathrm{Gap}_s$ directly. The old numerical ansatz $w_a \sim -10^{-2}$ is superseded by the T-255 shape constraints (the DESI quadrant requires the oscillatory branch with a genuine $-1$-crossing).
 
 ---
 

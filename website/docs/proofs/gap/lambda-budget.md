@@ -27,6 +27,8 @@ Contribution of vacuum fluctuations in the standard model: $\Lambda_{\text{bare}
 
 Within UHM, suppression occurs through the Gap structure of the coherence matrix, [Fano geometry](/docs/physics/gauge-symmetry/fano-selection-rules), and the [renormalization group](/docs/physics/gauge-symmetry/rg-flow).
 
+This ledger addresses the **magnitude** of Λ. Its **time-dependence** — the drift of the dark-energy equation of state $w(z)$ — is governed separately and exactly by the drift law [T-254/T-255](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф): $1+w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$, with the floor $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$.
+
 ### 1.1 Cosmological constant from the Gap formalism
 
 The cosmological constant is determined by the total opacity of the O-dimension ([Foundation](/docs/core/structure/dimension-o)):

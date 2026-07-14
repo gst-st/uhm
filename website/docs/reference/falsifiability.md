@@ -322,6 +322,16 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 
 ---
 
+### F-w: Dark-energy drift shape (Λ-drift law) {#f-w-форма-дрейфа-тёмной-энергии}
+
+**Prediction ([T-254](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф) [Т] / [T-255](/docs/physics/gravity/cosmological-constant#теорема-трихотомия-ветвей) [Т-structural]+[С]).** The dark-energy equation of state is a state functional, not a dial: $1+w_{\text{eff}} = -\tfrac{2}{3}\,d\ln\mathcal{G}_O/d\ln a$ with the positive floor $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$. Consequences, branch-independent: **no Big Rip** (unbounded phantom excluded), **no vacuum-driven collapse** ($\rho_{\text{DE}} \not\to 0^-$), $w \to -1$ asymptotically. Branch-dependent: the DESI quadrant $(w_0 > -1,\ w_a < 0)$ is reachable **only** through a genuine $-1$-crossing (oscillatory branch); the final crossing runs phantom → quintessence in the orientation fixed by the $V_3$ arrow of inner time [С]; the $\dot G_N$ co-drift must carry the **same sign** as $(1+w)$ with magnitude $\chi(\omega_0/\Lambda)^2(\mathcal{G}_O/7)\tfrac32(1+w)\,H$.
+
+**Falsification criteria:** (i) a confirmed *permanent* $w \neq -1$ (constant non-cosmological-constant EoS across epochs at high significance); (ii) reconstructed $\rho_{\text{DE}}(z)$ growing without bound or crossing zero; (iii) the DESI CPL quadrant confirmed while non-parametric reconstruction *excludes* any $-1$-crossing; (iv) a final crossing in the direction opposite to the $V_3$ arrow (falsifies the [С]-link); (v) a confirmed drift with a $\dot G_N/G_N$ measurement of the *opposite* sign (falsifies the co-drift).
+
+**Experiments:** DESI DR2+, Euclid, Roman ($w(z)$ reconstruction); lunar laser ranging ($\dot G_N$).
+
+**Current verdict (2026):** CONSISTENT — the 2024–2025 DESI preference lies exactly in the only quadrant UHM reaches via a crossing; no Rip-like or permanent-$w$ signal; the co-drift sign test awaits a confirmed drift.
+
 ### Summary table of predictions {#summary-table-of-predictions}
 
 | Code | Prediction | Falsification criterion | Experiment | Status | Current verdict (2026) |
@@ -337,6 +347,7 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 | **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [H] | **PASSING** ($65.9° \pm 3.3°$, $0.2\sigma$) |
 | **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [H] | **PASSING** ($\theta_{12}^{\text{exp}} \approx 12.96°$) |
 | **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] | **PASSING** ($|d_n| < 1.8\times10^{-26}\,e\cdot$cm, consistent with 0) |
+| **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (crossing quadrant preferred by DESI 2024–2025) |
 
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 

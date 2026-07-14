@@ -797,17 +797,90 @@ The radion/modulus $S_0$ is not a fixed parameter but a **dynamical variable**. 
 
 ---
 
-## 13b. Compatibility with DESI (2024–2025) {#desi-совместимость}
+## 13b. Dynamical Λ: the drift law and DESI (2024–2025) {#desi-совместимость}
 
-:::warning DESI results: dynamical dark energy
-The DESI survey results (2024–2025) indicate a possible deviation of the equation-of-state parameter from $w = -1$ at the level of $\sim 4.2\sigma$. If confirmed ($> 5\sigma$), this poses a challenge for UHM, where $\Lambda$ is determined by the stationary Gap configuration.
+**Orientation.** Dark energy is characterized observationally by the equation-of-state parameter $w$: the ratio of pressure to energy density of whatever drives the acceleration. A strict cosmological constant has $w = -1$ forever. Surveys reconstruct $w(z)$ from distances (supernovae, BAO): the DESI results (2024–2025) prefer an *evolving* $w$ — above $-1$ today, below $-1$ in the past — at the $\sim 3$–$4.2\sigma$ level. UHM cannot stay agnostic: here $\Lambda$ is not a dial but a **state functional** — so if the vacuum state drifts, $\Lambda$ *must* drift with it, in a way the theory is obliged to compute. This section derives that law. The three mechanisms previously listed here as a programme are resolved as follows: slow drift of the vacuum Gap phases is **derived** below (T-254); the non-Markovian memory kernel ([T-94](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное)) enters as the branch structure of the response (T-255); inter-minima tunneling remains a logically possible alternative **[П]** not needed for the DESI shape.
 
-**Possible mechanisms of dynamical $\Lambda$ in UHM:**
-1. **Slow evolution of vacuum Gap phases**: if $\theta^*$ is not strictly stationary but undergoes a cosmologically slow drift, $\Lambda(\tau)$ becomes a function of cosmic time
-2. **Non-Markovian corrections**: the memory kernel $K(\tau)$ ([T-88](/docs/core/dynamics/gap-dynamics)) may induce a cosmological drifting term
-3. **Transition between Gap minima**: if $V_{\text{Gap}}$ has several nearby minima, quantum tunneling gives $w(z)$ dependence on redshift
+**Setup: which term drifts.** By the [independence theorem](#теорема-независимость-varepsilon12), the physically observable vacuum energy is the UV-finite moment $\Lambda_{\text{phys}} = \frac{f_4}{16\pi G_N}\mathrm{Tr}(D_{\text{int}}^4)$; the $f_0$- and $f_2$-terms renormalize the bare constant and $G_N$ respectively. With $[D_{\text{int}}]_{ij} = \omega_0\,\mathrm{Gap}(i,j)\,|\gamma_{ij}|\,e^{i\theta_{ij}}$ ([spectral identity](/docs/core/dynamics/gap-operator#тождество-tr-d2)) and the [sector Gap bound](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) ($\mathcal{G}_{\text{non-O}}/\mathcal{G}_O \sim 10^{-3}$), $D_{\text{int}}$ is an **arrow matrix** dominated by its O-row/column — the same structure behind [O-sector dominance](#теорема-лямбда-o-доминирование).
 
-**Status:** [P] (program). The current UHM formulation is compatible with constant $\Lambda$ ([C] in the budget). A dynamical extension requires explicit modeling of $\theta^*(z)$ evolution.
+#### Theorem T-254 (The Λ-drift law) [Т] {#теорема-лямбда-дрейф}
+
+:::tip Theorem T-254 (quartic O-dominance and the drift law of dark energy) [Т]
+**(i) Quartic identity.** For an arrow matrix (only O-row/column non-zero) exactly, and in general with the stated correction:
+
+$$
+\mathrm{Tr}(D_{\text{int}}^4) \;=\; \tfrac{1}{2}\bigl(\mathrm{Tr}\,D_{\text{int}}^2\bigr)^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr) \;=\; \tfrac{1}{2}\,\omega_0^4\,\mathcal{G}_O^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr).
+$$
+
+**(ii) The physical Λ is quadratic in the O-opacity:**
+
+$$
+\Lambda_{\text{phys}}(\tau) \;=\; \frac{f_4\,\omega_0^4}{32\pi G_N}\,\mathcal{G}_O(\tau)^2\,\bigl(1 + O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)\bigr),
+$$
+
+which makes the verbal reading of §4c exact: Λ **is** the cost of observation, quadratically in the clock opacity.
+
+**(iii) Drift law.** With the reconstruction convention $1 + w_{\text{eff}}(a) := -\tfrac{1}{3}\,d\ln\rho_{\text{DE}}/d\ln a$ **[О]** and the M3 identification $a = 1/\mathrm{Gap}_s$ ([emergent metric](/docs/core/foundations/spacetime#теорема-метрика-компоненты)):
+
+$$
+\boxed{\;1 + w_{\text{eff}}(a) \;=\; -\frac{2}{3}\,\frac{d\ln \mathcal{G}_O}{d\ln a} \;=\; +\frac{2}{3}\,\frac{d\ln \mathcal{G}_O}{d\ln \mathrm{Gap}_s}\;}\qquad (+\,O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O)).
+$$
+
+Dark energy's equation of state is not a fluid property: it is the **logarithmic coupling of the temporal (O) Gap sector to the spatial (A,S,D) Gap sector of the vacuum state**, with the universal factor $2/3$ (the $2$ from quarticity in $D_{\text{int}}$, the $3$ from FRW dilution).
+
+**(iv) Floor and exclusions.** $\Lambda_\infty := \Lambda_{\text{phys}}(\rho^*) > 0$ by the [structural necessity](#теорема-лямбда-положительна) [Т]; under the T-222 relaxation of the vacuum state toward the terminal $\rho^*$ (Markov domain) with the exponential memory kernel (T-94):
+- **no Big Rip** — $\mathcal{G}_O \to \mathcal{G}_O(\rho^*)$ finite, so $\rho_{\text{DE}}$ is bounded for all internal time **[Т]**;
+- **no vacuum Big Crunch** — $\rho_{\text{DE}} \to \Lambda_\infty > 0$, never $\leq 0$ at late times **[Т]**;
+- **$w \to -1$** asymptotically: permanent $w \neq -1$ is excluded; any measured $|1+w| > 0$ is a *transient* — a direct measurement of the vacuum's residual distance-rate from the terminal state **[Т at T-222/T-94]**.
+:::
+
+**Proof.** (i) For the arrow matrix $D$ with $D_{Oj} = d_j$: $(D^2)_{OO} = \sum_j |d_j|^2$, $(D^2)_{jk} = d_j^* d_k$ ($j,k \neq O$), hence $\mathrm{Tr}(D^4) = \lVert D^2\rVert_F^2 = (\sum|d_j|^2)^2 + \sum_{jk}|d_j|^2|d_k|^2 = 2(\sum_j |d_j|^2)^2 = \tfrac12(\mathrm{Tr}\,D^2)^2$, since $\mathrm{Tr}\,D^2 = 2\sum_j|d_j|^2 = \omega_0^2\mathcal{G}_O$. The non-O block adds $\mathrm{Tr}(D^4) = \tfrac12\omega_0^4[\mathcal{G}_O^2 + 2\mathcal{G}_O\mathcal{G}_{\text{non-O}} + O(\mathcal{G}_{\text{non-O}}^2)]$ — relative correction $O(\mathcal{G}_{\text{non-O}}/\mathcal{G}_O) \sim 10^{-3}$. (ii) Substitution into the $f_4$-term. (iii) Chain rule on $\ln\rho_{\text{DE}} = \text{const} + 2\ln\mathcal{G}_O$; the second form is M3's $d\ln a = -d\ln\mathrm{Gap}_s$. (iv) Positivity of the floor from §4b evaluated at $\rho^*$; boundedness and the asymptote from convergence $\Gamma_{\text{vac}} \to \rho^*$. $\blacksquare$
+
+**Bookkeeping remark [И].** Microscopically the vacuum term keeps $p = -\rho$; the drift is exchanged with the Γ-sector by the Bianchi identity (interacting-vacuum bookkeeping, as in running-vacuum cosmologies — but sourced by the *state*, not by $H$). Phantom episodes ($w < -1$: vacuum energy rising) are **regeneration episodes paid in free energy** — Landauer-consistent ($g_V > 0 \Rightarrow \Theta(\Delta F) = 1$), with total entropy production $\dot\Sigma \geq 0$ intact; and since $w_{\text{eff}}$ is bookkeeping of a state functional rather than a propagating fluid, the phantom side carries **no ghost degree of freedom**.
+
+#### Theorem T-255 (Branch trichotomy, the arrow, and the $G_N$ co-drift) [Т-structural]+[С] {#теорема-трихотомия-ветвей}
+
+:::tip Theorem T-255 (what shapes w(z) can take) [Т-structural]+[С]
+Linearize the vacuum relaxation at $\rho^*$ (T-94 exponential kernel ⟹ the slow mode is a genuine eigenmode). Then $\delta\mathcal{G}_O(\tau)$ is a damped mode, and exactly three shapes of $w(z)$ exist:
+
+**(a) Dissipative-monotone branch** (real slow mode, $\mathcal{G}_O$ decaying to the floor — the O-channel *dimming*): $w > -1$ throughout, decreasing to $-1$; CPL projection lands in the quadrant $(w_0 > -1,\ w_a > 0)$.
+
+**(b) Regenerative-monotone branch** (real slow mode, $\mathcal{G}_O$ growing to the floor — the O-channel *sharpening*): $w < -1$ throughout, rising to $-1$; CPL quadrant $(w_0 < -1,\ w_a < 0)$. Phantom **without** a Big Rip — bounded by the floor.
+
+**(c) Oscillatory branch** (complex slow mode — rotation from the Hamiltonian/$V_3$ part on top of damping): $w(z)$ is a damped oscillation around $-1$ with finitely separated crossings. This is the **only** branch reaching the DESI quadrant $(w_0 > -1,\ w_a < 0)$, and the **sign dictionary** holds pointwise on all branches:
+
+$$
+w > -1 \iff \dot{\mathcal{G}}_O < 0 \ \text{(dissipation-dominated O-channel)}, \qquad w < -1 \iff \dot{\mathcal{G}}_O > 0 \ \text{(regeneration-dominated)}.
+$$
+
+**Arrow link [С].** The sense of rotation of the complex mode — hence the *direction of the final $-1$ crossing* — is fixed by the sign of the PT-breaking cubic term $V_3$, the same octonionic term that fixes [the arrow of inner time](/docs/applied/coherence-cybernetics/lagrangian). The DESI-preferred shape (phantom past → quintessence present) selects the orientation consistent with the corpus arrow; the reverse final crossing would falsify the [С]-link.
+
+**$G_N$ co-drift [С].** The same $\mathcal{G}$-drift feeds the $f_2$-term, which renormalizes Newton's constant: per e-fold, $d\ln G_N/d\ln a = \chi\,(\omega_0/\Lambda)^2\,(\mathcal{G}_O/7)\cdot\tfrac{3}{2}(1+w)$ with $\chi = O(1)$ fixed by the $a_2$ Seeley–DeWitt bookkeeping. Lunar laser ranging ($|\dot G_N/G_N| \lesssim 10^{-4} H_0$) therefore **caps the pair** (drift amplitude, $\omega_0$): a DESI-size drift $|1+w| \sim 0.25$ with $\mathcal{G}_O \approx 0.24$ requires $\omega_0 \lesssim 10^{-1} M_{\text{Pl}}$ (order-of-magnitude at $\chi = 1$). Either the drift is well below the DESI central value, or the PW frequency sits below the Planck scale — a falsifiable cross-relation between two independent observables.
+:::
+
+**Derivation.** (a,b) For $\mathcal{G}_O = \mathcal{G}^\infty + \delta\,e^{-\lambda\tau}$ the drift law gives $1+w = \tfrac{2}{3}\tfrac{\lambda}{H}\,\delta e^{-\lambda\tau}/\mathcal{G}_O$ — single-signed, with the CPL signs by direct computation. (c) A complex mode $\delta e^{-\lambda\tau}\cos(\Omega\tau + \phi)$ makes $d\ln\mathcal{G}_O/d\ln a$ alternate; crossings of $w = -1$ are the extrema of $\mathcal{G}_O$. The final-crossing direction is the sign of $\Omega$ (rotation sense), which the $V_3$ term selects [С]. The co-drift coefficient follows from $\tfrac{1}{16\pi G_N} \supset \tfrac{f_2\Lambda^2}{16\pi}\cdot\tfrac{\mathrm{Tr}(D_{\text{int}}^2)}{\text{(EH normalization)}}$ with $\mathrm{Tr}(D^2) = \omega_0^2\mathcal{G}_{\text{total}}$. $\blacksquare$
+
+**Reading DESI [И].** If the $w_0 w_a$ signal is real, the UHM reading is specific: the vacuum sits on the **oscillatory branch**; the last $-1$ crossing at $z \approx 0.4$ was the most recent *maximum of the O-opacity* — the vacuum clock overshot its terminal sharpness and is currently relaxing back (dissipation-dominated since $z \approx 0.4$, hence $w > -1$ today). What UHM **forbids** regardless of branch: a Big Rip, a vacuum-driven collapse, and any *permanent* $w \neq -1$. The late-time state is de Sitter with $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$ — the terminal maintenance cost of the Universe's self-model.
+
+**Stage estimator (H1.2).** The drift law turns $w(z)$ surveys into direct probes of the Universe-holon's **stage dynamics**: $|1+w|$ measures $|d\ln\mathcal{G}_O/d\ln a|$ — the per-e-fold motion of the vacuum state toward/around its terminal configuration, and via the [T-250 bandwidth](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) it lower-bounds the vacuum's state-space path per e-fold. Together with $\dot G_N/G_N$ (same source, fixed ratio) these are the first two *observational* estimators for [hole H1.2](/docs/reference/epistemic-vertical#регистр-дыр) — the Universe's stage, previously with no measurement channel at all.
+
+**Cross-level consistency.**
+
+| Level | Statement used | Status |
+|---|---|---|
+| A5 / Page–Wootters | all drifts are internal-relational; the total state stays static | [П] |
+| Γ-dynamics | T-222 terminal $\rho^*$ = the floor; T-94 kernel ⟹ exponential/oscillatory response | [Т] (Markov domain → H1.1 [С]) |
+| Structural necessity (§4b) | $\Lambda_\infty > 0$ | [Т] |
+| Spectral action (§4a) | $f_4$-term is the physical Λ; quartic identity | [Т] |
+| Emergent metric (M3) | $a = 1/\mathrm{Gap}_s$ ⟹ two-sector form of the law | [Т] |
+| Thermodynamics | $\dot\Sigma \geq 0$; phantom = Landauer-paid regeneration | [Т]+[И] |
+| Dφ-module | T-250 path-length bound ⟹ $|1+w|$ bounds vacuum state motion | [Т] |
+| Anti-numerology | $2/3$ and quadraticity derived; no numbers fitted to DESI | discipline |
+
+**Machine verification.** Arrow identity to $6\cdot10^{-16}$ (correction linearly bounded by $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O$, coefficient $< 2$); drift-law chain identity to $10^{-13}$ on synthetic vacuum trajectories; floor/no-Rip and $w \to -1$ on relaxation trajectories; CPL quadrants per branch — dissipative $(+,+)$, regenerative $(-,-)$, oscillatory reaching the DESI quadrant $(w_0 = -0.91, w_a = -0.16$ with a genuine crossing$)$; final-crossing direction flips with the rotation sense; pointwise sign dictionary.
+
+:::warning Honest residue
+The **magnitude** of the drift per e-fold (equivalently, the vacuum relaxation rate in Hubble units) is *not* derived — like the magnitude of Λ itself, it is data-bound and is exactly the H1.2 unknown; T-254 fixes the *structure* (which functional drifts, with which exponent, toward which floor), T-255 the admissible *shapes*. The co-drift coefficient $\chi$ is $O(1)$ but not computed to precision. The $z \approx 0.4$ overshoot reading is [И]. Inter-minima tunneling (old mechanism 3) remains an unexplored [П]-alternative.
 :::
 
 ## 14. Connection with Other Sections
@@ -830,6 +903,7 @@ The DESI survey results (2024–2025) indicate a possible deviation of the equat
 | Topological protection | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$, barrier $\geq 6\mu^2$ [T] |
 | Sector Gap bound | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) | $\mathrm{Gap}(O,i) \approx 1$, $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar{\varepsilon}^2)$ [T] |
 | O-sector dominance | [§4c](#теорема-лямбда-o-доминирование) | $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ = "cost of observation" [T] |
+| Dynamical Λ (drift law, DESI) | [§13b](#теорема-лямбда-дрейф) | $1+w_{\text{eff}} = -\tfrac23\,d\ln\mathcal{G}_O/d\ln a$ [T]; trichotomy + $G_N$ co-drift (T-254/T-255) |
 
 
 ---
