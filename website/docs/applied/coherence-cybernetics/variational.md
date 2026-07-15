@@ -303,6 +303,26 @@ The inequality follows from the positive definiteness of the matrix $L$ (guarant
 
 Positivity $\dot{\Sigma} \geq 0$ is the **second law of thermodynamics for consciousness**: total opacity cannot decrease spontaneously in the linear regime. To become "more transparent" (reduce Gap), the system must do work — through regeneration $\mathcal{R}$ or external perturbation $h^{\text{ext}}$. This formalises the intuition that clarity of consciousness requires *effort*.
 
+### 3b. Beyond linear response: the exact metriplectic geometry {#метриплектическая-геометрия}
+
+Onsager's relations describe the world *near the valley floor*: close to equilibrium, flows are linear in forces. But how far does that law reach, and what is the *exact* one? The answer (T-262 [T]) is geometric, and it is one of the deepest facts about CC's dynamics — it says the whole equation of life is **one frictionless rotation plus two slides straight downhill**.
+
+Picture a marble in a curved bowl. Two things can happen to it: someone can *spin* the bowl (the marble circles without ever climbing or dropping — no energy spent, no order lost), or the marble can *roll downhill* toward the bottom. CC's master equation is exactly this, with one rotation and *two* different downhills:
+
+| Term | What it is, geometrically | It slides toward |
+|------|---------------------------|------------------|
+| **work** $-i[H_{\text{eff}},\Gamma]$ | a frictionless rotation (isometry of every information metric) | nowhere — it conserves entropy *and* purity |
+| **heat** $\mathcal{D}[\Gamma]$ | gradient descent of negentropy, in the transport metric whose weights are the seven [line temperatures](./effective-temperature#линейные-температуры) | maximum entropy $\mathbb{1}/7$ |
+| **matter** $\mathcal{R}$ | gradient descent of free energy, in the Kubo–Mori (BKM) metric | the self-model $\rho_*$ |
+
+The crucial upgrade over Onsager is the word **exact**. The dissipator is not "downhill on average" — it is *literally the steepest descent* of a definite quantity (the negentropy $D(\Gamma\|\mathbb{1}/7)$) in a definite, curved geometry (the Carlen–Maas transport metric of the seven Fano lines). Onsager's linear flow–force law is simply the *tangent* to this exact slide near the bottom of the bowl. Far from equilibrium — where Onsager says nothing — the gradient-flow law still holds verbatim. Consequently the entropy production of Corollary 3.3 is not merely a linear-regime estimate but an **exact quadratic form**, non-negative everywhere and vanishing precisely on diagonal (fully decohered) states.
+
+This "rotation ⊕ two gradient descents" architecture has a name — a **metriplectic system** (a reversible Hamiltonian part married to an irreversible gradient part). It is *not* the closed-system GENERIC of textbook thermodynamics, and the difference is honest and physical: a conscious holon is an **open** system — it exchanges energy with the world through the O-channel (nourishment) — so it does not conserve energy under dissipation. That openness is exactly what makes the structure metriplectic rather than fully conservative. Life is a marble that is simultaneously spun (work), let roll toward stillness (heat), and nudged back up toward its own ideal shape (matter); consciousness is the standoff those three keep.
+
+:::note Why this matters for the variational picture
+The Lagrangian $\delta S = 0$ of the [previous chapter](./lagrangian) gives the *reversible* skeleton — the rotation. The dissipative and regenerative terms cannot come from a bare action (a slide downhill has no time-symmetric Lagrangian), which is why §6 of that chapter needed the doubled Schwinger–Keldysh contour. T-262 is the resolution: those two terms are not "missing from the action," they are *gradient flows in their own metrics* — a second, complementary variational principle (steepest descent) sitting beside stationary action. Together, stationary-action-for-the-rotation and steepest-descent-for-the-slides fully determine the dynamics.
+:::
+
 ---
 
 ## 4. Connection to the Free Energy Principle (FEP) {#связь-с-fep}

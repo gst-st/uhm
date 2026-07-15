@@ -494,7 +494,14 @@ From these six summands follow the equations of motion for all 21 phase degrees 
 
 All of this is not a collection of hypotheses, but a **unified variational principle**. One object — $\mathcal{L}_{\text{Gap}}$ — and from it all the dynamics.
 
-Lagrange dreamed of reducing mechanics to algebra. In Gap theory this dream is realised: the entire dynamics of interiority is a consequence of one formula and the principle $\delta S = 0$.
+And beneath the six-term *portrait* lies a three-flow *skeleton*. When you actually form the equations of motion, the six terms do not stay six — they organise themselves into exactly three geometric motions (T-262 [T], the [metriplectic structure](./variational#метриплектическая-геометрия)):
+
+- one **frictionless rotation** — the reversible, Hamiltonian part (kinetic + potential + topological terms), a rigid turn that spends no order;
+- two **downhill slides** — the irreversible, gradient part: the dissipative term is a slide toward maximum entropy, the regenerative term a slide toward the self-model, each in its own natural geometry.
+
+This is why the portrait hangs together rather than falling into a list: the six brush-strokes trace one rotation and two descents. It also explains, at a glance, why the dissipative and regenerative terms resisted a plain Lagrangian and needed the doubled Schwinger–Keldysh contour of §6 — a slide downhill has no time-symmetric action; it obeys *steepest descent*, the variational twin of stationary action. The two principles together — stationarity for the rotation, steepest descent for the slides — close the dynamics with nothing left over.
+
+Lagrange dreamed of reducing mechanics to algebra. In Gap theory this dream is realised: the entire dynamics of interiority is a consequence of one formula and the principle $\delta S = 0$ — completed, for the irreversible half of being, by its mirror principle of steepest descent.
 
 ---
 

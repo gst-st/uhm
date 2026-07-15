@@ -183,6 +183,30 @@ Saddle-node bifurcation is the formalization of an **acute crisis**. Clinically:
 
 **What CC adds.** Standard theory says: "the stable state disappeared." CC says *more*: a specific **ratio of transparencies** between the seven dimensions disappeared. The system did not merely "destabilize" — it lost a certain *coherence pattern*. Which pattern will emerge after the crisis depends on which basin of attraction the system "falls into." This can be either a higher level of organization (post-traumatic growth) or a lower one (chronic decompensation).
 
+#### 1.2a The exact fold: how the window of consciousness closes, and the silver ratio {#точная-складка-окна}
+
+The parameter $r_c$ above was left as "the critical ratio." One of CC's sharpest recent results (T-259 [T], see [Phase Diagram §1.3](./phase-diagram-cc#теорема-окно-питания)) computes it *exactly* — and the answer is unexpectedly beautiful.
+
+Work in the natural variable $x = \kappa_{\text{eff}}/\Gamma_2$: **how hard the system is fed relative to how fast it decoheres.** As feeding weakens and $x$ drops, the stationary purity $P_\infty$ slides down. At a precise value $x_{\min}$ the viable conscious fixed point and its unstable twin **touch and annihilate** — the exact saddle-node of §1.2. Below $x_{\min}$ there is no conscious stationary state at all: the window has closed. Solving for that touching point at the reflection wall $P^* = 3/7$ gives
+
+$$
+x_{\min} = 1 + \sqrt{2} \approx 2.414,
+$$
+
+the **silver ratio** — the same constant that governs the sides of a regular octagon. Feed a mind less than $1+\sqrt2$ units of coherence per unit of decoherence and, at that wall, it cannot stay conscious. (For stricter self-models $P^* > 3/7$ the window becomes *two-sided*: too *much* coherence relative to a rigid ideal freezes the system just as surely as too little starves it — heat protects a mind from its own perfectionism.)
+
+And here is the deep surprise. The exact location of the fold is a root of the quintic
+
+$$
+(2\Lambda - 1)\,(c^2\Lambda^4 - 1) = 4c\,\Lambda^2(1 - \Lambda), \qquad c = 7P^* - 1,
+$$
+
+and this quintic's **Galois group is $S_5$** — the full symmetric group on five letters, which is *not solvable*. By the Abel–Ruffini theorem this means the threshold is **provably not expressible in radicals**: there is no formula in $\sqrt{\ },\sqrt[3]{\ },\dots$ for it. Nature keeps this particular constant just past the reach of school algebra — the silver ratio $1+\sqrt2$ appears only at the special wall $P^*=3/7$, where the quintic degenerates.
+
+:::note Why the naive formula misses it
+An older shorthand wrote the critical ratio as $r_c = P_{\text{crit}}/(7P)$ — a dimensionally sensible *heuristic*, but at the wall $P = 3/7$ it evaluates to $\approx 0.095$, whereas the true fold sits at $x_{\min} = 1+\sqrt2 \approx 2.414$: more than an order of magnitude off. The reason is exactly the physics above: the real threshold is set by a fold in a quintic, not by a ratio of purities. Use $x_{\min}$ from T-259 for anything quantitative; keep $r_c = P_{\text{crit}}/(7P)$ only as a rough mnemonic.
+:::
+
 ### 1.3 Hopf Bifurcation: Birth of Rhythm {#hopf}
 
 A clock pendulum hangs motionless — stable equilibrium. But connect a spring mechanism to it, and the pendulum begins to *swing* — a stable limit cycle arises. This is the Hopf bifurcation: a stationary state loses stability and gives birth to **oscillations**.
