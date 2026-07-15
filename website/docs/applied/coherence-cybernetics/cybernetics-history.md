@@ -382,6 +382,22 @@ Varela (1946–2001) went further: he linked autopoiesis to the phenomenology of
 
 For more on the connection between autopoiesis and CC — see the section [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories).
 
+### Vanchurin: The Self-Learning Universe {#ванчурин}
+
+**Vitaly Vanchurin** — a physicist who, in *The World as a Neural Network* (2020) and the **Self-Learning Universe** program that followed, took the most radical step of all: not "the mind is like a cybernetic system," but *the entire universe is a giant learning system*, and physics itself — quantum mechanics, gauge fields, even gravity — falls out as the optimality conditions of that learning under **limited resources**.
+
+Here is why this belongs in a history of cybernetics — and why it is different from every entry above. Ashby and Beer *intuited* the multidimensionality of viability but never wrote the equations; Vanchurin writes them, and he starts from the **opposite end** of CC. CC is built top-down: from quantum axioms down to learning and life. Vanchurin builds bottom-up: from a learning system up to physics. Two ladders, climbed from opposite floors — and they meet on the same landing. His three intensive variables (the ones a resource-limited learner is forced to track) turn out to be **exactly CC's three channels**:
+
+| Vanchurin (SLU) | CC |
+|-----------------|-----|
+| Gauge field $A_\mu$ (models displacement) | **Work** channel $h^{(H)}$ — Hamiltonian re-aiming |
+| Temperature $T$ (models fast entropy) | **Heat** channel $h^{(D)}$ — dissipation |
+| Chemical potential $\mu$ (models the count $N$) | **Matter** channel $h^{(R)}$ — regeneration |
+| $U(1)$ gauge symmetry from $\Delta N \in \mathbb{Z}$ | compact torus $U(1)^7$ (T-260) |
+| Covariant learning dynamics | evolution $\mathcal{L}_\Omega$ |
+
+This is the sharpest support the history can offer for the chapter's thesis. When two theories that share no assumptions, no vocabulary, and no starting point nonetheless arrive at the *same three doors* — work, heat, matter — the three doors are unlikely to be an artifact of either theory. They look like a feature of reality. CC proves this correspondence as a theorem ([the thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258); Vanchurin arrives at it from learning dynamics. Neither is "the fourth cybernetics" — both are reading the same fundamental grammar, from opposite pages.
+
 ---
 
 ## Parallel Streams: Theories of Consciousness {#параллельные-потоки}
