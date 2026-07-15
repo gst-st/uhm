@@ -2036,7 +2036,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Target | **Spatial** consciousness (sub-problem) | Full hierarchy L0–L4, all content |
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
 | Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
-| Numerical predictions | None | 22 predictions with falsification criteria |
+| Numerical predictions | None | 23 predictions with falsification criteria |
 | Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [T]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
 | Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
@@ -2051,7 +2051,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 - **Scope**: CC addresses consciousness as a whole (experience, self-modelling, integration, affect, ethics) rather than only the spatial sub-problem.
 - **Hard problem**: CC dissolves it via two-aspect monism [T via T-186]; PWT offers no account of *why* a wave should feel like anything.
 - **Formal rigour**: CC has equations of motion ($\mathcal{L}_\Omega$), a spectral gap, exact thresholds, and a status registry of theorems; PWT is programmatic.
-- **Falsifiability**: CC has 22 numerical predictions with explicit criteria; PWT has one binary check ("is there a wave?").
+- **Falsifiability**: CC has 23 numerical predictions with explicit criteria; PWT has one binary check ("is there a wave?").
 - **Physics**: CC derives GR + QM + Standard Model; PWT assumes standard physics.
 
 ### Honest assessment: what the theory does better than CC

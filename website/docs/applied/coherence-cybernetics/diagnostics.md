@@ -10,7 +10,7 @@ description: "Practical guide for cognitive engineers: vital indicators, decisio
 > — Hippocrates (paraphrased)
 
 :::tip Bridge from the Previous Chapter
-In the [previous chapter](./predictions) we formulated 22 unique predictions of CC — numerical, verifiable, falsifiable consequences of the theory. But a prediction without a diagnostic tool is like a recipe without a thermometer. How do we know that $P$ is approaching $P_{\text{crit}}$? That $\sigma_E$ is rising? That the death spiral has already been triggered? Diagnostics is the bridge between predictions and actions: it turns abstract theorems into practical decisions.
+In the [previous chapter](./predictions) we formulated 23 unique predictions of CC — numerical, verifiable, falsifiable consequences of the theory. But a prediction without a diagnostic tool is like a recipe without a thermometer. How do we know that $P$ is approaching $P_{\text{crit}}$? That $\sigma_E$ is rising? That the death spiral has already been triggered? Diagnostics is the bridge between predictions and actions: it turns abstract theorems into practical decisions.
 :::
 
 :::info Chapter Roadmap

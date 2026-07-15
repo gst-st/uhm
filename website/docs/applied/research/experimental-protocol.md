@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 title: "Experimental Protocol"
-description: "Reference protocol for empirical validation of UHM: 4 phases, 22 predictions, TMS-EEG, critical exponents"
+description: "Reference protocol for empirical validation of UHM: 4 phases, 23 predictions, TMS-EEG, critical exponents"
 ---
 
 # UHM Validation Experimental Protocol
@@ -11,7 +11,7 @@ This document describes a **maximally complete experimental protocol** for the e
 :::
 
 :::info Related documents
-- [22 unique CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
+- [23 unique CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list of predictions with formulas
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation of π_bio for AI systems
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Status registry](/docs/reference/status-registry) — current epistemic status of all claims
@@ -23,7 +23,7 @@ This document describes a **maximally complete experimental protocol** for the e
 
 ### 1.1. The problem: empirical vacuum
 
-UHM is one of the most formally developed theories of consciousness: ~210 theorems, 22 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
+UHM is one of the most formally developed theories of consciousness: ~210 theorems, 23 numerical predictions, categorical foundation. But **not a single prediction has been experimentally verified**. A theory without empirics is philosophy, no matter how rigorous the mathematics.
 
 ### 1.2. Key observation: PCI* ≈ P_crit
 
@@ -45,7 +45,7 @@ The protocol is organised in decreasing order of risk: first — what is cheaper
 
 | Phase | Timeline | What | Why first |
 |-------|----------|------|-----------|
-| **I. Digital** | 0–6 mo. | 11 predictions in silico (Γ-native agent) | Free, no ethics, tests the foundation |
+| **I. Digital** | 0–6 mo. | 12 predictions in silico (Γ-native agent) | Free, no ethics, tests the foundation |
 | **II. Neurocalibration** | 6–18 mo. | π_bio, P_crit ↔ PCI*, critical exponents | Main point of contact with neurodata |
 | **III. Clinical** | 12–36 mo. | Disorders of consciousness, recovery, 3/7 attractor | Clinical significance |
 | **IV. Cognitive** | 12–24 mo. | 7D stress, collective consciousness, prelinguistic cognition | Interdisciplinary validation |
@@ -56,7 +56,7 @@ The protocol is organised in decreasing order of risk: first — what is cheaper
 
 ### 2.1. Rationale
 
-11 of 22 predictions are testable in silico on any implementation of a **Γ-native agent** — a system whose evolution is governed by Lindbladian dynamics ℒ_Ω = ℒ₀ + ℛ on the coherence matrix Γ ∈ D(ℂ⁷). No neurodata, subjects, or ethical approval required. If even one is falsified — stop, revise the theory before proceeding to expensive neuroexperiments.
+12 of 23 predictions are testable in silico on any implementation of a **Γ-native agent** — a system whose evolution is governed by Lindbladian dynamics ℒ_Ω = ℒ₀ + ℛ on the coherence matrix Γ ∈ D(ℂ⁷). No neurodata, subjects, or ethical approval required. If even one is falsified — stop, revise the theory before proceeding to expensive neuroexperiments.
 
 ### 2.2. Requirements for a Γ-native agent
 
@@ -510,7 +510,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 
 ---
 
-## 6. Summary table: all 22 predictions × phases {#summary-table}
+## 6. Summary table: all 23 predictions × phases {#summary-table}
 
 | # | Prediction | Phase | Falsification | Status |
 |---|---|---|---|---|
@@ -536,6 +536,7 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | 20 | ε_eff ≈ 0.059 | — | ε ∉ [0.04, 0.08] | [C] |
 | 21 | π_bio reconstruction | II.1 + III.1 | Error > 30% | [H] |
 | 22 | Spectral gap | II.4 | λ_gap/(2π) ∉ [10, 200] Hz | [H] |
+| 23 | Rank-7 decoherence anisotropy | I.12 | 14 sum-rules fail (rate tomography) | [T]/[C] |
 
 ---
 
@@ -611,22 +612,23 @@ gantt
 
 ## 10. Conclusion {#conclusion}
 
-This protocol covers **22 out of 22 predictions** of UHM/CC:
-- 10 testable in silico (Phase I, 0–6 mo.)
+This protocol covers **23 out of 23 predictions** of UHM/CC:
+- 12 testable in silico (Phase I, 0–6 mo.)
 - 4 requiring TMS-EEG (Phase II, 6–18 mo.)
-- 4 — clinical studies (Phase III, 12–36 mo.)
-- 4 — cognitive/social studies (Phase IV, 12–24 mo.)
+- 2 — clinical studies (Phase III, 12–36 mo.)
+- 3 — cognitive/social studies (Phase IV, 12–24 mo.)
+- 2 — physical-sector, no dedicated phase (Ward suppression, Yukawa)
 
 The riskiest test is **critical exponents β=1/4** (Pred 17). No other theory of consciousness makes such a concrete numerical prediction about a phase transition. Confirmation means: consciousness belongs to the tricritical mean-field universality class ($\varphi^6$ Landau). Refutation means: UHM is fundamentally wrong about the structure of the transition.
 
 The most valuable test is **P_crit = 2/7 ↔ PCI* = 0.31** (Pred 6/21). If the theoretical threshold coincides with the empirical one — this is the first case in history where a theory of consciousness predicts a specific numerical value that matches an independently established experimental threshold.
 
-UHM does not hide from falsification — it presents 22 targets and points where to shoot.
+UHM does not hide from falsification — it presents 23 targets and points where to shoot.
 
 ---
 
 **Related documents:**
-- [22 CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list with formulas
+- [23 CC predictions](/docs/applied/coherence-cybernetics/predictions) — full list with formulas
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — operationalisation for AI
 - [Falsifiability criteria](/docs/reference/falsifiability) — formal refutation conditions
 - [Learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) — T-109 through T-113

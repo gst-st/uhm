@@ -338,6 +338,7 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 |-----|-------------|------------------------|-------------|--------|--------|
 | **F-Gap-1** | $\langle\mathrm{Gap}_{\mathrm{intra}}\rangle < \langle\mathrm{Gap}_{\mathrm{inter}}\rangle$ | Systematically $\mathrm{Gap}_{\mathrm{intra}} \geq \mathrm{Gap}_{\mathrm{inter}}$ | fMRI (ISF) | [H] | UNTESTED |
 | **F-Gap-2** | Block transparency by Fano triplets | Absence of block structure in coherences | fMRI | [T] | UNTESTED |
+| **F-rank7** | Rank-7 decoherence anisotropy: the 21 inter-channel rates obey $r_{ij}=\tfrac16\!\sum_{\|\ell_p\cap\{i,j\}\|=1}\gamma_p$ (14 exact sum-rules; Prediction 23, T-262) | A statistically significant residual off the 7-dim Fano incidence subspace | Γ-native rate tomography (in silico) / PCI-style perturbations | [T]+[C] | UNTESTED |
 | **F-ξ** | $\xi_F \sim 160$ pc | Absence of preferred scale $\sim 160$ pc | LSS surveys | [T] | UNTESTED |
 | **F-τ_p** | $\tau_p \sim 6.7 \times 10^{37}$ years | $\tau_p < 10^{36}$ years | Hyper-K | [H] | CONSISTENT (above sensitivity; $\tau_p > 2.4\times10^{34}$) |
 | **F-m_t** | Exactly one $O(1)$ Yukawa [T]; $m_t \approx 173$ GeV [C] | A second $O(1)$ Yukawa; significant $m_t$ shift | Colliders | [T]+[C] | **PASSING** ($y_t \approx 0.94$, unique) |

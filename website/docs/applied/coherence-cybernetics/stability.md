@@ -752,7 +752,7 @@ For practical diagnostics see [Diagnostics](./diagnostics). For experimental ver
 7. **Antifragility is not mysticism, but a formula**: $r_{\mathrm{stab}}(\text{after}) > r_{\mathrm{stab}}(\text{before})$, if the perturbation was within the radius and experience was integrated ($\mathrm{Coh}_E \uparrow$). Optimal training stress: $\|h_{\mathrm{opt}}\| \sim r_{\mathrm{stab}} / 2$.
 
 :::tip Bridge to the next chapter
-We have built a complete stability theory — how much the system can withstand, how it is destroyed, and how it recovers. But all this is *description*. Theory becomes science when it generates **predictions** that can be verified and falsified. In the [next chapter](./predictions) we will collect 22 unique CC predictions — from the impossibility of zombies to the critical exponents of consciousness — and for each specify: which experiment will test it, and which result will falsify the entire theory.
+We have built a complete stability theory — how much the system can withstand, how it is destroyed, and how it recovers. But all this is *description*. Theory becomes science when it generates **predictions** that can be verified and falsified. In the [next chapter](./predictions) we will collect 23 unique CC predictions — from the impossibility of zombies to the critical exponents of consciousness — and for each specify: which experiment will test it, and which result will falsify the entire theory.
 :::
 
 ---

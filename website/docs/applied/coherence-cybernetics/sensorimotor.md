@@ -131,7 +131,7 @@ $$
 $$
 — both sign-indefinite; the **only** channel able to lower entropy and raise purity (**chemical work / matter**: feeding imports negentropy).
 
-Consequently the sign pair $(\operatorname{sign}\dot{S}, \operatorname{sign}\dot{P}) \in \{(0,0),\ (+,-),\ (\mp,\pm)\}$ identifies the acting channel: the trichotomy is *observable*.
+Consequently the three channels realise three distinct **signature types** — *conservative* ($\dot{S} \equiv 0 \equiv \dot{P}$ at every state), *sign-definite dissipative* ($\dot{S} \geq 0$ **and** $\dot{P} \leq 0$ at every state), and *sign-indefinite* (both signs attainable) — and this typing is exhaustive (it labels the whole T-102 basis) and channel-distinguishing. The trichotomy is thus *observable as a classification*. A single instantaneous sign pair identifies the acting channel **generically but not universally**: on a diagonal state the heat channel degenerates to $(0,0)$ and is momentarily indistinguishable from work, and a regenerative step toward a more mixed, low-overlap target can transiently enter heat's $(+,-)$ quadrant. What is exact and universal is the *type* trichotomy; single-shot identification is generic, and certain identification follows from the channel's response probed across states.
 :::
 
 **Proof.**
@@ -141,7 +141,7 @@ Consequently the sign pair $(\operatorname{sign}\dot{S}, \operatorname{sign}\dot
 
 *(iii)* Direct computation with $\mathrm{Tr}\,\dot{\Gamma} = 0$: $\dot{S} = -\delta\kappa_{\text{eff}}\,\mathrm{Tr}((\rho^*-\Gamma)\ln\Gamma) = \delta\kappa_{\text{eff}}[S(\rho^*) + D(\rho^*\|\Gamma) - S(\Gamma)]$, using $\mathrm{Tr}\,\rho^*\ln\Gamma = -S(\rho^*) - D(\rho^*\|\Gamma)$. Both signs are realized: $\Gamma = 0.98\,|\psi\rangle\langle\psi| + 0.02\,\mathbb{1}/7$ with a still purer target gives $\dot{S} = -0.095$ (feeding purifies); $\Gamma = 0.9\,|\psi\rangle\langle\psi| + 0.1\,\mathbb{1}/7$ with target $\mathbb{1}/7$ gives $\dot{S} = +3.208$. The purity formula is immediate from $\dot{P} = 2\,\mathrm{Tr}(\Gamma\dot{\Gamma})$ and is positive whenever the target overlap exceeds the current purity. $\blacksquare$
 
-**Machine verification.** Three hundred random full-rank states per channel: $|\dot{S}|, |\dot{P}| \leq 3\cdot10^{-15}$ for $h^{(H)}$; $\min \dot{S} = +0.337 \geq 0$ and the purity formula exact to $10^{-16}$ for $h^{(D)}$; the $h^{(R)}$ entropy formula exact to $2\cdot10^{-15}$, with both-sign witnesses as quoted.
+**Machine verification.** Three hundred random full-rank states per channel: $|\dot{S}|, |\dot{P}| \leq 3\cdot10^{-15}$ for $h^{(H)}$; $\min \dot{S} = +0.337 \geq 0$ and the purity formula exact to $10^{-16}$ for $h^{(D)}$; the $h^{(R)}$ entropy formula exact to $2\cdot10^{-15}$, with both-sign witnesses as quoted. Type-definiteness over $3000$ states: work $|\dot{S}|,|\dot{P}| \leq 6\cdot10^{-10}$ (conservative), heat sign-definiteness violations $0/3000$; boundary degeneracies confirmed — heat on a diagonal state gives exactly $(0,0)$, and a regenerative step to a mixed low-overlap target hits $(+,-)$, so the sign pair is a generic, not universal, identifier (the *type* trichotomy is exact).
 
 #### The grand-canonical dictionary [И] {#гранд-канонический-словарь}
 
