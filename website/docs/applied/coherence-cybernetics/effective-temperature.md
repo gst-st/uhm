@@ -591,6 +591,16 @@ $$
 
 (a dimensional heuristic [И] marking the topology of the boundary; the exact microscopic boundary — a saddle-node fold of the living branch — and the closed-form consciousness window in $r$ are given by [T-259](/docs/applied/coherence-cybernetics/phase-diagram-cc#теорема-окно-питания))
 
+### Line-resolved temperatures: the rank-7 anisotropy law {#линейные-температуры}
+
+The heat channel of the [thermodynamic trichotomy (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#теорема-термодинамическая-трихотомия) carries seven rates $\{\gamma_p\}$ — one per Fano line — so the effective temperature above refines into a *spectrum of seven line temperatures* $T_p \propto \gamma_p$. This anisotropy is not free: for arbitrary positive line rates the pairwise decoherence rates obey the exact law [Т]
+
+$$
+r_{ij} \;=\; \frac{1}{6}\sum_{p\,:\,|\ell_p \cap \{i,j\}| = 1} \gamma_p ,
+$$
+
+— the pair's **joint line cancels**, and each of the $21$ pairwise rates is the mean of the four lines meeting the pair in exactly one point (isotropic point: $r = \tfrac{2}{3}\gamma$, recovering T-110). Consequences [Т]: the incidence map ($21$ rates $\leftarrow$ $7$ temperatures) has rank exactly $7$, so (i) the measured rates satisfy **14 exact linear relations** — a sharp signature of the Fano wiring, since any non-Fano seven-line design yields a different relation cone; and (ii) the seven line temperatures are **reconstructible** from pairwise decoherence tomography (least squares on the incidence map; machine check: the law exact to $4\cdot10^{-16}$, reconstruction to $3\cdot10^{-15}$). The $G_2$-symmetric point $\gamma_p = \gamma$ — the unique isotropic configuration — is the single-temperature limit assumed by scalar-$T$ treatments (e.g. Vanchurin's *Self-Learning Universe*). A measured violation of the 14 relations in inter-channel decoherence data would falsify the Fano structure of the dissipator itself [С].
+
 ### 8.3 Visualization
 
 ```
