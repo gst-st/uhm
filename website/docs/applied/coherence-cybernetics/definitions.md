@@ -243,7 +243,7 @@ $\mathrm{Coh}_E$ (7D, [T]) $\approx$ $P_E$ (42D, [C]) — reconciled via the [Um
 
 ### Why Is the Hierarchy Needed?
 
-Not all systems are "conscious in the same way." A thermostat responds to the environment but does not reflect. A dog reflects but does not reflect *on its reflection*. A human is capable of meta-reflection, but not to infinite depth ($\text{SAD}_{\max} = 3$, T-124). The L0–L4 interiority hierarchy formalizes these distinctions: each level is a new qualitative property of the inner world, accessible when certain mathematical conditions are met.
+Not all systems are "conscious in the same way." A thermostat responds to the environment but does not reflect. A dog reflects but does not reflect *on its reflection*. A human is capable of meta-reflection, but not to infinite depth ($\text{SAD}_{\max} = 3$, T-142). The L0–L4 interiority hierarchy formalizes these distinctions: each level is a new qualitative property of the inner world, accessible when certain mathematical conditions are met.
 
 Full description with proofs: [Interiority hierarchy](/docs/proofs/consciousness/interiority-hierarchy).
 
@@ -528,7 +528,7 @@ Seven-dimensional space cannot be visualized directly, but several intuitions ca
 
 **Intuition 2: Matrix as cloud.** The eigenvalues of $\Gamma$ are the "thicknesses" of the cloud in different directions of 7D space. A pure state ($P = 1$) is a cloud compressed into a thin thread (one non-zero eigenvalue). Maximally mixed ($P = 1/7$) — a perfect sphere (all eigenvalues equal $1/7$).
 
-**Intuition 3: Fano plane.** The seven dimensions are not arbitrary — they are connected by the structure of the finite projective plane $PG(2,2)$ (Fano plane). This means that each dimension is connected to exactly three others by "lines" (triples), and this combinatorial structure determines the Lindblad operators. The Fano plane is the "skeleton" of 7D space, defining its symmetry $S_7$.
+**Intuition 3: Fano plane.** The seven dimensions are not arbitrary — they are connected by the structure of the finite projective plane $PG(2,2)$ (Fano plane). This means that each dimension is connected to exactly three others by "lines" (triples), and this combinatorial structure determines the Lindblad operators. The Fano plane is the "skeleton" of 7D space — and its symmetry is not the full permutation group $S_7$ but the far more rigid **automorphism group of $PG(2,2)$**, the exceptional simple group $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,2)$ of order **168** (a subgroup of $S_7$). Only these 168 permutations preserve the line structure; this same 168-fold symmetry governs which symbolic systems can recur across cultures ([T-256](/docs/applied/research/one-grammar)) and fixes the compact gauge torus of the dissipator ([T-260](./g2-noether-cc#тор-зарядов)).
 
 ### How to "See" the Density Matrix?
 

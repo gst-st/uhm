@@ -975,6 +975,14 @@ A fourth type of CPTP generator does not exist.
 
 **Proof.** Direct consequence of T-57 ([LGKS, completeness of the triadic decomposition](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T]): an arbitrary generator of a CPTP semigroup has the LGKS form, which decomposes into a Hamiltonian part ($\delta H$) and a Lindblad part ($\delta L_k$). The triadic decomposition $\{L_k\}$ exhausts the Lindblad part: dissipative + regenerative operators. $\blacksquare$
 
+:::note What the three channels *are* — and why there is no fourth
+Completeness tells us there are three doors, but not what lies behind them. Two later results name them, and both deepen "no fourth channel" into something stronger.
+
+*Thermodynamically*, the three channels are exactly **work, heat, and matter** — the first law's split of all exchange ([thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258). The Hamiltonian channel re-aims the state while spending no order (work: entropy and purity both conserved); the dissipative channel can only drain order (heat: entropy only rises); the regenerative channel alone imports order from outside (matter/nourishment: it feeds in negentropy). So "no fourth CPTP generator" is the open-system echo of "no fourth argument of the thermodynamic potential $U(S,V,N)$" — the very closure that Vanchurin's self-learning universe meets from the opposite side, that of learning dynamics.
+
+*Geometrically*, the three are one rigid rotation plus two gradient descents — a **metriplectic** structure ([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия)): work is an isometry of the information geometry, heat a downhill slide toward maximum entropy (Carlen–Maas), matter a downhill slide toward the self-model $\rho_*$ (Kubo–Mori). Completeness thus sharpens from "three and no more" to "**a rotation and two descents, and no more.**"
+:::
+
 **See:** [Sensorimotor theory](./sensorimotor#теорема-полнота-трёх-членов)
 
 ### Theorem 11.4 / T-103 (Hedonic Valence) [T] + [I] {#теорема-114-гедоническая-валентность}
