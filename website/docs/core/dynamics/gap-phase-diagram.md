@@ -92,6 +92,8 @@ $$
 r_c = \frac{P_{\text{crit}}}{7P} \approx \frac{2}{49P}
 $$
 
+(a dimensional heuristic [И] marking the topology of the boundary; the exact microscopic boundary — a saddle-node fold of the living branch — and the closed-form consciousness window in $r$ are given by [T-259](/docs/applied/coherence-cybernetics/phase-diagram-cc#теорема-окно-питания))
+
 ### Phase diagram visualization
 
 ```

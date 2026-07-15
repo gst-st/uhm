@@ -114,6 +114,55 @@ $$
 \mathcal{L}_{\text{ext}} = \sum_{i<j} h^{\text{ext}}_{ij} \cdot |\gamma_{ij}| \cdot \sin(\theta_{ij})
 $$
 
+### 1.3 The thermodynamic trichotomy of the channels {#термодинамическая-трихотомия}
+
+Theorem T-102 says the environment has exactly three doors into a holon. The natural next question: are these three doors *different in kind*, or merely three labels on one mechanism? The answer is that they carry three thermodynamically distinct — and jointly exhaustive — modes of exchange, and the trichotomy is the open-quantum image of the oldest classification in physics: the first law's split of energy exchange into **work**, **heat**, and **chemical work** (matter exchange). To see it, read each channel through what it does to the two basic state functionals — the von Neumann entropy $S(\Gamma) = -\mathrm{Tr}(\Gamma \ln \Gamma)$ and the purity $P(\Gamma) = \mathrm{Tr}\,\Gamma^2$.
+
+#### Theorem T-258 (Thermodynamic trichotomy of the channels) [Т] {#теорема-термодинамическая-трихотомия}
+
+:::tip Statement
+Let $\dot{\Gamma} = h$ be a perturbation from the three-channel basis of T-102. Then the entropy–purity signatures of the channels are pairwise distinct and exhaust the basis:
+
+1. **Hamiltonian channel** $h^{(H)} = -i[\delta H, \Gamma]$: $\dot{S} = 0$ **and** $\dot{P} = 0$ — the unique isentropic, purity-preserving channel (**work**: it re-aims the state without spending or importing order);
+2. **Dissipative channel** $h^{(D)} = \delta\Gamma_2 \cdot \mathcal{D}_{\text{Fano}}[\Gamma]$: $\dot{S} \geq 0$ and $\dot{P} = -\tfrac{4}{3}\,\delta\Gamma_2 \cdot C(\Gamma) \leq 0$, strictly whenever the coherent mass $C(\Gamma) = \sum_{i \neq j}|\gamma_{ij}|^2 > 0$ (**heat**: the unique channel that can only produce entropy);
+3. **Regenerative channel** $h^{(R)} = \delta\kappa_{\text{eff}}\,(\rho^* - \Gamma)$:
+$$
+\dot{S} = \delta\kappa_{\text{eff}}\bigl[S(\rho^*) + D(\rho^*\|\Gamma) - S(\Gamma)\bigr], \qquad \dot{P} = 2\,\delta\kappa_{\text{eff}}\bigl(\mathrm{Tr}\,\Gamma\rho^* - P\bigr)
+$$
+— both sign-indefinite; the **only** channel able to lower entropy and raise purity (**chemical work / matter**: feeding imports negentropy).
+
+Consequently the sign pair $(\operatorname{sign}\dot{S}, \operatorname{sign}\dot{P}) \in \{(0,0),\ (+,-),\ (\mp,\pm)\}$ identifies the acting channel: the trichotomy is *observable*.
+:::
+
+**Proof.**
+*(i)* For $\dot{\Gamma} = -i[\delta H, \Gamma]$: $\dot{S} = -\mathrm{Tr}(\dot{\Gamma}\ln\Gamma) = i\,\mathrm{Tr}([\delta H, \Gamma]\ln\Gamma) = i\,\mathrm{Tr}(\delta H\,[\Gamma, \ln\Gamma]) = 0$, since $[\Gamma, \ln\Gamma] = 0$; the whole spectrum is invariant under unitary conjugation, so every spectral functional — in particular $P$ — is conserved.
+
+*(ii)* The Fano channel is **unital**: $\sum_p \Pi_p = 3\cdot\mathbb{1}$ (each channel lies on exactly three lines), so $\mathcal{F}(\mathbb{1}/7) = \mathbb{1}/7$. A unital CPTP semigroup majorizes downward, hence $S$ is non-decreasing, with equality exactly on diagonal states. Element-wise, the BIBD incidence (every pair of channels shares exactly one line) gives $\mathcal{D}_{\text{Fano}}[\Gamma]_{ij} = -\tfrac{2}{3}\gamma_{ij}$ for $i \neq j$ and $0$ on the diagonal, whence $\dot{P} = 2\,\mathrm{Tr}(\Gamma\,\mathcal{D}_{\text{Fano}}[\Gamma]) = -\tfrac{4}{3}\sum_{i\neq j}|\gamma_{ij}|^2$.
+
+*(iii)* Direct computation with $\mathrm{Tr}\,\dot{\Gamma} = 0$: $\dot{S} = -\delta\kappa_{\text{eff}}\,\mathrm{Tr}((\rho^*-\Gamma)\ln\Gamma) = \delta\kappa_{\text{eff}}[S(\rho^*) + D(\rho^*\|\Gamma) - S(\Gamma)]$, using $\mathrm{Tr}\,\rho^*\ln\Gamma = -S(\rho^*) - D(\rho^*\|\Gamma)$. Both signs are realized: $\Gamma = 0.98\,|\psi\rangle\langle\psi| + 0.02\,\mathbb{1}/7$ with a still purer target gives $\dot{S} = -0.095$ (feeding purifies); $\Gamma = 0.9\,|\psi\rangle\langle\psi| + 0.1\,\mathbb{1}/7$ with target $\mathbb{1}/7$ gives $\dot{S} = +3.208$. The purity formula is immediate from $\dot{P} = 2\,\mathrm{Tr}(\Gamma\dot{\Gamma})$ and is positive whenever the target overlap exceeds the current purity. $\blacksquare$
+
+**Machine verification.** Three hundred random full-rank states per channel: $|\dot{S}|, |\dot{P}| \leq 3\cdot10^{-15}$ for $h^{(H)}$; $\min \dot{S} = +0.337 \geq 0$ and the purity formula exact to $10^{-16}$ for $h^{(D)}$; the $h^{(R)}$ entropy formula exact to $2\cdot10^{-15}$, with both-sign witnesses as quoted.
+
+#### The grand-canonical dictionary [И] {#гранд-канонический-словарь}
+
+The signatures identify the three channels with the three conjugate pairs of the grand-canonical ensemble — and, term by term, with the three Legendre transforms by which Vanchurin's *Self-Learning Universe* (SLU, 2026) builds physics out of a resource-constrained learning system. There an agent cannot measure three extensive variables — the displacement $\Delta q^\mu$, the fast entropy $S_x$, the count $N$ of fast degrees of freedom — and models each by its intensive conjugate: the gauge field $A_\mu$, the temperature $T$, the chemical potential $\mu$.
+
+| Exchange mode | Grand-canonical pair | Vanchurin (SLU) | UHM channel | Signature $(\dot{S}, \dot{P})$ |
+|---|---|---|---|---|
+| Work | (displacement, force) | $\Delta q^\mu \leftrightarrow A_\mu$ | $h^{(H)}$ ($\delta H_{\text{eff}}$) | $(0,\ 0)$ |
+| Heat | $(S,\ T)$ | $S_x \leftrightarrow T$ | $h^{(D)}$ ($\delta\Gamma_2$) | $(\geq 0,\ \leq 0)$ |
+| Matter | $(N,\ \mu)$ | $N \leftrightarrow \mu$ | $h^{(R)}$ ($\delta\kappa$) | $(\mp,\ \pm)$ |
+
+Five structural checks of the dictionary, each anchored elsewhere in the corpus:
+
+1. **No fourth channel ↔ no fourth argument.** The completeness of T-102 mirrors the completeness of the fundamental thermodynamic relation $U(S, V, N)$: an open system can be driven in exactly three ways — work it, heat it, or feed it. Vanchurin derives the same count from the three inaccessible extensive arguments of his step loss $L(q, \Delta q, S_x, N)$; the two exhaustiveness proofs (LGKS vs the Legendre cascade) reach the same trichotomy from opposite ends — a cross-validation of both.
+2. **The phase axes are grand-canonical.** The consciousness [phase diagram](/docs/applied/coherence-cybernetics/phase-diagram-cc) already lives in the coordinates $(t, r) = (T_{\text{eff}}/T_c,\ \kappa/\Gamma_2)$ — a temperature and a feeding ratio. Under the dictionary these are precisely $(T, \mu)$: the QCD analogy "baryon chemical potential $\mu_B \leftrightarrow r$" is thereby upgraded from a visual parallel to a structural correspondence, and the feeding threshold of [T-259](/docs/applied/coherence-cybernetics/phase-diagram-cc#теорема-окно-питания) reads as a chemical-potential condensation threshold.
+3. **Feeding lives on the Ground channel.** The regeneration kernel $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is carried by the O-channel — canonically the channel "to sustain existence, *to feed*, to parameterize internal time". In SLU the chemical potential is likewise locked to the clock: $h = |\mu|\varepsilon$ ties the quantum of action to the chemical scale per time step. Both theories attach the matter channel and the internal clock to the same carrier.
+4. **Discreteness and $U(1)$.** In SLU the $U(1)$ phase of the wavefunction is the thermodynamic equivalence $S \to S + h\Delta N$ under *integer* jumps of $N$. UHM's neurogenesis (the ⊕-primitive) changes sub-holon counts by exactly such integer jumps, and the diagonal gauge group $U(1)^7 \rtimes G_2$ preserving the Fano projectors offers the per-channel version of the same mechanism — one phase per channel for one occupancy counter per channel. Recorded as an interpretive parallel [И]; a derivation of $U(1)^7$ from occupancy discreteness is open.
+5. **Line-resolved temperatures.** UHM's heat channel carries seven rates $\{\gamma_p\}$ — one per Fano line — where SLU carries a single scalar $T$. The isotropic point $\gamma_p = \gamma$, the unique $G_2$-symmetric configuration, is exactly SLU's setting: the corpus refines the single temperature into a *spectrum of seven line temperatures*, anisotropy measuring how unevenly the environment heats the holon's coherence structure.
+
+Status honesty: the signature theorem is [Т]; the dictionary itself — the identification with (work, heat, matter) and with SLU's $(A, T, \mu)$ — is an interpretation [И]: exact on signatures and counting, structural (not yet derivational) on the correspondence of the dynamical laws.
+
 ---
 
 ## 2. Perception Functor Enc {#функтор-enc}

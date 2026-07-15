@@ -144,6 +144,32 @@ Since $\kappa = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$, the 
 
 Note the critically important asymmetry of the two parameters: $t$ can be changed in both directions (heating and cooling), but $r$ tends only to fall unless the system makes active self-restoration efforts. This is precisely why the main clinical danger is not the growth of chaos ($t$) but resource depletion ($r$).
 
+### 1.3 The exact window: how much feeding consciousness costs {#точное-окно-питания}
+
+The formula $r_c = P_{\text{crit}}/(7P)$ above is a **dimensional heuristic [И]** — a useful order-of-magnitude anchor for the phase topology, but not derived from the microscopic dynamics. The exact statement, obtained directly from the canonical Fano dephasing and the replacement functor, is the following theorem. Its content in one sentence: the stationary state keeps only a *fraction* $\lambda = x/(1+x)$ of the target's coherence, where $x$ is the feeding ratio — and pushing that retained fraction through the four consciousness thresholds carves a closed-form window in $x$.
+
+#### Theorem T-259 (Consciousness window in the feeding ratio) [Т in the isotropic first-order model] {#теорема-окно-питания}
+
+:::tip Statement
+Isotropic model: Fano dephasing with off-diagonal decay rate $\Gamma_2$, replacement flux $\kappa_{\text{eff}}(\rho^* - \Gamma)$ toward an equal-population target $\rho^*$ ($\mathrm{diag} = 1/7$) of purity $P^*$ and coherent mass $C^* = P^* - 1/7$. Let $x = \kappa_{\text{eff}}/\Gamma_2$. Then:
+
+1. **Stationary state.** $\Gamma_\infty$ has $\mathrm{diag} = 1/7$ exactly and off-diagonals $\lambda\,\gamma^*_{ij}$ with retention factor $\lambda = x/(1+x)$; its purity is $P_\infty = 1/7 + \lambda^2 C^*$.
+2. **Floor (viability ≡ integration).** $P_\infty > P_{\text{crit}} = 2/7$ (equivalently $\Phi_\infty > 1$ on the stratum) iff
+$$
+x > x_{\min} = \frac{\lambda_1}{1-\lambda_1}, \qquad \lambda_1 = \frac{1}{\sqrt{7P^* - 1}}.
+$$
+At the Goldilocks ceiling $P^* = 3/7$: $x_{\min} = 1 + \sqrt{2} \approx 2.414$ (the silver ratio).
+3. **Ceiling (reflexivity).** $R_\infty \geq 1/3$ iff $P_\infty \leq 3/7$. For an over-pure target $P^* > 3/7$ the window is two-sided: $x \leq x_{\max} = \lambda_2/(1-\lambda_2)$ with $\lambda_2 = \sqrt{2}\,\lambda_1$ — **dissipation protects reflexivity** against an over-rigid ideal (at $P^* = 0.60$: window $x \in (1.268,\ 3.775]$).
+4. **Nonviable target.** If $P^* \leq 2/7$, no finite $x$ achieves viability: a subcritical self-model cannot be fed into consciousness.
+5. **Self-consistent gate [С].** Restoring $\kappa_{\text{eff}} = \kappa \cdot g_V(P)\,(1 - 1/(7P))$ makes the living stationary branch appear through a saddle-node: at $P^* = 3/7$ the fold sits at bare ratio $u^* = \kappa/\Gamma_2 \approx 21.5$ (fold state $P \approx 0.353$; machine-verified). This fold is the microscopic Phase-III boundary, realizing exactly the saddle-node normal form of the [bifurcation analysis](/docs/applied/coherence-cybernetics/bifurcation); the heuristic $r_c = P_{\text{crit}}/(7P)$ misses it by two orders of magnitude ($0.116$ vs $21.5$) and should be read as a topology marker, not a numerical boundary.
+:::
+
+**Proof of (1)–(4).** Dephasing does not touch the diagonal, and the replacement drives it to the target's diagonal, so $\mathrm{diag}(\Gamma_\infty) = 1/7$ exactly. Each off-diagonal obeys $\dot{\gamma}_{ij} = -\Gamma_2\gamma_{ij} + \kappa_{\text{eff}}(\gamma^*_{ij} - \gamma_{ij})$, a linear relaxation whose fixed point retains the fraction $\lambda = x/(1+x)$ of the target coherence. Then $P_\infty = 1/7 + \lambda^2 C^*$ is immediate; the floor and the ceiling translate $P_\infty \gtrless$ thresholds through the strictly monotone $\lambda(x)$, giving the stated endpoints; on the equal-population stratum $\Phi = 7P - 1$, so the $\Phi$-floor and the $P$-floor coincide. For $P^* \leq 2/7$ even perfect retention $\lambda = 1$ gives $P_\infty = P^* \leq 2/7$. $\blacksquare$
+
+**Machine verification.** Window endpoints exact to $2\cdot10^{-3}$ on a $4\cdot10^5$-point sweep ($x_{\min} = 2.4144$ vs $1+\sqrt{2} = 2.414214$; two-sided window $(1.2677,\ 3.7749]$ at $P^* = 0.60$); the gate fold confirmed by two merging stationary roots.
+
+Under the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#теорема-термодинамическая-трихотомия), $r$ is the chemical potential of the consciousness phase diagram, and $x_{\min}$ is a **condensation threshold**: structure persists against heat only when the matter influx exceeds the evaporation point — and, for over-pure ideals, only when it stays *below* the point where feeding freezes reflexivity out.
+
 ---
 
 ## 2. Three Phases: Cybernetic Analysis {#три-фазы}
@@ -564,6 +590,8 @@ Quantum chromodynamics (QCD) — the theory of the strong interaction — has a 
 | **Critical endpoint** | Tricritical point $(t^*, r^*)$ |
 
 Particularly noteworthy is the analogy: in QCD at zero $\mu_B$ the hadrons↔plasma transition is a crossover (not a genuine phase transition), while at finite $\mu_B$ a critical endpoint appears where the crossover becomes a first-order transition. In the same way in UHM, at $r \gg r_c$ the I↔II transition is smooth (second-order), but at $r = r_c$ the character changes (tricritical point).
+
+Since [T-258](/docs/applied/coherence-cybernetics/sensorimotor#теорема-термодинамическая-трихотомия), the row "$\mu_B \leftrightarrow r$" is more than a visual parallel: the regeneration channel **is** the chemical-work channel of the grand-canonical trichotomy — the only one that imports negentropy — so the axes $(t, r)$ of this diagram are literally the grand-canonical $(T, \mu)$. The same identification appears independently in Vanchurin's *Self-Learning Universe* (2026), where the chemical potential is the Legendre conjugate of the number of fast degrees of freedom — the third and last intensive parameter a resource-constrained learner can carry.
 
 ### Superconductors and Superfluidity
 
