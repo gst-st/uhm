@@ -423,6 +423,34 @@ $$
 
 **Sharp metric attribution.** The same flow is **not** the Bures/SLD gradient of the same potential off the commuting locus (numeric cosine $\approx 0.98 < 1$). The two canonical Petz metrics divide the labour: **Bures** governs estimation and learning (Char-III/IV, Cramér–Rao saturation, the [learning flow](/docs/proofs/categorical/formalization-phi)); **BKM** governs dissipative relaxation (linear response/Kubo), and the matter channel flows by its gradient. Under the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) this **derives the dynamical law of the feeding channel**: regeneration is covariant gradient descent of a free energy — precisely the update equation of Vanchurin's *Self-Learning Universe* (its Eq. 2.6), realized in quantum information geometry; the dictionary's $h^{(R)}$-leg is thereby dynamical [Т], no longer only a signature match.
 
+#### Theorem T-262: the dynamical trichotomy — $\mathcal{L}_\Omega$ as a quantum GENERIC system [Т] {#теорема-динамическая-трихотомия}
+
+T-261 settled the matter channel. The two remaining terms of the master equation admit the same treatment, and together the three yield an exact geometric decomposition of the full dynamics.
+
+:::tip Theorem (every term of $\mathcal{L}_\Omega$ is an exact geometric flow) [Т]
+1. **Work (unitary term).** The flow $\dot\Gamma = -i[H_{\text{eff}},\Gamma]$ is an **isometry of every monotone (Petz) metric** and preserves every spectral functional ($S$, $P$, all Rényi entropies): a Killing field of the information geometry, orthogonal to every gradient.
+2. **Heat (Fano dissipator).** For arbitrary line rates $\{\gamma_p\}$ the dissipator has the exact double-commutator form and is the **gradient flow of the negentropy** $F_D(\Gamma) = D(\Gamma\|\mathbb{1}/7) = \ln 7 - S(\Gamma)$ in the Carlen–Maas transport metric of the seven Fano lines:
+$$
+\mathcal{D}[\Gamma] = -\tfrac{1}{6}\sum_p \gamma_p\,[\Pi_p,[\Pi_p,\Gamma]] = -\,\mathcal{K}^{W}_{\Gamma}(\ln\Gamma),
+\qquad
+\mathcal{K}^{W}_{\Gamma}(A) := \tfrac{1}{6}\sum_p \gamma_p\,[\Pi_p,\,\Lambda_\Gamma([\Pi_p, A])],
+$$
+where $\Lambda_\Gamma$ is the logarithmic-mean multiplier ($\Lambda_\Gamma(A)_{mn} = A_{mn}\,\frac{\lambda_m-\lambda_n}{\ln\lambda_m-\ln\lambda_n}$); $\mathcal{K}^W_\Gamma \succeq 0$, and the entropy production is the exact quadratic form
+$$
+\frac{dF_D}{dt} = -\tfrac{1}{6}\sum_p \gamma_p\, \mathrm{Tr}\bigl([\Pi_p,\ln\Gamma]^\dagger\,\Lambda_\Gamma([\Pi_p,\ln\Gamma])\bigr) \;\leq\; 0,
+$$
+vanishing exactly on diagonal states. The line rates $\gamma_p$ — the [line-resolved temperatures](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры) — enter as the weights of the transport metric.
+3. **Matter (regeneration).** By T-261, $\mathcal{R}$ is the BKM-gradient flow of $F_R(\Gamma) = D(\rho_*\|\Gamma)$.
+
+Consequently the master equation is an exact **reversible ⊕ irreversible** decomposition in the sense of GENERIC: one Killing (Hamiltonian) field plus two gradient flows, in two canonical Petz geometries (Carlen–Maas transport and Kubo–Mori), driven by two canonical potentials (negentropy and target relative entropy). The GENERIC degeneracy condition holds exactly for the heat pair (the unitary flow preserves $S$, hence $F_D$); for the matter potential it holds iff $[H_{\text{eff}}, \rho_*] = 0$ (the co-diagonal regime) — otherwise the work term transports the matter potential (machine witness of non-invariance: $0.087$) [С for the degeneracy clause].
+:::
+
+**Proof.** *(1)* Unitary conjugation preserves eigenvalues, hence every spectral functional; every monotone metric is unitarily covariant ($g_{U\rho U^\dagger}(UXU^\dagger, UYU^\dagger) = g_\rho(X,Y)$), so the flow is a one-parameter isometry group. *(2)* For self-adjoint jumps, $L\rho L - \tfrac12\{L^2,\rho\} = -\tfrac12[L,[L,\rho]]$ identically; with $L_p = \Pi_p/\sqrt{3}$ and rates $\gamma_p$ this gives the double-commutator form (element-wise: $\sum_p(\chi_p(i)-\chi_p(j))^2 = 4$ — the same single-incidence count as the rank-7 anisotropy law — recovering $-\tfrac{2}{3}\gamma$ at the isotropic point). The chain rule $[X,\Gamma] = \Lambda_\Gamma([X,\ln\Gamma])$ is a one-line identity in the eigenbasis: $X_{mn}(\lambda_n-\lambda_m) = X_{mn}(\ln\lambda_n-\ln\lambda_m)\cdot\frac{\lambda_m-\lambda_n}{\ln\lambda_m-\ln\lambda_n}$. Substituting it into the double commutator yields $\mathcal{D}[\Gamma] = -\mathcal{K}^W_\Gamma(\ln\Gamma)$; since $dF_D(X) = \mathrm{Tr}(X\ln\Gamma)$ up to a trace term annihilated by the commutators ($[\Pi_p, c\mathbb{1}] = 0$), this is precisely the gradient flow, and positivity of $\Lambda_\Gamma$ gives $\mathcal{K}^W_\Gamma \succeq 0$ with the quadratic entropy-production form. *(3)* is T-261. $\blacksquare$
+
+**Machine verification.** Twenty anisotropic non-commuting trials: double-commutator identity $1.4\cdot10^{-16}$; Carlen–Maas chain rule $6.5\cdot10^{-15}$; gradient-flow identity $\|\mathcal{D}[\Gamma] + \mathcal{K}^W_\Gamma(\ln\Gamma)\| \le 1.2\cdot10^{-15}$; EPR quadratic form $\geq 0.42$ off-diagonal, $= 0$ exactly on diagonal states, matching $dF_D/dt$ to $5\cdot10^{-7}$ (finite difference); unitary isometry of $d_B$ and $S$ to $4\cdot10^{-16}$.
+
+**Closure of the dynamical dictionary.** With T-261 and T-262 all three legs of the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) are **derived as dynamical laws** on the UHM side: work = isometric drive, heat = gradient flow of negentropy, matter = gradient flow of free energy toward the self-model. What SLU obtains as optimality conditions of resource-constrained learning, UHM exhibits as the exact geometric anatomy of its master equation — the two theories meet not only in signatures and counting but in the equations of motion themselves; the correspondence *between* the theories remains an identification [И], now supported on both sides by derivations.
+
 :::note Engineering deviation [И]
 In the implementation, the shape parameter $k = 1 - R$ is clamped to $[0.15,\; 1.0]$: for $R > 0.85$ the value $k = 0.15$ is used instead of the theoretical $k = 1 - R$. This prevents degeneration of the regeneration channel ($k \to 0$ at $R \to 1$ turns $\mathcal{R}$ into the identity operator). The threshold $0.15$ is chosen empirically as the minimum that preserves nonzero regenerative force.
 :::
