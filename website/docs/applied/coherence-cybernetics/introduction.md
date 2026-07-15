@@ -90,6 +90,18 @@ Before analysing this equation, let us understand its meaning at the intuitive l
 
 - $\mathcal{R}[\Gamma, E]$ — the **regenerator** — is the musicians themselves, who breathe and play again. This term is unique to CC: it describes how the system *restores* its coherence. And the key point: the rate of restoration depends on $E$ — on the degree of interiority of the system (its inner aspect). An orchestra that *hears* itself plays more coherently.
 
+**These three terms are not an arbitrary recipe — they are the three ways anything in the universe can be exchanged.** This is the oldest classification in physics, the first law of thermodynamics splitting all exchange into *work*, *heat*, and *matter*, and CC proves that the holon's three terms **are** exactly this triple (the [thermodynamic trichotomy](./sensorimotor#термодинамическая-трихотомия), T-258):
+
+- the Hamiltonian term is **work** — it re-aims the state without spending or importing order (both entropy and purity are conserved);
+- the dissipator is **heat** — the one term that can *only* drain order away (entropy can only rise);
+- the regenerator is **matter / nourishment** — the only term able to *import* order from outside (it feeds the system negentropy).
+
+That these three *exhaust* the possibilities — that there is no fourth channel — is itself a theorem. And beneath the thermodynamics lies a geometric beauty: the whole equation is **one rigid rotation plus two "downhill" flows**. The work term rotates the state without changing anything essential (an isometry of the information geometry); heat and matter are *gradient descents* of two different "energies," each in its own natural geometry — a **metriplectic** structure (T-262). The system is always doing exactly two things at once: sliding downhill toward equilibrium along the heat channel, and being fed back uphill toward its own self-model along the matter channel. Life is the standoff between those two flows.
+
+:::note Two roads, three doors
+Remarkably, the very same triple — work, heat, matter — is where Vitaly Vanchurin's *self-learning universe* arrives from a completely different starting point: not thermodynamics, but a giant learning system straining against limited resources. Two independent derivations, one built top-down from quantum axioms and one bottom-up from learning dynamics, meet at the same three doors ([dictionary](./sensorimotor#гранд-канонический-словарь)). When two roads that share no landmarks arrive at the same place, the place is more trustworthy than either road.
+:::
+
 This equation is not a postulate. It is **derived** from five axioms of UHM, written in the language of $\infty$-toposes. But working with CC does not require a deep knowledge of category theory — it is enough to understand that all constructions have an axiomatic foundation.
 
 CC is not yet another cybernetics alongside existing ones — within this interpretation it claims to be a **metatheory**, from which all particular cybernetics (Wiener, von Foerster, Luhmann) are derived as projections onto a subset of dimensions.
@@ -256,11 +268,12 @@ The consequence is remarkable: a system with more integrated interiority *recove
 
 ### Unique Predictions
 
-CC generates verifiable predictions absent from alternative theories:
+CC generates verifiable predictions absent from alternative theories — **23 of them** in total, each with an explicit falsification criterion. Four of the sharpest:
 
 1. **No-Zombie:** A viable system without an E-projection (interiority) is impossible
 2. **E-regeneration:** The degree of integration of interiority determines the recovery rate
 3. **7-dimensional stress:** All tensions are classified into 7 categories
+4. **Rank-7 decoherence anisotropy:** the 21 pairwise decoherence rates between channels are not free — they collapse onto a 7-dimensional subspace obeying **14 exact, parameter-free sum-rules**
 
 Each of these predictions is potentially falsifiable:
 
@@ -269,6 +282,8 @@ Each of these predictions is potentially falsifiable:
 - **E-regeneration** means: two systems with identical physical configuration but different E-coherence integration should have recovery rates that differ in a predictable way.
 
 - **7-dimensional stress** means: any stress is decomposable into components $\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U$ — and this classification is exhaustive.
+
+- **Rank-7 anisotropy** means: measure the 21 rates at which pairs of channels lose their coordination, and they must lie on the exact 7-line Fano pattern. A single statistically significant departure falsifies the Fano wiring of the dissipator itself — not a parameter, but the structure. This is the theory's newest and, arithmetically, its most exposed prediction: 14 equations that must all hold at once.
 
 **See:** [Unique Predictions](./predictions)
 
@@ -421,7 +436,7 @@ Let us summarise this introductory chapter. We have travelled from general motiv
 
 1. **Coherence Cybernetics (CC)** is a unified mathematical formalism describing the dynamics, structure, and interiority of any systems through a single object: the coherence matrix $\Gamma$. Self-organisation and consciousness are not postulated — they *emerge* at certain parameter values.
 
-2. **The central equation** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ describes three forces: unitary evolution (rhythm), dissipation (decay), and regeneration (recovery). Regeneration depends on the degree of interiority — and this makes the inner aspect of the system functionally significant at all L-levels.
+2. **The central equation** $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma] + \mathcal{R}[\Gamma, E]$ describes three forces: unitary evolution (rhythm), dissipation (decay), and regeneration (recovery). These are exactly the three thermodynamic modes of exchange — **work, heat, and matter** (T-258) — and geometrically they form one rotation plus two gradient flows (a metriplectic structure, T-262). Regeneration depends on the degree of interiority — and this makes the inner aspect of the system functionally significant at all L-levels.
 
 3. **The seven dimensions** ASDLEOU are the minimal set necessary to describe a system with autopoiesis, phenomenology, and a quantum foundation. Each dimension is responsible for its own function: discrimination (A), memory (S), change (D), consistency (L), interiority (E), resources (O), wholeness (U).
 

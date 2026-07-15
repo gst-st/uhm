@@ -185,6 +185,8 @@ The transition $P < 2/7 \to P > 2/7$ is a potential marker of consciousness reco
 
 [Stress tensor](./definitions#тензор-напряжений) $\sigma_k = 1 - 7\gamma_{kk}$ (T-92 [T]) has 7 components. Each requires its own measurement instrument.
 
+The form $\sigma_k = 1 - 7\gamma_{kk}$ shown here is the **diagonal proxy** — the population-deficit of channel $k$, exact for the $\{A,S,D\}$ channels and the leading term at the viability boundary. The full canonical components for $E$, $O$, $U$ read richer $\Gamma$-invariants ($\sigma_E$ via differentiation $D_{\text{diff}}$, $\sigma_O$ via the regeneration rate $\kappa_0$, $\sigma_U$ via integration $\Phi$; see [Definitions](./definitions#тензор-напряжений) and Theorem 10.1/T-92). For measurement purposes the diagonal proxy is what a 7-population readout delivers directly; the richer components require the corresponding higher-order instruments (§ below).
+
 Intuitively: $\sigma_k = 0$ means dimension $k$ receives exactly its "fair share" ($\gamma_{kk} = 1/7$). $\sigma_k > 0$ — deficit (the dimension lacks resources). $\sigma_k < 0$ — surplus (the dimension is "inflated").
 
 **Analogy.** Imagine an organism with 7 organs, each needing 1/7 of the blood flow. If the heart receives 1/4 and the liver 1/14, then $\sigma_{\text{heart}} < 0$ (surplus), $\sigma_{\text{liver}} > 0$ (deficit). Even with normal $P$ (overall organisation), a skew in the $\sigma$-profile can be dangerous.
