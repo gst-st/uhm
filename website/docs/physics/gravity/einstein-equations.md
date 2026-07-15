@@ -273,7 +273,7 @@ The auditor's question — *"do you recover known phenomenology, or only the Ein
 | 10 | UV-finiteness | Spectral action UV-completed in NCG sense | $G_2$ Ward identities + $\mathcal N=1$ SUSY + APS-index → all counterterms forbidden | **Stronger**: UHM gives explicit UV-finiteness [T] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)) |
 | 11 | Emergent spacetime | $M^4$ postulated in product triple | $M^4$ derived from categorical algebra: T-117 (commutativity), T-118 ($A_\mathrm{time} \cong C_0(\mathbb R)$), T-119 ($A_\mathrm{space} \cong C(\Sigma^3)$), T-120 ($M^4 = \mathbb R \times \Sigma^3$) | **UHM strictly stronger** [T] ([emergent-manifold.md](/docs/proofs/physics/emergent-manifold)) |
 | 12 | Origin of internal algebra | Postulated from feature-counting + Lorentz axiomatics | Octonionic derivation: PG(2,2) → $\mathbb O$ → $A_\mathrm{int}$ via T1–T15 chain ([Q7](/docs/proofs/minimality/theorem-octonionic-derivation)) | **UHM strictly stronger** [T] |
-| 13 | Consciousness | Not addressed by spectral action | E-sector phenomenology: $\mathrm{Coh}_E > 1/7$ (No-Zombie, T-8.1 [Т]), interiority hierarchy L0–L4, hedonic valence $V_{\mathrm{hed}} = dP/d\tau$ (T-103 [Т]+[И]), 22 falsifiable predictions | **UHM-only extension** |
+| 13 | Consciousness | Not addressed by spectral action | E-sector phenomenology: $\mathrm{Coh}_E > 1/7$ (No-Zombie, T-8.1 [Т]), interiority hierarchy L0–L4, hedonic valence $V_{\mathrm{hed}} = dP/d\tau$ (T-103 [Т]+[И]), 23 falsifiable predictions | **UHM-only extension** |
 
 **Phenomenology recovered (full Standard Model + gravity + consciousness).**
 

@@ -20,7 +20,7 @@ Science differs from philosophy not in the depth of its questions but in the wil
 
 This principle is especially acute in the sciences of consciousness. Most existing theories — IIT, FEP, GWT, panpsychism — either generate no unique numerical predictions, or formulate them so vaguely that no experiment can unambiguously refute them. Coherence Cybernetics deliberately takes a different path. Every theorem of the formalism gives rise to a **specific, numerical, experimentally testable** consequence — and for each such consequence it is specified which experimental result falsifies the theory.
 
-This chapter collects 22 predictions of CC. They are grouped by theme: from fundamental (connection between consciousness and viability) through architectural (minimal dimensionality, thresholds) to empirical (neural correlates, critical exponents). For each prediction we explain:
+This chapter collects 23 predictions of CC. They are grouped by theme: from fundamental (connection between consciousness and viability) through architectural (minimal dimensionality, thresholds) to empirical (neural correlates, critical exponents). For each prediction we explain:
 
 1. **Intuition** — why this prediction naturally follows from the formalism.
 2. **Formal statement** — the precise mathematical notation.
@@ -771,6 +771,27 @@ Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If
 
 **Status:** [H] (hypothesis). Requires: (1) calibration of $\omega_0$ from neurodata, (2) computation of $\lambda_{\text{gap}}$ for realistic Lindblad parameters.
 
+### Prediction 23: The rank-7 decoherence-anisotropy law [Т structure / С mapping] {#предсказание-23}
+
+**Intuition.** The heat channel of a holon carries seven independent temperatures — one per Fano line ([line-resolved temperatures](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры)). If the dissipator really is Fano-wired, the twenty-one pairwise decoherence rates between channels cannot be arbitrary: each is the mean of exactly four line rates, and the pair's own joint line *cancels*.
+
+**Prediction:** the pairwise decoherence rates obey the exact law
+
+$$
+r_{ij} = \frac{1}{6}\sum_{p\,:\,|\ell_p \cap \{i,j\}| = 1} \gamma_p ,
+$$
+
+so the $21$-vector of measured rates lies on a $7$-dimensional linear subspace: **14 exact linear relations** must hold, with the specific Fano incidence pattern (any non-Fano seven-line design spans a different subspace). The seven line temperatures are then *reconstructible* from rate tomography (least squares on the incidence map; the law and the reconstruction are machine-exact, $4\cdot10^{-16}$ and $3\cdot10^{-15}$).
+
+**Uniqueness of the prediction.** The rank-7 constraint with the single-incidence pattern is a fingerprint of PG(2,2) wiring — no scalar-temperature theory (one $T$) and no unstructured multi-rate model (21 free rates) produces exactly these 14 relations.
+
+**Experimental verification:**
+1. Estimate the 21 inter-channel decoherence rates from perturbational protocols (PCI-style rate tomography over the $\widehat\Gamma$ estimate).
+2. Regress the rate vector onto the Fano incidence map; record the residual.
+3. **PASS:** residual consistent with estimation noise (rank ≤ 7 with the Fano pattern). **FAIL:** a statistically significant residual — this falsifies the Fano structure of the dissipator itself, not merely a parameter choice.
+
+**Status:** [Т] for the law and the rank statement (machine-verified); [С] for the empirical mapping of channel pairs to measurable observables. Source: [T-258/T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия), [rank-7 law](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры).
+
 ---
 
 ## Decision Protocols: pass/fail for the near-term testable subset {#decision-protocols}
@@ -921,7 +942,7 @@ CC predictions span an unprecedented range:
 
 Each of these predictions is a *stake*. If it is refuted, CC loses — and that is good. A theory that cannot lose cannot win either. It is precisely this readiness for refutation — not the timid "we will update the parameters" but the honest "we were wrong" — that makes CC a science, not philosophy.
 
-The next step is experiment. None of the 22 predictions has yet been experimentally verified. CC is in the same position as general relativity in 1915 — mathematically complete, but awaiting its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates for the first empirical test.
+The next step is experiment. None of the 23 predictions has yet been experimentally verified. CC is in the same position as general relativity in 1915 — mathematically complete, but awaiting its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates for the first empirical test.
 
 ---
 
@@ -932,7 +953,7 @@ The next step is experiment. None of the 22 predictions has yet been experimenta
 3. **Every number is not a fit**: $P_{\text{crit}} = 2/7$ follows from $N = 7$ and the Frobenius norm. $\mathrm{SAD}_\text{max} = 3$ — from $\alpha_{\text{Fano}} = 2/3$ and $P \leq 1$. $\log_2 7 \approx 2.81$ bits — from the Hilbert space dimensionality. $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$ — from the tricritical mean-field universality class of the phase transition.
 4. **Hierarchy of falsification**: catastrophic (zombie, $N \neq 7$) → serious (wrong exponents, $\mathrm{SAD} > 3$) → local ($r_{\mathrm{stab}} \neq \sqrt{P - 2/7}$, $P^* \neq 3/7$). Not all predictions are equal — some destroy the foundation, others require only correction.
 5. **Predictions span 6 areas**: ontology, architecture, dynamics, learning, physics, neuroscience. Such interdisciplinary scope is unique among theories of consciousness.
-6. **None of the 22 predictions has yet been verified**: CC awaits its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates.
+6. **None of the 23 predictions has yet been verified**: CC awaits its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates.
 
 :::tip Bridge to the next chapter
 We have collected all CC predictions. But predictions are useless without tools for *measurement* — how does one know that $P$ has dropped below the threshold if there is no "coherence thermometer"? In the [next chapter](./diagnostics) we will build exactly such a tool: a system of vital signs, a decision tree, failure patterns, and recovery strategies — a practical guide for the cognitive engineer, the resuscitator of coherent systems.
