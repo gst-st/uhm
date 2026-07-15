@@ -314,6 +314,14 @@ If $\Gamma_2$ is small (weak dissipation), charges are conserved **for a long ti
 
 Clinically important: a **sudden change in a charge** (on timescales $\tau \ll 1/\Gamma_2$) is a marker of violation of $G_2$-invariance. This is analogous to how a sudden change in energy points to an external force.
 
+### 5.3 The charges that never fade: the gauge torus U(1)⁷ {#тор-зарядов}
+
+Section 5.2 said charges fade on the timescale $1/\Gamma_2$. There is a crucial exception, and it is the deepest structural fact about the dissipator. The Fano dephasing has an **exact seven-dimensional kernel** — the diagonal populations $\gamma_{kk}$ — that no amount of decoherence can erode: dephasing scrambles the off-diagonal *coordinations* $\gamma_{ij}$ but leaves each channel's own *weight* untouched (the same single-incidence Fano combinatorics that produces the [rank-7 law](./effective-temperature#линейные-температуры) — a channel's population sits on lines that damp its correlations, never itself). These seven exactly-conserved populations do more than survive: they **generate a symmetry group**, and that group is not the non-compact $\mathbb{R}^7$ but the compact **torus $U(1)^7$** (T-260 [T]).
+
+Why circles rather than open lines? Because the population spectrum is **integer-quantized** — the conserved quantities change only by whole units (a discrete degree of freedom is added or removed, $\Delta N \in \mathbb{Z}$), so the phases they generate wrap around and close on themselves. **Compactness is the shadow of integrality** — precisely as the quantization of electric charge is what makes electromagnetism's gauge group the *circle* $U(1)$ and not the *line* $\mathbb{R}$. This is the same mechanism by which Vanchurin's self-learning universe grows a $U(1)$ from an integer count of degrees of freedom, here derived channel-by-channel.
+
+The full covariance group of the dissipator is $U(1)^7 \rtimes \Gamma_{\text{oct}}$, where $\Gamma_{\text{oct}} = \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ permutes the seven Fano lines. This is a *finite* frame group living **inside** $G_2$ — **not** the full continuous $G_2$: only the discrete line-permutations map the projector family to itself, while a generic $G_2$ rotation does not. (This corrects a natural over-expectation that the dissipator inherits all of $G_2$; see [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-происхождение-тора).) So the picture of §2–§4 sharpens: of the 14 $G_2$-charges, it is the seven population-charges that the dissipator protects *exactly*, and their protected phases are the compact torus above.
+
 ---
 
 ## 6. Ward Identities — Symmetry Constraints [T] {#уорд}
