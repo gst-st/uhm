@@ -895,27 +895,27 @@ fn main() using [IO, Random] {
 
     // Initial state — small Hermitian perturbation around I/7.
     let mut rng = XorShift128.seed(Random.next_key());
-    let noise = StaticMatrix.<Complex, 7, 7>.random_gaussian(&mut rng) * Complex.from_real(0.05);
-    let mut gamma = identity::<Complex, 7>() / Complex.from_real(7.0) + noise;
+    let noise = StaticMatrix<Complex, 7, 7>.random_gaussian(&mut rng) * Complex.from_real(0.05);
+    let mut gamma = identity<Complex, 7>() / Complex.from_real(7.0) + noise;
     gamma = (&gamma + gamma.adjoint()) / Complex.from_real(2.0);   // Hermitise
     gamma = &gamma / gamma.trace();                                  // normalise
 
     // Target state (attractor) with decreasing eigenvalues.
-    let rho_star = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+    let rho_star = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
         [0.20, 0.18, 0.16, 0.14, 0.12, 0.10, 0.10]
     );
 
     // Evolution.
     for step in 0..10000 {
         // Dissipation: Γ → I/N.
-        let d = (&gamma - identity::<Complex, 7>() / Complex.from_real(7.0))
+        let d = (&gamma - identity<Complex, 7>() / Complex.from_real(7.0))
               * Complex.from_real(-GAMMA_DISS);
         // Regeneration: Γ → ρ*.
         let r = (&rho_star - &gamma) * Complex.from_real(KAPPA);
         gamma = &gamma + Complex.from_real(DT) * (d + r);
 
         if step % 100 == 0 {
-            let p = (&gamma @ &gamma).trace().real();
+            let p = (gamma.matmul(&gamma)).trace().real();
             IO.println(f"Step {step}: P = {p:.4f}");
         }
     }

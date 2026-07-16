@@ -155,15 +155,15 @@ pub type ModelReport is {
 
 /// Model 1: Maximally mixed state Γ = I/7.
 public pure fn uniform_system() -> ModelReport {
-    let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
+    let gamma = identity<Complex, 7>() / Complex.from_real(7.0);
 
-    let p = (&gamma @ &gamma).trace().real();                     // 1/7
+    let p = (gamma.matmul(&gamma)).trace().real();                     // 1/7
     let s_vn = eigvalsh(&gamma).iter()
         .map(|λ| -λ * (λ + 1.0e-30).ln())
         .sum();
 
     // Gap operator = Im(Γ) — zero matrix for real diagonal.
-    let gap_total = gamma.imag_part().frobenius_norm_sq();
+    let gap_total = gamma.imag_part().norm_frobenius();
 
     const E: Int = 4;
     let coh_e = (gamma[E, E].real().pow(2)
@@ -267,10 +267,10 @@ $$
 public fn pure_uniform() using [IO]
     -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
 {
-    let psi = StaticVector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+    let psi = StaticVector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
     let gamma = psi.outer(psi.conjugate());
 
-    let p = (&gamma @ &gamma).trace().real();                                       // 1.0
+    let p = (gamma.matmul(&gamma)).trace().real();                                       // 1.0
     let theta = gamma.map(|c| c.arg());                                             // zero
     let gap_matrix = theta.map(|φ| φ.sin().abs());                                  // zero
 
@@ -442,12 +442,12 @@ public fn fibonacci_phases() using [IO]
     // F₁…F₇ mod 7.
     const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
 
-    let psi = StaticVector.<Complex, 7>.from_array(
+    let psi = StaticVector<Complex, 7>.from_array(
         FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
     ) / Complex.from_real(7.0.sqrt());
 
     let gamma = psi.outer(psi.conjugate());
-    let p = (&gamma @ &gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     let theta = gamma.map(|c| c.arg());
     let gap_matrix = theta.map(|φ| φ.sin().abs());
 
@@ -462,7 +462,7 @@ public fn fibonacci_phases() using [IO]
     }
 
     // Gap operator: ‖Im Γ‖_F².
-    let g_total = gamma.imag_part().frobenius_norm_sq();
+    let g_total = gamma.imag_part().norm_frobenius();
     IO.println(f"\nP = {p:.4f}");
     IO.println(f"||G_hat||_F^2 = {g_total:.4f}");
 
@@ -625,7 +625,7 @@ public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [
     -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
 {
     // Base matrix: uniform diagonal + real coherences.
-    let mut gamma = StaticMatrix.<Complex, 7, 7>.filled(Complex.from_real(c));
+    let mut gamma = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
     for i in 0..7 { gamma[i, i] = Complex.from_real(1.0 / 7.0); }
 
     // Alexithymic defect: S = 1, E = 4 → purely imaginary coherence.
@@ -639,11 +639,11 @@ public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [
     let eigs = eigvalsh(&gamma);
     assert!(eigs.iter().all(|λ| *λ >= -1.0e-12), "not positive");
 
-    let p = (&gamma @ &gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     let gap_se = gamma[S_IDX, E_IDX].arg().sin().abs();
     let g_hat = gamma.imag_part();
     let r_g = matrix_rank(&g_hat, 1.0e-10);
-    let g_total = g_hat.frobenius_norm_sq();
+    let g_total = g_hat.norm_frobenius();
 
     let coh_e = (gamma[E_IDX, E_IDX].real().pow(2)
                 + 2.0 * (0..7).filter(|i| *i != E_IDX)
@@ -665,9 +665,9 @@ public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [
     IO.println(f"kappa = {kappa:.4f}");
 
     // Compare against a normal reference (alexithymic defect removed).
-    let mut gamma_normal = StaticMatrix.<Complex, 7, 7>.filled(Complex.from_real(c));
+    let mut gamma_normal = StaticMatrix<Complex, 7, 7>.filled(Complex.from_real(c));
     for i in 0..7 { gamma_normal[i, i] = Complex.from_real(1.0 / 7.0); }
-    let g_total_normal = gamma_normal.imag_part().frobenius_norm_sq();
+    let g_total_normal = gamma_normal.imag_part().norm_frobenius();
     IO.println(f"\nComparison: ||G_hat||_F^2 normal = {g_total_normal:.6f}, \
                  alexithymic = {g_total:.6f}");
 
@@ -818,7 +818,7 @@ public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [I
 
     // Initial state: pure with Fibonacci phases (Model 3).
     const FIB_MOD7: [Int; 7] = [1, 1, 2, 3, 5, 1, 6];
-    let psi_0 = StaticVector.<Complex, 7>.from_array(
+    let psi_0 = StaticVector<Complex, 7>.from_array(
         FIB_MOD7.map(|f| (Complex.i() * Complex.from_real(2.0 * PI * (f as Float) / 7.0)).exp())
     ) / Complex.from_real(7.0.sqrt());
     let gamma_0 = psi_0.outer(psi_0.conjugate());
@@ -831,10 +831,10 @@ public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [I
     for step in 0..n_steps {
         let tau = (step as Float) * dt;
         let u_diag = omega.map(|w| (Complex.i().neg() * Complex.from_real(w * tau)).exp());
-        let u = StaticMatrix.<Complex, 7, 7>.diagonal(u_diag);
-        let gamma_t = &u @ &gamma_0 @ u.adjoint();
+        let u = StaticMatrix<Complex, 7, 7>.diagonal(u_diag);
+        let gamma_t = u.matmul(&gamma_0).matmul(&u.adjoint());
 
-        let p = (&gamma_t @ &gamma_t).trace().real();
+        let p = (gamma_t.matmul(&gamma_t)).trace().real();
         let gap_as = gamma_t[0, 1].arg().sin().abs();
         let gap_se = gamma_t[1, 4].arg().sin().abs();
 
@@ -843,9 +843,9 @@ public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [I
         tau_vals.push(tau);
     }
 
-    let mean_gap_as: Float = gap_history.iter().map(|(a, _)| *a).sum::<Float>()
+    let mean_gap_as: Float = gap_history.iter().map(|(a, _)| *a).sum<Float>()
                             / (gap_history.len() as Float);
-    let mean_gap_se: Float = gap_history.iter().map(|(_, b)| *b).sum::<Float>()
+    let mean_gap_se: Float = gap_history.iter().map(|(_, b)| *b).sum<Float>()
                             / (gap_history.len() as Float);
 
     IO.println(f"Regime: {label}");
@@ -869,7 +869,7 @@ public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [I
             // Quasiperiodic: the orbit does not close within the observation window.
             let unique_gaps = gap_history.iter()
                 .map(|(a, b)| ((a * 1.0e4).round() as Int, (b * 1.0e4).round() as Int))
-                .collect::<Set>()
+                .collect<Set>()
                 .len();
             IO.println(f"Unique Gap configurations: {unique_gaps}/{gap_history.len()}");
         },

@@ -79,22 +79,22 @@ fn main() using [IO, Random] {
 
     // Cholesky parametrisation: Γ = L L† / Tr(L L†) — guarantees Γ ≥ 0 and Tr = 1.
     let noise: StaticMatrix<Complex, 7, 7> = StaticMatrix.random_gaussian(&mut rng);
-    let l = identity::<Complex, 7>() + noise * Complex.from_real(0.1);
-    let mut gamma = &l @ l.adjoint();
+    let l = identity<Complex, 7>() + noise * Complex.from_real(0.1);
+    let mut gamma = l.matmul(&l.adjoint());
     gamma = &gamma / gamma.trace();
 
     // Diagonal Hamiltonian: natural frequencies of the 7 dimensions.
-    let h = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+    let h = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
         [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0]
     );
 
     for step in 0..100 {
         // dt = 0.01 — small for numerical stability.
         let u = expm(Complex.i().neg() * &h * Complex.from_real(0.01));
-        gamma = &u @ &gamma @ u.adjoint();
+        gamma = u.matmul(&gamma).matmul(&u.adjoint());
         gamma = &gamma / gamma.trace();
 
-        let p = (gamma @ gamma).trace().real();
+        let p = (gamma.matmul(&gamma)).trace().real();
         let e = 4;                                     // Experience index
         let coh_e = (gamma[e, e].real().pow(2)
                    + 2.0 * (0..7).filter(|i| *i != e)
@@ -116,7 +116,7 @@ The simplest check: is the system alive or not. The threshold $P_{\text{crit}} =
 public const P_CRIT: Float = 2.0 / 7.0;          // ≈ 0.286
 
 public pure fn is_viable(gamma: &StaticMatrix<Complex, 7, 7>) -> Bool {
-    (gamma @ gamma).trace().real() > P_CRIT
+    (gamma.matmul(&gamma)).trace().real() > P_CRIT
 }
 
 // Usage.
@@ -195,7 +195,7 @@ public pure fn coh_e_literal(gamma: &StaticMatrix<Complex, 7, 7>)
                   + 2.0 * (0..7).filter(|i| *i != E)
                                  .map(|i| gamma[E, *i].abs().pow(2))
                                  .sum();
-    let denom = (gamma @ gamma).trace().real();
+    let denom = (gamma.matmul(&gamma)).trace().real();
     if denom > 1.0e-12 { numerator / denom } else { 1.0 / 7.0 }
 }
 ```
@@ -213,14 +213,14 @@ The best test is a case where the answer is known analytically:
 
 @test fn coh_e_pure_e_state() {
     // For the pure |E⟩ state, Coh_E = 1.
-    let mut gamma = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut gamma = StaticMatrix<Complex, 7, 7>.zeros();
     gamma[4, 4] = Complex.one();
     assert_approx_eq(coh_e_literal(&gamma), 1.0, 1.0e-10);
 }
 
 @test fn coh_e_maximally_mixed() {
     // For I/7, Coh_E = 1/7.
-    let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
+    let gamma = identity<Complex, 7>() / Complex.from_real(7.0);
     assert_approx_eq(coh_e_literal(&gamma), 1.0 / 7.0, 1.0e-10);
 }
 ```
@@ -236,10 +236,10 @@ public pure fn coh_e_vectorized(gamma: &StaticMatrix<Complex, 7, 7>)
 {
     const E: Int = 4;
     let row_e   = gamma.row(E);                                // StaticVector<Complex, 7>
-    let norm_sq = row_e.frobenius_norm_sq();                   // Σ |γ_Ei|²
+    let norm_sq = row_e.norm_frobenius();                   // Σ |γ_Ei|²
     let diag_sq = gamma[E, E].abs().pow(2);
     let numer   = gamma[E, E].real().pow(2) + 2.0 * (norm_sq - diag_sq);
-    let denom   = (gamma @ gamma).trace().real().max(1.0e-12);
+    let denom   = (gamma.matmul(&gamma)).trace().real().max(1.0e-12);
     (numer / denom).clamp(1.0 / 7.0, 1.0)
 }
 ```
@@ -296,7 +296,7 @@ public pure fn evolve_step_gpu(
 ) -> StaticMatrix<Complex, 7, 7>
 {
     let u = expm(Complex.i().neg() * h * Complex.from_real(dt));
-    let g = &u @ gamma @ u.adjoint();
+    let g = u.matmul(&gamma).matmul(&u.adjoint());
     &g / g.trace()
 }
 ```
@@ -359,8 +359,8 @@ Tests in CC play the role of **experimental verification**. Each test encodes a 
 fn _random_gamma() using [Random] -> StaticMatrix<Complex, 7, 7> {
     let mut rng = XorShift128.seed(Random.next_key());
     let noise: StaticMatrix<Complex, 7, 7> = StaticMatrix.random_gaussian(&mut rng);
-    let l = identity::<Complex, 7>() + noise * Complex.from_real(0.1);
-    let g = &l @ l.adjoint();
+    let l = identity<Complex, 7>() + noise * Complex.from_real(0.1);
+    let g = l.matmul(&l.adjoint());
     &g / g.trace()
 }
 
@@ -374,7 +374,7 @@ fn _evolve_one_step(gamma: StaticMatrix<Complex, 7, 7>, dt: Float)
 
 @test fn purity_bounds() using [Random] {
     let gamma = _random_gamma();
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     assert(1.0/7.0 - 1.0e-10 <= p && p <= 1.0 + 1.0e-10);
 }
 
@@ -525,7 +525,7 @@ public pure fn compute_lindblad_from_omega(gamma: &StaticMatrix<Complex, 7, 7>)
     -> [StaticMatrix<Complex, 7, 7>; 7]
 {
     (0..7).map(|k| {
-        let mut l_k = StaticMatrix.<Complex, 7, 7>.zeros();
+        let mut l_k = StaticMatrix<Complex, 7, 7>.zeros();
         l_k[k, k] = Complex.one();       // projector onto |k⟩
         l_k
     }).to_array()
@@ -562,15 +562,15 @@ public fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 
 
     // 1. Unitary evolution.
     let u = expm(Complex.i().neg() * &state.hamiltonian * Complex.from_real(dt));
-    gamma = &u @ &gamma @ u.adjoint();
+    gamma = u.matmul(&gamma).matmul(&u.adjoint());
 
     // 2. Dissipation: Lindblad equation.
     for l_k in &state.lindblad_ops {
         let l_dag = l_k.adjoint();
         gamma = &gamma + Complex.from_real(dt) * (
-              l_k   @ &gamma @ &l_dag
-            - Complex.from_real(0.5) * (&l_dag @ l_k @ &gamma)
-            - Complex.from_real(0.5) * (&gamma @ &l_dag @ l_k)
+              l_k.matmul(&gamma).matmul(&l_dag)
+            - Complex.from_real(0.5) * (l_dag.matmul(&l_k).matmul(&gamma))
+            - Complex.from_real(0.5) * (gamma.matmul(&l_dag).matmul(&l_k))
         );
     }
 
@@ -600,7 +600,7 @@ public pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
     let cross   = (0..7).filter(|i| *i != E)
                          .map(|i| gamma[E, *i].abs().pow(2))
                          .sum();
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     if p < 1.0e-12 { 1.0 / 7.0 }
     else           { ((diag_sq + 2.0 * cross) / p).clamp(1.0 / 7.0, 1.0) }
 }
@@ -627,7 +627,7 @@ public pure fn compute_free_energy_gradient(
     env:   &Environment,
 ) -> Float
 {
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     env.available_energy - (1.0 - p)
 }
 
@@ -636,7 +636,7 @@ public pure fn update_metrics(mut state: HolonState, gamma: StaticMatrix<Complex
     -> HolonState
 {
     state.gamma = gamma;
-    state.purity = (&state.gamma @ &state.gamma).trace().real();
+    state.purity = (state.gamma.matmul(&state.gamma)).trace().real();
     let eigs = eigvalsh(&state.gamma);
     state.entropy = eigs.iter()
         .filter(|v| **v > 1.0e-12)
@@ -711,9 +711,9 @@ public pure fn decompose_f_ext(obs: &Observation, _gamma: &StaticMatrix<Complex,
         StaticMatrix<Complex, 7, 7>,                     // δD
         StaticMatrix<Complex, 7, 7>)                     // δR
 {
-    let mut d_h = StaticMatrix.<Complex, 7, 7>.zeros();  // Hamiltonian channel
-    let mut d_d = StaticMatrix.<Complex, 7, 7>.zeros();  // Dissipative channel
-    let mut d_r = StaticMatrix.<Complex, 7, 7>.zeros();  // Regenerative channel
+    let mut d_h = StaticMatrix<Complex, 7, 7>.zeros();  // Hamiltonian channel
+    let mut d_d = StaticMatrix<Complex, 7, 7>.zeros();  // Dissipative channel
+    let mut d_r = StaticMatrix<Complex, 7, 7>.zeros();  // Regenerative channel
 
     // Informational dimensions: A=0, S=1, L=3 → δH.
     if let Maybe.Some(s) = &obs.sensory_input {
@@ -756,12 +756,12 @@ public fn evolve_holon_canonical(
     delta_r:      Maybe<StaticMatrix<Complex, 7, 7>>,
 ) -> HolonState
 {
-    let zero_m = StaticMatrix.<Complex, 7, 7>.zeros();
+    let zero_m = StaticMatrix<Complex, 7, 7>.zeros();
     let h_total = &state.hamiltonian + delta_h.unwrap_or(zero_m.clone());
 
     // 1. Modified unitary evolution.
     let u = expm(Complex.i().neg() * &h_total * Complex.from_real(dt));
-    let mut gamma = &u @ &state.gamma @ u.adjoint();
+    let mut gamma = u.matmul(&state.gamma).matmul(&u.adjoint());
 
     // 2. Modified dissipation.
     let gamma2_factor = 1.0 + delta_d.as_ref()
@@ -769,9 +769,9 @@ public fn evolve_holon_canonical(
     for l_k in &state.lindblad_ops {
         let l_dag = l_k.adjoint();
         gamma = &gamma + Complex.from_real(dt * gamma2_factor) * (
-              l_k   @ &gamma @ &l_dag
-            - Complex.from_real(0.5) * (&l_dag @ l_k @ &gamma)
-            - Complex.from_real(0.5) * (&gamma @ &l_dag @ l_k)
+              l_k.matmul(&gamma).matmul(&l_dag)
+            - Complex.from_real(0.5) * (l_dag.matmul(&l_k).matmul(&gamma))
+            - Complex.from_real(0.5) * (gamma.matmul(&l_dag).matmul(&l_k))
         );
     }
 
@@ -806,7 +806,7 @@ This protocol is analogous to the **boot sequence** of an operating system: a mi
 
 ```verum
 // Bootstrap protocol (T-59 [T]): iterate until φ(Γ) stabilises.
-let mut rho_star = identity::<Complex, 7>() / Complex.from_real(7.0);   // I/7: trivial self-model
+let mut rho_star = identity<Complex, 7>() / Complex.from_real(7.0);   // I/7: trivial self-model
 
 for _ in 0..MAX_BOOTSTRAP_ITERATIONS {
     state = evolve_holon_canonical(state, DT, Maybe.None, Maybe.None, Maybe.None);
@@ -832,7 +832,7 @@ public pure fn compute_stress_tensor(
 ) -> StaticVector<Float, 7>
 {
     const N: Int = 7;
-    StaticVector.<Float, 7>.from_array([
+    StaticVector<Float, 7>.from_array([
         // σ_A: Articulation.
         compute_env_prediction_error(gamma, env) / THETA_A,
         // σ_S: Structure.
@@ -890,7 +890,7 @@ public pure fn compute_computational_load()
 public pure fn compute_viability_uncertainty(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 }
 {
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     (P_CRITICAL + 0.1 - p).max(0.0)       // 0.1 = early-warning buffer
 }
 
@@ -900,7 +900,7 @@ public pure fn compute_self_model_error(gamma: &StaticMatrix<Complex, 7, 7>)
 {
     let norm = gamma.frobenius_norm();
     if norm < 1.0e-12 { return 1.0; }
-    let off_diag = gamma - StaticMatrix.<Complex, 7, 7>.diagonal(gamma.diagonal());
+    let off_diag = gamma - StaticMatrix<Complex, 7, 7>.diagonal(gamma.diagonal());
     off_diag.frobenius_norm() / norm
 }
 
@@ -1035,9 +1035,9 @@ public pure fn encode_environment(obs: &Observation, _gamma: &StaticMatrix<Compl
         StaticMatrix<Complex, 7, 7>,    // h(D): Dissipative channel
         StaticMatrix<Complex, 7, 7>)    // h(R): Regenerative channel
 {
-    let mut h_h = StaticMatrix.<Complex, 7, 7>.zeros();
-    let mut h_d = StaticMatrix.<Complex, 7, 7>.zeros();
-    let mut h_r = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut h_h = StaticMatrix<Complex, 7, 7>.zeros();
+    let mut h_d = StaticMatrix<Complex, 7, 7>.zeros();
+    let mut h_r = StaticMatrix<Complex, 7, 7>.zeros();
 
     // Informational dimensions → h(H): A=0, S=1, L=3.
     if let Maybe.Some(s) = &obs.sensory_input {
@@ -1184,13 +1184,13 @@ public fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
     let noise: StaticMatrix<Complex, 7, 7> = if c.random {
         StaticMatrix.random_gaussian(&mut rng) * Complex.from_real(0.1)
     } else {
-        StaticMatrix.<Complex, 7, 7>.zeros()
+        StaticMatrix<Complex, 7, 7>.zeros()
     };
-    let l = identity::<Complex, 7>() + noise;
-    let mut gamma = &l @ l.adjoint();
+    let l = identity<Complex, 7>() + noise;
+    let mut gamma = l.matmul(&l.adjoint());
     gamma = &gamma / gamma.trace();
 
-    let h_default = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+    let h_default = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
         [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0]
     );
     let hamiltonian = c.hamiltonian.unwrap_or(h_default);
@@ -1199,14 +1199,14 @@ public fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
         gamma:           gamma.clone(),
         hamiltonian:     hamiltonian,
         lindblad_ops:    compute_lindblad_from_omega(&gamma),
-        phi:             |g| StaticMatrix.<Complex, 7, 7>.diagonal(g.diagonal()),
-        purity:          (&gamma @ &gamma).trace().real(),
+        phi:             |g| StaticMatrix<Complex, 7, 7>.diagonal(g.diagonal()),
+        purity:          (gamma.matmul(&gamma)).trace().real(),
         entropy:         0.0,
         integration:     0.0,
         differentiation: 1.0,
         reflection:      0.0,
         consciousness:   0.0,
-        stress_tensor:   StaticVector.<Float, 7>.zeros(),
+        stress_tensor:   StaticVector<Float, 7>.zeros(),
         viable:          true,
         margin:          0.5,
     }
@@ -1269,7 +1269,7 @@ implement CoherenceCyberneticsAgent {
     /// See /docs/consciousness/foundations/self-observation#мера-рефлексии-r.
     public fn reflect(&mut self) {
         let phi_gamma = (self.holon.phi)(&self.holon.gamma);
-        let norm_sq = self.holon.gamma.frobenius_norm_sq();
+        let norm_sq = self.holon.gamma.norm_frobenius();
         self.holon.reflection =
             1.0 - frobenius_distance(&self.holon.gamma, &phi_gamma).pow(2) / norm_sq;
     }
@@ -1306,9 +1306,9 @@ public pure fn project_to_positive_cone(gamma: &StaticMatrix<Complex, 7, 7>)
 {
     let (eigvals, eigvecs) = eigh(gamma);
     let clamped = eigvals.map(|v| v.max(0.0));
-    let fixed = &eigvecs
-        @ StaticMatrix.<Complex, 7, 7>.diagonal(clamped)
-        @ eigvecs.adjoint();
+    let fixed = eigvecs
+        .matmul(&StaticMatrix<Complex, 7, 7>.diagonal(clamped))
+        .matmul(&eigvecs.adjoint());
     &fixed / fixed.trace()
 }
 ```

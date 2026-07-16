@@ -378,17 +378,17 @@ const N: Int = 7;
 public pure fn commutator(h: &StaticMatrix<Complex, 7, 7>, g: &StaticMatrix<Complex, 7, 7>)
     -> StaticMatrix<Complex, 7, 7>
 {
-    h @ g - g @ h
+    h.matmul(&g) - g.matmul(&h)
 }
 
 public pure fn fano_channel(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
-    let diag = StaticMatrix.<Complex, 7, 7>.diagonal(g.diagonal());
+    let diag = StaticMatrix<Complex, 7, 7>.diagonal(g.diagonal());
     let off  = g - &diag;
     &diag + off / Complex.from_real(3.0)
 }
 
 public pure fn purity(g: &StaticMatrix<Complex, 7, 7>) -> Float {
-    (g @ g).trace().real()
+    (g.matmul(&g)).trace().real()
 }
 
 /// Canonical Coh_E (axiom-septicity.md:414): (γ_EE² + 2·Σ|γ_Ej|²) / Tr(Γ²).
@@ -409,15 +409,15 @@ public pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
     let h = (g + g.adjoint()) / Complex.from_real(2.0);
     let (w, v) = eigh(&h);
     let w_clipped = w.map(|v| v.max(0.0));
-    let rebuilt = &v @ StaticMatrix.<Complex, 7, 7>.diagonal(w_clipped) @ v.adjoint();
+    let rebuilt = v.matmul(&StaticMatrix<Complex, 7, 7>.diagonal(w_clipped)).matmul(&v.adjoint());
     &rebuilt / rebuilt.trace().real()
 }
 
 /// Canonical G₂ cyclic basis permutation (simplified surrogate).
 public pure fn shift_g2(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
-    let mut p = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut p = StaticMatrix<Complex, 7, 7>.zeros();
     for j in 0..N { p[(j + 1) % N, j] = Complex.one(); }    // column-cyclic shift
-    &p @ g @ p.transpose()
+    p.matmul(&g).matmul(&p.transpose())
 }
 
 /// dΓ/dτ: unitary + Fano dissipation + viability-gated regeneration.
@@ -434,7 +434,7 @@ public pure fn rhs(
     let ce = coh_e(g, e_idx);
 
     // Unitary part.
-    let h = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+    let h = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
         (1..=N).map(|k| omega_0 * (k as Float) / 42.0.sqrt()).to_array()
     );
     let mut dg = Complex.i().neg() * commutator(&h, g);
@@ -482,14 +482,14 @@ public fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0
     -> StaticMatrix<Complex, 7, 7>
 {
     let mut rng = XorShift128.seed(seed);
-    let a = StaticMatrix.<Complex, 7, 7>.random_gaussian(&mut rng);
-    let g = &a @ a.adjoint();
+    let a = StaticMatrix<Complex, 7, 7>.random_gaussian(&mut rng);
+    let g = a.matmul(&a.adjoint());
     let g = &g / g.trace().real();
 
     // Interpolate between I/N (p = 1/N) and g (higher p) to hit target.
     let lam: List<Float> = (0..200).map(|i| (i as Float) / 199.0).collect();
     let candidates: List<_> = lam.iter()
-        .map(|t| (identity::<Complex, N>() / Complex.from_real(N as Float))
+        .map(|t| (identity<Complex, N>() / Complex.from_real(N as Float))
                  * Complex.from_real(1.0 - t)
                + &g * Complex.from_real(*t))
         .collect();

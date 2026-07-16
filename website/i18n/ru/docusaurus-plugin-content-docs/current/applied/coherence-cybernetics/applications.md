@@ -101,7 +101,7 @@ pub type EModule is {
 implement Module for EModule {
     fn forward(&self, hidden_states: &Tensor<Float>) -> Float {
         let rho_e = self.compute_experience_projection(hidden_states);
-        (rho_e @ rho_e).trace().real()
+        (rho_e.matmul(&rho_e)).trace().real()
     }
 }
 
