@@ -127,7 +127,7 @@ The uniform state is the limiting case of complete decoherence. All dimensions a
 
 #### Psychological analogy
 
-If one could imagine "consciousness" in this state (which is contradictory since $P < P_{\text{crit}}$), it would be totally diffuse: seven modalities — Action, Structure, Dynamics, Logic, Experience, Unity, Objectness — all present in equal measure, but *none connected to any other*. There is no thought, because thought is correlation. There is no feeling, because feeling is the elevation of one of the seven above the rest. This is not a coma (a coma is a *reduction* in activity); this is maximum activity without direction — like infinite brain noise.
+If one could imagine "consciousness" in this state (which is contradictory since $P < P_{\text{crit}}$), it would be totally diffuse: seven modalities — Action, Structure, Dynamics, Logic, Experience, Objectness, Unity — all present in equal measure, but *none connected to any other*. There is no thought, because thought is correlation. There is no feeling, because feeling is the elevation of one of the seven above the rest. This is not a coma (a coma is a *reduction* in activity); this is maximum activity without direction — like infinite brain noise.
 
 #### What we learn from this model
 
