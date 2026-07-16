@@ -51,7 +51,7 @@ This implementation is **demonstration pseudocode**. For the base class `Holon` 
 
 ### Installation
 
-Before diving into theory, let's make sure the code runs. Working with coherence matrices requires only two standard packages — NumPy for linear algebra and SciPy for the matrix exponential.
+Before diving into theory, let's make sure the code runs. Working with coherence matrices needs nothing beyond the Verum standard library — `core.math` ships the linear algebra, complex numbers, and random generators used throughout this chapter.
 
 ```toml
 # Verum.toml — Coherence Cybernetics uses only the standard library.
@@ -60,8 +60,12 @@ name = "cc"
 version = "0.1.0"
 
 [dependencies]
-# std.math (linalg, complex, random, constants) is part of the Verum stdlib.
+# core.math (linalg, complex, random, constants) is part of the Verum stdlib.
 ```
+
+:::info Implementation status: the typed 7×7 layer
+The listings in this chapter are written against the **typed fixed-dimension quantum-linalg API** — `StaticMatrix<Complex, 7, 7>` with `.zeros()` / `.diagonal(…)` / `.adjoint()`, free `identity<T, N>()` / `expm(…)` / `eigvalsh(…)`, and `@kernel(gpu)` dispatch. This is the **planned** layer of `core.math.linalg`: the `StaticMatrix<T, M, N>` *type* exists today (compile-time dimensions are the point — a $7\times7$ shape error becomes a build error), but its method surface is still being filled in. What is **executable today** is the dynamic layer: `Matrix<T: Numeric>` with `.zeros(rows, cols)`, `.eye(n)`, `.diag(&v)`, `.transpose()`, `.matmul()`, `.trace()`, `.norm_frobenius()`, free `eigh(&m)`; `Numeric` currently covers real floats, with `Complex` as a scalar type carrying `.conj()`. The mapping is mechanical (`identity<Complex,7>()` → `Matrix.eye(7)`, `.adjoint()` → conjugate-transpose, `expm` → truncated series or `rk45` on the ODE), and the listings' *logic* — Cholesky parametrisation, Lindblad steps, purity/Coh_E formulas — is exactly what both layers compute. Treat the code as the specification the typed layer is built to satisfy.
+:::
 
 ### Minimal Example (10 lines)
 
