@@ -884,9 +884,9 @@ T-113 asserts: $N = 7$ is the minimum dimensionality for full learning through r
 
 ```verum
 // Skeleton — fill in the blanks as an exercise.
-mount std.math.linalg.{StaticMatrix, identity};
-mount std.math.complex.Complex;
-mount std.math.random.{XorShift128, Rng};
+mount core.math.linalg.{StaticMatrix, identity};
+mount core.math.complex.Complex;
+mount core.math.random.{XorShift128, Rng};
 
 fn main() using [IO, Random] {
     const DT:         Float = 0.01;

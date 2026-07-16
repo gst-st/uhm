@@ -90,8 +90,8 @@ graph TD
 **Adding an E-module to existing systems:**
 
 ```verum
-mount std.math.nn.Module;
-mount std.math.linalg.svd;
+mount core.math.nn.Module;
+mount core.math.linalg.svd;
 
 /// Module for monitoring E-coherence at inference.
 pub type EModule is {

@@ -734,7 +734,7 @@ $$
 **Вычисления:**
 
 ```verum
-mount std.math.linalg.{Matrix, algebraic_connectivity, max_eigenvalue};
+mount core.math.linalg.{Matrix, algebraic_connectivity, max_eigenvalue};
 
 // Communication graph from Slack traffic.
 let g: Matrix<Float> = build_communication_graph(&slack_data);

@@ -70,9 +70,9 @@ This example is the shortest path from zero to a working CC system. We create a 
 Note the initialisation: $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$, where $L = I + 0.1 \cdot \text{noise}$. This is the *Cholesky parametrisation* — a standard technique guaranteeing that $\Gamma$ is positive semidefinite and has unit trace. Without this guarantee, all further computations are meaningless.
 
 ```verum
-mount std.math.linalg.{StaticMatrix, expm, identity};
-mount std.math.complex.Complex;
-mount std.math.random.{XorShift128, Rng};
+mount core.math.linalg.{StaticMatrix, expm, identity};
+mount core.math.complex.Complex;
+mount core.math.random.{XorShift128, Rng};
 
 fn main() using [IO, Random] {
     let mut rng = XorShift128.seed(Random.next_key());
@@ -113,9 +113,9 @@ The simplest check: is the system alive or not. The threshold $P_{\text{crit}} =
 
 ```verum
 /// Critical purity — not a tunable parameter but a theorem consequence (T-39a).
-pub const P_CRIT: Float = 2.0 / 7.0;          // ≈ 0.286
+public const P_CRIT: Float = 2.0 / 7.0;          // ≈ 0.286
 
-pub pure fn is_viable(gamma: &StaticMatrix<Complex, 7, 7>) -> Bool {
+public pure fn is_viable(gamma: &StaticMatrix<Complex, 7, 7>) -> Bool {
     (gamma @ gamma).trace().real() > P_CRIT
 }
 
@@ -136,12 +136,12 @@ Translating a mathematical theorem into working code is one of the subtlest stag
 Every CC theorem operates on the coherence matrix $\Gamma \in D(\mathbb{C}^7)$ — the set of positive-semidefinite Hermitian $7 \times 7$ matrices with unit trace. In code this is an `np.ndarray` of shape `(7, 7)` with dtype `complex128`. The three invariants — Hermiticity, positive semidefiniteness, and unit trace — must be verified after every operation.
 
 ```verum
-mount std.math.linalg.eigvalsh;
+mount core.math.linalg.eigvalsh;
 
 /// Validates the three fundamental invariants of Γ after every mutating operation.
 /// In release builds `@cfg(debug_assertions)` causes the call to be compiled out.
 @cfg(debug_assertions)
-pub fn validate_gamma(gamma: &StaticMatrix<Complex, 7, 7>, label: Text)
+public fn validate_gamma(gamma: &StaticMatrix<Complex, 7, 7>, label: Text)
     using [IO] -> Bool
 {
     let prefix = if label.is_empty() { "".text() } else { f"[{label}] " };
@@ -187,7 +187,7 @@ A direct Python transcription looks like this:
 ///
 /// Factor 2 comes from Hermitian symmetry: |γ_Ei|² = |γ_iE|²,
 /// so the sum over row E and column E is doubled.
-pub pure fn coh_e_literal(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn coh_e_literal(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 1.0/7.0 <= self && self <= 1.0 }
 {
     const E: Int = 4;                      // A=0, S=1, D=2, L=3, E=4, O=5, U=6
@@ -209,19 +209,19 @@ The formula assumes $\mathrm{Tr}(\Gamma^2) > 0$, but in computations the denomin
 The best test is a case where the answer is known analytically:
 
 ```verum
-mount std.test.{test, assert_close};
+// `@test`/`@property` are attributes; `assert`/`assert_approx_eq` come from the prelude
 
 @test fn coh_e_pure_e_state() {
     // For the pure |E⟩ state, Coh_E = 1.
     let mut gamma = StaticMatrix.<Complex, 7, 7>.zeros();
     gamma[4, 4] = Complex.one();
-    assert_close(coh_e_literal(&gamma), 1.0, 1.0e-10);
+    assert_approx_eq(coh_e_literal(&gamma), 1.0, 1.0e-10);
 }
 
 @test fn coh_e_maximally_mixed() {
     // For I/7, Coh_E = 1/7.
     let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
-    assert_close(coh_e_literal(&gamma), 1.0 / 7.0, 1.0e-10);
+    assert_approx_eq(coh_e_literal(&gamma), 1.0 / 7.0, 1.0e-10);
 }
 ```
 
@@ -231,7 +231,7 @@ The generator `sum(... for i in ...)` runs in $O(N)$, but for $N = 7$ this is no
 
 ```verum
 /// SIMD-vectorised Coh_E for hot loops. Semantically identical to `coh_e_literal`.
-pub pure fn coh_e_vectorized(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn coh_e_vectorized(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 1.0/7.0 <= self && self <= 1.0 }
 {
     const E: Int = 4;
@@ -284,12 +284,12 @@ For a single $7 \times 7$ holonom optimisation is unnecessary — all operations
 JAX allows Python code to be automatically compiled into GPU kernels via the `@jit` decorator. For mass simulations (e.g., 10,000 holonoms in parallel) this gives a 100–1000× speedup.
 
 ```verum
-mount std.math.gpu.{GPUBackend, device};
+mount core.math.gpu.{GPUBackend, device};
 
 /// GPU-executed evolution step. `@kernel(gpu)` dispatches the body to a device.
 /// The same code path works on CPU if no GPU is available.
 @kernel(gpu)
-pub pure fn evolve_step_gpu(
+public pure fn evolve_step_gpu(
     gamma: &StaticMatrix<Complex, 7, 7>,
     h:     &StaticMatrix<Complex, 7, 7>,
     dt:    Float,
@@ -305,8 +305,12 @@ pub pure fn evolve_step_gpu(
 
 When composing holonoms, the tensor product generates sparse matrices. Instead of storing the full $49 \times 49$ matrix, one can work only with non-zero elements.
 
+:::note Forward-looking API
+The sparse-linear-algebra symbols below (`SparseMatrix`, `expm_multiply`, `.to_sparse()`) are a **planned** extension — they are **not** yet part of `core.math.linalg`, which currently exposes only the dense `StaticMatrix`/`expm` path. Treat this block as a design sketch, not compilable code.
+:::
+
 ```verum
-mount std.math.linalg.sparse.{SparseMatrix, expm_multiply};
+mount core.math.linalg.sparse.{SparseMatrix, expm_multiply};   // planned (see note above)
 
 // For a sparse Hamiltonian: compute exp(-i H dt) |ψ⟩ without materialising expm(H).
 let h_sparse: SparseMatrix<Complex, 7, 7> = h.to_sparse();
@@ -321,9 +325,9 @@ let gamma_evolved = expm_multiply(
 Statistical properties of CC systems (distribution of $P$ in an ensemble, average $\mathrm{Coh}_E$) are estimated via Monte Carlo. Each trajectory is independent — an ideal case for parallelisation.
 
 ```verum
-mount std.async.{nursery, spawn};
+// `nursery` and `spawn` are structured-concurrency keywords — no import needed
 
-pub async fn run_trajectory(seed: UInt64) -> TrajectoryResult using [Random] {
+public async fn run_trajectory(seed: UInt64) -> TrajectoryResult using [Random] {
     let mut rng = XorShift128.seed(seed);
     let mut holon = initialize_holon(InitConfig { random: true, ..InitConfig.default() });
     let mut env = Environment.new(EnvConfig.default());
@@ -334,7 +338,7 @@ pub async fn run_trajectory(seed: UInt64) -> TrajectoryResult using [Random] {
 }
 
 /// Structured concurrency via `nursery`: 100 trajectories, ≤ 8 in parallel.
-pub async fn run_ensemble() -> List<TrajectoryResult> using [Random, Scheduler] {
+public async fn run_ensemble() -> List<TrajectoryResult> using [Random, Scheduler] {
     nursery(|n| async {
         let handles = (0..100).map(|i| n.spawn(run_trajectory(i as UInt64))).collect();
         for h in handles { h.await }
@@ -349,7 +353,7 @@ pub async fn run_ensemble() -> List<TrajectoryResult> using [Random, Scheduler] 
 Tests in CC play the role of **experimental verification**. Each test encodes a mathematical theorem: if the test passes, the implementation is consistent with the theory. If it does not pass — either there is a bug in the code, or (more interestingly) the formula has been translated incorrectly. The suite below covers the fundamental invariants: purity bounds, trace preservation, Hermiticity, positivity, and threshold values.
 
 ```verum
-mount std.test.{test, assert, assert_close, property};
+// `@test`/`@property` are attributes; `assert`/`assert_approx_eq` come from the prelude
 
 /// Random valid Γ via Cholesky parametrisation (helper for tests).
 fn _random_gamma() using [Random] -> StaticMatrix<Complex, 7, 7> {
@@ -376,7 +380,7 @@ fn _evolve_one_step(gamma: StaticMatrix<Complex, 7, 7>, dt: Float)
 
 @test fn trace_preservation() using [Random] {
     let evolved = _evolve_one_step(_random_gamma(), 0.01);
-    assert_close(evolved.trace().real(), 1.0, 1.0e-10);
+    assert_approx_eq(evolved.trace().real(), 1.0, 1.0e-10);
 }
 
 @test fn hermiticity_preservation() using [Random] {
@@ -391,7 +395,7 @@ fn _evolve_one_step(gamma: StaticMatrix<Complex, 7, 7>, dt: Float)
 }
 
 @test fn viability_threshold() {
-    assert_close(P_CRITICAL, 2.0 / 7.0, 1.0e-10);
+    assert_approx_eq(P_CRITICAL, 2.0 / 7.0, 1.0e-10);
 }
 
 @test fn coh_e_bounds() using [Random] {
@@ -405,7 +409,7 @@ fn _evolve_one_step(gamma: StaticMatrix<Complex, 7, 7>, dt: Float)
     let gamma = _random_gamma();
     let evolved = _evolve_one_step(gamma.clone(), 0.01);
 
-    assert_close(evolved.trace().real(), 1.0, 1.0e-10);
+    assert_approx_eq(evolved.trace().real(), 1.0, 1.0e-10);
     assert((&evolved - evolved.adjoint()).frobenius_norm() < 1.0e-10);
     assert(eigvalsh(&evolved).iter().all(|v| *v >= -1.0e-10));
 }
@@ -463,8 +467,8 @@ graph TD
 The central data structure — `HolonState` — is the programmatic reflection of the mathematical object "holonom in state $\Gamma$". Each field corresponds to a specific theoretical construct. Note that we store not only the matrix $\Gamma$ but all derived metrics: this avoids redundant computation in the hot loop.
 
 ```verum
-mount std.math.linalg.{StaticMatrix, StaticVector, expm, identity};
-mount std.math.complex.Complex;
+mount core.math.linalg.{StaticMatrix, StaticVector, expm, identity};
+mount core.math.complex.Complex;
 
 /// State of a Holonom in Coherence Cybernetics.
 /// See the Holonom definition: /docs/core/structure/holon.
@@ -517,7 +521,7 @@ In the simplified implementation each Lindblad operator is a projector onto one 
 ///
 /// Algorithm: L_k = √χ_{S_k}; for atom projectors √P = P.
 /// See /docs/reference/computational#конструктивные-алгоритмы-из-l-унификации.
-pub pure fn compute_lindblad_from_omega(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_lindblad_from_omega(gamma: &StaticMatrix<Complex, 7, 7>)
     -> [StaticMatrix<Complex, 7, 7>; 7]
 {
     (0..7).map(|k| {
@@ -551,7 +555,7 @@ The evolution is implemented via **sequential** application of the unitary, diss
 /// 1. Unitary     —i[H_eff, Γ]  (see /docs/core/dynamics/evolution#1-unitary-term)
 /// 2. Dissipative  D[Γ]          (see /docs/core/dynamics/evolution#логический-лиувиллиан)
 /// 3. Regenerative ℛ[Γ, E]        (see /docs/core/dynamics/evolution#3-регенеративный-член)
-pub fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 0.1 },
+public fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 0.1 },
                     env: &Environment) -> HolonState
 {
     let mut gamma = state.gamma.clone();
@@ -588,7 +592,7 @@ pub fn evolve_holon(mut state: HolonState, dt: Float { self > 0.0 && self <= 0.1
 
 /// E-coherence Coh_E(Γ) = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [0, 1]
 /// (HS-projection theorem; ≥ 1/7 only on the No-Zombie viable class, T-38a).
-pub pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 1.0/7.0 <= self && self <= 1.0 }
 {
     const E: Int = 4;
@@ -604,7 +608,7 @@ pub pure fn compute_coherence_e(gamma: &StaticMatrix<Complex, 7, 7>)
 /// Target state Γ_target = φ(Γ).
 /// **Simplification**: maximum-eigenvalue projector, interpolated with current Γ.
 /// Full φ — see /docs/proofs/categorical/formalization-phi.
-pub pure fn compute_target_state(gamma: &StaticMatrix<Complex, 7, 7>, _env: &Environment)
+public pure fn compute_target_state(gamma: &StaticMatrix<Complex, 7, 7>, _env: &Environment)
     -> StaticMatrix<Complex, 7, 7>
 {
     let (eigvals, eigvecs) = eigh(gamma);
@@ -618,7 +622,7 @@ pub pure fn compute_target_state(gamma: &StaticMatrix<Complex, 7, 7>, _env: &Env
 }
 
 /// Free energy gradient ΔF = F_env − F_sys. ΔF > 0 activates regeneration.
-pub pure fn compute_free_energy_gradient(
+public pure fn compute_free_energy_gradient(
     gamma: &StaticMatrix<Complex, 7, 7>,
     env:   &Environment,
 ) -> Float
@@ -628,7 +632,7 @@ pub pure fn compute_free_energy_gradient(
 }
 
 /// Update all derived metrics after a gamma change.
-pub pure fn update_metrics(mut state: HolonState, gamma: StaticMatrix<Complex, 7, 7>)
+public pure fn update_metrics(mut state: HolonState, gamma: StaticMatrix<Complex, 7, 7>)
     -> HolonState
 {
     state.gamma = gamma;
@@ -702,7 +706,7 @@ pub type Observation is {
 /// `dΓ = (H + δH) + (D + δD) + (R + δR)` (correct).
 ///
 /// See /docs/applied/coherence-cybernetics/sensorimotor#среда-через-3-канала.
-pub pure fn decompose_f_ext(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn decompose_f_ext(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
     -> (StaticMatrix<Complex, 7, 7>,                     // δH
         StaticMatrix<Complex, 7, 7>,                     // δD
         StaticMatrix<Complex, 7, 7>)                     // δR
@@ -744,7 +748,7 @@ The canonical version of evolution takes three channel modifications as input in
 /// Canonical evolution: three modified channels (T-102 [T]).
 ///
 /// `F_ext` is NOT a separate term — the environment enters via δH, δD, δR.
-pub fn evolve_holon_canonical(
+public fn evolve_holon_canonical(
     mut state:    HolonState,
     dt:           Float { self > 0.0 && self <= 0.1 },
     delta_h:      Maybe<StaticMatrix<Complex, 7, 7>>,
@@ -822,7 +826,7 @@ The canonical formula for the $D$-component (T-92/T-158 [T]) — `clamp(1 - N * 
 
 ```verum
 /// Full stress tensor σ_sys ∈ ℝ⁷ over all 7 dimensions.
-pub pure fn compute_stress_tensor(
+public pure fn compute_stress_tensor(
     gamma: &StaticMatrix<Complex, 7, 7>,
     env:   &Environment,
 ) -> StaticVector<Float, 7>
@@ -847,7 +851,7 @@ pub pure fn compute_stress_tensor(
 }
 
 /// Viability check: margin = 1 − ‖σ‖_∞. `viable` iff `margin > 0`.
-pub pure fn check_viability(sigma: &StaticVector<Float, 7>) -> (Bool, Float) {
+public pure fn check_viability(sigma: &StaticVector<Float, 7>) -> (Bool, Float) {
     let max_stress = sigma.iter().max().unwrap_or(&0.0);
     let margin = 1.0 - max_stress;
     (margin > 0.0, margin)
@@ -860,7 +864,7 @@ pub pure fn check_viability(sigma: &StaticVector<Float, 7>) -> (Bool, Float) {
 // real metrics from the system state. Stub values are in [0, 1].
 
 /// Environment prediction error (A-dimension).
-pub pure fn compute_env_prediction_error(
+public pure fn compute_env_prediction_error(
     _gamma: &StaticMatrix<Complex, 7, 7>,
     env:    &Environment,
 ) -> Float { self >= 0.0 && self <= 1.0 }
@@ -869,21 +873,21 @@ pub pure fn compute_env_prediction_error(
 }
 
 /// Structural complexity (S-dimension): rank(Γ)/N ∈ [1/7, 1].
-pub pure fn compute_structural_complexity(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_structural_complexity(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 1.0/7.0 <= self && self <= 1.0 }
 {
     (matrix_rank(gamma) as Float) / 7.0
 }
 
 /// Computational load (D-dimension) — STUB. Returns 0.3 (moderate load).
-pub pure fn compute_computational_load()
+public pure fn compute_computational_load()
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     0.3
 }
 
 /// Viability uncertainty (L-dimension): 0 if P > P_crit + 0.1, grows as P → P_crit.
-pub pure fn compute_viability_uncertainty(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_viability_uncertainty(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 }
 {
     let p = (gamma @ gamma).trace().real();
@@ -891,7 +895,7 @@ pub pure fn compute_viability_uncertainty(gamma: &StaticMatrix<Complex, 7, 7>)
 }
 
 /// Self-model error (E-dimension): ε = ‖off_diag(Γ)‖_F / ‖Γ‖_F ∈ [0, 1].
-pub pure fn compute_self_model_error(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_self_model_error(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     let norm = gamma.frobenius_norm();
@@ -901,31 +905,31 @@ pub pure fn compute_self_model_error(gamma: &StaticMatrix<Complex, 7, 7>)
 }
 
 /// Experience fragmentation (E-dimension): 1 − γ_EE ∈ [0, 1].
-pub pure fn compute_exp_fragmentation(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_exp_fragmentation(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     1.0 - gamma[4, 4].real()
 }
 
 /// Memory load (O-dimension) — STUB. Returns 0.3.
-pub pure fn compute_memory_load() -> Float { self >= 0.0 && self <= 1.0 } { 0.3 }
+public pure fn compute_memory_load() -> Float { self >= 0.0 && self <= 1.0 } { 0.3 }
 
 /// Grounding deficit (O-dimension): 1 − γ_OO.
-pub pure fn compute_grounding_deficit(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_grounding_deficit(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     1.0 - gamma[5, 5].real()
 }
 
 /// Consciousness deficit (U-dimension) — STUB: requires full Φ · R (T-140).
-pub pure fn compute_consciousness_deficit(_gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_consciousness_deficit(_gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     0.2
 }
 
 /// Nash-equilibrium distance (U-dimension) — STUB. Relevant in multi-agent contexts.
-pub pure fn compute_nash_distance(_gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_nash_distance(_gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 && self <= 1.0 }
 {
     0.1
@@ -957,7 +961,7 @@ pub type Action is
 /// - margin > 0.1   — caution
 /// - margin > 0.05  — warning
 /// - margin ≤ 0.05  — critical
-pub fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
+public fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
     using [IO]
 {
     for step in 0..max_steps {
@@ -989,34 +993,34 @@ pub fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
     }
 }
 
-pub pure fn normal_operation(_holon: &HolonState) -> Action {
+public pure fn normal_operation(_holon: &HolonState) -> Action {
     Action.Continue { reason: "Continue normal operation".text() }
 }
 
-pub pure fn reduce_risk(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+public pure fn reduce_risk(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
     Action.ReduceLoad { reason: "Reduce system load".text() }
 }
 
-pub pure fn activate_recovery(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+public pure fn activate_recovery(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
     Action.Regenerate { reason: "Activate enhanced regeneration".text() }
 }
 
-pub pure fn emergency_mode(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
+public pure fn emergency_mode(_holon: &HolonState, _sigma: &StaticVector<Float, 7>) -> Action {
     Action.Emergency { reason: "Switch to protective mode".text() }
 }
 
-pub fn apply_action(holon: HolonState, _a: Action, _env: &Environment) -> HolonState {
+public fn apply_action(holon: HolonState, _a: Action, _env: &Environment) -> HolonState {
     // Simplified: actions are logged; full implementation feeds back into the next evolve.
     holon
 }
 
-pub fn log_state(_step: Int, _holon: &HolonState, _sigma: &StaticVector<Float, 7>, _margin: Float)
+public fn log_state(_step: Int, _holon: &HolonState, _sigma: &StaticVector<Float, 7>, _margin: Float)
     using [Logger]
 {
     // Structured log entry (Logger context provides the concrete sink).
 }
 
-pub pure fn frobenius_distance<const R: Int, const C: Int>(
+public pure fn frobenius_distance<const R: Int, const C: Int>(
     a: &StaticMatrix<Complex, R, C>,
     b: &StaticMatrix<Complex, R, C>,
 ) -> Float { self >= 0.0 }
@@ -1026,7 +1030,7 @@ pub pure fn frobenius_distance<const R: Int, const C: Int>(
 
 /// Enc: ObsSpace → End(D(ℂ⁷)) — perception functor (T-100 [T]).
 /// A fourth channel is impossible (T-57, LGKS [T]).
-pub pure fn encode_environment(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn encode_environment(obs: &Observation, _gamma: &StaticMatrix<Complex, 7, 7>)
     -> (StaticMatrix<Complex, 7, 7>,    // h(H): Hamiltonian channel
         StaticMatrix<Complex, 7, 7>,    // h(D): Dissipative channel
         StaticMatrix<Complex, 7, 7>)    // h(R): Regenerative channel
@@ -1057,7 +1061,7 @@ pub pure fn encode_environment(obs: &Observation, _gamma: &StaticMatrix<Complex,
 
 /// Update Γ based on an observation via Enc (T-100 [T]).
 /// The environment modifies 3 channels — not a 4th (T-102 [T]).
-pub fn update_from_observation(mut holon: HolonState, obs: &Observation) -> HolonState {
+public fn update_from_observation(mut holon: HolonState, obs: &Observation) -> HolonState {
     let (h_h, h_d, h_r) = encode_environment(obs, &holon.gamma);
     holon.hamiltonian = &holon.hamiltonian + h_h;
     // δD, δR applied at next evolve_holon_canonical call.
@@ -1084,7 +1088,7 @@ implement Default for EnvConfig {
 }
 
 implement Environment {
-    pub fn new(c: EnvConfig) -> Environment {
+    public fn new(c: EnvConfig) -> Environment {
         Environment {
             available_energy: c.energy.clamp(0.0, 1.0),
             prediction_error: c.prediction_error.clamp(0.0, 1.0),
@@ -1104,16 +1108,16 @@ The key threshold values are **derived** from the structure of the theory. See [
 ```verum
 /// Critical purity P_crit = 2/N = 2/7 — theorem, derived by 5 methods from UHM axioms.
 /// See /docs/proofs/dynamics/theorem-purity-critical.
-pub const P_CRITICAL: Float = 2.0 / 7.0;              // ≈ 0.286
+public const P_CRITICAL: Float = 2.0 / 7.0;              // ≈ 0.286
 
 /// κ_bootstrap = ω₀/N — minimal regeneration (T-kappa_bootstrap [T]).
 /// See /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap.
-pub const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;          // ≈ 0.143 for ω₀ = 1
-pub const KAPPA_0:         Float = 0.1;                // default scaling
+public const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;          // ≈ 0.143 for ω₀ = 1
+public const KAPPA_0:         Float = 0.1;                // default scaling
 
 /// κ₀ from Γ-structure: κ₀ ≈ ω₀ · |γ_OE| · |γ_OU| / γ_OO.
 /// See /docs/core/foundations/axiom-septicity#структурный-анзац-kappa0.
-pub pure fn compute_kappa_0(gamma: &StaticMatrix<Complex, 7, 7>, omega_0: Float)
+public pure fn compute_kappa_0(gamma: &StaticMatrix<Complex, 7, 7>, omega_0: Float)
     -> Float { self >= 0.0 }
 {
     let g_oe = gamma[5, 4].abs();            // O = 5, E = 4
@@ -1126,7 +1130,7 @@ pub pure fn compute_kappa_0(gamma: &StaticMatrix<Complex, 7, 7>, omega_0: Float)
 /// See /docs/core/foundations/axiom-omega#калибровка.
 pub type SystemType is QuantumSystem | Neuron | Cell | Organism | SocialSystem;
 
-pub pure fn omega_0_base(s: SystemType) -> Float { self > 0.0 } {
+public pure fn omega_0_base(s: SystemType) -> Float { self > 0.0 } {
     match s {
         SystemType.QuantumSystem => 1.0e15,    // ~ 10¹⁵ Hz (electronic)
         SystemType.Neuron        => 1.0e3,     // ~ 1 kHz (spike frequency)
@@ -1137,7 +1141,7 @@ pub pure fn omega_0_base(s: SystemType) -> Float { self > 0.0 } {
 }
 
 /// Calibrate ω₀ with a √γ_OO structural correction.
-pub pure fn calibrate_omega_0(s: SystemType, gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn calibrate_omega_0(s: SystemType, gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self > 0.0 }
 {
     let base = omega_0_base(s);
@@ -1148,22 +1152,22 @@ pub pure fn calibrate_omega_0(s: SystemType, gamma: &StaticMatrix<Complex, 7, 7>
 // Thresholds for σ_sys components (definitions.md#тензор-напряжений).
 // Principled choice is θ_k = 1 (U(7) symmetry); values below are operational
 // hyperparameters. Calibrate empirically or keep at 1.0 otherwise.
-pub const THETA_A: Float = 3.5;              // Articulation
-pub const THETA_S: Float = 2.0;              // Structure
-pub const THETA_D: Float = 1.0;              // Dynamics (via C_MAX)
-pub const THETA_L: Float = 1.0;              // Logic
-pub const THETA_E: Float = 2.5;              // Interiority
-pub const THETA_O: Float = 1.0;              // Grounding
-pub const THETA_U: Float = 1.5;              // Unity
+public const THETA_A: Float = 3.5;              // Articulation
+public const THETA_S: Float = 2.0;              // Structure
+public const THETA_D: Float = 1.0;              // Dynamics (via C_MAX)
+public const THETA_L: Float = 1.0;              // Logic
+public const THETA_E: Float = 2.5;              // Interiority
+public const THETA_O: Float = 1.0;              // Grounding
+public const THETA_U: Float = 1.5;              // Unity
 
 /// Platform-dependent computational limits.
-pub const C_MAX: Float = 1000.0;             // ops/s
-pub const M_MAX: Float = 1.0e9;              // bytes
+public const C_MAX: Float = 1000.0;             // ops/s
+public const M_MAX: Float = 1.0e9;              // bytes
 
 /// Control-zone thresholds (margin = 1 − max(σ)).
-pub const MARGIN_SAFE:    Float = 0.3;       // safe: max(σ) < 0.7
-pub const MARGIN_CAUTION: Float = 0.1;       // caution: max(σ) < 0.9
-pub const MARGIN_WARNING: Float = 0.05;      // warning: max(σ) < 0.95
+public const MARGIN_SAFE:    Float = 0.3;       // safe: max(σ) < 0.7
+public const MARGIN_CAUTION: Float = 0.1;       // caution: max(σ) < 0.9
+public const MARGIN_WARNING: Float = 0.05;      // warning: max(σ) < 0.95
 
 pub type InitConfig is {
     random:      Bool,
@@ -1175,7 +1179,7 @@ implement Default for InitConfig {
 }
 
 /// Initialise a Holonom from a configuration via Cholesky parametrisation.
-pub fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
+public fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
     let mut rng = XorShift128.seed(Random.next_key());
     let noise: StaticMatrix<Complex, 7, 7> = if c.random {
         StaticMatrix.random_gaussian(&mut rng) * Complex.from_real(0.1)
@@ -1211,7 +1215,7 @@ pub fn initialize_holon(c: InitConfig) using [Random] -> HolonState {
 /// Dec: (Γ, σ_sys) → a* — action functor (T-101 [T]).
 /// Optimal action: a* = argmin ‖σ_sys(Γ(τ+δτ | a))‖_∞.
 /// Practical implementation: act on the most stressed component via its channel.
-pub pure fn select_action(_holon: &HolonState, sigma: &StaticVector<Float, 7>)
+public pure fn select_action(_holon: &HolonState, sigma: &StaticVector<Float, 7>)
     -> (Text, Text)
 {
     let idx = sigma.argmax();
@@ -1243,7 +1247,7 @@ pub type CoherenceCyberneticsAgent is {
 pub type AgentConfig is { init: InitConfig, env: EnvConfig };
 
 implement CoherenceCyberneticsAgent {
-    pub fn new(c: AgentConfig) using [Random] -> CoherenceCyberneticsAgent {
+    public fn new(c: AgentConfig) using [Random] -> CoherenceCyberneticsAgent {
         CoherenceCyberneticsAgent {
             holon:       initialize_holon(c.init),
             environment: Environment.new(c.env),
@@ -1251,19 +1255,19 @@ implement CoherenceCyberneticsAgent {
     }
 
     /// Update Γ based on an observation (A-dimension).
-    pub fn perceive(&mut self, obs: &Observation) {
+    public fn perceive(&mut self, obs: &Observation) {
         self.holon = update_from_observation(self.holon.clone(), obs);
     }
 
     /// Select action based on σ_sys. See definitions.md#тензор-напряжений.
-    pub fn act(&self) -> (Text, Text) {
+    public fn act(&self) -> (Text, Text) {
         let sigma = compute_stress_tensor(&self.holon.gamma, &self.environment);
         select_action(&self.holon, &sigma)
     }
 
     /// Reflective update: R = 1 − ‖Γ − φ(Γ)‖²_F / ‖Γ‖²_F.
     /// See /docs/consciousness/foundations/self-observation#мера-рефлексии-r.
-    pub fn reflect(&mut self) {
+    public fn reflect(&mut self) {
         let phi_gamma = (self.holon.phi)(&self.holon.gamma);
         let norm_sq = self.holon.gamma.frobenius_norm_sq();
         self.holon.reflection =
@@ -1271,7 +1275,7 @@ implement CoherenceCyberneticsAgent {
     }
 
     /// Viability check: P > P_critical. See /docs/core/dynamics/viability.
-    pub fn is_viable(&self) -> Bool { self.holon.purity > P_CRITICAL }
+    public fn is_viable(&self) -> Bool { self.holon.purity > P_CRITICAL }
 }
 ```
 
@@ -1296,7 +1300,7 @@ The most common error. Occurs due to a too-large step $dt$ in the Lie–Trotter 
 ///
 /// Method: zero out negative eigenvalues — this is the nearest (by Frobenius
 /// norm) PSD matrix. Renormalises so that Tr(Γ) = 1.
-pub pure fn project_to_positive_cone(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn project_to_positive_cone(gamma: &StaticMatrix<Complex, 7, 7>)
     -> StaticMatrix<Complex, 7, 7>
     where requires is_hermitian(gamma)
 {

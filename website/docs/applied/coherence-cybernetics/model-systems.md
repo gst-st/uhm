@@ -142,8 +142,8 @@ The model is completely static. It does not answer: *how* does a system reach th
 ### 1.4 Python Implementation
 
 ```verum
-mount std.math.linalg.{StaticMatrix, identity, eigvalsh};
-mount std.math.complex.Complex;
+mount core.math.linalg.{StaticMatrix, identity, eigvalsh};
+mount core.math.complex.Complex;
 
 pub type ModelReport is {
     p:         Float,
@@ -154,7 +154,7 @@ pub type ModelReport is {
 };
 
 /// Model 1: Maximally mixed state Γ = I/7.
-pub pure fn uniform_system() -> ModelReport {
+public pure fn uniform_system() -> ModelReport {
     let gamma = identity::<Complex, 7>() / Complex.from_real(7.0);
 
     let p = (&gamma @ &gamma).trace().real();                     // 1/7
@@ -264,7 +264,7 @@ This is not the maximum E-coherence: achieving $\mathrm{Coh}_E = 1$ requires con
 
 ```verum
 /// Model 2: Pure state with uniform superposition |ψ⟩ = (1/√7) Σ|k⟩.
-pub fn pure_uniform() using [IO]
+public fn pure_uniform() using [IO]
     -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
 {
     let psi = StaticVector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
@@ -433,10 +433,10 @@ The model does not account for dynamics: the cluster {A, S, O} and the high Gap 
 ### 3.6 Python Implementation
 
 ```verum
-mount std.math.constants.PI;
+mount core.math.constants.PI;
 
 /// Model 3: Pure state with Fibonacci phases mod 7.
-pub fn fibonacci_phases() using [IO]
+public fn fibonacci_phases() using [IO]
     -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
 {
     // F₁…F₇ mod 7.
@@ -618,10 +618,10 @@ Minimality of rank ($r_G = 2$) — this is a *point* defect. One can imagine mor
 ### 4.7 Python Implementation
 
 ```verum
-mount std.math.linalg.matrix_rank;
+mount core.math.linalg.matrix_rank;
 
 /// Model 4: Alexithymia — pure phase defect on the (S, E) channel, Gap = 1.
-pub fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [IO]
+public fn alexithymia_model(c: Float { 0.0 < self && self < 1.0 / 7.0 }) using [IO]
     -> (StaticMatrix<Complex, 7, 7>, StaticMatrix<Float, 7, 7>)
 {
     // Base matrix: uniform diagonal + real coherences.
@@ -800,7 +800,7 @@ The unitary model is beautiful but *non-physical* for living systems. Without di
 pub type RegimeKind is Rational | Irrational;
 
 /// Model 5: Evolution with rational/irrational frequencies.
-pub fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [IO]
+public fn dynamic_system(regime: RegimeKind, tau_max: Float, dt: Float) using [IO]
     -> (List<Float>, List<(Float, Float)>, List<Float>)
     where requires tau_max > 0.0 && dt > 0.0 && dt < tau_max
 {

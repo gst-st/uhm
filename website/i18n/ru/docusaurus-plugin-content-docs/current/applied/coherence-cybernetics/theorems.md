@@ -368,31 +368,31 @@ $$\frac{d\Gamma}{d\tau} = -i[H_\mathrm{eff}, \Gamma]\;+\;\gamma\,(\mathcal P_\ma
 **Референсная имплементация (Python, самодостаточная).**
 
 ```verum
-mount std.math.linalg.{StaticMatrix, identity, eigh};
-mount std.math.complex.Complex;
-mount std.math.calculus.{rk45, OdeOptions};
-mount std.math.random.{XorShift128, Rng};
+mount core.math.linalg.{StaticMatrix, identity, eigh};
+mount core.math.complex.Complex;
+mount core.math.calculus.{rk45, OdeOptions};
+mount core.math.random.{XorShift128, Rng};
 
 const N: Int = 7;
 
-pub pure fn commutator(h: &StaticMatrix<Complex, 7, 7>, g: &StaticMatrix<Complex, 7, 7>)
+public pure fn commutator(h: &StaticMatrix<Complex, 7, 7>, g: &StaticMatrix<Complex, 7, 7>)
     -> StaticMatrix<Complex, 7, 7>
 {
     h @ g - g @ h
 }
 
-pub pure fn fano_channel(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
+public pure fn fano_channel(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
     let diag = StaticMatrix.<Complex, 7, 7>.diagonal(g.diagonal());
     let off  = g - &diag;
     &diag + off / Complex.from_real(3.0)
 }
 
-pub pure fn purity(g: &StaticMatrix<Complex, 7, 7>) -> Float {
+public pure fn purity(g: &StaticMatrix<Complex, 7, 7>) -> Float {
     (g @ g).trace().real()
 }
 
 /// Canonical Coh_E (axiom-septicity.md:414): (γ_EE² + 2·Σ|γ_Ej|²) / Tr(Γ²).
-pub pure fn coh_e(g: &StaticMatrix<Complex, 7, 7>, e_idx: Int) -> Float
+public pure fn coh_e(g: &StaticMatrix<Complex, 7, 7>, e_idx: Int) -> Float
     where requires 0 <= e_idx && e_idx < N
 {
     let g_ee = g[e_idx, e_idx].real();
@@ -403,7 +403,7 @@ pub pure fn coh_e(g: &StaticMatrix<Complex, 7, 7>, e_idx: Int) -> Float
 }
 
 /// Hermitise, clip spectrum, renormalise trace.
-pub pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
+public pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
     -> StaticMatrix<Complex, 7, 7>
 {
     let h = (g + g.adjoint()) / Complex.from_real(2.0);
@@ -414,14 +414,14 @@ pub pure fn project_to_density(g: &StaticMatrix<Complex, 7, 7>)
 }
 
 /// Canonical G₂ cyclic basis permutation (simplified surrogate).
-pub pure fn shift_g2(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
+public pure fn shift_g2(g: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex, 7, 7> {
     let mut p = StaticMatrix.<Complex, 7, 7>.zeros();
     for j in 0..N { p[(j + 1) % N, j] = Complex.one(); }    // column-cyclic shift
     &p @ g @ p.transpose()
 }
 
 /// dΓ/dτ: unitary + Fano dissipation + viability-gated regeneration.
-pub pure fn rhs(
+public pure fn rhs(
     _tau:    Float,
     g:       &StaticMatrix<Complex, 7, 7>,
     omega_0: Float,
@@ -457,7 +457,7 @@ pub type SimResult is {
     coh_e: List<Float>,
 };
 
-pub fn simulate(
+public fn simulate(
     gamma_0: StaticMatrix<Complex, 7, 7>,
     omega_0: Float,
     gamma:   Float,
@@ -478,7 +478,7 @@ pub fn simulate(
 }
 
 /// Random density matrix targeting a given purity via HS measure + rescaling.
-pub fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0 }, seed: UInt64)
+public fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0 }, seed: UInt64)
     -> StaticMatrix<Complex, 7, 7>
 {
     let mut rng = XorShift128.seed(seed);
@@ -501,7 +501,7 @@ pub fn random_gamma(p_target: Float { 1.0/(N as Float) <= self && self <= 1.0 },
 }
 
 /// Ablate the E-row and E-column: zero out off-diagonal couplings to E.
-pub pure fn ablate_e(gamma: &StaticMatrix<Complex, 7, 7>, e_idx: Int)
+public pure fn ablate_e(gamma: &StaticMatrix<Complex, 7, 7>, e_idx: Int)
     -> StaticMatrix<Complex, 7, 7>
 {
     let mut g = gamma.clone();
