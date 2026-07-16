@@ -443,10 +443,10 @@ $$
 
 ```verum
 /// Viability check: P > P_crit = 2/N (T-39a [T]).
-pub pure fn is_viable<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Bool
+public pure fn is_viable<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Bool
     where requires N >= 2
 {
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     p > 2.0 / (N as Float)
 }
 ```
@@ -460,10 +460,10 @@ pub pure fn is_viable<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Bool
 /// - deviation < 1/N: indistinguishable from noise
 /// - deviation = 1/N: viability boundary
 /// - deviation > 1/N: structured system
-pub pure fn structural_deviation<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Float
+public pure fn structural_deviation<const N: Int>(gamma: &StaticMatrix<Complex, N, N>) -> Float
     where requires N >= 2
 {
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     p - 1.0 / (N as Float)
 }
 ```
@@ -474,7 +474,7 @@ pub pure fn structural_deviation<const N: Int>(gamma: &StaticMatrix<Complex, N, 
 /// Dominant eigenvalue threshold λ_max at P = P_crit = 2/N.
 ///
 /// For N = 7: returns ≈ 0.493.
-pub pure fn dominant_eigenvalue_threshold(n: Int { self >= 2 }) -> Float {
+public pure fn dominant_eigenvalue_threshold(n: Int { self >= 2 }) -> Float {
     (1.0 + ((n - 1) as Float).sqrt()) / (n as Float)
 }
 ```

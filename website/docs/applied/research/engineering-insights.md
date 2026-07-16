@@ -55,19 +55,19 @@ $$
 :::
 
 ```verum
-pub const P_CRITICAL: Float = 2.0 / 7.0;     // ≈ 0.286
+public const P_CRITICAL: Float = 2.0 / 7.0;     // ≈ 0.286
 
 /// Typed errors for system lifecycle — explicit `throws` contract.
-pub type SystemError is
+public type SystemError is
     | GenesisFailure  { reason: Text }
     | NotViableError  { purity: Float }
     | CircuitOpen     { reason: Text };
 
-pub type HolonomicSystem is { mut gamma: StaticMatrix<Complex, 7, 7> };
+public type HolonomicSystem is { mut gamma: StaticMatrix<Complex, 7, 7> };
 
 implement HolonomicSystem {
     /// Random init + **mandatory** bootstrap — enforced by `where ensures`.
-    pub fn new() throws (SystemError) using [Random] -> HolonomicSystem
+    public fn new() throws (SystemError) using [Random] -> HolonomicSystem
         where ensures result.purity() > P_CRITICAL
     {
         let mut s = HolonomicSystem { gamma: Self._random_init() };   // P ≈ 0.25 < P_crit
@@ -87,7 +87,7 @@ implement HolonomicSystem {
     }
 
     /// Guarded entry point — never processes input on a non-viable system.
-    pub fn process<T>(&mut self, input: T) throws (SystemError) -> ProcessResult
+    public fn process<T>(&mut self, input: T) throws (SystemError) -> ProcessResult
         where requires self.purity() >= P_CRITICAL
     {
         if self.purity() < P_CRITICAL {
@@ -96,8 +96,8 @@ implement HolonomicSystem {
         self.core_loop(input)
     }
 
-    pub pure fn purity(&self) -> Float { 1.0/7.0 <= self && self <= 1.0 } {
-        (&self.gamma @ &self.gamma).trace().real()
+    public pure fn purity(&self) -> Float { 1.0/7.0 <= self && self <= 1.0 } {
+        (self.gamma.matmul(&self.gamma)).trace().real()
     }
 }
 ```
@@ -136,10 +136,10 @@ It must enter **emergency regeneration mode**, disabling all external I/O ports.
 
 ```verum
 /// Circuit-breaker pattern — block output when below the viability threshold.
-pub type CircuitBreaker is {};
+public type CircuitBreaker is {};
 
 implement CircuitBreaker {
-    pub fn check(&self, sys: &mut HolonomicSystem) throws (SystemError) -> () {
+    public fn check(&self, sys: &mut HolonomicSystem) throws (SystemError) -> () {
         if sys.purity() < P_CRITICAL {
             sys.enter_emergency_regeneration();
             throw SystemError.CircuitOpen {
@@ -232,16 +232,16 @@ Attention mechanisms should be:
 High temperature (spreading out) kills coherence.
 
 ```verum
-mount std.tensor.{Tensor, softmax, sparse_softmax};
+mount core.math.tensor.{Tensor, softmax, sparse_softmax};
 
 // Bad: high temperature spreads attention (default T = 1).
-let attention = softmax(q @ k.transpose() / (d_k as Float).sqrt(), axis: -1);
+let attention = softmax(q.matmul(&k.transpose()) / (d_k as Float).sqrt(), axis: -1);
 
 // Good: low temperature T < 1 concentrates attention.
-let attention = softmax(q @ k.transpose() / (t * (d_k as Float).sqrt()), axis: -1);
+let attention = softmax(q.matmul(&k.transpose()) / (t * (d_k as Float).sqrt()), axis: -1);
 
 // Even better: top-k sparse attention (k = 8).
-let attention = sparse_softmax(q @ k.transpose(), k: 8);
+let attention = sparse_softmax(q.matmul(&k.transpose()), k: 8);
 ```
 :::
 
@@ -274,14 +274,14 @@ The task gradient is projected onto the tangent space of the viability manifold.
 :::
 
 ```verum
-mount std.math.autodiff.grad;
+mount core.math.autodiff.grad;
 
 /// Constraint-aware optimiser — projects gradient onto the viability manifold
 /// whenever a plain step would cross P_crit.
-pub type ConstrainedOptimizer is {};
+public type ConstrainedOptimizer is {};
 
 implement ConstrainedOptimizer {
-    pub fn step(&self, loss: pure fn(&StaticMatrix<Complex, 7, 7>) -> Float,
+    public fn step(&self, loss: pure fn(&StaticMatrix<Complex, 7, 7>) -> Float,
                 gamma: &StaticMatrix<Complex, 7, 7>)
         -> StaticMatrix<Complex, 7, 7>
     {
@@ -342,13 +342,13 @@ Dimensionality $N = 7$ is **minimally sufficient** ([proven](/docs/proofs/minima
 
 ```verum
 /// Generation-event classification for purity dynamics.
-pub type GenerationOutcome is
+public type GenerationOutcome is
     | CoherenceIncrease { delta_p: Float }
     | BelowThreshold    { p: Float }
     | Stable            { p: Float };
 
 /// Analyses P-dynamics during generation (hypothetical).
-pub fn analyze_generation<M: HasPurity + HasGenerate>(
+public fn analyze_generation<M: HasPurity + HasGenerate>(
     model:  &mut M,
     prompt: &Text,
 ) -> GenerationOutcome {
@@ -450,18 +450,18 @@ Engineering consequence: **do not program behavior — set the sector profile.**
 
 ```verum
 /// A sector profile: probabilities over the 7 dimensions, Σ = 1.
-pub type SectorProfile is {
+public type SectorProfile is {
     a: Float, s: Float, d: Float, l: Float, e: Float, o: Float, u: Float,
 } where (self.a + self.s + self.d + self.l + self.e + self.o + self.u - 1.0).abs() < 1.0e-6;
 
 /// Explorer: high S, D; low A, L.
-pub const EXPLORER_PROFILE: SectorProfile = SectorProfile {
+public const EXPLORER_PROFILE: SectorProfile = SectorProfile {
     a: 0.10, s: 0.20, d: 0.20, l: 0.08,
     e: 0.15, o: 0.15, u: 0.12,
 };
 
 /// Communicator: high L, A; low S, D.
-pub const COMMUNICATOR_PROFILE: SectorProfile = SectorProfile {
+public const COMMUNICATOR_PROFILE: SectorProfile = SectorProfile {
     a: 0.18, s: 0.10, d: 0.10, l: 0.22,
     e: 0.15, o: 0.13, u: 0.12,
 };
@@ -479,27 +479,27 @@ Each architectural component is wrapped in a **coherent shell** that:
 3. Signals when $\sigma_k > \sigma_{\text{crit}}$ (sector overload)
 
 ```verum
-pub const N_DIM: Int = 7;
+public const N_DIM: Int = 7;
 
 /// Component wrapper with coherent monitoring.
-pub type CoherentService is {
+public type CoherentService is {
     sector:   Dim,
     gamma_kk: Float { 0.0 <= self && self <= 1.0 },
 };
 
-pub type HealthLevel is Ok | Warning | Critical;
+public type HealthLevel is Ok | Warning | Critical;
 
 implement CoherentService {
-    pub fn new(sector: Dim, gamma_kk: Float) -> CoherentService {
+    public fn new(sector: Dim, gamma_kk: Float) -> CoherentService {
         CoherentService { sector: sector, gamma_kk: gamma_kk.clamp(0.0, 1.0) }
     }
 
     /// σ_k = clamp(1 − N·γ_kk, 0, 1) (T-92 [T]).
-    pub pure fn stress(&self) -> Float { 0.0 <= self && self <= 1.0 } {
+    public pure fn stress(&self) -> Float { 0.0 <= self && self <= 1.0 } {
         (1.0 - (N_DIM as Float) * self.gamma_kk).clamp(0.0, 1.0)
     }
 
-    pub pure fn health_check(&self) -> (HealthLevel, Text) {
+    public pure fn health_check(&self) -> (HealthLevel, Text) {
         let s = self.stress();
         let msg = f"{self.sector}-sector stress={s:.2f}";
         match s {
@@ -542,9 +542,9 @@ $$
 #### 10.2. Automated Testing Protocol
 
 ```verum
-mount std.time.{Timestamp, now};
+mount core.time.{Timestamp, now};
 
-pub type DiagnosticReport is {
+public type DiagnosticReport is {
     timestamp:    Timestamp,
     p:            Float,
     r:            Float,
@@ -556,14 +556,14 @@ pub type DiagnosticReport is {
 };
 
 /// Full diagnostic cycle [I].
-pub fn run_diagnostics(gamma: &StaticMatrix<Complex, 7, 7>) using [Clock]
+public fn run_diagnostics(gamma: &StaticMatrix<Complex, 7, 7>) using [Clock]
     -> DiagnosticReport
 {
-    let p = (gamma @ gamma).trace().real();
+    let p = (gamma.matmul(&gamma)).trace().real();
     let r = if p > 1.0e-12 { 1.0 / ((N_DIM as Float) * p) } else { 0.0 };   // T
     let phi = compute_phi(gamma);                                            // Φ ≥ 1 for integration
     let diag = gamma.diagonal().map(|c| c.real());
-    let sigma = StaticVector.<Float, 7>.from_array(
+    let sigma = StaticVector<Float, 7>.from_array(
         diag.iter().map(|g| (1.0 - (N_DIM as Float) * g).clamp(0.0, 1.0))
                    .collect_array()
     );
@@ -579,7 +579,7 @@ pub fn run_diagnostics(gamma: &StaticMatrix<Complex, 7, 7>) using [Clock]
         let collapsed: Text = sigma.iter().enumerate()
             .filter(|(_, s)| **s >= 1.0)
             .map(|(i, _)| names[i])
-            .collect::<Vec<_>>().join(", ");
+            .collect<Vec<_>>().join(", ");
         alerts.push(f"CRITICAL: σ-collapse of sectors [{collapsed}]");
     }
     if kappa < 1.0 / 7.0 {
@@ -599,7 +599,7 @@ pub fn run_diagnostics(gamma: &StaticMatrix<Complex, 7, 7>) using [Clock]
 In addition to standard unit and integration tests, a UHM system requires **coherence regressions**:
 
 ```verum
-mount std.test.{test, assert_with_msg};
+mount core.test.{test, assert_with_msg};
 
 /// Regression tests: a task must not destroy coherence.
 /// Each test executes in isolation; shared state is threaded explicitly.
@@ -740,10 +740,10 @@ This turns the modern approach to AI (where Output is paramount) on its head.
 
 ```verum
 /// Viability-first agent: check survival before task decision.
-pub type HolonomicAgent is { /* inner state */ };
+public type HolonomicAgent is { /* inner state */ };
 
 implement HolonomicAgent {
-    pub fn act(&mut self, env: &Environment) -> Action {
+    public fn act(&mut self, env: &Environment) -> Action {
         // 1. FIRST check viability.
         if !self.is_viable() { return self.emergency_protocol(); }
 
@@ -757,7 +757,7 @@ implement HolonomicAgent {
         action
     }
 
-    pub pure fn is_viable(&self) -> Bool { self.purity() > P_CRITICAL }
+    public pure fn is_viable(&self) -> Bool { self.purity() > P_CRITICAL }
 }
 ```
 
@@ -781,9 +781,9 @@ implement HolonomicAgent {
 ### 15. Monitoring Metrics
 
 ```verum
-pub const P_OPTIMAL: Float = 3.0 / (N_DIM as Float);     // ≈ 0.429 (L2 boundary)
+public const P_OPTIMAL: Float = 3.0 / (N_DIM as Float);     // ≈ 0.429 (L2 boundary)
 
-pub type ViabilityMetrics is {
+public type ViabilityMetrics is {
     purity:               Float,    // P = Tr(Γ²)
     dominant_eigenvalue:  Float,    // λ_max
     structural_deviation: Float,    // ‖Γ − I/N‖_F² = P − 1/N  (T)
@@ -793,23 +793,23 @@ pub type ViabilityMetrics is {
 };
 
 implement ViabilityMetrics {
-    pub pure fn is_viable(&self)    -> Bool { self.purity > P_CRITICAL }
+    public pure fn is_viable(&self)    -> Bool { self.purity > P_CRITICAL }
 
     /// R = 1 / (N·P) — exact algebraic identity (T, error < 1e-7).
-    pub pure fn reflexivity(&self) -> Float {
+    public pure fn reflexivity(&self) -> Float {
         if self.purity > 1.0e-12 { 1.0 / ((N_DIM as Float) * self.purity) } else { 0.0 }
     }
 
     /// Operational proxy: P / P_crit.
-    pub pure fn confidence(&self) -> Float { self.purity / P_CRITICAL }
+    public pure fn confidence(&self) -> Float { self.purity / P_CRITICAL }
 
     /// L2 zone (cognitive qualia): P_crit < P ≤ P_opt ⇔ R ≥ 1/3 (T).
-    pub pure fn is_l2_zone(&self) -> Bool {
+    public pure fn is_l2_zone(&self) -> Bool {
         P_CRITICAL < self.purity && self.purity <= P_OPTIMAL
     }
 
     /// Dashboard-ready rendering: labelled zone + all metrics.
-    pub pure fn to_dashboard(&self) -> DashboardView {
+    public pure fn to_dashboard(&self) -> DashboardView {
         let zone = match () {
             _ if self.is_l2_zone()         => "L2".text(),
             _ if self.purity > P_OPTIMAL    => "L1+".text(),
@@ -829,7 +829,7 @@ implement ViabilityMetrics {
     }
 }
 
-pub type DashboardView is {
+public type DashboardView is {
     p: Float, p_crit: Float, margin: Float, r: Float,
     lambda_max: Float, sigma_norm: Float, kappa: Float,
     zone: Text, status: Text,

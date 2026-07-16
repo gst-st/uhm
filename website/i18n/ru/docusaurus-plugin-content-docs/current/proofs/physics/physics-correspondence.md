@@ -158,21 +158,21 @@ L-унификация даёт **вычислимые** формулы:
 
 ```verum
 /// χ_S: Γ → Ω for the subobject S.
-pub pure fn characteristic_morphism<const N: Int>(
+public pure fn characteristic_morphism<const N: Int>(
     gamma: &StaticMatrix<Complex, N, N>,
     s:     &Subspace<N>,
 ) -> StaticMatrix<Complex, N, N>
 {
     let p_s = projector_onto_subspace(s);
-    &p_s @ gamma @ &p_s
+    p_s.matmul(&gamma).matmul(&p_s)
 }
 
 /// L_k = √χ_{S_k} for atoms of Ω. For basis projectors √P = P, so L_k = χ_k.
-pub pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, N, N>)
+public pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, N, N>)
     -> [StaticMatrix<Complex, N, N>; N]
 {
     (0..N).map(|k| {
-        let mut chi_k = StaticMatrix.<Complex, N, N>.zeros();
+        let mut chi_k = StaticMatrix<Complex, N, N>.zeros();
         chi_k[k, k] = Complex.one();        // atom = basis projector
         chi_k
     }).to_array()

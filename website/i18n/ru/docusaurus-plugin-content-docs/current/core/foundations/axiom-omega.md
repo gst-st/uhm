@@ -1216,7 +1216,7 @@ $$
 ```verum
 /// Calibrate λ_m from observed correlations.
 /// Method: λ_m ∝ |∂γ_Om/∂τ| — rate of change of O↔m coherence under evolution.
-pub fn calibrate_lambda<S: EvolvingSystem>(
+public fn calibrate_lambda<S: EvolvingSystem>(
     system:    &mut S,
     n_samples: Int { self > 0 },
 ) -> Map<Dim, Float>

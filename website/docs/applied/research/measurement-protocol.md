@@ -332,13 +332,13 @@ This section describes a **minimal viable implementation**. Many parameters requ
 ### Metric Computation Algorithm
 
 ```verum
-mount std.math.linalg.{svd, eigvalsh, StaticMatrix};
-mount std.tensor.{Tensor, frobenius_norm};
-mount std.math.random.{XorShift128, Rng};
+mount core.math.linalg.{svd, eigvalsh, StaticMatrix};
+mount core.math.tensor.{Tensor, frobenius_norm};
+mount core.math.random.{XorShift128, Rng};
 
 /// Access protocol for deep models. Implementations provide hooks
 /// on activations, attention, and automatic differentiation.
-pub protocol ModelHooks {
+public protocol ModelHooks {
     type Activation;
     fn get_activations(&self, batch: &Tensor<Float>) -> List<Self.Activation>;
     fn get_attention_weights(&self, batch: &Tensor<Float>) -> Tensor<Float>;
@@ -348,23 +348,23 @@ pub protocol ModelHooks {
 }
 
 /// Helpers — specialised per architecture.
-pub pure fn estimate_mutual_info(x: &Tensor<Float>, y: &Tensor<Float>) -> Float
+public pure fn estimate_mutual_info(x: &Tensor<Float>, y: &Tensor<Float>) -> Float
     = unimplemented;
 
-pub pure fn von_neumann_entropy(attn: &Tensor<Float>) -> Float
+public pure fn von_neumann_entropy(attn: &Tensor<Float>) -> Float
     = unimplemented;
 
-pub pure fn build_attention_graph(attn: &Tensor<Float>) -> Tensor<Float>
+public pure fn build_attention_graph(attn: &Tensor<Float>) -> Tensor<Float>
     = unimplemented;
 
 /// 7-dimensional UHM metrics I_A…I_U for a neural network.
-pub type DimensionMetrics is {
+public type DimensionMetrics is {
     i_a: Float, i_s: Float, i_d: Float, i_l: Float,
     i_e: Float, i_o: Float, i_u: Float,
 };
 
 /// Compute 7 UHM dimensions for a neural network.
-pub fn compute_dimension_metrics<M: ModelHooks>(
+public fn compute_dimension_metrics<M: ModelHooks>(
     model:         &M,
     input_batch:   &Tensor<Float>,
     layer_indices: Maybe<List<Int>>,
@@ -392,7 +392,7 @@ pub fn compute_dimension_metrics<M: ModelHooks>(
         comms.push(model.layer_commutator_norm(idx[i], idx[j], input_batch));
     }}
     let i_l = if comms.is_empty() { 1.0 }
-              else { 1.0 - comms.iter().sum::<Float>() / (comms.len() as Float) };
+              else { 1.0 - comms.iter().sum<Float>() / (comms.len() as Float) };
 
     // I_E: exp(von Neumann entropy of attention).
     let i_e = von_neumann_entropy(&attn).exp();
@@ -429,26 +429,26 @@ pub fn compute_dimension_metrics<M: ModelHooks>(
 /// Reconstruct the coherence matrix via Cholesky from 7 dimension metrics.
 /// Simplest diagonal reconstruction — off-diagonal γ_ij requires additional
 /// correlation data from a regulariser L_off.
-pub pure fn reconstruct_gamma(m: &DimensionMetrics) -> StaticMatrix<Complex, 7, 7> {
-    let raw = StaticVector.<Float, 7>.from_array(
+public pure fn reconstruct_gamma(m: &DimensionMetrics) -> StaticMatrix<Complex, 7, 7> {
+    let raw = StaticVector<Float, 7>.from_array(
         [m.i_a, m.i_s, m.i_d, m.i_l, m.i_e, m.i_o, m.i_u]
     ).map(|v| v.clamp(0.01, 1.0));           // prevent degeneracy
     let total: Float = raw.iter().sum();
     let diag = raw.map(|v| v / total);
 
     // Cholesky factor L = diag(√p_k).
-    let l = StaticMatrix.<Complex, 7, 7>.diagonal(
+    let l = StaticMatrix<Complex, 7, 7>.diagonal(
         diag.map(|v| Complex.from_real(v.sqrt()))
     );
-    let gamma = &l @ l.adjoint();
+    let gamma = l.matmul(&l.adjoint());
     &gamma / gamma.trace()                                              // normalise
 }
 
 /// Purity P = Tr(Γ²).
-pub pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
+public pure fn compute_purity(gamma: &StaticMatrix<Complex, 7, 7>) -> Float
     where ensures 1.0/7.0 <= result && result <= 1.0
 {
-    (gamma @ gamma).trace().real()
+    (gamma.matmul(&gamma)).trace().real()
 }
 ```
 
@@ -580,20 +580,20 @@ The correspondence between dimensions and physiological frequencies is a **hypot
 
 ```verum
 /// Dual-interview data bundle.
-pub type DualInterviewData is {
+public type DualInterviewData is {
     external_data: Map<Text, Float>,      // behavioural/physiological per pair
     self_report:   Map<Text, Float>,      // verbal reports per pair
     conflict_data: Map<Text, Float>,      // reaction times per pair
 };
 
 /// Reconstruct the 7×7 Gap matrix from dual-interview data.
-pub pure fn reconstruct_gap_profile(data: &DualInterviewData)
+public pure fn reconstruct_gap_profile(data: &DualInterviewData)
     -> StaticMatrix<Float, 7, 7>
 {
     const DIMS: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
     let median_rt = data.conflict_data.values().to_list().median().unwrap_or(1.0);
 
-    let mut gap = StaticMatrix.<Float, 7, 7>.zeros();
+    let mut gap = StaticMatrix<Float, 7, 7>.zeros();
     for i in 0..7 { for j in (i + 1)..7 {
         let pair = f"{DIMS[i]}{DIMS[j]}";
 
@@ -757,17 +757,17 @@ The Pothos-Busemeyer approach (Annual Review of Psychology, 2022) models cogniti
 ### Step 7: Full Algorithm $\pi_{\mathrm{bio}}$ {#алгоритм-pi-bio}
 
 ```verum
-mount std.math.calculus.bfgs;
+mount core.math.calculus.bfgs;
 
 /// Full biological data bundle for π_bio.
-pub type NeuralData is {
+public type NeuralData is {
     eeg_spectral:    Map<Text, Float>,    // {alpha, beta, gamma_low, gamma_high, theta, infraslow}
     hrv_features:    Map<Text, Float>,    // {LF, HF, LF_HF_ratio}
     cfc_matrix:      StaticMatrix<Float, 7, 7>,   // cross-frequency coupling values
     reaction_times:  StaticVector<Float, 21>,      // RT values for the 21 off-diagonal pairs
 };
 
-pub type BioCalibration is {
+public type BioCalibration is {
     weights:         StaticVector<Float, 7>,
     linear_params:   StaticMatrix<Float, 7, 2>,    // (a_k, b_k) per dimension
     lambda_phys:     Float,                         // physical regulariser weight
@@ -775,13 +775,13 @@ pub type BioCalibration is {
 
 /// π_bio: NeuralData → D(ℂ⁷). Full reconstruction of Γ from biological data.
 /// Structural [T] via G₂-rigidity (T-42a); empirical calibration [H].
-pub fn pi_bio(
+public fn pi_bio(
     data:        &NeuralData,
     calibration: &BioCalibration,
 ) -> StaticMatrix<Complex, 7, 7>
 {
     // Step 1: diagonal from spectral powers — one value per dimension.
-    let raw_diag = StaticVector.<Float, 7>.from_array([
+    let raw_diag = StaticVector<Float, 7>.from_array([
         data.eeg_spectral.get("alpha").unwrap_or(0.0),       // A
         data.eeg_spectral.get("infraslow").unwrap_or(0.0),   // S  (fMRI BOLD proxy)
         data.eeg_spectral.get("beta").unwrap_or(0.0),        // D
@@ -793,8 +793,8 @@ pub fn pi_bio(
     ]);
 
     let weighted = (0..7).map(|i| calibration.weights[i] * raw_diag[i]).to_array();
-    let total = weighted.iter().sum::<Float>();
-    let mut diag = StaticVector.<Float, 7>.from_array(
+    let total = weighted.iter().sum<Float>();
+    let mut diag = StaticVector<Float, 7>.from_array(
         weighted.map(|v| (v / total).clamp(1.0e-4, 1.0))     // prevent degeneracy
     );
     let diag_sum: Float = diag.iter().sum();
@@ -805,11 +805,11 @@ pub fn pi_bio(
     let off_diag_mag = &data.cfc_matrix * c_scale;
 
     // Step 3: Phases from reaction times → Gap → θ_ij = arcsin(Gap).
-    let rt_mean: Float = data.reaction_times.iter().sum::<Float>() / 21.0;
+    let rt_mean: Float = data.reaction_times.iter().sum<Float>() / 21.0;
     let rt_std = (data.reaction_times.iter()
-                     .map(|r| (r - rt_mean).pow(2)).sum::<Float>() / 21.0)
+                     .map(|r| (r - rt_mean).pow(2)).sum<Float>() / 21.0)
                      .sqrt() + 1.0e-8;
-    let mut phases = StaticMatrix.<Float, 7, 7>.zeros();
+    let mut phases = StaticMatrix<Float, 7, 7>.zeros();
     let mut idx = 0;
     for i in 0..7 { for j in (i + 1)..7 {
         let gap = ((data.reaction_times[idx] - rt_mean) / rt_std).tanh();
@@ -822,7 +822,7 @@ pub fn pi_bio(
     // Step 4: MLE reconstruction via Cholesky. 48 real parameters:
     //   7 real diagonal + 21·2 = 42 off-diagonal (Re, Im).
     let neg_log_likelihood = |params: &StaticVector<Float, 48>| -> Float {
-        let mut l = StaticMatrix.<Complex, 7, 7>.zeros();
+        let mut l = StaticMatrix<Complex, 7, 7>.zeros();
         let mut k = 0;
         for i in 0..7 { for j in 0..=i {
             if i == j {
@@ -833,7 +833,7 @@ pub fn pi_bio(
                 k += 2;
             }
         }}
-        let gamma = &l @ l.adjoint();
+        let gamma = l.matmul(&l.adjoint());
         let gamma = &gamma / gamma.trace();
 
         // LL: diagonal agreement.
@@ -848,14 +848,14 @@ pub fn pi_bio(
         }}
 
         // Physical regulariser: hard floor at P > P_crit.
-        let p = (&gamma @ &gamma).trace().real();
+        let p = (gamma.matmul(&gamma)).trace().real();
         let p_penalty = -100.0 * (2.0 / 7.0 - p).max(0.0);
 
         -(ll_diag + ll_off + p_penalty)
     };
 
     // Initialise from the diagonal (triangle-flattened index k = i·(i+1)).
-    let mut x0 = StaticVector.<Float, 48>.zeros();
+    let mut x0 = StaticVector<Float, 48>.zeros();
     for i in 0..7 { x0[i * (i + 1)] = diag[i].sqrt(); }
 
     let result = bfgs(neg_log_likelihood, &x0, BfgsOptions {
@@ -863,7 +863,7 @@ pub fn pi_bio(
     });
 
     // Reconstruct Γ from the optimal parameters.
-    let mut l = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut l = StaticMatrix<Complex, 7, 7>.zeros();
     let mut k = 0;
     for i in 0..7 { for j in 0..=i {
         if i == j {
@@ -874,7 +874,7 @@ pub fn pi_bio(
             k += 2;
         }
     }}
-    let gamma = &l @ l.adjoint();
+    let gamma = l.matmul(&l.adjoint());
     &gamma / gamma.trace()
 }
 ```

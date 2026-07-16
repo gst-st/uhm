@@ -18,6 +18,10 @@ The code is written in **[Verum](https://verum-lang.org)** — a dependently-typ
 - `P_CRIT` ($P_{\text{crit}} = 2/7$) — [critical purity](/docs/proofs/dynamics/theorem-purity-critical)
 :::
 
+:::note API layer
+The listings target the **typed fixed-dimension layer** of `core.math.linalg` (`StaticMatrix<Complex, 7, 7>` with `.adjoint()`, free `expm`/`eigvalsh`, refined `CoherenceMatrix`). The `StaticMatrix` *type* exists today; its method surface is the layer under construction — what is executable now is the dynamic `Matrix<T: Numeric>` path. Full status map: [CC Implementation — Implementation status](/docs/applied/coherence-cybernetics/implementation#быстрый-старт).
+:::
+
 :::warning Implementation limitations
 This implementation includes full three-term evolution, but the following are absent:
 1. **Consciousness measures** $R$, $\Phi$, $D_{\text{diff}}$, $C$ — see [Self-observation](/docs/consciousness/foundations/self-observation)
@@ -73,16 +77,16 @@ When extending to composite systems $\mathbb{H}_{1 \otimes \cdots \otimes n}$, d
 ## Holon type
 
 ```verum
-mount std.math.complex;
-mount std.math.linalg.{Matrix, HermitianMatrix, expm, eigvalsh, norm};
+mount core.math.complex;
+mount core.math.linalg.{Matrix, HermitianMatrix, expm, eigvalsh, norm};
 
 /// Dimension labels (A, S, D, L, E, O, U).
-pub type Dim is A | S | D | L | E | O | U;
+public type Dim is A | S | D | L | E | O | U;
 
 /// A 7-dimensional coherence matrix — Hermitian, PSD, unit trace.
 /// Refinement predicate is checked by SMT at compile-time where possible,
 /// and by @verify(runtime) otherwise.
-pub type CoherenceMatrix is Matrix<Complex, 7, 7>
+public type CoherenceMatrix is Matrix<Complex, 7, 7>
     where is_hermitian(self)
        && is_psd(self)
        && (trace(self).real() - 1.0).abs() < 1.0e-10;
@@ -91,7 +95,7 @@ pub type CoherenceMatrix is Matrix<Complex, 7, 7>
 /// (UHM T-15..T-82). Evolution follows
 /// `dΓ/dτ = -i[H_eff, Γ] + D[Γ] + R[Γ, E]` with
 /// regeneration R[Γ, E] = κ(Γ) · (ρ* - Γ) · g_V(P).
-pub type Holon is {
+public type Holon is {
     mut gamma: CoherenceMatrix,
     mut gamma_target: Maybe<CoherenceMatrix>,
     mut H: HermitianMatrix<Complex, 7>,
@@ -100,24 +104,24 @@ pub type Holon is {
 };
 
 /// Critical purity — viability threshold (T-39a [T]).
-pub const P_CRIT: Float = 2.0 / 7.0;        // ≈ 0.2857
+public const P_CRIT: Float = 2.0 / 7.0;        // ≈ 0.2857
 
 /// Minimal regeneration: κ_bootstrap = ω₀/N where N = 7.
 /// Categorical derivation: /docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap.
-pub const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;  // ≈ 0.143 (for ω₀ = 1)
+public const KAPPA_BOOTSTRAP: Float = 1.0 / 7.0;  // ≈ 0.143 (for ω₀ = 1)
 
 /// Optimal purity upper edge of the Goldilocks window (T-124 [T]).
-pub const P_OPT: Float = 3.0 / 7.0;
+public const P_OPT: Float = 3.0 / 7.0;
 
 /// Dimension index helper.
-pub fn index(d: Dim) -> Int { d as Int }
+public fn index(d: Dim) -> Int { d as Int }
 
 implement Holon {
     /// Initialise a pure Holon: |ψ⟩ = (1/√7) Σ|i⟩ (fully coherent attractor).
-    pub fn new_pure(omega_0: Float) -> Holon
+    public fn new_pure(omega_0: Float) -> Holon
         where ensures result.purity() == 1.0
     {
-        let psi = Vector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+        let psi = Vector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
         let g = psi.outer(psi.conjugate());
         Holon {
             gamma:        g,
@@ -129,27 +133,27 @@ implement Holon {
     }
 
     /// Initialise a maximally mixed Holon: Γ = I/7 (pre-viable state).
-    pub fn new_mixed(omega_0: Float) -> Holon
+    public fn new_mixed(omega_0: Float) -> Holon
         where ensures (result.purity() - 1.0/7.0).abs() < 1.0e-10
     {
-        let g = (Matrix.<Complex, 7, 7>.identity()) / Complex.from_real(7.0);
+        let g = (Matrix<Complex, 7, 7>.identity()) / Complex.from_real(7.0);
         Holon { gamma: g, gamma_target: Maybe.None,
                 H: build_hamiltonian(), L: build_lindblad_operators(),
                 omega_0: omega_0 }
     }
 
     /// Purity P = Tr(Γ²) — viability measure (T-39a).
-    pub fn purity(&self) -> Float
+    public fn purity(&self) -> Float
         where ensures 1.0/7.0 <= result && result <= 1.0
     {
-        (self.gamma @ self.gamma).trace().real()
+        (self.gamma.matmul(&self.gamma)).trace().real()
     }
 
     /// Viability check: P > P_crit (T-39a).
-    pub fn is_viable(&self) -> Bool { self.purity() > P_CRIT }
+    public fn is_viable(&self) -> Bool { self.purity() > P_CRIT }
 
     /// Von Neumann entropy S = -Tr(Γ log Γ).
-    pub fn entropy(&self) -> Float
+    public fn entropy(&self) -> Float
         where ensures 0.0 <= result && result <= (7.0).ln()
     {
         let eigs = eigvalsh(&self.gamma)
@@ -159,7 +163,7 @@ implement Holon {
 
     /// Base regeneration rate κ₀ = ω₀ · |γ_OE| · |γ_OU| / γ_OO
     /// (T-64 [T], categorical derivation via Coh_E → κ).
-    pub fn kappa_0(&self) -> Float where ensures result >= 0.0 {
+    public fn kappa_0(&self) -> Float where ensures result >= 0.0 {
         let o = index(Dim.O); let e = index(Dim.E); let u = index(Dim.U);
         let g_OO = self.gamma[o, o].real();
         if g_OO < 1.0e-12 { return 0.0; }        // No Ground connection
@@ -171,7 +175,7 @@ implement Holon {
     /// E-coherence (HS-projection π_E, T-73 [T]):
     /// Coh_E(Γ) = ‖π_E(Γ)‖²_HS / ‖Γ‖²_HS
     ///          = (γ_EE² + 2·Σ_{i≠E}|γ_Ei|²) / Tr(Γ²) ∈ [1/7, 1].
-    pub fn coh_e(&self) -> Float
+    public fn coh_e(&self) -> Float
         where ensures 1.0/7.0 <= result && result <= 1.0
     {
         let e = index(Dim.E);
@@ -186,7 +190,7 @@ implement Holon {
     }
 
     /// Set the regeneration target ρ* (full theory: ρ* = φ(Γ), T-96 [T]).
-    pub fn set_target(&mut self, target: Maybe<CoherenceMatrix>) {
+    public fn set_target(&mut self, target: Maybe<CoherenceMatrix>) {
         self.gamma_target = match target {
             Maybe.Some(t) => Maybe.Some(t),
             Maybe.None    => Maybe.Some(self.gamma.clone()),
@@ -200,10 +204,10 @@ implement Holon {
         let p = self.purity();
         let g_v = ((p - P_CRIT) / (P_OPT - P_CRIT)).clamp(0.0, 1.0);
 
-        if g_v <= 0.0 { return Matrix.<Complex, 7, 7>.zeros(); }
+        if g_v <= 0.0 { return Matrix<Complex, 7, 7>.zeros(); }
         let target = match self.gamma_target {
             Maybe.Some(t) => t,
-            Maybe.None    => return Matrix.<Complex, 7, 7>.zeros(),
+            Maybe.None    => return Matrix<Complex, 7, 7>.zeros(),
         };
 
         let kappa = KAPPA_BOOTSTRAP + self.kappa_0() * self.coh_e();
@@ -214,20 +218,20 @@ implement Holon {
     }
 
     /// Single evolution step: dΓ/dτ = -i[H, Γ] + D[Γ] + R[Γ, E].
-    pub fn evolve(&mut self, dtau: Float, delta_f: Float)
+    public fn evolve(&mut self, dtau: Float, delta_f: Float)
         where requires dtau > 0.0 && dtau <= 0.1
     {
         // 1. Unitary: Γ ← U Γ U† where U = exp(-i H dτ).
         let u = expm(Complex.i().neg() * &self.H * Complex.from_real(dtau));
-        self.gamma = &u @ &self.gamma @ u.adjoint();
+        self.gamma = u.matmul(&self.gamma).matmul(&u.adjoint());
 
         // 2. Dissipative: Γ ← Γ + dτ · D[Γ].
         for lk in &self.L {
             let ldag = lk.adjoint();
             self.gamma = &self.gamma + Complex.from_real(dtau) * (
-                lk @ &self.gamma @ &ldag
-                - Complex.from_real(0.5) * (&ldag @ lk @ &self.gamma)
-                - Complex.from_real(0.5) * (&self.gamma @ &ldag @ lk)
+                lk.matmul(&self.gamma).matmul(&ldag)
+                - Complex.from_real(0.5) * (ldag.matmul(&lk).matmul(&self.gamma))
+                - Complex.from_real(0.5) * (self.gamma.matmul(&ldag).matmul(&lk))
             );
         }
 
@@ -240,10 +244,10 @@ implement Holon {
 
     /// Bootstrap: P ≈ 1/7 → P > P_crit via enhanced regeneration
     /// (resolves the stillbirth paradox, see Genesis protocol).
-    pub fn bootstrap(&mut self, max_steps: Int, target_p: Float) -> Bool
+    public fn bootstrap(&mut self, max_steps: Int, target_p: Float) -> Bool
         where requires target_p > P_CRIT && target_p < 1.0
     {
-        let psi = Vector.<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
+        let psi = Vector<Complex, 7>.repeat(Complex.one() / 7.0.sqrt());
         self.gamma_target = Maybe.Some(psi.outer(psi.conjugate()));
 
         for _ in 0..max_steps {
@@ -254,13 +258,13 @@ implement Holon {
     }
 
     /// Spectrum of experiential content (eigenvalues sorted descending).
-    pub fn spectrum(&self) -> [Float; 7] {
+    public fn spectrum(&self) -> [Float; 7] {
         let eigs = eigvalsh(&self.gamma);
         eigs.to_array().sort_by(|a, b| b.partial_cmp(a).unwrap())
     }
 
     /// Full experiential content: (intensity, quality) pairs.
-    pub fn full_exp(&self) -> [ExpContent; 7] {
+    public fn full_exp(&self) -> [ExpContent; 7] {
         let (eigs, vecs) = self.gamma.eigh();
         let mut idx: [Int; 7] = (0..7).collect();
         idx.sort_by(|i, j| eigs[*j].partial_cmp(&eigs[*i]).unwrap());
@@ -271,7 +275,7 @@ implement Holon {
     }
 
     /// Interaction with another Holon: partial averaging, coupling ∈ [0, 1].
-    pub fn interact(&mut self, other: &mut Holon, coupling: Float)
+    public fn interact(&mut self, other: &mut Holon, coupling: Float)
         where requires 0.0 <= coupling && coupling <= 1.0
     {
         let c = Complex.from_real(coupling);
@@ -284,7 +288,7 @@ implement Holon {
 }
 
 /// Single quale: intensity + projective-space quality.
-pub type ExpContent is {
+public type ExpContent is {
     intensity: Float,
     quality:   Vector<Complex, 7>,
 };
@@ -293,7 +297,7 @@ pub type ExpContent is {
 fn build_hamiltonian() -> HermitianMatrix<Complex, 7> {
     let freqs: [Float; 7] = [1.0, 0.8, 1.2, 0.9, 1.1, 0.7, 1.0];
     let coupling = Complex.from_real(0.1);
-    let mut h = HermitianMatrix.<Complex, 7>.zeros();
+    let mut h = HermitianMatrix<Complex, 7>.zeros();
     for i in 0..7 { h[i, i] = Complex.from_real(freqs[i]); }
     for i in 0..6 { h[i, i+1] = coupling; h[i+1, i] = coupling; }
     h[6, 0] = coupling; h[0, 6] = coupling;           // ring closure
@@ -304,7 +308,7 @@ fn build_hamiltonian() -> HermitianMatrix<Complex, 7> {
 fn build_lindblad_operators() -> [Matrix<Complex, 7, 7>; 7] {
     let rate = 0.01;
     (0..7).map(|k| {
-        let mut l = Matrix.<Complex, 7, 7>.zeros();
+        let mut l = Matrix<Complex, 7, 7>.zeros();
         l[k, k] = Complex.from_real(rate.sqrt());
         l
     }).to_array()
@@ -323,7 +327,7 @@ fn canonical_projective(v: Vector<Complex, 7>) -> Vector<Complex, 7> {
 }
 
 /// Fubini-Study metric d_FS([|ψ⟩], [|φ⟩]) = arccos(|⟨ψ|φ⟩|) ∈ [0, π/2].
-pub pure fn fubini_study_distance(v1: &Vector<Complex, 7>, v2: &Vector<Complex, 7>) -> Float
+public pure fn fubini_study_distance(v1: &Vector<Complex, 7>, v2: &Vector<Complex, 7>) -> Float
     where ensures 0.0 <= result && result <= Float.PI / 2.0
 {
     let a = v1 / norm(v1);
@@ -376,7 +380,7 @@ fn demo_holon_evolution() using [IO] {
 }
 
 /// Full distance between the experiential content of two Holons.
-pub pure fn exp_distance(a: &Holon, b: &Holon, alpha: Float) -> Float
+public pure fn exp_distance(a: &Holon, b: &Holon, alpha: Float) -> Float
     where requires alpha >= 0.0
 {
     let ea = a.full_exp();
@@ -402,12 +406,12 @@ fn demo_isospectral() using [IO, Random] {
     let exp1 = holon.full_exp();
 
     // Random unitary via QR decomposition of a complex Gaussian matrix.
-    let noise = Matrix.<Complex, 7, 7>.random_gaussian();
+    let noise = Matrix<Complex, 7, 7>.random_gaussian();
     let (u_random, _) = noise.qr();
 
     // Isospectral state via unitary transformation.
     let mut holon_iso = Holon.new_pure(1.0);
-    holon_iso.gamma = &u_random @ &holon.gamma @ u_random.adjoint();
+    holon_iso.gamma = u_random.matmul(&holon.gamma).matmul(&u_random.adjoint());
 
     // Verification.
     let spectra_equal = (0..7).all(|i|
@@ -472,7 +476,7 @@ Levels correspond to n-truncations of the ∞-groupoid $\mathbf{Exp}_\infty$:
 
 ```verum
 /// Interiority levels (n-truncations of the ∞-groupoid Exp_∞).
-pub type Level is
+public type Level is
     | NonViable                         // P ≤ P_crit
     | L0                                 // basic interiority
     | L1                                 // phenomenal geometry (Φ > 0)
@@ -481,37 +485,37 @@ pub type Level is
     | L4;                                // unitary consciousness
 
 /// Integration threshold for L2 (coherences ≥ diagonal).
-pub const PHI_TH: Float = 1.0;
+public const PHI_TH: Float = 1.0;
 /// Reflection threshold for L2 — universal formula R^(n)_th = 1/(n+1).
-pub const R_TH:   Float = 1.0 / 3.0;
+public const R_TH:   Float = 1.0 / 3.0;
 /// Second-order reflection threshold for L3.
-pub const R2_TH:  Float = 1.0 / 4.0;
+public const R2_TH:  Float = 1.0 / 4.0;
 /// Purity threshold for L4 — see T-124 [T].
-pub const P_L4:   Float = 6.0 / 7.0;
+public const P_L4:   Float = 6.0 / 7.0;
 
 /// Extended Holon with consciousness measures Φ, R, R^(n), level classification.
 ///
 /// Levels correspond to n-truncations of ∞-groupoid:
 /// L0: τ_≤0, L1: τ_≤1, L2: τ_≤2, L3: τ_≤3, L4: full ∞-groupoid.
-pub type HolonExtended is {
+public type HolonExtended is {
     base: Holon,
 };
 
 implement HolonExtended {
-    pub fn new_pure(omega_0: Float) -> HolonExtended {
+    public fn new_pure(omega_0: Float) -> HolonExtended {
         HolonExtended { base: Holon.new_pure(omega_0) }
     }
 
-    pub fn new_mixed(omega_0: Float) -> HolonExtended {
+    public fn new_mixed(omega_0: Float) -> HolonExtended {
         HolonExtended { base: Holon.new_mixed(omega_0) }
     }
 
     /// Integration measure Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii².
     /// Ratio of off-diagonal to diagonal mass — connectivity of dimensions.
-    pub fn integration(&self) -> Float where ensures result >= 0.0 {
+    public fn integration(&self) -> Float where ensures result >= 0.0 {
         let g = &self.base.gamma;
         let diag_sq: Float = (0..7).map(|i| g[i, i].real().pow(2)).sum();
-        let total_sq: Float = g.frobenius_norm_sq();
+        let total_sq: Float = g.norm_frobenius();
         if diag_sq < 1.0e-12 { 0.0 }
         else { (total_sq - diag_sq) / diag_sq }
     }
@@ -519,10 +523,10 @@ implement HolonExtended {
     /// Reflection measure R = 1 - ‖Γ − φ(Γ)‖² / ‖Γ‖² (T-96 [T]).
     /// **Approximation [C]**: φ(Γ) ≈ diag(Γ) for E-anchored systems.
     /// Full version via logical Liouvillian — see /docs/proofs/categorical/formalization-phi.
-    pub fn reflection(&self) -> Float
+    public fn reflection(&self) -> Float
         where ensures 0.0 <= result && result <= 1.0
     {
-        let total_sq = self.base.gamma.frobenius_norm_sq();
+        let total_sq = self.base.gamma.norm_frobenius();
         if total_sq < 1.0e-12 { return 0.0; }
         let diag_sq: Float = (0..7).map(|i| self.base.gamma[i, i].abs().pow(2)).sum();
         diag_sq / total_sq
@@ -530,7 +534,7 @@ implement HolonExtended {
 
     /// n-th order reflection R^(n) ≈ R + (1−R)·(1 − exp(−n)).
     /// Exponential convergence to fixed point — stub for full spectral decomposition.
-    pub fn reflection_n(&self, n: Int) -> Float
+    public fn reflection_n(&self, n: Int) -> Float
         where requires n >= 0, ensures 0.0 <= result && result <= 1.0
     {
         if n < 1 { return 1.0; }
@@ -540,7 +544,7 @@ implement HolonExtended {
     }
 
     /// Level classification — the central decision function.
-    pub fn classify(&self) -> Level {
+    public fn classify(&self) -> Level {
         let p = self.base.purity();
         if p <= P_CRIT { return Level.NonViable; }
 
@@ -562,7 +566,7 @@ implement HolonExtended {
 
     /// L3 lifetime: τ_3 = 1 / (κ_bootstrap · (1 − R^(2))).
     /// Returns Float.INFINITY when the state is already stable.
-    pub fn l3_lifetime(&self) -> Float {
+    public fn l3_lifetime(&self) -> Float {
         let r2 = self.reflection_n(2);
         if r2 >= 1.0 { Float.INFINITY }
         else { 1.0 / (KAPPA_BOOTSTRAP * (1.0 - r2)) }
@@ -632,18 +636,18 @@ The following algorithms implement constructions **derived** from the [subobject
 
 ```verum
 /// A projector S on C^7: S² = S, S† = S.
-pub type Projector is Matrix<Complex, 7, 7>
-    where is_hermitian(self) && (self @ self - self).frobenius_norm() < 1.0e-10;
+public type Projector is Matrix<Complex, 7, 7>
+    where is_hermitian(self) && (self.matmul(&self) - self).frobenius_norm() < 1.0e-10;
 
 /// Characteristic morphism χ_S: Γ → Ω for the subobject S ↪ Γ.
 ///
 /// χ_S(Γ) = S Γ S — restriction of Γ to the subobject, normalised.
 /// Measures the "degree of membership" of Γ in the admissible subspace S.
-pub pure fn characteristic_morphism(gamma: &CoherenceMatrix, s: &Projector)
+public pure fn characteristic_morphism(gamma: &CoherenceMatrix, s: &Projector)
     -> Matrix<Complex, 7, 7>
     where ensures is_hermitian(result)
 {
-    let chi = s @ gamma @ s;
+    let chi = s.matmul(&gamma).matmul(&s);
     let tr = chi.trace();
     if tr.abs() > 1.0e-12 { &chi / tr } else { chi }
 }
@@ -652,29 +656,29 @@ pub pure fn characteristic_morphism(gamma: &CoherenceMatrix, s: &Projector)
 ### Temporal modality ▷
 
 ```verum
-mount std.math.linalg.{StaticMatrix, identity};
-mount std.math.complex.Complex;
+mount core.math.linalg.{StaticMatrix, identity};
+mount core.math.complex.Complex;
 
 /// Temporal modality ▷: Ω → Ω.
 /// "Later" operator generating discrete time τ ∈ ℤ₇: τ_n = ▷ⁿ(now).
 /// Implementation: cyclic shift V in the clock basis |k⟩ → |k+1 mod 7⟩,
 /// applied as ▷(ρ) = V ρ V†.
-pub pure fn temporal_modality(omega: &StaticMatrix<Complex, 7, 7>)
+public pure fn temporal_modality(omega: &StaticMatrix<Complex, 7, 7>)
     -> StaticMatrix<Complex, 7, 7>
 {
     let v = cyclic_shift_7();
-    &v @ omega @ v.adjoint()
+    v.matmul(&omega).matmul(&v.adjoint())
 }
 
 /// Clock-basis cyclic shift: V_{i,j} = δ_{i, (j+1) mod 7}.
 pure fn cyclic_shift_7() -> StaticMatrix<Complex, 7, 7> {
-    let mut v = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut v = StaticMatrix<Complex, 7, 7>.zeros();
     for j in 0..7 { v[(j + 1) % 7, j] = Complex.one(); }
     v
 }
 
 /// Time sequence [τ_0, τ_1, …, τ_{n-1}] by iterated ▷.
-pub pure fn time_sequence(initial: &StaticMatrix<Complex, 7, 7>, n_steps: Int { self > 0 })
+public pure fn time_sequence(initial: &StaticMatrix<Complex, 7, 7>, n_steps: Int { self > 0 })
     -> [StaticMatrix<Complex, 7, 7>]
 {
     let mut out = [initial.clone()];
@@ -688,7 +692,7 @@ pub pure fn time_sequence(initial: &StaticMatrix<Complex, 7, 7>, n_steps: Int { 
 ### Lindblad operators L_k from Ω
 
 ```verum
-mount std.math.linalg.{StaticMatrix, eigh, matrix_sqrt, identity};
+mount core.math.linalg.{StaticMatrix, eigh, matrix_sqrt, identity};
 
 /// Derive 7 Lindblad operators L_k = √χ_{S_k} from the atoms of Ω
 /// (L-unification, T-82 [T]). Atoms are basis projectors S_k = |k⟩⟨k|.
@@ -696,12 +700,12 @@ mount std.math.linalg.{StaticMatrix, eigh, matrix_sqrt, identity};
 /// **CPTP completeness**: Σ_k L_k† L_k = I — holds automatically for basis
 /// projectors. This guarantees trace and positivity preservation, but **not**
 /// viability: a CPTP channel may map P > P_crit → P < P_crit.
-pub pure fn compute_lindblad_from_omega(gamma: &CoherenceMatrix)
+public pure fn compute_lindblad_from_omega(gamma: &CoherenceMatrix)
     -> [StaticMatrix<Complex, 7, 7>; 7]
 {
     (0..7).map(|k| {
         // Atom projector S_k = |k⟩⟨k|.
-        let mut s_k = StaticMatrix.<Complex, 7, 7>.zeros();
+        let mut s_k = StaticMatrix<Complex, 7, 7>.zeros();
         s_k[k, k] = Complex.one();
 
         // χ_k = characteristic morphism of S_k on Γ.
@@ -718,16 +722,16 @@ pure fn matrix_sqrt_psd(m: &StaticMatrix<Complex, 7, 7>) -> StaticMatrix<Complex
 {
     let (eigvals, eigvecs) = eigh(m);
     let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
-    &eigvecs @ StaticMatrix.<Complex, 7, 7>.diagonal(sqrt_eigs) @ eigvecs.adjoint()
+    eigvecs.matmul(&StaticMatrix<Complex, 7, 7>.diagonal(sqrt_eigs)).matmul(&eigvecs.adjoint())
 }
 
 /// Verify the CPTP completeness condition Σ_k L_k† L_k = I (tol = 1e-10).
-pub pure fn verify_cptp_condition(ops: &[StaticMatrix<Complex, 7, 7>; 7]) -> Bool {
+public pure fn verify_cptp_condition(ops: &[StaticMatrix<Complex, 7, 7>; 7]) -> Bool {
     let total = ops.iter().fold(
-        StaticMatrix.<Complex, 7, 7>.zeros(),
-        |acc, l| acc + (l.adjoint() @ l),
+        StaticMatrix<Complex, 7, 7>.zeros(),
+        |acc, l| acc + (l.adjoint().matmul(&l)),
     );
-    (total - identity::<Complex, 7>()).frobenius_norm() < 1.0e-10
+    (total - identity<Complex, 7>()).frobenius_norm() < 1.0e-10
 }
 ```
 
@@ -736,28 +740,28 @@ pub pure fn verify_cptp_condition(ops: &[StaticMatrix<Complex, 7, 7>; 7]) -> Boo
 ```verum
 /// Logical Liouvillian ℒ_Ω[Γ] = -i[H, Γ] + Σ_k γ_k (L_k Γ L_k† − ½{L_k†L_k, Γ}).
 /// L_k derived from classifier Ω atoms (L-unification, T-82).
-pub pure fn logical_liouvillian(
+public pure fn logical_liouvillian(
     gamma: &CoherenceMatrix,
     h:     &StaticMatrix<Complex, 7, 7>,
     rates: Maybe<StaticVector<Float, 7>>,
 ) -> StaticMatrix<Complex, 7, 7>
     where requires is_hermitian(h)
 {
-    let r = rates.unwrap_or(StaticVector.<Float, 7>.filled(0.01));
+    let r = rates.unwrap_or(StaticVector<Float, 7>.filled(0.01));
 
     // Unitary part: -i[H, Γ].
-    let unitary = Complex.i().neg() * (h @ gamma - gamma @ h);
+    let unitary = Complex.i().neg() * (h.matmul(&gamma) - gamma.matmul(&h));
 
     // Dissipative part: D_Ω[Γ] via L-unified operators.
     let ops = compute_lindblad_from_omega(gamma);
     let dissipator = ops.iter().enumerate().fold(
-        StaticMatrix.<Complex, 7, 7>.zeros(),
+        StaticMatrix<Complex, 7, 7>.zeros(),
         |acc, (k, l_k)| {
             let l_dag = l_k.adjoint();
             let term =
                   (l_k   @ gamma  @ &l_dag)
-                - (&l_dag @ l_k  @ gamma) * Complex.from_real(0.5)
-                - (gamma @ &l_dag @ l_k) * Complex.from_real(0.5);
+                - (l_dag.matmul(&l_k).matmul(&gamma)) * Complex.from_real(0.5)
+                - (gamma.matmul(&l_dag).matmul(&l_k)) * Complex.from_real(0.5);
             acc + term * Complex.from_real(r[k])
         },
     );
@@ -767,7 +771,7 @@ pub pure fn logical_liouvillian(
 
 /// Stationary self-model: φ(Γ) = lim_{τ→∞} exp(τ ℒ_Ω)[Γ] (T-96 [T]).
 /// Finite-τ approximation: orbit average over period τ.
-pub pure fn phi_from_liouvillian(
+public pure fn phi_from_liouvillian(
     gamma:       &CoherenceMatrix,
     h:           &StaticMatrix<Complex, 7, 7>,
     tau_period:  Float { self > 0.0 },
@@ -786,7 +790,7 @@ pub pure fn phi_from_liouvillian(
     }
 
     // Orbit average.
-    let mut acc = StaticMatrix.<Complex, 7, 7>.zeros();
+    let mut acc = StaticMatrix<Complex, 7, 7>.zeros();
     for m in &trajectory { acc = acc + m; }
     let avg = &acc / Complex.from_real(trajectory.len().as_float());
     &avg / avg.trace()
@@ -811,12 +815,12 @@ fn demo_l_unification() using [IO] {
 
     // 3. Find φ(Γ) — stationary self-model.
     let phi_gamma = phi_from_liouvillian(gamma, &h, 7.0, 0.1);
-    let p_phi = (phi_gamma @ phi_gamma).trace().real();
+    let p_phi = (phi_gamma.matmul(&phi_gamma)).trace().real();
     IO.println(f"P(φ(Γ)) = {p_phi:.4f}");
 
     // 4. Reflection measure: R = 1 − ‖Γ − φ(Γ)‖² / ‖Γ‖².
     let diff = gamma - phi_gamma;
-    let r = 1.0 - diff.frobenius_norm_sq() / gamma.frobenius_norm_sq();
+    let r = 1.0 - diff.norm_frobenius() / gamma.norm_frobenius();
     IO.println(f"R(Γ) = {r:.4f}");
 }
 ```
@@ -830,24 +834,24 @@ The following algorithms implement the [Grothendieck topology](/docs/core/founda
 ### Bures metric
 
 ```verum
-mount std.math.constants.{UnitInterval, NonNegative};
+mount core.math.constants.{UnitInterval, NonNegative};
 
 /// Bures fidelity F(ρ, σ) = (Tr √(√ρ σ √ρ))² ∈ [0, 1].
-pub pure fn bures_fidelity<const N: Int>(
+public pure fn bures_fidelity<const N: Int>(
     rho:   &StaticMatrix<Complex, N, N>,
     sigma: &StaticMatrix<Complex, N, N>,
 ) -> UnitInterval
 {
-    let sqrt_rho   = matrix_sqrt_psd_n::<N>(rho);
-    let inner      = &sqrt_rho @ sigma @ sqrt_rho;
-    let sqrt_inner = matrix_sqrt_psd_n::<N>(&inner);
+    let sqrt_rho   = matrix_sqrt_psd_n<N>(rho);
+    let inner      = sqrt_rho.matmul(&sigma).matmul(&sqrt_rho);
+    let sqrt_inner = matrix_sqrt_psd_n<N>(&inner);
     let fid = sqrt_inner.trace().real().pow(2);
     fid.clamp(0.0, 1.0)
 }
 
 /// Bures metric (chord form): d_B^chord(ρ, σ) = √(2(1 − √F(ρ, σ))) ∈ [0, √2].
 /// Monotone under CPTP maps; Riemannian metric on density-matrix manifold.
-pub pure fn bures_distance<const N: Int>(
+public pure fn bures_distance<const N: Int>(
     rho:   &StaticMatrix<Complex, N, N>,
     sigma: &StaticMatrix<Complex, N, N>,
 ) -> NonNegative
@@ -864,22 +868,22 @@ pure fn matrix_sqrt_psd_n<const N: Int>(m: &StaticMatrix<Complex, N, N>)
 {
     let (eigvals, eigvecs) = eigh(m);
     let sqrt_eigs = eigvals.map(|v| v.max(0.0).sqrt());
-    &eigvecs @ StaticMatrix.<Complex, N, N>.diagonal(sqrt_eigs) @ eigvecs.adjoint()
+    eigvecs.matmul(&StaticMatrix<Complex, N, N>.diagonal(sqrt_eigs)).matmul(&eigvecs.adjoint())
 }
 ```
 
 ### Bures coverings
 
 ```verum
-mount std.math.random.{Rng, XorShift128};
+mount core.math.random.{Rng, XorShift128};
 
 /// A CPTP channel as an abstract first-class function.
-pub type CptpChannel<const N: Int> = pure fn(&StaticMatrix<Complex, N, N>)
+public type CptpChannel<const N: Int> = pure fn(&StaticMatrix<Complex, N, N>)
     -> StaticMatrix<Complex, N, N>;
 
 /// Sample points inside the Bures ball B_B(Γ, r).
 /// Rejection-sampling of Hermitian perturbations, projected to the density-matrix manifold.
-pub fn generate_ball_samples<const N: Int>(
+public fn generate_ball_samples<const N: Int>(
     gamma:     &StaticMatrix<Complex, N, N>,
     radius:    Float { self > 0.0 },
     n_samples: Int   { self > 0    },
@@ -892,7 +896,7 @@ pub fn generate_ball_samples<const N: Int>(
 
     for _ in 0..(n_samples * 10) {
         // Random Hermitian perturbation, scaled to ~radius/2.
-        let raw = StaticMatrix.<Complex, N, N>.random_gaussian(&mut rng);
+        let raw = StaticMatrix<Complex, N, N>.random_gaussian(&mut rng);
         let pert_hermitian = (&raw + raw.adjoint()) / Complex.from_real(2.0);
         let pert = &pert_hermitian
             * Complex.from_real(radius * 0.5 / pert_hermitian.frobenius_norm());
@@ -918,12 +922,12 @@ pure fn project_to_density_matrix<const N: Int>(m: &StaticMatrix<Complex, N, N>)
     let clamped = eigvals.map(|v| v.max(0.0));
     let total:   Float = clamped.iter().sum();
     let norm_eigs = clamped.map(|v| v / total);
-    &eigvecs @ StaticMatrix.<Complex, N, N>.diagonal(norm_eigs) @ eigvecs.adjoint()
+    eigvecs.matmul(&StaticMatrix<Complex, N, N>.diagonal(norm_eigs)).matmul(&eigvecs.adjoint())
 }
 
 /// Check whether a family {(Γᵢ, Φᵢ)} of CPTP channels is a **Bures covering** of Γ:
 /// B_B(Γ, δ) ⊆ ⋃ᵢ Φᵢ(B_B(Γᵢ, ε)).
-pub fn is_bures_covering<const N: Int>(
+public fn is_bures_covering<const N: Int>(
     gamma:         &StaticMatrix<Complex, N, N>,
     channels:      &[(StaticMatrix<Complex, N, N>, CptpChannel<N>)],
     epsilon:       Float { self > 0.0 },
@@ -950,17 +954,17 @@ pub fn is_bures_covering<const N: Int>(
 /// Categorical definition:
 /// `Ω := O(C, d_B)` — lattice of open sets in the Bures topology.
 /// For UHM with N = 7 dimensions, |Ω| = 7 atoms (one per dimension A, S, D, L, E, O, U).
-pub type OmegaClassifier is {
+public type OmegaClassifier is {
     atoms: [StaticMatrix<Complex, 7, 7>; 7],
 };
 
 /// Label map: atom index ↔ dimension name.
-pub const DIMENSION_NAMES: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
+public const DIMENSION_NAMES: [Text; 7] = ["A", "S", "D", "L", "E", "O", "U"];
 
 implement OmegaClassifier {
-    pub fn new() -> OmegaClassifier {
+    public fn new() -> OmegaClassifier {
         let atoms = (0..7).map(|k| {
-            let mut s_k = StaticMatrix.<Complex, 7, 7>.zeros();
+            let mut s_k = StaticMatrix<Complex, 7, 7>.zeros();
             s_k[k, k] = Complex.one();             // |k⟩⟨k|
             s_k
         }).to_array();
@@ -969,25 +973,25 @@ implement OmegaClassifier {
 
     /// Characteristic morphism χ_{S_k}: Γ → Ω.
     /// For projector S_k = |k⟩⟨k|: χ_S(Γ) = √F(Γ, S) = √γ_kk ∈ [0, 1].
-    pub fn chi(&self, gamma: &CoherenceMatrix, d: Dim) -> UnitInterval {
+    public fn chi(&self, gamma: &CoherenceMatrix, d: Dim) -> UnitInterval {
         let s_k = &self.atoms[index(d)];
-        let fid = (s_k @ gamma).trace().real().clamp(0.0, 1.0);
+        let fid = (s_k.matmul(&gamma)).trace().real().clamp(0.0, 1.0);
         fid.sqrt()
     }
 
     /// Lindblad operator L_k := √χ_{S_k} derived from classifier atom k.
-    pub pure fn lindblad_operator(&self, d: Dim) -> StaticMatrix<Complex, 7, 7> {
+    public pure fn lindblad_operator(&self, d: Dim) -> StaticMatrix<Complex, 7, 7> {
         matrix_sqrt_psd(&self.atoms[index(d)])
     }
 
     /// All 7 Lindblad operators (one per dimension).
-    pub pure fn all_lindblad_operators(&self) -> [StaticMatrix<Complex, 7, 7>; 7] {
+    public pure fn all_lindblad_operators(&self) -> [StaticMatrix<Complex, 7, 7>; 7] {
         (0..7).map(|k| self.lindblad_operator(Dim.from_index(k))).to_array()
     }
 
     /// Verify Σ_k L_k† L_k = I (CPTP completeness, tol = 1e-10).
     /// For basis projectors this follows from partition of unity.
-    pub pure fn verify_cptp(&self) -> Bool {
+    public pure fn verify_cptp(&self) -> Bool {
         verify_cptp_condition(&self.all_lindblad_operators())
     }
 
@@ -995,17 +999,17 @@ implement OmegaClassifier {
     ///
     /// **Theorem**: For Γ with P(Γ) > P_crit = 2/7 a full covering exists
     /// (all 7 atoms carry non-zero weight).
-    pub pure fn atomic_covering(&self, gamma: &CoherenceMatrix)
+    public pure fn atomic_covering(&self, gamma: &CoherenceMatrix)
         -> List<(StaticMatrix<Complex, 7, 7>, CptpChannel<7>)>
     {
         let mut out = List.new();
         for k in 0..7 {
             let s_k = &self.atoms[k];
-            let weight = (s_k @ gamma).trace().real();
+            let weight = (s_k.matmul(&gamma)).trace().real();
             if weight > 1.0e-10 {
                 let proj = s_k.clone();
                 let channel: CptpChannel<7> = move |rho| {
-                    let result = &proj @ rho @ &proj;
+                    let result = proj.matmul(&rho).matmul(&proj);
                     let tr = result.trace();
                     if tr.abs() > 1.0e-12 { &result / tr } else { result }
                 };
@@ -1017,7 +1021,7 @@ implement OmegaClassifier {
 }
 
 impl Dim {
-    pub pure fn from_index(k: Int) -> Dim
+    public pure fn from_index(k: Int) -> Dim
         where requires 0 <= k && k <= 6
     {
         match k {

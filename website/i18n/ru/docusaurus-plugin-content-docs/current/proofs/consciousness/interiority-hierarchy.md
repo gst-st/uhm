@@ -710,17 +710,17 @@ $C > 0$ возможно для систем всех уровней, но:
 ## 6.1 Алгоритм Классификации Уровня
 
 ```verum
-mount std.math.linalg.{matrix_rank, eigh};
+mount core.math.linalg.{matrix_rank, eigh};
 
 /// Interiority-hierarchy levels.
-pub type InteriorityLevel is Interiority | PhenomenalGeometry | CognitiveQualia;
+public type InteriorityLevel is Interiority | PhenomenalGeometry | CognitiveQualia;
 
 /// Derived thresholds (see [T-129](./operationalization#t-129)).
-pub const R_TH:   Float = 1.0 / 3.0;     // Reflection threshold (derived)
-pub const PHI_TH: Float = 1.0;           // Integration threshold (derived)
+public const R_TH:   Float = 1.0 / 3.0;     // Reflection threshold (derived)
+public const PHI_TH: Float = 1.0;           // Integration threshold (derived)
 
 /// Classify a system by level in the interiority hierarchy.
-pub pure fn classify_level(gamma: &StaticMatrix<Complex, 7, 7>) -> InteriorityLevel {
+public pure fn classify_level(gamma: &StaticMatrix<Complex, 7, 7>) -> InteriorityLevel {
     let rho_e = extract_experience_subsystem(gamma);
     let r     = compute_reflexivity(gamma);
     let phi   = compute_integration(gamma);
@@ -733,25 +733,25 @@ pub pure fn classify_level(gamma: &StaticMatrix<Complex, 7, 7>) -> InteriorityLe
 }
 
 /// R = 1 − ‖Γ − φ(Γ)‖² / ‖Γ‖².
-pub pure fn compute_reflexivity(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_reflexivity(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { 0.0 <= self && self <= 1.0 }
 {
     let phi_gamma = self_model(gamma);
-    1.0 - (gamma - phi_gamma).frobenius_norm_sq() / gamma.frobenius_norm_sq()
+    1.0 - (gamma - phi_gamma).norm_frobenius() / gamma.norm_frobenius()
 }
 
 /// Φ = Σ_{i≠j} |γ_ij|² / Σ_i γ_ii².
-pub pure fn compute_integration(gamma: &StaticMatrix<Complex, 7, 7>)
+public pure fn compute_integration(gamma: &StaticMatrix<Complex, 7, 7>)
     -> Float { self >= 0.0 }
 {
     let diag_sq: Float = (0..7).map(|i| gamma[i, i].real().pow(2)).sum();
-    let total_sq = gamma.frobenius_norm_sq();
+    let total_sq = gamma.norm_frobenius();
     let off_sq = total_sq - diag_sq;
     if diag_sq > 0.0 { off_sq / diag_sq } else { 0.0 }
 }
 
 /// Cognitive-qualia evaluation — Ψ function.
-pub type Qualia is {
+public type Qualia is {
     qualia:            List<QualeContent>,
     r:                 Float,
     phi:               Float,
@@ -759,20 +759,20 @@ pub type Qualia is {
     cognitive_weight:  Float { 0.0 <= self && self <= 1.0 },
 };
 
-pub type QualeContent is {
+public type QualeContent is {
     intensity: Float,
     quality:   StaticVector<Complex, 7>,
     weight:    Float,
 };
 
-pub type CognitiveOptions is { soft: Bool, beta: Float };
+public type CognitiveOptions is { soft: Bool, beta: Float };
 
 implement Default for CognitiveOptions {
     fn default() -> Self { CognitiveOptions { soft: false, beta: 10.0 } }
 }
 
 /// Full cognitive-qualia function with optional soft (sigmoidal) transitions.
-pub pure fn q_cognitive(
+public pure fn q_cognitive(
     rho:  &StaticMatrix<Complex, 7, 7>,
     opts: CognitiveOptions,
 ) -> Maybe<Qualia>
@@ -813,7 +813,7 @@ pub pure fn q_cognitive(
 ```verum
 fn main() using [IO] {
     // 1. Atom — Level 0 (Interiority).
-    let gamma_atom = StaticMatrix.<Complex, 7, 7>.diagonal_from_reals(
+    let gamma_atom = StaticMatrix<Complex, 7, 7>.diagonal_from_reals(
         [0.9, 0.05, 0.02, 0.01, 0.01, 0.005, 0.005]
     );
     IO.println(f"Atom: Level {classify_level(&gamma_atom)}");

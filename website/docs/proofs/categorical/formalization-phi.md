@@ -666,13 +666,13 @@ where $R_0 = \rho^*_\Omega$ is the stationary state of the full dynamics (catego
 **Algorithm for computing φ (spectral method):**
 
 ```verum
-mount std.math.linalg.{StaticMatrix, StaticVector, eig, inverse};
+mount core.math.linalg.{StaticMatrix, StaticVector, eig, inverse};
 
 /// Compute φ(Γ) via spectral decomposition of the logical Liouvillian.
 ///
 /// The Liouvillian ℒ_Ω is vectorised as a 49×49 superoperator; φ projects Γ
 /// onto the kernel (stationary modes with Re(λ) ≈ 0).
-pub pure fn compute_phi_spectral(
+public pure fn compute_phi_spectral(
     gamma:   &StaticMatrix<Complex, 7, 7>,
     l_omega: &StaticMatrix<Complex, 49, 49>,
 ) -> StaticMatrix<Complex, 7, 7>
@@ -681,7 +681,7 @@ pub pure fn compute_phi_spectral(
     let l_vectors = inverse(&r_vectors).unwrap().transpose();        // left eigenvectors
 
     let gamma_vec = gamma.flatten();                                 // 49-vector
-    let mut phi_vec = StaticVector.<Complex, 49>.zeros();
+    let mut phi_vec = StaticVector<Complex, 49>.zeros();
     const TOL: Float = 1.0e-10;
 
     for k in 0..49 {
@@ -691,7 +691,7 @@ pub pure fn compute_phi_spectral(
         }
     }
 
-    let phi_gamma = phi_vec.reshape::<7, 7>();
+    let phi_gamma = phi_vec.reshape<7, 7>();
     let hermitised = (&phi_gamma + phi_gamma.adjoint()) / Complex.from_real(2.0);
     &hermitised / hermitised.trace()                                  // renormalise Tr = 1
 }
@@ -746,11 +746,11 @@ where $\mathrm{Fid}(\rho_1, \rho_2) := |\mathrm{Tr}(\sqrt{\sqrt{\rho_1}\rho_2\sq
 **Algorithm for computing $R^{(2)}$:**
 
 ```verum
-mount std.math.linalg.matrix_sqrt;
+mount core.math.linalg.matrix_sqrt;
 
 /// Second-order reflection R^(2) = Fid(φ(Γ), φ(φ(Γ))).
 /// Fidelity F(ρ₁, ρ₂) = |Tr √(√ρ₁ ρ₂ √ρ₁)|².
-pub pure fn compute_r2(
+public pure fn compute_r2(
     gamma:   &StaticMatrix<Complex, 7, 7>,
     l_omega: &StaticMatrix<Complex, 49, 49>,
 ) -> Float { 0.0 <= self && self <= 1.0 }
@@ -759,7 +759,7 @@ pub pure fn compute_r2(
     let phi_phi_gamma = compute_phi_spectral(&phi_gamma, l_omega);
 
     let sqrt_phi = matrix_sqrt(&phi_gamma);
-    let inner = &sqrt_phi @ phi_phi_gamma @ &sqrt_phi;
+    let inner = sqrt_phi.matmul(&phi_phi_gamma).matmul(&sqrt_phi);
     let trace_sqrt = matrix_sqrt(&inner).trace().abs();
     (trace_sqrt * trace_sqrt).clamp(0.0, 1.0)
 }
