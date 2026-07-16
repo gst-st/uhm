@@ -479,14 +479,14 @@ sequenceDiagram
     participant L1 as Line L₁ (t of q+1)
     participant L2 as Line L₂ (t of q+1)
     participant R as Receiver
-    S->>L1: Tessera packet (layers on PK_L1, PK_L2, PK_R; β-ratchet)
+    S->>L1: Tessera packet (layers on PK_L1, PK_L2, PK_R · β-ratchet)
     Note over L1: t members publish partial decryptions
     L1->>L1: threshold assembled → layer 1 peeled, L₂ known
     L1->>L2: re-encrypted packet (constant size) + Poisson delay
     Note over L2: t members assemble the threshold
     L2->>L2: layer 2 peeled, R known
-    L2->>R: delivery; holonomy Hol verifies path integrity
-    Note over S,R: no single node knew (S,R); a threshold is needed in EVERY hop
+    L2->>R: delivery · holonomy Hol verifies path integrity
+    Note over S,R: no single node knew (S,R) · a threshold is needed in EVERY hop
 ```
 
 ---
@@ -626,7 +626,7 @@ sequenceDiagram
     Synd->>Synd: σ = address of degraded node (distance-3)
     Synd->>Heal: verdict (crash / grey / Byzantine / partition)
     Heal->>Cell: reroute via k* · LRC repair · reintegrate (gap 2/3)
-    Note over Cell,Heal: Φ_net is the leading alarm; ≥2 faults → escalate to parent cell
+    Note over Cell,Heal: Φ_net is the leading alarm · ≥2 faults → escalate to parent cell
 ```
 
 ## 6.10 What the coherence matrix gives — synthesis, and honest limits {#diakrisis-synthesis}
@@ -1019,7 +1019,7 @@ sequenceDiagram
     participant Lrdv as Rendezvous line L_rdv (rotates per epoch)
     participant Svc as Service-line (t of q+1, no single host)
     C->>Lrdv: RDV_INTRO enc to PK_L_rdv (cookie + first NYX hop) + PoW
-    Note over Lrdv,Svc: service listens on its lines; threshold-decrypts the intro
+    Note over Lrdv,Svc: service listens on its lines · threshold-decrypts the intro
     Svc->>C: RDV_REPLY via NYX-ROUTE to the client cookie
     Note over C,Svc: both build an APHANTOS-Full circuit meeting at a NYX node
     C->>Svc: encrypted stream — neither side learns the other's coordinate
