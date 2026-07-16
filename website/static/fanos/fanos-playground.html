@@ -111,6 +111,8 @@
   .fline.affected{stroke:var(--danger);stroke-width:3;filter:drop-shadow(0 0 7px var(--danger))}
   .fline.dead{stroke:var(--faint);stroke-width:1.2;stroke-dasharray:3 6;opacity:.45}
   .fline.click{cursor:pointer}
+  .fhit{stroke:transparent;stroke-width:22;fill:none;pointer-events:stroke;cursor:pointer}
+  .fline.hover{stroke:var(--violet);stroke-width:3}
   .fnode{fill:var(--surface-2);stroke:var(--muted);stroke-width:1.6;transition:.28s;cursor:pointer}
   .fnode:hover{stroke:var(--lantern);fill:var(--raised)}
   .fnode.sel{fill:var(--lantern);stroke:var(--lantern-soft);filter:drop-shadow(0 0 10px var(--lantern))}
@@ -247,6 +249,18 @@
   .bandkey b{font-weight:600}
   .dotv{color:var(--violet)} .dotg{color:var(--good)} .dotd{color:var(--danger)}
 
+  /* proteus */
+  .morphs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}
+  .morph{font-family:'SF Mono',ui-monospace,Menlo,monospace;font-size:12px;padding:7px 11px;border-radius:9px;
+    border:1px solid var(--line);background:var(--surface-2);color:var(--muted);cursor:pointer;transition:.2s}
+  .morph:hover{color:var(--ink);border-color:var(--nyx)}
+  .morph.on{color:var(--ink);border-color:var(--nyx);background:var(--nyx-glow);box-shadow:0 0 0 1px var(--nyx)}
+  .strip{display:flex;gap:2px;height:36px;margin:10px 0 4px;border-radius:8px;overflow:hidden;border:1px solid var(--line-2)}
+  .strip > i{flex:1 1 0;display:block;min-width:0}
+  .rbar{display:flex;gap:5px;margin-top:6px}
+  .rbar > i{height:9px;flex:1;border-radius:99px;background:var(--raised)}
+  .rbar > i.on{background:linear-gradient(90deg,var(--nyx),var(--violet))}
+
   table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
   .tblwrap{overflow-x:auto}
   th,td{text-align:right;padding:9px 12px;border-bottom:1px solid var(--line-2);font-variant-numeric:tabular-nums}
@@ -293,12 +307,13 @@
 
 <div class="wrap">
   <div class="topbar">
-    <div class="brand">FANOS<span class="dot">·</span>APHANTOS<span class="dot">·</span>NYX<span class="dot">·</span>DIAKRISIS<span class="dot">·</span>CALYPSO</div>
+    <div class="brand">FANOS<span class="dot">·</span>APHANTOS<span class="dot">·</span>NYX<span class="dot">·</span>DIAKRISIS<span class="dot">·</span>CALYPSO<span class="dot">·</span>PROTEUS</div>
     <div class="navlinks">
       <a href="#router">маршрутизатор</a>
       <a href="#diakrisis">DIAKRISIS</a>
       <a href="#health">когерентность</a>
       <a href="#nyx">анонимность</a>
+      <a href="#proteus">обход цензуры</a>
       <a href="#stack">стек</a>
     </div>
     <button class="toggle" id="themeBtn" aria-label="Переключить тему">◐ тема</button>
@@ -315,8 +330,9 @@
         <span><b class="g">Νύξ</b> ночь · пороговая луковица</span>
         <span><b class="g">διάκρισις</b> различение · самодиагностика</span>
         <span><b class="g">Καλυψώ</b> сокрытие · скрытые сервисы</span>
+        <span><b class="g">Πρωτεύς</b> оборотень · обход цензуры</span>
       </div>
-      <p class="lede">Адрес узла — точка проективной плоскости <span class="mono">PG(2,q)</span>. Встреча двух узлов — <b>одно векторное произведение в поле</b>, а не обход хеш-таблицы. Вся математика ниже считается вживую и совпадает с верификатором <span class="mono">fanos_verify.py</span> (V1–V19) до цифры. Кликните два огня справа.</p>
+      <p class="lede">Адрес узла — точка проективной плоскости <span class="mono">PG(2,q)</span>. Встреча двух узлов — <b>одно векторное произведение в поле</b>, а не обход хеш-таблицы. Вся математика ниже считается вживую и совпадает с верификатором <span class="mono">fanos_verify.py</span> (V1–V22) до цифры. Кликните два огня справа.</p>
     </div>
     <div class="fano-hero">
       <svg id="fano" class="fano" viewBox="0 0 400 372" role="img" aria-label="Интерактивная плоскость Фано">
@@ -565,6 +581,43 @@
   </div>
 </section>
 
+<!-- PROTEUS -->
+<section id="proteus">
+  <div class="wrap">
+    <p class="kicker">Часть XIII · PROTEUS · обход цензуры и DPI · опционально</p>
+    <h2>Держится там, где падают XRAY и Shadowsocks</h2>
+    <p class="sub">Урок поля: <b>подражание проигрывает</b> («Parrot is Dead» — любое отклонение от разрешённого протокола есть различитель, цензор учится на нём). Держится обратное — <b>«выглядеть ничем»</b> с разной сигнатурой на каждом развёртывании (класс AmneziaWG). PROTEUS берёт это и добавляет FANOS-родное: <b>маяк ротирует полиморфизм по эпохам</b>, так что сигнатура движется во времени — обученный DPI-классификатор протухает. Выключен по умолчанию, полностью конфигурируемый. Выберите морф:</p>
+    <div class="panel split">
+      <div class="stage">
+        <div class="morphs" id="morphs"></div>
+        <div class="mono" style="font-size:12px;color:var(--faint)">что видит DPI на проводе:</div>
+        <div class="strip" id="strip" aria-hidden="true"></div>
+        <div class="readout" style="margin-top:8px">
+          <div><span class="k">выглядит как =</span> <span class="v" id="mLook">—</span></div>
+          <div><span class="k">вердикт DPI =</span> <span class="g" id="mVerdict">—</span></div>
+        </div>
+        <div class="mono" style="font-size:11px;color:var(--faint);margin-top:12px">устойчивость к обнаружению</div>
+        <div class="rbar" id="rbar"></div>
+        <p class="hint" id="mNote" style="text-align:left;margin-top:10px;min-height:34px"></p>
+      </div>
+      <div class="read">
+        <div class="fact"><span class="pill">подвижные мосты</span><span>Точка входа <span class="mono">bridge = MapToLine(VRF(s, epoch))</span> ротируется каждую эпоху — статического списка для блокировки <b>нет</b>. Цензор вынужден пере-перечислять каждую эпоху.</span></div>
+        <div class="ctl" style="margin-top:10px">
+          <label>Эпоха <span class="val" id="vBep">0</span></label>
+          <input type="range" id="sBep" min="0" max="40" step="1" value="0">
+          <div class="cap" style="margin-top:8px">цензор блокирует все мосты, что видел до текущей эпохи</div>
+        </div>
+        <div class="readout" style="margin-top:6px">
+          <div><span class="k">мост этой эпохи =</span> <span class="v" id="bLine">—</span></div>
+          <div><span class="k">заблокировано цензором =</span> <span class="d" id="bBlocked">0</span> из 57 прямых</div>
+          <div><span class="k">клиент достижим =</span> <span class="g" id="bReach">100%</span> будущих эпох</div>
+        </div>
+        <div class="fact" style="margin-top:14px"><span class="pill">честно · гонка</span><span><b>Не</b> вечная невидимость. Цель — сделать блок дорогим и повторяющимся каждую эпоху; примитивы проверены (obfs4/uTLS/MASQUE/Snowflake), новизна — композиция + маячная ротация. <b>[С]</b> · проверено V22.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- STACK / BIG PICTURE -->
 <section id="stack">
   <div class="wrap">
@@ -573,6 +626,7 @@
     <p class="sub">Восемь слоёв — прямой стек (как сообщение строится и доставляется). DIAKRISIS — <b>сквозной план</b>: сеть, наблюдающая себя (проприоцепция). Всё построено на одной проективной геометрии.</p>
     <div class="stack">
       <div class="layer plane"><div class="lc">◇</div><div class="lt"><b>DIAKRISIS</b> — сквозной рефлексивный план: госсип здоровья → синдром → самоисцеление (третий порядок)</div></div>
+      <div class="layer plane"><div class="lc">≈</div><div class="lt"><b>PROTEUS</b> (опц.) — полиморфная обёртка транспорта под L2: обход DPI/цензуры, подвижные мосты, маячная ротация сигнатуры</div></div>
       <div class="layer"><div class="lc">L7</div><div class="lt"><b>Стимулы</b> — анонимные кредиты, блокчейн-субстрат</div></div>
       <div class="layer"><div class="lc">L6</div><div class="lt"><b>Крипта</b> — PQ-гибрид: ML-KEM, ML-DSA, BLAKE3, VRF, порог</div></div>
       <div class="layer"><div class="lc">L5</div><div class="lt"><b>APHANTOS</b> — приватность: профили Lite/Full, луковица NYX, CALYPSO</div></div>
@@ -618,8 +672,8 @@
 <footer>
   <div class="wrap">
     <div class="prov">
-      <span class="stat">provenance:</span> все числа воспроизводятся <span class="mono">/fanos/fanos_verify.py</span> (V1–V19: геометрия, кворумы, кривая порога, синдром, неразбиваемость, меры Φ/P/R, окно субъекта).<br>
-      <span class="stat">status:</span> референс-архитектура. Кросс-рандеву, Штейнер, синдром, неразбиваемость, кривая порога, окно субъекта — <b>[Т]</b> (посчитано). Пороговый пакет Tessera, холономный ратчет, CALYPSO-хостинг — <b>[С]/[П]</b> (нужен формальный аудит).<br>
+      <span class="stat">provenance:</span> все числа воспроизводятся <span class="mono">/fanos/fanos_verify.py</span> (V1–V22: геометрия, кворумы, кривая порога, синдром, неразбиваемость, меры Φ/P/R, окно субъекта, многоотказная стратификация, подвижные мосты PROTEUS).<br>
+      <span class="stat">status:</span> референс-архитектура. Кросс-рандеву, Штейнер, синдром, неразбиваемость, кривая порога, окно субъекта — <b>[Т]</b> (посчитано). Пороговый пакет Tessera, холономный ратчет, CALYPSO-хостинг, обфускация PROTEUS — <b>[С]/[П]</b> (гонка вооружений; нужен формальный аудит).<br>
       <span class="stat">origin:</span> УГМ · Открытие 7 (проективная сеть) + расслоение Серра (gap-thermodynamics) + Σ-исчисление (Штейнер/Штейн) · синтез УГМ→SYNARC→FANOS.<br>
       <span class="stat">license:</span> предполагается открытая — CERN-OHL-S v2 / Apache-2.0 / CC-BY-SA. Первая реализация — на чистом Rust.
     </div>
@@ -671,7 +725,7 @@
     opts = opts||{};
     var linesEl = document.getElementById(lineGId), nodesEl = document.getElementById(nodeGId);
     linesEl.innerHTML=''; nodesEl.innerHTML='';
-    var lineNodes=[], nodeCircs=[];
+    var lineNodes=[], hitEls=[], nodeCircs=[];
     L.forEach(function(ln,i){
       var el;
       if(ln.kind==='circle'){ el=document.createElementNS(SVGNS,'circle');
@@ -686,6 +740,17 @@
         el.style.animation='draw .9s ease '+(0.15+i*0.08)+'s forwards';
       }
       linesEl.appendChild(el); lineNodes.push(el);
+      if(opts.lineClick){                                  // fat transparent hit-area so thin lines are clickable
+        el.style.pointerEvents='none';
+        var hit;
+        if(ln.kind==='circle'){ hit=document.createElementNS(SVGNS,'circle');
+          hit.setAttribute('cx',ln.cx); hit.setAttribute('cy',ln.cy); hit.setAttribute('r',ln.r); }
+        else { hit=document.createElementNS(SVGNS,'line');
+          hit.setAttribute('x1',P[ln.a].x); hit.setAttribute('y1',P[ln.a].y);
+          hit.setAttribute('x2',P[ln.b].x); hit.setAttribute('y2',P[ln.b].y); }
+        hit.setAttribute('class','fhit'); hit.dataset.i=i;
+        linesEl.appendChild(hit); hitEls.push(hit);
+      }
     });
     P.forEach(function(pt,i){
       var g=document.createElementNS(SVGNS,'g');
@@ -699,7 +764,7 @@
       lab.setAttribute('text-anchor','middle'); lab.setAttribute('class','fnlabel'); lab.textContent=opts.label?opts.label(i):pt.name;
       g.appendChild(circ); g.appendChild(lab); nodesEl.appendChild(g); nodeCircs.push(circ);
     });
-    return {lines:lineNodes, nodes:nodeCircs, linesEl:linesEl, nodesEl:nodesEl};
+    return {lines:lineNodes, hits:hitEls, nodes:nodeCircs, linesEl:linesEl, nodesEl:nodesEl};
   }
 
   // ---- rendezvous interaction (hero + router) ----
@@ -838,8 +903,10 @@
     else { pStatus.textContent='ячейка разбита на '+r.count+' части'; pStatus.className='d'; }
   }
   function attachPart(){
-    diagRefs.lines.forEach(function(el,i){
+    (diagRefs.hits||diagRefs.lines).forEach(function(el,i){
       el.onclick=function(){ if(mode!=='part') return; deadLines[i]=!deadLines[i]; renderPart(); };
+      el.onmouseenter=function(){ if(mode==='part' && !deadLines[i]) diagRefs.lines[i].classList.add('hover'); };
+      el.onmouseleave=function(){ diagRefs.lines[i].classList.remove('hover'); };
     });
   }
   attachLoc(); attachPart();
@@ -927,6 +994,66 @@
     cRdv.textContent='L'+'₀₁₂₃₄₅₆'.charAt(idx);
   }
   sEp.addEventListener('input',calypso); calypso();
+
+  // ---- PROTEUS: morph selector + moving-target bridge ----
+  var MORPHS=[
+    {id:'plain',      look:'обычный веб-трафик (QUIC/HTTP-3)', verdict:'разрешено, но узнаваемо', r:1, pat:'web',
+     note:'Ноль обфускации — режим открытой сети (по умолчанию).'},
+    {id:'polymorph',  look:'ничто узнаваемое — случайные байты + junk, разная сигнатура везде и каждую эпоху', verdict:'нет сигнатуры → нечего обучить', r:5, pat:'rand',
+     note:'Флагман (AmneziaWG-класс). Параметры junk/padding ротируются маяком по эпохам — обученный классификатор протухает.'},
+    {id:'tls-tunnel', look:'настоящая TLS-1.3 сессия к реальному сайту', verdict:'валидный TLS (под растущим давлением)', r:3, pat:'tls',
+     note:'Reality/uTLS: туннель через НАСТОЯЩЕЕ рукопожатие, не имитация. Активное зондирование видит реальный сайт.'},
+    {id:'masque-h3',  look:'обычный HTTP-3 CONNECT-UDP', verdict:'похоже на HTTP/3-прокси', r:3, pat:'web',
+     note:'MASQUE (RFC 9298) — сливается с нормальным HTTP/3.'},
+    {id:'fronted',    look:'трафик к большому CDN-домену', verdict:'CDN — блок бьёт по CDN', r:4, pat:'tls',
+     note:'meek/domain-fronting: collateral-freedom — блокировать = блокировать пол-интернета.'},
+    {id:'webrtc',     look:'видео/голосовой звонок', verdict:'WebRTC media', r:4, pat:'rtc',
+     note:'Snowflake: эфемерные добровольные прокси, тяжело блокировать без блока всего WebRTC.'}
+  ];
+  var CW={ web:['#5b46d6','#6ee7d6','#0e9384'], tls:['#0e9384','#6ee7d6','#93a0c2'], rtc:['#c9791a','#e8a444','#6ee7d6'] };
+  function hashByte(i){ var x=Math.sin(i*12.9898)*43758.5453; return x-Math.floor(x); }
+  function paintStrip(pat){
+    var strip=document.getElementById('strip'); strip.innerHTML='';
+    for(var i=0;i<40;i++){
+      var c=document.createElement('i'), col;
+      if(pat==='rand'){ var h=Math.floor(hashByte(i+Math.random()*1000)*360); col='hsl('+h+',55%,55%)'; }
+      else { var pal=CW[pat]||CW.web; col=pal[i%pal.length]; if(pat!=='rtc'&&i%7===0) col=pal[(i+1)%pal.length]; }
+      c.style.background=col; strip.appendChild(c);
+    }
+  }
+  var mBtns=document.getElementById('morphs');
+  MORPHS.forEach(function(m,idx){
+    var b=document.createElement('button'); b.className='morph'+(idx===1?' on':''); b.textContent=m.id; b.dataset.i=idx;
+    b.addEventListener('click',function(){ selectMorph(idx); });
+    mBtns.appendChild(b);
+  });
+  function selectMorph(idx){
+    var m=MORPHS[idx];
+    mBtns.querySelectorAll('.morph').forEach(function(x,j){ x.classList.toggle('on',j===idx); });
+    document.getElementById('mLook').textContent=m.look;
+    document.getElementById('mVerdict').textContent=m.verdict;
+    document.getElementById('mNote').textContent=m.note;
+    var rbar=document.getElementById('rbar'); rbar.innerHTML='';
+    for(var k=0;k<5;k++){ var i=document.createElement('i'); if(k<m.r) i.className='on'; rbar.appendChild(i); }
+    paintStrip(m.pat);
+  }
+  selectMorph(1); // default: polymorph (flagship)
+
+  // moving-target bridge decay (N=57 lines, q=7 cell)
+  var Nb=57, sBep=document.getElementById('sBep'), vBep=document.getElementById('vBep');
+  function bridgeAt(e){ return (e*31+7)%Nb; }               // illustrative pseudo-VRF
+  function proteusBridge(){
+    var e=+sBep.value; vBep.textContent=e;
+    document.getElementById('bLine').textContent='L'+bridgeAt(e);
+    var blocked={}; for(var k=0;k<=e;k++) blocked[bridgeAt(k)]=1;
+    var nb=Object.keys(blocked).length;
+    document.getElementById('bBlocked').textContent=nb;
+    var future=0, hit=0; for(var t=e+1;t<=e+200;t++){ future++; if(!blocked[bridgeAt(t)]) hit++; }
+    var reach=future? Math.round(hit/future*100):100;
+    var rel=document.getElementById('bReach'); rel.textContent=reach+'%';
+    rel.style.color = reach>=70?'var(--good)': reach>=40?'var(--lantern)':'var(--danger)';
+  }
+  sBep.addEventListener('input',proteusBridge); proteusBridge();
 })();
 </script>
 </body>
