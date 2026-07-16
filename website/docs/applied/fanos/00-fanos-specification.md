@@ -133,7 +133,7 @@ FANOS is a direct engineering consequence of the UHM finding that the specific s
 
 ## 2.1 The finite projective plane PG(2,q)
 
-Take a finite field GF(q) (q a prime power; in the reference implementation GF(2^m) for bit efficiency). The **points** of the plane are one-dimensional subspaces of GF(q)³, i.e. nonzero coordinate triples `[x:y:z]` up to scaling. The **lines** are two-dimensional subspaces, also given by triples `[a:b:c]`. The "point on line" incidence is the vanishing of the dot product: `ax+by+cz = 0`. Self-duality: points and lines are interchangeable.
+Take a finite field GF(q) (q a prime power). The illustrative cells below use prime fields GF(p) at q ∈ {2, 7, 13, 31}; the default binary profile takes q = 2^m (field GF(2^m)) for arithmetic bit efficiency. The **points** of the plane are one-dimensional subspaces of GF(q)³, i.e. nonzero coordinate triples `[x:y:z]` up to scaling. The **lines** are two-dimensional subspaces, also given by triples `[a:b:c]`. The "point on line" incidence is the vanishing of the dot product: `ax+by+cz = 0`. Self-duality: points and lines are interchangeable.
 
 **Base parameters [T]** (verified, `fanos_verify.py` V1):
 
@@ -529,7 +529,7 @@ Operationally this is a bank of **fourteen consistency alarms that cost nothing 
 
 Alongside this structural alarm runs the **integration monitor** of §2.7: `Φ_net < 1` fires when the cell is fragmenting into non-integrated pieces, and the mean-correlation reading `r → 1/√6` warns of an incipient cascade a regime ahead (§6.5). Detection is thus two-channel: *structural* (polar sum-rules) and *global* (Φ).
 
-## 6.3 Localization — the 21 → 7 → 3 → 1 pyramid and a 3-bit syndrome [Т] {#diakrisis-localize}
+## 6.3 Localization — the 21 → 7 → 3 → 1 pyramid and a 3-bit syndrome [Т]+[С] {#diakrisis-localize}
 
 Once "something is wrong" fires, DIAKRISIS localizes the culprit with the [Σ-compression pyramid of T-225](/docs/applied/research/syndrome-calculus#t-225). Full tomography of a 7-cell would need 48 numbers; localizing *one* degraded node needs a handful:
 
@@ -548,7 +548,7 @@ Once "something is wrong" fires, DIAKRISIS localizes the culprit with the [Σ-co
 
 - **3 → 1 (flag).** The single bit `[σ ≠ 0]` is the "fault present" alarm; `σ = 000` means healthy.
 
-**Worked example.** Suppose node **O** starts dropping relays. Its q+1 = 3 lines — `A,O,U`, `S,L,O`, `D,E,O` — each register a degraded theme; the three parities compute to `σ = 011`, which is address 6, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots.
+**Worked example.** Suppose node **O** starts dropping relays. Its q+1 = 3 lines — `A,O,U`, `S,L,O`, `D,E,O` — each register a degraded theme; the three parities compute to `σ = 011`, which is address 6, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots. The status inherits T-225 **[С]**: the `21→7→3→1` pyramid combinatorics are exact **[Т]**, while their convergence on a *live* cell is conditional on the measurement model (window-averaging).
 
 :::note Multi-fault resolution — how far one cell actually corrects [Т]
 The "distance-3" figure is about the *compressed* 3-bit syndrome, which corrects **one** error. But the cell carries more information than three bits, and the honest capability is stratified (verified V20–V21):
@@ -597,7 +597,7 @@ Diagnosis without repair is a smoke alarm without a sprinkler. DIAKRISIS heals t
 
 1. **Reroute (instant), via the mediator.** A broken link `(i,j)` is regenerated deterministically through `k* = k*(i,j)` — the closure law as a routing rule, with **no routing tables and no search** (§2.5). Every pair has exactly one mediator, so the fallback is unique and pre-computed.
 2. **Repair (parallel), via the LRC.** A lost node is reconstructed from *any one* of its q+1 lines (locality q, availability q+1; §L4). Independent repair groups mean healing is parallelizable and does not contend.
-3. **Reintegrate (relaxation), via the gap.** After repair, `Γ_net` relaxes back toward the healthy manifold under the cell's own mixing. The relaxation rate is the corpus **spectral gap 2/3** ([Fano channel, Thm 5.1a](/docs/proofs/gap/fano-channel#g2-ковариантность)): the reintegration cooldown is `τ ≈ 1/Δ` with `Δ = (G − max_k T_k)/6` made explicit by [T-226(v)](/docs/applied/research/fano-fingerprint#t-226), so a cell can *tighten its cooldown adaptively* from its current line rates instead of using a worst-case constant. Minimal self-regeneration is bounded below by the bootstrap constant `κ₀ = 1/7`.
+3. **Reintegrate (relaxation), via the gap.** After repair, `Γ_net` relaxes back toward the healthy manifold under the cell's own mixing. The relaxation rate is set by the Fano dissipator (`D_Fano = ⅔·D_atom` — the dimensionless **gap 2/3**, [Fano channel, Thm 5.1a](/docs/proofs/gap/fano-channel#g2-ковариантность)); in physical line rates the reintegration cooldown is `τ ≈ 1/Δ` with the exact rate-gap `Δ = (G − max_k T_k)/6` made explicit by [T-226(v)](/docs/applied/research/fano-fingerprint#t-226), so a cell can *tighten its cooldown adaptively* from its current line rates instead of using a worst-case constant. Minimal self-regeneration is bounded below by the bootstrap constant `κ_bootstrap = ω₀/7` (`1/7` in units of `ω₀`; [axiom of septicity](/docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap)).
 
 **A budgeting law for healing depth [Т].** Every *coarse* cross-segment hop — routing through a line-projection rather than a direct channel — contracts integration by exactly **1/9** (the Fano-channel `Φ → Φ/9`, verified V16; the coherence scale-down `×1/3` of [Fano channel Thm 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал), squared). So a repair path that crosses `d` coarse boundaries costs `Φ → Φ/9^d` of binding. This is not a metaphor: it is the quantitative reason to keep healing *local* (small `d`) and a hard input to how deep a hierarchy may reroute before the reintegrated cell would fall below `Φ = 1`. It is the same `1/9` that caps naive mixture-of-experts routing in the ML catalogue — here it caps reroute depth.
 
@@ -640,7 +640,7 @@ Pulling the thread of the whole part: **working in the Γ-paradigm gives a netwo
 |---|---|---|
 | See Byzantine/equivocation faults | third-order closure cross-check; pairwise monitoring is Fano-blind (V11) | [Т] blindness · [С] guarantee |
 | Free consistency alarms | 14 parameter-free polar sum-rules (T-226) | [Т] |
-| Localize a fault | 21→7→3→1 syndrome, 3 bits pin 1 of 7 (T-225) | [Т] |
+| Localize a fault | 21→7→3→1 syndrome, 3 bits pin 1 of 7 (T-225) | [Т] comb. · [С] on a live cell |
 | Deterministic reroute | mediator `k*` = polar point, no tables (T-226 §2) | [Т] |
 | Partition immunity | no single line-kill disconnects; need q+1 (V14) | [Т] |
 | Integration health + early warning | `Φ_net`, and mean-corr `r*=1/√6` cascade line (V15) | [Т] arith · [С] dictionary |
@@ -665,7 +665,7 @@ Every FANOS object serialises through a tiny fixed set of primitives. There is e
 | Primitive | Encoding |
 |---|---|
 | Integers | big-endian ("network order"); lengths and IDs use QUIC variable-length integers (RFC 9000 §16, 1–8 B) |
-| Field element `GF(2^m)` | fixed width `⌈m/8⌉` bytes, big-endian, high bits zero-padded |
+| Field element `GF(q)` | fixed width `⌈log₂q / 8⌉` bytes, big-endian (`GF(2^m)`: `m` bits; `GF(p)`: canonical `0…p−1`), high bits zero-padded |
 | Projective point / line `[x:y:z]` | three field elements in **canonical form**: scale so the first nonzero coordinate is `1`, then concatenate; a decoder recomputes the normalisation and rejects a non-canonical scalar |
 | Public keys | hybrid: `Ed25519(32 B) ‖ ML-DSA-65` (sig) and `X25519(32 B) ‖ ML-KEM-768` (KEM), fixed sizes, concatenated in that order |
 | Hash / node-ID | 32 B BLAKE3 |
@@ -808,7 +808,7 @@ The total packet size is a constant (e.g. 4 KB) regardless of path length and ho
 
 Interoperability is enforced by a **conformance suite**, not by prose. Two classes of vector:
 
-- **Algebra KATs** — the projective operations (`cross`, `MapToPoint`, `MapToLine`, syndrome, mediator), produced and checked by [`fanos_verify.py`](pathname:///fanos/fanos_verify.py) (V1–V18). Any implementation must reproduce them bit-for-bit.
+- **Algebra KATs** — the projective operations (`cross`, `MapToPoint`, `MapToLine`, syndrome, mediator), produced and checked by [`fanos_verify.py`](pathname:///fanos/fanos_verify.py) (V1–V22). Any implementation must reproduce them bit-for-bit.
 - **Wire KATs** — canonical encodings of each frame and of the Tessera packet, plus the handshake transcript hash, as `(input, expected-bytes)` pairs. A new implementation passes iff it encodes to exactly these bytes and rejects the listed non-canonical inputs.
 
 A node advertises `conformance-level` in `HELLO`; two nodes only enable a feature both have certified. This is the mechanism that makes "any language, any platform" concrete: pass the KATs and you interoperate, whatever the language.
@@ -889,7 +889,7 @@ To show the specification covers all layers, here is an adversarial sweep — on
 | Latency (anon) | — | ~1 s | 3–25 s | **1.5–25 s by dial** [T] |
 | Post-quantum | no | partial | partial | **hybrid via L6** |
 | Self-diagnosis under failure | no | no | no | **yes — DIAKRISIS** [T] |
-| Fault localization | — | — | — | **3 bits → 1 of 7 (T-225)** [T] |
+| Fault localization | — | — | — | **3 bits → 1 of 7 (T-225)** [Т]+[С] |
 | Byzantine detection from structure | no | no | no | **third-order (T-226)** [T]/[C] |
 | Partition resistance | no | — | — | **no single-line cut (V14)** [T] |
 
@@ -1262,7 +1262,7 @@ This window is *exactly* the corpus consciousness band `P ∈ (2/7, 3/7]` (T-124
 
 ## 18.3 Subjecthood depth is bounded — routing depth is not [Т] {#synthesis-depth}
 
-A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps. So:
+A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps (T-142 status: `α = 2/3` state-independence is [Т]; the unconditional SAD_MAX=3 rests on the heuristic `P_crit^(n) = P_crit·3^(n-1)/(n+1)` — [С] — plus the empirical `R^(3) ≤ 0.130 < R_th` over 500+ `Γ`). So:
 
 - agent → team → organisation can each be a genuine subject (3 rungs);
 - an organisation-of-organisations is **administration, not a fourth subject** — an **ecology** (the corpus's "ASI = ecology", S-14).

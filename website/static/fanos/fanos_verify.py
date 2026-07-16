@@ -185,7 +185,7 @@ for (i,j) in [(0,1),(3,4),(1,6)]:
 
 hdr("V13. DIAKRISIS — single-node fault LOCALISATION: 3-bit Hamming syndrome (T-225)")
 # H columns = binary address 1..7 of the 7 axes, corpus order A,S,D,L,E,O,U (T-225 table)
-Hmat = np.array([[(a>>b)&1 for a in range(1,8)] for b in (2,1,0)])   # 3x7, columns=addr 1..7
+Hmat = np.array([[(a>>b)&1 for a in range(1,8)] for b in (0,1,2)])   # 3x7, cols=addr 1..7; σ=(bit0,bit1,bit2) little-endian per T-225 table (A=100,S=010,D=110,L=001,E=101,O=011,U=111)
 allsynd = {}
 for p in range(7):
     e=np.zeros(7,dtype=int); e[p]=1
