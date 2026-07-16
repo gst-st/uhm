@@ -135,7 +135,7 @@ Full proof, cubic potential and connection to non-associativity: [Octonionic dec
 
 ### Why Exactly 28 of 35?
 
-The seven basis elements of octonions $e_1, \ldots, e_7$ generate $\binom{7}{3} = 35$ ordered triples. Exactly 7 of them lie on lines of the Fano plane — these are the triples for which multiplication is *associative* (forming a subalgebra isomorphic to the quaternions). The remaining $35 - 7 = 28$ triples give a nonzero associator. This ratio — 80% of triples generate a protective barrier — explains why algebraic protection is so powerful: to circumvent it, one would need to restrict to the narrow subset of "associative" directions, while all other movements in configuration space encounter resistance.
+The seven basis elements of octonions $e_1, \ldots, e_7$ generate $\binom{7}{3} = 35$ (unordered) triples. Exactly 7 of them lie on lines of the Fano plane — these are the triples for which multiplication is *associative* (forming a subalgebra isomorphic to the quaternions). The remaining $35 - 7 = 28$ triples give a nonzero associator. This ratio — 80% of triples generate a protective barrier — explains why algebraic protection is so powerful: to circumvent it, one would need to restrict to the narrow subset of "associative" directions, while all other movements in configuration space encounter resistance.
 
 ### What Happens When This Shield Fails
 
