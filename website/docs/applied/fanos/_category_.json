@@ -1,0 +1,6 @@
+{
+  "label": "FANOS Protocol",
+  "position": 3,
+  "collapsed": true,
+  "link": { "type": "generated-index", "description": "FANOS — a projective-plane distributed protocol (Discovery 7): O(1) rendezvous, quorum guarantees, and the APHANTOS/NYX anonymity layer that beats Tor/Nym via threshold-group onion routing." }
+}

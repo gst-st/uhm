@@ -14,6 +14,20 @@ The core is **Theorem T-226 [Т]**: elementary linear algebra and finite geometr
 
 **How this document is organized.** The document is self-contained given school linear algebra; the coding-theoretic and finite-geometric background, if wanted, is built from scratch in the [Σ-calculus primer §2](/docs/applied/research/syndrome-calculus#предварительные). §1 states the known premise — the exact per-coherence decay rates — and poses the question: as the seven line rates vary, what part of the 21-dimensional rate space is reachable? §2 proves the lemma chain; §3 assembles Theorem T-226 with all seven parts. §4 identifies the forbidden subspace with a sign-twist of $\mathfrak{g}_2$ — the second, dynamical apparition of the Lie shadow of the [Σ-calculus](/docs/applied/research/syndrome-calculus). §5 draws the protection reading. §6 gives the falsifiable prediction and the technology package; §7 records the machine verification; §8 is the status summary.
 
+## §0. The first-order blind spot [Т] {#слепое-пятно}
+
+Before the rates of §1, one layer down: the **linear** statistics of the seven lines see *nothing* of the plane's structure. Let $A(\ell)$ be the adjacency matrix of a line $\ell$ — the all-ones-off-diagonal on its three points, zero elsewhere. Summing over the seven lines,
+
+$$
+\sum_{p=1}^{7} A(\ell_p) \;=\; J - I,
+$$
+
+the adjacency matrix of the complete graph $K_7$: each of the $\binom{7}{2}=21$ pairs lies on exactly one line (Steiner $\lambda=1$), so every off-diagonal entry is hit exactly once. Its spectrum is $\{6,\,(-1)^{6}\}$ — one eigenvalue $6$ (the all-ones direction) and $-1$ with multiplicity six.
+
+**Consequence [Т].** Any equal-weight quadratic form built from the lines — any pairwise covariance, any two-point statistic symmetric in the seven lines — is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. The Fano wiring is invisible at first (pairwise) order; it becomes visible only on **triples** (the polar collapse of §3) and in the rate quadratics of §1–§2. This is the precise content of the "third-order principle": **structure begins at three.** (Machine-checked: `fanos_verify.py` V11.)
+
+This static blind spot is the adjacency-level companion of the dynamical $\mathfrak g_2$-shadow of §4 (fourteen rate dimensions a two-point experiment can never reach): in both, what pairwise observation cannot see is exactly the structural content of the seven. It is also the theorem the [FANOS overlay](/docs/applied/fanos/fanos-specification) turns on — a heartbeat/ping mesh is a first-order statistic, so it is Fano-blind and cannot localise the faults that matter (equivocation); FANOS therefore diagnoses on triples.
+
 ## §1. The premise and the question {#вопрос}
 
 The corpus fixes the dissipative half of the Γ-dynamics by the seven Fano projectors: one Lindblad channel per line $\ell_p = \{p,\, p{+}1,\, p{+}3\} \pmod 7$ of $\mathrm{PG}(2,2)$, with a nonnegative rate $\gamma_p$ per line ([Gap dynamics §2](/docs/core/dynamics/gap-dynamics#код-хэмминга), [Evolution](/docs/core/dynamics/evolution)). The exact channel form — the closed-form exponential established in the v2.2 canon — gives every off-diagonal coherence $(i,j)$, $i \neq j$, a pure exponential decay $e^{-r_{ij} t}$ with
