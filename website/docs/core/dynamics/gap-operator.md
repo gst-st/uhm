@@ -389,7 +389,7 @@ The stabilizer of a Gap configuration determines topological protection against 
 :::tip Theorem 8.1 (Stabilizer classification) [Т]
 For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$:
 
-| Rank | Spectrum of $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_1(G_2/H)$ |
+| Rank | Spectrum of $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_2(G_2/H)$ |
 |------|---------------------------|-----|-----------|---------|-----------------|
 | 0 | $(0,0,0)$ | $G_2$ | 14 | $\{pt\}$ | 0 |
 | 1 | $(\lambda,0,0)$ | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 |

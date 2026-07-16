@@ -221,7 +221,7 @@ Categorical protection lives in category theory — in the world of functors, na
 
 Imagine a rope tied in a knot. You can pull, compress, twist — but as long as you do not *cut* the rope, the knot remains a knot. No continuous deformation (without cuts) can turn a trefoil into a straight rope. This is the essence of topological protection: certain properties are invariant under continuous deformations.
 
-A Gap configuration of the holon with opacity rank 3 (three distinct nonzero eigenvalues) has precisely this property. The space of such configurations has a nontrivial fundamental group: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means there are loops in the configuration space that *cannot be contracted to a point*. A configuration with a nonzero topological charge cannot be continuously deformed to the trivial one — doing so would require a "tear", i.e. a phase transition.
+A Gap configuration of the holon with opacity rank 3 (three distinct nonzero eigenvalues) has precisely this property. The space of such configurations has a nontrivial second homotopy group: $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means there are two-spheres in the configuration space that *cannot be contracted to a point*. A configuration with a nonzero topological charge cannot be continuously deformed to the trivial one — doing so would require a "tear", i.e. a phase transition.
 
 ### Topological Protection for Non-Mathematicians {#топология-для-нематематиков}
 
@@ -261,7 +261,7 @@ $$
 
 ### 5.2 Two Winding Numbers {#числа-намотки}
 
-The fundamental group $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ is specified by two integers $(n_1, n_2)$ corresponding to the two simple roots of the algebra $\mathfrak{g}_2$:
+The second homotopy group $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ is specified by two integers $(n_1, n_2)$ corresponding to the two simple roots of the algebra $\mathfrak{g}_2$:
 
 - $\alpha_1$ (short root): winding number $n_1 \in \mathbb{Z}$
 - $\alpha_2$ (long root): winding number $n_2 \in \mathbb{Z}$
@@ -291,7 +291,7 @@ Clinically this corresponds to states of "diffuse identity" — when stable opac
 
 ### Independence from Other Mechanisms
 
-Topological protection rests on the properties of the fundamental group $\pi_2(G_2/T^2)$, which is determined exclusively by the *topology* of the configuration space. It does not use the Hamming code (shield I — discrete mathematics, shield V — continuous), does not depend on the associator (shield II may be zero for specific triples, but the topology is determined by the global structure of $G_2$), does not appeal to the potential (shield III — about the depth of the well, shield V — about the impossibility of a *path* out of the well), and is not connected to self-modelling (shield IV).
+Topological protection rests on the properties of the second homotopy group $\pi_2(G_2/T^2)$, which is determined exclusively by the *topology* of the configuration space. It does not use the Hamming code (shield I — discrete mathematics, shield V — continuous), does not depend on the associator (shield II may be zero for specific triples, but the topology is determined by the global structure of $G_2$), does not appeal to the potential (shield III — about the depth of the well, shield V — about the impossibility of a *path* out of the well), and is not connected to self-modelling (shield IV).
 
 **See:** [Stabilisers of the Gap operator](/docs/core/dynamics/gap-operator#стабилизаторы), [Fano channel](/docs/proofs/gap/fano-channel)
 

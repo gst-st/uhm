@@ -185,7 +185,7 @@ $$
 :::tip Theorem 2.2 (Rank Classification with Stabilizer Groups) [T]
 For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$ determines the geometry of the space of admissible configurations:
 
-| Rank $r$ | Spectrum $(\lambda_1, \lambda_2, \lambda_3)$ | Stabilizer $H$ | $\dim(H)$ | Space $G_2/H$ | $\pi_1(G_2/H)$ |
+| Rank $r$ | Spectrum $(\lambda_1, \lambda_2, \lambda_3)$ | Stabilizer $H$ | $\dim(H)$ | Space $G_2/H$ | $\pi_2(G_2/H)$ |
 |----------|:-------------------------------------------:|:--------------:|:---------:|:-------------:|:--------------:|
 | 0 | $(0, 0, 0)$ | $G_2$ | 14 | $\{\text{pt}\}$ | 0 |
 | 1 | $(\lambda, 0, 0)$ | $\mathrm{SU}(3)$ | 8 | $S^6$ | 0 |
@@ -196,7 +196,7 @@ For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum, the stabilizer $H_
 
 **Growing complexity.** Notice the decreasing stabilizer dimension: $14 \to 8 \to 4 \to 2$. The higher the opacity rank, the less symmetry is preserved, the more "degrees of freedom" opacity has. At $r = 0$ the system is fully symmetric ($G_2$ — the full group of octonion automorphisms); at $r = 3$ only $T^2$ remains — a two-dimensional torus, the minimal stabilizer.
 
-But the most dramatic change occurs in the fundamental group: at $r \leq 2$ the configuration space is simply connected ($\pi_1 = 0$), while at $r = 3$ the group $\pi_1 = \mathbb{Z}^2$ appears. This is the very **topological barrier** we spoke of.
+The dramatic change lives in the *second* homotopy group. Every one of these spaces is simply connected ($\pi_1 = 0$ throughout — $G_2$ itself is simply connected), so there are no line defects to speak of. But at rank $3$ with generic spectrum the second homotopy group jumps to $\pi_2(G_2/T^2) = \mathbb{Z}^2$ (equal to $\pi_1(T^2)$). This is the very **topological barrier** we spoke of.
 
 ### 2.4 Interpretation of Ranks
 
@@ -208,7 +208,7 @@ But the most dramatic change occurs in the fundamental group: at $r \leq 2$ the 
 | 3 | Full | All three planes of rotation are engaged | Global coherence crisis |
 
 :::info Interpretation (Topological Protection) [I]
-Only rank 3 with generic (non-degenerate) spectrum possesses a **nontrivial fundamental group** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means that fully opaque configurations are **topologically protected**: it is impossible to continuously deform a rank-3 Gap profile into a trivial one ($r = 0$) without passing through a singularity. In cybernetic terms: a deep coherence crisis is not resolved by "gradual improvement" — structural reorganization (a topological transition) is required.
+Only rank 3 with generic (non-degenerate) spectrum possesses a **nontrivial second homotopy group** $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$. This means that fully opaque configurations are **topologically protected**: it is impossible to continuously deform a rank-3 Gap profile into a trivial one ($r = 0$) without passing through a singularity. In cybernetic terms: a deep coherence crisis is not resolved by "gradual improvement" — structural reorganization (a topological transition) is required.
 :::
 
 **What topological protection means in practice.** Recall how it is impossible to smoothly turn a donut into a ball — one must "cut" and "glue." Similarly, a system in a state of full opacity ($r = 3$) cannot gradually, step by step, return to transparency. Any smooth path from $r = 3$ to $r = 0$ inevitably passes through a singularity — a point at which the old opacity structure is destroyed and a new one forms.
@@ -424,7 +424,7 @@ The rank of the Gap operator offers a new coordinate system for clinical assessm
 
 The distinction between $r = 3$ (generic) and $r = 3$ (degenerate, $\lambda_1 = \lambda_2 = \lambda_3$) has direct therapeutic significance:
 
-- **Generic $r = 3$** ($\pi_1 = \mathbb{Z}^2$): one channel dominates. The "shadow" has a shape. The system "knows" where the main problem is, but cannot approach it. The topological barrier makes gradual work fruitless. Strategy: intensive focused work, retreat, crisis intervention — creating conditions for a breakthrough.
+- **Generic $r = 3$** ($\pi_2 = \mathbb{Z}^2$): one channel dominates. The "shadow" has a shape. The system "knows" where the main problem is, but cannot approach it. The topological barrier makes gradual work fruitless. Strategy: intensive focused work, retreat, crisis intervention — creating conditions for a breakthrough.
 
 - **Degenerate $r = 3$** ($\pi_1 = 0$): all channels are equal. The "shadow" is uniform. The system does not know where to start. There is no topological barrier, but also no direction. Strategy: structuring — help the system *differentiate* the channels, so that the degenerate triple splits and becomes amenable to sequential processing.
 
@@ -564,7 +564,7 @@ Let us summarize the chapter — from mathematical constructions to practical im
 
 2. **All opacity of a 7-dimensional system is described by three numbers** $(\lambda_1, \lambda_2, \lambda_3)$ — spectral parameters of the Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$. Opacity rank $r \in \{0, 1, 2, 3\}$ determines the qualitative nature of the self-understanding disorder.
 
-3. **Topological protection at $r = 3$**: at maximum rank with generic spectrum the fundamental group $\pi_2(G_2/T^2) = \mathbb{Z}^2$ forbids a smooth transition to transparency. A deep crisis requires a *phase transition*, not gradual improvement.
+3. **Topological protection at $r = 3$**: at maximum rank with generic spectrum the second homotopy group $\pi_2(G_2/T^2) = \mathbb{Z}^2$ forbids a smooth transition to transparency. A deep crisis requires a *phase transition*, not gradual improvement.
 
 4. **The opacity paradox**: Gap raises purity $P$ (Theorem 2.3). A system needs opacity *for the sake of* its integrity — a perfectly transparent system is static and dead.
 
