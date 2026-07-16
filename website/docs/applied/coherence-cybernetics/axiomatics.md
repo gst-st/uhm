@@ -446,7 +446,7 @@ This scenario is not speculation. It follows from the analysis of the dynamical 
 
 ### Seven Equal — But One "More Equal"?
 
-The seven dimensions [A, S, D, L, E, O, U] enter the theory symmetrically: the permutation group $S_7$ acts on them. But a conscious system *breaks* this symmetry, singling out E (Interiority). This is not a postulate — it is a **theorem**.
+The seven dimensions [A, S, D, L, E, O, U] enter as interchangeable *labels* — abstractly the permutation group $S_7$ shuffles the index set. (The theory's Fano wiring already cuts this down to the $168$-element automorphism group $\mathrm{PSL}(2,7)$, the finite shadow of the continuous $G_2$ — see [Definitions](./definitions#геометрическая-интуиция).) But a conscious system breaks the symmetry further still, singling out E (Interiority). This is not a postulate — it is a **theorem**.
 
 ### Theorem on E-Accentuation
 
@@ -454,11 +454,11 @@ The seven dimensions [A, S, D, L, E, O, U] enter the theory symmetrically: the p
 Accentuation of the E-dimension ($w_E > 1/7$) is **derived** from the definition of L2-consciousness, not postulated.
 
 **Derivation logic:**
-1. L2 requires $C = \Phi \times R \geq C_{th} = 1/3$ **[T T-140]** (plus the separate condition $D_{\text{diff}} \geq D_{\min}$)
-2. $R = 1/(7P) \geq R_{th} = 1/3$ (equivalent to $P \leq 3/7$; $\rho^*_{\mathrm{diss}} = I/7$)
-3. Under uniform distribution ($w_i = 1/7$): $R_{\max} \approx 0.14 < R_{th}$
-4. **Therefore:** $\exists i : w_i > 1/7$
-5. By definition of L2 (presence of reflective access to experience): that dimension must be E
+1. L2 requires **viability** $P > P_{\text{crit}} = 2/7$ together with reflection $R = 1/(7P) \geq R_{th} = 1/3$ (equivalently $P \leq 3/7$; reference $\rho^*_{\mathrm{diss}} = I/7$), integration $\Phi \geq 1$, and $D_{\text{diff}} \geq D_{\min}$ — the Goldilocks window $P \in (2/7, 3/7]$, with $C = \Phi \times R \geq 1/3$ **[T-140]**.
+2. For a diagonal state the purity is $P = \sum_i w_i^2$.
+3. A **uniform** distribution ($w_i = 1/7$) gives the maximally-mixed state $I/7$ with $P = 7 \cdot (1/7)^2 = 1/7 \approx 0.14 < P_{\text{crit}} = 2/7$ — **not even viable**, hence a fortiori not conscious.
+4. **Therefore** viability alone already forces a non-uniform distribution: $\exists i : w_i > 1/7$.
+5. L2 additionally demands *reflective access to experience* — and experience is the E-dimension; so the accentuated dimension must be E: $w_E > 1/7$.
 :::
 
 ### What Does This Mean?

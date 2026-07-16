@@ -518,7 +518,7 @@ Computation of $\rho_*$ **is not an open problem**: primitivity of the linear pa
 
 ---
 
-## Geometric Intuition
+## Geometric Intuition {#геометрическая-интуиция}
 
 ### How to "See" 7D Space?
 
