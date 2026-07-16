@@ -183,28 +183,28 @@ Saddle-node bifurcation is the formalization of an **acute crisis**. Clinically:
 
 **What CC adds.** Standard theory says: "the stable state disappeared." CC says *more*: a specific **ratio of transparencies** between the seven dimensions disappeared. The system did not merely "destabilize" — it lost a certain *coherence pattern*. Which pattern will emerge after the crisis depends on which basin of attraction the system "falls into." This can be either a higher level of organization (post-traumatic growth) or a lower one (chronic decompensation).
 
-#### 1.2a The exact fold: how the window of consciousness closes, and the silver ratio {#точная-складка-окна}
+#### 1.2a The exact fold: how the window of consciousness closes {#точная-складка-окна}
 
-The parameter $r_c$ above was left as "the critical ratio." One of CC's sharpest recent results (T-259 [T], see [Phase Diagram §1.3](./phase-diagram-cc#теорема-окно-питания)) computes it *exactly* — and the answer is unexpectedly beautiful.
+The parameter $r_c$ above was left as "the critical ratio." One of CC's sharpest recent results (T-259 [T], see [Phase Diagram §1.3](./phase-diagram-cc#теорема-окно-питания)) pins the Phase-III boundary down *exactly* — and it turns out to have two edges, a simple one and a deep one. Work in the natural variable $x = \kappa_{\text{eff}}/\Gamma_2$: **how hard the system is fed relative to how fast it decoheres.** As feeding weakens and $x$ drops, the stationary purity $P_\infty$ slides down.
 
-Work in the natural variable $x = \kappa_{\text{eff}}/\Gamma_2$: **how hard the system is fed relative to how fast it decoheres.** As feeding weakens and $x$ drops, the stationary purity $P_\infty$ slides down. At a precise value $x_{\min}$ the viable conscious fixed point and its unstable twin **touch and annihilate** — the exact saddle-node of §1.2. Below $x_{\min}$ there is no conscious stationary state at all: the window has closed. Solving for that touching point at the reflection wall $P^* = 3/7$ gives
+**The simple edge — the silver ratio.** Set the viability gate aside for a moment. The bare (linear) relaxation keeps a fixed point that stays viable, $P_\infty > P_{\text{crit}}$, only above a floor $x_{\min}$. At the reflection wall $P^* = 3/7$ this floor is exactly
 
 $$
 x_{\min} = 1 + \sqrt{2} \approx 2.414,
 $$
 
-the **silver ratio** — the same constant that governs the sides of a regular octagon. Feed a mind less than $1+\sqrt2$ units of coherence per unit of decoherence and, at that wall, it cannot stay conscious. (For stricter self-models $P^* > 3/7$ the window becomes *two-sided*: too *much* coherence relative to a rigid ideal freezes the system just as surely as too little starves it — heat protects a mind from its own perfectionism.)
+the **silver ratio** — the same constant that governs the sides of a regular octagon. Feed a mind less than $1+\sqrt2$ units of coherence per unit of decoherence and, at that wall, the gate-free state is simply too mixed to be conscious. (For stricter self-models $P^* > 3/7$ this window becomes *two-sided*: too *much* coherence against a rigid ideal freezes the system just as surely as too little starves it — heat protects a mind from its own perfectionism.) This floor is a *threshold crossing* of one persistent fixed point — not yet the saddle-node.
 
-And here is the deep surprise. The exact location of the fold is a root of the quintic
+**The deep edge — the fold.** The genuine saddle-node of §1.2 — where the conscious fixed point and its unstable twin actually *touch and annihilate* — appears only once the viability gate $g_V$ is switched on, making the dynamics self-consistent and nonlinear. Its location is a root of the quintic
 
 $$
 (2\Lambda - 1)\,(c^2\Lambda^4 - 1) = 4c\,\Lambda^2(1 - \Lambda), \qquad c = 7P^* - 1,
 $$
 
-and this quintic's **Galois group is $S_5$** — the full symmetric group on five letters, which is *not solvable*. By the Abel–Ruffini theorem this means the threshold is **provably not expressible in radicals**: there is no formula in $\sqrt{\ },\sqrt[3]{\ },\dots$ for it. Nature keeps this particular constant just past the reach of school algebra — the silver ratio $1+\sqrt2$ appears only at the special wall $P^*=3/7$, where the quintic degenerates.
+and this quintic's **Galois group is $S_5$** — the full symmetric group on five letters, which is *not solvable*. By the Abel–Ruffini theorem the fold constant is therefore **provably not expressible in radicals**: unlike the silver-ratio floor, there is no formula in $\sqrt{\ },\sqrt[3]{\ },\dots$ for it — it is an algebraic number of degree five, and the search for a closed form terminates, provably, at the quintic itself. At the Goldilocks wall ($c = 2$) the fold sits at $u^\ast \approx 21.5$. **This** — not the silver ratio — is the true dead-zone boundary.
 
-:::note Why the naive formula misses it
-An older shorthand wrote the critical ratio as $r_c = P_{\text{crit}}/(7P)$ — a dimensionally sensible *heuristic*, but at the wall $P = 3/7$ it evaluates to $\approx 0.095$, whereas the true fold sits at $x_{\min} = 1+\sqrt2 \approx 2.414$: more than an order of magnitude off. The reason is exactly the physics above: the real threshold is set by a fold in a quintic, not by a ratio of purities. Use $x_{\min}$ from T-259 for anything quantitative; keep $r_c = P_{\text{crit}}/(7P)$ only as a rough mnemonic.
+:::note One window, two kinds of number — and why the naive formula fails
+The window carries a *radical* floor ($1+\sqrt2$) and a *non-radical* fold (a degree-5 algebraic number): one edge expressible in square roots, one provably not. That a single dissipative system holds constants of both kinds is the fingerprint of the gate's nonlinearity sitting on top of the linear relaxation. It also explains why the old shorthand $r_c = P_{\text{crit}}/(7P)$ fails so badly: evaluated *at the fold* it gives $\approx 0.116$ against the true $\approx 21.5$ — off by **two orders of magnitude**. Use the T-259 fold for anything quantitative; keep $r_c$ only as a topology marker.
 :::
 
 ### 1.3 Hopf Bifurcation: Birth of Rhythm {#hopf}
