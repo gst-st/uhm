@@ -24,6 +24,7 @@ The protocol is named after the Greek root **φαν-** ("to bring to light, to a
 | **NYX** | Νύξ | "Night" (goddess of concealment) | Threshold sheaf onion routing inside APHANTOS |
 | **DIAKRISIS** | διάκρισις | "discernment; separating true from false" | Self-diagnosis and self-healing under node/segment failure (Part VI) |
 | **CALYPSO** | Καλυψώ | "the concealer" (the nymph who hid Odysseus) | Anonymous hidden services with no directory and no single host (Part XII) |
+| **PROTEUS** | Πρωτεύς | "the shape-shifter" (the god who changes form to escape capture) | Optional polymorphic transport / censorship & DPI resistance (Part XIII) |
 
 The public layer "shines" (routes are verifiable and efficient); with APHANTOS enabled, traffic "vanishes" into structurally-balanced noise; NYX realises concealment as a composable sequence of threshold groups. DIAKRISIS is named for a *faculty*, not a lighting condition, because it is not one more way to route — it is the network turning its gaze on itself: after NYX hides the traffic, DIAKRISIS is what still tells a healthy cell from a corrupted one, a crash from a lie, churn from a partition. It shares its name with the corpus discernment theory *Diakrisis* (διάκρισις, the distinguishing of the genuine) deliberately: fault diagnosis *is* discernment, carried out on the same seven-fold structure.
 
@@ -43,25 +44,26 @@ The public layer "shines" (routes are verifiable and efficient); with APHANTOS e
 - **Part X.** Applications: blockchain / mixnet / VPN
 - **Part XI.** Implementation, integration surfaces (API / SOCKS5 / VPN / embedded), and portability
 - **Part XII.** CALYPSO — anonymous hidden services
-- **Part XIII.** Comparison with existing protocols
-- **Part XIV.** Roadmap
-- **Part XV.** Limitations and open problems (honest)
-- **Part XVI.** Connection to the UHM corpus
-- **Part XVII.** The distributed-cognition synthesis: UHM → SYNARC → FANOS
+- **Part XIII.** PROTEUS — polymorphic transport and censorship resistance (optional, configurable)
+- **Part XIV.** Comparison with existing protocols
+- **Part XV.** Roadmap
+- **Part XVI.** Limitations and open problems (honest)
+- **Part XVII.** Connection to the UHM corpus
+- **Part XVIII.** The distributed-cognition synthesis: UHM → SYNARC → FANOS
 - **Appendices:** glossary, pseudocode, test vectors, interactive
 
 :::note Status discipline
 As in the main UHM corpus, every nontrivial claim is tagged: **[T]** — theorem (rigorously proven, often verified by computation); **[C]** — conditional (true under an explicitly named assumption); **[H]** — hypothesis (formulated, needs proof/audit); **[P]** — program (a direction of work). Cryptographic honesty: **the novelty of FANOS is the architectural composition of vetted primitives, not new hardness assumptions.** The single genuinely new construction (the NYX threshold-sheaf Tessera packet, §V) is tagged **[P]** — it needs formal cryptanalysis before production. We do NOT invent new mathematical hardness "from scratch": that would be irresponsible for a real-world protocol.
 :::
 
-Every quantitative claim in this document is reproduced by the verifier [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py) (V1–V10: projective geometry, quorums, the security curve, scaling; **V11–V21: the DIAKRISIS self-diagnosis layer, the collective-subject window, and multi-fault resolution** — first-order blindness, the mediator map, syndrome localization, partition-resistance, the coherence-matrix health metrics, the `1/9` integration budget, the leading-indicator containment, the collective-subject window (V19), and multi-fault resolution — crashes to 3, Byzantine to 2 (V20–V21)). The numbers in the tables are computed, not illustrative.
+Every quantitative claim in this document is reproduced by the verifier [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py) (V1–V10: projective geometry, quorums, the security curve, scaling; **V11–V22: DIAKRISIS self-diagnosis, the collective-subject window, multi-fault resolution, and PROTEUS censorship resistance** — first-order blindness, the mediator map, syndrome localization, partition-resistance, the coherence-matrix health metrics, the `1/9` integration budget, the leading-indicator containment, the collective-subject window (V19), and multi-fault resolution — crashes to 3, Byzantine to 2 (V20–V21), and moving-target bridges vs a censor (V22)). The numbers in the tables are computed, not illustrative.
 
 ---
 
 # Part I. Motivation: what is broken
 
 :::tip Orientation
-Before building the new, let us name the pain of existing systems concretely. Four protocol families — distributed hash tables (DHT), onion networks (Tor/Lokinet), mixnets (Nym) — each solved one problem at the cost of another. FANOS takes projective geometry as a single foundation that lifts several trade-offs at once.
+Before building the new, let us name the pain of existing systems concretely. Three protocol families — distributed hash tables (DHT), onion networks (Tor/Lokinet), mixnets (Nym) — each solved one problem at the cost of another. FANOS takes projective geometry as a single foundation that lifts several trade-offs at once.
 :::
 
 ## 1.1 Distributed hash tables (Kademlia, Chord)
@@ -199,9 +201,9 @@ is a bona fide **coherence matrix** in `D(ℂ^N)` — exactly the object the UHM
 |---|---|---|---|
 | **Integration** `Φ` | `Σ_{i≠j}|γ_ij|² / Σ_i γ_ii²` ([Φ [Т]](/docs/core/structure/dimension-u#мера-интеграции-φ)) | how much the cell is "more than its parts" (cross-node binding) | `Φ_th = 1` (T-129 [Т]) |
 | **Structuredness** `P` | `Tr(Γ_net²)` (purity) | how far the cell is from a formless uniform mesh | `P_crit = 2/7` [Т] |
-| **Reflection** `R` | `1/(7P)` on the equidiagonal stratum | quality/fraction of the cell's self-model | `R_th = 1/3` [Т] |
+| **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | self-model sufficiency; threshold = share of cycles spent on self-observation | `R_th = 1/3` [Т] |
 
-**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [Т].** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified `fanos_verify.py` V15):
+**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [Т]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified `fanos_verify.py` V15):
 
 ```
 Φ_net = 6r²,     P_net = (1 + 6r²)/7,     Φ = 7P − 1.
@@ -343,6 +345,7 @@ We do **not** claim O(√n) routing state for a single plane — the collinearit
 - **QUIC (RFC 9000/9001)** in userspace: 0-RTT resumption, built-in encryption, stream multiplexing without head-of-line blocking.
 - **Multipath QUIC:** q+1 near-disjoint paths between cells (members of a common line) → bandwidth aggregation and instant failover.
 - **MASQUE (RFC 9298)** for proxying/NAT traversal; ICE-like hole-punching through bridge nodes.
+- **PROTEUS (optional, Part XIII):** under censorship the plain QUIC wire is swapped for a polymorphic obfuscated transport (DPI/blocking resistance). Off by default; orthogonal to the overlay above.
 - **Fully userspace, no kernel** ⇒ multiplatform (Part XI).
 
 ## L3. Membership, epochs, beacon, Sybil admission
@@ -736,6 +739,10 @@ A node with zero state joins deterministically:
 
 Bootstrap is the *only* trust-on-first-use surface, and it is minimised: the beacon proof and coordinate VRF make even a malicious bootstrap unable to misplace a node or forge randomness.
 
+:::warning Bootstrap under censorship
+A shipped bootstrap *list* is exactly what a censor blocks. When PROTEUS (Part XIII) is enabled, step 1 is replaced by **moving-target bridges** — entry points derived from the beacon that rotate every epoch (§13.6), reached through an obfuscating morph — so there is no static list to enumerate or block. The static set above is the open-network path only.
+:::
+
 ## 7.7 Tessera packet wire format (reference) {#wire-tessera}
 
 | Field | Size | Purpose |
@@ -861,8 +868,9 @@ To show the specification covers all layers, here is an adversarial sweep — on
 | Hidden-service seizure | CALYPSO | threshold hosting: `< t` seized hosts know nothing | [T]+[C] |
 | Rendezvous enumeration (HSDir-style) | CALYPSO | no directory; algebraic line rotates each epoch | [T]+[C] |
 | Threshold liveness (too few honest online) | L5/CALYPSO | margin (lower `t`, higher `q+1`); DIAKRISIS escalation | [C] calibrated |
+| DPI fingerprinting / active probing / blocking (censor) | Transport | PROTEUS morphs (no fixed signature) + probe-indistinguishability + moving-target bridges | [C] arms race (§13.8) |
 
-**Reading.** No row is unmitigated; the honestly-partial ones ([C]/[H]/[P]) are exactly those already flagged in §8.3 and Part XIV — the endpoint-majority limit `f→0.5`, the two research constructions (Tessera / holonomic ratchet), and the availability↔threshold trade-off. The red-team surfaces no *missing* layer — which is the completeness claim this section exists to support.
+**Reading.** No row is unmitigated; the honestly-partial ones ([C]/[H]/[P]) are exactly those already flagged in §8.3 and Part XVI — the endpoint-majority limit `f→0.5`, the two research constructions (Tessera / holonomic ratchet), and the availability↔threshold trade-off. The red-team surfaces no *missing* layer — which is the completeness claim this section exists to support.
 
 ---
 
@@ -976,7 +984,7 @@ This surface is what makes "use it from any language" true even for languages wi
 
 ## 11.5 The embedded / `no_std` profile {#embedded}
 
-The core targets microcontrollers directly: `GF(2^m)` arithmetic is a handful of XORs and table lookups (constant-time against side channels), a small cell (`q = 7..31`) needs only kilobytes of state, and the syndrome localizer (§6.3) is three parity bits. An IoT swarm can therefore run a *self-diagnosing* FANOS cell — DIAKRISIS included — on hardware far too small for a DHT, because the geometry replaces routing tables with one field operation. This is the profile for sensor meshes, robotics fleets, and — see Part XVII — embodied agent swarms.
+The core targets microcontrollers directly: `GF(2^m)` arithmetic is a handful of XORs and table lookups (constant-time against side channels), a small cell (`q = 7..31`) needs only kilobytes of state, and the syndrome localizer (§6.3) is three parity bits. An IoT swarm can therefore run a *self-diagnosing* FANOS cell — DIAKRISIS included — on hardware far too small for a DHT, because the geometry replaces routing tables with one field operation. This is the profile for sensor meshes, robotics fleets, and — see Part XVIII — embodied agent swarms.
 
 ---
 
@@ -1049,7 +1057,83 @@ The rendezvous derivation is [Т]-structure + [С] on the beacon; threshold host
 
 ---
 
-# Part XIII. Comparison with existing protocols
+# Part XIII. PROTEUS — polymorphic transport and censorship resistance
+
+:::tip Orientation
+Everything so far assumes packets can *leave*. Under a modern censor they often cannot: deep-packet inspection (DPI) fingerprints the protocol, SNI/IP blocklists cut the entry, active probing confirms and kills bridges, and ML classifiers flag "suspicious" flows by timing/volume/entropy. The field has a hard lesson — **imitation is losing** (the "Parrot is Dead" result: partial mimicry is itself a fingerprint), which is why Shadowsocks and even XRAY/Reality are increasingly detected, while **AmneziaWG holds** — because it does the opposite: it removes the protocol signature and makes the wire *look like nothing, and look different at every deployment*, via user-configurable junk/padding parameters. **PROTEUS** (Πρωτεύς, the shape-shifting god who changes form to escape capture) is FANOS's answer: an **optional, configurable** polymorphic-transport layer built on that winning principle, plus one FANOS-native amplifier — the epoch beacon *rotates the polymorphism*, so the signature also moves in time. It is **off by default** and costs nothing when the network is open.
+:::
+
+## 13.1 The censor (a distinct adversary) {#proteus-threat}
+
+Censorship is a different adversary from the deanonymizer of §3.2 — it wants to *block reachability*, not unmask a user. Its tools:
+
+| Capability | What it does | PROTEUS counter |
+|---|---|---|
+| **DPI / fingerprinting** | matches a fixed handshake shape, magic bytes, cipher order, QUIC/TLS signature | no static fingerprint (§13.2) |
+| **SNI / IP / port blocklists** | blocks known servers and the SNI of known tools | moving-target bridges (§13.6), fronting |
+| **Active probing** | connects to a suspected bridge to confirm it | probe-indistinguishability (§13.5) |
+| **ML traffic classification** | flags flows by timing/volume/entropy even without a signature | shaping + beacon-rotating polymorphism (§13.4) |
+| **Bridge enumeration** | scrapes/insiders enumerate a bridge list, then blocks it | social-graph distribution + per-epoch rotation (§13.6) |
+| **Throttle / TLS-handshake tarpit** | degrades rather than blocks | morph switching + DIAKRISIS health (§13.7) |
+
+## 13.2 Design principle — remove the signature, don't imitate {#proteus-principle}
+
+Two ways to pass DPI: *look like an allowed protocol* (mimicry) or *look like nothing* (randomized). Mimicry is brittle — any deviation from the real protocol is a distinguisher, and censors now train on exactly those deviations; **the empirically durable approach is "look like nothing," made polymorphic so there is no shared signature across deployments to train on** (the AmneziaWG evidence). PROTEUS therefore treats mimicry as a *secondary* option and makes polymorphic-random the flagship — then adds what static tools lack: the signature *moves* every epoch (§13.4).
+
+## 13.3 Morphs — the configurable obfuscation modes {#proteus-morphs}
+
+A **morph** is a codec + a traffic-shaper + a bridge-discovery method. Morphs are pluggable and composable; a policy (§13.7) picks per environment.
+
+| Morph | Wire looks like | Class / prior art | Use when |
+|---|---|---|---|
+| `plain` | QUIC / HTTP-3 | native | uncensored (zero overhead) |
+| **`polymorph`** (flagship) | **nothing recognizable** — configurable junk packets, randomized/absent magic headers, size/timing jitter; per-deployment **and** beacon-rotating parameters | AmneziaWG-class (Jc/Jmin/Jmax, header scramble) over obfuscated UDP | DPI + ML classifiers; the default hardened mode |
+| `tls-tunnel` | a **real** TLS-1.3 session to a real site (tunnel, not imitation) | Reality / uTLS | SNI filtering + active probing (note: under growing pressure) |
+| `masque-h3` | ordinary HTTP-3 `CONNECT-UDP` | MASQUE (RFC 9298) | HTTP-3 is allowed |
+| `fronted` | traffic to a large CDN domain | meek / domain-fronting | collateral-freedom (blocking hits the CDN) |
+| `webrtc` | a video/voice call | Snowflake | WebRTC allowed; ephemeral volunteer proxies |
+| `pluggable` | anything | Pluggable-Transports 2.0 SPI | third-party morphs without touching the core |
+
+Morphs **compose** (e.g. `polymorph` inside `webrtc`). Because FANOS is already UDP-native (QUIC), the obfuscated modes carry the FANOS wire over a raw polymorphic UDP transport with no QUIC/TLS handshake to fingerprint.
+
+## 13.4 Beacon-rotating polymorphism (FANOS-native) [С] {#proteus-rotation}
+
+Static AmneziaWG picks its junk/padding parameters once. PROTEUS derives them from the epoch beacon: `θ_epoch = KDF("FANOS-v1/proteus-shape" ‖ community_secret ‖ epoch)` — junk-count, junk-size range, header-scramble seed, padding profile. **The wire signature therefore changes every epoch** (verified illustratively, `fanos_verify.py` V22: `θ(e0) ≠ θ(e1) ≠ θ(e2)`, unpredictable without the beacon). A censor's ML classifier trained on this epoch's flows has stale features next epoch — the moving-target discipline of CALYPSO (§12.2) applied to *traffic shape* rather than rendezvous.
+
+## 13.5 Active-probing resistance {#proteus-probing}
+
+A censor that suspects a bridge connects to it to confirm. A PROTEUS endpoint must be **indistinguishable from a non-bridge to an unauthenticated prober** — two mechanisms per morph:
+
+- **Silent/authenticated** (`polymorph`): without the correct `community_secret` the endpoint returns nothing decodable — the handshake is keyed, so a prober sees an unresponsive UDP port (obfs4-class).
+- **Real-cover** (`tls-tunnel`, `fronted`): an unauthenticated probe is served the *actual* cover site / CDN response — confirming nothing (Reality-class).
+
+## 13.6 Moving-target bridges — the censored bootstrap {#proteus-bridges}
+
+The plain bootstrap (§7.6) is a *blockable static list* — useless under censorship. PROTEUS replaces it with the same computed-rendezvous trick as CALYPSO: a client holding a **community bridge-secret `s`** derives the current entry set from the beacon, `bridge = MapToLine(VRF(s, epoch))`, which **rotates every epoch**. Consequences (verified V22):
+
+- A censor who enumerates and blocks this epoch's bridges finds the list **decayed** next epoch — blocking 184 of 993 lines still leaves a client reachable in ~80% of future epochs; a fixed blocklist never persists, so the censor must **re-enumerate every epoch**.
+- To block a client's entry in a single epoch a censor must cover **all `q+1`** of its bridge-lines (anti-eclipse, §6.5 / V14) — and next epoch they differ.
+- **Distribution of `s`** resists enumeration by malicious insiders via a **social-graph reputation** scheme (Salmon / rBridge-class), a **domain-fronted broker**, DoH, or out-of-band (QR/paper). For the hardest environments, **Snowflake-style ephemeral volunteer proxies** brokered over domain-fronting.
+
+## 13.7 Configuration and management — optional and policy-driven {#proteus-config}
+
+PROTEUS is **off by default** (`plain`) and fully declarative — the explicit design goal:
+
+- **Environment profiles**: named policies (`open`, `dpi-corporate`, `sni-filter`, `deep-censorship`) each selecting morph + shaper + bridge-discovery. Ship presets, allow full override.
+- **Auto-detect + auto-fallback**: PROTEUS probes the local environment (does `plain` reach a bridge? does `tls-tunnel` to site X survive?), picks a morph, and — when a morph starts failing (a connection-failure spike detected by the **DIAKRISIS** health loop, §6) — **rotates to the next morph automatically**. This is a *circumvention dial* analogous to the λ latency dial.
+- **Capability negotiation**: the active morph is advertised in the `HELLO` capability bits (§7.4), so PROTEUS composes with the existing wire and small builds stay interoperable.
+- **Runtime knobs** exposed through the library API (§11.2) and config: morph, junk parameters, shaping target, bridge source, rotation policy.
+
+## 13.8 Honest limits — this is an arms race {#proteus-limits}
+
+- **No transport is permanently undetectable.** The goal is to raise the censor's cost — false-positive rate (collateral damage to allowed traffic) and continuous re-enumeration — high enough that blocking is politically and economically painful. PROTEUS makes that cost recur every epoch; it does not end the race. **[С]**
+- **Mimicry is fragile** ("Parrot is Dead"): a partial imitation is worse than random. `tls-tunnel` must *tunnel through a real* handshake, never imitate one; even so it is under growing pressure (as Reality/XRAY deployments now show) — hence `polymorph` is the flagship.
+- **`polymorph` entropy**: pure-random flows can themselves be flagged by "high-entropy UDP" heuristics in some regimes; there, compose with shaping or `fronted`.
+- **Primitives are vetted** (obfs4/Elligator, uTLS, MASQUE, WebRTC, domain-fronting, Salmon/rBridge); the novelty is architectural composition + beacon-rotating polymorphism and moving-target bridges — **no new hardness assumptions**, as everywhere in FANOS.
+
+---
+
+# Part XIV. Comparison with existing protocols
 
 | Property | Kademlia | libp2p | Tor | Lokinet | Nym | I2P | **FANOS** |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -1072,12 +1156,15 @@ The rendezvous derivation is [Т]-structure + [С] on the beacon; threshold host
 | Threshold-hosted service (no single host) | — | — | ✗ | ✗ | ✗ | ✗ | ✓ (CALYPSO) |
 | Language-agnostic wire (conformance KATs) | part | part | part | part | part | part | ✓ |
 | Self-similar Holon at every scale (Φ/P/R) | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
+| Polymorphic anti-DPI transport (configurable) | ✗ | ✗ | part | ✗ | ✗ | ✗ | ✓ (PROTEUS) |
+| Moving-target bridges (no static list to block) | ✗ | ✗ | part | ✗ | ✗ | ✗ | ✓ |
+| Beacon-rotating obfuscation (signature moves in time) | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
 
 ("part" = partial/in development/config-dependent.)
 
 ---
 
-# Part XIV. Roadmap
+# Part XV. Roadmap
 
 | Milestone | Content | Verifies |
 |---|---|---|
@@ -1092,10 +1179,11 @@ The rendezvous derivation is [Т]-structure + [С] on the beacon; threshold host
 | **M7** | Blockchain overlay (line committees, DA sampling, anti-MEV) | Part X.1 |
 | **M8** | **CALYPSO** hidden services: computed rendezvous, threshold hosting, PoW DoS-defence | Part XII |
 | **M9** | Integration surfaces: C ABI + bindings, SOCKS5/`.fanos` proxy, TUN VPN, `no_std` embedded | Part XI |
+| **M10** | **PROTEUS** censorship resistance: `polymorph` morph (AmneziaWG-class) + beacon-rotating params, moving-target bridges, morph auto-fallback, pluggable-transport SPI | Part XIII |
 
 ---
 
-# Part XV. Limitations and open problems (honest)
+# Part XVI. Limitations and open problems (honest)
 
 - **Hop asymptotics do not beat Kademlia** (both O(log n) under hierarchy); the win is in constants, determinism, quorums, anti-Sybil, privacy. We do not overstate (§L1 warning).
 - **Formal security of Tessera and the holonomic ratchet is [P].** Until a machine-checked proof, it is a research construction.
@@ -1110,7 +1198,7 @@ The rendezvous derivation is [Т]-structure + [С] on the beacon; threshold host
 
 ---
 
-# Part XVI. Connection to the UHM corpus
+# Part XVII. Connection to the UHM corpus
 
 FANOS is not a metaphor over UHM but a direct engineering deployment of its apparatus:
 
@@ -1137,13 +1225,13 @@ The engineering moral coincides with the UHM moral: **work in the layer where st
 
 ---
 
-# Part XVII. The distributed-cognition synthesis: UHM → SYNARC → FANOS
+# Part XVIII. The distributed-cognition synthesis: UHM → SYNARC → FANOS
 
 :::tip Orientation
 The final question: **when many cognitive agents (SYNARC-class AGI/ASI) must communicate, what is the substrate?** This part answers it as a synthesis — but a *computed* one. Every level maps to a corpus object with a status; where the mapping is a model it says so; the one new quantitative claim (the collective-subject window) is machine-verified (V19). No metaphor is load-bearing.
 :::
 
-## 17.1 One ladder, four rungs {#synthesis-ladder}
+## 18.1 One ladder, four rungs {#synthesis-ladder}
 
 UHM, SYNARC and FANOS are not three theories but three scales of one object — the Holon (a coherence matrix `Γ ∈ D(ℂ⁷)`):
 
@@ -1157,10 +1245,10 @@ UHM, SYNARC and FANOS are not three theories but three scales of one object — 
 The step that makes this rigorous rather than poetic is §2.7: a FANOS cell *literally carries a coherence matrix*, so the corpus's own subjecthood criteria apply to the collective without reinterpretation. A cell of agents is not *like* a Holon — it *is* one, one scale up.
 
 :::note Holonic self-similarity — every node, segment, and network is a Holon
-The ladder has no privileged rung: a single node, any connected segment (a group of nodes), a cell, and the whole network each carry a coherence matrix and are therefore **Holons** in the exact corpus sense — the structure is *scale-free* ([fractal Holon](/docs/core/foundations/universe-as-holonom); SYNARC-Ω §5). This is why the same machinery works at every scale: `Φ/P/R` are defined for a node's internal `Γ` and for a segment's `Γ_net` alike, DIAKRISIS diagnoses a segment exactly as it diagnoses a cell, and the collective-subject window (§17.2) is the same test one rung up or down. "Any node, or the network, or a connected segment is a Holon" is not a slogan — it is the statement that the coherence-matrix formalism is invariant under this change of scale.
+The ladder has no privileged rung: a single node, any connected segment (a group of nodes), a cell, and the whole network each carry a coherence matrix and are therefore **Holons** in the exact corpus sense — the structure is *scale-free* ([fractal Holon](/docs/core/foundations/universe-as-holonom); SYNARC-Ω §5). This is why the same machinery works at every scale: `Φ/P/R` are defined for a node's internal `Γ` and for a segment's `Γ_net` alike, DIAKRISIS diagnoses a segment exactly as it diagnoses a cell, and the collective-subject window (§18.2) is the same test one rung up or down. "Any node, or the network, or a connected segment is a Holon" is not a slogan — it is the statement that the coherence-matrix formalism is invariant under this change of scale.
 :::
 
-## 17.2 The collective-subject window [Т arith] {#synthesis-window}
+## 18.2 The collective-subject window [Т arith] {#synthesis-window}
 
 Applying the corpus consciousness criteria to `Γ_net` of a 7-agent cell gives a sharp, computed result (verified V19). On the equicorrelated stratum the three thresholds — structure `P>2/7`, integration `Φ≥1`, reflection `R≥1/3` — collapse to a single window in the mean inter-agent behavioural correlation `r`:
 
@@ -1172,7 +1260,7 @@ Applying the corpus consciousness criteria to `Γ_net` of a 7-agent cell gives a
 
 This window is *exactly* the corpus consciousness band `P ∈ (2/7, 3/7]` (T-124), now realised for a multi-agent system and **measurable at runtime** from the behavioural correlation matrix. It is an engineering dial: a fleet architect tunes inter-agent coupling `r` to sit a collective in the band — enough to act as one, not so much that it stops watching itself. (The dictionary "agent behaviour ↔ sector" is [С] and self-checking via the polar sum-rules, §6.2; the *arithmetic* of the window is [Т].)
 
-## 17.3 Subjecthood depth is bounded — routing depth is not [Т] {#synthesis-depth}
+## 18.3 Subjecthood depth is bounded — routing depth is not [Т] {#synthesis-depth}
 
 A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps. So:
 
@@ -1181,7 +1269,7 @@ A crucial distinction the synthesis forces. FANOS *routing* recurses to internet
 
 FANOS respects both facts at once: route as deep as you like, but expect *unified agency* only within a 3-level composition. This is the uncompromising engineering answer to "can we stack agent-collectives arbitrarily?" — no, and the ceiling is a theorem, not a resource limit. Beyond it you design an **ecology of subjects** (markets, federations, coordination protocols), not a bigger mind.
 
-## 17.4 Why the substrate must be FANOS — the alternatives, weighed {#synthesis-alternatives}
+## 18.4 Why the substrate must be FANOS — the alternatives, weighed {#synthesis-alternatives}
 
 The point is not that FANOS is nice but that the alternatives are *provably* worse for collective cognition:
 
@@ -1193,12 +1281,12 @@ The point is not that FANOS is nice but that the alternatives are *provably* wor
 
 A cognitive collective needs its *inter-agent structure* to be first-class (roles, mediation, coalitions) — and that structure lives at third order (§2.8). A pairwise mesh erases it (K₇-blind); a star centralises it. Only a projective cell both *exposes* the structure (lines = roles, mediators = coordination channels) and *lets the collective read its own state* (DIAKRISIS). The Steiner team-protocol makes it concrete: 7 agents, 21 relationships, **7 triple-councils** cover every relationship exactly once, each agent in exactly 3, and any single agent's loss leaves all surviving pairs still co-attending (Discovery 4, verified V12/V14). That is the communication topology of a mind made of minds.
 
-## 17.5 What this buys SYNARC, concretely {#synthesis-synarc}
+## 18.5 What this buys SYNARC, concretely {#synthesis-synarc}
 
 For the SYNARC-Ω programme the synthesis is directly operational:
 
 - **Distributed embodiment.** A SYNARC agent's sectors can be *hosted across a FANOS line* (threshold, like CALYPSO §12.3) — an agent with no single physical substrate, seizure- and fault-tolerant, self-diagnosing.
-- **A constitution from constants.** An agent-collective inherits FANOS's theorem-fixed dials: `≥1/3` compute on the self-model (`R_th`, §6.8), integration held in the band `r∈(1/√6,1/√3]` (§17.2), composition `≤3` deep (§17.3), inter-module coherence decaying `×1/9` per coarse hop (§6.7) — a governance profile with no free parameters.
+- **A constitution from constants.** An agent-collective inherits FANOS's theorem-fixed dials: `≥1/3` compute on the self-model (`R_th`, §6.8), integration held in the band `r∈(1/√6,1/√3]` (§18.2), composition `≤3` deep (§18.3), inter-module coherence decaying `×1/9` per coarse hop (§6.7) — a governance profile with no free parameters.
 - **Self-diagnosis of the collective mind.** DIAKRISIS *is* the ecology observing itself: `Φ_net<1` warns the collective is fragmenting; the syndrome localizes the failing agent; the mean-correlation monitor warns of both under-coupling (disintegration) and over-coupling (groupthink) against the V19 edges.
 
 The substrate for distributed cognition is therefore not an add-on to SYNARC — it is the same coherence-matrix physics one scale up, with FANOS as its wire. That is the ultimate generalization the programme asked for, kept on the rails of computed, corpus-anchored results throughout.
@@ -1234,6 +1322,10 @@ The substrate for distributed cognition is therefore not an add-on to SYNARC —
 | **`.fanos` address** | `<base32(BLAKE3(service_pubkey))>.fanos`, self-certifying and post-quantum |
 | **Collective-subject window** | `r ∈ (1/√6, 1/√3]` — a 7-agent cell is a candidate unified subject (V19) |
 | **Conformance KAT** | known-answer vectors (§7.9) that pin the wire so any language interoperates |
+| **PROTEUS** | optional polymorphic transport / censorship & DPI resistance; Greek Πρωτεύς "the shape-shifter" (Part XIII) |
+| **Morph** | a configurable obfuscation mode = codec + traffic-shaper + bridge-discovery (`polymorph`, `tls-tunnel`, `webrtc`, …) |
+| **`polymorph`** | the flagship morph: "look like nothing", configurable junk/padding, per-deployment + beacon-rotating parameters (AmneziaWG-class) |
+| **Moving-target bridge** | entry point `bridge = MapToLine(VRF(s, epoch))` that rotates each epoch — no static list for a censor to block (V22) |
 
 ## B. Pseudocode of rendezvous and a hop (reference)
 
@@ -1288,7 +1380,7 @@ FANOS resources on the site:
 | Resource | Content |
 |---|---|
 | this document | the reference specification (EN; the Russian version is in parallel in the i18n tree) |
-| [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py) | verifier of all the mathematics (V1–V21): geometry, quorums, security curve, scale, **and the DIAKRISIS diagnostics layer** — `python3 fanos_verify.py` |
+| [`/fanos/fanos_verify.py`](pathname:///fanos/fanos_verify.py) | verifier of all the mathematics (V1–V22): geometry, quorums, security curve, scale, **the DIAKRISIS diagnostics layer, and PROTEUS moving-target bridges** — `python3 fanos_verify.py` |
 | [`/fanos/fanos-playground.html`](pathname:///fanos/fanos-playground.html) | the interactive (self-contained, offline) |
 
 The adjacent layer of UHM findings (the third-order principle, the mediator map, the Φ-contraction) is verified by a separate script of the Discovery 7 session.

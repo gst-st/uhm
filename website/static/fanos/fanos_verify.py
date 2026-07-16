@@ -332,4 +332,28 @@ _S=set(_minss); _hyper=all(len(set(L)&_S)!=1 for L in _lines2) and all(not (set(
 print(f"  min stopping set = size {len(_minss)} {tuple(DIMS[i] for i in _minss)}; is a HYPEROVAL (meets every line in 0 or 2): {_hyper}")
 print(f"  => ANY <=3 crashes always recover; recovery fails first only on a 4-point hyperoval (no 3 collinear).")
 
+hdr("V22. PROTEUS — moving-target bridges + beacon-rotating polymorphism defeat static blocking")
+import hashlib
+def _prf(secret, epoch, N):  # illustrative pseudo-VRF (real: ECVRF/threshold beacon)
+    h=hashlib.sha256(f"FANOS-v1/bridge|{secret}|{epoch}".encode()).digest()
+    return int.from_bytes(h[:8],'big') % N
+q=31; N=q*q+q+1                     # a realistic cell (993 lines)
+secret="community-42"
+# (a) rotation spreads over the line space -> no small static set persists
+ep_lines=[_prf(secret,e,N) for e in range(2000)]
+print(f"  q={q}, N={N}: over 2000 epochs a client's bridge-line takes {len(set(ep_lines))} distinct values (well-spread rotation).")
+# (b) a censor observes+blocks the bridges of the first W epochs; future reachability?
+for W in (10,50,200):
+    blocked=set(_prf(secret,e,N) for e in range(W))
+    future=range(W,W+1000)
+    reach=sum(1 for e in future if _prf(secret,e,N) not in blocked)/1000
+    print(f"    censor blocks {len(blocked)} lines seen in first {W} epochs -> client still reachable in {reach*100:.1f}% of next 1000 epochs")
+print(f"  static blocklist decays: reachable ~ (1 - |blocked|/N) per epoch; a fixed list never persists -> censor must RE-enumerate every epoch.")
+# (c) anti-eclipse tie-in: to block a client's entry in ONE epoch, ALL its q+1 bridge-lines must fall (reuses V14)
+print(f"  to fully block one client in one epoch: cover all q+1={q+1} of its bridge-lines (anti-eclipse, V14) — and next epoch they differ.")
+# (d) beacon-rotating polymorphism: obfuscation params change each epoch -> a classifier trained on epoch t has fresh params at t+1
+theta=lambda e: hashlib.sha256(f"FANOS-v1/proteus-shape|{secret}|{e}".encode()).hexdigest()[:12]
+print(f"  wire-shape params theta(epoch): e0={theta(0)}  e1={theta(1)}  e2={theta(2)}  (unpredictable without the beacon => trained DPI signature goes stale each epoch)")
+print("  [С] это поднимает стоимость цензора (re-enumeration + collateral), НЕ делает трафик вечно необнаружимым (гонка вооружений).")
+
 print("\nALL CHECKS COMPLETE.")
