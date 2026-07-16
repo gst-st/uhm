@@ -658,7 +658,7 @@ The parameter $\epsilon \approx 0.01$ yields underestimated masses for the light
 $$\epsilon_{\mathrm{eff}} = \frac{\lambda_3 \cdot \epsilon}{4\pi} \approx \frac{74 \times 0.01}{12.6} \approx 0.059$$
 
 :::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [T]). UV finiteness (T-66 [T]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). See [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3) for details.
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [T]). UV finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). See [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3) for details.
 :::
 
 Each additional $V_3$ vertex in a diagram contributes a factor $\sim \epsilon_{\mathrm{eff}}$.

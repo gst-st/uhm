@@ -126,19 +126,23 @@ S_\mathrm{spec}[D, \Lambda] = \mathrm{Tr}\, f(D^2 / \Lambda^2)
 $$
 depends on the choice of cut-off (test) function $f: [0, \infty) \to \mathbb{R}_{\geq 0}$, appearing through its **moments**
 $$
-f_{2n} = \int_0^\infty u^{n-1} f(u) \, du.
+f_0 = \int_0^\infty u \, f(u) \, du, \qquad f_2 = \int_0^\infty f(u) \, du, \qquad f_4 = f(0).
 $$
 
 The asymptotic expansion for $\Lambda \to \infty$ in a four-dimensional almost-commutative spectral triple gives (Gilkey 1984; Connes–Chamseddine 1996, 2010):
 $$
-\mathrm{Tr}\, f(D^2/\Lambda^2) \;\sim\; f_4 \, \Lambda^4 \, a_0(D^2) \;+\; f_2 \, \Lambda^2 \, a_2(D^2) \;+\; f_0 \, a_4(D^2) \;+\; \mathcal O(\Lambda^{-2}),
+\mathrm{Tr}\, f(D^2/\Lambda^2) \;\sim\; f_0 \, \Lambda^4 \, a_0(D^2) \;+\; f_2 \, \Lambda^2 \, a_2(D^2) \;+\; f_4 \, a_4(D^2) \;+\; \mathcal O(\Lambda^{-2}),
 $$
 where $a_{2k}(D^2)$ are the heat-kernel (Seeley–de Witt) coefficients.
 
+:::note Moment-labeling convention (corpus-wide)
+The subscript of $f_{2k}$ matches the heat-kernel coefficient $a_{2k}$ it multiplies: $f_0 \leftrightarrow \Lambda^4 a_0$, $f_2 \leftrightarrow \Lambda^2 a_2$, $f_4 = f(0) \leftrightarrow a_4$ — as in the [spectral formula for $\Lambda_{\text{CC}}$](/docs/physics/gravity/cosmological-constant#теорема-спектральная-лямбда), T-70 and T-254. Caution when comparing with the literature: the Chamseddine–Connes originals label moments by the power of $\Lambda$ instead ($f_4 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f(0)\, a_4$), i.e. their $f_4$ is our $f_0$, and their $f_0 = f(0)$ is our $f_4$.
+:::
+
 Three moments $f_0, f_2, f_4$ enter the physical Lagrangian:
-- $f_4 \, a_0$ → **cosmological constant** ($\Lambda_\mathrm{cc}$).
+- $f_0 \, a_0$ → **cosmological constant** ($\Lambda_\mathrm{cc}$).
 - $f_2 \, a_2$ → **Einstein–Hilbert action** (Newton's $G_N$).
-- $f_0 \, a_4$ → **Yang–Mills kinetic** + Weyl-squared + Higgs potential.
+- $f_4 \, a_4$ → **Yang–Mills kinetic** + Weyl-squared + Higgs potential.
 
 Since $f_0, f_2, f_4$ are free parameters of the choice of $f$, naively this gives three tunable numbers in the effective action — this is the concern sometimes raised as "fine-tuning of the cut-off function". This section shows that **UHM fixes the choice canonically** and that the tunability affects only dimensional ratios, not the structural predictions of UHM.
 
@@ -155,9 +159,11 @@ The choice $f(u) = e^{-u}$ is **adopted** (fixed by the theory as a definition) 
 :::
 
 With this choice:
-- $f_2 = \int_0^\infty e^{-u} \, du = 0! = 1$.
-- $f_4 = \int_0^\infty u \, e^{-u} \, du = \Gamma(2) = 1! = 1$ (the earlier "$3!=6$" mis-identified this with $\int_0^\infty u^3 e^{-u}\,du$; here $\int_0^\infty u^{n}e^{-u}\,du = n!$, so $f_{2m}$ uses $n=m-1$). The spectral-action moment convention $(f_0,f_2,f_4)=(\text{reg},1,1)$ is used consistently below.
-- $f_0 = \zeta$-regularised (the integral $\int_0^\infty u^{-1} e^{-u}\, du$ diverges logarithmically; the canonical zeta regularisation yields $f_0 = -\gamma$ (Euler–Mascheroni) or zero, depending on scheme).
+- $f_0 = \int_0^\infty u \, e^{-u} \, du = \Gamma(2) = 1$ — the raw regulator moment of the $\Lambda^4$-term; the **renormalised** $a_0$-coefficient entering the $\Lambda$-budget is fixed self-consistently by the vacuum ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический)).
+- $f_2 = \int_0^\infty e^{-u} \, du = 1$.
+- $f_4 = f(0) = 1$ — the UV-finite ($\Lambda^0$) coefficient is the value of $f$ at zero; no regularisation is involved.
+
+The spectral-action moment convention $(f_0, f_2, f_4) = (1, 1, 1)$ is used consistently below.
 
 Substituting into the spectral-action asymptotic expansion:
 - $G_N = \dfrac{3\pi}{7 f_2 \Lambda^2} = \dfrac{3\pi}{7 M_P^2} \approx \dfrac{1.347}{M_P^2}$ in natural units.
@@ -167,17 +173,17 @@ Substituting into the spectral-action asymptotic expansion:
 
 Alternative natural choices of $f$ and their moments:
 
-| Choice | $f(u)$ | $f_2$ | $f_4$ | $f_4/f_2^2$ |
-|---|---|---|---|---|
-| Exponential (canonical UHM) | $e^{-u}$ | $1$ | $6$ | $6$ |
-| Gaussian | $e^{-u^2}$ | $\sqrt{\pi}/2$ | $1/2$ | $2/\pi$ |
-| Sharp cut-off | $\Theta(1-u)$ | $1/2$ | $1/4$ | $1$ |
-| Truncated Gaussian (Connes–Chamseddine) | $e^{-u^2/2}$, $u \leq 1$ | numerical | numerical | numerical |
+| Choice | $f(u)$ | $f_0$ | $f_2$ | $f_4$ | $f_0/f_2^2$ |
+|---|---|---|---|---|---|
+| Exponential (canonical UHM) | $e^{-u}$ | $1$ | $1$ | $1$ | $1$ |
+| Gaussian | $e^{-u^2}$ | $1/2$ | $\sqrt{\pi}/2$ | $1$ | $2/\pi$ |
+| Sharp cut-off | $\Theta(1-u)$ | $1/2$ | $1$ | $1$ | $1/2$ |
+| Truncated Gaussian (Connes–Chamseddine) | $e^{-u^2/2}$, $u \leq 1$ | numerical | numerical | $1$ | numerical |
 
-While the absolute numerical values $G_N$ and $\Lambda_\mathrm{cc}$ depend on $f$ (through $f_2$ and $f_4$ individually), the **ratios** relevant to UHM physics are more tightly constrained:
+While the absolute numerical values $G_N$ and $\Lambda_\mathrm{cc}$ depend on $f$ (through $f_0$ and $f_2$ individually), the **ratios** relevant to UHM physics are more tightly constrained:
 
 $$
-\frac{\Lambda_\mathrm{cc}}{G_N^{-2}} \;\propto\; \frac{f_4 \cdot (f_2)^2}{\text{constant}}
+\frac{\Lambda_\mathrm{cc}}{G_N^{-2}} \;\propto\; \frac{f_0}{f_2^2}
 $$
 
 which changes by $\mathcal O(1)$ factor across reasonable choices of $f$. More importantly:
@@ -214,7 +220,7 @@ The choice $f(u) = e^{-u}$ is natural on several grounds:
 
 1. **Heat kernel regularisation**: $f(u) = e^{-u}$ is the heat kernel weighting in the Seeley–de Witt expansion, making the spectral action a **generalised heat-kernel functional** — connection to standard functional analysis.
 
-2. **Moment-generating property**: moments $f_{2n} = (2n-1)!/2^{n-1}$ for Gaussian, $(n-1)!$ for exponential — latter gives cleaner integer values, preferable for rigorous derivations.
+2. **Moment values**: for the exponential all three moments are unity, $(f_0, f_2, f_4) = (1, 1, 1)$; for the Gaussian — $(1/2, \sqrt{\pi}/2, 1)$. The exponential's clean integer values are preferable for rigorous derivations.
 
 3. **Physical universality**: in the Wilson renormalisation group flow, the IR limit is insensitive to the precise UV regularisation — the canonical choice represents the most natural regulator compatible with UHM's $G_2$-symmetry and compactness of $(S^1)^{21}/G_2$.
 
@@ -226,9 +232,9 @@ The choice $f(u) = e^{-u}$ is natural on several grounds:
 **Concern** (e.g., raised in external audits): three moments $f_0, f_2, f_4$ of an arbitrary cut-off function leave three free parameters in the effective action, enabling fine-tuning.
 
 **Resolution**: UHM canonically fixes $f(u) = e^{-u}$, $\Lambda = M_P$. All three moments are thereby determined:
+- $f_0 = 1$.
 - $f_2 = 1$.
-- $f_4 = 6$.
-- $f_0 = $ zeta-regularised constant.
+- $f_4 = f(0) = 1$.
 
 This is **not tunable**; it is a definitional choice of the theory. Any derived observable depending on these moments is then a **specific prediction** of UHM, not a free parameter.
 
@@ -325,7 +331,7 @@ where the scalar curvature $\mathcal{R}^{(4D)}$ is determined by the projection 
 ## 3. Power Counting and Renormalizability [T] {#степенной-счёт}
 
 :::tip Theorem 3.1 (Renormalizability of the scalar sector in 4D) [T]
-The Gap functional integral is UV-finite in each order of perturbation theory in the scalar sector:
+The Gap functional integral is renormalizable in the scalar sector — divergences are absorbed order-by-order into the finitely many couplings $(\mu^2, \lambda_3, \lambda_4)$:
 
 **(a)** $\sigma$-model on a compact target space: from standard results (Friedan, 1980): the $\sigma$-model with compact target space is renormalizable in two dimensions and super-renormalizable in $d < 2$.
 
@@ -352,18 +358,18 @@ where $F(x) \to 0$ as $x \to \infty$ (suppression at scales above $\Lambda_{\tex
 | Divergences | All orders | Suppressed by form factors |
 | Power counting | Violated from 2-loop | Renormalizable in scalar sector |
 
-**Summary:** Gap theory is **renormalizable** (not finite) in its scalar sector. Gravitational divergences are **screened** by the emergent nature of the metric. Full UV-finiteness is proved in §4.
+**Summary:** Gap theory is **renormalizable** (not finite) in its scalar sector. Gravitational divergences are **screened** by the emergent nature of the metric. Full UV-finiteness is argued in §4 (field-space part [T]; order-by-order — structural [C]).
 
 ---
 
-## 4. UV-Finiteness of Gap Theory [T] {#уф-конечность}
+## 4. UV-Finiteness of Gap Theory [T field-space, C order-by-order] {#уф-конечность}
 
-#### Theorem (UV-finiteness of Gap theory) [T] {#теорема-уф-конечность}
+#### Theorem (UV-finiteness of Gap theory) [T field-space, C order-by-order] {#теорема-уф-конечность}
 
-:::tip Theorem 4.1 (UV-finiteness of Gap theory on $(S^1)^{21}$) [T]
-Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is renormalizable and UV-finite.
+:::tip Theorem 4.1 (UV-finiteness of Gap theory on $(S^1)^{21}$) [T field-space, C order-by-order]
+Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is renormalizable; its **field-space (large-field) finiteness** is rigorous **[T]** (compact target), and **full order-by-order UV-finiteness** is a structural argument **[C]**.
 
-**Proof (5 steps).**
+**Argument (5 steps).**
 
 **Step 1 (Compactness of the target space).** $(S^1)^{21}$ is a compact manifold → vertex functions are bounded: $|e^{i\theta}| = 1$. No "escape" of fields to infinity; scattering amplitudes are automatically finite at fixed UV cutoff.
 
@@ -379,12 +385,12 @@ $$
 
 The torus $(S^1)^{21}$ is flat → the $\hat{A}$-genus vanishes (Witten [T]). No anomalies; no gravitational anomalies.
 
-**Step 5 (Domain of rigor).** The result is rigorous for the scalar-fermion sector ($\theta_{ij}$, $\tilde{\theta}_{ij}$). Gravitational UV-finiteness follows automatically from the emergent nature of the metric: $h_{\mu\nu} \sim \sum \theta^2$ — a composite operator, not a fundamental field. Divergences of composite operators are suppressed by form factors at $p > \Lambda_{\text{Gap}}$. $\blacksquare$
+**Step 5 (Domain of rigor).** For the scalar-fermion sector ($\theta_{ij}$, $\tilde{\theta}_{ij}$) the field-space finiteness (steps 1, 4) is rigorous [T]; the composition of steps 1–4 into full order-by-order finiteness is structural [C]. Gravitational UV-finiteness follows automatically from the emergent nature of the metric: $h_{\mu\nu} \sim \sum \theta^2$ — a composite operator, not a fundamental field. Divergences of composite operators are suppressed by form factors at $p > \Lambda_{\text{Gap}}$. $\blacksquare$
 :::
 
 ### Triple Protection from Divergences
 
-The proof of UV-finiteness (Theorem 4.1) rests on three mutually complementary mechanisms:
+The UV-finiteness argument (Theorem 4.1) rests on three mutually complementary mechanisms:
 
 | Mechanism | Role | Scale |
 |----------|------|---------|
@@ -392,7 +398,7 @@ The proof of UV-finiteness (Theorem 4.1) rests on three mutually complementary m
 | $G_2$-symmetry | Ward identities: $21 \to 7$ (step 2) | All scales |
 | $\mathcal{N}=1$ SUSY | Sector-product suppression $\varepsilon^{12}$ (T-219); holomorphy (step 3) | $E > m_{3/2} \sim 10^{13}$ GeV |
 
-These three factors — **compactness + $G_2$ + SUSY** — jointly **prove** UV-finiteness. None of them individually is sufficient:
+These three factors — **compactness + $G_2$ + SUSY** — jointly carry the structural finiteness argument **[C]** (the field-space part is rigorous **[T]**). None of them individually is sufficient:
 
 - Compactness without $G_2$: renormalizable, but not necessarily finite.
 - $G_2$ without compactness: Ward identities constrain correlators, but do not prevent fields from running away.
@@ -408,7 +414,7 @@ $$
 
 Such configurations — Gap instantons — represent tunneling transitions between different vacuum configurations on $(S^1)^{21}$. Their contribution is exponentially suppressed ($e^{-150} \sim 10^{-65}$) and does not violate finiteness, but may play a role in cosmology (e.g., in suppressing the cosmological constant).
 
-:::tip Status [T]
+:::tip Status: field-space [T], order-by-order [C]
 UV-finiteness for the scalar-fermion sector is a **structural** argument [C]: compactness of $(S^1)^{21}$ + $G_2$ Ward identities ($21 \to 7$ divergences) + $\mathcal{N}=1$ holomorphy (Seiberg) + the sector-product $\varepsilon^{12}$ suppression (T-219). (The exact "$7-7=0$ trace" step is retracted — see the clarification box below.) Gravitational UV-finiteness is automatic from the emergent nature of the metric.
 :::
 

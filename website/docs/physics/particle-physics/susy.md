@@ -195,7 +195,7 @@ Consequently, the Wilsonian effective superpotential $W_{\text{eff}}$ receives n
 
 **Step 3 (Non-perturbative corrections).** Gap instantons on $(S^1)^{21}$ give contributions $\sim e^{-2\pi/\alpha_{\text{GUT}}} \sim e^{-150} \sim 10^{-65}$ ([sect. 4 quantum-gravity.md](/docs/physics/gravity/quantum-gravity#уф-конечность)) — negligibly small.
 
-**Step 4 (Closure).** Combining: uniqueness of $W$ (T-50 [T]) + automatic holomorphicity (Step 1) + Seiberg's theorem (Step 2) + instanton suppression (Step 3) $\Rightarrow$ the superpotential $W$ is **exact** and **protected**. The UV-finiteness of the Gap theory ([Theorem 4.1](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]) correctly relies on this result. $\blacksquare$
+**Step 4 (Closure).** Combining: uniqueness of $W$ (T-50 [T]) + automatic holomorphicity (Step 1) + Seiberg's theorem (Step 2) + instanton suppression (Step 3) $\Rightarrow$ the superpotential $W$ is **exact** and **protected**. The UV-finiteness of the Gap theory ([Theorem 4.1](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]) correctly relies on this result. $\blacksquare$
 
 **Theorem.** The superpotential of the Gap theory is uniquely determined by $G_2$-invariance and takes the form:
 

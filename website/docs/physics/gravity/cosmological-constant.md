@@ -337,7 +337,7 @@ $$
 
 The fine cancellation between the first and second terms (ensuring the smallness of $\Lambda$) is determined by the **O-sector opacity** $\mathcal{G}_O$.
 
-**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]). $\blacksquare$
+**Step 4 (Physical interpretation).** $\Lambda_{\text{CC}} \propto \mathcal{G}_O$ means: the cosmological constant = **energetic cost of observation**. The more opaque the O-channel (i.e. the more precise the internal clock), the larger $\Lambda$. The smallness of $\Lambda$ is a consequence of the near-perfect cancellation $f_0\Lambda^4 \cdot 7 \approx f_2\Lambda^2\omega_0^2 \mathcal{G}_O$, guaranteed by UV-finiteness ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]) and canonical $f_0$ ([T-70](/docs/physics/particle-physics/higgs-sector#теорема-f0-канонический) [T]). $\blacksquare$
 :::
 
 :::warning Status of Λ suppression

@@ -270,7 +270,7 @@ The auditor's question — *"do you recover known phenomenology, or only the Ein
 | 7 | Higgs sector | $H \in M_2(\mathbb C)$ off-diagonal in $D_F$, $m_H \approx 125$ GeV (after RG) | Higgs line $\{A,E,U\}$ in Fano structure; mass via spectral analysis | **Compatible**; UHM identifies which Fano line ([higgs-sector.md](/docs/physics/particle-physics/higgs-sector)) |
 | 8 | Fermion generations | 3 generations postulated by 16-dim Hilbert space per generation | Tensor extension via Page–Wootters: $\mathbb C^7 \otimes \mathbb C^6 = \mathbb C^{42}$, generation structure from O-sector ([T-87](/docs/proofs/dynamics/emergent-time)) | **Partial**: 3 generations not yet explicitly derived in 7D core; framework compatible with extensions ([fermion-generations.md](/docs/physics/particle-physics/fermion-generations)) |
 | 9 | Neutrino masses | See-saw from off-diagonal $D_F$ | $m_D^{(k)} = \omega_0\,\mathrm{Gap}(O,k)\,|\gamma_{O,\mathrm{partner}(k)}|\sin(2\pi k/7)$ | **Specific UHM prediction** [T] (T-63 formula structure); numerical $m_2/m_3$: tree-level $\approx 0.308$ vs observed $\approx 0.17$ → discrepancy $\times 1.8$; with **2-loop RG running** $\approx 0.17$–$0.20$ vs $0.17$ → discrepancy $\times 1.0$–$1.2$ (essentially correct, C14 [C]). Naive see-saw gives $\times 50$ discrepancy; UHM reduces to $\times 1.0$–$1.2$ without new parameters. |
-| 10 | UV-finiteness | Spectral action UV-completed in NCG sense | $G_2$ Ward identities + $\mathcal N=1$ SUSY + APS-index → all counterterms forbidden | **Stronger**: UHM gives explicit UV-finiteness [T] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)) |
+| 10 | UV-finiteness | Spectral action UV-completed in NCG sense | $G_2$ Ward identities + $\mathcal N=1$ SUSY + APS-index → all counterterms forbidden | **Stronger claim**: field-space finiteness [T] (compact target) + order-by-order UV-finiteness [C] (structural, [T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)) |
 | 11 | Emergent spacetime | $M^4$ postulated in product triple | $M^4$ derived from categorical algebra: T-117 (commutativity), T-118 ($A_\mathrm{time} \cong C_0(\mathbb R)$), T-119 ($A_\mathrm{space} \cong C(\Sigma^3)$), T-120 ($M^4 = \mathbb R \times \Sigma^3$) | **UHM strictly stronger** [T] ([emergent-manifold.md](/docs/proofs/physics/emergent-manifold)) |
 | 12 | Origin of internal algebra | Postulated from feature-counting + Lorentz axiomatics | Octonionic derivation: PG(2,2) → $\mathbb O$ → $A_\mathrm{int}$ via T1–T15 chain ([Q7](/docs/proofs/minimality/theorem-octonionic-derivation)) | **UHM strictly stronger** [T] |
 | 13 | Consciousness | Not addressed by spectral action | E-sector phenomenology: $\mathrm{Coh}_E > 1/7$ (No-Zombie, T-8.1 [Т]), interiority hierarchy L0–L4, hedonic valence $V_{\mathrm{hed}} = dP/d\tau$ (T-103 [Т]+[И]), 23 falsifiable predictions | **UHM-only extension** |
@@ -337,6 +337,44 @@ This formula contains two scales:
 | $\langle\lVert\gamma_{\mathrm{space}}\rVert^2\rangle$ | Mean coherence of the spatial sector | $\sim 1 - O(\varepsilon^2)$ (high coherence) |
 
 The relation $G \propto \mu^2/|\gamma_{\mathrm{space}}|^2$ means that gravity is **stronger** the larger the Gap-mode scale $\mu$ and the **lower** the coherence of the spatial sector. In the limit of full decoherence ($|\gamma_{\mathrm{space}}| \to 0$) the gravitational constant formally diverges — effective "enhancement of gravity" near singularities.
+
+### 3.2a Information–Gravity Reciprocity: $G_N$ as Inverse Learnability (T-264) {#взаимность-обучаемость-гравитация}
+
+The Gap phases $\theta_{\mu\nu}$ carry both loads of the theory at once: their kinetics is the emergent graviton (§2.1, Fierz–Pauli bridge lemma), and their *estimability* is quantum Fisher information — the very quantity that gates learning (Braunstein–Caves; [T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток)). The two readings are one functional of $\Gamma$.
+
+#### Theorem T-264 (information–gravity reciprocity) [Т at FP-lemma, leading order] {#теорема-информационно-гравитационная-взаимность}
+
+:::tip Theorem
+**(a) Exact pair lemma [Т].** For a state whose $(i,j)$-block is decoupled (arbitrary populations $\Gamma_{ii}, \Gamma_{jj}$; coherence $\gamma_{ij}$ up to the PSD boundary), the quantum Fisher information of the phase direction $X_{ij} = \partial\Gamma/\partial\theta_{ij} = i[\Pi_i, \Gamma]$ (a passport-charge tangent, T-260) is **exactly**
+
+$$
+\mathrm{QFI}(\theta_{ij}) = \frac{4\,|\gamma_{ij}|^2}{\Gamma_{ii} + \Gamma_{jj}}, \qquad g_{\mathrm{Bures}}(\partial_{\theta_{ij}}, \partial_{\theta_{ij}}) = \tfrac14\,\mathrm{QFI},
+$$
+
+independently of the population imbalance ($R$-cancellation). In the full $7\times 7$ vacuum the cross-coherence correction is $O(\bar\varepsilon)$ (machine: $\leq 0.8\%$ at $\bar\varepsilon = 0.01$, $\leq 4.4\%$ at $0.02$).
+
+**(a′) Unconditional sandwich [Т].** For *any* full-rank $\Gamma$ (no decoupling assumption): $2|\gamma_{ij}|^2/\lambda_{\max}(\Gamma) \leq \mathrm{QFI}(\partial_{\theta_{ij}}) \leq 2|\gamma_{ij}|^2/\lambda_{\min}(\Gamma)$ — immediate from the SLD tangent formula with $2\lambda_{\min} \leq \lambda_m + \lambda_n \leq 2\lambda_{\max}$ and $\|X_{ij}\|_{\mathrm{HS}}^2 = 2|\gamma_{ij}|^2$. With Gershgorin control of the vacuum spectrum, $|\lambda_k - 1/7| \leq \rho_{\max} := \max_k \sum_{l \neq k}|\gamma_{kl}|$, the relative deviation from $14|\gamma_{ij}|^2$ is bounded by the **explicit constant** $7\rho_{\max}/(1 - 7\rho_{\max})$; the measured $0.23\%$–$4.4\%$ sit far inside this bound. Witness: $0/400$ violations across mixed regimes including strong coherence.
+
+**(b) Reciprocity [Т at FP-lemma, leading order].** At vacuum populations $\Gamma_{ii} = 1/7 + O(\varepsilon^2)$ the ST-sector mean satisfies $\langle|\gamma_{\mathrm{ST}}|^2\rangle = \varepsilon_0^2 = \tfrac{1}{14}\langle\mathrm{QFI}\rangle_{\mathrm{ST}}$, and the Fierz–Pauli constant $G_N^{(ST)} = 4\pi\mu^2/\varepsilon_0^2$ becomes
+
+$$
+\boxed{\; G_N^{(ST)} \cdot \big\langle \mathrm{QFI}(\theta_{\mu\nu}) \big\rangle_{\mathrm{ST}} \;=\; 56\pi\mu^2 \;=\; 8\pi N \mu^2 \big|_{N=7} \;}
+$$
+
+— the product of the gravitational coupling and the mean Fisher learnability of the spacetime phases is an **architectural constant**.
+
+**(c) $\Lambda$-side [Т, T-254].** The physically observable vacuum term is quadratic in the clock-channel opacity: $\Lambda_{\mathrm{phys}} = \frac{f_4\omega_0^4}{32\pi G_N}\,\mathcal{G}_O^2$ ([Λ-drift law](/docs/physics/gravity/cosmological-constant#теорема-лямбда-дрейф)). Reading $\mathcal{G}_O$ as the measure of *lost phase information* of the O-channel (Gap = decohered phase) — **[И]** — makes $\Lambda$ the squared **unlearnability of the universe's own clock**.
+:::
+
+**Proof.** *(a)* For the decoupled block the SLD tangent formula $\mathrm{QFI} = 2\sum_{m,n}|X_{mn}|^2/(\lambda_m + \lambda_n)$ reduces to the block. Diagonalise the block with populations $p = \Gamma_{ii}$, $q = \Gamma_{jj}$, coherence $g$: eigenvalues $\lambda_\pm = \tfrac{p+q}{2} \pm R$ with $R = \sqrt{(p-q)^2/4 + |g|^2}$; the tangent $X = i[\Pi_i, \Gamma]$ is purely off-diagonal in the eigenbasis with $|\langle +|\Pi_i|-\rangle|^2 = |g|^2/(4R^2)$, and $(\lambda_+ - \lambda_-)^2 = 4R^2$. Hence $\mathrm{QFI} = 2 \cdot 2 \cdot \frac{4R^2}{p+q} \cdot \frac{|g|^2}{4R^2} = \frac{4|g|^2}{p+q}$ — $R$ cancels, so the result holds at any imbalance and any admissible $|g|$. *(b)* Substitute the pair lemma at $\Gamma_{ii} = 1/7$ into the bridge-lemma constant $G_N^{(ST)} = 4\pi\mu^2/\varepsilon_0^2$ (§2.1): $\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 14\varepsilon_0^2(1 + O(\bar\varepsilon))$. *(c)* is T-254 [Т] plus the [И]-reading. $\blacksquare$
+
+**Machine verification** (`t263_t264_learning_gravity_oracle.py`): balanced-block identity to $6.7 \cdot 10^{-16}$; decoupled-pair identity in $\mathbb{C}^7$ — ratio $1.000000$ across random populations/coherences; cross-coherence correction scaling measured ($0.23\%/0.8\%/4.4\%$ at $\bar\varepsilon = 0.005/0.01/0.02$); substitution chain (b) exact.
+
+**Corollaries.**
+
+1. **Gravity diverges exactly where phases become unlearnable [Т at (b)].** $|\gamma_{\mathrm{ST}}| \to 0 \Rightarrow \langle\mathrm{QFI}\rangle \to 0 \Rightarrow G \to \infty$: the §3.1–3.2 prediction of gravity enhancement in high-decoherence regions acquires an information-theoretic mechanism — **gravitational strength is the inverse of the Fisher information available in the spacetime phases**.
+2. **The SLU slogan, signed and sector-resolved [И].** Vanchurin's *"gravity is the efficiency of learning"* maps onto two identities with definite signs and sectors: $G^{-1} \propto$ learnability of the **space** phases (b); $\Lambda \propto$ (unlearnability)$^2$ of the **clock** phase (c). Efficient learning $\Leftrightarrow$ weak gravity: the gravitational field is the shadow of what is *not* (or cannot be) learned. Where SLU postulates the metric to *be* learning statistics, UHM derives both faces from the same $\Gamma$ and fixes the constant ($8\pi N\mu^2$).
+3. **Complement of T-263.** The same phases along which the optimal learning flow moves (T-261/T-263, BKM descent; Bures estimation) are the phases whose second moments gravitate. Learning and gravitation are the two Petz-geometric faces of one coherence field — dynamics along the phases vs. curvature from the phases.
 
 ### 3.3 Consistency of the Two Definitions of $G$ [T]
 
@@ -428,7 +466,7 @@ $$
 ### 6.1 Beta Functions with Fano Combinatorics
 
 :::note Parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66 [T]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). For details see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively through the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$). For details see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
 :::
 
 #### Theorem T-184 [T]: Non-perturbative extractability {#непертурбативная-извлекаемость}

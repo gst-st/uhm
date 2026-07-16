@@ -293,7 +293,7 @@ $$\Delta V \geq 6\mu^2 > 0$$
 
 Instanton configurations (§3.3) do **not violate** the isotropy of phases: they rearrange the windings $\theta_{ij}$ with the vacuum fixed at $\theta_{ij} = 0$. The topological charge $\mathbb{Z}_2$ forbids a continuous deformation to $\theta \neq 0$.
 
-**Step 7** (Radiative stability). From T-66 [T] ([UV finiteness](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)): radiative corrections are finite and preserve $G_2$-symmetry. The coefficient $\lambda_3$ runs under RG but **remains real** (RG preserves the reality of coefficients of a real potential). Phase isotropy $\theta_{ij} = 0$ is a property of the minimum, not violated by loop corrections.
+**Step 7** (Radiative stability). From T-66 ([UV finiteness](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность): field-space [T], order-by-order [C]): radiative corrections preserve $G_2$-symmetry. The coefficient $\lambda_3$ runs under RG but **remains real** (RG preserves the reality of coefficients of a real potential). Phase isotropy $\theta_{ij} = 0$ is a property of the minimum, not violated by loop corrections.
 
 $\blacksquare$
 

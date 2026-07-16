@@ -380,7 +380,7 @@ The Yukawa texture is determined by the **sectors coupling generations to the Hi
 #### Status of Parameter $\lambda_3$ {#предупреждение-λ3}
 
 :::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66 [T]) ensures structural correctness for any value of $\lambda_3$. The loop estimates in this section are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness for any value of $\lambda_3$. The loop estimates in this section are approximations to $\theta^*$, giving the correct order of magnitude (error $\lesssim \times 5$).
 :::
 
 #### Non-Perturbative Regime (C7) {#c7-nonperturbative}

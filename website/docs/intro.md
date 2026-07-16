@@ -305,7 +305,7 @@ UHM's primitive is **minimal** among all possible axiomatic choices: one axiom i
 | **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |
 | **[SUSY from $G_2$](./physics/particle-physics/susy)** | Superpotential [T] (Schur), superpartner spectrum, gravitino |
 | **[Gap thermodynamics](./core/dynamics/gap-thermodynamics)** | Potential $V_{\text{Gap}}$, global minimization [T], sector hierarchy $\varepsilon$ |
-| **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness [T], Einstein equations [T] |
+| **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness (field-space **[T]**, order-by-order **[С]**), Einstein equations [T] |
 | **[Cosmological constant](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [T], spectral formula [T], honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ($\gtrsim 27$ orders open) |
 | **[Composite systems](./core/dynamics/composite-systems)** | CC-5 (nontriviality [T], viability [C]), topological protection of Gap [T], emergent geometry |
 | **[Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ for L3 [T], categorical unattainability of L4 [T] (T-86) |

@@ -190,7 +190,7 @@ $$V_{EU}(\gamma_{EU}) = \mu^2 |\gamma_{EU}|^2 + \lambda_4 |\gamma_{EU}|^4 + \lam
 At $\mu^2 < 0$ (low-temperature regime): minimum at $|\gamma_{EU}| = v \neq 0$. This is the standard Higgs mechanism applied to the Gap potential. Higgs mass = second derivative of $V_{EU}$ at the minimum.
 
 :::note Status of parameter $\lambda_3$ [T]
-The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66 [T]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
+The parameter $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|) \approx 74$ is a **geometric coefficient** of the spectral action (T-74 [T]), not a perturbative coupling constant. Physical observables are defined non-perturbatively via the self-consistent vacuum $\theta^*$ (T-79 [T]). UV-finiteness (T-66: field-space [T], order-by-order [C]) ensures structural correctness. Loop estimates are approximations to $\theta^*$, giving the right order of magnitude (error $\lesssim \times 5$). For details — see [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy#предупреждение-λ3).
 
 **⚠ C7**: $\lambda_3 \approx 74 \gg 4\pi$ — non-perturbative regime. All loop computations with $\lambda_3$ are formally unreliable and downgraded to **[H]**. See [warning](/docs/physics/particle-physics/yukawa-hierarchy#c7-nonperturbative).
 :::
@@ -314,7 +314,7 @@ where $V_{\mathrm{Gap}}^{\min}$ is the potential value at the vacuum minimum ([T
 
 **Proof.**
 
-**Step 1 (UV-finiteness → finite functional integral).** The Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N} = 1$ SUSY is UV-finite ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность) [T]). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
+**Step 1 (Field-space finiteness → finite functional integral).** The Gap partition function on the compact target $(S^1)^{21}$ is finite — field-space finiteness **[T]**; full order-by-order UV-finiteness is structural [C] ([T-66](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)). Therefore the functional integral $Z = \int [D\theta] \exp(-S_{\mathrm{Gap}}[\theta])$ is **finite and well-defined** without regularization ambiguity. The quantum effective action $\Gamma_{\mathrm{eff}} = -\ln Z$ is a finite, concrete quantity.
 
 **Step 2 (Unique vacuum → loop expansion).** From [T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]: the potential $V_{\mathrm{Gap}}$ has a unique global minimum with positive definite Hessian $H_{\mathrm{Gap}}$. Expansion:
 
@@ -354,7 +354,7 @@ This is the standard result of Chamseddine–Connes–Marcolli (2007, Thm 11.2) 
 
 **Step 2 (Spectral action).** The spectral action $S = \mathrm{Tr}(f(D/\Lambda))$ (see [quantum gravity](/docs/physics/gravity/quantum-gravity)) expands as:
 
-$$S = f_4 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_0 a_4 + O(\Lambda^{-2})$$
+$$S = f_0 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_4 a_4 + O(\Lambda^{-2})$$
 
 The coefficient $a_4$ contains the term $\mathrm{Tr}(D_{\text{int}}^4)$, generating the quartic Higgs potential.
 

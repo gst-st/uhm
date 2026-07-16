@@ -782,10 +782,10 @@ Both terms in detail:
 **First term: $\mathrm{Tr}\left(f\!\left(\frac{D}{\Lambda}\right)\right)$—bosonic action.** This is the trace of $f$ applied to $D/\Lambda$. The operator $D$ has discrete spectrum $\{\lambda_n\}$, and the trace is $\sum_n f(\lambda_n / \Lambda)$. The cutoff $f$ suppresses high energies: for $|\lambda_n| \gg \Lambda$ the contribution is small. In the asymptotic expansion the trace takes the heat-kernel form:
 
 $$
-\mathrm{Tr}\left(f\!\left(\frac{D}{\Lambda}\right)\right) \sim f_4 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_0 a_4 + \ldots
+\mathrm{Tr}\left(f\!\left(\frac{D}{\Lambda}\right)\right) \sim f_0 \Lambda^4 a_0 + f_2 \Lambda^2 a_2 + f_4 a_4 + \ldots
 $$
 
-where $a_0, a_2, a_4$ are heat-kernel coefficients (Seeley–DeWitt invariants) and $f_k = \int_0^\infty f(u) u^{k-1} du$ are moments of the cutoff. Each $a_k$ expresses geometric invariants: $a_0$ is volume, $a_2$ is scalar curvature (yielding Einstein–Hilbert action!), $a_4$ combines quadratic curvature invariants with gauge fields and the Higgs field. One trace—much of physics.
+where $a_0, a_2, a_4$ are heat-kernel coefficients (Seeley–DeWitt invariants) and $f_0 = \int_0^\infty u f(u)\, du$, $f_2 = \int_0^\infty f(u)\, du$, $f_4 = f(0)$ are moments of the cutoff (the subscript of $f_{2k}$ matches the coefficient $a_{2k}$ it multiplies). Each $a_k$ expresses geometric invariants: $a_0$ is volume, $a_2$ is scalar curvature (yielding Einstein–Hilbert action!), $a_4$ combines quadratic curvature invariants with gauge fields and the Higgs field. One trace—much of physics.
 
 **Second term: $\langle \psi, D\psi \rangle$—fermionic action.** This is the Dirac action for spinors $\psi$: matter (quarks, leptons). Together the two terms give the **full** Lagrangian: gravity + gauge fields + matter + Higgs.
 

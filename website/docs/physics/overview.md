@@ -385,7 +385,7 @@ Correct calculation: $\lambda_3^{-7.26} \to \lambda_3^2 = 10^{-14.52}$. Contribu
 ### Quantum Gravity [P]
 
 :::info Program: Gap functional integral as quantum gravity
-The Gap functional integral $Z = \int \mathcal{D}[\theta_{ij}] \mathcal{D}[\tilde{\theta}_{ij}] e^{-S_{\text{Gap}}}$ is **well-defined** on the compact space $(S^1)^{21}$. The low-energy limit reproduces the standard functional integral over the metric ($S_{\text{EH}}$). Arguments for UV finiteness: compactness of the target space + $G_2$ Ward identities + SUSY cancellations + absence of a fundamental graviton.
+The Gap functional integral $Z = \int \mathcal{D}[\theta_{ij}] \mathcal{D}[\tilde{\theta}_{ij}] e^{-S_{\text{Gap}}}$ is **well-defined** on the compact space $(S^1)^{21}$. The low-energy limit reproduces the standard functional integral over the metric ($S_{\text{EH}}$). Arguments for UV finiteness (field-space [T], order-by-order [C]): compactness of the target space + $G_2$ Ward identities + $\mathcal{N}=1$ SUSY suppression (holomorphy + $\varepsilon^{12}$, T-219) + absence of a fundamental graviton.
 
 Open problems: exact lattice calculation on $(S^1)^{21}$, inflation from $V_{\text{Gap}}$, holographic limit, black hole information paradox.
 
@@ -424,7 +424,7 @@ $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$ + positive-definite Hessian (T-64 [T]) + com
 Key parameter of the $\Lambda$ budget (12 orders of magnitude). $G_2$-orbit reduction $21D \to 5D$, unique global minimum with positive-definite Hessian (5 eigenvalues). Sectoral structure of $\varepsilon$ follows from the unique vacuum (T-61) [T].
 :::
 
-:::tip Theorem: UV finiteness of Gap theory [T]
+:::tip Theorem: UV finiteness of Gap theory [T field-space, C order-by-order]
 Gap theory on $(S^1)^{21}$ with $G_2$-symmetry and $\mathcal{N}=1$ SUSY is **UV finite** [C] (structural argument): compactness bounds amplitudes and the $G_2$ Ward identities constrain the $21$-parameter space. The residual vacuum energy is suppressed by the **sector-product** scaling $\Lambda_{\text{residual}}\sim\varepsilon^{12}M_P^4$ (T-219 [T at T-64]). The earlier exact "$7-7=0$ bose–fermi trace" route is **retracted [✗]** — a $\mathbb{Z}_2$-grading on the odd internal space $\mathbb{C}^7$ has $\mathrm{Tr}\in\{\pm1,\pm3,\pm5,\pm7\}$, never $0$, and the split $\mathbf{14}\to\mathbf7\oplus\mathbf7$ does not exist (the $G_2$ adjoint $\mathbf{14}$ is irreducible) — see [Λ-budget Thm 4.4](/docs/proofs/gap/lambda-budget#теорема-susy-компенсация).
 
 **See:** [Quantum Gravity](/docs/physics/gravity/quantum-gravity#теорема-уф-конечность)
