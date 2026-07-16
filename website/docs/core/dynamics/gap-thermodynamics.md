@@ -629,7 +629,7 @@ At $\omega_0 = 40$ Hz: $\mathrm{Tr}(D_{\text{int}}^2) = 1600 \cdot 0.0075 = 12.0
 **Step 2 ($V_2$ from the Seeley–DeWitt coefficient $a_2$).** The [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) for the product $M_4 \times F_7$:
 
 $$
-\mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f(0) \, a_4 + \ldots
+\mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f_4 \, a_4 + \ldots
 $$
 
 The coefficient $a_2$ contains the internal contribution $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal{G}_{\mathrm{total}}$. Identification:

@@ -841,6 +841,13 @@ $$
 
 where $\Delta S_{\mathrm{step}}$ is the change in von Neumann entropy per step. This connects the CC learning bounds with the physical energy of cognitive processes.
 
+### 8.5 Beyond Bounds: the Optimal Flow and Its Gravitational Face {#за-границами-оптимальный-поток}
+
+The bounds T-109–T-112 are ceilings for *any* learning algorithm. Two later theorems close the normative and physical sides of the question:
+
+- **The best algorithm exists and is unique** ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток) [Т]+[С]): the regeneration channel itself is the steepest-descent natural-gradient flow of $D(\rho_*\|\Gamma)$, moving along the mixture geodesic in the Kubo–Mori metric — the unique monotone metric with dually flat structure (Grasselli–Streater). Its statistical rate is the $a=1$ regime ($O(1/k)$); the ceilings it runs against are exactly T-109–T-112, on the minimal substrate $N=7$ (T-113).
+- **Learnability has a gravitational complement** ([T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность) [Т at FP]): the quantum Fisher information of the spacetime Gap phases satisfies $G_N^{(ST)}\cdot\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 8\pi N\mu^2$ — the better the phases can be learned, the weaker gravity, and the vacuum term is the squared unlearnability of the clock channel ($\Lambda \propto \mathcal{G}_O^2$, T-254). Vanchurin's "gravity is the efficiency of learning" is thereby signed and sector-resolved.
+
 ---
 
 ## 9. Practical Implications {#практические-следствия}
@@ -892,6 +899,8 @@ This principle is known to clinicians empirically (Siegel's "window of tolerance
 | T-104 (Stability radius) | Amplitude constraint in T-111 | [Stability](./stability#радиус-устойчивости) |
 | T-107 (Enc capacity) | Upper bound on $\xi_{\mathrm{QCB}}$ in T-109 | [Sensorimotor Theory](./sensorimotor#информационная-ёмкость) |
 | SAD_MAX = 3 | Fano contraction $\to$ $P_\text{crit}^{(n)}$ $\to$ SAD_MAX | [Depth Tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
+| T-263 (Optimal learning flow) | The algorithm that *meets* these bounds: unique BKM steepest descent | [Evolution §3](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток) |
+| T-264 (Info-gravity reciprocity) | Gravitational face of learnability: $G\cdot\langle\mathrm{QFI}\rangle = 8\pi N\mu^2$ | [Einstein Equations §3.2a](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность) |
 
 ---
 

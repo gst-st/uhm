@@ -629,7 +629,7 @@ $$\mathcal{G}_{\text{total}} \geq 0.08^2 \cdot \sin^2(\pi/3) + 0.06^2 \cdot \sin
 **Шаг 2 ($V_2$ из коэффициента $a_2$ Сили–де Витт).** [Спектральное действие](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) для произведения $M_4 \times F_7$:
 
 $$
-\mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f(0) \, a_4 + \ldots
+\mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f_4 \, a_4 + \ldots
 $$
 
 Коэффициент $a_2$ содержит внутренний вклад $\mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \mathcal{G}_{\mathrm{total}}$. Отождествление:
