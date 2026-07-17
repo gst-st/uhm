@@ -299,7 +299,7 @@ $\varepsilon_{eff}$ — **partially solved**: self-consistent equation from sect
 :::
 
 :::warning Hypothesis: $\delta_{CP} \sim 64.5°$
-Sign of 2-loop is undetermined. Mark as [H].
+Observed $\delta_{CP} \equiv \gamma = 64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024; PDG 2024 global fit $65.7° \pm 1.5°$) — the prediction lands essentially on top ($\approx 0.04\sigma$ from the direct value). The sign of the 2-loop correction is undetermined a priori; the data select the negative branch. Status [H].
 :::
 
 :::info Neutrino masses via type-I seesaw [T]

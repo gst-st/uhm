@@ -765,15 +765,15 @@ $$= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°$$
 
 **(b)** Modulus: $|\delta_{\mathrm{CP}}| = 180° - 102.9° = 77.1°$ (reduction to the first half-plane; physically motivated by the fact that the observable is $\sin\delta$, and $\sin 77.1° = \sin 102.9°$).
 
-Observed: $|\delta_{\mathrm{CP}}| = 69° \pm 4°$. Discrepancy $\sim 8°$ ($\sim 2\sigma$).
+Observed: $|\delta_{\mathrm{CP}}| = 65.7° \pm 1.5°$ (PDG 2024 global fit); $64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024). Raw discrepancy of the uncorrected $77.1°$ is $\sim 12°$ (removed by the two-loop correction below). The older $69° \pm 4°$ is superseded.
 
 **(c)** With the two-loop correction: $|\delta^{(2)}| \sim 12.6°$. With negative sign:
 
 $$|\delta_{\mathrm{CP}}^{(\mathrm{phys})}| \approx 77.1° - 12.6° = 64.5°$$
 
-Discrepancy with $69°$: $\sim 4.5°$ ($\sim 1\sigma$). **Improved** agreement.
+Discrepancy with the direct $64.6° \pm 2.8°$: $\sim 0.1°$ ($\approx 0.04\sigma$); with the global fit $65.7°$: $\sim 1.2°$ ($< 1\sigma$). **Near-exact** agreement.
 
-**(d)** With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $\sim 20°$ ($> 4\sigma$). Thus the new assignment **predicts the negative sign** of the two-loop correction.
+**(d)** With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 8\sigma$ from the direct value. Thus the new assignment **predicts the negative sign** of the two-loop correction.
 
 ### 9.4 Wolfenstein Parameters and the Jarlskog Invariant
 
@@ -940,7 +940,7 @@ The formula:
 
 $$\delta_{\mathrm{CP}} = \arg(e^{2\pi i(k_{1\mathrm{st}} + k_{2\mathrm{nd}} - k_{3\mathrm{rd}})/7})$$
 
-is an **heuristic** formula connecting the CP phase to Fano indices. It is not derived from the diagonalisation of the Yukawa matrices $Y^u$, $Y^d$. In standard physics: $\delta_{\mathrm{CP}}$ is defined as the phase remaining after removing 5 unphysical phases from the $3 \times 3$ Yukawa matrices. The connection to the 'sum of generation indices' is nontrivial and unproved. The formula works empirically ($64.5° \approx 69°$ within $1\sigma$), but its status is [H], not [T].
+is an **heuristic** formula connecting the CP phase to Fano indices. It is not derived from the diagonalisation of the Yukawa matrices $Y^u$, $Y^d$. In standard physics: $\delta_{\mathrm{CP}}$ is defined as the phase remaining after removing 5 unphysical phases from the $3 \times 3$ Yukawa matrices. The connection to the 'sum of generation indices' is nontrivial and unproved. The formula works empirically ($64.5°$ vs the direct $64.6° \pm 2.8°$, $\approx 0.04\sigma$; $< 1\sigma$ vs the fit $65.7°$), but its status is [H], not [T].
 
 ---
 
@@ -959,7 +959,7 @@ is an **heuristic** formula connecting the CP phase to Fano indices. It is not d
 | Reassignment: $k=1 \to$ 3rd, $k=4 \to$ 2nd, $k=2 \to$ 1st | [H] | 7.2 |
 | $m_t \approx 173$ GeV (IR FP for unique $O(1)$ Yukawa) | [T] | 6.1 |
 | $m_c \sim$ GeV, $m_u \sim$ MeV (loop suppression) | [H] (order of magnitude) | 6.2–6.3 |
-| $\delta_{\mathrm{CP}} \approx 64.5°$ (with new assignment) | [H] ($1\sigma$ from $69°$, heuristic formula) | 9.3 |
+| $\delta_{\mathrm{CP}} \approx 64.5°$ (with new assignment) | [H] ($\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$; heuristic formula) | 9.3 |
 | Wolfenstein parameters and Jarlskog invariant | [H] (from Fritzsch texture + observed masses) | 9.4 |
 | $m_b/m_t \approx 0.024$ from sectoral RG | [T] (sectoral $\varepsilon_{33}^*(\theta^*)$, $r_{33} \approx 0.25$ + QCD-IR enhancement — exact agreement) | 12.4 |
 | Masses of light generations via $V_3$-mixing and D-dimension | [H] | 4–7 |

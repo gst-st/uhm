@@ -322,7 +322,7 @@ The cubic potential $V_3$ (octonionic associator) plays a **dual role**:
 
 **(b)** Unique source of CP violation in CKM. The same $V_3$ generates complex phases in the Yukawa matrices $Y^u$, $Y^d$ via generation mixing, giving a non-zero phase $\delta_{\mathrm{CP}} \neq 0$ in the CKM matrix.
 
-This explains the **CP paradox**: why strong CP violation is **zero** ($\theta_{\mathrm{QCD}} = 0$), while weak CP violation is **non-zero** ($\delta_{\mathrm{CP}} \approx 69°$). Answer: $V_3$ sets the **vacuum phases** to zero ($\theta_{ij} = 0$), but generates **inter-generational** phases via loop corrections. Cross-reference: [CKM matrix, §4](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения).
+This explains the **CP paradox**: why strong CP violation is **zero** ($\theta_{\mathrm{QCD}} = 0$), while weak CP violation is **non-zero** ($\delta_{\mathrm{CP}} \approx 64.6°$). Answer: $V_3$ sets the **vacuum phases** to zero ($\theta_{ij} = 0$), but generates **inter-generational** phases via loop corrections. Cross-reference: [CKM matrix, §4](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения).
 
 ### 3.4 Gap Instantons and the $\theta$-Vacuum {#gap-инстантоны}
 

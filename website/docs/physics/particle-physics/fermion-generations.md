@@ -772,7 +772,7 @@ Details of CKM structure from Fano differences $\Delta k$ — see [CKM Matrix fr
 ### Theorem 8.2 (Refined CP phase) {#thm-8-2}
 
 :::warning [H] Hypothesis 8.2 (Refined CP phase)
-The sign of the two-loop correction $\delta^{(2)}$ is not determined. With $\delta^{(2)} > 0$: agreement $64^\circ \approx 69^\circ$ ($1.5\sigma$). With $\delta^{(2)} < 0$: $39^\circ$ — excluded by observations. Until the sign is determined, the status is a hypothesis.
+The sign of the two-loop correction $\delta^{(2)}$ is not determined a priori. With $\delta^{(2)} > 0$: agreement $64^\circ$ vs the direct $64.6° \pm 2.8°$ ($\approx 0.2\sigma$). With $\delta^{(2)} < 0$: $39^\circ$ — excluded by observations. The data select the positive branch; until the sign is derived, the status is a hypothesis.
 :::
 
 **Theorem.** With $(k_1,k_2,k_3) = (1,2,4)$:
@@ -791,7 +791,7 @@ $$|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \t
 
 $$|\delta_{\text{CP}}| = 51.4° \pm 12.6° \quad (\text{range } 39°\text{--}64°)$$
 
-Observed: $69° \pm 4°$ (PDG). With $\delta^{(2)} > 0$: $|\delta_{\text{CP}}| \approx 64°$ — **agreement within $1.5\sigma$**. With $\delta^{(2)} < 0$: $|\delta_{\text{CP}}| \approx 39°$ — **excluded**.
+Observed: $65.7° \pm 1.5°$ (PDG 2024 global fit); $64.6° \pm 2.8°$ (LHCb tree-level combination, ICHEP 2024). With $\delta^{(2)} > 0$: $|\delta_{\text{CP}}| \approx 64°$ — **agreement within $\approx 0.2\sigma$** of the direct value. With $\delta^{(2)} < 0$: $|\delta_{\text{CP}}| \approx 39°$ — **excluded** ($> 9\sigma$). The older $69° \pm 4°$ is superseded; see [CKM §4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2).
 
 The sign of the two-loop correction is determined by the sign of $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch–Kersten–Lindner–Ratz, 2003), which requires explicit computation in the Gap basis of Yukawa matrices.
 

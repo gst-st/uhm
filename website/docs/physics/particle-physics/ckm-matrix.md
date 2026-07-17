@@ -251,7 +251,7 @@ $$= \frac{10\pi}{7} - 2\pi = -\frac{4\pi}{7} \approx -102.9°$$
 
 **(b)** Magnitude: $|\delta_\text{CP}| = 180° - 102.9° = 77.1°$ (reduction to the upper half-plane).
 
-Observed: $|\delta_\text{CP}| = 65.7° \pm 1.5°$ (PDG 2024; the older "$69°\pm4°$" is superseded). Raw-value discrepancy $\sim 11°$ (removed by the two-loop correction below).
+Observed (**canonical value, SSOT**): $|\delta_\text{CP}| = 65.7° \pm 1.5°$ (PDG 2024 global fit). The cleanest tree-level determination — the LHCb combination reported at ICHEP 2024 — gives $\gamma \equiv \delta_\text{CP} = 64.6° \pm 2.8°$, sitting essentially on top of the prediction below. The older "$69°\pm4°$" figure is superseded. Raw-value discrepancy $\sim 11°$ (removed by the two-loop correction below).
 
 **(c)** With two-loop correction: $|\delta^{(2)}| \sim 12.6°$. RG correction to $\delta$:
 
@@ -263,7 +263,7 @@ With a negative sign for the two-loop correction:
 
 $$|\delta_\text{CP}^{(\text{phys})}| \approx 77.1° - 12.6° = 64.5°$$
 
-Discrepancy from the current $65.7°$: $\sim 1.2°$ ($< 1\sigma$). **Improved agreement** — and better against the current value than against the older $69°$ figure.
+Discrepancy from the global-fit $65.7°$: $\sim 1.2°$ ($< 1\sigma$); against the direct LHCb tree combination $64.6° \pm 2.8°$ the predicted $64.5°$ lands within $\sim 0.1°$ ($\approx 0.04\sigma$) — a near-exact coincidence. **Improved agreement** — and far better against the current values than against the older $69°$ figure.
 
 **(d)** With a positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $\sim 20°$ ($> 4\sigma$). Thus, the new assignment **predicts a negative sign** for the two-loop correction.
 
@@ -626,6 +626,46 @@ These are **computational tasks**, not circular substitutions. UHM maintains non
 - **Residual input**: single normalisation $C_\mathrm{norm}$ — reducible to a computational task at T-64.
 - **External audit concern** (observed masses substituted into Fritzsch) **does not apply** to UHM's actual derivation path.
 :::
+
+---
+
+## 10. UHM and the Cabibbo Angle Anomaly (T-265) {#10-cabibbo-angle-anomaly}
+
+The **Cabibbo Angle Anomaly** (CAA) is a $\sim 3.2\sigma$ deficit in the first-row CKM unitarity test:
+
+$$
+|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 0.9985(5) < 1,
+$$
+
+with $V_{ud} = 0.97373(31)$ from superallowed nuclear $\beta$ decay and $V_{us}$ from $K_{\ell 3}$ (a second internal tension has since appeared between $V_{us}$ from kaon and pion semileptonic decays). The standard resolution taxonomy splits into two families:
+
+- **Standard-Model extraction** — nuclear/hadronic radiative corrections (notably the $\gamma W$ box, $\Box_{\gamma W}^A = 3.90(9)\times 10^{-3}$, and its nuclear-structure dependence), the lattice form factor $f_+^K(0) = 0.9698(17)$, and the $K$–$\pi$ $V_{us}$ tension.
+- **Beyond the Standard Model** — a fourth generation, **vector-like quarks** (the phenomenologically "most promising" global-fit candidate), **MeV-scale sterile neutrinos** (which raise the extracted $|V_{ud}|$), leptoquarks, vector boson triplets, vector-like leptons, or otherwise modified $W$–quark couplings.
+
+The UHM spectrum is fixed, and it collides head-on with the BSM family.
+
+### Theorem 10.1 (Resolution channel of the CAA) [T-structural]+[C] {#thm-10-1-t-265}
+
+**Statement (T-265).** Within UHM the physical quark-mixing matrix is **exactly the $3\times3$ CKM matrix and is exactly unitary**; consequently, if the CAA persists, it must resolve **entirely within the Standard-Model extraction sector** and **not** through any new quark, lepton, or boson state. Every leading BSM resolution channel is excluded by the fixed UHM spectrum:
+
+| BSM channel | UHM verdict | Ground |
+|---|---|---|
+| **Fourth generation** | **excluded [T]** | $N_{\text{gen}} = 3$ exactly — the generations are the quadratic residues $\{1,2,4\} = \mathrm{QR}(7)$, the **unique** order-3 subgroup of $\mathbb{Z}_7^\ast$ closed under the associative Fano product ([§1](/docs/physics/particle-physics/fermion-generations#1-число-поколений-из-топологии-gap-вакуума)); not 2, not 4, not 6 |
+| **Vector-like quarks** | **excluded [T-structural]** | UHM fermions are chiral by construction: $\gamma_5 = i\Gamma_O\Gamma_A\Gamma_S\Gamma_D$ acts with definite eigenvalue on the internal spinor ([SM sector, chirality](/docs/physics/gauge-symmetry/standard-model#кираль)) — the frame admits no non-chiral (vector-like) quark configuration |
+| **MeV sterile neutrino** | **excluded [C]** | the neutrino sector is type-I seesaw with three right-handed $\nu_R = (1,1)_0$ at $M_R \sim 3\times10^{14}$ GeV and normal hierarchy ([neutrino masses §2](/docs/physics/particle-physics/neutrino-masses#seesaw)) — no eV–MeV sterile state in the spectrum |
+| **Leptoquarks / extra gauge bosons** | **excluded [T-structural]** | the gauge sector is $G_2 \to \mathrm{SU}(3)_C\times\mathrm{SU}(2)_L\times\mathrm{U}(1)_Y$ with exactly SM content [T], and the **only** scalar is the unique $\{A,E,U\}$ Higgs line [T] — no leptoquark scalar, no vector boson triplet |
+
+**Consequence.** UHM makes a sharp, falsifiable prediction about the *channel* of the anomaly: the deficit lives in the **$\gamma W$-box / nuclear-structure radiative corrections, the lattice $K$/$\pi$ form factors, or the $K$–$\pi$ $V_{us}$ tension** — the SM hadronic/nuclear inputs — not in the mixing matrix itself.
+
+**Self-consistency.** This is precisely what licenses the corpus's own Cabibbo derivation ([§3](#3-угол-кабиббо)) to fix the normalisation $C_{\text{norm}}$ from the CKM unitarity condition: UHM's fundamental CKM is exactly unitary [T from $N_{\text{gen}}=3$], so the measured $\sim 0.15\%$ deficit is, within UHM, an **extraction artifact**, not a property of the mixing.
+
+**What UHM does *not* predict [O].** The **magnitude** and **sign** of the deficit are Standard-Model hadronic/nuclear physics (the size of $\Box_{\gamma W}$, nuclear-structure corrections, form-factor values); UHM offers no derivation of the $\sim 0.15\%$ number. That residual is the genuinely open part.
+
+:::warning Falsification of T-265
+If the CAA is established to **require** a fourth generation, a vector-like quark, an MeV sterile neutrino, or a leptoquark — e.g. a collider discovery of such a state, or a precision global fit that excludes the SM-radiative resolution at high significance — then UHM's core $N_{\text{gen}}=3$ [T] is falsified. Conversely, resolution through improved $\gamma W$-box / lattice / $K$–$\pi$ treatment **confirms the UHM-predicted channel**. Status: [T-structural] for the fourth-generation / vector-like-quark / leptoquark exclusions, [C] for the sterile-neutrino exclusion, [O] for the magnitude.
+:::
+
+**Proof sketch.** (1) $N_{\text{gen}}=3$ is [T] ([§1](/docs/physics/particle-physics/fermion-generations#1-число-поколений-из-топологии-gap-вакуума), [fermion generations Thm 6.1](/docs/physics/particle-physics/fermion-generations#thm-6-1)): the associator-free Fano triplet is unique, $\{1,2,4\}$, and equals the unique order-3 subgroup of $\mathbb{Z}_7^\ast$. Hence exactly three chiral generations and a $3\times3$ mixing matrix. (2) The Yukawa matrices are $3\times3$; their bi-unitary diagonalisation yields a $3\times3$ **unitary** CKM ([Thm 1.1](#thm-1-1)); with no further quark states, first-row unitarity is exact. (3) Chirality (γ₅ definite on $\chi_{\text{int}}$) forbids vector-like partners; the unique Higgs line forbids leptoquark scalars; the seesaw spectrum has no light sterile. (4) Therefore any observed unitarity deficit is not a property of the fundamental $V_{\text{CKM}}$ and must originate in the extraction — the SM radiative/lattice inputs. $\blacksquare$
 
 ---
 

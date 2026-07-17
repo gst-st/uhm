@@ -406,7 +406,7 @@ The result $N_{\text{gen}} = 3$ has **composite status: count [T], identificatio
 
 ---
 
-## 4. Chirality from $G_2$-Orientability
+## 4. Chirality from $G_2$-Orientability {#кираль}
 
 ### 4.1 Clifford Spinor Algebra on $\mathrm{Im}(\mathbb{O})$
 
@@ -1070,10 +1070,10 @@ $$|\delta^{(2)}| \sim \frac{1.0}{16\pi^2} \times 39 \times 0.898 \approx 0.22 \t
 
 $$|\delta_{\text{CP}}^{(\text{phys})}| \approx 77.1° - 12.6° = 64.5° \pm 5°$$
 
-Observed: $69° \pm 4°$ (PDG). Discrepancy $\sim 4.5°$ ($\sim 1\sigma$).
+Observed: $65.7° \pm 1.5°$ (PDG 2024 global fit); the LHCb tree-level combination gives $64.6° \pm 2.8°$ (ICHEP 2024). The predicted $64.5°$ agrees within $\sim 0.1°$ ($\approx 0.04\sigma$) with the direct value and within $\sim 1\sigma$ of the fit. The older $69° \pm 4°$ is superseded. See [CKM §4.2](/docs/physics/particle-physics/ckm-matrix#thm-4-2) for the canonical value.
 
 :::info[Note on the sign]
-The sign of the two-loop correction is determined from $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 4\sigma$. The new assignment **predicts a negative sign** of the correction. Full range: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (from $64.5°$ to $89.7°$).
+The sign of the two-loop correction is determined from $\mathrm{Im}\,\mathrm{Tr}(Y_u Y_u^\dagger Y_d Y_d^\dagger [Y_u Y_u^\dagger, Y_d Y_d^\dagger])$ (Antusch et al., 2003). With positive sign: $77.1° + 12.6° = 89.7°$ — discrepancy $> 8\sigma$ from the direct $64.6° \pm 2.8°$. The new assignment **predicts a negative sign** of the correction. Full range: $|\delta_{\text{CP}}| = 77.1° \pm 12.6°$ (from $64.5°$ to $89.7°$).
 :::
 
 ### 14.2 Updated CKM Angles
@@ -1142,7 +1142,7 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 | $m_{3/2} \sim 10^{13}$ GeV | **[T]** (T-50: $m_{3/2} \sim \varepsilon^3 M_P$ from uniqueness of $W$, Schur's lemma) |
 | $m_{\tilde{q}} \sim 10^{13}$ GeV (absence at LHC) | [H] |
 | $\tau_p \sim 4\times10^{47}$ years ($G_2$-extra channel) | [H] (proton effectively stable) |
-| $\delta_{\text{CP}} \approx 64.5°$ | [H] ($1\sigma$ from $69°$) |
+| $\delta_{\text{CP}} \approx 64.5°$ | [H] ($\approx 0.04\sigma$ from direct $64.6° \pm 2.8°$; $<1\sigma$ from fit $65.7°$) |
 | Normal neutrino mass hierarchy | **[C]** (O-sector Yukawa; C14: $m_2/m_3$ with RG-correction) |
 
 
