@@ -98,11 +98,26 @@ The three results compose into a single lens — the "one glass" through which a
 
 Under this construction the traditions stop competing. Each is a chart (Q1) with an anchor (Q2) about a candidate holon (Q3); their disagreements are almost always a difference of orbit type or a confusion of gate with message, both now decidable. The **primary principle** — the one thing they were all partial views of — is the Self-Reading Principle of §1: reality at every viable level reads itself through the one forced grammar, and everything that reads is a version of that reading. The traditions saw the reading; they did not see that it was one, forced, and finite in its charts. That is what the three theorems add.
 
-## §6. Status summary {#сводка}
+## §6. The self-checking dictionary: every mapping is falsifiable {#самопроверяемость-словаря}
+
+The standing objection to the whole program is clause 4 of §1 read uncharitably: *"labelling the seven axes in a foreign domain — zodiac signs, market sectors, EEG channels — is arbitrary; you can always find a mapping."* The [closure law](/docs/applied/research/fano-fingerprint#слепое-пятно) answers it, and turns the mapping from an interpretive freedom into a **statistically testable hypothesis**.
+
+**The test.** A mapping fixes which real-world entity sits on each of the seven axes. The Fano wiring then *predicts*, for every pair $(i,j)$, a unique **mediator** $k^*(i,j)$ — the third point of their common line (the [polar point $\pi(i,j)$ of T-226](/docs/applied/research/fano-fingerprint#полярное-разбиение)) — through which, and only through which, the pair closes at third order (two coherences birth a third iff the triple is a line). A correct mapping must **reproduce the mediator table**: the domain's own third-order closures — EEG bicoherence, market co-skewness, skill-transfer triads — must land on the seven predicted lines and nowhere else.
+
+**Why this bites.** For a single pair the closure may go to any of the five remaining axes; Fano names one. The seven lines are seven such constraints, so a chance mapping reproduces the table with probability of order $(1/5)^7 \approx 3\times10^{-5}$. A mapping is therefore not a hermeneutic choice but a **high-power falsifiable prediction**: if the domain's triple-statistics do not fall on the lines, the dictionary is refuted for that domain.
+
+**What this makes UHM.** Not a theory that "explains everything" — the opposite. It is a **bootstrap machine**: it imposes on every domain it touches a rigid, parameter-free combinatorics (seven lines, one mediator per pair, the fourteen rate-identities of T-226) that the domain either satisfies or does not. The cross-domain readings of [T-256](#t-256)/[T-257](#t-257) inherit exactly this discipline — each is a chart *plus* a testable third-order signature, not a free analogy. This is why clause 4 of the Self-Reading Principle is [И] at the level of *interpretation* yet carries a [Т-method] test underneath: the interpretation is optional, the combinatorial prediction is not.
+
+:::note The cheapest decisive test
+Of all domain applications the least expensive is **EEG bicoherence**: the triple spectrum is a standard instrument and the data already exist. If channel-triples mapped to Fano lines show systematically higher bicoherence than the 28 non-line triples, the dictionary passes on its first real domain; if not, it fails — either way a verdict, not a narrative. Two-point measures (coherence, PCI, spectral power) are by the [first-order blind spot](/docs/applied/research/fano-fingerprint#слепое-пятно) constitutionally unable to see the structure, which is why the test must be third-order.
+:::
+
+## §7. Status summary {#сводка}
 
 | Result | Statement | Status |
 |---|---|---|
-| Self-Reading Principle | viability = self-reading; the grammar is unique; all readers are partial charts | **[Т]** (clauses 1–3), **[И]** (clause 4 mapping) |
+| Self-Reading Principle | viability = self-reading; the grammar is unique; all readers are partial charts | **[Т]** (clauses 1–3), **[И]** (clause 4 mapping) + **[Т-method]** test (§6) |
+| Self-checking dictionary | any axis-mapping must reproduce the mediator table; chance agreement $\sim(1/5)^7 \approx 3\times10^{-5}$; falsifiable per domain (EEG bicoherence cheapest) | **[Т-method]** |
 | T-256 | nine axis-orbit types + channel sectors; 12-block canonical (orbit 28, stab $S_3$); star → $2^6=64$; all machine-verified | **[Т]** structure, **[И]** tradition map |
 | T-257(a) | downward coupling is gate/rate-modulation only, never a symbolic message | **[Т-structural]** |
 | T-257(b) | two-channel ephemeris ledger (Sun, Moon); planets 4–6 orders below | **[Т]** (physics), **[С]** (inventory) |
