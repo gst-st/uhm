@@ -112,6 +112,10 @@ CC bypasses the combination problem *by construction*:
 
 Thus, the question "how do micro-experiences add up into macro-experience?" simply does not arise in CC — because there are no micro-experiences.
 
+:::note T-266 and cosmopsychism — a distinction to keep [С]/[И]
+[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's emergentism. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The emergent-threshold discipline stands.
+:::
+
 ### 1.5 Chalmers' Zombie Argument and CC's Position
 
 One of the most influential thought experiments in the philosophy of mind is **David Chalmers' zombie argument** (1996).

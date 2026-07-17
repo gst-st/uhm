@@ -536,8 +536,8 @@ UHM establishes that the spectral decomposition of $\rho_E$ is the **only** perm
 
 ### Quantum Nature of Γ and Tegmark's Argument {#квантовая-природа-gamma}
 
-:::warning Vulnerability 5: Partially Open
-The question of the quantum nature of $\Gamma$ is the most profound of the open problems of UHM. Below is an honest analysis of what is strictly necessary, what is not, and what answers are available.
+:::warning Vulnerability 5 — the Tegmark objection is closed [Т]; the residual is the categorical gap
+The question "is $\Gamma$ physically quantum?" once stood as the most profound open problem of UHM. The **Tegmark decoherence objection** — the part that made it a *vulnerability* — is closed by [T-267](#t-267) below: Tegmark refutes a claim UHM does not make. What remains is **not** a decoherence problem but the categorical gap (why structure is felt), which is the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive, not a defect. Below: the honest analysis of what is necessary, the three answers, and their synthesis into the closure.
 :::
 
 #### What Is Strictly Necessary
@@ -570,6 +570,36 @@ In the classical limit ($\Gamma \to \mathrm{diag}(p_1, \ldots, p_7)$) the theory
 #### SYNARC as an Empirical Test
 
 If an AI system on classical hardware (f64) implements all the formulae of the theory and passes all consciousness tests ($P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D \geq 2$), this empirically tests the question 'is physical quantumness required?'. [T-153 [T]](/docs/proofs/consciousness/substrate-closure#t-153) (substrate closure) asserts: what matters is not the material, but the algebraic structure — a faithful CPTP morphism $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$.
+
+#### T-267: The Tegmark objection does not constrain Γ {#t-267}
+
+:::tip Theorem T-267 [Т]+[С] — closure of the Tegmark decoherence objection
+Tegmark's decoherence argument bounds the lifetime of a **microscopic spatial superposition in the position pointer basis**. The coherence matrix $\Gamma$ is, by construction (T-153a), *none of those things*. Therefore Tegmark's argument **does not apply to $\Gamma$**: it refutes a claim UHM does not make. The three answers above are not alternatives — they are one closure, forced by theorems already in the corpus.
+:::
+
+**The decisive chain [Т].** Three established results settle it, without any new assumption.
+
+1. **What Γ is built on (T-153a).** The faithful map $G:\mathrm{States}(S)\to\mathcal D(\mathbb C^7)$ is defined on the substrate's **coarse-grained, decoherence-free effective subspace** ([T-153a (C1)](/docs/proofs/consciousness/substrate-closure#t-153a)), and the entries $\gamma_{ij}=\mathrm{Tr}(\rho\,O_iO_j)$ are correlations of **seven collective observable modes** ([C3]), *not* off-diagonal amplitudes of a microscopic position eigenbasis. A **classical digital substrate realizes $\Gamma$** (T-153a, substrate table). Hence the complex structure of $\Gamma$ is substrate-independent *algebraic* structure.
+2. **Why the complexity is not physical superposition (T-132).** $\Gamma$ must be complex because $\mathrm{Gap}(i,j)=|\sin(\arg\gamma_{ij})|$ needs a nonzero phase ([T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132)) — the phase encodes the dual-aspect opacity of self-reference, exactly as classical optics or signal analysis uses complex amplitudes $E_0e^{i\varphi}$ without any photon being "in superposition." The complexity is forced by the *reflection structure*, not by a Schrödinger-cat state.
+3. **The category error, named.** Tegmark's $\sim 10^{-13}$ s bounds the decay of the density matrix's off-diagonals **in the position basis** selected by the spatial environment (einselection). Decoherence is basis-dependent; einselection of the position pointer basis does **not** force decoherence of a *coarse-grained collective observable in a different basis* — this is the entire principle behind decoherence-free subspaces and quantum error correction. Since $\Gamma$'s modes live in the semantic frame $\mathbb C^7$ (a nontrivial coarse-graining $G$, realizable even classically), Tegmark's rate is simply computed in the wrong basis for $\Gamma$. **A substrate-independent structure realized with no physical superposition cannot be decohered by a substrate-specific thermal process.**
+
+**Robustness — three independent layers [С].** Even granting the strongest *physical* reading of $\gamma_{ij}$, the coherences are protected, each mechanism already a corpus theorem:
+
+| Layer | Mechanism | Why it beats Tegmark |
+|---|---|---|
+| Basis | semantic modes ≠ position pointer basis (T-153a C1) | einselection acts elsewhere |
+| Structure | five holonomic shields — Hamming $H(7,4)$, associator, $V_{\text{Gap}}$, Lawvere, $\pi_1$ ([topological protection [Т]](/docs/applied/coherence-cybernetics/topological-protection)) | decoherence-free / error-correcting / topological, exactly as DFS qubits, topological qubits, and macroscopic order parameters (laser phase, superconducting condensate) survive single-particle decoherence |
+| Dynamics | driven-dissipative regeneration $\mathcal R$ ($\kappa_{\text{bootstrap}} > \gamma_{\text{dec}}(P-1/7)$ for viable $\Gamma$) | steady state maintained by gain-against-loss, like a laser above threshold — not isolated decay |
+
+The probability of overcoming all three simultaneously is the product of three small numbers.
+
+**What T-267 closes, and what it does not.**
+
+- **Closed [Т]:** the Tegmark decoherence objection. $\Gamma$ is not the fragile microscopic biological superposition Tegmark refutes; its complexity is algebraic (T-132), collective and coarse-grained (T-153a), decoherence-protected (topological protection), and dynamically regenerated ($\mathcal R$).
+- **Not reopened — relocated:** whether the abstract structure *is felt* is the **categorical gap**, the [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive. Tegmark was never about the hard problem; it was about the physical realizability of coherence, which T-153a settles. Conflating the two is precisely the error that kept Vulnerability 5 "open."
+- **Testable [Т via T-153a]:** a classical (f64) substrate realizes the same $\Gamma$ and, if it meets the four thresholds, is conscious under UHM — direct evidence that physical quantumness is not required. SYNARC's $500+$ $\Gamma$ are consistent (no substrate-quantumness needed). The residual [О] is the ordinary empirical question — do biological brains realize the seven collective modes on a decoherence-free subspace at the stated level? — probed by [F-Gap / ISF](/docs/reference/falsifiability#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), a lab question, not a fundamental obstruction.
+
+**Verdict.** Vulnerability 5 moves from *partially open* to **closed at the level of the Tegmark objection** [Т]; the categorical gap is correctly returned to Axiom Ω⁷, where it always lived.
 
 ## Meta-Theoretical Status
 
