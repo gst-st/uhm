@@ -150,7 +150,7 @@ The falsification criterion is **strict in the theoretical sense** and **approxi
 | P-quality correlation | Programme | Correlation of $P$ with functional quality: $r > 0.5$ |
 | [F-m_t](#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса): $m_t \approx 173$ GeV | Consistent | Observation: $172.57 \pm 0.29$ GeV |
 | [F-Cabibbo](#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла): $\theta_{12} \approx 13°$ | Consistent | Observation: $12.96°$ ($\|V_{us}\| = 0.2243$) |
-| [F-δ_CP](#f-δ_cp-cp-фаза-ckm-из-фано-фазы): $\delta_{\text{CP}} \approx 64°$ | Consistent (${\sim}0.8\sigma$) | Observation: $69° \pm 4°$, $\sigma_{\mathrm{comb}} \approx 6.4°$ |
+| [F-δ_CP](#f-δ_cp-cp-фаза-ckm-из-фано-фазы): $\delta_{\text{CP}} \approx 64.5°$ | Consistent (${\approx}0.04\sigma$) | Observation: $64.6° \pm 2.8°$ (LHCb tree, ICHEP 2024); $65.7° \pm 1.5°$ (PDG 2024 fit) |
 | [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного): Gap_intra < Gap_inter | Open | Requires ISF analysis of fMRI |
 | [F-ISF](#f-isf-isf-компоненты-в-фмрт): 6–12 ISF components | Open | Requires systematic fMRI analysis |
 | [F-ξ](#f-ξ-корреляционная-длина-фано): $\xi_F \sim 160$ pc | Open | Testable through LSS surveys |
@@ -278,11 +278,11 @@ $$
 \delta_{\text{CP}} \approx 64.5° \pm 5°
 $$
 
-The [CKM matrix](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения) CP-phase is derived from the geometric phase of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). Observed value (PDG world average, CKM angle $\gamma$): $\delta_{\text{CP}}^{\text{exp}} = 65.9° \pm 3.3°$. At combined uncertainty $\sigma_{\mathrm{comb}} = \sqrt{5^2 + 3.3^2} \approx 6.0°$ the discrepancy is $1.4°/6.0° \approx 0.2\sigma$.
+The [CKM matrix](/docs/physics/particle-physics/ckm-matrix#4-фаза-cp-нарушения) CP-phase is derived from the geometric phase of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules). The cleanest tree-level determination — the LHCb combination at ICHEP 2024 — gives $\delta_{\text{CP}}^{\text{exp}} \equiv \gamma = 64.6° \pm 2.8°$; the PDG 2024 global fit gives $65.7° \pm 1.5°$. Against the direct value the predicted $64.5°$ deviates by only $0.1°$ ($\approx 0.04\sigma$); against the fit, by $1.2°$ ($< 1\sigma$). The older "$69° \pm 4°$" figure is superseded.
 
 **Testability:** Refinement of the experimental value at LHCb and Belle II. The prediction is falsified if $\delta_{\text{CP}}^{\text{exp}}$ settles beyond $\sim 2\sigma$ from $64.5°$ (i.e. outside $[54°, 75°]$).
 
-**Status:** [H] Hypothesis — depends on the [Fritzsch texture](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур) and loop corrections. **Current verdict: PASSING** ($0.2\sigma$).
+**Status:** [H] Hypothesis — depends on the [Fritzsch texture](/docs/physics/particle-physics/ckm-matrix#6-ckm-из-несовпадения-юкавских-текстур) and loop corrections. **Current verdict: PASSING** ($\approx 0.04\sigma$ from the LHCb direct value; $< 1\sigma$ from the global fit).
 
 ---
 
@@ -296,7 +296,11 @@ The [Cabibbo angle](/docs/physics/particle-physics/ckm-matrix#3-угол-каб�
 
 **Testability:** Consistent with current data ($|V_{us}| = 0.2243 \pm 0.0005$, corresponding to $\theta_{12} \approx 12.96°$). The prediction is falsified by a significant revision of $|V_{us}|$.
 
-**Status:** [H] Hypothesis — depends on loop corrections and [RG flow](/docs/physics/gauge-symmetry/rg-flow).
+**Status:** [H] Hypothesis — depends on loop corrections and [RG flow](/docs/physics/gauge-symmetry/rg-flow). **Current verdict: PASSING** (central $\theta_{12}^{\text{exp}} \approx 12.96°$).
+
+:::note The Cabibbo Angle Anomaly — a sharp UHM prediction (T-265)
+Independently of the central value, first-row CKM unitarity currently shows a $\sim 3.2\sigma$ deficit: $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 0.9985(5)$ (the "Cabibbo Angle Anomaly", 2024–2026 lattice + $\beta$/kaon determinations). UHM's fixed spectrum turns this into a **falsifiable prediction** ([T-265, CKM §10](/docs/physics/particle-physics/ckm-matrix#thm-10-1-t-265)): the fundamental CKM is exactly $3\times3$ unitary ($N_{\text{gen}}=3$ [T]), so the deficit **cannot** be a mixing-matrix effect — a fourth generation, vector-like quarks, MeV sterile neutrinos, and leptoquarks are **all excluded** by the spectrum. UHM therefore predicts the anomaly resolves in the **SM extraction sector** ($\gamma W$-box / nuclear radiative corrections, lattice $K/\pi$ form factors, the $K$–$\pi$ $V_{us}$ tension), **not** via new states — and is **falsified** if the CAA is shown to require any such new state. The **magnitude** of the $\sim 0.15\%$ deficit is SM hadronic/nuclear physics and remains genuinely open [O]; the resolution-**channel** exclusion is [T-structural]+[C].
+:::
 
 ---
 
@@ -312,7 +316,7 @@ $$
 d_n = \frac{e \cdot m_q}{m_n^2} \cdot \theta_{\mathrm{QCD}} = 0
 $$
 
-Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Future experiments (n2EDM, nEDM@SNS) will reach sensitivity $\sim 10^{-28}$ e·cm.
+Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020), i.e. $d_n = (0.0 \pm 1.1) \times 10^{-26}$ e·cm — consistent with the predicted strict zero. **n2EDM** (PSI) began commissioning data-taking in late 2024 (>50% design UCN flux, systematics verified below $0.5 \times 10^{-26}$ e·cm) and targets $\sim 10^{-27}$ e·cm after ~500 days — the decisive near-term test. nEDM@SNS aims further, at $\sim 10^{-28}$ e·cm.
 
 **Falsification:** Detection of $d_n \neq 0$ at **any** level → direct refutation of T-99.
 
@@ -330,7 +334,11 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 
 **Experiments:** DESI DR2+, Euclid, Roman ($w(z)$ reconstruction); lunar laser ranging ($\dot G_N$).
 
-**Current verdict (2026):** CONSISTENT — the 2024–2025 DESI preference lies exactly in the only quadrant UHM reaches via a crossing; no Rip-like or permanent-$w$ signal; the co-drift sign test awaits a confirmed drift.
+**Current verdict (2026):** CONSISTENT — the DESI DR2 preference (March 2025; $2.8$–$4.2\sigma$ for $w_0 > -1,\ w_a < 0$ depending on the supernova sample) lies exactly in the only quadrant UHM reaches via a crossing, and the best-fit CPL trajectory runs phantom (past) → quintessence (today) with a $-1$-crossing near $z \approx 0.5$ — the orientation UHM predicts. No Rip-like or permanent-$w$ signal; the co-drift sign test awaits a confirmed drift.
+
+:::warning Caveat — the crossing itself is not yet established
+The phantom → quintessence crossing is inferred from the two-parameter CPL fit $(w_0, w_a)$, not from a physical model. Non-parametric / model-independent reconstructions of $w(z)$ do **not** yet robustly confirm a genuine $-1$-crossing — the feature is partly a parametrisation artifact, and the literature (2025–2026) treats its reality as unsettled. This matters for the [С]-link: UHM's falsification criterion (iii) — "DESI quadrant confirmed **while** reconstruction *excludes* any crossing" — is **not** triggered (reconstructions neither confirm nor exclude), so the prediction is safe but the key discriminator remains open. The quantitative discriminator to watch is whether the oscillatory (quintom-like) branch survives once reconstructions sharpen.
+:::
 
 ### Summary table of predictions {#summary-table-of-predictions}
 
@@ -344,11 +352,11 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020). Futu
 | **F-m_t** | Exactly one $O(1)$ Yukawa [T]; $m_t \approx 173$ GeV [C] | A second $O(1)$ Yukawa; significant $m_t$ shift | Colliders | [T]+[C] | **PASSING** ($y_t \approx 0.94$, unique) |
 | **F-ISF** | 6–12 ISF components | $N_{\text{ISF}} \notin [6, 12]$ | fMRI | [H] | PARTIAL (canonical resting-state decompositions report 7–17 networks) |
 | **F-Neural** | Threshold $P = 2/7$, monotonic $\Phi$(connectivity) | Gradual transition without threshold | fMRI/EEG (anaesthesia) | [C with bridge] | PARTIAL (clinical PCI threshold 0.31 maps to $P_{\text{crit}}$ — [calibration §6.3](/docs/applied/coherence-cybernetics/measurement#калибровка)) |
-| **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] | UNTESTED (current bounds $\sim O(1)$) |
-| **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [H] | **PASSING** ($65.9° \pm 3.3°$, $0.2\sigma$) |
+| **F-Higgs** | $\delta\lambda/\lambda_{\text{SM}} \sim 10^{-2}$–$10^{-3}$ | No deviations at precision $\ll 0.1\%$ | FCC-hh | [H] | UNTESTED (ATLAS+CMS 2025: $-0.71 < \kappa_\lambda < 6.1$ — $\sim O(1)$, far above the predicted band) |
+| **F-δ_CP** | $\delta_{\text{CP}} \approx 64.5° \pm 5°$ | $\delta_{\text{CP}}^{\text{exp}} \notin [54°, 75°]$ | LHCb, Belle II | [H] | **PASSING** ($64.6° \pm 2.8°$ LHCb direct, $\approx 0.04\sigma$; $65.7° \pm 1.5°$ fit) |
 | **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [H] | **PASSING** ($\theta_{12}^{\text{exp}} \approx 12.96°$) |
 | **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] | **PASSING** ($|d_n| < 1.8\times10^{-26}\,e\cdot$cm, consistent with 0) |
-| **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (crossing quadrant preferred by DESI 2024–2025) |
+| **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (DESI DR2 quadrant + phantom→quintessence orientation match, $2.8$–$4.2\sigma$; crossing reality not yet established non-parametrically) |
 
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
@@ -381,9 +389,9 @@ Systematic analysis of five main vulnerabilities of the theory (2026):
 | 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | T-129 [T]: $\Phi_{\mathrm{th}} = 1$ from first principles → T-151 [T]: $D_{\min} = 2$ unconditionally | **Closed** (fully) |
 | 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
 | 4 | No experiments | 210+ theorems without lab verification | ~30 testable [predictions](/docs/applied/coherence-cybernetics/predictions), 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
-| 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | T-132 [T] (necessity of complex $\gamma_{ij}$) + T-153 [T] (substrate closure), but [Tegmark argument](/docs/consciousness/foundations/two-aspect-monism#квантовая-природа-gamma) not fully addressed | **Partially open** |
+| 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | **[T-267 [Т]](/docs/consciousness/foundations/two-aspect-monism#t-267)**: Tegmark bounds microscopic position-basis superpositions; $\Gamma$ is coarse-grained *collective* structure on a decoherence-free subspace (T-153a), complex by *algebra* not superposition (T-132), and classically realizable — the objection targets a claim UHM does not make. Residual = the categorical gap (Axiom Ω⁷), a distinct primitive | **Closed** (Tegmark objection) |
 
-**Summary:** 3 of 5 vulnerabilities closed theoretically; 1 is fundamentally experimental; 1 is deeply open (quantum nature of $\Gamma$).
+**Summary:** 4 of 5 vulnerabilities closed theoretically (the Tegmark objection to #5 closed by [T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)); 1 is fundamentally experimental. The categorical gap (why structure is *felt*) is not a vulnerability but the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive — distinct from the Tegmark decoherence question, which is now settled.
 
 ## Theory Boundaries {#границы-теории}
 
@@ -396,7 +404,7 @@ Acknowledging boundaries is not a weakness, but a strength of a scientific theor
 | Question | Status | Comment |
 |--------|--------|-------------|
 | Why 7 dimensions? | [Minimality proved](/docs/proofs/minimality/theorem-minimality-7) | But not uniqueness |
-| Values of constants $\omega_i$, $J_{ij}$, $\gamma_k$ | Empirical | Not derived from axioms |
+| Values of constants $\omega_i$, $J_{ij}$, $\gamma_k$ | Empirical (holon-specific) | Not derived from axioms — **except** the cosmological $\omega_0$, pinned to $\sim 10^{-2} M_{\text{Pl}}$ [С] via the $G_2$-extra/neutrino sector ($M_{G_2} = \omega_0\sqrt{\mathcal{G}_O/2} \sim 10^{17}$ GeV; used by [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной)) |
 | Uniqueness of $\Gamma$ | Not proved | Other 'universes' possible |
 | Uniqueness of partition $\{A,S,D,L,E,O,U\}$ | **Proved [T]** | All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minimality-7#единственность-e) (A,S,D,L,U — algebraically; E,O — via κ₀) |
 
