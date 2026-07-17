@@ -433,6 +433,10 @@ $$
 | $V \gg$ kinetic | $w \to -1$ | Cosmological constant |
 | Balance | $w \in (-1, 1)$ | Quintessence |
 
+:::note Why the observed $w \approx -1$ [С] (T-266)
+That the Universe sits in the $V \gg$ kinetic (cosmological-constant) regime is not accidental: [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) shows the vacuum has **relaxed onto its terminal attractor** ($P = 3/7$) to fractional precision $\sim 10^{-60}$, so the residual kinetic term — set by the stage-approach rate — is $\kappa/H_0 \sim 10^{58}$-suppressed relative to $V$; hence $w \approx -1$. The small DESI departure $|1+w_0| \sim 0.09$ is the $\kappa/H_0$-amplified residual. (This concerns the *stage* and the *shape* of $w$, not the Λ *magnitude* — the $\gtrsim 27$-order deficit below remains open.)
+:::
+
 **(d) [C]** At $\mu \sim 10^{-3}$ eV (neutrino mass scale) and $\langle\mathrm{Gap}^2\rangle \sim 0.1$:
 
 $$

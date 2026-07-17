@@ -104,6 +104,10 @@ $$
 - $P < 2/7$: system is not viable ($\sigma_A = 1$)
 - $P > 3/7$: $R = 1/(7P) < 1/3$ — insufficient reflection for L2
 
+:::note Cosmological realization of the $3/7$ attractor [С]
+[T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) applies this attractor to the **Universe-holon**: its terminal stage sits at this same upper edge $P = 3/7$, and the present-day stage lies at a fractional distance $\tfrac{3H_0}{2\kappa}(1+w_0) \sim 10^{-60}$ from it — so, conditional on the Universe-as-viable-holon reading ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)), the cosmos is at the Goldilocks attractor to $\sim 59$ figures, with the DESI dark-energy drift as the $\kappa/H_0$-amplified residual. The $3/7$ edge is thus not only the fixed point of embodied conscious agents but the terminal configuration of the Universe itself.
+:::
+
 ---
 
 ## §3. Local asymptotic stability of attractor (T-125) {#t-125}

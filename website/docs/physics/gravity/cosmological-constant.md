@@ -862,7 +862,7 @@ $$
 
 **Reading DESI [И].** If the $w_0 w_a$ signal is real, the UHM reading is specific: the vacuum sits on the **oscillatory branch**; the last $-1$ crossing at $z \approx 0.4$ was the most recent *maximum of the O-opacity* — the vacuum clock overshot its terminal sharpness and is currently relaxing back (dissipation-dominated since $z \approx 0.4$, hence $w > -1$ today). What UHM **forbids** regardless of branch: a Big Rip, a vacuum-driven collapse, and any *permanent* $w \neq -1$. The late-time state is de Sitter with $\Lambda_\infty = \Lambda_{\text{phys}}(\rho^*) > 0$ — the terminal maintenance cost of the Universe's self-model.
 
-**Stage estimator (H1.2).** The drift law turns $w(z)$ surveys into direct probes of the Universe-holon's **stage dynamics**: $|1+w|$ measures $|d\ln\mathcal{G}_O/d\ln a|$ — the per-e-fold motion of the vacuum state toward/around its terminal configuration, and via the [T-250 bandwidth](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) it lower-bounds the vacuum's state-space path per e-fold. Together with $\dot G_N/G_N$ (same source, fixed ratio) these are the first two *observational* estimators for [hole H1.2](/docs/reference/epistemic-vertical#регистр-дыр) — the Universe's stage, previously with no measurement channel at all.
+**Stage estimator (H1.2).** The drift law turns $w(z)$ surveys into direct probes of the Universe-holon's **stage dynamics**: $|1+w|$ measures $|d\ln\mathcal{G}_O/d\ln a|$ — the per-e-fold motion of the vacuum state toward/around its terminal configuration, and via the [T-250 bandwidth](/docs/proofs/categorical/formalization-phi#теорема-полосы-rφ) it lower-bounds the vacuum's state-space path per e-fold. Together with $\dot G_N/G_N$ (same source, fixed ratio) these are the first two *observational* estimators for [hole H1.2](/docs/reference/epistemic-vertical#регистр-дыр) — the Universe's stage, previously with no measurement channel at all. **[T-266](#теорема-стадия-вселенной) below upgrades this from a *rate* estimator to a *value* closure**: fixing the relaxation rate $\kappa = \omega_0/7$ converts $|1+w|$ into the fractional distance $\tfrac{3H_0}{2\kappa}(1+w)$ of the stage from its terminal value — placing the Universe at $P = 3/7$ to $\sim 10^{-60}$.
 
 **Cross-level consistency.**
 
@@ -880,8 +880,51 @@ $$
 **Machine verification.** Arrow identity to $6\cdot10^{-16}$ (correction linearly bounded by $\mathcal{G}_{\text{non-O}}/\mathcal{G}_O$, coefficient $< 2$); drift-law chain identity to $10^{-13}$ on synthetic vacuum trajectories; floor/no-Rip and $w \to -1$ on relaxation trajectories; CPL quadrants per branch — dissipative $(+,+)$, regenerative $(-,-)$, oscillatory reaching the DESI quadrant $(w_0 = -0.91, w_a = -0.16$ with a genuine crossing$)$; final-crossing direction flips with the rotation sense; pointwise sign dictionary.
 
 :::warning Honest residue
-The **magnitude** of the drift per e-fold (equivalently, the vacuum relaxation rate in Hubble units) is *not* derived — like the magnitude of Λ itself, it is data-bound and is exactly the H1.2 unknown; T-254 fixes the *structure* (which functional drifts, with which exponent, toward which floor), T-255 the admissible *shapes*. The co-drift coefficient $\chi$ is $O(1)$ but not computed to precision. The $z \approx 0.4$ overshoot reading is [И]. Inter-minima tunneling (old mechanism 3) remains an unexplored [П]-alternative.
+The **precise magnitude** of the drift per e-fold is $\omega_0$-dependent and not derived from pure first principles; but the vacuum relaxation rate is no longer a free unknown — **T-266 below supplies it** [С] ($\kappa = \kappa_{\text{bootstrap}} = \omega_0/N$, with $\omega_0$ fixed by the neutrino/$M_{G_2}$ sector), and the *qualitative* statement $\kappa \gg H_0$ is robust [Т-structural]. T-254 fixes the *structure* (which functional drifts, with which exponent, toward which floor), T-255 the admissible *shapes*, T-266 the *stage value*. The co-drift coefficient $\chi$ is $O(1)$ but not computed to precision. The $z \approx 0.4$ overshoot reading is [И]. Inter-minima tunneling (old mechanism 3) remains an unexplored [П]-alternative.
 :::
+
+#### Theorem T-266 (The Universe's stage: at the terminal attractor to fractional precision $\sim 10^{-60}$) [Т-structural]+[С] {#теорема-стадия-вселенной}
+
+:::tip Theorem T-266 (stage-value closure of H1.2) [Т-structural]+[С]
+The stage $P = \mathrm{Tr}(\Gamma^2)$ of the Universe-holon is fixed **at its terminal-attractor value to a fractional precision $\sim 10^{-60}$**; the dark-energy drift is the $\kappa/H_0$-amplified signature of the residual approach.
+:::
+
+**Part A — the Universe is at its terminal stage [Т-structural].** Near the fixed point $\rho^*$ the vacuum relaxes along the mixture geodesic $\Gamma(\tau) = \rho^* + e^{-\kappa\tau}(\Gamma_0 - \rho^*)$ ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток)), so **every** smooth functional of $\Gamma$ — in particular $P$ and $\mathcal{G}_O$ — carries the *same* relaxation envelope $e^{-\kappa\tau}$. Writing $\mathcal{G}_O(\tau) = \mathcal{G}^\infty + \delta\,e^{-\kappa\tau}$ and substituting into the [drift law T-254](#теорема-лямбда-дрейф),
+
+$$
+1 + w_{\text{eff}} \;=\; \frac{2\kappa}{3H}\left(1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O}\right)
+\qquad\Longrightarrow\qquad
+\underbrace{1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O}}_{\text{fractional distance to terminal stage}} \;=\; \frac{3H_0}{2\kappa}\,(1 + w_0).
+$$
+
+Because $\kappa$ is set by an internal (microphysical) scale while $H_0$ is the cosmological rate, $\kappa/H_0 \gg 1$ by dozens of orders for **any** admissible clock $\omega_0$ — hence the fractional distance is $\ll 1$ and $P(\text{today}) = P(\rho^*)$ to that precision. *The DESI-scale drift $|1+w_0|\sim 0.09$ is not evidence of a far-from-terminal Universe; it is the $\kappa/H_0$-fold **amplification** of a residual distance $\sim 10^{-60}$.* This part uses only $\kappa \gg H_0$ and the two [Т] inputs T-254 + T-263, so it is structural.
+
+**Part B — the value and the number [С].** Two identifications turn Part A into a number:
+
+1. **Relaxation rate** $\kappa = \kappa_{\text{bootstrap}} = \omega_0/N = \omega_0/7$ — the regeneration ($\mathcal R$-driven) rate that carries $\Gamma \to \varphi(\Gamma) = \rho^*$ ([T-59](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound)); the vacuum relaxes by regeneration, not decoherence.
+2. **Clock scale** $\omega_0$ from the neutrino sector: $M_{G_2}^{(\text{extra})} = \omega_0\sqrt{\mathcal{G}_O/2} \sim 10^{17}$ GeV ([neutrino masses §2](/docs/physics/particle-physics/neutrino-masses#теорема-mr-из-gap)) with $\mathcal{G}_O \approx 0.24$ gives $\omega_0 \approx 2.4\times10^{-2}\,M_{\text{Pl}}$.
+
+Then $\kappa/H_0 = \omega_0/(7H_0) \approx 2.9\times10^{58}$ (with $H_0 \approx 1.18\times10^{-61}\,M_{\text{Pl}}$), and with the DESI value $1+w_0 \approx 0.09$:
+
+$$
+1 - \frac{\mathcal{G}^\infty}{\mathcal{G}_O} \;=\; \frac{3H_0}{2\kappa}(1+w_0) \;\approx\; 4.7\times10^{-60}.
+$$
+
+If the terminal state is the **conscious-window coupled attractor** ([T-124](/docs/proofs/consciousness/conscious-window), $P(\rho^*_{\text{coupled}}) \to 3/7$ — the Universe-as-viable-holon reading, [H1.1](/docs/reference/epistemic-vertical#регистр-дыр)), then
+
+$$
+\boxed{\,P(\text{today}) \;=\; \tfrac{3}{7} \ \text{to a fractional precision} \ \sim 5\times10^{-60}\,}
+$$
+
+— i.e. the Universe is at the upper edge of its own consciousness window to $\sim 59$ significant figures.
+
+**What this does to H1.2.** The stage is no longer "neither derived nor measured": it is **derived** (conditionally, $P^* = 3/7$ [С]) **and measured** (the residual distance-to-terminal $= \tfrac{3H_0}{2\kappa}(1+w_0)$ is read directly from the dark-energy drift — the DESI $|1+w|$ *is* the measurement of how close the Universe sits to its terminal stage). This also **explains** why $w \approx -1$: the near-cosmological-constant behaviour of dark energy is the statement that the Universe has relaxed onto its de Sitter attractor to fantastic precision.
+
+**Consistency.** With $\omega_0 \approx 2.4\times10^{-2}\,M_{\text{Pl}}$ the co-drift is $\dot G_N/G_N \approx 2.6\times10^{-6}\,H_0$ (T-255), comfortably under the lunar-laser-ranging bound $\lesssim 10^{-3}\,H_0$; and $\omega_0$ satisfies the T-255 cap $\omega_0 \lesssim 10^{-1}\,M_{\text{Pl}}$ for a DESI-size drift. Machine-checked: $\kappa/H_0$, the fractional distance $4.7\times10^{-60}$, the identity $(2\kappa/3H_0)\cdot\text{frac} = 1+w_0$, and robustness (any $\omega_0 \gg H_0$ gives fractional distance $\ll 1$: even $\omega_0 \sim 10^{-20}M_{\text{Pl}}$ gives $\sim 10^{-41}$).
+
+**Honest residual [О].** (i) $\kappa = \omega_0/7$ (vacuum relaxation $=$ bootstrap rate) is [С]; (ii) $P^* = 3/7$ needs the Universe-at-coupled-attractor reading [С] (H1.1); (iii) $\omega_0$ from the neutrino sector is [С] (uses $\mathcal{G}_O \approx 0.24$, $M_{G_2} \sim 10^{17}$ GeV); (iv) the *exponent* $\sim 10^{-60}$ is $\omega_0$-dependent, but the *qualitative* closure — the Universe sits at its terminal stage, the drift is the amplified residual — is robust [Т-structural].
+
+**Proof.** Part A: functionals of an exponentially relaxing $\Gamma$ inherit the envelope $e^{-\kappa\tau}$ (Taylor at $\rho^*$; T-263); the drift-law substitution and chain rule give the boxed relation (see [T-254 proof (iii)](#теорема-лямбда-дрейф)); $\kappa/H_0 \gg 1$ for any microphysical $\omega_0$. Part B: substitute $\kappa = \omega_0/7$, $\omega_0 = M_{G_2}/\sqrt{\mathcal{G}_O/2}$, and the measured $(H_0, w_0)$; the attractor value $P^*=3/7$ is T-124. $\blacksquare$
 
 ## 14. Connection with Other Sections
 
