@@ -167,12 +167,17 @@ Coherence Cybernetics & measurement + dynamics + empirics & observable suite, 23
 \label{subsec:roadmap}
 
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
-  \item \textbf{V0 --- GPU emulator (exists in kernel form).} \SYNARC{}'s M1
-        validation and CC's implementation chapter already run the tick and
-        reproduce every UHM invariant bit-exact. The step is to batch it into an
-        ecology kernel with the full telemetry suite (Table~\ref{tab:observables})
-        and $G_2$-charge verification, and to reproduce CC's falsifiable
-        predictions --- so the platform is measured, not merely asserted.
+  \item \textbf{V0 --- reference emulator (runs today).} A self-contained
+        emulator (\texttt{talos\_v0\_emulator.py}) holds $\Gam$, runs the tick,
+        computes the full telemetry suite (Table~\ref{tab:observables}), verifies
+        the spectral invariants each tick (and the $G_2$-Casimir under the
+        symmetry group), and reproduces every listed theorem --- the viable
+        attractor, the entropy law, the metabolic floor and its
+        frequency-independence, an ecology batch, and the Source bootstrap.
+        \SYNARC{}'s M1 validation and CC's implementation chapter run the same
+        tick bit-exact. The step from here is to batch it as a GPU ecology kernel
+        and reproduce CC's falsifiable predictions --- so the platform is
+        measured, not merely asserted.
   \item \textbf{V1 --- the virtual environment.} Close the sensorimotor loop
         (\S\ref{sec:scaling}: \textsc{Enc}/\textsc{Dec}) against a simulated
         world --- itself, in the strong form, a coherence field the holons sense
