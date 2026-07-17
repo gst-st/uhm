@@ -72,21 +72,25 @@ and the reversible core is free.
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-  width=11cm, height=6.0cm,
+  width=12cm, height=6.4cm,
   xlabel={computation performed (operations, arbitrary units)},
   ylabel={energy (log scale, J)},
   ymode=log, ymin=1e-21, ymax=1e-8,
   xmin=0, xmax=10, xtick=\empty,
-  legend pos=north west, legend cell align=left,
+  % legend sits in the empty mid-band between the (upper) von Neumann line and
+  % the (lower) Talos/Landauer floors, so it covers no curve; short parallel
+  % labels, the caption carries the full explanation.
+  legend style={at={(0.5,0.52)}, anchor=center, font=\footnotesize,
+                legend cell align=left, draw=gray!55, fill=white, rounded corners},
   grid=both, grid style={gray!15},
   every axis plot/.append style={very thick},
 ]
 % von Neumann: energy rises ~linearly with computation (data movement)
 \addplot[plosblue,domain=0.2:10,samples=40] {2e-11*x + 3e-11};
-\addlegendentry{von Neumann floor (data movement $\propto$ compute)}
+\addlegendentry{von Neumann floor ($\propto$ compute)}
 % TALOS: flat, set by learning (here a converging learner: high early, decays)
 \addplot[talosamber,domain=0.2:10,samples=60] {1.4e-19*exp(-0.45*x) + 6e-21};
-\addlegendentry{\textsc{Talos} floor (learning-bounded, decays as it converges)}
+\addlegendentry{\textsc{Talos} floor (learning-bounded)}
 % Landauer floor
 \addplot[plosgray,dashed,domain=0.2:10,samples=2] {2.87e-21};
 \addlegendentry{Landauer floor $kT\ln2$}
