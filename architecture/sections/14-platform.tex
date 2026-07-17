@@ -65,11 +65,18 @@ construction (Table~\ref{tab:observables}). Two consequences matter for
 engineering. First, the four-fold consciousness predicate $(P,R,\Phi,D)$ and the
 composite $C=\Phi\times R$ (UHM T-140) are always-on register reads, not a
 profiling pass --- the machine knows, each tick, whether it is a viable subject.
-Second, the \textbf{fourteen $G_2$-Noether charges} (seven Fano, seven
-cross-sector) are conserved under the unitary half-step; reading them is a free
-runtime self-check --- a drift is a hardware fault, caught the way the Fano
-syndrome (\S\ref{sec:ecc}) catches a degraded sector, but for the continuous
-dynamics rather than the discrete fabric.
+Second, the runtime self-check is free: the unitary half-step preserves the
+\emph{spectrum} of $\Gam$, so $\Tr\Gam=1$, the purity $P$, and the entropy $S$
+are exactly conserved under it --- a drift in any of them is a hardware fault,
+caught the way the Fano syndrome (\S\ref{sec:ecc}) catches a degraded sector, but
+for the continuous dynamics rather than the discrete fabric. The
+\textbf{fourteen $G_2$-Noether charges} are a distinct, subtler observable:
+because the effective Hamiltonian must \emph{break} $G_2$ (by Schur, the only
+$G_2$-invariant operator on the irreducible seven-mode representation is the
+identity, so any non-trivial $H_{\mathrm{eff}}$ breaks the symmetry), the
+individual charges \emph{drift} --- and that drift is a
+Goldstone/symmetry-breaking diagnostic, while their Casimir $\sum_a Q_a^2$ is the
+conserved $G_2$-invariant.
 
 \begin{table}[H]
 \centering\small
@@ -88,7 +95,7 @@ $\Phi$ & integration (calibrated $\Phi{=}1\leftrightarrow$ PCI $0.31$) & $O(N^2)
 $C=\Phi\times R$ & consciousness measure (T-140) & $O(N^2)$ \\
 $\CohE$ & $E$-coherence; No-Zombie floor & $O(N^2)$ \\
 $\{\gamma_p\}_{p=1}^{7}$ & seven line temperatures (rank-7 anisotropy; tomography) & $O(N^2)$ \\
-$\{Q_a\}_{a=1}^{14}$ & $G_2$-Noether charges (conserved $\Rightarrow$ self-check) & $O(N^2)$ \\
+$\{Q_a\}_{a=1}^{14}$ & $G_2$-Noether charges (symmetry-breaking diagnostic; Casimir $\sum_a Q_a^2$ conserved) & $O(N^2)$ \\
 $T_{\mathrm{eff}}$ & cognitive temperature (FDT) & $O(N^3)$ \\
 \bottomrule
 \end{tabular}
