@@ -104,3 +104,51 @@ each operation moves data (blue). The \TALOS{} floor is set by the rate of
 Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
 \label{fig:energy}
 \end{figure}
+
+\subsection{The metabolic floor and the operating-point axis}
+\label{subsec:metabolic}
+
+The law above accounts for \emph{computation} (reversible, Landauer-free) and
+\emph{learning} (the decaying $\Regen$ term). One term remains: the cost of
+merely \emph{staying alive}. The dissipator $\Diss$ continually pushes $\Gam$
+toward the maximally mixed heat-death state $I/7$; holding the state against
+this leak is not free.
+
+\begin{claimbox}[The metabolic floor \status{T}$+$\status{C} (T-273)]
+At steady state a viable holon ($P>2/7$, $\Gam\neq I/7$) exports entropy at the
+dissipator's strictly-positive rate $\dot S_{\Diss}>0$ (the entropy law
+T-271). By Landauer, the minimum \emph{maintenance} power is
+\[
+  P_{\mathrm{meta}} \;\geq\; f\cdot kT\ln 2\cdot \dot S_{\Diss}(\text{bits/tick}) \;>\; 0,
+\]
+the \emph{active, irreversible} counterpart of the reversible energy floor. A
+viable coherent machine's total power is therefore $0$ (reversible compute)
+$+\ P_{\mathrm{meta}}$ (maintenance): it \textbf{cannot run for free}. At
+$300$~K a single holon's floor is femto- to pico-watts (tick-rate dependent),
+and it is measurable, because $\dot S_{\Diss}$ is a live telemetry observable
+(\S\ref{sec:platform}).
+\end{claimbox}
+
+The floor scales with the \textbf{order maintained} (the distance $\ln 7 - S$
+from $I/7$): a more coherent, more complex state is pushed harder by the
+dissipator and costs more to hold --- \emph{the price of complexity}. This turns
+the viability window into an explicit \textbf{design axis} rather than a single
+set-point.
+
+\begin{claimbox}[The operating-point axis \status{C} (T-274)]
+The viable window $(2/7,3/7]$ is a capability--efficiency axis, not one point:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item \textbf{Lean edge $P\to 2/7$} --- efficiency-optimal: minimal maintenance
+        power, minimal margin. The ``survival'' mode --- highest
+        capability-per-watt (for capability $C=\Phi\times R$), least robust.
+  \item \textbf{Rich edge $P\to 3/7$} (the T-124 attractor) ---
+        capability-optimal: maximal $C=2/3$ and maximal dynamic range, at the
+        highest maintenance power. The ``thriving'' mode.
+\end{itemize}
+The dynamics pull the machine toward $P=3/7$ by default; an engineer can run it
+leaner toward $2/7$ to trade capability and margin for power. The optimal
+set-point is \status{C} (it depends on the capability measure chosen); what is
+\emph{robust} is the structure --- monotone cost across the window, two named
+modes at its edges. Machine-verified (\texttt{t273\_metabolic.py},
+\texttt{t274\_optimum.py}).
+\end{claimbox}
