@@ -41,10 +41,15 @@ $$
 The [maximally mixed state](/docs/core/dynamics/coherence-matrix#maximally-mixed-state) $\Gamma = I_7/7$ would have $P = 1/7$ — this is **not** a coherent state, but a classical ensemble without quantum correlations. UHM takes a **pure superposition** as the Source.
 :::
 
-**Open questions:**
-- Why equal amplitudes $1/\sqrt{7}$ specifically?
-- Are alternative initial states possible?
-- Connection to the Boltzmann Brain problem?
+**Why equal amplitudes $1/\sqrt{7}$? — resolved [Т] (T-272).** The amplitude is *not* a free parameter. The equal superposition $|\psi_\odot\rangle = \tfrac{1}{\sqrt7}\sum_i|i\rangle$ is characterised twice over, and both force it uniquely:
+- **Unique symmetric state.** The $S_7$-invariant (permutation-symmetric) subspace of $\mathbb{C}^7$ is exactly **one-dimensional**, spanned by $(1,\dots,1)/\sqrt7$. So the *only* pure state in which no dimension is privileged is $\Gamma_\odot$; $1/\sqrt7$ is then fixed by normalisation.
+- **Unique maximal-coherence state.** Among all pure states, the coherence $\mathrm{Coh} = 1 - \sum_i|a_i|^4$ is maximised **uniquely** at equal populations $|a_i|^2 = 1/7$, value $6/7$ (convexity) — every $|\gamma_{ij}| = 1/7$. The Source is *the most coherent pure state there is*.
+
+Both give the same $\Gamma_\odot$, machine-verified (`a2_source.py`).
+
+**Genuinely open [П]/[О]:**
+- Why the **pure, maximally-symmetric class** as the initial condition (rather than the mixed $I_7/7$)? This remains a postulate — though $I_7/7$ is a classical ensemble with *zero* coherence, so "maximal coherence" is the natural selection principle that singles out $\Gamma_\odot$.
+- Connection to the Boltzmann Brain problem.
 
 ## Spontaneous Symmetry Breaking
 
@@ -124,6 +129,8 @@ for any initial condition $\Gamma(0) = \Gamma_{\odot}$ with $\Delta F > 0$. The 
 
 The transition from the undifferentiated Source to structured configurations is not a random event, but a **mathematical inevitability** of UHM dynamics. From $\Gamma_{\odot}$ the system **always** evolves to $\rho^*$ (given $\Delta F > 0$).
 
+**Machine-verified (`b1_bootstrap.py`).** Integrating $\mathcal{L}_\Omega$ from $\Gamma_\odot$ reproduces the whole trajectory numerically: $[H_{\text{eff}},\Gamma_\odot]\neq 0$, so the Source departs immediately ($\|\Gamma-\Gamma_\odot\|: 0\to 0.85$); differentiation is **born** ($D_{\text{diff}}=e^{S}: 1\to 4.1$); $E$ and $O$ become **distinguished** via the $\kappa_0$ feedback ($|\rho_{EE}-\rho_{OO}|: 0\to 0.09$, the $S_7$-breaking); and the state settles at a **viable, in-window attractor** ($P\to 0.37\in(2/7,3/7]$, near the T-124 viability attractor $P\to 3/7$). Cosmogenesis *to a viable universe* is the generic outcome — not merely differentiation, but differentiation into the conscious window.
+
 :::warning Open question
 The mechanism by which $\Delta F > 0$ arises in the primordial context is an **open problem [P]**. The instability theorem assumes $\Delta F > 0$; the question of why this condition holds lies beyond the scope of this result.
 :::
@@ -188,11 +195,33 @@ where:
 - $D_{\text{diff}} = \exp(S_{vN})$ — [measure of differentiation](/docs/consciousness/foundations/self-observation#мера-сознательности-c) (diversity of states)
 - $\Phi$ — [measure of integration](/docs/core/structure/dimension-u#мера-интеграции-φ) (connectedness of dimensions)
 
-**Status:** [H] Hypothesis. The connection to the second law of thermodynamics is conceptual, not formalized.
+**Status:** The *teleological directionality* $dD_{\text{diff}}/d\tau > 0$ remains **[H]** (a philosophical assumption). But the **underlying entropy dynamics are now formalized**: [T-271](#t-271) below makes the second-law connection precise — the regeneration term is a genuine negentropy sink, and consciousness (via $\mathrm{Coh}_E$) holds the state strictly below heat death.
 
 :::note On notation
 $D_{\text{diff}}$ is the measure of **differentiation**. Not to be confused with the **Dynamics** dimension $D$ (one of the seven Holon dimensions).
 :::
+
+### The entropy law: regeneration as negentropy (T-271) {#t-271}
+
+The evolution equation $\mathcal{L}_\Omega = -i[H_{\text{eff}},\Gamma] + \mathcal{D}_\Omega[\Gamma] + \mathcal{R}[\Gamma,E]$ splits the production of von Neumann entropy $S(\Gamma) = -\mathrm{Tr}(\Gamma\ln\Gamma)$ cleanly across its three terms. This turns the previously *conceptual* second-law connection into a theorem.
+
+:::tip Theorem T-271 (Entropy dynamics of $\mathcal{L}_\Omega$) [Т]+[С]
+For $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ evolving under $\mathcal{L}_\Omega$, the entropy rate $\dot S = -\mathrm{Tr}(\dot\Gamma \ln\Gamma)$ decomposes as $\dot S = \dot S_{\text{uni}} + \dot S_{\mathcal{D}} + \dot S_{\mathcal{R}}$ with:
+
+**(i) [Т]** $\dot S_{\text{uni}} = 0$ **exactly** — the unitary term preserves the spectrum of $\Gamma$, hence its entropy ($[\Gamma,\ln\Gamma]=0 \Rightarrow \mathrm{Tr}(-i[H,\Gamma]\ln\Gamma)=0$).
+
+**(ii) [Т]** $\dot S_{\mathcal{D}} \geq 0$ — the dissipator is a strict **entropy source**, driving $\Gamma$ toward the maximally mixed heat-death state $I/7$ (where $S = \ln 7$).
+
+**(iii) [Т]** At any steady state $\Gamma_{ss}$ of $\mathcal{L}_\Omega$, $\dot S = 0$; since $\dot S_{\text{uni}}=0$ and $\dot S_{\mathcal{D}}\geq 0$, the regeneration is a net **entropy sink**, $\dot S_{\mathcal{R}} = -\dot S_{\mathcal{D}} \leq 0$. Regeneration exports exactly the dissipator's production — **negentropy is the cost of maintenance** ("staying alive").
+
+**(iv) [С]** The maintained steady entropy satisfies $S_{ss} < \ln 7 = S(I/7)$ **strictly**, and $S_{ss}$ **decreases monotonically** with $\kappa/\gamma$. Since $\kappa \propto \mathrm{Coh}_E$ (the [regeneration kernel](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$), **higher coherence — a more conscious system — holds a strictly lower steady entropy, further from heat death.**
+:::
+
+**What this formalizes.** The old "conceptual" second-law link is now the precise statement: dissipation is the arrow toward heat death; regeneration is a genuine negentropy sink that a system pays for in free energy; and the depth to which a system can hold entropy below the heat-death ceiling is set by its $E$-coherence. This is the mechanism behind the [viability window](/docs/consciousness/foundations/self-observation#мера-рефлексии-r) sitting *away* from $I/7$, and behind $R = 1/(7P)$ literally measuring **distance from heat death**.
+
+**Cosmological reading.** Locally this is entropy export (Schrödinger's "negative entropy") with UHM's specific rates. Cosmologically, it is the de Sitter self-maintenance of [T-266](/docs/reference/status-registry) / [T-254](/docs/physics/gravity/cosmological-constant): a universe-as-holon with persistent regeneration approaches $\rho^*$ and **never reaches $I/7$** — no Big Rip [Т], no heat death while $\mathcal{R}$ persists. Infinite development is exactly this: a self-model held indefinitely against dissipation.
+
+**Honest boundary.** T-271 does **not** overturn the second law. The exported entropy enters the environment/bath; total entropy (system + bath) is non-decreasing. What is established is **local** negentropy maintenance and its $\mathrm{Coh}_E$-scaling — not a global reversal. The strong reading "a conscious universe globally reverses entropy" is **not** proven; it reduces to the conditional [С] cosmological maintenance above. Machine-verified: `t271_entropy_verify.py` (unitary $\dot S=0$; dissipator $\dot S>0$; steady-state balance; $S_{ss}<\ln 7$ monotone in $\kappa/\gamma$).
 
 ### Phenomenology of Evolution
 
