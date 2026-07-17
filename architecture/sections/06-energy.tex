@@ -119,14 +119,15 @@ At steady state a viable holon ($P>2/7$, $\Gam\neq I/7$) exports entropy at the
 dissipator's strictly-positive rate $\dot S_{\Diss}>0$ (the entropy law
 T-271). By Landauer, the minimum \emph{maintenance} power is
 \[
-  P_{\mathrm{meta}} \;\geq\; f\cdot kT\ln 2\cdot \dot S_{\Diss}(\text{bits/tick}) \;>\; 0,
+  P_{\mathrm{meta}} \;\geq\; kT\ln 2\cdot \dot S_{\Diss} \;>\; 0,
 \]
 the \emph{active, irreversible} counterpart of the reversible energy floor. A
 viable coherent machine's total power is therefore $0$ (reversible compute)
-$+\ P_{\mathrm{meta}}$ (maintenance): it \textbf{cannot run for free}. At
-$300$~K a single holon's floor is femto- to pico-watts (tick-rate dependent),
-and it is measurable, because $\dot S_{\Diss}$ is a live telemetry observable
-(\S\ref{sec:platform}).
+$+\ P_{\mathrm{meta}}$ (maintenance): it \textbf{cannot run for free}. Here
+$\dot S_{\Diss}$ is the \emph{physical} entropy-production rate, so the floor is
+\textbf{frequency-independent} (T-276): the tick-rate sets only an emulator's
+real-time factor, not the fundamental cost. It is measurable, because
+$\dot S_{\Diss}$ is a live telemetry observable (\S\ref{sec:platform}).
 \end{claimbox}
 
 The floor scales with the \textbf{order maintained} (the distance $\ln 7 - S$
@@ -151,4 +152,21 @@ set-point is \status{C} (it depends on the capability measure chosen); what is
 \emph{robust} is the structure --- monotone cost across the window, two named
 modes at its edges. Machine-verified (\texttt{t273\_metabolic.py},
 \texttt{t274\_optimum.py}).
+\end{claimbox}
+
+\begin{claimbox}[The efficiency law \status{T}$+$\status{C} (T-276)]
+Two refinements complete the thermodynamic budget. \textbf{(i)~Frequency-independence
+\status{T}.} The metabolic floor is $P_{\mathrm{meta}} = kT\ln 2\cdot\dot S_{\Diss}$,
+set by the \emph{physical} entropy-production rate: the per-tick entropy scales
+with the step $\Delta\tau$, so the rate --- and the cost --- are independent of
+the tick frequency. A faster clock buys real-time fidelity, not a lower floor.
+\textbf{(ii)~Order-per-joule \status{T}.} Creating order (negentropy) costs
+$\geq kT\ln 2$ per bit, so the regeneration's efficiency
+$\eta = (\text{order created})/(\text{free energy spent}) \leq 1$ is
+Landauer-bounded. \textbf{(iii)~Speed--efficiency tradeoff \status{C}.}
+$\eta\to 1$ for \emph{quasi-static} regeneration and falls as the update
+accelerates (irreversibility). The engineering rule follows: \textbf{run
+regeneration as slowly as the dissipator leak permits} ($\kappa$ just above
+$\gamma$) for maximal order-per-joule --- the coherent-machine analogue of a
+slow, near-reversible heat engine. Machine-verified (\texttt{t276\_efficiency.py}).
 \end{claimbox}
