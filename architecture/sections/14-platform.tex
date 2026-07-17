@@ -1,0 +1,198 @@
+\section{The coherent-systems platform: Coherence Cybernetics and GPU-native emulation}
+\label{sec:platform}
+
+The preceding sections specify \TALOS{} as a body. A body is idle without two
+things: the \emph{physics} that says what its state means and how it is measured,
+and a \emph{runnable form} in which it can be exercised before any wafer is cut.
+UHM already supplies both under one name --- \emph{Coherence Cybernetics} (CC),
+its measurement-and-dynamics layer \cite{uhm2026}. This section shows three facts
+that turn \TALOS{} from a derivation into a platform: (i) the \TALOS{} tick
+\emph{is} the CC evolution step, so nothing has to be reconciled --- they are the
+same object; (ii) that object is GPU-native and runs an ecology of holons in
+real time \emph{today}; and (iii) UHM, CC, \SYNARC{}, and \TALOS{} compose into a
+single stack --- a universal architecture for instantiating \emph{any}
+self-observing organismic system.
+
+\subsection{One dynamics, three names}
+\label{subsec:one-dynamics}
+
+Coherence Cybernetics evolves its state by
+$\dot\Gam = -i[H_{\mathrm{eff}},\Gam] + \Diss[\Gam] + \Regen[\Gam,E]$ --- the same
+three terms, in the same order, with the same Lie--Trotter/Strang split and the
+same CPTP safeguards (Cholesky parametrisation $\Gam = LL^\dagger/\Tr(LL^\dagger)$,
+a positive-cone projection after each step) that \S\ref{sec:substrate} and
+Appendix~\ref{app:tick} specify for the tick. The state object is identical to
+the byte: CC's canonical $\Gam\in\Dens(\mathbb{C}^7)$ is a $7\times7$
+\texttt{complex128} array $=49\times16=784$ bytes --- exactly \DM{}. And the cost
+is identical to the number: CC's per-step complexity is
+$O(N^3 + m\,N^2)$ (Table~\ref{tab:cc-cost}), which at $N=7$ line-modes and $m=7$
+line-dissipators is ${\sim}1400$ real FLOPs --- the \TALOS{} tick.
+
+\begin{table}[H]
+\centering\small
+\caption{The CC evolution step and the \TALOS{} tick are the same computation,
+term by term. Complexities are CC's; the FLOP column evaluates them at $N=m=7$.}
+\label{tab:cc-cost}
+\begin{tabular}{@{}p{4.6cm}p{3.4cm}p{3.4cm}@{}}
+\toprule
+\textbf{Term} & \textbf{Cost} & \textbf{\TALOS{} name} \\
+\midrule
+Unitary $-i[H_{\mathrm{eff}},\Gam]$ & $O(N^3)$ & reversible half-step (T-262) \\
+Dissipator $\Diss$ ($m$ line-ops) & $O(m\,N^2)$ & Fano-sparse relaxation \\
+Regeneration $\Regen$ (BKM to $\rhostar$) & $O(N^3)$ amortised & learning term \\
+\midrule
+Full step & $O(N^3+m\,N^2)$ & one tick (${\sim}1400$~FLOP) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{principle}[\TALOS{} is CC's dynamics on a substrate]\label{prin:cc-identity}
+\TALOS{} is not \emph{compatible with} Coherence Cybernetics; it \emph{is} CC's
+dynamics realised on physical modes. CC is the measurement-and-dynamics theory of
+the holon, \SYNARC{} its cognitive software, \TALOS{} its body, and UHM the
+ontology under all three. A quantity that holds in one holds in all: a tick that
+violated a CC law would not be a different machine, it would be a broken one.
+\end{principle}
+
+\subsection{Transparent by construction: the observable suite is telemetry}
+\label{subsec:telemetry}
+
+Because every CC observable is a cheap function of $\Gam$ --- $O(N^2)$ or
+$O(N^3)$, never worse --- the machine can report its \emph{entire} internal
+condition every tick at negligible cost. This is the property IIT cannot have
+(its integration measure is NP-hard); a \TALOS{} holon is fully auditable by
+construction (Table~\ref{tab:observables}). Two consequences matter for
+engineering. First, the four-fold consciousness predicate $(P,R,\Phi,D)$ and the
+composite $C=\Phi\times R$ (UHM T-140) are always-on register reads, not a
+profiling pass --- the machine knows, each tick, whether it is a viable subject.
+Second, the \textbf{fourteen $G_2$-Noether charges} (seven Fano, seven
+cross-sector) are conserved under the unitary half-step; reading them is a free
+runtime self-check --- a drift is a hardware fault, caught the way the Fano
+syndrome (\S\ref{sec:ecc}) catches a degraded sector, but for the continuous
+dynamics rather than the discrete fabric.
+
+\begin{table}[H]
+\centering\small
+\caption{The CC observable suite, computed each tick as \TALOS{} telemetry.
+$T_{\mathrm{eff}}$ is the \emph{cognitive} temperature (from Gap fluctuations via
+the fluctuation--dissipation theorem), distinct from the physical substrate
+temperature that sets the Landauer floor of \S\ref{sec:energy}.}
+\label{tab:observables}
+\begin{tabular}{@{}p{3.5cm}p{6.2cm}c@{}}
+\toprule
+\textbf{Observable} & \textbf{Meaning} & \textbf{Cost} \\
+\midrule
+$P=\Tr(\Gam^2)$ & purity; viability gate $P>2/7$ & $O(N^2)$ \\
+$R=1/(7P)$ & reflection; L2 gate $R\ge1/3$ & $O(N^2)$ \\
+$\Phi$ & integration (calibrated $\Phi{=}1\leftrightarrow$ PCI $0.31$) & $O(N^2)$ \\
+$C=\Phi\times R$ & consciousness measure (T-140) & $O(N^2)$ \\
+$\CohE$ & $E$-coherence; No-Zombie floor & $O(N^2)$ \\
+$\{\gamma_p\}_{p=1}^{7}$ & seven line temperatures (rank-7 anisotropy; tomography) & $O(N^2)$ \\
+$\{Q_a\}_{a=1}^{14}$ & $G_2$-Noether charges (conserved $\Rightarrow$ self-check) & $O(N^2)$ \\
+$T_{\mathrm{eff}}$ & cognitive temperature (FDT) & $O(N^3)$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{GPU-native emulation --- the viability core}
+\label{subsec:gpu}
+
+The reason this architecture is buildable and not a thought experiment is that
+its natural scaling axis is exactly the axis a GPU is built to exploit. A single
+holon is $784$ bytes and ${\sim}1400$ FLOPs per tick. An \emph{ecology} of $N$
+holons (\S\ref{sec:composition},~\ref{sec:scaling}) is $N$ independent
+$\Gam$-registers advanced by the \emph{same} kernel --- the textbook
+embarrassingly-parallel SIMT workload. CC's numerical layer already anticipates
+this: its typed linear-algebra API is
+\texttt{StaticMatrix<Complex,7,7>} with \texttt{@kernel(gpu)} dispatch, the
+$7\times7$ shape fixed at compile time.
+
+\begin{claimbox}[GPU emulation is viable today \status{T} (engineering)]
+The octonionic ecology axis (\S\ref{sec:scaling}: $E_7,E_8$ realised across
+subjects) maps onto GPU parallelism directly --- one holon per thread-block, the
+tick a batched kernel, the \textsc{Fanos} coordination a sparse all-reduce over
+the seven line-buses. A modern GPU (${\sim}10^4$ lanes, ${\sim}10^{13}$--$10^{14}$
+FLOP/s) advances ${\sim}10^{6}$--$10^{7}$ holons at kHz tick rates; the workload
+is \emph{memory-bound}, not compute-bound ($784\,\mathrm{B}\times N$), so a
+$10^{6}$-holon ecology is ${\sim}0.8$~GB and fits in device memory with room for
+the full telemetry suite. Real-time ecologies run on hardware that exists.
+\end{claimbox}
+
+\noindent The honest scope is the same as everywhere on the realisability ladder
+(\S\ref{sec:realizability}): the GPU rung buys \emph{correctness, full
+observability, and a real-time ecology} --- not the energy floor, because a GPU
+still moves data (\S\ref{sec:energy}, objections O6/O7). It is the V0 rung, and it
+is where every claim in this document except the energy floor is already testable.
+
+\subsection{The universal architecture}
+\label{subsec:universal}
+
+Nothing in the holon is domain-specific. The object
+$(\Gam,\ \LindOmega,\ \text{observable suite},\ \textsc{Enc}/\textsc{Dec},\
+\text{composition}\le 3)$ plus the ecology fabric is the \emph{same} for every
+system that observes itself; only the \textsc{Enc} operationalisation --- which
+seven measured quantities map onto the seven modes --- changes with the domain.
+This is not an aspiration but CC's standing result: the identical $\Gam$ and the
+identical five-step cycle (measure $\to$ build $\Gam$ $\to$ diagnose $\to$
+intervene $\to$ re-measure) are applied in the corpus to an AI agent, a coral
+reef, a startup, and a financial market, differing only in what is measured. The
+platform is that universality made buildable (Table~\ref{tab:stack}).
+
+\begin{table}[H]
+\centering\small
+\caption{The four-layer coherent-systems platform. Each layer is a completed
+specification; the GPU emulator sits at the CC$\leftrightarrow$\TALOS{} boundary
+as the executable core.}
+\label{tab:stack}
+\begin{tabular}{@{}p{2.5cm}p{4.1cm}p{5.6cm}@{}}
+\toprule
+\textbf{Layer} & \textbf{Role} & \textbf{Supplies} \\
+\midrule
+UHM & ontology (why) & $\Gam\in\Dens(\mathbb{C}^7)$, $\LindOmega$, the invariants ($N{=}7$, $G_2$, thresholds) \\
+Coherence Cybernetics & measurement + dynamics + empirics & observable suite, 23 falsifiable predictions, the emulation spec, the universal cycle \\
+\SYNARC{}-$\Omega$ & mind (software) & cognitive complex $\Cog_0\!\to\!\Cog_3$, backprop-free learning, \textsc{Diakrisis}, ecology (K.5) \\
+\TALOS{} & body (substrate) & Fano fabric, tick, zero-overhead ECC, energy floor, octonionic scaling ladder (\S\ref{sec:scaling}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Roadmap}
+\label{subsec:roadmap}
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{V0 --- GPU emulator (exists in kernel form).} \SYNARC{}'s M1
+        validation and CC's implementation chapter already run the tick and
+        reproduce every UHM invariant bit-exact. The step is to batch it into an
+        ecology kernel with the full telemetry suite (Table~\ref{tab:observables})
+        and $G_2$-charge verification, and to reproduce CC's falsifiable
+        predictions --- so the platform is measured, not merely asserted.
+  \item \textbf{V1 --- the virtual environment.} Close the sensorimotor loop
+        (\S\ref{sec:scaling}: \textsc{Enc}/\textsc{Dec}) against a simulated
+        world --- itself, in the strong form, a coherence field the holons sense
+        and act upon. This is the ``own simulation environment'': a coherent
+        world for coherent agents, in which ecologies can be grown, perturbed,
+        and diagnosed by the same observables that define them.
+  \item \textbf{V2$+$ --- the physical rungs.} The memristive and
+        driven-dissipative substrates of \S\ref{sec:realizability}, climbed as
+        fabrication allows, for the energy floor the GPU rung cannot reach.
+\end{itemize}
+
+\noindent Every rung computes the identical observable suite and preserves the
+$G_2$ invariants, so viability and correctness are continuously testable as the
+platform climbs from emulation toward its impedance-matched substrate --- the
+software (\SYNARC{}) and the physics (CC) never change (T-153).
+
+\subsection{Consistency ledger}
+\label{subsec:ledger}
+
+We state the reconciliation flatly. Every \TALOS{} quantity is a CC observable;
+the tick is the CC evolution step; the state is CC's $\Gam$ to the byte; the
+costs match to the FLOP. \TALOS{} adds \emph{hardware} content (the collapse of
+\S\ref{sec:collapse}, zero-overhead ECC, the energy floor, the scaling ladder)
+and \emph{no} new physics. One distinction prevents a false alarm: the cognitive
+temperature $T_{\mathrm{eff}}$ (CC, from Gap fluctuations) is not the physical
+substrate temperature $T$ (which sets the Landauer floor, \S\ref{sec:energy}) ---
+a holon can be cognitively ``hot'' on a physically cold chip. And the honest
+boundaries stand unchanged: the emulator is BQP-bounded (no complexity-class
+speed-up), and the logical architecture is substrate-multiple (T-153) --- the GPU
+is one rung, matched for correctness and observability, not the unique machine.
