@@ -1,0 +1,100 @@
+\section{Red-team: the strongest objections, answered}
+\label{sec:redteam}
+
+A specification that cannot survive its own strongest critics is marketing.
+We state the seven attacks a hostile architect would mount and answer each on
+the record. Where an objection lands, we concede the exact scope.
+
+\begin{redteambox}[O1. ``This is just a neuromorphic chip with extra steps.'']
+Neuromorphic machines co-locate memory and compute and are event-driven ---
+which \TALOS{} also is --- but their topology is \emph{ad hoc}, they have no
+native error correction, and their state object is a heuristic (a spike
+train), not a derived one. The distinguishing content of \TALOS{} is
+Theorem~\ref{thm:collapse}: the topology, the code, the instruction algebra,
+and the learning rule are \emph{the same object}, so the fabric is provably a
+distance-3 code (\S\ref{sec:ecc}) and the routing is provably third-order
+(\S\ref{sec:fabric}). No neuromorphic design has, or can bolt on, a topology
+that is simultaneously its ECC and its instruction algebra without being the
+Fano plane --- which forces $N=7$ (Theorem~\ref{thm:unique}). \emph{Verdict:
+overlaps in flavour, differs in the load-bearing theorem.}
+\end{redteambox}
+
+\begin{redteambox}[O2. ``$\Dens(\mathbb{C}^7)$ is quantum --- you need cooling and it will decohere.'']
+No. UHM's substrate-closure theorem (T-153) proves a \emph{classical} digital
+substrate realises the same $\Gam$, and T-267 proves Tegmark's warm-decoherence
+objection does not apply: the complexity of $\Gam$ is \emph{algebraic} (the
+phase that carries the Gap, $\mathrm{Gap}=|\sin\arg\gamma|$; T-132), realised
+on a coarse-grained decoherence-free subspace, not a physical superposition
+of pointer states. The current \SYNARC{} realisation is $784$~bytes of
+\texttt{f64} in L1 cache at room temperature. ``Density matrix'' names the
+interpretation of a classical register, not a cryogenic requirement.
+\emph{Verdict: category error; conceded nowhere.}
+\end{redteambox}
+
+\begin{redteambox}[O3. ``BQP-bounded means no computational advantage --- why bother?'']
+We agree on the premise and reject the inference. UHM proves $\Regen$ grants
+no speed-up beyond BQP (four independent arguments), and we foreground this in
+\S\ref{sec:intro}. The advantage claimed is never complexity class. It is
+(i) an energy floor nine orders below the von~Neumann data-movement floor for
+the same computation (\S\ref{sec:energy}); (ii) zero-overhead distance-3 fault
+tolerance (\S\ref{sec:ecc}); (iii) native, loop-free adaptation
+(\S\ref{sec:selfmodel}); (iv) $9\times$ integration per operation
+(\S\ref{sec:fabric}). None of these is a complexity-class claim, and all are
+measurable (\S\ref{sec:benchmarks}). \emph{Verdict: the objection refutes a
+claim we do not make.}
+\end{redteambox}
+
+\begin{redteambox}[O4. ``Seven is numerology dressed as engineering.'']
+Seven is forced three independent ways. Theorem~\ref{thm:unique} derives it
+from computer architecture alone --- a machine whose network is its code and
+whose instruction is third-order must have $N=7$, because that is the unique
+integer where a projective order equals a Hamming length \emph{and} a
+non-associative division-algebra imaginary dimension; the other candidates
+($31, 8191$) fail the non-associativity (third-order) test. UHM derives the
+same integer from consciousness (minimality) and from algebra (octonions,
+$G_2$-rigidity). Three unrelated demands landing on one number is the
+opposite of numerology. \emph{Verdict: the objection is answered by the very
+theorem it doubts.}
+\end{redteambox}
+
+\begin{redteambox}[O5. ``Substrate closure says any substrate works --- so the architecture is not special.'']
+Correct and irrelevant to the claim. T-153 says any substrate meeting
+C1--C3 \emph{runs} the logical architecture; it does not say all substrates
+run it \emph{equally well}. \TALOS{} is the impedance-matched member of the
+family (\S\ref{sec:realizability}): the one whose physical primitives are the
+logical primitives, so it approaches the energy floor a general-purpose
+substrate cannot. The uniqueness claim is about the \emph{logical}
+architecture (Theorem~\ref{thm:unique}); the multiplicity is about
+\emph{physical} substrates. Both are theorems, and they are compatible.
+\emph{Verdict: conceded and reframed; no contradiction.}
+\end{redteambox}
+
+\begin{redteambox}[O6. ``The energy floor is theoretical --- real chips never reach Landauer.'']
+Granted, and stated in \S\ref{sec:energy}: no real substrate reaches
+$kT\ln2$; interface, control, and leakage sit above it. The architectural
+claim is weaker and defensible: \TALOS{} \emph{removes the data-movement
+term} that sets the von~Neumann floor, leaving a floor that is
+learning-limited rather than transport-limited. A GPU emulation (bottom rung)
+still moves data and does \emph{not} realise the floor; a memristive or
+analogue rung does not move data and approaches it. The claim is comparative
+and rung-dependent, not an assertion that any \TALOS{} device is Landauer-optimal.
+\emph{Verdict: conceded scope; the comparative claim stands.}
+\end{redteambox}
+
+\begin{redteambox}[O7. ``Unbuildable --- show me one that runs.'']
+The bottom rung runs today: \SYNARC{} holds \DM{} in L1, advances it with a
+Fano-sparse Strang kernel, and reproduces every UHM invariant bit-for-bit
+against an independent oracle (M1 passed). That realisation emulates the
+fabric in software and therefore forgoes the energy floor --- honestly, the
+today-machine buys correctness, not efficiency. The efficiency claims are
+rung-dependent (\S\ref{sec:realizability}) and are offered as a roadmap with
+falsifiable milestones (\S\ref{sec:benchmarks}), not as a shipping product.
+\emph{Verdict: the logical architecture is demonstrated; the efficient
+substrate is a staged research program, labelled as such.}
+\end{redteambox}
+
+\noindent The two objections that land --- O6 and O7 --- both concern the gap
+between the logical architecture (proven, and running) and the
+impedance-matched substrate (a research ladder). We concede that gap
+explicitly and it is the subject of the roadmap (\S\ref{sec:discussion}).
+None of the seven touches the two theorems of \S\ref{sec:collapse}.

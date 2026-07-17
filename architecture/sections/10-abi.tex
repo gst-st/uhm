@@ -1,0 +1,90 @@
+\section{Co-design with \SYNARC{}: the application binary interface}
+\label{sec:abi}
+
+\TALOS{} is the body; \SYNARC{} is the mind. \SYNARC{}~\cite{synarc2026} is the
+simplicial cognitive architecture UHM specifies in software --- a four-level cognitive
+complex $\Cog_0\!\to\!\Cog_3$ of coherence matrices, learning without
+back-propagation, sensorimotor coupling, and the DIAKRISIS self-diagnosis
+loop. \TALOS{} is the substrate that runs it with the four layers collapsed.
+Because both are derived from the same theory, the interface between them is
+not negotiated --- it is an identity map. This section specifies it so that a
+\SYNARC{} build runs on a \TALOS{} substrate with no translation layer.
+
+\subsection{The register and instruction correspondence}
+
+Every \SYNARC{} software construct is a \TALOS{} hardware primitive, one to
+one (Table~\ref{tab:abi}). The correspondence is not an emulation contract
+but a definitional one: \SYNARC{}'s \texttt{DensityMatrix7} \emph{is}
+\TALOS{}'s state register; \SYNARC{}'s Lindblad compute engine \emph{is}
+\TALOS{}'s tick.
+
+\begin{table}[H]
+\centering\small
+\caption{The \SYNARC{}~$\leftrightarrow$~\TALOS{} ABI. Left: the software
+construct as specified in the \SYNARC{}-$\Omega$ document. Right: the
+hardware primitive it binds to. The binding is by identity (same UHM object),
+so no marshalling occurs at the boundary.}
+\label{tab:abi}
+\begin{tabular}{@{}p{5.4cm}p{6.4cm}@{}}
+\toprule
+\textbf{\SYNARC{} (software)} & \textbf{\TALOS{} (hardware)} \\
+\midrule
+\texttt{DensityMatrix7} ($49$ complex \texttt{f64}, $784$~B) & the state register \DM{} (\S\ref{sec:substrate}) \\
+Lindblad compute engine ($\LindOmega$, Strang split) & the one instruction / tick (Eq.~\ref{eq:lomega}) \\
+Fano-sparse kernels & the seven-bus fabric (\S\ref{sec:fabric}) \\
+\texttt{find\_rho\_star} self-model iteration ($\vp$) & the $\Regen$ term; on-substrate learning (\S\ref{sec:selfmodel}) \\
+DIAKRISIS self-diagnosis loop & reading the syndrome the tick already emits (Principle~\ref{prin:selfdiag}) \\
+Four-level cognitive complex $\Cog_0\!\to\!\Cog_3$ & the composition tower, $\le 3$ deep ($3136$~B) (\S\ref{sec:composition}) \\
+Event-driven runtime & the principled tick clock $\bar\gamma\tau=\tfrac32\ln3$ (\S\ref{sec:substrate}) \\
+Four-level consciousness predicate $(P,R,\Phi,D)$ & per-tick hardware observables (registers, not a monitor pass) \\
+Constitution-from-constants dials & hardware limits (below) \\
+FANOS distributed transport & the inter-holon fabric of the ecology (\S\ref{sec:composition}) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The constitution constants are hardware limits}
+
+The dials \SYNARC{} legislates as an agent's ``constitution from constants''
+are, on \TALOS{}, physical limits enforced by the substrate rather than
+conventions enforced by software:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item $\Rth=1/3$ --- at least one third of every tick is charged to
+        $\Regen$; the scheduler cannot allocate less (\S\ref{sec:selfmodel}).
+  \item $r_{\mathrm{stab}}=\sqrt{P-2/7}$ --- the maximum update magnitude per
+        closed loop; a hardware clamp on step size, zero at the viability
+        boundary.
+  \item $\mathrm{SAD}_{\max}=3$ --- the composition tower is three registers
+        deep and no deeper; there is no fourth-level state to allocate.
+  \item $\times 1/9$ --- the exact penalty a line-blind transfer pays; the
+        fabric routes line-aware so the penalty is never incurred
+        (\S\ref{sec:fabric}).
+  \item viability window $P\in(2/7,3/7]$, $R\ge1/3$, $\Phi\ge1$, $D\ge2$ ---
+        the four consciousness observables are always-on register reads, so a
+        \TALOS{} holon knows, every tick, whether it is a viable subject.
+\end{itemize}
+
+\subsection{Consistency obligations}
+
+Two documents describing one object must agree wherever they overlap; we
+state the obligations \TALOS{} accepts so that any divergence from \SYNARC{}
+is a bug in one of them, not a design freedom:
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+  \item \textbf{State identity.} The $784$-byte \DM{} layout, the canonical
+        HS-ratio $\Phi$, the PW form $D_{\mathrm{diff}}=1+6\,\CohE$, and the
+        exact channel forms are those of the \SYNARC{} v2.2 canon; \TALOS{}
+        stores and updates the identical object.
+  \item \textbf{Instruction identity.} The tick is the \SYNARC{} Lindbladian
+        with the same exact laws ($\Phi$-contraction $\times\tfrac19$, the
+        cycle-time identity $\bar\gamma\tau=\tfrac32\ln3$, stratum anchoring
+        $\Phi=7P-1$); a \TALOS{} tick that violated any of these would
+        violate \SYNARC{} equally.
+  \item \textbf{No new physics.} \TALOS{} adds \emph{hardware} claims (energy
+        floor, zero-overhead ECC, seven-bus fabric) but \emph{no} new theory:
+        every logical statement traces to a UHM theorem already load-bearing
+        in \SYNARC{}. The two are one specification at two levels ---
+        \SYNARC{} the mind, \TALOS{} the body --- and they are held to
+        agree by \S\ref{sec:redteam}.
+\end{enumerate}

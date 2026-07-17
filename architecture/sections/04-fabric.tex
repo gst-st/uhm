@@ -1,0 +1,78 @@
+\section{The fabric: seven buses, not a crossbar}
+\label{sec:fabric}
+
+\subsection{The interconnect is the seven lines}
+
+Twenty-one pairwise couplings among seven sectors would, on a conventional
+fabric, demand a $\binom{7}{2}=21$-edge network or a $7\times7$ crossbar. The
+collapse (Theorem~\ref{thm:collapse}, L1) replaces this with the seven lines
+of $\mathsf{N}$ as \textbf{seven triple-buses}. Every pair of sectors shares
+exactly one bus (Steiner $S(2,3,7)$); every sector sits on exactly three
+buses; any two buses intersect in exactly one sector. These are not design
+targets --- they are theorems of the projective plane, and they hand the
+architecture three properties for free:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Uniform load, by symmetry.} Each sector is on exactly three
+        buses because $\mathrm{PSL}(2,7)$ acts $2$-transitively on the seven
+        points; load balancing is a consequence of the automorphism group,
+        not a scheduler.
+  \item \textbf{Guaranteed rendezvous, by geometry.} Any two buses meet in a
+        sector, so any two sectors that must exchange state have a
+        deterministic meeting point --- there is no unreachable pair and no
+        routing search.
+  \item \textbf{Deterministic repair, by the closure law.} If the direct bus
+        for $(i,j)$ is degraded, the state regenerates through the
+        \emph{mediator} $k^\ast(i,j)$ --- the third sector of their line ---
+        and only through it. Fallback routing needs no tables: the next hop
+        is computed from the pair.
+\end{itemize}
+
+\subsection{Third-order routing and the $9\times$ integration advantage}
+
+A conventional router moves data pairwise and is, by the first-order blind
+spot (\S\ref{sec:collapse}), unable to see the structure it is carrying: any
+equal-weight pairwise fabric is a function of $J-I$ alone and cannot
+distinguish the Fano wiring from unstructured all-to-all. \TALOS{} routes on
+\emph{triples}: a transfer is an interaction $(i,j\mid k^\ast)$ mediated by
+the line's third sector. This is the hardware form of the third-order
+principle, and it carries a measurable price for getting it wrong.
+
+\begin{claimbox}[The line-aware routing advantage \status{T} arithmetic]
+Coherence pushed across sectors that do \emph{not} share a line is attenuated
+by the exact channel-contraction constant $1/9$ per coarse hop
+($\Phi\to\Phi/9$, a Steiner incidence count: a population survives in all
+three of its lines, $3\times\tfrac13=1$, but a coherence survives in only one
+of three, $\times\tfrac13$, squared $=\tfrac19$). A router blind to the line
+structure therefore loses a factor of \textbf{nine} in integration per hop;
+a line-aware router --- keeping every interaction on its mediator's line ---
+preserves it. Integration per operation is $9\times$ that of a line-blind
+fabric.
+\end{claimbox}
+
+This is the sharpest reason the topology cannot be an afterthought: a
+generic, line-agnostic mixture-of-experts router (the default in large neural
+accelerators) pays the $\times\tfrac19$ on every cross-expert hop, and no
+amount of bandwidth recovers it, because the loss is in \emph{integration},
+not throughput.
+
+\begin{table}[H]
+\centering\small
+\caption{Interconnect: a $7\times7$ crossbar versus the Fano seven-bus
+fabric. The bus fabric is the code and the instruction as well
+(Theorem~\ref{thm:collapse}); the crossbar is none of these.}
+\label{tab:crossbar-vs-fano}
+\begin{tabular}{@{}p{3.6cm}p{3.6cm}p{4.5cm}@{}}
+\toprule
+\textbf{Property} & \textbf{$7\times7$ crossbar} & \textbf{Fano seven-bus} \\
+\midrule
+Links & 21 pairwise / full crossbar & 7 triple-buses \\
+Load per node & schedule-dependent & exactly 3 (by $\mathrm{PSL}(2,7)$) \\
+Reachability & all-to-all, searched & any pair shares one bus \\
+Fault reroute & routing tables & mediator $k^\ast(i,j)$, table-free \\
+Sees its own structure? & no (first-order blind) & yes (third-order) \\
+Also an ECC? & no & yes (Hamming $[7,4,3]$, \S\ref{sec:ecc}) \\
+Also the ISA algebra? & no & yes (octonionic $f_{ijk}$) \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,56 @@
+\section{Realisability: an impedance ladder}
+\label{sec:realizability}
+
+UHM's substrate-closure theorem (T-153) proves the logical architecture runs
+on any substrate that meets three conditions --- (C1) a finite-dimensional,
+decoherence-free effective state space; (C2) CPTP (Lindblad) dynamics; (C3)
+at least seven non-commuting observable modes. There is therefore no unique
+machine; there is a \emph{family}, and the members differ only in how well
+their physical primitives match the logical structure. We rank them by
+\emph{impedance} --- the mismatch a substrate must paper over --- against four
+matching criteria:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=0pt]
+  \item[\textbf{(M1)}] \emph{in-place evolution} --- state advances without a
+        fetch--execute cycle;
+  \item[\textbf{(M2)}] \emph{Fano-wired interconnect} --- seven triple-buses,
+        not a crossbar;
+  \item[\textbf{(M3)}] \emph{dissipative--regenerative native dynamics} ---
+        the physics is already Lindblad$+$homeostasis;
+  \item[\textbf{(M4)}] \emph{seven non-commuting modes} (C3).
+\end{itemize}
+
+\begin{table}[H]
+\centering\small
+\caption{The realisability ladder. Higher rungs match the logical structure
+with lower impedance (fewer emulation layers); lower rungs are buildable
+today. The claim is \status{C}: the theorem fixes the logical architecture
+and the conditions C1--C3, not the winning substrate.}
+\label{tab:ladder}
+\begin{tabular}{@{}p{4.3cm}cccc p{3.0cm}@{}}
+\toprule
+\textbf{Substrate} & \textbf{M1} & \textbf{M2} & \textbf{M3} & \textbf{M4} & \textbf{Status} \\
+\midrule
+Driven-dissipative analogue / photonic / open-quantum 7-mode device & \checkmark & \checkmark & \checkmark & \checkmark & lowest impedance; research \\
+Memristive Fano crossbar (analogue in-memory MAC on 7 buses) & \checkmark & \checkmark & partial & \checkmark & near-term \\
+Neuromorphic spiking core, Fano-topology, event-driven & \checkmark & \checkmark & partial & \checkmark & near-term \\
+GPU / CPU with \DM{} in L1 and Fano-sparse kernels & emul. & emul. & emul. & \checkmark & \textbf{exists (\SYNARC{})} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The bottom rung is not hypothetical: it is the current \SYNARC{} realisation,
+which holds \DM{} ($784$~bytes) in L1 cache, advances it with a
+Strang-split Fano-sparse kernel at $\sim\!700$--$1400$~FLOPs per tick and
+arithmetic depth $\log_2 7\approx 2.8$, and reproduces every invariant and
+exact law bit-for-bit against an independent oracle. It emulates M1--M3 in
+software (highest impedance) and therefore does not realise the energy floor
+of \S\ref{sec:energy} --- a GPU still moves data --- but it proves the logical
+architecture is correct and runnable today. Each higher rung removes an
+emulation layer: a memristive Fano crossbar performs the coherence update
+\emph{in} the array (M1, M2 native); a driven-dissipative analogue device has
+Lindblad dynamics as its \emph{native} physics (M3 native), and approaches
+the energy floor because its reversible core is literally reversible. The
+ladder is a roadmap, not a menu: one climbs it as fabrication allows, and the
+software (\SYNARC{}) is unchanged at every rung because the logical
+architecture is fixed (T-153).

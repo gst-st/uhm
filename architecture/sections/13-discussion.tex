@@ -1,0 +1,86 @@
+\section{Discussion and roadmap}
+\label{sec:discussion}
+
+\subsection{What was discovered}
+
+The result of this document is not a faster chip but a structural fact: the
+four subsystems that every computing machine designs apart --- interconnect,
+error-correcting code, instruction algebra, and learning rule --- are, on a
+seven-mode substrate, one object (Theorem~\ref{thm:collapse}), and that
+object is available at a \emph{unique} node count (Theorem~\ref{thm:unique}),
+selected among its arithmetic rivals by the requirement that computation be
+third-order (non-associative). From the collapse follow three things no
+layered machine has: fault tolerance at zero hardware overhead because the
+wiring is the code (\S\ref{sec:ecc}); an energy floor set by learning rather
+than data movement because the reversible core is Landauer-free
+(\S\ref{sec:energy}); and continuous self-diagnosis and refresh-as-learning
+because compute, check, and maintenance are the same term
+(Principles~\ref{prin:selfdiag},~\ref{prin:refresh}). These are the genuinely
+new architectural facts; each is derived from UHM, not asserted.
+
+\subsection{What is honestly open}
+
+Two gaps are conceded (\S\ref{sec:redteam}, O6--O7) and they are the same
+gap: between the \emph{logical} architecture --- proven, and running today on
+a GPU at $784$~bytes in L1 --- and the \emph{impedance-matched} substrate
+that realises the energy floor. The GPU rung buys correctness, not
+efficiency, because it still moves data. Closing the gap is a fabrication
+program, not a theory problem: T-153 guarantees the software (\SYNARC{}) is
+unchanged as one climbs the ladder.
+
+\subsection{Roadmap}
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{V0 --- emulation (exists).} \SYNARC{} on CPU/GPU: \DM{} in
+        L1, Fano-sparse Strang kernel, all invariants verified. Discharges
+        B2, B3, B4; demonstrates the logical architecture.
+  \item \textbf{V1 --- in-memory (near-term).} A memristive Fano crossbar
+        performing the coherence update in the array (M1, M2 native). First
+        substrate that can test B1 (energy tracks learning) by removing the
+        data-movement term.
+  \item \textbf{V2 --- driven-dissipative (research).} An analogue, photonic,
+        or open-quantum seven-mode device whose native physics is
+        Lindblad$+$homeostasis (M3 native), approaching the Landauer floor
+        because its reversible core is physically reversible.
+\end{itemize}
+
+\subsection{The two machines, side by side}
+
+\begin{table}[H]
+\centering\small
+\caption{The von~Neumann machine and \TALOS{}, head to head. \TALOS{} does
+not win on generality (BQP bound); it occupies the point where the four
+design layers cannot be mismatched.}
+\label{tab:vn-vs-talos}
+\begin{tabular}{@{}p{3.4cm}p{4.3cm}p{4.5cm}@{}}
+\toprule
+\textbf{Axis} & \textbf{von Neumann} & \textbf{\TALOS{}} \\
+\midrule
+Memory vs compute & separate (the bottleneck) & one object: the state evolves in place \\
+State & unbounded, addressed & one $784$-byte density matrix in L1 \\
+Instruction & fixed opcode set + compiler & one derived tick $\LindOmega$ \\
+Interconnect & crossbar / mesh, $\binom{N}{2}$ & seven line-buses (Fano) \\
+Error correction & bolted on ($+12.5\%$ or $\sim\!10^3\times$) & the wiring is the code ($0$ overhead) \\
+Learning & separate training loop & the third term of the tick \\
+Refresh & spent, computes nothing & is learning (Prin.~\ref{prin:refresh}) \\
+Diagnosis & extra scrub/decode pass & free byproduct of the tick (Prin.~\ref{prin:selfdiag}) \\
+Energy floor & data movement ($\sim\!20$~pJ/word) & learning ($\sim kT\ln2$, $\sim\!10^{9}\times$ lower) \\
+Clock & free parameter (critical path) & derived ($\bar\gamma\tau=\tfrac32\ln3$) \\
+Scaling & more cores / bigger model & ecology of $\le 3$-deep subjects \\
+Node count & any & \textbf{seven}, uniquely (Thm~\ref{thm:unique}) \\
+Complexity class & (classical) & BQP --- \emph{not} a speed-up \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Closing}
+
+The von~Neumann machine won on generality and has been paying the bottleneck
+tax ever since. \TALOS{} does not beat it at generality --- by the BQP bound
+it cannot --- and does not try. It occupies a different point: the machine
+whose four design layers cannot be mismatched because they are one seven-fold
+object, whose power tracks its learning, and whose faults are located by its
+own wiring. That such a machine exists at all, and only at $N=7$, is a
+theorem; that it is the body co-designed for the \SYNARC{} mind is the reason
+to build it. The logical architecture is settled and running; the efficient
+substrate is a ladder we can now climb with a fixed target at the top.

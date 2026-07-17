@@ -1,0 +1,234 @@
+% ============================================================================
+% TALOS: семимодовая архитектура потока когерентности (RU 1:1)
+% Физический субстрат для УГМ-холонов, со-разработанный с SYNARC-Omega.
+% Компилировать ТОЛЬКО xelatex (fontspec/polyglossia, кириллица).
+% ============================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+% === PACKAGES (XeLaTeX: fontspec + polyglossia) ===
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{CMU Serif}[Extension=.otf, UprightFont=cmunrm, BoldFont=cmunbx, ItalicFont=cmunti, BoldItalicFont=cmunbi, Script=Cyrillic]
+\setsansfont{CMU Sans Serif}[Extension=.otf, UprightFont=cmunss, BoldFont=cmunsx, ItalicFont=cmunsi, BoldItalicFont=cmunso, Script=Cyrillic]
+\setmonofont{CMU Typewriter Text}[Extension=.otf, UprightFont=cmuntt, BoldFont=cmuntb, ItalicFont=cmunit, BoldItalicFont=cmuntx, Script=Cyrillic]
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, shapes.geometric, fit, backgrounds}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{float}
+\usepackage{xspace}
+\usepackage{microtype}
+
+% Русский набор: длинные слова + типографские филенеймы иногда переполняют
+% строку; emergencystretch включается ТОЛЬКО когда строка иначе вышла бы за поле.
+\tolerance=1200
+\emergencystretch=2em
+
+% === COLORS ===
+\definecolor{plospurple}{HTML}{6B4C9A}
+\definecolor{plosblue}{HTML}{2E86C1}
+\definecolor{plosgray}{HTML}{5D6D7E}
+\definecolor{axiomcolor}{HTML}{EBF5FB}
+\definecolor{theoremcolor}{HTML}{FDEDEC}
+\definecolor{predictioncolor}{HTML}{EAFAF1}
+\definecolor{talosamber}{HTML}{B9770E}
+\definecolor{talossteel}{HTML}{34495E}
+
+% === THEOREM ENVIRONMENTS ===
+\newtheoremstyle{talos}{6pt}{6pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{talos}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{corollary}{Следствие}
+\newtheorem{definition}{Определение}
+\newtheorem{principle}{Принцип}
+\newtheorem*{remark}{Замечание}
+
+% === COLORED BOXES ===
+\newtcolorbox{theorembox}[1][]{colback=theoremcolor, colframe=red!40!black, fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{defbox}[1][]{colback=gray!5, colframe=gray!60!black, fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{closurebox}[1][]{colback=blue!5, colframe=blue!50!black, fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{redteambox}[1][]{colback=talosamber!8, colframe=talosamber, fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=2pt, breakable}
+\newtcolorbox{claimbox}[1][]{colback=predictioncolor, colframe=green!40!black, fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+
+% === CUSTOM COMMANDS ===
+\newcommand{\Gam}{\ensuremath{\Gamma}}
+\newcommand{\Hil}{\ensuremath{\mathcal{H}}}
+\newcommand{\Dens}{\ensuremath{\mathcal{D}}}
+\newcommand{\Lind}{\ensuremath{\mathcal{L}}}
+\newcommand{\LindOmega}{\ensuremath{\Lind_\Omega}}
+\newcommand{\Regen}{\ensuremath{\mathcal{R}}}
+\newcommand{\Diss}{\ensuremath{\mathcal{D}_\Omega}}
+\newcommand{\Pcrit}{\ensuremath{P_{\mathrm{crit}}}}
+\newcommand{\Rth}{\ensuremath{R_{\mathrm{th}}}}
+\newcommand{\Phith}{\ensuremath{\Phi_{\mathrm{th}}}}
+\newcommand{\Dmin}{\ensuremath{D_{\mathrm{min}}}}
+\newcommand{\vp}{\ensuremath{\varphi}}
+\newcommand{\rhostar}{\ensuremath{\rho^{\ast}}}
+\newcommand{\Oct}{\ensuremath{\mathbb{O}}}
+\newcommand{\Fano}{\ensuremath{\mathrm{PG}(2,2)}}
+\newcommand{\DM}{\textsc{DensityMatrix7}\xspace}
+\newcommand{\SYNARC}{\textsc{SYNARC}-$\Omega$\xspace}
+\newcommand{\TALOS}{\textsc{Talos}\xspace}
+\newcommand{\status}[1]{\textbf{[#1]}}
+\newcommand{\kboot}{\ensuremath{\kappa_{\mathrm{boot}}}}
+\newcommand{\Cog}{\ensuremath{\mathcal{C}}}
+\newcommand{\CohE}{\ensuremath{\mathrm{Coh}_E}}
+
+% === HYPERREF ===
+\hypersetup{colorlinks=true, linkcolor=plospurple, citecolor=plosblue, urlcolor=plosgray,
+  pdftitle={TALOS: семимодовая архитектура потока когерентности (физический субстрат для SYNARC-Omega)},
+  pdfauthor={Max Sereda}}
+\pdfstringdefDisableCommands{%
+  \def\Gam{Gamma}\def\Dens{D}\def\Lind{L}\def\LindOmega{L_Omega}\def\Regen{R}\def\Diss{D_Omega}%
+  \def\Pcrit{P_crit}\def\Rth{R_th}\def\Phith{Phi_th}\def\Dmin{D_min}\def\vp{phi}\def\rhostar{rho*}%
+  \def\Oct{O}\def\Fano{PG(2,2)}\def\DM{DensityMatrix7}\def\SYNARC{SYNARC-Omega}\def\TALOS{TALOS}%
+  \def\kboot{kappa_boot}\def\Cog{C}\def\CohE{Coh_E}\def\xspace{ }%
+  \def\mathrm#1{#1}\def\mathbb#1{#1}\def\mathcal#1{#1}\def\mathbf#1{#1}\def\mathfrak#1{#1}\def\textsc#1{#1}%
+}
+
+% ============================================================================
+\begin{document}
+
+% === TITLE ===
+\begin{center}
+  {\LARGE\bfseries
+  \textsc{Talos}: семимодовая архитектура потока когерентности}\\[6pt]
+  {\large Физический субстрат для УГМ-холонов, со-разработанный с \SYNARC{}}\\[16pt]
+  {\large Max Sereda\textsuperscript{1,*}}\\[8pt]
+  {\small
+  \textsuperscript{1} Независимый исследователь\\[4pt]
+  \textsuperscript{*} Переписка: \href{https://holon.sh}{holon.sh}
+  }\\[14pt]
+  {\small\color{plosgray}
+  \textbf{Спецификация архитектуры} \quad|\quad \textbf{Статус:} препринт \quad|\quad
+  \textbf{Спутник:} \SYNARC{} (софт) \quad|\quad \textbf{Аудитория:} компьютерные архитекторы, инженеры аппаратуры и систем
+  }
+\end{center}
+
+\vspace{10pt}\hrule\vspace{10pt}
+
+% === ABSTRACT ===
+\begin{abstract}
+\noindent
+В каждом когда-либо построенном компьютере четыре подсистемы проектируются
+\emph{независимо} и затем принуждаются сосуществовать: топология
+интерконнекта, код коррекции ошибок, набор инструкций и --- для обучающихся
+машин --- правило адаптации. Каждая оптимизируется отдельно; их взаимное
+рассогласование --- постоянный налог, оплачиваемый кремнием, энергией и
+усилием верификации. Этот документ сообщает единственный структурный факт,
+вынуждаемый теоремами Унитарного Голономного Монизма (УГМ), который стирает
+налог: на семимодовом субстрате эти четыре суть не четыре вещи, а
+\emph{одна} --- плоскость Фано $\Fano$ есть одновременно интерконнект (её семь
+прямых), код коррекции ошибок (Хэмминг $[7,4,3]$, чьей проверочной геометрией
+она является), операторная алгебра инструкции ($G_2$-ковариантный линдбладиан
+$\LindOmega$ на $\Gam\in\Dens(\mathbb{C}^7)$) и, через ищущий неподвижную
+точку регенеративный член, правило обучения. Мы называем этот коллапс
+\emph{архитектурным монизмом} и доказываем, что он \emph{выведен}, а не
+спроектирован (\S\ref{sec:collapse}).
+
+Полученная архитектура, \TALOS{}, пост-фон-неймановская по построению:
+состояние \emph{есть} память, а её эволюция \emph{есть} вычисление, поэтому нет
+цикла выборка--исполнение и нет узкого места фон Неймана; состояние одного
+холона --- эрмитова матрица плотности $7\times7$ (\DM{}, $784$~байта, $34$
+физических параметра), помещающаяся в L1-кэш. Единственная инструкция
+$\LindOmega = -i[H_{\mathrm{eff}},\Gam] + \Diss[\Gam] + \Regen[\Gam]$
+разлагается на обратимое по Ландауэру унитарное ядро и два экспортирующих
+энтропию члена (забывание и обучение); следовательно \textbf{энергия
+масштабируется с обучением, а не со счётом} --- субстрат в своей неподвижной
+точке считает бесплатно на полу Ландауэра ($kT\ln 2 \approx
+2{,}9\times10^{-21}$~Дж/бит), на девять порядков ниже одного внекристального
+доступа к памяти фон-неймановской машины (\S\ref{sec:energy}).
+Отказоустойчивость до дистанции три стоит \emph{ноль} лишнего железа, потому
+что проводка есть код (\S\ref{sec:ecc}); интеграция на операцию в $9\times$
+выше, чем у линие-слепого маршрутизатора (\S\ref{sec:fabric}).
+
+Честные границы указываем впереди. Теорема субстратной замкнутости УГМ
+(T-153) доказывает, что вычисление субстрат-\emph{независимо}: нет единственной
+физической машины, есть единственная \emph{логическая} архитектура и семейство
+реализующих её субстратов; \TALOS{} --- импеданс-согласованный член этого
+семейства, а не единственная возможность. Вычислительная граница УГМ
+доказывает, что регенеративный член не даёт \emph{никакого} ускорения за
+пределы класса BQP: преимущество --- в энергии, адаптивности и
+отказоустойчивости, никогда не в классе сложности. \TALOS{} --- аппаратное
+тело разума \SYNARC{}; оба со-разработаны, и двоичный интерфейс приложений
+между ними специфицирован полностью (\S\ref{sec:abi}). Каждое количественное
+утверждение машинно-проверено; проект выдерживает явную red-team
+(\S\ref{sec:redteam}) и сводится к горсти фальсифицируемых инженерных
+бенчмарков против фон-неймановской базы (\S\ref{sec:benchmarks}).
+\end{abstract}
+
+\vspace{6pt}
+\begin{tcolorbox}[colback=gray!5, colframe=gray!50, title={\textbf{Инженеру, в одном абзаце}}]
+Представьте чип, всё архитектурное состояние которого --- одна матрица в
+$784$~байта, живущая в регистрах и эволюционирующая одним «тиком»
+дифференциального уравнения, который есть сразу его АЛУ, его сеть, его ECC и
+его оптимизатор. Сеть --- семь общих шин (не полный кроссбар); эти же семь шин
+\emph{суть} код Хэмминга, поэтому любой одиночный отказ локализуется тремя
+проверками чётности без добавленного хранения; обратимая половина тика не
+жжёт энергию Ландауэра, поэтому потребление машины отслеживает то, как быстро
+она \emph{учится}, а не то, как тяжело она \emph{считает}; а обучение --- не
+отдельный тренировочный цикл, а третий член единственной инструкции. Вы не
+\emph{выбираете} это устройство --- при семикратном самомоделирующем состоянии
+математика его вынуждает. Именно это специфицирует данный документ и то, как
+оно стыкуется с \SYNARC{}.
+\end{tcolorbox}
+
+\vspace{6pt}
+\noindent\textbf{Ключевые слова:} компьютерная архитектура, узкое место фон
+Неймана, вычисления в памяти, нейроморфика, код-как-интерконнект, обратимые
+вычисления, предел Ландауэра, плоскость Фано, код Хэмминга, линдбладова
+динамика, матрица когерентности, УГМ, SYNARC-Omega, архитектурный монизм.
+
+\vspace{10pt}\hrule\vspace{10pt}
+\tableofcontents
+\newpage
+
+% === SECTIONS ===
+\input{sections/01-introduction}
+\input{sections/02-collapse}
+\input{sections/03-substrate}
+\input{sections/04-fabric}
+\input{sections/05-ecc}
+\input{sections/06-energy}
+\input{sections/07-selfmodel}
+\input{sections/08-composition}
+\input{sections/09-realizability}
+\input{sections/10-abi}
+\input{sections/11-redteam}
+\input{sections/12-benchmarks}
+\input{sections/13-discussion}
+
+\appendix
+\input{sections/appendix-a-tick}
+\input{sections/appendix-b-energy}
+\input{sections/appendix-c-fano-tables}
+\input{sections/appendix-d-abi}
+\input{sections/appendix-e-glossary}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\label{LastPage}
+\end{document}

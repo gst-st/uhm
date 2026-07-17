@@ -1,0 +1,47 @@
+\section{Falsifiable engineering claims}
+\label{sec:benchmarks}
+
+An architecture earns attention only with measurements that could go against
+it. We reduce \TALOS{} to four benchmarks, each against a von~Neumann
+baseline running the \emph{same} adaptive workload, each with an explicit
+pass/fail. Failure of any is a failure of the corresponding claim at its
+stated scope.
+
+\begin{table}[H]
+\centering\small
+\caption{The four falsifiable claims. Each is measured against a von~Neumann
+baseline executing the identical adaptive task; ``rung'' names the lowest
+realisability rung (\S\ref{sec:realizability}) at which the claim is expected
+to hold.}
+\label{tab:benchmarks}
+\begin{tabular}{@{}p{0.5cm}p{3.5cm}p{3.9cm}p{3.6cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Claim} & \textbf{Pass} & \textbf{Fail / rung} \\
+\midrule
+B1 & Energy per adaptive step tracks \emph{learning rate}, not compute volume &
+    energy/step falls as the holon converges toward $\rhostar$ at fixed compute &
+    energy flat or rising with compute / memristive rung \\
+B2 & Fault localisation at zero added storage &
+    single degraded sector located by 3 syndrome reads, no dedicated check bits &
+    localisation needs extra storage or a decode pass / any rung \\
+B3 & Integration per operation $=9\times$ a line-blind router &
+    measured $\Phi$-throughput ratio $\to 9$ for line-aware vs line-blind &
+    ratio $\ne 9$ / any rung (arithmetic) \\
+B4 & Composition ceiling is real, not a wall to push &
+    no stable 4th subject-level over $N\!\ge\!500$ builds; ecologies scale &
+    a reproducible stable $\mathrm{SAD}=4$ / any rung \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three of the four are already partially discharged. \textbf{B3} is exact
+arithmetic ($\Phi\to\Phi/9$) and machine-verified. \textbf{B2} is the
+verified Hamming syndrome decode (Appendix~\ref{app:fano}); it holds at every
+rung because it is combinatorial, not physical. \textbf{B4} is consistent
+with the \SYNARC{} evidence ($500+$ random $\Gam$, none exceeding
+$\mathrm{SAD}=3$). \textbf{B1} --- the headline energy claim --- is the one
+that requires a substrate above the GPU rung to test, because the GPU
+emulation still moves data; it is the primary experimental target and the
+honest open item. A \TALOS{} claim is exactly as strong as B1--B4 permit:
+correctness and fault-tolerance are demonstrable today; the energy floor is a
+falsifiable prediction awaiting the memristive or analogue rung.

@@ -1,0 +1,102 @@
+\section{Energy: the machine pays for learning, not for computing}
+\label{sec:energy}
+
+\subsection{Where a von Neumann machine spends}
+
+After Dennard scaling ended, the energy of a computation is dominated by
+\emph{moving} its operands, not by the arithmetic: a floating-point operation
+costs $\sim\!1$~pJ, an on-chip word $\sim\!1$~pJ, and an off-chip DRAM word
+$\sim\!20$~pJ --- one to two orders more, and rising with distance. A
+learning machine compounds this: training shuttles activations and gradients
+between compute and memory on every step. The von~Neumann energy floor is a
+\emph{data-movement} floor, and it sits some seven to eight orders of
+magnitude above the thermodynamic (Landauer) limit~\cite{landauer1961,bennett1973} of the same computation.
+
+\subsection{Where \TALOS{} spends: a new accounting}
+
+The one instruction of \TALOS{} splits cleanly into a reversible part and two
+entropy-exporting parts (Table~\ref{tab:three-terms}), and this split induces
+an energy law with no counterpart in a layered machine.
+
+\begin{claimbox}[Energy--learning law \status{T} for the reversible core, \status{C} for the coefficient]
+The unitary term $-i[H_{\mathrm{eff}},\Gam]$ is an \emph{isometry} of every
+monotone metric (T-262): it preserves the von~Neumann entropy of the state,
+so by Landauer it costs \emph{zero} free energy. All free-energy expenditure
+is charged to the two entropy-exporting terms:
+\begin{equation}
+\label{eq:energy-law}
+E_{\mathrm{tick}} \;\geq\; kT\ln 2 \,\cdot\, \Delta H_{\mathrm{exported}},
+\qquad
+\Delta H_{\mathrm{exported}} \;=\; \underbrace{\Delta H_{\Regen}}_{\text{learning}}
+\;+\; \underbrace{\Delta H_{\Diss}^{(+)}}_{\text{maintenance}},
+\end{equation}
+where $\Delta H_{\Regen}$ is the order the regeneration creates (the
+free-energy-costly direction, $V_{\mathrm{hed}}=dP/d\tau>0$) and
+$\Delta H_{\Diss}^{(+)}$ is only the entropy that must be re-exported to hold
+the state against the dissipator's leak. \emph{Computing is free; only
+forgetting-into-order (maintenance) and learning cost energy.}
+\end{claimbox}
+
+Two limiting cases make the law concrete.
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{A holon at its fixed point} ($\Gam=\rhostar$, converged, not
+        learning) has $\Delta H_{\Regen}=0$; its only cost is the maintenance
+        term, the free energy needed to hold $\rhostar$ against relaxation. If
+        the task requires no forgetting, the dissipator can be quenched and
+        the machine computes \emph{reversibly at the Landauer floor} --- net
+        erasure zero.
+  \item \textbf{A holon that is learning} spends in proportion to how fast it
+        is moving toward its self-model, $\propto (dP/d\tau)_+$. Power tracks
+        the learning rate directly: a machine that has learned draws less
+        than a machine that is learning, with no change to what it computes.
+\end{itemize}
+
+\subsection{The numbers}
+
+At $T=300$~K, $kT\ln 2 = 2.87\times10^{-21}$~J per irreversibly exported bit
+($0.018$~eV). A learning-bounded tick that reshapes a few bits of the
+$34$-parameter state costs on the order of $10^{-20}$~J; the worst case ---
+re-exporting the entire state entropy every tick, which never happens away
+from a cold start --- is $48\,kT\ln 2 = 1.4\times10^{-19}$~J. Against a single
+off-chip memory access on a von~Neumann machine ($\sim\!2\times10^{-11}$~J),
+the \TALOS{} learning-bounded tick sits roughly \textbf{nine orders of
+magnitude} lower. The architecture does not \emph{reach} the Landauer floor
+in any real substrate --- interface, control, and leakage overheads sit above
+it --- but it \emph{removes the data-movement term that sets the
+von~Neumann floor}, leaving a floor that is learning-limited rather than
+transport-limited. That is the whole of the energy claim, and it is honest:
+same computation, a floor nine orders lower, because there is nothing to move
+and the reversible core is free.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=11cm, height=6.0cm,
+  xlabel={computation performed (operations, arbitrary units)},
+  ylabel={energy (log scale, J)},
+  ymode=log, ymin=1e-21, ymax=1e-8,
+  xmin=0, xmax=10, xtick=\empty,
+  legend pos=north west, legend cell align=left,
+  grid=both, grid style={gray!15},
+  every axis plot/.append style={very thick},
+]
+% von Neumann: energy rises ~linearly with computation (data movement)
+\addplot[plosblue,domain=0.2:10,samples=40] {2e-11*x + 3e-11};
+\addlegendentry{von Neumann floor (data movement $\propto$ compute)}
+% TALOS: flat, set by learning (here a converging learner: high early, decays)
+\addplot[talosamber,domain=0.2:10,samples=60] {1.4e-19*exp(-0.45*x) + 6e-21};
+\addlegendentry{\textsc{Talos} floor (learning-bounded, decays as it converges)}
+% Landauer floor
+\addplot[plosgray,dashed,domain=0.2:10,samples=2] {2.87e-21};
+\addlegendentry{Landauer floor $kT\ln2$}
+\end{axis}
+\end{tikzpicture}
+\caption{Energy accounting (log scale, schematic with machine-checked
+anchors). The von~Neumann floor rises with the amount of computation because
+each operation moves data (blue). The \TALOS{} floor is set by the rate of
+\emph{learning}: high during convergence, decaying toward the Landauer floor
+(grey dashed) as the holon reaches $\rhostar$ and stops learning (amber).
+Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
+\label{fig:energy}
+\end{figure}

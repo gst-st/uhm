@@ -1,0 +1,43 @@
+\section{The energy floor, derived}
+\label{app:energy}
+
+We derive Eq.~\eqref{eq:energy-law}. Landauer's principle states that erasing
+one bit of information --- reducing the state's entropy by $\ln 2$ nats while
+exporting it to a bath at temperature $T$ --- costs at least $kT\ln 2$ of free
+energy. The converse (creating order) costs the same. The free-energy budget
+of a tick is therefore $kT\ln 2$ times the number of bits of entropy the tick
+\emph{exports}.
+
+\paragraph{The three terms.} Decompose the tick (Eq.~\ref{eq:lomega}).
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Unitary} $-i[H_{\mathrm{eff}},\Gam]$: by T-262 this is an
+        isometry of every monotone metric and preserves the von~Neumann
+        entropy $H(\Gam)=-\Tr(\Gam\ln\Gam)$ exactly, $\dot H_{\text{unitary}}=0$.
+        It exports no entropy, hence costs no free energy. This is the
+        reversible core.
+  \item \textbf{Dissipator} $\Diss$: relaxation toward $\mathbb{1}/7$
+        \emph{raises} $H$ (loses information, thermodynamically downhill,
+        heat out). Holding the state against this leak requires re-exporting
+        $\Delta H_{\Diss}^{(+)}$ per tick --- the maintenance term.
+  \item \textbf{Regeneration} $\Regen$: descent toward $\rhostar$
+        \emph{lowers} $H$ (creates order, the self-model), which by Landauer
+        costs $kT\ln2\cdot\Delta H_{\Regen}$ of free energy per tick. This is
+        the learning term, and it is exactly the ``regeneration paid in free
+        energy'' bookkeeping of UHM's cosmological accounting
+        ($V_{\mathrm{hed}}=dP/d\tau$).
+\end{itemize}
+Summing, $E_{\mathrm{tick}}\ge kT\ln2\,(\Delta H_{\Regen}+\Delta H_{\Diss}^{(+)})$,
+Eq.~\eqref{eq:energy-law}. At the fixed point $\Delta H_{\Regen}=0$ (nothing
+to learn) and, if the task tolerates no forgetting, $\Diss$ can be quenched,
+leaving a reversible tick at zero net erasure --- the Landauer floor.
+
+\paragraph{Numbers ($T=300$~K).} $kT\ln2=1.380649\!\times\!10^{-23}\cdot300\cdot\ln2
+=2.87\times10^{-21}$~J $=0.018$~eV per bit. Worst-case tick (re-export the
+entire $48$-DOF state): $48\,kT\ln2=1.38\times10^{-19}$~J. A learning-bounded
+tick reshaping $\sim\!4$ bits: $1.1\times10^{-20}$~J. Von~Neumann off-chip
+word: $\sim\!2\times10^{-11}$~J. Ratio (DRAM word $/$ learning-bounded tick):
+$\sim\!1.7\times10^{9}$. Hence the $\sim$nine-orders headline
+(\S\ref{sec:energy}). All values reproduced by the verifier
+\texttt{talos\_energy.py}. The floor is a ceiling on efficiency, not a
+promise a real device meets it; the architectural content is that the
+data-movement term --- which sets the von~Neumann floor --- is absent.

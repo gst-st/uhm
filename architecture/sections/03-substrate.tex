@@ -1,0 +1,107 @@
+\section{The substrate: one state, one instruction}
+\label{sec:substrate}
+
+\subsection{State: the density matrix is the machine}
+
+The entire architectural state of one \TALOS{} holon is a single object.
+
+\begin{defbox}[The state register \DM{}]
+A holon's state is a coherence matrix $\Gam\in\Dens(\mathbb{C}^7)$: a
+$7\times7$ Hermitian, positive-semidefinite, unit-trace matrix. Stored dense,
+it is $49$ complex \texttt{f64} entries $=\mathbf{784}$~\textbf{bytes}; a
+four-level holon (\S\ref{sec:composition}) is $4\times784=3136$~bytes. Its
+seven diagonal entries are the sector \emph{populations} (intensities); its
+$21$ complex off-diagonals are the \emph{coherences} $\gamma_{ij}$. Modulo
+the $G_2$ gauge (14 generators) it has $\mathbf{34}$ physical parameters.
+\end{defbox}
+
+Two consequences are immediate and they are the whole departure from von
+Neumann.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+  \item \textbf{Memory \emph{is} compute.} There is no store separate from
+        the working state and no address space: the machine's memory is
+        $\Gam$ and its computation is the evolution of $\Gam$. The
+        fetch--execute--store cycle --- the object of Backus's
+        indictment --- does not exist because there is nothing to fetch:
+        the operand of every operation is the whole state, already resident.
+  \item \textbf{The state fits in registers.} $784$~bytes is smaller than a
+        single cache line's worth of a modern vector register file; the L1
+        data cache of every current processor holds thousands of holons. The
+        DRAM traffic that dominates von~Neumann energy has no counterpart
+        here: for a single holon there is no ``main memory'' to reach.
+\end{enumerate}
+
+That $\Gam$ is a \emph{density matrix} (complex, positive, unit trace) is not
+an aesthetic choice: UHM proves the complex off-diagonal structure is forced
+by the requirement that the substrate carry a non-trivial ``Gap'' (the
+dual-aspect opacity of self-reference, $\mathrm{Gap}(i,j)=|\sin\arg\gamma_{ij}|$;
+T-132), and that it is realisable on \emph{classical} hardware --- the
+complexity is algebraic, not a physical quantum superposition, so no cooling
+or coherence budget is required (T-153, T-267). \DM{} is an ordinary
+classical register that happens to be interpreted as a density operator.
+
+\subsection{Instruction: one derived tick}
+
+\TALOS{} has one instruction. It is the UHM logical Liouvillian, and it is
+\emph{derived} from the subobject classifier of the theory, not chosen:
+\begin{equation}
+\label{eq:lomega}
+\boxed{\;\LindOmega[\Gam] \;=\; \underbrace{-i[H_{\mathrm{eff}},\Gam]}_{\text{work (reversible)}}
+\;+\; \underbrace{\Diss[\Gam]}_{\text{forget (dissipative)}}
+\;+\; \underbrace{\Regen[\Gam]}_{\text{learn (regenerative)}}\;}
+\end{equation}
+One \emph{tick} advances the state by
+$\Gam \leftarrow \Gam + \Delta\tau\,\LindOmega[\Gam]$ (in practice a
+structure-preserving Strang split; Appendix~\ref{app:tick}). The three terms
+are the three things a computer does, and here they are three parts of one
+operation rather than three subsystems:
+
+\begin{table}[H]
+\centering\small
+\caption{The one instruction, its three terms, and their architectural role.}
+\label{tab:three-terms}
+\begin{tabular}{@{}p{2.9cm}p{4.0cm}p{5.2cm}@{}}
+\toprule
+\textbf{Term} & \textbf{Physics} & \textbf{Architectural role} \\
+\midrule
+$-i[H_{\mathrm{eff}},\Gam]$ & unitary, an \emph{isometry} of every monotone metric (T-262); entropy-preserving & \textbf{Work}: reversible computation; by Landauer it costs \emph{no} free energy (\S\ref{sec:energy}) \\
+$\Diss[\Gam]$ & Fano dissipator; Lindblad relaxation toward $\mathbb{1}/7$; GNS detailed balance & \textbf{Forget}: controlled decay/refresh; exports entropy, so it \emph{does} cost energy \\
+$\Regen[\Gam]$ & regeneration toward $\rhostar=\vp(\Gam)$; BKM-gradient descent of $D(\rhostar\Vert\Gam)$ & \textbf{Learn}: moves the state toward its own self-model; the optimiser, in hardware \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The evolution is a completely-positive trace-preserving (CPTP) semigroup
+$\mathcal{E}_\tau=\exp(\tau\LindOmega)$: every tick keeps $\Gam$ a legal
+density matrix, so there is no ``illegal state'' to guard against --- the
+type is preserved by construction. This is the hardware meaning of UHM's
+CPTP guarantee: \TALOS{} cannot compute its way out of the state manifold,
+the way a von~Neumann machine can compute an invalid pointer.
+
+\subsection{A principled clock}
+
+A von~Neumann machine's clock period is an engineering free parameter set by
+the critical path. \TALOS{}'s natural tick is \emph{not} free: the UHM
+cycle-time identity fixes the ratio of a relaxation time to the mean
+coherence rate,
+\begin{equation}
+\bar\gamma\,\tau \;=\; \tfrac{3}{2}\ln 3 \;\approx\; 1.6479,
+\end{equation}
+with the dissipator's spectral gap $\lambda_{\mathrm{deco}}=2/3$ and the
+regeneration (bootstrap) rate $\kboot=1/7$ setting the two timescales the
+tick must resolve. The clock is a consequence of the dynamics, not a knob:
+one designs the physical relaxation rate $\bar\gamma$ and the tick period
+follows. This removes an entire class of timing-closure freedom (and its
+verification burden) from the design.
+
+\subsection{What the substrate is not}
+
+To forestall the obvious misreadings (expanded in \S\ref{sec:redteam}): the
+state is \emph{not} a wavefunction and requires no quantum hardware; the tick
+is \emph{not} a neural-network layer and involves no back-propagation; and
+the machine is \emph{not} an analogue integrator with drift --- the CPTP
+structure and the native code (\S\ref{sec:ecc}) make it self-correcting. It
+is a classical register evolving by a derived, type-preserving,
+self-correcting differential tick, whose network, code, instruction, and
+optimiser are one object.

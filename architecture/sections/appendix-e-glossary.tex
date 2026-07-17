@@ -1,0 +1,37 @@
+\section{Glossary and UHM cross-reference}
+\label{app:glossary}
+
+\paragraph{Terms.}
+\begin{description}[leftmargin=0pt,itemsep=1pt]
+  \item[\DM{}] the state register: $\Gam\in\Dens(\mathbb{C}^7)$, $784$~bytes.
+  \item[Tick] one application of $\LindOmega$ (Eq.~\ref{eq:lomega}); the sole instruction.
+  \item[Line-bus] one of the seven Fano lines; the interconnect unit (\S\ref{sec:fabric}).
+  \item[Mediator $k^\ast(i,j)$] the third sector of a pair's line; the deterministic reroute.
+  \item[Collapse] the identity of interconnect, code, instruction, and learning as one incidence (\S\ref{sec:collapse}).
+  \item[Impedance] the emulation a substrate must add to run the logical architecture (\S\ref{sec:realizability}).
+\end{description}
+
+\paragraph{UHM theorems used.} Every logical claim traces to an established
+result of the UHM corpus (\href{https://holon.sh}{holon.sh}); \TALOS{} adds
+hardware claims, no new theory.
+\begin{center}\small
+\begin{tabular}{@{}p{5.9cm}p{9.0cm}@{}}
+\toprule
+Result & Use in \TALOS{} \\
+\midrule
+Minimality of $7$; octonionic derivation & $N=7$ (Thm~\ref{thm:unique}), the non-associative ISA \\
+$G_2$-rigidity (T-42a) & interconnect $=$ orbit incidence (Thm~\ref{thm:collapse} L4) \\
+Fano selection rule / structure constants $f_{ijk}$ & instruction algebra $=$ line incidence (L3) \\
+Hamming $[7,4,3]=$ Fano ($\Sigma$-calculus T-224/T-225) & code $=$ topology (\S\ref{sec:ecc}) \\
+Third-order principle (Fano fingerprint) & third-order routing; the uniqueness tie-break \\
+$\LindOmega$ derived from $\Omega$ & the one instruction (\S\ref{sec:substrate}) \\
+Metriplectic decomposition (T-262) & reversible core is a Landauer-free isometry (\S\ref{sec:energy}) \\
+Substrate closure (T-153/T-153a) & substrate multiplicity; the realisability ladder \\
+Tegmark closure (T-267), complex-$\Gam$ necessity (T-132) & classical, warm, $784$-byte state; no cooling \\
+Computational bound (BQP) & no complexity-class speed-up (honest boundary) \\
+$\Phi$-contraction $\times\tfrac19$; cycle-time $\bar\gamma\tau=\tfrac32\ln3$ & the $9\times$ integration law; the principled clock \\
+$\mathrm{SAD}_{\max}=3$ (T-142) & composition ceiling (\S\ref{sec:composition}) \\
+Constitution constants ($\Rth,r_{\mathrm{stab}},\times\tfrac19$) & hardware limits (\S\ref{sec:abi}) \\
+\bottomrule
+\end{tabular}
+\end{center}

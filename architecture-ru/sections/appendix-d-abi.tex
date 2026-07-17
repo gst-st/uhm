@@ -1,0 +1,42 @@
+\section{Детали ABI: раскладка и псевдокод тика}
+\label{app:abi}
+
+\paragraph{Раскладка состояния.} Холон --- непрерывный блок; субъект ---
+четырёххолонная башня (уровни $0$--$3$, \S\ref{sec:composition}).
+\begin{center}\small
+\begin{tabular}{@{}rll@{}}
+\toprule
+смещение & размер & поле \\
+\midrule
+$0$    & $784$ & \texttt{gamma} : \DM{} ($49$ компл.\ \texttt{f64}, LE) --- уровень 0 \\
+$784$  & $784$ & \DM{} уровня 1 \\
+$1568$ & $784$ & \DM{} уровня 2 \\
+$2352$ & $784$ & \DM{} уровня 3 \\
+\midrule
+       & $3136$ & полное состояние субъекта (влезает в L1) \\
+\bottomrule
+\end{tabular}
+\end{center}
+Это байт-идентично раскладке \texttt{gamma}/\texttt{rho\_ep} \SYNARC{} (канон
+v2.2): чекпойнт \SYNARC{} есть образ состояния \TALOS{} и наоборот, без
+маршалинга.
+
+\paragraph{Тик (на уровень).}
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+\multicolumn{2}{@{}l}{\texttt{tick($\Gam$, $\Delta\tau$):}} \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & // обратимо, свободно от Ландауэра (T-262) \\
+\quad\texttt{$s \leftarrow$ syndrome($\Gam$)} & // свободный побочный продукт (замыкание линии, Прин.~\ref{prin:selfdiag}) \\
+\quad\texttt{$\Gam \leftarrow$ dissip($\Gam$, $\Delta\tau$)} & // Фано-разреженный; экспортирует энтропию (забыть) \\
+\quad\texttt{$\Gam \leftarrow$ regen($\Gam$, $\rhostar$)} & // BKM-шаг к самомодели (учить = refresh) \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & \\
+\quad\texttt{assert exact\_laws($\Gam$)} & // $\Phi{=}7P{-}1$, $\Tr{=}1$, PSD; $s{=}0$ если здоров \\
+\quad\texttt{return ($\Gam$, $s$)} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+Возвращённый синдром $s$ --- вход DIAKRISIS на стороне \SYNARC{}; ненулевой $s$
+локализует деградировавший сектор (Приложение~\ref{app:fano}) без лишнего прохода.
+Величина обновления в \texttt{regen} зажата к $r_{\mathrm{stab}}=\sqrt{P-2/7}$;
+доля бюджета тика, потраченная в \texttt{regen}, удерживается $\ge\Rth=1/3$.

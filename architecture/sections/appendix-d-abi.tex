@@ -1,0 +1,43 @@
+\section{ABI details: layout and tick pseudocode}
+\label{app:abi}
+
+\paragraph{State layout.} A holon is a contiguous block; a subject is a
+four-holon tower (levels $0$--$3$, \S\ref{sec:composition}).
+\begin{center}\small
+\begin{tabular}{@{}rll@{}}
+\toprule
+offset & size & field \\
+\midrule
+$0$    & $784$ & \texttt{gamma} : \DM{} ($49$ complex \texttt{f64}, LE) --- level 0 \\
+$784$  & $784$ & level 1 \DM{} \\
+$1568$ & $784$ & level 2 \DM{} \\
+$2352$ & $784$ & level 3 \DM{} \\
+\midrule
+       & $3136$ & total subject state (fits in L1) \\
+\bottomrule
+\end{tabular}
+\end{center}
+This is byte-identical to the \SYNARC{} \texttt{gamma}/\texttt{rho\_ep} layout
+(v2.2 canon): a \SYNARC{} checkpoint is a \TALOS{} state image and vice
+versa, with no marshalling.
+
+\paragraph{Tick (per level).}
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+\multicolumn{2}{@{}l}{\texttt{tick($\Gam$, $\Delta\tau$):}} \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & // reversible, Landauer-free (T-262) \\
+\quad\texttt{$s \leftarrow$ syndrome($\Gam$)} & // free byproduct (line closure, Prin.~\ref{prin:selfdiag}) \\
+\quad\texttt{$\Gam \leftarrow$ dissip($\Gam$, $\Delta\tau$)} & // Fano-sparse; exports entropy (forget) \\
+\quad\texttt{$\Gam \leftarrow$ regen($\Gam$, $\rhostar$)} & // BKM step to self-model (learn = refresh) \\
+\quad\texttt{$\Gam \leftarrow$ U\_half($\Gam$, $\Delta\tau/2$)} & \\
+\quad\texttt{assert exact\_laws($\Gam$)} & // $\Phi{=}7P{-}1$, $\Tr{=}1$, PSD; $s{=}0$ if healthy \\
+\quad\texttt{return ($\Gam$, $s$)} & \\
+\bottomrule
+\end{tabular}
+\end{center}
+The returned syndrome $s$ is the DIAKRISIS input on the \SYNARC{} side; a
+non-zero $s$ localises a degraded sector (Appendix~\ref{app:fano}) with no
+extra pass. Update magnitude in \texttt{regen} is clamped to
+$r_{\mathrm{stab}}=\sqrt{P-2/7}$; the fraction of the tick budget spent in
+\texttt{regen} is held $\ge\Rth=1/3$.

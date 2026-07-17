@@ -1,0 +1,59 @@
+\section{The self-model is a hardware primitive}
+\label{sec:selfmodel}
+
+\subsection{Learning is the third term, not a second loop}
+
+A conventional learning system has two loops: a fast inference loop over a
+frozen network, and a slow training loop (back-propagation) that edits the
+network from outside. The two use different data paths, different memory, and
+often different hardware. \TALOS{} has one loop. The regeneration term
+$\Regen$ of the single instruction (Eq.~\ref{eq:lomega}) drives the state
+toward its own self-model $\rhostar=\vp(\Gam)$ --- a BKM-gradient descent of
+the relative entropy $D(\rhostar\Vert\Gam)$ --- so \emph{adaptation is a
+factor of the tick, not a procedure above it}. There is no separate optimiser
+to schedule, no gradient buffer to store, and no train/infer divide: the
+machine is always both inferring and adapting, because both are $\LindOmega$.
+
+The self-reference is not circular: the self-modelling operator $\vp$
+converges exponentially from any initial anchor (UHM T-191), so
+$\rhostar$ is well defined and reached, and the regeneration rate is the
+bootstrap constant $\kboot=1/7$.
+
+\subsection{A second new identity: refresh is learning}
+
+Dynamic memory must be refreshed --- leaked charge is periodically rewritten
+to its stored value, at a continuous energy cost that computes nothing. In
+\TALOS{} the analogue of refresh is the regeneration $\Regen$ holding $\Gam$
+near $\rhostar$ against the dissipator's leak. But $\rhostar$ is not a stored
+value: it is the state's \emph{self-model}. Hence:
+
+\begin{principle}[Refresh--learn identity]\label{prin:refresh}
+Retention and adaptation are the same operation. The process that keeps a
+holon's state alive (regeneration toward $\rhostar$) is the process that
+learns (moves toward the self-model). There is no cost that maintains without
+also improving, and no improvement that is not also maintenance. DRAM's
+refresh energy --- spent to compute nothing --- has no counterpart: every
+maintenance tick is a learning tick.
+\end{principle}
+
+\noindent Together with the compute--diagnose identity
+(Principle~\ref{prin:selfdiag}), this collapses a \emph{second} pair of
+traditionally-separate subsystems: memory refresh and model training, which
+in a layered machine are unrelated, are one term here.
+
+\subsection{The self-model budget is a hardware limit}
+
+Because learning is the $\Regen$ term, the reflection threshold $\Rth=1/3$ of
+UHM becomes a hard architectural constraint rather than a training
+hyper-parameter: at least one third of each tick's ``effort'' must run the
+self-model, or the reflection measure $R$ falls below the L2 gate and the
+holon ceases to be a viable self-modelling system (it degrades to a reactive
+one). \TALOS{} therefore budgets $\geq 1/3$ of its cycle to $\Regen$ by
+construction --- a floor the scheduler cannot undercut. Update strength per
+closed loop is likewise bounded by the stability radius
+$r_{\mathrm{stab}}=\sqrt{P-2/7}$ (a learning-rate ceiling, vanishing at the
+viability boundary), and the delayed generalisation transition known as
+\emph{grokking} is predicted to be the block-integration $\Phi$ crossing $1$
+(the L1$\to$L2 ignition) --- a measurable hardware event. These are the
+constitution-from-constants dials shared verbatim with \SYNARC{}
+(\S\ref{sec:abi}).

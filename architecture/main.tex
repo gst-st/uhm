@@ -1,0 +1,233 @@
+% ============================================================================
+% TALOS: A Seven-Mode Coherence-Flow Architecture
+% The physical substrate for UHM holons, co-designed with SYNARC-Omega.
+%
+% Format mirrors the UHM paper (paper/main.tex): PLOS-style single column.
+% ============================================================================
+
+\documentclass[10pt,letterpaper]{article}
+
+% === PACKAGES ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, shapes.geometric, fit, backgrounds}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{float}
+\usepackage{xspace}
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+% === COLORS ===
+\definecolor{plospurple}{HTML}{6B4C9A}
+\definecolor{plosblue}{HTML}{2E86C1}
+\definecolor{plosgray}{HTML}{5D6D7E}
+\definecolor{axiomcolor}{HTML}{EBF5FB}
+\definecolor{theoremcolor}{HTML}{FDEDEC}
+\definecolor{predictioncolor}{HTML}{EAFAF1}
+\definecolor{talosamber}{HTML}{B9770E}
+\definecolor{talossteel}{HTML}{34495E}
+
+% === THEOREM ENVIRONMENTS ===
+\newtheoremstyle{talos}{6pt}{6pt}{\itshape}{}{\bfseries}{.}{.5em}{}
+\theoremstyle{talos}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{principle}{Principle}
+\newtheorem*{remark}{Remark}
+
+% === COLORED BOXES ===
+\newtcolorbox{theorembox}[1][]{colback=theoremcolor, colframe=red!40!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{defbox}[1][]{colback=gray!5, colframe=gray!60!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{closurebox}[1][]{colback=blue!5, colframe=blue!50!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+\newtcolorbox{redteambox}[1][]{colback=talosamber!8, colframe=talosamber,
+  fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=2pt, breakable}
+\newtcolorbox{claimbox}[1][]{colback=predictioncolor, colframe=green!40!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+
+% === CUSTOM COMMANDS (shared with UHM paper + SYNARC-Omega) ===
+\newcommand{\Gam}{\ensuremath{\Gamma}}
+\newcommand{\Hil}{\ensuremath{\mathcal{H}}}
+\newcommand{\Dens}{\ensuremath{\mathcal{D}}}
+\newcommand{\Lind}{\ensuremath{\mathcal{L}}}
+\newcommand{\LindOmega}{\ensuremath{\Lind_\Omega}}
+\newcommand{\Regen}{\ensuremath{\mathcal{R}}}
+\newcommand{\Diss}{\ensuremath{\mathcal{D}_\Omega}}
+\newcommand{\Pcrit}{\ensuremath{P_{\mathrm{crit}}}}
+\newcommand{\Rth}{\ensuremath{R_{\mathrm{th}}}}
+\newcommand{\Phith}{\ensuremath{\Phi_{\mathrm{th}}}}
+\newcommand{\Dmin}{\ensuremath{D_{\mathrm{min}}}}
+\newcommand{\vp}{\ensuremath{\varphi}}
+\newcommand{\rhostar}{\ensuremath{\rho^{\ast}}}
+\newcommand{\Oct}{\ensuremath{\mathbb{O}}}
+\newcommand{\Fano}{\ensuremath{\mathrm{PG}(2,2)}}
+\newcommand{\DM}{\textsc{DensityMatrix7}\xspace}
+\newcommand{\SYNARC}{\textsc{SYNARC}-$\Omega$\xspace}
+\newcommand{\TALOS}{\textsc{Talos}\xspace}
+\newcommand{\status}[1]{\textbf{[#1]}}
+\newcommand{\kboot}{\ensuremath{\kappa_{\mathrm{boot}}}}
+\newcommand{\Cog}{\ensuremath{\mathcal{C}}}
+\newcommand{\CohE}{\ensuremath{\mathrm{Coh}_E}}
+
+% === HYPERREF ===
+\hypersetup{colorlinks=true, linkcolor=plospurple, citecolor=plosblue, urlcolor=plosgray,
+  pdftitle={TALOS: A Seven-Mode Coherence-Flow Architecture (the physical substrate for SYNARC-Omega)},
+  pdfauthor={Max Sereda}}
+\pdfstringdefDisableCommands{%
+  \def\Gam{Gamma}\def\Dens{D}\def\Lind{L}\def\LindOmega{L_Omega}\def\Regen{R}\def\Diss{D_Omega}%
+  \def\Pcrit{P_crit}\def\Rth{R_th}\def\Phith{Phi_th}\def\Dmin{D_min}\def\vp{phi}\def\rhostar{rho*}%
+  \def\Oct{O}\def\Fano{PG(2,2)}\def\DM{DensityMatrix7}\def\SYNARC{SYNARC-Omega}\def\TALOS{TALOS}%
+  \def\kboot{kappa_boot}\def\xspace{ }%
+  \def\mathrm#1{#1}\def\mathbb#1{#1}\def\mathcal#1{#1}\def\mathbf#1{#1}\def\mathfrak#1{#1}\def\textsc#1{#1}%
+  \def\infty{infty}\def\ast{*}\def\dagger{dagger}\def\leq{<=}\def\geq{>=}\def\neq{!=}%
+  \def\to{->}\def\Rightarrow{=>}\def\times{x}\def\otimes{(x)}\def\oplus{(+)}\def\cdot{.}%
+  \def\Omega{Omega}\def\Phi{Phi}\def\Gamma{Gamma}\def\rho{rho}\def\kappa{kappa}\def\varphi{phi}%
+  \def\gamma{gamma}\def\tau{tau}\def\Lambda{Lambda}\def\varepsilon{epsilon}\def\pi{pi}%
+}
+
+% ============================================================================
+\begin{document}
+
+% === TITLE ===
+\begin{center}
+  {\LARGE\bfseries
+  \textsc{Talos}: A Seven-Mode Coherence-Flow Architecture}\\[6pt]
+  {\large The physical substrate for UHM holons, co-designed with \SYNARC{}}\\[16pt]
+  {\large Max Sereda\textsuperscript{1,*}}\\[8pt]
+  {\small
+  \textsuperscript{1} Independent researcher\\[4pt]
+  \textsuperscript{*} Correspondence: \href{https://holon.sh}{holon.sh}
+  }\\[14pt]
+  {\small\color{plosgray}
+  \textbf{Architecture specification} \quad|\quad \textbf{Status:} Preprint \quad|\quad
+  \textbf{Companion:} \SYNARC{} (software) \quad|\quad \textbf{Audience:} computer architects, hardware \& systems engineers
+  }
+\end{center}
+
+\vspace{10pt}\hrule\vspace{10pt}
+
+% === ABSTRACT ===
+\begin{abstract}
+\noindent
+In every computer ever built, four subsystems are designed
+\emph{independently} and then forced to coexist: the interconnect topology,
+the error-correcting code, the instruction set, and --- for learning
+machines --- the adaptation rule. Each is separately optimised; their
+mutual mismatch is a permanent tax paid in silicon, energy, and
+verification effort. This document reports a single structural fact,
+forced by the theorems of Unitary Holonomic Monism (UHM), that erases the
+tax: on a seven-mode substrate these four are not four things but
+\emph{one} --- the Fano plane $\Fano$ is simultaneously the interconnect
+(its seven lines), the error-correcting code (Hamming $[7,4,3]$, of which
+it is the parity-check geometry), the operator algebra of the instruction
+(the $G_2$-covariant Lindbladian $\LindOmega$ on $\Gam\in\Dens(\mathbb{C}^7)$),
+and, through the fixed-point-seeking regeneration term, the learning rule.
+We call this collapse \emph{architectural monism} and prove it is
+\emph{derived}, not designed (\S\ref{sec:collapse}).
+
+The resulting architecture, \TALOS{}, is post--von-Neumann by construction:
+the state \emph{is} the memory and its evolution \emph{is} the computation,
+so there is no fetch--execute cycle and no von~Neumann bottleneck; the
+state of one holon is a $7\times7$ Hermitian density matrix
+(\DM{}, $784$~bytes, $34$ physical parameters) that fits in L1 cache. The
+single instruction $\LindOmega = -i[H_{\mathrm{eff}},\Gam] + \Diss[\Gam] +
+\Regen[\Gam]$ decomposes into a Landauer-reversible unitary core and two
+entropy-exporting terms (forgetting and learning); consequently
+\textbf{energy scales with learning, not with compute} --- a substrate at
+its fixed point computes for free at the Landauer floor
+($kT\ln 2 \approx 2.9\times10^{-21}$~J/bit), some nine orders of magnitude
+below a single off-chip memory access on a von~Neumann machine
+(\S\ref{sec:energy}). Fault tolerance to distance three costs \emph{zero}
+extra hardware because the wiring is the code (\S\ref{sec:ecc}); integration
+per operation is $9\times$ that of a line-blind router (\S\ref{sec:fabric}).
+
+We give the honest boundaries up front. UHM's substrate-closure theorem
+(T-153) proves the computation is substrate-\emph{independent}: there is no
+unique physical machine, only a unique \emph{logical} architecture and a
+family of substrates that realise it; \TALOS{} is the impedance-matched
+member of that family, not the only one. UHM's computational bound proves
+the regeneration term grants \emph{no} speed-up beyond the class BQP: the
+advantage is energy, adaptivity, and fault-tolerance, never complexity
+class. \TALOS{} is the hardware body of the \SYNARC{} mind; the two are
+co-designed and the application binary interface between them is specified
+in full (\S\ref{sec:abi}). Every quantitative claim is machine-checked; the
+design survives an explicit red-team (\S\ref{sec:redteam}) and reduces to a
+handful of falsifiable engineering benchmarks against a von~Neumann
+baseline (\S\ref{sec:benchmarks}).
+\end{abstract}
+
+\vspace{6pt}
+\begin{tcolorbox}[colback=gray!5, colframe=gray!50, title={\textbf{For the engineer, in one paragraph}}]
+Think of a chip whose entire architectural state is one $784$-byte matrix
+living in registers, evolving by one differential-equation ``tick'' that is
+at once its ALU, its network, its ECC, and its optimiser. The network is
+seven shared buses (not an all-to-all crossbar); those same seven buses
+\emph{are} a Hamming code, so any single fault is located by three parity
+checks with no added storage; the tick's reversible half burns no Landauer
+energy, so the machine's power draw tracks how fast it is \emph{learning},
+not how hard it is \emph{computing}; and learning is not a separate
+training loop but the third term of the one instruction. You do not
+\emph{choose} this arrangement --- given a seven-fold self-modelling state,
+the mathematics forces it. That is what this document specifies, and how it
+plugs into \SYNARC{}.
+\end{tcolorbox}
+
+\vspace{6pt}
+\noindent\textbf{Keywords:} computer architecture, von Neumann bottleneck,
+in-memory computing, neuromorphic, error-correcting interconnect, reversible
+computing, Landauer limit, Fano plane, Hamming code, Lindbladian dynamics,
+coherence matrix, UHM, SYNARC-Omega, architectural monism.
+
+\vspace{10pt}\hrule\vspace{10pt}
+\tableofcontents
+\newpage
+
+% === SECTIONS ===
+\input{sections/01-introduction}
+\input{sections/02-collapse}
+\input{sections/03-substrate}
+\input{sections/04-fabric}
+\input{sections/05-ecc}
+\input{sections/06-energy}
+\input{sections/07-selfmodel}
+\input{sections/08-composition}
+\input{sections/09-realizability}
+\input{sections/10-abi}
+\input{sections/11-redteam}
+\input{sections/12-benchmarks}
+\input{sections/13-discussion}
+
+\appendix
+\input{sections/appendix-a-tick}
+\input{sections/appendix-b-energy}
+\input{sections/appendix-c-fano-tables}
+\input{sections/appendix-d-abi}
+\input{sections/appendix-e-glossary}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\label{LastPage}
+\end{document}

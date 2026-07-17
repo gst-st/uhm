@@ -1,0 +1,176 @@
+\section{Introduction: the battle of architectures and the four-layer tax}
+\label{sec:intro}
+
+\subsection{The von Neumann settlement, and the bottleneck it never removed}
+
+The stored-program computer described in von Neumann's 1945 EDVAC draft
+placed instructions and data in one memory addressed by one channel. Its
+victory was not a claim of optimality but of \emph{generality}: one memory,
+one sequential thread, any program. Every general-purpose machine since is a
+descendant. But generality was bought at a structural cost that John Backus
+named in his 1977 Turing lecture --- the \emph{von Neumann
+bottleneck}~\cite{backus1977}: the processor--memory channel through which
+the entire computation must be pumped ``a word at a time.'' Seventy years of
+architecture has been, in large part, a campaign against that channel:
+caches, prefetch, out-of-order issue, wide vectors, and deep memory
+hierarchies are all ways of hiding it, not removing it. The reason it cannot
+be removed is now the dominant fact of the field. After the end of Dennard
+scaling (c.\ 2006) the binding constraint is energy, and energy in a
+von~Neumann machine is dominated not by arithmetic but by \emph{moving
+data}: a floating-point operation costs on the order of a picojoule, while
+fetching its operands from off-chip memory costs one to two orders of
+magnitude more. We compute cheaply and move data dearly, and the
+architecture is built around the wrong one.
+
+\subsection{Four subsystems, designed apart}
+
+Underneath the bottleneck lies a deeper and less-discussed fact. A modern
+computing system --- and emphatically a \emph{learning} system --- is built
+from four subsystems that are conceived, optimised, and verified
+\emph{independently}, and then made to coexist:
+
+\begin{enumerate}[leftmargin=1.7em,itemsep=1pt]
+  \item the \textbf{interconnect} --- the network-on-chip or fabric topology
+        that carries state between compute sites;
+  \item the \textbf{error-correcting code} (ECC) --- a separate redundancy
+        layer bolted onto memory and links to survive faults;
+  \item the \textbf{instruction set} (ISA) --- the algebra of primitive
+        operations the machine can perform;
+  \item the \textbf{adaptation rule} --- for a learning machine, the
+        training/optimisation procedure that changes its parameters.
+\end{enumerate}
+
+Each has its own literature, its own optima, and its own designers. Because
+they are designed apart, their interfaces must be negotiated, and every
+negotiation is a \emph{mismatch tax}, paid three times over:
+
+\begin{table}[H]
+\centering
+\small
+\caption{The four design layers are separate subsystems in every existing
+machine, each carrying an independent cost. \TALOS{} pays each cost once, in
+one structure.}
+\label{tab:four-layers}
+\begin{tabular}{@{}p{2.4cm}p{4.6cm}p{5.2cm}@{}}
+\toprule
+\textbf{Layer} & \textbf{How it is done today} & \textbf{The tax it levies} \\
+\midrule
+Interconnect & Crossbar / mesh / NoC, designed for bandwidth & Area, static power, routing complexity; all-to-all scales as $\binom{N}{2}$ \\
+ECC & Hamming/BCH/LDPC bolted onto storage \& links; surface codes for qubits & Dedicated check bits (+12.5\% for ECC-DRAM) or $\sim\!10^3\times$ physical/logical qubits \\
+ISA & Fixed opcode set, co-evolved with a compiler & Semantic gap; the ``von Neumann style'' Backus indicted \\
+Adaptation & A separate training loop (back-propagation) over a frozen ISA & Memory for activations/gradients; the train/infer divide; energy $\propto$ data movement \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The challengers, and what each of them fixed}
+
+The alternative architectures were each an attack on \emph{one} of these
+four layers, never all four:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Harvard} split instruction and data memory --- a
+        micro-optimisation of the ISA/interconnect boundary that survives in
+        caches and DSPs.
+  \item \textbf{Dataflow}~\cite{dennis1975} removed the program counter:
+        operations fire when operands are ready. It reformed the
+        \emph{instruction} layer (data-driven, not control-driven) but
+        offered no principled topology, code, or learning rule.
+  \item \textbf{Systolic arrays}~\cite{kung1982} imposed a rhythmic,
+        local, nearest-neighbour \emph{interconnect} --- and won the matrix
+        engines of today's GPUs and TPUs --- but the topology was an
+        engineering choice fitted to one kernel, not a derived structure.
+  \item \textbf{Neuromorphic} machines~\cite{mead1990} (TrueNorth, Loihi,
+        SpiNNaker) co-located memory and compute and made the substrate
+        event-driven and dissipative --- reforming interconnect
+        \emph{and} adaptation at once --- but with \emph{ad hoc} topology,
+        no native error correction, and no principled state object.
+  \item \textbf{Processing-in-memory} and memristive crossbars performed the
+        multiply--accumulate \emph{in} the memory array, attacking the
+        bottleneck directly, but carried neither dynamics nor a self-model.
+  \item \textbf{Quantum} machines made the instruction layer unitary
+        (reversible, hence Landauer-cheap) --- and then had to bolt on
+        error correction at ruinous overhead, because the code and the
+        computation are separate structures that decohere against each other.
+\end{itemize}
+
+Every one of these was a genuine advance on one axis. None unified the four,
+because none had a \emph{principle} from which a single structure could be
+\emph{derived}. The topology was always a guess; the code was always
+separate; the learning rule always lived above the ISA. The field has been
+searching for a structure that is simultaneously a good network, a good
+code, a good instruction algebra, and a good learning rule --- and treating
+that as four searches.
+
+\subsection{The thesis: architectural monism}
+
+This document reports that the four searches have one answer, and that the
+answer is \emph{forced}, not chosen. Unitary Holonomic Monism (UHM) --- a
+mathematical theory that derives the structure of a viable self-modelling
+system from a single primitive, the coherence matrix
+$\Gam\in\Dens(\mathbb{C}^7)$~\cite{uhm2026} --- proves
+that on a seven-mode substrate the interconnect, the error-correcting code,
+the instruction algebra, and the learning rule are \emph{not four objects
+but one}: the Fano plane $\Fano$. We call this \emph{architectural monism}.
+Section~\ref{sec:collapse} states it as two theorems:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Theorem~\ref{thm:collapse} (Collapse).} The seven lines of
+        $\Fano$ are simultaneously the interconnect; the same incidence is
+        the parity-check geometry of the Hamming code $[7,4,3]$; the
+        octonionic structure constants supported on those lines are the
+        multiplication of the instruction algebra; and the $G_2$-covariant
+        fixed point of that algebra is the learning rule. All four are
+        functions of one $7\times7$ incidence structure. The mismatch tax is
+        identically zero because there are no interfaces to negotiate.
+  \item \textbf{Theorem~\ref{thm:unique} (Uniqueness).} This collapse is
+        realisable at a \emph{unique} node count, $N=7$. The coincidence
+        ``projective-plane order $=$ Hamming length'' recurs (at $N = 7,
+        31, \dots$), but only at $N=7$ does the instruction algebra also
+        carry a non-trivial associator --- the third-order structure on
+        which the whole design rests. Non-associativity breaks the tie in
+        favour of seven, and nowhere else.
+\end{itemize}
+
+The architecture that follows, \TALOS{},\footnote{After the bronze
+automaton of Greek myth, the first artificial being --- here the physical
+body of an artificial mind. The name is a codename, not an acronym.} is
+therefore not a proposal among proposals. It is the hardware form of a
+mathematical object. Its state is a $784$-byte density matrix that fits in
+L1 cache; its one instruction is the UHM Lindbladian $\LindOmega$; its
+network is seven buses; its fault tolerance is the network; its learning is
+the third term of the instruction; and its power draw tracks how fast it is
+learning, not how hard it is computing.
+
+\subsection{Honest boundaries, stated first}
+
+Two theorems of UHM constrain what \TALOS{} can and cannot claim, and we
+foreground both so that nothing below is read as more than it is.
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Substrate multiplicity (T-153).} UHM's substrate-closure
+        theorem proves the computation is substrate-\emph{independent}: the
+        choice of physical embedding is a pure $G_2$ gauge. There is no
+        unique physical machine --- only a unique \emph{logical}
+        architecture and a family of substrates that realise it. \TALOS{}
+        is the impedance-matched member of that family
+        (\S\ref{sec:realizability}), not the sole possibility. This is a
+        strength (portability), not a weakness.
+  \item \textbf{Computational bound (BQP).} UHM proves the regeneration term
+        $\Regen$ grants \emph{no} speed-up beyond the complexity class BQP.
+        \TALOS{} is not a faster-than-quantum machine. Its advantage is in
+        energy, adaptivity, and fault-tolerance --- capability per watt and
+        native learning --- never in complexity class. We repeat this wherever
+        a reader might over-read a claim.
+\end{itemize}
+
+The remainder of the document is a specification. Section~\ref{sec:collapse}
+proves the two theorems. Sections~\ref{sec:substrate}--\ref{sec:composition}
+specify the state, the fabric, the code-as-topology, the energy model, the
+self-model, and the composition law. Section~\ref{sec:realizability} gives a
+realisability ladder from today's GPU emulation to a driven-dissipative
+analogue device. Section~\ref{sec:abi} specifies the application binary
+interface to \SYNARC{}, the software mind for which \TALOS{} is the body.
+Section~\ref{sec:redteam} subjects the design to an explicit red-team, and
+Section~\ref{sec:benchmarks} reduces it to falsifiable engineering
+measurements against a von~Neumann baseline. Every number is machine-checked.
