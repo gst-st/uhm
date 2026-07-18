@@ -651,6 +651,7 @@ Is the $G_2$ structure related to M-theory compactifications on $G_2$-manifolds 
 ---
 
 **Related documents:**
+- [Hypermathematics: the genesis of the seven](/docs/core/foundations/hypermathematics) — the pre-numeric genesis: $7 = 2^3-1$ as the distinction-spectrum of the terminal viable self-mirror (T-277), the volume law behind the octonion associator (T-278)
 - [Theorem on 7D Minimality](./theorem-minimality-7) — Track A: (AP)+(PH)+(QG) → N ≥ 7
 - [Axiom Ω⁷](../../core/foundations/axiom-omega) — Axiom 3 (N = 7)
 - [Axiom of Septicity](../../core/foundations/axiom-septicity) — conditions (AP)+(PH)+(QG)+(V)

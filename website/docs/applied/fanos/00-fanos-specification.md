@@ -238,6 +238,8 @@ The structure first appears at **third order** (orbit of pairs is single; two or
 - **Localization** rides the Σ-compression pyramid `21 → 7 → 3 → 1` of [T-225](/docs/applied/research/syndrome-calculus#t-225): 21 pairwise readings collapse to 7 line-themes, to a 3-bit syndrome, to a 1-bit verdict.
 - **Intervention** (repair, reroute) works through the **mediator** `k*(i,j)` — the corpus **polar point** `π(i,j)`, the third point of the pair's line, with the octonionic sign `e_i·e_j = ±e_{π(i,j)}` ([T-226 §2](/docs/applied/research/fano-fingerprint#полярное-разбиение)).
 
+**Algebraic ancestor of the principle (T-278/T-279).** Third-orderness is not a design taste of FANOS — it is inherited from the genesis layer: the associator of the underlying octonion algebra is exactly the $\mathbb{F}_2$ **volume form**, $\Phi(a,b,c) = (-1)^{\det}$, so the first structure invisible to pairs and visible to triples is the *3-volume of the distinction cube itself*; and the symmetry machinery of any pair provably **pivots on its mediator** (the mediator lemma: the stabilizer of a coherence-pair in $G_2$ fixes the third point — [Hypermathematics §6](/docs/core/foundations/hypermathematics#машинерия-измерений)). FANOS's mediator-based intervention is that fixed-point theorem, used as engineering.
+
 ---
 
 # Part III. System model and threat model

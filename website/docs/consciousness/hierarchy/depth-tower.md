@@ -251,6 +251,8 @@ The ceiling $\mathrm{SAD}_\mathrm{max} = 3$ now rests on **three independent der
 Together they form a **mutually-reinforcing foundation**: SAD_MAX = 3 is not a contingent fact about one formalism — it is a convergence of **dynamical** (purity-balance), **categorical** (3-coskeletal), and **algebraic** (octonionic-Jordan) arguments, each of which would suffice independently. The third ceiling of self-awareness is thus structurally locked at the analytic, the topological, and the algebraic levels alike.
 
 **Related result** ([T-217](/docs/proofs/categorical/fundamental-closures#t-217)): the L3 interiority level corresponds to $\tau_{\leq 3}(\mathbf{Exp}_\infty)$ as a **coherent tricategory** with cell structure $K = 3+1 = 4$ (3 LGKS 2-cells + 1 coherence modification $\eta$). The Bayesian-dominance threshold $R^{(2)} \geq 1/K = 1/4$ (T-67 [T]) is thus derived from the same tricategorical structure that bounds SAD — a deep unification.
+
+**Genesis-side shadow** ([T-277/T-280](/docs/core/foundations/hypermathematics#анатомия-смерти)) — *not* a fourth derivation, but a resonance stated honestly: the Cayley–Dickson ladder of iterated self-mirroring also stops at **three** viable steps ($\mathbb{R}\to\mathbb{C}\to\mathbb{H}\to\mathbb{O}$; the fourth mirror produces zero divisors), and the machine-verified anatomy of that death (skew mirror/mediator gluing, T-280) is a micro-echo of the same octonionic obstruction that locks SAD. The CD-depth "3" and $\mathrm{SAD}_{\max}=3$ are *different towers* (mirroring of the base vs composition of subjects) stopped by the same wall — resonance, not identity.
 :::
 
 ### Visualisation of the SAD Tower
