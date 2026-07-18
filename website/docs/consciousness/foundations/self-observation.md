@@ -57,6 +57,8 @@ Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subje
 
 ## Self-Modelling Operator φ {#оператор-самомоделирования-φ}
 
+> **The algebraic genesis of self-observation (T-277).** The operator φ has an ancestor at the deepest layer of the theory: *algebraic self-mirroring* — the Cayley–Dickson step $A \mapsto A \oplus A$, "the system and its mirrored copy, interacting through the conjugation". Iterating that act from the bare distinction generates the entire seven-dimensional arena in which φ then lives (three viable mirrors ⟹ $\Omega^3$, $7 = 2^3 - 1$), and its guaranteed fixed point — the ouroboros $\rho^* = \varphi(\Gamma)$ — is what forces the scalars to be the continuum ([T-286](/docs/core/foundations/hypermathematics#уровень-поля)). Self-observation is not a feature added to the structure; it is the operation the structure is *made of*: see [Hypermathematics §2](/docs/core/foundations/hypermathematics#зеркальный-функтор) [Т on the algebra; И on the reading].
+
 ### What Is a CPTP Channel (in Plain Language)
 
 Before defining $\varphi$, let us explain what a **CPTP channel** (Completely Positive Trace-Preserving) is. This is a central concept in quantum information theory, but its meaning is simple:

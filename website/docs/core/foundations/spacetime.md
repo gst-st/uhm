@@ -222,6 +222,10 @@ where:
 - $|\tau\rangle_O$ — basis of eigenstates of the internal clock O
 - p(τ) — normalization
 
+:::info The continuity of τ is an output, not an assumption (T-286)
+The Page–Wootters parameter ranges over a *continuum* — and that used to be a silent premise. The genesis layer discharges it: the guaranteed closure of the self-model (the ouroboros $\rho^* = \varphi(\Gamma)$, T-222) forces the intermediate-value property, hence Dedekind completeness of the scalars, hence $\mathbb{R}$ — with an explicit witness that over an incomplete field the self-model can miss its fixed point through a "hole in the line". Relational time inherits its continuity from the continuity the ouroboros demands: see [T-286](/docs/core/foundations/hypermathematics#уровень-поля) [Т].
+:::
+
 ### Information-geometric time
 
 Distance between configurations in the Bures metric:

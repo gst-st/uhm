@@ -593,6 +593,8 @@ Tegmark's decoherence argument bounds the lifetime of a **microscopic spatial su
 
 The probability of overcoming all three simultaneously is the product of three small numbers.
 
+**Genesis-layer reinforcement (2026-07-18).** Tegmark's broader "mathematical universe" background — a democracy of all structures, among which ours would need anthropic selection — is now countered by a theorem rather than a preference: on the terminal cube, among **all** sign-structures carried by a register of distinctions, viability admits exactly **one** cohomological class ([T-281/T-282](/docs/core/foundations/hypermathematics#единственность-калибровки) — the rectangle system is feasible only for the octonionic gauge, and death is the inconsistency of a finite linear system). There is no democracy to select from: *of the mathematically possible law-configurations, exactly one is alive.* This does not re-litigate T-267 (which closed the decoherence objection); it removes the ambient premise the objection lived in [Т].
+
 **What T-267 closes, and what it does not.**
 
 - **Closed [Т]:** the Tegmark decoherence objection. $\Gamma$ is not the fragile microscopic biological superposition Tegmark refutes; its complexity is algebraic (T-132), collective and coarse-grained (T-153a), decoherence-protected (topological protection), and dynamically regenerated ($\mathcal R$).
