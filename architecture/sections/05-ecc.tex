@@ -28,7 +28,22 @@ returns the fault position (Appendix~\ref{app:fano}). Because the code is the
 Hamming code, its guarantees are the textbook ones ($d=3$: correct 1, detect
 2), inherited at zero marginal cost.
 
-\subsection{A new primitive: computation is self-diagnosis}
+\paragraph{The rectangle invariant: a second, deeper parity layer (T-281/T-282).}
+The Hamming layer above guards the \emph{axes} (which sector is faulty). The
+corpus's genesis results add a guard one level down: the \emph{sign firmware}
+of the fabric itself. Viability of the Fano sign table --- ``no two states can
+annihilate'' --- is provably a \emph{linear} condition: the 84 rectangle rules
+$F(p,r)F(q,s)F(p,s)F(q,r) = -1$ over the XOR-classes, whose exhaustive solution
+set is exactly one gauge orbit of the octonions (corpus T-281). A bit-flip in
+the stored sign table therefore either lands inside the 16-element gauge orbit
+(harmless relabeling) or violates at least one rectangle --- an \emph{84-bit
+XOR self-test of the firmware}, as cheap as a parity sweep, that certifies the
+machine's multiplication law is still the viable one. And the same algebra
+explains why no firmware patch can ever ``extend'' the fabric: on
+$\Omega^4$ the corresponding system is \emph{infeasible} (960 constraints,
+rank 214 --- corpus T-282), so a fourth mirror is not an engineering
+challenge but a contradiction. Hamming checks the state; the rectangle layer
+checks the \emph{law}.
 
 There is a consequence that has no analogue in a layered machine, and it is
 one of the genuinely new architectural facts \TALOS{} exposes.
