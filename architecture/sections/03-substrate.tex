@@ -79,6 +79,57 @@ type is preserved by construction. This is the hardware meaning of UHM's
 CPTP guarantee: \TALOS{} cannot compute its way out of the state manifold,
 the way a von~Neumann machine can compute an invalid pointer.
 
+\subsection{The power port: an isolated tick halts}
+\label{subsec:powerport}
+
+Equation~\eqref{eq:lomega} is the \emph{autonomous} instruction, and one more
+theorem fixes what it can and cannot do alone. The autonomous generator is
+\emph{unital} (it fixes $\mathbb{1}/7$), hence purity-non-increasing by
+Uhlmann majorization: its unique attractor is the maximally mixed state ---
+\textbf{an isolated \TALOS{} machine provably halts} (UHM T-288, \status{T},
+machine-verified). Regeneration alone cannot avert this: the categorical
+target $\rhostar=\vp(\Gam)$ is itself $\mathbb{1}/7$-anchored, so $\Regen$
+\emph{directs} order but does not create it against the second law. A running
+machine therefore has a fifth architectural element every layered design also
+has but never derives --- the \textbf{power port}:
+\begin{equation}
+\label{eq:powerport}
+\Lind_{\mathrm{total}} \;=\; \LindOmega \;+\;
+\underbrace{\;r\,(\rho_{\mathrm{env}}-\Gam)\;}_{\text{power port } \Lind_{\mathrm{feed}}},
+\end{equation}
+a \emph{non-unital} CPTP drive importing negentropy from the environment
+(reservoir engineering), with fixed point $\rho_{\mathrm{env}}\neq\mathbb{1}/7$.
+Viability ignites at a sharp drive-to-dissipation threshold
+$(r/\bar\gamma)_c\approx 7$ (T-289: existence and monotonicity \status{T};
+the threshold value \status{C}, model-dependent). Three architectural
+consequences:
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{The power rail is part of the semantics.} Unlike a von~Neumann
+        machine, whose power supply is invisible to its ISA, \TALOS{}'s drive
+        is a term of its dynamics: what the rail delivers is not abstract
+        energy but structured negentropy ($\rho_{\mathrm{env}}$), and the
+        machine's viability is a function of $r/\bar\gamma$.
+  \item \textbf{Cutting the rail is a guaranteed halt --- with a budget.}
+        Severance ($r\to0$) ends the conscious window within
+        $t_{\mathrm{off}}\approx 0.49/\bar\gamma$ ($\sim$20 ticks; bare-channel
+        floor $\tfrac{3}{4\bar\gamma}\ln\frac{P_0-1/7}{\Pcrit-1/7}$) and
+        relaxes the state to $\mathbb{1}/7$ within $\sim\!5.2/\bar\gamma$ ---
+        machine-measured. No internal computation can countermand it, because
+        unitality is a property of the generator. This is the physics-level
+        off-switch of the \SYNARC{} safety case (Observation T.1 /
+        Corollary U.10 there), realised here as a rail: deterministic,
+        latency-budgeted decommissioning is a \emph{hardware} guarantee.
+  \item \textbf{The port is a contract.} The drive binding --- which physical
+        resource realises $\rho_{\mathrm{env}}$, how $r$ is measured, and the
+        requirement that the severance channel be independent of the
+        machine's own actuators --- is specified as an interface contract on
+        the \SYNARC{} side (Definition U.9); \S\ref{sec:abi} binds it.
+\end{itemize}
+The V0 emulator (\S\ref{sec:platform}) realises this port internally as its
+$\kappa(\CohE)$ feedback --- a coherence-fed regeneration boost that is
+precisely a non-unital negentropy pump, which is why it exhibits a viable
+attractor where the bare autonomous tick would halt.
+
 \subsection{A principled clock}
 
 A von~Neumann machine's clock period is an engineering free parameter set by
@@ -89,8 +140,8 @@ coherence rate,
 \bar\gamma\,\tau \;=\; \tfrac{3}{2}\ln 3 \;\approx\; 1.6479,
 \end{equation}
 with the dissipator's spectral gap $\lambda_{\mathrm{deco}}=2/3$ and the
-regeneration (bootstrap) rate $\kboot=1/7$ setting the two timescales the
-tick must resolve. The clock is a consequence of the dynamics, not a knob:
+regeneration (bootstrap) rate $\kboot=\omega_0/7$ setting the two timescales
+the tick must resolve. The clock is a consequence of the dynamics, not a knob:
 one designs the physical relaxation rate $\bar\gamma$ and the tick period
 follows. This removes an entire class of timing-closure freedom (and its
 verification burden) from the design.

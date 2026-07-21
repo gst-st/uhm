@@ -99,8 +99,11 @@ and the reversible core is free.
 \caption{Energy accounting (log scale, schematic with machine-checked
 anchors). The von~Neumann floor rises with the amount of computation because
 each operation moves data (blue). The \TALOS{} floor is set by the rate of
-\emph{learning}: high during convergence, decaying toward the Landauer floor
-(grey dashed) as the holon reaches $\rhostar$ and stops learning (amber).
+\emph{learning}: high during convergence, decaying --- as the holon converges
+and stops learning (amber) --- toward the \emph{metabolic} floor of
+\S\ref{subsec:metabolic}, which sits just above the Landauer line
+(grey dashed) because a viable state must still be held against the
+dissipator's leak.
 Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
 \label{fig:energy}
 \end{figure}
@@ -129,6 +132,15 @@ $\dot S_{\Diss}$ is the \emph{physical} entropy-production rate, so the floor is
 real-time factor, not the fundamental cost. It is measurable, because
 $\dot S_{\Diss}$ is a live telemetry observable (\S\ref{sec:platform}).
 \end{claimbox}
+
+The free energy that pays this floor has exactly one entry point: the
+\textbf{power port} of \S\ref{subsec:powerport}. The drive
+$\Lind_{\mathrm{feed}}$ imports structured negentropy from the environment;
+regeneration \emph{directs} it into maintained coherence but cannot create it
+(T-288) --- so an unplugged machine cannot pay $P_{\mathrm{meta}}$ and halts,
+and a plugged one pays it out of the negentropy flux $r$ delivers. Maintenance
+power, the ignition threshold $(r/\bar\gamma)_c$, and the halt latency after
+severance are three faces of one budget line.
 
 The floor scales with the \textbf{order maintained} (the distance $\ln 7 - S$
 from $I/7$): a more coherent, more complex state is pushed harder by the

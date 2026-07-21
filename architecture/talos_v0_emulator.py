@@ -10,6 +10,10 @@ and reproduces the theorems of the corpus:
 
     T-124  the viable attractor P -> 3/7
     T-271  the entropy law (unitary dS=0, dissipator source, regeneration sink)
+    NOTE (T-288/T-289 coherence): the autonomous, unital tick provably halts
+    (unique attractor I/7). This emulator exhibits a viable attractor because
+    its kappa(Coh_E) feedback is a NON-UNITAL negentropy pump -- the internal
+    realisation of the power port L_feed (paper SS3, "The power port").
     T-272  the Source Gamma_odot is a unique max-coherence pure state
     T-273  the metabolic floor P_meta >= kT ln2 * Sdot_D > 0
     T-276  its frequency-independence (Sdot_D is a physical rate, not per-tick)

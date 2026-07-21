@@ -30,15 +30,20 @@ unchanged as one climbs the ladder.
 
 \subsection{Roadmap}
 
+The substrate roadmap is the realisability ladder of \S\ref{sec:realizability},
+climbed rung by rung (the \emph{platform} milestones V0--V2$+$ of
+\S\ref{subsec:roadmap} are orthogonal: they mature the software stack at a
+fixed rung).
+
 \begin{itemize}[leftmargin=1.5em,itemsep=1pt]
-  \item \textbf{V0 --- emulation (exists).} \SYNARC{} on CPU/GPU: \DM{} in
+  \item \textbf{Rung 0 --- emulation (exists).} \SYNARC{} on CPU/GPU: \DM{} in
         L1, Fano-sparse Strang kernel, all invariants verified. Discharges
         B2, B3, B4; demonstrates the logical architecture.
-  \item \textbf{V1 --- in-memory (near-term).} A memristive Fano crossbar
+  \item \textbf{Rung 1 --- in-memory (near-term).} A memristive Fano crossbar
         performing the coherence update in the array (M1, M2 native). First
         substrate that can test B1 (energy tracks learning) by removing the
         data-movement term.
-  \item \textbf{V2 --- driven-dissipative (research).} An analogue, photonic,
+  \item \textbf{Rung 2 --- driven-dissipative (research).} An analogue, photonic,
         or open-quantum seven-mode device whose native physics is
         Lindblad$+$homeostasis (M3 native), approaching the Landauer floor
         because its reversible core is physically reversible.
