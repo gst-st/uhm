@@ -8,7 +8,7 @@ computes the full Coherence-Cybernetics observable suite as telemetry, verifies 
 runtime invariants each tick, batches an ecology of holons (the SIMT axis of sec. 9/14),
 and reproduces the theorems of the corpus:
 
-    T-124  the viable attractor P -> 3/7
+    T-124  a viable attractor inside the conscious window (2/7, 3/7]
     T-271  the entropy law (unitary dS=0, dissipator source, regeneration sink)
     NOTE (T-288/T-289 coherence): the autonomous, unital tick provably halts
     (unique attractor I/7). This emulator exhibits a viable attractor because
