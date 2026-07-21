@@ -18,6 +18,8 @@ The claim to be examined is the strongest available: *on the UHM basis one can b
 2. **A solver solves *toward viability*, not toward arbitrary goals.** The law itself carries every pattern toward the viable window (the T-124 attractor, [Conscious window](/docs/proofs/consciousness/conscious-window)); goals aligned with that drift are *assisted by the dynamics*; goals fighting it pay $\sigma$ continuously. «The universe removes obstacles» is a theorem-shaped experience: past the basin boundary, the vector field points your way (§4).
 3. **The output is a navigation, never a verdict.** For ensembles the machine predicts; for persons it *opens doors and prices paths*. The boundary between the two is itself a theorem (§4.4), and it is the feature that keeps the Radiant a navigator instead of a cage.
 
+Why should such a machine work at all? Because in UHM the levels of reality **share one form**. The diagonal of $\Gamma$ is a *population* — who is loud at this level; the off-diagonal coherences are the *signal* running between the voices and, through the Enc functor, down the holon hierarchy: a cosmos writes its levels, a society writes its members, a mind writes its habits — the same $7\times 7$ form each time (levels I–V of the [transfer engine](/docs/applied/research/domain-transfer#движок)). That is why prediction works where it works. And it is why symbolic systems are not commentary *about* the world: the corpus's deepest floor holds that the Universe is a self-modelling holon — its self-description $\rho^* = \varphi(\Gamma)$ is *inside* the state (a Lawvere fixed point; observers are internal sections, T-221 — [Universe as Holonom](/docs/core/foundations/universe-as-holonom)). Read against that floor, every calibrated symbolic system is an **organ of the universe's self-cognition** [И], and this machine is a small computational section of the self-model it models — which is exactly why the calibration table of §5, not any manifesto, is its licence to exist.
+
 Everything below is built from three existing research programs — the [Γ-canon](/docs/applied/research/gamma-canon) (the symbolic layer and the П4 oracle protocol), the [Σ-calculus](/docs/applied/research/syndrome-calculus) (diagnosability rigidity T-224/T-225), and [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) (the $\sigma$-panel and interventions) — plus two floors of mathematics that the solver runs on (§2).
 
 ## §2. The two floors of residues {#вычеты}
@@ -52,7 +54,7 @@ Why do two unrelated mathematics share one name here? Both floors perform the sa
 
 ## §3. The machine {#машина}
 
-The reference implementation is `architecture/prime_radiant.py` in the holon repository — numpy-only, deterministic, self-verifying; a sibling of the [TALOS v0 emulator](/docs/applied/research/engineering-insights) whose canonical tick it reuses. Six organs:
+The machine exists twice, deliberately. The **reference** is `architecture/prime_radiant.py` — numpy-only, deterministic, self-verifying; a sibling of the [TALOS v0 emulator](/docs/applied/research/engineering-insights) whose canonical tick it reuses. The **instrument** is `architecture/prime-radiant-rs` — a Rust implementation with a live TUI (ratatui): eight tabs (Holon dashboard with the $|\Gamma|$ heatmap and σ-panel, Atlas, Oracle, Pair, Ensemble, Reading, Calibration, Help), spectrum-preserving dial controls, bold-mode, and domain presets; its `--selftest` runs a 25-hypothesis battery (25/25 VERIFIED) and reproduces the Python attractor to $P^* = 0.3208$ vs $0.321$ — a cross-language replication of the whole dynamical core. The kernel is **generalized**: one state space, one tick, one observable suite — what changes between application domains is only the gloss vocabulary and the parameter system (the `Model` presets: Universal, Mind, Team, LLM agent, Market), which is the precise sense in which «only the application models and the equation systems change». Organs of the reference machine:
 
 | Organ | Contents | Verification |
 |-------|----------|--------------|
@@ -68,6 +70,130 @@ The reference implementation is `architecture/prime_radiant.py` in the holon rep
 | **[J]** phase atlas | the (dissipation, supply) basin map | H54–H55 |
 
 Two engineering facts deserve their own sentence. *The wiring catch:* the calibration discovered (H46) that the TALOS v0 emulator's translate wiring, read in display order $A..U$, realizes the corpus lines only up to the $U/O$ naming swap of §2.1 — functionally isomorphic (all spectral observables unaffected), but any **line-named** diagnostic must use the corrected wiring; the machine does. *The proxy catch:* the emulator's $\Phi = 7P - 1$ is a uniform-diagonal proxy; on a generic state it deviates from the canonical $\Phi$ by tens of percent (measured: $3.84$ vs $2.45$; H34) — the solver computes the exact one.
+
+### 3.1 The state and the observables {#уравнения-наблюдаемых}
+
+The state is $\Gamma \in \mathcal{D}(\mathbb{C}^7)$: Hermitian, positive-semidefinite, $\operatorname{tr}\Gamma = 1$; seven populations $\gamma_{ii}$ and twenty-one coherences $\gamma_{ij}$. Everything the machine prints is one of:
+
+$$
+P = \operatorname{tr}\Gamma^2, \qquad
+R = \frac{1}{7P}, \qquad
+\Phi = \frac{\sum_{i\neq j}|\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2}, \qquad
+C = \Phi\,R,
+$$
+
+$$
+S = -\operatorname{tr}(\Gamma\ln\Gamma), \qquad
+D_{\text{diff}} = e^{S}, \qquad
+\mathrm{Coh}_E = \sum_{j \neq E}|\gamma_{Ej}|^2, \qquad
+\kappa_0 = \omega_0\,\frac{|\gamma_{OE}|\,|\gamma_{OU}|}{\gamma_{OO}},\quad \kappa_{\text{boot}} = \frac{\omega_0}{7}.
+$$
+
+Viability: $P > 2/7$; the window's upper wall $P \le 3/7$ is the inversion of $R \ge 1/3$ through $R = 1/(7P)$. The T-92 stress panel, componentwise:
+
+$$
+\sigma_A = 1 - \frac{\gamma_{AA}}{P},\quad
+\sigma_S = 1 - \frac{\operatorname{rank}\Gamma_S}{3},\quad
+\sigma_D = 1 - 7\gamma_{DD},\quad
+\sigma_L = \frac{7(1-\gamma_{LL})}{6},
+$$
+
+$$
+\sigma_E = 1 - \frac{D_{\text{diff}}}{7},\quad
+\sigma_O = 1 - \frac{\kappa_0}{\kappa_{\text{boot}}},\quad
+\sigma_U = 1 - \frac{\Phi}{\Phi_{\text{th}}},\qquad \Phi_{\text{th}} = 1.
+$$
+
+At the grey state $\Gamma = I/7$: $\sigma_L = \sigma_U = 1$ exactly — the wall (H33).
+
+### 3.2 The tick {#уравнение-тика}
+
+One step of $\mathcal{L}_\Omega$, Strang-split and CPTP-safeguarded:
+
+$$
+\Gamma_{n+1} = \Pi_{\mathrm{PSD}}\!\left[\, \mathcal{U}_{dt/2}\Big( \mathcal{U}_{dt/2}(\Gamma_n) + dt\big( g_D(\tfrac{I}{7} - \Gamma) + \kappa\,(\rho^* - \Gamma)\big) \Big)\right],
+$$
+
+$$
+\mathcal{U}_{\tau}(\Gamma)_{jk} = e^{-i(\lambda_j-\lambda_k)\tau}\,\gamma_{jk}, \qquad
+\kappa = g\cdot 1.2\,(1 + 8\,\mathrm{Coh}_E),
+$$
+
+with $H_{\text{eff}} = \mathrm{diag}(0,\,0.6,\,1.0,\,1.6,\,3.0,\,2.0,\,2.4)$ ($\lambda_E$ highest, the A5 order), $dt = 0.01$, $g_D = 0.2$, gain $g = 1$ ($3$ on a bold move). The three terms are the whole physics: the unitary preserves $P$ and $S$ exactly (H16); the dissipator alone flows to $I/7$, $S \to \ln 7$ (H18) — *solve*; the regeneration alone rides the mixture chord to $\rho^*$ (H52) — *coagula*. $\Pi_{\mathrm{PSD}}$ is the spectral clip $\lambda \mapsto \max(\lambda, 0)$ with renormalization.
+
+### 3.3 Diagnosis {#уравнение-синдрома}
+
+The fault profile $x \in \mathbb{F}_2^7$ meets the Hamming check matrix $H$ (columns $=$ binary of $1..7$): the syndrome $s = Hx$ **is the address** — for a single fault on axis $a$, $s = \mathrm{bin}(a)$ (H09). Continuously, the line-closure functional $c_\ell = |\gamma_{ij}| + |\gamma_{jk}| + |\gamma_{ik}|$ over the seven lines $\ell$ localizes degradation the same way (H36).
+
+### 3.4 The contour engine {#уравнение-контура}
+
+The trapezoid discretization of the residue formula on a circle $z_t = c + re^{i\theta_t}$, $\theta_t = 2\pi(t+\tfrac12)/T$:
+
+$$
+f(\Gamma) \;\approx\; \frac{1}{2\pi i}\sum_{t=0}^{T-1} f(z_t)\,(z_t I - \Gamma)^{-1}\,\Delta z_t, \qquad \Delta z_t = \frac{2\pi i r e^{i\theta_t}}{T},
+$$
+
+which for $f$ analytic inside the contour converges *exponentially* in $T$ (the trapezoid rule on a periodic analytic integrand): at $T = 256$ the machine reaches $10^{-15}$ (H13). One contour around one cluster extracts one projector without touching the rest of the spectrum — the property that scales.
+
+### 3.5 The pair law — derivation {#вывод-пары}
+
+Let $\Gamma_p = \Gamma_1 \otimes \Gamma_2$ and the bridge $X = \gamma\,C + \bar\gamma\,C^\dagger$ with $C = (|i\rangle\langle j|)\otimes(|k\rangle\langle l|)$, $i\neq j$, $k \neq l$. Then
+
+$$
+P(\Gamma_p + \varepsilon X) = \operatorname{tr}(\Gamma_p + \varepsilon X)^2
+= P_1 P_2 \;+\; 2\varepsilon\operatorname{tr}(\Gamma_p X) \;+\; \varepsilon^2 \operatorname{tr}X^2,
+\qquad \operatorname{tr}X^2 = 2|\gamma|^2,
+$$
+
+— three lines, exact, no approximation; the machine confirms the identity to $4\cdot10^{-17}$ (H47). And because $\langle i|j\rangle = \langle k|l\rangle = 0$, **both partial traces of $X$ vanish identically**: $\operatorname{tr}_2 X = \operatorname{tr}_1 X = 0$ — the reduced states of both members are untouched (H49). The gain has nowhere to live but the bond.
+
+### 3.6 The ladder — derivation {#вывод-лестницы}
+
+$$
+P^{(m)}_{\text{crit}} = \frac{2}{7}\cdot\frac{3^{\,m-1}}{m+1}, \qquad
+\frac{P^{(m+1)}}{P^{(m)}} = \frac{3(m+1)}{m+2} > 1 \;\;\forall m \ge 1,
+$$
+
+so the sequence is strictly increasing: $\tfrac27,\ \tfrac{9}{14},\ \tfrac{54}{35}$ at $m = 2, 3, 4$. Since $P = \operatorname{tr}\Gamma^2 \le \operatorname{tr}\Gamma = 1$ for any density matrix, $m = 4$ demands the impossible — the ceiling of three (H45, [axiom Ω⁷](/docs/core/foundations/axiom-omega)).
+
+### 3.7 Navigation as an optimization problem {#постановка-навигации}
+
+Given $\Gamma_0$, the goal region $\mathcal{G} = \{\Gamma : P \in (2/7, 3/7] \wedge C \ge C^*\}$, and the control set $\mathcal{A} = \{R_{ij}(\pm\theta)\}_{i<j} \cup \{\kappa\text{-boost}\} \cup \{\text{drift}\}$:
+
+$$
+\min_{u_{0:T}} \; T + \lambda \sum_{t} \mathrm{heat}(u_t)
+\quad \text{s.t.} \quad \Gamma_{t+1} = \mathcal{T}(\Gamma_t, u_t), \;\; \Gamma_T \in \mathcal{G},
+$$
+
+where $\mathrm{heat}$ is the measured mean stress of a boosted step. v0 solves it greedily (one-step lookahead over the 43 actions); v1 replaces the search with $m$-geodesic shooting in the BKM metric (T-263) — the down-payment is H52/H53.
+
+### 3.8 The oracle and the ensemble — error bars {#оценки-оракула}
+
+The solitaire estimate is binomial: $\hat p = W/M$, $\mathrm{se}(\hat p) = \sqrt{\hat p(1-\hat p)/M}$ — at $M = 120$, a $0\% \to 25\%$ contrast is $\sim 6\,\mathrm{se}$ apart. The ensemble mean of $N$ holons carries $\mathrm{se} = \sigma_P/\sqrt{N}$; the measured WHERE-compression ($0.173 \to 0.0154$) is the attractor's doing, on top of which the $\sqrt N$ law prices any level-forecast — and the WHO-distance staying at $0.488$ is what no $N$ can average away.
+
+### 3.9 A worked example, digit by digit {#разобранный-пример}
+
+Take the explicit state (all numbers below are machine-computed, not narrated): populations $\mathrm{diag}(\Gamma) = (0.46,\, 0.09,\, 0.07,\, 0.07,\, 0.14,\, 0.10,\, 0.07)$ and three real coherences $\gamma_{AE} = 0.08$, $\gamma_{EO} = 0.07$, $\gamma_{OU} = 0.05$ (Apperception, Immanence, Completeness — an A-loud pattern fed through the E–O–U spine). It is physical: $\lambda_{\min} = 0.0128 > 0$, $\operatorname{tr}\Gamma = 1$.
+
+$$
+\textstyle\sum_i \gamma_{ii}^2 = 0.2640,\qquad
+\sum_{i\neq j}|\gamma_{ij}|^2 = 2(0.08^2 + 0.07^2 + 0.05^2) = 0.0276,
+$$
+
+$$
+P = 0.2916 \in (2/7, 3/7] \;\text{(viable)},\quad
+R = \frac{1}{7\cdot 0.2916} = 0.4899,\quad
+\Phi = \frac{0.0276}{0.2640} = 0.1045,\quad
+C = 0.0512,
+$$
+
+$$
+S = 1.5271,\;\; D_{\text{diff}} = 4.60 \ge 2,\qquad
+\mathrm{Coh}_E = 0.08^2 + 0.07^2 = 0.0113,\qquad
+\kappa_0 = \frac{0.07 \cdot 0.05}{0.10} = 0.0350.
+$$
+
+The panel: $\sigma = (-0.58,\; 0.00,\; 0.51,\; \mathbf{1.09},\; 0.34,\; 0.75,\; 0.90)$. The reading writes itself: a viable, A-dominant pattern whose **Logic voice is starved past the wall** ($\gamma_{LL} = 0.07$, $\sigma_L > 1$) and whose supply runs thin ($\kappa_0 \ll \kappa_{\text{boot}} = 0.143$, $\sigma_O = 0.75$) — prescription: restore the $L$-flow first, then feed $O$. Note the teaching moment of H38 live: the boolean $\max\sigma < 1$ criterion disagrees here with $P > 2/7$ — on the uncalibrated panel the *ranking* (L, then U, then O) is the trustworthy output, and this single example shows why calibration item 4 of §9 exists.
 
 ## §4. Golden paths {#золотые-пути}
 

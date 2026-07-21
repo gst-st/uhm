@@ -1,0 +1,16 @@
+[package]
+name = "prime-radiant"
+version = "0.1.0"
+edition = "2021"
+description = "Prime Radiant — the golden-path navigator over Γ ∈ D(C^7): canonical UHM dynamics, σ-panel, basin atlas, solitaire oracle, pair space, calibration. TUI (ratatui)."
+license = "MIT"
+
+[dependencies]
+ratatui = "0.30.2"
+crossterm = "0.29.0"
+num-complex = "0.4"
+rand = "0.10.2"
+
+[profile.release]
+opt-level = 3
+lto = true
