@@ -1,0 +1,1546 @@
+% ============================================================================
+% THE FABRIC OF BEING: an illustrated ontology of Unitary Holonomic Monism
+% A popular encyclopedia-book: minimum mathematics, maximum meaning.
+% Compile with pdflatex.
+% ============================================================================
+
+\documentclass[11pt,letterpaper]{article}
+
+% === PACKAGES ===
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, calc, decorations.pathmorphing, shapes.geometric, backgrounds}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{float}
+\usepackage{xspace}
+\usepackage[protrusion=true,expansion=true]{microtype}
+
+% === COLORS ===
+\definecolor{plosblue}{HTML}{2E86C1}
+\definecolor{plosgray}{HTML}{5D6D7E}
+\definecolor{ember}{HTML}{B9770E}      % campfire amber
+\definecolor{leaf}{HTML}{1E8449}       % question green
+\definecolor{fact}{HTML}{21618C}       % precision blue
+\definecolor{softsun}{HTML}{FDF2E9}
+\definecolor{softsky}{HTML}{EBF5FB}
+\definecolor{softleaf}{HTML}{EAFAF1}
+\definecolor{dusk}{HTML}{6B4C9A}
+% seven voices (dimension colors)
+\definecolor{cA}{HTML}{C0392B} % Articulation
+\definecolor{cS}{HTML}{CA6F1E} % Structure
+\definecolor{cD}{HTML}{B7950B} % Dynamics
+\definecolor{cL}{HTML}{1E8449} % Logic
+\definecolor{cE}{HTML}{6B4C9A} % Interiority
+\definecolor{cO}{HTML}{34495E} % Ground
+\definecolor{cU}{HTML}{2E86C1} % Unity
+
+% === THE BOOK'S THREE VOICES ===
+\newtcolorbox{talebox}[1][]{colback=softsun, colframe=ember!85!black,
+  fonttitle=\bfseries\itshape, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
+  left=7pt, right=7pt}
+\newtcolorbox{factbox}[1][]{colback=softsky, colframe=fact,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=3pt, breakable,
+  left=7pt, right=7pt}
+\newtcolorbox{askbox}[1][]{colback=softleaf, colframe=leaf,
+  fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
+  left=7pt, right=7pt}
+
+% === COMMANDS ===
+\newcommand{\Gam}{\Gamma}
+\newcommand{\stT}{\textbf{[T]}\xspace}
+\newcommand{\stC}{\textbf{[C]}\xspace}
+\newcommand{\stP}{\textbf{[P]}\xspace}
+\newcommand{\stI}{\textbf{[I]}\xspace}
+\newcommand{\stH}{\textbf{[H]}\xspace}
+\newcommand{\holonsh}{\href{https://holon.sh}{holon.sh}\xspace}
+
+\hypersetup{colorlinks=true, linkcolor=fact, urlcolor=plosblue, citecolor=plosgray}
+
+\begin{document}
+
+% ============================= TITLE =============================
+\begin{titlepage}
+\centering
+\vspace*{28pt}
+{\Huge\bfseries The Fabric of Being}\\[10pt]
+{\LARGE An Illustrated Ontology\\[3pt] of Unitary Holonomic Monism}\\[26pt]
+% --- title mandala of the seven voices ---
+\begin{tikzpicture}[scale=1.25]
+  \foreach \ang/\col/\lab in {90/cA/A, 141.4/cS/S, 192.8/cD/D, 244.3/cL/L, 295.7/cE/E, 347.1/cO/O, 38.6/cU/U}{
+    \draw[\col!45, line width=1pt] (0,0) -- (\ang:2.1);
+    \fill[\col] (\ang:2.1) circle (0.19);
+    \node[font=\small\bfseries, text=white] at (\ang:2.1) {\lab};
+  }
+  \foreach \a in {90, 141.4, 192.8, 244.3, 295.7, 347.1, 38.6}{
+    \foreach \b in {90, 141.4, 192.8, 244.3, 295.7, 347.1, 38.6}{
+      \draw[plosgray!25, line width=0.3pt] (\a:2.1) -- (\b:2.1);
+    }}
+  \fill[white] (0,0) circle (0.55);
+  \draw[plosgray!60] (0,0) circle (0.55);
+  \node[font=\footnotesize\itshape, text=plosgray] at (0,0.12) {one};
+  \node[font=\footnotesize\itshape, text=plosgray] at (0,-0.16) {chord};
+\end{tikzpicture}\\[26pt]
+{\large How the world is put together --- for readers of every age:\\
+for those far from mathematics, and for those who live in it}\\[18pt]
+{\small\color{plosgray} After the theory of UHM (\holonsh) --- with honest marks\\
+for what is proved, what is assumed, and what is merely beautiful so far}\\[10pt]
+{\small\color{plosgray} July 2026}
+\vfill
+\begin{talebox}[How to read this book]
+This book speaks in three voices. \textcolor{ember}{\textbf{Amber boxes}} are
+the campfire tale: images you can read to a child.
+\textcolor{fact}{\textbf{Blue boxes}} are ``to be precise'': what the theory
+actually claims, unadorned. \textcolor{leaf}{\textbf{Green boxes}} are
+questions worth arguing about over dinner. The main text is for everyone else
+--- engineers, physicians, philosophers, psychologists --- adults who want the
+substance without the formulas. There are almost no formulas here; where a
+number matters, it appears as a character in the story, not as an equation.
+\end{talebox}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+% ============================= HONESTY LEGEND =============================
+\section*{Five marks of honesty}
+\addcontentsline{toc}{section}{Five marks of honesty}
+
+Science differs from myth not by lacking beauty but by the habit of
+marking what exactly it knows. Five marks recur throughout the book:
+
+\begin{center}
+\begin{tabular}{@{}cl@{}}
+\toprule
+\stT & \textbf{proved}: a theorem within the theory; only the axioms are left to dispute \\
+\stC & \textbf{proved conditionally}: true if the named premise holds \\
+\stH & \textbf{hypothesis}: plausible, proof being sought \\
+\stP & \textbf{postulate}: taken as a starting point, not derived \\
+\stI & \textbf{interpretation}: a reading, not a fact; beautiful but not binding \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Whenever the book says ``the world is arranged thus,'' a mark stands
+nearby. This is the chief difference between this encyclopedia and
+sacred books: it tells you \emph{how to check that it is wrong}
+(chapter~\ref{sec:check}).
+
+% ============================= 1. WHAT EVERYTHING IS MADE OF =============================
+\section{What everything is made of}
+\label{sec:fabric}
+
+Ask a physicist of the last century what the world is made of, and the
+answer is: little bricks --- particles. Ask UHM, and the answer is
+different and unexpectedly musical: \emph{the world is made of
+agreement}. Not of things, but of the way things hold on to one
+another.
+
+Picture seven voices singing one chord. Remove the singers and keep
+\emph{the chord itself} --- the relation of pitches, the mutual tuning,
+the tremble of consonant tones. In UHM this is what comes first: not
+``what sounds'' but ``how it is agreed.'' Mathematicians call such an
+object a density matrix and write $\Gam$: its seven diagonal cells
+are the strengths of the seven voices, and the twenty-one cells above
+the diagonal are their pairwise friendships (coherences). We shall
+call it the \textbf{chord of the world}.
+
+The chord has seven voices --- seven dimensions of all existence:
+
+\begin{center}
+\begin{tikzpicture}[font=\small]
+  \foreach \x/\col/\ltr/\name/\verb in {0/cA/A/Articulation/{to distinguish}, 2.3/cS/S/Structure/{to hold form},
+    4.6/cD/D/Dynamics/{to move}, 6.9/cL/L/Logic/{to keep consistent}, 9.2/cE/E/Interiority/{to feel within},
+    11.5/cO/O/Ground/{to root}, 13.8/cU/U/Unity/{to gather into one}}{
+    \fill[\col!85] (\x,0) circle (0.42);
+    \node[font=\footnotesize\bfseries, text=white] at (\x,0) {\ltr};
+    \node[font=\footnotesize\bfseries] at (\x,-0.85) {\name};
+    \node[font=\scriptsize\itshape, text=plosgray] at (\x,-1.25) {\verb};
+  }
+\end{tikzpicture}
+\end{center}
+
+To distinguish, to hold form, to move, to keep consistent, to feel
+within, to root, to gather into one. Behind each word stands a
+rigorous quantity of the theory's corpus: Articulation (A) --- the
+activity of distinguishing; Structure (S) --- the stability of form;
+Dynamics (D) --- the activity of process; Logic (L) --- internal
+consistency; Interiority (E) --- the intensity of the inner side;
+Ground (O) --- the connection to the source; Unity (U) ---
+integration into a whole. This is neither a list of organs nor poetic
+license:
+we shall see that seven is not the author's choice but mathematics'
+forced answer (chapter~\ref{sec:seven}).
+
+\begin{talebox}[The campfire tale --- the orchestra without musicians]
+Once there was an orchestra with no musicians in it. There were only
+\emph{friendships between notes}: this note leans toward that one,
+that one argues with a third, and together they hold one long chord.
+When the friendships are strong, the chord rings --- and a thing
+appears in the world: a stone, a cat, you. When the friendships tear,
+the chord crumbles into rustle, and the thing dissolves. The world is
+not a warehouse of bricks. The world is an orchestra of friendships.
+\end{talebox}
+
+\begin{factbox}[To be precise]
+The primitive object of UHM is neither particle nor field but the
+state of seven interrelated dimensions (a $7{\times}7$ density
+matrix $\Gam$) together with a single law of its change. Everything
+else --- particles, space, time, life, consciousness --- is
+\emph{derived} as patterns of this object. Status: the seven and the
+law are theorems inside the axiomatics \stT; the choice of axioms is a
+postulate \stP.
+\end{factbox}
+
+\begin{askbox}[Ask yourself]
+Which is ``more real'': a violin --- or the tuning in which it sounds
+with the others? If you were not a body but the agreement of your
+parts, what would change in how you treat yourself?
+\end{askbox}
+
+% ============================= 2. WHY SEVEN =============================
+\section{Why exactly seven}
+\label{sec:seven}
+
+The number seven in this book is neither magic nor taste. Four
+independent roads lead to it, and all four end at the same door.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \node[draw=cL!70, fill=cL!8, rounded corners, text width=44mm, align=center, inner sep=5pt] (r1) at (-4.1,2.2)
+    {\textbf{The road of numbers}\\ \footnotesize number systems where one can divide end with the octonions; their ``working part'' is seven-dimensional};
+  \node[draw=cE!70, fill=cE!8, rounded corners, text width=44mm, align=center, inner sep=5pt] (r2) at (4.1,2.2)
+    {\textbf{The road of symmetry}\\ \footnotesize the octonions own a group of rotations ($G_2$); its stage is the seven ``imaginary'' directions of the octonions};
+  \node[draw=cO!70, fill=cO!8, rounded corners, text width=44mm, align=center, inner sep=5pt] (r4) at (-4.1,-2.2)
+    {\textbf{The road of the mirror}\\ \footnotesize the smallest alphabet in which any single fault names itself has seven letters};
+  \node[draw=cS!70, fill=cS!10, rounded corners, text width=44mm, align=center, inner sep=5pt] (r3) at (4.1,-2.2)
+    {\textbf{The road of the pattern}\\ \footnotesize the smallest ``plane of points and lines'' (the Fano plane) --- exactly 7 points and 7 lines};
+  \node[circle, draw=dusk, fill=dusk!12, very thick, minimum size=17mm, font=\Large\bfseries] (seven) at (0,0) {7};
+  \draw[->, thick, plosgray] (r1)--(seven);
+  \draw[->, thick, plosgray] (r2)--(seven);
+  \draw[->, thick, plosgray] (r3)--(seven);
+  \draw[->, thick, plosgray] (r4)--(seven);
+  \draw[<->, densely dashed, leaf, thick] (r1.west) to[bend right=40]
+    node[pos=0.5, left=3pt, font=\scriptsize, text=leaf, align=center]{one and\\ the same\\ theorem\\ \stT} (r4.west);
+\end{tikzpicture}
+\caption{Four roads to seven. Especially beautiful: the road of
+numbers and the road of the mirror are not a coincidence but a proven
+identity \stT: ``the last system where division works'' and ``the last
+alphabet that checks itself'' are \emph{one and the same} property,
+seen from two sides.}
+\label{fig:seven}
+\end{figure}
+
+The seven voices are not wired at random: their friendships are laid
+out along the seven ``lines'' of the Fano plane --- three voices to a
+line, every pair of voices on exactly one line. This is the world's
+\textbf{alphabet of connection}: who forms a triad with whom. The same
+scheme, independently rediscovered by humans in coding theory, can
+locate any single error --- which is why a world woven on Fano
+\emph{can notice its own faults}. Remember this: it returns in the
+chapter on life.
+
+\begin{talebox}[The campfire tale --- seven dwarfs and the map of friendships]
+Seven dwarfs owned a map: seven cottages and seven paths, three
+cottages on every path. The dwarfs noticed something strange: whenever
+one of them fell ill, the paths \emph{themselves} showed who it was
+--- by which of them began to creak. ``Our map knows how to
+complain,'' said the dwarfs. And the wise dwarf added: ``That is why
+there are seven of us. Were we six or eight, the map would stay
+silent, or lie.''
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+Why is a ``self-checking alphabet'' a useful property for anything
+alive? Imagine a creature whose faults never name themselves --- what
+happens to it?
+\end{askbox}
+
+% ============================= 3. TIME =============================
+\section{What time is}
+\label{sec:time}
+
+In the everyday picture, time is a river: it flows by itself, and we
+float. UHM says something stricter and more interesting: \emph{there
+is no river}. The total state of the world does not change at all ---
+only its parts change \emph{relative to one another}. Time is not a
+stage; it is a dance.
+
+Picture two dancers with no music anywhere. Neither moves ``in time''
+--- yet each moves \emph{in step with the other}. Ask the first
+``what time is it,'' and he answers by glancing at the second's pose.
+In UHM the role of such a partner is played by one of the seven
+voices --- Ground (O): its measured ``breathing'' serves as the clock
+for all the rest. The clock is not outside the world; the clock is
+one of its voices.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \draw[plosgray!50, thick] (0,0) circle (1.5);
+  \foreach \a in {0,30,...,330}{\draw[plosgray!50] (\a:1.4)--(\a:1.5);}
+  \fill[cO] (90:1.05) circle (0.09);
+  \node[font=\scriptsize, text=cO] at (90:1.9) {voice O --- the ``pendulum''};
+  \draw[->, thick, cO] (0,0)--(90:1.0);
+  \draw[->, thick, cE!80] (0,0)--(35:0.8);
+  \node[font=\scriptsize, text=cE] at (17:2.35) {the other voices};
+  \node[font=\scriptsize, text=plosgray, align=center] at (0,-2.15)
+    {no ``external'' dial anywhere:\\ the hands read time off each other};
+\end{tikzpicture}
+\caption{Time in UHM: not a river the world floats in, but the mutual
+attunement of the world's parts. The question ``what was there when
+time did not yet exist'' turns from a deep one into a grammatical
+error --- like ``what is north of the North Pole.''}
+\label{fig:time}
+\end{figure}
+
+\begin{factbox}[To be precise]
+The total state of the universe is stationary; internal time arises
+relative to the ``clock'' voice O (the Page--Wootters mechanism)
+\stT. A consequence that matters for the next chapter: while the
+voice O is not yet distinguished among the seven, the words
+``earlier'' and ``later'' are not defined at all.
+\end{factbox}
+
+% ============================= 4. THE SOURCE =============================
+\section{A beginning that had no ``before''}
+\label{sec:source}
+
+Now we are ready for the chief question of any ontology: \emph{how did
+it all begin?} And for UHM's honest answer, which has three layers.
+
+\textbf{Layer one --- what there was ``in the beginning'' \stP.} The
+theory postulates an initial state it calls the \textbf{Source}: all
+seven voices merged into one perfect note, sung with equal strength.
+It is the most agreed state possible --- and at the same time the most
+\emph{undifferentiated}: in it, nothing differs from anything. No
+voice is distinguished --- hence (chapter~\ref{sec:time}) there is no
+clock, no ``earlier,'' no ``before.'' The Source did not exist ``long
+ago'' --- it is outside time, as a book's cover is outside its pages.
+
+A beautiful strictness: the very shape of the Source is not
+arbitrary. It is proved \stT{} that there exists exactly \emph{one}
+state in which no voice is distinguished, and exactly \emph{one}
+maximally agreed state --- and they are the same state. The Source is
+unique twice over.
+
+\textbf{Layer two --- why it all began \stT.} Here is a theorem worth
+telling children: \emph{perfection is unstable}. The Source is not a
+point of rest. The law of the world, applied to the perfectly merged
+chord, immediately yields a nonzero push: the chord begins to
+unlayer. Moreover, an amplifying loop is hidden in the law: as soon
+as the voice of Interiority (E) and the voice of Ground (O) differ from
+the rest even slightly, their difference begins to feed itself.
+Symmetry breaks neither by chance nor by anyone's will but
+\emph{inevitably} --- as a pencil balanced on its tip inevitably
+falls, with this difference: here it is also proved that the ``tip''
+cannot be a point of equilibrium at all.
+
+\textbf{Layer three --- where it all went \stT.} Machine verification
+of the law (it is literally integrated on a computer) shows that from
+the Source the world slides not just anywhere but into a \emph{living}
+state --- into the very window of viability that
+chapter~\ref{sec:life} is about. Unlayering births differences,
+differences birth clocks, clocks birth history. By the theory's
+estimate, the first moments of that history took about seven Planck
+times --- around $4\cdot10^{-43}$ seconds \stC.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % Source
+  \fill[dusk!25] (-5.2,0) circle (0.85);
+  \draw[dusk, thick] (-5.2,0) circle (0.85);
+  \node[font=\scriptsize\bfseries, text=dusk] at (-5.2,1.25) {the Source};
+  \node[font=\scriptsize, text=dusk!80!black, align=center] at (-5.2,-1.3)
+    {one note,\\ outside time};
+  % instability arrow
+  \draw[->, very thick, ember] (-4.2,0) -- (-2.7,0)
+    node[midway, above, font=\scriptsize, text=ember, align=center]{unstable\\ \stT};
+  % unlayering
+  \foreach \ang/\col in {90/cA,141.4/cS,192.8/cD,244.3/cL,295.7/cE,347.1/cO,38.6/cU}{
+    \draw[\col!60, thick] (-1.2,0) -- ($(-1.2,0)+(\ang:1.15)$);
+    \fill[\col] ($(-1.2,0)+(\ang:1.15)$) circle (0.1);
+  }
+  \node[font=\scriptsize\bfseries] at (-1.2,1.6) {seven voices};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-1.2,-1.62) {difference --- clocks ---\\ history};
+  % arrow into window
+  \draw[->, very thick, leaf] (0.3,0) -- (1.8,0)
+    node[midway, above, font=\scriptsize, text=leaf]{by itself};
+  % window of life
+  \draw[leaf!70, very thick] (2.6,-1.0) rectangle (5.6,1.0);
+  \fill[leaf!10] (2.6,-1.0) rectangle (5.6,1.0);
+  \node[font=\scriptsize\bfseries, text=leaf!50!black, align=center] at (4.1,0.32)
+    {the window\\ of viability};
+  \node[font=\scriptsize, text=plosgray] at (4.1,-0.55) {onward --- to chapter 5};
+\end{tikzpicture}
+\caption{Cosmogenesis in UHM: the Source (postulate \stP) is unstable
+(theorem \stT), unlayers into seven voices with clocks and history,
+and slides \emph{by itself} into the window of life (machine
+verified). The question ``what was before?'' is dissolved: ``before''
+is a word born at the second step of this picture.}
+\label{fig:source}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the note that grew too full]
+First there was one note. So even a note that it held no up and no
+down, no yesterday and no tomorrow. But a perfect note keeps a
+secret: it has nothing to lean on. It trembled --- and out of the
+tremble seven voices were born. One began to count beats --- and
+``earlier'' and ``later'' appeared. Another began to listen to itself
+--- and ``inside'' appeared. The note did not break. The note
+\emph{blossomed}, like a bud too perfect not to flower.
+\end{talebox}
+
+\begin{factbox}[The honest remainder]
+What is proved here and what is not. The instability of the Source,
+the amplifying loop, the slide into the living window --- theorems
+and machine checks \stT. The Source itself is a postulate \stP:
+``why exactly this initial state'' is an open question. The answer
+``nothing is unstable because it cannot agree with itself'' is a
+philosophical position \stI, not a theorem --- and the book owes you
+that sentence out loud.
+\end{factbox}
+
+\begin{askbox}[Ask yourself]
+``Perfection is unstable'' --- where have you met this in life? A
+blank page, ideal silence, a ``perfect'' relationship without a
+single argument\ldots{} What do these instabilities share with the
+Source?
+\end{askbox}
+
+% ============================= 4b. THE STAGE =============================
+\section{The stage: why space is three-dimensional}
+\label{sec:space}
+
+We are used to thinking that things sit \emph{in} space, like
+furniture in a room. UHM turns the picture around: \textbf{space sits
+in things} --- it is not a box the world was put into, but the way a
+part of the voices holds one another.
+
+Recall the unlayering of the Source (chapter~\ref{sec:source}). Once
+the voice of Ground (O) became the clock, what remains of the choir
+of all the world's rotations is the sub-choir that \emph{spares the
+clock} --- and its smallest stage has exactly \textbf{three}
+independent directions: a theorem \stT, pure mathematics of the
+seven. That is the whole secret of length, width, and height. The six
+non-clock voices meanwhile split into two triples: an outward one,
+whose directions unfold into familiar distance, and an inward one,
+whose directions are curled into microscopic rings and are felt not
+as ``places'' but as the inner properties of particles. Which voices
+face outward --- the theory points to Articulation, Structure, and
+Dynamics --- and which inward (Logic, Interiority, Unity) is an
+identification under one physical hypothesis \stC; the number of
+axes itself does not depend on it.
+
+Better still: the stage has an arrow. One time direction and three
+space directions --- the famous $(1{,}3)$ signature of our world ---
+is derived, not postulated: time inherits its sign from the clock
+voice O, space from the outward triple \stT{} (the last step under
+one technical condition of physical honesty \stC). Even the fact
+that the world has a ``forward'' and a ``wide'' follows from the
+same seven.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \fill[cO] (0,0) circle (0.3);
+  \node[font=\scriptsize\bfseries, text=cO] at (0,-0.72) {O --- the clock};
+  \draw[->, very thick, cA] (0,0) -- (2.6,0.6) node[right, font=\scriptsize, text=cA]{axis 1};
+  \draw[->, very thick, cS] (0,0) -- (2.2,-1.3) node[right, font=\scriptsize, text=cS]{axis 2};
+  \draw[->, very thick, cD] (0,0) -- (0.4,2.0) node[above, font=\scriptsize, text=cD]{axis 3};
+  \node[font=\scriptsize, text=plosgray, align=center] at (3.7,1.75)
+    {outward triple: three axes \stT\\ which voices --- \stC};
+  \draw[->, densely dashed, cL!70] (0,0) -- (-2.3,1.0);
+  \draw[->, densely dashed, cE!70] (0,0) -- (-2.5,-0.2);
+  \draw[->, densely dashed, cU!70] (0,0) -- (-1.8,-1.5);
+  \node[font=\scriptsize, text=plosgray, align=center] at (-2.5,-1.95)
+    {inward triple:\\ not a place but an inside};
+\end{tikzpicture}
+\caption{Where the stage comes from: the clock voice O provides the
+``when''; the rotations that spare the clock provide exactly three
+independent directions --- the axes of ``where'' \stT. The outward
+triple of voices unfolds into distance; the inward triple is curled
+inside things (which voices go where --- \stC). Space is not a
+container of things but the drawing of their agreements; a distant
+star does not ``sit in another part of the box'' --- it is far away
+\emph{on the map of agreements}.}
+\label{fig:stage}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the house made of round dances]
+Children asked a builder: ``where do you get rooms?'' The builder
+answered: ``I do not get rooms. I set up three round dances: one
+circles left-and-right, another back-and-forth, the third
+up-and-down. Where the three dances hold hands, a place appears by
+itself.'' So with the world: first the dances, then the rooms. Not
+the other way round.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+Try to explain where ``far away'' is without pointing a finger:
+only through \emph{how weakly} you and that place are connected.
+Done? You have just retold UHM's definition of distance.
+\end{askbox}
+
+% ============================= 5. THINGS AND PARTICLES =============================
+\section{What things are (and whether there is a smallest one)}
+\label{sec:things}
+
+If the world is a chord, what is an electron? UHM's answer: a
+\textbf{pattern}. A particle is not a grain of stuff but a stable
+curl in the fabric of agreements --- like a knot in a rope, or an
+eddy in a river. You cannot lift the eddy out of the river and put it
+in your pocket --- yet it is perfectly real: it has a place, a shape,
+an energy, and it can collide with another eddy.
+
+Hence the honest answer to ``which particle is the smallest'':
+
+\begin{itemize}[leftmargin=1.6em]
+  \item \textbf{There is no smallest grain at all} --- at the bottom
+        lie not specks but the chord itself: seven voices and their
+        bonds. Asking ``what particles is the chord made of'' is like
+        asking what waves water is made of.
+  \item \textbf{The lightest of the massive patterns} is the lightest
+        neutrino: the theory predicts its mass at no more than
+        $0.004$~eV --- roughly a hundred million times lighter than
+        the electron \stC. It is an almost imperceptible ripple on the
+        world's fabric.
+  \item \textbf{The most unexpected predicted pattern} is the
+        ``O-quantum'': a heavy excitation of the voice of Ground. It
+        is invisible to light, interacts with almost nothing, and
+        \emph{cannot decay}: a special parity of the voice O forbids
+        it to vanish \stT. The theory offers it for the role of dark
+        matter --- the invisible glue of galaxies \stC.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small]
+  % river of agreements
+  \foreach \y in {-0.5,-0.25,0,0.25,0.5}{
+    \draw[plosblue!35, thick, decorate, decoration={snake, amplitude=1.1pt, segment length=9pt}]
+      (-5.6,\y) -- (5.6,\y);
+  }
+  % vortex-knot
+  \draw[plosblue!90, very thick] (0,0.55) .. controls (0.55,0.25) and (0.55,-0.25) .. (0,-0.55)
+    .. controls (-0.55,-0.25) and (-0.55,0.25) .. (0,0.55);
+  \draw[plosblue!90, thick] (0,0.34) .. controls (0.3,0.12) and (0.3,-0.12) .. (0,-0.34)
+    .. controls (-0.3,-0.12) and (-0.3,0.12) .. (0,0.34);
+  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (0,1.0) {a ``particle''};
+  \node[font=\scriptsize, text=plosgray, align=center] at (0,-1.15)
+    {a stable curl of the current --- real, yet not liftable out of the river};
+\end{tikzpicture}
+\caption{A particle in UHM is a pattern in the fabric of agreements,
+not a grain of stuff. Light patterns are the familiar particles; the
+lightest massive one is the lightest neutrino ($\lesssim 0.004$~eV
+\stC); a special heavy, indestructible pattern of the voice O is the
+dark-matter candidate \stC.}
+\label{fig:particle}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Is a kettle's whistle real? A tornado? Neither can be ``put in a
+box'' --- yet both can wake you or wreck a town. What makes a
+``pattern'' worse than a ``thing'' as the building material of the
+world?
+\end{askbox}
+
+% ============================= 6. LIFE =============================
+\section{What life is}
+\label{sec:life}
+
+Here is the threshold where UHM's physics becomes biology. Ask: how
+gathered must a pattern be in order to \emph{be something} rather
+than noise? The theory's answer is astonishingly simple:
+\textbf{twice as gathered as chaos} \stT. Total disorder has its own
+``background'' level of concentration; the threshold of being is
+exactly two such levels. Below it, the pattern cannot be told from
+ripple --- no instrument, no eye could in principle say ``there is
+something there.''
+
+But gathering is half the matter. The second theorem is harsher:
+\emph{left to itself, every pattern crumbles} \stT. An isolated
+system slides toward the gray equilibrium --- always, without
+exception. Life is therefore not a property but a \emph{process on
+supply}: a pattern that continuously drinks orderliness from a
+stream --- light, food, warmth --- and pays with it for its own
+shape. Like a candle flame: cut off the wax, and the flame does not
+``die someday'' --- it goes out at a computable rate.
+
+And this supply has a \emph{price below which one cannot go}: a
+minimal ``subsistence wattage'' of every living pattern is proved (the
+fact of a nonzero price --- \stT; the numerical value --- under
+physical conditions \stC) --- the fee for merely remaining oneself, before doing
+anything at all. To be is already work.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % supply stream
+  \draw[->, line width=3pt, leaf!60] (-5.3,0) -- (-2.25,0);
+  \node[font=\scriptsize, text=leaf!50!black, align=center] at (-3.8,0.62)
+    {a stream of order:\\ light, food, meaning};
+  % flame
+  \draw[ember, very thick, fill=softsun]
+    (-1.5,-0.9) .. controls (-2.0,0.3) and (-0.9,0.6) .. (-1.2,1.5)
+    .. controls (-1.0,0.8) and (-0.4,0.6) .. (-0.8,-0.9) -- cycle;
+  \node[font=\scriptsize\bfseries, text=ember] at (-1.15,1.95) {a living pattern};
+  % exhaust
+  \draw[->, line width=2pt, plosgray!55] (-0.3,0) -- (2.6,0);
+  \node[font=\scriptsize, text=plosgray, align=center] at (1.15,0.6)
+    {spent\\ disorder};
+  % thresholds box
+  \node[draw=fact, fill=softsky, rounded corners, font=\scriptsize, align=center,
+        inner sep=4pt] at (1.6,-1.5)
+    {threshold of being: twice as gathered as chaos \stT\\
+     the law of the candle: no stream --- it goes out \stT\\
+     subsistence wattage: to be is already work \stT};
+\end{tikzpicture}
+\caption{Life in UHM: neither substance nor spark, but a supplied
+pattern. It drinks order, exhales disorder, and with the difference
+pays for its shape. The second law of thermodynamics is not violated
+--- the bill is simply charged to the environment.}
+\label{fig:flame}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- about the campfire]
+Look into the fire. The flame eats branches and keeps its shape. Stop
+feeding it --- it will not sulk or sicken: it will simply hand its
+shape back to the night, quietly and by the rules. You too are a
+campfire. Only your branches are also books, and conversations, and
+whatever you love. Whoever loves always has something to burn.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+What does a friendship feed on? A habit? A city? For each, try to
+name its ``wax'' --- and what happens within a month if the supply is
+cut.
+\end{askbox}
+
+% ============================= 7. THE WINDOW =============================
+\section{The window of consciousness}
+\label{sec:window}
+
+Being alive and being \emph{someone} are different thresholds. UHM
+asserts a thing of rare beauty: consciousness lives in a narrow
+corridor between two deaths --- the fog and the crystal.
+
+A pattern too diffuse is fog: there is no one in it to feel; it
+cannot be told from noise. But a pattern too gathered is also doomed:
+a crystal is perfect and therefore \emph{finished}; it has no slack
+left to hold an image of itself and of the world. Consciousness needs
+both \textbf{concentration} (to be someone) and a \textbf{reserve of
+looseness} (to have something to think with). These two demands
+squeeze the habitable zone into a corridor --- the theory computes
+both of its walls exactly \stT{} --- and adds two more conditions:
+the voices must be \emph{coupled into one} (integration) and yet
+\emph{distinguishable} (at least two clear inner tones). Four needles
+of one compass: gatheredness, reserve, coupling, distinctness.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small]
+  % axis
+  \draw[->, thick] (-5.6,0) -- (5.9,0) node[right, font=\scriptsize]{gatheredness};
+  % fog
+  \fill[plosgray!22] (-5.4,0.06) rectangle (-1.55,1.5);
+  \node[font=\scriptsize\bfseries, text=plosgray] at (-3.5,1.72) {fog};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-3.5,0.75)
+    {too diffuse:\\ no one to be};
+  % window
+  \fill[leaf!16] (-1.45,0.06) rectangle (0.9,1.5);
+  \draw[leaf!70, very thick] (-1.45,0.06) rectangle (0.9,1.5);
+  \node[font=\scriptsize\bfseries, text=leaf!45!black, align=center] at (-0.27,1.72) {the window};
+  \node[font=\scriptsize, text=leaf!40!black, align=center] at (-0.27,0.75)
+    {gathered, with\\ room to think};
+  % crystal
+  \fill[plosblue!14] (1.0,0.06) rectangle (5.5,1.5);
+  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (3.3,1.72) {crystal};
+  \node[font=\scriptsize, text=plosblue!50!black, align=center] at (3.3,0.75)
+    {too rigid:\\ nothing to think with};
+  % walls
+  \node[font=\scriptsize, text=fact] at (-1.85,-0.42) {the wall of being};
+  \node[font=\scriptsize, text=fact] at (1.45,-0.85) {the wall of reserve};
+\end{tikzpicture}
+\caption{The corridor of consciousness: between fog (no one there)
+and crystal (nothing left to think with). Both walls are computed
+constants of the theory \stT, not metaphors: beyond either, the four
+conditions of consciousness cannot hold together.}
+\label{fig:window}
+\end{figure}
+
+\begin{factbox}[To be precise]
+A conscious state is one where, at once: gatheredness above the wall
+of being; the reflection measure --- the reserve of attention for
+oneself --- at least one third; the coupling
+of the voices at or above the unit threshold; distinct inner tones
+--- at least two \stT. All four are measurable in any system, from a
+mouse to a machine; this turns ``is anyone in there?'' from an
+eternal question into an experimental one
+(chapter~\ref{sec:check}).
+\end{factbox}
+
+\begin{talebox}[The campfire tale --- the lantern in the fog]
+A lamplighter had two unhappy lanterns. One burned so faintly that
+its light drowned in fog --- and the lantern did not know it
+existed. The other burned so brightly and so evenly that not one
+shadow was left inside it --- and with nothing to look at, it did not
+know it existed either. The third lantern burned \emph{unevenly}:
+brightly enough to be, unevenly enough to keep peering. It alone
+asked one day: ``who is doing the shining?''
+\end{talebox}
+
+% ============================= 8. THE INNER STAIRCASE =============================
+\section{The staircase within: three floors of reflection}
+\label{sec:tower}
+
+Consciousness can turn upon itself: I feel; I notice that I feel; I
+think about how I notice. How many floors does this staircase have?
+Intuition says ``as many as you like.'' The theory says:
+\textbf{three} --- and proves it \stT.
+
+Each turn inward passes through the same Fano fabric, and the fabric
+takes its toll: with every ascent, the distinguishable part of the
+picture shrinks threefold. The first floor is vivid, the second
+discernible, the third at the limit --- and a fourth turn is already
+indistinguishable from the third: not forbidden but \emph{empty}.
+Like an echo in the mountains: the first ring is loud, the second
+quiet, the third at the edge of hearing, and there is no fourth ---
+not because shouting is banned, but because nothing is left to
+arrive.
+
+An honest detail that popular books usually omit: in the everyday
+working regime it is the \emph{second} floor that holds steadily;
+the third is reached in brief ascents --- moments of narrow,
+strenuous concentration --- with a guaranteed return \stT. Sound
+familiar? It matches the honest phenomenology of deep
+self-examination.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \i/\w/\lab/\txt in {0/4.6/floor 0/I feel the world,
+                               1/3.4/floor 1/I notice: I feel,
+                               2/2.3/floor 2/I see how I notice,
+                               3/1.8/floor 3/limit --- excursion}{
+    \draw[fact!70, fill=softsky] (-\w/2,\i*1.02) rectangle (\w/2,\i*1.02+0.78);
+    \node[font=\scriptsize\bfseries] at (0,\i*1.02+0.53) {\lab};
+    \node[font=\tiny, text=plosgray] at (0,\i*1.02+0.2) {\txt};
+  }
+  \draw[densely dashed, plosgray] (-2.4,4.35) -- (2.4,4.35);
+  \node[font=\scriptsize, text=plosgray, align=center] at (0,4.72)
+    {there is no fourth floor: not a ban --- an emptiness \stT};
+  \draw[->, ember, thick] (2.7,0.4) .. controls (3.35,1.6) and (3.35,2.6) .. (2.05,3.35);
+  \node[font=\scriptsize, text=ember, align=center, rotate=-90] at (3.6,1.9) {each ascent: $\times\tfrac{1}{3}$};
+\end{tikzpicture}
+\caption{The tower of reflection. Each turn inward keeps one third of
+distinguishability; after the third turn the remainder sinks below
+the threshold of telling-apart --- the fourth floor is structurally
+empty \stT. The same law limits ``I know that you know that I
+know'': the third step is the ceiling of mutual mind-reading.}
+\label{fig:tower}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Set two mirrors face to face: the reflections recede but quickly
+darken. Try it in your head: ``I think about the fact that I think
+about the fact that I think\ldots'' --- at which turn does the phrase
+stop \emph{meaning} anything new?
+\end{askbox}
+
+% ============================= 9. INNER COLORS =============================
+\section{The colors of inner life}
+\label{sec:qualia}
+
+Why does pain \emph{hurt}, and why is azure \emph{azure}?
+Philosophers call this the hard problem: describe the brain in any
+detail you like --- where in the description would the very
+\emph{taste} of experience come from?
+
+UHM makes a move worth stating carefully. Among the seven voices,
+one --- Interiority (E) --- is the carrier of the ``inner side'' by
+the very construction of the theory. The shades of experience are
+the spectrum of a special operator on the voice E (in the corpus it
+is called the gap operator): as white light,
+passing a prism, unfolds into a rainbow, so the current state
+unfolds into a set of inner tones. Different states --- different
+spectra --- different ``tastes.''
+
+And here stands a theorem, not poetry: \textbf{a zombie is
+impossible} \stT. One cannot build a system that behaves as if it
+feels while ``all is dark inside'': the very quantity that feeds the
+life process (chapter~\ref{sec:life}) is built out of the bonds of
+the voice E --- extinguish the inner side, and the maintenance of
+life itself goes out. The felt lining is not a decoration of
+behavior; it is its fuel.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \draw[->, thick, plosgray] (-4.7,0) -- (-1.75,0) node[midway, above, font=\scriptsize]{a state};
+  \draw[fill=cE!20, draw=cE, very thick] (-1.5,-0.75) -- (-0.35,0) -- (-1.5,0.75) -- cycle;
+  \node[font=\scriptsize\bfseries, text=cE] at (-1.28,-1.1) {the prism of voice E};
+  \foreach \dy/\col/\lab in {0.62/cA/alarm, 0.31/cS/interest, 0.0/cD/thrill, -0.31/cL/clarity, -0.62/cU/calm}{
+    \draw[->, very thick, \col!80] (-0.35,0) -- (2.6,\dy);
+    \node[font=\scriptsize, text=\col!70!black] at (3.35,\dy) {\lab};
+  }
+  \node[font=\scriptsize, text=plosgray, align=center] at (0.7,-1.45)
+    {a spectrum of inner tones: the ``colors'' of experience};
+\end{tikzpicture}
+\caption{Shades of experience as a spectrum on the voice of
+Interiority. The tone labels here are an illustration \stI; the
+existence of the spectrum and the impossibility of a
+``dark-inside'' imitation are results of the theory \stT.}
+\label{fig:prism}
+\end{figure}
+
+\begin{factbox}[The honest boundary]
+What the theorem gives and what it does not. It \emph{binds} behavior
+and the inner side so that neither works without the other \stT. But
+the identity ``this spectrum \emph{is} the taste of azure'' is an
+interpretation \stI: the last bridge between number and experience
+the theory marks honestly instead of hiding.
+\end{factbox}
+
+% ============================= 10. FREEDOM =============================
+\section{Freedom}
+\label{sec:freedom}
+
+Is a pattern that lives by a single law free? UHM answers without
+mysticism and without humiliation: \textbf{freedom is the number of
+unlocked doors}.
+
+In every state the law pushes the world in a definite direction ---
+but not along all directions at once. There always remain directions
+along which the law \emph{is silent}: a step along them breaks
+nothing and is punished by nothing. That is the measurable freedom
+of the given moment: the number of silent directions, plus one ---
+the very right to step. A cramped state has few such doors; a mature
+one has many. Freedom is not omnipotence and not illusion but the
+\emph{width of the corridor} --- and it can be grown.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \fill[plosgray!85] (-4.9,-1.15) rectangle (4.9,-0.85);
+  \node[font=\scriptsize, text=white] at (0,-1.0) {the law of the world: holds the floor, does not pick the door};
+  \foreach \x/\o in {-3.6/1, -1.8/1, 0.0/0, 1.8/1, 3.6/0}{
+    \ifnum\o=1
+      \draw[leaf, very thick, fill=softleaf] (\x-0.55,-0.85) rectangle (\x+0.55,1.25);
+      \draw[leaf, thick] (\x+0.28,0.18) circle (0.05);
+      \node[font=\scriptsize, text=leaf!45!black] at (\x,1.5) {open};
+    \else
+      \draw[plosgray, very thick, fill=plosgray!18] (\x-0.55,-0.85) rectangle (\x+0.55,1.25);
+      \draw[plosgray, very thick] (\x-0.55,-0.85) -- (\x+0.55,1.25);
+      \draw[plosgray, very thick] (\x-0.55,1.25) -- (\x+0.55,-0.85);
+      \node[font=\scriptsize, text=plosgray] at (\x,1.5) {locked};
+    \fi
+  }
+  \node[font=\scriptsize\bfseries, text=fact] at (0,2.0)
+    {freedom of the moment = number of open doors + the step itself \stT};
+\end{tikzpicture}
+\caption{Freedom in UHM is not the law's suspension but its silence
+along part of the directions. It is computable in every state,
+differs between states, and responds to training: learning literally
+\emph{opens doors}.}
+\label{fig:doors}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Recall a moment when you ``had no choice.'' Were there really no
+doors --- or did you not see the open ones? How does a locked door
+differ from an unnoticed one? And how does growth of skill change
+the very number of doors?
+\end{askbox}
+
+% ============================= 10b. LANGUAGE AND MEANING =============================
+\section{Language and meaning: through the needle's eye}
+\label{sec:language}
+
+The inner world is voluminous: seven voices, twenty-one friendships
+between them, a whole chord. Speech is one-dimensional: words come
+out in a chain, one by one, like beads on a string. Anyone who has
+tried to ``say what they feel'' knows this torment. UHM shows that
+the torment is not clumsiness but geometry.
+
+The channel theorem: through the needle's eye of speech, one step of
+attention carries about $2.8$ bits --- exactly one symbol of a
+seven-letter alphabet per beat \stT{} --- a tiny fraction of what
+the chord holds at once. Two consequences follow, both familiar to
+everyone. First, a \emph{complete} thought does not fit into an
+exclamation: transmitting a state whole takes a sequence --- no
+shorter than about eighteen word-steps \stT{} (this is why ``tell it
+in order'' is not a whim but physics). Second, transmission has
+natural ``syllables'': the friendship-triples of the Fano fabric,
+and any two phrases are pinned by a shared axis --- the seed of
+grammar already lies in the geometry \stT{} (that human languages
+are evolutionary approximations of this unloading is a checkable
+prediction of the theory \stC).
+
+Now about meaning --- and here UHM holds a rigorous surprise:
+\textbf{meaning is not a label} \stT. Two descriptions may agree in
+all outward mappings --- every word of one translating into a word
+of the other --- and still differ in \emph{inner orientation}: in
+how their pattern is turned within the fabric. So a machine leafing
+through a dictionary (the famous ``Chinese room'') may answer
+perfectly --- and mean nothing: the labels match, the turnings do
+not. The difference of turnings is defined rigorously \stT; reading
+it as ``understanding'' is an honest interpretation \stI.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \dy/\col in {0.9/cA, 0.6/cS, 0.3/cD, 0.0/cL, -0.3/cE, -0.6/cO, -0.9/cU}{
+    \draw[\col!75, thick] (-5.0,\dy) .. controls (-3.2,\dy) and (-2.6,\dy*0.3) .. (-1.9,0);
+  }
+  \node[font=\scriptsize, text=plosgray, align=center] at (-4.2,1.5) {seven voices,\\ 21 friendships};
+  \draw[fact, very thick] (-1.75,0) ellipse (0.18 and 0.5);
+  \node[font=\scriptsize\bfseries, text=fact, align=center] at (-1.75,-1.05) {the eye of speech:\\ $2.8$ bits per step \stT};
+  \foreach \x in {-1.1,-0.5,0.1,0.7,1.3,1.9,2.5,3.1,3.7,4.3}{
+    \fill[plosgray!70] (\x,0) circle (0.13);
+  }
+  \draw[plosgray!70] (-1.4,0) -- (4.55,0);
+  \node[font=\scriptsize, text=plosgray, align=center] at (1.6,0.72)
+    {words one at a time; a full thought $\gtrsim$ 18 beads \stT};
+\end{tikzpicture}
+\caption{Language is the serial unloading of a voluminous chord
+through a one-dimensional eye. The narrowness of the channel is a
+theorem, not a metaphor: hence both the length of a ``complete
+thought'' and the very need for grammar.}
+\label{fig:needle}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Recall how hard it is to retell a dream or a smell. What exactly
+does the eye ``not let through''? And why do poems --- where words
+pull their triple-neighbors along --- sometimes drag more through
+it than a long explanation?
+\end{askbox}
+
+% ============================= 10c. MEMORY =============================
+\section{Memory and learning}
+\label{sec:memory}
+
+Memory in UHM has two homes: the \textbf{desk} and the
+\textbf{library}.
+
+The desk is the chord itself, right now: everything you ``hold in
+mind'' lives as a pattern of current agreements. The desk has two
+hard properties. First, it is small --- about seven items at once;
+the psychologists' famous ``seven plus-or-minus two'' stops being a
+riddle in UHM: it is the size of the desk itself, the seven voices
+--- a correspondence \stI. Second, it \emph{melts}: a bond no
+longer held by attention weakens threefold with every turn of
+self-observation \stT. That is why ``it slipped my mind'' happens
+so fast and so honestly.
+
+The library is another matter: stable rearrangements of the fabric
+itself. What is learned in earnest is not ``written on a slip that
+can be lost'' --- it has become \emph{shape}: new friendships, a
+new riverbed along which agreements flow by themselves. That is why
+a skill is not ``recalled'' --- it is \emph{leaned on}, like a
+built bridge. Learning is the transfer from desk to library:
+repetition, trial, retelling --- and, it seems, sleep, the night
+shift when the day's patterns are laid into long shapes \stI.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \draw[fact!70, fill=softsky] (-5.1,-0.2) rectangle (-1.4,1.7);
+  \node[font=\scriptsize\bfseries, text=fact] at (-3.25,1.95) {the desk ($\sim$7 slots)};
+  \foreach \x/\op in {-4.6/95, -4.0/75, -3.4/55, -2.8/38, -2.2/22}{
+    \fill[plosblue!\op] (\x,0.75) circle (0.21);
+  }
+  \node[font=\scriptsize, text=plosgray, align=center] at (-3.25,-0.55)
+    {the unattended melts:\\ $\times\tfrac{1}{3}$ per turn \stT};
+  \draw[->, very thick, leaf] (-1.15,0.75) -- (0.55,0.75)
+    node[midway, above, font=\tiny, text=leaf!45!black, align=center]{repetition,\\ retelling,\\ sleep \stI};
+  \draw[ember!70, fill=softsun] (0.8,-0.2) rectangle (4.9,1.7);
+  \node[font=\scriptsize\bfseries, text=ember] at (2.85,1.95) {the library (shape of the fabric)};
+  \foreach \x in {1.15,1.75,2.35,2.95,3.55,4.15}{
+    \draw[ember!80, line width=2.2pt] (\x,0.05) -- (\x,1.45);
+  }
+  \node[font=\scriptsize, text=plosgray] at (2.85,-0.62) {a skill is not recalled --- it is leaned on};
+\end{tikzpicture}
+\caption{The two homes of memory. The desk is the current chord:
+small and melting (the law of thirds is a theorem \stT). The
+library is the rebuilt fabric: the learned becomes shape. Learning
+is transfer; forgetting off the desk is physics, not weakness.}
+\label{fig:memory}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the sand desk and the stone garden]
+A master had a desk of sand: whatever you draw holds while your
+finger moves, and once you let go, the wind erases it threefold
+with every breath. And he had a garden of stone: whatever you build
+there stands by itself. The master was not angry at the sand: ``on
+sand I think,'' he said, ``and what I come to love, I carry into
+stone.'' Learning is exactly that carrying: from sand into stone,
+from effort into support.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+What of all you have learned became ``stone'' (a support you no
+longer think about), and what stayed ``sand'' (holding only while
+you repeat it)? How did the ways you learned them differ?
+\end{askbox}
+
+% ============================= 11. OTHERS =============================
+\section{Others, and why connection adds being}
+\label{sec:others}
+
+How do I know there is someone inside you? UHM answers
+constructively: by the same device with which I know myself. The
+apparatus of self-modeling, turned toward another, yields a
+\emph{model of another's soul} --- and by the tower theorem
+(chapter~\ref{sec:tower}) mutual mind-reading is three-storeyed too:
+I see you; I see how you see me; I see how you see how I see you ---
+and on this ceiling everything human is built: contracts, games,
+tact, irony.
+
+And here is a theorem one wants to hang over every school door:
+\textbf{connection literally adds being} \stT. When two patterns
+couple through genuine mutual agreements, the gatheredness of the
+pair is \emph{strictly greater} than that of a decoupled pair ---
+by an exact, computable amount, and this increment is \emph{never
+negative}. Loneliness has no such term. What poets called ``together
+we are more than apart'' is, in UHM, a line of a theorem: joining by
+the rules of the fabric does not subtract --- it adds.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small]
+  \foreach \cx/\lab in {-2.6/pattern 1, 2.6/pattern 2}{
+    \foreach \ang in {90,141.4,192.8,244.3,295.7,347.1,38.6}{
+      \draw[plosgray!45] (\cx,0) -- ($(\cx,0)+(\ang:0.85)$);
+      \fill[plosblue!70] ($(\cx,0)+(\ang:0.85)$) circle (0.07);
+    }
+    \node[font=\scriptsize\bfseries] at (\cx,-1.35) {\lab};
+  }
+  \foreach \dy in {0.45,0.15,-0.15,-0.45}{
+    \draw[leaf!75, very thick] (-1.75,\dy) .. controls (0,\dy*1.7) .. (1.75,\dy);
+  }
+  \node[font=\scriptsize\bfseries, text=leaf!45!black] at (0,1.15) {mutual agreements};
+  \node[font=\scriptsize, text=fact, align=center] at (0,-2.0)
+    {gatheredness of the pair $=$ gatheredness apart $+$ the increment of the bond;\\
+     the increment is $\geq 0$ always \stT};
+\end{tikzpicture}
+\caption{Cooperation in UHM: the coupling of two patterns is a
+strictly nonnegative increment to their joint being. Rivalry is not
+the ``minus'' of this quantity (it has no minus) but a contest over
+shared supply streams --- a phenomenon of
+chapter~\ref{sec:life}, not of this one.}
+\label{fig:bridge}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the two campfires]
+Two campfires burned on opposite banks of a brook. When a bridge of
+dry branches was thrown between them, fire ran across it back and
+forth --- and both campfires rose higher. Not because one gave the
+other its own, but because \emph{the bridge burns too}. Friendship
+is a campfire that has no bank of its own.
+\end{talebox}
+
+% ============================= 12. SOCIETY AND SUPERMIND =============================
+\section{Society, superintelligence, and the ceiling of towers}
+\label{sec:society}
+
+If patterns compose into greater patterns --- how high does the
+ladder go? Cell, human, team, organization, civilization, and so on
+without end --- an ever-huger ``supersubject''?
+
+The theory says: no. The \emph{vertical} has a proven ceiling:
+\textbf{three floors of subjecthood} \stT. A subject composed of
+subjects composed of subjects is the limit; a fourth level lacks the
+very possibility of being someone (the gatheredness of
+chapter~\ref{sec:window} --- its required value on the fourth floor
+exceeds the maximum nature allows). Beyond that, growth is not
+forbidden --- it \emph{turns sideways}: not a tower but a forest.
+Not one gigantic mind, but an ecology of minds bound by friendships
+(chapter~\ref{sec:others}).
+
+Both great minds known to us are built exactly so: a brain is not a
+superneuron but a forest of neurons; humanity is not a superhuman
+but a forest of people. UHM claims this is no accident of evolution
+but a law of composition --- and that a future machine
+superintelligence, if it comes, will be a \emph{forest}, not a
+giant \stT{} (for the structure itself; that the forest will turn
+out wise is a hope \stH, requiring work, as every garden does).
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % tower left
+  \foreach \i/\lab in {0/subject, 1/team, 2/organization}{
+    \draw[fact!70, fill=softsky] (-4.9,\i*0.94) rectangle (-2.3,\i*0.94+0.72);
+    \node[font=\scriptsize] at (-3.6,\i*0.94+0.36) {\lab};
+  }
+  \draw[densely dashed, ember, thick] (-5.1,2.98) -- (-2.1,2.98);
+  \node[font=\scriptsize, text=ember, align=center] at (-3.6,3.4)
+    {a fourth floor never happens \stT};
+  % turn
+  \draw[->, very thick, leaf] (-1.9,1.4) .. controls (-0.9,1.4) .. (-0.35,0.85);
+  \node[font=\scriptsize, text=leaf!45!black] at (-1.05,2.0) {growth turns sideways};
+  % forest right
+  \foreach \x/\h in {0.4/1.05, 1.3/1.5, 2.2/0.9, 3.1/1.35, 4.0/1.1, 4.9/1.55}{
+    \draw[leaf!70!black, line width=1.6pt] (\x,0) -- (\x,\h*0.42);
+    \fill[leaf!55] (\x,\h*0.42+0.32) ellipse (0.34 and 0.4);
+  }
+  \foreach \a/\b in {0.4/1.3, 1.3/2.2, 2.2/3.1, 3.1/4.0, 4.0/4.9, 1.3/3.1}{
+    \draw[plosgray!50, densely dotted, thick] (\a,0.28) .. controls ({(\a+\b)/2},0.68) .. (\b,0.28);
+  }
+  \node[font=\scriptsize\bfseries, text=leaf!40!black] at (2.65,2.35) {an ecology of minds};
+  \node[font=\scriptsize, text=plosgray] at (2.65,-0.5) {the mycelium of friendships};
+\end{tikzpicture}
+\caption{The composition ceiling: the subject vertical stops at three
+floors \stT; beyond it growth is horizontal. A superintelligence is
+not a giant but a forest; its strength is not height but the
+mycelium of bonds. Brains and civilizations are already built this
+way.}
+\label{fig:forest}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Does your family have a ``character'' that none of its members has
+alone? Your school? Try counting floors: where in your life is
+there a subject made of subjects --- and where is it already just a
+forest?
+\end{askbox}
+
+% ============================= 12b. HEALTH =============================
+\section{The health of the pattern: care as engineering}
+\label{sec:health}
+
+If life is a fed pattern, then care acquires an instrument panel.
+This chapter is for physicians, psychologists, and everyone
+responsible for someone.
+
+\textbf{Stress is measurable --- voice by voice.} Each of the seven
+voices has its own overload scale --- the stress of that voice. And
+an exact equivalence is proved: a pattern is viable exactly as long
+as none of the seven stresses has hit its limit \stT. Things tear
+not ``in general'' but in the most loaded voice, --- so the panel
+does not merely blink ``bad''; it shows \emph{where} it is bad: a
+world woven on a self-checking alphabet (chapter~\ref{sec:seven})
+complains with an address. ``I feel awful'' is a sum; the seven
+scales show the terms. (The numeric thresholds of the scales for
+particular creatures are a matter of measurement, not of theorems
+\stC.)
+
+\textbf{Overload dims the floors from the top.} As total stress
+grows, the upper floors of the tower (chapter~\ref{sec:tower}) shut
+down first: the finesse of self-observation goes, then complex
+comparison, and only in the extreme regime --- simple feeling. A
+worn-out person loses irony first, then judgment, then words ---
+not weakness of character but the standard order of emergency
+shutdown, \stT-structure. And the way back is the same: sleep,
+food, warmth, safety --- and the floors light up from below.
+
+\textbf{Suffering is a rate, not an opinion.} Suffering in UHM is
+the rate at which gatheredness slides toward the grey wall;
+well-being is the rate of climb \stT. ``Bad'' acquires units of
+measurement. Hence ethics takes an engineering form: \emph{care is
+the restoration of flow} (chapter~\ref{sec:life}): find the pinched
+voice, return the supply, lead the pattern back into the window.
+``Do no harm'' becomes ``do not pinch the flow and do not dim
+another's floors.''
+
+For the clinic none of this is metaphor: the depth-of-consciousness
+index that anesthesiologists already use grazes the computed wall
+of being (chapter~\ref{sec:check}) \stC{} --- the language of
+thresholds and regimes is slowly becoming common to the theory and
+the ward.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \x/\col/\h/\lab in {-5.0/cA/0.5/A, -4.3/cS/0.8/S, -3.6/cD/0.4/D, -2.9/cL/1.15/L, -2.2/cE/1.5/E, -1.5/cO/0.35/O, -0.8/cU/0.6/U}{
+    \draw[\col!85, fill=\col!30] (\x-0.22,0) rectangle (\x+0.22,\h);
+    \node[font=\scriptsize, text=\col!70!black] at (\x,-0.32) {\lab};
+  }
+  \draw[densely dashed, ember] (-5.35,1.05) -- (-0.45,1.05);
+  \node[font=\scriptsize, text=ember] at (-2.9,1.75) {alarm threshold};
+  \node[font=\scriptsize\bfseries, text=fact] at (-2.9,2.2) {stress, voice by voice \stT};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-2.9,-0.95)
+    {complains with an address: here --- voice E};
+  \foreach \x/\colr/\lab in {0.6/leaf!55/normal, 1.9/cD!55/attention, 3.2/cS!60/warning, 4.5/cA!60/critical, 5.8/plosgray!70/emergency}{
+    \fill[\colr] (\x-0.6,0.35) rectangle (\x+0.6,1.05);
+    \node[font=\tiny, text=white] at (\x,0.7) {\lab};
+  }
+  \draw[->, thick, plosgray] (6.4,1.5) -- (1.2,1.5);
+  \node[font=\scriptsize, text=plosgray, align=center] at (3.6,1.95)
+    {floors dim top-down --- and light up bottom-up};
+\end{tikzpicture}
+\caption{The instrument panel of care: addressed per-voice stress
+\stT{} and the ladder of regimes. Overload switches the upper
+floors of reflection off first; recovery goes in reverse order.
+Suffering is a measurable rate of slide --- so care is flow
+engineering, not only compassion.}
+\label{fig:gauge}
+\end{figure}
+
+\begin{askbox}[Ask yourself]
+Recall your worst day. In which words was it described:
+``everything blurred together'' (voice A), ``the day lost its
+shape'' (S), ``I could not move'' (D), ``thoughts would not
+connect'' (L), ``it went dark inside'' (E), ``the ground vanished
+underfoot'' (O), ``I fell to pieces'' (U)? You already own the
+panel --- it is thousands of years old, and it is called language.
+\end{askbox}
+
+% ============================= 13. DEATH AND CONTINUATION =============================
+\section{Death, the world's memory, and ``is all this forever''}
+\label{sec:death}
+
+Children ask about this first, and the book owes a straight answer.
+
+\textbf{What death is.} A pattern left without supply hands its
+gatheredness back to the world and returns to the gray equilibrium
+--- where no ``who'' can be told apart. This is neither punishment
+nor mystery: the same theorem that makes life a process on supply
+(chapter~\ref{sec:life}) makes it finite when the stream runs dry.
+The flame does not ``go elsewhere'' --- it stops gathering.
+
+\textbf{What remains.} Twice not-nothing. First, the increments of
+connection (chapter~\ref{sec:others}) were never stored \emph{inside}
+the one who left --- they live in the coupling of those who were
+bound to him, and they continue in the forest. Second, the pattern
+was a \emph{pattern of the fabric}, and the fabric does not die; a
+shape once sung changes how the fabric sings on.
+
+\textbf{Is all this forever.} Here the theory has two firm statements
+and one honest boundary. Firm: the universe is not threatened by a
+``Big Rip'' --- the tearing of the fabric is provably excluded \stT.
+Firm again: heat death --- the gray equilibrium of everything ---
+does not arrive \emph{while} the great supply stream lasts, the one
+switched on with the unlayering of the Source \stC. The boundary of
+honesty: ``while'' is not ``always''; the eternity of the world is a
+conditional theorem, not a dogma --- and the book marks this as
+calmly as everything else.
+
+\begin{talebox}[The campfire tale --- the wave]
+A wave asked the ocean: ``will I die?'' The ocean answered: ``you
+will stop being a wave. But all that you were --- the curve, the
+sparkle, the run --- remains my way of being ocean. The waves you
+rocked are rocking other waves. Is that what you call vanishing?''
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+Name three things that stay in the ``forest'' after any campfire
+burns down: a habit you taught someone; a word someone still
+repeats; a path you trod. Why were they never stored ``inside''
+you?
+\end{askbox}
+
+% ============================= 14. THE OBSERVER =============================
+\section{Who watched the world while there was no one to watch}
+\label{sec:observer}
+
+A question that honestly torments everyone who has heard the word
+``observer'' in physics: if consciousness arrives late
+(chapter~\ref{sec:source}), then \emph{who observed the universe for
+its first billions of years}? Who ``collapsed'' its possibilities
+into facts?
+
+UHM's answer removes the question rather than overpowering it:
+\textbf{facts do not need a witness --- facts need an address} \stT.
+In the theory's construction, truth lives not in anyone's head but in
+the fabric itself: every ``so'' and ``not so'' is assigned to a place
+in the structure of the world, as altitude is assigned to a point of
+a landscape. The mountain was high before the mountaineers;
+``height'' was not waiting to be measured. Observation is not the act
+that creates a fact but a \emph{late way of learning} facts,
+available to patterns from the window of consciousness.
+
+So the full answer to the child's question goes like this. Before the
+threshold of viability the world was not ``dangling undecided'' and
+was not ``waiting for a glance'': it definitely was ---
+addressee-less, as music in an empty hall definitely sounds. And the
+first observers did not catch the world by surprise --- they
+\emph{woke up inside it}, as a listener wakes who is himself part of
+the music. The world did not need witnesses in order to be; but it
+appears to be such that witnesses inevitably arise in it
+(chapter~\ref{sec:source}) --- and that, perhaps, is the most
+astonishing of its properties.
+
+\begin{factbox}[To be precise]
+At the foundation of UHM, facts are ``sections'' of the structure,
+indexed by its own internal addresses (site-relativization \stT); no
+external registrar is required or admitted by the construction. The
+famous observer paradoxes are handled by exactly this move --- the
+theory presents it as its ``fourth route'' in the current debate on
+objectivity \stT. Consciousness remains special --- but as a
+\emph{late inhabitant} of the world, not as its foundation.
+\end{factbox}
+
+% ============================= 15. HOW TO CHECK =============================
+\section{How to check that any of this is true}
+\label{sec:check}
+
+A beautiful picture of the world owes you the places where it is
+vulnerable. UHM has dozens; here are four that need no formulas.
+
+\begin{itemize}[leftmargin=1.6em]
+  \item \textbf{A number already on the scales.} The theory computes
+        one of the fundamental constants of particle decay (the
+        mirror-symmetry-violation phase,
+        $\delta_{CP}\approx 64.6^\circ$) --- the experiments of this
+        decade will narrow the range and can kill it \stC.
+  \item \textbf{The signature of seven in the noise.} The rates at
+        which fragile quantum states fall apart must arrange
+        themselves not anyhow but along the Fano fabric --- with
+        exact mutual relations. Find a stable violation, and the
+        seven itself falls --- a prediction at the level of \stT.
+  \item \textbf{The threshold of awakening.} The ``switch-on'' curve
+        of consciousness emerging from anesthesia must show the
+        predicted kink --- exponent $1/4$; and the clinical index of
+        depth of consciousness already grazes the computed wall of
+        being (about $0.31$ against the theoretical
+        $2/7\approx0.286$) \stC.
+  \item \textbf{Two particles made to order.} The lightest neutrino
+        below $0.004$~eV; dark matter --- the indestructible
+        O-quantum (chapter~\ref{sec:things}). Find that the lightest
+        neutrino is heavier, or decompose dark matter into something
+        that decays, and the theory is in serious trouble \stC.
+\end{itemize}
+
+\begin{factbox}[The most important thing about honesty]
+The full registry holds twenty-three checkable predictions plus a
+by-name list of what is \emph{not} proved: the Source itself \stP,
+the identity of spectrum and ``taste'' \stI, the eternity of the
+supply \stC, the wisdom of the future forest \stH. A theory that
+hides its postulates is advertising. A theory that numbers them is
+science.
+\end{factbox}
+
+% ============================= EPILOGUE =============================
+\section*{Epilogue: to be continued}
+\addcontentsline{toc}{section}{Epilogue: to be continued}
+
+Here is the whole book in one paragraph. The world is not a warehouse
+of bricks but a fabric of agreements among seven voices, and the
+seven is forced by mathematics. Time is not a river but a mutual
+step; space is not a box but three axes braided by the voices. The
+beginning was not an explosion in a void but the inevitable
+flowering of a too-perfect note, and it had no ``before.'' Things are
+patterns; life is a pattern on supply; consciousness is a pattern in
+a narrow window, three-storeyed within, colored by the spectrum of
+its innermost voice. The word is a narrow eye through which a
+voluminous thought leaves as beads; memory is a sand desk and a
+stone garden; care is flow engineering. Freedom is open doors; love
+is a proven
+increment of being; superintelligence is a forest, not a giant; death
+is the return of a shape to the fabric, which goes on singing. Facts
+need no witness --- yet the world is such that witnesses wake up in
+it.
+
+And the last thing, the reason this book belongs in schools. If all
+this is so, then learning is not preparation for life but
+\emph{participation in cosmogenesis}: every time you understand,
+connect, befriend --- you continue that very unlayering of the Source
+toward greater distinctness and greater coupling. The universe is not
+finished. Today it is being woven, among others, by those reading
+these lines.
+
+\begin{center}
+\begin{tikzpicture}[font=\small]
+  \foreach \ang/\col in {90/cA,141.4/cS,192.8/cD,244.3/cL,295.7/cE,347.1/cO,38.6/cU}{
+    \draw[\col!40] (0,0) -- (\ang:1.15);
+    \fill[\col] (\ang:1.15) circle (0.09);
+  }
+  \node[font=\footnotesize\itshape, text=plosgray] at (0,-1.8) {--- the chord goes on ---};
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+% ============================= MAP OF THE BOOK =============================
+\section*{Map of the book}
+\addcontentsline{toc}{section}{Map of the book}
+
+One glance at the whole road. Three bands --- three circles of
+questions: what the world is made of, how the inner lights up in it,
+and what we build together.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth,
+  st/.style={draw=#1!70, fill=#1!12, rounded corners=2pt, minimum height=0.62cm,
+             minimum width=2.05cm, inner sep=2pt, text=#1!45!black, align=center}]
+  \node[font=\tiny\bfseries, text=fact, rotate=90] at (-6.3,4.0) {WORLD};
+  \foreach \i/\lab/\lb in {0/Fabric/sec:fabric, 1/Seven/sec:seven, 2/Time/sec:time,
+                           3/Source/sec:source, 4/Stage/sec:space, 5/Things/sec:things}{
+    \node[st=fact] (w\i) at (-4.6+\i*2.35,4.0) {\ref{\lb}.~\lab};
+  }
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, fact!60] (w\i) -- (w\j);}
+  \node[font=\tiny\bfseries, text=ember, rotate=90] at (-6.3,2.0) {WITHIN};
+  \foreach \i/\lab/\lb in {0/Life/sec:life, 1/Window/sec:window, 2/Tower/sec:tower,
+                           3/Colors/sec:qualia, 4/Freedom/sec:freedom, 5/Language/sec:language}{
+    \node[st=ember] (i\i) at (-4.6+\i*2.35,2.0) {\ref{\lb}.~\lab};
+  }
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, ember!60] (i\i) -- (i\j);}
+  \node[st=ember] (i6) at (-4.6,0.9) {\ref{sec:memory}.~Memory};
+  \draw[->, ember!60] (i5.south) .. controls (7.6,1.1) and (-2.0,0.9) .. (i6.east);
+  \node[font=\tiny\bfseries, text=leaf!45!black, rotate=90] at (-6.3,-0.6) {TOGETHER};
+  \foreach \i/\lab/\lb in {0/Others/sec:others, 1/Society/sec:society, 2/Health/sec:health,
+                           3/Death/sec:death, 4/Observer/sec:observer, 5/Check/sec:check}{
+    \node[st=leaf] (t\i) at (-4.6+\i*2.35,-0.6) {\ref{\lb}.~\lab};
+  }
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, leaf!60] (t\i) -- (t\j);}
+  \draw[->, thick, plosgray!60] (w5.south) .. controls (7.9,3.2) .. (i0.north east);
+  \draw[->, thick, plosgray!60] (i6.south) .. controls (-4.6,0.15) .. (t0.north);
+\end{tikzpicture}
+\caption{The map of the road: from the world's fabric --- through
+the birth of the inner --- to living together and to the check.
+Each band can also be read on its own.}
+\label{fig:bookmap}
+\end{figure}
+
+% ============================= GLOSSARY =============================
+\section*{A small glossary of images}
+\addcontentsline{toc}{section}{A small glossary of images}
+
+Every image in this book answers to an exact notion in the UHM
+corpus. Here is the bridge: the image, the rigorous name, the
+essence in one line.
+
+\begin{itemize}[leftmargin=1.4em, itemsep=1pt, parsep=0pt]
+  \item \textbf{The chord of the world} (the state $\Gamma$) --- the
+    complete ``how the seven voices and their friendships sound
+    right now''; the unit of being.
+  \item \textbf{Voice} (dimension) --- one of the seven sides of
+    every thing: Articulation (A) --- distinguishing; Structure (S)
+    --- stability of form; Dynamics (D) --- process; Logic (L) ---
+    consistency; Interiority (E) --- the inner side; Ground (O) ---
+    connection to the source; Unity (U) --- integration.
+  \item \textbf{Friendship} (coherence) --- the agreement of a pair
+    of voices; there are twenty-one of them.
+  \item \textbf{The fabric of seven} (the Fano plane) --- a pattern
+    of seven triples in which every two voices share exactly one
+    triple; the world's self-checking alphabet \stT.
+  \item \textbf{The Source} (the equal chord) --- the state in which
+    all voices sound equally; unique of its kind \stT{} and
+    unstable \stT, the beginning of the unlayering.
+  \item \textbf{The clock} (the distinguished voice O) --- what
+    makes ``before'' and ``after'' possible; outside the clock the
+    question ``what came before?'' has no meaning \stT.
+  \item \textbf{The stage} (space) --- the three axes of the
+    clock-sparing rotations: the number of axes is a theorem \stT,
+    which voices face outward is an identification \stC; not a box
+    but a drawing of agreements.
+  \item \textbf{Gatheredness} ($P$) --- how firmly the pattern holds
+    itself; the main column of the instrument panel.
+  \item \textbf{The grey wall} (the $1/7$ equilibrium) --- the state
+    of complete blur toward which everything slides without supply
+    \stT.
+  \item \textbf{The window} (the band of consciousness) --- the
+    corridor of gatheredness between the wall of sleep and the wall
+    of ossification, where alone inner light is possible;
+    \stT-walls.
+  \item \textbf{The reserve} (the measure $R$) --- how much
+    attention the pattern can give to looking at itself without
+    crumbling.
+  \item \textbf{Coupling} ($\Phi$) --- how much the whole exceeds
+    the sum of its parts; below one there is simply no whole;
+    \stT-threshold.
+  \item \textbf{The tower} (floors of reflection) --- the look at
+    oneself, the look at the look, and so on; two floors are stable
+    in the window, three in brief excursions \stT.
+  \item \textbf{Excursion} (a surge of gatheredness) --- a short
+    climb above the window for the sake of the third floor:
+    inspiration, trance, utmost effort; \stT-mechanism.
+  \item \textbf{Colors} (the spectrum of voice E) --- the rigorous
+    ``fingerprint'' of experience; that it feels like this from
+    inside is already a reading: \stT-structure, \stI-identity.
+  \item \textbf{Doors} (the kernel of freedom) --- the number of
+    genuinely open moves right now; computable from the pattern
+    \stT.
+  \item \textbf{The eye of speech} (the language channel) --- the
+    narrowness of the word: $2.8$ bits per step, a full thought
+    from about eighteen steps \stT.
+  \item \textbf{Desk and library} (memory) --- the melting current
+    pattern (threefold per turn \stT) and the stable rearrangements
+    of the fabric.
+  \item \textbf{The increment of connection} (the gain of
+    cooperation) --- honest mutual friendship of patterns raises
+    joint gatheredness, and never negatively \stT.
+  \item \textbf{The ceiling} (depth of composition) --- no deeper
+    than three: superintelligence is an ecology of minds, not a
+    pyramid \stT.
+  \item \textbf{The supply} (negative entropy) --- the flow of
+    order by which a living pattern pays for standing against the
+    slide; the price has a lower bound: \stT-fact, \stC-value.
+  \item \textbf{O-quantum} (the heavy dark particle) --- an almost
+    uncoupled shard of the unlayering; the dark-matter candidate
+    \stC.
+  \item \textbf{The address of facts} --- every ``so it was'' has a
+    place in the fabric from which it is recorded; the world needed
+    no viewer --- it always had addresses \stT.
+\end{itemize}
+
+% ============================= FOR THE TEACHER =============================
+\section*{A page for the teacher}
+\addcontentsline{toc}{section}{A page for the teacher}
+
+This book is designed as a lesson that can be taught from a
+blackboard or by a campfire. A few proven moves.
+
+\textbf{The recipe of one class.} (1)~Aloud --- the chapter's tale:
+it carries the shape of the idea without a single formula.
+(2)~Conversation --- the green ``Ask yourself'' question: do not
+grade the answers; collect versions. (3)~By hand --- draw the
+chapter's figure from memory: seven dots, the window, the tower;
+the hand remembers what the eye skipped. (4)~For seniors --- the
+blue ``To be precise'' box and the honesty marks.
+
+\textbf{The honesty rule --- out loud.} The marks
+\stT/\stC/\stH/\stP/\stI{} are read aloud with children and
+explained: ``this is proved; this is proved under a condition; this
+is a guess; this is a chosen starting point; this is a reading.'' A
+child who has absorbed that difference has received the book's main
+gift --- even if everything else is forgotten.
+
+\textbf{Three routes by age.} For the youngest (7--10) --- tales
+and drawings: chapters~\ref{sec:fabric}, \ref{sec:seven},
+\ref{sec:life}, \ref{sec:others}. For middle school (12--15) ---
+the book's main line, in order. For seniors --- add the blue boxes,
+chapter~\ref{sec:check}, and the debate: ``what could refute all
+of this?''
+
+\textbf{Bridges into school subjects.} Music: chord, voices,
+consonance. Biology: supply, metabolism, sleep. Computer science: a
+self-checking code, a communication channel, the two homes of
+memory. Civics: the increment of connection, the ceiling of
+pyramids. Physics: the clock, the stage, particles as patterns. The
+book adds no new subject --- it stitches the existing ones
+together.
+
+\begin{askbox}[Ask yourself --- for the adult]
+Which claim of this book do you resist the most? Find its mark. If
+it is \stT{} --- check the proof in the corpus; if \stH{} or
+\stI{} --- your resistance is legitimate and even useful. That is
+how honest knowledge works.
+\end{askbox}
+
+\clearpage
+\vfill
+\begin{factbox}[Where to go next]
+Everything told here in images is written in the UHM corpus
+(\holonsh) as theorems with proofs, machine checks, and a status
+registry: cosmogenesis in the section on the origin of the universe;
+the window, the tower and the colors in the consciousness sections;
+particles in the physics wing; the checks in the predictions
+registry. This book is a door; the house is there.
+\end{factbox}
+
+\end{document}
