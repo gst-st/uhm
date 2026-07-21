@@ -66,6 +66,16 @@
   fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=2pt, breakable}
 \newtcolorbox{claimbox}[1][]{colback=predictioncolor, colframe=green!40!black,
   fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=2pt, breakable}
+% --- pedagogical thread (three voices, used throughout) ---
+\newtcolorbox{mythbox}[1][]{colback=talosamber!7, colframe=talosamber!85!black,
+  fonttitle=\bfseries\itshape, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
+  before title={\small}, left=6pt, right=6pt}
+\newtcolorbox{zerobox}[1][]{colback=plosblue!6, colframe=plosblue!70!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=3pt, breakable,
+  left=6pt, right=6pt}
+\newtcolorbox{trybox}[1][]{colback=predictioncolor!70, colframe=green!45!black,
+  fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
+  left=6pt, right=6pt}
 
 % === CUSTOM COMMANDS (shared with UHM paper + SYNARC-Omega) ===
 \newcommand{\Gam}{\ensuremath{\Gamma}}
@@ -207,6 +217,7 @@ coherence matrix, UHM, SYNARC-Omega, architectural monism.
 \newpage
 
 % === SECTIONS ===
+\input{sections/00-genesis}
 \input{sections/01-introduction}
 \input{sections/02-collapse}
 \input{sections/03-substrate}

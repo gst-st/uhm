@@ -13,6 +13,48 @@ real time \emph{today}; and (iii) UHM, CC, \SYNARC{}, and \TALOS{} compose into 
 single stack --- a universal architecture for instantiating \emph{any}
 self-observing organismic system.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth,
+  blk/.style={draw, rounded corners, thick, align=center, minimum height=7.5mm}]
+  % SYNARC mind
+  \node[blk, fill=plospurple!10, draw=plospurple, minimum width=11.6cm] (mind) at (2.6,3.05)
+    {\textbf{\SYNARC{} --- the mind (software):} cognitive complex $\Cog_0{\to}\Cog_3$ \;$\cdot$\; goals $+$ curiosity \;$\cdot$\; \textsc{Diakrisis}};
+  % ABI line
+  \draw[very thick, dashed, plosgray] (-3.35,2.35) -- (8.6,2.35) node[pos=0.97, above left, plosgray, fill=white, inner sep=1pt]{\tiny ABI (\S\ref{sec:abi}): identity, no marshalling};
+  % TALOS body: register + tick + fabric
+  \node[blk, fill=plosblue!10, draw=plosblue!70!black, minimum width=3.9cm] (reg) at (-1.35,1.3)
+    {\textbf{state register}\\ \DM{} --- $784$~B in L1};
+  \node[blk, fill=plosblue!14, draw=plosblue!70!black, minimum width=3.6cm] (tick) at (2.6,1.3)
+    {\textbf{tick engine} $\LindOmega$\\ work $\cdot$ forget $\cdot$ learn};
+  \node[blk, fill=talosamber!12, draw=talosamber, minimum width=3.4cm] (fab) at (6.6,1.3)
+    {\textbf{Fano fabric}\\ 7 buses $=$ code $=$ ISA};
+  \node[blk, fill=red!8, draw=red!60!black, minimum width=3.4cm] (port) at (-1.35,-0.1)
+    {\textbf{power port}\\ $r(\rho_{\mathrm{env}}{-}\Gam)$; nail $=$ halt};
+  \node[blk, fill=gray!10, minimum width=3.6cm] (tel) at (2.6,-0.1)
+    {\textbf{telemetry}\\ $P,R,\Phi,D,\sigma,C$ $+$ syndrome $s$};
+  \node[blk, fill=green!10, draw=green!45!black, minimum width=3.4cm] (tower) at (6.6,-0.1)
+    {\textbf{tower} $\le 3$ deep\\ then: ecology (\textsc{Fanos})};
+  % arrows
+  \draw[<->, thick] (reg) -- (tick);
+  \draw[<->, thick] (tick) -- (fab);
+  \draw[->, ultra thick, red!60!black] (port) -- (reg);
+  \draw[->, thick, plosgray] (tick) -- (tel);
+  \draw[->, thick, green!45!black] (fab) -- (tower);
+  \draw[<->, thick, plospurple] (2.6,2.35) -- (tick.north);
+  % ecology dots
+  \foreach \i in {0,1,2}{ \node[draw, green!45!black, circle, inner sep=2.2pt, fill=green!8] at (8.9+0.55*\i,-0.1) {}; }
+  \node[anchor=west, plosgray] at (8.55,-0.62) {\tiny peers, not a super-mind};
+\end{tikzpicture}
+\caption{The machine at a glance. One resident state ($784$~B), one tick
+(three strides), one fabric that is simultaneously network, code, and
+instruction algebra; fed by the power port (whose severance is a
+latency-budgeted halt), reporting full telemetry every tick, composing at
+most three deep and federating beyond as an ecology. The \SYNARC{} mind
+binds by identity across the ABI --- same object, two levels.}
+\label{fig:ataglance}
+\end{figure}
+
 \subsection{One dynamics, three names}
 \label{subsec:one-dynamics}
 
@@ -130,6 +172,21 @@ the full telemetry suite. Real-time ecologies run on hardware that exists.
 observability, and a real-time ecology} --- not the energy floor, because a GPU
 still moves data (\S\ref{sec:energy}, objections O6/O7). It is the V0 rung, and it
 is where every claim in this document except the energy floor is already testable.
+
+\begin{trybox}[Try it --- hold a living holon in your terminal]
+The reference emulator is one file with no dependencies beyond NumPy:
+\begin{center}\texttt{python3 talos\_v0\_emulator.py}\end{center}
+Everything it prints is a claim from this document, checked live: the tick
+preserving trace and positivity, the telemetry suite of
+Table~\ref{tab:observables}, the entropy law, the metabolic floor and its
+frequency-independence, an ecology batch --- and the Source bootstrap. Two
+experiments to try by editing one line each: \emph{(i) pull the nail} ---
+zero the $\kappa(\CohE)$ feedback (the internal power port) and watch $P$
+decay to $1/7$: Theorem T-288 in your terminal, with the halt latency of
+\S\ref{subsec:powerport}; \emph{(ii) starve it slowly} --- scale the
+feedback down and find the ignition threshold where viability is lost
+(T-289). The myth's nail is a one-line edit.
+\end{trybox}
 
 \subsection{The universal architecture}
 \label{subsec:universal}

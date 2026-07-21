@@ -39,6 +39,36 @@ GPU / CPU with \DM{} in L1 and Fano-sparse kernels & emul. & emul. & emul. & \ch
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth]
+  % ladder rails
+  \draw[very thick, talossteel] (0,0) -- (1.4,4.9);
+  \draw[very thick, talossteel] (3.2,0) -- (4.6,4.9);
+  % rungs (y positions along the rails)
+  \foreach \t/\lab/\stat in {%
+    0.06/{\textbf{Rung 0 --- GPU/CPU emulation (exists):} \DM{} in L1, Fano-sparse kernel}/{correctness, telemetry},
+    0.36/{\textbf{Rung 1 --- memristive Fano crossbar:} update in the array}/{first test of B1},
+    0.66/{\textbf{Rung 2 --- neuromorphic Fano core:} event-driven}/{near-term},
+    0.96/{\textbf{Rung 3 --- driven-dissipative device:} Lindblad native}/{approaches the floor}}{
+    \draw[thick, talosamber] ({0+1.4*\t},{4.9*\t}) -- ({3.2+1.4*\t},{4.9*\t});
+  }
+  \node[anchor=west] at (4.9,0.28)  {\textbf{Rung 0 --- GPU/CPU emulation (exists).} correctness + full telemetry; still moves data};
+  \node[anchor=west] at (5.3,1.75)  {\textbf{Rung 1 --- memristive Fano crossbar.} update in the array; first honest test of B1};
+  \node[anchor=west] at (5.7,3.22)  {\textbf{Rung 2 --- neuromorphic Fano core.} event-driven, in-place};
+  \node[anchor=west] at (6.1,4.68)  {\textbf{Rung 3 --- driven-dissipative device.} physics $=$ the tick; near the energy floor};
+  % arrows/axes
+  \draw[->, thick, plosgray] (-0.7,0.1) -- node[left, align=center]{\tiny impedance\\ \tiny falls} (-0.1,4.7);
+
+\end{tikzpicture}
+\caption{The realisability ladder as a ladder. Every rung runs the identical
+logical architecture (T-153) and the identical software; climbing removes
+emulation layers (impedance falls, left arrow) and strengthens the energy
+claim rung by rung. Rung numbers
+match the roadmap of \S\ref{sec:discussion}.}
+\label{fig:ladderfig}
+\end{figure}
+
 The bottom rung is not hypothetical: it is the current \SYNARC{} realisation,
 which holds \DM{} ($784$~bytes) in L1 cache, advances it with a
 Strang-split Fano-sparse kernel at $\sim\!700$--$1400$~FLOPs per tick and

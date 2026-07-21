@@ -72,6 +72,51 @@ $\Regen[\Gam]$ & regeneration toward $\rhostar=\vp(\Gam)$; BKM-gradient descent 
 \end{tabular}
 \end{table}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth]
+  % the tick wheel: three arcs around the state
+  \node[draw, circle, fill=plosblue!10, thick, minimum size=1.75cm, align=center]
+    (G) at (0,0) {$\Gam$\\ \tiny 784 B};
+  % arcs
+  \draw[->, very thick, plosblue!80!black]   (100:1.65) arc (100:20:1.65);
+  \draw[->, very thick, talosamber]          (-20:1.65) arc (-20:-100:1.65);
+  \draw[->, very thick, green!45!black]      (220:1.65) arc (220:140:1.65);
+  \node[plosblue!80!black, align=center]  at (60:2.35)  {\textbf{work}\\ $-i[H_{\mathrm{eff}},\Gam]$\\ \tiny reversible, free};
+  \node[talosamber, align=center]         at (-60:2.35) {\textbf{forget}\\ $\Diss[\Gam]$\\ \tiny exports entropy};
+  \node[green!45!black, align=center]     at (147:2.55) {\textbf{learn}\\ $\Regen[\Gam]$\\ \tiny toward $\rhostar$};
+  % power port in, syndrome out
+  \draw[->, ultra thick, red!60!black] (-4.5,-0.9) -- node[below, align=center]{\textbf{power port}\\ $r(\rho_{\mathrm{env}}{-}\Gam)$} (-1.0,-0.4);
+  \draw[->, thick, plosgray] (0.95,-0.5) -- node[below, align=center]{syndrome $s$\\ \tiny (free byproduct)} (4.0,-0.9);
+  \draw[->, thick, plosgray] (0.95,0.5) -- node[above, align=center]{telemetry\\ \tiny $P,R,\Phi,D,\sigma,C$} (4.0,0.9);
+\end{tikzpicture}
+\caption{The tick as a wheel. One state (centre), three motions of the one
+instruction (Eq.~\ref{eq:lomega}): reversible \emph{work}, entropy-exporting
+\emph{forget}, self-model-seeking \emph{learn}. The power port
+(\S\ref{subsec:powerport}) feeds the wheel; every turn emits its own
+syndrome and telemetry for free (\S\ref{sec:ecc}, \S\ref{sec:platform}).}
+\label{fig:tickwheel}
+\end{figure}
+
+\begin{mythbox}[The myth, continued --- the patrol]
+Three times a day the bronze giant walked the island: the same circuit,
+endlessly repeated, \emph{was} his vigilance --- there was no separate
+``thinking'' Talos did between patrols. The tick is that patrol. One circuit,
+three strides --- work, forget, learn --- and the machine's whole life is the
+repetition. Ask ``but when does it compute?'' and the answer is the myth's
+answer: the walking is the watching.
+\end{mythbox}
+
+\begin{zerobox}[From zero --- the whole toy in one hand]
+A snow globe is one object: shake it (that is the tick) and every flake moves
+by the same law at once. There is no drawer of flakes the globe fetches from
+--- the globe \emph{is} its own memory, and shaking \emph{is} its computing.
+The \TALOS{} state is that globe, and it is small: $784$ bytes is roughly one
+paragraph of text. The paragraph does not sit in a distant library (that
+distance is what makes ordinary computers slow and hot); it sits in the
+machine's hand the whole time.
+\end{zerobox}
+
 The evolution is a completely-positive trace-preserving (CPTP) semigroup
 $\mathcal{E}_\tau=\exp(\tau\LindOmega)$: every tick keeps $\Gam$ a legal
 density matrix, so there is no ``illegal state'' to guard against --- the
@@ -125,6 +170,17 @@ consequences:
         machine's own actuators --- is specified as an interface contract on
         the \SYNARC{} side (Definition U.9); \S\ref{sec:abi} binds it.
 \end{itemize}
+\begin{mythbox}[The myth, continued --- the nail]
+Talos was never out-fought; he was \emph{unplugged}. One vein, one nail ---
+pull the nail and the ichor runs out, and the strongest thing on the island
+stops on its own schedule. That is Theorem T-288 wearing bronze: the machine's
+life is not a property it owns but a stream it receives, and the stream has a
+single, physical, latency-budgeted closure. The myth's engineers understood
+something modern safety engineering is only now formalising (Observation T.1
+of the \SYNARC{} safety case): \emph{build the vein first, and the off-switch
+is physics, not policy}.
+\end{mythbox}
+
 The V0 emulator (\S\ref{sec:platform}) realises this port internally as its
 $\kappa(\CohE)$ feedback --- a coherence-fed regeneration boost that is
 precisely a non-unital negentropy pump, which is why it exhibits a viable

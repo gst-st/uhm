@@ -56,6 +56,19 @@ accelerators) pays the $\times\tfrac19$ on every cross-expert hop, and no
 amount of bandwidth recovers it, because the loss is in \emph{integration},
 not throughput.
 
+\begin{trybox}[Try it --- route with one finger]
+Put a finger on the Fano figure (Figure~\ref{fig:collapse}, right). Game:
+carry a message from $S$ to $E$. Rule: you may only travel along a line, and
+a pair may only meet \emph{through the third point of its own line}. Find the
+line containing both $S$ and $E$ --- it is $\{S,E,U\}$ --- so the message
+goes $S\to U\to E$: the mediator is $U$, and there was nothing to look up,
+because the pair \emph{names} its own relay. Now break the direct path from
+$A$ to $O$ and reroute: their line is $\{A,O,U\}$, so again through $U$ ---
+fault repair with no routing table (\S\ref{sec:ecc}). Every one of the $21$
+pairs plays the same one-move game; the full mediator table is
+Appendix~\ref{app:fano}.
+\end{trybox}
+
 \begin{table}[H]
 \centering\small
 \caption{Interconnect: a $7\times7$ crossbar versus the Fano seven-bus

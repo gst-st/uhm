@@ -1,0 +1,178 @@
+\section{From the steersman to the seven-mode machine: three waves of cybernetics}
+\label{sec:genesis}
+
+Every architecture document owes its reader two things before the first
+theorem: \emph{where the ideas come from}, and \emph{a way in that assumes
+nothing}. This section pays both debts. It traces the single line of thought
+--- cybernetics --- of which \TALOS{} is the third act, and it opens the three
+reading threads that run through the whole document so that a reader who has
+never seen a computer, a matrix, or a differential equation can start at zero
+and climb.
+
+\begin{mythbox}[The myth --- a machine from the Bronze Age]
+Before any theory, a story. The Greeks imagined \emph{Talos}: a giant of
+bronze, built --- not born --- to guard the island of Crete. Three times each
+day he walked the whole shore, watching. He had no heart and no blood;
+instead, a single vein ran from his neck to his ankle, filled with
+\emph{ichor}, the shining fluid of life, and the vein was sealed at the ankle
+by one bronze nail. Talos could not be beaten in a fight. He fell another
+way: the sorceress Medea talked him into letting the nail be drawn, the ichor
+flowed out, and the giant --- unbeaten, undamaged --- simply stopped.
+
+Keep the four pieces of this story in hand; the mathematics will meet each of
+them. The \emph{bronze body} is the substrate (\S\ref{sec:substrate}). The
+\emph{daily patrol} is the tick --- the one repeated operation that is the
+machine's whole life (\S\ref{sec:substrate}). The \emph{single vein of ichor}
+is the power port --- the one stream of ordered nourishment without which
+nothing runs (\S\ref{subsec:powerport}). And the \emph{nail} is the theorem
+that pulls the whole document together: a machine of this kind does not need
+to be defeated to be stopped --- close the vein and it halts, provably, on a
+schedule (T-288; \S\ref{subsec:powerport}). The myth got the architecture
+right twenty-seven centuries early. We will return to it at every step.
+\end{mythbox}
+
+\subsection{Three waves}
+\label{subsec:waves}
+
+\emph{Cybernetics} --- from the Greek \emph{kybern\'etes}, ``steersman'' ---
+is the science of systems that steer themselves. Its history is three waves,
+each asking a deeper question than the last, and the deepest question is the
+one this document answers in hardware.
+
+\paragraph{Wave I --- control (1940s--1960s): \emph{how does a machine hold a
+course?}} Norbert Wiener named the field in 1948~\cite{wiener1948}: the
+steersman does not compute the whole voyage --- he watches the error between
+where the ship points and where it should, and pushes against it.
+\emph{Feedback} turned out to be the common law of thermostats, gun-aimers,
+and bodies. The same decade supplied the parts list: McCulloch and Pitts
+showed that little threshold units --- caricature neurons --- can compute any
+logical function~\cite{mcculloch1943}; Shannon made \emph{information} a
+measurable quantity with a hard floor~\cite{shannon1948}; von Neumann gave
+the stored-program blueprint every computer still follows; and Ross Ashby
+built the \emph{homeostat} --- a machine that rewires itself until its
+internal variables come back into a safe zone --- and distilled it into the
+law of requisite variety~\cite{ashby1956}: a controller must be at least as
+rich as the disturbances it must absorb. Wave I machines \emph{correct
+themselves toward a set-point}. What none of them had was a reason \emph{why}
+the set-point, the wiring, or the parts count should be one thing rather than
+another: every topology was a guess, every code a bolt-on, every learning
+rule a procedure imposed from outside.
+
+\paragraph{Wave II --- observation (1970s--1990s): \emph{what happens when the
+machine watches itself?}} Heinz von Foerster turned cybernetics on itself ---
+a ``cybernetics of cybernetics'' in which the observer is part of the system
+observed~\cite{foerster2003}. Maturana and Varela sharpened the biological
+half: a living system is \emph{autopoietic} --- a process that continuously
+produces the very components that produce it, a self-making
+loop~\cite{maturana1980}. Wave II saw, correctly, that self-reference is the
+heart of the matter --- that a mind is a system modelling itself. But it
+could only \emph{describe} the loop, not \emph{derive} it: second-order
+cybernetics produced profound prose and no forced structure. How many parts
+must a self-observing system have? What wiring? What dynamics? Wave II had no
+theorems, so its machines (the neural networks and neuromorphic chips that
+followed, \S\ref{sec:intro}) inherited Wave I's guesses with Wave II's
+ambitions.
+
+\paragraph{Wave III --- coherence (2020s): \emph{what shape must a
+self-watching machine have?}} Unitary Holonomic Monism (UHM) and its
+measurement layer, Coherence Cybernetics~\cite{uhm2026}, answer the Wave II
+question with Wave I rigor: they make the self-model a \emph{state variable}
+($\rhostar=\vp(\Gam)$, a fixed point that provably exists), viability a
+\emph{theorem} (a window $P\in(2/7,3/7]$ with proved walls), and --- the
+decisive step --- they \emph{derive} the observer's structure instead of
+guessing it: seven parts, Fano wiring, $G_2$ symmetry, one dynamics
+(\S\ref{sec:collapse}). The questions the first two waves left open ---
+how many, wired how, changing by what law --- stop being design decisions and
+become results. \TALOS{} is the body of the third wave: the first machine
+whose feedback (Wave I), whose self-observation (Wave II), and whose
+\emph{shape} (Wave III) are one derived object.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth]
+  % time axis
+  \draw[->, thick, plosgray] (0,0) -- (14.6,0) node[below left, font=\scriptsize]{year};
+  \foreach \x/\y in {0.4/1940, 2.9/1950, 5.4/1970, 7.9/1990, 10.4/2010, 13.4/2026}{
+    \draw[plosgray] (\x,0.07) -- (\x,-0.07) node[below]{\y}; }
+  % Wave I band
+  \fill[plosblue!14, rounded corners=3pt] (0.2,0.55) rectangle (6.3,2.30);
+  \node[anchor=north west, align=left, plosblue, font=\scriptsize\bfseries] at (0.35,2.24)
+    {Wave I --- control:\\ hold the course};
+  \node[anchor=west] at (0.35,1.28) {1943 McCulloch--Pitts \; 1945 von Neumann};
+  \node[anchor=west] at (0.35,0.98) {1948 Wiener \emph{Cybernetics}; Shannon};
+  \node[anchor=west] at (0.35,0.70) {1952--56 Ashby: homeostat, variety};
+  % Wave II band
+  \fill[talosamber!16, rounded corners=3pt] (5.0,2.55) rectangle (10.6,4.05);
+  \node[anchor=north west, align=left, talosamber!80!black, font=\scriptsize\bfseries] at (5.15,3.99)
+    {Wave II --- observation:\\ the observer inside};
+  \node[anchor=west] at (5.15,3.02) {1970s von Foerster: 2nd order};
+  \node[anchor=west] at (5.15,2.74) {1980 Maturana--Varela: autopoiesis};
+  % bridge tech
+  \node[anchor=west, plosgray] at (7.35,1.30) {1986 backprop nets};
+  \node[anchor=west, plosgray] at (7.35,1.00) {1990 neuromorphic};
+  % Wave III band
+  \fill[green!12, rounded corners=3pt] (10.9,0.55) rectangle (14.5,4.05);
+  \node[anchor=north west, align=left, green!40!black, font=\scriptsize\bfseries] at (11.05,3.99)
+    {Wave III --- coherence:\\ the shape is derived};
+  \node[anchor=west] at (11.05,2.98) {UHM: $N{=}7$, Fano, $G_2$};
+  \node[anchor=west] at (11.05,2.68) {CC: measures, dynamics};
+  \node[anchor=west] at (11.05,2.38) {\SYNARC{}: the mind};
+  \node[anchor=west, font=\scriptsize\bfseries] at (11.05,2.02) {\TALOS{}: the body};
+  \node[anchor=west, plosgray] at (11.05,1.66) {(this document)};
+\end{tikzpicture}
+\caption{Three waves of cybernetics. Wave I built machines that hold a course
+(feedback, information, the homeostat) but guessed every structure. Wave II
+put the observer inside the system (second-order cybernetics, autopoiesis)
+but could describe the self-watching loop, not derive its shape. Wave III
+derives the shape --- seven modes, Fano wiring, one dynamics --- and
+\TALOS{} is its hardware.}
+\label{fig:waves}
+\end{figure}
+
+\begin{zerobox}[From zero --- what is a machine, and what is steering?]
+Start with nothing. A \emph{machine} is anything that changes marks by fixed
+rules: an abacus moves beads, a music box turns pins into notes. Most
+machines run \emph{open-eyed but blind} --- they act, and never check. Now
+give a machine one more talent: let it \emph{look at the difference} between
+what it wanted and what happened, and push against that difference. A room
+thermostat does exactly this --- too cold, heat on; too warm, heat off. That
+one talent is called \emph{feedback}, and a machine that has it can hold a
+course through a world that pushes back. That is Wave~I in one breath. Wave~II
+asks: what if the machine also looks at \emph{itself} looking? And Wave~III
+asks the child's best question --- \emph{then what shape must it be?} --- and
+answers with a proof. Everything else in this document is that answer,
+unpacked slowly.
+\end{zerobox}
+
+\subsection{How to read this document from zero}
+\label{subsec:howtoread}
+
+The document is written twice, interleaved. The \emph{specification voice}
+carries definitions, theorems, tables, and numbers --- everything an engineer
+needs, with nothing softened. Three recurring boxes carry the \emph{on-ramp
+voice}, and together they form a complete path that assumes no prior
+knowledge:
+
+\begin{itemize}[leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{\textcolor{talosamber!85!black}{The myth}} (amber) continues
+        the Talos story: each installment maps one architectural fact onto
+        the bronze giant --- the patrol, the vein, the nail. If you remember
+        the story, you remember the machine.
+  \item \textbf{\textcolor{plosblue!70!black}{From zero}} (blue) rebuilds the
+        current section's idea from everyday objects --- games, toys,
+        thermostats --- with no symbols and no prerequisites. A patient
+        reader can follow \emph{only} the blue boxes, front to back, and
+        arrive knowing what the machine is and why its shape is forced.
+  \item \textbf{\textcolor{green!45!black}{Try it}} (green) makes the claims
+        tangible: finger-exercises on the Fano figure, three-question fault
+        games, and runnable commands against the reference emulator
+        (\texttt{talos\_v0\_emulator.py}) --- the document's interactive
+        layer. Nothing in a green box requires special hardware.
+\end{itemize}
+
+The recommended first pass for a newcomer: read every amber and blue box in
+order, do the two green finger-games (\S\ref{sec:fabric}, \S\ref{sec:ecc}),
+then return to page one and read the specification voice with the story
+already in your hands. The recommended pass for an engineer: read the
+specification voice straight through; the boxes will still be there when a
+definition wants an image.

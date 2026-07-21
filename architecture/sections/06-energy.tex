@@ -108,6 +108,57 @@ Anchors: $kT\ln2=2.87\times10^{-21}$~J; DRAM word $\approx2\times10^{-11}$~J.}
 \label{fig:energy}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\scriptsize, >=Stealth,
+  box/.style={draw, rounded corners, thick, minimum height=8mm, align=center}]
+  \node[box, fill=red!8, draw=red!60!black, minimum width=2.6cm] (port) at (0,0)
+    {\textbf{power port}\\ negentropy in};
+  \node[box, fill=plosblue!8, draw=plosblue!70!black, minimum width=3.0cm] (mach) at (4.1,0)
+    {\textbf{the tick}\\ $\Gam$, Eq.~\ref{eq:lomega}};
+  \node[box, fill=plosblue!14, minimum width=3.3cm] (work) at (9.4,1.35)
+    {\textbf{work} (reversible)\\ $0$ J by Landauer};
+  \node[box, fill=talosamber!14, minimum width=3.3cm] (maint) at (9.4,0)
+    {\textbf{maintenance}\\ $P_{\mathrm{meta}} = kT\ln2\cdot\dot S_{\Diss}$};
+  \node[box, fill=green!10, minimum width=3.3cm] (learn) at (9.4,-1.35)
+    {\textbf{learning}\\ $kT\ln2\cdot\Delta H_{\Regen}$};
+  \node[box, fill=gray!12, minimum width=1.9cm] (heat) at (13.3,-0.7) {heat\\ out};
+  \draw[->, ultra thick, red!60!black] (port) -- node[above]{$r\,\rho_{\mathrm{env}}$} (mach);
+  \draw[->, very thick, plosblue!70!black] (mach.east) to[out=25,in=180] (work.west);
+  \draw[->, very thick, talosamber] (mach.east) -- (maint.west);
+  \draw[->, very thick, green!45!black] (mach.east) to[out=-25,in=180] (learn.west);
+  \draw[->, thick, plosgray] (maint.east) to[out=0,in=110] (heat.north);
+  \draw[->, thick, plosgray] (learn.east) to[out=0,in=200] (heat.west);
+  \node[plosgray, align=center] at (9.4,2.25) {\tiny the only branch a von~Neumann machine\\ \tiny cannot have: compute without paying};
+  \draw[plosgray, ->] (9.4,2.0) -- (work.north);
+\end{tikzpicture}
+\caption{Where the joules go. All free energy enters through the power port
+(\S\ref{subsec:powerport}). The reversible work branch is free (Landauer);
+only holding order against the leak (maintenance, \S\ref{subsec:metabolic})
+and creating order (learning) export entropy and cost. A layered machine has
+no free branch: every operation moves data and pays.}
+\label{fig:energyflow}
+\end{figure}
+
+\begin{mythbox}[The myth, continued --- ichor]
+The giant's walking cost him nothing --- bronze does not tire. What the ichor
+paid for was subtler: staying \emph{bronze} --- bright, whole, un-corroded
+against the salt wind --- and getting \emph{better} at the patrol. That is
+the energy law in one image: computation is the free walking; maintenance and
+learning are the only two things the vein must pay for
+(Eq.~\ref{eq:energy-law}).
+\end{mythbox}
+
+\begin{zerobox}[From zero --- why the toy needs feeding]
+A wind-up toy runs down: not because moving is expensive, but because springs
+leak. This machine's ``spring'' leaks too (the forgetting term), so it must
+be fed --- that is the port. The surprise is what \emph{doesn't} cost: the
+thinking itself. Feed it, and the thinking rides along free; starve it, and no
+cleverness inside can keep it wound (\S\ref{subsec:powerport}). Its
+food-bill tracks two things only: how much order it is \emph{holding}, and
+how fast it is \emph{learning}.
+\end{zerobox}
+
 \subsection{The metabolic floor and the operating-point axis}
 \label{subsec:metabolic}
 
