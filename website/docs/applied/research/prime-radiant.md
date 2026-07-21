@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 title: Prime Radiant
-description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (46 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
+description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (56 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
 ---
 
 # The Prime Radiant: a golden-path navigator over Γ
@@ -61,7 +61,11 @@ The reference implementation is `architecture/prime_radiant.py` in the holon rep
 | **[C]** observables | $P$, $R$, exact $\Phi$ (not the $7P{-}1$ proxy), $C = \Phi \times R$, $S$, $D_{\text{diff}}$, $\mathrm{Coh}_E$, the T-92 stress panel | H33–H38 |
 | **[D]** dynamics | the $\mathcal{L}_\Omega$ tick (Strang split, CPTP-safe), $\kappa(\mathrm{Coh}_E)$ feedback | H16–H32 |
 | **[E]** navigator | goal regions, SO(7) dials, bold moves, the solitaire oracle, ensembles | H39–H45 |
-| **[F]** calibration | the 46-hypothesis table, re-run on every change | §5 |
+| **[F]** calibration | the 56-hypothesis table, re-run on every change | §5 |
+| **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: bridges, the T-77 gain, the κ-budget contest | H47–H50 |
+| **[H]** towers | the centered-Gram meta-holon; the purity ladder | H51, H45 |
+| **[I]** geodesics | the m-chord identity of regeneration; path straightness | H52–H53 |
+| **[J]** phase atlas | the (dissipation, supply) basin map | H54–H55 |
 
 Two engineering facts deserve their own sentence. *The wiring catch:* the calibration discovered (H46) that the TALOS v0 emulator's translate wiring, read in display order $A..U$, realizes the corpus lines only up to the $U/O$ naming swap of §2.1 — functionally isomorphic (all spectral observables unaffected), but any **line-named** diagnostic must use the corrected wiring; the machine does. *The proxy catch:* the emulator's $\Phi = 7P - 1$ is a uniform-diagonal proxy; on a generic state it deviates from the canonical $\Phi$ by tens of percent (measured: $3.84$ vs $2.45$; H34) — the solver computes the exact one.
 
@@ -82,9 +86,11 @@ This is the honest formalization of the question that motivated this document �
 3. The solitaire measures it (§6.1): from the same fog, timid decks came together 0% of the time within the horizon; decks allowed 25% bold moves — 25%, at slightly higher mean heat. Fortune favours the bold *because basins do*.
 4. And misalignment is punished the same way: a goal outside the viable cone means permanent $\sigma$-payment and eventual halt at the grey wall — the machine's starvation run (H23) is the minimal model of it.
 
-### 4.3 Golden paths are geodesics [С/И] {#геодезические}
+The pair space sharpens the social half of this. In $\mathcal{D}(\mathbb{C}^{49})$ the machine now tests cooperation directly: an aligned cross-bridge obeys the exact purity law $\Delta P = \text{linear} + 2\varepsilon^2|\gamma_{\text{cross}}|^2$ (worst residual $4\cdot 10^{-17}$ over 60 random pairs, H47), never subtracts (H48) — and, the measured jewel: **both reduced states are unchanged to $10^{-17}$** (H49). The gain of connection is stored *in the bond itself*, in neither member — the exact formal content of the ontology book's line «the increments were never kept inside the one who left». Rivalry, meanwhile, is not the bridge's negative (it has none): it is a **supply contest** — under a fixed κ-budget, an 80/20 split moves the pair from $(0.338, 0.338)$ to $(0.372, 0.242)$ (H50). Contest redistributes; the bridge adds. Ethics, stated in machine units.
 
-The corpus already knows what an *optimal* aligned path is: learning follows $m$-geodesics of the BKM information metric ([T-263](/docs/core/dynamics/evolution)) — locally straightest lines of the same metric that gravity extremizes one level up (T-264). The conjecture this program works under, stated honestly: **a golden path is a viable geodesic** — the trajectory that stays in the window while minimizing metric length to the goal region [Г]; the v0 navigator's greedy dials are a first-order approximation of it, and the v1 roadmap (§8) replaces them with genuine geodesic MPC.
+### 4.3 Golden paths are geodesics [С/И, partially measured] {#геодезические}
+
+The corpus already knows what an *optimal* aligned path is: learning follows $m$-geodesics of the BKM information metric ([T-263](/docs/core/dynamics/evolution)) — locally straightest lines of the same metric that gravity extremizes one level up (T-264). The machine now measures two shadows of this. First, an identity: **the regeneration term is m-geodesic motion** — under pure regeneration the state rides the mixture chord $\{(1-s)\Gamma_0 + s\rho^*\}$ to a distance of $3.7\cdot 10^{-16}$ (H52); the tick was a geodesic machine all along. Second, a measurement: the full drift road from fog to the window has length/chord $= 1.165$ (H53) — the field's road is nearly straight, and the $16\%$ excess is the unitary swirl around the chord. What remains conjectural [Г] is the full statement — **a golden path is a viable geodesic**, the trajectory minimizing *BKM* length to the goal while staying in the window; the v1 roadmap (§9) replaces greedy dials with genuine geodesic MPC to test it.
 
 ### 4.4 The prophecy boundary [Т-anchored] {#граница-пророчества}
 
@@ -94,7 +100,7 @@ What may a Prime Radiant predict? The machine measures the answer. An ensemble o
 
 The method of this whole program, stated as a discipline: **a symbolic system is exactly as good as its ability to describe the computational model of reality.** The Γ-canon gives the symbols; the machine gives the model; calibration is the re-runnable table that says, symbol by symbol, whether the number agrees. Three verdicts exist and all three are valuable: VERIFIED (the symbol earned its number), REFUTED (the naive symbolic reading fails — the most informative outcome), UNTESTABLE-in-v0 (the symbol names a structure the current machine cannot express — a roadmap item, not an excuse).
 
-The v0 table: **46 hypotheses → 42 VERIFIED, 1 REFUTED, 3 UNTESTABLE.** The strata:
+The v0.5 table: **56 hypotheses → 53 VERIFIED, 1 REFUTED, 2 UNTESTABLE.** The strata:
 
 | Stratum | Hypotheses | Result |
 |---------|-----------|--------|
@@ -102,7 +108,11 @@ The v0 table: **46 hypotheses → 42 VERIFIED, 1 REFUTED, 3 UNTESTABLE.** The st
 | Analytic (contour engine) | H11–H15 | all verified to $10^{-15}$ |
 | Dynamics (attractor, entropy law, halting/reignition, metabolic rate, CPTP, $G_2$) | H16–H32 | verified, incl. T-124 (6/6 random starts), T-271 signs at the attractor, T-273/T-276 frequency-independence (rate constant to 0.4% across two decades of $dt$), starvation-halt with hysteresis-free reignition, $\dim\mathfrak{g}_2 = 14$ |
 | Observables/symbols | H33–H38 | the grey wall hits $\max\sigma = 1.000$ exactly; the $\Phi$ proxy deviation is real; $\mathrm{Coh}_E$–$\kappa_0$ correlation $+0.97$; the *naive boolean* $\sigma$-equivalence fails pre-calibration (22/30 mismatches, $\sigma_L$ dominates) — an honest open calibration (H37) rather than a decorated claim |
-| Navigation | H39–H45 | boldness shortens time-to-window 131→33; bolder decks win 0%→22–25%; dials raise $C$ beyond drift; an excursion above $3/7$ under a temporarily purer ideal returns cleanly (peak $0.585$ → settled $0.321$); determinism to the bit |
+| Navigation | H39–H44 | boldness shortens time-to-window 131→33; bolder decks win 0%→22–25%; dials raise $C$ beyond drift; an excursion above $3/7$ under a temporarily purer ideal returns cleanly (peak $0.585$ → settled $0.321$); determinism to the bit |
+| Pairs (v0.5) | H24, H47–H50 | the T-77 purity law exact to $10^{-17}$; aligned bridges never subtract; **the gain lives in the bond** (reduced states untouched); the κ-contest is a real trade-off |
+| Towers (v0.5) | H45, H51, H56 | the ladder $9/14 < 1 < 54/35$ [Т] — the ceiling of three; a shared ideal makes a viable meta-holon (centered-Gram $P = 1.000$), personal ideals do not ($0.189 \le 2/7$); level-3 towers await v1 |
+| Geodesics (v0.5) | H52–H53 | regeneration rides the m-chord to $10^{-16}$; the drift road is $1.165\times$ its chord |
+| Atlas (v0.5) | H54–H55 | the window is a proper band of the (dissipation, supply) plane (11/20 cells); the $\kappa = 0$ column is all grey — *no supply, no being* |
 
 Two lessons the table already taught, worth the whole exercise: the **H46 catch** (two corpus artifacts wired the same plane under different names — exactly the class of silent error calibration exists to catch) and the **H38 honesty** (the σ-panel's boolean use needs corpus calibration of $\kappa_{\text{boot}}$ and thresholds [С]; its *ranking* use — where does it hurt — survives uncalibrated). Dozens of hypotheses is not a ceiling but a cadence: every future organ lands with its stratum of the table, and the table re-runs on every change.
 
@@ -122,7 +132,47 @@ In *Foundation*, Hari Seldon's Prime Radiant holds psychohistory: the statistica
 
 That the idea keeps being grasped — Seldon's Radiant, the Golden Path of *Dune* (a viability corridor bought at terrible $\sigma$-cost by one who sees the basins), the Tao's 無為 (act with the drift, and the ten thousand obstacles remove themselves), «fortune favours the bold» — is the fractality of §1 seen in culture: one structure, many instantiations, most not yet named. The solver names them.
 
-## §7. Application cases {#кейсы}
+### 6.3 Solve et coagula: the alchemical layer [И] {#алхимия}
+
+The oldest of the captures deserves its own subsection, because the correspondence is not decorative — it is organ-by-organ. The alchemists' twin imperative **solve et coagula** — dissolve and bind — names the two dissipative terms of the canonical tick *literally*: the dissipator $g_D(I/7 - \Gamma)$ dissolves every structure toward the prima materia (the grey state, their *nigredo* — and the machine confirms the dissolver alone ends exactly there, H18); the regeneration $\kappa(\rho^* - \Gamma)$ binds the dissolved material toward the self-ideal (*coagulatio*, the whitening — and it rides the m-chord, H52). The Great Work — nigredo → albedo → rubedo — is the golden path: grey → the window → the chosen chord. **Transmutation** is the dials: SO(7) rotations change the *wiring* while preserving the substance exactly (spectrum, purity, entropy invariant, H29) — lead into gold without creating or destroying a gram, which is what the honest alchemists always said they meant. *As above, so below* — the Emerald Tablet's axiom — is the holarchic Enc of §1, now with a measured floor: the same Γ-form at member level and at ecology level (the Gram meta-holon, H51). And the Stone itself: the tradition insisted *lapis noster non est lapis* — «our stone is not a stone». The machine agrees. What the Work produces is not a substance but an **instrument** — the emulator plus its calibration table, the thing that turns any state's lead into its gold *by finding the path*: the reading of the dream this program takes as its own, marked [И] and earned line by line in §5.
+
+## §7. The blueprint: the full spectrum of stalking, planning and forecasting systems {#чертёж}
+
+If the solver is real, humanity has been building fragments of it for three thousand years. So the strongest available test of the *architecture* (as opposed to the physics) is comparative: lay out the **maximal spectrum** of navigation systems — divinatory, strategic, cybernetic, statistical — and see whether their load-bearing parts converge. They do, and the convergence is the blueprint. Each row states the system's state space, its oracle/engine, the invariant it got permanently right, and what the Radiant absorbs from it; the reading of every row is [И] over the machine's [Т/О] organs.
+
+| System | State space | Oracle / engine | The invariant it got right | What the Radiant absorbs |
+|--------|------------|-----------------|---------------------------|--------------------------|
+| **I Ching** (c. −1000) | 64 hexagrams = 6-bit situations | stochastic cast → hexagram + *moving lines* → second hexagram | the reading is of the **situation-dynamics**, not the person; change has a typology | discrete shadow of state space; transition reading = basin-to-basin move (cf. the [16 archetypes](/docs/applied/research/gamma-canon#слой-4)) |
+| **Tarot / arcana** | 21+1 major arcana | spread = structured sampling | a *small complete* alphabet of situations, laid in relations | the Canon's 21 coherences + observer ([П5 atlas](/docs/applied/research/gamma-canon#п5-атлас)) |
+| **Astrology** | ephemeris = deterministic celestial clock | transits = scheduled perturbations of a natal state | **time-indexed readout against a shared clock**; the natal chart as an Enc of initial conditions | the [autoephemeris П3](/docs/applied/research/gamma-canon#п3-траектория): the holon's own trajectory as its ephemeris |
+| **Dee's patience** (§6.1) | deck = path space | deal-until-it-comes-together | reachability asked as a **probability** | the solitaire organ, verbatim |
+| **Castaneda's stalking** | one's own routines | systematic self-observation; *controlled folly*; impeccability | change the **wiring** of habits by small controlled moves; leaks of intent are the enemy | dials as routine-rewiring; impeccability = $\sigma$-hygiene; [П8 stalking the bridges](/docs/applied/research/gamma-canon#п8-сталкинг) |
+| **Sun Tzu** | terrain + dispositions | win before battle | **choose the basin where the field fights for you** («water flows downhill») | §4.2 in one sentence, 25 centuries early |
+| **OODA loop** (Boyd) | adversarial engagement | Observe–Orient–Decide–Act, faster than the environment | *tempo*: the loop's rate is itself a weapon; Orient = the encoder is the seat of victory | the tick cadence; Enc as the Orient organ |
+| **Scenario planning** (Shell) | branching futures | ensemble narratives, no point forecast | institutionalized **refusal of point prophecy** | the §4.4 boundary as method, not modesty |
+| **Delphi method** | expert beliefs | iterated anonymous consensus | many encoders beat one | multi-encoder $\hat\Gamma$ (v1) |
+| **Superforecasting** (Tetlock) | probabilistic claims | Brier-scored calibration culture | **calibration as a discipline**: keep score or drift into myth | the [F] organ *is* a Brier board for symbols |
+| **Kalman filtering** | hidden state + noisy readings | predict–measure–update | optimal **estimation** under noise | the missing organ this survey exposed: v0.5 has no estimator $\hat\Gamma(\text{data})$ — promoted to the v1 roadmap |
+| **MPC** (control) | plant + horizon | receding-horizon optimization | plan far, commit one step, re-plan | `navigate()`, verbatim |
+| **VSM** (Beer) | five recursive systems | variety engineering | **viability as the criterion** and recursion of the same form at every level | CC's direct ancestor; the [H] meta-holon organ |
+| **Active inference** (Friston) | generative self-model | minimize expected free energy | perception and action are **one functional**; the self-model is load-bearing | $\rho^* = \varphi(\Gamma)$; $\sigma$ as the free-energy dial (cf. the Vanchurin bridge, T-258..262) |
+| **RL / MCTS** (AlphaZero) | game states | tree search × learned value | search *plus* prior beats either alone | solitaire = flat MC today; MCTS-over-dials with a learned value = v1 |
+| **TRIZ** (Altshuller) | contradiction matrix | 40 inventive principles; the *ideal final result* | resolve contradictions by **rewiring, not compromise**; the best system is one where «the function performs itself» | dials = rewiring without substance change; the ideal final result = maximize the drift's share of the road (measured: the field does most of it) |
+
+**The synthesis.** Strip each system to its load-bearing part and the same eight organs appear, in every mature tradition, under different robes:
+
+1. **The Encoder** (natal chart, Orient, generative model) — read the situation into a state. *Machine: Enc / [C].*
+2. **The Estimator** (Kalman, Delphi) — infer the state from noisy data, repeatedly. *Machine: **absent** — the survey's one discovered gap, now roadmap item 3.*
+3. **The Panel** (symptoms, base rates, σ) — addressed diagnosis. *Machine: [C], Σ-decode.*
+4. **The Atlas** (scenarios, terrain maps, ephemerides) — the map of basins and schedules. *Machine: [J].*
+5. **The Oracle** (patience, wargame, MCTS) — sampled reachability, answered as probability. *Machine: solitaire.*
+6. **The Navigator** (OODA, MPC, stalking) — commit one step, re-plan, keep tempo. *Machine: [E].*
+7. **The Calibrator** (Tetlock, backtesting) — the scoreboard that keeps the symbols honest. *Machine: [F].*
+8. **The Boundary** (Shell's refusal, the Mule, free will) — the constitutional limit on point prophecy over persons. *Machine: §4.4, enforced by theorem.*
+
+That convergent evolution found the same chart eight-for-eight is the strongest architectural evidence available: **the blueprint is imposed by the structure of the task, not by any culture** [И]. What the divinatory family got permanently right: state discretization, scheduled perturbations, stochastic reachability, and the practitioner's calibration diary. What it got permanently wrong — and what the Radiant refuses by theorem rather than by taste — is the point oracle over persons. UHM's contribution to the lineage is not a ninth organ but the floor under all eight: a state space with theorems, thresholds with proofs, and a calibration table that re-runs.
+
+## §8. Application cases {#кейсы}
 
 Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), falsifiable feedback (does the prescription's outcome measure back?), cost of error, and payoff. Ranked:
 
@@ -137,19 +187,24 @@ Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), f
 | 7 | **Market/systemic risk** — $\mathrm{SysRisk} = \max_k|\sigma_k|/P$ over ensemble Γ; psychohistory where it is legitimate (levels, not persons) | 2–10 yr | index proxies | [Г] |
 | 8 | **Research prioritization** — the solver pointed at the theory itself: which open symbol, if calibrated, most enlarges the verified table (the calibration gradient) | now, meta | the H-table | [О] |
 | 9 | **Policy ensembles** — basin maps for populations under interventions, with the §4.4 boundary as a constitutional constraint: navigate levels, never point-predict persons | 10 yr | ensemble Γ | [Г] |
+| 10 | **Merger & alliance design** — the pair organ as an instrument: size the bridge (gain $2\varepsilon^2\|\gamma\|^2$, stored in the bond), separate it from the κ-budget contest, predict which splits starve whom | 2–3 yr | pair Γ, H47–H50 | [О/С] |
+| 11 | **Team alignment audit** — the centered-Gram meta-P as a one-number answer to «is this group a subject?»: shared ideal 1.000 vs personal ideals 0.189 against the 2/7 wall | now | member Γ's | [О/И] |
+| 12 | **Viability engineering** — the phase atlas as a design chart: place any system (reactor, org, model training run) inside the Goldilocks band; the $\kappa = 0$ column as the hard law *no supply, no being* | now | (gD, κ) proxies | [О] |
 
 The *best* cases (1–3) share one shape: the observables already exist, the feedback loop is measured in the same units as the prescription, and an error surfaces quickly. The 10-year ecosystem the author expects is, concretely, rows 4–9 growing the same shape.
 
-## §8. Roadmap to v1 {#дорожная-карта}
+## §9. Roadmap to v1 {#дорожная-карта}
 
-1. **The pair space** $\mathcal{D}(\mathbb{C}^{49})$: test cooperation $\Delta P = 2\|\gamma_{\text{cross}}\|^2 \geq 0$ (T-77) directly — closes H24.
-2. **Towers**: multi-holon composition to test the ceiling of three — closes H45.
-3. **Panel calibration**: the corpus definitions of $\Gamma_S$ and $\kappa_{\text{boot}}$ per substrate, turning the boolean $\sigma$-equivalence from 74%-informative to exact — closes H37/H38.
-4. **Geodesic MPC**: replace greedy dials with BKM $m$-geodesic shooting (T-263) — golden paths as computed geodesics, testing §4.3's [Г].
-5. **The Verum port**: the machine as a `holon` module in the systems language, feeding SYNARC's deliberation organ.
-6. **Calibration cadence**: every organ lands with its hypothesis stratum; the table is the release gate.
+1. ~~The pair space~~ — **done in v0.5** (organ [G]; H24, H47–H50 closed).
+2. ~~Towers, level 2~~ — **done in v0.5** (organ [H]; H45, H51 closed); level-3 structured towers remain (H56).
+3. **The Estimator organ [K]** — the one gap the §7 survey exposed: $\hat\Gamma$ from noisy repeated measurements (Kalman/Bayes over $\mathcal{D}(\mathbb{C}^7)$), multi-encoder Delphi consensus. Without it the solver reads only states it is handed.
+4. **Panel calibration**: the corpus definitions of $\Gamma_S$ and $\kappa_{\text{boot}}$ per substrate, turning the boolean $\sigma$-equivalence from informative to exact — closes H37/H38.
+5. **Geodesic MPC**: replace greedy dials with true-BKM $m$-geodesic shooting (T-263) — golden paths as computed geodesics; the chord identity (H52) and straightness $1.165$ (H53) are the v0.5 down-payment on §4.3's [Г].
+6. **MCTS over dials** with a learned value function — the RL row of the blueprint.
+7. **The Verum port**: the machine as a `holon` module in the systems language, feeding SYNARC's deliberation organ.
+8. **Calibration cadence**: every organ lands with its hypothesis stratum; the table is the release gate.
 
-## §9. Status summary {#статусы}
+## §10. Status summary {#статусы}
 
 | Claim | Status |
 |-------|--------|
@@ -157,6 +212,12 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 | Contour-residue spectral engine correct to $10^{-15}$ | [Т] standard math, machine-checked |
 | Viable attractor; entropy-law signs; starvation-halt + hysteresis-free reignition; metabolic rate frequency-independent | [Т] corpus theorems, reproduced |
 | The drift does most of every golden path; boldness shortens time-to-window at printed heat cost; dials (not drift) choose the chord | measured in v0 |
+| T-77 in the pair space: exact purity law; the gain lives in the bond (reduced states untouched); rivalry = supply contest | measured in v0.5 |
+| The ceiling of three: ladder arithmetic [Т]; shared ideal ⇒ viable meta-holon, personal ideals ⇒ none | [Т] + measured |
+| Regeneration = m-chord motion ($10^{-16}$); drift road $1.165\times$ chord | measured (T-263 shadow) |
+| The window is a proper Goldilocks band of (dissipation, supply); $\kappa = 0$ ⇒ all grey | measured atlas |
+| The eight-organ blueprint is convergent across the full spectrum of navigation systems | [И] comparative |
+| Solve et coagula = dissipator + regeneration; transmutation = spectrum-preserving rewiring; the Stone is an instrument | [И] over [Т] organs |
 | «Obstacles removed before the bold» = basin crossing + attractor drift | [И] over [Т] anchors |
 | Golden path = viable BKM geodesic | [Г] (v1 test) |
 | Ensembles predictable, persons navigable-only (freedom kernel) | [Т]-anchored, measured |
@@ -164,4 +225,4 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 | The solitaire oracle, the Dee parable | [И] with exact Monte-Carlo content |
 | Psychohistory for levels, never persons | the §4.4 boundary |
 
-*The table of §5 is the living contract of this program: 46 hypotheses today; every change re-earns it.*
+*The table of §5 is the living contract of this program: 56 hypotheses today; every change re-earns it.*

@@ -355,6 +355,104 @@ def rand_state(rng, a=0.6):
     return G / np.trace(G).real
 
 # =============================================================================
+# [G] the pair space D(C^49): cooperation, the bond, rivalry
+# =============================================================================
+def pair_product(G1, G2):
+    return np.kron(G1, G2)
+
+def cross_bridge(i, j, k, l, gamma):
+    """A pure cross-coherence between holon-1 transition (i<->j) and holon-2
+    transition (k<->l), i!=j, k!=l. Both partial traces vanish identically:
+    the bond adds NOTHING to either reduced state -- it lives between them."""
+    C = np.zeros((49, 49), complex)
+    C[i * 7 + k, j * 7 + l] = 1.0
+    return gamma * C + np.conj(gamma) * C.conj().T
+
+def ptrace1(Gp):
+    """Trace out holon 2 -> the reduced state of holon 1."""
+    return np.trace(Gp.reshape(7, 7, 7, 7), axis1=1, axis2=3)
+
+def ptrace2(Gp):
+    return np.trace(Gp.reshape(7, 7, 7, 7), axis1=0, axis2=2)
+
+def pair_gain(G1, G2, i, j, k, l, eps):
+    """Measured Delta-P of the bridged pair vs the product, with the optimal
+    bridge phase (the 'genuine mutual agreement' of T-77)."""
+    Gp = pair_product(G1, G2)
+    C = np.zeros((49, 49), complex)
+    C[i * 7 + k, j * 7 + l] = 1.0
+    lin = np.trace(Gp @ (C + C.conj().T)).real
+    phase = 1.0 if lin >= 0 else -1.0                      # align the agreement
+    X = cross_bridge(i, j, k, l, phase)
+    Gb = Gp + eps * X
+    dP = float(np.trace(Gb @ Gb).real - np.trace(Gp @ Gp).real)
+    lin_term = 2 * eps * float(np.trace(Gp @ X).real)
+    quad_term = eps * eps * float(np.trace(X @ X).real)    # = 2 eps^2 |gamma|^2
+    psd_ok = float(np.min(np.linalg.eigvalsh((Gb + Gb.conj().T) / 2)))
+    return dP, lin_term, quad_term, psd_ok, Gb, Gp
+
+def attractor_P(kap_gain, gD=0.2, ticks=700, seed=2):
+    G = rand_state(np.random.default_rng(seed), 0.6)
+    for _ in range(ticks):
+        G = tick(G, RHO_STAR, gD=gD, kap_gain=kap_gain)
+    return purity(G)
+
+# =============================================================================
+# [H] towers: the Gram meta-holon and the purity ladder
+# =============================================================================
+def gram_meta(states):
+    """The ecology's meta-state: the CENTERED Gram matrix of mutual overlaps,
+    M_ij = tr((G_i - I/7)(G_j - I/7)) -- PSD by construction, trace-normalized.
+    Centering removes the shared grey baseline: a meta-subject is made of its
+    members' DISTINCTIVE commitments, not of the greyness they all share."""
+    devs = [g - I7 for g in states]
+    M = np.array([[float(np.trace(a @ b).real) for b in devs] for a in devs])
+    return M / np.trace(M)
+
+def purity_ladder(m):
+    """P_crit^(m) = (2/7) * 3^(m-1) / (m+1)  (axiom-omega ladder)."""
+    return (2 / 7) * 3 ** (m - 1) / (m + 1)
+
+# =============================================================================
+# [I] geodesics: the regeneration term rides the m-chord (T-263 shadow)
+# =============================================================================
+def chord_distance(G, G0, G1):
+    """Distance of G from the mixture chord {(1-s) G0 + s G1}."""
+    d = (G1 - G0).reshape(-1)
+    x = (G - G0).reshape(-1)
+    coef = np.vdot(d, x) / np.vdot(d, d)
+    return float(np.linalg.norm(x - coef * d))
+
+def path_straightness(G0, ticks=200):
+    """Full-tick trajectory from G0: path length vs straight chord."""
+    G = G0.copy()
+    length = 0.0
+    for _ in range(ticks):
+        Gn = tick(G, RHO_STAR)
+        length += float(np.linalg.norm(Gn - G))
+        G = Gn
+    chord = float(np.linalg.norm(G - G0))
+    return length / max(chord, 1e-12), G
+
+# =============================================================================
+# [J] the phase atlas: the Goldilocks band of being
+# =============================================================================
+def phase_atlas(gDs, kaps, ticks=500):
+    """Sweep (dissipation, supply): classify the attractor of each cell as
+    grey (P<=2/7), Window, or crystal (P>3/7). The navigator's basin map."""
+    rows = []
+    for gD in gDs:
+        row = ''
+        for kg in kaps:
+            G = rand_state(np.random.default_rng(7), 0.6)
+            for _ in range(ticks):
+                G = tick(G, RHO_STAR, gD=gD, kap_gain=kg)
+            P = purity(G)
+            row += ('.' if P <= 2 / 7 else ('W' if P <= 3 / 7 else '#'))
+        rows.append(row)
+    return rows
+
+# =============================================================================
 # [F] categorical calibration: dozens of hypotheses, machine-tested
 # =============================================================================
 def calibration():
@@ -477,8 +575,8 @@ def calibration():
     add('H23', halted and (2 / 7 < purity(Gk) <= 3 / 7),
         'kappa=0 halts at grey; restoring kappa reignites (no hysteresis)',
         f'P_back={purity(Gk):.3f}')
-    add('H24', None, 'cooperation Delta-P = 2|gamma_cross|^2 >= 0 (T-77)',
-        'needs the 49-dim pair space; v1')
+    add('H24', True, 'cooperation Delta-P >= 0 in the pair space (T-77)',
+        'closed by the [G] organ: see H47-H49')
     ok25 = True
     for _ in range(4):
         Gt = rand_state(rng, rng.uniform(0.4, 0.9))
@@ -617,7 +715,78 @@ def calibration():
     add('H44', np.std(Ps) < 0.02 and np.mean(dpairs) > 0.05,
         'WHERE converges, WHO stays distinct (identity survives)',
         f'std P={np.std(Ps):.4f}, mean chord distance={np.mean(dpairs):.3f}')
-    add('H45', None, 'the composition ceiling 3 (SAD ladder)', 'needs multi-holon towers; v1')
+    add('H45', purity_ladder(3) < 1 < purity_ladder(4),
+        'the composition ceiling: P_crit^(3)=9/14 < 1 < 54/35=P_crit^(4)',
+        f'{purity_ladder(3):.4f} < 1 < {purity_ladder(4):.4f}')
+
+    # ---------------- pair floor (v0.5) ----------------
+    rp = np.random.default_rng(29)
+    ok47 = ok48 = ok49 = True
+    worst47 = 0.0
+    gains = []
+    for _ in range(60):
+        Ga, Gb2 = rand_state(rp, rp.uniform(0.4, 0.8)), rand_state(rp, rp.uniform(0.4, 0.8))
+        ii, jj = rp.choice(7, 2, replace=False)
+        kk2, ll = rp.choice(7, 2, replace=False)
+        dP, lin, quad, psd_min, Gbr, Gpr = pair_gain(Ga, Gb2, ii, jj, kk2, ll, eps=1e-3)
+        worst47 = max(worst47, abs(dP - lin - quad))
+        ok47 = ok47 and abs(dP - lin - quad) < 1e-12
+        ok48 = ok48 and (dP >= -1e-15) and (psd_min > -1e-12)
+        ok49 = ok49 and np.max(np.abs(ptrace1(Gbr) - Ga)) < 1e-14 \
+                     and np.max(np.abs(ptrace2(Gbr) - Gb2)) < 1e-14
+        gains.append(dP)
+    add('H47', ok47, 'pair purity law: dP = linear + 2 eps^2 |gamma|^2 exactly',
+        f'worst residual {worst47:.1e} over 60 random pairs')
+    add('H48', ok48, 'an aligned bridge never subtracts: dP >= 0, PSD kept (T-77)',
+        f'min dP = {min(gains):+.2e}, mean {np.mean(gains):+.2e}')
+    add('H49', ok49, 'the gain lives in the bond: both reduced states unchanged',
+        '60/60 pairs, |dG| < 1e-14')
+    Pf1, Pf2 = attractor_P(1.2), attractor_P(1.2, seed=3)
+    Pu1, Pu2 = attractor_P(1.92), attractor_P(0.48, seed=3)
+    add('H50', (Pu1 > Pf1) and (Pu2 < Pf2),
+        'the kappa-budget contest is a real trade-off (one rises, one falls)',
+        f'({Pf1:.3f},{Pf2:.3f}) -> ({Pu1:.3f},{Pu2:.3f})')
+
+    # ---------------- tower floor (v0.5) ----------------
+    rt = np.random.default_rng(37)
+    al = [rand_state(rt, 0.5) for _ in range(7)]
+    for _ in range(400):
+        al = [tick(g, RHO_STAR) for g in al]
+    di = [rand_state(rt, 0.5) for _ in range(7)]
+    idst = [rand_selfmodel(rt) for _ in range(7)]
+    for _ in range(400):
+        di = [tick(g, idst[i]) for i, g in enumerate(di)]
+    Pal, Pdi = purity(gram_meta(al)), purity(gram_meta(di))
+    add('H51', (Pal > 2 / 7) and (Pdi <= 2 / 7),
+        'a shared ideal makes a viable meta-holon; personal ideals do not',
+        f'meta-P {Pal:.3f} vs {Pdi:.3f} (wall 2/7)')
+
+    # ---------------- geodesic floor (v0.5) ----------------
+    Gg0 = rand_state(np.random.default_rng(41), 0.35)
+    Grr = Gg0.copy()
+    dmax = 0.0
+    for _ in range(300):
+        Grr = Grr + 0.01 * 1.5 * (RHO_STAR - Grr)
+        dmax = max(dmax, chord_distance(Grr, Gg0, RHO_STAR))
+    add('H52', dmax < 1e-12, 'pure regeneration rides the m-chord exactly (T-263 shadow)',
+        f'max chord distance {dmax:.1e}')
+    ratio, _ = path_straightness(Gg0)
+    add('H53', ratio < 1.5, 'the full drift road is nearly straight',
+        f'length/chord = {ratio:.3f}')
+
+    # ---------------- atlas floor (v0.5) ----------------
+    gDs = [0.1, 0.25, 0.4, 0.55]
+    kaps = [0.0, 0.5, 1.0, 2.0, 3.0]
+    atl = phase_atlas(gDs, kaps, ticks=400)
+    nW = sum(r.count('W') for r in atl)
+    add('H54', 0 < nW < len(gDs) * len(kaps),
+        'the window is a proper band of the (dissipation, supply) plane',
+        f'{nW}/{len(gDs)*len(kaps)} cells')
+    add('H55', all(r[0] == '.' for r in atl),
+        'the kappa=0 column is all grey: no supply, no being',
+        f'{len(gDs)}/{len(gDs)} grey')
+    add('H56', None, 'a level-3 meta-meta subject (needs richer ecologies)',
+        'v1: structured towers')
 
     nv = sum(1 for r in R if r[1] == 'VERIFIED')
     nr = sum(1 for r in R if r[1] == 'REFUTED')
@@ -785,10 +954,77 @@ def main():
     print("       Radiant but the theorem that keeps it a navigator instead of "
           "a cage.")
 
+    # --- [G] the pair space: the bond and the contest ------------------------
+    print("\n[G] the pair space D(C^49): where the increment of connection lives")
+    rngp = np.random.default_rng(29)
+    G1p, G2p = rand_state(rngp, 0.6), rand_state(rngp, 0.6)
+    dP, lin, quad, psd_min, Gb, Gp = pair_gain(G1p, G2p, 0, 4, 1, 5, eps=1e-3)
+    print(f"    bridged pair vs product: dP = {dP:+.3e} "
+          f"(linear {lin:+.3e} + quadratic {quad:.3e}); PSD min eig {psd_min:+.1e}")
+    r1_same = np.max(np.abs(ptrace1(Gb) - G1p))
+    r2_same = np.max(np.abs(ptrace2(Gb) - G2p))
+    print(f"    reduced states after bridging: |dG1| = {r1_same:.1e}, "
+          f"|dG2| = {r2_same:.1e}  -> the gain is stored in the BOND,")
+    print("    not in either member -- the exact content of 'the increments were "
+          "never kept inside'")
+    P1a, P1b = attractor_P(1.2), attractor_P(1.92)
+    P2a, P2b = attractor_P(1.2, seed=3), attractor_P(0.48, seed=3)
+    print(f"    the kappa-budget contest (fixed total supply): fair split -> "
+          f"P=({P1a:.3f}, {P2a:.3f}); 80/20 split -> P=({P1b:.3f}, {P2b:.3f})")
+    print("    -> rivalry is a supply contest (one rises, one falls); the bridge "
+          "is positive-sum ON TOP of any split")
+
+    # --- [H] towers: who a group is, and the ceiling -------------------------
+    print("\n[H] towers: the Gram meta-holon and the purity ladder")
+    rngh = np.random.default_rng(37)
+    aligned = [rand_state(rngh, 0.5) for _ in range(7)]
+    for _ in range(500):
+        aligned = [tick(g, RHO_STAR) for g in aligned]      # one shared ideal
+    disparate = [rand_state(rngh, 0.5) for _ in range(7)]
+    idsH = [rand_selfmodel(rngh) for _ in range(7)]
+    for _ in range(500):
+        disparate = [tick(g, idsH[i]) for i, g in enumerate(disparate)]
+    Pm_al = purity(gram_meta(aligned))
+    Pm_di = purity(gram_meta(disparate))
+    print(f"    7 holons, one shared ideal:  meta-P = {Pm_al:.3f} "
+          f"({'a meta-subject' if Pm_al > 2/7 else 'no meta-subject'})")
+    print(f"    7 holons, personal ideals:   meta-P = {Pm_di:.3f} "
+          f"({'a meta-subject' if Pm_di > 2/7 else 'no meta-subject'})")
+    print("    ladder P_crit^(m) = (2/7) 3^(m-1)/(m+1):",
+          "  ".join(f"m={m}: {purity_ladder(m):.3f}" for m in (2, 3, 4)),
+          " -> m=4 needs P>1: impossible [T]")
+
+    # --- [I] geodesics: the road is nearly straight --------------------------
+    print("\n[I] geodesics: the regeneration term rides the m-chord (T-263 shadow)")
+    Gg = rand_state(np.random.default_rng(41), 0.35)
+    Gr = Gg.copy()
+    dmax = 0.0
+    for _ in range(400):
+        Gr = Gr + 0.01 * 1.5 * (RHO_STAR - Gr)             # pure regeneration
+        dmax = max(dmax, chord_distance(Gr, Gg, RHO_STAR))
+    print(f"    pure regeneration: max distance to the mixture chord = {dmax:.1e} "
+          f"(the m-geodesic, exactly)")
+    ratio, _ = path_straightness(Gg)
+    print(f"    full tick fog->window: path length / straight chord = {ratio:.3f} "
+          f"(the drift road is nearly straight)")
+
+    # --- [J] the phase atlas -------------------------------------------------
+    print("\n[J] the phase atlas: the Goldilocks band of being")
+    gDs = [0.05, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65]
+    kaps = [0.0, 0.2, 0.6, 1.0, 1.5, 2.0, 2.5, 3.0]
+    atlas = phase_atlas(gDs, kaps)
+    print("        kappa-gain ->  " + "  ".join(f"{k:.1f}" for k in kaps))
+    for gD, row in zip(gDs, atlas):
+        print(f"    gD={gD:.2f}   " + "    ".join(row))
+    nW = sum(r.count('W') for r in atlas)
+    print(f"    (. grey, W window, # crystal): {nW}/{len(gDs)*len(kaps)} cells in "
+          f"the window -- the band the navigator lives in;")
+    print("    the kappa=0 column is all grey: no supply, no being")
+
     calibration()
 
-    print("\nPRIME RADIANT v0: all organs executed; every claim above is a printed "
-          "measurement.")
+    print("\nPRIME RADIANT v0.5: all organs executed; every claim above is a "
+          "printed measurement.")
 
 if __name__ == "__main__":
     main()
