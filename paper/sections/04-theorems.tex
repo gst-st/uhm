@@ -306,6 +306,28 @@ division-algebra projective geometry) --- the base of the octonion-generated
 scaling ladder $G_2 \subset F_4 \subset E_6 \subset E_7 \subset E_8$
 (T-268--T-270~\status{T}).
 
+\paragraph{Number-theoretic root of the contraction constant.}
+The analytic bound rests entirely on the Fano contraction $c_F = 1/3$, and this
+constant is not free: it is $1/\lvert\mathrm{QR}(7)\rvert$, the reciprocal order of
+the orientation-multiplier group of octonion multiplication. Indexing the seven
+channels by $\mathbb{Z}/7$, the product is carried by the seven Fano lines --- the
+cyclic shifts of the quadratic-residue set $\mathrm{QR}(7) = \{1,2,4\}$. A
+multiplier $a \in (\mathbb{Z}/7)^\ast$, $i \mapsto a\,i$, preserves the Fano-line
+set (hence the product orientation $e_i e_j = \pm e_k$) \emph{iff}
+$a \in \mathrm{QR}(7)$; the non-residues $\{3,5,6\}$ reverse it. Thus the
+orientation-preserving symmetry group is exactly $\mathrm{QR}(7) \cong \mathbb{Z}/3$
+(the $\mathbb{Z}/3$-part of the Frobenius group $F_{21} = \mathbb{Z}/7 \rtimes
+\mathbb{Z}/3$, normaliser of the Singer cycle in $\mathrm{PSL}(2,7)$), so
+$c_F = R_{\mathrm{th}} = 1/\lvert\mathrm{QR}(7)\rvert = 1/3$. This unifies the four
+coincident 3's --- triadic LGKS decomposition, Fano block size, Hamming code
+distance, and residue count --- as one number-theoretic fact, and generalises to
+$\lvert\mathrm{QR}(N)\rvert = (N-1)/2$: among division-algebra dimensions
+$\{0,1,3,7\}$ only $N = 7$ supplies the three orientation classes needed to host
+the three triadic sectors ($\lvert\mathrm{QR}(N)\rvert \geq 3 \Leftrightarrow N \geq 7$).
+The value $1/3$ is fixed by the $N$-independent LGKS triad (T-57); the orientation
+root supplies its name and the dimensional selection (machine-verified;
+math-foundations Part~XVIII, Thm.~11.6/11.8).
+
 \subsection{The entropy law: regeneration as negentropy (T-271)}
 \label{subsec:entropy-law}
 
