@@ -1,0 +1,24 @@
+\contentsline {section}{Five marks of honesty}{2}{section*.2}%
+\contentsline {section}{\numberline {1}What everything is made of}{2}{section.1}%
+\contentsline {section}{\numberline {2}Why exactly seven}{3}{section.2}%
+\contentsline {section}{\numberline {3}What time is}{4}{section.3}%
+\contentsline {section}{\numberline {4}A beginning that had no ``before''}{4}{section.4}%
+\contentsline {section}{\numberline {5}The stage: why space is three-dimensional}{6}{section.5}%
+\contentsline {section}{\numberline {6}What things are (and whether there is a smallest one)}{7}{section.6}%
+\contentsline {section}{\numberline {7}What life is}{8}{section.7}%
+\contentsline {section}{\numberline {8}The window of consciousness}{8}{section.8}%
+\contentsline {section}{\numberline {9}The staircase within: three floors of reflection}{9}{section.9}%
+\contentsline {section}{\numberline {10}The colors of inner life}{10}{section.10}%
+\contentsline {section}{\numberline {11}Freedom}{11}{section.11}%
+\contentsline {section}{\numberline {12}Language and meaning: through the needle's eye}{12}{section.12}%
+\contentsline {section}{\numberline {13}Memory and learning}{12}{section.13}%
+\contentsline {section}{\numberline {14}Others, and why connection adds being}{13}{section.14}%
+\contentsline {section}{\numberline {15}Society, superintelligence, and the ceiling of towers}{14}{section.15}%
+\contentsline {section}{\numberline {16}The health of the pattern: care as engineering}{15}{section.16}%
+\contentsline {section}{\numberline {17}Death, the world's memory, and ``is all this forever''}{16}{section.17}%
+\contentsline {section}{\numberline {18}Who watched the world while there was no one to watch}{17}{section.18}%
+\contentsline {section}{\numberline {19}How to check that any of this is true}{17}{section.19}%
+\contentsline {section}{Epilogue: to be continued}{18}{section*.18}%
+\contentsline {section}{Map of the book}{19}{section*.19}%
+\contentsline {section}{A small glossary of images}{19}{section*.21}%
+\contentsline {section}{A page for the teacher}{20}{section*.22}%
