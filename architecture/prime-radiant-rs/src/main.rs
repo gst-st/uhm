@@ -5,6 +5,7 @@
 //!                             sample reading; exit code 1 if anything fails
 
 mod calib;
+mod demo;
 mod holon;
 mod interpret;
 mod model;
@@ -63,10 +64,39 @@ fn selftest() -> i32 {
     }
 }
 
+const USAGE: &str = "prime-radiant                     the TUI (ratatui)
+prime-radiant --selftest          headless verification battery
+prime-radiant demo blind          blind axis-diagnosis through the 7 lines (confusion matrix)
+prime-radiant demo calibration    the oracle's predictions vs fresh realizations (Brier)
+prime-radiant demo bench          navigation benchmark vs baselines (same starts)
+prime-radiant demo maxim          «no own goal → part of another's» — decomposed and measured
+prime-radiant checkup --scores 7,5,4,6,3,2,5 [--coh AE=0.4,OU=-0.2] [--model mind|team|llm|market|universal]";
+
 fn main() {
     let args: Vec<String> = std::env::args().collect();
     if args.iter().any(|a| a == "--selftest") {
         std::process::exit(selftest());
+    }
+    if args.iter().any(|a| a == "--help" || a == "-h") {
+        println!("{}", USAGE);
+        return;
+    }
+    if args.get(1).map(|s| s.as_str()) == Some("demo") {
+        match args.get(2).map(|s| s.as_str()) {
+            Some("blind") => demo::blind_diagnosis(200, 71),
+            Some("calibration") => demo::oracle_calibration(6, 40, 72),
+            Some("bench") => demo::navigate_bench(30, 73),
+            Some("maxim") => demo::maxim(74),
+            _ => println!("{}", USAGE),
+        }
+        return;
+    }
+    if args.get(1).map(|s| s.as_str()) == Some("checkup") {
+        if let Err(e) = demo::run_checkup_cli(&args[2..]) {
+            eprintln!("checkup error: {e}\n{}", USAGE);
+            std::process::exit(2);
+        }
+        return;
     }
     if let Err(e) = ui::run_tui() {
         eprintln!("tui error: {e}");
