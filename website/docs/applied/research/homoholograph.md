@@ -896,3 +896,94 @@ accuracy, time-zone history, and the line boundaries themselves. The solid tier
 carries the instrument's confident claims; the fragile tier carries its
 testable ones. That division — knowing which of your statements are which — is
 the difference between an oracle and a measurement.
+
+## Part XI. One mechanism, three vocabularies: UHM, active inference, and HD
+
+The reconstruction has, until now, bridged HD to UHM. This part widens the
+bridge to a third pillar — the **free-energy / active-inference** account of
+mind (Friston and successors), the leading computational theory of how a
+self-organizing system perceives and acts. The claim is not that Human Design
+is validated psychology. It is sharper and stranger: **UHM's machinery and
+active inference are the same machinery**, and HD's own open/defined centers
+land exactly where active inference would place high and low sensory precision.
+Three vocabularies, one mechanism — and where they meet, each supplies a level
+the others lacked. The research is `architecture/psyche_lab.py`.
+
+### 36. The identification
+
+Active inference says a mind is a **generative model** that predicts its
+sensory stream and acts to minimize the mismatch (variational free energy),
+weighting each channel by its **precision**. Set that beside UHM's encoder and
+the correspondence is not analogy but identity of role:
+
+| UHM | active inference | Human Design |
+|---|---|---|
+| self-model $\rho_0 = E(\text{Personality})$ | the generative model | Personality (conscious) |
+| body imprint $\mathrm{body}_0 = E(\text{Design})$ | the sensory stream / body | Design (unconscious) |
+| poristost (filter gain) | precision $\pi$ | open vs defined center |
+| open center = high gain | low prior precision ⇒ samples the world | conditioning by environment |
+| razlad $D_{ns}=\lVert\rho_0-\mathrm{body}_0\rVert$ | prediction error / free energy $F$ | "the mind is not the authority" |
+| the filter layer (belief update) | active inference ($\min F$) | strategy / experiment |
+
+The first five rows are **structural identifications** — true by construction
+of the mapping, not empirical claims. The reading they produce: a person's
+*open* dimensions are the ones where their prior is loose, so they **sample and
+amplify the world** there (and those readings vary most day to day); their
+*defined* dimensions are steady **sources**. razlad becomes a computable
+free-energy proxy — the felt size of the mind↔body gap.
+
+### 37. The chart agrees with itself (verification)
+
+Here is the sharp part. Active inference, given only UHM's gain map, predicts
+which dimensions a person samples the world through. Human Design, by an
+entirely separate doctrine (which centers are open), says the same thing. On
+the calibration chart they **coincide**: the one high-gain dimension the
+active-inference reading flags is **Interiority** (E) — and the one open center
+in the bodygraph is the Solar Plexus, the emotional center, which HD reads as
+"takes in and amplifies the emotions of the room." Two independent mechanisms,
+built for different purposes, point to the *same single dimension*. VERIFIED (a
+computed agreement on the chart); the razlad value (0.542) matches the engine's
+own to four figures. This is the bridge corroborating itself on real data.
+
+### 38. The trait dictionary, and honest limits
+
+A second science of human nature — trait psychology — gives an *axial*
+dictionary, each voice touching a well-validated construct: Articulation ↔
+assertive expression (extraversion's agency); Structure ↔ conscientious order
+plus threat-vigilance (BIS); Dynamics ↔ behavioural drive (BAS); Logic ↔
+openness/need-for-coherence; Interiority ↔ affective sensitivity and empathy
+(neuroticism's core); Ground ↔ dependability and care; Unity ↔ attachment and
+identity coherence. This is deliberately **not** a 7→5 reduction to the Big
+Five. The Big Five is itself neither orthogonal nor fundamental — it is a
+factor-analytic summary of adjectives. UHM's seven-voice basis is
+theorem-forced (T-224), so the arrow runs the other way: the voices are the
+principled basis, and the trait constructs are shadows each casts onto an
+established instrument. [И], and explicitly not validated on population data.
+
+### 39. The new level, and what it puts at risk
+
+Each field donates a level. Active inference gives UHM a *name and a dynamics*
+for razlad (free energy) and reframes the window of being as **precision
+control** — being neither too rigid (over-precise prior) nor too diffuse
+(under-precise). UHM gives active inference a *non-arbitrary basis*: not a
+grab-bag of traits but seven theorem-forced voices to carry the precision
+profile. HD gives both an *empirical marking* — the open/defined centers are a
+ready map of where a given person's sensory precision is high or low.
+
+That map is now a reading in the engine (`core/src/psyche.rs`, `hhg psyche`,
+the bot's `/psyche`): it names a person's sensing channels and steady sources
+and states their mind↔body alignment, all in plain language. And it comes with
+falsifiable predictions, each testable by one person through the blind n-of-1
+diary:
+
+- **P1 [OPEN]** sampler dimensions show *higher* self-report variance than
+  source dimensions (high gain = high process noise);
+- **P2 [OPEN]** high-razlad days track a felt "not-quite-myself" (free energy
+  as experienced misalignment);
+- **P3 [OPEN]** a person with an open emotional center has mood that tracks
+  their company more than a person with a defined one.
+
+If the diary contradicts these, the bridge is wrong where it is checkable —
+which is exactly what an applied instrument built on empirical ground should
+offer. The three vocabularies agree on the mechanism; the predictions are where
+that agreement is put at risk.
