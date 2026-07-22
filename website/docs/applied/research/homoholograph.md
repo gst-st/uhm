@@ -375,3 +375,66 @@ note, persistence to `~/.hhg_diary.json`; the posterior $\Gamma$ heatmap
 with the shift-from-prior norm; the EWS panel with the measured sensitivity
 limits quoted. Tests: unbiasedness, exact reconstruction on the calibration
 chart's prior, the uniform-diary-is-grey identity.
+
+## Part IV. The descending holonomy: the sky's own homogram
+
+### 16. The construction
+
+The ladder-of-worlds chapter of the ontology says it plainly: the floor
+above conducts the floor below — downward flows the beat, the supply, the
+meaning. The bridge from ephemerides into UHM is made computable by one
+move: the solar system gets its OWN homogram,
+
+$$
+\Gamma_{\text{sky}}(t) \;=\; \text{encode}_{v2}(\text{imprint}(t)),
+$$
+
+built by the *same* heptacode encoder that builds a person's natal prior.
+The downward bridge at ignition is therefore an **identity, not an
+analogy**: a being's natal prior *is* the conductor's page at the moment
+its autonomous loop starts (Personality = self-model ignition; Design,
+88° of solar arc earlier = body ignition — the phase-stamp reading, [И]).
+After ignition the trajectories diverge; transits compare the conductor's
+*current* page with your *printed* one — timebridges are where today's
+score completes your chords. Influence on beings stays OPEN; the
+construction itself is structurally exact.
+
+### 17. Measured (HB19–HB22, `sky_lab.py`)
+
+- **The conductor's climate (HB19).** Over 1900–2100 (36,500 pages):
+  $P_{\text{sky}}$ mean 0.308 ± 0.036, range [0.204, 0.533] — **the sky
+  itself spends 71.9% of days inside the window of being** (2/7, 3/7].
+  $\Phi_{\text{sky}}$ mean 0.85, range [0.21, 1.74]; the most coherent
+  pages of two centuries: 1954-04-04 (Φ = 1.74), 1937-04-11, 1976-06-19;
+  the flattest pages cluster in Novembers.
+- **The rhythm ladder (HB20, aliasing-honest).** The slow staff (no Moon)
+  shows the year (365.0 d) and the half-sidereal lunar line (13.88 ≈
+  13.66 d); the full sky at 3-hour sampling shows the year and the **solar
+  gate rhythm**: the 5.53–5.89 d peak family is the Sun crossing one gate
+  (365.25/64 = 5.71 d), *split by Kepler* — orbital eccentricity is
+  visible in the wheel's own spectrum.
+- **Axis-epochs (HB21).** The slow hands write eras in the *voices*: era
+  swings up to 5.4 пп in S and 4.9 пп in L across 20-year windows — the
+  «type era» discovery acquires axis resolution (2020–40: +S; 2040–60:
+  −L +O +E).
+- **The three staves (HB22).** The conductor writes on three staves with
+  measured half-lives: the lunar stroke ~2.4 hours, the inner rhythm ~2
+  days, the outer bass ~10 days *per line-phase* (the gate skeleton of the
+  outer hands lives weeks-to-years; the encoder's line-phase layer turns
+  pages faster than gates change — an instrument fact worth knowing).
+
+### 18. In the application: the knowledge base and the reports
+
+The laboratory now closes the loop from input to publishable раскладка:
+
+- **People**: saved profiles (`~/.hhg_persons.json`), one-click reload.
+- **The knowledge base** (`~/.hhg_kb.json`): every interpretation text the
+  reports use is an editable entry with a stable key and an honesty class;
+  defaults are seeded from the corpus SSOT (7 voices, 21 coherences) and
+  the reconstruction theorems — the user overwrites any of it and owns
+  their own interpretive canon.
+- **Reports**: a deterministic markdown generator (numbers from the
+  engine, texts from the KB) assembling the full раскладка — summary,
+  Rose-64 with per-activation readings, observables, panel, tyaga,
+  poristost, yakornost, smychka, nebograph, diary+EWS — saved to
+  `~/hhg_report_*.md`; also `hhg-report --md` headless.
