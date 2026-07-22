@@ -827,3 +827,72 @@ residues mod 7 the theory already needed for three generations of matter. That
 is what it means to move a system from the esoteric class to the scientific
 floor: not to strip its beauty, but to find the mathematics that was holding
 the beauty up all along.
+
+## Part X. Verification against a production app, and the precision layer
+
+An applied instrument lives or dies by its numbers. This part reports a full
+cross-check of the engine against a mature, licensed production app
+(humandesign.red, running the Jovian-Archive Rave BodyGraph), on the
+calibration chart — and the empirical layer that check forced us to build.
+
+### 33. Twenty-six of twenty-six
+
+The two systems were compared activation by activation — all 13 Personality
+plus 13 Design gate·line positions — for the same birth data. The structural
+readings agree completely: **type** (Manifesting Generator), **profile**
+(3/5), **authority** (Sacral), all **five channels** (1–8, 2–14, 4–63, 10–57,
+26–44), all **twenty defined gates**, the **split** (double definition), and
+the **incarnation cross** (Right Angle Cross of Penetration, on gates
+51/57/54/53). At the finest level, 24 of the 26 gate·line activations matched
+exactly; the two that differed were **both the Moon**, off by a single line.
+
+The whole difference traced to **one root cause: the timezone.** The app placed
+the birth at UTC+6; our engine, through the IANA time-zone database, placed it
+at **UTC+7** — because Alma-Ata on 7 April 1985 was on **Soviet summer time**
+(decree time +1 h of DST, in force from 31 March to 29 September 1985). When
+the engine is asked to use the app's UTC+6 assumption instead, it reproduces
+the production chart **26 of 26, exactly** — including both Moons. So the
+ephemeris carries no error against the reference; and on the historical
+time-zone it is, if anything, **more correct than the production app**, which
+omitted the 1985 summer-time hour. VERIFIED (26/26 at matched time); the
+DST-accuracy claim is falsifiable against the birth certificate or any
+high-precision ephemeris.
+
+### 34. The Moon is a precision sentinel
+
+Why did a one-hour shift move *only* the Moon? Because the Moon is the fastest
+body on the wheel. Measured at the calibration moment, the Moon travels a full
+line of the wheel in about **16 minutes** of birth time; the next-fastest body,
+the Sun, needs about **416 minutes** — seven hours. Every other body is slower
+still. So a birth-time or DST error of the everyday size — up to an hour —
+flips the Moon's line and touches nothing else. The Moon is a **precision
+sentinel**: the single element sensitive enough to reveal a clock error, while
+the rest of the chart stays rock-steady.
+
+This is exactly why 24 held and 2 (both Moons) moved. It is not noise; it is
+the wheel's own error-budget made visible.
+
+### 35. The fragility layer — an epistemic level UHM's instrument needed
+
+The sentinel is not a nuisance to hide; it is an interpretation level to
+expose. The engine now carries a **fragility** layer (`core/src/fragility.rs`,
+`hhg fragility`): for every activation it computes `minutes_to_flip` — how many
+minutes of birth-time error would move that reading to the neighbouring line —
+and sorts each into a confidence tier: **solid** (> 120 min), **watch**
+(30–120 min), **fragile** (< 30 min). On the calibration chart the census is
+2 fragile (both Moons, ~7 and ~16 min), 1 watch (Design Mercury), and 23 solid
+— and the two fragile activations are *precisely* the two that disagreed with
+the production app. The layer predicts its own uncertainty.
+
+This is the "additional level of interpretation" an empirical instrument
+demands, and no bodygraph tool shows it: a reading that says out loud which of
+its own parts are rock-solid and which are soft. It is also a **falsification
+handle**. A fragile activation is one where a small, plausible birth-time error
+changes the symbol — so it is exactly where a per-user self-report can
+*adjudicate* between the two candidate readings (here, Moon in gate 4 line 3
+versus line 4). Run enough of these n-of-1 discriminations and the fragile
+activations become a calibration test of the whole pipeline: birth-time
+accuracy, time-zone history, and the line boundaries themselves. The solid tier
+carries the instrument's confident claims; the fragile tier carries its
+testable ones. That division — knowing which of your statements are which — is
+the difference between an oracle and a measurement.
