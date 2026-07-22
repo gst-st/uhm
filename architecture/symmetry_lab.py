@@ -314,6 +314,44 @@ def main():
     print(f"  СОВПАДАЕТ с A,S,D,L,E,O,U: {matches}  — порядок голосов НЕ "
           f"произволен, это алгебраическое вращение F₈")
 
+    # -- the dynamics BREAKS the symmetry: H_EFF lifts the degeneracy --------
+    print("\n" + "-" * 74)
+    print("[DYN] Динамика ломает симметрию: H_EFF снимает вырождение голосов")
+    print("-" * 74)
+    try:
+        import numpy as np
+        from prime_radiant import H_EFF, I7
+        def umat(perm):
+            U = np.zeros((7, 7))
+            for p in range(1, 8):
+                U[perm[p - 1] - 1, p - 1] = 1.0
+            return U
+        Us = [umat(list(g)) for g in G]
+        commute = sum(1 for U in Us
+                      if np.linalg.norm(H_EFF @ U - U @ H_EFF) < 1e-9)
+        grey_max = max(np.linalg.norm(I7 @ U - U @ I7) for U in Us)
+        lam = np.diag(H_EFF)
+        distinct = len(set(np.round(lam, 6))) == 7
+        print(f"  спектр H_EFF (A5): {[float(round(x,1)) for x in lam]}; "
+              f"все различны: {distinct}")
+        print(f"  элементов G, коммутирующих с H_EFF: {commute} (только тождество "
+              f"⇒ МАКСИМАЛЬНЫЙ разлом)")
+        print(f"  распад к серости I/7 инвариантен относительно G: "
+              f"{grey_max:.1e} (=0)")
+        print("  ⇒ кинематика колеса G-симметрична; ДИНАМИКА (гамильтониан УГМ)")
+        print("    ломает её — индивид есть спонтанный разлом симметрии.")
+        # Bohr tempos of the 21 coherences: omega_ij = |lambda_i - lambda_j|
+        axes = ['A', 'S', 'D', 'L', 'E', 'O', 'U']
+        bohr = sorted((abs(lam[i] - lam[j]), axes[i] + axes[j])
+                      for i in range(7) for j in range(i + 1, 7))
+        slow = ", ".join(f"{n}={b:.1f}" for b, n in bohr[:3])
+        fast = ", ".join(f"{n}={b:.1f}" for b, n in bohr[-3:])
+        print(f"  темпы Бора 21 когерентности ω=|λi−λj| (относительные, [И]):")
+        print(f"    медленнейшие: {slow}   быстрейшие: {fast}")
+        print(f"    вырожденных (ω=0) нет: {sum(1 for b,_ in bohr if b<1e-9)==0}")
+    except Exception as e:  # pragma: no cover
+        print(f"  (динамический блок пропущен: {e})")
+
     print("\n" + "=" * 74)
     print("ИТОГ: колесо из 64 знаков = орбиты конечной простой группы порядка")
     print("168. Классификация ворот вынуждена симметрией [Т]; «3 поколения»")
