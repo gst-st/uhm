@@ -710,3 +710,120 @@ must never be trapped in a vocabulary it has outgrown. Held together, they let
 the system be calibrated by Human Design without being owned by it: an
 ontology of the human that earns each of its words, and puts each of them at
 risk.
+
+## Part IX. The hidden group: from esoteric alphabet to representation theory
+
+Everything so far has treated the wheel as a *given* — 64 gates, seven voices,
+21 coherences, seven Fano lines — and built structure on top of it. This part
+asks the deeper question: **why this wheel and no other?** The answer is a
+single finite group, and finding it is what lifts the whole construction off
+the esoteric shelf and onto the scientific floor. The research lives in
+`architecture/symmetry_lab.py`; every claim below is measured there, nothing on
+faith.
+
+### 30. The 64 gates are the orbits of a finite simple group
+
+The seven voices are the seven nonzero vectors of `F₂³`; the 21 coherences are
+their pairs; the seven Fano lines are the collinear triples `{a, b, a⊕b}`. The
+symmetry that fixes *all* of this at once — permuting the voices while carrying
+lines to lines — is the automorphism group of the Fano plane:
+
+$$ G \;=\; \mathrm{GL}(3,2) \;\cong\; \mathrm{PSL}(2,7), \qquad |G| = 168, $$
+
+a **finite simple group** (the second-smallest non-abelian simple group, after
+`A₅`). The lab builds all 168 elements explicitly and checks that every one of
+them preserves the set of seven Fano lines — so `G` is exactly `Aut(Fano)`.
+
+Now let `G` act on the *even subsets* of the seven points — which is precisely
+the set of 64 gates, since a gate is a King Wen hexagram whose support (the
+"on" voices, parity included) is an even subset. The orbits come out as:
+
+| orbit | size | our name | what it is |
+|---|---|---|---|
+| ∅ | 1 | **source** | the empty support (KW 2) |
+| pairs | 21 | **pair** | the 21 coherences |
+| lines | 7 | **line** | the Fano-line shadows (the spine) |
+| triangles | 28 | **triangle** | the non-collinear triples |
+| points | 7 | **voice** | the pure single voices |
+
+`1 + 21 + 7 + 28 + 7 = 64`. Five orbits, and **they are exactly the five
+classes of `classify()`** — the lab verifies `classify(kw)` equals the orbit
+label of the gate's support for all 64 gates. This is the load-bearing result
+of the entire reconstruction restated at its deepest level:
+
+> The gate classification is not a convention we chose. It is the orbit
+> decomposition of `Aut(Fano)`, and so it is **forced** — any faithful reading
+> of the wheel must produce these five classes and no others. VERIFIED (exact
+> combinatorics of the group action, checked for all 64 gates).
+
+Each class is a *single* orbit (the lab checks transitivity): the 21 coherences
+are indistinguishable to the group, as are the 7 lines and the 28 triangles.
+That is the group-theoretic reason the 21 coherences are genuinely *equal*
+citizens (the claim UHM's T-256 makes abstractly, here realized on HD's
+empirically-fixed wheel). The syndrome-0 gates — the Hamming spine — turn out
+to be exactly `source ∪ lines = 8 = 2³`: the group's canonical representatives,
+with the syndrome reading off the coset.
+
+### 31. The bridge to UHM: N_gen = 3 is a representation dimension
+
+A finite group's deepest fingerprint is its character table: the dimensions of
+its irreducible representations. `G` has **6 conjugacy classes** (sizes
+`1, 21, 24, 24, 42, 56`; element orders `1, 2, 3, 4, 7, 7`), hence six
+irreducibles, of dimensions
+
+$$ 1,\; 3,\; 3,\; 6,\; 7,\; 8 \qquad (1^2+3^2+3^2+6^2+7^2+8^2 = 168). $$
+
+The two **3-dimensional** irreps are complex conjugates, and they are indexed
+by how an order-7 element acts: its eigenvalues are the 7th roots of unity at
+the **quadratic-residue** exponents `{1, 2, 4}` for one, the non-residues
+`{3, 5, 6}` for the other. So the number three here is not incidental — it is
+`|QR(7)| = (7−1)/2 = 3`.
+
+That is *exactly* the arithmetic behind UHM's generation count: `N_gen = 3`
+because `N_gen = |QR(7)|`. The same three quadratic residues mod 7 that force
+three fermion generations in the theory are the ones that give `G` its two
+three-dimensional representations. **UHM's "three generations" is the dimension
+of an irreducible representation of the Human Design wheel's symmetry group.**
+This is the two-way bridge in its sharpest form: UHM supplies the wheel with a
+group and a reason for its threefold structure; HD supplies the group with a
+concrete, empirically-tuned object on which to act.
+
+Two more measured resonances round it out. The 21 involutions of `G` (its
+order-2 elements) each fix one Fano line pointwise and move the other four
+points — **three involutions per line, `21 = 7 × 3`** — the same 3 again,
+riding on each line. And the 48 order-7 elements are all single 7-cycles
+(Singer cycles): the *algebraic source of the wheel's circle*. The canonical
+one, multiplication by a generator of the field `F₈`, permutes the voices as
+
+$$ A \to S \to D \to L \to E \to O \to U \to A, $$
+
+which is **exactly the canonical voice order**. The order in which UHM lists
+its seven voices is not a stylistic choice — it is the rotation of `F₈`.
+
+### 32. The applied layer: structure you can see
+
+The group is not only foundational; it is a working lens, exposed in the engine
+as `core/src/symmetry.rs` (`hhg symmetry`, the bot's `/symmetry`, and the
+assistant's glossary). Two capabilities fall straight out of §30–31:
+
+- **The structural fingerprint.** Because the five classes are orbits, the
+  histogram of a chart's activations across `{source, pair, line, triangle,
+  voice}` is a genuine, coordinate-free **invariant** of the chart under the
+  full symmetry group — a robust structural profile that no relabelling of
+  voices can disturb. (The calibration chart: 26 activations reading
+  `voices 7, bridges 4, line-shadows 5, triangles 8, source 2`, with 7 on the
+  Hamming spine.)
+- **The rotation ring.** The Singer cycle gives every voice a principled
+  successor — the voice the wheel turns toward next — a new interpretive axis
+  grounded in the field structure rather than asserted. (The developmental
+  reading of that succession is honest storyteller-layer, [И]; the cycle
+  itself is exact.)
+
+The lesson of Part IX is the one the whole project is aimed at. An alphabet
+that arrived wrapped in three thousand years of oracle and metaphor turns out,
+when read carefully, to be the orbit structure and representation theory of a
+finite simple group of order 168 — the same group whose three quadratic
+residues mod 7 the theory already needed for three generations of matter. That
+is what it means to move a system from the esoteric class to the scientific
+floor: not to strip its beauty, but to find the mathematics that was holding
+the beauty up all along.
