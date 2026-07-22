@@ -377,9 +377,11 @@ All 7 components of the stress tensor are defined as **unambiguous functions of 
 | $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Rank of structural submatrix |
 | $\sigma_D$ | $1 - N\gamma_{DD}$ | Dynamic sector deficit |
 | $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Logical deficit |
-| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Differentiation deficit |
+| $\sigma_E$ | $(N - D_{\mathrm{diff}})/(N-2)$ | Differentiation deficit |
 | $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Regeneration deficit |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Integration deficit |
+| $\sigma_U$ | $2\Phi_{\mathrm{th}}/(\Phi_{\mathrm{th}} + \Phi)$ | Integration deficit |
+> **Errata 2026-07-22**: the $\sigma_E$, $\sigma_U$ rows are the renormalized forms — see the [errata note at T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+
 
 The empirical formulas from the table above ($I_{\mathrm{env}}/\theta_A$ etc.) remain as **operationalization** for specific systems (biological, AI, organizational). The theoretical definitions via $\Gamma$ fully replace the formerly informal numerators.
 

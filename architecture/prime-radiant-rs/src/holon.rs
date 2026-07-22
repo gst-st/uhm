@@ -364,6 +364,18 @@ pub fn stress_panel(g: &CMat) -> [f64; 7] {
     ]
 }
 
+/// The REPAIRED T-92 panel (2026-07-22 errata): sigma_E and sigma_U
+/// renormalized so sigma_i < 1 <=> the canonical threshold holds
+/// (D_diff > 2, Phi > 1); restores max sigma < 1 => P > 2/7 via
+/// sum(gamma_ii^2) >= 1/7.
+pub fn stress_panel_v2(g: &CMat) -> [f64; 7] {
+    let mut sp = stress_panel(g);
+    let d_diff = entropy(g).exp();
+    sp[4] = (7.0 - d_diff) / 5.0;
+    sp[6] = 2.0 / (1.0 + phi_exact(g));
+    sp
+}
+
 pub fn max_stress(g: &CMat) -> f64 {
     stress_panel(g).iter().cloned().fold(f64::MIN, f64::max)
 }

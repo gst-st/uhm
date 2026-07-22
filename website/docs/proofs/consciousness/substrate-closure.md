@@ -508,7 +508,7 @@ thanks to co-rotating targets. Without them the threshold $\Phi \geq 1$ is not a
 ## §12. T-158: Canonical bounds on σ_sys {#t-158}
 
 :::tip Theorem T-158 [Т]: Canonical bounds on σ_sys
-All components of the stress tensor $\sigma_k \in [0, 1]$ by definition with canonical clamping:
+All components of the stress tensor $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) by definition with canonical clamping:
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
@@ -524,7 +524,7 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 **Step 2 (Clamping).** The operation $\mathrm{clamp}(x, 0, 1)$ maps $[-6, 1]$ to $[0, 1]$. By [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий): $\sigma_k$ is the canonical function of $\Gamma$-invariants.
 
-**Step 3 (Canonicity).** By [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = 1 - D_{\mathrm{diff}}^{7D}/N$ is computable in 7D. By [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): all 7 components are computable. Each $\sigma_k \in [0, 1]$ is a bounded continuous function of $\Gamma$. $\blacksquare$
+**Step 3 (Canonicity).** By [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ is computable in 7D. By [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): all 7 components are computable. Each $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) is a bounded continuous function of $\Gamma$. $\blacksquare$
 
 **Dependencies:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128), [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137).
 

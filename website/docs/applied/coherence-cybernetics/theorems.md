@@ -841,11 +841,16 @@ Each component $\sigma_i$ is defined through invariants of the coherence matrix 
 | $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | Structural incompleteness |
 | $\sigma_D$ | $1 - N\gamma_{DD}$ | Dynamic sector deficit |
 | $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Logic deficit |
-| $\sigma_E$ | $1 - D_{\mathrm{diff}}/N$ | Differentiation deficit |
+| $\sigma_E$ | $(N - D_{\mathrm{diff}})/(N-2)$ | Differentiation deficit |
 | $\sigma_O$ | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | Regeneration deficit |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\mathrm{th}}$ | Integration deficit |
+| $\sigma_U$ | $2\Phi_{\mathrm{th}}/(\Phi_{\mathrm{th}} + \Phi)$ | Integration deficit |
 
 All seven components are **unambiguous functions of $\Gamma$** with no free parameters.
+
+:::warning Errata (2026-07-22): renormalization of $\sigma_E$ and $\sigma_U$ [Т]
+The previously published rows $\sigma_E = 1 - D_{\mathrm{diff}}/N$ and $\sigma_U = 1 - \Phi/\Phi_{\mathrm{th}}$ did **not** satisfy Step 2: they gave $\sigma < 1$ for *any* $D_{\mathrm{diff}} > 0$, $\Phi > 0$, so the panel did not encode the thresholds $D_{\mathrm{diff}} \geq 2$, $\Phi \geq \Phi_{\mathrm{th}}$ — and the embedding $\mathcal{V}_{\mathrm{full}} \subset \mathcal{V}_P$ failed (machine counterexample: near-uniform diagonal with $\gamma_{OE} = \gamma_{OU} = 0.05$ gives all $\sigma < 1$ yet $P = 0.153 < 2/7$). The repaired rows encode their thresholds exactly ($\sigma < 1 \Leftrightarrow$ threshold strictly satisfied), and the embedding is **restored with a proof**: by Cauchy–Schwarz $\sum_i \gamma_{ii}^2 \geq 1/7$, hence $\sigma_U < 1 \Rightarrow \Phi > \Phi_{\mathrm{th}} = 1 \Rightarrow P = (1+\Phi)\sum_i \gamma_{ii}^2 > 2/7$. Machine-verified: exact threshold encoding and $0/19{,}000$ embedding violations (`prime_radiant.py` H57–H59; Rust R28). The same errata canonizes $\Gamma_S$: the $3\times 3$ block of $\Gamma$ on the structural sector $\{A, S, D\}$ (the sectoral triple of [Spacetime](/docs/core/foundations/spacetime#секторная-декомпозиция)); its rank is evaluated as numerical rank (tolerance $0.02$) — an [О]-convention, since rank is discontinuous.
+:::
+
 
 **Proof:**
 

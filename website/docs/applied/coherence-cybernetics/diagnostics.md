@@ -57,9 +57,11 @@ Each of the 7 components of $\sigma_{\mathrm{sys}}$ (T-92 [T]) serves as a vital
 | 2 | $\sigma_S$ (structure) | $1 - \mathrm{rank}(\Gamma_S)/3$ | $< 0.3$ | $0.3 - 0.7$ | $\geq 0.7$ |
 | 3 | $\sigma_D$ (dynamics) | $1 - N\gamma_{DD}$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
 | 4 | $\sigma_L$ (logic) | $7(1 - \gamma_{LL})/6$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
-| 5 | $\sigma_E$ (interiority) | $1 - D_{\mathrm{diff}}/N$ | $< 0.5$ | $0.5 - 0.8$ | $\geq 0.8$ |
+| 5 | $\sigma_E$ (interiority) | $(N - D_{\mathrm{diff}})/(N-2)$ | $< 0.9$ | $0.9 - 1.0$ | $\geq 1.0$ |
 | 6 | $\sigma_O$ (foundation) | $1 - \kappa_0/\kappa_{\mathrm{bootstrap}}$ | $< 0.3$ | $0.3 - 0.6$ | $\geq 0.6$ |
-| 7 | $\sigma_U$ (unity) | $1 - \Phi/\Phi_{\mathrm{th}}$ | $< 0.4$ | $0.4 - 0.7$ | $\geq 0.7$ |
+| 7 | $\sigma_U$ (unity) | $2\Phi_{\mathrm{th}}/(\Phi_{\mathrm{th}} + \Phi)$ | $< 0.9$ | $0.9 - 1.0$ | $\geq 1.0$ |
+> **Errata 2026-07-22**: the $\sigma_E$, $\sigma_U$ rows are the renormalized forms — see the [errata note at T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+
 
 **Rule:** $\|\sigma_{\mathrm{sys}}\|_\infty \geq 1$ → the system is **non-viable** ([T-92](./theorems#теорема-101-эквивалентность-условий) [T]).
 

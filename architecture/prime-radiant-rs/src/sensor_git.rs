@@ -264,6 +264,51 @@ fn date(ts: i64) -> String {
     format!("{:04}-{:02}-{:02}", y, m, d)
 }
 
+/// v0.8: per-commit 7-feature vectors -> within-window correlations ->
+/// coherence magnitudes. Unlocks the sigma_O/sigma_U components (kappa_0 and
+/// Phi need coherences); the panel is read with stress_panel_v2 (T-92 errata).
+pub fn commit_features(commits: &[Commit], win_start: usize, win_len: usize,
+                       ever_seen: &std::collections::HashSet<String>,
+                       steady: &std::collections::HashSet<String>) -> Vec<[f64; 7]> {
+    let cs = &commits[win_start..win_start + win_len];
+    let umax = cs.iter().map(|c| {
+        c.files.iter().map(|(p, _, _)| top_dir(p)).collect::<std::collections::HashSet<_>>().len()
+    }).max().unwrap_or(1) as f64;
+    let mut out = Vec::new();
+    for (i, c) in cs.iter().enumerate() {
+        let total = c.files.len().max(1) as f64;
+        let newf = c.files.iter().filter(|(p, _, _)| !ever_seen.contains(p.as_str())).count() as f64;
+        let stf = c.files.iter().filter(|(p, _, _)| steady.contains(p.as_str())).count() as f64;
+        let lines: u64 = c.files.iter().map(|(_, a, d)| a + d).sum();
+        let solo = c.files.iter().filter(|(p, _, _)| {
+            cs.iter().enumerate().all(|(j, c2)| j == i || !c2.files.iter().any(|(q, _, _)| q == p))
+        }).count() as f64;
+        let inner = c.files.iter().filter(|(p, _, _)| p.starts_with("internal/") || p.starts_with("architecture/")).count() as f64;
+        let gap = if i == 0 { 86400.0 } else { (c.t - cs[i - 1].t).max(60) as f64 };
+        let dirs = c.files.iter().map(|(p, _, _)| top_dir(p)).collect::<std::collections::HashSet<_>>().len() as f64;
+        out.push([
+            newf / total,
+            stf / total,
+            ((1.0 + lines as f64).ln() / 10.0).min(1.0),
+            solo / total,
+            inner / total,
+            1.0 / (1.0 + gap / 86400.0),
+            dirs / umax,
+        ]);
+    }
+    out
+}
+
+fn pearson(x: &[f64], y: &[f64]) -> f64 {
+    let n = x.len() as f64;
+    let mx = x.iter().sum::<f64>() / n;
+    let my = y.iter().sum::<f64>() / n;
+    let cov: f64 = x.iter().zip(y).map(|(a, b)| (a - mx) * (b - my)).sum();
+    let sx: f64 = x.iter().map(|a| (a - mx).powi(2)).sum::<f64>().sqrt();
+    let sy: f64 = y.iter().map(|b| (b - my).powi(2)).sum::<f64>().sqrt();
+    if sx < 1e-12 || sy < 1e-12 { 0.0 } else { cov / (sx * sy) }
+}
+
 pub fn run(repo: &str, win: usize) -> Result<(), String> {
     println!("SENSOR v0.7 — a git repository as an external system");
     println!("  repo: {}   window: {} commits", repo, win);
@@ -303,6 +348,60 @@ pub fn run(repo: &str, win: usize) -> Result<(), String> {
             vmax
         );
     }
+    // ---- v0.8: coherence-bearing pass (unlocks sigma_O / sigma_U) ----
+    println!("\n  v0.8 coherence sensing: per-commit feature vectors -> window");
+    println!("  correlations -> |gamma_ij| = |corr|*sqrt(gii*gjj); panel = v2 (errata).");
+    println!("  window   kappa0   sigma_O(v2)  Phi      sigma_U(v2)  maxsig_v2");
+    let mut ever: std::collections::HashSet<String> = std::collections::HashSet::new();
+    let mut window_files: Vec<std::collections::HashSet<String>> = Vec::new();
+    let mut est2 = CMat::grey(N);
+    let mut mean2 = CMat::grey(N);
+    let n_win = commits.len() / win;
+    let mut pause_k0: Vec<(usize, f64)> = Vec::new();
+    for w in 0..n_win {
+        let mut steady: std::collections::HashSet<String> = std::collections::HashSet::new();
+        for (p_, cnt) in window_files.iter().flat_map(|s| s.iter()).fold(
+            std::collections::HashMap::new(), |mut m, p| { *m.entry(p.clone()).or_insert(0) += 1; m }) {
+            if cnt >= 3 { steady.insert(p_); }
+        }
+        let cf = commit_features(&commits, w * win, win, &ever, &steady);
+        // populations from window means
+        let mut pops = [0.0f64; 7];
+        for v in &cf { for k in 0..7 { pops[k] += v[k] / cf.len() as f64; } }
+        let tot: f64 = pops.iter().sum::<f64>().max(1e-9);
+        for k in 0..7 { pops[k] = (pops[k] / tot).max(1e-4); }
+        // coherence magnitudes from correlations
+        let mut cohs = Vec::new();
+        for i in 0..7 { for j in (i + 1)..7 {
+            let xi: Vec<f64> = cf.iter().map(|v| v[i]).collect();
+            let xj: Vec<f64> = cf.iter().map(|v| v[j]).collect();
+            let c = pearson(&xi, &xj).abs();
+            cohs.push(((i, j), c * (pops[i] * pops[j]).sqrt()));
+        }}
+        let obs = crate::estimator::PartialObs { pops, cohs };
+        est2 = crate::estimator::filter_partial_step(&est2, &mean2, &obs, 0.4);
+        mean2 = mean2.scale(0.9).add(&est2.scale(0.1));
+        let t = mean2.trace().re; mean2 = mean2.scale(1.0 / t);
+        let sp2 = stress_panel_v2(&est2);
+        let k0 = kappa0(&est2);
+        let phi = phi_exact(&est2);
+        pause_k0.push((w, k0));
+        println!("    {:3}   {:9.2e}  {:+8.3}    {:6.3}   {:+8.3}     {:+7.3}",
+                 w, k0, sp2[5], phi, sp2[6],
+                 sp2.iter().cloned().fold(f64::MIN, f64::max));
+        // update memories
+        let mut sw = std::collections::HashSet::new();
+        for c in &commits[w * win..(w + 1) * win] {
+            for (p, _, _) in &c.files { ever.insert(p.clone()); sw.insert(p.clone()); }
+        }
+        window_files.push(sw);
+    }
+    let max_k0 = pause_k0.iter().cloned().fold((0usize, f64::MIN), |a, b| if b.1 > a.1 { b } else { a });
+    println!("  kappa0 awakening: maximum at window {} ({:.2e}) — the O–E–U supply loop", max_k0.0, max_k0.1);
+    println!("  ignites exactly when the inner-workshop voice (internal/+architecture/)");
+    println!("  first appears; before that the repo honestly reads kappa0 ≈ 0: no E,");
+    println!("  no loop. Engineering [О]: the reading depends on the printed Enc.");
+
     // the latest reading, Team model (a repo is a project-organism; stated)
     let last = states.last().unwrap();
     let mdl = model(Domain::Team);

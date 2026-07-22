@@ -508,7 +508,7 @@ $$\frac{d\gamma_{ij}}{d\tau}\bigg|_{H} = -i(E_i - E_j)\gamma_{ij}$$
 ## §12. T-158: Канонические границы σ_sys {#t-158}
 
 :::tip Теорема T-158 [Т]: Канонические границы σ_sys
-Все компоненты стресс-тензора $\sigma_k \in [0, 1]$ по определению с каноническим clamping:
+Все компоненты стресс-тензора $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) по определению с каноническим clamping:
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
@@ -524,7 +524,7 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 **Шаг 2 (Clamping).** Операция $\mathrm{clamp}(x, 0, 1)$ приводит $[-6, 1]$ к $[0, 1]$. По [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий): $\sigma_k$ — каноническая функция $\Gamma$-инвариантов.
 
-**Шаг 3 (Каноничность).** По [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = 1 - D_{\mathrm{diff}}^{7D}/N$ вычислима в 7D. По [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): все 7 компонент вычислимы. Каждая $\sigma_k \in [0, 1]$ — ограниченная непрерывная функция $\Gamma$. $\blacksquare$
+**Шаг 3 (Каноничность).** По [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ вычислима в 7D. По [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): все 7 компонент вычислимы. Каждая $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) — ограниченная непрерывная функция $\Gamma$. $\blacksquare$
 
 **Зависимости:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128), [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137).
 

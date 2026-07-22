@@ -1,7 +1,7 @@
 ---
 sidebar_position: 15
 title: Prime Radiant
-description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (56 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
+description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (66 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
 ---
 
 # The Prime Radiant: a golden-path navigator over Γ
@@ -54,7 +54,7 @@ Why do two unrelated mathematics share one name here? Both floors perform the sa
 
 ## §3. The machine {#машина}
 
-The machine exists twice, deliberately. The **reference** is `architecture/prime_radiant.py` — numpy-only, deterministic, self-verifying; a sibling of the [TALOS v0 emulator](/docs/applied/research/engineering-insights) whose canonical tick it reuses. The **instrument** is `architecture/prime-radiant-rs` — a Rust implementation with a live TUI (ratatui): eight tabs (Holon dashboard with the $|\Gamma|$ heatmap and σ-panel, Atlas, Oracle, Pair, Ensemble, Reading, Calibration, Help), spectrum-preserving dial controls, bold-mode, and domain presets; its `--selftest` runs a 27-hypothesis battery (27/27 VERIFIED) and reproduces the Python attractor to $P^* = 0.3208$ vs $0.321$ — a cross-language replication of the whole dynamical core. The kernel is **generalized**: one state space, one tick, one observable suite — what changes between application domains is only the gloss vocabulary and the parameter system (the `Model` presets: Universal, Mind, Team, LLM agent, Market), which is the precise sense in which «only the application models and the equation systems change». Organs of the reference machine:
+The machine exists twice, deliberately. The **reference** is `architecture/prime_radiant.py` — numpy-only, deterministic, self-verifying; a sibling of the [TALOS v0 emulator](/docs/applied/research/engineering-insights) whose canonical tick it reuses. The **instrument** is `architecture/prime-radiant-rs` — a Rust implementation with a live TUI (ratatui): eight tabs (Holon dashboard with the $|\Gamma|$ heatmap and σ-panel, Atlas, Oracle, Pair, Ensemble, Reading, Calibration, Help), spectrum-preserving dial controls, bold-mode, and domain presets; its `--selftest` runs a 28-hypothesis battery (28/28 VERIFIED) and reproduces the Python attractor to $P^* = 0.3208$ vs $0.321$ — a cross-language replication of the whole dynamical core. The kernel is **generalized**: one state space, one tick, one observable suite — what changes between application domains is only the gloss vocabulary and the parameter system (the `Model` presets: Universal, Mind, Team, LLM agent, Market), which is the precise sense in which «only the application models and the equation systems change». Organs of the reference machine:
 
 | Organ | Contents | Verification |
 |-------|----------|--------------|
@@ -63,13 +63,14 @@ The machine exists twice, deliberately. The **reference** is `architecture/prime
 | **[C]** observables | $P$, $R$, exact $\Phi$ (not the $7P{-}1$ proxy), $C = \Phi \times R$, $S$, $D_{\text{diff}}$, $\mathrm{Coh}_E$, the T-92 stress panel | H33–H38 |
 | **[D]** dynamics | the $\mathcal{L}_\Omega$ tick (Strang split, CPTP-safe), $\kappa(\mathrm{Coh}_E)$ feedback | H16–H32 |
 | **[E]** navigator | goal regions, SO(7) dials, bold moves, the solitaire oracle, ensembles | H39–H45 |
-| **[F]** calibration | the 56-hypothesis table, re-run on every change | §5 |
+| **[F]** calibration | the 66-hypothesis table, re-run on every change | §5 |
 | **[G]** pair space | $\mathcal{D}(\mathbb{C}^{49})$: bridges, the T-77 gain, the κ-budget contest | H47–H50 |
 | **[H]** towers | the centered-Gram meta-holon; the purity ladder | H51, H45 |
 | **[I]** geodesics | the m-chord identity of regeneration; path straightness | H52–H53 |
 | **[J]** phase atlas | the (dissipation, supply) basin map | H54–H55 |
 | **[K]** estimator | predict–measure–update over $\mathcal{D}(\mathbb{C}^7)$: full and partial noisy readouts, process noise | R26–R27, demo 6 |
-| **[S]** domain sensor | an external system → observation stream; first instance: a git repository (metadata-only dictionary v0.7) | §3.10 item 7, held-out p = 0.014 |
+| **[S]** domain sensor | an external system → observation stream; git repository (v0.7 metadata-only; v0.8 coherence-bearing: per-commit feature correlations unlock $\sigma_O/\sigma_U$ — the κ₀ supply loop ignites exactly with the repo's inner-workshop era) | §3.10 item 7, held-out p = 0.014 |
+| **[L]** BKM floor | the Kubo–Mori metric, m/e-geodesic lengths, geodesic MPC | H60–H64 |
 
 Two engineering facts deserve their own sentence. *The wiring catch:* the calibration discovered (H46) that the TALOS v0 emulator's translate wiring, read in display order $A..U$, realizes the corpus lines only up to the $U/O$ naming swap of §2.1 — functionally isomorphic (all spectral observables unaffected), but any **line-named** diagnostic must use the corrected wiring; the machine does. *The proxy catch:* the emulator's $\Phi = 7P - 1$ is a uniform-diagonal proxy; on a generic state it deviates from the canonical $\Phi$ by tens of percent (measured: $3.84$ vs $2.45$; H34) — the solver computes the exact one.
 
@@ -235,7 +236,7 @@ The pair space sharpens the social half of this. In $\mathcal{D}(\mathbb{C}^{49}
 
 ### 4.3 Golden paths are geodesics [С/И, partially measured] {#геодезические}
 
-The corpus already knows what an *optimal* aligned path is: learning follows $m$-geodesics of the BKM information metric ([T-263](/docs/core/dynamics/evolution)) — locally straightest lines of the same metric that gravity extremizes one level up (T-264). The machine now measures two shadows of this. First, an identity: **the regeneration term is m-geodesic motion** — under pure regeneration the state rides the mixture chord $\{(1-s)\Gamma_0 + s\rho^*\}$ to a distance of $3.7\cdot 10^{-16}$ (H52); the tick was a geodesic machine all along. Second, a measurement: the full drift road from fog to the window has length/chord $= 1.165$ (H53) — the field's road is nearly straight, and the $16\%$ excess is the unitary swirl around the chord. What remains conjectural [Г] is the full statement — **a golden path is a viable geodesic**, the trajectory minimizing *BKM* length to the goal while staying in the window; the v1 roadmap (§9) replaces greedy dials with genuine geodesic MPC to test it.
+The corpus already knows what an *optimal* aligned path is: learning follows $m$-geodesics of the BKM information metric ([T-263](/docs/core/dynamics/evolution)) — locally straightest lines of the same metric that gravity extremizes one level up (T-264). The machine now measures two shadows of this. First, an identity: **the regeneration term is m-geodesic motion** — under pure regeneration the state rides the mixture chord $\{(1-s)\Gamma_0 + s\rho^*\}$ to a distance of $3.7\cdot 10^{-16}$ (H52); the tick was a geodesic machine all along. Second, a measurement: the full drift road from fog to the window has length/chord $= 1.165$ (H53) — the field's road is nearly straight, and the $16\%$ excess is the unitary swirl around the chord. The v1 test is now done, and the conjecture receives its verdict — **operationally confirmed** [Г→С-measured]: (i) the true Kubo–Mori metric is implemented and validated (it reduces to the classical Fisher metric on commuting states to $10^{-19}$, H60); (ii) the m-chord is the BKM-shortest of the tested families — $L_m = 1.1435$ vs the e-geodesic $1.1479$ vs the drift road $1.2613$ (H61–H62) — and once inside the window it **stays viable to the target** (H63); (iii) a geodesic MPC that greedily descends the BKM distance to $\rho^*$ reaches the window in **33 ticks**, reproducing the optimal bold strategy without being told about boldness (H64): *the bold move is what the geodesic controller chooses* — fortune favours the bold because the bold follow the geodesic. The global variational statement remains open as mathematics, honestly; every measurable consequence tested so far confirms it.
 
 ### 4.4 The prophecy boundary [Т-anchored] {#граница-пророчества}
 
@@ -245,7 +246,7 @@ What may a Prime Radiant predict? The machine measures the answer. An ensemble o
 
 The method of this whole program, stated as a discipline: **a symbolic system is exactly as good as its ability to describe the computational model of reality.** The Γ-canon gives the symbols; the machine gives the model; calibration is the re-runnable table that says, symbol by symbol, whether the number agrees. Three verdicts exist and all three are valuable: VERIFIED (the symbol earned its number), REFUTED (the naive symbolic reading fails — the most informative outcome), UNTESTABLE-in-v0 (the symbol names a structure the current machine cannot express — a roadmap item, not an excuse).
 
-The v0.5 table: **56 hypotheses → 53 VERIFIED, 1 REFUTED, 2 UNTESTABLE.** The strata:
+The v1 table: **66 hypotheses → 65 VERIFIED, 1 REFUTED (H46, the discovery), 0 UNTESTABLE.** The strata:
 
 | Stratum | Hypotheses | Result |
 |---------|-----------|--------|
@@ -258,8 +259,12 @@ The v0.5 table: **56 hypotheses → 53 VERIFIED, 1 REFUTED, 2 UNTESTABLE.** The 
 | Towers (v0.5) | H45, H51, H56 | the ladder $9/14 < 1 < 54/35$ [Т] — the ceiling of three; a shared ideal makes a viable meta-holon (centered-Gram $P = 1.000$), personal ideals do not ($0.189 \le 2/7$); level-3 towers await v1 |
 | Geodesics (v0.5) | H52–H53 | regeneration rides the m-chord to $10^{-16}$; the drift road is $1.165\times$ its chord |
 | Atlas (v0.5) | H54–H55 | the window is a proper band of the (dissipation, supply) plane (11/20 cells); the $\kappa = 0$ column is all grey — *no supply, no being* |
+| Panel errata (v1) | H57–H59 | the published T-92 table failed both implications (explicit counterexample: all $\sigma < 1$ at $P = 0.153$); the renormalized $\sigma_E, \sigma_U$ encode their thresholds exactly and the embedding is restored via $\sum_i \gamma_{ii}^2 \geq 1/7$ — 0/19,000 violations; **the errata is applied corpus-wide** (T-92 table, the viability proof, the registry: 7 files × 2 locales) |
+| BKM floor (v1) | H60–H64 | the metric validated ($10^{-19}$ vs classical Fisher); $L_m < L_e < L_{\text{drift}}$; the m-chord viable once in-window; geodesic MPC rediscovers boldness (33 ticks) |
+| Towers-3 (v1) | H65 | level 3 works on **collective states** ($P_3$ aligned $1.000$ vs distinct $0.561$); the first attempt on member-index Grams was ideal-blind — *pass states up, not agreement matrices* |
+| Chord search (v1) | H66 | rollout-guided search matches greedy at equal budget ($C = 0.4164$ both) |
 
-Two lessons the table already taught, worth the whole exercise: the **H46 catch** (two corpus artifacts wired the same plane under different names — exactly the class of silent error calibration exists to catch) and the **H38 honesty** (the σ-panel's boolean use needs corpus calibration of $\kappa_{\text{boot}}$ and thresholds [С]; its *ranking* use — where does it hurt — survives uncalibrated). Dozens of hypotheses is not a ceiling but a cadence: every future organ lands with its stratum of the table, and the table re-runs on every change.
+Two lessons the table already taught, worth the whole exercise: the **H46 catch** (two corpus artifacts wired the same plane under different names — exactly the class of silent error calibration exists to catch) and the **H38 honesty, since closed as a corpus errata** (what began as «the boolean σ-equivalence fails pre-calibration» ended with H57–H59: the published T-92 rows for $\sigma_E, \sigma_U$ renormalized, the viability-embedding proof repaired with the $\sum_i \gamma_{ii}^2 \geq 1/7$ lemma, $\Gamma_S$ canonized — the panel's *ranking* use was never wrong, and its boolean use is now exact). Dozens of hypotheses is not a ceiling but a cadence: every future organ lands with its stratum of the table, and the table re-runs on every change.
 
 ## §6. The Dee parable and the Prime Radiant {#прайм-радиант}
 
@@ -341,12 +346,12 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 ## §9. Roadmap to v1 {#дорожная-карта}
 
 1. ~~The pair space~~ — **done in v0.5** (organ [G]; H24, H47–H50 closed).
-2. ~~Towers, level 2~~ — **done in v0.5** (organ [H]; H45, H51 closed); level-3 structured towers remain (H56).
+2. ~~Towers~~ — **done**: level 2 in v0.5 (organ [H]; H45, H51); level 3 in v1 on collective states (H65, closing H56) — with the structural lesson that member-index Grams are ideal-blind one level up.
 3. ~~The Estimator organ [K]~~ — **shipped in v0.6** (`estimator.rs`, demo 6, R26–R27): predict–measure–update over $\mathcal{D}(\mathbb{C}^7)$ with process noise, full and magnitude-only partial readouts; beats both baselines; end-to-end diagnosis through noise 62% vs 22% raw. The first *domain sensor* shipped in v0.7 (`sensor_git.rs`: a real repository, metadata-only dictionary, pre-registered held-out validation $p = 0.014$). Remaining: coherence-bearing sensing and multi-encoder Delphi consensus.
-4. **Panel calibration**: the corpus definitions of $\Gamma_S$ and $\kappa_{\text{boot}}$ per substrate, turning the boolean $\sigma$-equivalence from informative to exact — closes H37/H38.
-5. **Geodesic MPC**: replace greedy dials with true-BKM $m$-geodesic shooting (T-263) — golden paths as computed geodesics; the chord identity (H52) and straightness $1.165$ (H53) are the v0.5 down-payment on §4.3's [Г].
-6. **MCTS over dials** with a learned value function — the RL row of the blueprint.
-7. **The Verum port**: the machine as a `holon` module in the systems language, feeding SYNARC's deliberation organ.
+4. ~~Panel calibration~~ — **done, and it became a corpus errata** (H57–H59): the published T-92 rows for $\sigma_E, \sigma_U$ did not encode their thresholds and the embedding failed on an explicit counterexample; renormalized rows and the repaired viability proof applied across 7 corpus files × 2 locales; $\Gamma_S$ canonized as the $\{A,S,D\}$ sector block (closes H37).
+5. ~~Geodesic MPC~~ — **done in v1** (organ [L]; H60–H64): §4.3's [Г] operationally confirmed; the MPC rediscovers the bold strategy from the metric alone.
+6. ~~MCTS over dials~~ — **done in v1** (H66): rollout-guided search matches greedy at equal budget; a learned value function stays optional until a scale demands it.
+7. ~~The Verum port~~ — **done at spec level** (`architecture/prime_radiant.verum`): typed contracts carrying the calibrated invariants, with `@test`/`@property` blocks mirroring the H-numbers.
 8. **Calibration cadence**: every organ lands with its hypothesis stratum; the table is the release gate.
 
 ## §10. Status summary {#статусы}
@@ -366,7 +371,8 @@ The *best* cases (1–3) share one shape: the observables already exist, the fee
 | «Obstacles removed before the bold» = basin crossing + attractor drift | [И] over [Т] anchors |
 | Golden path = viable BKM geodesic | [Г] (v1 test) |
 | Ensembles predictable, persons navigable-only (freedom kernel) | [Т]-anchored, measured |
-| σ-panel boolean equivalence | [С] pending corpus calibration (H37) |
+| σ-panel boolean use | **closed by the 2026-07-22 corpus errata**: renormalized $\sigma_E, \sigma_U$, embedding restored with proof, $\Gamma_S$ canonized (H37, H57–H59) |
+| Golden path = viable BKM geodesic | [Г → С-measured]: $L_m < L_e < L_{\text{drift}}$, chord viable in-window, MPC rediscovers boldness (H60–H64); the global variational statement open |
 | The solitaire oracle, the Dee parable | [И] with exact Monte-Carlo content |
 | Psychohistory for levels, never persons | the §4.4 boundary |
 

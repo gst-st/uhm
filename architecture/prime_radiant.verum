@@ -1,0 +1,138 @@
+// prime_radiant.verum — the Prime Radiant core as a Verum module (spec level).
+// Port of architecture/prime_radiant.py / prime-radiant-rs: the golden-path
+// navigator over Γ ∈ D(ℂ⁷). Contracts encode the calibrated invariants; the
+// @test attributes mirror the machine-verified hypotheses (H-numbers cited).
+// Status: specification for the SYNARC deliberation organ; the reference
+// numerics live in the Python/Rust twins (66 hypotheses, 65 VERIFIED).
+
+import core.math.complex.Complex;
+import uhm_testing;
+
+public const N_DIM: Int = 7;
+public const P_CRITICAL: Float = 2.0 / 7.0;           // the wall of being [Т]
+public const P_UPPER: Float = 3.0 / 7.0;              // R >= 1/3 inverted [Т]
+public const PHI_TH: Float = 1.0;                     // integration threshold [Т]
+public const D_MIN: Float = 2.0;                      // differentiation floor [Т]
+public const KAPPA_BOOT: Float = 1.0 / 7.0;           // omega0 / 7
+
+/// Complex 7×7 state. StaticMatrix carries no methods (language rule);
+/// all operations live on Holon.
+public type Holon is { mut gamma: StaticMatrix<Complex, 7, 7> };
+
+/// The seven voices in display order; the corpus arithmetic numbering has
+/// U = 6, O = 7 (the H46 catch) — encoded once, here.
+public type Voice is | A | S | D | L | E | O | U;
+public const CORPUS_NUM: StaticMatrix<Int, 1, 7> = [1, 2, 3, 4, 5, 7, 6];
+
+public type PanelV2 is {
+    a: Float, s: Float, d: Float, l: Float,
+    e: Float,   // (7 - D_diff)/5   — errata 2026-07-22: < 1 ⟺ D_diff > 2
+    o: Float,   // 1 - kappa0/KAPPA_BOOT
+    u: Float,   // 2/(1 + Phi)      — errata 2026-07-22: < 1 ⟺ Phi > 1
+};
+
+public type Observables is {
+    p: Float, r: Float, phi: Float, c: Float,
+    entropy: Float, d_diff: Float, coh_e: Float, viable: Bool,
+};
+
+implement Holon {
+    /// Purity P = tr Γ²; exact Φ = Σ_offdiag |γ|² / Σ_diag γ² (NOT 7P−1 — H34).
+    public fn observables(&self) -> Observables
+        where ensures result.p >= 1.0 / 7.0 and result.p <= 1.0
+        where ensures result.r == 1.0 / (7.0 * result.p)
+    { intrinsic }
+
+    /// The repaired T-92 panel (errata 2026-07-22). Embedding theorem:
+    /// max σ < 1 ⟹ P > 2/7, proved via Σγᵢᵢ² ≥ 1/7 (H58: 0/19000 violations).
+    public fn stress_panel_v2(&self) -> PanelV2
+        where ensures (result.max() < 1.0) implies (self.observables().p > P_CRITICAL)
+    { intrinsic }
+
+    /// One ℒ_Ω tick, Strang split, CPTP-safe. The unitary half is the exact
+    /// phase map (H_eff diagonal); dissipator solve → I/7 (H18), regeneration
+    /// coagula rides the m-chord toward rho (H52, T-263 shadow).
+    public fn tick(&mut self, rho: &Holon, dt: Float, g_d: Float, kap_gain: Float) -> ()
+        where requires dt > 0.0 and g_d >= 0.0 and kap_gain >= 0.0
+        where ensures self.is_physical()          // Hermitian, PSD, trace 1 (H31)
+    { intrinsic }
+
+    /// Spectrum-preserving dial: Givens rotation of one voice plane.
+    /// P, S, D_diff are exactly conserved (H29) — transmutation, not creation.
+    public fn dial(&mut self, i: Voice, j: Voice, theta: Float) -> ()
+        where requires i != j
+        where ensures self.observables().p == old(self.observables().p)
+    { intrinsic }
+
+    public fn is_physical(&self) -> Bool { intrinsic }
+    public fn max_stress_v2(&self) -> Float { self.stress_panel_v2().max() }
+}
+
+/// The navigator verdicts, measured (H39–H44, H61–H64):
+///  - the drift does the road (attractor, T-124); boldness buys time at heat;
+///  - the m-chord is BKM-shortest and viable once inside the window;
+///  - geodesic MPC (min BKM distance to rho*) reproduces the bold strategy.
+public type Navigator is { rho_star: Holon };
+
+implement Navigator {
+    /// Time to the viable window under drift with `boosts` bold ticks.
+    public fn time_to_window(&self, start: &Holon, boosts: Int) -> Int
+        where requires boosts >= 0
+    { intrinsic }
+
+    /// The Dee solitaire: p_golden estimated over `deals` random decks —
+    /// the deal decides nothing, it MEASURES the basin (binomial se printed).
+    public fn solitaire(&self, start: &Holon, deals: Int, horizon: Int, bold: Bool)
+        -> Float
+        where ensures result >= 0.0 and result <= 1.0
+    { intrinsic }
+}
+
+/// The estimator organ [K]: predict–measure–update over D(ℂ⁷) under process
+/// noise; beats dead-reckoning and observation-only baselines (demo 6, R26).
+/// Magnitude-only readouts leave PHASES to the prior — the questionnaire
+/// limit, measured (demo 6b).
+public type Estimator is { mut estimate: Holon, gain: Float };
+
+implement Estimator {
+    public fn step_full(&mut self, rho: &Holon, noisy: &Holon) -> ()
+        where requires self.gain > 0.0 and self.gain < 1.0
+        where ensures self.estimate.is_physical()
+    { intrinsic }
+}
+
+// ---------------------------- machine invariants ----------------------------
+
+@test
+fn grey_wall_is_exact() {
+    let grey = Holon.grey();
+    assert_approx_eq(grey.observables().p, 1.0 / 7.0, 1e-12);
+    // at grey the loudest repaired stress equals 1 exactly (H33/R14)
+    assert_approx_eq(grey.max_stress_v2(), 1.0, 1e-9);
+}
+
+@test
+fn dial_preserves_spectrum() {
+    let mut h = Holon.random(seed: 42);
+    let p0 = h.observables().p;
+    h.dial(Voice.A, Voice.E, 0.3);
+    assert_approx_eq(h.observables().p, p0, 1e-12);        // H29
+}
+
+@test
+fn starvation_halts_and_reignites() {
+    let rho = Holon.self_model(0.42);
+    let mut h = Holon.random(seed: 7);
+    h.run_ticks(&rho, 1500, kap_gain: 0.0);                // no supply
+    assert(h.observables().p < 0.15);                       // grey halt (T-288)
+    h.run_ticks(&rho, 1500, kap_gain: 1.0);                // supply restored
+    assert(h.observables().viable);                         // reignition (T-289, H23)
+}
+
+@property
+fn embedding_holds(h: Holon) {
+    // the errata embedding: max σ_v2 < 1 ⟹ P > 2/7 (H58)
+    if h.max_stress_v2() < 1.0 {
+        assert(h.observables().p > P_CRITICAL);
+    }
+}

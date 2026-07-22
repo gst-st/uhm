@@ -40,7 +40,8 @@ $\blacksquare$
 
 **Зависимости:** T-58 [Т], T-95 [Т], $\mathrm{Coh}_E$ [Т]. Нормализация: $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
-**Следствие:** $\sigma_E = 1 - D_{\text{diff}}^{7D}/N$ вычислима в 7D, замыкая полную 7D-вычислимость $\sigma_{\text{sys}}$ (см. [T-137](#t-137)). С $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
+**Следствие:** $\sigma_E = (N - D_{\text{diff}}^{7D})/(N-2)$ вычислима в 7D, замыкая полную 7D-вычислимость $\sigma_{\text{sys}}$ (см. [T-137](#t-137)). С $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
+> **Эррата 2026-07-22**: перенормированная форма — см. эррата-ноту у [T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
 ---
 
@@ -350,9 +351,9 @@ $\blacksquare$
 | $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | $\Gamma_S$ = подматрица $\{A,S,D\}$, $\mathrm{rank} \leq 3$ |
 | $\sigma_D$ | $1 - 7\gamma_{DD}$ | Из $\Gamma$ напрямую |
 | $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Из $\Gamma$ напрямую |
-| $\sigma_E$ | $1 - D_{\text{diff}}^{7D}/N$ | **T-128**: $D_{\text{diff}}^{7D}$ из $\mathrm{Coh}_E$ |
+| $\sigma_E$ | $(N - D_{\text{diff}}^{7D})/(N-2)$ | **T-128**: $D_{\text{diff}}^{7D}$ из $\mathrm{Coh}_E$ |
 | $\sigma_O$ | $1 - \kappa_0/\kappa_{\text{bootstrap}}$ | $\kappa_0$ из $\gamma_{OE}, \gamma_{OU}, \gamma_{OO}$; **T-132**: complex $\Gamma$ |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\text{th}}$ | $\Phi$ из $\Gamma$ напрямую, **T-129**: $\Phi_{\text{th}} = 1$ |
+| $\sigma_U$ | $2\Phi_{\text{th}}/(\Phi_{\text{th}} + \Phi)$ | $\Phi$ из $\Gamma$ напрямую, **T-129**: $\Phi_{\text{th}} = 1$ |
 
 **Доказательство (перечислительное, по каждой компоненте).**
 

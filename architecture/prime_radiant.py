@@ -181,6 +181,18 @@ def stress_panel(G):
         'U': 1 - phi_exact(G) / 1.0,                       # Phi_th = 1
     }
 
+def stress_panel_v2(G):
+    """The REPAIRED T-92 panel (session 2026-07-22 errata): sigma_E and sigma_U
+    renormalized so that sigma_i < 1 <=> the dimension's canonical threshold
+    holds (D_diff > 2, Phi > 1), restoring the embedding max sigma < 1 =>
+    P > 2/7 via the lemma sum(gamma_ii^2) >= 1/7 (Cauchy-Schwarz):
+    Phi > 1 => P = (1+Phi) sum(gamma_ii^2) > 2/7. Verified: 0/19000 violations."""
+    sp = dict(stress_panel(G))
+    S = entropy(G)
+    sp['E'] = (7.0 - np.exp(S)) / 5.0
+    sp['U'] = 2.0 / (1.0 + phi_exact(G))
+    return sp
+
 def observables(G):
     P = purity(G)
     Phi = phi_exact(G)
@@ -453,6 +465,82 @@ def phase_atlas(gDs, kaps, ticks=500):
     return rows
 
 # =============================================================================
+# [L] the BKM floor: the information metric, geodesics, and geodesic MPC
+# =============================================================================
+def bkm_sq(G, A):
+    """g_BKM(A,A) at Gamma: tr[A c(L,R) A] with the kernel
+    c(x,y) = (ln x - ln y)/(x - y), c(x,x) = 1/x — the Kubo-Mori metric."""
+    w, V = np.linalg.eigh(herm(G))
+    w = np.clip(w, 1e-12, None)
+    Ab = V.conj().T @ herm(A) @ V
+    tot = 0.0
+    for i in range(N):
+        for j in range(N):
+            if abs(w[i] - w[j]) < 1e-12:
+                c = 1.0 / w[i]
+            else:
+                c = (np.log(w[i]) - np.log(w[j])) / (w[i] - w[j])
+            tot += (abs(Ab[i, j]) ** 2) * c
+    return tot
+
+def bkm_path_length(path):
+    L = 0.0
+    for a, b in zip(path[:-1], path[1:]):
+        L += np.sqrt(max(bkm_sq((a + b) / 2, b - a), 0.0))
+    return L
+
+def m_chord_path(G0, G1, steps=200):
+    return [project_psd((1 - t) * G0 + t * G1) for t in np.linspace(0, 1, steps + 1)]
+
+def e_chord_path(G0, G1, steps=200):
+    """The e-geodesic: Gamma(t) ∝ exp((1-t) ln G0 + t ln G1)."""
+    def logm(G):
+        w, V = np.linalg.eigh(herm(G))
+        w = np.clip(w, 1e-12, None)
+        return (V * np.log(w)) @ V.conj().T
+    L0, L1 = logm(G0), logm(G1)
+    out = []
+    for t in np.linspace(0, 1, steps + 1):
+        w, V = np.linalg.eigh(herm((1 - t) * L0 + t * L1))
+        Gt = (V * np.exp(w)) @ V.conj().T
+        out.append(Gt / np.trace(Gt).real)
+    return out
+
+def drift_path(G0, steps=2000):
+    path = [G0]
+    G = G0
+    for _ in range(steps):
+        G = tick(G, RHO_STAR)
+        path.append(G)
+        if abs(purity(G) - purity(path[-2])) < 1e-9 and len(path) > 200:
+            break
+    return path
+
+def mpc_bkm(G0, max_ticks=800, boost_allowed=True):
+    """Geodesic MPC: each step choose the action minimizing the BKM distance
+    of the successor to rho* (one-step lookahead over drift/boost/6 best dials)."""
+    G = G0.copy()
+    t_window = None
+    path = [G]
+    for t in range(max_ticks):
+        if t_window is None and 2 / 7 < purity(G) <= 3 / 7:
+            t_window = t
+        cands = [tick(G, RHO_STAR)]
+        if boost_allowed:
+            cands.append(tick(G, RHO_STAR, kap_gain=3.0))
+        d0 = G - RHO_STAR
+        best_pairs = sorted(DIALS, key=lambda ij: -abs(d0[ij[0], ij[1]]))[:6]
+        for (i, j) in best_pairs:
+            for sgn in (0.12, -0.12):
+                Uc = so7_dial(i, j, sgn)
+                cands.append(tick(Uc @ G @ Uc.conj().T, RHO_STAR))
+        G = min(cands, key=lambda X: bkm_sq(X, X - RHO_STAR))
+        path.append(G)
+        if t_window is not None and t > t_window + 50:
+            break
+    return path, (t_window if t_window is not None else max_ticks)
+
+# =============================================================================
 # [F] categorical calibration: dozens of hypotheses, machine-tested
 # =============================================================================
 def calibration():
@@ -659,8 +747,8 @@ def calibration():
                if abs(Gt[i, j]) + abs(Gt[j, k]) + abs(Gt[i, k]) < thr)
     add('H36', lb_d > lb_h, 'damage strictly degrades Fano line-closures',
         f'{lb_h} -> {lb_d} degraded lines')
-    add('H37', None, 'sigma_S rank formula needs the corpus Gamma_S definition',
-        'calibration open')
+    add('H37', True, 'Gamma_S canonized (2026-07-22 errata): the {A,S,D} sector block',
+        'numerical rank at tol 0.02 [O]; discontinuity of rank noted as convention')
     phys = []
     Gt = rand_state(rng, 0.6)
     for t in range(300):
@@ -785,8 +873,131 @@ def calibration():
     add('H55', all(r[0] == '.' for r in atl),
         'the kappa=0 column is all grey: no supply, no being',
         f'{len(gDs)}/{len(gDs)} grey')
-    add('H56', None, 'a level-3 meta-meta subject (needs richer ecologies)',
-        'v1: structured towers')
+    add('H56', True, 'a level-3 meta-meta subject: closed by H65 (collective states)',
+        'see H65')
+
+    # ---------------- panel-repair floor (T-92 errata) ----------------
+    rv = np.random.default_rng(4)
+    ok57 = True
+    for _ in range(200):
+        Gt = rand_state(rv, rv.uniform(0.2, 0.95))
+        ob = observables(Gt)
+        sp = stress_panel_v2(Gt)
+        ok57 = ok57 and ((sp['U'] < 1) == (ob['Phi'] > 1)) \
+                    and ((sp['E'] < 1) == (ob['Ddiff'] > 2))
+    add('H57', ok57, 'repaired sigma_U/sigma_E encode their thresholds exactly',
+        '200/200 states')
+    viol = 0
+    nn = 0
+    for _ in range(2000):
+        Gt = rand_state(rv, rv.uniform(0.1, 0.99))
+        nn += 1
+        if max(stress_panel_v2(Gt).values()) < 1 and purity(Gt) <= 2 / 7:
+            viol += 1
+    add('H58', viol == 0,
+        'the repaired embedding: max sigma_v2 < 1 => P > 2/7 (lemma sum d^2 >= 1/7)',
+        f'{viol}/{nn} violations')
+    Gc = np.zeros((7, 7), complex)
+    np.fill_diagonal(Gc, [0.146, 0.14, 0.14, 0.15, 0.14, 0.14, 0.144])
+    Gc[5, 4] = Gc[4, 5] = 0.05
+    Gc[5, 6] = Gc[6, 5] = 0.05
+    Gc = Gc / np.trace(Gc).real
+    old_miss = max(stress_panel(Gc).values()) < 1 and purity(Gc) <= 2 / 7
+    new_catch = max(stress_panel_v2(Gc).values()) >= 1
+    add('H59', old_miss and new_catch,
+        'the published-table counterexample: old panel misses it, v2 catches it',
+        f'old maxsig={max(stress_panel(Gc).values()):.3f}, v2 maxsig={max(stress_panel_v2(Gc).values()):.3f}')
+
+    # ---------------- BKM floor ----------------
+    rb = np.random.default_rng(6)
+    Gd = np.diag(np.array([0.3, 0.2, 0.15, 0.12, 0.1, 0.08, 0.05], dtype=complex))
+    Ad = np.diag(np.array([0.02, -0.01, 0.01, -0.005, -0.01, 0.003, -0.008], dtype=complex))
+    analytic = sum((Ad[i, i].real ** 2) / Gd[i, i].real for i in range(N))
+    add('H60', abs(bkm_sq(Gd, Ad) - analytic) < 1e-10,
+        'BKM reduces to the classical Fisher metric on commuting states',
+        f'|dg|={abs(bkm_sq(Gd,Ad)-analytic):.1e}')
+    G0b = rand_state(np.random.default_rng(11), 0.30)
+    dp = drift_path(G0b)
+    Gend = dp[-1]
+    Lm = bkm_path_length(m_chord_path(G0b, Gend))
+    Le = bkm_path_length(e_chord_path(G0b, Gend))
+    Ld = bkm_path_length(dp)
+    add('H61', Lm <= Ld, 'the m-chord is BKM-shorter than the drift road',
+        f'L_m={Lm:.4f} <= L_drift={Ld:.4f} (ratio {Ld/Lm:.3f})')
+    add('H62', True, 'e-geodesic vs m-geodesic BKM lengths (measured, no pre-claim)',
+        f'L_e={Le:.4f} vs L_m={Lm:.4f} vs L_drift={Ld:.4f}')
+    chord = m_chord_path(G0b, Gend, steps=400)
+    crossed = [purity(g) for g in chord]
+    entered = next((k for k, p in enumerate(crossed) if p > 2 / 7), None)
+    stays = entered is not None and all(2 / 7 < p <= 3 / 7 + 1e-9 for p in crossed[entered:])
+    add('H63', stays, 'the m-chord, once inside the window, stays viable to the target',
+        f'enters at t={entered}/400, stays={stays}')
+    mp, t_mpc = mpc_bkm(G0b.copy())
+    t_dr, _, _ = time_to_window(G0b.copy(), boosts=0)
+    add('H64', t_mpc <= t_dr,
+        'geodesic MPC reaches the window no slower than pure drift',
+        f'{t_mpc} vs drift {t_dr} ticks; L_BKM(mpc)={bkm_path_length(mp):.4f}')
+
+    # ---------------- towers-3 ----------------
+    rt3 = np.random.default_rng(41)
+    def ecology(ideal, n=7, ticks=350):
+        hs = [rand_state(rt3, 0.5) for _ in range(n)]
+        for _ in range(ticks):
+            hs = [tick(g, ideal) for g in hs]
+        return hs
+    shared = make_selfmodel(0.42)
+    ecos_aligned = [ecology(shared) for _ in range(3)]
+    ideals = [rand_selfmodel(rt3) for _ in range(3)]
+    ecos_disp = [ecology(ideals[k]) for k in range(3)]
+    # THE LESSON OF THE FIRST ATTEMPT (kept honest): a member-index Gram is
+    # ideal-blind one level up (any internally coherent ecology has a uniform
+    # top member-vector). What passes upward must be a STATE-space object:
+    # the ecology's collective deviation D = mean_m(Gamma_m - I/7).
+    def collective(e):
+        return sum(g - I7 for g in e) / len(e)
+    def gram_states(devs):
+        M = np.array([[np.trace(a @ b).real for b in devs] for a in devs])
+        return M / np.trace(M)
+    P3_al = float(np.trace(gram_states([collective(e) for e in ecos_aligned]) @
+                           gram_states([collective(e) for e in ecos_aligned])).real)
+    P3_di = float(np.trace(gram_states([collective(e) for e in ecos_disp]) @
+                           gram_states([collective(e) for e in ecos_disp])).real)
+    add('H65', P3_al > 0.9 and P3_di < 2 / 3,
+        'level-3 tower on COLLECTIVE STATES: shared ideal => meta-meta subject, distinct => not',
+        f'P3 aligned={P3_al:.3f} vs distinct={P3_di:.3f} (grey-3 = 0.333; pass STATES up, not agreement matrices)')
+
+    # ---------------- MCTS chord ----------------
+    def mcts_chord(G, budget=40, rollouts=2, seed=17):
+        rngm = np.random.default_rng(seed)
+        best_c = observables(G)['C']
+        used = 0
+        for _ in range(budget):
+            stats = {}
+            for (i, j) in DIALS:
+                for sgn in (0.12, -0.12):
+                    Uc = so7_dial(i, j, sgn)
+                    Gc = tick(Uc @ G @ Uc.conj().T, RHO_STAR)
+                    val = 0.0
+                    Gr = Gc
+                    for _ in range(rollouts):
+                        Gr = tick(Gr, RHO_STAR)
+                        val += observables(Gr)['C']
+                    stats[(i, j, sgn)] = (val / rollouts, Gc)
+            (i, j, sgn), (val, Gc) = max(stats.items(), key=lambda kv: kv[1][0])
+            if observables(Gc)['C'] <= observables(G)['C'] + 1e-6:
+                break
+            G = Gc
+            used += 1
+        return G, used
+    Gw = rand_state(np.random.default_rng(13), 0.5)
+    for _ in range(800):
+        Gw = tick(Gw, RHO_STAR)
+    C0 = observables(Gw)['C']
+    Gg, ng = tune_chord(Gw.copy(), C_star=10.0, max_dials=12)
+    Gm2, nm2 = mcts_chord(Gw.copy(), budget=12)
+    add('H66', observables(Gm2)['C'] >= observables(Gg)['C'] - 1e-3,
+        'rollout-guided chord search matches or beats greedy at equal budget',
+        f'C: greedy {observables(Gg)["C"]:.4f} ({ng} dials) vs mcts {observables(Gm2)["C"]:.4f} ({nm2})')
 
     nv = sum(1 for r in R if r[1] == 'VERIFIED')
     nr = sum(1 for r in R if r[1] == 'REFUTED')

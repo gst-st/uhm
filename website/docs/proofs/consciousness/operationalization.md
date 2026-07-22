@@ -41,7 +41,8 @@ $\blacksquare$
 
 **Dependencies:** T-58 [Т], T-95 [Т], $\mathrm{Coh}_E$ [Т]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
-**Corollary:** $\sigma_E = 1 - D_{\text{diff}}^{7D}/N$ is computable in 7D, closing the full 7D-computability of $\sigma_{\text{sys}}$ (see [T-137](#t-137)). With $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
+**Corollary:** $\sigma_E = (N - D_{\text{diff}}^{7D})/(N-2)$ is computable in 7D, closing the full 7D-computability of $\sigma_{\text{sys}}$ (see [T-137](#t-137)). With $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
+> **Errata 2026-07-22**: renormalized form — see the errata note at [T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
 ---
 
@@ -351,9 +352,9 @@ All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in th
 | $\sigma_S$ | $1 - \mathrm{rank}(\Gamma_S)/3$ | $\Gamma_S$ = submatrix $\{A,S,D\}$, $\mathrm{rank} \leq 3$ |
 | $\sigma_D$ | $1 - 7\gamma_{DD}$ | Directly from $\Gamma$ |
 | $\sigma_L$ | $7(1 - \gamma_{LL})/6$ | Directly from $\Gamma$ |
-| $\sigma_E$ | $1 - D_{\text{diff}}^{7D}/N$ | **T-128**: $D_{\text{diff}}^{7D}$ from $\mathrm{Coh}_E$ |
+| $\sigma_E$ | $(N - D_{\text{diff}}^{7D})/(N-2)$ | **T-128**: $D_{\text{diff}}^{7D}$ from $\mathrm{Coh}_E$ |
 | $\sigma_O$ | $1 - \kappa_0/\kappa_{\text{bootstrap}}$ | $\kappa_0$ from $\gamma_{OE}, \gamma_{OU}, \gamma_{OO}$; **T-132**: complex $\Gamma$ |
-| $\sigma_U$ | $1 - \Phi/\Phi_{\text{th}}$ | $\Phi$ directly from $\Gamma$, **T-129**: $\Phi_{\text{th}} = 1$ |
+| $\sigma_U$ | $2\Phi_{\text{th}}/(\Phi_{\text{th}} + \Phi)$ | $\Phi$ directly from $\Gamma$, **T-129**: $\Phi_{\text{th}} = 1$ |
 
 **Proof (enumerative, per component).**
 

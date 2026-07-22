@@ -255,6 +255,28 @@ pub fn run_calibration() -> Vec<Hypo> {
             }
         }
     }
+    // T-92 errata: the repaired panel's embedding
+    let mut rv = StdRng::seed_from_u64(4);
+    let mut viol = 0usize;
+    let mut okthr = true;
+    for _ in 0..600 {
+        let a = {
+            use rand::RngExt;
+            0.1 + 0.85 * rv.random::<f64>()
+        };
+        let gt = rand_state(&mut rv, a);
+        let sp = stress_panel_v2(&gt);
+        let phi = phi_exact(&gt);
+        let dd = entropy(&gt).exp();
+        okthr &= ((sp[6] < 1.0) == (phi > 1.0)) && ((sp[4] < 1.0) == (dd > 2.0));
+        if sp.iter().cloned().fold(f64::MIN, f64::max) < 1.0 && purity(&gt) <= P_CRIT {
+            viol += 1;
+        }
+    }
+    add("R28", Some(okthr && viol == 0),
+        "repaired T-92 panel: exact thresholds + the embedding max sigma<1 => P>2/7",
+        format!("thresholds ok, {}/600 embedding violations", viol));
+
     add("R25", Some(rec.max_abs_diff(&gx.herm()) < 1e-10),
         "the Jacobi eigensolver reconstructs Γ = V diag(w) V†",
         format!("|dG|={:.1e}", rec.max_abs_diff(&gx.herm())));
