@@ -646,10 +646,18 @@ mutual-information null, T-H6, `p = 0.62`). The Fano organization is a fact of
 the *coherence algebra*, not of HD's historically-grown channel list; the two
 are simply different objects.
 
-**TF6 — the three-floor ceiling.** UHM's SAD_MAX = 3 caps the subject vertical
-at three nested floors. The group analogue — meta-holons should stop gaining
-coherence past three levels of nesting — needs the group module driven
-recursively. Recorded **OPEN**, pending the nesting experiment.
+**TF6 — the three-floor ceiling.** UHM T-142 caps the subject vertical at
+three floors: the purity a floor-`n` subject would need,
+`P_crit⁽ⁿ⁾ = (2/7)·3ⁿ⁻¹/(n+1)`, first *exceeds 1* — the maximum possible
+purity of any state — at `n = 4` (`54/35 ≈ 1.54`), so no fourth floor can
+exist. The arithmetic is verified here (ceiling = 3). But Human Design encodes
+an *individual*, with no nested-subject vertical to calibrate this against.
+**INDEPENDENT by construction** — the ceiling is a UHM-internal fact
+(`holarch_lab.py` HL02), not something HD can corroborate or falsify. We record
+it for completeness and to mark the honest boundary of the instrument: not
+every theorem has an HD handle, and saying so plainly — rather than
+manufacturing a test that would only seem to confirm the theory — is part of
+the discipline.
 
 **The tally: 3 corroborations, 3 independences, 0 tensions.** No
 empirically-calibrated property of Human Design contradicts UHM. The

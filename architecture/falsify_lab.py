@@ -171,15 +171,28 @@ def main():
          "(независимость; ср. T-H6 MI p=0.62)")))
 
     # -- TF6: the three-floor ceiling (SAD_MAX = 3) -------------------------
-    # UHM: subject composition ceils at 3 floors (54/35 > 1 ⇒ ceiling 3).
-    # HD/group analogue: nesting meta-holons should stop gaining coherence
-    # beyond 3 levels. (Structural note — full test needs the group module;
-    # here we record the prediction as OPEN for the group-nesting experiment.)
+    # UHM T-142: the subject vertical ceils at 3 floors, because the purity a
+    # floor-n subject would need, P_crit^(n) = (2/7)·3^(n-1)/(n+1), first
+    # EXCEEDS 1 (the max possible purity of any state) at n=4 ⇒ no 4th-floor
+    # subject can exist. This is a UHM-INTERNAL arithmetic fact. The honest
+    # verdict here is INDEPENDENT *by construction*: Human Design encodes an
+    # individual, with NO nested-subject vertical to calibrate the ceiling
+    # against — so HD cannot corroborate or falsify it. We record the fact and
+    # verify the arithmetic (the full instrument lives in holarch_lab HL02).
+    from fractions import Fraction
+    ladder = {n: Fraction(2, 7) * Fraction(3 ** (n - 1), n + 1)
+              for n in range(1, 5)}
+    sad_max = max(n for n, v in ladder.items() if v <= 1)
+    arith_ok = (sad_max == 3 and ladder[4] > 1
+                and ladder[1] == Fraction(1, 7) and ladder[3] == Fraction(9, 14))
     tags.append(verdict(
-        "TF6", "УГМ SAD_MAX=3 (потолок субъектной вертикали)",
-        "мета-холон перестаёт собираться после 3 уровней вложения",
-        None,
-        "OPEN — требует эксперимента вложения групп (group.rs, отдельно)"))
+        "TF6", "УГМ T-142 / SAD_MAX=3 (потолок субъектной вертикали)",
+        "потолок вложения субъектов = 3 (P_crit^(4) невозможна: >1)",
+        None,  # INDEPENDENT by construction — no HD handle
+        f"P_crit^(n): " + ", ".join(f"n{n}={v}" for n, v in ladder.items())
+        + f" ⇒ SAD_MAX={sad_max} (арифметика {'верна' if arith_ok else 'СЛОМАНА'})"
+        + " — но у HD нет вложенных субъектов: независимость ПО ПОСТРОЕНИЮ, "
+          "не измеримо через HD (внутренний факт УГМ, holarch_lab HL02)"))
 
     hdr("СВОДКА")
     cnt = Counter(tags)
