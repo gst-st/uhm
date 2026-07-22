@@ -1,25 +1,29 @@
 \xpg@aux {}{russian}
-\contentsline {section}{Пять пометок честности}{2}{section*.2}%
-\contentsline {section}{\numberline {1}Из чего сделано всё}{2}{section.1}%
-\contentsline {section}{\numberline {2}Почему именно семь}{3}{section.2}%
-\contentsline {section}{\numberline {3}Что такое время}{4}{section.3}%
-\contentsline {section}{\numberline {4}Начало, у которого не было «до»}{4}{section.4}%
-\contentsline {section}{\numberline {5}Сцена: почему пространство трёхмерно}{6}{section.5}%
-\contentsline {section}{\numberline {6}Что такое вещи (и есть ли самая маленькая)}{7}{section.6}%
-\contentsline {section}{\numberline {7}Что такое жизнь}{8}{section.7}%
-\contentsline {section}{\numberline {8}Окно сознания}{9}{section.8}%
-\contentsline {section}{\numberline {9}Лестница внутри: три этажа рефлексии}{10}{section.9}%
-\contentsline {section}{\numberline {10}Краски внутренней жизни}{11}{section.10}%
-\contentsline {section}{\numberline {11}Свобода}{11}{section.11}%
-\contentsline {section}{\numberline {12}Язык и смысл: сквозь игольное ушко}{12}{section.12}%
-\contentsline {section}{\numberline {13}Память и учение}{13}{section.13}%
-\contentsline {section}{\numberline {14}Другие, и почему связь --- прибавка бытия}{14}{section.14}%
-\contentsline {section}{\numberline {15}Общество, сверхразум и потолок башен}{15}{section.15}%
-\contentsline {section}{\numberline {16}Здоровье узора: забота как инженерия}{15}{section.16}%
-\contentsline {section}{\numberline {17}Смерть, память мира и «вечно ли всё это»}{16}{section.17}%
-\contentsline {section}{\numberline {18}Кто смотрел на мир, пока смотреть было некому}{17}{section.18}%
-\contentsline {section}{\numberline {19}Как проверить, что всё это правда}{18}{section.19}%
-\contentsline {section}{Эпилог: продолжение следует}{18}{section*.18}%
-\contentsline {section}{Карта книги}{20}{section*.19}%
-\contentsline {section}{Словарик образов}{20}{section*.21}%
-\contentsline {section}{Страничка для учителя}{21}{section*.22}%
+\contentsline {section}{Пять пометок честности}{3}{section*.2}%
+\contentsline {section}{\numberline {1}Из чего сделано всё}{3}{section.1}%
+\contentsline {section}{\numberline {2}Почему именно семь}{4}{section.2}%
+\contentsline {section}{\numberline {3}Почему числа именно такие: лестница из четырёх миров}{5}{section.3}%
+\contentsline {section}{\numberline {4}Что такое время}{6}{section.4}%
+\contentsline {section}{\numberline {5}Начало, у которого не было «до»}{7}{section.5}%
+\contentsline {section}{\numberline {6}Сцена: почему пространство трёхмерно}{8}{section.6}%
+\contentsline {section}{\numberline {7}Что такое вещи (и есть ли самая маленькая)}{9}{section.7}%
+\contentsline {section}{\numberline {8}Что такое жизнь}{10}{section.8}%
+\contentsline {section}{\numberline {9}Окно сознания}{11}{section.9}%
+\contentsline {section}{\numberline {10}Лестница внутри: три этажа рефлексии}{12}{section.10}%
+\contentsline {section}{\numberline {11}Краски внутренней жизни}{13}{section.11}%
+\contentsline {section}{\numberline {12}Свобода}{14}{section.12}%
+\contentsline {section}{\numberline {13}Золотые пути, или почему мир помогает смелым}{14}{section.13}%
+\contentsline {section}{\numberline {14}Язык и смысл: сквозь игольное ушко}{16}{section.14}%
+\contentsline {section}{\numberline {15}Память и учение}{16}{section.15}%
+\contentsline {section}{\numberline {16}Другие, и почему связь --- прибавка бытия}{17}{section.16}%
+\contentsline {section}{\numberline {17}Общество, сверхразум и потолок башен}{18}{section.17}%
+\contentsline {section}{\numberline {18}Лестница миров: холон, целое-и-часть}{19}{section.18}%
+\contentsline {section}{\numberline {19}Здоровье узора: забота как инженерия}{20}{section.19}%
+\contentsline {section}{\numberline {20}Смерть, память мира и «вечно ли всё это»}{21}{section.20}%
+\contentsline {section}{\numberline {21}Кто смотрел на мир, пока смотреть было некому}{22}{section.21}%
+\contentsline {section}{\numberline {22}Старые приборы неба: что спрятано в гадательных колёсах}{23}{section.22}%
+\contentsline {section}{\numberline {23}Как проверить, что всё это правда}{25}{section.23}%
+\contentsline {section}{Эпилог: продолжение следует}{25}{section*.24}%
+\contentsline {section}{Карта книги}{27}{section*.25}%
+\contentsline {section}{Словарик образов}{27}{section*.27}%
+\contentsline {section}{Страничка для учителя}{29}{section*.28}%

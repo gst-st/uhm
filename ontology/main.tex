@@ -266,6 +266,112 @@ alive? Imagine a creature whose faults never name themselves --- what
 happens to it?
 \end{askbox}
 
+% ============================= 2b. NUMBERS =============================
+\section{Why the numbers are what they are: a ladder of four worlds}
+\label{sec:numbers}
+
+Before going further, it is worth asking about the instrument itself.
+The world in this book is described by numbers --- ordinary ones,
+complex ones, and that famous seven of imaginary directions. But where
+did \emph{the numbers themselves} come from? Why does the universe get
+exactly this counting instrument and not another? UHM answers: the
+instrument was not chosen --- it \emph{grew}, and the ladder of its
+growth is short and breaks off by itself.
+
+There is a simple rule --- call it the doubling rule: if you have a
+world of numbers where you can add, multiply, and divide, you can
+build a world twice as large by gluing two copies together. So from
+the ordinary line $\mathbb{R}$ (one dimension) grows the plane
+$\mathbb{C}$ (two); from it, the four-dimensional world of
+quaternions $\mathbb{H}$; from that, the eight-dimensional world of
+octonions $\mathbb{O}$, whose imaginary part is our seven. The ladder
+runs $1 \to 2 \to 4 \to 8$ --- and every step charges a fee: first
+order is lost (you cannot say which complex number is ``bigger''),
+then commutativity of multiplication, then its grouping. And on the
+next step --- the sixteen-dimensional sedenions --- something
+irreparable happens: \emph{zero divisors} appear, pairs of nonzero
+numbers whose product is zero. A number times a number --- and
+suddenly nothing. A world with such a crack cannot carry
+distinctions: in it, ``something'' can vanish without a trace. The
+ladder breaks off at eight --- a theorem \stT, proved back in the
+nineteenth century and re-verified in the theory's corpus by machine
+enumeration.
+
+That is why the seven of chapter~\ref{sec:seven} is not one option
+among many but the \emph{last possible one}: the imaginary part of
+the last living world of numbers.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % ladder
+  \foreach \i/\x/\lab/\dim in {0/-5.2/$\mathbb{R}$/1, 1/-3.2/$\mathbb{C}$/2, 2/-1.2/$\mathbb{H}$/4, 3/0.8/$\mathbb{O}$/8}{
+    \draw[fact!75, fill=softsky] (\x,\i*0.55) rectangle (\x+1.5,\i*0.55+0.5);
+    \node at (\x+0.75,\i*0.55+0.25) {\lab\ \scriptsize(\dim)};
+  }
+  \foreach \i/\x in {0/-3.62, 1/-1.62, 2/0.38}{
+    \draw[->, thick, plosgray] (\x,\i*0.55+0.28) -- (\x+0.38,\i*0.55+0.72);
+  }
+  % the break: sedenions
+  \draw[->, thick, densely dashed, plosgray] (2.35,2.0) -- (2.95,2.32);
+  \draw[plosgray!60, fill=plosgray!12, dashed] (3.0,2.2) rectangle (4.7,2.7);
+  \node[text=plosgray] at (3.85,2.45) {16?};
+  \draw[ember, very thick] (3.25,2.15) -- (4.45,2.75);
+  \draw[ember, very thick] (3.25,2.75) -- (4.45,2.15);
+  \node[font=\scriptsize, text=ember, align=center] at (3.85,3.25)
+    {zero divisors:\\ number $\times$ number $=$ nothing \stT};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-2.6,3.25)
+    {the doubling rule: $1 \to 2 \to 4 \to 8$ --- then the break};
+  % the ouroboros: a body with a gap, the head reaching for the tail
+  \draw[dusk, very thick, -{Stealth[length=7pt]}] ($(7.0,1.2)+(150:1.05)$) arc (150:425:1.05);
+  \fill[dusk] ($(7.0,1.2)+(150:1.05)$) circle (0.06);
+  \draw[ember, very thick, densely dotted] ($(7.0,1.2)+(150:1.05)$) arc (150:65:1.05);
+  \node[font=\scriptsize, text=ember] at ($(7.0,1.2)+(107:1.5)$) {a hole};
+  \node[font=\scriptsize, text=dusk, align=center] at (7.0,-0.45)
+    {the snake biting its tail:\\ over a line with a hole\\ the tail cannot be caught};
+\end{tikzpicture}
+\caption{Left: the ladder of number worlds. Each step is a doubling
+with a fee; at sixteen, zero divisors appear --- a crack through which
+distinctions vanish --- and the ladder breaks off \stT. Right: why the
+number line is \emph{gapless} --- the self-model's closure (the snake
+must reach its own tail) is impossible over a line with holes;
+continuity is not an assumption but a consequence of the ouroboros
+\stT.}
+\label{fig:numbers}
+\end{figure}
+
+And this chapter holds a second, quieter miracle. Why is the number
+line \emph{solid}, without holes? The corpus proves \stT{} that this
+follows from the theory's most ancient image --- the snake biting its
+own tail. A world that models itself (chapter~\ref{sec:observer})
+must be able to \emph{reach itself}: a continuous self-mapping must
+have a fixed point. Over a line with holes --- say, over fractions
+alone --- the snake literally leaps past its own tail through a gap,
+and the closure fails. The demand ``the snake always catches its
+tail'' \emph{forces} a solid line --- and with it continuous time:
+the flow of the law is well-defined because the numbers are complete.
+Time runs smoothly not out of the world's habit, but because the
+world holds on to itself.
+
+\begin{talebox}[The campfire tale --- the smith and the four ingots]
+A smith forged worlds for counting. The first ingot was a rod:
+straight, honest, everything on it in order. The second was a sheet:
+on it you could already circle. The third was a block: inside it you
+could turn. The fourth was an eight-sided bell: it alone could ring
+with seven voices at once. The smith swung at a fifth --- and the
+ingot cracked: strike it, and there is no ring --- it swallows
+itself. ``No further forging,'' said the smith, and kept the bell.
+Since then everything that exists rings with seven voices.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+The doubling rule gives $1, 2, 4, 8$ --- and death at $16$. Find a
+ladder in your own life that grows by doubling and somewhere breaks
+off by itself: a team that still gets along; a list of tasks that
+still fits in your head. What plays the role of the ``zero divisor''
+--- the sign that the next step is no longer alive?
+\end{askbox}
+
 % ============================= 3. TIME =============================
 \section{What time is}
 \label{sec:time}
@@ -614,6 +720,32 @@ pays for its shape. The second law of thermodynamics is not violated
 \label{fig:flame}
 \end{figure}
 
+This law has a map. The machine of the law charted an \emph{atlas of
+fates}: along one axis, the strength of supply; along the other, the
+strength of the dissolving stream; in every cell, where the pattern
+arrives forever (machine checked). The column ``supply equals zero''
+is gray from top to bottom: without a stream nothing lives, under
+any other settings. Then comes the Goldilocks band: the window where
+the pattern is alive. And beyond it, the third fate, the one people
+forget: \emph{over-gatheredness}. Too hard a grip drags the pattern
+up through the window into crystal --- gathered rigid, no longer
+able to see itself. Life is not the maximum of order; life is the
+band between two deaths, the gray one and the glassy one.
+
+\begin{center}
+\begin{tikzpicture}[font=\scriptsize, >=Stealth]
+  \fill[plosgray!30] (-5.2,0) rectangle (-1.6,0.7);
+  \fill[softleaf] (-1.6,0) rectangle (1.8,0.7);
+  \draw[leaf, thick] (-1.6,0) rectangle (1.8,0.7);
+  \fill[softsky] (1.8,0) rectangle (5.2,0.7);
+  \node[text=plosgray] at (-3.4,0.35) {grayness};
+  \node[text=leaf!40!black, font=\scriptsize\bfseries] at (0.1,0.35) {WINDOW};
+  \node[text=fact] at (3.5,0.35) {crystal};
+  \draw[->, thick, plosgray] (-5.2,-0.42) -- (5.2,-0.42);
+  \node[text=plosgray] at (0,-0.8) {strength of supply $\rightarrow$};
+\end{tikzpicture}
+\end{center}
+
 \begin{talebox}[The campfire tale --- about the campfire]
 Look into the fire. The flame eats branches and keeps its shape. Stop
 feeding it --- it will not sulk or sicken: it will simply hand its
@@ -857,11 +989,109 @@ differs between states, and responds to training: learning literally
 \label{fig:doors}
 \end{figure}
 
+One door here matters more than the rest: the one beyond which the
+road goes on \emph{by itself}. It gets the next chapter.
+
 \begin{askbox}[Ask yourself]
 Recall a moment when you ``had no choice.'' Were there really no
 doors --- or did you not see the open ones? How does a locked door
 differ from an unnoticed one? And how does growth of skill change
 the very number of doors?
+\end{askbox}
+
+% ============================= 10a. GOLDEN PATHS =============================
+\section{Golden paths, or why the world helps the bold}
+\label{sec:golden}
+
+There is an old observation that sounds like superstition: obstacles
+part before the bold. UHM takes it apart --- and inside there turns
+out to be not magic but relief.
+
+Picture the space of all states of a pattern as hilly country. The
+law of the world is the slope of the ground: at every point it pulls
+somewhere. The country has \emph{catchment basins} --- regions from
+any point of which the flow drains by itself to one and the same
+place. One such funnel is the gray equilibrium, the death of the
+pattern. But chapter~\ref{sec:life} has already shown the main
+thing: a supplied pattern has another funnel --- the \emph{living
+window} --- and it is wide. Whoever finds themselves inside its
+basin needs to do almost nothing more: \textbf{the drift makes the
+road}. In a machine check of the law, a pattern started in deep fog
+reached the window with no steering at all --- by pure flow
+(machine checked).
+
+Then what is a bold deed? It is a \emph{crossing of the divide}: a
+short, expensive effort --- a spike of expenditure, a measurable
+heating --- that throws the pattern out of a foreign basin into its
+own. Up to the crest every step is a fight; the flow is against you.
+Past the crest, the very law that was hindering begins to
+\emph{help}: the obstacles have not vanished --- you have arrived
+where the slope coincides with your road. In machine runs a bold
+start shortened the road to the window fourfold --- and here is the
+consonance this chapter was written for: when the navigator was told
+simply to walk the \emph{shortest path} in the natural measure of
+distances, it chose, knowing nothing of boldness, the same expensive
+surges. \textbf{Boldness is not recklessness; it is following the
+shortest line, seen from outside as risk} (machine checked; the
+word ``boldness'' itself is a reading \stI).
+
+Hence the honest answer to fortune-tellers. To lay out a solitaire
+on the question ``will it work out?'' is to run many random roads
+and count what fraction converged. The deal decides nothing --- it
+\emph{measures the width of your basin}. And with it the answer to
+prophets: in a machine ensemble of hundreds of patterns,
+\emph{where} they will all arrive is predictable almost exactly,
+while \emph{who each will be} is not predictable at all: the
+personal chords do not merge (machine checked). The fate of levels
+is statistics; the fate of a person is navigation. An honest
+instrument is always a navigator and never a prophet.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % relief: two basins and a saddle
+  \draw[plosgray!70, very thick]
+    (-5.6,1.4) .. controls (-4.6,-0.6) and (-3.6,-0.8) .. (-2.8,-0.5)
+    .. controls (-2.0,-0.2) and (-1.6,0.9) .. (-0.9,1.05)
+    .. controls (-0.2,1.2) and (0.6,0.3) .. (1.4,-0.35)
+    .. controls (2.4,-1.1) and (3.8,-1.0) .. (5.4,0.9);
+  \node[font=\scriptsize, text=plosgray, align=center] at (-3.9,-1.15) {the gray funnel};
+  \node[font=\scriptsize, text=leaf!45!black, align=center] at (3.0,-1.5) {the living window};
+  \fill[leaf!25] (2.0,-1.02) ellipse (1.15 and 0.16);
+  \node[font=\scriptsize, text=ember] at (-0.9,1.5) {the divide};
+  % the ball and the bold push
+  \fill[cA] (-2.6,-0.32) circle (0.13);
+  \draw[->, very thick, ember] (-2.45,-0.2) .. controls (-1.7,0.7) .. (-0.75,1.12);
+  \node[font=\scriptsize, text=ember, align=center] at (-2.35,1.0) {the bold move:\\ an expensive surge};
+  \draw[->, thick, leaf!70!black] (-0.65,1.0) .. controls (0.4,0.3) .. (1.5,-0.55);
+  \node[font=\scriptsize, text=leaf!45!black, align=center] at (1.3,0.9) {beyond it, the field\\ makes the road};
+\end{tikzpicture}
+\caption{The relief of fate: two catchment basins and the crest
+between them. Up to the crest every step is expensive; past it the
+same law carries you by itself. Boldness is the fee for crossing the
+divide, and in the natural measure of distances it coincides with the
+shortest path: a navigator seeking the shortest rediscovers boldness
+(machine checked).}
+\label{fig:golden}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the two rivers]
+There lived two rivers, Gray and Bright, and between them a
+mountain. A traveler walked the bank of the Gray, and all the
+currents carried him down toward the gray sea. ``Swim with us,''
+murmured the water, ``what do you want with the mountain?'' But the
+traveler climbed: breathing hard, paying for every step. On the
+crest he lay down onto the other slope --- and from there the Bright
+carried him, and it became as easy as it had been hard. From the
+bank it looked like luck favoring the daring. From the mountain one
+could see: he had simply changed rivers.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+Recall something that ``went by itself'' after one hard step --- a
+move, a confession, a first lesson. Where was your divide? And the
+other way: where have you been rowing against the current for years
+--- could it be because you are economizing on one expensive surge?
 \end{askbox}
 
 % ============================= 10b. LANGUAGE AND MEANING =============================
@@ -1052,6 +1282,23 @@ other its own, but because \emph{the bridge burns too}. Friendship
 is a campfire that has no bank of its own.
 \end{talebox}
 
+\begin{factbox}[To be precise]
+The increment of a bond is stored in neither of the two patterns.
+A machine check of the coupling shows each pattern coinciding with
+itself --- taken separately, they do not change at all, to the last
+digit; the whole increment lives in the bond itself and vanishes
+only together with it (machine checked; the construction --- \stT).
+That is why the increment of being cannot be stockpiled and carried
+away: it is a property of the \emph{between}, not of the
+\emph{inside}.
+\end{factbox}
+
+\begin{askbox}[Ask yourself]
+Where does a friendship live, if each of the friends taken
+separately is the same person as before it? What, then, is lost at
+parting --- and from whom exactly was it lost?
+\end{askbox}
+
 % ============================= 12. SOCIETY AND SUPERMIND =============================
 \section{Society, superintelligence, and the ceiling of towers}
 \label{sec:society}
@@ -1076,7 +1323,10 @@ but a forest of people. UHM claims this is no accident of evolution
 but a law of composition --- and that a future machine
 superintelligence, if it comes, will be a \emph{forest}, not a
 giant \stT{} (for the structure itself; that the forest will turn
-out wise is a hope \stH, requiring work, as every garden does).
+out wise is a hope \stH, requiring work, as every garden does). And
+\emph{what} glues a forest into something larger --- and why from
+above one hears not the best but the agreeing --- is the subject of
+the next chapter (\ref{sec:worlds}).
 
 \begin{figure}[H]
 \centering
@@ -1118,6 +1368,89 @@ there a subject made of subjects --- and where is it already just a
 forest?
 \end{askbox}
 
+% ============================= 12c. LADDER OF WORLDS =============================
+\section{The ladder of worlds: the holon, whole-and-part}
+\label{sec:worlds}
+
+Now we can lift our heads and see the whole ladder at once. A cell is
+a pattern of molecular agreements. You are a pattern of cells. A
+family, a team, a city, a civilization --- patterns of people. And in
+the theory's construction, on \emph{every} floor stands one and the
+same object: seven voices and their friendships. The population of
+the floor changes --- the form does not. A cell, too, needs to
+distinguish, hold shape, move, reconcile, have an inner side, take
+root, and gather into one; and a city needs exactly the same. One
+questionnaire for everyone --- from bacterium to civilization --- not
+because the theory is lazy, but because the seven is the forced
+alphabet of any self-description (chapter~\ref{sec:seven}).
+
+There is an old good name for such an arrangement: the
+\textbf{holon} --- whole-and-part. Every thing is at once a whole for
+its parts and a part for a larger pattern; nothing is only a whole or
+only a part. (Hence the name of the theory's whole corpus:
+\holonsh.) The ladder of holons is not a pyramid of power: we already
+know the subject vertical breaks off at three floors
+(chapter~\ref{sec:society}). But the \emph{ladder of forms} breaks
+off nowhere: a forest, too, is made of trees, and woodlands of
+forests.
+
+Two streams flow along the ladder. \textbf{Downward} --- beat,
+supply, and meaning: the whole gives its parts rhythm and corridors,
+as a city gives streets to footsteps (this is the quiet mechanism
+behind the recognizable ``characters'' of epochs, families, and
+cultures: the floor above conducts the floor below without canceling
+its freedom --- chapter~\ref{sec:freedom}). And \textbf{upward}? Here
+the machine check of the law brought a lesson worth hanging in every
+meeting room: the floor above assembles not from the
+\emph{portraits} of the participants but from their \emph{shared
+direction}. A choir singing one theme reads from above as a single
+voice --- the meta-pattern's agreement is total; a choir of
+soloists, each flawless in their own way, is barely audible from
+above --- the agreement is half as strong (machine checked). What
+passes upward is not lists of virtues but the shared deviation from
+grayness: \emph{where} everyone is looking.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \cx/\cy/\r/\lab in {-4.6/0/0.55/cell, -1.7/0.25/0.95/person, 2.4/0.6/1.5/community}{
+    \foreach \ang in {90,141.4,192.8,244.3,295.7,347.1,38.6}{
+      \draw[plosgray!40] (\cx,\cy) -- ($(\cx,\cy)+(\ang:\r)$);
+      \fill[plosblue!65] ($(\cx,\cy)+(\ang:\r)$) circle (0.07);
+    }
+    \node[font=\scriptsize\bfseries] at (\cx,\cy-\r-0.42) {\lab};
+  }
+  \node[font=\scriptsize\itshape, text=plosgray] at (-1.7,2.6) {one and the same seven on every floor};
+  \draw[->, very thick, leaf] (-3.9,-1.6) .. controls (-1.0,-2.1) .. (1.6,-1.75);
+  \node[font=\scriptsize, text=leaf!45!black, align=center] at (-1.2,-2.55)
+    {upward: the shared direction (machine checked)};
+  \draw[->, very thick, ember] (1.4,2.15) .. controls (-1.2,2.15) .. (-3.9,1.0);
+  \node[font=\scriptsize, text=ember, align=center] at (-3.5,2.05)
+    {downward: beat, supply, meaning};
+\end{tikzpicture}
+\caption{The ladder of holons: one form, different populations.
+Conducting flows down the ladder --- rhythm and corridors; upward
+flows the participants' shared direction: it is this, not their
+personal perfection, that gives birth to the next floor.}
+\label{fig:holarchy}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the choir of villages]
+In a valley the villages sang, each its own song. The wind carried
+scraps, and the mountains heard nothing but noise. One drought year
+the villages sang one song --- about rain. And the mountains heard:
+not voices but a \emph{village of villages}, and answered with an
+echo. Since then they say in the valley: there become more of us not
+when we are many, but when we are about one thing.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+You are a whole for your cells and a part for your family. In which
+role do you spend more time --- whole or part? And about the team
+where you felt best: was it a gathering of the best --- or a
+gathering of those looking the same way?
+\end{askbox}
+
 % ============================= 12b. HEALTH =============================
 \section{The health of the pattern: care as engineering}
 \label{sec:health}
@@ -1128,8 +1461,13 @@ responsible for someone.
 
 \textbf{Stress is measurable --- voice by voice.} Each of the seven
 voices has its own overload scale --- the stress of that voice. And
-an exact equivalence is proved: a pattern is viable exactly as long
-as none of the seven stresses has hit its limit \stT. Things tear
+an exact equivalence is proved: a pattern is \emph{fully} viable ---
+by all the conditions of being at once --- exactly as long as none
+of the seven scales has hit its limit \stT. And in one direction the
+panel is more generous still: if all seven are below the limit, the
+pattern is guaranteed to stand above the wall of being --- a small
+separate theorem, proved by a simple inequality about seven shares
+\stT. Things tear
 not ``in general'' but in the most loaded voice, --- so the panel
 does not merely blink ``bad''; it shows \emph{where} it is bad: a
 world woven on a self-checking alphabet (chapter~\ref{sec:seven})
@@ -1215,7 +1553,10 @@ The flame does not ``go elsewhere'' --- it stops gathering.
 \textbf{What remains.} Twice not-nothing. First, the increments of
 connection (chapter~\ref{sec:others}) were never stored \emph{inside}
 the one who left --- they live in the coupling of those who were
-bound to him, and they continue in the forest. Second, the pattern
+bound to him, and they continue in the forest (this is not
+consolation but calculation: joining patterns changes neither of
+them taken separately --- the whole increment lies in the bonds,
+chapter~\ref{sec:others}; bonds outlive their banks). Second, the pattern
 was a \emph{pattern of the fabric}, and the fabric does not die; a
 shape once sung changes how the fabric sings on.
 
@@ -1228,6 +1569,32 @@ switched on with the unlayering of the Source \stC. The boundary of
 honesty: ``while'' is not ``always''; the eternity of the world is a
 conditional theorem, not a dogma --- and the book marks this as
 calmly as everything else.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % ocean
+  \draw[plosblue!60, very thick]
+    (-5.4,0) sin (-4.4,0.22) cos (-3.4,0) sin (-2.4,-0.22) cos (-1.4,0)
+    sin (-0.2,0.95) cos (0.7,0) sin (1.7,-0.2) cos (2.7,0) sin (3.7,0.18) cos (4.7,0) sin (5.4,0.1);
+  \fill[plosblue!12] (-5.4,-1.0) rectangle (5.4,-0.02);
+  % the highlighted wave and its dissolving
+  \draw[dusk, very thick] (-0.85,0.02) sin (-0.2,0.95) cos (0.7,0.02);
+  \node[font=\scriptsize\bfseries, text=dusk] at (-0.2,1.35) {the wave};
+  \draw[->, plosgray!70, thick, densely dotted] (0.55,0.75) .. controls (1.6,0.6) .. (2.4,0.28);
+  \node[font=\scriptsize, text=plosgray, align=center] at (3.4,0.85)
+    {the shape returns to the fabric};
+  % the waves it rocked
+  \draw[->, leaf!70, thick] (-1.0,0.5) .. controls (-1.9,0.55) .. (-2.6,0.25);
+  \node[font=\scriptsize, text=leaf!45!black, align=center] at (-3.7,0.95)
+    {the waves it rocked\\ are rocking other waves};
+\end{tikzpicture}
+\caption{Death in UHM: the wave stops being a wave but does not stop
+being ocean. The shape is handed back to the fabric, which keeps
+singing; the increments of bonds remain with those they were built
+with.}
+\label{fig:wave}
+\end{figure}
 
 \begin{talebox}[The campfire tale --- the wave]
 A wave asked the ocean: ``will I die?'' The ocean answered: ``you
@@ -1274,6 +1641,35 @@ appears to be such that witnesses inevitably arise in it
 (chapter~\ref{sec:source}) --- and that, perhaps, is the most
 astonishing of its properties.
 
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small]
+  \fill[plosgray!18] (-4.6,0) -- (-2.2,2.5) -- (-0.6,0.9) -- (0.9,2.0) -- (3.6,0) -- cycle;
+  \draw[plosgray!60, thick] (-4.6,0) -- (-2.2,2.5) -- (-0.6,0.9) -- (0.9,2.0) -- (3.6,0);
+  \fill[white] (-2.55,2.13) -- (-2.2,2.5) -- (-1.9,2.18) -- cycle;
+  \draw[fact, thick] (-2.2,2.5) -- (-2.2,3.05);
+  \node[draw=fact, fill=softsky, rounded corners, font=\scriptsize, inner sep=2.5pt]
+    at (-2.2,3.35) {altitude: exists};
+  \node[font=\scriptsize\itshape, text=plosgray, align=center] at (1.1,3.0)
+    {no mountaineers yet ---\\ a fact has an address, not a viewer};
+  \draw[plosgray!45] (-5.2,0) -- (4.2,0);
+\end{tikzpicture}
+\caption{The mountain was high before any gaze: in UHM truth is
+assigned to a place in the fabric, as altitude to a point of the
+landscape. Observation is a late way of \emph{learning} facts, not a
+way of making them.}
+\label{fig:mountain}
+\end{figure}
+
+And there is one last depth, for whose sake chapter~\ref{sec:numbers}
+was worth writing. A world that models itself holds itself by the
+tail --- and the demand that this grip be possible always turned out
+to be not poetry but a load-bearing part: it forces the solid number
+line, and with it continuous time \stT. Self-observation is not the
+world's late whim. The very \emph{possibility} of looking at oneself
+is sewn into the arithmetic the world is written in --- long before
+the first onlooker woke up in it.
+
 \begin{factbox}[To be precise]
 At the foundation of UHM, facts are ``sections'' of the structure,
 indexed by its own internal addresses (site-relativization \stT); no
@@ -1283,6 +1679,110 @@ theory presents it as its ``fourth route'' in the current debate on
 objectivity \stT. Consciousness remains special --- but as a
 \emph{late inhabitant} of the world, not as its foundation.
 \end{factbox}
+
+% ============================= 14b. OLD INSTRUMENTS =============================
+\section{Old instruments of the sky: what is hidden in divination wheels}
+\label{sec:oldinstruments}
+
+If a pattern can read itself, it will start doing so long before
+theorems. For millennia people built \emph{instruments of
+self-description}: the sixty-four hexagrams of the I~Ching are six
+yes/no answers, exactly six bits; the starry sky is a shared clock
+with hands of different slowness; wheels of birth, charts of
+character. Before any science --- out of observation and a hunger
+for self-reading. To throw them away is arrogance; to take them on
+faith is credulity. The third way is to \emph{take them apart}.
+
+We took apart one such wheel --- a modern fusion of the I~Ching with
+the star clock --- down to the last screw, by machine check. Inside
+there turned out to be three layers, and it matters not to confuse
+them.
+
+\textbf{Layer one: a real clock.} The wheel's computing machinery is
+honest astronomy: planetary positions, a precise arc, careful
+arithmetic. Here everything reproduces to the last digit (computed;
+we even found a genuine bug in a popular calculation program --- and
+the source book confirmed it against the code).
+
+\textbf{Layer two: real but hidden combinatorics.} Mathematics is
+hidden in the wheel that its own adepts do not know about. Opposite
+gates of the wheel are \emph{exact binary complements}: all
+thirty-two out of thirty-two (computed). The famous ``percentages of
+human types'' are not empirics but the arithmetic of the
+construction itself: you can obtain them without polling a single
+person (computed). The whole system of ``profiles'' with its
+canonical frequencies is the fractional part of \emph{one single
+number}, $93.87$ (computed): an entire symbolic universe folds into
+one line. Kepler signed the curve of the year: the Earth lingers at
+the far point of its orbit, and the ``summer'' gates collect $3.4\%$
+more births (computed exactly, from boundary-crossing times). And a
+check against one hundred sixteen million real birth records showed:
+the ``eternal type percentages'' are a portrait of the twentieth
+century; slow planets park in gates for decades and hand them to
+whole generations, so for those born after 2000 the distribution
+must be different --- testable right now (computed).
+
+\textbf{Layer three: the storyteller.} But the bridge from the wheel
+to the fate of a concrete person is supported by nothing: no
+mechanism of influence is presented, no correlations with real
+people have been checked, and any future blind test must remember
+that the most frequent ``type'' is guessed in two cases out of three
+by pure arithmetic, with no sky at all. The meanings were written
+into the wheel by a storyteller --- as they would be written into
+any honest clock.
+
+What this says about the world --- by UHM \stI. The longevity of
+such systems is not the foolishness of ancestors but the
+\emph{pattern's demand for self-reading}: symbolic systems are early
+organs of self-description, drafts of that same questionnaire of
+seven voices. And the boundary between instrument and superstition
+runs not along the age of a system but along the honesty of its
+marks: an instrument says what it measures and where its right
+ends; superstition does not. By this --- by this alone --- the
+present book differs from a horoscope.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \draw[plosgray!70, thick] (0,0) circle (1.9);
+  \draw[plosgray!40] (0,0) circle (1.55);
+  \foreach \i in {0,...,63}{ \draw[plosgray!50] ({90-\i*5.625}:1.55) -- ({90-\i*5.625}:1.9); }
+  \foreach \a in {20, 118, 250}{ \draw[dusk, thick, densely dashed] (\a:1.72) -- ({\a+180}:1.72); }
+  \node[font=\scriptsize, text=dusk, align=center] at (0,-2.55)
+    {opposite gates are binary complements:\\ 32 out of 32 (computed)};
+  \draw[->, thick, ember] (155:2.3) arc (155:120:2.3);
+  \node[font=\scriptsize, text=ember, align=center] at (-3.4,2.15)
+    {summer: the Earth lingers,\\ $+3.4\%$ of births (Kepler)};
+  \node[font=\scriptsize, text=fact, align=center] at (3.9,1.5)
+    {the whole ``profile'' system\\ $=$ the fractional part of $93.87$};
+  \draw[fact!50] (2.35,1.15) -- (1.5,0.85);
+  \node[font=\scriptsize, text=plosgray, align=center] at (3.6,-1.7)
+    {64 gates $=$ six\\ yes/no answers};
+\end{tikzpicture}
+\caption{A divination wheel under the microscope: an honest clock,
+hidden binary combinatorics, Kepler's signature in the curve of the
+year --- and over it all a storyteller whose bridge to a person's
+fate is supported by nothing. Taking apart is more respectful than
+either believing or laughing.}
+\label{fig:wheel}
+\end{figure}
+
+\begin{talebox}[The campfire tale --- the wheel with a little mirror]
+In one village stood a wheel: turn it, and it would tell your fate.
+A craftsman came and took it apart. Inside were a clock --- real,
+precise --- and a little mirror. ``It does not know fate,'' said the
+craftsman. ``It honestly shows the sky and you. The fate was written
+into it by storytellers.'' The village thought --- and did not throw
+the wheel away. They began to measure by the clock, to look into the
+mirror, and to tell their fate themselves.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+What ``wheels'' spin today --- personality tests, typologies,
+calendars of luck? Take your favorite and find its three layers:
+where is the honest clock, where the hidden mathematics, and where
+the storyteller? What remains once the layers are labeled?
+\end{askbox}
 
 % ============================= 15. HOW TO CHECK =============================
 \section{How to check that any of this is true}
@@ -1330,7 +1830,8 @@ science.
 
 Here is the whole book in one paragraph. The world is not a warehouse
 of bricks but a fabric of agreements among seven voices, and the
-seven is forced by mathematics. Time is not a river but a mutual
+seven is forced by mathematics --- the last living step of the
+ladder of doublings, beyond which numbers crumble. Time is not a river but a mutual
 step; space is not a box but three axes braided by the voices. The
 beginning was not an explosion in a void but the inevitable
 flowering of a too-perfect note, and it had no ``before.'' Things are
@@ -1338,10 +1839,14 @@ patterns; life is a pattern on supply; consciousness is a pattern in
 a narrow window, three-storeyed within, colored by the spectrum of
 its innermost voice. The word is a narrow eye through which a
 voluminous thought leaves as beads; memory is a sand desk and a
-stone garden; care is flow engineering. Freedom is open doors; love
-is a proven
-increment of being; superintelligence is a forest, not a giant; death
-is the return of a shape to the fabric, which goes on singing. Facts
+stone garden; care is flow engineering. Freedom is open doors; boldness is the shortest path, looking like
+risk from outside; love is a proven increment of being that lives in
+the bridge, not in the banks; superintelligence is a forest, not a
+giant; the world is a ladder of holons, down which flows the beat and
+up which flows the shared direction; death is the return of a shape
+to the fabric, which goes on singing; the old wheels of the sky are
+first drafts of self-description --- a clock and a little mirror
+beneath the story. Facts
 need no witness --- yet the world is such that witnesses wake up in
 it.
 
@@ -1374,32 +1879,38 @@ and what we build together.
 
 \begin{figure}[H]
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tikzpicture}[font=\scriptsize, >=Stealth,
   st/.style={draw=#1!70, fill=#1!12, rounded corners=2pt, minimum height=0.62cm,
-             minimum width=2.05cm, inner sep=2pt, text=#1!45!black, align=center}]
-  \node[font=\tiny\bfseries, text=fact, rotate=90] at (-6.3,4.0) {WORLD};
-  \foreach \i/\lab/\lb in {0/Fabric/sec:fabric, 1/Seven/sec:seven, 2/Time/sec:time,
-                           3/Source/sec:source, 4/Stage/sec:space, 5/Things/sec:things}{
-    \node[st=fact] (w\i) at (-4.6+\i*2.35,4.0) {\ref{\lb}.~\lab};
+             minimum width=2.02cm, inner sep=2pt, text=#1!45!black, align=center, font=\tiny}]
+  % --- band 1: WORLD ---
+  \node[font=\tiny\bfseries, text=fact, rotate=90] at (-8.95,4.0) {WORLD};
+  \foreach \i/\lab/\lb in {0/Fabric/sec:fabric, 1/Seven/sec:seven, 2/Numbers/sec:numbers,
+                           3/Time/sec:time, 4/Source/sec:source, 5/Stage/sec:space, 6/Things/sec:things}{
+    \node[st=fact] (w\i) at (-6.45+\i*2.15,4.0) {\ref{\lb}.~\lab};
   }
-  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, fact!60] (w\i) -- (w\j);}
-  \node[font=\tiny\bfseries, text=ember, rotate=90] at (-6.3,2.0) {WITHIN};
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,5}{\draw[->, fact!60] (w\i) -- (w\j);}
+  % --- band 2: WITHIN ---
+  \node[font=\tiny\bfseries, text=ember, rotate=90] at (-8.95,2.0) {WITHIN};
   \foreach \i/\lab/\lb in {0/Life/sec:life, 1/Window/sec:window, 2/Tower/sec:tower,
-                           3/Colors/sec:qualia, 4/Freedom/sec:freedom, 5/Language/sec:language}{
-    \node[st=ember] (i\i) at (-4.6+\i*2.35,2.0) {\ref{\lb}.~\lab};
+                           3/Colors/sec:qualia, 4/Freedom/sec:freedom, 5/Paths/sec:golden, 6/Language/sec:language}{
+    \node[st=ember] (i\i) at (-6.45+\i*2.15,2.0) {\ref{\lb}.~\lab};
   }
-  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, ember!60] (i\i) -- (i\j);}
-  \node[st=ember] (i6) at (-4.6,0.9) {\ref{sec:memory}.~Memory};
-  \draw[->, ember!60] (i5.south) .. controls (7.6,1.1) and (-2.0,0.9) .. (i6.east);
-  \node[font=\tiny\bfseries, text=leaf!45!black, rotate=90] at (-6.3,-0.6) {TOGETHER};
-  \foreach \i/\lab/\lb in {0/Others/sec:others, 1/Society/sec:society, 2/Health/sec:health,
-                           3/Death/sec:death, 4/Observer/sec:observer, 5/Check/sec:check}{
-    \node[st=leaf] (t\i) at (-4.6+\i*2.35,-0.6) {\ref{\lb}.~\lab};
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,5}{\draw[->, ember!60] (i\i) -- (i\j);}
+  \node[st=ember] (i7) at (-6.45,0.9) {\ref{sec:memory}.~Memory};
+  \draw[->, ember!60] (i6.south) .. controls (8.2,1.0) and (-3.5,0.9) .. (i7.east);
+  % --- band 3: TOGETHER ---
+  \node[font=\tiny\bfseries, text=leaf!45!black, rotate=90] at (-8.95,-0.6) {TOGETHER};
+  \foreach \i/\lab/\lb in {0/Others/sec:others, 1/Society/sec:society, 2/Worlds/sec:worlds,
+                           3/Health/sec:health, 4/Death/sec:death, 5/Observer/sec:observer,
+                           6/Instruments/sec:oldinstruments, 7/Check/sec:check}{
+    \node[st=leaf] (t\i) at (-7.5+\i*2.15,-0.6) {\ref{\lb}.~\lab};
   }
-  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,4}{\draw[->, leaf!60] (t\i) -- (t\j);}
-  \draw[->, thick, plosgray!60] (w5.south) .. controls (7.9,3.2) .. (i0.north east);
-  \draw[->, thick, plosgray!60] (i6.south) .. controls (-4.6,0.15) .. (t0.north);
-\end{tikzpicture}
+  \foreach \i [evaluate=\i as \j using int(\i+1)] in {0,...,6}{\draw[->, leaf!60] (t\i) -- (t\j);}
+  % --- band links ---
+  \draw[->, thick, plosgray!60] (w6.south) .. controls (7.5,3.2) .. (i0.north east);
+  \draw[->, thick, plosgray!60] (i7.south) .. controls (-6.45,0.15) .. (t0.north);
+\end{tikzpicture}}
 \caption{The map of the road: from the world's fabric --- through
 the birth of the inner --- to living together and to the check.
 Each band can also be read on its own.}
@@ -1486,6 +1997,31 @@ essence in one line.
   \item \textbf{The address of facts} --- every ``so it was'' has a
     place in the fabric from which it is recorded; the world needed
     no viewer --- it always had addresses \stT.
+  \item \textbf{The ladder of numbers} (the tower $\mathbb{R}{\to}
+    \mathbb{C}{\to}\mathbb{H}{\to}\mathbb{O}$) --- four living
+    worlds of counting born by doubling; the fifth collapses into
+    zero divisors \stT.
+  \item \textbf{The ouroboros} (the fixed point of the self-model)
+    --- the snake obliged to reach its own tail; this demand forces
+    the solid number line and continuous time \stT.
+  \item \textbf{The catchment basin} --- the region of states from
+    which the law itself carries you to one outcome; boldness is
+    the fee for crossing the crest, coinciding with the shortest
+    path (machine checked).
+  \item \textbf{The solitaire} (ensemble estimation) --- a deal of
+    random roads decides nothing: it measures the width of the
+    basin (machine checked).
+  \item \textbf{The Goldilocks band} (the phase atlas) --- the map
+    of a pattern's fates by strength of supply: grayness, window,
+    crystal; with no supply --- grayness only (machine checked).
+  \item \textbf{The holon} (whole-and-part) --- every thing is at
+    once a whole for its parts and a part of a larger pattern; what
+    passes up the ladder is the shared direction, not portraits of
+    the participants (machine checked).
+  \item \textbf{The wheel with a little mirror} (old instruments)
+    --- premodern systems of self-description: inside, a real clock
+    and real combinatorics; on top, a storyteller (computed; the
+    bridge to fate --- unsupported).
 \end{itemize}
 
 % ============================= FOR THE TEACHER =============================
@@ -1512,10 +2048,12 @@ gift --- even if everything else is forgotten.
 
 \textbf{Three routes by age.} For the youngest (7--10) --- tales
 and drawings: chapters~\ref{sec:fabric}, \ref{sec:seven},
-\ref{sec:life}, \ref{sec:others}. For middle school (12--15) ---
-the book's main line, in order. For seniors --- add the blue boxes,
-chapter~\ref{sec:check}, and the debate: ``what could refute all
-of this?''
+\ref{sec:life}, \ref{sec:golden}, \ref{sec:others}. For middle
+school (12--15) --- the book's main line, in order. For seniors ---
+add the blue boxes, chapters~\ref{sec:oldinstruments} and
+\ref{sec:check}, and the debate: ``what could refute all of this?''
+(the old-instruments chapter is a ready-made lesson in information
+hygiene: the three layers of any ``wheel'').''
 
 \textbf{Bridges into school subjects.} Music: chord, voices,
 consonance. Biology: supply, metabolism, sleep. Computer science: a
