@@ -33,7 +33,13 @@ LN7 = np.log(N)
 LN2 = np.log(2.0)
 KB = 1.380649e-23
 A, S_, D_, L, E, O, U = range(7)                    # the seven modes [A,S,D,L,E,O,U]
-LINES = [(0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 0), (5, 6, 1), (6, 0, 2)]  # Fano lines
+# Fano lines as raw translates {p, p+1, p+3}: valid in the CORPUS ARITHMETIC
+# numbering (A,S,D,L,E,U,O — U before O). Read against this file's display
+# order [A,S,D,L,E,O,U], the NAMED lines are U/O-transposed relative to the
+# corpus (calibration catch H46, prime_radiant.py). All spectral observables
+# here are labeling-invariant; only line-NAMED diagnostics need the corrected
+# wiring — see architecture/prime_radiant.py fano_lines_named().
+LINES = [(0, 1, 3), (1, 2, 4), (2, 3, 5), (3, 4, 6), (4, 5, 0), (5, 6, 1), (6, 0, 2)]
 
 
 # --------------------------------------------------------------------------- utilities
