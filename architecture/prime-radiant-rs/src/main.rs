@@ -12,6 +12,7 @@ mod interpret;
 mod model;
 mod navigate;
 mod pair;
+mod sensor_git;
 mod ui;
 
 use holon::*;
@@ -72,6 +73,7 @@ prime-radiant demo calibration    the oracle's predictions vs fresh realizations
 prime-radiant demo bench          navigation benchmark vs baselines (same starts)
 prime-radiant demo maxim          «no own goal → part of another's» — decomposed and measured
 prime-radiant demo estimator      the [K] organ: track a hidden holon through noise (vs baselines)
+prime-radiant sense-git [--repo P] [--window N]   the domain sensor: a git repo as an external system
 prime-radiant checkup --scores 7,5,4,6,3,2,5 [--coh AE=0.4,OU=-0.2] [--model mind|team|llm|market|universal]";
 
 fn main() {
@@ -91,6 +93,30 @@ fn main() {
             Some("maxim") => demo::maxim(74),
             Some("estimator") => demo::estimator_demo(),
             _ => println!("{}", USAGE),
+        }
+        return;
+    }
+    if args.get(1).map(|s| s.as_str()) == Some("sense-git") {
+        let mut repo = ".".to_string();
+        let mut win = 20usize;
+        let mut i = 2;
+        while i < args.len() {
+            match args[i].as_str() {
+                "--repo" => {
+                    i += 1;
+                    repo = args.get(i).cloned().unwrap_or(".".into());
+                }
+                "--window" => {
+                    i += 1;
+                    win = args.get(i).and_then(|v| v.parse().ok()).unwrap_or(20);
+                }
+                _ => {}
+            }
+            i += 1;
+        }
+        if let Err(e) = sensor_git::run(&repo, win) {
+            eprintln!("sensor error: {e}");
+            std::process::exit(2);
         }
         return;
     }
