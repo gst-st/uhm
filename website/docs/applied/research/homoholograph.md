@@ -987,3 +987,20 @@ If the diary contradicts these, the bridge is wrong where it is checkable —
 which is exactly what an applied instrument built on empirical ground should
 offer. The three vocabularies agree on the mechanism; the predictions are where
 that agreement is put at risk.
+
+### 40. A second bridge: the window of being is the window of tolerance
+
+The same move works on UHM's **window of being**, `2/7 < P ≤ 3/7`. In clinical
+terms this is the **window of tolerance** (Siegel): the arousal band between
+shutdown and overwhelm where a person can *both* feel and think and stay
+integrated. The three purity regimes map onto the three autonomic zones exactly:
+below the wall (`P ≤ 2/7`) the state is maximally mixed — foggy, distant,
+under-aroused (hypoarousal); inside the window it is flexible and coherent (the
+window of tolerance); above it (`P > 3/7`) it is over-pure — locked in one mode,
+rigid, over-aroused (hyperarousal). The calibration chart's `P = 0.309` sits in
+the window. This gives the window of being a clinical name and, more usefully, a
+set of **self-regulation cues** the engine now reads back (`psyche.rs
+zone_gloss`, in `/psyche`): to lift from the fog, gentle activation (movement,
+rhythm, voice, eye contact); to ease down from overwhelm, slowing (a long
+out-breath, warmth, feet on the ground). The threshold is computed; the zone is
+read; the practice is borrowed from a validated clinical frame. [И]
