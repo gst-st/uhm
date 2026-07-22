@@ -488,3 +488,50 @@ that is exactly what **pravdomer v2** now measures: a blind day protocol
 (`hhg day rate` commits the hidden drive prediction at rating time;
 `reveal` opens at 21+ days with a permutation test), with the HB09 power
 context quoted in the output.
+
+## Part VI. Precision and the wheel's deep relations
+
+### 22. ΔT done right; the two honesty zones of the ephemeris
+
+The linear ΔT surrogate was replaced by the piecewise Espenak–Meeus
+polynomials, verified verbatim against the
+[NASA Five-Millennium-Canon page](https://eclipse.gsfc.nasa.gov/SEcat5/deltatpoly.html)
+(the old model erred by ~80 s ≈ 2.4′ of Moon at the 2100 edge). The
+Swiss cross-check was regenerated over the FULL 1900–2100 range and split
+into two honesty zones: **strict** (≤2050: Sun 0.7″, planets ≤1″, Moon
+12″, node 45″ — the node limit is the truncated lunar series amplified by
+1/sin i, not the r×v method) and **projection** (2050+: ΔT of the future
+is itself uncertain by minutes — divergence from Swiss there is model
+uncertainty about Earth's rotation, not a bug). Line-flip criterion is now
+statistical: flips only allowed on Moon/nodes at residual scale, never on
+planets.
+
+### 23. The nuclear map and the wheel's harmonic tower (HB24, HB24b)
+
+The oldest "hidden essence" operation of the I-Ching — the nuclear
+hexagram (lines 2-3-4 / 3-4-5) — becomes a measured endomorphism of the
+heptacode atlas: its only fixed points are **KW 1 = the O-voice and KW 2 =
+the Source**, and the entire wheel drains in ≤2 steps into three roots:
+the Source (16 gates), the O-voice (16), or the **63↔64 pendulum**
+("After ↔ Before Completion", 32). Reports now carry each activation's
+nuclear core and the chart's root census.
+
+Sharper still: the wheel's rotational harmonics are the hexagram lines
+themselves. Measured (HB24b): the dominant XOR relation at offset $2^k$
+flips **exactly one line**, in exactly 32/64 cases (the halving rule), and
+the lines descend the mandala's octaves — one gate → line 6 (voice E),
+11.25° → U, 22.5° → D, 45° → L, 90° → S, 180° → the exact complement.
+With line = voice this yields a native aspect theory with voice types:
+opposition = complement (theorem), square = the S-turn, semi-square = L
+[И-structured]. HB25 recorded honestly: iterative MLE
+([diluted RρR](https://arxiv.org/abs/quant-ph/0611244)) improves diary
+reconstruction by only ~8% at small N — below the preregistered adoption
+threshold; not merged.
+
+### 24. The year atlas
+
+`hhg year -n Имя --year 2026` assembles the flagship user artifact: twelve
+monthly sections of the event grammar (epoch turns, returns/oppositions,
+bridge peaks, page returns) merged with the year's lunar returns, all
+date-sorted with slowness weights — one markdown, abundance with honesty
+classes attached.
