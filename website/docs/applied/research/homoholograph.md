@@ -572,3 +572,133 @@ The free-text channel is a **Claude Code agent** (headless CLI) with a per-user 
 - **The sharpness map** (HB30): sharpening ρ₀ along each voice and reading where the fate lands — the personal *first move*. The best voice crossed the window in 60/60 charts; the voice is personal (never the already-dominant one).
 - **Bearing activations**: leave-one-out weight of each of the 26 stamps in Γ₀ (the two lights measurably hold the calibration chart).
 - **The life map** (`hhg life`): day-per-year progressions (resonance curve 0–84, life-page-return ages, progressed lunar returns ~27/55/82) woven with the great transit cycles (Saturn return/opposition, Uranus opposition, the 18.6-year nodal lattice), clustered into retrograde series, by decade.
+
+## Part VIII. Two birds: HD as a falsification instrument, and the Rosetta
+
+The reconstruction has always run in two directions at once. Downward, UHM
+lends Human Design a rigorous spine — the seven voices, the coherence graph,
+the wall of being. But the arrow also points **upward**. Human Design is an
+occult architecture of the human that was tuned, over decades, against a very
+large number of charts and lived reports. Wherever UHM makes a *structural*
+prediction that can be checked against HD's independently-calibrated wiring,
+HD stops being a client of the theory and becomes a **measurement** of it —
+a chance to corroborate the theory, or to falsify it. Two birds: the same
+bridge that grounds HD also puts UHM at risk, which is the only thing that
+makes a claim worth believing.
+
+### 28. The falsification suite (`architecture/falsify_lab.py`)
+
+The rule of the suite is pre-registration. For each test we fix, *before the
+measurement*, three things: the UHM source, the exact prediction, and the pass
+criterion. Then we measure and read the verdict honestly. Three verdicts are
+possible:
+
+- **CORROBORATED** — HD's structure matches the UHM prediction;
+- **INDEPENDENT** — no relation is found (a null result — scientifically
+  valuable, because it bounds where the structure lives);
+- **TENSION** — HD's structure *contradicts* the prediction. A tension is a
+  falsification signal and must be escalated to the corpus.
+
+Six tests run today.
+
+**TF1 — the cardinality of the alphabet.** UHM T-224 says seven is the unique
+self-diagnosing alphabet: a self-model needs exactly seven processing
+dimensions, plus drive. Prediction: HD's centers split as **7 processing + 2
+pressure**, never 6+2 or 8+2. Measurement: they do, exactly. **CORROBORATED.**
+This is the load-bearing coincidence of the whole bridge — HD's nine centers,
+built with no knowledge of UHM, resolve into precisely the seven voices plus
+the two supply ports (Head, Root).
+
+**TF2 — the complement law.** UHM reads the wheel as the even `[7,6]` code, so
+opposite gates must be exact binary complements of the six visible lines.
+Measurement: **64/64** exact complements. **CORROBORATED.**
+
+**TF3 — the wall of being.** UHM T-124/T-129: integration `Φ = 0` is grey —
+zero being. Prediction (natal-level, defensible): the Reflector, defined by an
+empty inner graph, is the **unique** type with `Φ = 0` and the **uniquely
+lowest** purity, while every *defined* type carries `Φ ≥ 0.1`. Measurement
+over 3000 charts: Reflector `P = 0.197`, uniquely the lowest; Reflector
+`Φ = 6·10⁻¹⁸` (numerically exact zero) against every other type `Φ ≥ 0.21`.
+**CORROBORATED.** (An earlier version of this test fired a *false* TENSION by
+demanding defined types sit above the `2/7` wall on their natal prior. That
+was a category error, corrected here: the `2/7` wall is a *dynamical* claim
+about a sharpened, conscious state, and all natal priors are diffuse — HB29.
+The honest natal prediction is the one above, and it holds. The dynamical
+wall is tested separately in HB29b, where Reflectors reach the window 0% of
+the time.)
+
+**TF4 — the hidden seventh voice.** UHM makes O (Ground) the parity bit of the
+six visible lines. Is that parity a *meaningful* binary in HD, or arithmetic
+noise? Test: does the parity partition gates in a way that aligns with the
+pressure-fed set better than chance? Permutation test, 5000 shuffles:
+`p = 0.80`. **INDEPENDENT.** An honest null — the parity is a real feature of
+the code, but it carries no information about HD's pressure wiring. UHM does
+not predict it should, so this bounds the claim rather than wounding it.
+
+**TF5 — the Fano organization.** UHM T-224 organizes the 21 coherences as the
+Fano plane — seven lines of three. In that plane *every pair already lies on a
+line*, so the only non-trivial question is whether HD realizes complete
+**lines** (all three pairs of a triad) more than a random graph with the same
+edge count. Measurement: HD realizes **1 of 7** complete Fano lines, against
+`1.50` expected by chance (`p = 0.93`). **INDEPENDENT** — HD's channel wiring
+carries no Fano structure (consistent with the earlier center↔heptacode
+mutual-information null, T-H6, `p = 0.62`). The Fano organization is a fact of
+the *coherence algebra*, not of HD's historically-grown channel list; the two
+are simply different objects.
+
+**TF6 — the three-floor ceiling.** UHM's SAD_MAX = 3 caps the subject vertical
+at three nested floors. The group analogue — meta-holons should stop gaining
+coherence past three levels of nesting — needs the group module driven
+recursively. Recorded **OPEN**, pending the nesting experiment.
+
+**The tally: 3 corroborations, 3 independences, 0 tensions.** No
+empirically-calibrated property of Human Design contradicts UHM. The
+corroborations are the strong ones — the 7+2 cardinality, the complement law,
+the Reflector's exact `Φ = 0` — because they are precisely the structural
+axioms the theory cannot do without. The independences are not failures; they
+are the map's honest coastline, marking where UHM structure is *not* imprinted
+on HD and telling any future skeptic exactly where to dig. The absence of
+tensions is the corroboration that matters most: an instrument built for a
+different purpose, on a different vocabulary, in a different century, does not
+once cut against the theory's spine.
+
+### 29. The Rosetta: a precise ontology, not a rebranding
+
+Calibration is not the same as allegiance. We calibrate through Human Design
+because people already live inside its language — but the goal is a new
+ontology with its own terminology, one that names each thing by its essence
+rather than by an inherited, often occult-anchored label. The **Rosetta**
+(`core/src/rosetta.rs`; `hhg rosetta`, `/rosetta`, and the agent's glossary)
+is the terminology spine of that ontology. Each row carries four cells: the
+legacy HD term, our precise term, the UHM principle it expresses, and a
+precision note saying *why* ours is sharper. It is bilingual and editable, and
+it is deliberately restrained — we do not rename for the pleasure of renaming;
+we rename only where the legacy word blurs or misleads.
+
+A few rows show the shape of it:
+
+- **Channel → coherence.** Not a wire between two centers but a full `K₇`
+  edge. The legacy channel list is structurally *blind* on 8 of the 21
+  dimension-pairs; the coherence covers all 21 — no blind zone (HB13).
+- **Center → voice-dimension (7) or pressure port (2).** HD's nine centers
+  conflate population and drive; the reconstruction splits them cleanly.
+- **Type → connectivity class.** Not an esoteric caste but a graph invariant
+  of the chart. The Reflector is the unique zero-integration class — a claim
+  now corroborated (TF3), not asserted.
+- **Not-self → *razlad* (`D_ns`).** Not a moral "right/wrong" but a computable
+  distance `‖E(Personality) − E(Design)‖` between the self-model and the body
+  imprint.
+- **Open center → porosity (high gain).** Not "weakness" or "emptiness" but
+  susceptibility — and, crucially, a *testable* one: higher self-report
+  variance on that voice, an open question logged for the per-user diary.
+- **Synastry → the *smychka* (T-77).** Not a compatibility score but a
+  computable, non-negative **increment of being** that lives in the bridge,
+  not in the two banks — connection literally adds being.
+
+The Rosetta is where the two birds meet. The falsification suite keeps the
+reconstruction *honest against HD* — it must never contradict the instrument
+that calibrates it. The Rosetta keeps the reconstruction *free of HD* — it
+must never be trapped in a vocabulary it has outgrown. Held together, they let
+the system be calibrated by Human Design without being owned by it: an
+ontology of the human that earns each of its words, and puts each of them at
+risk.
