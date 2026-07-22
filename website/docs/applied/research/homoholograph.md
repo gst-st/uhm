@@ -1004,3 +1004,47 @@ zone_gloss`, in `/psyche`): to lift from the fog, gentle activation (movement,
 rhythm, voice, eye contact); to ease down from overwhelm, slowing (a long
 out-breath, warmth, feet on the ground). The threshold is computed; the zone is
 read; the practice is borrowed from a validated clinical frame. [И]
+
+### 41. A third bridge: attachment into the relational layer
+
+The relational machinery — synastry (T-77), the composite, the centered states
+— has been waiting for its science, and attachment theory (Bowlby, Ainsworth;
+the adult anxiety/avoidance dimensions) is it. Attachment is about how a person
+regulates the two pulls of a bond: toward closeness and toward autonomy. UHM
+already carries both poles. The **U (Unity/belonging)** and **E
+(Interiority/affect)** axes are exactly where a person is joined to others, and
+their filter gain says how much those axes *sample* the other. An **open**
+belonging axis means the person's mood or sense of self tracks the bond — the
+substrate of attachment **anxiety**; a **defined**, self-sourced one means
+autonomy comes easily — the substrate of security-or-avoidance. And the
+**smychka** (the electromagnetic channels a pair completes that neither had
+alone) is the **secure-base function** made computable: how much new wholeness
+the bond *creates*.
+
+On the calibration chart this reads cleanly and specifically. The one open
+belonging axis is **E** (the open Solar Plexus) and **U is defined** — so the
+reading is *affect-porous but identity-steady*: "a loved one's mood easily
+becomes yours, but closeness does not dissolve your «I»." That is neither the
+anxious pole (where identity, too, would track the bond) nor the avoidant
+(where affect would be walled off) — a secure-leaning texture with high
+empathy. VERIFIED as a computed reading of the chart; whether it matches the
+lived pattern is the [OPEN] question the diary answers.
+
+Two readings now live in the engine (`core/src/attachment.rs`):
+
+- **Solo** (`/psyche`) — the bonding tendency from the openness of the two
+  belonging axes: porous or self-sourced in feeling, leaning-on-the-bond or
+  steady in identity, with the honest coda that *healthy closeness is two whole
+  people side by side, not one shared between two*.
+- **Dyadic** (`/duo`) — from the synastry: how much wholeness the bond
+  **completes** (the secure base, "we're more together"), how **balanced** the
+  giving is (mutual vs "one pulls, the other leans"), and how **integrated** the
+  pair is as a whole.
+
+The discipline is the same as everywhere in this program: this is a **prior, a
+tendency, never a diagnosis**. Attachment is a learned working model, and
+observation always outranks nativity — the chart says where the pulls might sit,
+the life says where they are. But the mapping is precise where it is checkable,
+and that is what lets a bridge carry weight: the open belonging axis, the
+completion count, the balance of giving are all exact, and each turns into a
+question a person can actually answer about their own bonds.
