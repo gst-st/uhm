@@ -438,3 +438,53 @@ The laboratory now closes the loop from input to publishable раскладка:
   Rose-64 with per-activation readings, observables, panel, tyaga,
   poristost, yakornost, smychka, nebograph, diary+EWS — saved to
   `~/hhg_report_*.md`; also `hhg-report --md` headless.
+
+## Part V. studio0, the interpretation machine, and the event grammar
+
+### 19. The compositional interpretation machine
+
+Legacy HD carries 384 hand-written line texts. The reconstruction replaces
+them with a **grammar over canonical atoms**: every activation story is
+composed from body role [И] × side × heptacode object × line-voice accent
+(Shchutsky archetypes × the line→voice map) × syndrome pointer × antipode
+grounding × triangle resolution — and every atom is an editable, bilingual
+knowledge-base key. Each story ends with a *"Simply put"* layer (the
+ontology's imagery: seven singers, duet-friendships, the triangle's
+resolution song, the witness singer, the Source's blank page) so that — per
+the lab's standard — a child can follow the essence.
+
+The hidden layers, with **population baselines** (HB23, n = 1500):
+the chart's asking voice; spine share (P(≥7) = 4.9% — the calibration
+chart's 7/26 is a top-5% trait); grounded pairs (population 51%); triangle
+resolutions (shadow present 33%, witness 32%); amplified stamps (×3 in 63%
+of charts, ×4 in 15%; ×2 is universal — pigeonholes); the profile
+coherence; personal/group/generational strata; the principal eigenchord;
+per-activation fragility in hours; sky resonance.
+
+### 20. studio0 and the backend-grade CLI
+
+The laboratory is a single terminal binary `hhg` (ratatui TUI + clap CLI):
+`chart/rose/full/report/duo/sky/cycles/scan/day/diary/kb/persons`, JSON
+with `schema: hhg.v1`, `--now` for reproducible transits, `HHG_HOME`,
+bilingual throughout (`--lang`, TUI key `l`). `hhg full` returns the whole
+computation in one JSON call — the endpoint the future public studio1 will
+sit on. Rendering is tested by buffer (ratatui TestBackend), the machine by
+totality and determinism (64×6×2 stories; byte-identical reports).
+
+### 21. Cycles validated to minutes; the event grammar v1
+
+The return/opposition solver (grid scan + bisection, honest retrograde
+multi-passes) was validated against five production-dashboard anchors of
+the calibration chart under the app's own natal assumption: **Sun return
++0.1 min, Moon +0.5, Jupiter IV +0.5, Saturn II −0.9, Uranus opposition
++27 min** (0.0002° — the VSOP truncation scale); it also established that
+the production app's cycle times are UTC. On top of it, `hhg scan` runs
+the first **event grammar** over a date range: returns/oppositions,
+bridge peaks (0.92-quantile local maxima of timebridges), page returns
+(minima of ‖Γ_sky−Γ₀‖), and epoch turns (an outer hand entering a new
+gate — the cohort's page turning), ranked by slowness weights. All of it
+is layer-1/2 honest; what any of it *means for a person* is layer 3 — and
+that is exactly what **pravdomer v2** now measures: a blind day protocol
+(`hhg day rate` commits the hidden drive prediction at rating time;
+`reveal` opens at 21+ days with a permutation test), with the HB09 power
+context quoted in the output.
