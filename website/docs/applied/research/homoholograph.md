@@ -216,3 +216,88 @@ Screens (each stating its honesty layer):
 4. Dictionary tournament: score alternative dictionaries against user data —
    the [И]-dictionary becomes an empirical object.
 5. Geocoding + historical timezones (chrono-tz already handles DST rules).
+
+## Part II. The heptacode: the wheel refounded
+
+The audit of §4b demands more than patches — it demands a reconstruction.
+It exists, it is exact, and it keeps the astronomical layer untouched.
+
+### 8. The counting identity and the hidden seventh voice
+
+$$
+2^6 = 64 = \binom{7}{0}+\binom{7}{2}+\binom{7}{4}+\binom{7}{6}
+$$
+
+A hexagram (six visible lines) **plus one parity bit** is precisely an
+even-weight codeword of the $[7,6]$ parity code over the seven dimensions.
+The corpus coordinatization dictionary (the $(3\leftrightarrow4)(5\leftrightarrow6)$
+involution) fixes position 7 in both labelings — and position 7 is **O,
+Ground**. So the I-Ching shows six lines because *the seventh voice is the
+parity the six carry*: the Ground does not appear among the lines; it holds
+their evenness. Under this reading every one of the 64 gates **is** a
+canonical object of the Γ-structure:
+
+| support | count | object |
+|---|---|---|
+| ∅ | 1 | the **Source** gate (computed: it is KW 2, the Receptive) |
+| pair | 21 | a **coherence, by SSOT name** (e.g. KW 51 = Актуализация A–D, KW 8 = Полнота O–U) |
+| 4-set = triple′ | 7 | a **Fano-line shadow** (the Hamming spine) |
+| 4-set = triple′ | 28 | a **triangle** (tension triad) |
+| 6-set = singleton′ | 7 | a pure **voice** (computed: KW 1, the Creative, is the voice of O) |
+
+### 9. Machine-verified theorems (T-H1–T-H6, HB14)
+
+- **T-H1 (atlas).** The census is exactly 1/21/7/28/7. VERIFIED.
+- **T-H2 (antipode law).** On the physical wheel, the antipode of pair
+  $\{x,y\}$ is the triple $\{x,y,O\}$ — every coherence sits opposite
+  *itself, grounded*; the antipode of $\{x,O\}$ is the pure voice $x$; the
+  Source sits opposite the voice of O. All 64 verified. (The three pairs
+  whose grounding is a Fano line are exactly the corpus lines through O:
+  A–D, S–U, L–E.)
+- **T-H3 (triangle resolution).** Every tension triad $T$ casts a collinear
+  shadow $\sigma(T)=\{a{\oplus}b, b{\oplus}c, a{\oplus}c\}$ and a lone
+  witness $m = a{\oplus}b{\oplus}c$; $T \cup \sigma(T) \cup \{m\}$ is all
+  seven. 28/28. Every tension *names its resolution line and its witness*.
+- **T-H4 (syndromes).** Every gate's Hamming syndrome reads canonically:
+  a pair points at the third voice of its line; a triangle at its witness;
+  a voice at itself; the Source and the seven line-shadows are the
+  syndrome-0 **spine** (KW 2, 12, 18, 28, 30, 54, 61, 63). The census is
+  $7\times8+8$. The wheel becomes a self-referential pointer structure —
+  the self-diagnosis the legacy wiring lacked (29/36 ambiguous) is
+  inherited from the code.
+- **T-H6 (independence).** The legacy center assignment carries *no*
+  information about the heptacode structure (MI 0.73 bits vs permutation
+  null 0.76, p = 0.62): this is a refoundation, not a relabeling.
+- **HB14 (coverage in real charts).** Median chart: legacy channels light
+  **2 of 21** coherences (max 8; hard ceiling 13); the heptacode reading
+  lights **19 of 21** (max 21), with 7 of 8 formerly blind cells lit.
+  The blind zone is not just repairable in principle — it is repaired in
+  every real chart.
+
+### 10. Empirical calibration against a production instrument
+
+The user's own chart (07.04.1985, 10:57, Dzhambul) was cross-checked against
+a production HD application: with the app's assumed zone, our engine matches
+**26/26 activations including the third wheel level (color)**; the PHS
+arrows («PLL DRR») are reproduced exactly by our tones (tone ≤ 3 = Left).
+One honest discrepancy is the *timezone itself*: the app uses UTC+6 while
+the IANA history for 1985 (Soviet decree + summer time) gives UTC+7 — and
+the difference touches **only the Moon's lines**; the gate set, channels,
+type, profile, authority and both Suns are zone-stable. The node tones sit
+at the 1.6-arcminute scale where engines legitimately differ by one step.
+In the reconstructed reading the same chart shows: P.Sun = the
+Actualization coherence (A–D, syndrome → U); D.Sun = the full Fano line
+{L,E,U} (spine); Mars and the North Node of Personality on the **Source
+gate**; D.Moon = Репрезентация (S–E) — a coherence the legacy instrument
+class *cannot see*; profile 3/5 = voices L/U (hexagram line $k$ = voice:
+A S L D U E, hidden O).
+
+### 11. What changes in the application
+
+The Rust core carries the generated atlas (`recon.rs`, tested: census,
+spine, names) and **encoder v2** — no blind zone, selectable live in the
+Laboratory; the **Роза-64** screen re-reads all 26 activations as canonical
+objects with SSOT names, syndromes and spine hits. Honesty classes stay:
+the code arithmetic and atlas are VERIFIED; object *readings* are the
+[И]-dictionary on corpus names; influence on a person remains OPEN — the
+pravdomer exists for exactly that question.
