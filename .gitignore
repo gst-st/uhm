@@ -4,3 +4,7 @@
 docs-consolidated.mdUGM_YouTube_Strategy.docx
 __pycache__/
 .DS_Store
+
+# playwright/browser scratch
+.playwright-mcp/
+gate51_panel.yml
