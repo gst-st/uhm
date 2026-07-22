@@ -556,3 +556,19 @@ accents [И], and the year atlas marks **event knots** (⚡ — two or more
 events within ±2 days). The calibration chart's 2026-08-23 turned out to be
 a triple knot: Neptune's epoch turn into gate 25, its L-turn to the natal
 North Node, and the Jupiter opposition — all in one day.
+
+## Part VII. Toward people: the daily practice, the abundance layers, and the assistant
+
+### 26. The Telegram field instrument
+
+studio0 now carries a full Telegram backend (`hhg bot`) inside the same binary — a pure, tested router plus a thin rustls transport with inline keyboards. The menu is structured by the essence of the elements: Today (the daily practice) first, then Me / Sky / Diary / Bonds / Assistant / Settings. The **daily page** (`digest.rs`) is its own designed theme: sky weather (climate percentiles), resonance with the printed page, timebridges named as coherences, the event grammar around today, the lunar countdown, the voice of the day, and an honesty footer. Blind ratings feed the pravdomer.
+
+The free-text channel is a **Claude Code agent** (headless CLI) with a per-user workspace holding the rendered homogram, the day, and the running history, engine access as a tool, and a shared engineering **PROBLEMS diary** the agent is instructed to append to whenever it spots a calculation or interpretation gap — a feedback loop for improving the system. Safety and honesty are in its standing instructions: three layers, no diagnosis, autonomy support.
+
+### 27. Abundance and interior physics (this wave)
+
+- **Extended canon**: 21 full coherence portraits and 7 voice portraits (bilingual, editable), woven into reports, synthesis, and the bot (`/coh`, `/voice`).
+- **Dynamical fate** (HB29/29b): the natal prior run through the canonical ℒ_Ω. Raw ρ₀ drains 98.7% of the population to grey — the natal self-model alone cannot hold a pattern in the window (the diary is needed); with a sharpened self-model, 43% grey / 57% window / 0% dense, Reflectors 0% (the mirror lives by reflection, not sharpness).
+- **The sharpness map** (HB30): sharpening ρ₀ along each voice and reading where the fate lands — the personal *first move*. The best voice crossed the window in 60/60 charts; the voice is personal (never the already-dominant one).
+- **Bearing activations**: leave-one-out weight of each of the 26 stamps in Γ₀ (the two lights measurably hold the calibration chart).
+- **The life map** (`hhg life`): day-per-year progressions (resonance curve 0–84, life-page-return ages, progressed lunar returns ~27/55/82) woven with the great transit cycles (Saturn return/opposition, Uranus opposition, the 18.6-year nodal lattice), clustered into retrograde series, by decade.
