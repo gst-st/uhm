@@ -67,6 +67,23 @@ the probability being the fractional part of the line shift. Measured on the 20,
 
 The machinery makes a sharp falsifiable prediction nobody appears to advertise: because the Sun (and Earth, always opposite) contribute two of the 26 activations deterministically by calendar date, **type frequencies must vary by birth month** — computed swing for Generator$+$MG: from $59.7\%$ (June) to $72.0\%$ (August), a 12-point seasonal wave far above sampling error. Any real birth cohort processed through HD must show this exact curve; its absence would indicate a computational error, and its presence carries — again — no psychological information. It is, however, a clean instrument for auditing HD samples for collection bias (§8).
 
+### The era discovery: the «constants» are epoch functions {#эпохи}
+
+Sampling uniformly *within 20-year eras* instead of across the century exposes the deepest a priori structure yet — the famous percentages are not constants at all (`hd_seasonal_audit.py`, $n = 6000$ per era, se $\approx 0.6$ п.п.):
+
+| Era | Gen+MG | Projector | Manifestor | Reflector |
+|---|---|---|---|---|
+| 1900–1920 | 66.3% | 17.2% | **15.3%** | 1.2% |
+| 1920–1940 | 67.8% | 22.3% | 8.7% | 1.3% |
+| 1940–1960 | 65.8% | 21.2% | 11.5% | 1.6% |
+| 1960–1980 | **73.4%** | 19.4% | **6.5%** | 0.9% |
+| 1980–2000 | 72.4% | 19.3% | 7.1% | 1.3% |
+| 2000–2020 | **61.4%** | **26.3%** | 11.5% | 0.8% |
+| 2020–2040 | 63.5% | 18.0% | **17.9%** | 0.7% |
+| 2040–2060 | 68.7% | 20.4% | 9.6% | 1.3% |
+
+Manifestors swing from $6.5\%$ to $17.9\%$ — nearly a factor of three; Projectors from $17.2\%$ to $26.3\%$. The claimed «constant» $\sim 9\%$ Manifestors is the *20th-century average* — that is, the average over the era in which the community's own membership happened to be born. **Attribution is proved by ablation**: recomputing the eras with Uranus, Neptune and Pluto removed collapses the swing four-fold (Gen+MG $11.3 \to 3.1$ п.п., Manifestor $11.1 \to 3.0$ п.п.) — the drift is driven by slow bodies parking in single gates for years and handing those gates to an entire generation at once [Т-computed]. The falsifiable consequence is sharp: any honest sample of people born 2000–2020 must show $\approx 26\%$ Projectors and $\approx 61\%$ generators, and the 2020–2040 birth cohort must run $\approx 18\%$ Manifestors; community data that keep reporting 70/20/9/1 for young cohorts are thereby measured to be miscollected or mislabeled.
+
 ## §4. The Kepler bias {#кеплеров-уклон}
 
 The mandala is not sampled uniformly. Computing exact gate-boundary crossing times of the Sun (Newton, no sampling noise): the dwell probability per gate runs from $1.511\%$ at **gate 38** to $1.615\%$ at **gate 39** against the uniform $1.5625\%$ — a $\pm 3.3$–$3.4\%$ modulation. The two extremal gates are exactly the perihelion gate (Sun there in early January) and the aphelion gate (spanning ecliptic $99.5°$–$105.1°$, containing the aphelion longitude $\approx 102°$), and the amplitude equals $2e$ with $e = 0.0167$ the orbital eccentricity — Kepler's second law, legible in a divination wheel [Т-computed]. Personality-Sun gate frequencies in any honest sample must reproduce this $3.3\%$ wave.
@@ -92,7 +109,7 @@ On the claimed *mechanism*: the «neutrino stream imprint» is not supported by 
 
 ## §7. What the college concludes {#выводы}
 
-1. The famous numbers of Human Design — type percentages, authority rates, the twelve profiles and their frequencies — are **theorems of its own machinery**, reproduced here from celestial mechanics plus wiring with no human input. They can never serve as evidence for the human-layer claims, because they are guaranteed by construction [Т-computed].
+1. The famous numbers of Human Design — type percentages, authority rates, the twelve profiles and their frequencies — are **theorems of its own machinery**, reproduced here from celestial mechanics plus wiring with no human input; and the percentages are not even constants but **era functions**, swinging by factors (Manifestors $6.5 \to 17.9\%$) with the outer planets, the «constants» being merely the 20th-century average. They can never serve as evidence for the human-layer claims, because they are guaranteed by construction [Т-computed].
 2. The mandala carries **real, previously implicit mathematics**: the exact antipodal embedding, Gray-locality of the wheel, the trigram-coherent center map, and the Kepler modulation — the system's designers (or the tradition they inherited) built better code structure than their own vocabulary expresses.
 3. The channels — the layer that actually drives type — show **no detectable code structure**; they are where the hand is most visible.
 4. As a symbolic system in the blueprint's sense, HD is a well-built Encoder+Clock over a 6-bit alphabet — and category (ii) of §6 states precisely what separates it from a theorem-forced architecture.
@@ -102,7 +119,7 @@ On the claimed *mechanism*: the «neutrino stream imprint» is not supported by 
 
 What would move any human-layer claim of HD out of [И]/[Г] territory — pre-registered, with the machinery results above as instruments:
 
-1. **The seasonality audit**: any dataset of HD charts must reproduce the computed 12-point seasonal type wave (§3) and the $3.3\%$ Kepler gate wave (§4). Failure ⇒ collection bias or engine error; success ⇒ nothing about people — it is the *entry check* for any dataset.
+1. **The seasonality audit — executed on real data** (`hd_seasonal_audit.py`): official birth statistics were convolved with the machinery curve — USA daily 1994–2003 (CDC/NCHS, 39.7M births) and 2000–2014 (SSA, 62.2M), Germany/Spain/Sweden monthly 2000–2010 (Eurostat, 13.9M). Result, printed as it came out: real birth seasonality is weak (monthly shares $7.8$–$8.9\%$) and essentially orthogonal to the machinery wave (corr $-0.067$ / $+0.005$), so the seasonal correction to a cohort's type mix is **negligible** ($\le 0.14$ п.п.; Sweden the largest, its spring peak anti-phased with the wave). The operative reference numbers for any sample are therefore the **era numbers** of §3 — and the era corrections are large. The wave itself (12 п.п. by month) and the Kepler gate wave ($3.3\%$) remain the *entry checks*: a dataset failing them is miscomputed; a dataset passing them has proven nothing about people.
 2. **Blind type discrimination**: pre-registered protocol — practitioners (or subjects) attempt to identify own/others' types against shuffled controls at rates beyond chance, with the a priori base rates of §3 as the null model (a subtlety most informal tests miss: guessing «Generator» is right $68\%$ of the time by arithmetic alone).
 3. **Retest and inter-rater discipline** for any claimed observable correlate (the checkup rules of the [Prime Radiant demos](/docs/applied/research/prime-radiant#честные-демо) apply verbatim).
 4. Until such results exist, the human layer stays where the registry discipline puts every unvalidated reading: [И] — a practice vocabulary, not a measured mechanism.
@@ -115,6 +132,8 @@ What would move any human-layer claim of HD out of [И]/[Г] territory — pre-r
 | Type/authority/split percentages are a priori properties of the machinery | [Т-computed] |
 | The profile law: 12 profiles $= \{(p,p{+}2),(p,p{+}3)\}$, weights $86.7/13.3 = \{93.8667\}$ | [Т-computed] |
 | Seasonal type wave (June $59.7\%$ → August $72.0\%$) and Kepler gate wave ($\pm 3.3\%$, perihelion gate 38 / aphelion gate 39) | [Т-computed], falsifiable instruments |
+| The era law: type percentages are epoch functions (Manifestor $6.5\% \to 17.9\%$); ablation attributes $\sim 3/4$ of the swing to Uranus/Neptune/Pluto | [Т-computed] |
+| Real-cohort convolution (USA CDC/SSA, DE/ES/SE Eurostat, 116M births): seasonal correction $\le 0.14$ п.п., corr with the wave $\approx 0$ | [Т-computed] on official data |
 | Antipodal law 32/32; wheel Gray-locality ($p = 0.0005$); center–trigram MI $1.74$ bits ($p = 0.0005$) | [Т-computed] |
 | Channels vs code distance | null ($p = 0.084$), printed as-is |
 | HD = composition of the blueprint's I Ching and astrology rows; differences from Γ-architecture as stated | [И] over [Т]-anchors |
