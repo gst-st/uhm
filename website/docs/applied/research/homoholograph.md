@@ -301,3 +301,77 @@ objects with SSOT names, syndromes and spine hits. Honesty classes stay:
 the code arithmetic and atlas are VERIFIED; object *readings* are the
 [И]-dictionary on corpus names; influence on a person remains OPEN — the
 pravdomer exists for exactly that question.
+
+## Part III. The living layer: tomography, warnings, the rose ring
+
+### 12. The diary as rigorous state tomography (HB15–HB16)
+
+$d = 7$ is prime, so exactly $d{+}1 = 8$ mutually unbiased bases exist — and
+they are the *optimal* measurement set for determining a density matrix
+([Wootters & Fields 1989](https://ui.adsabs.harvard.edu/abs/1989AnPhy.191..363W/abstract)).
+Eight lenses × six independent numbers $= 48 = d^2{-}1$: the diary needs
+exactly 48 numbers for a complete readout of $\Gamma$, with a closed-form
+reconstruction
+
+$$
+\Gamma \;=\; \sum_{b,m} p_{b,m}\,\Pi_{b,m} \;-\; \mathbb{1}.
+$$
+
+Machine-verified: unbiasedness to $2.5\times10^{-16}$, measurement rank 49
+(complete); reconstruction exact to $10^{-15}$; at finite samples the MUB
+lenses beat Haar-random bases by 2.7–6× in Frobenius error (N = 50/200/800
+per basis: 0.26/0.16/0.08 vs 0.70/0.61/0.51). An all-uniform diary
+reconstructs exactly the grey state — the instrument is neutral by
+construction. The heptacode's syndrome census ($7\times8+8$) had already
+whispered the same arithmetic: eight families over a seven-alphabet.
+The app blends observation with the natal prior,
+$\Gamma_{\text{post}} = (n_0\Gamma_0 + n\hat\Gamma)/(n_0{+}n)$ —
+observation outranks nativity as the diary grows.
+
+### 13. Early warnings, with their honest weakness (HB17)
+
+The mood literature reports rising lag-1 autocorrelation and variance before
+depressive transitions — critical slowing down
+([van de Leemput et al., PNAS 2014](https://www.pnas.org/doi/10.1073/pnas.1312114110);
+[a personalized case, 2016](https://karger.com/pps/article/85/2/114/294376/Critical-Slowing-Down-as-a-Personalized-Early)) —
+along with a sober critique
+([Bos & de Jonge, PNAS 2014](https://www.pnas.org/doi/10.1073/pnas.1323672111))
+and a 2025 estimate of real-world sensitivity around **33%**
+([Smit et al., 2025](https://journals.sagepub.com/doi/10.1177/21677026241305136)).
+We ran the same detector inside the canonical $\mathcal{L}_\Omega$ dynamics
+under slow κ-starvation and report exactly what we measured:
+
+- the trend is **real but weak**: Kendall $\tau$(AC+var) $= 0.18 \pm 0.35$
+  on ramp runs vs $-0.06 \pm 0.23$ on stationary controls; at the $\tau>0.5$
+  threshold: **sensitivity 25%, specificity 100%** — matching the human
+  numbers;
+- three method findings surfaced on the way, each now part of the
+  instrument: (a) the grey wall is a *moving attractor, not a fold* — the
+  slowing is finite, so the detector reads "starvation underway", never
+  "collapse imminent"; (b) **observable geometry matters**: purity is
+  quadratic at its own floor and *silences* the warning deep under the wall
+  — linear lenses (exactly the MUB readouts) keep the signal; (c) an
+  *episode* is a sustained regime shift, not a daily dip — the crossing
+  itself needs long averaging, the same distinction the EMA literature
+  draws.
+
+The app's EWS panel states these limits verbatim: a signal, never a verdict.
+
+### 14. The rose ring (HB18)
+
+The classic 6-bit Gray cycle, parity-extended to seven bits, flips exactly
+two bits per step — a minimal-step Hamiltonian cycle on the even-weight
+code: the **canonical rose ring** (64/64 minimal steps). Measured against
+it, the King Wen wheel achieves the minimal step on **50 of 64** transitions
+(12 steps of distance 4, 2 of distance 6): the traditional order is nearly
+minimal in the code geometry — a structural compliment the tradition earns,
+and a canonical alternative the reconstruction now owns.
+
+### 15. In the application
+
+The **Дневник** tab: lens selector (lens 0 = the seven voices; lenses 1–7 =
+mixed states, marked as an experimental [И]-instrument), seven sliders, a
+note, persistence to `~/.hhg_diary.json`; the posterior $\Gamma$ heatmap
+with the shift-from-prior norm; the EWS panel with the measured sensitivity
+limits quoted. Tests: unbiasedness, exact reconstruction on the calibration
+chart's prior, the uniform-diary-is-grey identity.
