@@ -6,6 +6,7 @@
 
 mod calib;
 mod demo;
+mod estimator;
 mod holon;
 mod interpret;
 mod model;
@@ -70,6 +71,7 @@ prime-radiant demo blind          blind axis-diagnosis through the 7 lines (conf
 prime-radiant demo calibration    the oracle's predictions vs fresh realizations (Brier)
 prime-radiant demo bench          navigation benchmark vs baselines (same starts)
 prime-radiant demo maxim          «no own goal → part of another's» — decomposed and measured
+prime-radiant demo estimator      the [K] organ: track a hidden holon through noise (vs baselines)
 prime-radiant checkup --scores 7,5,4,6,3,2,5 [--coh AE=0.4,OU=-0.2] [--model mind|team|llm|market|universal]";
 
 fn main() {
@@ -87,6 +89,7 @@ fn main() {
             Some("calibration") => demo::oracle_calibration(6, 40, 72),
             Some("bench") => demo::navigate_bench(30, 73),
             Some("maxim") => demo::maxim(74),
+            Some("estimator") => demo::estimator_demo(),
             _ => println!("{}", USAGE),
         }
         return;

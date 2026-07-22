@@ -326,6 +326,144 @@ pub fn checkup(scores: [f64; 7], pairs: &[(usize, usize, f64)], domain: Domain) 
     println!();
 }
 
+/// Demo 6 — the Estimator organ [K]: track a hidden holon from noise.
+/// Gains are tuned on seed-A trajectories, results below are on FRESH seed-B
+/// trajectories. Baselines run on the identical observations.
+pub fn estimator_demo() {
+    use crate::estimator::*;
+    println!("DEMO 6 — the estimator: a hidden holon tracked through noise");
+    println!("  assumptions, printed: the filter knows the tick parameters and ρ*");
+    println!("  (Kalman's known-dynamics assumption); with magnitude-only coherence");
+    println!("  readouts the phases come from the dynamics prior, not observation.");
+    println!("  The hidden truth carries PROCESS NOISE the filter cannot predict:");
+    println!("  a random dial of scale σ_proc each step (life jiggles the pattern).");
+    println!("  Gains tuned on seeds A; every number below is fresh seeds B.\n");
+
+    let sp = 0.05f64; // process-noise dial scale
+    println!("  [a] full-matrix noisy readout Y = Γ + ε (σ_proc = {:.2}):", sp);
+    println!("      σ_obs    gain k*   filter err   obs-only   dead-reckoning");
+    for &sigma in &[0.005f64, 0.02, 0.05] {
+        let k = tune_gain_full(sigma, sp);
+        let mut f = 0.0;
+        let mut o = 0.0;
+        let mut d = 0.0;
+        for s in 0..4u64 {
+            let r = track_full(9000 + s, sigma, sp, k, 260, 60);
+            f += r.filter / 4.0;
+            o += r.obs_only / 4.0;
+            d += r.dead_reckoning / 4.0;
+        }
+        println!("      {:5.3}    {:4.2}      {:8.4}    {:8.4}    {:8.4}", sigma, k, f, o, d);
+    }
+
+    println!("\n  [b] partial readout: 7 populations + m coherence magnitudes (σ=0.01);");
+    println!("      how many cells does a questionnaire need?");
+    println!("      m    filter err   obs-only   |P̂−P|    |Φ̂−Φ|");
+    let all_pairs = dial_pairs();
+    for &m in &[0usize, 3, 6, 10, 21] {
+        let mask: Vec<(usize, usize)> = all_pairs.iter().take(m).cloned().collect();
+        let k = tune_gain_partial(&mask, 0.01, sp);
+        let mut acc = (0.0, 0.0, 0.0, 0.0);
+        for s in 0..4u64 {
+            let r = track_partial(9100 + s, &mask, 0.01, sp, k, 260, 60);
+            acc.0 += r.0 / 4.0;
+            acc.1 += r.1 / 4.0;
+            acc.2 += r.2 / 4.0;
+            acc.3 += r.3 / 4.0;
+        }
+        println!("      {:2}   {:8.4}    {:8.4}   {:6.4}   {:6.4}", m, acc.0, acc.1, acc.2, acc.3);
+    }
+
+    println!("\n  [c] end-to-end: blind axis diagnosis THROUGH the estimator");
+    println!("      (m=21, σ_obs=0.01, σ_proc=0.03; the truth HEALS after damage —");
+    println!("      the regeneration re-knits it — so diagnosis uses the PEAK line-drop");
+    println!("      over the acute 40-step window; 100 blind trials):");
+    let rho = make_selfmodel(0.42);
+    let mask: Vec<(usize, usize)> = all_pairs.clone();
+    let k = tune_gain_partial(&mask, 0.01, 0.03);
+    let mut rng = StdRng::seed_from_u64(555);
+    let mut correct_est = 0usize;
+    let mut correct_raw = 0usize;
+    let trials = 100usize;
+    for _ in 0..trials {
+        // hidden healthy holon + converged estimator
+        let mut truth = rand_state(&mut rng, 0.5);
+        for _ in 0..600 {
+            truth = tick_std(&truth, &rho);
+        }
+        let mut est = CMat::grey(N);
+        for _ in 0..200 {
+            let obs = observe_partial(&truth, &mask, 0.01, &mut rng);
+            est = filter_partial_step(&est, &rho, &obs, k);
+            truth = crate::estimator::truth_step(&truth, &rho, 0.03, &mut rng);
+        }
+        let base_est = closures_of(&est);
+        // secret damage, then track through the acute window
+        let secret = rng.random_range(0..N);
+        let f = 0.20 + 0.30 * rng.random::<f64>();
+        truth = damage_pub(&truth, secret, f);
+        let mut peak_est = [0.0f64; 7];
+        let mut peak_raw = [0.0f64; 7];
+        for _ in 0..40 {
+            let obs = observe_partial(&truth, &mask, 0.01, &mut rng);
+            est = filter_partial_step(&est, &rho, &obs, k);
+            let now_est = closures_of(&est);
+            let mut raw = CMat::zeros(N);
+            for i in 0..N {
+                raw[(i, i)] = num_complex::Complex64::new(obs.pops[i], 0.0);
+            }
+            for &((i, j), mag) in &obs.cohs {
+                raw[(i, j)] = num_complex::Complex64::new(mag, 0.0);
+                raw[(j, i)] = num_complex::Complex64::new(mag, 0.0);
+            }
+            let now_raw = closures_of(&raw);
+            for l in 0..7 {
+                peak_est[l] = peak_est[l].max((base_est[l] - now_est[l]) / base_est[l].max(1e-12));
+                peak_raw[l] = peak_raw[l].max((base_est[l] - now_raw[l]) / base_est[l].max(1e-12));
+            }
+            truth = crate::estimator::truth_step(&truth, &rho, 0.03, &mut rng);
+        }
+        correct_est += (diagnose_from_drops(&peak_est) == secret) as usize;
+        correct_raw += (diagnose_from_drops(&peak_raw) == secret) as usize;
+    }
+    println!("      through the filter: {}/{} = {:.0}%    raw snapshots (same data): {}/{} = {:.0}%    (chance 14.3%)",
+             correct_est, trials, 100.0 * correct_est as f64 / trials as f64,
+             correct_raw, trials, 100.0 * correct_raw as f64 / trials as f64);
+    println!("\n  boundary, restated: validated on machine-generated observation models");
+    println!("  with known ground truth; reading an EXTERNAL system additionally needs");
+    println!("  a domain sensor/encoding — that part remains open and is said so.\n");
+}
+
+fn closures_of(g: &CMat) -> [f64; 7] {
+    closures(g)
+}
+
+pub fn damage_pub(g: &CMat, axis: usize, f: f64) -> CMat {
+    damage(g, axis, f)
+}
+
+fn diagnose_from_drops(drop: &[f64; 7]) -> usize {
+    let lines = fano_lines();
+    let mut best = (f64::MIN, 0usize);
+    for a in 0..N {
+        let (mut on, mut non, mut n_on, mut n_non) = (0.0, 0.0, 0, 0);
+        for (li, ln) in lines.iter().enumerate() {
+            if ln.contains(&a) {
+                on += drop[li];
+                n_on += 1;
+            } else {
+                non += drop[li];
+                n_non += 1;
+            }
+        }
+        let score = on / n_on as f64 - non / n_non as f64;
+        if score > best.0 {
+            best = (score, a);
+        }
+    }
+    best.1
+}
+
 /// Parse `--scores 7,5,4,6,3,2,5` and `--coh AE=0.4,OU=-0.2`.
 pub fn run_checkup_cli(args: &[String]) -> Result<(), String> {
     let mut scores = [5.0f64; 7];

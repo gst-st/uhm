@@ -259,5 +259,22 @@ pub fn run_calibration() -> Vec<Hypo> {
         "the Jacobi eigensolver reconstructs Γ = V diag(w) V†",
         format!("|dG|={:.1e}", rec.max_abs_diff(&gx.herm())));
 
+    // ------------- estimator floor (v0.6) -------------
+    {
+        use crate::estimator::*;
+        let r = track_full(9000, 0.02, 0.05, 0.25, 200, 50);
+        add("R26", Some(r.filter < r.obs_only && r.filter < r.dead_reckoning),
+            "the [K] filter beats both baselines under process noise",
+            format!("{:.4} < obs {:.4}, dead {:.4}", r.filter, r.obs_only, r.dead_reckoning));
+        let all: Vec<(usize, usize)> = dial_pairs();
+        let k0 = tune_gain_partial(&[], 0.01, 0.05);
+        let k21 = tune_gain_partial(&all, 0.01, 0.05);
+        let r0 = track_partial(9100, &[], 0.01, 0.05, k0, 200, 50);
+        let r21 = track_partial(9100, &all, 0.01, 0.05, k21, 200, 50);
+        add("R27", Some(r21.2 < r0.2 && r21.3 < r0.3),
+            "full magnitude coverage sharpens P and Φ recovery (m=21 vs m=0, tuned gains)",
+            format!("|dP| {:.4}->{:.4}, |dΦ| {:.4}->{:.4}", r0.2, r21.2, r0.3, r21.3));
+    }
+
     out
 }
