@@ -535,3 +535,24 @@ monthly sections of the event grammar (epoch turns, returns/oppositions,
 bridge peaks, page returns) merged with the year's lunar returns, all
 date-sorted with slowness weights — one markdown, abundance with honesty
 classes attached.
+
+### 25. The third arbiter and the dyadic aspect layer
+
+Twelve frozen [JPL Horizons](https://ssd.jpl.nasa.gov/api/horizons.api)
+apparent ecliptic-of-date longitudes (1950/1985/2025 × Sun/Moon/Jupiter/
+Pluto) now sit in the test suite as the authoritative third arbiter: our
+independent chain stays within **4.1″** of JPL (the Moon — the truncated
+ELP; everything else ≤0.8″), and on several rows it is *closer to JPL than
+Swiss/Moshier* (Pluto-1950: 0.06″ vs 0.53″; Moon-1985: 0.10″ vs 1.22″).
+
+The halving rule became an operating layer: the scanner now emits **dyadic
+aspects** — a slow hand entering a gate at ring offset 32/16/8 from a natal
+anchor, voice-typed (complement / S-turn / L-turn; the trine and sextile do
+not fit the 64-wheel — an honest, falsifiable divergence from astrology;
+base rate 1/64 per specific relation) — and **nuclear moves** (a slow hand
+entering the nuclear core of a natal gate). The Rose carries the full wheel
+depth `gate.line.color.tone.base` with the fractal second/third-order voice
+accents [И], and the year atlas marks **event knots** (⚡ — two or more
+events within ±2 days). The calibration chart's 2026-08-23 turned out to be
+a triple knot: Neptune's epoch turn into gate 25, its L-turn to the natal
+North Node, and the Jupiter opposition — all in one day.

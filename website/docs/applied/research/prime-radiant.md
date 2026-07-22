@@ -322,6 +322,8 @@ If the solver is real, humanity has been building fragments of it for three thou
 
 That convergent evolution found the same chart eight-for-eight is the strongest architectural evidence available: **the blueprint is imposed by the structure of the task, not by any culture** [И]. What the divinatory family got permanently right: state discretization, scheduled perturbations, stochastic reachability, and the practitioner's calibration diary. What it got permanently wrong — and what the Radiant refuses by theorem rather than by taste — is the point oracle over persons. UHM's contribution to the lineage is not a ninth organ but the floor under all eight: a state space with theorems, thresholds with proofs, and a calibration table that re-runs.
 
+The same comparative move applied to the *structural* lineage — UML→C4, DDD, VSM, MAPE-K, the 2024–2026 agentic stack — yields the sister blueprint: [HOLARCH](./holarch.md), the meta-specification of architecture. The Radiant's eight organs are the navigation suite of a system whose standing structure HOLARCH types; its estimator gap (row «Kalman» above) and viability-engineering case №12 both land there as first-class machinery.
+
 ## §8. Application cases {#кейсы}
 
 Extraction criteria: a live data loop (can $\Gamma$ be estimated repeatedly?), falsifiable feedback (does the prescription's outcome measure back?), cost of error, and payoff. Ranked:

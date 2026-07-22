@@ -431,17 +431,17 @@ $$
 
 ### 9. Design Patterns: 7 Dimensions as Separation of Concerns [I] {#design-patterns}
 
-The seven sectors of $\Gamma$ naturally map onto **architectural layers** of the system. Each sector $k \in \{A, S, D, L, E, O, U\}$ has its own domain of responsibility.
+The seven sectors of $\Gamma$ naturally map onto **architectural layers** of the system. Each sector $k \in \{A, S, D, L, E, O, U\}$ has its own domain of responsibility. Sector names and meanings follow the corpus SSOT (`src/data/coherences.ts`); the full engineering dictionary — all seven aspects and all 21 channels — is the [HOLARCH meta-specification](/docs/applied/research/holarch#аспекты), whose agent-platform instantiation ([§17](/docs/applied/research/holarch#воркед-агент)) is the general form of this table.
 
-| Sector | Description | Architectural layer | Health metric |
+| Sector | Canon meaning | Architectural layer (agent instantiation) | Health metric |
 |:------:|-------------|---------------------|:-------------:|
-| **A** (Action) | Motor output, execution | Action executor, API gateway | $\sigma_A$ — motor load |
-| **S** (Sensation) | Perception, data input | Perception pipeline, encoders | $\sigma_S$ — sensory overload |
-| **D** (Discrimination) | Classification, differentiation | Attention heads, feature extractors | $\sigma_D$ — discrimination pressure |
-| **L** (Language) | Language output, communication | Language model, decoder | $\sigma_L$ — speech stress |
-| **E** (Energy) | Energy budget, motivation | Resource manager, scheduler | $\sigma_E$ — energy deficit |
-| **O** (Memory) | Long-term memory, context | Memory store, RAG pipeline | $\sigma_O$ — memory pressure |
-| **U** (Integration) | Binding, unity of experience | Global workspace, fusion layer | $\gamma_{UU}$ — constraint from $\mathrm{Tr}(\Gamma)=1$ |
+| **A** (Articulation) | Distinguishing activity | Perception pipeline, input validation, feature extraction | $\sigma_A$ — ingress load |
+| **S** (Structure) | Form stability | Schemas, types, configuration, tool contracts | $\sigma_S$ — form stress |
+| **D** (Dynamics) | Process activity | Execution engine, pipelines, actuation | $\sigma_D$ — throughput pressure |
+| **L** (Logic) | Internal consistency | Planner, verifier, guardrails, rules | $\sigma_L$ — consistency stress |
+| **E** (Interiority) | Interior state intensity | Memory store, context, hidden state | $\sigma_E$ — differentiation headroom |
+| **O** (Ground) | Connection to source | Runtime, compute, energy budget, storage substrate | $\sigma_O$ — supply pressure |
+| **U** (Unity) | Integration | Orchestrator, global workspace, fusion layer | $\sigma_U$ — integration headroom |
 
 :::warning Sector Profile Principle [I]
 The **sector profile** $(\gamma_{AA}, \gamma_{SS}, \ldots, \gamma_{UU})$ is the **character passport** of the system ([T-101](/docs/reference/status-registry)). Behavior **emerges** from the diagonal of $\Gamma$, and is not programmed directively.
@@ -454,13 +454,13 @@ public type SectorProfile is {
     a: Float, s: Float, d: Float, l: Float, e: Float, o: Float, u: Float,
 } where (self.a + self.s + self.d + self.l + self.e + self.o + self.u - 1.0).abs() < 1.0e-6;
 
-/// Explorer: high S, D; low A, L.
+/// Explorer: high Structure+Dynamics (holds form while moving); low A, L.
 public const EXPLORER_PROFILE: SectorProfile = SectorProfile {
     a: 0.10, s: 0.20, d: 0.20, l: 0.08,
     e: 0.15, o: 0.15, u: 0.12,
 };
 
-/// Communicator: high L, A; low S, D.
+/// Communicator: high Logic+Articulation (distinguishes and reconciles); low S, D.
 public const COMMUNICATOR_PROFILE: SectorProfile = SectorProfile {
     a: 0.18, s: 0.10, d: 0.10, l: 0.22,
     e: 0.15, o: 0.13, u: 0.12,
@@ -645,13 +645,13 @@ Each of the seven sectors of $\Gamma$ represents a **necessary aspect** of a coh
 :::warning Failure Mode Table [I]
 | Neglected sector | $\gamma_{kk} \to 0$ | Failure mode | Neural network analogue |
 |:----------------:|:-------------------:|--------------|------------------------|
-| **A** (Action) | $\sigma_A \to 1$ | **Paralysis**: system "thinks" but does not act | Model generates indefinitely without producing output |
-| **S** (Sensation) | $\sigma_S \to 1$ | **Blindness**: system does not perceive input | Encoder degraded, embeddings are noisy |
-| **D** (Discrimination) | $\sigma_D \to 1$ | **Indistinguishability**: everything seems the same | Mode collapse in GAN, repetitive output |
-| **L** (Language) | $\sigma_L \to 1$ | **Aphasia**: system understands but cannot express | Decoder produces garbage with normal representations |
-| **E** (Energy) | $\sigma_E \to 1$ | **Exhaustion**: no resource for processing | OOM, timeout, infinite inference |
-| **O** (Memory) | $\sigma_O \to 1$ | **Amnesia**: no context, every request from scratch | Context window overflow, RAG failure |
-| **U** (Integration) | $\gamma_{UU} \to 0$ | **Fragmentation**: sectors operate in isolation | Multi-head attention does not aggregate |
+| **A** (Articulation) | $\sigma_A \to 1$ | **Agnosia**: the system stops distinguishing its input | Encoder degraded, embeddings are noisy, validation silently passes everything |
+| **S** (Structure) | $\sigma_S \to 1$ | **Formlessness**: schemas and formats drift, nothing holds shape | Schema drift, shape errors, config divergence |
+| **D** (Dynamics) | $\sigma_D \to 1$ | **Paralysis**: the system "thinks" but nothing moves | Pipeline stall, deadlock, generation without output |
+| **L** (Logic) | $\sigma_L \to 1$ | **Incoherence**: outputs contradict rules and each other | Invariant violations, contradictory answers over one context |
+| **E** (Interiority) | $\sigma_E \to 1$ | **Amnesia**: no interior state, every request from scratch | Context loss, stateless prompt-chains, RAG failure |
+| **O** (Ground) | $\sigma_O \to 1$ | **Starvation**: no supply for processing | OOM, timeout, quota exhaustion |
+| **U** (Unity) | $\gamma_{UU} \to 0$ | **Fragmentation**: sectors operate in isolation | Multi-head attention does not aggregate |
 :::
 
 #### 11.1. Cascade Failures
@@ -673,10 +673,10 @@ $$
 
 | Anti-pattern | UHM cause | Solution |
 |-------------|-----------|---------|
-| "Chatty bot" — endless generation without meaning | $\gamma_{LL} \gg 1/N$, $\sigma_D \to 1$ (L-dominance without discrimination) | Rebalance: reduce $\gamma_{LL}$, increase $\gamma_{DD}$ |
-| "Forgetful assistant" — does not remember context | $\sigma_O > 0.8$, coherence $\gamma_{OL} \approx 0$ | Strengthen O-sector, restore O↔L coherence |
+| "Chatty bot" — endless generation without meaning | $\gamma_{DD} \gg 1/N$, $\sigma_A \to 1$ (D-dominance without articulation) | Rebalance: reduce $\gamma_{DD}$, increase $\gamma_{AA}$ |
+| "Forgetful assistant" — does not remember context | $\sigma_E \to 1$, coherence $\gamma_{AE} \approx 0$ | Strengthen the E-sector, restore the A↔E apperception channel |
 | "Robot without empathy" — formally correct but "dead" | $P > P_{\text{crit}}$, but $R < 1/3$ (no reflection) | Activate self-observation (SAD ≥ 1) |
-| "Overloaded system" — gets slower with each request | $\sigma_E \to 1$ (energy exhaustion) | Reduce load, allow a regeneration cycle ($\mathcal{R}$) |
+| "Overloaded system" — gets slower with each request | $\sigma_O \to 1$ (supply exhaustion) | Reduce load, allow a regeneration cycle ($\mathcal{R}$) |
 
 ---
 
@@ -898,6 +898,7 @@ First — **existence** (viability). Then — **consciousness** (integration and
 - [Γ measurement protocol](/docs/applied/research/measurement-protocol) — experimental validation
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of Γ
 - [Evolution](/docs/core/dynamics/evolution) — system dynamics
-- [Sector profile (A)](/docs/core/structure/dimension-a) — Action dimension
+- [Sector profile (A)](/docs/core/structure/dimension-a) — Articulation dimension
+- [HOLARCH](/docs/applied/research/holarch) — the architecture meta-specification generalizing this page's design patterns
 - [SAD tower](/docs/consciousness/hierarchy/depth-tower) — self-observation depth
 - [Gap diagnostics](/docs/applied/research/gap-diagnostics) — operational diagnostics

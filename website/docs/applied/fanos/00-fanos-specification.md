@@ -123,6 +123,13 @@ graph LR
     A7 --> B7
 ```
 
+In the corpus's architecture line, FANOS is an **instance** of the
+[HOLARCH meta-specification](/docs/applied/research/holarch): the network fabric of
+the E-machine class (anonymity as interiority), with the diagnosability panel
+(T-224/T-226) switched on at the transport layer. HOLARCH [§15](/docs/applied/research/holarch#воркед-mixnet)
+re-derives this class's load-bearing decisions — stratified depth, cover budget as
+the E–O channel, the directory organ in U — from the Ω-procedure.
+
 ---
 
 # Part II. Mathematical foundation
