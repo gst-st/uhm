@@ -1243,3 +1243,76 @@ sense in which the reconstruction carries strict mathematical and categorical
 guarantees: not that the readings are true of any given person — that remains
 for the diary to test — but that the *form* of the architecture is not
 arbitrary. It is the only form the mathematics allows.
+
+## Part XIII. Functorial guarantees: what is canonical, what is chosen
+
+Part XII gave three object-level guarantees. This part gives the morphism-level
+ones — the guarantees that concern how the reconstruction *transforms* — and in
+doing so draws a sharp line between what in a person's chart is canonical and
+what is merely a convention. The digging turned up something more honest than a
+blanket "everything is invariant": the reconstruction is coordinate-free in
+exactly one layer, and knowing precisely which is itself the result. Research in
+`architecture/category_lab2.py`.
+
+### 50. The coordinate-free content is the magnitude/orbit layer
+
+Does a person's reading depend on how we happen to *label* the seven voices? The
+classification does not (Part IX, §46): `classify` is exactly `G`-equivariant —
+verified on all 1280 gate·group pairs, zero mismatches. But what of the full
+encoder `E₂`, which decorates the combinatorics with coherence *phases*? Here
+the answer is precise. The **magnitude** `|E₂(g·chart)|` equals `U_g |E₂(chart)|
+U_g†` for *every* one of the 168 symmetries, to machine zero (`0.00`). The
+**complex** state does not — it differs by up to `0.9`, and the reason is exact:
+the phase of a coherence is placed by an arbitrary ordering of its two voices
+(which one carries `+θ`), a point-ordering convention with no intrinsic meaning.
+
+So the boundary is sharp. **The coordinate-free content of the reconstruction —
+the part that is a genuine invariant of the person and not of our labelling — is
+exactly the magnitude/combinatorial layer: the populations, the coherence
+strengths, and the orbit fingerprint.** The discrete architecture is canonical;
+the coherence phase is chosen. What is invariant is what is real. (HD's own
+encoder is not even magnitude-equivariant — its channels carry no Fano symmetry,
+HB13/TF5 — so it is the reconstruction that makes any coordinate-free reading
+possible at all.) VERIFIED (`|E₂|` equivariance is machine-exact).
+
+### 51. The self is a canonical retraction
+
+The self-model exists (Part XII, §47) — but is it *canonical*? Run the
+self-observation map `φ` to its fixed point; call the result `Ψ(ρ)` (the
+converged self-model reached from `ρ`). Then `Ψ` is **idempotent**: `Ψ∘Ψ = Ψ`,
+verified to `2·10⁻¹⁴`. An idempotent is a **retraction** — it projects the whole
+state space onto its image, the self-representable states, and fixes them. So the
+"I" is not merely *a* fixed point but a *projection*: every state has a canonical
+self-model, and the self-model of a self-model is itself. By the Karoubi
+splitting, an idempotent is a genuine subobject, so the self-representable states
+form a real object inside the architecture, not a fuzzy region. VERIFIED (`Ψ`
+idempotency is computed).
+
+### 52. The individual is a naturality failure
+
+Two functors act on the state space: the wheel's **symmetry** `R_g` (relabelling
+the voices by a group element) and the wheel's **dynamics** `T` (evolution under
+the effective Hamiltonian `H_EFF`). Do they commute — is there a naturality
+square making symmetry and time interchangeable? Only trivially: `H_EFF`
+commutes with `U_g` for exactly **one** of the 168 group elements, the identity.
+So an individual life — a specific trajectory under the dynamics — is precisely
+the place where the wheel's symmetry and its dynamics *fail* to commute. **The
+individual is a naturality failure; individuality is symmetry breaking stated
+categorically.** The seven distinct voice-energies of `H_EFF` are what break the
+`168`-fold symmetry of the bare wheel down to the identity, and that breaking is
+the person. VERIFIED (the commutant is computed: `1` of `168`).
+
+### 53. What the functorial layer settles
+
+Object-level, the architecture's classification is a colimit, its self a fixed
+point, its unions colimits. Morphism-level, its coordinate-free content is
+exactly the magnitude/orbit layer, its self is a canonical retraction, and its
+individuality is the exact failure of symmetry and dynamics to commute. Together
+they answer the question a reconstruction must answer — *why this structure and
+not another* — with a chain of standard theorems, each verified: the form is
+forced, the self is guaranteed and canonical, the "we" is universal, the
+invariant content is delineated to the entry, and the individual is located
+exactly where the mathematics says an individual must live. The esoteric
+alphabet, followed to the bottom, is the (co)limit and fixed-point theory of a
+`G`-set — and the theory says which of its features are real and which are ours
+to choose.
