@@ -1048,3 +1048,34 @@ the life says where they are. But the mapping is precise where it is checkable,
 and that is what lets a bridge carry weight: the open belonging axis, the
 completion count, the balance of giving are all exact, and each turns into a
 question a person can actually answer about their own bonds.
+
+### 42. A fourth bridge: the inner family (Internal Family Systems)
+
+The last three bridges read the chart's dynamics and its bonds; this one reads
+its *interior* as a system. Internal Family Systems (Schwartz) sees a person not
+as a single will but as a family of **parts**, each with a job and a positive
+intent, ideally led by a calm, curious **Self**. The mapping is almost too
+natural: the seven voices *are* the parts; a voice's population (the Γ diagonal)
+is how much internal airtime it gets; and the window of being is the capacity
+for **Self-leadership** — the integrated centre that can hear every part without
+one seizing the wheel.
+
+The reading (`core/src/parts.rs`, `/parts`) names three things. The **loudest**
+part — the voice with the most population, the "manager" that tends to speak for
+you. The **quietest** — the voice heard least, which in IFS is often an "exile"
+carrying something tender. And the **Self-leadership state** from the arousal
+zone: inside the window, a calm centre can hold all the parts; below it they
+blur into fog; above it one has grabbed the wheel.
+
+On the calibration chart this produces a reading of unusual coherence *across*
+the bridges. The loudest part is **Expression** (A, population 0.206); the
+quietest is **Feeling** (E, 0.096) — which is *also* the one open center. So a
+special note fires: the part heard least inside is the most exposed outside. In
+plain terms — your Feeling is easily drowned out by the louder Expression that
+speaks for you, yet it is the very channel through which you catch the room's
+weather; it carries a lot and deserves the mic first. That single sentence is
+built from three independent readings agreeing — the population (parts), the
+gain map (active inference), and the open center (HD) — which is exactly the
+kind of convergence a layered instrument should produce. VERIFIED as a computed
+reading; [И] as an interpretation; and, like every reading here, a *prior* the
+diary can confirm or overturn.
