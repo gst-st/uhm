@@ -1132,17 +1132,31 @@ of the whole layered reading (E is the quiet-yet-porous part, the affect-porous
 attachment axis, the sensing channel). Because the site agrees the emotional
 center is undefined, the foundation of the readings is correct, not asserted.
 
-**Essence — the meaning.** The app carries the authoritative HD text for an open
-Solar Plexus (the Ra-Uru-Hu / Bunnell lineage): it *absorbs and amplifies the
-emotions around it*, those emotions *are not always one's own*, one *rides
-others' emotional waves*, and one develops a *false-self strategy of avoiding
-confrontation to please*. Our accessible content — the E voice, the `/psyche`
-sampler reading, the `/duo` affect-porous attachment line, and the
-people-pleasing topic — reflects **all five** of these claims. It is not a copy:
-ours is a warmer, more actionable ontology in its own words. The point is
-consistency of *meaning* with the established lineage, which is the strongest
-correctness check available short of longitudinal human data (which the
-`/checkin` self-test now gathers).
+**Essence — the meaning.** The app also carries the authoritative HD text (the
+Ra-Uru-Hu / Bunnell lineage) for each facet of the chart, opened by clicking it.
+We pulled the descriptions for all four load-bearing facets and cross-checked
+each against our accessible content — **thirteen of thirteen key claims
+reflected**:
+
+- *Open Solar Plexus (voice E)*: it absorbs and amplifies the emotions around
+  it; those emotions are not always one's own; one rides others' emotional
+  waves — matched by the E voice, the `/psyche` sampler line, the `/duo`
+  attachment reading, and the people-pleasing topic.
+- *Manifesting Generator*: wait and respond rather than initiate (else
+  frustration); a motor-to-throat that jumps from response to action fast; and
+  the signature trap — *skips steps and must loop back, so slowing down helps* —
+  which our type reading states almost verbatim.
+- *Sacral authority*: the gut yes/no in the moment; the head talks you into
+  things, the body is reliable.
+- *Profile 3/5*: the 3rd line's trial-and-error discovery; the 5th line's being
+  projected upon as a practical savior.
+
+None of it is a copy: ours is a warmer, more actionable ontology in its own
+words. The point is consistency of *meaning* with the established lineage across
+every major facet — the strongest correctness check available short of
+longitudinal human data (which the `/checkin` self-test now gathers). A
+permanent test (`content_reflects_authoritative_hd_claims`) locks each of these
+in, so a rewrite that drops the essence fails the build.
 
 **Completeness — the gate.** A permanent test
 (`full_completeness_and_parity_audit`) walks all 500-plus interpretation
