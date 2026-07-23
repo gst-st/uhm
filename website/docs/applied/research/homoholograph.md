@@ -1079,3 +1079,20 @@ gain map (active inference), and the open center (HD) — which is exactly the
 kind of convergence a layered instrument should produce. VERIFIED as a computed
 reading; [И] as an interpretation; and, like every reading here, a *prior* the
 diary can confirm or overturn.
+
+### 43. The portrait: the layers composed
+
+Each reading so far is a single lens. The **portrait** (`core/src/portrait.rs`,
+`/portrait`, and the accessible `/me`) is the composed picture — one flowing,
+jargon-free paragraph woven from every layer at once: the type as a life-rhythm,
+the inner family of parts (loudest and quietest), how the world comes in (the
+sensing channels), the arousal zone, and the bonding tendency, closed by an
+honest coda — *this is a map, not a cage; your life has the last word.* It does
+not concatenate the five full readings (that would be a wall of text); it pulls
+each one's key finding and stitches them with connective prose, so it reads as a
+paragraph about a person. On the calibration chart the composition is what makes
+the convergence visible in plain language: Feeling arrives as the quietest part
+*and* the channel through which the world comes in — the same thread the parts,
+the gain map, and the open center each surfaced, now said once, warmly, as a
+single sentence. This is the architecture paying off: many rigorous layers,
+one human read.
