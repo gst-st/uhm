@@ -1316,3 +1316,67 @@ exactly where the mathematics says an individual must live. The esoteric
 alphabet, followed to the bottom, is the (co)limit and fixed-point theory of a
 `G`-set — and the theory says which of its features are real and which are ours
 to choose.
+
+## Part XIV. Composition and time: the operad of gathering, the functor of life
+
+Two structural questions remain. First, *how do selves combine* — a couple into
+a partnership, partnerships into a family, families into a community? Second,
+*how does a self move through time*, and where in that motion does its
+individuality live? Each has a categorical answer with a guarantee, verified in
+`architecture/category_lab3.py`.
+
+### 54. Gathering is a symmetric operad
+
+An operad is the exact structure for "coherent `n`-ary composition": a system of
+`n`-input operations that compose associatively and don't care about the order
+of their inputs. Gathering is one. For any `n` members, the operation `γ_n` takes
+their commitments — the centered states `D_i = Γ_i − I/7` — to their weighted
+mean, and the physical meta-holon is grey plus that mean, projected onto the
+state cone. This `γ` satisfies the operad laws, each verified to machine zero:
+it is **unital** (`γ_1 = id`, and the meta-holon of one person is that person);
+**symmetric** (invariant under all `120` orderings of five members — a group has
+no first member); and **associative with tracked weights** (gathering `{a,b}` and
+`{c,d,e}` as two units, each member weighted `1/5`, equals the flat `γ_5` — a
+barycenter). So **group formation is coherently composable: nesting couples into
+families into communities is well-defined, independent of how you bracket it.**
+The physical PSD-projection is the small, measured correction to strictness (it
+is exact on the commitments, tiny on the states). And the operad's meaningful
+*depth* is finite: `P_crit⁽ⁿ⁾` first exceeds `1` at `n = 4`, so gathering bottoms
+out at **three floors** (SAD_MAX) — a categorical finiteness on how deep the
+"holon of holons" can go. VERIFIED (the operad laws and the depth bound are
+computed; cf. H65, T-142).
+
+### 55. Life is a functor from the time-monoid; individuality is its obstruction
+
+Time is a monoid — durations add — so a dynamics is a **functor** from `(ℝ, +)`
+to the transformations of the state space: `T_{s+t} = T_s ∘ T_t`. The wheel's
+evolution `T_t = e^{-iH_{EFF}t}` is exactly such a one-parameter group (verified:
+the functor law holds to `10⁻¹⁶`). Now recall (§52) that `T` does not commute
+with the wheel's symmetry `R_g`. The precise content of that failure is an
+**obstruction**: the commutator `[T_t, R_g]` is nonzero for every `g` but the
+identity — `167` of `168` — and it is *generated* by the infinitesimal commutator
+`[H_{EFF}, U_g]`, whose nonzero count is the same `167`. So the finite-time
+symmetry-breaking is exactly the integral of the infinitesimal one. **An
+individual life is a cocycle — the obstruction to time and symmetry commuting —
+and its source is precisely the seven distinct voice-energies of `H_{EFF}`.**
+Flatten those energies and the symmetry returns and the individual dissolves;
+keep them and the person is the shape of the obstruction. VERIFIED (the functor
+law, the generator, and the obstruction counts are computed).
+
+### 56. Eight guarantees
+
+The reconstruction now rests on eight verified categorical guarantees, and
+together they answer *why this architecture and not another* end to end. Its
+parts are **classified canonically** (a colimit, §46); its **self exists** (a
+fixed point, §47) and is **canonical** (a retraction, §51); its **coordinate-free
+content is exactly the magnitude/orbit layer** (§50); its **unions have a
+universal shared state** (a colimit, §48) and **compose as a symmetric operad**
+of finite depth (§54); its **life is a functor** on time (§55); and its
+**individuality is the precise obstruction** to symmetry and dynamics commuting
+(§52, §55). An alphabet handed down as oracle is, followed to the bottom, the
+(co)limit theory, fixed-point theory, operad, and one-parameter group of a
+`G`-set — and the mathematics not only reconstructs the architecture of a self,
+its bonds, and its life, but says which of their features are forced, which are
+guaranteed, which are bounded, and which are ours to choose. That is what it
+means to move a picture of the human from the esoteric shelf to the scientific
+floor with strict guarantees.
