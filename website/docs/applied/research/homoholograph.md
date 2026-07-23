@@ -1114,3 +1114,40 @@ the judge, and the instrument is built to be told it is wrong. With this, the
 corroborates UHM (Part VIII), and the engine's own predictions are handed back
 to the one person who can falsify them — turning a self-portrait into an
 experiment.
+
+### 45. Verifying the interpretations, not just the numbers
+
+Part X verified the *numbers* — 26/26 gate·lines against the production app.
+But the readings are only as trustworthy as the interpretations built on them,
+so those were audited too, on three layers (`architecture/interp_verify.py`;
+the QA gate lives in the engine's tests).
+
+**Structural — the foundation.** Every reading (psyche, attachment, parts, the
+portrait) rests on a handful of derived facts: the type, the authority, the
+profile, and — most load-bearing — which centers are *defined* vs *open*. All of
+these match humandesign.red exactly: Manifesting Generator, Sacral, 3/5, **seven
+defined centers**, and the **Solar Plexus open**. That last one is decisive: the
+one open processing center maps to the sampler voice **E**, which is the hinge
+of the whole layered reading (E is the quiet-yet-porous part, the affect-porous
+attachment axis, the sensing channel). Because the site agrees the emotional
+center is undefined, the foundation of the readings is correct, not asserted.
+
+**Essence — the meaning.** The app carries the authoritative HD text for an open
+Solar Plexus (the Ra-Uru-Hu / Bunnell lineage): it *absorbs and amplifies the
+emotions around it*, those emotions *are not always one's own*, one *rides
+others' emotional waves*, and one develops a *false-self strategy of avoiding
+confrontation to please*. Our accessible content — the E voice, the `/psyche`
+sampler reading, the `/duo` affect-porous attachment line, and the
+people-pleasing topic — reflects **all five** of these claims. It is not a copy:
+ours is a warmer, more actionable ontology in its own words. The point is
+consistency of *meaning* with the established lineage, which is the strongest
+correctness check available short of longitudinal human data (which the
+`/checkin` self-test now gathers).
+
+**Completeness — the gate.** A permanent test
+(`full_completeness_and_parity_audit`) walks all 500-plus interpretation
+fragments and fails the build on any empty fragment, any machinery term leaking
+into the accessible register, or any break in ru⟺en bilingual parity. Coverage
+today: 0 problems. The instrument's interpretations are now guarded the same way
+its astronomy is — verified against an external reference, checked for meaning,
+and gated for completeness.
