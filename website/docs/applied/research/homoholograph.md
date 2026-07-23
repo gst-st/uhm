@@ -1096,3 +1096,21 @@ the convergence visible in plain language: Feeling arrives as the quietest part
 the gain map, and the open center each surfaced, now said once, warmly, as a
 single sentence. This is the architecture paying off: many rigorous layers,
 one human read.
+
+### 44. Closing the loop: the n-of-1 self-test
+
+Every bridge so far ends in a prediction the diary could check; this is the
+diary. Prediction **P1** — that a person's *sampler* dimensions (open centers,
+high gain) should swing more, day to day, than their *source* dimensions —
+is now a live test on the user's own data (`core/src/selftest.rs`,
+`/checkin`). Each day the person rates all seven voices 0–10; after about two
+weeks the engine compares the average day-to-day variance of the sampler voices
+to the source voices and says, plainly, whether P1 **holds so far on their
+data**. A null or a reversal is not a bug to hide but a *result*: an honest
+signal against the model, which is exactly what the diary is for. This is the
+whole program's stance made operational — the readings are priors, the diary is
+the judge, and the instrument is built to be told it is wrong. With this, the
+"two birds" close: Human Design calibrates the engine, the engine's structure
+corroborates UHM (Part VIII), and the engine's own predictions are handed back
+to the one person who can falsify them — turning a self-portrait into an
+experiment.
