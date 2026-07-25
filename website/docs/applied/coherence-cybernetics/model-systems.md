@@ -418,7 +418,10 @@ An intriguing question: is there a connection between the Fibonacci sequence and
 | $\|\hat{\mathcal{G}}\|_F^2$ | $\frac{1}{49}\sum_{k<l} \sin^2(2\pi\Delta_{kl}/7) \approx 0.1049$ |
 | $\mathrm{Coh}_E$ | $13/49 \approx 0.265$ (invariant of pure state with $\lvert\gamma_{kl}\rvert=1/7$) |
 | $\kappa$ | $\kappa_{\text{bootstrap}} + \kappa_0 \cdot 13/49$ |
-| Mean Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) \approx 0.620$ |
+| Mean Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) = \frac{7\sin\frac{4\pi}{7} + 6\sin\frac{\pi}{7} + 5\sin\frac{2\pi}{7}}{21} \approx 0.6351$ |
+
+> **Erratum (2026-07-25, machine check):** this previously read ≈ 0.620 — a rounding slip in the hand computation. The exact value over the multiset of differences $\Delta$ (the zero cluster A,S,O — 3 pairs; $|\sin\tfrac{2\pi}{7}|$ — 5 pairs; $|\sin\tfrac{4\pi}{7}|$ — 7 pairs; $|\sin\tfrac{6\pi}{7}|$ — 6 pairs) is $13.337/21 = 0.63509\ldots$ Verified independently by the engine (`hhg-core`, test `model_systems_pin_the_engine_to_corpus_numbers`) and by direct computation.
+
 
 #### What we learn from this model
 
@@ -893,7 +896,7 @@ tau_i, gap_i, P_i = dynamic_system(rational=False)
 |-------|-----|-------------------------------|-------------------|----------|---------|
 | 1. Uniform ($I/7$) | $1/7$ | $0$ | $1/7$ | $\omega_0/7 + \kappa_0/7$ | no |
 | 2. Pure uniform | $1$ | $0$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | yes |
-| 3. Fibonacci phases | $1$ | $\approx 0.62$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | yes |
+| 3. Fibonacci phases | $1$ | $\approx 0.635$ | $13/49$ | $\omega_0/7 + 13\kappa_0/49$ | yes |
 | 4. Alexithymia | $< 1$ | $> 0$ | $\approx 13/49$ | decreasing | at risk |
 | 5a. Rational | $\mathrm{const}$ | periodic | $\mathrm{const}$ | $\mathrm{const}$ | yes |
 | 5b. Irrational | $\mathrm{const}$ | $\to 2/\pi$ | $\mathrm{const}$ | $\mathrm{const}$ | yes |

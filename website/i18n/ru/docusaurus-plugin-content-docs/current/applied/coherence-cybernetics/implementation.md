@@ -960,11 +960,16 @@ pub type Action is
 
 /// Main control loop for a CC system.
 ///
-/// Zones (by margin = 1 − max(σ)):
-/// - margin > 0.3   — safe
-/// - margin > 0.1   — caution
-/// - margin > 0.05  — warning
-/// - margin ≤ 0.05  — critical
+/// Зоны выражены через margin = 1 − ‖σ‖_∞, но НАРЕЗАНЫ ПО КАНОНИЧЕСКИМ ПОЛОСАМ
+/// из [диагностики §4](./diagnostics#пороги-мониторинга) (T-106: структура полос
+/// [Т], числа [С]). Цикл группирует пять уровней мониторинга в четыре действия,
+/// потому что «норма» и «внимание» требуют одного — продолжать, — а сами числа
+/// расходиться с главой о диагностике не имеют права, иначе система окажется
+/// «безопасной» на одной странице и «предупреждением» на другой:
+/// - margin > 0.3  (‖σ‖_∞ < 0.7)  — норма + внимание: продолжать
+/// - margin > 0.1  (‖σ‖_∞ < 0.9)  — предупреждение: снять нагрузку
+/// - margin > 0.0  (‖σ‖_∞ < 1.0)  — критично: регенерация
+/// - margin ≤ 0.0  (‖σ‖_∞ ≥ 1.0)  — отказ (T-92: уже нежизнеспособна): аварийно
 public fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
     using [IO]
 {
@@ -973,7 +978,11 @@ public fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
         holon = evolve_holon(holon, 0.01, env);
 
         // 2. Monitoring (see definitions.md#эквивалентность-условий).
-        let sigma = compute_stress_tensor(&holon.gamma, env);
+        // σ_sys(Γ) — панель T-92, функция ТОЛЬКО состояния. Среда здесь не
+        // аргумент: то, что требует среда, — отдельная панель нагрузки σ^load
+        // (см. definitions#панель-нагрузки), а равносильность жизнеспособности
+        // выше доказана именно для σ_sys(Γ).
+        let sigma = compute_stress_tensor(&holon.gamma);
         let (viable, margin) = check_viability(&sigma);
 
         // 3. Zone-based control — pattern match on margin.
@@ -1168,10 +1177,14 @@ public const THETA_U: Float = 1.5;              // Unity
 public const C_MAX: Float = 1000.0;             // ops/s
 public const M_MAX: Float = 1.0e9;              // bytes
 
-/// Control-zone thresholds (margin = 1 − max(σ)).
-public const MARGIN_SAFE:    Float = 0.3;       // safe: max(σ) < 0.7
-public const MARGIN_CAUTION: Float = 0.1;       // caution: max(σ) < 0.9
-public const MARGIN_WARNING: Float = 0.05;      // warning: max(σ) < 0.95
+/// Пороги зон управления (margin = 1 − ‖σ‖_∞), нарезанные по каноническим полосам
+/// [диагностики §4](./diagnostics#пороги-мониторинга). MARGIN_WARNING был 0.05
+/// (‖σ‖_∞ < 0.95) — граница, которой больше нет нигде в корпусе, и полоса
+/// 0.95…1.0 оставалась вне всех зон, тогда как T-92 ставит край
+/// жизнеспособности ровно в 1.0. Край принадлежит теореме, а не окрестности.
+public const MARGIN_SAFE:    Float = 0.3;       // продолжать: ‖σ‖_∞ < 0.7
+public const MARGIN_CAUTION: Float = 0.1;       // снять:      ‖σ‖_∞ < 0.9
+public const MARGIN_WARNING: Float = 0.0;       // регенерация: ‖σ‖_∞ < 1.0
 
 pub type InitConfig is {
     random:      Bool,

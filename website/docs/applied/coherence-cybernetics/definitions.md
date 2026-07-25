@@ -289,23 +289,33 @@ For practice this is the central tool: if $\sigma_D$ is high — the computation
 
 ### Definition
 
-**Definition (Stress Tensor):**
+The stress tensor is a vector of seven components, one per dimension:
 
 $$
 \sigma_{\mathrm{sys}}(\Gamma) := [\sigma_A, \sigma_S, \sigma_D, \sigma_L, \sigma_E, \sigma_O, \sigma_U]^T \in \mathbb{R}^7
 $$
 
-| Component | Formula | Interpretation |
-|-----------|---------|----------------|
-| $\sigma_A$ | $I_{\mathrm{env}} / \theta_A$ | Articulation load |
-| $\sigma_S$ | $I_{\mathrm{struct}} / \theta_S$ | Structural complexity |
-| $\sigma_D$ | $C_{\mathrm{used}} / C_{\mathrm{max}}$ | Computational load |
-| $\sigma_L$ | $I_{\mathrm{verify}} / \theta_L$ | Logical uncertainty |
-| $\sigma_E$ | $(I_{\mathrm{self}} + I_{\mathrm{exp}}) / \theta_E$ | Experience load |
-| $\sigma_O$ | $(I_{\mathrm{mem}} + I_{\mathrm{ground}}) / \theta_O$ | Foundation load |
-| $\sigma_U$ | $(I_{\mathrm{unity}} + I_{\mathrm{social}}) / \theta_U$ | Unity load |
+**The canonical definition is via $\Gamma$-invariants** — see [Formal definitions via Γ-invariants](#sigma-sys-formal) below ([T-92](./theorems#теорема-101-эквивалентность-условий) [T]): all seven components are unambiguous functions of $\Gamma$ **with no free parameters**, and it is this form for which the viability equivalence $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \lVert\sigma_{\mathrm{sys}}\rVert_\infty < 1$ is proved.
 
-where $\theta_i > 0$ are the thresholds for each dimension.
+#### The load panel: an operational proxy, not the definition {#панель-нагрузки}
+
+:::caution This table is superseded as a definition
+Before T-92 the components were written as demand-over-capacity ratios. They are kept because they are what an engineer actually *reads off a running system* — but they are an **operational proxy** with seven free parameters $\theta_i$, and they are **not** functions of $\Gamma$. Do not use them for the T-92 viability test.
+
+| Component | Load proxy | What is loaded |
+|-----------|-----------|----------------|
+| $\sigma_A^{\mathrm{load}}$ | $I_{\mathrm{env}} / \theta_A$ | Articulation |
+| $\sigma_S^{\mathrm{load}}$ | $I_{\mathrm{struct}} / \theta_S$ | Structural complexity |
+| $\sigma_D^{\mathrm{load}}$ | $C_{\mathrm{used}} / C_{\mathrm{max}}$ | Computation |
+| $\sigma_L^{\mathrm{load}}$ | $I_{\mathrm{verify}} / \theta_L$ | Logical verification |
+| $\sigma_E^{\mathrm{load}}$ | $(I_{\mathrm{self}} + I_{\mathrm{exp}}) / \theta_E$ | Experience |
+| $\sigma_O^{\mathrm{load}}$ | $(I_{\mathrm{mem}} + I_{\mathrm{ground}}) / \theta_O$ | Foundation |
+| $\sigma_U^{\mathrm{load}}$ | $(I_{\mathrm{unity}} + I_{\mathrm{social}}) / \theta_U$ | Unity |
+
+where $\theta_i > 0$ are per-dimension capacities.
+:::
+
+**The two panels answer different questions and are not interchangeable.** $\sigma^{\mathrm{load}}$ is what the environment *demands* — a cause, measured outside the system. $\sigma_{\mathrm{sys}}(\Gamma)$ is the *deficit that resulted* — an effect, read off the state. They are linked not by an identity but through the [evolution equation](/docs/core/dynamics/evolution): sustained load drives the state, and the state is what the viability theorem speaks about. Conflating them is why a load reading can look alarming while $\Gamma$ is fine (a well-resourced system under heavy demand), and why a deficit can be severe while load is low (a depleted system at rest).
 
 ### What Each Component Means: Examples
 

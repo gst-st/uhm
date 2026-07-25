@@ -960,11 +960,16 @@ pub type Action is
 
 /// Main control loop for a CC system.
 ///
-/// Zones (by margin = 1 − max(σ)):
-/// - margin > 0.3   — safe
-/// - margin > 0.1   — caution
-/// - margin > 0.05  — warning
-/// - margin ≤ 0.05  — critical
+/// Zones, expressed as margin = 1 − ‖σ‖_∞ but CUT ON THE CANONICAL BANDS of
+/// [diagnostics §4](./diagnostics#пороги-мониторинга) (T-106: band structure
+/// [T], numbers [C]). The loop groups the five monitoring levels into four
+/// actions, because «Normal» and «Attention» call for the same thing — keep
+/// going — while the numbers themselves must not drift from the diagnostics
+/// chapter, or a system would be «safe» on one page and «warning» on another:
+/// - margin > 0.3  (‖σ‖_∞ < 0.7)  — Normal + Attention: continue
+/// - margin > 0.1  (‖σ‖_∞ < 0.9)  — Warning: reduce load
+/// - margin > 0.0  (‖σ‖_∞ < 1.0)  — Critical: regenerate
+/// - margin ≤ 0.0  (‖σ‖_∞ ≥ 1.0)  — Failure (T-92: no longer viable): emergency
 public fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
     using [IO]
 {
@@ -973,7 +978,11 @@ public fn control_loop(mut holon: HolonState, env: &Environment, max_steps: Int)
         holon = evolve_holon(holon, 0.01, env);
 
         // 2. Monitoring (see definitions.md#эквивалентность-условий).
-        let sigma = compute_stress_tensor(&holon.gamma, env);
+        // σ_sys(Γ) — the T-92 panel, a function of the STATE alone. The
+        // environment is not an argument here: what the environment demands is
+        // the separate load panel σ^load (see definitions#панель-нагрузки), and
+        // the viability equivalence above is proved for σ_sys(Γ) only.
+        let sigma = compute_stress_tensor(&holon.gamma);
         let (viable, margin) = check_viability(&sigma);
 
         // 3. Zone-based control — pattern match on margin.
@@ -1168,10 +1177,14 @@ public const THETA_U: Float = 1.5;              // Unity
 public const C_MAX: Float = 1000.0;             // ops/s
 public const M_MAX: Float = 1.0e9;              // bytes
 
-/// Control-zone thresholds (margin = 1 − max(σ)).
-public const MARGIN_SAFE:    Float = 0.3;       // safe: max(σ) < 0.7
-public const MARGIN_CAUTION: Float = 0.1;       // caution: max(σ) < 0.9
-public const MARGIN_WARNING: Float = 0.05;      // warning: max(σ) < 0.95
+/// Control-zone thresholds (margin = 1 − ‖σ‖_∞), cut on the canonical bands of
+/// [diagnostics §4](./diagnostics#пороги-мониторинга). MARGIN_WARNING was 0.05
+/// (‖σ‖_∞ < 0.95) — a boundary that appears nowhere else in the corpus and left
+/// the band 0.95…1.0 outside every zone while T-92 puts the viability edge
+/// exactly at 1.0. The edge belongs at the theorem, not near it.
+public const MARGIN_SAFE:    Float = 0.3;       // continue:  ‖σ‖_∞ < 0.7
+public const MARGIN_CAUTION: Float = 0.1;       // reduce:    ‖σ‖_∞ < 0.9
+public const MARGIN_WARNING: Float = 0.0;       // regenerate: ‖σ‖_∞ < 1.0
 
 pub type InitConfig is {
     random:      Bool,
