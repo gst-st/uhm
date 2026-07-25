@@ -200,11 +200,11 @@ The matrix $\Gamma = I/7$ — the maximally mixed state.
 <details>
 <summary>Solution</summary>
 
-**(a)** $P = 7 \times (1/7)^2 = 1/7 \approx 0.143$. $\sigma_k = 1 - 7 \times (1/7) = 0$ for all $k$. $\|\sigma\|_\infty = 0$.
+**(a)** $P = 7 \times (1/7)^2 = 1/7 \approx 0.143$. Under the **pre-errata** panel rows ($\sigma_k = 1 - N\gamma_{kk}$ style for every dimension) one gets $\sigma_k = 1 - 7 \times (1/7) = 0$ for all $k$ and $\|\sigma\|_\infty = 0$ — hold that thought for (b).
 
-**(b)** Paradox: $\sigma = 0$ (no deficit in anything), but $P = 1/7 < 2/7$ (non-viable). Reason: $\Gamma = I/7$ — *complete indistinguishability*. All dimensions are the same, there is no structure, no information. The system does not "suffer" (σ = 0), but it does not "live" either — it *does not exist as an organized unit*. This is like a perfectly mixed solution: no component is in deficit, but the solution has no structure.
+**(b)** This «paradox» — $\sigma = 0$ everywhere yet $P = 1/7 < 2/7$, a non-viable state that no gauge flags — is precisely the machine counterexample that **forced the 2026-07-22 errata of T-92**: the old $\sigma_E$, $\sigma_U$ rows encoded no thresholds, so the viability embedding failed. Under the **repaired canonical panel** the paradox is gone: at $\Gamma = I/7$ one computes $\sigma_L = 7(1 - 1/7)/6 = 1$, $\sigma_O = 1 - \kappa_0/\kappa_{\text{bootstrap}} = 1$ (no O-coupling), and $\sigma_U = 2/(1+\Phi) = 2$ (zero integration) — so $\|\sigma\|_\infty = 2 \geq 1$ and the panel **does** declare the state non-viable (machine-verified: `stress_panel_v2(I/7) = [0, 0, 0, 1, 0, 1, 2]`). The lesson survives in sharper form: a state can be free of *local* deficits (A, S, D, E rows at zero) while dead in logic, ground and unity — indistinguishability is a deficit of the whole, and the repaired panel sees it.
 
-**(c)** For $I/7$: all bars at zero. For Problem 1.1: A and S are below zero (surplus), U is significantly above (deficit). The profile is uneven, pointing to a specific problem (unity deficit).
+**(c)** For $I/7$: four bars at zero (A, S, D, E) and three raised — $\sigma_L = 1$, $\sigma_O = 1$, $\sigma_U = 2$. For Problem 1.1: an uneven profile pointing at a specific dimension. The contrast teaches the two failure shapes: total structural death (the flat-diagonal state) versus a local deficit.
 
 </details>
 
