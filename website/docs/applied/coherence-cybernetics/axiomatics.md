@@ -406,7 +406,7 @@ $$
 where:
 - $\kappa_{\text{bootstrap}}$ — **minimum regeneration** from the adjunction structure $\mathcal{D}_\Omega \dashv \mathcal{R}$
 - $\kappa_0$ — base regeneration rate, [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
-- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [coherence of the Interiority dimension](./definitions#e-когерентность)
+- $\mathrm{Coh}_E(\Gamma) \in [0, 1]$ globally; on viable states sustained by the Ω-dynamics it stays in $(1/N, 1]$ (No-Zombie, T-38a with its $\mathcal{D}_\Omega \neq 0$ hypothesis) — [coherence of the Interiority dimension](./definitions#e-когерентность)
 
 ### Resolution: $\kappa_{\text{bootstrap}}$ — Structural Minimum
 

@@ -406,7 +406,7 @@ $$
 где:
 - $\kappa_{\text{bootstrap}}$ — **минимальная регенерация** из структуры сопряжения $\mathcal{D}_\Omega \dashv \mathcal{R}$
 - $\kappa_0$ — базовая скорость регенерации, [категориальный вывод](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0): $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$
-- $\mathrm{Coh}_E(\Gamma) \in [1/N, 1]$ — [когерентность измерения Интериорности](./definitions#e-когерентность)
+- $\mathrm{Coh}_E(\Gamma) \in [0, 1]$ глобально; на жизнеспособных состояниях, поддерживаемых Ω-динамикой, остаётся в $(1/N, 1]$ (No-Zombie, T-38a с её гипотезой $\mathcal{D}_\Omega \neq 0$) — [когерентность измерения Интериорности](./definitions#e-когерентность)
 
 ### Разрешение: $\kappa_{\text{bootstrap}}$ — структурный минимум
 
