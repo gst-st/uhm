@@ -574,6 +574,7 @@ The free-text channel is a **Claude Code agent** (headless CLI) with a per-user 
 - **The sharpness map** (HB30): sharpening ρ₀ along each voice and reading where the fate lands — the personal *first move*. The best voice crossed the window in 60/60 charts; the voice is personal (never the already-dominant one).
 - **Bearing activations**: leave-one-out weight of each of the 26 stamps in Γ₀ (the two lights measurably hold the calibration chart).
 - **The life map** (`hhg life`): day-per-year progressions (resonance curve 0–84, life-page-return ages, progressed lunar returns ~27/55/82) woven with the great transit cycles (Saturn return/opposition, Uranus opposition, the 18.6-year nodal lattice), clustered into retrograde series, by decade.
+- **The growth-gradient of integration** (the `/grow` reading): strengthen one coherence by a fixed step, re-project to a valid Γ, and read the change in integration `Φ` — the sign flips with the string's *own* strength. Worked (the calibration chart 1985-04-07, `Φ₀ = 1.031`): the two strongest strings AD (`ΔΦ = +0.011`) and OU (`+0.005`) **raise** Φ; the two weakest AU (`−0.043`) and SO (`−0.040`) **lower** it. Integration is load-bearing on the strong strings; strengthening a thin one adds a competing binding that fragments before it gathers — the honest **integration↔differentiation trade-off** (`Φ ≥ 1` and `D ≥ 2` are *both* consciousness gates, T-129/T-151). So the growth reading no longer sells "develop your weakest link" as a free win: each edge now carries its real Φ-effect — «gathers you tighter» (ΔΦ > 0) versus «broadens you — yet loosens the knot, in small doses» (ΔΦ < 0). Corollary for self-work: raising integration and widening differentiation pull opposite ways on the same string, so growth is a *balance* held over seasons, not a monotone climb. VERIFIED (`core/src/growth.rs::phi_lever`, `phi_lever_valid_and_fires_both_ways`; numbers regenerate via `corpus_phi_d_numbers`).
 
 ## Part VIII. Two birds: HD as a falsification instrument, and the Rosetta
 
@@ -1869,3 +1870,801 @@ comparative record — suggestive of a shared arithmetic root beneath the
 traditions, not a doctrine the programme leans on. *(Verified as computation:
 `core/examples` reproduces Lemmas XIX-A through XIX-C; `[И]` as meaning.)*
 
+## Part XX. The personality projections: the empirical taxonomies inside the seven voices
+
+Parts XV–XIX measured the reconstruction against the symbolic traditions. This
+part turns to the empirical science of personality — the Big Five and
+Cloninger's temperament model, the two most validated instruments the field
+has — and asks the sharper question. Not whether the reconstruction *resembles*
+them, but whether it *generates* them; and, once it does, what its own structure
+carries that they cannot see.
+
+### 70. The predictive-processing bridge
+
+The Five-Factor Model is usually told as a lexical fact: factor-analyse enough
+trait adjectives across enough people and five dimensions fall out. Its deepest
+modern reading, though, is mechanistic. DeYoung's Cybernetic Big Five Theory
+frames the five factors as parameters of a *predictive, goal-directed* control
+system — the same free-energy account of mind the reconstruction already runs in
+its active-inference layer (`psyche.rs`). On that reading the bridge is not
+analogy but shared mechanism:
+
+- **Plasticity** (Openness + Extraversion) is exploration — a system that raises
+  the precision it grants incoming signal and so *samples* the world. In the
+  reconstruction this is exactly a high-gain (open) voice.
+- **Stability** (Conscientiousness + Agreeableness + emotional stability) is
+  maintenance — defending stable goals and interpretations against disruption. It
+  is a defined, low-gain voice held as a steady internal source.
+- **Neuroticism** is low Stability — the same maintenance system read as its
+  failure to hold, its reactivity riding the Feeling voice's gain. (The mind↔body
+  prediction error `razlad` was expected, on a free-energy account, to carry it;
+  §73 reports that in this substrate it does not — the bridge is kept honest
+  there rather than assumed here.)
+
+So the Big Five is not imported into the reconstruction; it is *recovered* from
+the very quantities — gain, definedness, prediction error — the reconstruction
+already computes for other purposes.
+
+### 71. The construction that forces the covariance
+
+The five factors are not statistically independent. They cluster into two
+metatraits — Plasticity binding O and E, Stability binding C, A and low-N — and
+that covariance is the fingerprint any honest projection must reproduce:
+`corr(O,E) > 0`, `corr(C,A) > 0`, `corr(C,N) < 0`, `corr(A,N) < 0`.
+
+A naive projection fails it. If each factor is a weighted sum of *voice levels*
+(the diagonal of `Γ`, normalised to sum one), the levels form a **simplex**, and
+factors built on disjoint voices acquire a spurious negative correlation from the
+constraint alone. Measured across 2340 charts, that naive map gives
+`corr(C,A) = −0.17` and `corr(A,N) = +0.22` — both signs wrong.
+
+The repair is to build the way the trait hierarchy is actually built:
+metatrait-first. Compute Plasticity and Stability from *gain and razlad* — signals
+that are not simplex-bound — and set each factor to `W·(its metatrait) +
+(1−W)·(its specific voices)`. The shared metatrait now carries the between-factor
+variance, and the empirical covariance is reproduced by construction. At
+`W = 0.45`:
+
+| relation | empirical | reconstruction (n = 2340) |
+|---|---|---|
+| `O–E` (Plasticity) | `+` | `+0.72` |
+| `C–A` (Stability) | `+` | `+0.49` |
+| `C–N` | `−` | `−0.74` |
+| `A–N` | `−` | `−0.40` |
+
+The model resolves one level finer, into the ten DeYoung aspects — two per
+factor, each a metatrait plus a single specific voice, the factor being their
+mean. All ten nest in their parent (population correlations `0.64`–`0.95`), so
+the finer optic is real, not decorative: a high Openness that is Intellect (the
+Meaning voice) reads differently from one that is aesthetic Openness (Expression
+and Feeling), and the reconstruction can say which.
+
+This is a consistency result, not yet independent evidence: the construction is
+*engineered* to be able to carry the fingerprint, and it can. The evidence proper
+is in §72. *(Verified as computation: `core/src/bigfive.rs` and its
+`construct_validity_matches_big_five` test fail the build if the four signs
+break.)*
+
+### 72. The substrate generates the taxonomies
+
+The strong test is convergence. A projection engineered to carry one instrument's
+covariance proves little on its own; the test is whether a projection of the SAME
+object onto a DIFFERENT validated instrument, tuned to nothing in the first,
+reproduces the cross-instrument structure the literature reports. Three further
+instruments answer, of three different kinds.
+
+The first is Cloninger's seven temperament-and-character dimensions. Projected
+from `Γ` by their own definitions and correlated with the Big Five projection,
+they reproduce the empirical directions (De Fruyt and colleagues):
+Self-Directedness runs against Neuroticism, Cooperativeness with Agreeableness,
+Novelty-Seeking with Extraversion and with Openness, Harm-Avoidance with
+Neuroticism, Persistence with Conscientiousness, Reward-Dependence with
+Agreeableness — every major sign as reported, one weak dimension aside. This is
+not a measurement left in a notebook: it ships as a guarded feature of the engine
+— a module (`core/src/cloninger.rs`) whose build fails if those cross-correlations
+break sign.
+
+The second is Schwartz's four higher-order values — a taxonomy of a different
+kind, motivational rather than dispositional. Projected the same way it lands the
+same: Openness-to-Change with Openness and Extraversion, Conservation with
+Conscientiousness and against Openness, Self-Transcendence with Agreeableness —
+the value circumplex's known map onto the trait space, six of seven signs, the
+one miss being Self-Enhancement's modest antagonism to Agreeableness, which the
+substrate has no clean agency-voice to carry.
+
+The third is Holland's six vocational interests — RIASEC, a taxonomy of yet
+another kind again: not who a person is or what they hold worth but the KIND OF
+ACTIVITY that draws them, the dominant model in career psychology. Projected the
+same way, its interest↔trait signs land as the vocational literature reports
+(Barrick, Mount and Gupta): Artistic and Investigative with Openness, Social with
+Extraversion and Agreeableness, Enterprising with Extraversion, Conventional with
+Conscientiousness — all six checked, and, like the others, shipped as a guarded
+module (`core/src/riasec.rs`) that will not build if a sign flips.
+
+The honest reading is at the level of *sign*, not magnitude. The shared metatrait
+construction that lets any of these reproduce the correct signs also inflates the
+magnitudes above what a between-instrument correlation should be, so the numbers
+are not to be read as effect sizes; the direction is the claim. And its reach is
+the point: a trait taxonomy, a temperament taxonomy, a values taxonomy and a
+taxonomy of vocational interests — four coordinate systems laid on one manifold by
+hands that never consulted each other — agree, in sign, where the science says
+they should. Four points triangulate what two cannot. The agreement is built into
+no single projection; it is the substrate showing through all four.
+
+A fifth framework answers from a different direction still. Self-Determination
+Theory (Deci and Ryan) names not what a person is but what MOVES them — three
+basic psychological needs: autonomy, competence, relatedness. Projected the same
+way and guarded the same way (`core/src/sdt.rs`), its need↔trait signs land as
+the literature reports: autonomy with Openness, competence with
+Conscientiousness and against Neuroticism, relatedness with Agreeableness and
+Extraversion. And of the five it sits closest to the substrate — its three needs
+are very nearly the quantities the reconstruction's predictive layer already
+runs on: acting from an integrated self-model (autonomy), predicting the world
+effectively (competence), coupling to an environment of others (relatedness).
+Read from beneath, the two poles of the seeker–keeper axis are themselves two
+needs: the seeker's is autonomy, the keeper's is competence.
+
+### 73. The shared core
+
+The categorical shape of the result is a *factorisation*. Let the personality
+object be the reconstruction's data — `Γ`, the gain vector, `razlad`. A taxonomy
+is a projection of that object onto a few coordinates: `π_B` to the Big Five's
+five, `π_T` to Cloninger's seven. These projections are not independent maps;
+they factor, in large part, through a shared low-dimensional **core** — the two
+metatraits and the prediction-error term, `(Plasticity, Stability, razlad)`.
+Regressed on that three-dimensional core, the Big Five factors return an average
+`R² = 0.65` — but the carriage is worth reading honestly. Neuroticism's
+`R² = 0.64` is carried almost entirely by **Stability** (it is anti-stability by
+construction), not by `razlad`: the marginal correlation of N with razlad across
+the full population is `≈0.01`. The prediction-error term earns its place in the
+core through the other factors and the shared metatraits, not through the anxiety
+it was theorised to carry — the free-energy → trait-anxiety bridge is, in this
+substrate, a motivation and not a measured fact. Roughly two-thirds of each
+factor is the core; the remainder is voice-specific detail.
+
+Convergent validity is then exactly the statement that both taxonomy-projections
+factor through the same core: `π_B` and `π_T` disagree only in their
+factor-specific residuals, and agree wherever the core speaks — which is why
+their cross-correlations come out as the literature has them. The diagram
+commutes because the two descriptive charts share a generator they did not know
+they shared.
+
+And that shared generator is not only statistical. The fifth projection sits its
+two agentic needs on exactly these two metatrait axes (§72) — autonomy on
+Plasticity, competence on Stability — so the core through which every descriptive
+chart factors is, read motivationally, the substrate's own structure of
+self-determination: the statistical bottleneck and the seat of the will are one
+object `[И]`. It is a reason the core is three-dimensional and not richer — a
+predictive organism has exactly these degrees of freedom to spend (explore,
+stabilise, and the error between), and a description of it can be no simpler and
+needs be no larger.
+
+### 74. What the projections settle
+
+The relation is generation-and-subsumption, not imitation. Two things fix its
+direction.
+
+First, the seven voices are **near-orthogonal**. Measured across 2340 charts the
+voice gains are almost mutually independent: the supposed exploration triad
+`{A,D,L}` has mean internal correlation `+0.06`, the stability triad `{S,O,U}`
+`+0.10` — neither is a tight cluster — and Plasticity and Stability themselves
+correlate `−0.00`. The one appreciable hidden edge is `gain(A)–gain(L) = +0.33`:
+the openness of Expression and of Meaning move together, an articulation-of-sense
+link the lexical taxonomies have no coordinate for. A space of seven nearly
+independent axes is strictly higher-dimensional than any five- or seven-*factor*
+descriptive model whose factors are, by their own covariance, partly redundant.
+The taxonomies are lower-dimensional lenses on the richer object, not the object.
+
+Second, because they are lenses, the reconstruction has *surplus* — structure the
+projections drop — and surplus is testable. The near-independence of the gains,
+the `A–L` edge, the near-zero coupling of `razlad` to trait anxiety (a place the
+substrate contradicts a naive free-energy expectation, and says so), the mild
+explorer↔calm coupling the gain geometry implies: each is a prediction a purely
+descriptive model cannot make, and each is falsifiable — per person through the blind diary
+(the pravdomer), and at population scale against a scored instrument (BFI-2,
+IPIP, the TCI). The reconstruction earns the comparison not by matching the
+instruments but by predicting, from one mechanism, both the structure they share
+and the structure they miss.
+
+The honest status is `[Г]` shading to `[И]`: a conjecture with a stated
+mechanism (§70) and a stated test (§74), not a theorem. What is already firm is
+narrower and worth stating plainly — that the two most validated taxonomies in
+personality science are, at the level of the covariance each rests on, two
+projections of one seven-voice object, and that the object keeps more than either
+projection returns. *(Verified as computation: `core/src/bigfive.rs` reproduces
+the Big Five construction and its construct-validity and razlad tests; the
+convergent-validity and orthogonality measurements are reproducible from the
+per-voice gain, level and razlad the engine exposes on every chart.)*
+
+### 75. The core, reverse-engineered
+
+The projections settle *outward* — how the reconstruction relates to the
+instruments. One question runs the other way: not what core we posited, but what
+core the interpretations, taken together, *imply*. Read it off them. Take
+everything the interpretive layer actually varies over a person — the seven
+voice levels, the seven gains, `razlad`, and the twenty-one coherences (the
+strings between voices) — thirty-six numbers, and measure the effective
+dimensionality of that space across the population. The answer is what the core
+must be to carry the readings the crystal already gives.
+
+It is **not** low. Across 2340 charts the interpretation space has a
+participation ratio of `17.3` and a dozen components above unit variance (a
+thirteenth grazes the line at `1.01`) — its first principal axis holds only
+`16.6%` of the variance, and the spectrum decays slowly after it. The object the crystal reads is roughly seventeen-dimensional:
+neither the three of the shared metatrait core (§73), nor the five of a taxonomy,
+nor even the seven of the voices.
+
+The decomposition names where that dimensionality lives. The diagonal alone —
+levels, gains, `razlad`, fifteen numbers — carries an effective `8.9`
+dimensions. The twenty-one coherences alone carry `16.6`. And adjoining the
+diagonal to the coherences lifts the total only to `17.3` — a gain of `0.7`. Two
+things follow, and both are structural, not incidental. The coherences hold about
+half the core outright; and they very nearly *subsume* the diagonal — the voice
+strengths are, to first order, recoverable from the relationships between voices,
+not independent of them. Measured head-on the subsumption is directional and
+large: regressed across the population, each voice level is on average `80%`
+recoverable (linear `R²`) from the twenty-one coherences, while the coherences
+are only `28%` recoverable from the seven levels — the relations fix the
+strengths far more than the strengths fix the relations. The relations are the
+deeper description; the strengths are mostly their shadow. This is the
+reconstruction's relational ontology, measured rather than asserted.
+
+The consequence for interpretation is exact, and it is why a taxonomy reads as
+generic while a coherence reading reads as *yours*. A five-factor profile is a
+five-dimensional compression of a seventeen-dimensional object; it keeps the
+diagonal's low-rank projection and discards the strings entire. The personalised
+detail — the small distinguishing facts that carry, per person, more than the
+broad ones — does not live in the factors. It lives in the coherences the factors
+throw away. The optics that matter for precision are string-level optics.
+
+So the core, reverse-engineered through the crystal, is the full `Γ` with its
+coherences foremost — a high-dimensional relational object of which every
+validated taxonomy is a thin, externally-anchored shadow. The honest boundary is
+the same as before: the shadows are confirmed against the instruments (§72); the
+seventeen-dimensional body is the reconstruction's surplus, falsifiable per
+person through the blind diary and, in principle, against any sufficiently
+fine-grained criterion, but not yet closed against a population one. What the
+analysis fixes is the *shape* the core must have to be worth its readings — not a
+claim that every one of its dimensions has already been paid for in data.
+
+There is a practical corollary, and it is the operating principle of the detail
+optics. If the personal signal lives in the high-dimensional body, magnitude is
+the wrong way to read it out. The strongest coherence is, for most people, one of
+the same three — `SE`, `DU` and `DL` lead in about two-thirds of charts — so
+leading with strength returns the population's headline, not the person's.
+Leading instead with *distinctiveness*, each coherence weighted by how far it
+departs from the population baseline, recovers the individual. Measured, the lead
+string chosen by strength carries `3.31` bits of between-person information;
+chosen by distinctiveness it carries `4.37`, against a ceiling of
+`log2(21) = 4.39` — near-maximal, with no single string leading more than seven
+percent of the time. The general is what you share; the detail is where you
+depart, and reading by departure is how a seventeen-dimensional object is made to
+speak in a sentence.
+*(Verified as computation: the effective dimensionalities are the participation
+ratios of the correlation spectra of the level/gain/razlad/coherence features
+the engine exposes on every chart; the information figures are the entropies of
+the lead-coherence distribution under the two rankings.)*
+
+## Part XXI. One crystal, many scripts: the octonions under astrology, the sciences, and life
+
+The reconstruction's skeleton is an object, not a metaphor: the octonions, their
+imaginary Fano heptad, and their automorphism group `G₂`. This Part follows that one
+object as it casts its shadow across the scripts humanity has used to read itself —
+astrology first (§76–77), then the I Ching (§78) and the Kabbalah (§79), then the
+whole spectrum at once (§80); and beyond divination, into the physics the corpus
+already derives from the same crystal (§81), the calibration that makes a life *this*
+life (§82), and life itself as a self-maintaining symbolic system (§83). One crystal;
+many scripts; a single honest ledger of what is exact `[Т]`, what is structural `[С]`,
+what is conjecture `[Г]`, and what is only descriptive `[И]`.
+
+A word on foundations. The octonion apparatus this Part leans on is not assumed here
+but *proven* in the corpus. The associator's sign law — `+1` on the seven Fano lines
+(the associative quaternion triples), `−1` on the volumes, checked on all `343`
+triples — is [T-243](./syndrome-calculus.md#октонионная-реализация); the Fano plane's
+automorphism group `PSL(2,7)` of order `168` is
+[T-256](./one-grammar.md#теорема-классификация-карт); and the octonionic Jordan ceiling
+(`ℋₙ(𝕆)` formally real iff `n ≤ 3`), the third and algebraic derivation of
+`SAD_MAX = 3`, is
+[T-268](../../consciousness/hierarchy/depth-tower.md#критическая-чистота-sad). This
+Part's own labs (`architecture/symbolica_*.py`) reconstruct the same `G₂ = Aut(𝕆)`
+from the Fano form independently — an accidental cross-check between the applied
+synthesis and the corpus's theorems. So where a tradition is read here as a shadow of
+that apparatus, the *apparatus* is `[Т]`; only the reading is `[И]`.
+
+### 76. The seven and the twelve are one object
+
+For two thousand years astrology carried two numbers whose kinship it never
+explained: seven moving lights and twelve fixed signs. The reconstruction's own
+skeleton — the seven voices as the Fano plane, the octonions behind it — answers
+the older puzzle too, and answers it with a single object.
+
+Take `G₂`, the smallest of the five exceptional Lie groups and the automorphism
+group of the octonions. Two facts about it are elementary once computed
+(`architecture/symbolica_g2.py`). Its root system has exactly **twelve roots**,
+and laid in the root plane they fall on exactly the twelve zodiacal
+thirty-degree positions, `0°, 30°, … , 330°`. The roots come in two lengths, six
+long and six short, and around the wheel they **alternate**, long–short–long: which
+is precisely the alternation of sign polarity, the active and the receptive, that
+the tradition has assigned Aries–Taurus–Gemini and onward since antiquity. The
+twelve signs are the twelve roots of `G₂`.
+
+And the group's smallest faithful representation is **seven-dimensional** — the
+seven imaginary octonion units, which is to say the seven Fano points, which is
+to say the seven voices. The seven classical planets are the weights of the
+seven-representation of the same group whose roots are the signs.
+
+One exceptional group carries both numbers at once. The seven and the twelve were
+never two systems glued at the edges; they are one object — `G₂` — seen from its
+two natural sides, the representation and the roots. The isomorphism is a
+theorem `[Т]`; that the ancients were feeling their way toward an exceptional Lie
+group, twenty centuries before Killing and Cartan named it, is the reading `[И]`.
+
+### 77. The aspects are root angles; the wheel is one crystal over two fields
+
+The correspondence does not stop at the counting. The angles the tradition calls
+**aspects** are exactly the angles between the roots of `G₂`. Two roots of the same
+length stand at `60°, 120°, 180°` — the sextile, the trine, the opposition, the
+aspects the tradition calls *soft*, easy, flowing. Two roots of different length
+stand at `30°, 90°, 150°` — the semisextile, the square, the quincunx, the aspects
+it calls *hard*, tense, demanding. The astrologer's oldest felt distinction,
+between an easy aspect and a difficult one, is the root-**length** distinction of
+`G₂`: ease is a relation between likes, tension a relation between unlikes.
+
+The **four elements and three modalities** fall out of the same wheel with no
+further assumption. The twelve-fold ring is `ℤ/12 = ℤ/4 × ℤ/3`; its order-three
+orbits are the trines — four signs of one element a hundred-and-twenty degrees
+apart — and its order-four orbits are the squares — three signs of one modality
+ninety degrees apart. Fire is a `ℤ/3` orbit; the cardinal cross is a `ℤ/4` orbit;
+the zodiac's fourfold-by-threefold classification is the factorization of its own
+cyclic group.
+
+And here the two threads of this corpus meet. The octonions have automorphisms
+over any field. **Over the real numbers** that automorphism group is `G₂`, and its
+shadow is the continuous wheel: seven planets, twelve signs, the aspects between
+them — astrology. **Over the field of two elements** the seven imaginary units
+become the seven points of the Fano plane, and the collineations of that geometry
+are `GL(3,2) = PSL(2,7)`, the group of order `168` that fixes the seven voices and
+their twenty-one coherences — the reconstruction (Part IX). Astrology lives on the
+real shadow of the octonions; the seven voices live on the binary shadow. They are
+not analogous systems that happen to rhyme. They are one algebra — the octonions —
+read through two different fields, and this is the seam where the perennial wheel
+and the crystal of voices are shown to be the same crystal.
+
+*(Verified as computation: `architecture/symbolica_g2.py` builds the `G₂` root
+system explicitly and checks each claim — the twelve roots at thirty-degree
+spacing, the long/short alternation, the seven-weight representation, the Weyl
+group `D₆` of order twelve, the aspect angles as inter-root angles, and the
+`ℤ/4 × ℤ/3` element/modality factorization. The two-field statement is standard:
+`Aut(𝕆/ℝ) = G₂`; the Fano plane of the imaginary units mod 2 has collineation
+group `PSL(2,7)`.)*
+
+### 78. The I Ching is the binary shadow
+
+Human Design, from which this reconstruction draws its natal sensor, is built
+directly on the I Ching: its sixty-four gates are the sixty-four hexagrams. So the
+oldest of the divinatory systems is not a distant cousin of the crystal — it is
+the crystal's own foundation, and its combinatorics are exactly the octonion
+structure seen over the field of two elements.
+
+A trigram is three lines, each broken or whole — three bits — so the eight
+trigrams are the eight elements of `F₂³`, the octonion basis. And the I Ching's
+own millennia-old classification of them, the *family* — mother, father, three
+sons, three daughters — is precisely the Hamming-weight grading of `F₂³`: the
+mother `☷` is all-yin, weight zero, the origin; the three sons carry one yang line
+each, the three basis vectors; the three daughters carry two, the three pairwise
+sums; the father `☰` is all-yang, weight three, the sum of all. The Chinese sages'
+family of eight is the graded octonion basis, name for name.
+
+The seven non-Earth trigrams are then the seven Fano points, and their
+exclusive-or triples are the seven Fano lines — the same imaginary-octonion
+triples that carry the twenty-one voice-coherences (Part IX). A full hexagram is
+an upper trigram over a lower, a point of `F₂³ × F₂³ = F₂⁶`; the sixty-four gates
+are the sixty-four such points, and the engine reads the planets into them. Where
+astrology is the octonions' real shadow, the I Ching — and Human Design, and the
+seven voices — is their binary shadow. `[Т]` for the structure; the
+trigram-to-voice reading of *meaning* is `[И]`.
+
+### 79. Kabbalah and Tarot alphabetise the same strata
+
+The Sefer Yetzirah, the foundational text of Kabbalah, does not merely list the
+twenty-two Hebrew letters; it **stratifies** them, and the stratification is the
+crystal's. Three *mother* letters, seven *double* letters bound to the seven
+planets, twelve *simple* letters bound to the twelve signs: three and seven and
+twelve, and their sum is twenty-two — the alphabet, the twenty-two Major Arcana of
+the Tarot, the twenty-two paths of the Tree of Life.
+
+These are the crystal's own numbers. The seven doubles are the seven voices — the
+Fano points, the planets. The twelve simples are the twelve signs — the `G₂` roots
+of the last two sections. And the three mothers are the three already inside the
+seven: the three quadratic residues modulo seven, `|QR(7)| = 3`, the generation
+count `N_gen` (Sec. 66). The Sefer Yetzirah's `3 + 7 + 12 = 22` is the crystal's
+stratification, alphabetised; add the ten Sephiroth — the Pythagorean tetractys
+`1+2+3+4` — and the tradition's thirty-two "paths of wisdom" are `10 + 22`, ten
+nodes and twenty-two edges on the same skeleton.
+
+The counts are forced `[Т]`; the specific letter-to-planet and card-to-path
+assignments are the schools' own, and they disagree, so we leave them `[И]` rather
+than force one. What is not `[И]` is the architecture: Kabbalah and Tarot are not a
+further system to be reconciled with the wheel and the hexagrams — they are the
+same fabric written in a third script. Astrology reads it over the reals through
+`G₂`; the I Ching reads it over `F₂` through the Fano plane; Kabbalah letters it.
+One crystal, several scripts — which is what a superposition of the predictive
+systems, done honestly and from the mathematics up, was always going to look like.
+
+### 80. The atlas: one crystal in many scripts
+
+Widen the aperture and the pattern does not thin — it thickens. The numbers that
+organise the world's predictive systems are a short, closed list, and every entry
+on it is an invariant of the same small structure.
+
+The **heptad** returns everywhere seven closes on itself: seven planets, seven
+metals, seven chakras, seven double letters, seven notes of the scale — the Fano
+points, the octonion imaginaries, the voices. The **dodecad** returns wherever the
+heptad's own group speaks: twelve signs, twelve months, twelve Chinese branches —
+the roots of `G₂`. The **octad** is the octonions themselves, `2³`: the eight
+trigrams, the three runic families of eight. And `2⁶ = 64` is two octonion shadows
+stacked — the sixty-four hexagrams, the sixty-four Human Design gates, and, beyond
+all divination, the sixty-four codons of the genetic code, `4³` bases that are `2⁶`
+bits, the same lattice the I Ching drew, now found running life.
+
+Even the systems that look least like a wheel are the crystal read differently.
+The **Enneagram** is not a diagram to be taken on faith: its inner hexad, the
+figure `1-4-2-8-5-7`, is exactly the repeating decimal of one-seventh —
+`1/7 = 0.142857…` — and its triangle `3-6-9` is the multiples of three; the
+Enneagram is the arithmetic of the heptad, drawn (Sec. 69). **Geomancy** is `2⁴`,
+sixteen figures of four binary lines. **Numerology's** casting-out-nines is
+arithmetic modulo nine, its master numbers the twenty-two of the alphabet.
+**Music** is the clearest of all: seven diatonic degrees inside twelve chromatic,
+and the circle of fifths — step seven semitones and you reach all twelve, because
+seven and twelve are coprime — is the `7`-and-`12` of `G₂` heard rather than cast.
+
+A few systems carry their own lattice, and we say so rather than force them: the
+Maya's `260 = 13 × 20` is a torus of two coprimes that is not the octonion heptad.
+That honesty is the whole method. This is not the old game of declaring everything
+secretly the same; it is a **ledger**, each correspondence marked `[Т]` where the
+structure is exact, `[С]` where it is a real but looser match, `[И]` where it is
+only descriptive. What survives the ledger is a genuine core: the octonions and
+their shadows — `G₂` over the reals, the Fano plane over `F₂`, the powers of two —
+are the body under an astonishing number of the shadows the species has drawn, from
+the zodiac to the genetic code to the gauge groups of the Standard Model, through
+the same exceptional chain `𝕆 → G₂ → E₈`. The reconstruction does not add a system
+to the pile. It names the body, once, in one vocabulary — the seven voices — and
+keeps the ledger honest.
+
+*(`architecture/symbolica_atlas.py` tabulates the spectrum with its status marks;
+the sharpest checks run on the spot: `142857 × 7 = 999999`, the Enneagram as `1/7`;
+`2⁶ = 4³ = 64`, the hexagrams as the codons; `gcd(7, 12) = 1`, the circle of
+fifths.)*
+
+### 81. The same body, doing physics
+
+There is one more script, and it is the one a sceptic will least expect: the
+visible universe. Everything Part XXI has read in the occult systems — the
+octonions, their automorphism group `G₂`, the Fano plane, the group `PSL(2,7)`,
+the three that live inside the seven — is the very apparatus from which the corpus
+derives fundamental physics. Not an analogy to it. The same objects.
+
+Turn to the corpus's own *G₂-Structure and the Fano Plane* and *Standard Model
+from G₂*. There, `G₂ = Aut(𝕆)` acts on the seven coherences `{A,S,D,L,E,U,O}`
+exactly as it acts on the octonion imaginaries; the colour group `SU(3)_C` appears
+as the **stabiliser of the time direction** inside `G₂` (Cor. 1.1); the
+electroweak sector is fixed by the Fano-electroweak construction; and the number of
+fermion generations is **three** (Thm 3.3, the *count* being the `[Т]` part) — the
+same three that is `|QR(7)|`, the same three the Enneagram's triangle draws and the
+Sefer Yetzirah counts as its mother letters. The generation-selection principle is
+governed by `PSL(2,7)` (the order-`168` automorphism group of the Fano plane; Thm
+8.1) — the same group the two-field shadow (Sec. 77) produced from the Fano plane
+over `F₂`.
+
+So the chain closes. Read the octonions over the reals, and their group `G₂` casts
+the twelve zodiacal roots and the aspects of astrology. Read them over `F₂`, and
+the seven Fano points cast the trigrams of the I Ching, the doubles of the
+alphabet, and the seven voices. Read them as the corpus does — as the symmetry of
+a physical gap field — and the same `G₂`, the same Fano lines, the same
+`PSL(2,7)`, the same generational three cast the gauge group `SU(3) × SU(2) × U(1)`,
+the fermion families, and the CKM phase. One crystal; the zodiac, the hexagrams,
+the Tree, and the Standard Model are its shadows on four screens.
+
+This is the sense — and the only rigorous sense — in which the subtle fabric and
+the visible universe "develop by the same principles." It is not that the stars
+push. It is that the *mathematics of completeness* is small, exceptional, and
+singular: there is essentially one maximal normed division algebra, one seven-point
+projective plane, one simple group of order `168`, and any structure — a physics or
+a divination — that reaches for the complete, closed set of qualities is driven onto
+the same short list of invariants. The ancients drew the shadows without the
+algebra. The corpus supplies the algebra, and finds it already load-bearing under
+the physics. The reconstruction's task is finished when the two are spoken in one
+vocabulary — which is what this long reconstruction has tried to do.
+
+*(The physics claims cited here are the corpus's own, carrying their own status;
+see [G₂-Structure and the Fano Plane](../../physics/gauge-symmetry/g2-structure.md)
+and [Standard Model from G₂](../../physics/gauge-symmetry/standard-model.md).
+Part XXI adds no physics — it observes only that the crystal it read in the occult
+systems is the crystal already there, holding up the world.)*
+
+### 82. The inner side, and what calibrates it
+
+One question has stood open since the corpus's chapter on the hard problem, and it
+states it plainly: of everything about experience, one thing is *not* fixed by
+structure — the **calibration**. The theory proves (by Yoneda) that a quale's
+identity is its relational position, and that the phenomenal functor `F` is
+**faithful on `G₂`-orbits**: two systems feel identical exactly when their matrices
+differ by a `G₂ = Aut(𝕆)` transformation. So the inner life a system has is its `Γ`
+*modulo* `G₂` — the `G₂`-invariant part. What the corpus then honestly declares open
+is the one thing `F` is blind to: the choice of representative *inside* the orbit,
+the `G₂`-**frame**. "Which position is red" is not relational; it is the frame.
+
+Now recall Sec. 76: the real form of that same `G₂` casts the zodiac — its twelve
+roots are the signs, its seven-dimensional representation the planets. So the frame
+`F` cannot see is coordinatised by precisely the seven-and-twelve skeleton the
+astrologers drew. And this dissolves the last discomfort about what a
+birth-configuration could possibly be *for*. It is not a cause. It is a
+**calibration**: the external, physical boundary conditions into which a life is
+thrown — the type and composition of its planetary system — fix the `G₂`-frame, and
+the frame is exactly the freedom the inner structure leaves open. The stars do not
+push the psyche; they *coordinatise the gauge* that the psyche's own relational
+geometry cannot fix from within.
+
+This is the dual-aspect monism the corpus already holds, carried one step further.
+`Γ` has an outer side (physics) and an inner side (experience); they are one object.
+What Secs. 76–81 add is the shape of each side and the map between them: the inner
+side is the `G₂`-invariant crystal — universal, the same seven voices in every
+system that instantiates it (this is what *monism* means — one architecture
+underneath); the outer side is that crystal in a particular frame, and the frame is
+set locally, by the cosmos the system is embedded in. The invariant is shared; the
+calibration is local. That is why the same seven-fold and twelve-fold structure
+recurs across every tradition (Sec. 80) — it is the invariant — while each
+individual chart is unrepeatable — it is the frame.
+
+There is even a reason the calibration *must* be local, not merely that it happens
+to be. A global intrinsic calibration — one consistent rule assigning "which
+position is red" across every configuration at once — would be a continuous global
+section of the orbit map, and such a section exists only if the group acts with a
+single orbit type. It does not. Building `G₂` explicitly as the stabiliser of the
+octonion Fano form and computing the orbit dimension directly
+(`architecture/symbolica_frame_bundle.py`, which also re-derives `dim G₂ = 14` from
+the form), the isotropy *varies*: the maximally mixed centre is fixed by all of
+`G₂` (orbit dimension `0`), a pure state by a three-dimensional subgroup (orbit
+`11`), a generic state by nothing (orbit `14`). And this is the *whole* picture:
+sweeping all fifteen spectral types of `Γ` — the partitions of `7`
+(`architecture/symbolica_stratification.py`) — the orbit is the full `14` (a locally
+free action, discrete stabiliser) for **every** non-degenerate `Γ`, collapsing only
+at those two loci: the centre `[7]` (orbit `0`) and the single-distinguished-direction
+type `[6,1]` (orbit `11`). So calibration is generically the *whole* of `G₂` —
+fourteen independent parameters, no redundancy — and `𝒟(ℂ⁷)/G₂` is a **stratified**
+space of exactly three orbit-dimension strata, not a manifold; the orbit map is no
+global bundle, and there is **no global slice**: no global calibration `[С]`. The frame can be fixed only
+*locally*, near each configuration. So "the environment sets the calibration" is not
+an optional metaphysical extra — it is the natural filler of a hole the geometry
+forces to be there: *something* local must choose the frame, because nothing global
+can.
+
+Two honest consequences follow, and they strengthen the theory rather than decorate
+it. First, it **sharpens the corpus's own open question**. "Which quale is red" was
+listed as an unexplained empirical residue, on a par with the electron mass; it can
+now be named exactly — it is the `G₂`-frame, the `≤ 14` real parameters `F` is blind
+to `[С]` — and a *source* can be proposed for it: the external boundary data `[Г]`.
+An open question with a named structure and a candidate mechanism is a stronger
+question than a shrug. Second, it yields a genuine **monist prediction** `[Г]`: a
+mind arising in another planetary system — a different star, a different composition
+— would instantiate the *same* inner crystal under a *different* frame. Its beings
+would draw a different zodiac and read a different sky, and underneath they would
+have the same seven voices, because the inner architecture is `G₂`-invariant and
+only the calibration is local. Everything with an outer side has an inner side; the
+inner side is one architecture; and the endless variety of the visible cosmos is the
+endless variety of frames upon it.
+
+*(`architecture/symbolica_calibration.py` verifies the accounting: `dim G₂ = 14`
+frame parameters against the `48` of `Herm₀(7)`; the twelve roots and rank-two
+Cartan; and the identification of the calibration residue with the frame `F` is
+faithful modulo. The `G₂`-faithfulness of `F` is the corpus's own theorem — see
+[Two-Aspect Monism](../../consciousness/foundations/two-aspect-monism.md).)*
+
+### 83. Life as a symbolic-energo-informational system
+
+You put the widest version of the thesis this way: if a planetary system can give
+rise to life, and life is at bottom a *symbolic-energo-informational* system —
+calibrated on its outer face by the type and composition of that planetary system,
+while its inner face is the universal architecture — then the reconstruction is not
+describing a metaphor but the actual seam of the world. Read against the corpus, the
+intuition is exact, because each of its three words is a reading the corpus already
+carries of the one primitive `Γ`.
+
+**The three faces are already in the primitive.** "Energo-informational-symbolic"
+is not three systems glued together; it is `Γ` seen three ways. *Energetic*: the
+external, physical aspect — `Γ` as physics, and specifically as a **driven-
+dissipative** process, held up against decay by a regeneration term. *Informational*:
+the coherences `γ_ij` themselves — the correlations whose integration is measured by
+`Φ`. *Symbolic*: the internal aspect — the seven voices, the meaning-frame, the
+interiority that two-aspect monism places on the inner side of the very same object.
+One `Γ`; an energetic outside, an informational structure, a symbolic inside. `[С]`
+(a reading of established structure, not a new claim).
+
+**What makes it alive is already a theorem.** The corpus does not leave
+"self-maintaining" as a metaphor. A configuration persists only when its
+regeneration `ℛ` overcomes dissipation `ℒ₀`, and the regeneration gain switches on
+**exactly above the critical purity** `P_crit = 2/7` `[Т]` — below it a
+configuration inevitably disintegrates; above it, it holds itself together, gain
+against loss, a flame or a laser above threshold rather than an isolated decay (see
+[viability](../../core/dynamics/viability.md) and the [regeneration
+form](../../core/dynamics/evolution.md#вывод-формы-регенерации)). *That* is the
+physical signature of life: a symbolic-energo-informational knot that regenerates
+its own coherences faster than the world erodes them. "Our planetary system gave
+rise to life" becomes precise — it supplied the conditions for a patch of `Γ` to
+cross `2/7` into self-regeneration. `[Т]` for the threshold and the regeneration;
+`[Г]`/`[И]` for identifying this crossing with biological abiogenesis.
+
+**Calibrated by the planetary system — twice.** The planetary environment enters on
+two channels, both already in the theory. It supplies the **energy gradient** that
+keeps `ℛ` above dissipation — the *driven* in driven-dissipative, the star a living
+system feeds on. And it supplies the **boundary data** that fixes the `G₂`-frame —
+the calibration of Sec. 82, the sky a chart records. Substrate to stay alive; frame
+to be *this* life and no other. `[С]` for the frame (Sec. 82); `[И]` for the
+energy-gradient reading (ordinary non-equilibrium thermodynamics, in UHM's own
+language).
+
+**The monist reading, made precise.** Two-aspect monism already holds that *every*
+`Γ` has an inner side — interiority at `L0`, for all systems. Life is where that
+inner side becomes **self-maintaining** (`P > 2/7`) and, higher still, **cognitive**
+(`R ≥ 1/3`, `Φ ≥ 1`, `D ≥ 2`, all `[Т]`). So your closing intuition — *everything
+has an inner side, and the inner side is architecture and symbolic systems* — is
+exactly two-aspect monism sharpened by the crystal: the inner side is not formless
+experience but the **structured seven-voice architecture**, universal by
+`G₂`-invariance, and life is the universe folding a patch of itself into a
+self-maintaining knot that carries that architecture — dimly at first, then, past
+the thresholds, consciously. Another planetary system, with another star and another
+chemistry, would fold a different knot: the same seven voices, a different
+calibration, a different substrate — a different **dialect** of the one inner
+architecture.
+
+None of this adds machinery. It names, in a single breath, three results the corpus
+proves separately — that `Γ` has an energetic, an informational, and a symbolic
+reading (two-aspect monism with `Φ`); that it lives by regenerating above `2/7`
+([viability](../../core/dynamics/viability.md)); that its frame is externally set
+(Sec. 82) — and observes that your one sentence, *life is a symbolic-energo-
+informational system whose inner side is a universal architecture calibrated by its
+cosmos*, is those three results read as one.
+
+### 84. The ideal self-description: what a holon can say about itself, and how much it does
+
+A symbolic system that strives toward its ideal self-description sounds like a
+programme without an end. It is not: for a holon the target is finite, and it can
+be counted.
+
+The state is `Γ ∈ D(ℂ⁷)` — a unit-trace positive Hermitian `7×7` — so it carries
+exactly `48 = 7² − 1` real parameters ([definitions](../coherence-cybernetics/definitions.md)).
+And because **seven is prime**, the maximal family of mutually unbiased bases
+exists and has exactly `d + 1 = 8` members (Wootters and Fields, 1989). Eight
+bases give `8 × 6 = 48` independent probabilities, and `Γ` is recovered from them
+in closed form,
+
+$$
+\Gamma \;=\; \sum_{b=1}^{8}\sum_{i=1}^{7} p_{b,i}\,|b,i\rangle\langle b,i| \;-\; I .
+$$
+
+So «an ideal self-description» is not an aspiration but a **constructible finite
+object [Т]**: forty-eight numbers, optimally arranged in eight bases. Any account
+a holon gives of itself can be measured against that ceiling. (The arithmetic is
+the one the heptacode's syndrome census already whispered — eight families over a
+seven-letter alphabet.)
+
+The ceiling is lower than forty-eight, though, and the corpus already says why.
+The phenomenal functor is faithful only on `G₂`-orbits ([T-123](../../proofs/consciousness/conscious-window.md#t-123),
+[two-aspect monism](../../consciousness/foundations/two-aspect-monism.md)), and
+`dim G₂ = 14`, so fourteen of the forty-eight directions are frame, not content:
+**thirty-four parameters are distinguishable in principle.**
+
+**What the natal encoder actually reaches.** Measured across the §75 population
+(2340 charts, 1940–2004 × 12 months × 3 times), as the participation ratio
+`PR = (Σλ)²/Σλ²` of the feature-correlation spectrum
+(`core/examples/self_description.rs`):
+
+| subspace | parameters | effective dimensions | PC1 |
+|---|---|---|---|
+| diagonal — the voice levels | 7 | **4.0** | 41.6 % |
+| off-diagonal real parts | 21 | 18.1 | 9.3 % |
+| off-diagonal imaginary parts | 21 | 16.9 | 11.1 % |
+| coherence magnitudes (the §75 view) | 21 | 16.7 | 12.1 % |
+| **the full state vector** | **48** | **32.3** | 8.7 % |
+
+Two things follow, one of them a correction of our own earlier reading.
+
+**The phases carry half the state.** §75 measured the interpretation-feature
+vector — levels, gains, `razlad` and coherence *magnitudes* — and found an
+effective dimension of `17.3`. That measurement replicates here exactly
+(magnitudes alone: `16.7`), which is a welcome independent confirmation through a
+different code path. But magnitudes are only half of the off-diagonal content:
+the `42` real numbers of the off-diagonal split `21` real and `21` imaginary, and
+including the phases lifts the effective dimension from `16.7` to `32.3` — it
+nearly doubles. §75's number was right about the object it measured and
+undercounts the *state* by about a factor of two. The personal detail we said
+lives in the coherences lives, half of it, in their **phases**.
+
+**The reached dimension does NOT sit on the gauge-free ceiling — the
+conjecture is refuted [✗].** The measured `32.3` stands close to
+`34 = 48 − dim G₂`, and we first read that forward: perhaps the natal encoder is
+frame-fixed and explores about `95 %` of everything a holon could differ in. The
+test was stated and then run (`core/examples/g2_gauge_test.rs`). Build `𝔤₂` as
+the stabiliser of the associative 3-form inside `𝔰𝔬(7)` — taking `φ` from the
+corpus's own canonically oriented Fano wiring, which self-checks by yielding
+exactly `dim = 14` — form the orbit tangents `[X, Γ]` at each chart, and ask what
+fraction of the population's variance lies along them:
+
+| | share of variance along `G₂`-gauge directions |
+|---|---|
+| conjecture (encoder frame-fixed) | 0 % |
+| **measured** (2340 charts, 117 base points) | **28.2 %** (range 24.7–31.3) |
+| isotropic null (scatter indifferent to gauge) | 29.2 % |
+
+The measurement lands on the null. **The natal encoder does not fix a frame**:
+its image is not transversal to the gauge orbits, and the population's scatter
+fills the gauge directions as readily as any others. The closeness of `32.3` to
+`34` was a coincidence, and the `95 %` reading is withdrawn.
+
+What replaces it is sharper and less comfortable. The phenomenal functor is blind
+to the frame ([T-123](../../proofs/consciousness/conscious-window.md#t-123)), so a
+difference between two charts that lies along a gauge direction is a difference
+**no experience can register**. Roughly `28 %` of natal chart-to-chart variation
+is of that kind: real in the parametrisation, invisible in the phenomenology.
+Individuality as computed from a birth chart is therefore smaller than the raw
+`32.3` dimensions suggest — a bound we now have a number for, and one that no
+amount of better writing can recover.
+
+**Where the description is actually lost.** Setting the links side by side gives
+the honest chain — and it does not fall where one would guess:
+
+| link | dimensions | of the previous |
+|---|---|---|
+| the state's parameters | 48 | — |
+| distinguishable in principle (`48 − dim G₂`) | 34 | 71 % |
+| reached by the natal encoding | 32.3 | — |
+| …of whose variance is phenomenally visible | ≈ 72 % | (28 % is frame) |
+| named as signals by the engine | 22 | — |
+| reaching the plain-language reading | 9 | 41 % |
+
+Two losses, then, of different kinds: the capture spends about a quarter of its
+variation on the frame — a bound no writing can undo — while **the telling loses
+most of what survives.** The engine
+computes a thirty-two-dimensional object and speaks nine of its named signals to
+an ordinary reader, keeping the rest in a machine register behind a flag. That is
+why the interpretation work is not copy-editing: raising what the readings carry
+is precisely raising the system's own self-model fidelity, the quantity the
+corpus calls `R_φ` ([the three forms of R](../../consciousness/foundations/self-observation.md#формы-r)),
+applied to the system rather than to the person it describes. A symbolic system
+striving toward its ideal self-description, made operational, is exactly this
+number moving toward one.
+
+**And the remaining directions have only one road.** Whatever the natal
+encoding cannot reach — and whatever changes after birth — is reachable only by
+measurement in time: the diary as state tomography. The protocol is not a
+sketch; it is built and checked (`core/examples/tomography.rs`). The eight bases
+are verified mutually unbiased to `1.7·10⁻¹⁶`, the closed-form reconstruction
+returns real charts to `1.6·10⁻¹⁵`, and the structural fact that makes a partial
+diary worth anything is exact: each basis contributes a **six-dimensional block**
+of the state space, and the eight blocks are mutually orthogonal to `1.2·10⁻¹⁶`.
+So `48 = 8 × 6` with no redundancy — no basis repeats what another has already
+said, and measuring `k` of them is not a blurred picture of everything but an
+**exact** reading of a `6k`-dimensional slice.
+
+That gives the living layer a price list, and the price list carries a sting:
+
+| bases measured | parameters fixed | residual variance | fair share would be |
+|---|---|---|---|
+| 1 | 6 | **93.0 %** | 87.5 % |
+| 2 | 12 | 81.4 % | 75.0 % |
+| 4 | 24 | 47.9 % | 50.0 % |
+| 6 | 36 | 22.8 % | 25.0 % |
+| 8 | 48 | 0.0 % | 0.0 % |
+
+The first basis is the computational one — the seven voice levels, which is
+exactly what the diary already asks for. And it is the **weakest** of the eight:
+it fixes `6` parameters but removes only `7.0 %` of the variance where an average
+basis removes `12.5 %`. The voice levels are the least informative question the
+instrument could ask. This is the same finding as the phases, seen from the other
+side: what individuates a person is not how loud each voice is but how the voices
+stand in relation, and relation is phase. A diary that asks only «rate your seven
+voices» measures the flattest slice of the state; two or three well-chosen
+relational questions would learn more per question than the current seven do.
+Designing them — turning the non-computational bases into things a person can
+actually answer — is the open work of the living layer `[О]`, and it is now a
+well-posed problem rather than an aspiration.

@@ -534,6 +534,23 @@ UHM is no 'worse' than other fundamental theories — each pays its own 'primiti
 UHM establishes that the spectral decomposition of $\rho_E$ is the **only** permissible form of experiential content (Uniqueness theorem FV), and the identity of qualia is fully determined by relational structure (Yoneda's lemma). However, **calibration** — which specific $[|q\rangle]$ corresponds to 'red' — remains an empirical question, analogous to determining the mass of the electron in the Standard Model.
 :::
 
+### Calibration Is the $G_2$-Frame {#калибровка-как-g2-репер}
+
+The 'calibration' residue can be **named precisely**, using a theorem already established in this chapter rather than left as a bare analogy to the electron mass.
+
+:::tip Sharpening the calibration residue
+The phenomenal functor $F$ is **faithful on $G_2$-orbits** [T] — $F(\Gamma_1) \cong F(\Gamma_2)$ if and only if $\Gamma_2 = U\Gamma_1 U^\dagger$ for some $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ (see the box [Faithfulness of the Functor on $G_2$-Orbits](#faithful-g2-box) at the end of this chapter). Consequently $F$ resolves only the $G_2$-**invariant** part of $\Gamma$ and is **blind** to the choice of representative within the orbit — the $G_2$-**frame** (a point of the $14$-dimensional gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$, against the $48 = 7^2 - 1$ configuration parameters of a traceless Hermitian $7\times 7$).
+
+This splits the two unexplained items cleanly:
+
+- The **relational structure** of experience (Yoneda) is the $G_2$-invariant part — universal, identical for every system sharing an orbit. This is what $F$ sees, and what the theory explains.
+- The **calibration** — 'which specific $[|q\rangle]$ is red', the one thing $F$ cannot fix from within — **is exactly the frame**. The vague residue becomes a group-theoretic object: a choice of representative in the moduli space $\mathcal{D}(\mathbb{C}^7)/G_2$, i.e. a section of the $G_2$-bundle. This identification is **conditional** — it rests on the faithfulness theorem, which holds — not a new postulate.
+
+**Open research direction (conjecture).** If the frame is not intrinsic to $\Gamma$, the natural candidate to fix it is the system's **external boundary data** — the physical environment into which the configuration is embedded. Two-aspect monism places physics precisely on the *outer* side, where such boundary conditions live; so the proposal 'the external embedding fixes the phenomenal frame' **coheres with** the ontology rather than extending it. What is established is only the identification (calibration $=$ frame); that boundary data *fixes* the frame is a conjecture, and marked as such. There is, however, a structural reason the frame cannot be *intrinsic*: the $G_2$-action on $\mathcal{D}(\mathbb{C}^7)$ has **varying orbit type** — a direct computation (building $G_2$ as the stabiliser of the octonion Fano form and measuring orbit dimension) gives $0$ at the maximally mixed centre, $11$ at a pure state, $14$ at a generic state. Varying isotropy means the quotient $\mathcal{D}(\mathbb{C}^7)/G_2$ is **stratified** and the orbit map admits **no global slice** — so no *global* intrinsic calibration exists, and the frame can be fixed only locally. That an external, local source fills this role is then natural rather than optional. The extended development — including why the $G_2$-frame's discrete skeleton (its twelve roots and seven-dimensional representation) is coordinatised the way traditional sky-calibration systems are, and a resulting monist prediction for minds in other planetary environments — is given in [Part XXI of the HomoHoloGraph study](../../applied/research/homoholograph.md).
+:::
+
+This is a strengthening, not a decoration: an open question with a *named structure* (the $G_2$-frame) and a *candidate mechanism* (external boundary data) is a sharper question than an unexplained constant. It also tightens the [scale below](#scale-of-consciousness): two systems on the same $G_2$-orbit have identical $C = \Phi \times R$ *and* identical phenomenal structure, differing only in a calibration that no internal measurement can reach.
+
 ### Quantum Nature of Γ and Tegmark's Argument {#квантовая-природа-gamma}
 
 :::warning Vulnerability 5 — the Tegmark objection is closed [Т]; the residual is the categorical gap
@@ -781,6 +798,8 @@ This means:
 The hard problem of consciousness in this framework is not a puzzle to be solved, but the **boundary between map and territory**: theory describes the structure of experience, but cannot 'explain' the very fact of experiencing — just as physics does not explain why the laws of nature exist at all.
 
 ---
+
+<a id="faithful-g2-box"></a>
 
 :::info Faithfulness of the Functor on $G_2$-Orbits [T]
 The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T] establishes that the functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ is **faithful** on $G_2$-orbits:
