@@ -816,6 +816,9 @@ Using the protocol from [Measurement Methodology](./measurement#измерени
 
 **(c)** $\sigma_E = 0.39$ — the highest. Midline structures (Fz, Pz) show reduced power. This may indicate a deficit in interoceptive processing — consistent, for example, with alexithymia or depersonalization.
 
+
+
+**Honesty note (added 2026-07-25).** Band powers give the *diagonal* of $\Gamma$ only, so this profile uses the diagonal proxy $\sigma_k = 1 - 7\gamma_{kk}$ for all seven rows. The canonical panel (T-92, errata 2026-07-22) computes $\sigma_E$ from $D_{\text{diff}}$ and $\sigma_U$ from $\Phi$ — both invisible to band powers, since they live in the coherences. Treat the EEG profile as a first approximation that genuinely measures the A, D, L rows, and read its $\sigma_E$, $\sigma_U$ entries as proxies, not as the T-92 quantities.
 </details>
 
 ---
