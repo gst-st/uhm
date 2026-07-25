@@ -458,7 +458,7 @@ Physics does not explain *why* the laws of nature exist — it describes their s
 | **Fano symmetries of coherences** | 7 triplets $(e_i, e_j, e_k)$ of the Fano plane should be distinguishable in the structure of coherences $\gamma_{ij}$ | [T] |
 | **$G_2$-covariance** | The dynamics of $\Gamma$ must be covariant with respect to $G_2 \subset SO(7)$, not the full $SO(7)$ | [T] |
 | **Associator anomalies** | Triple interactions of dimensions should exhibit non-associativity: $[x, y, z] \neq 0$ | [T] |
-| **Hamming threshold** | Structure $H(7,4)$: system is viable with loss of up to 3 of 7 coherences (error correction) | [T] |
+| **Hamming threshold** | Structure $H(7,4)$, exactly as in the canon ([T-93](/docs/core/dynamics/gap-dynamics#код-хэмминга)): **1** coherence violation is corrected automatically by the regenerator, **2** are detected via the syndrome measurements (E, O, U); beyond two the code is unreliable ($d = 3$). *Erratum 2026-07-25: this previously read «viable with loss of up to 3 of 7» — unsupported by T-93 and inconsistent with $d=3$ (the guarantee is $\lfloor(d-1)/2\rfloor = 1$ correction, $d-1 = 2$ detections); found by machine-checking the table against the canon.* | [T] |
 
 :::tip Bridge [T] — fully closed (T15)
 The connection (AP)+(PH)+(QG)+(V) → P1+P2 is established via the complete formal chain T15 (12 steps, all [T]). T11–T13 prove the former condition (МП). All octonionic predictions are consequences of the structural derivation [T].
