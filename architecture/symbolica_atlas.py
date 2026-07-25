@@ -1,0 +1,100 @@
+# -*- coding: utf-8 -*-
+"""symbolica_atlas.py — the wide synthesis: the whole spectrum of predictive
+systems (and beyond) as shadows of ONE small set of invariants.
+
+Thesis: the recurring counts of the world's symbolic systems — 3, 4, 7, 8, 9,
+12, 22, 64 — are not free. They are the stable combinatorial invariants of the
+smallest exceptional structures: the octonions (8 = 2^3), their imaginary Fano
+heptad (7), the automorphism group G2 (12 roots), and the binary powers F2^n.
+Any tradition reaching for 'the complete set of qualities' rediscovers them.
+We catalogue the spectrum, mark each link [Т] exact / [С] structural / [И]
+descriptive, and DO NOT force the disputed ones.
+
+'и не только' — beyond divination: the same invariants run the genetic code
+(64), music (7+12), and (through G2 -> E8) the Standard Model. One fabric,
+visible and subtle.
+"""
+
+# each row: system, its numbers, the crystal invariant, status, note
+ATLAS = [
+ # ---- the predictive / divinatory spectrum ----
+ ("Western astrology", "7·12·aspects", "G2: 7-rep + 12 roots", "Т",
+  "Part XXI: signs=roots(30°), planets=7-rep, aspects=angles"),
+ ("I Ching", "64=2^6 · 8=2^3", "F2^6 ; 8 trigrams=octonion basis", "Т",
+  "family(mother/sons/daughters)=Hamming grading; 7 non-Earth=Fano pts"),
+ ("Human Design", "64 gates · 9 centres · 7", "the engine's substrate", "Т",
+  "gates=hexagrams=F2^6; 7 processing centres=the voices"),
+ ("Kabbalah (Sefer Yetzirah)", "3+7+12=22 · 10 · 32", "the crystal's strata",
+  "Т", "3=|QR(7)|, 7=voices, 12=roots; 32=10 Sephiroth+22"),
+ ("Tarot", "78=22+56 · 4 suits", "22=3+7+12 ; 56=4·14", "И",
+  "Major=paths/letters; Minor 4×14 tile Z/4×Z/3 (elements×decans)"),
+ ("Enneagram", "9 · 142857 · 3-6-9", "1/7 EXACTLY", "Т",
+  "the hexad 1-4-2-8-5-7 IS the repeating decimal of 1/7; triangle=3·k"),
+ ("Vedic Jyotish", "9 grahas · 27 · 12", "7+2 nodes ; 27=3^3 ; 12=roots",
+  "С", "7 classical + Rahu/Ketu(lunar nodes); nakshatras 27=3^3"),
+ ("Chinese BaZi", "10 stems · 12 branches · 60", "12=roots ; 60=lcm(10,12)",
+  "С", "5 elements×2 polarity=10; 12 branches=roots; 60 sexagenary=lcm"),
+ ("Numerology", "9 (mod 9) · 22 masters", "digital root Z/9 ; 22 strata",
+  "С", "casting-out-nines = Z/9; master 11/22/33 = the 22 alphabet"),
+ ("Runes (Elder Futhark)", "24 = 3·8", "3 aettir × the octad", "И",
+  "three families of eight = three copies of the octonion octad"),
+ ("Geomancy", "16 = 2^4", "F2^4", "Т",
+  "16 figures = four lines of even/odd = F2^4 (binary, like the I Ching)"),
+ ("Western 4-elements/humours", "4 · 3", "Z/4×Z/3 of the wheel", "С",
+  "4 elements = the Z/3 trine-orbits; 3 modalities = the Z/4 square-orbits"),
+ ("Chakras / alchemical metals", "7", "the heptad = the voices", "И",
+  "7 centres / 7 metals = 7 planets = 7 Fano points = 7 voices"),
+ ("Mayan Tzolk'in", "260 = 13·20", "a 13×20 torus (own invariant)", "И",
+  "coprime 13,20 → 260-cycle; a DIFFERENT lattice, honestly noted"),
+ # ---- 'и не только' — the same invariants in the visible universe ----
+ ("GENETIC CODE", "64 codons = 4^3 = 2^6", "= I Ching F2^6", "Т",
+  "3 bases × 4 letters = 64 = the 64 hexagrams; life runs the same code"),
+ ("Music (tonal)", "7 diatonic · 12 chromatic", "the 7+12 of G2", "Т",
+  "circle of fifths: step 7 semitones generates all 12 (gcd(7,12)=1)"),
+ ("Standard Model", "SU(3)×SU(2)×U(1)", "octonions → G2 → E8", "С",
+  "the exceptional chain that shadows astrology also shadows the forces"),
+]
+
+def main():
+    print("=" * 82)
+    print("THE ATLAS — the spectrum of predictive systems (and beyond) on one crystal")
+    print("=" * 82)
+    print("%-26s %-22s %-26s %s" % ("system", "its numbers", "crystal invariant", "×"))
+    print("-" * 82)
+    for sysn, nums, inv, st, note in ATLAS:
+        print("%-26s %-22s %-26s [%s]" % (sysn, nums, inv, st))
+    # the invariant census
+    from collections import Counter
+    print()
+    print("THE INVARIANTS THAT KEEP RETURNING (why these numbers are not free):")
+    facts = [
+        ("2  = yin/yang, the bit", "F2 — the only field with no choice"),
+        ("3  = |QR(7)|, the triad", "the three already inside the seven (§66)"),
+        ("7  = Fano points", "the octonion imaginaries; the largest heptad that closes"),
+        ("8  = 2^3 = octonions", "the largest normed division algebra"),
+        ("12 = G2 roots", "the 12-fold that the 7-heptad's own group forces"),
+        ("64 = 2^6", "two stacked octonion shadows: hexagrams, HD gates, codons"),
+        ("22 = 3+7+12", "the alphabet: Kabbalah, Tarot, the paths"),
+        ("142857 = 1/7", "the Enneagram; the 6-cycle of the heptad"),
+    ]
+    for a, b in facts:
+        print("  %-26s %s" % (a, b))
+    # verify the two exact number-facts on the spot
+    print()
+    print("LIVE CHECKS:")
+    dec = "".join(str((10 * (10**k) // 7) % 10) for k in range(6))
+    print("  1/7 repeating block  = %s   (Enneagram hexad 1-4-2-8-5-7)  [%s]"
+          % ("142857", "OK" if int("142857") * 7 == 999999 else "??"))
+    print("  I Ching hexagrams    = 2^6 = %d   ==   genetic codons 4^3 = %d  [%s]"
+          % (2**6, 4**3, "OK" if 2**6 == 4**3 == 64 else "??"))
+    print("  circle of fifths     = gcd(7,12) = %d  → 7 steps generate all 12 [%s]"
+          % (__import__("math").gcd(7, 12), "OK" if __import__("math").gcd(7, 12) == 1 else "??"))
+    print()
+    print("=" * 82)
+    print("Not many systems glued — ONE crystal (octonions/Fano/G2/F2^n) seen in")
+    print("many scripts. The ancients, reaching for completeness, kept rediscovering")
+    print("its invariants. Reconstruction = name the body under all the shadows, in")
+    print("one vocabulary (the seven voices), with the honest [Т]/[С]/[И] ledger.")
+
+if __name__ == "__main__":
+    main()
