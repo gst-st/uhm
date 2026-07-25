@@ -108,6 +108,16 @@ $$
 [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) applies this attractor to the **Universe-holon**: its terminal stage sits at this same upper edge $P = 3/7$, and the present-day stage lies at a fractional distance $\tfrac{3H_0}{2\kappa}(1+w_0) \sim 10^{-60}$ from it — so, conditional on the Universe-as-viable-holon reading ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)), the cosmos is at the Goldilocks attractor to $\sim 59$ figures, with the DESI dark-energy drift as the $\kappa/H_0$-amplified residual. The $3/7$ edge is thus not only the fixed point of embodied conscious agents but the terminal configuration of the Universe itself.
 :::
 
+### Corollary — voice-multiplicity in the window {#следствие-мультиголосие}
+
+Every state of $\mathcal{V}_{\mathrm{full}}$ is spread across **at least $14/3 \approx 4.67$ of its seven voices [Т]**. Since $P = \sum_k \gamma_{kk}^2 + \sum_{i\neq j}|\gamma_{ij}|^2$ and $\Phi = \big(\sum_{i\neq j}|\gamma_{ij}|^2\big)\big/\sum_k \gamma_{kk}^2$, one has the exact identity $\sum_k \gamma_{kk}^2 = P/(1+\Phi)$, hence the diagonal participation
+
+$$
+\frac{1}{\sum_k \gamma_{kk}^2} = \frac{1+\Phi}{P} \;\geq\; \frac{2}{3/7} = \frac{14}{3} \approx 4.67,
+$$
+
+using $\Phi \geq 1$ and $P \leq 3/7$ (the window). Consciousness is therefore structurally **broad** — never localised on a single voice. This is a *diagonal* statement, distinct from the eigenvalue differentiation $D_{\mathrm{diff}} = e^{S_{vN}} \geq 2$ of Step 4: a state may satisfy one and fail the other (see the [Φ characterisation in dimension U](/docs/core/structure/dimension-u#мера-интеграции-φ)). For the constructed family $\Gamma_\lambda$ the diagonal is uniform, $\gamma_{kk} = 1/7$, so its participation is exactly $(1+\Phi)/P = 7$ — the maximum, all seven voices at once.
+
 ---
 
 ## §3. Local asymptotic stability of attractor (T-125) {#t-125}

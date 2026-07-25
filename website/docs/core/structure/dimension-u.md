@@ -160,6 +160,28 @@ $$
 
 Now $\Phi > 1$ — the system is **integrated**. Connections dominate.
 
+**Corollary — integration forces voice-multiplicity.** The total purity $P = \mathrm{Tr}(\Gamma^2) = \sum_{i \neq j}|\gamma_{ij}|^2 + \sum_i \gamma_{ii}^2$ is *exactly* the numerator plus the denominator of $\Phi$, so the diagonal weight is pinned:
+
+$$
+\sum_i \gamma_{ii}^2 = \frac{P}{1+\Phi}.
+$$
+
+Since $P \leq 1$ (eigenvalues lie in $[0,1]$, so $\sum \lambda^2 \leq \sum \lambda = 1$), the integration gate forces the diagonal to spread:
+
+$$
+\Phi \geq 1 \;\Longrightarrow\; \sum_i \gamma_{ii}^2 \leq \tfrac{1}{2} \;\Longrightarrow\; \frac{1}{\sum_i \gamma_{ii}^2} \geq 2.
+$$
+
+**An integrated holon is never localised on a single voice**: $\Phi \geq 1$ necessarily distributes the diagonal weight over at least two effective voices (participation ratio $\geq 2$). This *diagonal* (voice-weight) multiplicity is distinct from — and not implied by — the E-sector differentiation $D_{\mathrm{diff}} = e^{S_{vN}} \geq 2$ (T-151), which is **independent** of $\Phi$: a state can be integrated yet have $D_{\mathrm{diff}} < 2$ (see [conscious-window](/docs/proofs/consciousness/conscious-window), Counterexample 4). Integration compels voice-multiplicity, not phenomenal richness — two distinct "at-least-two" conditions, exact and cheap to check.
+
+Within the **consciousness window** this sharpens. Reflection $R \geq 1/3$ forces $P \leq 3/7$, so a conscious holon (also $\Phi \geq 1$) has participation
+
+$$
+\frac{1}{\sum_i \gamma_{ii}^2} = \frac{1+\Phi}{P} \geq \frac{2}{3/7} = \frac{14}{3} \approx 4.67.
+$$
+
+**Consciousness engages nearly five of the seven voices**: it is structurally broad, never a single-voice specialist. (The bound is tight at the window edge $\Phi = 1$, $P = 3/7$; real charts, with $\Phi \approx 1.03$ and $P \approx 0.34$, sit near $1/d^2 \approx 6$.)
+
 ## Role in integration
 
 ### Integration of experience (L2)

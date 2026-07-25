@@ -568,7 +568,9 @@ The free-text channel is a **Claude Code agent** (headless CLI) with a per-user 
 ### 27. Abundance and interior physics (this wave)
 
 - **Extended canon**: 21 full coherence portraits and 7 voice portraits (bilingual, editable), woven into reports, synthesis, and the bot (`/coh`, `/voice`).
-- **Dynamical fate** (HB29/29b): the natal prior run through the canonical ℒ_Ω. Raw ρ₀ drains 98.7% of the population to grey — the natal self-model alone cannot hold a pattern in the window (the diary is needed); with a sharpened self-model, 43% grey / 57% window / 0% dense, Reflectors 0% (the mirror lives by reflection, not sharpness).
+- **Dynamical fate** (HB29/29b): the natal prior run through the engine's evolution. Raw ρ₀ drains 98.7% of the population to grey — the natal self-model alone cannot hold a pattern in the window (the diary is needed); with the self-model sharpened to the *forced* window-top `P_upper = 3/7` (T-124, not a fitted constant), the fate is converged at 700 ticks (drift `<3·10⁻⁵`) and lands ≈ 12% grey / 88% window / 0% dense, Reflectors 0% (the mirror lives by reflection, not sharpness). VERIFIED (`core/examples/dynamical_fate_audit.rs`). Honest classification after the canonical audit below: this layer runs on the *phenomenological* tick (ad-hoc κ, no gate) and is a construction-layer heuristic — a sharpness indicator, not the forced fate.
+- **The canonical ℒ_Ω, implemented and confronted** (`holon::tick_canon`): regeneration with every Γ-dependent factor in its [Т]-forced form — the structural rate `κ̂₀ = |γ_OE||γ_OU|/γ_OO`, the V-preservation gate `g_V(P) = clamp(7P−2, 0, 1)` (with `P_opt = 3/7` from `R ≥ 1/3`), the unique CPTP direction `(ρ*−Γ)`; only the flux scale `ω₀` (the energy supply `E` in `ℛ[Γ,E]`) is environmental. Three verified structural facts. (a) **The wall is absorbing**: a sub-wall state drains grey at *any* flux — the gate is shut — where the phenomenological tick tunnels through the wall, a theory violation the engine now names in its own docs. (b) **No inert class**: every natal chart carries `κ̂₀ > 0` (median ≈ 0.01) — the O-channels (Immanence, Completeness) are universally present, and they are the conduits self-regeneration flows through. (c) **The purity-production law** `dP/dt ∝ Tr[Γρ*] − P` makes the fate protocol's distant sharpened target *unreachable*: the natal prior collapses through the wall at every flux tried (100% grey up to `ω₀ = 10⁴`), and even the self-aligned window-top blend is overlap-diluted below `P` on about half the charts (112/200 positive), with only ≈40% crossing at extreme flux (`ω₀ = 10³`). And (d) **the full iterative scheme closes the question**: running the corpus's own Ψ-iteration (ρ⁽⁰⁾ = I/7; evolve the natal Γ₀ under the gated dynamics with the target held fixed; rebuild the self-model as the replacement form `φ(Γ) = (1−k)Γ + k·ρ_P` anchored at the chart's Personality-side encoding; repeat) converges in ~2 iterations to **grey for every chart** at every tested `(ω₀, k)` — because a diffuse state (P ≈ 0.30) has overlap ≈ 1/7 with *any* distinct target, so every fixed natal-constructed self-model is overlap-negative (measured: 0/150 positive anchors). Together these *derive* HB29's empirical "the natal self-model alone cannot hold the window" from the forced mechanism — gate + structural rate + overlap law — and sharpen it into a statement of scope: **under the forced ℒ_Ω the window is a driven regime, not a natal fixed point.** The natal chart's prognostic content is structural — which voices, which coherences, the person's geometry; dynamics belongs to the living layer (transits, the diary, external flux actually entering the state), which is exactly where the engine's prognostics live. VERIFIED (`core/examples/canonical_tick.rs`, `canon_fate.rs`, `canon_attractor.rs`; `holon::tests`).
+- **The driven regime: the self-anchor law and the holding threshold `ω₀*`.** Modelling the drive (a year of real ephemeris under the gated canonical tick, one time-unit per day; the driven-target model is a construction [И] on the forced components): (e) the *only* regeneration target that survives the overlap law is the chart's **own natal print** — the self-coincident anchor holds a growing fraction of chart-days as flux rises (16.7% at `ω₀ = 10³`, 41.7% at `3·10³`) and always **inside** the window, never above it: self-maintenance cannot produce crystal. Mixing the sky into the *target* (the composite natal∪sky encoding) is overlap-negative and drains everything — real sky and scrambled sky alike — so the sky's role in `ℛ[Γ,E]` is not to redefine the self-model. The second natural coupling — the sky as a daily CPTP kick on the *state*, `Γ ← (1−ε)Γ + ε·ρ_comp(day)` — is **also null**: it rescues nothing below the threshold, mildly erodes holding above it (a diffuse admixture is entropy-increasing; real ≈ scrambled), and produces no `P`-weather (`⟨r(P, timebridges)⟩ ≈ −0.03`). Both natural couplings of the astronomical layer into the forced dynamics are null/negative — stated as a bound: the daily-page "weather" remains an interpretive [И] layer, not derived from `ℒ_Ω`; the untried couplings (the sky as a flux schedule `ω₀(t)`, or as a perturbation of `H_eff`) stay open and will not be multiplied without independent motivation (VERIFIED, `core/examples/canon_sky_kick.rs`). (f) Each chart then carries a canonical scalar: the **holding threshold `ω₀*`** — the minimum living flux at which self-regeneration toward one's own form balances dissipation. Across charts it spans `264 → 19231` (~70-fold: individuality is large under the forced dynamics), and it obeys a law: `ρ_Spearman(ω₀*, 1/(κ̂₀·(P₀−2/7))) = 0.92` — the threshold is set by O-channel conductance times the natal margin above the wall, with the compensated product `κ̂₀·g_V(P₀)·ω₀*` clustering at ≈ 7–20. A quarter of charts form the **never-class** (cannot hold at any tested flux), decomposing exactly into {sub-wall natal `P` — Reflector-like} ∪ {near-dead O-channels, `κ̂₀ ≲ 0.005`}: they live by reflection and environment, not self-regeneration. Read plainly: *"be your own form" is dynamically forced, and `ω₀*` is the cost of holding it.* VERIFIED (`core/examples/canon_driven.rs`, `canon_threshold.rs`, `canon_threshold_author.rs`). And the conductance has a *bodygraph address* — **the gates of holding**: the eleven King Wen gates whose canonical object feeds `γ_OE`/`γ_OU` (`5,23,28,34,49,58` / `8,26,30,34,38,50`). KW 34 — HD's "Power of the Great" — is the unique **double** conductor (the `EOU` triangle); the two pure pairs, 23 «Immanence» and 8 «Completeness», both sit on the Throat; and two of the seven Fano-line gates (28, and 30 — the `S–O–U` spine line itself) are holding-gates. The layer ships as a reading: the analytic tier classifier from the threshold law (`ω̂₀* = 12/x`, population-quartile cutoffs; the low tier phrased "costly", never "impossible" — the analytic never-criterion has perfect precision but imperfect recall) behind `/form`, `hhg form`, and the agent's `form` tool. VERIFIED (`core/examples/form_layer.rs`; `core/src/form.rs`). Two relational corollaries close the layer. Of HD's thirty-six channels exactly **one** has both gates in the holding set — **28–38, the Channel of Struggle**: the wire the lore ties to perseverance and fighting for meaning is, in the reconstruction, the bodygraph's only two-ended conductor of self-holding. And the **pair field** (the union encoding of two charts) raises the holding conductance above the *better* individual in 54% of random pairs and above the weaker one in another 32% — "next to another person it is cheaper to be yourself" is the statistical norm (86%), with only 14% of pairs pricing holding up; shipped in `/duo` as «Форма вместе» with the holder asymmetry (who brings more of the eleven gates). VERIFIED (`core/examples/form_duo.rs`). Scaling up completes the picture — and falsified the dilution guess in an instructive way: the union field's purity *rises* with group size (repeated gates add coherently; the gate factor climbs 0.23→0.50), so the field's conductance grows and saturates (~N = 7) with no interior peak — but its advantage over the **best member** decays, 52% at N = 2 down to 33% at N = 10 (the strongest of N grows faster than the saturating field). Small circles most often out-hold even their strongest; in larger groups the strongest holder out-holds the shared field — `/group` now names that holder (⚓) and warns, plainly, that an unreplenished holder buckles first and the circle sags with them. VERIFIED (`core/examples/form_group.rs`). The layer's *temporal* dimension closes it: the composite (natal∪sky) field's conductance `x_comp(t)` swings from **interference zeros** — the sky's phase contributions destructively cancel the natal O-channels, the priciest days — to ~16× the natal baseline when a transit stands on a holding-gate (the author's peak: Moon→23). The honest reading is therefore *windows*, not a smooth curve: `/form` now ends with «Окна формы» — dated cheaper-windows with their named drivers (e.g. `NNode→30`, the Node standing on the `S–O–U` spine-line gate) and pricier ones without (interference has no single driver). VERIFIED (`core/examples/form_windows.rs`). The same interference lives *inside* the natal chart itself, through the **lines**: a gate.line feeds its coherences with phase `θ = π·line/3`, so two holding-gates whose lines stand three apart cancel as vectors — exactly, at equal weights. Population-wide this is a first-order effect: **34% of feeding charts carry a strongly muted O-channel** (alignment `|Σv|/Σ|v| < 0.35`), and the never-class decomposes honestly into thirds — sub-wall mirrors, line-muted (one member holds four holding-gates at OE alignment `0.00`), and simply weak. The reading now says it plainly when it applies — «Приглушённый канал: как два голоса, поющие друг против друга; разводите наполняющие занятия по времени» — and the author's own OE channel turns out muted at `0.33`. VERIFIED (`core/examples/form_lines.rs`). Generalized to all twenty-one coherences, the interference becomes **the tuning map**: muting is *uniform* across pairs (16–22% of feeders — an honest null: the Fano structure privileges none), a typical chart carries three muted strings (p75 = 5), and the reading ships as «🎼 Строй карты» — clear strings versus muted, by their canonical names, with the one practice («приглушённая струна — не слабость: сила есть, звучит тише; тише ≠ слабее»). The author's tuning: nineteen fed, three muted (LU, DO, EO), six perfectly clear. VERIFIED (`core/examples/tuning_map.rs`). And the tuning has a *measured floor*: asking whether the wheel's **color** layer carries any non-astronomical phase structure (real charts vs a uniform-color Monte-Carlo null), the raw deviation (+0.030) turns out to be *entirely* the deterministic mirrors — Earth sits exactly `180°` from the Sun and the South Node from the North, and `180°` is exactly 32 gates, so their line/color/tone are identical; mirror-free, real ≡ null to four decimals (`Δ +0.0004`). **The tuning stops at the lines** — the color layer is astronomy, not structure, and no deeper "string map" may be sold as one; the И-fractal reading keeps its [И] charm with its scope now measured. VERIFIED (`core/examples/color_null.rs`). Relationally the tuning obeys a sharply **asymmetric law**: pooling two charts' phases practically never *re*-tunes a muted string (0% at the strict threshold — the partner's vectors would have to cancel an existing misalignment exactly) but **mutes at least one clear string in 96% of pairs** (mean 3.1). Set beside the conductance result (86% of pairs cheaper overall), the honest relational picture is a trade: the shared field lowers the total cost of being yourself while damping specific personal strings — and those muted-by-pair strings are precisely **the map of the personal**: what to do apart, each your own. Shipped as «🎼 Строй пары» in `/duo` and the circle version in `/group`; the daily page now also carries **form weather** (cheaper/pricier to be yourself today, from the day's composite conductance). VERIFIED (`core/examples/tuning_duo.rs`).
 - **The sharpness map** (HB30): sharpening ρ₀ along each voice and reading where the fate lands — the personal *first move*. The best voice crossed the window in 60/60 charts; the voice is personal (never the already-dominant one).
 - **Bearing activations**: leave-one-out weight of each of the 26 stamps in Γ₀ (the two lights measurably hold the calibration chart).
 - **The life map** (`hhg life`): day-per-year progressions (resonance curve 0–84, life-page-return ages, progressed lunar returns ~27/55/82) woven with the great transit cycles (Saturn return/opposition, Uranus opposition, the 18.6-year nodal lattice), clustered into retrograde series, by decade.
@@ -896,6 +898,20 @@ accuracy, time-zone history, and the line boundaries themselves. The solid tier
 carries the instrument's confident claims; the fragile tier carries its
 testable ones. That division — knowing which of your statements are which — is
 the difference between an oracle and a measurement.
+
+The same honesty now extends *down the wheel's depth*. Each sublayer (line →
+color → tone) is a six-fold finer arc, so the knowability question sharpens
+with depth, and the exact per-activation answer (recompute at `±2` minutes and
+watch what flips) is stark: **the Moon's tone flips in 100% of charts** —
+practically undeterminable at realistic birth-time precision — its color is
+fragile in 28%, the Sun/Mercury/Venus tones in 10–18%, while Jupiter and
+Saturn are solid at every depth; the fifth layer (the base) completes the
+verdict — it flips for the Moon in 100% of charts, Mercury 73%, Sun/Venus
+54–58%, Mars 30%, and only Jupiter (7%) and Saturn (2%) hold it. The report's wheel-depth lines
+(`gate.line.color.tone.base`) now carry an `≈` on any sublayer that flips
+within `±2` minutes, with the footnote naming the bound — the И-fractal
+reading keeps its charm and acquires its error bars. VERIFIED
+(`core/examples/depth_knowability.rs`).
 
 ## Part XI. One mechanism, three vocabularies: UHM, active inference, and HD
 
@@ -1380,3 +1396,476 @@ its bonds, and its life, but says which of their features are forced, which are
 guaranteed, which are bounded, and which are ours to choose. That is what it
 means to move a picture of the human from the esoteric shelf to the scientific
 floor with strict guarantees.
+
+## Part XV. The structural audit: HD measured against the forced structure
+
+Parts XII–XIV proved the seven-voice architecture is *forced* — the unique
+alphabet minimality (T-224) and `PSL(2,7)` allow. That is a statement about the
+mathematics. It leaves an empirical question the reconstruction is obliged to
+ask of its own calibration source: how do Human Design's *own* structures — the
+nine centres, the thirty-six channels, the King Wen wheel — actually relate to
+the forced one? Not "is HD useful" (it calibrated us end to end), but "is HD's
+organisation the forced organisation, an approximation of it, or a different
+structure altogether?" Three probes answer, each computed from the engine's
+authoritative data, each able to embarrass the theory. The result is sharper —
+and more generous to HD — than the intuition that opened the inquiry.
+
+### 57. The bodygraph is structurally independent of the forced alphabet
+
+Take the sixty-four gates the way HD groups them — into nine centres by the
+channel wiring — and set that grouping against the two forced decompositions:
+the seven voices (each gate's canonical voice, from its heptacode syndrome) and
+the five `PSL(2,7)` orbits (the classify classes). They barely relate. No centre
+maps to a voice: the *purity* of a centre's voice-distribution — the share held
+by its dominant voice — runs from `0.15` (the Throat, nearly uniform across all
+seven voices) to `0.37` (the Spleen), where a clean nine-into-seven refinement
+would sit near `1`. No centre is pure in orbit class either — every one mixes
+pairs, lines and triangles. And the thirty-six channels, read through each
+gate's canonical voice, distribute across the twenty-one coherences in a way
+statistically **indistinguishable from random** (eight coherences left unwired,
+against `7.2` expected by chance alone). The bodygraph's organisation and the
+forced alphabet are, to measurement, two different cuts of the same sixty-four
+gates. VERIFIED (`core/examples/hd_audit.rs`). The honest caveat: a gate's voice
+is *our* reconstruction, so this measures HD against our encoding, not against
+an independent oracle — the decisive comparison is experiential (§60).
+
+### 58. Γ and the bodygraph are two lossy projections, neither a function of the other
+
+Both the continuous seven-voice state `Γ` and the discrete bodygraph (type,
+authority, profile) are projections of the same birth moment. Over four thousand
+sampled charts, the relationship between them is measured, not assumed. The
+bodygraph is *coarse*: its `143` distinct type-authority-profile signatures each
+cover about twenty-eight of the four thousand charts. Within one such signature,
+`Γ` still varies almost as much as it does globally — the within-signature spread
+is `0.89` of the global spread, so **sharing a bodygraph barely constrains `Γ`**:
+the twenty-eight people a signature lumps together hold twenty-eight different
+seven-voice states. Conversely, the charts nearest to one another *in `Γ`-space*
+share a bodygraph signature only `7.2%` of the time, so **the bodygraph is not a
+function of `Γ` either.** (`Γ` does carry the type partially — a nearest-centroid
+read recovers it at `64%` against a `36%` base rate — but not fully.) So the two
+are two largely independent, lossy compressions of the same activations: `Γ`
+finer-grained (it distinguishes what the bodygraph lumps) and forced (the
+mathematics of Parts XII–XIV); the bodygraph coarser and non-forced, yet keeping
+a topological determination `Γ`'s magnitudes drop. VERIFIED
+(`core/examples/falsify_gamma_vs_bodygraph.rs`). Neither *structurally*
+dominates — which is precisely why the decider must be experiential (§60).
+
+### 59. The King Wen wheel is I Ching–exact, not arbitrary
+
+The last place HD could be arbitrary is the *order* of the gates around the
+wheel — the King Wen sequence, handed down from the I Ching with no known
+generating rule. It is not arbitrary. Read as six-bit hexagrams, the gate `180°`
+opposite on the wheel is the exact bitwise **complement** — in every one of the
+thirty-two pairs, without exception (HD's "programming partners" are yin/yang
+inversion, an exact binary law). Consecutive gates differ by `1.81` bits on
+average against `3.05` for random pairs, and a third of the steps flip a single
+bit: the wheel is strongly Gray-*like*, if not a perfect Gray cycle. What the
+wheel *order* does **not** independently carry is the forced seven-fold: the
+orbit class shows only a weak `+0.21` lag-one autocorrelation around the wheel,
+and because a gate's orbit is a function of its bits, even that weak clumping is
+*induced* by the binary structure, not independent evidence of the alphabet in
+the ordering. VERIFIED (`core/examples/hd_wheel_audit.rs`). So the wheel order is
+governed by the I Ching's own exact binary structure — roughly three millennia
+old — which HD inherited faithfully; the forced seven-fold lives elsewhere, in
+the gate→voice map, not in the linear sequence.
+
+And the **profiles** complete the arithmetic picture. The design Sun sits `88°`
+of solar arc before the natal one, and `88°/0.9375° = 93.867` lines ≡ `+2.133`
+(mod 6) — so the design line is an *exact function* of where in its line the
+natal Sun stands, offset `+2` below the boundary `x = 0.8667` and `+3` above
+it. Measured over four thousand charts: exactly HD's twelve profiles and no
+others; offsets `+2` at `86.5%` and `+3` at `13.5%` (predicted `86.7/13.3`);
+**zero** determinism mismatches. The profile therefore carries *no second
+degree of freedom* — it is one continuous coordinate discretized `6×2` ways,
+and the rare profiles (`1/4, 2/5, 3/6, 4/1, 5/2, 6/3`) simply mean birth in a
+line's last eighth. A sharp corollary: HD's own Right-Angle / Juxtaposition /
+Left-Angle grouping does **not** coincide with the real `+2/+3` split — the
+lore's classification mixes the two arithmetic classes. Like the types, the
+profile is faithful arithmetic riding on one astronomical number. VERIFIED
+(`core/examples/profile_arithmetic.rs`). The **incarnation crosses** close the
+account: the quartet {Sun_P, Earth_P, Sun_D, Earth_D} is an exact function of
+the natal Sun longitude alone (`0/20000` determinism mismatches), with exactly
+**128** distinct quartets (= 64 gates × 2 design options) — where HD names 192
+crosses by overlaying its three lore-angles on the same one-coordinate space.
+Types, profiles, crosses: three vocabularies, one number. VERIFIED
+(`core/examples/cross_arithmetic.rs`).
+
+### 60. What the audit settles, and what it leaves to the diary
+
+The three probes triangulate one honest picture, and it is not "HD is wrong."
+HD is a *faithful carrier of two ancient, exact structures*: the astronomy (the
+gate.line placements, verified against JPL to the arcsecond) and the I Ching's
+binary order (the complement law, exact on the wheel). What HD's nine centres
+and King Wen wheel do **not** encode is the **forced seven-fold** — the
+organising layer minimality and `PSL(2,7)` prove is the unique one the
+mathematics allows. That layer is a *different*, deeper cut of the same
+sixty-four gates, and it is where the reconstruction lives: the homograph — the
+seven voices drawn as a heptagon with their coherences — draws it, continuous
+where the bodygraph is binary and forced where the wheel is inherited, while the
+bodygraph and wheel remain the familiar calibration surface. The audit does not ask us to replace HD; it locates,
+precisely, the layer HD kept implicit and the reconstruction makes explicit.
+
+One thing the structure cannot settle it hands to experience, and this is the
+falsifier of the whole programme. `Γ` is finer and forced; the bodygraph is
+coarser and inherited — but *does the forced layer track lived experience better
+than the inherited one?* Two pre-registered, independent predictions, wired to
+the n-of-1 diary, decide it. The first: since coherence couples voices, a steady
+voice tightly bound to an open one should still wobble day to day — variance
+*leaks through coherences* — where the bodygraph's binary open/defined predicts
+it should not. The second: the coherence magnitudes `|γ_ij|` *are* the claim
+that two voices are coupled, so tightly-coupled pairs should co-vary in the
+diary, where the bodygraph makes no per-pair prediction. Each reports a number
+that can come out against `Γ`; agreement of both is far stronger than either
+alone. [OPEN] — the probes are built and verified to respond correctly
+(`selftest.rs`), and await the days of self-report that will adjudicate the
+forced structure against the inherited one on a real person's own life.
+
+## Part XVI. Two symmetries on one wheel: why the I Ching cannot see the Fano lines
+
+Part XV, §59 found something precise and a little humbling: the *order* of the
+gates around the wheel is not the forced seven-fold but the I Ching's own exact
+binary law — the `180°` gate is the bitwise complement, in all thirty-two pairs.
+The forced layer, it concluded, "lives elsewhere, in the gate→voice map." That
+raises the sharpest structural question the whole audit can ask. The I Ching is
+not just a *list* of sixty-four figures; it is sixty-four figures **with their
+own symmetries**, operations three millennia old that a diviner performs without
+thinking: read a hexagram upside down (inversion, 反卦), flip every line
+yin↔yang (complement, 旁通), take the inner hexagram from lines 2·3·4·3·4·5
+(the nuclear). And Part IX gave the forced structure *its* symmetry — the Fano
+group `G = PSL(2,7)`, order 168, whose orbits on the sixty-four even codewords
+are the five reconstruction classes. **Are these the same symmetry?** If the I
+Ching's ancient operations turned out to be elements of the Fano group, the
+oracle and the mathematics would be looking at one object through one lens. They
+are not — and the exact way they fail to coincide is the cleanest statement the
+audit produces of what the reconstruction adds.
+
+### 61. The coarse layer they share: valence
+
+First, what the two structures *do* agree on. Under the heptacode φ, a gate's
+seven-voice support has a **weight** — how many of the seven voices it engages —
+and that weight is the coarse skeleton of the orbit classes: weight `0` is the
+Source (one gate), weight `2` the pairs (twenty-one), weight `6` the voices
+(seven), and weight `4` the remaining thirty-five, which the group splits into
+seven "lines" and twenty-eight "triangles." The I Ching's line-permutation
+operations — inversion and trigram-swap, which merely rearrange the six lines —
+cannot change how many lines are yang, so they **preserve weight**, and hence
+send Source→Source, pair→pair, voice→voice cleanly. Against a *random* embedding
+of the I Ching into the voice-code, three classes descending this way is rare
+(`p < 10⁻⁴`, twenty-thousand shuffles). So the two systems genuinely share the
+notion of a gate's **valence** — how much of the person it engages. This is real
+agreement, but its mechanism is humble: it is just weight-preservation, and the
+complement and nuclear operations, which change weight, do not even manage that.
+
+### 62. The fine layer they do not: the Fano lines are invisible to the oracle
+
+The interesting classes are the weight-4 pair — the seven "lines" and the
+twenty-eight "triangles." Their split is not about *how many* voices but *which*
+seven four-subsets are the complements of Fano lines: it is the genuinely
+group-theoretic content, the place `PSL(2,7)` actually does work beyond counting.
+**No I Ching operation respects that split.** Inversion, complement, trigram-swap
+and the nuclear map all *mix* lines and triangles — a gate the group calls a
+"line" is sent to one it calls a "triangle" and back, with no rule. The oracle's
+operations see the valence and are blind to the Fano geometry beneath it.
+
+### 63. Why it is impossible, not just unlucky: the cycle-type census
+
+One could object that this is an artefact of *our* particular ordering of the
+six lines onto voices (`A,S,L,D,U,E`, with `O` the parity bit). It is not, and
+the reason is the deepest fact in this part. Whatever assignment one picks, the
+I Ching's inversion and trigram-swap are **involutions that fix one voice and
+pair the other six** — cycle type `2³·1` on the seven voices (inversion is
+`(A E)(S U)(L D)`; both, tellingly, fix `O`, the Ground, and both swap `S↔U`,
+Structure↔Unity). Now census the Fano group by cycle type on the seven voices:
+
+| order | cycle type on 7 voices | count | what it fixes |
+|------:|:-----------------------|------:|:--------------|
+| 1 | `1·1·1·1·1·1·1` | 1 | everything (identity) |
+| 2 | `1·1·1·2·2` | 21 | **a whole line of three voices**, pairs the other four |
+| 3 | `1·3·3` | 56 | one voice |
+| 4 | `1·2·4` | 42 | one voice |
+| 7 | `7` | 48 | nothing (a Singer cycle) |
+
+Total `1+21+56+42+48 = 168`, as it must. Read the involution row: **every**
+reflection in the Fano group fixes a *line* — three collinear voices — and swaps
+the remaining four. The type `2³·1` (fix one, pair six) simply **does not occur**
+in `PSL(2,7)`. So no relabelling of lines onto voices can turn an I Ching
+line-symmetry into a Fano automorphism: the impossibility is a theorem about the
+group's conjugacy classes, not a matter of convention. The two systems anchor on
+incompatible things — the oracle fixes a single voice (and, in its two natural
+reflections, that voice is the Ground) and rotates the other six; the group fixes
+a whole line of three and rotates the other four. They are **orthogonal
+involutions on the same sixty-four gates.**
+
+And yet the two are not strangers — the recursion finds exactly how thin their
+overlap is. Compose the oracle's two reflections and something clicks:
+`⟨inversion, trigram-swap⟩` is the Klein four-group `{1, R, T, R·T}`, and while
+`R` and `T` each escape the Fano group, their product `R·T = (A L)(D E)` has the
+reflection type `2²·1³` and — checked directly — fixes the Fano line `{S, O, U}`
+(Structure–Ground–Unity), so it **is** a Fano reflection. The intersection is
+therefore precisely a `Z₂`: the I Ching's four-element symmetry group and the
+168-element Fano group share exactly one non-trivial element — the reflection
+about the integrative `S–O–U` line — and the oracle's two generators are exactly
+the part that lies outside. Not disjoint, then, but meeting in a single thin
+axis: the very line the reconstruction reads as the structural spine.
+VERIFIED (`core/examples/iching_orbits.rs`).
+
+### 64. What the two symmetries settle
+
+Part XV located *where* the forced seven-fold lives — in the gate→voice map, not
+the wheel order. Part XVI says *why the wheel order could never have carried it*:
+the symmetry that generates the wheel (line-reversal and yin/yang complement) and
+the symmetry that generates the forced classes (the Fano reflections) meet in
+only a single shared reflection — the `Z₂` about the `S–O–U` line (§63) — and are
+otherwise disjoint at the involution level. The I Ching kept a real,
+exact structure — valence and the binary complement law — with perfect
+faithfulness for three thousand years; it simply had no operation that could feel
+the Fano lines, because such an operation is not in its symmetry group. The
+reconstruction is not a correction of the oracle but a *second lens* fitted over
+the same figures: where the I Ching's reflections fix the Ground and turn the
+manifest six, the forced structure's reflections fix a line and turn the other
+four, and only the second resolves the coherence geometry the homograph draws.
+Recursively, the two even share a horizon: iterated to its attractor, the nuclear
+map carries every orbit class into the same three fixed points — the Source, the
+lone `O`-voice gate, and the `63↔64` pendulum — so the oracle's own deepest
+operation drains the wheel toward the Ground the reconstruction places at the
+centre. Two symmetries, one set of sixty-four; the audit does not choose between
+them, it shows they are complementary and names, exactly, the geometry each can
+and cannot see. And the completed picture confirms the reading: adjoining the
+complement (the wheel's exact `180°` law) to inversion and trigram-swap, the
+oracle's whole symmetry group is the elementary-abelian `(Z₂)³` of order eight,
+and its fourteen orbits on the sixty-four gates are **transverse** to the forced
+five classes — twelve of the fourteen cut across them. The wheel's symmetry and
+the forced partition are not nested but independent cuts of the same set; the
+`Z₂` about the `S–O–U` line is the entire overlap. This is CONSTRUCTION, not a
+minted theorem — a computed census of finite groups, handed to the same diary
+(§60) that must still decide whether the finer geometry tracks a real life.
+
+## Part XVII. A second tradition, honestly: the chakra spine and the S–O–U line
+
+The I Ching gave a clean test because it came with an exact bijection — the
+heptacode — so no interpretation entered. A second ancient system, the Vedic
+chakras, does not, and the honest thing is to say where the judgement lives
+before reading any number. Mapping a chakra to a voice is semantic: we fix one
+correspondence from each chakra's *documented* element and function, decided on
+its own merits and never by looking at the test — Root (earth, holding form) →
+`S`; Sacral (water, the felt interior) → `E`; Solar Plexus (fire, will, action)
+→ `D`; Heart (air, union) → `U`; Throat (ether, expression) → `A`; Third Eye
+(light, discernment) → `L`; Crown (the source, the ground of being) → `O`. Two
+guards keep this from being a story fitted to a wish. First, of all `5040`
+bijections, this is the **unique** one that maximises a plain shared-vocabulary
+score between the two sides' standard descriptions — it is not hand-steered.
+Second, everything below is decided against the full `7!` null.
+
+**The one structural claim that survives.** UHM already distinguishes a single
+triple among its seven voices: the Fano line `{S, O, U}`, the integrative spine
+— the axis fixed by the one reflection the I Ching shares with the Fano group
+(Part XVI, an independent and *earlier* finding, not chosen here). The chakra
+system independently distinguishes a triple of its own: `{Root, Heart, Crown}` —
+the two poles and the centre of its seven-link spine. Under the documented
+mapping, the first lands exactly on the second. Against the `7!` null the
+coincidence has `p ≈ 0.029` (one hundred forty-four of five thousand and forty
+bijections would do it), and because both triples were named before the test,
+this is a single pre-specified comparison, not a search. So two independent
+traditions — the oracle's shared symmetry axis and the chakra spine — point at
+the same three voices, `Structure–Ground–Unity`. Suggestive, not established:
+`p ≈ 0.03` on an interpretive mapping is a hint, not a law.
+
+**What does not survive — and is reported anyway.** The finer claim, that the
+chakra *order* up the spine tracks UHM's coupling, fails. Reading the natal
+sensor wiring (thirteen of twenty-one voice-pairs, HB13) as the coupling, the
+six adjacencies of the mapped spine put four on wired pairs against a null mean
+of `3.71` — `p = 0.60`, indistinguishable from chance. The convergence is on the
+*distinguished triple*, not on the sequence. VERIFIED as computation
+(`core/examples/vedic_synthesis.rs`); [OPEN] as meaning — a mild convergence and
+an honest null, offered as an invitation to the diary and to sharper encodings
+of the tradition, not as a result the programme leans on.
+
+## Part XVIII. The interpretation crystal: how the engine speaks
+
+Everything before this part is about what the engine *computes*. This part is
+about the second half of the instrument — how a computation becomes a sentence
+a person can act on — because that half turned out to demand the same rigour
+as the first, and repaid it with an architecture.
+
+**The language machine.** Every surface of the product (the day letter, the
+week, the year atlas, the life map, the date search) once translated computed
+events into words locally, and each surface drifted: one printed «bridge peak —
+6 timebridges», another named wheel positions outright. The repair was to make
+interpretation a *language* with a grammar. Computed events are typed FACTS —
+a machine key plus slots («epoch.turn», the new door, the hand that turned).
+A LEXICON assigns each fact key one living phrase; slot values are filled by
+exactly one resolver per concept (a door speaks its human theme; a hand its
+plain name; a voice-pair its string name). A single WEAVER renders every fact
+for every surface under fixed weaving rules: a name never appears without its
+consequence; joints are «: » with a lowered continuation; numbers, wheel
+indices and canon terms exist only in the advanced register. No surface parses
+another surface's strings; all speak through the weaver. VERIFIED as
+computation: the weaving rules are enforced by tests that fail the build when
+a surface leaks a gate number, a Greek letter, or a bare unexplained name.
+
+**The accessibility contract.** The plain register carries a standing
+invariant: no metaphor may reach a reader without a glossary article — the
+term store *is* the contract, and a test enumerates the metaphors (sky, page,
+string, door, bridge, form, resonance, season, window, …) and fails when one
+is missing or incomplete in either language. The advanced register keeps the
+machinery read-outs unchanged, one toggle away, so depth is never amputated —
+only ordered behind explanation.
+
+**The prognostic catalogue.** The computable day-facts of one person close
+under a small set of questions, and the catalogue turned out to be finite:
+*tailwind searches* (best days for a launch, a talk, the body, the heart,
+foundation, study, rest, a showing — or any life-domain, or any voice-set),
+*tempering warnings* (dense stretches where several tests meet; sustained
+costly-form runs; the seven-year steps), *orientation* (day, week, ninety
+days, year, life), *personal rhythms* (the emotional month calendar, the
+personal year), and *shared time* (a day to meet for two, the circle's day,
+the week for two). All of these are one engine — a scored walk over the
+horizon whose every returned date carries its reasons, woven by the same
+weaver — so a new question is a new weighting, not a new subsystem.
+
+**The mirror.** The honesty layers demand that layer-3 readings be tested
+only by the person's life, and the instrument now closes that loop itself:
+every evening rating is preceded by a hidden, committed prediction of the
+day, and once enough pairs accumulate the mirror opens with one of three
+verdicts — a match unlike chance (the person's own evidence *for* the tool),
+an inverted link (reported as such, not hidden), or an honest null («we keep
+counting and never dress hope as fact»). The permutation test behind the
+verdict is deterministic and inspectable; the plain register speaks only the
+verdict, the advanced register shows r, p and n. [OPEN] by construction: the
+mirror's content is each person's own stream, and the programme claims
+nothing on their behalf.
+
+*Status: engineering crystallization of Parts I–XVII; no new mathematical
+claims. The grammar, catalogue and mirror are implemented, tested and
+deployed in the reference engine (`core/src/speak.rs`, `core/src/stalk.rs`,
+`core/src/me.rs`, the bot surfaces); the design record lives in the engine
+repository's ARCHITECTURE.md.*
+
+## Part XIX. The Enneagram, arithmetically: two laws from one seven
+
+The I Ching (Part XVI) shared the wheel's *order* but not its lines; the chakra
+spine (Part XVII) converged on one distinguished triple and no more. The
+Enneagram is the sharpest comparison of the three, because it is not a list of
+figures or a ladder of centres — it is, explicitly, an **arithmetic diagram**.
+Gurdjieff built it on two laws he held to be independent: the **Law of Three**,
+the triangle `3–6–9`, three irreducible forces; and the **Law of Seven**, the
+octave, drawn as the six-pointed figure whose flow is `1→4→2→8→5→7→1`. Two laws,
+two axioms. The question this part settles is whether they are two — and the
+answer is that the forced seven already contains its own three, so that what the
+Enneagram posits twice, the reconstruction derives once.
+
+### 65. The octave is the multiplicative group mod 7
+
+The Enneagram's process figure is not decorative: its vertices are the digits of
+`1/7 = 0.142857…` and its arrows follow their order. That decimal is a fact about
+the number seven, and naming it exactly is the whole key.
+
+**Lemma XIX-A.** *The remainders that generate the period of `1/7` trace the
+cyclic group `(ℤ/7)*` under multiplication by a primitive root; the visible
+digit-cycle `1,4,2,8,5,7` is its faithful shadow — one digit per remainder, the
+same period six.*
+
+*Proof.* Long division of `1` by `7` produces at step `k` the remainder
+`r_k = 10^k mod 7`. In `ℤ/7`, `10 ≡ 3`, and `3` is a primitive root (`3^1..3^6 =
+3,2,6,4,5,1`, all six nonzero residues), so `r_k = 3^k` runs once through
+`(ℤ/7)* = {1,3,2,6,4,5}` before repeating. Each digit is `d_k = ⌊10·r_{k-1}/7⌋`,
+and the six digits `1,4,2,8,5,7` are in bijection with the six remainders — the
+period has length `6 = |(ℤ/7)*|`, the group's order. `∎`
+
+So the Law of Seven, stripped of its musical dress, is the statement that
+`(ℤ/7)*` is cyclic of order six. The octave *is* the multiplicative group of the
+field with seven elements.
+
+### 66. The three is already inside the seven
+
+Where the Enneagram then adds a *second* law for its triangle, the reconstruction
+needs no second anything: the "three" is forced by the same seven that carries
+the octave. Part IX fixed the generation count `N_gen = 3`, and its value is not
+an input but the order of a canonical subgroup.
+
+**Lemma XIX-B.** *The quadratic residues `QR(7) = {1,2,4}` are the unique
+index-two subgroup of `(ℤ/7)*`; they are exactly the even powers of any
+primitive root, and `|QR(7)| = (7−1)/2 = 3`.*
+
+*Proof.* Squaring in `ℤ/7` gives `1,4,2,2,4,1` for `1..6`, so the squares are
+`{1,2,4}`. In a cyclic group of order six the squares are the even powers of a
+generator — `3^0,3^2,3^4 = 1,2,4` — which form the unique subgroup of order
+`three`, index two. `∎`
+
+Hence `N_gen = |QR(7)| = 3` is the three of the "Law of Three," read off the
+seven directly: it is the residue half of the octave's own cycle, not a separate
+principle laid beside it. The Enneagram draws a triangle; the reconstruction
+finds it already inscribed as the squares.
+
+### 67. The arrows are half the collineations
+
+The comparison sharpens when both structures are given their symmetries — the
+move that decided the I Ching in Part XVI. The reconstruction's seven-fold layer
+carries the Fano group `G = PSL(2,7)` (Part IX); the Enneagram carries its
+process arrow, one step of the flow `1→4→2→8→5→7`. Model the Fano plane in its
+cyclic form: points `ℤ/7`, lines the seven translates `D+i` of the perfect
+difference set `D = {1,2,4}` (its six nonzero differences hit each residue once).
+A multiplier map `x ↦ m·x` is a collineation exactly when it permutes those
+lines.
+
+**Lemma XIX-C.** *The multiplier `x ↦ m·x` is a collineation of the cyclic Fano
+plane iff `m ∈ QR(7)`. The Enneagram's process arrow `x ↦ 3x` is therefore not a
+collineation, but its square `x ↦ 2x` is; the collineation multipliers form the
+index-two subgroup of the process cycle.*
+
+*Proof.* `m·D = {m,2m,4m}`. For `m = 2`: `{2,4,1} = D`, fixed; likewise `m = 4`
+fixes `D`, and `m = 1` trivially — so every `m ∈ QR(7)` sends lines to lines.
+For `m = 3` (a non-residue and primitive root): `3·D = {3,6,5}`, and checking the
+seven translates `D+i = {1,2,4},{2,3,5},{3,4,6},{4,5,0},{5,6,1},{6,0,2},{0,1,3}`
+shows `{3,5,6}` is none of them — a line has gone to a non-line, so `x↦3x` breaks
+the incidence. The residues `{1,2,4}` are collineation multipliers, the
+non-residues `{3,5,6}` are not; and since the process arrow is `x↦3x` with `3` a
+generator, its square is `x↦9x = x↦2x ∈ QR(7)`, a collineation. The arrow's cycle
+`⟨3⟩` (order six) contains the collineation subgroup `⟨2⟩ = QR(7)` (order three)
+at index two. `∎`
+
+Read plainly: **one step of the Enneagram's flow moves a Fano line off itself;
+two steps land back on the geometry.** The reconstruction's symmetry is not the
+Enneagram's arrow but its square — the residue half of the flow. Every other
+step of the octave is a collineation; the steps between are the non-residue coset
+the geometry cannot hold.
+
+### 68. The triangle is a second modulus
+
+There remains the triangle itself. Its three vertices `3,6,9` are the multiples
+of three among the nine positions — an object in `ℤ/9`, not `ℤ/7`. The hexad
+points `1,2,4,5,7,8` are the units mod nine, `(ℤ/9)*`, also of order six but
+generated by *doubling* (`1,2,4,8,7,5`), a different cycle from the octave's
+`1,4,2,8,5,7`. So the nine-point diagram is a **hybrid of two moduli**: a
+`mod 7` sequence (the `142857` flow, Lemma XIX-A) laid over `mod 9` positions
+(triangle and units). This is not a flaw in the Enneagram — it is why it *needs*
+two laws: the triangle lives where the octave does not, and no single arithmetic
+holds both. The reconstruction keeps one modulus. Its three is the residue
+subgroup of the seven (Lemma XIX-B), inscribed, not overlaid; there is no `mod 9`
+triangle to import, and none is missing.
+
+### 69. What the Enneagram settles
+
+Four lenses, one statement. **Arithmetically** (§65–66) the octave is `(ℤ/7)*`
+and the triangle is its residue subgroup — the seven already carries the three.
+**Group-theoretically** (§66) `N_gen = |QR(7)| = 3` is derived where the
+Enneagram axiomatises; where the tradition writes two laws, the reconstruction
+proves one implies the other's count. **Geometrically** (§67) the process arrow
+is not a Fano collineation but its square is, and the collineation subgroup sits
+at index two inside the flow. **Modularly** (§68) the Enneagram straddles `mod 7`
+and `mod 9`, and needs its second law precisely because of it, while the
+reconstruction is `mod 7` throughout.
+
+The honest reading `[И]`: this is not a claim that the Enneagram "reduces to" the
+reconstruction, nor that its psychology is anywhere in these residues. It is the
+narrower and firmer thing the mathematics does license — that the two laws the
+tradition holds apart are, at the level of the arithmetic each is drawn from, one
+law seen twice: a cyclic group of order six and the order-three subgroup it
+already contains. The Enneagram inscribes the seven and the three on separate
+figures; the forced structure shows the three was the seven's own squares all
+along. That the oldest of these diagrams should encode, in the period of `1/7`,
+the very group whose residues fix `N_gen` is offered as an invitation to the
+comparative record — suggestive of a shared arithmetic root beneath the
+traditions, not a doctrine the programme leans on. *(Verified as computation:
+`core/examples` reproduces Lemmas XIX-A through XIX-C; `[И]` as meaning.)*
+
