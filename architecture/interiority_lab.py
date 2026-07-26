@@ -258,6 +258,128 @@ def part_s():
     print("  [С] на игрушечной динамике; тождество P/R-порога — [Т].")
 
 
+def part_b():
+    """P1b: «более реальное, чем реальность». Пререгистрация: феномен
+    сверх-реальности соответствует состоянию, где ИНТЕГРАЦИЯ (связность)
+    выше базовой, а ДИФФЕРЕНЦИРОВАННОСТЬ (число блоков) ниже — «целое без
+    частей». Проверка на той же динамике: измеряем связность в момент
+    входа в единство (D=1) против базовой линии — и долю траекторий, где
+    максимум связности лежит ВНУТРИ окна единства, а не до него."""
+    print("\n" + "=" * 78)
+    print("B. P1b: сверх-реальность = интеграция выше базы при D=1")
+    print("=" * 78)
+    rng = random.Random(11)
+    n_ok = n_all = 0
+    gains = []
+    for _ in range(60):
+        g = start_gamma(rng)
+        world = herm_random(rng, rank=2)
+        open0 = rng.sample(range(N), 2)
+        lam_hist, d_hist = [], []
+        steps = 80
+        for t in range(steps):
+            sig = t / (steps - 1)
+            eta = 0.06 + 0.10 * sig
+            w = min(N, 2 + int(3.0 * sig * (N - 2) + 0.5))
+            mask = set(open0[:1]) | set(
+                sorted(range(N), key=lambda i: (i not in open0, i))[:w])
+            mixed = [[(1 - eta) * g[i][j]
+                      + (eta * (sig * sig) * world[i][j]
+                         if (i in mask and j in mask) else 0)
+                      + (eta * (1 - sig * sig) * g[i][j] if i == j else 0)
+                      for j in range(N)] for i in range(N)]
+            tr = sum(mixed[i][i].real for i in range(N))
+            g = [[mixed[i][j] / tr for j in range(N)] for i in range(N)]
+            lam_hist.append(sum(abs(g[i][j]) for i in range(N)
+                                for j in range(N) if i != j) / (N * (N - 1)))
+            d_hist.append(blocks(g))
+        base = sum(lam_hist[:8]) / 8
+        unity_ts = [t for t, d in enumerate(d_hist) if d == 1]
+        if not unity_ts:
+            continue
+        n_all += 1
+        in_unity = max(lam_hist[t] for t in unity_ts)
+        gains.append(in_unity / max(1e-9, base))
+        t_peak = max(range(len(lam_hist)), key=lambda t: lam_hist[t])
+        if t_peak >= unity_ts[0] and in_unity > 1.5 * base:
+            n_ok += 1
+    mean_gain = sum(gains) / max(1, len(gains))
+    print("  траекторий с единством: %d/60; связность в единстве против" % n_all)
+    print("  базовой: ×%.1f в среднем; максимум связности лежит в окне" % mean_gain)
+    print("  единства и превышает базу >1.5× в %d/%d." % (n_ok, n_all))
+    verdict = ("подтверждено: единство = состояние максимальной связности — "
+               "феномен «более реального» имеет носителя в модели"
+               if n_all and n_ok / n_all > 0.7 else
+               "НЕ подтверждено на модели — доложено честно")
+    print("  вердикт P1b [С]: %s." % verdict)
+
+
+def part_c():
+    """P1c: сущности — различающее предсказание. Две гипотезы: (а) сущности
+    = отделившиеся моды СОБСТВЕННОЙ самомодели (тогда их «спектр» родствен
+    спектру человека — тихие голоса выходят как Другой); (б) сущности =
+    входящие через пористость фрагменты ВНЕШНЕГО (тогда их спектр родствен
+    спектру мира, не человека). В модели меряем перекрытие главной моды
+    финального состояния: с собственным начальным спектром против спектра
+    мира. Корпусный тест (для будущих данных): профиль описанных сущностей
+    коррелирует с ТИХИМИ голосами натала (а) или с ОТКРЫТЫМИ каналами (б)."""
+    print("\n" + "=" * 78)
+    print("C. P1c: сущности — свои моды или входящие фрагменты?")
+    print("=" * 78)
+    rng = random.Random(13)
+    own_w = world_w = 0.0
+    M = 60
+    for _ in range(M):
+        g0 = start_gamma(rng)
+        world = herm_random(rng, rank=2)
+        open0 = rng.sample(range(N), 2)
+        g = [row[:] for row in g0]
+        steps = 80
+        for t in range(steps):
+            sig = t / (steps - 1)
+            eta = 0.06 + 0.10 * sig
+            w = min(N, 2 + int(3.0 * sig * (N - 2) + 0.5))
+            mask = set(open0[:1]) | set(
+                sorted(range(N), key=lambda i: (i not in open0, i))[:w])
+            mixed = [[(1 - eta) * g[i][j]
+                      + (eta * (sig * sig) * world[i][j]
+                         if (i in mask and j in mask) else 0)
+                      + (eta * (1 - sig * sig) * g[i][j] if i == j else 0)
+                      for j in range(N)] for i in range(N)]
+            tr = sum(mixed[i][i].real for i in range(N))
+            g = [[mixed[i][j] / tr for j in range(N)] for i in range(N)]
+        # главная мода финала: степенной метод
+        v = [complex(rng.gauss(0, 1), 0) for _ in range(N)]
+        for _ in range(60):
+            v2 = [sum(g[i][j] * v[j] for j in range(N)) for i in range(N)]
+            nrm = math.sqrt(sum(abs(x) ** 2 for x in v2)) or 1.0
+            v = [x / nrm for x in v2]
+        def top_overlap(m):
+            u = [complex(rng.gauss(0, 1), 0) for _ in range(N)]
+            for _ in range(60):
+                u2 = [sum(m[i][j] * u[j] for j in range(N)) for i in range(N)]
+                nrm = math.sqrt(sum(abs(x) ** 2 for x in u2)) or 1.0
+                u = [x / nrm for x in u2]
+            return abs(sum(v[i].conjugate() * u[i] for i in range(N))) ** 2
+        own_w += top_overlap(g0)
+        world_w += top_overlap(world)
+    print("  перекрытие главной моды пикового состояния: со СВОИМ начальным")
+    print("  спектром %.2f · со спектром МИРА %.2f (среднее по %d)"
+          % (own_w / M, world_w / M, M))
+    who = "мира (гипотеза б: входящие фрагменты)" \
+        if world_w > own_w * 1.3 else \
+        ("своя (гипотеза а: моды самомодели)" if own_w > world_w * 1.3
+         else "смешанная — обе компоненты сопоставимы")
+    print("  в ЭТОЙ динамике доминирует компонента: %s." % who)
+    print("  вердикт P1c [С-модель]: игрушка с пассивным входом даёт ответ по")
+    print("  построению (вход пересиливает) — решает НЕ модель, а корпусный")
+    print("  тест: профиль сущностей человека коррелирует с его ТИХИМИ")
+    print("  голосами (а) или с его ОТКРЫТЫМИ каналами (б). Пререгистрировано")
+    print("  для данных с наталами; различие наблюдаемо и фальсифицируемо.")
+
+
 if __name__ == "__main__":
     kluver_ascii()
     part_s()
+    part_b()
+    part_c()
