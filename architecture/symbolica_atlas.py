@@ -38,8 +38,15 @@ ATLAS = [
   "С", "casting-out-nines = Z/9; master 11/22/33 = the 22 alphabet"),
  ("Runes (Elder Futhark)", "24 = 3·8", "3 aettir × the octad", "И",
   "three families of eight = three copies of the octonion octad"),
- ("Geomancy", "16 = 2^4", "F2^4", "Т",
-  "16 figures = four lines of even/odd = F2^4 (binary, like the I Ching)"),
+ ("Geomancy", "16 = 2^4 ; XOR", "F2^4 AS A GROUP", "Т",
+  "figures = F2^4; the CHART OPERATION is the group law: Judge = Witness1 "
+  "XOR Witness2, every derived figure = componentwise sum mod 2 — the one "
+  "divination whose engine is literally linear algebra over F2"),
+ ("Kybalion (7 hermetic principles)", "7", "the seven voices?", "И",
+  "strong anchors: Vibration=D(movement), Rhythm=E(the feeling wave), "
+  "Cause-and-effect=O(ground/kinetics); plausible: Polarity=A(distinction), "
+  "Gender=U(union), Correspondence=S(form-as-mirror), Mentalism=L(meaning); "
+  "an [И]-map — three anchors carry it, four are read, not derived"),
  ("Western 4-elements/humours", "4 · 3", "Z/4×Z/3 of the wheel", "С",
   "4 elements = the Z/3 trine-orbits; 3 modalities = the Z/4 square-orbits"),
  ("Chakras / alchemical metals", "7", "the heptad = the voices", "И",
@@ -89,6 +96,17 @@ def main():
           % (2**6, 4**3, "OK" if 2**6 == 4**3 == 64 else "??"))
     print("  circle of fifths     = gcd(7,12) = %d  → 7 steps generate all 12 [%s]"
           % (__import__("math").gcd(7, 12), "OK" if __import__("math").gcd(7, 12) == 1 else "??"))
+    # geomancy: the derivation law IS F2^4 addition — check closure + identity
+    figs = [tuple((n >> k) & 1 for k in range(4)) for n in range(16)]
+    xor = lambda a, b: tuple((x + y) % 2 for x, y in zip(a, b))
+    closed = all(xor(a, b) in figs for a in figs for b in figs)
+    via = (1, 0, 1, 1); pop = (0, 1, 1, 0)
+    judge = xor(via, pop)
+    print("  geomancy judge law   = XOR closure over 16 figures  [%s]; "
+          "identity = Populus(0000): x+x=%s"
+          % ("OK" if closed else "??",
+             "OK" if xor(via, via) == (0, 0, 0, 0) else "??"))
+    _ = judge
     print()
     print("=" * 82)
     print("Not many systems glued — ONE crystal (octonions/Fano/G2/F2^n) seen in")
