@@ -107,6 +107,43 @@ def main():
           % ("OK" if closed else "??",
              "OK" if xor(via, via) == (0, 0, 0, 0) else "??"))
     _ = judge
+
+    # ── Lo Shu (Ло Шу): the 3x3 magic square under the same crystal ──────
+    # LS1 [Т]: uniqueness up to the 8 dihedral symmetries — full enumeration.
+    from itertools import permutations as perms
+    magic = []
+    for pm in perms(range(1, 10)):
+        rows = [pm[0:3], pm[3:6], pm[6:9]]
+        ok = all(sum(r) == 15 for r in rows)
+        ok &= all(sum(rows[i][j] for i in range(3)) == 15 for j in range(3))
+        ok &= sum(rows[i][i] for i in range(3)) == 15
+        ok &= sum(rows[i][2 - i] for i in range(3)) == 15
+        if ok:
+            magic.append(rows)
+    print("  Lo Shu uniqueness    = %d magic squares = exactly 8 = D4 orbit "
+          "of ONE [%s]" % (len(magic), "OK" if len(magic) == 8 else "??"))
+    # LS2 [Т]: Later-Heaven bagua on the ring; trigram inversion vs antipode.
+    # positions on the square (row, col), center 5 excluded; standard layout
+    # 4 9 2 / 3 5 7 / 8 1 6; Later-Heaven trigram of each number, coded
+    # bottom-line-first as bits (line1,line2,line3):
+    tri = {1: (0, 1, 0), 8: (1, 0, 0), 3: (1, 0, 0), 4: (0, 1, 1),
+           9: (1, 0, 1), 2: (0, 0, 0), 7: (0, 1, 1), 6: (1, 1, 1)}
+    # honest source note: two schools differ on 3/8 and 4/7 codings; we use
+    # Zhen(3)=(1,0,0), Gen(8)=(0,0,1), Xun(4)=(0,1,1), Dui(7)=(1,1,0)
+    tri[3] = (1, 0, 0); tri[8] = (0, 0, 1); tri[4] = (0, 1, 1); tri[7] = (1, 1, 0)
+    inv = lambda t: tuple(1 - x for x in t)
+    antipodes = [(4, 6), (9, 1), (2, 8), (3, 7)]
+    n_inv_antipode = sum(1 for a, b in antipodes if tri[a] == inv(tri[b]))
+    pairs_inv = [(a, b) for a in tri for b in tri
+                 if a < b and tri[a] == inv(tri[b])]
+    print("  Lo Shu inversions    = of 4 inverse trigram pairs, %d lie on "
+          "square antipodes (sum-10 pairs), %d elsewhere [Т-count]"
+          % (n_inv_antipode, len(pairs_inv) - n_inv_antipode))
+    # LS3 [И]: the frame 9 = 1 + 8 = center(source) + F2^3 vertices — the
+    # same 1+8 split as the I Ching's source + trigram cube.
+    print("  Lo Shu frame         = 9 = 1 + 8 = center + ring = source + "
+          "F2^3 [И]; magic sums 15 = 3x5 (center value organizes all lines)")
+
     print()
     print("=" * 82)
     print("Not many systems glued — ONE crystal (octonions/Fano/G2/F2^n) seen in")
