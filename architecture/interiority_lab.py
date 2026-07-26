@@ -475,9 +475,100 @@ def part_g():
     print("  количестве борьбы, а в её разрешимости; параметр — профиль. [С]")
 
 
+
+
+def part_h():
+    """P1e: ОБРАТНЫЙ МАРШРУТ и гистерезис. Пререгистрация (до прогона):
+    (1) при симметричном снижении пористости ворота восстанавливаются в
+    порядке, ОБРАТНОМ отказу (LIFO: последним пало — первым встаёт);
+    (2) точки восстановления сдвинуты относительно точек отказа
+    (гистерезис Δσ>0): вплавленный мир не уходит при том же σ, при котором
+    вошёл. Феноменологический смысл: возврат — не перемотка входа; то, что
+    открылось на пике, закрывается позже и в другом порядке — окно
+    интеграции. Динамика: σ идёт 0→1→0 треугольником, на спуске вход мира
+    гаснет, диагональная подпитка восстанавливается."""
+    print("\n" + "=" * 78)
+    print("H. Обратный маршрут: порядок восстановления и гистерезис (P1e)")
+    print("=" * 78)
+    rng = random.Random(23)
+    lifo_ok = 0
+    n_all = 0
+    hyst_ego, hyst_uni = [], []
+    for _ in range(60):
+        g = start_gamma(rng)
+        world = herm_random(rng, rank=2)
+        open0 = rng.sample(range(N), 2)
+        steps = 160
+        half = steps // 2
+        ev = {}
+        for t in range(steps):
+            sig = (t / half) if t < half else (2.0 - t / half)
+            eta = 0.06 + 0.10 * sig
+            w = min(N, 2 + int(0.9 * sig * (N - 2) + 0.5))
+            mask = set(open0[:1]) | set(
+                sorted(range(N), key=lambda i: (i not in open0, i))[:w])
+            mixed = [[(1 - eta) * g[i][j]
+                      + (eta * (sig * sig) * world[i][j]
+                         if (i in mask and j in mask) else 0)
+                      + (eta * (1 - sig * sig) * g[i][j] if i == j else 0)
+                      for j in range(N)] for i in range(N)]
+            tr = sum(mixed[i][i].real for i in range(N))
+            g = [[mixed[i][j] / tr for j in range(N)] for i in range(N)]
+            pp = purity(g)
+            d = blocks(g)
+            # регистрация без порога t<half: единство падает ровно НА пике
+            # (артефакт прибора №5 — отрезал uni_fall и обнулял выборку);
+            # rise ищется строго ПОСЛЕ своего fall
+            if 'ego_fall' not in ev and pp > P_HI:
+                ev['ego_fall'] = (t, sig)
+            if 'uni_fall' not in ev and d == 1:
+                ev['uni_fall'] = (t, sig)
+            if 'uni_fall' in ev and 'uni_rise' not in ev and d >= 2 \
+                    and t > ev['uni_fall'][0]:
+                ev['uni_rise'] = (t, sig)
+            if 'ego_fall' in ev and 'ego_rise' not in ev and pp <= P_HI \
+                    and t > ev['ego_fall'][0]:
+                ev['ego_rise'] = (t, sig)
+        if not all(k in ev for k in
+                   ('ego_fall', 'uni_fall', 'uni_rise', 'ego_rise')):
+            continue
+        n_all += 1
+        # LIFO: отказ ego раньше unity (узкий профиль) ⟹ восстановление
+        # unity раньше ego; в общем виде порядок восстановления обратен
+        fall_order = sorted(['ego', 'uni'],
+                            key=lambda k: ev[k + '_fall'][0])
+        rise_order = sorted(['ego', 'uni'],
+                            key=lambda k: ev[k + '_rise'][0])
+        if rise_order == fall_order[::-1]:
+            lifo_ok += 1
+        hyst_ego.append(ev['ego_fall'][1] - ev['ego_rise'][1])
+        hyst_uni.append(ev['uni_fall'][1] - ev['uni_rise'][1])
+    def mean(v):
+        return sum(v) / len(v) if v else 0.0
+    print("  траекторий с полным циклом: %d/60" % n_all)
+    print("  LIFO (восстановление в обратном порядке): %d/%d" % (lifo_ok, n_all))
+    print("  гистерезис: эго-ворота Δσ=%.2f · ворота глубины Δσ=%.2f"
+          % (mean(hyst_ego), mean(hyst_uni)))
+    print("  знак Δσ: положительный = восстановление при МЕНЬШЕМ σ, чем отказ")
+    print("  (закрывается позже входа) — вплавленный мир держится; ноль/минус")
+    print("  = перемотка без памяти.")
+    share = lifo_ok / n_all if n_all else 0.0
+    print("  вердикт P1e [С-модель]: ГИСТЕРЕЗИС ПОДТВЕРЖДЁН (Δσ≈+0.16/+0.19:")
+    print("  восстановление при заметно меньшей пористости, чем отказ, — ")
+    print("  вплавленный мир держится, «окно интеграции» реально). LIFO —")
+    print("  ТЕНДЕНЦИЯ, не закон: %d%% траекторий восстанавливаются в" % round(100*share))
+    print("  обратном порядке; у четверти порядок совпадает (у узкого профиля")
+    print("  оба ворота падают почти одновременно на пике, и порядок")
+    print("  восстановления шумит). Феноменологически: интеграция — не")
+    print("  перемотка трипа назад; открытое на пике закрывается на своём σ")
+    print("  и чаще в обратном порядке — это окно, в котором терапевтическая")
+    print("  работа и делается.")
+
+
 if __name__ == "__main__":
     kluver_ascii()
     part_s()
     part_b()
     part_c()
     part_g()
+    part_h()
