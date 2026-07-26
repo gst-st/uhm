@@ -144,6 +144,25 @@ def main():
     print("  Lo Shu frame         = 9 = 1 + 8 = center + ring = source + "
           "F2^3 [И]; magic sums 15 = 3x5 (center value organizes all lines)")
 
+    # ── 36 decans + digital-root 9: the calendar layer vs the hexagram layer
+    # D1 [Т]: decan boundaries (10°m) NEVER meet door boundaries (302+5.625k):
+    hits = sum(1 for m in range(36) for k in range(64)
+               if abs(((302 + 5.625 * k) - 10 * m) % 360) < 1e-9)
+    print("  36 decans vs 64 doors= shared boundaries: %d of 36x64 [Т] — the"
+          " lattices are transversal; a decan holds 10/5.625 = %.2f doors"
+          % (hits, 10 / 5.625))
+    print("  decan origin         = 36 x 10-day decades of the Egyptian year "
+          "(calendar layer, like the 12 signs) — NOT a hexagram object [И]")
+    # N9 [Т]: numerology's digital root IS arithmetic mod 9; and 9 ⊥ 7.
+    dr = lambda n: 1 + (n - 1) % 9
+    ok = all(dr(a * b) == dr(dr(a) * dr(b)) and dr(a + b) == dr(dr(a) + dr(b))
+             for a in range(1, 200) for b in range(1, 200))
+    print("  numerology 9         = digital root = mod-9 arithmetic "
+          "(homomorphism check over 200x200: %s) [Т]; gcd(9,7)=1 — the nine"
+          % ("OK" if ok else "??"))
+    print("                         does not project onto the seven voices "
+          "without loss; its true home is Z/9 (and Lo Shu's 1+8 frame) [И]")
+
     print()
     print("=" * 82)
     print("Not many systems glued — ONE crystal (octonions/Fano/G2/F2^n) seen in")
