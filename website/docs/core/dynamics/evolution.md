@@ -1207,8 +1207,12 @@ oscillator at the Bohr frequency $\omega_{jk} = |\lambda_j - \lambda_k|$.
 Of the 21 frequencies only **10 are distinct**: the degeneracies bind
 couplings into **choirs** that beat as one ($\omega = 1.00$: AD SL DO EO;
 $\omega = 0.60$: AS DL EU; $\omega = 0.40$: LO OU SD; …). The frequencies
-are fixed by the design — the same for every human; **which strings sound and
-how loudly** is fixed by the self-model $\rho^*$ — the person. At the
+are fixed by the design — the same for every human (the concrete spectrum
+$[0, 0.6, 1.0, 1.6, 3.0, 2.0, 2.4]$ is the engine's pinned constant `[О]`
+with the A5-motivated spectral order, $\lambda_E$ highest — the *ordering*
+carries the theory, the numeric values are a calibration convention);
+**which strings sound and how loudly** is fixed by the self-model
+$\rho^*$ — the person. At the
 reference self-model six strings sound (EO loudest at $|\gamma| = 0.2215$)
 and fifteen are silent. So «everything is vibration» has an exact reading in
 the model: **a living stationary state is a chord** — the set of pairs
