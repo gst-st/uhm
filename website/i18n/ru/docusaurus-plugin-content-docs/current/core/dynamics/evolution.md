@@ -1202,6 +1202,12 @@ $\Lambda^* = 50.5$ при референс-самомодели — провер
 насос/распад, он трёхмасштабен ($g_D$, $\omega_0$, спектр $\omega_{jk}$),
 и вибрация, звучащая в живом состоянии, поднимает ему ренту.
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="Порог жизни и критическое замедление у складки" src="/img/theory/fold-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Порог жизни и критическое замедление у складки" src="/img/theory/fold-ru-dark.svg" width="860"/>
+</p>
+
+
 #### Аккорд: частоты — устройство, амплитуды — личность {#аккорд-вибрации}
 
 <p align="center">

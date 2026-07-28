@@ -1205,6 +1205,12 @@ threshold of life is not one pump-to-decay ratio — it is three-scaled
 ($g_D$, $\omega_0$, the $\omega_{jk}$ spectrum), and the vibration that
 sings in the living state also raises its rent.
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="The threshold of life and critical slowing near the fold" src="/img/theory/fold-en-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="The threshold of life and critical slowing near the fold" src="/img/theory/fold-en-dark.svg" width="860"/>
+</p>
+
+
 #### The chord: frequencies are the instrument, amplitudes are the person {#аккорд-вибрации}
 
 <p align="center">
