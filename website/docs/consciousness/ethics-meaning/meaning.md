@@ -293,6 +293,71 @@ This is not a competition: Mozart died at 35, having lived a short life with hig
 
 ---
 
+## 4-bis. The Crisis of Consciousness: the reading gap {#кризис-сознания}
+
+A thesis voiced in contemporary contemplative syntheses (the film *Samadhi*):
+*the real crisis of our world is not social, political or economic — it is a
+crisis of consciousness: the inability to directly feel our true nature, and
+to see that nature in each other and in all things.* UHM can make every word
+of this sentence precise — and show what closes the gap.
+
+**Where the crisis lives.** Not in the content of a life but in its
+**reading channel**. The theory carries a measure for exactly this: the
+self-model quality $R_\varphi \in [0,1]$ — how well the system's model of
+itself reads its actual state — and the reflection threshold $R \geq 1/3$
+`[Т]`, below which the [conscious window](/docs/proofs/consciousness/conscious-window)
+does not open at all. The crisis of consciousness is the gap
+$1 - R_\varphi$: being and self-reading disagree, and everything downstream
+(choices, bonds, meaning vectors) inherits the noise. This is why the crisis
+does not look like a catastrophe: the dashboards of a life can stay flat
+while the reading is wrong — the state does not show it; the flows do.
+
+**«Our true nature» is architecture, not substance.** Seven voices, the same
+in every human `[О]`; the vibration frequencies of the couplings are fixed by
+the design — of 21 Bohr frequencies only 10 are distinct, binding couplings
+into choirs — while the **amplitudes** are personal
+([the chord](/docs/core/dynamics/evolution#аккорд-вибрации)). And by the
+[turnover corollary T-291 [Т]](/docs/core/dynamics/evolution#следствие-оборот-живого),
+a living stationary state is not a thing but a standing **turnover** —
+destruction and rebuilding in exact balance; what persists is the pattern,
+not a substance (substrate closure T-153). «Directly feeling one's true
+nature» therefore has a non-mystical referent: feeling *one's own pattern of
+renewal* — which strings sound, which stay silent, how fast the return after
+a kick.
+
+**«…in each other and in all things».** The first half is theorem-shaped:
+the same seven voices and the same ten frequencies in every person — what
+differs is how the word is divided among them, so seeing the nature in
+another is reading a different amplitude profile on an identical instrument.
+The second half is the L0 layer — universal interiority, the formalised core
+of [panpsychism](/docs/consciousness/comparative/panpsychism-analysis):
+experience as the inner side of structure, at degrees set by the four gates.
+
+**Why the crisis resists willpower.** The dynamics is honest about this:
+below the wall ($P < 2/7$) the regeneration gate closes, $g_V = 0$ `[Т]` —
+a regime where effort does not lift; near the life/death fold the return
+time grows (critical slowing, measured $\times 26$) — fragility *is*
+proximity to the fold; and even above the wall the pump pays the
+**price of rotation** — the living state's own vibration raises its rent.
+Moralising at a person in these regimes mistakes dynamics for character.
+The individual crisis mechanics of §4 sit inside this picture; the
+collective ladder ($P_{\text{crit}}^{(n)}$, SAD_MAX $= 3$) extends it
+upward `[С]` — a civilisation of unread lives is a holarchy running below
+its own reflection thresholds, and its social, political and economic
+storms are downstream weather `[И]`.
+
+**What closes the gap.** Not belief — **reconciliation practice**: writing
+down what you expect of yourself, then what actually happened, and letting
+the instrument measure the residue. That is the operational content of
+«directly feeling one's nature»: the daily gap between forecast and reality
+*is* $1 - R_\varphi$ made visible, with honest limits — verdicts need their
+sixty days; the natal map is one real number re-coded (T-290), so no false
+depth is on offer; and some cycles simply do not fit the window (two lunar
+waves in sixty days are too few). The reformulated thesis, with everything
+above behind it: **the crisis of consciousness is the measurable gap between
+being and its self-reading; it is dynamical, not moral; and it closes not by
+conviction but by the practice of reconciliation.**
+
 ## 5. Meaning of the Universe
 
 The meaning of the Universe — to **know itself** through the infinite unfolding of forms **[I]**:
