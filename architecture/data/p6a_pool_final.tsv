@@ -1,0 +1,55 @@
+# P6a consolidated match pool (2026-07-27): PG+WS+Gallica+IA-fr after all manual passes
+ogid	fname	gname	year	occ	gqid	cy	source	ref	title
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	17238	Journal des Goncourt (Deuxième série, premier volume) Mémoires de la vie littéraire
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	17420	Journal des Goncourt (Deuxième série, deuxième volume) Mémoires de la vie littéraire
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	17505	Journal des Goncourt (Deuxième série, troisième volume) Mémoires de la vie littéraire
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	17746	Journal des Goncourt (Troisième série, premier volume) Mémoires de la vie littéraire
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	17947	Journal des Goncourt (Troisième série, deuxième volume) Mémoires de la vie littéraire
+goncourt-edmond-1822-05-26	Goncourt	Edmond	1822	novelist	A6-375	FR	pg	18055	Journal des Goncourt (Troisième série, troisième volume) Mémoires de la vie littéraire
+daudet-ernest-1837-05-31	Daudet	Ernest	1837	writer	A6-231	FR	pg	30915	Mon frère et moi; souvenirs d'enfance et de jeunesse
+houssaye-arsene-1814-03-28	Houssaye	Arsène	1814	novelist	A6-422	FR	ws	Souvenirs de jeunesse (Houssaye)	Souvenirs de jeunesse (Houssaye)
+houssaye-arsene-1814-03-28	Houssaye	Arsène	1814	novelist	A6-422	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6507482t	Les confessions : souvenirs d'un demi-siècle, 1830-1880. Tome 3 / Arsène Houssaye
+houssaye-arsene-1814-03-28	Houssaye	Arsène	1814	novelist	A6-422	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k87468	Les confessions. Tome 1 / Arsène Houssaye
+quinet-edgar-1803-02-17	Quinet	Edgar	1803	writer	A6-666	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9816878m	Oeuvres complètes d'Edgar Quinet ; 15. Histoire de mes idées : autobiographie / Edgar Quinet
+gebhart-emile-1839-07-19	Gebhart	Emile	1839	writer	A6-357	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1068836	Petits mémoires / Émile Gebhart,...
+monselet-charles-1825-04-30	Monselet	Charles	1825	writer	A6-583	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k370995	Petits mémoires littéraires / Charles Monselet
+flammarion-camille-1842-02-26	Flammarion	Camille	1842	writer	A6-317	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k83470m	Mémoires biographiques et philosophiques d'un astronome / Camille Flammarion
+sarcey-francisque-1827-10-08	Sarcey	Francisque	1827	writer	A6-725	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6507585d	Souvenirs de jeunesse / Francisque Sarcey
+lorrain-jean-1855-08-09	Lorrain	Jean	1855	novelist	A6-516	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k82500g	Sensations et souvenirs / Jean Lorrain
+monselet-charles-1825-04-30	Monselet	Charles	1825	writer	A6-583	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k57318952	Mes souvenirs littéraires / par Charles Monselet
+descaves-lucien-1861-03-18	Descaves	Lucien	1861	novelist	A6-249	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382280v	Souvenirs d'un ours / Lucien Descaves,...
+loisy-alfred-1857-02-28	Loisy	Alfred	1857	writer	A6-515	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6555498f	Mémoires pour servir à l'histoire religieuse de notre temps. T. 2. 1900-1908 / Alfred Loisy
+souvestre-emile-1806-04-15	Souvestre	Emile	1806	novelist	A6-753	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k5812230n	Souvenirs d'un Bas-Breton, par Émile Souvestre
+sarcey-francisque-1827-10-08	Sarcey	Francisque	1827	writer	A6-725	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k62092287	Le siège de Paris : impressions et souvenirs / Francisque Sarcey
+nisard-desire-1806-03-20	Nisard	Désiré	1806	writer	A6-599	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k54061806	Souvenirs et notes biographiques (juillet 1881) / par Désiré Nisard,...
+fabre-emile-1869-03-24	Fabre	Emile	1869	writer	A6-301	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359305k	De Thalie à Melpomène : souvenirs de théâtre / Émile Fabre
+claretie-jules-1840-12-03	Claretie	Jules	1840	novelist	A6-201	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k405865m	Souvenirs du dîner Bixio / Jules Claretie ; préf. de Georges Claretie
+nisard-desire-1806-03-20	Nisard	Désiré	1806	writer	A6-599	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9675503q	Souvenirs de voyages : France, Belgique, Prusse rhénane, Angleterre / par D. Nisard,...
+claretie-jules-1840-12-03	Claretie	Jules	1840	novelist	A6-201	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6464633h	Paris assiégé : tableaux et souvenirs, septembre 1870-janvier 1871 / Jules Claretie
+riviere-jacques-1886-07-15	Riviere	Jacques	1886	novelist	A6-690	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9465424	Allemand , souvenirs et réflexions d'un prisonnier de guerre de 1914-1918
+simon-jules-1814-12-27	Simon	Jules	1814	writer	A6-745	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k5439085p	Souvenirs du quatre septembre. Le Gouvernement de la défense nationale / par Jules Simon
+veuillot-louis-1813-10-11	Veuillot	Louis	1813	writer	A6-796	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k58202539	Les Français en Algérie, souvenirs d'un voyage fait en 1841, par Louis Veuillot,...
+riviere-jacques-1886-07-15	Riviere	Jacques	1886	novelist	A6-690	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k8630316s	L'Allemand, souvenirs et réflexions d'un prisonnier de guerre. 13è édition / Jacques Rivière
+claretie-jules-1840-12-03	Claretie	Jules	1840	novelist	A6-201	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k37211g	La canne de M. Michelet : promenades et souvenirs / Jules Clarétie,... ; préf. par Alfred Mézières,...
+veuillot-louis-1813-10-11	Veuillot	Louis	1813	writer	A6-796	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k392051	Les français en Algérie : souvenirs d'un voyage fait en 1841 (2e édition) / par Louis Veuillot,...
+claretie-jules-1840-12-03	Claretie	Jules	1840	novelist	A6-201	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6365959v	La France envahie (juillet à septembre 1870) : Forbach et Sedan Impressions et souvenirs de guerre (1er août 1
+souvestre-emile-1806-04-15	Souvestre	Emile	1806	novelist	A6-753	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k58428361	Souvenirs d'un vieillard, la dernière étape, par Émile Souvestre, précédée d'une notice sur la vie d'Émile Sou
+carcopino-jerome-1881-06-27	Carcopino	Jerome	1881	writer	A6-170	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3357774k	Souvenirs romains / Jérôme Carcopino,...
+siegfried-andre-1875-04-21	Siegfried	André	1875	writer	A6-741	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3390170s	Mes souvenirs d'enfance / André Siegfried
+carcopino-jerome-1881-06-27	Carcopino	Jerome	1881	writer	A6-170	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33574964	Souvenirs de sept ans : 1937-1944 / Jérôme Carcopino
+dekobra-maurice-1885-05-26	Dekobra	Maurice	1885	novelist	A6-238	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382855v	Sous le signe du cobra : mes souvenirs de globe-trotter / Maurice Dekobra
+leautaud-paul-1872-01-18	Leautaud	Paul	1872	writer	A6-475	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3370335g	Mélange : souvenirs de Basoche, ménagerie intime, amour, femmes, etc. / Paul Léautaud ; une lithographie de Be
+ajalbert-jean-1863-06-10	Ajalbert	Jean	1863	novelist	A6-9	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k4221142t	Mémoires en vrac : au temps du symbolisme, 1880-1890 / Jean Ajalbert,...
+marmier-xavier-1808-06-22	Marmier	Xavier	1808	writer	A6-544	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9814356p	Souvenirs d'un voyageur (Nouvelle édition) / Xavier Marmier,...
+marmier-xavier-1808-06-22	Marmier	Xavier	1808	writer	A6-544	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k105465r	Souvenirs de voyages et traditions populaires / par X. Marmier
+marmier-xavier-1808-06-22	Marmier	Xavier	1808	writer	A6-544	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1054664	Nouveaux souvenirs de voyage. Franche-Comté / par X. Marmier
+marmier-xavier-1808-06-22	Marmier	Xavier	1808	writer	A6-544	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9692198f	Impressions et souvenirs d'un voyageur chrétien / par Xavier Marmier,...
+montegut-emile-1825-06-23	Montegut	Emile	1825	writer	A6-584	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1022057	Tableaux de la France : souvenirs de Bourgogne / par Émile Montégut
+marmier-xavier-1808-06-22	Marmier	Xavier	1808	writer	A6-544	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k10955124	Un été au bord de la Baltique et de la mer du Nord, souvenirs de voyage, par X. Marmier,...
+grancher-marcel-1897-08-12	Grancher	Marcel	1897	writer	E3-729	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33926207	La fin des haricots : souvenirs / Marcel E. Grancher,...
+guirec-jean-charton-1898-07-31	Guirec	Jean (CHARTON)	1898	writer	E3-759	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33945319	La belle comédie : récit, souvenirs littéraires, 1919-1939 / Jean Guirec
+marbo-camille-1883-04-11	Marbo	Camille	1883	novelist	A6-536	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359085k	A travers deux siècles : souvenirs et rencontres (1883-1967) / Camille Marbo
+harcourt-robert-1881-11-23	Harcourt	Robert	1881	writer	A6-407	FR	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3380747b	Souvenirs de captivité et d'évasions (Édition définitive) / Robert d'Harcourt,...
+maurois-andre-1885-07-26	Maurois	André	1885	novelist	A6-560	FR	ia	memoires0000andr	Memoires
+daudet-ernest-1837-05-31	Daudet	Ernest	1837	writer	A6-231	FR	ia	souvenirsdemonte01daud	Souvenirs de mon temps
+janin-jules-1804-02-16	Janin	Jules	1804	writer	A6-434	FR	ia	petitssouvenirsa00janiuoft	Petits souvenirs. Avec une eau-forte par Ad. Lalauze

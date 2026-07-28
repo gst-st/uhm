@@ -1,0 +1,78 @@
+decision	ogid	ia_id	title	creator	reason
+reject	roux-francois-1897-03-09	illustriitaliani02pt1roux	Illustri italiani contemporanei; memorie giovanili autobiogr	Roux, Onorato	given-name mismatch
+reject	janin-jules-1804-02-16	b28756095	Memorie ed osservazioni anatomiche, fisiologiche, e fisiche 	Janin, Jean, 1730 or 1731- n 86862491	given-name mismatch
+reject	roux-francois-1897-03-09	p2memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	bartolini-luigi-1892-02-08	memoriestoricocr00bart	Memorie storico-critiche archaeologiche dei sancti Cirillo e	Bartolini, Domenico, cardinal, 1813-1887	given-name mismatch
+reject	roux-francois-1897-03-09	p2memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896-	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896- Diario del '71 e del '72. 	given-name mismatch
+reject	martini-mario-maria-1880-10-10	ilquarantottoint00pass	Il quarantotto in Toscana : diario inedito del conte Luigi P	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	martini-mario-maria-1880-10-10	leconfessionidip0000mart	Le confessioni di Pietro : meditazioni sul cammino vocaziona	Martini, Carlo Maria, 1927-2012	given-name mismatch
+reject	marini-giuseppe-1875-05-03	galileoelinquis00marigoog	Galileo e l'Inquisizione : memorie storico-critiche dirette 	Marini, Marino, d. 1855	given-name mismatch
+reject	bartolini-luigi-1892-02-08	memoriestoricocr00bart	Memorie storico-critiche archaeologiche dei sancti Cirillo e	Bartolini, Domenico, cardinal, 1813-1887	given-name mismatch
+reject	roux-francois-1897-03-09	p2memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896-	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896- Diario del '71 e del '72. 	given-name mismatch
+reject	martini-mario-maria-1880-10-10	ilquarantottoint00pass	Il quarantotto in Toscana : diario inedito del conte Luigi P	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	marini-giuseppe-1875-05-03	galileoelinquis00marigoog	Galileo e l'Inquisizione : memorie storico-critiche dirette 	Marini, Marino, d. 1855	given-name mismatch
+reject	roux-francois-1897-03-09	illustriitaliani02pt1roux	Illustri italiani contemporanei; memorie giovanili autobiogr	Roux, Onorato	given-name mismatch
+reject	roux-francois-1897-03-09	p1memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	de-stefani-alessandro-1891-01-02	memoriestoriched00dest	Memorie storiche di Portomaggiore	De Stefani, Pietro	given-name mismatch
+accept	papini-giovanni-1881-01-09	lememoriediddioe00papiuoft	Le memorie d'Iddio; e La vita di nessuno	Papini, Giovanni, 1881-1956	creator+wikidata-year
+reject	roux-francois-1897-03-09	p1memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	roux-francois-1897-03-09	illustriitaliani01pt2roux	Illustri italiani contemporanei; memorie giovanili autobiogr	Roux, Onorato	given-name mismatch
+reject	roux-francois-1897-03-09	illustriitaliani02pt2roux	Illustri italiani contemporanei; memorie giovanili autobiogr	Roux, Onorato	given-name mismatch
+reject	roux-francois-1897-03-09	memoriegiovanili03roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	donati-umberto-1884-11-22	il-diario-della-volonta_20250923_2052	Il Diario Della Volontà	Roberto Donati	given-name mismatch
+reject	martini-mario-maria-1880-10-10	confessionierico00mart	Confessioni e ricordi [microform] (Firenze granducale)	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	donati-umberto-1884-11-22	diario-1922-italo-balbo	Diario 1922 Italo Balbo	roberto donati	given-name mismatch
+reject	mazzucchelli-mario-1896-04-17	b30522523	Memorie de' provvedimenti, ordinati dal Supremo Maestrato de	Mazzucchelli, Carlo	given-name mismatch
+reject	roux-francois-1897-03-09	p2memoriegiovani02roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	martini-mario-maria-1880-10-10	memorieinedite1800giusuoft	Memorie inedite (1845-49);	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	donati-umberto-1884-11-22	il-diario-della-volonta_20250923_2052	Il Diario Della Volontà	Roberto Donati	given-name mismatch
+reject	roux-francois-1897-03-09	memoriegiovanili03roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	roux-francois-1897-03-09	p1memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896-	given-name mismatch
+reject	montale-eugenic-1896-10-12	newpoemsselectio00mont	New poems : a selection from Satura and Diario del '71 e del	Montale, Eugenio, 1896- Diario del '71 e del '72. 	given-name mismatch
+reject	zamboni-armando-1896-09-29	memorieintornoal00zamb	Memorie intorno alle pubbliche fabbriche piu insigni della c	Zamboni, Baldassarre, author	given-name mismatch
+reject	roppo-vincenzo-1879-02-26	roppo-1927-noa-memorie-storiche-del-comune-di-noicattaro	Noa: Memorie storiche del Comune di Noicattaro	Vincenzo Roppo	year mismatch (1947 vs 1879)
+reject	bartolini-luigi-1892-02-08	pel-calendario-pratese-del-1851-bavarian	Pel calendario pratese del 1851: Memorie e studi di cose pat	Antonio Bartolini	given-name mismatch
+reject	roppo-vincenzo-1879-02-26	roppo-1924-trivianum-memorie-storiche-del-comune-di-triggiano	Trivianum: Memorie storiche del Comune di Triggiano	Vincenzo Roppo	year mismatch (1947 vs 1879)
+reject	martini-mario-maria-1880-10-10	scrittiericordi00ceci	Scritti e ricordi	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	bartolini-luigi-1892-02-08	pel-calendario-pratese-del-1851	Pel calendario pratese del 1851: Memorie e studi di cose pat	Antonio Bartolini	given-name mismatch
+reject	roppo-vincenzo-1879-02-26	roppo-1927-noa-memorie-storiche-del-comune-di-noicattaro	Noa: Memorie storiche del Comune di Noicattaro	Vincenzo Roppo	year mismatch (1947 vs 1879)
+reject	marini-giuseppe-1875-05-03	bub_gb_0vs5AAAAcAAJ	Galileo e l'inquisizione : memorie storico-critiche dirette 	Marini, Marino	given-name mismatch
+reject	mazzucchelli-mario-1896-04-17	b30522523	Memorie de' provvedimenti, ordinati dal Supremo Maestrato de	Mazzucchelli, Carlo	given-name mismatch
+reject	montale-eugenic-1896-10-12	posthumousdiaryd0000mont	Posthumous diary = Diario postumo	Montale, Eugenio, 1896-1981	given-name mismatch
+reject	janin-jules-1804-02-16	b33015041_0002	Memorie ed osservazioni anatomiche, fisiologiche, e fisiche 	Janin, Jean, 1730 or 1731-	given-name mismatch
+reject	montale-eugenic-1896-10-12	posthumousdiaryd0000mont	Posthumous diary = Diario postumo	Montale, Eugenio, 1896-1981	given-name mismatch
+reject	lombardi-antonio-1898-12-15	bub_gb_MCjG43fL8OcC	Memorie della città di Potenza	Lombardi, Andrea	given-name mismatch
+reject	roux-francois-1897-03-09	p1memoriegiovani04roux	Memorie giovanili autobiografiche di letterati, artisti, sci	Roux, Onorato	given-name mismatch
+reject	mazzucchelli-mario-1896-04-17	b30522523	Memorie de' provvedimenti, ordinati dal Supremo Maestrato de	Mazzucchelli, Carlo	given-name mismatch
+reject	rossi-carlo-1892-02-14	bub_gb_xJpV6zGk7OMC	Memorie intorno alla vita del card. Lorenzo Caleppi e ad alc	Rossi, Camillo Luigi de. aut (FrPBN)10592734	given-name mismatch
+reject	rossi-vittorio-g-1898-01-08	bub_gb_xJpV6zGk7OMC	Memorie intorno alla vita del card. Lorenzo Caleppi e ad alc	Rossi, Camillo Luigi de. aut (FrPBN)10592734	given-name mismatch
+reject	bartolini-luigi-1892-02-08	pel-calendario-pratese-del-1847-bncf	Pel calendario pratese del 1847: Memorie e studi di cose pat	Antonio Bartolini	given-name mismatch
+reject	rossi-carlo-1892-02-14	lememoriebrescia00ross	Le memorie bresciane : opera historica, e simbolica	Rossi, Ottavio, 1570-1630	given-name mismatch
+reject	rossi-vittorio-g-1898-01-08	lememoriebrescia00ross	Le memorie bresciane : opera historica, e simbolica	Rossi, Ottavio, 1570-1630	given-name mismatch
+reject	martini-mario-maria-1880-10-10	quarantottotosc00pass	Il quarantotto in Toscana : diario inedito del conte Luigi P	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	bartolini-luigi-1892-02-08	pel-calendario-pratese-del-1851	Pel calendario pratese del 1851: Memorie e studi di cose pat	Antonio Bartolini	given-name mismatch
+reject	martini-mario-maria-1880-10-10	simpatiestudieri00martuoft	Simpatie (studi e ricordi) ..	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	martini-mario-maria-1880-10-10	confessionieric00martuoft	Confessioni e ricordi (Firenze granducale)	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	martini-mario-maria-1880-10-10	b22012795	Catalogo della biblioteca sarda del cavaliere Lodovico Baïll	Martini, Pietro, 1800-1866. n 80066855	given-name mismatch
+reject	roux-francois-1897-03-09	illustriitaliani01pt1roux	Illustri italiani contemporanei; memorie giovanili autobiogr	Roux, Onorato	given-name mismatch
+reject	martini-mario-maria-1880-10-10	memorieinedite1800giusuoft	Memorie inedite (1845-49);	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	martini-mario-maria-1880-10-10	confessionieric00martuoft	Confessioni e ricordi (Firenze granducale)	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	martini-mario-maria-1880-10-10	b22012795	Catalogo della biblioteca sarda del cavaliere Lodovico Baïll	Martini, Pietro, 1800-1866. n 80066855	given-name mismatch
+reject	martini-mario-maria-1880-10-10	simpatiestudieri00martuoft	Simpatie (studi e ricordi) ..	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	marini-giuseppe-1875-05-03	bub_gb_0vs5AAAAcAAJ	Galileo e l'inquisizione : memorie storico-critiche dirette 	Marini, Marino	given-name mismatch
+reject	martini-mario-maria-1880-10-10	quarantottotosc00pass	Il quarantotto in Toscana : diario inedito del conte Luigi P	Martini, Ferdinando, 1841-1928	given-name mismatch
+reject	bonelli-luigi-1892-07-18	memoriestoriched00bone	Memorie storiche della Basilica costantiniana dei SS. XII. A	Bonelli, Giovanni Antonio	given-name mismatch
+reject	betti-ugo-1892-02-04	memorieintornol00bett	Memorie intorno la ruca de' meli	Betti, Zaccaria, 1732-1788, author	given-name mismatch
+accept	prezzolini-giuseppe-1882-01-27	memorieinutili02gozz	Memorie inutili;	Prezzolini, Giuseppe, 1882-	creator+wikidata-year
+reject	betti-ugo-1892-02-04	memorieintornol00bett	Memorie intorno la ruca de' meli	Betti, Zaccaria, 1732-1788, author	given-name mismatch
+reject	rossi-carlo-1892-02-14	autobiografiasci0000ross	Autobiografia scientifica	Rossi, Aldo, 1931-1997	given-name mismatch
+reject	rossi-vittorio-g-1898-01-08	autobiografiasci0000ross	Autobiografia scientifica	Rossi, Aldo, 1931-1997	given-name mismatch
+reject	bevilacqua-giuseppe-1891-07-16	memoriedellavita00bevi	Memorie della vita di Giambettino Cignaroli, eccelente dipin	Bevilacqua, Ippolito dell'Oratorio	given-name mismatch
+reject	smith-tomaso-1886-06-15	ildiariodelvampi0000smit	Il diario del vampiro : l'anima nera	Smith, Lisa Jane	given-name mismatch
+reject-MANUAL	papini-giovanni-1881-01-09	lememoriediddio	Le memorie d'Iddio	Papini	literary fantasy («memoirs of God»), not personal memoir
+reject-MANUAL	prezzolini-giuseppe-1882-01-27	memorieinutili02gozz	Memorie inutili	Prezzolini	third-person: Carlo Gozzi's memoirs, Prezzolini = editor (IA has no role field)

@@ -42,11 +42,13 @@ ATLAS = [
   "figures = F2^4; the CHART OPERATION is the group law: Judge = Witness1 "
   "XOR Witness2, every derived figure = componentwise sum mod 2 — the one "
   "divination whose engine is literally linear algebra over F2"),
- ("Kybalion (7 hermetic principles)", "7", "the seven voices?", "И",
-  "strong anchors: Vibration=D(movement), Rhythm=E(the feeling wave), "
-  "Cause-and-effect=O(ground/kinetics); plausible: Polarity=A(distinction), "
-  "Gender=U(union), Correspondence=S(form-as-mirror), Mentalism=L(meaning); "
-  "an [И]-map — three anchors carry it, four are read, not derived"),
+ ("Kybalion (7 hermetic principles)", "7",
+  "7 LAW-LAYERS, not voices (resolved)", "С",
+  "resolved by symbolica_kybalion.py: each principle quantifies over the "
+  "SPACE (ontology/levels/trajectories/signs/time/flow/roles), none over "
+  "'how much now' => 7 law-layers of the machinery, not 7 state axes; the "
+  "earlier voice-reading (Vibration=D, Rhythm=E, ...) is SUPERSEDED — the "
+  "Enneagram=1/7 trap caught a second time"),
  ("Western 4-elements/humours", "4 · 3", "Z/4×Z/3 of the wheel", "С",
   "4 elements = the Z/3 trine-orbits; 3 modalities = the Z/4 square-orbits"),
  ("Chakras / alchemical metals", "7", "the heptad = the voices", "И",

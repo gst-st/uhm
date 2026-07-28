@@ -1,0 +1,1059 @@
+decision	ogid	ia_id	title	creator	reason
+accept	cheruel-pierre-1809-01-17	deladministratio00chuoft	De l'administration de Louis 14 (1661-1672) d'après les mémo	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	bernard-charles-1804-02-25	cihm_32643	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32643	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32643	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15270	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+accept	gozlan-leon-1803-09-10	balzacchezluisou00gozl	Balzac chez lui : souvenirs des Jardies	Gozlan, Léon, 1803-1866	creator+wikidata-year
+reject	fabre-emile-1869-03-24	b29324695_0005	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0005	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0007	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0007	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmoi10parigoog	Bulletins et mémoires de la Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_KvBBAAAAYAAJ	Mémoires pour servir a l'histoire du droit public de la Fran	France. Cour des aides (Paris)	given-name mismatch
+reject	bertrand-louis-1866-03-25	b33012258	Mémoires historiques et physiques sur les tremblemens de ter	Bertrand, E. (Elie), 1712-approximately 1790	given-name mismatch
+reject	bernard-charles-1804-02-25	b33016471_0002	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-jean-1888-07-30	b33016471_0002	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-tristan-1866-09-07	b33016471_0002	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde02fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde02fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0005	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0005	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0007	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0007	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmoi10parigoog	Bulletins et mémoires de la Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_KvBBAAAAYAAJ	Mémoires pour servir a l'histoire du droit public de la Fran	France. Cour des aides (Paris)	given-name mismatch
+reject	dumesnil-rene-1879-06-19	aimemilletsouven00dume	Aimé Millet, souvenirs intimes;	Dumesnil, Henri, 1823-	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_Bq7OAAAAMAAJ	Mémoires de l'Acadêmie des sciences de l'Institut de France	Institut national des sciences et arts (Paris)	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm14arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm29arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm33arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm35arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+accept	claretie-jules-1840-12-03	lacannedemmichel00clar	La canne de M. Michelet; promenades et souvenirs	Claretie, Jules, 1840-1913	creator+wikidata-year
+reject	leroux-gaston-1868-05-06	dli.ministry.15218	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15318	Journal asiatique: recueil de memoires et de notices relatif	Leroux, Ernest	given-name mismatch
+accept	feval-paul-1816-09-29	madamegilblassou02fvuoft	Madame Gil Blas : souvenirs et aventures d'une femme de notr	Féval, Paul, 1817-1887	creator+wikidata-year
+reject	vogue-eugene-1848-02-25	mmoiresdumar03villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	le-roy-edouard-1870-06-18	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	le-roy-eugene-1836-11-29	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	leroy-pierre-1900-08-24	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna02sacygoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+reject	lorrain-jean-1855-08-09	mmoiresdelasoc61sociuoft	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresduducdera08pari	Mémoires du duc de Raguse de 1792 à 1832,imprimés sur le man	Paris,Perrotin	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc06soci	Mémoires de la Société médicale d'émulation, séante a l'Ecol	Société médicale d'émulation de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc1822soci	Mémoires de la Société linnéenne de Paris	Société linnéenne de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc1822soci	Mémoires de la Société linnéenne de Paris	Société linnéenne de Paris. Annales de la Société 	given-name mismatch
+reject	borgerhoff-robert-1885-04-22	mmoiresduncoll00grouuoft	Mémoires d'un collégien	Borgerhoff, Joseph Leopold, 1870-	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling23soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres14bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres21bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre04beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre09beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	renaudin-andre-1900-10-27	mmoiresdunpeti00renauoft	Mémoires d'un petit homme	Renaudin, Paul, 1873-	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling02soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiresdeducdes14saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	guerin-andre-1899-12-01	mmoiresdeducdes14saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Guérin, Paul, 1945-	given-name mismatch
+reject	fabre-emile-1869-03-24	moeursdesinsecte00fabr	Moeurs des insectes : morceaux choisis. Extraits des Souveni	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	moeursdesinsecte00fabr	Moeurs des insectes : morceaux choisis. Extraits des Souveni	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	sarcey-francisque-1827-10-08	lesigedeparisi00sarcuoft	Le siège de Paris, impressions et souvenirs	Sarcey, Francisque, 1827-1899	creator+wikidata-year
+reject	paris-gaston-1839-08-09	bulletinsetmmo0310sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15218	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15318	Journal asiatique: recueil de memoires et de notices relatif	Leroux, Ernest	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm01arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm50arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+accept	sainte-beuve-charles-1804-12-23	mmoiresdemmedem03saingoog	Mémoires de mme. de Motteville sur Anne d'Autriche et sa cou	Sainte-Beuve, Charles Augustin, 1804-1869	creator+wikidata-year
+reject	paris-gaston-1839-08-09	mmoiresling14soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling20soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling22soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+accept	lacordaire-jean-1802-05-12	mmoiresdubaron00lees	Mémoires du baron Georges Cuvier	Lacordaire, Jean Théodore, 1801-1870	creator+wikidata-year
+reject	lacroix-francis-1895-11-29	mmoiresdugnralra01rapp	Mémoires du Général Rapp (1772-1821)	Lacroix, Désiré	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc1799soci	Mémoires de la Société d'histoire naturelle de Paris	Société d'histoire naturelle de Paris	given-name mismatch
+reject	dumesnil-rene-1879-06-19	mmoiresdemlled13dume	Mémoires de Mlle Dumesnil, en réponse aux mémoires d'Hippoly	Dumesnil, Mlle (Marie Françoise), 1713-1803	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres15bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+accept	cheruel-pierre-1809-01-17	mmoirescomplet01sainuoft	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	paris-gaston-1839-08-09	mmoiresdebibbo02alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresduducdera03pari	Mémoires du duc de Raguse de 1792 à 1832,imprimés sur le man	Paris,Perrotin	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres04bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre06beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiresduducdes17saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	guerin-andre-1899-12-01	mmoiresduducdes17saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Guérin, Paul, 1945-	given-name mismatch
+reject	nisard-desire-1806-03-20	mmoiresetcorr00nisa	Mémoires et correspondances, historiques et littéraires inéd	Nisard, Charles, 1808-1889 ed	given-name mismatch
+reject	bailly-jules-1832-12-13	mmoiresduntm02bail	Mémoires d'un témoin de la Révolution; ou, Journal des faits	Bailly, [Jean Sylvain], 1736-1793	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling06soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling13soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiressurlhis05hermuoft	Mémoires sur l'histoire ecclésiastique du XVIIe siècle (1630	Hermant, Godefroi	given-name mismatch
+reject	billiet-paul-1838-02-14	mmoirespourser00bill	Mémoires pour servir à l'histoire ecclésiastique du diocèse 	Billiet, Alexis, cardinal	given-name mismatch
+reject	paris-gaston-1839-08-09	india.history.resource.75075	Recueil de Voyages et de Memoires, Vol. V	Societe de Geographie de Paris	given-name mismatch
+reject	dumesnil-rene-1879-06-19	troyonsouvenirsi00dumeuoft	Troyon : souvenirs intimes	Dumesnil, Henri, 1823-	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0004	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0004	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	paris-gaston-1839-08-09	A210035	Memoires de Litterature, tirez des registres de l'Academie R	Académie Royale des Inscriptions et Belles Lettres	given-name mismatch
+reject	durand-oswald-1888-02-09	A210034	Histoire de l'Académie Royale des Inscriptions et Belles Let	Durand, 17?-17?	year unavailable (wikidata)
+reject	paris-gaston-1839-08-09	FNSPMA8E0100001Filigrane	08E010. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	recueildevoyages62soci	Recueil de Voyages et de Mémoires publié de la Société de Ge	Société de Géographie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo08sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo09sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci42soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci28soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	sue-eugene-1804-01-26	mathildemmoir04suee	Mathilde : mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+accept	boissier-gaston-1823-08-15	mlangesboissie00boisuoft	Mélanges Boissier; recueil de mémoires concernant la littéra	Boissier, Gaston, 1823-1908	creator+wikidata-year
+reject	paris-gaston-1839-08-09	mmoiresdebibbo02alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15196	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_FBsJAAAAQAAJ	Memoires de Jean sire de Joinville; ou, Histoire et chroniqu	Paris, Paulin, 1800-1881	given-name mismatch
+reject	moreau-abel-1893-01-08	b21937126	Memoires de physiologie : vessie natatoire, torpille électri	Moreau, François Armand	given-name mismatch
+reject	ritter-pierre-1882-08-16	souvenirsdemonde00meisuoft	Souvenirs de mon dernier voyage à Paris (1795) [par] Henri M	Ritter, Eugène, 1836-1928	given-name mismatch
+accept	harcourt-robert-1881-11-23	souvenirsdecapti00harc	Souvenirs de captivite et d'evasions	Harcourt, Robert d', 1881-1965	creator+wikidata-year
+reject	faure-elie-1873-04-04	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+reject	faure-gabriel-1877-05-15	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+accept	souvestre-emile-1806-04-15	souvenirsdunbas00souvgoog	Souvenirs d'un Bas-Breton ..	Souvestre, Émile, 1806-1854	creator+wikidata-year
+reject	fabre-emile-1869-03-24	souvenirsentomol04fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol04fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	curel-francois-1854-06-10	thtrecomplet01cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	Curel, François de, 1854-1928	creator+wikidata-year
+reject	leroux-gaston-1868-05-06	dli.ministry.15230	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15230	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+accept	sue-eugene-1804-01-26	mathildemmoir00suee	Mathilde : mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	paris-gaston-1839-08-09	FNSPMA8E0020001Filigrane	08E002. Examens de 1880 : élèves de première et deuxième ann	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0140001Filigrane	08E014. Examens de 1880 : élèves de deuxième année, hors sec	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna02sacygoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+reject	lorrain-jean-1855-08-09	mmoiresdelasoc61sociuoft	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelaso07soci	Mémoires de la Société médicale d'émulation, séante a l'Ecol	Société médicale d'émulation de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresduducdera08pari	Mémoires du duc de Raguse de 1792 à 1832,imprimés sur le man	Paris,Perrotin	given-name mismatch
+reject	vogue-eugene-1848-02-25	mmoiresdumar03villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	le-roy-edouard-1870-06-18	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	le-roy-eugene-1836-11-29	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	leroy-pierre-1900-08-24	mmoiresdumarcha00gourgoog	Mémoires du maréchal de Saint-Paul, suivis de documents inéd	Leroy, Stéphan, 1857- ed	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdebibbo02alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo03sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15196	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet01sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	paris-gaston-1839-08-09	recueildevoyages62soci	Recueil de Voyages et de Mémoires publié de la Société de Ge	Société de Géographie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo08sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo09sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl06sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl09sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	feydeau-georges-1862-12-08	thophilegauti00feyd	Théophile Gautier : souvenirs intimes	Feydeau, Ernest Aimé, 1821-1873	given-name mismatch
+reject	moreau-abel-1893-01-08	messouvenirs02more	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci33soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci37soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci57soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	martin-hans-1886-11-09	correspondancede01sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	martin-henri-1810-02-20	correspondancede01sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	halevy-daniel-1872-12-12	linvasionsouven00halgoog	L'invasion; souvenirs et récits	Halévy, Ludovic, 1834-1908	given-name mismatch
+reject	feydeau-georges-1862-12-08	thophilegautier00feydgoog	Théophile Gautier ; souvenirs intimes	Feydeau, Ernest, 1821-1873	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol02fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol02fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre05beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	morand-paul-1888-03-13	BANM_ARC6d3_016	« Le jeudi 10 janvier 1765 à la séance de l’Académie royale 	Morand	year unavailable (wikidata)
+reject	mignet-auguste-1796-05-08	noticesetmmoire00migngoog	Notices et mémoires, Volume 2	François-Auguste-Alexis-Marie Mignet	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro02herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15183	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+accept	feval-paul-1816-09-29	MariEmbaume01	Le mari embaumé, souvenirs d'un page de M. de Vendôme	Paul Henri Corentin Féval	creator+wikidata-year
+reject	paris-gaston-1839-08-09	FNSPMA8E0090001Filigrane	08E009. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	recueildevoyages06geog	Recueil de Voyages et de Mémoires publié de la Société de Ge	Société de géographie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15226	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15232	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+accept	curel-francois-1854-06-10	thtrecomplet06cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	Curel, François de, 1854-1928	creator+wikidata-year
+accept	curel-francois-1854-06-10	thtrecomple04cure	Théâtre complet : textes remaniés par l'ateur avec l'histori	Curel, François de, 1854-1928	creator+wikidata-year
+reject	feydeau-georges-1862-12-08	thophilegautier01feydgoog	Théophile Gautier ; souvenirs intimes	Feydeau, Ernest, 1821-1873	given-name mismatch
+reject	gide-charles-1847-06-28	souvenirsdelacou00gide	Souvenirs de la Cour d'assises	Gide, André, 1869-1951	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol09fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol09fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0003	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0003	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+accept	gozlan-leon-1803-09-10	balzacchezluiso00gozlgoog	Balzac chez lui; souvenirs des Jardies	Gozlan, Léon, 1803-1866	creator+wikidata-year
+reject	feydeau-georges-1862-12-08	thophilegautier02feydgoog	Théophile Gautier ; souvenirs intimes	Feydeau, Ernest, 1821-1873	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm01arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm50arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0110001Filigrane	08E011. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0120001Filigrane	08E012. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	potter-frans-1834-01-04	vieetmmoiresde02pott	Vie et mémoires de Scipion de Ricci, évêque de Pistoie et Pr	Potter, Louis Joseph Antoine, 1786-1859	given-name mismatch
+reject	potter-frans-1834-01-04	vieetmmoiresde03pott	Vie et mémoires de Scipion de Ricci, évêque de Pistoie et Pr	Potter, Louis Joseph Antoine, 1786-1859	given-name mismatch
+accept	souvestre-emile-1806-04-15	souvenirsdunbas01souvgoog	Souvenirs d'un Bas-Breton ..	Souvestre, Émile, 1806-1854	creator+wikidata-year
+accept	souvestre-emile-1806-04-15	souvenirsdunbasb02souv	Souvenirs d'un bas-breton	Souvestre, Emile, 1806-1854	creator+wikidata-year
+reject	nisard-desire-1806-03-20	souvenirsetnotes01nisa	Souvenirs et notes biographiques	Nisard, D. (Désiré), 1806-1888	given-name mismatch
+reject	nisard-desire-1806-03-20	souvenirsetnotes02nisa_0	Souvenirs et notes biographiques	Nisard, D. (Desire), 1806-1888	given-name mismatch
+reject	lebrun-firmin-1802-02-27	souvenirsdemmelo00lebruoft	Souvenirs de Mme Louise-Élisabeth Vigée-Le Brun; notes et po	Le Brun, Marie Louise Élisabeth, (Vigée) 1755-1842	given-name mismatch
+reject	lebrun-firmin-1802-02-27	souvenirsmilita01lebrgoog	Souvenirs militaires, 1866-1870. Préliminaires de la guerre.	Lebrun, Barthélémy Louis Joseph, 1809-1889	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0003	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0003	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm01arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm50arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.87097	Memoires de duc de Saint-Simon, 2nd ed., Vol. XX; Table Anal	Cheruel, Mm.	given-name mismatch
+reject	cournot-antoine-1801-08-28	souvenirs176018600cour	Souvenirs (1760-1860)	Cournot, A. A. (Antoine Augustin), 1801-1877	given-name mismatch
+accept	hermant-abel-1862-02-03	souvenirsduvtede00hermuoft	Souvenirs du Vte de Courpière	Hermant, Abel, 1862-1950	creator+wikidata-year
+reject	fabre-emile-1869-03-24	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	souvestre-emile-1806-04-15	souvenirsdunbasb01souv	Souvenirs d'un bas-breton	Souvestre, Emile, 1806-1854	creator+wikidata-year
+accept	souvestre-emile-1806-04-15	souvenirsdunviei00souv	Souvenirs d'un vieillard : la dernière étape	Souvestre, Emile, 1806-1854	creator+wikidata-year
+reject	daudet-ernest-1837-05-31	souvenirsdunhomm00dauduoft	Souvenirs d'un homme de lettres. Illus. de Bieler, Montégut,	Daudet, Alphonse, 1840-1897	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada02hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+reject	dumesnil-rene-1879-06-19	souvenirsdeguerr00dume	Souvenirs de-guerre d'un vieux croiseur (1914-1915)	Dumesnil, Charles	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo03sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol00fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol00fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol05fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol05fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol16825gut	Souvenirs entomologiques - Livre I: ?tude sur l'instinct et 	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol16825gut	Souvenirs entomologiques - Livre I: ?tude sur l'instinct et 	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	nisard-desire-1806-03-20	souvenirsetnotes02nisa	Souvenirs et notes biographiques	Nisard, D. (Désiré), 1806-1888	given-name mismatch
+reject	morand-paul-1888-03-13	BANM_ARC6d3_016	« Le jeudi 10 janvier 1765 à la séance de l’Académie royale 	Morand	year unavailable (wikidata)
+reject	paris-gaston-1839-08-09	bub_gb_78HRAAAAMAAJ	Mémoires	Société d'histoire naturelle de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317110	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89902	Memoires du duc de Saint-Simon, 2nd ed., Vol. XII	Cheruel, Mm.	given-name mismatch
+reject	feydeau-georges-1862-12-08	thophilegauti00feyd	Théophile Gautier : souvenirs intimes	Feydeau, Ernest Aimé, 1821-1873	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou01brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou01brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+accept	sue-eugene-1804-01-26	mathildemmoire01suee	Mathilde : mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	moreau-abel-1893-01-08	messouvenirs02more	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou02brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou02brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	lenormand-henri-1882-05-03	lesoraclessibyl00lenogoog	Les oracles sibyllins; ou, La suite des Souvenirs prophétiq	Le Normand, M. A. (Marie-Anne Adélaide), 1772-184	given-name mismatch
+accept	houssaye-arsene-1814-03-28	lesconfessionsso03housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	Houssaye, Arsène, 1815-1896	creator+wikidata-year
+accept	claretie-jules-1840-12-03	lesconfession01rous	Les confessions	Claretie, Jules, 1840-1913	creator+wikidata-year
+accept	sue-eugene-1804-01-26	mathildemmoir01suee	Mathilde : mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	bernard-charles-1804-02-25	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0305sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+accept	monselet-charles-1825-04-30	messouvenirslitt00mons	Mes souvenirs littéraires	Monselet, Charles, 1825-1888	creator+wikidata-year
+reject	le-roy-edouard-1870-06-18	memoiresconcern00roygoog	Memoires concernans le contrôle des rentes; Ou recueil abreg	Le Roy, Pierre, 1675-1759	given-name mismatch
+reject	le-roy-eugene-1836-11-29	memoiresconcern00roygoog	Memoires concernans le contrôle des rentes; Ou recueil abreg	Le Roy, Pierre, 1675-1759	given-name mismatch
+reject	leroy-pierre-1900-08-24	memoiresconcern00roygoog	Memoires concernans le contrôle des rentes; Ou recueil abreg	Le Roy, Pierre, 1675-1759	year mismatch (1675 vs 1900)
+reject	lorrain-jean-1855-08-09	memoiresdelasoci38soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet03sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	bernard-charles-1804-02-25	lalisettedebra00bernuoft	La lisette de Béranger; souvenirs intimes. Eauforte par G. S	Bernard, Thalès	given-name mismatch
+reject	bernard-jean-1888-07-30	lalisettedebra00bernuoft	La lisette de Béranger; souvenirs intimes. Eauforte par G. S	Bernard, Thalès	given-name mismatch
+reject	bernard-tristan-1866-09-07	lalisettedebra00bernuoft	La lisette de Béranger; souvenirs intimes. Eauforte par G. S	Bernard, Thalès	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo04sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo10sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo08sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	tardieu-charles-1838-02-09	b21310191	Question médico-légale de l'identité [electronic resource] :	Tardieu, Ambroise, 1818-1879	given-name mismatch
+reject	thiry-antoon-1888-09-08	b21480199	Extrait de Mémoires sur l'emploi de l'iodure de potassium po	Thiry, Monsieur	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl11sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	morand-paul-1888-03-13	chepfl-lipr-axd-5-3	Mémoires sur les feux de houille, ou charbon de terre	Morand, Jean François Clément	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo409sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo502sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	cheruel-pierre-1809-01-17	bub_gb_C4QaAAAAYAAJ	Mémoires de mlle de Montpensier : petite-fille de Henri IV	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	martin-hans-1886-11-09	b21937102	Mémoires de médecine et de chirurgie-pratique sur plusieurs 	Martin, Pierre Etienne, 1771-1847	given-name mismatch
+reject	martin-henri-1810-02-20	b21937102	Mémoires de médecine et de chirurgie-pratique sur plusieurs 	Martin, Pierre Etienne, 1771-1847	given-name mismatch
+reject	cournot-antoine-1801-08-28	souvenirs176018600cour	Souvenirs (1760-1860)	Cournot, A. A. (Antoine Augustin), 1801-1877	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	daudet-ernest-1837-05-31	souvenirsdunhomm00dauduoft	Souvenirs d'un homme de lettres. Illus. de Bieler, Montégut,	Daudet, Alphonse, 1840-1897	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo04sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo10sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo08sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	tardieu-charles-1838-02-09	questionmdicol00tard	Question médico-légale de l'identité, dans ses rapports avec	Tardieu, Ambroise, 1818-1879	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32637	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54557	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0305sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	tardieu-charles-1838-02-09	questionmdicol00tard	Question médico-légale de l'identité, dans ses rapports avec	Tardieu, Ambroise, 1818-1879	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl10sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	fabre-emile-1869-03-24	souvenirsentomol09fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol09fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	gide-charles-1847-06-28	souvenirsdelacou00gide	Souvenirs de la Cour d'assises	Gide, André, 1869-1951	given-name mismatch
+reject	moreau-abel-1893-01-08	nouveauxmmoire06more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	paris-gaston-1839-08-09	oeuvrescompltesd28534gut	Oeuvres complètes de lord Byron. Volume 6 comprenant ses mém	Paris, Paulin, 1800-1881 [Translator]	given-name mismatch
+accept	sarcey-francisque-1827-10-08	lesigedeparisim03sarcgoog	Le siège de Paris. Impressions et souvenirs	Sarcey, Francisque, 1827-1899	creator+wikidata-year
+reject	lorrain-jean-1855-08-09	memoiresdelasoci42soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci28soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol03fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol03fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol09fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol09fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou02brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou02brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	lenormand-henri-1882-05-03	lesoraclessibyl00lenogoog	Les oracles sibyllins; ou, La suite des Souvenirs prophétiq	Le Normand, M. A. (Marie-Anne Adélaide), 1772-184	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc02valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, Guy Louis Henri, marquis de, 1692-1774	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc02valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, marquis de (Henri Zosime), 1786-1859	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci53soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres17bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+accept	cheruel-pierre-1809-01-17	mmoiressurlavi01chuoft	Mémoires sur la vie publique et privée de Fouquet, surintend	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+accept	bazin-rene-1853-12-26	mmoiresdunevi00bazi	Mémoires d'une vielle fille	Bazin, René, 1853-1932	creator+wikidata-year
+reject	ducasse-andre-1894-07-23	mmoiresetcorres03bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling15soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdebibbo03alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre01beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+accept	houssaye-arsene-1814-03-28	lesconfessionsso02housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	Houssaye, Arsène, 1815-1896	creator+wikidata-year
+reject	laffitte-pierre-1823-02-21	ledahomesouvenir00laff	Le Dahomé : souvenirs de voyage et de mission	Laffitte, abbé	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci42soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.87098	Memoires de duc de Saint-Simon, 2nd ed., Vol. XIX	Cheruel, Mm.	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci28soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cournot-antoine-1801-08-28	souvenirs176018600cour	Souvenirs (1760-1860)	Cournot, A. A. (Antoine Augustin), 1801-1877	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	daudet-ernest-1837-05-31	souvenirsdunhomm00dauduoft	Souvenirs d'un homme de lettres. Illus. de Bieler, Montégut,	Daudet, Alphonse, 1840-1897	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada02hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+reject	simon-jules-1814-12-27	grosleymemoireshistoriques2ed1	Mémoires historiques et critiques pour l'histoire de Troyes.	Simon, Édouard-Thomas, 1740-1818	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgonco09gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgonco09gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	paris-gaston-1839-08-09	recueildevoyages51soci	Recueil de Voyages et de Mémoires publié de la Société de Ge	Société de Géographie de Paris	given-name mismatch
+reject	dieterlen-jacques-1893-11-28	portraitsetsouve00diet	Portraits et souvenirs du Lessouto	Dieterlen, H	given-name mismatch
+reject	dumesnil-rene-1879-06-19	souvenirsdeguerr00dume	Souvenirs de-guerre d'un vieux croiseur (1914-1915)	Dumesnil, Charles	given-name mismatch
+reject	nisard-desire-1806-03-20	souvenirsetnotes02nisa	Souvenirs et notes biographiques	Nisard, D. (Désiré), 1806-1888	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol00fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol00fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol05fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol05fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol16825gut	Souvenirs entomologiques - Livre I: ?tude sur l'instinct et 	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol16825gut	Souvenirs entomologiques - Livre I: ?tude sur l'instinct et 	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	marmier-xavier-1808-06-22	untauborddelaba00marmgoog	Un été au bord de la Baltique et de la Mer du Nord : souve	Marmier, Xavier, 1809-1892	creator+wikidata-year
+reject	feydeau-georges-1862-12-08	thophilegautie00feyduoft	Théophile Gautier; souvenirs intimes. Port. de Théophile Gau	Feydeau, Ernest Aimé, 1821-1873	given-name mismatch
+accept	marmier-xavier-1808-06-22	untauborddel00marmuoft	Un été au bord de la Baltique et de la Mer du Nord; souvenir	Marmier, Xavier, 1809-1892	creator+wikidata-year
+reject	lorrain-jean-1855-08-09	memoiresdelasoci30soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet02sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet11sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet11sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdiploma00montuoft	Mémoires diplomatiques de Montgaillard (1805-1819) Publiés a	Lacroix, Clément de, 1852-	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol02fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol07fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	daudet-ernest-1837-05-31	souvenirsdunhomm00dauduoft	Souvenirs d'un homme de lettres. Illus. de Bieler, Montégut,	Daudet, Alphonse, 1840-1897	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada02hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+accept	curel-francois-1854-06-10	thtrecomplet02cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	Curel, François de, 1854-1928	creator+wikidata-year
+reject	cheruel-pierre-1809-01-17	india.history.resource.87098	Memoires de duc de Saint-Simon, 2nd ed., Vol. XIX	Cheruel, Mm.	given-name mismatch
+accept	veuillot-louis-1813-10-11	lesfrancaisenalg00veui	Les français en Algérie : souvenirs d'un voyage fait en 18	Veuillot, Louis, 1813-1883, author	creator+wikidata-year
+reject	paris-gaston-1839-08-09	mmoiresdebibbo03alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre01beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	villiers-adam-1838-11-07	mmoiresdelavie02sainuoft	Mémoires de la vie du comte D*** avant sa retraite, contenan	Villiers, Pierre de, 1648-1728	given-name mismatch
+reject	dumesnil-rene-1879-06-19	memoiresdestat01vill	Memoires d'estat	Du Mesnil, Tanneguy Basire, sieur, fl 1622, ed	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgoncou09goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgoncou09goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgonco03gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgonco03gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	leroux-gaston-1868-05-06	jeunesamoursmm00lerouoft	Jeunes amours; mémoires d'un adolescent	Le Roux, Hugues, 1860-1925	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15220	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	quinet-benoit-1818-04-02	histoiredemesid00quinuoft	Histoire de mes idées; autobiographie	Quinet, Edgar, 1803-1875	given-name mismatch
+accept	quinet-edgar-1803-02-17	histoiredemesid00quinuoft	Histoire de mes idées; autobiographie	Quinet, Edgar, 1803-1875	creator+wikidata-year
+accept	soulie-frederic-1800-12-23	lesmmoiresdudi00soul	Les mémoires du diable	Soulié, Frédéric, 1800-1847	creator+wikidata-year
+reject	lenormand-henri-1882-05-03	b29308318_0001	Les souvenirs prophétiques d'une sibylle, sur les causes sec	Le Normand, M. A. (Marie-Anne Adélaide), 1772-1843	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54563	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54563	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54563	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm14arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm29arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm11arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm13arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm34arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet12sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiresdeducdes14saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	guerin-andre-1899-12-01	mmoiresdeducdes14saingoog	Mémoires du duc de Saint-Simon publiés par Mm. Chéruel et Ad	Guérin, Paul, 1945-	given-name mismatch
+accept	simon-jules-1814-12-27	nouveauxmmoire00simo	Nouveaux mémoires des autres	Simon, Jules, 1814-1896	creator+wikidata-year
+reject	moreau-abel-1893-01-08	nouveauxmmoire05more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54562	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54562	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54562	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres06bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo01sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15318	Journal asiatique: recueil de memoires et de notices relatif	Leroux, Ernest	given-name mismatch
+accept	sue-eugene-1804-01-26	mathildemmoir06suee	Mathilde : mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	ducasse-andre-1894-07-23	mmoiresetcorre01beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres03bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling15soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdebibbo03alhouoft	Mémoires de Bibboquet; recueillis par un bourgeois de Paris	Bourgeois de Paris	given-name mismatch
+reject	villiers-adam-1838-11-07	mmoiresdelavie02sainuoft	Mémoires de la vie du comte D*** avant sa retraite, contenan	Villiers, Pierre de, 1648-1728	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres17bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317161	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317170	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317171	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+accept	sue-eugene-1804-01-26	martinlenfanttr00etatgoog	Martin l'enfant trouvé; ou, Les Memoires d'un valet de cham	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	roux-francois-1897-03-09	laviedelavnrable00mont_0	La vie de la vénérable soeur Marguerite Bourgeois : dite du 	Roux, Jean Henri Auguste, 1760-1831	given-name mismatch
+reject	villiers-adam-1838-11-07	lesmmoiresdela02vill	Les Mémoires de la vie du comte D *** avant sa retraite : co	Villiers, Pierre de, 1648-1728	given-name mismatch
+reject	lemonnier-camille-1844-03-23	lespetitsmystr00lemouoft	Les petits mystères de la vie théatrale; souvenirs d'un homm	Lemonnier, Alphonse, 1842-1907	given-name mismatch
+reject	fabre-emile-1869-03-24	moeursdesinsecte00fabr	Moeurs des insectes : morceaux choisis. Extraits des Souveni	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	moeursdesinsecte00fabr	Moeurs des insectes : morceaux choisis. Extraits des Souveni	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	feval-paul-1816-09-29	p2madamegilblass01fvuoft	Madame Gil Blas : souvenirs et aventures d'une femme de notr	Féval, Paul, 1817-1887	creator+wikidata-year
+reject	ducasse-andre-1894-07-23	mmoiresetcorres01bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci25soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci45soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci39soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet02sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	moreau-abel-1893-01-08	messouvenirs00hermgoog	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	renard-jules-1864-02-22	kpbc.umk.pl.Gromadzenie_POPC_015_12_236181	Mémoires du comte Narcis Olizar, sénateur polonais;Pamiętnik	Vve Jules Renard	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15314	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna00sacygoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro01herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro06herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoirespourser01lacr	Mémoires pour servir à l'histoire de la révolution de Saint-	Lacroix, Pamphile, vicomte de, 1774-1842	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo03bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	schlumberger-jean-1877-05-26	mmoiresducomman00persgoog	Mémoires du commandant Persat, 1806 à 1844	Schlumberger, Gustave Léon, 1844-1929	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling17soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0308sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0311sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	lenormand-henri-1882-05-03	b29337768	Les oracles sibyllins, ou la suite des Souvenirs prophétique	Le Normand, M. A. (Marie-Anne Adélaide), 1772-1843	given-name mismatch
+reject	cheruel-pierre-1809-01-17	deladministrati00ormegoog	De l'administration de Louis XIV, 1664-1672 : d'après les mé	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet04sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	bailly-jules-1832-12-13	mmoiresdebailly03bail	Mémoires de Bailly	Bailly, [Jean Sylvain], 1736-1793	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo05bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+accept	daudet-ernest-1837-05-31	mmoiresdutempsde00duca	Mémoires du temps de Louis XIV [microform]	Daudet, Ernest, 1837-1921	creator+wikidata-year
+reject	moreau-abel-1893-01-08	mmoireshistori00more	Mémoires historiques et littéraires sur F.-J. Talma	Moreau, M. (Charles-François-Jean-Baptiste), 1783-	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89901	Memoires du duc de Saint-Simon, 2nd ed., Vol. XIII	Cheruel, Mm.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89889	Memoires du duc de Saint-Simon, Vol. I	Cheruel, Mm.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet09sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+accept	maurois-andre-1885-07-26	memoires0000andr	Memoires	Andre Maurois	creator+wikidata-year
+reject	lorrain-jean-1855-08-09	memoiresdelasoci43soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres16bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet10sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo03bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	schlumberger-jean-1877-05-26	mmoiresducomman00persgoog	Mémoires du commandant Persat, 1806 à 1844	Schlumberger, Gustave Léon, 1844-1929	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling17soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15223	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA9E0020001Filigrane	09E002. Examens de 1881 : élèves de première année, liste de	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	droz-gustave-1832-06-09	8YSUP11649_4	Mémoires de Jacques Fauvel. Volume 4	Droz, Joseph (1773-1850)	given-name mismatch
+accept	feval-paul-1816-09-29	MariEmbaume02	Le Mari embaumé, souvenirs d'un page de M. de Vendôme	Paul Henri Corentin Féval	creator+wikidata-year
+reject	dumesnil-rene-1879-06-19	corotsouvenirsin00dume	Corot, souvenirs intimes	Dumesnil, Henri, 1823-1898	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15325	Journal asiatique: recueil de memoires et de notices relatif	Leroux, Ernest	given-name mismatch
+reject	morand-paul-1888-03-13	BANM_ARC11d35_001	Memoir des desseins fait par Ingram, pour le Tome second des	Morand, Sauveur-François (1697-1773)	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmoi21parigoog	Bulletins et mémoires	Société de chirurgie de Paris	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet10sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo03bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	schlumberger-jean-1877-05-26	mmoiresducomman00persgoog	Mémoires du commandant Persat, 1806 à 1844	Schlumberger, Gustave Léon, 1844-1929	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling17soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89901	Memoires du duc de Saint-Simon, 2nd ed., Vol. XIII	Cheruel, Mm.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89889	Memoires du duc de Saint-Simon, Vol. I	Cheruel, Mm.	given-name mismatch
+reject	paris-gaston-1839-08-09	recueildevoyages06geog	Recueil de Voyages et de Mémoires publié de la Société de Ge	Société de géographie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15223	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+accept	souvestre-emile-1806-04-15	confessionsduno00souvuoft	Confessions d'un ouvrier;	Souvestre, Emile, 1806-1854	creator+wikidata-year
+reject	bailly-jules-1832-12-13	collectiondesm18arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm26arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm31arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada03hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol01fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol01fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol01fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol01fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol06fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol06fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirsdunedem00haus	Souvenirs d'une demoiselle d'honneur de Mme la duchesse de B	Haussonville, Louise, comtesse d', 1818-1882	given-name mismatch
+reject	daudet-ernest-1837-05-31	souvenirsdunhomm00daud	Souvenirs d'un homme de lettres. Illus. de Bieler, Montégut	Daudet, Alphonse, 1840-1897	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiressurlav01ch	Mémoires sur la vie publique et privée de Fouquet	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna01sacygoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+accept	sainte-beuve-charles-1804-12-23	mmoiresdemmede03mott	Mémoires de mme. de Motteville sur Anne d'Autriche et sa cou	Sainte-Beuve, Charles Augustin, 1804-1869	creator+wikidata-year
+reject	paris-gaston-1839-08-09	mmoiresdelasoc02pari	Mémoires de la Société d'Histoire Naturelle de Paris	Société d'Histoire Naturelle de Paris	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo01bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0308sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0311sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	nisard-desire-1806-03-20	souvenirsetnotes01nisa_0	Souvenirs et notes biographiques	Nisard, D. (Desire), 1806-1888	given-name mismatch
+accept	sarcey-francisque-1827-10-08	souvenirsdejeune00sarc	Souvenirs de jeunesse	Sarcey, Francisque, 1827-1899	creator+wikidata-year
+accept	gebhart-emile-1839-07-19	souvenirsdunviei00gebh	Souvenirs d'un vieil Athénien	Gebhart, Émile, 1839-1908	creator+wikidata-year
+accept	schure-edouard-1841-01-21	souvenirssurric00schugoog	Souvenirs sur Richard Wagner : la première de Tristan et Ise	Schuré, Edouard, 1841-1929	creator+wikidata-year
+accept	daudet-ernest-1837-05-31	souvenirsdemonte01daud	Souvenirs de mon temps	Daudet, Ernest, 1837-1921	creator+wikidata-year
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada01hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo01sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm57arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	martin-hans-1886-11-09	correspondancede02sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	martin-henri-1810-02-20	correspondancede02sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0090001Filigrane	08E009. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	lecomte-georges-1867-07-09	gri_000133125010712483	Nouveaux memoires sur l'etat present de la Chine	Le Comte, Louis, 1655-1728	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet09sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci43soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci55soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	sue-eugene-1804-01-26	martinlenfanttro05sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	cheruel-pierre-1809-01-17	india.history.resource.89893	Memoires du duc de Saint-Simon, Vol. VII	Cheruel, Mm.	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+accept	souvestre-emile-1806-04-15	confessionsduno01souvgoog	Confessions d'un ouvrier	Souvestre, Émile, 1806-1854	creator+wikidata-year
+reject	bailly-jules-1832-12-13	collectiondesm53arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	renard-jules-1864-02-22	kpbc.umk.pl.Gromadzenie_POPC_015_12_236181	Mémoires du comte Narcis Olizar, sénateur polonais;Pamiętnik	Vve Jules Renard	given-name mismatch
+reject	bertrand-louis-1866-03-25	mmoireshistori00bert	Mémoires historiques sur les missions des ordres religieux e	Bertrand, J. (Joseph), 1801-1884	given-name mismatch
+accept	claretie-jules-1840-12-03	mmoiresdemadam01rola	Mémoires de madame Roland \	Claretie, Jules, 1840-1913	creator+wikidata-year
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo04bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	haussonville-gabriel-1843-09-21	souvenirssurmada01hausuoft	Souvenirs sur Madame de Maintenon	Haussonville, comte d', 1843-1924	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo01sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro02herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm57arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	martin-hans-1886-11-09	correspondancede02sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	martin-henri-1810-02-20	correspondancede02sainuoft	Correspondance de J.H. Bernardin de Saint-Pierre, précédée d	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15185	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci48soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	sue-eugene-1804-01-26	mathildemmoiresd33454gut	Mathilde mémoires d'une jeune femme	Sue, Eugène, 1804-1857	creator+wikidata-year
+accept	cheruel-pierre-1809-01-17	journaldolivierl02orme	Journal d'Olivier Lefèvre d'Ormesson, et extraits des mémoir	Cheruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	martin-hans-1886-11-09	correspondancepr00sain	Correspondance, précédée d'un supplément aux mémoires de sa 	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	martin-henri-1810-02-20	correspondancepr00sain	Correspondance, précédée d'un supplément aux mémoires de sa 	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	durand-oswald-1888-02-09	bub_gb_vEQhZ3qafOcC	Memoires géographiques, physiques et historiques. Sur l'Asi	Durand, Pierre-Étienne-Germain (1728-179.?). Édi	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm11arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm13arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm34arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgoncou02goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgoncou02goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+accept	soulie-frederic-1800-12-23	lesmmoiresdudi01souluoft	Les mémoires du diable	Soulié, Frédéric, 1800-1847	creator+wikidata-year
+reject	clairville-louis-1811-11-28	lesmmoiresdede00enne	Les mémoires de deux jeunes mariées : comédie-vaudeville en 	Clairville, M., 1811-1879	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm53arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	lemaitre-jules-1853-04-27	india.history.resource.86337	Souvenirs de Frederick Lemaitre, 2nd ed.	Lemaitre, Frederick	given-name mismatch
+reject	bertrand-louis-1866-03-25	mavieentroisacte0000bert_x2n1	Ma vie en trois actes : autobiographie	Bertrand, Janette, 1925-	given-name mismatch
+reject	bailly-jules-1832-12-13	bub_gb_dcwQAAAAYAAJ	Mémoires d'un temoin de la révolution, ou, Journal des faits	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde07fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde07fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	rossi-carlo-1892-02-14	cihm_40342	Souvenirs d'un voyages en Orégon et en Californie [microform	Rossi, Louis	given-name mismatch
+reject	rossi-vittorio-g-1898-01-08	cihm_40342	Souvenirs d'un voyages en Orégon et en Californie [microform	Rossi, Louis	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0308sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0311sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro02herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	bernard-charles-1804-02-25	b33016471_0003	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-jean-1888-07-30	b33016471_0003	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-tristan-1866-09-07	b33016471_0003	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde01fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde01fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_M0pFAAAAYAAJ	Memoires lus a la Sorbonne dans les seances extraordinaires 	Université de Paris	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0011	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0011	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0014	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0014	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	smith-tomaso-1886-06-15	cihm_20436	Relation historique de l'expédition contre les Indiens de l'	Smith, William, 1727-1803	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm53arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317172	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	faure-elie-1873-04-04	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+reject	faure-gabriel-1877-05-15	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgonco04gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgonco04gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm20arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm36arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm40arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	goncourt-edmond-1822-05-26	journaldesgoncou02goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl04sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	lefevre-frederic-1889-05-07	choixdechronique00buch	Choix de chroniques et mémoires sur l'histoire de France	Le Fèvre, Jean, seigneur de Saint-Remy, d. 1468	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmoi17parigoog	Bulletins et mémoires	Société de chirurgie de Paris	given-name mismatch
+reject	ducasse-andre-1894-07-23	bub_gb_Q78FAAAAQAAJ	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo406sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo408sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_BkhFAAAAYAAJ	Memoires lus a la Sorbonne dans les seances extraordinaires 	Université de Paris	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm10arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm17arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	faure-elie-1873-04-04	souvenirsdunordo00faur	Souvenirs du Nord : ou, La guerre, la Russie, et les Russes 	Faure, Raymond, 1786-1850	given-name mismatch
+reject	faure-gabriel-1877-05-15	souvenirsdunordo00faur	Souvenirs du Nord : ou, La guerre, la Russie, et les Russes 	Faure, Raymond, 1786-1850	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol01fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol01fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol03fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol03fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol07fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol07fabr	Souvenirs entomologiques ... Études sur l'instinct et les mu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol08fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol08fabrs	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol10fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol10fabruoft	Souvenirs entomologiques; études sur l'instinct et les moeur	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+accept	houssaye-arsene-1814-03-28	souvenirsdejeune00hous_0	Souvenirs de jeunesse, 1850-1870	Houssaye, Arsène, 1815-1896	creator+wikidata-year
+reject	feuillet-octave-1821-08-11	souvenirsetcorre00feui	Souvenirs et correspondances	Feuillet, Valérie Marie Elvire Dubois, 1832-1906	given-name mismatch
+reject	martin-hans-1886-11-09	souvenirsdunmede0000mart	Souvenirs d'un médecin légiste	Martin, Raymond, 1914- ..	given-name mismatch
+reject	martin-henri-1810-02-20	souvenirsdunmede0000mart	Souvenirs d'un médecin légiste	Martin, Raymond, 1914- ..	given-name mismatch
+accept	souvestre-emile-1806-04-15	confessionsdun00souv	Confessions d'un ouvrier	Souvestre, Emile, 1806-1854	creator+wikidata-year
+reject	bailly-jules-1832-12-13	collectiondesm15arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm38arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm39arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres09bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre10joseuoft	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	nisard-desire-1806-03-20	mmoiresdegaras00gara	Mémoires de Garasse (François) de la compagnie de Jésus	Nisard, Charles, 1808-1889	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro04herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	paris-gaston-1839-08-09	memoiresdelasoc01pari	Mémoires de la Société d'Histoire Naturelle de Paris	Société d'Histoire Naturelle de Paris	given-name mismatch
+reject	bertrand-louis-1866-03-25	mavieentroisacte0000bert	Ma vie en trois actes : autobiographie	Bertrand, Janette, 1925-	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet07sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet12sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	bertrand-louis-1866-03-25	memoiresdunmormo00bert	Memoires d'un Mormon	Bertrand, L. A. (Louis Alphonse), 1808-1875	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc01valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, Guy Louis Henri, marquis de, 1692-1774	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc01valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, marquis de (Henri Zosime), 1786-1859	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci47soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	dumesnil-rene-1879-06-19	memoiresdestat03vill	Memoires d'estat	Du Mesnil, Tanneguy Basire, sieur, fl 1622, ed	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm10arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm17arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm30arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_KvBBAAAAYAAJ	Mémoires pour servir a l'histoire du droit public de la Fran	France. Cour des aides (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_Bq7OAAAAMAAJ	Mémoires de l'Acadêmie des sciences de l'Institut de France	Institut national des sciences et arts (Paris)	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32645	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	goncourt-edmond-1822-05-26	journaldesgoncou02goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15185	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	martin-hans-1886-11-09	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	martin-henri-1810-02-20	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+accept	sue-eugene-1804-01-26	martinlenfanttro07sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	paris-gaston-1839-08-09	oeuvrescompltesd28622gut	Oeuvres complètes de lord Byron, Volume 7 comprenant ses mém	Paris, Paulin, 1800-1881 [Translator]	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0011	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0011	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0014	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0014	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	bernard-charles-1804-02-25	mmoiresdunjeuneh0000tris	Mémoires d'un jeune homme rangé : roman	Bernard, Tristan, 1866-1947	given-name mismatch
+reject	bernard-jean-1888-07-30	mmoiresdunjeuneh0000tris	Mémoires d'un jeune homme rangé : roman	Bernard, Tristan, 1866-1947	given-name mismatch
+accept	bernard-tristan-1866-09-07	mmoiresdunjeuneh0000tris	Mémoires d'un jeune homme rangé : roman	Bernard, Tristan, 1866-1947	creator+wikidata-year
+reject	paris-gaston-1839-08-09	oeuvrescompltesd30994gut	Oeuvres complètes de lord Byron, volume 10 comprenant ses mé	Paris, Paulin, 1800-1881 [Translator]	given-name mismatch
+reject	dumesnil-rene-1879-06-19	memoiresdestat02vill	Memoires d'estat	Du Mesnil, Tanneguy Basire, sieur, fl 1622, ed	given-name mismatch
+reject	lacroix-francis-1895-11-29	mmoirespourser01lacr	Mémoires pour servir à l'histoire de la révolution de Saint-	Lacroix, Pamphile, vicomte de, 1774-1842	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro01herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15237	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15281	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm58arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci25soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci39soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	cheruel-pierre-1809-01-17	memoirescomplet02sain	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci45soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	soulie-frederic-1800-12-23	huitjoursaucht00souluoft	Huit jours au château : extrait des mémoires d'un jeune homm	Soulié, Frédéric, 1800-1847	creator+wikidata-year
+reject	paris-gaston-1839-08-09	bulletinsetmmo0310sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	droz-gustave-1832-06-09	8YSUP11649_2	Mémoires de Fauvel. Volume 2	Droz, Joseph (1773-1850)	given-name mismatch
+reject	lorrain-jean-1855-08-09	A210054	Histoire de l'Académie Royale des Insriptions et Belles-Lett	Le Lorrain	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317110	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	martin-hans-1886-11-09	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	martin-henri-1810-02-20	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+accept	davignon-henri-1879-08-23	delaprincessedec0000davi	De la Princesse de Clèves à Thérèse Desqueyroux ; essais	Davignon, Henri, vicomte, 1879-	creator+wikidata-year
+reject	bernard-charles-1804-02-25	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54560	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32644	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	vogue-eugene-1848-02-25	mmoiresdumar04villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	aulard-francois-1849-07-19	mmoiressecrets00fouruoft	Mémoires secrets de Fournier l'Américain : publiés pour la p	Aulard, F.-A. (François-Alphonse), 1849-1928	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm22arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bertrand-louis-1866-03-25	guerredorientcam02napouoft	Guerre d'Orient : Campagnes de Égypte et de Syrie, 1798-1799	Bertrand, Henri-Gratien, comte, 1773-1844	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+accept	souvestre-emile-1806-04-15	confessionsdunou00souvuoft	Confessions d'un ouvrier	Souvestre, Emile, 1806-1854	creator+wikidata-year
+reject	marmier-xavier-1808-06-22	cihm_09908	A la maison [microforme] : études et souvenirs	Marmier, X. (Xavier), 1809-1892	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm03arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm07arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm54arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm51arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15270	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	paris-gaston-1839-08-09	SocittroyaledagricultureParis1761Bnf34442702j	Recueil contenant les délibérations de la Société royale d'a	Société d'agriculture de Paris	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32642	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32642	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32642	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bertrand-louis-1866-03-25	quaranteansdesou0000bert	Quarante ans de souvenirs politiques : Suite de Mémoires	Bertrand, Lionel, 1906-1979	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15222	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15231	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0100001Filigrane	08E010. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm60arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bourget-paul-1852-09-02	cihm_09863	Mémoires pour servir à l'histoire du chapitre de la cathédra	Bourget, Ignace, 1799-1885	given-name mismatch
+reject	bailly-jules-1832-12-13	bub_gb_dcwQAAAAYAAJ	Mémoires d'un temoin de la révolution, ou, Journal des faits	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	rossi-carlo-1892-02-14	cihm_40342	Souvenirs d'un voyages en Orégon et en Californie [microform	Rossi, Louis	given-name mismatch
+reject	rossi-vittorio-g-1898-01-08	cihm_40342	Souvenirs d'un voyages en Orégon et en Californie [microform	Rossi, Louis	given-name mismatch
+accept	paris-gaston-1839-08-09	recueildemmoir00pariuoft	Recueil de mémoires philologiques présenté à Gaston Paris	Paris, Gaston Bruno Paulin, 1839-1903	creator+wikidata-year
+reject	paris-gaston-1839-08-09	bulletinsetmmo0312sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo503sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	bernard-charles-1804-02-25	carnetderouteech0000bern	Carnet de route (échos et souvenirs)	Bernard, Antoine, 1890-1969	given-name mismatch
+reject	bernard-jean-1888-07-30	carnetderouteech0000bern	Carnet de route (échos et souvenirs)	Bernard, Antoine, 1890-1969	given-name mismatch
+reject	bernard-tristan-1866-09-07	carnetderouteech0000bern	Carnet de route (échos et souvenirs)	Bernard, Antoine, 1890-1969	given-name mismatch
+accept	feval-paul-1816-09-29	mariembaume01_202005	Le mari embaumé, souvenirs d'un page de M. de Vendôme	Paul Henri Corentin Féval	creator+wikidata-year
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo06sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro02herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+accept	sarcey-francisque-1827-10-08	siegedeparisi00sarc	Le siége de Paris : impressions et souvenirs	Sarcey, Francisque, 1827-1899	creator+wikidata-year
+reject	droz-gustave-1832-06-09	8YSUP11649_3	Mémoires de Jacques Fauvel. Volume 3	Droz, Joseph (1773-1850)	given-name mismatch
+reject	paris-gaston-1839-08-09	b29347142	Mémoires et prix de la Société de médecine de Paris	Société de médecine de Paris	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0002	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0002	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0008	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0008	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm22arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bertrand-louis-1866-03-25	guerredorientcam02napouoft	Guerre d'Orient : Campagnes de Égypte et de Syrie, 1798-1799	Bertrand, Henri-Gratien, comte, 1773-1844	given-name mismatch
+reject	moreau-abel-1893-01-08	messouvenirs00hermgoog	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm51arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm43arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm45arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm47arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm27arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	vogue-eugene-1848-02-25	mmoiresdumar04villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	aulard-francois-1849-07-19	mmoiressecrets00fouruoft	Mémoires secrets de Fournier l'Américain : publiés pour la p	Aulard, F.-A. (François-Alphonse), 1849-1928	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32762	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm51arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15270	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	paris-gaston-1839-08-09	SocittroyaledagricultureParis1761Bnf34442702j	Recueil contenant les délibérations de la Société royale d'a	Société d'agriculture de Paris	given-name mismatch
+reject	lenormand-henri-1882-05-03	b29308318_0001	Les souvenirs prophétiques d'une sibylle, sur les causes sec	Le Normand, M. A. (Marie-Anne Adélaide), 1772-1843	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15259	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	lecomte-georges-1867-07-09	nouveauxmemoires02leco	Nouveaux memoires sur l'etat present de la Chine	Le Comte, Louis, 1655-1728	given-name mismatch
+reject	moreau-abel-1893-01-08	nouveauxmmoire03more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	nisard-desire-1806-03-20	lamaisondeleglis00nisa	La maison de l'Eglise : souvenirs d'un enfant catholique	Nisard, Marie Nicolas Auguste, 1809-1892	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci27soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0012	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0012	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	le-roy-edouard-1870-06-18	b30511331	Mémoires et observations de médecine. Premiere partie. Conte	Le Roy, Charles, 1726-1779	given-name mismatch
+reject	le-roy-eugene-1836-11-29	b30511331	Mémoires et observations de médecine. Premiere partie. Conte	Le Roy, Charles, 1726-1779	given-name mismatch
+reject	leroy-pierre-1900-08-24	b30511331	Mémoires et observations de médecine. Premiere partie. Conte	Le Roy, Charles, 1726-1779	given-name mismatch
+reject	paris-gaston-1839-08-09	s5bulletinsetmmo06sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro02herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	droz-gustave-1832-06-09	8YSUP11649_3	Mémoires de Jacques Fauvel. Volume 3	Droz, Joseph (1773-1850)	given-name mismatch
+reject	bertrand-louis-1866-03-25	archologiecelt00bert	Archéologie celtique & gauloise; mémoires et documents relat	Bertrand, Alexandre Louis Joseph, 1820-1902	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32639	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32646	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15259	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	lecomte-georges-1867-07-09	nouveauxmemoires02leco	Nouveaux memoires sur l'etat present de la Chine	Le Comte, Louis, 1655-1728	given-name mismatch
+reject	moreau-abel-1893-01-08	nouveauxmmoire03more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	nisard-desire-1806-03-20	lamaisondeleglis00nisa	La maison de l'Eglise : souvenirs d'un enfant catholique	Nisard, Marie Nicolas Auguste, 1809-1892	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci27soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	bernard-charles-1804-02-25	b33016471_0006	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-jean-1888-07-30	b33016471_0006	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-tristan-1866-09-07	b33016471_0006	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+accept	bazin-rene-1853-12-26	ahr8979.0001.001.umich.edu	Mémoires d'une vieille fille	Bazin, René, 1853-1932	creator+wikidata-year
+reject	fabre-emile-1869-03-24	bibliothquedumde14fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde14fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0130001Filigrane	08E013. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	villiers-adam-1838-11-07	lesmmoiresdela01vill	Les Mémoires de la vie du comte D*** avant sa retraite : con	Villiers, Pierre de, 1648-1728	given-name mismatch
+reject	bazin-rene-1853-12-26	lesmonumentsdepa00baziuoft	Les monuments de Paris souvenirs de Vingt Siècles	Bazin, Hippolyte, 1855-	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	martin-hans-1886-11-09	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	martin-henri-1810-02-20	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0015	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0015	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiressurlhis01hermuoft	Mémoires sur l'histoire ecclésiastique du XVIIe siècle (1630	Hermant, Godefroi	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet03sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+accept	claretie-jules-1840-12-03	mmoiresdemadam02rola	Mémoires de madame Roland \	Claretie, Jules, 1840-1913	creator+wikidata-year
+reject	lorrain-jean-1855-08-09	memoiresdelasoci28soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci42soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	curel-francois-1854-06-10	thtrecomplet03cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	Curel, François de, 1854-1928	creator+wikidata-year
+reject	paris-gaston-1839-08-09	FNSPMA8E0130001Filigrane	08E013. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	villiers-adam-1838-11-07	lesmmoiresdela01vill	Les Mémoires de la vie du comte D*** avant sa retraite : con	Villiers, Pierre de, 1648-1728	given-name mismatch
+reject	bazin-rene-1853-12-26	lesmonumentsdepa00baziuoft	Les monuments de Paris souvenirs de Vingt Siècles	Bazin, Hippolyte, 1855-	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32761	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	martin-hans-1886-11-09	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	martin-henri-1810-02-20	cihm_08575	Un missionaire des Hurons, autobiographie du Père Chaumonot 	Martin, Félix, 1804-1886	given-name mismatch
+reject	moreau-abel-1893-01-08	lesconfessionsde00augu_0	Les confessions de Saint Augustin, évêque d'Hippone	Moreau, Louis Ignace, 1807-1881, tr	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde12fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde12fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde13fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde13fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde15fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde15fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+accept	veuillot-louis-1813-10-11	lesfranaisena00veui	Les Français en Algérie; souvenirs d'un voyage fait en 1841	Veuillot, Louis, 1813-1883	creator+wikidata-year
+reject	beraud-henri-1885-09-21	bub_gb_F3Q2AAAAMAAJ	Mémoires pour servir à l'histoire des événemens de la fin du	Béraud, Antony, 1792-1860	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling04soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling21soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	quinet-benoit-1818-04-02	mmoiresdexilbr00quin	Mémoires d'exil (Bruxelles-Oberland)	Quinet, Hermione (Asachi), 1821-1900	given-name mismatch
+reject	quinet-edgar-1803-02-17	mmoiresdexilbr00quin	Mémoires d'exil (Bruxelles-Oberland)	Quinet, Hermione (Asachi), 1821-1900	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiresdefl00fl	Mémoires de Fléchier sur les grands-jours d'Auvergne en 1665	Chéruel, Adolphe, 1809-1891. ed	given-name mismatch
+accept	sainte-beuve-charles-1804-12-23	mmoiresdefl00fl	Mémoires de Fléchier sur les grands-jours d'Auvergne en 1665	Sainte-Beuve, Charles Augustin, 1804-1869	creator+wikidata-year
+reject	petit-henri-1900-02-23	mmoiresdemonsi01peti	Mémoires de monsieur le duc de Montausier ; pair de France, 	Petit, Nicolas	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiressurlhis04hermuoft	Mémoires sur l'histoire ecclésiastique du XVIIe siècle (1630	Hermant, Godefroi	given-name mismatch
+reject	moreau-abel-1893-01-08	mmoiresdemadamed00lagu	Mémoires de Madame de La Guette [microform]	Moreau, C. (Célestin), b. 1805	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoirescomplet07sainrich	Mémoires complets et authentiques du duc de Saint-Simon sur 	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54561	Recueil de voyages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	halevy-daniel-1872-12-12	dernierssouveni00halgoog	Derniers souvenirs et portraits	Halévy, F., 1799-1862	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm22arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+accept	goncourt-edmond-1822-05-26	journaldesgonco05gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	journaldesgonco05gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15237	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15281	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	goncourt-edmond-1822-05-26	journaldesgonco05gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo04sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	FNSPMA8E0130001Filigrane	08E013. Examens de 1880 : élèves de deuxième année, section 	Ecole libre des sciences politiques (Paris)	given-name mismatch
+accept	gozlan-leon-1803-09-10	balzacchezluis00gozl	Balzac chez lui : souvenirs des Jardies	Gozlan, Léon, 1803-1866	creator+wikidata-year
+reject	dumesnil-rene-1879-06-19	memoiresdestat02vill	Memoires d'estat	Du Mesnil, Tanneguy Basire, sieur, fl 1622, ed	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm19arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_54558	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_54558	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_54558	Recueil de voiages au nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	cheruel-pierre-1809-01-17	mmoiressurlav01ch	Mémoires sur la vie publique et privée de Fouquet	Chéruel, Adolphe, 1809-1891	given-name mismatch
+accept	guillaumin-emile-1873-11-10	laviedunsimpleme00guil	La vie d'un simple (memoires d'un métayer);	Guillaumin, Emile, 1873-1951	creator+wikidata-year
+reject	lacroix-francis-1895-11-29	mmoiresdemdebo01bour	Mémoires de M. de Bourrienne, ministre d\'état, sur Napoléon	Lacroix, Désiré	given-name mismatch
+reject	roux-francois-1897-03-09	laviedelavnr00mont	La Vie de la vénérable soeur Marguerite Bourgeois : dite du 	Roux, Jean Henri Auguste, 1760-1831	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres05bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres09bonagoog	Memoires et correspondance du roi Jerome et de la reine Cath	Du Casse, Albert, 1813-1893, ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre10joseuoft	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	leroux-gaston-1868-05-06	dli.ministry.15185	Journal asiatique ou recueil de memoires d’extraits et de no	Leroux, Ernest	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde12fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde12fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde13fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde13fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-emile-1869-03-24	bibliothquedumde15fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde15fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	faure-elie-1873-04-04	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+reject	faure-gabriel-1877-05-15	souvenirsdumidi00faurgoog	Souvenirs du Midi : ou, L'Espagne, telle qu'elle est sous se	Faure, Raymond, 1786-1850	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89893	Memoires du duc de Saint-Simon, Vol. VII	Cheruel, Mm.	given-name mismatch
+reject	beraud-henri-1885-09-21	bub_gb_F3Q2AAAAMAAJ	Mémoires pour servir à l'histoire des événemens de la fin du	Béraud, Antony, 1792-1860	given-name mismatch
+reject	nisard-desire-1806-03-20	mmoiresdegaras00gara	Mémoires de Garasse (François) de la compagnie de Jésus	Nisard, Charles, 1808-1889	given-name mismatch
+reject	hermant-abel-1862-02-03	mmoiresdegodefro04herm	Mémoires de Godefroi Hermant sur l'histoire ecclésiastique d	Hermant, Godefroy, 1617-1690	given-name mismatch
+reject	clairville-louis-1811-11-28	lesmmoiresdede00enne	Les mémoires de deux jeunes mariées : comédie-vaudeville en 	Clairville, M., 1811-1879	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm22arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	cohen-gustave-1879-12-24	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	cohen-joseph-1886-01-02	lescoursdunordou03brow	Les cours du nord; ou, Mémoires originaux sur les souverains	Cohen, Jean	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm58arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	martin-hans-1886-11-09	correspondancepr00sain	Correspondance, précédée d'un supplément aux mémoires de sa 	Martin, Louis Aimé, 1786-1847	given-name mismatch
+reject	martin-henri-1810-02-20	correspondancepr00sain	Correspondance, précédée d'un supplément aux mémoires de sa 	Martin, Louis Aimé, 1786-1847	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl08sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+accept	about-edmond-1828-02-14	lefellahsouvenir00abou	Le fellah; souvenirs d'Egypte	About, Edmond, 1828-1885	creator+wikidata-year
+reject	ducasse-andre-1894-07-23	mmoiresetcorre08beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	vogue-eugene-1848-02-25	mmoiresdumar05villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	paris-gaston-1839-08-09	s6bulletinsetmmo03sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	simon-jules-1814-12-27	grosleymemoireshistoriques2ed2	Mémoires historiques et critiques pour l'histoire de Troyes.	Simon, Édouard-Thomas, 1740-1818	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm44argeuoft	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm48arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc03memo	Mémoires de la Société Linnéenne de Paris	Société Linnéenne de Paris	given-name mismatch
+reject	roux-francois-1897-03-09	laviedelavnr00roux	La Vie de la vénérable soeur Marguerite Bourgeois, dite du S	Roux, Jean Henri Auguste, 1760-1831	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling03soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling08soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling10soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling19soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorres19bonagoog	Mémoires et correspondance politique et militaire du roi Jos	Du Casse, Albert, 1813-1893 ed	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre08beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	bernard-charles-1804-02-25	b33016471_0007	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-jean-1888-07-30	b33016471_0007	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bernard-tristan-1866-09-07	b33016471_0007	Recueil de voiages au nord, contenant divers mémoires très u	Bernard, Jean-Frédéric, 1683?-1744	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm44argeuoft	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm48arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	fabre-emile-1869-03-24	b29324695_0001	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	b29324695_0001	Bibliothèque du médecin-praticien ou résumé général de tous 	Fabre, François, 1797-1854. no 96006840	given-name mismatch
+reject	martin-hans-1886-11-09	b29335887_0002	Mémoires de médecine et de chirurgie-pratique sur plusieurs 	Martin, Pierre Étienne, 1771-1846	given-name mismatch
+reject	martin-henri-1810-02-20	b29335887_0002	Mémoires de médecine et de chirurgie-pratique sur plusieurs 	Martin, Pierre Étienne, 1771-1846	given-name mismatch
+accept	mockel-albert-1866-12-27	augustedonnaysou00mock	Auguste Donnay : souvenirs et réflexions	Mockel, Albert, 1866-1945	creator+wikidata-year
+reject	cheruel-pierre-1809-01-17	bub_gb_C4QaAAAAYAAJ	Mémoires de mlle de Montpensier : petite-fille de Henri IV	Chéruel, Adolphe, 1809-1891	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo409sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo502sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm44argeuoft	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm48arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	potter-frans-1834-01-04	bub_gb_Q18AAAAAMAAJ	Vie et mémoires de Scipion de Ricci, évêque de Pistoie et Pr	Potter, Louis Joseph Antoine, 1786-1859	given-name mismatch
+reject	feydeau-georges-1862-12-08	theophilegautier00feyd	Théophile Gautier ; souvenirs intimes	Feydeau, Ernest Aimè, 1821-1873	given-name mismatch
+reject	lecomte-georges-1867-07-09	censuredelasacre00univ_3	Censure de la sacree Faculte de theologie de Paris portée co	Le Comte, Louis, 1655-1728. Nouveaux mémoires sur	given-name mismatch
+reject	lecomte-georges-1867-07-09	censuredelasacre00univ_3	Censure de la sacree Faculte de theologie de Paris portée co	Le Comte, Louis, 1655-1728. Lettre des ceremonies 	given-name mismatch
+reject	lecomte-georges-1867-07-09	censuredelasacre00univ_3	Censure de la sacree Faculte de theologie de Paris portée co	Le Comte, Louis Daniel, 1655-1728. Lettre à Monse	given-name mismatch
+reject	roux-francois-1897-03-09	laviedelavnr00roux	La Vie de la vénérable soeur Marguerite Bourgeois, dite du S	Roux, Jean Henri Auguste, 1760-1831	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre08beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+accept	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc	Sophie Arnould, d'après sa correspondance et ses mémoires in	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc	Sophie Arnould, d'après sa correspondance et ses mémoires in	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm16arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	bailly-jules-1832-12-13	collectiondesm25arge	Collection des mémoires relatifs à la révolution française	Bailly, Jean Sylvain, 1736-1793	given-name mismatch
+reject	daudet-ernest-1837-05-31	souvenirsdesmili00dauduoft	Souvenirs des milieux littéraires, politiques, artistiques e	Daudet, Léon, 1867-1942	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling03soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling08soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling10soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresling19soci	Mémoires	Société de linguistique de Paris	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresdelasoc03memo	Mémoires de la Société Linnéenne de Paris	Société Linnéenne de Paris	given-name mismatch
+reject	vogue-eugene-1848-02-25	mmoiresdumar05villuoft	Mémoires du maréchal de Villars;	Vogüé, Charles Jean Melchior, marquis de, 1829-191	given-name mismatch
+reject	ducasse-andre-1894-07-23	mmoiresetcorre08beauuoft	Mémoires et correspondance politique et militaire du prince 	Du Casse, Albert, baron, 1813-1893	given-name mismatch
+reject	paris-gaston-1839-08-09	bulletinsetmmo0306sociuoft	Bulletins et mémoires - Société d'anthropologie de Paris	Société d'anthropologie de Paris	given-name mismatch
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317172	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+accept	goncourt-edmond-1822-05-26	sophiearnouldda00gonc	Sophie Arnould d'après sa correspondance et ses mémoires iné	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	sophiearnouldda00gonc	Sophie Arnould d'après sa correspondance et ses mémoires iné	Goncourt, Jules de, 1830-1870	given-name mismatch
+accept	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc_1	Sophie Arnould d'apres sa correspondance et ses memoires ine	Goncourt, Edmond de, 1822-1896	creator+wikidata-year
+reject	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc_1	Sophie Arnould d'apres sa correspondance et ses memoires ine	Goncourt, Jules de, 1830-1870, joint author	given-name mismatch
+reject	paris-gaston-1839-08-09	oeuvrescompltesd28082gut	Oeuvres complètes de lord Byron. Volume 5. comprenant ses mé	Paris, Paulin, 1800-1881 [Translator]	given-name mismatch
+reject	goncourt-edmond-1822-05-26	journaldesgonco04gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+accept	sue-eugene-1804-01-26	martinlenfanttro00suee	Martin l'enfant trouvé, ou, Les mémoires d'un valet de chamb	Sue, Eugène, 1804-1857	creator+wikidata-year
+accept	sue-eugene-1804-01-26	martinlenfanttro01sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	Sue, Eugène, 1804-1857	creator+wikidata-year
+accept	sue-eugene-1804-01-26	martinlenfanttro03sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	Sue, Eugène, 1804-1857	creator+wikidata-year
+reject	leroux-gaston-1868-05-06	in.ernet.dli.2015.317172	Recueil De Memoires	Leroux, Ernest, Ed.	given-name mismatch
+reject	goncourt-edmond-1822-05-26	sophiearnouldda00gonc	Sophie Arnould d'après sa correspondance et ses mémoires iné	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc_1	Sophie Arnould d'apres sa correspondance et ses memoires ine	Goncourt, Jules de, 1830-1870, joint author	given-name mismatch
+reject	droz-gustave-1832-06-09	8YSUP11649_4	Mémoires de Jacques Fauvel. Volume 4	Droz, Joseph (1773-1850)	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci30soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	potter-frans-1834-01-04	vieetmmoiresde01pott	Vie et mémoires de Scipion de Ricci, évêque de Pistoie et Pr	Potter, Louis Joseph Antoine, 1786-1859	given-name mismatch
+reject	goncourt-edmond-1822-05-26	journaldesgonco04gonc	Journal des Goncourt : mémoires de la vie littéraire	Goncourt, Jules de, 1830-1870	given-name mismatch
+reject	fabre-emile-1869-03-24	souvenirsentomol11fabr	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	souvenirsentomol11fabr	Souvenirs entomologiques : études sur l'instinct et les moeu	Fabre, Jean-Henri, 1823-1915	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci30soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	paris-gaston-1839-08-09	oeuvrescompltesd28082gut	Oeuvres complètes de lord Byron. Volume 5. comprenant ses mé	Paris, Paulin, 1800-1881 [Translator]	given-name mismatch
+reject	bernard-charles-1804-02-25	cihm_32760	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-jean-1888-07-30	cihm_32760	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	bernard-tristan-1866-09-07	cihm_32760	Recueil de voyages au Nord [microforme] : contenant divers m	Bernard, J.-Frédéric (Jean-Frédéric), m. 1752	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_Bq7OAAAAMAAJ	Mémoires de l'Acadêmie des sciences de l'Institut de France	Institut national des sciences et arts (Paris)	given-name mismatch
+reject	paris-gaston-1839-08-09	bub_gb_KvBBAAAAYAAJ	Mémoires pour servir a l'histoire du droit public de la Fran	France. Cour des aides (Paris)	given-name mismatch
+reject	moreau-abel-1893-01-08	nouveauxmmoire04more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	bailly-jules-1832-12-13	messincerescondo0000bail	Mes sincères condoléances : souvenirs décapants d'un croq	Bailly, Guillaume, 1975- auteur	given-name mismatch
+reject	moreau-abel-1893-01-08	messouvenirs02hermgoog	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc01valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, Guy Louis Henri, marquis de, 1692-1774	given-name mismatch
+reject	valori-gino-1890-04-30	memoiresnegoc01valo	Mémoires des négociations du marquis de Valori ... Accompagn	Valori, marquis de (Henri Zosime), 1786-1859	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci47soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+accept	cheruel-pierre-1809-01-17	ssmmoirescompl05sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	Chéruel, Pierre Adolphe, 1809-1891	creator+wikidata-year
+reject	dumesnil-rene-1879-06-19	troyonsouvenirsi00dumeuoft	Troyon : souvenirs intimes	Dumesnil, Henri, 1823-	given-name mismatch
+accept	houssaye-arsene-1814-03-28	lesconfessionss11housgoog	... Les confessions : souvenirs d'un demi-siècle, 1830-1880 	Houssaye, Arsène, 1815-1896	creator+wikidata-year
+accept	houssaye-arsene-1814-03-28	lesconfessionsso04housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	Houssaye, Arsène, 1815-1896	creator+wikidata-year
+reject	cheruel-pierre-1809-01-17	india.history.resource.89894	Memoires du duc de Saint-Simon, Vol. VI	Cheruel, Mm.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89903	Memoires du duc de Saint-Simon, 2nd ed., Vol. XI	Cheruel, Mm.	given-name mismatch
+reject	cheruel-pierre-1809-01-17	india.history.resource.89891	Memoires du duc de Saint-Simon, 2nd ed., Vol. IX	Cheruel, Mm.	given-name mismatch
+reject	moreau-abel-1893-01-08	nouveauxmmoire04more	Nouveaux mémoires pour servir à l'histoire de notre tems	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	bailly-jules-1832-12-13	messincerescondo0000bail	Mes sincères condoléances : souvenirs décapants d'un croq	Bailly, Guillaume, 1975- auteur	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	lacollaborationd00bour	La collaboration de Saint-Simon et de Torcy : étude critique	Bourgeois, Émile, 1857-1934	given-name mismatch
+reject	moreau-abel-1893-01-08	messouvenirs02hermgoog	Mes souvenirs	Moreau, Jacob Nicolas, 1717-1804	given-name mismatch
+reject	paris-gaston-1839-08-09	memoiresdejeans02parigoog	Memoires de Jean sire de Joinville; ou, Histoire et chroniqu	Paris, Paulin, 1800-1881	given-name mismatch
+reject	marmier-xavier-1808-06-22	cihm_09908	A la maison [microforme] : études et souvenirs	Marmier, X. (Xavier), 1809-1892	given-name mismatch
+accept	veuillot-louis-1813-10-11	agnsdelauvenso00lauv	Agnès de Lauvens ; ou, Mémoires de soeur Saint-Louis : conte	Veuillot, Louis François, 1813-1883	creator+wikidata-year
+reject	paris-gaston-1839-08-09	FNSPMA8E0050001Filigrane	08E005. Examens de 1880 : élèves de première et deuxième ann	Ecole libre des sciences politiques (Paris)	given-name mismatch
+reject	martin-hans-1886-11-09	souvenirsdunmede0000mart	Souvenirs d'un médecin légiste	Martin, Raymond, 1914- ..	given-name mismatch
+reject	martin-henri-1810-02-20	souvenirsdunmede0000mart	Souvenirs d'un médecin légiste	Martin, Raymond, 1914- ..	given-name mismatch
+reject	feuillet-octave-1821-08-11	souvenirsetcorre00feui	Souvenirs et correspondances	Feuillet, Valérie Marie Elvire Dubois, 1832-1906	given-name mismatch
+accept	janin-jules-1804-02-16	petitssouvenirsa00janiuoft	Petits souvenirs. Avec une eau-forte par Ad. Lalauze	Janin, Jules Gabriel, 1804-1874	creator+wikidata-year
+reject	potter-frans-1834-01-04	vieetmmoiresde04pott	Vie et mémoires de Scipion de Ricci, évêque de Pistoie et Pr	Potter, Louis Joseph Antoine, 1786-1859	given-name mismatch
+reject	lenormand-henri-1882-05-03	lessouvenirsprop00leno	Les souvenirs prophétiques d'une sibylle : sur les causes se	Lenormand, Marie-Anne Adélaïde, 1772-1843	given-name mismatch
+accept	claretie-jules-1840-12-03	lesconfession02rous	Les confessions	Claretie, Jules, 1840-1913	creator+wikidata-year
+reject	fabre-emile-1869-03-24	bibliothquedumde11fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	fabre-ferdinand-1827-06-09	bibliothquedumde11fabr	Bibliothèque du médecin-praticien, ou, Résumé général de tou	Fabre, Antoine François Hippolyte, 1797-1854, ed	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoires1795181700soci	Mémoires ... [1795-1817]	Société de médecine de Paris	given-name mismatch
+reject	lorrain-jean-1855-08-09	mmoiresdelasoc72sociuoft	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	mmoiresdelasoc74sociuoft	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna02unkngoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+reject	bourgeois-pierre-1898-12-04	mmoiresconcerna03sacygoog	Mémoires concernant l'histoire, les sciences, les arts, les 	Bourgeois, François, 1723-1792	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresduducdera02pari	Mémoires du duc de Raguse de 1792 à 1832,imprimés sur le man	Paris,Perrotin	given-name mismatch
+reject	paris-gaston-1839-08-09	mmoiresduducdera06pari	Mémoires du duc de Raguse de 1792 à 1832,imprimés sur le man	Paris,Perrotin	given-name mismatch
+reject	nisard-desire-1806-03-20	mmoiresetcorre00nisa	Mémoires et correspondances : historiques et littéraires iné	Nisard, Charles, 1808-1889	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci26soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci32soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+reject	lorrain-jean-1855-08-09	memoiresdelasoci56soci	Mémoires de la Société d'archéologie lorraine et du Musée hi	Société d'archéologie lorraine et du Musée histori	given-name mismatch
+note-MANUAL					IA API caps results at 10000 of 11504 — 1504 records unseen (silent-cap disclosure)
+reject-MANUAL	cheruel-pierre-1809-01-17	deladministratio00chuoft	De l'administration de Louis 14 (1661-1672) d'après les mémo	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	gozlan-leon-1803-09-10	balzacchezluisou00gozl	Balzac chez lui : souvenirs des Jardies	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	claretie-jules-1840-12-03	lacannedemmichel00clar	La canne de M. Michelet; promenades et souvenirs	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	feval-paul-1816-09-29	madamegilblassou02fvuoft	Madame Gil Blas : souvenirs et aventures d'une femme de notr	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sarcey-francisque-1827-10-08	lesigedeparisi00sarcuoft	Le siège de Paris, impressions et souvenirs	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sainte-beuve-charles-1804-12-23	mmoiresdemmedem03saingoog	Mémoires de mme. de Motteville sur Anne d'Autriche et sa cou	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	lacordaire-jean-1802-05-12	mmoiresdubaron00lees	Mémoires du baron Georges Cuvier	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	mmoirescomplet01sainuoft	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoir04suee	Mathilde : mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	boissier-gaston-1823-08-15	mlangesboissie00boisuoft	Mélanges Boissier; recueil de mémoires concernant la littéra	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	harcourt-robert-1881-11-23	souvenirsdecapti00harc	Souvenirs de captivite et d'evasions	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	souvenirsdunbas00souvgoog	Souvenirs d'un Bas-Breton ..	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	curel-francois-1854-06-10	thtrecomplet01cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoir00suee	Mathilde : mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl06sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl09sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	feval-paul-1816-09-29	MariEmbaume01	Le mari embaumé, souvenirs d'un page de M. de Vendôme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	curel-francois-1854-06-10	thtrecomplet06cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	curel-francois-1854-06-10	thtrecomple04cure	Théâtre complet : textes remaniés par l'ateur avec l'histori	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	gozlan-leon-1803-09-10	balzacchezluiso00gozlgoog	Balzac chez lui; souvenirs des Jardies	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	souvenirsdunbas01souvgoog	Souvenirs d'un Bas-Breton ..	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	souvenirsdunbasb02souv	Souvenirs d'un bas-breton	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	hermant-abel-1862-02-03	souvenirsduvtede00hermuoft	Souvenirs du Vte de Courpière	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	souvenirsdunbasb01souv	Souvenirs d'un bas-breton	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	souvenirsdunviei00souv	Souvenirs d'un vieillard : la dernière étape	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoire01suee	Mathilde : mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	houssaye-arsene-1814-03-28	lesconfessionsso03housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	claretie-jules-1840-12-03	lesconfession01rous	Les confessions	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoir01suee	Mathilde : mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	monselet-charles-1825-04-30	messouvenirslitt00mons	Mes souvenirs littéraires	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl11sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl10sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sarcey-francisque-1827-10-08	lesigedeparisim03sarcgoog	Le siège de Paris. Impressions et souvenirs	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	mmoiressurlavi01chuoft	Mémoires sur la vie publique et privée de Fouquet, surintend	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	bazin-rene-1853-12-26	mmoiresdunevi00bazi	Mémoires d'une vielle fille	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	houssaye-arsene-1814-03-28	lesconfessionsso02housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgonco09gonc	Journal des Goncourt : mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	marmier-xavier-1808-06-22	untauborddelaba00marmgoog	Un été au bord de la Baltique et de la Mer du Nord : souve	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	marmier-xavier-1808-06-22	untauborddel00marmuoft	Un été au bord de la Baltique et de la Mer du Nord; souvenir	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	curel-francois-1854-06-10	thtrecomplet02cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	veuillot-louis-1813-10-11	lesfrancaisenalg00veui	Les français en Algérie : souvenirs d'un voyage fait en 18	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgoncou09goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgonco03gonc	Journal des Goncourt : mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	quinet-edgar-1803-02-17	histoiredemesid00quinuoft	Histoire de mes idées; autobiographie	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	soulie-frederic-1800-12-23	lesmmoiresdudi00soul	Les mémoires du diable	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	simon-jules-1814-12-27	nouveauxmmoire00simo	Nouveaux mémoires des autres	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoir06suee	Mathilde : mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttr00etatgoog	Martin l'enfant trouvé; ou, Les Memoires d'un valet de cham	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	feval-paul-1816-09-29	p2madamegilblass01fvuoft	Madame Gil Blas : souvenirs et aventures d'une femme de notr	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	daudet-ernest-1837-05-31	mmoiresdutempsde00duca	Mémoires du temps de Louis XIV [microform]	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+accept-MANUAL	maurois-andre-1885-07-26	memoires0000andr	Memoires	genuine memoirs — NEW person (availability checked at download stage)
+reject-MANUAL	feval-paul-1816-09-29	MariEmbaume02	Le Mari embaumé, souvenirs d'un page de M. de Vendôme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	confessionsduno00souvuoft	Confessions d'un ouvrier;	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sainte-beuve-charles-1804-12-23	mmoiresdemmede03mott	Mémoires de mme. de Motteville sur Anne d'Autriche et sa cou	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sarcey-francisque-1827-10-08	souvenirsdejeune00sarc	Souvenirs de jeunesse	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	gebhart-emile-1839-07-19	souvenirsdunviei00gebh	Souvenirs d'un vieil Athénien	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	schure-edouard-1841-01-21	souvenirssurric00schugoog	Souvenirs sur Richard Wagner : la première de Tristan et Ise	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+accept-MANUAL	daudet-ernest-1837-05-31	souvenirsdemonte01daud	Souvenirs de mon temps	own memoirs of his era — NEW work
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttro05sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	confessionsduno01souvgoog	Confessions d'un ouvrier	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	claretie-jules-1840-12-03	mmoiresdemadam01rola	Mémoires de madame Roland \	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	mathildemmoiresd33454gut	Mathilde mémoires d'une jeune femme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	journaldolivierl02orme	Journal d'Olivier Lefèvre d'Ormesson, et extraits des mémoir	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgoncou02goncuoft	Journal des Goncourt - Mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	soulie-frederic-1800-12-23	lesmmoiresdudi01souluoft	Les mémoires du diable	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgonco04gonc	Journal des Goncourt : mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl04sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	houssaye-arsene-1814-03-28	souvenirsdejeune00hous_0	Souvenirs de jeunesse, 1850-1870	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	confessionsdun00souv	Confessions d'un ouvrier	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttro07sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	bernard-tristan-1866-09-07	mmoiresdunjeuneh0000tris	Mémoires d'un jeune homme rangé : roman	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	soulie-frederic-1800-12-23	huitjoursaucht00souluoft	Huit jours au château : extrait des mémoires d'un jeune homm	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	davignon-henri-1879-08-23	delaprincessedec0000davi	De la Princesse de Clèves à Thérèse Desqueyroux ; essais	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	souvestre-emile-1806-04-15	confessionsdunou00souvuoft	Confessions d'un ouvrier	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	paris-gaston-1839-08-09	recueildemmoir00pariuoft	Recueil de mémoires philologiques présenté à Gaston Paris	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	feval-paul-1816-09-29	mariembaume01_202005	Le mari embaumé, souvenirs d'un page de M. de Vendôme	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sarcey-francisque-1827-10-08	siegedeparisi00sarc	Le siége de Paris : impressions et souvenirs	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	bazin-rene-1853-12-26	ahr8979.0001.001.umich.edu	Mémoires d'une vieille fille	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	claretie-jules-1840-12-03	mmoiresdemadam02rola	Mémoires de madame Roland \	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	curel-francois-1854-06-10	thtrecomplet03cureuoft	Théâtre complet. Textes remaniés par l'auteur avec l'histori	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	veuillot-louis-1813-10-11	lesfranaisena00veui	Les Français en Algérie; souvenirs d'un voyage fait en 1841	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sainte-beuve-charles-1804-12-23	mmoiresdefl00fl	Mémoires de Fléchier sur les grands-jours d'Auvergne en 1665	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	journaldesgonco05gonc	Journal des Goncourt : mémoires de la vie littéraire	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	gozlan-leon-1803-09-10	balzacchezluis00gozl	Balzac chez lui : souvenirs des Jardies	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	guillaumin-emile-1873-11-10	laviedunsimpleme00guil	La vie d'un simple (memoires d'un métayer);	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl08sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	about-edmond-1828-02-14	lefellahsouvenir00abou	Le fellah; souvenirs d'Egypte	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	mockel-albert-1866-12-27	augustedonnaysou00mock	Auguste Donnay : souvenirs et réflexions	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc	Sophie Arnould, d'après sa correspondance et ses mémoires in	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	sophiearnouldda00gonc	Sophie Arnould d'après sa correspondance et ses mémoires iné	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	goncourt-edmond-1822-05-26	sophiearnoulddap00gonc_1	Sophie Arnould d'apres sa correspondance et ses memoires ine	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttro00suee	Martin l'enfant trouvé, ou, Les mémoires d'un valet de chamb	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttro01sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	sue-eugene-1804-01-26	martinlenfanttro03sueeuoft	Martin l'enfant trouvé : ou, Les mémoires d'un valet de cham	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	cheruel-pierre-1809-01-17	ssmmoirescompl05sain	Mémoires complets et authentiques du duc de Saint-Simon, sur	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	houssaye-arsene-1814-03-28	lesconfessionss11housgoog	... Les confessions : souvenirs d'un demi-siècle, 1830-1880 	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	houssaye-arsene-1814-03-28	lesconfessionsso04housuoft	Les confessions; souvenirs d'un demisiècle, 1830-1880	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+reject-MANUAL	veuillot-louis-1813-10-11	agnsdelauvenso00lauv	Agnès de Lauvens ; ou, Mémoires de soeur Saint-Louis : conte	manual pass: fiction/editor/third-person/academic/duplicate-of-pool
+accept-MANUAL	janin-jules-1804-02-16	petitssouvenirsa00janiuoft	Petits souvenirs. Avec une eau-forte par Ad. Lalauze	own memoir sketches — NEW person
+reject-MANUAL	claretie-jules-1840-12-03	lesconfession02rous	Les confessions	manual pass: fiction/editor/third-person/academic/duplicate-of-pool

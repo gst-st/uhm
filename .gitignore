@@ -1,10 +1,14 @@
 /internal/
 
 # Generated files
-docs-consolidated.mdUGM_YouTube_Strategy.docx
+docs-consolidated.md
+UGM_YouTube_Strategy.docx
 __pycache__/
 .DS_Store
 
 # playwright/browser scratch
 .playwright-mcp/
 gate51_panel.yml
+
+# P6a: чужие тексты (мемуары) — только на диске, не в git
+architecture/data/p6a_texts/

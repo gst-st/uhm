@@ -1,0 +1,26 @@
+decision	ogid	lang	work	author	reason
+reject	leblanc-maurice-1864-12-11	fr	La Machine à courage	Georgette Leblanc	given-name mismatch
+accept	franc-nohain-legrand-1872-10-25	fr	Les Mémoires de Footit et Chocolat	Franc-Nohain	category+author+year
+skip		fr	Mémoires (Jean-Baptiste Say)		no-author-field
+skip		fr	Mémoires (Madame de Mornay)		no-author-field
+reject	hervieu-louise-1873-10-26	fr	Réminiscences (Hervieu)	Louise Hervieu	year mismatch (1878 vs 1873)
+reject	hervieu-paul-1857-09-02	fr	Réminiscences (Hervieu)	Louise Hervieu	given-name mismatch
+accept	houssaye-arsene-1814-03-28	fr	Souvenirs de jeunesse (Houssaye)	Arsène Houssaye	category+author+year
+reject	lebrun-firmin-1802-02-27	fr	Témoignage (Lebrun)	Albert Lebrun	given-name mismatch
+reject	gide-charles-1847-06-28	fr	Un esprit non prévenu	André Gide	given-name mismatch
+skip		fr	Walden ou la vie dans les bois		no-author-field
+skip		fr	Œuvres de Camille Desmoulins		no-author-field
+skip		it	Diario durante l'occupazione austriaca del 1917-18 a Tesis		no-author-field
+skip		it	Il Partigiano D'Artagnan		no-author-field
+skip		it	Il racconto del Pellegrino		no-author-field
+skip		it	L'editore ideale		no-author-field
+skip		it	La vita di Benvenuto di Maestro Giovanni Cellini fiorentino,		no-author-field
+skip		it	Malvezzi Carniani Teresa		no-author-field
+skip		it	Mastro Titta, il boia di Roma		no-author-field
+skip		it	Memorie del primo amore		no-author-field
+skip		it	Milione		no-author-field
+skip		it	Relazione del primo viaggio intorno al mondo		no-author-field
+skip		it	Verso il venticinquennio del football		no-author-field
+reject-MANUAL	franc-nohain-legrand-1872-10-25	fr	Les Mémoires de Footit et Chocolat	Franc-Nohain	third-person memoir (clowns Footit&Chocolat as narrators, ghost-written)
+note-MANUAL	hervieu-louise-1873-10-26	fr	Réminiscences (Hervieu)	Louise Hervieu	witness: OGDB birth 1873 vs Wikidata 1878 — OGDB trust-level caveat in action
+accept-MANUAL	houssaye-arsene-1814-03-28	fr	Souvenirs de jeunesse (Houssaye)	Arsène Houssaye	first-person youth memoir, owner=author

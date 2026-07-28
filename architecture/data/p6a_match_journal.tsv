@@ -1,0 +1,490 @@
+decision	ogid	pg_id	title	reason
+reject	renard-jules-1864-02-22	4559	Poil de Carotte	fiction-as-memoir (Subjects)
+reject	jaloux-edmond-1878-06-19	4933	L'Escalier d'Or	fiction-as-memoir (Subjects)
+reject	alain-fournier-henri-1886-10-03	5781	Le Grand Meaulnes	fiction-as-memoir (Subjects)
+reject	houssaye-arsene-1814-03-28	8541	Les mains pleines de roses, pleines d'or et pleines de sang	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	8650	Monsieur Lecoq — Volume 1 L'enquête	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	8719	Monsieur Lecoq — Volume2 L'honneur du nom	fiction-as-memoir (Subjects)
+reject	aulard-francois-1849-07-19	8822	Les grands orateurs de la Révolution Mirabeau, Vergniaud, Da	given-name mismatch (fa vs francois)
+reject	aulard-francois-1849-07-19	8864	Mémoires secrets de Fournier l'Américain	given-name mismatch (fa vs francois)
+reject	houssaye-arsene-1814-03-28	9261	Les grandes dames	fiction-as-memoir (Subjects)
+reject	labiche-eugene-1815-05-06	9453	Le Voyage de Monsieur Perrichon: Comédie en quatre actes	not-memoir-title
+reject	mathiez-albert-1874-01-10	9818	Les grandes journées de la Constituante	not-memoir-title
+reject	feval-paul-1816-09-29	10053	La vampire	fiction-as-memoir (Subjects)
+reject	buysse-cyriel-1859-09-20	10346	C'Était ainsi...	fiction-as-memoir (Subjects)
+reject	conscience-henry-1812-12-03	10384	Le Pays de l'or	given-name mismatch (hendrik vs henry)
+reject	gaboriau-emile-1832-11-09	11301	Les gens de bureau	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	11588	L'argent des autres: 1. Les hommes de paille	fiction-as-memoir (Subjects)
+reject	houssaye-arsene-1814-03-28	11928	Les douze nouvelles nouvelles	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	12174	Baccara	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	12284	Anie	fiction-as-memoir (Subjects)
+reject	janin-jules-1804-02-16	12566	Contes, Nouvelles et Recits	fiction-as-memoir (Subjects)
+reject	faguet-emile-1847-12-17	12749	Études Littéraires; dix-huitième siècle	not-memoir-title
+reject	malot-hector-1830-05-20	13027	Cara	fiction-as-memoir (Subjects)
+reject	caro-elme-1826-03-04	13038	George Sand	given-name mismatch (e vs elme)
+reject	malot-hector-1830-05-20	13336	Clotilde Martory	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	13385	Comte du Pape	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	13400	Conscience	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	13490	Corysandre	fiction-as-memoir (Subjects)
+reject	hemon-louis-1880-10-12	13525	Maria Chapdelaine	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	13562	Ghislaine	fiction-as-memoir (Subjects)
+reject	sainte-beuve-charles-1804-12-23	13594	Portraits littéraires, Tome I	not-memoir-title
+reject	malot-hector-1830-05-20	13654	Ida et Carmelita	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	13704	L'homme à l'oreille cassée	fiction-as-memoir (Subjects)
+reject	leroux-gaston-1868-05-06	13765	Le mystère de la chambre jaune	fiction-as-memoir (Subjects)
+reject	leroux-gaston-1868-05-06	13772	Les etranges noces de Rouletabille	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	13793	En famille	fiction-as-memoir (Subjects)
+reject	sainte-beuve-charles-1804-12-23	13965	Portraits littéraires, Tome II	not-memoir-title
+reject	pergaud-louis-1882-01-22	14397	Le roman de Miraut - Chien de chasse	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	14398	La fée des grèves	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	14404	Les Rois	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	14541	Séance De L'académie Française Du 2 Mai 1901 Discours De Réc	not-memoir-title
+reject	sainte-beuve-charles-1804-12-23	14692	Portraits littéraires, Tome III	not-memoir-title
+reject	feval-paul-1816-09-29	14702	Le loup blanc	fiction-as-memoir (Subjects)
+reject	valles-jules-1832-06-11	14704	L'enfant	fiction-as-memoir (Subjects)
+reject	valles-jules-1832-06-11	14705	Le bachelier	fiction-as-memoir (Subjects)
+accept	goncourt-edmond-1822-05-26	14799	Journal des Goncourt  (Premier Volume) Mémoires de la vie li	author+year+memoir-title
+accept	goncourt-edmond-1822-05-26	14803	Journal des Goncourt  (Deuxième volume) Mémoires de la vie l	author+year+memoir-title
+reject	malot-hector-1830-05-20	14820	Une femme d'argent	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	15107	La corde au cou	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	15295	Le juif errant - Tome I	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	15296	Le juif errant - Tome II	fiction-as-memoir (Subjects)
+reject	leroux-gaston-1868-05-06	15554	Le parfum de la dame en noir	fiction-as-memoir (Subjects)
+reject	eekhoud-georges-1854-05-27	15558	La nouvelle Carthage	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	15579	L'affaire Lerouge	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	15816	La fabrique de crimes	fiction-as-memoir (Subjects)
+reject	eekhoud-georges-1854-05-27	15844	Escal-Vigor	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	16815	Physiologie de l'amour moderne	not-memoir-title
+reject	mirbeau-octave-1848-02-16	16820	Le Journal d'une Femme de Chambre	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	16851	L'alouette du casque; ou, Victoria, la mère des camps	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	16875	Paula Monti, Tome I ou L'Hôtel Lambert - histoire contempora	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	16876	Paula Monti, Tome II ou L'Hôtel Lambert - histoire contempor	fiction-as-memoir (Subjects)
+reject	eekhoud-georges-1854-05-27	17010	La faneuse d'amour	fiction-as-memoir (Subjects)
+accept	sainte-beuve-charles-1804-12-23	17044	Mémoires du duc de Saint-Simon Siècle de Louis XIV, la régen	author+year+memoir-title
+reject	gaboriau-emile-1832-11-09	17105	Les cotillons célèbres	not-memoir-title
+accept	goncourt-edmond-1822-05-26	17123	Journal des Goncourt (Troisième volume) Mémoires de la vie l	author+year+memoir-title
+accept	goncourt-edmond-1822-05-26	17238	Journal des Goncourt (Deuxième série, premier volume) Mémoir	author+year+memoir-title
+reject	conscience-henry-1812-12-03	17242	La tombe de fer	given-name mismatch (hendrik vs henry)
+reject	conscience-henry-1812-12-03	17248	Histoire de deux enfants d'ouvrier	given-name mismatch (hendrik vs henry)
+reject	goncourt-edmond-1822-05-26	17285	Germinie Lacerteux	fiction-as-memoir (Subjects)
+reject	conscience-henry-1812-12-03	17298	Argent et Noblesse	given-name mismatch (hendrik vs henry)
+reject	lemaitre-jules-1853-04-27	17319	Chateaubriand	not-memoir-title
+reject	claretie-jules-1840-12-03	17419	Bouddha	fiction-as-memoir (Subjects)
+accept	goncourt-edmond-1822-05-26	17420	Journal des Goncourt (Deuxième série, deuxième volume) Mémoi	author+year+memoir-title
+accept	goncourt-edmond-1822-05-26	17505	Journal des Goncourt (Deuxième série, troisième volume) Mémo	author+year+memoir-title
+reject	lemaitre-jules-1853-04-27	17577	La patrie française	not-memoir-title
+accept	goncourt-edmond-1822-05-26	17746	Journal des Goncourt (Troisième série, premier volume) Mémoi	author+year+memoir-title
+reject	cherbuliez-victor-1829-07-19	17758	Amours fragiles Le roi Apépi—Le bel Edwards—Les inconséquenc	fiction-as-memoir (Subjects)
+reject	mignet-auguste-1796-05-08	17810	Vie de Franklin	given-name mismatch (m vs auguste)
+reject	claretie-jules-1840-12-03	17830	Ruines et fantômes	not-memoir-title
+accept	goncourt-edmond-1822-05-26	17947	Journal des Goncourt (Troisième série, deuxième volume) Mémo	author+year+memoir-title
+reject	gaboriau-emile-1832-11-09	18027	Les cotillons célèbres. Deuxième Série	not-memoir-title
+accept	goncourt-edmond-1822-05-26	18055	Journal des Goncourt (Troisième série, troisième volume) Mém	author+year+memoir-title
+reject	claretie-jules-1840-12-03	18064	L'américaine	fiction-as-memoir (Subjects)
+reject	eekhoud-georges-1854-05-27	18074	Le cycle patibulaire	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	18092	Germaine	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	18302	L'argent des autres: 2. La pêche en eau trouble	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	18494	Le dernier vivant	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	18724	Hokousaï L'art japonais au XVII Siècle	not-memoir-title
+reject	boylesve-rene-1867-04-14	18899	Mademoiselle Clocque	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	18921	Les mystères de Paris, Tome I	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	18922	Les mystères de Paris, Tome II	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	18923	Les mystères de Paris, Tome III	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	18924	Les mystères de Paris, Tome IV	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	18925	Les mystères de Paris, Tome V	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	18962	Le dangereux jeune homme	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	18983	Sainte-Marie-des-Fleurs: Roman	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	18996	Jean-Jacques Rousseau	not-memoir-title
+reject	boylesve-rene-1867-04-14	19021	Le bonheur à cinq sous	fiction-as-memoir (Subjects)
+reject	leroux-gaston-1868-05-06	19035	Le fauteuil hanté	not-memoir-title
+reject	boylesve-rene-1867-04-14	19184	La carrosse aux deux lézards verts	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	19186	Les contemporains, première série Études et portraits littér	not-memoir-title
+reject	flammarion-camille-1842-02-26	19738	Aventures extraordinaires d'un savant russe; I. La lune	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	19919	Maman Léo Les Habits Noirs Tome V	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	19920	L'avaleur de sabres Les Habits Noirs Tome VI	fiction-as-memoir (Subjects)
+reject	renard-jules-1864-02-22	20199	L'écornifleur	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	20414	Jean Racine	not-memoir-title
+reject	bourget-paul-1852-09-02	20964	Pauvre petite!	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	21215	Les Contemporains, 2ème Série Etudes et Portraits Littéraire	not-memoir-title
+reject	lemonnier-camille-1844-03-23	21912	Le possédé: étude passionnelle	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	21940	Le parfum des îles Borromées	fiction-as-memoir (Subjects)
+reject	le-goffic-charles-1863-07-14	22572	Fêtes et coutumes populaires Les fêtes patronales—Le réveill	not-memoir-title
+reject	about-edmond-1828-02-14	22813	La Mère de la Marquise	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	23508	Les Contemporains, 7ème Série Études et Portraits Littéraire	not-memoir-title
+reject	bourget-paul-1852-09-02	23616	André Cornélis	fiction-as-memoir (Subjects)
+reject	figuier-louis-1819-02-15	23618	Gutenberg, pièce historique en 5 actes, 8 tableaux	not-memoir-title
+reject	le-bon-gustave-1841-05-07	24007	Psychologie des foules	not-memoir-title
+reject	cinti-decio-1878-08-10	25210	Distruzione: Poema Futurista	not-memoir-title
+reject	lemaitre-jules-1853-04-27	25378	Les Contemporains, 3ème Série Études et Portraits Littéraire	not-memoir-title
+reject	faguet-emile-1847-12-17	25704	Zola	not-memoir-title
+reject	cheruel-pierre-1809-01-17	26082	Mémoires sur la vie publique et privée de Fouquet, surintend	given-name mismatch (aldophe vs pierre)
+reject	janin-jules-1804-02-16	26418	L'âne mort	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	26489	La terre promise	fiction-as-memoir (Subjects)
+reject	dujardin-edouard-1861-11-10	26648	Les lauriers sont coupés	fiction-as-memoir (Subjects)
+reject	feuillet-octave-1821-08-11	26815	Le roman d'un jeune homme pauvre (Novel)	fiction-as-memoir (Subjects)
+reject	feuillet-octave-1821-08-11	26816	Le roman d'un jeune homme pauvre (Play)	not-memoir-title
+reject	feuillet-octave-1821-08-11	26817	Julia de Trécoeur	fiction-as-memoir (Subjects)
+reject	feuillet-octave-1821-08-11	26821	La petite comtesse	fiction-as-memoir (Subjects)
+reject	feuillet-octave-1821-08-11	26824	Histoire de Sibylle	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	26891	L'eau profonde; Les pas dans les pas	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	27296	La Becquée	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	27379	Les Contemporains, 5ème Série Études et Portraits Littéraire	not-memoir-title
+reject	souvestre-emile-1806-04-15	27644	Au bord du lac L'Esclave, le Serf, le Chevrier de Lorraine, 	fiction-as-memoir (Subjects)
+reject	daudet-ernest-1837-05-31	27774	Fils d'émigré	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	27806	Le dernier chevalier	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	27843	Les mystères du peuple, tome I Histoire d'une famille de pro	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	28124	Le Médecin des Dames de Néans	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	28286	Les Contemporains, 6ème Série Études et Portraits Littéraire	not-memoir-title
+reject	reclus-elisee-1830-03-15	28370	Nouvelle géographie universelle (1/19) I L'Europe meridional	not-memoir-title
+reject	cherbuliez-victor-1829-07-19	28523	Miss Rovel	fiction-as-memoir (Subjects)
+reject	daudet-ernest-1837-05-31	29013	Histoire de l'Émigration pendant la Révolution Française. To	not-memoir-title
+reject	sue-eugene-1804-01-26	29094	Les mystères du peuple, Tome III Histoire d'une famille de p	fiction-as-memoir (Subjects)
+reject	souvestre-emile-1806-04-15	29282	Un philosophe sous les toits	fiction-as-memoir (Subjects)
+reject	sandeau-jules-1811-02-19	29651	Mademoiselle de la Seiglière Comédie en quatre actes, en pro	not-memoir-title
+reject	mathiez-albert-1874-01-10	29823	Le carnet de Robespierre (septembre-décembre 1793)	not-memoir-title
+reject	cherbuliez-victor-1829-07-19	29857	Jacquine Vanesse	fiction-as-memoir (Subjects)
+reject	lemaitre-jules-1853-04-27	29918	Les Contemporains, Quatrième Série Etudes et Portraits Litté	not-memoir-title
+reject	lemaitre-jules-1853-04-27	30117	ABC: Petits Contes	not-memoir-title
+reject	renard-jules-1864-02-22	30226	Coquecigrues	not-memoir-title
+reject	goncourt-edmond-1822-05-26	30317	La fille Elisa	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	30582	Atar-Gull, Un Corsaire, Le Parisien en Mer, Voyages et Avent	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	30702	Mensonges	fiction-as-memoir (Subjects)
+accept	daudet-ernest-1837-05-31	30915	Mon frère et moi; souvenirs d'enfance et de jeunesse	author+year+memoir-title
+reject	daudet-ernest-1837-05-31	30923	Histoire de l'Émigration pendant la Révolution Française. To	not-memoir-title
+reject	gaboriau-emile-1832-11-09	31054	La clique dorée	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	31154	Le Blé qui lève	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	31505	Psychologie de l'éducation	not-memoir-title
+reject	feuillet-octave-1821-08-11	31817	Monsieur de Camors — Complet	fiction-as-memoir (Subjects)
+reject	comte-auguste-1798-01-19	31881	Cours de philosophie positive. (1/6)	not-memoir-title
+reject	comte-auguste-1798-01-19	31882	Cours de philosophie positive. (2/6)	not-memoir-title
+reject	comte-auguste-1798-01-19	31883	Cours de philosophie positive. (3/6)	not-memoir-title
+reject	feval-paul-1816-09-29	31939	Le Bossu: Aventures de Cape et d'Épée. Volume 1	fiction-as-memoir (Subjects)
+reject	comte-auguste-1798-01-19	31947	Cours de philosophie positive. (4/6)	not-memoir-title
+reject	sue-eugene-1804-01-26	31983	Les mystères du peuple,  Tome IV Histoire d'une famille de p	fiction-as-memoir (Subjects)
+reject	leblanc-maurice-1864-12-11	32854	Arsène Lupin, gentleman-cambrioleur	fiction-as-memoir (Subjects)
+reject	claretie-jules-1840-12-03	32854	Arsène Lupin, gentleman-cambrioleur	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	33454	Mathilde: mémoires d'une jeune femme	fiction-as-memoir (Subjects)
+reject	claretie-jules-1840-12-03	33595	La femme du diable	not-memoir-title
+reject	janin-jules-1804-02-16	33734	Barnave	not-memoir-title
+reject	feval-paul-1816-09-29	33746	Le Bossu: Aventures de Cape et d'Épée. Volume 2	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	34301	Le Bossu: Aventures de Cape et d'Épée. Volume 3	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	34351	Histoire de Marie-Antoinette Nouvelle édition revue et augme	not-memoir-title
+reject	feval-paul-1816-09-29	34354	Le Bossu: Aventures de Cape et d'Épée. Volume 4	fiction-as-memoir (Subjects)
+reject	le-roy-eugene-1836-11-29	34364	Le moulin du Frau	fiction-as-memoir (Subjects)
+reject	benoit-pierre-1886-07-16	34469	L'Atlantide	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	34559	Le Bossu: Aventures de Cape et d'Épée. Volume 5	fiction-as-memoir (Subjects)
+reject	tillier-claude-1801-04-11	34560	Mon oncle Benjamin	fiction-as-memoir (Subjects)
+reject	sandeau-jules-1811-02-19	34692	Mademoiselle de la Seiglière, Volume 1 (of 2)	fiction-as-memoir (Subjects)
+reject	sandeau-jules-1811-02-19	34693	Mademoiselle de la Seiglière, Volume 2 (of 2)	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	34708	Nord-Sud: Amérique; Angleterre; Corse; Spitzberg	not-memoir-title
+reject	haussonville-gabriel-1843-09-21	34872	Mme de La Fayette (6e édition)	given-name mismatch (comte vs gabriel)
+reject	goncourt-edmond-1822-05-26	35223	Quelques créatures de ce temps	fiction-as-memoir (Subjects)
+reject	bloy-leon-1846-07-11	35568	Le Désespéré	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	35979	Le Bossu: Aventures de Cape et d'Épée. Volume 6	fiction-as-memoir (Subjects)
+reject	souvestre-emile-1806-04-15	36437	Le mari de madame de Solange	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	36510	La vie infernale 1. Pascale et Marguerite; 2. Lia d'Argelès	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	36894	Les esclaves de Paris	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	37051	Préfaces et manifestes littéraires	not-memoir-title
+reject	bourget-paul-1852-09-02	37468	Pastels: dix portraits de femmes	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	37601	La fabrique de mariages, Vol. 1	fiction-as-memoir (Subjects)
+reject	janin-jules-1804-02-16	37836	Contes Fantastiques et Contes Littéraires	fiction-as-memoir (Subjects)
+reject	souvestre-emile-1806-04-15	37896	Les derniers paysans - Tome 2	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	38118	La Duchesse de Châteauroux et ses soeurs	not-memoir-title
+reject	feval-paul-1816-09-29	38122	La fabrique de mariages, Vol. 2	fiction-as-memoir (Subjects)
+reject	gozlan-leon-1803-09-10	38225	Le notaire de Chantilly	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	38362	Les amours d'une empoisonneuse	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	38435	Le morne au diable	fiction-as-memoir (Subjects)
+reject	fouillee-alfred-1838-10-18	38618	La Liberté et le Déterminisme	not-memoir-title
+reject	bourget-paul-1852-09-02	38712	L'Écuyère	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	38971	La coucaratcha (I/III)	fiction-as-memoir (Subjects)
+reject	arene-paul-1843-06-26	38996	Dix contes modernes des meilleurs auteurs du jour	fiction-as-memoir (Subjects)
+reject	daudet-ernest-1837-05-31	38996	Dix contes modernes des meilleurs auteurs du jour	fiction-as-memoir (Subjects)
+reject	sue-eugene-1804-01-26	39024	La coucaratcha (II/III)	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	39031	La dégringolade	fiction-as-memoir (Subjects)
+reject	reclus-elisee-1830-03-15	39173	La Guerre du Paraguay	not-memoir-title
+reject	sue-eugene-1804-01-26	39311	Les mystères du peuple, Tome V Histoire d'une famille de pro	fiction-as-memoir (Subjects)
+reject	gozlan-leon-1803-09-10	39512	Les Tourelles: Histoire des châteaux de France, volume I	not-memoir-title
+reject	gozlan-leon-1803-09-10	39513	Les Tourelles: Histoire des châteaux de France, volume II	not-memoir-title
+reject	sue-eugene-1804-01-26	39825	La coucaratcha (III/III)	fiction-as-memoir (Subjects)
+reject	quinet-edgar-1803-02-17	40095	Des jésuites	not-memoir-title
+reject	reclus-elisee-1830-03-15	40456	L'anarchie	not-memoir-title
+reject	durkheim-emile-1858-04-15	40489	Le Suicide: Etude de Sociologie	not-memoir-title
+reject	claretie-jules-1840-12-03	41065	Les Femmes de proie. Mademoiselle Cachemire	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	41113	Annette Laïs	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	41413	Monsieur de Phocas, Astarté: Roman	fiction-as-memoir (Subjects)
+reject	faguet-emile-1847-12-17	41769	Corneille expliqué aux enfants	not-memoir-title
+reject	bourges-elemir-1852-03-26	42036	Le Crépuscule des Dieux	fiction-as-memoir (Subjects)
+reject	sainte-beuve-charles-1804-12-23	42554	Monsieur de Talleyrand	not-memoir-title
+reject	souvestre-emile-1806-04-15	42594	Les réprouvés et les élus (t.2)	fiction-as-memoir (Subjects)
+reject	faguet-emile-1847-12-17	42624	L'Anticléricalisme	not-memoir-title
+reject	feval-paul-1816-09-29	42675	La fabrique de mariages, Vol. 3	fiction-as-memoir (Subjects)
+reject	souvestre-emile-1806-04-15	42924	Les réprouvés et les élus (t.1)	fiction-as-memoir (Subjects)
+reject	vogue-eugene-1848-02-25	43174	Il Regno d'Etruria La vita italiana durante la Rivoluzione f	given-name mismatch (eugenemelchior vs eugene)
+reject	nitti-francesco-saverio-1868-07-19	43184	La trasformazione sociale La vita italiana durante la Rivolu	not-memoir-title
+reject	gebhart-emile-1839-07-19	43196	La Renaissance Italienne et la Philosophie de l'Histoire	not-memoir-title
+reject	feval-paul-1816-09-29	43408	Les belles-de-nuit; ou, les anges de la famille. tome 1	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	43554	Les belles-de-nuit; ou, les anges de la famille. tome 4	fiction-as-memoir (Subjects)
+reject	boussenard-louis-1847-10-04	43698	Les français au pôle Nord	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	43748	Le Mariage de Mademoiselle Gimel, Dactylographe	fiction-as-memoir (Subjects)
+reject	arene-paul-1843-06-26	43767	La Chèvre d'Or	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	43787	Madame Corentine	fiction-as-memoir (Subjects)
+reject	jullian-camille-1859-03-15	43871	Vercingétorix	not-memoir-title
+reject	le-goffic-charles-1863-07-14	44023	Les Romanciers d'Aujourd'hui	not-memoir-title
+reject	mirbeau-octave-1848-02-16	44139	Le Calvaire	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	44161	Un Coeur de femme	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	44236	La Sarcelle Bleue	fiction-as-memoir (Subjects)
+reject	renard-jules-1864-02-22	44255	Histoires naturelles	fiction-as-memoir (Subjects)
+reject	gillouin-rene-1881-03-11	44390	La Comtesse Mathieu de Noailles	not-memoir-title
+reject	feval-paul-1816-09-29	44613	Les belles-de-nuit; ou, les anges de la famille. tome 2	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	44620	Le crime d'Orcival	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	44874	Les belles-de-nuit; ou, les anges de la famille. tome 3	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	44911	Cruelle Énigme	fiction-as-memoir (Subjects)
+reject	malot-hector-1830-05-20	45207	Anie Illustrated version	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	45633	Les belles-de-nuit; ou, les anges de la famille. tome 5	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	46142	La femme au dix-huitième siècle	not-memoir-title
+reject	goncourt-edmond-1822-05-26	46183	La maison d'un artiste, Tome 1	not-memoir-title
+reject	gaboriau-emile-1832-11-09	46253	Mariages d'aventure	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	46285	L'ancien Figaro	not-memoir-title
+reject	gaboriau-emile-1832-11-09	46604	Le 13e Hussards, types, profils, esquisses et croquis milita	fiction-as-memoir (Subjects)
+reject	gaboriau-emile-1832-11-09	47042	Le petit vieux des Batignolles	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	47171	La maison d'un artiste, Tome 2	not-memoir-title
+reject	gaboriau-emile-1832-11-09	47350	Le capitaine Coutanceau	fiction-as-memoir (Subjects)
+reject	daudet-ernest-1837-05-31	47473	Histoire de l'Émigration pendant la Révolution Française. To	not-memoir-title
+reject	gebhart-emile-1839-07-19	47743	Les origines de la Renaissance en Italie	not-memoir-title
+reject	albert-charles-daudet-1869-11-23	48006	Considérations inactuelles, deuxième série Schopenhauer éduc	given-name mismatch (henri vs charles)
+reject	barbusse-henri-1873-05-17	48212	Le feu (Journal d'une Escouade)	fiction-as-memoir (Subjects)
+reject	souvestre-emile-1806-04-15	49312	Les derniers paysans - Tome 1	fiction-as-memoir (Subjects)
+reject	philippe-charles-1874-08-04	49743	La mère et l'enfant	given-name mismatch (charleslouis vs charles)
+reject	margueritte-victor-1866-12-01	50007	La garçonne	given-name mismatch (v vs victor)
+reject	boylesve-rene-1867-04-14	50435	La jeune fille bien élevée	fiction-as-memoir (Subjects)
+reject	comte-auguste-1798-01-19	50786	Cours de philosophie positive. (6/6)	not-memoir-title
+reject	borgese-giuseppe-antonio-1882-11-12	50996	Verso la cuna del mondo: Lettere dall'India	not-memoir-title
+reject	fabre-ferdinand-1827-06-09	51179	Barnabé	fiction-as-memoir (Subjects)
+reject	marmier-xavier-1808-06-22	51214	La solitude	not-memoir-title
+reject	boylesve-rene-1867-04-14	51225	Madeleine, jeune femme	fiction-as-memoir (Subjects)
+reject	bontempelli-massimo-1878-05-12	51624	Dallo Stelvio al mare	not-memoir-title
+reject	about-edmond-1828-02-14	51709	Le nez d'un notaire	fiction-as-memoir (Subjects)
+reject	peladan-josephin-1858-03-28	52288	L'art ochlocratique: salons de 1882 & de 1883	not-memoir-title
+reject	riviere-jacques-1886-07-15	52511	Études: Baudelaire, Paul Claudel, André Gide, Rameau, Bach, 	not-memoir-title
+reject	comte-auguste-1798-01-19	52880	Cours de philosophie positive. (5/6)	not-memoir-title
+reject	lorrain-jean-1855-08-09	52919	Âmes d'automne	fiction-as-memoir (Subjects)
+reject	flammarion-camille-1842-02-26	52933	Uranie	fiction-as-memoir (Subjects)
+reject	varaldo-alessandro-1876-01-25	53350	Il Falco (Cronaca del 1796)	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	54002	La duchesse bleue	fiction-as-memoir (Subjects)
+reject	bontempelli-massimo-1878-05-12	54178	La vita operosa: Nuovi racconti d'avventure	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	54397	Lois psychologiques de l'évolution des peuples	not-memoir-title
+reject	mirbeau-octave-1848-02-16	54528	La 628-E8 Comprenant en annexe le chapitre intégral "Balzac"	not-memoir-title
+reject	bourget-paul-1852-09-02	55072	La dame qui a perdu son peintre	fiction-as-memoir (Subjects)
+reject	durkheim-emile-1858-04-15	55501	Éducation et sociologie	not-memoir-title
+reject	delboeuf-joseph-1831-09-30	55879	La psychologie comme science naturelle, son présent et son a	given-name mismatch (josephremileopold vs joseph)
+reject	pergaud-louis-1882-01-22	56646	La Guerre des Boutons: Roman de ma douzième année	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	57429	Nouveaux Pastels (Dix portraits d'hommes)	not-memoir-title
+reject	feval-paul-1816-09-29	57607	La fabrique de mariages, Vol. 4	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	57743	La fabrique de mariages, Vol. 5	fiction-as-memoir (Subjects)
+reject	mirbeau-octave-1848-02-16	57775	Le jardin des supplices	fiction-as-memoir (Subjects)
+reject	feval-paul-1816-09-29	57856	La fabrique de mariages, Vol. 6	fiction-as-memoir (Subjects)
+reject	bernard-charles-1804-02-25	59151	Gerfaut	fiction-as-memoir (Subjects)
+reject	monselet-charles-1825-04-30	59327	Paris Anecdote Avec une préface et des notes par Charles Mon	not-memoir-title
+reject	faguet-emile-1847-12-17	59719	Le féminisme	not-memoir-title
+reject	maurois-andre-1885-07-26	59781	Ariel: ou, La vie de Shelley	not-memoir-title
+reject	sarcey-francisque-1827-10-08	59859	Candide, ou l'optimisme	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	59992	La mandragore	fiction-as-memoir (Subjects)
+reject	franc-nohain-legrand-1872-10-25	60616	De la mer aux Vosges	not-memoir-title
+reject	arene-paul-1843-06-26	60680	La gueuse parfumée: Récits provençaux	fiction-as-memoir (Subjects)
+reject	sainte-beuve-charles-1804-12-23	60810	Corinne; ou, l'Italie Nouvelle édition revue avec soin et pr	fiction-as-memoir (Subjects)
+reject	bourges-elemir-1852-03-26	60841	Les oiseaux s'envolent et les fleurs tombent	fiction-as-memoir (Subjects)
+reject	reclus-elisee-1830-03-15	60850	Histoire d'une Montagne	not-memoir-title
+reject	sainte-beuve-charles-1804-12-23	60882	De l'Amour Édition revue et corrigée et précédée d'une étude	not-memoir-title
+reject	souvestre-emile-1806-04-15	60891	Le monde tel qu'il sera	fiction-as-memoir (Subjects)
+reject	maurois-andre-1885-07-26	61160	Par la faute de M. de Balzac	not-memoir-title
+reject	le-roy-eugene-1836-11-29	61227	Jacquou le Croquant	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	61270	Poussières de Paris	not-memoir-title
+reject	monselet-charles-1825-04-30	61318	Les amours du temps passé	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	61351	La leçon d'amour dans un parc	fiction-as-memoir (Subjects)
+reject	maurois-andre-1885-07-26	61373	Les Bourgeois de Witzheim	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	61500	Les Bains de Bade: Petit Roman d'aventures Galantes et moral	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	61675	Ellen	fiction-as-memoir (Subjects)
+reject	reclus-elisee-1830-03-15	61697	Histoire d'un ruisseau	not-memoir-title
+reject	boylesve-rene-1867-04-14	61768	La poudre aux yeux	fiction-as-memoir (Subjects)
+reject	houssaye-arsene-1814-03-28	62196	Le roi Voltaire	not-memoir-title
+reject	janin-jules-1804-02-16	62196	Le roi Voltaire	not-memoir-title
+reject	leroux-gaston-1868-05-06	62215	Le Fantôme de l'Opéra	fiction-as-memoir (Subjects)
+reject	paris-gaston-1839-08-09	62538	La leggenda di Saladino	not-memoir-title
+reject	houssaye-arsene-1814-03-28	62753	Les Dieux et les Demi-Dieux de la Peinture	not-memoir-title
+reject	sandeau-jules-1811-02-19	62960	Jean de Thommeray; Le colonel Evrard	fiction-as-memoir (Subjects)
+reject	goncourt-edmond-1822-05-26	63179	Manette Salomon	fiction-as-memoir (Subjects)
+reject	alain-fournier-henri-1886-10-03	63185	Miracles avec une introduction de Jacques Rivière	fiction-as-memoir (Subjects)
+reject	riviere-jacques-1886-07-15	63185	Miracles avec une introduction de Jacques Rivière	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	63206	L'enfant à la balustrade	fiction-as-memoir (Subjects)
+reject	lichtenberger-andre-1870-11-29	63260	Le Grand Silence Blanc: Roman vécu d'Alaska	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	63267	Dernières lettres d'un bon jeune homme à sa cousine Madelein	not-memoir-title
+reject	maurois-andre-1885-07-26	63271	Ni ange, ni bête	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	63303	Le crime des riches	fiction-as-memoir (Subjects)
+reject	monselet-charles-1825-04-30	63319	Histoire anecdotique du tribunal révolutionnaire	not-memoir-title
+reject	monselet-charles-1825-04-30	63470	Les vignes du Seigneur	not-memoir-title
+reject	monselet-charles-1825-04-30	63543	Les femmes qui font des scènes	not-memoir-title
+reject	guillaumin-emile-1873-11-10	63646	La Vie d'un Simple (Mémoires d'un Métayer)	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	63647	La marchande de petits pains pour les canards	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	63726	Pelléastres. Le poison de la littérature. Crimes de Montmart	not-memoir-title
+reject	boylesve-rene-1867-04-14	63762	Nymphes dansant avec des satyres	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	63937	Tolla	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	63951	Les mariages de province La fille du chanoine, Mainfroi, L'a	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	63979	L'infâme	fiction-as-memoir (Subjects)
+reject	pouvillon-emile-1840-10-10	64086	L'image	fiction-as-memoir (Subjects)
+reject	margueritte-victor-1866-12-01	64144	Femmes nouvelles	given-name mismatch (v vs victor)
+reject	lichtenberger-andre-1870-11-29	64165	En Alsace	not-memoir-title
+reject	about-edmond-1828-02-14	64202	Les mariages de Paris	fiction-as-memoir (Subjects)
+reject	janin-jules-1804-02-16	64289	Jean Sbogar	fiction-as-memoir (Subjects)
+reject	faure-gabriel-1877-05-15	64290	Paysages Passionnés	not-memoir-title
+reject	lorrain-jean-1855-08-09	64423	L'école des vieilles femmes	fiction-as-memoir (Subjects)
+reject	figuier-louis-1819-02-15	64590	Dans l'abîme	fiction-as-memoir (Subjects)
+reject	bloy-leon-1846-07-11	64760	Le Salut par les Juifs	not-memoir-title
+reject	frapie-leon-1863-01-27	64798	La Maternelle	fiction-as-memoir (Subjects)
+reject	pouvillon-emile-1840-10-10	64838	Le vœu d'être chaste: roman	fiction-as-memoir (Subjects)
+reject	frapie-leon-1863-01-27	64886	La Manifestante	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	64902	Élise	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	64913	Les nouvelles leçons d'amour dans un parc	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	64983	Mon amour	fiction-as-memoir (Subjects)
+reject	lichtenberger-andre-1870-11-29	65025	La petite sœur de Trott	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	65031	Le meilleur ami	fiction-as-memoir (Subjects)
+reject	hermant-abel-1862-02-03	65187	Les Confidences d'une Biche, 1859-1871	fiction-as-memoir (Subjects)
+reject	lemonnier-camille-1844-03-23	65494	Au Coeur Frais de la Forêt: Roman	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	65546	Le Turco	fiction-as-memoir (Subjects)
+reject	leroux-gaston-1868-05-06	65878	La Poupée Sanglante	fiction-as-memoir (Subjects)
+reject	lemonnier-camille-1844-03-23	66652	La petite femme de la mer	fiction-as-memoir (Subjects)
+reject	mirbeau-octave-1848-02-16	66681	Chez l'illustre Écrivain	not-memoir-title
+reject	franc-nohain-legrand-1872-10-25	66852	La nouvelle cuisinière bourgeoise: Plaisirs de la table et s	not-memoir-title
+reject	goyau-georges-1869-05-31	66894	Le livre des visions et instructions de la bienheureuse Angè	not-memoir-title
+reject	hello-ernest-1828-11-05	66894	Le livre des visions et instructions de la bienheureuse Angè	not-memoir-title
+reject	about-edmond-1828-02-14	66927	Lettres d'un bon jeune homme à sa cousine Madeleine	not-memoir-title
+reject	bloy-leon-1846-07-11	67052	Celle qui pleure (Notre Dame de la Salette)	not-memoir-title
+reject	le-bon-gustave-1841-05-07	67253	La naissance et l'évanouissement de la matière	not-memoir-title
+reject	claretie-jules-1840-12-03	67402	Les Huit Jours du Petit Marquis; Carlos et Cornélius	fiction-as-memoir (Subjects)
+reject	frapie-leon-1863-01-27	67884	Les Obsédés	fiction-as-memoir (Subjects)
+reject	bourget-paul-1852-09-02	68307	Sur la route de Palmyre	not-memoir-title
+reject	boylesve-rene-1867-04-14	68501	Le bel avenir	fiction-as-memoir (Subjects)
+reject	baumann-emile-1868-09-24	68595	Saint Paul	not-memoir-title
+reject	bourget-paul-1852-09-02	68632	Le Voyage du Centurion	fiction-as-memoir (Subjects)
+reject	faure-elie-1873-04-04	68636	Napoléon	not-memoir-title
+reject	boylesve-rene-1867-04-14	68818	Les deux romanciers	fiction-as-memoir (Subjects)
+reject	franc-nohain-legrand-1872-10-25	68839	Le Pays de l'Instar	not-memoir-title
+reject	silvestre-charles-1889-02-02	69437	Prodige du cœur	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	69794	De Pontoise à Stamboul	not-memoir-title
+reject	hemon-louis-1880-10-12	70094	Itinéraires	not-memoir-title
+reject	cherau-gaston-1872-11-06	70126	Nêne	fiction-as-memoir (Subjects)
+reject	baumann-emile-1868-09-24	70538	Job le prédestiné	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	70612	Les moyens du bord	fiction-as-memoir (Subjects)
+reject	thierry-augustin-1795-05-10	70676	Lettres sur l'histoire de France	not-memoir-title
+reject	barbusse-henri-1873-05-17	70762	Jésus	not-memoir-title
+reject	frapie-leon-1863-01-27	71143	La Maternelle	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	71206	Souvenirs épars d'un ancien cavalier	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	71287	Feuilles tombées	not-memoir-title
+reject	bernard-tristan-1866-09-07	71293	L'affaire Larcier	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	71300	Les veillées du chauffeur	not-memoir-title
+reject	baumann-emile-1868-09-24	71473	Le baptême de Pauline Ardel	fiction-as-memoir (Subjects)
+reject	lorrain-jean-1855-08-09	71555	Heures de Corse	not-memoir-title
+reject	reclus-elisee-1830-03-15	71588	Les républiques de l'Amérique du Sud	not-memoir-title
+reject	bernard-tristan-1866-09-07	71635	Mémoires d'un jeune homme rangé	fiction-as-memoir (Subjects)
+reject	silvestre-charles-1889-02-02	71778	Aimée Villard, fille de France	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	71911	Le roman d'un mois d'été	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	72023	L'enfant prodigue du Vésinet : roman	fiction-as-memoir (Subjects)
+accept	alain-chartier-1868-03-03	72071	Souvenirs concernant Jules Lagneau	author+year+memoir-title
+reject	alain-chartier-1868-03-03	72145	Propos sur le christianisme	not-memoir-title
+reject	faure-elie-1873-04-04	72160	La roue	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	72205	La faune des plateaux	not-memoir-title
+reject	arene-paul-1843-06-26	72618	Au bon soleil	fiction-as-memoir (Subjects)
+reject	renard-jules-1864-02-22	72702	Nos frères farouches	fiction-as-memoir (Subjects)
+reject	baumann-emile-1868-09-24	72759	Le signe sur les mains	fiction-as-memoir (Subjects)
+reject	about-edmond-1828-02-14	72773	Le roi des montagnes	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	72784	Auteurs, acteurs, spectateurs	not-memoir-title
+reject	baumann-emile-1868-09-24	72819	Intermèdes	not-memoir-title
+reject	veuillot-louis-1813-10-11	72844	L'illusion libérale	not-memoir-title
+reject	lorrain-jean-1855-08-09	72931	Heures d'Afrique	not-memoir-title
+reject	aulard-francois-1849-07-19	72990	Voyage à Montbard	given-name mismatch (fa vs francois)
+reject	bloy-leon-1846-07-11	73282	Jeanne d'Arc et l'Allemagne	not-memoir-title
+reject	cherbuliez-victor-1829-07-19	73349	Meta Holdenis	fiction-as-memoir (Subjects)
+reject	lemonnier-camille-1844-03-23	73562	Comme va le ruisseau	fiction-as-memoir (Subjects)
+reject	hemon-louis-1880-10-12	73653	La belle que voilà...	fiction-as-memoir (Subjects)
+reject	arene-paul-1843-06-26	73832	Nouveaux contes de Noël	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	73874	Le voyage imprévu	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	73884	Décadence et grandeur	fiction-as-memoir (Subjects)
+reject	riviere-jacques-1886-07-15	73918	De la sincérité envers soi-même	not-memoir-title
+reject	claretie-jules-1840-12-03	73928	Zig-zags en Bulgarie	not-memoir-title
+reject	riviere-jacques-1886-07-15	73985	L'Allemand	not-memoir-title
+reject	silvestre-charles-1889-02-02	73999	Belle Sylvie	fiction-as-memoir (Subjects)
+reject	ajalbert-jean-1863-06-10	74061	Au cœur de l'Auvergne	not-memoir-title
+reject	bloy-leon-1846-07-11	74081	Lettres à sa fiancée	not-memoir-title
+reject	bernard-tristan-1866-09-07	74216	La pénétration saharienne (1830-1906)	given-name mismatch (augustin vs tristan)
+reject	jaloux-edmond-1878-06-19	74446	L'âge d'or	fiction-as-memoir (Subjects)
+reject	ajalbert-jean-1863-06-10	74453	Veillées d'Auvergne	not-memoir-title
+reject	goyau-georges-1869-05-31	74513	La Franc-Maçonnerie en France	not-memoir-title
+reject	hello-ernest-1828-11-05	74694	Rusbrock l'Admirable (œuvres choisies)	not-memoir-title
+reject	hello-ernest-1828-11-05	74785	Le jour du Seigneur	not-memoir-title
+reject	ajalbert-jean-1863-06-10	74800	L'Auvergne	not-memoir-title
+reject	hello-ernest-1828-11-05	74819	M. Renan, l'Allemagne et l'athéisme au XIXe siècle	not-memoir-title
+reject	estaunie-edouard-1862-02-04	74839	La vie secrète	fiction-as-memoir (Subjects)
+reject	courteline-georges-1858-06-25	74861	Messieurs les ronds-de-cuir	fiction-as-memoir (Subjects)
+reject	dujardin-edouard-1861-11-10	75061	L'initiation au péché et à l'amour	fiction-as-memoir (Subjects)
+reject	bazin-rene-1853-12-26	75225	Mémoires d'une vieille fille	fiction-as-memoir (Subjects)
+reject	estaunie-edouard-1862-02-04	75235	L'appel de la route	fiction-as-memoir (Subjects)
+reject	neveux-pol-1865-08-25	75315	Golo	fiction-as-memoir (Subjects)
+reject	arene-paul-1843-06-26	75517	Vingt jours en Tunisie	not-memoir-title
+reject	le-bon-gustave-1841-05-07	75555	Aphorismes du temps présent	not-memoir-title
+reject	le-bon-gustave-1841-05-07	75601	Hier et demain	not-memoir-title
+reject	le-bon-gustave-1841-05-07	75615	Psychologie des temps nouveaux	not-memoir-title
+reject	mirbeau-octave-1848-02-16	75719	Marie-Claire	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	75725	La Révolution Française et la psychologie des révolutions	not-memoir-title
+reject	goyau-georges-1869-05-31	75743	Un grand missionnaire	not-memoir-title
+reject	lenormand-henri-1882-05-03	75792	Le penseur et la crétine	given-name mismatch (hr vs henri)
+reject	le-bon-gustave-1841-05-07	75820	Le déséquilibre du monde	not-memoir-title
+reject	cherbuliez-victor-1829-07-19	75961	Le roman d'une honnête femme	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	75972	X... Roman impromptu	fiction-as-memoir (Subjects)
+reject	courteline-georges-1858-06-25	75972	X... Roman impromptu	fiction-as-memoir (Subjects)
+reject	renard-jules-1864-02-22	75972	X... Roman impromptu	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	75989	Les opinions et les croyances	not-memoir-title
+reject	le-bon-gustave-1841-05-07	76269	L'évolution actuelle du monde: illusions et réalités	not-memoir-title
+reject	about-edmond-1828-02-14	76373	Roma contemporanea	not-memoir-title
+reject	faguet-emile-1847-12-17	76395	Le culte de l'incompétence	not-memoir-title
+reject	bazin-rene-1853-12-26	76465	Écrits spirituels de Charles de Foucauld	not-memoir-title
+reject	faguet-emile-1847-12-17	76607	La démission de la morale	not-memoir-title
+reject	faguet-emile-1847-12-17	76777	L'art de lire	not-memoir-title
+reject	faguet-emile-1847-12-17	77110	... Et l'horreur des responsabilités (suite au Culte de l'in	not-memoir-title
+reject	faguet-emile-1847-12-17	77112	Les préjugés nécessaires	not-memoir-title
+reject	faguet-emile-1847-12-17	77187	Initiation philosophique	not-memoir-title
+reject	daudet-ernest-1837-05-31	77201	L'espionne	fiction-as-memoir (Subjects)
+reject	claretie-jules-1840-12-03	77202	Récits héroïques	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	77218	La vie des vérités	not-memoir-title
+reject	hello-ernest-1828-11-05	77222	Contes extraordinaires	fiction-as-memoir (Subjects)
+reject	daudet-ernest-1837-05-31	77272	La Carmélite	fiction-as-memoir (Subjects)
+reject	doumic-rene-1860-03-06	77452	Oraisons funèbres	not-memoir-title
+reject	faguet-emile-1847-12-17	77493	Pour qu'on lise Platon	not-memoir-title
+reject	vogue-eugene-1848-02-25	77526	De Saint-Louis à Tripoli par le Lac Tchad	given-name mismatch (eugenemelchior vs eugene)
+reject	bourget-paul-1852-09-02	77617	Le disciple	fiction-as-memoir (Subjects)
+reject	le-bon-gustave-1841-05-07	77734	Les incertitudes de l'heure présente	not-memoir-title
+reject	boylesve-rene-1867-04-14	77899	Opinions sur le roman	fiction-as-memoir (Subjects)
+reject	baumann-emile-1868-09-24	77983	Bossuet	not-memoir-title
+reject	bernard-tristan-1866-09-07	78141	Secrets d'État	fiction-as-memoir (Subjects)
+reject	riviere-jacques-1886-07-15	78207	Aimée	fiction-as-memoir (Subjects)
+reject	bernard-tristan-1866-09-07	78223	L'homme à la moustache verte	fiction-as-memoir (Subjects)
+reject	boylesve-rene-1867-04-14	78379	Réflexions sur Stendhal	not-memoir-title
+reject	mirbeau-octave-1848-02-16	78398	Sébastien Roch	fiction-as-memoir (Subjects)
+reject	bernard-charles-1804-02-25	78415	Les ailes d'Icare	fiction-as-memoir (Subjects)
+reject	mirbeau-octave-1848-02-16	78418	La maison blanche	fiction-as-memoir (Subjects)
+reject	bertrand-louis-1866-03-25	78479	Sainte Thérèse	not-memoir-title
+reject	faguet-emile-1847-12-17	78925	Le pacifisme	not-memoir-title
+reject	faguet-emile-1847-12-17	79078	La politique comparée de Montesquieu, Rousseau et Voltaire	not-memoir-title
+reject	estaunie-edouard-1862-02-04	79100	L'infirme aux mains de lumière	fiction-as-memoir (Subjects)
+reject-MANUAL	goncourt-edmond-1822-05-26	14799		joint authorship 1851-70 (Jules co-author) — trait signal contaminated
+reject-MANUAL	goncourt-edmond-1822-05-26	14803		joint authorship 1851-70 (Jules co-author)
+reject-MANUAL	goncourt-edmond-1822-05-26	17123		joint authorship 1851-70 (Jules co-author)
+accept-MANUAL	goncourt-edmond-1822-05-26	17238		2e serie: Edmond alone (post-1870 diary)
+accept-MANUAL	goncourt-edmond-1822-05-26	17420		2e serie: Edmond alone
+accept-MANUAL	goncourt-edmond-1822-05-26	17505		2e serie: Edmond alone
+accept-MANUAL	goncourt-edmond-1822-05-26	17746		3e serie: Edmond alone
+accept-MANUAL	goncourt-edmond-1822-05-26	17947		3e serie: Edmond alone
+accept-MANUAL	goncourt-edmond-1822-05-26	18055		3e serie: Edmond alone
+reject-MANUAL	sainte-beuve-charles-1804-12-23	17044		third-person memoir (duc de Saint-Simon; SB = editor)
+accept-MANUAL	daudet-ernest-1837-05-31	30915		first-person childhood memoir, owner=author
+reject-MANUAL	alain-chartier-1868-03-03	72071		third-person: souvenirs CONCERNANT Jules Lagneau
+note-MANUAL	bernard-tristan-1866-09-07	71206		frozen fiction-reject kept for primary; genuine cavalry memoir suspected — sensitivity candidate
+note-MANUAL	mirbeau-octave-1848-02-16	75719		witness: PG Authors field includes preface-writers (Marie-Claire is by M. Audoux) — validates strict rules

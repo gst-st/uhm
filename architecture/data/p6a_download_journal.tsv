@@ -1,0 +1,128 @@
+status	ogid	source	ref	bytes	words	note
+ok	goncourt-edmond-1822-05-26	pg	17238	545009	91537	
+ok	goncourt-edmond-1822-05-26	pg	17420	484318	80324	
+ok	goncourt-edmond-1822-05-26	pg	17505	455684	72865	
+ok	goncourt-edmond-1822-05-26	pg	17746	467411	76109	
+ok	goncourt-edmond-1822-05-26	pg	17947	416961	68597	
+ok	goncourt-edmond-1822-05-26	pg	18055	645589	98062	
+ok	daudet-ernest-1837-05-31	pg	30915	250523	42860	
+ok	houssaye-arsene-1814-03-28	ws	Souvenirs de jeunesse (Houssaye)	50114	6849	
+ok	houssaye-arsene-1814-03-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6507482t	50114	6849	
+ok	houssaye-arsene-1814-03-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k87468	50114	6849	
+ok	quinet-edgar-1803-02-17	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9816878m	50114	6849	
+ok	gebhart-emile-1839-07-19	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1068836	50114	6849	
+fail	monselet-charles-1825-04-30	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k370995	0	0	unavailable
+fail	flammarion-camille-1842-02-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k83470m	0	0	unavailable
+ok	sarcey-francisque-1827-10-08	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6507585d	50114	6849	
+ok	lorrain-jean-1855-08-09	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k82500g	50114	6849	
+ok	monselet-charles-1825-04-30	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k57318952	50114	6849	
+ok	descaves-lucien-1861-03-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382280v	50114	6849	
+ok	loisy-alfred-1857-02-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6555498f	50114	6849	
+fail	souvestre-emile-1806-04-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k5812230n	0	0	unavailable
+fail	sarcey-francisque-1827-10-08	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k62092287	0	0	unavailable
+ok	nisard-desire-1806-03-20	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k54061806	50114	6849	
+ok	fabre-emile-1869-03-24	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359305k	50114	6849	
+ok	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k405865m	50114	6849	
+ok	nisard-desire-1806-03-20	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9675503q	50114	6849	
+ok	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6464633h	50114	6849	
+fail	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9465424	0	0	unavailable
+fail	simon-jules-1814-12-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k5439085p	0	0	unavailable
+ok	veuillot-louis-1813-10-11	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k58202539	50114	6849	
+ok	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k8630316s	50114	6849	
+ok	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k37211g	50114	6849	
+ok	veuillot-louis-1813-10-11	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k392051	50114	6849	
+ok	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6365959v	50114	6849	
+fail	souvestre-emile-1806-04-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k58428361	0	0	unavailable
+fail	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3357774k	0	0	unavailable
+ok	siegfried-andre-1875-04-21	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3390170s	50114	6849	
+ok	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33574964	50114	6849	
+ok	dekobra-maurice-1885-05-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382855v	50114	6849	
+ok	leautaud-paul-1872-01-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3370335g	50114	6849	
+ok	ajalbert-jean-1863-06-10	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k4221142t	50114	6849	
+fail	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9814356p	0	0	unavailable
+fail	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k105465r	0	0	unavailable
+ok	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1054664	50114	6849	
+ok	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9692198f	50114	6849	
+ok	montegut-emile-1825-06-23	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1022057	50114	6849	
+ok	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k10955124	50114	6849	
+ok	grancher-marcel-1897-08-12	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33926207	50114	6849	
+fail	guirec-jean-charton-1898-07-31	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33945319	0	0	unavailable
+fail	marbo-camille-1883-04-11	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359085k	0	0	unavailable
+ok	harcourt-robert-1881-11-23	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3380747b	50114	6849	
+fail	maurois-andre-1885-07-26	ia	memoires0000andr	0	0	unavailable
+ok	daudet-ernest-1837-05-31	ia	souvenirsdemonte01daud	457365	68240	
+ok	janin-jules-1804-02-16	ia	petitssouvenirsa00janiuoft	459107	71394	
+rescued-ia	houssaye-arsene-1814-03-28	ws	souvenirsdejeune00hous_0	308756	47879	IA copy of same frozen work
+rescued-ia	houssaye-arsene-1814-03-28	gallica	lesconfessionss11housgoog	604951	107841	IA copy of same frozen work
+still-missing	houssaye-arsene-1814-03-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k87468	0	0	
+rescued-ia	quinet-edgar-1803-02-17	gallica	histoiredemesid00quinuoft	505738	78314	IA copy of same frozen work
+still-missing	gebhart-emile-1839-07-19	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1068836	0	0	
+still-missing	monselet-charles-1825-04-30	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k370995	0	0	
+still-missing	flammarion-camille-1842-02-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k83470m	0	0	
+rescued-ia	sarcey-francisque-1827-10-08	gallica	souvenirsdejeune00sarc	524074	81875	IA copy of same frozen work
+still-missing	lorrain-jean-1855-08-09	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k82500g	0	0	
+rescued-ia	monselet-charles-1825-04-30	gallica	messouvenirslitt00mons	301105	45148	IA copy of same frozen work
+still-missing	descaves-lucien-1861-03-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382280v	0	0	
+still-missing	loisy-alfred-1857-02-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6555498f	0	0	
+rescued-ia	souvestre-emile-1806-04-15	gallica	souvenirsdunbas00souvgoog	877946	133580	IA copy of same frozen work
+rescued-ia	sarcey-francisque-1827-10-08	gallica	lesigedeparisi00sarcuoft	654889	99495	IA copy of same frozen work
+still-missing	nisard-desire-1806-03-20	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k54061806	0	0	
+still-missing	fabre-emile-1869-03-24	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359305k	0	0	
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k405865m	0	0	
+still-missing	nisard-desire-1806-03-20	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9675503q	0	0	
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6464633h	0	0	
+still-missing	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9465424	0	0	
+still-missing	simon-jules-1814-12-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k5439085p	0	0	
+rescued-ia	veuillot-louis-1813-10-11	gallica	lesfrancaisenalg00veui	814266	123925	IA copy of same frozen work
+still-missing	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k8630316s	0	0	
+rescued-ia	claretie-jules-1840-12-03	gallica	lacannedemmichel00clar	325827	49916	IA copy of same frozen work
+rescued-ia	veuillot-louis-1813-10-11	gallica	lesfrancaisenalg00veui	814266	123925	IA copy of same frozen work
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6365959v	0	0	
+rescued-ia	souvestre-emile-1806-04-15	gallica	souvenirsdunviei00souv	559875	86475	IA copy of same frozen work
+still-missing	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3357774k	0	0	
+still-missing	siegfried-andre-1875-04-21	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3390170s	0	0	
+still-missing	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33574964	0	0	
+still-missing	dekobra-maurice-1885-05-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382855v	0	0	
+still-missing	leautaud-paul-1872-01-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3370335g	0	0	
+still-missing	ajalbert-jean-1863-06-10	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k4221142t	0	0	
+still-missing	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9814356p	0	0	
+still-missing	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k105465r	0	0	
+rescued-ia	marmier-xavier-1808-06-22	gallica	untauborddelaba00marmgoog	495720	84261	IA copy of same frozen work
+still-missing	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9692198f	0	0	
+still-missing	montegut-emile-1825-06-23	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1022057	0	0	
+rescued-ia	marmier-xavier-1808-06-22	gallica	untauborddelaba00marmgoog	495720	84261	IA copy of same frozen work
+still-missing	grancher-marcel-1897-08-12	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33926207	0	0	
+still-missing	guirec-jean-charton-1898-07-31	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33945319	0	0	
+still-missing	marbo-camille-1883-04-11	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359085k	0	0	
+rescued-ia	harcourt-robert-1881-11-23	gallica	souvenirsdecapti00harc	720525	107079	IA copy of same frozen work
+still-missing	maurois-andre-1885-07-26	ia	memoires0000andr	0	0	
+rescued-ia-pinpoint	monselet-charles-1825-04-30	gallica	petitsmmoiresl00mons	603181	91037	per-work IA search
+rescued-ia-pinpoint	lorrain-jean-1855-08-09	gallica	sensationsetsouv00lorr	452655	68892	per-work IA search
+rescued-ia-pinpoint	nisard-desire-1806-03-20	gallica	souvenirsetnotes02nisa	717446	110595	per-work IA search
+rescued-ia-pinpoint	nisard-desire-1806-03-20	gallica	souvenirsdevoya00nisagoog	875682	156122	per-work IA search
+rescued-ia-pinpoint	simon-jules-1814-12-27	gallica	souvenirsduquat01simogoog	669263	114277	per-work IA search
+rescued-ia-pinpoint	marmier-xavier-1808-06-22	gallica	bub_gb_6ZqC-xCG3iMC	420391	71226	per-work IA search
+rescued-ia-pinpoint	montegut-emile-1825-06-23	gallica	tableauxdelafra00montgoog	768807	133667	per-work IA search
+still-missing	houssaye-arsene-1814-03-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k87468	0	0	
+still-missing	gebhart-emile-1839-07-19	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k1068836	0	0	
+still-missing	flammarion-camille-1842-02-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k83470m	0	0	
+still-missing	descaves-lucien-1861-03-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382280v	0	0	
+still-missing	loisy-alfred-1857-02-28	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6555498f	0	0	
+still-missing	fabre-emile-1869-03-24	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359305k	0	0	
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k405865m	0	0	
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6464633h	0	0	
+still-missing	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9465424	0	0	
+still-missing	riviere-jacques-1886-07-15	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k8630316s	0	0	
+still-missing	claretie-jules-1840-12-03	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k6365959v	0	0	
+still-missing	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3357774k	0	0	
+still-missing	siegfried-andre-1875-04-21	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3390170s	0	0	
+still-missing	carcopino-jerome-1881-06-27	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33574964	0	0	
+still-missing	dekobra-maurice-1885-05-26	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3382855v	0	0	
+still-missing	leautaud-paul-1872-01-18	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3370335g	0	0	
+still-missing	ajalbert-jean-1863-06-10	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k4221142t	0	0	
+still-missing	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k105465r	0	0	
+still-missing	marmier-xavier-1808-06-22	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k9692198f	0	0	
+still-missing	grancher-marcel-1897-08-12	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33926207	0	0	
+still-missing	guirec-jean-charton-1898-07-31	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k33945319	0	0	
+still-missing	marbo-camille-1883-04-11	gallica	https://gallica.bnf.fr/ark:/12148/bpt6k3359085k	0	0	
+still-missing	maurois-andre-1885-07-26	ia	memoires0000andr	0	0	
