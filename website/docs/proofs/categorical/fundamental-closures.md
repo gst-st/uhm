@@ -704,7 +704,7 @@ As independent confirmation of Obstructions I–IV, compare topological invarian
 | Invariant | $\mathbb{C}P^6$ ($G_2$-UHM) | $\mathbb{O}P^2$ ($F_4$-UHM) |
 |---|---|---|
 | Euler characteristic $\chi$ | $7$ | $3$ |
-| Cohomology ring | $\mathbb{Z}[x]/x^7$, $|x|=2$ | $\mathbb{Z}[y]/y^3$, $|y|=8$ |
+| Cohomology ring | $\mathbb{Z}[x]/x^7$, $\|x\|=2$ | $\mathbb{Z}[y]/y^3$, $\|y\|=8$ |
 | Rank of $K^0$ | $\mathbb{Z}^7$ | $\mathbb{Z}^3$ |
 | Real dimension | $12$ | $16$ |
 

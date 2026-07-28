@@ -112,7 +112,7 @@ CC bypasses the combination problem *by construction*:
 
 Thus, the question "how do micro-experiences add up into macro-experience?" simply does not arise in CC — because there are no micro-experiences.
 
-:::note T-266 and cosmopsychism — a distinction to keep [С]/[И]
+:::note T-266 and cosmopsychism — a distinction to keep [C]/[I]
 [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) finds that the Universe-holon's *viability stage* sits at $P = 3/7$ — the upper edge of the Goldilocks window — to fractional precision $\sim 10^{-60}$. This is **not** cosmopsychism and does not soften CC's emergentism. Cosmopsychism makes cosmic experience *fundamental*; CC keeps the four-condition gate. T-266 speaks only to the **stage parameter** $P$ (and the dark-energy dynamics that measure it): it does **not** assert that the Universe is a conscious subject. Note that at $P = 3/7$ the reflection measure is exactly $R = 1/(7P) = 1/3$ — the *marginal* value — and whether the cosmic state also meets $\Phi \geq 1$, $D \geq 2$ and carries the subject-structure of an L2+ holon is a separate, open question ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)). The correct reading: the cosmos has **relaxed onto its viability attractor** (a claim about $P$), not that experience is everywhere or fundamental. The emergent-threshold discipline stands.
 :::
 
@@ -211,8 +211,8 @@ The prior world model $P(\theta)$ is updated by data $D$ to become the posterior
 |-------|-----|
 | Prior model $P(\theta)$ | Current self-model $\varphi(\Gamma)$ |
 | Data $D$ | Observation through $\mathrm{Enc}$ |
-| Likelihood $P(D|\theta)$ | Fano contraction to the state nearest to the observation |
-| Posterior model $P(\theta|D)$ | Updated $\varphi(\Gamma')$ after one step of $\mathcal{L}_\Omega$ |
+| Likelihood $P(D\|\theta)$ | Fano contraction to the state nearest to the observation |
+| Posterior model $P(\theta\|D)$ | Updated $\varphi(\Gamma')$ after one step of $\mathcal{L}_\Omega$ |
 
 The key difference: in Bayesian inference, *probabilities of hypotheses* are updated. In CC, the *entire state of the system* is updated — including not just "knowledge," but also "health," "experience," and "wholeness." This bridge is described in more detail in the section [Learning as Attractor Update](./learning-bounds#обучение-как-аттрактор).
 
@@ -386,7 +386,7 @@ CC does not "solve" the hard problem in the usual sense — it **dissolves** it 
 
 **Analogy.** Imagine someone asks: "Why does space have three dimensions?" A physicist can answer: "In three dimensions, stable orbits and knots are possible — it is the only dimensionality compatible with complex structure." But they cannot answer: "Why does space exist at all?" — that is not a physics question. Analogously: CC can answer when and why consciousness arises, but not "why does experience exist at all?" — that is a question of ontology, not dynamics.
 
-**And the honest residue is itself a theorem.** The identification "E-sector = interiority" remains an external postulate [П], and the reading of Gap eigenvectors as qualia remains an interpretation [И] — and this is not a temporary gap awaiting a cleverer argument. The meta-theorem T-214 [T] proves (via Lawvere's fixed-point theorem) that *any* bridge functor from states to experiential content **cannot** be expressed as an internal morphism of the theory: the residual [И] is structurally inevitable, for CC and for every successor. Dissolution therefore comes with a precise boundary marker: everything *up to* the bridge is mathematics (structure of phenomenal space, thresholds, dynamics); the bridge itself is provably where mathematics ends. See [Model Theory — Limits of Explanation](./model-theory#природа-категориального-разрыва) for the full statement.
+**And the honest residue is itself a theorem.** The identification "E-sector = interiority" remains an external postulate [P], and the reading of Gap eigenvectors as qualia remains an interpretation [I] — and this is not a temporary gap awaiting a cleverer argument. The meta-theorem T-214 [T] proves (via Lawvere's fixed-point theorem) that *any* bridge functor from states to experiential content **cannot** be expressed as an internal morphism of the theory: the residual [I] is structurally inevitable, for CC and for every successor. Dissolution therefore comes with a precise boundary marker: everything *up to* the bridge is mathematics (structure of phenomenal space, thresholds, dynamics); the bridge itself is provably where mathematics ends. See [Model Theory — Limits of Explanation](./model-theory#природа-категориального-разрыва) for the full statement.
 
 :::note The Dissolution Strategy: Historical Precedents
 The strategy of "dissolving" a problem (rather than solving it) has illustrious precedents:

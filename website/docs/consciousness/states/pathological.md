@@ -108,7 +108,7 @@ Additional feature: $|\gamma_{SE}|$ can be high ($\mathrm{Gap}(S,E) < 1$) — th
 
 **Numerical example.** Full Gap-profile of a patient with alexithymia (E-sector channels):
 
-| Channel | $|\gamma_{ij}|$ | $\mathrm{Gap}(i,j)$ | Interpretation |
+| Channel | $\|\gamma_{ij}\|$ | $\mathrm{Gap}(i,j)$ | Interpretation |
 |-------|:---:|:---:|:---|
 | $(L,E)$ | $0.15$ | $0.95$ | Cannot name the feeling |
 | $(A,E)$ | $0.10$ | $0.88$ | Does not notice the feeling |
@@ -182,9 +182,9 @@ The connection between dynamics and logic **exists** (strong coherence $|\gamma_
 
 | Parameter | Value | Interpretation |
 |----------|:---:|:---|
-| $|\gamma_{DL}|$ | $0.22$ | Connection is strong — 'knowledge' exists |
+| $\|\gamma_{DL}\|$ | $0.22$ | Connection is strong — 'knowledge' exists |
 | $\arg(\gamma_{DL})$ | $1.45$ rad ($\approx \pi/2$) | Phase — maximum Gap |
-| $\mathrm{Gap}(L,D) = |\sin(1.45)|$ | $0.99$ | Channel almost fully opaque |
+| $\mathrm{Gap}(L,D) = \|\sin(1.45)\|$ | $0.99$ | Channel almost fully opaque |
 | $\mathrm{Gap}(D,E)$ | $0.15$ | Feels the impulse |
 | $R_\varphi$ | $0.35$ | Self-aware (above the working threshold) |
 

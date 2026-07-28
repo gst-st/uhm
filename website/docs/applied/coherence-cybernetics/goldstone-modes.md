@@ -308,7 +308,7 @@ It is instructive to compare CC Goldstone modes with their physical analogues, t
 | Broken symmetry | Translational | Rotational $\mathrm{SO}(3)$ | Chiral $\mathrm{SU}(2)_L \times \mathrm{SU}(2)_R$ | $G_2 = \mathrm{Aut}(\mathbb{O})$ |
 | Stabiliser | Lattice translations | $\mathrm{SO}(2)$ | $\mathrm{SU}(2)_V$ | $H \in \{G_2, \mathrm{SU}(3), \mathrm{SU}(2) \times \mathrm{U}(1), T^2\}$ |
 | Number of modes | 3 (acoustic) | 1 (for $S = 1/2$) | 3 ($\pi^+, \pi^-, \pi^0$) | $\in \{0, 6, 10, 11, 12\}$ |
-| Mass | 0 (exact) | 0 (at $T = 0$) | 135–140 MeV (quasi) | $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / |\gamma|^2$ (quasi) |
+| Mass | 0 (exact) | 0 (at $T = 0$) | 135–140 MeV (quasi) | $m_{\text{Gold}}^2 = \Gamma_2 \kappa_0 / \|\gamma\|^2$ (quasi) |
 | Source of mass | — | Thermal fluctuations, anisotropy | Nonzero quark masses | Decoherence $\Gamma_2$, regeneration $\kappa_0$ |
 | Propagation medium | Crystal lattice | Spin lattice | QCD vacuum | Internal space $\mathcal{D}(\mathbb{C}^7)$ |
 | Characteristic frequency | $10^{12}$ Hz (THz) | $10^{9}$–$10^{12}$ Hz (GHz–THz) | $10^{23}$ Hz | $0.005$–$0.02$ Hz |

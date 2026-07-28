@@ -203,8 +203,8 @@ where:
 | **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 physical parameters | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 | **Electroweak sector uniqueness** | $SU(2)_L \times U(1)_Y$ is the unique rank-4 construction from $\kappa_0$ and axioms A1–A5 | [T] | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
-| **Three generations** | $N_{\text{gen}} = 3$: exact count $|\mathrm{QR}(7)| = (7-1)/2 = 3$ **[T]**; physical identification [I] | [T]+[I] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
-| **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$ via octonionic $f_{ijk}$ | [T] | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
+| **Three generations** | $N_{\text{gen}} = 3$: exact count $\|\mathrm{QR}(7)\| = (7-1)/2 = 3$ **[T]**; physical identification [I] | [T]+[I] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
+| **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot \|\gamma_{\text{vac}}^{(EU)}\|$ via octonionic $f_{ijk}$ | [T] | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
 | **Source instability** | $\Gamma_\odot = I/7$ is non-stationary: $F_0 \neq 0$, drift toward $\rho^*$, self-amplification | [T] | [Proof](./physics/cosmology-phys/origin#доказательство-нестабильности) |
 | **Free will** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; monotonicity under CPTP, $G_2$-invariance | [T] | [Theorem](./core/foundations/consequences#freedom-конечномерное) |
 | **$A_4$-bifurcation** | Swallowtail from 3 parameters $(\kappa, \alpha, \Delta F)$ + $\mathbb{Z}_2$-purity symmetry | [T] | [Theorem](./consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация) |
@@ -216,9 +216,9 @@ where:
 | **Sector hierarchy $\varepsilon$** | Unique self-consistent vacuum; $\bar{\varepsilon} \approx 0.023$ from sector structure | [T] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) |
 | **Cohomological vanishing of $\Lambda$** | $\Lambda_{\text{global}} = 0$ from $H^n(X) = 0$; observed $\Lambda$ is a local effect | [T] | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
 | **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [T] | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
-| **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219) | field-space **[T]**, full order-by-order **[С]** (structural) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
+| **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219) | field-space **[T]**, full order-by-order **[C]** (structural) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
 | **Lorentzian signature** | $(1,3)$-split [T] (1 time from Page–Wootters, 3 space from $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader) | [T]+[T at r.p.] | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
-| **Morita equivalence 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$; all 7D formulas are exact | [T] | [Theorem](./core/structure/dimension-e) |
+| **Morita equivalence 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$; all 7D formulas are exact | [T] | [Theorem](./core/structure/dimension-e) |
 | **Spectral gap of Fano dissipator** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD symmetry); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-operator (replacement channel)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, monotonicity, fixed point $\rho_*$ | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
 | **Global minimization of $V_{\text{Gap}}$** | $G_2$-orbit reduction $21D \to 5D$; unique minimum; Hessian $> 0$ | [T] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) |
@@ -252,7 +252,7 @@ where:
 | **Optimal learning bound** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — three regimes | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
 | **N=7 minimality for learning** (T-113) | Learning via regeneration is impossible for $N < 7$; $N = 7$ is Pareto-optimal | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
 | **Fano grammar** (T-114) | Markov chain on PG(2,2) is ergodic, stationary distribution $\pi_i = 1/7$ | [T] | [Theorem](./core/operators/lindblad-operators#теорема-фано-грамматика) |
-| **Composition distinguishability** (T-115) | $|\mathrm{Comp}(n)| = 7^n$ for generic $\Gamma$ (algebraic distinguishability) | [T] | [Theorem](./core/operators/lindblad-operators#теорема-различимость-композиций) |
+| **Composition distinguishability** (T-115) | $\|\mathrm{Comp}(n)\| = 7^n$ for generic $\Gamma$ (algebraic distinguishability) | [T] | [Theorem](./core/operators/lindblad-operators#теорема-различимость-композиций) |
 | **PW Suzuki-Trotter** (T-116) | $\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$, for $p=2$: $\varepsilon \leq 10^{-5}$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-pw-suzuki-trotter) |
 | **Landauer calibration** (C22) | $\Delta F^{(k)} \geq k_B T_\mathrm{eff} \ln(2) \cdot k$ — linear growth | [C] | [Theorem](./consciousness/hierarchy/depth-tower#ландауэровская-калибровка) |
 
@@ -305,7 +305,7 @@ UHM's primitive is **minimal** among all possible axiomatic choices: one axiom i
 | **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |
 | **[SUSY from $G_2$](./physics/particle-physics/susy)** | Superpotential [T] (Schur), superpartner spectrum, gravitino |
 | **[Gap thermodynamics](./core/dynamics/gap-thermodynamics)** | Potential $V_{\text{Gap}}$, global minimization [T], sector hierarchy $\varepsilon$ |
-| **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness (field-space **[T]**, order-by-order **[С]**), Einstein equations [T] |
+| **[Quantum gravity](./physics/gravity/quantum-gravity)** | Spectral action [T], UV-finiteness (field-space **[T]**, order-by-order **[C]**), Einstein equations [T] |
 | **[Cosmological constant](./physics/gravity/cosmological-constant)** | $\Lambda > 0$ [T], spectral formula [T], honest bracket $10^{-53.5}$–$10^{-93.5}$ [C] ($\gtrsim 27$ orders open) |
 | **[Composite systems](./core/dynamics/composite-systems)** | CC-5 (nontriviality [T], viability [C]), topological protection of Gap [T], emergent geometry |
 | **[Interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy)** | L0–L4, $K=4$ for L3 [T], categorical unattainability of L4 [T] (T-86) |

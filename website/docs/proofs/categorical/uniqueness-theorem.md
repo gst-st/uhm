@@ -7,13 +7,13 @@ description: "G₂-rigidity of holonomic representation: uniqueness of the map G
 
 # Uniqueness Theorem of Holonomic Representation
 
-:::warning Status: [Т] — all steps proven
-The uniqueness theorem of holonomic representation is a **theorem [Т]**, relying exclusively on previously proven results:
-- Primitivity of $\mathcal{L}_\Omega$ [Т] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
-- Full minimality 7/7 [Т] ([proof](/docs/proofs/minimality/theorem-minimality-7))
+:::warning Status: [T] — all steps proven
+The uniqueness theorem of holonomic representation is a **theorem [T]**, relying exclusively on previously proven results:
+- Primitivity of $\mathcal{L}_\Omega$ [T] ([proof](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+- Full minimality 7/7 [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 - Bridge T15 [Т]: (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2 $\Rightarrow$ $\mathbb{O}$ $\Rightarrow$ $G_2$ ([proof](/docs/proofs/minimality/theorem-octonionic-derivation#мост))
-- L-unification [Т] ([proof](/docs/core/operators/lindblad-operators))
-- Uniqueness of E, O, U [Т] ([proof](/docs/proofs/minimality/theorem-minimality-7))
+- L-unification [T] ([proof](/docs/core/operators/lindblad-operators))
+- Uniqueness of E, O, U [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
 
 ---
@@ -82,9 +82,9 @@ The **gauge group** is the maximal subgroup $\mathcal{G} \subseteq U(7)$ whose e
 
 ## Preliminary results {#предпосылки}
 
-All results below have status **[Т]** and are proven in the respective documents.
+All results below have status **[T]** and are proven in the respective documents.
 
-### P1. Primitivity of $\mathcal{L}_0$ (linear part) [Т] {#p1-примитивность}
+### P1. Primitivity of $\mathcal{L}_0$ (linear part) [T] {#p1-примитивность}
 
 The linear part of the Liouvillian $\mathcal{L}_0$ is [primitive](/docs/core/operators/lindblad-operators#примитивность-ℒω) (T-39a): there exists a **unique** stationary state $I/7 \in \mathcal{D}(\mathbb{C}^7)$ for $\mathcal{L}_0$, and for any initial $\rho_0$:
 
@@ -92,7 +92,7 @@ $$
 \lim_{\tau \to \infty} e^{\tau\mathcal{L}_0}[\rho_0] = I/7
 $$
 
-The full nonlinear operator $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has a **unique non-trivial attractor** $\rho_* \neq I/7$ with $P > 1/7$ (T-96 [Т]).
+The full nonlinear operator $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has a **unique non-trivial attractor** $\rho_* \neq I/7$ with $P > 1/7$ (T-96 [T]).
 
 Spectrum of $\mathcal{L}_\Omega$ on the space $\mathrm{Herm}_0(\mathbb{C}^7)$ (traceless Hermitian matrices, $\dim_\mathbb{R} = 48$):
 
@@ -100,16 +100,16 @@ $$
 \mathrm{Spec}(\mathcal{L}_\Omega) = \{0\} \cup \{\lambda_k : \mathrm{Re}(\lambda_k) < 0, \; k = 1, \ldots, 47\}
 $$
 
-### P2. Functional uniqueness of dimensions [Т] {#p2-единственность}
+### P2. Functional uniqueness of dimensions [T] {#p2-единственность}
 
 All 7 dimensions are [functionally unique](/docs/proofs/minimality/theorem-minimality-7):
 
 - Each dimension performs an irreducible function (F1–F7)
 - [E is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: (PH) + $\kappa_0$ (requires $\mathrm{Hom}(O,E)$) + rank greater than 1
-- [O is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: $\mathcal{R}$ [Т] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
+- [O is unique](/docs/proofs/minimality/theorem-minimality-7) [Т]: $\mathcal{R}$ [T] + $\kappa_0$ ($\mathrm{End}(O)$, $\mathrm{Hom}(O,E)$, $\mathrm{Hom}(O,U)$) + PW (A5) + functional independence
 - [E $\perp$ O](/docs/proofs/minimality/theorem-minimality-7) [Т]: causal + categorical (O = E degenerates $\kappa_0$)
 
-### P3. Bridge T15 [Т] {#p3-мост}
+### P3. Bridge T15 [T] {#p3-мост}
 
 Full chain [(AP)+(PH)+(QG)+(V) $\Rightarrow$ P1+P2](/docs/proofs/minimality/theorem-octonionic-derivation#мост) of 12 steps, all [Т]:
 
@@ -117,7 +117,7 @@ $$
 \mathrm{(AP)+(PH)+(QG)+(V)} \xrightarrow{[\text{Т}]} \mathrm{BIBD}(7,3,1) \xrightarrow{[\text{Т}]} \mathrm{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} G_2
 $$
 
-### P4. L-unification [Т] {#p4-л-унификация}
+### P4. L-unification [T] {#p4-л-унификация}
 
 [Lindblad operators are derived](/docs/core/operators/lindblad-operators) from the classifier $\Omega$:
 
@@ -131,7 +131,7 @@ $$
 L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}} \Pi_p, \quad \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
 $$
 
-### P5. $G_2$-covariance [Т] {#p5-ковариантность}
+### P5. $G_2$-covariance [T] {#p5-ковариантность}
 
 The Fano dissipator is [$G_2$-covariant](/docs/core/operators/lindblad-operators#g2-ковариантность):
 
@@ -139,21 +139,21 @@ $$
 \forall \, g \in G_2: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger
 $$
 
-The atomic dissipator is **not** $G_2$-covariant [Т], but is $S_7$-equivariant [Т].
+The atomic dissipator is **not** $G_2$-covariant [T], but is $S_7$-equivariant [T].
 
 ---
 
 ## New lemmas {#леммы}
 
-### Lemma G1: Spectral injectivity of propagator [Т] {#лемма-g1}
+### Lemma G1: Spectral injectivity of propagator [T] {#лемма-g1}
 
-:::tip Lemma G1 (Spectral injectivity) [Т]
+:::tip Lemma G1 (Spectral injectivity) [T]
 For any $\tau > 0$ the map $e^{\tau \mathcal{L}_{\mathrm{lin}}}$ is injective on $\mathrm{Herm}_0(\mathbb{C}^7)$, where $\mathcal{L}_{\mathrm{lin}} = -i[H_{\mathrm{eff}}, \cdot] + \mathcal{D}_\Omega$ is the linear part of the Liouvillian.
 :::
 
 **Proof.**
 
-Let $\mathcal{L}_{\mathrm{lin}}$ act on $V = \mathrm{Herm}_0(\mathbb{C}^7)$ ($\dim_\mathbb{R} V = 48$). By primitivity [Т] (§[P1](#p1-примитивность)):
+Let $\mathcal{L}_{\mathrm{lin}}$ act on $V = \mathrm{Herm}_0(\mathbb{C}^7)$ ($\dim_\mathbb{R} V = 48$). By primitivity [T] (§[P1](#p1-примитивность)):
 
 $$
 \mathrm{Spec}(\mathcal{L}_{\mathrm{lin}}\big|_V) = \{\lambda_1, \ldots, \lambda_{48}\}, \quad \mathrm{Re}(\lambda_k) < 0 \; \forall k
@@ -171,9 +171,9 @@ All eigenvalues of the propagator are **nonzero**, therefore $e^{\tau \mathcal{L
 
 **Corollary G1.1 (Recoverability of initial state):** Knowing $\Gamma(\tau)$ for some $\tau > 0$ and the parameters of $\mathcal{L}_{\mathrm{lin}}$, the initial state $\Gamma(0)$ is determined **uniquely**.
 
-### Lemma G2: Well-posedness of nonlinear inverse problem [Т] {#лемма-g2}
+### Lemma G2: Well-posedness of nonlinear inverse problem [T] {#лемма-g2}
 
-:::tip Lemma G2 (Nonlinear inverse problem) [Т]
+:::tip Lemma G2 (Nonlinear inverse problem) [T]
 The full evolution equation $\frac{d\Gamma}{d\tau} = f(\Gamma)$, including the nonlinear regenerative term $\mathcal{R}$, has uniqueness of solutions: for any $\Gamma_1(0) \neq \Gamma_2(0)$ the trajectories $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ for all $\tau \geq 0$.
 :::
 
@@ -182,7 +182,7 @@ The full evolution equation $\frac{d\Gamma}{d\tau} = f(\Gamma)$, including the n
 The right-hand side $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa(\Gamma)(\rho_* - \Gamma) \cdot g_V(P)$, where:
 
 **(a) Lipschitz continuity.** The linear terms ($-i[H_{\mathrm{eff}}, \cdot]$, $\mathcal{D}_\Omega$) are Lipschitz (linear operators on a finite-dimensional space). The nonlinear term:
-- $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, where $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ is a rational function of matrix elements [Т]
+- $\kappa(\Gamma) = \kappa_{\mathrm{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$, where $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ is a rational function of matrix elements [T]
 - $\|\Gamma\|_{\mathrm{HS}}^2 = \mathrm{Tr}(\Gamma^2) \geq 1/7 > 0$ on $\mathcal{D}(\mathbb{C}^7)$ — the denominator is bounded away from zero
 - The product $\kappa(\Gamma) \cdot (\rho_* - \Gamma)$ is a smooth function on the compact set $\mathcal{D}(\mathbb{C}^7)$, hence locally Lipschitz
 
@@ -190,32 +190,32 @@ The right-hand side $f(\Gamma) = -i[H_{\mathrm{eff}}, \Gamma] + \mathcal{D}_\Ome
 
 **(c) Injectivity of flow.** From uniqueness of the Cauchy problem: if $\Gamma_1(0) \neq \Gamma_2(0)$, then $\Gamma_1(\tau) \neq \Gamma_2(\tau)$ for all $\tau$ in the domain of existence (trajectories do not intersect in phase space — a standard result of ODE theory). $\blacksquare$
 
-### Lemma G3: Axiomatic definiteness of structures [Т] {#лемма-g3}
+### Lemma G3: Axiomatic definiteness of structures [T] {#лемма-g3}
 
-:::tip Lemma G3 (Axiomatic definiteness) [Т]
+:::tip Lemma G3 (Axiomatic definiteness) [T]
 Axioms A1–A5 uniquely determine (in the given basis $\mathcal{B}$) the following structures:
 
-**(i)** Atomic projectors $\{|k\rangle\langle k|\}_{k=0}^{6}$ (from L-unification [Т])
+**(i)** Atomic projectors $\{|k\rangle\langle k|\}_{k=0}^{6}$ (from L-unification [T])
 
-**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (from bridge T15 [Т])
+**(ii)** The system of Fano lines $\{\mathrm{line}_p\}_{p=1}^{7} \subset \binom{[7]}{3}$ (from bridge T15 [T])
 
-**(iii)** E-projection $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (from [Coh_E [Т]](/docs/core/foundations/axiom-septicity#hs-projection))
+**(iii)** E-projection $\pi_E(\Gamma) = P_E\Gamma + \Gamma P_E - P_E\Gamma P_E$ (from [Coh_E [T]](/docs/core/foundations/axiom-septicity#hs-projection))
 
 **(iv)** Page–Wootters tensor decomposition $\mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$, singling out O (from A5)
 
-**(v)** The regeneration formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, singling out $\{O, E, U\}$ (from [categorical derivation of κ₀ [Т]](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+**(v)** The regeneration formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, singling out $\{O, E, U\}$ (from [categorical derivation of κ₀ [T]](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
 :::
 
 **Proof.** Each structure is derived from the axioms:
-- (i): [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega) [Т] — atoms $S_k = |k\rangle\langle k|$ of classifier $\Omega$
-- (ii): Bridge T15 [Т] — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
-- (iii): [HS-projection theorem](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [Т] — orthogonal projection in Hilbert–Schmidt space
+- (i): [L-unification](/docs/core/foundations/axiom-omega#lk-из-omega) [T] — atoms $S_k = |k\rangle\langle k|$ of classifier $\Omega$
+- (ii): Bridge T15 [T] — uniqueness of BIBD$(7,3,1)$ $\cong$ PG(2,2) (Hall 1967)
+- (iii): [HS-projection theorem](/docs/core/foundations/axiom-septicity#теорема-hs-проекция) [T] — orthogonal projection in Hilbert–Schmidt space
 - (iv): Axiom A5 (Page–Wootters) — explicit postulate
-- (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [Т] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
+- (v): Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ [T] — formula for $\kappa_0$ from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0). $\blacksquare$
 
-### Lemma G4: The octonionic-structure gauge group is $G_2$ [Т] {#лемма-g4}
+### Lemma G4: The octonionic-structure gauge group is $G_2$ [T] {#лемма-g4}
 
-:::tip Lemma G4 (Gauge group of the octonionic 3-form) [Т]
+:::tip Lemma G4 (Gauge group of the octonionic 3-form) [T]
 The maximal subgroup $\mathcal{G} \subseteq U(7)$ preserving the octonionic associative 3-form $\varphi_3 = \sum_{i<j<k} f_{ijk}\, e^i\wedge e^j\wedge e^k$ — equivalently, the structure constants $f_{ijk}$ of Lemma G3(ii) — is exactly $G_2 = \mathrm{Aut}(\mathbb{O})$.
 
 The remaining structures of Lemma G3 — the atomic projectors (i), the E-projection (iii), the PW clock $O$ (iv), the $\kappa_0$ formula (v) — are **not** $G_2$-invariant; they fix a **functional frame** (a choice of gauge) inside each $G_2$-orbit. Two representations related by $U\in G_2$ carry their frames into one another.
@@ -238,7 +238,7 @@ The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\var
 
 Let $U \in U(7)$ preserve all five structures of Lemma G3.
 
-**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since PG(2,2) is isomorphic to the multiplication table of $\mathrm{Im}(\mathbb{O})$ [Т], $U$ induces an automorphism of octonionic multiplication.
+**Step B1.** From preservation of (ii) (Fano lines): $U$ induces an automorphism of the Fano plane PG(2,2). Since PG(2,2) is isomorphic to the multiplication table of $\mathrm{Im}(\mathbb{O})$ [T], $U$ induces an automorphism of octonionic multiplication.
 
 **Step B2.** Restrict $U$ to $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$. An automorphism of octonionic multiplication on $\mathrm{Im}(\mathbb{O})$ by definition belongs to $G_2 = \mathrm{Aut}(\mathbb{O})$.
 
@@ -258,9 +258,9 @@ Therefore, $U \in G_2$. $\blacksquare$
 
 ## Main theorem {#теорема}
 
-### Theorem (G₂-rigidity of holonomic representation) [Т] {#g2-ригидность}
+### Theorem (G₂-rigidity of holonomic representation) [T] {#g2-ригидность}
 
-:::warning Theorem of G₂-rigidity [Т]
+:::warning Theorem of G₂-rigidity [T]
 Let $S$ be an autonomous system satisfying (AP)+(PH)+(QG)+(V). Let $(\mathbb{C}^7, \mathcal{B}_1, G_1)$ and $(\mathbb{C}^7, \mathcal{B}_2, G_2)$ be two holonomic representations of $S$ (Definition G1).
 
 Then there exists a **unique** $U \in G_2 = \mathrm{Aut}(\mathbb{O})$ such that:
@@ -276,7 +276,7 @@ Equivalently: **the holonomic representation is unique up to gauge group $G_2$**
 
 **Step 1: Definiteness of dynamics in each representation.**
 
-In representation $(\mathbb{C}^7, \mathcal{B}_i, G_i)$ axioms A1–A5 determine the Liouvillian $\mathcal{L}_\Omega^{(i)}$ (Lemma G3 [Т]). The compatibility condition (Definition G1) guarantees:
+In representation $(\mathbb{C}^7, \mathcal{B}_i, G_i)$ axioms A1–A5 determine the Liouvillian $\mathcal{L}_\Omega^{(i)}$ (Lemma G3 [T]). The compatibility condition (Definition G1) guarantees:
 
 $$
 \frac{d}{d\tau} G_i(s(\tau)) = \mathcal{L}_\Omega^{(i)}[G_i(s(\tau))], \quad i = 1, 2
@@ -309,7 +309,7 @@ $$
 (the antiunitary case is excluded since $\Phi$ is continuously connected to the identity map through a continuous family of systems).
 
 :::tip Extension of Φ to all D(ℂ⁷)
-By the viability condition (V), the trajectories of the holon pass through an open neighborhood of the attractor $\rho^*$ (T-125 [Т]). Therefore $\mathrm{Im}(G_1)$ contains an open subset of $\mathrm{Int}(\mathcal{D}(\mathbb{C}^7))$. An affine map defined on an open subset of a complete metric space extends uniquely to the whole space (Tietze theorem). The extended $\Phi$ preserves the spectrum on all of $\mathcal{D}(\mathbb{C}^7)$.
+By the viability condition (V), the trajectories of the holon pass through an open neighborhood of the attractor $\rho^*$ (T-125 [T]). Therefore $\mathrm{Im}(G_1)$ contains an open subset of $\mathrm{Int}(\mathcal{D}(\mathbb{C}^7))$. An affine map defined on an open subset of a complete metric space extends uniquely to the whole space (Tietze theorem). The extended $\Phi$ preserves the spectrum on all of $\mathcal{D}(\mathbb{C}^7)$.
 :::
 
 :::info Clarification: Wigner vs. Uhlmann
@@ -318,21 +318,21 @@ Here **Wigner's theorem** (in Kadison's form) is applied: an affine bijection $\
 
 **Step 4: $U \in G_2$.**
 
-Since both representations satisfy axioms A1–A5, the unitary $U$ must preserve the **octonionic 3-form** $\varphi_3$ carried by the axiomatic Fano structure (Lemma G3(ii) [Т]). The functional labels (atomic projectors, E-projection, PW clock, $\kappa_0$) are carried covariantly: $U$ maps the frame of representation 1 to the frame of representation 2.
+Since both representations satisfy axioms A1–A5, the unitary $U$ must preserve the **octonionic 3-form** $\varphi_3$ carried by the axiomatic Fano structure (Lemma G3(ii) [T]). The functional labels (atomic projectors, E-projection, PW clock, $\kappa_0$) are carried covariantly: $U$ maps the frame of representation 1 to the frame of representation 2.
 
-By Lemma G4 [Т], preservation of $\varphi_3$ gives $U \in G_2$. $\blacksquare$
+By Lemma G4 [T], preservation of $\varphi_3$ gives $U \in G_2$. $\blacksquare$
 
 **Step 5: Uniqueness of $U$.**
 
-Suppose $U_1, U_2 \in G_2$ both satisfy $G_2 = \mathrm{Ad}_{U_i} \circ G_1$. Then $\mathrm{Ad}_{U_1^{-1}U_2} = \mathrm{Id}$ on the image of $G_1$. If the image of $G_1$ contains sufficiently many states (which is guaranteed by viability: the system passes through a neighborhood of $\rho_*$ by primitivity [Т], and this neighborhood is open in $\mathcal{D}(\mathbb{C}^7)$), then $U_1^{-1}U_2 = e^{i\theta} I$ — a scalar phase, acting trivially on $\mathcal{D}(\mathbb{C}^7)$. $\blacksquare$
+Suppose $U_1, U_2 \in G_2$ both satisfy $G_2 = \mathrm{Ad}_{U_i} \circ G_1$. Then $\mathrm{Ad}_{U_1^{-1}U_2} = \mathrm{Id}$ on the image of $G_1$. If the image of $G_1$ contains sufficiently many states (which is guaranteed by viability: the system passes through a neighborhood of $\rho_*$ by primitivity [T], and this neighborhood is open in $\mathcal{D}(\mathbb{C}^7)$), then $U_1^{-1}U_2 = e^{i\theta} I$ — a scalar phase, acting trivially on $\mathcal{D}(\mathbb{C}^7)$. $\blacksquare$
 
 ---
 
 ## Corollaries {#следствия}
 
-### Corollary 1: Space of physical states [Т] {#физические-состояния}
+### Corollary 1: Space of physical states [T] {#физические-состояния}
 
-:::tip Corollary 1 (Space of observables) [Т]
+:::tip Corollary 1 (Space of observables) [T]
 The space of **physically distinguishable** states of the holon:
 
 $$
@@ -354,21 +354,21 @@ where $48 = N^2 - 1 = \dim(\mathrm{su}(7))$ is the full number of parameters of 
 The value 34 coincides with the number of parameters under full $G_2$-gauge fixing in the pure Fano-observation regime ($\alpha = 0$), stated in [Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность): "$48 \to 34$ parameters."
 :::
 
-### Corollary 2: Well-posedness of inverse problem [Т] {#обратная-задача}
+### Corollary 2: Well-posedness of inverse problem [T] {#обратная-задача}
 
-:::tip Corollary 2 (Inverse problem) [Т]
+:::tip Corollary 2 (Inverse problem) [T]
 For a system $S$ satisfying (AP)+(PH)+(QG)+(V), the initial state $\Gamma(0)$ is **uniquely** recovered from:
 
-**(a)** The observed trajectory $\Gamma(\tau)$ for $\tau \in (0, T]$ (Lemmas G1, G2 [Т])
+**(a)** The observed trajectory $\Gamma(\tau)$ for $\tau \in (0, T]$ (Lemmas G1, G2 [T])
 
 **(b)** The system parameters $(\omega_0, \lambda_m)$
 
-up to $G_2$-gauge (Theorem of G₂-rigidity [Т]).
+up to $G_2$-gauge (Theorem of G₂-rigidity [T]).
 :::
 
-### Corollary 3: Faithfulness of functor F [Т] {#верность-функтора}
+### Corollary 3: Faithfulness of functor F [T] {#верность-функтора}
 
-:::tip Corollary 3 (Faithfulness of functor) [Т]
+:::tip Corollary 3 (Faithfulness of functor) [T]
 The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on $G_2$-orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in G_2$.
 
 Kernel of $F$ on the set of isomorphisms:
@@ -378,9 +378,9 @@ $$
 $$
 :::
 
-### Corollary 4: Predictive power [Т] {#предсказательная-мощность}
+### Corollary 4: Predictive power [T] {#предсказательная-мощность}
 
-:::tip Corollary 4 (Finiteness of gauge group) [Т]
+:::tip Corollary 4 (Finiteness of gauge group) [T]
 $G_2$ is a **finite-dimensional** (14-dimensional) compact Lie group. This means:
 
 1. A **discrete set** of $G_2$-invariant observables fully characterizes the physical state
@@ -422,8 +422,8 @@ This theorem **fully closes** the question of uniqueness of the map G at the the
 
 | Question | Status | Basis |
 |--------|:------:|-----------|
-| **Existence** of G | **[Т]** | Theorem S + bridge T15 |
-| **Uniqueness** of G (up to $G_2$) | **[Т]** | Theorem of $G_2$-rigidity (this document) |
+| **Existence** of G | **[T]** | Theorem S + bridge T15 |
+| **Uniqueness** of G (up to $G_2$) | **[T]** | Theorem of $G_2$-rigidity (this document) |
 | **Predictivity** of G | [Empirical] | Requires experimental verification |
 
 Question 3 (predictivity) is **epistemological**, not mathematical: it is closed empirically (convergent validity, predictive success, interventional testing). This is the same epistemological standard by which all fundamental physics operates.
@@ -446,7 +446,7 @@ Question 3 (predictivity) is **epistemological**, not mathematical: it is closed
 
 **Physical meaning:** Different observers applying UHM to the same system will obtain coherence matrices related by a $G_2$-transformation. All 34 gauge-invariant parameters (purity, coherences, thresholds) will coincide.
 
-**Methodological status:** All steps of the proof are theorems [Т], relying on previously established results. This theorem closes the problem of the map G at the theoretical level and is the analogue of the Stone–von Neumann theorem for UHM.
+**Methodological status:** All steps of the proof are theorems [T], relying on previously established results. This theorem closes the problem of the map G at the theoretical level and is the analogue of the Stone–von Neumann theorem for UHM.
 :::
 
 ---

@@ -61,7 +61,7 @@ The self-modelling operator $\varphi: \mathcal{D}(\mathcal{H}) \to \mathcal{D}(\
 | # | Definition | Formula |
 |---|-------------|---------|
 | 1 | **Categorical** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ |
-| 2 | **Dynamical** | $\varphi(\Gamma) = \Pi_0[\Gamma]$ — projector onto the multiplicity-1 zero mode of the linearised full generator $\mathcal{L}_\Omega'|_{\rho^*_\Omega}$ |
+| 2 | **Dynamical** | $\varphi(\Gamma) = \Pi_0[\Gamma]$ — projector onto the multiplicity-1 zero mode of the linearised full generator $\mathcal{L}_\Omega'\|_{\rho^*_\Omega}$ |
 | 3 | **Idempotent** | $\varphi \circ \varphi = \varphi$, $\exists \Gamma^*: \varphi(\Gamma^*) = \Gamma^*$ |
 
 :::note Convention for definition 2 (self-referential-ρ* fix, T-96)
@@ -83,7 +83,7 @@ If you look in a mirror twice, you see the same thing as the first time. $\varph
 
 :::tip Theorem: Equivalence of the definitions of φ
 The three definitions specify the same operator $\varphi$.
-[Proof →](/docs/proofs/categorical/formalization-phi#эквивалентность-определений-phi) | Status: **[Т]**
+[Proof →](/docs/proofs/categorical/formalization-phi#эквивалентность-определений-phi) | Status: **[T]**
 :::
 
 ## Base Form φ_base (Decohering Self-Observation) {#phi-base}
@@ -103,13 +103,13 @@ This form **destroys** all coherences ($\gamma_{ij} \to 0$ for $i \neq j$), whic
 ## Свойства
 
 1. **CPTP channel:** $\varphi$ is a completely positive, trace-preserving map
-2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [Т] is a **contractive** mapping (not idempotent); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$
+2. **Idempotence (of ideal φ):** $\varphi \circ \varphi = \varphi$ — for the idempotent definition (Definition 3). The canonical form $\varphi_{\text{coh}}$ with compression parameter $k = 1 - R < 1$ [T] is a **contractive** mapping (not idempotent); the idempotent projection is the limit $\lim_{n\to\infty} \varphi_{\text{coh}}^n$
 3. **Purity monotonicity:** $P(\varphi_{\text{base}}(\Gamma)) \leq P(\Gamma)$ for the base form (decoherence decreases purity); $P(\varphi_{\text{coh}}(\Gamma))$ depends on the parameter $\alpha$ — at $\alpha < 1$ the Fano component partially preserves coherences. The fixed point of the canonical $\varphi_{\mathrm{coh}}$ has $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$
 4. **Fixed point:** $\exists! \, \Gamma^*_{\mathrm{coh}}: \varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$
 
 :::tip Theorem: Fixed point of φ_coh
 $\exists! \, \Gamma^*_{\mathrm{coh}} \in \mathcal{D}(\mathbb{C}^7)$: $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ with $P(\Gamma^*_{\mathrm{coh}}) = P_{\text{crit}} = 2/7$.
-[Proof →](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) | Status: **[Т]**
+[Proof →](/docs/proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) | Status: **[T]**
 :::
 
 :::warning Distinction between fixed points
@@ -126,7 +126,7 @@ The canonical $\varphi_{\text{base}}$ (decohering self-observation, projection o
 
 :::tip Theorem: Necessity of a coherence-preserving φ
 A living self-model **must** preserve coherences: $\exists\, (i,j): [\varphi(\Gamma)]_{ij} \neq 0$. A generalised $\varphi_{\text{coh}}$ is required.
-[Proof →](/docs/proofs/gap/fano-channel#необходимость-phi-coh) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#необходимость-phi-coh) | Status: **[T]**
 :::
 
 ---
@@ -170,7 +170,7 @@ $$
 
 :::tip Theorem: Completeness of Fano atoms
 Each dimension lies on exactly 3 Fano lines. Therefore: $\sum_{p=1}^{7} \Pi_p = 3I$.
-[Proof →](/docs/proofs/gap/fano-channel#фано-канал) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#фано-канал) | Status: **[T]**
 :::
 
 ### Fano predictive channel $\mathcal{P}_{\text{Fano}}$
@@ -203,7 +203,7 @@ For an arbitrary coherence matrix $\Gamma$:
 **(c)** Phases of coherences are preserved exactly: $\arg([\mathcal{P}_{\text{Fano}}(\Gamma)]_{ij}) = \arg(\gamma_{ij})$
 
 Key difference from $\varphi_{\text{base}}$: the Fano channel **scales** coherence amplitudes without phase distortion, whereas $\varphi_{\text{base}}$ destroys them entirely.
-[Proof →](/docs/proofs/gap/fano-channel#теорема-фано-канал) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#теорема-фано-канал) | Status: **[T]**
 :::
 
 ### Canonical form of φ_coh
@@ -219,11 +219,11 @@ where:
 - $\mathcal{P}_{\text{base}}(\Gamma) = \sum_m P_m\,\Gamma\,P_m = \mathrm{diag}(\Gamma)$ — atomic channel (from [φ formalisation](/docs/proofs/categorical/formalization-phi))
 - $\mathcal{P}_{\text{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p\,\Gamma\,\Pi_p$ — Fano channel
 - $\alpha \in [0, 1]$ — **decoherence depth parameter** (balance between atomic and Fano observation)
-- $k = 1 - R$ — compression parameter determined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ **[Т]**. Not a free parameter
+- $k = 1 - R$ — compression parameter determined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) $R = 1 - \|\Gamma - \rho^*\|_F^2/\|\Gamma\|_F^2$ **[T]**. Not a free parameter
 - $\Gamma_{\text{anchor}} = \rho^*_{\mathrm{diss}} = I/7$ — **anchor state**, coinciding with the attractor of the dissipative part $\mathcal{L}_0$. This choice is dictated by the primitivity of $\mathcal{L}_0$ [Т-39a]: the unique stationary state of the linear dynamics is the maximally mixed $I/7$. Under full compression ($k \to 1$, $R \to 0$) the self-model tends to $I/7$ — the state of complete absence of information about itself.
 
 $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ — a convex combination of CPTP channels, hence CPTP.
-[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
 :::
 
 ### Target coherences of φ_coh
@@ -236,7 +236,7 @@ $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P
 **(c)** Target Gap is **preserved**: $\mathrm{Gap}^{\text{target}}(i,j) = \mathrm{Gap}(i,j)$
 
 The canonical $\varphi_{\text{coh}}$ **does not seek to change the Gap** — it reproduces the Gap with a reduced amplitude, scaling coherences without phase distortion.
-[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
 :::
 
 ---
@@ -261,7 +261,7 @@ The coefficients are determined through:
 - The variational principle ($\alpha^*$ via $P$ and $P_{\text{crit}}$)
 - The compression parameter $k$ (from [φ formalisation](/docs/proofs/categorical/formalization-phi))
 
-[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
 :::
 
 :::info Kraus operators
@@ -291,7 +291,7 @@ $$
 | $P = 0.5$ | $\approx 0.43$ | Balance of atomic and Fano |
 | $P \to P_{\text{crit}}$ | $\to 0$ | Almost purely Fano (minimal coherence destruction) |
 
-[Proof →](/docs/proofs/gap/fano-channel#alpha-star) | Status: **[Т]**
+[Proof →](/docs/proofs/gap/fano-channel#alpha-star) | Status: **[T]**
 :::
 
 :::info Physical meaning of the balance
@@ -326,7 +326,7 @@ The self-model retains ~15% of each coherence amplitude — a "defocused" but no
 ## Unified theorem of self-observation {#единая-теорема-самонаблюдения}
 
 :::tip Theorem: Fano-coherent self-modelling (unified theorem)
-The canonical coherence-preserving self-modelling for UHM is determined **completely uniquely** (the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [Т]) through:
+The canonical coherence-preserving self-modelling for UHM is determined **completely uniquely** (the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [T]) through:
 
 **(a)** **Algebraic structure:** The [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ defines the composite atoms of the classifier $\Omega$, generating the Fano [Lindblad operators](/docs/core/operators/lindblad-operators) $L_p^{\text{Fano}}$.
 
@@ -344,7 +344,7 @@ $$
 
 The stationary Gap is **shifted** relative to the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ due to unitary rotation.
 
-[Proofs →](/docs/proofs/gap/fano-channel) | Status: **[Т]**
+[Proofs →](/docs/proofs/gap/fano-channel) | Status: **[T]**
 :::
 
 ---
@@ -363,7 +363,7 @@ In the documentation φ appears in three forms. They do not contradict each othe
 
 ### Connection (1) ↔ (2): Theorem 3.1
 
-:::tip Theorem 3.1 (Variational characterisation) [Т]
+:::tip Theorem 3.1 (Variational characterisation) [T]
 The categorically defined $\varphi$ (as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$) **coincides** with the minimiser of the variational functional:
 
 $$
@@ -371,14 +371,14 @@ $$
 $$
 
 The invariant measure $\mu$ is unique by the primitivity of the linear part $\mathcal{L}_0$ [Т-39a].
-[Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: **[Т]**
+[Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: **[T]**
 :::
 
 Thus: the variational principle is **not an axiom**, but a **theorem** about the categorically defined φ.
 
 ### Connection (2) ↔ (3): the replacement channel as a minimiser
 
-:::tip Theorem (Replacement channel as CPTP-minimiser) [Т]
+:::tip Theorem (Replacement channel as CPTP-minimiser) [T]
 The minimiser of the functional $\mathcal{F}[\psi; \Gamma] = S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ over the class of CPTP channels on $\mathcal{D}(\mathbb{C}^7)$ is the replacement channel
 
 $$
@@ -390,7 +390,7 @@ $$
 2. **Form of the minimiser:** From the stationarity conditions (variation over $\psi$ under the CPTP constraint) the minimiser takes the form of a convex combination of $\mathrm{Id}$ and the constant channel $\mathcal{C}_{\rho^*}$, i.e. $\psi^*(\Gamma) = (1-k)\Gamma + k\rho^*$.
 3. **Value of $k$:** From the Banach principle (contracting mapping with constant $(1-k) < 1$) and the consistency condition with the reflexion measure: $k = 1 - R = 1 - 1/(7P)$.
 
-[Proof of physical realisation →](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) | [Parameter k from reflexion →](/docs/consciousness/foundations/self-observation#теорема-k-из-r) | Status: **[Т]**
+[Proof of physical realisation →](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) | [Parameter k from reflexion →](/docs/consciousness/foundations/self-observation#теорема-k-из-r) | Status: **[T]**
 :::
 
 ### Unified chain: φ_cat → φ_var → φ_k
@@ -443,7 +443,7 @@ graph TD
 
 Each level depends **only on the previous ones** — a closed directed acyclic graph (DAG).
 
-The apparent "circularity" (φ defines $\rho^*$, and $\rho^*$ enters φ) is resolved by splitting: $\rho^*_{\mathrm{diss}} = I/7$ is the **dissipative** attractor of the linear part $\mathcal{L}_0$, whereas φ is the **nonlinear** regeneration operator. They reside at different levels of the hierarchy [O] (see [attractor hierarchy](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
+The apparent "circularity" (φ defines $\rho^*$, and $\rho^*$ enters φ) is resolved by splitting: $\rho^*_{\mathrm{diss}} = I/7$ is the **dissipative** attractor of the linear part $\mathcal{L}_0$, whereas φ is the **nonlinear** regeneration operator. They reside at different levels of the hierarchy [D] (see [attractor hierarchy](/docs/consciousness/foundations/self-observation#иерархия-аттракторов)).
 :::
 
 ---

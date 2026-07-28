@@ -8,7 +8,7 @@ description: Rigorous proof of the variational characterization of φ and deriva
 # Derivation of the Free Energy Principle from UHM
 
 :::info Document status
-This document contains proofs of the connection between the categorical definition of φ and the variational principle, as well as the derivation of Friston's FEP as the classical limit of UHM. Theorem 3.1 — **[Т]** (primitivity of the linear part $\mathcal{L}_0$ [proven](/docs/core/operators/lindblad-operators#примитивность-ℒω)). Theorem 4.1 — **[Т]** (classical limit). Theorem 4.2 — **[Т]** (identification of generative model = definition of self-reference). Theorem 4.3 — **[Т]** (complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$). Theorem 5.1 — **[Т]**.
+This document contains proofs of the connection between the categorical definition of φ and the variational principle, as well as the derivation of Friston's FEP as the classical limit of UHM. Theorem 3.1 — **[T]** (primitivity of the linear part $\mathcal{L}_0$ [proven](/docs/core/operators/lindblad-operators#примитивность-ℒω)). Theorem 4.1 — **[T]** (classical limit). Theorem 4.2 — **[T]** (identification of generative model = definition of self-reference). Theorem 4.3 — **[T]** (complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$). Theorem 5.1 — **[T]**.
 :::
 
 ## 1. Problem Statement
@@ -35,11 +35,11 @@ $$
 
 | Question | Status |
 |--------|--------|
-| Proof of equivalence of the two definitions | **Theorem 3.1 [Т]** |
-| Classical limit of the variational principle | **Theorem 4.1 [Т]** |
-| Connection to Friston's FEP | **Theorem 4.2 [Т]** (closed: generative model = definition of self-reference) |
-| Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3 [Т]** |
-| Justification of $S_{spec}$ vs $S_{vN}$ | **Theorem 5.1 [Т]** |
+| Proof of equivalence of the two definitions | **Theorem 3.1 [T]** |
+| Classical limit of the variational principle | **Theorem 4.1 [T]** |
+| Connection to Friston's FEP | **Theorem 4.2 [T]** (closed: generative model = definition of self-reference) |
+| Complete reduction of $S_{spec} + D_{KL}$ to $F_{FEP}$ | **Theorem 4.3 [T]** |
+| Justification of $S_{spec}$ vs $S_{vN}$ | **Theorem 5.1 [T]** |
 
 ---
 
@@ -126,7 +126,7 @@ where $\psi \in \mathcal{CPTP}$ is a CPTP channel (completely positive trace-pre
 
 ### 3.2 Central theorem {#32-центральная-теорема}
 
-:::tip Theorem 3.1 (Variational characterization of φ) [Т]
+:::tip Theorem 3.1 (Variational characterization of φ) [T]
 Let $\varphi$ be defined categorically as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$.
 
 Then:
@@ -135,7 +135,7 @@ $$
 \varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_{\Gamma \sim \mu}\left[\mathcal{F}[\psi; \Gamma]\right]
 $$
 
-where $\mu$ is the invariant measure on the state space (uniqueness of $\mu$ is guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]**).
+where $\mu$ is the invariant measure on the state space (uniqueness of $\mu$ is guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[T]**).
 :::
 
 ### 3.3 Proof
@@ -221,8 +221,8 @@ $$
 ### 3.4 Remarks on the proof
 
 **Remarks:**
-1. Existence and uniqueness of the invariant measure $\mu$ are guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[Т]** (Evans 1977, Spohn 1976)
-2. The equality $S_{spec} = S_{vN}$ holds only for normal operators (Theorem 5.1 **[Т]**)
+1. Existence and uniqueness of the invariant measure $\mu$ are guaranteed by [primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω) **[T]** (Evans 1977, Spohn 1976)
+2. The equality $S_{spec} = S_{vN}$ holds only for normal operators (Theorem 5.1 **[T]**)
 
 **Categorical correctness:**
 - Steps 1–2 follow from L-unification
@@ -305,7 +305,7 @@ The channel degenerates into a **stochastic matrix** $T$ — a classical Markov 
 
 ### 4.3 Reduction of the quantum functional {#43-редукция}
 
-:::warning Theorem 4.1 (Classical limit of the variational principle) [Т] {#теорема-41-классический-предел}
+:::warning Theorem 4.1 (Classical limit of the variational principle) [T] {#теорема-41-классический-предел}
 In the classical limit ($\Gamma_{ij} \to 0$ for $i \neq j$), the UHM variational functional (Theorem 3.1) reduces to the classical variational free energy:
 
 $$
@@ -379,7 +379,7 @@ $$
 
 The first term is complexity (deviation from prior), the second is accuracy (expected likelihood). Minimization of $F$ = **balance of accuracy and complexity** — this is the classical analog of balancing spectral entropy and KL-divergence in Theorem 3.1.
 
-:::tip Theorem 4.2 (UHM → Friston's FEP) [Т] {#теорема-42-угм-fep}
+:::tip Theorem 4.2 (UHM → Friston's FEP) [T] {#теорема-42-угм-fep}
 Let $\Gamma$ be the state of a holon in the classical limit ($\Gamma_{ij} = 0$ for $i \neq j$). Then:
 
 **(i)** The self-modeling operator $\varphi$ in the classical limit is identified with the **recognition density**: $\varphi(\Gamma) \leftrightarrow q^*(s|o)$.
@@ -398,7 +398,7 @@ $$
 \mathcal{F}[\psi; \Gamma] \geq S_{vN}(\Gamma) \quad \Longleftrightarrow \quad F \geq -\ln p(o)
 $$
 
-**Closedness of identification [Т].** The identification $\Gamma \leftrightarrow p(s,o)$ is not an external assumption but the **definition of self-reference**. In the variational formulation $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ the divergence $D_{KL}(q \| \Gamma)$ measures deviation from the system's **own** state. A self-referential system by definition uses itself as a generative model — this is not an assumption but a tautology of self-modeling.
+**Closedness of identification [T].** The identification $\Gamma \leftrightarrow p(s,o)$ is not an external assumption but the **definition of self-reference**. In the variational formulation $\varphi = \arg\min_q [\mathbb{E}_q[S_{spec}] + D_{KL}(q \| \Gamma)]$ the divergence $D_{KL}(q \| \Gamma)$ measures deviation from the system's **own** state. A self-referential system by definition uses itself as a generative model — this is not an assumption but a tautology of self-modeling.
 :::
 
 **Proof of (iv).** From the definition of KL-divergence:
@@ -425,7 +425,7 @@ In the classical limit $S_{vN}(\Gamma) = H(p) = -\sum_i p_i \log p_i$, and the i
 
 We show **explicitly** how minimization of the quantum functional $S_{spec} + D_{KL}$ in the classical limit becomes minimization of Friston's variational free energy.
 
-:::warning Theorem 4.3 (Complete reduction) [Т] {#теорема-43-полная-редукция}
+:::warning Theorem 4.3 (Complete reduction) [T] {#теорема-43-полная-редукция}
 Let $\Gamma \in \mathcal{D}(\mathbb{C}^N)$ be a diagonal density matrix, $\psi$ a CPTP channel preserving diagonality. Then the problem
 
 $$
@@ -726,11 +726,11 @@ The proof of Theorem 3.1 confirms:
 
 | Statement | Old status | New status |
 |-------------|---------------|--------------|
-| φ = argmin [S_spec + D_KL] | "Property 4" | **Theorem 3.1** [Т] (proven) |
-| Classical limit of the functional | Implicit | **Theorem 4.1** [Т] (full stat-mech reduction) |
-| FEP ⊂ UHM | Claimed | **Theorem 4.2** [Т] (identification of generative model = definition of self-reference) |
-| $S_{spec} + D_{KL} \to F_{FEP}$ | Not proven | **Theorem 4.3** [Т] (complete reduction) |
-| S_spec = S_vN for ρ | Not clarified | **Theorem 5.1** [Т] (proven) |
+| φ = argmin [S_spec + D_KL] | "Property 4" | **Theorem 3.1** [T] (proven) |
+| Classical limit of the functional | Implicit | **Theorem 4.1** [T] (full stat-mech reduction) |
+| FEP ⊂ UHM | Claimed | **Theorem 4.2** [T] (identification of generative model = definition of self-reference) |
+| $S_{spec} + D_{KL} \to F_{FEP}$ | Not proven | **Theorem 4.3** [T] (complete reduction) |
+| S_spec = S_vN for ρ | Not clarified | **Theorem 5.1** [T] (proven) |
 
 ### 7.3 New corollaries
 
@@ -796,8 +796,8 @@ $$
 **Main conclusion:** Friston's FEP is not an independent principle but a **special case** (classical limit) of the more fundamental structure of UHM.
 :::
 
-:::tip Compatibility with octonionic norm [Т]
-The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of $\mathbb{O}$ ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [Т] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
+:::tip Compatibility with octonionic norm [T]
+The variational principle $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is compatible with the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация): the norm of $\mathbb{O}$ ($|xy| = |x||y|$) ensures consistency of the metric used in $D_{KL}$ with the algebraic structure of the state space. Bridge [T] (T15). See [structural derivation](../minimality/theorem-octonionic-derivation#мост).
 :::
 
 ---

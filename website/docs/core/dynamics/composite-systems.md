@@ -100,7 +100,7 @@ The inter-system matrix $\Gamma_{A \leftrightarrow B}$ contains **all** correlat
 
 ### Definition of Gap Channels
 
-:::tip Definition 7.1 (Inter-system Gap) [О]
+:::tip Definition 7.1 (Inter-system Gap) [D]
 For each pair $(i \in A, j \in B)$ the inter-system Gap is defined:
 
 $$
@@ -164,7 +164,7 @@ $$
 
 ## 3. Holevo Bound for Understanding {#граница-холево}
 
-:::tip Theorem 7.2 (Holevo Bound for Understanding) [Т]
+:::tip Theorem 7.2 (Holevo Bound for Understanding) [T]
 The amount of information accessible to system $A$ about system $B$ through external observations is bounded above:
 
 $$
@@ -212,7 +212,7 @@ That is, the composite matrix does not factorize — non-trivial quantum correla
 
 ### Mutual Understanding Inequality
 
-:::warning Theorem 3.2 (Mutual Understanding Inequality) [Г]
+:::warning Theorem 3.2 (Mutual Understanding Inequality) [H]
 $$
 \sum_{i,j} \mathrm{Gap}_{AB}(i,j)^2 \geq C(P_A, P_B) \cdot \left(1 - \frac{\mathcal{E}_{\mathrm{Gap}}}{\mathcal{E}_{\max}}\right)
 $$
@@ -240,7 +240,7 @@ $$
 
 ## 5. Collective Phase Transition {#коллективный-переход}
 
-:::tip Theorem 3.3 (Collective Gap Phase Transition) [Т]
+:::tip Theorem 3.3 (Collective Gap Phase Transition) [T]
 For $N$ interacting holonoms:
 
 **(a) Weak interaction:** independent Gap profiles, individual $T_c$.
@@ -287,7 +287,7 @@ That is, the gap is small ($< \epsilon$) and the coherence is significant ($> \d
 
 ### Necessary Conditions for Empathy
 
-:::tip Theorem 4.1 (Necessary Conditions for Empathy) [Т]
+:::tip Theorem 4.1 (Necessary Conditions for Empathy) [T]
 Empathic transparency between $A$ and $B$ requires the **simultaneous** fulfillment of:
 
 **(a) Gap-entanglement:** $\mathcal{E}_{\mathrm{Gap}} > 0$ — the systems cannot be separable.
@@ -318,7 +318,7 @@ Violation of **any** of the four conditions makes empathic transparency impossib
 
 ### Non-trivial Holonomy from Phenomenology
 
-:::tip Theorem 1.1 (Phenomenology Implies Non-trivial Holonomy) [Т]
+:::tip Theorem 1.1 (Phenomenology Implies Non-trivial Holonomy) [T]
 If postulate (PH) holds — $\rho_E \neq I / \dim$ (the state is not maximally mixed in dimension [E](../structure/dimension-e)), then the Serre fibration has non-trivial holonomy:
 
 $$
@@ -330,7 +330,7 @@ $$
 
 ### Holonomy Implies Arrow of Time
 
-:::tip Theorem 1.2 (Non-trivial Holonomy Implies Arrow of Time) [Т]
+:::tip Theorem 1.2 (Non-trivial Holonomy Implies Arrow of Time) [T]
 PT-transformation acts on the connection as $A_{ij} \to -A_{ij}$, therefore:
 
 $$
@@ -342,24 +342,24 @@ Past and future are **distinguishable** via holonomy.
 
 ### Arrow → V₃ ≠ 0
 
-:::tip Theorem 1.3 (Arrow → V₃ ≠ 0) [Т]
+:::tip Theorem 1.3 (Arrow → V₃ ≠ 0) [T]
 $V_3$ is the only PT-odd term in the potential $V_{\mathrm{Gap}}$:
 
 $$
 V_3 \propto \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})
 $$
 
-Under PT-transformation: $V_3 \to -V_3$. The arrow of time requires $V_3 \neq 0$ → associator $\neq 0$ → [Axiom P2](../foundations/axiom-septicity). Status elevated to [Т] as part of the complete chain [T15](/docs/core/operators/lindblad-operators#замыкание-моста).
+Under PT-transformation: $V_3 \to -V_3$. The arrow of time requires $V_3 \neq 0$ → associator $\neq 0$ → [Axiom P2](../foundations/axiom-septicity). Status elevated to [T] as part of the complete chain [T15](/docs/core/operators/lindblad-operators#замыкание-моста).
 :::
 
 ### Complete Bridge Chain
 
-:::tip Theorem 1.4 (Complete Bridge Chain) [Т]
+:::tip Theorem 1.4 (Complete Bridge Chain) [T]
 $$
 (AP) + (PH) + (QG) + (V) \implies P1 + P2
 $$
 
-All steps are proven **[Т]** — complete chain of 12 steps (T1–T16). Details: [T15 — bridge closure](/docs/core/operators/lindblad-operators#замыкание-моста).
+All steps are proven **[T]** — complete chain of 12 steps (T1–T16). Details: [T15 — bridge closure](/docs/core/operators/lindblad-operators#замыкание-моста).
 :::
 
 **Chain diagram** (abbreviated; full 12-step version — in [T15](/docs/core/operators/lindblad-operators#замыкание-моста)):
@@ -380,7 +380,7 @@ All steps are proven **[Т]** — complete chain of 12 steps (T1–T16). Details
 
 ### Beta Functions
 
-:::tip Theorem 2.1 (Beta Functions) [Т]
+:::tip Theorem 2.1 (Beta Functions) [T]
 
 **(a) Mass:**
 
@@ -403,7 +403,7 @@ $$
 
 ### Fixed Points of the RG Flow
 
-:::tip Theorem 2.2 (Fixed Points of the RG Flow) [Т]
+:::tip Theorem 2.2 (Fixed Points of the RG Flow) [T]
 
 **(a) Gaussian:** $\mu^2 = 0, \lambda_3 = 0, \lambda_4 = 0$ — **unstable**.
 
@@ -416,7 +416,7 @@ $$
 
 ### Connection with Critical Phenomena
 
-:::tip Theorem 2.3 (Connection with Critical Phenomena) [Т]
+:::tip Theorem 2.3 (Connection with Critical Phenomena) [T]
 
 **(a)** Phase transition I ↔ II at $\mu^2 = 0$.
 
@@ -443,7 +443,7 @@ dim = 7 (fundamental)                    Effective dimension
 
 ### Decomposition of $\mathrm{Im}(\mathbb{O})$ under SU(3)
 
-:::tip Theorem 5.1 (Decomposition of $\mathrm{Im}(\mathbb{O})$ under SU(3) ⊂ G₂) [Т]
+:::tip Theorem 5.1 (Decomposition of $\mathrm{Im}(\mathbb{O})$ under SU(3) ⊂ G₂) [T]
 
 $$
 \mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \oplus \mathbb{C}^3
@@ -466,7 +466,7 @@ $$
 
 ### Time from O, Space from ⊥
 
-:::warning Theorem 5.2 (Time from O, Space from ⊥) [Г] → result proven [Т] via spectral triple (T-83)
+:::warning Theorem 5.2 (Time from O, Space from ⊥) [H] → result proven [T] via spectral triple (T-83)
 
 **(a)** $\mathbb{R}^1$ = O-dimension ([Ground](../structure/dimension-o)), clock subsystem (Page–Wootters).
 
@@ -512,7 +512,7 @@ The emergence of signature $(1,3)$ from $G_2 \supset SU(3)$ is one of the most n
 
 ### $G_2$-Manifolds and Connection with M-Theory
 
-:::tip Theorem 5.3 ($G_2$-Manifolds and Compactification) [Т]
+:::tip Theorem 5.3 ($G_2$-Manifolds and Compactification) [T]
 
 **(a)** M-theory is defined in 11 dimensions. Compactification on a $G_2$-manifold:
 
@@ -535,7 +535,7 @@ The holonomy of the manifold $\mathrm{Hol}(g) = G_2$ — precisely the automorph
 
 ### Cosmological Constant from Gap
 
-:::warning Theorem 5.3(d) (Cosmological Constant from O-Channel Opacity) [Г] → O-dominance of Λ proven [Т] (T-84)
+:::warning Theorem 5.3(d) (Cosmological Constant from O-Channel Opacity) [H] → O-dominance of Λ proven [T] (T-84)
 
 $$
 \Lambda \propto \mathcal{G}_{\mathrm{total}}^{(O)} := \sum_{i} \mathrm{Gap}(O, i)^2 \cdot |\gamma_{Oi}|^2
@@ -554,7 +554,7 @@ The connection $\Lambda \sim \mathrm{Tr}(\Gamma_O \cdot H)$ is discussed in deta
 
 ### Connection of Curvatures
 
-:::tip Theorem 6.1 (Connection of Gap-Curvature with Spacetime Curvature) [Т]
+:::tip Theorem 6.1 (Connection of Gap-Curvature with Spacetime Curvature) [T]
 
 **(a)** Gap-curvature — tensor $\mathcal{R}_{ij,kl}$ on the 21-dimensional space of coherences (curvature of the Serre fibration).
 
@@ -585,7 +585,7 @@ $$
 
 ### Einstein Equations from Gap Variation
 
-:::warning Hypothesis 6.1 (Einstein Equations from Gap Variation) [Г] → full derivation via spectral action [Т] (T-65)
+:::warning Hypothesis 6.1 (Einstein Equations from Gap Variation) [H] → full derivation via spectral action [T] (T-65)
 Variation of the Gap action $S_{\mathrm{Gap}}$ with respect to the spatial metric $g_{\mu\nu}$ gives the Einstein equations:
 
 $$
@@ -609,18 +609,18 @@ For a rigorous derivation one needs: (1) to formalize the projection of $S_{\mat
 
 ### Setup
 
-The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) is dynamically stable (positive-definite Hessian). This section establishes **topological** protection — the impossibility of continuously deforming the vacuum into a configuration with $\mathrm{Gap} = 0$ without passing through a phase transition.
+The Gap vacuum ([T-61, T-64](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]) is dynamically stable (positive-definite Hessian). This section establishes **topological** protection — the impossibility of continuously deforming the vacuum into a configuration with $\mathrm{Gap} = 0$ without passing through a phase transition.
 
-#### Theorem 11.1 / T-69 (Topological Protection of the Gap Vacuum) [Т] {#теорема-тополог-защита}
+#### Theorem 11.1 / T-69 (Topological Protection of the Gap Vacuum) [T] {#теорема-тополог-защита}
 
 :::tip Theorem 11.1
 
-**Statement.** The Gap vacuum (T-61 [Т]) is topologically protected: any continuous path from the vacuum configuration to a configuration with $\mathrm{Gap}(i,j) = 0$ for some pair $(i,j)$ must pass through a transition point with an energy barrier $\Delta V \geq 6\mu^2 > 0$.
+**Statement.** The Gap vacuum (T-61 [T]) is topologically protected: any continuous path from the vacuum configuration to a configuration with $\mathrm{Gap}(i,j) = 0$ for some pair $(i,j)$ must pass through a transition point with an energy barrier $\Delta V \geq 6\mu^2 > 0$.
 :::
 
 **Proof (6 steps).**
 
-**Step 1 (Orbit structure).** The group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the space of Gap configurations $\mathcal{M}_{\mathrm{Gap}} \subset [0,1]^{21}$ via $\mathrm{Ad}(G_2)$. The stabilizer of the vacuum configuration (all $\mathrm{Gap}(i,j) > 0$, opacity rank maximal) is the maximal torus $T^2 \subset G_2$ ([#25](/docs/reference/status-registry) [Т]). Vacuum orbit: $G_2/T^2$.
+**Step 1 (Orbit structure).** The group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the space of Gap configurations $\mathcal{M}_{\mathrm{Gap}} \subset [0,1]^{21}$ via $\mathrm{Ad}(G_2)$. The stabilizer of the vacuum configuration (all $\mathrm{Gap}(i,j) > 0$, opacity rank maximal) is the maximal torus $T^2 \subset G_2$ ([#25](/docs/reference/status-registry) [T]). Vacuum orbit: $G_2/T^2$.
 
 **Step 2 (Topological classification).** From the exact homotopy sequence of the fibration $T^2 \hookrightarrow G_2 \to G_2/T^2$ and simple connectivity of $G_2$ ($\pi_1(G_2) = 0$):
 
@@ -630,11 +630,11 @@ $$
 
 Gap configurations of maximal rank are topologically classified by winding numbers $(n_1, n_2) \in \mathbb{Z}^2$.
 
-**Step 3 (Vacuum in the trivial sector).** The vacuum ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]) is a $G_2$-invariant point with sector parameterization $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [Т] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). From $G_2$-invariance: the vacuum lies in the trivial topological sector $(n_1, n_2) = (0, 0)$.
+**Step 3 (Vacuum in the trivial sector).** The vacuum ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]) is a $G_2$-invariant point with sector parameterization $\boldsymbol{\varepsilon} = (\varepsilon_{O3}, \varepsilon_{O\bar{3}}, \varepsilon_{33}, \varepsilon_{\bar{3}\bar{3}}, \varepsilon_{3\bar{3}})$ [T] ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация)). From $G_2$-invariance: the vacuum lies in the trivial topological sector $(n_1, n_2) = (0, 0)$.
 
 **Step 4 (Energy barrier).** To transition to a configuration with $\mathrm{Gap}(i,j) = 0$ (for some pair), the stabilizer rank must change: $T^2 \to H$ (with $\dim H > 2$). This requires passing through a critical point of the potential $V_{\mathrm{Gap}}$.
 
-From T-64 [Т], the Hessian at the vacuum is strictly positive-definite. Minimum eigenvalue:
+From T-64 [T], the Hessian at the vacuum is strictly positive-definite. Minimum eigenvalue:
 
 $$
 \lambda_{\min}(H_{\mathrm{Gap}}) = 6\mu^2(1 + O(\varepsilon^2)) > 0
@@ -658,7 +658,7 @@ $$
 \Delta V_{Oi} = 12\mu^2 \cdot |\Delta\varepsilon_{Oi}|^2 \geq 12\mu^2 \varepsilon_0^2
 $$
 
-**Step 6 (Compactness).** The configuration space $(S^1)^{21}$ is compact. Uniqueness of the global minimum (T-64 [Т]) + positive-definiteness of the Hessian $\to$ the vacuum is separated from any configuration with zero Gap by a finite energy barrier. $\blacksquare$
+**Step 6 (Compactness).** The configuration space $(S^1)^{21}$ is compact. Uniqueness of the global minimum (T-64 [T]) + positive-definiteness of the Hessian $\to$ the vacuum is separated from any configuration with zero Gap by a finite energy barrier. $\blacksquare$
 
 ### Physical Significance
 
@@ -669,7 +669,7 @@ $$
 | Topological solitons | $(n_1, n_2) \neq (0,0)$ | Stable by virtue of $\pi_2(G_2/T^2) = \mathbb{Z}^2$ |
 
 :::info Corollary
-The stability of all physical predictions (masses, coupling constants) is **justified**: the vacuum is stable both dynamically (T-64 [Т]) and topologically (T-69 [Т]).
+The stability of all physical predictions (masses, coupling constants) is **justified**: the vacuum is stable both dynamically (T-64 [T]) and topologically (T-69 [T]).
 :::
 
 ---

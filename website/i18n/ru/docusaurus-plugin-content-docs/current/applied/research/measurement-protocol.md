@@ -902,7 +902,7 @@ public fn pi_bio(
 | R2.4 | Bandpass filter | 0.5–80 Гц, 4-й порядок Butterworth zero-phase (`mne.filter.filter_data`) |
 | R2.5 | Notch filter | 50 Гц (или 60 Гц), Q = 30 |
 | R2.6 | ICA artefact rejection | FastICA, 30 компонент; reject TMS-locked decay, eye-blink, ECG (`mne.preprocessing.ICA`) |
-| R2.7 | Epoch-level rejection | $|\text{max}-\text{min}| > 120\,\mu\mathrm V$ → отбросить эпоху |
+| R2.7 | Epoch-level rejection | $\|\text{max}-\text{min}\| > 120\,\mu\mathrm V$ → отбросить эпоху |
 | R2.8 | Спектральная декомпозиция | Morlet wavelets, 1–80 Гц log-spaced, 5-cycle wavelet, baseline $[-600,-100]\,\mathrm{ms}$ |
 
 Канонические полосы, используемые $\pi_{\mathrm{bio}}$, затем извлекаются из вейвлет-спектрограммы (интегрированы по post-TMS окну $[0, +300]\,\mathrm{ms}$, усреднены по каналам для диагонального feature-вектора; cross-channel pairwise для CFC-вычислений).

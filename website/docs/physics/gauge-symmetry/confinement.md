@@ -634,7 +634,7 @@ Confinement in Gap theory is self-consistent:
 
 :::warning[Open problems]
 1. **Glueball spectrum.** Prediction of glueball masses from Gap parameters is a non-perturbative problem.
-2. **Anomaly in the gravitational sector.** The mixed gravitational–axial anomaly $\partial_\mu j_5^\mu \supset R\tilde{R}$ in the Gap formalism requires full accounting of the $\mathrm{Cliff}(7)$-spectrum, including the O-direction. The connection to emergent gravity is an open question [O].
+2. **Anomaly in the gravitational sector.** The mixed gravitational–axial anomaly $\partial_\mu j_5^\mu \supset R\tilde{R}$ in the Gap formalism requires full accounting of the $\mathrm{Cliff}(7)$-spectrum, including the O-direction. The connection to emergent gravity is an open question [D].
 :::
 
 

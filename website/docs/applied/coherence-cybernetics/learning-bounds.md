@@ -801,7 +801,7 @@ $$
 | Aspect | PAC-learning | CC bounds |
 |--------|-------------|------------|
 | **Substrate** | Abstract algorithm | Physical dynamical system |
-| **Information bound** | $\ln|\mathcal{H}|/\varepsilon$ | $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$ |
+| **Information bound** | $\ln\|\mathcal{H}\|/\varepsilon$ | $\ln(1/(2\delta))/\xi_{\mathrm{QCB}}$ |
 | **Dynamics** | Not accounted for | $n_{\mathrm{dyn}}$ — key constraint |
 | **Stability** | Not accounted for | $n_{\mathrm{stab}}$ — learning must not kill the learner |
 | **Scaling for weak signals** | $O(1/\varepsilon)$ | $O(1/\varepsilon^2)$ (quantum limit) |
@@ -845,8 +845,8 @@ where $\Delta S_{\mathrm{step}}$ is the change in von Neumann entropy per step. 
 
 The bounds T-109–T-112 are ceilings for *any* learning algorithm. Two later theorems close the normative and physical sides of the question:
 
-- **The best algorithm exists and is unique** ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток) [Т]+[С]): the regeneration channel itself is the steepest-descent natural-gradient flow of $D(\rho_*\|\Gamma)$, moving along the mixture geodesic in the Kubo–Mori metric — the unique monotone metric with dually flat structure (Grasselli–Streater). Its statistical rate is the $a=1$ regime ($O(1/k)$); the ceilings it runs against are exactly T-109–T-112, on the minimal substrate $N=7$ (T-113).
-- **Learnability has a gravitational complement** ([T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность) [Т at FP]): the quantum Fisher information of the spacetime Gap phases satisfies $G_N^{(ST)}\cdot\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 8\pi N\mu^2$ — the better the phases can be learned, the weaker gravity, and the vacuum term is the squared unlearnability of the clock channel ($\Lambda \propto \mathcal{G}_O^2$, T-254). Vanchurin's "gravity is the efficiency of learning" is thereby signed and sector-resolved.
+- **The best algorithm exists and is unique** ([T-263](/docs/core/dynamics/evolution#теорема-наилучший-обучающий-поток) [T]+[C]): the regeneration channel itself is the steepest-descent natural-gradient flow of $D(\rho_*\|\Gamma)$, moving along the mixture geodesic in the Kubo–Mori metric — the unique monotone metric with dually flat structure (Grasselli–Streater). Its statistical rate is the $a=1$ regime ($O(1/k)$); the ceilings it runs against are exactly T-109–T-112, on the minimal substrate $N=7$ (T-113).
+- **Learnability has a gravitational complement** ([T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность) [T at FP]): the quantum Fisher information of the spacetime Gap phases satisfies $G_N^{(ST)}\cdot\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 8\pi N\mu^2$ — the better the phases can be learned, the weaker gravity, and the vacuum term is the squared unlearnability of the clock channel ($\Lambda \propto \mathcal{G}_O^2$, T-254). Vanchurin's "gravity is the efficiency of learning" is thereby signed and sector-resolved.
 
 ---
 

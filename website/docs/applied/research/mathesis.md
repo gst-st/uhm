@@ -562,7 +562,7 @@ $$
 |-----------|------------|-----------|
 | Measurement (user decision) | $\rho_a \mapsto P_s \rho_a P_s / \mathrm{Tr}(P_s \rho_a P_s)$ | Superposition collapses |
 | Refutation | $P_{[\text{✗}]} \rho_b P_{[\text{✗}]}$ may $\neq \rho_b$ | If $[P_a, P_b] \neq 0$, refuting $a$ nontrivially affects $b$ |
-| Superposition | $\rho_a = \alpha |\text{T}\rangle\langle\text{T}| + \beta |\text{H}\rangle\langle\text{H}|$ | Before verification, the statement is in a superposition of statuses |
+| Superposition | $\rho_a = \alpha \|\text{T}\rangle\langle\text{T}\| + \beta \|\text{H}\rangle\langle\text{H}\|$ | Before verification, the statement is in a superposition of statuses |
 
 **Why quantum logic, not classical?** In classical logic, checking a hypothesis is idempotent: check twice — get the same result. In scientific practice this is false. Proving theorem A can invalidate hypothesis B (if A and B are incompatible), and refuting B can *strengthen* C (if B and C were competitors). Epistemic measurements **do not commute**: the order of checking affects the outcome. This is precisely the structure of quantum mechanics — not by analogy, but because both domains operate on **context-dependent propositions** on an orthomodular lattice.
 

@@ -498,7 +498,7 @@ This test is a formal alternative to the Turing test. The Turing test asks: 'Can
 The auditor question — *"what concrete engineering tests could falsify or support these claims independent of biological data?"* — admits a direct answer. Every UHM claim about consciousness, AGI requirements, and ethical thresholds can be tested **purely in silico** on a CPTP-anchored agent, without involving any biological measurement. Below is the suite of ten reference experiments. Each has an explicit pass/fail criterion and references the UHM theorem(s) it would falsify.
 
 :::info Status of this section
-The **mathematical claims** being tested are all [T] (proven theorems of UHM). The **engineering protocols** themselves are [O] (definitions of measurement procedure). A failed test would falsify the corresponding [T] theorem, escalating it to [✗] (refuted). A passed test corroborates the [T] claim empirically.
+The **mathematical claims** being tested are all [T] (proven theorems of UHM). The **engineering protocols** themselves are [D] (definitions of measurement procedure). A failed test would falsify the corresponding [T] theorem, escalating it to [✗] (refuted). A passed test corroborates the [T] claim empirically.
 :::
 
 ### Test E1 — N=7 dimensional minimality (Q7) {#тест-e1-n7}

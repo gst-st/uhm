@@ -1106,8 +1106,8 @@ CPTP channels are generally irreversible. Therefore:
 
 *This is not a bug but a feature:* Irreversibility corresponds to the arrow of time in experience.
 
-:::info Faithfulness of F on $G_2$-orbits [Т]
-Despite the irreversibility of individual CPTP channels, the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [Т] establishes **faithfulness of the functor on objects** (up to the gauge group):
+:::info Faithfulness of F on $G_2$-orbits [T]
+Despite the irreversibility of individual CPTP channels, the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора) [T] establishes **faithfulness of the functor on objects** (up to the gauge group):
 
 $$
 F(\Gamma_1) \cong F(\Gamma_2) \quad \Longleftrightarrow \quad \Gamma_2 = U\Gamma_1 U^\dagger \text{ for some } U \in G_2
@@ -1144,9 +1144,9 @@ $$
 
 **Advantage:** Captures "ways of transitioning between transitions".
 
-#### Theorem T-192 (Exp^(2) is a strict 2-category) [Т] {#t-192-exp2-2-категория}
+#### Theorem T-192 (Exp^(2) is a strict 2-category) [T] {#t-192-exp2-2-категория}
 
-:::tip Theorem T-192 [Т]
+:::tip Theorem T-192 [T]
 The construction $\mathbf{Exp}^{(2)}$ of Definition 7.2 satisfies all axioms of a **strict 2-category** (equivalently, a $\mathbf{Cat}$-enriched category): horizontal composition is strictly associative, vertical composition is strictly associative, and the interchange law holds.
 :::
 
@@ -1164,21 +1164,21 @@ $$(\beta_2 \circ_v \beta_1) \circ_h (\alpha_2 \circ_v \alpha_1) = (\beta_2 \circ
 
 This is the standard interchange law for natural transformations (Mac Lane CWM II.5, Theorem 1), which holds in any 2-category of functors. Since CPTP channels are functors between C*-algebras of observables, and natural transformations between them satisfy interchange by the Eckmann–Hilton argument, the law holds. $\checkmark$
 
-**Axiom 5 (Identity 1-cells).** For each 0-cell $\mathcal{Q}$, the identity 1-cell $\mathrm{id}_{\mathcal{Q}} = F(\mathrm{id}_\rho)$ is the identity experiential transformation. By Theorem 5.1 [Т] (first functor axiom): $F(\mathrm{id}_\rho) = \mathrm{id}_{F(\rho)}$. This satisfies the unit laws for horizontal composition. $\checkmark$
+**Axiom 5 (Identity 1-cells).** For each 0-cell $\mathcal{Q}$, the identity 1-cell $\mathrm{id}_{\mathcal{Q}} = F(\mathrm{id}_\rho)$ is the identity experiential transformation. By Theorem 5.1 [T] (first functor axiom): $F(\mathrm{id}_\rho) = \mathrm{id}_{F(\rho)}$. This satisfies the unit laws for horizontal composition. $\checkmark$
 
 **Strictness.** All five axioms hold with **equalities** (not just isomorphisms), making $\mathbf{Exp}^{(2)}$ a **strict** 2-category. This is because:
-- The 0-cells and 1-cells form the category $\mathbf{Exp}$ (already verified [Т])
+- The 0-cells and 1-cells form the category $\mathbf{Exp}$ (already verified [T])
 - The 2-cells are natural transformations, which compose strictly
 - No coherence conditions (associators, unitors) are needed — they are identities
 
 **Corollary (Lax 2-functor target).** The lax 2-functor $F_2: \mathbf{DensityMat} \to \mathbf{Exp}^{(2)}$ (Definition 5.2, §5.2.2) has a **valid target**: $\mathbf{Exp}^{(2)}$ is a strict 2-category satisfying all required axioms. The compositor $\mu_{\Psi,\Phi}$ (eq in §5.2.2) is a 2-cell in $\mathbf{Exp}^{(2)}$, and Mac Lane's coherence conditions (pentagon + triangle, verified in §5.2.2) are satisfied. $\blacksquare$
 
-**Dependencies:** Theorem 5.1 [Т] (F preserves identities), Mac Lane CWM II.5/IV.2 (standard 2-category theory), Eckmann–Hilton argument (standard).
+**Dependencies:** Theorem 5.1 [T] (F preserves identities), Mac Lane CWM II.5/IV.2 (standard 2-category theory), Eckmann–Hilton argument (standard).
 
 ### Alternative C: $\infty$-category (quasicategory)
 
-:::tip [Т] Proved
-The construction $\mathbf{Exp}_\infty := \text{Sing}(\mathcal{E})$ is an ∞-groupoid **[Т]**. Proof: for any topological space $X$ the construction $\mathrm{Sing}(X)$ (singular simplicial set) gives a Kan complex (Milnor's theorem). The space $\mathcal{E}$ is metrizable (Bures–Fubini–Study metric), so $\text{Sing}(\mathcal{E})$ is automatically an ∞-groupoid. All required properties (HoTT-logic, subobject classifier, Postnikov truncations) follow from the ∞-toposness of $\mathbf{Sh}_\infty(\mathbf{Exp})$ [T-76].
+:::tip [T] Proved
+The construction $\mathbf{Exp}_\infty := \text{Sing}(\mathcal{E})$ is an ∞-groupoid **[T]**. Proof: for any topological space $X$ the construction $\mathrm{Sing}(X)$ (singular simplicial set) gives a Kan complex (Milnor's theorem). The space $\mathcal{E}$ is metrizable (Bures–Fubini–Study metric), so $\text{Sing}(\mathcal{E})$ is automatically an ∞-groupoid. All required properties (HoTT-logic, subobject classifier, Postnikov truncations) follow from the ∞-toposness of $\mathbf{Sh}_\infty(\mathbf{Exp})$ [T-76].
 :::
 
 For a complete description of the dynamics of experiential content one can use $\infty$-categories:
@@ -1237,13 +1237,13 @@ For practical purposes of UHM it is recommended:
 
 | Goal | Construction | Status |
 |------|-------------|--------|
-| **Basic theory (canonical)** | **Lax 2-functor $F_2: \mathbf{DensityMat} \to \mathbf{Exp}_2$** | **[Т] Formalized (§5.2)** |
-| Strict functor (simplification) | Strictification $F = \mathrm{St}(F_2)$ | [Т] Corollary |
-| Metric structure | $\mathbf{Exp}_{\mathrm{Met}}$ (enriched over Met) | [Т] Defined |
-| Logical constructions | Sheaf topos $\mathrm{Sh}(\mathbf{Exp}_2)$ | [С] Sketch |
-| Dynamics and history | Bicategory $\mathbf{Exp}_2$ (§5.2.2) | [Т] Formalized |
-| Quantum structure | †-category $\mathbf{DensityMat}^\dagger$ | [П] Program |
-| Homotopy theory | $\infty$-topos $\mathbf{Sh}_\infty(\mathbf{Exp}_\infty)$ | [Т] Consistent with §10 |
+| **Basic theory (canonical)** | **Lax 2-functor $F_2: \mathbf{DensityMat} \to \mathbf{Exp}_2$** | **[T] Formalized (§5.2)** |
+| Strict functor (simplification) | Strictification $F = \mathrm{St}(F_2)$ | [T] Corollary |
+| Metric structure | $\mathbf{Exp}_{\mathrm{Met}}$ (enriched over Met) | [T] Defined |
+| Logical constructions | Sheaf topos $\mathrm{Sh}(\mathbf{Exp}_2)$ | [C] Sketch |
+| Dynamics and history | Bicategory $\mathbf{Exp}_2$ (§5.2.2) | [T] Formalized |
+| Quantum structure | †-category $\mathbf{DensityMat}^\dagger$ | [P] Program |
+| Homotopy theory | $\infty$-topos $\mathbf{Sh}_\infty(\mathbf{Exp}_\infty)$ | [T] Consistent with §10 |
 
 :::note Development priorities
 1. **Completed:** Lax 2-functor $F_2$ — canonical solution to the history problem
@@ -1401,16 +1401,16 @@ $$
 | Unity of experience | ✓ Formalized | Integration measure $\Phi$ |
 | Self-awareness | ✓ Formalized | Operator $\varphi$, measure $R$ |
 | Ambivalence | ✓ Formalized | Mixed states |
-| Temporality | [С] Partial | $\mathrm{Hist}$, but time is an external parameter |
-| Intentionality | [Т] Direction determined | $E$ is the unique $L$-mediated interiority dimension (T-183 [T]); direction := $\arg\max_j |\gamma_{Ej}|$, $j \neq E$ |
-| Empathy | [С] Direction | Composition of Holons, open question |
-| Altered states | [С] Quantitative | $R$, $\Phi$ — described, mechanism open |
+| Temporality | [C] Partial | $\mathrm{Hist}$, but time is an external parameter |
+| Intentionality | [T] Direction determined | $E$ is the unique $L$-mediated interiority dimension (T-183 [T]); direction := $\arg\max_j \|\gamma_{Ej}\|$, $j \neq E$ |
+| Empathy | [C] Direction | Composition of Holons, open question |
+| Altered states | [C] Quantitative | $R$, $\Phi$ — described, mechanism open |
 
 ---
 
 ## 9. Quasi-functor for AI systems {#9-квази-функтор-для-ии-систем}
 
-:::warning Status: [П] Research program
+:::warning Status: [P] Research program
 This section describes an extension of the categorical formalism for neural network systems. See [Protocol for measuring Γ](/docs/applied/research/measurement-protocol) for the full specification.
 :::
 
@@ -1600,20 +1600,20 @@ $$
 
 ## 10. ∞-groupoid and ∞-topos for emergent time {#10-infty-группоид-и-infty-топос-для-эмерджентного-времени}
 
-:::tip Status: [Т] Proved
+:::tip Status: [T] Proved
 This section describes an extension of the categorical structure for [emergent time](../dynamics/emergent-time). History Hist is **derived** as a structure of the ∞-groupoid, not postulated.
 
-**Proof:** $\mathbf{Exp}_\infty := \text{Sing}(\mathcal{E})$ — ∞-groupoid [Т]. The space $\mathcal{E}$ is topological (Bures–Fubini–Study metric), so $\text{Sing}(\mathcal{E})$ is automatically a Kan complex (Milnor's theorem), i.e., an ∞-groupoid. Combined with [T-76](/docs/reference/status-registry) ($\mathbf{Sh}_\infty(\mathbf{Exp})$ — ∞-topos), all properties: internal HoTT-logic, subobject classifier, Postnikov truncations — follow.
+**Proof:** $\mathbf{Exp}_\infty := \text{Sing}(\mathcal{E})$ — ∞-groupoid [T]. The space $\mathcal{E}$ is topological (Bures–Fubini–Study metric), so $\text{Sing}(\mathcal{E})$ is automatically a Kan complex (Milnor's theorem), i.e., an ∞-groupoid. Combined with [T-76](/docs/reference/status-registry) ($\mathbf{Sh}_\infty(\mathbf{Exp})$ — ∞-topos), all properties: internal HoTT-logic, subobject classifier, Postnikov truncations — follow.
 :::
 
 :::warning Status distinction: Sing(E) construction vs. physical interpretation
-The **bare construction** $\mathrm{Sing}(\mathcal{E})$ — ∞-groupoid **[Т]**: for any topological space $X$ the construction $\mathrm{Sing}(X)$ gives a Kan complex (Milnor's theorem), and $\mathcal{E}$ is metrizable. This is pure mathematics, requiring no additional hypotheses.
+The **bare construction** $\mathrm{Sing}(\mathcal{E})$ — ∞-groupoid **[T]**: for any topological space $X$ the construction $\mathrm{Sing}(X)$ gives a Kan complex (Milnor's theorem), and $\mathcal{E}$ is metrizable. This is pure mathematics, requiring no additional hypotheses.
 
-**Physical interpretation** (correspondence L4) — **[П]** (program): the identification of the ∞-categorical structure of $\mathrm{Exp}_\infty$ with infinite depth of self-observation, full Postnikov tower, and historical extension requires additional physical assumptions that are **not proved**.
+**Physical interpretation** (correspondence L4) — **[P]** (program): the identification of the ∞-categorical structure of $\mathrm{Exp}_\infty$ with infinite depth of self-observation, full Postnikov tower, and historical extension requires additional physical assumptions that are **not proved**.
 
 **Dependencies:** Level L4 (infinite depth of self-observation), full ∞-categorical superstructure (Postnikov tower, historical extension) and the upper bound of SAD depend on the physical interpretation.
 
-**Mitigating factor:** The theorem SAD_MAX = 3 [Т] (T-142) limits the physically achievable depth to level L3. Level L4 is formally defined but **physically unreachable** (by analogy with Lawvere incompleteness). Therefore, the openness of the status of the physical interpretation **does not affect** the physical predictions of the theory — all observables live at levels L0–L3, defined without the L4-correspondence.
+**Mitigating factor:** The theorem SAD_MAX = 3 [T] (T-142) limits the physically achievable depth to level L3. Level L4 is formally defined but **physically unreachable** (by analogy with Lawvere incompleteness). Therefore, the openness of the status of the physical interpretation **does not affect** the physical predictions of the theory — all observables live at levels L0–L3, defined without the L4-correspondence.
 :::
 
 ### 10.1 ∞-groupoid of experiential paths
@@ -1777,7 +1777,7 @@ Level L4 is **maximal**. There exist no L5, L6, ...
 
 ## 11. Discrete ∞-groupoid $\mathbf{Exp}^{disc}_\infty$ {#exp-disc-infty}
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 This section describes the discrete version of the ∞-groupoid for finite-dimensional systems ($N < \infty$), where time is fundamentally discrete.
 :::
 
@@ -1938,7 +1938,7 @@ In $\mathbf{Sh}_\infty(\mathbf{Exp}^{disc}_\infty)$ the operators $\diamond_+$, 
 
 ## 12. Category of Holons Hol {#категория-голономов-hol}
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 This section describes the categorical structure of Holons as a subcategory of DensityMat (not full).
 :::
 
@@ -2056,16 +2056,16 @@ where $\iota: \mathbf{Hol} \hookrightarrow \mathbf{DensityMat}$ — inclusion.
 |----------|--------|-------------|
 | Subcategory (not full) | ✓ | Theorem 12.1 |
 | Closed under composition | ✓ | CPTP ∘ CPTP = CPTP |
-| Terminal object | [С] | Pure state $P = 1$, but not unique |
+| Terminal object | [C] | Pure state $P = 1$, but not unique |
 | Initial object | — | No (set of states with $P = P_{\text{crit}} + \varepsilon$) |
-| Products | [С] | Tensor product, but $\dim > 7$ |
+| Products | [C] | Tensor product, but $\dim > 7$ |
 | Topos | ✗ | Is not one (as with $\mathbf{Exp}$) |
 
 ---
 
 ## 13. Derived categories and IC-cohomologies {#производные-категории}
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 This section describes derived categories and IC-cohomologies for capturing the "hidden topology" of the stratified base space X.
 :::
 
@@ -2190,7 +2190,7 @@ The internal logic of $\mathcal{T}_H$ is homotopy type theory (HoTT) with:
 
 ## 14. ∞-topos as the true primitive {#infty-топос-как-истинный-примитив}
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 This section demonstrates that the ∞-topos is the **true primitive** of UHM, replacing 5 separate axioms with a single structure.
 :::
 
@@ -2314,7 +2314,7 @@ The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ is the **true primitive** of the
 | Time τ | 1-morphism in $\mathrm{Map}(\Gamma, T)$ |
 | History h | 2-morphism (homotopy between paths) |
 | Evolution | Functor $\mathbf{Sh}_\infty(\mathcal{C}) \to \mathbf{Sh}_\infty(\mathcal{C})$ |
-| Freedom | $\dim\ker(\mathcal{H}_\Gamma) + 1$ [Т]; ∞-categorically: $\pi_*(\mathrm{Map}(\Gamma, T))$ |
+| Freedom | $\dim\ker(\mathcal{H}_\Gamma) + 1$ [T]; ∞-categorically: $\pi_*(\mathrm{Map}(\Gamma, T))$ |
 
 :::warning Fundamental distinction: ⊗_Day ≠ ×_T
 The tensor product of quantum states $\otimes$ is **not** the Cartesian product $\times$ in the topos (Abramsky-Coecke theorem: CPTP category is **non-Cartesian** monoidal). Cartesian $\times$ = separable states. Quantum entanglement is encoded via **Day convolution** $\otimes_{\text{Day}}$: a non-Cartesian monoidal structure on $\mathbf{Sh}_\infty(\mathcal{C})$, canonically lifting $\otimes$ from the base category $\mathcal{C}$ into the sheaf category. Bell's theorem and quantum teleportation are correctly described via $\otimes_{\text{Day}}$.
@@ -2359,7 +2359,7 @@ Formally:
 
 ## 15. L-unification {#l-унификация}
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 This section establishes the **key theorem** on the identity of the dimension L, the subobject classifier Ω, and the source of Lindblad operators L_k.
 :::
 
@@ -2482,7 +2482,7 @@ $$
 
 where $\Omega_s$ is a copy of the classifier indexed by element s ∈ S.
 
-**Status of the pair $(\mathcal{D}_\Omega, \mathcal{R})$: a guiding duality reading [И], not an adjunction theorem.**
+**Status of the pair $(\mathcal{D}_\Omega, \mathcal{R})$: a guiding duality reading [I], not an adjunction theorem.**
 
 The pair $(\mathcal{D}_\Omega, \mathcal{R})$ organizes the "forgetting / restoring" duality of the dynamics, but it is **not** a genuine categorical adjunction, for two independent reasons:
 
@@ -2492,9 +2492,9 @@ The pair $(\mathcal{D}_\Omega, \mathcal{R})$ organizes the "forgetting / restori
 
 **What survives, with its own independent basis:**
 
-- The **dynamical trichotomy** (Hamiltonian / dissipation toward $I/N$ / regeneration toward $\rho_*$) is a theorem **[Т]** on LGKS + fixed-point + purity-monotonicity grounds ([triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) — it never needed the adjunction.
-- The **κ₀ formula** is **[Т at the first-order-kinetics model]** via the rapid pre-equilibrium derivation ([axiom of septicity](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)) — independent of the categorical reading.
-- The **duality language** ($\mathcal{D}_\Omega$ "forgets" structure toward the classifier, $\mathcal{R}$ "freely restores" it) remains a useful organizing reading **[И]** of the same dynamics; the unit/counit formulas of §15.3.2 are the schematic form of this reading.
+- The **dynamical trichotomy** (Hamiltonian / dissipation toward $I/N$ / regeneration toward $\rho_*$) is a theorem **[T]** on LGKS + fixed-point + purity-monotonicity grounds ([triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) — it never needed the adjunction.
+- The **κ₀ formula** is **[T at the first-order-kinetics model]** via the rapid pre-equilibrium derivation ([axiom of septicity](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)) — independent of the categorical reading.
+- The **duality language** ($\mathcal{D}_\Omega$ "forgets" structure toward the classifier, $\mathcal{R}$ "freely restores" it) remains a useful organizing reading **[I]** of the same dynamics; the unit/counit formulas of §15.3.2 are the schematic form of this reading.
 
 #### 15.3.2 Unit and counit of the adjunction
 
@@ -2522,10 +2522,10 @@ The regeneration rate is
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
-\qquad \textbf{[Т at the first-order-kinetics model]},
+\qquad \textbf{[T at the first-order-kinetics model]},
 $$
 
-**derived by rapid pre-equilibrium** (quasi-steady-state branching of the regeneration channels, [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)). The **categorical reading [И]**: within the $(\mathcal{D}_\Omega, \mathcal{R})$ duality (§15.3.1 status note), the same quantity plays the role of the "norm of the unit", $\kappa_0 = \|\eta\|_{\text{op}} \cdot \omega_0$ — an interpretive identification, not the derivation basis. Here:
+**derived by rapid pre-equilibrium** (quasi-steady-state branching of the regeneration channels, [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)). The **categorical reading [I]**: within the $(\mathcal{D}_\Omega, \mathcal{R})$ duality (§15.3.1 status note), the same quantity plays the role of the "norm of the unit", $\kappa_0 = \|\eta\|_{\text{op}} \cdot \omega_0$ — an interpretive identification, not the derivation basis. Here:
 - $\omega_0$ — characteristic frequency of the system (parameter, analogous to mass in physics)
 - $\gamma_{ij}$ — elements of the coherence matrix
 
@@ -2585,7 +2585,7 @@ L-unification closes the following open questions:
 | Why 7 dimensions? | Minimal base for Ω ∩ Γ ≠ ∅ | [Theorem 7.1](/docs/proofs/minimality/theorem-minimality-7) |
 | Source of CPTP | Completeness of Ω | §15.2.2 |
 | Emergence of τ | Modality ▷ on Ω | §15.2.3 |
-| Derivation of κ₀ | Rapid pre-equilibrium [Т]; categorical reading — unit of the $(\mathcal{D}_\Omega, \mathcal{R})$ duality [И] | [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux), §15.3 |
+| Derivation of κ₀ | Rapid pre-equilibrium [T]; categorical reading — unit of the $(\mathcal{D}_\Omega, \mathcal{R})$ duality [I] | [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux), §15.3 |
 | Internal logic | Ω-types in HoTT | [Axiom Ω⁷](/docs/core/foundations/axiom-omega#внутренняя-логика) |
 | Nonlinearity and positivity | CPTP-structure of $\mathcal{R}_\alpha$ | [Th. 15.3.4](/docs/core/dynamics/evolution#сохранение-положительности) |
 
@@ -2624,10 +2624,10 @@ This completes the categorical formalization program: the 5 axioms Ω¹–Ω⁵ 
 2. **Functor F defined on morphisms** via component-wise transformations
 3. **Functoriality proved** (theorems 5.1-5.3). Strict functoriality — for the base functor (without history); full functoriality requires the lax 2-functor construction (§5.2)
 4. **$\mathbf{Exp}$ is not a topos**, but possesses rich structure (fibration, enrichment, monoidality)
-5. **∞-groupoid Exp_∞ proved [Т]** — $\mathrm{Sing}(\mathcal{E})$ is a Kan complex (Milnor's theorem); time as 1-morphism, history as loop space (section 10)
+5. **∞-groupoid Exp_∞ proved [T]** — $\mathrm{Sing}(\mathcal{E})$ is a Kan complex (Milnor's theorem); time as 1-morphism, history as loop space (section 10)
 6. **∞-topos Sh_∞(Exp) exists** — internal temporal modal logic
 7. **Phenomenal completeness** — the structure is sufficient to describe any physically realizable experience (section 8)
-8. **Quasi-functor for AI** — extension to nonlinear systems via NTK linearization (section 9, [П] program)
+8. **Quasi-functor for AI** — extension to nonlinear systems via NTK linearization (section 9, [P] program)
 9. **Discrete ∞-groupoid $\mathbf{Exp}^{disc}_\infty$** — reconciliation of discrete Page–Wootters time with the categorical structure (section 11)
 10. **Category of Holons $\mathbf{Hol}$** — subcategory of $\mathbf{DensityMat}$ (not full), interiority functor $\mathcal{I}: \mathbf{Hol} \to \mathbf{Exp}$ (section 12)
 11. **Derived categories and IC-cohomologies** — capture of hidden topology of stratified X (section 13)
@@ -2666,14 +2666,14 @@ This formalism completes the categorical part of UHM:
 
 ## Non-associative categorical structure {#неассоциативная-категориальная-структура}
 
-:::info Octonionic categorical perspective [И]
+:::info Octonionic categorical perspective [I]
 The [structural derivation N=7](../minimality/theorem-octonionic-derivation) through octonions suggests a non-associative algebraic structure on the space of dimensions. Categorical formalization of non-associativity uses:
 
 - **$A_\infty$-algebras:** Generalization of associative algebras, where associativity holds only up to homotopy. The structure $m_n: A^{\otimes n} \to A$ defines a hierarchy of higher operations.
 - **Associahedra (Stasheff polytopes):** Combinatorial spaces parameterizing ways of bracketing. For $n$ elements the associahedron $K_n$ has dimension $n-2$.
 - **$G_2$-categories:** Categories enriched over $G_2$-representations formalize $G_2$-covariance.
 
-**Connection to the UHM ∞-topos [С]:** The non-associativity of $\mathbb{O}$ may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Bridge [Т] (closed, T15).
+**Connection to the UHM ∞-topos [С]:** The non-associativity of $\mathbb{O}$ may manifest as a nontrivial $A_\infty$-structure on the morphisms of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Bridge [T] (closed, T15).
 :::
 
 ---
@@ -2844,9 +2844,9 @@ The self-reference of UHM is organized in three levels:
 
 | Level | Object | Self-modeling | Status |
 |---------|--------|-------------------|--------|
-| 0. Holon | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$, $\rho^* = \varphi(\rho^*)$ | [Т] |
-| 1. Category Hol | Objects — holons, morphisms — CPTP | L-unification, $G_2$-rigidity | [Т] |
-| 2. Internal theory | $\mathrm{Th}_{\mathrm{UHM}} \subseteq \Omega$ | $\varphi^*$-closedness, incompleteness, openness | [Т] (T-54–T-56) |
+| 0. Holon | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | $\varphi: \Gamma \to \Gamma$, $\rho^* = \varphi(\rho^*)$ | [T] |
+| 1. Category Hol | Objects — holons, morphisms — CPTP | L-unification, $G_2$-rigidity | [T] |
+| 2. Internal theory | $\mathrm{Th}_{\mathrm{UHM}} \subseteq \Omega$ | $\varphi^*$-closedness, incompleteness, openness | [T] (T-54–T-56) |
 
 The self-reference loop closes through three mechanisms:
 
@@ -2860,9 +2860,9 @@ More details: [Consequences — self-referential closure](/docs/core/foundations
 
 ## Categorical completeness of UHM {#категориальная-полнота}
 
-### Theorem (Closure of axiomatics) [Т] {#замкнутость-аксиоматики}
+### Theorem (Closure of axiomatics) [T] {#замкнутость-аксиоматики}
 
-:::tip Theorem (Categorical closure) [Т]
+:::tip Theorem (Categorical closure) [T]
 Axioms A1-A4 of UHM form a **categorically closed** system: all constructions definable in the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ are expressible via A1-A4 without invoking external objects.
 
 **Proof (3 steps).**
@@ -2870,12 +2870,12 @@ Axioms A1-A4 of UHM form a **categorically closed** system: all constructions de
 **Step 1 (Internal language).** The ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ has an internal language — homotopy type theory (HoTT) (Lurie HTT 6.1.0.6, Shulman 2019). All definitions and theorems of UHM are formulated in this language.
 
 **Step 2 (Classifier Ω).** The subobject classifier Ω defines the internal logic:
-- Lindblad operators $L_k$ — atoms of Ω (A1 + L-unification [Т])
+- Lindblad operators $L_k$ — atoms of Ω (A1 + L-unification [T])
 - Measures P, R, Φ — defined via Tr (built into D(ℂ⁷))
-- Thresholds P_crit, R_th, Φ_th — derived from A1-A4 ([Т])
-- Evolution dΓ/dτ = ℒ_Ω[Γ] — derived from Ω (T-57 [Т])
+- Thresholds P_crit, R_th, Φ_th — derived from A1-A4 ([T])
+- Evolution dΓ/dτ = ℒ_Ω[Γ] — derived from Ω (T-57 [T])
 
-**Step 3 (Absence of external dependencies).** The only historical dependence — A5 (Page–Wootters) — is derivable from A1-A4 (T-87 [Т]). All 210+ theorems are derived from A1-A4 without external postulates. $\blacksquare$
+**Step 3 (Absence of external dependencies).** The only historical dependence — A5 (Page–Wootters) — is derivable from A1-A4 (T-87 [T]). All 210+ theorems are derived from A1-A4 without external postulates. $\blacksquare$
 :::
 
 ### Connection to the Lurie–Shulman program {#связь-с-лурье-шульманом}
@@ -2884,28 +2884,28 @@ UHM realizes a concrete instance of the **∞-topos physics** program (Schreiber
 
 | Component of the program | Realization in UHM | Status |
 |---|---|---|
-| ∞-topos as "space" | $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7))$ | A1 [Т] |
-| Cohesion | $J_{Bures}$-covers | A2 [Т] |
-| Differential structure | Spectral triple T-53 | [Т] |
-| Quantization | CPTP-morphisms | [Т] |
-| Gauge symmetry | $G_2 = \mathrm{Aut}(\mathbb{O})$ | [Т] |
-| Gravity | Emergent from NCG (T-120) | [Т] |
+| ∞-topos as "space" | $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^7))$ | A1 [T] |
+| Cohesion | $J_{Bures}$-covers | A2 [T] |
+| Differential structure | Spectral triple T-53 | [T] |
+| Quantization | CPTP-morphisms | [T] |
+| Gauge symmetry | $G_2 = \mathrm{Aut}(\mathbb{O})$ | [T] |
+| Gravity | Emergent from NCG (T-120) | [T] |
 
-### Theorem (HoTT-interpretation of hierarchy L) [Т] {#hott-l-иерархия}
+### Theorem (HoTT-interpretation of hierarchy L) [T] {#hott-l-иерархия}
 
-:::tip Theorem (Hierarchy L as n-truncations) [Т]
+:::tip Theorem (Hierarchy L as n-truncations) [T]
 Interiority levels L0-L4 are isomorphic to n-truncations of the ∞-groupoid $\mathbf{Exp}_\infty$ in HoTT:
 
 $$L_n \cong \|\mathbf{Exp}_\infty\|_n$$
 
 where $\|\cdot\|_n$ — n-truncation (propositional truncation to level n).
 
-**Proof.** From T-91 [Т] (∞-groupoid $\mathbf{Exp}_\infty$ — Kan complex):
+**Proof.** From T-91 [T] (∞-groupoid $\mathbf{Exp}_\infty$ — Kan complex):
 - $\|X\|_0$ = set of connected components = L0 (discrete states)
 - $\|X\|_1$ = groupoid = L1 (phenomenal paths)
 - $\|X\|_2$ = 2-groupoid = L2 (reflection)
 - $\|X\|_n$ for n ≥ 3 = L3+ (meta-reflection)
-- $\lim_{n\to\infty} \|X\|_n = X$ = L4 (colimit, T-86 [Т])
+- $\lim_{n\to\infty} \|X\|_n = X$ = L4 (colimit, T-86 [T])
 
 Postnikov truncations provide the canonical filtration. $\blacksquare$
 :::

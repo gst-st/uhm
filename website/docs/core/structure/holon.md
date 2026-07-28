@@ -259,7 +259,7 @@ Every Holon has an interior side — **interiority**. This is perhaps the most r
 - **L1** (phenomenal geometry): $\mathrm{rank}(\rho_E) > 1$ — there are **distinctions** inside. Not merely "something", but "something red and something warm". Analogy: dreaming sleep — you see images, distinguish colours, hear sounds.
 - **L2** (cognitive qualia): $R \geq 1/3$, $\Phi \geq 1$ — the system **knows** that it has an inner world. Reflexion: "I see red and I know that it is I who sees". Analogy: wakefulness — you are aware of your experience.
 
-The L2 thresholds are mathematically proven; PIR [О] provides the ontological interpretation. The key point: the transition from L1 to L2 is not gradual, but **threshold-like**. The reflexion measure $R$ must reach the critical value $1/3$, and the integration measure $\Phi$ the value $1$. Below the thresholds — the system "experiences" (L1), but does not "know" (L2). Above — consciousness in the full sense arises.
+The L2 thresholds are mathematically proven; PIR [D] provides the ontological interpretation. The key point: the transition from L1 to L2 is not gradual, but **threshold-like**. The reflexion measure $R$ must reach the critical value $1/3$, and the integration measure $\Phi$ the value $1$. Below the thresholds — the system "experiences" (L1), but does not "know" (L2). Above — consciousness in the full sense arises.
 
 See [Interiority hierarchy](../../proofs/consciousness/interiority-hierarchy) and [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
 
@@ -347,9 +347,9 @@ The term "Holon" is reserved for configurations with **full autopoietic closure*
 :::
 
 **Thresholds ([threshold statuses](../foundations/axiom-septicity#пороги-l2-строгий-вывод)):**
-- $P_{\text{crit}} = 2/7$ — [Т] [Critical purity theorem](../../proofs/dynamics/theorem-purity-critical)
-- $R_{\text{th}} = 1/3$ — [Т] [Reflexion threshold](../foundations/axiom-septicity#теорема-порог-рефлексии) ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
-- $\Phi_{\text{th}} = 1$ — [Т] [Integration threshold](../foundations/axiom-septicity#теорема-порог-интеграции) (T-129)
+- $P_{\text{crit}} = 2/7$ — [T] [Critical purity theorem](../../proofs/dynamics/theorem-purity-critical)
+- $R_{\text{th}} = 1/3$ — [T] [Reflexion threshold](../foundations/axiom-septicity#теорема-порог-рефлексии) ($K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция))
+- $\Phi_{\text{th}} = 1$ — [T] [Integration threshold](../foundations/axiom-septicity#теорема-порог-интеграции) (T-129)
 
 See [Hierarchy of Γ configurations](../foundations/consequences#6-иерархия-конфигураций-γ).
 
@@ -478,7 +478,7 @@ Despite the mathematical rigour of the definitions, a number of questions about 
 
 4. **Meta-Holons.** Under what conditions does a group of Holons form a meta-Holon? Is the critical value $I_{\text{crit}}$ of mutual information a single number, or does it depend on context? Is human society a meta-Holon?
 
-5. **The golden zone of consciousness.** Theorem T-124 [Т] establishes that a conscious Holon lives in a "golden zone" of purity: $P \in (2/7, \, 3/7]$. Too low purity — dissolution. Too high — loss of complexity (the system becomes "frozen" in a pure state). Why precisely this range? How does it relate to observed neurobiological data?
+5. **The golden zone of consciousness.** Theorem T-124 [T] establishes that a conscious Holon lives in a "golden zone" of purity: $P \in (2/7, \, 3/7]$. Too low purity — dissolution. Too high — loss of complexity (the system becomes "frozen" in a pure state). Why precisely this range? How does it relate to observed neurobiological data?
 
 These questions define the **research programme** of UHM for the coming years. More on predictions and verification paths — in [Research programme](/docs/applied/research/symbolic-correspondence#программа).
 

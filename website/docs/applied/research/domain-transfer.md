@@ -7,16 +7,16 @@ description: "The generative layer — the third-order engine (mediators, closur
 # Domain Transfer: the generative layer
 
 :::info What this document is
-The seven-dimensional relation structure $\Gamma$ is not a bag of 49 numbers; it is a layered object whose specific information lives at **third order** (on triples, not pairs). Once that is seen — [§0](#движок) — it becomes a *transfer engine*: any domain onto which the seven axes map inherits the same rigid combinatorics. This document unfolds that engine across ten domains at full depth. Each entry has the same skeleton: **dictionary** (what maps to the seven axes) → **derivation** (the transferred computation) → **number** (machine-verified) → **status** (honest [Т]/[С]/[Г]) → **test** (a falsifiable prediction via the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря)). Every quantitative claim below is reproduced by the verifier `domain_transfer_verify.py`.
+The seven-dimensional relation structure $\Gamma$ is not a bag of 49 numbers; it is a layered object whose specific information lives at **third order** (on triples, not pairs). Once that is seen — [§0](#движок) — it becomes a *transfer engine*: any domain onto which the seven axes map inherits the same rigid combinatorics. This document unfolds that engine across ten domains at full depth. Each entry has the same skeleton: **dictionary** (what maps to the seven axes) → **derivation** (the transferred computation) → **number** (machine-verified) → **status** (honest [T]/[C]/[H]) → **test** (a falsifiable prediction via the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря)). Every quantitative claim below is reproduced by the verifier `domain_transfer_verify.py`.
 :::
 
 ## §0. The engine {#движок}
 
 Four facts, each proved elsewhere in the corpus, compose into the transfer engine.
 
-**(1) The first-order blind spot [Т].** The sum of the adjacency matrices of the seven Fano lines equals $J - I$ exactly — the adjacency of the complete graph $K_7$, spectrum $\{6, -1^6\}$. Any equal-weight pairwise statistic (covariance, two-point function, correlation) built from the lines is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. Structure begins at three. Canonical home: [Fano fingerprint §0](/docs/applied/research/fano-fingerprint#слепое-пятно).
+**(1) The first-order blind spot [T].** The sum of the adjacency matrices of the seven Fano lines equals $J - I$ exactly — the adjacency of the complete graph $K_7$, spectrum $\{6, -1^6\}$. Any equal-weight pairwise statistic (covariance, two-point function, correlation) built from the lines is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. Structure begins at three. Canonical home: [Fano fingerprint §0](/docs/applied/research/fano-fingerprint#слепое-пятно).
 
-**(2) The mediator map [Т].** By the Steiner property $S(2,3,7)$, every pair $(i,j)$ lies on exactly one line, so it has a unique **mediator** $k^*(i,j)$ — the third point of that line (the [polar point $\pi(i,j)$ of T-226](/docs/applied/research/fano-fingerprint#полярное-разбиение)). The full table (verified, all 21 pairs):
+**(2) The mediator map [T].** By the Steiner property $S(2,3,7)$, every pair $(i,j)$ lies on exactly one line, so it has a unique **mediator** $k^*(i,j)$ — the third point of that line (the [polar point $\pi(i,j)$ of T-226](/docs/applied/research/fano-fingerprint#полярное-разбиение)). The full table (verified, all 21 pairs):
 
 | Line | Mediations inside the line |
 |---|---|
@@ -30,9 +30,9 @@ Four facts, each proved elsewhere in the corpus, compose into the transfer engin
 
 Read it as a table of levers: to create or repair the link $(i,j)$ you need the two live links $(i,k^*)$ and $(k^*,j)$, and only those.
 
-**(3) The closure law [Т].** Two coherences birth a third **iff** the triple is a line. The cubic line functional $W(\Gamma) = \sum_{\text{lines}} \mathrm{Re}(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ has a gradient flow that, seeded on a path $A\!-\!S\!-\!L$ (both edges in the line $\{A,S,L\}$), feeds **exactly one** new edge — the closing $L\!-\!A$ — and, seeded on a cross-line path $A\!-\!S\!-\!E$, feeds **nothing** (verified). This is the selection rule: mediation is line-local.
+**(3) The closure law [T].** Two coherences birth a third **iff** the triple is a line. The cubic line functional $W(\Gamma) = \sum_{\text{lines}} \mathrm{Re}(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ has a gradient flow that, seeded on a path $A\!-\!S\!-\!L$ (both edges in the line $\{A,S,L\}$), feeds **exactly one** new edge — the closing $L\!-\!A$ — and, seeded on a cross-line path $A\!-\!S\!-\!E$, feeds **nothing** (verified). This is the selection rule: mediation is line-local.
 
-**(4) The channel contraction $\Phi \to \Phi/9$ [Т].** The Fano channel (Kraus projectors onto the three-dimensional line-subspaces, complete because each point lies on three lines) preserves a population across all three of its lines ($3\times\tfrac13 = 1$) but preserves a coherence only in its single line out of three ($\times\tfrac13$); squared, that is $\tfrac19$. Verified: $\Phi_{\text{in}}/\Phi_{\text{out}} = 9.000000$ on random states. The nine is a Steiner incidence count, not a fit.
+**(4) The channel contraction $\Phi \to \Phi/9$ [T].** The Fano channel (Kraus projectors onto the three-dimensional line-subspaces, complete because each point lies on three lines) preserves a population across all three of its lines ($3\times\tfrac13 = 1$) but preserves a coherence only in its single line out of three ($\times\tfrac13$); squared, that is $\tfrac19$. Verified: $\Phi_{\text{in}}/\Phi_{\text{out}} = 9.000000$ on random states. The nine is a Steiner incidence count, not a fit.
 
 **The self-checking dictionary [Т-method].** These four make every domain mapping *falsifiable*, not interpretive: a correct mapping must reproduce the mediator table, and a chance mapping does so with probability $\sim(1/5)^7 \approx 3\times10^{-5}$ — see [one grammar §6](/docs/applied/research/one-grammar#самопроверяемость-словаря). This is the licence under which the domain readings below carry weight.
 
@@ -60,7 +60,7 @@ Read it as a table of levers: to create or repair the link $(i,j)$ you need the 
 
 **Number / structure.** The table fixes all 21 repair routes uniquely; there is no tunable path, which is exactly what makes the protocol falsifiable.
 
-**Status.** **[Т]** mechanism (closure law) / **[С]** clinical protocol.
+**Status.** **[T]** mechanism (closure law) / **[C]** clinical protocol.
 
 **Test.** A protocol: diagnose the 21 links, find the break $(i,j)$, verify both arms through $k^*(i,j)$, and intervene on the *weaker arm* — never on $(i,j)$ directly. Prediction: interventions that strengthen the mediator arms regenerate the target link, while equal-effort direct work on $(i,j)$ does not. Because the mediator is fixed by the table, mis-specified "mediators" are a control condition and the protocol is falsifiable on outcome.
 
@@ -68,11 +68,11 @@ Read it as a table of levers: to create or repair the link $(i,j)$ you need the 
 
 **Dictionary.** A learner acquiring a skill $(i,j)$; the self-model channel is the reflective loop (self-testing, metacognition, recall).
 
-**Derivation.** The reflection threshold $R_{\mathrm{th}} = 1/3$ [Т] is not an aspiration but a floor: below one third of effort spent on the self-model, $R$ drops under the L2 gate and the material never consolidates into cognitive qualia. The [triple-lock learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ (T-109…T-112 [Т]) transfer directly: too little signal, too fast for integration, or destructively strong are the three separable failure causes. New skills consolidate **by line**: to fix $(i,j)$, train it in the triple with its mediator $k^*$.
+**Derivation.** The reflection threshold $R_{\mathrm{th}} = 1/3$ [T] is not an aspiration but a floor: below one third of effort spent on the self-model, $R$ drops under the L2 gate and the material never consolidates into cognitive qualia. The [triple-lock learning bounds](/docs/applied/coherence-cybernetics/learning-bounds) $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ (T-109…T-112 [T]) transfer directly: too little signal, too fast for integration, or destructively strong are the three separable failure causes. New skills consolidate **by line**: to fix $(i,j)$, train it in the triple with its mediator $k^*$.
 
 **Number.** $R_{\mathrm{th}} = 1/3$ — one third of study time on reflection (self-testing/recall/teaching-back), as a theorem threshold, not a study tip.
 
-**Status.** **[Т]** ($R_{\mathrm{th}}$, triple-lock) / **[Г]** (the specific skill$\leftrightarrow$axis dictionary).
+**Status.** **[T]** ($R_{\mathrm{th}}$, triple-lock) / **[H]** (the specific skill$\leftrightarrow$axis dictionary).
 
 **Test.** Spaced retrieval and interleaving already outperform massed study empirically; the sharp prediction here is the *fraction*: reflective time below $\sim 1/3$ should show a qualitative (not gradual) drop in retention, marking the $R = 1/3$ gate.
 
@@ -92,7 +92,7 @@ cover all 21 pairs exactly once, with attendance load **exactly 3** per member a
 
 **Number.** 7 meetings, load 3 each, 0 overlap, single-fault-tolerant — all machine-verified.
 
-**Status.** **[Т-structure]** (the covering optimality and fault tolerance are theorems) / **[С]** (the "roles map to the seven axes" dictionary).
+**Status.** **[Т-structure]** (the covering optimality and fault tolerance are theorems) / **[C]** (the "roles map to the seven axes" dictionary).
 
 **Test.** Against an ad-hoc meeting schedule, the Steiner schedule is predicted to maintain all pairwise relationships at lower total meeting-load and to degrade gracefully under absence; a schedule that omits any line leaves exactly three pair-relations uncovered — a concrete, checkable failure mode.
 
@@ -100,9 +100,9 @@ cover all 21 pairs exactly once, with attendance load **exactly 3** per member a
 
 **Dictionary.** Nested subjecthood: individual → team → organization.
 
-**Derivation.** $\mathrm{SAD}_{\max} = 3$ [Т] (T-142): subjecthood does not compose beyond three levels. Structures deeper than three subject-floors do not form a fourth subject — they form **administration**, an ecology of organizations rather than a larger mind (the same ceiling that makes a UHM-compliant super-intelligence necessarily an *ecology*, [App. K](/docs/applied/coherence-cybernetics/theorems), S-14).
+**Derivation.** $\mathrm{SAD}_{\max} = 3$ [T] (T-142): subjecthood does not compose beyond three levels. Structures deeper than three subject-floors do not form a fourth subject — they form **administration**, an ecology of organizations rather than a larger mind (the same ceiling that makes a UHM-compliant super-intelligence necessarily an *ecology*, [App. K](/docs/applied/coherence-cybernetics/theorems), S-14).
 
-**Status.** **[Т]** (the ceiling) / **[И]** (the organizational reading).
+**Status.** **[T]** (the ceiling) / **[I]** (the organizational reading).
 
 **Design consequence.** Build mega-structures as ecologies of $\leq 3$-deep subjects, not as a single agent scaled without limit; expect the fourth tier to behave as coordination, not cognition.
 
@@ -118,17 +118,17 @@ cover all 21 pairs exactly once, with attendance load **exactly 3** per member a
 
 **Number.** $[n,k,d] = [7,4,3]$: corrects single errors, detects double; three checks localize one of seven.
 
-**Status.** **[Т]**.
+**Status.** **[T]**.
 
 **Test.** Any seven-channel system instrumented for per-channel health should be able to localize a single degraded channel from three parity checks alone, without probing all 21 pairwise relations — a directly buildable diagnostic.
 
 ### §3.2 Discovery 7 — distributed systems: buses, not point-to-point {#d7}
 
-Replace 21 pairwise channels by **7 triple-buses** (the lines): each node sits on exactly 3 buses (uniform load, a consequence of the 2-transitivity of $\mathrm{PSL}(2,7)$), any two buses intersect (guaranteed rendezvous), and routing repair follows the closure law — a path $(i\to j)$ regenerates only through $k^*(i,j)$, a deterministic fallback with no routing tables. This discovery is developed to full depth as a reference protocol in [FANOS](/docs/applied/fanos/fanos-specification); here it is one instance of the same engine. **[Т]**.
+Replace 21 pairwise channels by **7 triple-buses** (the lines): each node sits on exactly 3 buses (uniform load, a consequence of the 2-transitivity of $\mathrm{PSL}(2,7)$), any two buses intersect (guaranteed rendezvous), and routing repair follows the closure law — a path $(i\to j)$ regenerates only through $k^*(i,j)$, a deterministic fallback with no routing tables. This discovery is developed to full depth as a reference protocol in [FANOS](/docs/applied/fanos/fanos-specification); here it is one instance of the same engine. **[T]**.
 
 ### §3.3 Discovery 8 — the agent's constitution from constants {#d8}
 
-A UHM-compliant agent is governed by theorem-fixed dials, not hyperparameters: reflection budget $\geq 1/3$ ($R_{\mathrm{th}}$); purity window $(2/7, 3/7]$ with update-strength ceiling $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ (T-104); composition $\leq 3$ (SAD); inter-module coherence attenuating $\times 1/9$ per line-projected hop; **line-aware routing** (a mixture-of-experts blind to the lines pays that ninefold integration loss); and **grokking as a $\Phi$-crossing** (the delayed generalization jump predicted to be block-integration $\Phi$ crossing 1). Developed to full depth in the [SYNARC-Ω specification](/docs/applied/coherence-cybernetics/implementation); a *constitution from constants*. **[Т]**-arithmetic / **[С]**-dictionary.
+A UHM-compliant agent is governed by theorem-fixed dials, not hyperparameters: reflection budget $\geq 1/3$ ($R_{\mathrm{th}}$); purity window $(2/7, 3/7]$ with update-strength ceiling $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ (T-104); composition $\leq 3$ (SAD); inter-module coherence attenuating $\times 1/9$ per line-projected hop; **line-aware routing** (a mixture-of-experts blind to the lines pays that ninefold integration loss); and **grokking as a $\Phi$-crossing** (the delayed generalization jump predicted to be block-integration $\Phi$ crossing 1). Developed to full depth in the [SYNARC-Ω specification](/docs/applied/coherence-cybernetics/implementation); a *constitution from constants*. **[T]**-arithmetic / **[C]**-dictionary.
 
 ---
 
@@ -164,7 +164,7 @@ $$
 
 **Derivation.** [T-256 [Т+И]](/docs/applied/research/one-grammar#t-256) already establishes that symbolic systems are orbits of Fano subconfigurations under $\mathrm{Aut} = \mathrm{PSL}(2,7)$ of order 168 — cross-cultural recurrence as a theorem. The third-order principle adds a sharp corollary: **stable cultural forms are triadic, not dyadic** — triads of deities, three branches of power, triples of archetypes — because the triple is the *minimal carrier of distinguishable structure* while a pair is structureless under $\mathrm{Aut}$ (one orbit, §0).
 
-**Status.** **[Т]** (third-order $\Rightarrow$ triads are the minimal structured unit) / **[Г]** (the specific cultural mapping).
+**Status.** **[T]** (third-order $\Rightarrow$ triads are the minimal structured unit) / **[H]** (the specific cultural mapping).
 
 **Test.** On mythology and institutional corpora, the frequency of stable **triads** should exceed that of stable **dyads**, controlling for base rates — a corpus-linguistics measurement.
 
@@ -172,7 +172,7 @@ $$
 
 ## §5. Level V — physics: the senior sibling {#уровень-v}
 
-Physics needs no separate catalogue entry: it is the corpus layer where the engine was **first** applied, and every discovery above is a younger sibling of a physical one. The cubic vision is the [Fano Yukawa selection rule [Т]](/docs/physics/gauge-symmetry/fano-selection-rules); the channel layer ($\times 1/9$) is the [FSQCE $\Phi$-contraction [Т]](/docs/applied/coherence-cybernetics/theorems); the code layer is Steane $= \mathrm{CSS}$; and "bicoherence" is what physics calls the **three-point function**. The programme did not borrow from physics; physics was the first domain to be read by the same seven.
+Physics needs no separate catalogue entry: it is the corpus layer where the engine was **first** applied, and every discovery above is a younger sibling of a physical one. The cubic vision is the [Fano Yukawa selection rule [T]](/docs/physics/gauge-symmetry/fano-selection-rules); the channel layer ($\times 1/9$) is the [FSQCE $\Phi$-contraction [T]](/docs/applied/coherence-cybernetics/theorems); the code layer is Steane $= \mathrm{CSS}$; and "bicoherence" is what physics calls the **three-point function**. The programme did not borrow from physics; physics was the first domain to be read by the same seven.
 
 ---
 
@@ -196,7 +196,7 @@ Physics needs no separate catalogue entry: it is the corpus layer where the engi
 
 ## §7. Honest boundaries {#границы}
 
-The second-order blind spot cuts both ways: it explains why the seven were never seen in ordinary statistics, but it also means **the decisive experiments are third-order**, and triple statistics need orders of magnitude more data than pairwise ones (third moments have large variance). Discovery 1's time-*ratio* is one parametrization — the *order* is structural, the ratio is not. Discoveries 9–10 are **[Г]** on the dictionary while **[Т]** on the arithmetic. The cheapest decisive test of the entire programme is Discovery 1's line-resolved bicoherence, precisely because the data already exist. And every mapping is licensed only insofar as it passes the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря): the interpretation is optional, the third-order combinatorics is not.
+The second-order blind spot cuts both ways: it explains why the seven were never seen in ordinary statistics, but it also means **the decisive experiments are third-order**, and triple statistics need orders of magnitude more data than pairwise ones (third moments have large variance). Discovery 1's time-*ratio* is one parametrization — the *order* is structural, the ratio is not. Discoveries 9–10 are **[H]** on the dictionary while **[T]** on the arithmetic. The cheapest decisive test of the entire programme is Discovery 1's line-resolved bicoherence, precisely because the data already exist. And every mapping is licensed only insofar as it passes the [self-checking dictionary](/docs/applied/research/one-grammar#самопроверяемость-словаря): the interpretation is optional, the third-order combinatorics is not.
 
 ---
 

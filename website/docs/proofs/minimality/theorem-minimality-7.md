@@ -14,7 +14,7 @@ The dimensionality $N = 7$ is an **axiom** ([Axiom 3](/docs/core/foundations/axi
 
 The **theorem** below (Track A) shows that 7 is the **minimum** value at which conditions (AP)+(PH)+(QG) *can be satisfied*. Independently, the [structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) (Track B) gives $N = 7$ from theorems P1+P2 (derived from (AP)+(PH)+(QG)+(V)) via the Hurwitz theorem.
 
-**Honest formulation:** "If we study systems with (AP)+(PH)+(QG), then N ≥ 7. We choose N = 7 as the minimal non-trivial case. This value is independently **proven** by the octonionic structure (P1+P2 [Т] via the T15 chain)."
+**Honest formulation:** "If we study systems with (AP)+(PH)+(QG), then N ≥ 7. We choose N = 7 as the minimal non-trivial case. This value is independently **proven** by the octonionic structure (P1+P2 [T] via the T15 chain)."
 :::
 
 **Theorem (Minimal Completeness of UHM):**
@@ -181,11 +181,11 @@ Vacuum coupling determines the energy supply. A system can be closed (without O)
 **(F7 is independent of the rest):**
 Integration (Trace) unifies all components. Without $\mathrm{Tr}$ the system can exist fragmentarily.
 
-:::info Methodological clarification [Т]
-The functional independence of F1–F7 is justified constructively: for each pair Fi, Fj a state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is exhibited in which Fi $\neq 0$, Fj $= 0$. This is the standard method for proving linear independence of functionals [Т].
+:::info Methodological clarification [T]
+The functional independence of F1–F7 is justified constructively: for each pair Fi, Fj a state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is exhibited in which Fi $\neq 0$, Fj $= 0$. This is the standard method for proving linear independence of functionals [T].
 :::
 
-:::info Constructive counterexamples [Т] {#конструктивные-контрпримеры}
+:::info Constructive counterexamples [T] {#конструктивные-контрпримеры}
 
 An explicit state $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ confirming independence is provided for each pair.
 
@@ -278,7 +278,7 @@ Let $\mathcal{H}_5 = \text{span}\{|A\rangle, |S\rangle, |D\rangle, |L\rangle, |O
 
 *Mathematically:*
 - No $\rho_E$, no spectral decomposition for interiority
-- **Definition [О].** $\mathrm{Exp}_k := (\lambda_k, [|q_k\rangle], \mathrm{Context}_k, \mathrm{Hist}_k)$ where $\lambda_k \in \mathrm{Spec}(\rho_E)$, $|q_k\rangle \in \mathcal{H}_E$. **Domain:** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is defined if and only if the E-subspace exists in $\mathcal{H}$. At $N=6$ (without the E-dimension): $\mathcal{H} = \mathbb{C}^6$, E $\notin$ basis. Consequently, $\mathrm{Tr}_{-E}$ is not defined as an operation, $\rho_E$ does not exist as a mathematical object, and $\mathrm{Exp}_k$ has no domain.
+- **Definition [D].** $\mathrm{Exp}_k := (\lambda_k, [|q_k\rangle], \mathrm{Context}_k, \mathrm{Hist}_k)$ where $\lambda_k \in \mathrm{Spec}(\rho_E)$, $|q_k\rangle \in \mathcal{H}_E$. **Domain:** $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ is defined if and only if the E-subspace exists in $\mathcal{H}$. At $N=6$ (without the E-dimension): $\mathcal{H} = \mathbb{C}^6$, E $\notin$ basis. Consequently, $\mathrm{Tr}_{-E}$ is not defined as an operation, $\rho_E$ does not exist as a mathematical object, and $\mathrm{Exp}_k$ has no domain.
 
 *Violation of (PH):*
 Phenomenology requires the existence of an E-subspace with $\rho_E$ and its spectral decomposition:
@@ -310,7 +310,7 @@ $$
 \mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
-where $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator)), $g_V(P)$ — V-preservation gate.
+where $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([φ operator](/docs/core/operators/phi-operator)), $g_V(P)$ — V-preservation gate.
 
 Without $O$:
 - No free energy source
@@ -445,13 +445,13 @@ Articulation is the primary act of reality: "Draw a distinction" (Spencer-Brown)
 
 **Therefore:** $\dim(\mathcal{H}) \geq 7$
 
-#### Theorem (Strict necessity of N = 7) **[Т]** {#теорема-строгая-необходимость-7}
+#### Theorem (Strict necessity of N = 7) **[T]** {#теорема-строгая-необходимость-7}
 
 **Statement.** There is no alternative set of 6 functions covering the requirements (AP)+(PH)+(QG). The minimal dimensionality $N = 7$ is strictly necessary.
 
 **Proof (3 steps).**
 
-**Step 1 (Octonionic track [Т]).** By [T-15 [Т]](/docs/proofs/minimality/theorem-octonionic-derivation#мост):
+**Step 1 (Octonionic track [T]).** By [T-15 [T]](/docs/proofs/minimality/theorem-octonionic-derivation#мост):
 - (AP)+(PH)+(QG)+(V) $\Rightarrow$ P1 (normed division algebra) + P2 (non-associativity)
 - By the Hurwitz theorem: $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$
 - P2 excludes $\mathbb{R}$ ($\dim = 1$), $\mathbb{C}$ ($\dim = 2$), $\mathbb{H}$ ($\dim = 4$) — all associative
@@ -465,10 +465,10 @@ $$
 
 The value 6 is **absent** from this set $\Rightarrow$ an alternative 6D set is impossible.
 
-**Step 3 (Functional uniqueness).** The 7 functions F1–F7 are pairwise independent ([40f [Т]](#итог-части-iii)). $\mathrm{rank}(\text{dependency matrix } F \times \{AP, PH, QG\}) = 7$. $\blacksquare$
+**Step 3 (Functional uniqueness).** The 7 functions F1–F7 are pairwise independent ([40f [T]](#итог-части-iii)). $\mathrm{rank}(\text{dependency matrix } F \times \{AP, PH, QG\}) = 7$. $\blacksquare$
 
 :::info Historical context
-Previously, the strict necessity $N \geq 7$ had status **[С]**, since it had not been proven that **no alternative 6-dimensional decomposition** can cover (AP)+(PH)+(QG). The Hurwitz theorem (Step 2) definitively closes this gap: $\dim(\mathrm{Im}(\mathcal{A})) = 6$ is impossible for normed division algebras.
+Previously, the strict necessity $N \geq 7$ had status **[C]**, since it had not been proven that **no alternative 6-dimensional decomposition** can cover (AP)+(PH)+(QG). The Hurwitz theorem (Step 2) definitively closes this gap: $\dim(\mathrm{Im}(\mathcal{A})) = 6$ is impossible for normed division algebras.
 :::
 
 ---
@@ -514,7 +514,7 @@ $$
 $$
 
 $$
-\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P) \quad \text{(regeneration [Т])}
+\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P) \quad \text{(regeneration [T])}
 $$
 
 **Step 4: Verification of (AP) — Autopoiesis**
@@ -551,7 +551,7 @@ $$
 
 This is realizable when:
 - $\kappa > \gamma_{\text{dissipation}}$ (regeneration exceeds dissipation)
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model [Т] ([φ operator](/docs/core/operators/phi-operator#определение))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model [T] ([φ operator](/docs/core/operators/phi-operator#определение))
 
 **Step 5: Verification of (PH) — Phenomenology**
 
@@ -600,15 +600,15 @@ $$
 $$
 
 where:
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator))
-- $(\rho_* - \Gamma)$ — the unique CPTP relaxation [Т] (replacement channel + Bures optimality)
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [Т], $\kappa_0$ — [categorical derivation](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) from $\mathcal{D}_\Omega \dashv \mathcal{R}$
-- $g_V(P)$ — V-preservation gate [Т] (refines $\Theta(\Delta F)$ from Landauer, see [evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([φ operator](/docs/core/operators/phi-operator))
+- $(\rho_* - \Gamma)$ — the unique CPTP relaxation [T] (replacement channel + Bures optimality)
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T], $\kappa_0$ — [categorical derivation](../../core/foundations/axiom-septicity#структурный-анзац-kappa0) from $\mathcal{D}_\Omega \dashv \mathcal{R}$
+- $g_V(P)$ — V-preservation gate [T] (refines $\Theta(\Delta F)$ from Landauer, see [evolution](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 
 **Correctness check:**
 1. $\mathcal{R}[\Gamma, E]$ preserves Hermiticity: $(\rho_* - \Gamma)^\dagger = \rho_*^\dagger - \Gamma^\dagger = \rho_* - \Gamma$
 2. Trace is preserved: $\mathrm{Tr}(\mathcal{R}) = \kappa \cdot (\mathrm{Tr}(\rho_*) - \mathrm{Tr}(\Gamma)) = \kappa \cdot (1 - 1) = 0$
-3. For $\rho_* \in \mathcal{D}(\mathcal{H})$ and sufficiently small $\kappa$, evolution preserves $\Gamma \geq 0$ (CPTP interpolation [Т])
+3. For $\rho_* \in \mathcal{D}(\mathcal{H})$ and sufficiently small $\kappa$, evolution preserves $\Gamma \geq 0$ (CPTP interpolation [T])
 
 **Step 7: Verification of (V) — Viability**
 
@@ -763,7 +763,7 @@ where $\mathrm{Ric}$ is the analogue of the Ricci tensor on the space of density
 
 ### 7.1 Formulation
 
-**Theorem (Basis uniqueness):** [Т]/[С] **PARTIALLY RIGOROUS**
+**Theorem (Basis uniqueness):** [T]/[C] **PARTIALLY RIGOROUS**
 
 The basis $\{A, S, D, L, E, O, U\}$ is the **unique** (up to isomorphism) 7-dimensional decomposition satisfying (AP)+(PH)+(QG).
 
@@ -771,11 +771,11 @@ The basis $\{A, S, D, L, E, O, U\}$ is the **unique** (up to isomorphism) 7-dime
 
 | Marker | Meaning | Description |
 |--------|----------|----------|
-| **[Т]** RIGOROUS | Mathematically proven | Follows from axioms without additional assumptions |
-| **[С]** CONDITIONAL | Proven under assumptions | Requires interpretational or physical assumptions |
-| **[П]** PROGRAM | Research direction | Hypothesis requiring further work |
+| **[T]** RIGOROUS | Mathematically proven | Follows from axioms without additional assumptions |
+| **[C]** CONDITIONAL | Proven under assumptions | Requires interpretational or physical assumptions |
+| **[P]** PROGRAM | Research direction | Hypothesis requiring further work |
 
-### 7.2 Algebraic Uniqueness (A, S, D, L, U) — [Т] RIGOROUS
+### 7.2 Algebraic Uniqueness (A, S, D, L, U) — [T] RIGOROUS
 
 **Theorem 7.2.1:** The dimensions $\{A, S, D, L, U\}$ are determined **uniquely** (up to isomorphism) by the algebraic properties of operators on $\mathcal{L}(\mathcal{H})$.
 
@@ -800,7 +800,7 @@ The consistency condition in (AP) requires an algebraic structure. On $\mathcal{
 **Step 5 (U — Unity):**
 The integration condition in (AP) requires a linear functional normalizing states. On $\mathcal{L}(\mathcal{H})$ there exists a unique (up to scalar) linear functional with the cyclic property $\mathrm{Tr}(AB) = \mathrm{Tr}(BA)$ — this is the trace. ∎
 
-### 7.3 Functional Uniqueness of E — [Т] RIGOROUS {#единственность-e}
+### 7.3 Functional Uniqueness of E — [T] RIGOROUS {#единственность-e}
 
 **Theorem 7.3.1:** E is the unique dimension for which axiom (PH) **is not automatically derivable** from the remaining dimensions.
 
@@ -826,7 +826,7 @@ $$
 
 *Justification:* $\rho_O$ contains information about the coupling to the vacuum (energetic foundation), but not about "what it is like to be the system".
 
-**(B) Categorical argument from κ₀.** The κ₀ formula ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
+**(B) Categorical argument from κ₀.** The κ₀ formula ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)}
@@ -852,13 +852,13 @@ Only E is associated with $\rho \in \mathcal{D}(\mathcal{H})$, $\mathrm{Tr}(\rho
 
 **Conclusion:** E is functionally unique as the carrier of (PH) by **three independent** arguments: (A) axiomatic, (B) categorical from κ₀, (C) mathematical. ∎
 
-### 7.4 Functional Uniqueness of O — [Т] RIGOROUS {#единственность-o}
+### 7.4 Functional Uniqueness of O — [T] RIGOROUS {#единственность-o}
 
 **Theorem 7.4.1:** O is the unique dimension ensuring the regenerative part of (QG) is satisfied.
 
 **Proof:**
 
-**(A) Argument from the form of ℛ.** The regenerative term $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **[Т]** ([derivation](/docs/core/dynamics/evolution#вывод-формы-регенерации)) and the V-preservation gate $g_V(P)$, defined via purity and the Bures metric (A2) **[Т]**, require a source with $P > P_{\mathrm{crit}}$.
+**(A) Argument from the form of ℛ.** The regenerative term $\mathcal{R}[\Gamma, E] = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ **[T]** ([derivation](/docs/core/dynamics/evolution#вывод-формы-регенерации)) and the V-preservation gate $g_V(P)$, defined via purity and the Bures metric (A2) **[T]**, require a source with $P > P_{\mathrm{crit}}$.
 
 **Lemma 7.4.2:** Free energy can only come from a state of **minimal entropy**.
 
@@ -871,7 +871,7 @@ $$
 H|0\rangle = E_0|0\rangle, \quad E_0 = \min(\text{Spec}(H))
 $$
 
-**(B) Categorical argument from κ₀.** The κ₀ formula ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
+**(B) Categorical argument from κ₀.** The κ₀ formula ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\mathrm{Hom}(O, E)| \cdot |\mathrm{Hom}(O, U)|}{\mathrm{End}(O)} = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}}
@@ -886,7 +886,7 @@ Upon removing O: $\mathrm{End}(O)$ is undefined → κ₀ is undefined → the a
 
 **(C) Argument from Page–Wootters (A5).** O is the distinguished dimension for the tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined, $H_{\text{eff}}$ is not derivable.
 
-**(D) Functional incompatibility with other dimensions** (Lemma 2.2, [Т]):
+**(D) Functional incompatibility with other dimensions** (Lemma 2.2, [T]):
 
 | Dimension | Math object | Compatibility with O-function |
 |---|---|---|
@@ -897,9 +897,9 @@ Upon removing O: $\mathrm{End}(O)$ is undefined → κ₀ is undefined → the a
 | E | $\rho$: $\mathrm{Tr}(\rho) = 1$ (state) | ✗ — interior aspect; O is exterior (Th. 7.5) |
 | U | $\mathrm{Tr}$ (trace) | ✗ — integration, not a source |
 
-**Conclusion:** O is functionally unique by **four independent** arguments: (A) from the form of ℛ [Т], (B) from κ₀ [Т], (C) from Page–Wootters (A5), (D) from functional independence [Т]. ∎
+**Conclusion:** O is functionally unique by **four independent** arguments: (A) from the form of ℛ [T], (B) from κ₀ [T], (C) from Page–Wootters (A5), (D) from functional independence [T]. ∎
 
-### 7.5 Theorem on the Orthogonality of E and O — [Т] RIGOROUS {#ортогональность-eo}
+### 7.5 Theorem on the Orthogonality of E and O — [T] RIGOROUS {#ортогональность-eo}
 
 **Theorem 7.5.1:** E and O belong to **different causal categories** and cannot be merged.
 
@@ -952,18 +952,18 @@ Regeneration **does not depend on the phenomenological state**, which violates (
 
 5. **Functional uniqueness of E:** E is the unique carrier of (PH) by three arguments: axiomatic, categorical (κ₀), and mathematical ($\mathrm{rank}(\rho) > 1$). [Proof →](#единственность-e)
 
-6. **Functional uniqueness of O:** O is the unique source of regeneration by four arguments: from the form of ℛ [Т], from κ₀ [Т], from Page–Wootters (A5), from functional independence [Т]. [Proof →](#единственность-o)
+6. **Functional uniqueness of O:** O is the unique source of regeneration by four arguments: from the form of ℛ [T], from κ₀ [T], from Page–Wootters (A5), from functional independence [T]. [Proof →](#единственность-o)
 
 7. **Orthogonality of E and O:** E and O cannot be merged — the causal argument (External ≠ Internal) is reinforced by the categorical argument from κ₀: for $O=E$ regeneration loses phenomenological feedback. [Proof →](#ортогональность-eo)
 
-8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set is proven via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [Т]. [Proof →](#теорема-строгая-необходимость-7)
+8. **Strict necessity of N = 7:** The impossibility of an alternative 6D set is proven via the Hurwitz theorem ($\dim(\mathrm{Im}(\mathcal{A})) \in \{0,1,3,7\}$) + functional uniqueness 40f [T]. [Proof →](#теорема-строгая-необходимость-7)
 
 ### 8.2 What Remains Conditional
 
-1. **Functional uniqueness of E:** **[Т]** — [proven](#единственность-e)
-2. **Functional uniqueness of O:** **[Т]** — [proven](#единственность-o)
-3. **Orthogonality of E and O:** **[Т]** — [proven](#ортогональность-eo)
-4. **Strict necessity of N = 7 (S1):** **[Т]** — [proven](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [Т])
+1. **Functional uniqueness of E:** **[T]** — [proven](#единственность-e)
+2. **Functional uniqueness of O:** **[T]** — [proven](#единственность-o)
+3. **Orthogonality of E and O:** **[T]** — [proven](#ортогональность-eo)
+4. **Strict necessity of N = 7 (S1):** **[T]** — [proven](#теорема-строгая-необходимость-7) (Hurwitz theorem + 40f [T])
 
 All four gaps are closed. There are **no remaining** conditional results in the minimality theorem.
 
@@ -984,7 +984,7 @@ Can $\dim(\mathcal{H})$ be treated as a continuous parameter? What happens as $\
 **Problem 3: Higher dimensions**
 What additional properties does a system acquire for $\dim(\mathcal{H}) > 7$?
 
-**Problem 4: Emergence of spacetime** — [П] PROGRAM
+**Problem 4: Emergence of spacetime** — [P] PROGRAM
 How do space and time arise from correlations between subsystems? Working hypotheses:
 - **Hypothesis 3.1 (Space from correlations):** $d_{\text{eff}}(\alpha, \beta) := f(\|\Gamma_\alpha \otimes \Gamma_\beta - \Gamma_{\alpha\beta}\|_F)$
 - **Hypothesis 3.2 (Time from change):** $\tau_{\text{int}} := \int_0^\tau \|\dot{\Gamma}(\tau')\|_F \, d\tau'$
@@ -994,15 +994,15 @@ How do space and time arise from correlations between subsystems? Working hypoth
 ## Part IX: Structural derivation via octonions {#часть-ix-октонионный-вывод}
 
 :::info Second path to N = 7 (Track B)
-This part summarizes the [full derivation](/docs/proofs/minimality/theorem-octonionic-derivation), giving $N = 7$ from theorems P1+P2 [Т], **independently** of (AP)+(PH)+(QG).
+This part summarizes the [full derivation](/docs/proofs/minimality/theorem-octonionic-derivation), giving $N = 7$ from theorems P1+P2 [T], **independently** of (AP)+(PH)+(QG).
 :::
 
 ### 9.1 Theorems P1, P2 and the derivation
 
-**[Т] P1:** The space of internal degrees of freedom ≅ Im($\mathcal{A}$), where $\mathcal{A}$ is a normed division algebra. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
-**[Т] P2:** $\mathcal{A}$ is non-associative. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
+**[T] P1:** The space of internal degrees of freedom ≅ Im($\mathcal{A}$), where $\mathcal{A}$ is a normed division algebra. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
+**[T] P2:** $\mathcal{A}$ is non-associative. *(Derived via the bridge chain T15 from (AP)+(PH)+(QG)+(V).)*
 
-**[Т] Derivation:** P1 → [Т] Hurwitz → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 excludes $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = 7$.
+**[T] Derivation:** P1 → [T] Hurwitz → $\mathcal{A} \in \{\mathbb{R}, \mathbb{C}, \mathbb{H}, \mathbb{O}\}$ → P2 excludes $\mathbb{R}, \mathbb{C}, \mathbb{H}$ → $\mathcal{A} = \mathbb{O}$ → $N = 7$.
 
 ### 9.2 Comparative table of the two tracks
 
@@ -1012,7 +1012,7 @@ This part summarizes the [full derivation](/docs/proofs/minimality/theorem-octon
 | **Mathematical apparatus** | Functional analysis, Rosen (M,R)-systems | Hurwitz theorem, division algebras |
 | **Type of result** | $N \geq 7$ (necessity) + construction (sufficiency) | $N = 7$ (uniqueness by exclusion) |
 | **Bonus structure** | Basis {A,S,D,L,E,O,U}, uniqueness | $G_2$-symmetry, Fano plane, Hamming code |
-| **Status** | [Т] Proven | [Т] Mathematically rigorous, P1+P2 [Т] |
+| **Status** | [T] Proven | [T] Mathematically rigorous, P1+P2 [T] |
 
 ### 9.3 Convergence of the two tracks
 
@@ -1020,11 +1020,11 @@ The two tracks give the same number ($N = 7$), but bring **different structure**
 - Track A gives the functional interpretation of each dimension
 - Track B gives the algebraic symmetry ($G_2$) and combinatorial structure (Fano)
 
-Closure of the bridge (AP)+(PH)+(QG) ↔ P1+P2 — **[Т] SOLVED** via the 12-step chain T15 (theorems T11–T13 close condition (МП)).
+Closure of the bridge (AP)+(PH)+(QG) ↔ P1+P2 — **[T] SOLVED** via the 12-step chain T15 (theorems T11–T13 close condition (МП)).
 
-### Problem 5: Bridge closure — [Т] SOLVED {#проблема-5-мост}
+### Problem 5: Bridge closure — [T] SOLVED {#проблема-5-мост}
 
-**Problem 5 (Bridge closure) — SOLVED [Т].** Condition (МП) is proven as a theorem (T11–T13).
+**Problem 5 (Bridge closure) — SOLVED [T].** Condition (МП) is proven as a theorem (T11–T13).
 
 The complete formal chain of 12 steps (T15) establishes:
 
@@ -1032,7 +1032,7 @@ $$
 (AP)+(PH)+(QG)+(V) \xrightarrow{[\text{Т}]} N = 7 \xrightarrow{[\text{Т}]} \text{connectivity} \xrightarrow{[\text{Т}]} \lambda_{ij} \geq 1 \xrightarrow{[\text{Т}]} S_7\text{-uniformity} \xrightarrow{[\text{Т}]} k = 3 \xrightarrow{[\text{Т}]} \lambda = 1 \xrightarrow{[\text{Т}]} \text{PG}(2,2) \xrightarrow{[\text{Т}]} \mathbb{O} \xrightarrow{[\text{Т}]} P1+P2
 $$
 
-**Current status:** [Т] — all steps in the chain are theorems. Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13.
+**Current status:** [T] — all steps in the chain are theorems. Condition (МП) — the principle of minimal representation ($\lambda = 1$) — is proven via T11–T13.
 
 **Key theorems of the T15 chain:**
 - **T5, T6 [Т]:** $S_7$-equivariance of the atomic dissipator → uniform contraction of coherences **unconditionally** (removes the dependence on (КГ) in step 4)
@@ -1041,7 +1041,7 @@ $$
 - **T10 [Т]:** Fano channel ($k=3$, $c=1/3$) — the unique optimal among admissible BIBD channels
 - **T11–T13 [Т]:** Proof of condition (МП) — $\lambda = 1$ follows from optimality and uniqueness of the perfect code
 
-**Cascading consequence:** P1, P2 — [Т]. Track B (octonionic derivation) is fully rigorous.
+**Cascading consequence:** P1, P2 — [T]. Track B (octonionic derivation) is fully rigorous.
 
 See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#мост), [Lindblad operators](/docs/core/operators/lindblad-operators#редукция-моста).
 
@@ -1049,7 +1049,7 @@ See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#м
 
 ### 9.3 Track Σ: the diagnosability derivation {#трек-сигма}
 
-**Theorem Σ (T-224) [Т]** adds a fourth independent selector of seven, using no algebra at all — only sphere packing and design counting: perfect single-fault localizability (D1–D2) forces $n = 2^r - 1$; a nontrivial state grammar (D3) forces $n \geq 7$; and grammar rigidity (D4) holds **only** at $n = 7$ (nonlinear Vasil'ev perfect codes break uniqueness from $n = 15$ on). The identification of UHM axes with internally diagnosable status bits is the interpretive step [И]. See [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
+**Theorem Σ (T-224) [T]** adds a fourth independent selector of seven, using no algebra at all — only sphere packing and design counting: perfect single-fault localizability (D1–D2) forces $n = 2^r - 1$; a nontrivial state grammar (D3) forces $n \geq 7$; and grammar rigidity (D4) holds **only** at $n = 7$ (nonlinear Vasil'ev perfect codes break uniqueness from $n = 15$ on). The identification of UHM axes with internally diagnosable status bits is the interpretive step [I]. See [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
 
 | Aspect | Track A | Track B | Track Σ |
 |--------|---------|---------|---------|
@@ -1063,21 +1063,21 @@ See [detailed analysis](/docs/proofs/minimality/theorem-octonionic-derivation#м
 
 **The Theorem on Minimal Completeness is proven** with the following stratification by level of rigor:
 
-1. **[Т] Rigorously proven (7/7 dimensions):**
+1. **[T] Rigorously proven (7/7 dimensions):**
    - Sufficiency of the construction with $\dim(\mathcal{H}) = 7$
    - Necessity of each of the 7 specific dimensions (F1–F7)
    - Correspondence with Rosen (M,R)-systems
    - Algebraic uniqueness of A, S, D, L, U (spectral theorem, Stone's theorem, Jacobi theorem, trace properties)
    - Functional uniqueness of E (axiomatic, categorical from κ₀, mathematical arguments)
-   - Functional uniqueness of O (from the form of ℛ [Т], from κ₀ [Т], from Page–Wootters, from functional independence)
+   - Functional uniqueness of O (from the form of ℛ [T], from κ₀ [T], from Page–Wootters, from functional independence)
    - Orthogonality of E and O (causal + categorical from κ₀)
-   - Strict necessity of N = 7 (impossibility of 6D alternative via Hurwitz theorem + 40f [Т])
-   - Octonionic derivation (Track B): P1+P2 [Т] via the 12-step chain T15, bridge closed
+   - Strict necessity of N = 7 (impossibility of 6D alternative via Hurwitz theorem + 40f [T])
+   - Octonionic derivation (Track B): P1+P2 [T] via the 12-step chain T15, bridge closed
 
 2. **Accepted as axiom:**
    - Identity of being and experience ([Axiom Ω⁷](/docs/core/foundations/axiom-omega))
 
-3. **[П] Remains a research program:**
+3. **[P] Remains a research program:**
    - Topological connection with the Poincaré theorem
    - Emergence of spacetime
 
@@ -1087,9 +1087,9 @@ This proof follows the standard of mathematical honesty:
 - Every step is formally justified
 - Hypotheses are explicitly separated from theorems
 - Limits of applicability are stated
-- **Level of rigor is explicitly marked** ([Т]/[С]/[П])
+- **Level of rigor is explicitly marked** ([T]/[C]/[P])
 
-The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula ([Т при кинетике первого порядка], Th. 15.3.1) and functional independence (Lemma 2.2).
+The number 7 is not "magical" — it follows from the requirements of autopoiesis, phenomenology, and quantum foundation. It is the minimum number. The uniqueness of the basis is **fully proven** [Т]: algebraic uniqueness of A, S, D, L, U — from spectral theorems, functional uniqueness of E and O — from the κ₀ formula ([T at first-order kinetics], Th. 15.3.1) and functional independence (Lemma 2.2).
 
 ---
 
@@ -1136,7 +1136,7 @@ $$
 ---
 
 **Related documents:**
-- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — Track B: P1+P2 [Т] → $\mathbb{O}$ → N=7
+- [Structural derivation via octonions](/docs/proofs/minimality/theorem-octonionic-derivation) — Track B: P1+P2 [T] → $\mathbb{O}$ → N=7
 - [Holon](/docs/core/structure/holon) — definition of $\mathbb{H}$
 - [Seven dimensions](/docs/core/structure/dimensions) — basis $\{A, S, D, L, E, O, U\}$
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$

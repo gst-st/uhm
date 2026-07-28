@@ -242,7 +242,7 @@ Unpacking:
 
 **Numerical example: progression of shamatha practice.**
 
-| Stage | $|\gamma_{AE}|$ | $R_\varphi$ | $\overline{\mathrm{Gap}}$ | Subjective experience |
+| Stage | $\|\gamma_{AE}\|$ | $R_\varphi$ | $\overline{\mathrm{Gap}}$ | Subjective experience |
 |-------|:------:|:---:|:---:|:---|
 | Beginner | $0.10$ | $0.40$ | $0.30$ | Thoughts constantly distract |
 | 20 min practice | $0.22$ | $0.55$ | $0.25$ | Periods of stable concentration |
@@ -469,7 +469,7 @@ What is happening here?
 
 | Parameter | Wakefulness | Hypnosis | Shamatha |
 |-----------|:---:|:------:|:-------:|
-| $|\gamma_{AE}|$ | $0.12$ | $0.20$ | $0.22$ |
+| $\|\gamma_{AE}\|$ | $0.12$ | $0.20$ | $0.22$ |
 | $\mathrm{Gap}(L,E)$ | $0.25$ | $0.70$ | $0.20$ |
 | $R_\varphi$ | $0.45$ | $0.30$ | $0.55$ |
 | $\overline{\mathrm{Gap}}$ | $0.30$ | $0.35$ | $0.25$ |

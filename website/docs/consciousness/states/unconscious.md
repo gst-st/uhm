@@ -206,7 +206,7 @@ Additional feature: $\mathrm{Gap}(A,E)$ may be low — the subject **notices** e
 
 **Numerical example (detailed).** Patient with repressed childhood trauma:
 
-| Channel | $|\gamma_{ij}|$ | $\mathrm{Gap}(i,j)$ | $R_{ij}$ | Interpretation |
+| Channel | $\|\gamma_{ij}\|$ | $\mathrm{Gap}(i,j)$ | $R_{ij}$ | Interpretation |
 |-------|:---:|:---:|:---:|:---|
 | $(L,E)$ | $0.15$ | $0.92$ | $0.08$ | Logic–experience connection: strong, fully opaque |
 | $(A,E)$ | $0.12$ | $0.25$ | $0.60$ | Attention–experience connection: notices anxiety |

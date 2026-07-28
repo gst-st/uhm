@@ -296,8 +296,8 @@ $$
 
 | Threshold | Status | Justification |
 |-------|--------|-------------|
-| $R_{\text{th}} = 1/3$ | **[Т]** theorem | $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / $\mathcal{D}$ / ℛ) + Bayesian dominance [Т] |
-| $\Phi_{\text{th}} = 1$ | **[Т]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
+| $R_{\text{th}} = 1/3$ | **[T]** theorem | $K = 3$ derived from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) (Aut / $\mathcal{D}$ / ℛ) + Bayesian dominance [T] |
+| $\Phi_{\text{th}} = 1$ | **[T]** theorem | Unique self-consistent value at $P_{\text{crit}} = 2/7$ ([T-129](/docs/proofs/consciousness/operationalization#t-129)) |
 
 See [L2 thresholds: strict derivation](/docs/core/foundations/axiom-septicity#пороги-l2-строгий-вывод).
 :::
@@ -321,8 +321,8 @@ Bayesian argument with $K = 3$ alternatives (three types of dynamics from the [t
 3. The self-model $\varphi(\Gamma)$ must be distinguishable from the random hypothesis under $K = 3$ alternatives
 4. With $K = 3$ equally probable alternatives (system, noise, environment), Bayesian dominance requires the posterior probability of the system-model $> 1/K = 1/3$. This is the standard threshold from Bayesian decision theory: with $K$ alternatives and equal prior, the optimal choice requires $P(\text{model} \mid \text{data}) \geq 1/K$
 
-:::info K = 3 derived from axioms [Т]
-The number $K = 3$ is **not an assumption**, but a consequence of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): axioms A1–A5 generate **exactly three** structurally distinct types of dynamics — automorphisms (A5), dissipation $\mathcal{D}_\Omega$ (A1), regeneration $\mathcal{R}$ (A1+A4). A fourth type is impossible by virtue of uniqueness of the classifier Ω ([L-unification](/docs/core/operators/lindblad-operators), Th. 15.1, [Т]).
+:::info K = 3 derived from axioms [T]
+The number $K = 3$ is **not an assumption**, but a consequence of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): axioms A1–A5 generate **exactly three** structurally distinct types of dynamics — automorphisms (A5), dissipation $\mathcal{D}_\Omega$ (A1), regeneration $\mathcal{R}$ (A1+A4). A fourth type is impossible by virtue of uniqueness of the classifier Ω ([L-unification](/docs/core/operators/lindblad-operators), Th. 15.1, [T]).
 :::
 
 Full proof in [Theorem on reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии).
@@ -1378,8 +1378,8 @@ $$
    - Only $n = \infty$ gives a qualitatively new level (L4)
 4. This is a consequence of the **Postnikov stabilization theorem**: for finite-dimensional spaces the Postnikov tower stabilizes. $\blacksquare$
 
-:::warning Status [С]
-The argument via Postnikov stabilization applies to homotopy groups of a **fixed** CW-complex. Exp_∞ is a functorially defined ∞-groupoid, and stabilization of its truncations is a **non-trivial** claim that requires proving that higher homotopy groups of Exp_∞ are trivial. Current status: [С] (conditional on finite-dimensionality of Exp_∞).
+:::warning Status [C]
+The argument via Postnikov stabilization applies to homotopy groups of a **fixed** CW-complex. Exp_∞ is a functorially defined ∞-groupoid, and stabilization of its truncations is a **non-trivial** claim that requires proving that higher homotopy groups of Exp_∞ are trivial. Current status: [C] (conditional on finite-dimensionality of Exp_∞).
 :::
 
 **Remark:** Theoretically "intermediate" levels L3.5, L3.7, ... are possible, but they do not yield qualitatively new structure — only quantitative differences in $\pi_n$.
@@ -1567,7 +1567,7 @@ The term **"qualia"** is used **ONLY for L2**. Special terms are used for L3/L4.
 5. **Intermediate states:** Characteristics of states L2.5, L3.5 (quantitative, not qualitative differences)
 
 :::note On threshold status
-- $R_{\text{th}} = 1/3$ — [theorem [Т]](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), proven from triadic decomposition ($K=3$) and Bayesian dominance
+- $R_{\text{th}} = 1/3$ — [theorem [T]](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), proven from triadic decomposition ($K=3$) and Bayesian dominance
 - $\Phi_{\text{th}} = 1$ — [definition by convention (coherence dominance)](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), structurally motivated
 :::
 
@@ -1625,12 +1625,12 @@ Universal threshold formula: $X^{(n)}_{\text{th}} = 1/(n+1)$.
 | $\pi_2$ (homotopies) | — | — | + | + | + |
 | $\pi_3$ (2-homotopies) | — | — | — | + | + |
 | $\pi_\infty$ (all) | — | — | — | — | + |
-| Stability | + | + | + | [С] (metastable) | + (at $P > 6/7$) |
+| Stability | + | + | + | [C] (metastable) | + (at $P > 6/7$) |
 | Ego | — | — | + | Diffuse | — |
 
 ### Associator hierarchy {#иерархия-ассоциаторов}
 
-:::note Octonionic interpretation of levels [И]
+:::note Octonionic interpretation of levels [I]
 In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация) the interiority levels L0→L4 can be related to the depth of the associator $[x,y,z] = (xy)z - x(yz)$:
 
 | Level | Associator characteristic | Interpretation |
@@ -1641,7 +1641,7 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 | **L3** | Meta-associators | Reflection on non-associativity |
 | **L4** | Full $A_\infty$-structure | All levels of homotopic associativity |
 
-Bridge [Т] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
+Bridge [T] (closed, T15). See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---

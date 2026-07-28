@@ -421,7 +421,7 @@ In the 7D UHM formalism, the atoms of $\Omega$ correspond to the 7 Holon dimensi
 | **D** (Dynamics) | $S_D$ | $U(\tau) = e^{-iH_{eff}\tau}$ | Evolution |
 | **L** (Logic) | $S_L$ | $[A, B]$, $\{A, B\}$ | Commutation relations |
 | **E** (Interiority) | $S_E$ | $\rho_E = \text{Tr}_{-E}(\Gamma)$ | Reduced state |
-| **O** (Foundation) | $S_O$ | $|0\rangle\langle 0|$ | Vacuum |
+| **O** (Foundation) | $S_O$ | $\|0\rangle\langle 0\|$ | Vacuum |
 | **U** (Unity) | $S_U$ | $\text{Tr}(\cdot)$ | Normalization |
 
 ---

@@ -178,7 +178,7 @@ Connection of articulation with von Neumann entropy $S(\Gamma) = -\mathrm{Tr}(\G
 - Minimum entropy $S = 0$ — a pure state, maximum distinction. But a pure state in one dimension ($\gamma_{AA} = 1$) means total loss of all the others — this is not "good" articulation, but pathological one-sidedness.
 - **Optimal articulation** is an intermediate state: enough distinctions to single out structure, but not so many as to lose connectedness with the other dimensions.
 
-This accords with the [purity threshold](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[Т]**: consciousness arises at purity above $2/7$, i.e. when the system is sufficiently articulated to stand out from background noise.
+This accords with the [purity threshold](../../core/foundations/axiom-septicity) $P_{\text{crit}} = 2/7$ **[T]**: consciousness arises at purity above $2/7$, i.e. when the system is sufficiently articulated to stand out from background noise.
 
 ### Articulation and amount of information {#артикуляция-количество}
 
@@ -225,13 +225,13 @@ $$
 
 **Step 5. Universality.** The formula is the same for all seven dimensions, and this is a **consequence**, not an assumption:
 
-(a) $S_7$-equivariance of the atomic dissipator [T-5 **[Т]**](../../core/operators/lindblad-operators) means that the evolution equation for $\Gamma$ does not distinguish one dimension from another. If the dissipator is $S_7$-symmetric, then the natural measure of deficit must also be $S_7$-invariant: $\sigma_k$ depends only on $\gamma_{kk}$, and the functional form does not depend on the index $k$.
+(a) $S_7$-equivariance of the atomic dissipator [T-5 **[T]**](../../core/operators/lindblad-operators) means that the evolution equation for $\Gamma$ does not distinguish one dimension from another. If the dissipator is $S_7$-symmetric, then the natural measure of deficit must also be $S_7$-invariant: $\sigma_k$ depends only on $\gamma_{kk}$, and the functional form does not depend on the index $k$.
 
 (b) The function $f(\gamma) = \mathrm{clamp}(1 - 7\gamma,\; 0,\; 1)$ is the **unique** monotonically decreasing function on $[0,\, 1/7] \to [0,\, 1]$ that simultaneously (i) is linear, (ii) vanishes at $\gamma = 1/7$, and (iii) equals one at $\gamma = 0$. Uniqueness follows from the fact that a linear function with two fixed points is uniquely determined.
 
-**Step 6. Connection with T-92.** The derived formula is **Theorem T-92 [Т]** (canonical stress tensor). The formal proof and the equivalence of the stress and purity viability conditions are given in [CС Theorems](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+**Step 6. Connection with T-92.** The derived formula is **Theorem T-92 [T]** (canonical stress tensor). The formal proof and the equivalence of the stress and purity viability conditions are given in [CC Theorems](../../applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
-:::tip Theorem: Canonical stress formula [Т] (T-92)
+:::tip Theorem: Canonical stress formula [T] (T-92)
 For the coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with diagonal elements $\gamma_{kk}$, the **canonical stress** of dimension $k$:
 
 $$
@@ -247,7 +247,7 @@ This derivation applies to **all seven** dimensions without modification. The fo
 
 ---
 
-The [stress variable](../../core/operators/lindblad-operators) $\sigma_A$ (T-92 **[Т]**) characterises the **deficit** of articulation:
+The [stress variable](../../core/operators/lindblad-operators) $\sigma_A$ (T-92 **[T]**) characterises the **deficit** of articulation:
 
 $$
 \sigma_A = \mathrm{clamp}(1 - 7\gamma_{AA},\; 0,\; 1)
@@ -363,7 +363,7 @@ The elements $\gamma_{Ai}$ of the coherence matrix describe the connection of ar
 
 ## Articulation and the Fano plane {#артикуляция-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM the dimension $A$ corresponds to the imaginary unit $e_1 \in \mathrm{Im}(\mathbb{O})$. Articulation lies in sector **3** of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).
 
 On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, articulation $A$ ($= e_1$) belongs to **three Fano lines**:
 
@@ -373,7 +373,7 @@ On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{
 | $\{E, U, A\}$ = $\{5, 6, 1\}$ | Interiority + Unity + Articulation | **Higgs line**: $A$ is the only element of sector **3** on this line, a bridge between the spatial and electroweak sectors |
 | $\{O, A, D\}$ = $\{7, 1, 3\}$ | Ground + Articulation + Dynamics | **Genetic line**: from the ground, through distinction, motion is born — "time through distinction" |
 
-:::tip Uniqueness of A on the Fano plane (T-177) [Т]
+:::tip Uniqueness of A on the Fano plane (T-177) [T]
 Articulation is the **only** dimension from sector **3** lying on the Higgs line $\{E, U, A\}$. This makes $A$ a bridge between the spatial sector $\{A, S, D\}$ and the electroweak sector $\{E, O, U\}$.
 
 This property is precisely what explains why the [tree-level Yukawa coupling](../../physics/gauge-symmetry/fano-selection-rules) exists only for the third generation of fermions ($k = 1$, dimension $A$): only $A$ is simultaneously connected to the Higgs dimensions $E$ and $U$.
@@ -395,8 +395,8 @@ graph TD
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $A = e_1$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_1 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $A = e_1$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Gradations of articulation {#градации-артикуляции}

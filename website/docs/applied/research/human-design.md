@@ -117,18 +117,18 @@ On the claimed *mechanism*: the «neutrino stream imprint» is not supported by 
 
 ## §8. The falsification program for the human layer {#программа-фальсификации}
 
-What would move any human-layer claim of HD out of [И]/[Г] territory — pre-registered, with the machinery results above as instruments:
+What would move any human-layer claim of HD out of [I]/[H] territory — pre-registered, with the machinery results above as instruments:
 
 1. **The seasonality audit — executed on real data** (`hd_seasonal_audit.py`): official birth statistics were convolved with the machinery curve — USA daily 1994–2003 (CDC/NCHS, 39.7M births) and 2000–2014 (SSA, 62.2M), Germany/Spain/Sweden monthly 2000–2010 (Eurostat, 13.9M). Result, printed as it came out: real birth seasonality is weak (monthly shares $7.8$–$8.9\%$) and essentially orthogonal to the machinery wave (corr $-0.067$ / $+0.005$), so the seasonal correction to a cohort's type mix is **negligible** ($\le 0.14$ п.п.; Sweden the largest, its spring peak anti-phased with the wave). The operative reference numbers for any sample are therefore the **era numbers** of §3 — and the era corrections are large. The wave itself (12 п.п. by month) and the Kepler gate wave ($3.3\%$) remain the *entry checks*: a dataset failing them is miscomputed; a dataset passing them has proven nothing about people.
 2. **Blind type discrimination**: pre-registered protocol — practitioners (or subjects) attempt to identify own/others' types against shuffled controls at rates beyond chance, with the a priori base rates of §3 as the null model (a subtlety most informal tests miss: guessing «Generator» is right $68\%$ of the time by arithmetic alone).
 3. **Retest and inter-rater discipline** for any claimed observable correlate (the checkup rules of the [Prime Radiant demos](/docs/applied/research/prime-radiant#честные-демо) apply verbatim).
-4. Until such results exist, the human layer stays where the registry discipline puts every unvalidated reading: [И] — a practice vocabulary, not a measured mechanism.
+4. Until such results exist, the human layer stays where the registry discipline puts every unvalidated reading: [I] — a practice vocabulary, not a measured mechanism.
 
 ## §9. Status summary {#статусы}
 
 | Claim | Status |
 |---|---|
-| The HD map (wheel, 88° arc, channels, type rules) as implemented and cross-verified (300/300 ×4; the pyhd MG bug isolated) | [Т] machine-checked |
+| The HD map (wheel, 88° arc, channels, type rules) as implemented and cross-verified (300/300 ×4; the pyhd MG bug isolated) | [T] machine-checked |
 | Type/authority/split percentages are a priori properties of the machinery | [Т-computed] |
 | The profile law: 12 profiles $= \{(p,p{+}2),(p,p{+}3)\}$, weights $86.7/13.3 = \{93.8667\}$ | [Т-computed] |
 | Seasonal type wave (June $59.7\%$ → August $72.0\%$) and Kepler gate wave ($\pm 3.3\%$, perihelion gate 38 / aphelion gate 39) | [Т-computed], falsifiable instruments |
@@ -136,7 +136,7 @@ What would move any human-layer claim of HD out of [И]/[Г] territory — pre-r
 | Real-cohort convolution (USA CDC/SSA, DE/ES/SE Eurostat, 116M births): seasonal correction $\le 0.14$ п.п., corr with the wave $\approx 0$ | [Т-computed] on official data |
 | Antipodal law 32/32; wheel Gray-locality ($p = 0.0005$); center–trigram MI $1.74$ bits ($p = 0.0005$) | [Т-computed] |
 | Channels vs code distance | null ($p = 0.084$), printed as-is |
-| HD = composition of the blueprint's I Ching and astrology rows; differences from Γ-architecture as stated | [И] over [Т]-anchors |
+| HD = composition of the blueprint's I Ching and astrology rows; differences from Γ-architecture as stated | [I] over [T]-anchors |
 | Neutrino imprint mechanism | [не поддержано] known physics |
 | All psychological claims | untested here; §8 protocol required |
 

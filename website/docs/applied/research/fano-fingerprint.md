@@ -9,12 +9,12 @@ description: "Theorem T-226 [Т]: the 21 pairwise decoherence rates of the Γ-dy
 > *Ask a Fano-wired system how fast each of its twenty-one coherences dies, and it can only answer with seven numbers. The other fourteen degrees of freedom are not hidden — they are forbidden, and the forbidden directions are a sign-twist of $\mathfrak{g}_2$. What a system cannot do is as much of a fingerprint as what it does.*
 
 :::tip Document status
-The core is **Theorem T-226 [Т]**: elementary linear algebra and finite geometry over the exact channel forms of the corpus; every proof is complete, and every claim has been machine-verified in exact (symbolic) arithmetic. The dynamical premise — the per-coherence decay rate formula — is the canonical [Т] form of the Γ-dynamics. The identification of the mathematical rates with laboratory decoherence rates is **[И]**, as everywhere in the corpus. Technology items are **[С]/[О]**. Statuses are marked in place.
+The core is **Theorem T-226 [T]**: elementary linear algebra and finite geometry over the exact channel forms of the corpus; every proof is complete, and every claim has been machine-verified in exact (symbolic) arithmetic. The dynamical premise — the per-coherence decay rate formula — is the canonical [T] form of the Γ-dynamics. The identification of the mathematical rates with laboratory decoherence rates is **[I]**, as everywhere in the corpus. Technology items are **[C]/[D]**. Statuses are marked in place.
 :::
 
 **How this document is organized.** The document is self-contained given school linear algebra; the coding-theoretic and finite-geometric background, if wanted, is built from scratch in the [Σ-calculus primer §2](/docs/applied/research/syndrome-calculus#предварительные). §1 states the known premise — the exact per-coherence decay rates — and poses the question: as the seven line rates vary, what part of the 21-dimensional rate space is reachable? §2 proves the lemma chain; §3 assembles Theorem T-226 with all seven parts. §4 identifies the forbidden subspace with a sign-twist of $\mathfrak{g}_2$ — the second, dynamical apparition of the Lie shadow of the [Σ-calculus](/docs/applied/research/syndrome-calculus). §5 draws the protection reading. §6 gives the falsifiable prediction and the technology package; §7 records the machine verification; §8 is the status summary.
 
-## §0. The first-order blind spot [Т] {#слепое-пятно}
+## §0. The first-order blind spot [T] {#слепое-пятно}
 
 Before the rates of §1, one layer down: the **linear** statistics of the seven lines see *nothing* of the plane's structure. Let $A(\ell)$ be the adjacency matrix of a line $\ell$ — the all-ones-off-diagonal on its three points, zero elsewhere. Summing over the seven lines,
 
@@ -24,7 +24,7 @@ $$
 
 the adjacency matrix of the complete graph $K_7$: each of the $\binom{7}{2}=21$ pairs lies on exactly one line (Steiner $\lambda=1$), so every off-diagonal entry is hit exactly once. Its spectrum is $\{6,\,(-1)^{6}\}$ — one eigenvalue $6$ (the all-ones direction) and $-1$ with multiplicity six.
 
-**Consequence [Т].** Any equal-weight quadratic form built from the lines — any pairwise covariance, any two-point statistic symmetric in the seven lines — is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. The Fano wiring is invisible at first (pairwise) order; it becomes visible only on **triples** (the polar collapse of §3) and in the rate quadratics of §1–§2. This is the precise content of the "third-order principle": **structure begins at three.** (Machine-checked: `fanos_verify.py` V11.)
+**Consequence [T].** Any equal-weight quadratic form built from the lines — any pairwise covariance, any two-point statistic symmetric in the seven lines — is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. The Fano wiring is invisible at first (pairwise) order; it becomes visible only on **triples** (the polar collapse of §3) and in the rate quadratics of §1–§2. This is the precise content of the "third-order principle": **structure begins at three.** (Machine-checked: `fanos_verify.py` V11.)
 
 This static blind spot is the adjacency-level companion of the dynamical $\mathfrak g_2$-shadow of §4 (fourteen rate dimensions a two-point experiment can never reach): in both, what pairwise observation cannot see is exactly the structural content of the seven. It is also the theorem the [FANOS overlay](/docs/applied/fanos/fanos-specification) turns on — a heartbeat/ping mesh is a first-order statistic, so it is Fano-blind and cannot localise the faults that matter (equivocation); FANOS therefore diagnoses on triples.
 
@@ -114,7 +114,7 @@ $$
 
 ## §3. Theorem T-226 (the Fano fingerprint) {#t-226}
 
-**Theorem T-226 [Т].** *Let the dissipative Γ-dynamics carry line rates $\gamma \in \mathbb{R}^7_{\geq 0}$ on the Fano wiring, and let $r \in \mathbb{R}^{21}$ be the exact per-coherence decay rates. Then:*
+**Theorem T-226 [T].** *Let the dissipative Γ-dynamics carry line rates $\gamma \in \mathbb{R}^7_{\geq 0}$ on the Fano wiring, and let $r \in \mathbb{R}^{21}$ be the exact per-coherence decay rates. Then:*
 
 **(i) Polar law.** $r_{ij} = \rho_{\pi(i,j)}$ where $\rho_k = (G - T_k)/6$: the twenty-one rates take **at most seven values**, constant on the polar classes; a rate depends on the pair only through its polar point.
 
@@ -144,7 +144,7 @@ so the neurogenesis cooldown bound of T-39a becomes fully explicit: $\tau_{\math
 
 *Proof.* Parts (i)–(iv) are Lemmas Φ.3–Φ.6; (v) follows from the exact channel form (each coherence is an eigenvector of the dissipative factor with eigenvalue $-r_{ij}$, populations are preserved) together with (i); (vi) is Lemma Φ.7; (vii) restates (ii)–(iii). $\blacksquare$
 
-**Remark (what is [Т] and what is [И]).** The theorem is exact linear algebra over the [Т] channel forms. Its *empirical* use — reading measured decoherence rates of a candidate septarchitecture as the $r_{ij}$ — inherits the usual [И] identification of axes with measured channels, as in every prediction of the corpus.
+**Remark (what is [T] and what is [I]).** The theorem is exact linear algebra over the [T] channel forms. Its *empirical* use — reading measured decoherence rates of a candidate septarchitecture as the $r_{ij}$ — inherits the usual [I] identification of axes with measured channels, as in every prediction of the corpus.
 
 ## §3a. A worked example, end to end {#разобранный-пример}
 
@@ -178,7 +178,7 @@ The [Σ-calculus](/docs/applied/research/syndrome-calculus#t-225) records the Li
 
 Identify $\mathbb{R}^{21}$ with the space of off-diagonal patterns indexed by pairs. Let $\varphi$ be the associative $3$-form of the octonion frame aligned with the corpus labeling ($e_i e_j = \varepsilon_{ij}\, e_{\pi(i,j)}$ on lines, $\varepsilon_{ij} = \varphi_{ij\pi(i,j)} \in \{\pm1\}$), and let $W = \mathrm{diag}(\varepsilon_{ij})$ be the **orientation twist** of pair space.
 
-**Proposition C-226 [Т].** *Let $c : \mathbb{R}^{21} \to \mathbb{R}^7$ be the unsigned polar collapse ($(c\,r)_k = \sum_{\pi(i,j)=k} r_{ij}$) and $c_\varphi : \Lambda^2\mathbb{R}^7 \to \mathbb{R}^7$ the $\varphi$-contraction $\omega \mapsto \sum_{i<j} \varphi_{ijk}\,\omega_{ij}$. Then $c_\varphi = c \circ W$. Consequently $W$ carries the standard $G_2$-decomposition $\mathfrak{so}(7) \cong \Lambda^2\mathbb{R}^7 = \mathfrak{g}_2 \oplus \iota_\varphi(\mathrm{Im}\,\mathbb{O})$ — with $\mathfrak{g}_2 = \ker c_\varphi$ and $\iota_\varphi(v) = v \lrcorner \varphi$ — onto the fingerprint decomposition*
+**Proposition C-226 [T].** *Let $c : \mathbb{R}^{21} \to \mathbb{R}^7$ be the unsigned polar collapse ($(c\,r)_k = \sum_{\pi(i,j)=k} r_{ij}$) and $c_\varphi : \Lambda^2\mathbb{R}^7 \to \mathbb{R}^7$ the $\varphi$-contraction $\omega \mapsto \sum_{i<j} \varphi_{ijk}\,\omega_{ij}$. Then $c_\varphi = c \circ W$. Consequently $W$ carries the standard $G_2$-decomposition $\mathfrak{so}(7) \cong \Lambda^2\mathbb{R}^7 = \mathfrak{g}_2 \oplus \iota_\varphi(\mathrm{Im}\,\mathbb{O})$ — with $\mathfrak{g}_2 = \ker c_\varphi$ and $\iota_\varphi(v) = v \lrcorner \varphi$ — onto the fingerprint decomposition*
 
 $$
 \mathbb{R}^{21} \;=\; \underbrace{\{\text{forbidden directions}\}}_{W(\mathfrak g_2),\ \dim 14} \;\oplus\; \underbrace{\{\text{realizable rates}\}}_{W(\iota_\varphi(\mathrm{Im}\,\mathbb O)),\ \dim 7}.
@@ -186,13 +186,13 @@ $$
 
 **Proof.** $c_\varphi = c \circ W$ holds entry by entry, since $\varphi_{ijk} \neq 0$ exactly when $k = \pi(i,j)$, with value $\varepsilon_{ij}$; the kernel/image correspondence follows because $W$ is an involution. The identification $\mathfrak g_2 = \ker c_\varphi$ and the complement $\iota_\varphi$ are the standard $G_2$-module decomposition of $\Lambda^2\mathbb{R}^7$. $\blacksquare$
 
-**Reading [И].** The fourteen dimensions a rate experiment can never see are the sign-twisted $\mathfrak{g}_2$: *the symmetry algebra of the theory is exactly the diagnostically dark subspace of its own decoherence spectrum*. And the duality is polar: the Σ-compression pyramid of T-225 aggregates coherences **by lines** (content monitoring), while the dynamics collapses rates **by polar points**. Lines and points are exchanged by the self-duality of $\mathrm{PG}(2,2)$ — the measurement pyramid and the decay spectrum are Fano-dual faces of the same $21 = 14 + 7$.
+**Reading [I].** The fourteen dimensions a rate experiment can never see are the sign-twisted $\mathfrak{g}_2$: *the symmetry algebra of the theory is exactly the diagnostically dark subspace of its own decoherence spectrum*. And the duality is polar: the Σ-compression pyramid of T-225 aggregates coherences **by lines** (content monitoring), while the dynamics collapses rates **by polar points**. Lines and points are exchanged by the self-duality of $\mathrm{PG}(2,2)$ — the measurement pyramid and the decay spectrum are Fano-dual faces of the same $21 = 14 + 7$.
 
 ## §5. The protection reading {#охрана}
 
 Two structural facts fall out of the polar law and deserve their own sentences.
 
-**Intra-line immunity [Т].** A line never damages its own coherences: if both endpoints of a pair lie on $\ell$, then $|\ell \cap \{i,j\}| = 2$ and $\ell$ contributes nothing to $r_{ij}$. This is Shield I of [topological protection](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) surfacing at the *rate* level: the dissipative grammar is structurally incapable of eroding the coherence of its own syndrome triples.
+**Intra-line immunity [T].** A line never damages its own coherences: if both endpoints of a pair lie on $\ell$, then $|\ell \cap \{i,j\}| = 2$ and $\ell$ contributes nothing to $r_{ij}$. This is Shield I of [topological protection](/docs/applied/coherence-cybernetics/topological-protection#код-хэмминга) surfacing at the *rate* level: the dissipative grammar is structurally incapable of eroding the coherence of its own syndrome triples.
 
 **Polar guardianship [Т math, И reading].** $r_{ij} = (G - T_{\pi(i,j)})/6$ is *anti-monotone* in the polar point's flux: strengthening the three lines through an axis $k$ slows the decay of the three coherences polar to $k$. Each axis guards not its own coherences but the polar ones — protection in $\mathrm{PG}(2,2)$ is always vicarious. The best-protected coherences of a Γ-state are those polar to its highest-flux axis — and those same coherences *set the spectral gap* (T-226(v)): the strongest guardian's wards decay slowest, so maximal protection and slow late-time convergence are two faces of one number. The worked example of §3a shows both faces concretely.
 
@@ -202,10 +202,10 @@ Two structural facts fall out of the polar law and deserve their own sentences.
 
 **Technology package.**
 
-1. **Rate-monitoring budget [С].** Seven polar values instead of twenty-one pairwise rates — a threefold reduction, with the remaining fourteen dimensions repurposed as built-in consistency alarms. This composes with the Σ-compression pyramid of [T-225](/docs/applied/research/syndrome-calculus#t-225): content monitoring compresses by lines, rate monitoring by polar points — together they instrument both Fano-dual faces of the coherence matrix at $7 + 7$ observables.
-2. **Line-resolved dissipation spectroscopy ("Fano tomography") [С].** The boxed formula of Lemma Φ.5 turns per-line dissipation strengths $\gamma_p$ into direct observables with noise amplification $\leq \sqrt6$ (T-226(iv)) — no fitting, no regularization. For the Γ-tomograph tiers this yields the per-line health of the dissipative grammar from the same data that currently yields only aggregate decay.
-3. **Exact cooldown budget for SYNARC [О].** T-39a's neurogenesis cooldown becomes the explicit runtime constant $\tau_{\mathrm{cool}} = 6/(G - \max_k T_k)$, computable from the current line rates in $O(1)$; the runtime can *tighten* its cooldown adaptively as the dissipation profile shifts, instead of using the worst-case constant.
-4. **Design rule [О].** To protect a chosen coherence $(i,j)$ passively, invest flux in the lines through its polar point — not in its own line (which is neutral to it) and not in the remaining four (which erode it). Vicarious protection is a design lever unavailable to architectures without the $\lambda = 1$ grammar.
+1. **Rate-monitoring budget [C].** Seven polar values instead of twenty-one pairwise rates — a threefold reduction, with the remaining fourteen dimensions repurposed as built-in consistency alarms. This composes with the Σ-compression pyramid of [T-225](/docs/applied/research/syndrome-calculus#t-225): content monitoring compresses by lines, rate monitoring by polar points — together they instrument both Fano-dual faces of the coherence matrix at $7 + 7$ observables.
+2. **Line-resolved dissipation spectroscopy ("Fano tomography") [C].** The boxed formula of Lemma Φ.5 turns per-line dissipation strengths $\gamma_p$ into direct observables with noise amplification $\leq \sqrt6$ (T-226(iv)) — no fitting, no regularization. For the Γ-tomograph tiers this yields the per-line health of the dissipative grammar from the same data that currently yields only aggregate decay.
+3. **Exact cooldown budget for SYNARC [D].** T-39a's neurogenesis cooldown becomes the explicit runtime constant $\tau_{\mathrm{cool}} = 6/(G - \max_k T_k)$, computable from the current line rates in $O(1)$; the runtime can *tighten* its cooldown adaptively as the dissipation profile shifts, instead of using the worst-case constant.
+4. **Design rule [D].** To protect a chosen coherence $(i,j)$ passively, invest flux in the lines through its polar point — not in its own line (which is neutral to it) and not in the remaining four (which erode it). Vicarious protection is a design lever unavailable to architectures without the $\lambda = 1$ grammar.
 
 ## §7. Machine verification {#верификация}
 
@@ -227,12 +227,12 @@ The verification scripts follow the M1 discipline of the SYNARC programme: indep
 
 | Claim | Status |
 |---|---|
-| Lemmas Φ.1–Φ.7 | **[Т]** |
-| Theorem T-226 (i)–(vii) | **[Т]** |
-| Proposition C-226 ($\mathfrak g_2$-shadow, $c_\varphi = c \circ W$) | **[Т]** (reading — [И]) |
-| Intra-line immunity; polar guardianship | **[Т]** (guardianship reading — [И]) |
-| Prediction Σ-P2 (polar equalities in tomography) | falsifiable, **[И]** identification |
-| Rate budget $21 \to 7$; Fano tomography; adaptive cooldown | **[С]/[О]** |
+| Lemmas Φ.1–Φ.7 | **[T]** |
+| Theorem T-226 (i)–(vii) | **[T]** |
+| Proposition C-226 ($\mathfrak g_2$-shadow, $c_\varphi = c \circ W$) | **[T]** (reading — [I]) |
+| Intra-line immunity; polar guardianship | **[T]** (guardianship reading — [I]) |
+| Prediction Σ-P2 (polar equalities in tomography) | falsifiable, **[I]** identification |
+| Rate budget $21 \to 7$; Fano tomography; adaptive cooldown | **[C]/[D]** |
 
 ## Where this leads {#куда-ведёт}
 

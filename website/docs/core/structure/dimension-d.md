@@ -99,7 +99,7 @@ Without dynamics the Holon is a "frozen snapshot", not a living system. See [pro
 
 **Time emerges from the structure of Γ:** Dynamics does not "happen in time" — time is **derived** from correlations between dimensions. According to the [emergent time theorem](../../proofs/dynamics/emergent-time), internal time τ arises as the parameter of conditional states relative to [dimension O](./dimension-o).
 
-:::tip Key consequence [Т]
+:::tip Key consequence [T]
 The rate of flow of internal time is determined by the coherences of D with the other dimensions:
 
 $$
@@ -110,7 +110,7 @@ where $\sigma$ is the external affine parameter (coordinate time of the observer
 
 When $\gamma_{Di} \to 0$ for all $i \neq D$, time "freezes".
 
-**Status:** **[Т]** — consequence of the [finite spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$: from the spectral triple $d\tau/d\sigma = \|D_O\Gamma\|_{\text{HS}} = \omega_0\sqrt{\sum_{i \neq O}|\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \propto \sqrt{\sum_i |\gamma_{Di}|^2}$.
+**Status:** **[T]** — consequence of the [finite spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$: from the spectral triple $d\tau/d\sigma = \|D_O\Gamma\|_{\text{HS}} = \omega_0\sqrt{\sum_{i \neq O}|\gamma_{Oi}|^2 \cdot \text{Gap}(O,i)^2} \propto \sqrt{\sum_i |\gamma_{Di}|^2}$.
 :::
 
 ## Mathematical representation
@@ -173,7 +173,7 @@ $$
 Imagine a carefully constructed house of cards (high coherence). Wind (interaction with the environment) gradually destabilises the cards — the house loses structure. This is decoherence: the loss of quantum correlations through interaction with a "noisy" environment. The larger $\gamma_k$, the stronger the "wind".
 :::
 
-**3. Regenerative part** [Т] (restoration):
+**3. Regenerative part** [T] (restoration):
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
@@ -181,9 +181,9 @@ $$
 
 - Can increase $P$ (regeneration)
 - Form **fully derived** from axioms A1–A5 + standard thermodynamics ([derivation](../dynamics/evolution#вывод-формы-регенерации))
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [Т], $\kappa_0$ — [categorical derivation](../foundations/axiom-septicity#структурный-анзац-kappa0)
-- $(\rho_* - \Gamma)$ — unique CPTP relaxation [Т], $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator))
-- $g_V(P)$ — V-preservation gate [Т] (Landauer + V-invariance, [derivation](../dynamics/evolution#теорема-v-preservation-gate))
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T], $\kappa_0$ — [categorical derivation](../foundations/axiom-septicity#структурный-анзац-kappa0)
+- $(\rho_* - \Gamma)$ — unique CPTP relaxation [T], $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator))
+- $g_V(P)$ — V-preservation gate [T] (Landauer + V-invariance, [derivation](../dynamics/evolution#теорема-v-preservation-gate))
 - The nonlinearity of $\mathcal{R}$ in $\Gamma$ **does not violate** the no-signalling constraint — see [proof](../dynamics/evolution#запрет-сигнализации)
 
 :::info Regeneration: why life is not merely complex physics
@@ -225,10 +225,10 @@ Purity $P = \mathrm{Tr}(\Gamma^2)$ is the central measure of the Holon's coheren
 **Regenerative regime** (full equation): The balance between $\mathcal{D}$ and $\mathcal{R}$ determines the fate of the system:
 - If $\mathcal{R}$ dominates: $P$ grows, the system accumulates coherence
 - If $\mathcal{D}$ dominates: $P$ falls, the system degrades
-- At equilibrium ($dP/d\tau = 0$): the system rests on an **attractor** — a stable stationary state with $P > P_{\text{crit}} = 2/7$ [Т]
+- At equilibrium ($dP/d\tau = 0$): the system rests on an **attractor** — a stable stationary state with $P > P_{\text{crit}} = 2/7$ [T]
 
 :::warning Critical threshold
-Viability requires $P > P_{\text{crit}} = 2/7$ [Т]. Below this threshold the system cannot maintain sufficient distinguishability between dimensions and "crumbles" into an indistinguishable mixture. Details: [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical).
+Viability requires $P > P_{\text{crit}} = 2/7$ [T]. Below this threshold the system cannot maintain sufficient distinguishability between dimensions and "crumbles" into an indistinguishable mixture. Details: [critical purity theorem](/docs/proofs/dynamics/theorem-purity-critical).
 :::
 
 ### Viability as dynamic balance {#жизнеспособность-баланс}
@@ -241,7 +241,7 @@ $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} = 0
 $$
 
-This equation defines the **attractor** $\Gamma_*$ — the stationary state towards which the system tends. For a viable Holon $P(\Gamma_*) > 2/7$ [Т], with the upper boundary of the "Goldilocks zone" being $P = 3/7$ [Т] (T-124): $P \in (2/7, 3/7]$ — the [consciousness window](/docs/proofs/dynamics/theorem-purity-critical).
+This equation defines the **attractor** $\Gamma_*$ — the stationary state towards which the system tends. For a viable Holon $P(\Gamma_*) > 2/7$ [T], with the upper boundary of the "Goldilocks zone" being $P = 3/7$ [T] (T-124): $P \in (2/7, 3/7]$ — the [consciousness window](/docs/proofs/dynamics/theorem-purity-critical).
 
 ## Emergent time {#эмерджентность-времени}
 
@@ -286,7 +286,7 @@ Detailed derivation: [Theorem on emergent time](../../proofs/dynamics/emergent-t
 
 ## Arrow of time
 
-:::info Theorem on the arrow of time [Т]
+:::info Theorem on the arrow of time [T]
 The direction of time is a **categorical consequence** of the structure of CPTP channels, not a postulate:
 
 $$
@@ -355,7 +355,7 @@ At strata I–II dynamics "just happens". At strata III–IV the system **knows*
 
 **Stratum III (Mind).** Dynamics acquires **purposefulness**. The brain does not merely react to stimuli — it builds internal models of the world and **minimises free energy** $F$ (Friston's active inference theory). Learning is *directed* regeneration: new neural connections form not randomly, but so as to reduce the discrepancy between prediction and reality.
 
-**Stratum IV (Consciousness).** The deepest level: the system not only changes, but also **observes its own changes**. The reflection measure $R \geq 1/3$ [Т] means that the Holon "sees" its own dynamics — the stream of consciousness ($\Gamma(\tau)$ as a function of internal time) is accessible to self-observation. This is what we experience as "the flow of thoughts", "the stream of impressions", "the sense of time".
+**Stratum IV (Consciousness).** The deepest level: the system not only changes, but also **observes its own changes**. The reflection measure $R \geq 1/3$ [T] means that the Holon "sees" its own dynamics — the stream of consciousness ($\Gamma(\tau)$ as a function of internal time) is accessible to self-observation. This is what we experience as "the flow of thoughts", "the stream of impressions", "the sense of time".
 
 ## Examples
 
@@ -475,8 +475,8 @@ Each Fano line $\ell = \{i,j,k\}$ defines a [Lindblad operator](/docs/core/opera
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_3 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $D = e_3$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_3 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $D = e_3$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}

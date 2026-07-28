@@ -361,7 +361,7 @@ The cognitome and CC solve **the same task** — explaining the nature of consci
 | **Neurobiological concreteness** | High (cogits, synapses, brain areas) | Low (abstract 7 dimensions) |
 | **Connection to physics** | Absent | Einstein equations, SM [C]/[T] |
 | **Mathematical apparatus** | Hypergraph theory (qualitative); Vityaev 2025 (formal concepts) | Category theory, quantum information theory |
-| **Explanatory gap** | Closes through a theory of the bearer (qualitative) | Formalised as Gap$(i,j) = |\sin(\arg(\gamma_{ij}))|$ |
+| **Explanatory gap** | Closes through a theory of the bearer (qualitative) | Formalised as Gap$(i,j) = \|\sin(\arg(\gamma_{ij}))\|$ |
 | **Cross-species universality** | Yes (topological argument) | Yes (substrate-independence) |
 | **Experimental status** | Experimental base on memory; no cognitome-specific tests | No experimental tests |
 | **Critical reception** | Percy 2024: "borderline"; Kanaev & Dryaeva 2023 | New theory, minimal reception |

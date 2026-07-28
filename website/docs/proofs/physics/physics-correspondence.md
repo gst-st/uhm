@@ -10,7 +10,7 @@ description: Formal connection of UHM with fundamental physical theories
 ## Section Status
 
 :::info Section Status
-The main results are formalized and proven **[Т]**: L-unification, reduction to QM, emergent geometry ($M^4$), Einstein equations, SM gauge group, no-signaling. Open directions: concrete SM parameters, non-perturbative partition function.
+The main results are formalized and proven **[T]**: L-unification, reduction to QM, emergent geometry ($M^4$), Einstein equations, SM gauge group, no-signaling. Open directions: concrete SM parameters, non-perturbative partition function.
 :::
 
 ## Contents
@@ -64,7 +64,7 @@ where:
 - $\mathbf{QM}$ — category of quantum-mechanical systems
 - $\mathbf{DensityMat}$ — category of [density matrices](/docs/core/dynamics/coherence-matrix)
 - $\mathbf{ClassMech}$ — category of classical mechanical systems
-- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ derived, T-120 [Т])
+- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ derived, T-120 [T])
 
 ### 1.2 Forgetful Functor
 
@@ -88,7 +88,7 @@ $$
 
 where $\Phi_f$ is the CPTP channel induced by morphism $f$.
 
-**[Т] Theorem 1.1 (Functoriality of forgetting).**
+**[T] Theorem 1.1 (Functoriality of forgetting).**
 $\mathcal{U}$ is a functor preserving identities and composition.
 
 *Proof:* Direct consequence of the definition of morphisms in $\mathbf{Hol}$ as CPTP channels preserving structure. ∎
@@ -105,7 +105,7 @@ This means: **physical dynamics has a logical origin**.
 
 ### 2.1 Dependency Hierarchy
 
-**[Т] Theorem 2.0 (Derivation chain).**
+**[T] Theorem 2.0 (Derivation chain).**
 Fundamental physical objects are derived in the following order:
 
 ```mermaid
@@ -130,7 +130,7 @@ graph LR
 
 ### 2.2 Logical Liouvillian
 
-**[Т] Theorem 2.0.1 (Logical Liouvillian).**
+**[T] Theorem 2.0.1 (Logical Liouvillian).**
 Dissipative dynamics is defined via the logical structure of Ω:
 
 $$
@@ -143,7 +143,7 @@ where $L_k = \sqrt{\chi_{S_k}}$, $\{S_k\}$ are atoms of Ω.
 
 ### 2.3 Physical Interpretation
 
-**[Т] Theorem 2.0.2 (Dissipation as logical uncertainty).**
+**[T] Theorem 2.0.2 (Dissipation as logical uncertainty).**
 The dissipative term $\mathcal{D}[\Gamma]$ reflects the **logical uncertainty** of the state relative to the structure of distinctions of Ω:
 
 $$
@@ -185,10 +185,10 @@ public pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, 
 
 | Physical theory | How L-unification explains it | Status |
 |-----------------|-------------------------------|--------|
-| Quantum decoherence | Dissipation = logical uncertainty relative to Ω | [Т] |
-| Second law of thermodynamics | $dS/dt \geq 0$ from the structure of ℒ_Ω | [Т] |
-| Measurement in QM | Reduction = projection onto atom χ_{S_k} | [Т] |
-| Arrow of time | Asymmetry of ℒ_Ω under action of ▷ | [Т] |
+| Quantum decoherence | Dissipation = logical uncertainty relative to Ω | [T] |
+| Second law of thermodynamics | $dS/dt \geq 0$ from the structure of ℒ_Ω | [T] |
+| Measurement in QM | Reduction = projection onto atom χ_{S_k} | [T] |
+| Arrow of time | Asymmetry of ℒ_Ω under action of ▷ | [T] |
 
 ---
 
@@ -200,7 +200,7 @@ Reduction to standard QM occurs when the **logical structure Ω trivializes**: a
 
 ### 3.1 Limit Functor
 
-**[Т] Theorem 3.1 (Reduction to the Schrödinger equation).**
+**[T] Theorem 3.1 (Reduction to the Schrödinger equation).**
 Let $\mathbb{H}$ be a Holon with $R_\varphi \to 0$. Then the [evolution equation](/docs/core/dynamics/evolution) with [emergent internal time](/docs/proofs/dynamics/emergent-time) τ:
 
 $$
@@ -256,7 +256,7 @@ $$
 \pi_{\text{QM}}(\mathbb{H}) := (\mathcal{H}_{\mathbb{H}}, H_{\mathbb{H}}, \Gamma_{\mathbb{H}})
 $$
 
-**[Т] Theorem 3.2 (Equivalence of categories).**
+**[T] Theorem 3.2 (Equivalence of categories).**
 The restriction $\pi_{\text{QM}}|_{\mathbf{Hol}_{R=0}}$ is an equivalence of categories:
 
 $$
@@ -270,7 +270,7 @@ $$
 
 ### 3.4 Taxonomy of Physical Systems via L-Unification
 
-**[Т] Theorem 3.3 (Classification by $R$ and structure of Ω).**
+**[T] Theorem 3.3 (Classification by $R$ and structure of Ω).**
 
 | Parameter $R$ | Structure of Ω | Dynamics | Physical system |
 |---------------|---------------|----------|-----------------|
@@ -292,7 +292,7 @@ $$
 The discreteness of time is a consequence of the finite structure of Ω.
 :::
 
-**[Т] Theorem 3.4 (Discreteness of internal time).**
+**[T] Theorem 3.4 (Discreteness of internal time).**
 For a finite-dimensional system with $\dim(\mathcal{H}_O) = N$, internal time takes values from the cyclic group:
 
 $$
@@ -307,9 +307,9 @@ For UHM with $N = 7$: $\tau \in \mathbb{Z}_7$.
 
 | Consequence | Formula | Status |
 |-------------|---------|--------|
-| Quantum of time (chronon) | $\delta\tau = 2\pi/(7\omega_0)$ | [Т] Corollary |
-| Continuous limit | $N \to \infty \Rightarrow \tau \in \mathbb{R}$ | [Т] Proven |
-| Discrete ∞-groupoid | $\mathbf{Exp}^{disc}_\infty$ for $N < \infty$ | [Т] [Formalized](/docs/proofs/categorical/categorical-formalism#exp-disc-infty) |
+| Quantum of time (chronon) | $\delta\tau = 2\pi/(7\omega_0)$ | [T] Corollary |
+| Continuous limit | $N \to \infty \Rightarrow \tau \in \mathbb{R}$ | [T] Proven |
+| Discrete ∞-groupoid | $\mathbf{Exp}^{disc}_\infty$ for $N < \infty$ | [T] [Formalized](/docs/proofs/categorical/categorical-formalism#exp-disc-infty) |
 
 **Connection to the 42D formalism:**
 
@@ -330,14 +330,14 @@ Spatial geometry emerges from the **structure of distinctions** defined by class
 
 ### 4.1 Space as a Structure of Distinctions
 
-**[Т] Theorem (Spatial metric, T-119).**
-In the thermodynamic limit $M \to \infty$, the macroscopic algebra of observables in the $\{A,S,D\}$-sector is commutative (T-117 [Т]). By Gelfand–Naimark duality it is isomorphic to $C(\Sigma^3)$ for the unique smooth compact 3-manifold $\Sigma^3$.
+**[T] Theorem (Spatial metric, T-119).**
+In the thermodynamic limit $M \to \infty$, the macroscopic algebra of observables in the $\{A,S,D\}$-sector is commutative (T-117 [T]). By Gelfand–Naimark duality it is isomorphic to $C(\Sigma^3)$ for the unique smooth compact 3-manifold $\Sigma^3$.
 
 The metric on $\Sigma^3$ is induced by the Connes distance from the spectral triple. See [Emergent Manifold $M^4$](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство).
 
 ### 4.2 Pre-metric on the State Space
 
-**[Т] Theorem 4.1 (Frobenius metric).**
+**[T] Theorem 4.1 (Frobenius metric).**
 The space $\mathcal{D}(\mathcal{H})$ of density matrices with metric
 
 $$
@@ -350,7 +350,7 @@ is a complete metric space.
 
 ### 4.3 Information Geometry
 
-**[Т] Quantum Fisher metric (standard result).**
+**[T] Quantum Fisher metric (standard result).**
 The natural Riemannian metric on $\mathcal{D}(\mathcal{H})$ is the quantum Fisher metric:
 
 $$
@@ -361,12 +361,12 @@ where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L
 
 ### 4.4 Emergent Dimensionality
 
-**[Т] Theorem (Dimension 3+1, T-119 + T-120).**
+**[T] Theorem (Dimension 3+1, T-119 + T-120).**
 
 The dimension of macroscopic space is **derived**:
-- $\dim(\Sigma^3) = 3$ — from the spectral dimension of the $\{A,S,D\}$-sector (T-119 [Т])
+- $\dim(\Sigma^3) = 3$ — from the spectral dimension of the $\{A,S,D\}$-sector (T-119 [T])
 - Lorentzian signature $(+,-,-,-)$ — $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader; KO-dim 6 fixes the grading, not the signature; Krein route) (T-53 [T]+[T at r.p.])
-- Product $M^4 = \mathbb{R} \times \Sigma^3$ — from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [Т])
+- Product $M^4 = \mathbb{R} \times \Sigma^3$ — from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])
 
 See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
@@ -374,13 +374,13 @@ See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
 ## 5. Connection to General Relativity {#5-связь-с-общей-теорией-относительности}
 
-:::tip Status: fully formalized [Т]
-The connection to GR is fully proven: the manifold $M^4$ is derived (T-120 [Т]), the Einstein equations are obtained from the spectral action (T-65 [Т]), and the cosmological constant is computed (T-65 [Т]).
+:::tip Status: fully formalized [T]
+The connection to GR is fully proven: the manifold $M^4$ is derived (T-120 [T]), the Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]).
 :::
 
 ### 5.1 Emergent Manifold
 
-**[Т] Theorem (Product of spectral triples, T-120).**
+**[T] Theorem (Product of spectral triples, T-120).**
 In the thermodynamic limit the effective spectral triple factorizes:
 
 $$
@@ -391,7 +391,7 @@ where $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from the categorical str
 
 ### 5.2 Einstein Equations
 
-**[Т] Theorem (Spectral action, T-65).**
+**[T] Theorem (Spectral action, T-65).**
 The Chamseddine–Connes spectral action for the product $M^4 \times F_{\text{int}}$ reproduces:
 
 $$
@@ -402,19 +402,19 @@ with $G_N = 3\pi/(7 f_2 \Lambda^2)$. Details: [Einstein Equations](/docs/physics
 
 ### 5.3 Cosmological Constant
 
-**[Т]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [Т]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b [Т]). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
+**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b [T]). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
 
 ---
 
 ## 6. Gauge Symmetries and the Standard Model {#6-калибровочные-симметрии-и-стандартная-модель}
 
 :::info Section Status
-The gauge group $SU(3) \times SU(2) \times U(1)$ is **derived** from $G_2 = \mathrm{Aut}(\mathbb{O})$ via the sector decomposition and spectral triple [Т]. Specific parameters (masses, mixing angles) — partially derived, partially remain [П].
+The gauge group $SU(3) \times SU(2) \times U(1)$ is **derived** from $G_2 = \mathrm{Aut}(\mathbb{O})$ via the sector decomposition and spectral triple [T]. Specific parameters (masses, mixing angles) — partially derived, partially remain [P].
 :::
 
 ### 6.1 Symmetries of the Coherence Matrix
 
-**[Т] Theorem 6.1 (Unitary symmetry group).**
+**[T] Theorem 6.1 (Unitary symmetry group).**
 The symmetry group of $\Gamma$:
 
 $$
@@ -427,7 +427,7 @@ is isomorphic to the stabilizer of $\Gamma$ in $U(7)$.
 
 ### 6.2 Gauge Group from $G_2$
 
-**[Т] Theorem (Gauge group, T-53 + sector decomposition).**
+**[T] Theorem (Gauge group, T-53 + sector decomposition).**
 
 From $G_2 = \mathrm{Aut}(\mathbb{O})$ and the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$:
 
@@ -439,7 +439,7 @@ Details: [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure), [Standard
 
 ### 6.3 Particles as Configurations Γ
 
-Elementary particles are degenerate ($R \to 0$) configurations $\Gamma$. Three generations of fermions are derived from the triadic Fano structure [Т]. Details: [Three Generations of Fermions](/docs/physics/particle-physics/fermion-generations).
+Elementary particles are degenerate ($R \to 0$) configurations $\Gamma$. Three generations of fermions are derived from the triadic Fano structure [T]. Details: [Three Generations of Fermions](/docs/physics/particle-physics/fermion-generations).
 
 ---
 
@@ -451,7 +451,7 @@ Each of the 7 dimensions has a **dual role**: physical (as an operator) and logi
 
 ### 7.1 Full Correspondence Table
 
-**[Т] Theorem 7.1 (Physical operators of dimensions).**
+**[T] Theorem 7.1 (Physical operators of dimensions).**
 
 | Dimension | Operator | Physical role | Status |
 |-----------|----------|---------------|--------|
@@ -465,7 +465,7 @@ Each of the 7 dimensions has a **dual role**: physical (as an operator) and logi
 
 ### 7.2 Algebraic Structure
 
-**[Т] Theorem 7.2 (Algebra of dimensions).**
+**[T] Theorem 7.2 (Algebra of dimensions).**
 The operators of dimensions form an algebra:
 
 $$
@@ -476,7 +476,7 @@ with commutation relations determined by the quantum-mechanical algebra of opera
 
 ### 7.3 Connection to Symmetry Groups
 
-**[Т] Theorem (Symmetry group, T-53).**
+**[T] Theorem (Symmetry group, T-53).**
 The full automorphism group $G_2 = \mathrm{Aut}(\mathbb{O})$ acts on the 7 dimensions. The stabilizer of the $O$-direction is $SU(3)$, determining the gauge structure. Each dimension has a dual role: physical (as an operator) and logical (as an aspect of classifier Ω).
 
 ---
@@ -502,7 +502,7 @@ Introducing nonlinearity into quantum mechanics typically violates the no-signal
 
 ### 8.2 Canonical Extension of Regeneration to Composite Systems
 
-**[Т] Definition 8.1 (Canonical extension).**
+**[T] Definition 8.1 (Canonical extension).**
 
 For a composite system $A \otimes B$, where $A$ is an [autonomous holon](/docs/core/foundations/axiom-septicity#определение-автономная-подсистема):
 
@@ -514,7 +514,7 @@ where $\Gamma_A = \mathrm{Tr}_B(\Gamma_{AB})$.
 
 ### 8.3 Central Theorem
 
-**[Т] Theorem 8.1 (No-signaling in UHM).**
+**[T] Theorem 8.1 (No-signaling in UHM).**
 
 For two spatially separated autonomous holons $A$ and $B$ with joint state $\Gamma_{AB}$:
 
@@ -540,7 +540,7 @@ $$
 
 Therefore: $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = \kappa_A \cdot g_V(P_A) \cdot (\Gamma_B - \Gamma_B) = 0$. ∎
 
-**[Т] Corollary 8.1 (Invariance under local operations).**
+**[T] Corollary 8.1 (Invariance under local operations).**
 
 For any local unitary operation $U_A$ by Alice, the contribution of $\tilde{\mathcal{R}}_A$ to Bob's state remains zero:
 
@@ -550,7 +550,7 @@ $$
 
 regardless of changes in $\kappa_A$ and $\Delta F_A$.
 
-**[Т] Theorem 8.2 (Full evolution of subsystem B).**
+**[T] Theorem 8.2 (Full evolution of subsystem B).**
 
 The reduced state $\Gamma_B(\tau) = \mathrm{Tr}_A[\Gamma_{AB}(\tau)]$ obeys:
 
@@ -572,7 +572,7 @@ The proof rests on three structural conditions:
 
 ### 8.5 Ensemble Independence {#85-ансамблевая-независимость}
 
-**[Т] Theorem 8.3 (Ensemble independence).**
+**[T] Theorem 8.3 (Ensemble independence).**
 
 The UHM evolution is defined on the density matrix $\Gamma$, not on its ensemble decomposition. Two different preparations of the same $\Gamma$ evolve identically.
 
@@ -580,7 +580,7 @@ The UHM evolution is defined on the density matrix $\Gamma$, not on its ensemble
 
 ### 8.6 Computational Bound {#86-вычислительное-ограничение}
 
-**[Т] Theorem 8.4 (Absence of computational speedup).**
+**[T] Theorem 8.4 (Absence of computational speedup).**
 
 The nonlinear regenerative term $\mathcal{R}$ does not provide computational speedup beyond the class BQP:
 
@@ -595,20 +595,20 @@ The nonlinear regenerative term $\mathcal{R}$ does not provide computational spe
 
 | Physical theory | Connection to UHM | Status | Reference |
 |-----------------|-------------------|--------|-----------|
-| **L-unification** | Dissipation from logical structure Ω: $L_k = \sqrt{\chi_{S_k}}$ | [Т] Proven | §2 |
-| **Quantum mechanics** | Special case at $R \to 0$ (Ω trivializes) | [Т] Proven | §3 |
-| **Schrödinger equation** | $\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff},\Gamma]$ | [Т] Proven | Theorem 3.1 |
-| **Lindblad equation** | $\mathcal{L}_\Omega[\Gamma]$ — logical Liouvillian from Ω | [Т] Formalized | [evolution.md](/docs/core/dynamics/evolution) |
-| **Thermodynamics** | $dS_{vN}/dt \geq 0$ from the structure of ℒ_Ω | [Т] Proven | [spacetime.md](/docs/core/foundations/spacetime#стрела-времени) |
-| **Decoherence** | Logical uncertainty relative to Ω | [Т] Formalized | §2.3 |
-| **No-signaling** | $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [Т] Proven | §8, Theorem 8.1 |
-| **Ensemble independence** | Evolution defined on $\Gamma$, not on $\vert\psi\rangle$ | [Т] Proven | §8.5 |
-| **Computational bound** | $\mathcal{R}$ does not accelerate computation beyond BQP | [Т] Proven | §8.6 |
-| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [Т] Proven | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
-| **Time** | Emergent τ via modality ▷ on Ω | [Т] Proven | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
-| **Discreteness of time** | $\tau \in \mathbb{Z}_7$ from the structure of Ω | [Т] Corollary | §3.6 |
-| **GR / Einstein** | Spectral action → $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ | [Т] Proven | [T-65](/docs/physics/gravity/einstein-equations) |
-| **Standard Model** | $G_2 \supset SU(3) \to SU(3)_C \times SU(2)_L \times U(1)_Y$ | [Т] Structure derived | [SM](/docs/physics/gauge-symmetry/standard-model) |
+| **L-unification** | Dissipation from logical structure Ω: $L_k = \sqrt{\chi_{S_k}}$ | [T] Proven | §2 |
+| **Quantum mechanics** | Special case at $R \to 0$ (Ω trivializes) | [T] Proven | §3 |
+| **Schrödinger equation** | $\frac{d\Gamma(\tau)}{d\tau} = -i[H_{eff},\Gamma]$ | [T] Proven | Theorem 3.1 |
+| **Lindblad equation** | $\mathcal{L}_\Omega[\Gamma]$ — logical Liouvillian from Ω | [T] Formalized | [evolution.md](/docs/core/dynamics/evolution) |
+| **Thermodynamics** | $dS_{vN}/dt \geq 0$ from the structure of ℒ_Ω | [T] Proven | [spacetime.md](/docs/core/foundations/spacetime#стрела-времени) |
+| **Decoherence** | Logical uncertainty relative to Ω | [T] Formalized | §2.3 |
+| **No-signaling** | $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ | [T] Proven | §8, Theorem 8.1 |
+| **Ensemble independence** | Evolution defined on $\Gamma$, not on $\vert\psi\rangle$ | [T] Proven | §8.5 |
+| **Computational bound** | $\mathcal{R}$ does not accelerate computation beyond BQP | [T] Proven | §8.6 |
+| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [T] Proven | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
+| **Time** | Emergent τ via modality ▷ on Ω | [T] Proven | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
+| **Discreteness of time** | $\tau \in \mathbb{Z}_7$ from the structure of Ω | [T] Corollary | §3.6 |
+| **GR / Einstein** | Spectral action → $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ | [T] Proven | [T-65](/docs/physics/gravity/einstein-equations) |
+| **Standard Model** | $G_2 \supset SU(3) \to SU(3)_C \times SU(2)_L \times U(1)_Y$ | [T] Structure derived | [SM](/docs/physics/gauge-symmetry/standard-model) |
 
 ---
 
@@ -624,7 +624,7 @@ $$
 
 This means: **physics is a consequence of the structure of logical distinctions**.
 
-### What Has Been Formalized [Т]
+### What Has Been Formalized [T]
 
 1. **L-unification:** Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ are derived from classifier Ω
 2. **Logical Liouvillian:** $\mathcal{L}_\Omega[\Gamma]$ defines dissipation via the logical structure
@@ -642,16 +642,16 @@ This means: **physics is a consequence of the structure of logical distinctions*
 ### Open Directions
 
 1. **Standard Model parameters:** Specific values of masses and mixing angles from the vacuum configuration $\Gamma_{\text{vac}}$
-2. **Non-perturbative partition function:** The limiting transition $Z_N \to Z$ as $N \to \infty$ [П]
+2. **Non-perturbative partition function:** The limiting transition $Z_N \to Z$ as $N \to \infty$ [P]
 3. **Quantum gravity:** The strong-field limit and quantum corrections to the spectral action
 
 :::info Open problem: concrete parameters of the Standard Model
-UHM derives the **structure** of the Standard Model: the gauge group $SU(3)_C \times SU(2)_L \times U(1)_Y$ from $G_2$ [Т], three generations of fermions from the Fano plane [Т], and the Einstein equations from the spectral action [Т]. However, **specific parameters** are only partially computed:
+UHM derives the **structure** of the Standard Model: the gauge group $SU(3)_C \times SU(2)_L \times U(1)_Y$ from $G_2$ [T], three generations of fermions from the Fano plane [T], and the Einstein equations from the spectral action [T]. However, **specific parameters** are only partially computed:
 
 | Parameter | Status in UHM | Reference |
 |-----------|--------------|-----------|
-| Number of generations (3) | **[Т] Derived** | [Three Generations](/docs/physics/particle-physics/fermion-generations) |
-| Yukawa mass hierarchy | **[Т] Derived** | [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) |
+| Number of generations (3) | **[T] Derived** | [Three Generations](/docs/physics/particle-physics/fermion-generations) |
+| Yukawa mass hierarchy | **[T] Derived** | [Yukawa Hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) |
 | Electron mass $m_e$ | Not derived | Requires $\Gamma_{\text{vac}}$ |
 | Fine structure constant $\alpha$ | Not derived | Requires non-perturbative analysis |
 | Exact CKM/PMNS angles | Partial | [CKM Matrix](/docs/physics/particle-physics/ckm-matrix) |
@@ -661,7 +661,7 @@ This limitation is **not unique** to UHM: string theory, loop quantum gravity, a
 
 ## $G_2$-Manifolds and M-Theory {#g2-многообразия}
 
-:::info Compactification 11 → 4 + 7 [И]
+:::info Compactification 11 → 4 + 7 [I]
 In the [structural derivation of N=7](../minimality/theorem-octonionic-derivation), the group $G_2 = \text{Aut}(\mathbb{O})$ arises. In M-theory, $G_2$-manifolds play a central role:
 
 **M-theory compactification [И]:**
@@ -678,8 +678,8 @@ In the [structural derivation of N=7](../minimality/theorem-octonionic-derivatio
 **Decomposition 42 [И]:**
 $\dim(\mathcal{H}_{total}) = 42 = 7 \times 6$ in UHM. In M-theory: $42 = \binom{9}{2} + 6$ arises in a number of contexts.
 
-:::tip Bridge [Т] — fully closed (T15)
-This is a **substantive analogy**, proven by theorems T1–T15 (the bridge is fully closed). The formal connection between the 7D structure of UHM and the $G_2$-compactification of M-theory is an [open problem](../minimality/theorem-octonionic-derivation#открытые-проблемы). Bridge [Т] (closed, T15).
+:::tip Bridge [T] — fully closed (T15)
+This is a **substantive analogy**, proven by theorems T1–T15 (the bridge is fully closed). The formal connection between the 7D structure of UHM and the $G_2$-compactification of M-theory is an [open problem](../minimality/theorem-octonionic-derivation#открытые-проблемы). Bridge [T] (closed, T15).
 :::
 
 **Potential consequences [И]:**

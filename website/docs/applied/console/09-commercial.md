@@ -62,7 +62,7 @@ Four layers, hardest to easiest to copy:
 | "Just another personality app" perception | lead with validation and the back-projection translator; publish the studies |
 | Regulatory burden (clinical) | clinical is a *later*, partnered stage; consumer/B2B do not need it |
 | Privacy backlash | local-first, honesty-in-types, no dark patterns are the default, not a response |
-| Over-claim / hype temptation | the anchor-class discipline is compiler-enforced; the theory's own [И]/[C]/[T] tags travel to the UI |
+| Over-claim / hype temptation | the anchor-class discipline is compiler-enforced; the theory's own [I]/[C]/[T] tags travel to the UI |
 | Modulation-hardware overreach | bounded by theorem ([08 §3](/docs/applied/console/hardware-horizon#граница)); never marketed as a state-writer |
 
 The largest risk is the one the whole suite is built to avoid: becoming the thing it replaces. The compiler-enforced honesty and the validation discipline are the structural guards against it.

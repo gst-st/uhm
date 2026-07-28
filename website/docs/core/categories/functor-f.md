@@ -225,7 +225,7 @@ Then the functor $F$ extracts:
 | Component | Value | Interpretation |
 |-----------|----------|---------------|
 | Spectrum $\vec{s}$ | $(0.6, 0.3, 0.1)$ | One quality dominates (60%), two background ones |
-| Quality $\vec{q}$ | $([|\psi_1\rangle], [|\psi_2\rangle], [|\psi_3\rangle])$ | Three distinguishable aspects of experience |
+| Quality $\vec{q}$ | $([\|\psi_1\rangle], [\|\psi_2\rangle], [\|\psi_3\rangle])$ | Three distinguishable aspects of experience |
 | Context $c$ | $(\gamma_{Ai}, \gamma_{Si}, \ldots)$ | States of A, S, D, L, O, U set the "stage" |
 
 Purity of this $\rho_E$: $P_E = 0.6^2 + 0.3^2 + 0.1^2 = 0.46 > 2/7 \approx 0.286$ — the consciousness threshold is passed.

@@ -49,7 +49,7 @@ Not all CC observables are equally easy to measure. We distinguish four levels:
 |---------|-------------|---------------------|---------|
 | **L1: Global** | $P$ (purity), $\|\sigma\|_\infty$ | Low — only the overall picture is needed | Health index, total test score |
 | **L2: Sectoral** | $\gamma_{kk}$ (diagonal), $\sigma_k$ | Medium — 7 independent measurements | Subscale scores, neural network activity |
-| **L3: Coherent** | $|\gamma_{ij}|$ (off-diagonal), $\theta_{ij}$ | High — pairwise correlations | Functional brain connectivity, organisational links |
+| **L3: Coherent** | $\|\gamma_{ij}\|$ (off-diagonal), $\theta_{ij}$ | High — pairwise correlations | Functional brain connectivity, organisational links |
 | **L4: Derived** | $R$, $\Phi$, $C$, $\mathrm{Coh}_E$ | High — require $\varphi(\Gamma)$ | Reflection, integration, consciousness measures |
 
 :::tip Practical rule
@@ -89,7 +89,7 @@ In neuroscience the direct analogue of purity is **coherence of neural activity*
 | Method | What it measures | How it relates to P |
 |-------|-------------|-----------------|
 | **EEG coherence** | Synchronisation of electrical activity between brain regions | High coherence → high P |
-| **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $|\gamma_{ij}|$ → high P |
+| **fMRI functional connectivity** | Correlation of BOLD signals between regions | Strong connectivity → high $\|\gamma_{ij}\|$ → high P |
 | **PCI (Perturbational Complexity Index)** | Complexity of the response to TMS stimulation | PCI ∝ P (experimentally shown for wakefulness vs. coma) |
 | **Lempel-Ziv entropy** | Compressibility of the neural signal | Low entropy → high P |
 
@@ -166,7 +166,7 @@ The transition $P < 2/7 \to P > 2/7$ is a potential marker of consciousness reco
 | Method | What it measures | How it relates to P |
 |-------|-------------|-----------------|
 | **Engagement index (eNPS)** | Alignment of employee goals | High eNPS → high P |
-| **Cross-functional coordination** | Frequency and quality of inter-departmental interactions | Strong coordination → high $|\gamma_{ij}|$ |
+| **Cross-functional coordination** | Frequency and quality of inter-departmental interactions | Strong coordination → high $\|\gamma_{ij}\|$ |
 | **Financial indicators** | Margin, growth | Sustained growth → P > P_crit |
 
 ### 2.6 Proxies for AI Systems

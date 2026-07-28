@@ -1122,7 +1122,7 @@ The large PMNS mixing angles ($\theta_{12} \sim 34°$, $\theta_{23} \sim 45°$) 
 | Consistency of the two $\mathrm{SU}(3)$'s ($G_2$ and 42D PW) | [T] |
 | Full SM from $G_2$ + (FE) | [C] (electroweak dynamics is conditional) |
 | Quarks and leptons as Gap configurations | [H] |
-| Three generations from Fano structure ($N_{\text{gen}} = 3$) | **count [T], identification [I]** — exact count $|\mathrm{QR}(7)|=3$ [T], physical identification [I] ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
+| Three generations from Fano structure ($N_{\text{gen}} = 3$) | **count [T], identification [I]** — exact count $\|\mathrm{QR}(7)\|=3$ [T], physical identification [I] ([proof](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)) |
 | Chirality from $\eta_0$ and $\mathrm{Gap}(E,U) = 0$ | [T] |
 | 18 gauge bosons (SM + 6 $G_2$-extra) | [T] for SM; [H] beyond SM |
 | Mass hierarchy from Gap hierarchy of the vacuum | [H] |

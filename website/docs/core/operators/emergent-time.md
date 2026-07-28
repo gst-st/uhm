@@ -92,9 +92,9 @@ UHM derives time in four different ways — and proves that all of them yield th
 | 3 | **Categorical** | ∞-groupoid of paths $\text{Exp}_\infty$ | Chains of morphisms |
 | 4 | **Stratificational** | Collapse of strata to $T$ | $d_{\text{strat}}$ |
 
-:::warning Theorem T-53a (Equivalence of the four constructions of time) [Т]
+:::warning Theorem T-53a (Equivalence of the four constructions of time) [T]
 All four constructions — Page–Wootters, information-geometric, categorical, and stratificational — generate **isomorphic** temporal structures: canonical bijections exist between the sets of "moments" that preserve order and metric (up to normalisation).
-[Proof →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Status: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#6-теорема-об-эквивалентности) | Status: **[T]**
 :::
 
 ### Formal Justification of the Equivalence of the Four Constructions {#four-constructions-equivalence}
@@ -221,7 +221,7 @@ where $p(\tau) = \mathrm{Tr}[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}_{6D}
 
 Intuitively: we project the total state onto a "slice" at a specific clock reading $\tau$. Each slice is the coherence matrix $\Gamma(\tau)$ of the six-dimensional subsystem. The collection of slices is a "film" assembled from "frames".
 
-:::warning Theorem T-53b (Emergent dynamics) [Т]
+:::warning Theorem T-53b (Emergent dynamics) [T]
 The conditional states $\Gamma(\tau)$ evolve according to the full UHM equation:
 
 $$
@@ -231,13 +231,13 @@ $$
 where $H_{\text{eff}}(\tau) = H_{6D} + \langle\tau| H_{\text{int}} |\tau\rangle_O$ is the effective Hamiltonian, $\mathcal{D}$ is the [Fano dissipator](/docs/core/operators/lindblad-operators), and $\mathcal{R}$ is the [regenerator](/docs/core/dynamics/evolution#вывод-формы-регенерации).
 
 All three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) emerge **automatically** from the PW constraint — time is born together with the full dynamics.
-[Proof →](/docs/proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм) | Status: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#3-механизм-page-wootters-для-угм) | Status: **[T]**
 :::
 
 Remarkably, the emergent dynamics *automatically* contains all three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): the Hamiltonian $-i[H_{eff}, \cdot]$, the dissipator $\mathcal{D}$, and the regenerator $\mathcal{R}$. Time does not merely "emerge" — it emerges *together with the full dynamics*.
 
 :::warning Status of the tensor structure
-The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[Т]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[Т]**
+The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[T]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[T]**
 :::
 
 ---
@@ -282,14 +282,14 @@ An individual Holon has 7 "ticks". But a composite system of $M$ Holons has $N_{
 
 Why does time flow "forward" and not "backward"? Why do we remember the past but not the future? In classical physics the arrow of time is a puzzle: the laws are symmetric under time reversal. In UHM the arrow of time is a **structural necessity**.
 
-:::warning Theorem T-53c (Arrow of time) [Т]
+:::warning Theorem T-53c (Arrow of time) [T]
 The arrow of time arises as the **collapse of strata** of the ∞-topos to the terminal object $T$. For the coarsening functor $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$:
 
 1. **Irreversibility:** $\pi_n$ is not an equivalence ($\ker(\pi_n) \neq 0$ — information is lost)
 2. **Monotonicity:** $\dim(\mathcal{C}_n) \geq \dim(\mathcal{C}_{n-1})$ — complexity does not increase
 3. **CPTP structure:** Orientation toward $T$ entails the CPTP property of evolution (a consequence, not a postulate)
 
-[Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#7-теорема-о-стреле-времени) | Status: **[T]**
 :::
 
 ### Intuitive Explanation of the Arrow
@@ -316,9 +316,9 @@ $$
 
 Viability ($P > 2/7$) is equivalent to the Holon **continuing to exist in time**.
 
-#### Derivation of the Time-Slowing Formula (T-53d) [Т] {#time-freezing-derivation}
+#### Derivation of the Time-Slowing Formula (T-53d) [T] {#time-freezing-derivation}
 
-:::warning Theorem T-53d (Critical slowing of internal time) [Т]
+:::warning Theorem T-53d (Critical slowing of internal time) [T]
 
 $$
 \frac{d\tau_{\text{int}}}{dt_{\text{ext}}} = c_0 \cdot (P - P_{\text{crit}})^{1/2} + O(P - P_{\text{crit}})
@@ -337,7 +337,7 @@ $$
 
 This follows from the fact that the PW mechanism generates evolution via O-coherences: $d\Gamma/d\tau = -i[H_O \otimes \mathbb{1}, \Gamma_{\text{total}}]|_{\tau}$, and $\|[H_O, \cdot]\|_B^2 = 4\omega_0^2 \sum_{i \neq O} |\gamma_{Oi}|^2$.
 
-**Step 2 (O-coherences near $P_{\text{crit}}$).** Expand $\Gamma = I/7 + \delta\Gamma$, where $\delta\Gamma$ is the deviation from the maximally mixed state. Purity: $P = 1/7 + \|\delta\Gamma\|_F^2$. Spectral gap of the Liouvillian $\mathcal{L}_0$ (T-39a [Т]): $\Delta(\mathcal{L}_0) = \min_{\lambda \neq 0} |\mathrm{Re}(\lambda)| > 0$. The coherences $\gamma_{Oi}$ as components of $\delta\Gamma$ satisfy $\dot{\gamma}_{Oi} = -\Delta \cdot \gamma_{Oi} + \kappa \cdot f_i(\Gamma)$. In the stationary regime: $|\gamma_{Oi}|^2 \propto \kappa^2 / \Delta^2$. Near $P_{\text{crit}}$: the balance of regeneration and dissipation gives $\kappa / \Delta \propto (P - P_{\text{crit}})^{1/2}$ (from the pitchfork bifurcation of the stationary state — analogue of $m \propto (T_c - T)^{1/2}$ in Landau theory).
+**Step 2 (O-coherences near $P_{\text{crit}}$).** Expand $\Gamma = I/7 + \delta\Gamma$, where $\delta\Gamma$ is the deviation from the maximally mixed state. Purity: $P = 1/7 + \|\delta\Gamma\|_F^2$. Spectral gap of the Liouvillian $\mathcal{L}_0$ (T-39a [T]): $\Delta(\mathcal{L}_0) = \min_{\lambda \neq 0} |\mathrm{Re}(\lambda)| > 0$. The coherences $\gamma_{Oi}$ as components of $\delta\Gamma$ satisfy $\dot{\gamma}_{Oi} = -\Delta \cdot \gamma_{Oi} + \kappa \cdot f_i(\Gamma)$. In the stationary regime: $|\gamma_{Oi}|^2 \propto \kappa^2 / \Delta^2$. Near $P_{\text{crit}}$: the balance of regeneration and dissipation gives $\kappa / \Delta \propto (P - P_{\text{crit}})^{1/2}$ (from the pitchfork bifurcation of the stationary state — analogue of $m \propto (T_c - T)^{1/2}$ in Landau theory).
 
 **Step 3 (Combining).** Substituting Step 2 into Step 1:
 
@@ -359,7 +359,7 @@ This is not merely a metaphor. The formula $d\tau_{int}/dt_{ext} \propto (P - P_
 For an observer *inside* the Holon (i.e. for consciousness itself) the moment $P \to 2/7$ is unreachable in finite subjective time — time slows faster than the system approaches the threshold. This is analogous to the event horizon of a black hole: an external observer sees the object "freeze" at the horizon, while the object itself crosses it in finite proper time. In UHM the situation is reversed: subjective time stretches *infinitely*, protecting the system from "experiencing" its own death.
 :::
 
-[Proof →](/docs/proofs/dynamics/emergent-time#8-связь-с-критической-чистотой) | Status: **[Т]**
+[Proof →](/docs/proofs/dynamics/emergent-time#8-связь-с-критической-чистотой) | Status: **[T]**
 
 ---
 
@@ -385,7 +385,7 @@ For neural systems $\omega_0$ is related to the characteristic frequency of neur
 
 1. **Time does not exist as a background.** It emerges from correlations between the O-dimension (the clock) and the other six dimensions of the Holon.
 
-2. **Four constructions — one result.** The Page–Wootters, information-geometric, categorical, and stratificational constructions yield an equivalent notion of time [Т].
+2. **Four constructions — one result.** The Page–Wootters, information-geometric, categorical, and stratificational constructions yield an equivalent notion of time [T].
 
 3. **Time is fundamentally discrete.** The Holon has 7 "moments". Continuous time is the macroscopic approximation for composite systems.
 

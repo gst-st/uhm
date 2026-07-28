@@ -385,8 +385,8 @@ How does the UHM taxonomy relate to classical models of emotion?
 | Model | Number of basic | Structure | Mechanism | Status in UHM |
 |--------|:---:|-----------|----------|--------------|
 | **Ekman** (1971) | 6 | Discrete categories | Facial expression | 6 regions in 30D space [I] |
-| **Russell** (1980) | 2 axes | Continuous circumplex | Valence + arousal | Projection onto $(V, A)$ = $(\mathrm{sign}(dP/d\tau), |dP/d\tau|)$ [T] |
-| **Plutchik** (1980) | 8 | Wheel with intensity | Evolutionary functions | 8 regions, intensity = $|dP/d\tau|/(P - P_{\text{crit}})$ [I] |
+| **Russell** (1980) | 2 axes | Continuous circumplex | Valence + arousal | Projection onto $(V, A)$ = $(\mathrm{sign}(dP/d\tau), \|dP/d\tau\|)$ [T] |
+| **Plutchik** (1980) | 8 | Wheel with intensity | Evolutionary functions | 8 regions, intensity = $\|dP/d\tau\|/(P - P_{\text{crit}})$ [I] |
 | **Feldman Barrett** (2017) | 0 (constructed) | No basic emotions | Predictive coding | $\sigma(\Gamma)$ — "construction", $(dP/d\tau)$ — "affective root" [C] |
 | **UHM** | 30D | Continuous space | $dP/d\tau + \sigma(\Gamma)$ | Full model T-147 [T] |
 
@@ -432,7 +432,7 @@ The link between emotions and $dP/d\tau$ has a direct evolutionary meaning. Let 
 | **Anger** | $dP/d\tau < 0$, $\gamma_{DD}$ ↑↑ | Energy mobilisation | Fight, territory defence |
 | **Joy** | $dP/d\tau > 0$ | Reinforcement of successful behaviour | Continuation of current strategy |
 | **Sadness** | $dP/d\tau \approx 0$, $P$ low | Signal to revise strategy | Social support, restructuring |
-| **Surprise** | $|d^2P/d\tau^2| \gg 0$ | Attention switching | Orienting response |
+| **Surprise** | $\|d^2P/d\tau^2\| \gg 0$ | Attention switching | Orienting response |
 | **Disgust** | $\mathrm{Gap}(S,E)$ ↑↑ | Avoidance of "toxic" | Rejection, gag reflex |
 
 - **Negative emotions** ($dP/d\tau < 0$) signal loss of coherence — motivate active countermeasures

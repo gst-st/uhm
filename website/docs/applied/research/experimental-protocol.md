@@ -268,7 +268,7 @@ $$
 
 where $\mathrm{Coh}_{ij}^{\text{neural}}$ is the magnitude-squared coherence between observables $i$ and $j$ (from cross-spectral density), and $\phi_{ij}^{\text{PLV}}$ is the phase-locking value between the corresponding neural signals. Regularize via Cholesky decomposition: $\Gamma = LL^\dagger / \mathrm{Tr}(LL^\dagger)$ to ensure positivity and unit trace.
 
-**Step 4 (G₂-covariant Procrustes alignment).** By T-123 [Т], the representation is unique up to $G_2$. Fix the $G_2$ gauge freedom by aligning the reconstructed $\Gamma$ to a canonical reference via:
+**Step 4 (G₂-covariant Procrustes alignment).** By T-123 [T], the representation is unique up to $G_2$. Fix the $G_2$ gauge freedom by aligning the reconstructed $\Gamma$ to a canonical reference via:
 
 $$
 \Gamma_{\text{aligned}} = \arg\min_{g \in G_2} \| g\Gamma g^\dagger - \Gamma_{\text{ref}} \|_F
@@ -280,12 +280,12 @@ where $\Gamma_{\text{ref}}$ is the population-average $\Gamma$ from the wakefuln
 
 | Property | Status | Justification |
 |----------|--------|---------------|
-| CPTP | [Т] | Softmax + Cholesky → positive, trace-preserving; composition of CPTP channels is CPTP |
-| $G_2$-covariant | [Т] | Step 4 Procrustes alignment |
-| Unique up to $G_2$ | [Т] | T-123 |
+| CPTP | [T] | Softmax + Cholesky → positive, trace-preserving; composition of CPTP channels is CPTP |
+| $G_2$-covariant | [T] | Step 4 Procrustes alignment |
+| Unique up to $G_2$ | [T] | T-123 |
 | Calibratable | [H] | Requires empirical $\beta$-fitting to PCI* ↔ P_crit matching |
 
-**Status:** The construction is **formally well-defined** [Т] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it requires the Phase II experiment (§3.3) to be completed. After calibration, π_bio becomes a validated measurement instrument [Т].
+**Status:** The construction is **formally well-defined** [T] (Steps 1-4 are explicit CPTP operations). The **calibration** (choice of $\beta$ and population norms $\mu_k, \sigma_k$) is empirical [H] — it requires the Phase II experiment (§3.3) to be completed. After calibration, π_bio becomes a validated measurement instrument [T].
 
 **Falsification criterion:** If no value of $\beta$ exists such that $P_{\text{boundary}} = 2/7 \pm 0.05$ across all 50 subjects (p < 0.01), π_bio is falsified in its current form. This does not falsify UHM — only this specific operationalization. Alternative operationalizations (different neural observables, different normalization) would be explored.
 
@@ -528,11 +528,11 @@ This is the **first ever** test of critical exponents of a phase transition for 
 | 12 | SAD_max = 3 | I.5 | SAD ≥ 4 | [T] |
 | 13 | Genesis time | I.6 | n > n_genesis | [T] |
 | 14 | Phase coherence | I.7 | Φ ≥ 1 without co-rotation | [T] |
-| 15 | 3/7 attractor | III.3 | |P−3/7| > 0.1 | [C] |
+| 15 | 3/7 attractor | III.3 | $\|P-3/7\| > 0.1$ | [C] |
 | 16 | Ignition dynamics | II.3 | T_ign ⊥ (P−P_c) | [T] |
 | 17 | Exponents β=1/4 | I.8 + II.2 | β ∉ [0.20, 0.30] | [T] |
 | 18 | Ward suppression 19/49 | — | Λ-budget incompatible | [T] |
-| 19 | CPTP anchor | I.9 | ||π−π_can|| > 0.1 | [T] |
+| 19 | CPTP anchor | I.9 | $\|\pi-\pi_{\mathrm{can}}\| > 0.1$ | [T] |
 | 20 | ε_eff ≈ 0.059 | — | ε ∉ [0.04, 0.08] | [C] |
 | 21 | π_bio reconstruction | II.1 + III.1 | Error > 30% | [H] |
 | 22 | Spectral gap | II.4 | λ_gap/(2π) ∉ [10, 200] Hz | [H] |

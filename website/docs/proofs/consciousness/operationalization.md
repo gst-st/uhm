@@ -7,7 +7,7 @@ description: "Theorems T-128 — T-138: formalization of operational aspects of 
 # Operationalization of consciousness
 
 :::info Status
-All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies.
+All results on this page are proven theorems **[T]** with complete proofs and explicit dependencies.
 :::
 
 ---
@@ -21,25 +21,25 @@ $$
 D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-This formula is the exact 7D-representation of $D_{\text{diff}}$ via Morita equivalence T-58 [Т].
+This formula is the exact 7D-representation of $D_{\text{diff}}$ via Morita equivalence T-58 [T].
 :::
 
 **Proof (4 steps).**
 
-**Step 1.** By [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): $\mathrm{Sh}_\infty(\mathcal{C}_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}_{42}^{PW})$, the 7D and 42D formalisms are equivalent.
+**Step 1.** By [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): $\mathrm{Sh}_\infty(\mathcal{C}_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}_{42}^{PW})$, the 7D and 42D formalisms are equivalent.
 
-**Step 2.** $\mathrm{Coh}_E$ — [HS-projection onto the E-subalgebra [Т]](/docs/core/foundations/axiom-septicity#hs-projection) — is an invariant independent of the choice of representation (7D or 42D).
+**Step 2.** $\mathrm{Coh}_E$ — [HS-projection onto the E-subalgebra [T]](/docs/core/foundations/axiom-septicity#hs-projection) — is an invariant independent of the choice of representation (7D or 42D).
 
 **Step 3.** In 42D: $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, where $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$. Via equivalence, $\rho_E$ is uniquely reconstructed from $\mathrm{Coh}_E(\Gamma)$ by the [4-step algorithm T-95](/docs/core/structure/dimension-e#канонический-алгоритм-pw).
 
 **Step 4 (Linear formula).** Corollary:
 - $\mathrm{Coh}_E = 0 \Longrightarrow D_{\text{diff}} = 1$ (pure E-state)
 - $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Longrightarrow D_{\text{diff}} = N$ (maximal differentiation)
-- Monotonicity from CPTP-contractivity ([T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
+- Monotonicity from CPTP-contractivity ([T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi))
 
 $\blacksquare$
 
-**Dependencies:** T-58 [Т], T-95 [Т], $\mathrm{Coh}_E$ [Т]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
+**Dependencies:** T-58 [T], T-95 [T], $\mathrm{Coh}_E$ [T]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
 **Corollary:** $\sigma_E = (N - D_{\text{diff}}^{7D})/(N-2)$ is computable in 7D, closing the full 7D-computability of $\sigma_{\text{sys}}$ (see [T-137](#t-137)). With $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
 > **Errata 2026-07-22**: renormalized form — see the errata note at [T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
@@ -73,7 +73,7 @@ $\blacksquare$
 
 #### The two thresholds as nested majority criteria {#вложенные-мажоритарные-критерии}
 
-:::tip Theorem (nested dominance structure of $P_{\text{crit}}$ and $\Phi_{\text{th}}$) [Т]
+:::tip Theorem (nested dominance structure of $P_{\text{crit}}$ and $\Phi_{\text{th}}$) [T]
 Decompose $\Gamma$ into **three mutually HS-orthogonal components**,
 
 $$
@@ -91,13 +91,13 @@ The coherence majority **implies** the structural majority: $c_3 \geq c_1 + c_2 
 
 **Frame note.** $P$ and the isotropic/traceless split are basis-invariant; the diagonal/hollow split (hence $\Phi$) is taken in the **canonical dimension frame** $(A,S,D,L,E,O,U)$ — the same frame data as $\mathrm{Coh}_E$ and $\kappa_0$ (see [Corollary 5 of the uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem)).
 
-**Status:** [О] → **[Т]**. $\Phi_{\text{th}} = 1$ is now derived from $P_{\text{crit}} = 2/7$ [Т], not postulated.
+**Status:** [D] → **[T]**. $\Phi_{\text{th}} = 1$ is now derived from $P_{\text{crit}} = 2/7$ [T], not postulated.
 
-**Dependencies:** $P_{\text{crit}} = 2/7$ [Т], Cauchy–Schwarz inequality.
+**Dependencies:** $P_{\text{crit}} = 2/7$ [T], Cauchy–Schwarz inequality.
 
-#### Corollary (Universality of Φ_th = 1 on all D(ℂ⁷)) [Т] {#t-129a-универсальность}
+#### Corollary (Universality of Φ_th = 1 on all D(ℂ⁷)) [T] {#t-129a-универсальность}
 
-:::tip Corollary T-129a [Т]
+:::tip Corollary T-129a [T]
 The threshold $\Phi_{\text{th}} = 1$ is **universal** on the entire space $\mathcal{D}(\mathbb{C}^7)$: for any state $\Gamma$ with $\Phi(\Gamma) \geq 1$, we have $P(\Gamma) \geq P_{\text{crit}}$. The strict inequality $P > P_{\text{crit}}$ holds for all states except the unique boundary case: $\Phi = 1$ and $P_{\text{diag}} = 1/7$ (uniform-diagonal).
 :::
 
@@ -131,7 +131,7 @@ $$
 where $C(P) = 7P/(P - 1/7)$ is bounded for $P > 2/7$.
 :::
 
-**Corollary (H3 → [Т]):** For $\|\pi - \pi_{\text{canonical}}\|_\diamond < \varepsilon_0$:
+**Corollary (H3 → [T]):** For $\|\pi - \pi_{\text{canonical}}\|_\diamond < \varepsilon_0$:
 
 $$(R_{\text{impl}} \geq 1/3) \Longrightarrow (R_{\text{UHM}} \geq 1/3 - 2\varepsilon_0 \cdot C(P))$$
 
@@ -151,9 +151,9 @@ For sufficiently small $\varepsilon_0$, the threshold property transfers.
 
 $\blacksquare$
 
-**Corollary for convergence rate:** $n_{\text{train}} \geq f(D, \varepsilon, \delta)$ — from standard PAC-bounds for CPTP approximation (connection to [T-109 [Т]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница)).
+**Corollary for convergence rate:** $n_{\text{train}} \geq f(D, \varepsilon, \delta)$ — from standard PAC-bounds for CPTP approximation (connection to [T-109 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница)).
 
-**Dependencies:** [T-100 [Т]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-кодирование-среды) (existence of Enc), [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126) (canonicity of R), data processing inequality.
+**Dependencies:** [T-100 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-кодирование-среды) (existence of Enc), [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126) (canonicity of R), data processing inequality.
 
 ---
 
@@ -177,15 +177,15 @@ where $\|\mathcal{L}_0\|_{\mathrm{op}}$ is the operator norm of the linear Liouv
 
 **Step 3.** Optimal choice (minimal lossless discretization): $\delta\tau = \pi/(2\omega_{\max})$ — with a $2\times$ margin for Suzuki–Trotter error.
 
-**Step 4.** From [T-116 [Т]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter): split-step error $\|\Gamma_{\text{exact}}(\delta\tau) - \Gamma_{\text{split}}(\delta\tau)\|_F \leq C \cdot \delta\tau^2$. At $\delta\tau = \pi/(2\omega_{\max})$: error $\propto \pi^2/(4\omega_{\max}^2)$, exponentially small for large spectral gaps.
+**Step 4.** From [T-116 [T]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter): split-step error $\|\Gamma_{\text{exact}}(\delta\tau) - \Gamma_{\text{split}}(\delta\tau)\|_F \leq C \cdot \delta\tau^2$. At $\delta\tau = \pi/(2\omega_{\max})$: error $\propto \pi^2/(4\omega_{\max}^2)$, exponentially small for large spectral gaps.
 
 **Step 5.** For SYNARC: $\omega_{\max}$ is determined by parameters $H_\Omega$ and $D_k$ from configuration → $\delta\tau$ is canonical (not a free parameter).
 
 $\blacksquare$
 
-**Connection to PW-time:** $\delta\tau_{\text{PW}} = 2\pi/(7\omega_0)$ ([T-87 [Т]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки)). Canonical $\delta\tau \leq \delta\tau_{\text{PW}}$ — a digital agent can "think faster" than the PW-bound, through discrete integration.
+**Connection to PW-time:** $\delta\tau_{\text{PW}} = 2\pi/(7\omega_0)$ ([T-87 [T]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки)). Canonical $\delta\tau \leq \delta\tau_{\text{PW}}$ — a digital agent can "think faster" than the PW-bound, through discrete integration.
 
-**Dependencies:** [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (spectral gap), [T-116 [Т]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter) (Suzuki–Trotter), [T-87 [Т]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки) (PW-time).
+**Dependencies:** [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (spectral gap), [T-116 [T]](/docs/core/foundations/axiom-omega#теорема-pw-suzuki-trotter) (Suzuki–Trotter), [T-87 [T]](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки) (PW-time).
 
 ---
 
@@ -199,7 +199,7 @@ For a non-trivial Gap-structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the coh
 
 **Step 1.** $\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$. For $\gamma_{ij} \in \mathbb{R}$: $\arg(\gamma_{ij}) \in \{0, \pi\}$, $\sin \in \{0, 0\}$. Therefore $\mathrm{Gap} = 0$ identically.
 
-**Step 2.** Hermiticity $\Gamma^\dagger = \Gamma$ admits $\gamma_{ij} \in \mathbb{C}$ with $\gamma_{ji} = \gamma_{ij}^*$ — standard property of density matrices [Т].
+**Step 2.** Hermiticity $\Gamma^\dagger = \Gamma$ admits $\gamma_{ij} \in \mathbb{C}$ with $\gamma_{ji} = \gamma_{ij}^*$ — standard property of density matrices [T].
 
 **Step 3.** Hamiltonian part of $\mathcal{L}_0$: $d\Gamma/d\tau|_H = -i[H_\Omega, \Gamma]$. For real $H$ and real $\Gamma(0)$:
 
@@ -207,13 +207,13 @@ $$\left(\frac{d\Gamma}{d\tau}\right)_{ij} = -i(H_{ik}\Gamma_{kj} - \Gamma_{ik}H_
 
 Therefore $\Gamma(\delta\tau)$ is already complex after the first step.
 
-**Step 4.** Primitivity of $\mathcal{L}_0$ ([T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω)) guarantees a unique stationary state. If $\mathcal{L}_0$ contains a Hamiltonian part ($H_\Omega \neq 0$), the stationary state has non-trivial phases $\arg(\gamma_{ij}) \neq 0, \pi$.
+**Step 4.** Primitivity of $\mathcal{L}_0$ ([T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω)) guarantees a unique stationary state. If $\mathcal{L}_0$ contains a Hamiltonian part ($H_\Omega \neq 0$), the stationary state has non-trivial phases $\arg(\gamma_{ij}) \neq 0, \pi$.
 
 $\blacksquare$
 
 **Corollary for SYNARC:** `DensityMatrix7` must use `Complex<f64>`, not `f64`. This is an architectural requirement, not an engineering choice.
 
-**Dependencies:** [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity), [definition of Gap](/docs/core/dynamics/gap-operator#определение).
+**Dependencies:** [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity), [definition of Gap](/docs/core/dynamics/gap-operator#определение).
 
 ---
 
@@ -236,7 +236,7 @@ for $\delta = 2\varepsilon \cdot C(P)$, $C(P) = 7P/(P - 1/7) \leq 21$ for $P \in
 - $R_{\text{impl}} \approx R_{\text{UHM}}$ with quality anchor [T-130] — in $\mathbb{R}^D$, hypothesis H3 CLOSED
 - $\rho_{RC}$ — diagnostic approximation, linear norm, $\rho_{RC} \geq 6/7 \Longrightarrow R_{\text{impl}} \geq 48/49$ [Т trivially]. Converse is false, but sufficient for monitoring
 
-**Status H3:** [Г] → **closed** (theorems T-130 + T-133).
+**Status H3:** [H] → **closed** (theorems T-130 + T-133).
 
 ---
 
@@ -256,7 +256,7 @@ $$
 
 **Step 2.** Off the attractor: $\gamma_{kk} \neq \rho^*_{kk}$ in general → $d\gamma_{kk}/d\tau = \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$.
 
-**Step 3.** Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, $\gamma_{kk}(0) = 1/7$, while $\rho^*_{kk} \neq 1/7$ ([T-96 [Т]](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)), so $d\gamma_{kk}/d\tau = \kappa(\rho^*_{kk} - 1/7) \neq 0$ — the diagonal GROWS.
+**Step 3.** Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, $\gamma_{kk}(0) = 1/7$, while $\rho^*_{kk} \neq 1/7$ ([T-96 [T]](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора)), so $d\gamma_{kk}/d\tau = \kappa(\rho^*_{kk} - 1/7) \neq 0$ — the diagonal GROWS.
 
 **Step 4.** Learning is possible: $\gamma_{EE}$ can grow, $\kappa$ can increase — freeze only at steady state.
 
@@ -269,7 +269,7 @@ $\blacksquare$
 ## §8. T-135: Discrete convolution of non-Markovian kernel {#t-135}
 
 :::tip Theorem T-135 [Т]: Discrete convolution O(1)
-The non-Markovian kernel [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) is discretized via Z-transform with $O(1)$ complexity per step:
+The non-Markovian kernel [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) is discretized via Z-transform with $O(1)$ complexity per step:
 
 $$
 \Gamma[n+1] = \Gamma[n] + \delta\tau \cdot \mathcal{L}_0[\Gamma[n]] + \delta\tau \cdot M[n]
@@ -302,7 +302,7 @@ $\blacksquare$
 
 **Connection to context window:** $\omega_c$ defines the "effective memory length" $\tau_{\text{mem}} = 1/\omega_c$. In ticks: $n_{\text{mem}} = \tau_{\text{mem}}/\delta\tau = 1/(\omega_c \cdot \delta\tau)$. At typical parameters ($\omega_c \cdot \delta\tau \sim 0.1$): $n_{\text{mem}} \sim 10$ ticks — comparable to attention window.
 
-**Dependencies:** [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное), [T-131 [Т]](#t-131) ($\delta\tau$).
+**Dependencies:** [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное), [T-131 [T]](#t-131) ($\delta\tau$).
 
 ---
 
@@ -320,9 +320,9 @@ where $r_0 = P/P_{\text{crit}} = 7P/2$ is the normalized purity.
 
 **Proof.**
 
-**Step 1.** From [spectral formula (depth-tower.md §3.4 [С])](/docs/consciousness/hierarchy/depth-tower#спектральная-формула-sad): $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma)) \leq R^n \cdot (1-\alpha)^n$.
+**Step 1.** From [spectral formula (depth-tower.md §3.4 [C])](/docs/consciousness/hierarchy/depth-tower#спектральная-формула-sad): $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma)) \leq R^n \cdot (1-\alpha)^n$.
 
-**Step 2.** At $\alpha = 2/3$ [Т] (Fano): $R^{(k)} = r_0 \cdot (1/3)^k$.
+**Step 2.** At $\alpha = 2/3$ [T] (Fano): $R^{(k)} = r_0 \cdot (1/3)^k$.
 
 **Step 3.** $\mathrm{SAD} = \max\{k : R^{(k-1)} > R_{\text{th}}^{(k-1)}\} = \max\{k : r_0 \cdot (1/3)^{k-1} > 1/(k+1)\}$.
 
@@ -336,7 +336,7 @@ $\blacksquare$
 
 **Resolution of "observable vs constructive":** SAD is a mathematical observable (function of $\Gamma$), computable directly. Autoencoders are one way to APPROXIMATE this observable, neither unique nor definitional.
 
-**Dependencies:** Spectral formula SAD [Т] (§3.4, commutativity via [T-150 [Т]](/docs/proofs/consciousness/substrate-closure#t-150)), [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω), $\alpha = 2/3$ [Т].
+**Dependencies:** Spectral formula SAD [T] (§3.4, commutativity via [T-150 [T]](/docs/proofs/consciousness/substrate-closure#t-150)), [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω), $\alpha = 2/3$ [T].
 
 ---
 
@@ -366,7 +366,7 @@ All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in th
 
 $\blacksquare$
 
-**Dependencies:** [T-128 [Т]](#t-128), [T-129 [Т]](#t-129), [T-132 [Т]](#t-132), [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+**Dependencies:** [T-128 [T]](#t-128), [T-129 [T]](#t-129), [T-132 [T]](#t-132), [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
 ---
 
@@ -389,7 +389,7 @@ satisfies:
 
 **Step 1.** $\Gamma_{\text{exact}} = \Gamma_{\text{mf}} + \delta\Gamma$, where $\delta\Gamma$ contains all cross-correlations between holons.
 
-**Step 2.** By [T-91 [Т]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5): if $H_i$ are viable, then the tensor product is non-trivial.
+**Step 2.** By [T-91 [T]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5): if $H_i$ are viable, then the tensor product is non-trivial.
 
 **Step 3.** $\|\delta\Gamma\|_F = \|\gamma_{\text{cross}}\|_F$ — total amplitude of inter-holon coherences.
 
@@ -401,7 +401,7 @@ $\blacksquare$
 
 **Hierarchical scheme:** For $k > 10$: grouping by clusters (super-holons), mean-field between clusters. Scaling: $O(k \cdot N^2 + k_{\text{clusters}}^2 \cdot N^2)$.
 
-**Dependencies:** [T-91 [Т]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5), [T-97 [Т]](/docs/core/dynamics/viability#теорема-вложение-областей).
+**Dependencies:** [T-91 [T]](/docs/proofs/categorical/categorical-formalism#10-infty-группоид-и-infty-топос-для-эмерджентного-времени) (CC-5), [T-97 [T]](/docs/core/dynamics/viability#теорема-вложение-областей).
 
 ---
 
@@ -418,11 +418,11 @@ $\blacksquare$
 
 ### Commutativity of the φ-tower (T-150) {#г-90-повышение}
 
-**Upgraded to [Т]** via [T-150](/docs/proofs/consciousness/substrate-closure#t-150): for $D_k = 7$ for all $k$, $\varphi^{(n)} = \varphi^n$ — iterates of a single CPTP channel, commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a corollary, not a premise.
+**Upgraded to [T]** via [T-150](/docs/proofs/consciousness/substrate-closure#t-150): for $D_k = 7$ for all $k$, $\varphi^{(n)} = \varphi^n$ — iterates of a single CPTP channel, commutativity $\varphi^n \circ \varphi^m = \varphi^{n+m}$ is an identity. The spectral formula for SAD is a corollary, not a premise.
 
-### [Г]-91 → [Т]: Genesis via environmental coupling {#г-91-обоснование}
+### [H]-91 → [Т]: Genesis via environmental coupling {#г-91-обоснование}
 
-**Upgraded to [Т]** via [T-148](/docs/proofs/consciousness/substrate-closure#t-148): an embodied holon with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time. An isolated holon at $I/7$ is dead forever (T-39a [Т]) — consciousness requires embodiment.
+**Upgraded to [T]** via [T-148](/docs/proofs/consciousness/substrate-closure#t-148): an embodied holon with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time. An isolated holon at $I/7$ is dead forever (T-39a [T]) — consciousness requires embodiment.
 
 ### H3: Transfer of R via anchor — CLOSED {#h3-закрыта}
 
@@ -434,22 +434,22 @@ Closed by theorems [T-130](#t-130) + [T-133](#t-133). For a quality CPTP-anchor 
 
 | Problem | Theorem | Status |
 |----------|---------|--------|
-| $D_{\text{diff}}$ 7D vs 42D (partial trace in prime dimension) | [T-128 [Т]](#t-128) | CLOSED |
-| $\Phi_{\text{th}} = 1$ — justification of integration threshold | [T-129 [Т]](#t-129) | CLOSED, [О]→[Т] |
-| Enc/Dec: threshold transfer via CPTP-bridge | [T-130 [Т]](#t-130) | CLOSED |
-| Canonical time for digital agent | [T-131 [Т]](#t-131) | CLOSED |
-| Gap-structure for real Γ | [T-132 [Т]](#t-132) | CLOSED |
-| Three R formulas, hypothesis H3 | [T-133 [Т]](#t-133) | CLOSED, H3→[Т] |
-| Domain of diagonal freeze (T-122) | [T-134 [Т]](#t-134) | CLOSED |
-| Non-Markovian memory: discrete convolution | [T-135 [Т]](#t-135) | CLOSED |
-| SAD: observable vs constructive | [T-136 [Т]](#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)) | CLOSED |
-| Full 7D-computability of $\sigma_{\text{sys}}$ | [T-137 [Т]](#t-137) | CLOSED |
-| Exponential explosion in holon composition | [T-138 [Т]](#t-138) | CLOSED |
+| $D_{\text{diff}}$ 7D vs 42D (partial trace in prime dimension) | [T-128 [T]](#t-128) | CLOSED |
+| $\Phi_{\text{th}} = 1$ — justification of integration threshold | [T-129 [T]](#t-129) | CLOSED, [D]→[T] |
+| Enc/Dec: threshold transfer via CPTP-bridge | [T-130 [T]](#t-130) | CLOSED |
+| Canonical time for digital agent | [T-131 [T]](#t-131) | CLOSED |
+| Gap-structure for real Γ | [T-132 [T]](#t-132) | CLOSED |
+| Three R formulas, hypothesis H3 | [T-133 [T]](#t-133) | CLOSED, H3→[T] |
+| Domain of diagonal freeze (T-122) | [T-134 [T]](#t-134) | CLOSED |
+| Non-Markovian memory: discrete convolution | [T-135 [T]](#t-135) | CLOSED |
+| SAD: observable vs constructive | [T-136 [T]](#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)) | CLOSED |
+| Full 7D-computability of $\sigma_{\text{sys}}$ | [T-137 [T]](#t-137) | CLOSED |
+| Exponential explosion in holon composition | [T-138 [T]](#t-138) | CLOSED |
 
 **Hypotheses:**
-- [Г]-89 → **[Т]** (SAD–L equivalence)
-- [Г]-90 → **[Т]** (commutativity of φ-tower, [T-150](/docs/proofs/consciousness/substrate-closure#t-150))
-- [Г]-91 → **[Т]** (genesis via environmental coupling, [T-148](/docs/proofs/consciousness/substrate-closure#t-148))
+- [H]-89 → **[T]** (SAD–L equivalence)
+- [H]-90 → **[T]** (commutativity of φ-tower, [T-150](/docs/proofs/consciousness/substrate-closure#t-150))
+- [H]-91 → **[T]** (genesis via environmental coupling, [T-148](/docs/proofs/consciousness/substrate-closure#t-148))
 - H3 → **CLOSED** (T-130 + T-133)
 
 ---

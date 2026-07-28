@@ -8,10 +8,10 @@ description: "Rigorous proofs: Fano channel preserves coherences, Fano–atomic 
 # Proofs: Fano Channel and Key Gap Theorems
 
 :::info Who this chapter is for
-The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, the exact Fano–atomic proportionality $\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$ (with the finite frame-group covariance and the canonical $G_2$-covariant dissipator), equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [Т].
+The reader will find here rigorous proofs of the central theorems of Gap dynamics: preservation of coherences by the Fano channel, the exact Fano–atomic proportionality $\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$ (with the finite frame-group covariance and the canonical $G_2$-covariant dissipator), equilibrium Gap, optimality of the Fano channel, and connection with the Hamming code H(7,4). All results have status [T].
 :::
 
-This document contains **rigorous proofs** of the central theorems of Gap dynamics. All results have status **[Т]** (impeccably rigorous theorems, see the [status registry](/docs/reference/status-registry)).
+This document contains **rigorous proofs** of the central theorems of Gap dynamics. All results have status **[T]** (impeccably rigorous theorems, see the [status registry](/docs/reference/status-registry)).
 
 ---
 
@@ -19,7 +19,7 @@ This document contains **rigorous proofs** of the central theorems of Gap dynami
 
 ### 1.1 Completeness of Fano atoms
 
-:::tip Theorem 1.1 (Completeness of Fano atoms) [Т]
+:::tip Theorem 1.1 (Completeness of Fano atoms) [T]
 For the 7 lines of the [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$, projections onto 3-dimensional subspaces are defined:
 
 $$
@@ -37,7 +37,7 @@ $$
 
 ### 1.2 Fano-structured Lindblad operators
 
-:::tip Definition (Fano Lindblad operators) [Т]
+:::tip Definition (Fano Lindblad operators) [T]
 For each Fano line $p = (i,j,k)$ a Lindblad operator is defined:
 
 $$
@@ -59,9 +59,9 @@ $$
 
 ---
 
-## 2. Theorem: Fano Channel Preserves Coherences [Т] {#теорема-фано-канал}
+## 2. Theorem: Fano Channel Preserves Coherences [T] {#теорема-фано-канал}
 
-:::tip Theorem 2.1 (Fano channel preserves coherences) [Т]
+:::tip Theorem 2.1 (Fano channel preserves coherences) [T]
 For an arbitrary coherence matrix $\Gamma$:
 
 **(a)** Diagonal elements are preserved exactly:
@@ -160,9 +160,9 @@ $$
 
 ---
 
-## 3. Canonical Form of φ_coh [Т] {#phi-coh}
+## 3. Canonical Form of φ_coh [T] {#phi-coh}
 
-:::tip Theorem 3.1 (Canonical form of $\varphi_{\text{coh}}$) [Т]
+:::tip Theorem 3.1 (Canonical form of $\varphi_{\text{coh}}$) [T]
 Canonical coherence-preserving self-modeling:
 
 $$
@@ -180,7 +180,7 @@ where:
 
 ### Target coherences
 
-:::tip Theorem 3.2 (Target coherences of $\varphi_{\text{coh}}$) [Т]
+:::tip Theorem 3.2 (Target coherences of $\varphi_{\text{coh}}$) [T]
 **(a)** Magnitude of target coherence (with diagonal anchor):
 
 $$
@@ -194,7 +194,7 @@ $$
 
 ### Explicit Kraus coefficients
 
-:::tip Theorem 3.3 (Explicit coefficients $c_{mn}$) [Т]
+:::tip Theorem 3.3 (Explicit coefficients $c_{mn}$) [T]
 Decomposition coefficients of canonical $\varphi_{\text{coh}}$:
 
 $$
@@ -209,9 +209,9 @@ The coefficients are fully determined by:
 
 ---
 
-## 4. Variational Definition of α* [Т] {#alpha-star}
+## 4. Variational Definition of α* [T] {#alpha-star}
 
-:::tip Theorem 4.1 (Variational definition of $\alpha^*$) [Т]
+:::tip Theorem 4.1 (Variational definition of $\alpha^*$) [T]
 The optimal parameter is determined by the [variational principle](/docs/proofs/dynamics/fep-derivation):
 
 $$
@@ -233,9 +233,9 @@ $$
 
 ---
 
-## 5. Covariance of the Fano Dissipator [Т] {#g2-ковариантность}
+## 5. Covariance of the Fano Dissipator [T] {#g2-ковариантность}
 
-:::tip Theorem 5.1a (Fano–atomic proportionality) [Т]
+:::tip Theorem 5.1a (Fano–atomic proportionality) [T]
 The Fano dissipator is **exactly proportional** to the atomic dissipator on $\mathrm{Herm}(\mathbb{C}^7)$:
 
 $$
@@ -253,7 +253,7 @@ $$
 The mixing constant $\alpha = 2/3$ used throughout the corpus is **not a free parameter**: it is the BIBD$(7,3,1)$ uniformization constant, $\alpha = 1 - c = 1 - \tfrac{k-1}{v-1} = 1 - \tfrac13 = \tfrac23$ — the dissipated fraction of coherence per Fano step. Theorem 5.1a derives it from the incidence geometry alone.
 :::
 
-:::warning Theorem 5.1b (Covariance group of the pinching dissipators) [Т]
+:::warning Theorem 5.1b (Covariance group of the pinching dissipators) [T]
 Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, the two dissipators have **identical** symmetry groups. Both are $S_7$-equivariant and covariant under the finite **octonionic frame group** $\Gamma_{\!\text{oct}} := \mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$ (order 168), realised inside $G_2$ as the basis permutations preserving the seven Fano lines. **Neither is covariant under the full continuous $G_2$.**
 :::
 
@@ -261,7 +261,7 @@ Because $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$, the two
 
 (Failure of full $G_2$-covariance.) $G_2$ is connected, so a continuous map $g\mapsto\sigma_g$ into the discrete 7-element set of coordinate lines is constant; $g\Pi_p g^\dagger = \Pi_p\ \forall g$ would make $\mathrm{span}(\text{line }p)$ a 3-dimensional $G_2$-invariant subspace. But the fundamental representation $\mathbf{7}$ of $G_2$ is **irreducible** (Cartan 1894), so by Schur's lemma it has no nonzero proper invariant subspace — contradiction. A generic $g\in G_2$ carries $\Pi_p$ to a rank-3 projector onto a *rotated* 3-subspace, not to any $\Pi_q$; equivalently $\mathrm{diag}(g\Gamma g^\dagger)\neq g\,\mathrm{diag}(\Gamma)\,g^\dagger$. Hence the pinching dissipators break $G_2$ down to $\Gamma_{\!\text{oct}}$. $\square$
 
-:::tip Theorem 5.1c (Canonical $G_2$-covariant dissipator) [Т]
+:::tip Theorem 5.1c (Canonical $G_2$-covariant dissipator) [T]
 A genuinely $G_2$-covariant Lindblad dissipator on $\mathbb{C}^7$ exists, built from the associative calibration 3-form $\varphi$ (octonionic structure constants):
 
 $$
@@ -284,9 +284,9 @@ Theorems 5.1a–c remove the earlier over-claim ("the Fano dissipator is $G_2$-c
 
 ---
 
-## 6. Pinching Dissipators are NOT fully G₂-Covariant [Т] {#атомарный-не-g2}
+## 6. Pinching Dissipators are NOT fully G₂-Covariant [T] {#атомарный-не-g2}
 
-:::tip Theorem 6.1 (Pinching dissipators break $G_2$) [Т]
+:::tip Theorem 6.1 (Pinching dissipators break $G_2$) [T]
 The atomic dissipator $\mathcal{D}_{\text{atom}}[\Gamma] = \mathrm{diag}(\Gamma) - \Gamma$ — and, by Theorem 5.1a, the Fano dissipator $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ — is **not** covariant under the full continuous $G_2$:
 
 $$
@@ -308,7 +308,7 @@ Both are covariant exactly under the finite frame group $\Gamma_{\!\text{oct}}\s
 
 ### Degree of G₂-violation
 
-:::tip Theorem 6.2 (Degree of violation is determined by $\alpha$) [Т]
+:::tip Theorem 6.2 (Degree of violation is determined by $\alpha$) [T]
 For the mixed channel $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base}} + (1-\alpha)\,\mathcal{P}_{\text{Fano}}$ the $G_2$-non-covariance
 
 $$
@@ -320,9 +320,9 @@ is **strictly positive for every** $\alpha\in[0,1]$. Since both pinching dissipa
 
 ---
 
-## 7. Equilibrium Gap [Т] {#равновесный-gap}
+## 7. Equilibrium Gap [T] {#равновесный-gap}
 
-:::tip Theorem 7.1 (Stationary Gap) [Т]
+:::tip Theorem 7.1 (Stationary Gap) [T]
 The stationary solution of the coherence evolution equation:
 
 $$
@@ -355,9 +355,9 @@ The stationary Gap is **shifted** relative to the target by the angle $\arctan(\
 
 ---
 
-## 8. L4 ≠ Gap = 0 [Т] {#l4-не-gap-0}
+## 8. L4 ≠ Gap = 0 [T] {#l4-не-gap-0}
 
-:::tip Theorem 8.1 (L4 is not equivalent to Gap = 0) [Т]
+:::tip Theorem 8.1 (L4 is not equivalent to Gap = 0) [T]
 Level L4 ([fixed point](/docs/consciousness/hierarchy/interiority-hierarchy) $\varphi(\Gamma^*) = \Gamma^*$) is **not** equivalent to full transparency $\mathrm{Gap} = 0$.
 
 **(a)** L4 means: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ (the system **exactly knows** its Gap).
@@ -369,9 +369,9 @@ Level L4 ([fixed point](/docs/consciousness/hierarchy/interiority-hierarchy) $\v
 
 ---
 
-## 9. Necessity of Generalized φ [Т] {#необходимость-phi-coh}
+## 9. Necessity of Generalized φ [T] {#необходимость-phi-coh}
 
-:::tip Theorem 9.1 (Necessity of $\varphi_{\text{coh}}$) [Т]
+:::tip Theorem 9.1 (Necessity of $\varphi_{\text{coh}}$) [T]
 The canonical $\varphi_{\text{base}}$ (decohering self-observation) is **incompatible** with viability:
 
 **(a)** $\varphi_{\text{base}}$ destroys all coherences: $[\varphi_{\text{base}}(\Gamma)]_{ij} = 0$ for $i \neq j$.
@@ -385,9 +385,9 @@ The canonical $\varphi_{\text{base}}$ (decohering self-observation) is **incompa
 
 ---
 
-## 10. Equivalence of BIBD Channels [Т] {#bibd-эквивалентность}
+## 10. Equivalence of BIBD Channels [T] {#bibd-эквивалентность}
 
-:::tip Theorem 10.1 (Equivalence of BIBD channels, T1) [Т]
+:::tip Theorem 10.1 (Equivalence of BIBD channels, T1) [T]
 All $(v,k,\lambda)$-BIBD channels with the same $v$ and $k$ (but arbitrary $\lambda$) generate **the same** CPTP channel. The coherence contraction $c = (k-1)/(v-1)$ does not depend on $\lambda$.
 :::
 
@@ -397,16 +397,16 @@ Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорем
 
 ---
 
-## 11. $S_7$-Equivariance and Uniform Contraction [Т] {#s7-эквивариантность}
+## 11. $S_7$-Equivariance and Uniform Contraction [T] {#s7-эквивариантность}
 
-:::tip Theorem 11.1 ($S_7$-equivariance, T5) [Т]
+:::tip Theorem 11.1 ($S_7$-equivariance, T5) [T]
 The atomic dissipator $\mathcal{D}_\text{atom}$ with operators $L_k = |k\rangle\langle k|$ commutes with any permutation:
 $$
 \mathcal{D}_\text{atom}[U_\sigma \Gamma U_\sigma^\dagger] = U_\sigma \, \mathcal{D}_\text{atom}[\Gamma] \, U_\sigma^\dagger \quad \forall\, \sigma \in S_7
 $$
 :::
 
-:::tip Theorem 11.2 (Uniform contraction, T6) [Т]
+:::tip Theorem 11.2 (Uniform contraction, T6) [T]
 Consequence of T5: $\mathcal{D}_\text{atom}[\Gamma]_{ij} = -\gamma_{ij}$ for **all** $i \neq j$. All coherences decohere at the same rate — **unconditionally** (without (КГ)).
 :::
 
@@ -414,9 +414,9 @@ Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#s7-экви�
 
 ---
 
-## 12. Autopoietic Necessity of Composite Observation [Т] {#необходимость-c-положительное}
+## 12. Autopoietic Necessity of Composite Observation [T] {#необходимость-c-положительное}
 
-:::tip Theorem 12.1 (Necessity of $c > 0$, T7) [Т]
+:::tip Theorem 12.1 (Necessity of $c > 0$, T7) [T]
 The atomic dissipator ($c = 0$) is incompatible with autopoiesis (AP): under full decoherence ($\alpha = 1$) the coherences $\gamma_{OE}$, $\gamma_{OU}$ decay as $e^{-\tau}$, the formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is suppressed exponentially, and the regenerative contribution does not compensate the dissipative one.
 
 **Corollary:** For stable viability, the system **must** use composite observation ($c > 0$, $\alpha < 1$).
@@ -426,13 +426,13 @@ Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорем
 
 ---
 
-## 13. Autopoietic Optimality of the Fano Channel [Т] {#оптимальность-фано}
+## 13. Autopoietic Optimality of the Fano Channel [T] {#оптимальность-фано}
 
-:::tip Theorem 13.1 (Fano optimality, T10) [Т]
+:::tip Theorem 13.1 (Fano optimality, T10) [T]
 Among $S_7$-invariant BIBD$(7,k,1)$-channels ($k \in \{2, 3\}$) satisfying:
-- (i) $c > 0$ (T7 [Т])
-- (ii) Complete pair coverage (T2 [Т])
-- (iii) Democracy (T6 [Т])
+- (i) $c > 0$ (T7 [T])
+- (ii) Complete pair coverage (T2 [T])
+- (iii) Democracy (T6 [T])
 
 the **unique optimal** one is the Fano channel ($k = 3$, $c = 1/3$).
 
@@ -440,20 +440,20 @@ the **unique optimal** one is the Fano channel ($k = 3$, $c = 1/3$).
 |----------|:---:|:---:|:---:|
 | Contraction $c$ | 1/6 | **1/3** | $k = 3$ |
 | Number of operators $b$ | 21 | **7** | $k = 3$ |
-| $G_2$-covariance | **No** [Т] | **Yes** [Т] | $k = 3$ |
+| $G_2$-covariance | **No** [T] | **Yes** [T] | $k = 3$ |
 :::
 
 Proof: [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-оптимальность-фано).
 
 ---
 
-## 14. Connection with Hamming Code H(7,4) [Т] {#код-хэмминга}
+## 14. Connection with Hamming Code H(7,4) [T] {#код-хэмминга}
 
-:::tip Theorem 14.1 (Hamming bound, T8) [Т] (standard)
+:::tip Theorem 14.1 (Hamming bound, T8) [T] (standard)
 The code H(7,4) is the unique perfect single-error-correcting binary code of length 7: $2^3 = 7 + 1$.
 :::
 
-:::tip Theorem 14.2 (H(7,4) = PG(2,2), T9) [Т] (standard)
+:::tip Theorem 14.2 (H(7,4) = PG(2,2), T9) [T] (standard)
 The codewords of weight 3 of the simplex code $S(3,7)$ (dual of H(7,4)) form **exactly 7 triples** coinciding with the lines of the Fano plane PG(2,2). The parity-check matrix of H(7,4) uniquely determines PG(2,2).
 :::
 

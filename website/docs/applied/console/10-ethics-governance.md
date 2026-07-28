@@ -45,7 +45,7 @@ Because the frame is *derived* and $G_2$-invariant ([T-223](/docs/applied/resear
 ## §6. Governance process {#управление}
 
 - **Traceability review.** Every new feature must extend the [master traceability table](/docs/applied/console/theory-to-instrument#трассируемость): its source result, corpus status, and the guardrails it inherits. A feature with no traceable source does not ship.
-- **Status honesty.** The corpus's [T]/[C]/[И] tags travel to the UI; a feature resting on [C] or [И] is never presented with [T] confidence.
+- **Status honesty.** The corpus's [T]/[C]/[I] tags travel to the UI; a feature resting on [C] or [I] is never presented with [T] confidence.
 - **Retraction discipline.** If a source result is ever retracted in the corpus, the features resting on it are flagged and re-reviewed — the same discipline the corpus applies to its own theorems, extended to the product.
 - **Independent validation.** Studies are pre-registered; product-derived data follows the same discipline as lab data ([07 §7](/docs/applied/console/roadmap-validation#данные)), so commercial incentive cannot quietly bend the science.
 

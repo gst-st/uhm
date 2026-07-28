@@ -7,7 +7,7 @@ description: "Rigorous proof of P_crit = 2/N from first principles of UHM"
 
 # Theorem on Critical Purity
 
-:::tip Status: [Т] Proven
+:::tip Status: [T] Proven
 The value $P_{\text{crit}} = 2/N$ is rigorously derived from several mathematically equivalent formulations of a single geometric principle (paths 1–4) and an independent autopoietic argument (path 5). The convergence of all approaches to a single value confirms the fundamentality of this threshold.
 :::
 
@@ -305,12 +305,12 @@ The strengthened criterion $\|\Delta\|_F \ge \|I/N\|_F$ coincides with Path 1 at
 
 ---
 
-### 3.6 Path 6: Octonionic norm [И] {#путь-6-октонионная-норма}
+### 3.6 Path 6: Octonionic norm [I] {#путь-6-октонионная-норма}
 
-:::note Interpretation [И]
+:::note Interpretation [I]
 In the [octonionic interpretation](../../core/structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is connected to the norm on $\mathrm{Im}(\mathbb{O})$. The normativity $|xy| = |x||y|$ ensures a multiplicative metric. The threshold $P_{\text{crit}} = 2/7$ can be interpreted as the minimum norm of a vector in $\mathrm{Im}(\mathbb{O})$ ≅ ℝ⁷ at which its projection onto structural directions (Fano triplets) exceeds the noise projection.
 
-**Status:** [Т], bridge [Т] (closed, T15). Compatible with the other five paths. See [structural derivation](../minimality/theorem-octonionic-derivation).
+**Status:** [T], bridge [T] (closed, T15). Compatible with the other five paths. See [structural derivation](../minimality/theorem-octonionic-derivation).
 :::
 
 ---

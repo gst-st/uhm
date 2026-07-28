@@ -70,15 +70,15 @@ In this formula $\omega_0$ is the fundamental clock frequency and $\gamma_{OO}$ 
 The Ground is an **aspect** of configuration $\Gamma$, not a separate entity. "The Holon is grounded" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|O\rangle$ is active, and the vacuum energy is non-zero: $\langle 0|H|0\rangle \neq 0$.
 :::
 
-:::tip Functional uniqueness of O [Т]
+:::tip Functional uniqueness of O [T]
 Dimension $O$ is **necessary and functionally unique** by four independent arguments:
 
 1. **From the form of ℛ [Т]:** $\mathcal{R} = \kappa \cdot (\rho_* - \Gamma) \cdot g_V(P)$ requires a source with $\Delta F > 0$ for $g_V > 0$. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the $(\mathcal{D}_\Omega, \mathcal{R})$ duality loses its structure.
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) requires $\mathrm{End}(O)$, $\mathrm{Hom}(O, E)$, $\mathrm{Hom}(O, U)$. On removal of O: κ₀ is undefined, the $(\mathcal{D}_\Omega, \mathcal{R})$ duality loses its structure.
 3. **From Page–Wootters (A5):** O is the distinguished dimension for the tensor factorisation $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$. Without O: internal time τ is undefined.
 4. **Functional independence [Т]:** No other mathematical object (projector, observable, unitary operator, commutator, density matrix, trace) can perform the function of O (source/clock).
 
-Status: **[Т]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 :::
 
 ## Mathematical representation
@@ -105,7 +105,7 @@ The condition $\gamma_{OO} > 0$ means that the Ground dimension is active in con
 ### Stress in the O channel
 
 $$
-\sigma_O = \mathrm{clamp}(1 - 7\gamma_{OO},\; 0,\; 1) \quad \text{[Т] (T-92)}
+\sigma_O = \mathrm{clamp}(1 - 7\gamma_{OO},\; 0,\; 1) \quad \text{[T] (T-92)}
 $$
 
 - $\sigma_O = 0$: ground is provided ($\gamma_{OO} \geq 1/7$)
@@ -123,16 +123,16 @@ where $H$ is the [system Hamiltonian](../../reference/specification#гамиль
 
 ## Role in regeneration {#роль-в-регенерации}
 
-The Ground provides the source of free energy for the **regenerative term** [Т] of the [evolution equation](/docs/core/dynamics/evolution#3-регенеративный-член):
+The Ground provides the source of free energy for the **regenerative term** [T] of the [evolution equation](/docs/core/dynamics/evolution#3-регенеративный-член):
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 where:
-- $\kappa(\Gamma) > 0$ — regeneration rate [Т] ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([operator φ](/docs/core/operators/phi-operator))
-- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [Т] ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
+- $\kappa(\Gamma) > 0$ — regeneration rate [T] ([categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([operator φ](/docs/core/operators/phi-operator))
+- $g_V(P) = \mathrm{clamp}\!\bigl(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}}\bigr)$ — V-preservation gate [T] ([derivation](/docs/core/dynamics/evolution#теорема-v-preservation-gate))
 - $\Delta F = F_{\text{env}} - F_{\text{sys}}$ — free-energy gradient (necessary condition: $g_V > 0 \Rightarrow \Delta F > 0$)
 
 The full form of $\mathcal{R}$ is [derived from axioms](/docs/core/dynamics/evolution#вывод-формы-регенерации) — no component is postulated.
@@ -220,7 +220,7 @@ $$
 where $\mathcal{D}_\Omega \dashv \mathcal{R}$ is the dissipation-regeneration adjunction.
 
 :::note Categorical origin of κ₀
-The parameter $\kappa_0$ is **derived** categorically from the adjunction of the dissipative and regenerative functors. The exact formula **[Т]** (T-88): $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — unique via the Čencov–Petz theorem. Full justification in [Axiom of Septicity → Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
+The parameter $\kappa_0$ is **derived** categorically from the adjunction of the dissipative and regenerative functors. The exact formula **[T]** (T-88): $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — unique via the Čencov–Petz theorem. Full justification in [Axiom of Septicity → Categorical derivation of κ₀](../foundations/axiom-septicity#структурный-анзац-kappa0).
 :::
 
 :::note DRY: Single definition
@@ -340,8 +340,8 @@ Let us break down each component:
 | Component | Meaning | Intuition |
 |-----------|---------|-----------|
 | $\omega_0$ | Base clock frequency | "Metronome tempo" — how often the system "ticks" |
-| $|\gamma_{OE}|$ | Coherence of O with Interiority | "How connected the roots are to the leaves" — feeding the inner world |
-| $|\gamma_{OU}|$ | Coherence of O with Unity | "How connected the roots are to the trunk" — feeding wholeness |
+| $\|\gamma_{OE}\|$ | Coherence of O with Interiority | "How connected the roots are to the leaves" — feeding the inner world |
+| $\|\gamma_{OU}\|$ | Coherence of O with Unity | "How connected the roots are to the trunk" — feeding wholeness |
 | $\gamma_{OO}$ | Population of the Ground | "Size of the root system" — O's own resources |
 
 **Why exactly these three coherences?** Regeneration is the restoration of the Holon's coherence. This requires:
@@ -455,8 +455,8 @@ When $\gamma_{Oi} \to 0$ for all $i$:
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_7 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $O = e_7$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_7 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $O = e_7$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---

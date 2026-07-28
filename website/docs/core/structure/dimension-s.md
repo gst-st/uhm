@@ -139,12 +139,12 @@ $$
 | $\to 0$ | Loss of all structure | Heat death, complete destructuration |
 
 :::warning Structure ≠ rigidity
-High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) impedes adaptation. Living systems maintain $\gamma_{SS}$ in a range that combines stability with plasticity. This is consistent with the [Goldilocks zone](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ **[Т]** — consciousness requires a balance between order and chaos.
+High $\gamma_{SS}$ is not always good. Excessive structuredness (rigidity) impedes adaptation. Living systems maintain $\gamma_{SS}$ in a range that combines stability with plasticity. This is consistent with the [Goldilocks zone](../../core/foundations/axiom-septicity) $P \in (2/7, 3/7]$ **[T]** — consciousness requires a balance between order and chaos.
 :::
 
 ## Structural stress $\sigma_S$ {#стресс-структуры}
 
-The [stress variable](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[Т]**) characterises the **deficit** of structural stability:
+The [stress variable](../../core/operators/lindblad-operators) $\sigma_S$ (T-92 **[T]**) characterises the **deficit** of structural stability:
 
 $$
 \sigma_S = \mathrm{clamp}(1 - 7\gamma_{SS},\; 0,\; 1)
@@ -325,7 +325,7 @@ The elements $\gamma_{Si}$ of the coherence matrix describe the connection of st
 
 ## Structure and the Fano plane {#структура-и-фано}
 
-In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]).
+In the [octonionic structure](./dimensions#октонионная-интерпретация) of UHM, dimension $S$ corresponds to the imaginary unit $e_2 \in \mathrm{Im}(\mathbb{O})$. Structure lies in the **3** sector of the triplet decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]).
 
 On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{PG}(2,2)$, structure $S$ ($= e_2$) belongs to **three Fano lines**:
 
@@ -335,7 +335,7 @@ On the [Fano plane](../../physics/gauge-symmetry/fano-selection-rules) $\mathrm{
 | $\{S, D, E\}$ = $\{2, 3, 5\}$ | Structure + Dynamics + Interiority | **Evolutionary line**: form + change + experience — the triad of lived experience |
 | $\{U, O, S\}$ = $\{6, 7, 2\}$ | Unity + Ground + Structure | **Fundamental line**: $S$ is connected to $O$ through the $\bar{\mathbf{3}}$ element ($U$) — form through integration |
 
-:::tip Uniqueness of S on the Fano plane (T-177) [Т]
+:::tip Uniqueness of S on the Fano plane (T-177) [T]
 Structure is the only element of the **3** sector that is connected to Ground ($O$) through a $\bar{\mathbf{3}}$ element (Unity, $U$) on the line $\{U, O, S\}$. By comparison: $A$ is connected to $O$ directly (line $\{O, A, D\}$), and $D$ — through a **3** element ($A$).
 
 This means that the path from the Ground to Structure passes through **integration** ($U$) — form arises not directly from the source, but through unification.
@@ -357,8 +357,8 @@ graph TD
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $S = e_2$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_2 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $S = e_2$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Gradations of structure {#градации-структуры}

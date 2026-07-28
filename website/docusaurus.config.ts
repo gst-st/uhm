@@ -45,6 +45,11 @@ const config: Config = {
   trailingSlash: false,
 
   onBrokenLinks: 'throw',
+  // Проверка якорей была молча выключена: сборка рапортовала ноль
+  // предупреждений при доказанно битой ссылке реестра
+  // (learning-bounds#t-111-стабильность — такого якоря в документе нет).
+  // Выставлено явно 2026-07-28.
+  onBrokenAnchors: 'warn',
 
   i18n: {
     defaultLocale: 'en',

@@ -66,7 +66,7 @@ Axiom 3 ($N = 7$) is supported by two independent routes:
 The conditions (AP+PH+QG+V) are **characterizing properties** of viable configurations $\Gamma \in \text{Ob}(\mathcal{C})$:
 - **(AP)** and **(QG)** follow from dynamics in the ∞-topos
 - **(PH)** is the interpretation of the E dimension (Axiom 3)
-- **(V)** is the mathematical condition ($P > P_{\text{crit}}$ [T]); its ontological reading is via PID ([definition [O] (T16 [T])](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2)
+- **(V)** is the mathematical condition ($P > P_{\text{crit}}$ [T]); its ontological reading is via PID ([definition [D] (T16 [T])](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2)
 
 ## Prerequisite: Autonomy {#предварительное-условие-автономность}
 
@@ -249,13 +249,13 @@ $$
 The Principle of Informational Distinguishability answers: *what does it mean “to exist”?* In UHM the answer is simple: to exist is to be *distinguishable from noise*. If state $\Gamma$ cannot be told apart from a random fluctuation of the background ($I/7$) by any measurement, it “does not exist” ontologically. PID formalizes this via Bures distance: existence is nonzero distance from noise. Under earnest acceptance of Axiom Ω⁷ (reality as an $\infty$-topos), PID becomes a **tautology**—it unpacks what is already in the definition of the $\infty$-topos with Bures topology.
 :::
 
-:::tip PID is definition [O] (T16 [T])
-The **Principle of Informational Distinguishability (PID)** is **definition [O]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Relabeling does not affect the computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$).
+:::tip PID is definition [D] (T16 [T])
+The **Principle of Informational Distinguishability (PID)** is **definition [D]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Relabeling does not affect the computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$).
 
 Given earnest acceptance of A1 (reality = ∞-topos), “ontological significance” = “truth in the internal logic of $\mathbf{Sh}_\infty(\mathcal{C})$” = “nontrivial $J_{Bures}$-covering”—a tautology, not a deep theorem. Kripke–Joyal semantics only makes explicit what is already built into A1+A2.
 :::
 
-### Formulation of PID [O] {#формулировка-пир}
+### Formulation of PID [D] {#формулировка-пир}
 
 :::info DRY: Master definition of PID
 This is the canonical definition of the Principle of Informational Distinguishability. Cross-references should point to `axiom-septicity#формулировка-пир`.
@@ -274,8 +274,8 @@ $$
 2. A $J_{Bures}$-cover separates points ⟺ they lie at positive Bures distance
 3. Identifying “ontological significance” with “separability by coverings” is the content of PID (T16)
 
-:::tip Why PID is definition [O], not theorem [T]
-Given earnest acceptance of A1 (reality = ∞-topos), step (3) is a **tautology**: “to exist” = “to be true in the internal logic of $\mathbf{Sh}_\infty(\mathcal{C})$” (Kripke–Joyal) = “to admit a nontrivial $J_{Bures}$-covering” (A2). Because this is a **tautology**, not a substantive claim, PID is definition [O], not theorem [T].
+:::tip Why PID is definition [D], not theorem [T]
+Given earnest acceptance of A1 (reality = ∞-topos), step (3) is a **tautology**: “to exist” = “to be true in the internal logic of $\mathbf{Sh}_\infty(\mathcal{C})$” (Kripke–Joyal) = “to admit a nontrivial $J_{Bures}$-covering” (A2). Because this is a **tautology**, not a substantive claim, PID is definition [D], not theorem [T].
 
 **Remark:** Kripke–Joyal semantics ([Lurie, HTT, §6.2.2]) only **explicates** the identification built into A1+A2: “$\varphi$ is true at point $U$” ⟺ “$\exists$ a covering family $\{U_i \to U\} \in J_{Bures}$ on which $\varphi$ is verifiable.” This is not a proof but a clarification of definitions.
 :::
@@ -295,7 +295,7 @@ All three UHM thresholds admit an **ontological reading** through PID:
 | $R_{\text{th}}$ | $d_B(\Gamma, \varphi(\Gamma)) \leq d_B^{\text{ref}}$ | $1/3$ |
 | $\Phi_{\text{th}}$ | $d_B(\Gamma, \Gamma_{\text{diag}}) \geq d_B^{\text{class}}$ | $1$ |
 
-**Theorem (unity of thresholds) [T]:** All thresholds descend from a single metric—the Bures metric, which is the [canonical monotone Riemannian metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес) on quantum state space: classically unique (Chentsov 1982), and in the quantum case the **minimal** element of the Petz family of monotone Riemannian metrics (Petz 1996), uniquely characterized by three independent properties — Petz extremality, Uhlmann purification universality, and SLD-Fisher/Cramér-Rao saturation (T-187 [T], see [Cohesive Closure §5.3](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)). PID is definition [O] (T16) built into A1+A2.
+**Theorem (unity of thresholds) [T]:** All thresholds descend from a single metric—the Bures metric, which is the [canonical monotone Riemannian metric](/docs/proofs/dynamics/emergent-time#41-метрика-бурес) on quantum state space: classically unique (Chentsov 1982), and in the quantum case the **minimal** element of the Petz family of monotone Riemannian metrics (Petz 1996), uniquely characterized by three independent properties — Petz extremality, Uhlmann purification universality, and SLD-Fisher/Cramér-Rao saturation (T-187 [T], see [Cohesive Closure §5.3](/docs/proofs/categorical/cohesive-closure#53-closing-the-last-open-question-why-bures-t-187)). PID is definition [D] (T16) built into A1+A2.
 
 ## Formal statement
 
@@ -334,7 +334,7 @@ The theory uses three distinct symbols built on the letter R:
 This is the **sole canonical definition** of the formula for $\kappa_0$. Other documents should cite this section rather than duplicate the formula.
 :::
 
-:::tip Status: canonical ansatz [O] + categorical interpretation [I]
+:::tip Status: canonical ansatz [D] + categorical interpretation [I]
 **Categorical reading [I]:** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$—the norm of a natural transformation between the (posited) adjoint functors $\mathcal{D}_\Omega \dashv \mathcal{R}$. The adjunction and the norm identity are *motivated* by [L-unification](/docs/core/foundations/axiom-omega#внутренняя-логика) but not proven; the **operational formula** $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is **[T at the first-order-kinetics model]** — forced by the rapid pre-equilibrium (quasi-steady-state) argument (see the status note and [§Derivation](#вывод-kappa0-cycle-flux) at the end of this section).
 
 **Operational formula [T at first-order kinetics]:** $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ — the product form is **forced** as the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (first-order kinetics excludes min and geometric-mean; see [§Derivation](#вывод-kappa0-cycle-flux)). The identification $|\mathrm{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ (Yoneda + Bures + Stinespring) supplies the categorical reading of the same formula.
@@ -350,9 +350,9 @@ where:
 - $\kappa_{\text{bootstrap}}$ is minimal regeneration from the [adjunction unit](/docs/core/foundations/axiom-omega#genesis-protocol)
 - $\kappa_0$ is the base regeneration rate (see [categorical derivation below](#категориальный-вывод-kappa0))
 
-### Value of $\kappa_{\text{bootstrap}}$ [O] {#теорема-kappa-bootstrap}
+### Value of $\kappa_{\text{bootstrap}}$ [D] {#теорема-kappa-bootstrap}
 
-:::warning Convention definition [O] (value of $\kappa_{\text{bootstrap}}$)
+:::warning Convention definition [D] (value of $\kappa_{\text{bootstrap}}$)
 Minimal regeneration rate is **fixed** as:
 
 $$
@@ -430,7 +430,7 @@ $$
 $\mathrm{Coh}_E$ is an **exact** measure of the E contribution to purity, not a proxy. It is the ratio of squared Hilbert–Schmidt norms for the orthogonal projection $\pi_E$ (HS projection theorem below).
 :::
 
-**Range:** $\mathrm{Coh}_E \in [0, 1]$ globally: the minimum $0$ is attained by states with an empty E-sector (e.g. a pure state on any other axis, $\Gamma = |A\rangle\langle A|$), the maximum $1$ by a pure E state. The maximally mixed state sits at exactly $1/7$, and the No-Zombie floor (T-38a) keeps every viable state **sustained by the Ω-dynamics** ($\mathcal{D}_\Omega \neq 0$ — the theorem's hypothesis, as the [decision protocol states it](/docs/applied/coherence-cybernetics/predictions#decision-protocols)) strictly above $1/7$ — on that class the operational range is $(1/7, 1]$. The dynamical qualifier is load-bearing: a matrix that merely has $P > 2/7$ can sit far below the floor — the pure state $|A\rangle\langle A|$ above is the trivial example, and construction-layer natal $\Gamma$ does it in bulk (machine check 2026-07-25, hhg engine: 90 of 162 viable natal charts below the floor, minimum $0.0247$ — `core/examples/nozombie_probe.rs`). The floor is a property of dissipatively sustained states, not of arbitrary matrices above $P_{\text{crit}}$; an embedding that claims to measure a *living* system should therefore CHECK the floor as a sanity test, not assume it. *(Corrected 2026-07-11: earlier text stated the range as $[1/7, 1]$ with the minimum attributed to $I/7$ — the maximally mixed state is the viable-class minimizer, not the global one. Found by the SYNARC M1 machine self-test.)*
+**Range:** $\mathrm{Coh}_E \in [0, 1]$ globally: the minimum $0$ is attained by states with an empty E-sector (e.g. a pure state on any other axis, $\Gamma = |A\rangle\langle A|$), the maximum $1$ by a pure E state. The maximally mixed state sits at exactly $1/7$, and the No-Zombie floor (T-38a) keeps every viable state **sustained by the Ω-dynamics** ($\mathcal{D}_\Omega \neq 0$ — the theorem's hypothesis, as the [decision protocol states it](/docs/applied/coherence-cybernetics/predictions#decision-protocols)) strictly above $1/7$ — on that class the operational range is $(1/7, 1]$. The dynamical qualifier is load-bearing: a matrix that merely has $P > 2/7$ can sit far below the floor — the pure state $|A\rangle\langle A|$ above is the trivial example, and construction-layer natal $\Gamma$ does it in bulk (machine check 2026-07-25, hhg engine: 87 of 175 viable natal charts below the floor, minimum $0.0279$ (re-measured 2026-07-28; 90 of 162 at $0.0247$ before the encoder defaults were corrected) — `core/examples/nozombie_probe.rs`). The floor is a property of dissipatively sustained states, not of arbitrary matrices above $P_{\text{crit}}$; an embedding that claims to measure a *living* system should therefore CHECK the floor as a sanity test, not assume it. *(Corrected 2026-07-11: earlier text stated the range as $[1/7, 1]$ with the minimum attributed to $I/7$ — the maximally mixed state is the viable-class minimizer, not the global one. Found by the SYNARC M1 machine self-test.)*
 
 ##### C*-algebraic justification: Hilbert–Schmidt projection {#hs-projection}
 
@@ -542,7 +542,7 @@ In the categorical formalism ($\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$):
 
 See also [Genesis protocol](/docs/core/foundations/axiom-omega#genesis-protocol) and [coherence definitions](/docs/applied/coherence-cybernetics/definitions#e-когерентность).
 
-:::warning Prerequisite [O]
+:::warning Prerequisite [D]
 The formula for $\kappa_0$ requires $\gamma_{OO} > 0$ (the O dimension is populated). If $\gamma_{OO} = 0$ the system fails (QG)—see [singularity handling](#обработка-сингулярности-gamma-oo).
 :::
 
@@ -578,7 +578,7 @@ $$
 \|\text{Nat}(\mathcal{D}_\Omega, \mathcal{R})\| = \omega_0 \cdot \frac{|\text{Hom}(O, E)| \cdot |\text{Hom}(O, U)|}{\text{End}(O)}
 $$
 
-Given the canonical identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ [O] ([motivation](#теорема-kappa0-функториальность)):
+Given the canonical identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ [D] ([motivation](#теорема-kappa0-функториальность)):
 
 $$
 \kappa_0 = \omega_0 \cdot \frac{|\gamma_{OE}| \cdot |\gamma_{OU}|}{\gamma_{OO}} \quad \blacksquare
@@ -635,7 +635,7 @@ In practice, $\gamma_{OO} > \varepsilon_\Gamma$ holds for any viable system ($P 
 
 **Status:** the operational formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is now **[T at the first-order-kinetics model]** — it is **forced**, not merely selected, by the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (see [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux)). The earlier concern that "min- and geometric-mean forms also satisfy the requirements" is **removed**: those alternatives violate the fifth requirement (first-order/linear-response kinetics) — the geometric mean is sublinear (degree $\tfrac12$, divergent derivative) and the minimum is non-analytic, so neither is an admissible first-order kinetic law. The only residual assumption is that regeneration is a first-order Markov process, which is itself guaranteed by the CPTP/Lindblad structure of the dynamics. The **categorical reading** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ remains a separate **interpretation [I]** / **[C at the adjunction]** (the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and the Nat-norm identity are posited, not proven) — but the operational formula no longer depends on it. Downstream results use the formula, whose status is now [T at first-order kinetics].
 
-#### Functoriality of $\kappa_0$ [O]+[I] {#теорема-kappa0-функториальность}
+#### Functoriality of $\kappa_0$ [D]+[I] {#теорема-kappa0-функториальность}
 
 :::warning Canonical ansatz (not a uniqueness theorem)
 The identification $|\text{Hom}(i,j)| \leftrightarrow |\gamma_{ij}|$ is **motivated** by Yoneda + Bures + Stinespring: in $\mathcal{C}_7$ with Bures topology, the natural "strength" scalar of the CPTP channel $|i\rangle\langle i| \to |j\rangle\langle j|$ is $|\gamma_{ij}|$. Given this identification, the formula $\kappa_0 = \omega_0 |\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ is the **product-type** coupling on $\{O,E,U\}$ — and the product form itself is now **forced** (not merely motivated) by the first-order-kinetics / rapid-pre-equilibrium argument in [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux). **Status:** the operational formula is **[T at first-order kinetics]**; the *categorical* identification $|\text{Hom}(i,j)|\leftrightarrow|\gamma_{ij}|$ (and the underlying adjunction) is the part that remains an interpretive **[I]** choice.
@@ -659,7 +659,7 @@ $$
 
 ### Derivation of $\kappa_0$ by rapid pre-equilibrium — the product form is forced {#вывод-kappa0-cycle-flux}
 
-The product form is **not** merely "selected" among alternatives — it is the **unique** form consistent with first-order regeneration kinetics, via the **quasi-steady-state (rapid pre-equilibrium)** analysis of the regeneration branching. This upgrades $\kappa_0$ from a canonical ansatz **[O]** to a **[T at the first-order-kinetics model]**.
+The product form is **not** merely "selected" among alternatives — it is the **unique** form consistent with first-order regeneration kinetics, via the **quasi-steady-state (rapid pre-equilibrium)** analysis of the regeneration branching. This upgrades $\kappa_0$ from a canonical ansatz **[D]** to a **[T at the first-order-kinetics model]**.
 
 :::note Distinction: a branching rate, not a cyclic flux
 This is a rapid pre-equilibrium (branching) rate, **not** the King–Altman cyclic flux of a Markov cycle $O\!\to\!E\!\to\!U\!\to\!O$ — the latter is the product of the *three* forward rates *around* the cycle over a spanning-tree sum, $\propto\gamma_{OE}\gamma_{EU}\gamma_{UO}/(\text{sum})$, a structurally different object from $\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ (two couplings *out of* $O$ over the $O$-return).
@@ -1050,7 +1050,7 @@ Aside from Theorem S, $N = 7$ has a **second route** via division algebras:
 - **[T] P2:** $\mathcal{A}$ nonassociative (via bridge T15 [T])
 - **[T] Hurwitz** → $\mathcal{A} = \mathbb{O}$ → $N = 7$
 
-Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16, **all 12 steps [T]**](../../proofs/minimality/theorem-octonionic-derivation#мост). (T16/PID relabeled [O] in A1+A2; numerics unchanged.)
+Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16, **all 12 steps [T]**](../../proofs/minimality/theorem-octonionic-derivation#мост). (T16/PID relabeled [D] in A1+A2; numerics unchanged.)
 
 [Full derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
@@ -1058,7 +1058,7 @@ Bridge (AP)+(PH)+(QG)+(V) → P1+P2—[full chain T1–T16, **all 12 steps [T]**
 ### Bridge to P1+P2 [T]—closed (Theorem T15) {#мост-p1p2}
 
 :::tip Bridge: [T] fully closed
-$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16), **all [T]** (T16/PID is [O] in A1+A2). Legacy condition (MP) is removed—it is now theorem (T11–T13: Choi rank + L-unification + forced BIBD).
+$(AP)+(PH)+(QG)+(V) \Longrightarrow P1+P2$ via a **12-step formal chain** (Theorems T1–T16), **all [T]** (T16/PID is [D] in A1+A2). Legacy condition (MP) is removed—it is now theorem (T11–T13: Choi rank + L-unification + forced BIBD).
 :::
 
 **Full chain (Theorem T15):**

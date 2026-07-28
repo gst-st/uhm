@@ -906,7 +906,7 @@ For first-pass replication, dataset R1.b is recommended (fully open, standardize
 | R2.4 | Bandpass filter | 0.5–80 Hz, 4th-order Butterworth zero-phase (`mne.filter.filter_data`) |
 | R2.5 | Notch filter | 50 Hz (or 60 Hz), Q = 30 |
 | R2.6 | ICA artefact rejection | FastICA, 30 components; reject TMS-locked decay, eye-blink, ECG (`mne.preprocessing.ICA`) |
-| R2.7 | Epoch-level rejection | $|\text{max}-\text{min}| > 120\,\mu\mathrm V$ → drop epoch |
+| R2.7 | Epoch-level rejection | $\|\text{max}-\text{min}\| > 120\,\mu\mathrm V$ → drop epoch |
 | R2.8 | Spectral decomposition | Morlet wavelets, 1–80 Hz log-spaced, 5-cycle wavelet, baseline $[-600,-100]\,\mathrm{ms}$ |
 
 The canonical bands used by $\pi_{\mathrm{bio}}$ are then extracted from the wavelet spectrogram (integrated over post-TMS window $[0, +300]\,\mathrm{ms}$, averaged across channels for diagonal feature vector; cross-channel pairwise for CFC computations).

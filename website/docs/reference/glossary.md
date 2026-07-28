@@ -270,7 +270,7 @@ See [Structural derivation via octonions](/docs/proofs/minimality/theorem-octoni
 | **Adams's theorem [T]** | Parallelisable spheres: only $S^0, S^1, S^3, S^7$; equivalent to $\dim(\mathrm{Im}) \in \{0, 1, 3, 7\}$ |
 | **Cayley–Dickson construction [T]** | Recursive doubling: $\mathbb{R} \to \mathbb{C} \to \mathbb{H} \to \mathbb{O} \to \mathbb{S}$; each step loses a property |
 | **Cayley–Dickson boundary [C]** | $\mathbb{O}$ — last division algebra; the next step (sedenions $\mathbb{S}$) loses divisibility |
-| **Fano plane PG(2,2) [T]** | Minimal projective plane: 7 points, 7 lines, 3 points on each line; defines the multiplication table of the octonions |
+| **Fano plane PG(2,2) [T]** | Minimal projective plane: 7 points, 7 lines, 3 points on each line. Its lines fix *which* triples of imaginary units multiply; the signs need an orientation of each line — 16 of the 128 orientations give a normed division algebra, all isomorphic to $\mathbb{O}$ (`octonion_check.rs`) |
 | **$G_2$ [T]** | $\mathrm{Aut}(\mathbb{O}) = G_2$ — 14-parameter exceptional Lie group; $G_2 \subset SO(7)$ |
 | **Hamming code $H(7,4)$ [T]** | Perfect code: 4 information + 3 check bits; isomorphic to the lines of the Fano plane |
 | **Associator [T]** | $[x, y, z] = (xy)z - x(yz)$; measure of deviation from associativity; $= 0$ in $\mathbb{R}, \mathbb{C}, \mathbb{H}$; $\neq 0$ in $\mathbb{O}$ |

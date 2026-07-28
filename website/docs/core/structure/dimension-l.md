@@ -111,7 +111,7 @@ The L-dimension **is not a filter** acting on Γ from outside. L is an **aspect*
 - **Low $\gamma_{LL} \ll 1/7$:** the system weakly applies rules (creativity, but potential incoherence)
 - **$\gamma_{LL} = 1/7$:** equilibrium — the logical function receives its "fair share" of resource
 
-Stress of the L-dimension: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [formula T-92 [Т]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
+Stress of the L-dimension: $\sigma_L = \mathrm{clamp}(1 - 7\gamma_{LL}, 0, 1)$ — [formula T-92 [T]](/docs/core/structure/dimension-a#вывод-формулы-напряжения).
 :::
 
 ## Categorical definition (L-unification) {#категориальное-определение}
@@ -138,7 +138,7 @@ $$
 
 — the set of logical predicates that are true for the given state Γ.
 
-:::tip Formalisation of the L-dimension [Т]
+:::tip Formalisation of the L-dimension [T]
 The L-dimension is the **internal logic** of the ∞-topos via the subobject classifier Ω. Formally:
 
 $$
@@ -214,8 +214,8 @@ $$
 \sum_k L_k^\dagger L_k = \sum_k \chi_{S_k} = \mathbb{1}
 $$
 
-:::info CPTP from Kraus representation [Т]
-[Fano operators](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define a CPTP channel in the Kraus representation. By [Choi's theorem](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): a channel in Kraus form $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ is **completely positive** automatically. Trace preservation: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (each dimension belongs to exactly 3 Fano lines, T-41b [Т]). Complete positivity **does not depend** on stratification.
+:::info CPTP from Kraus representation [T]
+[Fano operators](/docs/core/operators/lindblad-operators) $L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$ define a CPTP channel in the Kraus representation. By [Choi's theorem](https://en.wikipedia.org/wiki/Choi%27s_theorem_on_completely_positive_maps) (1975): a channel in Kraus form $\Phi(\rho) = \sum_k A_k \rho A_k^\dagger$ is **completely positive** automatically. Trace preservation: $\sum_p L_p^\dagger L_p = \frac{1}{3}\sum_p \Pi_p = \frac{1}{3} \cdot 3\mathbb{I}_7 = \mathbb{I}_7$ ✓ (each dimension belongs to exactly 3 Fano lines, T-41b [T]). Complete positivity **does not depend** on stratification.
 :::
 
 ### Hierarchy of L_k by strata {#иерархия-lk}
@@ -309,8 +309,8 @@ Physical interpretation: $\gamma_{LL}$ is a measure of how internally consistent
 
 ### Logical consistency as an invariant {#логическая-согласованность}
 
-:::info Status: [О] Definitions; 7D formula σ_L — [С]
-The definitions of $I_{\text{verify}}$, $\theta_L$, and $\sigma_L$ are given via the subobject classifier Ω and the von Neumann entropy. The approximate formula for $\sigma_L$ in 7D is conditional [С] (depends on the assumption $\gamma_{LL} \ll 1$).
+:::info Status: [D] Definitions; 7D formula σ_L — [C]
+The definitions of $I_{\text{verify}}$, $\theta_L$, and $\sigma_L$ are given via the subobject classifier Ω and the von Neumann entropy. The approximate formula for $\sigma_L$ in 7D is conditional [C] (depends on the assumption $\gamma_{LL} \ll 1$).
 :::
 
 For a viable system it is required that the load on logical verification does not exceed the throughput:
@@ -348,7 +348,7 @@ where:
 
 **Interpretation:** $\theta_L$ is the throughput of the L-dimension, defined as the product of the population by the maximum possible entropy.
 
-#### Definition of σ_L [С] {#строгое-определение-sigma-l}
+#### Definition of σ_L [C] {#строгое-определение-sigma-l}
 
 **Definition (σ_L via reduced matrix):**
 
@@ -364,7 +364,7 @@ $$
 \sigma_L(\Gamma) \approx \frac{7(1 - \gamma_{LL})}{6}
 $$
 
-:::warning Status: [С] Conditional formula
+:::warning Status: [C] Conditional formula
 The approximate formula for 7D is obtained under the assumption $\gamma_{LL} \ll 1$ and a uniform distribution of the remaining populations. The approximation **is not a rigorous derivation**: the transition $\rho_L \approx \gamma_{LL}$ (scalar) is correct only in the extended formalism, and in 7D (7 is prime) the partial trace $\mathrm{Tr}_{-L}$ is not defined due to the absence of tensor factorisation.
 :::
 
@@ -386,10 +386,10 @@ $$
 
 | Parameter | Definition | Status |
 |-----------|------------|--------|
-| $I_{\text{verify}}$ | $I(\Gamma : L) = S_{vN}(\rho) - S_{vN}(\rho \| L)$ — mutual information | [О] Definition |
-| $\theta_L$ | $\gamma_{LL} \cdot \log(N)$ — throughput | [О] Definition |
-| $\gamma_{LL}$ | Population of dimension L | [О] Definition |
-| $\sigma_L$ | $S_{vN}(\rho_L) / (\gamma_{LL} \cdot \log N)$ — logical load | [О] Definition; 7D formula [С] |
+| $I_{\text{verify}}$ | $I(\Gamma : L) = S_{vN}(\rho) - S_{vN}(\rho \| L)$ — mutual information | [D] Definition |
+| $\theta_L$ | $\gamma_{LL} \cdot \log(N)$ — throughput | [D] Definition |
+| $\gamma_{LL}$ | Population of dimension L | [D] Definition |
+| $\sigma_L$ | $S_{vN}(\rho_L) / (\gamma_{LL} \cdot \log N)$ — logical load | [D] Definition; 7D formula [C] |
 
 **Interpretation:** $\sigma_L \in [0, \infty)$ — a measure of the **logical load** on the system:
 - $\sigma_L < 1$: logical verification keeps pace with dynamics
@@ -676,7 +676,7 @@ Dimension L ($e_4$ in the octonionic correspondence) belongs to three [Fano line
 :::info Combinatorial profile of L
 Of the seven dimensions, L is the **only** element of the $\bar{\mathbf{3}}$-sector that does **not** lie on the Higgs line $\{E, U, A\}$. This gives L a unique role: while E and U are connected to the "interiority" and "unifying" aspects through the Higgs channel, L stands "apart", providing an **independent** consistency check. It is like a referee who is not a participant in the game.
 
-By [theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) the semantic role of L is combinatorially unique [Т].
+By [theorem T-177](/docs/core/structure/dimensions#комбинаторная-единственность) the semantic role of L is combinatorially unique [T].
 :::
 
 ### What the Fano lines say about logic {#фано-линии-логика}
@@ -693,8 +693,8 @@ Note that L shares Fano line $\{D, L, U\}$ with [dimension D (Dynamics)](./dimen
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_4 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $L = e_4$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ## Key conclusions of the chapter {#ключевые-выводы}

@@ -329,11 +329,11 @@ In addition to the standard $SU(5)$-ratios (§3), the Gap formalism allows to id
 | Channel | Gap parameters | Mechanism | $\tau_{\text{partial}}$ (years) | Branching fraction | Status |
 |-------|--------------|----------|------------------------------|----------------|--------|
 | $p \to e^+\pi^0$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(e)}$ | $X$-exchange, $D=6$, direct $ud \to e^+\bar{u}$ | $\sim 10^{37}$ | $\sim 55\%$ | **[H]** |
-| $p \to \bar{\nu}_e\pi^+$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(\nu)}$ | $Y$-exchange, $D=6$, $|V_{ud}|^2$-suppression | $\sim 3 \times 10^{37}$ | $\sim 17\%$ | **[H]** |
+| $p \to \bar{\nu}_e\pi^+$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(\nu)}$ | $Y$-exchange, $D=6$, $\|V_{ud}\|^2$-suppression | $\sim 3 \times 10^{37}$ | $\sim 17\%$ | **[H]** |
 | $p \to e^+\eta$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(e)}$, $\text{Gap}^{(\eta\pi)}$ | $X$-exchange + $\eta$-$\pi^0$ mixing | $\sim 7 \times 10^{37}$ | $\sim 8\%$ | **[H]** |
 | $p \to \mu^+\pi^0$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(\mu e)}$ | $X$-exchange, inter-generational mixing | $\sim 2 \times 10^{38}$ | $\sim 3\%$ | **[H]** |
 | $p \to e^+\omega$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(e)}$ | $X$-exchange, $\omega$-final state | $\sim 5 \times 10^{38}$ | $\sim 1\%$ | **[H]** |
-| $p \to \bar{\nu}_\mu K^+$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(s)}$, $\text{Gap}^{(\nu)}$ | $Y$-exchange, $|V_{us}|^2$-suppression, strangeness | $\sim 10^{39}$ | $\sim 0.5\%$ | **[H]** |
+| $p \to \bar{\nu}_\mu K^+$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(s)}$, $\text{Gap}^{(\nu)}$ | $Y$-exchange, $\|V_{us}\|^2$-suppression, strangeness | $\sim 10^{39}$ | $\sim 0.5\%$ | **[H]** |
 | $p \to e^+K^0$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(s)}$, $\text{Gap}^{(e)}$ | $X$-exchange with strange quark | $\sim 2 \times 10^{39}$ | $\sim 0.3\%$ | **[H]** |
 | $p \to \mu^+K^0$ | $\text{Gap}^{(3\bar{3})}$, $\text{Gap}^{(s)}$, $\text{Gap}^{(\mu e)}$ | $X$-exchange, double suppression: strangeness + generation | $\sim 10^{40}$ | $\lesssim 0.1\%$ | **[H]** |
 

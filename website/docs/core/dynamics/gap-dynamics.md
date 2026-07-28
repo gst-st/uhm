@@ -60,7 +60,7 @@ $$
 
 ### 1.2 Block structure and phase properties
 
-:::tip Theorem 1.1 (Choi matrix and phase structure of φ) [Т]
+:::tip Theorem 1.1 (Choi matrix and phase structure of φ) [T]
 **(a)** Block structure of the Choi matrix of canonical $\varphi$:
 
 $$
@@ -78,7 +78,7 @@ The canonical form of φ (projection onto the diagonal) is the "ideal observer" 
 
 ### 1.3 Necessity of generalized φ
 
-:::tip Theorem 1.2 (Necessity of generalized φ for viable Gap) [Т]
+:::tip Theorem 1.2 (Necessity of generalized φ for viable Gap) [T]
 **(a)** Purity $P > P_{\text{crit}} = 2/7$ **requires** nonzero coherences $\gamma_{ij} \neq 0$ for some pairs $i \neq j$.
 
 **(b)** If all $\gamma_{ij} = 0$ (for $i \neq j$), then $P = \sum_i \gamma_{ii}^2 \leq (\max_i \gamma_{ii})^2 + (1 - \max_i \gamma_{ii})^2 / 6$, and for a uniform distribution $P \approx 1/7 < P_{\text{crit}}$.
@@ -94,7 +94,7 @@ Projective plane over $\mathbb{F}_2$: 7 points and 7 lines, each line containing
 
 ### 1.4 Phase structure of the target state
 
-:::tip Theorem 1.3 (Phase structure of the target state) [Т]
+:::tip Theorem 1.3 (Phase structure of the target state) [T]
 The target phases of coherences are determined by the self-consistent equation:
 
 $$
@@ -112,7 +112,7 @@ where $c_{mi}$ are the Kraus decomposition coefficients of the channel $\varphi$
 
 ### 1.5 Self-consistency of the target phase
 
-:::tip Theorem 1.4 (Self-consistency of the target Gap profile) [Т]
+:::tip Theorem 1.4 (Self-consistency of the target Gap profile) [T]
 The target state $\rho_*$ satisfies the **fixed-point** condition of the self-modelling operator:
 
 $$
@@ -138,10 +138,10 @@ The self-consistent equation $\varphi(\rho_*) = \rho_*$ may have **multiple solu
 
 ## 2. Quantum error correction via Hamming code H(7,4) {#код-хэмминга}
 
-#### Theorem H(7,4) — formal isomorphism [Т] {#теорема-h74-формальная}
+#### Theorem H(7,4) — formal isomorphism [T] {#теорема-h74-формальная}
 
-:::tip Status [Т]
-The structure of Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ is isomorphic to the parity-check matrix of the Hamming code H(7,4) **[Т]**. The incidence "point $i \in$ line $k$" defines the matrix $H_{ki}$, which coincides exactly with the parity-check matrix of H(7,4) ($3 \times 7$, row weight 3, column weight 3). Isomorphism: $\mathrm{PG}(2,2) \cong H(7,4)$ — a classical result in coding theory.
+:::tip Status [T]
+The structure of Lindblad operators $L_k = \sqrt{\chi_{S_k}}$ is isomorphic to the parity-check matrix of the Hamming code H(7,4) **[T]**. The incidence "point $i \in$ line $k$" defines the matrix $H_{ki}$, which coincides exactly with the parity-check matrix of H(7,4) ($3 \times 7$, row weight 3, column weight 3). Isomorphism: $\mathrm{PG}(2,2) \cong H(7,4)$ — a classical result in coding theory.
 :::
 
 **Converse direction (selector).** Theorem Σ (T-224) shows this is not merely a feature of the heptad but a *selector*: perfect single-fault diagnosability + a nontrivial state grammar + rigidity of that grammar force $n = 7$ and the Fano/Hamming structure uniquely — see [Σ-calculus](/docs/applied/research/syndrome-calculus#t-224).
@@ -174,7 +174,7 @@ $$
 
 ### 2.3 Coherence correction
 
-:::tip Theorem 3.1 / T-93 (Coherence correction via H(7,4)) [Т]
+:::tip Theorem 3.1 / T-93 (Coherence correction via H(7,4)) [T]
 **(a)** **Detection:** up to 2 coherence violations are detected via parity measurements (E, O, U).
 
 **(b)** **Correction:** 1 coherence violation is **automatically** corrected by the regenerative operator $\mathcal{R}$.
@@ -184,7 +184,7 @@ $$
 
 ### 2.4 Quantum Hamming bound for Gap
 
-:::tip Theorem 3.2 / T-93 (Quantum Hamming bound for Gap) [Т]
+:::tip Theorem 3.2 / T-93 (Quantum Hamming bound for Gap) [T]
 The number of simultaneously "transparent" channels (Gap $\approx 0$) is bounded above by:
 
 $$
@@ -214,7 +214,7 @@ maps the coherence matrix $\Gamma$ to a vector of 21 Gap values for all pairs $(
 
 ### 3.2 Main bifurcations
 
-:::tip Theorem 4.1 (Bifurcations of the Gap landscape) [Т]
+:::tip Theorem 4.1 (Bifurcations of the Gap landscape) [T]
 
 **(a) Pitchfork bifurcation:**
 
@@ -252,7 +252,7 @@ where $A(\mu) \propto \sqrt{\mu - \mu_H}$ is the limit cycle amplitude, $\omega_
 
 ### 3.4 Whitney catastrophes
 
-:::tip Theorem 4.2 (Whitney catastrophes for the Gap landscape) [Т]
+:::tip Theorem 4.2 (Whitney catastrophes for the Gap landscape) [T]
 **(a)** $\dim = 1$: **fold** — disappearance of a stationary state. The system jumps to another basin of attraction.
 
 **(b)** $\dim = 2$: **cusp** — bistability with hysteresis. The system can reside in one of two stable states; the transition between them is irreversible.
@@ -284,15 +284,15 @@ Unlike the Markovian approximation (where $K_{ij}(t) = -\Gamma_2 \delta(t)$ — 
 
 ### 4.2 Gap oscillations with finite memory
 
-#### Theorem 5.0 / T-94 (Exponential form of the memory kernel) [Т] {#теорема-ядро-экспоненциальное}
+#### Theorem 5.0 / T-94 (Exponential form of the memory kernel) [T] {#теорема-ядро-экспоненциальное}
 
-:::tip Formulation [Т]
-The exponential form of the non-Markovian kernel $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ is a consequence of the compactness of the target space $(S^1)^{21}$ **[Т]**. On a compact torus the correlation function decomposes in eigenfunctions of the Laplacian; the minimal nonzero eigenvalue $\lambda_1 > 0$ (compactness!) determines $\omega_c = \lambda_1$ — the spectral gap. The exponential form is not a phenomenological assumption but a consequence of the discrete spectrum.
+:::tip Formulation [T]
+The exponential form of the non-Markovian kernel $K(t) = -\Gamma_2 \omega_c e^{-\omega_c t}$ is a consequence of the compactness of the target space $(S^1)^{21}$ **[T]**. On a compact torus the correlation function decomposes in eigenfunctions of the Laplacian; the minimal nonzero eigenvalue $\lambda_1 > 0$ (compactness!) determines $\omega_c = \lambda_1$ — the spectral gap. The exponential form is not a phenomenological assumption but a consequence of the discrete spectrum.
 
 :::
 
-:::tip Theorem 5.1 (Non-Markovian Gap oscillations) [Т]
-For an exponential memory kernel $K(t) = -\Gamma_2 \omega_c \cdot e^{-\omega_c t}$ (justification of the form — [Theorem 5.0](#теорема-ядро-экспоненциальное) [Т]):
+:::tip Theorem 5.1 (Non-Markovian Gap oscillations) [T]
+For an exponential memory kernel $K(t) = -\Gamma_2 \omega_c \cdot e^{-\omega_c t}$ (justification of the form — [Theorem 5.0](#теорема-ядро-экспоненциальное) [T]):
 
 **(a)** Markovian limit ($\omega_c \to \infty$): standard exponential decoherence.
 
@@ -312,7 +312,7 @@ where $\omega_r = \sqrt{\omega_c \Gamma_2 - \gamma^2}$ is the damped oscillation
 :::
 
 :::info Discrete implementation [Т-135]
-For a digital agent the non-Markovian kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [Т]](/docs/proofs/consciousness/operationalization#t-135).
+For a digital agent the non-Markovian kernel is discretized via Z-transform with $O(1)$ complexity per step (instead of $O(T^2)$): auxiliary variable $M[n]$ with recursion $M[n+1] = e^{-\omega_c\delta\tau}M[n] + (-\Gamma_2\omega_c)\Gamma[n+1]$. More details: [T-135 [T]](/docs/proofs/consciousness/operationalization#t-135).
 :::
 
 ### 4.3 Interpretation of non-Markovian effects
@@ -353,7 +353,7 @@ Canonical proofs of $G_2$-covariance are in [Lindblad operators](/docs/core/oper
 
 ### 6.1 Atomic dissipator breaks $G_2$
 
-:::tip Theorem 11.1 (Atomic dissipator is NOT $G_2$-covariant) [Т]
+:::tip Theorem 11.1 (Atomic dissipator is NOT $G_2$-covariant) [T]
 
 $$
 \exists g \in G_2:\quad \mathcal{D}_{\text{atom}}[g\Gamma g^\dagger] \neq g\,\mathcal{D}_{\text{atom}}[\Gamma]\,g^\dagger
@@ -364,7 +364,7 @@ The diagonal projection (atomic observation) **does not commute** with $G_2$-tra
 
 ### 6.2 Fano dissipator: frame-group covariance {#fano-frame-covariance}
 
-:::tip Theorem 11.2 (Covariance group of the Fano dissipator) [Т]
+:::tip Theorem 11.2 (Covariance group of the Fano dissipator) [T]
 Since $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$ (Fano–atomic proportionality), the Fano dissipator is covariant under the finite frame group $\Gamma_{\!\text{oct}}\cong PSL(2,7)\subset G_2$, **not** under the full continuous $G_2$:
 
 $$
@@ -378,7 +378,7 @@ The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure
 
 ### 6.3 Degree of $G_2$-violation
 
-:::tip Theorem 11.3 (Degree of $G_2$-violation is proportional to $\alpha^*$) [Т]
+:::tip Theorem 11.3 (Degree of $G_2$-violation is proportional to $\alpha^*$) [T]
 **(a)** $\alpha = 0$ (pure Fano): **complete** $G_2$-covariance.
 
 **(b)** $\alpha = 1$ (pure atomic): $G_2$ is **completely broken**.
@@ -390,7 +390,7 @@ The measure of violation is **linear** in $\alpha$ — from the linearity of bot
 
 ### 6.4 Modified gauge reduction
 
-:::tip Theorem 11.4 (Modified gauge reduction) [Т]
+:::tip Theorem 11.4 (Modified gauge reduction) [T]
 **(a)** $\alpha = 0$: $48 - 14 = $ **34** independent parameters.
 
 **(b)** Optimal $\alpha^*$: $34 + 14\alpha^*$ parameters.
@@ -417,7 +417,7 @@ The measure of violation is **linear** in $\alpha$ — from the linearity of bot
 The canonical formulation is also in the [φ operator](/docs/core/operators/phi-operator#единая-теорема-самонаблюдения).
 :::
 
-:::tip Theorem 12.1 (Fano-coherent self-modelling) [Т]
+:::tip Theorem 12.1 (Fano-coherent self-modelling) [T]
 The canonical coherence-preserving self-modelling for UHM is uniquely determined (up to the compression parameter $k$):
 
 **(a) Algebraic structure:** The Fano plane $\mathrm{PG}(2,2)$ determines the compound atoms of the classifier $\Omega$, generating the Fano–Lindblad operators $L_p^{\text{Fano}}$.
@@ -560,7 +560,7 @@ $$
 :::info Remark (Golden ratio and Gap)
 The golden ratio $\varphi_{\text{gold}} = (1+\sqrt{5})/2 \approx 1.618$ connects successive Fibonacci members. This means that for most pairs the difference frequencies are **irrationally related** to one another, and Gap **never** reaches exact zero. Complete transparency is a limit, not an achievable state.
 
-If Fibonacci frequencies are indeed connected with biological rhythms (phyllotaxis, neuronal patterns), this is a speculative analogy not following from the UHM axioms. **Status: [И]** — interpretation/analogy.
+If Fibonacci frequencies are indeed connected with biological rhythms (phyllotaxis, neuronal patterns), this is a speculative analogy not following from the UHM axioms. **Status: [I]** — interpretation/analogy.
 :::
 
 ---
@@ -626,29 +626,29 @@ graph TD
 
 | Result | Status | Section |
 |--------|--------|---------|
-| Choi matrix and phase structure of φ | **[Т]** | [1.2](#чой-ямиолковский) |
-| Necessity of generalized φ for viability | **[Т]** | [1.3](#чой-ямиолковский) |
-| Phase structure of the target state | **[Т]** | [1.4](#чой-ямиолковский) |
-| Self-consistency of the target Gap profile | **[Т]** | [1.5](#чой-ямиолковский) |
-| Coherence correction via H(7,4) | **[Т]** | [2.3](#код-хэмминга) |
-| Quantum Hamming bound for Gap | **[Т]** | [2.4](#код-хэмминга) |
-| Bifurcations of the Gap landscape | **[Т]** | [3.2](#бифуркации) |
-| Whitney catastrophes for Gap | **[Т]** | [3.4](#бифуркации) |
-| Exponential form of memory kernel K(t) | **[Т]** | [4.2](#теорема-ядро-экспоненциальное) |
-| Non-Markovian Gap oscillations | **[Т]** | [4.2](#немарковские-эффекты) |
-| Properties of Gap operator | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#свойства) |
-| Spectral interpretation of Gap | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
-| Atomic dissipator is not $G_2$-covariant | **[Т]** | [6.1](#g2-ковариантность) |
-| Fano dissipator: frame-group $\Gamma_{\!\text{oct}}$-covariant, not full $G_2$ ($\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$) | **[Т]** | [6.2](#fano-frame-covariance) |
-| Degree of $G_2$-violation $\propto \alpha^*$ | **[Т]** | [6.3](#g2-ковариантность) |
-| Modified gauge reduction | **[Т]** | [6.4](#g2-ковариантность) |
-| Fano-coherent self-modelling (unified theorem) | **[Т]** | [7](#единая-теорема) |
-| Model 1: Uniform system $\Gamma = I/7$ | **[Т]** | [8.1](#модельные-системы) |
-| Model 2: Pure state (uniform superposition) | **[Т]** | [8.2](#модельные-системы) |
-| Model 3: Pure state with Fano phases | **[Т]** | [8.3](#модельные-системы) |
-| Model 4: Alexithymia ($\gamma_{SE} = \lvert\gamma\rvert \cdot e^{i\pi/2}$) | **[Т]** | [8.4](#модельные-системы) |
-| Model 5: Fibonacci dynamics | **[Г]** | [8.5](#модельные-системы) |
-| Coincidence of opaqueness rank and H(7,4) checks | **[Т]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
+| Choi matrix and phase structure of φ | **[T]** | [1.2](#чой-ямиолковский) |
+| Necessity of generalized φ for viability | **[T]** | [1.3](#чой-ямиолковский) |
+| Phase structure of the target state | **[T]** | [1.4](#чой-ямиолковский) |
+| Self-consistency of the target Gap profile | **[T]** | [1.5](#чой-ямиолковский) |
+| Coherence correction via H(7,4) | **[T]** | [2.3](#код-хэмминга) |
+| Quantum Hamming bound for Gap | **[T]** | [2.4](#код-хэмминга) |
+| Bifurcations of the Gap landscape | **[T]** | [3.2](#бифуркации) |
+| Whitney catastrophes for Gap | **[T]** | [3.4](#бифуркации) |
+| Exponential form of memory kernel K(t) | **[T]** | [4.2](#теорема-ядро-экспоненциальное) |
+| Non-Markovian Gap oscillations | **[T]** | [4.2](#немарковские-эффекты) |
+| Properties of Gap operator | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#свойства) |
+| Spectral interpretation of Gap | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
+| Atomic dissipator is not $G_2$-covariant | **[T]** | [6.1](#g2-ковариантность) |
+| Fano dissipator: frame-group $\Gamma_{\!\text{oct}}$-covariant, not full $G_2$ ($\mathcal{D}_{\text{Fano}}=\tfrac23\mathcal{D}_{\text{atom}}$) | **[T]** | [6.2](#fano-frame-covariance) |
+| Degree of $G_2$-violation $\propto \alpha^*$ | **[T]** | [6.3](#g2-ковариантность) |
+| Modified gauge reduction | **[T]** | [6.4](#g2-ковариантность) |
+| Fano-coherent self-modelling (unified theorem) | **[T]** | [7](#единая-теорема) |
+| Model 1: Uniform system $\Gamma = I/7$ | **[T]** | [8.1](#модельные-системы) |
+| Model 2: Pure state (uniform superposition) | **[T]** | [8.2](#модельные-системы) |
+| Model 3: Pure state with Fano phases | **[T]** | [8.3](#модельные-системы) |
+| Model 4: Alexithymia ($\gamma_{SE} = \lvert\gamma\rvert \cdot e^{i\pi/2}$) | **[T]** | [8.4](#модельные-системы) |
+| Model 5: Fibonacci dynamics | **[H]** | [8.5](#модельные-системы) |
+| Coincidence of opaqueness rank and H(7,4) checks | **[T]** | [Gap operator](/docs/core/dynamics/gap-operator#спектр) |
 
 ---
 

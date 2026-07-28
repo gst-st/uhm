@@ -348,8 +348,8 @@ Consider a specific situation with three systems for one subject:
 | System | What it sees | $P_k$ |
 |--------|-------------|-------|
 | Chakras (§5) | 7 populations $\gamma_{ii}$ | $P_{\text{chakras}} = \text{diag}(1,1,1,1,1,1,1)$ |
-| Zodiac (§2) | 12 coherences $|\gamma_{ij}|$ for pairs $(i,j) \in \{A,S,D\} \times \{L,E,O,U\}$ | $P_{\text{zod}}$ — projector onto 12 off-diagonal elements |
-| Tarot (§4) | 21 coherences $|\gamma_{ij}|$ ($i < j$) | $P_{\text{tarot}}$ — projector onto the full upper triangle |
+| Zodiac (§2) | 12 coherences $\|\gamma_{ij}\|$ for pairs $(i,j) \in \{A,S,D\} \times \{L,E,O,U\}$ | $P_{\text{zod}}$ — projector onto 12 off-diagonal elements |
+| Tarot (§4) | 21 coherences $\|\gamma_{ij}\|$ ($i < j$) | $P_{\text{tarot}}$ — projector onto the full upper triangle |
 
 **Consistency means:**
 

@@ -137,7 +137,7 @@ $$
 | | Поток Риччи–Перельмана | КМС-симметричный Линдблад |
 |---|---|---|
 | Пространство | $(M^n, g(t))$ — метрики многообразия | $(\mathcal{D}_+(\mathbb{C}^7), \mathcal{W}_\sigma)$ |
-| Функционал | $\mathcal{F}(g) = \int(R + |\nabla f|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — кв. относительная энтропия |
+| Функционал | $\mathcal{F}(g) = \int(R + \|\nabla f\|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — кв. относительная энтропия |
 | Поток | $\partial_t g = -2\,\mathrm{Ric}(g)$ | $\partial_t\rho = \mathcal{L}_\sigma(\rho)$ |
 | Кривизна | Может быть $< 0$; хирургия при $\|\mathrm{Ric}\| \to \infty$ | $\kappa \geq \lambda_1 > 0$ **в интерьоре** [Т] |
 | Хирургия | При перешейках | При rank-collapse: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [Т, Хюбнер] |

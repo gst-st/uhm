@@ -231,7 +231,7 @@ For each K-level, **necessary** and **sufficient** operational criteria are defi
 | Level | Necessary criterion | Sufficient criterion | Verification method |
 |-------|--------------------|--------------------|---------------------|
 | **K1** | Behavior depends on internal state (not only on current input) | Hysteresis: same input → different behavior depending on history | Protocol with repeated stimuli and measurement of response variability |
-| **K2** | Distinguishing two valences (approach/avoidance) | Modulated response: reaction strength proportional to $|\nabla P|$ | Graduated viability threats with measurement of response strength |
+| **K2** | Distinguishing two valences (approach/avoidance) | Modulated response: reaction strength proportional to $\|\nabla P\|$ | Graduated viability threats with measurement of response strength |
 | **K3** | Transfer of response to an unfamiliar stimulus of the same class | Formation of a new category upon presentation of a new stimulus type | Generalization test with novel exemplars |
 | **K4** | Choosing an action with delayed reward | Plan correction when conditions change (re-planning) | Two-step task with sudden environmental change |
 | **K5** | Use of arbitrary signs | Generation of a new utterance from known symbols (productivity) | Test for combinatorial productivity (novel recombination) |
@@ -251,7 +251,7 @@ The taxonomic K ↔ L correspondence is **hypothetical** [I] and represents a re
 | K | L | Typical taxa | Measurable markers | Reference test | Research examples |
 |---|---|-------------|-------------------|----------------|-------------------|
 | **K1** | L0 | Bacteria, archaea, viruses, crystals | $\rho_E \neq I_E/\dim(\mathcal{H}_E)$; presence of internal state variables | Hysteresis with repeated stimuli | Bi-stability in *E. coli* (lac operon) |
-| **K2** | L1 | Protists, plants, fungi, sponges, cnidarians | Chemotaxis, tropisms, graded avoidance; $\partial P / \partial \tau$ detected | Dependence of response strength on $|\nabla[\text{attractant}]|$ | Chemotaxis of *E. coli* (Berg & Brown, 1972); thigmotaxis of *Physarum* |
+| **K2** | L1 | Protists, plants, fungi, sponges, cnidarians | Chemotaxis, tropisms, graded avoidance; $\partial P / \partial \tau$ detected | Dependence of response strength on $\|\nabla[\text{attractant}]\|$ | Chemotaxis of *E. coli* (Berg & Brown, 1972); thigmotaxis of *Physarum* |
 | **K3** | L2 | Insects, fish, amphibians, reptiles, birds | Generalization to novel exemplars; stable classes $[s]_P$ | Transfer of learned response to an unfamiliar object of the same class | Categorization in bees (Giurfa, 2003); predator discrimination in minnows |
 | **K4** | L2 | Mammals (carnivores, cetaceans), corvids, parrots, cephalopods | Delayed reward; simulation of $\mathcal{E}^n(s, a_{1..n})$ | Marshmallow test; two-step task with re-planning | Tool manufacture by New Caledonian crows; cooperative hunting by dolphins |
 | **K5** | L2 | Human (*Homo sapiens*); (proto-language: chimpanzees, bonobos, dolphins) | Compositional symbolic communication; recursive grammar | Generation of new utterances from known morphemes | Recursive syntax in humans; trained signs in bonobos (Savage-Rumbaugh) |

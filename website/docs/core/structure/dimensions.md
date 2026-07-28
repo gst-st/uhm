@@ -57,9 +57,9 @@ The convergence of these answers is strong evidence that 7 is not accidental but
 
 :::tip Uniqueness status ([proof](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса))
 The basis $\{A, S, D, L, E, O, U\}$ is **unique** (up to isomorphism) as a 7-dimensional decomposition satisfying (AP)+(PH)+(QG):
-- [Т] **A, S, D, L, U** — algebraic uniqueness (strictly proved)
-- [Т] **E** — functional uniqueness: axiomatic grounding (PH) + categorical ($\kappa_0$ requires Hom(O,E)) + mathematical (rank > 1). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-- [Т] **O** — functional uniqueness: form of ℛ [Т] + $\kappa_0$ (End(O), Hom(O,E), Hom(O,U)) + PW (A5) + functional independence. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
+- [T] **A, S, D, L, U** — algebraic uniqueness (strictly proved)
+- [T] **E** — functional uniqueness: axiomatic grounding (PH) + categorical ($\kappa_0$ requires Hom(O,E)) + mathematical (rank > 1). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+- [T] **O** — functional uniqueness: form of ℛ [T] + $\kappa_0$ (End(O), Hom(O,E), Hom(O,U)) + PW (A5) + functional independence. [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-o)
 :::
 
 ```mermaid
@@ -122,12 +122,12 @@ To bring the dimensions closer, imagine a person walking through a forest:
 Remove any element — and the walk becomes impossible. Without eyes you cannot discern the path. Without a skeleton — you cannot hold your form. Without legs — you cannot move. Without logic — you walk into a ditch. Without senses — you miss the beauty. Without support — you fall. Without "I" — there is no one walking.
 :::
 
-### Combinatorial uniqueness of semantic roles (T-177) [Т] {#комбинаторная-единственность}
+### Combinatorial uniqueness of semantic roles (T-177) [T] {#комбинаторная-единственность}
 
-:::tip Theorem T-177 [Т]+[С at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
-After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
+:::tip Theorem T-177 [T]+[C at combinatorial-constraint set]: Combinatorial uniqueness of semantic roles
+After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]), each of the 7 dimensions has a **unique combinatorial profile** — a set of Fano lines and sector connections not isomorphic to the profile of any other dimension.
 
-**Stratification:** The distinguishability of the 7 fingerprints is **[Т]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[С at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
+**Stratification:** The distinguishability of the 7 fingerprints is **[T]** as a combinatorial fact on the Fano plane PG(2,2) once **the combinatorial constraint set** is fixed (sector decomposition T-48a + Higgs line $\{A,E,U\}$). The choice of that constraint set itself is **[C at combinatorial-constraint set]**: T-48a and the Higgs line come from upstream axiomatic structure (A3, electroweak fit), not from T-177 in isolation. Conditional on those inputs, the fingerprint table is exact.
 :::
 
 **Proof.** For each $e_k$ we define the **functional fingerprint** $\mathcal{F}(e_k)$ — the triple (sector, set of Fano lines, sector type of each line):
@@ -154,24 +154,24 @@ After fixing the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\ma
 
 All 7 fingerprints are pairwise distinct. $\blacksquare$
 
-:::info Theorem T-183 [Т]+[С at combinatorial-uniqueness chain]: Uniqueness of functional assignment for all 7 roles
-All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177 [Т]), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
+:::info Theorem T-183 [T]+[C at combinatorial-uniqueness chain]: Uniqueness of functional assignment for all 7 roles
+All 7 semantic roles $\{A,S,D,L,E,O,U\}$ are **uniquely** determined by the combinatorial structure (T-177 [T]), the functional requirements of the evolution equation $\mathcal{L}_\Omega$, and axioms (AP)+(PH)+(QG)+(V):
 
-**Stratification:** Given the combinatorial-uniqueness chain of upstream inputs — sector decomposition T-48a, the Higgs line $\{A,E,U\}$, $L$-mediation of the regeneration formula, and sector-covariance of unitary evolution — each step (4)–(7) of the proof is **[Т]**. The result is thus **[С at combinatorial-uniqueness chain]**: strip any single link (e.g. change the Higgs line, or allow $S$-mediated regeneration), and the uniqueness argument no longer runs. The chain itself is justified upstream in T-48a + axioms; T-183 is not independently axiom-free.
+**Stratification:** Given the combinatorial-uniqueness chain of upstream inputs — sector decomposition T-48a, the Higgs line $\{A,E,U\}$, $L$-mediation of the regeneration formula, and sector-covariance of unitary evolution — each step (4)–(7) of the proof is **[T]**. The result is thus **[C at combinatorial-uniqueness chain]**: strip any single link (e.g. change the Higgs line, or allow $S$-mediated regeneration), and the uniqueness argument no longer runs. The chain itself is justified upstream in T-48a + axioms; T-183 is not independently axiom-free.
 
 | Role | Determining property | Status |
 |------|----------------------|--------|
-| **O** (Ground) | Unique $SU(3)$-singlet; PW clock; $\kappa_{\text{bootstrap}}$ | **[Т]** |
-| **A** (Articulation) | Unique element of **3** on the Higgs line — sector bridge | **[Т]** |
-| **L** (Logic) | Unique element of $\bar{\mathbf{3}}$ NOT on the Higgs line | **[Т]** |
-| **E** (Interiority) | Unique element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ whose O-connection is $L$-mediated | **[Т]** |
-| **U** (Unity) | Remaining element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ after fixing $E$ | **[Т]** |
-| **D** (Dynamics) | Unique element of $\{S,D\} \subset \mathbf{3}$ on line $\{O,A,\cdot\}$ | **[Т]** |
-| **S** (Structure) | Remaining element of **3**-sector after fixing $A$ and $D$ | **[Т]** |
+| **O** (Ground) | Unique $SU(3)$-singlet; PW clock; $\kappa_{\text{bootstrap}}$ | **[T]** |
+| **A** (Articulation) | Unique element of **3** on the Higgs line — sector bridge | **[T]** |
+| **L** (Logic) | Unique element of $\bar{\mathbf{3}}$ NOT on the Higgs line | **[T]** |
+| **E** (Interiority) | Unique element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ whose O-connection is $L$-mediated | **[T]** |
+| **U** (Unity) | Remaining element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ after fixing $E$ | **[T]** |
+| **D** (Dynamics) | Unique element of $\{S,D\} \subset \mathbf{3}$ on line $\{O,A,\cdot\}$ | **[T]** |
+| **S** (Structure) | Remaining element of **3**-sector after fixing $A$ and $D$ | **[T]** |
 
 **Proof (T-183).**
 
-**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [Т]) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
+**Steps 1–3 (O, A, L):** Direct consequence of sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ (T-48a [T]) and the Higgs line $\{A,E,U\}$. O is the unique singlet. A is the unique element of **3** on the Higgs line. L is the unique element of $\bar{\mathbf{3}}$ off the Higgs line. (Already proved in T-177.)
 
 **Step 4 (E).** The regeneration formula $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_X$ requires a dimension $X$ with properties: (a) $X \in \bar{\mathbf{3}}$ ($\kappa_0$ is defined via $\mathrm{Hom}(O, X)$); (b) $X$ on the Higgs line (electroweak coupling through the $\kappa_0$ chain: $\mathrm{End}(O) \otimes \mathrm{Hom}(O,X) \otimes \mathrm{Hom}(X,Y)$). From $\bar{\mathbf{3}} \cap \mathrm{Higgs} = \{E, U\}$.
 
@@ -192,8 +192,8 @@ The evolution operator $e^{-iH_{\mathrm{eff}}\tau}$ is generated from the O-sect
 **Step 7 (S).** By exclusion from $\{S,D\}$ after fixing $D$. $\blacksquare$
 :::
 
-:::info Epistemic status of semantic labelling [О]+[Т]
-The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [Т]). The **functional assignment** of all 7 roles to specific dimensions is now **uniquely determined [Т]** (T-183): each role is the unique element satisfying its combinatorial and dynamical constraints (sector membership, Fano-line incidence, $L$-mediation for $E$, sector covariance for $D$). The **semantic names** (A=Articulation, S=Structure, etc.) remain a **definition by convention [О]** — they are human-language labels for mathematically distinguished objects. Analogy: the assignment of quarks to specific charge values ($+2/3$ vs $-1/3$) is [Т], but the names "up" and "down" are [О].
+:::info Epistemic status of semantic labelling [D]+[T]
+The mathematical structure of axioms A1–A5 requires exactly 7 dimensions (Theorem S [T]). The **functional assignment** of all 7 roles to specific dimensions is now **uniquely determined [T]** (T-183): each role is the unique element satisfying its combinatorial and dynamical constraints (sector membership, Fano-line incidence, $L$-mediation for $E$, sector covariance for $D$). The **semantic names** (A=Articulation, S=Structure, etc.) remain a **definition by convention [D]** — they are human-language labels for mathematically distinguished objects. Analogy: the assignment of quarks to specific charge values ($+2/3$ vs $-1/3$) is [T], but the names "up" and "down" are [D].
 :::
 
 :::info Functional basis with operator roles
@@ -201,17 +201,17 @@ Each dimension is defined by **an operator and its role in the axioms**:
 
 | Dimension | Operator | Axiomatic role | Necessity | Combinatorial status (T-177) |
 |-----------|----------|---------------------|---------------|------------------------------|
-| $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[Т]** — unique element of **3** on the Higgs line |
-| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[Т]** — by exclusion (T-183, step 7) |
-| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[Т]** — unique element of $\{S,D\}$ on $\{O,A,\cdot\}$ (T-183, step 6) |
-| $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[Т]** — unique element of $\bar{\mathbf{3}}$ outside Higgs |
-| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[Т]** — unique $L$-mediated element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ (T-183, step 4) |
-| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[Т]** — by exclusion (T-183, step 5) |
-| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[Т]** — unique singlet |
+| $e_1$ (A) | Projector $P^2 = P$ | Discrimination of subobjects | (AP) | **[T]** — unique element of **3** on the Higgs line |
+| $e_2$ (S) | $H = H^\dagger$ | Spectrum of invariants | (AP) | **[T]** — by exclusion (T-183, step 7) |
+| $e_3$ (D) | $U(\tau) = e^{-iH\tau}$ | Unitary evolution | (QG) | **[T]** — unique element of $\{S,D\}$ on $\{O,A,\cdot\}$ (T-183, step 6) |
+| $e_4$ (L) | $[\cdot, \cdot]$ | Algebra closure | (AP) | **[T]** — unique element of $\bar{\mathbf{3}}$ outside Higgs |
+| $e_5$ (E) | $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ | Phenomenology | (PH) | **[T]** — unique $L$-mediated element of $\bar{\mathbf{3}} \cap \mathrm{Higgs}$ (T-183, step 4) |
+| $e_6$ (U) | $\mathrm{Tr}(\cdot)$ | Normalisation | (AP) | **[T]** — by exclusion (T-183, step 5) |
+| $e_7$ (O) | $H_O$, $\vert 0\rangle$ | Clock + source | (QG) | **[T]** — unique singlet |
 
-The semantic names are **not arbitrary mnemonics**, but a reflection of combinatorially unique functional profiles (T-177 [Т]). Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
+The semantic names are **not arbitrary mnemonics**, but a reflection of combinatorially unique functional profiles (T-177 [T]). Analogy: just as "up" and "down" quarks are not random words (they differ by charge $+2/3$ vs $-1/3$), the names themselves are a convention for mathematically distinguishable objects.
 
-**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [Т]. The stronger result **T-183** establishes uniqueness of the functional assignment for **all** 7 roles via a uniform method: sector decomposition (T-48a) + Fano-line incidence + dynamical constraints ($L$-mediation for $E$, sector covariance for $D$, exclusion for $S$ and $U$).
+**Mathematical uniqueness:** [The basis uniqueness theorem](../../proofs/minimality/theorem-minimality-7#часть-vii-теорема-о-единственности-базиса) proves the functional decomposition is unique (up to isomorphism) for all 7 dimensions [T]. The stronger result **T-183** establishes uniqueness of the functional assignment for **all** 7 roles via a uniform method: sector decomposition (T-48a) + Fano-line incidence + dynamical constraints ($L$-mediation for $E$, sector covariance for $D$, exclusion for $S$ and $U$).
 :::
 
 :::info Emergent time
@@ -223,12 +223,12 @@ Time in UHM is not an external parameter but an **emergent property**. Internal 
 :::info Reconciliation of the 7D and 42D formalisms
 The theory uses **two formalisms**:
 
-- **7D** ($\mathbb{C}^7$): structural theorems (Theorem S, basis uniqueness, thresholds), E-coherence $\mathrm{Coh}_E$ via [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection) **[Т]**, measures $R$ and $\Phi$.
+- **7D** ($\mathbb{C}^7$): structural theorems (Theorem S, basis uniqueness, thresholds), E-coherence $\mathrm{Coh}_E$ via [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection) **[T]**, measures $R$ and $\Phi$.
 - **42D** ($\mathcal{H}_O \otimes \mathcal{H}_{6D} \cong \mathbb{C}^{42}$): Page–Wootters mechanism (emergent time), gauge symmetries of the electroweak sector, tensor entanglement.
 
 **Resolved part [Т]:** The tensor gap for $\mathrm{Coh}_E$ is fully resolved — the [C*-algebraic Hilbert–Schmidt projection](/docs/core/foundations/axiom-septicity#hs-projection) defines $\mathrm{Coh}_E$ in 7D **exactly**, without resorting to a partial trace. The subsystem definition is realised through a C*-subalgebra embedding and the [Umegaki conditional expectation](/docs/core/foundations/axiom-septicity#теорема-условное-ожидание). This is standard apparatus of algebraic quantum theory (Haag, 1996; Bratteli–Robinson, 1987).
 
-**Open part [С]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[С]** — conditional on the 42D extension.
+**Open part [С]:** The full reduced matrix $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ and the differentiation measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ still require tensor factorisation (42D formalism), since the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in $\mathbb{C}^7$ (7 is prime). Statements using $D_{\text{diff}}$ have status **[C]** — conditional on the 42D extension.
 :::
 
 ## Categorical semantics of the dimensions (T-185) [T] {#категориальная-семантика}
@@ -322,13 +322,13 @@ Minimality and maximality meeting is already remarkable: 7 is at once the *fewes
 And the fourth track is not a fourth coincidence: it is the *same fact* as the second, now proven. Theorem Σ selects seven by demanding **perfect diagnosability**, and [T-244](/docs/applied/research/syndrome-calculus#отбор-знака) shows that this demand simply *is* the division property. A frame is perfectly diagnosable exactly when it is **anisotropic** — has no "null" axis on which a fault would be silent; anisotropy is exactly the absence of zero-divisors; and the absence of zero-divisors is exactly what makes a normed algebra a *division* algebra, which Hurwitz caps at dimension eight, i.e. seven imaginary axes. So "the last division algebra" and "the last perfectly self-diagnosing frame" are two names for the same seven axes. The convergence of the tracks is therefore not merely observed: between these two it is a theorem, and the remaining agreement (functional, categorical) reflects the one underlying rigidity of the structure.
 
 **Corollary (Categorical status of semantic names).**
-The UHM dimensions are **not arbitrary conventions [О]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.
+The UHM dimensions are **not arbitrary conventions [D]** but projections of **canonical categorical constructions [T]** onto natural language. "Articulation" is a translation of $\Pi$ (Shape), "Logic" is a translation of $\sharp$ (Sharp), etc. The categorical modalities themselves are uniquely determined by the cohesive ∞-topos structure.
 
 | Level | Status | Content |
 |-------|--------|---------|
 | Categorical name ($\Pi$, $\flat$, $\sharp$, ...) | **[T]** | Determined by adjunctions |
 | Functional role (discrimination, form, ...) | **[T]** | Determined by computational effect of the modality |
-| Human name (Articulation, Structure, ...) | **[О]** | Translation to natural language |
+| Human name (Articulation, Structure, ...) | **[D]** | Translation to natural language |
 
 ---
 
@@ -342,7 +342,7 @@ The seven imaginary units of the octonions $e_1, \ldots, e_7$ correspond to the 
 
 - **$G_2$-symmetry:** $\mathrm{Aut}(\mathbb{O})$ = $G_2$ ⊂ SO(7) — a 14-parameter group preserving the multiplication structure. $G_2$ is the "gauge group" of the seven-dimensional space: it determines which transformations between dimensions preserve the octonionic multiplication structure.
 - **The Fano plane:** 7 triplets $(e_i, e_j, e_k)$ define associative sub-triples of dimensions. Each triplet is a "team" within which operations are associative (order does not matter). Between triplets — non-associativity (order matters). The Fano plane determines which triplets "get along" and which do not.
-- **Alternativity:** Any two dimensions generate an associative subalgebra (Artin's theorem [Т]); non-associativity appears only when three or more interact. This means: pairwise connections $\gamma_{ij}$ are always "well-defined"; complications arise only at triple and higher-order interactions.
+- **Alternativity:** Any two dimensions generate an associative subalgebra (Artin's theorem [T]); non-associativity appears only when three or more interact. This means: pairwise connections $\gamma_{ij}$ are always "well-defined"; complications arise only at triple and higher-order interactions.
 
 :::tip Intuition: octonions
 Octonions can be thought of as "numbers" that generalise the familiar numbers in a new direction:
@@ -355,8 +355,8 @@ Octonions can be thought of as "numbers" that generalise the familiar numbers in
 Hurwitz's theorem (1898) proves: no other such algebras exist. The dimensions 1, 2, 4, 8 are the only possibilities. The imaginary parts have 0, 1, 3, 7 dimensions respectively. A fully self-sustaining system requires all 7 imaginary dimensions of the octonions.
 :::
 
-:::info $G_2$-caveat and spontaneous symmetry breaking [Т]
-The specific identification $e_i$ ↔ dimension is a **theorem** [Т] (T15): the bridge is fully closed (theorems T1–T15).
+:::info $G_2$-caveat and spontaneous symmetry breaking [T]
+The specific identification $e_i$ ↔ dimension is a **theorem** [T] (T15): the bridge is fully closed (theorems T1–T15).
 
 **Spontaneous breaking $G_2 \to SU(3)$ on $S^6$.** The quotient $G_2/SU(3) \cong S^6$ is the six-sphere. Choosing a specific singlet $O$ (fixing a point on $S^6$) is mathematically equivalent to spontaneous symmetry breaking. In UHM this breaking is **not** introduced "by hand" but arises **dynamically** through three mechanisms:
 
@@ -526,7 +526,7 @@ The division into "objective" and "subjective" aspects is a **pedagogical simpli
 
 **Bridging aspect** — Logic ($L$) is singled out as the "bridge" between objective and subjective. The commutator $[A, B]$ defines **relations** between the operators of all other dimensions. Logic is what makes the system self-consistent: it ensures that the objective and the subjective do not contradict each other.
 
-This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a [Т]). The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
+This grouping $7 = 3 + 1 + 3$ has a deep mathematical basis: it corresponds to the **sector decomposition** $7 = \mathbf{3} \oplus \mathbf{1} \oplus \bar{\mathbf{3}}$ under the action of $SU(3) \subset G_2$ (theorem T-48a [T]). The triplet $\{A, S, D\}$ forms representation **3**, the singlet $\{O\}$ — representation **1**, and the anti-triplet $\{L, E, U\}$ — representation $\bar{\mathbf{3}}$. Remarkably, exactly this same type of decomposition determines the structure of quarks in chromodynamics ($SU(3)_{\text{color}}$), although here it acts at a completely different level of description.
 
 :::note Why is L the "bridge" and not O?
 At first glance, O (Ground) also seems "bridging": it both nourishes and sets time. But O occupies a special position as an $SU(3)$ **singlet** — it is invariant under sector transformations. L, by contrast, occupies a **boundary** position: it belongs to the anti-triplet ($\bar{\mathbf{3}}$) but functionally connects both triplets through the commutator. Logic "knows" about both the objective and the subjective — that is its uniqueness.

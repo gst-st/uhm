@@ -7,7 +7,7 @@ description: Fundamental consequences of Axiom Ω⁷ and the (AP+PH+QG+V) condit
 # Consequences of the Axioms
 
 :::info Who this chapter is for
-This chapter shows **what follows from the axioms**—which theorems can be proved starting from [Axiom Ω⁷](./axiom-omega) and the [(AP+PH+QG+V)](./axiom-septicity) conditions. Each consequence is strictly classified by [epistemic status](/docs/reference/status-registry): [T] proved, [C] conditional, [I] interpretation, [O] definition.
+This chapter shows **what follows from the axioms**—which theorems can be proved starting from [Axiom Ω⁷](./axiom-omega) and the [(AP+PH+QG+V)](./axiom-septicity) conditions. Each consequence is strictly classified by [epistemic status](/docs/reference/status-registry): [T] proved, [C] conditional, [I] interpretation, [D] definition.
 
 **Why this matters.** A theory is not a list of postulates. Its strength lies in its consequences: the more nontrivial facts follow from a minimal axiom set, the deeper the theory. From the five UHM axioms one derives: unity of reality (cohomological monism), emergent spacetime, the impossibility of an “outside,” free will as a topological invariant, positivity of the cosmological constant ($\Lambda > 0$), and even why Gödel’s theorems do not limit physics.
 
@@ -28,7 +28,7 @@ Below are **logical consequences** of [Axiom Ω⁷](./axiom-omega) (five axioms 
 Analogy: imagine a ball of clay. You can dent it, ridge it, fold it—but you cannot punch a through-hole without tearing. Reality in UHM is like that ball: it may be arbitrarily complex *locally*, but *globally* it is whole, without “ontological holes.” That is monism: everything is one substance ($\Gamma$), one world, without cracks.
 :::
 
-**Status:** [O+T]—cohomological triviality [T], ontological reading [O] (via PID).
+**Status:** [O+T]—cohomological triviality [T], ontological reading [D] (via PID).
 
 :::warning Theorem (Cohomological monism)
 For base space $X = |N(\mathcal{C})|$:
@@ -37,12 +37,12 @@ $$
 H^n(X, \mathcal{F}) = 0 \quad \forall n > 0, \forall \mathcal{F}
 $$
 
-**Cohomological triviality** is a mathematical theorem [T]. Under the definition (PID [O]): “ontological distinguishability ≡ $J_{\mathrm{Bures}}$-distinguishability”—contractibility of $X$ means there are no nontrivial “ontological partitions” in state space.
+**Cohomological triviality** is a mathematical theorem [T]. Under the definition (PID [D]): “ontological distinguishability ≡ $J_{\mathrm{Bures}}$-distinguishability”—contractibility of $X$ means there are no nontrivial “ontological partitions” in state space.
 :::
 
 :::info Status of cohomological monism
 - $H^n(X, \mathcal{F}) = 0$: **[T]** (topological fact)
-- “Reality is one” (ontological monism): **[O+T]** (consequence [T] + PID definition [O])
+- “Reality is one” (ontological monism): **[O+T]** (consequence [T] + PID definition [D])
 - The philosophical gloss “monism = unity of substance” goes beyond the formal claim and is **[I]**
 :::
 
@@ -1070,8 +1070,8 @@ $$
 | Computation type | Coherences $\gamma_{ij}^{\text{comp}}$ | Measure $\Phi$ | Level | Examples |
 |---|---|---|---|---|
 | **Trivial** | $\gamma_{ij} = 0$ $\forall i \neq j$ | $0$ | L0 | Thermostat, simple logic chain |
-| **Classical** | $|\gamma_{ij}| \ll 1/N$ | $\ll 1$ | L0–L1 | Digital computer, neural net |
-| **Quantum coherent** | $|\gamma_{ij}| \sim O(1/\sqrt{N})$ | $> 0$ | L0–L1 | Quantum computer |
+| **Classical** | $\|\gamma_{ij}\| \ll 1/N$ | $\ll 1$ | L0–L1 | Digital computer, neural net |
+| **Quantum coherent** | $\|\gamma_{ij}\| \sim O(1/\sqrt{N})$ | $> 0$ | L0–L1 | Quantum computer |
 | **Autopoietic** | Satisfies (AP)+(QG)+(V) | $\geq 1$ | L1–L2 | Living cell, organism |
 
 :::warning Theorem (Classical limit and L2 impossibility) [T]

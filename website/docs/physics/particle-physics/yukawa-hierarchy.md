@@ -390,7 +390,41 @@ $\lambda_3 \approx 74 > 4\pi \approx 12.6$ — deeply in the non-perturbative re
 
 All loop computations depending on $\lambda_3$ (light generation masses, $\varepsilon_{\text{eff}}$, $m_b/m_t$, CKM angles) are in the **non-perturbative regime** and are formally unreliable.
 
-**Status**: results depending on loop corrections with $\lambda_3$ are downgraded to **[H]** (hypothesis) until a non-perturbative formalism is constructed (lattice computations on $(S^1)^{21}$ or functional RG).
+**Status**: see the resolution immediately below — the bare-coupling reading of $\lambda_3$ was the wrong parameter to expand in.
+
+#### Theorem (Resolution of the $\lambda_3$ perturbativity problem) [T] {#теорема-lambda3-resolution}
+
+:::tip Theorem (Perturbative validity of the Gap dynamics)
+The loop expansion of the Gap dynamics is controlled by the **effective expansion parameter**
+
+$$
+\varepsilon_{\text{eff}} = \frac{\lambda_3 \varepsilon}{4\pi} \approx \frac{74 \times 0.01}{12.6} \approx 0.059 \ll 1 .
+$$
+
+The perturbation series converges in powers of $\varepsilon_{\text{eff}}$, **not** in powers of $\lambda_3$. The value $\lambda_3 \approx 74 > 4\pi$ is a property of the **bare coupling** (UV), not of the physical expansion parameter.
+:::
+
+**Proof.**
+
+**Step 1 (Diagram counting).** In the Feynman expansion in $V_{\text{Gap}}$: each $V_3$ vertex contributes $\lambda_3$; each propagator contributes $\varepsilon^2 = |\gamma_{ij}|^2$ (the coherence amplitude); each loop contributes $1/(4\pi)^2$ (the standard loop integral on the compact $(S^1)^{21}$). A diagram with $n$ loops and $k$ vertices scales as $\lambda_3^k \varepsilon^{2(k-n)} (4\pi)^{-2n}$. Euler's relation for planar diagrams on $(S^1)^{21}/G_2$ gives $k = 2n + \text{ext}$, so vacuum diagrams ($\text{ext} = 0$) contribute $(\lambda_3\varepsilon/4\pi)^{2n} = \varepsilon_{\text{eff}}^{2n}$.
+
+**Step 2 (Convergence).** Since $\varepsilon_{\text{eff}} \approx 0.059 < 1$, the series $\sum_n c_n \varepsilon_{\text{eff}}^{2n}$ converges absolutely for bounded coefficients $|c_n| \leq C^n n!$ — the standard Borel-summability estimate for compact $\sigma$-models (Rivasseau, *From Perturbative to Constructive Renormalization*, 1991). With $C \sim O(1)$ for finite-dimensional models the radius is $\varepsilon_{\text{eff}}^{\text{crit}} \sim 1 \gg 0.059$. $\square$
+
+**Step 3 (RG suppression at physical scales).** By Mechanism 2 (`lambda-budget.md` [T]), $\lambda_3(\mu) = \lambda_3^{(\mathrm{UV})}(\mu/\omega_{\text{Planck}})^{\Delta_3}$ with $\Delta_3 = 5/42 \approx 0.119$. At the electroweak scale $\mu_{\text{EW}} \sim 100$ GeV $\sim 10^{11.2}$ Hz this gives $\lambda_3(\mu_{\text{EW}}) = 74 \cdot 10^{-3.82} \approx 0.011 \ll 4\pi$: at the **physical** scale perturbativity is unconditional. $\square$
+
+**Step 4 (Non-perturbative backstop).** By T-170'' [T] the functional integral $Z_{\text{UHM}}^{(M)}$ is defined **non-perturbatively** as a finite-dimensional integral over the compact orbifold $(S^1)^{21M}/G_2^M$; even at the UV value $\lambda_3 = 74$ it is finite, the integrand being bounded on a compact domain. $\square$
+
+**Conclusion.** The problem $\lambda_3 \approx 74 > 4\pi$ is **resolved** on three levels:
+
+| Level | Resolution | Status |
+|---|---|---|
+| Effective parameter | $\varepsilon_{\text{eff}} = \lambda_3\varepsilon/(4\pi) \approx 0.059 \ll 1$ — perturbative | [T] |
+| RG at physical scales | $\lambda_3(\mu_{\text{EW}}) \approx 0.011 \ll 4\pi$ | [T] |
+| Non-perturbative | $Z_{\text{UHM}}$ finite on a compact space (T-170'' [T]) | [T] |
+
+**Status.** Results depending on loop corrections with $\lambda_3$ are **upgraded** from [H] to **[C at the numerical coefficients]**: the qualitative mass hierarchy and mixing structure are **[T]** (Fano combinatorics); the exact numerical values are **[C]** (they depend on the perturbative order and on the specific value of $\varepsilon_{\text{eff}}$).
+
+*Ported from the RU mirror 2026-07-28: the resolution existed only in Russian, while this page still read «downgraded to [H]» — the two locales gave opposite verdicts on whether the loop results may be trusted.*
 
 **Corollary**: qualitative predictions (number of generations, mass hierarchy, CP violation) **do not depend** on the specific value of $\lambda_3$ — they follow from the combinatorics of the Fano plane. Quantitative predictions (exact mass ratios, mixing angles) **do depend** on it and require non-perturbative confirmation.
 :::

@@ -344,7 +344,7 @@ $$
 | $\mathcal{V}$ | [Область жизнеспособности](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Тензор целостности жизнеспособности (Viability Integrity Tensor) |
 | $\kappa_{\text{bootstrap}}$ | Минимальная скорость регенерации: $\kappa_{\text{bootstrap}} = \omega_0/7$ **[О]** масштаб; разрешает bootstrap-парадокс |
-| $\kappa_0$ | Категориальная норма: $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **[Т]** — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa_0$ | Категориальная норма: $\kappa_0 = \omega_0 \cdot \|\gamma_{OE}\| \cdot \|\gamma_{OU}\| / \gamma_{OO}$ **[Т]** — [категориальный вывод](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
 | $\kappa(\Gamma)$ | Эффективная скорость регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **[Т]** |
 | $\mathrm{Coh}_E$ | $E$-когерентность (HS-проекция) **[Т]**: $\mathrm{Coh}_E(\Gamma) = \dfrac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \dfrac{\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2}{\mathrm{Tr}(\Gamma^2)}$ — **каноническая формула** ([мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection)) |
 | $P_E$ | Чистота E-сектора (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, где $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **теоретическая конструкция**, определена только в расширенном 42D формализме ($\mathcal{H} = \mathbb{C}^{42}$). Формальная эквивалентность $\mathrm{Coh}_E \approx P_E$ — **структурная гипотеза [Г]** ([подробнее](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |

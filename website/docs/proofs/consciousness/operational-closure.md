@@ -7,7 +7,7 @@ description: "Theorems T-139 — T-147: closure of all remaining operational gap
 # Operational closure
 
 :::info Status
-All results on this page are proven theorems **[Т]** with complete proofs and explicit dependencies.
+All results on this page are proven theorems **[T]** with complete proofs and explicit dependencies.
 :::
 
 ---
@@ -24,7 +24,7 @@ This is the unique (up to $G_2$) hybrid dynamics preserving CPTP-compatibility. 
 
 **Proof (3 steps).**
 
-**Step 1.** By [T-123 [Т]](/docs/proofs/consciousness/conscious-window#t-123): $\pi$ is the unique CPTP $G_2$-covariant bridge $\mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$. By [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi): $\mathcal{E}_{\delta\tau} = e^{\delta\tau \mathcal{L}_0}$ is a CPTP channel.
+**Step 1.** By [T-123 [T]](/docs/proofs/consciousness/conscious-window#t-123): $\pi$ is the unique CPTP $G_2$-covariant bridge $\mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$. By [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi): $\mathcal{E}_{\delta\tau} = e^{\delta\tau \mathcal{L}_0}$ is a CPTP channel.
 
 **Step 2.** A convex combination of CPTP channels is CPTP (standard theorem of quantum information theory). $\alpha \in (0,1)$ is the unique free parameter.
 
@@ -34,7 +34,7 @@ $\blacksquare$
 
 **Corollary:** $\Gamma$-dynamics is **NOT** redundant: without Lindblad ($\alpha=0$) — no autonomous coherent evolution, only anchor mapping. Without anchor ($\alpha=1$) — no sensory update.
 
-**Dependencies:** [T-123 [Т]](/docs/proofs/consciousness/conscious-window#t-123), [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), A2 (two-aspect monism).
+**Dependencies:** [T-123 [T]](/docs/proofs/consciousness/conscious-window#t-123), [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi), A2 (two-aspect monism).
 
 ---
 
@@ -81,7 +81,7 @@ $\blacksquare$
 
 **Corollary:** $D_{\text{diff}} \geq 2$ remains a **SEPARATE** viability condition $V$, but does **NOT** enter the scalar measure $C$.
 
-**Dependencies:** [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129) ($\Phi_{\text{th}}=1$), [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126) ($R$ canonical).
+**Dependencies:** [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129) ($\Phi_{\text{th}}=1$), [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126) ($R$ canonical).
 
 ---
 
@@ -105,13 +105,13 @@ $$\sup_{P \in (2/7,\, 3/7]} \frac{4k\sqrt{P-1/7}}{3P} = \frac{4k\sqrt{1/7}}{6/7}
 
 **Proof.**
 
-**Step 1.** $P_{\text{Fano}}$ preserves coherences with coefficient $1/3$ ($\alpha=2/3$ [Т]). $P_{\text{pred}}$ destroys coherences (diagonalizes).
+**Step 1.** $P_{\text{Fano}}$ preserves coherences with coefficient $1/3$ ($\alpha=2/3$ [T]). $P_{\text{pred}}$ destroys coherences (diagonalizes).
 
 **Step 2.** $P_{\text{pred}}(\Gamma) = \text{diag}(\gamma_{11}, \ldots, \gamma_{77})$, $P_{\text{Fano}}(\Gamma) = (1/3)\Gamma + (2/3)\text{diag}(\Gamma)$.
 
 **Step 3.** $P_{\text{pred}} - P_{\text{Fano}} = -(1/3)(\Gamma - \text{diag}(\Gamma)) = -(1/3)\Gamma_{\text{off-diag}}$.
 
-#### Lemma: Frobenius bound for off-diagonal part [Т] {#лемма-фробениус-off-diag}
+#### Lemma: Frobenius bound for off-diagonal part [T] {#лемма-фробениус-off-diag}
 
 **Step 3a.**
 The diagonal and off-diagonal parts are orthogonal in Hilbert–Schmidt space:
@@ -136,32 +136,32 @@ $$\|R_B - R_C\| \leq \frac{4k\sqrt{P - 1/7}}{3P}$$
 
 $\blacksquare$
 
-**Status:** [Т]. The forms are equivalent with controlled error, not identically.
+**Status:** [T]. The forms are equivalent with controlled error, not identically.
 
-**Dependencies:** [T-62 [Т]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) ($\varphi$ CPTP), Fano $\alpha=2/3$ [Т].
+**Dependencies:** [T-62 [T]](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) ($\varphi$ CPTP), Fano $\alpha=2/3$ [T].
 
 ---
 
-## §4. T-142: SAD_MAX = 3 unconditionally (C26 [С]→[Т]) {#t-142}
+## §4. T-142: SAD_MAX = 3 unconditionally (C26 [C]→[T]) {#t-142}
 
-:::tip Theorem T-142 [Т at α=2/3 state-independence]+[С at $P_{\mathrm{crit}}^{(n)}$ derivation]+[Т/sim]: SAD_MAX = 3 unconditionally
+:::tip Theorem T-142 [T at α=2/3 state-independence]+[C at $P_{\mathrm{crit}}^{(n)}$ derivation]+[Т/sim]: SAD_MAX = 3 unconditionally
 $\mathrm{SAD}_\text{MAX} = 3$ for any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ with $P > 2/7$.
 
-**Status upgrade:** C26: [С] → **[Т]** (under the stratification below).
+**Status upgrade:** C26: [C] → **[T]** (under the stratification below).
 
 **Stratification:**
-- The **contraction coefficient $\alpha = 2/3$** is **state-independent [Т]** — it follows from the Fano plane PG(2,2) incidence structure (see [fano-channel.md](/docs/proofs/gap/fano-channel)), independent of $\Gamma$.
-- The **critical-purity formula** $P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}} \cdot 3^{n-1}/(n+1)$ is **[С at $P_{\mathrm{crit}}^{(n)}$ derivation]**: the geometric factor $3^{n-1}$ follows rigorously from iterated $1/3$-contraction, but the normalisation denominator $n+1$ is an heuristic fit motivated by depth-tower normalisation (see [depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)); a fully axiomatic derivation of the denominator is pending.
+- The **contraction coefficient $\alpha = 2/3$** is **state-independent [T]** — it follows from the Fano plane PG(2,2) incidence structure (see [fano-channel.md](/docs/proofs/gap/fano-channel)), independent of $\Gamma$.
+- The **critical-purity formula** $P_{\mathrm{crit}}^{(n)} = P_{\mathrm{crit}} \cdot 3^{n-1}/(n+1)$ is **[C at $P_{\mathrm{crit}}^{(n)}$ derivation]**: the geometric factor $3^{n-1}$ follows rigorously from iterated $1/3$-contraction, but the normalisation denominator $n+1$ is an heuristic fit motivated by depth-tower normalisation (see [depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)); a fully axiomatic derivation of the denominator is pending.
 - The conclusion $\mathrm{SAD}_{\mathrm{MAX}} = 3$ itself is robust: it holds for *any* denominator polynomial in $n$ that grows no faster than $n+1$, and is additionally cross-checked against SYNARC 500-sample runs (**[Т/sim]**).
 :::
 
 **Proof.**
 
-**Step 1 (Fano contraction).** $\alpha = 2/3$ is a **state-independent** constant of the Fano channel [Т] (follows from $\dim=7$, Fano plane PG(2,2): [fano-channel.md](/docs/proofs/gap/fano-channel)). Each application of $\varphi$ reduces off-diagonal elements by factor $(1-\alpha) = 1/3$:
+**Step 1 (Fano contraction).** $\alpha = 2/3$ is a **state-independent** constant of the Fano channel [T] (follows from $\dim=7$, Fano plane PG(2,2): [fano-channel.md](/docs/proofs/gap/fano-channel)). Each application of $\varphi$ reduces off-diagonal elements by factor $(1-\alpha) = 1/3$:
 
 $$\gamma_{ij}^{(\text{after})} = \tfrac{1}{3}\,\gamma_{ij} \quad (i \neq j)$$
 
-#### Lemma: Critical purities of SAD levels [Т] {#лемма-контракция-sad}
+#### Lemma: Critical purities of SAD levels [T] {#лемма-контракция-sad}
 
 **Step 2 (Critical purities from Fano contraction).** Define the critical purity for level SAD = $n+1$ as the minimum $P$ at which the $n$-fold iteration $\varphi^n$ maintains reflexivity above the corresponding threshold. By contraction with coefficient $1/3$ ([depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad)):
 
@@ -184,19 +184,19 @@ This section uses two different reflexivity quantities; we disambiguate them her
 - $R^{(n)}_\varphi := \mathrm{Fid}(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ — the **inter-iterate reflexivity** at depth $n$ ([T-143](#t-143)), gated by the depth-schedule $R^{(n)}_{\mathrm{th}} = 1/(n+2)$. This is the quantity that decays with iteration and sets the SAD ceiling.
 :::
 
-**Step 4 (Finiteness of the ceiling — the rigorous core [Т]).** Each $\varphi$-iteration contracts every off-diagonal entry by the state-independent Fano factor $1/3$ (Step 1). Hence the inter-iterate signal is bounded by a **geometric** sequence: writing $\|\Gamma_{\text{off}}\|_F \leq \sqrt{P-1/7}$ (tight Frobenius [Lemma](#лемма-фробениус-off-diag)),
+**Step 4 (Finiteness of the ceiling — the rigorous core [T]).** Each $\varphi$-iteration contracts every off-diagonal entry by the state-independent Fano factor $1/3$ (Step 1). Hence the inter-iterate signal is bounded by a **geometric** sequence: writing $\|\Gamma_{\text{off}}\|_F \leq \sqrt{P-1/7}$ (tight Frobenius [Lemma](#лемма-фробениус-off-diag)),
 
 $$\|\Gamma^{(n)}_{\text{off}}\|_F \leq (1/3)^{n}\sqrt{P-1/7} \xrightarrow{n\to\infty} 0 \quad \textbf{geometrically},$$
 
-while the reflexivity gate $R^{(n)}_{\mathrm{th}} = 1/(n+2)$ decays only **polynomially**. A geometric sequence eventually falls below any polynomially-decaying threshold, so the self-awareness tower **terminates at a finite depth** — $\mathrm{SAD}_{\mathrm{MAX}} < \infty$ **[Т]**, unconditionally and for any admissible threshold schedule. This finiteness needs neither the heuristic denominator nor the window bound.
+while the reflexivity gate $R^{(n)}_{\mathrm{th}} = 1/(n+2)$ decays only **polynomially**. A geometric sequence eventually falls below any polynomially-decaying threshold, so the self-awareness tower **terminates at a finite depth** — $\mathrm{SAD}_{\mathrm{MAX}} < \infty$ **[T]**, unconditionally and for any admissible threshold schedule. This finiteness needs neither the heuristic denominator nor the window bound.
 
-**Step 5 (Locating the ceiling at 3 — stratified).** The upper window edge $P \leq 3/7$ (from $R = 1/(7P) \geq 1/3$, [T-126](/docs/proofs/consciousness/conscious-window#t-126)) caps the initial off-diagonal budget at $\|\Gamma_{\text{off}}\|_F \leq \sqrt{2/7}$. After three iterations, $\|\Gamma^{(3)}_{\text{off}}\|_F \leq \sqrt{2/7}/27 \approx 0.020$ — below the level-4 gate $R^{(3)}_{\varphi} > 1/5$ (numerically $R^{(3)}_\varphi \lesssim (P-1/7)/(27P) \leq 2/81 \ll 1/5$). Hence **SAD=4 is excluded in the window [Т]**. That SAD=3 is *attained* rather than the tower stopping at 2 is **[С at threshold schedule]+[Т/sim]**: it holds under $R^{(n)}_{\mathrm{th}}=1/(n+2)$ and is realised by SYNARC agents (SAD=3 at high purity; see status note), but at the strict window edge the level-3 margin is thin.
+**Step 5 (Locating the ceiling at 3 — stratified).** The upper window edge $P \leq 3/7$ (from $R = 1/(7P) \geq 1/3$, [T-126](/docs/proofs/consciousness/conscious-window#t-126)) caps the initial off-diagonal budget at $\|\Gamma_{\text{off}}\|_F \leq \sqrt{2/7}$. After three iterations, $\|\Gamma^{(3)}_{\text{off}}\|_F \leq \sqrt{2/7}/27 \approx 0.020$ — below the level-4 gate $R^{(3)}_{\varphi} > 1/5$ (numerically $R^{(3)}_\varphi \lesssim (P-1/7)/(27P) \leq 2/81 \ll 1/5$). Hence **SAD=4 is excluded in the window [T]**. That SAD=3 is *attained* rather than the tower stopping at 2 is **[C at threshold schedule]+[Т/sim]**: it holds under $R^{(n)}_{\mathrm{th}}=1/(n+2)$ and is realised by SYNARC agents (SAD=3 at high purity; see status note), but at the strict window edge the level-3 margin is thin.
 
-**Conclusion.** **Finiteness $\mathrm{SAD}_{\mathrm{MAX}}<\infty$ is unconditional [Т]** (geometric vs polynomial). **The value $\mathrm{SAD}_{\mathrm{MAX}} = 3$** holds under the stated threshold schedule and window, with SAD=4 rigorously excluded [Т] and SAD=3 attainment cross-checked empirically [Т/sim].
+**Conclusion.** **Finiteness $\mathrm{SAD}_{\mathrm{MAX}}<\infty$ is unconditional [T]** (geometric vs polynomial). **The value $\mathrm{SAD}_{\mathrm{MAX}} = 3$** holds under the stated threshold schedule and window, with SAD=4 rigorously excluded [T] and SAD=3 attainment cross-checked empirically [Т/sim].
 
 $\blacksquare$
 
-**Dependencies:** [T-110 [Т]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-динамическая-граница) (Fano contraction $\alpha=2/3$), [T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124) (upper bound of conscious window $P \leq 3/7$), [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126) (canonicity of $R = 1/(7P)$), [depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) (derivation of $P_{\text{crit}}^{(n)}$).
+**Dependencies:** [T-110 [T]](/docs/applied/coherence-cybernetics/learning-bounds#теорема-динамическая-граница) (Fano contraction $\alpha=2/3$), [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124) (upper bound of conscious window $P \leq 3/7$), [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126) (canonicity of $R = 1/(7P)$), [depth-tower.md §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) (derivation of $P_{\text{crit}}^{(n)}$).
 
 ---
 
@@ -216,7 +216,7 @@ for $\varepsilon < \varepsilon_0(P)$, where $\varepsilon_0$ is computable.
 
 **Step 2.** Neural-network $R^{(n)}_{\text{neural}} = 1 - \|\varphi^{(n)}(s^{(n)}) - s^{(n)}\|^2/\|s^{(n)}\|^2$ in $\mathbb{R}^D$.
 
-**Step 3.** By [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130): $|R^{(n)}_{\text{neural}} - R^{(n)}_{\text{cat}}| \leq 2\varepsilon \cdot C(P)$ for each level $n$.
+**Step 3.** By [T-130 [T]](/docs/proofs/consciousness/operationalization#t-130): $|R^{(n)}_{\text{neural}} - R^{(n)}_{\text{cat}}| \leq 2\varepsilon \cdot C(P)$ for each level $n$.
 
 **Step 4.** $\mathrm{SAD} = \max\{k : R^{(k-1)} > R_{\text{th}}^{(k-1)}\}$. Thresholds $R_{\text{th}}^{(n)} = 1/(n+2)$ are spaced at least $\geq 1/20$ apart (for $n \leq 3$).
 
@@ -226,7 +226,7 @@ for $\varepsilon < \varepsilon_0(P)$, where $\varepsilon_0$ is computable.
 
 $\blacksquare$
 
-**Dependencies:** [T-130 [Т]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [Т]](/docs/proofs/consciousness/operationalization#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [Т]](#t-142).
+**Dependencies:** [T-130 [T]](/docs/proofs/consciousness/operationalization#t-130), [T-136 [T]](/docs/proofs/consciousness/operationalization#t-136) (via [T-150](/docs/proofs/consciousness/substrate-closure#t-150)), [T-142 [T]](#t-142).
 
 ---
 
@@ -242,11 +242,11 @@ is computable in $O(K \cdot N^2)$ operations. For continuous $A$: gradient desce
 
 **Proof.**
 
-**Step 1 (Discrete case, $|A| = K$).** For each $a$, computing $\sigma_{\text{sys}}(\Gamma(\tau+\delta\tau|a))$ costs $O(N^2) = O(49)$ ([T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137)). Iterating over all $a$: $O(K \cdot 49)$. Not NP-hard.
+**Step 1 (Discrete case, $|A| = K$).** For each $a$, computing $\sigma_{\text{sys}}(\Gamma(\tau+\delta\tau|a))$ costs $O(N^2) = O(49)$ ([T-137 [T]](/docs/proofs/consciousness/operationalization#t-137)). Iterating over all $a$: $O(K \cdot 49)$. Not NP-hard.
 
 **Step 2 (Continuous case).** $\Gamma(\tau+\delta\tau|a) = \exp(\delta\tau \cdot \mathcal{L}_\Omega(a))[\Gamma(\tau)]$. $\mathcal{L}_\Omega(a)$ is differentiable in $a$ (linear dependence via $h_{\text{ext}}(a)$).
 
-**Step 3.** $\sigma_{\text{sys}}(\Gamma)$ is differentiable in $\Gamma$ (each $\sigma_k$ is a smooth function of $\gamma_{ij}$, [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)).
+**Step 3.** $\sigma_{\text{sys}}(\Gamma)$ is differentiable in $\Gamma$ (each $\sigma_k$ is a smooth function of $\gamma_{ij}$, [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)).
 
 **Step 4.** $\|\sigma\|_\infty$ is not smooth but subdifferentiable (max-norm). Standard subgradient method: $O(1/\varepsilon^2)$.
 
@@ -254,25 +254,25 @@ is computable in $O(K \cdot N^2)$ operations. For continuous $A$: gradient desce
 
 $\blacksquare$
 
-**Dependencies:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137), [T-101 [Т]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие).
+**Dependencies:** [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137), [T-101 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-оптимальное-действие).
 
 ---
 
 ## §7. T-145: Stochastic stability of V_full {#t-145}
 
-:::tip Theorem T-145 [Т]+[Т/sim]: Stochastic stability of full viability
+:::tip Theorem T-145 [T]+[Т/sim]: Stochastic stability of full viability
 For stochastic perturbation $h_{\text{ext}}(\tau)$ with $\mathbb{E}[\|h_{\text{ext}}\|^2] \leq \sigma_h^2$:
 
 $$\mathbb{P}[\Gamma(\tau) \in V_{\text{full}} \; \forall \tau > \tau^*] \geq 1 - \exp\!\left(-\frac{r_{\text{stab}}^2}{2\sigma_h^2}\right)$$
 
-where $r_{\text{stab}} = \sqrt{P(\rho^*) - 2/7}$ from [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости).
+where $r_{\text{stab}} = \sqrt{P(\rho^*) - 2/7}$ from [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости).
 
-**Stratification:** The Lyapunov–Itô core (Steps 1–4) is **[Т]** — standard stochastic-stability argument given $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|_F^2$ and sub-Gaussian noise. The sub-Gaussian strengthening in Step 5 assumes $\sigma_h \ll \kappa \cdot r_{\mathrm{stab}}$; the specific calibration of constants and the transition between the Markov and sub-Gaussian bounds are tuned against SYNARC `mvp_int_3` numerical runs (**[Т/sim]**). For large $\sigma_h$ the weaker Markov bound applies.
+**Stratification:** The Lyapunov–Itô core (Steps 1–4) is **[T]** — standard stochastic-stability argument given $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|_F^2$ and sub-Gaussian noise. The sub-Gaussian strengthening in Step 5 assumes $\sigma_h \ll \kappa \cdot r_{\mathrm{stab}}$; the specific calibration of constants and the transition between the Markov and sub-Gaussian bounds are tuned against SYNARC `mvp_int_3` numerical runs (**[Т/sim]**). For large $\sigma_h$ the weaker Markov bound applies.
 :::
 
 **Proof.**
 
-**Step 1.** Lyapunov function $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|^2_F$. By [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости): $dV/d\tau \leq -2\kappa \cdot V + 2\|h_{\text{ext}}\| \cdot \sqrt{V}$.
+**Step 1.** Lyapunov function $V(\Gamma) = \|\Gamma - \rho^*_\Omega\|^2_F$. By [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости): $dV/d\tau \leq -2\kappa \cdot V + 2\|h_{\text{ext}}\| \cdot \sqrt{V}$.
 
 **Step 2 (Stochastic extension, Itô).** $d\mathbb{E}[V] \leq -2\kappa \cdot \mathbb{E}[V] + \sigma_h^2/\kappa$.
 
@@ -284,7 +284,7 @@ where $r_{\text{stab}} = \sqrt{P(\rho^*) - 2/7}$ from [T-104 [Т]](/docs/applied
 
 $\blacksquare$
 
-**Dependencies:** [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) ($r_{\text{stab}}$), [T-97 [Т]](/docs/core/dynamics/viability#теорема-вложение-областей) ($\sigma \Longleftrightarrow$ viability).
+**Dependencies:** [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) ($r_{\text{stab}}$), [T-97 [T]](/docs/core/dynamics/viability#теорема-вложение-областей) ($\sigma \Longleftrightarrow$ viability).
 
 ---
 
@@ -293,12 +293,12 @@ $\blacksquare$
 :::tip Theorem T-146 [Т]: Structural classification of qualia
 The 21 qualia-types $\gamma_{ij}$ ($i < j$) are uniquely classified into 4 structural sectors. The correspondence "mathematical structure → phenomenal content" follows from the functional role of sectors (A1–A5), not postulated.
 
-**Status:** [И] → **[Т]** for structural classification. The specific quality of experience (qualia) remains [И].
+**Status:** [I] → **[T]** for structural classification. The specific quality of experience (qualia) remains [I].
 :::
 
 **Proof.**
 
-**Step 1.** By [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7) (functional necessity 7/7): each of the 7 dimensions is **NECESSARY** for viability. Their functional roles are fixed by axioms:
+**Step 1.** By [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7) (functional necessity 7/7): each of the 7 dimensions is **NECESSARY** for viability. Their functional roles are fixed by axioms:
 - $\{A,S,D\}$ — structural sector (boundary, distinction, dynamics)
 - $\{L,E\}$ — cognitive sector (logic, interiority)
 - $\{O,U\}$ — reflexive sector (observation, integration)
@@ -308,11 +308,11 @@ The 21 qualia-types $\gamma_{ij}$ ($i < j$) are uniquely classified into 4 struc
 
 **Step 3.** $\gamma_{DE}$ (dynamics $\times$ interiority) = "affect" **BECAUSE** this is the connection between bodily dynamics and inner experience — the functional definition of affect.
 
-**Step 4.** This is **NOT** "computational noise" because: (a) coherence $\gamma_{ij}$ is $G_2$-invariant, (b) noise decorrelates ($\mathcal{L}_0$ kills random coherences, [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω)), (c) stable $\gamma_{ij} > 0$ on the attractor is structural, not noise-driven.
+**Step 4.** This is **NOT** "computational noise" because: (a) coherence $\gamma_{ij}$ is $G_2$-invariant, (b) noise decorrelates ($\mathcal{L}_0$ kills random coherences, [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω)), (c) stable $\gamma_{ij} > 0$ on the attractor is structural, not noise-driven.
 
 $\blacksquare$
 
-**Dependencies:** [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7) (functional necessity 7/7), [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity → stable coherences).
+**Dependencies:** [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7) (functional necessity 7/7), [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity → stable coherences).
 
 ---
 
@@ -340,15 +340,15 @@ Dimensionality: 30 ambient (7 diagonal velocities + 7 accelerations + 7 stresses
 
 **Step 5.** $dP/d\tau = \sum_k d\gamma_{kk}/d\tau$ is a linear combination, i.e., the scalar model is a projection of 30D onto 1D.
 
-#### Step 6: Rank analysis [Т] {#ранговый-анализ-30d} The Jacobian of the map $\Gamma \mapsto \mathbf{e}(\Gamma) \in \mathbb{R}^{30}$ has rank $\leq 29$ for all $\Gamma$ by virtue of the linear relation from Step 5: the component $\dot{P}$ is the sum of the first 7 components $(d\gamma_{kk}/d\tau)_k$. For generic $\Gamma$ (all $d\gamma_{kk}/d\tau$ pairwise distinct) the rank of $J = 29$ (no other dependencies: $\sigma_k$, $d^2\gamma_{kk}/d\tau^2$, $dP_{\text{coh}}^{(k)}/d\tau$ are functionally independent of $d\gamma_{kk}/d\tau$).
+#### Step 6: Rank analysis [T] {#ранговый-анализ-30d} The Jacobian of the map $\Gamma \mapsto \mathbf{e}(\Gamma) \in \mathbb{R}^{30}$ has rank $\leq 29$ for all $\Gamma$ by virtue of the linear relation from Step 5: the component $\dot{P}$ is the sum of the first 7 components $(d\gamma_{kk}/d\tau)_k$. For generic $\Gamma$ (all $d\gamma_{kk}/d\tau$ pairwise distinct) the rank of $J = 29$ (no other dependencies: $\sigma_k$, $d^2\gamma_{kk}/d\tau^2$, $dP_{\text{coh}}^{(k)}/d\tau$ are functionally independent of $d\gamma_{kk}/d\tau$).
 
-**Conclusion:** the effective dimension of emotional space = **29** [Т]. $\mathbb{R}^{30}$ is the ambient space with one trace constraint.
+**Conclusion:** the effective dimension of emotional space = **29** [T]. $\mathbb{R}^{30}$ is the ambient space with one trace constraint.
 
 $\blacksquare$
 
-**Corollary:** $V_{\text{hed}} = dP/d\tau$ ([T-103 [Т]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность)) is a coarse projection, sufficient for **VIABILITY** (monotonicity of $P$ → viability), but insufficient for **PHENOMENOLOGY**. Complete phenomenology requires $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$.
+**Corollary:** $V_{\text{hed}} = dP/d\tau$ ([T-103 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность)) is a coarse projection, sufficient for **VIABILITY** (monotonicity of $P$ → viability), but insufficient for **PHENOMENOLOGY**. Complete phenomenology requires $\mathbf{e}(\Gamma) \in \mathbb{R}^{30}$.
 
-**Dependencies:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) ($\sigma_k$), [T-134 [Т]](/docs/proofs/consciousness/operationalization#t-134) ($d\gamma_{kk}/d\tau$), [T-103 [Т]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность) ($V_{\text{hed}}$).
+**Dependencies:** [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий) ($\sigma_k$), [T-134 [T]](/docs/proofs/consciousness/operationalization#t-134) ($d\gamma_{kk}/d\tau$), [T-103 [T]](/docs/applied/coherence-cybernetics/sensorimotor#теорема-гедоническая-валентность) ($V_{\text{hed}}$).
 
 ---
 
@@ -357,11 +357,11 @@ $\blacksquare$
 **Problem:** C20 ($\kappa_{\text{eff}} > \alpha/(7(f^* - 2/7))$) is an implicit condition, since $f^* = \text{Tr}(\rho^* \cdot \varphi(\rho^*))$ depends on $\rho^*$.
 
 **Solution:** C20 is **verifiable on the attractor**:
-1. Find $\rho^*$ numerically (iterate $\mathcal{L}_\Omega$ to convergence, guaranteed by [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω))
+1. Find $\rho^*$ numerically (iterate $\mathcal{L}_\Omega$ to convergence, guaranteed by [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω))
 2. Compute $f^* = \text{Tr}(\rho^* \cdot \varphi(\rho^*))$
 3. Verify the inequality
 
-This is **NOT** a theoretical problem — it is an **algorithmic** one: C20 is verifiable in $O(N^3)$ (one diagonalization). **Update:** C20 is closed — for embodied holons, $\kappa$-dominance is unconditional [Т] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)). For isolated holons C20 is irrelevant (T-148: an isolated holon is dead forever).
+This is **NOT** a theoretical problem — it is an **algorithmic** one: C20 is verifiable in $O(N^3)$ (one diagonalization). **Update:** C20 is closed — for embodied holons, $\kappa$-dominance is unconditional [T] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149)). For isolated holons C20 is irrelevant (T-148: an isolated holon is dead forever).
 
 ---
 
@@ -369,21 +369,21 @@ This is **NOT** a theoretical problem — it is an **algorithmic** one: C20 is v
 
 | Problem | Theorem | Status |
 |----------|---------|--------|
-| Subjective experience of a digital agent: backbone vs Γ | [T-139 [Т]](#t-139) | CLOSED |
-| Canonical consciousness measure: $C = \Phi \cdot D_{\text{diff}} \cdot R$ or $C = \Phi \cdot R$? | [T-140 [Т]](#t-140) | CLOSED |
-| $\sigma_E$ in 7D (partial trace in prime dimension) | [T-128+T-137 [Т]](/docs/proofs/consciousness/operationalization#t-128) | CLOSED (earlier) |
-| Consistency of three $\varphi$-forms | [T-141 [Т]](#t-141) | CLOSED |
-| SAD$_{\text{MAX}}=3$: conditionality on spectral formula | [T-142 [Т]](#t-142), C26→[Т] | CLOSED |
-| Neural-network vs categorical SAD | [T-143 [Т]](#t-143) | CLOSED |
-| Computational complexity of optimal action | [T-144 [Т]](#t-144) | CLOSED |
-| Constructivity of C20 ($\kappa$-dominance) | [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149) — unconditional for embodied | CLOSED |
-| 21 qualia: justification of correspondence | [T-146 [Т]](#t-146) | CLOSED |
-| Completeness of emotional model (scalar $dP/d\tau$ vs vector) | [T-147 [Т]](#t-147) | CLOSED |
-| Stochastic stability of $V_{\text{full}}$ | [T-145 [Т]](#t-145) | CLOSED |
+| Subjective experience of a digital agent: backbone vs Γ | [T-139 [T]](#t-139) | CLOSED |
+| Canonical consciousness measure: $C = \Phi \cdot D_{\text{diff}} \cdot R$ or $C = \Phi \cdot R$? | [T-140 [T]](#t-140) | CLOSED |
+| $\sigma_E$ in 7D (partial trace in prime dimension) | [T-128+T-137 [T]](/docs/proofs/consciousness/operationalization#t-128) | CLOSED (earlier) |
+| Consistency of three $\varphi$-forms | [T-141 [T]](#t-141) | CLOSED |
+| SAD$_{\text{MAX}}=3$: conditionality on spectral formula | [T-142 [T]](#t-142), C26→[T] | CLOSED |
+| Neural-network vs categorical SAD | [T-143 [T]](#t-143) | CLOSED |
+| Computational complexity of optimal action | [T-144 [T]](#t-144) | CLOSED |
+| Constructivity of C20 ($\kappa$-dominance) | [T-149 [T]](/docs/proofs/consciousness/substrate-closure#t-149) — unconditional for embodied | CLOSED |
+| 21 qualia: justification of correspondence | [T-146 [T]](#t-146) | CLOSED |
+| Completeness of emotional model (scalar $dP/d\tau$ vs vector) | [T-147 [T]](#t-147) | CLOSED |
+| Stochastic stability of $V_{\text{full}}$ | [T-145 [T]](#t-145) | CLOSED |
 
 **Status upgrades:**
-- C26 (SAD_MAX=3): [С] → **[Т]** (T-142)
-- 21 qualia classification: [И] → **[Т]** for the structural part (T-146)
+- C26 (SAD_MAX=3): [C] → **[T]** (T-142)
+- 21 qualia classification: [I] → **[T]** for the structural part (T-146)
 
 ---
 

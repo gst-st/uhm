@@ -173,14 +173,14 @@ Note: during the accident $\gamma_{OO}$ increases slightly (adrenaline intensifi
 
 ## Temporal Dilation (C.1) {#дилатация}
 
-:::tip Statement C.1 (Subjective time dilation) [Т]
+:::tip Statement C.1 (Subjective time dilation) [T]
 The ratio of subjective to physical time increments is proportional to the subjective tempo:
 
 $$
 \frac{\delta\tau_{\text{subj}}}{\delta\tau_{\text{phys}}} \propto \mathcal{T}(\tau) = \frac{|\gamma_{OE}|}{\gamma_{OO}}
 $$
 
-**Derivation [Т].** The connection of $\gamma_{OE}$ to the experience of time is **not** a semantic postulate but a **theorem** following from three [Т]-results:
+**Derivation [T].** The connection of $\gamma_{OE}$ to the experience of time is **not** a semantic postulate but a **theorem** following from three [T]-results:
 1. **T-87 [Т]:** O is the clock dimension — time $\tau$ emerges from correlations between O and the rest via the Page–Wootters mechanism.
 2. **T-186(a) [Т]:** E is the experience dimension — the phenomenal functor $F \cong \&|_{\mathcal{D}}$ extracts the E-sector as the carrier of subjective content.
 3. **T-88 [Т]:** The coupling $\gamma_{OE}$ appears in the regeneration rate $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$, which governs the speed at which the system updates its experiential state.

@@ -203,8 +203,8 @@ $$
 | **Необходимость интериорности** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [Т] | [Теорема 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
 | **$G_2$-ригидность** | Голономное представление единственно с точностью до $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 физических параметра | [Т] | [Теорема](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 | **Единственность электрослабого сектора** | $SU(2)_L \times U(1)_Y$ — единственная конструкция rank 4 из $\kappa_0$ и аксиом A1–A5 | [Т] | [Теорема](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
-| **Три поколения** | $N_{\text{gen}} = 3$: точный подсчёт $|\mathrm{QR}(7)| = (7-1)/2 = 3$ **[Т]**; физическое отождествление [И] | [Т]+[И] | [Теорема](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
-| **Фано-отбор Юкавы** | $y_k = g_W \cdot f_{k,E,U} \cdot |\gamma_{\text{vac}}^{(EU)}|$ через октонионные $f_{ijk}$ | [Т] | [Теорема](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
+| **Три поколения** | $N_{\text{gen}} = 3$: точный подсчёт $\|\mathrm{QR}(7)\| = (7-1)/2 = 3$ **[Т]**; физическое отождествление [И] | [Т]+[И] | [Теорема](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
+| **Фано-отбор Юкавы** | $y_k = g_W \cdot f_{k,E,U} \cdot \|\gamma_{\text{vac}}^{(EU)}\|$ через октонионные $f_{ijk}$ | [Т] | [Теорема](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
 | **Нестабильность Источника** | $\Gamma_\odot = I/7$ нестационарен: $F_0 \neq 0$, дрейф к $\rho^*$, самоусиление | [Т] | [Доказательство](./physics/cosmology-phys/origin#доказательство-нестабильности) |
 | **Свобода воли** | $\mathrm{Freedom}(\Gamma) = \dim\ker(H_\Gamma) + 1$; монотонность под CPTP, $G_2$-инвариантность | [Т] | [Теорема](./core/foundations/consequences#freedom-конечномерное) |
 | **$A_4$-бифуркация** | Swallowtail из 3 параметров $(\kappa, \alpha, \Delta F)$ + $\mathbb{Z}_2$-симметрия пурити | [Т] | [Теорема](./consciousness/hierarchy/interiority-hierarchy#теорема-a4-бифуркация) |
@@ -218,7 +218,7 @@ $$
 | **Уравнения Эйнштейна из спектрального действия** | Полная тройка (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [Т] | [Теорема](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
 | **УФ-конечность Gap-теории** | Компактность $(S^1)^{21}$ + $G_2$-Уорд ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Зайберг) + подавление $\varepsilon^{12}$ (T-219) | field-space **[Т]**, полная попорядковая **[С]** (структурная) | [Теорема](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
 | **Лоренцева сигнатура** | расщепление $(1,3)$ [Т] (1 время из Пейджа–Вуттерса, 3 пространства из $S^3$); лоренцев знак [Т при рефлективной положительности] (ограниченный снизу PW-генератор / Остервальдер–Шрадер) | [Т]+[Т при р.п.] | [Теорема](./core/foundations/spacetime#теорема-спектральная-тройка) |
-| **Морита-эквивалентность 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}|_{42})$; все 7D формулы точны | [Т] | [Теорема](./core/structure/dimension-e) |
+| **Морита-эквивалентность 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$; все 7D формулы точны | [Т] | [Теорема](./core/structure/dimension-e) |
 | **Спектральный зазор Фано-диссипатора** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD-симметрия); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-оператор (замещающий канал)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, монотонность, неподвижная точка $\rho_*$ | [Т] | [Теорема](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
 | **Глобальная минимизация $V_{\text{Gap}}$** | $G_2$-орбитная редукция $21D \to 5D$; единственный минимум; гессиан $> 0$ | [Т] | [Теорема](./core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) |
@@ -252,7 +252,7 @@ $$
 | **Оптимальная граница обучения** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — три режима | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
 | **Минимальность N=7 для обучения** (T-113) | Обучение через регенерацию невозможно при $N < 7$; $N = 7$ Парето-оптимально | [Т] | [Теорема](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
 | **Фано-грамматика** (T-114) | Марковская цепь на PG(2,2) эргодическая, стационарное распределение $\pi_i = 1/7$ | [Т] | [Теорема](./core/operators/lindblad-operators#теорема-фано-грамматика) |
-| **Различимость композиций** (T-115) | $|\mathrm{Comp}(n)| = 7^n$ для generic $\Gamma$ (алгебраическая различимость) | [Т] | [Теорема](./core/operators/lindblad-operators#теорема-различимость-композиций) |
+| **Различимость композиций** (T-115) | $\|\mathrm{Comp}(n)\| = 7^n$ для generic $\Gamma$ (алгебраическая различимость) | [Т] | [Теорема](./core/operators/lindblad-operators#теорема-различимость-композиций) |
 | **PW Suzuki-Trotter** (T-116) | $\varepsilon(T) \leq C_p \cdot T \cdot (\delta\tau)^{2p+1}$, при $p=2$: $\varepsilon \leq 10^{-5}$ | [Т] | [Теорема](./core/foundations/axiom-omega#теорема-pw-suzuki-trotter) |
 | **Ландауэровская калибровка** (C22) | $\Delta F^{(k)} \geq k_B T_\mathrm{eff} \ln(2) \cdot k$ — линейный рост | [С] | [Теорема](./consciousness/hierarchy/depth-tower#ландауэровская-калибровка) |
 

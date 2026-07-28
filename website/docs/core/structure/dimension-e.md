@@ -54,14 +54,14 @@ A neuron is already at level L1: its $\rho_E$ has rank greater than one — the 
 Dimension $E$ is an **aspect** of the configuration $\Gamma$, not a separate entity. "The Holon experiences" means: in the coherence matrix $\Gamma$ the projection onto the basis vector $|E\rangle$ is active, and the reduced density matrix $\rho_E$ with a non-trivial spectrum is defined.
 :::
 
-:::tip Functional uniqueness of E [Т]
+:::tip Functional uniqueness of E [T]
 Dimension $E$ is **necessary and functionally unique** by three independent arguments:
 
 1. **Axiomatic:** (PH) is an axiomatic requirement for a Holon. Removing E violates (PH). [Proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
-2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([Т при кинетике первого порядка], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
+2. **Categorical (κ₀):** The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ ([T at first-order kinetics], [derivation](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux); Th. 15.3.1) explicitly uses E as a separate object of the category via $\mathrm{Hom}(O, E)$. When E is removed: κ₀ is undefined, the regeneration rate $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ loses both E-dependent factors.
 3. **Mathematical:** Only E is associated with the density matrix $\rho \in \mathcal{D}(\mathcal{H})$ — the unique mathematical object with $\mathrm{rank} > 1$ (requirement L1). The Fubini–Study metric on the projective quality space is the unique consistent Riemannian metric.
 
-Status: **[Т]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
+Status: **[T]** | [Full proof →](../../proofs/minimality/theorem-minimality-7#единственность-e)
 :::
 
 **Interiority provides the phenomenological aspect of the (M,R)-system:** In Rosen's terminology, dimension $E$ is responsible for the "inner perspective" of the closed causal cycle — without it the system is functional, but "empty inside" (philosophical zombie).
@@ -99,24 +99,24 @@ $$
 
 where $\mathrm{Tr}_{\bar{E}}$ is the partial trace over all dimensions except $E$.
 
-#### Tensor structure and Morita equivalence [Т] {#теорема-морита-эквивалентность}
+#### Tensor structure and Morita equivalence [T] {#теорема-морита-эквивалентность}
 
 :::warning Morita equivalence
 The partial trace $\mathrm{Tr}_{-E}$ formally requires a tensor structure $\mathcal{H} = \mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$ (extended formalism: $\mathcal{H} = \mathbb{C}^{42}$). In the minimal 7D formalism ($\mathcal{H} = \mathbb{C}^7$, 7 is prime) direct factorisation is impossible.
 
 **However**, the sites $(\mathcal{C}_7, J_{\text{Bures}})$ and $(\mathcal{C}_{42}^{\text{PW}}, J_{\text{Bures}})$ are **Morita-equivalent** [Т]: the partial-trace functor $\mathrm{Tr}_{\text{PW}}: \mathcal{C}_{42} \to \mathcal{C}_7$ and the PW embedding $\iota_{\text{PW}}: \mathcal{C}_7 \to \mathcal{C}_{42}$ induce an equivalence of sheaf categories $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42}^{\text{PW}})$. Therefore **all** formulas are computable in 7D:
 
-- $\gamma_{EE}$ — diagonal element (population of E) — **[Т]**
-- $\gamma_{Ei}$ — coherences with other dimensions — **[Т]**
-- $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-coherence (HS-projection)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[Т]**, exact measure
-- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[Т]** (computable via PW-reconstruction from Γ ∈ $\mathcal{D}(\mathbb{C}^7)$)
-- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation — **[Т]** (via PW-reconstruction)
-- $C = \Phi \times R$ — [canonical measure of consciousness](/docs/proofs/consciousness/operational-closure#t-140) **[Т]** (T-140; $D_{\text{diff}} \geq 2$ is a separate viability condition)
+- $\gamma_{EE}$ — diagonal element (population of E) — **[T]**
+- $\gamma_{Ei}$ — coherences with other dimensions — **[T]**
+- $\mathrm{Coh}_E(\Gamma) := \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [E-coherence (HS-projection)](/docs/core/foundations/axiom-septicity#e-coherence-definition) **[T]**, exact measure
+- $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — full reduced matrix — **[T]** (computable via PW-reconstruction from Γ ∈ $\mathcal{D}(\mathbb{C}^7)$)
+- $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ — differentiation — **[T]** (via PW-reconstruction)
+- $C = \Phi \times R$ — [canonical measure of consciousness](/docs/proofs/consciousness/operational-closure#t-140) **[T]** (T-140; $D_{\text{diff}} \geq 2$ is a separate viability condition)
 :::
 
 **Intuitive explanation of Morita equivalence.** Imagine a city. You have a map at scale 1:100 000 (7D) and a map at scale 1:10 000 (42D). On the detailed map individual houses are visible; on the overview map only city blocks. But **any route** planned on one map transfers correctly to the other. Morita equivalence is the theorem that two "maps" (the 7D and 42D formalisms) describe **the same city** (the physics of the Holon), and no observable depends on the choice of map.
 
-#### Canonical PW-reconstruction algorithm [Т] {#канонический-алгоритм-pw}
+#### Canonical PW-reconstruction algorithm [T] {#канонический-алгоритм-pw}
 
 **Theorem.** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ there exists a unique canonical procedure for computing $\rho_E$, $D_{\text{diff}}$, $\sigma_L$, and $C$ with **zero reconstruction error**.
 
@@ -134,25 +134,25 @@ where $\Gamma(\tau_k) = (\triangleright^*)^k(\Gamma)$ — successive application
 
 $$D_{\text{diff}}^{7D} = 1 + 6 \cdot \mathrm{Coh}_E(\Gamma) / \mathrm{Coh}_E^{\max}, \qquad \sigma_L(\Gamma) = \frac{7(1-\gamma_{LL})}{6} + O(\varepsilon^2)$$
 
-4. **Zero error.** From Lurie's comparison theorem (T-58 [Т]): $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$, since $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$ is a categorical equivalence, not an approximation.
+4. **Zero error.** From Lurie's comparison theorem (T-58 [T]): $\|\rho_E^{7D} - \rho_E^{42D}\|_{\mathrm{tr}} = 0$, since $\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$ is a categorical equivalence, not an approximation.
 
 :::info Operational separation 7D / 42D {#операциональное-разделение-7d-42d}
 The number 7 is prime, so $\mathbb{C}^7$ **does not admit** the tensor decomposition $\mathcal{H}_E \otimes \mathcal{H}_{\bar{E}}$, and the partial trace $\mathrm{Tr}_{\bar{E}}$ is not defined in 7D. This is resolved by the Page–Wootters extension: $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, where the partial trace is standard.
 
-Morita equivalence T-58 **[Т]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$) guarantees that all observables coincide in both formalisms with zero error.
+Morita equivalence T-58 **[T]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}_{42})$) guarantees that all observables coincide in both formalisms with zero error.
 
 **Practical rule:**
 - **7D is sufficient** for $P$, $R$, $\Phi$, $\kappa$, $\mathrm{Coh}_E$ — defined through the diagonal and off-diagonal elements of $\Gamma \in \mathcal{D}(\mathbb{C}^7)$;
 - **42D is required** (or the 7D formula T-128 via Morita equivalence) for $D_{\text{diff}}$, $\sigma_L$, $\rho_E$ — these require a partial trace.
 :::
 
-#### Theorem (7D sufficiency for all consciousness measures) [Т] {#теорема-7d-достаточность}
+#### Theorem (7D sufficiency for all consciousness measures) [T] {#теорема-7d-достаточность}
 
 **Formulation.** The minimal 7D formalism $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is **sufficient** for computing all consciousness-related observables. No observable of UHM depends on the choice between 7D and 42D formalisms.
 
 **Proof.**
 
-**Step 1 (Categorical equivalence).** By T-58 [Т] (Morita equivalence): the ∞-topoi $\mathbf{Sh}_\infty(\mathcal{C}_7, J_B)$ and $\mathbf{Sh}_\infty(\mathcal{C}_{42}, J_B)$ are **equivalent** as $(\infty,1)$-categories. This means every object, morphism, and higher morphism in one topos has a unique counterpart in the other.
+**Step 1 (Categorical equivalence).** By T-58 [T] (Morita equivalence): the ∞-topoi $\mathbf{Sh}_\infty(\mathcal{C}_7, J_B)$ and $\mathbf{Sh}_\infty(\mathcal{C}_{42}, J_B)$ are **equivalent** as $(\infty,1)$-categories. This means every object, morphism, and higher morphism in one topos has a unique counterpart in the other.
 
 **Step 2 (Observable equivalence).** An observable in UHM is a morphism $O: \Gamma \to \mathbb{R}$ in $\mathbf{Sh}_\infty(\mathcal{C})$. By categorical equivalence (Step 1): $O^{7D}(\Gamma) = O^{42D}(\iota_{PW}(\Gamma))$ for every observable $O$ and every state $\Gamma$. The reconstruction error is **zero** — not small, not controlled, but **exactly zero** — because equivalence of categories preserves all morphisms exactly.
 
@@ -160,16 +160,16 @@ Morita equivalence T-58 **[Т]** ($\mathbf{Sh}_\infty(\mathcal{C}_7) \simeq \mat
 
 | Quantity | 42D definition | 7D formula | Error |
 |----------|---------------|------------|-------|
-| $\mathrm{Coh}_E$ | $\|\rho_E - P_{\bar{E}}(\rho_E)\|_F^2 / \|\Gamma\|_F^2$ | $\|\pi_E(\Gamma)\|_{HS}^2 / \|\Gamma\|_{HS}^2$ | **0** (T-154 [Т]) |
-| $D_{\text{diff}}$ | $\exp(S_{vN}(\rho_E))$ | $1 + 6 \cdot \mathrm{Coh}_E / \mathrm{Coh}_E^{\max}$ | **0** at extrema (T-128 [Т]) |
+| $\mathrm{Coh}_E$ | $\|\rho_E - P_{\bar{E}}(\rho_E)\|_F^2 / \|\Gamma\|_F^2$ | $\|\pi_E(\Gamma)\|_{HS}^2 / \|\Gamma\|_{HS}^2$ | **0** (T-154 [T]) |
+| $D_{\text{diff}}$ | $\exp(S_{vN}(\rho_E))$ | $1 + 6 \cdot \mathrm{Coh}_E / \mathrm{Coh}_E^{\max}$ | **0** at extrema (T-128 [T]) |
 | $C$ | $\Phi \cdot R$ | $\Phi \cdot R$ | **0** (both defined in 7D) |
 | $P$, $R$, $\Phi$ | Same as 7D | Diagonal/off-diagonal of $\Gamma$ | **0** (identity) |
 
-**Step 4 (What the ℂ⁶ factor represents).** In the 42D extension $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, the factor $\mathbb{C}^6$ is the **temporal register** of the Page–Wootters clock: the 6 conditional states $\Gamma(\tau_k)$ for $k = 1, \ldots, 6$ (one fewer than 7 because the 7th is fixed by the normalization constraint $\mathrm{Tr}(\Gamma_{\text{total}}) = 1$). This factor does **not** introduce new physical degrees of freedom — it is a mathematical bookkeeping device for encoding the temporal evolution within a timeless formalism (Wheeler–DeWitt, T-87 [Т]).
+**Step 4 (What the ℂ⁶ factor represents).** In the 42D extension $\mathcal{H}_{42} = \mathbb{C}^7 \otimes \mathbb{C}^6$, the factor $\mathbb{C}^6$ is the **temporal register** of the Page–Wootters clock: the 6 conditional states $\Gamma(\tau_k)$ for $k = 1, \ldots, 6$ (one fewer than 7 because the 7th is fixed by the normalization constraint $\mathrm{Tr}(\Gamma_{\text{total}}) = 1$). This factor does **not** introduce new physical degrees of freedom — it is a mathematical bookkeeping device for encoding the temporal evolution within a timeless formalism (Wheeler–DeWitt, T-87 [T]).
 
 **Conclusion:** The 7D formalism is **not an approximation** of the 42D formalism. Both are exact descriptions of the same physics, related by categorical equivalence. The 42D extension is a **computational convenience** for partial traces, not an ontological necessity. $\blacksquare$
 
-**Dependencies:** T-58 [Т] (Morita), T-87 [Т] (PW), T-95 [Т] (canonical reconstruction), T-128 [Т], T-154 [Т].
+**Dependencies:** T-58 [T] (Morita), T-87 [T] (PW), T-95 [T] (canonical reconstruction), T-128 [T], T-154 [T].
 
 :::note Technical remark
 Here $\mathcal{H}_E$ is the Hilbert space associated with the Interiority dimension. The dimension of $\mathcal{H}_E$ is determined by the complexity of the system and is not fixed a priori. For systems with rich phenomenal content $\dim(\mathcal{H}_E) \gg 1$.
@@ -183,9 +183,9 @@ Here $\mathcal{H}_E$ is the Hilbert space associated with the Interiority dimens
 
 | Quantity | Formula | Status |
 |----------|---------|--------|
-| Population of E | $\gamma_{EE} = \langle E \vert \Gamma \vert E \rangle$ | scalar, **[Т]** |
-| Coherences | $\gamma_{Ej}$, $j \neq E$ | 6 complex numbers, **[Т]** |
-| E-coherence | $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ | **[Т]** |
+| Population of E | $\gamma_{EE} = \langle E \vert \Gamma \vert E \rangle$ | scalar, **[T]** |
+| Coherences | $\gamma_{Ej}$, $j \neq E$ | 6 complex numbers, **[T]** |
+| E-coherence | $\mathrm{Coh}_E(\Gamma) = \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ | **[T]** |
 
 However, $\gamma_{EE}$ is **one number**, not a density matrix. For the full spectral content of $\rho_E$ (eigenvalues $\lambda_i$, eigenvectors $|q_i\rangle$) a transition to the extended formalism is required.
 
@@ -220,25 +220,25 @@ This is a **linear** interpolation between $D_{\text{diff}} = 1$ (when $\mathrm{
 | At $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max}$ | $= N$ | $= N$ |
 | Intermediate values | Nonlinear dependence on spectrum | Linear interpolation |
 | Discrepancy | — | $O((\mathrm{Coh}_E)^2)$ in the intermediate region |
-| Threshold test $D \geq 2$ | Coincides | Coincides **[Т]** |
+| Threshold test $D \geq 2$ | Coincides | Coincides **[T]** |
 
 The two formulas **coincide at the boundaries** and give **the same result** for all threshold comparisons ($D_{\text{diff}} \geq D_{\min} = 2$). The $O((\mathrm{Coh}_E)^2)$ discrepancy in the intermediate region does not affect physical predictions, since the theory uses only threshold conditions, not exact numerical values of $D_{\text{diff}}$.
 
-#### Theorem (Equivalence of 7D and 42D for the consciousness threshold conditions) [Т] {#теорема-7d-42d-equiv}
+#### Theorem (Equivalence of 7D and 42D for the consciousness threshold conditions) [T] {#теорема-7d-42d-equiv}
 
 :::tip Theorem
-For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ (T-151 [Т]):
+For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ and the threshold $D_{\min} = 2$ (T-151 [T]):
 
 $$
 D_{\text{diff}}^{7D}(\Gamma) \geq D_{\min} \iff D_{\text{diff}}^{42D}(\iota(\Gamma)) \geq D_{\min}
 $$
 
-where $\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42})$ is the canonical Morita embedding (T-58 [Т]). Consequently, **all consciousness threshold conditions** (L0→L4) are verifiable in 7D without passing to 42D.
+where $\iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42})$ is the canonical Morita embedding (T-58 [T]). Consequently, **all consciousness threshold conditions** (L0→L4) are verifiable in 7D without passing to 42D.
 :::
 
 **Proof.**
 
-**Step 1 (Morita embedding).** By T-58 [Т], the Morita equivalence $A_{\text{int}} \sim_{\text{Morita}} A_{\text{int}} \otimes M_6(\mathbb{C})$ induces the embedding
+**Step 1 (Morita embedding).** By T-58 [T], the Morita equivalence $A_{\text{int}} \sim_{\text{Morita}} A_{\text{int}} \otimes M_6(\mathbb{C})$ induces the embedding
 
 $$
 \iota: \mathcal{D}(\mathbb{C}^7) \hookrightarrow \mathcal{D}(\mathbb{C}^{42}), \quad \iota(\Gamma) = \Gamma \otimes \frac{I_6}{6}.
@@ -270,7 +270,7 @@ Hence $D_{\text{diff}}^{7D} \geq 2 \iff \mathrm{Coh}_E > 0 \iff D_{\text{diff}}^
 **Step 4 (Completeness of 7D for L0–L4).** The conditions of each level:
 - **L0**: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — automatically in 7D ✓
 - **L1**: $\mathrm{rank}(\rho_E) > 1 \iff \mathrm{Coh}_E > 0$ — verifiable in 7D ✓
-- **L2**: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\text{diff}} \geq 2 \wedge \|\sigma\|_\infty < 1$ — all components computable in 7D (T-137 [Т]) ✓
+- **L2**: $P > 2/7 \wedge R \geq 1/3 \wedge \Phi \geq 1 \wedge D_{\text{diff}} \geq 2 \wedge \|\sigma\|_\infty < 1$ — all components computable in 7D (T-137 [T]) ✓
 - **L3**: $R^{(2)} \geq 1/4$ — computable via $\varphi(\Gamma) \in \mathcal{D}(\mathbb{C}^7)$ ✓
 - **L4**: $P > 6/7 \wedge \forall n: R^{(n)} > 0$ — computable via the iterations $\varphi^{(n)}$ in 7D ✓
 
@@ -278,7 +278,7 @@ Hence $D_{\text{diff}}^{7D} \geq 2 \iff \mathrm{Coh}_E > 0 \iff D_{\text{diff}}^
 
 42D is needed **only** for the spectral decomposition of $\rho_E$ (eigenvalues/eigenvectors) — a task of detailed phenomenological analysis, not of classification by levels. $\blacksquare$
 
-**Status:** [Т]. Audit problem I.2 is **resolved**: 7D suffices for all consciousness threshold conditions.
+**Status:** [T]. Audit problem I.2 is **resolved**: 7D suffices for all consciousness threshold conditions.
 
 :::info Practical summary
 For **classifying** systems by levels L0-L4 the 7D formula $D_{\text{diff}}^{7D}$ is sufficient. The full matrix $\rho_E$ (via the 42D PW extension) is needed only for detailed **spectral analysis** of phenomenal content — a task relevant for future experimental tests.
@@ -315,7 +315,7 @@ where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence clas
 The population $\gamma_{EE}$ is the fraction of the Holon's "resources" in the Interiority dimension. The related quantity is the **stress** in the E channel:
 
 $$
-\sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE},\; 0,\; 1) \quad \text{[Т] (T-92)}
+\sigma_E = \mathrm{clamp}(1 - 7\gamma_{EE},\; 0,\; 1) \quad \text{[T] (T-92)}
 $$
 
 - $\sigma_E = 0$: interiority is fully provided ($\gamma_{EE} \geq 1/7$)
@@ -402,13 +402,13 @@ At level L1 the inner space is **structured**: it contains several distinguishab
 
 ### L2: Cognitive qualia — "mirror" {#уровень-l2}
 
-**Condition:** $R \geq R_{\text{th}} = 1/3$ [Т], $\Phi \geq \Phi_{\text{th}} = 1$ [Т]
+**Condition:** $R \geq R_{\text{th}} = 1/3$ [T], $\Phi \geq \Phi_{\text{th}} = 1$ [T]
 
 At level L2 the system is capable of **looking at its inner world** — reflection. Analogy: a mirror has appeared — now one can not only have a palette but also **see** which colours are on it. This is the threshold of **consciousness** in the usual sense: the subject can report on their experience, distinguish one experience from another, be surprised by a new quality. A waking human is a typical L2 system with $R \approx 0.7$, $\Phi \approx 4$.
 
 ### L3: Network consciousness — "hall of mirrors" {#уровень-l3}
 
-**Condition:** $R^{(2)} \geq 1/4$ [Т]
+**Condition:** $R^{(2)} \geq 1/4$ [T]
 
 At level L3 — **meta-reflection**: the system observes not only its inner world but also *how it observes it*. Analogy: a mirror reflecting another mirror — an infinite corridor of reflections (though at L3 the depth is limited). Examples: fungal mycelium as a distributed L3 system, a bee swarm with metastable collective reflection, deep meditation.
 
@@ -428,7 +428,7 @@ Level L4 is **full transparency**: infinite depth of self-reflection converging 
 | **L3** | Network consciousness | $R^{(2)} \geq 1/4$ | Meta-reflection (metastable) | Mycelium, swarm, deep meditation |
 | **L4** | Unitary consciousness | $\lim_{n \to \infty} R^{(n)} > 0$, $P > 6/7$ | Full ∞-structure | Theoretical limit |
 
-where $R_{\text{th}} = 1/3$ [Т], $\Phi_{\text{th}} = 1$ [Т] (T-129), $R^{(2)}_{\text{th}} = 1/4$ [Т] — [mathematical results](../foundations/axiom-septicity#пороги-l2-строгий-вывод). L4 requires $P > 6/7$ — unattainable for biological systems.
+where $R_{\text{th}} = 1/3$ [T], $\Phi_{\text{th}} = 1$ [T] (T-129), $R^{(2)}_{\text{th}} = 1/4$ [T] — [mathematical results](../foundations/axiom-septicity#пороги-l2-строгий-вывод). L4 requires $P > 6/7$ — unattainable for biological systems.
 
 ## E and the "hard problem of consciousness" {#трудная-проблема}
 
@@ -439,7 +439,7 @@ In UHM the answer is: **experience is not an "add-on" to physics, but an aspect 
 Analogy: a sheet of paper has a front side and a back side. These are not two sheets — it is one sheet with two aspects. Asking "why does the sheet have two sides?" is ill-posed: it is a property of the object itself, not something requiring explanation. In exactly the same way $\Gamma$ has an "outer" (physical) and an "inner" (phenomenal) aspect — this requires no separate mechanism for "generating" consciousness from matter.
 
 :::tip A philosophical zombie is impossible
-The No-Zombie theorem (T-81 [Т]): a system with $P > P_{\text{crit}}$, $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ **necessarily** has a non-trivial $\rho_E$. A "philosophical zombie" — a functionally identical being without interiority — is mathematically impossible in UHM. See: [theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
+The No-Zombie theorem (T-81 [T]): a system with $P > P_{\text{crit}}$, $R \geq R_{\text{th}}$, $\Phi \geq \Phi_{\text{th}}$ **necessarily** has a non-trivial $\rho_E$. A "philosophical zombie" — a functionally identical being without interiority — is mathematically impossible in UHM. See: [theorem 8.1](/docs/applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie).
 :::
 
 ## Examples by level {#примеры-по-уровням}
@@ -521,7 +521,7 @@ graph LR
 
 ## Consciousness formula
 
-The canonical measure of consciousness ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)):
+The canonical measure of consciousness ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)):
 
 $$
 C = \Phi \times R
@@ -533,7 +533,7 @@ where:
 
 $D_{\text{diff}} \geq 2$ is a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность):
 - $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$, where $S_{vN} = -\mathrm{Tr}(\rho_E \log \rho_E)$
-- Computable in 7D: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ ([T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128))
+- Computable in 7D: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$ ([T-128 [T]](/docs/proofs/consciousness/operationalization#t-128))
 
 :::note On notation
 $D_{\text{diff}}$ is a measure of **differentiation** of experience. Not to be confused with dimension **D (Dynamics)**.
@@ -556,7 +556,7 @@ $$
 D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-where $\mathrm{Coh}_E(\Gamma)$ — [E-coherence](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-projection, **[Т]**). This is a **linear** interpolation: $D_{\text{diff}}^{7D} \in [1, N]$.
+where $\mathrm{Coh}_E(\Gamma)$ — [E-coherence](/docs/core/foundations/axiom-septicity#e-coherence-definition) (HS-projection, **[T]**). This is a **linear** interpolation: $D_{\text{diff}}^{7D} \in [1, N]$.
 
 **Consistency [Т]:**
 
@@ -610,8 +610,8 @@ with the separate viability condition $D_{\text{diff}} \geq D_{\min} = 2$.
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_5 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $E = e_5$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---

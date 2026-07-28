@@ -54,7 +54,7 @@ In this document $\hat{\mathcal{G}}$ denotes the Gap operator (antisymmetric mat
 
 ### 1.1 Basic definition
 
-:::tip Definition (Gap operator) [Т]
+:::tip Definition (Gap operator) [T]
 For a Hermitian coherence matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, $\Gamma^\dagger = \Gamma$, the **Gap operator** is defined as:
 
 $$
@@ -89,7 +89,7 @@ $$
 The Gap operator combines **connection strength** $|\gamma_{ij}|$ and **opacity** $\mathrm{Gap}(i,j)$ into a single object.
 
 :::info Necessity of complex Γ [Т-132]
-A nontrivial Gap structure ($\mathrm{Gap}(i,j) > 0$) **requires** complex coherences: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132).
+A nontrivial Gap structure ($\mathrm{Gap}(i,j) > 0$) **requires** complex coherences: for $\gamma_{ij} \in \mathbb{R}$ the measure $\mathrm{Gap} = |\sin(\arg(\gamma_{ij}))| = 0$ identically. Details: [T-132 [T]](/docs/proofs/consciousness/operationalization#t-132).
 :::
 
 ### 1.3 Full table of 21 coherence pairs {#таблица-21-пара}
@@ -127,14 +127,14 @@ The 21 pairs split into sectors according to the decomposition $7 = 1_O \oplus \
 - **$\mathbf{3}$-$\bar{\mathbf{3}}$**: 9 pairs (confinement↔electroweak), $\varepsilon_{3\bar{3}} \approx 0$
 - **$O$-links**: 6 pairs ($O$ with the rest), $\varepsilon_O \sim 1$
 
-The assignment of pairs marked "—" to Fano lines depends on the choice of $G_2$ gauge ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). The first 15 pairs are uniquely determined by the base lines; the last 6 form the remaining Fano lines out of 7.
+The assignment of pairs marked "—" to Fano lines depends on the choice of $G_2$ gauge ([T-42a](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [T]). The first 15 pairs are uniquely determined by the base lines; the last 6 form the remaining Fano lines out of 7.
 :::
 
 ---
 
 ## 2. Algebraic properties {#свойства}
 
-:::tip Theorem 2.1 (Properties of the Gap operator) [Т]
+:::tip Theorem 2.1 (Properties of the Gap operator) [T]
 **(a)** $\hat{\mathcal{G}}$ is a real **antisymmetric** matrix: $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$.
 
 **(b)** The eigenvalues of $\hat{\mathcal{G}}$ are purely imaginary: $\mathrm{spec}(\hat{\mathcal{G}}) \subset i\mathbb{R}$. They come in pairs $(\pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3, 0)$ with $\lambda_k \in \mathbb{R}$, plus one zero (since $N = 7$ is odd).
@@ -151,18 +151,18 @@ $$
 
 ### Convention for the norm $\mathcal{G}_{\text{total}}$ {#g-total-definition}
 
-:::warning Norm convention [О]
+:::warning Norm convention [D]
 $\mathcal{G}_{\text{total}}$ is defined as the **full** Frobenius norm (counting both pairs $(i,j)$ and $(j,i)$): $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = \sum_{i,j} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$. The factor of 2 is due to the antisymmetry $\hat{\mathcal{G}}_{ji} = -\hat{\mathcal{G}}_{ij}$. This ensures consistency with the purity decomposition $P = P_{\text{sym}} + \mathcal{G}_{\text{total}}$ (Theorem 4.1) and the spectral formula $\mathcal{G}_{\text{total}} = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$ (Theorem 3.1).
 :::
 
-#### Identity with the Dirac operator [Т] {#тождество-tr-d2}
+#### Identity with the Dirac operator [T] {#тождество-tr-d2}
 
 :::tip Corollary (Spectral identity)
 $$
 \mathrm{Tr}(D_{\mathrm{int}}^2) = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
 $$
 
-where $D_{\mathrm{int}}$ is the [internal Dirac operator](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [Т]) with elements $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. This identity connects the total Gap to the coefficient $a_2$ of the [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) and justifies the derivation of the potential [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from the axioms.
+where $D_{\mathrm{int}}$ is the [internal Dirac operator](/docs/core/foundations/spacetime#теорема-спектральная-тройка) (T-53 [T]) with elements $[D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}$. This identity connects the total Gap to the coefficient $a_2$ of the [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [T]) and justifies the derivation of the potential [$V_{\mathrm{Gap}}$](/docs/core/dynamics/gap-thermodynamics#вывод-vgap-из-спектрального-действия) from the axioms.
 :::
 
 **Proof.** (a) $\hat{\mathcal{G}}^T = \mathrm{Im}(\Gamma)^T$. Since $\mathrm{Im}(\gamma_{ij}) = -\mathrm{Im}(\gamma_{ji})$ (consequence of Hermiticity), we get $\hat{\mathcal{G}}^T = -\hat{\mathcal{G}}$. (b) Standard property of antisymmetric matrices of odd dimension. (c) $\mathfrak{so}(7)$ is the space of antisymmetric $7 \times 7$ matrices. (d) $\|\hat{\mathcal{G}}\|_F^2 = \sum_{ij} |\hat{\mathcal{G}}_{ij}|^2 = 2\sum_{i<j} \mathrm{Im}(\gamma_{ij})^2$ (the factor of 2 from counting both pairs $(i,j)$ and $(j,i)$). $\square$
@@ -171,7 +171,7 @@ where $D_{\mathrm{int}}$ is the [internal Dirac operator](/docs/core/foundations
 
 ## 3. Spectral interpretation {#спектр}
 
-:::tip Theorem 3.1 (Spectral structure of Gap) [Т]
+:::tip Theorem 3.1 (Spectral structure of Gap) [T]
 Let $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$. Then:
 
 **(a)** $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2(\lambda_1^2 + \lambda_2^2 + \lambda_3^2)$
@@ -190,7 +190,7 @@ Let $\mathrm{spec}(\hat{\mathcal{G}}) = \{0, \pm i\lambda_1, \pm i\lambda_2, \pm
 | 2 | $(\lambda_1, \lambda_2, 0)$ | Two-dimensional opacity |
 | 3 | $(\lambda_1, \lambda_2, \lambda_3)$ | Full opacity (maximum rank) |
 
-:::info Remark [И]
+:::info Remark [I]
 The maximum opacity rank = 3 coincides with the number of "check" dimensions (E, O, U) in the [Hamming code H(7,4) analogy](/docs/core/dynamics/gap-dynamics#код-хэмминга). This coincidence connects the algebra of the Gap operator to the coding-theoretic structure.
 :::
 
@@ -202,7 +202,7 @@ The maximum rank of $\hat{\mathcal{G}}$ equals **6** (three pairs of nonzero eig
 
 ## 4. Relation to purity {#связь-чистота}
 
-:::tip Theorem 4.1 (Gap and purity) [Т]
+:::tip Theorem 4.1 (Gap and purity) [T]
 The purity of the holon decomposes into symmetric and antisymmetric parts:
 
 $$
@@ -220,10 +220,10 @@ where $P_{\text{sym}} = \mathrm{Tr}(\mathrm{Re}(\Gamma)^2)$ is the "symmetric pu
 
 ## 5. Serre bundle curvature {#кривизна-серра}
 
-#### Theorem 5.1 / T-73 (Gap = curvature from the spectral triple) [Т] {#теорема-gap-серра}
+#### Theorem 5.1 / T-73 (Gap = curvature from the spectral triple) [T] {#теорема-gap-серра}
 
 :::tip Theorem 5.1
-Within the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) of UHM (T-53 [Т]), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
+Within the [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) of UHM (T-53 [T]), the measure $\mathrm{Gap}(i,j)$ **exactly coincides** with the norm of the connection curvature on the [Serre bundle](/docs/core/dynamics/gap-thermodynamics#геометрия-расслоения-серра) $\mathrm{Bundle}(\Gamma, \Omega) \to B_{\mathrm{ext}}$:
 
 $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
@@ -232,7 +232,7 @@ $$
 
 **Proof (5 steps).**
 
-**Step 1 (Connection from $D_{\mathrm{int}}$).** The internal Dirac operator $D_{\mathrm{int}}$ ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т]) defines a connection on the bundle of internal phases. Elements of $D_{\mathrm{int}}$:
+**Step 1 (Connection from $D_{\mathrm{int}}$).** The internal Dirac operator $D_{\mathrm{int}}$ ([T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T]) defines a connection on the bundle of internal phases. Elements of $D_{\mathrm{int}}$:
 
 $$
 [D_{\mathrm{int}}]_{ij} = \omega_0 \cdot \mathrm{Gap}(i,j) \cdot |\gamma_{ij}| \cdot e^{i\theta_{ij}}
@@ -260,7 +260,7 @@ $$
 c_2(\mathrm{Bundle}) = \frac{1}{8\pi^2}\int \mathrm{Tr}(F \wedge F) = \frac{1}{8\pi^2}\sum_{i < j}|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \frac{1}{8\pi^2}\mathrm{Tr}(D_{\mathrm{int}}^2) / \omega_0^2
 $$
 
-This is a **topological invariant**, defined via the spectral triple [Т] (T-53), not via analogy.
+This is a **topological invariant**, defined via the spectral triple [T] (T-53), not via analogy.
 
 **Step 5 (Rigor from NCG).** In Connes' noncommutative geometry, curvature is defined through "junk" $a[D,b]$. For the finite triple $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$:
 
@@ -274,7 +274,7 @@ $$
 \|\mathrm{Curv}\|_{ij}^2 = |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2
 $$
 
-This is an **exact** identification, not an approximation, justified by the spectral triple [Т]. $\blacksquare$
+This is an **exact** identification, not an approximation, justified by the spectral triple [T]. $\blacksquare$
 
 :::info Clarification: norm vs. full curvature 2-form
 The identification $\|\mathrm{Curv}\|_{ij}^2 = \omega_0^2|\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2$ relates the connection norm to the square of the norm of the curvature 2-form. This is an **exact** identity at the level of norms. However, the full curvature 2-form $F$ carries additional geometric information not captured by the norm alone: holonomy of closed loops, Chern classes (topological invariants such as $c_2$ in Step 4), and the structure of the connection on the bundle (parallel transport). The norm $\|F\|^2$ determines the **energetics** (Yang–Mills action), but not the **topology** of the bundle in full.
@@ -304,7 +304,7 @@ means that a system that has traversed a closed cycle of external influences has
 
 The Gap operator $\hat{\mathcal{G}} \in \mathfrak{so}(7)$ decomposes into components associated with the [G₂ structure](/docs/physics/gauge-symmetry/g2-structure).
 
-:::tip Theorem 6.1 (G₂/⊥ decomposition of the Gap operator) [Т]
+:::tip Theorem 6.1 (G₂/⊥ decomposition of the Gap operator) [T]
 **(a)** $\hat{\mathcal{G}}$ decomposes into the G₂ part and the orthogonal complement:
 
 $$
@@ -327,7 +327,7 @@ where $\hat{\mathcal{G}}_{G_2} \in \mathfrak{g}_2 \subset \mathfrak{so}(7)$ is t
 | $\hat{\mathcal{G}}_{G_2}$ | 14 | Structure-preserving | "Coherent" Gap, compatible with the algebraic structure of $\mathbb{O}$ |
 | $\hat{\mathcal{G}}_{\perp}$ | 7 | Structure-breaking | "Decoherent" Gap, associated with the loss of algebraic structure |
 
-:::info Interpretation (Therapeutic) [И]
+:::info Interpretation (Therapeutic) [I]
 A healthy system has Gap predominantly in the $G_2$ sector. Pathological Gap is in the $\perp$ sector. The therapeutic goal: bring $\hat{\mathcal{G}}_{\perp} \to 0$ while leaving $\hat{\mathcal{G}}_{G_2}$ (which may be nonzero and beneficial).
 :::
 
@@ -337,7 +337,7 @@ A healthy system has Gap predominantly in the $G_2$ sector. Pathological Gap is 
 
 ### 7.1 Properties of the commutator [Ĝ, Γ]
 
-:::tip Theorem 7.1 (Commutator of the Gap operator with Γ) [Т]
+:::tip Theorem 7.1 (Commutator of the Gap operator with Γ) [T]
 **(a)** $[\hat{\mathcal{G}}, \Gamma]$ is **anti-Hermitian**: $[\hat{\mathcal{G}}, \Gamma]^\dagger = -[\hat{\mathcal{G}}, \Gamma]$.
 
 **(b)** $\mathrm{Tr}([\hat{\mathcal{G}}, \Gamma]) = 0$.
@@ -359,7 +359,7 @@ $$
 x \times y := \frac{1}{2}(xy - yx) = \mathrm{Im}(xy)
 $$
 
-:::tip Theorem 7.2 (Gap via cross product) [Т]
+:::tip Theorem 7.2 (Gap via cross product) [T]
 **(a)** $\mathrm{Im}(\gamma_{ij})$ corresponds to the component of the cross product $(\hat{e}_i \times \hat{e}_j)_k \propto \epsilon_{ijk}$, arising from the non-commutativity of octonionic multiplication $e_i \cdot e_j \neq e_j \cdot e_i$.
 
 **(b)** For pairs within a [Fano triplet](/docs/physics/gauge-symmetry/fano-selection-rules) $(i,j,k) \in PG(2,2)$: $e_i \times e_j = \pm e_k$ — the cross product is associative along the line (subalgebra $\cong \mathbb{H}$).
@@ -367,11 +367,11 @@ $$
 **(c)** For pairs **outside** a Fano triplet: the associator $[e_i, e_j, e_k] \neq 0$ generates an additional phase shift that increases Gap.
 :::
 
-:::info Proof: Gap = octonionic product [Т]
+:::info Proof: Gap = octonionic product [T]
 
 **Step 1 (Two $G_2$-invariant 2-forms).** (a) The imaginary parts $\mathrm{Im}(\gamma_{ij})$ of the coherence matrix entries define an antisymmetric bilinear form $\omega_\Gamma \in \Lambda^2(\mathbb{C}^7)$ via $\omega_\Gamma(e_i, e_j) = \mathrm{Im}(\gamma_{ij})$. (b) The imaginary part of the octonionic product $\omega_\mathbb{O}(e_i, e_j) = \mathrm{Im}(e_i \cdot e_j)$ defines an antisymmetric form on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$.
 
-**Step 2 ($G_2$-invariance of both forms).** (a) Under $g \in G_2$: $\omega_\Gamma(ge_i, ge_j) = \mathrm{Im}((g\Gamma g^\dagger)_{ij}) = \mathrm{Im}(\gamma_{ij})$ by the $G_2$-covariance of the Fano dissipator (T-42a [Т]). (b) $\omega_\mathbb{O}$ is $G_2$-invariant by definition: $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves the product.
+**Step 2 ($G_2$-invariance of both forms).** (a) Under $g \in G_2$: $\omega_\Gamma(ge_i, ge_j) = \mathrm{Im}((g\Gamma g^\dagger)_{ij}) = \mathrm{Im}(\gamma_{ij})$ by the $G_2$-covariance of the Fano dissipator (T-42a [T]). (b) $\omega_\mathbb{O}$ is $G_2$-invariant by definition: $G_2 = \mathrm{Aut}(\mathbb{O})$ preserves the product.
 
 **Step 3 (Schur's lemma).** The 7-dimensional representation $\mathbf{7}$ of $G_2$ is irreducible (standard, see Slansky 1981). By Schur's lemma, $\dim \mathrm{Hom}_{G_2}(\Lambda^2(\mathbf{7}), \mathbb{R}) = 1$ (the space of $G_2$-invariant 2-forms on $\mathbb{R}^7$ is one-dimensional). This is because $\Lambda^2(\mathbf{7}) = \mathbf{7} \oplus \mathbf{14}$ as $G_2$-representations, and $\mathrm{Hom}_{G_2}(\mathbf{7}, \mathbb{R}) = \{0\}$, $\mathrm{Hom}_{G_2}(\mathbf{14}, \mathbb{R}) = \{0\}$, but the invariant form arises from the $G_2$-invariant associative 3-form $\varphi \in \Lambda^3(\mathbf{7})$ via contraction with a fixed vector $v$: $\iota_v \varphi \in \Lambda^2(\mathbf{7})$. This gives exactly one independent 2-form.
 
@@ -386,7 +386,7 @@ $$
 
 The stabilizer of a Gap configuration determines topological protection against continuous deformations.
 
-:::tip Theorem 8.1 (Stabilizer classification) [Т]
+:::tip Theorem 8.1 (Stabilizer classification) [T]
 For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_1, \pm i\lambda_2, \pm i\lambda_3\}$, the stabilizer $H_{\hat{\mathcal{G}}} = \{g \in G_2 : g\hat{\mathcal{G}}g^{-1} = \hat{\mathcal{G}}\}$:
 
 | Rank | Spectrum of $\hat{\mathcal{G}}$ | $H$ | $\dim(H)$ | $G_2/H$ | $\pi_2(G_2/H)$ |
@@ -402,11 +402,11 @@ For the Gap operator $\hat{\mathcal{G}}$ with fixed spectrum $\{0, \pm i\lambda_
 
 ---
 
-## 9. Gap dynamics from octonionic non-associativity [Т] {#gap-от-неассоциативности}
+## 9. Gap dynamics from octonionic non-associativity [T] {#gap-от-неассоциативности}
 
 The octonionic associator is the fundamental source of Gap dynamics. This section derives the explicit contribution of non-associativity to the evolution of Gap.
 
-:::tip Theorem 9.1 (Associator contribution to Gap dynamics) [Т]
+:::tip Theorem 9.1 (Associator contribution to Gap dynamics) [T]
 
 For three dimensions $(i,j,k)$ **not** on a common Fano line, the octonionic associator
 
@@ -440,10 +440,10 @@ The associator contribution (Step 3) adds a **positive** term to $|d\theta_{ij}/
 - **On Fano lines:** associator = 0, no additional phase drift → Gap can be zero (associative subalgebra)
 - **Off Fano lines:** associator ≠ 0, phase drift → Gap > 0 is dynamically maintained
 
-This provides a **microscopic mechanism** for Lawvere incompleteness (T-55 [Т]): the non-associativity of octonions **structurally prevents** full phase alignment, ensuring Gap > 0 for any viable system. $\blacksquare$
+This provides a **microscopic mechanism** for Lawvere incompleteness (T-55 [T]): the non-associativity of octonions **structurally prevents** full phase alignment, ensuring Gap > 0 for any viable system. $\blacksquare$
 
 :::warning Physical consequence
-Non-associativity is not a mathematical curiosity — it is the **engine of the explanatory gap**. The fact that $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ for off-line triples means that triple interactions **cannot be decomposed** into sequences of pairwise ones. This irreducible triplicity is the mathematical source of the [Map splitting](/docs/consciousness/foundations/two-aspect-monism) (T-186 [Т]): the internal and external descriptions cannot be simultaneously exact because the algebraic structure itself forbids full associativity.
+Non-associativity is not a mathematical curiosity — it is the **engine of the explanatory gap**. The fact that $(e_i \cdot e_j) \cdot e_k \neq e_i \cdot (e_j \cdot e_k)$ for off-line triples means that triple interactions **cannot be decomposed** into sequences of pairwise ones. This irreducible triplicity is the mathematical source of the [Map splitting](/docs/consciousness/foundations/two-aspect-monism) (T-186 [T]): the internal and external descriptions cannot be simultaneously exact because the algebraic structure itself forbids full associativity.
 :::
 
 **Numerical example.** For the triple (A,E,U) = (e₁,e₅,e₆), which is a Fano line: $[e_1, e_5, e_6] = 0$ (associative subalgebra). For the triple (A,E,D) = (e₁,e₅,e₃), which is NOT a Fano line: $[e_1, e_5, e_3] = \pm 2e_l \neq 0$, contributing a phase shift of order $2\omega_0 |\gamma_{13}| \cdot |\gamma_{53}|$ to $d\theta_{15}/d\tau$.

@@ -951,7 +951,7 @@ is an **heuristic** formula connecting the CP phase to Fano indices. It is not d
 | **Fano selection rule for Yukawa couplings** | **[T]** (proved via $f_{ijk}$ — unique $G_2$-invariant trilinear operator) | 2.3 |
 | **Tree-level Yukawa only for $k=1$** | **[T]** (via $f_{ijk}$: $f_{1,5,6} = 1$, $f_{2,5,6} = f_{4,5,6} = 0$) | 2.3 |
 | **Resolution of K-1 (IR FP paradox)** | **[T]** (consequence of selection rule [T]) | 3.2 |
-| $V_3$ vertex on $\{1,2,4\}$ | **[O]** (error: $\{1,2,4\}$ is Fano, $V_3$ does not contain it) | 12.2 |
+| $V_3$ vertex on $\{1,2,4\}$ | **[D]** (error: $\{1,2,4\}$ is Fano, $V_3$ does not contain it) | 12.2 |
 | $V_3$-mixing through D | **[T]** (via non-Fano triples with $D=3$) | 4.2, 12.2 |
 | **Fritzsch texture from Fano topology** | **[T]** (hierarchical $3 \times 3$ matrix) | 8.5 |
 | **Distinction between $Y^u$ and $Y^d$ from Fano orientation** | **[T]** ($E \to U$ vs $U \to E$) | 8.7 |
@@ -967,7 +967,7 @@ is an **heuristic** formula connecting the CP phase to Fano indices. It is not d
 | Mass table (order of magnitude) | [H] (orders correct, but weak constraint) | 11 |
 
 :::info[Final Verdict]
-The central result — the Fano selection rule — is **proved [T]** through octonionic structure constants $f_{ijk}$ ([Theorem 2.2](#теорема-фано-отбор-fijk)). The proof is algebraic: the unique $G_2$-invariant trilinear operator on $\mathrm{Im}(\mathbb{O})$ is the cross product ($f_{ijk}$), from which $y_k^{(\mathrm{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$. The old proof via $V_3$ has been **replaced**. The mechanism for generating the masses of the light generations is **qualitatively correct**; the formal details ($V_3$ vertices) have been corrected. Of 14 key results: 7 are [T], 1 is [O] (the direct $V_3$ vertex on the Fano line is refuted), 6 are [H].
+The central result — the Fano selection rule — is **proved [T]** through octonionic structure constants $f_{ijk}$ ([Theorem 2.2](#теорема-фано-отбор-fijk)). The proof is algebraic: the unique $G_2$-invariant trilinear operator on $\mathrm{Im}(\mathbb{O})$ is the cross product ($f_{ijk}$), from which $y_k^{(\mathrm{tree})} = g_W \cdot f_{k,E,U} \cdot |\gamma_{\mathrm{vac}}^{(EU)}|$. The old proof via $V_3$ has been **replaced**. The mechanism for generating the masses of the light generations is **qualitatively correct**; the formal details ($V_3$ vertices) have been corrected. Of 14 key results: 7 are [T], 1 is [D] (the direct $V_3$ vertex on the Fano line is refuted), 6 are [H].
 :::
 
 ---

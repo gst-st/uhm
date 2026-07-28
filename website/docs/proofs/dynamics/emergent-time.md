@@ -7,10 +7,10 @@ description: Mathematical proof of the emergence of time from the structure of c
 
 # Theorem on Emergent Time
 
-:::info Status: [Т] Formalized
+:::info Status: [T] Formalized
 Time is **derived** from the structure of category $\mathcal{C}$, not postulated as an external parameter. The arrow of time is the **stratum collapse** towards the terminal object T.
 
-**Spatial analogue:** The spatial manifold $\Sigma^3$ is also derived from categorical structure — [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) (T-119 [Т]).
+**Spatial analogue:** The spatial manifold $\Sigma^3$ is also derived from categorical structure — [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold) (T-119 [T]).
 :::
 
 ## Contents
@@ -100,8 +100,8 @@ $$
 S_i = |i\rangle\langle i|, \quad i \in \{0, 1, \ldots, N-1\}
 $$
 
-:::warning Constructive definition [О]
-The identification of atoms of the classifier Ω with projectors |i⟩⟨i| is a **constructive definition**, consistent with the axiomatics, not a derivation from abstract ∞-topos theory. Justification: (1) in D(ℂ⁷) the minimal non-trivial subobjects are rank-1 projectors; (2) the Bures topology (A2) singles them out as atoms of J_{Bures}-covers; (3) the result is consistent with L-unification ([Т]) and Fano structure ([Т]). Formal derivation from Lurie's axioms for $\mathrm{Sh}_\infty(\mathcal{C})$ is [П] (open program).
+:::warning Constructive definition [D]
+The identification of atoms of the classifier Ω with projectors |i⟩⟨i| is a **constructive definition**, consistent with the axiomatics, not a derivation from abstract ∞-topos theory. Justification: (1) in D(ℂ⁷) the minimal non-trivial subobjects are rank-1 projectors; (2) the Bures topology (A2) singles them out as atoms of J_{Bures}-covers; (3) the result is consistent with L-unification ([T]) and Fano structure ([T]). Formal derivation from Lurie's axioms for $\mathrm{Sh}_\infty(\mathcal{C})$ is [P] (open program).
 :::
 
 **Step 2: ℤ_N-action on atoms**
@@ -411,7 +411,7 @@ Let $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{Bures}, \omega_0)$ be t
 **Corollaries:**
 - $\tau \in \mathbb{Z}_N$ arises as the set of isomorphism classes of $\triangleright^k$
 - Dynamics is defined by morphisms $\Gamma \to \triangleright(\Gamma)$
-- Page–Wootters is formally Axiom 5, but **derivable** from T-53 [Т] (see [§3.1a](#pw-как-теорема))
+- Page–Wootters is formally Axiom 5, but **derivable** from T-53 [T] (see [§3.1a](#pw-как-теорема))
 
 **Proof:**
 
@@ -434,7 +434,7 @@ Temporal modalities in homotopy type theory are a standard tool for formalizing 
 ## 3. Page–Wootters mechanism for UHM {#3-механизм-page-wootters-для-угм}
 
 :::warning Status: Derivable axiom
-The Page–Wootters mechanism is formally **Axiom 5**, but **derivable** from A1–A4 via spectral triple T-53 **[Т]**. The tensor structure $\mathcal{H}_O \otimes \mathcal{H}_{rest}$ is uniquely determined by the algebra $A_{\text{int}}$ with KO-dimension 6.
+The Page–Wootters mechanism is formally **Axiom 5**, but **derivable** from A1–A4 via spectral triple T-53 **[T]**. The tensor structure $\mathcal{H}_O \otimes \mathcal{H}_{rest}$ is uniquely determined by the algebra $A_{\text{int}}$ with KO-dimension 6.
 
 See [honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика) and [derivation of A5 from spectral triple](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки).
 :::
@@ -455,7 +455,7 @@ Time arises as **correlation** between the clock and the system.
 ### 3.1a Page–Wootters: derivable axiom {#pw-как-теорема}
 
 :::warning Page–Wootters is derivable from T-53
-The tensor decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ is formally **Axiom 5** in [honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика), but has an **independent derivation** from spectral triple T-53 **[Т]** ([spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition, and the constraint $\hat{C}\Gamma = 0$ follows from stationarity. Thus A5 is a consequence of A1–A4. Details: [derivation of A5 from spectral triple](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки).
+The tensor decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{rest}$ is formally **Axiom 5** in [honest axiomatics](/docs/core/foundations/axiom-omega#аксиоматика), but has an **independent derivation** from spectral triple T-53 **[T]** ([spacetime](/docs/core/foundations/spacetime#теорема-спектральная-тройка)): the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition, and the constraint $\hat{C}\Gamma = 0$ follows from stationarity. Thus A5 is a consequence of A1–A4. Details: [derivation of A5 from spectral triple](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки).
 :::
 
 **Axiom 5 (Page–Wootters):**
@@ -755,7 +755,7 @@ In the limit $N \to \infty$ with fixed product $N \cdot \omega_0 = \text{const}$
 
 #### Theorem on composite clocks and continuous limit {#композитные-часы}
 
-:::warning Theorem (Effective clock dimensionality of composite system) [Т]
+:::warning Theorem (Effective clock dimensionality of composite system) [T]
 For a system of $M$ holons with tensor structure $\mathcal{H}_{total} = \bigotimes_{m=1}^{M} \mathcal{H}^{(m)}$, the effective clock space:
 
 $$
@@ -773,7 +773,7 @@ Effective chronon: $\delta\tau_{eff} = 2\pi/(N_{eff} \cdot \omega_{eff})$.
 4. Number of distinct eigenvalues grows as $O(M)$, but multiplicity is exponential
 5. Effective group: $\mathbb{Z}_{N_{eff}}$ with $N_{eff} = \text{lcm}(7^M)$ components; for non-commuting clocks the dimensionality of the clock space $= 7^M$ $\quad\blacksquare$
 
-:::info Theorem (Convergence of discrete dynamics to continuous) [Т]
+:::info Theorem (Convergence of discrete dynamics to continuous) [T]
 Let $\mathcal{L}_\Omega$ be the logical Liouvillian with $\|\mathcal{L}_\Omega\| \leq \Lambda$. Then the discrete evolution $T_{\delta\tau} = e^{\delta\tau \cdot \mathcal{L}_\Omega}$ converges to the continuous Lindblad equation:
 
 $$
@@ -1167,7 +1167,7 @@ $$
 This follows from the strong subadditivity property and contractivity of CPTP.
 
 :::warning Status clarification
-The CPTP property of evolution channels in this section is **used**, not derived. The full derivation of CPTP from ∞-categorical structure (orientation towards terminal T → entropy monotonicity → CPTP) is **[Г]** (open hypothesis). Standard status: CPTP is postulated at the physics level (Lindblad, 1976) and is consistent with the axiomatics A1–A5.
+The CPTP property of evolution channels in this section is **used**, not derived. The full derivation of CPTP from ∞-categorical structure (orientation towards terminal T → entropy monotonicity → CPTP) is **[H]** (open hypothesis). Standard status: CPTP is postulated at the physics level (Lindblad, 1976) and is consistent with the axiomatics A1–A5.
 :::
 
 ∎
@@ -1496,12 +1496,12 @@ where:
 
 | Prediction | Formula | Theor. status | Exp. status |
 |--------------|---------|--------------|--------------|
-| Time slowdown at decoherence | $\frac{d\tau_{int}}{dt_{ext}} \propto (P - P_{crit})^{1/2}$ | **[Т]** Corollary of T.8.1 | Requires verification |
-| Discreteness of internal time | $\tau \in \{\tau_1, \ldots, \tau_7\}$ | **[Т]** Corollary of §3.7 | Requires verification |
-| Temporal entanglement | $\Gamma_{12,total} \neq \Gamma_{1} \otimes \Gamma_{2}$ even when $\Gamma_{12}(\tau) = \Gamma_1(\tau) \otimes \Gamma_2(\tau)$ | **[Т]** Corollary of P-W | Requires verification |
+| Time slowdown at decoherence | $\frac{d\tau_{int}}{dt_{ext}} \propto (P - P_{crit})^{1/2}$ | **[T]** Corollary of T.8.1 | Requires verification |
+| Discreteness of internal time | $\tau \in \{\tau_1, \ldots, \tau_7\}$ | **[T]** Corollary of §3.7 | Requires verification |
+| Temporal entanglement | $\Gamma_{12,total} \neq \Gamma_{1} \otimes \Gamma_{2}$ even when $\Gamma_{12}(\tau) = \Gamma_1(\tau) \otimes \Gamma_2(\tau)$ | **[T]** Corollary of P-W | Requires verification |
 
 :::note On statuses
-- **Theor. status [Т]**: Prediction is mathematically derived from the UHM formalism
+- **Theor. status [T]**: Prediction is mathematically derived from the UHM formalism
 - **Exp. status**: Prediction requires experimental verification
 :::
 

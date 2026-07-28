@@ -8,7 +8,7 @@ description: "Formal embeddings of M-theory, loop quantum gravity, and causal se
 # Embeddings of Alternative Candidate Theories into UHM
 
 :::info Status
-To substantiate the Meta-ToE status, it is necessary to show that competing approaches to quantum gravity are recovered as limits or special cases of UHM. This document contains four constructions with varying levels of rigor: from [Т] (standard mathematics) to [Г] (requires additional justification).
+To substantiate the Meta-ToE status, it is necessary to show that competing approaches to quantum gravity are recovered as limits or special cases of UHM. This document contains four constructions with varying levels of rigor: from [T] (standard mathematics) to [H] (requires additional justification).
 :::
 
 ---
@@ -67,7 +67,7 @@ via the identification:
 - **T-170' (Perturbative correspondence) [T]**: formal identity UHM ↔ M-theory within perturbation theory (as formal power series).
 - **T-170 (Full non-perturbative correspondence) [С given C27-M, C28-M]**: requires non-perturbative definition of M-theory on $G_2$-manifolds (an active research problem in mathematical physics).
 
-We prove T-170' rigorously, explicitly distinguishing it from remaining [С]-parts.
+We prove T-170' rigorously, explicitly distinguishing it from remaining [C]-parts.
 
 ### Theorem T-170' (Perturbative correspondence UHM ↔ M-theory) [T] {#т-170-prime}
 
@@ -109,7 +109,7 @@ $$
 S_{\text{spec}} = \mathrm{Tr}(f(D/\Lambda))
 $$
 
-for the spectral triple $(C^\infty(M^4) \otimes A_{\text{int}},\, H,\, D)$ reproduces (T-65 [Т]):
+for the spectral triple $(C^\infty(M^4) \otimes A_{\text{int}},\, H,\, D)$ reproduces (T-65 [T]):
 
 $$
 S_{\text{spec}} = \int_{M^4} \left[ a_0 \Lambda^4 + a_2 \Lambda^2 R + a_4 (\alpha R^2 + \beta |F|^2 + \gamma |\nabla\phi|^2 + \ldots) \right]
@@ -211,13 +211,13 @@ On morphisms: a CPTP channel $\Phi: \Gamma_1 \to \Gamma_2$ $\mapsto$ a diffeomor
 
 | Aspect | Status | Comment |
 |--------|--------|---------|
-| $G_2$-symmetry coincides | **[Т]** | Identical group: $\mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ |
-| $N=1$ SUSY | **[Т]** | One covariantly constant spinor $\eta_0 = 1_{\mathbb{O}}$ |
-| SM from singularities $\leftrightarrow$ SM from $G_2$ | **[Т]** | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ — identical mechanism |
+| $G_2$-symmetry coincides | **[T]** | Identical group: $\mathrm{Aut}(\mathbb{O}) = \mathrm{Hol}(\mathcal{M}_7)$ |
+| $N=1$ SUSY | **[T]** | One covariantly constant spinor $\eta_0 = 1_{\mathbb{O}}$ |
+| SM from singularities $\leftrightarrow$ SM from $G_2$ | **[T]** | $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ — identical mechanism |
 | 21D modular space (orbifold) | **[T]** | Lemma T-170'.1: $(S^1)^{21}/G_2$ is a correct 7D orbifold |
 | Perturbative correspondence $Z_{\text{UHM}} = Z_M$ | **[T]** | Proven in T-170' (perturbative correspondence) |
 | Non-perturbative correctness of $Z_{\text{UHM}}$ | **[T]** | Proven in T-170'' (GNS construction) |
-| Non-perturbative definition of $Z_M$ (M-theory) | **[С]** | External open problem of M-theory, not UHM |
+| Non-perturbative definition of $Z_M$ (M-theory) | **[C]** | External open problem of M-theory, not UHM |
 
 ---
 
@@ -236,7 +236,7 @@ $$
 SU(2) \subset SU(3) \subset G_2
 $$
 
-where $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ (T-42e [Т]) and $SU(2) \subset SU(3)$ is the standard embedding.
+where $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ (T-42e [T]) and $SU(2) \subset SU(3)$ is the standard embedding.
 
 ### 2.2 Embedding Construction {#lqg-embedding}
 
@@ -267,7 +267,7 @@ $$
 j_e = \frac{1}{2} \left\lfloor 7 \cdot |\gamma_{\{A,S,D\}}^{(v,w)}|^2 \right\rfloor
 $$
 
-**(b)** Restriction $G_2 \to SU(3) \to SU(2)$: the choice of O-direction (Page–Wootters, A5) breaks $G_2 \to SU(3)$ (T-42e [Т]). Further restriction to the $\{A,S,D\}$-sector (spatial degrees of freedom) gives $SU(2) \subset SU(3)$:
+**(b)** Restriction $G_2 \to SU(3) \to SU(2)$: the choice of O-direction (Page–Wootters, A5) breaks $G_2 \to SU(3)$ (T-42e [T]). Further restriction to the $\{A,S,D\}$-sector (spatial degrees of freedom) gives $SU(2) \subset SU(3)$:
 
 $$
 \mathbf{3}_{SU(3)} \to \mathbf{2}_{SU(2)} \oplus \mathbf{1}
@@ -275,7 +275,7 @@ $$
 
 Intertwiners $i_v$ are recovered from the $G_2$-invariants of the internal algebra.
 
-**(c)** Area spectrum: the area operator in LQG has a discrete spectrum $A = 8\pi l_P^2 \gamma \sum_e \sqrt{j_e(j_e+1)}$. In UHM, discreteness follows from the finite-dimensionality of $\mathcal{D}(\mathbb{C}^7)$ (the spectrum of $D_{\text{int}}$ is discrete, T-53 [Т]).
+**(c)** Area spectrum: the area operator in LQG has a discrete spectrum $A = 8\pi l_P^2 \gamma \sum_e \sqrt{j_e(j_e+1)}$. In UHM, discreteness follows from the finite-dimensionality of $\mathcal{D}(\mathbb{C}^7)$ (the spectrum of $D_{\text{int}}$ is discrete, T-53 [T]).
 :::
 
 **Proof.**
@@ -376,7 +376,7 @@ The inductive limit $\mathcal{G}_\infty = \varinjlim_M \mathcal{G}_M$ is a count
 
 **Scope:**
 - **For $j_e \leq 3$**: proven [T] — explicit construction of $\Gamma_{\text{total}}$.
-- **For unbounded spin $j_e > 3$**: requires cluster construction (multiple holons per vertex), remains [С].
+- **For unbounded spin $j_e > 3$**: requires cluster construction (multiple holons per vertex), remains [C].
 - **For unbounded graphs**: GNS-completion ensures existence of $\Gamma_{\text{total}}^{(\infty)}$, detailed analysis — see below.
 
 **Theorems used:**
@@ -570,19 +570,19 @@ where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regg
 **Consistency check:**
 - Dependencies T-42a, T-120 — all [T], no circularities;
 - Consistent with T-171 [T] and T-171' [T] (LQG embedding functors);
-- Semi-classical limit remains [С] (Fano-Regge compatibility — an open problem in the LQG community).
+- Semi-classical limit remains [C] (Fano-Regge compatibility — an open problem in the LQG community).
 
 ### 2.4 Embedding Assessment
 
 | Aspect | Status | Comment |
 |--------|--------|---------|
-| $SU(2) \subset SU(3) \subset G_2$ | **[Т]** | Standard representation theory |
-| Graph from coherences | **[Т]** | Direct construction |
-| Spin from $\{A,S,D\}$-sector | **[Т]** | Sector decomposition (T-53 [Т]) |
+| $SU(2) \subset SU(3) \subset G_2$ | **[T]** | Standard representation theory |
+| Graph from coherences | **[T]** | Direct construction |
+| Spin from $\{A,S,D\}$-sector | **[T]** | Sector decomposition (T-53 [T]) |
 | Full functor $\mathcal{F}_{\text{LQG}}$ (bounded spin $j_e \leq 3$) | **[T]** | C29 proven for bounded spin networks (Lemma C29', §2.2) |
 | Extended functor $\mathcal{F}_{\text{LQG}}^{\text{unbnd}}$ (unbounded spin) | **[T]** | T-171' proven via cluster construction (§2.3a) |
 | Fano amplitudes (axioms (A1)-(A4)) | **[T]** | Proven in Theorem 2.3 (§2.3) |
-| Fano amplitudes (semi-classical limit) | **[С]** | Fano-Regge compatibility — open problem |
+| Fano amplitudes (semi-classical limit) | **[C]** | Fano-Regge compatibility — open problem |
 
 ---
 
@@ -603,7 +603,7 @@ The theory of causal sets (Bombelli–Lee–Meyer–Sorkin, 1987) postulates:
 :::tip Theorem T-172
 Under the condition:
 
-**(C30)** (Causal completeness): for any finite causal set $(C, \preceq)$ that faithfully embeds into $M^4$ (T-120 [Т]), there exists a configuration of $M = |C|$ holons with Gap coupling reproducing the causal order;
+**(C30)** (Causal completeness): for any finite causal set $(C, \preceq)$ that faithfully embeds into $M^4$ (T-120 [T]), there exists a configuration of $M = |C|$ holons with Gap coupling reproducing the causal order;
 
 every finite causal set $(C, \preceq)$ embeds into the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ via the nerve:
 
@@ -613,15 +613,15 @@ $$
 
 **(a)** On objects: $(C, \preceq) \mapsto N_\bullet(C)$ — the nerve of the category $(C, \preceq)$ (viewed as a category), which is a simplicial set and defines an object in $\mathbf{Sh}_\infty(\mathcal{C})$.
 
-**(b)** Causal order from $\mathbb{Z}_7$-clocks: emergent time $\tau \in \mathbb{Z}_7$ (A5, Page–Wootters) [Т] defines a «clock position» $\tau_v$ for each holon. Causal order:
+**(b)** Causal order from $\mathbb{Z}_7$-clocks: emergent time $\tau \in \mathbb{Z}_7$ (A5, Page–Wootters) [T] defines a «clock position» $\tau_v$ for each holon. Causal order:
 
 $$
 v \preceq w \quad \Leftrightarrow \quad \tau_v \leq \tau_w \;\land\; d_{\mathcal{G}}(v,w) \leq c \cdot |\tau_w - \tau_v|
 $$
 
-where $d_{\mathcal{G}}$ is the Connes distance (T-119 [Т]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
+where $d_{\mathcal{G}}$ is the Connes distance (T-119 [T]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
 
-**(c)** Discreteness: the temporal clocks $\mathbb{Z}_{7^M}$ and the finite number of holons $M$ ensure the discreteness of the causal set. In the continuum limit (T-118, T-119, T-120 [Т]) the Lorentzian manifold $M^4$ is recovered.
+**(c)** Discreteness: the temporal clocks $\mathbb{Z}_{7^M}$ and the finite number of holons $M$ ensure the discreteness of the causal set. In the continuum limit (T-118, T-119, T-120 [T]) the Lorentzian manifold $M^4$ is recovered.
 :::
 
 **Proof.**
@@ -656,7 +656,7 @@ $$
 c \preceq c' \Rightarrow \tau_c \leq \tau_{c'}.
 $$
 
-**Step 2 (Holons).** For each $c \in C$, introduce a holon with Hilbert space $H_c = \mathbb{C}^7$. By T-38b [Т], each holon corresponds to emergent clocks $\tau_c \in \mathbb{Z}_{7^M}$ consistent with Step 1 (scaling $\mathbb{Z}_{\geq 0} \to \mathbb{Z}_{7^M}$ is achievable for sufficiently large $M$: $7^M > \max_c \tau_c + 1$).
+**Step 2 (Holons).** For each $c \in C$, introduce a holon with Hilbert space $H_c = \mathbb{C}^7$. By T-38b [T], each holon corresponds to emergent clocks $\tau_c \in \mathbb{Z}_{7^M}$ consistent with Step 1 (scaling $\mathbb{Z}_{\geq 0} \to \mathbb{Z}_{7^M}$ is achievable for sufficiently large $M$: $7^M > \max_c \tau_c + 1$).
 
 **Step 3 (Pairwise entangling operators).** For each ordered pair $(c, c')$ with $c \prec c'$, define the pairwise entangling operator $W_{cc'}$ on $H_c \otimes H_{c'}$:
 
@@ -722,18 +722,18 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 **Step 4 (Functoriality).** The assignment $(C, \preceq) \mapsto N_\bullet(C, \preceq) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ is functorial with respect to morphisms of partially ordered sets (order-preserving maps), since the nerve is a functor $\mathbf{Poset} \to \mathbf{sSet}$, and the Yoneda embedding is functorial.
 
-**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [Т]) gives the manifold $\Sigma^3$ (T-119 [Т]), and the full $M^4$ is recovered by T-120 [Т].
+**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [T]) gives the manifold $\Sigma^3$ (T-119 [T]), and the full $M^4$ is recovered by T-120 [T].
 
 **Conclusion.** The functor $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet}_{\text{fin}}^{M^4} \to \mathbf{Sh}_\infty(\mathcal{C})$ is well-defined, where $\mathbf{CausalSet}_{\text{fin}}^{M^4}$ is the full subcategory of finite causal sets faithfully embedded into $M^4$. $\blacksquare$
 
 **Status:** [T]. The proof uses:
-- T-38b [Т] (emergent clocks $\mathbb{Z}_{7^M}$);
-- T-117, T-118, T-119, T-120 [Т] (recovery of $M^4$);
+- T-38b [T] (emergent clocks $\mathbb{Z}_{7^M}$);
+- T-117, T-118, T-119, T-120 [T] (recovery of $M^4$);
 - [Lurie HTT 6.1.3.8](https://www.math.ias.edu/~lurie/papers/HTT.pdf) (embedding of simplicial sets);
 - Standard theory of nerves of partially ordered sets (Mac Lane 1998).
 
 **Consistency check:**
-- Dependencies: T-38b, T-117, T-118, T-119, T-120 — all [Т], no circularities;
+- Dependencies: T-38b, T-117, T-118, T-119, T-120 — all [T], no circularities;
 - The $\Gamma_{\text{total}}$ construction uses only existing holonic states (no new formalism required);
 - Scope: finite causal sets faithfully embedded into $M^4$. For causal sets with causal dimension > 4 (Brightwell-Gregory 1991) the theorem is not applicable — this is a physical restriction consistent with the axiom of emergent $M^4$ in UHM.
 
@@ -741,11 +741,11 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 | Aspect | Status | Comment |
 |--------|--------|---------|
-| Discrete time structure | **[Т]** | $\mathbb{Z}_{7^M}$ — discrete clocks (T-38b [Т]) |
-| Causal order | **[Т]** | Finite-range Gap coupling + emergent time |
-| Continuum limit → $M^4$ | **[Т]** | T-118 + T-119 + T-120 [Т] |
+| Discrete time structure | **[T]** | $\mathbb{Z}_{7^M}$ — discrete clocks (T-38b [T]) |
+| Causal order | **[T]** | Finite-range Gap coupling + emergent time |
+| Continuum limit → $M^4$ | **[T]** | T-118 + T-119 + T-120 [T] |
 | Full functor | **[T]** | C30 proven as Lemma (§3.2) |
-| Embedding into ∞-topos | **[Т]** | Nerve — standard construction |
+| Embedding into ∞-topos | **[T]** | Nerve — standard construction |
 
 ---
 
@@ -774,18 +774,18 @@ Morphisms are triples $(f^*, \alpha, \beta)$:
 
 ### 4.3 Uniqueness Theorem {#теорема-единственности-мета}
 
-#### T-173: Rigidity of the UHM Primitive [Т] {#t-173}
+#### T-173: Rigidity of the UHM Primitive [T] {#t-173}
 
 :::tip Theorem T-173
 The structured primitive $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$ is unique (up to equivalence of ∞-toposes) among those ∞-toposes of the form $\mathbf{Sh}_\infty(\mathcal{D}(\mathbb{C}^N), J)$ that satisfy:
 
-**(i)** $J$ is induced by a monotone metric (Chentsov–Petz theorem: $J = J_{\text{Bures}}$ — the unique minimal one [Т]);
+**(i)** $J$ is induced by a monotone metric (Chentsov–Petz theorem: $J = J_{\text{Bures}}$ — the unique minimal one [T]);
 
-**(ii)** The classifier $\Omega$ generates L-operators $L_k = |k\rangle\langle k|$, yielding a primitive Liouvillian (T-39a [Т]);
+**(ii)** The classifier $\Omega$ generates L-operators $L_k = |k\rangle\langle k|$, yielding a primitive Liouvillian (T-39a [T]);
 
-**(iii)** Minimality: $N = 7$ (Theorem S [Т], octonionic derivation [Т]);
+**(iii)** Minimality: $N = 7$ (Theorem S [T], octonionic derivation [T]);
 
-**(iv)** $G_2$-rigidity: the holonomic representation is unique up to $G_2$ (T-42a [Т]).
+**(iv)** $G_2$-rigidity: the holonomic representation is unique up to $G_2$ (T-42a [T]).
 
 Therefore: $\mathfrak{T}$ is unique (up to $G_2$, $\omega_0$).
 :::
@@ -794,13 +794,13 @@ Therefore: $\mathfrak{T}$ is unique (up to $G_2$, $\omega_0$).
 
 Each of the conditions (i)–(iv) fixes the corresponding structure:
 
-**(i)** Petz's theorem (1996): the class of monotone Riemannian metrics on $\mathcal{D}(\mathcal{H})$ is parametrized by operator-monotone functions $f$. The Bures metric is minimal ($g_{\text{Bures}} \leq g_f$ for all $f$). The choice of minimal metric is canonical and unique [Т] ([Emergent Geometry](/docs/physics/gravity/emergent-geometry)).
+**(i)** Petz's theorem (1996): the class of monotone Riemannian metrics on $\mathcal{D}(\mathcal{H})$ is parametrized by operator-monotone functions $f$. The Bures metric is minimal ($g_{\text{Bures}} \leq g_f$ for all $f$). The choice of minimal metric is canonical and unique [T] ([Emergent Geometry](/docs/physics/gravity/emergent-geometry)).
 
-**(ii)** L-unification determines $L_k$ from $\Omega$ (T-16 [Т]). Primitivity of $\mathcal{L}_0$ for given $L_k$ is a theorem (T-39a [Т]). These conditions fix the Liouvillian.
+**(ii)** L-unification determines $L_k$ from $\Omega$ (T-16 [T]). Primitivity of $\mathcal{L}_0$ for given $L_k$ is a theorem (T-39a [T]). These conditions fix the Liouvillian.
 
-**(iii)** $N = 7$ is the minimal dimension satisfying (AP)+(PH)+(QG)+(V) (Theorem S [Т]) and simultaneously realizing the octonionic structure P1+P2 → $\mathbb{O}$ (Track B [Т]). The uniqueness of $N$ fixes the category $\mathcal{C}$.
+**(iii)** $N = 7$ is the minimal dimension satisfying (AP)+(PH)+(QG)+(V) (Theorem S [T]) and simultaneously realizing the octonionic structure P1+P2 → $\mathbb{O}$ (Track B [T]). The uniqueness of $N$ fixes the category $\mathcal{C}$.
 
-**(iv)** $G_2$-rigidity (T-42a [Т]) shows that the representation is unique up to the 14-dimensional $G_2$. Consequently, two ∞-toposes satisfying (i)–(iii) are related by a $G_2$-transformation.
+**(iv)** $G_2$-rigidity (T-42a [T]) shows that the representation is unique up to the 14-dimensional $G_2$. Consequently, two ∞-toposes satisfying (i)–(iii) are related by a $G_2$-transformation.
 
 In total: $\mathfrak{T}$ is determined uniquely up to $G_2 \times \mathbb{R}_{>0}$ (gauge + scale $\omega_0$). $\blacksquare$
 
@@ -878,7 +878,7 @@ $$
 E[A_{\text{int}}] = \mathrm{Mod}_{A_{\text{int}}}(E) \simeq \mathrm{Sh}_\infty(\mathcal{D}(\mathbb{C}^7), J_{\text{Bures}}) = \mathrm{Sh}_\infty(\mathcal{C}).
 $$
 
-The equivalence is unique up to $G_2 \times \mathbb{R}_{>0}$ by T-173 [Т]. $\square$
+The equivalence is unique up to $G_2 \times \mathbb{R}_{>0}$ by T-173 [T]. $\square$
 
 **Step 3 (Construction of $f^*: E \to \mathrm{Sh}_\infty(\mathcal{C})$).**
 
@@ -922,9 +922,9 @@ $$
 
 By (b), $D$ is CPTP. The restriction of a CPTP map to a $C^*$-subalgebra remains CPTP (Stinespring 1955).
 
-**Role of condition (c).** Condition (c) (distinguished observable subalgebra of dimension $\leq 7$) ensures that $\mathcal{A}$ has **precisely** 7-dimensional observable content, matching the dimension of $\mathbb{C}^7$ on which $A_{\text{int}}$ acts. By Theorem S (T-60 [Т]), the minimal complete realization of the sector structure $1 \oplus 3 \oplus \bar{3}$ is $N = 7$. Condition (c) excludes "superfluous" observables, making $\alpha$ injective on the observable subalgebra.
+**Role of condition (c).** Condition (c) (distinguished observable subalgebra of dimension $\leq 7$) ensures that $\mathcal{A}$ has **precisely** 7-dimensional observable content, matching the dimension of $\mathbb{C}^7$ on which $A_{\text{int}}$ acts. By Theorem S (T-60 [T]), the minimal complete realization of the sector structure $1 \oplus 3 \oplus \bar{3}$ is $N = 7$. Condition (c) excludes "superfluous" observables, making $\alpha$ injective on the observable subalgebra.
 
-By **T-39a [Т]** (primitivity of the Liouvillian): for the sector structure $1 \oplus 3 \oplus \bar{3}$ with $G_2$-covariant Fano dissipator, the primitive CPTP Liouvillian is unique up to the $G_2$-action. Consequently:
+By **T-39a [T]** (primitivity of the Liouvillian): for the sector structure $1 \oplus 3 \oplus \bar{3}$ with $G_2$-covariant Fano dissipator, the primitive CPTP Liouvillian is unique up to the $G_2$-action. Consequently:
 
 $$
 D|_{A_{\text{int}}} = g \cdot \mathcal{L}_\Omega \cdot g^{-1} \quad \text{for a unique } g \in G_2.
@@ -944,7 +944,7 @@ Let $(f^*, \alpha, \beta)$ and $(f'^*, \alpha', \beta')$ be two morphisms $(E, \
 
 **Uniqueness of $\alpha$.** By Takesaki's theorem, the conditional expectation $P_{A_{\text{int}}}$ is **unique**. Consequently $\alpha = \alpha' = P_{A_{\text{int}}}$ canonically.
 
-**Essential uniqueness of $f^*$.** The subtopos $E[A_{\text{int}}] \subset E$ is uniquely determined (as the category of $A_{\text{int}}$-modules). The equivalence $E[A_{\text{int}}] \simeq \mathrm{Sh}_\infty(\mathcal{C})$ is unique up to $G_2 \times \mathbb{R}_{>0}$ **by T-173 [Т]**. Consequently $f^*$ and $f'^*$ differ by an element $(g, \lambda) \in G_2 \times \mathbb{R}_{>0}$ acting on the target $\mathrm{Sh}_\infty(\mathcal{C})$.
+**Essential uniqueness of $f^*$.** The subtopos $E[A_{\text{int}}] \subset E$ is uniquely determined (as the category of $A_{\text{int}}$-modules). The equivalence $E[A_{\text{int}}] \simeq \mathrm{Sh}_\infty(\mathcal{C})$ is unique up to $G_2 \times \mathbb{R}_{>0}$ **by T-173 [T]**. Consequently $f^*$ and $f'^*$ differ by an element $(g, \lambda) \in G_2 \times \mathbb{R}_{>0}$ acting on the target $\mathrm{Sh}_\infty(\mathcal{C})$.
 
 **Essential uniqueness of $\beta$.** Similarly, $\beta$ and $\beta'$ differ by the same element $(g, \lambda)$.
 
@@ -958,10 +958,10 @@ The receiving morphism $(f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathrm{S
 - Standard theory of $(\infty,1)$-topoi (Lurie HTT, HA);
 - Takesaki's theorem on conditional expectations (1972);
 - Stinespring's theorem on representations of CPTP maps (1955);
-- T-39a [Т], T-42a [Т], T-53 [Т], T-60 [Т], T-173 [Т] — internal UHM theorems.
+- T-39a [T], T-42a [T], T-53 [T], T-60 [T], T-173 [T] — internal UHM theorems.
 
 **Consistency check with the whole theory:**
-- Dependencies: T-39a, T-42a, T-53, T-60, T-173 — all [Т], no circularities;
+- Dependencies: T-39a, T-42a, T-53, T-60, T-173 — all [T], no circularities;
 - Formalization of $\mathbf{PhysTheory}$ is consistent with the $(\infty,1)$-topos structure of UHM (axiom Ω⁷);
 - Construction of $f^*$ uses subtopoi — a standard construction, not conflicting with existing theorems;
 - $G_2 \times \mathbb{R}_{>0}$-uniqueness coincides with T-173 (rigidity of the primitive).
@@ -1001,7 +1001,7 @@ The receiving morphism $(f^*, \alpha, \beta): (E, \mathcal{A}, D) \to (\mathrm{S
 
 M-theory (Task 1) has status **[T]** at levels of M-theory definedness: perturbative correspondence proven (T-170' [T]), non-perturbative correctness of UHM integral proven (T-170'' [T]). The asymmetry of definedness is on M-theory's side (non-perturbative definition of M-theory is an external open problem, not UHM). The LQG embedding (Task 2) has status **[T] fully**: for bounded spin networks ($j_e \leq 3$) C29' is proven as a Lemma in §2.2; for unbounded spin T-171' is proven via cluster construction in §2.3a. The causal set embedding (Task 3) has status **[T]**: C30 is proven as a Lemma in §3.2 via explicit construction of $\Gamma_{\text{total}}$. The universal property (Task 4) has status **[T]**: a full proof is presented in §4.4 via formalization of $\mathbf{PhysTheory}$ as an $(\infty,1)$-category, construction of the subtopos $E[A_{\text{int}}]$, and application of Takesaki's theorem and T-173.
 
-What is **proven unconditionally [Т]**:
+What is **proven unconditionally [T]**:
 1. The $G_2$-symmetry is identical between UHM and M-theory on $G_2$-manifolds;
 2. The chain of embeddings $SU(2) \subset SU(3) \subset G_2$ connects LQG with UHM algebraically;
 3. The discrete time structure ($\mathbb{Z}_{7^M}$) + continuum limit ($M^4$) encompasses causal sets as an intermediate stage;
@@ -1022,12 +1022,12 @@ What is **not proven**:
 | **T-171** | LQG embedding functor (bounded spin $j_e \leq 3$) | [T] | — (C29' proven §2.2) |
 | **T-171'** | LQG embedding functor (unbounded spin) | [T] | — (cluster construction §2.3a) |
 | **T-172** | Causal sets embedding (faithfully $M^4$-embeddable) | [T] | — (C30 proven §3.2) |
-| **T-173** | Rigidity of the UHM primitive | [Т] | — |
+| **T-173** | Rigidity of the UHM primitive | [T] | — |
 | **T-174** | Receiving map in $\mathbf{PhysTheory}$ | [T] | — (proven §4.4) |
-| **C27-M** | Continuous Gap limit | [П] | — |
-| **C28-M** | Supersymmetric extension | [П] | — |
+| **C27-M** | Continuous Gap limit | [P] | — |
+| **C28-M** | Supersymmetric extension | [P] | — |
 | **C29'** | Spatial limit (for bounded spin networks $j_e \leq 3$) | [T] | Proven in §2.2 (Lemma C29') |
-| **C29** | Spatial limit (for unbounded spin networks) | [С] | Requires multi-holon clustering |
+| **C29** | Spatial limit (for unbounded spin networks) | [C] | Requires multi-holon clustering |
 | **C30** | Causal completeness (construction $\Gamma_{\text{total}}$ for finite $M^4$-embeddable causal sets) | [T] | Proven in §3.2 (Lemma C30) |
 
 ---

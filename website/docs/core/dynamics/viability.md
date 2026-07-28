@@ -92,8 +92,8 @@ $$
 
 ### Unification via the Bures metric
 
-:::info P_crit — a mathematical theorem [Т]; interpretation via PIR [О]
-Critical purity $P_{\text{crit}} = 2/N$ is **proved** from the [Bures metric](/docs/core/foundations/axiom-omega#топология-гротендика) (the unique monotone Riemannian metric by the Chentsov–Petz theorem). [PIR [О]](/docs/core/foundations/axiom-omega#пир-как-теорема) provides the ontological interpretation:
+:::info P_crit — a mathematical theorem [T]; interpretation via PIR [D]
+Critical purity $P_{\text{crit}} = 2/N$ is **proved** from the [Bures metric](/docs/core/foundations/axiom-omega#топология-гротендика) (the unique monotone Riemannian metric by the Chentsov–Petz theorem). [PIR [D]](/docs/core/foundations/axiom-omega#пир-как-теорема) provides the ontological interpretation:
 
 $$
 P > P_{\text{crit}} \Leftrightarrow d_B(\Gamma, I/N) > d_B^{\text{noise}}
@@ -106,7 +106,7 @@ where $d_B$ is the [Bures metric](/docs/core/foundations/axiom-omega#топол�
 See [unification of thresholds via PIR](/docs/core/foundations/axiom-septicity#принцип-информационной-различимости).
 :::
 
-:::tip Theorem on critical purity [Т]
+:::tip Theorem on critical purity [T]
 The value $P_{\text{crit}} = 2/N$ is **strictly derived** from five independent arguments converging to the same value. The structural deviation from chaos must exceed the scale of chaos. At $P = 2/7$ the dominant regime captures ~49% of coherence.
 
 **Master definition and table of paths:** [Axiom of Septicity → Critical purity](../foundations/axiom-septicity#критическая-чистота-теорема)
@@ -136,7 +136,7 @@ $$
 d_F^2(\Gamma, I/N) > d_F^{\text{noise}} \quad \Rightarrow \quad P - \frac{1}{N} > \frac{1}{N} \quad \Rightarrow \quad \boxed{P > \frac{2}{N} = \frac{2}{7}}
 $$
 
-:::tip Five independent paths to one threshold [Т]
+:::tip Five independent paths to one threshold [T]
 The value $P_{\text{crit}} = 2/7$ is derived by **five independent** arguments:
 
 1. **Frobenius distinguishability** (above): $d_F > d_F^{\text{noise}}$
@@ -145,7 +145,7 @@ The value $P_{\text{crit}} = 2/7$ is derived by **five independent** arguments:
 4. **Fano channel:** coherence contraction with factor $1/3$ preserves structure only at $P > 2/7$
 5. **Self-observation:** minimum reflection $R \geq R_{\text{th}} = 1/3$ requires $P \geq P_{\text{crit}}$
 
-[Full proof →](../../proofs/dynamics/theorem-purity-critical) | Status: **[Т]**
+[Full proof →](../../proofs/dynamics/theorem-purity-critical) | Status: **[T]**
 :::
 
 ### Temporal interpretation of P_crit
@@ -180,12 +180,12 @@ $$
 
 The system is not only above the threshold, but also does not lose purity (balance of regeneration and dissipation).
 
-**Stochastic extension** ([T-145 [Т]](/docs/proofs/consciousness/operational-closure#t-145)): under stochastic perturbations $h_{\text{ext}}$ with $\mathbb{E}[\|h_{\text{ext}}\|^2] \leq \sigma_h^2$, the probability of maintaining full viability $V_{\text{full}}$ is exponentially close to 1: $\mathbb{P}[\Gamma \in V_{\text{full}}] \geq 1 - \exp(-r_{\text{stab}}^2/(2\sigma_h^2))$.
+**Stochastic extension** ([T-145 [T]](/docs/proofs/consciousness/operational-closure#t-145)): under stochastic perturbations $h_{\text{ext}}$ with $\mathbb{E}[\|h_{\text{ext}}\|^2] \leq \sigma_h^2$, the probability of maintaining full viability $V_{\text{full}}$ is exponentially close to 1: $\mathbb{P}[\Gamma \in V_{\text{full}}] \geq 1 - \exp(-r_{\text{stab}}^2/(2\sigma_h^2))$.
 
-:::tip Full axiomaticity of the viability condition [Т]
+:::tip Full axiomaticity of the viability condition [T]
 Both terms in the strengthened condition are **fully determined** by the axioms:
 - $dP/d\tau|_\mathcal{D}$ — from $\mathcal{L}_\Omega$ (A1, classifier Ω)
-- $dP/d\tau|_\mathcal{R}$ — from the form of ℛ, [derived](/docs/core/dynamics/evolution#вывод-формы-регенерации) from axioms A1–A5 + standard thermodynamics [Т]
+- $dP/d\tau|_\mathcal{R}$ — from the form of ℛ, [derived](/docs/core/dynamics/evolution#вывод-формы-регенерации) from axioms A1–A5 + standard thermodynamics [T]
 
 The viability condition is **not a phenomenological criterion**, but a strict consequence of the axiomatics.
 :::
@@ -213,7 +213,7 @@ where $\mathcal{D}(\mathcal{H})$ is the space of density matrices on $\mathcal{H
 Minimal viability $\mathcal{V}_P$ is a **necessary**, but insufficient condition for a fully functional Holon. Full viability is defined via the [stress tensor](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений):
 
 :::tip Non-emptiness of $\mathcal{V}_{\mathrm{full}}$ [T-124]
-The set of full viability is **non-empty**: the existence of $\Gamma$ with $P \in (2/7, 3/7]$, $\Phi \geq 1$, $\forall k: \sigma_k < 1$ is constructively proved. Goldilocks zone: $P \in (2/7, 3/7]$ — the optimal range for consciousness. See [T-124 [Т]](/docs/proofs/consciousness/conscious-window#t-124).
+The set of full viability is **non-empty**: the existence of $\Gamma$ with $P \in (2/7, 3/7]$, $\Phi \geq 1$, $\forall k: \sigma_k < 1$ is constructively proved. Goldilocks zone: $P \in (2/7, 3/7]$ — the optimal range for consciousness. See [T-124 [T]](/docs/proofs/consciousness/conscious-window#t-124).
 :::
 
 $$
@@ -222,7 +222,7 @@ $$
 
 where each of the 7 components $\sigma_i$ controls a separate condition (purity, structure, dynamics, logic, differentiation, regeneration, integration). See [Theorem 10.1 / T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
-#### Theorem (Embedding of viability domains) [Т] {#теорема-вложение-областей}
+#### Theorem (Embedding of viability domains) [T] {#теорема-вложение-областей}
 
 $$
 \mathcal{V}_{\mathrm{full}} \subsetneq \mathcal{V}_P
@@ -266,7 +266,7 @@ where:
 | $P(\Gamma) \leq 1$ | CPTP channel does not increase purity above 1 | Purity bounded above |
 | $P(\Gamma) \geq 1/7$ | Convexity | Purity bounded below |
 
-The fixed point of canonical $\varphi_{\text{coh}}$ has $P(\Gamma^*) = P_{\text{crit}} = 2/7$ **[Т]** — this is a **mixed** state, not pure (see [operator φ](/docs/core/operators/phi-operator#свойства)). Under active regeneration ($\mathcal{R} \geq \mathcal{D}$) the attractor maintains $P > P_{\text{crit}} = 2/7$.
+The fixed point of canonical $\varphi_{\text{coh}}$ has $P(\Gamma^*) = P_{\text{crit}} = 2/7$ **[T]** — this is a **mixed** state, not pure (see [operator φ](/docs/core/operators/phi-operator#свойства)). Under active regeneration ($\mathcal{R} \geq \mathcal{D}$) the attractor maintains $P > P_{\text{crit}} = 2/7$.
 
 [More on positivity preservation →](../dynamics/evolution#сохранение-положительности)
 
@@ -288,7 +288,7 @@ $$
 
 ## Death condition {#условие-смерти}
 
-:::warning Theorem (Irreversibility of decoherence) [Т]
+:::warning Theorem (Irreversibility of decoherence) [T]
 A Holon **irreversibly** loses viability if two conditions are simultaneously satisfied:
 
 $$
@@ -310,7 +310,7 @@ where $\Delta(\mathcal{L}_0) > 0$ is the spectral gap of the Liouvillian [T-39a]
 
 **Connection to time dilation.** By [T-53d](/docs/core/operators/emergent-time#time-freezing-derivation) [Т]: internal time $d\tau_{\text{int}}/dt_{\text{ext}} \propto (P - P_{\text{crit}})^{1/2}$. Near $P_{\text{crit}}$ subjective time slows down infinitely — "death" is not experienced from within.
 
-:::tip Primitivity proved [Т]
+:::tip Primitivity proved [T]
 Primitivity of the linear part $\mathcal{L}_0$ for viable holons has been **proved** via the Evans–Spohn criterion: atomic operators $L_k = |k\rangle\langle k|$ together with the connectivity condition on the interaction graph $G_H$ (which follows from (AP)+(PH)+(QG)+(V) by the connectivity theorem) guarantee triviality of the commutant $\mathcal{F}(\mathcal{L}_0) = \mathbb{C} \cdot I$. Convergence to $I/7$ under dominant dissipation is guaranteed ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω)).
 
 [Proof →](/docs/core/operators/lindblad-operators#примитивность-ℒω)
@@ -388,10 +388,10 @@ Viability ($P > 2/7$) is a **necessary**, but insufficient condition for conscio
 
 | Condition | Formula | Meaning | Threshold | Status |
 |---------|---------|-------|-------|--------|
-| Viability | $P > P_{\text{crit}}$ | System is distinguishable from noise | $P_{\text{crit}} = 2/7$ | **[Т]** |
-| Reflection | $R \geq R_{\text{th}}$ | System can model itself | $R_{\text{th}} = 1/3$ | **[Т]** |
-| Integration | $\Phi \geq \Phi_{\text{th}}$ | Parts of the system are bound into a whole | $\Phi_{\text{th}} = 1$ | **[Т]** |
-| Differentiation | $D \geq D_{\min}$ | System distinguishes its states | $D_{\min} = 2$ | **[Т]** |
+| Viability | $P > P_{\text{crit}}$ | System is distinguishable from noise | $P_{\text{crit}} = 2/7$ | **[T]** |
+| Reflection | $R \geq R_{\text{th}}$ | System can model itself | $R_{\text{th}} = 1/3$ | **[T]** |
+| Integration | $\Phi \geq \Phi_{\text{th}}$ | Parts of the system are bound into a whole | $\Phi_{\text{th}} = 1$ | **[T]** |
+| Differentiation | $D \geq D_{\min}$ | System distinguishes its states | $D_{\min} = 2$ | **[T]** |
 
 :::tip Analogy with an organism
 All four conditions can be compared to the hallmarks of a living organism:
@@ -409,8 +409,8 @@ More: [Reflection measure R](/docs/consciousness/foundations/self-observation#м
 
 ### Octonionic norm {#октонионная-норма}
 
-:::note Relation of purity P to the $\mathbb{O}$ norm [С]
-In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is related to the norm on $\mathrm{Im}(\mathbb{O})$: the normativity of octonions ($|xy| = |x||y|$) provides a consistent metric on the state space. The viability condition $P > 2/7$ corresponds to the minimum "distinguishability from noise" in the normed space $\mathrm{Im}(\mathbb{O})$. Bridge [Т] (closed, T15). See [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Relation of purity P to the $\mathbb{O}$ norm [C]
+In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), purity $P = \mathrm{Tr}(\Gamma^2)$ is related to the norm on $\mathrm{Im}(\mathbb{O})$: the normativity of octonions ($|xy| = |x||y|$) provides a consistent metric on the state space. The viability condition $P > 2/7$ corresponds to the minimum "distinguishability from noise" in the normed space $\mathrm{Im}(\mathbb{O})$. Bridge [T] (closed, T15). See [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 **Related documents:**

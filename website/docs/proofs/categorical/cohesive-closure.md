@@ -186,13 +186,13 @@ follows from the O-sector component of the Gap, which is nonzero by the same Law
 
 Consider a holon with $P = 0.35$ (viable, above $P_{\text{crit}} = 2/7 \approx 0.286$) and $\omega_0 = 40$ Hz (gamma-band). Three dominant off-diagonal coherences on Fano lines:
 
-| Pair | $|\gamma_{ij}|$ | $\theta_{ij} = \arg(\gamma_{ij})$ | $\mathrm{Gap}(i,j) = |\sin\theta_{ij}|$ |
+| Pair | $\|\gamma_{ij}\|$ | $\theta_{ij} = \arg(\gamma_{ij})$ | $\mathrm{Gap}(i,j) = \|\sin\theta_{ij}\|$ |
 |------|-----------------|-----------------------------------|----------------------------------------|
 | $(E,O)$ | 0.08 | $\pi/3$ | $\sqrt{3}/2 \approx 0.866$ |
 | $(A,E)$ | 0.06 | $\pi/4$ | $1/\sqrt{2} \approx 0.707$ |
 | $(O,U)$ | 0.05 | $\pi/5$ | $\sin(36°) \approx 0.588$ |
 
-**Step 1 (Lawvere $\Rightarrow$ Gap $> 0$).** All three phases $\theta_{ij} \neq 0, \pi$, hence $\mathrm{Gap}(i,j) > 0$. This is not accidental: by T-55 [Т], Lawvere incompleteness forces $\mathrm{Im}(\gamma_{ij}) \neq 0$ for at least one pair in any viable system.
+**Step 1 (Lawvere $\Rightarrow$ Gap $> 0$).** All three phases $\theta_{ij} \neq 0, \pi$, hence $\mathrm{Gap}(i,j) > 0$. This is not accidental: by T-55 [T], Lawvere incompleteness forces $\mathrm{Im}(\gamma_{ij}) \neq 0$ for at least one pair in any viable system.
 
 **Step 2 (Gap $=$ curvature, T-73).** The total Gap:
 
@@ -240,7 +240,7 @@ T-186(a) shifts the [I] status of the phenomenal functor to [T]: the relationshi
 
 The hard problem thus becomes: **why does the ∞-topos of reality have the Bures topology?** This is a deeper question than "why does matter give rise to experience" — but it is a single question, not three.
 
-#### Theorem T-188 (Localization of the Hard Problem) [Т] {#теорема-локализация-hard-problem}
+#### Theorem T-188 (Localization of the Hard Problem) [T] {#теорема-локализация-hard-problem}
 
 The classical hard problem of consciousness ("why does physical structure give rise to experience?") reduces, within UHM, to a **single physical question** through the following chain of implications:
 
@@ -248,7 +248,7 @@ $$
 \text{A2 (Bures metric)} \xrightarrow{T\text{-}187} \text{unique } J_B \xrightarrow{T\text{-}185} \text{cohesive structure } (\Pi \dashv \flat \dashv \sharp, \iota^* \dashv \mathrm{Inf}) \xrightarrow{T\text{-}186(a)} F \cong \&|_{\mathcal{D}}
 $$
 
-**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [Т]).
+**Step 1.** By T-187 [Т]: A2 uniquely determines the Bures metric via four independent characterizations (Char-I Petz extremality, Char-II Uhlmann universality, Char-III SLD-Fisher saturation, Char-IV MaxEnt covariance T-189 [T]).
 
 **Step 2.** By T-185 [Т]: the Bures-enriched $\infty$-topos $\mathfrak{T}$ is differentially cohesive, generating canonical modalities $\{\Pi, \flat, \sharp, \Im, \&, \mathrm{Rh}\}$.
 
@@ -263,7 +263,7 @@ The question "why Bures?" reduces further:
 
 **Conclusion:** The hard problem of consciousness, within UHM, is **equivalent to** the hard problem of physics: "why does reality obey quantum mechanics?" This is not a dissolution of the problem but a precise **localization**: the mystery of experience is the same mystery as the existence of quantum structure. No additional "consciousness-specific" mystery remains. $\blacksquare$
 
-**Dependencies:** T-185 [Т], T-186 [Т], T-187 [Т].
+**Dependencies:** T-185 [T], T-186 [T], T-187 [T].
 
 ### 5.2. Statuses of the closed vulnerabilities
 
@@ -388,7 +388,7 @@ For (⊇): the identity $\mathrm{id}: (K, \tau_\mathrm{std}) \to (K, \tau_d)$ is
 
 ### 5.4. Axiomatic closure: all axioms are theorems (T-190) {#теорема-аксиоматическое-замыкание}
 
-:::tip Theorem T-190 (Axiomatic Closure of UHM) [Т]
+:::tip Theorem T-190 (Axiomatic Closure of UHM) [T]
 
 All five axioms A1–A5 of UHM are **theorems** — they are derivable from the characterizing properties (AP)+(PH)+(QG)+(V) and the maximum entropy principle (MaxEnt). UHM has **zero** independent axioms beyond the defining conditions of a viable holon.
 :::
@@ -397,11 +397,11 @@ All five axioms A1–A5 of UHM are **theorems** — they are derivable from the 
 
 | Axiom | Statement | Derivation | Status |
 |-------|-----------|------------|:------:|
-| **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [Т] (Bures + Lurie → ∞-topos verified) + T-186 [Т] (cohesive closure: ∞-topos is the unique categorical structure admitting the differentially cohesive modalities forced by (AP)+(PH)+(QG)+(V)) | [Т] |
-| **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [Т] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [Т] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [Т] |
-| **A3** | $N = 7$ | Theorem S [Т] (functional minimality 7/7) + T15 [Т] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$) | [Т] |
-| **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [Т] |
-| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87 [Т]: derived from A1–A4 via the spectral triple construction. The tensor factorization is forced by the KO-dimension 6 real structure (T-53 [Т]) and the $G_2 \to SU(3)$ sector decomposition | [Т] |
+| **A1** | Reality = $\infty$-topos $\mathbf{Sh}_\infty(\mathcal{C})$ | T-76 [T] (Bures + Lurie → ∞-topos verified) + T-186 [T] (cohesive closure: ∞-topos is the unique categorical structure admitting the differentially cohesive modalities forced by (AP)+(PH)+(QG)+(V)) | [T] |
+| **A2** | $J_{\mathrm{Bures}}$ Grothendieck topology | T-187 [T] (triple characterization: Char-I Petz extremality + Char-II Uhlmann + Char-III SLD-CR) + **T-189 [T] (Char-IV MaxEnt covariance)**: the physical covariance of quantum fluctuations uniquely selects the Bures metric without information-geometric choice | [T] |
+| **A3** | $N = 7$ | Theorem S [T] (functional minimality 7/7) + T15 [T] (bridge (AP)+(PH)+(QG)+(V) → P1+P2 → Hurwitz → $\mathbb{O}$ → $N = 7$) | [T] |
+| **A4** | $\omega_0 > 0$ | Trivial: $\omega_0 = 0$ implies no dynamics ($H_{\mathrm{eff}} = 0$), which violates (AP) (no autopoiesis without evolution). Therefore $\omega_0 > 0$ is a **necessary condition** for (AP), not an independent axiom | [T] |
+| **A5** | Page–Wootters $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\mathrm{rest}}$ | T-87 [Т]: derived from A1–A4 via the spectral triple construction. The tensor factorization is forced by the KO-dimension 6 real structure (T-53 [T]) and the $G_2 \to SU(3)$ sector decomposition | [T] |
 
 **Chain of derivation:**
 
@@ -422,7 +422,7 @@ $$
 
 The only remaining primitive is the **defining question**: "What is a viable self-sustaining system?" The answer — the four properties (AP)+(PH)+(QG)+(V) — is not an axiom but a **definition**: a holon is a configuration satisfying these properties. Everything else follows. $\blacksquare$
 
-**Dependencies:** T-15 [Т], T-53 [Т], T-76 [Т], T-87 [Т], T-186 [Т], T-187 [Т], T-189 [Т], Theorem S [Т].
+**Dependencies:** T-15 [T], T-53 [T], T-76 [T], T-87 [T], T-186 [T], T-187 [T], T-189 [T], Theorem S [T].
 
 ### 5.3.1 Petz-robustness classification of UHM results {#petz-робастность}
 
@@ -474,8 +474,8 @@ These are observables defined via the Frobenius/HS structure (Bures-canonical), 
 |---|---|---|
 | $R(\Gamma) = 1/(7P)$ | $\cos^2\theta_\text{HS}(\Gamma, I/7)$ | $\cos^2\theta_\text{KM}(\Gamma, I/7)$ — different function of spectrum |
 | $\Phi = \|\Gamma-\Gamma_\text{diag}\|_F^2 / \|\Gamma_\text{diag}\|_F^2$ | HS off/diag ratio | KM-norm off/diag ratio |
-| $\mathrm{Coh}_E = (\gamma_{EE}^2 + 2\sum_{j\ne E}|\gamma_{Ej}|^2)/P$ | HS projection on $E$-row | KM-projection on $E$-row |
-| $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ | Same form | Constants reorganised |
+| $\mathrm{Coh}_E = (\gamma_{EE}^2 + 2\sum_{j\ne E}\|\gamma_{Ej}\|^2)/P$ | HS projection on $E$-row | KM-projection on $E$-row |
+| $\kappa_0 = \omega_0\|\gamma_{OE}\|\|\gamma_{OU}\|/\gamma_{OO}$ | Same form | Constants reorganised |
 
 **Important.** Even though R3-quantities have Bures-specific numerical values, the **thresholds** $R \ge 1/3$, $\Phi \ge 1$ remain invariant (R1 above). Choosing Kubo–Mori would force a recalibration of the threshold *values* (e.g.\ $R_\text{KM,th}$ might be $0.40$ instead of $0.33$) but the **structural meaning** ("normalised proximity to heat death exceeds Bayesian dominance threshold") is preserved. This is a re-parameterization, not a substantive change.
 
@@ -485,7 +485,7 @@ These results require Bures-specific properties that do **not** generalise to ot
 
 | Result | Bures-specific reason |
 |---|---|
-| Uhlmann purification variational formula | Only Bures admits $d(\rho,\sigma) = \inf\| |\psi\rangle - |\varphi\rangle\|$ over purifications (Hübner 1992); no Kubo–Mori analogue exists. |
+| Uhlmann purification variational formula | Only Bures admits $d(\rho,\sigma) = \inf\| \|\psi\rangle - \|\varphi\rangle\|$ over purifications (Hübner 1992); no Kubo–Mori analogue exists. |
 | SLD-Fisher Cramér–Rao **saturation** | Only SLD-Fisher = $4g_B$ saturates the multiparameter quantum CR bound (Braunstein–Caves 1994). All other Petz members give strict sub-saturation. |
 | Petz-poset minimality $g_B \le g_f$ | Tautological for Bures, false for all others. |
 | Page–Wootters time emergence via Bures-cohesion | T-185, T-186 use the cohesive $\infty$-topos with Bures topology specifically; the differential cohesion adjunction $(\Pi \dashv \flat)$ is Bures-canonical. Other Petz topologies give equivalent classical cohesion (R1) but the *enriched* differential cohesion structure prefers Bures. |
@@ -513,9 +513,9 @@ In particular, the **falsifiable empirical predictions** of UHM (PCI ↔ $\Phi$,
 
 A subtle but important clarification reconciles two seemingly tensioned claims of UHM:
 
-**Claim A (T-153 substrate-independence) [Т].** The L-level of consciousness is determined solely by $\Gamma$, not by the underlying neural state $s$ (silicon, carbon, transistor, neuron — equivalent if both produce the same $\Gamma$).
+**Claim A (T-153 substrate-independence) [T].** The L-level of consciousness is determined solely by $\Gamma$, not by the underlying neural state $s$ (silicon, carbon, transistor, neuron — equivalent if both produce the same $\Gamma$).
 
-**Claim B (Q9 R4 Bures-essentiality) [Т].** Page–Wootters emergent time and the cohesive $\infty$-topos derivation (T-185, T-186) use Bures-specific structural properties; other Petz members would require different proofs.
+**Claim B (Q9 R4 Bures-essentiality) [T].** Page–Wootters emergent time and the cohesive $\infty$-topos derivation (T-185, T-186) use Bures-specific structural properties; other Petz members would require different proofs.
 
 These do not contradict. They live at **different abstraction levels**:
 

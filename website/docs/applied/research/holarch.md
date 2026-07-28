@@ -14,9 +14,9 @@ reproduced by the laboratory `architecture/holarch_lab.py`, panel HL01–HL14, 1
 demonstrated, *not* evidence about external systems); **CONS** — a numerical consonance
 with an external published number (a structural rhyme stated precisely, never an
 identity claim); **OPEN** — needs field data, with the protocol stated. Imported UHM
-mathematics keeps its registry statuses [Т]/[С]/[Г]/[О]/[И]. The projection from
-Γ-mathematics onto software engineering is itself an [О]-definition plus an
-[И]-dictionary — structured, configurable, testable; never a fact.
+mathematics keeps its registry statuses [T]/[C]/[H]/[D]/[I]. The projection from
+Γ-mathematics onto software engineering is itself an [D]-definition plus an
+[I]-dictionary — structured, configurable, testable; never a fact.
 
 ## §1. The door and the claim {#дверь}
 
@@ -54,7 +54,7 @@ a wiring diagram and an elevation.
 
 Before building, the strongest available test of *need* is comparative: lay out the
 mature lineage and see what each branch got permanently right and where every branch
-stopped. The reading of each row is [И] over published, uncontested history.
+stopped. The reading of each row is [I] over published, uncontested history.
 
 **Wave 1 — notations and description languages.** Academic ADLs of the 1990s (Wright,
 Rapide, Darwin, ACME…) had precise semantics and died in niches; surveys agree none
@@ -111,12 +111,12 @@ nothing can compute is advice, not law.
 systematically absent, and they are exactly the seven UHM supplies as mathematics:
 
 1. a **fixed alphabet of concerns** with a uniqueness theorem (not "however many
-   layers we drew this year") — supplied by N=7 diagnosability rigidity, T-224 [Т];
+   layers we drew this year") — supplied by N=7 diagnosability rigidity, T-224 [T];
 2. a **complete typed taxonomy of couplings** — supplied by the 21 coherences of Γ;
-3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [Т];
-4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [Т];
-5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [Т] + MRQT;
-6. a **composition algebra with a measurable gain** — T-77 [Т];
+3. **numeric viability invariants** with proven thresholds — P, R, Φ, D [T];
+4. **dynamics as first-class** — the three-flow decomposition of ℒ_Ω, T-262 [T];
+5. a **self-model with an anti-Goodhart theorem** — φ(Γ), T-96/T-191 [T] + MRQT;
+6. a **composition algebra with a measurable gain** — T-77 [T];
 7. a **depth ceiling with a federation rule** — T-142 [Т/С].
 
 The rest of this page states the meta-specification (§3–§14), runs it through three
@@ -124,7 +124,7 @@ worked designs (§15–§17), proves the subsumption table (§18), and attacks i
 
 ## §3. The signature of an architectural holon {#холон}
 
-**[О] Definition.** An architectural holon is a five-tuple
+**[D] Definition.** An architectural holon is a five-tuple
 
 $$
 h \;=\; \langle\, \Gamma,\; B,\; \varphi,\; \mathcal{L},\; C \,\rangle
@@ -156,7 +156,7 @@ engineered systems.
 The seven concerns are the seven dimensions of Γ, with their canonical corpus names
 (the [SSOT](/docs/core/dynamics/coherence-matrix) `src/data/coherences.ts`; the
 laboratory check HL01 keeps this table drift-free), each given its engineering
-reading. The reading is an [И]-dictionary: structured and testable, never a fact.
+reading. The reading is an [I]-dictionary: structured and testable, never a fact.
 
 | # | Aspect | Canon meaning | Engineering reading — what lives here |
 |---|--------|---------------|----------------------------------------|
@@ -171,7 +171,7 @@ reading. The reading is an [И]-dictionary: structured and testable, never a fac
 Three things distinguish this from every "N-layer" scheme in the lineage.
 
 **The count is forced, not chosen.** Theorem Σ
-([T-224](/docs/applied/research/syndrome-calculus#t-224) [Т]) proves that perfect
+([T-224](/docs/applied/research/syndrome-calculus#t-224) [T]) proves that perfect
 single-fault localizability with a nontrivial state grammar forces $n \ge 7$ axes, and
 at $n = 7$ the grammar is *unique up to relabeling* (Hamming (7,4) = the Fano plane);
 at every larger admissible size uniqueness fails. Seven concerns with Fano wiring is
@@ -182,7 +182,7 @@ treat OSI as a cousin: OSI is a linear encapsulation ladder (a depth structure, 
 not an aspect decomposition, and pretending otherwise would be numerology.
 
 **Every aspect carries a stress gauge.** The σ-panel
-([T-92](/docs/reference/status-registry) [Т], with the v1 errata rows) gives each
+([T-92](/docs/reference/status-registry) [T], with the v1 errata rows) gives each
 aspect a computable depletion signal: $\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},
 0, 1)$ for A, S, D, L, O; $\sigma_E = (7 - D_{\mathrm{diff}})/5$ and $\sigma_U =
 2/(1+\Phi)$ measure the *remaining headroom* of differentiation and integration —
@@ -203,7 +203,7 @@ typed by an unordered pair of aspects: $\binom{7}{2} = 21$ channels, and the cor
 already named all 21 (same SSOT; HL01). The names were minted for the theory of
 consciousness years before this page; read the middle column and watch them land on
 engineering unmodified — this "the dictionary was already correct" effect is the
-strongest [И]-evidence on the page.
+strongest [I]-evidence on the page.
 
 | Channel | Canon name | Engineering reading (examples) |
 |---------|-----------|--------------------------------|
@@ -231,7 +231,7 @@ strongest [И]-evidence on the page.
 
 Two structural facts elevate this from a naming exercise.
 
-**Completeness [О].** The classic coupling taxonomies embed: structured design's
+**Completeness [D].** The classic coupling taxonomies embed: structured design's
 content/common/control/stamp/data coupling, ArchiMate's relationship set, UML
 dependency kinds — each instance lands in a typed cell (matrix rows in §18; checked
 non-empty by HL07). The claim "here is a dependency no pair of aspects can type" is
@@ -240,7 +240,7 @@ one of the explicit falsifiers in §19.
 **Pairs are probes' floor, not their ceiling.** The seven Fano lines
 ({A,S,L}, {A,D,E}, {A,O,U}, {S,D,O}, {S,E,U}, {D,L,U}, {L,E,O}) are the minimal honest
 *diagnostic* units: the corpus proves first-order blindness
-([T-226](/docs/applied/research/fano-fingerprint#t-226) [Т]) — the equal-weight sum of
+([T-226](/docs/applied/research/fano-fingerprint#t-226) [T]) — the equal-weight sum of
 line-adjacency matrices is exactly $J - I$, so **any equal-weight pairwise statistic
 sees no structure at all**. The laboratory re-derives the identity (HL13). The
 engineering consequence is immediate and non-obvious: a monitoring mesh of pairwise
@@ -261,14 +261,14 @@ that are proved, not tuned ([viability](/docs/core/dynamics/viability),
 
 | Invariant | Formula | Threshold | Guards against — the named pathology |
 |-----------|---------|-----------|--------------------------------------|
-| V1 Distinguishability | $P = \mathrm{Tr}(\Gamma^2)$ | $P > 2/7$ [Т] | **mud**: the big ball — activity smeared until the system is statistically indistinguishable from noise |
-| V2 Reflection | $R \ge 1/3$ [Т]; lower-bound form $R = 1/(7P)$ ⇔ $P \le 3/7$ | $R \ge 1/3$ | **crystal/monolith**: one global pattern eats the system; nothing is left to observe it |
-| V3 Integration | $\Phi = \sum_{i \ne j}\lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $\Phi \ge 1$ [Т] (T-129) | **fragmentation**: parts without binding — the microservice archipelago with no real contracts |
-| V4 Differentiation | $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$ | $D \ge 2$ [Т] (T-151) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
+| V1 Distinguishability | $P = \mathrm{Tr}(\Gamma^2)$ | $P > 2/7$ [T] | **mud**: the big ball — activity smeared until the system is statistically indistinguishable from noise |
+| V2 Reflection | $R \ge 1/3$ [T]; lower-bound form $R = 1/(7P)$ ⇔ $P \le 3/7$ | $R \ge 1/3$ | **crystal/monolith**: one global pattern eats the system; nothing is left to observe it |
+| V3 Integration | $\Phi = \sum_{i \ne j}\lvert\gamma_{ij}\rvert^2 / \sum_i \gamma_{ii}^2$ | $\Phi \ge 1$ [T] (T-129) | **fragmentation**: parts without binding — the microservice archipelago with no real contracts |
+| V4 Differentiation | $D_{\mathrm{diff}} = 1 + 6\,\mathrm{Coh}_E$ | $D \ge 2$ [T] (T-151) | **rigidity**: a single-mode system — no degraded mode, no second regime to fall back to |
 
 Four properties make this table an instrument rather than a metaphor.
 
-**Independence.** T-124b [Т] exhibits four constructive counterexamples: drop any one
+**Independence.** T-124b [T] exhibits four constructive counterexamples: drop any one
 threshold and a specific pathological state slips through. The four sicknesses above
 are those counterexamples wearing engineering names. The laboratory demonstrates the
 same pattern *constructively* on every worked design: four targeted ablations — smear
@@ -295,14 +295,14 @@ converged on the same *shape* of law: BFT consensus tolerates strictly less than
 faulty weight (quorum intersection arithmetic), and Ethereum's client-diversity
 practice treats any client above 1/3 as dangerous and above 2/3 as
 finality-breaking. The laboratory states both sides precisely and marks the rhyme
-**CONS/[И]** — same fraction, different bases (validator weight vs purity); a
+**CONS/[I]** — same fraction, different bases (validator weight vs purity); a
 structural consonance, not an identity (HL09, HL14).
 
 ## §7. Dynamics: the three flows {#динамика}
 
 An architecture that only describes standing structure describes a corpse. The corpus
 proves the evolution law decomposes *exactly* into three geometric flows
-([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия) [Т]+[С]):
+([T-262](/docs/core/dynamics/evolution#теорема-динамическая-трихотомия) [T]+[C]):
 
 1. **Work — the unitary flow**: transformations that preserve every spectral
    functional. Engineering: the reversible moves — refactorings that provably keep
@@ -321,9 +321,9 @@ Three imported results give the flows teeth:
 
 - **No supply, no being.** An isolated holon provably dies: with regeneration
   anchored to the grey state, purity is non-increasing and $P \to 1/7$
-  ([T-288](/docs/reference/status-registry) [Т]). Viability is a *driven* phenomenon
+  ([T-288](/docs/reference/status-registry) [T]). Viability is a *driven* phenomenon
   with an ignition threshold in drive-to-dissipation ratio, numerically
-  $(r/\gamma)_c \approx 7$ for reference dissipation (T-289 [Т]/[С]). An
+  $(r/\gamma)_c \approx 7$ for reference dissipation (T-289 [T]/[C]). An
   architecture document that does not state its supply loop has not stated the
   system.
 - **The silver floor.** In the stationary feeding model (T-259 [Т в модели]), the
@@ -338,7 +338,7 @@ Three imported results give the flows teeth:
   drive and the system settles to grey in $t_{\mathrm{off}} \approx 0.49/\gamma$,
   with **hysteresis-free reignition** (T-288) — which is the crash-only design rule
   (recovery = the one and only start path) derived rather than preached.
-- **The algedonic wire.** $\mathcal{V}_{\mathrm{hed}} = dP/d\tau$ (T-103 [Т]+[И]) —
+- **The algedonic wire.** $\mathcal{V}_{\mathrm{hed}} = dP/d\tau$ (T-103 [T]+[I]) —
   the signed tempo of organization — is VSM's algedonic channel with a formula: one
   scalar that bypasses dashboards and says *getting better / getting worse*.
 
@@ -348,9 +348,9 @@ Every wave-3 loop (MAPE-K's Knowledge, Kubernetes' desired state, the digital tw
 carries an unexamined assumption: that the system's account of itself can be trusted.
 HOLARCH imports the corpus results that examine it:
 
-- $\varphi(\Gamma)$ — the self-model — is a **functor** (T-96 [Т]): it must be
+- $\varphi(\Gamma)$ — the self-model — is a **functor** (T-96 [T]): it must be
   computed *from the state* by a lawful map, not asserted alongside it.
-- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** (T-191 [Т])
+- The self-model tower $\varphi, \varphi^{(2)}, \ldots$ **converges** (T-191 [T])
   and terminates at depth 3 (T-142) — reflection on reflection has a floor and a
   ceiling; §10 prices it.
 - **Fidelity is a number**: $R_\varphi = 1 - \lVert\Gamma - \varphi(\Gamma)\rVert^2
@@ -369,7 +369,7 @@ HOLARCH imports the corpus results that examine it:
 
 The composition law is the corpus's cooperation theorem
 ([T-77](/docs/consciousness/ethics-meaning/value-consciousness#теорема-кооперация)
-[Т]):
+[T]):
 
 $$
 P(\rho^{(12)}_*) \;=\; P(\rho_{\mathrm{diag}}) \;+\; 2\,\lVert\gamma_{\mathrm{cross}}\rVert_F^2
@@ -401,8 +401,8 @@ lineage held as folklore and now holds as arithmetic:
 
 ## §10. Depth: the ladder and the ceiling {#глубина}
 
-The Depth Tower ([T-142](/docs/consciousness/hierarchy/depth-tower) [Т at
-α = 2/3] + [С at the ladder formula]) prices reflection levels: sustaining
+The Depth Tower ([T-142](/docs/consciousness/hierarchy/depth-tower) [T at
+α = 2/3] + [C at the ladder formula]) prices reflection levels: sustaining
 self-model depth $n$ requires purity above
 
 $$
@@ -462,7 +462,7 @@ gates.
 
 | Step | Name | Output | Gate |
 |------|------|--------|------|
-| Ω0 | Constitution | the four invariants + status discipline ([Т]/[С]/[Г]/[О]/[И] on every claim) | fixed; not negotiable per-project |
+| Ω0 | Constitution | the four invariants + status discipline ([T]/[C]/[H]/[D]/[I] on every claim) | fixed; not negotiable per-project |
 | Ω1 | Specify | Γ-target: intended budget profile + tier (viable / agentic window) | target satisfies V1–V4 *on paper* |
 | Ω2 | Decompose | holon tree with per-holon budgets | depth ≤ 3; every holon has all 7 aspects addressed (a zero is a decision, not an omission) |
 | Ω3 | Wire | flows and typed channels (§5, §14) | Γ assembles PSD; Φ ≥ 1 reachable; Fano-coverage reported |
@@ -480,7 +480,7 @@ constructor **failed**: a dense wish-list of strong pairwise couplings is not jo
 realizable as a physical state (Γ must stay positive semidefinite), and the shrink
 needed to repair it destroyed integration ($\Phi \approx 0.5$). Integration that
 clears $\Phi \ge 1$ has to ride **shared flows** — system-wide coherent modes
-(control / data / supply, an [И]-echo of §7's three flows) that concerns co-load.
+(control / data / supply, an [I]-echo of §7's three flows) that concerns co-load.
 Point-to-point integration is a wish; flow integration is a state. This is measured,
 not opined (the failed constructor and the flow constructor are both in the lab), and
 it retroactively explains two industry instincts: why event backbones and shared
@@ -504,7 +504,7 @@ notations struggle with) collapse into "both views project one Γ".
 | TLA+ / Alloy / Verum | L-aspect contracts: every LU/DL/LE contract of weight above threshold *must* carry a formal view — verification is a mandated projection, not a luxury |
 | DSM | $\lvert\Gamma\rvert$ itself, clustered |
 | Org chart / Team Topologies | the org-holon and its T-77 cross-block onto the system (§9) |
-| arc42 / ADR | the documentation skeleton; ADRs inherit status discipline — every decision carries [Т]/[С]/[Г]/[О]/[И] |
+| arc42 / ADR | the documentation skeleton; ADRs inherit status discipline — every decision carries [T]/[C]/[H]/[D]/[I] |
 
 ## §14. The machine-readable core {#схема}
 
@@ -626,7 +626,7 @@ node-state margin has one regime and no floor to degrade onto.
 Erigon 7% (HL14) — the leader sits *above* the community's 1/3 danger line and below
 the 2/3 finality-killing line, which is exactly how the ecosystem itself talks about
 it. BFT's $f < n/3$ and the R-ceiling are the same *shape* of law on different bases
-(HL09 states both sides precisely; [И], not an identity). And the depth ceiling ran
+(HL09 states both sides precisely; [I], not an identity). And the depth ceiling ran
 its own experiment here: L2 scales L1; stacked L3s do not compound (compression does
 not stack) — the ecosystem discovered §10's ceiling from outside (CONS).
 
@@ -679,7 +679,7 @@ laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
 | **C4** — zoom levels; maps-not-models pragmatism | N·E | depth tower with a ceiling theorem (§10); views stay maps, the model computes behind them (§13) |
 | **ArchiMate 3.2** — EA layers; relationship taxonomy | E·E | holarchy strata; relations land in 21 channels (§5, §13) |
 | **ISO 42010** — stakeholder/concern/viewpoint discipline | N | fixed concern alphabet + generated views + trivialized correspondences (§13) |
-| **arc42 / ADR** — documentation skeleton; decision log | E·N | emitted from instance (§12 Ω5); ADR + status discipline [Т]/[С]/[Г]/[О]/[И] (§13) |
+| **arc42 / ADR** — documentation skeleton; decision log | E·N | emitted from instance (§12 Ω5); ADR + status discipline [T]/[C]/[H]/[D]/[I] (§13) |
 | **TOGAF ADM / Zachman** — process cycle; interrogative coverage | E·E | Ω0–Ω9 with computable gates (§12); interrogatives = aspect×view queries (§13) |
 | **AADL** — analyzable embedded semantics | E | O/L channel contracts carry analysis annexes; AADL as mandated view (§5) |
 | **TLA+/Alloy** — formal behavior verification | E | mandatory formal view on heavy L-contracts (§13) |
@@ -689,7 +689,7 @@ laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
 | **Simon 1962** — near-decomposability | N | sparse-but-nonzero cross-blocks, quantified by the Φ window (§6) |
 | **Alexander** — pattern language; semilattice not tree | N | Fano incidence: overlapping lines over 7 aspects — a semilattice by theorem (§11) |
 | **DSM** — dependency matrix + clustering | N | Γ *is* the matrix — typed, PSD, dynamic, thresholded (§3) |
-| **VSM** — viability criterion; recursion; algedonic channel | N·N·N | four invariants [Т] (§6); depth tower (§10); $\mathcal V_{\mathrm{hed}} = dP/d\tau$ (§7) |
+| **VSM** — viability criterion; recursion; algedonic channel | N·N·N | four invariants [T] (§6); depth tower (§10); $\mathcal V_{\mathrm{hed}} = dP/d\tau$ (§7) |
 | **MAPE-K** — autonomic loop over knowledge | N | φ(Γ) + reconciliation flows, with convergence theorems (§8, §7) |
 | **Erlang/OTP / Kubernetes** — supervision; desired-state reconciliation | N·N | ℛ replacement flow (§7); ρ* attractor + DU channel (§5, §7) |
 | **Reactive Manifesto** — responsive/resilient/elastic/message-driven | N | thresholds + ℛ + O-budget elasticity + A/D channel style (§6, §7) |
@@ -702,7 +702,7 @@ laboratory verifies no row is empty and every mechanism anchor resolves (HL07:
 | **MCP / A2A** — tool contracts; agent peering | N·N | SL/AS contract channels (§5); T-77 synastry with measurable gain (§9) |
 | **Anthropic agent patterns** — workflows-vs-agents; evaluator-optimizer | N | DL regulation loop + LE evidence critic + R_φ fidelity (§17, §8) |
 | **LangGraph/AutoGen/CrewAI** — orchestration graphs | E | U-organ emitted as graph views (§13) |
-| **Nym/Loopix · Ethereum-modular · seL4** — reference architectures | N·N·N | re-derived in §15; re-derived in §16; LO-grounding channel at [Т]-grade (§5) |
+| **Nym/Loopix · Ethereum-modular · seL4** — reference architectures | N·N·N | re-derived in §15; re-derived in §16; LO-grounding channel at [T]-grade (§5) |
 
 Reading the table honestly in both directions: HOLARCH **adds** to every row at least
 one of {computable invariants, typed channels, dynamics, anti-Goodhart, composition
@@ -732,14 +732,14 @@ to "suggestive", and that result would be published in this page's status table.
 
 **Threshold transfer is calibration, not derivation.** Inside Γ-mathematics the
 thresholds are theorems. That a *software system's* concern budgets, assembled by the
-§14 constructor, deserve those exact thresholds is an [О]-choice validated so far by
+§14 constructor, deserve those exact thresholds is an [D]-choice validated so far by
 coherence of consequences (the ablation pathologies land on recognizable industry
 failure modes) — not by field data. The DESIGN class exists precisely to keep this
 distinction loud.
 
 **Consonances are rhymes.** BFT's 1/3, client-diversity's 1/3–2/3, Buterin's
 non-stacking L3s are *external* laws that share shape with internal theorems. The
-laboratory states each pair precisely and tags them CONS/[И]. None is presented as a
+laboratory states each pair precisely and tags them CONS/[I]. None is presented as a
 derivation, and the page contains no OSI-style numerology (§4 explicitly declines
 the one everyone expects).
 
@@ -767,17 +767,17 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 
 | Claim | Class / status | Witness |
 |-------|---------------|---------|
-| Seven-aspect alphabet is uniquely diagnosable at its size | [Т] import | T-224; HL01 |
-| 21 channels; SSOT names carry engineering readings unmodified | [О]+[И] | HL01; §5 |
-| Four invariants, thresholds, independence, robustness | [Т] import | T-124b/d, T-129, T-151; HL03 |
-| Three-flow dynamics; silver feeding floor; halt/reignition | [Т]/[С] import | T-262, T-259, T-288/289; HL12 |
-| Self-model functor, tower convergence, anti-Goodhart | [Т] import + [О] rule | T-96, T-191; §8 |
-| Composition gain = 2‖γ_cross‖² | [Т] import | T-77; HL11 (240/240) |
+| Seven-aspect alphabet is uniquely diagnosable at its size | [T] import | T-224; HL01 |
+| 21 channels; SSOT names carry engineering readings unmodified | [D]+[I] | HL01; §5 |
+| Four invariants, thresholds, independence, robustness | [T] import | T-124b/d, T-129, T-151; HL03 |
+| Three-flow dynamics; silver feeding floor; halt/reignition | [T]/[C] import | T-262, T-259, T-288/289; HL12 |
+| Self-model functor, tower convergence, anti-Goodhart | [T] import + [D] rule | T-96, T-191; §8 |
+| Composition gain = 2‖γ_cross‖² | [T] import | T-77; HL11 (240/240) |
 | Depth ladder and ceiling 3 | [Т/С] import | T-142; HL02 |
-| Pairwise monitoring is structure-blind; probe triads | [Т] import | T-226; HL13 |
+| Pairwise monitoring is structure-blind; probe triads | [T] import | T-226; HL13 |
 | Three worked designs land in the window; ablations break their own invariant | DESIGN | HL04–HL06 |
-| Mixnet arithmetic: f^ℓ, trilemma, knee at 3 | VERIFIED + external [Т] | HL08 |
-| BFT-1/3 and client-diversity rhymes | CONS [И] | HL09, HL14 |
+| Mixnet arithmetic: f^ℓ, trilemma, knee at 3 | VERIFIED + external [T] | HL08 |
+| BFT-1/3 and client-diversity rhymes | CONS [I] | HL09, HL14 |
 | Subsumption: 41 capabilities, 28 N / 12 E / 1 G | VERIFIED | HL07 |
 | Integration rides shared flows, not pairwise links | VERIFIED (constructor) | §12; lab history |
 | Inter-rater reliability of aspect assignment | **OPEN** | §19 protocol |

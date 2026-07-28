@@ -84,7 +84,7 @@ For understanding this claim the key word is *interiority*, not *consciousness*.
 
 ### Formal definition
 
-**Definition L0 [О].**{#определение-l0} Every system with $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$ possesses **interiority** — an inner aspect.
+**Definition L0 [D].**{#определение-l0} Every system with $\Gamma \in \mathcal{D}(\mathcal{H})$, $\dim \mathcal{H} \geq 1$ possesses **interiority** — an inner aspect.
 
 Here $\mathcal{D}(\mathcal{H})$ is the space of density matrices (Hermitian positive semi-definite operators with unit trace) on the Hilbert space $\mathcal{H}$. In the 7-dimensional UHM formulation: $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ — a Hermitian $7 \times 7$ matrix with $\mathrm{Tr}(\Gamma) = 1$, $\Gamma \geq 0$.
 
@@ -111,7 +111,7 @@ Formally this is expressed in the **E-dimension** (experiential, responsible for
 
 ### Formal definition
 
-**Definition L1 [О].**{#определение-l1} A system possesses phenomenal geometry if:
+**Definition L1 [D].**{#определение-l1} A system possesses phenomenal geometry if:
 $$
 \mathrm{rank}(\rho_E) > 1
 $$
@@ -171,7 +171,7 @@ The threshold $\Phi_{\text{th}} = 1$ has been **proved from first principles** (
 These are **DIFFERENT** theorems: T-129 establishes the threshold, T-140 constructs the composite measure.
 :::
 
-**Definition L2 [О].**{#определение-l2} A system possesses cognitive qualia if both conditions are satisfied:
+**Definition L2 [D].**{#определение-l2} A system possesses cognitive qualia if both conditions are satisfied:
 
 1. **Reflection:** $R(\Gamma) = \dfrac{1}{7P(\Gamma)} \geq R_{\text{th}} = 1/3$
 2. **Integration:** $\Phi(\Gamma) = \frac{\sum_{i \neq j} |\gamma_{ij}|^2}{\sum_i \gamma_{ii}^2} \geq \Phi_{\text{th}} = 1$
@@ -222,7 +222,7 @@ In everyday life meta-reflection manifests as experiences of the type "I notice 
 
 ### Formal definition
 
-**Definition L3 [О].**{#определение-l3} A system possesses network consciousness if:
+**Definition L3 [D].**{#определение-l3} A system possesses network consciousness if:
 $$
 R^{(2)}(\Gamma) \geq R^{(2)}_{\text{th}} = 1/4
 $$
@@ -271,7 +271,7 @@ This explains why meditative states of deep awareness (vipassana, zazen) require
 
 L4 is not a level that can be *reached*, but a horizon that can be *approached*. A system at L4 possesses *complete reflexive closure*: it knows itself to infinite depth. In terms of the phi-operator: $\varphi(\Gamma^*) = \Gamma^*$ — the self-model coincides exactly with reality.
 
-**Definition L4 [О].**{#определение-l4} A system possesses unitary consciousness if:
+**Definition L4 [D].**{#определение-l4} A system possesses unitary consciousness if:
 $$
 \lim_{n \to \infty} R^{(n)}(\Gamma) > 0 \quad \text{and} \quad P(\Gamma) > 6/7
 $$

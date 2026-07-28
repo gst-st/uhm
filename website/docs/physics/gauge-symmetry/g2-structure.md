@@ -209,7 +209,7 @@ The $G_2$-transformation $g: \Gamma \mapsto D(g)\,\Gamma\,D(g)^\dagger$ preserve
 | Reflection measure | $R = R(\Gamma)$ | Depth of self-observation |
 | Integration | $\Phi = \Phi(\Gamma)$ | System irreducibility |
 | Spectrum of $\Gamma$ | $\lambda_1 \geq \cdots \geq \lambda_7$ | Eigenvalue populations |
-| Total coherence | $\sum_{i < j} |\gamma_{ij}|^2$ | Overall connectivity of dimensions |
+| Total coherence | $\sum_{i < j} \|\gamma_{ij}\|^2$ | Overall connectivity of dimensions |
 | Fano structure | $f_{ijk}$ | Octonion multiplication table |
 :::
 

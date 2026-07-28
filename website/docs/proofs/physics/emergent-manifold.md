@@ -2,15 +2,15 @@
 sidebar_position: 2
 title: "Emergent Manifold M⁴"
 slug: /proofs/physics/emergent-manifold
-description: "Derivation of smooth 4-manifold M⁴ from categorical structure: background independence [П] → [Т]"
+description: "Derivation of smooth 4-manifold M⁴ from categorical structure: background independence [P] → [T]"
 ---
 
 # Emergent Manifold M⁴
 
-:::info Status: [Т] Proven
+:::info Status: [T] Proven
 **Background independence:** The 4-dimensional spacetime $M^4$ **is derived** from the categorical structure $\mathcal{C}$ via the Gelfand–Naimark–Connes chain. The product of spectral triples $M^4 \times F_{\text{int}}$ is a **theorem**, not a postulate.
 
-**New results:** T-117 – T-121 (5 theorems, 1 corollary). All [Т]. No new postulates, hypotheses, or open questions are introduced.
+**New results:** T-117 – T-121 (5 theorems, 1 corollary). All [T]. No new postulates, hypotheses, or open questions are introduced.
 :::
 
 ---
@@ -19,9 +19,9 @@ description: "Derivation of smooth 4-manifold M⁴ from categorical structure: b
 
 ### 1.1 Background Independence Gap
 
-UHM derives the base space $X = |N(\mathcal{C})|$ from categorical data [Т], proves the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [Т], and constructs the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with KO-dimension 6 [Т] (T-53).
+UHM derives the base space $X = |N(\mathcal{C})|$ from categorical data [T], proves the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [T], and constructs the finite spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ with KO-dimension 6 [T] (T-53).
 
-However, the product of spectral triples used to derive the Einstein equations (T-65 [Т]) **explicitly uses** $C^\infty(M^4)$ — functions on a smooth 4-manifold:
+However, the product of spectral triples used to derive the Einstein equations (T-65 [T]) **explicitly uses** $C^\infty(M^4)$ — functions on a smooth 4-manifold:
 
 $$
 (A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
@@ -31,15 +31,15 @@ The manifold $M^4$ was **borrowed** from classical differential geometry — the
 
 ### 1.2 Solution Strategy
 
-The solution is a **5-step chain** of Gelfand–Naimark–Connes, where each step relies on existing results [Т] or standard mathematical theorems:
+The solution is a **5-step chain** of Gelfand–Naimark–Connes, where each step relies on existing results [T] or standard mathematical theorems:
 
 | Step | Content | Source |
 |------|---------|--------|
-| 1 | Composite algebra | Tensor product [Т] |
-| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_{7^M}] \to C(S^1)$ [Т] |
+| 1 | Composite algebra | Tensor product [T] |
+| 2 | Temporal C*-algebra | $\mathbb{C}[\mathbb{Z}_{7^M}] \to C(S^1)$ [T] |
 | 3 | Spatial C*-algebra | Gelfand + Connes [standard mathematics] |
 | 4 | Reconstruction | Connes (2008) [standard mathematics] |
-| 5 | Product | Sector decomposition [Т] + steps 1–4 |
+| 5 | Product | Sector decomposition [T] + steps 1–4 |
 
 **No new axioms, postulates, or hypotheses are introduced.**
 
@@ -58,7 +58,7 @@ $$
 Observable algebra:
 
 $$
-A_M = \bigotimes_{m=1}^{M} A_{\text{int}}^{(m)}, \quad A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}) \quad \text{(T-53 [Т])}
+A_M = \bigotimes_{m=1}^{M} A_{\text{int}}^{(m)}, \quad A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C}) \quad \text{(T-53 [T])}
 $$
 
 ### 2.2 Macroscopic Observables
@@ -73,19 +73,19 @@ where $O^{(m)} = \mathbb{1} \otimes \cdots \otimes O \otimes \cdots \otimes \mat
 
 ### 2.3 Effective Clocks and the Temporal Algebra
 
-For $M$ holons, the effective clock period is $N_{\text{eff}} = 7^M$ [Т] (from the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#предел-n-infty)). The clock algebra is the group algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$.
+For $M$ holons, the effective clock period is $N_{\text{eff}} = 7^M$ [T] (from the [Emergent Time Theorem](/docs/proofs/dynamics/emergent-time#предел-n-infty)). The clock algebra is the group algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$.
 
 ---
 
 ## 3. Theorem T-117: Commutativity of the Macroscopic Algebra {#теорема-коммутативность-макроалгебры}
 
-:::tip Theorem T-117 (Commutativity of the Macroscopic Algebra) [Т]
+:::tip Theorem T-117 (Commutativity of the Macroscopic Algebra) [T]
 For a composite system of $M$ holons satisfying (AP)+(PH)+(QG)+(V) with finite-range Gap coupling, the algebra of macroscopic observables in the $\mathbf{3}+1$-effective sector is commutative in the thermodynamic limit $M \to \infty$.
 :::
 
 **Proof.**
 
-**Step 1 (Internal algebra).** Each holon has algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [Т]).
+**Step 1 (Internal algebra).** Each holon has algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [T]).
 
 **Step 2 (Non-commutativity at the microscale).** The total algebra $A_M = \bigotimes_m A_{\text{int}}^{(m)}$ is **non-commutative** (matrix algebras $M_3(\mathbb{C})$).
 
@@ -97,35 +97,35 @@ $$
 [\bar{O}_1(x), \bar{O}_2(y)] \to 0 \quad \text{as } M \to \infty, \; |x-y| > \ell
 $$
 
-**Clustering justification:** primitivity of the linear part $\mathcal{L}_0$ (T-39a [Т]) guarantees a unique stationary state $I/7$ for $\mathcal{L}_0$ and exponential convergence. Finiteness of the Gap ($\text{Gap} \in [0,1]$, compactness $(S^1)^{21}$) ensures a finite correlation radius.
+**Clustering justification:** primitivity of the linear part $\mathcal{L}_0$ (T-39a [T]) guarantees a unique stationary state $I/7$ for $\mathcal{L}_0$ and exponential convergence. Finiteness of the Gap ($\text{Gap} \in [0,1]$, compactness $(S^1)^{21}$) ensures a finite correlation radius.
 
 :::info Clustering of the full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$
-The Goderis–Verbeure–Vets theorem requires exponential decay of correlations for the **full** dynamics, not just the linear part $\mathcal{L}_0$. Formally: (1) $\mathcal{L}_0$ is primitive [T-39a], spectral gap $\lambda_{\text{gap}} > 0$; (2) regeneration $\mathcal{R}$ is a **local** operator (acts on each holon independently, introducing no long-range correlations); (3) by standard perturbation theory (Nachtergaele–Sims, 2006), adding a local perturbation $\mathcal{R}$ with $\|\mathcal{R}\| < \lambda_{\text{gap}}$ **preserves** the spectral gap and exponential decay. The condition $\|\mathcal{R}\| < \lambda_{\text{gap}}$ holds when $\kappa < \kappa_{\text{max}}$ (T-96 [Т]).
+The Goderis–Verbeure–Vets theorem requires exponential decay of correlations for the **full** dynamics, not just the linear part $\mathcal{L}_0$. Formally: (1) $\mathcal{L}_0$ is primitive [T-39a], spectral gap $\lambda_{\text{gap}} > 0$; (2) regeneration $\mathcal{R}$ is a **local** operator (acts on each holon independently, introducing no long-range correlations); (3) by standard perturbation theory (Nachtergaele–Sims, 2006), adding a local perturbation $\mathcal{R}$ with $\|\mathcal{R}\| < \lambda_{\text{gap}}$ **preserves** the spectral gap and exponential decay. The condition $\|\mathcal{R}\| < \lambda_{\text{gap}}$ holds when $\kappa < \kappa_{\text{max}}$ (T-96 [T]).
 
 **Scope note (framework-conditional).** Goderis–Verbeure–Vets 1989 applies under a clustering hypothesis (exponential decay of connected correlation functions). For the full UHM dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, clustering is argued above via primitivity of $\mathcal{L}_0$ (spectral gap, T-39a) plus local-perturbation stability of $\mathcal{R}$. The distinction **spectral gap of $\mathcal{L}_0$ alone $\neq$ clustering decomposition of $\mathcal{L}_\Omega$** must be kept in mind: the gap gives convergence to the invariant state $I/7$ but, strictly, clustering of the full generator requires a separate Lieb–Robinson / Nachtergaele–Sims-style bound that is sketched but not fully verified here. Full verification of this step is **pending** (listed as framework-conditional for T-117 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости)).
 :::
 
 :::info Verification of the clustering condition
-The exponential clustering condition $\|R\|_{\text{op}} < \Delta(L_0)$ is verified as follows: (1) for a single holon: $\|R\| = \kappa_{\max} \cdot \|\rho^* - \Gamma\| \cdot g_V \leq \kappa_{\max} \cdot 2 \cdot 1 = 2\kappa_{\max}$ (upper bound); (2) $\Delta(L_0) = \gamma_{\min}$ (minimum decoherence rate); (3) the condition $\kappa_{\max} < \gamma_{\min}/2$ is equivalent to regeneration being weaker than dissipation — which holds when $P > P_{\text{crit}}$ (balance is achieved precisely at $P_{\text{crit}}$). For inter-holon interactions: Gap coupling decays exponentially with distance (a consequence of finite correlation length $\xi_F$, T-95 [Т]).
+The exponential clustering condition $\|R\|_{\text{op}} < \Delta(L_0)$ is verified as follows: (1) for a single holon: $\|R\| = \kappa_{\max} \cdot \|\rho^* - \Gamma\| \cdot g_V \leq \kappa_{\max} \cdot 2 \cdot 1 = 2\kappa_{\max}$ (upper bound); (2) $\Delta(L_0) = \gamma_{\min}$ (minimum decoherence rate); (3) the condition $\kappa_{\max} < \gamma_{\min}/2$ is equivalent to regeneration being weaker than dissipation — which holds when $P > P_{\text{crit}}$ (balance is achieved precisely at $P_{\text{crit}}$). For inter-holon interactions: Gap coupling decays exponentially with distance (a consequence of finite correlation length $\xi_F$, T-95 [T]).
 :::
 
 **Step 5 (Closure).** The norm-closure of the algebra of macroscopic observables $\{\bar{O}(x)\}$ is a **commutative C*-algebra** $A_{\text{macro}}$. $\blacksquare$
 
-**Dependencies:** T-53 [Т], T-39a [Т], sector decomposition [Т]. Standard mathematics: quantum CLT (Goderis–Verbeure–Vets, 1989).
+**Dependencies:** T-53 [T], T-39a [T], sector decomposition [T]. Standard mathematics: quantum CLT (Goderis–Verbeure–Vets, 1989).
 
 ---
 
 ## 4. Theorem T-118: Emergent Temporal Manifold {#теорема-эмерджентное-время}
 
-:::tip Theorem T-118 (Emergent Temporal Manifold) [Т]
+:::tip Theorem T-118 (Emergent Temporal Manifold) [T]
 The temporal part of $A_{\text{macro}}$ is isomorphic to $C_0(\mathbb{R})$ — the algebra of continuous functions vanishing at infinity.
 :::
 
 **Proof.**
 
-**Step 1 (Composite clocks).** $N_{\text{eff}} = 7^M$ [Т] ([Emergent Time](/docs/proofs/dynamics/emergent-time#предел-n-infty)).
+**Step 1 (Composite clocks).** $N_{\text{eff}} = 7^M$ [T] ([Emergent Time](/docs/proofs/dynamics/emergent-time#предел-n-infty)).
 
-**Step 2 (Algebraic limit).** The clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$ converges to $C(S^1)$ as C*-algebras [Т] (ibid., §3.8). This is a standard result of group algebra theory: the Gelfand spectrum $\hat{\mathbb{Z}}_N = \mathbb{Z}_N \cong$ roots of unity $\subset S^1$, and in the limit $N \to \infty$ they are dense in $S^1$.
+**Step 2 (Algebraic limit).** The clock algebra $\mathbb{C}[\mathbb{Z}_{7^M}]$ converges to $C(S^1)$ as C*-algebras [T] (ibid., §3.8). This is a standard result of group algebra theory: the Gelfand spectrum $\hat{\mathbb{Z}}_N = \mathbb{Z}_N \cong$ roots of unity $\subset S^1$, and in the limit $N \to \infty$ they are dense in $S^1$.
 
 **Step 3 (Decompactification).** $C(S^1) \to C_0(\mathbb{R})$ in the limit $M \to \infty$. Formally: the embedding $\mathbb{Z} \hookrightarrow \mathbb{R}$ in the continuous limit gives the dual map $\hat{\mathbb{R}} = \mathbb{R} \to S^1 = \hat{\mathbb{Z}}$. As $M \to \infty$, the period $T = 7^M \cdot \delta\tau \to \infty$, and $S^1$ unrolls into $\mathbb{R}$:
 
@@ -135,17 +135,17 @@ $$
 
 This is the standard Pontryagin construction: $C_0(\mathbb{R})$ is the inductive limit $\varinjlim_{T} C(S^1_T)$. $\blacksquare$
 
-**Dependencies:** Existing results [Т] (emergent time, PW mechanism). Standard mathematics: Pontryagin duality.
+**Dependencies:** Existing results [T] (emergent time, PW mechanism). Standard mathematics: Pontryagin duality.
 
 :::note Formalization of an existing result
-T-118 contains nothing fundamentally new — it is an explicit formulation of a result that already followed from the existing theory of time [Т].
+T-118 contains nothing fundamentally new — it is an explicit formulation of a result that already followed from the existing theory of time [T].
 :::
 
 ---
 
 ## 5. Theorem T-119: Emergent Spatial Manifold {#теорема-эмерджентное-пространство}
 
-:::tip Theorem T-119 (Emergent Spatial Manifold) [Т]
+:::tip Theorem T-119 (Emergent Spatial Manifold) [T]
 The spatial part of $A_{\text{macro}}$ (restricted to the $\{A,S,D\}$-sector) is isomorphic to $C(\Sigma^3)$ for the unique smooth compact orientable spin 3-manifold $\Sigma^3$.
 :::
 
@@ -159,13 +159,13 @@ $$
 d(m, n) = \sup\{|f(m) - f(n)| : \|[D_{\text{eff}}, f]\| \leq 1\}
 $$
 
-where $D_{\text{eff}}$ is the effective Dirac operator restricted to the $\{A,S,D\}$-sector (follows from T-53 [Т]).
+where $D_{\text{eff}}$ is the effective Dirac operator restricted to the $\{A,S,D\}$-sector (follows from T-53 [T]).
 
 **Step 2 (Spectral dimension = 3).**
 
 The spectral dimension of the emergent spatial manifold equals 3. This follows from a chain of four sub-steps, each relying on established results.
 
-**Step 2a (Sector decomposition).** By T-53 [Т], the 7-dimensional representation of $G_2$ on $\mathrm{Im}(\mathbb{O})$ decomposes under the stabilizer $\mathrm{Stab}_{G_2}(e_O) \cong \mathrm{SU}(3)$ as:
+**Step 2a (Sector decomposition).** By T-53 [T], the 7-dimensional representation of $G_2$ on $\mathrm{Im}(\mathbb{O})$ decomposes under the stabilizer $\mathrm{Stab}_{G_2}(e_O) \cong \mathrm{SU}(3)$ as:
 
 $$
 \mathbf{7}_{G_2} = \mathbf{1}_O \oplus \mathbf{3}_{SU(3)} \oplus \bar{\mathbf{3}}_{SU(3)}
@@ -203,7 +203,7 @@ The spectral-dimension claim $d_s = 3$ rests on a **bridge** between two distinc
 
 **Step 3 (Gelfand reconstruction).**
 
-$A_{\text{macro}}^{\text{spatial}}$ is a commutative C*-algebra (T-117 [Т]). By the Gelfand–Naimark theorem (standard mathematics):
+$A_{\text{macro}}^{\text{spatial}}$ is a commutative C*-algebra (T-117 [T]). By the Gelfand–Naimark theorem (standard mathematics):
 
 $$
 A_{\text{macro}}^{\text{spatial}} \cong C(Y)
@@ -217,7 +217,7 @@ The proof **does not assume** that holons are "placed" in a pre-given space. The
 
 **Step 4 ($\dim(Y) = 3$).**
 
-The spectral dimension of $Y$ is 3. This follows from the representation of $G_2$ on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$: the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is an **algebraic** consequence of the stabilizer of the $O$-direction in $G_2$ (T-53 [Т]), giving $\mathrm{SU}(3)$ and the fundamental representation $\mathbf{3}$. The dimension $\dim(\mathbf{3}) = 3$ is determined by the **algebraic structure** of $G_2$, not by any assumption of spatiality. Hausdorff dimension: $\dim_H(Y) = d_s = 3$.
+The spectral dimension of $Y$ is 3. This follows from the representation of $G_2$ on $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7$: the sector decomposition $7 = 1_O \oplus \mathbf{3} \oplus \bar{\mathbf{3}}$ is an **algebraic** consequence of the stabilizer of the $O$-direction in $G_2$ (T-53 [T]), giving $\mathrm{SU}(3)$ and the fundamental representation $\mathbf{3}$. The dimension $\dim(\mathbf{3}) = 3$ is determined by the **algebraic structure** of $G_2$, not by any assumption of spatiality. Hausdorff dimension: $\dim_H(Y) = d_s = 3$.
 
 **Step 5 (Connes reconstruction axioms).**
 
@@ -225,16 +225,16 @@ The effective spatial spectral triple $(A_{\text{macro}}^{\text{spatial}}, H_{\t
 
 | Axiom | Check | Source |
 |-------|-------|--------|
-| (i) Dimension $p = 3$ | Step 2 | $\dim(\mathbf{3}) = 3$ [Т] |
-| (ii) Regularity | See below | Explicit verification [Т] |
-| (iii) Finiteness | $H_\infty$ is a finitely generated projective module | $\dim(H_{\text{int}}) = 7 < \infty$ [Т] |
-| (iv) Orientability | Hochschild 3-cycle $c=\sum_{\sigma\in S_3}\mathrm{sgn}(\sigma)\,1\otimes e_{\sigma(1)}\otimes e_{\sigma(2)}\otimes e_{\sigma(3)}$, $\pi_D(c)=\chi_{\text{int}}$ | Explicit construction [Т] |
-| (v) Poincaré duality | Atiyah–Singer on Dirac triple | Explicit verification [Т] |
-| (vi) Absolute continuity | Dixmier trace = Wodzicki residue with smooth density | Heat-kernel expansion [Т] |
+| (i) Dimension $p = 3$ | Step 2 | $\dim(\mathbf{3}) = 3$ [T] |
+| (ii) Regularity | See below | Explicit verification [T] |
+| (iii) Finiteness | $H_\infty$ is a finitely generated projective module | $\dim(H_{\text{int}}) = 7 < \infty$ [T] |
+| (iv) Orientability | Hochschild 3-cycle $c=\sum_{\sigma\in S_3}\mathrm{sgn}(\sigma)\,1\otimes e_{\sigma(1)}\otimes e_{\sigma(2)}\otimes e_{\sigma(3)}$, $\pi_D(c)=\chi_{\text{int}}$ | Explicit construction [T] |
+| (v) Poincaré duality | Atiyah–Singer on Dirac triple | Explicit verification [T] |
+| (vi) Absolute continuity | Dixmier trace = Wodzicki residue with smooth density | Heat-kernel expansion [T] |
 
-**(ii) Regularity [Т].** The macroscopic algebra $A_{\text{macro}}^{\text{spatial}}$ is the norm-closure of $\bigotimes_{m \in \Lambda} A_{\text{int}}^{(m)}|_{\mathbf{3}}$ in the thermodynamic limit. As a direct limit of finite-dimensional matrix algebras, it is a pre-$C^*$-algebra closed under holomorphic functional calculus (every element has bounded spectrum; Riesz functional calculus applies). The commutator $[D_{\text{eff}}, a]$ for $a \in A_{\text{macro}}^{\text{spatial}}$ is bounded because $D_{\text{eff}}$ acts on the finitely generated module $H_{\text{eff}}$ and each Lindblad generator $L_k$ is bounded (T-39a [Т]). Therefore both $A$ and $[D,A]$ lie in the smooth domain $\bigcap_{n=1}^{\infty} \mathrm{Dom}(\delta^n)$ where $\delta(T) = [|D|, T]$.
+**(ii) Regularity [T].** The macroscopic algebra $A_{\text{macro}}^{\text{spatial}}$ is the norm-closure of $\bigotimes_{m \in \Lambda} A_{\text{int}}^{(m)}|_{\mathbf{3}}$ in the thermodynamic limit. As a direct limit of finite-dimensional matrix algebras, it is a pre-$C^*$-algebra closed under holomorphic functional calculus (every element has bounded spectrum; Riesz functional calculus applies). The commutator $[D_{\text{eff}}, a]$ for $a \in A_{\text{macro}}^{\text{spatial}}$ is bounded because $D_{\text{eff}}$ acts on the finitely generated module $H_{\text{eff}}$ and each Lindblad generator $L_k$ is bounded (T-39a [T]). Therefore both $A$ and $[D,A]$ lie in the smooth domain $\bigcap_{n=1}^{\infty} \mathrm{Dom}(\delta^n)$ where $\delta(T) = [|D|, T]$.
 
-**(iv) Orientability — explicit Hochschild 3-cycle [Т] (expanded 2026-04-17).**
+**(iv) Orientability — explicit Hochschild 3-cycle [T] (expanded 2026-04-17).**
 A commutative spectral triple of dimension 3 is orientable iff there exists a Hochschild 3-cycle $c\in Z_3(A,A)$ such that $\pi_D(c)=\chi$ where $\pi_D:Z_n(A,A)\to\mathrm{End}(H)$ is the representation $\pi_D(a_0\otimes a_1\otimes\cdots\otimes a_n)=a_0[D,a_1]\cdots[D,a_n]$ (Connes 2008, §2, Ax. 7'). Construction:
 1. Let $e_1,e_2,e_3$ be generators of $A_\mathrm{macro}^\mathrm{spatial}$ corresponding to local coordinates on the $\mathbf 3$-sector (from the sector decomposition [T-48a]).
 2. Define $c:=\sum_{\sigma\in S_3}\mathrm{sgn}(\sigma)\, 1\otimes e_{\sigma(1)}\otimes e_{\sigma(2)}\otimes e_{\sigma(3)}$.
@@ -243,9 +243,9 @@ A commutative spectral triple of dimension 3 is orientable iff there exists a Ho
 
 Hence orientability holds, with explicit cycle. $\checkmark$
 
-**(v) Poincaré duality [Т].** For a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
+**(v) Poincaré duality [T].** For a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
 
-**(vi) Absolute continuity [Т].**
+**(vi) Absolute continuity [T].**
 A spectral triple satisfies *absolute continuity* if the positive linear functional $\mathrm{Tr}_\omega(a|D|^{-p})$ on $A_\mathrm{macro}^\mathrm{spatial}$ (Dixmier trace, $p=3$) is absolutely continuous with respect to the Gelfand measure on $\mathrm{Spec}(A_\mathrm{macro}^\mathrm{spatial})$. **Proof**: on compact finite-dimensional stratum $\mathcal D_7$ the Dixmier trace coincides with the Wodzicki residue (Connes 1994, §IV), which admits a local density given by a smooth volume form derived from the Seeley–de Witt coefficients of $D_\mathrm{eff}$. Since $D_\mathrm{eff}$ is constructed as a direct limit of finite Hermitian operators with spectrum bounded below, its heat kernel $e^{-tD_\mathrm{eff}^2}$ has a well-defined small-$t$ expansion (Gilkey 1995, §1.7), giving a smooth volume density. Hence $\mathrm{Tr}_\omega$ is absolutely continuous. $\checkmark$
 
 **Step 6 (Connes reconstruction theorem).**
@@ -256,34 +256,34 @@ By Connes' reconstruction theorem (Connes, 2008; Connes, 2013): a commutative sp
 The formulation of Connes' 2013 reconstruction theorem uses **seven** axioms. In Step 5 above, axioms (i)–(vi) are argued explicitly via the constructions listed (sector decomposition for dimension, direct-limit argument for regularity, finitely-generated-module structure for finiteness, explicit Hochschild 3-cycle for orientability, Atiyah–Singer for Poincaré duality, heat-kernel density for absolute continuity). The **seventh axiom — the first-order (order-one) condition** $[[D,a],b^\circ]=0$ for $a,b\in A$ and $b^\circ = Jb^*J^{-1}$ — is satisfied automatically for $A_{\text{macro}}^{\text{spatial}}$ commutative acting diagonally, but for the composite triple carrying the $J$-induced bimodule structure it reduces to a specific computation on the effective Dirac operator restricted to the $\mathbf{3}$-sector. This computation is **sketched** (via the product-triple KO-dim-6 structure from T-53) but has **not been fully written out**; full verification is the framework-conditional gap flagged for T-119 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости).
 :::
 
-**Dependencies:** T-117 [Т], T-53 [Т], sector decomposition [Т]. Standard mathematics: Gelfand–Naimark, Connes (2008, 2013). **Framework-conditional**: applicability of Connes 2013 reconstruction to the UHM effective spatial triple requires the 7-axiom check with the first-order condition treated as noted above.
+**Dependencies:** T-117 [T], T-53 [T], sector decomposition [T]. Standard mathematics: Gelfand–Naimark, Connes (2008, 2013). **Framework-conditional**: applicability of Connes 2013 reconstruction to the UHM effective spatial triple requires the 7-axiom check with the first-order condition treated as noted above.
 
 ---
 
 ## 6. Theorem T-120: Product of Spectral Triples {#теорема-произведение-троек}
 
-:::tip Theorem T-120 (Product of Spectral Triples) [Т]
+:::tip Theorem T-120 (Product of Spectral Triples) [T]
 In the thermodynamic limit, the effective spectral triple of the composite system factorizes:
 
 $$
 (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
 $$
 
-where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from T-53 [Т].
+where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from T-53 [T].
 :::
 
 **Proof.**
 
-**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [Т]).
+**Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [T]).
 
-**Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [Т]).
+**Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [T]).
 
-**Step 3 (Internal component).** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [Т]).
+**Step 3 (Internal component).** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [T]).
 
 **Step 4 (Sector independence).** At the macroscopic level:
 - O-sector $\perp$ $\{A,S,D\}$-sector $\perp$ $\{L,E,U\}$-sector
 
-This follows from the sector decomposition [Т] and decoherence of inter-sector coherences at macroscopic scales (T-117).
+This follows from the sector decomposition [T] and decoherence of inter-sector coherences at macroscopic scales (T-117).
 
 **Step 5 (Product of algebras).**
 
@@ -299,7 +299,7 @@ $$
 d_{\text{total}} = \underbrace{4}_{M^4} + \underbrace{6}_{\text{int}} = 10 \equiv 2 \pmod{8}
 $$
 
-(T-53 [Т]).
+(T-53 [T]).
 
 **Step 7 (Connes product theorem).** By the product theorem (Connes, 1996; Chamseddine–Connes, 1997): the product of spectral triples satisfying NCG axioms yields a spectral triple satisfying NCG axioms. Standard result.
 
@@ -307,7 +307,7 @@ $$
 
 The Lorentzian signature $(+1,-1,-1,-1)$ is derived in four sub-steps from the KO-dimension structure and the Page–Wootters constraint.
 
-**Step 8a (KO-dimension 6 real structure).** By T-53 [Т], the internal spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ has KO-dimension 6, equipped with a real structure $J: H_{\text{int}} \to H_{\text{int}}$ (antilinear isometry) satisfying the sign table:
+**Step 8a (KO-dimension 6 real structure).** By T-53 [T], the internal spectral triple $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ has KO-dimension 6, equipped with a real structure $J: H_{\text{int}} \to H_{\text{int}}$ (antilinear isometry) satisfying the sign table:
 
 | KO-dim | $J^2$ | $JD$ | $J\chi$ |
 |:------:|:-----:|:----:|:-------:|
@@ -315,7 +315,7 @@ The Lorentzian signature $(+1,-1,-1,-1)$ is derived in four sub-steps from the K
 
 That is: $J^2 = +\mathbb{1}$, $JD = DJ$, $J\chi = -\chi J$ where $\chi$ is the grading operator.
 
-**Step 8b (Page–Wootters energy constraint).** The Wheeler–DeWitt constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (T-87 [Т]) implies total energy conservation:
+**Step 8b (Page–Wootters energy constraint).** The Wheeler–DeWitt constraint $[\hat{C}, \Gamma_{\text{total}}] = 0$ (T-87 [T]) implies total energy conservation:
 
 $$
 E_O + E_{\text{rest}} = 0 \quad \Longrightarrow \quad E_O = -E_{\text{rest}}
@@ -346,53 +346,53 @@ The argument that KO-dim 6 plus the sign relations $J^2=+1$, $JD=DJ$, $J\chi=-\c
 :::
 
 **Conclusion:** The signature $(+1,-1,-1,-1)$ is uniquely determined by:
-- KO-dimension 6 (from $G_2$-structure, T-53 [Т])
-- Page–Wootters constraint (from A5, T-87 [Т])
+- KO-dimension 6 (from $G_2$-structure, T-53 [T])
+- Page–Wootters constraint (from A5, T-87 [T])
 - Sign convention ($D_O > 0$, forward-ticking clock)
 
 No degree of freedom remains. $\blacksquare$
 
-**Dependencies:** T-117 [Т], T-118 [Т], T-119 [Т], T-53 [Т]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
+**Dependencies:** T-117 [T], T-118 [T], T-119 [T], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
 :::warning Compatibility with existing results
-The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [Т]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [П] to [Т].
+The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [T].
 :::
 
 ---
 
 ## 7. Theorem T-121: Closure of Lovelock Gaps {#теорема-лавлок-замыкание}
 
-:::tip Theorem T-121 (Closure of Lovelock Gaps) [Т]
+:::tip Theorem T-121 (Closure of Lovelock Gaps) [T]
 Three gaps of the Lovelock argument ([§3.4](/docs/physics/gravity/einstein-equations#34-ограничения-аргумента-лавлока)) are closed:
 :::
 
 **Gap 1 (Discreteness vs. continuity): CLOSED.**
 
-$M^4$ is a smooth manifold (T-120 [Т]). Lovelock's theorem (1971) applies directly to the effective 4D action on $M^4$.
+$M^4$ is a smooth manifold (T-120 [T]). Lovelock's theorem (1971) applies directly to the effective 4D action on $M^4$.
 
 **Gap 2 (Covariance): CLOSED.**
 
 4D diffeomorphic covariance of $S_{\text{Gap}}^{(4D)}$ follows from:
-- (a) $G_2$-covariance of the full Gap action [Т]
-- (b) Sector decomposition commutes with $G_2 \to SU(3) \to SO(3) \subset \text{Diff}(M^4)$ (T-53 [Т])
+- (a) $G_2$-covariance of the full Gap action [T]
+- (b) Sector decomposition commutes with $G_2 \to SU(3) \to SO(3) \subset \text{Diff}(M^4)$ (T-53 [T])
 - (c) The emergent metric $g_{\mu\nu}$ inherits full diffeomorphic invariance from the Chamseddine–Connes spectral action (standard NCG result)
 
 **Gap 3 (Aharonov–Bohm): NOT a gap.**
 
 The Aharonov–Bohm counterexample concerns PT-properties of holonomy and does not affect the main argument (spectral action), only the supplementary Lovelock argument. Since gaps 1 and 2 are closed, the Lovelock argument is now fully applicable, and PT-properties of holonomy do not affect its validity. $\blacksquare$
 
-**Dependencies:** T-120 [Т], T-53 [Т]. Standard mathematics: Lovelock (1971).
+**Dependencies:** T-120 [T], T-53 [T]. Standard mathematics: Lovelock (1971).
 
 :::note Status of arguments for Einstein equations
-- **Main argument** (spectral action, T-65): [Т] — independent of Lovelock
-- **Supplementary argument** (Lovelock): now also [Т] (T-121)
+- **Main argument** (spectral action, T-65): [T] — independent of Lovelock
+- **Supplementary argument** (Lovelock): now also [T] (T-121)
 :::
 
 ---
 
 ## 8. Corollary T-120b: Vacuum Topology {#следствие-вакуумная-топология}
 
-:::tip Corollary T-120b (Vacuum Topology) [Т]
+:::tip Corollary T-120b (Vacuum Topology) [T]
 For the vacuum Gap-configuration (minimizing $V_{\text{Gap}}$), the spatial manifold $\Sigma^3$ has constant curvature (is maximally symmetric):
 
 - The sign of curvature is determined by $\text{sign}(\Lambda_{\text{Gap}})$
@@ -406,13 +406,13 @@ $$
 
 **Proof.**
 
-1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [Т], vacuum uniqueness T-64 [Т]).
+1. **Vacuum symmetry.** The Gap vacuum configuration is invariant under $\mathrm{SU}(3) \subset G_2$ — the stabilizer of the O-direction in $G_2$ (sector decomposition [T], vacuum uniqueness T-64 [T]).
 
 2. **Transitivity.** $\mathrm{SU}(3)$ acts transitively on the unit sphere $S^5 \subset \mathbb{C}^3$ (fundamental representation of the $\mathbf{3}$-sector) with isotropy $\mathrm{SU}(2)$, so $\mathrm{SU}(3)/\mathrm{SU}(2)\cong S^5$. The vacuum $3$-manifold $\Sigma^3$ is the fixed-radius orbit of the residual $\mathrm{SO}(4)\subset\mathrm{SU}(3)\ltimes(\text{phases})$ acting on the spatial section; its induced metric inherits an isometry group of dimension $\dim(\mathrm{Isom}(\Sigma^3)) \geq 6$. (The $\mathrm{SU}(3)$ orbit is $S^5$, not $S^2$; the $3$-manifold arises from the constant-curvature homogeneous structure, not directly as the $\mathrm{SU}(3)$-orbit.)
 
 3. **Maximal dimension.** For a 3-manifold, the maximum isometry-group dimension is $\frac{1}{2} \cdot 3 \cdot 4 = 6$ (attained only on spaces of constant curvature). Hence $\mathrm{Isom}(\Sigma^3)$ has exactly the maximal dimension 6, and $\Sigma^3$ is a space of constant curvature.
 
-4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [Т], T-186(c) [Т]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
+4. **Curvature sign.** $\Lambda_{\text{Gap}} > 0$ (T-71 [T], T-186(c) [Т]: $\Delta F > 0$ unconditionally) $\Rightarrow$ positive curvature $\Rightarrow$ $k = +1$.
 
 5. **Uniqueness (up to spherical space form).** Constant positive curvature + $\dim\mathrm{Isom}=6$ singles out the round metric; the **simply-connected** such 3-manifold is $S^3$ ($\mathrm{Isom}(S^3) = \mathrm{SO}(4)$, $\dim = 6$). If $\pi_1(\Sigma^3)\neq 1$, $\Sigma^3$ could be a spherical space form $S^3/\Gamma$ (e.g. $\mathbb{RP}^3=S^3/\mathbb{Z}_2$, which also has $\dim\mathrm{Isom}=6$). The vacuum's simple-connectivity — from the contractibility of the Gap configuration space (T-64 unique vacuum + $H^1=0$) — selects $\Sigma^3\cong S^3$. $\blacksquare$
 
@@ -426,15 +426,15 @@ $k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 20
 
 | Result | Old Status | New Status | Reason |
 |--------|:---:|:---:|--------|
-| Commutativity of macro-algebra | — | **[Т]** T-117 | Quantum CLT + clustering |
-| Temporal manifold | [Т] (partial) | **[Т]** T-118 | Explicit formalization |
-| Spatial manifold | [П] | **[Т]** T-119 | Gelfand + Connes |
-| Product of triples | [П] | **[Т]** T-120 | T-117 + T-118 + T-119 |
+| Commutativity of macro-algebra | — | **[T]** T-117 | Quantum CLT + clustering |
+| Temporal manifold | [T] (partial) | **[T]** T-118 | Explicit formalization |
+| Spatial manifold | [P] | **[T]** T-119 | Gelfand + Connes |
+| Product of triples | [P] | **[T]** T-120 | T-117 + T-118 + T-119 |
 | Lovelock: gap 1 | open | **closed** T-121 | $M^4$ is smooth |
 | Lovelock: gap 2 | open | **closed** T-121 | Inherited from $G_2$ |
-| Compactification 6D → 4D | [П] | **[Т]** | Closed by T-120 |
-| Background independence | [П] | **[Т]** | $M^4$ derived |
-| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[Т]** derived | T-120 |
+| Compactification 6D → 4D | [P] | **[T]** | Closed by T-120 |
+| Background independence | [P] | **[T]** | $M^4$ derived |
+| Product $M^4 \times F_{\text{int}}$ "borrowed" | implicit assumption | **[T]** derived | T-120 |
 
 ---
 
@@ -444,26 +444,26 @@ $k=+1$ (closed) is compatible with data: $\Omega_k = 0.0007\pm0.0019$ (Planck 20
 |---------------------|-----------|
 | Thermodynamic limit $M \to \infty$ | Standard mathematical limit, analogous to classical mechanics from QM. Corrections $O(7^{-M})$ are exponentially small. Not a new open question |
 | Specific topology of $\Sigma^3$ | Determined via $\Lambda_{\text{Gap}}$ and vacuum symmetry (T-120b). Not open |
-| Non-perturbative partition function $Z_N \to Z$ | Was [П] **before** this work. Not related to background independence. Not a new question |
+| Non-perturbative partition function $Z_N \to Z$ | Was [P] **before** this work. Not related to background independence. Not a new question |
 | Smoothness of $M^4$ for finite $M$ | $M^4$ is defined in the limit. For finite $M$, geometry is "blurred" at the Planck scale — a **prediction**, not an open question |
 
 ---
 
 ## 11. Consistency Check {#согласованность}
 
-### 11.1 Compatibility with the Spectral Action [Т]
+### 11.1 Compatibility with the Spectral Action [T]
 
 The derived $M^4$ generates **exactly the same** product of spectral triples that was previously postulated. All results depending on this product (T-65, $G_N$, Einstein equations) remain **unchanged**.
 
-### 11.2 Compatibility with Page–Wootters [Т]
+### 11.2 Compatibility with Page–Wootters [T]
 
 The PW mechanism (A5) for emergent time is a **special case** of T-118. The temporal manifold $\mathbb{R}$ from T-118 is the continuous limit of discrete PW-time $\mathbb{Z}_7$.
 
-### 11.3 Compatibility with Sector Decomposition [Т]
+### 11.3 Compatibility with Sector Decomposition [T]
 
 T-119 and T-120 **use** the sector decomposition, not modify it. The structure $7 = 1 + 3 + \bar{3}$ is a prerequisite, not a consequence.
 
-### 11.4 Compatibility with $G_2$-Rigidity [Т]
+### 11.4 Compatibility with $G_2$-Rigidity [T]
 
 The symmetry $G_2 = \text{Aut}(\mathbb{O})$ acts on the internal space $F_{\text{int}}$, not on $M^4$. The derivation of $M^4$ is compatible with (and independent of) the $G_2$ structure.
 
@@ -536,7 +536,7 @@ graph TD
     style T121 fill:#2d6,stroke:#000
 ```
 
-All arrows lead from **[Т]** or **standard mathematics** to **[Т]**. The chain contains no [П], [Г], or [С].
+All arrows lead from **[T]** or **standard mathematics** to **[T]**. The chain contains no [P], [H], or [C].
 
 ---
 

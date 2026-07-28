@@ -16,7 +16,7 @@ This chapter answers the question: **does opacity (Gap) obey the laws of thermod
 :::tip Intuitive explanation
 Imagine a **stained-glass window** in a cathedral. Each glass pane can be transparent (Gap $= 0$) or fully opaque (Gap $= 1$), with any intermediate value.
 
-**Gap thermodynamics** answers the question: **which window configuration is energetically "cheaper"?** It turns out the system tends toward a specific transparency pattern — the **Gap vacuum** — just as water flows to the lowest point of a landscape. This vacuum is unique ([T-61 [Т]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)), and it is determined by the balance of three forces: the drive toward transparency (entropy), the drive toward order (coherence), and the arrow of time (octonionic associator).
+**Gap thermodynamics** answers the question: **which window configuration is energetically "cheaper"?** It turns out the system tends toward a specific transparency pattern — the **Gap vacuum** — just as water flows to the lowest point of a landscape. This vacuum is unique ([T-61 [T]](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум)), and it is determined by the balance of three forces: the drive toward transparency (entropy), the drive toward order (coherence), and the arrow of time (octonionic associator).
 
 The effective temperature $T_{\text{eff}}$ shows how "hot" the system is: at high temperature all panes of the window are equally murky (disordered phase); at low temperature a structured pattern emerges (ordered phase).
 :::
@@ -29,7 +29,7 @@ This document develops the thermodynamic formalism for the [gap measure](/docs/p
 
 ### Map bundle
 
-:::tip Theorem 1.1 (Serre bundle) [Т]
+:::tip Theorem 1.1 (Serre bundle) [T]
 The space of maps $\mathrm{Map}(\Gamma, \Omega)$ admits the structure of a **Serre bundle**:
 
 $$
@@ -56,7 +56,7 @@ $$
 
 ### Holonomy
 
-:::info Interpretation (Gap holonomy) [И]
+:::info Interpretation (Gap holonomy) [I]
 Holonomy of a closed loop $C$ in parameter space:
 
 $$
@@ -74,7 +74,7 @@ Nontrivial holonomy $\mathrm{Hol}(C) \neq \mathbb{1}$ means that under a cyclic 
 
 ### Manifold of Gap profiles $\mathcal{M}_{\mathrm{Gap}}$
 
-:::info Definition (Manifold of Gap configurations) [Т]
+:::info Definition (Manifold of Gap configurations) [T]
 The space of Gap profiles is defined as:
 
 $$
@@ -88,7 +88,7 @@ with the additional realizability condition: $\exists\, \Gamma \in \mathcal{D}(\
 
 ### Quantum Fisher metric on $\mathcal{D}(\mathbb{C}^7)$
 
-:::tip Theorem 2.0 (Quantum Fisher metric) [Т]
+:::tip Theorem 2.0 (Quantum Fisher metric) [T]
 The quantum Fisher metric on the space of density matrices $\mathcal{D}(\mathbb{C}^7)$:
 
 $$
@@ -106,7 +106,7 @@ $$
 
 ### Fisher metric on Gap profiles
 
-:::tip Theorem 2.1 (Fisher metric) [Т]
+:::tip Theorem 2.1 (Fisher metric) [T]
 The space of Gap profiles $\{G_{ij}\} = \{\mathrm{Gap}(i,j)\}$ is endowed with the **Fisher information metric**:
 
 $$
@@ -123,7 +123,7 @@ where $p(x|\{G\})$ is the probability of observing data $x$ at a fixed Gap profi
 
 ### Cramér–Rao inequality
 
-:::tip Theorem 2.2 (Lower bound for Gap estimation) [Т]
+:::tip Theorem 2.2 (Lower bound for Gap estimation) [T]
 For any unbiased estimator $\hat{G}_{ij}$ from $N$ observations:
 
 $$
@@ -145,7 +145,7 @@ where the infimum is taken over all smooth paths $\gamma: [0,1] \to \mathcal{G}$
 
 **Interpretation:** $d_F$ is the number of "statistical distinguishabilities" between two Gap configurations. The larger $d_F$, the easier it is to distinguish one state from another from observable data.
 
-:::info Interpretation (Geodesics as therapeutic path) [И]
+:::info Interpretation (Geodesics as therapeutic path) [I]
 A geodesic in $\mathcal{M}_{\mathrm{Gap}}$ defines the **optimal therapeutic path** — a sequence of minimally distinguishable Gap changes leading from a pathological to a healthy profile. The geodesic length $d_F$ is a measure of the "therapeutic work" required for the transition.
 :::
 
@@ -157,7 +157,7 @@ The connection between the Gap operator and the octonionic cross product is disc
 
 The octonionic **associator** $[e_i, e_j, e_k] := (e_i e_j)e_k - e_i(e_j e_k)$ vanishes for triples lying on [Fano lines](/docs/proofs/minimality/theorem-octonionic-derivation), and is nonzero for non-Fano triples.
 
-:::tip Theorem 3.2 (Lower Gap bound from the associator) [Т]
+:::tip Theorem 3.2 (Lower Gap bound from the associator) [T]
 For any pair $(i,j)$ with $i \neq j$:
 
 $$
@@ -177,12 +177,12 @@ where:
 | On a Fano line | $[e_i, e_j, e_k] = 0$ | Can be zero (transparency possible) |
 | Off a Fano line | $[e_i, e_j, e_k] \neq 0$ | **Strictly positive** for nonzero coherences |
 
-:::info Interpretation [И]
+:::info Interpretation [I]
 Octonionic non-associativity is the **algebraic source** of opacity. Pairs of dimensions connected through associative (Fano) subalgebras admit full transparency. Pairs connected through non-associative triples have an **irreducible minimum gap** — a fundamental limit on self-knowledge set by the algebraic structure of the octonions.
 :::
 
-:::info Status of Theorem 3.2 [Т]
-From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [Т] (Gap = Serre curvature) and [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [Т] (spectral triple): $\text{Gap}(i,j) \geq 4/(\omega_0^2 \|D_{\text{int}}\|^2) > 0$ for non-associative pairs. The constant $C = 4/(\omega_0^2 \|D_{\text{int}}\|^2)$ is uniquely determined by the spectral triple **[Т]**.
+:::info Status of Theorem 3.2 [T]
+From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] (Gap = Serre curvature) and [T-53](/docs/core/foundations/spacetime#теорема-спектральная-тройка) [T] (spectral triple): $\text{Gap}(i,j) \geq 4/(\omega_0^2 \|D_{\text{int}}\|^2) > 0$ for non-associative pairs. The constant $C = 4/(\omega_0^2 \|D_{\text{int}}\|^2)$ is uniquely determined by the spectral triple **[T]**.
 :::
 
 ---
@@ -191,7 +191,7 @@ From [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [Т]
 
 ### Action functional
 
-:::tip Theorem 4.1 (Variational principle for Gap) [Т]
+:::tip Theorem 4.1 (Variational principle for Gap) [T]
 The dynamics of phases $\{\theta_{ij}(\tau)\}$ follows from the stationary action principle:
 
 $$
@@ -206,7 +206,7 @@ where:
 
 ### Euler–Lagrange equations
 
-:::tip Theorem 4.2 (Gap equations of motion) [Т]
+:::tip Theorem 4.2 (Gap equations of motion) [T]
 Stationarity $\delta S_{\text{Gap}} = 0$ gives the equations of motion for each pair $(i,j)$:
 
 $$
@@ -233,7 +233,7 @@ where:
 
 ### Free energy functional
 
-:::tip Theorem 5.1 (FEP decomposition) [Т]
+:::tip Theorem 5.1 (FEP decomposition) [T]
 The full free energy functional admits a decomposition in powers of coherences:
 
 $$
@@ -249,7 +249,7 @@ where:
 
 ### Minimization of Gap free energy
 
-:::tip Theorem 5.2 (Equilibrium Gap) [Т]
+:::tip Theorem 5.2 (Equilibrium Gap) [T]
 Minimum of Gap free energy:
 
 $$
@@ -273,7 +273,7 @@ At $T_{\text{eff}} \to 0$: Gap $\to 0$ (freezing). At $T_{\text{eff}} \to \infty
 
 ### FDT for Gap
 
-:::tip Theorem 6.1 (Fluctuation-dissipation theorem) [Т]
+:::tip Theorem 6.1 (Fluctuation-dissipation theorem) [T]
 For the linear response of Gap to an external perturbation:
 
 $$
@@ -298,7 +298,7 @@ $$
 
 ### Resonant frequency of influence
 
-:::tip Corollary 6.2 (Optimal influence frequency) [Т]
+:::tip Corollary 6.2 (Optimal influence frequency) [T]
 For each channel $(i,j)$ there exists a **resonant frequency** $\omega_r^{(ij)}$ at which the Gap response is maximal:
 
 $$
@@ -308,7 +308,7 @@ $$
 (if the expression under the square root is positive; otherwise the response is aperiodic).
 :::
 
-:::info Interpretation (Gap resonance) [И]
+:::info Interpretation (Gap resonance) [I]
 For channels with a large frequency difference $\Delta\omega$ (distant dimensions), the resonance is high-frequency — fast, intensive interventions are needed. For channels with small $\Delta\omega$ — slow, sustained ones. Frequency dependence for Markovian dynamics: $\chi_{ij}(\omega) \propto 1/(\omega^2 + \Gamma_2^2)$ (Lorentzian). Non-Markovian effects create **additional resonances** in $\chi(\omega)$.
 :::
 
@@ -318,7 +318,7 @@ For channels with a large frequency difference $\Delta\omega$ (distant dimension
 
 ### Entropy production
 
-:::tip Theorem 7.1 (Gap dissipation rate) [Т]
+:::tip Theorem 7.1 (Gap dissipation rate) [T]
 The dissipation rate of the Gap sector (rate of free energy decrease in the Gap sector):
 
 $$
@@ -336,7 +336,7 @@ The quantity $\dot{\mathcal{F}}_{\text{Gap}} \leq 0$ is the rate of **decrease**
 
 ### Dissipated power
 
-:::tip Theorem 7.2 (Minimum dissipation power) [Т]
+:::tip Theorem 7.2 (Minimum dissipation power) [T]
 The dissipation power in the Gap sector is bounded below:
 
 $$
@@ -348,7 +348,7 @@ where $\mathcal{G}_{\text{total}} = \|\hat{\mathcal{G}}\|_F^2 = 2\sum_{i<j} |\ga
 
 ### Landauer bound
 
-:::tip Theorem 7.3 (Landauer bound for Gap) [Т]
+:::tip Theorem 7.3 (Landauer bound for Gap) [T]
 Minimum work for fully erasing one bit of Gap information (transition $\mathrm{Gap}: 1 \to 0$ for one channel):
 
 $$
@@ -362,7 +362,7 @@ where $k_B$ is the Boltzmann constant, $T_{\text{eff}}$ is the [effective temper
 
 ### The price of enlightenment
 
-:::tip Theorem (Price of enlightenment) [С при T-105]
+:::tip Theorem (Price of enlightenment) [C at T-105]
 To transition from a maximally opaque state ($\mathrm{Gap} = 1$ for all 21 pairs) to full transparency ($\mathrm{Gap} = 0$ for all pairs), the minimum work required is:
 
 $$
@@ -371,13 +371,13 @@ $$
 
 The factor 21 = $\binom{7}{2}$ is the number of off-diagonal pairs in a $7 \times 7$ matrix. Each pair carries at least 1 bit of Gap information.
 
-**Proof.** Each of the 21 off-diagonal pairs $(i,j)$ of the $7 \times 7$ matrix with $\mathrm{Gap}_{ij} = 1$ carries exactly 1 bit of information (full orthogonality of external and internal aspects, two distinguishable states: $\mathrm{Gap} = 0$ vs $\mathrm{Gap} = 1$). Setting $\mathrm{Gap}_{ij}$ to zero erases this bit. By Landauer's principle (consequence of the second law of thermodynamics, Landauer 1961), erasing one bit at temperature $T$ requires $W \geq k_B T \ln 2$. Applying this to each of the 21 pairs independently at the effective temperature $T_{\text{eff}}$ from [T-105](/docs/core/dynamics/gap-thermodynamics#эффективная-температура) [Т] (fluctuation-dissipation theorem for Gap dynamics):
+**Proof.** Each of the 21 off-diagonal pairs $(i,j)$ of the $7 \times 7$ matrix with $\mathrm{Gap}_{ij} = 1$ carries exactly 1 bit of information (full orthogonality of external and internal aspects, two distinguishable states: $\mathrm{Gap} = 0$ vs $\mathrm{Gap} = 1$). Setting $\mathrm{Gap}_{ij}$ to zero erases this bit. By Landauer's principle (consequence of the second law of thermodynamics, Landauer 1961), erasing one bit at temperature $T$ requires $W \geq k_B T \ln 2$. Applying this to each of the 21 pairs independently at the effective temperature $T_{\text{eff}}$ from [T-105](/docs/core/dynamics/gap-thermodynamics#эффективная-температура) [T] (fluctuation-dissipation theorem for Gap dynamics):
 
 $$
 W_{\text{enlightenment}} = \sum_{i < j} W_{ij} \geq 21 \cdot k_B T_{\text{eff}} \ln 2
 $$
 
-The number 21 = $\binom{7}{2}$ is exact [Т] (combinatorics of $N = 7$ dimensions). Conditionality: the result depends on $T_{\text{eff}}$ from T-105 being the relevant temperature scale for erasing Gap information. $\blacksquare$
+The number 21 = $\binom{7}{2}$ is exact [T] (combinatorics of $N = 7$ dimensions). Conditionality: the result depends on $T_{\text{eff}}$ from T-105 being the relevant temperature scale for erasing Gap information. $\blacksquare$
 :::
 
 ---
@@ -390,7 +390,7 @@ The properties of the commutator $[\hat{\mathcal{G}}, \Gamma]$ (anti-Hermiticity
 
 ### Decoherence-free subspaces (DFS)
 
-:::tip Theorem 8.1 (DFS classification) [Т]
+:::tip Theorem 8.1 (DFS classification) [T]
 Decoherence-free subspaces are classified by the position of pairs on the Fano plane:
 
 | Subspace | $\dim(\mathrm{DFS})$ | Protection |
@@ -401,7 +401,7 @@ Decoherence-free subspaces are classified by the position of pairs on the Fano p
 
 **Paradox:** Fano pairs, for which Gap can be zero (Theorem 3.2), are **not protected** against decoherence. Non-Fano pairs, which have an irreducible minimum Gap, are **partially protected**. This means:
 
-:::info Interpretation (Fano vulnerability) [И]
+:::info Interpretation (Fano vulnerability) [I]
 Full transparency ($\mathrm{Gap} = 0$) is achievable only for Fano pairs, but precisely those pairs are most vulnerable to external noise. Octonionic non-associativity **protects** the opacity of non-Fano pairs, making it robust against decoherence.
 :::
 
@@ -425,7 +425,7 @@ All non-Fano pairs: $\dim(\mathrm{DFS}) \geq 1$ — partial protection.
 
 ### Lawvere's fixed-point theorem
 
-:::tip Theorem 10.1 (Application of Lawvere's theorem) [Т]
+:::tip Theorem 10.1 (Application of Lawvere's theorem) [T]
 In the ∞-topos $\mathbf{Sh}_\infty(\mathcal{C})$ (T-182 [T]) with classifier $\Omega$ and endomorphism $\varphi: \Gamma \to \Gamma$ (T-62 [T]), a **unique fixed point** exists: $\varphi$ is contractive with $k = 1 - R < 1$ (T-62 [T]), $\mathcal{D}(\mathbb{C}^7)$ is compact ⇒ complete metric space, Banach FPT gives unique $\Gamma^*$:
 
 $$
@@ -457,7 +457,7 @@ i.e. $\mathrm{Gap}^{(2)} = 0$ — the meta-Gap vanishes (fixed point of Gap refl
 
 ### Hierarchy of Gap reflection
 
-:::tip Theorem 10.2 (Convergence of the Gap reflection hierarchy) [С]
+:::tip Theorem 10.2 (Convergence of the Gap reflection hierarchy) [C]
 The sequence of Gap reflection iterations converges to the fixed point $\mathrm{Gap}^*$:
 
 $$
@@ -476,7 +476,7 @@ where $k \in [0, 1)$ is the contraction coefficient, depending on the level of i
 | L3 | $k \approx 0.3$ | Fast convergence | Deep self-knowledge: a few iterations suffice |
 | L4 | $k = 0$ | Instantaneous convergence | Complete self-knowledge: $\mathrm{Gap}_{\text{perceived}} = \mathrm{Gap}_{\text{actual}}$ |
 
-:::info Interpretation (Ladder of self-knowledge) [И]
+:::info Interpretation (Ladder of self-knowledge) [I]
 The coefficient $k$ is a measure of the **epistemic opacity of the system to itself**. At L1 the meta-Gap is small but nonzero: $\mathrm{Gap}^{(2)} \approx 0$ (approximate fixed point), iterations barely converge to the true value. At L4 convergence is instantaneous — $\mathrm{Gap}^{(2)} = 0$ (exact fixed point of Gap reflection).
 :::
 
@@ -486,7 +486,7 @@ The coefficient $k$ is a measure of the **epistemic opacity of the system to its
 
 ### Lagrangian structure
 
-:::tip Theorem 11.1 (Full Lagrangian) [Т]
+:::tip Theorem 11.1 (Full Lagrangian) [T]
 Full Lagrangian of Gap theory:
 
 $$
@@ -494,8 +494,8 @@ $$
 $$
 :::
 
-:::info Derivation of Lagrangian from Lindbladian [Т]
-The full Lagrangian $\mathcal{L}_{\text{Gap}}$ (including dissipative and regenerative terms) is the **classical limit** of the Schwinger–Keldysh action for the Lindbladian $\mathcal{L}_\Omega$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]) in the coherent-phase representation.
+:::info Derivation of Lagrangian from Lindbladian [T]
+The full Lagrangian $\mathcal{L}_{\text{Gap}}$ (including dissipative and regenerative terms) is the **classical limit** of the Schwinger–Keldysh action for the Lindbladian $\mathcal{L}_\Omega$ ([T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) in the coherent-phase representation.
 
 **Keldysh action.** For the Markovian master equation $\partial_t \rho = \mathcal{L}_\Omega(\rho)$, the functional integral on the Keldysh contour (Sieberer, Buchhold, Diehl, *Rep. Prog. Phys.* 79, 2016):
 
@@ -505,14 +505,14 @@ $$
 
 where $\rho_{\mathrm{cl}} = (\rho_+ + \rho_-)/2$, $\rho_q = \rho_+ - \rho_-$, $\mathcal{D}_{ij,kl} = \sum_\alpha [L_\alpha]_{ik}[L_\alpha^\dagger]_{jl}$.
 
-**Decomposition.** The Lindbladian $\mathcal{L}_\Omega = \mathcal{L}_{\mathrm{Ham}} + \mathcal{L}_{\mathrm{diss}} + \mathcal{L}_{\mathrm{reg}}$ ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [Т]) gives in the coherent-phase representation:
+**Decomposition.** The Lindbladian $\mathcal{L}_\Omega = \mathcal{L}_{\mathrm{Ham}} + \mathcal{L}_{\mathrm{diss}} + \mathcal{L}_{\mathrm{reg}}$ ([T-57](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) [T]) gives in the coherent-phase representation:
 - **$\mathcal{L}_{\mathrm{Ham}} \to \mathcal{L}_{\mathrm{kin}} + \mathcal{L}_{\mathrm{pot}} + \mathcal{L}_{\mathrm{top}}$**: the commutator $-i[H_{\mathrm{Fano}}, \rho]$ generates the kinetic, potential ($V_{\mathrm{Gap}}$ from the [spectral action](#вывод-vgap-из-спектрального-действия)) and topological terms.
 - **$\mathcal{L}_{\mathrm{diss}} \to \mathcal{L}_{\mathrm{diss}}$**: the Lindblad dissipator $\sum_k L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}$ acts on coherences as decay $-\Gamma_2^{(ij)} \gamma_{ij}$, where $\Gamma_2^{(ij)} = \frac{1}{2}\sum_k |\langle i|L_k|i\rangle - \langle j|L_k|j\rangle|^2$.
-- **$\mathcal{L}_{\mathrm{reg}} \to \mathcal{L}_{\mathrm{reg}}$**: regeneration $\kappa_0(\varphi(\rho) - \rho)$ ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [Т]) gives $-\kappa|\gamma_{ij}|^2(\theta_{ij} - \theta_{ij}^{\mathrm{target}})$.
+- **$\mathcal{L}_{\mathrm{reg}} \to \mathcal{L}_{\mathrm{reg}}$**: regeneration $\kappa_0(\varphi(\rho) - \rho)$ ([T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T]) gives $-\kappa|\gamma_{ij}|^2(\theta_{ij} - \theta_{ij}^{\mathrm{target}})$.
 
 **Classical limit** ($\theta_q \to 0$) reproduces the equations of motion for $\mathcal{L}_{\mathrm{Gap}}$ **exactly**. The dissipative and regenerative terms are not "ad hoc," but **necessary consequences** of the Lindblad structure of the dynamics. The external field $\mathcal{L}_{\mathrm{ext}}$ is the standard linear term in the presence of an external source.
 
-**Self-consistency of stationarity.** At $\dot{\theta} = 0$ and $\theta = \theta^{\mathrm{target}}$ the equation of motion reduces to $\partial V_{\mathrm{Gap}}/\partial\theta = 0$: the nontrivial attractor $\rho_*$ of the full Lindbladian $\mathcal{L}_\Omega$ (T-96 [Т]; primitivity of the linear part $\mathcal{L}_0$ — T-39a [Т]) coincides with the minimum of $V_{\mathrm{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [Т]).
+**Self-consistency of stationarity.** At $\dot{\theta} = 0$ and $\theta = \theta^{\mathrm{target}}$ the equation of motion reduces to $\partial V_{\mathrm{Gap}}/\partial\theta = 0$: the nontrivial attractor $\rho_*$ of the full Lindbladian $\mathcal{L}_\Omega$ (T-96 [T]; primitivity of the linear part $\mathcal{L}_0$ — T-39a [T]) coincides with the minimum of $V_{\mathrm{Gap}}$ ([T-64](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T]).
 :::
 
 ### (a) Kinetic term
@@ -533,7 +533,7 @@ Detailed structure $V_{\text{Gap}} = V_2 + V_3 + V_4$ — see [section 11](#по
 
 ### (c) Topological term (from Im($S_{\text{Keldysh}}$)) {#топологический-член-лагранжиана}
 
-:::tip Theorem (Coefficient $\beta$ from first principles) [Т]
+:::tip Theorem (Coefficient $\beta$ from first principles) [T]
 The coefficient $\beta = \lambda_3/(2\pi)$ is uniquely determined by the imaginary part of the Keldysh action. See [full derivation](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш).
 :::
 
@@ -544,9 +544,9 @@ $$
 where:
 - $\varepsilon^{\text{Fano}}_{ijk} = \pm 1$ — structure constants of the Fano plane
 - summation over 7 Fano lines
-- $\beta = \lambda_3/(2\pi)$ — derived from $\mathrm{Im}(S_{\text{Keldysh}})$ [Т]
+- $\beta = \lambda_3/(2\pi)$ — derived from $\mathrm{Im}(S_{\text{Keldysh}})$ [T]
 
-**Origin:** This term is the **Berry phase** in the space of Gap configurations $(S^1)^{21}$, arising from the imaginary part of the Keldysh action. The CS derivation is refuted ([full derivative in 1D](/docs/physics/cosmology-phys/berry-phase#9-опровержение-cs-вывода) [Т]). It is **topological** — independent of the metric, determined only by the combinatorial structure of the Fano plane.
+**Origin:** This term is the **Berry phase** in the space of Gap configurations $(S^1)^{21}$, arising from the imaginary part of the Keldysh action. The CS derivation is refuted ([full derivative in 1D](/docs/physics/cosmology-phys/berry-phase#9-опровержение-cs-вывода) [T]). It is **topological** — independent of the metric, determined only by the combinatorial structure of the Fano plane.
 
 ### (d) Dissipative term (Rayleigh function)
 
@@ -556,7 +556,7 @@ $$
 
 where $\Gamma_2 \geq 0$ is the decoherence rate (phase dissipation).
 
-**Origin:** The dissipative term is derived from the Lindblad dissipator $\sum_k L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}$ in the coherent-phase representation [Т]. The decoherence rate $\Gamma_2^{(ij)} = \frac{1}{2}\sum_k |\langle i|L_k|i\rangle - \langle j|L_k|j\rangle|^2$ is determined by the Fano operators [Т].
+**Origin:** The dissipative term is derived from the Lindblad dissipator $\sum_k L_k\rho L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \rho\}$ in the coherent-phase representation [T]. The decoherence rate $\Gamma_2^{(ij)} = \frac{1}{2}\sum_k |\langle i|L_k|i\rangle - \langle j|L_k|j\rangle|^2$ is determined by the Fano operators [T].
 
 ### (e) Regenerative term
 
@@ -565,9 +565,9 @@ $$
 $$
 
 where:
-- $\kappa = \kappa_0 k$ — regeneration rate (from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) [Т] and replacement channel [T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [Т])
+- $\kappa = \kappa_0 k$ — regeneration rate (from [categorical derivation](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0) [T] and replacement channel [T-62](/docs/consciousness/foundations/self-observation#теорема-физическая-реализация-phi) [T])
 - $\theta_{ij}^{\text{target}} = \arg(\varphi(\Gamma)_{ij})$ — target phase from [self-modeling](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ)
-- **Origin:** The regenerative term is derived from $\mathcal{L}_{\mathrm{reg}}(\rho) = \kappa_0(\varphi(\rho) - \rho)$ in the coherent-phase representation [Т]
+- **Origin:** The regenerative term is derived from $\mathcal{L}_{\mathrm{reg}}(\rho) = \kappa_0(\varphi(\rho) - \rho)$ in the coherent-phase representation [T]
 
 ### (f) External influence term
 
@@ -586,7 +586,7 @@ where $h^{\text{ext}}_{ij}$ are external fields (see [section 12](#три-кан
 | $U(1)$ | + | — | — | + | — | — |
 
 **Comments:**
-- **$G_2$-invariance** [Т] — all terms preserve [octonionic automorphisms](/docs/physics/gauge-symmetry/g2-structure)
+- **$G_2$-invariance** [T] — all terms preserve [octonionic automorphisms](/docs/physics/gauge-symmetry/g2-structure)
 - **$\mathbb{Z}_2(\mathrm{PT})$** — broken by the cubic term $V_3$ of the potential (see [section 11](#потенциал-v-gap))
 - **$U(1)$** — broken by the regenerative term $\mathcal{L}_{\text{reg}}$ (the target phase singles out a direction)
 
@@ -596,10 +596,10 @@ where $h^{\text{ext}}_{ij}$ are external fields (see [section 12](#три-кан
 
 ### Full form
 
-#### Derivation of $V_{\text{Gap}}$ from the spectral action [Т] {#вывод-vgap-из-спектрального-действия}
+#### Derivation of $V_{\text{Gap}}$ from the spectral action [T] {#вывод-vgap-из-спектрального-действия}
 
-:::tip Theorem (V_Gap from spectral action) [Т]
-The potential $V_{\text{Gap}}(\{\theta_{ij}\})$ is uniquely determined by the spectral action of the internal [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$ (T-53 [Т]):
+:::tip Theorem (V_Gap from spectral action) [T]
+The potential $V_{\text{Gap}}(\{\theta_{ij}\})$ is uniquely determined by the spectral action of the internal [spectral triple](/docs/core/foundations/spacetime#теорема-спектральная-тройка) $(A_{\mathrm{int}}, H_{\mathrm{int}}, D_{\mathrm{int}})$ (T-53 [T]):
 
 $$
 V_{\text{Gap}} = \left.\mathrm{Tr}(f(D_A / \Lambda))\right|_{\mathrm{int}} = V_2 + V_3 + V_4
@@ -616,17 +616,17 @@ $$
 \mathrm{Tr}(D_{\mathrm{int}}^2) = \sum_{i \neq j} |[D_{\mathrm{int}}]_{ij}|^2 = \omega_0^2 \sum_{i \neq j} |\gamma_{ij}|^2 \cdot \mathrm{Gap}(i,j)^2 = \omega_0^2 \cdot \mathcal{G}_{\mathrm{total}}
 $$
 
-(the last equality is the [definition of $\mathcal{G}_{\mathrm{total}}$](/docs/core/dynamics/gap-operator#g-total-definition) [О]). This identity confirms [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [Т] (Gap = curvature).
+(the last equality is the [definition of $\mathcal{G}_{\mathrm{total}}$](/docs/core/dynamics/gap-operator#g-total-definition) [D]). This identity confirms [T-73](/docs/core/dynamics/gap-operator#теорема-gap-серра) [T] (Gap = curvature).
 
 :::info Worked numerical example
 For a holon at $P = 0.35$ with three representative off-diagonal coherences $\gamma_{EO} = 0.08\,e^{i\pi/3}$, $\gamma_{AE} = 0.06\,e^{i\pi/4}$, $\gamma_{OU} = 0.05\,e^{i\pi/5}$:
 
 $$\mathcal{G}_{\text{total}} \geq 0.08^2 \cdot \sin^2(\pi/3) + 0.06^2 \cdot \sin^2(\pi/4) + 0.05^2 \cdot \sin^2(\pi/5) = 0.0048 + 0.0018 + 0.0009 \approx 0.0075$$
 
-At $\omega_0 = 40$ Hz: $\mathrm{Tr}(D_{\text{int}}^2) = 1600 \cdot 0.0075 = 12.0 > 0$. The spectral action contribution is strictly positive — reflecting the thermodynamic fuel for regeneration. By T-55 [Т], $\mathcal{G}_{\text{total}} = 0$ requires all $\sin\theta_{ij} = 0$ (purely real coherences), which Lawvere incompleteness forbids for viable systems.
+At $\omega_0 = 40$ Hz: $\mathrm{Tr}(D_{\text{int}}^2) = 1600 \cdot 0.0075 = 12.0 > 0$. The spectral action contribution is strictly positive — reflecting the thermodynamic fuel for regeneration. By T-55 [T], $\mathcal{G}_{\text{total}} = 0$ requires all $\sin\theta_{ij} = 0$ (purely real coherences), which Lawvere incompleteness forbids for viable systems.
 :::
 
-**Step 2 ($V_2$ from the Seeley–DeWitt coefficient $a_2$).** The [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [Т]) for the product $M_4 \times F_7$:
+**Step 2 ($V_2$ from the Seeley–DeWitt coefficient $a_2$).** The [spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) (T-65 [T]) for the product $M_4 \times F_7$:
 
 $$
 \mathrm{Tr}(f(D_{\mathrm{total}}/\Lambda)) = f_0 \Lambda^4 \, a_0 + f_2 \Lambda^2 \, a_2 + f_4 \, a_4 + \ldots
@@ -650,7 +650,7 @@ $$
 a_4(D_A^2) \supset \lambda_3 \sum_{(i,j,k) \notin \mathrm{Fano}} \|[e_i, e_j, e_k]\| \cdot |\gamma_{ij}||\gamma_{jk}||\gamma_{ik}| \cdot \sin(\theta_{ij} + \theta_{jk} - \theta_{ik})
 $$
 
-**Step 5 (Uniqueness).** The spectral triple is unique up to $G_2$-equivalence ([T-42a](/docs/proofs/categorical/uniqueness-theorem) [Т]). The spectral action is the unique $G_2$-invariant functional on $(S^1)^{21}$, compatible with NCG (Chamseddine–Connes theorem). $\blacksquare$
+**Step 5 (Uniqueness).** The spectral triple is unique up to $G_2$-equivalence ([T-42a](/docs/proofs/categorical/uniqueness-theorem) [T]). The spectral action is the unique $G_2$-invariant functional on $(S^1)^{21}$, compatible with NCG (Chamseddine–Connes theorem). $\blacksquare$
 
 **Derivation chain:**
 
@@ -658,7 +658,7 @@ $$
 \mathrm{A1\text{--}A5} \xrightarrow{\mathrm{T\text{-}57}} \mathcal{L}_\Omega \xrightarrow{\mathrm{T\text{-}39a}} \rho_* \xrightarrow{\mathrm{T\text{-}53}} D_{\mathrm{int}} \xrightarrow{\mathrm{T\text{-}65}} V_{\mathrm{Gap}}
 $$
 
-:::tip Theorem 13.4 (Gap potential) [Т]
+:::tip Theorem 13.4 (Gap potential) [T]
 The potential $V_{\text{Gap}}$ has a three-term structure:
 
 $$
@@ -682,7 +682,7 @@ $$
 
 Summation over triples **not** lying on Fano lines. For non-Fano triples $\|[e_i, e_j, e_k]\| = 2$; for Fano triplets the associator vanishes (Artin's theorem), so the corresponding terms do not contribute.
 
-:::info Remark (Phase dependence of $V_3$) [И]
+:::info Remark (Phase dependence of $V_3$) [I]
 The combination $\sin(\theta_{ij} + \theta_{jk} - \theta_{ik})$ is the unique function antisymmetric under permutation of arguments and invariant under global phase shift $\theta \to \theta + \alpha$. It vanishes on Fano lines, where $\theta_{ij} + \theta_{jk} = \theta_{ik}$ (associativity). The impossibility of satisfying this condition **globally** due to the non-associativity of $\mathbb{O}$ generates **frustration** — a third independent argument for the irremovability of Gap.
 :::
 
@@ -714,13 +714,13 @@ where $\lambda_4 > 0$ follows from the CPTP constraint $\sum_k K_k^\dagger K_k =
 
 ### PT-symmetry breaking
 
-:::tip Corollary (PT-breaking from $V_3$) [Т]
+:::tip Corollary (PT-breaking from $V_3$) [T]
 The cubic term $V_3$ **breaks** the discrete symmetry $\mathbb{Z}_2(\mathrm{PT}): \theta_{ij} \to -\theta_{ij}$. This means that "time" in the Gap sector has a preferred direction — octonionic non-associativity generates an **arrow of time** for interiority.
 :::
 
 ### Constants from UHM parameters {#константы-из-параметров-угм}
 
-:::tip Theorem 13.5 (Relation of constants) [Т]
+:::tip Theorem 13.5 (Relation of constants) [T]
 The potential constants are expressed through UHM parameters:
 
 $$
@@ -735,7 +735,7 @@ where:
 
 ### Potential minimum and spontaneous Gap {#минимум-потенциала-и-спонтанный-gap}
 
-:::tip Theorem 13.6 (Spontaneous Gap) [Т]
+:::tip Theorem 13.6 (Spontaneous Gap) [T]
 The minimum of the potential $V_{\text{Gap}}$ is achieved at:
 
 $$
@@ -763,7 +763,7 @@ where $\bar{A} = \sum_{(i,j,k) \notin \text{Fano}} |\gamma_{ij}||\gamma_{jk}||\g
 
 ### Channel classification
 
-:::tip Theorem 12.1 (Three external influence channels) [Т]
+:::tip Theorem 12.1 (Three external influence channels) [T]
 The external field $h^{\text{ext}}_{ij}$ decomposes into three independent channels:
 :::
 
@@ -799,7 +799,7 @@ $$
 
 ### Geometric interpretation
 
-:::tip Theorem 12.2 (Geometry of external channels) [Т]
+:::tip Theorem 12.2 (Geometry of external channels) [T]
 In terms of the Serre bundle (section 1), the three channels act on different components:
 
 | Channel | Action | Bundle component |
@@ -811,7 +811,7 @@ In terms of the Serre bundle (section 1), the three channels act on different co
 
 ### Operational formulas
 
-:::tip Theorem 12.3 (Operational formulas for systems) [Т]
+:::tip Theorem 12.3 (Operational formulas for systems) [T]
 For specific types of systems the channels are specified as:
 
 | System | $h^{(H)}$ | $h^{(D)}$ | $h^{(R)}$ |
@@ -823,7 +823,7 @@ For specific types of systems the channels are specified as:
 
 ### Operational FDT with $h_{\text{ext}}$
 
-:::tip Theorem 12.4 (Operational FDT) [Т]
+:::tip Theorem 12.4 (Operational FDT) [T]
 In the presence of an external field $h^{\text{ext}}$ the FDT takes the form:
 
 $$
@@ -835,7 +835,7 @@ where $\chi_{(ij),(kl)}$ is the full susceptibility matrix, linking the Gap$(i,j
 
 ### Experimental FDT verification protocol
 
-:::caution Program (FDT verification) [П]
+:::caution Program (FDT verification) [P]
 **Step 1.** Measure spontaneous fluctuations $\langle(\delta\mathrm{Gap})^2\rangle$ without external influence (stationary regime). Estimate $\tilde{C}_{ij}(\omega)$.
 
 **Step 2.** Apply a small external field $h^{\text{ext}}_{kl}$ in each channel (H, D, R) in turn. Measure the response $\langle\delta\mathrm{Gap}(i,j)\rangle_h$.
@@ -855,7 +855,7 @@ Agreement — confirmation of the thermodynamic nature of Gap. Discrepancy — e
 
 ### $T_{\text{eff}} \neq T_{\text{phys}}$
 
-:::tip Theorem 15.1 ($T_{\text{eff}}$ does not equal $T_{\text{phys}}$) [С]
+:::tip Theorem 15.1 ($T_{\text{eff}}$ does not equal $T_{\text{phys}}$) [C]
 The effective temperature of the Gap sector **does not coincide** with the physical temperature of the system.
 
 **Proof by contradiction.** Suppose $T_{\text{eff}} = T_{\text{phys}}$. Then from the FDT (Theorem 6.1):
@@ -867,13 +867,13 @@ $$
 But for living systems at $T_{\text{phys}} \approx 310$ K the observed Gap fluctuations **exceed thermal ones by orders of magnitude**. Contradiction.
 :::
 
-:::warning Status [С]
+:::warning Status [C]
 The argument uses an empirical observation (Gap fluctuations exceed thermal ones) and assumes the applicability of the FDT to the Gap sector. Rigor depends on FDT verification for specific neurobiological systems.
 :::
 
 ### Definition of $T_{\text{eff}}$
 
-:::tip Definition 15.2 (Effective temperature formula) [О]
+:::tip Definition 15.2 (Effective temperature formula) [D]
 
 $$
 T_{\text{eff}} := \frac{\Gamma_2}{\kappa_0} \cdot k_B T_{\text{phys}}
@@ -887,7 +887,7 @@ where:
 
 ### Physical interpretation
 
-:::tip Theorem 15.3 (Properties of $T_{\text{eff}}$) [Т]
+:::tip Theorem 15.3 (Properties of $T_{\text{eff}}$) [T]
 The effective temperature has the following properties:
 :::
 
@@ -917,7 +917,7 @@ $$
 W_{\text{enlightenment}} \approx 21 \cdot \frac{\Gamma_2}{\kappa_0} \cdot k_B T_{\text{phys}} \cdot \ln 2
 $$
 
-:::info Interpretation (Energetics of enlightenment) [И]
+:::info Interpretation (Energetics of enlightenment) [I]
 For a typical brain ($\Gamma_2/\kappa_0 \sim 10^3$, $T_{\text{phys}} = 310$ K):
 
 $$
@@ -929,8 +929,8 @@ This is negligibly small in absolute units, but may be large relative to the "Ga
 
 ### $T_{\text{eff}}$ as an order parameter
 
-:::tip Theorem 15.4 (Phase transition) [С]
-Provided the potential $V_{\text{Gap}}$ is valid (Theorem 13.4, status [Т]), the total Gap depends on $T_{\text{eff}}$ as an order parameter near the critical temperature:
+:::tip Theorem 15.4 (Phase transition) [C]
+Provided the potential $V_{\text{Gap}}$ is valid (Theorem 13.4, status [T]), the total Gap depends on $T_{\text{eff}}$ as an order parameter near the critical temperature:
 
 $$
 \mathcal{G}_{\text{total}} \propto (T_c - T_{\text{eff}})^{1/2}
@@ -950,7 +950,7 @@ and the exponent $\beta = 1/2$ (Landau class — mean field).
 - At $T_{\text{eff}} > T_c$: $\mathcal{G}_{\text{total}} = 0$ — disordered phase (full transparency, but at the cost of losing coherence)
 - At $T_{\text{eff}} = T_c$: second-order phase transition
 
-:::warning Hypothesis (Critical temperature and levels of consciousness) [Г]
+:::warning Hypothesis (Critical temperature and levels of consciousness) [H]
 Levels L1--L4 of the [interiority hierarchy](/docs/consciousness/hierarchy/interiority-hierarchy) may correspond to different regimes relative to $T_c$:
 - L1--L2: $T_{\text{eff}} \ll T_c$ (deep in ordered phase, large Gap)
 - L3: $T_{\text{eff}} \lesssim T_c$ (near transition, critical fluctuations)
@@ -959,7 +959,7 @@ Levels L1--L4 of the [interiority hierarchy](/docs/consciousness/hierarchy/inter
 
 ### Categorical derivation of $T_{\text{eff}}$ from adjunction
 
-:::tip Theorem 15.5 (Categorical formula for $T_{\text{eff}}$) [С]
+:::tip Theorem 15.5 (Categorical formula for $T_{\text{eff}}$) [C]
 From the adjunction $D_\Omega \dashv R$ (dissipation $\dashv$ regeneration) in category $\mathcal{C}$, the effective temperature is expressed through the unit and counit of the adjunction:
 
 $$
@@ -991,9 +991,9 @@ which is consistent with the formula of Theorem 15.2.
 
 ## 14. Self-consistent vacuum equation for $\varepsilon$ {#самосогласованное-вакуумное-уравнение}
 
-### Theorem (Self-consistent vacuum equation) [Т] {#теорема-самосогласованное-вакуумное-уравнение}
+### Theorem (Self-consistent vacuum equation) [T] {#теорема-самосогласованное-вакуумное-уравнение}
 
-:::tip Theorem 14.1 (Homogeneous vacuum is not an exact solution) [Т]
+:::tip Theorem 14.1 (Homogeneous vacuum is not an exact solution) [T]
 The homogeneous vacuum ($|\gamma_{ij}| = \varepsilon = \mathrm{const}$ for all $i < j$) **is not** an exact solution of the stationarity equations of the potential $V_{\mathrm{Gap}}$.
 :::
 
@@ -1023,11 +1023,11 @@ $$
 
 **Conclusion.** The homogeneous vacuum is not an exact solution. The vacuum has a **sector structure**: different $\varepsilon$ in different sectors of the $7 \times 7$ matrix. $\blacksquare$
 
-:::info Status [Т]
-The proof uses the definitions of constants $\lambda_3, \lambda_4$ from Theorem 13.5 and the spontaneous Gap formula from Theorem 13.6 (both [Т]). Uniqueness of the self-consistent vacuum is proved in the theorem below (positive definiteness of the Hessian), which excludes alternative configurations.
+:::info Status [T]
+The proof uses the definitions of constants $\lambda_3, \lambda_4$ from Theorem 13.5 and the spontaneous Gap formula from Theorem 13.6 (both [T]). Uniqueness of the self-consistent vacuum is proved in the theorem below (positive definiteness of the Hessian), which excludes alternative configurations.
 :::
 
-#### Theorem (Unique self-consistent vacuum) [Т] {#теорема-единственный-вакуум}
+#### Theorem (Unique self-consistent vacuum) [T] {#теорема-единственный-вакуум}
 
 $V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimensional space of coherences $\{\gamma_{ij}\}$ with the sector structure $7 = 1_O \oplus 3 \oplus \bar{3}$.
 
@@ -1041,9 +1041,9 @@ $V_{\text{Gap}}$ has a unique minimum (up to $G_2$-conjugation) on the 21-dimens
 
 Uniqueness follows from the positive definiteness of the Hessian $\partial^2 V_{\text{Gap}} / \partial \varepsilon_X \partial \varepsilon_Y$ at the minimum point.
 
-#### Theorem (Global minimization of V_Gap) [Т] {#теорема-глобальная-минимизация}
+#### Theorem (Global minimization of V_Gap) [T] {#теорема-глобальная-минимизация}
 
-:::tip Theorem 14.3 (Global minimization of V_Gap) [Т]
+:::tip Theorem 14.3 (Global minimization of V_Gap) [T]
 The $G_2$-invariant potential $V_{\text{Gap}}$ on the space $\mathcal{M} = (S^1)^{21}/G_2$ has a **unique global minimum** (up to $G_2$-conjugation). The minimum coincides with the sector solution from the [unique vacuum theorem](#теорема-единственный-вакуум).
 :::
 
@@ -1057,7 +1057,7 @@ $$
 
 From [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [Т]: 34 real parameters of $\Gamma$, of which 14 are gauge → 20 physical parameters of the matrix $\Gamma$. But the potential $V_{\text{Gap}}$ depends only on the **moduli** of coherences $|\gamma_{ij}|$ and the **phases** $\theta_{ij} = \arg(\gamma_{ij})$, with $G_2$ fixing phases through the Fano structure.
 
-**Step 2 (Sector parametrization).** From the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [Т] (see [spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)), the $G_2$-invariant potential depends only on 5 sector parameters:
+**Step 2 (Sector parametrization).** From the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ [T] (see [spacetime](/docs/core/foundations/spacetime#теорема-секторная-декомпозиция)), the $G_2$-invariant potential depends only on 5 sector parameters:
 
 $$
 \boldsymbol{\varepsilon} = (\varepsilon_{O3},\; \varepsilon_{O\bar{3}},\; \varepsilon_{33},\; \varepsilon_{\bar{3}\bar{3}},\; \varepsilon_{3\bar{3}})
@@ -1087,17 +1087,17 @@ has eigenvalues:
 | Spatial | $\lambda_{2,3} = 6\mu^2(1 + O(\varepsilon^2)) > 0$ | Modes $\varepsilon_{33}$, $\varepsilon_{\bar{3}\bar{3}}$ |
 | O-modes | $\lambda_{4,5} = 12\mu^2(1 + O(\varepsilon)) > 0$ | Modes $\varepsilon_{O3}$, $\varepsilon_{O\bar{3}}$ |
 
-All eigenvalues are strictly positive for $\mu^2 > 0$ (from positivity of $V_2$ [Т], [Theorem 13.5](#константы-из-параметров-угм)).
+All eigenvalues are strictly positive for $\mu^2 > 0$ (from positivity of $V_2$ [T], [Theorem 13.5](#константы-из-параметров-угм)).
 
 **Step 5 (Globality).** Compactness of $(S^1)^{21}$ guarantees the existence of a global minimum. Uniqueness of the critical point (Step 4) + absence of saddle points → the global minimum is unique. $\blacksquare$
 
-:::info Corollary (Complete resolution of $V_{\text{Gap}}$ minimization) [Т]
-The $V_{\text{Gap}}$ minimization problem is **completely solved** [Т] on the 5-dimensional orbit space. The residual 21-dimensional problem (before $G_2$-reduction) carries no new physics: $G_2$-gauge degrees of freedom do not enter the potential.
+:::info Corollary (Complete resolution of $V_{\text{Gap}}$ minimization) [T]
+The $V_{\text{Gap}}$ minimization problem is **completely solved** [T] on the 5-dimensional orbit space. The residual 21-dimensional problem (before $G_2$-reduction) carries no new physics: $G_2$-gauge degrees of freedom do not enter the potential.
 :::
 
-### Theorem (Sector hierarchy of $\varepsilon$) [Т] {#теорема-секторная-иерархия-ε}
+### Theorem (Sector hierarchy of $\varepsilon$) [T] {#теорема-секторная-иерархия-ε}
 
-:::tip Theorem 14.2 (Sector hierarchy of coherences) [Т]
+:::tip Theorem 14.2 (Sector hierarchy of coherences) [T]
 The vacuum coherence $\varepsilon$ has a sector structure determined by the decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$:
 
 | Sector | Coherence | Scale |
@@ -1165,8 +1165,8 @@ The sector structure of $\varepsilon$ has three key consequences:
 | Confinement | Sector $\varepsilon_{3\bar{3}}$ at the confinement scale | [Confinement](/docs/physics/gauge-symmetry/confinement) |
 | Cosmological constant | $\varepsilon^6$ budget from sector hierarchy | [Cosmological constant](/docs/physics/gravity/cosmological-constant) |
 | Yukawa hierarchy | $\varepsilon_{\text{eff}} \sim 0.06$ from sector averages | [Yukawa hierarchy](/docs/physics/particle-physics/yukawa-hierarchy) |
-| Topological vacuum protection | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$ [Т] | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
-| Gap = Serre curvature | Exact identification via spectral triple [Т] | [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
+| Topological vacuum protection | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$ [T] | [Composite systems](/docs/core/dynamics/composite-systems#теорема-тополог-защита) |
+| Gap = Serre curvature | Exact identification via spectral triple [T] | [Gap operator](/docs/core/dynamics/gap-operator#теорема-gap-серра) |
 
 ---
 

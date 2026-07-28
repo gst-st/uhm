@@ -206,11 +206,11 @@ is a bona fide **coherence matrix** in `D(ℂ^N)` — exactly the object the UHM
 
 | Measure | Formula on `Γ_net` | Reads out | Threshold |
 |---|---|---|---|
-| **Integration** `Φ` | `Σ_{i≠j}|γ_ij|² / Σ_i γ_ii²` ([Φ [Т]](/docs/core/structure/dimension-u#мера-интеграции-φ)) | how much the cell is "more than its parts" (cross-node binding) | `Φ_th = 1` (T-129 [Т]) |
-| **Structuredness** `P` | `Tr(Γ_net²)` (purity) | how far the cell is from a formless uniform mesh | `P_crit = 2/7` [Т] |
-| **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | self-model sufficiency; threshold = share of cycles spent on self-observation | `R_th = 1/3` [Т] |
+| **Integration** `Φ` | `Σ_{i≠j}\|γ_ij\|² / Σ_i γ_ii²` ([Φ [T]](/docs/core/structure/dimension-u#мера-интеграции-φ)) | how much the cell is "more than its parts" (cross-node binding) | `Φ_th = 1` (T-129 [T]) |
+| **Structuredness** `P` | `Tr(Γ_net²)` (purity) | how far the cell is from a formless uniform mesh | `P_crit = 2/7` [T] |
+| **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | self-model sufficiency; threshold = share of cycles spent on self-observation | `R_th = 1/3` [T] |
 
-**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [Т]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified `fanos_verify.py` V15):
+**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [T]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified `fanos_verify.py` V15):
 
 ```
 Φ_net = 6r²,     P_net = (1 + 6r²)/7,     Φ = 7P − 1.
@@ -227,11 +227,11 @@ This is Discovery 9 of the UHM engineering catalogue (systemic risk of an equico
 Their state is a routing table — a *graph*, whose only spectral invariant is connectivity. A coherence matrix is a *density operator*: it has purity, integration, a self-model, and a critical correlation. The third-order principle (§2.5, §2.8) is what makes these invariants meaningful — they read the triple-structure the graph cannot see.
 :::
 
-## 2.8 The third-order principle, sharpened: first-order blindness [Т] {#third-order-blindness}
+## 2.8 The third-order principle, sharpened: first-order blindness [T] {#third-order-blindness}
 
 Section 2.5 asserted that pairwise statistics cannot see the plane's structure. Here is the exact theorem, because DIAKRISIS (Part VI) depends on it: **the reason a heartbeat mesh diagnoses so poorly is that it is provably Fano-blind.**
 
-**First-order blindness [Т]** (verified V11, and canonically the linear layer of the [Fano fingerprint](/docs/applied/research/fano-fingerprint)). Sum the adjacency matrices of the seven Fano lines. The result is exactly
+**First-order blindness [T]** (verified V11, and canonically the linear layer of the [Fano fingerprint](/docs/applied/research/fano-fingerprint)). Sum the adjacency matrices of the seven Fano lines. The result is exactly
 
 ```
 Σ_p A(line_p) = J − I        (J = all-ones, I = identity),
@@ -526,7 +526,7 @@ graph LR
 
 Because the cell carries a coherence matrix `Γ_net` (§2.7), the loop has something a routing table never gives: a **self-model** with scalar health readings (`Φ`, `P`, `R`) whose failure thresholds are corpus theorems. The cell is, in the precise UHM sense, a *self-observing system* — it satisfies the same reflection condition (`R ≥ 1/3`) that the corpus uses to define a subject. DIAKRISIS is that reflex made operational.
 
-## 6.2 Detection — fourteen consistency alarms, for free [Т] {#diakrisis-detect}
+## 6.2 Detection — fourteen consistency alarms, for free [T] {#diakrisis-detect}
 
 The sharpest detection primitive is a gift of [Theorem T-226 (the Fano fingerprint)](/docs/applied/research/fano-fingerprint#t-226). Instrument each cell so that the decay/error rate `r_ij` of every pairwise channel is measurable. T-226 proves that on the Fano wiring these 21 rates are **not free**: they collapse to only **seven** values indexed by the polar point (the mediator), and must satisfy **fourteen parameter-free linear identities** — within each polar class the three rates coincide,
 
@@ -538,7 +538,7 @@ Operationally this is a bank of **fourteen consistency alarms that cost nothing 
 
 Alongside this structural alarm runs the **integration monitor** of §2.7: `Φ_net < 1` fires when the cell is fragmenting into non-integrated pieces, and the mean-correlation reading `r → 1/√6` warns of an incipient cascade a regime ahead (§6.5). Detection is thus two-channel: *structural* (polar sum-rules) and *global* (Φ).
 
-## 6.3 Localization — the 21 → 7 → 3 → 1 pyramid and a 3-bit syndrome [Т]+[С] {#diakrisis-localize}
+## 6.3 Localization — the 21 → 7 → 3 → 1 pyramid and a 3-bit syndrome [T]+[C] {#diakrisis-localize}
 
 Once "something is wrong" fires, DIAKRISIS localizes the culprit with the [Σ-compression pyramid of T-225](/docs/applied/research/syndrome-calculus#t-225). Full tomography of a 7-cell would need 48 numbers; localizing *one* degraded node needs a handful:
 
@@ -557,9 +557,9 @@ Once "something is wrong" fires, DIAKRISIS localizes the culprit with the [Σ-co
 
 - **3 → 1 (flag).** The single bit `[σ ≠ 0]` is the "fault present" alarm; `σ = 000` means healthy.
 
-**Worked example.** Suppose node **O** starts dropping relays. Its q+1 = 3 lines — `A,O,U`, `S,L,O`, `D,E,O` — each register a degraded theme; the three parities compute to `σ = 011`, which is address 6, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots. The status inherits T-225 **[С]**: the `21→7→3→1` pyramid combinatorics are exact **[Т]**, while their convergence on a *live* cell is conditional on the measurement model (window-averaging).
+**Worked example.** Suppose node **O** starts dropping relays. Its q+1 = 3 lines — `A,O,U`, `S,L,O`, `D,E,O` — each register a degraded theme; the three parities compute to `σ = 011`, which is address 6, which is **O**. Three bits pinned one node out of seven. This is the Hamming(7,4) perfect code doing error correction on the *network's health vector* — the same geometry that makes the cell a native quantum-error-correcting code (§2.4) makes it a native fault localizer. Under mixing (T-114), the syndrome is averaged over a window and settles to the true node with error decaying exponentially in `window × spectral-gap` (T-225(d)) — robust to noisy single snapshots. The status inherits T-225 **[C]**: the `21→7→3→1` pyramid combinatorics are exact **[T]**, while their convergence on a *live* cell is conditional on the measurement model (window-averaging).
 
-:::note Multi-fault resolution — how far one cell actually corrects [Т]
+:::note Multi-fault resolution — how far one cell actually corrects [T]
 The "distance-3" figure is about the *compressed* 3-bit syndrome, which corrects **one** error. But the cell carries more information than three bits, and the honest capability is stratified (verified V20–V21):
 
 - **Crashes (known location = erasures).** The projective LRC (§L4) repairs by *peeling*: a lost node is rebuilt from any line on which it is the only loss, which clears more lines, and so on. This recovers **any ≤ 3 simultaneous crashes** and most 4-node losses; recovery fails first only on a **hyperoval** — 4 points no 3 of which are collinear (e.g. `A,S,L,U`), the plane's densest "every line in 0 or 2 points" configuration. The common failure mode is thus tolerated far beyond one.
@@ -567,7 +567,7 @@ The "distance-3" figure is about the *compressed* 3-bit syndrome, which corrects
 - **Beyond one cell.** A saturated cell (≥3 Byzantine, or a hyperoval crash) is itself one degraded "point" of the **parent cell**, whose `q+1` lines are independent of the child's — so it is re-localized upstairs, and correctable faults grow per level as they spread across cells. Two corpus upgrade paths raise the per-cell figure directly: **larger `q`** (more line-witnesses per node) and the **Golay federation** ([T-228](/docs/applied/research/syndrome-calculus#голей-федерация): three Fano cells compose to the binary Golay `[23,12,7]`, distance 7 — corrects **three**).
 :::
 
-## 6.4 Byzantine discernment — closure cross-attestation via the mediator [С] {#diakrisis-byzantine}
+## 6.4 Byzantine discernment — closure cross-attestation via the mediator [C] {#diakrisis-byzantine}
 
 Crash and grey failures are (partly) first-order visible. The hard case — the reason the diagnostic plane must be third-order — is the **equivocating node**: up, heartbeats green, yet corrupting or misrouting traffic and lying about it. Pairwise monitoring cannot catch it (§2.8). The closure law can.
 
@@ -575,13 +575,13 @@ Crash and grey failures are (partly) first-order visible. The hard case — the 
 
 Why the geometry helps: a Byzantine node cannot lie "locally". Because every pair it touches is witnessed by a *different* third node (the mediators are all distinct — the map `k*` is a bijection on each polar class), a single corrupt node cannot forge a globally consistent story without colluding partners on *each* of its lines. Pinning one liar per cell needs its q+1 witnesses to disagree with it — which they will, unless the adversary owns a threshold of every line through it, the same bar as §5.2.
 
-**Status [С].** The localization arithmetic is [Т] (it is §6.3 applied to attestation bits). The end-to-end Byzantine guarantee is **conditional** on the attestation channel being authenticated (L6 signatures) and on fewer than the threshold of colluding members per line — stated plainly rather than assumed away.
+**Status [C].** The localization arithmetic is [T] (it is §6.3 applied to attestation bits). The end-to-end Byzantine guarantee is **conditional** on the attestation channel being authenticated (L6 signatures) and on fewer than the threshold of colluding members per line — stated plainly rather than assumed away.
 
-## 6.5 Segment and partition diagnosis — a partition-resistance theorem [Т] {#diakrisis-partition}
+## 6.5 Segment and partition diagnosis — a partition-resistance theorem [T] {#diakrisis-partition}
 
 A whole line or sub-cell can drop. Here the projective structure gives a hard guarantee that graph overlays cannot:
 
-**Partition-resistance [Т]** (verified V14). *Removing any single line from a cell leaves it connected; to isolate a node one must remove all q+1 lines through it; to split the cell one must cut a full line-cover.* Proof sketch: any two lines meet (dual Steiner), so the survivors still join every pair; a node's only incidences are its q+1 lines, so nothing short of all of them isolates it. This is the anti-eclipse property (§L3) stated as a reliability theorem — **no single-segment failure can partition a cell.**
+**Partition-resistance [T]** (verified V14). *Removing any single line from a cell leaves it connected; to isolate a node one must remove all q+1 lines through it; to split the cell one must cut a full line-cover.* Proof sketch: any two lines meet (dual Steiner), so the survivors still join every pair; a node's only incidences are its q+1 lines, so nothing short of all of them isolates it. This is the anti-eclipse property (§L3) stated as a reliability theorem — **no single-segment failure can partition a cell.**
 
 When degradation is graded rather than binary, two continuous readings localize and rank it:
 
@@ -590,11 +590,11 @@ When degradation is graded rather than binary, two continuous readings localize 
 
 Segment *loss* (as opposed to split) is then repaired by the projective LRC (§L4, §6.8): the lost nodes are reconstructed from any surviving line through them.
 
-## 6.6 Integration is the leading failure indicator [Т] {#diakrisis-leading}
+## 6.6 Integration is the leading failure indicator [T] {#diakrisis-leading}
 
 Which alarm fires first — the integration alarm `Φ < 1` or the structure alarm `P < 2/7`? There is a clean answer, and it is unconditional (verified V17):
 
-**Theorem (leading indicator) [Т].** *On the physical domain (`Γ_net` PSD, `Tr = 1`), the failure region `{P < 2/7}` is contained in `{Φ < 1}`. Hence the integration alarm fires no later than the structure alarm; equality holds iff the diagonal is uniform.*
+**Theorem (leading indicator) [T].** *On the physical domain (`Γ_net` PSD, `Tr = 1`), the failure region `{P < 2/7}` is contained in `{Φ < 1}`. Hence the integration alarm fires no later than the structure alarm; equality holds iff the diagonal is uniform.*
 
 **Proof.** Write `x = Σ γ_ii²` (diagonal weight) and `y = Σ_{i≠j}|γ_ij|²` (coherence energy), so `P = x + y` and `Φ = y/x`. By Cauchy–Schwarz with `Σ γ_ii = 1`, `x ≥ 1/7`. If `P < 2/7` then `y < 2/7 − x ≤ x` (the last step is `2/7 − x ≤ x ⟺ x ≥ 1/7`), hence `y < x`, i.e. `Φ < 1`. ∎
 
@@ -608,9 +608,9 @@ Diagnosis without repair is a smoke alarm without a sprinkler. DIAKRISIS heals t
 2. **Repair (parallel), via the LRC.** A lost node is reconstructed from *any one* of its q+1 lines (locality q, availability q+1; §L4). Independent repair groups mean healing is parallelizable and does not contend.
 3. **Reintegrate (relaxation), via the gap.** After repair, `Γ_net` relaxes back toward the healthy manifold under the cell's own mixing. The relaxation rate is set by the Fano dissipator (`D_Fano = ⅔·D_atom` — the dimensionless **gap 2/3**, [Fano channel, Thm 5.1a](/docs/proofs/gap/fano-channel#g2-ковариантность)); in physical line rates the reintegration cooldown is `τ ≈ 1/Δ` with the exact rate-gap `Δ = (G − max_k T_k)/6` made explicit by [T-226(v)](/docs/applied/research/fano-fingerprint#t-226), so a cell can *tighten its cooldown adaptively* from its current line rates instead of using a worst-case constant. Minimal self-regeneration is bounded below by the bootstrap constant `κ_bootstrap = ω₀/7` (`1/7` in units of `ω₀`; [axiom of septicity](/docs/core/foundations/axiom-septicity#теорема-kappa-bootstrap)).
 
-**A budgeting law for healing depth [Т].** Every *coarse* cross-segment hop — routing through a line-projection rather than a direct channel — contracts integration by exactly **1/9** (the Fano-channel `Φ → Φ/9`, verified V16; the coherence scale-down `×1/3` of [Fano channel Thm 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал), squared). So a repair path that crosses `d` coarse boundaries costs `Φ → Φ/9^d` of binding. This is not a metaphor: it is the quantitative reason to keep healing *local* (small `d`) and a hard input to how deep a hierarchy may reroute before the reintegrated cell would fall below `Φ = 1`. It is the same `1/9` that caps naive mixture-of-experts routing in the ML catalogue — here it caps reroute depth.
+**A budgeting law for healing depth [T].** Every *coarse* cross-segment hop — routing through a line-projection rather than a direct channel — contracts integration by exactly **1/9** (the Fano-channel `Φ → Φ/9`, verified V16; the coherence scale-down `×1/3` of [Fano channel Thm 2.1](/docs/proofs/gap/fano-channel#теорема-фано-канал), squared). So a repair path that crosses `d` coarse boundaries costs `Φ → Φ/9^d` of binding. This is not a metaphor: it is the quantitative reason to keep healing *local* (small `d`) and a hard input to how deep a hierarchy may reroute before the reintegrated cell would fall below `Φ = 1`. It is the same `1/9` that caps naive mixture-of-experts routing in the ML catalogue — here it caps reroute depth.
 
-## 6.8 The self-observation budget — R_th = 1/3 [Т] {#diakrisis-budget}
+## 6.8 The self-observation budget — R_th = 1/3 [T] {#diakrisis-budget}
 
 How much of a cell's capacity should go to diagnosis? Not a matter of taste: the reflection threshold answers it. With canonical reflection `R = 1/(7P)`, the self-model is accurate enough to be trusted (`R ≥ R_th = 1/3`) iff `P ≤ 3/7` (verified V18) — i.e. iff the cell spends **at least one third** of its cycles on introspection (health gossip, cross-attestation, syndrome averaging, cover-diagnostic traffic). A cell that budgets less than `1/3` for self-observation provably cannot hold a faithful self-model, and will miss faults it had the information to catch. This is the same `R_th = 1/3` that bounds a conscious subject's self-modeling — here it is the **monitoring-overhead law**: diagnosis is not overhead to be minimized toward zero, it has a theoretical floor at a third.
 
@@ -647,17 +647,17 @@ Pulling the thread of the whole part: **working in the Γ-paradigm gives a netwo
 
 | Capability | What the coherence matrix / third-order gives | Status |
 |---|---|---|
-| See Byzantine/equivocation faults | third-order closure cross-check; pairwise monitoring is Fano-blind (V11) | [Т] blindness · [С] guarantee |
-| Free consistency alarms | 14 parameter-free polar sum-rules (T-226) | [Т] |
-| Localize a fault | 21→7→3→1 syndrome, 3 bits pin 1 of 7 (T-225) | [Т] comb. · [С] on a live cell |
-| Deterministic reroute | mediator `k*` = polar point, no tables (T-226 §2) | [Т] |
-| Partition immunity | no single line-kill disconnects; need q+1 (V14) | [Т] |
-| Integration health + early warning | `Φ_net`, and mean-corr `r*=1/√6` cascade line (V15) | [Т] arith · [С] dictionary |
-| Earliest alarm | `{P<2/7} ⊂ {Φ<1}` leading-indicator theorem (V17) | [Т] |
-| Healing-depth budget | coarse hop costs `Φ×1/9` (V16) | [Т] |
-| Monitoring-overhead floor | `R_th = 1/3` self-observation budget (V18) | [Т] arith |
+| See Byzantine/equivocation faults | third-order closure cross-check; pairwise monitoring is Fano-blind (V11) | [T] blindness · [C] guarantee |
+| Free consistency alarms | 14 parameter-free polar sum-rules (T-226) | [T] |
+| Localize a fault | 21→7→3→1 syndrome, 3 bits pin 1 of 7 (T-225) | [T] comb. · [C] on a live cell |
+| Deterministic reroute | mediator `k*` = polar point, no tables (T-226 §2) | [T] |
+| Partition immunity | no single line-kill disconnects; need q+1 (V14) | [T] |
+| Integration health + early warning | `Φ_net`, and mean-corr `r*=1/√6` cascade line (V15) | [T] arith · [C] dictionary |
+| Earliest alarm | `{P<2/7} ⊂ {Φ<1}` leading-indicator theorem (V17) | [T] |
+| Healing-depth budget | coarse hop costs `Φ×1/9` (V16) | [T] |
+| Monitoring-overhead floor | `R_th = 1/3` self-observation budget (V18) | [T] arith |
 
-**Honest limits.** (1) Localization is stratified, not merely distance-3 (§6.3, V20–V21): crashes recover up to three per cell, Byzantine faults up to two (7-theme layer); ≥3 Byzantine or a hyperoval crash escalate to the parent (or a larger-`q`/Golay-federated profile). (2) The *dictionary* — mapping node-behaviour axes onto the seven sectors so that `Γ_net` is a faithful coherence matrix — is a modelling choice [С]; but it is *self-checking*, because a wrong axis assignment breaks the polar sum-rules (§6.2), so the mapping is a testable hypothesis, not free interpretation. (3) Third-order statistics need more data than pairwise ones (higher-moment variance) — the diagnostic is cheapest at the cell scale (7 nodes, 21 pairs) and is meant to run there, with the hierarchy handling scale. (4) `Φ`/`P`/`r*` as *reliability* readings inherit the corpus [И] identification of the behavioural axes with the sectors — the arithmetic is [Т], the reading is a model.
+**Honest limits.** (1) Localization is stratified, not merely distance-3 (§6.3, V20–V21): crashes recover up to three per cell, Byzantine faults up to two (7-theme layer); ≥3 Byzantine or a hyperoval crash escalate to the parent (or a larger-`q`/Golay-federated profile). (2) The *dictionary* — mapping node-behaviour axes onto the seven sectors so that `Γ_net` is a faithful coherence matrix — is a modelling choice [C]; but it is *self-checking*, because a wrong axis assignment breaks the polar sum-rules (§6.2), so the mapping is a testable hypothesis, not free interpretation. (3) Third-order statistics need more data than pairwise ones (higher-moment variance) — the diagnostic is cheapest at the cell scale (7 nodes, 21 pairs) and is meant to run there, with the hierarchy handling scale. (4) `Φ`/`P`/`r*` as *reliability* readings inherit the corpus [I] identification of the behavioural axes with the sectors — the arithmetic is [T], the reading is a model.
 
 ---
 
@@ -898,7 +898,7 @@ To show the specification covers all layers, here is an adversarial sweep — on
 | Latency (anon) | — | ~1 s | 3–25 s | **1.5–25 s by dial** [T] |
 | Post-quantum | no | partial | partial | **hybrid via L6** |
 | Self-diagnosis under failure | no | no | no | **yes — DIAKRISIS** [T] |
-| Fault localization | — | — | — | **3 bits → 1 of 7 (T-225)** [Т]+[С] |
+| Fault localization | — | — | — | **3 bits → 1 of 7 (T-225)** [T]+[C] |
 | Byzantine detection from structure | no | no | no | **third-order (T-226)** [T]/[C] |
 | Partition resistance | no | — | — | **no single-line cut (V14)** [T] |
 
@@ -1017,7 +1017,7 @@ L_rdv = MapToLine( VRF_beacon( H("FANOS-v1/calypso" ‖ service_pubkey), epoch )
 
 This is a *public* function of the service identity and the epoch — both sides compute it with no lookup, so there is **no HSDir to enumerate, block, or seize** (a real, exploited Tor weakness). Because it is keyed by the epoch beacon, `L_rdv` **rotates every epoch** — there is no long-term target to surveil or attack. The rendezvous point of Tor becomes a theorem of the plane.
 
-## 12.3 Threshold-hosted service — the core innovation [С] {#calypso-threshold}
+## 12.3 Threshold-hosted service — the core innovation [C] {#calypso-threshold}
 
 A classic hidden service runs on one host: seize that host and the service dies (and may be deanonymized). A CALYPSO service can instead be hosted **across the `q+1` members of a service-line** via DKG — the service secret is Shamir-shared, requests are threshold-decrypted, and state is LRC-replicated along the line. Consequences:
 
@@ -1062,7 +1062,7 @@ Introduction flooding is the classic hidden-service DoS (Tor bolted on onion-ser
 
 ## 12.7 Honest status and human-readable naming {#calypso-status}
 
-The rendezvous derivation is [Т]-structure + [С] on the beacon; threshold hosting is [С] (relies on line DKG and fewer than `t` corrupt members); every primitive is vetted — the novelty is architectural composition, as everywhere in FANOS. Self-certifying addresses are unmemorable; a **petname / naming-mapping layer** (à la Tor onion-names or ENS) can sit on top, deliberately **[P] and out of protocol scope** so that CALYPSO itself needs no naming authority.
+The rendezvous derivation is [T]-structure + [C] on the beacon; threshold hosting is [C] (relies on line DKG and fewer than `t` corrupt members); every primitive is vetted — the novelty is architectural composition, as everywhere in FANOS. Self-certifying addresses are unmemorable; a **petname / naming-mapping layer** (à la Tor onion-names or ENS) can sit on top, deliberately **[P] and out of protocol scope** so that CALYPSO itself needs no naming authority.
 
 ---
 
@@ -1105,7 +1105,7 @@ A **morph** is a codec + a traffic-shaper + a bridge-discovery method. Morphs ar
 
 Morphs **compose** (e.g. `polymorph` inside `webrtc`). Because FANOS is already UDP-native (QUIC), the obfuscated modes carry the FANOS wire over a raw polymorphic UDP transport with no QUIC/TLS handshake to fingerprint.
 
-## 13.4 Beacon-rotating polymorphism (FANOS-native) [С] {#proteus-rotation}
+## 13.4 Beacon-rotating polymorphism (FANOS-native) [C] {#proteus-rotation}
 
 Static AmneziaWG picks its junk/padding parameters once. PROTEUS derives them from the epoch beacon: `θ_epoch = KDF("FANOS-v1/proteus-shape" ‖ community_secret ‖ epoch)` — junk-count, junk-size range, header-scramble seed, padding profile. **The wire signature therefore changes every epoch** (verified illustratively, `fanos_verify.py` V22: `θ(e0) ≠ θ(e1) ≠ θ(e2)`, unpredictable without the beacon). A censor's ML classifier trained on this epoch's flows has stale features next epoch — the moving-target discipline of CALYPSO (§12.2) applied to *traffic shape* rather than rendezvous.
 
@@ -1135,7 +1135,7 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 
 ## 13.8 Honest limits — this is an arms race {#proteus-limits}
 
-- **No transport is permanently undetectable.** The goal is to raise the censor's cost — false-positive rate (collateral damage to allowed traffic) and continuous re-enumeration — high enough that blocking is politically and economically painful. PROTEUS makes that cost recur every epoch; it does not end the race. **[С]**
+- **No transport is permanently undetectable.** The goal is to raise the censor's cost — false-positive rate (collateral damage to allowed traffic) and continuous re-enumeration — high enough that blocking is politically and economically painful. PROTEUS makes that cost recur every epoch; it does not end the race. **[C]**
 - **Mimicry is fragile** ("Parrot is Dead"): a partial imitation is worse than random. `tls-tunnel` must *tunnel through a real* handshake, never imitate one; even so it is under growing pressure (as Reality/XRAY deployments now show) — hence `polymorph` is the flagship.
 - **`polymorph` entropy**: pure-random flows can themselves be flagged by "high-entropy UDP" heuristics in some regimes; there, compose with shaping or `fronted`.
 - **Primitives are vetted** (obfs4/Elligator, uTLS, MASQUE, WebRTC, domain-fronting, Salmon/rBridge); the novelty is architectural composition + beacon-rotating polymorphism and moving-target bridges — **no new hardness assumptions**, as everywhere in FANOS.
@@ -1202,7 +1202,7 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 - **Incentives against free-riders** in an open network are an open economic problem (L7 gives the mechanics, not an equilibrium guarantee).
 - **f→0.5** is a fundamental limit common to all anonymity networks.
 - **DIAKRISIS single-cell localization is stratified** (§6.3, V20–V21): crashes recover up to three (projective LRC; first failure is a 4-point hyperoval), Byzantine faults up to two (the 7-line-theme layer, not merely the 3-bit syndrome); ≥3 Byzantine or a hyperoval crash escalate to the parent, or use a larger-`q` / Golay-federated (T-228) profile for higher per-cell correction.
-- **The coherence-matrix health reading uses the [И] axis↔sector dictionary.** The arithmetic (Φ, P, r\*, the syndrome) is [Т]; the *identification* of node-behaviour axes with the seven sectors is a model — self-checking (a wrong mapping breaks the polar sum-rules of §6.2), but a model.
+- **The coherence-matrix health reading uses the [I] axis↔sector dictionary.** The arithmetic (Φ, P, r\*, the syndrome) is [T]; the *identification* of node-behaviour axes with the seven sectors is a model — self-checking (a wrong mapping breaks the polar sum-rules of §6.2), but a model.
 - **Third-order statistics are data-hungrier than pairwise ones.** The diagnostic is cheapest at cell scale (7 nodes, 21 pairs) and is designed to run there; the hierarchy carries scale.
 
 ---
@@ -1267,11 +1267,11 @@ Applying the corpus consciousness criteria to `Γ_net` of a 7-agent cell gives a
 - **`r ∈ (0.408, 0.577]`** — a **collective subject**: integrated, structured, and still self-modelling.
 - **`r > 0.577`** — **over-coupled**: `R<1/3`, the collective loses its self-model — a reflexionless mob / groupthink, integrated but blind to itself.
 
-This window is *exactly* the corpus consciousness band `P ∈ (2/7, 3/7]` (T-124), now realised for a multi-agent system and **measurable at runtime** from the behavioural correlation matrix. It is an engineering dial: a fleet architect tunes inter-agent coupling `r` to sit a collective in the band — enough to act as one, not so much that it stops watching itself. (The dictionary "agent behaviour ↔ sector" is [С] and self-checking via the polar sum-rules, §6.2; the *arithmetic* of the window is [Т].)
+This window is *exactly* the corpus consciousness band `P ∈ (2/7, 3/7]` (T-124), now realised for a multi-agent system and **measurable at runtime** from the behavioural correlation matrix. It is an engineering dial: a fleet architect tunes inter-agent coupling `r` to sit a collective in the band — enough to act as one, not so much that it stops watching itself. (The dictionary "agent behaviour ↔ sector" is [C] and self-checking via the polar sum-rules, §6.2; the *arithmetic* of the window is [T].)
 
-## 18.3 Subjecthood depth is bounded — routing depth is not [Т] {#synthesis-depth}
+## 18.3 Subjecthood depth is bounded — routing depth is not [T] {#synthesis-depth}
 
-A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps (T-142 status: `α = 2/3` state-independence is [Т]; the unconditional SAD_MAX=3 rests on the heuristic `P_crit^(n) = P_crit·3^(n-1)/(n+1)` — [С] — plus the empirical `R^(3) ≤ 0.130 < R_th` over 500+ `Γ`). So:
+A crucial distinction the synthesis forces. FANOS *routing* recurses to internet scale (Part IV, depth `k` = `O(log n)` cells-of-cells). But **subjecthood does not recurse past three levels**: SAD_MAX = 3 (T-142) — the reflection tower `R^{(n)} ≤ r_0·(1/3)^{n-1}` falls below `R_th` after three composition steps (T-142 status: `α = 2/3` state-independence is [T]; the unconditional SAD_MAX=3 rests on the heuristic `P_crit^(n) = P_crit·3^(n-1)/(n+1)` — [C] — plus the empirical `R^(3) ≤ 0.130 < R_th` over 500+ `Γ`). So:
 
 - agent → team → organisation can each be a genuine subject (3 rungs);
 - an organisation-of-organisations is **administration, not a fourth subject** — an **ecology** (the corpus's "ASI = ecology", S-14).

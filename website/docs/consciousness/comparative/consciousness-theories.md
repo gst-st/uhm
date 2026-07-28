@@ -460,7 +460,7 @@ Mapping of the five theses:
 
 | Thesis | Status in UHM | Backing theorem |
 |---|---|---|
-| FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&|_\mathcal{D}$ |
+| FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&\|_\mathcal{D}$ |
 | NS | **conventional** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): choice $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
 | OW | **derived, unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
 | NF | **definitional** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): Giraud axioms, descent |
@@ -691,7 +691,7 @@ AST is a qualitative theory; UHM provides a mathematical realisation of the "att
 
 | Aspect | PP | UHM |
 |--------|-----|-----|
-| Prediction error | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = |\sin(\arg(\gamma_{ij}))|$ |
+| Prediction error | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = \|\sin(\arg(\gamma_{ij}))\|$ |
 | Precision-weighting | Confidence in signal | $\kappa$ (coherence) |
 | Hierarchy | Multi-level predictions | L0-L4 (depth tower) |
 | Top-down prediction | Generative model | $\varphi(\Gamma)$ = prediction (self-model) |

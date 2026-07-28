@@ -146,7 +146,7 @@ Note the critically important asymmetry of the two parameters: $t$ can be change
 
 ### 1.3 The exact window: how much feeding consciousness costs {#точное-окно-питания}
 
-The formula $r_c = P_{\text{crit}}/(7P)$ above is a **dimensional heuristic [И]** — a useful order-of-magnitude anchor for the phase topology, but not derived from the microscopic dynamics. The exact statement, obtained directly from the canonical Fano dephasing and the replacement functor, is the following theorem. Its content in one sentence: the stationary state keeps only a *fraction* $\lambda = x/(1+x)$ of the target's coherence, where $x$ is the feeding ratio — and pushing that retained fraction through the four consciousness thresholds carves a closed-form window in $x$.
+The formula $r_c = P_{\text{crit}}/(7P)$ above is a **dimensional heuristic [I]** — a useful order-of-magnitude anchor for the phase topology, but not derived from the microscopic dynamics. The exact statement, obtained directly from the canonical Fano dephasing and the replacement functor, is the following theorem. Its content in one sentence: the stationary state keeps only a *fraction* $\lambda = x/(1+x)$ of the target's coherence, where $x$ is the feeding ratio — and pushing that retained fraction through the four consciousness thresholds carves a closed-form window in $x$.
 
 #### Theorem T-259 (Consciousness window in the feeding ratio) [Т in the isotropic first-order model] {#теорема-окно-питания}
 

@@ -460,7 +460,7 @@ $$\mathfrak{T} \;=\; \mathrm{Sh}_\infty(\mathcal{C}_7,\; J_\mathrm{Bures},\; \om
 
 | Тезис | Статус в УГМ | Опорная теорема |
 |---|---|---|
-| FPR | **форсирован** | [T-186](/docs/proofs/categorical/cohesive-closure) (Когезивное замыкание): $F \cong \&|_\mathcal{D}$ |
+| FPR | **форсирован** | [T-186](/docs/proofs/categorical/cohesive-closure) (Когезивное замыкание): $F \cong \&\|_\mathcal{D}$ |
 | NS | **конвенционален** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): выбор $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
 | OW | **выведен, единственен** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
 | NF | **определяющий** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): аксиомы Giraud, descent |
@@ -691,7 +691,7 @@ AST — качественная теория; УГМ даёт математи�
 
 | Аспект | PP | УГМ |
 |--------|-----|-----|
-| Ошибка предсказания | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = |\sin(\arg(\gamma_{ij}))|$ |
+| Ошибка предсказания | $\delta = \text{obs} - \text{pred}$ | Gap$(i,j) = \|\sin(\arg(\gamma_{ij}))\|$ |
 | Precision-weighting | Уверенность в сигнале | $\kappa$ (когерентность) |
 | Иерархия | Мульти-уровневые предсказания | L0-L4 (башня глубины) |
 | Top-down предсказание | Генеративная модель | $\varphi(\Gamma)$ = предсказание (самомодель) |

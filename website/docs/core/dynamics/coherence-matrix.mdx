@@ -70,12 +70,12 @@ $$
 \Gamma^\dagger = \Gamma \quad \Leftrightarrow \quad \gamma_{ij} = \gamma_{ji}^*
 $$
 
-**Justification [Т]:** The Hermiticity of $\Gamma$ follows from the domain of Axiom A1: $\mathcal{D}(\mathcal{H})$ is the set of Hermitian positive semi-definite matrices with $\mathrm{Tr}(\Gamma)=1$. Additionally: the real structure $J_{\mathrm{int}}$ of the finite spectral triple ($J^2=+1$, KO-dimension 6) ensures $J\Gamma J^{-1} = \Gamma$, which for standard $J$ = c.c. is equivalent to $\Gamma^\dagger = \Gamma$ [Т].
+**Justification [Т]:** The Hermiticity of $\Gamma$ follows from the domain of Axiom A1: $\mathcal{D}(\mathcal{H})$ is the set of Hermitian positive semi-definite matrices with $\mathrm{Tr}(\Gamma)=1$. Additionally: the real structure $J_{\mathrm{int}}$ of the finite spectral triple ($J^2=+1$, KO-dimension 6) ensures $J\Gamma J^{-1} = \Gamma$, which for standard $J$ = c.c. is equivalent to $\Gamma^\dagger = \Gamma$ [T].
 
 **Corollary:** All eigenvalues $\lambda_k$ are real.
 
 :::warning Necessity of Complex Elements [Т-132]
-Hermiticity allows $\gamma_{ij} \in \mathbb{C}$ (with $\gamma_{ji} = \gamma_{ij}^*$). According to [T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132), for a non-trivial Gap structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the matrix $\Gamma$ **must** be complex. The Hamiltonian part $-i[H_\Omega, \Gamma]$ generates complex coherences after the first evolution step.
+Hermiticity allows $\gamma_{ij} \in \mathbb{C}$ (with $\gamma_{ji} = \gamma_{ij}^*$). According to [T-132 [T]](/docs/proofs/consciousness/operationalization#t-132), for a non-trivial Gap structure ($\exists(i,j): \mathrm{Gap}(i,j) > 0$), the matrix $\Gamma$ **must** be complex. The Hamiltonian part $-i[H_\Omega, \Gamma]$ generates complex coherences after the first evolution step.
 :::
 
 ### 2. Positive Semi-definiteness
@@ -143,7 +143,7 @@ $$
 :::note Degrees of Freedom
 A Hermitian $7 \times 7$ matrix has $7^2 = 49$ real parameters. Taking normalization into account: **48 independent parameters**.
 
-Of these, **34** are physically distinguishable ($G_2$-invariant), and $14 = \dim(G_2)$ are gauge degrees of freedom. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [Т] proves that $G_2 = \mathrm{Aut}(\mathbb{O})$ is the maximal gauge group: the physical state space $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 34$.
+Of these, **34** are physically distinguishable ($G_2$-invariant), and $14 = \dim(G_2)$ are gauge degrees of freedom. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [T] proves that $G_2 = \mathrm{Aut}(\mathbb{O})$ is the maximal gauge group: the physical state space $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 34$.
 :::
 
 ## Interpretation of Elements
@@ -257,7 +257,7 @@ Hermiticity $\Gamma^\dagger = \Gamma$ means $\gamma_{ji} = \gamma_{ij}^*$, which
 
 ### Principle of the Conjugate Pair (Т.4.1) {#принцип-сопряжённой-пары}
 
-:::info Interpretation [И]
+:::info Interpretation [I]
 The conjugate pair principle is a semantic statement (interpretation of the modulus as "common", the phase as "perspective"), not a mathematical theorem. The mathematical content is a trivial consequence of the polar decomposition of a complex number.
 :::
 
@@ -301,7 +301,7 @@ The full matrix $\Gamma$ contains not 28 (7 + 21), but **49 meaningful elements*
 | **Upper triangle** $\gamma_{ij}$ ($i < j$) | 21 | External projections of coherences | $\mathrm{Map}_{\mathrm{ext}}$: how the connection **appears** to an observer |
 | **Lower triangle** $\gamma_{ji}$ ($j > i$) | 21 | Interior projections of coherences | $\mathrm{Map}_{\mathrm{int}}$: how the connection is **represented** from the system's side (conjugate projection) |
 
-:::tip Hermitian Conjugation as a Duality Functor [И]
+:::tip Hermitian Conjugation as a Duality Functor [I]
 Let $\Gamma \in \mathrm{Ob}(\mathcal{C})$ be the coherence matrix in the $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$. Then Hermitian conjugation $*$ implements the duality functor:
 
 $$
@@ -319,7 +319,7 @@ The full 49-cell map with the table of external projections ($\mathrm{Map}_{\mat
 
 ### Quantum Current Between Dimensions (Т.2.2) {#квантовый-ток}
 
-:::tip Theorem 2.2: Probability Current Between Dimensions [Т]
+:::tip Theorem 2.2: Probability Current Between Dimensions [T]
 For a pair of dimensions $(i, j)$, the probability current is defined as:
 
 $$
@@ -491,7 +491,7 @@ The 21 coherences $\gamma_{ij}$ ($i \neq j$) are organized by the [Fano plane](/
 - **$G_2$-covariance** [Т]: the Fano dissipator $\mathcal{D}_{\text{Fano}}$ preserves the symmetry $G_2 = \mathrm{Aut}(\mathbb{O})$
 - All 21 pairs are covered by exactly one Fano line ($\lambda = 1$ in BIBD$(7,3,1)$)
 
-This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [Т].
+This is not an arbitrary classification, but a consequence of the uniqueness of the projective plane of order 2 [T].
 :::
 
 <span id="два-уровня-формализации"></span>
@@ -664,9 +664,9 @@ All three formalisms describe **the same physical object** at different levels o
 
 ### Morita Equivalence of 7D and 42D Formalisms {#морита-эквивалентность-7d-42d}
 
-#### Theorem (Morita Equivalence 7D↔42D) [Т] {#теорема-морита-эквивалентность}
+#### Theorem (Morita Equivalence 7D↔42D) [T] {#теорема-морита-эквивалентность}
 
-:::tip Theorem (Morita Equivalence 7D↔42D) [Т]
+:::tip Theorem (Morita Equivalence 7D↔42D) [T]
 
 The formalisms $\mathcal{D}(\mathbb{C}^7)$ and $\mathcal{D}(\mathbb{C}^{42})$ are Morita equivalent:
 $$\mathbf{Sh}_\infty(\mathcal{C}|_7) \simeq \mathbf{Sh}_\infty(\mathcal{C}|_{42})$$
@@ -700,12 +700,12 @@ Application: the Bures metric on $\mathcal{D}(\mathbb{C}^7)$ coincides with the 
 
 ### Fano Structure of Coherences {#фановская-структура}
 
-:::info Octonionic Structure of Coherences [С]
+:::info Octonionic Structure of Coherences [C]
 The matrix $\Gamma$ contains $\binom{7}{2} = 21$ coherences $\gamma_{ij}$. In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), these 21 pairs correspond to the 21 edges of the complete graph $K_7$ on 7 vertices.
 
 The [Fano plane](../../proofs/minimality/theorem-octonionic-derivation#плоскость-фано) PG(2,2) singles out **7 triplets** — lines on which octonionic multiplication is closed. Each triplet $(e_i, e_j, e_k)$ defines an associative subalgebra isomorphic to Im($\mathbb{H}$).
 
-**Prediction [Т]:** Coherences within Fano triplets may exhibit stronger correlations than those between triplets. Bridge [Т] (closed, T15).
+**Prediction [Т]:** Coherences within Fano triplets may exhibit stronger correlations than those between triplets. Bridge [T] (closed, T15).
 
 [Structural derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::

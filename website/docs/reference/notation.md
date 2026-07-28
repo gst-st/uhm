@@ -344,7 +344,7 @@ See [Coherence Cybernetics](/docs/applied/coherence-cybernetics/definitions) for
 | $\mathcal{V}$ | [Viability domain](/docs/core/dynamics/viability) |
 | $\mathrm{VIT}$ | Viability Integrity Tensor |
 | $\kappa_{\text{bootstrap}}$ | Minimum regeneration rate: $\kappa_{\text{bootstrap}} = \omega_0/7$ **[D]** scale; resolves the bootstrap paradox |
-| $\kappa_0$ | Categorical norm: $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ **[T]** — [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
+| $\kappa_0$ | Categorical norm: $\kappa_0 = \omega_0 \cdot \|\gamma_{OE}\| \cdot \|\gamma_{OU}\| / \gamma_{OO}$ **[T]** — [categorical derivation](/docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0) |
 | $\kappa(\Gamma)$ | Effective regeneration rate: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ **[T]** |
 | $\mathrm{Coh}_E$ | $E$-coherence (HS-projection) **[T]**: $\mathrm{Coh}_E(\Gamma) = \dfrac{\|\pi_E(\Gamma)\|_{\mathrm{HS}}^2}{\|\Gamma\|_{\mathrm{HS}}^2} = \dfrac{\gamma_{EE}^2 + 2\sum_{i \neq E}\lvert\gamma_{Ei}\rvert^2}{\mathrm{Tr}(\Gamma^2)}$ — **canonical formula** ([master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection)) |
 | $P_E$ | E-sector purity (42D): $P_E = \mathrm{Tr}(\rho_E^2)$, where $\rho_E = \mathrm{Tr}_{-E}(\Gamma)$ — **theoretical construction**, defined only in the extended 42D formalism ($\mathcal{H} = \mathbb{C}^{42}$). Formal equivalence $\mathrm{Coh}_E \approx P_E$ — **structural hypothesis [H]** ([details](/docs/applied/coherence-cybernetics/definitions#e-когерентность)) |

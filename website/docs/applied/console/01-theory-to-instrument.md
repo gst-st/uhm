@@ -83,7 +83,7 @@ The single artifact that makes this suite a specification rather than a brochure
 |---|---|---|---|
 | Seven-axis frame | Minimality (7 roles); Σ uniqueness (T-224) | [T] | 02 |
 | State readout (invariants) | definitions of $P,R,\Phi,D,R_\varphi$ + thresholds | [T]/[C] | 02 |
-| Mandalagram / bodygraph | 28-cell chart (gamma-canon) | [T]/[О] | 02, 05 |
+| Mandalagram / bodygraph | 28-cell chart (gamma-canon) | [T]/[D] | 02, 05 |
 | Archetype & mode | 16 signatures [T]; triadic decomposition [T] | [T] | 02 |
 | Meaning & Freedom readout | Meaning formula; Freedom $=\dim\ker\mathcal H_\Gamma+1$ [T] | [T] | 02 |
 | Measured estimation | seven-channel embedding; PCI calibration | [Т-path]/[C] | 03 |
@@ -96,10 +96,10 @@ The single artifact that makes this suite a specification rather than a brochure
 | Org diagnostics | 7-D org profile; one-theme pathology | [T]/[C] | 04 |
 | Clinical (DOC/anaesthesia/meditation) | altered-states profiles; PCI bridge | [C]/[research] | 04, 07 |
 | AI introspection | substrate closure (T-153); SYNARC | [T] | 04 |
-| Symbolic interop | back-projection; classification (T-256) | [T]+[И] | 04 |
+| Symbolic interop | back-projection; classification (T-256) | [T]+[I] | 04 |
 | Human "why/tasks" reading | archetype + Freedom + $\Gamma^*(\tau)$; birth-refusal | [T] + refusal | 05 |
 | Chronobiology anchor | licensed-channel ledger (T-257) | [T]/[C] | 03, 08 |
 | Modulation horizon | $\mathcal R$; correction; gate-not-message (T-257a) | [speculative]/[T-bound] | 08 |
-| Every guardrail | optical construction (T-256/T-257) + viability gate | [T]+[И] | 02, 10 |
+| Every guardrail | optical construction (T-256/T-257) + viability gate | [T]+[I] | 02, 10 |
 
 **Where this leads.** The next document, [02 · The kernel](/docs/applied/console/kernel), turns §3's observables into exact algorithms and the internal API that every domain module calls.

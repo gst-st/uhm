@@ -69,12 +69,12 @@ In UHM, all three networks are described by the unified mechanism of redistribut
 
 | Classical model | UHM formalism |
 |---------------------|---------------|
-| Broadbent's filter | $|\gamma_{AE_{\text{target}}}| \gg 0$, $|\gamma_{AE_{\text{distr}}}| \approx 0$ |
-| Treisman's attenuation | $|\gamma_{AE_{\text{target}}}| > |\gamma_{AE_{\text{distr}}}| > 0$ |
-| Late selection | All $|\gamma_{AX}|$ moderate; selection via $(A,D)$ |
+| Broadbent's filter | $\|\gamma_{AE_{\text{target}}}\| \gg 0$, $\|\gamma_{AE_{\text{distr}}}\| \approx 0$ |
+| Treisman's attenuation | $\|\gamma_{AE_{\text{target}}}\| > \|\gamma_{AE_{\text{distr}}}\| > 0$ |
+| Late selection | All $\|\gamma_{AX}\|$ moderate; selection via $(A,D)$ |
 | Alerting (Posner) | $\gamma_{AA}$ — tonic level |
 | Orienting (Posner) | $\gamma_{AE_1} \to \gamma_{AE_2}$ — redistribution |
-| Executive (Posner) | Resolution of $|\gamma_{AX_1}| \stackrel{?}{>} |\gamma_{AX_2}|$ |
+| Executive (Posner) | Resolution of $\|\gamma_{AX_1}\| \stackrel{?}{>} \|\gamma_{AX_2}\|$ |
 
 ---
 
@@ -122,7 +122,7 @@ $$
 
 This is the 'budget'. It can be distributed as follows:
 
-| Scenario | $|\gamma_{AE}|$ | $|\gamma_{AS}|$ | $|\gamma_{AD}|$ | $|\gamma_{AL}|$ | Sum $|\cdot|^2$ | SNR for $E$ |
+| Scenario | $\|\gamma_{AE}\|$ | $\|\gamma_{AS}\|$ | $\|\gamma_{AD}\|$ | $\|\gamma_{AL}\|$ | Sum $\|\cdot\|^2$ | SNR for $E$ |
 |----------|:---:|:---:|:---:|:---:|:---:|:---:|
 | Full focus | $0.12$ | $0.01$ | $0.01$ | $0.01$ | $0.0147$ | $36.0$ |
 | Moderate focus | $0.10$ | $0.04$ | $0.03$ | $0.03$ | $0.0134$ | $3.7$ |
@@ -196,7 +196,7 @@ $$
 
 **Numerical example.** A mindfulness practitioner directs attention at the breath (channel $S \to E$):
 
-| Time | $|\gamma_{AE}|$ | $\mathrm{Gap}(S,E)$ | $\mathrm{Gap}(D,E)$ | Subjective experience |
+| Time | $\|\gamma_{AE}\|$ | $\mathrm{Gap}(S,E)$ | $\mathrm{Gap}(D,E)$ | Subjective experience |
 |-------|:---:|:---:|:---:|:---|
 | $\tau = 0$ | $0.08$ | $0.40$ | $0.45$ | Distracted |
 | $\tau = 5$ min | $0.15$ | $0.30$ | $0.42$ | "Starting to feel the breath" |
@@ -358,7 +358,7 @@ This reproduces the **Ebbinghaus forgetting curve** at $\alpha \approx 0.5$–$0
 
 **Numerical example: Ebbinghaus forgetting curve.** A learned poem with initial coherence $|\gamma_{ij}(0)| = 0.30$ and $\alpha = 0.6$ ($\beta = 0.3$):
 
-| Time $\tau$ | $|\gamma_{ij}(\tau)|$ | Fraction of initial | Subjectively |
+| Time $\tau$ | $\|\gamma_{ij}(\tau)\|$ | Fraction of initial | Subjectively |
 |:---:|:---:|:---:|:---|
 | 1 day | $0.30 \cdot 1^{-0.3} = 0.30$ | 100% | Remember well |
 | 7 days | $0.30 \cdot 7^{-0.3} \approx 0.17$ | 56% | Remember the main points |
@@ -391,8 +391,8 @@ Another analogy: declarative memory — the source code of a program (data that 
 
 | Memory type | Content | Kernel | After 63 years |
 |------------|-----------|------|:---:|
-| Episodic | "Dad was holding the handlebars" | $K \sim \tau^{-0.6}$ | $|\gamma| \approx 0.01$ (faintly) |
-| Semantic | "A bicycle has two wheels" | $K \sim \tau^{-0.4}$ | $|\gamma| \approx 0.05$ (remembers) |
+| Episodic | "Dad was holding the handlebars" | $K \sim \tau^{-0.6}$ | $\|\gamma\| \approx 0.01$ (faintly) |
+| Semantic | "A bicycle has two wheels" | $K \sim \tau^{-0.4}$ | $\|\gamma\| \approx 0.05$ (remembers) |
 | Procedural | Riding skill | $K \hookrightarrow H_{\text{eff}}$ | Fully preserved |
 
 Procedural memory does not depend on the kernel — it is 'hardwired' into $H_{\text{eff}}$. Neurophysiological correlate: procedural memory is stored in the cerebellum and basal ganglia, not the hippocampus (like declarative memory) — different neural substrates for different 'records'.

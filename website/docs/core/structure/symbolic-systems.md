@@ -11,7 +11,7 @@ This chapter shows how all symbolic systems of humanity — from the Indian chak
 
 The reader will learn: why structurally similar descriptive systems arose in different cultures and eras; what exactly each of them "sees" and what it "loses"; and why the number 7 appears in symbolic systems so frequently — from the seven chakras to the seven musical notes and the seven days of the week.
 
-:::warning Status [И]
+:::warning Status [I]
 All material in this section has the status of **interpretation**. The projection formulae $\pi_S$ are constructive, but empirical validation has not been carried out. The identifications "symbol ↔ element of Γ" are substantive hypotheses, not identities.
 :::
 
@@ -57,7 +57,7 @@ This answer explains two puzzling facts at once: (1) the **similarity** between 
 
 ### 1.4 The projection uncertainty principle {#принцип-неопределённости-проекции}
 
-:::warning Central methodological limitation [И]
+:::warning Central methodological limitation [I]
 UHM defines the object ($\Gamma \in \mathbb{C}^{7 \times 7}$); symbolic systems are **empirical approximations** to it. The choice of projection $\pi_S$ is **not a mathematical derivation** but an empirical hypothesis.
 :::
 
@@ -73,7 +73,7 @@ UHM defines the object ($\Gamma \in \mathbb{C}^{7 \times 7}$); symbolic systems 
 
 A bijection $\phi: \mathrm{Obj}(S) \to$ (substructure of Γ) for a symbolic system $S$ with 7 elements can be constructed for **any** of the candidates. However, each choice generates a **different** projection $\pi_S$ with different properties.
 
-**Corollary.** All identifications $\pi_S$ in this document are **constructive hypotheses [И]**, not mathematical derivations [Т]. For each symbolic system:
+**Corollary.** All identifications $\pi_S$ in this document are **constructive hypotheses [I]**, not mathematical derivations [T]. For each symbolic system:
 
 1. The type of substructure (diagonal, Fano lines, spectrum, …) — **first-order hypothesis**
 2. The specific bijection within the chosen type — **second-order hypothesis**
@@ -118,7 +118,7 @@ These systems describe the **distribution of energy** among dimensions, ignoring
 #### Chakra system (7 chakras) {#чакры}
 
 :::info The [Projection uncertainty principle](#принцип-неопределённости-проекции) applied
-The analysis below demonstrates that the identification of chakras with elements of $\Gamma$ is a **constructive hypothesis** [И], not a mathematical derivation. Several projection candidates and their properties are presented.
+The analysis below demonstrates that the identification of chakras with elements of $\Gamma$ is a **constructive hypothesis** [I], not a mathematical derivation. Several projection candidates and their properties are presented.
 :::
 
 ##### A. UHM formulation
@@ -207,7 +207,7 @@ What could confirm or refute a specific mapping $\phi$?
 
 #### Sufi Lataif (subtle centres)
 
-*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 **Structure.** 5–7 subtle centres (names: Nafs, Qalb, Ruh, Sirr, Khafi, Akhfa, sometimes additional ones).
 
@@ -217,7 +217,7 @@ What could confirm or refute a specific mapping $\phi$?
 
 #### The five skandhas (Buddhism)
 
-*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*The specific identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 **Structure.** 5 aggregates: Rupa (form), Vedana (sensation), Sanna (perception), Sankhara (formations), Vinnana (consciousness).
 
@@ -240,7 +240,7 @@ What could confirm or refute a specific mapping $\phi$?
 
 ### 3.2 Systems based on coherences (off-diagonal elements)
 
-*All element↔coherence identifications in §3.2 are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*All element↔coherence identifications in §3.2 are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 These systems describe **connections** between dimensions.
 
@@ -325,7 +325,7 @@ The 9 types are combinations of 3 centres (head/heart/body ↔ L/E/D) × 3 strat
 
 ### 3.3 Systems with binary phase projection
 
-*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 These systems discretise the continuous phase $\theta_{ij} \in [0, 2\pi)$ into a binary value.
 
@@ -367,7 +367,7 @@ where $M_6$ is 6 pairs of dimensions (presumably without the U-dimension or with
 
 ### 3.4 Systems describing external coherences (upper triangle)
 
-*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 These systems describe **how connections between dimensions appear from outside** ($\text{Map}_{\text{ext}}$), but not how they are experienced from within ($\text{Map}_{\text{int}}$).
 
@@ -422,7 +422,7 @@ $$
 
 ### 3.5 Systems with elemental structure
 
-*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 Systems that describe not individual elements of $\Gamma$ but **equivalence classes** of states.
 
@@ -466,7 +466,7 @@ Systems that describe not individual elements of $\Gamma$ but **equivalence clas
 
 ### 3.6 Geometric and numerical systems
 
-*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [И].*
+*All identifications below are [projection hypotheses](#принцип-неопределённости-проекции) [I].*
 
 #### Platonic solids
 
@@ -520,9 +520,9 @@ Systems that describe not individual elements of $\Gamma$ but **equivalence clas
 
 After analysing more than ten symbolic systems from different eras and cultures, two questions arise: (1) is the formalism $\Gamma$ sufficient to describe everything that these systems describe? and (2) is $\Gamma$ the minimal such formalism?
 
-### 5.1 Descriptive completeness [О] {#описательная-полнота}
+### 5.1 Descriptive completeness [D] {#описательная-полнота}
 
-:::info Observation (Descriptive completeness) [О]
+:::info Observation (Descriptive completeness) [D]
 For every predicate $P$ expressible in any of the listed symbolic systems, there exists a formula in terms of $\Gamma$:
 
 $$
@@ -531,12 +531,12 @@ $$
 :::
 
 :::warning Epistemic status
-This observation is a **trivial consequence of definitions** (status [О]), not a substantive theorem. Each $\pi_S$ is defined as a map *from* $\Gamma$, so the expressibility of $P$ through $\Gamma$ is a tautology. The other two statements are non-trivial.
+This observation is a **trivial consequence of definitions** (status [D]), not a substantive theorem. Each $\pi_S$ is defined as a map *from* $\Gamma$, so the expressibility of $P$ through $\Gamma$ is a tautology. The other two statements are non-trivial.
 :::
 
-### 5.2 Minimality of Γ [Т] {#минимальность-гаммы}
+### 5.2 Minimality of Γ [T] {#минимальность-гаммы}
 
-:::warning Claim (Minimality) [Т]
+:::warning Claim (Minimality) [T]
 The matrix $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ is the **minimal** object unifying all the listed projections. More precisely: for any alternative formalism $\Gamma' \in \mathcal{D}(\mathbb{C}^{N'})$ admitting the same projections:
 
 $$
@@ -546,9 +546,9 @@ $$
 
 **Proof.** By [Theorem S](/docs/proofs/minimality/theorem-minimality-7) [Т]: $N = 7$ is the minimum dimensionality for (AP)+(PH)+(QG). Symbolic systems that describe autopoietic entities (chakras as "energy centres of a living being", Kabbalah as "the structure of the soul") implicitly assume all three conditions. Therefore $N' \geq 7$. $\blacksquare$
 
-### 5.3 Information-theoretic characterisation of loss [Т] {#информационная-утрата}
+### 5.3 Information-theoretic characterisation of loss [T] {#информационная-утрата}
 
-:::warning Theorem (Information loss bound) [Т]
+:::warning Theorem (Information loss bound) [T]
 For a projection $\pi_S: \mathcal{D}(\mathbb{C}^7) \to \mathcal{C}_S$ with $|\mathrm{Obj}(\mathcal{C}_S)| = M$ elements, the information loss is bounded below by:
 
 $$
@@ -602,7 +602,7 @@ In the UHM formalism, the duality is realised through **Hermitian conjugation** 
 
 ---
 
-## 7. Formalisation of mystical concepts [И] {#мистические-концепты}
+## 7. Formalisation of mystical concepts [I] {#мистические-концепты}
 
 A number of cross-cultural phenomenological concepts admit formalisation through the Gap structure. The formulations below are constructive interpretations, not empirically confirmed identities.
 
@@ -643,15 +643,15 @@ The word "occult" derives from the Latin *occultus* — "hidden." Symbolic syste
 
 UHM **removes** the first reason (by providing a complete formalism) and **explains** the second (Gap is a precisely defined measure of the "hidden").
 
-### 8.3 Descriptive coherence and its limitations [И]
+### 8.3 Descriptive coherence and its limitations [I]
 
-:::info Observation (Descriptive coherence) [И]
+:::info Observation (Descriptive coherence) [I]
 UHM is capable of deriving every phenomenological predicate of every analysed symbolic system through the unified formalism $\Gamma \in \mathbb{C}^{7 \times 7}$. This is a **necessary** condition for the adequacy of the theory (if $\Gamma$ could not express the known systems, the theory would be incomplete), but **not a sufficient** condition for its truth (descriptive coherence is not the same as predictive power).
 :::
 
 **Limitations of this analysis:**
 
-1. **Arbitrariness of projections.** The specific identifications (chakra ↔ dimension) are hypotheses [И], not theorems. For each symbolic system there exist $k!$ possible bijections, of which one "most justified" is chosen. Without empirical verification the choice remains speculative.
+1. **Arbitrariness of projections.** The specific identifications (chakra ↔ dimension) are hypotheses [I], not theorems. For each symbolic system there exist $k!$ possible bijections, of which one "most justified" is chosen. Without empirical verification the choice remains speculative.
 
 2. **Retrospectiveness.** The analysis was carried out *after* the theory was formulated. Predictive power requires the theory to predict the structure of *unknown* symbolic systems or new properties of *known* ones.
 
@@ -667,11 +667,11 @@ Analysis of symbolic systems reveals a fundamental fact: no tradition has descri
 
 | Type | Mechanism | Source | Status |
 |---|---|---|---|
-| 1. Code-theoretic | Hamming bound H(7,4): ≥ 3 of 21 Gaps are non-zero | [Coding theory](/docs/proofs/gap/fano-channel) | [И] |
-| 2. Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ generates a phase shift | [Octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) | [Г] |
-| 3. Energetic | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from cubic potential $V_3$ | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | [Г] |
-| 4. Categorical | Lawvere's theorem: the fixed point of self-modelling is non-trivial | [φ-operator](/docs/core/operators/phi-operator) | [Г] |
-| 5. Topological | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [Г] |
+| 1. Code-theoretic | Hamming bound H(7,4): ≥ 3 of 21 Gaps are non-zero | [Coding theory](/docs/proofs/gap/fano-channel) | [I] |
+| 2. Algebraic | Octonionic associator $[e_i, e_j, e_k] \neq 0$ generates a phase shift | [Octonionic structure](/docs/proofs/minimality/theorem-octonionic-derivation) | [H] |
+| 3. Energetic | Spontaneous minimum $V_{\text{Gap}} \neq 0$ from cubic potential $V_3$ | [Gap thermodynamics](/docs/core/dynamics/gap-thermodynamics) | [H] |
+| 4. Categorical | Lawvere's theorem: the fixed point of self-modelling is non-trivial | [φ-operator](/docs/core/operators/phi-operator) | [H] |
+| 5. Topological | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$: some Gap configurations cannot be continuously contracted | [Gap phase diagram](/docs/core/dynamics/gap-phase-diagram) | [H] |
 
 **Conclusion.** Complete transparency (absence of the "hidden") is mathematically impossible for a non-trivial 7D octonionic system. This explains why all symbolic traditions point to the "incomprehensible" — not as a metaphor but as a structural property of reality.
 

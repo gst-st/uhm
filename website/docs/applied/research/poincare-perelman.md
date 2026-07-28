@@ -137,7 +137,7 @@ This result **elevates the status of the analogy**: the Lindblad dynamics of UHM
 | | Ricci–Perelman Flow | KMS-symmetric Lindblad |
 |---|---|---|
 | Space | $(M^n, g(t))$ — metrics on a manifold | $(\mathcal{D}_+(\mathbb{C}^7), \mathcal{W}_\sigma)$ |
-| Functional | $\mathcal{F}(g) = \int(R + |\nabla f|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — quantum relative entropy |
+| Functional | $\mathcal{F}(g) = \int(R + \|\nabla f\|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — quantum relative entropy |
 | Flow | $\partial_t g = -2\,\mathrm{Ric}(g)$ | $\partial_t\rho = \mathcal{L}_\sigma(\rho)$ |
 | Curvature | Can be $< 0$; surgery when $\|\mathrm{Ric}\| \to \infty$ | $\kappa \geq \lambda_1 > 0$ **in the interior** [T] |
 | Surgery | At necks | At rank-collapse: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [T, Hübner] |
