@@ -409,3 +409,30 @@ h5, h6 {
   pointer-events: auto !important;
   transform: translateY(0) !important;
 }
+
+/* 28.07: на ширинах ~1100–1400 правая группа навбара (Справочник · язык ·
+   тема · поиск) наезжала на пункты слева — подписи читались внахлёст
+   («СправоЧникРусский»). Меню обязано сжиматься раньше, чем пересекаться. */
+@media (max-width: 1439px) {
+  .navbar__item {
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+    font-size: 0.93rem;
+  }
+  .navbar__title {
+    font-size: 1rem;
+  }
+  .navbar__search-input {
+    width: 8.5rem;
+  }
+}
+@media (max-width: 1279px) {
+  .navbar__item {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    font-size: 0.88rem;
+  }
+  .navbar__search-input {
+    width: 6.5rem;
+  }
+}

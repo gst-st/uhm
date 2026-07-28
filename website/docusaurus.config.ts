@@ -110,6 +110,7 @@ const config: Config = {
 
   clientModules: [
     require.resolve('./src/theme/MermaidRounded.js'),
+    require.resolve('./src/theme/TocMath.js'),
   ],
 
   plugins: [
