@@ -11,7 +11,7 @@ description: "Uniqueness of the Higgs line {A,E,U}, Higgs mass with octonionic c
 - **[C]** Conditional — conditional on an explicit assumption
 - **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
 - **[I]** Interpretation — philosophical / qualitative analogy
-- **[R]** Definition — definition by convention
+- **[D]** Definition — definition by convention
 :::
 
 ## Contents

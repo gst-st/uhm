@@ -11,7 +11,7 @@ Each result is marked with one of the canonical statuses:
 - **[T]** Theorem — strictly proved
 - **[C]** Conditional — conditional on an explicit assumption
 - **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[R]** Definition — definition by convention
+- **[D]** Definition — definition by convention
 - **[I]** Interpretation — physical interpretation of a formal result
 - **[✗]** Retracted — contains an error, corrected or replaced
 - **[P]** Program — research direction

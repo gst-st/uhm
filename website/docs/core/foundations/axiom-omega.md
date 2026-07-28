@@ -74,7 +74,7 @@ The bridge (AP)+(PH)+(QG) → P1+P2 is the [full chain T1–T15 [T]](../../proof
 - $R_{th} = 1/3$ **[T]** ([reflection threshold](/docs/core/foundations/axiom-septicity#теорема-порог-рефлексии), $K=3$ from [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция) plus Bayesian dominance)
 - $\Phi_{th} = 1$ **[T]** ([integration threshold](/docs/core/foundations/axiom-septicity#теорема-порог-интеграции), [T-129](/docs/proofs/consciousness/operationalization#t-129))
 - $\kappa_{\text{bootstrap}} > 0$ **[T]** (minimal regeneration from the adjunction)
-- **PID** (Principle of Informational Distinguishability) — **definition [O]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability ([below](#пир-как-теорема))
+- **PID** (Principle of Informational Distinguishability) — **definition [D]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability ([below](#пир-как-теорема))
 
 ---
 
@@ -788,8 +788,8 @@ Hence A5 is entirely a theorem consequence of A1–A4 + T-53 + T-42e + T-96 + T-
 
 ### Principle of informational distinguishability as definition {#пир-как-теорема}
 
-:::tip PID — definition [O] (T16 [T])
-The Principle of Informational Distinguishability (PID) is **definition [O]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Kripke–Joyal semantics only makes this identity explicit. Computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$) are unchanged by relabeling.
+:::tip PID — definition [D] (T16 [T])
+The Principle of Informational Distinguishability (PID) is **definition [D]** (T16 [T]): given earnest acceptance of A1 (∞-topos) and A2 ($J_{\text{Bures}}$), PID is tautological—distinguishability via $J_{\text{Bures}}$-coverings coincides with ontological distinguishability. Kripke–Joyal semantics only makes this identity explicit. Computational results ($P_{\text{crit}}, R_{\text{th}}, \Phi_{\text{th}}$) are unchanged by relabeling.
 :::
 
 **Theorem (PID, T16):**
@@ -800,7 +800,7 @@ Two states $\Gamma_1, \Gamma_2$ are *ontologically distinct* ⟺ $d_B(\Gamma_1, 
 
 1. $J_{Bures}$ defines distinguishability through coverings
 2. A $J_{Bures}$-cover separates points ⟺ they lie at positive Bures distance
-3. Identifying “ontological distinction” with “separability by covers” is the content of PID (T16); this is tautological from A1+A2 [O] ∎
+3. Identifying “ontological distinction” with “separability by covers” is the content of PID (T16); this is tautological from A1+A2 [D] ∎
 
 **Corollary (unification of thresholds via PID):**
 
@@ -1549,12 +1549,12 @@ $$
 | Arrow of time | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | Properties 3, 5 |
 | Multiplicity | orbits $\mathrm{U}(7)/\mathrm{Stab}$ | Properties 1, 4 |
 | Attractor | $\Gamma^* = \varphi(\Gamma^*)$ | Properties 3, 4 |
-| **Free will** | **$\dim\ker(\mathcal H_\Gamma)+1$** (flat directions; *not* $|\mathrm{Mor}_1|$) | **free-energy Hessian** |
+| **Free will** | **$\dim\ker(\mathcal H_\Gamma)+1$** (flat directions; *not* $\|\mathrm{Mor}_1\|$) | **free-energy Hessian** |
 | **L-unification** | **$L$ from $\Omega$; source of $L_k$** | **Classifier $\Omega$** |
 | **$L_k$ from $\Omega$** | **$L_k = \sqrt{\chi_S}$** | **Classifier atoms** |
 | **$\kappa_{\text{bootstrap}} > 0$** | **minimal regeneration** | **adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$** |
 | **Genesis needed** | **$P = 1/N \Rightarrow P > P_{\text{crit}}$** | **bootstrap paradox** |
-| **PID — def. [O] (T16 [T])** | **distinction ⟺ $d_B > 0$** | **embedded in A1+A2 (Kripke–Joyal)** |
+| **PID — def. [D] (T16 [T])** | **distinction ⟺ $d_B > 0$** | **embedded in A1+A2 (Kripke–Joyal)** |
 | **$\varphi = \arg\min F$** | **Theorem 3.1 (variational)** | **$\varphi \dashv i$, Liouvillian $\mathcal{L}_\Omega$** |
 | **FEP $\subseteq$ UHM** | **Theorem 4.2 (classical limit)** | **Theorem 3.1 + diagonal limit** |
 
@@ -1670,8 +1670,8 @@ In the Ω⁷ formulation UHM is:
 - **C. Dynamical:** $e^{\delta\tau \cdot \mathcal{L}_\Omega} \approx \triangleright^*$ (correspondence theorem)
 
 **Further theorems:**
-- **PID:** Principle of informational distinguishability—definition [O] (T16 [T]); under A1+A2 it is tautological
-- **Thresholds:** $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ ([T]; PID reading [O])
+- **PID:** Principle of informational distinguishability—definition [D] (T16 [T]); under A1+A2 it is tautological
+- **Thresholds:** $P_{\text{crit}} = 2/7$, $R_{\text{th}} = 1/3$, $\Phi_{\text{th}} = 1$ ([T]; PID reading [D])
 - **Genesis protocol:** $\kappa_{\text{bootstrap}} > 0$ from $\mathcal{D}_\Omega \dashv \mathcal{R}$
 :::
 
