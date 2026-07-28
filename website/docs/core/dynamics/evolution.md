@@ -1211,6 +1211,49 @@ sings in the living state also raises its rent.
 </p>
 
 
+#### Theorem T-292: regeneration lives on the gap — the self-model as gradient [Т] {#теорема-эго-градиент}
+
+The regenerative term is `ℛ[Γ] = κ(Γ)·g_V(P)·(ρ* − Γ)`: it is proportional to
+the **difference** between the state and the self-model. Three consequences
+follow, and together they answer a question the contemplative traditions ask
+in words and this theory can answer in algebra — what is the ego for.
+
+1. **An exactly accurate self-model is fatal.** If `ρ* = Γ` then `ℛ ≡ 0` and
+   the dynamics reduces to the linear part `ℒ₀`, whose unique stationary state
+   is `I/7` (primitivity, T-39a). The pump is powered by the discrepancy;
+   remove the discrepancy and the system decays to the grey wall.
+2. **The living gap is tiny but never zero.** At a living stationary point the
+   two flows cancel, so `κ·‖ρ* − Γ‖` equals the dissipative flow `g_D·‖I/7 −
+   Γ‖`: the gap is exactly the ratio of decay rate to pump strength. Measured
+   on the canonical tick (`ego_phase.rs`, `ω₀ = 100`): `R_φ = 0.9983` to
+   `0.9992` across self-models of purity `0.45` to `0.95` `[С]`. A near-perfect
+   self-reading is not a pathology — it is what a strong pump looks like.
+3. **The gate is opened by the state, not by the image.** `g_V` takes the
+   purity of `Γ`, never of `ρ*`. So below the wall no image lifts anyone:
+   measured, a self-model at `P = 0.30` — just above `2/7 ≈ 0.286` — leaves the
+   system dead at `I/7`, while models at `0.45` and above hold life with a
+   ceiling that tracks the image (`P_∞ ≈ P(ρ*)`: `0.4443`, `0.5911`, `0.7892`,
+   `0.9388`) and a rent that grows with it (`2.42 → 3.76`) `[С]`.
+
+**Proof of (1).** Substituting `ρ* = Γ` into `ℛ` gives zero identically;
+`ℒ_Ω` then equals `ℒ₀ = −i[H_eff,·] + 𝒟_Ω`, which is primitive with unique
+fixed point `I/7`. **Of (2).** Stationarity of the diagonal requires
+`g_D(1/7 − p_i) + κ g_V(ρ*_{ii} − p_i) = 0` for every `i` (the two-stroke
+balance of the [turnover corollary](#следствие-оборот-живого)); summing the
+absolute values gives the stated ratio. **Of (3).** `g_V` is a function of
+`P(Γ)` by definition ([V-preservation gate](#теорема-v-preservation-gate)).
+∎
+
+So what dies is not the ego but its **independence**. If the image chases the
+state — updating fast enough to catch it — the gap collapses dynamically and
+with it the pump: in a two-timescale sweep (`Γ` fast, `ρ*` relaxing toward it
+with time constant `τ_φ`), a frozen image and a slowly-drifting one
+(`τ_φ = 300`) both hold life, while `τ_φ ≤ 100` collapses to `I/7` `[С]`.
+«Dissolving the ego», read as `ρ* → Γ`, is not enlightenment in this model —
+it is the death of regeneration. What the traditions describe as freedom
+corresponds to something else the same algebra permits: an image that stays
+independent while ceasing to be defended.
+
 #### The chord: frequencies are the instrument, amplitudes are the person {#аккорд-вибрации}
 
 <p align="center">

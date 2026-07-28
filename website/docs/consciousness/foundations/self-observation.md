@@ -347,6 +347,42 @@ The corpus works with **three related but distinct** reflection quantities. Conf
 | canonical $R$ | $1/(7P)$ — HS-proximity to $I/7$ | $[1/7,\ 1]$ | $R_{\text{th}} = 1/3$ **[T]** (T-126) | L2 predicate, $C = \Phi \times R$ (T-140), registry, measurement protocols |
 | self-model quality $R_\varphi$ | $1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2 / \lVert\Gamma\rVert_F^2$ — master definition in the [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | $[0,\ 1]$ | working $R_{\varphi,\text{th}} = 1/3$ **[I]** | phenomenology of states (sleep, meditation, psychedelics, pathology); the meaning functional |
 | fidelity tower $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$, $n \geq 2$ | $[0,\ 1]$ | $R^{(n)}_{\text{th}} = 1/(n+2)$ | L3/L4 depth of the self-model. **Not** the SAD criterion — see the warning below |
+| self-forecast accuracy $A_\varphi$ | $1 - \sum(m-e)^2 / \sum(m-\bar m)^2$ over a diary — the **empirical** estimator, centred on the person's own baseline | $(-1,\ 1]$ | none: read as a share | the instrument's flagship number (`/pair`, `/state`); measures the *day*, not the average |
+
+#### Why the empirical form must be centred {#центрирование-a-phi}
+
+The fourth row is not a redundant name — it is the correction of a defect the
+instrument carried until it was measured. A diary estimator of $R_\varphi$ was
+built in the definition's own shape, $1 - \sum(m-e)^2/\sum m^2$, and that shape
+is safe on matrices and unsafe on ratings. On matrices the denominator's common
+part is the $I/7$ component, which contributes $32.2\,\%$ — the reading barely
+moves ($0.9983$ against $0.9976$ centred). On a $0..10$ diary the ratings live
+near $6$, not near $0$, so the denominator is *almost entirely* the person's own
+average, and the measure answers a question nobody asked: «do you know your
+usual level?» rather than «do you know your day?».
+
+Measured (`rphi_baseline.rs`): a **lazy forecaster** who names their own mean
+every single day — and therefore knows nothing about themselves — scores
+$0.994$, $0.979$, $0.945$ at rating spreads of $\pm0.8$, $\pm1.5$, $\pm2.5$.
+Worse, the whole ladder of skill compresses into $0.979\ldots1.000$: zero skill
+and perfect foresight are two points apart. The centred form spreads the same
+ladder across its whole range — $-0.03$, $+0.41$, $+0.74$, $+0.93$, $+0.99$,
+$+1.00$ for a forecaster capturing $0, 0.25, 0.5, 0.75, 0.9, 1$ of the day's
+deviation — and matches the analytic expectation $1-(1-w)^2$ exactly ($0.5
+\rightarrow 0.75$ predicted, $0.738$ measured) `[С]`.
+
+Three consequences the instrument now carries. Zero means «you knew your usual
+level», and it is where almost everyone starts. Negative values are kept, not
+clamped: a forecast further from the day than the person's own baseline is a
+fact worth saying — the words someone describes themselves with have parted
+from the life they live. And the accuracy is undefined below **five matched
+days** — with one matched day there is no variability to explain, and the
+uncentred form printed a number there too.
+
+One half of the instrument was healthy from the start and shows why: the
+**couplings** half divides by $\sum o^2$ where $o$ is a signed coupling
+centred on zero, and zero already means «no coupling» — so predicting nothing
+honestly scores nothing. The disease was exactly in the levels half.
 
 :::warning Two different quantities are written $R^{(k)}$ — and only one of them bounds SAD
 
