@@ -2687,6 +2687,32 @@ reading (two-aspect monism with `Φ`); that it lives by regenerating above `2/7`
 informational system whose inner side is a universal architecture calibrated by its
 cosmos*, is those three results read as one.
 
+### 83-bis. The Flower of Life, taken apart honestly: three geometric universes {#цветок-жизни-три-вселенной}
+
+One more script deserves the same machine discipline (`symbolica_flower.py`).
+What survives exactly: the Fruit-of-Life pattern is the [111]-slice of the
+densest sphere packing — the twelve FCC neighbours project **not** onto the
+bare triangular lattice (misfit 0.577 of a step) but onto the lattice
+**plus its deep holes** to machine zero (1.1·10⁻¹⁶): the flower's petals live
+in the holes. The Star of David lifts to the stella octangula exactly — hull
+a cube, intersection an octahedron. And the tetrahedron, cube and octahedron
+embed in that slice **exactly** (1.2·10⁻¹⁶ under honest freedom of rotation
+and scale), while the icosahedron's best misfit is 0.080 of a lattice step:
+five-fold symmetry is *forbidden* in any lattice (2cos(2π/5) ∉ ℤ). So «the
+Flower generates all Platonic solids» is wrapper `[✗]`; the true core is
+that it generates the 2-3-4 family. The I Ching does not embed either: the
+flower's rings are the hex numbers 1, 7, 19, 37, **61**, 91 — there is no 64
+in that geometry; what the two share is generativity from a minimal seed,
+an analogy `[И]`, not an isomorphism. And one homonymy matters for this whole
+corpus: the flower's seed has *seven* circles — but that seven is the lattice
+1+6, centre and ring, six-fold symmetric; the Fano seven is projective
+(7 points = 7 lines, `PSL(2,7)`), and the crystallographic test outlaws
+**n = 7 in lattices too** (2cos(2π/7) ∉ ℤ). Three geometric universes, then:
+the lattice world of the flower (orders 2, 3, 4, 6), the five-fold world
+(H₃, quasicrystals), and the seven-fold **finite-projective** world where
+this corpus lives. A number shared across universes is not a bridge; a
+bridge must be a construction.
+
 ### 84. The ideal self-description: what a holon can say about itself, and how much it does
 
 A symbolic system that strives toward its ideal self-description sounds like a
