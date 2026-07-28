@@ -436,3 +436,9 @@ h5, h6 {
     width: 6.5rem;
   }
 }
+
+/* 28.07: raw-HTML <img class="themedImage themedImage--…"> в .md-доках —
+   классы компонента ThemedImage живут в CSS-модуле и на сырую разметку не
+   действуют: обе темы рисовались разом. Глобальные правила: */
+[data-theme='light'] img.themedImage--dark { display: none; }
+[data-theme='dark'] img.themedImage--light { display: none; }

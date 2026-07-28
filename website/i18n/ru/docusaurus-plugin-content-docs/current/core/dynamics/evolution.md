@@ -1129,6 +1129,11 @@ $$
 диссипация $\mathcal{D}_\Omega$ разбирает когерентность, регенерация
 $\mathcal{R}$ отстраивает её к самомодели.
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="Оборот живой стационарности и связка как орбита" src="/img/theory/turnover-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Оборот живой стационарности и связка как орбита" src="/img/theory/turnover-ru-dark.svg" width="860"/>
+</p>
+
 #### Следствие (оборот живой стационарности) [Т] {#следствие-оборот-живого}
 
 Пусть $\sigma$ — стационарная точка канонической динамики

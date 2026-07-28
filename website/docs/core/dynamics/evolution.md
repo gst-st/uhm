@@ -1133,6 +1133,11 @@ held in place by two opposing, individually nonzero flows: dissipation
 $\mathcal{D}_\Omega$ tearing coherence down and regeneration $\mathcal{R}$
 rebuilding it toward the self-model.
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="Turnover of living stationarity and a coupling as an orbit" src="/img/theory/turnover-en-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Turnover of living stationarity and a coupling as an orbit" src="/img/theory/turnover-en-dark.svg" width="860"/>
+</p>
+
 #### Corollary (turnover of living stationarity) [Т] {#следствие-оборот-живого}
 
 Let $\sigma$ be a stationary point of the canonical dynamics
