@@ -11,7 +11,7 @@ theorems. Every claim carries one of three honesty classes: **VERIFIED**
 (computed fact about the machinery or astronomy), **DESIGN** (self-consistency
 of an engineering choice — true by construction, demonstrated, *not* evidence
 about humans), **OPEN** (needs human data; the n-of-1 protocol exists for
-exactly this). The center→dimension dictionary itself is an [И]-dictionary:
+exactly this). The center→dimension dictionary itself is an [I]-dictionary:
 structured, configurable, and testable — never a fact.
 
 ## 1. The idea: from bodygraph to homogram
@@ -31,7 +31,7 @@ its input (birth date, time, timezone) is universally available and its
 computation is exact. It is a prior, not a verdict: the filter layer updates
 it from observation, and observation always outranks nativity.
 
-## 2. The bridge dictionary (an [И]-dictionary, structured)
+## 2. The bridge dictionary (an [I]-dictionary, structured)
 
 HD's own taxonomy splits the nine centers into **two pressure centers**
 (Head, Root) and seven processing centers. That split is the hinge of the
@@ -214,7 +214,7 @@ Screens (each stating its honesty layer):
 3. Group floor: the team as a meta-holon — what passes upward is the shared
    direction (H65), computed from member states.
 4. Dictionary tournament: score alternative dictionaries against user data —
-   the [И]-dictionary becomes an empirical object.
+   the [I]-dictionary becomes an empirical object.
 5. Geocoding + historical timezones (chrono-tz already handles DST rules).
 
 ## Part II. The heptacode: the wheel refounded
@@ -299,7 +299,7 @@ spine, names) and **encoder v2** — no blind zone, selectable live in the
 Laboratory; the **Роза-64** screen re-reads all 26 activations as canonical
 objects with SSOT names, syndromes and spine hits. Honesty classes stay:
 the code arithmetic and atlas are VERIFIED; object *readings* are the
-[И]-dictionary on corpus names; influence on a person remains OPEN — the
+[I]-dictionary on corpus names; influence on a person remains OPEN — the
 pravdomer exists for exactly that question.
 
 ## Part III. The living layer: tomography, warnings, the rose ring
@@ -370,7 +370,7 @@ and a canonical alternative the reconstruction now owns.
 ### 15. In the application
 
 The **Дневник** tab: lens selector (lens 0 = the seven voices; lenses 1–7 =
-mixed states, marked as an experimental [И]-instrument), seven sliders, a
+mixed states, marked as an experimental [I]-instrument), seven sliders, a
 note, persistence to `~/.hhg_diary.json`; the posterior $\Gamma$ heatmap
 with the shift-from-prior norm; the EWS panel with the measured sensitivity
 limits quoted. Tests: unbiasedness, exact reconstruction on the calibration
@@ -393,7 +393,7 @@ built by the *same* heptacode encoder that builds a person's natal prior.
 The downward bridge at ignition is therefore an **identity, not an
 analogy**: a being's natal prior *is* the conductor's page at the moment
 its autonomous loop starts (Personality = self-model ignition; Design,
-88° of solar arc earlier = body ignition — the phase-stamp reading, [И]).
+88° of solar arc earlier = body ignition — the phase-stamp reading, [I]).
 After ignition the trajectories diverge; transits compare the conductor's
 *current* page with your *printed* one — timebridges are where today's
 score completes your chords. Influence on beings stays OPEN; the
@@ -445,7 +445,7 @@ The laboratory now closes the loop from input to publishable раскладка:
 
 Legacy HD carries 384 hand-written line texts. The reconstruction replaces
 them with a **grammar over canonical atoms**: every activation story is
-composed from body role [И] × side × heptacode object × line-voice accent
+composed from body role [I] × side × heptacode object × line-voice accent
 (Shchutsky archetypes × the line→voice map) × syndrome pointer × antipode
 grounding × triangle resolution — and every atom is an editable, bilingual
 knowledge-base key. Each story ends with a *"Simply put"* layer (the
@@ -552,7 +552,7 @@ not fit the 64-wheel — an honest, falsifiable divergence from astrology;
 base rate 1/64 per specific relation) — and **nuclear moves** (a slow hand
 entering the nuclear core of a natal gate). The Rose carries the full wheel
 depth `gate.line.color.tone.base` with the fractal second/third-order voice
-accents [И], and the year atlas marks **event knots** (⚡ — two or more
+accents [I], and the year atlas marks **event knots** (⚡ — two or more
 events within ±2 days). The calibration chart's 2026-08-23 turned out to be
 a triple knot: Neptune's epoch turn into gate 25, its L-turn to the natal
 North Node, and the Jupiter opposition — all in one day.
@@ -568,9 +568,9 @@ The free-text channel is a **Claude Code agent** (headless CLI) with a per-user 
 ### 27. Abundance and interior physics (this wave)
 
 - **Extended canon**: 21 full coherence portraits and 7 voice portraits (bilingual, editable), woven into reports, synthesis, and the bot (`/coh`, `/voice`).
-- **Dynamical fate** (HB29/29b): the natal prior run through the engine's evolution. Raw ρ₀ drains 98.7% of the population to grey — the natal self-model alone cannot hold a pattern in the window (the diary is needed); with the self-model sharpened to the *forced* window-top `P_upper = 3/7` (T-124, not a fitted constant), the fate is converged at 700 ticks (drift `<3·10⁻⁵`) and lands ≈ 12% grey / 88% window / 0% dense, Reflectors 0% (the mirror lives by reflection, not sharpness). VERIFIED (`core/examples/dynamical_fate_audit.rs`). Honest classification after the canonical audit below: this layer runs on the *phenomenological* tick (ad-hoc κ, no gate) and is a construction-layer heuristic — a sharpness indicator, not the forced fate.
-- **The canonical ℒ_Ω, implemented and confronted** (`holon::tick_canon`): regeneration with every Γ-dependent factor in its [Т]-forced form — the structural rate `κ̂₀ = |γ_OE||γ_OU|/γ_OO`, the V-preservation gate `g_V(P) = clamp(7P−2, 0, 1)` (with `P_opt = 3/7` from `R ≥ 1/3`), the unique CPTP direction `(ρ*−Γ)`; only the flux scale `ω₀` (the energy supply `E` in `ℛ[Γ,E]`) is environmental. Three verified structural facts. (a) **The wall is absorbing**: a sub-wall state drains grey at *any* flux — the gate is shut — where the phenomenological tick tunnels through the wall, a theory violation the engine now names in its own docs. (b) **No inert class**: every natal chart carries `κ̂₀ > 0` (median ≈ 0.01) — the O-channels (Immanence, Completeness) are universally present, and they are the conduits self-regeneration flows through. (c) **The purity-production law** `dP/dt ∝ Tr[Γρ*] − P` makes the fate protocol's distant sharpened target *unreachable*: the natal prior collapses through the wall at every flux tried (100% grey up to `ω₀ = 10⁴`), and even the self-aligned window-top blend is overlap-diluted below `P` on about half the charts (112/200 positive), with only ≈40% crossing at extreme flux (`ω₀ = 10³`). And (d) **the full iterative scheme closes the question**: running the corpus's own Ψ-iteration (ρ⁽⁰⁾ = I/7; evolve the natal Γ₀ under the gated dynamics with the target held fixed; rebuild the self-model as the replacement form `φ(Γ) = (1−k)Γ + k·ρ_P` anchored at the chart's Personality-side encoding; repeat) converges in ~2 iterations to **grey for every chart** at every tested `(ω₀, k)` — because a diffuse state (P ≈ 0.30) has overlap ≈ 1/7 with *any* distinct target, so every fixed natal-constructed self-model is overlap-negative (measured: 0/150 positive anchors). Together these *derive* HB29's empirical "the natal self-model alone cannot hold the window" from the forced mechanism — gate + structural rate + overlap law — and sharpen it into a statement of scope: **under the forced ℒ_Ω the window is a driven regime, not a natal fixed point.** The natal chart's prognostic content is structural — which voices, which coherences, the person's geometry; dynamics belongs to the living layer (transits, the diary, external flux actually entering the state), which is exactly where the engine's prognostics live. VERIFIED (`core/examples/canonical_tick.rs`, `canon_fate.rs`, `canon_attractor.rs`; `holon::tests`).
-- **The driven regime: the self-anchor law and the holding threshold `ω₀*`.** Modelling the drive (a year of real ephemeris under the gated canonical tick, one time-unit per day; the driven-target model is a construction [И] on the forced components): (e) the *only* regeneration target that survives the overlap law is the chart's **own natal print** — the self-coincident anchor holds a growing fraction of chart-days as flux rises (16.7% at `ω₀ = 10³`, 41.7% at `3·10³`) and always **inside** the window, never above it: self-maintenance cannot produce crystal. Mixing the sky into the *target* (the composite natal∪sky encoding) is overlap-negative and drains everything — real sky and scrambled sky alike — so the sky's role in `ℛ[Γ,E]` is not to redefine the self-model. The second natural coupling — the sky as a daily CPTP kick on the *state*, `Γ ← (1−ε)Γ + ε·ρ_comp(day)` — is **also null**: it rescues nothing below the threshold, mildly erodes holding above it (a diffuse admixture is entropy-increasing; real ≈ scrambled), and produces no `P`-weather (`⟨r(P, timebridges)⟩ ≈ −0.03`). Both natural couplings of the astronomical layer into the forced dynamics are null/negative — stated as a bound: the daily-page "weather" remains an interpretive [И] layer, not derived from `ℒ_Ω`; the untried couplings (the sky as a flux schedule `ω₀(t)`, or as a perturbation of `H_eff`) stay open and will not be multiplied without independent motivation (VERIFIED, `core/examples/canon_sky_kick.rs`). (f) Each chart then carries a canonical scalar: the **holding threshold `ω₀*`** — the minimum living flux at which self-regeneration toward one's own form balances dissipation. Across charts it spans `264 → 19231` (~70-fold: individuality is large under the forced dynamics), and it obeys a law: `ρ_Spearman(ω₀*, 1/(κ̂₀·(P₀−2/7))) = 0.92` — the threshold is set by O-channel conductance times the natal margin above the wall, with the compensated product `κ̂₀·g_V(P₀)·ω₀*` clustering at ≈ 7–20. A quarter of charts form the **never-class** (cannot hold at any tested flux), decomposing exactly into {sub-wall natal `P` — Reflector-like} ∪ {near-dead O-channels, `κ̂₀ ≲ 0.005`}: they live by reflection and environment, not self-regeneration. Read plainly: *"be your own form" is dynamically forced, and `ω₀*` is the cost of holding it.* VERIFIED (`core/examples/canon_driven.rs`, `canon_threshold.rs`, `canon_threshold_author.rs`). And the conductance has a *bodygraph address* — **the gates of holding**: the eleven King Wen gates whose canonical object feeds `γ_OE`/`γ_OU` (`5,23,28,34,49,58` / `8,26,30,34,38,50`). KW 34 — HD's "Power of the Great" — is the unique **double** conductor (the `EOU` triangle); the two pure pairs, 23 «Immanence» and 8 «Completeness», both sit on the Throat; and two of the seven Fano-line gates (28, and 30 — the `S–O–U` spine line itself) are holding-gates. The layer ships as a reading: the analytic tier classifier from the threshold law (`ω̂₀* = 12/x`, population-quartile cutoffs; the low tier phrased "costly", never "impossible" — the analytic never-criterion has perfect precision but imperfect recall) behind `/form`, `hhg form`, and the agent's `form` tool. VERIFIED (`core/examples/form_layer.rs`; `core/src/form.rs`). Two relational corollaries close the layer. Of HD's thirty-six channels exactly **one** has both gates in the holding set — **28–38, the Channel of Struggle**: the wire the lore ties to perseverance and fighting for meaning is, in the reconstruction, the bodygraph's only two-ended conductor of self-holding. And the **pair field** (the union encoding of two charts) raises the holding conductance above the *better* individual in 54% of random pairs and above the weaker one in another 32% — "next to another person it is cheaper to be yourself" is the statistical norm (86%), with only 14% of pairs pricing holding up; shipped in `/duo` as «Форма вместе» with the holder asymmetry (who brings more of the eleven gates). VERIFIED (`core/examples/form_duo.rs`). Scaling up completes the picture — and falsified the dilution guess in an instructive way: the union field's purity *rises* with group size (repeated gates add coherently; the gate factor climbs 0.23→0.50), so the field's conductance grows and saturates (~N = 7) with no interior peak — but its advantage over the **best member** decays, 52% at N = 2 down to 33% at N = 10 (the strongest of N grows faster than the saturating field). Small circles most often out-hold even their strongest; in larger groups the strongest holder out-holds the shared field — `/group` now names that holder (⚓) and warns, plainly, that an unreplenished holder buckles first and the circle sags with them. VERIFIED (`core/examples/form_group.rs`). The layer's *temporal* dimension closes it: the composite (natal∪sky) field's conductance `x_comp(t)` swings from **interference zeros** — the sky's phase contributions destructively cancel the natal O-channels, the priciest days — to ~16× the natal baseline when a transit stands on a holding-gate (the author's peak: Moon→23). The honest reading is therefore *windows*, not a smooth curve: `/form` now ends with «Окна формы» — dated cheaper-windows with their named drivers (e.g. `NNode→30`, the Node standing on the `S–O–U` spine-line gate) and pricier ones without (interference has no single driver). VERIFIED (`core/examples/form_windows.rs`). The same interference lives *inside* the natal chart itself, through the **lines**: a gate.line feeds its coherences with phase `θ = π·line/3`, so two holding-gates whose lines stand three apart cancel as vectors — exactly, at equal weights. Population-wide this is a first-order effect: **34% of feeding charts carry a strongly muted O-channel** (alignment `|Σv|/Σ|v| < 0.35`), and the never-class decomposes honestly into thirds — sub-wall mirrors, line-muted (one member holds four holding-gates at OE alignment `0.00`), and simply weak. The reading now says it plainly when it applies — «Приглушённый канал: как два голоса, поющие друг против друга; разводите наполняющие занятия по времени» — and the author's own OE channel turns out muted at `0.33`. VERIFIED (`core/examples/form_lines.rs`). Generalized to all twenty-one coherences, the interference becomes **the tuning map**: muting is *uniform* across pairs (16–22% of feeders — an honest null: the Fano structure privileges none), a typical chart carries three muted strings (p75 = 5), and the reading ships as «🎼 Строй карты» — clear strings versus muted, by their canonical names, with the one practice («приглушённая струна — не слабость: сила есть, звучит тише; тише ≠ слабее»). The author's tuning: nineteen fed, three muted (LU, DO, EO), six perfectly clear. VERIFIED (`core/examples/tuning_map.rs`). And the tuning has a *measured floor*: asking whether the wheel's **color** layer carries any non-astronomical phase structure (real charts vs a uniform-color Monte-Carlo null), the raw deviation (+0.030) turns out to be *entirely* the deterministic mirrors — Earth sits exactly `180°` from the Sun and the South Node from the North, and `180°` is exactly 32 gates, so their line/color/tone are identical; mirror-free, real ≡ null to four decimals (`Δ +0.0004`). **The tuning stops at the lines** — the color layer is astronomy, not structure, and no deeper "string map" may be sold as one; the И-fractal reading keeps its [И] charm with its scope now measured. VERIFIED (`core/examples/color_null.rs`). Relationally the tuning obeys a sharply **asymmetric law**: pooling two charts' phases practically never *re*-tunes a muted string (0% at the strict threshold — the partner's vectors would have to cancel an existing misalignment exactly) but **mutes at least one clear string in 96% of pairs** (mean 3.1). Set beside the conductance result (86% of pairs cheaper overall), the honest relational picture is a trade: the shared field lowers the total cost of being yourself while damping specific personal strings — and those muted-by-pair strings are precisely **the map of the personal**: what to do apart, each your own. Shipped as «🎼 Строй пары» in `/duo` and the circle version in `/group`; the daily page now also carries **form weather** (cheaper/pricier to be yourself today, from the day's composite conductance). VERIFIED (`core/examples/tuning_duo.rs`).
+- **Dynamical fate** (HB29/29b): the natal prior run through the engine's evolution. Raw ρ₀ drains 98.7% of the population to grey — the natal self-model alone cannot hold a pattern in the window (the diary is needed); with the self-model sharpened to the *forced* window-top `P_upper = 3/7` (T-124, not a fitted constant), the fate is converged at 700 ticks (drift `<3·10⁻⁵`) and lands ≈ 10% grey / 90% window / 0% dense (re-measured 2026-07-28; 12/88 before the defaults were corrected), Reflectors 0% (the mirror lives by reflection, not sharpness). VERIFIED (`core/examples/dynamical_fate_audit.rs`). Honest classification after the canonical audit below: this layer runs on the *phenomenological* tick (ad-hoc κ, no gate) and is a construction-layer heuristic — a sharpness indicator, not the forced fate.
+- **The canonical ℒ_Ω, implemented and confronted** (`holon::tick_canon`): regeneration with every Γ-dependent factor in its [T]-forced form — the structural rate `κ̂₀ = |γ_OE||γ_OU|/γ_OO`, the V-preservation gate `g_V(P) = clamp(7P−2, 0, 1)` (with `P_opt = 3/7` from `R ≥ 1/3`), the unique CPTP direction `(ρ*−Γ)`; only the flux scale `ω₀` (the energy supply `E` in `ℛ[Γ,E]`) is environmental. Three verified structural facts. (a) **The wall is absorbing**: a sub-wall state drains grey at *any* flux — the gate is shut — where the phenomenological tick tunnels through the wall, a theory violation the engine now names in its own docs. (b) **No inert class**: every natal chart carries `κ̂₀ > 0` (median ≈ 0.01) — the O-channels (Immanence, Completeness) are universally present, and they are the conduits self-regeneration flows through. (c) **The purity-production law** `dP/dt ∝ Tr[Γρ*] − P` makes the fate protocol's distant sharpened target *unreachable*: the natal prior collapses through the wall at every flux tried (100% grey up to `ω₀ = 10⁴`), and even the self-aligned window-top blend is overlap-diluted below `P` on about half the charts (112/200 positive), with only ≈40% crossing at extreme flux (`ω₀ = 10³`). And (d) **the full iterative scheme closes the question**: running the corpus's own Ψ-iteration (ρ⁽⁰⁾ = I/7; evolve the natal Γ₀ under the gated dynamics with the target held fixed; rebuild the self-model as the replacement form `φ(Γ) = (1−k)Γ + k·ρ_P` anchored at the chart's Personality-side encoding; repeat) converges in ~2 iterations to **grey for every chart** at every tested `(ω₀, k)` — because a diffuse state (P ≈ 0.30) has overlap ≈ 1/7 with *any* distinct target, so every fixed natal-constructed self-model is overlap-negative (measured: 0/150 positive anchors). Together these *derive* HB29's empirical "the natal self-model alone cannot hold the window" from the forced mechanism — gate + structural rate + overlap law — and sharpen it into a statement of scope: **under the forced ℒ_Ω the window is a driven regime, not a natal fixed point.** The natal chart's prognostic content is structural — which voices, which coherences, the person's geometry; dynamics belongs to the living layer (transits, the diary, external flux actually entering the state), which is exactly where the engine's prognostics live. VERIFIED (`core/examples/canonical_tick.rs`, `canon_fate.rs`, `canon_attractor.rs`; `holon::tests`).
+- **The driven regime: the self-anchor law and the holding threshold `ω₀*`.** Modelling the drive (a year of real ephemeris under the gated canonical tick, one time-unit per day; the driven-target model is a construction [I] on the forced components): (e) the *only* regeneration target that survives the overlap law is the chart's **own natal print** — the self-coincident anchor holds a growing fraction of chart-days as flux rises (16.7% at `ω₀ = 10³`, 41.7% at `3·10³`) and always **inside** the window, never above it: self-maintenance cannot produce crystal. Mixing the sky into the *target* (the composite natal∪sky encoding) is overlap-negative and drains everything — real sky and scrambled sky alike — so the sky's role in `ℛ[Γ,E]` is not to redefine the self-model. The second natural coupling — the sky as a daily CPTP kick on the *state*, `Γ ← (1−ε)Γ + ε·ρ_comp(day)` — is **also null**: it rescues nothing below the threshold, mildly erodes holding above it (a diffuse admixture is entropy-increasing; real ≈ scrambled), and produces no `P`-weather (`⟨r(P, timebridges)⟩ ≈ −0.03`). Both natural couplings of the astronomical layer into the forced dynamics are null/negative — stated as a bound: the daily-page "weather" remains an interpretive [I] layer, not derived from `ℒ_Ω`; the untried couplings (the sky as a flux schedule `ω₀(t)`, or as a perturbation of `H_eff`) stay open and will not be multiplied without independent motivation (VERIFIED, `core/examples/canon_sky_kick.rs`). (f) Each chart then carries a canonical scalar: the **holding threshold `ω₀*`** — the minimum living flux at which self-regeneration toward one's own form balances dissipation. Across charts it spans `264 → 19231` (~70-fold: individuality is large under the forced dynamics), and it obeys a law: `ρ_Spearman(ω₀*, 1/(κ̂₀·(P₀−2/7))) = 0.92` — the threshold is set by O-channel conductance times the natal margin above the wall, with the compensated product `κ̂₀·g_V(P₀)·ω₀*` clustering at ≈ 7–20. A quarter of charts form the **never-class** (cannot hold at any tested flux), decomposing exactly into {sub-wall natal `P` — Reflector-like} ∪ {near-dead O-channels, `κ̂₀ ≲ 0.005`}: they live by reflection and environment, not self-regeneration. Read plainly: *"be your own form" is dynamically forced, and `ω₀*` is the cost of holding it.* VERIFIED (`core/examples/canon_driven.rs`, `canon_threshold.rs`, `canon_threshold_author.rs`). And the conductance has a *bodygraph address* — **the gates of holding**: the eleven King Wen gates whose canonical object feeds `γ_OE`/`γ_OU` (`5,23,28,34,49,58` / `8,26,30,34,38,50`). KW 34 — HD's "Power of the Great" — is the unique **double** conductor (the `EOU` triangle); the two pure pairs, 23 «Immanence» and 8 «Completeness», both sit on the Throat; and two of the seven Fano-line gates (28, and 30 — the `S–O–U` spine line itself) are holding-gates. The layer ships as a reading: the analytic tier classifier from the threshold law (`ω̂₀* = 12/x`, population-quartile cutoffs; the low tier phrased "costly", never "impossible" — the analytic never-criterion has perfect precision but imperfect recall) behind `/form`, `hhg form`, and the agent's `form` tool. VERIFIED (`core/examples/form_layer.rs`; `core/src/form.rs`). Two relational corollaries close the layer. Of HD's thirty-six channels exactly **one** has both gates in the holding set — **28–38, the Channel of Struggle**: the wire the lore ties to perseverance and fighting for meaning is, in the reconstruction, the bodygraph's only two-ended conductor of self-holding. And the **pair field** (the union encoding of two charts) raises the holding conductance above the *better* individual in 54% of random pairs and above the weaker one in another 32% — "next to another person it is cheaper to be yourself" is the statistical norm (86%), with only 14% of pairs pricing holding up; shipped in `/duo` as «Форма вместе» with the holder asymmetry (who brings more of the eleven gates). VERIFIED (`core/examples/form_duo.rs`). Scaling up completes the picture — and falsified the dilution guess in an instructive way: the union field's purity *rises* with group size (repeated gates add coherently; the gate factor climbs 0.23→0.50), so the field's conductance grows and saturates (~N = 7) with no interior peak — but its advantage over the **best member** decays, 52% at N = 2 down to 33% at N = 10 (the strongest of N grows faster than the saturating field). Small circles most often out-hold even their strongest; in larger groups the strongest holder out-holds the shared field — `/group` now names that holder (⚓) and warns, plainly, that an unreplenished holder buckles first and the circle sags with them. VERIFIED (`core/examples/form_group.rs`). The layer's *temporal* dimension closes it: the composite (natal∪sky) field's conductance `x_comp(t)` swings from **interference zeros** — the sky's phase contributions destructively cancel the natal O-channels, the priciest days — to ~16× the natal baseline when a transit stands on a holding-gate (the author's peak: Moon→23). The honest reading is therefore *windows*, not a smooth curve: `/form` now ends with «Окна формы» — dated cheaper-windows with their named drivers (e.g. `NNode→30`, the Node standing on the `S–O–U` spine-line gate) and pricier ones without (interference has no single driver). VERIFIED (`core/examples/form_windows.rs`). The same interference lives *inside* the natal chart itself, through the **lines**: a gate.line feeds its coherences with phase `θ = π·line/3`, so two holding-gates whose lines stand three apart cancel as vectors — exactly, at equal weights. Population-wide this is a first-order effect: **34% of feeding charts carry a strongly muted O-channel** (alignment `|Σv|/Σ|v| < 0.35`), and the never-class decomposes honestly into thirds — sub-wall mirrors, line-muted (one member holds four holding-gates at OE alignment `0.00`), and simply weak. The reading now says it plainly when it applies — «Приглушённый канал: как два голоса, поющие друг против друга; разводите наполняющие занятия по времени» — and the author's own OE channel turns out muted at `0.33`. VERIFIED (`core/examples/form_lines.rs`). Generalized to all twenty-one coherences, the interference becomes **the tuning map**: muting is *uniform* across pairs (16–22% of feeders — an honest null: the Fano structure privileges none), a typical chart carries three muted strings (p75 = 5), and the reading ships as «🎼 Строй карты» — clear strings versus muted, by their canonical names, with the one practice («приглушённая струна — не слабость: сила есть, звучит тише; тише ≠ слабее»). The author's tuning: nineteen fed, three muted (LU, DO, EO), six perfectly clear. VERIFIED (`core/examples/tuning_map.rs`). And the tuning has a *measured floor*: asking whether the wheel's **color** layer carries any non-astronomical phase structure (real charts vs a uniform-color Monte-Carlo null), the raw deviation (+0.030) turns out to be *entirely* the deterministic mirrors — Earth sits exactly `180°` from the Sun and the South Node from the North, and `180°` is exactly 32 gates, so their line/color/tone are identical; mirror-free, real ≡ null to four decimals (`Δ +0.0004`). **The tuning stops at the lines** — the color layer is astronomy, not structure, and no deeper "string map" may be sold as one; the И-fractal reading keeps its [I] charm with its scope now measured. VERIFIED (`core/examples/color_null.rs`). Relationally the tuning obeys a sharply **asymmetric law**: pooling two charts' phases practically never *re*-tunes a muted string (0% at the strict threshold — the partner's vectors would have to cancel an existing misalignment exactly) but **mutes at least one clear string in 96% of pairs** (mean 3.1). Set beside the conductance result (86% of pairs cheaper overall), the honest relational picture is a trade: the shared field lowers the total cost of being yourself while damping specific personal strings — and those muted-by-pair strings are precisely **the map of the personal**: what to do apart, each your own. Shipped as «🎼 Строй пары» in `/duo` and the circle version in `/group`; the daily page now also carries **form weather** (cheaper/pricier to be yourself today, from the day's composite conductance). VERIFIED (`core/examples/tuning_duo.rs`).
 - **The sharpness map** (HB30): sharpening ρ₀ along each voice and reading where the fate lands — the personal *first move*. The best voice crossed the window in 60/60 charts; the voice is personal (never the already-dominant one).
 - **Bearing activations**: leave-one-out weight of each of the 26 stamps in Γ₀ (the two lights measurably hold the calibration chart).
 - **The life map** (`hhg life`): day-per-year progressions (resonance curve 0–84, life-page-return ages, progressed lunar returns ~27/55/82) woven with the great transit cycles (Saturn return/opposition, Uranus opposition, the 18.6-year nodal lattice), clustered into retrograde series, by decade.
@@ -819,7 +819,7 @@ assistant's glossary). Two capabilities fall straight out of §30–31:
 - **The rotation ring.** The Singer cycle gives every voice a principled
   successor — the voice the wheel turns toward next — a new interpretive axis
   grounded in the field structure rather than asserted. (The developmental
-  reading of that succession is honest storyteller-layer, [И]; the cycle
+  reading of that succession is honest storyteller-layer, [I]; the cycle
   itself is exact.)
 
 The lesson of Part IX is the one the whole project is aimed at. An alphabet
@@ -975,7 +975,7 @@ Five. The Big Five is itself neither orthogonal nor fundamental — it is a
 factor-analytic summary of adjectives. UHM's seven-voice basis is
 theorem-forced (T-224), so the arrow runs the other way: the voices are the
 principled basis, and the trait constructs are shadows each casts onto an
-established instrument. [И], and explicitly not validated on population data.
+established instrument. [I], and explicitly not validated on population data.
 
 ### 39. The new level, and what it puts at risk
 
@@ -1020,7 +1020,7 @@ set of **self-regulation cues** the engine now reads back (`psyche.rs
 zone_gloss`, in `/psyche`): to lift from the fog, gentle activation (movement,
 rhythm, voice, eye contact); to ease down from overwhelm, slowing (a long
 out-breath, warmth, feet on the ground). The threshold is computed; the zone is
-read; the practice is borrowed from a validated clinical frame. [И]
+read; the practice is borrowed from a validated clinical frame. [I]
 
 ### 41. A third bridge: attachment into the relational layer
 
@@ -1094,7 +1094,7 @@ weather; it carries a lot and deserves the mic first. That single sentence is
 built from three independent readings agreeing — the population (parts), the
 gain map (active inference), and the open center (HD) — which is exactly the
 kind of convergence a layered instrument should produce. VERIFIED as a computed
-reading; [И] as an interpretation; and, like every reading here, a *prior* the
+reading; [I] as an interpretation; and, like every reading here, a *prior* the
 diary can confirm or overturn.
 
 ### 43. The portrait: the layers composed
@@ -1438,12 +1438,40 @@ sampled charts, the relationship between them is measured, not assumed. The
 bodygraph is *coarse*: its `143` distinct type-authority-profile signatures each
 cover about twenty-eight of the four thousand charts. Within one such signature,
 `Γ` still varies almost as much as it does globally — the within-signature spread
-is `0.89` of the global spread, so **sharing a bodygraph barely constrains `Γ`**:
-the twenty-eight people a signature lumps together hold twenty-eight different
-seven-voice states. Conversely, the charts nearest to one another *in `Γ`-space*
-share a bodygraph signature only `7.2%` of the time, so **the bodygraph is not a
-function of `Γ` either.** (`Γ` does carry the type partially — a nearest-centroid
-read recovers it at `64%` against a `36%` base rate — but not fully.) So the two
+is `0.97` of the global spread: the twenty-eight people a signature lumps
+together hold twenty-eight different seven-voice states. The charts nearest to
+one another *in `Γ`-space* share a bodygraph signature `4.4%` of the time. And
+`Γ` does not carry the HD type at all: a nearest-centroid read recovers it at
+`36.6%` against a `35.8%` base rate — **a zero.**
+
+The first two of those three had no null, and adding one changes how they must
+be read. Shuffling the signature labels across charts two hundred times — group
+sizes preserved exactly, only the label-to-chart link broken — puts the
+within-signature spread at `0.985` and the nearest-neighbour agreement at
+`1.9%`. Both observed values sit outside the whole permutation distribution.
+So the two are **not** independent, and the earlier phrasing («≈1, therefore
+the bodygraph barely constrains `Γ`») was an inference drawn from a number's
+nearness to one rather than from a baseline.
+
+What that null can and cannot settle is worth stating, because it is weak in a
+specific way: it severs the label from the chart *entirely*, while bodygraph and
+`Γ` are both functions of the same moment. Independence is therefore rejected
+trivially — any two functions of the same `jd` would reject it. What survives
+reading is magnitude and direction. The spread tightens by `1.4%`, which is
+nothing. Nearest-neighbour agreement runs `2.3×` above chance, a real relative
+effect that is still only `4.4` in a hundred. And the type is not recovered at
+all. The conclusion the section was built to reach is unchanged and now rests on
+the right ground: the two projections share a cause and are weakly dependent,
+but **neither recovers the other** `[Т]`.
+
+*Correction of record (2026-07-28).* This paragraph previously reported `0.89`,
+`7.2%` and a partial recovery of the type at `64%` against `36%`. Those figures
+were measured on encoder path v1, which was the library default while the
+product ran v2; the default has since been corrected (§89). Re-measured on both:
+v1 reproduces the old numbers (`0.890`, `6.8%`, `59.7%`), the live path gives the
+ones above. The change is not cosmetic — **the partial type-recovery disappears
+entirely** — and it cuts in the direction of the section's own conclusion: the
+two descriptions are *more* independent than was written, not less. So the two
 are two largely independent, lossy compressions of the same activations: `Γ`
 finer-grained (it distinguishes what the bodygraph lumps) and forced (the
 mathematics of Parts XII–XIV); the bodygraph coarser and non-forced, yet keeping
@@ -2145,6 +2173,124 @@ ratios of the correlation spectra of the level/gain/razlad/coherence features
 the engine exposes on every chart; the information figures are the entropies of
 the lead-coherence distribution under the two rankings.)*
 
+### 75b. The geometry of the string space — and the confound that reclaimed it
+
+The taxonomies of §70–74 project the seven voices onto outside instruments. A
+harder question is what structure the 21-string space carries by itself. We
+measured it twice, the second time against ourselves.
+
+**First pass (real people).** Over every third record of the Gauquelin
+registry (N = 5291, clock-precise births) we factor-analysed the string
+strengths |γ_ij|: the spectrum came out flat (8 %, 7 %, 7 % — no general
+factor, no class-betraying step; effective dimensionality by participation ratio 18.8 of 21), the theoretical Plasticity/Stability split
+appeared only as a weak sign pattern (+0.16 vs −0.23 on axis 1), and the
+leading axes read as voice contrasts — Meaning against Feeling (LO, SL vs
+EO, SE, SU, OU), the word against the deed (AS, AO, AE vs SD, DE, DO).
+
+**Second pass (the confound attack, pre-registered).** Slow bodies place
+neighbouring gates into the same strings, so those axes could belong to the
+WHEEL rather than to humanity. We ran the identical pipeline over N = 5291
+random moments, uniform on 1850–2000. The verdict was unambiguous: the
+random ensemble reproduces the human axes with |cos| = 0.94 on axes 1 and 2.
+[C]
+
+**The residual (g5).** The last question of the hierarchy — does humanity
+add anything the wheel does not carry — was asked directly: the top
+eigenvalue of the difference matrix C_people − C_random came out at 0.201
+against a noise floor of 0.152–0.170 from independent random pairs — and,
+decisively, below the human sample's own split-half floor of 0.217: two
+random halves of the same people differ more than people differ from random
+moments. (The human sample's higher internal floor reflects its epoch and
+profession clustering, not hidden structure.) At this order the residual is
+noise:
+what is visible is the wheel's, and what people add is below this
+instrument's floor. [C]
+
+**What this settles.** The flat spectrum and the voice-contrast axes are
+properties of the ENCODER's geometry — they hold for any ensemble of
+moments, and real births add no detectable structure of their own at this
+order. Three consequences stay useful. The individual variation the engine
+reads is high-dimensional by construction: a person is genuinely not
+compressible into one or two grand scales here (§75) — though this is now a
+design fact, not an empirical discovery about people. The population adds
+nothing the wheel did not already carry — consistent with the external
+validation of §70 (natal→trait ≈ 0 at population level). And the method
+paid: a result that survived one night only because we attacked it ourselves
+the next morning is worth more than a result never attacked. [C]
+
+*(Verified as computation: `machinery_axes_probe.rs` — the Gauquelin pass,
+the deterministic random-moment control, and the axis cosines are printed by
+one probe; the pre-registered guesses g1, g2, g4 and their verdicts stand in
+its header.)*
+
+### 75c. Where individuality lives: the point, not the population
+
+The day's nulls line up into one positive statement. At the population level
+the engine predicts nothing: natal charts do not sort professions (§70,
+eta² < 0.5 %), pivotal months of well-documented lives are neither
+dasha-marked nor transit-dense (both pre-registered pilots null), and the
+string space's visible structure belongs to the wheel, with the human
+residual below the sample's own split-half noise (§75b). Anyone selling
+population-grade prediction from birth data is selling past these numbers.
+
+What survives every one of those tests is the OTHER claim — the one the
+product actually makes. A single chart is a high-dimensional internal
+structure (the flat spectrum guarantees it is not compressible into types),
+and its reading is checked the only place it can be: against the one life it
+describes. That is not a retreat; it is the derived shape of the instrument.
+The self-verification loop the product runs — the blind day-protocol, the
+accuracy mirror, the P-quality correlation on the person's own diary — is
+the falsifiability program AT the only scale where the signal was ever
+claimed. [C]
+
+So the honest division of labour stands, now as a data-driven conclusion
+rather than a declared principle: the population is where we test and
+refuse; the point is where we read and verify. «Проверяется только вашей
+жизнью» — the corpus's old sentence — turns out to be not a disclaimer but
+the architecture. [C]
+
+
+### 75d. The genetic aspect, honestly: where 64 = 64 ends
+
+Any system claiming completeness must say something about genes, and the
+temptation is arranged for it: our wheel carries 64 gates, the genetic code
+64 codons, and 2⁶ = 4³ is exact. Human Design and Gene Keys make the
+identification directly. We tested it structurally instead of poetically
+(`architecture/genetics_lab.py`), pre-registering three questions.
+
+**Degeneracy signature (G1).** The standard code partitions 64 codons into
+21 classes — 20 amino acids and stop — with class sizes {6,6,6, 4×5, 3,3,
+2×9, 1,1}. No natural partition of our wheel carries that shape: nuclear
+roots split 32/16/16, Hamming weight 20/15/15/6/6/1/1, either trigram 8×8.
+The cardinalities agree; the structures do not. [C]
+
+**Where the redundancy hides (G2).** In the code, degeneracy is concentrated
+in the third nucleotide: changing it preserves the amino acid 67 % of the
+time, against 1–4 % for the first two. In the hexagram the picture is not
+milder but sharper and different: the nuclear root is a function of lines 3
+and 4 alone — (0,0) source, (1,1) O-voice, unequal pendulum — so flipping
+lines 1, 2, 5, 6 preserves the root always, and flipping 3 or 4 never does.
+[T] This also explains the pendulum's 32/64 base rate: it is exactly the
+XOR = 1 class. Both systems are redundant; the code hides its redundancy in
+one position, the wheel in four inert lines.
+
+**Any bijection at all (G3).** Insisting on hexagram ↔ codon, we enumerated
+all 24 base-orderings × 3 natural bit-groupings and measured the best
+agreement between the induced amino-acid classes and our roots: Jaccard
+0.119, inside the 0.10–0.15 chance band. There is no encoding under which
+the two partitions align. Gene Keys inherits the same numbering and the same
+boundary. [C]
+
+**What this settles for the system.** The gene–health link is real and
+massively evidenced — monogenic disease, polygenic risk scores — and it does
+not travel through 64-symbol numerology. Claiming otherwise would trade a
+verifiable instrument for an unverifiable one. The bridge from our layer to
+health runs where our layer actually measures: circadian and infradian
+rhythm, load and recovery, the stress signature, the behaviour a person
+logs. That is the same n-of-1 discipline of §75c — and it is why «checked
+only by your own life» is the honest phrase here too. [C]
+
+
 ## Part XXI. One crystal, many scripts: the octonions under astrology, the sciences, and life
 
 The reconstruction's skeleton is an object, not a metaphor: the octonions, their
@@ -2254,6 +2400,22 @@ mother `☷` is all-yin, weight zero, the origin; the three sons carry one yang 
 each, the three basis vectors; the three daughters carry two, the three pairwise
 sums; the father `☰` is all-yang, weight three, the sum of all. The Chinese sages'
 family of eight is the graded octonion basis, name for name.
+
+The correspondence is sharper than a labelling. The octonion units do not
+merely *sit* on `F₂³` — they *multiply* by it: `e_a·e_b = ±e_{a⊕b}`, the
+product of two units always lands on the line-wise sum of their trigrams, and
+the whole algebra is the group algebra of the trigram group twisted by a sign
+(verified by direct Cayley–Dickson computation in `symbolica_trigrams.py`: all
+sixty-four unit products land on the XOR of their indices, and the associator
+`(e₁e₂)e₄ ≠ e₁(e₂e₄)` witnesses that the sign twist is exactly what carries the
+octonions' nonassociativity). The family is then not a grading only but an
+arithmetic: two sons compose to a daughter (`☳⊕☵=☱`), a son with his
+complementary daughter composes to the father, and each such identity the
+tradition states is a theorem of the sum. Even the *Earlier Heaven* circle of
+Fuxi — the pre-Zhou arrangement of the eight around a ring — places exactly the
+complement pairs opposite one another: Heaven against Earth, Lake against
+Mountain, Fire against Water, Thunder against Wind; four oppositions, each
+summing to `☰`. `[Т]` throughout; the single convention is yin = 0.
 
 The seven non-Earth trigrams are then the seven Fano points, and their
 exclusive-or triples are the seven Fano lines — the same imaginary-octonion
@@ -2543,7 +2705,7 @@ $$
 $$
 
 So «an ideal self-description» is not an aspiration but a **constructible finite
-object [Т]**: forty-eight numbers, optimally arranged in eight bases. Any account
+object [T]**: forty-eight numbers, optimally arranged in eight bases. Any account
 a holon gives of itself can be measured against that ceiling. (The arithmetic is
 the one the heptacode's syndrome census already whispered — eight families over a
 seven-letter alphabet.)
@@ -2561,11 +2723,18 @@ The phenomenal functor is faithful only on `G₂`-orbits ([T-123](../../proofs/c
 
 | subspace | parameters | effective dimensions | PC1 |
 |---|---|---|---|
-| diagonal — the voice levels | 7 | **4.0** | 41.6 % |
-| off-diagonal real parts | 21 | 18.1 | 9.3 % |
-| off-diagonal imaginary parts | 21 | 16.9 | 11.1 % |
-| coherence magnitudes (the §75 view) | 21 | 16.7 | 12.1 % |
-| **the full state vector** | **48** | **32.3** | 8.7 % |
+| diagonal — the voice levels | 7 | **5.1** | 31.5 % |
+| off-diagonal real parts | 21 | 18.5 | 9.0 % |
+| off-diagonal imaginary parts | 21 | 17.4 | 10.6 % |
+| coherence magnitudes (the §75 view) | 21 | 16.6 | 12.3 % |
+| **the full state vector** | **48** | **35.4** | 7.0 % |
+
+*Numbers re-measured 2026-07-28.* The table previously read `4.0 / 18.1 / 16.9 /
+16.7 / 32.3`. Those were taken before the encoder's diagonal was pinned
+(`pin_diag`, default since 2026-07-27); with the pin switched off the probe
+reproduces them exactly (`32.5`, magnitudes `16.7`), which identifies the cause
+precisely. Both readings below are unchanged in direction and one of them gets
+stronger.
 
 Two things follow, one of them a correction of our own earlier reading.
 
@@ -2575,14 +2744,17 @@ effective dimension of `17.3`. That measurement replicates here exactly
 (magnitudes alone: `16.7`), which is a welcome independent confirmation through a
 different code path. But magnitudes are only half of the off-diagonal content:
 the `42` real numbers of the off-diagonal split `21` real and `21` imaginary, and
-including the phases lifts the effective dimension from `16.7` to `32.3` — it
-nearly doubles. §75's number was right about the object it measured and
+including the phases lifts the effective dimension from `16.6` to `35.4` — it
+more than doubles. §75's number was right about the object it measured and
 undercounts the *state* by about a factor of two. The personal detail we said
 lives in the coherences lives, half of it, in their **phases**.
 
 **The reached dimension does NOT sit on the gauge-free ceiling — the
-conjecture is refuted [✗].** The measured `32.3` stands close to
-`34 = 48 − dim G₂`, and we first read that forward: perhaps the natal encoder is
+conjecture is refuted [✗], now doubly.** The measured `35.4` no longer stands
+*close to* `34 = 48 − dim G₂` — it **exceeds** it, which alone makes the
+frame-fixed reading impossible: an encoder confined to the gauge-free quotient
+could not explore more directions than that quotient has. On the earlier figure
+of `32.3` the reading was merely tempting, and we first read it forward: perhaps the natal encoder is
 frame-fixed and explores about `95 %` of everything a holon could differ in. The
 test was stated and then run (`core/examples/g2_gauge_test.rs`). Build `𝔤₂` as
 the stabiliser of the associative 3-form inside `𝔰𝔬(7)` — taking `φ` from the
@@ -2593,7 +2765,7 @@ fraction of the population's variance lies along them:
 | | share of variance along `G₂`-gauge directions |
 |---|---|
 | conjecture (encoder frame-fixed) | 0 % |
-| **measured** (2340 charts, 117 base points) | **28.2 %** (range 24.7–31.3) |
+| **measured** (2340 charts, 117 base points) | **28.8 %** (range 26.1–31.5) |
 | isotropic null (scatter indifferent to gauge) | 29.2 % |
 
 The measurement lands on the null. **The natal encoder does not fix a frame**:
@@ -2668,3 +2840,654 @@ relational questions would learn more per question than the current seven do.
 Designing them — turning the non-computational bases into things a person can
 actually answer — is the open work of the living layer `[О]`, and it is now a
 well-posed problem rather than an aspiration.
+
+### 85. Two walks through the sixty-four: the book and the wheel {#два-хода-по-64}
+
+Terence McKenna's *Time Wave Zero* earns its place in this part not by its famous
+failure but by its structural core. The construction took the King Wen sequence —
+the canonical *order* of the sixty-four hexagrams — measured how many lines change
+from each hexagram to the next, and read the resulting profile as a **dynamic of
+novelty**, unfolded onto a 384-node grid (64 hexagrams × 6 lines; McKenna also
+prized the near-coincidence 13 × 29.53 ≈ 384 days of the lunar year). The terminal
+date the wave pointed at was refuted by the calendar itself `[✗]`. What survives
+the refutation is the question the construction actually poses: **is a canonical
+ordering of the sixty-four statistically special — and in which direction?** That
+question is exact, and our architecture happens to carry *two* canonical orderings
+of the same nodes — the book's and the wheel's — so it can be answered twice
+(lab: `architecture/symbolica_timewave.py`).
+
+The grid itself is shared: 384 = 64 × 6 is also the lattice of the wheel's
+line-divisions, which the Sun crosses in one year (about a line per day) and the
+Moon in one sidereal month. But a shared lattice is shared *combinatorics* — `2⁶`
+states, six lines each — and nothing more `[Т]`; whatever else the two systems
+have in common must be looked for in the walks. Define the novelty step
+`h(i)` as the number of lines changed between consecutive nodes of a walk, and
+compare each canonical walk with 20 000 random orderings of the same nodes:
+
+| walk | mean step | step spectrum {h: count} | lag-1 autocorrelation | z of mean vs null |
+|---|---|---|---|---|
+| random orderings | 3.05 ± 0.15 | spread around 3 | −0.03 ± 0.12 | — |
+| the book (King Wen) | 3.34 | {1: 2, 2: 20, 3: 14, 4: 19, 6: 9} | −0.26 | +2.0 |
+| the wheel (year order) | 1.81 | {1: 34, 2: 16, 3: 8, 4: 4, 5: 2} | −0.57 | −8.4 |
+
+Two findings, in opposite directions. The book is *mildly* special, toward
+larger, alternating steps: its well-known pair mechanism — every odd hexagram
+followed by its turn-over, or by its inversion when the figure is symmetric —
+makes within-pair steps large (mean 3.75) against ordinary between-pair steps
+(2.94); no step of size 5 occurs at all, and the nine full inversions (h = 6)
+are exactly the symmetric pairs. It is a **narrative** order: it dramatises
+opposition. The wheel is special by an order of magnitude more, and the other
+way: more than half its steps (34 of 64) change a *single* line, none change all
+six, and the spectrum falls by almost exactly a factor of two per added line —
+`34·16·8·4·2` against the exact halving `32·16·8·4·2`. The spectra are exact
+counts `[Т]`; the z-scores are empirical against a fixed ensemble `[С]`. The
+wheel is a near-Gray walk — the year unfolds by minimal mutations — which
+sharpens the earlier Gray-code observation on the wheel from the Human Design
+audit into a quantitative law of decrease.
+
+The principle, named: **the book and the wheel are two walks on one crystal.**
+The nodes are shared — the same sixty-four doors with the same voice-readings
+(§80) — but the *order* is a second, independent layer of meaning, and the two
+canonical orders encode opposite temporal characters: the book walks like a
+story, by confrontations — large, anticorrelated steps, opposition pairs; the
+wheel walks like a calendar, by growth — smallest possible steps, smooth
+unfolding. McKenna's «novelty» is therefore a property of a *walk*, not of the
+nodes; the honest core of his intuition is that different walks through one
+symbol-set carry different, measurable temporal signatures — `[С]` for the
+numbers above, `[И]` for reading step-size as novelty. In our reconstruction the
+labour is split accordingly: the doors' meanings live on the nodes, the year's
+dynamic lives on the wheel-walk (themes hand over gradually, each door differing
+from its neighbour by about one line), and the book-walk survives *inside* the
+nodes as pairing structure — the involutions and nuclear roots of Part XVI.
+Neither walk is «the true one»: they are two projections of the crystal into
+time, a narrative one and a cyclic one — and the Mawangdui manuscript order
+supplies a third with its own signature (block-sorted by trigram families:
+steps of mean 1.75 inside a block, 3.25 at the seams; z = −7.6 against the
+same null): a *catalogue*. Story, calendar, dictionary — three canonical
+modalities of one crystal, each measurably non-random in its own direction.
+
+### 86. The interior ladder: the four gates as a route, and the capture boundary {#интериорная-лестница}
+
+The corpus defines consciousness by four gates — purity inside the window
+`P ∈ (2/7, 3/7]` (T-124), reflection `R ≥ 1/3`, integration `Φ ≥ 1` (T-129),
+differentiation `D ≥ 2` (T-151) — and treats them as a static conjunction. The
+psychedelic corpus, read through the reconstruction, turns the conjunction into
+a **route**: the stages of a dissolution are the gates failing in order, and the
+return is the same gates recovering in reverse. One identity does the heavy
+lifting, and it was already in the canon: with the canonical `R = 1/(7P)`, the
+upper edge of the window and the reflection threshold are the *same point*,
+
+    P > 3/7  ⟺  R = 1/(7P) < 1/3   `[Т]`
+
+— so «ego death», the failure of self-observation, is not a separate event but
+the exact crossing of the window's upper edge. What the tradition reports as
+losing oneself, the algebra states as purity leaving the band where a
+self-model can still watch.
+
+The order of the remaining stages is not universal, and that is the finding
+(lab: `architecture/interiority_lab.py`, an honest toy of the porosity
+dynamics, with its three instrument artifacts caught and documented along the
+way — total porosity, a connectivity marker degenerate on disconnected graphs,
+and a start state that violated `D ≥ 2`). The route is a **function of the
+porosity profile** — how fast the world's entry widens across channels versus
+how deep it presses. A wide fast profile (all channels open almost at once)
+reaches *unity first*: `D → 1` at mean step 39 of 80, connectivity doubling at
+49, the window's edge only at 75 — union arrives while the observer still
+stands, which is the DMT-like breakthrough phenomenology (56 of 60
+trajectories). A narrow slow profile orders it the other way: connectivity
+first (61), the edge second (75), full union last (79) — the long
+«everything is connected» phase, then dissolution, then oneness at the peak:
+the psilocybin-like route (43 of 60). Same crystal, same gates; the substance
+chooses the profile, the profile chooses the order `[С]`.
+
+Two more results anchor the phenomenology. First, the report «more real than
+reality» has a carrier in the model `[С]`: inside the unity window the mean
+off-diagonal coherence stands at ×8.6 its baseline (60 of 60 trajectories put
+the connectivity maximum inside unity) — super-integration with collapsed
+differentiation is precisely a state *more coherent than the ordinary one*,
+and the mind reports it as excess reality. Second, the entity question is put
+as a discriminating test rather than an opinion: if entities are detached
+modes of the person's own self-model, their profile should correlate with the
+person's *quiet* voices (the unheard returning as Other); if they are external
+fragments entering through porosity, with the person's *open* channels. The
+toy model cannot decide this — a passive-input dynamics answers «world» by
+construction — so the question is preregistered for report corpora with natal
+data `[О]`; it is observable and falsifiable.
+
+The same crossing guards the social layer. Model propaganda as an external
+rank-one source — «one thought», a maximally pure state — fed through open
+channels with repetition (lab: `architecture/holarchy_ladder_lab.py`). Capture
+turns out percolative: a pressure threshold below which it does not spread,
+and the population's true defence is not its starting distribution (that
+version was refuted by its own numbers and stands as an errata in the lab) but
+the **living filter**: while `P` stays inside the window, `R ≥ 1/3` damps the
+repetition, and the full filter doubles the pressure threshold. The boundary
+of vulnerability is the same line as above: captured is possible when
+`P > 3/7`, i.e. `R < 1/3` — **capture and trance are one door opened from two
+sides** `[С]` for the toy, `[Т]` for the boundary identity. A tradition that
+trains presence in the window trains, in the same gesture, immunity to
+capture; a system that pushes a population toward one pure thought walks it,
+in the same gesture, out of the conscious band. The susceptibility claim also
+carries an external anchor `[С]`: across 137 autocratic-regime onsets of the
+Geddes–Wright–Frantz registry with World-Bank coverage, per-capita growth in
+the three years to the start runs 1.70 points below the country's own norm
+(z = −4.3 against a within-country null; the anticipatory window that excludes
+the start year still holds z = −2.6), while the same test against *global*
+shocks returns zero — capture follows the local depletion of its field, not
+the world's waves, which is the social twin of the point-not-population
+theorem (§75c).
+
+Grof's perinatal sequence falls out of the same construction. From several
+thousand LSD protocols Grof distilled a stable order — serene unity (BPM I),
+no-exit compression (BPM II), titanic struggle (BPM III), death-rebirth into
+light (BPM IV). The perinatal *causality* — that these are memories of birth —
+remains disputed `[И]`; the sequence itself is a reproducible corpus invariant
+`[С]`, and in the reconstruction it is the **resistance curve of the gate
+route**: define suffering(t) as the entry pressure times the still-living
+reflection filter, and the model puts its peak strictly between the
+«everything connects» phase and the window's edge — BPM II–III, the filter
+holding against the press — in 43 of 43 narrow-profile and 58 of 58
+wide-profile trajectories. On the narrow route the tail after unity holds 6 %
+of the peak: the catharsis of BPM IV, no one left to suffer. The prediction
+that the narrow profile suffers *higher* was refuted by the model's own
+numbers — the peaks are nearly equal; what distinguishes the routes is
+**resolution**: the wide profile keeps 47 % of its suffering *inside* unity
+(the terror-within-breakthrough of DMT reports), the narrow one converts it at
+the moment of passage. This matches the Imperial triad of scales — challenging
+experience as the area under the resistance curve, emotional breakthrough
+(Roseman 2019) as the tail's conversion, mystical experience as the depth of
+unity — with a preregistered corollary: breakthrough scores should track the
+peak-to-tail *ratio*, not the peak `[О]`.
+
+The route also runs backwards, and not symmetrically. Driving the porosity
+through a full cycle (0 → 1 → 0, sixty trajectories) gives the return leg two
+measured properties `[С]`: the gates recover at a porosity **smaller by
+Δσ ≈ 0.16–0.19** than the one at which they failed — the world once let in
+does not leave when the pressure is merely removed, so between the peak and
+the re-closing of the gates there is a real **integration window**, which is
+where the therapeutic work happens; and the recovery order is
+last-fallen-first-restored in 75 % of trajectories — a tendency, not a law,
+because on a narrow profile both gates fall almost together at the peak and
+the return order is noisy. Integration, in other words, is not the trip
+rewound: what opened at the peak closes on its own porosity and mostly in
+reverse order.
+
+The Klüver precedent frames the method. Thousands of subjective mescaline
+reports condensed into four form constants; half a century later they proved
+to be the plane-wave spectrum of a log-polar cortex — the lab reproduces that
+derivation by direct computation. Reports → invariants → mechanism → theorem:
+the interior ladder above is the same schema applied one level deeper, with
+the gates of the reconstruction as the mechanism layer.
+
+### 87. The five-mode chart: the spectrum of a natal Γ̂ and the personal blind plane {#пятимодовая-карта}
+
+Ask the plainest spectral question the reconstruction allows: what are the
+eigenvalues of a natal Γ̂? Across three thousand ephemeris charts spread
+uniformly over 1940–2010 the answer has a shape no one ordered in advance
+(`core/examples/spectral_gaps.rs`): the mean spectrum runs 0.499, 0.288,
+0.154, 0.054, 0.004 (re-measured 2026-07-28 on the corrected defaults; it read
+0.448, 0.275, 0.168, 0.088, 0.022 before the diagonal was pinned) — and then **nothing**: λ₆ and λ₇ are numerical zeros on
+98.7 % of charts (the exceptions carry λ₆ ≤ 0.043). A natal chart is a
+**five-mode object in a seven-voice space**: every chart owns a two-dimensional
+subspace of voice superpositions it does not carry at all. The head of the
+spectrum decays geometrically at ≈ 0.62 ± 0.13 per step — near 1/φ on average,
+but with a spread wide enough that we file it as a tendency of means, not a
+law. And the positional gap profile matches purity-matched random densities —
+no «natural classes of modes» beyond the rank cut: what distinguishes the
+population is the cut itself and the steep head.
+
+Is the missing plane shared — two directions the encoder simply never feeds?
+No (`kernel_probe.rs`): the mean kernel projector is nearly isotropic (its
+seven eigenvalues sit between 0.23 and 0.34, all ≈ 2/7), so the blind planes
+of different charts spray the whole space. The deficit is a **local law**:
+each chart has its own personal blind plane.
+
+The mechanism turned out to be one honest theorem of the construction
+(`rank_origin_probe.rs`). The encoder assembles a raw matrix — the population
+diagonal of trace one plus the β-weighted coherence structure of trace zero —
+and ends by projecting onto the PSD cone with trace renormalisation. The raw
+matrix almost always carries negative inertia: **(5+, 2−) on 72 % of charts,
+(4+, 3−) on 27 %, (6+, 1−) on 1.4 %** — and that last figure independently
+matches the 38/3000 rank-six charts of the first probe. So Γ̂ is the
+renormalised positive part of the raw chart, and the personal blind plane is
+precisely its clipped negative subspace — the directions where the coherence
+structure outweighed the population. A quarter of the population carries a
+*three*-dimensional blind space. Why is (5+, 2−) the typical inertia? The
+phase diagram over β answers plainly: the working point β = 0.12 sits at the
+**peak of the (5+, 2−) phase** (85 %), with (6, 1) below β ≈ 0.05 and (4, 3)
+above β ≈ 0.15 — five-modedness is a property of the encoder's chosen working
+point, standing at the maximum of its own phase `[С]`.
+
+Two readings close the section. First, a caution: all of this is a statement
+about the sky-plus-encoder structure — dates here are uniform draws, not
+people, and no person-level claim is made `[С]`. Second, a refinement of the
+window: on **89 %** of charts (62 % before the defaults were corrected) the
+dominant mode alone already outweighs the upper
+edge, λ₁ > 3/7, while the chart's purity stays inside the window because of
+how the tail is distributed — consciousness, in this reconstruction, lives on
+the **distribution of modes, not on the dominant one**. The product keeps its
+discipline here: the blind plane is computable per person, but its meaning is
+not yet earned, so it stays out of the readings until it is `[О]`.
+
+**How the conditional gets settled.** «A property of the encoder's working
+point» is a `[С]`, and a `[С]` that names no way of being wrong is a
+decoration. Here the way is direct, because there exists a second Γ̂ that never
+passes through the encoder at all: the one estimated from a diary, a
+normalised covariance of daily marks. If five-modedness is a trace of the
+encoder, that second matrix has no reason to show it; if it is a property of
+the state, it shows it anyway. So the rank of the diary Γ̂ separates the two
+readings, and it costs the observer nothing extra — the same sixty entries
+already being collected for the three-way split answer this too.
+
+The rule was fixed before the first entry: a mode counts as live if it carries
+more than 1 % of the trace; **five or fewer live modes** reads as a property of
+the state, **more than five** as an artefact of the encoder. The threshold is
+not a guess. Power was computed first, on synthetic series of known rank: at
+sixty days the instrument reads true rank 3 as 3 (99 % of runs), true rank 5 as
+5 (87 %), and true rank 7 as 6 (73 %). The boundary was then chosen by
+enumeration over the worst of the two error rates — `≤ 5` gives 16.5 %, while
+`≤ 4` and `≤ 6` give 87 % and 89 % and were rejected. The instrument's known
+bias is written into the rule rather than left implicit: at full rank it more
+often finds six than seven, because the seventh mode falls under the 1 %
+floor — so an outcome of «6» reads as full rank, not as near-five-modedness.
+Verifier: `core/examples/diary_rank_prereg.rs`; the outcome appears on its own
+at sixty days and stays silent before that `[С]`.
+
+**The two outcomes are not equally informative, and saying so is part of the
+preregistration.** A second probe asked what happens when this test sits
+alongside the three-way split test that runs on the same entries
+(`core/examples/prereg_independence.rs`). The two are not independent, and the
+dependence is one-directional. Sweeping the purity of a three-factor series —
+the weight `w` on the shared factor — the split lands on **92–100 % of runs
+across the whole range from w = 0.4 to 0.9**, while rank switches abruptly:
+five or fewer modes on 100 % of runs at w = 0.9, 87 % at w = 0.8, and **exactly
+0 % already at w = 0.7**. So once the three-group structure is present, the
+rank is not measuring the structure at all — it is measuring *how much of the
+diary is not those three factors*. The reverse direction is clean: low rank
+alone does not carry a series into the predicted split, which stays at the
+blind 1.4–2.0 %, so the 1/70 declared for the split is unaffected.
+
+Three consequences follow, all fixed before the first entry. First, **«more
+than five» is the default outcome** over almost the whole noise range and is
+therefore weak evidence on its own; **«five or fewer» is rare and strong**.
+Second, when the split lands *and* rank comes out low, the two are **one
+finding, not two** — the second follows from the first and must not be added to
+it. Third, split-lands-with-high-rank is **not** a contradiction, as a naive
+reading of the first probe suggested: it is the ordinary case below w = 0.8 and
+reads as «the three factors are there and they are not the whole of it». The
+product states each of these in the reading itself rather than leaving the
+reader to add what does not add `[О]`.
+
+**And the blind probability the other test rests on is true only by symmetry.**
+The split test declares blind odds of 1/70. That holds if the seven voices are
+exchangeable — no partition favoured over another. In self-report they are
+never exchangeable: there is a **common day-factor**, and today being good
+lifts all seven marks at once. A halo with *equal* loadings is harmless, since
+it raises every correlation alike and all seventy partitions score the same.
+A halo with sharply *unequal* loadings is not. If the wording of the questions
+happens to make mood bite harder on Expression, Movement and Meaning than on
+Form, Grounding and Unity, the predicted partition wins **from the questions**,
+not from the metatraits. Measured on eight nulls that contain no metatraits at
+all (`core/examples/halo_confound.rs`): seven independent voices land on the
+predicted split 1.35 % of the time, an equal-loading halo 1.10 %, a halo plus
+response style 1.55 % — all at the blind rate — while a loading skew of 0.35
+gives **4.95 %** and a skew of 0.45 gives **16.6 %**, up to **11.6× the
+declared 1/70**.
+
+The discriminator turned out to sit in the spectrum of the same matrix. One
+common factor is rank one: λ₁ takes nearly everything. Genuine metatraits are
+*two* group factors plus a pivot, so λ₂ is comparable to λ₁. Among halos that
+do land on the predicted split, λ₂/λ₁ runs 0.23–0.34; among genuine metatraits
+it runs 0.81–0.84 — and, decisively, **it does not fall as the structure
+weakens**: at w = 0.25 only 19 % of runs land at all, but those that land still
+show 0.84. So the threshold cannot cut away weak-but-real structure. Chosen by
+enumeration over the worst of the two errors: **λ₂/λ₁ ≥ 0.45, worst error
+0.2 %**. Declared before the first entry: below that threshold a landing does
+**not** count, however many days accumulate — what it would measure is how
+differently the seven questions catch a mood, not the bridge to the Big Five
+`[О]`.
+
+The general lesson outlives this instrument. **A probability derived from
+symmetry is true exactly as far as the symmetry holds in the data.** «One in
+seventy, because there are seventy equiprobable partitions» is a statement
+about the *enumeration*, not about people. It is checked by building nulls in
+which the symmetry is broken deliberately and plausibly — and here that check
+found a real hole and closed it before any data existed.
+
+That rule has a sibling, and the two together cover most of what goes wrong
+with a declared threshold. A significance level counts **one** route to the
+right answer — the route the test intends. It is valid exactly when no other
+route exists. The check mirrors the one above: enumerate everything a
+respondent can see *without* doing the intended work — layout, ordering,
+wording, length, any residue of how the material was assembled — and test each
+against the key. A threshold survives only what it has been tried against `[О]`.
+
+### 88. The information bound of the natal map: why every external null was forced {#информационная-граница}
+
+Twenty-one parts have built a construction. This one measures what the
+construction *can* carry, and the answer bounds everything above it. The
+result is not statistical — it is read off the signature of a function.
+
+**One input.** The state is assembled by `Chart::from_jd(jd)`: a single real
+number, the moment of birth. Nothing else is passed. So the natal map is a
+curve,
+
+$$f : \mathbb{R} \longrightarrow \mathcal{D}(\mathbb{C}^7), \qquad jd \mapsto \Gamma,$$
+
+whose image lives in a space of $d^2 - 1 = 48$ real parameters `[Т]`.
+
+**Place does not enter the state.** Two people born in the same instant in
+Reykjavik and in Melbourne receive an *identical* Γ — measured difference
+$0.0\mathrm{e}0$, though the measurement is superfluous: the coordinates are
+absent from the signature `[Т]`. Place lives only in the horizon layer
+(`place::gauquelin_sectors`), never in the state. This is a falsifiable
+disclosure, and the product now makes it on the `/place` page rather than
+letting silence work as a promise.
+
+**The map is very nearly injective.** Across 4000 random charts there are 3933
+distinct gate sets (`natal_dimension.rs`). So `f` neither compresses nor
+enriches: it is an exact **re-coding of one real number** into 48 coordinates.
+
+**Hence the bound.** Because Γ is a deterministic function of `jd`, the data
+processing inequality gives
+
+$$I(\Gamma\;;\;X) \;\le\; I(jd\;;\;X)$$
+
+for any property $X$ of the person `[Т]`.
+
+No processing creates information about a person that the birth moment did not
+hold. And the right-hand side is exactly what every external test measured:
+15 931 Gauquelin celebrities with accurate times (η² < 0.5 %); sixteen
+memoirists over 2.4 million words under frozen dictionaries (zero, the best
+pair signed against); wars, revolutions and pandemics (null under two
+statistics); three zodiac markings including thirteen unequal constellations
+(all inside estimator bias); and the diurnal layer across 130 body × profession
+pairs, whose top is occupied by bodies with no traditional claim at all —
+including our own control body, Uranus over the military at +3.03.
+
+So the null on the left needs no separate test: it **transfers** from the
+nulls on the right, with no further assumption.
+
+Precision matters here, or the statement over-claims. The inequality
+*transfers* a bound; it does not manufacture a zero. Our tests are estimates
+of finite power — they cap the effect, they do not prove its absence. The
+correct sentence is: *whatever bounds the link from moment to person, bounds
+the link from Γ to person at least as tightly.* That is what makes further
+external testing of the natal layer pointless — the ceiling is shared and
+already measured.
+
+**Portrait of the image — and why it deceives.** Measured on the live path
+(`use_v2 = true`), after a first pass had used the default, which then pointed
+at a dead branch (§89): the image spans **40 of 48** linear directions at 90 %
+of variance and 47 at 99 %, and its embedding dimension is **13.80** against
+controls of 2.26 (a known curve) and 17.10 (a full 48-dimensional cloud). The
+ruler is biased both ways — the known curve should read 1.0 and the full cloud
+48 — so the *order* is what may be read, not the absolute.
+
+The direction count needs the same treatment, and it did not have it. «Forty of
+forty-eight» reads as wide coverage, but coverage is measured against
+something. Four baselines on the same four thousand points settle it:
+
+| ensemble | directions at 90 % |
+|---|---|
+| isotropic 48-dimensional cloud | 43 |
+| curve from one frequency, random map | 29 |
+| ten frequencies, random **linear** map | 8 |
+| ten frequencies, random **nonlinear** map | 25 |
+| **the natal curve** | **40** |
+
+Two readings, pointing opposite ways, and both belong. **Against pure noise the
+figure is a ceiling, not an achievement**: an isotropic cloud needs 43, so
+noise spreads *wider* than the natal image does. **Against the matched null the
+image does spread**: ten sinusoids through a random nonlinear map cover 25.
+The linear null's 8 must not be read at all — a linear mixture of ten sinusoids
+has covariance of rank exactly ten, and the encoder is nonlinear by
+construction. Nor should the remaining gap of fifteen be read as «this much
+structure»: the matched null here is merely quadratic, while the encoder passes
+through trigonometry of angles and manufactures higher harmonics that lift the
+rank on their own. Fifteen is an *upper* bound on what construction contributes.
+
+And here is the instructive part. Geometrically the image is **rich**: nearly
+fourteen-dimensional by that estimator, far closer to a full cloud than to a
+curve. **And it carries exactly one number.** The richness is manufactured by
+discreteness — gates, channels and centres jump at every boundary, so the image
+is not a line but a scatter of almost four thousand pieces, one per chart
+(3933 distinct gate sets across 4000). A scatter fills space and fools any
+geometric ruler, yet holds no more information than the index of the piece —
+and that index is fixed by a single `jd`. Geometric richness and information
+content are different things, and the first promises nothing about the second.
+
+**What the bound does not reach.** Formally two channels escape it; in
+substance, one. **Place** is absent from Γ and therefore outside the
+inequality — which invites calling it open, and that would be a mistake: the
+diurnal landscape *was* the measurement of place, since `gauquelin_sectors`
+takes latitude and longitude on its inputs, and it closed negatively. The
+honest residue is that the outcome tested was *profession*; other outcomes are
+formally untouched, and no data for them exists. **The diary** is the real
+survivor: its input is the person, not the birth moment, and it is the one
+place where the instrument has been checked against known truth (return times
+0.83 → 0.85, 1.44 → 1.35, 2.80 → 2.82).
+
+Nothing said in earlier parts becomes false. The natal layer was already
+described as a frame, a prior, a language of distinctions, and that was
+accurate. What changes is the standing of the description: until this section
+it was **caution drawn from measurements**, and now it is a **consequence of
+the construction** — which lets it be stated more calmly and more strongly.
+Everything the system says from a chart is a function of one number. A frame
+may be useful without being a measurement; it may not carry more than its
+input `[Т]`.
+
+### 89. Two encoder paths, two answers to the window {#перепись-окна}
+
+The previous section bounded what the natal map can carry. This one asks a
+blunter question of the same construction — **what does the encoder say about
+real people, by the theory's own criteria?** — and the answer arrived only
+after an error worth recording, because the error is the finding.
+
+**The census, on 16 000 Gauquelin records with accurate birth times.** The
+first pass used `EncoderCfg::default()` and reported that essentially nobody
+passes: integration for 0.1 %, all four gates for 0.0 %. That conclusion was
+wrong, because the default is **not** the path the product computes:
+`use_v2: false` in the default, `use_v2: true` in the live config. Recomputed
+along both:
+
+| gate | v1 (the default) | **v2 (what runs)** |
+|---|---|---|
+| $P > 2/7$ | 40.0 % | **99.4 %** |
+| $R \ge 1/3$ | 98.5 % | **87.6 %** |
+| $\Phi \ge 1$ | 0.1 % | **90.8 %** |
+| $D \ge 2$ | 100 % | **100 %** |
+| **all four** | **0.0 %** | **78.4 %** |
+
+Φ by quantiles: v1 — 0.000 / 0.270 / 0.581, max 1.350; **v2 — 0.932 / 1.289 /
+1.730, max 2.621.**
+
+**So the finding is not the one that was sought.** It is that the two paths
+give **categorically different answers to the system's central predicate**:
+one says nobody passes the window of consciousness, the other says three
+quarters do. Not a discrepancy in the third digit — different answers to
+«is this a living state by the theory's criteria» `[Т]`. And the path left as
+the *default* is the one that is not in service, so any probe written against
+the default silently measures a dead branch.
+
+**On the live path the gates barely filter.** $D \ge 2$ passes 100 %,
+$P > 2/7$ passes 99.4 %. A gate that admits everyone is ornament rather than
+discrimination; only $R \ge 1/3$ (87.6 %) does real work, and it does it
+through the *upper* edge of the window. Whether the gates are too easy on v2 is
+an open question `[О]`, and it is now a numbered one.
+
+**What holds regardless of the path.** Reachability of the gates by the *diary*
+estimator never touches the natal chart at all:
+
+| structure of the series | P | Φ | D | gates |
+|---|---|---|---|---|
+| voices independent | 0.147 | 0.021 | 6.91 | 2/4 |
+| weak common wave | 0.157 | 0.089 | 6.69 | 2/4 |
+| **middling common wave** | **0.327** | **1.289** | **4.51** | **4/4** |
+| strong common wave | 0.826 | 4.771 | 1.60 | 2/4 |
+| almost a single voice | 0.981 | 5.868 | 1.07 | 2/4 |
+
+The gates are reachable and, which matters more, **selective**: only the middle
+band passes. Voices apart, and there is no integration; voices fused, and there
+is no differentiation — precisely what the theory declares consciousness to be,
+reproduced from series shaped like daily marks `[Т]`.
+
+**What the error killed.** A prediction had been drawn — that a diary Γ̂ would
+clear gates a natal Γ fails. It rested on a contrast of 0.1 % against ≈1.3, and
+on the live path there is no contrast at all: the natal median is 1.289, the
+same number the middling series gives. The prediction was withdrawn, and
+withdrawn *before the first mark was collected*, so no fitting to data was
+possible.
+
+**Why the low Φ on v1, for the record.** It is not a tunable: sweeping β from
+0.05 to 0.80 lifts the median only to 0.844 and it plateaus there, while the
+four-gate rate peaks at 8.8 % near β = 0.45 and falls again. The plateau is not
+the Cauchy–Schwarz ceiling — at β = 0.80 only 14 % of pairs sit at it, average
+load 0.183 — but the **cone projection**, which discards up to 31 % of the raw
+mass as the negative inertia grows. The first mechanism proposed here was the
+wrong one; the measurement said so.
+
+**Do the gates discriminate at all?** The question «are they too easy on v2» is
+settled not by the pass rate but by comparison against a **null ensemble** —
+random density matrices from the Hilbert–Schmidt distribution, which know
+nothing of any sky. The ruler is the one already used on textual claims: how
+many bits the answer «passed» carries.
+
+| gate | encoder | random | delta | bits |
+|---|---|---|---|---|
+| $P > 2/7$ | 98.9 % | 37.8 % | +61.1 | 0.089 |
+| $R \ge 1/3$ | 91.6 % | **100 %** | −8.4 | 0.414 |
+| $\Phi \ge 1$ | 86.3 % | 7.0 % | +79.3 | 0.576 |
+| **$D \ge 2$** | **100 %** | **100 %** | **−0.0** | **0.003** |
+| all four | 78.0 % | 7.0 % | +71.0 | 0.760 |
+
+**Which sample each table is on, because the two disagree and neither is
+wrong.** The census above runs on 16 000 real births spanning 1600–1963; this
+table runs on 4000 dates drawn uniformly over 1930–2009. Hence `R ≥ 1/3` reads
+87.6 % there and 91.6 % here. Two hypotheses for the gap were measured rather
+than assumed (`core/examples/population_effect.rs`). Real births against
+uniform dates over the *same* years: largest gap across all four gates
+**1.2 points** — so the population, though genuinely non-uniform over the
+calendar, explains about one point. Uniform dates across 1600–1963 against
+1930–2009: `R` moves 88.6 → 89.7, another **1.1 points**. What remains is
+sampling error, which at n = 4000 and a rate near 0.9 runs about half a point
+per standard error. No single cause, and no error — but a section that prints
+both figures without saying they are different samples invites the reader to
+treat one as a typo. Every pass rate is a property of the construction **and**
+of the population it is counted on `[О]`.
+
+Median P: encoder 0.3623, random 0.2775, gate 0.2857.
+
+The answer splits in two, and both halves matter. **Against noise the gates
+work, and strongly**: all four admit 78 % of charts against 7 % of random
+states, and $P > 2/7$ gives 98.9 % against 37.8 % — the encoder does make
+states markedly purer than chance, exactly as the gate's derivation claims
+(the distance to the formless must exceed noise's own). That is not ornament.
+
+**Between people they barely discriminate.** $P > 2/7$ carries 0.089 bits,
+because everyone passes; only $\Phi \ge 1$ does real work (0.576), and the
+quartet together yields 0.760 bits — about one binary distinction, «78 against
+22». Which is precisely what §88 demands: if the natal layer carries one
+number, gates upon it *cannot* separate people. The low discriminability is
+not a flaw in the gates but a consequence of the information bound `[Т]`.
+
+**And $D \ge 2$ is dead.** 100 % for the encoder, 100 % for random, 0.003
+bits. It is not vacuous mathematically — a nearly pure state would fail it —
+but neither ensemble produces such states. As it stands it is not a gate but a
+line in a report `[О]`.
+
+#### What survives a harder null {#ворота-против-спектра}
+
+The Hilbert–Schmidt ensemble differs from a chart in *everything at once*,
+spectrum included — and three of the four gates read nothing but the spectrum.
+Purity is the sum of squared eigenvalues; $R = 1/(7P)$ is a function of purity,
+so $P$ and $R$ together are one condition on the spectrum; $D$ is the
+exponential of the entropy, again spectral. Only $\Phi$ is computed over a
+partition of the seven *named* axes and can therefore see structure. On top of
+that the HS ensemble in seven dimensions has mean purity $2d/(d^2+1) = 0.28$,
+which sits flush against the threshold $2/7 \approx 0.2857$ — so the 7 % is
+in large part a statement about where that ensemble happens to sit.
+
+The sharper null holds the spectrum **identical**. Take a chart, diagonalise
+it, keep the eigenvalues, and replace the eigenvectors with a Haar-random
+unitary frame: $U\,\mathrm{diag}(\lambda)\,U^\dagger$. Purity and $R$ then agree
+with the chart bit for bit (largest observed discrepancy $1.3\cdot10^{-15}$),
+and only $\Phi$ and $D$ can move. On 4000 charts:
+
+| gate | charts | same spectrum, random frame | delta |
+|---|---|---|---|
+| $P > 2/7$ | 98.9 % | 98.9 % | +0.0 |
+| $\Phi \ge 1$ | 86.3 % | 70.4 % | **+15.9** |
+| $D \ge 2$ | 100 % | 100 % | +0.0 |
+| all four | 78.0 % | 62.4 % | +15.6 |
+
+The result is worth stating gate by gate rather than in aggregate. **Three of
+the four discriminate exactly zero** beyond the spectrum: for $P$, $R$ and $D$
+the earlier «78 % against 7 %» is a claim about *spectra*, not about how a
+chart is built. **One gate does real work.** At identical spectrum, charts
+clear $\Phi \ge 1$ sixteen points more often than a random frame — median
+$\Phi$ 1.235 against 1.134, and the two samples separate with a pair-ranking
+score of 0.612 (0.5 would be nothing). The effect is genuine and modest, and
+its source is legible: $\Phi$ is computed over the named axes, and a Haar
+rotation scrambles the names. So what is shown beyond the spectrum is exactly
+this — **the encoder does not place its axes arbitrarily with respect to
+integration** `[С]`. That is the whole of the structural claim, and it is
+smaller than the aggregate figure suggests.
+
+**And the $\Phi$ signature turned out to be carried by the construction
+itself.** The next null asks *which* non-arbitrariness: keep every gate's
+multiplicity, magnitude and line-phase, but wire its member axes at random —
+forty independent consistent rewirings, and forty more constrained to preserve
+each axis's total degree exactly (double edge-swaps on the gate–axis
+incidence). The canonical dictionary passes $\Phi \ge 1$ on **88.8 %** of
+charts; free rewirings reach 71.1–82.0 % (median 77.1), degree-balanced ones
+74.9–83.1 % (median 78.5) — **zero of forty** reach the canonical figure in
+either family, permutation $p = 0.024$ in both. So the signature is neither
+multiplicities nor axis load: it is the structure of which pairs are coupled.
+
+The mechanism is exact combinatorics, not a tendency. The 64-word dictionary
+is a **2-design**: its 21 pair-gates cover all 21 axis pairs exactly once, its
+35 triangle-gates cover all 35 distinct triples exactly once, and every axis
+pair therefore receives exactly $5 + 1 = 6$ contributions — perfectly uniform
+slot load (a random rewiring loads slots 2…12). Contributions carry line
+phases, and colliding slots partially cancel, $e^{i\theta_1} + e^{i\theta_2}$;
+the design never collides them. Uniform slot load is what $\Phi$ detects
+beyond the spectrum — and the mechanism is established by intervention, not
+narration: with phases forced to zero the gap vanishes entirely (both families
+saturate at 100 %), and the *raw* off-diagonal mass inverts — 1.603 canonical
+against 1.664 rewired — exactly as the $\sqrt{k}$-versus-$k$ arithmetic of
+random-walk accumulation demands. Remove the cause and the effect is gone.
+This is the first measured structural evidence *for* the
+$64 = 1 + 21 + 35 + 7$ construction on the encoder side `[С]`. And the same
+null cleanly divides the labour between the encoder's two structural facts:
+five-modedness (§87) does **not** move under rewiring — rank ≤ 5 on 99.8 % of
+charts canonically and 100 % rewired, $\lambda_6$ a numerical zero in both —
+so the spectral cutoff belongs to the assembly's working point, exactly as
+§87 hedged, while the $\Phi$ signature belongs to the dictionary. Two facts,
+two distinct carriers, separated by one instrument. A third layer sits in the
+phases themselves: with the canonical wiring kept but activation *lines*
+shuffled, the $\Phi$ pass drops to 77.2–86.2 % (median 83.5) — the canonical
+assignment beats all 25 shuffles, $p = 0.038$, which is the granularity floor
+of 25 replicates and is said rather than hidden. The carrier was then hunted surgically
+(`line_carrier.rs`) and turned out not to be what it looked like. Repeated
+gates are refuted twice over: their line differences are uniform (Δ = 0 excess
+−0.8 pts) and shuffling only their lines drops nothing. The carrier is the
+**lights lock**: Earth is defined as Sun + 180°, and 180° is exactly 32 gates —
+so Earth's line always equals the Sun's (1000 of 1000 charts), phase-locking
+the four heaviest (μ = 2) contributions pairwise. And the residual turned out to be a second
+lock of the same nature: the South Node is the North Node + 180° (also 1000 of
+1000). Randomising the lines of the four locked bodies — 8 activations of
+26 — lands exactly on the full-shuffle floor (84.2 % against 84.2 %), while
+randomising the other 18 leaves the share at the canonical level (87.9 %
+against 87.6 %). So the ephemeris-line layer is *entirely* the construction's
+own geometry — the two derived-body definitions — and the lines of the nine
+free bodies carry no measurable phase structure `[С]`. Read cyclically: each
+lock is one celestial **axis** — Sun–Earth and nodal — a single sky cycle
+read twice in counter-phase; the construction keeps the phase of the two axes
+and is deaf to the phase of every free body (where this sits on the ladder of
+cycles — [evolution, celestial ladder](/docs/core/dynamics/evolution#небесная-лестница-циклов)). The exact
+design property is held by a machine check; the empirical margin is the
+probe's.
+
+Machine: `window_census.rs`, `gate_reachability.rs`, `phi_source.rs`,
+`gate_discrimination.rs`, `gate_spectrum_null.rs`, `wiring_null.rs`.

@@ -49,10 +49,10 @@ In [interiority theory](./interiority-theory) we described **what** is experienc
 
 ## Consciousness as Self-Observation of $\Gamma$
 
-Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration** [И].
+Consciousness is neither an epiphenomenon nor a separate substance. **Consciousness is the way Γ experiences its own configuration** [I].
 
-:::info Ontological Status [П]
-Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism** [П]. The mathematical structure (functorial isomorphism $F: \mathbf{Phys} \to \mathbf{Phen}$) is [Т] (T-186). The ontological identification of the internal aspect with *experience* is the single postulate [П] of UHM beyond the $\infty$-topos primitive itself.
+:::info Ontological Status [P]
+Every configuration $\Gamma$ has an 'external' (objective) and 'internal' (subjective) side. They are inseparable — this is not dualism, but **two-aspect monism** [P]. The mathematical structure (functorial isomorphism $F: \mathbf{Phys} \to \mathbf{Phen}$) is [T] (T-186). The ontological identification of the internal aspect with *experience* is the single postulate [P] of UHM beyond the $\infty$-topos primitive itself.
 :::
 
 ## Self-Modelling Operator φ {#оператор-самомоделирования-φ}
@@ -292,7 +292,7 @@ where $\rho^*_{\mathrm{diss}} = I/7$ — the dissipative attractor, $\|\cdot\|_F
 ### Algebraic Equivalence: $R = 1/(7P)$ {#алгебраическая-эквивалентность-r}
 
 :::info Logical status
-The equality $R = 1/(7P)$ is an **algebraic identity** of the Frobenius definition above with $\rho^*_{\mathrm{diss}} = I/7$ on the compact $\mathcal D(\mathbb C^7)$ — not a derivation from independent axioms. The substantive claim is that this definition is canonical, established by three independent characterizations (HS-angular, $G_2$-invariance, $K=3$ Bayesian threshold) in [T-126 [Т]](/docs/proofs/consciousness/conscious-window#t-126).
+The equality $R = 1/(7P)$ is an **algebraic identity** of the Frobenius definition above with $\rho^*_{\mathrm{diss}} = I/7$ on the compact $\mathcal D(\mathbb C^7)$ — not a derivation from independent axioms. The substantive claim is that this definition is canonical, established by three independent characterizations (HS-angular, $G_2$-invariance, $K=3$ Bayesian threshold) in [T-126 [T]](/docs/proofs/consciousness/conscious-window#t-126).
 :::
 
 Starting from the Frobenius master definition:
@@ -346,7 +346,63 @@ The corpus works with **three related but distinct** reflection quantities. Conf
 |------|------------|-------|-----------|-------------|
 | canonical $R$ | $1/(7P)$ — HS-proximity to $I/7$ | $[1/7,\ 1]$ | $R_{\text{th}} = 1/3$ **[T]** (T-126) | L2 predicate, $C = \Phi \times R$ (T-140), registry, measurement protocols |
 | self-model quality $R_\varphi$ | $1 - \lVert\Gamma - \varphi(\Gamma)\rVert_F^2 / \lVert\Gamma\rVert_F^2$ — master definition in the [Axiom of Septicity](/docs/core/foundations/axiom-septicity) | $[0,\ 1]$ | working $R_{\varphi,\text{th}} = 1/3$ **[I]** | phenomenology of states (sleep, meditation, psychedelics, pathology); the meaning functional |
-| fidelity tower $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$, $n \geq 2$ | $[0,\ 1]$ | $R^{(n)}_{\text{th}} = 1/(n+2)$ | L3/L4, [SAD depth](/docs/consciousness/hierarchy/depth-tower) |
+| fidelity tower $R^{(n)}$ | $F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$, $n \geq 2$ | $[0,\ 1]$ | $R^{(n)}_{\text{th}} = 1/(n+2)$ | L3/L4 depth of the self-model. **Not** the SAD criterion — see the warning below |
+
+:::warning Two different quantities are written $R^{(k)}$ — and only one of them bounds SAD
+
+The table above lists the **fidelity tower**, which lives in $[0,1]$ and rises
+toward 1 as the self-model settles. The SAD criterion
+$\mathrm{SAD} = \max\{k : R^{(k)} > 1/(k+2)\}$ uses a **different** quantity —
+the decaying ratio of [Depth Tower §3.5](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad),
+
+$$S^{(k)} = r_0 \cdot (1/3)^k, \qquad r_0 = P/P_{\mathrm{crit}},$$
+
+which is unbounded above and falls by a factor of three per level (Fano
+contraction $\alpha = 2/3$). The depth-tower proof says so explicitly — «the
+decaying SAD quantity, not the fidelity $R^{(k)}_{\mathrm{fid}} \to 1$» — but
+the shared name and the shared threshold $1/(k+2)$ make the confusion easy, and
+its consequence is not small: **substituting the fidelity destroys the
+ceiling.** A quantity rising toward 1 clears a threshold falling as $1/(k+2)$
+at every level, so SAD would be unbounded and $\mathrm{SAD_{MAX}} = 3$ would
+evaporate. Machine demonstration: `core/examples/ladder_audit.rs` `[О]`.
+:::
+
+
+#### Measuring $R_\varphi$ on the whole state, not on its diagonal {#r-phi-по-связкам}
+
+The definition of $R_\varphi$ is over the full matrix, but any *instrument* for
+it has to ask a person something, and what a person can be asked shapes what
+gets measured. The straightforward question is about **levels** — how high each
+of the seven will run tomorrow — and an instrument built on that alone measures
+$R_\varphi$ over the diagonal of $\Gamma$ only.
+
+That is not a small part missing. The mass of the state splits exactly:
+the diagonal carries $1/(1+\Phi)$ and the couplings carry $\Phi/(1+\Phi)$, and
+on live-path charts the median of the second is **0.552**. So a levels-only
+instrument reports a number that is true of **45 %** of the state while being
+read as the whole of it.
+
+The couplings can be asked about, and the question has to avoid naming the
+dimensions — naming them supplies the answer from theory rather than from the
+person. What a person *can* report is concordance: **when one observable runs
+high, does the other go with it, against it, or on its own** — which is exactly
+$\operatorname{sign}\gamma_{ij}$. The observed side is the empirical
+correlation of the pair over the record.
+
+Both halves then compose by their own mass shares, not by a chosen weighting:
+
+$$
+R_\varphi^{\text{full}} \;=\; \frac{1}{1+\Phi}\,R_\varphi^{\text{levels}}
+\;+\; \frac{\Phi}{1+\Phi}\,R_\varphi^{\text{couplings}}
+$$
+
+The weights are the mass shares of the state being measured, which makes the
+composition a decomposition rather than an aggregation `[О]`. Two disciplines
+follow and are worth stating because their absence is what produced the gap:
+a half must never be reported as the whole, and when only one half exists the
+reading must name which one and what share of the mass it covers. Machine:
+`core/src/couple.rs`; twenty-one pairs at one question a day, so the first full
+reading is three weeks out.
 
 Four rules resolve every mixed case:
 
@@ -363,7 +419,7 @@ $$
 \frac{dR_\varphi}{d\tau} = (1 - R_\varphi)\,\frac{\dot P}{P} \;-\; \frac{2}{P}\,\bigl\langle \Gamma - \varphi(\Gamma),\; (\mathrm{Id} - D\varphi)[\dot\Gamma] \bigr\rangle_F,
 $$
 
-where $D\varphi$ is the derivative of the self-model map along the trajectory. Cross-check: for the dissipative replacement form $\varphi_k = (1-k)\Gamma + k \cdot I/7$ with constant $k$ one has $\Gamma - \varphi_k(\Gamma) = k(\Gamma - I/7)$ and $\mathrm{Id} - D\varphi_k = k\,\mathrm{Id}$, whence $\dot N = k^2 \dot P$ and $dR_\varphi/d\tau = -k^2 \dot P/(7P^2)$ — consistent with the closed form $R_\varphi = 1 - k^2(1 - R)$ above. For the **categorical** $\varphi$ the object $D\varphi$ is exactly where the theory of $R_\varphi$-dynamics remains to be developed; the identity is its fixed starting point. The module is developed in [Dφ and the dynamics of $R_\varphi$](/docs/proofs/categorical/formalization-phi#дф-производная): the explicit $D\varphi$ of the canonical family with two-route consistency (T-249 [Т]) and the bandwidth theorem with its path-length law (T-250 [Т]).
+where $D\varphi$ is the derivative of the self-model map along the trajectory. Cross-check: for the dissipative replacement form $\varphi_k = (1-k)\Gamma + k \cdot I/7$ with constant $k$ one has $\Gamma - \varphi_k(\Gamma) = k(\Gamma - I/7)$ and $\mathrm{Id} - D\varphi_k = k\,\mathrm{Id}$, whence $\dot N = k^2 \dot P$ and $dR_\varphi/d\tau = -k^2 \dot P/(7P^2)$ — consistent with the closed form $R_\varphi = 1 - k^2(1 - R)$ above. For the **categorical** $\varphi$ the object $D\varphi$ is exactly where the theory of $R_\varphi$-dynamics remains to be developed; the identity is its fixed starting point. The module is developed in [Dφ and the dynamics of $R_\varphi$](/docs/proofs/categorical/formalization-phi#дф-производная): the explicit $D\varphi$ of the canonical family with two-route consistency (T-249 [T]) and the bandwidth theorem with its path-length law (T-250 [T]).
 
 **Status.** $R_\varphi$ is a definition **[D]**; its working threshold $R_{\varphi,\text{th}} = 1/3$ is a calibration **[I]** adopting the $K = 3$ Bayesian-dominance rationale for self-model quality. The canonical thresholds are theorems (T-126, T-124, T-129). Documents that plot state space in the $(P, R_\varphi)$ plane do so legitimately: the plane is two-dimensional exactly because $R_\varphi$ is not a function of $P$.
 
