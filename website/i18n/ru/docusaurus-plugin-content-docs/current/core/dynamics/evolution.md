@@ -1204,6 +1204,12 @@ $\Lambda^* = 50.5$ при референс-самомодели — провер
 
 #### Аккорд: частоты — устройство, амплитуды — личность {#аккорд-вибрации}
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="Аккорд устройства: 21 связка, 10 частот Бора, хоры" src="/img/theory/chord-ru-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Аккорд устройства: 21 связка, 10 частот Бора, хоры" src="/img/theory/chord-ru-dark.svg" width="860"/>
+</p>
+
+
 $H_{\text{eff}}$ диагонален, поэтому каждая связка $\gamma_{jk}$ —
 осциллятор на частоте Бора $\omega_{jk} = |\lambda_j - \lambda_k|$. Из 21
 частоты различны лишь **10**: вырождения связывают связки в **хоры**, бьющиеся

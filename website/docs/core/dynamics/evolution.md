@@ -1207,6 +1207,12 @@ sings in the living state also raises its rent.
 
 #### The chord: frequencies are the instrument, amplitudes are the person {#аккорд-вибрации}
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="The chord of the design: 21 couplings, 10 Bohr frequencies, choirs" src="/img/theory/chord-en-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="The chord of the design: 21 couplings, 10 Bohr frequencies, choirs" src="/img/theory/chord-en-dark.svg" width="860"/>
+</p>
+
+
 $H_{\text{eff}}$ is diagonal, so every coupling $\gamma_{jk}$ is an
 oscillator at the Bohr frequency $\omega_{jk} = |\lambda_j - \lambda_k|$.
 Of the 21 frequencies only **10 are distinct**: the degeneracies bind

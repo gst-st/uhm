@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 360">
+<circle cx="55.0" cy="125.2" r="5" fill="#2dd4bf"/>
+<circle cx="78.0" cy="138.4" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="78.0" cy="165.0" r="5" fill="#2dd4bf"/>
+<circle cx="101.0" cy="178.3" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="101.0" cy="204.8" r="5" fill="#2dd4bf"/>
+<circle cx="124.0" cy="218.1" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="124.0" cy="244.7" r="5" fill="#2dd4bf"/>
+<circle cx="147.0" cy="258.0" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="78.0" cy="85.3" r="5" fill="#2dd4bf"/>
+<circle cx="101.0" cy="98.6" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="101.0" cy="125.2" r="5" fill="#2dd4bf"/>
+<circle cx="124.0" cy="138.4" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="124.0" cy="165.0" r="5" fill="#2dd4bf"/>
+<circle cx="147.0" cy="178.3" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="147.0" cy="204.8" r="5" fill="#2dd4bf"/>
+<circle cx="170.0" cy="218.1" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="170.0" cy="244.7" r="5" fill="#2dd4bf"/>
+<circle cx="193.0" cy="258.0" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="124.0" cy="85.3" r="5" fill="#2dd4bf"/>
+<circle cx="147.0" cy="98.6" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="147.0" cy="125.2" r="5" fill="#2dd4bf"/>
+<circle cx="170.0" cy="138.4" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="170.0" cy="165.0" r="5" fill="#2dd4bf"/>
+<circle cx="193.0" cy="178.3" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="193.0" cy="204.8" r="5" fill="#2dd4bf"/>
+<circle cx="216.0" cy="218.1" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="216.0" cy="244.7" r="5" fill="#2dd4bf"/>
+<circle cx="239.0" cy="258.0" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="170.0" cy="85.3" r="5" fill="#2dd4bf"/>
+<circle cx="193.0" cy="98.6" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="193.0" cy="125.2" r="5" fill="#2dd4bf"/>
+<circle cx="216.0" cy="138.4" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="216.0" cy="165.0" r="5" fill="#2dd4bf"/>
+<circle cx="239.0" cy="178.3" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="239.0" cy="204.8" r="5" fill="#2dd4bf"/>
+<circle cx="262.0" cy="218.1" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="262.0" cy="244.7" r="5" fill="#2dd4bf"/>
+<circle cx="285.0" cy="258.0" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="216.0" cy="85.3" r="5" fill="#2dd4bf"/>
+<circle cx="239.0" cy="98.6" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="239.0" cy="125.2" r="5" fill="#2dd4bf"/>
+<circle cx="262.0" cy="138.4" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="262.0" cy="165.0" r="5" fill="#2dd4bf"/>
+<circle cx="285.0" cy="178.3" r="2.6" fill="none" stroke="#2dd4bf" stroke-width="1.2" opacity="0.65"/>
+<circle cx="285.0" cy="204.8" r="5" fill="#2dd4bf"/>
+<text x="170.0" y="315.0" fill="#e3e3e3" font-size="15" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-weight="600">the lattice (the flower): 2·3·4·6</text>
+<line x1="495.0" y1="68.0" x2="549.1" y2="234.4" stroke="#fbbf24" stroke-width="2.4"/>
+<line x1="582.5" y1="131.6" x2="440.9" y2="234.4" stroke="#fbbf24" stroke-width="2.4"/>
+<line x1="549.1" y1="234.4" x2="407.5" y2="131.6" stroke="#fbbf24" stroke-width="2.4"/>
+<line x1="440.9" y1="234.4" x2="495.0" y2="68.0" stroke="#fbbf24" stroke-width="2.4"/>
+<line x1="407.5" y1="131.6" x2="582.5" y2="131.6" stroke="#fbbf24" stroke-width="2.4"/>
+<circle cx="495.0" cy="68.0" r="5" fill="#fbbf24"/>
+<circle cx="582.5" cy="131.6" r="5" fill="#fbbf24"/>
+<circle cx="549.1" cy="234.4" r="5" fill="#fbbf24"/>
+<circle cx="440.9" cy="234.4" r="5" fill="#fbbf24"/>
+<circle cx="407.5" cy="131.6" r="5" fill="#fbbf24"/>
+<text x="495.0" y="292.0" fill="#9aa0a6" font-size="13" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" >2cos(2π/5) ∉ ℤ</text>
+<text x="495.0" y="315.0" fill="#e3e3e3" font-size="15" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-weight="600">five-fold: outside lattices</text>
+<line x1="820.0" y1="93.0" x2="906.6" y2="243.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<line x1="820.0" y1="93.0" x2="820.0" y2="243.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<line x1="906.6" y1="243.0" x2="733.4" y2="243.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<line x1="906.6" y1="243.0" x2="776.7" y2="168.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<line x1="733.4" y1="243.0" x2="820.0" y2="93.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<line x1="733.4" y1="243.0" x2="863.3" y2="168.0" stroke="#a5b4fc" stroke-width="2.2"/>
+<circle cx="820.0" cy="193.0" r="50.0" fill="none" stroke="#a5b4fc" stroke-width="2.2"/>
+<circle cx="820.0" cy="93.0" r="6" fill="#a5b4fc"/>
+<circle cx="906.6" cy="243.0" r="6" fill="#a5b4fc"/>
+<circle cx="733.4" cy="243.0" r="6" fill="#a5b4fc"/>
+<circle cx="820.0" cy="243.0" r="6" fill="#a5b4fc"/>
+<circle cx="776.7" cy="168.0" r="6" fill="#a5b4fc"/>
+<circle cx="863.3" cy="168.0" r="6" fill="#a5b4fc"/>
+<circle cx="820.0" cy="193.0" r="6" fill="#a5b4fc"/>
+<text x="820.0" y="315.0" fill="#9aa0a6" font-size="14" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" ></text>
+<text x="820.0" y="292.0" fill="#9aa0a6" font-size="13" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" >7 points = 7 lines · PSL(2,7)</text>
+<text x="820.0" y="315.0" fill="#e3e3e3" font-size="15" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" font-weight="600">seven-fold: projective (Fano)</text>
+<text x="495.0" y="348.0" fill="#e3e3e3" font-size="14" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, sans-serif" >a number shared across universes is not a bridge; a bridge must be a construction</text>
+</svg>

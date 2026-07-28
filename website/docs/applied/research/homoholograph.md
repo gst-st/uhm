@@ -2689,6 +2689,12 @@ cosmos*, is those three results read as one.
 
 ### 83-bis. The Flower of Life, taken apart honestly: three geometric universes {#цветок-жизни-три-вселенной}
 
+<p align="center">
+  <img class="themedImage themedImage--light" alt="Three geometric universes: the lattice, the five-fold world, the Fano plane" src="/img/theory/universes-en-light.svg" width="860"/>
+  <img class="themedImage themedImage--dark" alt="Three geometric universes: the lattice, the five-fold world, the Fano plane" src="/img/theory/universes-en-dark.svg" width="860"/>
+</p>
+
+
 One more script deserves the same machine discipline (`symbolica_flower.py`).
 What survives exactly: the Fruit-of-Life pattern is the [111]-slice of the
 densest sphere packing — the twelve FCC neighbours project **not** onto the
