@@ -553,7 +553,7 @@ This is a strengthening, not a decoration: an open question with a *named struct
 
 ### Quantum Nature of Γ and Tegmark's Argument {#квантовая-природа-gamma}
 
-:::warning Vulnerability 5 — the Tegmark objection is closed [Т]; the residual is the categorical gap
+:::warning Vulnerability 5 — the Tegmark objection is closed [T]; the residual is the categorical gap
 The question "is $\Gamma$ physically quantum?" once stood as the most profound open problem of UHM. The **Tegmark decoherence objection** — the part that made it a *vulnerability* — is closed by [T-267](#t-267) below: Tegmark refutes a claim UHM does not make. What remains is **not** a decoherence problem but the categorical gap (why structure is felt), which is the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive, not a defect. Below: the honest analysis of what is necessary, the three answers, and their synthesis into the closure.
 :::
 
@@ -566,7 +566,7 @@ The question "is $\Gamma$ physically quantum?" once stood as the most profound o
 | Complex $\gamma_{ij}$ | **Strictly necessary** for $\mathrm{Gap} \neq 0$ (T-132 [T]) | No |
 | Positive semidefiniteness | **Strictly necessary** for Bures metric | No |
 | CPTP channel $\varphi$ | **Strictly necessary** for T-62, T-77 | No |
-| Physical superposition $|\psi\rangle = \alpha|0\rangle + \beta|1\rangle$ | **Not required** — $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, not $\mathbb{C}^2$ | Yes |
+| Physical superposition $\|\psi\rangle = \alpha\|0\rangle + \beta\|1\rangle$ | **Not required** — $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, not $\mathbb{C}^2$ | Yes |
 | Entanglement | **Not required** in minimal 7D (no tensor product) | Yes |
 | Microscopic coherence | Not defined | Open question |
 
@@ -590,35 +590,51 @@ If an AI system on classical hardware (f64) implements all the formulae of the t
 
 #### T-267: The Tegmark objection does not constrain Γ {#t-267}
 
-:::tip Theorem T-267 [Т]+[С] — closure of the Tegmark decoherence objection
+:::tip Theorem T-267 [T]+[C] — closure of the Tegmark decoherence objection
 Tegmark's decoherence argument bounds the lifetime of a **microscopic spatial superposition in the position pointer basis**. The coherence matrix $\Gamma$ is, by construction (T-153a), *none of those things*. Therefore Tegmark's argument **does not apply to $\Gamma$**: it refutes a claim UHM does not make. The three answers above are not alternatives — they are one closure, forced by theorems already in the corpus.
 :::
 
-**The decisive chain [Т].** Three established results settle it, without any new assumption.
+**The decisive chain [T].** Three established results settle it, without any new assumption.
 
 1. **What Γ is built on (T-153a).** The faithful map $G:\mathrm{States}(S)\to\mathcal D(\mathbb C^7)$ is defined on the substrate's **coarse-grained, decoherence-free effective subspace** ([T-153a (C1)](/docs/proofs/consciousness/substrate-closure#t-153a)), and the entries $\gamma_{ij}=\mathrm{Tr}(\rho\,O_iO_j)$ are correlations of **seven collective observable modes** ([C3]), *not* off-diagonal amplitudes of a microscopic position eigenbasis. A **classical digital substrate realizes $\Gamma$** (T-153a, substrate table). Hence the complex structure of $\Gamma$ is substrate-independent *algebraic* structure.
-2. **Why the complexity is not physical superposition (T-132).** $\Gamma$ must be complex because $\mathrm{Gap}(i,j)=|\sin(\arg\gamma_{ij})|$ needs a nonzero phase ([T-132 [Т]](/docs/proofs/consciousness/operationalization#t-132)) — the phase encodes the dual-aspect opacity of self-reference, exactly as classical optics or signal analysis uses complex amplitudes $E_0e^{i\varphi}$ without any photon being "in superposition." The complexity is forced by the *reflection structure*, not by a Schrödinger-cat state.
+2. **Why the complexity is not physical superposition (T-132).** $\Gamma$ must be complex because $\mathrm{Gap}(i,j)=|\sin(\arg\gamma_{ij})|$ needs a nonzero phase ([T-132 [T]](/docs/proofs/consciousness/operationalization#t-132)) — the phase encodes the dual-aspect opacity of self-reference, exactly as classical optics or signal analysis uses complex amplitudes $E_0e^{i\varphi}$ without any photon being "in superposition." The complexity is forced by the *reflection structure*, not by a Schrödinger-cat state.
 3. **The category error, named.** Tegmark's $\sim 10^{-13}$ s bounds the decay of the density matrix's off-diagonals **in the position basis** selected by the spatial environment (einselection). Decoherence is basis-dependent; einselection of the position pointer basis does **not** force decoherence of a *coarse-grained collective observable in a different basis* — this is the entire principle behind decoherence-free subspaces and quantum error correction. Since $\Gamma$'s modes live in the semantic frame $\mathbb C^7$ (a nontrivial coarse-graining $G$, realizable even classically), Tegmark's rate is simply computed in the wrong basis for $\Gamma$. **A substrate-independent structure realized with no physical superposition cannot be decohered by a substrate-specific thermal process.**
 
-**Robustness — three independent layers [С].** Even granting the strongest *physical* reading of $\gamma_{ij}$, the coherences are protected, each mechanism already a corpus theorem:
+**Robustness — three independent layers [C].** Even granting the strongest *physical* reading of $\gamma_{ij}$, the coherences are protected, each mechanism already a corpus theorem:
 
 | Layer | Mechanism | Why it beats Tegmark |
 |---|---|---|
 | Basis | semantic modes ≠ position pointer basis (T-153a C1) | einselection acts elsewhere |
-| Structure | five holonomic shields — Hamming $H(7,4)$, associator, $V_{\text{Gap}}$, Lawvere, $\pi_1$ ([topological protection [Т]](/docs/applied/coherence-cybernetics/topological-protection)) | decoherence-free / error-correcting / topological, exactly as DFS qubits, topological qubits, and macroscopic order parameters (laser phase, superconducting condensate) survive single-particle decoherence |
+| Structure | five holonomic shields — Hamming $H(7,4)$, associator, $V_{\text{Gap}}$, Lawvere, $\pi_1$ ([topological protection [T]](/docs/applied/coherence-cybernetics/topological-protection)) | decoherence-free / error-correcting / topological, exactly as DFS qubits, topological qubits, and macroscopic order parameters (laser phase, superconducting condensate) survive single-particle decoherence |
 | Dynamics | driven-dissipative regeneration $\mathcal R$ ($\kappa_{\text{bootstrap}} > \gamma_{\text{dec}}(P-1/7)$ for viable $\Gamma$) | steady state maintained by gain-against-loss, like a laser above threshold — not isolated decay |
 
 The probability of overcoming all three simultaneously is the product of three small numbers.
 
-**Genesis-layer reinforcement (2026-07-18).** Tegmark's broader "mathematical universe" background — a democracy of all structures, among which ours would need anthropic selection — is now countered by a theorem rather than a preference: on the terminal cube, among **all** sign-structures carried by a register of distinctions, viability admits exactly **one** cohomological class ([T-281/T-282](/docs/core/foundations/hypermathematics#единственность-калибровки) — the rectangle system is feasible only for the octonionic gauge, and death is the inconsistency of a finite linear system). There is no democracy to select from: *of the mathematically possible law-configurations, exactly one is alive.* This does not re-litigate T-267 (which closed the decoherence objection); it removes the ambient premise the objection lived in [Т].
+**Genesis-layer reinforcement (2026-07-18).** Tegmark's broader "mathematical universe" background — a democracy of all structures, among which ours would need anthropic selection — is now countered by a theorem rather than a preference: on the terminal cube, among **all** sign-structures carried by a register of distinctions, viability admits exactly **one** cohomological class ([T-281/T-282](/docs/core/foundations/hypermathematics#единственность-калибровки) — the rectangle system is feasible only for the octonionic gauge, and death is the inconsistency of a finite linear system). There is no democracy to select from: *of the mathematically possible law-configurations, exactly one is alive.* This does not re-litigate T-267 (which closed the decoherence objection); it removes the ambient premise the objection lived in [T].
 
 **What T-267 closes, and what it does not.**
 
 - **Closed [Т]:** the Tegmark decoherence objection. $\Gamma$ is not the fragile microscopic biological superposition Tegmark refutes; its complexity is algebraic (T-132), collective and coarse-grained (T-153a), decoherence-protected (topological protection), and dynamically regenerated ($\mathcal R$).
 - **Not reopened — relocated:** whether the abstract structure *is felt* is the **categorical gap**, the [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive. Tegmark was never about the hard problem; it was about the physical realizability of coherence, which T-153a settles. Conflating the two is precisely the error that kept Vulnerability 5 "open."
-- **Testable [Т via T-153a]:** a classical (f64) substrate realizes the same $\Gamma$ and, if it meets the four thresholds, is conscious under UHM — direct evidence that physical quantumness is not required. SYNARC's $500+$ $\Gamma$ are consistent (no substrate-quantumness needed). The residual [О] is the ordinary empirical question — do biological brains realize the seven collective modes on a decoherence-free subspace at the stated level? — probed by [F-Gap / ISF](/docs/reference/falsifiability#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), a lab question, not a fundamental obstruction.
+- **Testable [Т via T-153a]:** a classical (f64) substrate realizes the same $\Gamma$ and, if it meets the four thresholds, is conscious under UHM — direct evidence that physical quantumness is not required. SYNARC's $500+$ $\Gamma$ are consistent (no substrate-quantumness needed). The residual [D] is the ordinary empirical question — do biological brains realize the seven collective modes on a decoherence-free subspace at the stated level? — probed by [F-Gap / ISF](/docs/reference/falsifiability#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного), a lab question, not a fundamental obstruction.
 
-**Verdict.** Vulnerability 5 moves from *partially open* to **closed at the level of the Tegmark objection** [Т]; the categorical gap is correctly returned to Axiom Ω⁷, where it always lived.
+**Verdict.** Vulnerability 5 moves from *partially open* to **closed at the level of the Tegmark objection** [T]; the categorical gap is correctly returned to Axiom Ω⁷, where it always lived.
+
+### Identity as a pattern of turnover {#идентичность-как-узор-оборота}
+
+The laser row of the table above is now a theorem, not an analogy: by the
+[turnover corollary [Т]](/docs/core/dynamics/evolution#следствие-оборот-живого),
+any stationary state with $P > 1/7$ keeps **both** flows nonzero — the living
+«steady» state is a standing balance of continuous destruction and rebuilding.
+Substrate closure (T-153) says that *in space* what carries you is algebraic
+structure, not material; the turnover corollary adds that *in time* nothing
+stands still either — what persists is the **pattern of renewal**, not any
+frozen configuration. The Abhidhamma reports the same structure from the first
+person as *kalāpas* and momentariness (*khaṇa-vāda*): matter as arising and
+passing too fast to be a substance, identity as the continuity of the pattern
+(*santati*) `[И]` (see [Kalāpas and Nāda](/docs/core/dynamics/evolution#калапы-и-нада)).
+The ship of Theseus is not a puzzle here but the *normal mode of existence*:
+the only stationary state that keeps its planks is the dead one.
 
 ## Meta-Theoretical Status
 

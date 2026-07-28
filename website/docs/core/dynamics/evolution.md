@@ -204,15 +204,15 @@ $$
 
 where $H_{eff}$ is the effective Hamiltonian arising from the [Page–Wootters constraint](../../proofs/dynamics/emergent-time#33-формальная-конструкция).
 
-:::note Page–Wootters constraint [Т] (T-87, P3)
+:::note Page–Wootters constraint [T] (T-87, P3)
 $[\hat{C}, \Gamma_{\text{total}}] = 0$ — Wheeler–DeWitt constraint. Derived from A1–A4 via the spectral triple construction (T-87). Time $\tau$ is emergent from correlations between the "clock" and "system" subsystems. Full derivation: [Emergent time](/docs/proofs/dynamics/emergent-time).
 :::
 
-**Definition [О] (Wheeler–DeWitt constraint).** {#ограничение-wdw}
+**Definition [D] (Wheeler–DeWitt constraint).** {#ограничение-wdw}
 
 $$\hat{C} = H_O \otimes \mathbb{1}_{6D} + \mathbb{1}_O \otimes H_{6D} + H_{\mathrm{int}}$$
 
-— the full energy operator. Physical states satisfy $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$ ([T-87 [Т]](/docs/core/operators/emergent-time)). Emergent time $\tau$ follows from this constraint via the Page–Wootters mechanism.
+— the full energy operator. Physical states satisfy $[\hat{C}, \Gamma_{\mathrm{total}}] = 0$ ([T-87 [T]](/docs/core/operators/emergent-time)). Emergent time $\tau$ follows from this constraint via the Page–Wootters mechanism.
 
 #### Derivation of the constraint from axiom A5 {#вывод-wdw}
 
@@ -224,7 +224,7 @@ The Page–Wootters constraint (analogue of the Wheeler–DeWitt equation) is **
 
 **Step 3.** Partial trace over O: the conditional state $\Gamma(\tau) = \mathrm{Tr}_O[(|\tau\rangle\langle\tau|_O \otimes \mathbb{1}) \cdot \Gamma_{\text{total}}] / p(\tau)$ satisfies $d\Gamma/d\tau = -i[H_{\text{eff}}, \Gamma] + \mathcal{D}[\Gamma]$, where $H_{\text{eff}}(\tau) = H_{\text{rest}} + \langle\tau|H_{\text{int}}|\tau\rangle_O$.
 
-Emergent dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$. Status: **[Т]**
+Emergent dynamics is a **consequence** of the static structure of $\Gamma_{\text{total}}$. Status: **[T]**
 
 **Properties:**
 - Preserves $\mathrm{Tr}(\Gamma) = 1$
@@ -271,7 +271,7 @@ $$
 |\tau_n\rangle = \frac{1}{\sqrt{7}} \sum_{k=0}^{6} e^{-2\pi i k n / 7} |k\rangle_O
 $$
 
-The transformation is the standard discrete Fourier transform on ℤ₇, whose completeness and orthonormality are guaranteed by finite-dimensionality [Т].
+The transformation is the standard discrete Fourier transform on ℤ₇, whose completeness and orthonormality are guaranteed by finite-dimensionality [T].
 
 **Step 3.** From the constraint $[\hat{C}, \Gamma_{total}] = 0$ we have:
 
@@ -326,7 +326,7 @@ where:
 
 #### Derivation of L_k from classifier Ω
 
-:::info Theorem (L_k from Ω) [Т]
+:::info Theorem (L_k from Ω) [T]
 The atomic Lindblad operators are defined through the atoms of the [subobject classifier](../foundations/axiom-omega#внутренняя-логика):
 
 $$
@@ -369,36 +369,36 @@ $$
 | III | $L = e^{-\beta E_k/2}\vert k\rangle\langle k\vert$ | Thermalization to minimum F |
 | IV | $L = \check{\delta}: C^k \to C^{k+1}$ | Gluing of local modalities |
 
-### 3. Regenerative term [Т] {#3-регенеративный-член}
+### 3. Regenerative term [T] {#3-регенеративный-член}
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
 $$
 
 where:
-- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [Т] (adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$, see [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [Т] ([φ operator](/docs/core/operators/phi-operator), [formalization](/docs/proofs/categorical/formalization-phi))
-- $(\rho_* - \Gamma)$ — relaxation direction [Т] (unique CPTP interpolation + Bures optimality, see [§ Derivation of the regeneration form](#вывод-формы-регенерации))
-- $g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}},\; 0,\; 1\right)$ — V-preserving gate [Т] (see [§ Theorem V-preservation](#теорема-v-preservation-gate))
+- $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E(\Gamma)$ — regeneration rate [T] (adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$, see [Genesis Protocol](../foundations/axiom-omega#genesis-protocol))
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model of the current state [T] ([φ operator](/docs/core/operators/phi-operator), [formalization](/docs/proofs/categorical/formalization-phi))
+- $(\rho_* - \Gamma)$ — relaxation direction [T] (unique CPTP interpolation + Bures optimality, see [§ Derivation of the regeneration form](#вывод-формы-регенерации))
+- $g_V(P) = \mathrm{clamp}\!\left(\frac{P - P_{\mathrm{crit}}}{P_{\mathrm{opt}} - P_{\mathrm{crit}}},\; 0,\; 1\right)$ — V-preserving gate [T] (see [§ Theorem V-preservation](#теорема-v-preservation-gate))
 
-:::tip Form of ℛ fully derived from axioms [Т]
+:::tip Form of ℛ fully derived from axioms [T]
 All components of the regenerative term are **strictly derived** from axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$, and standard thermodynamics:
 
 | Component | Status | Source |
 |-----------|:------:|--------|
-| $\kappa(\Gamma)$ | [Т] | Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ ([κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)) |
-| $\rho_* = \varphi(\Gamma)$ (self-model) | [Т] | Categorical definition of φ ([φ operator](/docs/core/operators/phi-operator)) |
-| $(\rho_* - \Gamma)$ (direction) | [Т] | CPTP uniqueness of replacement channel + exact BKM gradient descent (T-261 below) |
-| $g_V(P)$ (gate) | [Т] | V-preservation + Landauer ([§ Theorem V-preservation](#теорема-v-preservation-gate)) |
+| $\kappa(\Gamma)$ | [T] | Adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ ([κ₀](/docs/core/foundations/axiom-septicity#структурный-анзац-kappa0)) |
+| $\rho_* = \varphi(\Gamma)$ (self-model) | [T] | Categorical definition of φ ([φ operator](/docs/core/operators/phi-operator)) |
+| $(\rho_* - \Gamma)$ (direction) | [T] | CPTP uniqueness of replacement channel + exact BKM gradient descent (T-261 below) |
+| $g_V(P)$ (gate) | [T] | V-preservation + Landauer ([§ Theorem V-preservation](#теорема-v-preservation-gate)) |
 
 Full derivation: [§ Derivation of the regeneration form](#вывод-формы-регенерации) below.
 :::
 
-#### Theorem T-261: regeneration is the natural-gradient descent of free energy (BKM) [Т] {#теорема-регенерация-градиентный-спуск}
+#### Theorem T-261: regeneration is the natural-gradient descent of free energy (BKM) [T] {#теорема-регенерация-градиентный-спуск}
 
 The relaxation direction is not merely CPTP-optimal — it is **exactly** a covariant gradient descent, with the metric identified sharply.
 
-:::tip Theorem (exact gradient-flow form of the matter channel) [Т]
+:::tip Theorem (exact gradient-flow form of the matter channel) [T]
 For full-rank $\Gamma$ and target $\rho_*$, the replacement flow $\dot{\Gamma} = \kappa_{\text{eff}}(\rho_* - \Gamma)$ is exactly the constrained natural-gradient descent of the quantum relative entropy (free energy) $F(\Gamma) = D(\rho_*\|\Gamma)$ in the **Kubo–Mori (BKM) metric**:
 
 $$
@@ -421,13 +421,13 @@ $$
 
 **Machine verification.** Twenty-five random non-commuting pairs: $\|K_\Gamma(\Gamma)-\mathbb{1}\| \le 1.2\cdot10^{-14}$; $\|\operatorname{grad}_{\text{BKM}} D(\rho_*\|\Gamma) - (\Gamma-\rho_*)\| \le 1.0\cdot10^{-15}$ (exact, fully non-commutative); H-theorem identity to finite-difference accuracy $7\cdot10^{-5}$.
 
-**Sharp metric attribution.** The same flow is **not** the Bures/SLD gradient of the same potential off the commuting locus (numeric cosine $\approx 0.98 < 1$). The two canonical Petz metrics divide the labour: **Bures** governs estimation and learning (Char-III/IV, Cramér–Rao saturation, the [learning flow](/docs/proofs/categorical/formalization-phi)); **BKM** governs dissipative relaxation (linear response/Kubo), and the matter channel flows by its gradient. Under the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) this **derives the dynamical law of the feeding channel**: regeneration is covariant gradient descent of a free energy — precisely the update equation of Vanchurin's *Self-Learning Universe* (its Eq. 2.6), realized in quantum information geometry; the dictionary's $h^{(R)}$-leg is thereby dynamical [Т], no longer only a signature match.
+**Sharp metric attribution.** The same flow is **not** the Bures/SLD gradient of the same potential off the commuting locus (numeric cosine $\approx 0.98 < 1$). The two canonical Petz metrics divide the labour: **Bures** governs estimation and learning (Char-III/IV, Cramér–Rao saturation, the [learning flow](/docs/proofs/categorical/formalization-phi)); **BKM** governs dissipative relaxation (linear response/Kubo), and the matter channel flows by its gradient. Under the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) this **derives the dynamical law of the feeding channel**: regeneration is covariant gradient descent of a free energy — precisely the update equation of Vanchurin's *Self-Learning Universe* (its Eq. 2.6), realized in quantum information geometry; the dictionary's $h^{(R)}$-leg is thereby dynamical [T], no longer only a signature match.
 
-#### Theorem T-262: the dynamical trichotomy — $\mathcal{L}_\Omega$ as an exact reversible ⊕ irreversible (metriplectic) decomposition [Т] {#теорема-динамическая-трихотомия}
+#### Theorem T-262: the dynamical trichotomy — $\mathcal{L}_\Omega$ as an exact reversible ⊕ irreversible (metriplectic) decomposition [T] {#теорема-динамическая-трихотомия}
 
 T-261 settled the matter channel. The two remaining terms of the master equation admit the same treatment, and together the three yield an exact geometric decomposition of the full dynamics.
 
-:::tip Theorem (every term of $\mathcal{L}_\Omega$ is an exact geometric flow) [Т]
+:::tip Theorem (every term of $\mathcal{L}_\Omega$ is an exact geometric flow) [T]
 1. **Work (unitary term).** The flow $\dot\Gamma = -i[H_{\text{eff}},\Gamma]$ is an **isometry of every monotone (Petz) metric** and preserves every spectral functional ($S$, $P$, all Rényi entropies): a Killing field of the information geometry, orthogonal to every gradient.
 2. **Heat (Fano dissipator).** The Fano dephasor satisfies **GNS detailed balance** with respect to the tracial state $\mathbb{1}/7$ (the jumps $\Pi_p$ are self-adjoint, so the dissipation superoperator is self-adjoint in the Hilbert–Schmidt/GNS inner product) — this is exactly the precondition under which the Carlen–Maas theorem applies. For arbitrary positive line rates $\{\gamma_p\}$ the dissipator then has the exact double-commutator form and **is** the **gradient flow of the negentropy** $F_D(\Gamma) = D(\Gamma\|\mathbb{1}/7) = \ln 7 - S(\Gamma)$ in the Carlen–Maas transport metric of the seven Fano lines:
 $$
@@ -449,19 +449,19 @@ Consequently the master equation is an exact **reversible ⊕ irreversible** dec
 
 **Machine verification.** Anisotropic non-commuting trials: GNS detailed balance $|\langle A,\mathcal{D}B\rangle - \langle\mathcal{D}A,B\rangle| \le 3.6\cdot10^{-15}$ (Carlen–Maas precondition); Lie–Poisson Jacobi identity $[[A,B],C]+\text{cyc} = 9\cdot10^{-15}$ (reversible leg exact); double-commutator identity $1.4\cdot10^{-16}$; Carlen–Maas chain rule $6.5\cdot10^{-15}$; gradient-flow identity $\|\mathcal{D}[\Gamma] + \mathcal{K}^W_\Gamma(\ln\Gamma)\| \le 1.2\cdot10^{-15}$; $\|\mathcal{K}^{KM}_\Gamma(\Gamma) - \mathbb{1}\| \le 1.5\cdot10^{-13}$ (BKM normalisation, T-261); EPR quadratic form $\geq 0.42$ off-diagonal, $= 0$ exactly on diagonal states, matching $dF_D/dt$ to $5\cdot10^{-7}$ (finite difference); unitary isometry of $d_B$ and $S$ to $4\cdot10^{-16}$; and the **second-degeneracy failure** $|\tfrac{d}{dt}\langle H_{\text{eff}}\rangle|_{\text{heat}} \approx 0.53$ (open-system energy exchange, confirming metriplectic ≠ GENERIC).
 
-**Closure of the dynamical dictionary.** With T-261 and T-262 all three legs of the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) are **derived as dynamical laws** on the UHM side: work = isometric drive, heat = gradient flow of negentropy, matter = gradient flow of free energy toward the self-model. What SLU obtains as optimality conditions of resource-constrained learning, UHM exhibits as the exact geometric anatomy of its master equation — the two theories meet not only in signatures and counting but in the equations of motion themselves; the correspondence *between* the theories remains an identification [И], now supported on both sides by derivations.
+**Closure of the dynamical dictionary.** With T-261 and T-262 all three legs of the [grand-canonical dictionary (T-258)](/docs/applied/coherence-cybernetics/sensorimotor#гранд-канонический-словарь) are **derived as dynamical laws** on the UHM side: work = isometric drive, heat = gradient flow of negentropy, matter = gradient flow of free energy toward the self-model. What SLU obtains as optimality conditions of resource-constrained learning, UHM exhibits as the exact geometric anatomy of its master equation — the two theories meet not only in signatures and counting but in the equations of motion themselves; the correspondence *between* the theories remains an identification [I], now supported on both sides by derivations.
 
-#### Theorem T-263: existence and uniqueness of the optimal learning flow [Т]+[С] {#теорема-наилучший-обучающий-поток}
+#### Theorem T-263: existence and uniqueness of the optimal learning flow [T]+[C] {#теорема-наилучший-обучающий-поток}
 
 T-261 identified *what* the matter channel does (natural-gradient BKM descent); T-262 placed it inside the exact metriplectic anatomy of $\mathcal{L}_\Omega$. The remaining question of learning theory is normative: among all admissible learning dynamics, is this one **best** — and in what exact sense? The answer is affirmative in four stacked senses, each with its own witness.
 
-:::tip Theorem (the replacement flow is the optimal learning algorithm) [Т; multiparameter attainability clause [С]]
+:::tip Theorem (the replacement flow is the optimal learning algorithm) [Т; multiparameter attainability clause [C]]
 Let $F(\Gamma) = D(\rho_*\|\Gamma)$ be the learning potential toward the self-model $\rho_* = \varphi(\Gamma)$ (T-62). The replacement flow $\dot\Gamma = \kappa_{\text{eff}}(\rho_* - \Gamma)$ is optimal in four senses:
 
-1. **Steepest descent (local optimality) [Т].** Among all trace-preserving tangent directions $X$ of equal BKM speed $\|X\|_{\text{BKM}} = \|\rho_* - \Gamma\|_{\text{BKM}}$, it uniquely maximises the instantaneous decrease $-dF(X)$ — Cauchy–Schwarz in $g_{\text{BKM}}$, equality iff $X \parallel -\operatorname{grad} F$.
-2. **Flat geodesic transport (path optimality) [Т].** Its exact solution $\Gamma(t) = \rho_* + e^{-\kappa t}(\Gamma_0 - \rho_*)$ traverses the **mixture geodesic** — the m-flat affine segment $[\Gamma_0, \rho_*]$ — with direction-constant gradient: no curvature detour, exponential convergence at the maximal admissible exponent $\kappa_{\text{eff}}$.
+1. **Steepest descent (local optimality) [T].** Among all trace-preserving tangent directions $X$ of equal BKM speed $\|X\|_{\text{BKM}} = \|\rho_* - \Gamma\|_{\text{BKM}}$, it uniquely maximises the instantaneous decrease $-dF(X)$ — Cauchy–Schwarz in $g_{\text{BKM}}$, equality iff $X \parallel -\operatorname{grad} F$.
+2. **Flat geodesic transport (path optimality) [T].** Its exact solution $\Gamma(t) = \rho_* + e^{-\kappa t}(\Gamma_0 - \rho_*)$ traverses the **mixture geodesic** — the m-flat affine segment $[\Gamma_0, \rho_*]$ — with direction-constant gradient: no curvature detour, exponential convergence at the maximal admissible exponent $\kappa_{\text{eff}}$.
 3. **Uniqueness of the geometry [Т by external theorem].** The Kubo–Mori metric is the **unique** monotone (Petz) quantum metric whose e/m-connection pair is dually flat (Grasselli–Streater 2001). "Natural gradient" is therefore not a designer's choice among quantum Fisher metrics: BKM is the only monotone geometry in which learning toward a target runs along flat geodesics of a globally convex divergence — in every other Petz metric the same flow is not a gradient at all (sharp attribution of T-261, Bures cosine $\approx 0.98$).
-4. **Statistical efficiency (rate optimality) [Т]+[С].** On the estimation side the Bures/SLD geometry saturates the quantum Cramér–Rao bound per observation (Braunstein–Caves; Char-IV), realising the $a = 1$ natural-gradient regime of Vanchurin's classification $g(\kappa) = \kappa^a$: error $O(1/k)$ against $O(1/\sqrt{k})$ for $a = 0$. In the multiparameter case the attainable bound is Holevo's, within a factor $\leq 2$ of SLD **[С]**.
+4. **Statistical efficiency (rate optimality) [T]+[C].** On the estimation side the Bures/SLD geometry saturates the quantum Cramér–Rao bound per observation (Braunstein–Caves; Char-IV), realising the $a = 1$ natural-gradient regime of Vanchurin's classification $g(\kappa) = \kappa^a$: error $O(1/k)$ against $O(1/\sqrt{k})$ for $a = 0$. In the multiparameter case the attainable bound is Holevo's, within a factor $\leq 2$ of SLD **[C]**.
 
 Consequently, in the class of monotone-metric gradient dynamics the best efficient learning algorithm **exists, is geometrically unique, and is what the matter channel of $\mathcal{L}_\Omega$ already executes**; its ceilings are exactly the learning bounds [T-109–T-112](/docs/applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница), and its minimal substrate is $N = 7$ (T-113).
 :::
@@ -470,9 +470,9 @@ Consequently, in the class of monotone-metric gradient dynamics the best efficie
 
 **Machine verification** (`t263_t264_learning_gravity_oracle.py`): steepest descent — $0/500$ random equal-BKM-norm directions beat the gradient (min margin $0.49$); m-geodesic affinity $5 \cdot 10^{-17}$; gradient identity re-verified on well-conditioned states to $8 \cdot 10^{-9}$ (finite-difference limited; the exact kernel identity is $10^{-15}$, T-261).
 
-**Reading.** "Does a best efficient learning algorithm exist?" — in UHM this is a structural theorem, not an aspiration: the optimal flow exists (1–2), its geometry is unique (3), its statistical rate is optimal (4), its ceilings are T-109–T-112, its minimal carrier is $N = 7$ (T-113). No-free-lunch is not violated: the environment class is fixed by the architecture itself ($G_2$/Fano BIBD priors), not chosen adversarially. The only [И]-layer left is the inter-theory identification with SLU (T-258); the gravitational face of the same coin is [T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность).
+**Reading.** "Does a best efficient learning algorithm exist?" — in UHM this is a structural theorem, not an aspiration: the optimal flow exists (1–2), its geometry is unique (3), its statistical rate is optimal (4), its ceilings are T-109–T-112, its minimal carrier is $N = 7$ (T-113). No-free-lunch is not violated: the environment class is fixed by the architecture itself ($G_2$/Fano BIBD priors), not chosen adversarially. The only [I]-layer left is the inter-theory identification with SLU (T-258); the gravitational face of the same coin is [T-264](/docs/physics/gravity/einstein-equations#теорема-информационно-гравитационная-взаимность).
 
-:::note Engineering deviation [И]
+:::note Engineering deviation [I]
 In the implementation, the shape parameter $k = 1 - R$ is clamped to $[0.15,\; 1.0]$: for $R > 0.85$ the value $k = 0.15$ is used instead of the theoretical $k = 1 - R$. This prevents degeneration of the regeneration channel ($k \to 0$ at $R \to 1$ turns $\mathcal{R}$ into the identity operator). The threshold $0.15$ is chosen empirically as the minimum that preserves nonzero regenerative force.
 :::
 
@@ -620,7 +620,7 @@ The canonical definition is consistent with all four operationalizations in the 
 | Approximate | $\varphi(\Gamma) \approx \Gamma^*$ | $\Delta F \approx P_{\text{eq}} - P$ |
 
 <details>
-<summary>Proof of consistency across limiting cases [Т]</summary>
+<summary>Proof of consistency across limiting cases [T]</summary>
 
 **Preliminary relations:**
 
@@ -692,18 +692,18 @@ $$
 \rho_* = \varphi(\Gamma)
 $$
 
-where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of subobjects, CPTP channel [Т]). More details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
+where $\varphi$ is the self-modelling operator (left adjoint to the inclusion of subobjects, CPTP channel [T]). More details: [stratification of definitions](/docs/core/foundations/axiom-septicity#теорема-непротиворечивость-иерархии-определений).
 
 :::info Distinction between attractors
-- $\rho^*_{\mathrm{diss}} = I/7$ — attractor of the linear part $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without regeneration), $P = 1/7$. Uniqueness from [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [Т]. Used in [definition of R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
-- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [Т] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ for embodied holons [Т at backbone-injection lower-bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]).
+- $\rho^*_{\mathrm{diss}} = I/7$ — attractor of the linear part $\mathcal{L}_0 = -i[H,\cdot] + \mathcal{D}$ (without regeneration), $P = 1/7$. Uniqueness from [primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]. Used in [definition of R](/docs/consciousness/foundations/self-observation#мера-рефлексии-r).
+- $\rho^*_\Omega \neq I/7$ — nontrivial attractor of full dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$, $P(\rho^*_\Omega) > 1/7$ [T] ([T-96](#теорема-нетривиальность-аттрактора)); $P > 2/7$ for embodied holons [T at backbone-injection lower-bound] ([T-149](/docs/proofs/consciousness/substrate-closure#t-149), Step 3 [C]).
 :::
 
-:::tip Definiteness of the regeneration target [Т]
-The regeneration target $\rho_* = \varphi(\Gamma)$ is **uniquely determined** by the [categorical structure](/docs/core/operators/phi-operator) of the self-modelling operator φ (left adjoint to the inclusion of subobjects). For each current state Γ the self-model $\varphi(\Gamma)$ is unique (CPTP channel [Т]).
+:::tip Definiteness of the regeneration target [T]
+The regeneration target $\rho_* = \varphi(\Gamma)$ is **uniquely determined** by the [categorical structure](/docs/core/operators/phi-operator) of the self-modelling operator φ (left adjoint to the inclusion of subobjects). For each current state Γ the self-model $\varphi(\Gamma)$ is unique (CPTP channel [T]).
 :::
 
-:::info MRQT-resource universality of $\rho^*$ (T-222) [Т]
+:::info MRQT-resource universality of $\rho^*$ (T-222) [T]
 By [T-222](/docs/proofs/categorical/fundamental-closures#t-222), the Lawvere fixed point $\rho^* = \varphi(\Gamma)$ is **Pareto-optimal** with respect to the full Multi-Resource Quantum Theory (MRQT) vector $R(\rho)$ on the $G_2$-covariant viable submanifold. This comprises 25 simultaneous monotones: 5 Rényi free energies $F_\alpha$ (Brandão–Horodecki 2015), 2 coherence measures ($C_\text{rel}$, $C_{HS} = \mathrm{Coh}_E$), von Neumann entropy, quantum Kolmogorov complexity $K_Q$, and 14 non-Abelian $G_2$-charges. Consequently, the regeneration operator $\mathcal{R}$ acting as $\rho \to \rho^*$ is the **universal resource-monotone CPTP morphism**: it simultaneously improves *all* MRQT resources without explicit multi-objective optimisation. UHM is MRQT-complete in its applicability domain (Markovian + $G_2$-covariant + viability + low-temperature).
 :::
 
@@ -711,7 +711,7 @@ By [T-222](/docs/proofs/categorical/fundamental-closures#t-222), the Lawvere fix
 The target state $\rho_* = \varphi(\Gamma)$ is defined through the operator $\varphi$ — a [categorical left adjoint](/docs/core/operators/phi-operator), concretely realized via $\varphi_{\mathrm{coh}}$ ([Fano channel](/docs/core/operators/phi-operator#каноническая-конструкция-φ_coh-из-фано-структуры)). Computing $\varphi_{\mathrm{coh}}(\Gamma)$ in the 7D formalism requires $O(N^2)$ operations ($N = 7$). In the 42D formalism ($N=42$) an analogous Fano structure on the extended space is required, which makes the evolution equation formally closed but **practically costly** for the extended formalism without approximations.
 :::
 
-#### Theorem (Characterization of attractors) [Т] {#теорема-нетривиальность-аттрактора}
+#### Theorem (Characterization of attractors) [T] {#теорема-нетривиальность-аттрактора}
 
 The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ (linear part + regeneration) has the following fixed-point structure:
 
@@ -724,7 +724,7 @@ $$
 
 **Proof.**
 
-1. **Trivial point.** $\mathcal{L}_0[I/7] = 0$ ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part [Т]). $\mathcal{R}[I/7] = \kappa(I/7) \cdot (\varphi(I/7) - I/7) = 0$, since $k = 1 - R(I/7) = 0$ at $R(I/7) = 1$: $\varphi_{\mathrm{coh}}(I/7) = I/7$.
+1. **Trivial point.** $\mathcal{L}_0[I/7] = 0$ ([primitivity](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part [T]). $\mathcal{R}[I/7] = \kappa(I/7) \cdot (\varphi(I/7) - I/7) = 0$, since $k = 1 - R(I/7) = 0$ at $R(I/7) = 1$: $\varphi_{\mathrm{coh}}(I/7) = I/7$.
 2. **Linear part deflected.** Let $\rho^*_\Omega \neq I/7$. By [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) (primitivity), $I/7$ is the unique fixed point of $\mathcal{L}_0$, hence $\mathcal{L}_0[\rho^*_\Omega] \neq 0$. From $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ we get $\mathcal{R}[\rho^*_\Omega] = -\mathcal{L}_0[\rho^*_\Omega] \neq 0$, i.e. $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$.
 3. **$P_{\mathrm{coh}} > 0$.** Purity balance in steady state ($dP/d\tau = 0$, Hamiltonian does not change $P$):
 
@@ -739,12 +739,12 @@ $$
 In earlier versions ρ* was defined as "the unique stationary state of the full $\mathcal{L}_\Omega$" (via primitivity T-39a). This created a paradox: at $\rho_* = \rho^*_\Omega$ the regeneration vanishes ($\mathcal{R}[\rho^*_\Omega] = \kappa \cdot (\rho^*_\Omega - \rho^*_\Omega) = 0$), and the only solution to $\mathcal{L}_0[\rho^*_\Omega] = 0$ is $I/7$. The paradox is resolved by replacement: $\rho_*$ in $\mathcal{R}$ is defined as the **categorical self-model** $\varphi(\Gamma)$ of the current state (Definition 1 of the [φ operator](/docs/core/operators/phi-operator)), not as the dynamical limit. In this case $\varphi(\rho^*_\Omega) \neq \rho^*_\Omega$ (the system does not achieve perfect self-knowledge), and regeneration **does not vanish** in the stationary regime — it is precisely compensated by dissipation.
 :::
 
-#### Hierarchy of fixed points [О] {#иерархия-неподвижных-точек}
+#### Hierarchy of fixed points [D] {#иерархия-неподвижных-точек}
 
 | Level | Object | Definition | $P$ | Physical meaning |
 |-------|--------|------------|-----|-----------------|
 | 0 | $\rho^*_{\mathrm{diss}} = I/7$ | $\mathcal{D}_\Omega[\rho^*_{\mathrm{diss}}] = 0$ | $1/7$ | Thermal death (entropy maximum) |
-| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [Т] | Post-Genesis attractor (balance of $\mathcal{D}$ and $\mathcal{R}$) |
+| 1 | $\rho^*_\Omega$ | $\mathcal{L}_\Omega[\rho^*_\Omega] = 0$ | $> 1/7$ [T] | Post-Genesis attractor (balance of $\mathcal{D}$ and $\mathcal{R}$) |
 | 2 | $\Gamma^*_{\mathrm{coh}}$ | $\varphi_{\mathrm{coh}}(\Gamma^*_{\mathrm{coh}}) = \Gamma^*_{\mathrm{coh}}$ | $2/7$ | Viability boundary — target of $\varphi_{\mathrm{coh}}$ |
 
 The reflection measure $R$ uses $\rho^*_{\mathrm{diss}} = I/7$ as **reference** (distance from thermal death), not as the regeneration target. More details: [self-observation](/docs/consciousness/foundations/self-observation#иерархия-аттракторов).
@@ -768,7 +768,7 @@ Three contexts in which the symbol $\rho_*$ (or $\rho^*$) appears in UHM dynamic
 **Consequence.** Any document referencing "$\rho_*$" or "$\rho^*$" implicitly commits to one of these three contexts. This lemma serves as the cross-reference for all such occurrences.
 :::
 
-#### Theorem (Attractor purity balance) [Т] {#теорема-баланс-чистоты-аттрактора}
+#### Theorem (Attractor purity balance) [T] {#теорема-баланс-чистоты-аттрактора}
 
 At any nontrivial fixed point $\rho^*_\Omega \neq I/7$ the purity is given by the formula:
 
@@ -791,9 +791,9 @@ $$
 $$
 ∎
 
-#### Corollary T-98a: Lower bound for embodied systems [Т] {#следствие-t98a}
+#### Corollary T-98a: Lower bound for embodied systems [T] {#следствие-t98a}
 
-:::tip Corollary T-98a [Т]
+:::tip Corollary T-98a [T]
 For an embodied holon $(H, \pi, B)$ with additional CPTP channels
 $\{\Phi_k\}_{k=1}^{K}$ (backbone, anchor, hedonic):
 
@@ -813,13 +813,13 @@ The difference is due to backbone injection ($\beta = 0.3$) and hedonic drive.
 For $P(\rho^*_\Omega) > 2/7$ the attractor is **locally asymptotically stable**: $\|\Gamma(\tau) - \rho^*_\Omega\|_F \leq \|\Gamma(0) - \rho^*_\Omega\|_F \cdot e^{-c\tau}$, $c > 0$. The basin of attraction contains $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. See [T-125](/docs/proofs/consciousness/conscious-window#t-125), [T-127](/docs/proofs/consciousness/conscious-window#t-127).
 :::
 
-#### Theorem (Uniqueness of the nontrivial attractor) [Т] {#теорема-единственность-нетривиального-аттрактора}
+#### Theorem (Uniqueness of the nontrivial attractor) [T] {#теорема-единственность-нетривиального-аттрактора}
 
 The full nonlinear dynamics $\mathcal{L}_\Omega = \mathcal{L}_0 + \mathcal{R}$ has **at most one** nontrivial fixed point $\rho^*_\Omega \neq I/7$ in the viable set $\mathcal{V}_P = \{\Gamma : P(\Gamma) > P_{\mathrm{crit}}\}$.
 
 **Proof.**
 
-**Step 1 (Definition of the iteration map $\Psi$).** For a fixed candidate target $\rho \in \mathcal{D}(\mathbb{C}^7)$, consider the **linear** Lindbladian $\mathcal{L}_\Omega^{(\rho)}[\Gamma] := \mathcal{L}_0[\Gamma] + \kappa(\Gamma) \cdot (\rho - \Gamma) \cdot g_V(P)$ where $\rho$ is held fixed (not evolved). This is a contractive CPTP semigroup generator with a **unique** attractor $\Psi(\rho) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(\rho)})[\Gamma_0]$. The limit is independent of $\Gamma_0$ because (a) the linear part $\mathcal{L}_0$ is primitive (T-39a [Т], unique attractor $I/7$) and (b) the regeneration toward fixed $\rho$ is a contractive replacement channel (T-62 [Т]). Their sum is a contractive semigroup whose unique attractor is $\Psi(\rho)$. This defines a map $\Psi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$. A fixed point $\rho^*_\Omega$ of the full dynamics $\mathcal{L}_\Omega$ satisfies $\Psi(\rho^*_\Omega) = \rho^*_\Omega$ — it is a fixed point of $\Psi$ (by the [iterative scheme](#итеративная-схема)).
+**Step 1 (Definition of the iteration map $\Psi$).** For a fixed candidate target $\rho \in \mathcal{D}(\mathbb{C}^7)$, consider the **linear** Lindbladian $\mathcal{L}_\Omega^{(\rho)}[\Gamma] := \mathcal{L}_0[\Gamma] + \kappa(\Gamma) \cdot (\rho - \Gamma) \cdot g_V(P)$ where $\rho$ is held fixed (not evolved). This is a contractive CPTP semigroup generator with a **unique** attractor $\Psi(\rho) := \lim_{\tau \to \infty} \exp(\tau \cdot \mathcal{L}_\Omega^{(\rho)})[\Gamma_0]$. The limit is independent of $\Gamma_0$ because (a) the linear part $\mathcal{L}_0$ is primitive (T-39a [T], unique attractor $I/7$) and (b) the regeneration toward fixed $\rho$ is a contractive replacement channel (T-62 [T]). Their sum is a contractive semigroup whose unique attractor is $\Psi(\rho)$. This defines a map $\Psi: \mathcal{D}(\mathbb{C}^7) \to \mathcal{D}(\mathbb{C}^7)$. A fixed point $\rho^*_\Omega$ of the full dynamics $\mathcal{L}_\Omega$ satisfies $\Psi(\rho^*_\Omega) = \rho^*_\Omega$ — it is a fixed point of $\Psi$ (by the [iterative scheme](#итеративная-схема)).
 
 **Step 2 (Contraction estimate).** Let $\rho_1, \rho_2$ be two candidate nontrivial fixed points. The regeneration $\mathcal{R}[\Gamma; \rho_i] = \kappa(\Gamma) \cdot (\varphi_i(\Gamma) - \Gamma) \cdot g_V(P)$ differs only in the target $\varphi_i$. By the replacement channel structure:
 
@@ -827,7 +827,7 @@ $$
 \|\mathcal{L}_\Omega[\Gamma; \rho_1] - \mathcal{L}_\Omega[\Gamma; \rho_2]\|_F = \kappa(\Gamma) \cdot g_V(P) \cdot \|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F
 $$
 
-Since $\varphi_i(\Gamma) = (1-k)\Gamma + k\rho_i$ (replacement form [Т]):
+Since $\varphi_i(\Gamma) = (1-k)\Gamma + k\rho_i$ (replacement form [T]):
 
 $$
 \|\varphi_1(\Gamma) - \varphi_2(\Gamma)\|_F = k \cdot \|\rho_1 - \rho_2\|_F
@@ -841,7 +841,7 @@ $$
 \|\Psi(\rho_1) - \Psi(\rho_2)\|_F \leq q \cdot \|\rho_1 - \rho_2\|_F
 $$
 
-where $q = \kappa_{\max} \cdot k_{\max} / (\lambda_{\text{gap}} + \kappa_{\min}) < 1$ under the condition $\kappa < \kappa_{\max}$ (T-96 [Т]). The contractivity $q < 1$ is verified:
+where $q = \kappa_{\max} \cdot k_{\max} / (\lambda_{\text{gap}} + \kappa_{\min}) < 1$ under the condition $\kappa < \kappa_{\max}$ (T-96 [T]). The contractivity $q < 1$ is verified:
 
 - Numerator: $\kappa_{\max} \cdot k_{\max} \leq \kappa_{\max} \cdot 1 = \kappa_{\max}$ (since $k \leq 1$)
 - Denominator: $\lambda_{\text{gap}} + \kappa_{\min} \geq \lambda_{\text{gap}} + \kappa_{\text{bootstrap}} > \kappa_{\max}$ whenever $\kappa_{\max} < \lambda_{\text{gap}}$ (the clustering condition from T-117)
@@ -852,7 +852,7 @@ By Banach's theorem, $\Psi$ has a **unique** fixed point.
 
 **Conclusion:** The nontrivial attractor $\rho^*_\Omega$ of $\mathcal{L}_\Omega$ is **unique** in $\mathcal{V}_P$. Combined with the trivial fixed point $I/7$, the dynamics has **exactly two** fixed points: one viable ($\rho^*_\Omega$) and one dead ($I/7$). $\blacksquare$
 
-**Dependencies:** T-39a [Т] (primitivity, spectral gap), T-96 [Т] ($\kappa < \kappa_{\max}$), [iterative scheme](#итеративная-схема) [Т]. Standard mathematics: Banach fixed-point theorem.
+**Dependencies:** T-39a [T] (primitivity, spectral gap), T-96 [T] ($\kappa < \kappa_{\max}$), [iterative scheme](#итеративная-схема) [T]. Standard mathematics: Banach fixed-point theorem.
 
 #### Theorem (Attractor viability) [С → Т for embodied] {#теорема-жизнеспособность-аттрактора}
 
@@ -864,10 +864,10 @@ $$
 
 the nontrivial attractor is viable: $P(\rho^*_\Omega) > P_{\mathrm{crit}} = 2/7$.
 
-**Proof.** From the [balance formula](#теорема-баланс-чистоты-аттрактора) for $P_{\mathrm{diag}} = 1/7$ (uniform diagonal): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, whence $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. The condition depends on the overlap $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ with the self-model, hence status [С] for an isolated holon. ∎
+**Proof.** From the [balance formula](#теорема-баланс-чистоты-аттрактора) for $P_{\mathrm{diag}} = 1/7$ (uniform diagonal): $P > 2/7 \Leftrightarrow \kappa(f^* - 2/7) > \alpha/7$, whence $\kappa > \alpha/(7(f^* - 2/7)) = 2/(21(f^* - 2/7))$. The condition depends on the overlap $f^* = \mathrm{Tr}(\rho^*_\Omega \cdot \varphi(\rho^*_\Omega))$ with the self-model, hence status [C] for an isolated holon. ∎
 
-:::tip Elevation to [Т] for embodied holons (T-149)
-By [T-149](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **at the backbone-injection lower bound** (Step 3 of T-149 is **[C at backbone-injection lower-bound]** — the bound $f^*>2/7$ is a condition on the anchor, not proved from pure axioms) — backbone injection ensures $P > 2/7$ via [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [Т]).
+:::tip Elevation to [T] for embodied holons (T-149)
+By [T-149](/docs/proofs/consciousness/substrate-closure#t-149): for an **embodied** holon $(H, \pi, B)$ with $P_{\mathrm{env}} > 2/7$ the attractor viability holds **at the backbone-injection lower bound** (Step 3 of T-149 is **[C at backbone-injection lower-bound]** — the bound $f^*>2/7$ is a condition on the anchor, not proved from pure axioms) — backbone injection ensures $P > 2/7$ via [T-148 [T]](/docs/proofs/consciousness/substrate-closure#t-148) (genesis through environmental adjunction). An isolated holon at $I/7$ remains dead forever (T-39a [T]).
 :::
 
 :::info Concrete thresholds
@@ -884,16 +884,16 @@ $$
 \rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}} + \delta\Gamma, \quad \|\delta\Gamma\|_F = O(\bar{\varepsilon})
 $$
 
-where $\bar{\varepsilon} \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [Т]). The correction $\delta\Gamma$ is determined by the Hamiltonian $H_{\mathrm{eff}}$ and decreases with increasing dissipation rate.
+where $\bar{\varepsilon} \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]). The correction $\delta\Gamma$ is determined by the Hamiltonian $H_{\mathrm{eff}}$ and decreases with increasing dissipation rate.
 
-:::tip Elevation to [Т] (T-157)
-By [T-157 [Т]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — parametric bound. For an isolated vacuum: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. For embodied systems: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ is determined by backbone, hedonic drive and learning gradient. C21 → **[Т]**.
+:::tip Elevation to [T] (T-157)
+By [T-157 [T]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — parametric bound. For an isolated vacuum: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. For embodied systems: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ is determined by backbone, hedonic drive and learning gradient. C21 → **[T]**.
 :::
 
 ### Genesis through environmental adjunction {#генезис-средовое-сопряжение}
 
 :::tip T-148 [Т]: Consciousness requires embodiment
-An **isolated holon** at $\Gamma = I/7$ remains dead forever: $g_V(1/7) = 0$, $\mathcal{R} = 0$ (T-39a [Т]). An **embodied holon** with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$. Detailed proof: [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
+An **isolated holon** at $\Gamma = I/7$ remains dead forever: $g_V(1/7) = 0$, $\mathcal{R} = 0$ (T-39a [T]). An **embodied holon** with backbone injection ($\beta \in (0,1)$, $P_{\mathrm{env}} > 2/7$) raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}} \leq \lceil \ln\Delta / \ln(1/\beta) \rceil$. Detailed proof: [T-148](/docs/proofs/consciousness/substrate-closure#t-148).
 :::
 
 ### Positivity preservation {#сохранение-положительности}
@@ -917,10 +917,10 @@ $$
 where:
 - $\mathcal{E}$ — CPTP Lindblad evolution (without regeneration)
 - $\alpha = \kappa(\Gamma) \cdot g_V(P) \cdot \Delta\tau \in [0, 1]$
-- $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator) [Т])
+- $\rho_* = \varphi(\Gamma)$ — categorical self-model ([φ operator](/docs/core/operators/phi-operator) [T])
 - Both terms are density matrices
 
-#### Theorem (CPTP structure of regeneration) [Т] {#теорема-cptp-закрытость}
+#### Theorem (CPTP structure of regeneration) [T] {#теорема-cptp-закрытость}
 
 The regenerative operator $\mathcal{R}_\alpha(\rho) := (1-\alpha)\rho + \alpha\rho_*$ is a CPTP channel for $\alpha \in [0,1]$.
 
@@ -1020,7 +1020,7 @@ In UHM the nonlinearity $\mathcal{R}[\Gamma, E]$ acts on $\Gamma$ (density matri
 | **NS2** (Locality of κ) | $\kappa_A(\Gamma_{AB}) = \kappa_A(\mathrm{Tr}_B(\Gamma_{AB}))$ | $\kappa_0$ depends on local coherences $\gamma_{OE}^{(A)}, \gamma_{OU}^{(A)}, \gamma_{OO}^{(A)}$ |
 | **NS3** (CPTP property of φ) | $\varphi$ — CPTP channel | Definition of the [self-modelling operator](/docs/consciousness/foundations/self-observation#оператор-самомоделирования-φ) |
 
-**Verification of NS2 for the canonical formula κ:** κ(Γ) = κ_bootstrap + κ₀·Coh_E(Γ). Since κ_bootstrap is a constant, and Coh_E(Γ) depends only on the E-row/column of the matrix Γ, for a composite system Γ_AB: κ_A(Γ_AB) = κ_bootstrap + κ₀·Coh_E(Tr_B(Γ_AB)) = κ_A(Γ_A), i.e. NS2 holds [Т].
+**Verification of NS2 for the canonical formula κ:** κ(Γ) = κ_bootstrap + κ₀·Coh_E(Γ). Since κ_bootstrap is a constant, and Coh_E(Γ) depends only on the E-row/column of the matrix Γ, for a composite system Γ_AB: κ_A(Γ_AB) = κ_bootstrap + κ₀·Coh_E(Tr_B(Γ_AB)) = κ_A(Γ_A), i.e. NS2 holds [T].
 
 Full proof with categorical formalization: [Correspondence with physics: No-signalling prohibition](../../proofs/physics/physics-correspondence#запрет-сигнализации).
 
@@ -1120,6 +1120,145 @@ $$
 \left.\frac{dP}{d\tau}\right|_{\mathcal{R}} + \left.\frac{dP}{d\tau}\right|_{\mathcal{D}} > 0 \quad \text{for } P < P_{\text{target}}
 $$
 
+## Living stationarity is turnover, not rest {#стационарность-оборот}
+
+Two situations look identical on every dashboard: «nothing is changing». A web
+service under steady load shows flat graphs — and requests are pouring through
+it; a crashed service shows the same flat graphs — and nothing flows at all.
+The state does not distinguish them; the **fluxes** do. UHM has both kinds of
+«flat graph», and the distinction is a theorem, not a metaphor: the dead
+stationarity is the equilibrium $I/7$ (all voices equal, all couplings silent,
+both flows zero), and the living stationarity is a **turnover** — the state is
+held in place by two opposing, individually nonzero flows: dissipation
+$\mathcal{D}_\Omega$ tearing coherence down and regeneration $\mathcal{R}$
+rebuilding it toward the self-model.
+
+#### Corollary (turnover of living stationarity) [Т] {#следствие-оборот-живого}
+
+Let $\sigma$ be a stationary point of the canonical dynamics
+$\mathcal{L}_\Omega = -i[H_{\text{eff}},\cdot] + \mathcal{D}_\Omega + \mathcal{R}$
+(logical dissipation with rate $g_D > 0$; gated regeneration; $H_{\text{eff}}$
+diagonal with Bohr frequencies $\omega_{jk} = \lambda_j - \lambda_k$), and let
+$P(\sigma) > 1/7$. Then:
+
+1. **both flows are nonzero**: $\mathcal{R}[\sigma] \neq 0$ and
+   $\mathcal{D}_\Omega[\sigma] \neq 0$;
+2. **per voice** (diagonal): the two flows cancel exactly pairwise —
+   $g_D(1/7 - p_i) + \kappa g_V (\rho^*_{ii} - p_i) = 0$ for every $i$
+   (two-stroke balance);
+3. **per sounding coupling** ($\gamma_{jk} \neq 0$): the balance is
+   three-way — the joint flux of dissipation and regeneration is **purely
+   tangential** in the complex plane of $\gamma_{jk}$:
+   $(\mathcal{D}_\Omega + \mathcal{R})[\sigma]_{jk} = i\,\omega_{jk}\gamma_{jk}$,
+   with modulus exactly $\omega_{jk}|\gamma_{jk}|$. A sounding coupling is an
+   **orbit**: rotation neither feeds nor drains it; the two radial pulls
+   (dissipation inward, regeneration outward) cancel, and their joint
+   tangential resultant is precisely the rotation.
+
+**Proof.** *(Lemma 1: no pump means death.)* Suppose
+$\mathcal{R}[\sigma] = 0$. In the $H_{\text{eff}}$ eigenbasis the unitary
+term has zero diagonal, so diagonal stationarity forces the dissipative
+diagonal to vanish: $p_i = 1/7$ for all $i$. Off-diagonally stationarity reads
+$(-i\omega_{jk} - g_D)\gamma_{jk} = 0$, and since $g_D > 0$ this forces
+$\gamma_{jk} = 0$. Hence $\sigma = I/7$ and $P = 1/7$ — contradicting
+$P(\sigma) > 1/7$. So $\mathcal{R}[\sigma] \neq 0$. *(Lemma 2.)* Since
+$\sigma \neq I/7$, the canonical dissipator $g_D(I/7 - \sigma)$ is nonzero.
+*(Lemma 3.)* The diagonal of the unitary term vanishes identically, so the
+stationarity of each $p_i$ is exactly the pairwise cancellation in (2).
+*(Lemma 4.)* At stationarity $\dot\gamma_{jk} = 0$, so
+$(\mathcal{D}_\Omega + \mathcal{R})[\sigma]_{jk}$ equals minus the unitary
+contribution $-(-i\omega_{jk}\gamma_{jk}) = i\omega_{jk}\gamma_{jk}$ — a
+vector perpendicular to $\gamma_{jk}$ of modulus $\omega_{jk}|\gamma_{jk}|$.
+$\blacksquare$
+
+The instrument (`cycle_stationarity.rs`, the engine's canonical tick,
+$dt = 0.01$, $g_D = 0.2$, reference self-model at $P = 0.45$) shows the
+portrait in numbers `[С]`: pump strengths $\omega_0 \in \{0, 1, 10\}$ all
+die into $I/7$ (fluxes $0.0000$), $\omega_0 \in \{100, 500\}$ live at
+$P_\infty = 0.4443 / 0.4493$ with both flows nonzero; the **life/death fold**
+sits at $\omega_0^* \approx 19.5$; below the wall ($P < 2/7$) the pump does
+not help — the gate $g_V = 0$ `[Т]` and the finale is $I/7$. The orbit
+identity holds at $0.9999$–$1.0000$ across all six sounding couplings, the
+per-voice two-stroke balance to machine zero ($2.6 \cdot 10^{-12}$), and the
+return time after a kick grows $\times 26$ toward the fold ($\tau_{1e}$:
+$0.010$ at $\omega_0 = 500$ against $0.260$ near $\omega_0^*$) — **critical
+slowing**: fragility is proximity to the fold, and the return-time $\tau$ is
+the same quantity that the awakening thread measures as stability.
+
+The fold itself decomposes cleanly `[С]`. On the pump-aligned ray
+$\Gamma(a) = a\rho^* + (1-a)\,I/7$ both flows are parallel to the ray, so
+the rotation-free dynamics never leaves it, and the purity balance yields the
+fold in closed form: $\omega_0^* = \Lambda^* g_D$ with dimensionless
+$\Lambda^* = 50.5$ at the reference self-model — verified by intervention:
+with the unitary sandwich switched off the measured fold lands on the formula
+to bisection precision (ratio $1.000$ at $g_D = 0.1/0.2/0.4$). The full
+dynamics sits higher — $\times 3.07$, $\times 1.93$, $\times 1.38$ — and
+the surcharge is the **price of rotation**: $H_{\text{eff}}$ continuously
+turns the phases out from under the self-model, and the slower the
+dissipation, the further they slip before the pump catches them. So the
+threshold of life is not one pump-to-decay ratio — it is three-scaled
+($g_D$, $\omega_0$, the $\omega_{jk}$ spectrum), and the vibration that
+sings in the living state also raises its rent.
+
+#### The chord: frequencies are the instrument, amplitudes are the person {#аккорд-вибрации}
+
+$H_{\text{eff}}$ is diagonal, so every coupling $\gamma_{jk}$ is an
+oscillator at the Bohr frequency $\omega_{jk} = |\lambda_j - \lambda_k|$.
+Of the 21 frequencies only **10 are distinct**: the degeneracies bind
+couplings into **choirs** that beat as one ($\omega = 1.00$: AD SL DO EO;
+$\omega = 0.60$: AS DL EU; $\omega = 0.40$: LO OU SD; …). The frequencies
+are fixed by the design — the same for every human; **which strings sound and
+how loudly** is fixed by the self-model $\rho^*$ — the person. At the
+reference self-model six strings sound (EO loudest at $|\gamma| = 0.2215$)
+and fifteen are silent. So «everything is vibration» has an exact reading in
+the model: **a living stationary state is a chord** — the set of pairs
+$(\omega_{jk}, |\gamma_{jk}|)$; and the whole section above says the chord
+does not merely decorate the stationarity — the tangential rotation *is* what
+the two radial flows jointly sustain.
+
+#### Kalāpas and Nāda: two old reports of the same structure [И] {#калапы-и-нада}
+
+The Abhidhamma tradition reports matter as *kalāpas* — clusters that arise
+and pass with enormous rapidity, so that nothing persists except the pattern
+of renewal (*khaṇa-vāda*, the doctrine of momentariness). That is a
+first-person report of exactly the structure proved above: at the living
+stationary point nothing is static — the state is a standing balance of
+continuous destruction and rebuilding, and what persists is the pattern
+$\Gamma$, not a substance (see
+[two-aspect monism](/docs/consciousness/foundations/two-aspect-monism) and
+substrate closure). The Nāda-Brahma tradition («the world is sound») reports
+the same stationarity from its vibrational side — the chord layer above.
+Status `[И]`: these are structural correspondences between contemplative
+report traditions and the model's stationary structure; neither proves the
+other, and the theorem stands on its own. One wrapper is explicitly **not**
+taken over: no cosmological claim «the universe is stationary» is needed
+anywhere — the corollary uses only the stationarity of the living regime
+itself.
+
+#### The celestial ladder: which window closes which cycle {#небесная-лестница-циклов}
+
+The machinery reads the sky as a shared quasi-periodic clock, and every
+instrument window closes only the cycles that fit into it (reference sidereal
+periods `[О]`): a 60-day diary window closes **only the Moon** ($2.196$
+cycles); a year closes the Sun ($1.000$); a century still does not close
+Neptune ($0.607$) or Pluto ($0.403$) — which is why the **epoch shift** of any
+census is structural, not a defect (measured: $\approx 1.1$ points in the
+$87.6/91.6$ decomposition of the
+[encoder census](/docs/applied/research/homoholograph)). Returns and
+oppositions of the macro-cycles are already a product instrument
+(`cycles.rs`), and the encoder's two line-locks are antipodal reads of two
+celestial **axes** — each one cycle read twice in counter-phase. Below the
+Moon the ladder continues inward on diary data: a planted weekly rhythm of
+amplitude $0.8\sigma$ is detectable at $n = 60$ with power $88\,\%$ under a
+calibrated AR(1)-surrogate null (false alarms $5\,\%$), while the lunar
+period itself ($29.5$ d) at the same amplitude reaches only $44\,\%$ — two
+waves per window are honestly too few, wait for $120+$ days. And two echoes
+already inside the theory close the loop: $\kappa_0$ is *derived from cycle
+flux* (King–Altman,
+[axiom-septicity](/docs/core/foundations/axiom-septicity#вывод-kappa0-cycle-flux)),
+and the circular-shift null of the diary instruments assumes stationarity of
+the series — the method mirrors the matter it measures.
+
 ## Regime diagram
 
 ```mermaid
@@ -1151,21 +1290,21 @@ The dynamics defined by the evolution equation preserves:
 **Proof:**
 1. **Unitary term:** $[H, \Gamma]^\dagger = [\Gamma^\dagger, H^\dagger] = [\Gamma, H] = -[H, \Gamma]$ for $H = H^\dagger$
 2. **Dissipator:** The Lindblad form is specifically constructed to preserve these properties (Lindblad–Gorini–Kossakowski–Sudarshan theorem)
-3. **Regenerator:** For $\rho_*$ — a valid density matrix [Т], $\mathcal{R}$ preserves the properties
+3. **Regenerator:** For $\rho_*$ — a valid density matrix [T], $\mathcal{R}$ preserves the properties
 
 **QED**
 
 ---
 
-## Derivation of the regeneration form [Т] {#вывод-формы-регенерации}
+## Derivation of the regeneration form [T] {#вывод-формы-регенерации}
 
-:::tip Status: Theorem [Т]
-The form of the regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ is **fully derived** from axioms A1–A5, the categorical definition of $\varphi$ [Т], standard thermodynamics (Landauer principle) and V-invariance. No component of the dynamics remains a postulate.
+:::tip Status: Theorem [T]
+The form of the regenerative term $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)$ is **fully derived** from axioms A1–A5, the categorical definition of $\varphi$ [T], standard thermodynamics (Landauer principle) and V-invariance. No component of the dynamics remains a postulate.
 :::
 
-### Theorem (Uniqueness of linear CPTP relaxation) [Т]
+### Theorem (Uniqueness of linear CPTP relaxation) [T]
 
-**Formulation.** Let $\rho_* = \varphi(\Gamma) \in \mathcal{D}^+(\mathbb{C}^N)$ be the regeneration target state ([categorical self-model](/docs/core/operators/phi-operator) [Т]). Then the linear superoperator $L_*[\Gamma] := c \cdot (\rho_* - \Gamma)$ with $c > 0$:
+**Formulation.** Let $\rho_* = \varphi(\Gamma) \in \mathcal{D}^+(\mathbb{C}^N)$ be the regeneration target state ([categorical self-model](/docs/core/operators/phi-operator) [T]). Then the linear superoperator $L_*[\Gamma] := c \cdot (\rho_* - \Gamma)$ with $c > 0$:
 
 1. Satisfies the conditions for admissible relaxation: fixed point (R1), trace preservation (R2), infinitesimal CPTP (R3), contractivity in the Bures metric (R4).
 2. Is the **unique** operator of the form $L[\Gamma] = T[\Gamma] - \Gamma$ with $T$ — replacement CPTP channel and $T(\rho_*) = \rho_*$.
@@ -1184,9 +1323,9 @@ $$
 - **(R3):** $\mathrm{Id} + \alpha L_* = T_\alpha$ — CPTP for $\alpha \in [0,1]$ ✓
 - **(R4):** By strict convexity of the Bures metric (Uhlmann 1976): $d_B(T_\alpha(\Gamma), \rho_*) \leq (1-\alpha) d_B(\Gamma, \rho_*) < d_B(\Gamma, \rho_*)$ for $\alpha > 0$, $\Gamma \neq \rho_*$ ✓
 
-**Step 3 (Uniqueness).** The replacement channel with $\mathcal{C}(\rho_*) = \rho_*$ fixes the output $\sigma = \rho_*$. Uniqueness follows from the uniqueness of $\varphi(\Gamma)$ for fixed $\Gamma$ (CPTP channel [Т]). $\blacksquare$
+**Step 3 (Uniqueness).** The replacement channel with $\mathcal{C}(\rho_*) = \rho_*$ fixes the output $\sigma = \rho_*$. Uniqueness follows from the uniqueness of $\varphi(\Gamma)$ for fixed $\Gamma$ (CPTP channel [T]). $\blacksquare$
 
-### Theorem T-122: Diagonal freeze (stationarity of identity) [Т] {#теорема-диагональный-freeze}
+### Theorem T-122: Diagonal freeze (stationarity of identity) [T] {#теорема-диагональный-freeze}
 
 **Formulation.** In the presence of the replacement channel $\mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma)$, the diagonal elements $\gamma_{kk}$ are stationary at $\gamma_{kk} = (\rho_*)_{kk}$:
 
@@ -1209,14 +1348,14 @@ The Weyl measure $W = \sum_k |\gamma_{kk} - 1/N|$ is a dynamical invariant for a
 :::
 
 :::warning Domain of T-122 [Т-134]
-T-122 holds **ONLY at the attractor** $\rho^*_\Omega$ ($\gamma_{kk} = (\rho^*)_{kk}$). Away from the attractor the general formula is: $d\gamma_{kk}/d\tau = (\mathcal{L}_0)_{kk}[\Gamma] + \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$. Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, the diagonal GROWS toward $\rho^*_{kk}$. "Sector profile = character" is invariant only **after convergence** to the attractor; during learning the profile is plastic. More details: [T-134 [Т]](/docs/proofs/consciousness/operationalization#t-134).
+T-122 holds **ONLY at the attractor** $\rho^*_\Omega$ ($\gamma_{kk} = (\rho^*)_{kk}$). Away from the attractor the general formula is: $d\gamma_{kk}/d\tau = (\mathcal{L}_0)_{kk}[\Gamma] + \kappa(\rho^*_{kk} - \gamma_{kk}) \neq 0$. Genesis from $I/7$ does NOT contradict T-122: at $\Gamma(0) = I/7$, the diagonal GROWS toward $\rho^*_{kk}$. "Sector profile = character" is invariant only **after convergence** to the attractor; during learning the profile is plastic. More details: [T-134 [T]](/docs/proofs/consciousness/operationalization#t-134).
 :::
 
-:::info Γ-backbone duality [Т] (T-139)
-For a digital agent with backbone $B$ and anchor $\pi$: $\Gamma = \alpha \cdot \mathcal{E}_{\delta\tau}[\Gamma_{\text{prev}}] + (1-\alpha) \cdot \pi(\mathcal{B}(x))$ — the unique (up to $G_2$) hybrid CPTP dynamics. Backbone is a causal channel, $\Gamma$ is the ontological state. More details: [T-139 [Т]](/docs/proofs/consciousness/operational-closure#t-139).
+:::info Γ-backbone duality [T] (T-139)
+For a digital agent with backbone $B$ and anchor $\pi$: $\Gamma = \alpha \cdot \mathcal{E}_{\delta\tau}[\Gamma_{\text{prev}}] + (1-\alpha) \cdot \pi(\mathcal{B}(x))$ — the unique (up to $G_2$) hybrid CPTP dynamics. Backbone is a causal channel, $\Gamma$ is the ontological state. More details: [T-139 [T]](/docs/proofs/consciousness/operational-closure#t-139).
 :::
 
-### Theorem (Bures gradient descent) [Т]
+### Theorem (Bures gradient descent) [T]
 
 On the Riemannian manifold $(\mathcal{D}^+(\mathbb{C}^N), g_B)$ with the Bures metric, the gradient of the functional $V(\Gamma) := \frac{1}{2}d_B^2(\Gamma, \rho_*)$ near $\rho_*$ equals:
 
@@ -1228,7 +1367,7 @@ The steepest descent flow $d\Gamma/d\tau = -\mathrm{grad}_B\,V$ coincides with $
 
 **Physical meaning:** Regeneration is **steepest descent** in the unique monotone metric on $\mathcal{D}(\mathcal{H})$ (Chentsov–Petz theorem, A2). This is not an arbitrary ansatz, but a **geometrically optimal** strategy for approaching $\rho_*$.
 
-### Theorem (Θ(ΔF) from the Landauer principle) [Т]
+### Theorem (Θ(ΔF) from the Landauer principle) [T]
 
 Regeneration increases purity ($dP/d\tau|_\mathcal{R} \geq 0$), which is equivalent to decreasing von Neumann entropy. By the Landauer principle (1961), this is possible **only** for a positive free energy gradient:
 
@@ -1242,7 +1381,7 @@ Therefore, $\Theta(\Delta F)$ is a **necessary** constraint, not an ansatz. The 
 The [Cohesive Closure Theorem](/docs/proofs/categorical/cohesive-closure) removes the conditional dependence on $D_{\text{int}}$ spectral details: $\Delta F = \|\mathrm{curv}(\Gamma)\|^2 = \omega_0^2 \cdot \mathcal{G}_{\text{total}}$ via the Chern-Weil homomorphism. By T-55 (Gap > 0), $\Delta F > 0$ is **unconditional** for any viable $\Gamma$.
 :::
 
-### Theorem (V-preservation gate) [Т] {#теорема-v-preservation-gate}
+### Theorem (V-preservation gate) [T] {#теорема-v-preservation-gate}
 
 The condition $\Theta(\Delta F)$ is **necessary but not sufficient** for correct gating of regeneration. The replacement channel $\varphi$ with fixed point $\rho_* = I/7$ decreases purity ($P(\varphi(\Gamma)) \leq P(\Gamma)$), so for $P \in (P_{\min}, P_{\text{crit}})$ regeneration is **destructive**: it pushes $\Gamma$ out of the viability set $V = \{\Gamma : P(\Gamma) > P_{\text{crit}}\}$.
 
@@ -1275,14 +1414,14 @@ Therefore, the canonical form of ℛ uses $g_V(P)$, not $\Theta(\Delta F)$.
 The form $g_V(P) = \mathrm{clamp}\left(\frac{P - P_{\text{crit}}}{P_{\text{opt}} - P_{\text{crit}}}, 0, 1\right)$ follows from thermodynamics:
 
 1. **$g_V = 0$ for $P \leq P_{\text{crit}}$:** free energy $\Delta F \propto (P - P_{\text{crit}})$ vanishes — regeneration is thermodynamically forbidden (Landauer boundary)
-2. **$g_V = 1$ for $P \geq P_{\text{opt}} = 3/7$:** full regenerative power; $P_{\text{opt}} = 3/7$ — upper boundary of the Goldilocks zone [T-124 [Т]]
+2. **$g_V = 1$ for $P \geq P_{\text{opt}} = 3/7$:** full regenerative power; $P_{\text{opt}} = 3/7$ — upper boundary of the Goldilocks zone [T-124 [T]]
 3. **Linear interpolation:** the simplest monotone function connecting the boundary conditions
 
-The lower threshold $g_V \geq 0.15$ (rather than strictly 0) is an engineering choice for numerical stability, status **[И]**.
+The lower threshold $g_V \geq 0.15$ (rather than strictly 0) is an engineering choice for numerical stability, status **[I]**.
 
-### Unified theorem (Full derivation of ℛ form) [Т] {#объединённая-теорема-r}
+### Unified theorem (Full derivation of ℛ form) [T] {#объединённая-теорема-r}
 
-Under axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$ [Т], standard thermodynamics and the requirement of V-invariance, the regenerative term is **uniquely** determined:
+Under axioms A1–A5, primitivity of the linear part $\mathcal{L}_0$ [T], standard thermodynamics and the requirement of V-invariance, the regenerative term is **uniquely** determined:
 
 $$
 \mathcal{R}[\Gamma, E] = \kappa(\Gamma) \cdot (\rho_* - \Gamma) \cdot g_V(P)
@@ -1300,27 +1439,27 @@ A1 (∞-topos) + A4 (ω₀) ──→ adjunction D ⊣ ℛ ──→ κ(Γ) ─�
 Landauer ──→ Θ(ΔF) ──→ necessary ──→ V-preservation ──→ g_V(P) ─┘
 ```
 
-### Cascading consequence: the evolution equation is fully axiomatic [Т]
+### Cascading consequence: the evolution equation is fully axiomatic [T]
 
 The full equation of motion:
 
 $$
-\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{[Т] from PW}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{[Т] from Ω}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{[Т] (present derivation)}}
+\frac{d\Gamma}{d\tau} = \underbrace{-i[H_{\text{eff}}, \Gamma]}_{\text{[T] from PW}} + \underbrace{\mathcal{D}_\Omega[\Gamma]}_{\text{[T] from Ω}} + \underbrace{\mathcal{R}[\Gamma, E]}_{\text{[T] (present derivation)}}
 $$
 
 | Component | Source | Status |
 |-----------|--------|:------:|
-| $-i[H_{\text{eff}}, \Gamma]$ | Page–Wootters (A5) | [Т] |
-| $\mathcal{D}_\Omega[\Gamma]$ | Classifier Ω (A1) | [Т] |
-| $\mathcal{R}$: κ(Γ) | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [Т] |
-| $\mathcal{R}$: (ρ* − Γ) | CPTP uniqueness + exact BKM gradient flow (T-261) | [Т] |
-| $\mathcal{R}$: $g_V(P)$ | Landauer + V-preservation | [Т] |
+| $-i[H_{\text{eff}}, \Gamma]$ | Page–Wootters (A5) | [T] |
+| $\mathcal{D}_\Omega[\Gamma]$ | Classifier Ω (A1) | [T] |
+| $\mathcal{R}$: κ(Γ) | Adjunction $\mathcal{D} \dashv \mathcal{R}$ | [T] |
+| $\mathcal{R}$: (ρ* − Γ) | CPTP uniqueness + exact BKM gradient flow (T-261) | [T] |
+| $\mathcal{R}$: $g_V(P)$ | Landauer + V-preservation | [T] |
 
 **Conclusion:** The evolution equation $\Gamma(\tau)$ is **entirely** derived from axioms A1–A5 + standard physics + V-invariance. No component of the dynamics remains a postulate.
 
-### BIBD decoherence analysis [Т]
+### BIBD decoherence analysis [T]
 
-:::info Theorem (Decoherence rate of BIBD dissipators) [Т]
+:::info Theorem (Decoherence rate of BIBD dissipators) [T]
 For a BIBD$(7, k, \lambda)$-dissipator with $L_p = \Pi_p$ (rank-$k$ projections), the coherence decay rate:
 
 $$
@@ -1332,7 +1471,7 @@ $$
 | Fano (7,3,1) | 3 | 1 | 3 | **2** |
 | Fano complement (7,4,2) | 4 | 2 | 4 | **2** |
 
-Both designs with $b=7$ blocks have the **same** decoherence rate. The closure of the [bridge](/docs/proofs/minimality/theorem-octonionic-derivation) P1+P2 **is not achieved** by a purely dynamical argument — reduction to $\lambda = 1$ ([primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω)) remains the best result within the BIBD approach. The bridge is closed by an alternative route: [T15 — full chain of 12 steps, all [Т]](/docs/core/foundations/axiom-septicity#мост-p1p2).
+Both designs with $b=7$ blocks have the **same** decoherence rate. The closure of the [bridge](/docs/proofs/minimality/theorem-octonionic-derivation) P1+P2 **is not achieved** by a purely dynamical argument — reduction to $\lambda = 1$ ([primitivity of the linear part $\mathcal{L}_0$](/docs/core/operators/lindblad-operators#примитивность-ℒω)) remains the best result within the BIBD approach. The bridge is closed by an alternative route: [T15 — full chain of 12 steps, all [T]](/docs/core/foundations/axiom-septicity#мост-p1p2).
 :::
 
 ---
@@ -1431,7 +1570,7 @@ See [Spacetime](../foundations/spacetime#стрела-времени) for geomet
 
 ### Non-associative structure {#неассоциативная-структура}
 
-:::info Octonionic non-associativity and dynamics [И]
+:::info Octonionic non-associativity and dynamics [I]
 In the [octonionic interpretation](../structure/dimensions#октонионная-интерпретация), non-associativity of $\mathbb{O}$ formalizes a key property of the dynamics: the result of successive transformations depends on the order of grouping.
 
 **Associator** $[x, y, z] := (xy)z - x(yz)$ — a measure of non-associativity — vanishes for any pair of elements (Artin's theorem [Т]: $\mathbb{O}$ is **alternative**), but is nonzero for triples.
@@ -1439,14 +1578,14 @@ In the [octonionic interpretation](../structure/dimensions#октонионна�
 **Consequences [И]:**
 - **Alternativity:** Pairwise interactions of dimensions are associative, triple ones are not
 - **Moufang identities:** $((xy)z)y = x(y(zy))$ and analogues — structural constraints on dynamics
-- Bridge [Т] (closed, T15)
+- Bridge [T] (closed, T15)
 
 [Structural derivation →](../../proofs/minimality/theorem-octonionic-derivation)
 :::
 
 ## Internal environment (E_int) {#внутренняя-среда}
 
-:::info Definition (Internal environment) [О]
+:::info Definition (Internal environment) [D]
 **Internal environment** $E_{\text{int}}$ — the totality of reactivated Γ-traces acting as an internal source of perturbation alongside the external environment $E_{\text{ext}}$:
 
 $$
@@ -1481,7 +1620,7 @@ In the SYNARC-Ω architecture, the internal environment is implemented through E
 
 ## Reconsolidation of Γ-trace {#реконсолидация}
 
-:::info Definition (Reconsolidation) [О]
+:::info Definition (Reconsolidation) [D]
 Upon reactivation of a Γ-trace ($c_\alpha > c_{\text{recall}}$), the trace becomes **labile** and is subjected to updating by the current context:
 
 $$
