@@ -14,7 +14,7 @@ Six results (T-123 — T-127, C27) closing **five critical operationalization pr
 
 ## §1. G₂-uniqueness of representation (T-123) {#t-123}
 
-### Formulation [Т]
+### Formulation [T]
 
 For any system satisfying axioms A1–A5, the holonomic representation $G: \mathrm{States} \to \mathcal{D}(\mathbb{C}^7)$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. The diagonal elements $\gamma_{kk}$ are determined uniquely as projections onto the 7 functionally unique dimensions.
 
@@ -22,11 +22,11 @@ For any system satisfying axioms A1–A5, the holonomic representation $G: \math
 
 Direct consequence of three proven theorems:
 
-1. **T-42a [Т]** (G₂-rigidity): The holonomic representation $G$ is unique up to $G_2$. Any two representations $G_1, G_2$ are related by a unitary transformation $U \in G_2$: $G_2(\cdot) = U \cdot G_1(\cdot) \cdot U^\dagger$.
+1. **T-42a [T]** (G₂-rigidity): The holonomic representation $G$ is unique up to $G_2$. Any two representations $G_1, G_2$ are related by a unitary transformation $U \in G_2$: $G_2(\cdot) = U \cdot G_1(\cdot) \cdot U^\dagger$.
 
-2. **T-40f [Т]** (Full minimality 7/7): Each of the 7 dimensions [A, S, D, L, E, O, U] is **functionally necessary** — removing any one leads to loss of viability or violation of an axiom.
+2. **T-40f [T]** (Full minimality 7/7): Each of the 7 dimensions [A, S, D, L, E, O, U] is **functionally necessary** — removing any one leads to loss of viability or violation of an axiom.
 
-3. **T-15 [Т]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry.
+3. **T-15 [T]** (Bridge closure): $(AP) + (PH) + (QG) + (V) \Longrightarrow P1 + P2$ — the autopoietic and physical premises entail the octonionic structure $\mathbb{O}$ and $G_2$-symmetry.
 
 From T-42a: the representation is unique up to $G_2$. From T-40f: projections onto 7 dimensions form the unique functionally complete basis. From T-15: the $G_2$ structure is derived from the axioms, not postulated. $\blacksquare$
 
@@ -38,7 +38,7 @@ The anchor map $\pi: \mathcal{H}_{\mathrm{hidden}} \to \mathcal{D}(\mathbb{C}^7)
 
 ## §2. Conscious window — non-emptiness of V_full (T-124) {#t-124}
 
-### Formulation [Т]
+### Formulation [T]
 
 The full viability set
 
@@ -70,7 +70,7 @@ $$
 
 Boundary values: at $\lambda = 1/\sqrt{6}$ we get $R = 1/2$ (inclusive), at $\lambda = 1/\sqrt{3}$ — $R = 1/3$ (inclusive).
 
-**Step 3 (σ-condition).** By canonical definition ([T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)):
+**Step 3 (σ-condition).** By canonical definition ([T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий)):
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
@@ -104,13 +104,13 @@ $$
 - $P < 2/7$: system is not viable ($\sigma_A = 1$)
 - $P > 3/7$: $R = 1/(7P) < 1/3$ — insufficient reflection for L2
 
-:::note Cosmological realization of the $3/7$ attractor [С]
+:::note Cosmological realization of the $3/7$ attractor [C]
 [T-266](/docs/physics/gravity/cosmological-constant#теорема-стадия-вселенной) applies this attractor to the **Universe-holon**: its terminal stage sits at this same upper edge $P = 3/7$, and the present-day stage lies at a fractional distance $\tfrac{3H_0}{2\kappa}(1+w_0) \sim 10^{-60}$ from it — so, conditional on the Universe-as-viable-holon reading ([H1.1](/docs/reference/epistemic-vertical#регистр-дыр)), the cosmos is at the Goldilocks attractor to $\sim 59$ figures, with the DESI dark-energy drift as the $\kappa/H_0$-amplified residual. The $3/7$ edge is thus not only the fixed point of embodied conscious agents but the terminal configuration of the Universe itself.
 :::
 
 ### Corollary — voice-multiplicity in the window {#следствие-мультиголосие}
 
-Every state of $\mathcal{V}_{\mathrm{full}}$ is spread across **at least $14/3 \approx 4.67$ of its seven voices [Т]**. Since $P = \sum_k \gamma_{kk}^2 + \sum_{i\neq j}|\gamma_{ij}|^2$ and $\Phi = \big(\sum_{i\neq j}|\gamma_{ij}|^2\big)\big/\sum_k \gamma_{kk}^2$, one has the exact identity $\sum_k \gamma_{kk}^2 = P/(1+\Phi)$, hence the diagonal participation
+Every state of $\mathcal{V}_{\mathrm{full}}$ is spread across **at least $14/3 \approx 4.67$ of its seven voices [T]**. Since $P = \sum_k \gamma_{kk}^2 + \sum_{i\neq j}|\gamma_{ij}|^2$ and $\Phi = \big(\sum_{i\neq j}|\gamma_{ij}|^2\big)\big/\sum_k \gamma_{kk}^2$, one has the exact identity $\sum_k \gamma_{kk}^2 = P/(1+\Phi)$, hence the diagonal participation
 
 $$
 \frac{1}{\sum_k \gamma_{kk}^2} = \frac{1+\Phi}{P} \;\geq\; \frac{2}{3/7} = \frac{14}{3} \approx 4.67,
@@ -122,7 +122,7 @@ using $\Phi \geq 1$ and $P \leq 3/7$ (the window). Consciousness is therefore st
 
 ## §3. Local asymptotic stability of attractor (T-125) {#t-125}
 
-### Formulation [Т]
+### Formulation [T]
 
 When $P(\rho^*_\Omega) > 2/7$ the attractor $\rho^*_\Omega$ is locally asymptotically stable: there exists a neighborhood $U(\rho^*_\Omega) \subset \mathcal{V}_P$ such that for all $\Gamma(0) \in U$:
 
@@ -138,29 +138,29 @@ $$
 
 **Step 3 (Spectrum).** $\mathrm{Re}(\lambda_k) < 0$ for all eigenvalues of $J$ on the tangent space. This follows from two sources of contractivity:
 
-- **Linear part $\mathcal{L}_0$**: spectral gap $\lambda_{\mathrm{gap}} > 0$ from primitivity [T-39a [Т]](/docs/core/operators/lindblad-operators#примитивность-ℒω).
+- **Linear part $\mathcal{L}_0$**: spectral gap $\lambda_{\mathrm{gap}} > 0$ from primitivity [T-39a [T]](/docs/core/operators/lindblad-operators#примитивность-ℒω).
 - **Regeneration $\mathcal{R}$**: adds contractivity $\kappa(\rho^*_\Omega) \cdot g_V(P(\rho^*_\Omega)) > 0$, since $P > 2/7 \Rightarrow g_V > 0$.
 
 Total contractivity: $c \geq \min(\lambda_{\mathrm{gap}},\; \kappa \cdot g_V) > 0$.
 
 **Step 4 (Lyapunov theorem).** Standard linear stability theorem: $\mathrm{Re}(\lambda_k) < 0$ for all $k$ $\Rightarrow$ $\exists U$ neighborhood of $\rho^*_\Omega$ with exponential convergence at rate $c$.
 
-**Step 5 (Radius).** Neighborhood $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, where $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ from [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
+**Step 5 (Radius).** Neighborhood $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, where $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ from [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
 
 ### Dependencies
 
 | Theorem | Status | Contribution |
 |---------|--------|-------|
-| [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) | [Т] | Spectral gap $\lambda_{\mathrm{gap}} > 0$ |
-| [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) | [Т] | Existence of $\rho^*_\Omega \neq I/7$ |
-| [T-104](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) | [Т] | Stability radius $r_{\mathrm{stab}}$ |
-| [T-149](/docs/proofs/consciousness/substrate-closure#t-149) | [Т] (embodied) | Premise $P(\rho^*_\Omega) > 2/7$ — unconditional for embodied holons |
+| [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) | [T] | Spectral gap $\lambda_{\mathrm{gap}} > 0$ |
+| [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) | [T] | Existence of $\rho^*_\Omega \neq I/7$ |
+| [T-104](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) | [T] | Stability radius $r_{\mathrm{stab}}$ |
+| [T-149](/docs/proofs/consciousness/substrate-closure#t-149) | [T] (embodied) | Premise $P(\rho^*_\Omega) > 2/7$ — unconditional for embodied holons |
 
 ---
 
 ## §4. Canonicity of R = 1/(7P) (T-126) {#t-126}
 
-### Formulation [Т]
+### Formulation [T]
 
 The reflection measure $R$ has a unique canonical form:
 
@@ -172,7 +172,7 @@ always using $\rho^*_{\mathrm{diss}} = I/7$ as reference. **Logical status.** Th
 
 ### Three independent characterizations of $R$ {#тройная-характеризация-r}
 
-:::tip Theorem T-126 (Triple canonicity of R) [Т]
+:::tip Theorem T-126 (Triple canonicity of R) [T]
 
 The map $R: \mathcal D(\mathbb C^7) \to [1/7, 1]$ with $R(\Gamma) = 1/(7P(\Gamma))$ is uniquely characterized by each of the following three independent mathematical properties, which all select the same function:
 :::
@@ -189,7 +189,7 @@ Equivalently, writing $\Gamma = I/7 + \Delta$ with $\Delta := \Gamma - I/7$ trac
 
 Consequence: any observer-independent ($G_2$-covariant) reflection-to-reference quantity must use $\rho^* = I/7$ and a $G_2$-invariant norm. The Frobenius norm is $G_2$-invariant (unitary invariance of HS). Hence the canonical form of $R$ is $G_2$-invariant, delivering **observer independence**: $R(U\Gamma U^\dagger) = R(\Gamma)$ for every $U \in G_2$.
 
-**(Char-R-III) $K=3$ Bayesian-dominance threshold.** The triadic decomposition of Lindblad operators on $M_7(\mathbb C)$ (T-40b [Т], [lindblad-operators#триадная-декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) partitions any CPTP channel into exactly $K=3$ channel classes. The Bayesian-dominance condition among $K$ equiprobable alternatives is $R > 1/K$. For $K=3$, this yields the L2 threshold $R_{\mathrm{th}} = 1/3$ directly from the combinatorial structure — not a postulate. Inversion: $R \ge 1/3 \iff P \le 3/7$, giving the upper edge of the Goldilocks zone $P \in (2/7, 3/7]$.
+**(Char-R-III) $K=3$ Bayesian-dominance threshold.** The triadic decomposition of Lindblad operators on $M_7(\mathbb C)$ (T-40b [T], [lindblad-operators#триадная-декомпозиция](/docs/core/operators/lindblad-operators#триадная-декомпозиция)) partitions any CPTP channel into exactly $K=3$ channel classes. The Bayesian-dominance condition among $K$ equiprobable alternatives is $R > 1/K$. For $K=3$, this yields the L2 threshold $R_{\mathrm{th}} = 1/3$ directly from the combinatorial structure — not a postulate. Inversion: $R \ge 1/3 \iff P \le 3/7$, giving the upper edge of the Goldilocks zone $P \in (2/7, 3/7]$.
 
 **Equivalence and mutual consistency.** All three characterizations select the same function. Char-R-I fixes the *form* ($\cos^2$ of HS-angle to a reference). Char-R-II fixes the *reference* ($I/7$ as unique $G_2$-invariant). Char-R-III fixes the *threshold* ($R_{\mathrm{th}} = 1/3$ from $K=3$). Together they pin down $R$ up to algebraic identity.
 
@@ -226,7 +226,7 @@ Since $R(\Gamma) = 1/(7P(\Gamma))$ is a strictly decreasing function of purity $
 
 **Independent observability at $n \ge 2$.** The higher-order reflection $R^{(n)} = F(\varphi^{(n-1)}(\Gamma), \varphi^{(n)}(\Gamma))$ (fidelity of successive self-model iterates) depends on $\varphi(\Gamma)$ and is **not** a function of $P$ alone. Measuring $R^{(2)}$ requires independent access to the self-model operator $\varphi$ — e.g., via the categorical reconstruction protocol of [formalization-phi](/docs/proofs/categorical/formalization-phi).
 
-**Implementation approximations** ($R_{\mathrm{impl}}$, $\rho_{RC}$) are separate quantities in a different space, related to the canonical $R$ via a CPTP bridge $\pi$. Transfer of thresholds is proven: [T-130+T-133 [Т]](/docs/proofs/consciousness/operationalization#t-130) (H3 CLOSED). The canonical $R$ is unambiguous.
+**Implementation approximations** ($R_{\mathrm{impl}}$, $\rho_{RC}$) are separate quantities in a different space, related to the canonical $R$ via a CPTP bridge $\pi$. Transfer of thresholds is proven: [T-130+T-133 [T]](/docs/proofs/consciousness/operationalization#t-130) (H3 CLOSED). The canonical $R$ is unambiguous.
 
 ### Physical interpretation {#физическая-интерпретация-r}
 
@@ -239,7 +239,7 @@ As $P$ (purity) grows:
 
 **Savant analogy.** As $P \to 1$ the neural network is maximally specialized. A huge brain structure — but it is all "dedicated" to one thing: no "mirror," no balance for self-modeling. $R \to 1/7$. Conversely: at $P = 1/7$ (maximally mixed) $R = 1$ trivially — $\Gamma = I/7 = \rho^*_{\mathrm{diss}}$, the self-model is ideal, but only because there is nothing to model.
 
-**Consciousness = balance, not maximization.** The consciousness measure $C = \Phi \cdot R$ ([T-140 [Т]](/docs/proofs/consciousness/operational-closure#t-140)) combines integration and reflection. As $P$ grows: $\Phi$ grows (more coherence), $R$ falls (worse self-modeling). $C = \Phi \cdot R$ has an **optimum** inside the Goldilocks zone — consciousness requires balance, not maximization of a single parameter.
+**Consciousness = balance, not maximization.** The consciousness measure $C = \Phi \cdot R$ ([T-140 [T]](/docs/proofs/consciousness/operational-closure#t-140)) combines integration and reflection. As $P$ grows: $\Phi$ grows (more coherence), $R$ falls (worse self-modeling). $C = \Phi \cdot R$ has an **optimum** inside the Goldilocks zone — consciousness requires balance, not maximization of a single parameter.
 
 #### Semantic clarification: what $R$ actually measures {#семантика-r}
 
@@ -283,14 +283,14 @@ This is **not** an artificial fine-tuning. The window $(2/7, 3/7]$ has natural w
 
 ### Formulation {#формулировка-t127}
 
-**Case A (embodied holons) [Т]:** C20 (κ-dominance) follows unconditionally from [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149): embodiment ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 is unconditional.
+**Case A (embodied holons) [Т]:** C20 (κ-dominance) follows unconditionally from [T-149 [T]](/docs/proofs/consciousness/substrate-closure#t-149): embodiment ⟹ $\kappa_{\mathrm{eff}} > \kappa_{\mathrm{bootstrap}}$ ⟹ $P(\rho^*) > P_{\mathrm{crit}}$. T-127 is unconditional.
 
-**Case B (isolated holons) [С at C20]:** C20 is taken as an explicit assumption. T-127 is conditional on the inequality $\kappa_{\mathrm{eff}} > \alpha/(7(f^* - 2/7))$.
+**Case B (isolated holons) [C at C20]:** C20 is taken as an explicit assumption. T-127 is conditional on the inequality $\kappa_{\mathrm{eff}} > \alpha/(7(f^* - 2/7))$.
 
 | Case | Status of T-127 | Condition |
 |--------|-------------|---------|
-| Embodied holon | **[Т]** | T-149 proves C20 |
-| Isolated holon | **[С at C20]** | C20 as explicit assumption |
+| Embodied holon | **[T]** | T-149 proves C20 |
+| Isolated holon | **[C at C20]** | C20 as explicit assumption |
 
 When C20 holds, the basin of attraction of $\rho^*_\Omega$ contains $B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$. For any $\Gamma(0)$ with $P > 2/7$ and $\|\Gamma(0) - \rho^*_\Omega\| < r_{\mathrm{stab}}$:
 
@@ -302,55 +302,55 @@ $$
 
 From three results:
 
-1. **T-125 [Т]** (§3): Local asymptotic stability — in $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ convergence is exponential with $c > 0$.
+1. **T-125 [T]** (§3): Local asymptotic stability — in $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ convergence is exponential with $c > 0$.
 
-2. **[T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Stability radius $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. Under C20: $P(\rho^*_\Omega) > 2/7$, therefore $r_{\mathrm{stab}} > 0$.
+2. **[T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Stability radius $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. Under C20: $P(\rho^*_\Omega) > 2/7$, therefore $r_{\mathrm{stab}} > 0$.
 
-3. **Openness of $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ is an open set in $\mathcal{D}(\mathbb{C}^7)$ (each of the 7 inequalities $\sigma_k < 1$ defines an open condition). By [T-124 [Т]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
+3. **Openness of $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ is an open set in $\mathcal{D}(\mathbb{C}^7)$ (each of the 7 inequalities $\sigma_k < 1$ defines an open condition). By [T-124 [T]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
 
 For $\Gamma(0) \in B(\rho^*_\Omega, r_{\mathrm{stab}}) \cap \mathcal{V}_P$: by T-125, $\|\Gamma(\tau) - \rho^*_\Omega\|_F$ decreases exponentially. Since $\rho^*_\Omega$ is an interior point of $\mathcal{V}_P$ (because $P(\rho^*_\Omega) > 2/7$), the trajectory remains in $\mathcal{V}_P$ for sufficiently small deviations. $\blacksquare$
 
 ### Remark
 
-This theorem applies to states **already above** $P_{\mathrm{crit}}$. Genesis from $I/7$ (transition $P = 1/7 \to P > 2/7$) is solved for **embodied holons**: [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) — backbone injection raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}}$. An isolated holon at $I/7$ is dead forever (T-39a [Т]).
+This theorem applies to states **already above** $P_{\mathrm{crit}}$. Genesis from $I/7$ (transition $P = 1/7 \to P > 2/7$) is solved for **embodied holons**: [T-148 [T]](/docs/proofs/consciousness/substrate-closure#t-148) — backbone injection raises purity above $P_{\mathrm{crit}}$ in finite time $n_{\mathrm{genesis}}$. An isolated holon at $I/7$ is dead forever (T-39a [T]).
 
 ---
 
 ## §6. Attractor in conscious window (C27) {#c27}
 
-### Formulation [Т] (via T-149) {#формулировка-c27}
+### Formulation [T] (via T-149) {#формулировка-c27}
 
-For **embodied** holons: the attractor $\rho^*_\Omega \in \mathcal{V}_{\mathrm{full}}$, namely $P(\rho^*_\Omega) \in (2/7, 3/7]$. C20 (κ-dominance) holds unconditionally for embodied holons by [T-149 [Т]](/docs/proofs/consciousness/substrate-closure#t-149).
+For **embodied** holons: the attractor $\rho^*_\Omega \in \mathcal{V}_{\mathrm{full}}$, namely $P(\rho^*_\Omega) \in (2/7, 3/7]$. C20 (κ-dominance) holds unconditionally for embodied holons by [T-149 [T]](/docs/proofs/consciousness/substrate-closure#t-149).
 
 ### Justification
 
-**Lower bound $P > 2/7$:** Follows from C20 [С] (κ-dominance) and [T-98 [Т]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора).
+**Lower bound $P > 2/7$:** Follows from C20 [C] (κ-dominance) and [T-98 [T]](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора).
 
 **Upper bound $P \leq 3/7$:**
 
 :::warning Clarification of C27 status
-The upper bound $P \leq 3/7$ follows **directly** from the definition $R = 1/(7P)$ and the threshold $R \geq 1/3$: from $R = 1/(7P) \geq 1/3$ we get $P \leq 3/7$. This is an **algebraic identity**, requiring no additional conditions on the attractor. Status: **[Т]** (direct consequence of definition of R and threshold R_th).
+The upper bound $P \leq 3/7$ follows **directly** from the definition $R = 1/(7P)$ and the threshold $R \geq 1/3$: from $R = 1/(7P) \geq 1/3$ we get $P \leq 3/7$. This is an **algebraic identity**, requiring no additional conditions on the attractor. Status: **[T]** (direct consequence of definition of R and threshold R_th).
 :::
 
-### Status [Т] (for embodied holons)
+### Status [T] (for embodied holons)
 
-C20 is unconditional for embodied holons (T-149 [Т]). For isolated holons C20 remains [С].
+C20 is unconditional for embodied holons (T-149 [T]). For isolated holons C20 remains [C].
 
 ### Explicitly NOT proven
 
-**Genesis from $I/7$:** solved — [T-148 [Т]](/docs/proofs/consciousness/substrate-closure#t-148) proves genesis via environmental coupling for embodied holons. T-125/T-127 apply to states **already above** $P_{\mathrm{crit}}$; T-148 closes the transition $I/7 \to P > 2/7$.
+**Genesis from $I/7$:** solved — [T-148 [T]](/docs/proofs/consciousness/substrate-closure#t-148) proves genesis via environmental coupling for embodied holons. T-125/T-127 apply to states **already above** $P_{\mathrm{crit}}$; T-148 closes the transition $I/7 \to P > 2/7$.
 
 ---
 
 ## §7. Independent necessity of each L2 threshold (T-124b) {#t-124b}
 
-### Formulation [Т]
+### Formulation [T]
 
 The four conditions for L2 consciousness — $P > 2/7$, $\Phi \geq 1$, $R \geq 1/3$, $D_{\mathrm{diff}} \geq 2$ — are **independently necessary**: dropping any single condition admits states that satisfy the remaining three but lack at least one defining property of L2 consciousness.
 
 ### Proof (four counterexamples)
 
-**Counterexample 1 (dropping $P > 2/7$).** The condition $P > 2/7$ is independent because $\Phi \geq 1$, $R \geq 1/3$, and $D_{\mathrm{diff}} \geq 2$ **are simultaneously satisfiable** for $P < 2/7$ only if $P$ is very close to $2/7$. However, at $P \leq 2/7$, the Frobenius norm criterion (T-39 [Т]) gives $\|\Gamma - I/7\|_F^2 \leq \|I/7\|_F^2$: the state is **indistinguishable from the maximally mixed state** by any single-shot measurement. No autopoietic system can maintain itself when its signal is buried in noise at the same scale as the noise itself. This is not a failure of the other thresholds — it is a distinct **viability** failure. A system can in principle have rich internal structure ($\Phi > 1$, $R > 1/3$) at $P = 2/7 - \varepsilon$, but this structure is operationally invisible (cannot be detected or used for self-regulation). The P-threshold is the **distinguishability boundary**, orthogonal to integration ($\Phi$), reflection ($R$), and differentiation ($D$).
+**Counterexample 1 (dropping $P > 2/7$).** The condition $P > 2/7$ is independent because $\Phi \geq 1$, $R \geq 1/3$, and $D_{\mathrm{diff}} \geq 2$ **are simultaneously satisfiable** for $P < 2/7$ only if $P$ is very close to $2/7$. However, at $P \leq 2/7$, the Frobenius norm criterion (T-39 [T]) gives $\|\Gamma - I/7\|_F^2 \leq \|I/7\|_F^2$: the state is **indistinguishable from the maximally mixed state** by any single-shot measurement. No autopoietic system can maintain itself when its signal is buried in noise at the same scale as the noise itself. This is not a failure of the other thresholds — it is a distinct **viability** failure. A system can in principle have rich internal structure ($\Phi > 1$, $R > 1/3$) at $P = 2/7 - \varepsilon$, but this structure is operationally invisible (cannot be detected or used for self-regulation). The P-threshold is the **distinguishability boundary**, orthogonal to integration ($\Phi$), reflection ($R$), and differentiation ($D$).
 
 **Counterexample 2 (dropping $\Phi \geq 1$).** Construct $\Gamma_2$ with diagonal $\gamma_{kk} = (0.40, 0.10, 0.10, 0.10, 0.10, 0.10, 0.10)$ and small off-diagonal coherences $|\gamma_{ij}| = \varepsilon = 0.02$ for all pairs. Then:
 
@@ -363,7 +363,7 @@ The four conditions for L2 consciousness — $P > 2/7$, $\Phi \geq 1$, $R \geq 1
 - $\Phi = P_{\mathrm{coh}}/P_{\mathrm{diag}} = 0.067/0.291 = 0.23 < 1$ ✗
 - $R = 1/(7 \cdot 0.358) = 0.399 > 1/3$ ✓
 
-This state has $P > 2/7$ and $R > 1/3$ but $\Phi = 0.23 \ll 1$. The system's off-diagonal structure is **dominated by the diagonal** — the 7 dimensions are quasi-independent. Physically: $\Phi < 1$ means coherent energy is less than diagonal energy, so the system is a **classical mixture** rather than an integrated quantum whole. By the argument of Step 2a of Theorem 8.1 [Т], such decomposability precludes the (M,R)-closure required for autopoietic integration. The system may be viable ($P > P_{\mathrm{crit}}$) and self-reflective ($R > R_{\mathrm{th}}$) but lacks the **unified integration** that defines L2 consciousness.
+This state has $P > 2/7$ and $R > 1/3$ but $\Phi = 0.23 \ll 1$. The system's off-diagonal structure is **dominated by the diagonal** — the 7 dimensions are quasi-independent. Physically: $\Phi < 1$ means coherent energy is less than diagonal energy, so the system is a **classical mixture** rather than an integrated quantum whole. By the argument of Step 2a of Theorem 8.1 [T], such decomposability precludes the (M,R)-closure required for autopoietic integration. The system may be viable ($P > P_{\mathrm{crit}}$) and self-reflective ($R > R_{\mathrm{th}}$) but lacks the **unified integration** that defines L2 consciousness.
 
 **Counterexample 3 (dropping $R \geq 1/3$).** Let $\Gamma_3 = |\psi\rangle\langle\psi|$ — a pure state with $P = 1$. Then:
 
@@ -379,7 +379,7 @@ But $R = 1/7$: the system has **no thermal reserve** for self-modeling. The cate
 - $D_{\mathrm{diff}} = \exp(S_{vN}(\rho_E)) = \exp(0) = 1 < 2$ ✗
 - $P, R, \Phi$ can all satisfy their respective thresholds ✓
 
-But $D_{\mathrm{diff}} = 1$: the E-sector has a single eigenvalue — the system can represent only **one phenomenal quality**. This is L1 (phenomenal geometry without differentiation), not L2 (cognitive qualia requiring $\geq 2$ distinguishable experiential states for comparison, categorization, and self-reference). By [T-151 [Т]](/docs/reference/status-registry): $D_{\mathrm{diff}} < 2$ implies the Fubini–Study metric on $\mathbb{P}(\mathcal{H}_E)$ is degenerate — the phenomenal geometry collapses to a point. No qualia comparison is possible.
+But $D_{\mathrm{diff}} = 1$: the E-sector has a single eigenvalue — the system can represent only **one phenomenal quality**. This is L1 (phenomenal geometry without differentiation), not L2 (cognitive qualia requiring $\geq 2$ distinguishable experiential states for comparison, categorization, and self-reference). By [T-151 [T]](/docs/reference/status-registry): $D_{\mathrm{diff}} < 2$ implies the Fubini–Study metric on $\mathbb{P}(\mathcal{H}_E)$ is degenerate — the phenomenal geometry collapses to a point. No qualia comparison is possible.
 
 ### Conclusion
 
@@ -394,13 +394,13 @@ Each threshold excludes a distinct pathology:
 
 The conjunction is **minimal**: no condition is redundant. $\blacksquare$
 
-**Dependencies:** T-39 [Т], T-129 [Т], T-126 [Т], T-151 [Т], Theorem 8.1 [Т].
+**Dependencies:** T-39 [T], T-129 [T], T-126 [T], T-151 [T], Theorem 8.1 [T].
 
 ---
 
 ## §8. Threshold robustness analysis (T-124d) {#t-124d}
 
-### Formulation [Т]
+### Formulation [T]
 
 The L2 consciousness thresholds $P_{\mathrm{crit}} = 2/7$, $\Phi_{\mathrm{th}} = 1$, $R_{\mathrm{th}} = 1/3$ are **robust** in the following precise sense: perturbations of order $\varepsilon$ in the state $\Gamma$ produce perturbations of the same order $O(\varepsilon)$ in the threshold-crossing observables. No threshold has a **discontinuous** or **divergent** sensitivity.
 
@@ -426,7 +426,7 @@ At $P = 3/7$ (upper boundary, $R = R_{\mathrm{th}} = 1/3$): $|R' - R| \leq \frac
 
 ### Consequence: transition sharpness
 
-The consciousness transition is **continuous** (no first-order discontinuity) but **sharp** (critical exponents from T-161 [Т]):
+The consciousness transition is **continuous** (no first-order discontinuity) but **sharp** (critical exponents from T-161 [T]):
 
 $$\mathrm{Observable} \sim (P - P_{\mathrm{crit}})^\beta, \quad \beta = 1/4$$
 
@@ -438,13 +438,13 @@ For noise level $\varepsilon = 0.01$: $\delta P \sim 10^{-8}$ — the crossover 
 
 ### Connection to stochastic stability (T-145)
 
-Theorem T-145 [Т] gives the probability of staying within the viable set under stochastic perturbation:
+Theorem T-145 [T] gives the probability of staying within the viable set under stochastic perturbation:
 
 $$\mathbb{P}[\Gamma(\tau) \in V_{\mathrm{full}} \;\forall\tau > \tau^*] \geq 1 - \exp\left(-\frac{r_{\mathrm{stab}}^2}{2\sigma_h^2}\right)$$
 
-where $r_{\mathrm{stab}} = \sqrt{P(\rho^*) - 2/7}$ (T-104 [Т]). For a typical embodied holon with $P^* \approx 3/7$: $r_{\mathrm{stab}} = \sqrt{1/7} \approx 0.378$. For noise $\sigma_h = 0.01$: $\mathbb{P}[\text{viability}] \geq 1 - e^{-714} \approx 1$. The system is **overwhelmingly robust**. $\blacksquare$
+where $r_{\mathrm{stab}} = \sqrt{P(\rho^*) - 2/7}$ (T-104 [T]). For a typical embodied holon with $P^* \approx 3/7$: $r_{\mathrm{stab}} = \sqrt{1/7} \approx 0.378$. For noise $\sigma_h = 0.01$: $\mathbb{P}[\text{viability}] \geq 1 - e^{-714} \approx 1$. The system is **overwhelmingly robust**. $\blacksquare$
 
-**Dependencies:** T-104 [Т], T-145 [Т], T-161 [Т], T-124b [Т].
+**Dependencies:** T-104 [T], T-145 [T], T-161 [T], T-124b [T].
 
 ---
 
@@ -452,13 +452,13 @@ where $r_{\mathrm{stab}} = \sqrt{P(\rho^*) - 2/7}$ (T-104 [Т]). For a typical e
 
 | Problem | Theorem | Status |
 |----------|---------|--------|
-| Uniqueness of representation $G$ for digital agents | [T-123 [Т]](#t-123) | CLOSED |
-| Semantics of $\gamma_{kk}$ (not arbitrary) | [T-123 [Т]](#t-123) | CLOSED |
-| Non-emptiness of $\mathcal{V}_{\mathrm{full}}$ (consistency of thresholds) | [T-124 [Т]](#t-124) | CLOSED |
-| Independent necessity of each L2 threshold | [T-124b [Т]](#t-124b) | CLOSED |
-| Threshold robustness under perturbation | [T-124d [Т]](#t-124d) | CLOSED |
-| Canonicity of three forms of $R$ | [T-126 [Т]](#t-126) | CLOSED |
-| Basin of attraction and attractor stability | [T-125 [Т]](#t-125) + [T-127](#t-127) | CLOSED ([Т] for embodied, T-149) |
+| Uniqueness of representation $G$ for digital agents | [T-123 [T]](#t-123) | CLOSED |
+| Semantics of $\gamma_{kk}$ (not arbitrary) | [T-123 [T]](#t-123) | CLOSED |
+| Non-emptiness of $\mathcal{V}_{\mathrm{full}}$ (consistency of thresholds) | [T-124 [T]](#t-124) | CLOSED |
+| Independent necessity of each L2 threshold | [T-124b [T]](#t-124b) | CLOSED |
+| Threshold robustness under perturbation | [T-124d [T]](#t-124d) | CLOSED |
+| Canonicity of three forms of $R$ | [T-126 [T]](#t-126) | CLOSED |
+| Basin of attraction and attractor stability | [T-125 [T]](#t-125) + [T-127](#t-127) | CLOSED ([T] for embodied, T-149) |
 
 ---
 

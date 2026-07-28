@@ -85,7 +85,7 @@ With uniform distribution $\gamma_{UU} = 1/7 \approx 0.143$. Deviation upward �
 ### Stress in the U channel
 
 $$
-\sigma_U = \mathrm{clamp}(1 - 7\gamma_{UU},\; 0,\; 1) \quad \text{[Т] (T-92)}
+\sigma_U = \mathrm{clamp}(1 - 7\gamma_{UU},\; 0,\; 1) \quad \text{[T] (T-92)}
 $$
 
 - $\sigma_U = 0$: unity is provided ($\gamma_{UU} \geq 1/7$)
@@ -192,12 +192,12 @@ $$
 R \geq R_{\text{th}} = \frac{1}{3}, \quad \Phi \geq \Phi_{\text{th}} = 1
 $$
 
-where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). The thresholds are proved mathematically: $P_{\text{crit}}$ [Т], $R_{\text{th}}$ [Т], $\Phi_{\text{th}}$ **[Т]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)); PW constraint [О] (T16) gives their ontological interpretation. See [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
+where $R$ is the [reflection measure](/docs/consciousness/foundations/self-observation#мера-рефлексии-r). The thresholds are proved mathematically: $P_{\text{crit}}$ [T], $R_{\text{th}}$ [T], $\Phi_{\text{th}}$ **[T]** ([T-129](/docs/proofs/consciousness/operationalization#t-129)); PW constraint [D] (T16) gives their ontological interpretation. See [L2 thresholds](../foundations/axiom-septicity#пороги-l2-строгий-вывод).
 
-### Theorem: Integration threshold Φ_th = 1 [Т] {#теорема-порог-интеграции}
+### Theorem: Integration threshold Φ_th = 1 [T] {#теорема-порог-интеграции}
 
-:::info Status: [Т] Theorem (T-129)
-The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the integration threshold with $P_{\text{crit}} = 2/7$ on the extremal uniform-diagonal state. Previously — a definitional convention; now derived from first principles ([T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129)).
+:::info Status: [T] Theorem (T-129)
+The value $\Phi_{\text{th}} = 1$ is the **unique self-consistent** value of the integration threshold with $P_{\text{crit}} = 2/7$ on the extremal uniform-diagonal state. Previously — a definitional convention; now derived from first principles ([T-129 [T]](/docs/proofs/consciousness/operationalization#t-129)).
 :::
 
 **Statement:**
@@ -250,12 +250,12 @@ The boundary $\Phi = 1$ separates:
 - $\Phi < 1$: classical mixture (localisation dominates over connections)
 - $\Phi \geq 1$: quantum integration (connections are no weaker than localisation)
 
-The value $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. See [proof](/docs/proofs/consciousness/operationalization#t-129).
+The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. See [proof](/docs/proofs/consciousness/operationalization#t-129).
 
 ### Connection with Integrated Information (IIT) {#связь-с-iit}
 
-:::info Status: [О] Definitions formalised; [Т] threshold Φ_th = 1 (T-129)
-The connection between the UHM integration measure ($\Phi_{\text{UHM}}$) and IIT integrated information ($\Phi_{\text{IIT}}$) is defined in the categorical formalism. The exact numerical correspondence of the thresholds is a [Г] hypothesis.
+:::info Status: [D] Definitions formalised; [T] threshold Φ_th = 1 (T-129)
+The connection between the UHM integration measure ($\Phi_{\text{UHM}}$) and IIT integrated information ($\Phi_{\text{IIT}}$) is defined in the categorical formalism. The exact numerical correspondence of the thresholds is a [H] hypothesis.
 :::
 
 #### Definition of Φ_IIT in categorical language
@@ -283,7 +283,7 @@ $$
 $$
 :::
 
-**Structural meaning.** The value $\Phi_{\text{th}} = 1$ **[Т]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. Substantive motivation:
+**Structural meaning.** The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. Substantive motivation:
 
 1. **Purity normalisation:** $P = \mathrm{Tr}(\Gamma^2) = P_{\text{diag}} + P_{\text{coh}}$, so $\Phi \geq 1 \Leftrightarrow P_{\text{coh}} \geq P/2$ — at least half of [purity](/docs/core/dynamics/viability#определение-чистоты) is determined by coherences.
 
@@ -291,11 +291,11 @@ $$
 
 3. **Connection with (AP):** [Closure of the (M,R)-system](/docs/core/foundations/axiom-septicity#предварительное-условие-автономность) requires causal paths between dimensions encoded in the coherences $\gamma_{ij}$. The condition $\Phi \geq 1$ guarantees that these paths are structurally significant (not small perturbations of the diagonal state).
 
-4. **Categorical justification:** In the category **Hol** [Hom-sets](/docs/proofs/categorical/categorical-formalism) between dimensions $i, j$ are identified with coherences: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-unification](/docs/proofs/categorical/categorical-formalism#l-унификация) [Т]). The condition $\Phi \geq 1$ means that the **morphism structure** dominates over the **object structure** — the category is "non-trivially connected".
+4. **Categorical justification:** In the category **Hol** [Hom-sets](/docs/proofs/categorical/categorical-formalism) between dimensions $i, j$ are identified with coherences: $\mathrm{Hom}(i,j) \leftrightarrow \gamma_{ij}$ ([L-unification](/docs/proofs/categorical/categorical-formalism#l-унификация) [T]). The condition $\Phi \geq 1$ means that the **morphism structure** dominates over the **object structure** — the category is "non-trivially connected".
 
 #### Comparison with Φ_IIT {#сравнение-с-iit}
 
-:::warning Hypothesis (Correspondence of UHM–IIT thresholds) [Г]
+:::warning Hypothesis (Correspondence of UHM–IIT thresholds) [H]
 $$
 \Phi_{\text{UHM}} \geq 1 \quad \Longleftrightarrow \quad \Phi_{\text{IIT}} \geq \log(2)
 $$
@@ -305,7 +305,7 @@ The exact numerical correspondence of thresholds is an **open hypothesis**, sinc
 | Aspect | $\Phi_{\text{UHM}}$ | $\Phi_{\text{IIT}}$ |
 |--------|---------------------|---------------------|
 | Definition | Ratio of coherences to diagonal | Minimum distance to separated state |
-| Threshold | 1 **[Т]** (T-129) | $\log(2) \approx 0.693$ (hypothesis) |
+| Threshold | 1 **[T]** (T-129) | $\log(2) \approx 0.693$ (hypothesis) |
 | Computational complexity | $O(N^2)$ — **polynomial** | $O(2^N)$ — **exponential** (NP-hard) |
 | Structural interpretation | Coherent domination | Inseparability |
 | Quantum extension | Natural (already quantum) | Requires modification |
@@ -462,8 +462,8 @@ High coherence with $U$ (large $|\gamma_{Ui}|$) correlates with high overall pur
 
 ### Octonionic context {#октонионный-контекст}
 
-:::note Octonionic correspondence [Т]
-The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [Т]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [Т]](/docs/reference/status-registry) and [T-183 [Т]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $U = e_6$ is fixed up to $G_2$-gauge equivalence ([T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
+:::note Octonionic correspondence [T]
+The dimension corresponds to $e_6 \in \mathrm{Im}(\mathbb{O})$. This identification is a **theorem** [Т]: the [T15 bridge chain](/docs/core/foundations/axiom-septicity#мост-p1p2) (all steps [T]) derives the octonionic structure from (AP)+(PH)+(QG)+(V); [T-177 [T]](/docs/reference/status-registry) and [T-183 [T]](/docs/reference/status-registry) prove the combinatorial and functional uniqueness of each role. The specific assignment $U = e_6$ is fixed up to $G_2$-gauge equivalence ([T-42a [T]](/docs/proofs/categorical/uniqueness-theorem)). Details and $G_2$-caveat: [Octonionic interpretation](./dimensions#октонионная-интерпретация), [structural derivation](../../proofs/minimality/theorem-octonionic-derivation).
 :::
 
 ---
