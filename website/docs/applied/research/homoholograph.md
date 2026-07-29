@@ -3565,3 +3565,47 @@ probe's.
 
 Machine: `window_census.rs`, `gate_reachability.rs`, `phi_source.rs`,
 `gate_discrimination.rs`, `gate_spectrum_null.rs`, `wiring_null.rs`.
+
+## Part XXII. Place enters the chart: the two angles {#часть-xxii-углы-места}
+
+### 90. What place can and cannot change {#углы-что-меняет-место}
+
+Everything the reconstruction has used so far is place-blind: ecliptic
+longitudes are the same for every birth in the same instant, so the doors, the
+hands, the crystal and all forty-eight numbers of `Γ` do not know the city. If
+place is to enter the chart honestly it can enter through exactly one gate —
+the local **angles**: which point of the ecliptic was rising over the eastern
+horizon (the ascendant), and which stood in upper culmination (the MC). These
+two are shared by every house system ever proposed — Placidus, Koch and the
+rest argue only about how to cut the arcs *between* the angles — so the layer
+begins with the angles and, until an owner's decision, ends with them.
+
+The longitudes are plain spherical geometry `[Т]`: sidereal time from the
+Julian date (the GMST polynomial reproduces the J2000 anchor 280.460618° to
+10⁻⁴), the IAU 2006 obliquity, the classical atan2 forms. Reading the two
+longitudes as wheel doors — the **horizon door** and the **zenith door** — is
+the astrological convention, and is marked `[О]` wherever it is spoken.
+
+The verification is a closed loop between two independent modules rather than
+a comparison with foreign software: at the minute when the Sun's longitude
+(our ephemeris) equals the computed ascendant, the Sun's altitude — computed
+from sidereal time and declination alone — comes out below 0.7° at three
+separate epochs. A sign error anywhere in the chain would put that sunrise
+underground. Beyond the polar boundary (`|φ| > 90° − ε`) the ascendant is
+returned as *undefined*, not as a number: for weeks around the solstices the
+ecliptic there does not cross the horizon in the ordinary sense, and a
+convention that hides this would be a guess wearing a formula.
+
+Two consequences are worth stating. First, the ascendant moves about a degree
+every four minutes — it is the fastest hand in the chart, and the only one
+that distinguishes two people born in the same city an hour apart more
+sharply than the Moon does; this is why the angles inherit the honesty
+machinery of birth-time anchorage (`якорность`) automatically. Second, the
+geo-layer acquires its first computable object: "moving is a change of
+reference frame" was, until now, a design sentence; with the angles it is a
+pair of doors that actually change when the frame does. Validation of any
+*reading* of that change stays n-of-1 by diary — the layer's own status
+discipline applies to itself. Machine: `core/src/houses.rs`; intake:
+the onboarding pin and `/birthplace` store the birth point, and the product
+names both angle doors the moment the point arrives.
+
