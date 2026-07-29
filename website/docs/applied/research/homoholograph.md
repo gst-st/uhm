@@ -2067,6 +2067,48 @@ predictive organism has exactly these degrees of freedom to spend (explore,
 stabilise, and the error between), and a description of it can be no simpler and
 needs be no larger.
 
+### 73b. The bottleneck corollary: projections need the strings {#следствие-узкого-ядра}
+
+The factorisation of §73 has a hard implementation corollary. If a taxonomy
+layer is *built* from the core alone — every scale a mixture of the two
+metatraits and the seven voice levels, nine numbers out of the object's
+forty-eight — then distinct constructs of different schools do not merely
+correlate: they **collide**. Measured across 400 charts, an implementation of
+the five taxonomies fed only that nine-number input produced ten bitwise
+identities among thirty-five scales (`r = 1.0000`) — Conscientiousness ≡
+Holland's Realistic ≡ SDT competence among them. This is arithmetic, not
+psychology: the mixture space is too narrow for thirty-five claims `[Т]` (a
+measured property of the construction, reproducible from the guard).
+
+Separation requires the coordinates the core drops — the **strings**, the
+twenty-one pairwise coherences `|Γ_ij|` read against their population norms.
+A string answers a different question than a level: not "how loud is each
+voice" but "how coupled are these two" — and that is precisely the distinction
+each school's own doctrine rests on `[И]`:
+
+* Holland's interests are *activities*, so each type sits on its axis string —
+  Realistic on Form×Movement (the tool in the hand), Investigative on
+  Meaning×Form (inquiry carried to order), Artistic on Expression×Feeling
+  (the medium);
+* Cloninger's character/temperament split becomes machine-readable: character
+  scales (SD, CO, ST) feed on a voice's **wovenness** — the mean strength of
+  its six strings, what a person has built — while temperament scales feed on
+  loudness and prediction error, what they arrived with;
+* SDT's needs are *experiences*, so competence is strong Movement at **low**
+  razlad — mastery is hitting, not trying.
+
+With the strings in, the collisions vanish (zero pairs at `|r| > 0.97` across
+schools) while every literature-reported convergence survives above its floor
+(interests↔traits per Barrick–Mount–Gupta, temperament↔traits per De
+Fruyt–Mervielde). The guard `taxonomies_are_not_one_number_under_many_names`
+holds both sides at once — which is the honest reading of "convergent
+validity" inside one substrate: agreement across charts is inherited from the
+shared generator and is *not* evidence; what is informative is only the
+structure each projection keeps that the others drop. The taxonomy basis is
+one object (`core/src/taxonomy.rs`): seven levels, two metatraits, twenty-one
+strings, razlad, Φ and the Fiedler connectivity — and every school reads its
+own coordinates off it.
+
 ### 74. What the projections settle
 
 The relation is generation-and-subsumption, not imitation. Two things fix its
