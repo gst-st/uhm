@@ -3614,3 +3614,138 @@ the same rule that keeps HD's tone and base off our pages (Part XV). Machine: `c
 the onboarding pin and `/birthplace` store the birth point, and the product
 names both angle doors the moment the point arrives.
 
+
+## Part XXIII. The discipline of the weak signal {#часть-xxiii-дисциплина-слабого-сигнала}
+
+### 91. A model problem: three minutes of birth time {#дисциплина-модельная-задача}
+
+The maternity record of the project's owner says 11:00; an earlier
+event-based rectification had said "a few minutes earlier", and 10:57 had
+lived in the profile ever since. Which is right? The question is three
+minutes wide, and precisely because it is so narrow it makes a perfect
+model problem for a whole class the navigator keeps meeting: a signal that
+may be weak or absent, a rich supply of plausible-looking methods, and a
+strong temptation to hand back a confident point answer. What the answer
+turned out to be matters less than the discipline that produced it, so
+this part records both.
+
+The first rule was fixed before any scan ran: **preregistration**. The
+grid of candidate times (10:30–11:30 in 30-second steps), the kernels and
+their widths, the bodies each method may use, the null models and the
+decision rule were committed to the repository *before* the first curve
+was drawn, and the file explicitly forbids retuning any of them after
+seeing data. Nine channels then ran in two waves: transits of the five
+slow bodies to the local angles on nineteen dated life events
+(conjunctions, σ = 1°), the same with hard aspects, the exact birth
+moments of three children against the parent's angles, solar arcs in both
+directions (σ = 0.5°), primary directions of the angles under the
+Ptolemaic key, progressed angles of the day-for-year clock, and the
+boundaries of the Vimshottari periods. Every null was computed
+maximum-to-maximum — the observed peak is compared with the *best* peak
+each random history achieves anywhere on the grid, which charges the scan
+for looking in many places at once.
+
+The result was a clean, instructive null. No channel reached p < 0.05;
+the two structurally richest ones disagreed about the *sign* of the
+answer — the transit channel preferred 10:57 in every bootstrap resample,
+the solar-arc channel preferred 11:00 in every one — and the sharpest
+possible discriminator, the children's luminaries against the parent's
+axes, turned out to lie outside four kernel widths of every candidate
+axis: a structural zero. Five of the six second-wave channels put more
+mass on 11:00 than on 10:57, with no statistical force anywhere. The
+verdict that survives is the documentary one: **11:00 ± 7 minutes [И]**,
+the typical rounding of a maternity clock. And the old "a few minutes
+earlier" is explained rather than refuted: a point answer extracted from
+event fitting *without a null model* is the noise of whichever kernel one
+happened to choose. Two preregistered kernels voted in opposite
+directions with equal confidence — that is what such noise looks like
+from inside.
+
+### 92. Power, or when a null means something {#дисциплина-мощность}
+
+A null result invites two readings: "there is nothing there" and "this
+instrument could not have seen it anyway". They are distinguished by
+**power analysis**, and the distinction turned out to be dramatic here.
+Synthetic signal was injected: sets of event dates manufactured to be
+angle-timed at a planted birth time, mixed with noise dates in known
+proportion, and run through the untouched pipeline. The transit channel
+detected a planted time from just nineteen events with 100 % power when
+at least half the events carried the signal, and still a third to a half
+of the time at one quarter; at fifty events it detected even the
+one-quarter mixture every time. So its null is a *finding*: the owner's
+nineteen events are genuinely not angle-timed, and had they been, the
+instrument would have said so.
+
+The solar-arc channel returned the opposite certificate: at the planted
+time coinciding with the recorded 11:00 its power was zero — not small,
+zero — even with a hundred events all carrying the signal, while at a
+different planted time it was excellent. The mechanism is a degeneracy:
+a solar-arc contact fixes the *age* at which it occurs, so accepted
+signal dates pile up in the same few spots and the peak slides off the
+plant. The same null that was a finding for one channel is, for the
+other, a blank stare. This is now a named principle of the whole
+project — **П-МОЩНОСТЬ-1: a null without a power certificate is not
+evidence**; a channel that cannot demonstrate detection of an injected
+signal of the claimed strength is mute, not negative — and the
+accumulation machinery below refuses to promote any hypothesis to its
+confident state unless its kernel carries such a certificate.
+
+### 93. The needle tower, or where minutes live {#дисциплина-башня-стрелок}
+
+Part XV argued from population statistics that the phase registers of the
+wheel — colour, tone, base — carry half the chart's information. The
+rectification dispute makes the same point with clock hands. Each body
+crosses a line (0.9375°) at its own speed, so each register of each body
+is a needle with its own period *in minutes of birth time*: the Moon's
+colour needle turns once in ≈ 15 minutes and its tone needle once in
+≈ 2.5; the Sun's tone needle needs 38 hours; the ascendant's line needle
+turns in 3.9 minutes and its colour needle in about 40 seconds. Laid out
+as a table, the tower says exactly where a three-minute question can live
+at all: in the Moon's tone, in the angles' lines and colours — and
+nowhere else. The gates and lines of every planet are stone-still across
+the whole disputed hour.
+
+The encoder respects this structure more literally than expected. Across
+the 10:30–11:30 grid the reconstructed `Γ` jumps exactly once — at the
+design-Moon's line flip — and does *not* jump when the personality Moon
+changes line ten minutes later. This is not a bug: a line enters `Γ` only
+as the phase `θ = π·line/3` of the off-diagonal term of a *phase-bearing*
+gate, and the personality Moon's gate happens to be voice-kind, which
+contributes amplitude only. So the honest resolution statement is: the
+`Γ`-layer resolves about an hour; its minute needles are exactly the line
+flips of phase-bearing gates; "phases carry half" is not a metaphor about
+information percentages but a statement about which register the fast
+hands are physically wired to.
+
+### 94. Posteriors with shadows: the machine that accumulates {#дисциплина-постериоры-тени}
+
+A one-shot test wastes its history: life delivers anchors one at a time —
+an event dated in conversation, a diary day, a move — and the honest
+response is to *accumulate*. The mechanism (`core/src/evidence.rs`) keeps,
+for any hypothesis with a parameter θ, a log-likelihood curve over a θ
+grid that every new anchor multiplies through a preregistered kernel; and
+beside it, two hundred **shadow posteriors** fed by random anchors of the
+same nature, one per real update, so a shadow is always the same age as
+the truth. A report compares the concentration of the real curve with the
+concentration of its shadows and speaks in exactly three states: *"cannot
+tell yet"* (p ≥ 0.1, or fewer anchors than the kernel's floor), *"leaning
+to θ̂"* (0.01 ≤ p < 0.1 — the phrase itself says how many random histories
+look like this), and *"confidently θ̂ ± Δ"* (p < 0.01, and only if the
+kernel is power-certified). The three principles of the project's
+measurement discipline are enforced as panics, not conventions: a report
+without shadows refuses to exist, a foreign kernel refuses to update a
+posterior, and the confident state is unreachable without power.
+
+The acceptance run closed the loop on the model problem. Fed the owner's
+nineteen real events, the birth-time posterior lands in "cannot tell yet"
+at p = 0.32 — the same verdict the preregistered scan gave, now stored as
+a living curve that future anchors will keep updating. Fed nineteen
+*planted* events agreeing on a birth time five minutes past the record,
+the same machine answers "confidently +5.5 ± 1.8 minutes, p = 0.005". The
+instrument does register minute-scale truth from nineteen anchors — when
+the anchors carry it. And the calibration test is itself honest about
+noise: on pure random anchors the leaning state fires in about one run in
+ten, exactly as a uniform p demands, which is why every phrase names its
+p aloud instead of pretending certainty. The type system now makes the
+old mistake — a point answer with no width and no null — inexpressible,
+which is the shortest summary of what this part is for.
