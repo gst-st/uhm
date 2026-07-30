@@ -3836,3 +3836,50 @@ headlines" — it does not, that is now measured — but "does the world's
 chord, entering a person's environment model, earn its place in *their*
 lived record". The environment has become measurable; what it is allowed
 to mean is, as always here, a matter of what survives.
+
+### 98. One day of the conveyor: a hint born, dissected and dead {#мир-конвейер-день}
+
+The programme's remaining question — do *national* charts carry
+information — got a complete life cycle in a single day, and the cycle
+itself is the result worth recording. A specificity test was designed to
+subtract "a bad day for the whole world": events of twelve states
+against their *own* founding charts versus the same dates against each
+other's charts, nulled by permuting the assignment. It came back
+p = 0.036 with the test's power at 100 % — a formal hint. An exploratory
+jackknife then showed the hint standing on one country: without Israel's
+nine famous events p collapsed to 0.18. So a replication was
+preregistered on independent ground — ten states with foundings spread
+across eight decades and sixty-one hard-dated events, plus Israel itself
+retested on eleven *fresh* dates it had never been scored on, against
+two nulls (random dates; random "states"). Everything came back null:
+p = 0.22 for the independent countries, p = 0.43 and 0.61 for fresh
+Israel, power 100 % throughout. The hint was selection noise — famous
+events of a famous chart — and was retracted the same day it was born.
+
+The channel atlas then closed the wider space the hint had implied.
+Six transit channels (conjunctions, hard aspects, the full classical
+set × slow bodies, all bodies less the Moon) were scored on three
+frozen corpora — the independent countries, fresh Israel, and the
+owner's own twenty-two dated anchors against his natal planets (a test
+deliberately independent of the birth-minute dispute) — with a
+studentised-maximum omnibus charging for every look. All eighteen cells
+came back null; the strongest single cells (z ≈ +1.2) are exactly what
+eighteen looks at noise must produce; omnibus power stayed at 100 %.
+And a final test of *sustained states* — war years versus peace years
+in the century's yearly means, nulled by circular shifts — returned
+p = 0.44 with the instrument's power at only 13–14 %, which under the
+power principle reads not as "closed" but as **unmeasurable**: the
+outer planets autocorrelate the yearly features into a handful of
+independent climate epochs per century, and a century of data simply
+cannot interrogate century-scale masks. The principle that a null
+without power is not evidence thereby caught *our own* null — the first
+of the programme to fail its certificate — and renamed it honestly.
+
+What stands at the end of the day is symmetric and clean: description
+lives (the chord, the resonance, the census), prediction is dead at
+every level of the holarchy where it could be measured (world onsets,
+national specificity, personal anchors — all with power on record), and
+one class of questions is marked unmeasurable rather than closed. A
+navigation system that knows *which of its silences are findings and
+which are blindness* — that is the asset; no tradition of reading the
+sky has ever carried its own refutation apparatus this far.
