@@ -3749,3 +3749,90 @@ ten, exactly as a uniform p demands, which is why every phrase names its
 p aloud instead of pretending certainty. The type system now makes the
 old mistake — a point answer with no width and no null — inexpressible,
 which is the shortest summary of what this part is for.
+
+## Part XXIV. The world as a holon: the agent's environment {#часть-xxiv-мир-как-холон}
+
+### 95. One functor, any moment of becoming {#мир-один-функтор}
+
+An agent that measures only itself cannot navigate: orientation needs an
+environment measured in the same coordinates as the self. The holarchy
+(Parts XII–XIV) had already stated the principle — a holon is any
+⟨Γ, B, φ, ℒ, C⟩ with a moment of becoming, and a person is merely the
+most familiar one. The world layer takes this literally. Define
+`Γ_world(t)` as the product's own chart→Γ functor applied to the sky of
+the moment t — "a world born every instant". Deliberately the *same*
+functor as for people, design side and all (the design is then the sky
+88° of solar arc earlier — a fixed lag, stated honestly): sameness is
+what buys comparability, because a person and the world now live in one
+`D(ℂ⁷)`, and the resonance of a personal form with the world's form is a
+computable object rather than a metaphor.
+
+The century series makes the layer concrete: 46 232 days (1900–2026,
+daily at 12:00 UTC), thirty-one features each — `P`, `Φ`, strain, seven
+voice levels, twenty-one string magnitudes. Its census carries a small
+jewel. The average world sits *inside the conscious window*:
+`P_world = 0.370 ± 0.045 ∈ (2/7, 3/7]`, with `Φ_world = 1.27` above the
+integration gate; and the share of days on which the world passes **all
+four consciousness gates is 78.0 %** — practically the same as the
+~77 % of *people* whose charts pass all gates under the same encoder.
+One functor, one behaviour, whatever the holon: the strongest available
+consistency check of "the person is one model among many", passed
+numerically. The status frame holds the reading: this is a property of
+the functor on sky charts `[И]`, not an assertion that the world is
+conscious 78 % of the time. The century's extreme days are exactly what
+they should be — planetary pile-ups (the 1962 grand cluster at 6.75σ,
+the 2003 great Mars opposition epoch): extremes of `Γ_world` are
+stelliums, not omens.
+
+### 96. Calibrating the environment: description yes, prophecy no {#мир-калибровка}
+
+Before the layer may *say* anything beyond description, it faces the
+same discipline Part XXIII built: preregistration first, nulls
+maximum-to-maximum, power certificates. Three event classes were fixed
+in advance — onsets of twenty-four major wars (1914–2023), fifteen great
+earthquakes *as a deliberate control expected to be null* (the sky does
+not shake tectonic plates; if the machine "found" earthquakes it would
+have measured its own false-positive apparatus), and ten market crashes.
+The omnibus statistic scanned all thirty-one features and paid for the
+scan in its null.
+
+Every class came back null: wars p = 0.154, earthquakes p = 0.602,
+crashes p = 0.232. The control is clean — the instrument does not
+invent. And the nulls are *findings*, not blindness, because power was
+demonstrated by injection: dates drawn from the top decile of a
+feature's |z| are detected 100 % of the time at full concentration and
+72–94 % at half, for both injection features. Had war onsets clustered
+in the tails of the world's form at even half strength, the scan would
+have said so in three runs of four. They do not cluster. The conclusion
+is inherited by the product as a sentence the tests protect verbatim:
+the world layer *describes context and does not predict events* — the
+same division Gauquelin's external null already imposed on the personal
+layer, now measured at world scale with the instrument's power on
+record.
+
+### 97. Mutual coherence: the chord, the resonance, the road to countries {#мир-взаимная-согласованность}
+
+What survives calibration is immediately useful. The product's world
+surface reads the day's chord against the century — purity, integration
+and strain as percentiles, the loudest and quietest voice, the tensest
+strings — and then, because person and world share one space, the
+*resonance*: which of the person's own distinctive strings the world
+doubles today, and which strings it pulls that are quiet in them. Every
+sentence stands on a computation with the honesty frame attached; the
+frame itself is guarded by a test that fails if the words "description,
+not prophecy" ever leave the page.
+
+The road onward is preregistered rather than promised. Countries are
+holons with founding moments, so national charts are the same functor
+again — with their honest limits named in advance: the founding moment
+is a convention to be fixed once, the hour is usually unknown, so by the
+needle tower only the gate register is readable and the angles stay
+silent. The specificity test is designed to subtract "a bad day for the
+whole world": national events against the country's *own* chart versus
+the same dates against *other* countries' charts, nulled by permuting
+the assignment. And the personal-level validation path is the diary, as
+everywhere in this research: not "does the world's strain predict
+headlines" — it does not, that is now measured — but "does the world's
+chord, entering a person's environment model, earn its place in *their*
+lived record". The environment has become measurable; what it is allowed
+to mean is, as always here, a matter of what survives.
