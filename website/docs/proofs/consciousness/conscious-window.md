@@ -191,9 +191,23 @@ direct boundary measurements at three self-model purities (two never used in
 calibration): $C$ swings twofold ($2.33 \to 1.16$) and the formula tracks it
 to under $1\,\%$ `[С]`. The once-tempting constant $12/7$ is dead: $C$ is a
 function of the self-model, and $1.71$ was its accidental value at
-$P_\rho = 0.45$. For the full flow the rotation term moves the living
-attractor off the segment (≈13 %), yet the law stands because purity is
-rotation-blind: $\mathrm{tr}(\Gamma[H,\Gamma]) \equiv 0$. In the mid regime
+$P_\rho = 0.45$. For the full flow the rotation term moves the stationary points off the
+segment, and they too are in closed form: every stationary point of the
+canonical flow solves, element-wise,
+
+$$
+\Gamma_{ij}(\kappa) = \frac{g_d\,\mathrm{grey}_{ij} + \kappa\,\rho^*_{ij}}{g_d + \kappa + i\,\omega_{ij}}, \qquad \omega_{ij} = H_i - H_j,
+$$
+
+with one scalar self-consistency $\kappa = \omega_0 B(\Gamma(\kappa))\,
+g_V(P(\Gamma(\kappa)))$ — each coherence a complex Lorentzian with its own
+rotation frequency. The three fixed points (grey, saddle, living) are the
+three roots of this one scalar equation; checked against a 48-dimensional
+Newton solve to five digits at the saddle and at the living point. The
+boundary law's zero-fit coefficient lives on the real-mix statics that the
+fast limit leaves behind; purity remains rotation-blind throughout
+($\mathrm{tr}(\Gamma[H,\Gamma]) \equiv 0$), and the one object still open is
+the saddle's stable manifold (the tilt, measured but not yet derived). In the mid regime
 ($\omega_0 \le 40$) the single-ratio form breaks (equal ratios differ by a
 factor 1.6), and the mechanism is measured: at slow gain the rotation carries
 the true saddle far off the segment (63 % off-segment at $\omega_0 = 20$,
