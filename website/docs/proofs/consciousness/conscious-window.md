@@ -173,8 +173,13 @@ $$
 P^* - \tfrac{2}{7} = C\,\frac{g_d}{\omega_0}, \qquad C(\omega_0) = 1.778 \to 1.719 \to 1.710, \qquad R^2 = 0.999,
 $$
 
-with the limit $C \approx 1.71$ — the candidate $C = 12/7 \approx 1.714$
-(within $0.4\,\%$) stays a conjecture `[Г]` until derived. In the mid regime
+with the limit $C \approx 1.71$. The coefficient itself is *derived* `[С]`:
+it is the saddle balance $C = (P_s - \tfrac17)/(7B(s - P_s))$ with
+$B = \tfrac17 + \hat\kappa_0\,\mathrm{Coh}_E$ and $s = \mathrm{tr}(\Gamma\rho^*)$
+measured on the separatrix ($B \approx 0.180$, $s \approx 0.353$), which
+reproduces the direct measurement to under $1\,\%$; only the closed form of
+the saddle quantities — and with it the candidate $C = 12/7 \approx 1.714$ —
+remains a conjecture `[Г]`. In the mid regime
 ($\omega_0 \le 40$) a slower-decaying additive term breaks the single-ratio
 form (equal ratios there differ by a factor 1.6) — the law is asymptotic, not
 uniform. Below a clock floor the question dissolves:
