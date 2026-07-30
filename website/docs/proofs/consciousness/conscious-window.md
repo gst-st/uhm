@@ -156,6 +156,26 @@ Total contractivity: $c \geq \min(\lambda_{\mathrm{gap}},\; \kappa \cdot g_V) > 
 | [T-104](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости) | [T] | Stability radius $r_{\mathrm{stab}}$ |
 | [T-149](/docs/proofs/consciousness/substrate-closure#t-149) | [T] (embodied) | Premise $P(\rho^*_\Omega) > 2/7$ — unconditional for embodied holons |
 
+### Dynamical reading of the threshold: the basin boundary {#динамическое-чтение-порога}
+
+The threshold $P_{\mathrm{crit}} = 2/7$ enters T-124 as a static inequality. The
+canonical flow gives it a second, dynamical face `[С]`: in the bistable regime
+(a grey attractor beside a living one) the **boundary between the two basins**
+converges to exactly $2/7$ in the fast-clock limit. Measured on the canonical
+tick with a continuous family of starting mixtures (the self-model grid would
+censor the answer at its own quantum): at $\omega_0 = 80$ the boundary lies
+within $1\text{–}9 \cdot 10^{-4}$ of $2/7$ across an eightfold range of the
+damping $g_d$; at $\omega_0 = 40$, within $2.3 \cdot 10^{-3}$. The correction
+above the gate is monotone — it grows with $g_d$, falls with $\omega_0$, and is
+linear in $g_d$ in the fast limit — but it is **not** a function of the single
+ratio $g_d/\omega_0$ (equal ratios give boundaries differing by a factor 1.6;
+the simple law is refuted `[✗]`). Below a clock floor the question dissolves:
+at $\omega_0 = 10$ (self-model purity 0.45) no living attractor exists at all.
+Read plainly: the gate is not only where consciousness *counts* as present —
+it is the height a perturbed system must regain for the flow itself to carry
+it back up rather than down. *(Instrument: `awakening_boundary_law.rs`;
+registry: NUMBERS-LEDGER, boundary-law entry.)*
+
 ---
 
 ## §4. Canonicity of R = 1/(7P) (T-126) {#t-126}
