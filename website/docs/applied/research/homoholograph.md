@@ -3605,7 +3605,12 @@ geo-layer acquires its first computable object: "moving is a change of
 reference frame" was, until now, a design sentence; with the angles it is a
 pair of doors that actually change when the frame does. Validation of any
 *reading* of that change stays n-of-1 by diary — the layer's own status
-discipline applies to itself. Machine: `core/src/houses.rs`; intake:
+discipline applies to itself. Measured place-tolerance closes the honesty loop: a
+±1° error in the birth point (≈111 km) shifts the ascendant by a median
+0.5–0.9° — the horizon *door* flips for 23 % of charts, its *line* for
+96 %. So the product shows the line only where it survives ±22 km and
+±2 minutes of birth-time error; everywhere else the door stands alone —
+the same rule that keeps HD's tone and base off our pages (Part XV). Machine: `core/src/houses.rs`; intake:
 the onboarding pin and `/birthplace` store the birth point, and the product
 names both angle doors the moment the point arrives.
 
