@@ -194,9 +194,13 @@ function of the self-model, and $1.71$ was its accidental value at
 $P_\rho = 0.45$. For the full flow the rotation term moves the living
 attractor off the segment (≈13 %), yet the law stands because purity is
 rotation-blind: $\mathrm{tr}(\Gamma[H,\Gamma]) \equiv 0$. In the mid regime
-($\omega_0 \le 40$) a slower-decaying additive term breaks the single-ratio
-form (equal ratios there differ by a factor 1.6) — the law is asymptotic, not
-uniform. Below a clock floor the question dissolves:
+($\omega_0 \le 40$) the single-ratio form breaks (equal ratios differ by a
+factor 1.6), and the mechanism is measured: at slow gain the rotation carries
+the true saddle far off the segment (63 % off-segment at $\omega_0 = 20$,
+Newton fixed point, one unstable eigenvalue), while the tilted stable manifold
+brings the basin crossing most of the way back down — the boundary is a
+difference of two large geometric terms that the fast limit degenerates,
+leaving the pure segment statics. Below a clock floor the question dissolves:
 at $\omega_0 = 10$ (self-model purity 0.45) no living attractor exists at all.
 Read plainly: the gate is not only where consciousness *counts* as present —
 it is the height a perturbed system must regain for the flow itself to carry
