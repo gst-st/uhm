@@ -191,7 +191,12 @@ direct boundary measurements at three self-model purities (two never used in
 calibration): $C$ swings twofold ($2.33 \to 1.16$) and the formula tracks it
 to under $1\,\%$ `[С]`. The once-tempting constant $12/7$ is dead: $C$ is a
 function of the self-model, and $1.71$ was its accidental value at
-$P_\rho = 0.45$. For the full flow the rotation term moves the stationary points off the
+$P_\rho = 0.45$. <p align="center">
+  <img class="themedImage themedImage--light" alt="The boundary law and the mid-regime geometry" src="/img/theory/boundary-en-light.svg" width="880"/>
+  <img class="themedImage themedImage--dark" alt="The boundary law and the mid-regime geometry" src="/img/theory/boundary-en-dark.svg" width="880"/>
+</p>
+
+For the full flow the rotation term moves the stationary points off the
 segment, and they too are in closed form: every stationary point of the
 canonical flow solves, element-wise,
 
