@@ -165,11 +165,18 @@ converges to exactly $2/7$ in the fast-clock limit. Measured on the canonical
 tick with a continuous family of starting mixtures (the self-model grid would
 censor the answer at its own quantum): at $\omega_0 = 80$ the boundary lies
 within $1\text{–}9 \cdot 10^{-4}$ of $2/7$ across an eightfold range of the
-damping $g_d$; at $\omega_0 = 40$, within $2.3 \cdot 10^{-3}$. The correction
-above the gate is monotone — it grows with $g_d$, falls with $\omega_0$, and is
-linear in $g_d$ in the fast limit — but it is **not** a function of the single
-ratio $g_d/\omega_0$ (equal ratios give boundaries differing by a factor 1.6;
-the simple law is refuted `[✗]`). Below a clock floor the question dissolves:
+damping $g_d$; at $\omega_0 = 40$, within $2.3 \cdot 10^{-3}$. In the fast
+regime the correction obeys a clean law: for $\omega_0 \in \{80, 160, 320\}$
+it is strictly linear in $g_d$ and
+
+$$P^* - \tfrac{2}{7} \;=\; C\,\frac{g_d}{\omega_0}, \qquad
+C(\omega_0) = 1.778 \to 1.719 \to 1.710, \quad R^2 = 0.999,$$
+
+with the limit $C \approx 1.71$ — the candidate $C = 12/7 \approx 1.714$
+(within $0.4\,\%$) stays a conjecture `[Г]` until derived. In the mid regime
+($\omega_0 \le 40$) a slower-decaying additive term breaks the single-ratio
+form (equal ratios there differ by a factor 1.6) — the law is asymptotic, not
+uniform. Below a clock floor the question dissolves:
 at $\omega_0 = 10$ (self-model purity 0.45) no living attractor exists at all.
 Read plainly: the gate is not only where consciousness *counts* as present —
 it is the height a perturbed system must regain for the flow itself to carry
