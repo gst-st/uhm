@@ -173,13 +173,23 @@ $$
 P^* - \tfrac{2}{7} = C\,\frac{g_d}{\omega_0}, \qquad C(\omega_0) = 1.778 \to 1.719 \to 1.710, \qquad R^2 = 0.999,
 $$
 
-with the limit $C \approx 1.71$. The coefficient itself is *derived* `[С]`:
-it is the saddle balance $C = (P_s - \tfrac17)/(7B(s - P_s))$ with
-$B = \tfrac17 + \hat\kappa_0\,\mathrm{Coh}_E$ and $s = \mathrm{tr}(\Gamma\rho^*)$
-measured on the separatrix ($B \approx 0.180$, $s \approx 0.353$), which
-reproduces the direct measurement to under $1\,\%$; only the closed form of
-the saddle quantities — and with it the candidate $C = 12/7 \approx 1.714$ —
-remains a conjecture `[Г]`. In the mid regime
+with the limit $C \approx 1.70$. The coefficient is in **closed form**: for the
+rotation-free part of the flow every stationary point lies on the segment
+$[\,\mathrm{grey}, \rho^*\,]$ (collinearity of $\dot\Gamma = 0$ — exact `[Т]`),
+the saddle's pure-component weight is universally $w = 1/\sqrt6$, and
+
+$$
+C \;=\; \frac{m^*}{7\,B_\psi\,(1 - m^*)}, \qquad m^* = \frac{1}{\sqrt{7P_\rho - 1}},
+$$
+
+with one $\psi$-dependent constant $B_\psi \approx 0.180$. Checked against
+direct boundary measurements at three self-model purities (two never used in
+calibration): $C$ swings twofold ($2.33 \to 1.16$) and the formula tracks it
+to under $1\,\%$ `[С]`. The once-tempting constant $12/7$ is dead: $C$ is a
+function of the self-model, and $1.71$ was its accidental value at
+$P_\rho = 0.45$. For the full flow the rotation term moves the living
+attractor off the segment (≈13 %), yet the law stands because purity is
+rotation-blind: $\mathrm{tr}(\Gamma[H,\Gamma]) \equiv 0$. In the mid regime
 ($\omega_0 \le 40$) a slower-decaying additive term breaks the single-ratio
 form (equal ratios there differ by a factor 1.6) — the law is asymptotic, not
 uniform. Below a clock floor the question dissolves:
