@@ -169,8 +169,9 @@ damping $g_d$; at $\omega_0 = 40$, within $2.3 \cdot 10^{-3}$. In the fast
 regime the correction obeys a clean law: for $\omega_0 \in \{80, 160, 320\}$
 it is strictly linear in $g_d$ and
 
-$$P^* - \tfrac{2}{7} \;=\; C\,\frac{g_d}{\omega_0}, \qquad
-C(\omega_0) = 1.778 \to 1.719 \to 1.710, \quad R^2 = 0.999,$$
+$$
+P^* - \tfrac{2}{7} = C\,\frac{g_d}{\omega_0}, \qquad C(\omega_0) = 1.778 \to 1.719 \to 1.710, \qquad R^2 = 0.999,
+$$
 
 with the limit $C \approx 1.71$ — the candidate $C = 12/7 \approx 1.714$
 (within $0.4\,\%$) stays a conjecture `[Г]` until derived. In the mid regime
