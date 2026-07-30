@@ -182,7 +182,11 @@ $$
 C \;=\; \frac{m^*}{7\,B_\psi\,(1 - m^*)}, \qquad m^* = \frac{1}{\sqrt{7P_\rho - 1}},
 $$
 
-with one $\psi$-dependent constant $B_\psi \approx 0.180$. Checked against
+where $B_\psi = \tfrac17 + \hat\kappa_0 \mathrm{Coh}_E$ is itself in closed
+form on the universal saddle (both factors evaluate by hand from their
+definitions: $\hat\kappa_0 = 0.06675$, $\mathrm{Coh}_E = 0.55195$,
+$B_\psi = 0.17970$ against the engine's $0.1797$) — the coefficient carries
+**no fitted parameter at all**. Checked against
 direct boundary measurements at three self-model purities (two never used in
 calibration): $C$ swings twofold ($2.33 \to 1.16$) and the formula tracks it
 to under $1\,\%$ `[С]`. The once-tempting constant $12/7$ is dead: $C$ is a
