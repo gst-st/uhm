@@ -55,6 +55,17 @@ def main():
         rest = [r for r in rows if r["OGID"] not in first]
         random.seed(SEED + 1)
         sample = random.sample(rest, min(SAMPLE, len(rest)))
+    # Фаза 3 (КАЛИБ-3с): третья подвыборка из дополнения s1∪s2,
+    # seed+2 — развязка класса Б одной ставкой.
+    if os.environ.get("ORACLE_PHASE") == "3":
+        first = {r["OGID"] for r in sample}
+        rest = [r for r in rows if r["OGID"] not in first]
+        random.seed(SEED + 1)
+        second = random.sample(rest, min(SAMPLE, len(rest)))
+        used = first | {r["OGID"] for r in second}
+        rest3 = [r for r in rows if r["OGID"] not in used]
+        random.seed(SEED + 2)
+        sample = random.sample(rest3, min(SAMPLE, len(rest3)))
     done = set()
     try:
         for line in open(JOURNAL):
