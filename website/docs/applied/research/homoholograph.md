@@ -4087,3 +4087,93 @@ a name is not decoration but an interface, and a vocabulary is not
 terminology but a map of access. A system built to be unable to
 flatter owes its reader at least this much — to speak in words that
 do not need a dictionary to be true.
+
+### §X.8 The event oracle: a duel of optics, driven to its honest floor {#x-oracle}
+
+The owner's mandate is blunt: the system is being built first of all
+as an *oracle* — it must learn to forecast events, not describe them
+in hindsight. The honest way to start such a programme is not to build
+forecast machinery but to ask, under preregistration, **who can
+actually see events at all**. Five optics entered a duel on the
+owner's sixteen exactly-dated life events (2013–2026): transit bridges
+in *tropical* longitudes; the same bridge mechanics in *sidereal*
+longitudes (so the two longitude systems compete on equal machinery);
+canonical **jyotish timing** (Vimshottari dasha boundaries, sade-sati,
+Jupiter ingresses from the natal Moon); and two masks derived from our
+own holding dynamics rather than borrowed from any school — the
+**conductivity edges** (days when the composite natal∪sky sits in the
+extreme percentiles of x = κ₀·g_V — interference zeros and cheap-form
+peaks in one mask) and the **phase edges** (days when the sky closes
+or un-rings the loudest natal triad, measured by the holonomy shift
+Δh). A sixth optic — slow personal cycles: secondary progressions,
+the solar return, lunations — joined by a later letter of the same
+preregistration.
+
+The first run caught a design trap with the instrument itself: bridge
+masks defined by fixed orbs cover ~97 % of the calendar, and an optic
+that is always hot sees nothing — its lift is 1 by construction. The
+cure, fixed before the second run, was one knob, not many: hot days
+are the top 15 % of the calendar *by tightness* (the day's minimal orb
+against its own calendar quantile). On sixteen events, with uniform
+and season-preserving nulls, shadow charts for chart-specificity and
+Holm across the family: **no optic passes**. The jyotish−sidereal
+pairwise difference grazes significance ([0.05, 2.05] at 95 %) and
+stays an honest hint, nothing more. The per-event coverage map — the
+duel's obligatory output — is where the programme actually learned
+something: events pile up at the *edges* of the phase channel, and the
+wedding, blind to every borrowed optic, is exactly the strongest
+triad closure of the whole span (Δh at its 3rd percentile). That
+prediction, made from the synthesis table and then frozen as the
+phase-edge mask, closed the wedding on the very next run. Of the ten
+blind zones of the first honest run, two were closed by predicted
+native channels, three dissolved into date quality (events whose own
+text says "approximately summer"), and two — the arrest, the
+hospitalizations — are *imposed* events: their axis is not "which
+day" but "which chain of choices", and they were handed to the
+decision corpus below. The hard residue of day-masks is three events
+out of sixteen.
+
+Scale came from mortality. The Gauquelin-class birth registry (exact
+recorded times) was matched against Wikidata dates of death: a frozen
+first subsample of three thousand seeds yielded **1003 usable
+(natal, death) pairs** — death being the one event nobody selects the
+date of, so the self-selection trap of anchor corpora does not apply.
+All five optics ran with two nulls designed for this corpus: deaths
+permuted *within a birth decade* (outer planets encode the epoch; age
+correlates with slow cycles — the permutation charges for both) and
+the same person's death shifted ±1–5 years. The verdict is a clean
+**null five times over**: every mean lift sits at 1 within noise
+(tropical 1.009, jyotish 0.916, sidereal 1.043, conductivity edges
+1.017, phase edges 0.917; all p ≥ 0.24 on both nulls). The interim
+sidereal hint (lift 1.264, p = .046/.022 at n = 216, logged mid-collection)
+**dissolved at full power** — the preregistration had classified it as
+power noise in advance, and the full sample agreed. A manner-of-death
+cut was preregistered before its data were collected: Wikidata labels
+a manner for only 13 % of the matched people, the point-like classes
+(accident, violence, suicide) all fall below the power guard of fifty,
+and only natural-cause deaths are testable — a de-facto null control,
+since the directional hypothesis says point-like events, not slow
+disease, are where a timing channel would live if it lives anywhere.
+
+What survives this part is discipline and direction, not a winner.
+The discipline is §91–94 applied to a harder question: preregister
+before the instrument, make the nulls pay for every look, demand
+chart-specificity from shadows, correct the family, replicate before
+status — and publish the nulls. The direction is the mandate's own
+second axis: events follow *decisions*, and the system's duty is to
+guard the choice, not the date. That axis is now machinery: when a
+person asks "should I…" about something checkable, the mentor answers
+openly by their architecture — response protocol, form window, first
+step's layer, the ethics axis — and silently seals a **decision
+envelope**: the four layer verdicts, the aggregate alignment, a
+forecast sign the person is never told, and a horizon. When the
+horizon expires, two neutral questions — *how did you act? how did it
+turn out?* — close the envelope. The stratum of people who did *not*
+follow the advice is the natural control where forecast skill is
+measured clean of its own influence; the statistical battery
+(exact tests on that stratum, stratified rank correlation,
+hierarchical pooling, alpha-spending for honest peeking, and
+leave-one-out contributions that decide which layers deserve to stay
+in the alignment score) was fixed before the first envelope existed.
+An oracle that cannot yet beat chance on dates has one honest way to
+be useful meanwhile: keep score of its own advice, in the open.
