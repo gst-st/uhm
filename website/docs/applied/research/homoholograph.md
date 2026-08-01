@@ -4036,3 +4036,54 @@ rule outranks all engines: at words of crisis, every chart is set
 aside and the only move is toward living help. A guidance system
 that cannot flatter had to also be one that cannot exploit — the
 architecture above is what that costs in engineering terms.
+
+### §X.7 The naming: the vocabulary as an interface {#x-naming}
+
+An instrument whose categories wear workshop metaphors taxes every
+reading. Call the way action starts an «ignition», the decision
+channel a «check», the two chart moments «hands», the shield profile
+«survival» — and each page must first teach its own words before it
+may say anything with them. The tax is structural: a term that needs
+introducing costs a sentence, the sentence costs the reader's
+patience, and the product drifts toward one of two failures — jargon
+without a bridge, or a lecture where a reading should be.
+
+The repair is a vocabulary of common words, each carrying the right
+meaning *before* any definition is given. The selection criterion is
+strict: a word qualifies only if its everyday reading — the one a
+person brings from ordinary speech — already points at the measured
+thing. Four categories pass:
+
+| category | what is measured | why the word carries itself |
+|---|---|---|
+| **Layers** (Слои) | the two reading moments of the chart — the birth minute (conscious) and ~88 days prior (bodily) | «layer» already means: same object, two depths |
+| **Response** (Отклик) | the voice that verifies a decision | a decision «echoes» in a person before it is right |
+| **Activation** (Включение) | how action starts under pressure — self, by request, or by detour | «switching on» is how people already describe starting |
+| **Resilience** (Устойчивость) | the shield margin × the evasion closure | the everyday word for standing a blow |
+
+The legacy names are not erased. «Type», «authority», «profile» remain
+beside the native categories as bridges — *the old schools called this
+place…* — because canonical authors stay canonical, and because a
+person arriving from those schools deserves a door, not a wall. The
+conversational agent obeys a one-month bridge discipline: it
+understands an old word silently, answers with the new one, and never
+corrects the person's own speech.
+
+The system's name obeys the same law at a higher octave. **Озарь /
+Ozar** is a coined word with no occupied associations, assembled from
+carriers already present in the language: *озарение* (illumination,
+the flash of understanding) and *заря* (dawn) — with a quiet floor
+beneath both, the Hebrew *ozer*, «helper». The address fan
+(озарь · озар · оз · ozar · oz) wakes the agent on exact words only —
+paronyms like «озарение» in ordinary speech do not summon it. And the
+name is co-sounded all the way down the stack: the binary is `ozar`,
+the data stores are `.ozar_*`, the environment is `OZAR_*`, the tool
+namespace is `ozar` — one name from the chat greeting to the process
+table, with the rename migrating every store and variable on first
+start, no manual step owed by anyone.
+
+The principle underneath is the same one that runs the whole product:
+a name is not decoration but an interface, and a vocabulary is not
+terminology but a map of access. A system built to be unable to
+flatter owes its reader at least this much — to speak in words that
+do not need a dictionary to be true.
