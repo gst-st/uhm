@@ -3883,3 +3883,116 @@ one class of questions is marked unmeasurable rather than closed. A
 navigation system that knows *which of its silences are findings and
 which are blindness* — that is the asset; no tradition of reading the
 sky has ever carried its own refutation apparatus this far.
+
+## Part X. The lattice audit and the hunt for missing carriers {#part-x}
+
+A navigation system that reads the sky through a 64-gate wheel owes an
+answer to a fair question: *what about the other wheels?* Vedic
+astrology cuts the same circle into 27 lunar mansions (nakshatras) of
+13°20′ each, refines them into 108 padas of 3°20′, and reads a ninth
+harmonic chart (navamsha) whose segments are those same padas. If those
+lattices carve reality at joints ours misses, our silences might be
+mere blindness. The audit below answers with arithmetic first and
+statistics second — and both speak plainly.
+
+### §X.1 The lattices do not embed [Т] {#x-lattices}
+
+Write every grid as an exact fraction of the circle: the sign 30°, the
+nakshatra 40/3°, the pada (= navamsha segment) 10/3°, our gate 45/8°,
+our line 15/16°. Two grids meet only where their steps share a common
+multiple, and the least common multiples are theorems, not opinions:
+
+| pair | ratio | boundaries coincide every |
+|---|---|---|
+| pada × line | 32 : 9 | 30° — exactly at sign boundaries |
+| nakshatra × gate | 64 : 27 | 360° — only at 0° Aries |
+| nakshatra × line | 128 : 9 | 120° |
+| pada × gate | 16 : 27 | 90° |
+
+One sign holds exactly 9 padas and exactly 32 of our lines, so the two
+refinement systems synchronize at every sign cusp and *nowhere inside*.
+The gate lattice is coprime with the nakshatra lattice everywhere save
+the circle's origin. The finest common lattice of padas and lines has
+step 5/48° — 3456 cells, a resolution neither tradition ever reads.
+And the nearest gate-to-nakshatra boundaries sit 12.5′ apart — closer
+than the typical uncertainty of the ayanamsha (the sidereal offset),
+which itself drifts one such cell every 7.5 years. Conclusion, at
+theorem strength: **no embedding exists; any bridge between the wheels
+must be semantic, not geometric.** A dictionary may translate meanings;
+no lattice translates positions.
+
+### §X.2 The missing-carrier hunt: honest nulls {#x-nulls}
+
+The owner's question was sharper still: perhaps events stay
+unpredictable because the *carriers* are missing — the dasha clock,
+Lilith, the White Moon of the Avestan school, Proserpina, the fixed
+stars. Each candidate got a preregistered design, a shift-null, and a
+verdict on the owner's dated-event corpus (22 events, 14.3 years):
+
+- **Dasha boundaries and lords** (the Vimshottari clock): null in five
+  independent designs; the type→lord dictionary of the tradition —
+  null (p = .59/.99/.87). The carrier of eventfulness is not period
+  arithmetic.
+- **Sade-sati versus our Saturn shelves**: the two "hard stretch"
+  detectors, run over 47 years, overlap no better than chance
+  (Jaccard 0.203, two-sided p = 0.42). Two systems that both say
+  "Saturn" are measuring *different* time — they must never be merged
+  in a reading.
+- **Lilith (the mean lunar apogee), event layer**: transits to natal
+  Lilith p = 0.44; transiting Lilith to natal bodies p = 0.28. Null.
+- **Fixed stars**: the owner's natal bodies make 0 conjunctions with
+  the 20 brightest stars at 1° orb (0.78 expected; p = 1.0); fast
+  bodies near stars on event days p = 0.051 against a 0.017 threshold.
+  Null.
+- **The White Moon ("Selena", a 7-year hypothetical)**: tested
+  *phase-free* — if any 7-year carrier existed, a spectral scan of the
+  event dates would show power at T = 7 regardless of anyone's
+  ephemeris. R = 0.029: there is no carrier to argue about.
+- **Proserpina (~650-year hypothetical)**: the corpus covers 2.2 % of
+  one cycle — untestable in principle on a lifetime, and natally a
+  generational constant. Marked unmeasurable, not refuted.
+
+### §X.3 The one survivor — and its discipline {#x-survivor}
+
+The same phase-free spectroscopy that killed "Selena" found one peak
+the multiplicity-corrected null does not explain: **T ≈ 2.10 years,
+global p = 0.022**, surviving a leave-one-out jackknife (min R = 0.571
+above the null's q95 = 0.558) — and sitting on the synodic period of
+Mars (2.135 years, itself above q95). The reading discipline learned
+from the world layer applies unchanged: a hint that survived two gates
+(global correction, jackknife) still owes a third — replication on
+independent people. Until family event corpora repeat it, it is an
+[И]-tier lead, not a carrier; it enters no reading.
+
+### §X.4 Where the search points instead {#x-conditional}
+
+The sum of Part X's nulls with the earlier anchors program says
+something constructive: unconditional scans — *does the sky mark event
+days?* — fail wherever they are given power certificates. What remains
+alive is **conditional** machinery: an activated theme *times* an open
+deficit (the compensation hypothesis, tested only by sealed
+prospective envelopes), and **precursor** machinery: signatures in the
+person's own measured stream ahead of minor events (a preregistered
+classifier that refuses to run below 60 labeled days and must first
+pass a planted-signal self-test — which it now does at p = 0.0005 with
+a clean empty control). Blindness to events, in short, is not cured by
+adding occult points; it is cured — if at all — by conditioning and by
+denser personal data.
+
+### §X.5 Lilith re-read: a portrait hypothesis with a gate {#x-lilith}
+
+One candidate earned a second life on different grounds. Strip the
+medieval demonology from the Lilith corpus and an invariant remains
+across schools: a theme of *rarefied nourishment* — chronically
+hungry, never tamed, returning in waves. That invariant is isomorphic
+to the plain geometry of the lunar apogee: the Moon at its farthest,
+slowest, weakest-tide point, the direction of the ellipse's *empty*
+focus, precessing with an 8.85-year period. The synthesis — "the door
+of rarefied feeding" — is a portrait claim about a natal direction,
+not an event claim, and the event nulls above do not touch it. It
+stays behind a preregistered gate: free-worded self-reports of the
+"chronically hungry theme," collected blind in conversation, matched
+by a judge who sees text only, against center-matched decoy doors.
+Until that test passes, the layer enters no product page; if it fails,
+the tradition remains what it always was — a bridge of meanings
+wearing borrowed robes.
