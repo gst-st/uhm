@@ -677,6 +677,32 @@ Analysis of symbolic systems reveals a fundamental fact: no tradition has descri
 
 ---
 
+## 10. Where symbolic systems live: emergent interfaces of nestedness {#онтологическое-место}
+
+:::info Owner's question, crystallised (2026-08)
+If UHM is everything and everything derives from it — where exactly does a symbolic system sit in the ontology? The answer that survives the analysis of this chapter and the empirical programme: **on the emergent levels, as an interface of a concrete nestedness** — never in the core.
+:::
+
+### 10.1 The claim [О/И]
+
+A symbolic system is not part of the $\Gamma$-formalism and not an approximation of it. It is an **interface that an emergent level builds to the core**: a finite vocabulary in which one holon at one rung of the cosmic nesting — Earth → planetary system → galactic arm → Galaxy → … — reads its own state against the *shared clock of its neighbourhood*. Three structural facts force this placement:
+
+1. **The vocabulary is tied to the rung, not to the core.** Every traditional system samples the *local sky*: the bodies visible from Earth, their periods, their returns. The core ($\Gamma$, the 21 coherences, the thresholds) contains no ephemerides — the [lattice theorems](/docs/applied/research/homoholograph#x-lattices) prove the traditional grids (nakshatras, padas, navamshas) do **not** embed in the native lines, and the [era analysis of Human Design](/docs/applied/research/human-design#эпохи) shows its "constants" are functions of the outer planets' epoch — properties of the neighbourhood, not of the person.
+2. **Geocentrism is a reference frame, not an error.** "Earth as the ship, I at the centre" is the *correct covariant choice* for a holon whose body rides this planet: an ephemeris is the shared atlas-clock of the local nesting (the [blueprint](/docs/applied/research/prime-radiant#чертёж) row "astrology = deterministic shared clock"), and the [geo-layer](/docs/applied/research/homoholograph#часть-xxii-углы-места) reads *place* as a re-calibration of the same frame. A holon riding a different body — or none — would build a different atlas with the same functor.
+3. **The projection functor is generic.** Nothing in the construction $\pi_S: \Gamma \to \mathcal{C}_S$ (§1) mentions humans or Earth. For **any** holon at **any** rung, the same machinery — take the neighbourhood's periodic structure, build the shared clock, project the state — yields "an astrology of that nestedness". The bridges and the full holonomy of computation are derivable for people *and for anything else*; what changes between rungs is only the atlas.
+
+### 10.2 What this predicts and what it forbids [И]
+
+- **Predicts:** any stable symbolic tradition, anywhere, decomposes as *Encoder + shared Atlas-clock + compact alphabet* (the blueprint organs) — and its "empirical constants" are epoch- and place-functions of its rung. Both decompositions have now been verified on the two richest Earth traditions (HD dissected; the jyotish reconstruction programme).
+- **Forbids:** a symbolic system that reads the core *directly* — i.e., a finite vocabulary that beats the [dimensionality theorem](#таксономия) or extracts the phase layer without instrumentation. Also forbids "one true zodiac": rung-interfaces are plural by construction; the question "which system of longitudes is real?" dissolved empirically into a null ([the optics duel](/docs/applied/research/homoholograph#x-oracle)).
+- **Locates the native system:** the [Γ-Canon](/docs/applied/research/gamma-canon) and the native seasons layer are *not another tradition* — they are the interface built **from the core outward** (voices and coherences as the alphabet, the same local atlas as the clock). That is why the native system is "more elegant and more expressive in every sense": it is the unique interface whose alphabet is theorem-forced (§8.1, Law 2; [Σ-rigidity](/docs/applied/research/syndrome-calculus#теорема-сигма)) rather than inherited from one rung's sky.
+
+### 10.3 Status honesty
+
+The *placement* (emergent interface, not core) is [О]-convention resting on [Т]-anchors (lattice non-embedding, era-functions, Kepler bias, the Enc functor). The *generalisation to arbitrary holons* is a research direction [П]: it becomes testable exactly when a second nestedness is instrumented (a long-duration crew, a non-terrestrial holon, an artificial holon with its own periodic neighbourhood — the [environment mandate](/docs/applied/research/homoholograph#часть-xxiv-мир-как-холон) is the first step). Until then it earns its keep as the *organising frame* that already explains why traditions look the way they do — and why none of them could have been the core.
+
+---
+
 ## Related documents
 
 - [Coherence matrix](/docs/core/dynamics/coherence-matrix) — definition of $\Gamma$

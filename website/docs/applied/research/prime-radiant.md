@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15
+sidebar_position: 11
 title: Prime Radiant
 description: "The golden-path navigator over Γ: two floors of residues (quadratic mod 7 and Cauchy), a working reference machine on the canonical dynamics, the categorical-calibration protocol (66 machine-tested hypotheses), the honest limits of prediction (navigator, not prophet), and the ranked application cases."
 ---

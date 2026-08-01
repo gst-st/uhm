@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 5
 title: "Σ-calculus: the diagnosability rigidity of seven"
 description: "A self-contained mathematical treatment. Theorem Σ (T-224): perfect single-fault diagnosability, a nontrivial state grammar and structural rigidity select n = 7 uniquely — a fourth independent derivation track for N = 7, using only sphere packing and design counting. Full proofs: Steiner reconstruction, uniqueness of S(2,3,7), forced linearity, Vasil'ev breakage at n = 15, the van Lint–Tietäväinen ladder. The Σ-compression protocol (T-225): the 21 → 7 → 3 → 1 measurement pyramid with its Lie-algebraic shadow so(7) = g₂ ⊕ Im O. The Steane code [[7,1,3]] as the quantum lift of Shield I, with the complete CSS construction. The Σ-Mor bridge to MSFS intensional grading."
 ---

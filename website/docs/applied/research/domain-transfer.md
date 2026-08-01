@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 15
 title: Domain Transfer
 description: "The generative layer — the third-order engine (mediators, closure law, self-checking dictionary) unfolded to full depth across ten domains, each with a derivation, a verified number, an honest status, and a falsifiable test."
 ---

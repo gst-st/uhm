@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 9
 title: "Mathesis"
 description: "∞-Topos of formal theories: a category-native environment for navigating the space of scientific knowledge"
 ---

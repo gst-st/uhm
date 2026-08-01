@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 10
 title: "The One Grammar: the primary principle"
 description: "The Self-Reading Principle: every viable level of reality must read itself, and the complete grammar of such reading is unique. T-256 classifies every possible partial chart of that grammar (the traditions each drew one); T-257 fixes the only licensed inter-level channel and prices every ephemeris anchor — resolving what astrology saw and where it overreached."
 ---

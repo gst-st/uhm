@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 title: Measurement Protocol for Γ
 description: Operationalization of coherence matrix measurement for AI systems
 ---

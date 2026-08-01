@@ -1,5 +1,5 @@
 ---
-sidebar_position: 16
+sidebar_position: 8
 title: Human Design Dissected
 description: "The Human Design calculation machinery under the microscope: an independent engine cross-verified against open source, the a priori population statistics computed from celestial mechanics alone, the profile law derived as modular arithmetic, the Kepler bias, the hidden combinatorial structure of the mandala (antipodal code map, partial Gray cycle, trigram–center association), the 9-vs-7 question, and a falsification program — with honest statuses throughout."
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 17
+sidebar_position: 12
 title: HomoHoloGraph
 description: "The coherent life navigator: the natal bodygraph as one sensor feeding a Γ-prior; the bridge dictionary, the HB calibration, and the laboratory application"
 ---

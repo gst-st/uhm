@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 title: "Gap-диагностика"
 slug: /applied/research/gap-diagnostics
 description: "Карта прозрачности, диагностические паттерны, протокол дуального интервью, фазовая прогностика, коррекционные протоколы, окна прозрачности"

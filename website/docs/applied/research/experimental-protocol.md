@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 3
 title: "Experimental Protocol"
 description: "Reference protocol for empirical validation of UHM: 4 phases, 23 predictions, TMS-EEG, critical exponents"
 ---

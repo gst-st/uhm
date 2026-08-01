@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 17
 title: Poincaré–Perelman Theorem
 description: Topological analogy for cognitive evolution in UHM
 ---

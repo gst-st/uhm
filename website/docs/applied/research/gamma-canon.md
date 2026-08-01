@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 title: "The Γ-Canon: a generative symbolic system"
 slug: /applied/research/gamma-canon
 description: "The canonical UHM-native symbolic system: seven derived layers, an honest anchoring theory, eight practice protocols, the holarchic ladder of all scales, the rose of limits, calibration by the experience of generations, the absorption map of traditions, a lexicon of new concepts, and a falsification programme"

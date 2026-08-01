@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 16
 title: "Инженерные выводы из P_crit = 2/N"
 description: "Практические следствия теоремы о критической чистоте для проектирования AGI-систем"
 ---

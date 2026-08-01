@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 title: "Gap Diagnostics"
 slug: /applied/research/gap-diagnostics
 description: "Transparency map, diagnostic patterns, dual interview protocol, phase forecasting, correction protocols, transparency windows"

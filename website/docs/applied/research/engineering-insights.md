@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 16
 title: "Engineering Insights from P_crit = 2/N"
 description: "Practical consequences of the critical purity theorem for AGI system design"
 ---

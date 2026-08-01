@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: "Symbolic Correspondences"
 slug: /applied/research/symbolic-correspondence
 description: "Operationalization of symbolic correspondences: back-projection protocol, correspondence tables (zodiac, hexagrams, arcana), research program"
@@ -14,9 +14,23 @@ Operationalization of bridges between symbolic systems and the Gap formalism: th
 
 Operationalization of bridges between [symbolic systems](/docs/core/structure/symbolic-systems) and the Gap formalism: the back-projection protocol, specific correspondence tables, and an empirical verification program.
 
-:::warning Status [P]
-All material is a **research program**. The correspondence tables are constructive, but empirical verification has not been conducted.
+:::warning Status [P] — with an execution ledger
+The correspondence tables are constructive; the verification programme of §6 was written before any instrument ran. Since then a substantial part of it **has been executed** in the holon laboratory — see §0 for what is now measured, what died, and what replaced the original designs. Sections 6–7 are kept as the original pre-registration record.
 :::
+
+## 0. Execution state (2026-08) {#состояние}
+
+The programme below was drafted for interview-based instruments. The laboratory that actually materialised (the [HomoHoloGraph programme](/docs/applied/research/homoholograph)) is harder-edged: deterministic engines, pre-registered nulls, replication before status. The ledger, honestly:
+
+| Original design | What actually ran | Verdict |
+|---|---|---|
+| H-SC1: zodiac sign ↔ trait coherences | Natal→trait on the strongest external corpus: Gauquelin-class, $n=15\,931$ | **Null** (all $\eta^2 < 0.5\%$) — the strongest form of H-SC1 is dead; [details](/docs/applied/research/homoholograph#x-nulls) |
+| H-SC2: I Ching back-projection | The wheel dissected instead: HD = ephemeris-clocked sampler over the hexagram alphabet; antipodal law 32/32, Gray-locality, trigram–center MI — all [Т-computed] | The *structure* is real mathematics; the *human layer* remains untested as designed |
+| H-SC3: inter-system consistency | Lattice theorems: nakshatra/pada/navamsha grids **do not embed** in the native lines [Т]; sidereal-vs-tropical duel on events and 3 000 deaths | **Systems are not projections of one grid**; longitude systems indistinguishable from chance on dates — consistency question dissolved rather than answered |
+| Timing claims (implicit in all tables) | The full oracle programme: 5 mask optics + distribution tests + ML-grade information detector on deaths corpora | **Null across the board** for date-level claims; one [И]-trace (maraka) lives in forward envelopes |
+| Chakra questionnaire (§6.2) | Replaced by the native instrument stack: voice diary, tomograph, passive observation channel | The native alphabet made the borrowed questionnaire obsolete |
+
+**Where the programme now lives:** the ontological placement of symbolic systems is stated in [Symbolic systems §10](/docs/core/structure/symbolic-systems#онтологическое-место); the native system built from the core outward is the [Γ-Canon](/docs/applied/research/gamma-canon) plus the native seasons layer; the forward-validation machinery (sealed envelopes, two-engine duels) replaces retrospective correlation designs — retrospection on this class of data has been exhausted honestly.
 
 ---
 

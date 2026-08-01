@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 17
 title: Теорема Пуанкаре-Перельмана
 description: Топологическая аналогия для когнитивной эволюции в УГМ
 ---

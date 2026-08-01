@@ -1,5 +1,5 @@
 ---
-sidebar_position: 18
+sidebar_position: 13
 title: HOLARCH
 description: "The holonic meta-specification of digital architecture: seven concerns, 21 typed channels, four computable viability invariants, three-flow dynamics, a composition algebra and a depth ceiling — validated against UML, C4, SysML v2, DDD, VSM, MAPE-K and the 2024–2026 agentic stack"
 ---

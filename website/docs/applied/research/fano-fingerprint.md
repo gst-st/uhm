@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 6
 title: "The Fano fingerprint of decoherence"
 description: "Theorem T-226 [Т]: the 21 pairwise decoherence rates of the Γ-dynamics collapse to 7 values indexed by Fano polarity — r_ij = (G − T_k)/6 with k the third point of the line through i,j. Fourteen exact sum rules (the polar equalities), a closed-form line tomography γ = (½Nᵀ − ⅙J)T with condition number 2√2, the exact spectral gap and cooldown constant, and a selector converse: the sum rules hold identically iff the wiring is the Fano plane. The constraint space is a sign-twist of g₂ — the Lie shadow 21 = 14 + 7 reappears in observable rates, in polar duality to the Σ-compression pyramid."
 ---
