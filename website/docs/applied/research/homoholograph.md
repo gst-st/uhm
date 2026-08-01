@@ -4155,6 +4155,25 @@ and only natural-cause deaths are testable — a de-facto null control,
 since the directional hypothesis says point-like events, not slow
 disease, are where a timing channel would live if it lives anywhere.
 
+That control class then staged the strongest drama of the programme.
+On the first subsample (n = 96) the sidereal mask lit up — lift 1.94,
+p = 0.000 on *both* nulls, with three distribution-level tests
+surviving a fifteen-way Holm correction in the same direction: deaths
+falling on sidereally tight days of the person's own calendar. Two
+independent instruments, coherent direction, preregistered class. It
+did not survive the night. A second, disjoint subsample collected by
+the same frozen rules (n = 114) returned lift 1.23 at p ≈ 0.2 and
+all fifteen distribution tests flat; a post-hoc dissection showed the
+tropical and sidereal masks are effectively independent channels at
+the 0.11° tightness scale (so the divergence was geometrically
+legitimate), the hits spread over bodies, epochs and aspects with no
+repeatable signature, and the two subsamples geometrically identical.
+Verdict: a broad subsample fluctuation, caught and killed by
+replication before it could reach a single user — which is the
+discipline working exactly as written. A third subsample now settles
+the residual doubt with one preregistered bet; if it is null, the
+class closes for good.
+
 What survives this part is discipline and direction, not a winner.
 The discipline is §91–94 applied to a harder question: preregister
 before the instrument, make the nulls pay for every look, demand
