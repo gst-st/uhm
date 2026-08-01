@@ -3996,3 +3996,43 @@ by a judge who sees text only, against center-matched decoy doors.
 Until that test passes, the layer enters no product page; if it fails,
 the tradition remains what it always was — a bridge of meanings
 wearing borrowed robes.
+
+### §X.6 The mentor architecture: care as an engine grammar {#x-mentor}
+
+The instrument's newest layer answers a design question rather than a
+statistical one: *what should a system do with all of the above for a
+living person, daily?* The answer shipped as an architecture, and its
+grammar is small enough to state here.
+
+**Care is two woven streams.** The day-stream extracts tactics — the
+price of each hour, the shape of the training day, the eating frame
+the person chose — from sky-side influences crossed with the personal
+profile. The path-stream keeps the person's own spoken goals alive
+and lays the week's best windows under them. Either alone
+degenerates (a tracker; a poster); the product is the weave.
+
+**A role is a declaration, not a feature.** Any care with a rhythm, a
+window or a threshold — sleep, training, pills, couple ritual, a
+child's special time, study, stress watch — compiles into the same
+five engines (hour-windows, day-form, best-days, circle events,
+instrument thresholds) plus a sixth: the collector. New roles add a
+table row, not code.
+
+**Collection is passive-first.** The person owes the system no
+discipline: watchers read rhythm from message times; an observation
+channel transcribes what speech itself reveals about the seven
+voices — stored separately, marked by source and confidence, barred
+from the measured posterior until a preregistered validation
+(observation-versus-self-report, ρ ≥ 0.5) passes. Questions survive
+only as calibration, one per evening at the person's own computed
+minute, aimed at the least-covered pair — maximum information per
+answer. Every collected bit is repaid at once with one line of use.
+
+**The boundaries are load-bearing.** General science enters every
+touch as a second layer over measurements and never as a
+prescription; research stays a byproduct of care (sealed envelopes
+stay sealed even from the system's own conversational voice); and one
+rule outranks all engines: at words of crisis, every chart is set
+aside and the only move is toward living help. A guidance system
+that cannot flatter had to also be one that cannot exploit — the
+architecture above is what that costs in engineering terms.
