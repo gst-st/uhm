@@ -7,7 +7,7 @@
 3000 человек, seed=20260801 (PREREG-ORACLE.md §КАЛИБ). Журнал
 каждого решения — TSV. Перезапуск безопасен (резюм по журналу).
 """
-import csv, json, random, re, sys, time, unicodedata, urllib.parse
+import csv, json, os, random, re, sys, time, unicodedata, urllib.parse
 import urllib.request
 
 SRC = "/Users/taaliman/projects/oldman/uhm-theory/holon/architecture/data/ogdb-time.csv"
@@ -46,6 +46,15 @@ def main():
     rows = list(csv.DictReader(open(SRC), delimiter=";"))
     random.seed(SEED)
     sample = random.sample(rows, min(SAMPLE, len(rows)))
+    # Фаза 2 (ORACLE_PHASE=2): вторая непересекающаяся подвыборка для
+    # реплики (PREREG §КАЛИБ). random.sample(rows, 6000) НЕ расширяет
+    # sample(rows, 3000) префиксно, поэтому дополнение сэмплируется
+    # отдельно, seed+1; первая подвыборка воспроизведена выше точно.
+    if os.environ.get("ORACLE_PHASE") == "2":
+        first = {r["OGID"] for r in sample}
+        rest = [r for r in rows if r["OGID"] not in first]
+        random.seed(SEED + 1)
+        sample = random.sample(rest, min(SAMPLE, len(rest)))
     done = set()
     try:
         for line in open(JOURNAL):
