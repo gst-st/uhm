@@ -1528,7 +1528,7 @@ binary order (the complement law, exact on the wheel). What HD's nine centres
 and King Wen wheel do **not** encode is the **forced seven-fold** — the
 organising layer minimality and `PSL(2,7)` prove is the unique one the
 mathematics allows. That layer is a *different*, deeper cut of the same
-sixty-four gates, and it is where the reconstruction lives: the homograph — the
+sixty-four gates, and it is where the reconstruction lives: the heptagraph — the
 seven voices drawn as a heptagon with their coherences — draws it, continuous
 where the bodygraph is binary and forced where the wheel is inherited, while the
 bodygraph and wheel remain the familiar calibration surface. The audit does not ask us to replace HD; it locates,
@@ -1652,7 +1652,7 @@ the Fano lines, because such an operation is not in its symmetry group. The
 reconstruction is not a correction of the oracle but a *second lens* fitted over
 the same figures: where the I Ching's reflections fix the Ground and turn the
 manifest six, the forced structure's reflections fix a line and turn the other
-four, and only the second resolves the coherence geometry the homograph draws.
+four, and only the second resolves the coherence geometry the heptagraph draws.
 Recursively, the two even share a horizon: iterated to its attractor, the nuclear
 map carries every orbit class into the same three fixed points — the Source, the
 lone `O`-voice gate, and the `63↔64` pendulum — so the oracle's own deepest

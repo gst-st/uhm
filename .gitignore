@@ -1,4 +1,5 @@
 /internal/
+node_modules/
 
 # Generated files
 docs-consolidated.md
