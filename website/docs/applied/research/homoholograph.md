@@ -4196,3 +4196,44 @@ leave-one-out contributions that decide which layers deserve to stay
 in the alignment score) was fixed before the first envelope existed.
 An oracle that cannot yet beat chance on dates has one honest way to
 be useful meanwhile: keep score of its own advice, in the open.
+
+### §X.9 The pair as an object: three bridges and a duel of mechanisms {#x-pair}
+
+A couple reported one sphere of their bond as extraordinarily strong —
+strong enough, in their words, to carry the thin ones. The claim is
+exactly the kind the instrument must not flatter: it names a mechanism
+(one dominant sphere as the bond's glue), and mechanisms are checked in
+the laboratory before they are allowed into text.
+
+The check ran the same pair through three independent optics. Our own
+reading — the sphere profile of the composite state, computed by the
+constant-free block formula ‖P_S Γ P_S‖_F/√|S| — placed the reported
+sphere in the middle of the profile: the composite does not see it.
+The Human Design bridge saw almost nothing either: one electromagnetic
+channel, none of the school's classical intimacy set. The Jyotish
+bridge (yoni-kūta over the two Moons) read the middle of its scale.
+Western synastry alone lit up, and precisely on its classical bodily
+axes: an exact Moon×Mars conjunction (under 2°), a Mars×Venus trine,
+two supporting sextiles, a Venus×Venus square.
+
+Three lessons were folded back into the machine. First, a mechanism
+refinement: the signal, if it is real, lives in the CROSS-CHART aspect
+layer — pairwise planet contacts between two charts — which our
+composite provably loses when it aggregates activations into the seven
+voices. Second, a product bridge: the cross-aspect layer is now an
+engine function, and the pair page carries it as a heritage bridge
+[О] — bare facts with degrees, no promise of mechanics, in the same
+key as every other bridge to the old schools. Third, a duel registered
+before any verdict: two candidate mechanisms — the top of the
+composite sphere profile against the cross-chart aspect layer — will
+be judged only forward, by a pair diary (one evening mark of the day
+as a couple, at least thirty days), preregistered before the
+instrument runs. Until that diary fills, the glue reading stays out of
+the product entirely: the page shows the sphere profile and the
+bridge as numbers, and interprets neither.
+
+The arc is the method in miniature: an owner's observation is ore, not
+an axiom; the laboratory triangulates it against every optic that
+claims the territory; whatever survives becomes a bridge with honest
+labels; and the decisive experiment is always the one that has not
+happened yet.
