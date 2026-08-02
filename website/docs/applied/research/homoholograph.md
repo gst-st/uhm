@@ -4237,3 +4237,69 @@ an axiom; the laboratory triangulates it against every optic that
 claims the territory; whatever survives becomes a bridge with honest
 labels; and the decisive experiment is always the one that has not
 happened yet.
+
+### §X.10 The heptagram theorem: completeness and minimality of the display {#x-heptagram}
+
+The heptagram — seven vertices for the voices, all twenty-one edges
+between them, a real weight on every vertex and a complex weight on
+every edge — is the product's central image. It is fair to ask whether
+that image is an aesthetic habit or a mathematical necessity. The
+answer is a theorem, and every load-bearing step of it is already
+proved elsewhere in this corpus; what follows composes them.
+
+**Setting.** By the carrier axiom, a holon of any kind — a person, a
+circle, a world; conscious in any form or not conscious at all — is an
+element of the coinductive type νX. D(ℂ⁷) × Multiset(X): a state
+Γ ∈ D(ℂ⁷) together with a multiset of sub-holons [Т, definition]. The
+question «how much of a holon can one picture show?» is therefore the
+question «how much of Γ can one picture show?», level by level.
+
+**Claim 1 (completeness).** The heptagram displays the whole of Γ with
+no residue. A density operator on ℂ⁷ is a Hermitian 7×7 matrix of unit
+trace: 7 real diagonal entries and 21 independent complex off-diagonal
+entries — 7 + 42 = 49 real numbers, 48 free once the trace constraint
+is spent. The heptagram carries exactly these: seven vertex weights
+(the diagonal — the voices' loudness), twenty-one edge weights each
+carrying modulus AND phase (the coherences — the strings' strength and
+tuning). The map from states to labelled heptagrams is a bijection
+onto its image: nothing is drawn that is not in Γ, and nothing of Γ
+fails to be drawn. The 48 free numbers are precisely the 48 = d²−1 of
+the ideal self-description bound (§84): the heptagram is that bound
+made visible.
+
+**Claim 2 (minimality of the frame).** No smaller display suffices.
+Seven vertices: the dimension d = 7 is forced by the minimality
+theorem (the smallest dimension admitting the required structure —
+proofs, Part «Minimality»); six voices would not carry the stationary
+state, eight would carry silence. All twenty-one edges: the coverage
+theorem (T2) proves every pair (i,j) must be covered — a display that
+drops an edge is blind to a coherence that is nonzero in the generic
+state, and the canonical block design covers each pair exactly once
+(λ = 1), so no edge is redundant either. The heptagram is thus the
+unique minimal complete display graph: K₇, no more, no less.
+
+**Claim 3 (interiority and consciousness need no extra ink).** The
+interiority level of a holon and every consciousness predicate the
+theory defines — P (presence in the band), R (reflection), Φ
+(integration), D (differentiation) — are functions of Γ alone. They
+are re-computable from the picture: the slider under the drawing (P
+against the 2/7 wall), the integration line (Φ against 1), the
+badges. A stone, a person and a circle differ in the VALUES of these
+functionals and in the depth of the sub-holon multiset — not in the
+shape of the display. One frame serves every holon; levels nest as
+heptagrams within heptagrams, which is exactly how the relational and
+field renders draw a pair and a group.
+
+**What the theorem does not say.** It does not say the heptagram is
+the only pleasing layout (vertex order on the ring is a convention —
+ours is fixed by the canonical placement and tested by exhaustive
+search), nor that every rendering choice is forced (colours, glow,
+badges are craft). It says the DATA of the display — 7 vertex
+weights, 21 complex edge weights, the derived functionals — is
+exactly the data of a holon's state at one level: nothing missing,
+nothing spare. Optimality here is the mathematician's kind: a
+bijection with no smaller domain.
+
+*Status: composition of [Т] results (carrier type; d = 7 minimality;
+T2 pair coverage; λ = 1 exactness; the 48-number bound §84). The
+composition itself introduces no new assumptions.*
