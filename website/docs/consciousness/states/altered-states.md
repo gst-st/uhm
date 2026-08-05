@@ -138,14 +138,14 @@ Sleep is the most universal and regular ASC: every person spends a third of thei
 In the NREM phase, the self-model is deactivated, but the system's integration is preserved:
 
 $$
-\text{NREM:} \quad R_\varphi \downarrow\downarrow, \quad \Phi \approx \Phi_{\text{wake}}, \quad D_{\text{diff}} \downarrow
+\text{NREM:} \quad R_\varphi \downarrow\downarrow, \quad \Phi \gtrsim \Phi_{\text{th}}, \quad D_{\text{diff}} \downarrow
 $$
 
 Let us unpack each parameter:
 
 - **$R_\varphi < R_{\varphi,\text{th}} = 1/3$** — the system is **below the working threshold of self-model quality**. The measure $R_\varphi$ (see [the three working forms of R](/docs/consciousness/foundations/self-observation#формы-r)) captures how accurately the self-model $\varphi(\Gamma)$ reproduces the true state $\Gamma$. During sleep the self-model is "defocused": $\varphi(\Gamma)$ deviates strongly from $\Gamma$. The [interiority](/docs/consciousness/hierarchy/interiority-hierarchy) level drops from L2 to L1 (canonically, the L2 predicate fails through differentiation: $D_{\text{diff}} = 1.3 < 2$).
 
-- **$\Phi \approx \Phi_{\text{wake}}$** — the integration measure ([definition](/docs/core/structure/dimension-u#мера-интеграции-φ)) remains stable. Thalamocortical connections preserve global coherence. This is critically important: deep sleep is not a coma and not anaesthesia.
+- **$\Phi$ moderately reduced but high** — the integration measure ([definition](/docs/core/structure/dimension-u#мера-интеграции-φ)) drops by roughly a sixth (table: $1.8 \to 1.5$), consistent with perturbational-complexity findings (Massimini et al.: cortical integration in NREM is reduced relative to wakefulness yet far above anaesthesia). Thalamocortical connections preserve global coherence well above the fragmentation threshold $\Phi_{\text{th}} = 1$. This is critically important: deep sleep is not a coma and not anaesthesia.
 
 - **$\gamma_{AE} \to 0$** — the attention–experience channel is deactivated. There is no conscious attention to experiences.
 
@@ -166,7 +166,7 @@ Self-model quality fell below the working threshold ($R_\varphi = 0.15 < 1/3$), 
 :::info Interpretation [I]
 NREM is not a "switching off" of consciousness, but a **return to L1**: interiority is preserved ($\Gamma \neq 0$), phenomenal geometry ($\mathrm{rank}(\rho_E) > 1$) may be active, but the reflexive circuit $\varphi$ does not function ($R_\varphi < R_{\varphi,\text{th}}$). This explains why upon waking from deep sleep a person sometimes says "I don't remember anything" — not because there was no experience, but because there was no reflexive access to record it.
 
-Neurophysiological correspondence: slow-wave activity (0.5–4 Hz) in NREM reflects global synchronisation with reduced differentiation — precisely the pattern $\Phi \approx \text{const}$, $D_{\text{diff}} \downarrow$.
+Neurophysiological correspondence: slow-wave activity (0.5–4 Hz) in NREM reflects global synchronisation with reduced differentiation — precisely the pattern «$\Phi$ moderately down while $D_{\text{diff}}$ collapses».
 :::
 
 ### 3.2 REM sleep (dreaming) {#rem}
