@@ -628,9 +628,9 @@ In practice, $\gamma_{OO} > \varepsilon_\Gamma$ holds for any viable system ($P 
 3. It integrates via O–U coupling ($\gamma_{OU}$)—Hom(O, U)
 4. It normalizes to Ground occupancy ($\gamma_{OO}$)—End(O)
 
-**Consistency checks** (limiting cases):
-- $\gamma_{OE} \to 0$: no regeneration ✓ (no morphisms O → E)
-- $\gamma_{OU} \to 0$: no integration ✓ (no morphisms O → U)
+**Consistency checks** (limiting cases; they concern the $\kappa_0$-component — the bootstrap floor $\kappa_{\text{bootstrap}} = \omega_0/7$ remains in force, which is exactly how the bootstrap paradox above is resolved):
+- $\gamma_{OE} \to 0$: no *coherence-driven* regeneration, $\kappa \to \kappa_{\text{bootstrap}}$ ✓ (no morphisms O → E)
+- $\gamma_{OU} \to 0$: no *coherence-driven* integration, $\kappa \to \kappa_{\text{bootstrap}}$ ✓ (no morphisms O → U)
 - $\gamma_{OO} \to 0$: singularity (loss of Ground) ✓ (End(O) = 0)
 
 **Status:** the operational formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$ is now **[T at the first-order-kinetics model]** — it is **forced**, not merely selected, by the rapid pre-equilibrium (quasi-steady-state) rate of the regeneration branching (see [§Derivation by rapid pre-equilibrium](#вывод-kappa0-cycle-flux)). The earlier concern that "min- and geometric-mean forms also satisfy the requirements" is **removed**: those alternatives violate the fifth requirement (first-order/linear-response kinetics) — the geometric mean is sublinear (degree $\tfrac12$, divergent derivative) and the minimum is non-analytic, so neither is an admissible first-order kinetic law. The only residual assumption is that regeneration is a first-order Markov process, which is itself guaranteed by the CPTP/Lindblad structure of the dynamics. The **categorical reading** $\kappa_0 = \|\mathrm{Nat}(\mathcal{D}_\Omega, \mathcal{R})\|$ remains a separate **interpretation [I]** / **[C at the adjunction]** (the adjunction $\mathcal{D}_\Omega \dashv \mathcal{R}$ and the Nat-norm identity are posited, not proven) — but the operational formula no longer depends on it. Downstream results use the formula, whose status is now [T at first-order kinetics].
@@ -675,7 +675,7 @@ $$
 \kappa_0 \;=\; \omega_0\,\gamma_{OU}\,p_{E\mid O} \;=\; \omega_0\,\frac{\gamma_{OE}\,\gamma_{OU}}{\gamma_{OO}} \qquad\textbf{[T at first-order kinetics].}
 $$
 
-This is the standard pseudo-first-order (Michaelis–Menten-type) rate for a two-channel branching process — bilinear in the two couplings, inversely proportional to the ground residence. (Numerically verified: rapid pre-equilibrium reproduces $\gamma_{OE}\gamma_{OU}/\gamma_{OO}$; the King–Altman cyclic flux does not.)
+This is the standard pseudo-first-order (Michaelis–Menten-type) rate for a two-channel branching process — bilinear in the two couplings, inversely proportional to the ground residence. **Exact stationary form** (audit verification 2026-08-05, three-node cycle $O \xrightarrow{\gamma_{OE}} E \xrightarrow{\gamma_{OO}\,\text{return}\;\lor\;\gamma_{OU}\,\text{fire}} O$): the fire rate is $J = \omega_0\,\gamma_{OE}\gamma_{OU}/(\gamma_{OE}+\gamma_{OO}+\gamma_{OU})$, whose leading order in the rapid-return limit $\gamma_{OO} \gg \gamma_{OE},\gamma_{OU}$ is precisely $\kappa_0 = \omega_0\,\gamma_{OE}\gamma_{OU}/\gamma_{OO}$ (numerically: $J/\kappa_0 = 0.986$ at $\gamma_{OO}/\gamma_{OE} = 100$). The King–Altman cyclic flux $f_1f_2f_3/(f_1f_2{+}f_2f_3{+}f_3f_1)$ is structurally different, as claimed.
 
 **Requirements on the form of $\kappa_0$** (now five, the fifth being load-bearing):
 
