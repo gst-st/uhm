@@ -381,6 +381,8 @@ Two utterly different routes—algebraic (Hurwitz) and topological (Adams)—yie
 
 **Formally.** Points: $\{1, 2, 3, 4, 5, 6, 7\}$. Lines: $\{1,2,4\}$, $\{2,3,5\}$, $\{3,4,6\}$, $\{4,5,7\}$, $\{5,6,1\}$, $\{6,7,2\}$, $\{7,1,3\}$.
 
+**Historical bridge.** As a *combinatorial* object (a Steiner triple system on 7 points, STS(7) = BIBD(7,3,1)) this structure predates Fano: it appears in Kirkman's 1847 work on triple systems — which is why the registry entry [T-41l] cites "Kirkman 1847" for BIBD$(7,3,1)$. Fano's 1892 contribution is the *projective-geometric* reading (the smallest projective plane and its axiomatics); the two names refer to one structure seen through two lenses.
+
 **Octonion multiplication table via Fano.** The Fano plane is not an abstract gadget but a concrete **computational tool**. Each of the 7 points corresponds to an imaginary unit $e_1, \ldots, e_7$ of the octonions. Multiplication rule: if $(e_i, e_j, e_k)$ is an oriented Fano line (a triple ordered along the arrow), then
 
 $$
