@@ -43,6 +43,7 @@ This ensures mathematical honesty and avoids hidden assumptions.
 | **Axiom 2 (Metric)** | The Grothendieck topology $J$ is induced by the Bures metric $d_B$ | **Petz classification:** Bures is the *minimal* monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ (unique in the classical case by Chentsov; minimal among infinitely many in the quantum case) |
 | **Axiom 3 (Dimension)** | $N = 7$ is the dimension of the base Hilbert space | Characterizes the class of systems under study (holons) |
 | **Axiom 4 (Scale)** | $\omega_0 = \lambda_{\min}(H_{\text{eff}}) > 0$ — the minimal nonzero eigenvalue of the effective Hamiltonian | Derived spectral property: $\omega_0 > 0$ for any viable system ($\omega_0 = 0 \Rightarrow$ no dynamics $\Rightarrow P < P_{\text{crit}}$). Different holons have different $\omega_0$, like different atoms have different masses. See [T-186, Cohesive Closure §5.4](/docs/proofs/categorical/cohesive-closure) |
+| **Axiom 5 (Page–Wootters)** | Tensor factorization $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{\text{rest}}$ with clock sector and constraint $\hat{C}\Gamma = 0$ | **Historically an axiom; now derivable** from A1–A4 via the spectral triple ([T-87 [T]](#pw-constraint)) — kept in the list for complete exposition. The *independent* axiom count is therefore **four** |
 
 :::warning Two inter-derivable axiom bases (T-190 Axiomatic Closure)
 UHM admits **two equivalent five-fold axiom bases**, and T-190 [T] establishes their **inter-derivability** — not a reduction to zero axioms:
@@ -1442,7 +1443,7 @@ There is a minimal regeneration rate independent of the current state.
 #### Theorem T-59 (spectral gap of the Fano dissipator) [T]+[T/sim] {#теорема-kappa-bootstrap-bound}
 
 :::info Stratification
-The analytical derivation $\kappa_{\text{bootstrap}} = \omega_0/N = 1/7$ from the adjunction unit $\eta$ and the Fano-dissipator spectral structure is **[T]** (Steps below). The specific numerical value $1/7$ is additionally cross-checked to $10^{-10}$ precision in SYNARC integration test `mvp_int_2` G5 — this empirical confirmation is **[T/sim]**. No rigid analytical–empirical separation is claimed; the two layers are independently sound and mutually consistent.
+The analytical derivation $\kappa_{\text{bootstrap}} = \omega_0/N$ (in $\omega_0$-units: $1/7$) from the adjunction unit $\eta$ and the Fano-dissipator spectral structure is **[T]** (Steps below). The specific numerical value $1/7$ is additionally cross-checked to $10^{-10}$ precision in SYNARC integration test `mvp_int_2` G5 — this empirical confirmation is **[T/sim]**. No rigid analytical–empirical separation is claimed; the two layers are independently sound and mutually consistent.
 :::
 
 
@@ -1468,7 +1469,7 @@ For atomic $L_k = |k\rangle\langle k|$: contribution $-\gamma/N$. For Fano $L_p 
 - $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [code consistent]
 
 :::info Numerical verification (SYNARC)
-$\kappa_{\text{bootstrap}} = \omega_0/7 = 1/7$ is verified to $10^{-10}$
+$\kappa_{\text{bootstrap}} = \omega_0/7$ ($= 1/7$ in the $\omega_0 = 1$ units of the test) is verified to $10^{-10}$
 in integration tests (mvp_int_2 G5). The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
 matches `effective_kappa()` in `density7.rs`.
 :::
@@ -1532,7 +1533,7 @@ $$
 
 | State | $\mathrm{Coh}_E$ | Reading |
 |-----------|------------------|---------------|
-| Maximally mixed | $1/7 \approx 0.14$ | Minimal |
+| Maximally mixed | $1/7 \approx 0.14$ | Value at $I/7$ — **not** the minimum (global min is $0$ at an empty E-sector; see the [range correction of 2026-07-11](/docs/core/foundations/axiom-septicity#coh-e-canonical)) |
 | $P = P_{\text{crit}}$ | $\approx 0.20$ | Viability threshold |
 | $E$-dominant | $\to 1$ | Maximal |
 

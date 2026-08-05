@@ -667,7 +667,7 @@ This is a rapid pre-equilibrium (branching) rate, **not** the King–Altman cycl
 
 **The regeneration branching.** Bootstrap regeneration requires the ground node $O$ to feed **both** the interiority channel $O\to E$ (regeneration source) **and** the unity channel $O\to U$ (integration), with $O$-self-persistence $\gamma_{OO}=\mathrm{End}(O)$ setting the ground residence rate. Model $\{O,E,U\}$ as a continuous-time Markov chain with first-order rate constants $\gamma_{OE},\gamma_{OU}$ and return scale $\gamma_{OO}$.
 
-**Rapid pre-equilibrium (quasi-steady state).** When the ground node equilibrates fast relative to the regeneration timescale, the $E$-channel reaches a quasi-steady **branching occupancy** relative to $O$,
+**Rapid pre-equilibrium (quasi-steady state).** When the ground node equilibrates fast relative to the regeneration timescale, the $E$-channel reaches a quasi-steady **branching ratio** relative to $O$ (a forward-to-return ratio, not a probability — it may exceed 1),
 $$p_{E\mid O} \;=\; \frac{\gamma_{OE}}{\gamma_{OO}}\quad(\text{forward-to-return ratio, Briggs–Haldane}),$$
 and the integration step then fires at rate $\gamma_{OU}$ from this $E$-primed ground. The regeneration rate is the product
 
