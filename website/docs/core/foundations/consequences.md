@@ -750,12 +750,12 @@ L0 systems have more zero modes (fewer constraints); L2 systems have fewer (refl
 
 ### Relation to other notions
 
-| Notion | Relation to freedom |
+| Notion | Relation to freedom (consistent with properties (a)–(d) above) |
 |---|---|
-| **Integration $\Phi$** | High $\Phi$ correlates with larger Freedom |
-| **Reflection $R$** | $R \geq 1/3$ needed to experience freedom as such |
-| **L2 level** | Freedom of L2 systems exceeds that of L0/L1 |
-| **Autopoiesis** | Freedom is an aspect of autopoietic self-organization |
+| **Integration $\Phi$** | Higher $\Phi$ means more structure and hence **fewer** flat directions: quantitative Freedom *decreases* (the maximum, $\mathrm{Freedom}=7$, sits at $I/7$ with $\Phi=0$) |
+| **Reflection $R$** | $R \geq 1/3$ is needed to **experience** freedom as such [И]; it also pins the direction of $\varphi$, reducing zero modes |
+| **L2 level** | Quantitative Freedom **shrinks** along L0 → L2 (property (d)); what L2 gains is not more zero modes but *awareness* of the remaining ones — choice of a qualitatively new kind |
+| **Autopoiesis** | Freedom is an aspect of autopoietic self-organization: the system spends flat directions to buy structure |
 
 :::info Philosophical import
 Free will in UHM is not subjective feeling or metaphysical guesswork but a **topological invariant** of configuration $\Gamma$. The finite-dimensional definition via the Hessian of $\mathcal{F}$ is standard differential geometry. See [Free will](/docs/consciousness/ethics-meaning/freedom).
