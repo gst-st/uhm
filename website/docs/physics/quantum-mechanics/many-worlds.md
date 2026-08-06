@@ -207,8 +207,10 @@ registry discipline.
 Deutsch's multiverse and Vanchurin's *self-learning universe* are the
 two live programmes that derive physics from something more primitive
 (branching worlds; learning dynamics). UHM engages the second one
-quantitatively, and the result is a set of exact theorems (T-293–295,
-full derivations in `internal/vanchurin-bridge/`):
+quantitatively, and the result is a set of exact theorems (T-293–295; the full
+derivation, with proofs, the falsification protocol and the
+reproducibility table, is [The Learning Algorithm of a
+Holon](/docs/applied/research/vanchurin-bridge)):
 
 Vanchurin parametrises the learning algorithm by the functional
 relation $g=\kappa^{a}$ between metric and noise covariance
