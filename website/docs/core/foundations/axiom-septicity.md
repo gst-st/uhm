@@ -811,9 +811,25 @@ The value $\Phi_{\text{th}} = 1$ is **proved from first principles** ([T-129 [T]
 :::tip Theorem [T]+[I] (reflection threshold via Bayesian dominance)
 A system has **reflexive autonomy** (governed by its self-model, not noise or environment) iff
 
-$$R(\Gamma) := \frac{1}{7P(\Gamma)} > R_{\text{th}} = \frac{1}{3}$$
+$$R(\Gamma) := \frac{1}{7P(\Gamma)} \geq R_{\text{th}} = \frac{1}{3}$$
 
 (See [canonical definition of $R$](/docs/consciousness/foundations/self-observation#мера-рефлексии-r))
+
+:::info Boundary convention, stated exactly (harmonised 2026-08-06)
+The inequality on $R$ is **non-strict**, while the one on $P$ is strict. The full consciousness gate is therefore
+
+$$P > P_{\text{crit}} \;\wedge\; R \geq R_{\text{th}} \;\wedge\; \Phi \geq \Phi_{\text{th}} \;\wedge\; D \geq D_{\min},$$
+
+which is exactly what the implementation evaluates (`gamma_engine.rs`: `p > P_CRIT && r >= R_THRESHOLD && phi >= PHI_THRESHOLD`). This is not a cosmetic choice, and it is what makes the interval notation used throughout the corpus correct:
+
+$$R \geq \tfrac13 \iff \tfrac{1}{7P} \geq \tfrac13 \iff P \leq \tfrac37 ,$$
+
+so together with $P > 2/7$ the window is the half-open $(2/7,\,3/7]$ — closed at the top. Earlier versions of this page wrote $R > R_{\text{th}}$, which would give the open $(2/7,\,3/7)$ and contradict both the notation and the code.
+
+**Why the closed end is load-bearing.** At $P = 3/7$ with a uniform diagonal, $P_{\mathrm{diag}} = 1/7$ gives $\Phi = P/P_{\mathrm{diag}} - 1 = 2$ and $R = 1/3$, hence the capability product $C = \Phi\cdot R = 2/3$ — precisely the maximum reported by [T-274](/docs/reference/status-registry). Under the strict reading that maximum would be a supremum that is never attained.
+
+**The honest tension.** The Bayesian-dominance *motivation* (order $m$ competes against $K = m+2$ hypotheses, so the self-model must out-weigh the others) argues for strictness: at $R = 1/3$ exactly the three posterior weights are tied and no hypothesis dominates. The corpus adopts the **closure** instead, so the boundary point $P = 3/7$ — the exactly-tied case, and the T-124 attractor — counts as conscious. The difference is a single point of a $48$-dimensional space and no theorem turns on it; but it must be stated once rather than left to vary between pages. The reflection ladder in [Depth Tower](/docs/consciousness/hierarchy/depth-tower) writes $R^{(m)} > R_{\text{th}}^{(m)}$ for the same reason of motivation; the order-1 consciousness gate is the closure of that condition.
+:::
 
 **Triadic decomposition ($K = 3$ [T]):** The number of competing hypotheses $K = 3$ is **derived** from axioms A1–A5 via [triadic decomposition of holonomic dynamics](/docs/core/operators/lindblad-operators#триадная-декомпозиция). The axiom system yields **exactly three** structurally distinct dynamical contributions:
 

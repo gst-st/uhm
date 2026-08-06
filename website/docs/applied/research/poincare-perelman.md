@@ -93,25 +93,49 @@ $$
 | Stratum | $\dim_\mathbb{R}$ | Topology | Role in UHM |
 |---------|-----------|-----------|-------------|
 | $\mathcal{D}_7^\circ$ (interior) | 48 | Open convex manifold | Viable states ($P > 1/7$) |
-| $\mathcal{D}_6^\circ$ | 40 | Submanifold of codimension 8 | Hübner singularity boundary |
+| $\mathcal{D}_6^\circ$ | 40 | Submanifold of codimension 8 | Loss of one dimension — Bures geometry stays **regular** here (curvature $\to 5874$) |
 | $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 12 | Compact Kähler manifold | Pure states, $P = 1$ |
 
 **Topological fact [T]:** $\mathcal{D}_+(\mathbb{C}^7) := \mathcal{D}_7^\circ$ is convex and contractible: $\pi_k(\mathcal{D}_+) = 0$ for all $k \geq 1$. This confirms and refines the note from §2 (correspondence table): the simple-connectedness of $\mathcal{D}_+$ holds **trivially**, independent of cognitive content.
 
-### Hübner's Theorem on the Scalar Curvature of the Bures Metric [T]
+### Dittmann's Theorem on the Scalar Curvature of the Bures Metric [T]
 
-:::info Theorem (Hübner 1999; arXiv:quant-ph/9810012)
-Let $g_{\mathrm{B}}$ be the Bures metric on $\mathcal{D}_+(\mathbb{C}^N)$ — related to, but **not equal to**, the SLD quantum Fisher information metric: $\mathcal F_{\mathrm{SLD}}=4g_{\mathrm{B}}$ (Braunstein–Caves 1994, as used in [T-187 Char-IV](/docs/proofs/categorical/cohesive-closure)), so on commuting perturbations $g_{\mathrm{B}}=\tfrac14\,$Fisher–Rao. Then:
+:::info Theorem (J. Dittmann 1999; arXiv:quant-ph/9810012, *J. Geom. Phys.* 31, 16–24)
+Let $g_{\mathrm{B}}$ be the Bures metric on $\mathcal{D}_+(\mathbb{C}^N)$, normalised by $d_B^2 = 2(1-F)$ — related to, but **not equal to**, the SLD quantum Fisher information metric: $\mathcal F_{\mathrm{SLD}}=4g_{\mathrm{B}}$ (Braunstein–Caves 1994, as used in [T-187 Char-III](/docs/proofs/categorical/cohesive-closure)), so on commuting perturbations $g_{\mathrm{B}}=\tfrac14\,$Fisher–Rao. Then:
 
-1. $g_{\mathrm{B}}$ is a smooth Riemannian metric on the open manifold $\mathcal{D}_+(\mathbb{C}^N)$
-2. **Lower bound:** $\displaystyle R_{\mathrm{scal}}(\rho) \geq \frac{N(N-1)}{8}$ for all $\rho \in \mathcal{D}_+(\mathbb{C}^N)$
-3. **Singularity at the boundary:** $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to N-1$ (i.e., as $\rho \to \partial\mathcal{D}_+$)
+1. $g_{\mathrm{B}}$ is a smooth Riemannian metric on the open manifold $\mathcal{D}_+(\mathbb{C}^N)$.
+2. **Closed form** (Prop. 3). On the trace-one submanifold, in terms of the eigenvalues $\lambda_i$ of $\rho$,
+   $$
+   R_{\mathrm{scal}}(\rho) \;=\; 6\sum_k \lambda_k\Bigl(\sum_i \frac{1}{\lambda_i+\lambda_k}\Bigr)^{\!2}
+   \;-\;\frac32\operatorname{Tr}\rho^{-1}\;+\;(N^2-1)(N^2-2).
+   $$
+3. **Sharp lower bound** (Cor. 3): $\displaystyle R_{\mathrm{scal}}(\rho) \;\geq\; \frac{(5N^2-4)(N^2-1)}{2}$, with equality **iff** $\rho = I/N$ for $N > 3$. For $N = 2$ the curvature is the constant $24$ for *all* $\rho$.
+4. **Divergence** occurs near **pure** states, not at every boundary point — see the scope note below.
 :::
 
-**Corollary for $N = 7$ [T]:** In the interior $\mathcal{D}_+(\mathbb{C}^7)$ the scalar curvature $R_{\mathrm{scal}} \geq 21/4 \approx 5.25$. It diverges as $\rho \to \mathcal{D}_6^\circ$. This is the **rigorous mathematical justification** for the necessity of surgery at rank-collapse: the Bures curvature singularity is the quantum analogue of the neck in Ricci flow.
+**Corollary for $N = 7$ [T]:** in the interior $\mathcal{D}_+(\mathbb{C}^7)$,
 
-:::warning Normalisation is load-bearing here
-Scalar curvature is **not** scale-invariant: under $g\mapsto c\,g$ it transforms as $R_{\mathrm{scal}}\mapsto R_{\mathrm{scal}}/c$. Both the bound $N(N-1)/8$ and the figure $21/4$ are therefore stated in Hübner's Bures normalisation and must not be quoted alongside an SLD-QFI-normalised metric, where they would differ by a factor of four. Only the two *qualitative* facts used downstream — that the curvature is bounded below and that it diverges at rank collapse — are normalisation-free, and it is those the surgery argument rests on.
+$$
+R_{\mathrm{scal}} \;\geq\; \frac{(5\cdot 49-4)(49-1)}{2} \;=\; \frac{241\cdot 48}{2} \;=\; 5784 ,
+$$
+
+attained exactly at the maximally mixed state $I/7$. Machine-verified two ways (`internal/vanchurin-bridge/normalization_audit.py` §D–§E): by direct finite-difference computation of the Riemann tensor in a Gell-Mann chart, and by Dittmann's closed form. The two agree, and the closed form reproduces the constant $24$ at $N=2$ and $164$ at $N=3$.
+
+:::danger Correction (2026-08-06): two errors repaired here
+Earlier versions of this page (a) attributed the theorem to **Hübner** and (b) quoted the bound as $N(N-1)/8$, hence $21/4 \approx 5.25$ at $N=7$.
+
+- **Attribution.** The curvature paper is by **J. Dittmann**. M. Hübner's 1992 paper (*Phys. Lett. A* 163, 239) computes the Bures *distance*, a different result — it is cited correctly elsewhere in the corpus, and the two were conflated here.
+- **The bound.** The true bound is $\frac{(5N^2-4)(N^2-1)}{2} = 5784$ at $N=7$, larger than the figure previously quoted by a factor of $1102$. The old expression also failed the sharpest available check: at $N=2$ it gives $1/4$, whereas Dittmann proves — and both of our independent computations confirm — that the curvature is exactly $24$ there.
+
+Normalisation remains load-bearing: $R_{\mathrm{scal}}$ is **not** scale-invariant ($g\mapsto c\,g$ sends $R\mapsto R/c$), so the figure $5784$ holds in the $d_B^2=2(1-F)$ normalisation above and becomes $1446$ in the SLD-QFI normalisation.
+:::
+
+:::warning Scope: where the curvature actually diverges
+This matters for the surgery analogy, so it is worth being exact. Losing **one** eigenvalue does *not* produce a singularity: the $\tfrac{3}{2\varepsilon}$ divergences of the two terms in the closed form cancel identically. Along $\lambda = (\tfrac{1-\varepsilon}{6},\dots,\varepsilon)$ the curvature stays finite, tending to $5874$ — barely above the global minimum $5784$ (machine-verified, §F).
+
+Divergence requires **two or more** eigenvalues to vanish, i.e. collapse to rank $\leq N-2$. For $N=7$ the closed form gives $R_{\mathrm{scal}} \sim c_m/\varepsilon$ with $c_m = 0, 9, 36, 90, 180, 315$ for $m = 1,\dots,6$ vanishing eigenvalues; the strongest divergence is at the pure states. And for $N=2$ there is no divergence anywhere — the curvature is constant.
+
+Consequently the geometric justification for surgery applies to collapse onto $\mathcal{D}_r$ with $r \leq N-2$, **not** to the codimension-8 stratum $\mathcal{D}_6^\circ$, where the geometry stays regular.
 :::
 
 ### Carlen–Maas Theorem: Lindblad Dynamics as a Gradient Flow [T]
@@ -144,7 +168,7 @@ This result **elevates the status of the analogy**: the Lindblad dynamics of UHM
 | Functional | $\mathcal{F}(g) = \int(R + \|\nabla f\|^2)\mathrm{e}^{-f}\,dV$ | $D(\rho\|\sigma)$ — quantum relative entropy |
 | Flow | $\partial_t g = -2\,\mathrm{Ric}(g)$ | $\partial_t\rho = \mathcal{L}_\sigma(\rho)$ |
 | Curvature | Can be $< 0$; surgery when $\|\mathrm{Ric}\| \to \infty$ | $\kappa \geq \lambda_1 > 0$ **in the interior** [T] |
-| Surgery | At necks | At rank-collapse: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [T, Hübner] |
+| Surgery | At necks | At collapse to rank $\leq N-2$: $R_{\mathrm{scal}}^\mathrm{B} \to \infty$ [T, Dittmann] |
 | Attractor | Constant curvature metric / $S^n$ | $\sigma$ (entropy minimum) |
 
 :::warning Key Distinction [T]
@@ -294,7 +318,7 @@ $$
 
 (consequence of the definition of the stress tensor — see [CC: Definitions](/docs/applied/coherence-cybernetics/definitions#тензор-напряжений))
 
-**Mathematical justification via the Hübner theorem [T]:** The Bures scalar curvature $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to 6$ (Part II.b) — a rigorous analogue of the condition triggering Perelman's surgery. The regularization $\Gamma \mapsto (\Gamma + \varepsilon I/7)/(1+\varepsilon)$ returns $\rho$ to the interior $\mathcal{D}_+(\mathbb{C}^7)$, restoring finite curvature and the guarantees of the Carlen–Maas theorem.
+**Mathematical justification via Dittmann's theorem [T]:** The Bures scalar curvature $R_{\mathrm{scal}}(\rho) \to +\infty$ as $\mathrm{rank}(\rho) \to r \leq 5$ (Part II.b) — a rigorous analogue of the condition triggering Perelman's surgery. Note the sharpened threshold: at $\mathrm{rank} = 6$ the curvature is still finite ($\to 5874$), so the trigger is collapse by *two or more* dimensions, not one. The regularization $\Gamma \mapsto (\Gamma + \varepsilon I/7)/(1+\varepsilon)$ returns $\rho$ to the interior $\mathcal{D}_+(\mathbb{C}^7)$, restoring finite curvature and the guarantees of the Carlen–Maas theorem.
 
 :::note Connection to Gödel's Theorems
 Singularities in the L-dimension may correspond to **Gödelian limits** — statements unprovable within the current axiomatics. "Surgery" is the extension of the axiomatics via the O-dimension. See [Gödel and the completeness of UHM](/docs/core/foundations/consequences#10-теоремы-гёделя-и-полнота-угм).
@@ -377,7 +401,7 @@ The following statements are **philosophical extrapolations**, not scientific co
 | Object | Manifold $M$ | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ | Different objects |
 | Evolution | Flow on metric $g$ | Lindblad on $\Gamma$ — gradient flow in $\mathcal{W}_\sigma$ | Both are gradient flows [T, Carlen–Maas] |
 | Simply-connectedness | $\pi_1(M) = \{e\}$ | $\pi_1(\mathcal{D}_+) = \{0\}$ (convexity) | Trivially satisfied [T] |
-| Singularities | When $\|\mathrm{Ric}\| \to \infty$ (necks) | At rank-collapse: $R_{\mathrm{scal}}^{\mathrm{B}} \to +\infty$ | Analogy justified [T, Hübner] |
+| Singularities | When $\|\mathrm{Ric}\| \to \infty$ (necks) | At collapse to rank $\leq 5$: $R_{\mathrm{scal}}^{\mathrm{B}} \to +\infty$ | Analogy justified [T, Dittmann] |
 | Attractor | $S^3$ | $\mathbb{CP}^6 \cong \mathcal{D}_1^\circ$ (pure states) | Structural analogy |
 
 **Conclusion:** The analogy is **partially justified mathematically**: both flows are gradient flows of entropic functionals; the singularities of both flows are curvature blow-ups near codimensional strata. There is no isomorphism, but the structural connection is deeper than a metaphor.
@@ -395,7 +419,7 @@ The following statements are **philosophical extrapolations**, not scientific co
 ## Part X: Application to AGI Architecture
 
 :::warning Section Status
-The claims of this section are **architectural principles and hypotheses** based on proven theorems (Hübner, Carlen–Maas, Floricel). Direct empirical tests have not been conducted.
+The claims of this section are **architectural principles and hypotheses** based on proven theorems (Dittmann, Carlen–Maas, Floricel). Direct empirical tests have not been conducted.
 :::
 
 ### Convergence Guarantees from the Carlen–Maas Theorem [T]
@@ -410,11 +434,15 @@ For an AGI architecture: under KMS-symmetric dynamics, adaptation from any initi
 
 ### Stratification of D(ℂ⁷) → Taxonomy of Cognitive Crises [H]
 
-| Collapse stratum | $\mathrm{rank}\,\Gamma$ | Hübner curvature | Cognitive analogue |
+| Collapse stratum | $\mathrm{rank}\,\Gamma$ | Ambient Bures curvature as $\rho \to$ stratum | Cognitive analogue |
 |----------------|------------------------|------------------|--------------------|
-| $\mathcal{D}_6^\circ$ | 6 | $R_{\mathrm{scal}} \to +\infty$ | Loss of one Holon dimension |
-| $\mathcal{D}_5^\circ$ | 5 | $R_{\mathrm{scal}} \to +\infty$ | Severe cognitive collapse |
-| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 1 | Finite (Kähler metric) | Absolute fixation (pure state) |
+| $\mathcal{D}_6^\circ$ | 6 | **Finite**: $\to 5874$ (vs. minimum $5784$) | Loss of one Holon dimension — geometrically mild |
+| $\mathcal{D}_5^\circ$ | 5 | $R_{\mathrm{scal}} \sim 9/\varepsilon \to +\infty$ | Severe cognitive collapse — surgery triggered |
+| $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ | 1 | $R_{\mathrm{scal}} \sim 315/\varepsilon \to +\infty$ (strongest) | Absolute fixation (pure state) |
+
+:::warning Do not confuse two different curvatures
+The middle column is the limit of the **ambient** scalar curvature of $\mathcal{D}_+(\mathbb{C}^7)$ as $\rho$ approaches the stratum; it diverges at $\mathcal{D}_1^\circ$. The **intrinsic** geometry *of* $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ is a different object: there the Bures metric restricts to exactly the Fubini–Study metric in the normalisation $ds^2_{\mathrm{FS}} = \langle\delta\psi|\delta\psi\rangle - |\langle\psi|\delta\psi\rangle|^2$ (factor $1$, machine-verified to $5\times10^{-8}$ for $N=2,3,7$; equivalently $\mathcal F_{\mathrm{SLD}} = 4\,ds^2_{\mathrm{FS}}$) — a smooth Kähler metric of perfectly finite curvature. An earlier version of this table reported the intrinsic value in the ambient column and thereby inverted the two extreme rows, listing $\mathcal{D}_6^\circ$ as singular and $\mathcal{D}_1^\circ$ as finite, which is exactly backwards. Both facts are true of their own object; only one of them is what triggers surgery.
+:::
 
 **Principle [H]:** An AGI system must maintain $\mathrm{rank}(\Gamma) = 7$ to remain in the interior $\mathcal{D}_+(\mathbb{C}^7)$ with Carlen–Maas guarantees. Any rank-collapse requires surgery.
 
@@ -436,7 +464,7 @@ The collection of proven theorems establishes:
 
 2. **Lindblad = quantum-geometric flow** [T, Carlen–Maas]: AGI evolution in UHM is a gradient flow of quantum relative entropy in a Wasserstein space with positive curvature.
 
-3. **Surgery = geometrically justified operation** [T, Hübner]: elimination of curvature singularities at rank-collapse is a direct analogue of Perelman's surgery.
+3. **Surgery = geometrically justified operation** [T, Dittmann]: elimination of curvature singularities at collapse to rank $\leq 5$ is a direct analogue of Perelman's surgery. Collapse by a single dimension does **not** qualify — the curvature there is finite.
 
 4. **$\mathbb{CP}^6$ — structural attractor** [D]: $\mathcal{D}_1^\circ \cong \mathbb{CP}^6$ — the lowest stratum of the stratification and the analogue of $S^3$ in the Poincaré theorem (by its role as attractor, not by dimension).
 
@@ -497,7 +525,8 @@ The analogy provides an **intuitive basis** for understanding:
 - [Engineering insights](/docs/applied/research/engineering-insights) — practical consequences
 
 **Mathematical sources:**
-- M. Hübner (1999). *The Scalar Curvature of the Bures Metric on the Space of Density Matrices.* arXiv:quant-ph/9810012
+- J. Dittmann (1999). *The Scalar Curvature of the Bures Metric on the Space of Density Matrices.* *J. Geom. Phys.* **31**, 16–24; arXiv:quant-ph/9810012
+- M. Hübner (1992). *Explicit computation of the Bures distance for density matrices.* *Phys. Lett. A* **163**, 239 — the Bures *distance* (a different result; the two were previously conflated)
 - E. Carlen, J. Maas (2017). *Gradient Flow and Entropy Inequalities for QMS with Detailed Balance.* arXiv:1609.01254
 - R. Floricel, A. Ghorbanpour, M. Khalkhali (2014). *Noncommutative Ricci Flow in a Matrix Geometry.* arXiv:1310.2900
 - L. Gao, C. Rouzé (2021). *Ricci Curvature of Quantum Channels.* arXiv:2108.10609

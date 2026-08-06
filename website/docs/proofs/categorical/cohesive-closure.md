@@ -320,9 +320,11 @@ where the infimum ranges over all pairs of purifications in any extended space. 
 
 **(Char-III) SLD-Fisher / Cramér-Rao saturation.** $4g_B$ coincides with the Symmetric-Logarithmic-Derivative quantum Fisher metric (Braunstein-Caves 1994, *Phys. Rev. Lett.* 72, 3439), which is the unique quantum Fisher information saturating the multiparameter quantum Cramér-Rao bound on estimator covariance. The SLD is defined by $\partial\rho = \tfrac{1}{2}(L\rho + \rho L)$, uniquely solvable on $\mathrm{supp}(\rho)$. **Scope of uniqueness.** This characterizes $d_B$ uniquely *among all metrics saturating CR with SLD-type estimators*. Other Petz members are characterized by other estimator types (RLD, balanced LD), each with its own bound. Char-III selects Bures by privileging the **classical-style parameter-estimation** interpretation.
 
-**(Char-IV) Maximum-entropy covariance identification (Vanchurin 2026).** The maximum entropy principle on $\mathcal{D}(\mathbb{C}^7)$ uniquely identifies the inverse metric tensor with the covariance matrix:
+**(Char-IV) Maximum-entropy covariance identification (Vanchurin 2026).** The maximum entropy principle on $\mathcal{D}(\mathbb{C}^7)$ uniquely identifies the inverse metric tensor with a physical covariance, up to the normalisation constant of Char-III:
 
-$$g^{ij}_B(\Gamma) = C^{ij}(\Gamma) := \mathrm{Cov}_\Gamma(\hat{O}_i, \hat{O}_j)$$
+$$g^{ij}_B(\Gamma) = 4\,C_{\mathrm{est}}^{ij}(\Gamma),\qquad C_{\mathrm{est}} := \mathcal F_{\mathrm{SLD}}^{-1}$$
+
+where $C_{\mathrm{est}}$ is the minimal estimator covariance saturating the quantum Cramér–Rao bound. The factor $4$ is not optional: it is exactly the Braunstein–Caves constant of Char-III, and dropping it makes the identity self-contradictory (see the correction note in Step 4).
 
 where $C^{ij}$ is the quantum covariance of observables at state $\Gamma$. This follows from a 4-step argument:
 
@@ -334,14 +336,26 @@ This construction is **metric-agnostic**: each choice of $f$ produces a Gaussian
 
 **Step 2 (MaxEnt-covariance identity per metric).** The covariance of $\tilde\rho_f$ in $g_f$-normal coordinates is $\delta^{ij}$. Transforming to a common coordinate chart: $C_f^{ij}(\Gamma)=g_f^{ij}(\Gamma)$, i.e., every Petz metric satisfies $\mathrm{Cov}_{\tilde\rho_f}=g_f^{-1}$ **by construction**. This step is therefore **not** a selector.
 
-**Step 3 (Metric-independent physical covariance — Lemma).**
-:::info Lemma (SLD covariance is Petz-free)
-The SLD quantum covariance $C^{ij}_{\mathrm{SLD}}(\Gamma):=\tfrac12\operatorname{Tr}\!\bigl(\Gamma\{L_i,L_j\}\bigr)$, where $L_i$ is the SLD defined by $\partial_i\Gamma=\tfrac12(L_i\Gamma+\Gamma L_i)$, involves only $\Gamma$ and its derivative; **no metric on $\mathcal D(\mathbb C^7)$ enters its definition**. Hence $C_{\mathrm{SLD}}$ is a physical observable that assigns a $(2,0)$-tensor to each $\Gamma$ independently of any metric choice.
+**Step 3 (Metric-independent physical quantity — Lemma).**
+:::info Lemma (the SLD bilinear form is Petz-free)
+The SLD bilinear form $C^{\mathrm{SLD}}_{ij}(\Gamma):=\tfrac12\operatorname{Tr}\!\bigl(\Gamma\{L_i,L_j\}\bigr)$, where $L_i$ is the SLD defined by $\partial_i\Gamma=\tfrac12(L_i\Gamma+\Gamma L_i)$, involves only $\Gamma$ and its derivative; **no metric on $\mathcal D(\mathbb C^7)$ enters its definition**. Hence $C^{\mathrm{SLD}}$ is a physical quantity assigning a $(0,2)$-tensor to each $\Gamma$ independently of any metric choice.
+
+**Index placement, stated exactly.** $C^{\mathrm{SLD}}_{ij}$ carries *lower* indices: it is the covariance of the SLD *operators*, which is by definition the SLD quantum Fisher information, $C^{\mathrm{SLD}} = \mathcal F_{\mathrm{SLD}}$. The object with *upper* indices — the covariance of the *parameters*, i.e. the minimal estimator covariance saturating the quantum Cramér–Rao bound — is its inverse, $C_{\mathrm{est}}^{ij} = (\mathcal F_{\mathrm{SLD}}^{-1})^{ij}$. These two are not interchangeable, and conflating them is what produced the error corrected below.
 :::
 
 **Step 4 (Unique selection by matching).** Set the universal selector equation
-$$g^{ij}(\Gamma) = C^{ij}_{\mathrm{SLD}}(\Gamma)\qquad (\star)$$
-and ask: **which** Petz metric satisfies $(\star)$? By Braunstein–Caves 1994, the SLD Fisher information $\mathcal F_{\mathrm{SLD}}=4g_B$ and its inverse is the SLD covariance, giving $(g_B)^{-1}=C_{\mathrm{SLD}}$. For any other Petz $g_f$ ($f\neq\tfrac{1+t}{2}$), $(g_f)^{-1}\neq C_{\mathrm{SLD}}$ because the corresponding Fisher information $\mathcal F_f\neq\mathcal F_{\mathrm{SLD}}$ (Petz 1996; distinct monotone means give distinct Fisher tensors). Hence $(\star)$ is satisfied **uniquely** by Bures. $\square_{\mathrm{IV}}$
+
+$$g_{ij}(\Gamma) = \tfrac14\,C^{\mathrm{SLD}}_{ij}(\Gamma)\qquad (\star)$$
+
+and ask: **which** Petz metric satisfies $(\star)$? By Braunstein–Caves 1994, $\mathcal F_{\mathrm{SLD}}=4g_B$, and by the Lemma $C^{\mathrm{SLD}}=\mathcal F_{\mathrm{SLD}}$; hence $(\star)$ reads $g_{ij}=(g_B)_{ij}$ and holds for Bures. Equivalently, in the estimator-covariance form that carries the MaxEnt reading, $(g_B)^{-1} = 4\,C_{\mathrm{est}}$. For any other Petz $g_f$ ($f\neq\tfrac{1+t}{2}$), $(\star)$ fails because the corresponding Fisher information $\mathcal F_f\neq\mathcal F_{\mathrm{SLD}}$ (Petz 1996; distinct monotone means give distinct Fisher tensors). Hence $(\star)$ is satisfied **uniquely** by Bures. $\square_{\mathrm{IV}}$
+
+:::danger Correction (2026-08-06): the selector equation had the wrong form
+An earlier version wrote the selector as $g^{ij}=C^{ij}_{\mathrm{SLD}}$, i.e. $(g_B)^{-1}=C_{\mathrm{SLD}}$, justified as "the inverse of $\mathcal F_{\mathrm{SLD}}$ is the SLD covariance". That statement is false as written, on two counts at once. The object defined in Step 3 is $\tfrac12\operatorname{Tr}(\Gamma\{L_i,L_j\})$, which **is** $\mathcal F_{\mathrm{SLD}}$ itself, not its inverse; and even under the intended reading the factor $4$ from Char-III was dropped. Chaining the two claims gives $(g_B)^{-1}=\mathcal F_{\mathrm{SLD}}=4g_B$, i.e. $g_B^2=\tfrac14 I$, which is false for any non-degenerate metric.
+
+Machine-verified at $N=4$ (`internal/vanchurin-bridge/normalization_audit.py` §C): $\max|C^{\mathrm{SLD}}-\mathcal F_{\mathrm{SLD}}| = 0$ exactly, $\max|C^{\mathrm{SLD}}-4g_B| = 1.5\times10^{-12}$, while the claimed identity $(g_B)^{-1}=C^{\mathrm{SLD}}$ has relative residual $0.994$ — it is not approximately true either. The repaired identities $g_B = \tfrac14 C^{\mathrm{SLD}}$ and $g_B^{-1}=4(C^{\mathrm{SLD}})^{-1}$ hold to $4\times10^{-13}$.
+
+**What survives.** The *conclusion* of Char-IV — that the selector picks out Bures uniquely — is untouched, because uniqueness rests on distinct monotone means yielding distinct Fisher tensors, a statement about the tensor's *shape*, not its normalisation. Nothing else in T-187 depends on this step; Char-IV was already recorded as interpretive rather than logically independent (see the scope note below). Only the displayed equation was wrong.
+:::
 
 :::warning Scope clarification
 Char-IV is **not logically independent of Char-III**: the selection mechanism is matching $g^{-1}$ against $C_{\mathrm{SLD}}$, which reduces Char-IV to the SLD-Fisher characterization. The value added by Char-IV is **interpretive**: it recasts "saturate Cramér–Rao" (estimation-theoretic) as "inverse metric equals physical covariance" (statistical-mechanical), and it makes explicit that **no circularity arises** in T-187: the constraint metric in Step 1 can be any Petz member, yet the same Bures is selected in Step 4. Char-IV strengthens T-187's physical motivation without producing an additional logically independent witness.
