@@ -202,6 +202,52 @@ $\Phi_{\text{th}}$, the conscious window) *is* a catalogue of
 possible-versus-impossible configurations, maintained with
 registry discipline.
 
+## 2.9 The learning-theoretic bridge: UHM fixes Vanchurin's free function [Т]
+
+Deutsch's multiverse and Vanchurin's *self-learning universe* are the
+two live programmes that derive physics from something more primitive
+(branching worlds; learning dynamics). UHM engages the second one
+quantitatively, and the result is a set of exact theorems (T-293–295,
+full derivations in `internal/vanchurin-bridge/`):
+
+Vanchurin parametrises the learning algorithm by the functional
+relation $g=\kappa^{a}$ between metric and noise covariance, with
+$a=0$ (stochastic gradient), $a=\tfrac12$ (efficient, conjectured for
+biology) and $a=1$ (natural gradient, "quantum"), and states that
+$\kappa$ has never been measured. In UHM **neither factor is free**:
+$g$ is Bures (unique monotone metric, T-187) and $\kappa$ is the
+Kraus-increment covariance of the canonical dissipator (T-41/T-59).
+Computing both gives
+
+$$
+\Pi\,g\,\kappa_{\text{at}}\,\Pi=\frac{\gamma}{2N}\,\Pi
+\quad\Longrightarrow\quad a=1 \;\text{exactly},
+$$
+
+with three companions: the universal Fano factor
+$\operatorname{Tr}(g\kappa_{\text{full}})/\operatorname{Tr}(g\kappa_{\text{at}})=11/9$
+(state-independent), the noise–purity law
+$\operatorname{Tr}\kappa=\frac{\gamma}{N}(1-P)$ (viable band
+$[4\gamma/49,5\gamma/49)$), and the strict sector split
+$\kappa^{\text{coh}}\equiv0$ — stochastic learning noise cannot reach
+coherences at all. Two consequences deserve emphasis:
+
+1. **UHM derives, as a dynamical theorem, the identity Vanchurin
+   adopts as a maximum-entropy postulate** ($g^{-1}\propto\kappa$,
+   his Eq. 4.7 in raised-index form).
+2. **A falsifiable disagreement**: UHM predicts that a viable learner
+   sits at $a=1$ with Fano-induced anisotropy, *not* at the
+   $a=\tfrac12$ regime conjectured for biological complexity. The
+   very measurement Vanchurin proposes (estimating $\kappa$
+   alongside $g$) decides between them.
+
+Read together with §2.6: Deutsch asks *where* the computation
+happens and answers "in other worlds"; Vanchurin asks *what algorithm*
+the world runs; UHM answers the second question with numbers and, in
+doing so, removes the need for the first — the computation happens in
+the coherence sector of one state, and the learning happens in its
+complement.
+
 ## 3. Summary verdict
 
 **What UHM strictly says about parallel universes:**
