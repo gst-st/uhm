@@ -9,6 +9,7 @@ const sidebars: SidebarsConfig = {
       collapsed: false,
       items: [
         'core/foundations/mathematical-foundations',
+        'core/foundations/hypermathematics',
         'core/foundations/axiom-omega',
         'core/foundations/axiom-septicity',
         'core/foundations/consequences',
@@ -123,6 +124,7 @@ const sidebars: SidebarsConfig = {
         'consciousness/comparative/cognitive-hierarchy',
         'consciousness/comparative/cognitome-anokhin',
         'consciousness/comparative/general-systems-theory',
+        'consciousness/comparative/soul-decomposition',
       ],
     },
     {
@@ -216,6 +218,7 @@ const sidebars: SidebarsConfig = {
       items: [
         'physics/quantum-mechanics/qm-reduction',
         'physics/quantum-mechanics/measurement',
+        'physics/quantum-mechanics/many-worlds',
       ],
     },
     {
@@ -373,6 +376,7 @@ const sidebars: SidebarsConfig = {
     'applied/research/measurement-protocol',
     'applied/research/engineering-insights',
     'applied/research/poincare-perelman',
+    'applied/research/vanchurin-bridge',
     'applied/research/gap-diagnostics',
     'applied/research/symbolic-correspondence',
     'applied/research/gamma-canon',
@@ -380,6 +384,12 @@ const sidebars: SidebarsConfig = {
     'applied/research/fano-fingerprint',
     'applied/research/mathesis',
     'applied/research/experimental-protocol',
+    'applied/research/one-grammar',
+    'applied/research/prime-radiant',
+    'applied/research/homoholograph',
+    'applied/research/holarch',
+    'applied/research/domain-transfer',
+    'applied/research/human-design',
   ],
 
   reference: [

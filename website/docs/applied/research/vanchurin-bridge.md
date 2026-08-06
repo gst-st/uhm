@@ -812,6 +812,10 @@ normalisation cross-checked independently by
 | 7 | Zero drift | $3.64\times10^{-17}$; $0.00$ |
 | 8 | Sphericity test: separating power, simulated size and power; Campbell window identity | $M\approx100$ |
 
+A condensed statement of this bridge, set against Deutsch's many-worlds
+programme, is §2.9 of [Many-Worlds (Everett–Deutsch) and
+UHM](/docs/physics/quantum-mechanics/many-worlds).
+
 Corpus cross-references: T-41 (Fano channel family), T-42a
 ($G_2$-rigidity), T-55 (Lawvere incompleteness), T-57 (triadic
 completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
