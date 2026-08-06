@@ -264,7 +264,7 @@ The distance between two experiences $e_1$ and $e_2$ is the **minimum physical d
 **(d) Canonicity.** The Bures metric $d_B$ is the **unique** (up to scale) monotone Riemannian metric on $\mathcal{D}(\mathcal{H})$ by the Chentsov–Petz theorem [T]. The functor $F$ is canonical (G₂-rigidity, T-42a [T]). Consequently, $d_{\mathcal{E}}$ is a canonical factor-metric defined **without free parameters**.
 
 **(e) Component-wise decomposition.** On $\mathcal{E} = \Delta^{N-1} \times_{\text{Spec}} \mathbb{P}(\mathcal{H}_E)^N \times \mathcal{C}$ the induced metric decomposes:
-- On $\Delta^{N-1}$ (spectra): **Fisher metric** — induced by Bures on diagonal matrices
+- On $\Delta^{N-1}$ (spectra): **Fisher metric** — induced by Bures on diagonal matrices, with the factor made explicit: $g_{\mathrm{B}}|_{\Delta}=\tfrac14\operatorname{diag}(1/\lambda)=\tfrac14\,$Fisher–Rao (since $\mathcal F_{\mathrm{SLD}}=4g_{\mathrm{B}}$)
 - On $\mathbb{P}(\mathcal{H}_E)$ (qualities): **Fubini–Study metric** — induced by Bures on eigenspaces
 - On $\mathcal{C}$ (context): **induced Bures metric** — restriction to the $\{A,S,D,L,O,U\}$-sector (see [§ above](#пространство-контекстов))
 

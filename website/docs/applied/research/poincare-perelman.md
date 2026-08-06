@@ -101,7 +101,7 @@ $$
 ### Hübner's Theorem on the Scalar Curvature of the Bures Metric [T]
 
 :::info Theorem (Hübner 1999; arXiv:quant-ph/9810012)
-Let $g_{\mathrm{B}}$ be the Bures metric ($\equiv$ SLD quantum Fisher information metric) on $\mathcal{D}_+(\mathbb{C}^N)$. Then:
+Let $g_{\mathrm{B}}$ be the Bures metric on $\mathcal{D}_+(\mathbb{C}^N)$ — related to, but **not equal to**, the SLD quantum Fisher information metric: $\mathcal F_{\mathrm{SLD}}=4g_{\mathrm{B}}$ (Braunstein–Caves 1994, as used in [T-187 Char-IV](/docs/proofs/categorical/cohesive-closure)), so on commuting perturbations $g_{\mathrm{B}}=\tfrac14\,$Fisher–Rao. Then:
 
 1. $g_{\mathrm{B}}$ is a smooth Riemannian metric on the open manifold $\mathcal{D}_+(\mathbb{C}^N)$
 2. **Lower bound:** $\displaystyle R_{\mathrm{scal}}(\rho) \geq \frac{N(N-1)}{8}$ for all $\rho \in \mathcal{D}_+(\mathbb{C}^N)$
@@ -109,6 +109,10 @@ Let $g_{\mathrm{B}}$ be the Bures metric ($\equiv$ SLD quantum Fisher informatio
 :::
 
 **Corollary for $N = 7$ [T]:** In the interior $\mathcal{D}_+(\mathbb{C}^7)$ the scalar curvature $R_{\mathrm{scal}} \geq 21/4 \approx 5.25$. It diverges as $\rho \to \mathcal{D}_6^\circ$. This is the **rigorous mathematical justification** for the necessity of surgery at rank-collapse: the Bures curvature singularity is the quantum analogue of the neck in Ricci flow.
+
+:::warning Normalisation is load-bearing here
+Scalar curvature is **not** scale-invariant: under $g\mapsto c\,g$ it transforms as $R_{\mathrm{scal}}\mapsto R_{\mathrm{scal}}/c$. Both the bound $N(N-1)/8$ and the figure $21/4$ are therefore stated in Hübner's Bures normalisation and must not be quoted alongside an SLD-QFI-normalised metric, where they would differ by a factor of four. Only the two *qualitative* facts used downstream — that the curvature is bounded below and that it diverges at rank collapse — are normalisation-free, and it is those the surgery argument rests on.
+:::
 
 ### Carlen–Maas Theorem: Lindblad Dynamics as a Gradient Flow [T]
 
