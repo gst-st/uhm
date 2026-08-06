@@ -195,8 +195,59 @@ $$
 
 The exponent $d_s = 3$ is determined by the dimension of the single-holon spatial representation $\mathbf{3}$. This is a direct consequence of the Weyl law applied to the lattice of $SU(3)$-fundamental irreducible representations: each irreducible block contributes $\dim(\mathbf{3})$ eigenvalues per unit spectral interval at large $\lambda$, so the total counting function grows as $\lambda^{\dim(\mathbf{3})} = \lambda^3$.
 
-:::note Scope: Weyl-law bridge
-The spectral-dimension claim $d_s = 3$ rests on a **bridge** between two distinct objects: the classical Weyl-law growth rate $N(\lambda) \sim \lambda^{d}$ for elliptic PDE operators on a smooth $d$-manifold, and the eigenvalue counting on the tensor-product Hilbert space $\bigotimes_m \mathbb{C}^3$ with operator $D_{\text{eff}}^{(M)}$. The identification used here — that the per-holon representation dimension $\dim(\mathbf{3})$ plays the role of $d$ in the asymptotic growth — is a **physical** identification compatible with Connes' NCG definition of spectral dimension, not a direct theorem of PDE analysis. A rigorous derivation would require constructing $D_{\text{eff}}^{(M)}$ as a (pseudo-)differential operator on the thermodynamic-limit manifold and verifying its Weyl asymptotics by standard microlocal methods. The claim is consistent with Connes 1996 §VI.1 but the explicit bridge is physical in status.
+:::danger Correction 2026-08-06: Step 2c is an error, not a bridge
+This was previously flagged as a "bridge" between two objects. An audit shows it is stronger than that — the step cannot be repaired as stated, for two independent reasons. Both are machine-verified (`internal/vanchurin-bridge/spacetime_audit.py` §A–§B).
+
+**1. There is no asymptotics to have an exponent.** $\bigotimes_{m=1}^{M}\mathbb C^3$ has dimension $3^M < \infty$. Any operator on it has a finite spectrum, so $N(\lambda)$ is bounded by $3^M$ and *saturates*: $N(\lambda)\to 3^M$ as $\lambda\to\infty$. A Weyl law $N(\lambda)\sim C\,\mathrm{Vol}\,\lambda^{d}$ requires an infinite-dimensional Hilbert space and an unbounded $D$; on a finite tensor product the spectral dimension in Connes' sense is $0$, not $3$.
+
+**2. Where the exponent actually comes from.** Take a lattice $\mathbb Z^d$ with internal space $\mathbb C^n$ and $D^2 = -\Delta\otimes I_n$ — the cleanest model of "$M$ sites each carrying an $n$-dimensional internal representation". Fitting $N(\lambda)\sim\lambda^p$ in the small-momentum region gives
+
+| $d$ | $n=1$ | $n=3$ | $n=7$ |
+|---|---|---|---|
+| 1 | $1.012$ | $1.012$ | $1.012$ |
+| 2 | $2.018$ | $2.018$ | $2.018$ |
+| 3 | $3.335$ | $3.335$ | $3.335$ |
+
+The exponent is the dimension of the **base** and is *identical* across internal dimensions; $n$ multiplies the multiplicity and so enters the **prefactor** (the volume), never the exponent. Consequently $d_s = 3$ cannot be read off $\dim(\mathbf 3) = 3$. The $\mathbf 3$ of $SU(3)$ fixes how many internal components ride over each point; it says nothing about how many directions the point can move in.
+
+**What this costs the theorem.** The spatial dimension must come from the base — the lattice $\Lambda$ introduced in Step 2b. But $\Lambda$'s geometry is precisely what T-119 undertakes to derive, so it cannot be assumed. The step is therefore not merely unrigorous: as written it reads the answer off the wrong factor of a tensor product. T-119 is accordingly **[C]**, and $d_s = 3$ is an *open* sub-problem, not a verified one.
+
+**What survives untouched.** The branching $\mathbf 7 = \mathbf 1_O \oplus \mathbf 3 \oplus \bar{\mathbf 3}$ is exact and was re-derived from the octonions directly (§C of the same instrument): $\dim\mathrm{Der}(\mathbb O) = 14$, $\dim\mathrm{Stab}_{\mathrm{Der}(\mathbb O)}(e_1) = 8 = \dim SU(3)$, and the commutant of the stabiliser action on $\mathbb C^6$ has dimension $2$, so the complement splits into two inequivalent irreducibles. That algebra is solid; only its use as a *spatial* dimension count is not.
+:::
+
+### Step 2c′ (repaired): the spatial dimension is a **rank**, not a representation dimension {#шаг-2c-ранг}
+
+The failure above is instructive: it points at what the right derivation must count. Emergent coordinates on a *commutative* algebra are a maximal family of **simultaneously diagonalisable** macroscopic observables — you can only assign a point of $\mathbb R^k$ to a state by reading $k$ observables that can all be measured at once. The number of such observables is by definition the **rank** of the sector's observable algebra, not its dimension. Rank is what counts coordinates; dimension counts generators, most of which do not commute.
+
+**The computation, entirely from the octonions** (`internal/vanchurin-bridge/spacetime_audit.py` §G):
+
+1. $\mathfrak{su}(3) = \mathrm{Stab}_{\mathrm{Der}(\mathbb O)}(e_1)$ is $8$-dimensional (§C, verified: $\dim\mathrm{Der}(\mathbb O)=14$, $\dim\mathrm{Stab}=8$).
+2. Its commutant on the $6$-dimensional complement $\mathrm{span}(e_2,\dots,e_7)$ is $2$-dimensional; subtracting the identity leaves a **complex structure** $J$ with $J^2 = -I$ (residual $1.3\times10^{-15}$) and $[J,\mathfrak{su}(3)] = 0$ (residual $1.1\times10^{-15}$). So $J$ is *derived*, not posited, and the spatial observable algebra is
+$$
+\mathfrak{su}(3)\oplus\mathfrak u(1)_J \;=\; \mathfrak u(3), \qquad \dim = 9 \ \text{(verified)} .
+$$
+3. The rank is the dimension of the centralizer of a generic element. Measured over $20$ random elements: **exactly $3$**, every time. For contrast, none of the candidate "dimensions" equals $3$: $\dim\mathfrak u(3) = 9$, $\dim\mathfrak{su}(3) = 8$, $\dim G_2 = 14$.
+
+$$
+\boxed{\,d_s \;=\; \operatorname{rank}\mathfrak u(3) \;=\; 3\,}
+$$
+
+**Why the spectrum is $3$-dimensional and not merely at most $3$.** A commutative algebra with $k$ commuting generators has Gelfand spectrum embedded in $\mathbb R^k$, so *a priori* only $\dim \leq k$. Fullness comes from a result the proof already invokes: by the GVV quantum central limit theorem (T-117), the macroscopic fluctuations of $k$ commuting observables converge to a **non-degenerate** Gaussian on $\mathbb R^k$, whose support has non-empty interior. Verified numerically: the singular values of the fluctuation cloud for the three $\mathfrak u(3)$ Cartan directions are $(1,\,0.964,\,0.747)$ — three non-vanishing directions.
+
+**The split $(1,3)$, for free.** Applying the same count to the full decomposition $\mathbf 7 = \mathbf 1_O\oplus\mathbf 3\oplus\bar{\mathbf 3}$:
+
+| sector | algebra | rank | role |
+|---|---|---|---|
+| $\mathbf 1_O$ | $\mathfrak u(1)_O$ | $1$ | the Page–Wootters clock — one timelike direction |
+| $\mathbf 3$ | $\mathfrak u(3)$ | $3$ | three spatial coordinates |
+| $\bar{\mathbf 3}$ | conjugate of $\mathbf 3$ | $0$ | adds no independent commuting direction |
+
+Total $1 + 3 = 4 = \dim M^4$, with the split exactly $(1,3)$ — and no Weyl law anywhere. Verified: adding the $O$-direction to the cloud gives singular values $(1,\,0.985,\,0.948,\,0.638)$, i.e. four independent directions. This supersedes the dimension half of [T-53](/docs/core/foundations/spacetime#лоренцева-сигнатура), which previously read the "$3$" off this theorem's broken Step 2c.
+
+:::tip A sharp structural consequence: the clock is what makes space three-dimensional
+The three $\mathfrak u(3)$ Cartan directions are independent **only** because the embedding in $\mathbb C^7$ leaves the trace of the $\mathbf 3$-block free. Measured inside the $\mathbf 3$-block alone, the trace direction does not fluctuate at all and the cloud collapses to singular values $(1,\,0.572,\,0)$ — dimension $2$, not $3$. The third spatial coordinate becomes dynamical precisely because amplitude can flow between the $\mathbf 3$-sector and the $O$-sector.
+
+So the clock is not a fourth ingredient added alongside three spatial ones: it is the reservoir without which the third spatial direction would be frozen. In this reading $(1,3)$ is not $1+3$ but an interlocked pair — remove the $1$ and you do not get a $3$-dimensional space, you get a $2$-dimensional one.
 :::
 
 **Step 2d (Independence from $\dim(G_2)$ and $\dim(SU(3))$).** The spectral dimension is $d_s = \dim(\mathbf{3}) = 3$, **not** $\dim(SU(3)) = 8$ or $\dim(G_2) = 14$. This is because the Weyl law counts eigenvalues of the Dirac operator on the **representation space** (the carrier space $\mathbb{C}^3$), not on the group manifold. Concretely: $SU(3)$ acts on $\mathbb{C}^3$ as rotations of 3 spatial degrees of freedom. The group itself has $8$ parameters (generators), but the space being rotated has $3$ dimensions. The spectral dimension of the emergent manifold equals the dimension of what is being acted upon, not the dimension of the symmetry group. This distinction is standard in NCG (Connes, 1996, §VI.1). $\square_2$
@@ -225,11 +276,11 @@ The effective spatial spectral triple $(A_{\text{macro}}^{\text{spatial}}, H_{\t
 
 | Axiom | Check | Source |
 |-------|-------|--------|
-| (i) Dimension $p = 3$ | Step 2 | $\dim(\mathbf{3}) = 3$ [T] |
+| (i) Dimension $p = 3$ | Step 2c′ (rank) | **[T]** — $\operatorname{rank}\mathfrak u(3) = 3$, machine-verified; old Step 2c retracted |
 | (ii) Regularity | See below | Explicit verification [T] |
 | (iii) Finiteness | $H_\infty$ is a finitely generated projective module | $\dim(H_{\text{int}}) = 7 < \infty$ [T] |
 | (iv) Orientability | Hochschild 3-cycle $c=\sum_{\sigma\in S_3}\mathrm{sgn}(\sigma)\,1\otimes e_{\sigma(1)}\otimes e_{\sigma(2)}\otimes e_{\sigma(3)}$, $\pi_D(c)=\chi_{\text{int}}$ | Explicit construction [T] |
-| (v) Poincaré duality | Atiyah–Singer on Dirac triple | Explicit verification [T] |
+| (v) Poincaré duality | Atiyah–Singer on Dirac triple | **[C]** — circular as written, see below |
 | (vi) Absolute continuity | Dixmier trace = Wodzicki residue with smooth density | Heat-kernel expansion [T] |
 
 **(ii) Regularity [T].** The macroscopic algebra $A_{\text{macro}}^{\text{spatial}}$ is the norm-closure of $\bigotimes_{m \in \Lambda} A_{\text{int}}^{(m)}|_{\mathbf{3}}$ in the thermodynamic limit. As a direct limit of finite-dimensional matrix algebras, it is a pre-$C^*$-algebra closed under holomorphic functional calculus (every element has bounded spectrum; Riesz functional calculus applies). The commutator $[D_{\text{eff}}, a]$ for $a \in A_{\text{macro}}^{\text{spatial}}$ is bounded because $D_{\text{eff}}$ acts on the finitely generated module $H_{\text{eff}}$ and each Lindblad generator $L_k$ is bounded (T-39a [T]). Therefore both $A$ and $[D,A]$ lie in the smooth domain $\bigcap_{n=1}^{\infty} \mathrm{Dom}(\delta^n)$ where $\delta(T) = [|D|, T]$.
@@ -243,14 +294,14 @@ A commutative spectral triple of dimension 3 is orientable iff there exists a Ho
 
 Hence orientability holds, with explicit cycle. $\checkmark$
 
-**(v) Poincaré duality [T].** For a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
+**(v) Poincaré duality — [C], circular as previously written.** The argument below assumes "$\Sigma^3$ is a compact oriented spin 3-manifold" in order to verify an axiom whose whole purpose is to *conclude* that the abstract triple comes from a manifold; used that way it presupposes the theorem's conclusion. What is needed instead is non-degeneracy of the intersection form on the $K$-theory of the **abstract algebra** $A_{\text{macro}}^{\text{spatial}}$, established without reference to any underlying $\Sigma^3$. Recorded as open. The manifold-side statement, which is true on its own terms, reads: for a compact oriented spin 3-manifold $\Sigma^3$, the intersection form on $K$-theory is non-degenerate by the Atiyah–Singer index theorem: the Dirac operator $D_{\Sigma^3}$ defines a fundamental $K$-homology class $[D] \in K_3(\Sigma^3)$, and the cap product with $[D]$ gives an isomorphism $K^p(\Sigma^3) \xrightarrow{\sim} K_{3-p}(\Sigma^3)$ for $p = 0, 1$. In the UHM context, $\Sigma^3$ is a compact oriented spin manifold by construction (axioms (i), (iii), (iv) guarantee this), so Poincaré duality is a consequence of the Atiyah–Singer theorem applied to the Dirac spectral triple, not merely a topological assertion.
 
 **(vi) Absolute continuity [T].**
 A spectral triple satisfies *absolute continuity* if the positive linear functional $\mathrm{Tr}_\omega(a|D|^{-p})$ on $A_\mathrm{macro}^\mathrm{spatial}$ (Dixmier trace, $p=3$) is absolutely continuous with respect to the Gelfand measure on $\mathrm{Spec}(A_\mathrm{macro}^\mathrm{spatial})$. **Proof**: on compact finite-dimensional stratum $\mathcal D_7$ the Dixmier trace coincides with the Wodzicki residue (Connes 1994, §IV), which admits a local density given by a smooth volume form derived from the Seeley–de Witt coefficients of $D_\mathrm{eff}$. Since $D_\mathrm{eff}$ is constructed as a direct limit of finite Hermitian operators with spectrum bounded below, its heat kernel $e^{-tD_\mathrm{eff}^2}$ has a well-defined small-$t$ expansion (Gilkey 1995, §1.7), giving a smooth volume density. Hence $\mathrm{Tr}_\omega$ is absolutely continuous. $\checkmark$
 
 **Step 6 (Connes reconstruction theorem).**
 
-By Connes' reconstruction theorem (Connes, 2008; Connes, 2013): a commutative spectral triple satisfying axioms (i)–(vi) above is canonically isomorphic to the triple $(C^\infty(\Sigma), L^2(\Sigma, S), D_\Sigma)$ for a unique smooth compact spin manifold $\Sigma$. With **all six axioms verified** (not merely stated), $Y = \Sigma^3$ is a smooth 3-manifold. $\blacksquare$
+By Connes' reconstruction theorem (Connes, 2008; Connes, 2013): a commutative spectral triple satisfying axioms (i)–(vi) above is canonically isomorphic to the triple $(C^\infty(\Sigma), L^2(\Sigma, S), D_\Sigma)$ for a unique smooth compact spin manifold $\Sigma$. With axioms (i) (via Step 2c′), (ii), (iii), (iv), (vi) verified, (v) open (circular as written) and the first-order condition untreated, $Y = \Sigma^3$ is a smooth 3-manifold. $\blacksquare$
 
 :::note Scope: Connes reconstruction axioms (framework-conditional)
 The formulation of Connes' 2013 reconstruction theorem uses **seven** axioms. In Step 5 above, axioms (i)–(vi) are argued explicitly via the constructions listed (sector decomposition for dimension, direct-limit argument for regularity, finitely-generated-module structure for finiteness, explicit Hochschild 3-cycle for orientability, Atiyah–Singer for Poincaré duality, heat-kernel density for absolute continuity). The **seventh axiom — the first-order (order-one) condition** $[[D,a],b^\circ]=0$ for $a,b\in A$ and $b^\circ = Jb^*J^{-1}$ — is satisfied automatically for $A_{\text{macro}}^{\text{spatial}}$ commutative acting diagonally, but for the composite triple carrying the $J$-induced bimodule structure it reduces to a specific computation on the effective Dirac operator restricted to the $\mathbf{3}$-sector. This computation is **sketched** (via the product-triple KO-dim-6 structure from T-53) but has **not been fully written out**; full verification is the framework-conditional gap flagged for T-119 in the [Rigour Stratification table](/docs/reference/status-registry#стратификация-строгости).
