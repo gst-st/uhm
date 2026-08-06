@@ -43,11 +43,29 @@ Why exactly this way? Because the group of automorphisms of the octonions $G_2$ 
 
 ### Why Three Spatial Dimensions? {#почему-три-пространственных}
 
-The dimensionality of the fundamental representation of $SU(3)$ equals 3. Not 2. Not 4. Three.
+There is a tempting short answer, and it is wrong. The tempting one goes: the fundamental representation of $SU(3)$ has dimension 3 — not 2, not 4 — and there is your space.
 
-The question "why is space three-dimensional?" reduces to: "why is the stabilizer of the O-direction in $G_2$ exactly $SU(3)$?" Answer: because $G_2$ is the group of automorphisms of the octonions, and the octonions are the unique non-associative normed division algebra ([Hurwitz's theorem](/docs/proofs/minimality/theorem-minimality-7), 1898 [Т]). To remove a dimension is to transition from $\mathbb{O}$ to $\mathbb{H}$ (quaternions), losing non-associativity, and with it — the entire structure of the Gap operator. To add — impossible: after $\mathbb{O}$ there are no normed division algebras.
+It does not follow. Representation dimension counts how many internal components ride *over* a point; spatial dimension counts how many directions a point can *move in*. These are different questions, and conflating them is easy to catch: put a lattice $\mathbb{Z}^d$ in front of you and hang an $n$-component internal space over every site. Count eigenvalues. The growth exponent comes out as $d$ every time and is completely indifferent to $n$ — the internal dimension only multiplies how *many* eigenvalues there are at each level, never how fast their number grows. So $\dim(\mathbf{3}) = 3$ cannot be the reason space is three-dimensional.
 
-Three spatial dimensions are not an aesthetic choice of the Creator and not an anthropic tautology. This is the dimensionality of the only suitable algebra.
+The real reason is sharper, and it is about *simultaneity*.
+
+To assign a point of $\mathbb{R}^k$ to a state, you must read $k$ numbers off it **at once**. In quantum mechanics that means $k$ observables that commute — otherwise there is no joint reading, no coordinates, no point. So the question is not "how big is the algebra of spatial observables?" but "how many of its elements can be measured together?" That number is the algebra's **rank**.
+
+Work it out on the octonions themselves. Fix the $O$-direction; its stabiliser inside the automorphism group is $\mathfrak{su}(3)$, eight-dimensional. Ask what commutes with all of it on the remaining six directions, and out falls a complex structure $J$ with $J^2 = -1$ — not imposed, *derived*. So the spatial observable algebra is $\mathfrak{su}(3) \oplus \mathfrak{u}(1)_J = \mathfrak{u}(3)$, of dimension nine. Now take a generic element and ask how much of the algebra commutes with it. The answer is **three**, every time.
+
+$$
+d_{\text{space}} \;=\; \operatorname{rank}\,\mathfrak{u}(3) \;=\; 3
+$$
+
+Look at what this rules out. $\dim\mathfrak{u}(3) = 9$, $\dim\mathfrak{su}(3) = 8$, $\dim G_2 = 14$ — not one of them is 3. Only the rank is. **Space is three-dimensional because three is the largest number of questions you can put to a holon at the same time.**
+
+And one more turn of the screw, which is where the result stops being bookkeeping. Those three directions are independent only because the $\mathbf{3}$-sector sits inside a *seven*-dimensional whole that leaves its total weight free to drift. Measure the same three observables inside the $\mathbf{3}$-block alone, sealed off, and one of them stops fluctuating: you get two dimensions, not three. Amplitude has to be able to flow between the spatial sector and the clock for the third coordinate to be alive at all.
+
+So the clock is not a fourth thing standing beside three spatial things. It is the reservoir without which space would be a plane. $(1,3)$ is not $1+3$ — it is an interlocked pair, and removing the $1$ does not leave you with a three-dimensional world.
+
+Three spatial dimensions are therefore neither an aesthetic choice nor an anthropic tautology. They are a rank — and the octonions are what fixes which rank it is, since $\mathbb{O}$ is the unique non-associative normed division algebra ([Hurwitz's theorem](/docs/proofs/minimality/theorem-minimality-7), 1898 [Т]). Drop a dimension and you fall back to the quaternions, losing non-associativity and with it the whole structure of the Gap operator. Add one and there is nowhere to go: after $\mathbb{O}$ the normed division algebras run out.
+
+Full derivation, with the machine checks: [The Learning Algorithm of a Holon](/docs/applied/research/vanchurin-bridge) is the neighbouring result on the same sector; the rank computation and the collapse-to-two demonstration are in [Emergent Manifold](/docs/proofs/physics/emergent-manifold#шаг-2c-ранг).
 
 ### Why Are {A,S,D} "Large" and {L,E,U} "Small"? {#почему-asd-большие-а-leu-маленькие}
 
@@ -169,12 +187,13 @@ Barbour, 1999 (*The End of Time*): time does not exist fundamentally. UHM formal
 | Result | Status | Comment |
 |--------|--------|---------|
 | Sector decomposition $7 = 1 + 3 + \bar{3}$ | [Т] | $SU(3)$-stabilizer in $G_2$ |
-| Lorentz signature $(+,-,-,-)$ | [Т] | Spectral triple T-53, KO-dim 6 |
+| Split $(1,3)$ — one clock, three spatial | [Т] | Ranks: $\operatorname{rank}\mathfrak u(1)_O = 1$, $\operatorname{rank}\mathfrak u(3) = 3$ |
+| Lorentzian *sign* $(+,-,-,-)$ rather than Euclidean | [С] | Krein triple T-53 is consistent with it but does not select it; the sign rests on boundedness-below of $H_S$ (reflection positivity) |
 | Time from O via Page-Wootters | [Т] | Emergent, not postulated |
 | Arrow of time — collapse of strata | [Т] | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ |
-| Space from $\{A,S,D\}$ — non-compact sector | [Т] | Spectral triple T-53, no Higgs in $SU(3)_C$ |
+| Space from $\{A,S,D\}$ — non-compact sector | [Т] | $\operatorname{rank}\mathfrak u(3) = 3$, no Higgs in $SU(3)_C$ |
 | Compactification of $\{L,E,U\}$ via Higgs | [Т] | $v_{\text{EW}} \sim 246$ GeV, breaking of $SU(2)_L \times U(1)_Y$ |
-| Background independence ($M^4$ derived) | [Т] | Gelfand-Naimark-Connes chain (T-120) |
+| Background independence ($M^4$ derived) | [С] | Gelfand–Naimark–Connes chain (T-120). The Gel'fand step and the dimension count are [Т]; the manifold *reconstruction* leaves two of Connes' seven axioms open (first-order condition, Poincaré duality) |
 | Subjective tempo $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] | Definition, not theorem |
 | Slowing at $P \to P_{\text{crit}}$ | [С] | Semantic postulate |
 | "Time does not exist fundamentally" | [И] | Interpretation of PW-mechanism |
@@ -197,7 +216,7 @@ Space is three-dimensional not because "the world is structured this way." Here 
 | Where does the arrow of time come from? | Collapse of strata to $T$ | [Т] |
 | Is time real? | Emergent: correlation, not flow | [Т]+[И] |
 | Subjective tempo? | $\mathcal{T} = \lvert\gamma_{OE}\rvert/\gamma_{OO}$ | [О] |
-| Is $M^4$ background-independent? | Derived from categorical structure (T-120) | [Т] |
+| Is $M^4$ background-independent? | Derived from categorical structure (T-120) | [С] — dimension [Т], reconstruction open |
 
 ---
 
@@ -211,7 +230,7 @@ Space is three-dimensional not because "the world is structured this way." Here 
 
 **4. Your subjective time is measurable.** $\mathcal{T} = |\gamma_{OE}|/\gamma_{OO}$ — not a metaphor. When you "lose track of time" in flow — $\mathcal{T}$ is elevated, $\gamma_{DE}$ is large. When time "drags" from boredom — $\gamma_{DE} \approx 0$, $\gamma_{LE}$ is elevated. When anesthesia "turns off" time — $|\gamma_{OE}| \to 0$. Subjective time is not a philosophical puzzle, but a function of coherence. In time (pun unintended) we will learn to measure it.
 
-**5. Spacetime is not a stage, but a consequence.** The smooth manifold $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from categorical structure [Т] (T-120): the macroscopic algebra of observables in the $\{A,S,D\}$-sector is commutative in the thermodynamic limit (quantum central limit theorem, T-117 [Т]); by Gelfand-Naimark duality a commutative C*-algebra is isomorphic to $C(\Sigma^3)$ for the unique smooth 3-manifold (T-119 [Т]); the product with the temporal component gives $M^4$ (T-120 [Т]). Space is not a given, but an emergent structure. Einstein deformed the stage; UHM derives it from behind the curtain.
+**5. Spacetime is not a stage, but a consequence.** The smooth manifold $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from categorical structure [С] (T-120 — the dimension count is [Т], the manifold reconstruction is open): the macroscopic algebra of observables in the $\{A,S,D\}$-sector is commutative in the thermodynamic limit (quantum central limit theorem, T-117 [Т]); by Gelfand-Naimark duality a commutative C*-algebra is isomorphic to $C(\Sigma^3)$ for the unique smooth 3-manifold (T-119 [Т]); the product with the temporal component gives $M^4$ (T-120 [Т]). Space is not a given, but an emergent structure. Einstein deformed the stage; UHM derives it from behind the curtain.
 
 Mathematics, as usual, does not ask for permission. But sometimes — it shows you the clock.
 

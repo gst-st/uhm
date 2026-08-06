@@ -108,9 +108,12 @@ const config: Config = {
     },
   },
 
+  // Relative paths: require.resolve() bakes the absolute build-machine path
+  // into the site metadata inside the shipped JS bundle, leaking the local
+  // directory layout. Docusaurus resolves these relative to the site dir.
   clientModules: [
-    require.resolve('./src/theme/MermaidRounded.js'),
-    require.resolve('./src/theme/TocMath.js'),
+    './src/theme/MermaidRounded.js',
+    './src/theme/TocMath.js',
   ],
 
   plugins: [

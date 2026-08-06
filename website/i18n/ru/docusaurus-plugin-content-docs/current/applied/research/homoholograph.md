@@ -160,9 +160,7 @@ $\mathrm{body}_0 = E(\text{Design})$ (телесный отпечаток). Дв
 
 ## 5. Приложение (Rust, workspace `homoholograph/`)
 
-Нативная лаборатория (GUI на egui/eframe + headless `ozar-report --json`),
-репозиторий `projects/oldman/homoholograph`, симлинк
-`internal/homoholograph`.
+Нативная лаборатория (GUI на egui/eframe + headless `ozar-report --json`).
 
 **Автономная эфемерида — сама по себе результат.** Ряды Меёса (планеты
 VSOP87, Луна ELP-2000/82, аналитический Плутон с прецессией из J2000),

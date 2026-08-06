@@ -795,10 +795,10 @@ engineered learning systems built on the UHM core.
 ## 11. Reproducibility {#воспроизводимость}
 
 Every number on this page is printed by
-`internal/vanchurin-bridge/full_predictions.py` (deterministic, seeds
+the reproduction script (deterministic, seeds
 20260806 / 20260807 / 20260808; NumPy + SciPy), with the metric
 normalisation cross-checked independently by
-`internal/vanchurin-bridge/normalization_audit.py`.
+the reproduction script.
 
 | § | Check | Result |
 |---|---|---|

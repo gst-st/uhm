@@ -160,7 +160,6 @@ it is blind).
 ## 5. The application (Rust, `homoholograph/` workspace)
 
 A native laboratory app (egui/eframe GUI + headless `ozar-report --json`),
-repo `projects/oldman/homoholograph`, symlinked at `internal/homoholograph`.
 
 **The self-contained ephemeris is itself a result.** Meeus series (VSOP87
 planets, ELP-2000/82 Moon, analytic Pluto precessed from J2000), nutation,

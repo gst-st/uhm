@@ -868,7 +868,7 @@ Consequently, $\rho^*$ is the **terminal object** of the category $\mathbf{Res}$
 
 ### 16.2. Proof {#t-222-proof}
 
-The proof proceeds via six lemmas; full detail in `internal/proof-h-mrqt-lawvere.md`.
+The proof proceeds via six lemmas.
 
 #### Lemma L1 — orbit-averaged non-Abelian charges vanish
 

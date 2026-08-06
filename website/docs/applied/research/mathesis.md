@@ -188,7 +188,7 @@ Examples: $T_{\text{UHM}}$ (~210 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}
 
 **Intuition.** A covering is a set of "perspectives" that collectively exhaust the content of a theory. For example, $T_{\text{IIT}}$ and $T_{\text{GWT}}$ can jointly cover the part of $T_{\text{UHM}}$ concerning integration.
 
-**Formal typing in Verum.** The Verum stdlib (`core/math/infinity_topos.vr`) already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (`core/math/epistemic.vr`, see `internal/verum-ext-2.md` §3.3) defines:
+**Formal typing in Verum.** The Verum stdlib (`core/math/infinity_topos.vr`) already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (`core/math/epistemic.vr`, see an unpublished specification §3.3) defines:
 
 ```
 type Theory is {
@@ -1316,7 +1316,7 @@ Phases correspond to the three levels of Ω (T-182):
 
 ### Phase 5: Activating Verum Foundation (parallel with Phases 2–4)
 
-Extensions of Verum necessary for native realization of $\mathfrak{M}$ (details: `internal/verum-ext.md`):
+Extensions of Verum necessary for native realization of $\mathfrak{M}$:
 
 - **5a**: Cubical primitives — Path type, `transport`, `hcomp` (computational model for paths)
 - **5b**: HKT — `F: Type → Type` in generic parameters (abstraction over Functor, Monad)
@@ -1405,10 +1405,10 @@ Lean 4 is the closest, but lacks systems performance and GPU. Agda has cubical, 
 ### 15.3. Extensions for Mathesis
 
 :::info Audit result
-A deep audit revealed that **6 out of 7 originally planned modules already exist** in the Verum stdlib (totaling 3,781 lines). The gap is much smaller than initially estimated. See `internal/verum-ext-2.md` for the revised specification.
+A deep audit revealed that **6 out of 7 originally planned modules already exist** in the Verum stdlib (totaling 3,781 lines). The gap is much smaller than initially estimated.
 :::
 
-To realize $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ in Verum, the following extensions are needed (detailed specification: `internal/verum-ext-2.md`):
+To realize $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ in Verum, the following extensions are needed:
 
 **Language:**
 - **Cubical surface activation** (P0): connect existing `cubical.rs` normalizer to surface syntax (Path type, `transport`, `hcomp`)

@@ -119,7 +119,7 @@ $$
 R_{\mathrm{scal}} \;\geq\; \frac{(5\cdot 49-4)(49-1)}{2} \;=\; \frac{241\cdot 48}{2} \;=\; 5784 ,
 $$
 
-attained exactly at the maximally mixed state $I/7$. Machine-verified two ways (`internal/vanchurin-bridge/normalization_audit.py` §D–§E): by direct finite-difference computation of the Riemann tensor in a Gell-Mann chart, and by Dittmann's closed form. The two agree, and the closed form reproduces the constant $24$ at $N=2$ and $164$ at $N=3$.
+attained exactly at the maximally mixed state $I/7$. Machine-verified two ways: by direct finite-difference computation of the Riemann tensor in a Gell-Mann chart, and by Dittmann's closed form. The two agree, and the closed form reproduces the constant $24$ at $N=2$ and $164$ at $N=3$.
 
 :::danger Correction (2026-08-06): two errors repaired here
 Earlier versions of this page (a) attributed the theorem to **Hübner** and (b) quoted the bound as $N(N-1)/8$, hence $21/4 \approx 5.25$ at $N=7$.

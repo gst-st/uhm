@@ -196,7 +196,7 @@ $$
 The exponent $d_s = 3$ is determined by the dimension of the single-holon spatial representation $\mathbf{3}$. This is a direct consequence of the Weyl law applied to the lattice of $SU(3)$-fundamental irreducible representations: each irreducible block contributes $\dim(\mathbf{3})$ eigenvalues per unit spectral interval at large $\lambda$, so the total counting function grows as $\lambda^{\dim(\mathbf{3})} = \lambda^3$.
 
 :::danger Correction 2026-08-06: Step 2c is an error, not a bridge
-This was previously flagged as a "bridge" between two objects. An audit shows it is stronger than that — the step cannot be repaired as stated, for two independent reasons. Both are machine-verified (`internal/vanchurin-bridge/spacetime_audit.py` §A–§B).
+This was previously flagged as a "bridge" between two objects. An audit shows it is stronger than that — the step cannot be repaired as stated, for two independent reasons. Both are machine-verified.
 
 **1. There is no asymptotics to have an exponent.** $\bigotimes_{m=1}^{M}\mathbb C^3$ has dimension $3^M < \infty$. Any operator on it has a finite spectrum, so $N(\lambda)$ is bounded by $3^M$ and *saturates*: $N(\lambda)\to 3^M$ as $\lambda\to\infty$. A Weyl law $N(\lambda)\sim C\,\mathrm{Vol}\,\lambda^{d}$ requires an infinite-dimensional Hilbert space and an unbounded $D$; on a finite tensor product the spectral dimension in Connes' sense is $0$, not $3$.
 
@@ -219,7 +219,7 @@ The exponent is the dimension of the **base** and is *identical* across internal
 
 The failure above is instructive: it points at what the right derivation must count. Emergent coordinates on a *commutative* algebra are a maximal family of **simultaneously diagonalisable** macroscopic observables — you can only assign a point of $\mathbb R^k$ to a state by reading $k$ observables that can all be measured at once. The number of such observables is by definition the **rank** of the sector's observable algebra, not its dimension. Rank is what counts coordinates; dimension counts generators, most of which do not commute.
 
-**The computation, entirely from the octonions** (`internal/vanchurin-bridge/spacetime_audit.py` §G):
+**The computation, entirely from the octonions**:
 
 1. $\mathfrak{su}(3) = \mathrm{Stab}_{\mathrm{Der}(\mathbb O)}(e_1)$ is $8$-dimensional (§C, verified: $\dim\mathrm{Der}(\mathbb O)=14$, $\dim\mathrm{Stab}=8$).
 2. Its commutant on the $6$-dimensional complement $\mathrm{span}(e_2,\dots,e_7)$ is $2$-dimensional; subtracting the identity leaves a **complex structure** $J$ with $J^2 = -I$ (residual $1.3\times10^{-15}$) and $[J,\mathfrak{su}(3)] = 0$ (residual $1.1\times10^{-15}$). So $J$ is *derived*, not posited, and the spatial observable algebra is

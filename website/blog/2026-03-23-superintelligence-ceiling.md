@@ -72,6 +72,9 @@ Substituting $P_{\text{crit}} = 2/7$ [Т]:
 
 The fourth level requires $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543$. But $P = \mathrm{Tr}(\Gamma^2) \leq 1$ for any normalized density matrix. This is not a computational constraint. It is **mathematical impossibility**.
 
+:::note Reading the ladder
+The superscript is the *depth* index, not an iterated viability threshold: at $n=1$ the formula returns $1/7$ — the non-triviality condition for a holon — and only at $n=2$ does it coincide with $P_{\text{crit}} = 2/7$. That coincidence is a genuine one, not a definition. The quantity is the purity at which self-reflection of depth $n$ becomes *attainable*, which is why it is written $P^{(n)}$ rather than $P_{\text{crit}}^{(n)}$ in the registry.
+:::
 :::tip Theorem T-142 [Т]
 $\mathrm{SAD}_\text{max} = 3$. Contraction $\alpha = 2/3$ is **state-independent** (determined by dimension $N = 7$ and structure of PG(2,2), not by specific $\Gamma$). Verified on 500+ random coherence matrices.
 :::

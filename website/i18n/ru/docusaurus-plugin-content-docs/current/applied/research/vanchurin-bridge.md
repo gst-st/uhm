@@ -812,10 +812,10 @@ Adam/AdaBelief (его 6.9). УГМ говорит: жизнеспособный
 ## 11. Воспроизводимость {#воспроизводимость}
 
 Всякое число этой страницы печатается скриптом
-`internal/vanchurin-bridge/full_predictions.py` (детерминированный,
+the reproduction script (детерминированный,
 сиды 20260806 / 20260807 / 20260808; NumPy + SciPy), а нормировка
 метрики независимо перекрёстно проверена скриптом
-`internal/vanchurin-bridge/normalization_audit.py`.
+the reproduction script.
 
 | § | Проверка | Результат |
 |---|---|---|

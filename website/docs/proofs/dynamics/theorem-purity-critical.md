@@ -171,7 +171,7 @@ $$
 Path 2 uses the **quadratic approximation** D_KL(Γ ‖ I/N) ≈ (N/2)(P − 1/N), valid when P − 1/N ≪ 1. The threshold D_KL = 1/2 nat is a **convention** (analogous to p-value 0.05 in statistics). Path 2 is a **supporting argument**, consistent with P_crit = 2/N, not an independent rigorous derivation — and the audit below makes precise how much weight it can bear.
 
 :::warning How far Path 2 actually is from exact (measured 2026-08-06)
-Two facts, both machine-verified (`vanchurin-bridge/corpus_audit.py` §9):
+Two facts, both machine-verified:
 
 1. **The threshold sits exactly where the approximation fails.** At $P = 2/N$ we have $P - 1/N = 1/7 \approx 0.143$, which is not $\ll 1$.
 2. **$D_{\mathrm{KL}}(\Gamma\,\|\,I/N)$ is not a function of purity alone.** Over all states with $P = 2/7$ the exact divergence spans $[0.359,\,0.622]$ nat — $0.344$ for one dominant mode plus six equal, $0.437$ for two dominant plus five — against the approximation's $0.500$. So the correspondence "$D_{\mathrm{KL}} = 1/2 \iff P = 2/N$" holds for *some* spectra and not others; it is not an equivalence.
