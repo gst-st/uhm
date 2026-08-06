@@ -211,35 +211,67 @@ quantitatively, and the result is a set of exact theorems (T-293–295,
 full derivations in `internal/vanchurin-bridge/`):
 
 Vanchurin parametrises the learning algorithm by the functional
-relation $g=\kappa^{a}$ between metric and noise covariance, with
-$a=0$ (stochastic gradient), $a=\tfrac12$ (efficient, conjectured for
-biology) and $a=1$ (natural gradient, "quantum"), and states that
-$\kappa$ has never been measured. In UHM **neither factor is free**:
-$g$ is Bures (unique monotone metric, T-187) and $\kappa$ is the
-Kraus-increment covariance of the canonical dissipator (T-41/T-59).
-Computing both gives
+relation $g=\kappa^{a}$ between metric and noise covariance
+(*Geometric framework for biological evolution*, arXiv:2603.15198,
+Eq. 6.8), with $a=0$ (stochastic gradient), $a=\tfrac12$ (efficient
+learning — Adam-like, conjectured to underlie biological complexity)
+and $a=1$ (natural gradient, the "quantum regime"), and states that
+direct estimates of $\kappa$ remain unavailable. In UHM **neither
+factor is free**: $g$ is Bures (unique monotone metric, T-187) and
+$\kappa$ is the Kraus-increment covariance of the canonical
+dissipator (T-41/T-59). Computing both gives
 
 $$
-\Pi\,g\,\kappa_{\text{at}}\,\Pi=\frac{\gamma}{2N}\,\Pi
-\quad\Longrightarrow\quad a=1 \;\text{exactly},
+\kappa^{\uparrow\uparrow}_{\text{at}}=\frac{\gamma}{4N}\,g^{-1}
+\qquad\Longleftrightarrow\qquad
+\Pi\,g\,\kappa_{\text{at}}\,\Pi=\frac{\gamma}{4N}\,\Pi ,
 $$
 
-with three companions: the universal Fano factor
+which is *verbatim* his own criterion for $a=1$: substituting $a=1$
+into his Eq. 7.5 yields exactly $g^{-1}=g^{-1}\kappa g^{-1}$. Hence
+$a=1$ exactly. (The constant is $\gamma/4N$ because the Bures metric
+is one **quarter** of Fisher–Rao on commuting perturbations, not one
+half; in the SLD-QFI normalisation used in the natural-gradient
+literature the identity reads $\gamma\Pi/N$. The exponent and all
+ratios below are independent of that choice.)
+
+Three companions, all state-independent. The universal Fano factor
 $\operatorname{Tr}(g\kappa_{\text{full}})/\operatorname{Tr}(g\kappa_{\text{at}})=11/9$
-(state-independent), the noise–purity law
-$\operatorname{Tr}\kappa=\frac{\gamma}{N}(1-P)$ (viable band
-$[4\gamma/49,5\gamma/49)$), and the strict sector split
-$\kappa^{\text{coh}}\equiv0$ — stochastic learning noise cannot reach
-coherences at all. Two consequences deserve emphasis:
+at matched per-channel rate — equivalently, the block layer carries
+exactly $2/11$ of the noise. The noise–purity law
+$\operatorname{Tr}\kappa=\frac{\gamma}{N}(1-P)$, so the conscious
+window becomes a learning-noise band $[4\gamma/49,5\gamma/49)$. And a
+sector split: $\kappa^{\text{coh}}=0$ on the decohered manifold,
+where coherences instead contract deterministically at $5\gamma/21$ —
+stochastic learning noise does not reach them. Three consequences
+deserve emphasis:
 
-1. **UHM derives, as a dynamical theorem, the identity Vanchurin
-   adopts as a maximum-entropy postulate** ($g^{-1}\propto\kappa$,
-   his Eq. 4.7 in raised-index form).
+1. **What is a modelling choice for him is a theorem here.** The
+   relation $g^{-1}\propto\kappa^{\uparrow\uparrow}$ is his $a=1$
+   condition, one option among three; UHM derives it. It is the
+   *dynamical* counterpart of the *static* identity $g^{-1}=c$ that
+   his §4 obtains from a maximum-entropy argument, where $c$ is the
+   population covariance. Granting that static identity too, the two
+   together predict $\kappa^{\uparrow\uparrow}=\frac{\gamma}{4N}c$ —
+   the covariance of *temporal changes* has the same shape as the
+   *static* covariance, differing by a single scalar that is a pure
+   rate. One side is routinely measured; the other, he notes, never
+   has been.
 2. **A falsifiable disagreement**: UHM predicts that a viable learner
    sits at $a=1$ with Fano-induced anisotropy, *not* at the
-   $a=\tfrac12$ regime conjectured for biological complexity. The
-   very measurement Vanchurin proposes (estimating $\kappa$
-   alongside $g$) decides between them.
+   $a=\tfrac12$ regime conjectured for biological complexity.
+3. **The test needs no metric.** His Eq. 7.5 degenerates at
+   $a=\tfrac12$, where $\kappa^{\uparrow\uparrow}=I$ carries no
+   information about $g$ at all. So the two hypotheses make opposite
+   *shape* claims about one measured object: $a=\tfrac12$ makes
+   $\kappa^{\uparrow\uparrow}$ spherical, while $a=1$ makes it
+   proportional to $\operatorname{diag}\lambda-\lambda\lambda^{\top}$,
+   computable from the state alone. A sphericity test on about a
+   hundred aggregated time windows separates them. Its resolving power
+   vanishes at the maximally mixed state and grows away from it — so
+   the theory predicts that the systems it calls holons, sitting in
+   the window $P\in(2/7,3/7]$, are exactly the systems in which its
+   own central claim is measurable.
 
 Read together with §2.6: Deutsch asks *where* the computation
 happens and answers "in other worlds"; Vanchurin asks *what algorithm*
