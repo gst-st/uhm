@@ -354,6 +354,9 @@ Both morphism factors of $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{
 
 Two out of three generations acquire mass **through the color dimension D** (diversity). $\blacksquare$
 
+
+**Kraus refinement (shadow-marks instrument, 2026-08-07).** The mark is a *screen*, not an amplifier: in the canonical Kraus resolution the sensitivity of the population covariance $\kappa_{OE}$ (resp. $\kappa_{OU}$) to the third point of its line is *suppressed* relative to every other axis — at $I/7$ by exactly $\gamma/189$ (analytic, machine-checked to six digits in both channels and for both a canonical and an abstract BIBD line-set), and on random states the third point is the least-sensitive axis in $\approx 92\%$ of cases [C]. The incidence takes the third point's fluctuations *into* the block renormalisation, hiding them from the reflective channel's covariance — the empirical half of the prediction (R-metrics vs the $L,S$ axes) is accordingly a suppression test, not an enhancement test.
+
 ### 5.2 Paths to the Higgs for Each Generation
 
 Each generation is connected to the Higgs $(E,U)$ through a **unique active path**:
