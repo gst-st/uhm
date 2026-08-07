@@ -410,6 +410,17 @@ Scaling requires **coherent coupling** between agents, otherwise collective puri
 - The minimally sufficient topology is a **Fano graph** at each level of the hierarchy
 :::
 
+The fan-out here is not free either, and the bound is hard rather than
+asymptotic: coordinating $M$ agents means someone addresses them, an address costs
+one of the addressing node's own 21 typed channels, and depth is capped at three.
+A single holarchy therefore reaches at most $21^3 = 9261$ addressed contexts, and
+the address must be a *declared* contract — routing learned from the same reward
+as the task it routes measurably recovers less than half the gain
+([T-304](/docs/reference/status-registry), [HOLARCH §10](/docs/applied/research/holarch#глубина)).
+The $O(M \log M)$ figure above is a heuristic about connection counts; the
+per-node bound of 21 is the operative constraint.
+
+
 #### 8.2. SAD Depth and Computational Cost
 
 From [theorem T-110](/docs/reference/status-registry) (dynamic learning limit) and [SAD_MAX = 3](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad):
