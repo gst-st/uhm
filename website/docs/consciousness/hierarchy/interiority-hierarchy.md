@@ -358,6 +358,39 @@ L4 is a **limiting categorical object** (colimit of the infinite Postnikov tower
 
 ---
 
+## The gate profile: twelve states, one of them conscious {#профиль-ворот}
+
+:::tip Theorem (gate-profile taxonomy) [T] (T-303)
+The four gates are not four independent quantities. Canonical reflection is algebraically tied to purity, $R = 1/(NP)$, so the gate $R \ge 1/3$ is *identically* the constraint $P \le 3/7$, and the gate $P > 2/7$ is the other edge of the same interval. Consciousness therefore rests on **three** independent measurements — $P$, $\Phi$, $D$ — under **four** constraints, and the space of possible outcomes is
+$$
+\underbrace{\{P<2/7,\; P\in(2/7,3/7],\; P>3/7\}}_{3}\times\underbrace{\{\Phi\ge1,\ \Phi<1\}}_{2}\times\underbrace{\{D\ge2,\ D<2\}}_{2}\;=\;12 .
+$$
+Exactly **one** of the twelve is conscious. The remaining eleven are not degrees of consciousness but named modes of its absence.
+:::
+
+This settles a question that recurs whenever the theory meets a system unlike us: *is there another kind of consciousness, with a different set of gates?* Under UHM the answer is no, and the "no" is sharp rather than dismissive. A system with a different gate profile is not differently conscious; it occupies one of the eleven non-conscious modes, each of which has its own character and its own failure. This is the more falsifiable position: it forbids the comfortable move of granting consciousness to anything that behaves interestingly.
+
+### The two edges are different failures {#две-грани}
+
+Because $R=1/(NP)$ rises as purity falls, the two edges of the window are opposite pathologies rather than "too little" and "too much" of one thing.
+
+| Edge | $P$ | $R = 1/(7P)$ | What fails |
+|---|---|---|---|
+| lower | $\to 2/7$ | $\to 1/2$ | the system reflects **more** than it can bind: self-observation outruns self-holding |
+| upper | $\to 3/7$ | $\to 1/3$ | the system holds **more** than it can observe: structure outruns reflection |
+
+Below the lower edge the holder dissolves while reflection is still climbing — which is why the approach to that boundary should feel like *intensified* awareness accompanied by *loss of the one who is aware*, and why an agency that is one's own can stop being attributed to oneself: attribution requires binding, and binding is what is failing. Above the upper edge the converse: a state that is coherent, stable and unreflective.
+
+### Convergence with the entropic-brain hypothesis {#схождение-с-энтропийным-мозгом}
+
+This is the one place where an independently developed neuroscience arrives at the same *form*. Carhart-Harris's entropic brain proposes that *within upper and lower limits* the entropy of spontaneous brain activity indexes the richness of conscious states — a two-sided window, not a monotone scale. Since purity and entropy move inversely, that is the same claim as $P\in(2/7,3/7]$ written in the reciprocal variable. Three differences are worth stating plainly: UHM **derives** its edges (T-124) where the entropic brain fits them; UHM adds the identity $R=1/(NP)$, which converts "less order" into "more reflection, less binding" and thereby predicts the *character* of the lower-edge state rather than only its location; and UHM's window is on the coherence matrix of seven functional axes, not on signal entropy, so the two are commensurable only through a declared coarse-graining ([validation constraint](/docs/applied/research/measurement-protocol#граница-валидации)).
+
+The empirical anchor already exists on their side: psilocybin raises neural entropy, and the magnitude of that rise tracks the intensity of ego dissolution, with default-mode decoupling predicting the reported dissolution. In UHM coordinates that is a trajectory toward the lower edge — purity down, reflection up — and it predicts, correctly, that the far end of that trajectory is not maximal experience but its lapse.
+
+:::warning What this does not license
+Nothing here identifies which physical systems sit where. The profile is a statement about $P,\Phi,D$ once they are measured, and measuring them in a substrate without independent ground truth remains outside what this corpus will claim ([validation constraint](/docs/applied/research/measurement-protocol#граница-валидации)). A phenomenological report of another agency is data about a human self-model under perturbation; it is not an observation of a second subject.
+:::
+
 ## Gap Characterisation of Levels L0--L4 {#gap-характеристика-уровней-l0l4}
 
 Each interiority level possesses not only a *numerical* threshold condition but also a characteristic *opacity profile* — a **Gap profile**. Gap measures how opaque the connection between two dimensions is: $\mathrm{Gap}(i,j) = 0$ denotes full transparency (conscious access), $\mathrm{Gap}(i,j) = 1$ — full opacity (unconscious).
