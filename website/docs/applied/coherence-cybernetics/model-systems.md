@@ -321,7 +321,7 @@ where the phases are defined via Fibonacci numbers $F_n$ (mod 7):
 
 #### Why Fibonacci?
 
-The choice of Fibonacci phases is not accidental. The Fibonacci sequence modulo 7 has period 16 (Pisano period $\pi(7) = 16$) and generates a rich yet ordered structure of phase differences. Three dimensions (A, S, O) turn out to be in phase ($\varphi_A = \varphi_S = \varphi_O$), creating a cluster of zero Gap. The remaining pairs have nonzero differences, generating a Gap texture with three distinct values: $|\sin(2\pi/7)| \approx 0.782$, $|\sin(4\pi/7)| \approx 0.975$, and $|\sin(6\pi/7)| \approx 0.434$.
+The choice of Fibonacci phases is not accidental. The Fibonacci sequence modulo 7 has period 16 (Pisano period $\pi(7) = 16$) and generates a rich yet ordered structure of phase differences. Three dimensions (A, S, U) turn out to be in phase ($\varphi_A = \varphi_S = \varphi_U$), creating a cluster of zero Gap. The remaining pairs have nonzero differences, generating a Gap texture with three distinct values: $|\sin(2\pi/7)| \approx 0.782$, $|\sin(4\pi/7)| \approx 0.975$, and $|\sin(6\pi/7)| \approx 0.434$.
 
 This resembles a crystal: ideal order ($P = 1$), but with a nontrivial phase *lattice*.
 
@@ -381,8 +381,8 @@ Full Gap matrix $\mathrm{Gap}(k,l)$:
 
 Let us look at this matrix with our eyes, not just formulas:
 
-- **Cluster {A, S, O}** — three dimensions with zero mutual Gap. They are in phase and completely transparent to each other. This is the *coherence core* of the model.
-- **L and U** — two dimensions with maximum Gap values (~0.975) relative to the {A, S, O} cluster. They are *most hidden* from the core.
+- **Cluster {A, S, U}** — three dimensions with zero mutual Gap. They are in phase and completely transparent to each other. This is the *coherence core* of the model.
+- **L and O** — two dimensions with maximum Gap values (~0.975) relative to the {A, S, U} cluster. They are *most hidden* from the core.
 - **E (Experience)** — has the softest Gap values (~0.434) relative to most dimensions. Experience is "semi-transparent" — partially visible, partially hidden.
 - **D (Dynamics)** — uniformly distributed Gap (~0.434–0.782), a "mediator" between the cluster and the periphery.
 
@@ -396,14 +396,14 @@ Fano lines contain pairs $(k,l)$ with specific Gap values. For each line we comp
 |-----------|-------|------------|----------|
 | $\{1,2,4\} = \{A,S,L\}$ | (A,S), (A,L), (S,L) | 0, 0.975, 0.975 | 0.650 |
 | $\{2,3,5\} = \{S,D,E\}$ | (S,D), (S,E), (D,E) | 0.782, 0.434, 0.434 | 0.550 |
-| $\{3,4,6\} = \{D,L,O\}$ | (D,L), (D,O), (L,O) | 0.782, 0.782, 0.975 | 0.846 |
-| $\{4,5,7\} = \{L,E,U\}$ | (L,E), (L,U), (E,U) | 0.975, 0.434, 0.782 | 0.730 |
-| $\{5,6,1\} = \{E,O,A\}$ | (E,O), (E,A), (O,A) | 0.434, 0.434, 0 | 0.289 |
-| $\{6,7,2\} = \{O,U,S\}$ | (O,U), (O,S), (U,S) | 0.975, 0, 0.975 | 0.650 |
-| $\{7,1,3\} = \{U,A,D\}$ | (U,A), (U,D), (A,D) | 0.975, 0.434, 0.782 | 0.730 |
+| $\{3,4,6\} = \{D,L,U\}$ | (D,L), (D,U), (L,U) | 0.782, 0.782, 0.975 | 0.846 |
+| $\{4,5,7\} = \{L,E,O\}$ | (L,E), (L,O), (E,O) | 0.975, 0.434, 0.782 | 0.730 |
+| $\{5,6,1\} = \{E,U,A\}$ | (E,U), (E,A), (U,A) | 0.434, 0.434, 0 | 0.289 |
+| $\{6,7,2\} = \{U,O,S\}$ | (U,O), (U,S), (O,S) | 0.975, 0, 0.975 | 0.650 |
+| $\{7,1,3\} = \{O,A,D\}$ | (O,A), (O,D), (A,D) | 0.975, 0.434, 0.782 | 0.730 |
 
 :::tip Observation [C]
-The Fano line $\{E, O, A\}$ has the **minimum** mean Gap (0.289) — it is the most "transparent". This is a consequence of $F_1 \equiv F_6 \equiv F_2 \equiv 1 \pmod{7}$: dimensions A, S and O share the same phase, and the Gap between them is identically zero.
+The Fano line $\{E, U, A\}$ has the **minimum** mean Gap (0.289) — it is the most "transparent". This is a consequence of $F_1 \equiv F_6 \equiv F_2 \equiv 1 \pmod{7}$: dimensions A, S and U share the same phase, and the Gap between them is identically zero.
 :::
 
 #### The golden ratio in the Gap texture?
@@ -420,18 +420,18 @@ An intriguing question: is there a connection between the Fibonacci sequence and
 | $\kappa$ | $\kappa_{\text{bootstrap}} + \kappa_0 \cdot 13/49$ |
 | Mean Gap | $\frac{1}{21}\sum_{k<l}\mathrm{Gap}(k,l) = \frac{7\sin\frac{4\pi}{7} + 6\sin\frac{\pi}{7} + 5\sin\frac{2\pi}{7}}{21} \approx 0.6351$ |
 
-> **Erratum (2026-07-25, machine check):** this previously read ≈ 0.620 — a rounding slip in the hand computation. The exact value over the multiset of differences $\Delta$ (the zero cluster A,S,O — 3 pairs; $|\sin\tfrac{2\pi}{7}|$ — 5 pairs; $|\sin\tfrac{4\pi}{7}|$ — 7 pairs; $|\sin\tfrac{6\pi}{7}|$ — 6 pairs) is $13.337/21 = 0.63509\ldots$ Verified independently by the engine (`hhg-core`, test `model_systems_pin_the_engine_to_corpus_numbers`) and by direct computation.
+> **Erratum (2026-07-25, machine check):** this previously read ≈ 0.620 — a rounding slip in the hand computation. The exact value over the multiset of differences $\Delta$ (the zero cluster A,S,U — 3 pairs; $|\sin\tfrac{2\pi}{7}|$ — 5 pairs; $|\sin\tfrac{4\pi}{7}|$ — 7 pairs; $|\sin\tfrac{6\pi}{7}|$ — 6 pairs) is $13.337/21 = 0.63509\ldots$ Verified independently by the engine (`hhg-core`, test `model_systems_pin_the_engine_to_corpus_numbers`) and by direct computation.
 
 
 #### What we learn from this model
 
 1. **Purity and Gap are orthogonal characteristics**: models 2 and 3 have the same purity $P = 1$, the same $\mathrm{Coh}_E = 13/49$, the same $\kappa$ — but radically different Gap profiles. Gap measures *phase texture*, purity measures *amplitude organisation*.
 2. **Phases are character**: two holons with the same energetics ($P$, $\kappa$) can have entirely different "personalities" — different Gap patterns. Phases determine *which* pairs of dimensions see each other and which are separated by a barrier.
-3. **Clustering**: Fibonacci phases generate a natural cluster {A, S, O} — three dimensions synchronised in phase. This suggests that in real holons, clusters of in-phase dimensions may be meaningful psychological formations.
+3. **Clustering**: Fibonacci phases generate a natural cluster {A, S, U} — three dimensions synchronised in phase. This suggests that in real holons, clusters of in-phase dimensions may be meaningful psychological formations.
 
 #### Limitations
 
-The model does not account for dynamics: the cluster {A, S, O} and the high Gap values of L, U are an *initial condition*, not a stable configuration. Under Fano dissipation the phase texture will evolve, and the question of which clusters are stable remains open.
+The model does not account for dynamics: the cluster {A, S, U} and the high Gap values of L, O are an *initial condition*, not a stable configuration. Under Fano dissipation the phase texture will evolve, and the question of which clusters are stable remains open.
 
 ### 3.6 Python Implementation
 
@@ -973,7 +973,7 @@ Model systems are an analytic tool. But CC also has a *computational* embodiment
 
 - Full CC dynamics ($\mathcal{L}_0 + \mathcal{R} + \varphi$) in an analytically solvable case
 - The alexithymia cascade effect (section 4.4) — modelled qualitatively but not quantitatively
-- Stability of phase clusters (such as {A, S, O} in the Fibonacci model) under full dynamics
+- Stability of phase clusters (such as {A, S, U} in the Fibonacci model) under full dynamics
 
 ---
 
@@ -1064,7 +1064,7 @@ Together they form a *laboratory* of coherence cybernetics — a place where the
 
 2. **Pure uniform state** ($P = 1$): maximum purity, zero Gap, zero entropy. Perfect order — but barren: no internal tension, no driver of evolution.
 
-3. **Fibonacci phases**: the same $P = 1$ and the same $\mathrm{Coh}_E = 13/49$, but with a rich Gap profile. **Purity and Gap are orthogonal** — phases define "character", amplitudes define "energy". The cluster {A, S, O} with zero mutual Gap is an example of phase synchronisation.
+3. **Fibonacci phases**: the same $P = 1$ and the same $\mathrm{Coh}_E = 13/49$, but with a rich Gap profile. **Purity and Gap are orthogonal** — phases define "character", amplitudes define "energy". The cluster {A, S, U} with zero mutual Gap is an example of phase synchronisation.
 
 4. **Alexithymia**: a purely *phase* pathology ($\theta_{SE} = \pi/2$). Amplitudes unaffected, $\mathrm{Coh}_E$ unchanged — yet the system is ill. One broken channel out of 21 triggers a cascade: $R$ falls, $\kappa$ decreases, $P$ drifts toward $P_{\text{crit}}$. Diagnosis is possible only through Gap analysis, not through $P$.
 
