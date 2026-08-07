@@ -252,6 +252,62 @@ The boundary $\Phi = 1$ separates:
 
 The value $\Phi_{\text{th}} = 1$ **[T]** (T-129) — the unique self-consistent value at $P_{\text{crit}} = 2/7$. See [proof](/docs/proofs/consciousness/operationalization#t-129).
 
+### Which contents can cross the threshold {#какое-содержание-берёт-порог}
+
+The threshold theorem says *when* a holon is integrated. It does not say **what it must be holding** to get there, and that turns out to be a far narrower thing than the definition of $\Phi$ suggests. The answer is exact, and it is worth deriving in full, because it changes what the twenty-one coherences of a holon are for.
+
+Fix the diagonal flat — every dimension carrying the same weight $\gamma_{ii} = 1/7$, so that nothing is decided by localisation — and let the content live entirely in the *signs* of the coherences. Write $S$ for that pattern of signs: $S_{ij} = +1$ where two dimensions agree, $S_{ij} = -1$ where they disagree, and $S_{ii} = 0$. A state with this content and coherence strength $c$ is
+
+$$
+\Gamma = \tfrac{1}{7} I + c\,S
+$$
+
+**Step 1 — what $\Phi$ becomes.** The denominator is $\sum_i \gamma_{ii}^2 = 7 \cdot (1/7)^2 = 1/7$. The numerator counts each of the $21$ pairs twice, each contributing $c^2$, so it is $42c^2$. Hence
+
+$$
+\Phi = \frac{42c^2}{1/7} = 294\,c^2
+$$
+
+Integration therefore grows with the strength of the coherences and with nothing else — so the question becomes how strong they are *allowed* to be.
+
+**Step 2 — how far the content can be pushed.** A state must stay positive: no dimension may carry negative weight in any basis. The eigenvalues of $\Gamma$ are $1/7 + c\,\mu$ where $\mu$ runs over the eigenvalues of $S$, so the binding constraint comes from the most negative one, $\lambda_{\min}(S)$. Positivity holds exactly while
+
+$$
+c \le \frac{1}{7\,|\lambda_{\min}(S)|}
+$$
+
+**Step 3 — the identity.** Substituting that ceiling into Step 1:
+
+$$
+\Phi_{\max} = 294 \cdot \frac{1}{49\,\lambda_{\min}(S)^2} = \frac{6}{\lambda_{\min}(S)^2}
+$$
+
+This is an identity, not an approximation; measured against direct computation it holds to $8.9 \cdot 10^{-16}$, which is machine precision. And it converts the integration gate into a **spectral condition on the shape of the content**:
+
+$$
+\Phi \ge 1 \iff |\lambda_{\min}(S)| \le \sqrt{6} \approx 2.449
+$$
+
+**Step 4 — which patterns pass.** Suppose each dimension carries a single orientation $s_i = \pm 1$ — call it a *polarity* — and two dimensions agree exactly when their orientations match, so $S_{ij} = s_i s_j$. Then $S = ss^{\top} - I$, whose eigenvalues are $6$ (once, along $s$ itself) and $-1$ (six times). So $\lambda_{\min} = -1$ and $\Phi = 6$: the largest value any sign pattern can reach, and six times over the threshold.
+
+Now flip a single one of the twenty-one agreements. The smallest eigenvalue moves to $-2.5311$, and
+
+$$
+\Phi = \frac{6}{2.5311^2} = 0.9365
+$$
+
+The gate closes. **One disagreement out of twenty-one costs a factor of six and misses the threshold by three percent.** A second flip gives $0.7151$, a third $0.5185$; nothing recovers.
+
+**Step 5 — why, in one word.** A signed graph is called *balanced* when the product of signs around every cycle is positive; Harary's theorem states that a complete graph is balanced precisely when its signs factor as $S_{ij} = s_i s_j$. The product of signs around a triangle is the real limit of the [holonomy](/docs/applied/research/holarch) that carries quality around a Fano line. So the integration gate and the balance condition are not two facts but one: **a holon integrates exactly when its content is unfrustrated.** Checked pattern by pattern rather than in aggregate, the gate and balance disagreed in $0$ of $600$ cases.
+
+The consequence for capacity is sharp. The twenty-one coherences of a holon look like twenty-one independent bits, but only $2^7 = 128$ sign patterns are balanced, and $s$ and $-s$ give the same pattern. **Integrable content is seven polarities, not twenty-one bits, and there are exactly $2^7/2 = 64$ integrable states.** The twenty-one cells are not twenty-one facts; they are the pairwise agreement of seven orientations.
+
+**Step 6 — what this buys.** Because integrable content is so constrained, most of it is redundant: seven orientations determine all twenty-one pairs, so a holon told about some pairs has, in principle, been told about the rest. And the mechanism that collects on this is already present, unbidden — it is positivity itself. A frustrated pattern does not fit near the boundary of positivity, since its $\lambda_{\min}$ is too negative; so a write that pushes the state past that boundary and is then **projected back onto the state manifold** is pulled towards the nearest balanced pattern, and in being pulled it fills in pairs it was never told.
+
+This is measurable. Teach a holon seven of its twenty-one pairs and never mention the other fourteen. A write that projects afterwards holds a non-zero opinion about $100\%$ of the fourteen it never saw, and that opinion is correct $85.7\%$ of the time — $28.6$ percentage points above the best constant answer available in hindsight. The same write *without* the projection reaches $0\%$ of them: it knows only what it was told, exactly as a lookup table does. And the effect is specific rather than general: strip the polarity out of the content, giving each pair an independent random sign, and accuracy falls to $50.0\%$ — a coin. What the projection propagates is a polarity and nothing else.
+
+So generalisation, in this architecture, is not a rule added on top. **It is positivity**, which is to say it is the same requirement that makes a state a state at all.
+
 ### Connection with Integrated Information (IIT) {#связь-с-iit}
 
 :::info Status: [D] Definitions formalised; [T] threshold Φ_th = 1 (T-129)

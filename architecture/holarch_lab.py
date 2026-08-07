@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL16. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL18. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -747,10 +747,136 @@ def hl14_client_diversity() -> None:
 
 # ----------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------
+# HL17 — integration is balance: Φ ≥ 1 exactly when nothing is frustrated
+# ----------------------------------------------------------------------------
+
+def _edge_state(S: np.ndarray) -> tuple[np.ndarray, float]:
+    """Content `S` scaled to the very edge of positivity, and its λ_min(S)."""
+    lam = float(np.min(np.linalg.eigvalsh(S)))
+    c = 1.0 / (7.0 * abs(lam)) if lam < 0 else 1.0
+    return np.eye(7) / 7.0 + c * S, lam
+
+
+def _frustrated(S: np.ndarray) -> int:
+    """Triangles of K7 whose sign product is negative."""
+    return sum(1 for i in range(7) for j in range(i + 1, 7) for k in range(j + 1, 7)
+               if S[i, j] * S[j, k] * S[k, i] < 0)
+
+
+def hl17_integration_is_balance() -> None:
+    # Harary: a signed graph is balanced exactly when every cycle carries a
+    # positive product of signs, and on a complete graph that is S_ij = s_i·s_j.
+    # The product of signs around a triangle IS the sign holonomy — the real
+    # limit of the phase holonomy of T-301. So the gate and balance are one.
+    rng = np.random.default_rng(53000)
+    disagree, ident_err, rows = 0, 0.0, {}
+    for _ in range(600):
+        s = rng.choice([-1.0, 1.0], size=7)
+        S = np.outer(s, s) - np.eye(7)
+        flips = int(rng.integers(0, 6))
+        for _ in range(flips):
+            i = int(rng.integers(0, 7))
+            j = (i + 1 + int(rng.integers(0, 6))) % 7
+            S[i, j] = -S[i, j]
+            S[j, i] = -S[j, i]
+        G, lam = _edge_state(S)
+        F, nfr = phi(G), _frustrated(S)
+        if (F >= 1.0) != (nfr == 0):
+            disagree += 1
+        # The identity itself, not merely the threshold it implies.
+        ident_err = max(ident_err, abs(F - 6.0 / lam ** 2))
+        rows.setdefault(flips, []).append(F)
+    ok = disagree == 0 and ident_err < 1e-9
+    tab = "; ".join(f"{k} flips Φ={np.median(v):.4f}" for k, v in sorted(rows.items()))
+    report("HL17", "VERIFIED", ok,
+           f"integration is the absence of frustration ({tab}): the gate Φ≥1 and "
+           f"Harary balance disagreed in {disagree} of 600 patterns, and the "
+           f"identity Φ = 6/λ_min(S)² held to {ident_err:.1e} — so a single "
+           "flipped agreement, five frustrated triangles out of thirty-five, "
+           "drops integration from 6 to 0.9365 and closes the gate: integrable "
+           "content is seven polarities, not twenty-one independent bits")
+
+
+# ----------------------------------------------------------------------------
+# HL18 — the projection is the completion
+# ----------------------------------------------------------------------------
+
+def _project(G: np.ndarray) -> np.ndarray:
+    """Back onto the state manifold: clip the spectrum, restore unit trace."""
+    w, V = np.linalg.eigh(G)
+    w = np.clip(w, 0.0, None)
+    t = float(np.sum(w))
+    return (V * (w / t)) @ V.conj().T if t > 0 else np.eye(7) / 7.0
+
+
+def _teach(pairs, want, amount: float, project: bool) -> np.ndarray:
+    G = np.eye(7) / 7.0
+    for _ in range(30):
+        for (i, j) in pairs:
+            d = amount if want[i, j] else -amount
+            G[i, j] += d
+            G[j, i] += d
+            if project:
+                G = _project(G)
+    return G
+
+
+def hl18_projection_completes() -> None:
+    # A frustrated pattern does not fit near the boundary of positivity, so
+    # projecting back onto the state manifold pulls content towards the nearest
+    # balanced pattern — which is to say, it infers pairs it was never told.
+    rng = np.random.default_rng(61000)
+    got: dict[str, list[float]] = {k: [] for k in
+                                   ("cov_proj", "acc_proj", "cov_raw", "acc_rand", "const")}
+    for sd in range(60):
+        r = np.random.default_rng(61000 + sd)
+        s = r.choice([-1.0, 1.0], size=7)
+        pol = np.outer(s, s) > 0
+        arb = r.random((7, 7)) < 0.5
+        arb = np.triu(arb, 1) | np.triu(arb, 1).T
+        allp = [(i, j) for i in range(7) for j in range(i + 1, 7)]
+        r.shuffle(allp)
+        taught, held = allp[:7], allp[7:]
+
+        def score(G, want):
+            spoke = [(i, j) for (i, j) in held if abs(G[i, j]) > 1e-12]
+            if not spoke:
+                return 0.0, float("nan")
+            right = sum(1 for (i, j) in spoke if (G[i, j] > 0) == want[i, j])
+            return len(spoke) / len(held), right / len(spoke)
+
+        cp, ap = score(_teach(taught, pol, 0.22, True), pol)
+        cr, _ = score(_teach(taught, pol, 0.22, False), pol)
+        _, ar = score(_teach(taught, arb, 0.22, True), arb)
+        share = sum(1 for (i, j) in held if pol[i, j]) / len(held)
+        got["cov_proj"].append(cp)
+        got["acc_proj"].append(ap)
+        got["cov_raw"].append(cr)
+        got["acc_rand"].append(ar)
+        got["const"].append(max(share, 1 - share))
+    m = {k: float(np.nanmedian(v)) for k, v in got.items()}
+    # Three things must hold together, or the result is not a mechanism:
+    # projection must reach the untaught, be right about them, and be right
+    # only when there is a polarity there to complete.
+    ok = (m["cov_proj"] > 0.9 and m["cov_raw"] < 1e-9
+          and m["acc_proj"] - m["const"] > 0.15 and m["acc_rand"] < 0.575)
+    report("HL18", "VERIFIED", ok,
+           f"the projection is the completion: taught 7 of 21 pairs, a write that "
+           f"projects holds an opinion about {m['cov_proj']:.0%} of the 14 it was "
+           f"never shown and is right {m['acc_proj']:.1%} of the time — "
+           f"{100*(m['acc_proj']-m['const']):+.1f} pp over the best constant answer "
+           f"({m['const']:.1%}) — while the same write without the projection "
+           f"reaches {m['cov_raw']:.0%} of them; strip the polarity and accuracy "
+           f"falls to {m['acc_rand']:.1%}, a coin, so what the projection "
+           "propagates is a polarity and nothing else")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL16"
+    print("HOLARCH LAB — panel HL01–HL18"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -763,6 +889,8 @@ def main() -> int:
     hl10_fano_coverage(insts)
     hl15_addressing_price()
     hl16_stability_vs_balance()
+    hl17_integration_is_balance()
+    hl18_projection_completes()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
