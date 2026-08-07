@@ -1,6 +1,7 @@
 ---
 sidebar_position: 18
 title: The Learning Algorithm of a Holon
+sidebar_label: Vanchurin bridge — natural gradient
 description: An exact bridge to Vanchurin's learning-dynamics programme — UHM fixes the free function g(κ) and lands on a = 1
 ---
 
