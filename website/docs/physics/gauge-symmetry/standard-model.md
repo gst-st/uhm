@@ -219,7 +219,12 @@ The parameter α in the hypercharge generator Y is **not fixed** by the Fano str
 ### 2.3a Uniqueness Theorem for the Electroweak Construction {#теорема-единственности-фэ}
 
 :::tip[Status: Theorem \[T\]+\[I\]]
-The SM gauge group $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry. The key element is the categorical uniqueness of the pair $(E,U)$ from the formula $\kappa_0$ [T]. Identification of the abstract generators with the physical SM gauge fields is **[I]** (an interpretive step).
+The SM gauge group $G_{\mathrm{SM}} = \mathrm{SU}(3)_C \times \mathrm{SU}(2)_L \times \mathrm{U}(1)_Y$ is the **unique** rank-4 gauge group compatible with the Fano-plane structure and $G_2$-symmetry.
+
+#### Corollary: rank-4 prohibition — no Z′, no fifth force [T] (T-297) {#запрет-z-прайм}
+
+Uniqueness of $G_{\mathrm{SM}}$ as the **rank-4** group compatible with Fano + $G_2$ forbids every gauge extension of higher rank: any extra gauge $\mathrm{U}(1)$ — a $Z'$, gauged $B{-}L$, a gauged "dark photon" — would raise the rank to 5, and no rank-5 subgroup fits the incidence structure. This is a structural exclusion, not a phenomenological bound: UHM predicts that collider and dark-sector searches for a *gauge* $Z'$ will remain empty at any energy. Discovery of one would refute the (FE)-uniqueness theorem itself. (Notation guard: the quantity $Z'_\Phi(-2)$ of the [$\Lambda$-budget](/docs/proofs/gap/lambda-budget) is the *derivative of an Epstein zeta regulator*, not a boson.)
+ The key element is the categorical uniqueness of the pair $(E,U)$ from the formula $\kappa_0$ [T]. Identification of the abstract generators with the physical SM gauge fields is **[I]** (an interpretive step).
 :::
 
 **Theorem (Uniqueness of the electroweak construction).** Under axioms A1–A5, the Standard Model gauge group

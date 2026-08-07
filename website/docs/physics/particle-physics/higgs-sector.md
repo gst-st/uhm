@@ -573,6 +573,20 @@ $$Y = \frac{1}{3}\left(\sum_{i \in 3} \text{Gap}(O,i) - \sum_{j \in \bar{3}} \te
 
 ## 6. Falsifiable predictions {#6-фальсифицируемые-предсказания}
 
+### 6.0 Prohibition of a second Higgs doublet [T] {#запрет-второго-дублета}
+
+:::tip [T] Structural prohibition (T-296)
+UHM forbids a second Higgs doublet. The categorical uniqueness that *selects* the pair $(E,U)$ simultaneously *excludes* every other scalar candidate.
+:::
+
+**Theorem (no-2HDM).** In UHM there is exactly one condensing scalar channel — $\gamma_{EU}$. No second Higgs doublet (and hence no 2HDM spectrum $H^\pm, A^0, H^0$ of the MSSM type) exists.
+
+**Proof.** (i) Condensation requires the $\kappa_0$-channel: the vacuum theorem T-64 gives $\langle\gamma_{ij}angle 
+eq 0$ only for the pair singled out by $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$, whose morphism content is exactly $\mathrm{Hom}(O,E)\cdot\mathrm{Hom}(O,U)$ (T-42a). (ii) The only other $ar 3$-pairs are $(L,E)$ and $(L,U)$; neither enters $\kappa_0$ ($\mathrm{Hom}(O,L)$ is absent from it), so neither acquires a VEV. (iii) By incidence ($\lambda=1$) the pair $(L,U)$ lies on the single line $\{D,L,U\}$, already exhausted as the Color-U Yukawa channel of the 2nd generation ([selection rules](/docs/physics/gauge-symmetry/fano-selection-rules)) — it is a mass channel, not a scalar sector. $lacksquare$
+
+**Falsification.** Discovery of a charged Higgs $H^\pm$ or of a second CP-even/odd neutral scalar of doublet type at the LHC/HL-LHC would refute the categorical uniqueness of $(E,U)$ — i.e. strike at $\kappa_0$ itself, not at a peripheral fit. UHM stakes the entire class of 2HDM/MSSM Higgs sectors on this.
+
+
 ### 6.1 Deviation of the Higgs triple vertex [C]
 
 :::warning [C] Conditional

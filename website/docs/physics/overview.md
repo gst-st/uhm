@@ -811,7 +811,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 
 ### Computational
 
-14. $Z'_\Phi(-2)$ — physical interpretation requires full QFT computation
+14. $Z'_\Phi(-2)$ — the *derivative of the Epstein zeta regulator* (the prime is differentiation, not a gauge boson; gauge $Z'$ are forbidden by [T-297](/docs/physics/gauge-symmetry/standard-model#запрет-z-прайм)) — physical interpretation requires full QFT computation
 15. Full functional integral (bosons + fermions + SUSY) in winding sectors
 16. Lattice computation of partition function on $(S^1)^{21}$ with $G_2$-symmetry
 17. Two-loop correction to $\eta_F$ (sensitivity of $\xi_F$ to $\eta_F$)

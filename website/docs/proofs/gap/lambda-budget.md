@@ -420,7 +420,7 @@ Structural cancellation from $\Gamma$-poles — a mathematically rigorous result
 
 Vacuum energy in zeta regularization is expressed via $Z_\Phi(s)$ at a certain negative value of $s$. For Gap theory in 4D with 21 compact directions: $\rho \propto Z_\Phi(-2)$. By Theorem 3.4: $Z_\Phi(-2) = 0$, which formally cancels the zeta-regularized vacuum energy from winding sectors.
 
-The physical vacuum energy is determined by the derivative $Z'_\Phi(-2)$:
+The physical vacuum energy is determined by the derivative $Z'_\Phi(-2)$ (a zeta-regulator derivative — the prime means differentiation, not a $Z'$ boson; gauge $Z'$ are forbidden by [T-297](/docs/physics/gauge-symmetry/standard-model#запрет-z-прайм)):
 
 $$
 \Lambda_{\text{wind}}^{\text{reg}} = -\frac{1}{2}\mu^{-4} Z'_\Phi(-2)

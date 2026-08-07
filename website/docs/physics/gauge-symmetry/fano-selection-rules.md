@@ -342,6 +342,11 @@ The 7 Fano lines split into two classes based on whether they contain dimension 
 
 **(b)** **Suppressed lines** (with O): lines 5–7. Intermediate states include the O-sector with $\mathrm{Gap}(O, \cdot) \sim 1$ $\to$ exponentially suppressed by a factor $\sim e^{-M_P/\mu}$.
 
+### Structural corollary: $\kappa_0$ flows through the suppressed lines [T] (T-298) {#каппа-по-подавленным}
+
+Both morphism factors of $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO}$ live on O-lines: $(O,E)$ lies on $\{L,E,O\}$ (Temporal-EL) and $(O,U)$ on $\{U,O,S\}$ (Temporal-US) — two of the three **suppressed** lines of the table above, and by $\lambda=1$ no other path exists. Hence the smallness of the reflection constant is *geometric*: the self-observation channel has no choice but to run through exponentially suppressed lines. Two consequences: (i) the hierarchy $\kappa_0 \ll \omega_0$ needs no tuning — it is incidence; (ii) the third points of these two lines, $L$ and $S$, are the *shadow marks* of the reflective channel — a falsifiable structural prediction that reflexivity measures couple to the Meaning and Form axes specifically (testable on the empirical R-metrics of the applied layer).
+
+
 **(c)** **Structural observation.** Each of the generation dimensions ($A, S, L$) lies on exactly **two** active lines and **one** suppressed line. Each generation is connected to the Higgs $(E,U)$ through a **unique active path**:
 - $A$ $\to$ direct: line $\{E,U,A\}$ (Higgs)
 - $S$ $\to$ via $D$: line $\{S,D,E\}$ (Color-E)
