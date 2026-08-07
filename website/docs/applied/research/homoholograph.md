@@ -285,8 +285,8 @@ the difference touches **only the Moon's lines**; the gate set, channels,
 type, profile, authority and both Suns are zone-stable. The node tones sit
 at the 1.6-arcminute scale where engines legitimately differ by one step.
 In the reconstructed reading the same chart shows: P.Sun = the
-Actualization coherence (A–D, syndrome → U); D.Sun = the full Fano line
-{L,E,U} (spine); Mars and the North Node of Personality on the **Source
+Actualization coherence (A–D, syndrome → U); D.Sun = the full $\bar{\mathbf 3}$ sector
+{L,E,U} (spine — a sector, not a Fano line: the line through L and E is {L,E,O}); Mars and the North Node of Personality on the **Source
 gate**; D.Moon = Репрезентация (S–E) — a coherence the legacy instrument
 class *cannot see*; profile 3/5 = voices L/U (hexagram line $k$ = voice:
 A S L D U E, hidden O).
