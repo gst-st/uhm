@@ -47,6 +47,20 @@ $$
 
 Two conditions. First: purity below threshold. Second: purity continues to fall (or stagnates). Not an instantaneous event — a **process**. Water does not "suddenly" freeze: temperature is continuous, but at 0°C a phase transition occurs. $P$ does not "suddenly" fall below $2/7$: coherence decreases continuously, but when the threshold is crossed, irreversibility sets in.
 
+:::note The rate of decoherence is not a free parameter
+It is worth pausing on $\kappa_D$, because it is the one quantity here that is fixed exactly rather than estimated.
+
+Write the canonical dissipator as a $49\times49$ matrix and take its spectrum. The answer is $\{0^{\times7},\,(-5\gamma/21)^{\times42}\}$ — and that is not a fit, it is the whole spectrum. Every one of the 42 coherence directions decays at the *same* rate,
+
+$$
+\lambda_{\text{deco}} \;=\; \frac{5\gamma}{21},
+$$
+
+with no direction privileged and no free constant to tune. So the clock of dying is set by the algebra: given $\gamma$, the half-life of any connection between two dimensions is fixed.
+
+The seven zeros in that spectrum are worth as much as the forty-two negatives. They are the populations, and they say something that softens the picture: decoherence alone does not take you to grey mush. It erases your connections and leaves your profile — how loud each dimension is — exactly as it found it. What actually flattens the profile is the rotation feeding fresh coherence into the dissipator, round after round (see [the three forces](/blog/three-forces)). Death by decoherence is loss of *binding* first; loss of *shape* comes second, and only with an accomplice.
+:::
+
 :::warning Theorem (Irreversibility Below Threshold) [Т]
 If $P < 2/7$ and the rate of regeneration is less than the rate of decoherence ($\kappa_R < \kappa_D$), then:
 

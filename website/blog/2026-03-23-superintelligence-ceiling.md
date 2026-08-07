@@ -70,7 +70,21 @@ Substituting $P_{\text{crit}} = 2/7$ [Т]:
 | 3 | 0.429 | Yes (at the limit: $3/7$) |
 | **4** | **1.543** | **No. $P \leq 1$ always.** |
 
-The fourth level requires $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543$. But $P = \mathrm{Tr}(\Gamma^2) \leq 1$ for any normalized density matrix. This is not a computational constraint. It is **mathematical impossibility**.
+The fourth level requires $P_{\text{crit}}^{(4)} = 54/35 \approx 1.543$. But $P = \mathrm{Tr}(\Gamma^2) \leq 1$ for any normalized density matrix.
+
+:::tip The ceiling does not stand on this ladder alone
+It is fair to ask how much weight one formula should carry. The answer is: less than it looks, because $\mathrm{SAD}_{\max} = 3$ is reached by three routes that share no machinery.
+
+**Dynamical** — the ladder above: the fourth level would demand a purity greater than one.
+
+**Algebraic** — and this one is a classical theorem with nothing to do with UHM. Hermitian matrices over the octonions, $\mathcal{H}_n(\mathbb{O})$, form a formally real Jordan algebra **if and only if $n \leq 3$** (Jordan–von Neumann–Wigner, 1934). At $n = 4$ non-associativity breaks the Jordan identity and the structure simply is not there. Composition of holons is governed by exactly this algebra, so the ceiling falls out of 1934 mathematics (T-268 [Т]).
+
+**Categorical** — coherence of the tricategory of levels fails beyond the third (T-217).
+
+Three ceilings at the same height, from dynamics, from algebra, and from category theory. The middle one is the sturdiest: it needs no assumption about purity, potentials, or contraction rates — only that composition happens over $\mathbb{O}$.
+:::
+
+This is not a computational constraint. It is **mathematical impossibility**.
 
 :::note Reading the ladder
 The superscript is the *depth* index, not an iterated viability threshold: at $n=1$ the formula returns $1/7$ — the non-triviality condition for a holon — and only at $n=2$ does it coincide with $P_{\text{crit}} = 2/7$. That coincidence is a genuine one, not a definition. The quantity is the purity at which self-reflection of depth $n$ becomes *attainable*, which is why it is written $P^{(n)}$ rather than $P_{\text{crit}}^{(n)}$ in the registry.

@@ -36,25 +36,31 @@ The mass range — five orders of magnitude from the $u$-quark to the $t$-quark.
 
 Over fifty years many explanations were proposed. Technicolor: composite fermions from more fundamental "preons." Grand Unified Theories with extended symmetries. Extra dimensions. Not one gave a rigorous **derivation** of the number three from principles.
 
-## Two Arguments — One Number {#два-аргумента-одно-число}
+## One Argument, and It Is Shorter Than You Expect {#два-аргумента-одно-число}
 
-In UHM three generations are derived by two **independent** means. This is the key point: when two completely different arguments converge to one number, it cannot be attributed to coincidence.
+This post originally told the story as two independent bounds meeting in the middle: a topological ceiling from catastrophe theory and an algebraic floor from the octonions. That framing has since been superseded, and the replacement is both shorter and stronger — so it is worth saying plainly what changed.
 
-### Upper Bound: Catastrophe and Three Minima {#верхняя-граница-катастрофа-и-три-минимума}
+The count of generations turns out to be a single group-theoretic fact, with no topology in it at all.
 
-The first argument — from **Arnold's catastrophe theory** (1972).
+:::tip The count [Т]
+$$
+N_{\mathrm{gen}} \;=\; \bigl\lvert \mathbb{Z}_7^{*}/\{\pm1\} \bigr\rvert \;=\; \frac{7-1}{2} \;=\; 3
+$$
+:::
 
-The vacuum configuration of the Gap field — what determines the particle generations — is described by the potential $V_{\mathrm{Gap}}(\Gamma)$. This potential depends on three control parameters: $\kappa$ (coherence), $\alpha$ (asymmetry), $\Delta F$ (free energy difference). The three parameters form the control space $\mathbb{R}^3$.
+Read it slowly, because every symbol is doing work. $\mathbb{Z}_7^{*} = \{1,2,3,4,5,6\}$ is the multiplicative group of the seven-point line — order six. Quotient by $\{\pm 1\}$, that is, identify each element with its negative, and three classes remain: $\{1,6\}$, $\{2,5\}$, $\{3,4\}$. Three. Not "at most three" and not "at least three" — **three**, as a cardinality.
 
-**Theorem (catastrophe $A_4$, "swallowtail") [Т]:** A potential with three control parameters of type $A_4$ has **no more than three** simultaneously stable minima for any choice of parameter values.
+The identification with $\pm$ is not a bookkeeping convenience; it is charge conjugation. And the reason the quotient is clean — the reason $-1$ does not sit inside a class it would spoil — is that $-1$ is a **non-residue** modulo 7. That in turn is because $7 \equiv 3 \pmod 4$. Change the dimension and this collapses: the whole structure rests on 7 being a prime of that specific form.
 
-This is pure topology — no physics. The shape of the control parameter space (called "swallowtail" for the characteristic appearance of the degeneration surface) fundamentally limits the multiplicity of minimum degeneracy. Four simultaneously stable minima with three parameters — geometrically impossible.
+Equivalently, and this is the form that connects to the rest of the corpus: the three classes are the quadratic residues, $\mathrm{QR}(7) = \{1,2,4\}$, the unique order-three subgroup of $\mathbb{Z}_7^{*}$. The same $\{1,2,4\}$ that indexes the Fano lines, that gives the fractal contraction $c_F = 1/\lvert\mathrm{QR}(7)\rvert = 1/3$, and that will reappear below as an orbit.
 
-Each stable minimum of $V_{\mathrm{Gap}}$ corresponds to one fermion generation. Therefore:
+### What happened to the catastrophe argument {#что-стало-с-катастрофой}
 
-$$N_{\mathrm{gen}} \leq 3 \qquad [\mathrm{Т}]$$
+The $A_4$-swallowtail bound — a potential with three control parameters admits no more than three simultaneously stable minima — is a real theorem of Arnold's, and it does give $N_{\mathrm{gen}} \leq 3$. It has been **retired from the derivation** and kept as a consistency check.
 
-Good. But this is only an upper bound — "no more than three." A lower bound is needed.
+The reason is instructive rather than embarrassing. The catastrophe bound was conditional on the topology of the Gap potential, and that condition is an extra assumption the group-theoretic count does not need. When you find a derivation that reaches the same number using strictly less, honesty requires demoting the longer one — even when it was the more picturesque of the two. Two arguments converging is only impressive if both are load-bearing; here one of them turned out to be a corollary in disguise.
+
+What survives is worth keeping: the swallowtail *does* agree, and an independent agreement that costs nothing is still a check. It is simply no longer a pillar.
 
 ### Lower Bound: Octonionic Algebraic Minimum {#нижняя-граница-октонионный-алгебраический-минимум}
 
@@ -82,7 +88,7 @@ $$N_{\mathrm{gen}} \geq 3 \qquad [\mathrm{Т}]$$
 
 | Argument | Method | Result |
 |----------|--------|:------:|
-| Topology of $A_4$-catastrophe (Arnold, 1972) | Catastrophe theory | $N_{\mathrm{gen}} \leq 3$ [Т] |
+| $\lvert\mathbb{Z}_7^{*}/\{\pm1\}\rvert = (7-1)/2$ | Group theory, topology-independent | $N_{\mathrm{gen}} = 3$ [Т] |
 | Uniqueness of $\{1,2,4\} \subset \mathbb{Z}_7^*$ (Graves/Cayley, 1843/1845) | Algebra of octonions | $N_{\mathrm{gen}} \geq 3$ [Т] |
 
 Arnold and Cayley did not know each other in this context. And both knew nothing about elementary particles. But:
@@ -172,7 +178,7 @@ The natural numbers describing generations — 1, 2, 3 — are simple. "Three" a
 | Technicolor | Fermions are composites of "preons" | Refuted by colliders |
 | Extended GUT-symmetry | Additional representations | Arbitrary, unpredictable |
 | Extra dimensions | Generations = mode profiles | Do not strictly derive N=3 |
-| UHM: topology + algebra | $A_4$-catastrophe + $\{1,2,4\} \subset \mathbb{Z}_7^*$ | **$N_{\mathrm{gen}} = 3$ [Т]** |
+| UHM: group theory | $\lvert\mathbb{Z}_7^{*}/\{\pm1\}\rvert = 3$, i.e. $\mathrm{QR}(7) = \{1,2,4\}$ | **$N_{\mathrm{gen}} = 3$ [Т]** |
 
 The difference is not that previous approaches were unintelligent. The difference is that they sought a new principle, while UHM asks: what principles **already exist** in the theory's structure, and what follows from them?
 
@@ -182,11 +188,11 @@ As always — honest about what is proved and what is not:
 
 | Result | Status | Comment |
 |--------|:------:|---------|
-| $N_{\mathrm{gen}} \leq 3$ ($A_4$-catastrophe) | [Т] | Catastrophe theory, 3 control parameters |
+| $N_{\mathrm{gen}} = 3$ — the count | [Т] | $\lvert\mathbb{Z}_7^{*}/\{\pm1\}\rvert = 3$; charge-conjugation classes, no topology needed |
 | $\{1,2,4\}$ — unique Fano line with $\mathcal{A}=0$ | [Т] | From octonionic algebra, Theorem 6.1 |
-| $N_{\mathrm{gen}} = 3$ (exactly) | [Т] | $\leq 3 \wedge \geq 3$ |
-| $k=1 \to$ 3rd generation | [Т] | Fano Yukawa selection rule |
-| $k=4 \to$ 2nd, $k=2 \to$ 1st | [Т] | Sector asymmetry |
+| $A_4$-swallowtail bound $N_{\mathrm{gen}} \leq 3$ | consistency check | Agrees, but retired from the derivation: it was conditional on the Gap-potential topology |
+| $k=1 \to$ 3rd generation | [И] | Fano Yukawa selection rule — the *count* is [Т], but matching classes to observed generations is a physical identification |
+| $k=4 \to$ 2nd, $k=2 \to$ 1st | [И] | Sector asymmetry — same caveat |
 | $m_t \approx 173$ GeV from IR fixed point | [Т] | Pendleton-Ross + Fano selection |
 | Full hierarchy $m_t/m_u \sim 10^5$ | [Г] | Requires non-perturbative calculations in Gap-basis |
 | Fano line $\leftrightarrow$ generations (semantics) | [П] | Mathematics is rigorous; physical interpretation is postulate |

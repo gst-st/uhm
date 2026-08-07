@@ -61,7 +61,15 @@ $$
 \frac{dP}{d\tau}\bigg|_{\mathcal{D}} \leq 0
 $$
 
-Purity **decreases**. Coherences decay. Connections between dimensions weaken. State $\Gamma$ drifts toward the maximally mixed $I/7$ — the quantum analogue of "grey mush," where everything is identical and nothing is distinguishable.
+Purity **decreases**. Coherences decay. Connections between dimensions weaken. But here it is worth being exact, because the exactness is more interesting than the slogan.
+
+The canonical dissipator does **not** push the state toward the maximally mixed $I/7$. Compute its generator as a $49\times49$ matrix and look at the spectrum: it is $\{0^{\times7},\,(-5\gamma/21)^{\times42}\}$ exactly. Forty-two decaying directions — every coherence, all at the same rate $5\gamma/21$ — and **seven** directions that do not move at all. Those seven are the populations. Feed the dissipator any diagonal state and it returns it untouched: $\mathcal{D}_\Omega[\operatorname{diag}\lambda] = 0$, to machine zero.
+
+So destruction, taken alone, is not a slide into grey mush. It is a *flattener*: it erases every connection between dimensions and leaves the dimensions themselves exactly as loud as it found them. Left to itself it does not produce one grey state but a seven-parameter family of them — every possible profile of populations, all of them equally dead in the sense of having no coherence left.
+
+Grey mush is what you get from destruction **plus rotation**. The rotation keeps tilting the state out of the classifier basis, manufacturing fresh coherences for the dissipator to eat; the dissipator eats them and hands back a slightly flatter profile; repeat. That loop is what collapses the dissipator's seven-dimensional kernel down to a single point, and only then is $I/7$ the unique destination. In the corpus this is the primitivity of $\mathcal{L}_0 = \mathrm{Aut} + \mathcal{D}_\Omega$ (T-39a [Т]).
+
+It is a small correction with a moral: the second force cannot finish its work alone either. Even destruction needs an accomplice.
 
 In UHM the operators $L_k$ are not postulated — they are **derived** from the structure of [Axiom Ω⁷](/docs/core/foundations/axiom-omega) through the [Fano plane](/docs/core/operators/lindblad-operators#фано-операторы) [Т]. Those same seven lines from [post 2](/blog/geometry-of-inner-world) that organize qualia — they also define the channels of destruction. The algebra that creates the structure of experience also creates the structure of its decay. One geometry — two faces.
 
@@ -152,7 +160,7 @@ If all three forces act, what happens? It depends on the balance.
 
 **Closed system** ($\mathcal{D} = 0$, $\mathcal{R} = 0$): rotation only. $P = \text{const}$, nothing is born and nothing dies. The world of the theoretical physicist. An isolated atom. A spherical horse in a vacuum.
 
-**Open system without regeneration** ($\mathcal{D} \neq 0$, $\mathcal{R} = 0$): rotation + destruction. Coherences decay exponentially, $P \to 1/7$. The system "dies" — loses structure, becomes indistinguishable from noise. A corpse. Ash. Heat death.
+**Open system without regeneration** ($\mathcal{D} \neq 0$, $\mathcal{R} = 0$): rotation + destruction. Coherences decay exponentially at $5\gamma/21$ and $P \to 1/7$ — note that it takes *both* terms to get there, since the dissipator alone would stop at the decohered profile it started from. The system "dies" — loses structure, becomes indistinguishable from noise. A corpse. Ash. Heat death.
 
 **A living system** ($\mathcal{D} \neq 0$, $\mathcal{R} \neq 0$, $\Delta F > 0$): all three forces. And here — magic (strictly speaking — thermodynamics):
 

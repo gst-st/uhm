@@ -87,7 +87,7 @@ Vacuum energy is **autopoietic work**: the cost of maintaining coherence $\rho^*
 
 ### Indirect Consequence: de Sitter {#непрямое-следствие-де-ситтер}
 
-$\Lambda > 0$ implies closed spatial topology [Т] (T-120b): $\Sigma^3 \cong S^3$. The vacuum metric is de Sitter. The observed accelerated expansion is not a coincidence and not "dark energy of unknown nature" — it is a consequence of the autopoietic work of the vacuum. At large radius of curvature, de Sitter is indistinguishable from flat space — which is what is observed ($\Omega_k \approx 0 \pm 0.01$).
+$\Lambda > 0$ implies closed spatial topology [С] (T-120b — conditional on the manifold reconstruction of T-119): $\Sigma^3 \cong S^3$. The vacuum metric is de Sitter. The observed accelerated expansion is not a coincidence and not "dark energy of unknown nature" — it is a consequence of the autopoietic work of the vacuum. At large radius of curvature, de Sitter is indistinguishable from flat space — which is what is observed ($\Omega_k \approx 0 \pm 0.01$).
 
 ### Connection to Lawvere Incompleteness {#связь-с-неполнотой-ловера}
 
@@ -128,7 +128,7 @@ Why is $\Lambda$ not just positive, but small? Because six independent mechanism
 | 1 | $\varepsilon^6$ | $10^{-12}$ | Vacuum coherences are small: $\lvert\gamma_{ij}\rvert = \varepsilon \sim 10^{-2}$ |
 | 2 | $\lambda_3^2$ (RG) | $10^{-14.5}$ | Octonion associator — IR-irrelevant; $\Delta_3 = 5/42$ |
 | 3 | Ward identities | $10^{-0.45}$ | 14 Noether charges $G_2$ → anti-correlation of Gap at large scales |
-| 4 | Fano code | $10^{-0.9}$ | [Hamming $H(7,4)$](/blog/geometry-of-inner-world): 6 constraints → suppression $1/8$ |
+| 4 | Fano code | $10^{-0.9}$ | [Hamming $H(7,4)$](/blog/geometry-of-inner-world): **3** parity checks → $2^3 = 8$ syndrome classes, only the zero-syndrome one survives → suppression $1/8$ |
 | 5 | $\sqrt{N_F}$ | $10^{-11.9}$ | $\sim 6.8 \times 10^{23}$ uncorrelated Fano modes in Hubble volume |
 | 6 | O-isolation | $10^{-1.7}$ | Only [6 of 21 pairs](/blog/spacetime-dimensions) contribute: $(6/21)^3 \approx 0.02$ |
 | | **Total** | **$10^{-41.5}$** | **Perturbative budget** [Т] |
@@ -200,7 +200,7 @@ The second difference: string theory requires a choice from $\sim 10^{500}$ land
 | $H^*_{\text{loc}}(X, T) \neq 0$ | [Т] | $\tilde{H}^6(S^6) \cong \mathbb{Z}$ |
 | $\Lambda_{\text{obs}} > 0$ (T-71) | [Т] | Autopoiesis + local cohomologies |
 | $\rho_{\text{vac}} = \kappa_0[P(\rho^*) - P(I/7)]\omega_0 > 0$ | [Т] | Each factor $> 0$ |
-| $\Sigma^3 \cong S^3$ (de Sitter) (T-120b) | [Т] | Consequence of $\Lambda > 0$ |
+| $\Sigma^3 \cong S^3$ (de Sitter) (T-120b) | [С] | Consequence of $\Lambda > 0$ — but *closedness of $\Sigma^3$* presupposes that $\Sigma^3$ exists as a manifold, which is the conditional half of T-119 |
 | O-sector dominance (Sol.63) | [Т] | $\mathcal{G}_{\text{total}} = \mathcal{G}_O + O(\bar\varepsilon^2)$ |
 | 6 perturbative mechanisms | [Т] | At $\varepsilon = 10^{-2}$ [Г] |
 | Perturbative budget $10^{-41.5}$ | [С] | Depends on $\varepsilon$ |

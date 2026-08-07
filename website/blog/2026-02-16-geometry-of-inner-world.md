@@ -175,6 +175,12 @@ The trick is in *how* the checks are structured. Three check bits give $2^3 = 8$
 
 This code — **H(7,4)** — has a property mathematicians call *perfection*. Each of $2^7 = 128$ possible seven-bit words is either itself a valid codeword, or differs by exactly one bit from a single valid one. There are no neutral territories. Any single-bit error is diagnosed unambiguously.
 
+And here is the part that stops looking like a coincidence once you check it. Take the sixteen codewords of $H(7,4)$ and keep only those of weight three — the words with exactly three ones. There are seven of them. Now read each one as the set of positions where it is one, and ask what those seven triples do: every pair of the seven positions is covered by exactly one triple.
+
+That is the Fano plane. Not "analogous to" — the same object. The error-correcting code and the geometry of the seven dimensions are two readings of one structure, and you can verify it by enumeration in a few lines.
+
+Perfection is checkable in the same breath: $2^7/(1+7) = 16$, exactly the number of codewords, so the Hamming bound is met with nothing left over. Three parity checks give $2^3 = 8$ syndrome classes — one for "no error" and one for each of the seven positions, with none spare.
+
 And the most remarkable thing: H(7,4) is the **only** perfect code with such parameters [Т]. Fewer than three check bits for seven positions — mathematically impossible.
 
 ### What Does This Have to Do with Consciousness {#при-чём-тут-сознание}
