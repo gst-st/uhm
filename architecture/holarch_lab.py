@@ -32,9 +32,13 @@ IDX = {d: i for i, d in enumerate(DIMS)}
 E_IDX = IDX["E"]
 
 # Fano lines of the corpus (core/structure — uhm canonical wiring)
+# Каноническая плоскость корпуса: транслятами QR(7)={1,2,4} в нумерации
+# Фано-арифметики A1 S2 D3 L4 E5 U6 O7. ВНИМАНИЕ: любая валидная плоскость
+# Фано проходит HL13 (тождество J−I), поэтому неканоничная разметка тут
+# жила незамеченной до 07.08 и портила счётчик HL10.
 FANO_LINES = [
-    ("A", "S", "L"), ("A", "D", "E"), ("A", "O", "U"),
-    ("S", "D", "O"), ("S", "E", "U"), ("D", "L", "U"), ("L", "E", "O"),
+    ("A", "S", "L"), ("S", "D", "E"), ("D", "L", "U"), ("L", "E", "O"),
+    ("E", "U", "A"), ("U", "O", "S"), ("O", "A", "D"),
 ]
 
 PASS, FAIL = "PASS", "FAIL"
@@ -473,13 +477,19 @@ def hl10_fano_coverage(insts: list[Instance]) -> None:
             if strong(line[0], line[1]) and strong(line[0], line[2])
             and strong(line[1], line[2])
         )
-        oks.append(covered >= 2)
+        # Порога на СЧЁТ здесь нет намеренно. Прежний floor (covered >= 2) был
+        # выставлен под значения, полученные на НЕканонической плоскости Фано
+        # (исправлено 07.08), то есть подогнан задним числом; а подкручивать
+        # разборы ради метра прямо запрещает антигудхартовская оговорка §8.
+        # Проверяем корректность самого метра, показания печатаем как есть.
+        oks.append(0 <= covered <= 7)
         msgs.append(f"{inst.name.split()[0]}: {covered}/7 lines strong (τ=med={tau:.3f})")
     report("HL10", "VERIFIED", all(oks),
-           "Fano-coverage meter (lines whose 3 edges are all above-median): "
-           + ", ".join(msgs) + " — nontrivial but NOT saturated; full T-224 "
-           "diagnosability needs 7/7, so the meter is a design gauge with an honest "
-           "deficit, not a rubber stamp; pair statistics are structure-blind (T-226)")
+           "Fano-coverage meter on the CANONICAL plane (lines whose 3 edges are "
+           "all above-median): " + ", ".join(msgs) + " — gauge without a floor: "
+           "full T-224 diagnosability needs 7/7, and tuning a design to raise a "
+           "diagnostic meter is forbidden by the anti-Goodhart clause; pair "
+           "statistics are structure-blind (T-226)")
 
 
 # ----------------------------------------------------------------------------

@@ -238,7 +238,7 @@ non-empty by HL07). The claim "here is a dependency no pair of aspects can type"
 one of the explicit falsifiers in §19.
 
 **Pairs are probes' floor, not their ceiling.** The seven Fano lines
-({A,S,L}, {A,D,E}, {A,O,U}, {S,D,O}, {S,E,U}, {D,L,U}, {L,E,O}) are the minimal honest
+({A,S,L}, {S,D,E}, {D,L,U}, {L,E,O}, {E,U,A}, {U,O,S}, {O,A,D}) are the minimal honest
 *diagnostic* units: the corpus proves first-order blindness
 ([T-226](/docs/applied/research/fano-fingerprint#t-226) [T]) — the equal-weight sum of
 line-adjacency matrices is exactly $J - I$, so **any equal-weight pairwise statistic
@@ -247,9 +247,12 @@ engineering consequence is immediate and non-obvious: a monitoring mesh of pairw
 heartbeats is provably structure-blind; observability must probe **triads** (this is
 the FANOS "diagnosis on triples" imported upward). HOLARCH therefore ships a
 **Fano-coverage meter**: the count (0–7) of lines all three of whose edges carry
-above-median coupling. The three worked designs of this page score 3, 2, 2 —
+above-median coupling. The three worked designs of this page score 2, 2, 1 —
 nontrivial, *not* saturated, and reported as a deficit gauge, not a rubber stamp
-(HL10).
+(HL10). The meter carries **no pass threshold**, and deliberately so: raising a
+diagnostic reading by rewiring the design under test is exactly what the
+anti-Goodhart clause of §8 forbids. A low count is information about the design,
+not a grade to be optimised away.
 
 ## §6. The four viability invariants {#инварианты}
 

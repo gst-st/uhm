@@ -39,8 +39,16 @@ bad = []
 pat_num = re.compile(r"\\\{(\d),(\d),(\d)\\\}\s*=\s*\\\{([A-U,\s]+)\\\}")
 pat_line = re.compile(
     r"(?:Fano line|прямая Фано|прямой Фано|линия Фано|Фано-лини[яию])"
-    r"[^.\n]{0,40}?\$?\\?\{([ASDLEOU])[,\s]+([ASDLEOU])[,\s]+([ASDLEOU])\\?\}",
+    r"[^.]{0,60}?\$?\\?\{([ASDLEOU])[,\s]+([ASDLEOU])[,\s]+([ASDLEOU])\\?\}",
     re.I)
+# СПИСОК прямых: фраза «семь прямых Фано» и далее перечисление троек.
+# Одиночная pat_line ловила только ПЕРВУЮ тройку и спотыкалась о перенос
+# строки — так семь неканоничных прямых в holarch §5 прошли мимо (07.08).
+pat_list_head = re.compile(
+    r"(?:seven Fano lines|Fano lines are|семь прямых Фано|"
+    r"прямые Фано(?:\s+суть)?|Фано-прямые)", re.I)
+pat_trio = re.compile(
+    r"\\?\{\s*([ASDLEOU])\s*,\s*([ASDLEOU])\s*,\s*([ASDLEOU])\s*\\?\}")
 import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 roots = [os.path.join(HERE, "..", "website", "docs"),
@@ -75,6 +83,18 @@ for root in roots:
             tag = "СЕКТОР, не прямая" if trio in SECTORS \
                   else "НЕ прямая канона"
             bad.append((p, frag[:90], tag))
+        for mh in pat_list_head.finditer(s):
+            tail = s[mh.end():mh.end() + 320]
+            trios = [frozenset(t.group(1, 2, 3)) for t in pat_trio.finditer(tail)]
+            if len(trios) < 3:
+                continue
+            n_line += len(trios)
+            for trio in trios:
+                if trio in LINES_L:
+                    continue
+                tag = "СЕКТОР, не прямая" if trio in SECTORS \
+                      else "НЕ прямая канона (в списке прямых)"
+                bad.append((p, mh.group(0) + " … " + "".join(sorted(trio)), tag))
 print(f"скан: раскрытий номера→буквы {n_num}, заявлений прямых {n_line}, снято отрицанием/пересечением {n_skip}")
 if bad:
     print(f"!!! НАРУШЕНИЙ: {len(bad)}")
