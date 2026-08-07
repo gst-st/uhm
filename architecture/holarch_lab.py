@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL15. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL16. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -502,6 +502,12 @@ def _rt_run(rng: np.random.Generator, rules: list[np.ndarray], K: int,
         goal = int(rules[t // flip][k])
         if mode == "single" or n_leaf == 1:
             w, rcell = 0, None
+        elif mode == "frozen_skew":                    # закреплён, но завален
+            if k not in commit:
+                commit[k] = 0 if (k % 10) < 7 else (k % n_leaf)
+            w, rcell = commit[k], None
+        elif mode == "random_bal":                     # баланс без устойчивости
+            w, rcell = int(rng.integers(n_leaf)), None
         elif mode == "commit":
             if k not in commit:                       # объявлено однажды
                 commit[k] = int(np.argmin(load))
@@ -586,6 +592,44 @@ def hl15_addressing_price() -> None:
            f"{br['declared147']:.0f}, a {br_gain:.0f}% gain that is LARGER than at "
            "fan-out 2, which is why the reachable ceiling is 21^3 = 9261 and not "
            "21·2² = 84")
+
+
+# ----------------------------------------------------------------------------
+# HL16 — the 2x2 that separates stability from balance
+# ----------------------------------------------------------------------------
+
+def hl16_stability_vs_balance() -> None:
+    K, EPI, FLIP, SEEDS, NL = 100, 2000, 400, 12, 4
+    got = {}
+    for tag, nl, mode in (("single", 1, "single"), ("frozen+balanced", NL, "commit"),
+                          ("frozen+skewed", NL, "frozen_skew"),
+                          ("churning+balanced", NL, "random_bal")):
+        tot = []
+        for sd in range(SEEDS):
+            rng = np.random.default_rng(4700 + sd)
+            rr = np.random.default_rng(9100 + sd)
+            rules = [rr.integers(0, 2, K) for _ in range(EPI // FLIP)]
+            tot.append(_rt_run(rng, rules, K, nl, mode, EPI, FLIP))
+        got[tag] = float(np.median(tot))
+    one, fb = got["single"], got["frozen+balanced"]
+    fs, cb = got["frozen+skewed"], got["churning+balanced"]
+    # Порядок — вот утверждение: баланс без устойчивости ХУЖЕ неделения.
+    # Утверждение, которое проверяется: замораживание — предусловие
+    # (frozen+skewed бьёт неделение), баланс — множитель поверх него
+    # (frozen+balanced лучше всех), а баланс без замораживания предусловия
+    # не заменяет (churning+balanced хуже frozen-ячеек).
+    ok = fb < fs < one and cb > fs
+    # Формулировка ВЫВОДИТСЯ из чисел, а не утверждается поверх них.
+    verdict_cb = ("worse than not splitting at all" if cb > one
+                  else f"barely distinguishable from not splitting ({one:.0f})")
+    report("HL16", "VERIFIED", ok,
+           f"stability vs balance at {NL} children (median misses, {SEEDS} seeds): "
+           f"undivided {one:.0f}; frozen+balanced {fb:.0f}; frozen+skewed {fs:.0f}; "
+           f"churning+balanced {cb:.0f} — perfect balance without a stable address is "
+           f"{verdict_cb}, while freezing alone recovers "
+           f"{100*(one-fs)/one:.0f}% and freezing with balance "
+           f"{100*(one-fb)/one:.0f}%: stability is the precondition, balance the "
+           "multiplier — declare the address, and declare it by load")
 
 
 def hl10_fano_coverage(insts: list[Instance]) -> None:
@@ -706,7 +750,7 @@ def hl14_client_diversity() -> None:
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL15"
+    print("HOLARCH LAB — panel HL01–HL16"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -718,6 +762,7 @@ def main() -> int:
     hl09_bft_consonance()
     hl10_fano_coverage(insts)
     hl15_addressing_price()
+    hl16_stability_vs_balance()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()

@@ -789,10 +789,34 @@ engineered learning systems built on the UHM core.
    is, at $N=7$ with complete pairwise coverage and optimal block size,
    uniquely the Fano plane (T-41c, T-41i) — which is moreover the case
    $r=k$ in which the block layer needs no renormalisation.
-5. *A ceiling on self-reference.* The $P_{\text{crit}}$ ladder across
-   levels gives $\mathrm{SAD}_{\max}=3$: a self-learning system cannot
-   nest reflection indefinitely — a structural limit absent from VL.
-6. *A reason why learning never completes.* Lawvere incompleteness
+5. *A ceiling on self-reference, and a second one on breadth.* The
+   $P_{\text{crit}}$ ladder across levels gives $\mathrm{SAD}_{\max}=3$:
+   a self-learning system cannot nest reflection indefinitely — a
+   structural limit absent from VL. A second bound runs the other way. A
+   holon types exactly $\binom{7}{2}=21$ non-overlapping channels, and a
+   node that coordinates others spends one on each, so no node addresses
+   more than $21$ subordinates. The two bounds multiply: one holarchy
+   reaches at most $21^{3}=9261$ addressed contexts
+   ([T-304](/docs/reference/status-registry)). This is not the dimension
+   count $\dim\mathrm{Cog}_n=7^{\,n+1}$ of §9 — that is how large a level's
+   state space is, this is how many situations it can tell apart — and
+   the distinction matters, because VL's networks scale without either.
+
+6. *A variable that must not be trainable.* VL's organising distinction
+   is trainable against non-trainable, and it leaves open which is which
+   for any given quantity. For one quantity the answer is now measured:
+   **addressing**. A policy that decides which subsystem handles what,
+   optimised against the same loss as the task it routes, never holds
+   still long enough for a subsystem to specialise; splitting under such
+   a policy was measured to be worth almost nothing, while the same split
+   under an address declared once and frozen recovered the gain, and
+   least-loaded declaration recovered the rest. Stability is the
+   precondition and balance the multiplier
+   ([HOLARCH §9](/docs/applied/research/holarch#композиция)). The
+   engineering reading is sharp and falsifiable in VL's own terms: the
+   routing variable belongs on the *non-trainable* side, and a framework
+   that trains it is paying for a freedom that costs more than it buys.
+7. *A reason why learning never completes.* Lawvere incompleteness
    (T-55: $\mathrm{Th}_{\text{UHM}}\subsetneq\Omega$) implies a permanent
    gap between the state and its self-model; in UHM this gap is the
    source of a positive vacuum energy (T-71). A self-learning universe
@@ -848,7 +872,7 @@ Corpus cross-references: T-41 (Fano channel family), T-42a
 completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
 energy), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
 action), T-87 (A5 derivable), T-124 (conscious window), T-187 (why
-Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298.
+Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298; the composition ceiling and the addressing regime under T-304.
 
 ---
 

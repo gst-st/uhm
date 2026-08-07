@@ -420,6 +420,18 @@ change, and shard keys are chosen at design time rather than continuously
 re-optimised.
 
 
+And the rule is sharper than "declare it". A $2\times2$ factorial imposes freezing
+and balance independently (HL16): a *frozen skewed* router assigns each context
+once but sends most of them to one child; a *churning balanced* router picks a
+child uniformly at random every visit. Against an undivided holon's 910 misses,
+frozen-and-balanced gives 636, frozen-but-skewed 734, and churning-but-balanced
+888 — balance without a stable address recovers essentially nothing, while
+freezing alone recovers 19% and freezing with balance 30%. **Stability is the
+precondition and balance the multiplier**, which is why consistent hashing fixes
+the key *and* spreads it: either half alone would leave most of the gain on the
+table [C].
+
+
 ## §10. Depth: the ladder and the ceiling {#глубина}
 
 The Depth Tower ([T-142](/docs/consciousness/hierarchy/depth-tower) [T at
