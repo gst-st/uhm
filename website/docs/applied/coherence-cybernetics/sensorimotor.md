@@ -954,7 +954,7 @@ The next step — applying this formalism to [stability problems](./stability) a
 7. **Classical approaches are projections of CC**: control theory, FEP, and RL are special cases — projections of the full 7-dimensional coherent dynamics.
 
 :::tip Bridge to the next chapter
-We have built the complete "perception-decision-action" cycle. But how *robust* is this cycle? What blow can it withstand? Where is the boundary between recoverable trauma and irreversible destruction? In the [next chapter](./stability) we will answer these questions: derive the stability radius formula $r_{\mathrm{stab}} = \sqrt{P - 2/7}$, trace the mechanism of the "death spiral" — and show that antifragility is not a metaphor, but a consequence of integration of experience.
+We have built the complete "perception-decision-action" cycle. But how *robust* is this cycle? What blow can it withstand? Where is the boundary between recoverable trauma and irreversible destruction? In the [next chapter](./stability) we will answer these questions: derive the stability radius formula $r_{\mathrm{stab}}$, trace the mechanism of the "death spiral" — and show that antifragility is not a metaphor, but a consequence of integration of experience.
 :::
 
 ---

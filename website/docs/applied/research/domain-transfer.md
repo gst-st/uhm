@@ -128,7 +128,7 @@ Replace 21 pairwise channels by **7 triple-buses** (the lines): each node sits o
 
 ### §3.3 Discovery 8 — the agent's constitution from constants {#d8}
 
-A UHM-compliant agent is governed by theorem-fixed dials, not hyperparameters: reflection budget $\geq 1/3$ ($R_{\mathrm{th}}$); purity window $(2/7, 3/7]$ with update-strength ceiling $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ (T-104); composition $\leq 3$ (SAD); inter-module coherence attenuating $\times 1/9$ per line-projected hop; **line-aware routing** (a mixture-of-experts blind to the lines pays that ninefold integration loss); and **grokking as a $\Phi$-crossing** (the delayed generalization jump predicted to be block-integration $\Phi$ crossing 1). Developed to full depth in the [SYNARC-Ω specification](/docs/applied/coherence-cybernetics/implementation); a *constitution from constants*. **[T]**-arithmetic / **[C]**-dictionary.
+A UHM-compliant agent is governed by theorem-fixed dials, not hyperparameters: reflection budget $\geq 1/3$ ($R_{\mathrm{th}}$); purity window $(2/7, 3/7]$ with update-strength ceiling $r_{\mathrm{stab}}$ (T-104); composition $\leq 3$ (SAD); inter-module coherence attenuating $\times 1/9$ per line-projected hop; **line-aware routing** (a mixture-of-experts blind to the lines pays that ninefold integration loss); and **grokking as a $\Phi$-crossing** (the delayed generalization jump predicted to be block-integration $\Phi$ crossing 1). Developed to full depth in the [SYNARC-Ω specification](/docs/applied/coherence-cybernetics/implementation); a *constitution from constants*. **[T]**-arithmetic / **[C]**-dictionary.
 
 ---
 
@@ -190,7 +190,7 @@ Physics needs no separate catalogue entry: it is the corpus layer where the engi
 | Cascade ceiling | $4/3$ (at $N=2,3$) | multiplication limit (photovoltaics, org cascades) |
 | $\mathrm{SAD}_{\max}$ | $3$ | ceiling of subject-composition depth |
 | Pyramid | $21 \to 7 \to 3 \to 1$ | universal diagnostic protocol |
-| $r_{\text{stab}} = \sqrt{P - 2/7}$ | — | admissible intervention / update strength |
+| $r_{\text{stab}}$ | — | admissible intervention / update strength |
 
 ---
 

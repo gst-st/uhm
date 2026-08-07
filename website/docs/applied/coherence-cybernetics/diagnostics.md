@@ -707,7 +707,7 @@ Why exactly $0.5$, and not $0.3$ or $0.7$? The answer is not arbitrary — it fo
 
 1. **Topological barrier (T-69 [T]).** At $\sigma < 0.5$ a typical perturbation $\|h^{\text{ext}}\|_{\text{typical}}$ cannot overcome the phase barrier $\geq 6\mu^2$. The system is protected from random jumps. At $\sigma > 0.5$ one typical perturbation can already push the system into the next zone.
 
-2. **Stability radius (T-104 [T]).** $r_{\text{stab}} = \sqrt{P - 2/7}$. At $P = 0.4$ (typical "healthy" value), $r_{\text{stab}} \approx 0.34$. This means that perturbations with $\|h^{\text{ext}}\| < 0.34$ are safe. At $\sigma \approx 0.5$ the system is approximately at distance $r_{\text{stab}}$ from the boundary — exactly one typical perturbation from trouble.
+2. **Stability radius (T-104 [T]).** $r_{\text{stab}}$. At $P = 0.4$ (typical "healthy" value), $r_{\text{stab}} \approx 0.34$. This means that perturbations with $\|h^{\text{ext}}\| < 0.34$ are safe. At $\sigma \approx 0.5$ the system is approximately at distance $r_{\text{stab}}$ from the boundary — exactly one typical perturbation from trouble.
 
 3. **Recovery time (T-39a [T]).** Time to return to equilibrium after a perturbation: $\tau_{\text{rec}} \approx \ln(10)/\lambda_{\text{gap}} = \ln(10)/(2/3) \approx 3.45$ units. At $\sigma < 0.5$ the system has time to recover between typical perturbations ($\tau_{\text{pert}} \sim 10\tau$). At $\sigma > 0.5$ — not always.
 

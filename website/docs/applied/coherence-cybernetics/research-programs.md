@@ -513,7 +513,7 @@ CC is a mathematical theory, and its value is ultimately determined by how well 
 3. Regularly deliver a standard stimulus and measure response time (time to return to equilibrium after a perturbation).
 4. Plot the dependence of $\tau_{\text{recover}}$ on estimated $P$.
 
-**Expected result:** $\tau_{\text{recover}} \propto 1/\sqrt{P - 2/7}$ — critical slowing down. This is a qualitative prediction distinguishing CC from theories without a phase transition.
+**Expected result:** $\tau_{\text{recover}} \propto 1/r_{\mathrm{stab}}$ — critical slowing down. This is a qualitative prediction distinguishing CC from theories without a phase transition.
 
 **Difficulty:** High. Requires precise calibration of $P$ in a biological system.
 
@@ -594,7 +594,7 @@ Organizational theory has long used cybernetic metaphors: "feedback," "self-orga
 
 - **Organizational culture → $\Gamma$.** An organization's culture is the distribution of "attention" across the seven dimensions. An innovative company has high $\gamma_{DD}$ (dynamics) and $\gamma_{AA}$ (articulation). A bureaucracy has high $\gamma_{SS}$ (structure) and $\gamma_{LL}$ (logic). Burnout — low $\gamma_{EE}$ (interiority), high $\sigma_E$ (E-stress).
 
-- **Organizational resilience → $r_{\text{stab}}$.** The stability radius $r_{\text{stab}} = \sqrt{P - 2/7}$ gives a quantitative measure of an organization's "margin of strength." A company with high $P$ will survive a crisis; a company at the edge ($P \approx 2/7$) will collapse from the slightest push.
+- **Organizational resilience → $r_{\text{stab}}$.** The stability radius $r_{\text{stab}}$ gives a quantitative measure of an organization's "margin of strength." A company with high $P$ will survive a crisis; a company at the edge ($P \approx 2/7$) will collapse from the slightest push.
 
 - **Leadership → $\kappa_0 \cdot \mathrm{Coh}_E$.** A leader influences the team's regeneration rate through E-coherence: a team that *feels* its work is meaningful recovers faster. This is not a motivational slogan, but a consequence of F10.
 

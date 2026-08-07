@@ -145,7 +145,7 @@ $$
 
 **Шаг 4 (Теорема Ляпунова).** Стандартная теорема линейной устойчивости: $\mathrm{Re}(\lambda_k) < 0$ для всех $k$ $\Rightarrow$ $\exists U$ окрестность $\rho^*_\Omega$ с экспоненциальной сходимостью и скоростью $c$.
 
-**Шаг 5 (Радиус).** Окрестность $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, где $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ из [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
+**Шаг 5 (Радиус).** Окрестность $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, где $r_{\mathrm{stab}}$ из [T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
 
 ### Зависимости
 
@@ -375,7 +375,7 @@ $$
 
 1. **T-125 [Т]** (§3): Локальная асимптотическая устойчивость — в $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ сходимость экспоненциальна с $c > 0$.
 
-2. **[T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Радиус устойчивости $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. При C20: $P(\rho^*_\Omega) > 2/7$, следовательно $r_{\mathrm{stab}} > 0$.
+2. **[T-104 [Т]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Радиус устойчивости $r_{\mathrm{stab}}$. При C20: $P(\rho^*_\Omega) > 2/7$, следовательно $r_{\mathrm{stab}} > 0$.
 
 3. **Открытость $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ — открытое множество в $\mathcal{D}(\mathbb{C}^7)$ (каждое из 7 неравенств $\sigma_k < 1$ определяет открытое условие). По [T-124 [Т]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
 

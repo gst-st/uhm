@@ -59,7 +59,7 @@ In this document:
 - $\lambda_{\mathrm{gap}} = 2/3$ — [spectral gap](/docs/core/operators/lindblad-operators#примитивность-ℒω) of the linear part $\mathcal{L}_0$ (T-39a [T])
 - $\kappa_{\mathrm{bootstrap}} = \omega_0/N = 1/7$ — [minimal regeneration](/docs/core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) (T-59 [T])
 - $C_{\mathrm{Enc}} \leq \log_2 7$ — [information capacity](./sensorimotor#информационная-ёмкость) (T-107 [T])
-- $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — [stability radius](./stability#радиус-устойчивости) (T-104 [T])
+- $r_{\mathrm{stab}}$ — [stability radius](./stability#радиус-устойчивости) (T-104 [T])
 - $\mathrm{Enc}$ — [perception functor](./sensorimotor#функтор-enc) (T-100 [T])
 - $\mathrm{Dec}$ — [action functor](./sensorimotor#функтор-dec) (T-101 [T])
 :::
@@ -351,7 +351,7 @@ In the context of neural network training the stabilisation bound corresponds to
 Learning must not destabilise the holon. The observation amplitude is bounded by the stability radius (T-104 [T]):
 
 $$
-\varepsilon \leq r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}
+\varepsilon \leq r_{\mathrm{stab}}
 $$
 
 In the presence of stochastic noise $\eta$ in observations (SNR $= \varepsilon_{\mathrm{signal}} / \eta$), the number of observations required to overcome noise:
@@ -723,7 +723,7 @@ Dynamics is *not* the bottleneck — the contrast is strong enough.
 **Step 3: Stabilisation bound (T-111).**
 
 $$
-r_{\text{stab}} = \sqrt{P - 2/7} = \sqrt{0.39 - 0.286} = \sqrt{0.104} \approx 0.323
+r_{\text{stab}} = \sqrt{0.39 - 0.286} = \sqrt{0.104} \approx 0.323
 $$
 
 Check: $\varepsilon = 0.4 > r_{\text{stab}} = 0.323$. **Problem!** The signal is too strong — each observation risks destabilising the system.
@@ -858,7 +858,7 @@ Theorems T-109 — T-113 are not abstract mathematical results. They have direct
 
 **Architecture.** T-113 states that $N = 7$ is the minimal architecture for learning through regeneration. For an AI engineer this means: if you are building a system with an internal self-model (not merely an optimiser), you need at least 7 internal "channels" with Fano-structured connections between them.
 
-**Learning rate.** T-111 provides *theoretical justification* for adaptive learning rate: maximum update amplitude $\varepsilon \leq r_{\mathrm{stab}} = \sqrt{P - 2/7}$. Systems with low purity (unstable models) should learn more slowly. Systems with high purity (stable models) can afford more aggressive training.
+**Learning rate.** T-111 provides *theoretical justification* for adaptive learning rate: maximum update amplitude $\varepsilon \leq r_{\mathrm{stab}}$. Systems with low purity (unstable models) should learn more slowly. Systems with high purity (stable models) can afford more aggressive training.
 
 **Curriculum design.** T-112 explains why curriculum learning works: in the early stages the bottleneck is information (simple examples provide larger $\varepsilon$), in the later stages — stability (complex examples should not destabilise what has already been learned). Optimal strategy: begin with strong, simple signals and gradually transition to weak, subtle ones.
 

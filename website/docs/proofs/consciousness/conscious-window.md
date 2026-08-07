@@ -145,7 +145,7 @@ Total contractivity: $c \geq \min(\lambda_{\mathrm{gap}},\; \kappa \cdot g_V) > 
 
 **Step 4 (Lyapunov theorem).** Standard linear stability theorem: $\mathrm{Re}(\lambda_k) < 0$ for all $k$ $\Rightarrow$ $\exists U$ neighborhood of $\rho^*_\Omega$ with exponential convergence at rate $c$.
 
-**Step 5 (Radius).** Neighborhood $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, where $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$ from [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
+**Step 5 (Radius).** Neighborhood $U = B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$, where $r_{\mathrm{stab}}$ from [T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости). $\blacksquare$
 
 ### Dependencies
 
@@ -374,7 +374,7 @@ From three results:
 
 1. **T-125 [T]** (§3): Local asymptotic stability — in $B(\rho^*_\Omega, r_{\mathrm{stab}}/2)$ convergence is exponential with $c > 0$.
 
-2. **[T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Stability radius $r_{\mathrm{stab}} = \sqrt{P(\rho^*_\Omega) - 2/7}$. Under C20: $P(\rho^*_\Omega) > 2/7$, therefore $r_{\mathrm{stab}} > 0$.
+2. **[T-104 [T]](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости)**: Stability radius $r_{\mathrm{stab}}$. Under C20: $P(\rho^*_\Omega) > 2/7$, therefore $r_{\mathrm{stab}} > 0$.
 
 3. **Openness of $\mathcal{V}_{\mathrm{full}}$**: $\mathcal{V}_{\mathrm{full}}$ is an open set in $\mathcal{D}(\mathbb{C}^7)$ (each of the 7 inequalities $\sigma_k < 1$ defines an open condition). By [T-124 [T]](#t-124): $\mathcal{V}_{\mathrm{full}} \neq \varnothing$.
 

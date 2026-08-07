@@ -19,7 +19,7 @@ In the [previous chapter](./sensorimotor) we built the complete sensorimotor cyc
 :::tip Chapter roadmap
 In this chapter we:
 1. **Formalise homeostasis** — from Bernard and Cannon to the precise inequality "regeneration $\geq$ dissipation" (Sections 1–2).
-2. **Compute the stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — how much the system can withstand (T-104, Section 4).
+2. **Compute the stability radius** $r_{\mathrm{stab}}$ — how much the system can withstand (T-104, Section 4).
 3. **Trace the death spiral** — a step-by-step cascade of degradation from initial blow to heat death (Section 5).
 4. **Classify vulnerabilities** across three channels and show why a noise attack ($h^{(D)}$) is the most dangerous (Section 6).
 5. **Derive the Landauer energy balance** (T-105) — the minimum "price of life" (Section 8).
@@ -29,7 +29,7 @@ In this chapter we:
 
 Every living system exists under threat. Thermodynamics is relentless: the second law pushes every ordered structure toward maximum entropy, toward heat death. A biological cell resists this through continuous metabolism. A neural network — through continuous learning. An organisation — through continuous management. But **how much** can a system withstand? Which blow will be fatal? Where is the boundary between recoverable trauma and irreversible destruction?
 
-Stability analysis answers precisely these questions. Within Coherence Cybernetics (CC), it transforms intuitive notions — "safety margin", "endurance limit", "point of no return" — into precise mathematical formulas. The central result: the **stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ gives a quantitative measure of how far the system is from catastrophe. This number is not a metaphor, but a distance in the Bures metric — a physically measurable quantity.
+Stability analysis answers precisely these questions. Within Coherence Cybernetics (CC), it transforms intuitive notions — "safety margin", "endurance limit", "point of no return" — into precise mathematical formulas. The central result: the **stability radius** $r_{\mathrm{stab}}$ gives a quantitative measure of how far the system is from catastrophe. This number is not a metaphor, but a distance in the Bures metric — a physically measurable quantity.
 
 :::note On notation
 In this document:
@@ -69,7 +69,7 @@ Parallel between classical homeostasis and CC stability:
 | Norm (health) | Viability region $\mathcal{V}$ | $P(\Gamma) > 2/7$ |
 | Negative feedback | Regeneration $\mathcal{R}$ | $\kappa(\rho_* - \Gamma) \cdot g_V(P)$ |
 | Perturbing factors | Dissipation $\mathcal{D}_\Omega$ | Lindblad operators |
-| Safety margin | Stability radius | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ |
+| Safety margin | Stability radius | $r_{\mathrm{stab}}$ |
 | Buffer systems | $\kappa_{\text{bootstrap}}$ | $\kappa \geq 1/7 > 0$ always |
 | Homeostatic plateau | Attractor $\rho_*$ | $P(\rho_*) > 2/7$ under $\kappa$-dominance |
 
@@ -242,6 +242,29 @@ $$
 
 The ingredients are exact: $\left.\frac{da}{dP}\right|_{2/7} = \frac{\sqrt6}{2}$ and $a_c(1-a_c) = \frac{5\sqrt6}{49}$. This is the heart of the matter — the old surd behaves like $\varepsilon^{1/2}$ while the truth behaves like $\varepsilon^{1}$, so their ratio *diverges* as the wall is approached.
 
+**Step 5 — a cheap runtime formula, accurate to 1%.** Minimising over the shell at
+every tick is not practical. The *radial Frobenius* distance to the shell needs no
+optimisation at all: since $\|\Gam - I/7\|_F = \sqrt{P - 1/7}$ exactly (an
+identity), the shell $\{P=2/7\}$ is the Frobenius sphere of radius $\sqrt{1/7}$
+about $I/7$, so the radial distance to it is $\sqrt{P-1/7} - \sqrt{1/7}$. Rescaling
+by the exact wall-limit ratio of the two coefficients,
+
+$$
+K \;=\; \frac{7\sqrt5\,\sqrt[4]{6}/20}{\sqrt7/2} \;=\; \frac{\sqrt{35}\,\sqrt[4]{6}}{10} \;=\; 0.925917,
+$$
+
+gives the working formula
+
+$$
+\boxed{\;r_{\mathrm{stab}} \;\approx\; K\Bigl(\sqrt{P - \tfrac17} \;-\; \sqrt{\tfrac17}\Bigr),
+\qquad K = \frac{\sqrt{35}\,\sqrt[4]{6}}{10}\;}
+$$
+
+whose error over the whole consciousness window $(2/7,\,3/7]$ is at most **1.13%**
+— and under $0.01\%$ near the wall, where it matters. For comparison, the refuted
+$\sqrt{P-2/7}$ is wrong by between $160\%$ and $4700\%$ on the same interval. Use
+the boxed formula at runtime; use the exact closed form of Step 2 when reporting.
+
 ### 4.2 What the corrected radius actually says
 
 | $P$ | $P - 2/7$ | $r_{\mathrm{stab}}$ (correct) | $\sqrt{P-2/7}$ (refuted) | overstatement |
@@ -294,13 +317,18 @@ $$P = 0.0016 + 0.0025 + 0.0016 + 0.0036 + 0.0625 + 0.0784 + 0.0784 + 0.090 = 0.3
 
 $$P - 2/7 = 0.3186 - 0.2857 = 0.0329$$
 
-**Step 2: Compute stability radius.**
+**Step 2: Compute stability radius.** Using the runtime formula of
+§[4.1](#радиус-устойчивости), $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ with
+$K = \sqrt{35}\sqrt[4]{6}/10$:
 
-$$r_{\mathrm{stab}} = \sqrt{0.0329} = 0.181$$
+$$r_{\mathrm{stab}} \approx 0.9259\left(\sqrt{0.3186 - \tfrac17} - \sqrt{\tfrac17}\right) = 0.0382$$
 
-**Step 3: Interpretation.** The system will withstand a perturbation of amplitude up to $0.181$ in the Bures metric. This means: if decoherence ($\Gamma_2$) suddenly increases by $\delta\Gamma_2 < 0.181$, the system returns to the attractor. If $\delta\Gamma_2 > 0.181$ — the death spiral begins.
+(exact closed form: $0.03821$; the refuted $\sqrt{0.0329} = 0.181$ overstated this
+by $4.7\times$).
 
-For comparison: a system with $P = 3/7 \approx 0.4286$ would have $r_{\mathrm{stab}} = \sqrt{0.143} = 0.378$ — twice the margin. While a system with $P = 0.290$ (barely viable) — $r_{\mathrm{stab}} = \sqrt{0.004} = 0.063$, on the verge of death.
+**Step 3: Interpretation.** The system will withstand a perturbation of amplitude up to $0.0382$ in the Bures metric. This means: if decoherence ($\Gamma_2$) suddenly increases by $\delta\Gamma_2 < 0.0382$, the system returns to the attractor. If $\delta\Gamma_2 > 0.0382$ — the death spiral begins.
+
+For comparison: a system at the window ceiling $P = 3/7 \approx 0.4286$ has $r_{\mathrm{stab}} = 0.1466$ — not twice this margin but **3.8 times** it. And a barely viable system at $P = 0.290$ has $r_{\mathrm{stab}} = 0.0052$: not a fifth of our margin but a **seventh**. The corrected law spreads the window out far more than the refuted surd suggested — which is the practical point of the correction. Under $\sqrt{P-2/7}$ these three states looked like $0.181$, $0.378$ and $0.063$, a range of $6\times$; in truth they span $0.0052$ to $0.1466$, a range of $28\times$. The window is much less uniform than it appeared, and the bottom of it is far more fragile.
 :::
 
 ### 4.4 Relation to Lyapunov function
@@ -748,7 +776,7 @@ The factor $(1 - \|\sigma\|_\infty)$ accounts for current stress: a highly stres
 | Aspect | Formal condition | Key parameter | Theorem |
 |--------|-----------------|---------------|---------|
 | Attractor balance | T-98 formula | $\kappa / \lambda_{\mathrm{gap}}$ | T-98 [T] |
-| Stability radius | $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ | $P - 2/7$ (margin) | T-104 [T] |
+| Stability radius | $r_{\mathrm{stab}}$ | $P - 2/7$ (margin) | T-104 [T] |
 | Energy balance | $\dot{F}_{\mathrm{in}} \geq k_B T_{\mathrm{eff}} \ln 2 \cdot \dot{S}_{\mathrm{diss}}$ | $\dot{F}_{\mathrm{in}} / \dot{F}_{\min}$ | T-105 [T] |
 | Homeostasis | $\kappa \cdot g_V(P) \cdot \mathrm{Tr}(\Gamma(\rho_* - \Gamma)) \geq \mathrm{Tr}(\Gamma \cdot \mathcal{D}_\Omega[\Gamma])$ | $\kappa / \Gamma_2$ | — |
 | Death spiral | $\kappa_{\text{bootstrap}} = 1/7$ | $\kappa_{\text{bootstrap}}$ | T-59 [T] |
@@ -757,7 +785,7 @@ The factor $(1 - \|\sigma\|_\infty)$ accounts for current stress: a highly stres
 
 ### Key practical conclusions
 
-1. **Radius formula** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — this is the "viability speedometer". Monitoring $P$ in real time allows predicting a crisis long before it arrives.
+1. **Radius formula** $r_{\mathrm{stab}}$ — this is the "viability speedometer". Monitoring $P$ in real time allows predicting a crisis long before it arrives.
 
 2. **The most dangerous channel** — $h^{(D)}$ (noise attack). Reducing noise/$\Gamma_2$ is the most effective stabilisation strategy.
 
@@ -775,7 +803,7 @@ The factor $(1 - \|\sigma\|_\infty)$ accounts for current stress: a highly stres
 
 Stability in CC is not a static property but a **dynamic process**: a continuous balance between dissipation (destruction) and regeneration (recovery). A system can be stable without being static — like a tightrope walker who maintains balance precisely because they continuously correct their position.
 
-Key practical conclusion: **monitor $P$ and $\sigma_{\mathrm{sys}}$ in real time**. The stability radius $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ is your primary indicator. When it falls below the threshold, act immediately: reduce noise ($h^{(D)}$), strengthen regeneration ($h^{(R)}$), replenish resources ($\Delta F$).
+Key practical conclusion: **monitor $P$ and $\sigma_{\mathrm{sys}}$ in real time**. The stability radius $r_{\mathrm{stab}}$ is your primary indicator. When it falls below the threshold, act immediately: reduce noise ($h^{(D)}$), strengthen regeneration ($h^{(R)}$), replenish resources ($\Delta F$).
 
 For practical diagnostics see [Diagnostics](./diagnostics). For experimental verification of thresholds — [Measurement Methodology](./measurement). For stability problems — [Exercises](./exercises#блок-3).
 
@@ -784,7 +812,7 @@ For practical diagnostics see [Diagnostics](./diagnostics). For experimental ver
 ### What we learned {#что-мы-узнали-стабильность}
 
 1. **Homeostasis is an inequality**: "regeneration $\geq$ dissipation". Not a metaphor, not a principle — a precise formula in which every term is computable.
-2. **Stability radius** $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ — the single parameter determining the system's "safety margin". The square root means diminishing returns: far from the boundary protection is "cheap", but the last few percent are costly.
+2. **Stability radius** $r_{\mathrm{stab}}$ — the single parameter determining the system's "safety margin". The square root means diminishing returns: far from the boundary protection is "cheap", but the last few percent are costly.
 3. **Three layers of protection**: basal ($\kappa_{\text{bootstrap}} = 1/7$), adaptive ($\kappa_0 \cdot \mathrm{Coh}_E$), topological ($6\mu^2$ — discrete barriers). They act at different scales, like innate immunity, adaptive immunity, and anatomical integrity.
 4. **Death spiral — a five-stage cascade**: initial blow $\to$ weakening of regeneration $\to$ crossing the boundary ($g_V = 0$) $\to$ free fall $\to$ heat death ($P = 1/7$). After Stage 3 — self-recovery is **impossible** without external help.
 5. **Noise attack ($h^{(D)}$) — the most dangerous**: double blow (growing $\Gamma_2$ + decreasing $\mathrm{Coh}_E$), threshold twice as low as for $h^{(R)}$.
