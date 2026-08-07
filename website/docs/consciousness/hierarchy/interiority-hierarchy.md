@@ -370,6 +370,31 @@ Exactly **one** of the twelve is conscious. The remaining eleven are not degrees
 
 This settles a question that recurs whenever the theory meets a system unlike us: *is there another kind of consciousness, with a different set of gates?* Under UHM the answer is no, and the "no" is sharp rather than dismissive. A system with a different gate profile is not differently conscious; it occupies one of the eleven non-conscious modes, each of which has its own character and its own failure. This is the more falsifiable position: it forbids the comfortable move of granting consciousness to anything that behaves interestingly.
 
+### The twelve profiles, named {#двенадцать-режимов}
+
+Each cell is a distinct mode with its own character. The correspondences in the last column are interpretive **[И]** — they say which known state *looks like* the mode, not that the mode has been measured there.
+
+| # | $P$ | $\Phi$ | $D$ | Mode | Character | Looks like [И] |
+|---|---|---|---|---|---|---|
+| **1** | in | $\ge1$ | $\ge2$ | **conscious** | bound, distinguishing, self-holding | ordinary waking |
+| 2 | in | $\ge1$ | $<2$ | contentless unity | one field, nothing to tell apart | claimed "pure awareness" states — see the disagreement below |
+| 3 | in | $<1$ | $\ge2$ | unbound plurality | many distinct states, no single holder | dissociation, split attention |
+| 4 | in | $<1$ | $<2$ | idle | right amplitude, no structure to it | drowsy blankness |
+| 5 | below | $\ge1$ | $\ge2$ | **flooded** | rich, unified, no one holding it | the psychedelic peak just past the edge |
+| 6 | below | $\ge1$ | $<2$ | white-out | unity without content or holder | the "nothing" at very high dose |
+| 7 | below | $<1$ | $\ge2$ | torrent | distinctions without binding | acute confusional states |
+| 8 | below | $<1$ | $<2$ | dispersal | the fully dissolved limit | — |
+| 9 | above | $\ge1$ | $\ge2$ | **automatism** | structured, distinguishing, unreflective | skilled action with no witness; sleepwalking |
+| 10 | above | $\ge1$ | $<2$ | hypersynchrony | one rigid state | deep slow-wave sleep; generalised seizure |
+| 11 | above | $<1$ | $\ge2$ | rigid fragments | parts each frozen, no whole | — |
+| 12 | above | $<1$ | $<2$ | frozen | the fully rigid limit | — |
+
+Three of these carry the theory's weight, because each is a way of *nearly* being conscious and failing on one axis. **Flooded** (5) fails only on holding — which is why it can be reported afterwards as the most vivid state ever experienced and yet have had no subject at the time. **Automatism** (9) fails only on reflection — competent, coherent, and nobody home. **Contentless unity** (2) fails only on differentiation, and it is where UHM makes a claim that a live research programme denies.
+
+:::warning A falsifiable disagreement, stated rather than hidden
+Metzinger's minimal phenomenal experience holds that there are states of consciousness *without content* — pure awareness, no distinctions. Profile 2 is exactly that description, and UHM classes it as **not conscious**, because $D\ge2$ is a gate and not a decoration. Either the theory is wrong here, or the reported states retain a differentiation that introspection does not register as content. We do not resolve this; we record that the theory takes the losing side of a popular position and can be refuted there.
+:::
+
 ### The two edges are different failures {#две-грани}
 
 Because $R=1/(NP)$ rises as purity falls, the two edges of the window are opposite pathologies rather than "too little" and "too much" of one thing.
