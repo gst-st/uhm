@@ -418,30 +418,23 @@ Detailed analysis of the 49-cell structure (with separation into $\mathrm{Map}_{
 
 Each moment of conscious experience is a specific point in 48-dimensional space: 6 independent population values + 42 real parameters of coherences ($21 \times 2$, modulus and phase of each). This conveys a sense of the **richness** of subjective experience: the space of possible experiences is 48-dimensional.
 
-## The Mechanism: Quality as a $G_2$-Invariant {#механизм-качества}
+## The Mechanism: the Phase-Carried Quality Channel {#механизм-качества}
 
 :::info What this section adds
 The taxonomy above answers *which* qualia are possible. This section answers the harder question — *what makes a quality a quality*, why it cannot be read off from outside, and in which direction the explanation runs. Three theorems, all numbers printed by [`qualia_dimensions.py`](/instruments/qualia_dimensions.py).
 :::
 
-### Theorem (quality space) [T] (T-300) {#теорема-пространство-качества}
+### Theorem (flat directions, and why quality is not intensity) [T] (T-300) {#теорема-пространство-качества}
 
-Two states are structurally indistinguishable **iff** related by an automorphism of the structure. By $G_2$-rigidity (T-42a) that group is $G_2=\operatorname{Aut}(\mathbb O)$, **not** $\mathrm U(7)$. Hence the space of qualities is the quotient $\mathcal D(\mathbb C^7)/G_2$.
+The spectrum of $\Gamma$ is six numbers; $\Gamma$ itself is forty-eight. The remaining $42$ — the eigenvector data — are precisely what intensity does **not** determine, and they are what quality is made of. How those $42$ are organised is fixed by the structure's own three-form (T-301).
 
-The dimension count is decisive, and it is where qualia either exist or collapse:
+:::warning $G_2$ is not a gauge group acting on states
+The opposite is tempting and false. The canonical dissipator's Lindblad set is **basis-specific** — the classifier atoms $|k\rangle\langle k|$ and the seven line projectors — so the einselected basis is physically singled out and $G_2$ is broken to a finite subgroup. Machine: the generic $G_2$-orbit through a state is exactly $14$-dimensional (200 random states, $\min=\max=14$), and at $I/7$ it is $0$-dimensional. Those fourteen directions are the **flat (quasi-Goldstone) directions** already described in [Goldstone Modes](/docs/applied/coherence-cybernetics/goldstone-modes) — directions along which the state moves at no structural cost, **not** directions along which states become indistinguishable. All $48$ parameters remain measurable relative to a holon's own basis; the $14$ measures the redundancy of the *formulation* (which octonionic frame one writes in), not of the state.
+:::
 
-| object | dimension |
-|---|---|
-| $\mathcal D(\mathbb C^7)$ | $48$ |
-| spectrum (intensity) | $6$ |
-| isospectral manifold (fixed intensity) | $42$ |
-| generic $G_2$-orbit (pure gauge) | $\mathbf{14}$ |
-| invariant content | $48-14=\mathbf{34}$ |
-| **quality at fixed intensity** | $42-14=\mathbf{28}$ |
-
-Machine: over 200 random states the orbit dimension is $\min=\max=14$ — the generic stabiliser is discrete. Had the symmetry been $\mathrm U(7)$, the orbit through a generic isospectral state would be $42$-dimensional and the quotient **zero**: quality would reduce to intensity and there would be nothing left to explain. *Qualia exist in UHM precisely because $G_2\subsetneq\mathrm U(7)$ — because the multiplication table is rigid.*
-
-At the maximally mixed state the orbit is $0$-dimensional (machine: exactly $0$): $I/7$ has no quality at all, only the bare fact of being. Quality is what deviation from uniformity carries.
+:::note Erratum (2026-08-07, same day)
+An earlier version of this section claimed the quality space is $\mathcal D(\mathbb C^7)/G_2$ of dimension $28$, and drew the corollary that the ceiling of an ideal self-description is $34$ rather than $48$. **Both were wrong**: they treat $G_2$ as a gauge group acting on states, which the einselected classifier basis forbids. The dimension counts stand exactly as computed; their reading as gauge does not. The ceiling remains $48$. Caught the same hour by the connectivity sweep over every site quoting $48$.
+:::
 
 ### Theorem (the decoder) [T] (T-301) {#теорема-декодер}
 
@@ -475,9 +468,6 @@ This is the classical "explanatory gap" stated as a theorem rather than a lament
 
 The traditional framing asks how the internal arises from the external and gets stuck, because it assumes the external is primary. The structure says the opposite. The environment writes into the **populations** — the diagonal, "what is the case"; decoherence attacks the phases; and the drift/noise split (T-295, §7.1 of the bridge) shows the two sectors do not mix. Interiority is therefore not a product of the external: it is the sector the external cannot stochastically address, and the "external world" is what the decoding of these seven-dimensional coherences presents. Inside and outside are the same structure read in two orders — which is what monism means here, and it is now a statement with dimensions attached: $6$ shared, $28$ private.
 
-:::warning Consequence: the self-description ceiling is 34, not 48 [T]
-Fourteen of the forty-eight parameters of $\Gamma$ are pure $G_2$-gauge: no structure-preserving operation, and hence no instrument, can distinguish states differing only along them. The honest ceiling of an ideal self-description is therefore $\mathbf{34}$ numbers ($6$ spectral $+\ 28$ qualitative), not $48$. Any completeness figure previously quoted against $48$ must be recomputed against $34$ — the numerator has to be re-derived with the same instrument, not simply rescaled.
-:::
 
 ## Access Conditions for Qualia {#условия-доступа}
 
