@@ -1,0 +1,71 @@
+import re, glob, math, itertools, collections
+NUM2AX = {1:'A',2:'S',3:'D',4:'L',5:'E',6:'U',7:'O'}   # канон Фано
+LINES_N = [sorted(((q-1+k)%7)+1 for q in (1,2,4)) for k in range(7)]
+LINES_L = {frozenset(NUM2AX[n] for n in tri) for tri in LINES_N}
+SECTORS = {frozenset('ASD'), frozenset('LEU')}
+# BIBD(7,3,1)
+pairs = collections.Counter()
+for tri in LINES_N:
+    for a, b in itertools.combinations(tri, 2):
+        pairs[frozenset((a, b))] += 1
+r = collections.Counter()
+for tri in LINES_N:
+    for x in tri: r[x] += 1
+assert len(pairs) == 21 and set(pairs.values()) == {1}, "λ=1 broken"
+assert set(r.values()) == {3}, "r=3 broken"
+print(f"[Т] BIBD(7,3,1) OK: 21 пара λ=1, r=3; прямые буквами: "
+      f"{sorted(''.join(sorted(s)) for s in LINES_L)}")
+# фазы Фибоначчи по канон-номерам: F_k mod 7
+F = {k: [1,1,2,3,5,8,13][k-1] % 7 for k in range(1,8)}
+gap = lambda a, b: abs(math.sin(2*math.pi*(F[a]-F[b])/7))
+cluster = sorted(NUM2AX[k] for k in F if F[k] == 1)
+print(f"[Т] фазовый кластер (F_k=1): {{{','.join(cluster)}}}")
+# средние Gap по прямым (канон): сверка с напечатанными
+printed = {(1,2,4):0.650,(2,3,5):0.550,(3,4,6):0.846,(4,5,7):0.730,
+           (5,6,1):0.289,(6,7,2):0.650,(7,1,3):0.730}
+for tri in LINES_N:
+    m = sum(gap(a,b) for a,b in itertools.combinations(tri,2))/3
+    key = None
+    for k in printed:
+        if sorted(k) == tri: key = k
+    ok = abs(m - printed[key]) < 0.0006
+    print(f"  прямая {key} = {{{','.join(NUM2AX[n] for n in key)}}}: "
+          f"движковый Gap={m:.3f} vs печать {printed[key]} "
+          f"{'OK' if ok else '!!! РАСХОЖДЕНИЕ'}")
+mean_all = sum(gap(a,b) for a,b in itertools.combinations(range(1,8),2))/21
+print(f"  средний Gap по 21 паре: {mean_all:.5f} (печать 0.63509)")
+# скан корпуса: все раскрытия {n,n,n}={буквы} и заявления прямых
+bad = []
+pat_num = re.compile(r"\\\{(\d),(\d),(\d)\\\}\s*=\s*\\\{([A-U,\s]+)\\\}")
+pat_line = re.compile(
+    r"(?:Fano line|прямая Фано|прямой Фано|линия Фано|Фано-лини[яию])"
+    r"[^.\n]{0,40}?\$?\\?\{([ASDLEOU])[,\s]+([ASDLEOU])[,\s]+([ASDLEOU])\\?\}",
+    re.I)
+roots = ["/Users/taaliman/projects/oldman/uhm-theory/holon/website/docs",
+         "/Users/taaliman/projects/oldman/uhm-theory/holon/website/i18n"]
+n_num, n_line = 0, 0
+for root in roots:
+    for p in glob.glob(root + "/**/*.md", recursive=True):
+        s = open(p, encoding="utf-8", errors="ignore").read()
+        for m in pat_num.finditer(s):
+            n_num += 1
+            tri = sorted(int(x) for x in m.group(1, 2, 3))
+            letters = frozenset(re.findall(r"[ASDLEOU]", m.group(4)))
+            want = frozenset(NUM2AX[n] for n in tri)
+            if letters != want:
+                bad.append((p, m.group(0), f"канон: {sorted(want)}"))
+        for m in pat_line.finditer(s):
+            n_line += 1
+            trio = frozenset(m.group(1, 2, 3))
+            if trio not in LINES_L:
+                tag = "СЕКТОР, не прямая" if trio in SECTORS \
+                      else "НЕ прямая канона"
+                bad.append((p, m.group(0)[:90], tag))
+print(f"скан: раскрытий номера→буквы {n_num}, заявлений прямых {n_line}")
+if bad:
+    print(f"!!! НАРУШЕНИЙ: {len(bad)}")
+    for p, frag, why in bad[:15]:
+        short = p.split("/website/")[-1]
+        print(f"  {short}: «{frag}» → {why}")
+else:
+    print("НАРУШЕНИЙ НЕТ: все раскрытия и заявления прямых каноничны")
