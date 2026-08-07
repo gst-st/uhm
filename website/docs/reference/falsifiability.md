@@ -18,6 +18,11 @@ In this document:
 
 ## Falsification Criteria
 
+:::tip Frontier ledger
+Head-to-head predictions against competing theories at every live experimental frontier — [Frontier Ledger](/docs/reference/frontier-ledger).
+:::
+
+
 ### Experimental Predictions
 
 The extended theory makes testable predictions:
