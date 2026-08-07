@@ -199,6 +199,20 @@ $$
 
 ---
 
+## Validation constraint: no threshold without ground truth {#граница-валидации}
+
+:::warning What the field's one clinically validated measure teaches us
+The Perturbational Complexity Index is the only consciousness measure with large-scale clinical validation: TMS-evoked EEG responses, Lempel–Ziv compressed, with an empirical cutoff $\mathrm{PCI}^*=0.31$ derived from a benchmark population and later validated on 719 TMS/hd-EEG sessions across wakefulness, NREM sleep, anaesthesia and disorders of consciousness. Two lessons transfer directly, and the second is a hard limit on what UHM may claim.
+:::
+
+**Lesson 1 — commensuration is solved by calibration, not by units.** PCI is normalised for signal length and amplitude, and its threshold is not derived from theory but *fitted to a benchmark population*. This is exactly the fix that closes [audit A-20](/docs/reference/status-registry): the seven observable indices are defined in incommensurable units, so a $\Gamma$ built from their raw sum is a function of arbitrary definitional choices. The canonical repair is to take each index as a **percentile against a declared reference ensemble** — the same operation the applied layer already performs when it scores a person against a population. The ensemble must be published together with any number derived from it; a percentile without its reference is not a measurement.
+
+**Lesson 2 — a threshold is only as valid as its ground truth, and this bounds UHM.** PCI's cutoff is trustworthy *because* it was calibrated where consciousness was independently known: the same brains awake and under anaesthesia, patients who could later report. That ground truth is what makes the number mean anything. UHM's window $P\in(2/7,3/7]$ is derived (T-124), not fitted — which is a genuine advantage — but derivation fixes the *form* of the criterion, not the *mapping* from a given substrate into $\Gamma$. For any system where we have no independent evidence of presence or absence of experience — a fungal network, a slime mould, a language model — the mapping cannot be validated, and a measured $P$ inside or outside the window therefore establishes **nothing about experience**. It establishes only that the system's functional indices, under a declared coarse-graining, do or do not sit where the theory says a viable holon sits.
+
+Consequently this corpus does not, and will not, assert consciousness or its absence in a non-human substrate on the strength of a $\Gamma$-measurement alone. What such a measurement can honestly do is **discriminate states within one system** — the paired design that made PCI work — and that is the only design in which our thresholds carry evidential weight outside the human case.
+
+**Lesson 3 — measure the functional structure, not the carrier.** Complexity read off the raw signal misreads systems whose carrier is atypical: children with Angelman syndrome are awake, volitional and responsive while displaying the hypersynchronous delta EEG normally taken as a signature of unconsciousness. The resolution is that the relevant complexity is not in the amplitude envelope but in the functional organisation. UHM is structurally committed to the same discipline: $\Gamma$ is built from functional indices (integration, differentiation, robustness, sensitivity), never from raw signal statistics, and a protocol that shortcuts to the carrier will inherit the field's known failure cases.
+
 ## Categorical Correctness
 
 ### Nonlinearity Problem
