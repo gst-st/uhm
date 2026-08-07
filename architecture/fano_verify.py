@@ -41,9 +41,15 @@ pat_line = re.compile(
     r"(?:Fano line|прямая Фано|прямой Фано|линия Фано|Фано-лини[яию])"
     r"[^.\n]{0,40}?\$?\\?\{([ASDLEOU])[,\s]+([ASDLEOU])[,\s]+([ASDLEOU])\\?\}",
     re.I)
-roots = ["/Users/taaliman/projects/oldman/uhm-theory/holon/website/docs",
-         "/Users/taaliman/projects/oldman/uhm-theory/holon/website/i18n"]
-n_num, n_line = 0, 0
+import os
+HERE = os.path.dirname(os.path.abspath(__file__))
+roots = [os.path.join(HERE, "..", "website", "docs"),
+         os.path.join(HERE, "..", "website", "i18n")]
+# Утверждение «эта тройка — прямая» СНИМАЕТСЯ, если рядом отрицание
+# или если глагол говорит о ПЕРЕСЕЧЕНИИ, а не о принадлежности.
+NEG = re.compile(r"\b(no|No|NO|nor|neither|not)\b|\bне\b|\bни\b", re.U)
+XSECT = re.compile(r"meet|intersect|пересека|встреча|касает", re.I)
+n_num, n_line, n_skip = 0, 0, 0
 for root in roots:
     for p in glob.glob(root + "/**/*.md", recursive=True):
         s = open(p, encoding="utf-8", errors="ignore").read()
@@ -57,11 +63,19 @@ for root in roots:
         for m in pat_line.finditer(s):
             n_line += 1
             trio = frozenset(m.group(1, 2, 3))
-            if trio not in LINES_L:
-                tag = "СЕКТОР, не прямая" if trio in SECTORS \
-                      else "НЕ прямая канона"
-                bad.append((p, m.group(0)[:90], tag))
-print(f"скан: раскрытий номера→буквы {n_num}, заявлений прямых {n_line}")
+            if trio in LINES_L:
+                continue
+            frag = m.group(0)
+            before = s[max(0, m.start() - 70):m.start()]
+            # отрицание перед фразой («no Fano line lies within…», «не лежит»)
+            # либо речь о пересечении («lines meeting the 3-sector»)
+            if NEG.search(before) or NEG.search(frag) or XSECT.search(frag):
+                n_skip += 1
+                continue
+            tag = "СЕКТОР, не прямая" if trio in SECTORS \
+                  else "НЕ прямая канона"
+            bad.append((p, frag[:90], tag))
+print(f"скан: раскрытий номера→буквы {n_num}, заявлений прямых {n_line}, снято отрицанием/пересечением {n_skip}")
 if bad:
     print(f"!!! НАРУШЕНИЙ: {len(bad)}")
     for p, frag, why in bad[:15]:
