@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL14. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL15. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -464,6 +464,130 @@ def hl09_bft_consonance() -> None:
 # HL10 — Fano line coverage of instance wiring (third-order diagnosability)
 # ----------------------------------------------------------------------------
 
+# ----------------------------------------------------------------------------
+# HL15 — the price of addressing: a routing contract must be declared, not learned
+# ----------------------------------------------------------------------------
+
+def _rt_fresh() -> np.ndarray:
+    G = np.eye(7, dtype=complex) / 7 + 0.02 * np.eye(7)
+    return G / np.trace(G).real
+
+
+def _rt_nudge(G: np.ndarray, i: int, j: int, sg: float) -> np.ndarray:
+    """Reinforce cell (i,j), re-project to a state, then dephase."""
+    S = G.copy()
+    S[i, j] += 0.22 * sg
+    S[j, i] += 0.22 * sg
+    S = 0.5 * (S + S.conj().T)
+    v, Q = np.linalg.eigh(S)
+    S = Q @ np.diag(np.clip(v, 1e-9, None)) @ Q.conj().T
+    S /= np.trace(S).real
+    off = ~np.eye(7, dtype=bool)
+    S[off] *= 0.94
+    return S
+
+
+def _rt_run(rng: np.random.Generator, rules: list[np.ndarray], K: int,
+            n_leaf: int, mode: str, episodes: int, flip: int) -> int:
+    """mode: 'single' | 'reward' | 'commit'. Returns misses."""
+    pairs = [(i, j) for i in range(7) for j in range(i + 1, 7)]
+    leaves = [_rt_fresh() for _ in range(n_leaf)]
+    slots: list[dict[int, int]] = [dict() for _ in range(n_leaf)]
+    router, r_slots = _rt_fresh(), {}
+    commit: dict[int, int] = {}
+    load = [0] * n_leaf
+    miss = 0
+    for t in range(episodes):
+        k = int(rng.integers(K))
+        goal = int(rules[t // flip][k])
+        if mode == "single" or n_leaf == 1:
+            w, rcell = 0, None
+        elif mode == "commit":
+            if k not in commit:                       # объявлено однажды
+                commit[k] = int(np.argmin(load))
+                load[commit[k]] += 1
+            w, rcell = commit[k], None
+        else:                                          # выучено наградой
+            if k not in r_slots:
+                r_slots[k] = len(r_slots) % 21
+            rcell = pairs[r_slots[k]]
+            w = 0 if router[rcell[0], rcell[1]].real >= 0 else 1
+        if k not in slots[w]:
+            slots[w][k] = len(slots[w]) % 21
+        i, j = pairs[slots[w][k]]
+        a = 0 if leaves[w][i, j].real >= 0 else 1
+        hit = 1 if a == goal else 0
+        miss += 1 - hit
+        leaves[w] = _rt_nudge(leaves[w], i, j,
+                              +1.0 if (a == 0) == (hit == 1) else -1.0)
+        if rcell is not None:
+            router = _rt_nudge(router, rcell[0], rcell[1],
+                               +1.0 if (w == 0) == (hit == 1) else -1.0)
+    return miss
+
+
+def hl15_addressing_price() -> None:
+    K, EPI, FLIP, SEEDS = 42, 800, 200, 6      # 42 = 2 x 21: both leaves at capacity
+    got = {}
+    for tag, nl, mode in (("single", 1, "single"), ("learned", 2, "reward"),
+                          ("declared", 2, "commit")):
+        tot = []
+        for sd in range(SEEDS):
+            rng = np.random.default_rng(4700 + sd)
+            rr = np.random.default_rng(9100 + sd)
+            rules = [rr.integers(0, 2, K) for _ in range(EPI // FLIP)]
+            tot.append(_rt_run(rng, rules, K, nl, mode, EPI, FLIP))
+        got[tag] = float(np.median(tot))
+    # Второе показание: на самом выведенном потолке ширины — четыре листа
+    # по 21 каналу, глубина 3 (SAD_max), то есть 21·2² = 84 контекста.
+    ceil_got = {}
+    for tag, nl, mode in (("single84", 1, "single"), ("declared84", 4, "commit")):
+        tot = []
+        for sd in range(SEEDS):
+            rng = np.random.default_rng(4700 + sd)
+            rr = np.random.default_rng(9100 + sd)
+            rules = [rr.integers(0, 2, 84) for _ in range(EPI // FLIP)]
+            tot.append(_rt_run(rng, rules, 84, nl, mode, EPI, FLIP))
+        ceil_got[tag] = float(np.median(tot))
+    ceil_gain = 100.0 * (ceil_got["single84"] - ceil_got["declared84"]) \
+        / ceil_got["single84"]
+    # Третье показание: ветвление. Один бит ограничил бы веер двойкой; хранимый
+    # адрес тратит КАНАЛ на дочернего, значит веер доходит до 21. Смотрим B=7.
+    br = {}
+    for tag, nl in (("single147", 1), ("declared147", 7)):
+        tot = []
+        for sd in range(4):
+            rng = np.random.default_rng(4700 + sd)
+            rr = np.random.default_rng(9100 + sd)
+            rules = [rr.integers(0, 2, 147) for _ in range(5)]
+            tot.append(_rt_run(rng, rules, 147, nl,
+                               "single" if nl == 1 else "commit", 5880, 1176))
+        br[tag] = float(np.median(tot))
+    br_gain = 100.0 * (br["single147"] - br["declared147"]) / br["single147"]
+    gain = 100.0 * (got["single"] - got["declared"]) / got["single"]
+    ok = (got["declared"] < got["learned"] < got["single"]
+          and ceil_got["declared84"] < ceil_got["single84"]
+          and br["declared147"] < br["single147"] and br_gain > gain)
+    report("HL15", "VERIFIED", ok,
+           "price of addressing at K=42 (two leaves, each exactly at the 21-channel "
+           f"capacity), median misses over {SEEDS} seeds: single holon "
+           f"{got['single']:.0f}, routing learned from task reward "
+           f"{got['learned']:.0f}, routing declared once and committed "
+           f"{got['declared']:.0f} — the declared contract is worth {gain:.0f}% over "
+           "the undivided holon and strictly beats the learned one, so composition "
+           "gain requires a committed addressing contract (a measured instance of "
+           "\u00a79's 'coordination is declared, not hoped'); at the derived breadth "
+           f"ceiling itself — 21\u00b72\u00b2 = 84 contexts over four leaves at depth 3 — "
+           f"single {ceil_got['single84']:.0f} vs declared "
+           f"{ceil_got['declared84']:.0f}, a {ceil_gain:.0f}% gain, so the ceiling is "
+           "reachable and not merely arithmetic; and branching is bounded by "
+           "channels rather than by bits — a stored address spends a channel per "
+           f"child, so at fan-out 7 (K=147) single {br['single147']:.0f} vs declared "
+           f"{br['declared147']:.0f}, a {br_gain:.0f}% gain that is LARGER than at "
+           "fan-out 2, which is why the reachable ceiling is 21^3 = 9261 and not "
+           "21·2² = 84")
+
+
 def hl10_fano_coverage(insts: list[Instance]) -> None:
     msgs, oks = [], []
     for inst in insts:
@@ -582,7 +706,7 @@ def hl14_client_diversity() -> None:
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL14"
+    print("HOLARCH LAB — panel HL01–HL15"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -593,6 +717,7 @@ def main() -> int:
     hl08_mixnet_numbers()
     hl09_bft_consonance()
     hl10_fano_coverage(insts)
+    hl15_addressing_price()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()

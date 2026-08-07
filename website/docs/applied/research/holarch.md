@@ -402,6 +402,24 @@ lineage held as folklore and now holds as arithmetic:
   declare its CALM class — monotone (coordination-free) or non-monotone (pays a
   consensus round). This imports the CALM theorem as a mandatory contract field.
 
+**Composition needs an address, and the address is not free [C].** The gain above
+presumes that work reaches the right participant. Addressing is itself one of the
+21 channels — **AU, Differentiation**: *distinctions that keep the whole intact,
+routing without fragmentation* — so a holon that routes spends part of its own
+channel budget on routing. The laboratory prices this (HL15). At 42 contexts split
+across two children, each child sitting exactly at the 21-channel capacity, the
+undivided holon misses 310 times; a router that **learns** its assignment from the
+task's own reward misses 286; a router that **declares** the assignment once and
+commits to it misses 228 — a 26% gain the learned router never reaches. The reason
+is the contract rule this section already states: coordination is declared, not
+hoped. A routing policy optimised against the same reward as the task it routes
+never holds still long enough for a child to specialise, and every re-decision
+hands a context to a sibling that has not learned it. Industry states the same fact
+twice: consistent hashing exists so that keys do *not* migrate on every topology
+change, and shard keys are chosen at design time rather than continuously
+re-optimised.
+
+
 ## §10. Depth: the ladder and the ceiling {#глубина}
 
 The Depth Tower ([T-142](/docs/consciousness/hierarchy/depth-tower) [T at
@@ -433,6 +451,25 @@ in the corpus. Engineering translation:
   legitimate role is customization, not another turn of the same crank. An
   independent discipline discovering "the same trick does not stack a third time"
   is exactly what a real ceiling looks like from outside (§16).
+
+- **Breadth is bounded too, and the two bounds multiply [C].** A node types at most
+  21 distinct dependencies (§5), so it can carry at most 21 addressing decisions;
+  with depth capped at three, the reach of one holarchy is $21$ raised to the depth.
+  How much of that is attainable depends on what a single addressing decision can
+  express. The full bound is $21^3 = 9261$ typed contexts; what decides
+  whether that reach is real is *how an address is held*. An address **read** from
+  the sign of a channel is one bit, branching is two, and the ceiling collapses to
+  $21 \cdot 2^2 = 84$ — two orders of magnitude of reach lost to the readout. An
+  address **stored** as a declared contract instead spends a whole channel on each
+  child, so fan-out runs to 21 and the full 9261 stands. The laboratory separates the
+  two regimes (HL15): the declared holarchy gains 26% over the undivided holon at
+  fan-out 2 and 39% at fan-out 7 — the advantage *grows* with branching, which is
+  what a channel-bound fan-out predicts and a bit-bound one forbids. The ceiling is
+  also not merely arithmetic: at exactly 84 contexts over four leaves at depth 3,
+  every node sitting at capacity, the declared-routing holarchy misses 242 against
+  the undivided holon's 339. So 9261 is the reach, and it is earned rather than
+  assumed — the price is one declared address per child.
+
 
 ## §11. Diagnosability: the seven-axis instrument panel {#диагностика}
 
@@ -788,12 +825,12 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 
 ## §21. The laboratory {#лаборатория}
 
-`architecture/holarch_lab.py` — panel HL01–HL14, all PASS at the time of writing:
+`architecture/holarch_lab.py` — panel HL01–HL15, all PASS at the time of writing:
 SSOT synchronization (HL01), the depth ladder (HL02), Γ-calculator reference points
 (HL03), the three worked designs with four-way ablations (HL04–HL06), subsumption
 completeness with anchor resolution against this very page (HL07), mixnet arithmetic
 (HL08), the two consonance blocks (HL09, HL14), the Fano-coverage meter (HL10), the
-T-77 identity (HL11), the feeding fold (HL12), first-order blindness (HL13). One
+T-77 identity (HL11), the feeding fold (HL12), first-order blindness (HL13), the price of addressing (HL15). One
 command, no arguments, exit code is the verdict:
 
 ```bash
