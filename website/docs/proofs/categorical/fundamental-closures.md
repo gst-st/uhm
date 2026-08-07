@@ -17,7 +17,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
 | **T-215** | Cross-layer identity convention for fractal towers | Choice of $\iota_\mathrm{min}$ / $\iota_\mathrm{max}$ criterion | [T]+[D] |
-| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | [T at T-64] |
+| **T-216** | Closed-form analytical ε<sub>eff</sub> | Symbolic $V_\mathrm{Gap}$ minimisation | structure [T], value [C at T-64] |
 | **T-217** | L3 tricategorical coherence | τ<sub>≤3</sub>(Exp<sub>∞</sub>) + Baez–Dolan | [T] |
 | **T-218** | SYNARC Cog is a Kan complex | Milnor + classifying space | [T] |
 | **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [T at T-64] |
@@ -264,12 +264,16 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 
 ## 7. T-216: Closed-form analytical ε<sub>eff</sub> {#t-216}
 
-:::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) [T at T-64]
+:::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) — structure [T], value [C at T-64]
 
 The effective sectoral parameter ε<sub>eff</sub> arising in the Yukawa hierarchy admits the closed-form expression
 $$\varepsilon_\mathrm{eff} = \frac{4 N_{33}^\mathrm{Fano}}{9 |\bar\gamma| \left(1 + \frac{r_4 \Sigma_0}{2}\right)}$$
 where:
-- $N_{33}^\mathrm{Fano} = 1$ — the number of Fano lines entirely contained within the $\bar{\mathbf 3}$-sector $\{L, E, U\}$ (this is the single line $\{L, E, U\}$ of PG(2,2), a classical combinatorial fact).
+- $N_{33}^\mathrm{Fano} = 2$ — the number of non-$O$ Fano lines meeting the $\mathbf 3$-sector $\{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
+
+  :::danger Corrected 2026-08-07: $\{L,E,U\}$ is not a Fano line
+  Earlier revisions set $N_{33}^\mathrm{Fano} = 1$, justified as "the single line $\{L,E,U\}$ of PG(2,2)". There is no such line. The seven canonical lines are $\{A,S,L\}, \{D,L,U\}, \{L,E,O\}, \{A,E,U\}, \{A,D,O\}, \{S,D,E\}, \{S,O,U\}$; the line through $L$ and $E$ is $\{L,E,O\}$, and the line through $E$ and $U$ is $\{A,E,U\}$. The triple $\{L,E,U\}$ is the $\bar{\mathbf 3}$ **sector**, not a line, and in fact **no** Fano line lies wholly inside either three-element sector — a line contained in a 3-element set would have to equal it, and neither $\{A,S,D\}$ nor $\{L,E,U\}$ is among the seven. The error was reading a sector triple as a line. Machine-verified against the canonical line set, which satisfies BIBD(7,3,1): 21 pairs, each on exactly one line, each point on exactly three.
+  :::
 - $|\bar\gamma| = \frac{1}{21}\sum_{i < j}|\gamma_{ij}|$ — the sectoral average of off-diagonal coherences, evaluated at the vacuum $\theta^* \in (S^1)^{21}/G_2$.
 - $r_4 = V_4 / V_2|_{\theta^*}$ — the ratio of quartic to quadratic Gap potential at the minimum.
 - $\Sigma_0 = \sum_{i=1}^{21} \theta_i^{*2}$ — the sum of squared vacuum amplitudes.
@@ -284,7 +288,7 @@ Numerical evaluation at $\theta^*$ from T-64 [T] (unique vacuum): **ε<sub>eff</
 $$V_\mathrm{Gap}(\theta) = V_2 + V_3 + V_4, \qquad V_k = \frac{1}{k!}\sum_{i_1, \ldots, i_k} c^{(k)}_{i_1 \cdots i_k} \theta_{i_1} \cdots \theta_{i_k}$$
 where the coefficients $c^{(k)}$ are $G_2$-invariant (Schur's lemma fixes their form up to scalar).
 
-**Step 2 (Sectoral reduction).** By sector decomposition T-48a [T], restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). The Fano line contained entirely within $\bar{\mathbf 3}$ is $\{L, E, U\}$ itself, counted once: $N_{33}^\mathrm{Fano} = 1$ for the sector-internal lines (distinguishing it from cross-sector Fano lines which count 6 more).
+**Step 2 (Sectoral reduction).** By sector decomposition T-48a [T], restrict to $\bar{\mathbf 3}$-sector: $\theta_{ij}$ with $(i,j) \in \bar{\mathbf 3} \times \bar{\mathbf 3}$. There are $\binom{3}{2} = 3$ such pairs (from $\{L,E,U\}$: pairs $\{LE, LU, EU\}$). No Fano line lies inside the sector, so the counting is done by *incidence with* the sector rather than *containment in* it: $N_{33}^\mathrm{Fano} = 2$ non-$O$ lines meet $\mathbf 3 = \{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
 
 **Step 3 (Equation of motion).** Minimizing $V_\mathrm{Gap}$ at fixed $G_2$-orbit: $\partial V_\mathrm{Gap}/\partial \theta_{ij}|_{\theta^*} = 0$ gives, for $(i,j) \in \bar{\mathbf 3}\times\bar{\mathbf 3}$:
 $$c^{(2)}_{ij} \theta^*_{ij} + \sum_{k,l} c^{(3)}_{ij,kl} \theta^*_{kl} + \sum_{k,l,m,n} c^{(4)}_{ij,klmn}\theta^*_{kl}\theta^*_{mn} = 0.$$
@@ -292,17 +296,31 @@ By Fano selection rule T-43d [T], only triples forming a Fano line contribute: $
 
 **Step 4 (Sectoral amplitude at minimum).** Define $\bar\gamma := \langle \gamma_{ij}\rangle_{(i,j) \in \bar{\mathbf 3}}$ (sector average). By self-consistency, the linear equation gives
 $$\bar\gamma = -\frac{V_3 / V_2}{1 + r_4 \Sigma_0 / 2},$$
-where $V_3/V_2$ carries the Fano counting factor $N_{33}^\mathrm{Fano} \cdot f_{LEU}$ with $f_{LEU} = 1$ (structure constant of the associative Fano line {L, E, U}).
+where $V_3/V_2$ carries the Fano counting factor $N_{33}^\mathrm{Fano} \cdot f$, with $f = 1$ the structure constant of an associative Fano line. (Earlier revisions wrote $f_{LEU}$ and attributed it to a line $\{L,E,U\}$, which does not exist — see the correction above.)
 
 **Step 5 (ε<sub>eff</sub> identification).** The effective sectoral parameter is defined as ε<sub>eff</sub> := $|\bar\gamma| \cdot (4/9)$, where the factor $4/9$ arises from $k=3$ block size squared over $v=7$ orbit:
-$$\varepsilon_\mathrm{eff} = \frac{4|\bar\gamma|}{9} \cdot \frac{1}{1 + r_4\Sigma_0/2} \cdot N_{33}^\mathrm{Fano}.$$
-Substituting $N_{33}^\mathrm{Fano} = 1$ recovers the stated closed form. $\blacksquare$
+$$\varepsilon_\mathrm{eff} = \frac{4|\bar\gamma|}{9} \cdot \frac{1}{1 + r_4\Sigma_0/2} \cdot N_{33}^\mathrm{Fano}. \qquad (\star)$$
 
-**Numerical evaluation** (reproducing Sol.59):
-- $V_4/V_2 \approx 0.5$ at $\theta^*$ (from T-64 numerical minimization).
-- $\Sigma_0 \approx 0.3$ (normalized vacuum amplitude, $\sum\theta^{*2} \approx 0.3$ from convention).
-- $|\bar\gamma| \approx 0.023$ (sector-averaged coherence at minimum, from BIBD(7,3,1) symmetry).
-- Substituting: $\varepsilon_\mathrm{eff} \approx 4 \cdot 1 / (9 \cdot 0.023 \cdot (1 + 0.075)) \approx 0.059$.
+:::danger Audit 2026-08-07: the statement and the derivation disagree, and the printed evaluation does not compute
+Two defects survive here and neither is cosmetic.
+
+**Where $|\bar\gamma|$ sits.** Step 5 defines $\varepsilon_\mathrm{eff} := |\bar\gamma|\cdot(4/9)$ and arrives at $(\star)$, which carries $|\bar\gamma|$ in the **numerator**. The theorem box at the top of this section states $\varepsilon_\mathrm{eff} = 4N_{33}^\mathrm{Fano}/(9|\bar\gamma|(1+r_4\Sigma_0/2))$, with $|\bar\gamma|$ in the **denominator**. These are different functions and cannot both be right. The derivation is internally consistent with its own definition, so $(\star)$ is the form to trust; the boxed statement is not yet reconciled with it.
+
+**The arithmetic.** No chain printed in this corpus evaluates to the advertised $0.059$:
+
+| chain | as printed | actual value | factor off |
+|---|---|---|---|
+| this page, denominator form, $N=1$, $\|\bar\gamma\|=0.023$ | $\approx 0.059$ | $17.98$ | $305\times$ |
+| [Yukawa §9](/docs/physics/particle-physics/yukawa-hierarchy#9-аналитическая-формула-ε), $8/(9\cdot 0.15)$ | $\approx 0.059$ | $5.93$ | $100\times$ |
+| $(\star)$, numerator form, $N=1$, $\|\bar\gamma\|=0.15$ | — | $0.062$ | agrees |
+| $(\star)$, numerator form, $N=2$, $\|\bar\gamma\|=0.15$ | — | $0.124$ | $2\times$ |
+
+Note also that the two pages use different values for the same symbol: $|\bar\gamma| \approx 0.023$ here (which is the *global* average $\bar\varepsilon$ of Yukawa §9(d)) against $|\bar\gamma| \approx 0.15$ there (the *sectoral* average). Only the numerator form at the sectoral value lands near the target, and the corrected count $N_{33} = 2$ then overshoots it twofold.
+
+**What therefore stands.** The **structural** result is [T]: $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at T-64] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
+:::
+
+**Inputs used above** (from T-64 numerical minimization): $V_4/V_2 \approx 0.5$ at $\theta^*$; $\Sigma_0 = \sum\theta^{*2} \approx 0.3$; sectoral $|\bar\gamma| \approx 0.15$, global $\bar\varepsilon \approx 0.023$.
 
 **Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at T-64] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
 

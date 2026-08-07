@@ -619,9 +619,15 @@ where $N_{33}^{(\mathrm{Fano})} = 2$ is the number of Fano triples containing ex
 
 **(c)** Substituting the canonical values $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|)$ and $\lambda_4 = \mu^2/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ from [Theorem 13.5](/docs/core/dynamics/gap-thermodynamics#константы-из-параметров-угм) [T]:
 
-$$\varepsilon_{33}^* = \frac{4N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + \Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}}))} \approx \frac{8}{9 \cdot 0.15 \cdot (1 + O(\varepsilon^2))} \approx 0.059$$
+$$\varepsilon_{33}^* = \frac{4N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + \Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}}))}$$
 
-Numerical result $\varepsilon_{33}^* \approx 0.06$ — agreement with phenomenological $\varepsilon_{\mathrm{eff}}$.
+:::warning The symbolic form does not yet reproduce the phenomenological number
+Substituting $N_{33}^{(\mathrm{Fano})} = 2$ and $|\bar{\gamma}| \approx 0.15$ into the numerator and the leading denominator gives $8/(9 \cdot 0.15) = 5.93$ — that is $O(1)$, roughly **two orders above** the phenomenological $\varepsilon_{\mathrm{eff}} \approx 0.059$. Earlier revisions of this page printed the chain as though it evaluated to $0.059$; it does not, and the discrepancy is a factor of $100$.
+
+The number $0.059$ comes from a **different** route — the loop estimate $\varepsilon_{\mathrm{eff}} = \lambda_3\varepsilon/(4\pi) \approx 74 \times 0.01 / 12.6 = 0.0587$ of §[Effective parameter](#функциональная-зависимость-ε) — and is phenomenological.
+
+What is established, therefore, splits in two. The **structural** expression above is [T]: it follows from symbolic $V_{\mathrm{Gap}}$ minimisation plus Schur's lemma, and $N_{33}^{(\mathrm{Fano})} = 2$ is a combinatorial fact about the Fano plane. The **numerical** value is [C at T-64]: closing the two-order gap requires either the full minimisation on $(S^1)^{21}/G_2$ with the true $\Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ (which would have to supply a suppression of $\sim 100$) or a correction to the canonical substitution. This is open.
+:::
 
 **(d)** The global average $\bar{\varepsilon}$ is determined via the weighted combination of sectoral coherences:
 
