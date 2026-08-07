@@ -820,11 +820,11 @@ engineered learning systems built on the UHM core.
 ## 11. Reproducibility {#воспроизводимость}
 
 Every number on this page is printed by
-`internal/vanchurin-bridge/full_predictions.py` (deterministic, seeds
+[`full_predictions.py`](/instruments/full_predictions.py) (deterministic, seeds
 20260806 / 20260807 / 20260808; NumPy + SciPy); the metric
 normalisation runs as its own §0 block inside the same script, and the
 per-axis third-point screen of §5 is printed by its companion
-`shadow_marks.py` (seeds 20260807 / 20260808).
+[`shadow_marks.py`](/instruments/shadow_marks.py) (seeds 20260807 / 20260808).
 
 | § | Check | Result |
 |---|---|---|

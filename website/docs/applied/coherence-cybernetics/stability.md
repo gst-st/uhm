@@ -178,43 +178,83 @@ The connection between these two formulas is fundamental: system stress ($\sigma
 
 ## 4. Stability Radius: How Much the System Can Withstand {#радиус-стабильности-сколько-система-может-выдержать}
 
-### 4.1 Stability radius (T-104) [T] {#радиус-устойчивости}
+### 4.1 Stability radius (T-104) [С] — corrected 2026-08-07 {#радиус-устойчивости}
 
-:::tip Theorem T-104 (Stability radius) [T]
-For a viable holon with $P(\rho^*_\Omega) > 2/7$, the stability radius in the Bures metric:
+:::danger The earlier closed form was refuted, and it erred toward danger
+Revisions through 2026-08 stated
 
 $$
 r_{\mathrm{stab}} = \inf_{\Gamma \in \partial\mathcal{V}} d_{\mathrm{Bures}}(\rho^*_\Omega, \Gamma) = \sqrt{P(\rho^*_\Omega) - 2/7}
 $$
+
+and justified it by a Fuchs–van de Graaf step giving $d_{\mathrm{Bures}} \geq \sqrt{P - P_{\mathrm{crit}}}$. Both halves fail.
+
+**The inequality is false.** Direct minimisation of $d_B$ over the shell $\{P = 2/7\}$ gives, at $P = 0.300$, an infimum of $0.01708$ against $\sqrt{0.300 - 2/7} = 0.11952$ — smaller by a factor of $7$, not larger. At $P = 1/3$: $0.05420$ against $0.21822$. The claimed *guaranteed margin* does not exist.
+
+**And the cited chain cannot produce it.** Fuchs–van de Graaf reads $1-\sqrt{F} \leq \tfrac12\|\rho-\sigma\|_1 \leq \sqrt{1-F}$, so with $d_B^2 = 2(1-\sqrt F)$ it bounds $d_B$ *from above* by the trace norm. It says nothing lower-bounding $d_B$ by a purity difference — and $\delta P$ lives in the $\|\cdot\|_2$ geometry, not $\|\cdot\|_1$.
+
+**Why this mattered.** The runtime alert is stated in these units. Firing at $\sqrt{P-P_{\mathrm{crit}}} < 0.05$ means firing only once $P < 0.2882$ — a purity margin of $0.0025$ above the wall. Firing at a *true* radius below $0.05$ means firing at $P < 0.3294$, a margin of $0.0437$: seventeen times more room to intervene.
 :::
 
-**Proof.** From [T-98 (balance)](/docs/core/dynamics/evolution#теорема-баланс-чистоты-аттрактора) [T]: $P(\rho^*_\Omega) > 2/7$. External perturbation $h^{\mathrm{ext}}$ shifts $P$ by $\delta P$. CPTP contractivity in Bures (standard result):
+**Corrected statement.** The stability radius is the Bures distance to the viability shell,
 
 $$
-d_{\mathrm{Bures}}(\rho, \sigma) = \sqrt{2(1 - F(\rho, \sigma))}
+r_{\mathrm{stab}}(\rho) \;:=\; \min\bigl\{\, d_B(\rho, \sigma) \;:\; P(\sigma) = P_{\mathrm{crit}} = 2/7 \,\bigr\},
 $$
 
-where $F$ is fidelity. For states near the boundary $\partial\mathcal{V}$:
+and it is computed as follows.
+
+**Step 1 — the minimiser commutes with $\rho$.** Minimising $d_B$ over the full shell (spectrum *and* eigenbasis, 27 free parameters) returns a $\sigma$ with $\|[\rho,\sigma]\| \approx 1.3\times10^{-8}$. The problem therefore reduces to the spectra, where Bures becomes the Hellinger distance:
 
 $$
-d_{\mathrm{Bures}}(\rho^*, \partial\mathcal{V}) \geq \sqrt{P(\rho^*) - P_{\mathrm{crit}}} = \sqrt{P(\rho^*) - 2/7}
+d_B^2(\rho,\sigma) \;=\; \sum_{i=1}^{7}\bigl(\sqrt{\lambda_i} - \sqrt{\mu_i}\bigr)^2 .
 $$
 
-(from the connection between $d_{\mathrm{Bures}}$ and $\delta P$ via the Fuchs–van de Graaf inequality). $\blacksquare$
+**Step 2 — on the one-dominant family the answer is closed-form.** For $\lambda = (a, \tfrac{1-a}{6}, \dots, \tfrac{1-a}{6})$ the purity is $P = (7a^2 - 2a + 1)/6$, so
 
-### 4.2 Intuition behind the stability radius
+$$
+a(P) \;=\; \frac{1 + \sqrt{42P - 6}}{7},
+\qquad
+a_c \;:=\; a(2/7) \;=\; \frac{1+\sqrt6}{7} .
+$$
 
-The formula $r_{\mathrm{stab}} = \sqrt{P - 2/7}$ is deceptively simple yet contains deep knowledge. Consider concrete numbers:
+The minimiser stays inside this family, and the Hellinger distance between two of its members collapses to a two-point (Bernoulli) expression:
 
-| $P$ | $P - 2/7$ | $r_{\mathrm{stab}}$ | Interpretation |
-|-----|-----------|---------------------|---------------|
-| $0.290$ | $0.004$ | $0.063$ | Critically fragile — the slightest push is fatal |
-| $0.300$ | $0.014$ | $0.120$ | Fragile but functional — "walking a tightrope" |
-| $1/3$ | $0.048$ | $0.219$ | Moderate margin — "normal" system |
-| $3/7$ | $0.143$ | $0.378$ | Upper boundary of the [consciousness window (T-124)](/docs/proofs/consciousness/conscious-window) — maximum margin |
-| $1.0$ | $0.714$ | $0.845$ | Pure state — theoretical maximum |
+$$
+r_{\mathrm{stab}}(P) \;=\; \sqrt{\,2\Bigl(1 - \sqrt{a\,a_c} - \sqrt{(1-a)(1-a_c)}\Bigr)}, \qquad a = a(P).
+$$
 
-**The square root** means diminishing returns: doubling the purity margin increases the radius by only $\sqrt{2} \approx 1.41$. A system with $P = 3/7$ has a radius only 1.7 times larger than with $P = 1/3$, despite having three times the purity margin. This reflects a fundamental fact: **far from the boundary protection is "cheap", but the last few percent come dearly**.
+Machine check: this agrees with direct constrained minimisation to $10^{-14}$–$10^{-16}$ at every purity from $0.29$ to $1.00$ — an identity, not a fit.
+
+:::tip The nearest wall state is the one the spectral derivation already named
+$a_c = (1+\sqrt6)/7$ is exactly the $\lambda_{\max} = (1+\sqrt{N-1})/N$ of [path 4 in the critical-purity theorem](/docs/proofs/dynamics/theorem-purity-critical#теорема-фробениусова-различимость). The state you are closest to when you approach the viability wall is precisely the state that independent derivation singles out as sitting *on* it.
+:::
+
+**Step 3 — general states: a conservative lower bound [Г].** $r_{\mathrm{stab}}$ is *not* a function of purity alone. Across 41 random spectra spanning concentrations from $0.3$ to $5.0$, the measured radius exceeded the one-dominant value at the same purity in every case (ratio $\in [1.08,\ 2.52]$, median $1.40$), with zero violations. So the closed form above is a **lower** bound for arbitrary states — which is the safe direction: an alert built on it fires no later than it should. Machine-supported, not yet proven.
+
+**Step 4 — the law near the wall is linear, not square-root.** Expanding the closed form in $\varepsilon = P - 2/7$:
+
+$$
+r_{\mathrm{stab}}^2 \;=\; \frac{49\sqrt6}{80}\,\varepsilon^2 + O(\varepsilon^3),
+\qquad\text{hence}\qquad
+r_{\mathrm{stab}} \;\approx\; \frac{7\sqrt5\,\sqrt[4]{6}}{20}\,\varepsilon \;=\; 1.22487\,\bigl(P - \tfrac27\bigr).
+$$
+
+The ingredients are exact: $\left.\frac{da}{dP}\right|_{2/7} = \frac{\sqrt6}{2}$ and $a_c(1-a_c) = \frac{5\sqrt6}{49}$. This is the heart of the matter — the old surd behaves like $\varepsilon^{1/2}$ while the truth behaves like $\varepsilon^{1}$, so their ratio *diverges* as the wall is approached.
+
+### 4.2 What the corrected radius actually says
+
+| $P$ | $P - 2/7$ | $r_{\mathrm{stab}}$ (correct) | $\sqrt{P-2/7}$ (refuted) | overstatement |
+|-----|-----------|------|------|------|
+| $0.290$ | $0.0043$ | $0.00521$ | $0.06546$ | $12.6\times$ |
+| $0.300$ | $0.0143$ | $0.01708$ | $0.11952$ | $7.0\times$ |
+| $1/3$ | $0.0476$ | $0.05420$ | $0.21822$ | $4.0\times$ |
+| $3/7$ | $0.1429$ | $0.14662$ | $0.37796$ | $2.6\times$ |
+| $1.0$ | $0.7143$ | $0.77203$ | $0.84515$ | $1.1\times$ |
+
+The old formula's error is not a constant factor to be absorbed into a safety coefficient: it is $1.1\times$ where nothing is at stake and grows without bound exactly where everything is. At $P = 0.286$ — one thousandth above the wall — it overstates the margin by $48\times$.
+
+The corrected reading also inverts the old moral. The square root suggested diminishing returns, with the last few percent of protection bought dearly. The linear law says the opposite near the wall: **protection is proportional to margin, with no discount and no cliff** — every thousandth of purity you hold above $2/7$ buys the same $1.2$ thousandths of Bures room. There is no cheap zone and no free zone; the geometry is honest all the way down.
 
 ### 4.3 Numerical example: computing $r_{\mathrm{stab}}$ for a specific system {#числовой-пример-r-stab}
 
