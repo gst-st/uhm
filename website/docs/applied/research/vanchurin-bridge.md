@@ -129,6 +129,16 @@ $$
 \Pi_p=\sum_{i\in p}|i\rangle\langle i| .
 $$
 
+:::note Labelling invariance
+Every result on this page depends on the line set only through the
+design parameters $(v,k,r,b)=(7,3,3,7)$ — which axis-triples realise
+the lines never enters. Axis-*labelled* corollaries (such as the
+third-point screen quoted in §5) do require the canonical translate
+set of the corpus, $\{1,2,4\}+k \pmod 7$ with $U=6,\,O=7$ — see
+[selection rules](/docs/physics/gauge-symmetry/fano-selection-rules#каппа-по-подавленным).
+:::
+
+
 In the quantum-jump (unravelling) picture, during $dt$ a jump $e$ occurs
 with probability $p_e=\frac{\gamma\,dt}{N}\operatorname{Tr}
 (L_e\rho L_e^\dagger)$, taking $\rho$ to $\rho_e=L_e\rho L_e^\dagger/
@@ -447,6 +457,21 @@ natural gradient into an anisotropic, preconditioned natural
 gradient** — the structural analogue of the adaptive preconditioners
 (Adam/AdaBelief, his 6.9) that VL associates with $a=\tfrac12$, but
 obtained without leaving $a=1$.
+
+**Per-axis refinement: the third-point screen (2026-08-07).** The block
+layer does one more exact thing that the trace cannot see: it *screens*
+the third point of each line. The sensitivity of the population
+covariance $\kappa_{ij}$ to $\lambda_x$ is suppressed, relative to every
+axis outside the pair, precisely when $x$ is the third point of the line
+through $(i,j)$ — at $I/7$ by exactly $\gamma/189$, analytic and
+machine-confirmed to six digits in both $\kappa_{OE}$ and
+$\kappa_{OU}$; for an abstract line set the screen moves to *its* third
+points, as labelling invariance demands. On random states the third
+point is the least-sensitive outside axis in $\approx92\%$ of cases.
+Corpus statement and proof sketch:
+[the $\kappa_0$ suppression corollary](/docs/physics/gauge-symmetry/fano-selection-rules#каппа-по-подавленным);
+instrument `shadow_marks.py` alongside the reproduction script.
+
 
 ---
 
@@ -795,10 +820,11 @@ engineered learning systems built on the UHM core.
 ## 11. Reproducibility {#воспроизводимость}
 
 Every number on this page is printed by
-the reproduction script (deterministic, seeds
-20260806 / 20260807 / 20260808; NumPy + SciPy), with the metric
-normalisation cross-checked independently by
-the reproduction script.
+`internal/vanchurin-bridge/full_predictions.py` (deterministic, seeds
+20260806 / 20260807 / 20260808; NumPy + SciPy); the metric
+normalisation runs as its own §0 block inside the same script, and the
+per-axis third-point screen of §5 is printed by its companion
+`shadow_marks.py` (seeds 20260807 / 20260808).
 
 | § | Check | Result |
 |---|---|---|
@@ -811,6 +837,7 @@ the reproduction script.
 | 6 | $r_{\text{eff}}$ closed form; window range | $6.66\times10^{-15}$; $[1.4719,4.1262]$ |
 | 7 | Zero drift | $3.64\times10^{-17}$; $0.00$ |
 | 8 | Sphericity test: separating power, simulated size and power; Campbell window identity | $M\approx100$ |
+| 9 | Third-point screen (`shadow_marks.py`): $I/7$ gap $\equiv\gamma/189$; outside-axis argmin share | six digits; $91$–$96\%$ |
 
 A condensed statement of this bridge, set against Deutsch's many-worlds
 programme, is §2.9 of [Many-Worlds (Everett–Deutsch) and
@@ -821,7 +848,7 @@ Corpus cross-references: T-41 (Fano channel family), T-42a
 completeness), T-59 ($\lambda_{\text{deco}}=5\gamma/21$), T-71 (vacuum
 energy), T-72 (scale invariance), T-73/T-74 (Gap curvature, spectral
 action), T-87 (A5 derivable), T-124 (conscious window), T-187 (why
-Bures). Registry rows: T-293, T-294, T-295.
+Bures). Registry rows: T-293, T-294, T-295; the per-axis screen lives under T-298.
 
 ---
 
