@@ -444,6 +444,57 @@ whose ceiling is barely used, and those pairs have to sit on axes that carry lit
 which is the precise form of a familiar observation, that what a person can be
 inconsistent about is whatever they are not, at that moment, actually doing.
 
+### What the gate does not read {#чего-ворота-не-читают}
+
+The splitting has an uncomfortable consequence, and it is worth stating before anything
+softens it. In these coordinates a state is forty-eight numbers: six of population,
+twenty-one coherence moduli, twenty-one coherence phases. Now read the four gates off
+their own definitions —
+
+$$P=\sum_{i\neq j}|\gamma_{ij}|^2+\sum_i d_i^2,\quad R=\frac{1}{7P},\quad
+\Phi=c_{\text{eff}}^2\frac{1-p}{p},\quad
+D=1+6\,\frac{d_E^2+2\sum_i|\gamma_{Ei}|^2}{P}$$
+
+— and every one of them is a function of moduli and populations alone. **Not one gate
+reads a phase.** This is not an approximation or a limiting case; phases appear in the
+theory in exactly one place, the positivity condition, and there they act as a
+constraint on what is admissible rather than as something anybody looks at. The verdict
+that decides whether a holon is alive is a function of twenty-seven of its
+forty-eight numbers.
+
+Whether that costs anything depends on whether the other twenty-one carry information,
+and there the answer has two halves that must not be run together. They are not free to
+vary: computed states turn out to be rank-deficient boundary points — a typical spectrum
+is $[0,0,0,0.052,0.158,0.289,0.482]$, three exact zeros — and at such a point no phase
+moves while everything else stands still. Uniform rephasing was admissible zero times in
+two thousand attempts, and the freedom of a single phase measured zero to four decimal
+places, for every phase in every state tried.
+
+But locked is not the same as empty. The test that settles it is to erase the phases
+*before* the repair rather than after: make every raw coherence real and positive, then
+project as usual. The output comes back with a median of zero broken triangles where the
+untouched output has twelve of thirty-five, and the two agree on barely one chart in a
+hundred. So the phase content is carried in from outside, survives the repair, and lands
+in the state — and then no gate looks at it.
+
+What the gate misses is not a leftover. It is exactly consistency: which triangles close
+and which fight, how much quality a line carries, whether the state is balanced at all.
+A holon can therefore pass every viability test the theory states while being as
+self-contradictory as positivity permits, and nothing in the verdict will register the
+difference. Whether that is a defect or a correct division of labour — a viability
+criterion measuring aliveness and leaving coherence to another instrument — is a real
+question, and it cannot be answered by adding conditions to the gates as they stand,
+because there is nothing in them to add a condition to. It would take a fifth reading,
+one that looks at phase.
+
+One provenance note belongs here rather than in a footnote, because it changes what an
+earlier observation means. The rank deficiency and the position at the edge are not
+discoveries about states; they are what the repair step does. The matrix before repair
+lies outside the cone of admissible states in every single case measured, with a typical
+$\lambda_{\min}$ of $-0.28$, and a projection of an infeasible point lands on the
+boundary by definition. So "every state sits at the edge of positivity" is a restatement
+of the repair, and any argument resting on it is resting on a choice of machinery.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.

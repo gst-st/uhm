@@ -1338,10 +1338,61 @@ def hl26_uniform_saturation_forbids_frustration() -> None:
              "and self-contradictory at once")
 
 
+# ---------------------------------------------------------------------------
+# HL27 — every gate is blind to every phase
+# ---------------------------------------------------------------------------
+
+def hl27_gates_are_phase_blind() -> None:
+    """P, R, Phi and D are functions of moduli and populations alone."""
+    rng = np.random.default_rng(20260808)
+    pairs = list(itertools.combinations(range(7), 2))
+    e_index = 4  # Interiority, in the storage order A S D L E O U
+
+    def gates(M):
+        d = np.real(np.diag(M))
+        P = float(np.sum(np.abs(M) ** 2))
+        p = float(np.sum(d ** 2))
+        off = sum(abs(M[e_index, i]) ** 2 for i in range(7) if i != e_index)
+        return np.array([P, 1.0 / (7 * P), (P - p) / p,
+                         1.0 + 6.0 * ((d[e_index] ** 2 + 2 * off) / P)])
+
+    worst = 0.0
+    checked = 0
+    for _ in range(300):
+        # An interior state, so that rephasing stays admissible and the
+        # invariance is exercised rather than merely asserted.
+        raw = rng.random(7) + 0.5
+        d = raw / raw.sum()
+        M = np.diag(d).astype(complex)
+        for i, j in pairs:
+            z = 0.04 * np.sqrt(d[i] * d[j]) * np.exp(1j * rng.uniform(-np.pi, np.pi))
+            M[i, j] = z
+            M[j, i] = np.conj(z)
+        if np.linalg.eigvalsh(M).min() < 0:
+            continue
+        g0 = gates(M)
+        K = M.copy()
+        for i, j in pairs:
+            z = abs(M[i, j]) * np.exp(1j * rng.uniform(-np.pi, np.pi))
+            K[i, j] = z
+            K[j, i] = np.conj(z)
+        if np.linalg.eigvalsh(K).min() < 0:
+            continue
+        checked += 1
+        worst = max(worst, float(np.max(np.abs(gates(K) - g0))))
+    ok = checked > 100 and worst < 1e-14
+    report("HL27", "VERIFIED", ok,
+           f"turning every coherence to an arbitrary new phase, moduli untouched, moves "
+           f"no gate at all: largest drift across P, R, Phi and D over {checked} admissible "
+           f"rephasings is {worst:.1e}. So the viability verdict is a function of the 6 "
+           "populations and the 21 moduli — 27 of the state's 48 numbers — and the 21 "
+           "phases, which carry consistency and quality, are read by nothing in it")
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL26"
+    print("HOLARCH LAB — panel HL01–HL27"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1364,6 +1415,7 @@ def main() -> int:
     hl24_what_preserves_balance()
     hl25_state_splits()
     hl26_uniform_saturation_forbids_frustration()
+    hl27_gates_are_phase_blind()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
