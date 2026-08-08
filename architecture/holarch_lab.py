@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL20. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL21. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -995,10 +995,126 @@ def hl20_frustration_is_forbidden() -> None:
 
 
 
+# ----------------------------------------------------------------------------
+# HL21 — the shape that carries the most quality is not the plane
+# ----------------------------------------------------------------------------
+
+def _lam_min(phase: np.ndarray) -> float:
+    """Smallest eigenvalue of the unit-modulus pattern these phases describe."""
+    M = np.exp(1j * phase)
+    np.fill_diagonal(M, 0.0)
+    return float(np.min(np.linalg.eigvalsh(M)))
+
+
+def _line_holonomies(phase: np.ndarray) -> np.ndarray:
+    out = []
+    for line in FANO_LINES:
+        x, y, z = sorted(IDX[d] for d in line)
+        out.append(abs(np.angle(np.exp(1j * (phase[x, y] + phase[y, z] + phase[z, x])))))
+    return np.array(out)
+
+
+def _aligned(psi: float) -> np.ndarray:
+    """ψ/3 on every cell, in its line's orientation: each line then carries ψ."""
+    phase = np.zeros((7, 7))
+    for line in FANO_LINES:
+        x, y, z = sorted(IDX[d] for d in line)
+        for a, b in ((x, y), (y, z), (z, x)):
+            phase[a, b] = psi / 3.0
+            phase[b, a] = -psi / 3.0
+    return phase
+
+
+def hl21_quality_shape() -> None:
+    # Both quantities are scale-free: a line's holonomy is φ_ij + φ_jk + φ_ki,
+    # from the phases alone, and the gate is |λ_min| ≤ √6 on the unit-modulus
+    # pattern. So the colouring question is spectral: maximise holonomy under it.
+    target = np.sqrt(6.0)
+    lo, hi = 0.0, np.pi
+    for _ in range(60):
+        mid = 0.5 * (lo + hi)
+        if abs(_lam_min(_aligned(mid))) <= target:
+            lo = mid
+        else:
+            hi = mid
+    aligned = _aligned(lo)
+    aligned_q = float(np.mean(_line_holonomies(aligned)))
+
+    # A uniform twist away from a coboundary, for comparison at the same gate.
+    rng = np.random.default_rng(96000)
+    uni = []
+    for sd in range(40):
+        r = np.random.default_rng(96000 + sd)
+        theta = r.uniform(-np.pi, np.pi, 7)
+        xi = r.uniform(-1, 1, (7, 7))
+        xi = np.triu(xi, 1) - np.triu(xi, 1).T
+        elo, ehi = 0.0, 3.0
+        for _ in range(40):
+            emid = 0.5 * (elo + ehi)
+            ph = np.angle(np.exp(1j * (theta[:, None] - theta[None, :] + emid * xi)))
+            if abs(_lam_min(ph)) <= target:
+                elo = emid
+            else:
+                ehi = emid
+        ph = np.angle(np.exp(1j * (theta[:, None] - theta[None, :] + elo * xi)))
+        uni.append(float(np.mean(_line_holonomies(ph))))
+    uniform_q = float(np.median(uni))
+
+    # Independent climbs from random admissible starts.
+    tops, spreads = [], []
+    for k in range(5):
+        r = np.random.default_rng(99000 + k)
+        best = None
+        for _ in range(4000):
+            t = r.uniform(-np.pi, np.pi, (7, 7))
+            t = np.triu(t, 1) - np.triu(t, 1).T
+            if abs(_lam_min(t)) <= target:
+                best = t
+                break
+        if best is None:
+            best = aligned.copy()
+        best_q = float(np.mean(_line_holonomies(best)))
+        for _ in range(6000):
+            trial = best.copy()
+            step = r.uniform(0.02, 0.5)
+            for _ in range(r.integers(1, 4)):
+                i = int(r.integers(0, 7))
+                j = int((i + 1 + r.integers(0, 6)) % 7)
+                d = r.uniform(-step, step)
+                trial[i, j] = np.angle(np.exp(1j * (trial[i, j] + d)))
+                trial[j, i] = -trial[i, j]
+            if abs(_lam_min(trial)) > target:
+                continue
+            q = float(np.mean(_line_holonomies(trial)))
+            if q > best_q:
+                best_q, best = q, trial
+        tops.append(best_q)
+        spreads.append(float(np.std(_line_holonomies(best))))
+    _ = rng
+    top = max(tops)
+    scatter = (max(tops) - min(tops)) / float(np.median(tops))
+    doubling = aligned_q / uniform_q
+    ok = (1.7 <= doubling <= 2.3 and top > 1.4 * aligned_q
+          and float(np.median(spreads)) > 0.2)
+    report("HL21", "VERIFIED", ok,
+           f"the plane is a symmetry choice, not a capacity maximum: aligning a twist with the "
+           f"seven lines carries {aligned_q:.4f} rad against {uniform_q:.4f} for a uniform random "
+           f"twist at the same gate, a factor of {doubling:.2f} — phase spent on gauge-invariant "
+           f"directions is worth about twice phase spent partly on gauge, since a coboundary "
+           f"costs spectrum and carries nothing. But the aligned shape is not the most a state "
+           f"can hold: independent climbs reach {top:.4f} rad, {100*(top-aligned_q)/aligned_q:.0f}% "
+           f"above it, and they are UNEVEN — median spread {np.median(spreads):.4f} across the "
+           f"seven lines against 0 for the aligned shape, so no symmetry acts on them. The "
+           f"landscape is rugged ({100*scatter:.0f}% scatter between climbs), so no maximal value "
+           "is claimed; what is claimed is that evenness costs, and that a structure allowed to "
+           "treat its seven directions differently holds more quality than one that may not")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL20"
+    print("HOLARCH LAB — panel HL01–HL21"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1015,6 +1131,7 @@ def main() -> int:
     hl18_projection_completes()
     hl19_line_is_a_parity_check()
     hl20_frustration_is_forbidden()
+    hl21_quality_shape()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
