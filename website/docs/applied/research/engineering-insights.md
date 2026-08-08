@@ -761,6 +761,16 @@ Second, **when the assumption fails, stop claiming to hold what cannot be held**
 
 Third, and most usefully: **the question to ask of a new task is not whether the architecture is powerful enough, but whether the task's answers factor through its parts.** If they do, seven observations settle twenty-one. If they do not, no compositional learner will do better than chance on what it has not seen — and the honest move is to find a representation in which they do.
 
+**A corollary worth having, because it was expensive.** The rule above says answers must factor through the parts. It does not say what counts as a part, and the difference is not academic — a whole line of work was spent finding it out.
+
+Take a family of puzzles over coloured grids, where the answer for a cell is some function of the cells around it. Such a rule *does* factor: it factors through **positions**. So it ought to fit, and it does not. Two adapters were built — one that collapsed every neighbourhood onto two channels, which left nothing for the completion to complete, and one that let a neighbourhood land on any of the twenty-one, which was the structure done properly. A plain linear threshold over the same features beat both, and beat them by more the longer it looked: by twelve points where the architecture's whole claim lives, at a handful of examples, and by forty at sixty.
+
+The diagnostic said why before the accuracies did. Content that factors is *balanced*; measure the share of tasks whose content is balanced as evidence accumulates and it falls from eighty-two percent at six patterns to **zero** at sixty. Six constraints balance because six constraints are too few to contradict each other — the same vacuity that makes a small enough leaf hold anything. Once there are enough of them, the content is simply not a polarity.
+
+So parts are not any decomposition that happens to be available. **A part must be one of the seven dimensions, and the question must be about the agreement between two of them.** A rule over positions decomposes into positions, and positions are not pairs of dimensions; nothing in the adapter can convert one into the other, because the conversion is what the theory would have to supply and does not.
+
+This narrows where to look, which is the point of knowing it. The architecture suits **relational** domains — where the thing being asked is whether two aspects of one situation agree — and not spatial ones, where the thing being asked is what sits next to what.
+
 ### The body spends precision, not loudness {#тело-тратит-точность}
 
 A design question that looks like a matter of taste turns out to have a measured answer. Given a fixed budget of sensor quality, where should a system spend it?
