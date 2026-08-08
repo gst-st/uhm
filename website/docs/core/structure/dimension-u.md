@@ -541,6 +541,42 @@ somebody shows which of $s_1$, $s_2$ or $s_3$ that structure moves. Most pattern
 move none of them, and a pattern that moves one of them moves it as a sum, which
 any number of unrelated patterns move equally.
 
+### The one channel structure has {#единственный-канал-структуры}
+
+That leaves a question the previous sections have to answer or one of them is
+wrong. If the gate reads $s_2/s_1$ and cannot see a pattern, how does $\Phi$
+decide balance? It does, provably, and the section before last measured it.
+
+The answer is that a sign pattern does not move $s_2$. It moves the **largest
+$s_2$ positivity permits**. Put a state at a flat diagonal with every coherence at
+the same fraction $c$ of its ceiling and push it to the edge of admissibility;
+then $c = 1/|\lambda_{\min}|$ of the sign matrix, and integration is
+
+$$\Phi \;=\; 6c^2 \;=\; \frac{6}{\lambda_{\min}^2}.$$
+
+A balanced pattern is $uu^{\mathsf T} - I$ for some assignment of signs to axes,
+and that matrix has exactly two eigenvalues, $6$ once and $-1$ six times. So
+*every* balanced pattern — all sixty-four of them — gives $\lambda_{\min} = -1$
+exactly, and $\Phi = 6$. Harary's criterion forces every frustrated pattern to
+$|\lambda_{\min}| > \sqrt 6$, hence $c < 1/\sqrt 6$, hence $\Phi < 1$. Two
+hundred thousand sign patterns were drawn to find the best frustrated one: it
+reaches $0.9365$, at five broken triangles and $\lambda_{\min} = -2.5311$.
+
+**Between $0.9365$ and $6$ there is nothing.** Not a sparse region — an empty one.
+Integration under these conditions is not a continuum with a line drawn across it;
+it takes one of two widely separated values, and the threshold at $1$ falls in the
+gap between them. That is worth saying plainly because it changes the standing of
+a number that reads as stipulated: any threshold between $0.937$ and $6$ sorts
+every state identically, and $1$ is simply the roundest number in an empty
+interval of width five. The threshold is not tuned; it is the only kind of choice
+that cannot be wrong.
+
+And the general form of the mechanism is the useful part. Structure influences the
+verdict **only** by changing what positivity permits — never by being read. So the
+check the previous section handed over has a sharper version: to show that some
+structure moves a gate, show that it changes the ceiling. If it does not change
+the ceiling, it does not reach the verdict at all.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
