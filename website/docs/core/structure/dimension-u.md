@@ -506,6 +506,41 @@ $\lambda_{\min}$ of $-0.28$, and a projection of an infeasible point lands on th
 boundary by definition. So "every state sits at the edge of positivity" is a restatement
 of the repair, and any argument resting on it is resting on a choice of machinery.
 
+### Three sums {#три-суммы}
+
+Reading the definitions to the bottom rather than most of the way down turns the
+previous section's twenty-one into an understatement. Write
+
+$$s_1=\sum_i d_i^2,\qquad s_2=\sum_{i\neq j}|\gamma_{ij}|^2,\qquad
+s_3=d_E^2+2\sum_i|\gamma_{Ei}|^2$$
+
+— the purity of the diagonal, the total weight of the binding, and Interiority's
+share of the whole. Every gate is then a formula in these three and nothing else:
+
+$$P=s_1+s_2,\qquad R=\frac{1}{7(s_1+s_2)},\qquad \Phi=\frac{s_2}{s_1},\qquad
+D=1+\frac{6\,s_3}{s_1+s_2}.$$
+
+The state has forty-eight numbers. **Three of them reach the verdict.** The other
+forty-five may be changed at will — permute six of the seven axes, shuffle the
+fifteen moduli among the pairs that do not touch Interiority, turn every phase to
+anything positivity allows — and all four gates hold to fifteen decimal places.
+
+Say plainly what this rules out. The gate does not see which axis binds to which.
+It does not see whether a line closes. It does not see the Fano plane at all — not
+the seven lines, not the parity checks, not the balance that the previous sections
+were about. And of the seven axes it distinguishes exactly one, Interiority; the
+remaining six are interchangeable to it, in the strict sense that permuting them
+changes nothing it reads.
+
+This is not automatically a fault. A criterion of viability is entitled to be
+coarse: a doctor checking whether someone is alive takes a pulse rather than an
+inventory. But the coarseness has to be known, because it settles a whole class of
+arguments in advance. Whenever it is said that the gate *responds* to some
+structure — a broken line, a role, a pattern of binding — the claim is false until
+somebody shows which of $s_1$, $s_2$ or $s_3$ that structure moves. Most patterns
+move none of them, and a pattern that moves one of them moves it as a sum, which
+any number of unrelated patterns move equally.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.

@@ -1434,10 +1434,79 @@ def hl28_size_of_the_blind_spot() -> None:
            "gate reading every line would close less than half the gap")
 
 
+# ---------------------------------------------------------------------------
+# HL29 — the whole verdict is three sums
+# ---------------------------------------------------------------------------
+
+def hl29_verdict_is_three_sums() -> None:
+    """48 numbers reach the gates through 3; the Fano plane reaches them not at all."""
+    rng = np.random.default_rng(20260808)
+    e_index = 4  # Interiority
+
+    def gates(M):
+        d = np.real(np.diag(M))
+        P = float(np.sum(np.abs(M) ** 2))
+        p = float(np.sum(d ** 2))
+        off = sum(abs(M[e_index, i]) ** 2 for i in range(7) if i != e_index)
+        return np.array([P, 1.0 / (7 * P), (P - p) / p,
+                         1.0 + 6.0 * ((d[e_index] ** 2 + 2 * off) / P)])
+
+    def from_sums(M):
+        d = np.real(np.diag(M))
+        s1 = float(np.sum(d ** 2))
+        s2 = float(np.sum(np.abs(M) ** 2)) - s1
+        s3 = d[e_index] ** 2 + 2 * sum(abs(M[e_index, i]) ** 2
+                                       for i in range(7) if i != e_index)
+        P = s1 + s2
+        return np.array([P, 1.0 / (7 * P), s2 / s1, 1.0 + 6.0 * s3 / P])
+
+    def a_state():
+        A = rng.normal(size=(7, 7)) + 1j * rng.normal(size=(7, 7))
+        M = A @ A.conj().T
+        return M / np.trace(M).real
+
+    others = [i for i in range(7) if i != e_index]
+    pairs = list(itertools.combinations(range(7), 2))
+    non_e = [t_ for t_, (i, j) in enumerate(pairs) if e_index not in (i, j)]
+
+    worst_form = worst_perm = worst_shuffle = 0.0
+    for _ in range(1500):
+        M = a_state()
+        g0 = gates(M)
+        worst_form = max(worst_form, float(np.max(np.abs(g0 - from_sums(M)))))
+
+        q = rng.permutation(others)
+        perm = list(range(7))
+        for k, o in enumerate(others):
+            perm[o] = q[k]
+        Pm = np.eye(7)[perm]
+        worst_perm = max(worst_perm, float(np.max(np.abs(gates(Pm @ M @ Pm.T) - g0))))
+
+        mags = np.array([abs(M[pairs[t_][0], pairs[t_][1]]) for t_ in non_e])
+        order = rng.permutation(len(non_e))
+        K = M.copy()
+        for k, t_ in enumerate(non_e):
+            i, j = pairs[t_]
+            z = mags[order[k]] * np.exp(1j * np.angle(M[i, j]))
+            K[i, j], K[j, i] = z, np.conj(z)
+        worst_shuffle = max(worst_shuffle, float(np.max(np.abs(gates(K) - g0))))
+
+    ok = worst_form < 1e-12 and worst_perm < 1e-12 and worst_shuffle < 1e-12
+    report("HL29", "VERIFIED", ok,
+           f"every gate is a formula in three sums and nothing else — s1 = sum d_i^2, "
+           f"s2 = sum_{{i!=j}}|g_ij|^2, s3 = d_E^2 + 2 sum|g_Ei|^2, giving P = s1+s2, "
+           f"R = 1/(7(s1+s2)), Phi = s2/s1, D = 1 + 6 s3/(s1+s2), reproduced to "
+           f"{worst_form:.1e}. Permuting the six axes other than Interiority moves the "
+           f"gates by {worst_perm:.1e}; shuffling the fifteen moduli among pairs that do "
+           f"not touch it moves them by {worst_shuffle:.1e}. So 45 of the state's 48 "
+           "dimensions are invisible to the verdict, the Fano plane among them: no line, "
+           "no parity check and no pattern of binding reaches a gate at all")
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL28"
+    print("HOLARCH LAB — panel HL01–HL29"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1462,6 +1531,7 @@ def main() -> int:
     hl26_uniform_saturation_forbids_frustration()
     hl27_gates_are_phase_blind()
     hl28_size_of_the_blind_spot()
+    hl29_verdict_is_three_sums()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
