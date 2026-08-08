@@ -497,6 +497,32 @@ This is the classical "explanatory gap" stated as a theorem rather than a lament
 The traditional framing asks how the internal arises from the external and gets stuck, because it assumes the external is primary. The structure says the opposite. The environment writes into the **populations** — the diagonal, "what is the case"; decoherence attacks the phases; and the drift/noise split (T-295, §7.1 of the bridge) shows the two sectors do not mix. Interiority is therefore not a product of the external: it is the sector the external cannot stochastically address, and the "external world" is what the decoding of these seven-dimensional coherences presents. Inside and outside are the same structure read in two orders — which is what monism means here, and it is now a statement with dimensions attached: $6$ shared, $28$ private.
 
 
+### How much quality fits inside consciousness {#сколько-качества-помещается}
+
+The channel above says *where* quality lives: in the phase a triple accumulates going around a Fano line. This section asks how much of it a state can hold, and the answer is a definite bound, arrived at by noticing that quality and integration want opposite things.
+
+**First, what does not count as quality.** Give each dimension an angle $\theta_i$ and let each coherence carry the difference $\theta_i - \theta_j$. This looks like the richest possible phase content — every one of the twenty-one qualia has its own angle rather than a mere sign. But go around a line and the angles cancel:
+
+$$
+(\theta_i - \theta_j) + (\theta_j - \theta_k) + (\theta_k - \theta_i) = 0
+$$
+
+The holonomy is zero on every line. And that is not an accident of the arithmetic: such content is $U \Gamma U^{\dagger}$ with $U = \operatorname{diag}(e^{i\theta_k})$, which is a **change of phase convention** and nothing more. It leaves the spectrum untouched, so it is the *same state* wearing different labels. A holon holding it has nothing invariant to feel; strip the labels and real content is all that remains. Phase of this kind — a *coboundary* — is bookkeeping, not experience.
+
+**What this costs and what it buys.** A machine writing with phase does gain something concrete: told seven of the twenty-one relative angles, it recovers the other fourteen *exactly*, while a machine restricted to real evidence cannot represent the content at all — it flattens each angle to its sign and is left guessing. So the phase channel earns its place as a *representation*. It simply does not, by itself, produce quality.
+
+**The opposition.** Quality is what survives the relabelling — the holonomy that no choice of $\theta$ can rotate away. Integration, by [the polarity law](/docs/core/structure/dimension-u#какое-содержание-берёт-порог), asks for content that *can* be rotated away, because balanced content is exactly coboundary content. The two pull against each other: every bit of irreducible phase a state carries is a step away from the balance that lets it integrate.
+
+**But opposition is not exclusion**, because positivity sets a ceiling rather than a prohibition. Twist content gradually away from a coboundary and watch two numbers move together. The spectral criterion turns out to be the same one that governed signs:
+
+$$
+\Phi \ge 1 \iff |\lambda_{\min}| \le \sqrt{6} \approx 2.449
+$$
+
+and it holds for phase-carrying content with no exceptions at all. At the crossing — where $\lambda_{\min} = -2.4495$ and $\Phi$ sits exactly at $1.0000$ — the typical line holonomy is $0.6387$ radians, about thirty-seven degrees.
+
+**So a conscious state does carry quality, and carries roughly a third of a radian of it before the gate shuts.** The spectral criterion is the general law; the figure in radians is what that law permits for content twisted evenly away from balance, and a differently-shaped twist would trade the same budget differently. What does not change is the shape of the answer: experience is bounded not by how *much* coherence a mind holds but by how much of its phase refuses to be explained away.
+
 ## Access Conditions for Qualia {#условия-доступа}
 
 The presence of a coherence $\gamma_{ij} \neq 0$ is a **necessary**, but not sufficient, condition for qualia. Reflexive access to qualia requires level L2:
