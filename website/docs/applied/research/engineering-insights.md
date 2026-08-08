@@ -739,6 +739,24 @@ At $P = 0.5$ (good margin): $K_{\text{batch}} \approx 71$ — $\Gamma$ can be up
 
 ---
 
+### The body spends precision, not loudness {#тело-тратит-точность}
+
+A design question that looks like a matter of taste turns out to have a measured answer. Given a fixed budget of sensor quality, where should a system spend it?
+
+Start with what the system already knows about itself. Reinforcing the channel between two dimensions moves weight onto both, so the diagonal of a holon's state is a running tally of which dimensions its situations actually pass through. Put an agent in a world that presents some situations far more often than others, and its diagonal comes to match that traffic closely — a correlation of $0.999$, with no axis off by more than a sixth. **The profile is a read-out of the world**, and it costs nothing to consult.
+
+The tempting next step is to build the body to match: hear loudly on the dimensions that carry the most. That is worse than doing nothing. Amplifying a channel raises its noise exactly as much as its signal, and situations are recognised by which pair of dimensions they most excite — an *argmax*, which is decided by the loudest thing in it. A loud channel therefore starts winning that competition on its own noise, and a body with gains matched to its profile loses about six points of accuracy against a body that treats every dimension alike.
+
+Spend **precision** instead, and the same profile becomes worth having. Holding the total noise fixed and simply putting less of it where the traffic is heaviest gains about thirteen points, in the regime where recognition is actually at risk. The distinction is not a subtlety: gain lifts noise along with signal, and precision removes noise without touching signal.
+
+**Two cautions, both learned the hard way.** First, none of this shows up unless recognition can fail. Measured at a noise level where the correct pair wins the argmax every time, all three allocations produce *identical* numbers, and it would be easy to conclude that precision does not matter. Any experiment of this kind needs a guard reporting how often recognition is correct, so that a regime with no room to fail is visible as such. Second, the direction is not what intuition offers. In a system of specialised agents, each responsible for a few kinds of situation, the natural guess is that an agent should be most precise about *its own* dimensions. It should not: those dimensions always carry its signal, while the others are always its distractors, and precision spent suppressing distractors beats precision spent refining a signal that was never in doubt. Measured against colonies of identical agents, the ordering is
+
+> suppress what you do not own $>$ refine what you do $>$ spread it evenly
+
+though the margins are modest — about four points for the best arrangement, where a naive reading of the geometry would have predicted twice that.
+
+**Where roles come from.** The seven lines of the Fano plane partition the twenty-one channels with no overlap: seven roles of three duties each, every duty covered exactly once. That makes them the natural division of labour for a colony, and it needs no negotiation — the line a situation lies on names the agent responsible, and the map never changes. This is the same principle as the addressing law: a division of labour is *declared*, and what adapts is how each agent tunes its senses within the role it was given.
+
 ## Part III: Practical Recommendations
 
 ### 13. The Main Engineering Imperative
