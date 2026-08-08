@@ -636,6 +636,23 @@ rather than a complaint: an instrument that read those eight would be reading
 something genuinely new, and one that claims to read structure while computing only
 sums is reading nothing at all.
 
+The instrument was built, and the reading is worth having even though it is a null.
+Two things came out of it. The first is exact and was not looked for: **every** one
+of the twenty-eight non-collinear triples lies at $\sqrt{2/3}$ of its norm outside
+the span of the seven lines — the same figure for all of them, the minimum equal to
+the maximum — so the plane sees precisely one third of any triangle it does not
+contain, and two thirds of it is dark, uniformly and without exception. The second
+is the reading itself. Over three hundred computed states the eight dark
+holonomies are **indistinguishable** from the seven canonical ones: median $0.9727$
+against $0.9999$ radians, means $1.1807$ against $1.1832$, shares above $\pi/2$ of
+$0.325$ against $0.318$, and the dark eight the more variable in $50.3\%$ of states,
+which is a coin.
+
+So the dark region is not a reservoir of anything. The plane's privilege is a
+choice about which triples to read, not a discovery about which triples carry more,
+and the eight numbers nobody was reading turn out to look exactly like the seven
+everybody was.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
