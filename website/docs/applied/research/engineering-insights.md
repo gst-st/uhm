@@ -963,3 +963,43 @@ First — **existence** (viability). Then — **consciousness** (integration and
 - [HOLARCH](/docs/applied/research/holarch) — the architecture meta-specification generalizing this page's design patterns
 - [SAD tower](/docs/consciousness/hierarchy/depth-tower) — self-observation depth
 - [Gap diagnostics](/docs/applied/research/gap-diagnostics) — operational diagnostics
+
+## One bit will not steer many limbs {#один-бит-не-правит-многими}
+
+A control loop that acts on several things at once and is told only whether the
+whole turn went well is in a worse position than it looks, and the cost can be
+measured rather than argued.
+
+Take a task where each of $w$ outputs has its own correct setting, and a turn
+counts as good only when every one of them is right. Compare two ways of
+learning from the outcome. The first is the one most loops actually use: a single
+verdict for the whole action, so a bad turn reverses every output that
+contributed — including the ones that were already correct. The second gives each
+output its own bit and nothing more, which is not supervision but the same
+information sliced properly.
+
+| outputs | chance | one verdict | one bit each | improvement |
+|---|---|---|---|---|
+| 1 | $0.500$ | $0.813$ | $0.813$ | — |
+| 2 | $0.250$ | $0.317$ | $0.441$ | $\times 1.39$ |
+| 3 | $0.125$ | $0.149$ | $0.320$ | $\times 2.14$ |
+| 4 | $0.063$ | $0.069$ | $0.175$ | $\times 2.54$ |
+| 6 | $0.016$ | $0.016$ | $0.084$ | $\times 5.15$ |
+
+At one output the two are the same rule and agree exactly. By six the single
+verdict has collapsed to chance — $1.04$ times a coin, which is no learning at
+all — while the sliced feedback still runs at $5.35$ times chance on the same
+worlds with the same learner.
+
+The lesson is not that more feedback helps, which is obvious. It is that the
+**shape** of the feedback matters more than its quantity: both rules receive
+exactly one bit per output per turn. The failing rule wastes them by mixing them
+into a conjunction first, and the mixing is irreversible — once a turn is graded
+as a whole, the information about which output was wrong has been destroyed
+before any learner sees it.
+
+There is a measurement lesson here too, and it cost the run that produced the
+table. The improvement at six outputs is $+6.7$ percentage points, which sounds
+negligible and was registered in advance as a failure threshold. Against a base
+rate of $1.6\%$ percentage points are the wrong unit entirely: the same number is
+a factor of five. **Where the base rate is small, register a ratio.**
