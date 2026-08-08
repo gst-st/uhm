@@ -1013,10 +1013,10 @@ returns content written for something else, at full confidence, with no mark
 distinguishing it from an answer that was actually about the question.
 
 The difference is measurable and it is large. In the system this note comes from,
-a reader at an unmet situation found a genuine gap in a quarter of cases and a
-collision in the other three quarters, and the collisions were not merely
-uninformative: accuracy at unmet situations ran **below chance** — $0.40$ to
-$0.46$ against a coin's $0.50$. A store in that condition is not ignorant, it is
+a reader at an unmet situation found a genuine gap in a fifth of cases and a
+collision in the other four fifths, and the collisions were not merely
+uninformative: accuracy at unmet situations ran **below chance** — $0.43$ to
+$0.49$ against a coin's $0.50$. A store in that condition is not ignorant, it is
 *anti*-informed, and every mechanism downstream that defers to it inherits the
 error while believing it inherited knowledge.
 
