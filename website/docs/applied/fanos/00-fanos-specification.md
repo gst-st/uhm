@@ -218,6 +218,12 @@ is a bona fide **coherence matrix** in `D(ℂ^N)` — exactly the object the UHM
 
 Hence `Φ = 1 ⟺ P = 2/7 ⟺ r = 1/√6`: the integration and structure thresholds coincide at a **single critical mean correlation**. This is a phase line for the whole cell:
 
+:::note The second condition, and the law behind the closed form
+The collapse above needs *two* assumptions, and the stratum's name carries only one of them. Equal correlations give `Φ = r²·(1−p)/p` where `p = Σᵢ dᵢ²` is the purity of the diagonal — the general law of [T-312](/docs/core/structure/dimension-u#ворота-суть-одно-неравенство) — and the factor `6` appears only when the diagonal is **flat**, `p = 1/7`. A cell whose node weights are uneven crosses its phase line at `r* = √(p/(1−p))`, which is *above* `0.408` and rises as the weights concentrate: a lopsided cell needs more correlation to go systemic, not less. The `N`-scaling quoted above is the same statement at a flat diagonal of dimension `N`, since `√((1/N)/(1−1/N)) = 1/√(N−1)`.
+
+The monitor is unaffected in practice — a deployment that keeps node weights balanced *is* on the flat stratum — but a monitor reading `0.408` off an unbalanced cell fires early, and by a knowable amount.
+:::
+
 - **`r < 1/√6` (Φ < 1): diversified / resilient.** Node behaviours are weakly coupled; the cell is *pre-integrative*. A local failure stays local — diversification "works", no single trigger cascades.
 - **`r > 1/√6` (Φ > 1): systemic.** The cell "moves as one subject": behaviours are strongly coupled, so a single perturbation propagates cell-wide. This is precisely the **cascade-failure regime**, and it is detectable *before* any node has failed — from the correlation structure alone.
 
