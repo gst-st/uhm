@@ -1389,10 +1389,55 @@ def hl27_gates_are_phase_blind() -> None:
            "phases, which carry consistency and quality, are read by nothing in it")
 
 
+# ---------------------------------------------------------------------------
+# HL28 — the exact size of what the verdict cannot read
+# ---------------------------------------------------------------------------
+
+def hl28_size_of_the_blind_spot() -> None:
+    """48 = 27 read + 6 gauge + 15 genuine unread invariants."""
+    pairs = list(itertools.combinations(range(7), 2))
+    tris = list(itertools.combinations(range(7), 3))
+
+    # Rephasing an axis moves the numbers without moving the state.
+    G = np.zeros((21, 7))
+    for t_, (i, j) in enumerate(pairs):
+        G[t_, i], G[t_, j] = 1.0, -1.0
+    gauge = int(np.linalg.matrix_rank(G))
+
+    # Triangle holonomies: 35 of them, but they are not independent.
+    C = np.zeros((35, 21))
+    for r, (i, j, k) in enumerate(tris):
+        C[r, pairs.index((i, j))] += 1.0
+        C[r, pairs.index((j, k))] += 1.0
+        C[r, pairs.index((i, k))] -= 1.0
+    cycles = int(np.linalg.matrix_rank(C))
+
+    # The seven canonical lines, in storage order A0 S1 D2 L3 E4 O5 U6.
+    lines = [(0, 3, 1), (1, 2, 4), (2, 3, 6), (3, 4, 5), (4, 6, 0), (6, 5, 1), (5, 0, 2)]
+    F = np.zeros((7, 21))
+    for r, (i, j, k) in enumerate(lines):
+        F[r, pairs.index(tuple(sorted((i, j))))] += 1.0
+        F[r, pairs.index(tuple(sorted((j, k))))] += 1.0
+        F[r, pairs.index(tuple(sorted((i, k))))] -= 1.0
+    fano = int(np.linalg.matrix_rank(F))
+
+    ok = (gauge == 6 and cycles == 21 - gauge == 15 and fano == 7
+          and 6 + 21 + 21 == 48)
+    report("HL28", "VERIFIED", ok,
+           f"the state's 48 numbers are 6 populations + 21 moduli + 21 phases; the gates "
+           f"read the first 27. Of the 21 phases, {gauge} are pure gauge — rephasing an "
+           f"axis has rank {gauge} of 7, the global shift acting trivially — leaving "
+           f"{21 - gauge} genuine invariants that nothing in the verdict reads, which is "
+           f"also the number of independent triangle holonomies among the 35 ({cycles}). "
+           f"The seven canonical lines are independent ({fano} of 7) and cover "
+           f"{fano}/{21 - gauge} = {100 * fano / (21 - gauge):.1f}% of them, so a fifth "
+           "gate reading every line would close less than half the gap")
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL27"
+    print("HOLARCH LAB — panel HL01–HL28"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1416,6 +1461,7 @@ def main() -> int:
     hl25_state_splits()
     hl26_uniform_saturation_forbids_frustration()
     hl27_gates_are_phase_blind()
+    hl28_size_of_the_blind_spot()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()

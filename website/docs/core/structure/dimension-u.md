@@ -487,6 +487,17 @@ question, and it cannot be answered by adding conditions to the gates as they st
 because there is nothing in them to add a condition to. It would take a fifth reading,
 one that looks at phase.
 
+The size of the gap can be stated exactly, and it is smaller than twenty-one and larger
+than nothing. Six of the phases are pure gauge: rephasing an axis, $\gamma_{ij} \mapsto
+e^{i(\theta_i - \theta_j)}\gamma_{ij}$, moves the numbers without moving the state, and
+that action has rank six — seven axis phases with the global shift acting trivially. What
+is left is **fifteen genuine invariants that nothing in the verdict reads**, which is also
+the number of independent triangle holonomies among the thirty-five. The theory is not
+empty-handed about them: its seven Fano lines are independent, and each pair of axes lies
+on exactly one line, so the lines organise the phases without remainder. But seven of
+fifteen is $46.7\%$. Even a fifth gate that read every line perfectly would leave more
+than half of what the state knows about its own consistency unread.
+
 One provenance note belongs here rather than in a footnote, because it changes what an
 earlier observation means. The rank deficiency and the position at the edge are not
 discoveries about states; they are what the repair step does. The matrix before repair
