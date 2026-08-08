@@ -739,6 +739,28 @@ At $P = 0.5$ (good margin): $K_{\text{batch}} \approx 71$ — $\Gamma$ can be up
 
 ---
 
+### What generalising to an unseen combination costs {#цена-обобщения}
+
+A system that has met dimensions $A$ and $S$ in other company, but never together, will eventually be asked about them together. What can it possibly say?
+
+Only what it learned about $A$ and about $S$ **separately**. That is not a limitation of any particular design; it is what the situation contains. And it has a consequence sharp enough to be worth stating as a rule, because it silently governs every architecture that claims to generalise compositionally.
+
+If the answer for a pair must be assembled from the two parts, then whatever the system does to the pair it is really doing to the parts — relabelling $A$ as something, relabelling $S$ as something, and reading off the combination. Write that as $(i,j) \mapsto (\pi(i), \pi(j))$. Now ask when the resulting content can be *held* — when it satisfies the balance condition that makes a holon integrate at all. The answer is exact: **precisely when the original answers already factor**, $\text{answer}(i,j) = u_i u_j$. Put $u_i = t_{\pi(i)}$ and the two conditions are the same sentence.
+
+So the balance requirement is not this architecture's assumption. It is the price of compositional generalisation, and it is charged to everyone.
+
+**This is worth dwelling on, because it inverts the usual complaint.** One might read the balance condition as a restriction to be engineered around — find a cleverer encoder, and arbitrary problems become tractable. And in the abstract that is even true: an encoder free to assign situations to channels however it likes can balance about a third of arbitrary problems outright, and nearly all of them if it leaves some channels unused, since the unused ones absorb whatever imbalance remains. But that freedom evaporates the moment the inputs are compositional. A map onto seven axes can permute those axes — five thousand and forty ways — and permuting does not turn an unbalanced pattern into a balanced one. The cleverness has nowhere to go.
+
+**What this predicts, and what was measured.** Take the best compositional learner that could exist: try every one of the $2^7$ orientations, keep whichever fits the situations actually shown, and answer the rest with it. On answers that factor, it gets every unseen combination right. On answers that do not, it sits at chance. Meanwhile a system that answers by similarity to what it has seen is at chance *even on the factoring content* — resemblance between observations says nothing about a pair that never occurred.
+
+**Three design consequences.**
+
+First, **do not fill a holon to capacity**. Twenty-one channels are what a node carries; nearer fifteen is what it should use, because free channels are what let an encoder balance anything at all.
+
+Second, **when the assumption fails, stop claiming to hold what cannot be held** — but fit the fallback from the observations, not from the state. A rank-one account read back off a trained holon fits even the channels it *was* taught worse than the best one available, and the reason is not subtle: a state is not the data, it is what survived the writes, the decay and the projection back onto positivity.
+
+Third, and most usefully: **the question to ask of a new task is not whether the architecture is powerful enough, but whether the task's answers factor through its parts.** If they do, seven observations settle twenty-one. If they do not, no compositional learner will do better than chance on what it has not seen — and the honest move is to find a representation in which they do.
+
 ### The body spends precision, not loudness {#тело-тратит-точность}
 
 A design question that looks like a matter of taste turns out to have a measured answer. Given a fixed budget of sensor quality, where should a system spend it?
