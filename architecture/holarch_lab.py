@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL22. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL23. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -1169,10 +1169,46 @@ def hl22_compositional_bound() -> None:
 
 
 
+# ----------------------------------------------------------------------------
+# HL23 — the complement of a balanced pattern is maximally frustrated
+# ----------------------------------------------------------------------------
+
+def hl23_complement_is_maximally_frustrated() -> None:
+    # A triangle's sign product flips by (-1)^3 = -1 under complementation, so
+    # negating every coherence of a balanced pattern breaks EVERY triangle at
+    # once — not some, all thirty-five. This is why a hierarchy that composes by
+    # sign cannot keep its tiers balanced: half its children are handed the
+    # complement of a polarity, which is the furthest thing from one.
+    worst, all_broken, checked = 0, True, 0
+    for mask in range(128):
+        s7 = np.array([-1.0 if (mask >> k) & 1 else 1.0 for k in range(7)])
+        S = np.outer(s7, s7)
+        broken = 0
+        for i in range(7):
+            for j in range(i + 1, 7):
+                for k in range(j + 1, 7):
+                    if -S[i, j] * -S[j, k] * -S[i, k] < 0:
+                        broken += 1
+        worst = max(worst, broken)
+        if broken != 35:
+            all_broken = False
+        checked += 1
+    ok = all_broken and worst == 35 and checked == 128
+    report("HL23", "VERIFIED", ok,
+           f"the complement of a balanced pattern is not merely unbalanced but MAXIMALLY "
+           f"frustrated: across all {checked} polarities, negating every coherence breaks "
+           f"{worst} of the 35 triangles — every one of them, without exception ({all_broken}). "
+           "A triangle's sign product flips by (-1)^3, so complementation turns the one pattern "
+           "that integrates best into the one that integrates worst. That is why a hierarchy "
+           "composing by sign cannot keep its tiers balanced: a child sitting under a negative "
+           "parent is handed exactly this, and no learning fits what is not there")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL22"
+    print("HOLARCH LAB — panel HL01–HL23"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1191,6 +1227,7 @@ def main() -> int:
     hl20_frustration_is_forbidden()
     hl21_quality_shape()
     hl22_compositional_bound()
+    hl23_complement_is_maximally_frustrated()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
