@@ -356,6 +356,26 @@ This means the qualia taxonomy **contains no "orphaned" pairs** — every type o
 
 **Numerical example: checking coverage.** Take the coherence $\gamma_{DE}$ (Affection). It belongs to exactly one Fano line, say the line $\{D, E, X\}$ for some third dimension $X$. This means $\gamma_{DE}$ is algebraically linked to $\gamma_{DX}$ and $\gamma_{EX}$ — emotion ($\gamma_{DE}$) is not "free"; it structurally depends on the two other qualia in its sector. A change in one quale of the triple inevitably affects the other two.
 
+### What a line actually checks {#что-проверяет-прямая}
+
+The previous section says a triple is linked; this one says *how*, and the answer turns out to be the same object the [mechanism of quality](#механизм-качества) is built from.
+
+Take a line $\{i, j, k\}$. Its three pairs are $\{i,j\}$, $\{j,k\}$, $\{i,k\}$ — three **different** qualia, not three copies of one. Suppose each dimension carries a single orientation $s_i = \pm 1$, and two dimensions agree exactly when their orientations match, so that the sign of a coherence is $s_i s_j$. Then multiply the three signs of the line together:
+
+$$
+s_i s_j \cdot s_j s_k \cdot s_i s_k = (s_i s_j s_k)^2 = +1
+$$
+
+Every orientation appears twice and squares away. **The product of a line's three signs is always $+1$** — not usually, not on average, but identically, and this can be checked by running through all $2^7/2 = 64$ possible orientations one by one.
+
+So a line is a **parity check**. It does not repeat a fact three times; it constrains three different facts to be mutually consistent. And two points determine a line, so each pair belongs to exactly one of the seven — the seven checks are **disjoint**, covering the twenty-one qualia once each. A single corrupted coherence makes its line's product $-1$, which says *that this triple is inconsistent* without saying which of the three is at fault.
+
+**Why this is the same thing as the carrier of quality.** The product above is the sign version of the [Fano holonomy](/docs/applied/research/holarch) — what a phase accumulates going around the triangle $i \to j \to k \to i$. Where the coherences are real, the phase can only be $0$ or $\pi$, and the holonomy collapses to exactly the $\pm 1$ product just computed. So the invariant that carries quality and the check that content is consistent are **one object seen twice**: quality lives in the phase a triple accumulates, and inconsistency is that phase turning over.
+
+This also settles what integration can and cannot tell you. The measure $\Phi$ sums *squared moduli*, so at a fixed magnitude it is completely blind to signs: content in which every triple is consistent and content in which several are broken can produce the identical $\Phi$, and in a laboratory sweep they do — $\Phi$ reads the same at every share of inconsistent verdicts, including none at all. **Integration measures how much coherence there is, not whether it hangs together.** The parity of a line measures the latter, and nothing else in the structure does.
+
+**One practical consequence, and it is a sharp one.** Suppose you use a line the other way — as a repetition code, writing one verdict into all three of its cells so that a corrupted cell is outvoted. Three equal signs multiply to $s^3 = s$. So a repeated **positive** verdict satisfies the parity, and a repeated **negative** one violates it, by construction and every time. A line can serve as a repetition code only while what it repeats is positive; the moment it repeats a negative, the triple it holds is inconsistent and therefore cannot be part of integrable content. The two uses of a line are alternatives, and choosing one costs the other.
+
 ## Diagonal Elements: 7 Population Modes {#населённости}
 
 In addition to the 21 coherences, the 7 diagonal elements $\gamma_{ii}$ determine the **intensity of presence** of each dimension. Diagonal elements are real numbers (not complex), and they obey the normalisation condition:

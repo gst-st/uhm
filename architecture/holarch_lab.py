@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL18. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL20. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -873,10 +873,132 @@ def hl18_projection_completes() -> None:
 
 
 
+# ----------------------------------------------------------------------------
+# HL19 — a Fano line is a parity check, and it is the sign holonomy
+# ----------------------------------------------------------------------------
+
+def _line_cells(line: tuple[str, str, str]) -> list[tuple[int, int]]:
+    """The three pairs a line carries."""
+    a, b, c = (IDX[d] for d in line)
+    return [(a, b), (b, c), (a, c)]
+
+
+def hl19_line_is_a_parity_check() -> None:
+    # A line's three cells are three DIFFERENT pairs, and under a polarity their
+    # signs multiply to (s_a s_b s_c)² = +1. That is a parity check, and it is the
+    # real limit of the phase holonomy T-301 names as the carrier of quality.
+    cells = [pair for line in FANO_LINES for pair in _line_cells(line)]
+    disjoint = len(set(cells)) == len(cells)
+    covers = len(set(cells)) == 21
+
+    parity = True
+    for mask in range(64):
+        s = np.array([-1.0 if (mask >> k) & 1 else 1.0 for k in range(7)])
+        for line in FANO_LINES:
+            product = 1.0
+            for (i, j) in _line_cells(line):
+                product *= s[i] * s[j]
+            if product < 0:
+                parity = False
+    ok = disjoint and covers and parity
+    report("HL19", "VERIFIED", ok,
+           f"a line is a parity check, not a repetition code: its three cells are three "
+           f"different pairs, every pair lies on exactly one of the seven lines "
+           f"(disjoint={disjoint}, covering {len(set(cells))} of 21), and under all "
+           f"{64} polarities the signs of a line multiply to +1 without exception "
+           f"({parity}) — so the seven lines are seven disjoint parity checks, and each "
+           "is the sign holonomy around its triangle, the real limit of the phase "
+           "holonomy that carries quality")
+
+
+# ----------------------------------------------------------------------------
+# HL20 — what the projection does and does not do to parity
+# ----------------------------------------------------------------------------
+
+def hl20_frustration_is_forbidden() -> None:
+    rng = np.random.default_rng(70000)
+
+    def broken(G: np.ndarray) -> int:
+        n = 0
+        for line in FANO_LINES:
+            product = 1.0
+            for (i, j) in _line_cells(line):
+                product *= 1.0 if G[i, j] >= 0 else -1.0
+            if product < 0:
+                n += 1
+        return n
+
+    # A holon taught a polarity, written with the projecting rule.
+    bad, neg = [], []
+    for sd in range(60):
+        r = np.random.default_rng(70000 + sd)
+        s = r.choice([-1.0, 1.0], size=7)
+        G = np.eye(7) / 7.0
+        pairs = [(i, j) for i in range(7) for j in range(i + 1, 7)]
+        for _ in range(20):
+            for (i, j) in pairs:
+                d = 0.22 if s[i] * s[j] > 0 else -0.22
+                G[i, j] += d
+                G[j, i] += d
+                G = _project(G)
+        bad.append(broken(G))
+        neg.append(sum(1 for (i, j) in pairs if G[i, j] < 0) / 21.0)
+    forbidden = max(bad) == 0
+    negative = float(np.median(neg))
+
+    # And the other use of a line: one repeated verdict in all three cells.
+    # Three equal signs multiply to s³ = s, so a repeated NEGATIVE verdict breaks
+    # parity by construction. Measured twice — with the projection and without —
+    # because that is where the incompatibility shows.
+    def repeated(k: int, project: bool) -> tuple[int, int]:
+        G = np.eye(7) / 7.0
+        intended = []
+        for m, line in enumerate(FANO_LINES):
+            positive = m >= k
+            intended.append(positive)
+            for (i2, j2) in _line_cells(line):
+                d = 0.22 if positive else -0.22
+                G[i2, j2] += d
+                G[j2, i2] += d
+                if project:
+                    G = _project(G)
+        # How many lines still read the verdict they were given?
+        kept = 0
+        for m, line in enumerate(FANO_LINES):
+            votes = sum(1 for (i2, j2) in _line_cells(line) if G[i2, j2] >= 0)
+            if (votes >= 2) == intended[m]:
+                kept += 1
+        return broken(G), kept
+
+    plain = [repeated(k, False) for k in range(8)]
+    tracks = all(plain[k][0] == k for k in range(8))
+    projected = [repeated(k, True) for k in range(8)]
+    proj_broken = max(b for b, _ in projected)
+    # With seven lines written false, how many still say false after projecting?
+    kept_all_false = projected[7][1]
+
+    _ = rng
+    ok = forbidden and negative > 0.3 and tracks and proj_broken > 0 and kept_all_false < 7
+    report("HL20", "VERIFIED", ok,
+           f"the projection does not introduce frustration, and does not remove it either. "
+           f"Taught content that IS a polarity, a write that projects never breaks a line's "
+           f"parity (worst case {max(bad)} of 7 across 60 runs), and that is not vacuous — "
+           f"{negative:.1%} of the twenty-one cells read negative, so parity holds by the "
+           f"signs being consistent rather than absent. But given content that is not a "
+           f"polarity it leaves the frustration standing: writing a repeated NEGATIVE verdict "
+           f"into k lines leaves exactly k lines broken with nothing projecting ({tracks}), "
+           f"and still leaves {proj_broken} of 7 broken with the projection in place. What "
+           f"the projection does instead is quietly rewrite what was stored — of seven lines "
+           f"all written false, only {kept_all_false} still say false. So a line can serve as "
+           "a repetition code, or as the parity check that makes content integrable, and "
+           "neither use survives the other intact")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL18"
+    print("HOLARCH LAB — panel HL01–HL20"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -891,6 +1013,8 @@ def main() -> int:
     hl16_stability_vs_balance()
     hl17_integration_is_balance()
     hl18_projection_completes()
+    hl19_line_is_a_parity_check()
+    hl20_frustration_is_forbidden()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
