@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL23. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL24. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -1205,10 +1205,57 @@ def hl23_complement_is_maximally_frustrated() -> None:
 
 
 
+# ----------------------------------------------------------------------------
+# HL24 — what a parent may do to a child without unbalancing it
+# ----------------------------------------------------------------------------
+
+def hl24_what_preserves_balance() -> None:
+    # Three transformations, and the difference between them decides whether a
+    # hierarchy can keep its tiers integrable at all.
+    rng = np.random.default_rng(7)
+    broke = {"relabel the axes": 0, "flip a subset of AXES": 0, "negate the COHERENCES": 0}
+    runs = 300
+    for _ in range(runs):
+        u = rng.choice([-1.0, 1.0], size=7)
+        S = np.outer(u, u)
+        np.fill_diagonal(S, 0.0)
+
+        def broken(M):
+            n = 0
+            for i in range(7):
+                for j in range(i + 1, 7):
+                    for k in range(j + 1, 7):
+                        if M[i, j] * M[j, k] * M[i, k] < 0:
+                            n += 1
+            return n
+
+        perm = rng.permutation(7)
+        broke["relabel the axes"] += broken(S[np.ix_(perm, perm)])
+        w = rng.choice([-1.0, 1.0], size=7)
+        S2 = np.outer(u * w, u * w)
+        np.fill_diagonal(S2, 0.0)
+        broke["flip a subset of AXES"] += broken(S2)
+        broke["negate the COHERENCES"] += broken(-S)
+
+    per = {k: v / runs for k, v in broke.items()}
+    ok = (per["relabel the axes"] == 0 and per["flip a subset of AXES"] == 0
+          and per["negate the COHERENCES"] == 35)
+    report("HL24", "VERIFIED", ok,
+           f"a parent may relabel a child's axes or flip a subset of them and leave it "
+           f"perfectly integrable ({per['relabel the axes']:.0f} and "
+           f"{per['flip a subset of AXES']:.0f} broken triangles of 35), but negating the "
+           f"child's coherences breaks every one ({per['negate the COHERENCES']:.0f}). "
+           "Flipping a subset of axes IS multiplication by a polarity, elementwise — so the "
+           "object a parent must hand down is seven signs, not one. A holon's cells carry a "
+           "sign per PAIR, which is the wrong object; what carries seven signs is the fitted "
+           "account that already lives outside it")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL23"
+    print("HOLARCH LAB — panel HL01–HL24"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1228,6 +1275,7 @@ def main() -> int:
     hl21_quality_shape()
     hl22_compositional_bound()
     hl23_complement_is_maximally_frustrated()
+    hl24_what_preserves_balance()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
