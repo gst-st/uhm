@@ -1003,3 +1003,45 @@ table. The improvement at six outputs is $+6.7$ percentage points, which sounds
 negligible and was registered in advance as a failure threshold. Against a base
 rate of $1.6\%$ percentage points are the wrong unit entirely: the same number is
 a factor of five. **Where the base rate is small, register a ratio.**
+
+## A confident wrong answer is worse than none {#уверенная-ошибка-хуже-молчания}
+
+A store keyed by situation has two ways of failing at a situation it has never
+met, and they are usually conflated. It can have nothing there — a gap, which a
+caller can notice and route around. Or the key can *collide*, so the lookup
+returns content written for something else, at full confidence, with no mark
+distinguishing it from an answer that was actually about the question.
+
+The difference is measurable and it is large. In the system this note comes from,
+a reader at an unmet situation found a genuine gap in a quarter of cases and a
+collision in the other three quarters, and the collisions were not merely
+uninformative: accuracy at unmet situations ran **below chance** — $0.40$ to
+$0.46$ against a coin's $0.50$. A store in that condition is not ignorant, it is
+*anti*-informed, and every mechanism downstream that defers to it inherits the
+error while believing it inherited knowledge.
+
+Two consequences follow, and neither is obvious before the measurement.
+
+**A fallback that never fires looks exactly like a fallback that does not work.**
+A mechanism was added to answer where the store could not, and it moved the
+number by nothing. The mechanism was correct — checked separately, it was exact.
+It was consulted on $7\%$ of the readings it should have been consulted on,
+because the store reported "I know this" for any situation it had merely been
+*asked* about: the read path claimed the key. Counting how often the fallback
+spoke settled in one run what argument had not settled in several. **Instrument
+the mouth before doubting the voice.**
+
+**Reading must not claim.** Looking something up should not create an entry for
+it. That sounds like hygiene and is in fact the whole mechanism: once reading
+claimed keys, nothing could ever be recognised as unmet, so nothing that answers
+for the unmet could ever be reached. Separating the two — a locate that reads
+and a bind that writes — took the fallback from $7\%$ of readings to all of them,
+and the accuracy at unmet situations from $0.53$ to $1.00$.
+
+And one design rule, which is what makes such a fallback safe to ship. Measure it
+on content it *cannot* handle, not only on content it can. The mechanism here is
+exact where its assumption holds, degrades where the assumption half-holds, and
+falls to chance where it fails entirely — never below. That last clause is the
+one that matters, and it holds for a reason worth stating: at worst the fallback
+replaces a confident wrong answer with a coin, and a coin is an improvement on
+anti-information.
