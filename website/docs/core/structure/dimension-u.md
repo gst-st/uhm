@@ -553,6 +553,69 @@ somebody shows which of $s_1$, $s_2$ or $s_3$ that structure moves. Most pattern
 move none of them, and a pattern that moves one of them moves it as a sum, which
 any number of unrelated patterns move equally.
 
+### A floor the diagonal cannot cross {#пол-которого-диагональ-не-перейдёт}
+
+The three sums have a consequence that decides what a living system can and
+cannot fix about itself. Start from the one inequality that always holds. The
+diagonal $d$ is a probability vector, so Cauchy–Schwarz gives
+
+$$
+s_1=\sum_i d_i^2 \;\ge\; \frac{\left(\sum_i d_i\right)^2}{7}=\frac{1}{7},
+$$
+
+with equality exactly when the diagonal is perfectly flat. A flat diagonal is not
+merely one option among many: it is **the least $s_1$ there is**. Since
+$P=s_1+s_2$, this means
+
+$$
+P \;\ge\; \frac{1}{7}+s_2 \qquad\text{for every state.}
+$$
+
+Now recall that the window has a ceiling as well as a floor — $R=1/(7P)$ clears
+$1/3$ exactly when $P\le 3/7$. Put the two together and something sharp falls
+out: **once the binding alone carries more than $2/7$, the state is above the
+ceiling no matter what the diagonal does.** Flatten it completely and purity is
+still $1/7+s_2>3/7$. There is nowhere left to go.
+
+Why this matters practically. A system that has to hold itself inside the window
+needs some way of shedding purity when it gets too pure, and levelling the
+diagonal is the natural first choice, because lowering $s_1$ lowers $P$ and
+*raises* $\Phi=s_2/s_1$ at the same time — the one direction in which two
+criteria improve together. Damping the binding instead lowers $P$ but takes
+$\Phi$ down with it. So the gentle move is to level.
+
+The inequality says the gentle move has a hard limit, and not a limit of degree.
+On the set where $s_2>2/7$ levelling is not weak, it is **powerless**: no diagonal
+whatsoever puts that state back in the window. And the set is not exotic. Drawn
+uniformly it is rare — about one state in twenty thousand — but a process that
+concentrates a state, pushing it toward purity, walks straight into it, because
+concentration is precisely what puts weight into the binding.
+
+What that costs, measured in a running loop across twenty-four situations: with
+no purity regulation at all, **not one** situation ever reaches the window — the
+drive over-purifies every time. Levelling the diagonal rescues eleven of the
+twenty-four. Levelling *and then* damping the binding for whatever the levelling
+could not take rescues twenty. The second move is what covers exactly the set the
+first one cannot reach, and nothing else changes: on a loop whose content never
+drives $s_2$ past $2/7$ the two are indistinguishable, holding the window for the
+same $4998$ consecutive turns.
+
+The landing point is worth naming. Level to flat, so $s_1=1/7$, then damp the
+binding to $s_2=2/7$: purity sits exactly on the ceiling at $3/7$, integration at
+$\Phi=2$, reflexivity at $R=1/3$. That is not a coincidence of arithmetic but the
+maximum the theory already names — the regulator, pushed to its limit, lands on
+the best point available.
+
+One more band follows for free. Integration needs $s_2\ge s_1\ge 1/7$, and the
+ceiling with $s_1\ge 1/7$ needs $s_2\le 2/7$. So
+
+$$
+\text{alive}\;\Longrightarrow\; s_2\in\left[\tfrac{1}{7},\,\tfrac{2}{7}\right],
+$$
+
+a band exactly twice as wide as the diagonal's $[1/7,\,3/14]$. Both sums are
+confined, and the binding is given twice the room.
+
 ### The one channel structure has {#единственный-канал-структуры}
 
 That leaves a question the previous sections have to answer or one of them is

@@ -368,7 +368,7 @@ $$
 
 **Proof.** *(a)* For the decoupled block the SLD tangent formula $\mathrm{QFI} = 2\sum_{m,n}|X_{mn}|^2/(\lambda_m + \lambda_n)$ reduces to the block. Diagonalise the block with populations $p = \Gamma_{ii}$, $q = \Gamma_{jj}$, coherence $g$: eigenvalues $\lambda_\pm = \tfrac{p+q}{2} \pm R$ with $R = \sqrt{(p-q)^2/4 + |g|^2}$; the tangent $X = i[\Pi_i, \Gamma]$ is purely off-diagonal in the eigenbasis with $|\langle +|\Pi_i|-\rangle|^2 = |g|^2/(4R^2)$, and $(\lambda_+ - \lambda_-)^2 = 4R^2$. Hence $\mathrm{QFI} = 2 \cdot 2 \cdot \frac{4R^2}{p+q} \cdot \frac{|g|^2}{4R^2} = \frac{4|g|^2}{p+q}$ — $R$ cancels, so the result holds at any imbalance and any admissible $|g|$. *(b)* Substitute the pair lemma at $\Gamma_{ii} = 1/7$ into the bridge-lemma constant $G_N^{(ST)} = 4\pi\mu^2/\varepsilon_0^2$ (§2.1): $\langle\mathrm{QFI}\rangle_{\mathrm{ST}} = 14\varepsilon_0^2(1 + O(\bar\varepsilon))$. *(c)* is T-254 [T] plus the [I]-reading. $\blacksquare$
 
-**Machine verification** (`t263_t264_learning_gravity_oracle.py`): balanced-block identity to $6.7 \cdot 10^{-16}$; decoupled-pair identity in $\mathbb{C}^7$ — ratio $1.000000$ across random populations/coherences; cross-coherence correction scaling measured ($0.23\%/0.8\%/4.4\%$ at $\bar\varepsilon = 0.005/0.01/0.02$); substitution chain (b) exact.
+**Machine verification**: balanced-block identity to $6.7 \cdot 10^{-16}$; decoupled-pair identity in $\mathbb{C}^7$ — ratio $1.000000$ across random populations/coherences; cross-coherence correction scaling measured ($0.23\%/0.8\%/4.4\%$ at $\bar\varepsilon = 0.005/0.01/0.02$); substitution chain (b) exact.
 
 **Corollaries.**
 

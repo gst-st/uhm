@@ -173,14 +173,14 @@ The collineations of PG(2,q) form the group PGL(3,q) (for prime q; in general P�
 
 ## 2.4 Innate error-correcting codes
 
-The smallest cell q=2 — the Fano plane — **coincides** with the Hamming(7,4) code: 16 codewords, exactly 7 words of weight 3 = the 7 Fano lines (verified V10, and earlier in `uhm_discoveries.py` S6). The Steane quantum code = CSS(Hamming, Hamming), distance 3. Hence:
+The smallest cell q=2 — the Fano plane — **coincides** with the Hamming(7,4) code: 16 codewords, exactly 7 words of weight 3 = the 7 Fano lines (verified V10, and earlier, S6). The Steane quantum code = CSS(Hamming, Hamming), distance 3. Hence:
 
 - **[T]** any FANOS cell carries innate syndrome diagnostics (the Σ-calculus pyramid of the corpus: 21 links → 7 line-checks → 3 syndrome bits → 1 verdict);
 - **[T]** the projective plane yields a locally recoverable code (LRC): a lost node (point) is recovered from any of its q+1 lines. Locality r = q reads, number of independent repair groups = q+1, redundancy ≈ (q+1)/q (verified V9: for q=31 this is 1.032×).
 
 ## 2.5 The third-order principle and the mediator map (import from UHM)
 
-The key finding that sets the whole philosophy of the protocol (verified by orbit enumeration, `uhm_discoveries.py` S2–S4):
+The key finding that sets the whole philosophy of the protocol (verified by orbit enumeration, S2–S4):
 
 > Under Aut, the orbit of **pairs** is single (21 pairs equivalent ⇒ pairwise statistics does NOT see structure); there are two orbits of **triples** (7 lines vs 28 non-lines ⇒ structure is first distinguishable on triples).
 

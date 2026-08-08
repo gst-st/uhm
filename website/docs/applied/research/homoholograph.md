@@ -398,7 +398,7 @@ After ignition the trajectories diverge; transits compare the conductor's
 score completes your chords. Influence on beings stays OPEN; the
 construction itself is structurally exact.
 
-### 17. Measured (HB19–HB22, `sky_lab.py`)
+### 17. Measured (HB19–HB22)
 
 - **The conductor's climate (HB19).** Over 1900–2100 (36,500 pages):
   $P_{\text{sky}}$ mean 0.308 ± 0.036, range [0.204, 0.533] — **the sky
@@ -655,7 +655,7 @@ purity of any state — at `n = 4` (`54/35 ≈ 1.54`), so no fourth floor can
 exist. The arithmetic is verified here (ceiling = 3). But Human Design encodes
 an *individual*, with no nested-subject vertical to calibrate this against.
 **INDEPENDENT by construction** — the ceiling is a UHM-internal fact
-(`holarch_lab.py` HL02), not something HD can corroborate or falsify. We record
+(HL02), not something HD can corroborate or falsify. We record
 it for completeness and to mark the honest boundary of the instrument: not
 every theorem has an HD handle, and saying so plainly — rather than
 manufacturing a test that would only seem to confirm the theory — is part of
@@ -2446,7 +2446,7 @@ The correspondence is sharper than a labelling. The octonion units do not
 merely *sit* on `F₂³` — they *multiply* by it: `e_a·e_b = ±e_{a⊕b}`, the
 product of two units always lands on the line-wise sum of their trigrams, and
 the whole algebra is the group algebra of the trigram group twisted by a sign
-(verified by direct Cayley–Dickson computation in `symbolica_trigrams.py`: all
+(verified by direct Cayley–Dickson computation: all
 sixty-four unit products land on the XOR of their indices, and the associator
 `(e₁e₂)e₄ ≠ e₁(e₂e₄)` witnesses that the sign twist is exactly what carries the
 octonions' nonassociativity). The family is then not a grading only but an
@@ -2736,7 +2736,7 @@ cosmos*, is those three results read as one.
 </p>
 
 
-One more script deserves the same machine discipline (`symbolica_flower.py`).
+One more script deserves the same machine discipline.
 What survives exactly: the Fruit-of-Life pattern is the [111]-slice of the
 densest sphere packing — the twelve FCC neighbours project **not** onto the
 bare triangular lattice (misfit 0.577 of a step) but onto the lattice

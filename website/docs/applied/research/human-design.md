@@ -26,7 +26,7 @@ The machinery, precisely: gates occupy $360°/64 = 5.625°$ segments countercloc
 
 ## §2. The engine and its verification {#движок}
 
-`hd_lab.py` implements the map independently (250 lines, pyswisseph in Moshier mode, $\sim 0.001°$ — line-accurate) and cross-verifies against `pyhd` on 300 random datetimes spanning 1930–2000:
+The engine implements the map independently (250 lines, pyswisseph in Moshier mode, $\sim 0.001°$ — line-accurate) and cross-verifies against `pyhd` on 300 random datetimes spanning 1930–2000:
 
 | Compared | Agreement |
 |---|---|
@@ -69,7 +69,7 @@ The machinery makes a sharp falsifiable prediction nobody appears to advertise: 
 
 ### The era discovery: the «constants» are epoch functions {#эпохи}
 
-Sampling uniformly *within 20-year eras* instead of across the century exposes the deepest a priori structure yet — the famous percentages are not constants at all (`hd_seasonal_audit.py`, $n = 6000$ per era, se $\approx 0.6$ п.п.):
+Sampling uniformly *within 20-year eras* instead of across the century exposes the deepest a priori structure yet — the famous percentages are not constants at all ($n = 6000$ per era, se $\approx 0.6$ п.п.):
 
 | Era | Gen+MG | Projector | Manifestor | Reflector |
 |---|---|---|---|---|
@@ -119,7 +119,7 @@ On the claimed *mechanism*: the «neutrino stream imprint» is not supported by 
 
 What would move any human-layer claim of HD out of [I]/[H] territory — pre-registered, with the machinery results above as instruments:
 
-1. **The seasonality audit — executed on real data** (`hd_seasonal_audit.py`): official birth statistics were convolved with the machinery curve — USA daily 1994–2003 (CDC/NCHS, 39.7M births) and 2000–2014 (SSA, 62.2M), Germany/Spain/Sweden monthly 2000–2010 (Eurostat, 13.9M). Result, printed as it came out: real birth seasonality is weak (monthly shares $7.8$–$8.9\%$) and essentially orthogonal to the machinery wave (corr $-0.067$ / $+0.005$), so the seasonal correction to a cohort's type mix is **negligible** ($\le 0.14$ п.п.; Sweden the largest, its spring peak anti-phased with the wave). The operative reference numbers for any sample are therefore the **era numbers** of §3 — and the era corrections are large. The wave itself (12 п.п. by month) and the Kepler gate wave ($3.3\%$) remain the *entry checks*: a dataset failing them is miscomputed; a dataset passing them has proven nothing about people.
+1. **The seasonality audit — executed on real data**: official birth statistics were convolved with the machinery curve — USA daily 1994–2003 (CDC/NCHS, 39.7M births) and 2000–2014 (SSA, 62.2M), Germany/Spain/Sweden monthly 2000–2010 (Eurostat, 13.9M). Result, printed as it came out: real birth seasonality is weak (monthly shares $7.8$–$8.9\%$) and essentially orthogonal to the machinery wave (corr $-0.067$ / $+0.005$), so the seasonal correction to a cohort's type mix is **negligible** ($\le 0.14$ п.п.; Sweden the largest, its spring peak anti-phased with the wave). The operative reference numbers for any sample are therefore the **era numbers** of §3 — and the era corrections are large. The wave itself (12 п.п. by month) and the Kepler gate wave ($3.3\%$) remain the *entry checks*: a dataset failing them is miscomputed; a dataset passing them has proven nothing about people.
 2. **Blind type discrimination**: pre-registered protocol — practitioners (or subjects) attempt to identify own/others' types against shuffled controls at rates beyond chance, with the a priori base rates of §3 as the null model (a subtlety most informal tests miss: guessing «Generator» is right $68\%$ of the time by arithmetic alone).
 3. **Retest and inter-rater discipline** for any claimed observable correlate (the checkup rules of the [Prime Radiant demos](/docs/applied/research/prime-radiant#честные-демо) apply verbatim).
 4. Until such results exist, the human layer stays where the registry discipline puts every unvalidated reading: [I] — a practice vocabulary, not a measured mechanism.
