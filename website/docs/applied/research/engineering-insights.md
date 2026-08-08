@@ -1045,3 +1045,54 @@ falls to chance where it fails entirely — never below. That last clause is the
 one that matters, and it holds for a reason worth stating: at worst the fallback
 replaces a confident wrong answer with a coin, and a coin is an improvement on
 anti-information.
+
+## Choosing a model from the inside {#выбор-модели-изнутри}
+
+The usual way to decide how much machinery a problem needs is to hold data back,
+try several sizes, and keep the one that scores best on what was withheld. It
+works, and it costs data, and it answers only the question it was asked — nothing
+in the procedure tells you whether the winner found structure or merely fitted.
+
+There is a second route, available whenever a mechanism can be made to
+**contradict itself**. Suppose the thing being learned is a family of
+transformations, and suppose the family is required to compose: what one
+transformation does after another must equal what their composite does. Then
+every observation is a chance for the account to disagree with itself, and the
+rate of that disagreement is measurable from training data alone.
+
+That rate turns out not to be a proxy for competence. Measured across content of
+four kinds, it is *equal* to it — zero exactly when the content is carried
+exactly, positive otherwise:
+
+| content | disagreement | accuracy on unseen cases |
+|---|---|---|
+| composes under the simplest family | $0.000$ | $1.000$ |
+| composes under a slightly richer one | $0.000$ | $1.000$ |
+| does not compose | $0.728$ | $0.708$ |
+| has no structure at all | $0.925$ | $0.531$ |
+
+So the size can be chosen without holding anything back. Keep a ladder of
+accounts, from the smallest family upward; take the lowest rung whose
+disagreement vanishes. Two content types picked the smallest family, at six
+parameters; a third picked a family of twenty-four; and each answered unseen
+cases **exactly**.
+
+Two details make the rule safe rather than merely neat.
+
+**Refuse a rung once its table is as large as the data.** A family with as many
+parameters as there are cases will agree with itself perfectly, and that
+agreement is arithmetic rather than evidence. Without this clause the ladder
+climbs until it memorises, and reports the memorisation as understanding.
+
+**Watch for a disagreement that falls while accuracy does not.** On content with
+no structure, richer families drove disagreement from $0.925$ down to $0.560$
+while accuracy on unseen cases stayed at chance throughout. A falling
+disagreement with a flat accuracy is the signature of fitting rather than
+finding, and it is visible from inside — no withheld data required to see it.
+
+The result is a mechanism that declines. On content it cannot reason about it
+answered **none** of the unseen cases, rather than producing a number; on
+everything else it was exact. That is the property worth engineering for. A
+component that answers everything is useless at its own boundary, because nothing
+separates its good answers from its bad ones; a component that knows where its
+boundary is can be put behind anything.
