@@ -403,13 +403,17 @@ The closure $U \to A$ ensures **self-consistency**: the result of integration re
 There is a way of writing a state that makes all of this fall out at once. Positivity
 of each two-by-two minor already caps every coherence at
 
-$$|\gamma_{ij}| \;\le\; \sqrt{d_i d_j},$$
+$$
+|\gamma_{ij}| \;\le\; \sqrt{d_i d_j},
+$$
 
 so each pair has a ceiling set by how populated its two axes are — a pair of axes that
 barely carries anything cannot be strongly bound, no matter what the rest of the state
 does. Divide each coherence by its own ceiling and the state factors:
 
-$$\Gamma \;=\; D^{1/2}\, K\, D^{1/2},$$
+$$
+\Gamma \;=\; D^{1/2}\, K\, D^{1/2},
+$$
 
 with $D$ the diagonal and $K$ a correlation matrix — ones down the diagonal, and off it
 the *fraction of the ceiling actually used*. The factorisation earns its keep by
@@ -424,7 +428,9 @@ Integration is then a single ratio. Writing $p = \sum_i d_i^2$ for the purity of
 diagonal, and $c_{\text{eff}}$ for the ceiling fraction averaged with each pair weighted
 by $d_i d_j$,
 
-$$\Phi \;=\; c_{\text{eff}}^{\,2}\;\frac{1-p}{p}.$$
+$$
+\Phi \;=\; c_{\text{eff}}^{\,2}\;\frac{1-p}{p}.
+$$
 
 That identity is exact. So the threshold $\Phi \ge 1$ is one inequality,
 $c_{\text{eff}} \ge \sqrt{p/(1-p)}$, and it can be met in exactly three ways: bind
@@ -451,9 +457,11 @@ softens it. In these coordinates a state is forty-eight numbers: six of populati
 twenty-one coherence moduli, twenty-one coherence phases. Now read the four gates off
 their own definitions —
 
-$$P=\sum_{i\neq j}|\gamma_{ij}|^2+\sum_i d_i^2,\quad R=\frac{1}{7P},\quad
+$$
+P=\sum_{i\neq j}|\gamma_{ij}|^2+\sum_i d_i^2,\quad R=\frac{1}{7P},\quad
 \Phi=c_{\text{eff}}^2\frac{1-p}{p},\quad
-D=1+6\,\frac{d_E^2+2\sum_i|\gamma_{Ei}|^2}{P}$$
+D=1+6\,\frac{d_E^2+2\sum_i|\gamma_{Ei}|^2}{P}
+$$
 
 — and every one of them is a function of moduli and populations alone. **Not one gate
 reads a phase.** This is not an approximation or a limiting case; phases appear in the
@@ -511,14 +519,18 @@ of the repair, and any argument resting on it is resting on a choice of machiner
 Reading the definitions to the bottom rather than most of the way down turns the
 previous section's twenty-one into an understatement. Write
 
-$$s_1=\sum_i d_i^2,\qquad s_2=\sum_{i\neq j}|\gamma_{ij}|^2,\qquad
-s_3=d_E^2+2\sum_i|\gamma_{Ei}|^2$$
+$$
+s_1=\sum_i d_i^2,\qquad s_2=\sum_{i\neq j}|\gamma_{ij}|^2,\qquad
+s_3=d_E^2+2\sum_i|\gamma_{Ei}|^2
+$$
 
 — the purity of the diagonal, the total weight of the binding, and Interiority's
 share of the whole. Every gate is then a formula in these three and nothing else:
 
-$$P=s_1+s_2,\qquad R=\frac{1}{7(s_1+s_2)},\qquad \Phi=\frac{s_2}{s_1},\qquad
-D=1+\frac{6\,s_3}{s_1+s_2}.$$
+$$
+P=s_1+s_2,\qquad R=\frac{1}{7(s_1+s_2)},\qquad \Phi=\frac{s_2}{s_1},\qquad
+D=1+\frac{6\,s_3}{s_1+s_2}.
+$$
 
 The state has forty-eight numbers. **Three of them reach the verdict.** The other
 forty-five may be changed at will — permute six of the seven axes, shuffle the
@@ -552,7 +564,9 @@ $s_2$ positivity permits**. Put a state at a flat diagonal with every coherence 
 the same fraction $c$ of its ceiling and push it to the edge of admissibility;
 then $c = 1/|\lambda_{\min}|$ of the sign matrix, and integration is
 
-$$\Phi \;=\; 6c^2 \;=\; \frac{6}{\lambda_{\min}^2}.$$
+$$
+\Phi \;=\; 6c^2 \;=\; \frac{6}{\lambda_{\min}^2}.
+$$
 
 A balanced pattern is $uu^{\mathsf T} - I$ for some assignment of signs to axes,
 and that matrix has exactly two eigenvalues, $6$ once and $-1$ six times. So
