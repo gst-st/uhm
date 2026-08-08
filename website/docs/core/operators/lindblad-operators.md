@@ -426,7 +426,7 @@ From $r(k-1) = 6$ with integers $r, k \geq 2$:
 For $k = 3$: **Theorem (Hall 1967).** The $(7,3,1)$-BIBD is **unique** up to isomorphism and is isomorphic to the Fano projective plane $\text{PG}(2,2)$. Uniqueness follows from the fact that $\text{PG}(2,q)$ is unique for prime $q$, and $q = 2$ is the unique prime with $v = q^2 + q + 1 = 7$.
 
 Properties of the unique solution:
-- The Fano plane carries the multiplication table of the octonions — precisely: its lines fix *which* triples multiply, and an **orientation** of each line fixes the signs. Of the $2^7 = 128$ orientations exactly **16** yield a normed division algebra (machine: `octonion_check.rs`; consistent with the classical count $480 = 30 \times 16$ over all labelled Fano planes). All 16 give isomorphic copies of $\mathbb{O}$, so the choice is a gauge of labelling, not extra structure — but the plane alone does not determine the signs
+- The Fano plane carries the multiplication table of the octonions — precisely: its lines fix *which* triples multiply, and an **orientation** of each line fixes the signs. Of the $2^7 = 128$ orientations exactly **16** yield a normed division algebra (machine: consistent with the classical count $480 = 30 \times 16$ over all labelled Fano planes). All 16 give isomorphic copies of $\mathbb{O}$, so the choice is a gauge of labelling, not extra structure — but the plane alone does not determine the signs
 - $\text{Aut}(\text{PG}(2,2)) \cong GL(3,\mathbb{F}_2) \cong PSL(2,7)$, order 168
 - $PSL(2,7) \subset G_2 = \text{Aut}(\mathbb{O})$
 

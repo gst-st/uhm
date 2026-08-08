@@ -142,7 +142,7 @@ FANOS is a direct engineering consequence of the UHM finding that the specific s
 
 Take a finite field GF(q) (q a prime power). The illustrative cells below use prime fields GF(p) at q ∈ {2, 7, 13, 31}; the default binary profile takes q = 2^m (field GF(2^m)) for arithmetic bit efficiency. The **points** of the plane are one-dimensional subspaces of GF(q)³, i.e. nonzero coordinate triples `[x:y:z]` up to scaling. The **lines** are two-dimensional subspaces, also given by triples `[a:b:c]`. The "point on line" incidence is the vanishing of the dot product: `ax+by+cz = 0`. Self-duality: points and lines are interchangeable.
 
-**Base parameters [T]** (verified, `fanos_verify.py` V1):
+**Base parameters [T]** (verified V1):
 
 | q | N = points = lines | points per line (q+1) | lines per point (q+1) | collineation group \|PGL(3,q)\| |
 |---:|---:|---:|---:|---:|
@@ -210,7 +210,7 @@ is a bona fide **coherence matrix** in `D(ℂ^N)` — exactly the object the UHM
 | **Structuredness** `P` | `Tr(Γ_net²)` (purity) | how far the cell is from a formless uniform mesh | `P_crit = 2/7` [T] |
 | **Reflection** `R` | `1/(7P)` (canonical: proximity to `I/7`) | self-model sufficiency; threshold = share of cycles spent on self-observation | `R_th = 1/3` [T] |
 
-**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [T]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified `fanos_verify.py` V15):
+**The systemic-correlation threshold `r* = 1/√6 ≈ 0.408` [T]** (numbers are for the base 7-cell `q=2`; at general `N` the thresholds scale as `r* = 1/√(N−1)`, `P_crit = 2/N`)**.** On the equicorrelated stratum — all off-diagonal correlations equal to a mean `r` — the measures collapse to closed form (verified  V15):
 
 ```
 Φ_net = 6r²,     P_net = (1 + 6r²)/7,     Φ = 7P − 1.
@@ -1183,7 +1183,7 @@ PROTEUS is **off by default** (`plain`) and fully declarative — the explicit d
 
 | Milestone | Content | Verifies |
 |---|---|---|
-| **M0** | Reference verifier (done: `fanos_verify.py`) — all the mathematics | geometry/quorums/security |
+| **M0** | Reference verifier (done:) — all the mathematics | geometry/quorums/security |
 | **M1** | `fanos-core` (**pure Rust — the reference implementation**): PG(2,q) addressing, cross rendezvous, one cell | O(1) rendezvous, quorums |
 | **M2** | Cell hierarchy, QUIC transport, beacon, epochs | scale 10⁶–10⁹ |
 | **M3** | Projective LRC, quorum replication | storage/consistency |

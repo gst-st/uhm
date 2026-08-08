@@ -188,7 +188,7 @@ Examples: $T_{\text{UHM}}$ (~210 theorems, 7 statuses, 5 axioms), $T_{\text{IIT}
 
 **Intuition.** A covering is a set of "perspectives" that collectively exhaust the content of a theory. For example, $T_{\text{IIT}}$ and $T_{\text{GWT}}$ can jointly cover the part of $T_{\text{UHM}}$ concerning integration.
 
-**Formal typing in Verum.** The Verum stdlib (`core/math/infinity_topos.vr`) already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (`core/math/epistemic.vr`, see an unpublished specification §3.3) defines:
+**Formal typing in Verum.** The Verum stdlib already provides the protocol hierarchy `Site<C> = (underlying_category: InfinityCategory, topology: GrothendieckTopology<C>)` with `GrothendieckTopology` carrying three `@verify(formal)` axioms (maximality, stability, transitivity). The Mathesis-specific instantiation (see an unpublished specification §3.3) defines:
 
 ```
 type Theory is {
@@ -295,7 +295,7 @@ $$
 \mathrm{Lan}_f(X)(b) = \mathrm{colim}_{(a,\; f(a) \to b) \in (f \downarrow b)} X(a)
 $$
 
-**Algorithm** (`compute_pointwise_lan` in `core/math/epistemic.vr`):
+**Algorithm** (`compute_pointwise_lan` in):
 1. **Construct the comma category** $(f \downarrow b)$: objects are pairs $(a \in T_1,\; h: f(a) \to b)$ where $h$ is a morphism in $T_2$. On a finite theory, $|(f \downarrow b)| \leq M_1 \cdot D$ where $M_1$ is the number of claims in $T_1$ and $D$ is the maximum in-degree.
 2. **Restrict** the presheaf $X$ to the comma category: $X|_{(f \downarrow b)}(a, h) = X(a)$.
 3. **Compute the finite colimit** of the restricted diagram. For a finite category with $n$ objects, the colimit is computable in $O(n^2)$ by coequalizer iteration.
@@ -568,7 +568,7 @@ $$
 
 **Construction of $\mathcal{H}_{\text{ep}}$.** The epistemic Hilbert space for a UHM-compatible site has dimension $k = 7$ (one basis vector per status: $|T\rangle, |C\rangle, |H\rangle, |P\rangle, |D\rangle, |I\rangle, |X\rangle$). For a general theory with $s$ distinct statuses, $k = s$. The orthomodular lattice $\mathcal{L}$ is the lattice of projectors on $\mathcal{H}_{\text{ep}}$; for $k = 7$ this is a $127$-element lattice (all subspaces of $\mathbb{C}^7$).
 
-**Algorithm for epistemic measurement** (`measure()` in `core/math/quantum_logic.vr`):
+**Algorithm for epistemic measurement** (`measure()`):
 1. **Input:** epistemic state $\rho_a \in \mathcal{D}(\mathbb{C}^k)$, projector $P_s$ (corresponding to status $s$).
 2. **Check non-degeneracy:** $\mathrm{Tr}(P_s \rho_a P_s) > 0$; if zero, measurement is impossible (the claim cannot have status $s$).
 3. **Apply Lüders rule:** $\rho_a \mapsto P_s \rho_a P_s / \mathrm{Tr}(P_s \rho_a P_s)$.
@@ -1044,7 +1044,7 @@ The LLM agent is formalized not merely functionally (executing MCP operations) b
 
 Instead of a deterministic functor $F: T_1 \to T_2$, the agent generates a **distribution** over the space of functors: $\mathcal{G}(\mathrm{Map}_{\mathbf{Th}}(T_1, T_2))$, where $\mathcal{G}$ is the Giry monad (probability measures on measurable spaces). The act of user confirmation of a mapping is the collapse of this distribution (analogous to epistemic measurement §3.2).
 
-**Algorithm for computing $p(F \mid \text{context})$** (`functor_density` in `core/math/giry.vr`):
+**Algorithm for computing $p(F \mid \text{context})$** (`functor_density` in):
 1. **Embedding.** Represent each claim $a \in T_1$ and each claim $b \in T_2$ as LLM embedding vectors $\mathbf{e}_a, \mathbf{e}_b \in \mathbb{R}^d$ (using the model's internal representations).
 2. **Candidate generation.** For each claim $a \in T_1$, compute cosine similarities $\mathrm{sim}(a, b) = \mathbf{e}_a \cdot \mathbf{e}_b / \|\mathbf{e}_a\| \|\mathbf{e}_b\|$ to all claims $b \in T_2$.
 3. **Softmax distribution.** For each $a$, define the candidate distribution $p(b \mid a) = \mathrm{softmax}(\mathrm{sim}(a, b_1), \ldots, \mathrm{sim}(a, b_m) / \tau)$ where $\tau$ is a temperature parameter.
@@ -1411,7 +1411,7 @@ A deep audit revealed that **6 out of 7 originally planned modules already exist
 To realize $\mathfrak{M} = \mathrm{Sh}_\infty(\mathbf{Th}, J_{\text{ep}})$ in Verum, the following extensions are needed:
 
 **Language:**
-- **Cubical surface activation** (P0): connect existing `cubical.rs` normalizer to surface syntax (Path type, `transport`, `hcomp`)
+- **Cubical surface activation** (P0): connect the existing normalizer to surface syntax (Path type, `transport`, `hcomp`)
 - **Instance search** (P1): automatic protocol resolution for Category, Functor, Site structures
 - **Extended tactic DSL** (P1): combinators (`try/else`, `repeat`, `first`), category-specific tactics (`category_simp`, `descent_check`)
 

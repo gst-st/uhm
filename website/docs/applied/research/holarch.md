@@ -9,7 +9,7 @@ description: "The holonic meta-specification of digital architecture: seven conc
 **Status frame.** This page is an engineering meta-specification, not a set of new
 theorems. Every claim carries one of four honesty classes: **VERIFIED** — a computed
 fact about the machinery (theorem arithmetic, identity checks, coverage completeness;
-reproduced by the laboratory `architecture/holarch_lab.py`, panel HL01–HL14, 14/14);
+reproduced by the laboratory panel HL01–HL14, 14/14);
 **DESIGN** — self-consistency of an engineering instance (true by construction,
 demonstrated, *not* evidence about external systems); **CONS** — a numerical consonance
 with an external published number (a structural rhyme stated precisely, never an
@@ -837,7 +837,7 @@ Nym, Ethereum or any real deployment — they are demonstrations that the calcul
 
 ## §21. The laboratory {#лаборатория}
 
-`architecture/holarch_lab.py` — panel HL01–HL15, all PASS at the time of writing:
+Panels HL01–HL15, all PASS at the time of writing:
 SSOT synchronization (HL01), the depth ladder (HL02), Γ-calculator reference points
 (HL03), the three worked designs with four-way ablations (HL04–HL06), subsumption
 completeness with anchor resolution against this very page (HL07), mixnet arithmetic

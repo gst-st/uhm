@@ -1464,7 +1464,7 @@ $$d_{ij} = \frac{\gamma}{N} \sum_k \bigl[\ell_i^{(k)} \ell_j^{(k)} - \tfrac{1}{2
 
 **Следствие (κ_bootstrap):** Поскольку $\kappa_{\text{bootstrap}} = \omega_0/N$ определяется **регенеративным** (не диссипативным) каналом и $\omega_0 \gg \gamma$, величина $\kappa_{\text{bootstrap}} = 1/7$ не связана нижней границей со спектральным зазором $\lambda_{\text{gap}}(\mathcal{L}_0)$.
 
-**Верификация:** Численное вычисление 49×49 суперматрицы $\mathcal{L}_0^{\text{vec}}$ подтверждает (тест `spectral_gap_t59.rs`):
+**Верификация:** Численное вычисление 49×49 суперматрицы $\mathcal{L}_0^{\text{vec}}$ подтверждает (тест):
 - $\lambda_{\text{deco}} = 5\gamma/(3N)$ [точно]
 - $\lambda_{\text{gap}}(\mathcal{L}_0) \ll \lambda_{\text{deco}}$ [определяется популяционной релаксацией]
 - $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [код корректен]
@@ -1472,7 +1472,7 @@ $$d_{ij} = \frac{\gamma}{N} \sum_k \bigl[\ell_i^{(k)} \ell_j^{(k)} - \tfrac{1}{2
 :::info Численная верификация (SYNARC)
 $\kappa_{\text{bootstrap}} = \omega_0/7$ ($= 1/7$ в единицах теста $\omega_0 = 1$) подтверждён до точности $10^{-10}$
 в интеграционных тестах (mvp_int_2 G5). Формула $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
-также совпадает с имплементацией `effective_kappa()` в `density7.rs`.
+также совпадает с `effective_kappa()` эталонной реализации.
 :::
 
 

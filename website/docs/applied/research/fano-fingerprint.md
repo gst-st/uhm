@@ -24,7 +24,7 @@ $$
 
 the adjacency matrix of the complete graph $K_7$: each of the $\binom{7}{2}=21$ pairs lies on exactly one line (Steiner $\lambda=1$), so every off-diagonal entry is hit exactly once. Its spectrum is $\{6,\,(-1)^{6}\}$ — one eigenvalue $6$ (the all-ones direction) and $-1$ with multiplicity six.
 
-**Consequence [T].** Any equal-weight quadratic form built from the lines — any pairwise covariance, any two-point statistic symmetric in the seven lines — is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. The Fano wiring is invisible at first (pairwise) order; it becomes visible only on **triples** (the polar collapse of §3) and in the rate quadratics of §1–§2. This is the precise content of the "third-order principle": **structure begins at three.** (Machine-checked: `fanos_verify.py` V11.)
+**Consequence [T].** Any equal-weight quadratic form built from the lines — any pairwise covariance, any two-point statistic symmetric in the seven lines — is a function of $J-I$ alone, hence *indistinguishable from unstructured full connectivity*. The Fano wiring is invisible at first (pairwise) order; it becomes visible only on **triples** (the polar collapse of §3) and in the rate quadratics of §1–§2. This is the precise content of the "third-order principle": **structure begins at three.** (Machine-checked:  V11.)
 
 This static blind spot is the adjacency-level companion of the dynamical $\mathfrak g_2$-shadow of §4 (fourteen rate dimensions a two-point experiment can never reach): in both, what pairwise observation cannot see is exactly the structural content of the seven. It is also the theorem the [FANOS overlay](/docs/applied/fanos/fanos-specification) turns on — a heartbeat/ping mesh is a first-order statistic, so it is Fano-blind and cannot localise the faults that matter (equivocation); FANOS therefore diagnoses on triples.
 
@@ -221,7 +221,7 @@ All claims were verified in exact arithmetic (symbolic $\gamma$, rational linear
 | $c_\varphi = c \circ W$; both kernels $14$-dimensional | ✓ |
 | One-line rewiring ($\{0,2,6\} \to \{0,1,6\}$): $7/14$ polar equalities fail identically | ✓ |
 
-The verification scripts follow the M1 discipline of the SYNARC programme: independent implementation, exact arithmetic, and the falsifying counter-model (the rewired plane) checked alongside the theorem. A **third**, independent-language verification also passes: a Verum program (integer arithmetic only, `sigma_wave_check.vr` in the SYNARC repository) re-derives the polar law on all 21 pairs, the line-sum tomography identity, and the polar partition — alongside the Turyn–Golay enumerator of the Σ-calculus §8a — reporting `ALL PASS`.
+The verification scripts follow the M1 discipline of the SYNARC programme: independent implementation, exact arithmetic, and the falsifying counter-model (the rewired plane) checked alongside the theorem. A **third**, independent-language verification also passes: a Verum program (integer arithmetic only) re-derives the polar law on all 21 pairs, the line-sum tomography identity, and the polar partition — alongside the Turyn–Golay enumerator of the Σ-calculus §8a — reporting `ALL PASS`.
 
 ## §8. Status summary {#сводка}
 

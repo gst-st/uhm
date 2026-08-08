@@ -361,7 +361,7 @@ near $6$, not near $0$, so the denominator is *almost entirely* the person's own
 average, and the measure answers a question nobody asked: «do you know your
 usual level?» rather than «do you know your day?».
 
-Measured (`rphi_baseline.rs`): a **lazy forecaster** who names their own mean
+Measured: a **lazy forecaster** who names their own mean
 every single day — and therefore knows nothing about themselves — scores
 $0.994$, $0.979$, $0.945$ at rating spreads of $\pm0.8$, $\pm1.5$, $\pm2.5$.
 Worse, the whole ladder of skill compresses into $0.979\ldots1.000$: zero skill
@@ -400,7 +400,7 @@ the shared name and the shared threshold $1/(k+2)$ make the confusion easy, and
 its consequence is not small: **substituting the fidelity destroys the
 ceiling.** A quantity rising toward 1 clears a threshold falling as $1/(k+2)$
 at every level, so SAD would be unbounded and $\mathrm{SAD_{MAX}} = 3$ would
-evaporate. Machine demonstration: `core/examples/ladder_audit.rs` `[О]`.
+evaporate. Machine demonstration `[О]`.
 :::
 
 
@@ -436,8 +436,7 @@ The weights are the mass shares of the state being measured, which makes the
 composition a decomposition rather than an aggregation `[О]`. Two disciplines
 follow and are worth stating because their absence is what produced the gap:
 a half must never be reported as the whole, and when only one half exists the
-reading must name which one and what share of the mass it covers. Machine:
-`core/src/couple.rs`; twenty-one pairs at one question a day, so the first full
+reading must name which one and what share of the mass it covers. twenty-one pairs at one question a day, so the first full
 reading is three weeks out.
 
 Four rules resolve every mixed case:

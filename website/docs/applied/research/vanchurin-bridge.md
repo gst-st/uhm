@@ -862,7 +862,7 @@ per-axis third-point screen of §5 is printed by its companion
 | 6 | $r_{\text{eff}}$ closed form; window range | $6.66\times10^{-15}$; $[1.4719,4.1262]$ |
 | 7 | Zero drift | $3.64\times10^{-17}$; $0.00$ |
 | 8 | Sphericity test: separating power, simulated size and power; Campbell window identity | $M\approx100$ |
-| 9 | Third-point screen (`shadow_marks.py`): $I/7$ gap $\equiv\gamma/189$; outside-axis argmin share | six digits; $91$–$96\%$ |
+| 9 | Third-point screen: $I/7$ gap $\equiv\gamma/189$; outside-axis argmin share | six digits; $91$–$96\%$ |
 
 A condensed statement of this bridge, set against Deutsch's many-worlds
 programme, is §2.9 of [Many-Worlds (Everett–Deutsch) and

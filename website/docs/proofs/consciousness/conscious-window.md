@@ -223,7 +223,7 @@ leaving the pure segment statics. Below a clock floor the question dissolves:
 at $\omega_0 = 10$ (self-model purity 0.45) no living attractor exists at all.
 Read plainly: the gate is not only where consciousness *counts* as present —
 it is the height a perturbed system must regain for the flow itself to carry
-it back up rather than down. *(Instrument: `awakening_boundary_law.rs`;
+it back up rather than down. *(Instrument: 
 registry: NUMBERS-LEDGER, boundary-law entry.)*
 
 ---

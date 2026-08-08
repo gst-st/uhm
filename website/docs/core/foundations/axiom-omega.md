@@ -1463,7 +1463,7 @@ For atomic $L_k = |k\rangle\langle k|$: contribution $-\gamma/N$. For Fano $L_p 
 
 **Corollary ($\kappa_{\text{bootstrap}}$):** since $\kappa_{\text{bootstrap}} = \omega_0/N$ comes from a **regenerative** (not dissipative) channel and $\omega_0 \gg \gamma$, the value $\kappa_{\text{bootstrap}} = 1/7$ is **not** lower-bounded by $\lambda_{\text{gap}}(\mathcal{L}_0)$.
 
-**Verification:** the 49×49 superoperator $\mathcal{L}_0^{\text{vec}}$ confirms (test `spectral_gap_t59.rs`):
+**Verification:** the 49×49 superoperator $\mathcal{L}_0^{\text{vec}}$ confirms (test):
 - $\lambda_{\text{deco}} = 5\gamma/(3N)$ [exact]
 - $\lambda_{\text{gap}}(\mathcal{L}_0) \ll \lambda_{\text{deco}}$ [population relaxation]
 - $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ [code consistent]
@@ -1471,7 +1471,7 @@ For atomic $L_k = |k\rangle\langle k|$: contribution $-\gamma/N$. For Fano $L_p 
 :::info Numerical verification (SYNARC)
 $\kappa_{\text{bootstrap}} = \omega_0/7$ ($= 1/7$ in the $\omega_0 = 1$ units of the test) is verified to $10^{-10}$
 in integration tests (mvp_int_2 G5). The formula $\kappa_0 = \omega_0 \cdot |\gamma_{OE}| \cdot |\gamma_{OU}| / \gamma_{OO}$
-matches `effective_kappa()` in `density7.rs`.
+matches the reference implementation's `effective_kappa()`.
 :::
 
 

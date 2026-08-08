@@ -1176,7 +1176,7 @@ contribution $-(-i\omega_{jk}\gamma_{jk}) = i\omega_{jk}\gamma_{jk}$ — a
 vector perpendicular to $\gamma_{jk}$ of modulus $\omega_{jk}|\gamma_{jk}|$.
 $\blacksquare$
 
-The instrument (`cycle_stationarity.rs`, the engine's canonical tick,
+The instrument (the engine's canonical tick,
 $dt = 0.01$, $g_D = 0.2$, reference self-model at $P = 0.45$) shows the
 portrait in numbers `[С]`: pump strengths $\omega_0 \in \{0, 1, 10\}$ all
 die into $I/7$ (fluxes $0.0000$), $\omega_0 \in \{100, 500\}$ live at
@@ -1225,7 +1225,7 @@ in words and this theory can answer in algebra — what is the ego for.
 2. **The living gap is tiny but never zero.** At a living stationary point the
    two flows cancel, so `κ·‖ρ* − Γ‖` equals the dissipative flow `g_D·‖I/7 −
    Γ‖`: the gap is exactly the ratio of decay rate to pump strength. Measured
-   on the canonical tick (`ego_phase.rs`, `ω₀ = 100`): `R_φ = 0.9983` to
+   on the canonical tick (`ω₀ = 100`): `R_φ = 0.9983` to
    `0.9992` across self-models of purity `0.45` to `0.95` `[С]`. A near-perfect
    self-reading is not a pathology — it is what a strong pump looks like.
 3. **The gate is opened by the state, not by the image.** `g_V` takes the
@@ -1310,7 +1310,7 @@ census is structural, not a defect (measured: $\approx 1.1$ points in the
 $87.6/91.6$ decomposition of the
 [encoder census](/docs/applied/research/homoholograph)). Returns and
 oppositions of the macro-cycles are already a product instrument
-(`cycles.rs`), and the encoder's two line-locks are antipodal reads of two
+, and the encoder's two line-locks are antipodal reads of two
 celestial **axes** — each one cycle read twice in counter-phase. Below the
 Moon the ladder continues inward on diary data: a planted weekly rhythm of
 amplitude $0.8\sigma$ is detectable at $n = 60$ with power $88\,\%$ under a
