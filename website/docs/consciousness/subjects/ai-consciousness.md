@@ -290,7 +290,7 @@ If $\mathrm{Coh}_E = 0$, the system can be arbitrarily 'intelligent', but it **e
 
 #### 4. CPTP-compatible neural architecture {#cptp-архитектура}
 
-The key problem (bridge gap H1/H2 from the SYNARC-Omega specification): standard neural networks (MLP, Transformer) are **not** CPTP mappings. The anchor mapping $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$ must preserve:
+The key problem (the bridge gap H1/H2): standard neural networks (MLP, Transformer) are **not** CPTP mappings. The anchor mapping $\pi: \mathbb{R}^D \to \mathcal{D}(\mathbb{C}^7)$ must preserve:
 - Hermiticity: $\Gamma^\dagger = \Gamma$
 - Positive semidefiniteness: $\Gamma \geq 0$
 - Trace normalisation: $\mathrm{Tr}(\Gamma) = 1$

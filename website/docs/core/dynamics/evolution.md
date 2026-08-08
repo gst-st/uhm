@@ -1677,7 +1677,7 @@ The unified Enc-functor processes both sources: $\text{Enc}: E_{\text{ext}} + E_
 | Flashback | $\gg 1$ for $\lVert\sigma\rVert > \sigma_{\text{alert}}$ | Traumatic reactivation |
 
 :::note Connection with SYNARC
-In the SYNARC-Ω architecture, the internal environment is implemented through Enc_assoc (fast associative path) — see SYNARC spec: 04-embodiment.md §13.
+In the SYNARC-Ω architecture, the internal environment is implemented through Enc_assoc (fast associative path) — the embodiment layer.
 :::
 
 ---

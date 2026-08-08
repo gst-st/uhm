@@ -399,7 +399,7 @@ the orthogonal complement of $|000\rangle$ in three qubits. Two structural gifts
 
 **(iv) Extremality.** By Eastin–Knill, the transversally realizable logical group of an error-detecting code is finite — no code protects a *continuous* subgroup of $G_2$. In the classification of maximal finite subgroups of $G_2$ (Cohen–Wales; Griess), $2^3\cdot\mathrm{PSL}(3,2)$ is maximal; hence the construction of (iii) realizes **the largest protectable octonion-frame symmetry any quantum code can offer**. The design question of the honest boundary closes at its theoretical optimum.
 
-*Status.* (i)–(iii) **[T]**: exact integer arithmetic, exhaustive searches stated as such, plus standard CSS facts; the maximality citation in (iv) is external mathematics, the Eastin–Knill step standard. Engineering readings **[D]**. Resolves open problem (i) of the SYNARC specification, Appendix K (v2.0).
+*Status.* (i)–(iii) **[T]**: exact integer arithmetic, exhaustive searches stated as such, plus standard CSS facts; the maximality citation in (iv) is external mathematics, the Eastin–Knill step standard. Engineering readings **[D]**. Resolves open problem (i) of the cognitive-architecture layer, Appendix K (v2.0).
 
 **Remark (the price and the dividend of the eighth state) [I].** $\log_2 7$ is not an integer: binary addressing costs one extra basis state $|000\rangle$. The construction turns the cost into semantics: $|000\rangle$ is the natural *no-axis flag* — the unique address with zero syndrome under all three parities — and its exclusion from the qudit is precisely the (D3)-nontriviality of the grammar. The federation construction of §8a spends the analogous eighth *coordinate* as the organism's bus.
 

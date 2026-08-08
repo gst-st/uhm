@@ -568,7 +568,7 @@ $$\mathrm{Empathy}(A,B) = 1 - \max_{ij} |\mathrm{Gap}_{AB}(i,j)|$$
 | Adaptive depth | [C] §7.1 A₄-bifurcation | Growth criteria defined | T-41 + T-112 |
 | Stress-dependent $\varphi$ | [T] §7.3, T-92 | 5-mode protocol | hot/warm/cold strategy |
 | Learnable Enc/Dec | [D] §6.1 + T-100/T-101 | trait EnvironmentalCoupling | Neural network implementation |
-| Tower self-organisation | [H] §6.2 | Hypothesis 6.1, awaiting experiment | Exp. 1–3 (§5 SYNARC spec) |
+| Tower self-organisation | [H] §6.2 | Hypothesis 6.1, awaiting experiment | Exp. 1–3 (§5, engineering layer) |
 | Social depth | [C] §7.4, T-68/CC-7 | Formulae defined | Multi-agent testbed |
 
 ---
