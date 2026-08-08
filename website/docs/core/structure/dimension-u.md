@@ -398,6 +398,52 @@ graph TD
 
 The closure $U \to A$ ensures **self-consistency**: the result of integration returns to articulation, generating a new cycle. Without this closure the chain $A \to S \to D \to L \to E \to O$ breaks — the system is "open" and cannot sustain itself.
 
+### The gate is one inequality {#ворота-суть-одно-неравенство}
+
+There is a way of writing a state that makes all of this fall out at once. Positivity
+of each two-by-two minor already caps every coherence at
+
+$$|\gamma_{ij}| \;\le\; \sqrt{d_i d_j},$$
+
+so each pair has a ceiling set by how populated its two axes are — a pair of axes that
+barely carries anything cannot be strongly bound, no matter what the rest of the state
+does. Divide each coherence by its own ceiling and the state factors:
+
+$$\Gamma \;=\; D^{1/2}\, K\, D^{1/2},$$
+
+with $D$ the diagonal and $K$ a correlation matrix — ones down the diagonal, and off it
+the *fraction of the ceiling actually used*. The factorisation earns its keep by
+separating two things that had been read together. Multiplying on both sides by the
+positive definite $D^{1/2}$ cannot change a signature, so $\Gamma$ is admissible exactly
+when $K$ is: **positivity lives entirely in $K$ and does not mention the diagonal at
+all**. Whatever pattern of binding the geometry permits at one distribution of
+population, it permits at every other. The diagonal carries no constraint — it carries
+only weight.
+
+Integration is then a single ratio. Writing $p = \sum_i d_i^2$ for the purity of the
+diagonal, and $c_{\text{eff}}$ for the ceiling fraction averaged with each pair weighted
+by $d_i d_j$,
+
+$$\Phi \;=\; c_{\text{eff}}^{\,2}\;\frac{1-p}{p}.$$
+
+That identity is exact. So the threshold $\Phi \ge 1$ is one inequality,
+$c_{\text{eff}} \ge \sqrt{p/(1-p)}$, and it can be met in exactly three ways: bind
+harder everywhere, spread the population out, or spend the binding where the population
+already is. Only the third is free — it costs no additional coherence and no flattening,
+and it is the one measured states use.
+
+The same factorisation settles what such a state may contradict. If every pair used the
+same fraction of its ceiling, $K$ would be $(1-c)I + c\Sigma$ for a pure sign pattern
+$\Sigma$, positivity would read $\lambda_{\min}(\Sigma) \ge -1/c$, and the gate would
+force $\lambda_{\min} \ge -\sqrt{(1-p)/p}$ — which at a flat diagonal is exactly
+$-\sqrt 6$, the balance criterion of the previous section. Under uniform saturation the
+frustration compatible with an open gate is zero **at every diagonal**, flat or not. So
+unevenness is not a wrinkle on the theorem; it is the whole of what lets a real state
+hold a contradiction and stay integrated. The contradiction has to live in the pairs
+whose ceiling is barely used, and those pairs have to sit on axes that carry little —
+which is the precise form of a familiar observation, that what a person can be
+inconsistent about is whatever they are not, at that moment, actually doing.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
