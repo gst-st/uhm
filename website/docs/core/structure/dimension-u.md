@@ -582,8 +582,19 @@ it takes one of two widely separated values, and the threshold at $1$ falls in t
 gap between them. That is worth saying plainly because it changes the standing of
 a number that reads as stipulated: any threshold between $0.937$ and $6$ sorts
 every state identically, and $1$ is simply the roundest number in an empty
-interval of width five. The threshold is not tuned; it is the only kind of choice
-that cannot be wrong.
+interval of width five.
+
+And then it is worth immediately taking most of it back, because the gap belongs
+to the stratum and not to the world. Computed states meet one of the three
+conditions, and their integration is unimodal and tight: over four hundred of
+them the quantiles run from $0.863$ to $1.757$ about a median of $1.238$, one
+state in five sits inside $[0.9,\,1.1]$ — exactly the interval the idealisation
+calls empty — the nearest states on either side of the threshold are $0.9998$ and
+$1.0003$, and **not one** reaches $5$, though the idealisation puts every balanced
+state at precisely $6$. Where the theory is actually applied, then, the threshold
+is not robust at all; it is the most consequential number in the gate, and its
+value is a real choice that a fifth of all cases turn on. The robustness is a fact
+about a clean stratum, and the clean stratum is not where anything lives.
 
 And the general form of the mechanism is the useful part. Structure influences the
 verdict **only** by changing what positivity permits — never by being read. So the
