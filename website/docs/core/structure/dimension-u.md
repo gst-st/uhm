@@ -602,6 +602,40 @@ check the previous section handed over has a sharper version: to show that some
 structure moves a gate, show that it changes the ceiling. If it does not change
 the ceiling, it does not reach the verdict at all.
 
+### What each instrument can see {#что-видит-каждый-прибор}
+
+The last three sections read like an indictment, and they are not one. The gate is
+coarse; the theory is not the gate. It is worth laying the whole suite out, because
+once each observable is read off its own definition the map is exact and it can be
+used.
+
+| instrument | what it reads | numbers |
+|---|---|---|
+| $P$, $R$ | $s_1+s_2$ | 1 |
+| $\Phi$ | adds $s_2/s_1$ | +1 |
+| $\mathrm{Coh}_E$, $D$ | adds $s_3$ | +1 |
+| **the verdict** $P \wedge R \wedge \Phi \wedge D$ | **these three and nothing else** | **3** |
+| $C = \Phi R$ | the same three | +0 |
+| stress $\sigma$ | the seven diagonal entries, one by one | +6 |
+| gap, pairwise moduli | the twenty-one binding magnitudes | +21 |
+| line holonomies | seven independent phase invariants | +7 |
+| **the whole suite** | | **34** |
+
+A state carries forty-eight numbers, six of which are pure gauge and mean nothing,
+so forty-two are real. The verdict reaches three of them — **seven per cent**. The
+suite reaches thirty-four — **eighty-one per cent**. Both figures matter and they
+say opposite things: a system can pass every viability test while differing wildly
+from another that also passes, and yet the theory is perfectly able to tell the two
+apart if it is asked with the right instrument.
+
+What no instrument reaches is small enough to name exactly. The cycle space of the
+complete graph on seven axes has dimension fifteen; the seven canonical lines span
+seven of it; **eight triangle holonomies are covered by no line and read by
+nothing**. That is the honest size of the dark region, and it is a specification
+rather than a complaint: an instrument that read those eight would be reading
+something genuinely new, and one that claims to read structure while computing only
+sums is reading nothing at all.
+
 ## Connection with consciousness
 
 The consciousness measure $C = \Phi \times R$ **[Т T-140]** (definition see [self-observation](/docs/consciousness/foundations/self-observation#мера-сознательности-c)). Differentiation $D_{\text{diff}} \geq D_{\min}$ is a separate viability condition.
