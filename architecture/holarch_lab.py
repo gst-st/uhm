@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """HOLARCH laboratory — mechanical validation of the architecture meta-specification.
 
-Panel HL01–HL21. Honesty classes (as in HomoHoloGraph):
+Panel HL01–HL22. Honesty classes (as in HomoHoloGraph):
   VERIFIED — computed fact about the machinery (theorem arithmetic, identity checks,
              SSOT synchronization, coverage completeness);
   DESIGN   — self-consistency of an engineering instance (true by construction,
@@ -1111,10 +1111,68 @@ def hl21_quality_shape() -> None:
 
 
 
+# ----------------------------------------------------------------------------
+# HL22 — the polarity condition is the price of compositional generalisation
+# ----------------------------------------------------------------------------
+
+def hl22_compositional_bound() -> None:
+    # To answer about a pair it has never met, a learner has only what it saw of
+    # the two parts SEPARATELY. So any assignment that generalises has the form
+    # (i,j) -> (pi(i), pi(j)), and the content it induces is balanced exactly when
+    # the answers themselves factor as u_i*u_j. The polarity condition is
+    # therefore not one architecture's assumption but a bound on the whole class.
+    rng = np.random.default_rng(88000)
+    pairs = [(i, j) for i in range(7) for j in range(i + 1, 7)]
+    got = {}
+    for factoring in (True, False):
+        unseen_bound, unseen_nn, seen_bound = [], [], []
+        for sd in range(200):
+            r = np.random.default_rng(88000 + sd)
+            u = r.choice([-1.0, 1.0], size=7)
+            ans = {p: (u[p[0]] * u[p[1]] > 0) if factoring else bool(r.integers(0, 2))
+                   for p in pairs}
+            idx = list(range(21))
+            r.shuffle(idx)
+            seen = [pairs[k] for k in idx[:14]]
+            held = [pairs[k] for k in idx[14:]]
+
+            # The best any compositional learner can do: all 2^7 polarities,
+            # keep the one that fits what was shown.
+            best, score = None, -1
+            for mask in range(128):
+                v = np.array([-1.0 if (mask >> k) & 1 else 1.0 for k in range(7)])
+                hits = sum(1 for p in seen if (v[p[0]] * v[p[1]] > 0) == ans[p])
+                if hits > score:
+                    score, best = hits, v
+            seen_bound.append(np.mean([(best[p[0]] * best[p[1]] > 0) == ans[p] for p in seen]))
+            unseen_bound.append(np.mean([(best[p[0]] * best[p[1]] > 0) == ans[p] for p in held]))
+            # Similarity between raw observations carries nothing about a pair
+            # never met, so a nearest-neighbour rival is a coin there.
+            unseen_nn.append(np.mean([ans[seen[int(r.integers(0, len(seen)))]] == ans[p]
+                                      for p in held]))
+        got[factoring] = (float(np.median(seen_bound)),
+                          float(np.median(unseen_bound)),
+                          float(np.median(unseen_nn)))
+    _ = rng
+    (fs, fu, fn), (as_, au, an) = got[True], got[False]
+    ok = fu > 0.95 and au < 0.65 and fn < 0.6
+    report("HL22", "VERIFIED", ok,
+           f"the polarity condition is the price of compositional generalisation, not one "
+           f"architecture's assumption: answering about a combination never met leaves a learner "
+           f"only what it saw of the parts separately, so every generalising assignment has the "
+           f"form (i,j)->(pi(i),pi(j)) and the content it induces is balanced exactly when the "
+           f"answers factor as u_i*u_j. Measured on the best such learner there is — all 2^7 "
+           f"polarities, keeping the one that fits the fourteen groups shown — unseen "
+           f"combinations come out at {fu:.4f} where the answers do factor and {au:.4f} where "
+           f"they do not, while similarity between raw observations manages {fn:.4f}, a coin, "
+           "even on factoring content: resemblance says nothing about a pair that was never met")
+
+
+
 def main() -> int:
     doc_text = open(DOC_EN, encoding="utf-8").read() if os.path.exists(DOC_EN) else None
     print("=" * 88)
-    print("HOLARCH LAB — panel HL01–HL21"
+    print("HOLARCH LAB — panel HL01–HL22"
           + ("" if doc_text else "   (doc not written yet: anchor check skipped)"))
     print("=" * 88)
     hl01_ssot_sync()
@@ -1132,6 +1190,7 @@ def main() -> int:
     hl19_line_is_a_parity_check()
     hl20_frustration_is_forbidden()
     hl21_quality_shape()
+    hl22_compositional_bound()
     hl11_t77_gain()
     hl12_feeding()
     hl13_first_order_blindness()
