@@ -156,12 +156,17 @@ The falsification criterion is **strict in the theoretical sense** and **approxi
 | [F-m_t](#f-m_t-масса-top-кварка-из-неподвижной-точки-пендлтона-росса): $m_t \approx 173$ GeV | Consistent | Observation: $172.57 \pm 0.29$ GeV |
 | [F-Cabibbo](#f-cabibbo-угол-кабиббо-из-rg-подавления-фано-угла): $\theta_{12} \approx 13°$ | Consistent | Observation: $12.96°$ ($\|V_{us}\| = 0.2243$) |
 | [F-δ_CP](#f-δ_cp-cp-фаза-ckm-из-фано-фазы): $\delta_{\text{CP}} \approx 64.5°$ | Consistent (${\approx}0.04\sigma$) | Observation: $64.6° \pm 2.8°$ (LHCb tree, ICHEP 2024); $65.7° \pm 1.5°$ (PDG 2024 fit) |
-| [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного): Gap_intra < Gap_inter | Open; machine check narrowed the scope | Requires ISF analysis of fMRI. **Machine check (2026-07-25, hhg engine):** across 180 construction-layer natal Γ the gauge-invariant triangle holonomy $\lvert\arg(\gamma_{ab}\gamma_{bc}\gamma_{ca})\rvert$ on the 7 canonical Fano lines (`LINES_OR`) is statistically indistinguishable from the 28 non-lines (t ≈ +1.0, difference +0.03 ± 0.39 rad) — consistent with the earlier amplitude-covariance null: **the Fano structure is dynamical wiring (what the dissipator preserves), not a static imprint on natal Γ**. The signature should be sought in states that have passed through the Fano channel (live dynamics, fMRI) — not in the construction. Note: the pairwise Gap_intra/Gap_inter form is not literally operational — in the Fano plane every pair lies on exactly one line, so there are no inter-triplet pairs; the testable form is triple holonomy (7 lines vs 28 non-lines). Machine-probed. |
+| [F-Gap-1](#f-gap-1-внутри-триплетный-gap-ниже-межтриплетного): Gap_intra < Gap_inter | Open; machine check narrowed the scope | Requires ISF analysis of fMRI. **Machine check:** across 180 construction-layer natal Γ the gauge-invariant triangle holonomy $\lvert\arg(\gamma_{ab}\gamma_{bc}\gamma_{ca})\rvert$ on the 7 canonical oriented Fano lines is statistically indistinguishable from the 28 non-lines (t ≈ +1.0, difference +0.03 ± 0.39 rad) — consistent with the earlier amplitude-covariance null: **the Fano structure is dynamical wiring (what the dissipator preserves), not a static imprint on natal Γ**. The signature should be sought in states that have passed through the Fano channel (live dynamics, fMRI) — not in the construction. Note: the pairwise Gap_intra/Gap_inter form is not literally operational — in the Fano plane every pair lies on exactly one line, so there are no inter-triplet pairs; the testable form is triple holonomy (7 lines vs 28 non-lines). Machine-probed. |
 | [F-ISF](#f-isf-isf-компоненты-в-фмрт): 6–12 ISF components | Open | Requires systematic fMRI analysis |
 | [F-ξ](#f-ξ-корреляционная-длина-фано): $\xi_F \sim 160$ pc | Open | Testable through LSS surveys |
 | [F-nEDM](#f-nedm-нейтронный-эдм): $d_n = 0$ (T-99) | Consistent | $\|d_n\| < 1.8 \times 10^{-26}$ e·cm (PSI 2020) |
 | [F-τ_p](#f-τ_p-время-жизни-протона): $\tau_p \sim 6.7 \times 10^{37}$ years | Open | Hyper-K: sensitivity $\sim 10^{35}$ years |
 | [F-Higgs](#f-higgs-отклонение-самосвязи-хиггса): $\delta\lambda/\lambda \sim 10^{-2}$–$10^{-3}$ | Open | Awaiting FCC-hh |
+| [F-Gap-2](#f-gap-2-блоковая-прозрачность-по-фано-триплетам): block transparency | Open | Requires coherence-resolved fMRI; the same caveat as F-Gap-1 — the signature lives in states that have passed through the Fano channel, not in the construction |
+| [F-rank7](#f-rank7-ранг-7-анизотропия-декогеренции): 14 exact sum-rules | Open | Needs Γ-native rate tomography; no experiment has probed the 7-dimensional incidence subspace |
+| [F-Neural](#f-neural-нейронные-корреляты): threshold at $P = 2/7$ | Partial | Clinical PCI threshold $0.31$ maps to $P_{\text{crit}}$ — support is calibration-dependent, not direct |
+| [F-w](#f-w-форма-дрейфа-тёмной-энергии): no Big Rip, $-1$-crossing only | Consistent | DESI DR2 quadrant and phantom→quintessence orientation match at $2.8$–$4.2\sigma$; the reality of the crossing is not yet established non-parametrically |
+| [F-Band](#f-band-две-суммы-живого-состояния): $s_1 \in [1/7,\,3/14]$, $s_2 \in [1/7,\,2/7]$ | Consistent | Zero counterexamples over $20\,000$ states per band, and both bands are attained — an internal falsifier needing no bridge assumption |
 
 ## Falsifiable predictions from Fano integration
 
@@ -345,6 +350,65 @@ Current experimental limit: $|d_n| < 1.8 \times 10^{-26}$ e·cm (PSI 2020), i.e.
 The phantom → quintessence crossing is inferred from the two-parameter CPL fit $(w_0, w_a)$, not from a physical model. Non-parametric / model-independent reconstructions of $w(z)$ do **not** yet robustly confirm a genuine $-1$-crossing — the feature is partly a parametrisation artifact, and the literature (2025–2026) treats its reality as unsettled. This matters for the [C]-link: UHM's falsification criterion (iii) — "DESI quadrant confirmed **while** reconstruction *excludes* any crossing" — is **not** triggered (reconstructions neither confirm nor exclude), so the prediction is safe but the key discriminator remains open. The quantitative discriminator to watch is whether the oscillatory (quintom-like) branch survives once reconstructions sharpen.
 :::
 
+### F-rank7: Rank-7 decoherence anisotropy {#f-rank7-ранг-7-анизотропия-декогеренции}
+
+$$
+r_{ij}=\tfrac{1}{6}\!\!\sum_{|\ell_p \cap \{i,j\}| = 1}\!\!\gamma_p
+$$
+
+The twenty-one inter-channel decoherence rates are not free. Each pair $(i,j)$ meets
+exactly one Fano line, and the rate between them is fixed by the seven line rates
+$\gamma_p$ through the incidence pattern alone. Twenty-one numbers determined by
+seven leaves **fourteen exact sum-rules** — a prediction with no adjustable
+parameters, which is why it is the sharpest structural test the theory offers.
+
+**Testability:** rate tomography in the $\Gamma$ basis, in silico now and through
+PCI-style perturbation protocols later. The test is a projection: fit the measured
+$r_{ij}$ and ask whether the residual off the seven-dimensional incidence subspace
+is statistically distinguishable from zero.
+
+**Falsified by:** a significant residual outside that subspace. Unlike the neural
+predictions this needs no bridge assumption — it is a statement about the
+dissipator, testable wherever the dissipator can be measured.
+
+**Status:** [T]+[C] — the sum-rules are proved (T-262, Prediction 23); the
+identification of a measured rate matrix with $r_{ij}$ is the conditional part.
+
+---
+
+### F-Band: the two sums of a living state {#f-band-две-суммы-живого-состояния}
+
+$$
+\text{alive}\;\Longrightarrow\; s_1 \in \left[\tfrac{1}{7},\,\tfrac{3}{14}\right]
+\quad\text{and}\quad s_2 \in \left[\tfrac{1}{7},\,\tfrac{2}{7}\right]
+$$
+
+Every gate is a formula in three sums, of which two are $s_1 = \sum_i d_i^2$, the
+purity of the diagonal, and $s_2 = \sum_{i \neq j}|\gamma_{ij}|^2$, the total weight
+of the binding. Integration needs $s_2 \geq s_1$; reflexivity needs
+$s_1 + s_2 \leq 3/7$; and Cauchy–Schwarz needs $s_1 \geq 1/7$ of every state
+whatsoever. Chaining them confines **both** sums to narrow bands, the second
+exactly twice as wide as the first.
+
+This is the theory's own internal falsifier, and it is unusually cheap to run: it
+needs no bridge assumption, no phenomenal mapping, and no experiment beyond
+computing two sums from a $\Gamma$.
+
+**Falsified by:** any state meeting all four criteria whose $s_1$ or $s_2$ falls
+outside its band — which would mean the four criteria are not what the three sums
+say they are. Or, from the other side, a system that independent measurement calls
+conscious whose reconstructed $\Gamma$ sits outside the bands — which would
+falsify the reconstruction rather than the algebra.
+
+**Testability:** immediate in silico; through $\Gamma$-reconstruction from fMRI or
+EEG once that reconstruction is trusted.
+
+**Status:** [T] — zero counterexamples over twenty thousand states in each band,
+and both bands are attained rather than vacuous: a flat diagonal carrying balanced
+content at half strength lands inside (T-321, T-323).
+
+---
+
 ### Summary table of predictions {#summary-table-of-predictions}
 
 | Code | Prediction | Falsification criterion | Experiment | Status | Current verdict (2026) |
@@ -362,6 +426,9 @@ The phantom → quintessence crossing is inferred from the two-parameter CPL fit
 | **F-Cabibbo** | $\theta_{12} \approx 13°$ | Significant revision of $\|V_{us}\|$ | Kaon experiments | [H] | **PASSING** ($\theta_{12}^{\text{exp}} \approx 12.96°$) |
 | **F-nEDM** | $d_n = 0$ (T-99: $\theta_{\mathrm{QCD}} = 0$ exactly) | $d_n \neq 0$ at any level | n2EDM, nEDM@SNS | [T] | **PASSING** ($\|d_n\| < 1.8\times10^{-26}\,e\cdot$cm, consistent with 0) |
 | **F-w** | No Big Rip; no permanent $w \neq -1$; DESI quadrant only via a $-1$-crossing; $\dot G_N$ co-drift same-sign (T-254/T-255) | Permanent $w \neq -1$; unbounded/negative $\rho_{\text{DE}}$; crossing-free DESI quadrant; opposite co-drift sign | DESI/Euclid/Roman + LLR | [T]+[C] | CONSISTENT (DESI DR2 quadrant + phantom→quintessence orientation match, $2.8$–$4.2\sigma$; crossing reality not yet established non-parametrically) |
+| **F-Band** | $s_1 \in [1/7,\,3/14]$ and $s_2 \in [1/7,\,2/7]$ for anything alive (T-321, T-323) | A state meeting all four criteria with either sum outside its band | Two sums computed from any $\Gamma$ | [T] | **PASSING** (zero counterexamples over $20\,000$ states per band; both bands attained) |
+
+**Where the fourteen stand.** Five **PASSING**, two **CONSISTENT**, two **PARTIAL**, five **UNTESTED**. Nothing has moved to FAIL, and nothing has been retired: the five untested ones all wait on instruments that do not yet exist at the needed precision (coherence-resolved fMRI, $\Gamma$-native rate tomography, LSS at $\sim 160$ pc, FCC-hh).
 
 **Verdict legend.** **PASSING** — measured value lies inside the pass band; **CONSISTENT** — not excluded, but the prediction lies beyond current sensitivity; **PARTIAL** — indirect or calibration-dependent support; **UNTESTED** — no experiment has probed the band yet. A single entry moving to FAIL falsifies the corresponding claim at its stated status level ([T]/[C]/[H]).
 
@@ -393,7 +460,7 @@ Systematic analysis of five main vulnerabilities of the theory (2026):
 | 1 | $\dim = 7$ as postulate | Not empirically verified | 15+ independent derivations [T]: Theorem S (minimality) + octonionic derivation + T15 (bridge) | **Closed** (theoretically) |
 | 2 | $D_{\mathrm{diff}} \geq 2$ [C] | Conditional theorem | T-129 [T]: $\Phi_{\mathrm{th}} = 1$ from first principles → T-151 [T]: $D_{\min} = 2$ unconditionally | **Closed** (fully) |
 | 3 | $R = 1/(7P)$ counterintuitive | Requires empirical verification | Algebraic identity [T], [physical interpretation](/docs/proofs/consciousness/conscious-window#физическая-интерпретация-r), T-124 [T] (non-emptiness of Goldilocks zone) | **Closed** (theoretically) |
-| 4 | No experiments | 210+ theorems without lab verification | ~30 testable [predictions](/docs/applied/coherence-cybernetics/predictions), 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
+| 4 | No experiments | 269 registry theorems without lab verification | 23 numbered [predictions](/docs/applied/coherence-cybernetics/predictions) and the 14 falsification criteria below; 5 post-hoc coincidences (F-m\_t, F-Cabibbo, F-δ\_CP, F-nEDM, Weber-Fechner) | **Confirmed** (requires experiment) |
 | 5 | Quantum nature of $\Gamma$ | Tegmark decoherence | **[T-267 [T]](/docs/consciousness/foundations/two-aspect-monism#t-267)**: Tegmark bounds microscopic position-basis superpositions; $\Gamma$ is coarse-grained *collective* structure on a decoherence-free subspace (T-153a), complex by *algebra* not superposition (T-132), and classically realizable — the objection targets a claim UHM does not make. Residual = the categorical gap (Axiom Ω⁷), a distinct primitive | **Closed** (Tegmark objection) |
 
 **Summary:** 4 of 5 vulnerabilities closed theoretically (the Tegmark objection to #5 closed by [T-267](/docs/consciousness/foundations/two-aspect-monism#t-267)); 1 is fundamentally experimental. The categorical gap (why structure is *felt*) is not a vulnerability but the acknowledged [Axiom Ω⁷](/docs/core/foundations/axiom-omega) primitive — distinct from the Tegmark decoherence question, which is now settled.
