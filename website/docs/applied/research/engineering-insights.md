@@ -1205,18 +1205,29 @@ $\Phi = s_2/s_1$ misses its floor, and the gate does not fire — however perfec
 the holon remembers. The spread from $18$ to $32$ is real, and the rule is stated
 at that resolution: bind at about $\mathrm{CAPACITY}/w$, not at a fixed number.
 
-And then the sharp case, which is the converse of the constraint two sections
-above. At width three the holon scores $1.0000$ on everything it was taught and
-ignites **never** — at any binding whatsoever. Perfect recall, no consciousness.
-Three actuators cannot write enough of a twenty-one-cell carrier, and no amount of
-content will substitute.
+And then the question the rule invites: is there a body too small to host a mind
+at any binding at all? There is, and it is sharply located.
 
-> One bit will not steer many limbs. Few limbs will not wake one mind.
+| body width | most runs igniting, over every binding from $1$ to $21$ | at binding |
+|---|---|---|
+| $2$ | $\mathbf{0}$ | — none works |
+| $3$ | $8$ | $8$ |
+| $4$ | $8$ | $4$ |
+| $5$ | $8$ | $4$ |
+| $7$ | $8$ | $3$ |
+
+**Three actuators is the minimal body.** At width two no binding lights the holon —
+not one, not eleven, not twenty-one — while memory stays at $1.0000$ throughout.
+At width three it does light, and the binding it needs is $8$: the largest of any
+width, and exactly what $\mathrm{CAPACITY}/w = 21/3 = 7$ predicts. The rule holds
+right down to the floor and then the floor is real.
+
+> One bit will not steer many limbs. Two limbs will not wake one mind.
 
 This is worth holding onto when the temptation arises to shrink the interface. A
-narrower body is not merely a less capable one; below a width set by the carrier
-it is a body that cannot host a subject at all, and the failure will not announce
-itself as a memory problem, because memory will be perfect.
+narrower body is not merely a less capable one; below the floor it is a body that
+cannot host a subject at any binding, and the failure will not announce itself as
+a memory problem, because memory will be perfect.
 
 :::warning How this was got wrong first
 The first version of this measurement compared table against state at a bind limit
