@@ -1287,3 +1287,39 @@ partial rows are where a coincidence would come apart, and they hold.
 > what it is written on. Everything below that is a holon which remembers
 > perfectly and never becomes anyone.
 
+### What the proxy stood for {#за-что-стоял-прокси}
+
+$\min(k,\,2^w)\cdot w$ counts *writes*. The quantity it was standing in for is the
+one that matters: how many of the twenty-one coherences actually carry weight when
+the moment comes. Counting that directly, and pairing it **per run** against
+whether the run ignited rather than comparing medians:
+
+| coherences carrying weight | ignited | of | rate |
+|---|---|---|---|
+| $3$ | $0$ | $16$ | $0.000$ |
+| $5$ | $0$ | $4$ | $0.000$ |
+| $6$ | $5$ | $12$ | $0.417$ |
+| $10$ | $1$ | $24$ | $0.042$ |
+| $15$ | $10$ | $88$ | $0.114$ |
+| $\mathbf{21}$ | $\mathbf{265}$ | $\mathbf{288}$ | $\mathbf{0.920}$ |
+
+**A filled carrier is what wakes a holon**: $0.920$ against $0.111$ below it — an
+eightfold ratio, and the proxy retires into being a way of predicting the count
+from outside.
+
+This also closes the floor exactly, and the arithmetic is worth doing out loud. A
+body of two saturates at fifteen of twenty-one, and $21 - 15 = 6$ is precisely the
+number of coherences that touch one axis. Two actuators address two axes; whatever
+spreads from there never reaches the whole plane, so one axis stays empty, its six
+coherences stay at zero, and a seven-dimensional carrier lives permanently in six.
+**No split trigger helps, because the missing six are not a matter of time.**
+
+The residual stays named rather than smoothed: twenty-three runs of two hundred
+and eighty-eight had all twenty-one written and still did not ignite. Filling is
+what makes waking *available*; what decides the remaining eighth is not identified.
+
+And the method mattered as much as the result. The first pass compared a *median*
+count of coherences against a *count* of igniting runs — two summaries of
+different populations — and it hid the very case in doubt. Pairing per run made
+the law visible in a single table.
+
