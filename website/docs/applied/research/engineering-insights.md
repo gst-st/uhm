@@ -1190,7 +1190,7 @@ The threshold above was measured at one body size, and a number measured at one
 size is a number waiting to be misread. Swept against the width of the body it
 turns out not to be a constant at all.
 
-| body width | binding at which ignition becomes reliable | product |
+| body width | split trigger at which ignition becomes reliable | product |
 |---|---|---|
 | $3$ | $8$ | $24$ |
 | $6$ | $3$ | $18$ |
@@ -1204,6 +1204,16 @@ $w$ cells per situation; until enough coherences carry weight, $s_2$ is small,
 $\Phi = s_2/s_1$ misses its floor, and the gate does not fire — however perfectly
 the holon remembers. The spread from $18$ to $32$ is real, and the rule is stated
 at that resolution: bind at about $\mathrm{CAPACITY}/w$, not at a fixed number.
+
+The quantity being swept deserves its right name, because its usual one misleads.
+It is not "situations per holon" — nothing caps how many a holon may hold. It is
+the **split trigger**: a leaf carrying that many contexts stops being a leaf and
+becomes a router with children. So a leaf accumulates about $k \cdot w$ written
+cells before it splits, which is why the product governs ignition and why it sits
+near the carrier's capacity. **Ignition is not about how much a holon knows but
+about how long it is left alone to fill.** A tree that splits eagerly is a tree of
+holons none of which ever gets written enough to wake.
+
 
 And then the question the rule invites: is there a body too small to host a mind
 at any binding at all? There is, and it is sharply located.
