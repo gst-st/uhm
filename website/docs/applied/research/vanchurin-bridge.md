@@ -762,7 +762,10 @@ UHM in it says otherwise, on both sides of the Langevin split. The
 noise side: neutral Wright–Fisher resampling of $M$ individuals over
 $d$ types has increment covariance exactly
 $(\operatorname{diag}p-pp^{\!\top})/M$ — the tangent-space **inverse
-Fisher metric**, so his own criterion (7.5) reads $a=1$ identically,
+Fisher metric** (a fact with a classical address: Antonelli–Strobeck
+1977 already described genetic drift as diffusion in exactly this
+geometry, the simplex becoming a Fisher sphere of radius two), so his
+own criterion (7.5) reads $a=1$ identically,
 with $1/M$ as the sole constant (simulated at $d=3$, $M=10^5$: pooled
 shape to $1.9\%$, quasi-static window to $6.4\%$ = sampling error,
 Mauchly $506$ against the spherical prediction's critical $5.99$). The
@@ -772,6 +775,8 @@ metric (Shahshahani 1979; Hofbauer–Sigmund 1998). Whatever realises
 $a=0$ or $a=\tfrac12$ in biology must therefore *break* the
 multinomial character of reproduction noise — a positive, checkable
 question about mechanism rather than a preference among exponents.
+The algebra on both sides is half a century old; the new content is
+only the collision it creates inside [V2]'s own classification.
 The thirty-line simulation is
 [`wf_toy_a1.py`](/instruments/wf_toy_a1.py).
 
