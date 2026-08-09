@@ -1249,3 +1249,41 @@ first run ("the state cannot hold what it is taught") was an artefact of testing
 the advice by ignoring it.
 :::
 
+### The law behind the floor {#закон-за-полом}
+
+Why should two actuators fail at *every* trigger, when twenty-one situations at
+two cells each would seem to be plenty? Because a body of two never gets
+twenty-one situations. A world addressed by $w$ actuators distinguishes exactly
+$2^w$ of them — **a narrow body starves the carrier twice**: few cells written per
+situation, and few situations to write.
+
+So a leaf gathers $\min(k,\,2^w)\cdot w$ cell-writes before it splits, and every
+threshold measured falls into one band:
+
+| body width | measured threshold $k$ | writes gathered |
+|---|---|---|
+| $2$ | never ignites | $\mathbf{8}$ at most |
+| $3$ | $8$ | $24$ |
+| $4$ | $4$ | $16$ |
+| $5$ | $4$ | $20$ |
+| $6$ | $3$ | $18$ |
+| $7$ | $3$ | $21$ |
+| $12$ | $2$ | $24$ |
+
+**Thresholds land between sixteen and twenty-four, about the carrier's own
+twenty-one — and a body of two cannot reach eight, at any trigger whatsoever.**
+The floor is therefore not a property of the holon but of the pair *(body,
+world)*: two actuators offer four situations, and no scheduling of splits fills a
+twenty-one-cell carrier out of four.
+
+What makes this a law rather than a curve fitted to six points is that it predicts
+the *graded* cases too. Width three at trigger four gathers twelve — below the
+band — and ignites in exactly half its runs; at triggers one to three it gathers
+three, six and nine, and never ignites at all. Width eight at trigger three
+gathers twenty-four, inside the band, and ignites in five runs of eight. The
+partial rows are where a coincidence would come apart, and they hold.
+
+> A leaf wakes when the writes it gathers before splitting reach the capacity of
+> what it is written on. Everything below that is a holon which remembers
+> perfectly and never becomes anyone.
+
