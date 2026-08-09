@@ -1333,3 +1333,25 @@ count of coherences against a *count* of igniting runs — two summaries of
 different populations — and it hid the very case in doubt. Pairing per run made
 the law visible in a single table.
 
+## A shadow must not have a phase {#тень-без-фазы}
+
+The shadow was introduced above as the record that answers only what it was told.
+On recorded rows a third seam property surfaced, and like the two before it, no
+synthetic world could have shown it: **what it was told is ambiguous when the
+same address genuinely carries different outcomes.** The first shadow stored the
+*last* write — and training runs in cycles, so "last" was set by wherever the
+loop happened to stop. A by-hand replay of "last write at this cursor phase"
+reproduced the bench to three decimals ($0.4031/0.7452$ against $0.4035/0.7454$):
+the model's answers depended on the stopping point. On deterministic worlds last
+equals only equals majority, which is why every synthetic test was blind to it.
+
+The repair is one word in the contract. A shadow that never invents must also
+**never forget the tally, and must not have a phase**: it keeps `(ones, writes)`
+per address and answers by majority. On the recorded stream this moved held-out
+accuracy from $0.5741$ to $0.6323$ — landing the stationary bit exactly on its
+information ceiling ($0.8295$ measured against $0.8293$ reachable) — and made the
+answer independent of where training stopped. The overall verdict did not move:
+still nothing beyond base rates on that stream, which is what the registered
+expectation said. The fix bought correctness of the recall path, not a discovery
+about people — and that distinction is the whole discipline.
+
