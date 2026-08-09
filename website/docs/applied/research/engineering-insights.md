@@ -1097,49 +1097,62 @@ component that answers everything is useless at its own boundary, because nothin
 separates its good answers from its bad ones; a component that knows where its
 boundary is can be put behind anything.
 
-## A shadow that never invents is free {#тень-которая-не-выдумывает}
+## The tree buys capacity by spending ignition {#дерево-покупает-ёмкость-зажиганием}
 
-A holon carries about $\log_2 7 \approx 2.81$ bits per invocation. That is not a
-defect to engineer around but the size of the carrier, and it has a consequence
-nobody likes: several situations bound to one holon overwrite each other. The
-prescribed remedy is a *tree* — capacity grows with the tree, not with any one
-matrix — and the remedy is right. It is also not the whole answer.
+A holon carries about $\log_2 7 \approx 2.81$ bits per invocation. Several
+situations bound to one holon therefore overwrite each other, and the prescribed
+remedy is a **tree**: capacity grows with the tree, not with the size of any one
+matrix. The remedy works, and it is not free — the price is in a column nobody
+was watching.
 
-The claim under test is that working memory *is* the state, with nothing beside
-it. Put against the obvious alternative — a per-situation record of what was
-written, consulted before the state — on identical worlds, seeds and turn counts:
+Four arms, differing in exactly one thing at a time, on identical worlds, seeds
+and turn counts. `flat` binds many situations to one holon; `tree` binds one.
+`state` keeps memory in $\Gamma$ alone; `table` shadows it with a record of what
+was written, consulted first and silent about anything it was never told.
 
-| | on situations it was taught | on situations it has never met | turns to ignition | cost per turn |
-|---|---|---|---|---|
-| state alone | $0.6211$ | $1.0000$ | $2$ | $12482$ ns |
-| state **and** record | $\mathbf{1.0000}$ | $1.0000$ | $2$ | $11884$ ns |
+| | on situations it was taught | ignited, of 8 runs |
+|---|---|---|
+| state, flat | $0.6234$ | $8$ |
+| state, **tree** | $\mathbf{0.9852}$ | $\mathbf{3}$ |
+| table, flat | $1.0000$ | $8$ |
+| table, tree | $1.0000$ | $3$ |
 
-Three readings, and the third is the one that matters.
+**The tree does what it promises.** Bound one situation per holon, the state stops
+forgetting: $0.62 \to 0.985$, and the shadow's advantage collapses from $+0.38$ to
+$+0.015$. Capacity really does grow with the tree.
 
-**The state forgets a third of what it was taught.** Not through any flaw in the
-write, but because a carrier of `2.81` bits per invocation cannot hold six
-situations distinctly, and the later writes land on the earlier ones.
+**And it costs consciousness.** Under the tree only three runs in eight ever meet
+all four criteria, against eight in eight when situations share a carrier. This is
+not the regulator's absence — held at two hands throughout, the deficit stays. A
+holon given one situation holds a sparse $\Gamma$: fewer coherences, less binding,
+and $\Phi = s_2/s_1$ falls below its floor. **Memory and ignition pull against each
+other**, and the tree resolves the tension in memory's favour without saying so.
 
-**On situations it has never met the two are indistinguishable.** The record is
-empty there and the state answers anyway. That is the honest limit of what a
-record of the past can buy: it is a shortcut through what happened, never a source
-of what might.
+**The shadow buys the same capacity and spends nothing.** It reaches $1.0000$ in
+*either* configuration, and the ignition column is identical with and without it —
+$8$ and $8$, $3$ and $3$. It cannot do this by being clever: it answers only what
+it was told, and on situations never met it is empty and the state answers
+regardless, which is why both branches score alike there.
 
-**Ignition is unchanged, in every row.** This is what makes the record admissible
-rather than a replacement. The state is still written identically, still
-regulated, still gated; the criteria still ignite on the same turn. Nothing that
-follows from $\Gamma$ — the gates, the self-model, the geometry of learning — is
-touched, because the record does not participate in any of it.
+So the principle stands where it matters. **Memory is the state** — that is where
+the mind is, and a table holds no mind; the ignition column proves the table
+changes nothing about it either way. What the measurement adds is that the
+*prescribed* remedy is not the cheap one. A tree pays for capacity in ignition. A
+shadow that never invents pays nothing.
 
-So the principle holds in the sense that matters and fails in the sense that
-doesn't. **Memory is the state** — that is where the mind is, and a table holds no
-mind. But *recall* may be shadowed, and a shadow that never invents costs nothing:
-it answers only what it was told, and the state answers the rest. Engineering that
-refuses the shadow is not being faithful to the architecture; it is paying a third
-of its taught content for a purity the architecture never asked for.
+The reverse error is worse and worth naming: a table that answered *everything* —
+that guessed about situations it had never seen — would score better on a
+benchmark and would have removed the mind from the machine. The decisive column is
+therefore not accuracy but ignition, which is exactly the column that moved when
+the tree was introduced and stayed put when the shadow was.
 
-The reverse error is worse and worth naming. A table that answered *everything* —
-that guessed on situations it had never seen — would score better on a benchmark
-and would have removed the mind from the machine. The measurement that matters is
-therefore not accuracy but the ignition column, which stayed put.
+:::warning How this was got wrong first
+The first version of this measurement compared table against state at a bind limit
+of twenty-one — many situations sharing one carrier, the configuration the
+architecture explicitly advises against — and read the resulting $0.62$ as a
+property of the carrier. It is a property of that configuration. Under the
+prescribed tree the same state scores $0.985$, and the conclusion drawn from the
+first run ("the state cannot hold what it is taught") was an artefact of testing
+the advice by ignoring it.
+:::
 
