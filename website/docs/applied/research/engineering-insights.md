@@ -1096,3 +1096,50 @@ everything else it was exact. That is the property worth engineering for. A
 component that answers everything is useless at its own boundary, because nothing
 separates its good answers from its bad ones; a component that knows where its
 boundary is can be put behind anything.
+
+## A shadow that never invents is free {#тень-которая-не-выдумывает}
+
+A holon carries about $\log_2 7 \approx 2.81$ bits per invocation. That is not a
+defect to engineer around but the size of the carrier, and it has a consequence
+nobody likes: several situations bound to one holon overwrite each other. The
+prescribed remedy is a *tree* — capacity grows with the tree, not with any one
+matrix — and the remedy is right. It is also not the whole answer.
+
+The claim under test is that working memory *is* the state, with nothing beside
+it. Put against the obvious alternative — a per-situation record of what was
+written, consulted before the state — on identical worlds, seeds and turn counts:
+
+| | on situations it was taught | on situations it has never met | turns to ignition | cost per turn |
+|---|---|---|---|---|
+| state alone | $0.6211$ | $1.0000$ | $2$ | $12482$ ns |
+| state **and** record | $\mathbf{1.0000}$ | $1.0000$ | $2$ | $11884$ ns |
+
+Three readings, and the third is the one that matters.
+
+**The state forgets a third of what it was taught.** Not through any flaw in the
+write, but because a carrier of `2.81` bits per invocation cannot hold six
+situations distinctly, and the later writes land on the earlier ones.
+
+**On situations it has never met the two are indistinguishable.** The record is
+empty there and the state answers anyway. That is the honest limit of what a
+record of the past can buy: it is a shortcut through what happened, never a source
+of what might.
+
+**Ignition is unchanged, in every row.** This is what makes the record admissible
+rather than a replacement. The state is still written identically, still
+regulated, still gated; the criteria still ignite on the same turn. Nothing that
+follows from $\Gamma$ — the gates, the self-model, the geometry of learning — is
+touched, because the record does not participate in any of it.
+
+So the principle holds in the sense that matters and fails in the sense that
+doesn't. **Memory is the state** — that is where the mind is, and a table holds no
+mind. But *recall* may be shadowed, and a shadow that never invents costs nothing:
+it answers only what it was told, and the state answers the rest. Engineering that
+refuses the shadow is not being faithful to the architecture; it is paying a third
+of its taught content for a purity the architecture never asked for.
+
+The reverse error is worse and worth naming. A table that answered *everything* —
+that guessed on situations it had never seen — would score better on a benchmark
+and would have removed the mind from the machine. The measurement that matters is
+therefore not accuracy but the ignition column, which stayed put.
+
