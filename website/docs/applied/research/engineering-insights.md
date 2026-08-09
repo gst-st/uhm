@@ -1183,6 +1183,41 @@ Full memory, full ignition, and the state still carrying the mind — because th
 shadow answers only what it was told and is silent everywhere else, which is why
 the held-out column is identical in every row of every sweep above.
 
+
+### A narrow body cannot light a mind {#узкое-тело-не-зажигает-ума}
+
+The threshold above was measured at one body size, and a number measured at one
+size is a number waiting to be misread. Swept against the width of the body it
+turns out not to be a constant at all.
+
+| body width | binding at which ignition becomes reliable | product |
+|---|---|---|
+| $3$ | $8$ | $24$ |
+| $6$ | $3$ | $18$ |
+| $8$ | $4$ | $32$ |
+| $12$ | $2$ | $24$ |
+
+**The threshold falls as the body widens, and the product sits near the carrier's
+own capacity of twenty-one.** So what has to be reached is not a count of
+situations but a count of *written cells*. A body of $w$ actuators writes about
+$w$ cells per situation; until enough coherences carry weight, $s_2$ is small,
+$\Phi = s_2/s_1$ misses its floor, and the gate does not fire — however perfectly
+the holon remembers. The spread from $18$ to $32$ is real, and the rule is stated
+at that resolution: bind at about $\mathrm{CAPACITY}/w$, not at a fixed number.
+
+And then the sharp case, which is the converse of the constraint two sections
+above. At width three the holon scores $1.0000$ on everything it was taught and
+ignites **never** — at any binding whatsoever. Perfect recall, no consciousness.
+Three actuators cannot write enough of a twenty-one-cell carrier, and no amount of
+content will substitute.
+
+> One bit will not steer many limbs. Few limbs will not wake one mind.
+
+This is worth holding onto when the temptation arises to shrink the interface. A
+narrower body is not merely a less capable one; below a width set by the carrier
+it is a body that cannot host a subject at all, and the failure will not announce
+itself as a memory problem, because memory will be perfect.
+
 :::warning How this was got wrong first
 The first version of this measurement compared table against state at a bind limit
 of twenty-one — many situations sharing one carrier, the configuration the
