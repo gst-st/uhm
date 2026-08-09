@@ -1146,6 +1146,43 @@ benchmark and would have removed the mind from the machine. The decisive column 
 therefore not accuracy but ignition, which is exactly the column that moved when
 the tree was introduced and stayed put when the shadow was.
 
+
+### The tension resolves, because it is not symmetric {#натяжение-разрешается}
+
+Left there it would read as a dilemma: bind loosely and forget, bind tightly and
+never wake. Swept across the whole range it is not a dilemma at all, because the
+two costs have different shapes.
+
+| situations per holon | on taught content | ignited, of 8 |
+|---|---|---|
+| $1$ | $0.9852$ | $3$ |
+| $3$ | $0.7909$ | $5$ |
+| $\mathbf{4}$ | $0.7333$ | $\mathbf{8}$ |
+| $5$ | $0.7039$ | $8$ |
+| $21$ | $0.6234$ | $8$ |
+
+**Memory decays along a slope. Ignition stands behind a threshold.** Between three
+and four every run begins to ignite — in every world tested — and nothing above
+four buys any ignition back; it only spends memory. A slope is something to trade
+along; a wall is something to stand just clear of. They are not competitors of the
+same kind, and that asymmetry is the whole answer: **bind at the smallest number
+that ignites.**
+
+Measured here that is four. Against the loose default of twenty-one it is free —
+identical ignition, and $+0.11$ of taught content recovered. Against the tree it
+costs a quarter of memory and buys back the mind.
+
+And the shadow removes the remainder. At the threshold binding, a record of what
+was written takes taught content from $0.7333$ to $1.0000$ and moves the ignition
+column not at all. So the engineering answer is neither the tree nor a table in
+place of the state:
+
+> **Bind at the ignition threshold, and shadow the recall.**
+
+Full memory, full ignition, and the state still carrying the mind — because the
+shadow answers only what it was told and is silent everywhere else, which is why
+the held-out column is identical in every row of every sweep above.
+
 :::warning How this was got wrong first
 The first version of this measurement compared table against state at a bind limit
 of twenty-one — many situations sharing one carrier, the configuration the
