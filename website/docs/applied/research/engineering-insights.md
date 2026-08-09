@@ -1421,3 +1421,56 @@ pair-frame exists. What is established is narrower and solid: aggregation plus
 the fractal cell preference make the root a subject by the theory's own gate,
 on real recorded data.
 
+## Reasoning you can check {#рассуждение-которое-можно-проверить}
+
+The loop has always *performed* inference: an answer about a situation never met
+is a composition of attested shifts along the flipped coordinates — a silent
+XOR-fold, executed and discarded. Five steps turn that execution into reasoning,
+each measured before it was named.
+
+**A derivation is an object.** The same inference now comes back as a chain: one
+premise per flip, each carrying the situation it was taken from and the attested
+shift it stood on. In the nerve reading, the answer is a filled horn and the
+derivation is the filler handed back. What makes it a derivation rather than a
+story: every premise is independently checkable against the record, and
+replaying the premises reproduces the conclusion.
+
+**Every answer names its source.** Four provenances and no fifth: the leaf's own
+cells; a carried chain, premises attached; the ground floor — an unconditional
+majority, zero premises, and it says so; or the honest coin. The recurring
+failure of this whole programme was the unnamed answer — silence read as a
+claim, foreign content at full confidence, a coin dressed as knowledge. The port
+closes the class structurally: an unnamed answer has nowhere to come from.
+
+**Choice appears exactly where exactness ends.** The record keeps tallies now,
+not first impressions: the majority answers, and the minority *is* the slot's
+disagreement. On an exact world every order of flips concludes alike — flatness,
+measured, nothing to choose. On a statistical world the paths genuinely differ,
+and a chain is as strong as its weakest premise. The decisive case: a world
+whose fixed-order first premise lies two to one. The fixed chain walks in and
+concludes the lie; the chosen chain — greatest minimum support, $1.0$ against
+$0.67$ — goes the clean way round and concludes the truth.
+
+**Rungs are earned, with no free constant.** A difference-law deserves premises
+only if its disagreement is *below the ground's own* — differences must be more
+lawful than the values themselves, or the zero-premise answer is the better
+model. Exact worlds are unchanged (zero beats everything, no tolerance needed);
+constant worlds prefer the ground, which is Occam stated in the theory's own
+quantities; and a lawful difference over coin-balanced values — nine in ten —
+earns its rung, carries the truth, and hands back premises with their measured
+support.
+
+**Direction is the outer horn.** Inner horns are composition: given the legs,
+conclude. Outer horns ask the base to factor: given the desired composite and
+one leg, *find the other* — a monoid refuses, a groupoid fills. The filler runs
+from a desired conclusion to the situation that realises it, chain attached,
+weakest link strongest; only an earned rung can direct, because a floor that
+holds one majority everywhere can answer but cannot point; and an unreachable
+conclusion is refused, not invented — which is an answer too.
+
+What this storey is not yet: the loop does not pose its own goals. The seeker
+answers "which situation would conclude so?" when asked; a drive that *wants* an
+outcome and steers toward the situation that yields it touches the action path,
+needs a navigable world, and has its own preregistration. Reasoning here is
+complete as a faculty and unclaimed as a behaviour.
+
