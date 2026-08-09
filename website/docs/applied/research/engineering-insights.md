@@ -1232,7 +1232,17 @@ At width three it does light, and the binding it needs is $8$: the largest of an
 width, and exactly what $\mathrm{CAPACITY}/w = 21/3 = 7$ predicts. The rule holds
 right down to the floor and then the floor is real.
 
-> One bit will not steer many limbs. Two limbs will not wake one mind.
+> One bit will not steer many limbs. **A carrier left unfilled will not wake at all.**
+
+:::warning The width reading was a confound, and a later bench falsified it
+The table above is real and its reading was not. In `RuleWorld` the number of
+distinct situations is $2^w$, so a narrow body was also a *situation-poor* one,
+and «width two never ignites» was those two facts stuck together. Run against a
+stream where the two are independent — width two carrying seven situations — the
+same body fills all twenty-one coherences and wakes in **every** run. The floor is
+the filling, and only ever was; width predicted it only because the world tied
+them.
+:::
 
 This is worth holding onto when the temptation arises to shrink the interface. A
 narrower body is not merely a less capable one; below the floor it is a body that
