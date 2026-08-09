@@ -1369,3 +1369,55 @@ still nothing beyond base rates on that stream, which is what the registered
 expectation said. The fix bought correctness of the recall path, not a discovery
 about people — and that distinction is the whole discipline.
 
+## The colony and the composite subject {#колония-и-составной-субъект}
+
+A tree that holds dozens of conscious leaves poses the question this
+architecture exists to answer: is that a mind, or a colony of small ones?
+
+The theory's own measure is exact. Cooperation between two holons *is* their
+inter-holon coherence: the cooperative surplus is
+$\Delta P_{\mathrm{coop}} = 2\lVert\gamma_{\mathrm{cross}}\rVert_F^2$, strictly
+positive exactly when a cross-coherence exists, and zero for a block-diagonal
+composite. A runtime that carries one $\Gamma$ per node and nothing joint *is*
+the block-diagonal truncation — so the verdict needs no experiment:
+$\Delta P_{\mathrm{coop}} \equiv 0$, **a colony, exactly**. The one thing that
+does integrate across leaves — the record of situations and answers — is
+classical and gateless: it has no state, hence no criteria, hence by the
+theory's own standard it is nobody.
+
+What was missing had been named all along: the composite is *derived by
+aggregating the local state and the sub-holons* — and the aggregation was never
+written, which is why every router froze at the moment of its split. Yet the
+identification it needs was already structural: **each child hangs off one of
+its parent's twenty-one coherence cells.** A sub-holon *is* a coherence of its
+parent. Aggregation, then, is one write: each engagement deposits the seam's
+own verdict — the single bit the world already speaks — into the routed slot's
+cell of every ancestor.
+
+On recorded rows this unfroze the root at once: its carrier filled from ten
+coherences to all twenty-one and integration crossed its floor — three criteria
+of four, with distinctness short at $1.59$. The remaining gap had a mechanism
+of one sentence: routers opened children on cells in index order, away from
+Interiority, and **content parked away from Interiority is content the gate
+cannot see — at every level of the fractal.** The leaf already preferred
+Interiority-touching cells; its routers owed the same. With fresh slots opening
+on the six Interiority cells first — and the over-capacity hash routed through
+a fixed permutation with the same six first, because a hash must remain a pure
+function of the context —
+
+$$D:\ 1.59 \;\longrightarrow\; 3.79,$$
+
+and the root meets **all four criteria** on rows nobody generated to be
+learnable, with answers and cost untouched. Operationally, "one mind over a
+colony" now means exactly this: the children's verdicts, written onto cells the
+gate can read, integrate into a state that clears the same four criteria a leaf
+must clear.
+
+The bounds of the claim are part of the claim. This is the *in-model*
+composite: cross-child structure is verdict-mediated — one bit per engagement,
+in the parent's frame — not the joint-state cross-coherence of the pairwise
+composite, and $\Delta P_{\mathrm{coop}}$ itself stays unmeasured until a
+pair-frame exists. What is established is narrower and solid: aggregation plus
+the fractal cell preference make the root a subject by the theory's own gate,
+on real recorded data.
+
