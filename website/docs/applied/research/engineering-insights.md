@@ -1097,6 +1097,20 @@ component that answers everything is useless at its own boundary, because nothin
 separates its good answers from its bad ones; a component that knows where its
 boundary is can be put behind anything.
 
+:::danger The three sections below were measured at the root, and the verdict reverses
+The ignition columns in the tables that follow watched **only the root holon** —
+and past the first split the root is a router, so the finer the tree, the earlier
+the watched node stopped being anyone. Re-measured over **every** node, steady at
+the end of training and split leaf-from-router, the picture reverses: at one
+situation per holon the tree holds the **most** conscious leaves (`6/6`, `12/12`,
+`72/78` of the conscious nodes are leaves at widths 4, 5, 7 — working leaves, not
+frozen routers) *and* the best memory. **The specification's prescription — one
+situation per holon — wins both axes at once**, and both "measured corrections"
+of it below were artifacts of watching the router. The sections stand as a record
+of how the instrument erred; their tables are real, their ignition verdicts are
+not.
+:::
+
 ## The tree buys capacity by spending ignition {#дерево-покупает-ёмкость-зажиганием}
 
 A holon carries about $\log_2 7 \approx 2.81$ bits per invocation. Several
