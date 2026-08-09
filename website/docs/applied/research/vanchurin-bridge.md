@@ -756,6 +756,25 @@ sophistication is carried by the *anisotropy* and the *purity window*,
 not by the exponent. Both claims live in the same measurable object;
 §9.1 decides between them with of order a hundred windows of data.
 
+The disagreement extends to [V2]'s tri-regime classification, which
+places *classical biological evolution* at $a=0$. A toy model with no
+UHM in it says otherwise, on both sides of the Langevin split. The
+noise side: neutral Wright–Fisher resampling of $M$ individuals over
+$d$ types has increment covariance exactly
+$(\operatorname{diag}p-pp^{\!\top})/M$ — the tangent-space **inverse
+Fisher metric**, so his own criterion (7.5) reads $a=1$ identically,
+with $1/M$ as the sole constant (simulated at $d=3$, $M=10^5$: pooled
+shape to $1.9\%$, quasi-static window to $6.4\%$ = sampling error,
+Mauchly $506$ against the spherical prediction's critical $5.99$). The
+drift side is classical: replicator dynamics under selection *is*
+natural-gradient ascent of mean fitness in the Shahshahani–Fisher
+metric (Shahshahani 1979; Hofbauer–Sigmund 1998). Whatever realises
+$a=0$ or $a=\tfrac12$ in biology must therefore *break* the
+multinomial character of reproduction noise — a positive, checkable
+question about mechanism rather than a preference among exponents.
+The thirty-line simulation is
+[`wf_toy_a1.py`](/instruments/wf_toy_a1.py).
+
 :::note Level-matching caveat
 The derivation is at the level of a holon's internal state dynamics.
 Applying it to population genetics assumes that an evolving population
