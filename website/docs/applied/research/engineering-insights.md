@@ -1474,3 +1474,48 @@ outcome and steers toward the situation that yields it touches the action path,
 needs a navigable world, and has its own preregistration. Reasoning here is
 complete as a faculty and unclaimed as a behaviour.
 
+## The rider {#всадник}
+
+Reasoning that can name a goal's situation is still not behaviour: something has
+to move. Getting from the faculty to the act took four findings, three of them
+about honesty rather than about motion.
+
+**The lever had to exist.** Goal-direction needs a world where the next
+situation is a consequence of the act — and no world in the loop's repertoire
+was one: the grid *teleports* between questions, the streams replay a record.
+The preregistration assumed otherwise and was corrected by reading the code
+before any was written; steering results claimed on those worlds would have
+been fiction. The lever is now explicit: a world that can navigate translates a
+target situation into the drive that approaches it — geometry stays the world's
+own, because a session that invented «toward» would smuggle a world model
+through the seam. Worlds that cannot navigate answer `None`, and on them the
+seeking mode is a no-op by construction.
+
+**Actuators turned out to have roles.** Wiring the rider surfaced a seam defect
+before any code ran: the learning word takes one corrected bit per actuator,
+and a *motor* channel's corrected sign is a fact about the policy, not the
+world — fed into the inference word it corrodes the very laws a seeker stands
+on. The seam now knows the difference: verdict channels enter the word, motor
+channels do not, and a carried chain writes only verdict signs — a chain has no
+opinion about how to move, and the policy has none about what is true. Measured
+through the full path: a session on the navigable ring earns the ring's law
+despite its motor channel.
+
+**Standing on the goal is steering too.** The first wiring reached the goal and
+walked off it: at the target, the world's honest «already here» read as a
+refusal, the fallback fired, and the policy's motor sign carried the body away —
+goal occupancy exactly at baseline, $1497$ arrivals and $1497$ departures,
+caught by counting refusal reasons rather than trusting the outcome. A reached
+goal now holds the motors at zero.
+
+**Both promises, measured.** With a reachable goal the seeking loop holds the
+body on goal-satisfying situations far above the default policy, and every
+steering turn is counted; with an unreachable goal it steers exactly zero
+times, counts every fallback, and neither hit rate nor occupancy degrades —
+**refusing to pretend costs nothing, as a measurement rather than a promise.**
+
+The bound is part of the design: the loop does not choose its goals — seeking
+takes one from the caller. Where goals come from is the storey above this one,
+and it starts with a question about currency — what a system that wants nothing
+but its own viability could legitimately want — not with code.
+
