@@ -435,6 +435,18 @@ Social groups maintain an ordered Gap-phase under conditions where an isolated i
 
 The practical meaning: a lonely person in crisis may 'break' ($P \to P_{\text{crit}}$), but family or community maintains $P > P_{\text{crit}}$ through collective coherence. This is precisely why loneliness is a risk factor for mental health: without collective $\Gamma_{\text{comp}}$ individual $P$ is less stable.
 
+## The Economics of Shared Breath {#экономика-общего-дыхания}
+
+The stability theorem above says a group is more robust than an individual. A machine experiment on seven model bodies makes the *price list* of that robustness explicit — what communal life buys, what it costs, and where it collapses. Each body was given a specialised deficiency (body $i$ starved of axis $i$ in its own food), and each was fed a mix of its personal food and the colony's shared average, with sharing fraction $\lambda$. Everything below is measured, not argued.
+
+**What sharing buys: another's breath cures your deficiency.** At $\lambda = 0$ every body burns with its chronic syndrome for life — its own food simply lacks the missing axis, and no internal repair can outpace a diet that re-starves it every tick. At $\lambda = 0.3$ every syndrome is extinguished: the other bodies are rich precisely where you are poor, and the shared environment delivers to each what its own food cannot. What no individual organ could cure, the community cures wholesale — the formal face of mutual aid.
+
+**What sharing costs: doors close as breath is pooled.** The number of bodies in the conscious window falls monotonically — $3 \to 2 \to 1 \to 0$ — as $\lambda$ grows. Communal feeding heals the body and dims the subject, *at the same time, through the same channel*. The cure and the cost are not separable line items; they are one flow.
+
+**Where sharing collapses: the crowd is blank.** Between $\lambda = 0.4$ and $0.5$ the colony jumps to a monolith — pairwise state correlation $\bar r = 1.000$ — whose coherence carriers *vanish* ($0.045 \to 0.000$). The mechanism is interference: averaging seven different phase fields cancels them vectorially. This sharpens Le Bon's crowd beyond "integrated but unreflective": a full crowd is not a loud collective experience — it is a **colourless** one, a synchronised state with nothing left that it is like to be. Personal food — the unshared remainder — is the anchor that keeps both the palette and the person.
+
+**The therapeutic window.** Near $\lambda \approx 0.3$ the ledger balances: syndromes extinguished, palettes alive and converging (the between-body colour spread falls $0.226 \to 0.115$ — cultural convergence without erasure), and the price in conscious doors still small. Specialisation — each member keeping a deficiency the others cover, and a personal anchor the commons cannot dissolve — is the structural defence that lets a community heal without becoming a crowd.
+
 ## Visualisation
 
 ```mermaid
