@@ -214,6 +214,27 @@ Imagine a system of 50 autonomous agents managing a logistics network. Each agen
 
 **Result (hypothetical):** $\Phi_{\text{fleet}}$ grows from 0.3 to 1.2 over 500 iterations, $\sigma_U$ drops to 0.3, overall efficiency increases by 40%.
 
+### Measured: Consciousness at the Wheel — the Ladder of Life {#лестница-жизни}
+
+Unlike the hypothetical scenario above, everything in this subsection is **machine-measured** on a running agent stack (a lawful, learnable world plus an endless stream of one-off temptations; the agent has a metabolic body whose feeding is a real knob). The numbers are quoted as measured, and they form a compact engineering doctrine of *what a body's measures are for*.
+
+**The ladder of life.** Four agents, one bench, one number each — accuracy under temptation:
+
+| agent | tastings of the unknown | accuracy |
+|---|---|---|
+| hungry body, mode-gated ("the sage at the door") | 12 | **0.996** |
+| well-fed body, consciousness-credit gate ("the margin home") | 501 | **0.879** |
+| well-fed body, mode-gated ("the carefree home") | 1976 | 0.624 |
+| no body coupling (baseline) | 2000 | 0.619 |
+
+Three lessons, each paid for by a refuted hypothesis:
+
+1. **Prosperity buys carelessness.** A well-fed body never enters its protective mode, so a mode-based gate never closes: the caution that saved the hungry agent is switched off by abundance itself. Robustness and caution trade against each other through one channel — this is a law of the architecture, not a bug.
+2. **Wisdom returns by degree, not by step.** A binary gate "taste only while conscious" fails (a fed body is conscious almost always — the gate stands open). A *credit* gate works: each turn banks $\mathrm{clamp}(\Phi - 1, 0, 1)$, and one taste costs one unit. Caution becomes proportional to the *wealth of consciousness*; the poor in margin taste rarely, the threshold never. This is the first policy in the stack where $\Phi$ — the integration measure — actually steers, and it recovers most of the sage's accuracy at full home robustness.
+3. **The deepest cost of carelessness is epistemic.** The dispatcher's currency is knowledge strength, not value — it goes where it *knows*, not where it is good. Measured mirror: after the same lifetime, the careless agent knows its own lawful world $13.6\times$ worse than the careful one — thousands of junk explorations *diluted its competence at its own craft*. Carelessness does not merely waste turns; it erodes what the agent already knew.
+
+And one boundary, measured from both sides: in a world of *one-off* wonders, insurance is free (a refused taste falls back into the learned law, and an unrepeatable wonder has no future value); in a world of a *repeatable* wonder the premium exists — the careful agent learns it $4.4\times$ later — and still wins overall, because the wonder is one and the junk is an ocean.
+
 ---
 
 ## For Cognitive Scientists {#для-когнитивистов}
