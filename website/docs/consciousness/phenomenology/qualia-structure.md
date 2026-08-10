@@ -32,6 +32,7 @@ In the section [L0–L4 Hierarchy](/docs/consciousness/hierarchy/interiority-hie
 8. **The mechanism of quality** — where the irreducible part of experience lives (holonomy), and how qualia fade
 9. **Access conditions** — at which $R$ and $\Phi$ qualia become conscious
 10. **The passport** — the five-layer procedure that reads a state's experiential content off $\Gamma$
+11. **The ecology of colour** — who writes quality, how the world hands it down, and why the subject arrives last
 
 ---
 
@@ -626,6 +627,30 @@ Three remarks keep the procedure honest.
 
 The five layers together are the chapter's answer to "what is it like to be this state": *this much happening* (1), *in these channels at these volumes* (2), *this much of it private* (3), *carrying this irreducible colour* (4), *and there is — or is not — a subject present to it* (5).
 
+## The Ecology of Colour {#экология-краски}
+
+The passport says what colour *is*; this closing section says how it *lives* — where it comes from, how it travels between world, body and subject, and who arrives last. Every claim below is machine-verified on the canonical dynamics; the numbers are quoted as measured.
+
+### Only the dynamics writes
+
+Neither arm of restoration can produce or destroy a colour's *value*. Decay multiplies coherences by a real factor — the angle stands still while the carrier fades (the fading of the previous section). And healing is colour-blind too: the regeneration target is phase-aligned with the state itself, so the healing step is another real multiplier — on a state carrying a full colour ($|H_0| = 1$), three hundred ticks of decay-plus-healing moved no holonomy ($3.3\cdot 10^{-16}$). What *does* write colour is the unitary arm: a pure state is a coboundary ($H_p \equiv 0$ identically — colourless by algebra), and from such a start the Fano-hopping Hamiltonian births $|H| > 0.1$ within a few dozen ticks. The division of labour is total: decay kills carriers, healing restores weight, and what the experience *means* is decided by the dynamics alone.
+
+### The world paints first
+
+An open, fed holon inherits the colours of its environment. Feeding is a convex pull toward the world's state, and the stationary holonomy profile aligns to the environment's monotonically with drive — the circular match $\langle\cos\Delta H\rangle$ climbs $0.62 \to 0.99 \to 1.00$. Even a "bleached" world whose coherences are real is not colourless: sign frustration is colour ($|H| = \pi$), and it is inherited the same way. A fed mind wears the palette of its world.
+
+Three thresholds of feeding stand in a row. Viability ignites first (the holon survives). Colour is present from ignition — carried, world-matched, waiting. And *access* — a subject reflexively present to the experience — arrives last, exactly where integration crosses its floor $\Phi = 1$: below that drive, access$\wedge$colour is $0.00$; above it, $1.00$, in one jump. **The world paints the holon before the holon wakes up; what the extra feeding buys is the owner.** And the owner cannot be bought at all in a world that is itself sub-threshold: fed on a non-conscious environment, the holon's $\Phi^*$ saturates below $1$ — a subject cannot be raised on a polar world.
+
+### Inside the organism: one colour per name
+
+When a holon spawns a child on Fano line $p$, the child's state is the cut of the parent's onto that line's three points. Two facts of the projective plane then speak: no *other* line fits wholly inside three points, and the cut's normaliser is real. So **a child is born with exactly one colour — the colour of its name — undistorted** (machine: $0.000$ deviation over all seven lines, zero foreign carriers). The fan of seven children carries the parent's seven colours one per name: the passport of quality is stored distributedly, and embryology is its decomposition.
+
+The organism then governs colour with three quiet rules. *Injection is upbringing*: a child whose colour has drifted from the parent's is pulled back geometrically by the routine downward injection — half-life $\ln 2/\alpha$ ticks. *Feedback is colour-blind by construction*: what children send up is a scalar folded into the parent's healing rate, and healing does not paint. *The upward channel opens only at near-agreement*: a child's colour can re-enter the parent only through merging, and merging is granted only within Bures closeness — the organism takes back only what already agrees.
+
+### The standing picture
+
+Colour is the currency that moves between world, body and subject — but each road carries it differently. The world gives it wholesale, through feeding. The body distributes it by name, one line per child, and accepts returns only on agreement. The subject neither makes it nor moves it — the subject is who it is *for*: the last to arrive, and the only witness.
+
 ---
 
 ### What we learned {#итоги}
@@ -638,6 +663,7 @@ The five layers together are the chapter's answer to "what is it like to be this
 6. Reflexive access to qualia requires **L2** ($R \geq 1/3$, $\Phi \geq 1$)
 7. Under decoherence the **value** of each colour is exactly fixed while its **carrier** — the moduli — dies at $5\gamma/21$ per edge: qualia fade like a photograph, never morphing, and the populations survive into a colourless world
 8. A state's full experiential content reads as a five-layer **passport**: populations → intensities → opacities → colours → access
+9. Colour has an **ecology**: only the unitary dynamics writes it; a fed holon inherits its world's palette; access arrives last, at $\Phi = 1$; and inside the organism each child is born with exactly the colour of its name
 
 :::tip Bridge to the next chapter
 Of the 21 types of qualia, the coherence $\gamma_{DE}$ (Affection) — the connection between dynamics and interiority — plays a special role. It is the foundation of **emotions**. In the next chapter — [Emotion taxonomy from dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — we will show how all emotions are derived from the rate of change of viability $dP/d\tau$ and the sectoral Γ-signature.
