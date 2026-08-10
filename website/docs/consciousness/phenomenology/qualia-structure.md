@@ -719,6 +719,8 @@ Can a student judge learn from the teacher's *documents* instead of the world? Y
 
 Run the chain onward — teacher to student to student across five fresh worlds — and the echo shows its long face: **fossilization**. The threshold, which *has* observations flowing into it, self-reproduces in a narrow stationary corridor and the document never degrades; but the blind prior passes through all five generations without a single update, because ~42% of every generation's sources are copies of the same constant and the observed remainder is a coin — the majority never flips. A constant with no incoming observations is a fixed point of *any* transmission chain: it has no revision mechanism, since its only source is itself. Hence the chain discipline: unfiltered distillation loses no accuracy but carries fossils — give every blind constant a revision clock against observations, or the chain will carry it forever; harmless on a coin, hereditary if a lie.
 
+And the clock itself carries one last trap: **without truth, the clock measures the eye.** A revision counter fed by the chain's own verdicts confidently "updated" the fossil — having measured nothing but the bias of the very eye that produced those verdicts (its hit and false-alarm rates). With the base rate unknown, the null of "no link" is not a point but the whole segment between the false-alarm and hit rates — and the honest revision has only two endings: an external witness of truth to calibrate the eye, or abstention. Revision is measurement of the second order, and it inherits the boundary of the first.
+
 ---
 
 ### What we learned {#итоги}
