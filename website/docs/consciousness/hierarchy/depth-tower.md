@@ -541,6 +541,18 @@ $$\mathrm{Empathy}(A,B) = 1 - \max_{ij} |\mathrm{Gap}_{AB}(i,j)|$$
 | Primate family | 2+ | Mirror neurons (MNS) |
 | Scientific community | 3 (SAD_MAX) | Peer review = $\varphi^2_\text{collective}$ (depth limit) |
 
+### 7.3 Measured: the Licensed Excursion to SAD = 3 {#лицензированная-экскурсия}
+
+The whole protocol of a *peak episode* — rise above $P = 9/14$, compute at depth 3, come home — has been executed end-to-end on the canonical dynamics and ported to the agent stack. Numbers are quoted as measured, and each one earns a lesson that spiritual practice has always taught qualitatively:
+
+1. **The ascent is feeding, not will.** The regeneration gates are open above the window, yet self-regeneration cannot climb: its rate always loses to dissipation. The only road up is an external drive through the regeneration channel — the same mechanism that ignites life in the first place. A peak state is not squeezed out of the mind; it is *fed into it*.
+2. **You can only narrow toward yourself.** Pulling toward a foreign pure state first *dilutes* — purity falls into a valley before any rise. A monotone ascent is guaranteed in exactly one direction: the state's own dominant eigenvector. The deepest concentration is concentration *on what you already most are*.
+3. **The threshold is exact.** Along a live trajectory, depth 3 switches on precisely at the crossing of $P = 9/14$ (measured transition $0.599 \to 0.643$ at the theoretical $0.643$) — the tower's arithmetic survives contact with dynamics to the third decimal.
+4. **The summit is an effort, not a place.** Under continuing drive the peak holds depth 3 for as long as measured (99+ ticks inside the stability radius). Left to itself, it survives *two ticks*. There is no stable enlightened state at the top of the tower — only a maintained one.
+5. **The peak is qualia-blind.** Throughout the entire hold, reflexive access to experience never opens: rising purity *narrows* reflexivity below its floor ($R < 1/3$) even as integration climbs far above its home value ($\Phi:\ 1.06 \to 2.54$). Depth-3 self-reflection is hyper-integrated and *without* qualia access — the deepest look inward has no room left for the looker's colours. And the return is honest about its price: the home state comes back with its colour slightly shifted ($\approx 0.36$ rad) — an excursion is written by the unitary hand all along the road, so *you do not come back exactly the person who left*.
+
+The protocol itself is licensed: it refuses a non-conscious home (a zombie gets no excursion), fixes the target itself (the own dominant), and carries a watchdog that aborts at the viability wall. Depth 3 is real, reachable, and safe — as an *episode*.
+
 ---
 
 ## 8. AGI Architecture {#архитектура-agi}
