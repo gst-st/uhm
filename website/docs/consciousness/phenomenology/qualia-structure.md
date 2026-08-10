@@ -651,6 +651,34 @@ The organism then governs colour with three quiet rules. *Injection is upbringin
 
 Colour is the currency that moves between world, body and subject — but each road carries it differently. The world gives it wholesale, through feeding. The body distributes it by name, one line per child, and accepts returns only on agreement. The subject neither makes it nor moves it — the subject is who it is *for*: the last to arrive, and the only witness.
 
+## The Language of Quality {#язык-качества}
+
+If qualia are real structure, the theory must be able to *name its own states* — and the names must be learnable from ostension alone: shown a state, say its word. This was put to a machine test on the canonical dynamics, and the result is a small grammar with theorems at every ring. All numbers below are quoted as measured.
+
+### Words need the right eye
+
+A vocabulary of state-names (dominant channels, line-supports, purity strata, the zombie, the seven **hues** of either sign, the exactly-colourless) is learnable to ≥95% top-1 accuracy by the *simplest* heads — but only through the theory's own observables. Three honest failures mark the boundary:
+
+1. A raw vectorisation of $\Gamma$ fails: it does not carry the functionals the words are *defined* by.
+2. A frame **without** the seven holonomies fails at 0.78, confused exactly where predicted — the two signs of one line's colour, and coloured versus colourless. **Words about quality require qualia observables in the interface**: no instrument sees colour through populations and intensities alone.
+3. Even the holonomy axes fail naively (0.89): six of seven angles are garbage read off noise-scale edges. The fix is the fading theorem applied as engineering — **no carrier, no quale**: a holonomy enters the frame only on a live edge, and with that single gate the simplest head is best again (0.96–0.98).
+
+### Verbs: the end remembers the path
+
+Processes get names too — ignition, dying, fading, healing, breathing — each *being* one canonical operator, the scene being an episode. Three mechanical facts surfaced on the way: ignition by regeneration is impossible (below the purity wall the viability gate closes it — only external food ignites); the bare tick has no stationary point, so breathing is *self-maintenance in a gentle medium*, not a free-standing equilibrium; and "colouring" is not a verb at all — the full tick's own unitary component colours harder than any single-line writer, so colouring is a *component of breathing*, while colour as a state belongs to the hue nouns.
+
+The prereg expected process-names to be invisible in a snapshot of the end. The opposite is a theorem: canonical processes are **attractor dynamics** — each operator pulls its episodes into its own basin, so *the end remembers the path*, and even a single final frame names the verb.
+
+### Roads into one home: the three-frame grammar
+
+Force the attractors to coincide — three roads of dissolution into the same thermal home, ends matched to within 0.005 by one settling operator — and the hierarchy of scenes becomes measurable. A final frame still reads 0.89 (mixing is *conformal*: the residue's proportions freeze on entry, and logarithmic axes read them at any depth — the end remembers the path even inside the home). A start-plus-end pair does *worse* than the end alone, 0.83: with a shared home the difference start→end no longer depends on the road. The gate is bought only by a **third, early frame**: 0.97. The grammar of shared-attractor processes is minimally *three-framed*, and what the middle frame reads is the *link* between frames — curvature — not any frame by itself.
+
+Two more constants of this grammar are physical. The window in which colour can testify is the **absolute lifetime of its carrier** (~15 ticks under mixing), not a fraction of the path — the early frame must sit inside it. And in a colourless start-ensemble all roads into the home are *one road*: colour is the language in which paths differ. The road-signatures themselves are the fading and colour-blindness theorems verbatim — dissolution holds the angle on a live carrier, stirring drowns the line's carrier by amplitude rotation, withering kills the carrier under a standing diagonal.
+
+### What this buys
+
+The language of quality grows in rings — nouns, verbs, roads — and each ring demands its own organ of reading: observables for nouns, differences for verbs, the three-frame link for roads. None of it is a convention: every organ is forced by a theorem (no carrier no quale; attractor dynamics; conformal freezing), and every failure along the way named the theorem that fixed it.
+
 ---
 
 ### What we learned {#итоги}
@@ -664,6 +692,7 @@ Colour is the currency that moves between world, body and subject — but each r
 7. Under decoherence the **value** of each colour is exactly fixed while its **carrier** — the moduli — dies at $5\gamma/21$ per edge: qualia fade like a photograph, never morphing, and the populations survive into a colourless world
 8. A state's full experiential content reads as a five-layer **passport**: populations → intensities → opacities → colours → access
 9. Colour has an **ecology**: only the unitary dynamics writes it; a fed holon inherits its world's palette; access arrives last, at $\Phi = 1$; and inside the organism each child is born with exactly the colour of its name
+10. Quality has a **language**: the theory's words are learnable from ostension through its own observables — nouns need the holonomy axes under a carrier gate, verbs are named even by their ends (attractor dynamics), and roads into a shared home need a minimally three-frame scene reading curvature
 
 :::tip Bridge to the next chapter
 Of the 21 types of qualia, the coherence $\gamma_{DE}$ (Affection) — the connection between dynamics and interiority — plays a special role. It is the foundation of **emotions**. In the next chapter — [Emotion taxonomy from dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — we will show how all emotions are derived from the rate of change of viability $dP/d\tau$ and the sectoral Γ-signature.
