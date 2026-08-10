@@ -503,6 +503,18 @@ graph LR
 
 This cycle formalises the intuition of 'attention as the key to consciousness' and explains why mindfulness practices are therapeutically effective: systematically directing attention ($|\gamma_{AE}| \uparrow$) gradually reduces Gap in the channels to which it is directed. With regular repetition, content transitions from working memory ($K \sim e^{-\tau/\tau_{WM}}$) to long-term ($K \sim \tau^{-\alpha}$), and the mindfulness skill — to procedural ($K \hookrightarrow H_{\text{eff}}$). For more detail — see the [CC theorems](/docs/applied/coherence-cybernetics/theorems) (T-103, T-104).
 
+### 6.2 Measured: mood as address — state-dependent memory in silicon {#настроение-как-адрес}
+
+Psychology has long known **state-dependent recall**: what is learned in one state of mind is retrieved worse in another (Godden–Baddeley's divers, mood-congruent memory). In the agent stack this stops being a curiosity and becomes an architectural *choice*: index every memory address by the **dominant axis of the current thought** — knowledge is filed under the state of the mind that learned it.
+
+The consequences were then measured on a returning world with direct interference (the law of phase B is the *opposite* of the law of phase A on the same situations; the world goes A → B → back to A). Three strategies, one number each — accuracy in the first window after each switch:
+
+1. **Bare memory** pays on *every* switch, including the return home ($0.70$ and $0.69$ against settled tails of $1.00$): the old cells are overwritten by the opposite law, and coming back means relearning what was already known. Interference is symmetric — it spares neither the new world nor the old one.
+2. **Forgetting on detected change** (an endogenous change-detector that wipes the transition map) turned out to be a *precise null*: bit-for-bit identical to bare memory. The finding is the separation of organs: the detector wipes the **map** (where actions lead), while accuracy is made by the **policy** (what to answer) — two different memory organs, told apart by the instrument rather than by introspection.
+3. **Mood-indexed memory** wins *both* switches, not just the return: clean learning at fresh addresses ($0.94$) is faster than relearning against anti-knowledge ($0.70$), and the return home is nearly free ($0.98$) — the old mood's file cabinet was never touched.
+
+The reading for a psychologist: state-dependent memory is not a bug of biological recall but a *strategy against interference* — segregating knowledge by the state that acquired it protects old competence from new contradicting experience, at the price of not transferring between states. And one boundary condition came with it: the mood must be **stable within a regime** (a dominant axis with a clear lead); when two axes compete equally, the mood flickers and the address space silently splits.
+
 ---
 
 ### What we learned {#итоги}
@@ -515,6 +527,7 @@ This cycle formalises the intuition of 'attention as the key to consciousness' a
 6. The Ebbinghaus forgetting curve is reproduced by the power-law kernel at $\alpha \approx 0.5$–$0.7$ [C]
 7. **Two mechanisms of forgetting**: kernel decoherence (irreversible, 'book burned') and Gap increase (reversible, 'book in a safe')
 8. At $P \to P_{\text{crit}}$ forgetting **accelerates** by the law $\propto 1/(P - P_{\text{crit}})$ — formal explanation of cognitive decline in dementia
+9. **State-dependent memory is an anti-interference strategy** (machine-measured): indexing knowledge by the mood that learned it wins both switches of a returning contradictory world ($0.94/0.98$ against bare memory's $0.70/0.69$), and a change-detector that wipes the transition map is a precise null — the map and the policy are two different memory organs
 
 :::tip Bridge to the next chapter
 Attention and memory are normal mechanisms of coherence control. But what happens when these mechanisms *break down*? Specific failures of the Gap-profile give rise to pathological states: alexithymia, dissociation, depression, psychosis. In the next chapter — [Pathology of consciousness](/docs/consciousness/states/pathological) — we will show that each pathology = a characteristic Gap-pattern, and that therapy = targeted Gap-reduction.
