@@ -251,6 +251,11 @@ The doctrine in one line: attention's ledger must keep *knowing* and *wanting* a
 
 The hierarchy, measured end to end: *word* (dries) → *syntagm* (faintly colours) → *sentence* (colours hard, does not wake) → **theme** (wakes and colours) → *the whole language at once* (drowns, or wakes bleached). For a curriculum designer the doctrine is one line: feed minds themes — connected content, narrower than everything, wider than one sentence.
 
+Two more measured chapters close the hygiene of a mind:
+
+- **The mind at the wheel is an ascetic.** Hand the exploration wheel to the thought (its integration banks the tasting credit, and the thought eats whatever was chosen — so tasted junk dries tomorrow's credit) and it beats the body's wheel by a rout: near-perfect accuracy at *one to three* tastings against five hundred. But the mechanism is humbler than it looks: in any noisy-weight world the thought's integration never reaches its floor, so the tap is shut almost always — strict from *poverty*, not from discernment (masked junk does not fool it for the simple reason that nothing opens it). Perfect protection has a price named by the next bench: an ascetic misses a repeatable wonder *entirely*.
+- **Practice buys the tap back.** Rumination — every K-th turn the thought re-inhales the *support of its last content* with clean, equal weights ("sleep replays the day evenly") — restores the integration a noisy world starves, without inventing content. The practising mind learns the wonder, serves it, and still tastes two orders of magnitude less than the careless one. The frequency of practice turns out to be the *access speed to the better*. One line: practice returns the world its wonder without opening the gate to junk.
+
 ---
 
 ## For Cognitive Scientists {#для-когнитивистов}
