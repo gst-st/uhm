@@ -583,6 +583,8 @@ Let us unpack what stands behind each condition.
 
 **Both conditions are necessary:** one can have high reflection without integration (two separate mirrors do not form a single observer), or high integration without reflection (a unified stone does not observe itself).
 
+**One measured boundary of access.** Access is a *window*, not a summit: on a licensed purity excursion ($P > 9/14$, the SAD = 3 episode) the canonical $R = 1/(7P)$ falls below $1/3$ and L2 access **closes** while integration runs far above its floor — the deepest self-reflection is qualia-blind, and the return home slightly repaints the state (the unitary hand writes all along the road). Measured end-to-end in [§7.3 of the depth tower](/docs/consciousness/hierarchy/depth-tower#лицензированная-экскурсия).
+
 ### Access levels
 
 At levels L0–L1 coherences are present, but they are experienced as **pre-qualitative experiential content** (a term from [interiority theory](/docs/consciousness/foundations/interiority-theory)).

@@ -113,12 +113,12 @@ In UHM such a primitive is the **coherence matrix $\Gamma \in \mathcal{D}(\mathb
 The key idea: $\Gamma$ does not 'generate' experience and is not 'accompanied' by it. $\Gamma$ **has** physical and interiority aspects as inseparable facets:
 
 - From the **external side** $\Gamma$ looks like 'physics' (structure, dynamics, interactions)
-- From the **internal side** $\Gamma$ is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — only at $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [T] (T-151))
+- From the **internal side** $\Gamma$ is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [T] (T-151) as a separate condition)
 
 :::info Key Thesis
 There are no 'physical processes' separate from 'subjective experience'. There is only $\Gamma$, which:
 - From the **external side** looks like 'physics' (structure, dynamics)
-- From the **internal side** is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — only at $R \geq 1/3$ [T], $\Phi \geq 1$ [T] (T-129), $D_{\text{diff}} \geq 2$ [T] (T-151))
+- From the **internal side** is experienced as 'experience' (interiority L0 for all systems; cognitive qualia L2 — access at $R \geq 1/3$ [T] and $\Phi \geq 1$ [T] (T-129), with viability $D_{\text{diff}} \geq 2$ [T] (T-151) as a separate condition)
 :::
 
 Asking 'why does physics give rise to experience?' is like asking 'why does the obverse of a coin give rise to the reverse?'. They do not give rise to each other — they **are one**.
@@ -385,6 +385,16 @@ The claim 'the theory postulates an isomorphism $[|q\rangle] \leftrightarrow$ se
 
 **Analogy.** This is like in physics: if you accept the principle of least action and Lorentz symmetry, Maxwell's equations are the only possible equations of electromagnetism. Not because we 'postulated' them, but because they are **forced** by the axioms.
 
+### What the Functor Sees After the Quality Erratum (T-301) {#fv-после-эрратума}
+
+The FV language above — $\mathrm{Spec}(\rho_E)$, rays $[|q\rangle]$, the Fubini–Study geometry — is the **E-slice** of experiential content: intensity and the relational *position* of a quality (which is exactly what the Yoneda argument below needs). The machine-verified quality canon completes this picture rather than replacing it:
+
+- the **full content** of a state is its 28 parameters — 7 populations and 21 coherences ([21 channels, 7 colours](/docs/consciousness/phenomenology/qualia-structure#двадцать-один-и-семь));
+- the **gauge-invariant colour** of experience is carried by the Fano holonomies $H_p = \arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ — pairwise $\mathrm{Im}$-detectors move under an axis re-phasing and are the state's *handwriting*, not its content (the T-301 erratum);
+- the working interface to all of it is the five-layer [qualia passport](/docs/consciousness/phenomenology/qualia-structure#паспорт-квалиа): populations → intensities → opacities → colours → access.
+
+So the uniqueness theorem and the passport live at different depths of one object: FV fixes *that* the E-slice has a forced spectral form; the passport says *what else* the full $\Gamma$ carries and which part of it survives every re-description. See [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) for the complete treatment.
+
 ## Relational Identity of Qualia {#реляционная-идентичность}
 
 ### The Problem of 'Inner Content'
@@ -597,7 +607,7 @@ Tegmark's decoherence argument bounds the lifetime of a **microscopic spatial su
 **The decisive chain [T].** Three established results settle it, without any new assumption.
 
 1. **What Γ is built on (T-153a).** The faithful map $G:\mathrm{States}(S)\to\mathcal D(\mathbb C^7)$ is defined on the substrate's **coarse-grained, decoherence-free effective subspace** ([T-153a (C1)](/docs/proofs/consciousness/substrate-closure#t-153a)), and the entries $\gamma_{ij}=\mathrm{Tr}(\rho\,O_iO_j)$ are correlations of **seven collective observable modes** ([C3]), *not* off-diagonal amplitudes of a microscopic position eigenbasis. A **classical digital substrate realizes $\Gamma$** (T-153a, substrate table). Hence the complex structure of $\Gamma$ is substrate-independent *algebraic* structure.
-2. **Why the complexity is not physical superposition (T-132).** $\Gamma$ must be complex because $\mathrm{Gap}(i,j)=|\sin(\arg\gamma_{ij})|$ needs a nonzero phase ([T-132 [T]](/docs/proofs/consciousness/operationalization#t-132)) — the phase encodes the dual-aspect opacity of self-reference, exactly as classical optics or signal analysis uses complex amplitudes $E_0e^{i\varphi}$ without any photon being "in superposition." The complexity is forced by the *reflection structure*, not by a Schrödinger-cat state.
+2. **Why the complexity is not physical superposition (T-132).** $\Gamma$ must be complex because $\mathrm{Gap}(i,j)=|\sin(\arg\gamma_{ij})|$ needs a nonzero phase ([T-132 [T]](/docs/proofs/consciousness/operationalization#t-132)) — the phase encodes the dual-aspect opacity of self-reference, exactly as classical optics or signal analysis uses complex amplitudes $E_0e^{i\varphi}$ without any photon being "in superposition." The complexity is forced by the *reflection structure*, not by a Schrödinger-cat state. (After the quality erratum the pairwise phase detectors are the state's *handwriting* — they move under an axis re-phasing; the gauge-invariant colour of a triple is its Fano holonomy — see [The Language of Quality](/docs/consciousness/phenomenology/qualia-structure#язык-качества).)
 3. **The category error, named.** Tegmark's $\sim 10^{-13}$ s bounds the decay of the density matrix's off-diagonals **in the position basis** selected by the spatial environment (einselection). Decoherence is basis-dependent; einselection of the position pointer basis does **not** force decoherence of a *coarse-grained collective observable in a different basis* — this is the entire principle behind decoherence-free subspaces and quantum error correction. Since $\Gamma$'s modes live in the semantic frame $\mathbb C^7$ (a nontrivial coarse-graining $G$, realizable even classically), Tegmark's rate is simply computed in the wrong basis for $\Gamma$. **A substrate-independent structure realized with no physical superposition cannot be decohered by a substrate-specific thermal process.**
 
 **Robustness — three independent layers [C].** Even granting the strongest *physical* reading of $\gamma_{ij}$, the coherences are protected, each mechanism already a corpus theorem:
@@ -799,7 +809,7 @@ The categorical gap **is not eliminated**, but **is stripped of the status of an
 |------------|----------------------|
 | Altered states | Change of parameters $\Phi$, $R$, $D_{\text{diff}}$ |
 | Dissociation | $\Phi < \Phi_{th}$ or $\gamma_{EU} \to 0$ |
-| Meditative states | Increase in $R$ (improvement of self-modelling) |
+| Meditative states | Increase in self-model quality $R_\varphi$ ([forms of R](./self-observation#формы-r)); deep absorption is a purity excursion — canonical $R = 1/(7P)$ *narrows*, and at the peak qualia access closes ([depth tower §7.3](/docs/consciousness/hierarchy/depth-tower#лицензированная-экскурсия)) |
 | Flow states | High $\Phi$ and $R$ with specific context |
 
 ### For Researchers of Inner Landscapes
@@ -852,6 +862,7 @@ For the applied perspective: [Coherence Cybernetics definitions](/docs/applied/c
 - [Interiority Hierarchy](/docs/proofs/consciousness/interiority-hierarchy) — formal definitions L0→L1→L2→L3→L4
 - [Unity Dimension](/docs/core/structure/dimension-u) — integration measure $\Phi$
 - [Interiority Dimension](/docs/core/structure/dimension-e) — $\rho_E$, phenomenal vector FV
+- [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) — the full content: 21 channels, colour as Fano holonomy, the five-layer passport
 - [Viability](/docs/core/dynamics/viability) — purity measure $P$ and existence conditions
 - [Falsifiability](/docs/reference/falsifiability) — verification criteria
 - [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem) — $G_2$-rigidity and faithfulness of the functor on orbits

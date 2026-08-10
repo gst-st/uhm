@@ -308,6 +308,8 @@ $$
 
 where $[\vert q_i\rangle] \in \mathbb{P}(\mathcal{H}_E)$ is the equivalence class in projective space.
 
+*Scope note (T-301):* FV is the **E-slice** of content — intensity and the relational position of a quality. The full content of a state is its 28 parameters (7 populations + 21 coherences), and the gauge-invariant *colour* lives in the Fano holonomies; see [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure) for the complete five-layer passport.
+
 ## Quantitative characteristics {#количественные-характеристики}
 
 ### Population $\gamma_{EE}$ and stress $\sigma_E$

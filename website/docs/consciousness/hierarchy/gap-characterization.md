@@ -58,6 +58,10 @@ Every off-diagonal element $\gamma_{ij}$ of the coherence matrix is a complex nu
 
 $$\mathrm{Gap}(i,j) = |\sin(\arg(\gamma_{ij}))|$$
 
+:::note Frame note (after the T-301 erratum)
+$\mathrm{Gap}(i,j)$ is read in the holon's **native semantic frame**: a re-phasing of the axes moves every pairwise phase detector — that motion is the state's *handwriting*, not its content. The gauge-invariant phase object of a triple is its **Fano holonomy** $H_p = \arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ (see [The Language of Quality](/docs/consciousness/phenomenology/qualia-structure#язык-качества)). Within the fixed native frame, $\mathrm{Gap}$ remains the working per-pair opacity used throughout this chapter.
+:::
+
 - **Gap = 0**: the phase is exactly "correct" — full transparency. The system has *conscious access* to the connection between dimensions $i$ and $j$.
 - **Gap = 1**: the phase is maximally "wrong" — full opacity. The connection between $i$ and $j$ is completely [unconscious](/docs/consciousness/states/unconscious).
 - **0 < Gap < 1**: partial transparency. The connection is perceived "blurrily", like an object through a fogged glass.

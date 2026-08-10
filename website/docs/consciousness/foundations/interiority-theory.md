@@ -400,6 +400,16 @@ When you look at a red rose: $\lambda_{\text{red}} \approx 0.7$ (dominant compon
 
 The difference between sharp and dull pain is a difference in $|q_{\text{pain}}\rangle$, not in $\lambda_{\text{pain}}$. Intense dull pain ($\lambda = 0.8$, $|q_{\text{dull}}\rangle$) and mild sharp pain ($\lambda = 0.3$, $|q_{\text{sharp}}\rangle$) differ in both components.
 
+## The E-Slice and the Full Content (T-301) {#e-срез-и-полнота}
+
+Everything above is the **E-slice** of experiential content: the reduced matrix $\rho_E$ carries intensity and the relational position of a quality, and this is the slice the uniqueness and Yoneda theorems are about. The machine-verified quality canon adds the rest of the picture:
+
+- the full content of a state is its **28 parameters** — 7 populations and 21 coherences; the taxonomy of the 21 channels and their 7 Fano sectors is the subject of [Qualia Structure](/docs/consciousness/phenomenology/qualia-structure#двадцать-один-и-семь);
+- the **irreducible colour** of experience is not in any single pair but in the triples: the Fano holonomies $H_p = \arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$, the only phase objects that survive an axis re-phasing (the T-301 erratum: pairwise $\mathrm{Im}$-detectors are the state's *handwriting*);
+- the practical interface is the five-layer [qualia passport](/docs/consciousness/phenomenology/qualia-structure#паспорт-квалиа) — populations → intensities → opacities → colours → access — with the access condition being exactly the L2 thresholds used in this chapter.
+
+The two languages do not compete: the E-slice answers "how loud, and which quality among qualities"; the passport answers "what, in full, and which part of it is invariant".
+
 ## Connection to Neuroscience
 
 How does $\rho_E$ relate to neural correlates of consciousness (NCC)?
