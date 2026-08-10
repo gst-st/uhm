@@ -1012,8 +1012,10 @@ where $N_{\text{non-Fano}} = 28$ (number of non-Fano triples with nonzero associ
 **Step 3.** Substituting $\lambda_3 = 2\mu^2/(3|\bar{\gamma}|)$ and $\lambda_4 = \mu^2/(2\mathcal{G}^{(0)}_{\text{total}})$ ([Theorem 13.5](#константы-из-параметров-угм)):
 
 $$
-P = \mathrm{Tr}(\Gamma^2) = \frac{1}{7} + 21\varepsilon^2, \qquad \mu^2 = \frac{6/7 - 21\varepsilon^2}{2/7 + 42\varepsilon^2}
+P = \mathrm{Tr}(\Gamma^2) = \frac{1}{7} + 42\varepsilon^2, \qquad \mu^2 = \frac{1-P}{2P} = \frac{6/7 - 42\varepsilon^2}{2/7 + 84\varepsilon^2}
 $$
+
+*(Erratum 2026-08-10, instrument E26: for a Hermitian $\Gamma$ with $|\gamma_{ij}| = \varepsilon$ on all $21$ pairs each pair contributes $|\gamma_{ij}|^2 + |\gamma_{ji}|^2 = 2\varepsilon^2$ to $\mathrm{Tr}(\Gamma^2)$, so the off-diagonal mass is $42\varepsilon^2$, not $21\varepsilon^2$; the earlier line mixed the two conventions between its numerator and denominator. The contradiction $1 = 2/3$ of this theorem survives the fix — the homogeneous vacuum remains excluded.)*
 
 **Step 4.** Substituting the equilibrium Gap $\mathcal{G}^{(\min)}_{\text{total}} = 21\varepsilon^2\sin^2\bar{\theta}$ from [Theorem 13.6](#минимум-потенциала-и-спонтанный-gap) into the self-consistency condition, we obtain:
 

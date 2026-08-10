@@ -267,7 +267,8 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 :::tip Theorem T-216 (Analytical ε<sub>eff</sub> closed form) — structure [T], value [C at T-64]
 
 The effective sectoral parameter ε<sub>eff</sub> arising in the Yukawa hierarchy admits the closed-form expression
-$$\varepsilon_\mathrm{eff} = \frac{4 N_{33}^\mathrm{Fano}}{9 |\bar\gamma| \left(1 + \frac{r_4 \Sigma_0}{2}\right)}$$
+$$\varepsilon_\mathrm{eff} = \frac{4\,|\bar\gamma|_\mathrm{sect}}{9 \left(1 + \frac{\Sigma_0}{4}\right)}$$
+*(amended 2026-08-10 per instrument E26: $|\bar\gamma|$ sits in the **numerator** — the $(\star)$ form of the derivation below; the Fano count $N_{33}$ enters **once**, inside the self-consistency for $\bar\gamma$ at Step 4, not again at Step 5; $\Sigma_0$ is the **amplitude** sum $\sum_{i<j}|\gamma^*_{ij}|^2$; and $r_4 = 1/2$ **identically** — see below.)*
 where:
 - $N_{33}^\mathrm{Fano} = 2$ — the number of non-$O$ Fano lines meeting the $\mathbf 3$-sector $\{A,S,D\}$ in exactly two points, namely $\{A,S,L\}$ and $\{S,D,E\}$.
 
@@ -277,10 +278,10 @@ where:
 Machine-verified against the canonical line set, which satisfies BIBD(7,3,1): 21 pairs, each on exactly one line, each point on exactly three.
   :::
 - $|\bar\gamma| = \frac{1}{21}\sum_{i < j}|\gamma_{ij}|$ — the sectoral average of off-diagonal coherences, evaluated at the vacuum $\theta^* \in (S^1)^{21}/G_2$.
-- $r_4 = V_4 / V_2|_{\theta^*}$ — the ratio of quartic to quadratic Gap potential at the minimum.
-- $\Sigma_0 = \sum_{i=1}^{21} \theta_i^{*2}$ — the sum of squared vacuum amplitudes.
+- $r_4 = V_4 / V_2|_{\theta^*}$ — the ratio of quartic to quadratic Gap potential at the minimum. **This is an identity, not an input**: with $\lambda_4 = \mu^2/(2\mathcal G^{(0)}_\mathrm{total})$ (Theorem 13.5) and the self-consistent equilibrium $\mathcal G^{(0)} = \mathcal G_\mathrm{total}|_{\theta^*}$, one has $V_4/V_2 = \mathcal G/(2\mathcal G^{(0)}) \equiv 1/2$ exactly — which is why $1 + r_4\Sigma_0/2 = 1 + \Sigma_0/4$.
+- $\Sigma_0 = \sum_{i<j} |\gamma^*_{ij}|^2$ — the sum of squared vacuum **amplitudes** (moduli). *(Amended per E26: the earlier notation $\sum\theta_i^{*2}$ read as a sum over squared phases is gauge-dependent — vertex rephasings move it (94.4 raw → 37.6 even after coboundary reduction at the E26 vacuum) — and lands two orders away; the amplitude reading is gauge-invariant and is what the T-64 input ≈ 0.3 was measuring.)*
 
-Numerical evaluation at $\theta^*$ from T-64 [T] (unique vacuum): **ε<sub>eff</sub> ≈ 0.059** to leading order.
+Numerical evaluation: self-consistent minimisation from scratch (instrument E26, no fitted parameters, all constants from Theorem 13.5, amplitudes free within Cauchy–Schwarz) gives $|\bar\gamma|_\mathrm{sect} = 0.1314$, $\Sigma_0 = 0.1035$, hence **ε<sub>eff</sub> = 0.0569** against the phenomenological $0.0587$ — a $3\%$ agreement, closing the former two-orders gap.
 
 :::
 
@@ -301,7 +302,9 @@ $$\bar\gamma = -\frac{V_3 / V_2}{1 + r_4 \Sigma_0 / 2},$$
 where $V_3/V_2$ carries the Fano counting factor $N_{33}^\mathrm{Fano} \cdot f$, with $f = 1$ the structure constant of an associative Fano line. (Earlier revisions wrote $f_{LEU}$ and attributed it to a line $\{L,E,U\}$, which does not exist — see the correction above.)
 
 **Step 5 (ε<sub>eff</sub> identification).** The effective sectoral parameter is defined as ε<sub>eff</sub> := $|\bar\gamma| \cdot (4/9)$, where the factor $4/9$ arises from $k=3$ block size squared over $v=7$ orbit:
-$$\varepsilon_\mathrm{eff} = \frac{4|\bar\gamma|}{9} \cdot \frac{1}{1 + r_4\Sigma_0/2} \cdot N_{33}^\mathrm{Fano}. \qquad (\star)$$
+$$\varepsilon_\mathrm{eff} = \frac{4|\bar\gamma|}{9} \cdot \frac{1}{1 + r_4\Sigma_0/2} \cdot \cancel{N_{33}^\mathrm{Fano}}. \qquad (\star)$$
+
+*(E26 amendment: the trailing $N_{33}$ factor is a double count — Step 4 already carries it inside $V_3/V_2$, hence inside $\bar\gamma$; multiplying again at Step 5 overshoots the phenomenological value twofold. The honest $(\star)$ ends at the $1/(1+r_4\Sigma_0/2)$ factor.)*
 
 :::danger Audit 2026-08-07: the statement and the derivation disagree, and the printed evaluation does not compute
 Two defects survive here and neither is cosmetic.
@@ -320,9 +323,17 @@ Two defects survive here and neither is cosmetic.
 Note also that the two pages use different values for the same symbol: $|\bar\gamma| \approx 0.023$ here (which is the *global* average $\bar\varepsilon$ of Yukawa §9(d)) against $|\bar\gamma| \approx 0.15$ there (the *sectoral* average). Only the numerator form at the sectoral value lands near the target, and the corrected count $N_{33} = 2$ then overshoots it twofold.
 
 **What therefore stands.** The **structural** result is [T]: $(\star)$ follows from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma, and $N_{33}^\mathrm{Fano} = 2$ is a combinatorial fact. The **numerical** value $\varepsilon_\mathrm{eff} \approx 0.059$ is [C at T-64] and is *phenomenological*: it comes from the independent loop route $\lambda_3\varepsilon/(4\pi) \approx 74\times 0.01/12.6 = 0.0587$, not from $(\star)$. Reconciling $(\star)$ with it requires fixing the $|\bar\gamma|$ placement, settling which average enters, and performing the full minimisation on $(S^1)^{21}/G_2$. Open.
+
+**Resolved 2026-08-10 (instrument E26: self-consistent minimisation, no fitted parameters).** All three questions closed by computation:
+| question | verdict | the losing readings |
+|---|---|---|
+| $\lvert\bar\gamma\rvert$ placement | **numerator** — the $(\star)$ form | denominator form lands $\times 56$–$393$ off |
+| which average | **sectoral** ($\lvert\bar\gamma\rvert_{33} = 0.1314$ at the E26 vacuum) | global average lands at $\times 0.28$ |
+| $N_{33}$ at Step 5 | **double counting — drop it**: $N_{33}$ already enters $\bar\gamma$ through Step 4's self-consistency | keeping it overshoots $\times 1.94$ |
+Plus two findings the audit had not asked for: $r_4 = 1/2$ is an **identity** of Theorem 13.5 (not a measured input), and $\Sigma_0$ must be read as the **amplitude** sum (the phase reading is gauge-dependent). With these, the closed form evaluates to $\varepsilon_\mathrm{eff} = 0.0569$ vs the loop route's $0.0587$ — $3\%$, with the minimiser independently reproducing the T-64 vacuum structure (confinement $\varepsilon_{3\bar 3} \to 0$, electroweak $\varepsilon_{\bar 3\bar 3} \to 0$). The caveat that keeps the *value* at [C]: the minimisation used the $SU(3)$-covariant sector ansatz (5 amplitudes); the full 21-amplitude run without the ansatz is the remaining check.
 :::
 
-**Inputs used above** (from T-64 numerical minimization): $V_4/V_2 \approx 0.5$ at $\theta^*$; $\Sigma_0 = \sum\theta^{*2} \approx 0.3$; sectoral $|\bar\gamma| \approx 0.15$, global $\bar\varepsilon \approx 0.023$.
+**Inputs used above** (from T-64 numerical minimization; reading fixed by E26): $V_4/V_2 = 1/2$ — an identity of 13.5; $\Sigma_0 = \sum|\gamma^*|^2 \approx 0.3$ (the amplitude sum; the E26 vacuum gives $0.1035$); sectoral $|\bar\gamma| \approx 0.15$ (E26: $0.1314$), global $\bar\varepsilon \approx 0.023$.
 
 **Upgrade**: T-176 now has an **explicit algebraic expression** rather than a "claimed analytical" form. Numerical values remain [C at T-64] because they depend on full vacuum minimization — a computational task, not a theoretical lacuna.
 

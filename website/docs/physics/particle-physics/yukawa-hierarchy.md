@@ -602,9 +602,9 @@ The rigorous budget $10^{-41.5}$ includes the contribution from RG suppression o
 ### Theorem 9.1 (Analytic ε from Sectoral Minimization) [T at T-64] {#thm-9-1}
 
 :::tip Strengthening: full analytic closed form ([T-216 [T at T-64]](/docs/proofs/categorical/fundamental-closures#t-216))
-The analytic closed form
-$$\varepsilon_\mathrm{eff}=\frac{4\, N_{33}^\mathrm{Fano}}{9|\bar\gamma|\,(1+r_4\Sigma_0/2)}$$
-is derived explicitly from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma on the $G_2$-invariant trilinear form in [T-216](/docs/proofs/categorical/fundamental-closures#t-216). The numerical value $\approx 0.059$ at the vacuum $\theta^*$ remains [C at T-64] (full minimisation on $(S^1)^{21}/G_2$ is a computational task), but the **structural expression** is now [T].
+The analytic closed form (amended 2026-08-10 per instrument E26)
+$$\varepsilon_\mathrm{eff}=\frac{4\,|\bar\gamma|_\mathrm{sect}}{9\,(1+\Sigma_0/4)}$$
+is derived from symbolic $V_\mathrm{Gap}$ minimisation plus Schur's lemma in [T-216](/docs/proofs/categorical/fundamental-closures#t-216); formula (c) below is the **self-consistency equation** for $\varepsilon_{33}$ (its $|\bar\gamma|$ comes from the constant $\lambda_3 = 2\mu^2/(3|\bar\gamma|)$ and itself depends on $\varepsilon_{33}$), not a closed value — reading it as one was what manufactured the former "two-order gap". Solving the self-consistency (E26, no fitted parameters) gives $\varepsilon_\mathrm{eff} = 0.0569$ vs the loop route's $0.0587$ — $3\%$; the value stays [C] only on the sector-ansatz caveat.
 :::
 
 **Theorem.** The suppression parameter $\varepsilon$ is determined analytically via the parameters of the Gap potential:
@@ -627,6 +627,8 @@ Substituting $N_{33}^{(\mathrm{Fano})} = 2$ and $|\bar{\gamma}| \approx 0.15$ in
 The number $0.059$ comes from a **different** route — the loop estimate $\varepsilon_{\mathrm{eff}} = \lambda_3\varepsilon/(4\pi) \approx 74 \times 0.01 / 12.6 = 0.0587$ of §[Effective parameter](#функциональная-зависимость-ε) — and is phenomenological.
 
 What is established, therefore, splits in two. The **structural** expression above is [T]: it follows from symbolic $V_{\mathrm{Gap}}$ minimisation plus Schur's lemma, and $N_{33}^{(\mathrm{Fano})} = 2$ is a combinatorial fact about the Fano plane. The **numerical** value is [C at T-64]: closing the two-order gap requires either the full minimisation on $(S^1)^{21}/G_2$ with the true $\Sigma_0/(2\mathcal{G}^{(0)}_{\mathrm{total}})$ (which would have to supply a suppression of $\sim 100$) or a correction to the canonical substitution. This is open.
+
+**Resolved 2026-08-10 (instrument E26).** The "two-order gap" was an artefact of reading (c) — a *self-consistency equation* in which $|\bar\gamma|$ itself is a function of $\varepsilon_{33}$ — as a closed value, and of double-counting $N_{33}$ (it already sits inside the self-consistency; multiplying again overshoots twofold). Solving the self-consistent minimisation from scratch with the Theorem-13.5 constants, amplitudes free within Cauchy–Schwarz: $\varepsilon^*_{33} = 0.1314$, amplitude sum $\Sigma_0 = 0.1035$, $r_4 = 1/2$ (an identity, see [T-216](/docs/proofs/categorical/fundamental-closures#t-216)), giving $\varepsilon_\mathrm{eff} = \frac{4}{9} \cdot 0.1314 / 1.0259 = 0.0569$ against the loop route's $0.0587$ — agreement to $3\%$, with the confinement and electroweak suppressions ($\varepsilon_{3\bar 3}, \varepsilon_{\bar 3\bar 3} \to 0$) reproduced by the minimiser rather than imposed. Remaining check: the full 21-amplitude run outside the $SU(3)$ sector ansatz.
 :::
 
 **(d)** The global average $\bar{\varepsilon}$ is determined via the weighted combination of sectoral coherences:
