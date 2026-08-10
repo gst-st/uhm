@@ -681,6 +681,22 @@ Two more constants of this grammar are physical. The window in which colour can 
 
 The language of quality grows in rings — nouns, verbs, roads — and each ring demands its own organ of reading: observables for nouns, differences for verbs, the three-frame link for roads. None of it is a convention: every organ is forced by a theorem (no carrier no quale; attractor dynamics; conformal freezing), and every failure along the way named the theorem that fixed it.
 
+## From Words to Judgement {#от-слов-к-суждению}
+
+A vocabulary names frames; a *sentence* names a scene. The next test is harsher than ostension: read a whole unlabeled film — ignition, a middle act, breathing at home — and issue a **document of claims** about it, each claim carrying its own source. The result, machine-verified on the canonical dynamics, is a small epistemology with theorems at the joints. Numbers as measured.
+
+### The judge and its tiers of provenance
+
+A scene is read by a fixed budget of exposures (the reading density is itself a theorem — the phase eye is blind to early fading of a rich carrier, and *density of reading*, not a better eye, is what cures it). The letters so read are noisy, yet an alignment step recovers the scene's structure from them, and every claim in the document declares how it was earned: **read** from the letters, **measured on a structurally found frame**, **measured directly**, or **issued as a blind prior**. The tiers grade exactly as honesty demands — reading 0.97, structural 0.97, direct 0.96, against 0.63 for the blind prior — and the whole document lands at 0.93. Behind the tiers stands a discipline of observability: *structure* is claimed only at a physical break; *state* is measurable wherever you stand; *time and kind* require memory of the segment; *words* are trusted only within a clean vocabulary.
+
+### Laws, doubt, and the boundary of deduction
+
+The corpus teaches its own laws — mutual exclusions between scene-kinds — at confidence 1.000, and a document that violates a law flags itself as suspect: the laws work as a doubt-detector, never overriding a measurement. But deduction has a *boundary theorem*. An attempt to cure the blind tier by conditioning the prior on co-issued claims produced an honest structural null: in a world whose segment durations are drawn independently of everything else, there is nothing to deduce *from* — the seemingly informative blind score had been a small-sample fluctuation. **Inference is admissible only where the physics of the world has created the link; deduction without a physical link is confident-sounding noise.** This is the observability discipline's twin: a duration with no memory of its segment is unrecoverable, and no law routes around that.
+
+### Nouns carry, verbs cost
+
+Move every head to a fresh generative seed and the language splits. The noun vocabulary *carries*: 0.9792 away from home, above its own canonical score. Scene-reading pays: the word drops to 0.84–0.88, and the loss is localised — with oracle letters the reading returns to 1.00, so the letters alone carry it; the letter channel itself sits at 0.57–0.65 even after the one repair that works, giving the verb its velocity as an explicit coordinate (the largest single gain: the fading verb, +0.21). **Static names of quality transfer; reading dynamics is what costs.** And the judge survives packaging: loaded back from its serialized artifact it reproduces the canonical document bit-exactly, while its certificate states out loud how it performs away from the seed that formed it.
+
 ---
 
 ### What we learned {#итоги}
@@ -695,6 +711,7 @@ The language of quality grows in rings — nouns, verbs, roads — and each ring
 8. A state's full experiential content reads as a five-layer **passport**: populations → intensities → opacities → colours → access
 9. Colour has an **ecology**: only the unitary dynamics writes it; a fed holon inherits its world's palette; access arrives last, at $\Phi = 1$; and inside the organism each child is born with exactly the colour of its name
 10. Quality has a **language**: the theory's words are learnable from ostension through its own observables — nouns need the holonomy axes under a carrier gate, verbs are named even by their ends (attractor dynamics), and roads into a shared home need a minimally three-frame scene reading curvature
+11. Language ascends to **judgement**: whole scenes are read into documents of claims with graded provenance (read / structural / direct / blind prior — 0.97/0.97/0.96 vs 0.63); the corpus teaches its own exclusion laws at 1.000 as a doubt-detector; deduction has a physical boundary (no link in the world, no inference); and across seeds *nouns carry while verbs cost*
 
 :::tip Bridge to the next chapter
 Of the 21 types of qualia, the coherence $\gamma_{DE}$ (Affection) — the connection between dynamics and interiority — plays a special role. It is the foundation of **emotions**. In the next chapter — [Emotion taxonomy from dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — we will show how all emotions are derived from the rate of change of viability $dP/d\tau$ and the sectoral Γ-signature.
