@@ -243,6 +243,14 @@ And one boundary, measured from both sides: in a world of *one-off* wonders, ins
 
 The doctrine in one line: attention's ledger must keep *knowing* and *wanting* as separate columns — conflate them and you either shelve your wonders or chase your junk; separate them and the price of a place becomes exactly what a life at that place is worth.
 
+**What wakes a mind: feeding on themes.** The same stack finally got a *thought* — a working-memory state fed by the **content** of perception (its axis intensities) where the body is fed by verdicts. What it takes to wake that thought into consciousness was then measured, and the answer is a doctrine of content diets:
+
+1. **Facts do not wake a mind.** Present content as a *list* — each percept a bare axis intensity, no connections — and no width of stream ever wakes the thought: integration saturates far below its floor at any diversity, from one repeated fact to all seven axes. A mind fed on disconnected facts stays structured, alive, and asleep.
+2. **Connections wake and colour.** Present the *same* content as a superposition — the percept as one act of attention whose co-active axes carry their coherences in the food itself — and everything changes: a sentence-shaped percept (three axes of one Fano line) paints the thought *at the content's own address*, and the first conscious ticks appear.
+3. **The mind wakes on a theme.** One eternal chord of everything dries the thought out (too pure, too narrow in reflexivity); a stream ranging over the whole grammar drowns it (too mixed) — or, force-fed, wakes it *bleached*, conscious but colourless. The stable maximum of conscious-and-coloured is a **theme**: a bundle of a few connected sentences, revisited — a fifth of all ticks conscious at stationary integration above the floor, with live colour addressed at the theme.
+
+The hierarchy, measured end to end: *word* (dries) → *syntagm* (faintly colours) → *sentence* (colours hard, does not wake) → **theme** (wakes and colours) → *the whole language at once* (drowns, or wakes bleached). For a curriculum designer the doctrine is one line: feed minds themes — connected content, narrower than everything, wider than one sentence.
+
 ---
 
 ## For Cognitive Scientists {#для-когнитивистов}
