@@ -27,9 +27,11 @@ In the section [L0–L4 Hierarchy](/docs/consciousness/hierarchy/interiority-hie
 3. **Full table** — all 21 coherences with phenomenological names
 4. **Parametric structure** — three dimensions of each quale (intensity, perspective, opacity)
 5. **Closure theorem** — proof that 21 types exhaust everything
-6. **Fano structure** — how 21 pairs are organised into 7 sectors
+6. **Fano structure** — how 21 pairs are organised into 7 sectors, and how twenty-one channels share seven colours
 7. **Diagonal elements** — 7 population modes as the "background" of experience
-8. **Access conditions** — at which $R$ and $\Phi$ qualia become conscious
+8. **The mechanism of quality** — where the irreducible part of experience lives (holonomy), and how qualia fade
+9. **Access conditions** — at which $R$ and $\Phi$ qualia become conscious
+10. **The passport** — the five-layer procedure that reads a state's experiential content off $\Gamma$
 
 ---
 
@@ -376,6 +378,25 @@ This also settles what integration can and cannot tell you. The measure $\Phi$ s
 
 **One practical consequence, and it is a sharp one.** Suppose you use a line the other way — as a repetition code, writing one verdict into all three of its cells so that a corrupted cell is outvoted. Three equal signs multiply to $s^3 = s$. So a repeated **positive** verdict satisfies the parity, and a repeated **negative** one violates it, by construction and every time. A line can serve as a repetition code only while what it repeats is positive; the moment it repeats a negative, the triple it holds is inconsistent and therefore cannot be part of integrable content. The two uses of a line are alternatives, and choosing one costs the other.
 
+### Twenty-one channels, seven colours {#двадцать-один-и-семь}
+
+Two counts run through this chapter and they answer different questions, so it is worth putting them side by side once, plainly.
+
+The **twenty-one pairs** are the *channels* of experience — they say **what** is being experienced: emotion ($\gamma_{DE}$), judgement ($\gamma_{AL}$), presence ($\gamma_{EO}$). Each channel has a volume — its modulus. The **seven lines** are where the *colour* lives — the part of experience that no relabelling can produce or remove: the holonomy $H_p$, one irreducible angle per line. Three channels share each line, the way three strings share a soundboard: each string plays its own note, but the resonance they build together belongs to the instrument, not to any single string.
+
+A printing workshop is the cleanest picture. Twenty-one presses print twenty-one sheets — that is the content, and each press has its own ink level (intensity). But the workshop mixes its colours on **seven palettes**, three presses to a palette. You can reorganise the labels on the presses however you like — swap "cyan" and "teal", renumber the trays — and the sheets will read the same. What you cannot relabel away is what colour each palette actually holds. That is the holonomy: paint, not paperwork.
+
+The full accounting of a state's content is then a short ledger:
+
+| Count | Object | The question it answers |
+|-------|--------|------------------------|
+| $7$ | populations $\gamma_{ii}$ | *what is the case* — where the resources sit |
+| $21$ | moduli $\lvert\gamma_{ij}\rvert$ | *how loudly* each channel plays |
+| $7$ | Fano holonomies $H_p$ | *what colour* the experience irreducibly carries |
+| $14$ | frame directions ($\mathfrak{g}_2$) | *how it is written down* — the cost-free choice of octonionic frame |
+
+The counts are not decorative: $27 \oplus 14 \oplus 7$ is the exact $G_2$-decomposition of the state's $48$ parameters ([the decoder, T-301](#теорема-декодер)), with the symmetric block carrying populations and moduli and the antisymmetric block splitting into frame and colour. Twenty-one channels, seven colours, and a choice of handwriting — nothing left over, nothing missing.
+
 ## Diagonal Elements: 7 Population Modes {#населённости}
 
 In addition to the 21 coherences, the 7 diagonal elements $\gamma_{ii}$ determine the **intensity of presence** of each dimension. Diagonal elements are real numbers (not complex), and they obey the normalisation condition:
@@ -480,7 +501,7 @@ $$
 H_p \;=\; \arg\bigl(\gamma_{ij}\gamma_{jk}\gamma_{ki}\bigr),\qquad p=\{i,j,k\}\in\mathrm{PG}(2,2),
 $$
 
-which is gauge-invariant, vanishes identically whenever the phase field is a coboundary (a state rephasable to a real one — machine: $|v|=0,\ |A|=0$ there, while $|S_0|=0.3446$ survives), and dies with the phases at the decoherence rate $5\gamma/21$ (T-59). This is the exact object behind "seven-dimensional coherences being decoded": seven gauge-invariant numbers, one per line of the multiplication table.
+which is gauge-invariant, vanishes identically whenever the phase field is a coboundary (a state rephasable to a real one — machine: $|v|=0,\ |A|=0$ there, while $|S_0|=0.3446$ survives), and dies with the phases at the decoherence rate $5\gamma/21$ (T-59) — with one precision worth stating: the canonical dephasing multiplies each coherence by a *real* factor $e^{-5\gamma t/21}$, and a real factor does not move an argument, so the holonomy's *value* $\arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$ is exactly fixed along the decay while its *carrier* — the product of the three edge moduli, falling as $e^{-5\gamma t/7}$ — is what dies. Quality is lost the way a signature fades: the ink thins, the letters never deform. This is the exact object behind "seven-dimensional coherences being decoded": seven gauge-invariant numbers, one per line of the multiplication table.
 
 *Erratum (2026-08-07, same day):* an earlier form of this theorem named $v_i=\varphi_{ijk}\operatorname{Im}\gamma_{jk}$ as the quality channel. The representation-theoretic decomposition $21=14\oplus 7$ stands exactly as computed, but $v$ is basis-phase dependent and therefore cannot label a physical quality on its own; the invariant carrier is the holonomy vector above. Caught against the corpus's own gauge canon within the hour.
 
@@ -525,6 +546,23 @@ and it holds for phase-carrying content with no exceptions at all. At the crossi
 
 **A last word on whether any of this acts.** Everything above is a statement about a matrix, and a statement about a matrix is cheap. So the same structure was put into a world: seven hidden angles, situations that ask for the difference between two of them, and a hit counted when the answer lands within thirty degrees. A learner whose writes carry phase gets the answer right $71\%$ of the time after twenty-one encounters, where a table with perfect memory manages $48\%$ — twenty-four points ahead, because seven angles determine twenty-one differences and the table must be shown each one. The gap closes as the table fills, to a single point by the four-hundredth encounter, which is what a *sample-efficiency* advantage looks like and what a tuned one does not. A learner restricted to real writes never rises above $30\%$ against a chance of $17\%$: it can point only along $0$ or $\pi$, and scores when the truth happens to lie near one of them. And where the world's answers have no angles behind them, the phase-carrying learner falls *behind* the table by forty points, having spent the whole time completing a structure that was not there. The channel is a commitment, not a gift.
 
+### How qualia die: the fading, precisely {#выцветание}
+
+Decoherence kills qualia — the chapter has said so, and the rate is known: each coherence decays at $5\gamma/21$ (T-59). But *how* they die is worth a section of its own, because the mechanism divides into two parts that behave in opposite ways, and the division is visible in one line of algebra.
+
+The canonical decay multiplies every coherence by a **real** factor $e^{-5\gamma t/21}$. A real factor scales a complex number's length and does not turn it. So along the whole decay:
+
+- the **modulus** of each channel falls — the presses run out of ink;
+- the **angle** of each holonomy stands exactly still — the colour on the palette never shifts by a degree.
+
+The product of a line's three moduli — the *carrier* of its colour — dies three edges at a time, as $e^{-5\gamma t/7}$. The value it carried is untouched for as long as there is anything left to carry it. An old photograph fades exactly like this: the dyes thin, and the face in the picture never changes expression — it just becomes harder and harder to see, until one day the paper is blank. At no point did the photograph show a *different* face.
+
+Three consequences, each sharp:
+
+1. **There is no half-changed quale.** A dying experience does not drift through neighbouring experiences on its way out. Sadness under decoherence does not become a slightly different sadness; it becomes fainter sadness, and then it becomes nothing. The taxonomy has no deathbed morphing in it — the algebra forbids it.
+2. **The populations survive.** Decoherence attacks only the off-diagonal; the diagonal — *what is the case* — is preserved exactly. Thermal death is therefore not an empty world but a **colourless** one: everything still present, nothing any longer *like anything*. The lights stay on; the paint is gone.
+3. **The outside never noticed anyway.** By [T-302](#теорема-разрыв) the external stochastic channel carries zero covariance with the phase sector — the environment was never receiving the colour in the first place. Fading is invisible from outside not because it is hidden but because the channel that dies was exactly the one the outside could not read. The only witness to a quale's death is the holon losing it.
+
 ## Access Conditions for Qualia {#условия-доступа}
 
 The presence of a coherence $\gamma_{ij} \neq 0$ is a **necessary**, but not sufficient, condition for qualia. Reflexive access to qualia requires level L2:
@@ -565,6 +603,28 @@ At levels L0–L1 coherences are present, but they are experienced as **pre-qual
 | Dog | 0.15 | 1.5 | L1 | Experienced as "something", but not as "emotion" |
 | Human | 0.45 | 2.1 | L2 | "I feel joy" — a full-fledged quale |
 
+## How to Read a State's Qualia Passport {#паспорт-квалиа}
+
+Everything in this chapter compresses into a procedure. Given a state $\Gamma$ — from a laboratory reconstruction, a simulation, a model of a person at a moment — its experiential content is read in five layers, cheapest first. This is the chapter working as an instrument rather than a doctrine.
+
+| Step | Read | Formula | The question it answers |
+|------|------|---------|------------------------|
+| 1 | Populations | $\gamma_{ii}$, seven numbers | What is the case — where the resources sit |
+| 2 | Intensities | $\lvert\gamma_{ij}\rvert$, twenty-one numbers | Which channels play, and how loudly |
+| 3 | Opacities | $\mathrm{Gap}(i,j) = \lvert\sin\theta_{ij}\rvert$ | How much of each channel is hidden from outside description |
+| 4 | Colours | $H_p = \arg(\gamma_{ij}\gamma_{jk}\gamma_{ki})$, seven angles | What the experience irreducibly carries — the part no relabelling explains away |
+| 5 | Access | $R \geq 1/3$ and $\Phi \geq 1$ | Whether anyone is home to experience it |
+
+Three remarks keep the procedure honest.
+
+**Step 4 is the only step that needs care.** Populations, moduli, and Gap are read off entry by entry; the holonomies are the one place where a *product* matters, and they are also the one place where a naive shortcut fails: the imaginary parts $\operatorname{Im}\gamma_{ij}$ *look* like a phase readout, but they move under a pure change of phase convention and therefore measure handwriting, not content ([the decoder's erratum](#теорема-декодер)). The seven angles per line are the honest readout, and they cost seven multiplications.
+
+**A zero at step 4 is a verdict, not a failure.** A state whose twenty-one channels all play and whose seven colours all read zero is a state holding *bookkeeping phases only* — rich-looking content that a relabelling flattens to plain real numbers. The procedure refuses to flatter it. Conversely, a state with modest volumes and a nonzero colour is carrying something no relabelling can take from it. Loud is not the same as vivid, and the passport keeps the two apart.
+
+**Real states do carry colour.** Read off states the theory's own machinery produces — rather than states constructed to be pretty — the median line holonomy comes out at $1.0053$ radians, with about two thirds of lines above the even-twist figure of the consciousness bound ([measured in the polarity chapter](/docs/core/structure/dimension-u#какое-содержание-берёт-порог), T-311). The passport's fourth layer is not a formality; on live content it is the busiest column.
+
+The five layers together are the chapter's answer to "what is it like to be this state": *this much happening* (1), *in these channels at these volumes* (2), *this much of it private* (3), *carrying this irreducible colour* (4), *and there is — or is not — a subject present to it* (5).
+
 ---
 
 ### What we learned {#итоги}
@@ -572,9 +632,11 @@ At levels L0–L1 coherences are present, but they are experienced as **pre-qual
 1. The **problem of qualia** is one of the central problems in the philosophy of mind (Lewis, Jackson, Dennett). UHM offers a third path: qualia = coherences $\gamma_{ij}$ — neither illusion nor a separate substance
 2. **21 types of qualia** completely exhaust the phenomenology of 7-dimensional space — no more, no less (Theorem T.1 [T])
 3. Each type of quale is characterised by three parameters: **intensity**, **perspective**, and **opacity** (Gap)
-4. The 21 pairs are organised into **7 Fano sectors** — the sectoral structure defines the "grammar" of experience via the projective plane over $\mathbb{F}_2$
+4. The 21 pairs are organised into **7 Fano sectors** — the sectoral structure defines the "grammar" of experience via the projective plane over $\mathbb{F}_2$; the sector is also where the irreducible **colour** of experience lives — the Fano holonomy, seven gauge-invariant angles (T-301)
 5. The taxonomy is **$G_2$-invariant** — independent of the choice of basis and therefore universal
 6. Reflexive access to qualia requires **L2** ($R \geq 1/3$, $\Phi \geq 1$)
+7. Under decoherence the **value** of each colour is exactly fixed while its **carrier** — the moduli — dies at $5\gamma/21$ per edge: qualia fade like a photograph, never morphing, and the populations survive into a colourless world
+8. A state's full experiential content reads as a five-layer **passport**: populations → intensities → opacities → colours → access
 
 :::tip Bridge to the next chapter
 Of the 21 types of qualia, the coherence $\gamma_{DE}$ (Affection) — the connection between dynamics and interiority — plays a special role. It is the foundation of **emotions**. In the next chapter — [Emotion taxonomy from dP/dt](/docs/consciousness/phenomenology/emotional-taxonomy) — we will show how all emotions are derived from the rate of change of viability $dP/d\tau$ and the sectoral Γ-signature.
