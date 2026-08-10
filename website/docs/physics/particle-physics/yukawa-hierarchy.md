@@ -679,7 +679,9 @@ UHM complements NCG: the **Fano selection rule** fixes $y_1 \sim O(1)$, $y_2 = y
 :::tip Result P6
 The parameter $\varepsilon_{\mathrm{eff}} \approx 0.059$ is an **analytic expression** in terms of $N_{33}^{(\mathrm{Fano})}$, $|\bar{\gamma}|$, and the parameters of $V_{\mathrm{Gap}}$:
 
-$$\boxed{\varepsilon_{\mathrm{eff}} = \frac{4 N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + r_4 \Sigma_0/2)}}$$
+$$\boxed{\varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)}}$$
+
+*(Amended 2026-08-10 per E26 — see [§9](#9-аналитическая-формула-ε): $|\bar\gamma|$ in the numerator, $N_{33}$ once inside the self-consistency, $\Sigma_0$ the amplitude sum, $r_4 \equiv 1/2$; self-consistent evaluation $0.0569$/$0.0549$ vs the loop $0.0587$.)*
 
 Mass predictions: the order of magnitude is correct for all 9 particles; the best agreement is for $t$, $b$, $u$, $\tau$ (within 5%). Discrepancies for $c$, $\mu$ (factor $\sim 2$) — expected limits of the one-loop estimate without non-perturbative corrections.
 

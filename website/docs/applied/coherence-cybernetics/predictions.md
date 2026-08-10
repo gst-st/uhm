@@ -676,8 +676,10 @@ The total contribution of Gap fluctuations to the cosmological constant is suppr
 
 :::info Prediction [C given T-64] — falsifiable
 $$
-\varepsilon_{\mathrm{eff}} = \frac{4 N_{33}^{(\mathrm{Fano})}}{9|\bar{\gamma}| \cdot (1 + r_4 \Sigma_0/2)} \approx 0.059
+\varepsilon_{\mathrm{eff}} = \frac{4\,|\bar{\gamma}|_{\mathrm{sect}}}{9\,(1 + \Sigma_0/4)} \approx 0.055\text{–}0.057
 $$
+
+*(Amended 2026-08-10 per E26: the earlier denominator form with a repeated $N_{33}$ evaluated to $O(1)$, not $0.059$; the corrected self-consistent form lands at $0.0569$ (sector ansatz) / $0.0549$ (ansatz-free) against the loop route's $0.0587$ — see [T-216](/docs/proofs/categorical/fundamental-closures#t-216).)*
 The Yukawa hierarchy suppression parameter is an **analytical** algebraic function of structural constants of the Gap potential, not a free parameter. All mass ratios ($m_c/m_t \sim \varepsilon^2$, $m_u/m_t \sim \varepsilon^4$) are predicted.
 :::
 
