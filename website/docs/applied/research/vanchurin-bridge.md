@@ -884,6 +884,26 @@ the physical layer's dissipative flow (a BKM/Bures step) still sits
 squarely in the $a=1$ family. Approximated, generated, computed: one
 geometry, three ways of taking the step.
 
+**The exponent as a phase of knowledge.** A further sharpening,
+born from the goal-currency experiments in the silicon. Inside one
+living system the exponent $a$ is not a fixed property but a phase
+of its knowledge. The unseen is *computed*: every tact of conjugate
+counting is an exact natural-gradient step — $a=1$. The proven is
+*executed*: once a road has been established by the repetition law,
+the agent replays it without recomputing any geometry — the step is
+blind to informational distinguishability, which is precisely the
+$a=0$ regime. In the silicon this is the golden-path executor, and
+it is not a defect but a load-bearing economy: in the transfer
+bench a third session takes three levels in 79 ticks instead of
+1107 by executing proven traces. The boundary between the phases is
+settledness itself. Read this way, VL's classification acquires an
+architectural translation: "classical biology at $a=0$" says that
+observed large-scale biology is dominated by the execution of
+fossilised decisions — DNA is evolution's golden path — while the
+per-generation sampling tact stays at $a=1$ by the multinomial
+identity above; the crossover scale between the two phases is where
+the algorithmic layer of heredity lives, and it is measurable.
+
 ---
 
 ## 11. Reproducibility {#воспроизводимость}
