@@ -904,6 +904,27 @@ per-generation sampling tact stays at $a=1$ by the multinomial
 identity above; the crossover scale between the two phases is where
 the algorithmic layer of heredity lives, and it is measurable.
 
+**The autodidaxy curve: knowing more never kills learning more.** The
+phase picture makes one falsifiable prediction about any single
+learner: if the proven only *narrows* where computation happens (rather
+than extinguishing the computing organ), then no amount of accumulated
+knowledge should destroy the ability to keep learning. The text side
+of the silicon put this to an instrument. One bitwise-CTW base is
+pretrained on a prefix of length $T_0$, then lives on a fixed common
+window of text; the level falls monotonically with $T_0$ (2.416 down
+to 2.000 bits per byte) — the base helps the life it precedes — and
+the *content-controlled* learning progress $LP^{*}$, priced against a
+frozen twin of the same base on the same two half-windows, stays
+positive at every $T_0$ (+0.278 down to +0.109). There is no
+ossification from erudition: the $a=1$ organ survives arbitrary
+amounts of $a=0$ inheritance. The frozen twin itself pays 2.220
+against the living 2.000 — freezing costs real bits — and a small
+live first-order ledger mixed over the frozen base claws back only
+five percent of that gap: a light residual organ softens the freeze
+but does not replace continued learning of the deep base. In the
+phase language: execution is an economy, freezing is a tax, and the
+computing phase is indestructible by knowledge alone.
+
 ---
 
 ## 11. Reproducibility {#воспроизводимость}
