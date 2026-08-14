@@ -57,44 +57,78 @@ roots = [os.path.join(HERE, "..", "website", "docs"),
 # или если глагол говорит о ПЕРЕСЕЧЕНИИ, а не о принадлежности.
 NEG = re.compile(r"\b(no|No|NO|nor|neither|not)\b|\bне\b|\bни\b", re.U)
 XSECT = re.compile(r"meet|intersect|пересека|встреча|касает", re.I)
-n_num, n_line, n_skip = 0, 0, 0
-for root in roots:
-    for p in glob.glob(root + "/**/*.md", recursive=True):
-        s = open(p, encoding="utf-8", errors="ignore").read()
-        for m in pat_num.finditer(s):
-            n_num += 1
-            tri = sorted(int(x) for x in m.group(1, 2, 3))
-            letters = frozenset(re.findall(r"[ASDLEOU]", m.group(4)))
-            want = frozenset(NUM2AX[n] for n in tri)
-            if letters != want:
-                bad.append((p, m.group(0), f"канон: {sorted(want)}"))
-        for m in pat_line.finditer(s):
-            n_line += 1
-            trio = frozenset(m.group(1, 2, 3))
+def scan_text(s, p, bad):
+    """Сканирует один текст. Находки пишет в bad; возвращает счётчики."""
+    n_num = n_line = n_skip = 0
+    for m in pat_num.finditer(s):
+        n_num += 1
+        tri = sorted(int(x) for x in m.group(1, 2, 3))
+        letters = frozenset(re.findall(r"[ASDLEOU]", m.group(4)))
+        want = frozenset(NUM2AX[n] for n in tri)
+        if letters != want:
+            bad.append((p, m.group(0), f"канон: {sorted(want)}"))
+    for m in pat_line.finditer(s):
+        n_line += 1
+        trio = frozenset(m.group(1, 2, 3))
+        if trio in LINES_L:
+            continue
+        frag = m.group(0)
+        before = s[max(0, m.start() - 70):m.start()]
+        # отрицание перед фразой («no Fano line lies within…», «не лежит»)
+        # либо речь о пересечении («lines meeting the 3-sector»)
+        if NEG.search(before) or NEG.search(frag) or XSECT.search(frag):
+            n_skip += 1
+            continue
+        tag = "СЕКТОР, не прямая" if trio in SECTORS \
+              else "НЕ прямая канона"
+        bad.append((p, frag[:90], tag))
+    for mh in pat_list_head.finditer(s):
+        tail = s[mh.end():mh.end() + 320]
+        trios = [frozenset(t.group(1, 2, 3)) for t in pat_trio.finditer(tail)]
+        if len(trios) < 3:
+            continue
+        n_line += len(trios)
+        for trio in trios:
             if trio in LINES_L:
                 continue
-            frag = m.group(0)
-            before = s[max(0, m.start() - 70):m.start()]
-            # отрицание перед фразой («no Fano line lies within…», «не лежит»)
-            # либо речь о пересечении («lines meeting the 3-sector»)
-            if NEG.search(before) or NEG.search(frag) or XSECT.search(frag):
-                n_skip += 1
-                continue
             tag = "СЕКТОР, не прямая" if trio in SECTORS \
-                  else "НЕ прямая канона"
-            bad.append((p, frag[:90], tag))
-        for mh in pat_list_head.finditer(s):
-            tail = s[mh.end():mh.end() + 320]
-            trios = [frozenset(t.group(1, 2, 3)) for t in pat_trio.finditer(tail)]
-            if len(trios) < 3:
-                continue
-            n_line += len(trios)
-            for trio in trios:
-                if trio in LINES_L:
-                    continue
-                tag = "СЕКТОР, не прямая" if trio in SECTORS \
-                      else "НЕ прямая канона (в списке прямых)"
-                bad.append((p, mh.group(0) + " … " + "".join(sorted(trio)), tag))
+                  else "НЕ прямая канона (в списке прямых)"
+            bad.append((p, mh.group(0) + " … " + "".join(sorted(trio)), tag))
+    return n_num, n_line, n_skip
+
+
+def _probe(text, name):
+    found = []
+    scan_text(text, "<canary:" + name + ">", found)
+    return bool(found)
+
+
+# ---------------------------------------------------------------------------
+# НЕГАТИВНЫЙ КОНТРОЛЬ. Урок 07.08: верификатор печатал «нарушений нет», пока на
+# публичной странице стояли четыре неканоничные прямые. «Зелено» ничего не
+# значит, пока не доказано, что прибор ловит заведомо неверный вход.
+# ---------------------------------------------------------------------------
+CANARIES = [
+    ("сектор как прямая",  r"The Fano line $\{L,E,U\}$ carries the spine."),
+    ("сектор как прямая (ru)", r"Прямая Фано $\{A,S,D\}$ несёт хребет."),
+    ("неканоничная тройка", r"the Fano line $\{D,L,O\}$ is associative"),
+    ("список прямых", r"the seven Fano lines are $\{A,S,L\}$, $\{D,L,O\}$, "
+                      r"$\{L,E,U\}$, $\{A,E,O\}$, $\{A,D,U\}$, $\{S,D,E\}$, $\{S,O,U\}$"),
+    ("раскрытие номеров", r"$\{3,4,6\} = \{D,L,O\}$"),
+]
+missed = [nm for nm, tx in CANARIES if not _probe(tx, nm)]
+if missed:
+    print("!!! НЕГАТИВНЫЙ КОНТРОЛЬ ПРОВАЛЕН — прибор НЕ ловит: " + ", ".join(missed))
+    print("    Всё, что печатается ниже, ничего не значит, пока это не исправлено.")
+    raise SystemExit(2)
+print(f"[контроль] прибор поймал все {len(CANARIES)} заведомо неверных входов")
+
+n_num = n_line = n_skip = 0
+for root in roots:
+    for path in glob.glob(root + "/**/*.md", recursive=True):
+        txt = open(path, encoding="utf-8", errors="ignore").read()
+        a, b, c = scan_text(txt, path, bad)
+        n_num += a; n_line += b; n_skip += c
 print(f"скан: раскрытий номера→буквы {n_num}, заявлений прямых {n_line}, снято отрицанием/пересечением {n_skip}")
 if bad:
     print(f"!!! НАРУШЕНИЙ: {len(bad)}")
