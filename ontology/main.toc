@@ -16,7 +16,7 @@
 \contentsline {section}{\numberline {12}Freedom}{20}{section.12}%
 \contentsline {section}{\numberline {13}Golden paths, or why the world helps the bold}{21}{section.13}%
 \contentsline {section}{\numberline {14}Language and meaning: through the needle's eye}{22}{section.14}%
-\contentsline {section}{\numberline {15}Memory and learning}{24}{section.15}%
+\contentsline {section}{\numberline {15}Memory and learning}{23}{section.15}%
 \contentsline {section}{PART THREE · TOGETHER}{25}{figure.caption.20}%
 \contentsline {section}{\numberline {16}Others, and why connection adds being}{25}{section.16}%
 \contentsline {section}{\numberline {17}Society, superintelligence, and the ceiling of towers}{26}{section.17}%
