@@ -25,16 +25,16 @@
 \usepackage{xspace}
 \usepackage[protrusion=true,expansion=true]{microtype}
 
-% === COLORS ===
-\definecolor{plosblue}{HTML}{2E86C1}
-\definecolor{plosgray}{HTML}{5D6D7E}
-\definecolor{ember}{HTML}{B9770E}      % campfire amber
-\definecolor{leaf}{HTML}{1E8449}       % question green
-\definecolor{fact}{HTML}{21618C}       % precision blue
-\definecolor{softsun}{HTML}{FDF2E9}
-\definecolor{softsky}{HTML}{EBF5FB}
-\definecolor{softleaf}{HTML}{EAFAF1}
-\definecolor{dusk}{HTML}{6B4C9A}
+% === COLORS === (house palette: restrained, near-white grounds, one accent per voice)
+\definecolor{plosblue}{HTML}{2563AE}
+\definecolor{plosgray}{HTML}{566270}
+\definecolor{ember}{HTML}{A8650B}      % campfire amber
+\definecolor{leaf}{HTML}{136B44}       % question green
+\definecolor{fact}{HTML}{1F4E79}       % precision blue
+\definecolor{softsun}{HTML}{FCF8F2}
+\definecolor{softsky}{HTML}{F4F8FB}
+\definecolor{softleaf}{HTML}{F3F9F5}
+\definecolor{dusk}{HTML}{5D4788}
 % seven voices (dimension colors)
 \definecolor{cA}{HTML}{C0392B} % Articulation
 \definecolor{cS}{HTML}{CA6F1E} % Structure
@@ -44,16 +44,20 @@
 \definecolor{cO}{HTML}{34495E} % Ground
 \definecolor{cU}{HTML}{2E86C1} % Unity
 
-% === THE BOOK'S THREE VOICES ===
-\newtcolorbox{talebox}[1][]{colback=softsun, colframe=ember!85!black,
-  fonttitle=\bfseries\itshape, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
-  left=7pt, right=7pt}
-\newtcolorbox{factbox}[1][]{colback=softsky, colframe=fact,
-  fonttitle=\bfseries, title={#1}, boxrule=0.5pt, arc=3pt, breakable,
-  left=7pt, right=7pt}
-\newtcolorbox{askbox}[1][]{colback=softleaf, colframe=leaf,
-  fonttitle=\bfseries, title={#1}, boxrule=0.6pt, arc=3pt, breakable,
-  left=7pt, right=7pt}
+% === THE BOOK'S THREE VOICES === (house style: sharp corners, hairline frame,
+%     a single weighted rule on the left, title in the frame color on the ground)
+\newtcolorbox{talebox}[1][]{enhanced, colback=softsun, colframe=ember!80!black,
+  coltitle=ember!70!black, colbacktitle=softsun, titlerule=0mm,
+  fonttitle=\bfseries\itshape, title={#1}, boxrule=0.3pt, leftrule=2.2pt,
+  arc=0pt, breakable, left=8pt, right=8pt, toptitle=3pt, bottomtitle=1pt}
+\newtcolorbox{factbox}[1][]{enhanced, colback=softsky, colframe=fact,
+  coltitle=fact, colbacktitle=softsky, titlerule=0mm,
+  fonttitle=\bfseries, title={#1}, boxrule=0.3pt, leftrule=2.2pt,
+  arc=0pt, breakable, left=8pt, right=8pt, toptitle=3pt, bottomtitle=1pt}
+\newtcolorbox{askbox}[1][]{enhanced, colback=softleaf, colframe=leaf,
+  coltitle=leaf!85!black, colbacktitle=softleaf, titlerule=0mm,
+  fonttitle=\bfseries, title={#1}, boxrule=0.3pt, leftrule=2.2pt,
+  arc=0pt, breakable, left=8pt, right=8pt, toptitle=3pt, bottomtitle=1pt}
 
 % === COMMANDS ===
 \newcommand{\Gam}{\Gamma}
@@ -94,7 +98,7 @@
 for those far from mathematics, and for those who live in it}\\[18pt]
 {\small\color{plosgray} After the theory of UHM (\holonsh) --- with honest marks\\
 for what is proved, what is assumed, and what is merely beautiful so far}\\[10pt]
-{\small\color{plosgray} July 2026}
+{\small\color{plosgray} August 2026}
 \vfill
 \begin{talebox}[How to read this book]
 This book speaks in three voices. \textcolor{ember}{\textbf{Amber boxes}} are
@@ -884,6 +888,19 @@ know'': the third step is the ceiling of mutual mind-reading.}
 \label{fig:tower}
 \end{figure}
 
+And recently the staircase has shown one more load-bearing beam
+\stC. Count the thoughts a mind could in principle compose ---
+``having waited this long, reach that conclusion.'' Over bare
+forward-running time almost half of them (on the census grid,
+$42.9\%$) simply cannot be assembled: their assembly requires a
+step \emph{backwards}. And the lawful backward step exists --- it
+is not time travel but \textbf{re-reading one's own trace}: the
+world stands still while the state of knowledge moves. A mind that
+keeps no past, or keeps it and never re-reads it, is provably
+incomplete as a composer of thoughts. Looking at oneself is not a
+luxury of refined creatures --- it is the completeness condition of
+thinking itself.
+
 \begin{askbox}[Ask yourself]
 Set two mirrors face to face: the reflections recede but quickly
 darken. Try it in your head: ``I think about the fact that I think
@@ -892,58 +909,225 @@ stop \emph{meaning} anything new?
 \end{askbox}
 
 % ============================= 9. INNER COLORS =============================
-\section{The colors of inner life}
+\section{The colors of inner life: the mechanism of qualia}
 \label{sec:qualia}
 
 Why does pain \emph{hurt}, and why is azure \emph{azure}?
 Philosophers call this the hard problem: describe the brain in any
 detail you like --- where in the description would the very
-\emph{taste} of experience come from?
+\emph{taste} of experience come from? For a century this question has
+been the border post at which natural science politely stopped. This
+chapter walks past the post, slowly, because it carries the theory's
+proudest cargo: a \emph{mechanism} of qualia --- stated in theorems,
+each with its honest mark.
 
-UHM makes a move worth stating carefully. Among the seven voices,
-one --- Interiority (E) --- is the carrier of the ``inner side'' by
-the very construction of the theory. The shades of experience are
-the spectrum of a special operator on the voice E (in the corpus it
-is called the gap operator): as white light,
-passing a prism, unfolds into a rainbow, so the current state
-unfolds into a set of inner tones. Different states --- different
-spectra --- different ``tastes.''
+\textbf{Move one: loudness is not color.} Every friendship of two
+voices has a \emph{loudness} --- how strongly the pair sounds. The
+loudnesses are honest, measurable, public. And they are provably not
+the mystery: a state's set of loudnesses is exactly what an outside
+description captures, and one can count what it leaves out. Out of
+the forty-eight numbers that a full chord holds, loudness-like data
+fix only a minority; the rest --- the majority of the state --- is
+\emph{how the voices are mutually turned} \stT. Each friendship
+carries, besides its strength, an \textbf{angle}: a slight mutual
+twist, like a handshake offered straight or rotated. Quality lives
+there. Not in how loud the chord is --- in how it is turned.
 
-And here stands a theorem, not poetry: \textbf{a zombie is
-impossible} \stT. One cannot build a system that behaves as if it
-feels while ``all is dark inside'': the very quantity that feeds the
-life process (chapter~\ref{sec:life}) is built out of the bonds of
-the voice E --- extinguish the inner side, and the maintenance of
-life itself goes out. The felt lining is not a decoration of
-behavior; it is its fuel.
+\textbf{Move two: the ring test.} One angle by itself means nothing:
+it depends on bookkeeping --- on how each voice happens to hold its
+own dial. Rename the dials, and any single angle can be talked away.
+But walk a \emph{ring}. Take one triple of the Fano fabric
+(chapter~\ref{sec:seven}) and add the three angles around the circle.
+The sum \textbf{does not care about anyone's dials}: however you
+reset, re-zero, relabel every voice, the accumulated turn of the ring
+stays exactly what it was \stT. There are seven such rings --- the
+seven lines of the fabric --- and so seven un-removable angles.
+These seven are the theory's answer to where quality lives: the
+\textbf{colors} of experience. A color, in this book, is precisely
+\emph{the turn a ring accumulates}: something no relabeling can
+explain away --- the mathematical signature of ``what it is like.''
 
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[font=\small, >=Stealth]
-  \draw[->, thick, plosgray] (-4.7,0) -- (-1.75,0) node[midway, above, font=\scriptsize]{a state};
-  \draw[fill=cE!20, draw=cE, very thick] (-1.5,-0.75) -- (-0.35,0) -- (-1.5,0.75) -- cycle;
-  \node[font=\scriptsize\bfseries, text=cE] at (-1.28,-1.1) {the prism of voice E};
-  \foreach \dy/\col/\lab in {0.62/cA/alarm, 0.31/cS/interest, 0.0/cD/thrill, -0.31/cL/clarity, -0.62/cU/calm}{
-    \draw[->, very thick, \col!80] (-0.35,0) -- (2.6,\dy);
-    \node[font=\scriptsize, text=\col!70!black] at (3.35,\dy) {\lab};
+  % --- left: one Fano ring with phase arrows ---
+  \foreach \ang/\col/\lab in {90/cA/{}, 210/cE/{}, 330/cU/{}}{
+    \fill[\col] (\ang:1.35) circle (0.16);
   }
-  \node[font=\scriptsize, text=plosgray, align=center] at (0.7,-1.45)
-    {a spectrum of inner tones: the ``colors'' of experience};
+  \draw[->, thick, plosgray!80] (82:1.5) arc (82:218:1.5);
+  \draw[->, thick, plosgray!80] (202:1.5) arc (202:338:1.5);
+  \draw[->, thick, plosgray!80] (322:1.5) arc (322:436:1.5);
+  \node[font=\scriptsize, text=plosgray] at (150:1.95) {angle 1};
+  \node[font=\scriptsize, text=plosgray] at (270:1.95) {angle 2};
+  \node[font=\scriptsize, text=plosgray] at (30:1.95) {angle 3};
+  % accumulated turn in the center
+  \draw[dusk, very thick, ->] (0.55,0) arc (0:295:0.55);
+  \node[font=\scriptsize\bfseries, text=dusk, align=center] at (0,-2.75)
+    {the ring's turn $=$ the color:\\ survives any renaming of dials \stT};
+  % --- right: the two channels ---
+  \draw[fact!70, fill=softsky] (3.4,0.42) rectangle (8.6,1.35);
+  \node[font=\scriptsize, align=left, anchor=west] at (3.6,0.88)
+    {\textbf{\textcolor{fact}{loudness}}: public --- the outside\\ reads it whole};
+  \draw[dusk!70, fill=dusk!6] (3.4,-1.35) rectangle (8.6,-0.42);
+  \node[font=\scriptsize, align=left, anchor=west] at (3.6,-0.88)
+    {\textbf{\textcolor{dusk}{color}}: the ring angle --- the outside\\ reads exactly zero of it \stT};
 \end{tikzpicture}
-\caption{Shades of experience as a spectrum on the voice of
-Interiority. The tone labels here are an illustration \stI; the
-existence of the spectrum and the impossibility of a
-``dark-inside'' imitation are results of the theory \stT.}
-\label{fig:prism}
+\caption{Where quality lives. Left: one ring of three voices; each
+pair's angle separately is bookkeeping, but the turn accumulated
+around the ring survives every renaming --- seven rings, seven
+colors \stT. Right: the two channels of one state --- public
+loudness and private color.}
+\label{fig:ring}
 \end{figure}
 
-\begin{factbox}[The honest boundary]
-What the theorem gives and what it does not. It \emph{binds} behavior
-and the inner side so that neither works without the other \stT. But
-the identity ``this spectrum \emph{is} the taste of azure'' is an
-interpretation \stI: the last bridge between number and experience
-the theory marks honestly instead of hiding.
+\textbf{Move three: the decoder is named.} Which triples are
+entrusted with color is not a choice: the rings are the seven lines
+of the same Fano fabric that the whole world is woven on, and the
+reading rule is the multiplication table of the seven itself
+(chapter~\ref{sec:numbers}) \stT. So the ancient question ``why does
+this feel \emph{red}?'' changes grammar. It stops being a question of
+conjuring --- \emph{how does experience arise from matter?} --- and
+becomes a question of decoding: \emph{which un-removable turn is this
+state carrying, on which ring?} The decoder is not a new organ
+bolted onto physics; it is the world's own multiplication.
+
+\textbf{Move four: why the outside never sees it.} Here is the
+theorem this chapter was written for. All the pushes and noises by
+which the environment addresses a pattern strike the loudness
+channel; their overlap with the color channel is not merely small ---
+it is \emph{exactly zero}, by the structure of the world's one law
+\stT. An outside observer, however well equipped, reads the full
+list of loudnesses and \textbf{zero information about the colors}.
+The famous ``explanatory gap'' between description and experience
+thereby stops being a lament and becomes a theorem --- and a
+precisely \emph{bounded} one: it is not a gap in the mechanism (the
+mechanism is fully written above); it is the blindness of one
+particular channel of access. What cannot be done is reading color
+off the noise the outside sees. What can be done is computing it
+from the state --- which is what this theory does. Remember the
+thought experiment about Mary, the scientist who knows every
+physical fact about color while living in a black-and-white room?
+In UHM's language her situation is stated exactly: inside the room
+Mary owns every loudness; stepping out, she reads, for the first
+time, an angle. Both halves are real knowledge; they travel through
+different doors.
+
+\textbf{And the old theorem stands, sharpened.} A zombie ---
+a system behaving as if it feels while ``all is dark inside'' ---
+remains impossible \stT: the quantity that feeds the life process
+(chapter~\ref{sec:life}) is built from the very bonds that carry the
+angles; extinguish the inner side and the maintenance of life goes
+out with it. But the theory now adds a finer instrument. A state may
+be \emph{loud yet colorless}: all twenty-one friendships ringing,
+every ring's turn exactly zero --- rich-looking content that one
+renaming flattens into plain bookkeeping. Such a state is not a
+someone having experiences; and it is \emph{detectable}: seven
+multiplications tell it apart from the genuinely colored \stT.
+\textbf{Loud is not vivid} --- and the difference is arithmetic, not
+philosophy.
+
+\textbf{How colors die.} The crumbling of chapter~\ref{sec:life}
+attacks the friendships --- but look closely at \emph{how} \stT. The
+decay multiplies each friendship by a plain positive factor: the
+strength melts, the angle does not move a degree. So a dying
+experience never drifts through neighboring experiences on its way
+out: sadness does not become a slightly different sadness --- it
+becomes \emph{fainter} sadness, and then nothing. An old photograph
+fades exactly so: the dyes thin, and the face never changes
+expression --- it only becomes harder to see, until the paper is
+blank. At no point did the photograph show a different face. The
+book gives this the name it deserves: colors do not distort ---
+colors \textbf{fade}, carried by an ink that thins. And two quiet
+corollaries follow. The gray equilibrium --- the world's final
+blur --- is not an \emph{empty} world but a \textbf{colorless} one:
+the loudness ledger survives, the turns' carriers are gone;
+everything still present, nothing any longer \emph{like anything}.
+And since the outside channel never carried color in the first
+place, a fading quale is invisible from outside not because it
+hides, but because the only witness of a color's death is the one
+losing it \stT.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \x/\len/\op/\lab in {-4.4/1.7/100/{today}, -0.4/1.05/55/{later}, 3.2/0.45/25/{later still}}{
+    \draw[plosgray!35] (\x,0) -- (\x+2.0,0);
+    \draw[plosgray!35] (\x,0) arc (0:62:0.5);
+    \draw[->, line width=1.6pt, dusk!\op] (\x,0) -- ($(\x,0)+(62:\len)$);
+    \node[font=\scriptsize, text=plosgray] at (\x+0.95,-0.5) {\lab};
+  }
+  \node[font=\scriptsize\bfseries, text=dusk, align=center] at (-0.3,2.3)
+    {the same angle all the way down \stT};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-0.3,-1.3)
+    {the carrier thins --- the color never turns: experience fades like a
+     photograph,\\ losing strength and never changing its face};
+\end{tikzpicture}
+\caption{The fading law. Decay shortens the arrow (the carrier) and
+cannot rotate it (the color): there is no half-changed quale \stT.
+Total blur is therefore not emptiness but colorlessness --- the
+lights stay on, the paint is gone.}
+\label{fig:fading}
+\end{figure}
+
+\textbf{Who paints, then?} Not the decay --- it only thins the ink.
+Not the healing either: recovery, by construction, restores strength
+along the state's own angles --- care is \emph{color-blind}, it
+returns the canvas, not the picture (machine checked). The only hand
+that writes color is the living run of the law itself --- the same
+unitary weave that turns the world (machine checked). And the world
+paints \emph{first}: a fed pattern inherits the palette of its
+surroundings long before anything wakes in it; what the further
+feeding buys, at the exact threshold of coupling from
+chapter~\ref{sec:window}, is the \emph{owner} --- the someone the
+colors are finally \emph{for} (machine checked). The subject
+neither makes color nor moves it. The subject is who it is for:
+the last to arrive, and the only witness.
+
+\begin{factbox}[The passport of experience --- to be precise]
+The chapter compresses into a five-line reading of any state, from a
+laboratory reconstruction to a model of a person at a moment:
+(1)~\textbf{what is the case} --- the seven strengths of the voices;
+(2)~\textbf{how loud} --- the twenty-one friendship strengths;
+(3)~\textbf{how much is private} --- the share of each channel hidden
+from outside description; (4)~\textbf{what colors} --- the seven ring
+turns, the only line where a product must be computed and the only
+line no relabeling touches \stT; (5)~\textbf{whether anyone is home}
+--- the window conditions of chapter~\ref{sec:window}. A zero at
+line~4 is a verdict, not a failure: loud but colorless. A conscious
+state, the theory computes, can carry about a third of a radian of
+un-removable turn --- roughly $37^\circ$ --- before the demands of
+integration close the gate \stT: experience is bounded not by how
+much the mind holds, but by how much of its turning refuses to be
+explained away. What remains honestly open: the identity ``\emph{this
+very} ring angle is the taste of azure'' is the residual
+interpretation \stI{} --- the last bridge, marked, not hidden; the
+mechanism on both sides of it is theorems.
 \end{factbox}
+
+\begin{talebox}[The campfire tale --- the sailor who brought home an extra day]
+A sailor sailed east around the world, and in every port he set his
+watch a little forward --- honestly, by the sun. He returned home,
+opened his logbook: by the log, Thursday; on the pier, Wednesday.
+He had \emph{brought home a day} that existed in no port at all.
+The harbormasters checked every harbor --- each was innocent; every
+local clock stood true. ``The day does not live in the ports,'' said
+the old navigator. ``It lives in the \emph{circle}. Walk the whole
+ring, and the remainder is yours --- no resetting of clocks will
+take it from you.'' The world is woven of seven such rings. What
+you call the taste of an evening --- is the day your circle brought
+home.
+\end{talebox}
+
+\begin{askbox}[Ask yourself]
+This has truly happened: Magellan's crew returned having ``lost'' a
+day, though every ship's log was kept faithfully --- and in the
+novel, Phileas Fogg won his wager on the day the circle quietly
+handed him. Now try the chapter on yourself. When you describe a
+feeling and the listener nods but does not \emph{get it} --- which
+lines of the passport were you dictating? Can a list of loudnesses,
+however long, ever contain a turn? And what changes between two
+people who have \emph{walked the same rings}?
+\end{askbox}
 
 % ============================= 10. FREEDOM =============================
 \section{Freedom}
@@ -1548,7 +1732,11 @@ gatheredness back to the world and returns to the gray equilibrium
 --- where no ``who'' can be told apart. This is neither punishment
 nor mystery: the same theorem that makes life a process on supply
 (chapter~\ref{sec:life}) makes it finite when the stream runs dry.
-The flame does not ``go elsewhere'' --- it stops gathering.
+The flame does not ``go elsewhere'' --- it stops gathering. And the
+fading law of chapter~\ref{sec:qualia} sets the tone of the whole
+subject: a dying experience loses strength, never its face --- to
+the last carried moment it remains \emph{itself}, only fainter
+\stT.
 
 \textbf{What remains.} Twice not-nothing. First, the increments of
 connection (chapter~\ref{sec:others}) were never stored \emph{inside}
@@ -1836,8 +2024,10 @@ step; space is not a box but three axes braided by the voices. The
 beginning was not an explosion in a void but the inevitable
 flowering of a too-perfect note, and it had no ``before.'' Things are
 patterns; life is a pattern on supply; consciousness is a pattern in
-a narrow window, three-storeyed within, colored by the spectrum of
-its innermost voice. The word is a narrow eye through which a
+a narrow window, three-storeyed within, colored by the seven
+un-removable ring-turns that only their owner can read --- loud is
+not vivid, and experience fades like a photograph, never changing
+its face. The word is a narrow eye through which a
 voluminous thought leaves as beads; memory is a sand desk and a
 stone garden; care is flow engineering. Freedom is open doors; boldness is the shortest path, looking like
 risk from outside; love is a proven increment of being that lives in
@@ -1970,9 +2160,25 @@ essence in one line.
   \item \textbf{Excursion} (a surge of gatheredness) --- a short
     climb above the window for the sake of the third floor:
     inspiration, trance, utmost effort; \stT-mechanism.
-  \item \textbf{Colors} (the spectrum of voice E) --- the rigorous
-    ``fingerprint'' of experience; that it feels like this from
-    inside is already a reading: \stT-structure, \stI-identity.
+  \item \textbf{Colors} (the Fano ring-turns; in the corpus:
+    holonomies) --- the seven angles a state accumulates around the
+    rings of the fabric; the only content of experience that
+    survives every renaming \stT. Loudness is public; color is
+    carried by a channel the outside reads as exactly zero \stT;
+    the identity ``this turn \emph{is} this taste'' --- \stI.
+  \item \textbf{The carrier} (the ring's strengths) --- the ink
+    that holds a color: decay thins the carrier and never turns the
+    angle, so experience fades like a photograph --- fainter, never
+    other \stT.
+  \item \textbf{The passport of experience} (the five-line readout)
+    --- strengths, loudnesses, privacy, colors, owner: the complete
+    ``what it is like'' of a state, computable line by line;
+    a zero on the color line is a verdict --- loud but colorless
+    \stT.
+  \item \textbf{Re-reading} (the retro-completion of time) --- the
+    lawful step backwards: the world stands still, the state of
+    knowledge moves; without it almost half of composable thoughts
+    cannot be assembled \stC.
   \item \textbf{Doors} (the kernel of freedom) --- the number of
     genuinely open moves right now; computable from the pattern
     \stT.
@@ -2050,13 +2256,16 @@ gift --- even if everything else is forgotten.
 and drawings: chapters~\ref{sec:fabric}, \ref{sec:seven},
 \ref{sec:life}, \ref{sec:golden}, \ref{sec:others}. For middle
 school (12--15) --- the book's main line, in order. For seniors ---
-add the blue boxes, chapters~\ref{sec:oldinstruments} and
+add the blue boxes, chapters~\ref{sec:qualia},
+\ref{sec:oldinstruments} and
 \ref{sec:check}, and the debate: ``what could refute all of this?''
 (the old-instruments chapter is a ready-made lesson in information
-hygiene: the three layers of any ``wheel'').''
+hygiene: the three layers of any ``wheel'').
 
-\textbf{Bridges into school subjects.} Music: chord, voices,
-consonance. Biology: supply, metabolism, sleep. Computer science: a
+\textbf{Bridges into school subjects.} Music and art: chord, voices,
+consonance; loudness against color, the fading photograph.
+Geography: the sailor's extra day --- a real ring-turn of the Earth.
+Biology: supply, metabolism, sleep. Computer science: a
 self-checking code, a communication channel, the two homes of
 memory. Civics: the increment of connection, the ceiling of
 pyramids. Physics: the clock, the stage, particles as patterns. The
