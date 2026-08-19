@@ -479,7 +479,7 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
   \node[font=\scriptsize, text=cO] at (90:1.9) {голос O --- «маятник»};
   \draw[->, thick, cO] (0,0)--(90:1.0);
   \draw[->, thick, cE!80] (0,0)--(35:0.8);
-  \node[font=\scriptsize, text=cE] at (17:2.35) {остальные голоса};
+  \node[font=\scriptsize, text=cE, anchor=west] at (6:1.62) {остальные голоса};
   \node[font=\scriptsize, text=plosgray, align=center] at (0,-2.15)
     {никакого «внешнего» циферблата:\\ стрелки читают время друг по другу};
 \end{tikzpicture}
@@ -701,20 +701,20 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
 
 \begin{figure}[H]
 \centering
-\begin{tikzpicture}[font=\small]
-  % река согласий
-  \foreach \y in {-0.5,-0.25,0,0.25,0.5}{
-    \draw[plosblue!35, thick, decorate, decoration={snake, amplitude=1.1pt, segment length=9pt}]
-      (-5.6,\y) -- (5.6,\y);
+\begin{tikzpicture}[font=\small, >=Stealth]
+  % река согласий: линии течения расступаются вокруг водоворота
+  \foreach \y/\gap in {-0.6/1.0, -0.3/1.15, 0.3/1.15, 0.6/1.0}{
+    \draw[plosblue!40, thick] (-5.6,\y) -- (-\gap,\y);
+    \draw[plosblue!40, thick] (\gap,\y) -- (5.6,\y);
   }
-  % воронка-узел
-  \draw[plosblue!90, very thick] (0,0.55) .. controls (0.55,0.25) and (0.55,-0.25) .. (0,-0.55)
-    .. controls (-0.55,-0.25) and (-0.55,0.25) .. (0,0.55);
-  \draw[plosblue!90, thick] (0,0.34) .. controls (0.3,0.12) and (0.3,-0.12) .. (0,-0.34)
-    .. controls (-0.3,-0.12) and (-0.3,0.12) .. (0,0.34);
-  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (0,1.0) {«частица»};
-  \node[font=\scriptsize, text=plosgray, align=center] at (0,-1.15)
-    {устойчивый завиток течения --- реален, но не вынимается из реки};
+  \draw[plosblue!40, thick] (-5.6,0) -- (-1.35,0);
+  \draw[plosblue!40, thick] (1.35,0) -- (5.6,0);
+  % водоворот: логарифмическая спираль, затягивающая внутрь
+  \draw[plosblue!90, very thick, ->]
+    plot[domain=0:14.2, samples=140] ({90+deg(\x)}: {1.05*exp(-0.14*\x)});
+  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (0,1.45) {«частица»};
+  \node[font=\scriptsize, text=plosgray, align=center] at (0,-1.55)
+    {устойчивый водоворот течения --- реален, но не вынимается из реки};
 \end{tikzpicture}
 \caption{Частица по УГМ --- узор в ткани согласий, а не крупинка
 вещества. Лёгкие узоры --- знакомые частицы; самый лёгкий массивный
@@ -763,11 +763,14 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
   \draw[->, line width=3pt, leaf!60] (-5.3,0) -- (-2.25,0);
   \node[font=\scriptsize, text=leaf!50!black, align=center] at (-3.8,0.62)
     {поток порядка:\\ свет, пища, смысл};
-  % пламя
+  % пламя: симметричная капля с внутренним язычком
   \draw[ember, very thick, fill=softsun]
-    (-1.5,-0.9) .. controls (-2.0,0.3) and (-0.9,0.6) .. (-1.2,1.5)
-    .. controls (-1.0,0.8) and (-0.4,0.6) .. (-0.8,-0.9) -- cycle;
-  \node[font=\scriptsize\bfseries, text=ember] at (-1.15,1.95) {живой узор};
+    (-1.3,-0.85) .. controls (-2.0,-0.15) and (-1.75,0.85) .. (-1.3,1.55)
+    .. controls (-0.85,0.85) and (-0.6,-0.15) .. (-1.3,-0.85) -- cycle;
+  \draw[ember!75, thick, fill=ember!14]
+    (-1.3,-0.5) .. controls (-1.66,-0.05) and (-1.52,0.45) .. (-1.3,0.8)
+    .. controls (-1.08,0.45) and (-0.94,-0.05) .. (-1.3,-0.5) -- cycle;
+  \node[font=\scriptsize\bfseries, text=ember] at (-1.3,1.95) {живой узор};
   % выхлоп
   \draw[->, line width=2pt, plosgray!55] (-0.3,0) -- (2.6,0);
   \node[font=\scriptsize, text=plosgray, align=center] at (1.15,0.6)
@@ -926,12 +929,12 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
 \centering
 \begin{tikzpicture}[font=\small, >=Stealth]
   \foreach \i/\w/\lab/\txt in {0/4.6/этаж 0/чувствую мир,
-                               1/3.4/этаж 1/замечаю: я чувствую,
-                               2/2.3/этаж 2/вижу как замечаю,
-                               3/1.35/этаж 3/предел --- экскурсия}{
+                               1/3.7/этаж 1/замечаю: я чувствую,
+                               2/3.0/этаж 2/вижу как замечаю,
+                               3/2.6/этаж 3/предел --- экскурсия}{
     \draw[fact!70, fill=softsky] (-\w/2,\i*1.02) rectangle (\w/2,\i*1.02+0.78);
     \node[font=\scriptsize\bfseries] at (0,\i*1.02+0.53) {\lab};
-    \node[font=\scriptsize, text=plosgray] at (0,\i*1.02+0.2) {\txt};
+    \node[font=\tiny, text=plosgray] at (0,\i*1.02+0.2) {\txt};
   }
   \draw[densely dashed, plosgray] (-2.4,4.35) -- (2.4,4.35);
   \node[font=\scriptsize, text=plosgray, align=center] at (0,4.72)
@@ -969,7 +972,7 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
   \draw[->, thick, plosgray] (-5.87,0.12) -- (-4.83,1.56) node[midway, left, font=\scriptsize]{жди 5};
   \draw[->, thick, plosgray] (-5.83,0) -- (-3.57,0) node[midway, below, font=\scriptsize]{приди к 3};
   \draw[->, thick, ember, densely dashed] (-4.57,1.56) -- (-3.5,0.16);
-  \node[font=\scriptsize, text=ember, align=center] at (-2.85,1.45) {недостающая сторона\\ равна $-2$: такого шага нет};
+  \node[font=\scriptsize, text=ember, align=center] at (-2.45,1.85) {недостающая сторона\\ равна $-2$: такого шага нет};
   \node[font=\scriptsize\bfseries, text=ember] at (-4.55,-0.8) {только вперёд: мысль не замыкается};
   % справа: с перечитыванием --- замыкается всякая
   \fill[cA!85] (1.4,0) circle (0.11); \fill[cS!85] (4.0,0) circle (0.11); \fill[cD!85] (2.7,1.7) circle (0.11);
@@ -1055,9 +1058,9 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
   \foreach \ang/\col in {90/cA, 210/cE, 330/cU}{
     \fill[\col] (\ang:1.35) circle (0.16);
   }
-  \draw[->, thick, plosgray!80] (82:1.5) arc (82:218:1.5);
-  \draw[->, thick, plosgray!80] (202:1.5) arc (202:338:1.5);
-  \draw[->, thick, plosgray!80] (322:1.5) arc (322:436:1.5);
+  \draw[->, thick, plosgray!80] (104:1.5) arc (104:196:1.5);
+  \draw[->, thick, plosgray!80] (224:1.5) arc (224:316:1.5);
+  \draw[->, thick, plosgray!80] (344:1.5) arc (344:436:1.5);
   \node[font=\scriptsize, text=plosgray] at (150:1.95) {угол 1};
   \node[font=\scriptsize, text=plosgray] at (270:1.95) {угол 2};
   \node[font=\scriptsize, text=plosgray] at (30:1.95) {угол 3};
@@ -1386,12 +1389,12 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
   \node[font=\scriptsize, text=plosgray, align=center] at (-3.9,-1.15) {серая воронка};
   \node[font=\scriptsize, text=leaf!45!black, align=center] at (3.0,-1.5) {живое окно};
   \fill[leaf!25] (2.0,-1.02) ellipse (1.15 and 0.16);
-  \node[font=\scriptsize, text=ember] at (-0.9,1.5) {водораздел};
+  \node[font=\scriptsize, text=ember] at (-0.9,1.68) {водораздел};
   % шарик и смелый толчок
   \fill[cA] (-2.6,-0.32) circle (0.13);
   \draw[->, very thick, ember] (-2.45,-0.2) .. controls (-1.7,0.7) .. (-0.75,1.12);
-  \node[font=\scriptsize, text=ember, align=center] at (-2.35,1.0) {смелый ход:\\ дорогой рывок};
-  \draw[->, thick, leaf!70!black] (-0.65,1.0) .. controls (0.4,0.3) .. (1.5,-0.55);
+  \node[font=\scriptsize, text=ember, align=center] at (-3.45,1.3) {смелый ход:\\ дорогой рывок};
+  \draw[->, thick, leaf!70!black] (-0.65,1.0) .. controls (0.5,0.25) .. (1.9,-0.85);
   \node[font=\scriptsize, text=leaf!45!black, align=center] at (1.3,0.9) {дальше дорогу\\ делает поле};
 \end{tikzpicture}
 \caption{Рельеф судьбы: два водосбора и гребень между ними. До гребня
@@ -1585,11 +1588,11 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
   \foreach \x/\op in {-4.6/95, -4.0/75, -3.4/55, -2.8/38, -2.2/22}{
     \fill[plosblue!\op] (\x,0.75) circle (0.21);
   }
-  \node[font=\scriptsize, text=plosgray, align=center] at (-3.25,0.12)
+  \node[font=\scriptsize, text=plosgray, align=center] at (-3.25,-0.55)
     {невнимаемое тает: $\times\tfrac{1}{3}$ за оборот \stT};
   % стрелка переноса
   \draw[->, very thick, leaf] (-1.15,0.75) -- (0.55,0.75)
-    node[midway, above, font=\scriptsize, text=leaf!45!black, align=center]{повторение,\\ пересказ, сон \stI};
+    node[midway, above, font=\tiny, text=leaf!45!black, align=center]{повторение,\\ пересказ,\\ сон \stI};
   % библиотека
   \draw[ember!70, fill=softsun] (0.8,-0.2) rectangle (4.9,1.7);
   \node[font=\scriptsize\bfseries, text=ember] at (2.85,1.95) {библиотека (форма ткани)};
@@ -1909,9 +1912,9 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
   \node[font=\scriptsize, text=plosgray, align=center] at (-2.9,-0.95)
     {кричит адресно: здесь --- голос E};
   % шкала режимов
-  \foreach \x/\colr/\lab in {0.6/leaf!55/норма, 1.9/cD!55/внимание, 3.2/cS!60/предупр., 4.5/cA!60/критично, 5.8/plosgray!70/авария}{
+  \foreach \x/\colr/\lab in {0.6/leaf!75/норма, 1.9/cD!80/внимание, 3.2/cS!80/предупр., 4.5/cA!75/критично, 5.8/plosgray!85/авария}{
     \fill[\colr] (\x-0.6,0.35) rectangle (\x+0.6,1.05);
-    \node[font=\scriptsize, text=white] at (\x,0.7) {\lab};
+    \node[font=\tiny, text=white] at (\x,0.7) {\lab};
   }
   \draw[->, thick, plosgray] (6.4,1.5) -- (1.2,1.5);
   \node[font=\scriptsize, text=plosgray, align=center] at (3.6,1.95)
