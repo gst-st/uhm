@@ -27,3 +27,4 @@
 \contentsline {section}{Карта книги}{32}{section*.28}%
 \contentsline {section}{Словарик образов}{32}{section*.30}%
 \contentsline {section}{Страничка для учителя}{34}{section*.31}%
+\contentsline {section}{Мосты в корпус}{36}{section*.32}%
