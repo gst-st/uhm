@@ -1,35 +1,35 @@
 \contentsline {section}{Five marks of honesty}{3}{section*.2}%
 \contentsline {section}{What you are holding: an optics, not a doctrine}{3}{section*.3}%
-\contentsline {section}{PART ONE · THE WORLD}{4}{section*.3}%
-\contentsline {section}{\numberline {1}What everything is made of}{4}{section.1}%
-\contentsline {section}{\numberline {2}Why exactly seven}{5}{section.2}%
-\contentsline {section}{\numberline {3}Why the numbers are what they are: a ladder of four worlds}{6}{section.3}%
-\contentsline {section}{\numberline {4}What time is}{7}{section.4}%
-\contentsline {section}{\numberline {5}A beginning that had no ``before''}{8}{section.5}%
-\contentsline {section}{\numberline {6}The stage: why space is three-dimensional}{9}{section.6}%
-\contentsline {section}{\numberline {7}What things are (and whether there is a smallest one)}{10}{section.7}%
-\contentsline {section}{PART TWO · WITHIN}{11}{figure.caption.9}%
-\contentsline {section}{\numberline {8}What life is}{11}{section.8}%
-\contentsline {section}{\numberline {9}The window of consciousness}{12}{section.9}%
-\contentsline {section}{\numberline {10}The staircase within: three floors of reflection}{13}{section.10}%
-\contentsline {section}{\numberline {11}The colors of inner life: the mechanism of qualia}{15}{section.11}%
-\contentsline {section}{\numberline {12}Freedom}{19}{section.12}%
-\contentsline {section}{\numberline {13}Golden paths, or why the world helps the bold}{19}{section.13}%
-\contentsline {section}{\numberline {14}Language and meaning: through the needle's eye}{21}{section.14}%
-\contentsline {section}{\numberline {15}Memory and learning}{22}{section.15}%
-\contentsline {section}{PART THREE · TOGETHER}{23}{figure.caption.20}%
-\contentsline {section}{\numberline {16}Others, and why connection adds being}{23}{section.16}%
-\contentsline {section}{\numberline {17}Society, superintelligence, and the ceiling of towers}{24}{section.17}%
-\contentsline {section}{\numberline {18}The ladder of worlds: the holon, whole-and-part}{25}{section.18}%
-\contentsline {section}{\numberline {19}The health of the pattern: care as engineering}{27}{section.19}%
-\contentsline {section}{\numberline {20}Death, the world's memory, and ``is all this forever''}{28}{section.20}%
-\contentsline {section}{\numberline {21}Who watched the world while there was no one to watch}{29}{section.21}%
-\contentsline {section}{\numberline {22}Old instruments of the sky: what is hidden in divination wheels}{30}{section.22}%
-\contentsline {section}{\numberline {23}How to check that any of this is true}{32}{section.23}%
-\contentsline {section}{Epilogue: to be continued}{32}{section*.28}%
-\contentsline {section}{Map of the book}{34}{section*.29}%
-\contentsline {section}{A small glossary of images}{34}{section*.31}%
-\contentsline {section}{The constants at a glance}{36}{section*.32}%
-\contentsline {section}{A page for the teacher}{37}{section*.33}%
-\contentsline {section}{Bridges into the corpus}{38}{section*.34}%
-\contentsline {section}{The registry of checks}{39}{section*.35}%
+\contentsline {section}{PART ONE · THE WORLD}{5}{section*.3}%
+\contentsline {section}{\numberline {1}What everything is made of}{5}{section.1}%
+\contentsline {section}{\numberline {2}Why exactly seven}{6}{section.2}%
+\contentsline {section}{\numberline {3}Why the numbers are what they are: a ladder of four worlds}{7}{section.3}%
+\contentsline {section}{\numberline {4}What time is}{8}{section.4}%
+\contentsline {section}{\numberline {5}A beginning that had no ``before''}{9}{section.5}%
+\contentsline {section}{\numberline {6}The stage: why space is three-dimensional}{10}{section.6}%
+\contentsline {section}{\numberline {7}What things are (and whether there is a smallest one)}{11}{section.7}%
+\contentsline {section}{PART TWO · WITHIN}{13}{figure.caption.9}%
+\contentsline {section}{\numberline {8}What life is}{13}{section.8}%
+\contentsline {section}{\numberline {9}The window of consciousness}{14}{section.9}%
+\contentsline {section}{\numberline {10}The staircase within: three floors of reflection}{15}{section.10}%
+\contentsline {section}{\numberline {11}The colors of inner life: the mechanism of qualia}{16}{section.11}%
+\contentsline {section}{\numberline {12}Freedom}{20}{section.12}%
+\contentsline {section}{\numberline {13}Golden paths, or why the world helps the bold}{21}{section.13}%
+\contentsline {section}{\numberline {14}Language and meaning: through the needle's eye}{22}{section.14}%
+\contentsline {section}{\numberline {15}Memory and learning}{24}{section.15}%
+\contentsline {section}{PART THREE · TOGETHER}{25}{figure.caption.20}%
+\contentsline {section}{\numberline {16}Others, and why connection adds being}{25}{section.16}%
+\contentsline {section}{\numberline {17}Society, superintelligence, and the ceiling of towers}{26}{section.17}%
+\contentsline {section}{\numberline {18}The ladder of worlds: the holon, whole-and-part}{27}{section.18}%
+\contentsline {section}{\numberline {19}The health of the pattern: care as engineering}{28}{section.19}%
+\contentsline {section}{\numberline {20}Death, the world's memory, and ``is all this forever''}{29}{section.20}%
+\contentsline {section}{\numberline {21}Who watched the world while there was no one to watch}{30}{section.21}%
+\contentsline {section}{\numberline {22}Old instruments of the sky: what is hidden in divination wheels}{31}{section.22}%
+\contentsline {section}{\numberline {23}How to check that any of this is true}{33}{section.23}%
+\contentsline {section}{Epilogue: to be continued}{33}{section*.28}%
+\contentsline {section}{Map of the book}{35}{section*.29}%
+\contentsline {section}{A small glossary of images}{35}{section*.31}%
+\contentsline {section}{The constants at a glance}{37}{section*.32}%
+\contentsline {section}{A page for the teacher}{38}{section*.33}%
+\contentsline {section}{Bridges into the corpus}{39}{section*.34}%
+\contentsline {section}{The registry of checks}{40}{section*.35}%
