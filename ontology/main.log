@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.6)  19 AUG 2026 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.6)  19 AUG 2026 22:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -909,7 +909,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 ...small glossary of images}{32}{section*.31}
+l.28 ...small glossary of images}{33}{section*.31}
                                                   % [1])
 \tf@toc=\write5
 \openout5 = `main.toc'.
@@ -980,17 +980,13 @@ Underfull \hbox (badness 2846) in paragraph at lines 2724--2724
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 02836EDDD89F33C4342E2BF439A03A1C;7489.
  ) 
 Here is how much of TeX's memory you used:
  31848 strings out of 467525
  627725 string characters out of 5418983
- 1157255 words of memory out of 5000000
+ 1157257 words of memory out of 5000000
  59728 multiletter control sequences out of 15000+600000
  672216 words of font info for 332 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
