@@ -14,19 +14,20 @@
 \contentsline {section}{\numberline {11}Краски внутренней жизни: механизм квалиа}{14}{section.11}%
 \contentsline {section}{\numberline {12}Свобода}{18}{section.12}%
 \contentsline {section}{\numberline {13}Золотые пути, или почему мир помогает смелым}{19}{section.13}%
-\contentsline {section}{\numberline {14}Язык и смысл: сквозь игольное ушко}{21}{section.14}%
+\contentsline {section}{\numberline {14}Язык и смысл: сквозь игольное ушко}{20}{section.14}%
 \contentsline {section}{\numberline {15}Память и учение}{22}{section.15}%
-\contentsline {section}{\numberline {16}Другие, и почему связь --- прибавка бытия}{23}{section.16}%
-\contentsline {section}{\numberline {17}Общество, сверхразум и потолок башен}{24}{section.17}%
-\contentsline {section}{\numberline {18}Лестница миров: холон, целое-и-часть}{25}{section.18}%
+\contentsline {section}{\numberline {16}Другие, и почему связь --- прибавка бытия}{22}{section.16}%
+\contentsline {section}{\numberline {17}Общество, сверхразум и потолок башен}{23}{section.17}%
+\contentsline {section}{\numberline {18}Лестница миров: холон, целое-и-часть}{24}{section.18}%
 \contentsline {section}{\numberline {19}Здоровье узора: забота как инженерия}{26}{section.19}%
 \contentsline {section}{\numberline {20}Смерть, память мира и «вечно ли всё это»}{27}{section.20}%
 \contentsline {section}{\numberline {21}Кто смотрел на мир, пока смотреть было некому}{28}{section.21}%
 \contentsline {section}{\numberline {22}Старые приборы неба: что спрятано в гадательных колёсах}{29}{section.22}%
-\contentsline {section}{\numberline {23}Как проверить, что всё это правда}{31}{section.23}%
+\contentsline {section}{\numberline {23}Как проверить, что всё это правда}{30}{section.23}%
 \contentsline {section}{Эпилог: продолжение следует}{31}{section*.28}%
-\contentsline {section}{Карта книги}{33}{section*.29}%
-\contentsline {section}{Словарик образов}{33}{section*.31}%
-\contentsline {section}{Страничка для учителя}{35}{section*.32}%
-\contentsline {section}{Мосты в корпус}{37}{section*.33}%
-\contentsline {section}{Реестр проверок}{38}{section*.34}%
+\contentsline {section}{Карта книги}{32}{section*.29}%
+\contentsline {section}{Словарик образов}{32}{section*.31}%
+\contentsline {section}{Константы одним взглядом}{34}{section*.32}%
+\contentsline {section}{Страничка для учителя}{34}{section*.33}%
+\contentsline {section}{Мосты в корпус}{36}{section*.34}%
+\contentsline {section}{Реестр проверок}{37}{section*.35}%
