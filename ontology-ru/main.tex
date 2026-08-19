@@ -702,17 +702,27 @@ $\mathbb{R}$ (одно измерение) вырастает плоскость
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[font=\small, >=Stealth]
-  % река согласий: линии течения расступаются вокруг водоворота
-  \foreach \y/\gap in {-0.6/1.0, -0.3/1.15, 0.3/1.15, 0.6/1.0}{
-    \draw[plosblue!40, thick] (-5.6,\y) -- (-\gap,\y);
-    \draw[plosblue!40, thick] (\gap,\y) -- (5.6,\y);
+  % тихий омут под вихрем
+  \fill[plosblue!10] (0,0) circle (0.70);
+  % дальние струи: ровная рябь
+  \foreach \s in {1,-1}{
+    \draw[plosblue!45, thick, decorate, decoration={snake, amplitude=1.1pt, segment length=15pt}]
+      (-5.6,\s*0.85) -- (5.6,\s*0.85);
+    % ближние струи огибают омут
+    \draw[plosblue!45, thick]
+      (-5.6,\s*0.35) .. controls (-2.6,\s*0.35) and (-1.6,\s*0.42) .. (-0.85,\s*0.66)
+      .. controls (-0.1,\s*0.9) and (0.35,\s*0.86) .. (0.95,\s*0.62)
+      .. controls (1.7,\s*0.38) and (2.6,\s*0.35) .. (5.6,\s*0.35);
   }
-  \draw[plosblue!40, thick] (-5.6,0) -- (-1.35,0);
-  \draw[plosblue!40, thick] (1.35,0) -- (5.6,0);
-  % водоворот: логарифмическая спираль, затягивающая внутрь
-  \draw[plosblue!90, very thick, ->]
-    plot[domain=0:14.2, samples=140] ({90+deg(\x)}: {1.05*exp(-0.14*\x)});
-  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (0,1.45) {«частица»};
+  % осевая струя втягивается слева и рождается справа --- по ходу вращения
+  \draw[plosblue!45, thick] (-5.6,0) .. controls (-2.6,0) and (-1.5,-0.02) .. (-0.78,-0.18);
+  \draw[plosblue!45, thick] (5.6,0) .. controls (2.6,0) and (1.5,0.02) .. (0.78,0.18);
+  % двухрукавный водоворот
+  \draw[plosblue!85, line width=2.2pt, ->]
+    plot[domain=0:12.6, samples=140] ({90+deg(\x)}: {0.66*exp(-0.16*\x)});
+  \draw[plosblue!65, line width=1.5pt]
+    plot[domain=0:9.4, samples=110] ({270+deg(\x)}: {0.66*exp(-0.16*\x)});
+  \node[font=\scriptsize\bfseries, text=plosblue!60!black] at (0,1.4) {«частица»};
   \node[font=\scriptsize, text=plosgray, align=center] at (0,-1.55)
     {устойчивый водоворот течения --- реален, но не вынимается из реки};
 \end{tikzpicture}
@@ -1392,9 +1402,9 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
   \node[font=\scriptsize, text=ember] at (-0.9,1.68) {водораздел};
   % шарик и смелый толчок
   \fill[cA] (-2.6,-0.32) circle (0.13);
-  \draw[->, very thick, ember] (-2.45,-0.2) .. controls (-1.7,0.7) .. (-0.75,1.12);
+  \draw[->, very thick, ember] (-2.45,-0.18) .. controls (-1.95,0.9) .. (-0.85,1.34);
   \node[font=\scriptsize, text=ember, align=center] at (-3.45,1.3) {смелый ход:\\ дорогой рывок};
-  \draw[->, thick, leaf!70!black] (-0.65,1.0) .. controls (0.5,0.25) .. (1.9,-0.85);
+  \draw[->, thick, leaf!70!black] (-0.6,1.3) .. controls (0.55,0.82) .. (2.05,-0.82);
   \node[font=\scriptsize, text=leaf!45!black, align=center] at (1.3,0.9) {дальше дорогу\\ делает поле};
 \end{tikzpicture}
 \caption{Рельеф судьбы: два водосбора и гребень между ними. До гребня
@@ -1647,12 +1657,12 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
 \begin{figure}[H]
 \centering
 \begin{tikzpicture}[font=\small]
-  \foreach \cx/\lab in {-2.6/узор 1, 2.6/узор 2}{
+  \foreach \cx/\lab in {-3.1/узор 1, 3.1/узор 2}{
     \voiceroseneutral{\cx}{0}{0.85}{0.07}
     \node[font=\scriptsize\bfseries] at (\cx,-1.35) {\lab};
   }
   \foreach \dy in {0.45,0.15,-0.15,-0.45}{
-    \draw[leaf!75, very thick] (-1.75,\dy) .. controls (0,\dy*1.7) .. (1.75,\dy);
+    \draw[leaf!75, very thick] (-2.05,\dy) .. controls (0,\dy*1.6) .. (2.05,\dy);
   }
   \node[font=\scriptsize\bfseries, text=leaf!45!black] at (0,1.15) {взаимные согласия};
   \node[font=\scriptsize, text=fact, align=center] at (0,-2.0)
@@ -1726,22 +1736,25 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
     \draw[fact!70, fill=softsky] (-4.9,\i*0.94) rectangle (-2.3,\i*0.94+0.72);
     \node[font=\scriptsize] at (-3.6,\i*0.94+0.36) {\lab};
   }
-  \draw[densely dashed, ember, thick] (-5.1,2.98) -- (-2.1,2.98);
-  \node[font=\scriptsize, text=ember, align=center] at (-3.6,3.4)
+  \draw[densely dashed, ember, thick] (-5.0,2.98) -- (-2.2,2.98);
+  \node[font=\scriptsize, text=ember, align=center] at (-3.6,3.35)
     {четвёртого этажа не бывает \stT};
-  % поворот
-  \draw[->, very thick, leaf] (-1.9,1.4) .. controls (-0.9,1.4) .. (-0.35,0.85);
-  \node[font=\scriptsize, text=leaf!45!black] at (-1.05,2.0) {рост уходит вбок};
+  % земля под лесом
+  \draw[plosgray!45] (-0.1,0) -- (5.45,0);
+  % поворот роста: дугой над башней в лес
+  \draw[->, very thick, leaf] (-2.05,2.35) .. controls (-0.75,2.35) .. (0.35,1.4);
+  \node[font=\scriptsize, text=leaf!45!black] at (-0.75,2.62) {рост уходит вбок};
   % лес справа
-  \foreach \x/\h in {0.4/1.05, 1.3/1.5, 2.2/0.9, 3.1/1.35, 4.0/1.1, 4.9/1.55}{
-    \draw[leaf!70!black, line width=1.6pt] (\x,0) -- (\x,\h*0.42);
-    \fill[leaf!55] (\x,\h*0.42+0.32) ellipse (0.34 and 0.4);
+  \foreach \x/\h in {0.5/1.0, 1.4/1.45, 2.3/0.9, 3.2/1.3, 4.1/1.05, 5.0/1.5}{
+    \draw[leaf!70!black, line width=1.5pt] (\x,0) -- (\x,\h*0.5);
+    \fill[leaf!55] (\x,\h*0.5+0.3) ellipse (0.3 and 0.36);
   }
-  \foreach \a/\b in {0.4/1.3, 1.3/2.2, 2.2/3.1, 3.1/4.0, 4.0/4.9, 1.3/3.1}{
-    \draw[plosgray!50, densely dotted, thick] (\a,0.28) .. controls ({(\a+\b)/2},0.68) .. (\b,0.28);
+  % грибница дружб: под землёй, между корнями
+  \foreach \a/\b in {0.5/1.4, 1.4/2.3, 2.3/3.2, 3.2/4.1, 4.1/5.0, 1.4/3.2}{
+    \draw[plosgray!55, densely dotted, thick] (\a,-0.03) .. controls ({(\a+\b)/2},-0.42) .. (\b,-0.03);
   }
-  \node[font=\scriptsize\bfseries, text=leaf!40!black] at (2.65,2.35) {экология умов};
-  \node[font=\scriptsize, text=plosgray] at (2.65,-0.5) {грибница дружб};
+  \node[font=\scriptsize\bfseries, text=leaf!40!black] at (2.75,1.95) {экология умов};
+  \node[font=\scriptsize, text=plosgray] at (2.75,-0.75) {грибница дружб};
 \end{tikzpicture}
 \caption{Потолок композиции: субъектная вертикаль обрывается на трёх
 этажах \stT, дальше рост горизонтален. Сверхразум --- не великан, а
@@ -1800,13 +1813,11 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
     \voiceroseneutral{\cx}{\cy}{\r}{0.07}
     \node[font=\scriptsize\bfseries] at (\cx,\cy-\r-0.42) {\lab};
   }
-  \node[font=\scriptsize\itshape, text=plosgray] at (-1.7,2.6) {одна и та же семёрка на каждом этаже};
-  \draw[->, very thick, leaf] (-3.9,-1.6) .. controls (-1.0,-2.1) .. (1.6,-1.75);
-  \node[font=\scriptsize, text=leaf!45!black, align=center] at (-1.2,-2.55)
+  \draw[->, very thick, leaf] (-3.85,-1.55) .. controls (-1.0,-2.0) .. (1.45,-1.6);
+  \node[font=\scriptsize, text=leaf!45!black, align=center] at (-1.2,-2.42)
     {вверх: общее направление (машинно проверено)};
-  \draw[->, very thick, ember] (1.4,2.15) .. controls (-1.2,2.15) .. (-3.9,1.0);
-  \node[font=\scriptsize, text=ember, align=center] at (-3.5,2.05)
-    {вниз: такт, питание, смысл};
+  \draw[->, very thick, ember] (1.3,2.3) .. controls (-1.25,2.52) .. (-3.85,1.15);
+  \node[font=\scriptsize, text=ember] at (-0.5,2.76) {вниз: такт, питание, смысл};
 \end{tikzpicture}
 \caption{Лестница холонов: одна форма, разное население. Вниз по
 лестнице течёт дирижирование --- ритм и коридоры; вверх --- общее
@@ -1975,10 +1986,11 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
 \centering
 \begin{tikzpicture}[font=\small, >=Stealth]
   % океан
+  \fill[plosblue!12] (-5.4,-1.0) -- (-5.4,0) sin (-4.4,0.22) cos (-3.4,0) sin (-2.4,-0.22) cos (-1.4,0)
+    sin (-0.2,0.95) cos (0.7,0) sin (1.7,-0.2) cos (2.7,0) sin (3.7,0.18) cos (4.7,0) sin (5.4,0.1) -- (5.4,-1.0) -- cycle;
   \draw[plosblue!60, very thick]
     (-5.4,0) sin (-4.4,0.22) cos (-3.4,0) sin (-2.4,-0.22) cos (-1.4,0)
     sin (-0.2,0.95) cos (0.7,0) sin (1.7,-0.2) cos (2.7,0) sin (3.7,0.18) cos (4.7,0) sin (5.4,0.1);
-  \fill[plosblue!12] (-5.4,-1.0) rectangle (5.4,-0.02);
   % выделенная волна и её растворение
   \draw[dusk, very thick] (-0.85,0.02) sin (-0.2,0.95) cos (0.7,0.02);
   \node[font=\scriptsize\bfseries, text=dusk] at (-0.2,1.35) {волна};
@@ -2043,11 +2055,11 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
 \begin{tikzpicture}[font=\small]
   \fill[plosgray!18] (-4.6,0) -- (-2.2,2.5) -- (-0.6,0.9) -- (0.9,2.0) -- (3.6,0) -- cycle;
   \draw[plosgray!60, thick] (-4.6,0) -- (-2.2,2.5) -- (-0.6,0.9) -- (0.9,2.0) -- (3.6,0);
-  \fill[white] (-2.55,2.13) -- (-2.2,2.5) -- (-1.9,2.18) -- cycle;
+  \fill[softsky] (-2.55,2.13) -- (-2.2,2.5) -- (-1.9,2.18) -- cycle;
   \draw[fact, thick] (-2.2,2.5) -- (-2.2,3.05);
   \node[draw=fact, fill=softsky, rounded corners, font=\scriptsize, inner sep=2.5pt]
     at (-2.2,3.35) {высота: есть};
-  \node[font=\scriptsize\itshape, text=plosgray, align=center] at (1.1,3.0)
+  \node[font=\scriptsize\itshape, text=plosgray, align=center] at (2.15,3.2)
     {альпинистов ещё нет ---\\ у факта есть адрес, а не зритель};
   \draw[plosgray!45] (-5.2,0) -- (4.2,0);
 \end{tikzpicture}
@@ -2140,13 +2152,13 @@ $0{,}15$ и $1{,}5$ --- ощущается как нечто; в человек�
   \foreach \a in {20, 118, 250}{ \draw[dusk, thick, densely dashed] (\a:1.72) -- ({\a+180}:1.72); }
   \node[font=\scriptsize, text=dusk, align=center] at (0,-2.55)
     {противоположные ворота --- двоичные дополнения:\\ 32 из 32 (вычислено)};
-  \draw[->, thick, ember] (155:2.3) arc (155:120:2.3);
+  \draw[->, line width=1.5pt, ember] (158:2.25) arc (158:112:2.25);
   \node[font=\scriptsize, text=ember, align=center] at (-3.4,2.15)
     {лето: Земля медлит,\\ $+3{,}4\%$ рождений (Кеплер)};
   \node[font=\scriptsize, text=fact, align=center] at (3.9,1.5)
     {вся система «профилей»\\ $=$ дробная часть $93{,}87$};
-  \draw[fact!50] (2.35,1.15) -- (1.5,0.85);
-  \node[font=\scriptsize, text=plosgray, align=center] at (3.6,-1.7)
+  \draw[fact!50] (2.62,1.3) -- (1.66,0.95);
+  \node[font=\scriptsize, text=plosgray, align=center] at (3.45,-1.5)
     {64 ворот $=$ шесть\\ ответов «да/нет»};
 \end{tikzpicture}
 \caption{Гадательное колесо под микроскопом: честные часы, скрытая
