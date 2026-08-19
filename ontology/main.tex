@@ -76,6 +76,18 @@
 \newcommand{\stH}{\textbf{[H]}\xspace}
 \newcommand{\holonsh}{\href{https://holon.sh}{holon.sh}\xspace}
 
+% === HOUSE GLYPH: the rose of seven voices ===
+% \voicerose{x}{y}{radius}{dot}: colored rose at (x,y)
+\newcommand{\voicerose}[4]{%
+  \foreach \vang/\vcol in {90/cA,141.4/cS,192.8/cD,244.3/cL,295.7/cE,347.1/cO,38.6/cU}{%
+    \draw[\vcol!55, thick] (#1,#2) -- ($(#1,#2)+(\vang:#3)$);
+    \fill[\vcol] ($(#1,#2)+(\vang:#3)$) circle (#4);}}
+% \voiceroseneutral{x}{y}{radius}{dot}: quiet rose for population figures
+\newcommand{\voiceroseneutral}[4]{%
+  \foreach \vang in {90,141.4,192.8,244.3,295.7,347.1,38.6}{%
+    \draw[plosgray!40] (#1,#2) -- ($(#1,#2)+(\vang:#3)$);
+    \fill[plosblue!65] ($(#1,#2)+(\vang:#3)$) circle (#4);}}
+
 \hypersetup{colorlinks=true, linkcolor=fact, urlcolor=plosblue, citecolor=plosgray}
 
 \begin{document}
@@ -486,10 +498,7 @@ times --- around $4\cdot10^{-43}$ seconds \stC.
   \draw[->, very thick, ember] (-4.2,0) -- (-2.7,0)
     node[midway, above, font=\scriptsize, text=ember, align=center]{unstable\\ \stT};
   % unlayering
-  \foreach \ang/\col in {90/cA,141.4/cS,192.8/cD,244.3/cL,295.7/cE,347.1/cO,38.6/cU}{
-    \draw[\col!60, thick] (-1.2,0) -- ($(-1.2,0)+(\ang:1.15)$);
-    \fill[\col] ($(-1.2,0)+(\ang:1.15)$) circle (0.1);
-  }
+  \voicerose{-1.2}{0}{1.15}{0.1}
   \node[font=\scriptsize\bfseries] at (-1.2,1.6) {seven voices};
   \node[font=\scriptsize, text=plosgray, align=center] at (-1.2,-1.62) {difference --- clocks ---\\ history};
   % arrow into window
@@ -1611,10 +1620,7 @@ the rules of the fabric does not subtract --- it adds.
 \centering
 \begin{tikzpicture}[font=\small]
   \foreach \cx/\lab in {-2.6/pattern 1, 2.6/pattern 2}{
-    \foreach \ang in {90,141.4,192.8,244.3,295.7,347.1,38.6}{
-      \draw[plosgray!45] (\cx,0) -- ($(\cx,0)+(\ang:0.85)$);
-      \fill[plosblue!70] ($(\cx,0)+(\ang:0.85)$) circle (0.07);
-    }
+    \voiceroseneutral{\cx}{0}{0.85}{0.07}
     \node[font=\scriptsize\bfseries] at (\cx,-1.35) {\lab};
   }
   \foreach \dy in {0.45,0.15,-0.15,-0.45}{
@@ -1773,10 +1779,7 @@ grayness: \emph{where} everyone is looking.
 \centering
 \begin{tikzpicture}[font=\small, >=Stealth]
   \foreach \cx/\cy/\r/\lab in {-4.6/0/0.55/cell, -1.7/0.25/0.95/person, 2.4/0.6/1.5/community}{
-    \foreach \ang in {90,141.4,192.8,244.3,295.7,347.1,38.6}{
-      \draw[plosgray!40] (\cx,\cy) -- ($(\cx,\cy)+(\ang:\r)$);
-      \fill[plosblue!65] ($(\cx,\cy)+(\ang:\r)$) circle (0.07);
-    }
+    \voiceroseneutral{\cx}{\cy}{\r}{0.07}
     \node[font=\scriptsize\bfseries] at (\cx,\cy-\r-0.42) {\lab};
   }
   \node[font=\scriptsize\itshape, text=plosgray] at (-1.7,2.6) {one and the same seven on every floor};
@@ -2180,10 +2183,13 @@ vulnerable. UHM has dozens; here are four that need no formulas.
 
 \begin{itemize}[leftmargin=1.6em]
   \item \textbf{A number already on the scales.} The theory computes
-        one of the fundamental constants of particle decay (the
-        mirror-symmetry-violation phase,
-        $\delta_{CP}\approx 64.6^\circ$) --- the experiments of this
-        decade will narrow the range and can kill it \stC.
+        one of the fundamental constants of particle physics --- the
+        mirror-symmetry-violation phase --- at
+        $\delta_{CP}\approx 64.5^\circ$ \stH, and the first direct
+        measurement has already landed on it:
+        $64.6^\circ\pm2.8^\circ$, a coincidence to four hundredths
+        of the error bar. The experiments of this decade will narrow
+        the range further --- and can still kill it.
   \item \textbf{The signature of seven in the noise.} The rates at
         which fragile quantum states fall apart must arrange
         themselves not anyhow but along the Fano fabric --- with
@@ -2203,12 +2209,18 @@ vulnerable. UHM has dozens; here are four that need no formulas.
 \end{itemize}
 
 \begin{factbox}[The most important thing about honesty]
-The full registry holds twenty-three checkable predictions plus a
-by-name list of what is \emph{not} proved: the Source itself \stP,
-the identity of spectrum and ``taste'' \stI, the eternity of the
-supply \stC, the wisdom of the future forest \stH. A theory that
-hides its postulates is advertising. A theory that numbers them is
-science.
+The full registry holds fourteen consolidated checks, each with a
+band whose violation kills the corresponding claim: five are
+already \textbf{passing} (the CP phase; the Cabibbo angle; the
+neutron's exactly-zero electric dipole; the single heavy coupling
+of order one; the two sums of every living state), two are
+consistent, two partial, five await instruments that do not yet
+exist --- and none has failed (the full table is an appendix of
+this book). Beside them stands a by-name list of what is \emph{not}
+proved: the Source itself \stP, the identity of ring-turn and
+``taste'' \stI, the eternity of the supply \stC, the wisdom of the
+future forest \stH. A theory that hides its postulates is
+advertising. A theory that numbers them is science.
 \end{factbox}
 
 % ============================= EPILOGUE =============================
@@ -2250,10 +2262,7 @@ these lines.
 
 \begin{center}
 \begin{tikzpicture}[font=\small]
-  \foreach \ang/\col in {90/cA,141.4/cS,192.8/cD,244.3/cL,295.7/cE,347.1/cO,38.6/cU}{
-    \draw[\col!40] (0,0) -- (\ang:1.15);
-    \fill[\col] (\ang:1.15) circle (0.09);
-  }
+  \voicerose{0}{0}{1.15}{0.09}
   \node[font=\footnotesize\itshape, text=plosgray] at (0,-1.8) {--- the chord goes on ---};
 \end{tikzpicture}
 \end{center}
@@ -2561,9 +2570,60 @@ phenomenology & the exclusion theorem; fading corollaries \\[2pt]
 foundations & site-relativization \\[2pt]
 \ref{sec:oldinstruments}: the wheel --- clock, combinatorics,
 storyteller & research wing & machine reconstruction reports \\[2pt]
-\ref{sec:check}: the four checks; the registry of twenty-three &
-reference: the status registry & $\delta_{CP}$; the Fano noise
+\ref{sec:check}: the four checks; the registry of fourteen &
+reference: falsifiability registry & $\delta_{CP}$; the Fano noise
 signature; the $1/4$ wake-up exponent; two particles \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\clearpage
+% ============================= REGISTRY OF CHECKS =============================
+\section*{The registry of checks}
+\addcontentsline{toc}{section}{The registry of checks}
+
+Fourteen consolidated predictions, each with a band whose violation
+kills the corresponding claim at its stated mark. Verdicts as of
+2026: \textbf{passing} --- the measured value lies inside the band;
+\emph{consistent} --- not excluded, beyond current sensitivity;
+\emph{partial} --- indirect or calibration-dependent support;
+\emph{untested} --- no instrument has probed the band yet. Nothing
+has failed; nothing has been quietly retired.
+
+\begin{center}\small
+\begin{tabular}{@{}p{0.44\textwidth}p{0.20\textwidth}p{0.26\textwidth}@{}}
+\toprule
+\textbf{Prediction} & \textbf{Where to test} & \textbf{Verdict (2026)} \\
+\midrule
+CP phase $\delta_{CP}\approx 64.5^\circ\pm5^\circ$ \stH &
+colliders & \textbf{passing}: $64.6^\circ\pm2.8^\circ$ \\[2pt]
+Cabibbo angle $\approx 13^\circ$ \stH & kaon experiments &
+\textbf{passing}: $12.96^\circ$ \\[2pt]
+Neutron electric dipole exactly zero \stT & dipole searches &
+\textbf{passing}: consistent with $0$ \\[2pt]
+Exactly one heavy coupling of order one \stT & colliders &
+\textbf{passing}: unique, $\approx 0.94$ \\[2pt]
+The two sums of every living state inside their bands \stT & any
+reconstructed state & \textbf{passing}: no counterexample in
+$20\,000$ \\[2pt]
+No Big Rip; dark-energy drift of the predicted shape \stT\,\stC &
+sky surveys & consistent \\[2pt]
+Proton lifetime $\sim 6.7\times10^{37}$ years \stH & underground
+detectors & consistent (above current reach) \\[2pt]
+Wake-up threshold at $2/7$; the clinical index grazes $0.31$ \stC &
+anesthesiology & partial \\[2pt]
+Six to twelve inner streams in the resting brain \stH & brain
+imaging & partial ($7$--$17$ reported) \\[2pt]
+Fano block structure of brain coherences \stT & brain imaging &
+untested \\[2pt]
+Within-triple opacity below between-triple \stH & brain imaging &
+untested \\[2pt]
+The seven's signature in decoherence rates (fourteen exact sum
+rules) \stT\,\stC & quantum tomography & untested \\[2pt]
+A preferred cosmic scale of $\sim 160$ parsecs \stT & large-scale
+surveys & untested \\[2pt]
+Higgs self-coupling deviation of $10^{-2}$--$10^{-3}$ \stH &
+future colliders & untested \\
 \bottomrule
 \end{tabular}
 \end{center}

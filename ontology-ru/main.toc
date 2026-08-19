@@ -24,7 +24,8 @@
 \contentsline {section}{\numberline {22}Старые приборы неба: что спрятано в гадательных колёсах}{28}{section.22}%
 \contentsline {section}{\numberline {23}Как проверить, что всё это правда}{30}{section.23}%
 \contentsline {section}{Эпилог: продолжение следует}{31}{section*.27}%
-\contentsline {section}{Карта книги}{32}{section*.28}%
-\contentsline {section}{Словарик образов}{32}{section*.30}%
-\contentsline {section}{Страничка для учителя}{34}{section*.31}%
-\contentsline {section}{Мосты в корпус}{36}{section*.32}%
+\contentsline {section}{Карта книги}{33}{section*.28}%
+\contentsline {section}{Словарик образов}{33}{section*.30}%
+\contentsline {section}{Страничка для учителя}{35}{section*.31}%
+\contentsline {section}{Мосты в корпус}{37}{section*.32}%
+\contentsline {section}{Реестр проверок}{38}{section*.33}%
