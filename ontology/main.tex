@@ -1083,6 +1083,60 @@ colors are finally \emph{for} (machine checked). The subject
 neither makes color nor moves it. The subject is who it is for:
 the last to arrive, and the only witness.
 
+\textbf{The listener's ladder.} ``The owner arrives last'' can be
+said with a staircase's precision. Take one and the same friendship
+--- a warm coupling of two voices at a fixed strength --- and hand
+it, unchanged, to five bearers. In an empty hall (no gathering, no
+coupling) it is music playing for no one: the chord sounds, nobody
+is listening. In a cat --- coupled into one, but with no reserve
+turned upon itself --- it is heard as \emph{something}, without
+telling the melody from the accompaniment. In a person --- reserve
+at least a third, coupling above one --- it is at last \emph{felt
+as a feeling}: ``I hear the violin carry the theme while the cello
+keeps the ground.'' In a musician at work the second floor of the
+tower joins in: ``I notice that I notice sadness in this melody.''
+And the limit --- pure listening, where listener and music coincide
+--- the theory keeps as a boundary, not a promise. Same friendship,
+same strength; what changes is only who is home for it. The steps
+and their thresholds are theorems \stT; the concert-hall images are
+an illustration \stI. The corpus even prints the dials: one and the
+same friendship at strength $0.20$ reads, in a thermostat, as
+reserve $0.02$ at coupling $0.3$ --- a parameter, no one home; in a
+dog, $0.15$ and $1.5$ --- felt as something; in a person, $0.45$
+and $2.1$ --- a full-fledged feeling (machine checked).
+
+And one honest warning the ladder gives, measured end to end
+(machine checked): access is a \emph{window}, not a summit. On the
+steepest licensed excursion of gatheredness --- the third floor's
+brief, expensive climb (chapter~\ref{sec:tower}) --- the reserve
+falls below its third, and the door to the colors \emph{closes}:
+the deepest self-scrutiny is, for its moment, color-blind. Thought
+at its sharpest pays by not tasting; the taste returns with the
+descent home. Whoever has tried to feel a feeling \emph{while}
+dissecting it has met this theorem in person.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[font=\small, >=Stealth]
+  \foreach \i/\lab/\cond in {0/{empty hall}/{no one home}, 1/{cat}/{coupled into one},
+      2/{person}/{$+$ reserve $\geq \tfrac13$}, 3/{musician}/{$+$ the second floor},
+      4/{the limit}/{listener $=$ music}}{
+    \draw[fact!70, fill=softsky] (\i*2.15,\i*0.52) rectangle (\i*2.15+2.0,\i*0.52+0.46);
+    \node[font=\scriptsize\bfseries] at (\i*2.15+1.0,\i*0.52+0.23) {\lab};
+    \node[font=\tiny, text=plosgray, align=center] at (\i*2.15+1.0,\i*0.52-0.26) {\cond};
+  }
+  \draw[->, dusk, very thick] (5.3,1.9) -- (5.3,2.75);
+  \node[font=\scriptsize\bfseries, text=dusk, align=center] at (5.3,3.15) {here the colors\\ find their owner};
+\end{tikzpicture}
+\caption{The listener's ladder: one chord, five bearers. The
+friendship is identical on every step --- what grows is who is home
+for it. The door of colors opens at the person's step (reserve at
+least a third, coupling above one \stT) --- and briefly closes
+again on the steepest excursions: the sharpest thought is
+color-blind for its moment (machine checked).}
+\label{fig:ladder}
+\end{figure}
+
 \begin{factbox}[The passport of experience --- to be precise]
 The chapter compresses into a five-line reading of any state, from a
 laboratory reconstruction to a model of a person at a moment:
@@ -1283,7 +1337,9 @@ other way: where have you been rowing against the current for years
 \label{sec:language}
 
 The inner world is voluminous: seven voices, twenty-one friendships
-between them, a whole chord. Speech is one-dimensional: words come
+between them, a whole chord --- forty-eight independent numbers at
+every single moment (chapter~\ref{sec:qualia}). Speech is
+one-dimensional: words come
 out in a chain, one by one, like beads on a string. Anyone who has
 tried to ``say what they feel'' knows this torment. UHM shows that
 the torment is not clumsiness but geometry.
@@ -1318,7 +1374,7 @@ it as ``understanding'' is an honest interpretation \stI.
   \foreach \dy/\col in {0.9/cA, 0.6/cS, 0.3/cD, 0.0/cL, -0.3/cE, -0.6/cO, -0.9/cU}{
     \draw[\col!75, thick] (-5.0,\dy) .. controls (-3.2,\dy) and (-2.6,\dy*0.3) .. (-1.9,0);
   }
-  \node[font=\scriptsize, text=plosgray, align=center] at (-4.2,1.5) {seven voices,\\ 21 friendships};
+  \node[font=\scriptsize, text=plosgray, align=center] at (-4.2,1.5) {seven voices, 21 friendships,\\ seven colors};
   \draw[fact, very thick] (-1.75,0) ellipse (0.18 and 0.5);
   \node[font=\scriptsize\bfseries, text=fact, align=center] at (-1.75,-1.05) {the eye of speech:\\ $2.8$ bits per step \stT};
   \foreach \x in {-1.1,-0.5,0.1,0.7,1.3,1.9,2.5,3.1,3.7,4.3}{
@@ -1334,6 +1390,43 @@ theorem, not a metaphor: hence both the length of a ``complete
 thought'' and the very need for grammar.}
 \label{fig:needle}
 \end{figure}
+
+\textbf{Words need the right eye.} If the colors of
+chapter~\ref{sec:qualia} are real structure, the theory must be
+able to \emph{name its own states} --- and the names must be
+learnable the way children learn them: by showing, not by defining.
+This was put to a machine test, and the result draws the boundary
+of language with three honest failures (machine checked). Teach a
+simple reader to name states by handing it all forty-eight raw
+numbers --- it fails: the words are not written in those
+coordinates. Hand it everything \emph{except} the seven ring-angles
+--- it climbs to $0.78$ of the way and sticks, confused exactly
+where the theory says it must be: between the two signs of one
+ring's color, and between the colored and the colorless.
+\textbf{No instrument sees color through loudnesses} --- not even a
+talking one. Hand it the angles naively --- better, $0.89$, still
+short: on quiet rings the angle is noise read off a dead wire. The
+cure is the fading law of chapter~\ref{sec:qualia} applied as
+engineering --- \textbf{no carrier, no color}: count a ring's angle
+only while its carrier is alive. With that single rule the simplest
+reader names states at $0.96$--$0.98$. The moral for every
+dictionary of feelings: words about quality are learnable --- but
+only by an eye that owns the rings; list loudnesses to a ringless
+listener for as long as you like, and he will stall at the same
+honest ceiling.
+
+And the channel of angles is not a free gift --- the corpus
+measured its price (machine checked). A learner whose notes carry
+angles completes a whole family of feelings from a few shown ones
+--- seven angles determine all twenty-one differences --- and after
+twenty-one encounters it answers the world rightly $71\%$ of the
+time where a perfect-memory table manages $48\%$: the table must be
+shown every case; the angled learner completes the pattern. But set
+the same learner in a world whose answers carry no angles behind
+them, and it falls \emph{behind} the table by forty points,
+faithfully completing a structure that is not there. The angle
+channel is a commitment, not a gift: it wins exactly in worlds
+woven of rings --- the worlds this book is about.
 
 \begin{askbox}[Ask yourself]
 Recall how hard it is to retell a dream or a smell. What exactly
@@ -2028,7 +2121,8 @@ a narrow window, three-storeyed within, colored by the seven
 un-removable ring-turns that only their owner can read --- loud is
 not vivid, and experience fades like a photograph, never changing
 its face. The word is a narrow eye through which a
-voluminous thought leaves as beads; memory is a sand desk and a
+voluminous thought leaves as beads, and a color's name speaks only
+to an eye that owns the rings; memory is a sand desk and a
 stone garden; care is flow engineering. Freedom is open doors; boldness is the shortest path, looking like
 risk from outside; love is a proven increment of being that lives in
 the bridge, not in the banks; superintelligence is a forest, not a
@@ -2169,7 +2263,14 @@ essence in one line.
   \item \textbf{The carrier} (the ring's strengths) --- the ink
     that holds a color: decay thins the carrier and never turns the
     angle, so experience fades like a photograph --- fainter, never
-    other \stT.
+    other \stT. Reading rule: no carrier, no color --- an angle on
+    a dead wire is noise (machine checked).
+  \item \textbf{The listener's ladder} (the steps of access) ---
+    one chord, five bearers: empty hall, cat, person, musician, the
+    limit; the door of colors opens at reserve one third and
+    coupling one \stT, and briefly closes on the steepest
+    excursions --- the sharpest thought is color-blind for its
+    moment (machine checked).
   \item \textbf{The passport of experience} (the five-line readout)
     --- strengths, loudnesses, privacy, colors, owner: the complete
     ``what it is like'' of a state, computable line by line;

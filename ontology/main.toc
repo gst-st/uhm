@@ -10,19 +10,19 @@
 \contentsline {section}{\numberline {9}The window of consciousness}{11}{section.9}%
 \contentsline {section}{\numberline {10}The staircase within: three floors of reflection}{12}{section.10}%
 \contentsline {section}{\numberline {11}The colors of inner life: the mechanism of qualia}{13}{section.11}%
-\contentsline {section}{\numberline {12}Freedom}{16}{section.12}%
-\contentsline {section}{\numberline {13}Golden paths, or why the world helps the bold}{17}{section.13}%
-\contentsline {section}{\numberline {14}Language and meaning: through the needle's eye}{18}{section.14}%
-\contentsline {section}{\numberline {15}Memory and learning}{19}{section.15}%
-\contentsline {section}{\numberline {16}Others, and why connection adds being}{20}{section.16}%
-\contentsline {section}{\numberline {17}Society, superintelligence, and the ceiling of towers}{21}{section.17}%
-\contentsline {section}{\numberline {18}The ladder of worlds: the holon, whole-and-part}{22}{section.18}%
-\contentsline {section}{\numberline {19}The health of the pattern: care as engineering}{23}{section.19}%
-\contentsline {section}{\numberline {20}Death, the world's memory, and ``is all this forever''}{24}{section.20}%
-\contentsline {section}{\numberline {21}Who watched the world while there was no one to watch}{25}{section.21}%
-\contentsline {section}{\numberline {22}Old instruments of the sky: what is hidden in divination wheels}{26}{section.22}%
-\contentsline {section}{\numberline {23}How to check that any of this is true}{28}{section.23}%
-\contentsline {section}{Epilogue: to be continued}{28}{section*.25}%
-\contentsline {section}{Map of the book}{30}{section*.26}%
-\contentsline {section}{A small glossary of images}{30}{section*.28}%
-\contentsline {section}{A page for the teacher}{32}{section*.29}%
+\contentsline {section}{\numberline {12}Freedom}{17}{section.12}%
+\contentsline {section}{\numberline {13}Golden paths, or why the world helps the bold}{18}{section.13}%
+\contentsline {section}{\numberline {14}Language and meaning: through the needle's eye}{19}{section.14}%
+\contentsline {section}{\numberline {15}Memory and learning}{20}{section.15}%
+\contentsline {section}{\numberline {16}Others, and why connection adds being}{21}{section.16}%
+\contentsline {section}{\numberline {17}Society, superintelligence, and the ceiling of towers}{22}{section.17}%
+\contentsline {section}{\numberline {18}The ladder of worlds: the holon, whole-and-part}{23}{section.18}%
+\contentsline {section}{\numberline {19}The health of the pattern: care as engineering}{24}{section.19}%
+\contentsline {section}{\numberline {20}Death, the world's memory, and ``is all this forever''}{25}{section.20}%
+\contentsline {section}{\numberline {21}Who watched the world while there was no one to watch}{26}{section.21}%
+\contentsline {section}{\numberline {22}Old instruments of the sky: what is hidden in divination wheels}{27}{section.22}%
+\contentsline {section}{\numberline {23}How to check that any of this is true}{29}{section.23}%
+\contentsline {section}{Epilogue: to be continued}{29}{section*.26}%
+\contentsline {section}{Map of the book}{31}{section*.27}%
+\contentsline {section}{A small glossary of images}{31}{section*.29}%
+\contentsline {section}{A page for the teacher}{33}{section*.30}%

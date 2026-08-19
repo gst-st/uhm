@@ -11,19 +11,19 @@
 \contentsline {section}{\numberline {9}Окно сознания}{12}{section.9}%
 \contentsline {section}{\numberline {10}Лестница внутри: три этажа рефлексии}{12}{section.10}%
 \contentsline {section}{\numberline {11}Краски внутренней жизни: механизм квалиа}{13}{section.11}%
-\contentsline {section}{\numberline {12}Свобода}{16}{section.12}%
-\contentsline {section}{\numberline {13}Золотые пути, или почему мир помогает смелым}{17}{section.13}%
-\contentsline {section}{\numberline {14}Язык и смысл: сквозь игольное ушко}{18}{section.14}%
-\contentsline {section}{\numberline {15}Память и учение}{19}{section.15}%
-\contentsline {section}{\numberline {16}Другие, и почему связь --- прибавка бытия}{20}{section.16}%
-\contentsline {section}{\numberline {17}Общество, сверхразум и потолок башен}{21}{section.17}%
-\contentsline {section}{\numberline {18}Лестница миров: холон, целое-и-часть}{22}{section.18}%
-\contentsline {section}{\numberline {19}Здоровье узора: забота как инженерия}{23}{section.19}%
-\contentsline {section}{\numberline {20}Смерть, память мира и «вечно ли всё это»}{24}{section.20}%
-\contentsline {section}{\numberline {21}Кто смотрел на мир, пока смотреть было некому}{25}{section.21}%
-\contentsline {section}{\numberline {22}Старые приборы неба: что спрятано в гадательных колёсах}{26}{section.22}%
-\contentsline {section}{\numberline {23}Как проверить, что всё это правда}{28}{section.23}%
-\contentsline {section}{Эпилог: продолжение следует}{28}{section*.25}%
-\contentsline {section}{Карта книги}{30}{section*.26}%
-\contentsline {section}{Словарик образов}{30}{section*.28}%
-\contentsline {section}{Страничка для учителя}{32}{section*.29}%
+\contentsline {section}{\numberline {12}Свобода}{17}{section.12}%
+\contentsline {section}{\numberline {13}Золотые пути, или почему мир помогает смелым}{18}{section.13}%
+\contentsline {section}{\numberline {14}Язык и смысл: сквозь игольное ушко}{19}{section.14}%
+\contentsline {section}{\numberline {15}Память и учение}{21}{section.15}%
+\contentsline {section}{\numberline {16}Другие, и почему связь --- прибавка бытия}{21}{section.16}%
+\contentsline {section}{\numberline {17}Общество, сверхразум и потолок башен}{22}{section.17}%
+\contentsline {section}{\numberline {18}Лестница миров: холон, целое-и-часть}{23}{section.18}%
+\contentsline {section}{\numberline {19}Здоровье узора: забота как инженерия}{24}{section.19}%
+\contentsline {section}{\numberline {20}Смерть, память мира и «вечно ли всё это»}{25}{section.20}%
+\contentsline {section}{\numberline {21}Кто смотрел на мир, пока смотреть было некому}{26}{section.21}%
+\contentsline {section}{\numberline {22}Старые приборы неба: что спрятано в гадательных колёсах}{27}{section.22}%
+\contentsline {section}{\numberline {23}Как проверить, что всё это правда}{29}{section.23}%
+\contentsline {section}{Эпилог: продолжение следует}{29}{section*.26}%
+\contentsline {section}{Карта книги}{31}{section*.27}%
+\contentsline {section}{Словарик образов}{31}{section*.29}%
+\contentsline {section}{Страничка для учителя}{33}{section*.30}%
