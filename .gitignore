@@ -1,5 +1,6 @@
 /internal/
 node_modules/
+environment_files/
 
 # Generated files
 docs-consolidated.md

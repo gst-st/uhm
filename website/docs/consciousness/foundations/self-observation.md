@@ -569,6 +569,32 @@ $$
 
 where $\{R_k, L_k, \lambda_k\}$ — eigen-structures of the logical Liouvillian $\mathcal{L}_\Omega$.
 
+## Retro-Completion of Time: R as the Categorical Completeness Condition of Thought [C] {#ретро-пополнение-времени}
+
+The essence in one line: without the ability to re-read its own past, a mind provably cannot compose almost half of its thoughts — and reflexivity $R$ is exactly the operation that restores this ability.
+
+### The gap, stated combinatorially
+
+Recall the trajectory nerve (the simplicial structure over the orbit category of $\varphi$, where a morphism is "wait $k$ steps of the channel"). A *composition of thoughts* is the filling of a horn: two edges of a triangle are known, the third must exist. Inner horns are always forced by composition. Outer horns ask the base monoid to *factor*: given a wait of length $a$ already performed and a target composite of length $b$, solve
+
+$$
+x \circ a = b .
+$$
+
+In the monoid $(\mathbb{N}_0, +)$ this is subtraction, and it **refuses whenever $b < a$**: there are no inverses — one cannot factor through a wait longer than the target. A direct census over independent outer horns (step grid $0..6$) measures the refusal share at $42.9\%$: nearly half of the formally posable compositions of thought do not exist over bare forward time. The nerve is a quasi-category, not a Kan complex.
+
+### The completion, stated physically
+
+The categorical cure is the group completion $(\mathbb{N}_0,+) \to (\mathbb{Z},+)$: admit negative net steps, and every factorisation exists. Physically time does not run backwards — but a system whose trace is a first-class object (a mind that *keeps* its history) realises the negative step lawfully: a net step $-r$ does not rewind the world, it **re-reads $r$ recorded steps of its own past** and re-interprets them in the present context. The world stands still; the state of knowledge moves.
+
+This is precisely the action of the reflection operator: $R$ measures how much of the state is the system's own model of itself, and re-reading the trace is self-observation applied along the time axis. The engineering half already exists as the re-read organ (retrospective re-interpretation with an explicit bit price), and the completed nerve is realised in silicon with three courts: over the completion **all** 49 census horns fill (the monoid refused 21 of them), the embedding of forward time respects composition, and a negative net step provably does not advance the world state.
+
+### Theorem-candidate (R-completeness) [C] {#теорема-кандидат-r-полнота}
+
+*The reflexivity axis is the categorical completeness condition of thought: the trajectory nerve is a Kan complex if and only if the base of waits is closed under retrospection (group-completed time). Uniqueness of fillers follows from injectivity of $F$; existence — from retro-completion.*
+
+Status [C]: the categorical half (a group fills every horn) is rigorous; the substantive identification "retrospection = the R axis in action" carries the empirical weight and stands on the silicon stand. What makes the statement non-trivial is its direction: reflexivity is usually *motivated* phenomenologically ("I know that I know"); here it appears as a *combinatorial necessity* — a mind without it is measurably incomplete as a composition system, losing $42.9\%$ of outer compositions on the census grid.
+
 ## Examples of Contracting CPTP Channels
 
 For intuition, it is useful to see concrete realisations:
