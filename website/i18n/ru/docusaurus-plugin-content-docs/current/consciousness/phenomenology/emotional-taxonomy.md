@@ -64,9 +64,9 @@ slug: /consciousness/phenomenology/emotional-taxonomy
 
 ```mermaid
 quadrantChart
-    title Circumplex модель Рассела
-    x-axis Неприятно --> Приятно
-    y-axis Деактивация --> Активация
+    title "Circumplex модель Рассела"
+    x-axis "Неприятно" --> "Приятно"
+    y-axis "Деактивация" --> "Активация"
     quadrant-1 "Радость, Восторг"
     quadrant-2 "Страх, Гнев"
     quadrant-3 "Печаль, Скука"

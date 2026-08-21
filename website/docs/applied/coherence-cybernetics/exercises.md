@@ -421,13 +421,14 @@ Draw the σ-profile (radar / spider chart) for the following systems:
 **(c)** Startup on the brink of bankruptcy: $\sigma = [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]$
 
 ```mermaid
-%%{init: {'theme': 'default'}}%%
-radar
-    title σ-profiles of three systems
-    axis A, S, D, L, E, O, U
-    "Healthy" : [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
-    "Depression" : [0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4]
-    "Startup" : [0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7]
+radar-beta
+    title "σ-profiles of three systems"
+    axis a["A"], s["S"], d["D"], l["L"], e["E"], o["O"], u["U"]
+    curve h["Healthy"]{0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1}
+    curve dep["Depression"]{0.2, 0.2, 0.7, 0.3, 0.6, 0.5, 0.4}
+    curve st["Startup"]{0.3, 0.6, 0.2, 0.4, 0.3, 0.9, 0.7}
+    max 1
+    min 0
 ```
 
 **(d)** Which profile is the most "peaked" (one spike)? Which is the most "round" (uniform)?

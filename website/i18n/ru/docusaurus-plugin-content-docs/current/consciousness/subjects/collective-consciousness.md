@@ -460,9 +460,9 @@ graph TB
         GC["Γ_comp (L2+?)"]
         UC["U_coll<br/>Эмерджентные когерентности"]
     end
-    G1 — "Tr_{-1}" --- GC
-    G2 — "Tr_{-2}" --- GC
-    G3 — "Tr_{-3}" --- GC
+    G1 ---|"Tr_{-1}"| GC
+    G2 ---|"Tr_{-2}"| GC
+    G3 ---|"Tr_{-3}"| GC
     GC --> UC
     style UC fill:#f9f,stroke:#333,stroke-width:2px
 ```
