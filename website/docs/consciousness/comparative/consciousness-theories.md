@@ -2044,7 +2044,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 
 ### What CC borrows
 - **Wave-like ontology of the substrate of experience**: both theories reject a purely neural-computational account. In CC, the off-diagonal coherences $\gamma_{ij}$ play the role analogous to the PWT wave field — they carry phase information that is lost in any classical computational description.
-- **Projective geometry of the spatial sector**: the $\{A,S,D\}$ sector of $\Gamma$ reconstructs (via Gel'fand + Connes, T-119 [T]) a smooth compact orientable spin 3-manifold $\Sigma^3$. Worden's emphasis that the spatial representation is projective rather than Euclidean is compatible with the $PGL(4,\mathbb{R})$ action on projective spatial sections of $\Sigma^3$.
+- **Projective geometry of the spatial sector**: the $\{A,S,D\}$ sector of $\Gamma$ reconstructs (via Gel'fand + Connes, T-119 [C]) a smooth compact orientable spin 3-manifold $\Sigma^3$. Worden's emphasis that the spatial representation is projective rather than Euclidean is compatible with the $PGL(4,\mathbb{R})$ action on projective spatial sections of $\Sigma^3$.
 - **Explicit mechanism for undistorted spatial experience**: PWT's selection / precision / decoding triad sharpens the requirement that any theory of consciousness must eventually explain how phenomenal 3-D space is achieved. In UHM this is answered by the spectral-triple reconstruction of $\Sigma^3$ and the Page–Wootters emergence of time.
 
 ### What CC does better
@@ -2064,7 +2064,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 $$F_{\mathrm{PWT}}: \mathbf{PWT} \to \mathbf{Hol}$$
 
 Wave excitation $\psi \mapsto$ off-diagonal coherences in the $\{A,S,D\}$-sector of $\Gamma$;
-projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [T]);
+projective group action $PGL(4,\mathbb{R}) \mapsto$ $G_2$-restricted transformations on $\Sigma^3$ (T-119 [C]);
 thalamic / central-body substrate $\mapsto$ one possible physical realisation of $\pi_{\mathrm{bio}}^{-1}$;
 undistorted conscious space $\mapsto$ spectral-triple reconstruction $A_{\mathrm{space}} \cong C(\Sigma^3)$.
 

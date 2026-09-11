@@ -223,7 +223,7 @@ If SUSY compensation [H] does not hold, then UV terms $O(\Lambda^4)$ and $O(\Lam
 | SUSY breaking | $m_{3/2} \sim \varepsilon^3 M_P$ | $\Lambda_{\text{CC}} \sim \varepsilon^{12} M_P^4 \sim 10^{-24} M_P^4$ |
 | Sector structure | $Z_\Phi(-2) = 0$ [T] | Winding cancellation; residual from $Z'_\Phi(-2)$ |
 | RG suppression | $\lambda_3 \sim 10^{-7.26}$ | $\lambda_3^2 \sim 10^{-14.5}$ |
-| Cohomological | $\Lambda_{\text{global}} = 0$ [T] | Physical $\Lambda$ is a local effect |
+| Cohomological | no topological $\Lambda$-term [T]; the vacuum energy is **not** cancelled (retracted 2026-09-10) | Physical $\Lambda$ is a local effect |
 | Sector minimization | [Global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] | $\sim 10^{-40}$ [C] |
 
 #### Structure of the Fermionic Sector {#структура-фермионного-сектора}
@@ -274,7 +274,7 @@ In UHM the observed cosmological constant is strictly positive: $\Lambda_{\text{
 
 **Proof.** A combination of three rigorously proved results:
 
-1. **Global cancellation** [T]: From cohomological monism ([T](/docs/core/foundations/consequences#когомологический-монизм)): $\Lambda_{\text{global}} = 0$.
+1. **No topological $\Lambda$-term** [T]: from cohomological monism (a corollary of the terminal-object property) every characteristic class of positive degree vanishes on the contractible $X$. **This does not cancel the vacuum energy** — a degree-0 quantity is untouched by $H^{n>0} = 0$ (the "global cancellation" reading was retracted 2026-09-10, see the [Λ-budget §4.1](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)), so step 1 contributes a prohibition, not a zero.
 
 2. **Local non-vanishing** [T]: From the [local-global dichotomy](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [T]: $H^7_{\text{loc}}(X, T) \cong \mathbb{Z} \neq 0$, therefore $\rho_{\text{vac}}(T) \neq 0$.
 
@@ -375,7 +375,7 @@ Detailed justification of each mechanism with proofs: [Full $\Lambda$ budget: pr
 
 | Mechanism | Suppression | Status | Note |
 |----------|-----------|--------|------------|
-| Cohomological $\Lambda_{\text{global}} = 0$ | full global cancellation | **[T]** | $H^n(X) = 0$ for $n > 0$ ([details](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
+| Cohomological argument | no topological $\Lambda$-term; **no** cancellation of the vacuum energy | **[T]** narrow / **[✗]** wide | $H^{n>0}(X) = 0$ [T]; a vacuum total is degree-0 data ([details](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) |
 | SUSY-breaking $\varepsilon^{12}$ ($\varepsilon\sim10^{-2}$ central) | $10^{-24}$, **absorbs** the perturbative $\varepsilon^6$ (net $\Delta \approx 10^{-12}$) | **[T at T-64]** scale via [T-219](/docs/proofs/categorical/fundamental-closures#t-219); exact compensation $\mathrm{Tr}(1)=0$ — **[H]** | G₂-adj **14** is irreducible, 7+7 decomposition not justified |
 | $Z'_\Phi(-2)$ | $\times 10^{10}$ — an **enhancement**, excluded from the mean-suppression product | **[T]** (math.) | Residual winding contribution; physical interpretation open |
 | RG $\lambda_3^2$ | $10^{-14.5}$ — **already inside** the perturbative $10^{-41.5}$ (§5.1); listed for reference, not multiplied again | **[T]** | RG suppression of the cubic coupling |
@@ -735,7 +735,7 @@ The discrete set of vacua $\sim 168$ ($|PSL(2,7)|$) is too small for the anthrop
 ## 13. Closure Strategy: Three Levels {#стратегия-замыкания}
 
 :::info Status: [C], honest bracket $10^{-53.5}$–$10^{-93.5}$
-Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) ($\Lambda_{\text{global}} = 0$ [T], an exact zero — a separate class) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) (a [C] programme) — the honest composed bracket is **$10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). The remaining $\gtrsim 27$ orders are an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
+Taking into account the [spectral formula](#теорема-спектральная-лямбда) **[T]**, the [cohomological argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление) (which after the 2026-09-10 retraction contributes no zero at all — only the absence of a *topological* $\Lambda$-term [T]) and [sector minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) (a [C] programme) — the honest composed bracket is **$10^{-53.5}$–$10^{-93.5}$** ([ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)). The remaining $\gtrsim 27$ orders are an **open computational + conceptual** task (numerical minimization on $(S^1)^{21}/G_2$ + saturation of the cohomological bound by the local residual).
 :::
 
 The strategy is divided into three levels.
@@ -744,7 +744,7 @@ The strategy is divided into three levels.
 
 **A1. Zeta cancellation.** $Z_\Phi(-2) = 0$ [T] — the zeta-regularized vacuum energy of winding sectors vanishes **exactly** (Theorem 9.1). Physical interpretation: with the **correct** regularization (analytic continuation, not cutoff) winding sectors **contribute nothing** to Λ.
 
-**A2. Cohomological cancellation.** $\Lambda_{\text{global}} = 0$ [T] — global contractibility of $X = |N(\mathcal{C})|$ to the terminal object $T$ gives $H^n(X, \mathcal{F}) = 0$ for $n > 0$. The observed $\Lambda_{\text{obs}} \neq 0$ is a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$. See [full argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление).
+**A2. Cohomological argument.** Global contractibility of $X = |N(\mathcal{C})|$ to the terminal object $T$ gives $H^n(X, A) = 0$ for $n > 0$ and locally constant $A$ [T] — hence **no topological $\Lambda$-term**. It gives **no cancellation of the vacuum energy**: that is degree-0 data, and $H^0(X, A) = A \neq 0$ (retracted 2026-09-10). The observed $\Lambda_{\text{obs}} \neq 0$ is a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$. See [full argument](/docs/proofs/gap/lambda-budget#когомологическое-обнуление).
 
 **A3. SUSY compensation.** $G_2$-holonomy → $\mathcal{N}=1$ SUSY [T]. Boson-fermion compensation $\mathrm{Tr}(1)_{\text{total}} = 0$ — **[H]** (G₂-adj **14** is irreducible, the 7+7 decomposition is not justified; see §4a). Scale of the residual: $\Lambda_{\text{residual}} \sim \varepsilon^{12}$ **[T]** as a structural result of the [spectral formula](#теорема-спектральная-лямбда) — independent of the [H]-compensation. See [SUSY argument](/docs/proofs/gap/lambda-budget#susy-компенсация).
 

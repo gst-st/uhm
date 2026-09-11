@@ -18,7 +18,8 @@ The mechanism of neutrino mass generation within UHM via type-I seesaw in the [4
 - **[T]** Theorem — strictly proved from UHM axioms
 - **[C]** Conditional — conditional on an explicit assumption
 - **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
-- **[P]** Postulate / Program — direction requiring further development
+- **[P]** Postulate — accepted without proof
+- **[Pr]** Research programme — direction requiring further development
 :::
 
 ## Contents

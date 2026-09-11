@@ -178,7 +178,7 @@ public fn validate_gamma(gamma: &StaticMatrix<Complex, 7, 7>, label: Text)
 
 ### Step 2: Write the Formula Literally
 
-Take $E$-coherence as an example (T-128 [T]):
+Take $E$-coherence as an example (T-128 [D]):
 
 $$
 \mathrm{Coh}_E(\Gamma) = \frac{\gamma_{EE}^2 + 2\sum_{i \neq E} |\gamma_{Ei}|^2}{\mathrm{Tr}(\Gamma^2)}
@@ -490,7 +490,7 @@ pub type HolonState is {
 
     // Consciousness measures (see /docs/consciousness/foundations/self-observation).
     mut integration:     Float { self >= 0.0  },   // Φ: integration measure
-    mut differentiation: Float { self >= 1.0  },   // D_diff = 1 + Coh_E·6  (T-128 [T])
+    mut differentiation: Float { self >= 1.0  },   // D_diff = 1 + Coh_E·6  (T-128 [D])
     mut reflection:      Float { 0.0 <= self && self <= 1.0 }, // R
     mut consciousness:   Float { self >= 0.0  },   // C = Φ·R  (T-140 [T])
 

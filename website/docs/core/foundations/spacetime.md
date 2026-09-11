@@ -204,7 +204,7 @@ Time is **derived** from the structure of the category $\mathcal{C}$ in four equ
 | **Page–Wootters** | Correlation with [O](../structure/dimension-o) | $\Gamma(\tau) = \text{Tr}_O[\cdot]$ | [T] Formalized |
 | **Information geometry** | Distance in the Bures metric | $d_B(\Gamma_1, \Gamma_2)$ | [T] Formalized |
 | **Categorical** | 1-morphism in ∞-groupoid | $\gamma: \Gamma_1 \to \Gamma_2$ | [T] Formalized |
-| **Stratification** | Collapse of strata to T | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [T] Formalized |
+| **Stratification** | Collapse of strata to T along the depth $n$ | $\dim(X_n) \geq \dim(X_{n+1})$ | [T] Formalized |
 
 [Full proof →](../../proofs/dynamics/emergent-time)
 :::
@@ -265,17 +265,17 @@ The arrow of time is one of the deepest puzzles in physics. Why do we remember t
 :::warning Theorem (Arrow of time as collapse of strata) [T]
 The arrow of time is a **geometric consequence** of the terminal object $T$:
 
-$$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
+$$\dim(X_n) \geq \dim(X_{n+1})$$
 
-with equality only at stationarity.
+along the stratal depth $n \in \mathbb{N}$ (the cumulative tick count — the cyclic label $\tau \in \mathbb{Z}_7$ carries no arrow, [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)), with equality only at stationarity.
 
 **Three equivalent formulations:**
 
 | Formulation | Formula | Source |
 |--------------|---------|----------|
-| Geometric | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [Property 3](./axiom-omega#свойство-3) |
+| Geometric | $\dim(X_n) \geq \dim(X_{n+1})$ | [Property 3](./axiom-omega#свойство-3) |
 | Entropic | $\sigma(\gamma) \cdot \Delta S_{vN}(\gamma) \geq 0$ | CPTP structure |
-| Convergence | $\lim_{\tau \to \infty} X_\tau = \{T\}$ | Terminality of T |
+| Convergence | $\lim_{n \to \infty} X_n = \{T\}$ | Terminality of T |
 
 [Full proof →](../../proofs/dynamics/emergent-time#10-стратификационное-время)
 :::
@@ -331,7 +331,7 @@ Under unital channels $I/7$ is the unique **sink**: every state majorizes $I/7$,
 | Aspect | Formulation | Consequence |
 |--------|--------------|-----------|
 | Sink (unital order) | $\forall \Gamma:\ I/7 \prec \Gamma$; $I/7\not\to\sigma\ (\sigma\neq I/7)$ | All dissipative paths lead to T |
-| Collapse of strata | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | Dimensionality does not grow |
+| Collapse of strata | $\dim(X_n) \geq \dim(X_{n+1})$ | Dimensionality does not grow along the depth $n$ |
 | Entropy | $dS_{vN}/d\tau \geq 0$ | Entropy does not decrease |
 
 **Status:** [T] Formalized. The second law is **derived** from categorical structure.
@@ -420,7 +420,7 @@ $$7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$$
 
 The masslessness of gluons ($\mathbf{3}$-sector) provides non-compact spatial dimensions; the massiveness of $W,Z$ ($\bar{\mathbf{3}}$-sector) provides compactification at the scale $v_{\text{EW}}$. Details — [Sectoral decomposition](#секторная-декомпозиция).
 
-**Results:** The [finite spectral triple](#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is constructed [T] (T-53). The spectral action $S = \text{Tr}(f(D/\Lambda))$ gives $\int(a_0\Lambda^4 + a_2\Lambda^2 R + \ldots)\sqrt{g}\,d^4x$ [T] (T-65, [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). The product of triples $M^4 \times F_{\text{int}}$ is **derived** from categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): the macroscopic algebra is commutative in the thermodynamic limit (T-117 [T]), the Gel'fand–Connes reconstruction gives $\Sigma^3$ (T-119 [T]), the product $M^4 = \mathbb{R} \times \Sigma^3$ satisfies the NCG axioms (T-120 [T]).
+**Results:** The [finite spectral triple](#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is constructed [T] (T-53). The spectral action $S = \text{Tr}(f(D/\Lambda))$ gives $\int(a_0\Lambda^4 + a_2\Lambda^2 R + \ldots)\sqrt{g}\,d^4x$ [T] (T-65, [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). The product of triples $M^4 \times F_{\text{int}}$ is **derived** from categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): the macroscopic algebra is commutative in the thermodynamic limit (T-117 [T]), the Gel'fand–Connes reconstruction gives $\Sigma^3$ (T-119 [C]), the product $M^4 = \mathbb{R} \times \Sigma^3$ satisfies the NCG axioms (T-120 [T]).
 :::
 
 See [Correspondence with physics: GR](../../proofs/physics/physics-correspondence#5-связь-с-общей-теорией-относительности) for the detailed program.

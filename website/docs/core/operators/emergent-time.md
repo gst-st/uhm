@@ -105,7 +105,7 @@ Summary of the equivalence proof (full rigorous proof: [Theorem →](/docs/proof
 
 **PW ↔ Categorical.** Each conditional state $\Gamma(\tau_n)$ is a 0-morphism in $\mathbf{Exp}_\infty$. The transition $\Gamma(\tau_n) \to \Gamma(\tau_{n+1})$ is a 1-morphism induced by the CPTP channel $e^{\delta\tau \mathcal{L}_\Omega}$. The chain of 1-morphisms forms a path in the ∞-groupoid whose length = number of ticks = discrete time.
 
-**PW ↔ Stratificational.** Each tick of the PW clock is a coarsening of the stratification: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ is a functor that loses homotopic information. The descent depth (number of applications of $\pi$) to the terminal object $T$ coincides with the number of PW ticks for a compatible choice of clock.
+**PW ↔ Stratificational.** Each tick of the PW clock is a coarsening of the stratification: $\pi_n: \mathcal{C}_n \to \mathcal{C}_{n-1}$ is a functor that loses homotopic information. The descent depth (number of applications of $\pi$) to the terminal object $T$ coincides with the number of *elapsed* PW ticks counted cumulatively ($n \in \mathbb{N}$), not with the cyclic label $\tau = n \bmod 7$: the tick is periodic, the depth is monotone ([two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)).
 
 ### Construction 1: Page–Wootters (the pendulum in the room)
 
@@ -237,7 +237,7 @@ All three components of the [triadic decomposition](/docs/core/operators/lindbla
 Remarkably, the emergent dynamics *automatically* contains all three components of the [triadic decomposition](/docs/core/operators/lindblad-operators#триадная-декомпозиция): the Hamiltonian $-i[H_{eff}, \cdot]$, the dissipator $\mathcal{D}$, and the regenerator $\mathcal{R}$. Time does not merely "emerge" — it emerges *together with the full dynamics*.
 
 :::warning Status of the tensor structure
-The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[T]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 uniquely determines the tensor decomposition. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[T]**
+The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is formally **Axiom 5**, but is **derivable** from A1–A4 via the spectral triple T-53 **[T]**: the algebra $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ with KO-dimension 6 isolates the clock summand, and the tensor factor $\mathcal{H}_O \cong \mathbb{C}[\mathbb{Z}_7]$ is the regular representation of the shift $\triangleright$ (T-87, step 3) — a direct sum is not a tensor product, so the factorisation is built from the clock register rather than read off the algebra. Details: [derivation of A5](/docs/core/foundations/axiom-omega#a5-из-спектральной-тройки). Status: **[T]**
 :::
 
 ---
@@ -246,7 +246,7 @@ The decomposition $\mathcal{H} = \mathcal{H}_O \otimes \mathcal{H}_{6D}$ is form
 
 ### Seven Frames of Animation
 
-For $N = 7$ time is **fundamentally discrete**: $\tau \in \mathbb{Z}_7$. The Holon has exactly 7 "moments" — like 7 frames in an animation. The transition between frames is the minimal quantum of subjective time, called the **chronon**:
+For $N = 7$ time is **fundamentally discrete**: $\tau \in \mathbb{Z}_7$. The Holon has exactly 7 "moments" — like 7 frames in an animation. The seven frames are the *labels* of the cyclic clock; what accumulates across cycles is the stratal depth $n \in \mathbb{N}$, and it is the depth, not the label, that carries the arrow ([two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)). The transition between frames is the minimal quantum of subjective time, called the **chronon**:
 
 $$
 \delta\tau = \frac{2\pi}{7\omega_0}

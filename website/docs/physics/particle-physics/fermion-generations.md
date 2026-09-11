@@ -14,7 +14,7 @@ Each result is marked with one of the canonical statuses:
 - **[D]** Definition — definition by convention
 - **[I]** Interpretation — physical interpretation of a formal result
 - **[✗]** Retracted — contains an error, corrected or replaced
-- **[P]** Program — research direction
+- **[Pr]** Program — research direction
 :::
 
 ## Contents
@@ -59,7 +59,7 @@ More precisely: the automorphism group of the Fano plane $\mathrm{PSL}(2,7)$ (or
 ### Theorem 1.2 (Exactly 3 generations) {#теорема-ровно-три-генерации}
 
 :::tip Theorem 1.2 (Exactly 3 generations) — count [T], identification [I]
-Lower bound $N_{\text{gen}}\geq 3$ — from the unique order-3 subgroup $(1,2,4)\subset\mathbb{Z}_7^*$ and irreducibility of $\mathbb{Z}_3$ **[T]**. Upper bound $N_{\text{gen}}\leq 3$ — **[C under Gap-potential topology]** (see the status box in §"Composite status"): the catastrophe-theory bound and the count of physical minima are conditional. Physical identification of minima with generations is **[I]**. Composite status: **[C]+[I]** (the flat "[T] strictly proved" of earlier drafts is retracted).
+Lower bound $N_{\text{gen}}\geq 3$ — from the unique order-3 subgroup $(1,2,4)\subset\mathbb{Z}_7^*$ and irreducibility of $\mathbb{Z}_3$ **[T]**. Upper bound $N_{\text{gen}}\leq 3$ — **[T]** by the same group-theoretic count (Step 4: $\mathbb{Z}_7^* \cong \mathbb{Z}_6$ has no subgroups of order 4 or 5); the earlier catastrophe-theory bound **[C under Gap-potential topology]** is now only a consistency check (see the status box in §"Composite status"). Physical identification of the three classes with the observed generations is **[I]**. Composite status: count **[T]**, identification **[I]** (harmonised 2026-09-10 with the body of the proof; the flat "[T] strictly proved" of earlier drafts remains retracted for the *identification*).
 :::
 
 **Theorem.** The number of fermionic generations in UHM equals **exactly 3**:

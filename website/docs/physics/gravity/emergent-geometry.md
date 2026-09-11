@@ -30,7 +30,7 @@ UHM synthesizes these approaches: the metric is determined by quantum informatio
 In UHM, spacetime is not a fundamental structure but **emerges** from the coherence matrix $\Gamma$. The metric reflects the "logical distance" between configurations $\Gamma$ — the geometry of space is determined by the **structure of distinctions** imposed by the classifier $\Omega$.
 
 :::tip Status: fully derived [T]
-The spatial manifold $\Sigma^3$ is derived from the categorical structure (T-119 [T]), the product $M^4 = \mathbb{R} \times \Sigma^3$ is proved (T-120 [T]), and the Einstein equations are obtained from the spectral action (T-65 [T]). Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold).
+The spatial manifold $\Sigma^3$ is derived from the categorical structure (T-119 [C]), the product $M^4 = \mathbb{R} \times \Sigma^3$ is proved (T-120 [T]), and the Einstein equations are obtained from the spectral action (T-65 [T]). Details: [Emergent manifold $M^4$](/docs/proofs/physics/emergent-manifold).
 :::
 
 ---
@@ -184,7 +184,7 @@ The decomposition $\mathrm{Im}(\mathbb{O}) \cong \mathbb{R}^7 = \mathbb{R}^1 \op
 
 | Question | Answer | Theorem |
 |--------|-------|---------|
-| Why $\dim_{\mathrm{eff}} = 3$ for space? | From the $\{A,S,D\}$-sector: $\dim(\mathbf{3}) = 3$ | T-119 [T] |
+| Why $\dim_{\mathrm{eff}} = 3$ for space? | From the $\{A,S,D\}$-sector: $\dim(\mathbf{3}) = 3$ | T-119 [C] |
 | How does Lorentzian signature $(+,-,-,-)$ arise? | $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign from reflection positivity (bounded-below PW generator) | T-53 [T]+[T at refl. positivity] |
 | How is 3+1 connected to the 7 dimensions of the holon? | Sector decomposition + Gelfand–Connes reconstruction | T-120 [T] |
 

@@ -186,7 +186,7 @@ The previous proof asserted "$\Phi \geq 1 \Rightarrow \mathrm{Coh}_E \geq 1/6$ b
 
 **Step 1.** By [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ is derived from first principles.
 
-**Step 2 (weak differentiation) [T].** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. If the E-row carries nonzero coherence ($\mathrm{Coh}_E > 0$), then by [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128), $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *nontrivial* differentiation, but **not** the strict bound $\geq 2$ (which fails for states concentrating coherence off the E-row, per the correction box).
+**Step 2 (weak differentiation) [T].** For $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. If the E-row carries nonzero coherence ($\mathrm{Coh}_E > 0$), then by [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128), $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *nontrivial* differentiation, but **not** the strict bound $\geq 2$ (which fails for states concentrating coherence off the E-row, per the correction box).
 
 **Step 3 (attractor bound) [Т для embodied at attractor] / [C at κ₀].** On the autopoietic attractor $\rho^*_\Omega$, viability requires $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, forcing $\gamma_{OE}\neq 0$, hence $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ and $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. The strict bound $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ holds at the E-accentuated fixed point (the viable anchor of [formalization-φ §2](/docs/proofs/categorical/formalization-phi), where $\mathrm{Coh}_E(\rho^*)\geq 1/6$) and is confirmed numerically for embodied attractors (SYNARC); it is [C at κ₀-structure] in full generality.
 
@@ -249,9 +249,9 @@ T-153 is thus a *substrate-invariance meta-theorem*: it asserts that **if** fait
 
 **Step 4 (Faithfulness).** By [T-42c [T]](/docs/proofs/categorical/uniqueness-theorem#лемма-g1): the propagator is injective. Faithful $G$ preserves distinguishability of states. Two distinct states of consciousness $s_1 \neq s_2$ give $G(s_1) \neq G(s_2)$.
 
-**Step 5 (Completeness of the theory).** By [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): the 7D formalism and 42D formalism are Morita-equivalent. All measurable quantities are defined in $\mathcal{D}(\mathbb{C}^7)$ without loss of information. $\blacksquare$
+**Step 5 (Completeness of the theory).** By [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) the 7D state transports into the 42D picture and back unchanged ($\pi\circ\iota = \mathrm{id}$). All quantities used by this theorem — $P$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\sigma_k$ — are **defined in $\mathcal{D}(\mathbb{C}^7)$** and need no 42D detour; the spectral quantities of $\rho_E$ are not used here. (The former appeal to a Morita *equivalence* is retracted.) $\blacksquare$
 
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7), [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [T]](#t-151).
+**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [T]](/docs/proofs/minimality/theorem-minimality-7), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [T]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [T]](#t-151).
 
 #### T-153a {#t-153a}
 
@@ -287,7 +287,7 @@ T-153 asserts substrate-independence **given** a faithful CPTP map $G: \mathrm{S
 
 **Non-trivial content.** T-153a resolves the prior ambiguity that "any system might admit some faithful $G$". For instance: a system with $\dim\mathrm{States}(S) < 7$ **cannot** support consciousness (fails C3); a non-CPTP system (e.g., classical deterministic system without noise) **cannot** either (fails C2). These are structurally excluded classes, not handwaved.
 
-**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Morita), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [T]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
+**Dependencies:** [T-42a [T]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) (G₂-rigidity), [T-57 [T]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Morita), [T-94 [T]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (exponential kernel), [T-151 [T]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (constructive sufficiency). Standard mathematics: Stinespring 1955, Choi 1975.
 :::
 
 #### T-253 {#t-253}
@@ -362,7 +362,7 @@ $$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = 
 
 **Step 3 (Attainability).** For $\Gamma = |E\rangle\langle E|$: $\pi_E(|E\rangle\langle E|) = |E\rangle\langle E|$, therefore $\mathrm{Coh}_E = \||E\rangle\langle E|\|^2_{HS} / \||E\rangle\langle E|\|^2_{HS} = 1$. $\blacksquare$
 
-**Corollary:** The formula [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128) with $\mathrm{Coh}_E^{\max} = 1$ simplifies to:
+**Corollary:** The formula [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128) with $\mathrm{Coh}_E^{\max} = 1$ simplifies to:
 
 $$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)$$
 
@@ -507,7 +507,7 @@ thanks to co-rotating targets. Without them the threshold $\Phi \geq 1$ is not a
 
 ## §12. T-158: Canonical bounds on σ_sys {#t-158}
 
-:::tip Theorem T-158 [T]: Canonical bounds on σ_sys
+:::tip T-158 [T]; the $\sigma_E$ component [T at the T-128 definition]: canonical bounds on σ_sys
 All components of the stress tensor $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) by definition with canonical clamping:
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
@@ -524,9 +524,9 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 **Step 2 (Clamping).** The operation $\mathrm{clamp}(x, 0, 1)$ maps $[-6, 1]$ to $[0, 1]$. By [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий): $\sigma_k$ is the canonical function of $\Gamma$-invariants.
 
-**Step 3 (Canonicity).** By [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ is computable in 7D. By [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137): all 7 components are computable. Each $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) is a bounded continuous function of $\Gamma$. $\blacksquare$
+**Step 3 (Canonicity).** By [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ is computable in 7D. By [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137): all 7 components are computable. Each $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) is a bounded continuous function of $\Gamma$. $\blacksquare$
 
-**Dependencies:** [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128), [T-137 [T]](/docs/proofs/consciousness/operationalization#t-137).
+**Dependencies:** [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128) — a definition, inherited by the $\sigma_E$ component only, [T-137 [T at T-128]](/docs/proofs/consciousness/operationalization#t-137).
 
 ---
 

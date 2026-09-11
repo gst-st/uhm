@@ -16,6 +16,52 @@ The uniqueness theorem of holonomic representation is a **theorem [T]**, relying
 - Uniqueness of E, O, U [T] ([proof](/docs/proofs/minimality/theorem-minimality-7))
 :::
 
+:::warning Frame decision D-0910 — two groups, one representation (single source of truth)
+The corpus uses $G_2$ in two roles that must not be conflated; this box fixes the split, and every other page defers to it.
+
+1. **Kinematic rigidity.** The maximal subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$ is $G_2 = \mathrm{Aut}(\mathbb{O})$ (Lemma G4). Two holonomic representations of one system can differ by an element of $G_2$ — never by more. This is the content of the theorem below, and it fixes the count $34 = 48 - 14$ of $G_2$-orbit invariants of the *kinematic* state (spectrum + $\varphi_3$-relative angles).
+2. **Dynamical identification.** The axiomatic dynamics $\mathcal{L}_\Omega$ — pinching dissipator $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$, the regeneration coefficient $\kappa_0$, the PW clock — is **not** $G_2$-covariant: it breaks $G_2$ to the finite octonionic frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность) [T]; $\Gamma_{\!\text{oct}} = 2^3 \!\cdot\! \mathrm{PSL}(3,2)$, order $1344$ — the 168 Fano-line-preserving basis permutations together with the 8 sign patterns constant on Fano lines; see [frame rigidity](#жёсткость-репера)). Hence the transformations relating *physically indistinguishable* descriptions of one holon form $\Gamma_{\!\text{oct}}$, not the 14-dimensional $G_2$: **all 48 real parameters of $\Gamma$ are physical** (modulo a finite relabelling of axes), and the frame-pinned observables $\Phi$, $\mathrm{Coh}_E$, $\kappa_0$ are physical observables with well-defined thresholds ($\Phi \geq 1$, $\mathrm{Coh}_E > 1/7$).
+
+Consequently, wherever the corpus says "34 physical parameters", "states related by $G_2$ are physically identical" or "$\Phi$, $\mathrm{Coh}_E$ are $G_2$-invariant", the statement is to be read through this decision: 34 counts kinematic $G_2$-invariants; physical identity is $\Gamma_{\!\text{oct}}$-identity; $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned, not $G_2$-invariant (an explicit $g \in G_2$ with $g e_1 = (e_1 + e_2)/\sqrt2$ sends $\Phi(|e_1\rangle\langle e_1|) = 0$ to $1$ and $\mathrm{Coh}_E$ from $1$ to $3/4$; a full rotation $e_1 \mapsto e_2$ sends $\mathrm{Coh}_E$ to $0$). $G_2$ keeps its *physical* role as the structure group of the octonionic sector: $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$, the Fano selection rules, and the decomposition $48 = 27 \oplus 14 \oplus 7$ (T-301).
+
+**This is not a choice among options: it is forced.** The theorem below shows that $\Phi$ is preserved by *no* continuous group at all, so any reading on which the L2 condition $\Phi \geq 1$ is a physical condition must take a discrete identification group. See [frame rigidity](#жёсткость-репера).
+:::
+
+### Theorem (Frame rigidity: $\Phi$ admits no continuous symmetry) [T] {#жёсткость-репера}
+
+:::warning Theorem (frame rigidity) [T]
+Let $\Phi(\Gamma) = \sum_{i \neq j}|\gamma_{ij}|^2 / \sum_i \gamma_{ii}^2$ be the integration measure. Then the largest subgroup of $O(7)$ preserving $\Phi$ on all states is the **hyperoctahedral group** of signed permutations; its intersection with $G_2$ is the finite octonionic frame group $\Gamma_{\!\text{oct}}$, of order
+
+$$
+|\Gamma_{\!\text{oct}}| = 1344 = 2^3 \cdot |\mathrm{PSL}(3,2)| = 8 \cdot 168,
+$$
+
+the maximal subgroup $2^3 \!\cdot\! \mathrm{PSL}(3,2) \subset G_2$. In particular **no continuous subgroup of $G_2$ (or even of $SO(7)$) preserves $\Phi$**: $\dim\{X \in \mathfrak{g}_2 : \delta_X\Phi = 0\} = 0$.
+:::
+
+**Proof.** On real pure states $\Gamma = vv^{\mathsf T}$, $\|v\|_2 = 1$, one has $\sum_i\gamma_{ii}^2 = \sum_i v_i^4 = \|v\|_4^4$ and $\sum_{ij}|\gamma_{ij}|^2 = 1$, hence
+
+$$
+\Phi(vv^{\mathsf T}) = \frac{1 - \|v\|_4^4}{\|v\|_4^4},
+$$
+
+a strictly decreasing function of $\|v\|_4$. So a linear map preserving $\Phi$ on this family preserves the $\ell^4$-norm on the unit $\ell^2$-sphere and, by homogeneity, on all of $\mathbb{R}^7$. By the **Banach–Lamperti theorem** (the linear isometries of $\ell^p$, $p \neq 2$, are exactly the signed permutations of coordinates) such a map is a signed permutation. Signed permutations preserving the associative 3-form $\varphi_3$ form $\Gamma_{\!\text{oct}}$: the permutation part must be a collineation of $PG(2,2)$ ($|{\rm PSL}(3,2)| = 168$) and the sign part must satisfy $\varepsilon_i\varepsilon_j\varepsilon_k = 1$ on each Fano line — the simplex code $[7,3]$, of size $2^3 = 8$. Conversely every such map preserves both $\varphi_3$ and the coordinate diagonal, hence $\Phi$. $\blacksquare$
+
+**Machine verification** (2026-09-10). Exhaustive enumeration over signed permutations: $|\Gamma_{\!\text{oct}}| = 1344$, with exactly $168$ distinct permutation parts and a sign-only subgroup of order $8$; elements of order 7: $48$, i.e. $8$ Singer subgroups. First-order rigidity by least squares over random pure states: $\dim\{X \in \mathfrak{so}(7): \delta_X\Phi = 0\} = 0$ and $\dim\{X \in \mathfrak{g}_2: \delta_X\Phi = 0\} = 0$. The identity $\Phi = (1 - \|v\|_4^4)/\|v\|_4^4$ was checked to $10^{-15}$.
+
+:::info The lattice of candidate identification groups
+Every candidate for "which transformations relate physically indistinguishable descriptions" is a subgroup of $G_2$; there are four natural ones. The parameter count is $48 - \dim$ (generic orbit); invariance is stated for the frame-referenced observables. All rows are machine-verified.
+
+| Identification group | $\dim$ | Parameters | $\mathrm{Coh}_E$ (No-Zombie) | $\Phi$ (L2) |
+|---|:---:|:---:|---|---|
+| $G_2$ | 14 | 34 | not invariant (witness: $1 \to 0.75$) | not invariant (witness: $0 \to 1$) |
+| $SU(3) = \mathrm{Stab}_{G_2}(e_O)$ | 8 | 40 | not invariant (witness: $1 \to 0.45$) | not invariant (witness: $0 \to 2.19$) |
+| $SU(2) = \mathrm{Stab}_{G_2}(e_E, e_O)$ | 3 | 45 | **invariant** | not invariant (witness: $0.690 \to 0.637$) |
+| $\Gamma_{\!\text{oct}}$ (frame group) | 0 | 48 | **invariant** | **invariant** |
+
+Reading the lattice: $\mathrm{Coh}_E$ needs only a distinguished $E$-axis, so the No-Zombie threshold survives already at $SU(2)_{E,O}$. $\Phi$ survives **nowhere above the discrete row** — by the rigidity theorem this is not an artefact of the present definition of the window but of $\Phi$ itself. Hence the corpus takes the last row: the identification group is $\Gamma_{\!\text{oct}}$ and all 48 parameters are physical. The alternative — keeping a continuous group — is available only at the price of rewriting the L2 condition in invariants of that group (for $SU(2)_{E,O}$: 45 parameters, $\Phi$ replaced by an $SU(2)$-invariant), and the octonionic reading would then have to rebuild the phenomenology of the 21 pairs on $1 \oplus 27 \oplus 7 \oplus 14$.
+:::
+
 ---
 
 ## Problem statement {#проблема}
@@ -40,9 +86,9 @@ In the ontology of UHM, $\Gamma$ is a **primary object**: the system *is* its co
 | **Representation** | Realization of $\hat{x}, \hat{p}$ on $\mathcal{H}$ | Holonomic representation $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ |
 | **Uniqueness theorem** | Stone–von Neumann: representation is unique up to $U(\mathcal{H})$ | **This theorem**: representation is unique up to $G_2$ |
 | **Gauge group** | $U(\mathcal{H})$ (infinite-dimensional) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (14-dimensional) |
-| **Physical parameters** | Infinitely many (quantum numbers) | **34** = 48 $-$ 14 (gauge-invariant) |
+| **Physical parameters** | Infinitely many (quantum numbers) | **48** (all, modulo the finite frame group $\Gamma_{\!\text{oct}}$); **34** = 48 $-$ 14 of them are kinematic $G_2$-orbit invariants (D-0910) |
 
-The key distinction: in QM the gauge group is infinite-dimensional ($U(\mathcal{H})$), leaving enormous freedom. In UHM the gauge group is **finite-dimensional** $G_2$, which radically restricts this freedom and increases the predictive power of the theory.
+The key distinction: in QM the gauge group is infinite-dimensional ($U(\mathcal{H})$), leaving enormous freedom. In UHM the kinematic gauge group is **finite-dimensional** $G_2$, which radically restricts this freedom and increases the predictive power of the theory — and the axiomatic dynamics narrows it further to the *finite* frame group $\Gamma_{\!\text{oct}}$ (frame decision D-0910 above).
 
 ---
 
@@ -131,15 +177,15 @@ $$
 L_p^{\mathrm{Fano}} = \frac{1}{\sqrt{3}} \Pi_p, \quad \Pi_p = \sum_{i \in \mathrm{line}_p} |i\rangle\langle i|, \quad p = 1, \ldots, 7
 $$
 
-### P5. $G_2$-covariance [T] {#p5-ковариантность}
+### P5. Covariance groups of the dissipators [T] {#p5-ковариантность}
 
-The Fano dissipator is [$G_2$-covariant](/docs/core/operators/lindblad-operators#g2-ковариантность):
+The Fano dissipator is **proportional** to the atomic one, $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\,\mathcal{D}_{\mathrm{atom}}$ ([Theorem 5.1a](/docs/proofs/gap/fano-channel#g2-ковариантность) [T]), and therefore shares its symmetry group: both are covariant under the finite octonionic frame group $\Gamma_{\!\text{oct}} \subset G_2$ (and $S_7$-equivariant),
 
 $$
-\forall \, g \in G_2: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger
+\forall \, g \in \Gamma_{\!\text{oct}}: \quad \mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\dagger] = g \, \mathcal{D}_{\mathrm{Fano}}[\Gamma] \, g^\dagger,
 $$
 
-The atomic dissipator is **not** $G_2$-covariant [T], but is $S_7$-equivariant [T].
+and **neither** is covariant under the full continuous $G_2$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность) [T]; machine check: $\|\mathcal{D}_{\mathrm{Fano}}[g\Gamma g^\top] - g\,\mathcal{D}_{\mathrm{Fano}}[\Gamma]\,g^\top\| = 0.08$ against $\|\mathcal{D}_{\mathrm{Fano}}[\Gamma]\| = 0.25$ for a generic $g \in G_2$). The genuinely $G_2$-covariant dissipator $\mathcal{D}_{G_2}$ built from $\varphi_{abc}$ exists (Theorem 5.1c) but is not the axiomatic UHM dissipator. Hence $G_2$ is a symmetry of the *kinematics* (the 3-form), not of the dynamics — the frame decision D-0910 above. (Earlier drafts of this section stated "the Fano dissipator is $G_2$-covariant"; that statement is retracted.)
 
 ---
 
@@ -228,7 +274,7 @@ The remaining structures of Lemma G3 — the atomic projectors (i), the E-projec
 :::warning The functional labels are frame data, not $G_2$-invariants
 Since $\mathbb{C}^7$ is an **irreducible** $G_2$-module (Cartan 1894), by Schur's lemma it has **no** nonzero proper $G_2$-invariant subspace. Consequently:
 - no coordinate axis $|k\rangle$ — in particular the E, O, U axes — is $G_2$-invariant; a generic $g\in G_2$ rotates it;
-- the *set* of atomic projectors $\{|k\rangle\langle k|\}$ is preserved only by the **finite** frame subgroup $\Gamma_{\!\text{oct}} = \mathrm{Aut}(PG(2,2))\cong PSL(2,7)\subset G_2$ (order 168), not by all of $G_2$;
+- the *set* of atomic projectors $\{|k\rangle\langle k|\}$ is preserved only by the **finite** frame subgroup $\Gamma_{\!\text{oct}} = 2^3 \!\cdot\! \mathrm{PSL}(3,2) \subset G_2$ of order $1344$ (permutation part $\mathrm{Aut}(PG(2,2)) \cong PSL(2,7)$, order 168; sign part of order 8 — [frame rigidity](#жёсткость-репера)), not by all of $G_2$;
 - hence $\mathrm{Coh}_E$, $\Phi$ and $\kappa_0$, which reference the E/O/U axes, are **frame-dependent**: invariant under $\mathrm{Stab}_{G_2}$ of the chosen frame, not under all of $G_2$. They are physical because the frame is pinned by the dynamics (Definition G1's $\mathcal{L}_\Omega$-covariance), **not** because they descend to $\mathcal{D}(\mathbb{C}^7)/G_2$.
 
 The genuinely $G_2$-invariant content is the spectrum (6 numbers) plus the $\varphi_3$-relative angles (28) — the $48-14=34$ parameters of Corollary 1.
@@ -270,6 +316,8 @@ $$
 $$
 
 Equivalently: **the holonomic representation is unique up to gauge group $G_2$**.
+
+**Sharpening (frame decision D-0910).** Because $\mathcal{L}_\Omega$ itself is covariant only under the finite frame group, the intertwiner $U$ of two representations that share the *same* axiomatic dynamics lies in $\Gamma_{\!\text{oct}} \subset G_2$. The $G_2$ statement is the kinematic envelope — the largest group any two representations can differ by; the $\Gamma_{\!\text{oct}}$ statement is the dynamical identification.
 :::
 
 ### Proof {#доказательство}
@@ -298,7 +346,7 @@ $$
 
 **Step 3: $\Phi$ is conjugation by a unitary operator.**
 
-Both representations describe the same physical system and generate the same observables. The spectrum of $\Gamma$ (set of eigenvalues) is invariant: $\mathrm{Spec}(\Phi(\Gamma)) = \mathrm{Spec}(\Gamma)$ for all $\Gamma$ (since physical observables — purity $P = \mathrm{Tr}(\Gamma^2)$, von Neumann entropy, Coh$_E$, etc. — are functions of the spectrum and certain structural elements, and must coincide).
+Both representations describe the same physical system and generate the same observables. The spectrum of $\Gamma$ (set of eigenvalues) is invariant: $\mathrm{Spec}(\Phi(\Gamma)) = \mathrm{Spec}(\Gamma)$ for all $\Gamma$ (since the spectral observables — purity $P = \mathrm{Tr}(\Gamma^2)$, von Neumann entropy, the eigenvalues — must coincide; the frame-pinned observables such as $\mathrm{Coh}_E$ are carried covariantly and enter in Step 4).
 
 A spectrum-preserving map on $\mathcal{D}(\mathbb{C}^7)$ is conjugation by a unitary (or antiunitary) operator — this is **Wigner's theorem** (Wigner 1931) in the form of Kadison (Kadison 1965):
 
@@ -330,28 +378,28 @@ Suppose $U_1, U_2 \in G_2$ both satisfy $G_2 = \mathrm{Ad}_{U_i} \circ G_1$. The
 
 ## Corollaries {#следствия}
 
-### Corollary 1: Space of physical states [T] {#физические-состояния}
+### Corollary 1: Kinematic invariants and physical states [T] {#физические-состояния}
 
-:::tip Corollary 1 (Space of observables) [T]
-The space of **physically distinguishable** states of the holon:
+:::tip Corollary 1 (Kinematic invariants and physical states) [T]
+The space of $G_2$-orbits of **kinematic** states of the holon (spectrum + $\varphi_3$-relative angles):
 
 $$
-\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7) / G_2
+\mathcal{D}_{\mathrm{kin}} = \mathcal{D}(\mathbb{C}^7) / G_2
 $$
 
 has dimension:
 
 $$
-\dim_\mathbb{R}(\mathcal{D}_{\mathrm{phys}}) = 48 - 14 = 34
+\dim_\mathbb{R}(\mathcal{D}_{\mathrm{kin}}) = 48 - 14 = 34
 $$
 
-where $48 = N^2 - 1 = \dim(\mathrm{su}(7))$ is the full number of parameters of $\Gamma$, and $14 = \dim(G_2)$ is the number of gauge degrees of freedom.
+where $48 = N^2 - 1 = \dim(\mathrm{su}(7))$ is the full number of parameters of $\Gamma$, and $14 = \dim(G_2)$ is the dimension of a generic kinematic $G_2$-orbit. The space of **physically distinguishable** states is $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$, of full dimension **48** (frame decision D-0910): the 14 orbit directions are physical because the axiomatic dynamics pins the frame.
 :::
 
-**Proof.** For generic $\Gamma$ (with distinct eigenvalues) the stabilizer $\mathrm{Stab}_{G_2}(\Gamma)$ is trivial (finite group). Then by the orbit theorem: $\dim(\mathrm{Orb}(\Gamma)) = \dim(G_2) = 14$, and $\dim(\mathcal{D}_{\mathrm{phys}}) = 48 - 14 = 34$. $\blacksquare$
+**Proof.** For generic $\Gamma$ (with distinct eigenvalues) the stabilizer $\mathrm{Stab}_{G_2}(\Gamma)$ is trivial (finite group). Then by the orbit theorem: $\dim(\mathrm{Orb}(\Gamma)) = \dim(G_2) = 14$, and $\dim(\mathcal{D}_{\mathrm{kin}}) = 48 - 14 = 34$. $\blacksquare$
 
 :::info Consistency
-The value 34 coincides with the number of parameters under full $G_2$-gauge fixing in the pure Fano-observation regime ($\alpha = 0$), stated in [Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность): "$48 \to 34$ parameters."
+The value 34 is the kinematic count only. The pinching dynamics is $\Gamma_{\!\text{oct}}$-covariant, not $G_2$-covariant, at **every** $\alpha$ — including the pure Fano regime $\alpha = 0$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность), [Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность)) — so no dynamical regime realises a $48 \to 34$ reduction of the physical parameter space (D-0910).
 :::
 
 ### Corollary 2: Well-posedness of inverse problem [T] {#обратная-задача}
@@ -363,18 +411,18 @@ For a system $S$ satisfying (AP)+(PH)+(QG)+(V), the initial state $\Gamma(0)$ is
 
 **(b)** The system parameters $(\omega_0, \lambda_m)$
 
-up to $G_2$-gauge (Theorem of G₂-rigidity [T]).
+up to the finite frame group $\Gamma_{\!\text{oct}}$ (frame decision D-0910); in particular up to $G_2$ (Theorem of G₂-rigidity [T]).
 :::
 
 ### Corollary 3: Faithfulness of functor F [T] {#верность-функтора}
 
 :::tip Corollary 3 (Faithfulness of functor) [T]
-The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on $G_2$-orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in G_2$.
+The functor $F: \mathbf{DensityMat} \to \mathbf{Exp}$ ([categorical formalism](/docs/proofs/categorical/categorical-formalism)) is **faithful** on frame orbits: if $F(\Gamma_1) \cong F(\Gamma_2)$ in $\mathbf{Exp}$, then $\Gamma_2 = U\Gamma_1 U^\dagger$ for $U \in \Gamma_{\!\text{oct}}$ (in particular $U \in G_2$).
 
-Kernel of $F$ on the set of isomorphisms:
+Kernel of $F$ on the set of isomorphisms (experience reads the frame-pinned $E$-sector, so a generic $G_2$-rotation changes it — D-0910):
 
 $$
-\ker(F) = \{\mathrm{Ad}_U : U \in G_2\}
+\ker(F) = \{\mathrm{Ad}_U : U \in \Gamma_{\!\text{oct}}\} \subset \{\mathrm{Ad}_U : U \in G_2\}
 $$
 :::
 
@@ -383,20 +431,20 @@ $$
 :::tip Corollary 4 (Finiteness of gauge group) [T]
 $G_2$ is a **finite-dimensional** (14-dimensional) compact Lie group. This means:
 
-1. A **discrete set** of $G_2$-invariant observables fully characterizes the physical state
-2. A **finite number** of gauge-invariant parameters (34) — unlike standard QM, where $U(\mathcal{H})$-freedom is infinite-dimensional
+1. A **discrete set** of $G_2$-invariant observables fully characterizes the kinematic state; the physical state additionally carries the 14 frame-orientation parameters, pinned by the dynamics (D-0910)
+2. A **finite number** of parameters — 34 kinematic $G_2$-invariants, 48 physical parameters in the pinned frame — unlike standard QM, where $U(\mathcal{H})$-freedom is infinite-dimensional
 3. The theory is **maximally predictive** at the given dimension $N = 7$: the gauge group $G_2$ is the minimal group preserving the octonionic structure
 :::
 
 ### Corollary 5: G₂-invariants as physical observables {#инварианты}
 
-The 34 physical parameters are organized as follows:
+The 34 kinematic $G_2$-invariants are organized as follows (with the 14 frame-orientation parameters they make up the 48 physical parameters, D-0910):
 
 | Type | Number of parameters | Description |
 |-----|:---:|---|
 | Spectrum of $\Gamma$ | 6 | Eigenvalues (ordered) |
 | $G_2$-invariant angles | 28 | Mutual position of eigenvectors relative to octonionic structure |
-| **Total** | **34** | Complete set of physical observables |
+| **Total** | **34** | Complete set of kinematic $G_2$-invariants |
 
 Two classes of observable must be distinguished (irreducibility of $\mathbf 7$, Lemma G4):
 
@@ -444,7 +492,7 @@ Question 3 (predictivity) is **epistemological**, not mathematical: it is closed
 :::tip Key result
 **Theorem of $G_2$-rigidity [T]:** The holonomic representation of a system satisfying (AP)+(PH)+(QG)+(V) is **unique** up to gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$ — a 14-dimensional exceptional Lie group, the automorphism group of the octonions.
 
-**Physical meaning:** Different observers applying UHM to the same system will obtain coherence matrices related by a $G_2$-transformation. All 34 gauge-invariant parameters (purity, coherences, thresholds) will coincide.
+**Physical meaning:** Different observers applying UHM to the same system, with the frame pinned by the axiomatic dynamics, obtain coherence matrices related by an element of the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ (D-0910): all 48 parameters coincide up to a relabelling of axes. The 34 kinematic $G_2$-invariants (spectrum, $\varphi_3$-relative angles) coincide even before the frame is pinned.
 
 **Methodological status:** All steps of the proof are theorems [T], relying on previously established results. This theorem closes the problem of the map G at the theoretical level and is the analogue of the Stone–von Neumann theorem for UHM.
 :::

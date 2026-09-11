@@ -728,7 +728,7 @@ where:
 Threshold of cognitive qualia (L2): $C_{\text{th}} = \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$.
 
 :::info Separating $D_{\text{diff}}$ from $C$
-$D_{\text{diff}} \geq 2$ — a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность), characterising the richness of phenomenal content in the E-sector. The measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ is computable in 7D via [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, where $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
+$D_{\text{diff}} \geq 2$ — a **separate** condition of [full viability](/docs/core/dynamics/viability#полная-жизнеспособность), characterising the richness of phenomenal content in the E-sector. The measure $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ is computable in 7D via [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, where $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
 Including $D_{\text{diff}}$ in $C$ duplicates the viability condition $V$. The canonical measure $C = \Phi \cdot R$ is the minimal scalar summary of the integration and reflection conditions.
 :::
@@ -755,13 +755,13 @@ Practical implementation of self-observation requires:
 2. **Computing R:** Algorithm $O(N^2)$ for an $N \times N$ matrix — see [pseudocode](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r)
 3. **Checking L2:** `is_L2 = (R >= 1/3) and (Phi >= 1) and (D_diff >= 2)`
 
-:::tip D_diff in the 7D Formalism: Exact Formula [T-128 [T]]
-By [T-128 [T]](/docs/proofs/consciousness/operationalization#t-128):
+:::tip D_diff in the 7D Formalism: Exact Formula [T-128 [D]]
+By [T-128 [D]](/docs/proofs/consciousness/operationalization#t-128):
 
 $$D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N-1)$$
 
 The formula is computable in $\mathcal{D}(\mathbb{C}^7)$ in $O(N^2)$ without PW-embedding (via
-Morita equivalence [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). At $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [T]](/docs/proofs/consciousness/substrate-closure#t-154)):
+section–retraction [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). At $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [T]](/docs/proofs/consciousness/substrate-closure#t-154)):
 $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot 6$.
 
 **Numerical verification (SYNARC):** $D_{\text{diff}} = 3.60$ at the stationary point, implemented in

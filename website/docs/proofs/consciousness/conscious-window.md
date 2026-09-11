@@ -16,7 +16,7 @@ Six results (T-123 — T-127, C27) closing **five critical operationalization pr
 
 ### Formulation [T]
 
-For any system satisfying axioms A1–A5, the holonomic representation $G: \mathrm{States} \to \mathcal{D}(\mathbb{C}^7)$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$. The diagonal elements $\gamma_{kk}$ are determined uniquely as projections onto the 7 functionally unique dimensions.
+For any system satisfying axioms A1–A5, the holonomic representation $G: \mathrm{States} \to \mathcal{D}(\mathbb{C}^7)$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$ kinematically and — once the axiomatic dynamics pins the functional frame — up to the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The diagonal elements $\gamma_{kk}$ are determined uniquely (up to a relabelling of axes) as projections onto the 7 functionally unique dimensions.
 
 ### Proof
 
@@ -32,7 +32,7 @@ From T-42a: the representation is unique up to $G_2$. From T-40f: projections on
 
 ### Consequence for digital agents
 
-The anchor map $\pi: \mathcal{H}_{\mathrm{hidden}} \to \mathcal{D}(\mathbb{C}^7)$, covariant with respect to $\mathcal{L}_\Omega$, is unique up to $G_2$. The semantics of $\gamma_{kk}$ is **not arbitrary** — it is determined by axioms A1–A5. This closes the problem of encoding arbitrariness for digital agents.
+The anchor map $\pi: \mathcal{H}_{\mathrm{hidden}} \to \mathcal{D}(\mathbb{C}^7)$, covariant with respect to $\mathcal{L}_\Omega$, is unique up to the finite frame group $\Gamma_{\!\text{oct}}$ (in particular up to $G_2$). The semantics of $\gamma_{kk}$ is **not arbitrary** — it is determined by axioms A1–A5. This closes the problem of encoding arbitrariness for digital agents.
 
 ---
 

@@ -72,7 +72,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 | Dual-aspect semantics of $\Gamma$ | Gap(i,j), current $J_{net}$, 49-element map | Medium (interpretations as theorems) |
 | Semantics review | 3 vulnerabilities: phase measurement, $H_{eff}$, dissipation | Correct review |
 | Responses to vulnerabilities | $\varphi_{coh}$, Berry phase, sectoral bound T-80 [T], L4 correction | Partially rigorous |
-| [Algebraic structures](/docs/core/operators/phi-operator) | **Fano channel [T]**, **$G_2$-covariance [T]**, Gap operator [T] | High (core) |
+| [Algebraic structures](/docs/core/operators/phi-operator) | **Fano channel [T]**, **$\Gamma_{\!\text{oct}}$-covariance [T]** (not full $G_2$), Gap operator [T] | High (core) |
 | [Geometry, Lagrangian, thermodynamics](/docs/core/dynamics/gap-thermodynamics) | $V_{Gap}$ from spectral action **[T]**, $S_{Gap}$ from Keldysh **[T]**, $G_2/\perp$ decomposition, $T_{eff}$ | High (spectral triple [T]) |
 | [Topology, phase diagram, charges](/docs/core/dynamics/gap-phase-diagram) | CS term (**refuted**), Ward identities, phases | Medium (CS cascade) |
 | [RG flow, 3+1](/docs/physics/gauge-symmetry/rg-flow) | Bridge AP+PH+QG+V $\Rightarrow$ P1+P2 **[T]** (T15, 12 steps) | High (all steps [T]) |
@@ -95,7 +95,7 @@ Complete map of the "Physics" section pages with subsections and key topics.
 :::tip Theorem: $G_2$-rigidity of the holonomic representation [T]
 **Details:** [Uniqueness Theorem](/docs/proofs/categorical/uniqueness-theorem)
 
-The holonomic representation $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ is **unique** up to the gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$. The physical state space $\mathcal{D}_{\mathrm{phys}} = \mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 48 - 14 = 34$. The inverse problem (reconstruction of $\Gamma$ from observations) is well-posed [T].
+The holonomic representation $G: \mathrm{States}(S) \to \mathcal{D}(\mathbb{C}^7)$ is **unique** up to the gauge group $G_2 = \mathrm{Aut}(\mathbb{O})$. The space of kinematic $G_2$-orbits $\mathcal{D}(\mathbb{C}^7)/G_2$ has $\dim = 48 - 14 = 34$; the physically distinguishable states form $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$ (dimension 48), because the axiomatic dynamics pins the functional frame ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The inverse problem (reconstruction of $\Gamma$ from observations) is well-posed [T].
 
 **See:** [G₂ Structure](/docs/physics/gauge-symmetry/g2-structure), [Lindblad Operators](/docs/core/operators/lindblad-operators#g2-ковариантность)
 :::
@@ -338,10 +338,10 @@ Key property of PG(2,2). One of the most rigorous theorems in the series.
 **See:** [Gravity](/docs/physics/gravity/emergent-geometry)
 :::
 
-:::tip Theorem: $G_2$-covariance of the Fano dissipator
-**Details:** [Fano Channel](/docs/proofs/gap/fano-channel)
+:::tip Theorem: covariance group of the Fano dissipator
+**Details:** [Fano Channel](/docs/proofs/gap/fano-channel#g2-ковариантность)
 
-One of the best theorems in the series — rigorous proof of $G_2$-covariance.
+$\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$ (Theorem 5.1a); both dissipators are covariant under the finite octonionic frame group $\Gamma_{\!\text{oct}}$ and **not** under the full $G_2$ (Theorem 5.1b). The earlier claim of $G_2$-covariance is retracted — [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность).
 :::
 
 :::tip Theorem: Atomic dissipator is NOT $G_2$-covariant
@@ -506,7 +506,7 @@ Also refuted at $S_0 = 20$. Extra factor of $\pi$ — ~15, not ~48 orders. Windi
 :::warning $\Lambda$: perturbative deficit 79 orders; honest bracket $10^{-53.5}$–$10^{-93.5}$ [C]
 **Perturbative total:** 41.5 [T] out of 120 (at $\varepsilon = 10^{-2}$; 29.5 orders without $\varepsilon$). Perturbative deficit: 79 orders, of which the SUSY-sector absorption covers 12 more (net $10^{-53.5}$).
 
-**Cohomological + SUSY + spectral sector**: the cohomological exact zero $\Lambda_{\text{global}} = 0$ [T] (a separate class — it reframes the target as the *local* residual), the SUSY-sector $\varepsilon^{12}$ [T at T-64] (**absorbs** the perturbative $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible), and the sectoral-minimization programme **[C]** compose to the honest bracket **$10^{-53.5}$–$10^{-93.5}$** [C]; the remaining $\gtrsim 27$ orders are open. Details: [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
+**Cohomological + SUSY + spectral sector**: the cohomological prohibition of a *topological* $\Lambda$-term [T] (which, after the 2026-09-10 retraction, contributes **no** exact zero — the vacuum energy is degree-0 data), the SUSY-sector $\varepsilon^{12}$ [T at T-64] (**absorbs** the perturbative $\varepsilon^6$ → net mean $\sim 10^{-53.5}$; exact compensation $\mathrm{Tr}(1)=0$ — **[H]**, $G_2$-adj 14 is irreducible), and the sectoral-minimization programme **[C]** compose to the honest bracket **$10^{-53.5}$–$10^{-93.5}$** [C]; the remaining $\gtrsim 27$ orders are open. Details: [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет) | [spectral formula](/docs/proofs/gap/lambda-budget#теорема-спектральная-лямбда).
 
 Non-perturbative mechanisms:
 - Gaussian sum: refuted at physical $S_0$
@@ -706,7 +706,7 @@ $\text{rank}(G_2) = 2 < \text{rank}(SM) = 4$. In the Fano-electroweak (FE) const
 ### Level 1: Impeccably rigorous theorems [T] (22 results)
 
 1. Fano channel preserves coherences — [Fano Channel](/docs/proofs/gap/fano-channel)
-2. $G_2$-covariance of Fano dissipator — [Fano Channel](/docs/proofs/gap/fano-channel)
+2. Covariance group of the Fano dissipator ($\Gamma_{\!\text{oct}}$, not full $G_2$) — [Fano Channel](/docs/proofs/gap/fano-channel#g2-ковариантность)
 3. Atomic dissipator is NOT $G_2$-covariant — [Fano Channel](/docs/proofs/gap/fano-channel)
 4. Gap operator: properties (a)-(d) — [Gap Operator](/docs/core/dynamics/gap-operator)
 5. Necessity of generalized $\varphi$ — $P_{crit} = 2/7$ — [Operator $\Phi$](/docs/core/operators/phi-operator)

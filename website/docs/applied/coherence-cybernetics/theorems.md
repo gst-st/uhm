@@ -37,7 +37,7 @@ Each result is marked with one of the statuses (complete system — see [Status 
 - **[H]** Hypothesis — mathematically formulated, requires proof or non-perturbative computation
 - **[I]** Interpretation — a semantic bridge, formally open
 - **[D]** Definition by convention — a convention
-- **[P]** Programme — a research direction, open problem
+- **[Pr]** Programme — a research direction, open problem
 :::
 
 :::note A Note on Notation
@@ -213,7 +213,7 @@ For an isolated system ($\mathcal{D}_\Omega = 0$) purity is preserved by unitary
 **Proof** (deductive chain from theorems with status [T]):
 
 **Step 1** (Structural positivity of dissipation).
-By [L-unification](/docs/core/operators/lindblad-operators) [T], the Lindblad operators are derived from the atoms of the classifier $\Omega$. For the [Fano-structured dissipator](/docs/proofs/gap/fano-channel#g2-ковариантность) [T] (the unique $G_2$-covariant one):
+By [L-unification](/docs/core/operators/lindblad-operators) [T], the Lindblad operators are derived from the atoms of the classifier $\Omega$. For the [Fano-structured dissipator](/docs/proofs/gap/fano-channel#g2-ковариантность) [T] (covariant under the octonionic frame group $\Gamma_{\!\text{oct}}$ — [Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность); not under the full $G_2$):
 
 $$
 \mathcal{D}_{\text{Fano}}[\Gamma] = \gamma \cdot \bigl(\mathcal{P}_{\text{Fano}}(\Gamma) - \Gamma\bigr), \quad \gamma = \sum_p \gamma_p > 0
@@ -647,12 +647,12 @@ Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axiom
 
 **Proof (6 steps).**
 
-**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). By the [Morita equivalence theorem](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [T]), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.
+**Step 1 (Composite as an ∞-topos object).** In $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$ the objects $\mathbb{H}_1, \mathbb{H}_2$ define a new object $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ (product over the terminal object $T$). The ∞-topos is complete (all finite limits exist). By the [section–retraction](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58′ [T]; the Morita *equivalence* reading is retracted), $\mathbb{H}_{12}$ is representable by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$.
 
 **Step 2 (Axiom inheritance).** Axioms A1–A5 are **structural** properties of the ∞-topos, not tied to a specific scale:
 
 - **A1** (Autopoiesis): the product of autonomous systems is autonomous. The spectral gap of each $\mathcal{L}_\Omega^{(i)}$ ($\lambda_{\mathrm{gap}}^{(i)} > 0$, from [T-39a](/docs/core/operators/lindblad-operators#примитивность-ℒω) [T]) ensures robustness under perturbations from coupling. For coupling through coherences with amplitude $\varepsilon_0 \ll \lambda_{\mathrm{gap}}$, the Kato perturbation theorem guarantees preservation of the spectral gap.
-- **A2** (Phenomenology): representability in $\mathbb{C}^7$ from T-58 [T].
+- **A2** (Phenomenology): representability in $\mathbb{C}^7$ — by construction of the composite (A3), not via T-58; the Morita *equivalence* reading is retracted, and only the section–retraction T-58′ [T] survives.
 - **A3** (Quantum basis): $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ by construction.
 - **A5** (Page–Wootters): the temporal structure is inherited through the O-dimension.
 
@@ -1039,7 +1039,7 @@ The following theorems are proved in the core documentation and play a central r
 | **T-94** [T] | Exponential memory kernel from compactness | Justification of [non-Markovian extension](./non-markovian) | [Gap dynamics](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) |
 | **T-80** [T] | Gap bounded by sum of sector parameters | Estimate of inter-sector gaps | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-секторная-gap-граница) |
 | **T-85** [T] | $\mathrm{Im}(S_K) = \int \mathrm{Berry}$ | Connection between variational and topological descriptions | [Berry phase](/docs/physics/cosmology-phys/berry-phase#теорема-l-top-кельдыш) |
-| **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $G_2$-covariant theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
+| **T-82** [T] | Uniqueness of the Fano operator | CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories | [Lindblad operators](/docs/core/operators/lindblad-operators#теорема-единственность-фано) |
 :::
 
 ---
@@ -1135,7 +1135,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 6. **The sensorimotor cycle is closed** (Theorems 11.1–11.4 [T]): environmental encoding is unique (up to $G_2$-calibration), action is optimal (minimax stress), three channels exhaust all possibilities, hedonics = $dP/d\tau|_{\mathcal{R}}$.
 
-7. **Structure is unique** (T-82 [T]): the Fano operator is unique — CC has no alternatives among $G_2$-covariant theories in 7 dimensions.
+7. **Structure is unique** (T-82 [T]): the Fano operator is unique — CC has no alternatives among $\Gamma_{\!\text{oct}}$-covariant (Fano-structured) theories in 7 dimensions.
 
 :::info Bridge to the Next Chapter
 We have proved the theorems — but *about what* do they speak? What is the *subject domain* of CC? Do other interpretations of the axioms exist, beyond $7 \times 7$ density matrices? In the [next chapter](./model-theory) we will engage with the **model theory** of CC: define the formal signature (language of the theory), construct the standard model (canonical interpretation), investigate questions of soundness and completeness, and then build **functor bridges** to other theories of consciousness (IIT, FEP, GNW). This is the transition from "what has been proved?" to "what is all this about?" — and "how does it connect to the rest of science?"

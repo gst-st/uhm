@@ -327,7 +327,7 @@ where $M^4 = \mathbb{R} \times \Sigma^3$, and $(A_{\text{int}}, H_{\text{int}}, 
 
 **Step 1 (Temporal component).** $A_{\text{time}} \cong C_0(\mathbb{R})$ (T-118 [T]).
 
-**Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [T]).
+**Step 2 (Spatial component).** $A_{\text{space}} \cong C(\Sigma^3)$ (T-119 [C]).
 
 **Step 3 (Internal component).** $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ (T-53 [T]).
 
@@ -403,7 +403,7 @@ The argument that KO-dim 6 plus the sign relations $J^2=+1$, $JD=DJ$, $J\chi=-\c
 
 No degree of freedom remains. $\blacksquare$
 
-**Dependencies:** T-117 [T], T-118 [T], T-119 [T], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
+**Dependencies:** T-117 [T], T-118 [T], T-119 [C], T-53 [T]. Standard mathematics: Connes (1996), Chamseddine–Connes (1997).
 
 :::warning Compatibility with existing results
 The derived product of triples **coincides** with the one previously postulated for the spectral action (T-65 [T]). All results depending on T-65 ($G_N = 3\pi/(7f_2\Lambda^2)$, Einstein equations, $\Lambda_{\text{CC}}$) remain unchanged — only the justification changes: from [P] to [T].

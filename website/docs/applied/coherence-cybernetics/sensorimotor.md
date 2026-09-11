@@ -610,7 +610,7 @@ where $\Phi_{\mathrm{agg}}: \mathcal{D}(\mathbb{C}^{7^2}) \to \mathcal{D}(\mathb
 
 1. $\mathrm{Enc}_1, \mathrm{Enc}_2$ — CPTP functors (T-100 [T]).
 2. Tensor product $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — a CPTP channel on $\mathcal{D}(\mathbb{C}^{49})$.
-3. Aggregation $\Phi_{\mathrm{agg}}$ — CPTP from [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [T]): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
+3. Aggregation $\Phi_{\mathrm{agg}}$ — a CPTP coarse-graining channel (T-58′ [T] section–retraction; the Morita *equivalence* reading is retracted): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
 4. Composition of CPTP channels — CPTP. Functoriality ($\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$) from T-100 is preserved under aggregation.
 5. Uniqueness — from $G_2$-rigidity at each scale (T-72 [T]). $\blacksquare$
 

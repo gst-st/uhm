@@ -250,7 +250,7 @@ The codimension of the catastrophe grows with level: 1, 2, 3, $\infty$. This ref
 :::
 
 :::info Relation to the number of fermion generations [T]
-The swallowtail cascade ($A_4$, codimension 3) admits at most **three** stable minima, giving an upper bound $N_{\text{gen}} \leq 3$ on the number of fermion generations. This bound, supplemented by the lower bound $N_{\text{gen}} \geq 3$ from $(1,2,4) \subset \mathbb{Z}_7^*$, constitutes the complete proof $N_{\text{gen}} = 3$ [T] — see [Theorem $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
+The swallowtail cascade ($A_4$, codimension 3) admits at most **three** stable minima, giving an upper bound $N_{\text{gen}} \leq 3$ on the number of fermion generations. This bound is a consistency check on $N_{\text{gen}} = 3$; the proof is the group-theoretic count $|\mathrm{QR}(7)| = 3$ (both bounds, [T]), with the identification of the classes with physical generations [I] — see [Theorem $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации).
 :::
 
 ---

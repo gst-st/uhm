@@ -460,15 +460,17 @@ At $n = 4$: $P_{\mathrm{crit}}^{(4)} = 54/35 > 1$, impossible for normalised mat
 
 **(c) Cohomological monism $H^n = 0$ — expanded proof.**
 
-**Statement.** For any sheaf of coefficients $\mathcal{F}$ on $\mathbf{Sh}_\infty(\mathcal{C})$:
+**Statement.** For every locally constant coefficient system $A$ (constant coefficients and local systems) on $|\mathcal{N}(\mathcal{C})|$:
 
-$$H^n(|\mathcal{N}(\mathcal{C})|, \mathcal{F}) = 0 \quad \text{for all } n > 0$$
+$$H^n(|\mathcal{N}(\mathcal{C})|, A) = 0 \quad \text{for all } n > 0$$
+
+(The vanishing does **not** extend to arbitrary sheaves $\mathcal{F}$: on a contractible space cohomology with arbitrary sheaf coefficients need not vanish — $H^1(\mathbb{R}, j_!\mathbb{Z}) = \mathbb{Z}$ for $j: (0,1) \hookrightarrow \mathbb{R}$ — and UHM's sheaves with nontrivial cohomology over the contractible base are precisely the local side of the local–global dichotomy, see the box below.)
 
 where $|\mathcal{N}(\mathcal{C})|$ is the geometric realisation of the nerve of $\mathcal{C}$.
 
 **Step c.1 (Contractibility of the base).** The space $\mathcal{D}(\mathbb{C}^7)$ is a convex subset of $M_7(\mathbb{C})$, hence contractible: $\pi_k(\mathcal{D}(\mathbb{C}^7)) = 0$ for all $k \geq 0$. In an **ordinary** (1-categorical) topos $\mathbf{Sh}_1(\mathcal{D})$, all cohomology trivially vanishes (every sheaf on a contractible space is acyclic). The theorem is vacuous.
 
-**Step c.2 (∞-categorical content — contractibility of Map(Γ, T)).** The vanishing $H^n = 0$ on the contractible $\mathcal{D}(\mathbb{C}^7)$ with constant coefficients is a trivial geometric fact (Poincaré lemma for a convex set). The ∞-categorical content is **not** in the vanishing itself but in the **proof of nerve contractibility** $|\mathcal{N}(\mathcal{C})| \simeq *$, which requires verifying a nontrivial condition: contractibility of morphism spaces $\mathrm{Map}(\Gamma, T)$.
+**Step c.2 (∞-categorical content — contractibility of Map(Γ, T)).** The vanishing $H^n = 0$ on the contractible $\mathcal{D}(\mathbb{C}^7)$ with constant coefficients is a trivial geometric fact (Poincaré lemma for a convex set). The ∞-categorical content is **not** in the vanishing itself, nor in the passage from Property 3 to nerve contractibility — that passage is the standard corollary "an (∞-)category with a terminal object has contractible classifying space" (Quillen 1973, Prop. 1; Lurie, HTT) — but solely in verifying that the concrete model **satisfies** Property 3: contractibility of the morphism spaces $\mathrm{Map}(\Gamma, T)$.
 
 **Lemma (Contractibility of Map(Γ, I/7)) [T].** For any $\Gamma \in \mathcal{D}(\mathbb{C}^7)$, the space of CPTP channels $\mathrm{Map}(\Gamma, I/7) := \{\Phi \in \mathrm{CPTP}(\mathbb{C}^7) : \Phi(\Gamma) = I/7\}$ is contractible.
 
@@ -870,7 +872,7 @@ $$
 
 где $\mathcal{D}(\mathcal{H}) = \{\Gamma \in \mathcal{L}(\mathcal{H}) : \Gamma^\dagger = \Gamma, \Gamma \geq 0, \text{Tr}(\Gamma) = 1\}$
 
-**Dimension:** $\dim(\mathcal{H}_{\text{total}}) = 7 \times 6 = 42$
+**Dimension:** $\dim(\mathcal{H}_{\text{total}}) = 7 \times 6 = 42$ — derived, not postulated: the clock factor is the regular representation $\mathbb{C}[\mathbb{Z}_7]$ of the shift $\triangleright$ ([T-87, step 3](#a5-из-спектральной-тройки)); Property 1 records the result.
 :::
 
 **Why this dimension:**
@@ -1311,22 +1313,24 @@ The six dimensions of “internal space” follow from the categorical structure
 
 ### Theorem (trivial global cohomology)
 
-For $X = |N(\mathcal{C})|$ with terminal object $T$,
+For $X = |N(\mathcal{C})|$ with terminal object $T$, and every locally constant coefficient system $A$ (constant coefficients, local systems),
 
 $$
-H^n(X, \mathcal{F}) = 0 \quad \forall n > 0, \forall \mathcal{F}
+H^n(X, A) = 0 \quad \forall n > 0
 $$
 
 **Proof:**
 1. ∞-terminal $T$ $\Rightarrow$ $\mathrm{Map}(\Gamma, T) \simeq *$ for all $\Gamma$
 2. $|N(\mathcal{C})| \simeq *$ (contractible)
-3. cohomology of a contractible space is trivial
+3. cohomology of a contractible space with locally constant coefficients is trivial
+
+**Logical status.** Steps 1–2 are the standard fact that a category with a terminal object has contractible nerve (Quillen 1973, Prop. 1); the theorem is therefore a **corollary of Property 3**, not an independent result. Its only non-formal content is the verification that the concrete model satisfies Property 3 (the contractibility lemma in the expanded proof above). The vanishing does not extend to arbitrary sheaves: $H^1(\mathbb{R}, j_!\mathbb{Z}) = \mathbb{Z}$ on the contractible line, and UHM's own sheaves with nontrivial cohomology over the contractible base (the self-modelling sheaf, Berry local systems on $\mathcal{D}^*$) are the local side of the local–global dichotomy.
 
 ### Corollary: monism as a theorem
 
-**Monism** is not a free philosophical choice but a **theorem**:
+**Monism** is not a free philosophical choice but a **theorem relative to the axioms** — a corollary of Property 3 read through the PID definition ([Consequences §0](/docs/core/foundations/consequences#когомологический-монизм): topology [T], ontological reading [D]/[I]):
 
-Local operators $\varphi_i$ **always** glue to a global One because $H^1(X, \mathcal{F}_\varphi) = 0$.
+Local operators $\varphi_i$ **always** glue to a global One because the gluing obstruction is a class in $H^1(X, \mathcal{F}_\varphi)$, which vanishes for local-system coefficients on the contractible $X$.
 
 ---
 
@@ -1356,10 +1360,10 @@ Time is **fundamentally discrete** for finite-dimensional systems.
 
 **Theorem:**
 
-Evolution $\tau \to \tau+1$ induces
+Each coarsening step $n \to n+1$ along the stratal depth (the cumulative tick count; the cyclic label $\tau \in \mathbb{Z}_7$ carries no arrow — [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)) induces
 
 $$
-\dim(X_\tau) \geq \dim(X_{\tau+1})
+\dim(X_n) \geq \dim(X_{n+1})
 $$
 
 The arrow of time is progressive collapse of higher strata toward terminal $T$.
@@ -1547,7 +1551,7 @@ $$
 | Physics | $H^*_{\text{loc}}(X, T) \neq 0$ | Property 5 |
 | Metric | $d_{\text{strat}}$ from Connes formula | Properties 1, 2, 5 |
 | Time | $\tau \in \mathbb{Z}_7$ (discrete) | Axiom 5, modality $\triangleright$ |
-| Arrow of time | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | Properties 3, 5 |
+| Arrow of time | $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n$ | Properties 3, 5 |
 | Multiplicity | orbits $\mathrm{U}(7)/\mathrm{Stab}$ | Properties 1, 4 |
 | Attractor | $\Gamma^* = \varphi(\Gamma^*)$ | Properties 3, 4 |
 | **Free will** | **$\dim\ker(\mathcal H_\Gamma)+1$** (flat directions; *not* $\|\mathrm{Mor}_1\|$) | **free-energy Hessian** |
@@ -1660,7 +1664,7 @@ In the Ω⁷ formulation UHM is:
 
 **Structural consequences:**
 - **Sole primitive:** $\mathfrak{T} = (\mathbf{Sh}_\infty(\mathcal{C}), J_{\text{Bures}}, \omega_0)$
-- **Cohomological monism:** $H^*(X) = 0$ is a theorem
+- **Cohomological monism:** $H^*(X) = 0$ is a theorem — a corollary of Property 3 (terminal object ⇒ contractible nerve), for locally constant coefficients
 - **Free will:** $\dim\ker(\mathcal H_\Gamma)+1$ — flat directions of the free energy (not $|\mathrm{Mor}_1|$; $\mathrm{Map}(\Gamma,T)$ is contractible)
 - **Canonical predicates:** $S_i = |i\rangle\langle i|$ — atomic subobject predicates ($\mathrm{Dec}(\Omega)$)
 - **L-unification:** $\Omega$ unifies logic ($L$), operators ($L_k$), and time ($\tau$)

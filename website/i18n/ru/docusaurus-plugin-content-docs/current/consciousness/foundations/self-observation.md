@@ -727,7 +727,7 @@ $$
 Порог когнитивных квалиа (L2): $C_{\text{th}} = \Phi_{\text{th}} \times R_{\text{th}} = 1 \times 1/3 = 1/3$.
 
 :::info Отделение $D_{\text{diff}}$ от $C$
-$D_{\text{diff}} \geq 2$ — **отдельное** условие [полной жизнеспособности](/docs/core/dynamics/viability#полная-жизнеспособность), характеризующее богатство феноменального содержания E-сектора. Мера $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ вычислима в 7D через [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, где $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
+$D_{\text{diff}} \geq 2$ — **отдельное** условие [полной жизнеспособности](/docs/core/dynamics/viability#полная-жизнеспособность), характеризующее богатство феноменального содержания E-сектора. Мера $D_{\text{diff}} = \exp(S_{vN}(\rho_E))$ вычислима в 7D через [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128): $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E/\mathrm{Coh}_E^{\max} \cdot (N-1)$, где $\mathrm{Coh}_E^{\max} = 1$ [Т] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
 Включение $D_{\text{diff}}$ в $C$ дублирует условие жизнеспособности $V$. Каноническая мера $C = \Phi \cdot R$ — минимальная скалярная сводка условий интеграции и рефлексии.
 :::
@@ -754,13 +754,13 @@ $$
 2. **Вычисление R:** Алгоритм $O(N^2)$ для матрицы $N \times N$ — см. [псевдокод](/docs/proofs/categorical/formalization-phi#83-вычисление-меры-рефлексии-r)
 3. **Проверка L2:** `is_L2 = (R >= 1/3) and (Phi >= 1) and (D_diff >= 2)`
 
-:::tip D_diff в 7D-формализме: точная формула [T-128 [Т]]
-По [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128):
+:::tip D_diff в 7D-формализме: точная формула [T-128 [О]]
+По [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128):
 
 $$D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N-1)$$
 
 Формула вычислима в $\mathcal{D}(\mathbb{C}^7)$ за $O(N^2)$ без PW-вложения (через
-Морита-эквивалентность [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). При $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [Т]](/docs/proofs/consciousness/substrate-closure#t-154)):
+сечение–ретракция [T-58′ [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность)). При $\mathrm{Coh}_E^{\max} = 1$ ([T-154 [Т]](/docs/proofs/consciousness/substrate-closure#t-154)):
 $D_{\text{diff}} = 1 + \mathrm{Coh}_E \cdot 6$.
 
 **Численная верификация (SYNARC):** $D_{\text{diff}} = 3.60$ на стационаре, реализовано в

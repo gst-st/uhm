@@ -619,7 +619,7 @@ $$
 v \preceq w \quad \Leftrightarrow \quad \tau_v \leq \tau_w \;\land\; d_{\mathcal{G}}(v,w) \leq c \cdot |\tau_w - \tau_v|
 $$
 
-where $d_{\mathcal{G}}$ is the Connes distance (T-119 [T]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
+where $d_{\mathcal{G}}$ is the Connes distance (T-119 [C]) and $c$ is the maximum speed of coupling (finite-range Gap coupling).
 
 **(c)** Discreteness: the temporal clocks $\mathbb{Z}_{7^M}$ and the finite number of holons $M$ ensure the discreteness of the causal set. In the continuum limit (T-118, T-119, T-120 [T]) the Lorentzian manifold $M^4$ is recovered.
 :::
@@ -722,7 +722,7 @@ which exactly reproduces the causal order $\preceq$ via the Gap couplings of the
 
 **Step 4 (Functoriality).** The assignment $(C, \preceq) \mapsto N_\bullet(C, \preceq) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ is functorial with respect to morphisms of partially ordered sets (order-preserving maps), since the nerve is a functor $\mathbf{Poset} \to \mathbf{sSet}$, and the Yoneda embedding is functorial.
 
-**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [T]) gives the manifold $\Sigma^3$ (T-119 [T]), and the full $M^4$ is recovered by T-120 [T].
+**Step 5 (Causal order from holons).** By Lemma C30, the holonic configuration $\Gamma_{\text{total}}$ for $(C, \preceq)$ reproduces the causal order. The continuum limit $M \to \infty$ (T-117 [T]) gives the manifold $\Sigma^3$ (T-119 [C]), and the full $M^4$ is recovered by T-120 [T].
 
 **Conclusion.** The functor $\mathcal{F}_{\text{CS}}: \mathbf{CausalSet}_{\text{fin}}^{M^4} \to \mathbf{Sh}_\infty(\mathcal{C})$ is well-defined, where $\mathbf{CausalSet}_{\text{fin}}^{M^4}$ is the full subcategory of finite causal sets faithfully embedded into $M^4$. $\blacksquare$
 
@@ -924,7 +924,7 @@ By (b), $D$ is CPTP. The restriction of a CPTP map to a $C^*$-subalgebra remains
 
 **Role of condition (c).** Condition (c) (distinguished observable subalgebra of dimension $\leq 7$) ensures that $\mathcal{A}$ has **precisely** 7-dimensional observable content, matching the dimension of $\mathbb{C}^7$ on which $A_{\text{int}}$ acts. By Theorem S (T-60 [T]), the minimal complete realization of the sector structure $1 \oplus 3 \oplus \bar{3}$ is $N = 7$. Condition (c) excludes "superfluous" observables, making $\alpha$ injective on the observable subalgebra.
 
-By **T-39a [T]** (primitivity of the Liouvillian): for the sector structure $1 \oplus 3 \oplus \bar{3}$ with $G_2$-covariant Fano dissipator, the primitive CPTP Liouvillian is unique up to the $G_2$-action. Consequently:
+By **T-39a [T]** (primitivity of the Liouvillian): for the sector structure $1 \oplus 3 \oplus \bar{3}$ with the Fano dissipator (covariant under the frame group $\Gamma_{\!\text{oct}}$, [Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), the primitive CPTP Liouvillian is unique up to the kinematic $G_2$-action on the sector structure. Consequently:
 
 $$
 D|_{A_{\text{int}}} = g \cdot \mathcal{L}_\Omega \cdot g^{-1} \quad \text{for a unique } g \in G_2.

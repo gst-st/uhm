@@ -116,7 +116,7 @@ $$
 \mathrm{rank}(\rho_E) > 1
 $$
 
-Here $\rho_E$ is the reduced density matrix over the E-dimension, obtained by taking the partial trace over the remaining six dimensions. The condition $\mathrm{rank}(\rho_E) > 1$ means: the experiential space contains more than one distinguishable state.
+Here $\rho_E$ is the reduction onto the E-dimension. **Where this is literal and where it is a convention** ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]): in the minimal 7D formalism the E-sector is one basis vector, $\rho_E = \gamma_{EE}$ is a scalar, and $\mathrm{rank}(\rho_E) > 1$ is not expressible — the 7D test used in its place is $\mathrm{Coh}_E > 0$ **by definition [D]**. Literally the condition lives in the 42D Page–Wootters realisation, where $\rho_E$ is the $7\times7$ clock-block contraction and its rank counts the clock moments at which E is populated, or on a composite substrate with a genuine $\mathcal{H}_E$. The condition $\mathrm{rank}(\rho_E) > 1$ then means: the experiential space contains more than one distinguishable state.
 
 The L1 space is endowed with the Fubini–Study metric — the natural measure of "distance" between phenomenal states:
 

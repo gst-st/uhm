@@ -604,7 +604,7 @@ We have seen how $G_2$-symmetry defines the conservation laws of consciousness. 
 - [G₂-Structure and the Fano Plane](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, Fano-Lindblad operators
 - [Gap Operator](/docs/core/dynamics/gap-operator) — $G_2/\perp$-decomposition, stabilizers
 - [Gap Phase Diagram](/docs/core/dynamics/gap-phase-diagram) — Ward identities (mathematical), three phases
-- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — $G_2$-covariance of the Fano dissipator
+- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — covariance groups of the dissipators ($\Gamma_{\!\text{oct}}$, not full $G_2$; Theorem 5.1b)
 - [CC Phase Diagram](./phase-diagram-cc) — cybernetic interpretation of phases
 - [Goldstone Modes](./goldstone-modes) — quasi-Goldstone modes from $G_2$ breaking
 - [Topological Coherence Protection](./topological-protection) — five protection mechanisms

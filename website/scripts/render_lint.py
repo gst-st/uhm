@@ -103,12 +103,58 @@ def visible(html: str) -> str:
     return TAGS.sub(" ", DROP.sub(" ", html))
 
 
+FENCE = re.compile(r"^(:{3,})(\w*)")
+
+
+def fence_nesting(docs: pathlib.Path):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вложенная врезка тем же числом двоеточий.
+
+    Docusaurus закрывает врезку ПЕРВЫМ же `:::`, поэтому `:::warning`, внутри
+    которой стоит `:::danger`, разваливается молча: сборка успешна, а лишний
+    фенс печатается читателю как текст. Внешняя врезка обязана иметь двоеточий
+    БОЛЬШЕ внутренней (`::::warning` вокруг `:::danger`).
+
+    Проверка читает ИСХОДНИК и потому отвечает за секунду — тогда как та же
+    находка через собранные страницы стоит полной пересборки. Это не замена
+    чтению сборки, а его дешёвый предпролог: здесь ловится ровно один класс
+    порчи, зато до того, как он попадёт в вывод.
+    """
+    bad = []
+    for f in sorted(docs.rglob("*.md*")):
+        stack = []
+        for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+            m = FENCE.match(line)
+            if not m:
+                continue
+            colons, word = len(m.group(1)), m.group(2)
+            if word:
+                if stack and colons >= stack[-1][0]:
+                    bad.append((f, i, f"{colons}× внутри {stack[-1][0]}× (открыта строкой {stack[-1][1]})"))
+                stack.append((colons, i))
+            elif stack:
+                if colons != stack[-1][0]:
+                    bad.append((f, i, f"{colons}× закрывает {stack[-1][0]}×"))
+                stack.pop()
+            else:
+                bad.append((f, i, "закрытие без открытия"))
+        for colons, i in stack:
+            bad.append((f, i, f"врезка {colons}× не закрыта"))
+    return bad
+
+
 def main() -> int:
     # ОХВАТ НАЗЫВАЕТСЯ ПЕРВЫМ. Прежде прибор при всяком раннем отказе (сборки нет,
     # сборка устарела) уходил, не назвав ни одного числа, и вентиль справедливо
     # писал «охват не назван» поверх настоящей находки. Молчание об охвате —
     # отдельный порок, и смешивать его с падением по делу не следует.
     print(f"файлов {len(list(DOCS.rglob('*.md*')))}")
+    nesting = fence_nesting(DOCS)
+    print(f"вложенность врезок (по исходнику): нарушений {len(nesting)}")
+    for f, i, why in nesting[:10]:
+        print(f"  {f.relative_to(ROOT)}:{i}: {why}")
+    if nesting:
+        print("  правило: внешняя врезка — больше двоеточий, чем внутренняя; иначе фенс уходит в текст")
+        return 1
     if not BUILD.exists():
         print("СБОРКИ НЕТ: каталог build/docs отсутствует")
         print("  правило: отсутствие свидетельства не есть чистота — соберите `npm run build`")

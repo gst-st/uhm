@@ -11,7 +11,7 @@ description: Unitary Holonomic Monism — a formal theory of reality and conscio
 **Unitary Holonomic Monism (UHM)** is a formal theory describing the structure, dynamics, and phenomenology of reality through a single mathematical primitive — the **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$**.
 
 :::info Meta-theory status
-UHM claims the role of a **meta-theory** (unifying physics, consciousness, and information within a single axiomatic framework). Rigidity of the primitive is proven [T] (T-173): the construction is unique up to $G_2 \times \mathbb{R}_{>0}$ given the axioms. **The universal property in the category of physical theories is proven [T] (T-174)**: for any physical theory $(E, \mathcal{A}, D)$ with $A_{\text{int}} \subset \mathcal{A}$, CPTP dynamics, and $\leq 7$ observables, there exists an essentially unique receiving morphism into $\mathfrak{T}$; higher $(\infty,1)$-coherences (pentagon, interchange, Mac Lane associator) are verified via full embedding into $\mathbf{Topoi}_\infty$ ([T-211 [T]](./proofs/categorical/fundamental-closures#t-211)). **All 4 foundational theorems are proven [T]**: **T-170 [T]** (recovery of the M-theory limit at levels of M-theory definedness): T-170' [T] (perturbative correspondence) + T-170'' [T] (non-perturbative correctness of the UHM integral). **T-171 [T]** (LQG embedding for bounded spin networks $j_e \leq 3$) + **T-171' [T]** (unbounded spin via cluster construction). **T-172 [T]** (causal set embedding) via Lemma C30. The "meta" status is a **proven theorem** for physical theories of the specified class.
+UHM claims the role of a **meta-theory** (unifying physics, consciousness, and information within a single axiomatic framework). Rigidity of the primitive is proven [T] (T-173): the construction is unique up to $G_2 \times \mathbb{R}_{>0}$ given the axioms. **The universal property in the category of physical theories is proven [T] (T-174)**: for any physical theory $(E, \mathcal{A}, D)$ with $A_{\text{int}} \subset \mathcal{A}$, CPTP dynamics, and $\leq 7$ observables, there exists an essentially unique receiving morphism into $\mathfrak{T}$; higher $(\infty,1)$-coherences (pentagon, interchange, Mac Lane associator) are verified via full embedding into $\mathbf{Topoi}_\infty$ ([T-211 [T]](./proofs/categorical/fundamental-closures#t-211)). **All 4 foundational theorems are proven [T]**: **T-170 [T]** (recovery of the M-theory limit at levels of M-theory definedness): T-170' [T] (perturbative correspondence) + T-170'' [T] (non-perturbative correctness of the UHM integral). **T-171 [T]** (LQG embedding for bounded spin networks $j_e \leq 3$) + **T-171' [T]** (unbounded spin via cluster construction). **T-172 [T]** (causal set embedding) via Lemma C30. The "meta" status is a **proven theorem** for physical theories of the specified class — theories whose observable algebra contains $A_{\text{int}} = \mathbb{C} \oplus M_3(\mathbb{C}) \oplus M_3(\mathbb{C})$ together with a distinguished observable subalgebra of dimension $\leq 7$. The Standard Model in its NCG form ($\mathbb{C} \oplus \mathbb{H} \oplus M_3(\mathbb{C})$) is **not** an object of this class: its algebra contains no copy of $A_{\text{int}}$. The SM is reached from $A_{\text{int}}$ by *construction* ([T-176](./proofs/physics/bimodule-construction)), not by a receiving morphism. "Meta" therefore means: the primitive receives every theory of the class, and the SM and gravity are derived from it — not that every known theory embeds into it.
 :::
 
 The theory:
@@ -25,7 +25,7 @@ The theory:
 
 - **Unitary** — from Lat. *unus* (one): reality is described by a single ∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$; the underlying unitary evolution preserves information
 - **Holonomic** — from Gr. *holon* (whole) + *nomos* (law): every part (Holonom) contains an image of the whole and obeys universal laws
-- **Monism** — from Gr. *monos* (one): reality is one — there are no independent "layers" or "substances." In UHM this is a mathematical theorem (H*(X) = 0), not a philosophical choice
+- **Monism** — from Gr. *monos* (one): reality is one — there are no independent "layers" or "substances." In UHM this is a corollary of the terminal-object axiom ($H^*(X) = 0$ follows from Property 3), read ontologically through the PID definition — a theorem relative to the axioms, not an independent discovery
 
 ## Theory Structure
 
@@ -76,10 +76,10 @@ N = 7 (Axiom 3) is the **minimal** dimension for satisfying (AP)+(PH)+(QG). All 
 | Construction | Formula | Status |
 |-------------|---------|--------|
 | **Base space** | $X = \|N(\mathcal{C})\|$ | [T] Derived |
-| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ | [T] Theorem |
+| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ (locally constant coefficients) | [T] corollary of Property 3 |
 | **Local physics** | $H^*_{loc}(X, T) \neq 0$ | [T] Theorem |
 | **Time** | $\tau \in \mathbb{Z}_7$ (Page–Wootters) | [T] Derived |
-| **Arrow of time** | $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [T] Theorem |
+| **Arrow of time** | $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n \in \mathbb{N}$ (Lyapunov monotonicity of $F$ and $S_{vN}$; the cyclic tick $\tau \in \mathbb{Z}_7$ carries no arrow) | [T] Theorem |
 | **Metric** | $d_{strat}$ (Connes on strata) | [T] Derived |
 | **Evolution equation** | All 3 terms ($H_{\text{eff}}$, $\mathcal{D}_\Omega$, $\mathcal{R}$) derived from axioms | [T] Fully |
 | **Conscious window (Goldilocks zone)** | $P \in (2/7, 3/7]$: viability $\wedge$ reflexivity ($R \geq 1/3$ when $P \leq 3/7$) | [T] ([T-124](./proofs/consciousness/conscious-window#t-124)) |
@@ -193,15 +193,15 @@ where:
 
 | Theorem | Statement | Status | Reference |
 |---------|-----------|--------|-----------|
-| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ | [T] | [Consequences](./core/foundations/consequences#когомологический-монизм) |
+| **Cohomological monism** | $H^n(X) = 0$ for $n > 0$ (locally constant coefficients; corollary of Property 3) | [T] | [Consequences](./core/foundations/consequences#когомологический-монизм) |
 | **Local nontriviality** | $H^*_{loc}(X, T) \neq 0$ | [T] | [Consequences](./core/foundations/consequences#локально-глобальная-дихотомия) |
 | **7D minimality** | $n < 7 \Rightarrow$ violation of (AP), (PH), or (QG) | [T] | [Proof](./proofs/minimality/theorem-minimality-7) |
 | **Fixed point of φ** | $\exists! \Gamma^* : \varphi(\Gamma^*) = \Gamma^*$ | [T] | [Proof](./proofs/categorical/formalization-phi#3-теорема-о-существовании-неподвижной-точки) |
 | **Emergent time** | τ derived from $\mathcal{C}$ (Page–Wootters, Bures, ∞-groupoid) | [T] | [Theorem](./proofs/dynamics/emergent-time) |
-| **Arrow of time** | Stratal collapse: $\dim(X_\tau) \geq \dim(X_{\tau+1})$ | [T] | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
+| **Arrow of time** | Stratal collapse along the depth $n \in \mathbb{N}$: $\dim(X_n) \geq \dim(X_{n+1})$ (Lyapunov monotonicity) | [T] | [Theorem](./proofs/dynamics/emergent-time#10-стратификационное-время) |
 | **Critical purity** | $P_{\text{crit}} = 2/N = 2/7$ | [T] | [Theorem](./proofs/dynamics/theorem-purity-critical) |
 | **Necessity of interiority** | $\text{Viable}(\mathbb{H}) \land \mathcal{D}_\Omega \neq 0 \Rightarrow \mathrm{Coh}_E \geq \mathrm{Coh}_{\min} > 1/7$ | [T] | [Theorem 8.1](./applied/coherence-cybernetics/theorems#теорема-81-условная-необходимость-интериорности-no-zombie) |
-| **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$; 34 physical parameters | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
+| **$G_2$-rigidity** | The holonomic representation is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$ kinematically and up to the finite frame group $\Gamma_{\!\text{oct}}$ dynamically; 34 kinematic $G_2$-invariants, 48 physical parameters (frame decision D-0910) | [T] | [Theorem](./proofs/categorical/uniqueness-theorem#g2-ригидность) |
 | **Electroweak sector uniqueness** | $SU(2)_L \times U(1)_Y$ is the unique rank-4 construction from $\kappa_0$ and axioms A1–A5 | [T] | [Theorem](./physics/gauge-symmetry/standard-model#теорема-единственности-фэ) |
 | **Three generations** | $N_{\text{gen}} = 3$: exact count $\|\mathrm{QR}(7)\| = (7-1)/2 = 3$ **[T]**; physical identification [I] | [T]+[I] | [Theorem](./physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) |
 | **Fano Yukawa selection** | $y_k = g_W \cdot f_{k,E,U} \cdot \|\gamma_{\text{vac}}^{(EU)}\|$ via octonionic $f_{ijk}$ | [T] | [Theorem](./physics/gauge-symmetry/fano-selection-rules#теорема-фано-отбор-fijk) |
@@ -214,11 +214,11 @@ where:
 | **Right-handed neutrino mass** | $M_R \sim 2.9 \times 10^{14}$ GeV from PW clock + viability | [T] | [Theorem](./physics/particle-physics/neutrino-masses#теорема-mr-из-gap) |
 | **3+1 from sector decomposition** | $7 = 1_O \oplus 3_{A,S,D} \oplus \bar{3}_{L,E,U}$; $\dim(\text{space}) = 3$ | [T] | [Theorem](./core/foundations/spacetime#теорема-секторная-декомпозиция) |
 | **Sector hierarchy $\varepsilon$** | Unique self-consistent vacuum; $\bar{\varepsilon} \approx 0.023$ from sector structure | [T] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) |
-| **Cohomological vanishing of $\Lambda$** | $\Lambda_{\text{global}} = 0$ from $H^n(X) = 0$; observed $\Lambda$ is a local effect | [T] | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
-| **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [T] | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
+| **No topological $\Lambda$-term** | $H^{n>0}(X) = 0$ forbids a $\Lambda$-contribution of the form $\int_X c$; the vacuum energy is **not** cancelled (a degree-0 quantity) | [T] narrow; the "global cancellation" reading retracted 2026-09-10 ([Λ-budget §4.1](/docs/proofs/gap/lambda-budget#когомологическое-обнуление)) | [Theorem](./proofs/gap/lambda-budget#когомологическое-обнуление) |
+| **Einstein equations from spectral action** | Full triple (T-53) → $S = \mathrm{Tr}(f(D_A/\Lambda))$ → EH + SM, $G_N = 3\pi/(7f_2\Lambda^2)$ | [T] for the formula; the value needs the cut-off convention $f_2$ and the scale $\Lambda$ [D] | [Theorem](./physics/gravity/quantum-gravity#теорема-полное-спектральное-действие) |
 | **UV-finiteness of Gap theory** | Compactness of $(S^1)^{21}$ + $G_2$-Ward ($21 \to 7$) + $\mathcal{N}=1$ SUSY (Seiberg) + $\varepsilon^{12}$ suppression (T-219) | field-space **[T]**, full order-by-order **[C]** (structural) | [Theorem](./physics/gravity/quantum-gravity#теорема-уф-конечность) |
 | **Lorentzian signature** | $(1,3)$-split [T] (1 time from Page–Wootters, 3 space from $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader) | [T]+[T at r.p.] | [Theorem](./core/foundations/spacetime#теорема-спектральная-тройка) |
-| **Morita equivalence 7D↔42D** | $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$; all 7D formulas are exact | [T] | [Theorem](./core/structure/dimension-e) |
+| **7D↔42D: section–retraction (T-58′)** | $\pi\circ\iota = \mathrm{id}$; 7D formulas exact on their own. The Morita **equivalence** $\mathrm{Sh}_\infty(\mathcal{C}\|_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}\|_{42})$ is **retracted** — it fails on dimension | [T] / [✗] | [Theorem](./core/structure/dimension-e) |
 | **Spectral gap of Fano dissipator** | $\lambda_{\text{deco}} = 5\gamma/(3N)$ (BIBD symmetry); $\kappa_{\text{bootstrap}} = \omega_0/N \gg \lambda_{\text{gap}}/N$ | [T] | [Theorem](./core/foundations/axiom-omega#теорема-kappa-bootstrap-bound) |
 | **φ-operator (replacement channel)** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho_*$ — CPTP, monotonicity, fixed point $\rho_*$ | [T] | [Theorem](./consciousness/foundations/self-observation#теорема-физическая-реализация-phi) |
 | **Global minimization of $V_{\text{Gap}}$** | $G_2$-orbit reduction $21D \to 5D$; unique minimum; Hessian $> 0$ | [T] | [Theorem](./core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) |
@@ -247,7 +247,7 @@ where:
 | **Stability radius** (T-104) | $r_{\text{stab}} \approx K\bigl(\sqrt{P-1/7}-\sqrt{1/7}\bigr)$, $K=\sqrt{35}\sqrt[4]{6}/10$ — Bures distance to $\{P=2/7\}$; the old $\sqrt{P-2/7}$ is [refuted](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости); most dangerous channel is $h^{(D)}$ | [C] | [Theorem](./applied/coherence-cybernetics/stability#радиус-устойчивости) |
 | **Landauer energy balance** (T-105) | $\Delta F_{\min} = k_B T_{\text{eff}} \cdot \ln 2 \cdot \dot{S}_{\text{diss}}$; three metabolic regimes | [T] | [Theorem](./applied/coherence-cybernetics/stability#энергетический-баланс) |
 | **Information capacity of Enc** (T-107) | $C_{\text{Enc}} \leq \log_2 7 \approx 2.81$ bits/observation (Holevo bound + T-102) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#информационная-ёмкость) |
-| **Compositionality of Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ from T-100 + T-72 + T-58 | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
+| **Compositionality of Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ from T-100 + T-72 + T-58′ (section–retraction; the aggregation is a CPTP coarse-graining, not an equivalence) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
 | **Information learning bound** (T-109) | $n \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$, $\xi_{\text{QCB}} \leq \ln 7$ (quantum Chernoff bound + T-107) | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница) |
 | **Optimal learning bound** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — three regimes | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
 | **N=7 minimality for learning** (T-113) | Learning via regeneration is impossible for $N < 7$; $N = 7$ is Pareto-optimal | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
@@ -299,7 +299,7 @@ UHM's primitive is **minimal** among all possible axiomatic choices: one axiom i
 | **[Consciousness](/docs/consciousness/hierarchy/interiority-hierarchy)** | Hierarchy L0→L1→L2→L3→L4 |
 | **[Emergent time](./proofs/dynamics/emergent-time)** | Page–Wootters, stratificational time |
 | **[Categorical formalism](./proofs/categorical/categorical-formalism)** | ∞-topos, derived categories, IC cohomologies |
-| **[Uniqueness theorem](./proofs/categorical/uniqueness-theorem)** | G₂-rigidity: 34 physical parameters |
+| **[Uniqueness theorem](./proofs/categorical/uniqueness-theorem)** | G₂-rigidity: 34 kinematic invariants, 48 physical parameters (frame decision D-0910) |
 | **[Standard Model](./physics/gauge-symmetry/standard-model)** | SM from G₂: electroweak sector [T], 3 generations (count [T], identification [I]) |
 | **[Physics](/docs/physics/overview)** | Gauge symmetry, particles, gravity, cosmology |
 | **[Neutrino masses](./physics/particle-physics/neutrino-masses)** | Seesaw from Gap, $M_R$ [T], O-sector Yukawa (formula [T] / numbers [C]), PMNS [C] |

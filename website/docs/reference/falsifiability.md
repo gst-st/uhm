@@ -110,7 +110,7 @@ where:
 That is, if two states with *identical* full invariants (spectrum + eigenvectors + context + history) yield *distinguishable* experience.
 
 :::info Gauge precision [T]
-The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] refines the notion of 'identity': two states $\rho_1, \rho_2$ are considered **physically identical** if $\rho_2 = U\rho_1 U^\dagger$ for some $U \in G_2$. The full invariant $\mathcal{I}(\rho)$ is defined on the space $\mathcal{D}(\mathbb{C}^7)/G_2$ (34 parameters). The eigenvectors in the table below implicitly assume a fixed $G_2$-gauge; under gauge change $v_i \to Uv_i$, but the inner products $|\langle v_i^{(1)} | v_i^{(2)} \rangle|$ are $G_2$-invariant.
+The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] refines the notion of 'identity': two states $\rho_1, \rho_2$ are considered **physically identical** if $\rho_2 = U\rho_1 U^\dagger$ for some $U$ in the finite octonionic frame group $\Gamma_{\!\text{oct}} \subset G_2$ — a relabelling of the functional axes ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The full invariant $\mathcal{I}(\rho)$ is therefore defined on $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$ (48 parameters); its $G_2$-orbit part (34 parameters: spectrum and $\varphi_3$-relative angles) is invariant even before the frame is pinned. The eigenvectors in the table below are taken in the pinned functional frame; under a relabelling $v_i \to Uv_i$ the inner products $|\langle v_i^{(1)} | v_i^{(2)} \rangle|$ are unchanged.
 :::
 
 **Operational tolerances:**
@@ -129,6 +129,10 @@ The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] re
 
 :::note Practical criterion
 For experimental verification it is sufficient to compare the spectrum and eigenvectors (without history): if $\mathrm{spec}(\rho_1) = \mathrm{spec}(\rho_2)$ and $|q_i^{(1)}\rangle = |q_i^{(2)}\rangle$, but $\mathcal{F}(\rho_1) \neq \mathcal{F}(\rho_2)$, the theory is falsified.
+:::
+
+:::warning What this criterion is — and what it is not
+Spectrum and eigenvectors determine $\rho$, and $\Gamma_{-E}$ together with $\mathrm{Hist}$ complete the state. The criterion above therefore says that experience is a *function* of the full state $(\Gamma, \mathrm{Hist})$ — a **supervenience** claim. It is falsifiable only jointly with a fixed reconstruction protocol $\pi_{\mathrm{bio}}$ (frame pinned by the [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), gauge-fixing choices published per R8), and by itself it does not predict *which* experience a state carries. The theory's contentful falsifiers are the numerical ones: $P(\Gamma_{\mathrm{wake}}) > 2/7 > P(\Gamma_{\mathrm{NREM3}})$ and the monotone $\Phi$–PCI relation (P8.3) in the [measurement protocol](/docs/applied/research/measurement-protocol), the No-Zombie simulation criterion S1–S3 in [CC Theorems](/docs/applied/coherence-cybernetics/theorems#протокол-симуляции-no-zombie), and the physics rows of the [frontier ledger](/docs/reference/frontier-ledger).
 :::
 
 :::info Note on operationalisation

@@ -12,21 +12,21 @@ All results on this page are proven theorems **[T]** with complete proofs and ex
 
 ---
 
-## §1. T-128: Exact 7D-computability of D_diff {#t-128}
+## §1. T-128: the 7D definition of D_diff {#t-128}
 
-:::tip Theorem T-128 [T]: Exact 7D-representation of D_diff
-$D_{\text{diff}}$ is computable in the 7D formalism without PW-embedding:
+:::tip T-128 [D]: the 7D definition of differentiation
+$D_{\text{diff}}$ is **defined** in the 7D formalism, without a PW-embedding, by
 
 $$
-D_{\text{diff}}^{7D} = 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
+D_{\text{diff}}^{7D} := 1 + \frac{\mathrm{Coh}_E(\Gamma)}{\mathrm{Coh}_E^{\max}} \cdot (N - 1)
 $$
 
-This formula is the exact 7D-representation of $D_{\text{diff}}$ via Morita equivalence T-58 [T].
+**Status errata 2026-09-10: [T] → [D].** The literal quantity $e^{S_{vN}(\rho_E)}$ is **not expressible in 7D**: there $\rho_E = \gamma_{EE}$ is a scalar, so $S_{vN}(\rho_E) \equiv 0$ and $e^{S_{vN}} \equiv 1$ ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d) [T]). The formula above is therefore a **definition** chosen to agree with the 42D notion at its two endpoints ($\mathrm{Coh}_E = 0 \Rightarrow 1$; $\mathrm{Coh}_E = \mathrm{Coh}_E^{\max} \Rightarrow N$), not an exact representation of it; and the bridge it leans on, Morita equivalence T-58, is itself [C].
 :::
 
 **Proof (4 steps).**
 
-**Step 1.** By [T-58 [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): $\mathrm{Sh}_\infty(\mathcal{C}_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}_{42}^{PW})$, the 7D and 42D formalisms are equivalent.
+**Step 1.** By [T-58′ [T]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): $\pi\circ\iota = \mathrm{id}$ — a 7D state lifts and returns unchanged. (The stronger reading $\mathrm{Sh}_\infty(\mathcal{C}_7) \simeq \mathrm{Sh}_\infty(\mathcal{C}_{42}^{PW})$ is retracted; it is not needed here, since the formula below is a definition.)
 
 **Step 2.** $\mathrm{Coh}_E$ — [HS-projection onto the E-subalgebra [T]](/docs/core/foundations/axiom-septicity#hs-projection) — is an invariant independent of the choice of representation (7D or 42D).
 
@@ -39,7 +39,7 @@ This formula is the exact 7D-representation of $D_{\text{diff}}$ via Morita equi
 
 $\blacksquare$
 
-**Dependencies:** T-58 [T], T-95 [T], $\mathrm{Coh}_E$ [T]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
+**Dependencies:** T-58′ [T] (section–retraction), T-95 [C], $\mathrm{Coh}_E$ [T]. Normalization: $\mathrm{Coh}_E^{\max} = 1$ [T] ([T-154](/docs/proofs/consciousness/substrate-closure#t-154)).
 
 **Corollary:** $\sigma_E = (N - D_{\text{diff}}^{7D})/(N-2)$ is computable in 7D, closing the full 7D-computability of $\sigma_{\text{sys}}$ (see [T-137](#t-137)). With $\mathrm{Coh}_E^{\max} = 1$: $D_{\text{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N-1)$.
 > **Errata 2026-07-22**: renormalized form — see the errata note at [T-92](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
@@ -50,6 +50,8 @@ $\blacksquare$
 
 :::tip Theorem T-129 [T]: Integration threshold Φ_th = 1
 $\Phi_{\text{th}} = 1$ is the unique value at which the integration threshold is self-consistent with $P_{\text{crit}} = 2/7$ on the extremal (uniform-diagonal) state.
+
+**What is theorem and what is definition.** The theorem-level content is the inequality $\Phi \geq 1 \Rightarrow P \geq 2/7$ on all of $\mathcal{D}(\mathbb{C}^7)$ (T-129a, Cauchy–Schwarz) and its sharpness on the uniform-diagonal stratum, where $\Phi = 7P - 1$ identically. Calling the *least* threshold with this property "$\Phi_{\text{th}}$" is the definition [D] that the theorem makes canonical. $\Phi$ itself is a frame-pinned observable ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 :::
 
 **Proof.**
@@ -342,7 +344,7 @@ $\blacksquare$
 
 ## §10. T-137: Full 7D-computability of σ_sys {#t-137}
 
-:::tip Theorem T-137 [T]: Full 7D-computability of σ_sys
+:::tip T-137 [T at the T-128 definition]: full 7D-computability of σ_sys
 All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in the 7D formalism $\mathcal{D}(\mathbb{C}^7)$ without 42D-embedding.
 :::
 
@@ -366,7 +368,7 @@ All 7 components of the stress tensor $\sigma_{\text{sys}}$ are computable in th
 
 $\blacksquare$
 
-**Dependencies:** [T-128 [T]](#t-128), [T-129 [T]](#t-129), [T-132 [T]](#t-132), [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
+**Dependencies:** [T-128 [D]](#t-128) — a **definition**, not a theorem, so $\sigma_E$ and with it the completeness of $\sigma_{\mathrm{sys}}$ inherit that status ([canonical box](/docs/core/structure/dimension-e#rho-e-7d-42d)); [T-129 [T]](#t-129), [T-132 [T]](#t-132), [T-92 [T]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий).
 
 ---
 
@@ -434,7 +436,7 @@ Closed by theorems [T-130](#t-130) + [T-133](#t-133). For a quality CPTP-anchor 
 
 | Problem | Theorem | Status |
 |----------|---------|--------|
-| $D_{\text{diff}}$ 7D vs 42D (partial trace in prime dimension) | [T-128 [T]](#t-128) | CLOSED |
+| $D_{\text{diff}}$ 7D vs 42D (partial trace in prime dimension) | [T-128 [D]](#t-128) | CLOSED |
 | $\Phi_{\text{th}} = 1$ — justification of integration threshold | [T-129 [T]](#t-129) | CLOSED, [D]→[T] |
 | Enc/Dec: threshold transfer via CPTP-bridge | [T-130 [T]](#t-130) | CLOSED |
 | Canonical time for digital agent | [T-131 [T]](#t-131) | CLOSED |

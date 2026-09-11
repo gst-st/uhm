@@ -582,7 +582,7 @@ graph TD
 
 - [Gap-оператор](/docs/core/dynamics/gap-operator) — определение $\hat{\mathcal{G}}$, спектр, G₂-разложение, стабилизаторы
 - [Динамика Gap](/docs/core/dynamics/gap-dynamics) — Чой–Ямиолковский, бифуркации, немарковские эффекты, модельные системы
-- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — строгие доказательства: Фано-канал, $G_2$-ковариантность, $\varphi_{\text{coh}}$
+- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — строгие доказательства: Фано-канал, группы ковариантности (Теорема 5.1b), $\varphi_{\text{coh}}$
 - [Правила отбора Фано](/docs/physics/gauge-symmetry/fano-selection-rules) — плоскость Фано $\mathrm{PG}(2,2)$, Юкавская текстура
 - [G₂-структура](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, калибровочная редукция
 - [Определения КК](./definitions) — базовые определения Кибернетики Когерентности

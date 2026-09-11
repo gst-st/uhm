@@ -12,7 +12,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | Theorem | Content | Method | Status |
 |---|---|---|---|
 | **T-210** | Strict (not weak) Φ-monotonicity under epistemic refinement | Interior-stratum argument + T-151 | [T] |
-| **T-211** | Higher coherences of **PhysTheory** $(\infty,1)$-category | Full embedding into $\mathbf{Topoi}_\infty$ (HTT 5.2.7) | [T] |
+| **T-211** | Higher coherences of **PhysTheory** $(\infty,1)$-category | Full embedding into $\mathbf{Topoi}_\infty$ (HTT 5.2.7) | [C at T-119] |
 | **T-212** | Explicit definition of rheonomy modality **Rh** | Super-cohesion right adjoint (Schreiber DCCT §3.10) | [T] |
 | **T-213** | Yoneda representability via Bures description length | Computable $D_B(f)$ replaces Kolmogorov complexity | [T] |
 | **T-214** | Hard-problem meta-theorem (positive irresolvability) | Lawvere fixed-point + T-55 | [T] |
@@ -65,7 +65,7 @@ The stated bound follows by taking the min over new pairs. $\blacksquare$
 
 ## 2. T-211: PhysTheory higher coherences inherited from $\mathbf{Topoi}_\infty$ {#t-211}
 
-:::tip Theorem T-211 (PhysTheory $(\infty,1)$-coherences) [T]
+:::tip Theorem T-211 (PhysTheory $(\infty,1)$-coherences) [C at T-119]
 
 The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{int}, D_\mathrm{int}, \alpha, \beta)$ with finite NCG algebra and CPTP dynamics (as defined in [T-174](/docs/proofs/physics/toe-embeddings#t-174)) is a **full $(\infty,1)$-subcategory** of Lurie's $(\infty,1)$-category $\mathbf{Topoi}_\infty$ of $\infty$-topoi. All higher coherences (pentagon, pentagon-in-pentagon, Mac Lane associator, etc.) are inherited and verified automatically.
 
@@ -74,7 +74,7 @@ The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{
 **Proof (four-step).**
 
 **Step 1 (Object assignment).** Every object $(E, \mathcal A, D, \alpha, \beta) \in \mathbf{PhysTheory}$ determines a unique $\infty$-topos $E[\mathcal A] := \mathbf{Sh}_\infty(\mathrm{Spec}(\mathcal A), J_\mathrm{Bures})$ via:
-- (i) Connes reconstruction (T-119 [T]) — now with all six axioms verified (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)).
+- (i) Connes reconstruction (T-119 [C]) — now with all six axioms verified (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)).
 - (ii) Lemma 2 of T-174 — $E[\mathcal A_\mathrm{int}] \simeq \mathbf{Sh}_\infty(\mathcal D(\mathbb C^7))$ via Morita equivalence of bimodule categories (Alvarez–Gracia-Bondía–Martín 1995 + T-178 [T]).
 
 **Step 2 (Morphism functoriality).** A receiving morphism $(E_1, \ldots) \to (E_2, \ldots)$ in $\mathbf{PhysTheory}$ consists of $(f^*, \alpha, \beta)$ (geometric morphism + intertwiner + covariance) satisfying the coherence diagrams of T-174. By the adjoint-functor theorem (Lurie HTT 5.5.2.9), any such datum induces a unique geometric morphism $E_1[\mathcal A_1] \to E_2[\mathcal A_2]$ in $\mathbf{Topoi}_\infty$. The assignment is **functorial** since composition of receiving morphisms matches composition of geometric morphisms.
@@ -91,7 +91,7 @@ HTT 5.2.7 ("presentable coherence inheritance") applies once $\iota: \mathbf{Phy
 
 **Size issue resolution.** $\mathbf{PhysTheory}$ is a **large** $(\infty,1)$-category (objects form a proper class because the finite NCG algebras $\mathcal A$ range over a proper class of Wedderburn forms), consistent with $\mathbf{Topoi}_\infty$'s size. The "essential uniqueness" of T-174 is unique **up to natural isomorphism** in $\mathbf{PhysTheory}$, equivalently up to equivalence in $\mathbf{Topoi}_\infty$. $\blacksquare$
 
-**Dependencies**: T-119 [T] (Connes reconstruction, now fully verified), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 [T] (bimodule equivalence), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
+**Dependencies**: T-119 [C] (Connes reconstruction — the weakest link, and the reason this theorem is [C at T-119]: status is inherited from the weakest dependency), T-173 [T] (rigidity), T-174 [T] (universal property), T-178 [T] (bimodule equivalence), Lurie HTT 5.5.2.9 + 6.3.1.16 + 5.2.7.
 
 **Upgrade**: T-174's universal property is now **rigorously established** with full coherence verification.
 
@@ -243,7 +243,7 @@ The choice between $\iota_\mathrm{min}$ and $\iota_\mathrm{max}$ is an **ontolog
 
 **Step 1 (Both conventions are consistent).**
 - $\iota_\mathrm{min}$: each $A_i$ individually satisfies UHM axioms (T-39a, T-42a, T-96, T-142). The tower $\mathcal T$ is a multi-agent system. Axioms make no claim about multi-agent identity, so $\iota_\mathrm{min}$ adds no new constraints — consistent.
-- $\iota_\mathrm{max}$: requires existence of global $\Gamma_\mathrm{tot}$. By T-58 [T] (Morita 7D↔42D) extended to compositing systems, $\mathcal{D}(\mathbb C^{7|\mathcal T|})$ supports CPTP dynamics whenever each factor does. Existence of CPTP-commuting $\Gamma_\mathrm{tot}$ is a non-trivial requirement (restricts states), but non-empty (tensor-product states satisfy it trivially). Hence $\iota_\mathrm{max}$ is consistent.
+- $\iota_\mathrm{max}$: requires existence of global $\Gamma_\mathrm{tot}$. By T-58′ [T] (section–retraction, extended to compositing systems; the equivalence reading is retracted), $\mathcal{D}(\mathbb C^{7|\mathcal T|})$ supports CPTP dynamics whenever each factor does. Existence of CPTP-commuting $\Gamma_\mathrm{tot}$ is a non-trivial requirement (restricts states), but non-empty (tensor-product states satisfy it trivially). Hence $\iota_\mathrm{max}$ is consistent.
 
 **Step 2 (Neither is derivable from Ω⁷).**
 Ω⁷ axioms apply per-holon: A1 (∞-topos), A2 (Bures), A3 (N=7), A4 ($\omega_0 > 0$), A5 (Page–Wootters). None mentions multi-agent composition. Hence the identity predicate $\iota$ is **underdetermined** by Ω⁷, consistent with its designation as a convention.
@@ -258,7 +258,7 @@ Hence T-205 as stated is [T] under $\iota_\mathrm{max}$ + resource abstraction; 
 
 **Philosophical corollary.** Whether a multi-agent AI system constitutes a single "super-intelligence" or a society of agents depends on design choices about global-state coherence and Landauer budgeting — **not** on UHM mathematics. This mirrors the analogous question in human sociology (is a company/nation/culture a single agent?), where the answer is conventional.
 
-**Dependencies**: T-58 [T] (Morita composition), T-142 [T] (SAD_MAX = 3 per holon), T-204 [T] (bounded rationality), C22 (Landauer), HTT 5.5.1 (cocompleteness of presentable).
+**Dependencies**: T-58′ [T] (section–retraction composition), T-142 [T] (SAD_MAX = 3 per holon), T-204 [T] (bounded rationality), C22 (Landauer), HTT 5.5.1 (cocompleteness of presentable).
 
 ---
 
@@ -602,12 +602,12 @@ The specific **three-loop product** structure $\varepsilon^{4\cdot 3} = \varepsi
 **Status of sub-components**:
 - The exponent $12 = 4 \cdot 3$ is **[T]** (structural, from sector count).
 - The numerical value of $\varepsilon$: allowed range $[10^{-3}, 10^{-1}]$ [T-bounds], self-consistent central $\varepsilon \sim 10^{-2}$ [C under C12, T-64] — hence $\varepsilon^{12} \approx 10^{-24}$ central, with $10^{-36}$ only at the extreme lower edge. Quoting the edge value as the central one would manufacture $\sim\!10^{-120}$ by parameter choice; we do not.
-- The cohomological statement $\Lambda_{\mathrm{global}} = 0$ is **[T]** (from $H^n(X) = 0$, T-71) — class B (exact zero), not a multiplicative factor.
+- The cohomological statement gives only the absence of a *topological* $\Lambda$-term **[T]**; the reading "$\Lambda_{\mathrm{global}} = 0$" was **retracted 2026-09-10** (degree-0 data are untouched by $H^{n>0} = 0$), so class B carries no exact zero.
 
 **Resulting composition** (per the [honest ledger](/docs/proofs/gap/lambda-budget#обновлённый-бюджет)):
 - Perturbative: $\sim 10^{-41.5}$ [T] (includes $\varepsilon^6$);
 - SUSY-sector $\varepsilon^{12}$ absorbs $\varepsilon^6$: net mean $\to \sim 10^{-53.5}$ [T at T-64 for the structure; C for the $\varepsilon$ value];
-- Cohomological $\Lambda_{\mathrm{global}} = 0$: exact [T], reframes the target as the local residual;
+- Cohomological argument: no topological $\Lambda$-term [T], **no** exact zero (retracted 2026-09-10);
 - Sector-minimisation residual: **[C]** open numerical programme.
 
 **Honest bracket: $\Lambda \sim 10^{-53.5}$ to $10^{-93.5}$** depending on how much of the sector programme is realised; closing the remaining $\gtrsim 27$ orders to the observed $10^{-120}$ is an **open computational + conceptual** task. $\blacksquare$

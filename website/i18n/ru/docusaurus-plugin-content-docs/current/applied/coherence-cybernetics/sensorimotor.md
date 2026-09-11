@@ -610,7 +610,7 @@ $$
 
 1. $\mathrm{Enc}_1, \mathrm{Enc}_2$ — CPTP-функторы (T-100 [Т]).
 2. Тензорное произведение $\mathrm{Enc}_1 \otimes \mathrm{Enc}_2$ — CPTP-канал на $\mathcal{D}(\mathbb{C}^{49})$.
-3. Агрегация $\Phi_{\mathrm{agg}}$ — CPTP из [Морита-эквивалентности](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (T-58 [Т]): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
+3. Агрегация $\Phi_{\mathrm{agg}}$ — CPTP-канал огрубления (T-58′ [Т], сечение–ретракция; прочтение «Морита-эквивалентность» отозвано): $\mathcal{D}(\mathbb{C}^{49}) \to \mathcal{D}(\mathbb{C}^7)$.
 4. Композиция CPTP-каналов — CPTP. Функториальность ($\mathrm{Enc}(o_1 \circ o_2) = \mathrm{Enc}(o_1) \circ \mathrm{Enc}(o_2)$) из T-100 сохраняется при агрегации.
 5. Единственность — из $G_2$-ригидности на каждом масштабе (T-72 [Т]). $\blacksquare$
 

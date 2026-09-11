@@ -54,9 +54,9 @@ $$\lim_{\tau \to \infty} \Gamma(\tau) = T$$
 
 provided $\Delta F > 0$ (system is not isolated).
 
-**Geometric formulation:**
+**Geometric formulation** (along the stratal depth $n \in \mathbb{N}$ — the cumulative tick count, not the cyclic label $\tau \in \mathbb{Z}_7$; [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)):
 
-$$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
+$$\dim(X_n) \geq \dim(X_{n+1})$$
 
 The arrow of time is the **progressive collapse of higher strata** toward terminal T.
 
@@ -1680,14 +1680,14 @@ This means:
 :::info Connection with spacetime
 The evolution $\Gamma(\tau)$ corresponds to motion through the base space $X = |N(\mathcal{C})|$:
 
-$$\Gamma(\tau) \in X_\tau \subset X$$
+$$\Gamma(n) \in X_n \subset X$$
 
-where $X_\tau$ is the space slice at time $\tau$.
+where $X_n$ is the stratum reached at stratal depth $n$ (the cumulative tick count).
 :::
 
 **Theorem (Stratum collapse):**
 
-$$\dim(X_\tau) \geq \dim(X_{\tau+1})$$
+$$\dim(X_n) \geq \dim(X_{n+1})$$
 
 **Interpretation:** During evolution the system transitions to strata of **smaller dimension**, approaching the terminal object $T \in S_0$.
 

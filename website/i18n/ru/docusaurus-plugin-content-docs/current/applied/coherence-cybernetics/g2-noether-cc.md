@@ -604,7 +604,7 @@ $$
 - [G₂-структура и плоскость Фано](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, Фано-операторы Линдблада
 - [Gap-оператор](/docs/core/dynamics/gap-operator) — $G_2/\perp$-разложение, стабилизаторы
 - [Фазовая диаграмма Gap](/docs/core/dynamics/gap-phase-diagram) — тождества Уорда (матем.), три фазы
-- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — $G_2$-ковариантность Фано-диссипатора
+- [Фано-канал и Gap-теоремы](/docs/proofs/gap/fano-channel) — группы ковариантности диссипаторов ($\Gamma_{\!\text{oct}}$, не полная $G_2$; Теорема 5.1b)
 - [Фазовая диаграмма КК](./phase-diagram-cc) — кибернетическая интерпретация фаз
 - [Голдстоуновские моды](./goldstone-modes) — квази-голдстоуновские моды из нарушения $G_2$
 - [Топологическая защита когерентности](./topological-protection) — пять механизмов защиты

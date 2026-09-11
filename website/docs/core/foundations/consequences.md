@@ -31,17 +31,17 @@ Analogy: imagine a ball of clay. You can dent it, ridge it, fold it—but you ca
 **Status:** [O+T]—cohomological triviality [T], ontological reading [D] (via PID).
 
 :::warning Theorem (Cohomological monism)
-For base space $X = |N(\mathcal{C})|$:
+For base space $X = |N(\mathcal{C})|$ and every locally constant coefficient system $A$ (constant coefficients, local systems):
 
 $$
-H^n(X, \mathcal{F}) = 0 \quad \forall n > 0, \forall \mathcal{F}
+H^n(X, A) = 0 \quad \forall n > 0
 $$
 
 **Cohomological triviality** is a mathematical theorem [T]. Under the definition (PID [D]): “ontological distinguishability ≡ $J_{\mathrm{Bures}}$-distinguishability”—contractibility of $X$ means there are no nontrivial “ontological partitions” in state space.
 :::
 
 :::info Status of cohomological monism
-- $H^n(X, \mathcal{F}) = 0$: **[T]** (topological fact)
+- $H^n(X, A) = 0$ for locally constant $A$: **[T]** — a corollary of Property 3 (terminal object ⇒ contractible nerve, Quillen 1973 Prop. 1), not an independent theorem; for arbitrary sheaves the vanishing fails even on contractible spaces ($H^1(\mathbb{R}, j_!\mathbb{Z}) = \mathbb{Z}$)
 - “Reality is one” (ontological monism): **[O+T]** (consequence [T] + PID definition [D])
 - The philosophical gloss “monism = unity of substance” goes beyond the formal claim and is **[I]**
 :::
@@ -55,7 +55,7 @@ $$
 Contractibility of $X = |N(\mathcal{C})|$ follows from a standard fact in category theory: if $\mathcal{C}$ has a terminal object $T$, then the nerve $N(\mathcal{C})$ is contractible. Sketch: $T$ defines a cone over any diagram in $\mathcal{C}$—for each $C \in \mathcal{C}$ there is a unique morphism $C \to T$. This yields the canonical map $r: N(\mathcal{C}) \to \{T\}$ (collapse to the vertex) and its right inverse $i: \{T\} \to N(\mathcal{C})$ (inclusion). A homotopy $H: N(\mathcal{C}) \times [0,1] \to N(\mathcal{C})$ between $\mathrm{id}$ and $i \circ r$ is built from the unique morphisms $C \to T$: at the level of $n$-simplices this is the natural replacement of $[C_0 \to \ldots \to C_n]$ by $[C_0 \to \ldots \to C_n \to T]$. Reference: Quillen (1973), *Higher algebraic K-theory: I*, Prop. 1.
 :::
 
-**Consequence:** Local operators $\varphi_i$ **always** glue into a global Unity.
+**Consequence:** Local operators $\varphi_i$ **always** glue into a global Unity: the obstruction to gluing is a class in $H^1$ with local-system coefficients, which vanishes on the contractible $X$. UHM's sheaves with nontrivial cohomology over the contractible base (the self-modelling sheaf, Berry local systems on $\mathcal{D}^*$) are not counterexamples but the *local* side of the [local–global dichotomy](#локально-глобальная-дихотомия).
 
 ---
 
@@ -152,10 +152,10 @@ $$
 - $S_n$—$n$-simplices
 :::
 
-**Link to time:**
+**Link to time** (along the stratal depth $n \in \mathbb{N}$, not the cyclic tick — [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)):
 
 $$
-\dim(X_\tau) \geq \dim(X_{\tau+1})
+\dim(X_n) \geq \dim(X_{n+1})
 $$
 
 Arrow of time = progressive collapse of higher strata toward terminal $T$.
@@ -357,7 +357,7 @@ All three constructions are **canonical** (no free parameters) and **equivariant
 
 2. **Atoms → Lindblad.** Atomic operators $L_k^{\text{atom}} = \sqrt{\chi_{S_k}} = |k\rangle\langle k|$ generate the dissipator $\mathcal{D}^{\text{atom}}[\Gamma] = \sum_k L_k \Gamma L_k^\dagger - \frac{1}{2}\{L_k^\dagger L_k, \Gamma\}$. By the [theorem on uniqueness of the Fano form](/docs/core/operators/lindblad-operators#теорема-единственность-фано) [T]: the BIBD$(7,3,1)$ structure of $\Omega$ uniquely fixes Fano operators $L_p^{\text{Fano}} = \frac{1}{\sqrt{3}}\Pi_p$, which combine with atomic ones into the [canonical form](/docs/core/operators/lindblad-operators#деривация-из-классификатора).
 
-3. **Shift → time.** The cyclic automorphism $\triangleright: \Omega \to \Omega$, $S_i \mapsto S_{(i+1) \bmod 7}$, is the unique (up to choice of $\mathbb{Z}_7$ generator) nontrivial automorphism of order $N$ on the atoms of $\Omega$. Via discrete Fourier transform it yields the [clock basis](/docs/core/operators/emergent-time#clock-basis) and the Page–Wootters mechanism ([A5](./axiom-omega#pw-constraint)). See [Emergent time](/docs/core/operators/emergent-time). $\blacksquare$
+3. **Shift → time.** The cyclic automorphism $\triangleright: \Omega \to \Omega$, $S_i \mapsto S_{(i+1) \bmod 7}$, is a free $\mathbb{Z}_7$-action on the atoms of $\Omega$; it is unique up to the choice of generator **only after** the cyclic order of the atoms is fixed — on seven labelled atoms there are $120$ inequivalent such actions, and compatibility with the Fano structure restricts $\triangleright$ to the Singer cycles of $\mathrm{PSL}(2,7)$; this choice is definitional [D] ([details](/docs/proofs/dynamics/emergent-time#алгебраическое-определение)). Via discrete Fourier transform it yields the [clock basis](/docs/core/operators/emergent-time#clock-basis) and the Page–Wootters mechanism ([A5](./axiom-omega#pw-constraint)). See [Emergent time](/docs/core/operators/emergent-time). $\blacksquare$
 
 **Consequence (Unity of “L”).** The letter “L” in three contexts—L-dimension (logic), $L_k$ (Lindblad operator), $\mathcal{L}_\Omega$ (Liouvillian)—does not denote three objects but three **projections of one**: the classifier $\Omega$. Hence dynamics ($L_k$), logic (L-dimension), and time ($\triangleright$) are inseparable—they **are one algebraic object** viewed from different sides.
 
@@ -375,20 +375,20 @@ Time is **derived** from the structure of category $\mathcal{C}$ in four equival
 | **Page–Wootters** | Correlation with [dimension O](../structure/dimension-o) |
 | **Information geometry** | Distance in the Bures metric |
 | **Categorical** | 1-morphism in $\infty$-groupoid $\mathbf{Exp}_\infty$ |
-| **Stratificational** | Collapse of strata: $\dim(X_\tau) \geq \dim(X_{\tau+1})$ |
+| **Stratificational** | Collapse of strata along the depth $n$: $\dim(X_n) \geq \dim(X_{n+1})$ |
 
 The arrow of time is **progressive collapse** toward terminal object $T$.
 :::
 
 ### 2.0 Arrow of time as collapse of strata
 
-From [Property 5](./axiom-omega#свойство-5):
+From [Property 5](./axiom-omega#свойство-5), along the stratal depth $n \in \mathbb{N}$ (the cumulative tick count; the cyclic tick $\tau \in \mathbb{Z}_7$ carries no arrow — [two indices, one arrow](/docs/proofs/dynamics/emergent-time#временная-стратификация)):
 
 $$
-\dim(X_\tau) \geq \dim(X_{\tau+1})
+\dim(X_n) \geq \dim(X_{n+1})
 $$
 
-**Interpretation:** Evolution $\tau \to \tau+1$ collapses higher strata. The arrow of time moves from a complex stratified structure toward terminal object $T = \Gamma^*$.
+**Interpretation:** Each coarsening step $n \to n+1$ collapses higher strata. The arrow of time moves from a complex stratified structure toward terminal object $T = \Gamma^*$.
 
 This strengthens Axiom Ω⁷: time is not an external parameter but a function of the structure of the $\infty$-topos $\mathrm{Sh}_\infty(\mathcal{C})$. [Dimension O](../structure/dimension-o) plays the role of internal clocks.
 

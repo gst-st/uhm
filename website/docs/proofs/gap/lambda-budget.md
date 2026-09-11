@@ -450,16 +450,28 @@ With the Fano character ($\chi \neq 1$): the meromorphic structure of $\Lambda_\
 
 ## 4. Cohomological Argument and SUSY Compensation {#когомологический-susy}
 
-### 4.1 Level A: Cohomological cancellation [T] {#когомологическое-обнуление}
+### 4.1 Level A: no topological Λ-term [T]; no cancellation of the vacuum energy {#когомологическое-обнуление}
 
-:::tip Theorem 4.1 (Cohomological cancellation of global Λ) [T]
-Global contractibility of $X = |N(\mathcal{C})|$ to $T$ gives $H^n(X, \mathcal{F}) = 0$ for $n > 0$ ([cohomological monism](/docs/core/foundations/consequences#когомологический-монизм) [T]). Therefore:
+:::tip Theorem 4.1 (what cohomology gives) [T] for the topological term; the "global cancellation" is retracted
+Global contractibility of $X = |N(\mathcal{C})|$ to $T$ gives $H^n(X, A) = 0$ for $n > 0$ and every locally constant coefficient system $A$ ([cohomological monism](/docs/core/foundations/consequences#когомологический-монизм) [T] — a corollary of the terminal-object property). **Resolution 2026-09-10 — what the cohomology can and cannot give. The wide claim is retracted.**
+
+The vanishing is in **positive degree only**. For a contractible $X$ and a locally constant $A$,
 
 $$
-\Lambda_{\text{global}} = 0
+H^0(X, A) = A \neq 0, \qquad H^n(X, A) = 0 \ (n > 0).
 $$
 
-The observed $\Lambda_{\text{obs}} \neq 0$ is a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$ ([local non-triviality](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [T]).
+A vacuum-energy total is a **global number** — degree-0 data, living exactly in the group that does *not* vanish. Cohomological triviality therefore cannot cancel it, and no choice of coefficients repairs this: it is a statement about degree, not about the sheaf. (The earlier draft asked instead for a local-constancy condition (LC) on a sheaf $\mathcal{F}_{\text{vac}}$; that was the wrong repair — even with (LC) granted, a degree-0 quantity is untouched by the vanishing of $H^{n>0}$.)
+
+What survives is a **narrow and genuine** statement:
+
+> **Theorem 4.1 (no topological $\Lambda$-term) [T].** On the contractible $X$ every characteristic class of positive degree vanishes, so the UHM action admits **no topological cosmological term** — no $\Lambda$-contribution of the form $\int_X c$ with $[c] \in H^{n>0}(X, A)$.
+
+$$
+\Lambda_{\text{topological}} = 0 \quad \textbf{[T]}, \qquad \Lambda_{\text{vacuum}} \ \text{unconstrained by cohomology}
+$$
+
+Consequently the *dynamical* vacuum energy — the quantity actually compared with observation — receives **nothing** from this argument, and the $\Lambda$-budget below loses its "exact zero" class: the deficit is carried entirely by the perturbative and SUSY mechanisms, with the residual gap stated honestly in the ledger. The observed $\Lambda_{\text{obs}} \neq 0$ is still read as a **local** effect from $H^*_{\text{loc}}(X, T) \neq 0$ ([local non-triviality](/docs/core/foundations/consequences#локально-глобальная-дихотомия) [T]), and its **positivity** rests solely on the autopoietic argument, exactly as [Consequences §0.2](/docs/core/foundations/consequences#когомологический-монизм) already states.
 
 Moreover, $\Lambda_{\text{obs}} > 0$ **strictly** ([Т](/docs/core/foundations/consequences#теорема-лямбда-положительна)): autopoiesis (A1) requires $P(\rho_*) > P_{\text{crit}} > P(I/7)$, which inevitably generates positive local vacuum energy $\rho_{\text{vac}}(T) = \kappa_0[P(\rho_*) - P(I/7)]\omega_0 > 0$.
 :::
@@ -502,7 +514,7 @@ The mechanisms below fall into **three non-composable classes**; naively multipl
 |---|---|---|---|
 | **(A) Mean, rigorous** | Perturbative (6 mechanisms, incl. $\varepsilon^6$ and RG $\lambda_3^2$) | $10^{-41.5}$ | **[T]** |
 | (A) | SUSY-breaking $\varepsilon^{12}$ (**absorbs** $\varepsilon^6$, adds $\Delta\approx-12$ over the $\varepsilon^6$ already counted) | $\to 10^{-53.5}$ net | [T at T-64] via [T-219](/docs/proofs/categorical/fundamental-closures#t-219) |
-| **(B) Exact zero (separate)** | Cohomological $\Lambda_{\text{global}} = 0$ | global mean $=0$; observed $\Lambda$ is a **local** $H^*_{\text{loc}}\neq0$ effect | **[T]** |
+| ~~(B) Exact zero (separate)~~ | ~~Cohomological $\Lambda_{\text{global}} = 0$~~ | **Retracted 2026-09-10**: cohomology vanishes in positive degree only; a vacuum-energy total is degree-0 data. What remains: no *topological* $\Lambda$-term **[T]**, no cancellation of the vacuum energy | **[✗]** as a cancellation |
 | **(C) Fluctuation / programme** | Sector [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) | $\sim10^{-40}$ residual | **[C]** (numerical, open) |
 | sign | $\Lambda > 0$ from autopoiesis | sign fixed | **[T]** |
 | calibration | $f_0$ canonical | parameter fixed | **[T]** |
@@ -574,7 +586,7 @@ $$
 
 5. **RG suppression of $\lambda_3$:** factor $\sim 10^{-7.26}$ squared → $10^{-14.52}$.
 
-6. **Cohomological cancellation:** $\Lambda_{\text{global}} = 0$ [T]; physical $\Lambda$ is a local effect.
+6. **Cohomological argument:** gives only the absence of a *topological* $\Lambda$-term [T]; it does **not** cancel the vacuum energy (retracted 2026-09-10 — degree-0 data are untouched by $H^{n>0} = 0$).
 
 7. **Sector minimization**: [global minimization of $V_{\text{Gap}}$](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution to $\sim 10^{-40}$ [C].
 
@@ -612,7 +624,7 @@ No coefficient contains free parameters — all are determined via the fixed poi
 | O-sector isolation $(6/21)^3$ | $10^{-1.7}$ | **[T]** |
 | **Perturbative total** | **$10^{-41.5}$** | **[C]** (at $\varepsilon = 10^{-2}$ [С given C12, T-64]) |
 | **Cohomological + SUSY + spectral** | | |
-| Cohomological $\Lambda_{\text{global}} = 0$ | complete global cancellation | **[T]** |
+| Cohomological argument | no *topological* $\Lambda$-term; **no** cancellation of the vacuum energy (retracted 2026-09-10) | **[T]** narrow / **[✗]** wide |
 | $Z_\Phi(-2) = 0$ (winding) | winding cancellation | **[T]** |
 | SUSY-breaking $\varepsilon^{12}$ | $10^{-24}$ | **[T]** (spectral action, ) |
 | $Z'_\Phi(-2)$ | $\times 10^{10}$ | **[T]** (math.) |
@@ -640,7 +652,7 @@ Correct perturbative budget: **$10^{-41.5}$**. Taking into account the spectral 
 
 Structural closure has been achieved: the [spectral formula](#теорема-спектральная-лямбда) [T] establishes SUSY compensation to $\varepsilon^{12}$ rigorously, [global minimization](/docs/core/dynamics/gap-thermodynamics#теорема-глобальная-минимизация) [T] refines the sector contribution. All coefficients are determined via the fixed point $\theta^*$ ([T-79](/docs/core/foundations/consequences#теорема-самозамыкание) [T]). Estimated budget $\sim 10^{-120 \pm 10}$ [C]. The remaining gap is a **computational** problem, not a conceptual one: exact computation of the sector factor requires numerical minimization on $(S^1)^{21}$ with $G_2$-symmetry.
 
-:::info Closure program [P]
+:::info Closure program [Pr]
 To close the 79-order deficit, the following directions are considered:
 
 1. **Full functional integral** (bosons + fermions + SUSY) in winding sectors. Compensation between bosonic and fermionic modes may substantially change the residual contribution.
@@ -682,7 +694,7 @@ To close the 79-order deficit, the following directions are considered:
 | **[С given C12, T-64]** | Conditional — order of magnitude structurally motivated | $\varepsilon = 10^{-2}$ (sector hierarchy $\bar{\varepsilon} \approx 0.023$) |
 | **[Г*]** | High-level hypothesis | Physical interpretation of $Z'_\Phi(-2)$ |
 | **[D]** | Refuted | Gaussian sum ($\leq 9$ orders), modular hypothesis ($\leq 15$ orders) |
-| **[P]** | Program — research direction | 8 directions to close the deficit |
+| **[Pr]** | Program — research direction | 8 directions to close the deficit |
 
 ---
 

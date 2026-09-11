@@ -367,7 +367,7 @@ function HomepageHeader() {
             <Translate id="homepage.hero.subtitle">What if reality has a single mathematical structure?</Translate>
           </p>
           <p className={styles.heroDescription}>
-            <Translate id="homepage.hero.description">Five axioms generate an ∞-topos from which seven dimensions, time, space, and quantum mechanics inevitably follow — without a single arbitrary parameter. The inner aspect of a system turns out to be not a byproduct, but a necessary condition for its existence.</Translate>
+            <Translate id="homepage.hero.description">Five axioms — with the dimension N = 7 stated openly as one of them and justified as the minimal case — generate an ∞-topos from which time, space, and quantum dynamics are derived. The theory names its constants (the cut-off convention, the scale Λ, the frequency ω₀) instead of hiding them. The inner aspect of a system turns out to be not a byproduct, but a necessary condition for its existence.</Translate>
           </p>
           <div className={styles.heroButtons}>
             <Link className="button button--primary button--lg" to="/docs/intro">
@@ -428,7 +428,7 @@ const docSections: DocSection[] = [
     title: 'The Single Primitive',
     description: 'Five Axioms Ω⁷',
     link: '/docs/core/foundations/axiom-omega',
-    items: ['∞-topos Sh∞(𝒞) — everything else is derived', 'Logic, time and space are consequences', 'Principle of informational distinguishability'],
+    items: ['∞-topos Sh∞(𝒞) — the single primitive; structure, time and dynamics are derived from five axioms', 'Logic, time and space are consequences', 'Principle of informational distinguishability'],
   },
   {
     id: 'structure',
@@ -491,7 +491,7 @@ const docSections: DocSection[] = [
     title: 'Proofs',
     description: 'Formal Theorems',
     link: '/docs/proofs/minimality/theorem-minimality-7',
-    items: ['Minimality of 7 dimensions (Track A)', '250+ formal results: from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
+    items: ['Minimality of 7 dimensions (Track A)', '392 registry rows (T-1..T-325): from P_crit = 2/7 to substrate independence', 'Categorical formalism and lax 2-functor'],
   },
   {
     id: 'cybernetics',

@@ -272,11 +272,11 @@ The total 'imaginary energy' of coherences is invariant under $\mathrm{SO}(7)$.
 The set of all possible Gap profiles $\{\mathrm{Gap}(i,j)\}_{i<j}$ for a fixed $\Gamma$ decomposes into $G_2$-orbits.
 :::
 
-**(a)** The total number of $G_2$-invariants for a Hermitian $7 \times 7$ matrix: $48 - 14 = 34$, where $14 = \dim(G_2)$. Consequently, $G_2$ gauge freedom reduces the 48-dimensional parameter space to a **34-dimensional** space of physically distinguishable configurations. The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [T] proves that $G_2$ is the **maximal** gauge group (Lemma G4): no larger subgroup of $U(7)$ preserves all axiomatic structures A1–A5. The reduction $48 \to 34$ is not an arbitrary gauge choice, but a **necessary** consequence of the uniqueness of the holonomy representation.
+**(a)** The total number of $G_2$-invariants for a Hermitian $7 \times 7$ matrix: $48 - 14 = 34$, where $14 = \dim(G_2)$. These are the **kinematic** invariants (spectrum and $\varphi_3$-relative angles); they are *not* the physically distinguishable configurations, because the pinching dynamics breaks $G_2$ to the finite frame group $\Gamma_{\!\text{oct}}$ (Theorem 11.2 below), so all 48 parameters are physical and the Gap profile is read in the pinned frame ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem#физические-состояния) [T] proves that $G_2$ is the **maximal** subgroup of $U(7)$ preserving the octonionic 3-form (Lemma G4), while the frame data are preserved only by the finite $\Gamma_{\!\text{oct}}$. The count $48 \to 34$ is not an arbitrary choice, but a **kinematic** consequence of the uniqueness of the holonomy representation.
 
 **(b)** Of the 21 Gap values, only $34 - 7 = $ **up to 27** are 'physically distinguishable' (7 populations are subtracted from the invariants).
 
-**(c)** This means that $21 - (27 - 21) = $ **all 21 Gaps** can be distinguishable, but with 14 relations between them. In practice, knowing 7 Gaps, one can (under $G_2$-covariance) recover the remaining 14.
+**(c)** This means that $21 - (27 - 21) = $ **all 21 Gaps** can be distinguishable, but with 14 relations between them. These 14 relations hold among the kinematic $G_2$-invariants only; in the pinned physical frame (D-0910) all 21 Gaps are independent observables.
 
 ### Corollary: $G_2$-Reduction of Diagnostics
 
@@ -289,7 +289,7 @@ If the UHM evolution equations are $G_2$-covariant, a full diagnostic requires m
 The remaining 27 parameters are computed from $G_2$ relations.
 
 :::warning[Status: Open Problem \[H\]]
-$G_2$-covariance of the evolution equations has not been proved in full generality. The degree of $G_2$ breaking is determined by the parameter $\alpha$ (see Theorem 11.3 below).
+The evolution equations are **not** $G_2$-covariant: the pinching dissipator is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ (Theorem 11.2), and the degree of $G_2$ breaking is $\tfrac{2+\alpha}{3}\Delta_{\max} > 0$ for every $\alpha$ (Theorem 11.3 below).
 :::
 
 ---
@@ -560,7 +560,7 @@ $\blacksquare$
 For canonical $\varphi_{\mathrm{coh}}$ with parameter $\alpha$, the degree of $G_2$-covariance is determined as follows.
 :::
 
-**(a)** At $\alpha = 0$ (purely Fano): **full** $G_2$-covariance. The gauge reduction $48 \to 34$ is valid.
+**(a)** At $\alpha = 0$ (purely Fano): covariance under the finite frame group $\Gamma_{\!\text{oct}}$ only — $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$ has the same symmetry group as the atomic dissipator (Theorem 11.2, [Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)). No $48 \to 34$ gauge reduction is realised at any $\alpha$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **(b)** At $\alpha = 1$ (purely atomic): $G_2$ is **fully broken**. No gauge reduction.
 
@@ -576,34 +576,28 @@ where $\mathrm{Ad}_g(\Gamma) = g\Gamma g^\dagger$.
 
 **(d)** $\Delta_{G_2}(\alpha)$ increases monotonically with $\alpha$:
 
-$$\Delta_{G_2}(0) = 0, \quad \Delta_{G_2}(1) = \Delta_{\max} > 0$$
+$$\Delta_{G_2}(0) = \tfrac23\Delta_{\max} > 0, \quad \Delta_{G_2}(1) = \Delta_{\max}$$
 
 **(e)** At optimal $\alpha^* \approx 1 - 2/(7P)$:
 
-$$\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$$
+$$\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3} \cdot \Delta_{\max}$$
 
-**Proof.** (a)–(b): direct consequence of Theorems 11.1 and 11.2. (c)–(e): $\mathcal{P}_\alpha$ is a convex combination of the $G_2$-covariant ($\mathcal{P}_{\mathrm{Fano}}$) and $G_2$-breaking ($\mathcal{P}_{\mathrm{base}}$) channels. The measure of breaking is linear in $\alpha$ (from the linearity of both channels). $\blacksquare$
+**Proof.** (a)–(b): direct consequence of Theorems 11.1 and 11.2. (c)–(e): $\mathcal{P}_\alpha$ is a convex combination of two channels with the same finite covariance group $\Gamma_{\!\text{oct}}$; since $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$ ([Lindblad operators](/docs/core/operators/lindblad-operators#g2-ковариантность)), the breaking measure is $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\Delta_{\max}$ — affine in $\alpha$ and strictly positive on $[0,1]$. $\blacksquare$
 
 :::warning Limits of $G_2$-Covariance
 - Fano dissipator $\mathcal{D}_{\text{Fano}} = \tfrac23\mathcal{D}_{\text{atom}}$: covariant under the frame group $\Gamma_{\!\text{oct}}$, **not** full $G_2$ **[T]** (T-11.2)
 - Atomic dissipator $\mathcal{D}_{\text{atom}}$: **NOT** $G_2$-covariant **[T]** (T-11.1)
 - Canonical $G_2$-covariant dissipator $\mathcal{D}_{G_2}$ (structure constants $\varphi_{abc}$) **[T]**
-- Full dynamics $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: $G_2$-covariance of the full evolution — **[C]** (depends on the fraction of atomic vs Fano component)
+- Full dynamics $\mathcal{L}_\Omega = \mathcal{D}_{\text{atom}} + \mathcal{D}_{\text{Fano}} + \mathcal{R}$: **not** $G_2$-covariant at any $\alpha$ — **[T]** (both dissipators are only $\Gamma_{\!\text{oct}}$-covariant, Theorem 5.1b; $\mathcal{R}$ references the O, E, U axes; [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность))
 :::
 
 ### Theorem 11.4 (Modified Gauge Reduction)
 
 :::tip[Status: Theorem \[T\]]
-Under partial $G_2$-covariance ($\alpha \in (0,1)$), the parameter space of Gap profiles is reduced.
+Superseded by the frame decision D-0910: the parameter space of Gap profiles is **not** reduced by $G_2$ at any $\alpha$; the interpolation below is retained only as a record of the retracted claim.
 :::
 
-**(a)** Full $G_2$ ($\alpha = 0$): $48 - 14 = $ **34** independent parameters.
-
-**(b)** Partial $G_2$ (optimal $\alpha^*$): **$34 + 14\alpha^*$** parameters. The number of 'additional' parameters $= 14\alpha^* \approx 14(1 - 2/(7P))$.
-
-**(c)** No $G_2$ ($\alpha = 1$): **48** parameters (full space).
-
-**For a typical living system** with $P \approx 0.5$: $\alpha^* \approx 0.43$, number of parameters $\approx 34 + 6 = $ **40**. Reduction from 48 to 40 — moderate but significant.
+**(a)–(c) Retracted (D-0910).** Earlier drafts interpolated "$34$ parameters at $\alpha = 0$, $34 + 14\alpha^*$ at optimal $\alpha^*$, $48$ at $\alpha = 1$" (for $P \approx 0.5$: $\approx 40$). The premise — a $G_2$-covariant Fano channel at $\alpha = 0$ — is false (Theorem 11.2): the pinching dynamics is only $\Gamma_{\!\text{oct}}$-covariant for every $\alpha \in [0,1]$, so the physical parameter space of Gap profiles is the full 48-dimensional $\mathcal{D}(\mathbb{C}^7)$ modulo a finite group at every $\alpha$. The number 34 survives only as the count of kinematic $G_2$-invariants ([uniqueness theorem, Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)).
 
 **For a highly coherent system** with $P \approx 0.8$: $\alpha^* \approx 0.64$, number of parameters $\approx 34 + 9 = $ **43**. The reduction is even more moderate.
 

@@ -25,4 +25,19 @@ A mature theory must compete where others already predict. UHM's structural proh
 | 11 | Dilepton resonances ($Z'$,$W'$) | GUT/string spectra | **Permanent null at any energy** [T-297] | LHC nulls ✓ open |
 | 12 | Charged Higgs $H^\pm$ | 2HDM/MSSM: within HL-LHC reach | **Does not exist** [T-296] | open (discovery falsifies UHM at $\kappa_0$) |
 
+:::warning Experimental reach: what any of this can decide, and when
+The ledger's *content* is not exhausted by "falsifiable in principle". Set against the reach of funded and planned experiments, the twelve rows sort into three groups — and only the last is decidable soon.
+
+| Prediction | Reach of the relevant experiment | Verdict on timing |
+|---|---|---|
+| $\tau_p \sim 10^{37\text{–}38}$ yr | Hyper-K reaches $\sim 10^{35}$ yr | 2–3 orders beyond reach; needs a megaton class not yet planned |
+| $m_{\beta\beta}$ in the meV band (normal ordering) | LEGEND-1000 / nEXO reach $\sim 10$–$20$ meV | below reach: the next generation sees the same "emptiness" |
+| $M_R \approx 2.9\times10^{14}$ GeV; $O$-relic at $\sim10^{13}$ GeV | no direct probe at these scales | not directly testable |
+| $m_a \sim 3$ neV ($f_a \approx 2\times10^{15}$ GeV) | GUT-scale axion searches | plausibly reachable in the 2030s |
+| **Normal neutrino mass ordering** | **JUNO, DUNE** | **decidable within years — one honest bit** |
+| Rows 1–4, 10–12 (prohibitions) | LHC / MEG-II / Mu3e / Mu2e / LZ … | *any* positive signal falsifies; null results merely keep the block alive |
+
+Read together with the prohibition rows, the honest summary is: **the theory forbids essentially everything that could be seen in the next fifteen years, predicts positively what cannot be seen in them, and stakes one decidable bit** (the neutrino ordering). This is a real, but narrow, exposure — and it is the strongest reason to treat the physics sector as a research programme rather than a confirmed derivation.
+:::
+
 **Reading the ledger.** Rows 1–4 and 10–12 are *prohibition-driven*: they follow from the same three structural theorems, so one confirmed BSM discovery in any of them breaks the whole block — UHM is maximally exposed, which is what falsifiability means. Rows 5–9 are *positive* UHM numbers with named experiments. Post-factum passes (row 3; the deflation trends in 1 and 10) are graded honestly: predictions written after the data count only as consistency, never as discovery.

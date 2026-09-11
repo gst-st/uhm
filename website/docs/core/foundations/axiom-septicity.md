@@ -1111,11 +1111,11 @@ More: [Lindblad operators](../../core/operators/lindblad-operators#редукц�
 :::info $G_2$ gauge structure from axioms [T]
 Closing T15 yields $(AP)+(PH)+(QG)+(V) \Rightarrow \mathbb{O} \Rightarrow G_2 = \text{Aut}(\mathbb{O})$. [$G_2$ rigidity](../../proofs/categorical/uniqueness-theorem) proves more:
 
-**Lemma G4 [T]:** $G_2$ is the **largest** subgroup of $U(7)$ fixing all five axiomatic data $(H_\text{eff}, \mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$. Any larger subgroup breaks at least one.
+**Lemma G4 [T]:** $G_2$ is the **largest** subgroup of $U(7)$ preserving the octonionic 3-form $\varphi_3$; the remaining axiomatic data $(\mathcal{D}_\Omega, \mathcal{R}, \kappa_0, \text{PW})$ are frame data, preserved only by the finite frame group $\Gamma_{\!\text{oct}} \subset G_2$ ([frame decision D-0910](../../proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **Consequences:**
-- Physical state space: $\mathcal{D}(\mathbb{C}^7)/G_2$, $\dim = 48 - 14 = 34$ parameters
-- Observables ($R$, $\Phi$, $\text{Coh}_E$, $\kappa$) are $G_2$-invariant
+- Kinematic orbit space $\mathcal{D}(\mathbb{C}^7)/G_2$: $\dim = 48 - 14 = 34$; physical state space $\mathcal{D}(\mathbb{C}^7)/\Gamma_{\!\text{oct}}$: 48 parameters (D-0910)
+- $P$, $R$ are $G_2$-invariant; $\Phi$, $\text{Coh}_E$, $\kappa$ are frame-pinned observables (invariant under $\Gamma_{\!\text{oct}}$)
 - Inverse problem: $\Gamma(0)$ recoverable from trajectory (Picard–Lindelöf on compact $\mathcal{D}(\mathbb{C}^7)$)
 :::
 

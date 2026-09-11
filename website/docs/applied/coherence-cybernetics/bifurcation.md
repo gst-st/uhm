@@ -437,7 +437,7 @@ This hierarchy mirrors the L-level hierarchy non-accidentally. Each L-level requ
 | Swallowtail ($A_4$) | 3 | $G^5 + aG^3 + bG^2 + cG$ | 1, 2 or 3 | Tristability L1/L2/L3 |
 
 :::info Corollary for the Number of Fermion Generations [T]
-The swallowtail ($A_4$) restriction to three stable minima is used as the upper bound $N_{\text{gen}} \leq 3$ in the [proof of $N_{\text{gen}} = 3$](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации) [T]. The lower bound $\geq 3$ follows from $(1,2,4) \subset \mathbb{Z}_7^*$, giving the exact value.
+The swallowtail ($A_4$) restriction to three stable minima is a **consistency check** on $N_{\text{gen}} = 3$: the count itself is group-theoretic — $|\mathrm{QR}(7)| = 3$, both bounds, [T] — and the identification with the physical generations is [I] ([theorem](/docs/physics/particle-physics/fermion-generations#теорема-ровно-три-генерации)).
 :::
 
 :::danger Retraction: $A_5$-Butterfly [✗]

@@ -41,7 +41,7 @@ For mathematical notation see [Notation](./notation). For verification criteria 
 | **Cohomological monism** | [Theorem](/docs/core/foundations/consequences#когомологический-монизм): $H^n(X, \mathcal{F}) = 0$ for $n > 0$ — monism as a mathematical fact |
 | **Stratified metric d_strat** | $d_{strat}(\omega_1, \omega_2) = \inf_\gamma \int_\gamma ds_\alpha$ — [Connes metric](/docs/core/foundations/spacetime#метрика-конна) on strata |
 | **Link Link(T)** | Topological structure near T; $\text{Link}(T) \cong S^6$ — 6-sphere |
-| **Arrow of time (geometric)** | [Stratum collapse](/docs/core/dynamics/evolution#стрела-времени-эволюция): $\dim(X_\tau) \geq \dim(X_{\tau+1})$ towards terminal T |
+| **Arrow of time (geometric)** | [Stratum collapse](/docs/core/dynamics/evolution#стрела-времени-эволюция): $\dim(X_n) \geq \dim(X_{n+1})$ along the stratal depth $n \in \mathbb{N}$ (not the cyclic tick $\tau \in \mathbb{Z}_7$) towards terminal T |
 | **IC cohomology** | [Intersection cohomology](/docs/proofs/categorical/categorical-formalism#производные-категории) — cohomology of strata capturing the "hidden topology" |
 | **Derived category D^b(X)** | [Bounded derived category](/docs/proofs/categorical/categorical-formalism#производные-категории) of sheaves on stratified X |
 
@@ -310,7 +310,7 @@ See [Gap operator](/docs/core/dynamics/gap-operator) and [φ-operator](/docs/cor
 | **KO-dimension** | Classification invariant of the real structure $J$ on a spectral triple. In UHM: KO-dim $= 6$ (mod 8) — condition ensuring chirality and the SM generation structure. From Connes's conditions: $J^2 = 1$, $JD = DJ$, $J\gamma = -\gamma J$ — [bimodular construction](/docs/proofs/physics/bimodule-construction) |
 | **T-181 (characterising properties)** | (AP), (PH), (QG), (V) — theorems from A1–A4. (QG) from A1 (∞-topos), (AP) from A1 (terminal object + adjunction), (PH) from A1+A3, (V) from A2+A3. Consequence: number of independent UHM axioms = 4 — [bimodular construction](/docs/proofs/physics/bimodule-construction#вывод-apphqgv) |
 | **$\mathrm{SAD}_{\max}$** | Maximum recursive self-modelling depth: $\mathrm{SAD}_{\max} = 3$ **[T]** (T-142: from Fano contraction $\alpha = 2/3$, $P_{\text{crit}}^{(n)} = P_{\text{crit}} \cdot 3^{n-1}/(n+1)$ — and, independently, from the coding ceiling T-232/T-239). Pred 12 — [depth tower](/docs/consciousness/hierarchy/depth-tower#критическая-чистота-sad) |
-| **Fano channel ($P_{\mathrm{Fano}}$)** | CPTP map $P_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$, preserving coherences. $G_2$-covariant — [Fano channel](/docs/proofs/gap/fano-channel) |
+| **Fano channel ($P_{\mathrm{Fano}}$)** | CPTP map $P_{\mathrm{Fano}}(\Gamma) = \frac{1}{3}\sum_p \Pi_p \Gamma \Pi_p$, preserving coherences. Covariant under the finite frame group $\Gamma_{\!\text{oct}}$, not under the full $G_2$ (Theorem 5.1b) — [Fano channel](/docs/proofs/gap/fano-channel#g2-ковариантность) |
 | **ISF (Infra-Slow Fluctuations)** | Infra-Slow Fluctuations — quasi-Goldstone modes of $G_2$-symmetry breaking, manifesting in EEG/MEG at frequencies $0.005$–$0.02$ Hz. Number of independent ISF components $N_{\text{ISF}} \in [6, 12]$ determined by the opacity rank of the [Gap operator](/docs/core/dynamics/gap-operator) — [Goldstone modes](/docs/applied/coherence-cybernetics/goldstone-modes#isf-prediction), [F-ISF](/docs/reference/falsifiability#f-isf-isf-компоненты-в-фмрт) |
 
 ## Physical Correspondence Terms

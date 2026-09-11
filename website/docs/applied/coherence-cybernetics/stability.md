@@ -135,7 +135,7 @@ $$
 \mathcal{V} = \{\Gamma \in \mathcal{D}(\mathbb{C}^7) : P(\Gamma) > P_{\text{crit}} = 2/7\}
 $$
 
-**Size of the basin.** The space $\mathcal{D}(\mathbb{C}^7)$ has 48 real parameters (34 gauge-invariant, [$G_2$-rigidity](/docs/proofs/categorical/uniqueness-theorem) [T]). The region $\mathcal{V}$ is an open subset:
+**Size of the basin.** The space $\mathcal{D}(\mathbb{C}^7)$ has 48 real parameters (34 kinematic $G_2$-invariants plus 14 frame-orientation parameters, all physical — [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [T]). The region $\mathcal{V}$ is an open subset:
 
 $$
 \mathrm{vol}(\mathcal{V}) / \mathrm{vol}(\mathcal{D}(\mathbb{C}^7)) \approx (2/7)^{21} \ll 1

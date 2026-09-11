@@ -548,7 +548,7 @@ $N = 7$ is the **only Pareto-optimal** point in the plane (learning capacity, sy
 
 4. *For $N < 7$: impossibility.* No Fano plane → no unique Lindblad decomposition (T-82) → no replacement channel → $R = 0$ → impossible to update $\varphi(\Gamma)$ on the basis of observations → $n^* = \infty$.
 
-5. *For $N > 7$: redundancy.* Embedding $\mathbb{C}^7 \hookrightarrow \mathbb{C}^N$ (via [Morita equivalence](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) T-58 [T]) provides all mechanisms of $N = 7$. Additional dimensions increase:
+5. *For $N > 7$: redundancy.* Embedding $\mathbb{C}^7 \hookrightarrow \mathbb{C}^N$ (a section, T-58′ [T]; the Morita *equivalence* reading is retracted) provides all mechanisms of $N = 7$. Additional dimensions increase:
    - $\dim\mathcal{D}(\mathbb{C}^N) = N^2 - 1 > 48$ — more parameters to update
    - $\tau_{\mathrm{genesis}} \propto N\ln N$ — longer bootstrap (estimate from [generalised T-59](/docs/core/foundations/axiom-omega#genesis-protocol))
 

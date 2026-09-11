@@ -135,7 +135,7 @@ $$
 \mathcal{V} = \{\Gamma \in \mathcal{D}(\mathbb{C}^7) : P(\Gamma) > P_{\text{crit}} = 2/7\}
 $$
 
-**Размер бассейна.** Пространство $\mathcal{D}(\mathbb{C}^7)$ имеет 48 вещественных параметров (34 калибровочно-инвариантных, [G₂-ригидность](/docs/proofs/categorical/uniqueness-theorem) [Т]). Область $\mathcal{V}$ — открытое подмножество:
+**Размер бассейна.** Пространство $\mathcal{D}(\mathbb{C}^7)$ имеет 48 вещественных параметров (34 кинематических $G_2$-инварианта плюс 14 параметров ориентации репера, все физичны — [реперное решение D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) [Т]). Область $\mathcal{V}$ — открытое подмножество:
 
 $$
 \mathrm{vol}(\mathcal{V}) / \mathrm{vol}(\mathcal{D}(\mathbb{C}^7)) \approx (2/7)^{21} \ll 1

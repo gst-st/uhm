@@ -186,7 +186,7 @@ $\Phi_{\mathrm{th}} = 1$ **[Т]** (T-129) $\Longrightarrow$ нетривиаль
 
 **Шаг 1.** По [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129): $\Phi_{\mathrm{th}} = 1$ выведен из первых принципов.
 
-**Шаг 2 (слабая дифференциация) [Т].** При $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. Если E-строка несёт ненулевую когерентность ($\mathrm{Coh}_E > 0$), то по [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128) $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *нетривиальная* дифференциация, но **не** строгая граница $\geq 2$ (которая нарушается для состояний, концентрирующих когерентность вне E-строки, согласно блоку коррекции).
+**Шаг 2 (слабая дифференциация) [Т].** При $\Phi \geq 1$: $P_{\mathrm{coh}} = P_{\mathrm{diag}}\,\Phi \geq P_{\mathrm{diag}} \geq 1/7 > 0$. Если E-строка несёт ненулевую когерентность ($\mathrm{Coh}_E > 0$), то по [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128) $D_{\mathrm{diff}}^{7D} = 1 + 6\,\mathrm{Coh}_E > 1$ — *нетривиальная* дифференциация, но **не** строгая граница $\geq 2$ (которая нарушается для состояний, концентрирующих когерентность вне E-строки, согласно блоку коррекции).
 
 **Шаг 3 (граница на аттракторе) [Т для воплощённого на аттракторе] / [С при κ₀].** На автопоэтическом аттракторе $\rho^*_\Omega$ жизнеспособность требует $\kappa_0 = \omega_0|\gamma_{OE}||\gamma_{OU}|/\gamma_{OO} > 0$, что форсирует $\gamma_{OE}\neq 0$, следовательно $\mathrm{Coh}_E(\rho^*_\Omega) > 0$ и $D_{\mathrm{diff}}(\rho^*_\Omega) > 1$. Строгая граница $D_{\mathrm{diff}}(\rho^*_\Omega) \geq 2$ выполняется в E-акцентированной неподвижной точке (жизнеспособный anchor из [формализации φ §2](/docs/proofs/categorical/formalization-phi), где $\mathrm{Coh}_E(\rho^*)\geq 1/6$) и подтверждена численно для воплощённых аттракторов (SYNARC); в полной общности она [С при κ₀-структуре].
 
@@ -249,9 +249,9 @@ T-153 таким образом является *мета-теоремой су
 
 **Шаг 4 (Faithfulness).** По [T-42c [Т]](/docs/proofs/categorical/uniqueness-theorem#лемма-g1): пропагатор инъективен. Faithful $G$ сохраняет различимость состояний. Два различных состояния сознания $s_1 \neq s_2$ дают $G(s_1) \neq G(s_2)$.
 
-**Шаг 5 (Полнота теории).** По [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность): 7D-формализм и 42D-формализм Морита-эквивалентны. Все измеримые величины определены в $\mathcal{D}(\mathbb{C}^7)$ без потери информации. $\blacksquare$
+**Шаг 5 (Полнота теории).** По [T-58′ [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) 7D-состояние переносится в 42D-картину и обратно неизменным ($\pi\circ\iota = \mathrm{id}$). Все величины, используемые этой теоремой, — $P$, $R$, $\Phi$, $\mathrm{Coh}_E$, $\sigma_k$ — **определены в $\mathcal{D}(\mathbb{C}^7)$** и обхода через 42D не требуют; спектральные величины $\rho_E$ здесь не используются. (Прежняя ссылка на Морита-*эквивалентность* отозвана.) $\blacksquare$
 
-**Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [Т]](#t-151).
+**Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность), [T-40f [Т]](/docs/proofs/minimality/theorem-minimality-7), [T-58′ [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [T-129 [Т]](/docs/proofs/consciousness/operationalization#t-129), [T-151 [Т]](#t-151).
 
 #### T-153a {#t-153a}
 
@@ -287,7 +287,7 @@ T-153 утверждает субстратную независимость **�
 
 **Нетривиальное содержание.** T-153a снимает прежнюю неопределённость «любая система может допускать какое-то верное $G$». Например: система с $\dim\mathrm{States}(S) < 7$ **не может** поддерживать сознание (нарушает C3); не-CPTP система (например, классическая детерминированная без шума) **также не может** (нарушает C2). Это структурно исключённые классы, а не замаскированные.
 
-**Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) ($G_2$-жёсткость), [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58 [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Морита), [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (экспоненциальное ядро), [T-151 [Т]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (конструктивная достаточность). Стандартная математика: Stinespring 1955, Choi 1975.
+**Зависимости:** [T-42a [Т]](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) ($G_2$-жёсткость), [T-57 [Т]](/docs/core/operators/lindblad-operators#полнота-триадной-декомпозиции) (LGKS), [T-58′ [Т]](/docs/core/structure/dimension-e#теорема-морита-эквивалентность) (Морита), [T-94 [Т]](/docs/core/dynamics/gap-dynamics#теорема-ядро-экспоненциальное) (экспоненциальное ядро), [T-151 [Т]](#t-151) ($D_{\min} = 2$), [T-253](#t-253) (конструктивная достаточность). Стандартная математика: Stinespring 1955, Choi 1975.
 :::
 
 #### T-253 {#t-253}
@@ -362,7 +362,7 @@ $$\mathrm{Coh}_E(\Gamma) = \frac{\|\pi_E(\Gamma)\|^2_{HS}}{\|\Gamma\|^2_{HS}} = 
 
 **Шаг 3 (Достижимость).** Для $\Gamma = |E\rangle\langle E|$: $\pi_E(|E\rangle\langle E|) = |E\rangle\langle E|$, поэтому $\mathrm{Coh}_E = \||E\rangle\langle E|\|^2_{HS} / \||E\rangle\langle E|\|^2_{HS} = 1$. $\blacksquare$
 
-**Следствие:** Формула [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128) с $\mathrm{Coh}_E^{\max} = 1$ упрощается до:
+**Следствие:** Формула [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128) с $\mathrm{Coh}_E^{\max} = 1$ упрощается до:
 
 $$D_{\mathrm{diff}}^{7D} = 1 + \mathrm{Coh}_E(\Gamma) \cdot (N - 1)$$
 
@@ -507,7 +507,7 @@ $$\frac{d\gamma_{ij}}{d\tau}\bigg|_{H} = -i(E_i - E_j)\gamma_{ij}$$
 
 ## §12. T-158: Канонические границы σ_sys {#t-158}
 
-:::tip Теорема T-158 [Т]: Канонические границы σ_sys
+:::tip T-158 [Т]; компонента $\sigma_E$ — [Т при определении T-128]: канонические границы σ_sys
 Все компоненты стресс-тензора $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) по определению с каноническим clamping:
 
 $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
@@ -524,9 +524,9 @@ $$\sigma_k = \mathrm{clamp}(1 - 7\gamma_{kk},\; 0,\; 1)$$
 
 **Шаг 2 (Clamping).** Операция $\mathrm{clamp}(x, 0, 1)$ приводит $[-6, 1]$ к $[0, 1]$. По [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий): $\sigma_k$ — каноническая функция $\Gamma$-инвариантов.
 
-**Шаг 3 (Каноничность).** По [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ вычислима в 7D. По [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): все 7 компонент вычислимы. Каждая $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) — ограниченная непрерывная функция $\Gamma$. $\blacksquare$
+**Шаг 3 (Каноничность).** По [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128): $\sigma_E = (N - D_{\mathrm{diff}}^{7D})/(N-2)$ вычислима в 7D. По [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137): все 7 компонент вычислимы. Каждая $\sigma_k \in [0, 2]$ (after the 2026-07-22 errata renormalization) — ограниченная непрерывная функция $\Gamma$. $\blacksquare$
 
-**Зависимости:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [Т]](/docs/proofs/consciousness/operationalization#t-128), [T-137 [Т]](/docs/proofs/consciousness/operationalization#t-137).
+**Зависимости:** [T-92 [Т]](/docs/applied/coherence-cybernetics/theorems#теорема-101-эквивалентность-условий), [T-128 [О]](/docs/proofs/consciousness/operationalization#t-128) — определение, наследуется только компонентой $\sigma_E$, [T-137 [Т при T-128]](/docs/proofs/consciousness/operationalization#t-137).
 
 ---
 

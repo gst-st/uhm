@@ -582,7 +582,7 @@ We have explored the *static* algebra of the Gap operator — its spectrum, rank
 
 - [Gap Operator](/docs/core/dynamics/gap-operator) — definition of $\hat{\mathcal{G}}$, spectrum, G₂-decomposition, stabilizers
 - [Gap Dynamics](/docs/core/dynamics/gap-dynamics) — Choi-Jamiołkowski, bifurcations, non-Markovian effects, model systems
-- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — rigorous proofs: Fano channel, $G_2$-covariance, $\varphi_{\text{coh}}$
+- [Fano Channel and Gap Theorems](/docs/proofs/gap/fano-channel) — rigorous proofs: Fano channel, covariance groups (Theorem 5.1b), $\varphi_{\text{coh}}$
 - [Fano Selection Rules](/docs/physics/gauge-symmetry/fano-selection-rules) — Fano plane $\mathrm{PG}(2,2)$, Yukawa texture
 - [G₂-Structure](/docs/physics/gauge-symmetry/g2-structure) — $G_2 = \mathrm{Aut}(\mathbb{O})$, gauge reduction
 - [CC Definitions](./definitions) — basic definitions of Coherence Cybernetics

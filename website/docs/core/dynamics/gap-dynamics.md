@@ -379,23 +379,19 @@ The canonical fully $G_2$-covariant dissipator is $\mathcal{D}_{G_2}$ (structure
 ### 6.3 Degree of $G_2$-violation
 
 :::tip Theorem 11.3 (Degree of $G_2$-violation is proportional to $\alpha^*$) [T]
-**(a)** $\alpha = 0$ (pure Fano): **complete** $G_2$-covariance.
+**(a)** $\alpha = 0$ (pure Fano): covariance under the finite frame group $\Gamma_{\!\text{oct}}$ only — no $G_2$-covariance at any $\alpha$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность), [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **(b)** $\alpha = 1$ (pure atomic): $G_2$ is **completely broken**.
 
-**(c)** Intermediate values: $\Delta_{G_2}(\alpha^*) = \alpha^* \cdot \Delta_{\max}$
+**(c)** Intermediate values: $\Delta_{G_2}(\alpha^*) = \tfrac{2+\alpha^*}{3} \cdot \Delta_{\max}$, from $\mathcal{D}_\alpha = \tfrac{2+\alpha}{3}\mathcal{D}_{\mathrm{atom}}$
 
-The measure of violation is **linear** in $\alpha$ — from the linearity of both channels.
+The measure of violation is **affine** in $\alpha$ and strictly positive on $[0,1]$ — from the proportionality $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$.
 :::
 
 ### 6.4 Modified gauge reduction
 
-:::tip Theorem 11.4 (Modified gauge reduction) [T]
-**(a)** $\alpha = 0$: $48 - 14 = $ **34** independent parameters.
-
-**(b)** Optimal $\alpha^*$: $34 + 14\alpha^*$ parameters.
-
-**(c)** $\alpha = 1$: **48** parameters (full space).
+:::tip Theorem 11.4 (Modified gauge reduction) — retracted (D-0910)
+**(a)–(c)** Earlier drafts stated "$34$ parameters at $\alpha = 0$, $34 + 14\alpha^*$ at optimal $\alpha^*$, $48$ at $\alpha = 1$". The premise (a $G_2$-covariant Fano channel at $\alpha = 0$) is false: $\mathcal{D}_{\mathrm{Fano}} = \tfrac23\mathcal{D}_{\mathrm{atom}}$ is covariant only under the finite frame group $\Gamma_{\!\text{oct}}$ at every $\alpha$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), so the physical parameter space of Gap profiles is the full 48-dimensional one at every $\alpha$; 34 counts kinematic $G_2$-invariants only ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 :::
 
 **Numerical examples:**

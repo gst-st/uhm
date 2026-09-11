@@ -277,7 +277,7 @@ Then (i) $\sum_a A_a^\dagger A_a = I$ (CPTP), from the contraction identity $\su
 :::note Kinematics vs. dynamics — the precise role of $G_2$
 Theorems 5.1a–c remove the earlier over-claim ("the Fano dissipator is $G_2$-covariant") and replace it with the correct, stronger picture:
 
-- **Kinematically**, $G_2 = \mathrm{Stab}(\varphi)$ is the gauge group of the *holonomic representation* — the octonionic 3-form is the physical invariant. This is what underlies the $48\to34$ parameter count of the [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): only the spectrum (6) and the $\varphi$-relative angles (28) are $G_2$-invariant.
+- **Kinematically**, $G_2 = \mathrm{Stab}(\varphi)$ is the gauge group of the *holonomic representation* — the octonionic 3-form is the physical invariant. This is what underlies the $48\to34$ parameter count of the [uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность): only the spectrum (6) and the $\varphi$-relative angles (28) are $G_2$-invariant — kinematic invariants; by the [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность) all 48 parameters are physical once the frame is pinned.
 - **Dynamically**, the physical UHM dissipator is the pinching (Fano) form, which selects the functional frame $\{A,S,D,L,E,O,U\}$ and therefore breaks $G_2$ to the finite frame group $\Gamma_{\!\text{oct}}$. The unbroken $\mathcal{D}_{G_2}$ (Theorem 5.1c) is the symmetric reference dynamics; UHM's is its frame-fixed realisation. This kinematic-$G_2$ / dynamical-$\Gamma_{\!\text{oct}}$ split **is** the "price of self-observation" tracked by the $\alpha$-parameter.
 - The selection of $k=3$ does **not** rely on $G_2$-covariance: it follows from Choi-rank minimality (rank $=7$, T11), BIBD$(7,3,1)$ closure (T13) and the perfect Hamming code $H(7,4)$ (T8–T9).
 :::
@@ -491,7 +491,7 @@ flowchart TD
 
 **Construction of the self-model (T 3.1–4.1).** From the Fano channel and the atomic channel, canonical self-modeling $\varphi_{\text{coh}}$ is constructed — a convex combination of two CPTP channels. The mixing parameter $\alpha^*$ is determined by the variational principle: minimum free energy. Everything is closed — no free parameters.
 
-**Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel is $G_2$-covariant (compatible with octonionic symmetry), while the atomic one is not. The degree of $G_2$-symmetry violation grows monotonically with $\alpha$. This imposes a "penalty" on the decohering component: the larger the fraction of the atomic channel, the stronger the violation of the fundamental symmetry.
+**Symmetry selection (T 5.1, 6.1–6.2).** The Fano channel and the atomic channel share the same finite covariance group $\Gamma_{\!\text{oct}}$ (Theorem 5.1b); neither is $G_2$-covariant, and the degree of $G_2$-violation $\tfrac{2+\alpha}{3}\Delta_{\max}$ grows monotonically with $\alpha$ from $\tfrac23\Delta_{\max}$ at $\alpha = 0$. This imposes a "penalty" on the decohering component: the larger the fraction of the atomic channel, the stronger the violation of the fundamental symmetry.
 
 **Gap dynamics (T 7.1, 8.1).** The stationary Gap shows that even at equilibrium, phase mismatch between model and reality does not vanish: unitary evolution continuously "sweeps" phases, while dissipation and self-modeling return them. L4 (fixed point of $\varphi$) means exact knowledge of one's Gap, but not its zeroing.
 

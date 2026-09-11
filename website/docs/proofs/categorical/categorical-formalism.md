@@ -1242,7 +1242,7 @@ For practical purposes of UHM it is recommended:
 | Metric structure | $\mathbf{Exp}_{\mathrm{Met}}$ (enriched over Met) | [T] Defined |
 | Logical constructions | Sheaf topos $\mathrm{Sh}(\mathbf{Exp}_2)$ | [C] Sketch |
 | Dynamics and history | Bicategory $\mathbf{Exp}_2$ (§5.2.2) | [T] Formalized |
-| Quantum structure | †-category $\mathbf{DensityMat}^\dagger$ | [P] Program |
+| Quantum structure | †-category $\mathbf{DensityMat}^\dagger$ | [Pr] Program |
 | Homotopy theory | $\infty$-topos $\mathbf{Sh}_\infty(\mathbf{Exp}_\infty)$ | [T] Consistent with §10 |
 
 :::note Development priorities
@@ -1410,7 +1410,7 @@ $$
 
 ## 9. Quasi-functor for AI systems {#9-квази-функтор-для-ии-систем}
 
-:::warning Status: [P] Research program
+:::warning Status: [Pr] Research program
 This section describes an extension of the categorical formalism for neural network systems. See [Protocol for measuring Γ](/docs/applied/research/measurement-protocol) for the full specification.
 :::
 
@@ -1609,7 +1609,7 @@ This section describes an extension of the categorical structure for [emergent t
 :::warning Status distinction: Sing(E) construction vs. physical interpretation
 The **bare construction** $\mathrm{Sing}(\mathcal{E})$ — ∞-groupoid **[T]**: for any topological space $X$ the construction $\mathrm{Sing}(X)$ gives a Kan complex (Milnor's theorem), and $\mathcal{E}$ is metrizable. This is pure mathematics, requiring no additional hypotheses.
 
-**Physical interpretation** (correspondence L4) — **[P]** (program): the identification of the ∞-categorical structure of $\mathrm{Exp}_\infty$ with infinite depth of self-observation, full Postnikov tower, and historical extension requires additional physical assumptions that are **not proved**.
+**Physical interpretation** (correspondence L4) — **[Pr]** (program): the identification of the ∞-categorical structure of $\mathrm{Exp}_\infty$ with infinite depth of self-observation, full Postnikov tower, and historical extension requires additional physical assumptions that are **not proved**.
 
 **Dependencies:** Level L4 (infinite depth of self-observation), full ∞-categorical superstructure (Postnikov tower, historical extension) and the upper bound of SAD depend on the physical interpretation.
 
@@ -2627,7 +2627,7 @@ This completes the categorical formalization program: the 5 axioms Ω¹–Ω⁵ 
 5. **∞-groupoid Exp_∞ proved [T]** — $\mathrm{Sing}(\mathcal{E})$ is a Kan complex (Milnor's theorem); time as 1-morphism, history as loop space (section 10)
 6. **∞-topos Sh_∞(Exp) exists** — internal temporal modal logic
 7. **Phenomenal completeness** — the structure is sufficient to describe any physically realizable experience (section 8)
-8. **Quasi-functor for AI** — extension to nonlinear systems via NTK linearization (section 9, [P] program)
+8. **Quasi-functor for AI** — extension to nonlinear systems via NTK linearization (section 9, [Pr] program)
 9. **Discrete ∞-groupoid $\mathbf{Exp}^{disc}_\infty$** — reconciliation of discrete Page–Wootters time with the categorical structure (section 11)
 10. **Category of Holons $\mathbf{Hol}$** — subcategory of $\mathbf{DensityMat}$ (not full), interiority functor $\mathcal{I}: \mathbf{Hol} \to \mathbf{Exp}$ (section 12)
 11. **Derived categories and IC-cohomologies** — capture of hidden topology of stratified X (section 13)

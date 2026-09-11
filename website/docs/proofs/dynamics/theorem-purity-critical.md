@@ -8,7 +8,7 @@ description: "Rigorous proof of P_crit = 2/N from first principles of UHM"
 # Theorem on Critical Purity
 
 :::tip Status: [T] Proven
-The value $P_{\text{crit}} = 2/N$ is rigorously derived from several mathematically equivalent formulations of a single geometric principle (paths 1–4) and an independent autopoietic argument (path 5). The convergence of all approaches to a single value confirms the fundamentality of this threshold.
+The value $P_{\text{crit}} = 2/N$ is derived from two parameter-free ingredients, both exact: the canonical reference $I/N$ (Path 5, Schur's lemma) and the Frobenius majority criterion (Path 1). Path 3 realises the same criterion operationally (exact); Path 4 characterises the threshold spectrum; Path 2 (relative entropy) is a **convention** valid only in the quadratic approximation — at the threshold the exact $D_{\mathrm{KL}}$ is spectrum-dependent ($0.344$ nat for the extremal spectrum, not $1/2$; §3.2). The logical structure — one core, three supports — is laid out in §4.2.
 :::
 
 ## 1. Theorem Statement
@@ -23,10 +23,10 @@ $$
 P_{\text{crit}} = \frac{2}{N}
 $$
 
-is the **unique** value satisfying the following equivalent conditions:
+is the **unique** value satisfying the following conditions (1, 3 and 5 are exact and equivalent; 2 and 4 are the approximate informational and the spectral readings of the same threshold):
 
 1. **Geometric:** $\|\Gamma - I_N/N\|_F^2 = \|I_N/N\|_F^2$
-2. **Informational:** $D_{KL}(\Gamma \| I_N/N) = \frac{1}{2}$ nat (in linear approximation)
+2. **Informational (convention, quadratic approximation only):** $\tfrac{N}{2}\left(P - \tfrac1N\right) = \frac{1}{2}$ nat — the exact $D_{KL}(\Gamma \| I_N/N)$ at $P = 2/N$ lies in $[0.359, 0.622]$ nat and equals $0.344$ nat on the extremal spectrum (§3.2)
 3. **Structural:** $|\mathbf{r}|^2 = 2\sigma^2$ (SNR = 1)
 4. **Spectral:** $\lambda_{\max} = (1 + \sqrt{N-1})/N \approx 1/2$
 5. **Autopoietic:** minimal breaking of $U(N)$ symmetry
@@ -39,7 +39,7 @@ $$
 
 **At this threshold:**
 - Structural deviation = scale of chaos
-- Informational contribution = 1/2 nat
+- Informational contribution ≈ 1/2 nat in the quadratic approximation ($0.344$ nat exact on the extremal spectrum)
 - Dominant mode ≈ 49% coherence
 - $U(7)$ symmetry broken to distinguishability level
 
@@ -74,7 +74,7 @@ $$
 
 ---
 
-## 3. Five Derivation Paths (four equivalent + one independent)
+## 3. Five Derivation Paths (two exact derivations + three supports)
 
 ### 3.1 Path 1: Geometric (structural doubling principle)
 
@@ -331,17 +331,17 @@ In the [octonionic interpretation](../../core/structure/dimensions#октони�
 | Path | Principle | Main tool | Result |
 |------|---------|----------|-----------|
 | 1. Geometric | Frobenius structural dominance | HS Pythagoras | P > 2/N ✓ |
-| 2. Informational | Relative entropy 2nd-order | Operator Taylor of $\log$ | P = 2/N at D=1/2 nat ✓ |
+| 2. Informational | Relative entropy, quadratic approximation | Operator Taylor of $\log$ | $P = 2/N$ at $\tfrac N2(P - \tfrac1N) = \tfrac12$ nat (convention; exact $D_{KL}$ spectrum-dependent) |
 | 3. Single-shot detection | Haar-averaged observable variance | Weingarten 2nd moment ($1/(N(N+1))$) | P > 2/N ✓ |
 | 4. Spectral | Dominant eigenvalue optimum | Lagrange multipliers | λ_max = (1+√(N−1))/N at P = 2/N ✓ |
 | 5. Symmetry breaking | Stabilizer dimension | Schur's lemma + Cauchy-Schwarz | P > 2/N ✓ |
 
 ### 4.2 Uniqueness theorem
 
-**Theorem:** The value $P_{\text{crit}} = 2/N$ is the unique one at which all five criteria coincide.
+**Theorem:** The value $P_{\text{crit}} = 2/N$ is the unique one at which the exact criteria (1, 3, 5) coincide and the supporting readings (2, 4) are consistent with them.
 
 **Proof:**
-Uniqueness follows from the algebraic equivalence of conditions 1–4 (all express the same geometric requirement in different terms). The autopoietic criterion (5) yields the same threshold from an independent symmetry-breaking requirement. All five formulations lead to $P - 1/N = 1/N$. ∎
+Uniqueness follows from the algebraic equivalence of conditions 1, 3 and 5 (all express the same majority requirement $\|\Delta\|_F^2 = \|I/N\|_F^2$ in different terms; condition 5 supplies the canonical reference $I/N$ — the unique $U(N)$-invariant density matrix, §3.5). Condition 4 is the spectral characterisation of that threshold and condition 2 its quadratic-approximation reading; neither forces the constant independently (§3.2, §3.4). All exact formulations lead to $P - 1/N = 1/N$. ∎
 
 :::info Logical structure of the five paths
 
@@ -519,10 +519,10 @@ public pure fn dominant_eigenvalue_threshold(n: Int { self >= 2 }) -> Float {
 At $P = 2/N$:
 
 $$
-S_{vN} = \log N - \frac{N}{2}\left(\frac{2}{N} - \frac{1}{N}\right) + O\left(\frac{1}{N^2}\right) = \log N - \frac{1}{2}
+S_{vN} \approx \log N - \frac{N}{2}\left(\frac{2}{N} - \frac{1}{N}\right) = \log N - \frac{1}{2} \quad \text{(quadratic approximation)}
 $$
 
-The system contains 1/2 nat less entropy than maximal chaos.
+In the quadratic approximation the system contains 1/2 nat less entropy than maximal chaos. Exactly, the entropy deficit $\log N - S_{vN} = D_{KL}(\Gamma\|I/N)$ depends on the spectrum: $0.344$ nat for the extremal spectrum $\lambda_1 = (1+\sqrt6)/7$ and up to $0.622$ nat for other spectra with $P = 2/7$ (§3.2).
 
 ### 7.4 For information theorists
 
@@ -534,7 +534,7 @@ $$
 C = D_{KL}(\Gamma \| I_N/N) \approx \frac{N}{2}(P - 1/N)
 $$
 
-At $P = 2/N$: $C = 1/2$ nat = distinguishability boundary.
+At $P = 2/N$: $C \approx 1/2$ nat in the quadratic approximation (the exact value is spectrum-dependent, §3.2) = distinguishability boundary.
 
 **Holevo bound:**
 
@@ -542,7 +542,7 @@ $$
 \chi(\{p_i, \rho_i\}) \leq S(\bar{\rho}) - \sum_i p_i S(\rho_i)
 $$
 
-To distinguish $\Gamma$ from $I_N/N$ one needs $\chi \geq 1/2$ nat, which requires $P \geq 2/N$.
+To distinguish $\Gamma$ from $I_N/N$ one needs $\chi \gtrsim 1/2$ nat, which in the quadratic approximation corresponds to $P \geq 2/N$.
 
 ---
 
@@ -588,7 +588,7 @@ P_{\text{crit}} = \frac{2}{N}
 $$
 
 This value is **unique**, at which:
-- All five formulations of the criterion coincide (4 mathematically equivalent + 1 autopoietic)
+- The exact formulations (geometric, single-shot detection, symmetry breaking) coincide; the spectral and informational readings are consistent with them (§4.2)
 - The factor of 2 arises naturally (signal = noise)
 - The dominant mode captures ~50% of coherence
 :::
@@ -605,7 +605,7 @@ $$
 
 ### 9.3 Methodological significance
 
-1. **Convergence of independent paths** confirms the fundamentality of the threshold
+1. **Two exact, parameter-free ingredients** (canonical reference + majority criterion) fix the threshold; the other paths corroborate it
 2. **Factor 2** — universal distinguishability threshold in information systems
 3. **Spectral characterization** connects purity with mode dominance
 

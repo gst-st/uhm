@@ -11,7 +11,7 @@ The results in this section have different statuses:
 - **[T]** — strictly proved (reduction as projection onto atom $\chi_{S_k}$)
 - **[I]** — interpretation (Born rule from the $\Gamma$ structure — contains a hidden circularity)
 - **[H]** — substantive hypotheses (observer as self-measurement)
-- **[P]** — research program (complete theory of measurement for living systems)
+- **[Pr]** — research program (complete theory of measurement for living systems)
 :::
 
 ## Contents
@@ -432,7 +432,7 @@ In the 7D UHM formalism, the atoms of $\Omega$ correspond to the 7 Holon dimensi
 
 For systems with $R \geq 1/3$ (systems with nonzero regeneration; in the biological context — living systems), the measurement process **qualitatively differs** from standard quantum measurement:
 
-:::info [P] Program 7.1 (Theory of measurement for systems with $R > 0$)
+:::info [Pr] Program 7.1 (Theory of measurement for systems with $R > 0$)
 At $R \geq 1/3$, the system is capable of **active self-measurement** via the operator $\varphi$. The process involves three phases:
 
 1. **Decoherence** (logical): $\mathcal{D}_\Omega[\Gamma]$ suppresses coherences

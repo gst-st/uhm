@@ -10,9 +10,9 @@ description: "Canonical proof: P1 [T] + P2 [T] → O → N = 7 via the Hurwitz t
 ## Methodology and status markers
 
 :::warning Status markers for statements
-Each statement is marked with one of three statuses:
+Each statement is marked with one of three statuses (the meanings are those of the [status registry](/docs/reference/status-registry); this page uses a three-letter subset of them):
 - **[T]** — **Theorem**: proven in pure mathematics or derived from axioms
-- **[C]** — **Consequence**: logically follows from [T]
+- **[C]** — **Conditional theorem**: proven under an explicitly named assumption (the canonical meaning of the [status registry](/docs/reference/status-registry); on this page the assumption is (МП), $\lambda = 1$). A statement that merely *follows logically* from theorems is itself **[T]**, not [C] — an earlier legend on this page read "[C] — Consequence: logically follows from [T]", which gave the letter a second meaning and is retracted.
 - **[I]** — **Interpretation**: substantive connection with UHM
 :::
 

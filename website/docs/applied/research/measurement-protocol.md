@@ -40,9 +40,9 @@ The [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T] gu
 
 1. **Uniqueness** of the map $G$: for a system satisfying (AP)+(PH)+(QG)+(V), the map $G$ is unique up to $G_2 = \mathrm{Aut}(\mathbb{O})$
 2. **Well-posedness of the inverse problem** ([Corollary 2](/docs/proofs/categorical/uniqueness-theorem#обратная-задача)): the initial state $\Gamma(0)$ is **uniquely recovered** from the trajectory $\Gamma(\tau)$ and system parameters $(\omega_0, \lambda_m)$ — up to $G_2$-gauge
-3. **34 physical parameters** ([Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния)): of the 48 parameters of $\Gamma$, only 34 are gauge-invariant ($48 - \dim(G_2) = 48 - 14 = 34$)
+3. **48 physical parameters** ([Corollary 1](/docs/proofs/categorical/uniqueness-theorem#физические-состояния), [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)): of the 48 parameters of $\Gamma$, 34 are kinematic $G_2$-invariants ($48 - \dim(G_2) = 48 - 14 = 34$) and the remaining 14 fix the orientation of the functional frame, which the axiomatic dynamics pins; the residual identification freedom is the finite frame group $\Gamma_{\!\text{oct}}$
 
-Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to a 14-dimensional gauge freedom. Different $\Gamma$ related by a $G_2$-transformation give **identical** physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$).
+Practical implication: reconstruction of $\Gamma$ is defined **uniquely** up to the finite frame group $\Gamma_{\!\text{oct}}$ once the frame is pinned (Step 1 and R6 below). $P$ and $R$ are $G_2$-invariant (functions of the spectrum); $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned observables — two reconstructions can differ on them only if their frame-fixing choices differ, which is why those choices are part of the replication package (R8).
 :::
 
 ---
@@ -656,11 +656,11 @@ The protocol $\pi_{\mathrm{bio}}: \mathrm{NeuralData} \to \mathcal{D}(\mathbb{C}
 ### Principle: EEG Bands as Projections of $\Gamma$ onto Dimensions {#eeg-полосы}
 
 :::info Theorem ($G_2$-uniqueness of $\pi_{\mathrm{bio}}$) [T given $G_2$-rigidity]
-If a continuous map $\pi_{\mathrm{bio}}: \mathcal X \to \mathcal{D}(\mathbb{C}^7)$ exists on a neural-feature space $\mathcal X$ that is compatible with (AP autopoiesis)+(PH phenomenological thresholds)+(QG $G_2$-covariance)+(V continuity), then it is unique up to the $G_2$-gauge action $\Gamma \mapsto U\Gamma U^\dagger$ with $U \in G_2$ (14-dimensional freedom). All physical observables ($P$, $R$, $\Phi$, $\mathrm{Coh}_E$) are gauge-invariant.
+If a continuous map $\pi_{\mathrm{bio}}: \mathcal X \to \mathcal{D}(\mathbb{C}^7)$ exists on a neural-feature space $\mathcal X$ that is compatible with (AP autopoiesis)+(PH phenomenological thresholds)+(QG $G_2$-covariance)+(V continuity), then it is unique up to the action $\Gamma \mapsto U\Gamma U^\dagger$ of the finite frame group $U \in \Gamma_{\!\text{oct}} \subset G_2$ (kinematic envelope $G_2$, 14-dimensional; dynamical identification $\Gamma_{\!\text{oct}}$ — [frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). $P$ and $R$ are $G_2$-invariant; $\Phi$ and $\mathrm{Coh}_E$ are invariant under $\Gamma_{\!\text{oct}}$ and change under a generic element of $G_2$.
 
 **Proof sketch.** Suppose $\pi_{\mathrm{bio}}^{(1)}$ and $\pi_{\mathrm{bio}}^{(2)}$ both satisfy (AP)+(PH)+(QG)+(V). The map $\varphi := \pi_{\mathrm{bio}}^{(2)} \circ (\pi_{\mathrm{bio}}^{(1)})^{-1}$ is a continuous automorphism of $\mathcal D(\mathbb C^7)$ preserving $P,R,\Phi$ pointwise and compatible with (AP). By the [$G_2$-rigidity theorem](/docs/proofs/categorical/uniqueness-theorem) [T], the group of continuous $\mathcal D(\mathbb C^7)$-automorphisms preserving the holonomic structure ($P$, $R$, $\Phi$, self-model operator $\varphi_{\text{AP}}$, Fano-plane gauge structure) is precisely $G_2 = \mathrm{Aut}(\mathbb O)$ of real dimension 14. Hence $\varphi(\Gamma) = U\Gamma U^\dagger$ for a unique $U \in G_2$, i.e.\ $\pi_{\mathrm{bio}}^{(2)}(x) = U\,\pi_{\mathrm{bio}}^{(1)}(x)\,U^\dagger$.
 
-Gauge-invariance of observables: $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ and $R(\Gamma) = 1/(7P(\Gamma))$ depend only on spectral data, invariant under unitary conjugation. $\Phi$ and $\mathrm{Coh}_E$ are Hilbert–Schmidt functions of $\Gamma$ and the self-model $\varphi$, both $G_2$-covariant, hence invariant under $U \in G_2$. $\square$
+Invariance of observables: $P(\Gamma) = \mathrm{Tr}(\Gamma^2)$ and $R(\Gamma) = 1/(7P(\Gamma))$ depend only on spectral data, invariant under unitary conjugation. $\Phi$ and $\mathrm{Coh}_E$ reference the coordinate frame (the diagonal of $\Gamma$ and the $E$-axis): they are invariant under the frame group $\Gamma_{\!\text{oct}}$, which permutes the axes, but **not** under a generic $U \in G_2$, which rotates them (Lemma G4 of the uniqueness theorem). Since the axiomatic dynamics pins the frame (Theorem 5.1b), $\Gamma_{\!\text{oct}}$ is exactly the residual freedom of $\pi_{\mathrm{bio}}$. $\square$
 :::
 
 Basic idea: neural activity in different EEG frequency bands projects onto the 7 dimensions of $\Gamma$. Cross-frequency coupling (CFC) determines the coherences $|\gamma_{ij}|$, and phase mismatches determine the Gap profile.
@@ -735,7 +735,7 @@ $$R_{\mathrm{phys}}(\Gamma) = -\lambda_1 \|\dot{\Gamma} - \mathcal{L}_\Omega[\Ga
 
 The first term penalizes inconsistency with dynamics; the second penalizes non-viable states.
 
-**Optimization:** Gradient descent over 48 Cholesky factorization parameters (34 physical + 14 gauge). The gauge freedom is fixed by choosing the canonical $G_2$-gauge (e.g., $\gamma_{AS} \in \mathbb{R}_+$).
+**Optimization:** Gradient descent over the 48 Cholesky factorization parameters (all physical — 34 kinematic invariants + 14 frame-orientation parameters, D-0910). The frame is fixed by the labelling rule of R6 (Fano-frame convention and the $E$-axis anchor), not by a continuous gauge choice; the convention $\gamma_{AS} \in \mathbb{R}_+$ removes only the global phase.
 
 ### Step 5: Connection to PCI (Casali et al. 2013) {#pci-связь}
 
@@ -946,7 +946,7 @@ The canonical bands used by $\pi_{\mathrm{bio}}$ are then extracted from the wav
 
 **Gauge-fixing protocol for replication.** Two implementations applied to the same EEG recording will yield $P$ and $R$ in full agreement (by strict $G_2$-invariance) but may differ on $\Phi, \mathrm{Coh}_E$ if the Fano-frame orientation or the $E$-axis assignment is not fixed. The canonical gauge-fixing rule is: (i) align the 7-axis labelling to the Fano-plane convention of [Dimensions §Fano](/docs/core/structure/dimensions), and (ii) anchor $|E\rangle$ to the phenomenological γ-high×θ feature as per R3. Replicators must publish their gauge-fixing choices explicitly (item (ii) in R8 below).
 
-All four quantities are $G_2$-gauge-invariant by the uniqueness theorem above.
+$P$ and $R$ are $G_2$-invariant; $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned (invariant under $\Gamma_{\!\text{oct}}$ only) — which is why the gauge-fixing protocol above is part of the replication package ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)).
 
 **R7. Validation against PCI.**
 - Compute the subject's PCI on the same TMS-EEG data via the Massimini algorithm (Lempel–Ziv complexity of significant sources; reference implementation available via PCIst package).
