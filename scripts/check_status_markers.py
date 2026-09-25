@@ -21,7 +21,10 @@
     python3 ../scripts/check_status_markers.py            # отчёт
     python3 ../scripts/check_status_markers.py --fix      # привести локали
     python3 ../scripts/check_status_markers.py --fix --fix-suspect
-Выход: 0 — чисто, 1 — есть нарушения.
+    python3 ../scripts/check_status_markers.py --list     # скрытые маркеры построчно
+Выход: 0 — чисто, 1 — есть нарушения. Скрытые маркеры (составные, в формуле,
+ссылкой, в коде — аудит A-84) стоят под храповиком `BASE_HIDDEN`: выход 1 только
+при росте сверх базы.
 """
 from __future__ import annotations
 
@@ -75,7 +78,15 @@ MASK_RE = re.compile(
 # внутри текстовой вставки `\text{…}` это обычная проза, и маркер там —
 # настоящий маркер. Без этого исключения восемь маркеров чужой локали прятались
 # в формулах навсегда: инструмент их не видел ни разу.
-TEXTCMD_RE = re.compile(r"\\(?:text|mathrm|mbox|textbf|textit)\{[^{}]*\}")
+#
+# NB (ВСТАВКА С ВЛОЖЕННОЙ СКОБКОЙ): образец знал только плоское тело `{[^{}]*}` и
+# не возвращал вставку, внутри которой стои́т ещё одна команда. Так
+# `\textbf{[Т\;T\text{-}140]}` (interiority-hierarchy, дважды) оставался под
+# маской целиком — вернулся только внутренний `\text{-}`, а кириллическая Т в
+# английском корпусе была невидима (аудит A-84, 25.09.2026). Теперь допускается
+# один уровень вложенных скобок.
+TEXTCMD_RE = re.compile(
+    r"\\(?:text|mathrm|mbox|textbf|textit|textsf)\{(?:[^{}]|\{[^{}]*\})*\}")
 
 
 def mask(text: str) -> str:
@@ -141,6 +152,89 @@ def scan(path: str, locale: str, seen: dict | None = None):
     return out
 
 
+# ---------------------------------------------------------------------------
+# СКРЫТЫЕ МАРКЕРЫ (аудит A-84, 25.09.2026).
+#
+# Образец `MARKER_RE` знает ровно одну форму — одиночную букву в скобках `[Т]`,
+# и `QUALIFIED_RE` — одну связку `[Т при …]` / `[T at …]`. Всё прочее прибор
+# пропускал молча, и вентиль рапортовал «чужая локаль: 0» при сотнях кириллических
+# букв в английском корпусе:
+#   * СОСТАВНОЙ маркер — `[Т/sim]`, `[Т/И]`, `[С → Т]`, `[Т-structural]`,
+#     `[Т via T-153a]`, `[И over Т]`: после буквы стоит не `]`, а разделитель;
+#   * маркер ВНУТРИ ФОРМУЛЫ, в текстовой вставке `\textbf{[Т\;T\text{-}140]}`;
+#   * маркер-ССЫЛКА `[Т](/docs/…)` — исключался как ссылка, а читатель видит букву;
+#   * маркер В КОДЕ `` `[Т]` `` — маска кода прятала его, а на странице он виден.
+# Эти формы не чинятся автоматически (в составных — проза, её переводит человек)
+# и стоят под храповиком: база — измеренный долг, расти ему нельзя.
+_G = "".join(sorted((EN_GLYPHS | RU_GLYPHS) - {"✗"}))
+_LET = "A-Za-zА-Яа-яЁё"
+#: `[` + буква статуса + РАЗДЕЛИТЕЛЬ (не `]`) + тело без скобок + `]`, не ссылка.
+COMPOSITE_RE = re.compile(
+    r"\[([" + _G + r"])(?=[/\s\\→\-*,;:(—–])[^\[\]\n]{0,120}\](?!\()")
+#: Буква статуса, стоящая отдельно (не часть слова и не номер `T-64`).
+_STANDALONE = re.compile(
+    r"(?<![" + _LET + r"\d])([" + _G + r"])(?![" + _LET + r"\d])"
+    r"(?!\s*(?:-|\\text\{-\})\s*\d)")
+#: В русском корпусе латиница законно живёт в скобках как НЕ-маркер:
+#: `[D-измерение]` (измерение голонома), `[C*-алгебра]`, `[H* = 0 …]`,
+#: условие `(P)`. Поэтому там буква считается маркером только в голове скобки
+#: или в цепочке `/` и `→`, и лишь когда за ней разделитель, а не `*`/`-`/`(`.
+_RU_SLOT = re.compile(
+    r"(?:(?<=^\[)|(?<=/)|(?<=/\s)|(?<=→)|(?<=→\s))([" + _G + r"])(?=\s*[/→\],;:]|\s)")
+LINKMARK_RE = re.compile(r"\[([" + _G + r"])\]\(")
+FENCE_RE = re.compile(r"```.*?```|~~~.*?~~~", re.S)
+CODEMARK_RE = re.compile(r"`\[([" + _G + r"])\]`")
+HIDDEN_KINDS = ("составной", "в формуле", "ссылкой", "в коде")
+#: ХРАПОВИК скрытых маркеров: измерено 25.09.2026 на a61647d в миг прозрения.
+#: EN: 180 кириллических букв в составных (31 файл; реестр — 26 из них), 2 в
+#: формуле (interiority-hierarchy `\textbf{[Т\;T-140]}`), 3 ссылкой
+#: (conscious-window, operationalization, lambda-budget), 102 в коде (6 файлов,
+#: homoholograph — 81). RU: 1 ссылкой (coherence-cybernetics/theorems `[T](…)`).
+#: Это не рост долга, а его название; долг только падает — опускайте базу вслед.
+BASE_HIDDEN = {
+    "en": {"составной": 180, "в формуле": 2, "ссылкой": 3, "в коде": 102},
+    "ru": {"составной": 0, "в формуле": 0, "ссылкой": 1, "в коде": 0},
+}
+
+
+def scan_hidden(path: str, locale: str):
+    """Скрытые маркеры чужой локали: (строка, фрагмент, глиф, нужный, вид)."""
+    text = Path(path).read_text(encoding="utf-8")
+    masked = mask(text)
+    raw_mask = MASK_RE.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
+    legal = EN_GLYPHS if locale == "en" else RU_GLYPHS
+    out = []
+
+    def line_of(pos):
+        return text.count("\n", 0, pos) + 1
+
+    qualified = {m.start() for m in QUALIFIED_RE.finditer(masked)}
+    for m in COMPOSITE_RE.finditer(masked):
+        if m.start() in qualified:
+            continue          # связка `при`/`at` — дело QUALIFIED_RE
+        body = m.group(0)
+        finder = _STANDALONE if locale == "en" else _RU_SLOT
+        bad = [g.group(1) for g in finder.finditer(body)
+               if g.group(1) not in legal and translate(g.group(1), locale)]
+        if not bad:
+            continue
+        kind = "в формуле" if raw_mask[m.start()] == " " else "составной"
+        for ch in bad:
+            out.append((line_of(m.start()), body, ch, translate(ch, locale), kind))
+    for m in LINKMARK_RE.finditer(masked):
+        ch = m.group(1)
+        if ch not in legal and translate(ch, locale):
+            out.append((line_of(m.start()), m.group(0) + "…", ch,
+                        translate(ch, locale), "ссылкой"))
+    unfenced = FENCE_RE.sub(lambda m: re.sub(r"[^\n]", " ", m.group(0)), text)
+    for m in CODEMARK_RE.finditer(unfenced):
+        ch = m.group(1)
+        if ch not in legal and translate(ch, locale):
+            out.append((line_of(m.start()), m.group(0), ch,
+                        translate(ch, locale), "в коде"))
+    return out
+
+
 def apply_fix(path: str, locale: str, kinds: set[str]) -> int:
     """Правит только вне замаскированных областей. Возвращает число замен."""
     text = Path(path).read_text(encoding="utf-8")
@@ -197,6 +291,8 @@ def main() -> int:
     if "--fix-suspect" in args:
         kinds.add("подозрительное")
 
+    listing = "--list" in args      # скрытые маркеры построчно, а не по файлам
+    over = []                        # храповики скрытых маркеров, пробитые ростом
     grand = {"чужая локаль": 0, "подозрительное": 0, "квалифицированный": 0}
     seen = {"меток": 0, "квалифицированных": 0}
     touched = 0
@@ -231,6 +327,31 @@ def main() -> int:
         if kinds:
             for path, _ in per_locale:
                 touched += apply_fix(path, locale, kinds)
+        # скрытые маркеры: под храповиком, список печатается целиком
+        hidden = {k: [] for k in HIDDEN_KINDS}
+        for path in files:
+            for line, frag, ch, want, kind in scan_hidden(path, locale):
+                hidden[kind].append((path, line, frag, ch, want))
+        for kind in HIDDEN_KINDS:
+            got, base = len(hidden[kind]), BASE_HIDDEN[locale][kind]
+            nfiles = len({p for p, *_ in hidden[kind]})
+            verdict = "РОСТ ДОЛГА" if got > base else (
+                "ниже базы — опустите базу" if got < base else "= базе")
+            print(f"   скрытые «{kind}»: {got} в {nfiles} файлах "
+                  f"(база {base}; {verdict})")
+            if got > base:
+                over.append(f"{locale}/{kind}: {got} > {base}")
+            if got and (listing or got > base):
+                for path, line, frag, ch, want in hidden[kind]:
+                    rel = Path(path).relative_to(Path(__file__).resolve().parent.parent)
+                    print(f"      {rel}:{line}: {frag}  [{ch}]→[{want}]")
+            elif got:
+                per_file = {}
+                for path, *_ in hidden[kind]:
+                    per_file[path] = per_file.get(path, 0) + 1
+                for path, n in sorted(per_file.items(), key=lambda x: -x[1]):
+                    rel = Path(path).relative_to(Path(__file__).resolve().parent.parent)
+                    print(f"      {rel}: ×{n}")
 
     print(f"\nпросмотрено файлов: {scanned}; осмотрено меток {seen['меток']}, "
           f"из них квалифицированных {seen['квалифицированных']}")
@@ -244,6 +365,9 @@ def main() -> int:
     if kinds:
         print(f"исправлено вхождений: {touched}")
         return 0
+    if over:
+        print("СКРЫТЫЕ МАРКЕРЫ — РОСТ ДОЛГА: " + "; ".join(over))
+        return 1
     return 1 if sum(grand.values()) else 0
 
 
