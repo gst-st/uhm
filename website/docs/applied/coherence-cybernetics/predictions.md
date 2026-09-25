@@ -11,7 +11,7 @@ description: CC predictions absent from other theories
 
 
 :::info Who this chapter is for
-23 unique numerical predictions of CC with verification protocols and falsification criteria. The reader will learn how CC predictions differ from IIT, FEP, and GWT.
+23 predictions of CC — 22 of them unique to CC, 21 unique and numerical — with verification protocols and falsification criteria. The reader will learn how CC predictions differ from IIT, FEP, and GWT.
 :::
 
 In the [previous chapter](./stability) we computed the stability radius, traced the death spiral, and built the recovery protocol. We saw that CC generates *specific numbers* — $r_{\mathrm{stab}}$, $\kappa_{\text{bootstrap}} = 1/7$, thresholds for each channel — rather than vague "tendencies". Now we collect **all** numerical consequences of CC in one place and for each specify: *how to verify* and *what would refute it*.
@@ -270,12 +270,14 @@ Total: $3 + 3 + 1 = 7$.
 
 The third group of predictions concerns *numerical thresholds* — specific parameter values at which qualitative transitions occur. Numerical predictions are precisely what distinguishes a scientific theory from philosophical speculation: they are testable, and they are risky.
 
-### Prediction 5: Scale invariance of consciousness {#предсказание-5}
+### Prediction 5: Collective consciousness {#предсказание-5}
+
+*Retitled 2026-09-25.* The prediction was titled "Scale invariance of consciousness", and other pages cited it as the licence for scale invariance; what it states is a condition for collective consciousness. Scale invariance is [Theorem 9.2 (CC-6, T-72)](./theorems#теорема-92-масштабная-инвариантность), [C at (AGG)].
 
 **Intuition.** Can a group of conscious beings give rise to *collective* consciousness? A hive, a flock, a team — do they have "experience"? Earlier editions answered: yes, *if* individual consciousnesses are sufficiently integrated ($\Phi_{\otimes} > \Phi_{\min}$). That criterion is retracted below: every uncoupled group meets it. What CC can state is a necessary condition — the members' joint state is correlated — and a hypothesis about sufficiency.
 
 :::warning Retracted (2026-09-25): the criterion $\Phi_{\otimes} > \Phi_{\min}$
-The prediction read $\left( \bigwedge_i C(\mathbb{H}_i) > 0 \right) \land \Phi_{\otimes} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$, with the status "non-triviality [T], viability [C]". It is retracted because its condition and its conclusion both hold for any uncoupled group: on a product state $1 + \Phi_{\otimes} = \prod_i (1 + \Phi_i)$, so two holons that pass the window ($\Phi_i \geq 1$) already have $\Phi_{\otimes} \geq 3$ at mutual information $I = 0$, and $C(\mathbb{H}_i) > 0$ forces $\Phi_i > 0$, hence $\Phi_{\otimes} > 0$ ([the identity, with a worked pair](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). No measurement on a group could have failed it. The two statuses it carried — non-triviality $P > 1/7$ of the composite attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]) and viability $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound]) — are facts about the composite's purity, not about its consciousness, and stand as such.
+The prediction read $\left( \bigwedge_i C(\mathbb{H}_i) > 0 \right) \land \Phi_{\otimes} > \Phi_{\min} \Rightarrow C(\mathbb{H}_{1 \otimes \ldots \otimes n}) > 0$, with the status "non-triviality [T], viability [C]". It is retracted because its condition and its conclusion both hold for any uncoupled group: on a product state $1 + \Phi_{\otimes} = \prod_i (1 + \Phi_i)$, so two holons that pass the window ($\Phi_i \geq 1$) already have $\Phi_{\otimes} \geq 3$ at mutual information $I = 0$, and $C(\mathbb{H}_i) > 0$ forces $\Phi_i > 0$, hence $\Phi_{\otimes} > 0$ ([the identity, with a worked pair](/docs/consciousness/comparative/panpsychism-analysis#теорема-нередуцируемость)). No measurement on a group could have failed it. The two statuses it carried — non-triviality $P > 1/7$ of the composite attractor ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]) and viability $P > 2/7$ for embodied systems ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора); Step 3 [C at backbone-injection lower bound]) — are facts about the composite's purity, not about its consciousness, and stand as such — given that the composite is itself a holon, the assumption (HOL) of [Theorem 9.1](./theorems#теорема-91-фрактальное-замыкание) (named 2026-09-25).
 :::
 
 :::info Prediction (restated): a necessary condition [T]; sufficiency is a hypothesis [H]
@@ -364,24 +366,26 @@ Measurement of E-coherence in systems approaching $P_{\text{crit}}$ must show a 
 
 ### Prediction 7: Stability radius (T-104) {#предсказание-7}
 
-**Intuition.** How "robust" is a conscious system? How hard can it be "pushed" before it loses viability? CC gives a surprisingly simple answer: the stability radius is determined by *one* parameter — the purity margin $P - 2/7$. The higher $P$ above the critical threshold, the greater the blow the system can withstand.
+**Intuition.** How "robust" is a conscious system? How hard can it be "pushed" before it loses viability? CC gives a simple answer for the typical spectrum: the stability radius grows with purity — the higher $P$ above the critical threshold, the greater the blow the system can withstand — and near the threshold it grows linearly in the margin $P - 2/7$, not as its square root.
 
-:::info Prediction [T] — falsifiable
+:::info Prediction [C] — falsifiable
 $$
-r_{\mathrm{stab}}
+r_{\mathrm{stab}} \approx K\bigl(\sqrt{P - 1/7} - \sqrt{1/7}\bigr), \qquad K = \tfrac{\sqrt{35}\,\sqrt[4]{6}}{10} \approx 0.925917
 $$
-The stability radius (maximum perturbation preserving viability) is determined by **a single parameter** — the purity margin $P - 2/7$.
+The stability radius — the Bures distance to the viability shell $\{P = 2/7\}$ — is, on the one-dominant spectral family, a function of $P$ alone (the formula above is within $1.13\,\%$ of the exact closed form on the window, and near the wall $r_{\mathrm{stab}} \approx 1.22487\,(P - 2/7)$); for general spectra the closed form is a conservative lower bound [H] ([registry T-104](/docs/reference/status-registry), [C]).
 :::
+
+*Corrected 2026-09-25.* This prediction was labelled [T] and read "determined by a single parameter, the purity margin $P - 2/7$", with the critical amplitude $h_{\text{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$ below; that formula was refuted on 2026-08-07 — at $P = 0.300$ the true radius is $0.01708$ against $\sqrt{0.300 - 2/7} = 0.11952$ ([Stability, §4.1](./stability#радиус-устойчивости)) — and the registry carries T-104 as [C]. The statements above and below replace it.
 
 **Uniqueness of the prediction.** This is a quantitative prediction: given known $P$ one can *in advance* compute the maximum admissible perturbation amplitude. Neither IIT nor FEP provides an analogous formula. In cybernetics, Ashby spoke of "variety" as a measure of robustness, but without a quantitative formula.
 
 **Experimental verification:**
 1. For an AI agent (SYNARC) measure $P$ in the stationary state.
-2. Apply a perturbation of amplitude $h$ and measure whether $P > 2/7$ is maintained.
-3. **Prediction:** critical amplitude $h_{\text{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$.
-4. *Falsification:* if $h_{\text{crit}}$ systematically differs from $P - 2/7$ — T-104 is incorrect.
+2. Apply a perturbation that moves the state by a controlled Bures distance $d$ and measure whether $P > 2/7$ is maintained.
+3. **Prediction:** the critical distance is $d_{\text{crit}} = r_{\mathrm{stab}}$ from the formula above (on a one-dominant spectrum; for a general spectrum $d_{\text{crit}} \geq$ the formula). The earlier prediction $h_{\text{crit}} = r_{\mathrm{stab}}^2 = P - 2/7$ is retracted with the refuted closed form.
+4. *Falsification:* if viability is lost at a Bures distance systematically below the closed form — T-104 is incorrect.
 
-**Verifiability:** Measure $P$ for a system (AI agent, organisation), then apply a perturbation of controlled amplitude. If the system loses viability at $\|h^{\mathrm{ext}}\| < r_{\mathrm{stab}}^2$, T-104 is falsified.
+**Verifiability:** Measure $P$ for a system (AI agent, organisation), then apply a perturbation of controlled Bures size. If the system loses viability at $d < r_{\mathrm{stab}}$, T-104 is falsified. (The earlier threshold $\|h^{\mathrm{ext}}\| < r_{\mathrm{stab}}^2$ used the refuted $r_{\mathrm{stab}}^2 = P - 2/7$; retracted.)
 
 **See:** [Stability](./stability#радиус-устойчивости)
 
@@ -776,7 +780,7 @@ Primitivity of $\mathcal{L}_0$ [T-39a] guarantees $\lambda_{\text{gap}} > 0$. If
 
 **Status:** [H] (hypothesis). Requires: (1) calibration of $\omega_0$ from neurodata, (2) computation of $\lambda_{\text{gap}}$ for realistic Lindblad parameters.
 
-### Prediction 23: The rank-7 decoherence-anisotropy law [Т structure / С mapping] {#предсказание-23}
+### Prediction 23: The rank-7 decoherence-anisotropy law [T structure / C mapping] {#предсказание-23}
 
 **Intuition.** The heat channel of a holon carries seven independent temperatures — one per Fano line ([line-resolved temperatures](/docs/applied/coherence-cybernetics/effective-temperature#линейные-температуры)). If the dissipator really is Fano-wired, the twenty-one pairwise decoherence rates between channels cannot be arbitrary: each is the mean of exactly four line rates, and the pair's own joint line *cancels*.
 
@@ -825,7 +829,7 @@ A prediction earns scientific weight only with an explicit **decision rule**: wh
 | 4 | [Pre-linguistic cognition](#предсказание-4) | $\mathrm{Cognition} \not\Rightarrow \mathrm{Language}$ | **[I]** | Partial in [FEP](/docs/reference/glossary#связанные-теории) |
 | 5 | [Collective consciousness](#предсказание-5) | $I(\mathbb{H}_1 : \mathbb{H}_2) > 0$ necessary; criterion $\Phi_{\otimes} > \Phi_{\min}$ retracted | **[T]** necessary / **[H]** sufficiency | [IIT](/docs/reference/glossary#связанные-теории): exclusion — a group is a subject only as a maximum of integrated information |
 | 6 | [Minimum coherence](#предсказание-6) | $P > P_{\text{crit}} \land \mathrm{Coh}_E > 0$ | **[T]** | Absent |
-| 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}}$ | **[T]** | Absent |
+| 7 | [Stability radius](#предсказание-7) | $r_{\mathrm{stab}} \approx K(\sqrt{P-1/7}-\sqrt{1/7})$ | **[C]** (T-104) | Absent |
 | 8 | [Enc capacity](#предсказание-8) | $C_{\mathrm{Enc}} \leq \log_2 7$ | **[T]** | Absent |
 | 9 | [Learning bound](#предсказание-9) | $n_{\mathrm{opt}} = \max(n_{\mathrm{info}}, n_{\mathrm{dyn}}, n_{\mathrm{stab}})$ | **[T]** | Absent |
 | 10 | [N=7 for learning](#предсказание-10) | $N < 7 \Rightarrow n^* = \infty$ | **[T]** | Absent |
@@ -868,7 +872,7 @@ The following table shows which predictions each of the leading theories of cons
 | Yukawa hierarchy | **+** ($\varepsilon_{\text{eff}} \approx 0.059$) [C] | - | - | - |
 | Ward suppression of $\Lambda$ | **+** ($19/49$) | - | - | - |
 
-**Total unique numerical predictions:** CC — 22, IIT — 0, FEP — 0, GWT — 0.
+**Total unique numerical predictions:** CC — 21, IIT — 0, FEP — 0, GWT — 0. CC's count is the 23 predictions of the summary table less two: Prediction 4, an interpretation [I] with no number, and Prediction 5, whose necessary condition $I > 0$ is the sign of an information quantity, not a number, and on whose question IIT, not CC, has a criterion (row "Collective consciousness" above). The earlier count, 22, still included Prediction 5 (corrected 2026-09-25).
 
 The difference is fundamental. IIT, FEP, and GWT are *frameworks* — they offer a descriptive language but do not generate numerical forecasts that can be unambiguously confirmed or refuted. CC is a *theory* in the Popperian sense: it makes risky, specific, falsifiable predictions.
 
@@ -898,7 +902,7 @@ CC has a *hierarchical* falsification structure. Different predictions have diff
 - $\varepsilon_{\text{eff}} \notin [0.04, 0.08]$ → revision of the Gap potential.
 
 **Level 3 — local correction (specific theorem is wrong, foundation intact):**
-- $r_{\text{stab}} \neq \sqrt{P - 2/7}$ → revision of T-104, but not the basic axioms.
+- viability lost at a Bures distance below the closed-form $r_{\text{stab}}$ of Prediction 7 → revision of T-104, but not the basic axioms. (The earlier criterion "$r_{\text{stab}} \neq \sqrt{P - 2/7}$" named the formula refuted on 2026-08-07; retracted.)
 - $P^* \neq 3/7$ → revision of Prediction 15, but not the threshold $P_{\text{crit}}$.
 - $\pi_{\mathrm{bio}}$ does not yield consistent results → revision of empirical calibration, but not the theoretical formalism.
 
@@ -928,12 +932,14 @@ It is important to distinguish falsification from irrelevant objections:
 
 ## Conclusion: Predictive Power as a Measure of Maturity {#заключение}
 
-Let us summarise. Coherence Cybernetics generates **23 unique predictions**, of which:
+Let us summarise. Coherence Cybernetics generates **23 predictions**, 22 of them unique: Prediction 5 is not, since IIT's exclusion postulate answers the same question with a criterion and CC has only a necessary condition. (Earlier editions said "23 unique predictions"; corrected 2026-09-25 with the retraction of the criterion $\Phi_{\otimes} > \Phi_{\min}$.) Counted by the weakest status among its parts, each prediction falls into one class:
 
-- **16** have status **[T]** — unconditional theorems following from the axioms.
-- **4** have status **[C]** — conditional theorems depending on explicitly stated assumptions (including the rank-7 decoherence-anisotropy law: a [T] law with a [C] empirical channel-mapping).
+- **13** have status **[T]** — unconditional theorems following from the axioms.
+- **6** have status **[C]** — conditional theorems depending on explicitly stated assumptions (Predictions 3 and 23 are [T] laws whose empirical mapping is [C]; Prediction 7 is [C] as T-104 is in the registry).
 - **1** has status **[I]** — an interpretation based on definitions.
-- **2** have status **[H]** — hypotheses requiring empirical verification.
+- **3** have status **[H]** — hypotheses requiring empirical verification (Prediction 5 among them: its necessary condition $I > 0$ is [T], its sufficiency [H]).
+
+The earlier breakdown, 16 [T] / 4 [C] / 1 [I] / 2 [H], counted Prediction 3 by its [T] part, Prediction 5 by its former [T] non-triviality, and Prediction 7 as [T] against the registry's [C].
 
 For comparison: IIT generates 0 unique numerical predictions, FEP — 0, GWT — 0. This is not a deficiency of these theories — it is their *status*: they are frameworks, not theories in the Popperian sense.
 
@@ -954,10 +960,10 @@ The next step is experiment. None of the 23 predictions has yet been experimenta
 
 ### What we learned {#что-мы-узнали-предсказания}
 
-1. **23 unique predictions** — none of them is generated by IIT, FEP, or GWT. This is not a quantitative but a *qualitative* superiority: 23 risky stakes against 0.
-2. **16 of 23 — unconditional theorems [T]**: they follow from the axioms without additional assumptions. Refutation of any one of them means collapse of the entire edifice.
+1. **22 unique predictions of 23** — none of these 22 is generated by IIT, FEP, or GWT; on the twenty-third, collective consciousness, IIT has the criterion and CC only a necessary condition (earlier "23 unique"; corrected 2026-09-25). This is not a quantitative but a *qualitative* superiority: 22 risky stakes against 0.
+2. **13 of 23 — unconditional theorems [T]**: they follow from the axioms without additional assumptions. Refutation of any one of them means collapse of the entire edifice. (Earlier "16 of 23"; Predictions 3 and 5 are now counted by their weaker parts, [C] and [H], and Prediction 7 carries the registry's [C].)
 3. **Every number is not a fit**: $P_{\text{crit}} = 2/7$ follows from $N = 7$ and the Frobenius norm. $\mathrm{SAD}_\text{max} = 3$ — from $\alpha_{\text{Fano}} = 2/3$ and $P \leq 1$. $\log_2 7 \approx 2.81$ bits — from the Hilbert space dimensionality. $\alpha = 1/2$, $\beta = 1/4$, $\gamma = 1$, $\nu = 1/2$, $\delta = 5$ — from the tricritical mean-field universality class of the phase transition.
-4. **Hierarchy of falsification**: catastrophic (zombie, $N \neq 7$) → serious (wrong exponents, $\mathrm{SAD} > 3$) → local ($r_{\mathrm{stab}} \neq r_{\mathrm{stab}}$, $P^* \neq 3/7$). Not all predictions are equal — some destroy the foundation, others require only correction.
+4. **Hierarchy of falsification**: catastrophic (zombie, $N \neq 7$) → serious (wrong exponents, $\mathrm{SAD} > 3$) → local (viability lost inside the closed-form $r_{\mathrm{stab}}$, $P^* \neq 3/7$). Not all predictions are equal — some destroy the foundation, others require only correction.
 5. **Predictions span 6 areas**: ontology, architecture, dynamics, learning, physics, neuroscience. Such interdisciplinary scope is unique among theories of consciousness.
 6. **None of the 23 predictions has yet been verified**: CC awaits its "1919 eclipse". Critical exponents (Prediction 17) and reconstruction of $\Gamma$ from neural data (Prediction 21) are the most realistic candidates.
 

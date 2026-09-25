@@ -522,7 +522,7 @@ the lines descend the mandala's octaves — one gate → line 6 (voice E),
 11.25° → U, 22.5° → D, 45° → L, 90° → S, 180° → the exact complement.
 With line = voice this yields a native aspect theory with voice types:
 opposition = complement (theorem), square = the S-turn, semi-square = L
-[И-structured]. HB25 recorded honestly: iterative MLE
+[I-structured]. HB25 recorded honestly: iterative MLE
 ([diluted RρR](https://arxiv.org/abs/quant-ph/0611244)) improves diary
 reconstruction by only ~8% at small N — below the preregistered adoption
 threshold; not merged.
@@ -2333,7 +2333,8 @@ object as it casts its shadow across the scripts humanity has used to read itsel
 astrology first (§76–77), then the I Ching (§78) and the Kabbalah (§79), then the
 whole spectrum at once (§80); and beyond divination, into the physics the corpus
 already derives from the same crystal (§81), the calibration that makes a life *this*
-life (§82), and life itself as a self-maintaining symbolic system (§83). One crystal;
+life (§82 — its reading of the calibration as the $G_2$-frame is retracted, see the
+box there), and life itself as a self-maintaining symbolic system (§83). One crystal;
 many scripts; a single honest ledger of what is exact `[Т]`, what is structural `[С]`,
 what is conjecture `[Г]`, and what is only descriptive `[И]`.
 
@@ -2579,6 +2580,12 @@ systems is the crystal already there, holding up the world.)*
 
 ### 82. The inner side, and what calibrates it
 
+:::danger Retracted (2026-09-25): "the calibration is the $G_2$-frame", and what this Part built on it
+This section claimed that the phenomenal functor $F$ is faithful on $G_2$-orbits, so that a system's inner life is its $\Gamma$ modulo $G_2$ and the one thing experience leaves open — "which position is red" — is the $G_2$-frame, fixed from outside by the planetary system; that is false, because $\Phi$ and $\mathrm{Coh}_E$ are frame-pinned: an explicit $g \in G_2$ takes a window state with $\Phi = 3/2$, $C = 3/5$ to one with $\Phi = 0$, $C = 0$ at the same $P = 5/14$ and $R = 2/5$, so a $G_2$ rotation changes what the corpus calls experience. What replaces it: $F$ is faithful only up to a finite relabelling of the axes ([Corollary 3 of the uniqueness theorem](/docs/proofs/categorical/uniqueness-theorem#верность-функтора)); the frame is pinned by the dynamics, not left free for boundary data to fix; and "which quale is red" stays an empirical calibration ([Two-Aspect Monism, retraction box](/docs/consciousness/foundations/two-aspect-monism#калибровка-как-g2-репер)).
+
+Retracted with it, and marked where they occur: the birth configuration read as the calibration of the $G_2$-frame (this section and §83); the "monist prediction" that minds under another star share the inner crystal "under a different frame" because the inner architecture is $G_2$-invariant; and, in §84, the ceiling of "thirty-four parameters distinguishable in principle" and the reading of the ≈ 28 % of chart-to-chart variation along gauge directions as invisible to experience — all 48 parameters are physical (frame decision D-0910). The orbit-type computation below (orbit dimension $0$ at $I/7$, $11$ at a pure state, $14$ generically) stands as kinematics; it no longer bears on calibration. The text is kept for the record.
+:::
+
 One question has stood open since the corpus's chapter on the hard problem, and it
 states it plainly: of everything about experience, one thing is *not* fixed by
 structure — the **calibration**. The theory proves (by Yoneda) that a quale's
@@ -2696,7 +2703,8 @@ system feeds on. And it supplies the **boundary data** that fixes the `G₂`-fra
 the calibration of Sec. 82, the sky a chart records. Substrate to stay alive; frame
 to be *this* life and no other. `[С]` for the frame (Sec. 82); `[И]` for the
 energy-gradient reading (ordinary non-equilibrium thermodynamics, in UHM's own
-language).
+language). *(The second channel — boundary data fixing the $G_2$-frame — is
+retracted with Sec. 82: the frame is pinned by the dynamics.)*
 
 **The monist reading, made precise.** Two-aspect monism already holds that *every*
 `Γ` has an inner side — interiority at `L0`, for all systems. Life is where that
@@ -2710,13 +2718,15 @@ self-maintaining knot that carries that architecture — dimly at first, then, p
 the thresholds, consciously. Another planetary system, with another star and another
 chemistry, would fold a different knot: the same seven voices, a different
 calibration, a different substrate — a different **dialect** of the one inner
-architecture.
+architecture. *("Universal by $G_2$-invariance" and "a different calibration" are
+retracted with Sec. 82: the architecture is the same pinned seven-axis frame up to a
+finite relabelling of the axes, not a $G_2$-invariant.)*
 
 None of this adds machinery. It names, in a single breath, three results the corpus
 proves separately — that `Γ` has an energetic, an informational, and a symbolic
 reading (two-aspect monism with `Φ`); that it lives by regenerating above `2/7`
 ([viability](../../core/dynamics/viability.md)); that its frame is externally set
-(Sec. 82) — and observes that your one sentence, *life is a symbolic-energo-
+(Sec. 82 — retracted, see the box there) — and observes that your one sentence, *life is a symbolic-energo-
 informational system whose inner side is a universal architecture calibrated by its
 cosmos*, is those three results read as one.
 
@@ -2780,6 +2790,12 @@ The phenomenal functor is faithful only on `G₂`-orbits ([T-123](../../proofs/c
 [two-aspect monism](../../consciousness/foundations/two-aspect-monism.md)), and
 `dim G₂ = 14`, so fourteen of the forty-eight directions are frame, not content:
 **thirty-four parameters are distinguishable in principle.**
+
+*(Retracted 2026-09-25 with Sec. 82: $F$ is faithful only up to the finite frame
+group, so a $G_2$ direction is a difference experience registers — along one of them
+$\Phi$ falls from $3/2$ to $0$ — and all 48 parameters are distinguishable (frame
+decision D-0910); $34$ counts kinematic $G_2$-invariants. The measurements below
+stand; their reading against a "gauge-free ceiling" of 34 does not.)*
 
 **What the natal encoder actually reaches.** Measured across the §75 population
 (2340 charts, 1940–2004 × 12 months × 3 times), as the participation ratio
@@ -2845,7 +2861,10 @@ difference between two charts that lies along a gauge direction is a difference
 is of that kind: real in the parametrisation, invisible in the phenomenology.
 Individuality as computed from a birth chart is therefore smaller than the raw
 `32.3` dimensions suggest — a bound we now have a number for, and one that no
-amount of better writing can recover.
+amount of better writing can recover. *(Retracted 2026-09-25 with Sec. 82: the
+functor is not blind to $G_2$ directions, so the ≈ 28 % of variation along them is
+not invisible to experience; the measured share stands as a property of the
+encoder.)*
 
 **Where the description is actually lost.** Setting the links side by side gives
 the honest chain — and it does not fall where one would guess:
@@ -2861,7 +2880,9 @@ the honest chain — and it does not fall where one would guess:
 
 Two losses, then, of different kinds: the capture spends about a quarter of its
 variation on the frame — a bound no writing can undo — while **the telling loses
-most of what survives.** The engine
+most of what survives.** *(The first loss and the table rows "distinguishable in
+principle 34" and "≈ 72 % phenomenally visible" are retracted with Sec. 82: frame
+directions are not phenomenally invisible, and the ceiling is 48.)* The engine
 computes a thirty-two-dimensional object and speaks nine of its named signals to
 an ordinary reader, keeping the rest in a machine register behind a flag. That is
 why the interpretation work is not copy-editing: raising what the readings carry
@@ -4236,7 +4257,7 @@ proved elsewhere in this corpus; what follows composes them.
 **Setting.** By the carrier axiom, a holon of any kind — a person, a
 circle, a world; conscious in any form or not conscious at all — is an
 element of the coinductive type νX. D(ℂ⁷) × Multiset(X): a state
-Γ ∈ D(ℂ⁷) together with a multiset of sub-holons [Т, definition]. The
+Γ ∈ D(ℂ⁷) together with a multiset of sub-holons [T, definition]. The
 question «how much of a holon can one picture show?» is therefore the
 question «how much of Γ can one picture show?», level by level.
 
