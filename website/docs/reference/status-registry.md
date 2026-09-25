@@ -831,6 +831,8 @@ These results have been proven erroneous and must not be included in documentati
 The four rows below were **renumbered C22→C32, C23→C33, C24→C34, C25→C35** to resolve a collision with the Sensorimotor block (C22 = Landauer calibration, C23 = grounding monotonicity, C24 = forgetting bound, C25 = σ-probe), which is the meaning used everywhere else in the corpus. No external document cites the C22–C25 numbers in the senses below, so the renumbering is reference-safe.
 :::
 
+| # | Result | Assumption | Source |
+|---|--------|------------|--------|
 | C32 (was C22) | **Monotonicity of symbol grounding**: $g(w, t+1) \geq g(w, t)$ under stable learning ($\|\Delta P\| < \varepsilon$, $\|\Delta\sigma\| < \varepsilon$) | T-115 [T] (algebraic distinguishability) | **[C at T-115]** — raised from [H] No.96. Under stable learning conditions each step expands the algebraically distinguishable subspace → grounding monotonically does not decrease |
 | C33 (was C23) | **Categorical Nash embedding**: $\mathrm{Hom}(\mathrm{Ag}, \mathrm{Ag}) \cong NE(\Gamma_{\mathrm{ext}})$ | T-4.2 [C] (confinement sector) | **[C at T-4.2]** — raised from [H] No.98. CPTP-compatible agent strategies are isomorphic to Nash equilibria of extended coherence |
 | C34 (was C24) | **$N = 7$ minimality for social learning**: $3_{\text{ToM}} + 3_{\text{ISL}} + 1_U = 7$ | T-57 [T] (LGKS), T-114 [T] (Fano grammar) | **[C at T-57, T-114]** — raised from [H] No.99. Counting argument is complete under simultaneity of ToM+ISL+Coordination — [Prediction 11](/docs/applied/coherence-cybernetics/predictions#предсказание-11) |

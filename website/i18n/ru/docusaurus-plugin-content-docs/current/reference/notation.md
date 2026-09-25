@@ -32,14 +32,15 @@ description: Математические обозначения теории У
 
 ## Основные символы
 
+<!-- DRY: Каноническое определение Γ в /docs/core/dynamics/coherence-matrix -->
+<!-- DRY: Каноническое определение P = Tr(Γ²) в /docs/core/dynamics/viability#определение-чистоты -->
+
 | Символ | Значение | Определение |
 |--------|----------|-------------|
 | $\mathcal{C}$ | [Примитивная категория](/docs/core/foundations/axiom-omega#примитив) | Малая категория с конечным числом объектов — **единственный примитив** |
-<!-- DRY: Каноническое определение Γ в /docs/core/dynamics/coherence-matrix -->
 | $\Gamma$ | [Матрица когерентности](/docs/core/dynamics/coherence-matrix) | $\Gamma \in \mathcal{L}(\mathcal{H})$, $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
 | $\mathbb{H}$ | [Голоном](/docs/core/structure/holon) | Минимальная самодостаточная единица реальности |
 | $\mathcal{H}$ | Гильбертово пространство | $\mathcal{H} = \mathbb{C}^7$ — см. [Семь измерений](/docs/core/structure/dimensions) |
-<!-- DRY: Каноническое определение P = Tr(Γ²) в /docs/core/dynamics/viability#определение-чистоты -->
 | $P$ | [Чистота](/docs/core/dynamics/viability#определение-чистоты) | $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$ |
 | $S_{vN}$ | Энтропия фон Неймана | $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) \in [0, \log 7]$ |
 | $\tau$ | [Внутреннее время](/docs/proofs/dynamics/emergent-time) | Параметр эволюции, выведенный из структуры $\mathcal{C}$; $\tau \in \mathbb{Z}_7$ для 7D |
@@ -276,6 +277,9 @@ $$
 
 ## Специальные обозначения
 
+<!-- DRY: Каноническое определение κ(Γ) в /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
+<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
+
 | Обозначение | Значение |
 |-------------|----------|
 | $\lVert\cdot\rVert_F$ | Норма Фробениуса: $\lVert A\rVert_F = \sqrt{\mathrm{Tr}(A^\dagger A)} = \sqrt{\sum_{ij} \lvert a_{ij}\rvert^2}$ |
@@ -291,10 +295,8 @@ $$
 | $\mathrm{Coh}_E$ | E-когерентность (HS-проекция $\pi_E$) **[Т]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [мастер-определение](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-проекция](/docs/core/foundations/axiom-septicity#hs-projection), [справка КК](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
 | ПИР | Принцип Информационной Различимости **[О]** (T16) — [определение](/docs/core/foundations/axiom-septicity#формулировка-пир), встроенное в A1+A2: различимость по $J_{\text{Bures}}$-покрытиям тождественна онтологической различимости |
 | $\varphi_{\text{coh}}$ | Когерентно-сохраняющее самомоделирование — обобщённый оператор φ, сохраняющий когерентности ([Фано-канал](/docs/proofs/gap/fano-channel)) |
-<!-- DRY: Каноническое определение κ(Γ) в /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
 | $\kappa(\Gamma)$ | Коэффициент регенерации: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
 | $D_{\text{diff}}$ | Дифференцировочная размерность — число измерений, в которых $\Gamma$ отклоняется от $I/N$ |
-<!-- DRY: Каноническое определение P_crit = 2/7 в /docs/core/dynamics/viability#критическая-чистота -->
 | $P_{\text{crit}}$ | Критическая чистота $= 2/N = 2/7$ — [теорема](/docs/proofs/dynamics/theorem-purity-critical) |
 | $d_B^{chord}$ | Хордальная форма метрики Бюреса: $d_B^{chord} = \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ |
 | (AP), (PH), (QG), (V) | Четыре условия определения Голонома: автопоэзис, феноменальность, квантовая геометрия, жизнеспособность |

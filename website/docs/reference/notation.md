@@ -32,14 +32,15 @@ UHM generalises IIT: the consciousness measure $C = \Phi \times R$ **[T T-140]**
 
 ## Core Symbols
 
+<!-- DRY: Canonical definition of Γ in /docs/core/dynamics/coherence-matrix -->
+<!-- DRY: Canonical definition P = Tr(Γ²) in /docs/core/dynamics/viability#определение-чистоты -->
+
 | Symbol | Meaning | Definition |
 |--------|---------|------------|
 | $\mathcal{C}$ | [Primitive category](/docs/core/foundations/axiom-omega#примитив) | Small category with a finite number of objects — **sole primitive** |
-<!-- DRY: Canonical definition of Γ in /docs/core/dynamics/coherence-matrix -->
 | $\Gamma$ | [Coherence matrix](/docs/core/dynamics/coherence-matrix) | $\Gamma \in \mathcal{L}(\mathcal{H})$, $\Gamma^\dagger = \Gamma$, $\Gamma \geq 0$, $\mathrm{Tr}(\Gamma) = 1$ |
 | $\mathbb{H}$ | [Holon](/docs/core/structure/holon) | Minimal self-sufficient unit of reality |
 | $\mathcal{H}$ | Hilbert space | $\mathcal{H} = \mathbb{C}^7$ — see [Seven dimensions](/docs/core/structure/dimensions) |
-<!-- DRY: Canonical definition P = Tr(Γ²) in /docs/core/dynamics/viability#определение-чистоты -->
 | $P$ | [Purity](/docs/core/dynamics/viability#определение-чистоты) | $P = \mathrm{Tr}(\Gamma^2) \in [1/7, 1]$ |
 | $S_{vN}$ | Von Neumann entropy | $S_{vN} = -\mathrm{Tr}(\Gamma \log \Gamma) \in [0, \log 7]$ |
 | $\tau$ | [Internal time](/docs/proofs/dynamics/emergent-time) | Evolution parameter derived from the structure of $\mathcal{C}$; $\tau \in \mathbb{Z}_7$ for 7D |
@@ -276,6 +277,9 @@ $$
 
 ## Special Notation
 
+<!-- DRY: Canonical definition of κ(Γ) in /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
+<!-- DRY: Canonical definition P_crit = 2/7 in /docs/core/dynamics/viability#критическая-чистота -->
+
 | Notation | Meaning |
 |----------|---------|
 | $\lVert\cdot\rVert_F$ | Frobenius norm: $\lVert A\rVert_F = \sqrt{\mathrm{Tr}(A^\dagger A)} = \sqrt{\sum_{ij} \lvert a_{ij}\rvert^2}$ |
@@ -291,10 +295,8 @@ $$
 | $\mathrm{Coh}_E$ | E-coherence (HS-projection $\pi_E$) **[T]**, $\in [1/7, 1]$; $= \|\pi_E(\Gamma)\|_{\mathrm{HS}}^2 / \|\Gamma\|_{\mathrm{HS}}^2$ — [master definition](/docs/core/foundations/axiom-septicity#e-coherence-definition), [HS-projection](/docs/core/foundations/axiom-septicity#hs-projection), [CC reference](/docs/applied/coherence-cybernetics/definitions#e-когерентность) |
 | IDP | Information Distinguishability Principle **[D]** (T16) — [definition](/docs/core/foundations/axiom-septicity#формулировка-пир), built into A1+A2: distinguishability via $J_{\text{Bures}}$-coverings is identical to ontological distinguishability |
 | $\varphi_{\text{coh}}$ | Coherence-preserving self-modelling — generalised φ-operator preserving coherences ([Fano channel](/docs/proofs/gap/fano-channel)) |
-<!-- DRY: Canonical definition of κ(Γ) in /docs/core/foundations/axiom-septicity#категориальный-вывод-kappa0 -->
 | $\kappa(\Gamma)$ | Regeneration coefficient: $\kappa(\Gamma) = \kappa_{\text{bootstrap}} + \kappa_0 \cdot \mathrm{Coh}_E$ |
 | $D_{\text{diff}}$ | Differentiation dimension — number of dimensions in which $\Gamma$ deviates from $I/N$ |
-<!-- DRY: Canonical definition P_crit = 2/7 in /docs/core/dynamics/viability#критическая-чистота -->
 | $P_{\text{crit}}$ | Critical purity $= 2/N = 2/7$ — [theorem](/docs/proofs/dynamics/theorem-purity-critical) |
 | $d_B^{chord}$ | Chord form of the Bures metric: $d_B^{chord} = \sqrt{2(1 - \sqrt{F(\rho, \sigma)})}$ |
 | (AP), (PH), (QG), (V) | Four conditions of the Holon definition: autopoiesis, phenomenality, quantum geometry, viability |

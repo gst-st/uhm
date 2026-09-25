@@ -238,7 +238,9 @@ def headerless_table_rows(roots, *, files=None):
 #: status-registry.md C32…C36 — пять строк после врезки о перенумерации, без шапки
 #: (EN 829, RU 827); axiom-septicity.md (RU 1183) — четыре строки таблицы Розена
 #: после врезки «Омонимия символа Φ». Долг только падает — опускайте базу вслед.
-HEADERLESS_BASE = 11
+#: 11 → 0 (25.09.2026): комментарии DRY вынесены над шапкой таблиц notation.md,
+#: у C32…C36 реестра своя шапка, врезка о Φ в RU axiom-septicity — после таблицы (как в EN).
+HEADERLESS_BASE = 0
 
 
 def fence_nesting(docs: pathlib.Path):
