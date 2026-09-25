@@ -610,9 +610,13 @@ Having proved that every viable system possesses non-trivial interiority, we can
 
 Let us return to the orchestra analogy. Until now we have been studying *one* musician (a single holon). Now imagine two orchestras deciding to play together. The first question: will the joint performance be meaningful? The second: will it produce something that was absent from either orchestra individually?
 
-Theorems 9.1–9.3 are the answer, each with its assumption: 9.1 assumes (HOL), that the joint system is itself a holon; 9.2 assumes (AGG), weak coupling and a consistent aggregation; 9.3 says when joint play **generates a new quality** — a joint state with information that neither orchestra holds — and shows that it does not do so for every coupling. (Earlier: "yes, joint play … generates a new quality. … The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem"; corrected 2026-09-25 with the retraction in Theorem 9.3.)
+Theorems 9.1–9.6 are the answer. 9.1 and 9.2 were first proved under assumptions — (HOL), that the joint system is itself a holon, and (AGG), a consistent aggregation and weak coupling; Theorem 9.5 fixes the aggregation (it is unique) and proves for weak coupling what both assumed, and Theorem 9.6 shows that the coupling must be weak. 9.3 says when joint play **generates a new quality** — a joint state with information that neither orchestra holds — and shows that it does not do so for every coupling. (Earlier: "yes, joint play … generates a new quality. … The whole is more than the sum of its parts. And this is not a metaphor — it is a theorem"; corrected 2026-09-25 with the retraction in Theorem 9.3.)
 
-### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [C at (HOL)] {#теорема-91-фрактальное-замыкание}
+### Theorem 9.1 / T-68 (Fractal Closure, CC-5) [T at weak coupling] {#теорема-91-фрактальное-замыкание}
+
+:::tip Status raised 2026-09-25: from "conditional on (HOL)" to [T at weak coupling]
+[Theorem 9.5](#теорема-95-каноническая-агрегация) proves the substance of CC-5 without (HOL). The aggregation is not chosen: the mean marginal $\mathcal{M}_k$ is the only permutation-invariant linear map that returns a part's state on uncoupled copies. If the parts are viable embodied holons and $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$, with $\varepsilon_V = \mu\,(P(\rho_{\mathrm{lin}}) - 2/7)/(2\sqrt{P(\rho_{\mathrm{lin}})})$ read off the regeneration-free part of one holon, every stationary state of the composite has living parts, and for identical parts in a symmetric state the canonical aggregate is viable; along trajectories the aggregate follows the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$. The weak-coupling condition cannot be dropped: a coupling diagonal in a basis of maximally entangled vectors sends the canonical aggregate to $I/7$ at strong coupling ([Theorem 9.6](#теорема-96-сильная-связь)), so "every composite of viable holons is viable" is false for arbitrary coupling. The literal reading of items 1–2 below — the composite's own dynamics on $\mathcal{D}(\mathbb{C}^7)$ — keeps the assumption (HOL).
+:::
 
 :::warning Errata 2026-09-25: status corrected from [T]+[C] to [C at (HOL)]
 Step 1 claimed that the composite $\mathbb{H}_{12} = \mathbb{H}_1 \times_T \mathbb{H}_2$ is represented by a state $\Gamma_{12} \in \mathcal{D}(\mathbb{C}^7)$ — first by the Morita equivalence T-58 (retracted 2026-09-10), then by the section–retraction T-58′ — and neither carries it: T-58′ is $\pi \circ \iota = \mathrm{id}$ between the 7D and 42D descriptions of *one* holon and gives no map from the composite's state space $\mathcal{D}(\mathbb{C}^7 \otimes \mathbb{C}^7) = \mathcal{D}(\mathbb{C}^{49})$ to $\mathcal{D}(\mathbb{C}^7)$. The conclusion needs that map, because $P > 1/7$ is a statement in $\mathcal{D}(\mathbb{C}^7)$: in $\mathcal{D}(\mathbb{C}^{49})$ the maximally mixed state has $P = 1/49$, and two uncoupled viable holons at $P = 0.3$ give $P = 0.09 < 1/7$. What replaces it is a named assumption:
@@ -626,6 +630,7 @@ Under (HOL), steps 2–6 apply the single-holon theorems to the composite and th
 The status of T-68 has been clarified following resolution of the self-referential paradox:
 - **Non-triviality** $P > 1/7$ — **[C at (HOL)]** (T-96 applied to the composite; the earlier "[T], unconditional" is corrected in the errata above)
 - **Viability** $P > 2/7$ — **[T at backbone-injection lower-bound] for embodied** systems, given (HOL) (T-149: backbone injection ensures κ-dominance; Step 3 of T-149 is [C at that lower bound], not from pure axioms); **[C]** for isolated holons (C20 — irrelevant, since an isolated holon is dead forever, T-148)
+- These two lines concern the literal reading under (HOL). For weak coupling both are superseded by item 3 of the statement ([Theorem 9.5](#теорема-95-каноническая-агрегация), 2026-09-25), which needs neither (HOL) nor T-149: viability of an embodied part is the explicit condition $P(\rho_{\mathrm{lin}}) > 2/7$ of Theorem 9.5 (c).
 
 See [Status Registry](/docs/reference/status-registry), [T-149](/docs/proofs/consciousness/substrate-closure#t-149).
 :::
@@ -640,11 +645,12 @@ For a sociologist: this is the mathematical justification for what Luhmann intui
 **Connection:** [Autopoiesis axiom (AP)](/docs/core/foundations/axiom-septicity#ap-автопоэзис), [Composition closure](./axiomatics#замкнутость-композиции-следствие-из-ap), [Primitivity of the linear part](/docs/core/operators/lindblad-operators#примитивность-ℒω)
 :::
 
-:::tip Statement [C at (HOL)]
+:::tip Statement [T at weak coupling]
 Let $\mathbb{H}_1, \mathbb{H}_2$ be viable holons with dynamics satisfying axioms A1–A5, and let their composite $\mathbb{H}_{12}$ (an object of the ∞-topos $\mathrm{Sh}_\infty(\mathcal{C}, J_{\mathrm{Bures}})$) satisfy (HOL). Then:
 
 1. **[C at (HOL)]** It has a non-trivial attractor: $P(\rho_*^{(12)}) > 1/7$ (from [T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора))
 2. **[C at (HOL) and the backbone-injection lower bound]** For embodied systems: $P(\rho_*^{(12)}) > P_{\mathrm{crit}} = 2/7$ ([T-149](/docs/core/dynamics/evolution#теорема-жизнеспособность-аттрактора), Step 3 [C])
+3. **[T at weak coupling], without (HOL)** ([Theorem 9.5](#теорема-95-каноническая-агрегация) (c), (d), (g)). Let the parts be embodied, each viable — equivalently, the stationary state $\rho_{\mathrm{lin}}$ of its regeneration-free part has $P > 2/7$ — and let $|g|\,s(H_{\mathrm{int}}) < \min_i \varepsilon_V^{(i)}$. Then every stationary state of the composite has $P(X_i) > 2/7$ for both marginals; for identical parts the canonical aggregate $\mathcal{M}_2$ of a symmetric stationary state is viable, hence non-trivial; and the aggregate of a symmetric trajectory obeys the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$.
 :::
 
 **Proof (6 steps).**
@@ -695,7 +701,7 @@ Let $\mathbb{H}_1, \mathbb{H}_2$ be embodied holons whose anchors lie outside th
 
 *Proof.* Theorem 9.4 gives (ND), Theorem 9.3 (iii) the branch $X(g)$ by the implicit function theorem, and the $O(g)$ bound is the derivative $X'(0) = \mathcal{J}^{-1}(i[H_{\mathrm{int}}, \sigma])$. $P(\rho) > 1/7$ for every state $\rho \neq I/7$, and $\rho_*^{(i)} \neq I/7$ because the backbone pumps toward a full-rank anchor $\sigma_i \neq I/7$. The spectrum of the Jacobian is that of the two local blocks and of $\mathcal{J}_c$, with $\mathrm{Re} \leq -2\mu$ (Theorem 9.3, step 3), and it moves continuously with $g$. $\blacksquare$
 
-What (HOL) adds is a seven-dimensional description of the composite. The axioms fix the dimension of a holon at seven, and a composite of two holons lives on $\mathbb{C}^{49}$; a description in $\mathcal{D}(\mathbb{C}^7)$ that the joint flow respects is extra structure, not a consequence of A1–A5, so (HOL) stays an assumption of Theorem 9.1. The substance that Theorem 9.1 wanted from it — that the composite of living holons has a non-trivial attractor — does not need it.
+What (HOL) adds is a seven-dimensional description of the composite. The axioms fix the dimension of a holon at seven, and a composite of two holons lives on $\mathbb{C}^{49}$; a description in $\mathcal{D}(\mathbb{C}^7)$ that the joint flow respects *exactly* is extra structure, not a consequence of A1–A5, so (HOL) stays an assumption of the literal items 1–2. The substance that Theorem 9.1 wanted from it does not need it: Corollary 9.1a gives the composite of living holons a non-trivial stationary state, and [Theorem 9.5](#теорема-95-каноническая-агрегация) fixes the seven-dimensional description — the canonical aggregate, unique — and proves that it is viable at weak coupling and follows the single-holon generator up to a forcing of size $|g|\,s(H_{\mathrm{int}})$ (item 3). (Earlier, 2026-09-25: "(HOL) stays an assumption of Theorem 9.1" for the whole theorem; superseded by item 3.)
 
 :::note Corollary CC-7 (Emergence) — withdrawn [✗] (2026-09-25)
 ~~The composite holon possesses its **own** non-trivial attractor $\rho_*^{(12)} \neq \alpha\rho_*^{(1)} + (1-\alpha)\rho_*^{(2)}$ (from nonlinearity of $\mathcal{R}$ and primitivity of the linear part $\mathcal{L}_0^{(12)}$). Proof — Theorem 9.3 [T].~~ Withdrawn: the proof it cited is retracted, and the comparison mixes spaces — $\rho_*^{(12)}$ lives on $\mathbb{C}^{49}$, the mixture on $\mathbb{C}^7$. When the coupling commutes with $\rho_*^{(1)} \otimes \rho_*^{(2)}$ the composite's attractor is that product, fixed entirely by the parts. What the composite acquires, and when, is [Theorem 9.3](#теорема-93-эмерджентность) [C under (ND)].
@@ -705,9 +711,13 @@ What (HOL) adds is a seven-dimensional description of the composite. The axioms 
 
 ---
 
-If the composite is a holon, it has its own attractor. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise.
+If the composite is a holon, it has its own attractor. But are its **qualitative** properties — purity, reflection, integration — preserved? The next theorem answers: yes, when the parts are weakly coupled and the aggregation is consistent — and not otherwise; Theorem 9.5 proves that weakly coupled holons meet both conditions.
 
-### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [C under (AGG)] {#теорема-92-масштабная-инвариантность}
+### Theorem 9.2 / T-72 (Scale Invariance, CC-6) [T at weak coupling] {#теорема-92-масштабная-инвариантность}
+
+:::tip Status raised 2026-09-25: from "conditional on (AGG)" to [T at weak coupling]
+The theorem is an implication, (AGG) ⇒ bounds, and the implication is proved; what was conditional was its application to holons. [Theorem 9.5](#теорема-95-каноническая-агрегация) proves (AGG) for weakly coupled embodied holons. Part (a) of (AGG) holds for the canonical aggregation $\mathcal{M}_k$, the only permutation-invariant consistent one; part (b) is needed only for the marginals — form (b′) below, since the aggregate depends on nothing else — and holds with $\delta = O(g)$ at the stationary state (Corollary 9.2a), along every trajectory from a compact part of the basin (Theorem 9.5 (f)), and from every initial state with explicit constants under backbone dominance (Theorem 9.5 (e)). At strong coupling the transfer fails: the canonical aggregate of two viable holons can be $I/7$ ([Theorem 9.6](#теорема-96-сильная-связь)).
+:::
 
 :::warning Errata 2026-09-25: status corrected from [T] to [C under (AGG)]
 The earlier statement claimed that **any** CPTP aggregation preserves $P$, $R$, $\Phi$, the Gap profile and the L-level up to $O(\varepsilon_0)$ with $\varepsilon_0 \approx 0.023$. That claim is retracted: its proof did not carry it.
@@ -727,12 +737,12 @@ For a biologist: the same principles of homeostasis can operate at the level of 
 **Connection:** [section–retraction T-58′](/docs/core/structure/dimension-e#теорема-морита-эквивалентность), [frame rigidity](/docs/proofs/categorical/uniqueness-theorem#жёсткость-репера), [threshold robustness T-124d](/docs/proofs/consciousness/conscious-window#t-124d)
 :::
 
-:::tip Statement [C under (AGG)]
+:::tip Statement [T]
 Let $k$ identical holons have the state $\sigma \in \mathcal{D}(\mathbb{C}^7)$, let $\rho_k \in \mathcal{D}(\mathbb{C}^{7^k})$ be the state of the coupled collection, and let the aggregation be a CPTP channel $\Phi_k: \mathcal{D}(\mathbb{C}^{7^k}) \to \mathcal{D}(\mathbb{C}^7)$. Assume
 
-**(AGG)** (a) *consistency*: $\Phi_k(\sigma^{\otimes k}) = \sigma$ — aggregating uncoupled copies returns the constituent (the partial trace and the mean of the single-copy marginals both qualify); (b) *weak coupling*: $d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$.
+**(AGG)** (a) *consistency*: $\Phi_k(\sigma^{\otimes k}) = \sigma$ — aggregating uncoupled copies returns the constituent (the partial trace and the mean of the single-copy marginals both qualify; the mean marginal $\mathcal{M}_k$ is the only permutation-invariant choice, [Theorem 9.5](#теорема-95-каноническая-агрегация) (a)); (b) *weak coupling*: $d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$ — or, for $\Phi_k = \mathcal{M}_k$, only (b′) $\max_i \tfrac12\lVert (\rho_k)_i - \sigma \rVert_1 \leq \delta$ on the single-copy marginals, which (b) implies.
 
-Then the aggregate $\Gamma^{(k)} := \Phi_k(\rho_k)$ satisfies $d_B(\Gamma^{(k)}, \sigma) \leq \delta$ and $\|\Gamma^{(k)} - \sigma\|_F \leq 2\delta$, and, with $\Delta_P := |P(\Gamma^{(k)}) - P(\sigma)|$:
+Then the aggregate $\Gamma^{(k)} := \Phi_k(\rho_k)$ satisfies $d_B(\Gamma^{(k)}, \sigma) \leq \delta$ (under (b)) and $\|\Gamma^{(k)} - \sigma\|_F \leq 2\delta$ (under (b) or (b′)), and, with $\Delta_P := |P(\Gamma^{(k)}) - P(\sigma)|$:
 
 - $\Delta_P \leq 4\delta\sqrt{P(\sigma)} + 4\delta^2$ and $|R(\Gamma^{(k)}) - R(\sigma)| \leq 7\Delta_P$;
 - $|\Phi(\Gamma^{(k)}) - \Phi(\sigma)| \leq 7\Delta_P + 196\,P(\sigma)\,\delta$ — a crude global bound; [T-124d](/docs/proofs/consciousness/conscious-window#t-124d) gives the first-order sensitivity;
@@ -752,7 +762,7 @@ $$
 
 With $\rho = \rho_k$, $\rho' = \sigma^{\otimes k}$ and (AGG a): $d_B(\Gamma^{(k)}, \sigma) \leq d_B(\rho_k, \sigma^{\otimes k}) \leq \delta$. Without (a) the second image is not $\sigma$, and nothing about $\sigma$ follows — this is where the earlier proof broke.
 
-**Step 2 (From Bures to trace and Frobenius norms).** With $d_B^2 = 2(1 - \sqrt{F})$ one has $1 - F = d_B^2 - d_B^4/4 \leq d_B^2$, and the Fuchs–van de Graaf inequality $\tfrac12\|\rho - \rho'\|_1 \leq \sqrt{1 - F}$ (arXiv:quant-ph/9712042) gives $\tfrac12\|\Gamma^{(k)} - \sigma\|_1 \leq \delta$. Since $\|X\|_F \leq \|X\|_1$, the deviation $X := \Gamma^{(k)} - \sigma$ has $\|X\|_F \leq 2\delta$.
+**Step 2 (From Bures to trace and Frobenius norms).** With $d_B^2 = 2(1 - \sqrt{F})$ one has $1 - F = d_B^2 - d_B^4/4 \leq d_B^2$, and the Fuchs–van de Graaf inequality $\tfrac12\|\rho - \rho'\|_1 \leq \sqrt{1 - F}$ (arXiv:quant-ph/9712042) gives $\tfrac12\|\Gamma^{(k)} - \sigma\|_1 \leq \delta$. Under (b′) with $\Phi_k = \mathcal{M}_k$ the same bound follows from the convexity of the trace norm: $\tfrac12\lVert \mathcal{M}_k(\rho_k) - \sigma \rVert_1 \leq \max_i \tfrac12\lVert (\rho_k)_i - \sigma \rVert_1$; and (b) implies (b′), because the partial trace does not increase the trace distance. Since $\|X\|_F \leq \|X\|_1$, the deviation $X := \Gamma^{(k)} - \sigma$ has $\|X\|_F \leq 2\delta$. Steps 3–5 use nothing else.
 
 **Step 3 (Purity and reflection).** $P(\sigma + X) - P(\sigma) = 2\,\mathrm{Tr}(\sigma X) + \mathrm{Tr}(X^2)$, so by Cauchy–Schwarz $\Delta_P \leq 2\|\sigma\|_F\|X\|_F + \|X\|_F^2 \leq 4\delta\sqrt{P(\sigma)} + 4\delta^2$ (Bound 1 of T-124d). For $R = 1/(7P)$: $|\Delta R| = \Delta_P/(7PP') \leq 7\Delta_P$, because $P, P' \geq 1/7$.
 
@@ -768,8 +778,8 @@ Let $k$ identical embodied holons with an anchor outside the null set of [Theore
 
 **What does not need (AGG).** If the aggregate is itself a holon — assumption (HOL) of [Theorem 9.1](#теорема-91-фрактальное-замыкание) — that theorem gives it its own non-trivial attractor, $P(\rho_*^{(k)}) > 1/7$ ([T-96](/docs/core/dynamics/evolution#теорема-нетривиальность-аттрактора) [T]). That statement concerns the aggregate's own dynamics, not how its invariants compare with those of its parts.
 
-:::info Corollary (Fractal structure) [C under (AGG) and (HOL)]
-Scale invariance under (AGG) + fractal closure CC-5 under (HOL) (non-triviality; viability for embodied systems by [T-149](/docs/proofs/consciousness/substrate-closure#t-149)) justify the fractal structure of UHM at every scale at which the aggregate is a holon and the constituents are weakly coupled and aggregated consistently — from sub-cellular holons to metagalactic structures, wherever (HOL) and (AGG) hold. Where the coupling is strong, fractal closure still gives the aggregate, if it is a holon, its own attractor, but its invariants need not resemble those of its parts. (Earlier: "non-triviality [T], viability [T for embodied]" without (HOL); corrected 2026-09-25.)
+:::info Corollary (Fractal structure) [T at weak coupling]
+Scale invariance and fractal closure, both proved for weak coupling through the canonical aggregation ([Theorem 9.5](#теорема-95-каноническая-агрегация)), give UHM a fractal structure at every scale at which the constituents are embodied, viable and weakly coupled, $|g|\,s(H_{\mathrm{int}}) < \varepsilon_V$: the canonical aggregate is viable and its invariants lie within $O(g)$ of a part's. What is inherited is the parts' state, not something new: the canonical aggregate depends only on the marginals. Where the coupling is strong, nothing of the kind need hold — the aggregate of two viable holons can be $I/7$ ([Theorem 9.6](#теорема-96-сильная-связь)); a composite that is assumed to be a holon in the sense of (HOL) still has its own attractor. (Earlier: "non-triviality [T], viability [T for embodied]" without (HOL), corrected 2026-09-25 to "[C under (AGG) and (HOL)]"; raised the same day with Theorem 9.5.)
 :::
 
 ---
@@ -861,6 +871,77 @@ Witness (`test_non_degeneracy_is_generic_and_aggregation_follows_from_weak_coupl
 :::info Connection to Löwer incompleteness
 When $I > 0$ — under the criterion of (iii), not for every coupling — subsystem $\mathbb{H}_1$ cannot reconstruct the joint state from $\rho_1$ alone ([T-55](/docs/core/foundations/consequences#неполнота-ловера) [T]). (Earlier: "since $I > 0$", stated for every interacting pair; corrected 2026-09-25 with the retraction above.)
 :::
+
+#### Theorem 9.5 (Canonical aggregation: viability and invariants pass to the aggregate at weak coupling) [T at weak coupling] {#теорема-95-каноническая-агрегация}
+
+Theorems 9.1 and 9.2 needed two things the corpus did not have: a map from the composite's states on $(\mathbb{C}^7)^{\otimes k}$ to $\mathcal{D}(\mathbb{C}^7)$, and a reason why the image of a *coupled* composite should be a living holon. The theorem below supplies both. The map is not chosen: it is the only one that treats the parts alike and returns a part's state when the parts are uncoupled. That it sends coupled composites to living holons is proved for weak coupling, with an explicit threshold, and Theorem 9.6 shows that the threshold cannot be dropped.
+
+:::note In Plain Terms
+If each of $k$ musicians plays in tune, and they listen to each other only a little, the ensemble — heard as "one musician", by averaging what each plays — is also in tune; how far it can drift is fixed by how strongly they couple, and the listening can only push each musician by that much. If they lock together strongly enough, each musician's own line can dissolve into pure harmony with the others, and the averaged "one musician" is then noise, though the ensemble as a whole is ordered.
+:::
+
+**Setting.** $k$ embodied holons with generators $\mathcal{L}_i[\Gamma] = -i[H_i, \Gamma] + \mathcal{D}_\Omega[\Gamma] + \kappa_i(\Gamma)\,g_V(P)\,(\varphi_i(\Gamma) - \Gamma) + \mu_i(\sigma_i - \Gamma)$, $\mu_i > 0$, any regeneration target $\varphi_i$ and any $\kappa_i \geq 0$, with the gate $g_V(P) = \mathrm{clamp}\bigl((P - 2/7)/(3/7 - 2/7), 0, 1\bigr)$ of [evolution](/docs/core/dynamics/evolution#полное-уравнение-движения), which vanishes for $P \leq 2/7$. The composite on $(\mathbb{C}^7)^{\otimes k}$ carries the canonical extension of Theorem 9.3 and a coupling: $\mathcal{L}^{(k)}[X] = \sum_i \mathcal{M}_i^{(X_i)}$ acting on factor $i$, minus $ig[H_{\mathrm{int}}, X]$, with marginals $X_i = \mathrm{Tr}_{\neq i} X$. Write $s(H) = \lambda_{\max}(H) - \lambda_{\min}(H)$ for the spread of a Hermitian operator, and $\rho_{\mathrm{lin}}^{(i)}$ for the stationary state of the regeneration-free part $\mathcal{L}_i^0 = -i[H_i, \cdot] + \mathcal{D}_\Omega + \mu_i(\sigma_i \mathrm{Tr} - \mathrm{id})$. Call holon $i$ *viable* if every stationary state of $\mathcal{L}_i$ has $P > 2/7$.
+
+:::tip Theorem 9.5 [T at weak coupling]
+**(a) The canonical aggregation [T].** Among all linear maps $A$ from operators on $(\mathbb{C}^7)^{\otimes k}$ to operators on $\mathbb{C}^7$ that are invariant under permutations of the factors and consistent on uncoupled identical copies — $A(\sigma^{\otimes k}) = \sigma$ for every state $\sigma$ — there is exactly one, the mean marginal
+$$
+\mathcal{M}_k(X) = \frac1k \sum_{i=1}^k \mathrm{Tr}_{\neq i}\, X .
+$$
+It is CPTP, $U(7)$-covariant ($\mathcal{M}_k(U^{\otimes k} X U^{\dagger\otimes k}) = U \mathcal{M}_k(X) U^\dagger$, so in particular $G_2$-covariant), and it depends on $X$ only through the marginals.
+
+**(b) Exact marginal equation [T], any $g$.** Along every trajectory of the composite,
+$$
+\frac{d X_i}{dt} = \mathcal{L}_i[X_i] - ig\,\mathrm{Tr}_{\neq i}[H_{\mathrm{int}}, X], \qquad \lVert \mathrm{Tr}_{\neq i}[H_{\mathrm{int}}, X] \rVert_1 \leq s(H_{\mathrm{int}}) .
+$$
+
+**(c) Viability of a part is a threshold on its linear part [T].** Holon $i$ is viable if and only if $P(\rho_{\mathrm{lin}}^{(i)}) > 2/7$. In that case every state $\Gamma$ with $P(\Gamma) \leq 2/7$ has $\lVert \mathcal{L}_i[\Gamma] \rVert_1 \geq \varepsilon_V^{(i)} := \mu_i \bigl(P(\rho_{\mathrm{lin}}^{(i)}) - 2/7\bigr) / \bigl(2\sqrt{P(\rho_{\mathrm{lin}}^{(i)})}\bigr)$. A sufficient condition in terms of the anchor: $\mu_i\,(P(\sigma_i) - 2/7) > 2\sqrt{P(\sigma_i)}\,\lVert -i[H_i, \sigma_i] + \mathcal{D}_\Omega[\sigma_i] \rVert_1$.
+
+**(d) Every stationary composite has living parts [T].** If every part is viable and $|g|\,s(H_{\mathrm{int}}) < \min_i \varepsilon_V^{(i)}$, then every stationary state of the composite — there is at least one — has $P(X_i) > 2/7$ for every $i$. For identical parts and a permutation-symmetric stationary state, $\mathcal{M}_k(X) = X_1$ is viable. Neither (ND) nor (HOL) is used.
+
+**(e) Every trajectory, with explicit constants, under backbone dominance [T].** If the parts are identical and $\mu > L_{\mathcal{R}}$ (the regime of [backbone dominance](/docs/core/dynamics/evolution#теорема-единственность-нетривиального-аттрактора), which gives a unique stationary state $\rho_*$), then for every initial state of the composite and every $t \geq 0$
+$$
+\lVert X_i(t) - \rho_* \rVert_1 \leq e^{-(\mu - L_{\mathcal{R}})t}\,\lVert X_i(0) - \rho_* \rVert_1 + \frac{|g|\,s(H_{\mathrm{int}})}{\mu - L_{\mathcal{R}}},
+$$
+so $\tfrac12\lVert \mathcal{M}_k(X(t)) - \rho_* \rVert_1$ obeys the same bound halved.
+
+**(f) The basin, in general [T].** If the parts are identical and $\rho_*$ is a non-degenerate stationary state of $\mathcal{L}$ whose Jacobian spectrum lies in $\mathrm{Re}\,\lambda < 0$, with basin of attraction $\mathfrak{B}$, then for every compact $K \subset \mathfrak{B}$ there are $g_0, C, T > 0$ such that for $|g| < g_0$ every trajectory of the composite whose initial marginals lie in $K$ satisfies $\lVert X_i(t) - \rho_* \rVert_1 \leq C|g|$ for all $t \geq T$.
+
+**(g) (HOL) up to a forcing of size $|g|\,s(H_{\mathrm{int}})$ [T].** For identical parts, a permutation-invariant $H_{\mathrm{int}}$ and a permutation-invariant initial state, the aggregate $\Gamma(t) = \mathcal{M}_k(X(t))$ equals $X_1(t)$ and obeys $\dot\Gamma = \mathcal{L}[\Gamma] + u(t)$ with $\lVert u(t) \rVert_1 \leq |g|\,s(H_{\mathrm{int}})$: the canonical aggregate is a holon of the parts' own kind, driven by a bounded forcing. For a local coupling $H_A \otimes I + I \otimes H_B$ a product state stays a product and the forcing is the mean-field Hamiltonian term of Theorem 9.3 (ii): there (HOL) holds exactly.
+:::
+
+**Proof.**
+
+**(a)** On states, $A(\sigma^{\otimes k}) = \sigma = \sigma\,(\mathrm{Tr}\,\sigma)^{k-1}$. Both sides are homogeneous polynomials of degree $k$ on the real space of Hermitian matrices that agree on the open cone of positive definite matrices, hence everywhere. Polarisation gives, for Hermitian $a_1, \ldots, a_k$ and their symmetrised product $\mathrm{Sym}(a_1 \otimes \cdots \otimes a_k)$, $A(\mathrm{Sym}(a_1 \otimes \cdots \otimes a_k)) = \tfrac1k \sum_i a_i \prod_{j \neq i} \mathrm{Tr}\,a_j = \mathcal{M}_k(\mathrm{Sym}(a_1 \otimes \cdots \otimes a_k))$. These symmetrised products span the permutation-invariant operators, and both $A$ and $\mathcal{M}_k$ factor through the symmetrisation $X \mapsto \tfrac1{k!}\sum_\pi U_\pi X U_\pi^\dagger$ ($A$ by assumption, $\mathcal{M}_k$ because permuting the factors permutes the marginals). So $A = \mathcal{M}_k$. Partial traces are CPTP and $\mathrm{Tr}_{\neq i}(U^{\otimes k} X U^{\dagger\otimes k}) = U X_i U^\dagger$. Without the permutation invariance there is no uniqueness: each $\mathrm{Tr}_{\neq i}$ alone is consistent.
+
+**(b)** $\mathcal{M}_j^{(X_j)}$ generates a trace-preserving semigroup, so $\mathrm{Tr} \circ \mathcal{M}_j^{(X_j)} = 0$ and the partial trace over factor $j \neq i$ kills the $j$-th term; the $i$-th term commutes with tracing out the other factors and gives $\mathcal{M}_i^{(X_i)}(X_i) = \mathcal{L}_i[X_i]$. For the bound, $[H, X] = [H - cI, X]$ with $c = (\lambda_{\max} + \lambda_{\min})/2$, so $\lVert [H, X] \rVert_1 \leq 2\lVert H - cI \rVert_\infty \lVert X \rVert_1 = s(H)$, and the partial trace does not increase the trace norm.
+
+**(c)** For $P(\Gamma) \leq 2/7$ the gate is closed and $\mathcal{L}_i[\Gamma] = \mathcal{L}_i^0[\Gamma]$. On traceless $Y$ the anchor term reduces to $-\mu_i Y$, and $-i[H_i, \cdot] + \mathcal{D}_\Omega$ generates trace-preserving CP maps, which do not increase the trace norm; so $\lVert e^{t\mathcal{L}_i^0} Y \rVert_1 \leq e^{-\mu_i t}\lVert Y \rVert_1$, $\mathcal{L}_i^0$ is invertible on traceless operators with $\lVert (\mathcal{L}_i^0)^{-1} \rVert_{1 \to 1} \leq 1/\mu_i$, and it has exactly one stationary state $\rho_{\mathrm{lin}}$, the limit of its flow. If $P(\rho_{\mathrm{lin}}) \leq 2/7$, then $\mathcal{L}_i[\rho_{\mathrm{lin}}] = \mathcal{L}_i^0[\rho_{\mathrm{lin}}] = 0$: a stationary state that is not viable. If $P(\rho_{\mathrm{lin}}) > 2/7$ and $P(\Gamma) \leq 2/7$, put $Y = \Gamma - \rho_{\mathrm{lin}}$; then $\lVert \mathcal{L}_i[\Gamma] \rVert_1 = \lVert \mathcal{L}_i^0 Y \rVert_1 \geq \mu_i \lVert Y \rVert_1$ and $P(\rho_{\mathrm{lin}}) - 2/7 \leq P(\rho_{\mathrm{lin}}) - P(\Gamma) = -2\mathrm{Tr}(\rho_{\mathrm{lin}} Y) - \mathrm{Tr}\,Y^2 \leq 2\sqrt{P(\rho_{\mathrm{lin}})}\,\lVert Y \rVert_1$, which is the bound; in particular no stationary state has $P \leq 2/7$. For the sufficient condition: $\mathcal{L}_i^0[\sigma_i] = -i[H_i, \sigma_i] + \mathcal{D}_\Omega[\sigma_i]$, so $\lVert \rho_{\mathrm{lin}} - \sigma_i \rVert_1 \leq \lVert \mathcal{L}_i^0[\sigma_i] \rVert_1/\mu_i$, and the same purity inequality with $\sigma_i$ in place of $\rho_{\mathrm{lin}}$ gives $P(\rho_{\mathrm{lin}}) > 2/7$.
+
+**(d)** A stationary state exists: the composite flow maps the compact convex set of states into itself (frozen, its generator is of GKSL form), so each time-$t$ map has a fixed point (Brouwer), and a limit of such points as $t \to 0$ is stationary. At a stationary state (b) gives $\lVert \mathcal{L}_i[X_i] \rVert_1 \leq |g|\,s(H_{\mathrm{int}}) < \varepsilon_V^{(i)}$, and (c) excludes $P(X_i) \leq 2/7$.
+
+**(e)** Put $Y = X_i - \rho_*$ and split $\mathcal{L} = \mathcal{A} + \mathcal{R}$ with $\mathcal{A} = -i[H, \cdot] + \mathcal{D}_\Omega + \mu(\sigma\,\mathrm{Tr} - \mathrm{id})$ and $\mathcal{R}$ the regenerative term. By (b), $\dot Y = \mathcal{A}Y + (\mathcal{R}(X_i) - \mathcal{R}(\rho_*)) + u$ with $\lVert u \rVert_1 \leq |g|\,s(H_{\mathrm{int}})$, and $\lVert e^{t\mathcal{A}}Y \rVert_1 \leq e^{-\mu t}\lVert Y \rVert_1$ as in (c). Duhamel's formula gives $\lVert Y(t) \rVert_1 \leq e^{-\mu t}\lVert Y(0) \rVert_1 + \int_0^t e^{-\mu(t-s)}\bigl(L_{\mathcal{R}}\lVert Y(s) \rVert_1 + |g|\,s(H_{\mathrm{int}})\bigr)\,ds$, and Gronwall's inequality applied to $e^{\mu t}\lVert Y(t) \rVert_1$ gives the bound. The aggregate is a mean of the marginals, and the trace norm is convex.
+
+**(f)** This is the robustness of an exponentially stable equilibrium under a bounded non-vanishing perturbation (H. K. Khalil, *Nonlinear Systems*, 3rd ed., Prentice Hall 2002, §9.2), applied to the marginal equation (b), whose forcing is bounded by $\varepsilon = |g|\,s(H_{\mathrm{int}})$ whatever the rest of the composite does. In detail: with $\mathcal{J}$ the Jacobian at $\rho_*$ on the 48-dimensional space of traceless Hermitian matrices, solve $\mathcal{J}^{\mathsf T} Q + Q\mathcal{J} = -I$ and put $V(y) = \langle y, Q y \rangle$. Near $\rho_*$ the field is $C^1$ (non-degeneracy keeps $P(\rho_*)$ off the kinks of the gate), so on a ball $\lVert y \rVert \leq r$ one has $\dot V \leq -\tfrac12\lVert y \rVert^2 + 2\lVert Q \rVert\,\lVert y \rVert\,\varepsilon$: a sublevel set $\Omega_c = \{V \leq c\}$ inside the ball is forward invariant once $\varepsilon$ is small, and every trajectory in it ends in $\lVert y \rVert \leq 4\lVert Q \rVert\,\varepsilon$ (all norms on the finite-dimensional space are equivalent, which gives $C$). The unperturbed flow carries the compact $K$ into $\Omega_{c/2}$ by a common time $T$ (each point enters the open interior at some time, and by continuity so does a neighbourhood; finitely many neighbourhoods cover $K$; $\Omega_{c/2}$ is forward invariant). The field is Lipschitz on the compact state space with some constant $\Lambda$, so up to time $T$ the perturbed marginal stays within $\varepsilon T e^{\Lambda T}$ of the unperturbed one and is in $\Omega_c$ at time $T$ for $\varepsilon$ small.
+
+**(g)** The canonical extension and a permutation-invariant $H_{\mathrm{int}}$ commute with the permutations of the factors, so a permutation-invariant initial state stays invariant, all marginals coincide, and $\mathcal{M}_k(X) = X_1$; (b) is the equation. For a local coupling the commutator with a product is local, the flow keeps products, and the partial trace of the coupling term is $-ig[H_1^{\mathrm{mf}}, X_1]$. $\blacksquare$
+
+**Numerical check** (`test_viability_passes_to_the_aggregate_only_at_weak_coupling`, `test_canonical_aggregation_is_unique_and_the_octonion_product_is_dead`). (a): for $k = 2$ and dimension 3 the linear conditions have full rank, 729 of 729 unknowns, and the solution equals the mean marginal to $10^{-13}$; without permutation invariance 324 free parameters remain. The embodied holon of Theorem 9.3 ($\mu = 1$, anchor of pure weight $0.8$) has $P(\rho_*) = 0.3115$ and $P(\rho_{\mathrm{lin}}) = 0.3223$, so $\varepsilon_V = 0.03225$. Coupled to a copy through $H_{\mathrm{int}}$ diagonal in a basis of maximally entangled vectors (spread $s = 1.8246$), (d) guarantees living parts for $g \leq 0.01768$; the marginal identity (b) holds at the stationary state to $10^{-15}$. From a maximally entangled pure start and from a product start the marginals of the composite with a generic coupling end at distance $0.0643\,g$ from $\rho_*$ at $g = 0.01$ and $0.02$ (f). Under backbone dominance ($\kappa = 0.1$, $\mu = 3.5$, $L_{\mathcal{R}} \leq 29\kappa$) the bound (e) holds at every sampled time from a maximally entangled start; the measured distance is at most $4.3\%$ of it.
+
+**What this changes.** Theorem 9.1 wanted "the composite is a holon" and Theorem 9.2 wanted "a consistent aggregation and weak coupling". Part (a) fixes the aggregation; parts (d)–(f) prove that the aggregate of weakly coupled viable holons is viable and within $O(g)$ of a part's state, at every stationary state, along every trajectory from a compact part of the basin, and from every initial state with explicit constants under backbone dominance; part (g) says in what sense the aggregate *is* a holon. Two features limit what can be read from it. The canonical aggregate sees only the marginals, so it is blind to the correlations that Theorem 9.3 is about: it cannot certify anything the parts do not already have ([collective consciousness](/docs/consciousness/subjects/collective-consciousness) needs a different aggregation, and the theory does not fix one). And the weak-coupling condition cannot be dropped:
+
+#### Theorem 9.6 (Strong coupling kills every marginal aggregate; the octonion product kills every uncoupled pair) [T] {#теорема-96-сильная-связь}
+
+:::tip Theorem 9.6 [T]
+**(a)** Let $\{\Phi_n\}_{n=1}^{49}$ be an orthonormal basis of $\mathbb{C}^7 \otimes \mathbb{C}^7$ of maximally entangled vectors (for instance $\Phi_{mn} = 7^{-1/2}\sum_j \omega^{jn}\,|j\rangle|j + m\rangle$, $\omega = e^{2\pi i/7}$), and $H_{\mathrm{int}} = \sum_n E_n |\Phi_n\rangle\langle\Phi_n|$ with pairwise distinct $E_n$. For two holons of the form of Theorem 9.5, every stationary state $X(g)$ has marginals $X_i(g) = I/7 + O(1/g)$. Hence $P(X_i(g)) \to 1/7$, and every aggregation that factors through the marginals — the canonical $\mathcal{M}_2$ among them — gives a dead aggregate at strong coupling, although each part alone is viable.
+
+**(b)** Let $V: \mathbb{C}^7 \otimes \mathbb{C}^7 \to \mathbb{C}^7$, $V(e_i \otimes e_j) = e_i \times e_j$, be the octonion (Fano) product. Then $VV^\dagger = 6I$; $W = V/\sqrt6$ is a co-isometry, $\Pi = W^\dagger W$ a rank-7 projection inside the antisymmetric subspace, and $\mathcal{E}_\times(X) = WXW^\dagger + \mathrm{Tr}((I - \Pi)X)\,I/7$ is a $G_2$-covariant CPTP map. It is not consistent, and it kills uncoupled parts: $P(\mathcal{E}_\times(X)) \leq 5/21 < 2/7$ for every separable $X$, and $P(\mathcal{E}_\times(\sigma \otimes \sigma)) \leq 1/7 + \tfrac67\bigl(\tfrac{1 - P(\sigma)}{2}\bigr)^2 < 0.2523$ for every viable $\sigma$.
+:::
+
+*Proof.* (a) Write the composite generator as $\mathcal{L}_0 + g\mathcal{B}$ with $\mathcal{B} = -i[H_{\mathrm{int}}, \cdot]$. $\mathcal{L}_0$ is continuous on the compact set of states, so bounded there by some $c$, and at a stationary state $\lVert \mathcal{B}X \rVert = \lVert \mathcal{L}_0[X] \rVert/g \leq c/g$. $\mathcal{B}$ is anti-Hermitian for the Hilbert–Schmidt product; its kernel is spanned by the $|\Phi_n\rangle\langle\Phi_n|$, and on the orthogonal complement (the off-diagonal elements in the $\Phi$ basis) it multiplies by $-i(E_n - E_m)$, so $\lVert \mathcal{B}Y \rVert_2 \geq \min_{n \neq m}|E_n - E_m|\,\lVert Y \rVert_2$ there. Hence $X = \sum_n p_n |\Phi_n\rangle\langle\Phi_n| + O(1/g)$, and $\mathrm{Tr}_2|\Phi_n\rangle\langle\Phi_n| = \mathrm{Tr}_1|\Phi_n\rangle\langle\Phi_n| = I/7$ for a maximally entangled vector. (b) $VV^\dagger = 6I$ because each index $k$ lies on three Fano lines, each giving two ordered pairs; $V$ is antisymmetric, $VS = -V$ for the swap $S$, so $\Pi \leq (I - S)/2$; and $V(ga \otimes gb) = gV(a \otimes b)$ for $g \in G_2$. Put $w = \mathrm{Tr}(\Pi X)$: then $\mathcal{E}_\times(X) = A + (1 - w)I/7$ with $A \geq 0$, $\mathrm{Tr}A = w$, and $P = \mathrm{Tr}A^2 + 2w(1 - w)/7 + (1 - w)^2/7 \leq 1/7 + 6w^2/7$. For $X = \sigma \otimes \sigma$, $w \leq \mathrm{Tr}\bigl(\tfrac{I - S}{2}\sigma \otimes \sigma\bigr) = (1 - P(\sigma))/2 < 5/14$ when $P(\sigma) > 2/7$. For a pure product, $w = \lVert a \times b \rVert^2/6$; with $a = x + iy$ ($x, y$ real) the map $b \mapsto a \times b$ has operator norm at most $|x| + |y| \leq \sqrt2\,\lVert a \rVert$, because $b \mapsto x \times b$ has norm $|x|$; so $w \leq 1/3$, by convexity for every separable $X$, and $P \leq 1/7 + 6/63 = 5/21$. $\blacksquare$
+
+**Numerical check.** Two copies of the holon above, coupled through the Bell-basis $H_{\mathrm{int}}$ (energies uniform in $[-1, 1]$): the stationary marginals have $P = 0.3115$ at $g = 0.0177$ (the guaranteed threshold), $0.3114$ at $0.1$, $0.3102$ at $0.3$, $0.2970$ at $1$ — still viable far beyond the threshold, which is conservative — then $0.2227$ at $3$ and $0.1559$ at $10$ (canonical aggregate $0.1548$), while the purity of the joint state on $\mathbb{C}^{49}$ stays at $0.03$–$0.10$. For (b): the bound $\lVert a \times b \rVert^2 \leq 2$ is attained at $a = (e_1 + ie_2)/\sqrt2$, $b = (e_3 - ie_6)/\sqrt2$; over random pure products the aggregate never exceeds $P = 0.207$, and over identical viable pairs $0.147$.
+
+**Routes that fail.** The $G_2$-covariant octonion product (b) is the aggregation the Fano structure suggests, and it is dead on every uncoupled pair. The Petz recovery map of the partial trace, with reference $\sigma \otimes \sigma$, runs the other way, from $\mathcal{D}(\mathbb{C}^7)$ to $\mathcal{D}(\mathbb{C}^{49})$, and supplies no aggregation. The self-model of the composite acts on $\mathbb{C}^{49}$ and does not reduce the dimension. An *exact* (HOL) — an autonomous generator on $\mathcal{D}(\mathbb{C}^7)$ satisfying A1–A5 that the aggregate follows — is not available in general: the forcing in (g) depends on the correlations, which the aggregate does not see; it is exact for local couplings and holds up to $|g|\,s(H_{\mathrm{int}})$ in general.
 
 ---
 
@@ -1116,7 +1197,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **No-Zombie (Theorem 8.1 and corollaries):** The culmination of the theory. A viable open system *must* have non-trivial E-coherence. Experience is not an epiphenomenon but a causally necessary element of dynamics. Philosophical zombies are mathematically impossible.
 
-**Composition and emergence (Theorems 9.x):** CC scales where a union of holons is again a holon — fractal closure gives such a union its own non-trivial attractor under that assumption, (HOL), which it does not derive (corrected 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance, [C under (AGG)]). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [T] for almost every anchor, Theorem 9.4; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
+**Composition and emergence (Theorems 9.x):** CC scales wherever the parts are weakly coupled: the canonical aggregate — the mean marginal, the only permutation-invariant aggregation that returns a part on uncoupled copies — of viable embodied holons is viable, and its invariants lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5; earlier conditional on the assumptions (HOL) and (AGG), raised 2026-09-25). At strong coupling this fails: the aggregate of two viable holons can be $I/7$ (Theorem 9.6). The whole carries information that its parts do not ($I > 0$) when the coupling has a correlating part at the parts' steady states — not for every coupling (Theorem 9.3, [T] for almost every anchor, Theorem 9.4; the earlier unconditional "irreducible emergence" [T] is retracted, 2026-09-25).
 
 **Diagnostics (Theorem 10.1):** All viability conditions are equivalent to one: $\|\sigma_{\mathrm{sys}}\|_\infty < 1$. The stress tensor is a universal monitoring tool.
 
@@ -1124,7 +1205,7 @@ Let us retrace the route we have taken — but now from a bird's-eye view.
 
 **Attractors and structure (T-96, T-98, T-77, T-82, etc.):** Every system evolves toward a non-trivial equilibrium. The balance between dissipation and regeneration determines "health". The Fano structure is unique — CC has no alternatives. Full formulations and proofs — in the [summary table](#теоремы-аттракторов).
 
-Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption (fractal closure, Theorem 9.1, needs (HOL); scale invariance, Theorem 9.2, needs (AGG); emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor). Not a single link can be removed without breaking the chain.
+Together these theorems form a **closed deductive system**: all results — from the existence of dynamics to the impossibility of zombies and the emergence of consciousness — follow from five axioms, except where a result names an additional assumption or a regime (fractal closure and scale invariance, Theorems 9.1–9.2, hold at weak coupling by Theorem 9.5 — their earlier assumptions (HOL) and (AGG) are needed only beyond it, where Theorem 9.6 shows the transfer can fail; emergence, Theorem 9.3, needs (ND) for its weak-coupling criterion, and Theorem 9.4 proves (ND) for almost every anchor). Not a single link can be removed without breaking the chain.
 
 ---
 
@@ -1142,8 +1223,11 @@ graph TD
     T81 --> C811["Corollary: Non-epiphenomenalism"]
     T81 --> C812["Corollary: Non-zombie"]
     T81P --> C813["Corollary: Coh min"]
-    T81 --> T91["Theorem 9.1: Composition [C]"]
-    T91 --> T92["Theorem 9.2: Invariance [C]"]
+    T81 --> T91["Theorem 9.1: Composition [T at weak coupling]"]
+    T91 --> T92["Theorem 9.2: Invariance [T at weak coupling]"]
+    T95["Theorem 9.5: Canonical aggregation [T]"] --> T91
+    T95 --> T92
+    T95 --> T96x["Theorem 9.6: Strong coupling [T]"]
     T91 --> T93x["Theorem 9.3: Emergence [C]"]
     T72 --> T101["Theorem 10.1: Equivalence [T]"]
     T101 --> T111["Theorem 11.1: Enc [T]"]
@@ -1163,7 +1247,8 @@ graph TD
     T96 --> T91
 
     T113 --> T107["T-107: Enc capacity [T]"]
-    T111 --> T108["T-108: Compositionality [T]+[C]"]
+    T111 --> T108["T-108: Compositionality [T]"]
+    T95 --> T108
 
     style LU fill:#e1f5fe
     style T113 fill:#d4edda
@@ -1191,7 +1276,7 @@ Let us summarise. In this chapter we have traversed the full path from basic exi
 
 3. **Zombies are impossible** (Theorem 8.1 [T]): a viable open system must have $\mathrm{Coh}_E > 1/7$. E-coherence causally influences dynamics — epiphenomenalism is excluded (Corollary 8.1.1 [T]).
 
-4. **Composition works** (Theorems 9.1–9.3) where the union of viable holons is itself a holon: fractal closure then gives it a non-trivial attractor, and viability for embodied systems (T-149) — [C at (HOL)]; that the union is a holon is assumed, not derived (the earlier "the union of viable holons yields a holon (fractal closure [T] for embodied systems)" is retracted, 2026-09-25). Structural invariants are preserved when the parts are weakly coupled (scale invariance [C under (AGG)]). The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
+4. **Composition works at weak coupling** (Theorems 9.1–9.6): the canonical aggregate of weakly coupled viable embodied holons — the mean marginal, which is unique — is viable, and its purity, reflection, integration and Gap profile lie within $O(g)$ of a part's (fractal closure and scale invariance, [T at weak coupling], Theorem 9.5); the threshold on the coupling is explicit, and it cannot be dropped — at strong coupling the aggregate of two viable holons can be $I/7$ (Theorem 9.6). (Earlier, 2026-09-25: "[C at (HOL)]" and "[C under (AGG)]"; before that, "the union of viable holons yields a holon (fractal closure [T] for embodied systems)", retracted.) The whole is irreducible to the parts when the coupling correlates them — which not every coupling does (emergence, Theorem 9.3 [T] for almost every anchor; the earlier unconditional [T] is retracted, 2026-09-25).
 
 5. **A unified health criterion** (Theorem 10.1 [T]): $\Gamma \in \mathcal{V}_{\mathrm{full}} \Leftrightarrow \|\sigma_{\mathrm{sys}}(\Gamma)\|_\infty < 1$ — the system is alive if and only if none of the seven stresses has reached unity.
 

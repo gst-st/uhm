@@ -2300,7 +2300,7 @@ A bipartite interaction $H_{AB}$ encoded on the $N$ qubits of the screen; separa
 | Aspect | Minimal physicalism, quantum FEP | CC / UHM |
 |---|---|---|
 | Description of the substrate | Quantum information, any dimension | $\Gamma \in \mathcal D(\mathbb C^7)$ |
-| Scale | Scale-free by construction, from molecules to ecosystems | [Scale invariance CC-6](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) (registry row T-72, [C] under assumption (AGG)) |
+| Scale | Scale-free by construction, from molecules to ecosystems | [Scale invariance CC-6](/docs/applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) (registry row T-72, [T at weak coupling] through the canonical aggregation, Theorem 9.5) |
 | Boundary | Holographic screen as Markov blanket | Holon boundary, dimension $A$ (conceptual, §3) |
 | Free-energy principle | Quantum formulation (2021/2022) | ~~Classical FEP as a limit of UHM's variational $\varphi$~~ — retracted 2026-09-25 ([FEP derivation](/docs/proofs/dynamics/fep-derivation)): the functional is a cross-entropy and $\varphi$ is not its minimiser |
 | Criterion of consciousness | None; awareness graded by the available QRFs | $\mathrm{Cons}(S)$: four thresholds |
@@ -2310,7 +2310,7 @@ A bipartite interaction $H_{AB}$ encoded on the $N$ qubits of the screen; separa
 
 :::warning Two UHM claims with an earlier external version
 1. **Quantum generalisation of the FEP.** The [FEP derivation page](/docs/proofs/dynamics/fep-derivation) (§6.3 and Corollary 7.1) presents "UHM generalizes FEP to the quantum case" as a UHM result and says that the FEP works "only with classical distributions". A quantum-information formulation of the FEP, co-authored by the FEP's originator, was posted in December 2021 and published in 2022 (Fields, Friston, Glazebrook and Levin). Quantising the FEP is therefore not new with UHM. What was UHM's own — its particular functional ($S_{vN} + D_{KL}$ with the self-model $\varphi$) and the claim that the classical FEP is its limit — was retracted on that page on 2026-09-25 (Theorems 3.1, 4.2 (iii)–(iv), 4.3 and Corollaries 7.1–7.2): the functional is a cross-entropy, minimised by the projection onto the top eigenvector of $\Gamma$ rather than by $\varphi$.
-2. **A scale-free, quantum-informational account of cognition and consciousness.** A framework that applies "in the same form" from molecules to ecosystems was published in 2021. UHM's CC-6 states something narrower and different — a bounded change of $P$, $R$ and $\Phi$ under aggregation, conditional on assumption (AGG) (T-72 [C]) — but the idea of a scale-free quantum-information substrate for consciousness is not a UHM novelty.
+2. **A scale-free, quantum-informational account of cognition and consciousness.** A framework that applies "in the same form" from molecules to ecosystems was published in 2021. UHM's CC-6 states something narrower and different — a bounded change of $P$, $R$ and $\Phi$ under the canonical aggregation at weak coupling (T-72 [T], raised 2026-09-25 from conditional on assumption (AGG)) — but the idea of a scale-free quantum-information substrate for consciousness is not a UHM novelty.
 :::
 
 ### What CC borrows {#minimal-physicalism-borrows}
@@ -2319,7 +2319,7 @@ A bipartite interaction $H_{AB}$ encoded on the $N$ qubits of the screen; separa
 
 ### What CC does better {#minimal-physicalism-better}
 
-- UHM states quantitative claims where this programme stays qualitative. CC-6 (registry row T-72, corrected on 2026-09-25 to [C] under assumption (AGG)) bounds the change of $P$, $R$ and $\Phi$ under aggregation by $O(\delta)$ when the aggregation returns the constituent on uncoupled copies and the coupling $\delta$ is weak. The earlier unconditional bound $O(\varepsilon_0)$ for any CPTP aggregation is retracted there — the completely depolarising channel is CPTP and sends every $\Gamma$ to $I/7$ — so the advantage is conditional on (AGG).
+- UHM states quantitative claims where this programme stays qualitative. CC-6 (registry row T-72, [T at weak coupling] since 2026-09-25, earlier the same day conditional on assumption (AGG)) bounds the change of $P$, $R$ and $\Phi$ under the canonical aggregation — the mean of the marginals, the only permutation-invariant one consistent on uncoupled copies — by $O(g)$ when the coupling $g$ is weak (Theorem 9.5). The earlier unconditional bound $O(\varepsilon_0)$ for any CPTP aggregation is retracted there — the completely depolarising channel is CPTP and sends every $\Gamma$ to $I/7$ — and at strong coupling the bound fails (Theorem 9.6), so the advantage holds at weak coupling.
 - UHM has explicit thresholds of consciousness; the programme has none — which is also why it cannot be caught out by them.
 
 ### Honest assessment: what the theory does better than CC {#minimal-physicalism-honest}
@@ -2615,7 +2615,7 @@ Each arrow is a projection: the theory takes **part** of the CC formalism and ig
 | 36 | Projective Wave Theory (PWT) | Worden | 2024/2026 | Wave $\psi$ with projective $PGL(4,\mathbb{R})$ action | None (binary: wave present/absent) | Coherences $\gamma_{ij}$ in $\{A,S,D\}$, $\Sigma^3$ (T-119) | Projection / candidate neural implementation |
 | 37 | Category theory of qualia | Tsuchiya, Taguchi, Saigo, Phillips | 2016/2021/2022 | Category of experiences; similarity as arrows | None (structure, not magnitude) | Yoneda identity of qualia, $d_{FS}$ geometry | **Precedent** (Yoneda) / conjectural functor |
 | 38 | Formal IIT; process theories | Kleiner, Tull; Signorelli, Wang, Coecke; Prentner | 2019–2024 | Map from systems into experience spaces | Generalised $\Phi$ | Functor $F$ into $\mathbf{Exp}$; $\Phi(\Gamma)$ | **Precedent** (form of the bridge) / projection |
-| 39 | Minimal physicalism; quantum FEP | Fields, Glazebrook, Levin (and Friston) | 2021/2022 | Holographic screen between quantum systems | None (graded by reference frames) | CC-6 scale invariance ([C] under (AGG)); FEP limit (retracted) | **Precedent** (quantum FEP) / projection |
+| 39 | Minimal physicalism; quantum FEP | Fields, Glazebrook, Levin (and Friston) | 2021/2022 | Holographic screen between quantum systems | None (graded by reference frames) | CC-6 scale invariance ([T at weak coupling]); FEP limit (retracted) | **Precedent** (quantum FEP) / projection |
 | 40 | Perceptronium | Tegmark | 2014/2015 | $\rho$ and $H$ with a tensor factorisation | Integrated information across the "cruelest cut" | $\Phi(\Gamma)$ — a different quantity | Different in kind |
 | 41 | Quantum-information panpsychism | D'Ariano, Faggin | 2020/2022/2024 | Pure ("ontic") quantum state | None (panpsychist) | Qualia as rays; conflicts on purity and on quantumness | **Conflict** |
 | 42 | Observer theory | Wolfram | 2021/2023 | Computationally bounded observer | None | Observer structure, emergent time | Conceptual |
