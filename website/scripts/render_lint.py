@@ -106,6 +106,41 @@ def visible(html: str) -> str:
 FENCE = re.compile(r"^(:{3,})(\w*)")
 
 
+RU_DOCS = ROOT / "i18n" / "ru" / "docusaurus-plugin-content-docs" / "current"
+INLINE_MATH = re.compile(r"(?<![\\$])\$(?!\$)(.+?)(?<![\\$])\$(?!\$)")
+
+
+def pipe_in_table_math(roots):
+    """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вертикальная черта внутри `$…$` в строке таблицы.
+
+    Таблица GFM делит строку на ячейки РАНЬШЕ, чем разбирается формула: модуль
+    `$|\\mathrm{QR}(7)|$` в строке реестра разрезает ячейку, доллары расходятся
+    по разным ячейкам, и хвост строки печатается формулой — сборка успешна.
+    25.09.2026 так дважды уходили в TeX строки реестра (T-265 и T-38b, по 29 и 2
+    невыведенных команды на локаль), и оба раза это видела лишь сборка.
+    Модуль в таблице пишется `\\lvert…\\rvert`. Проверяются обе локали; строки
+    внутри блоков кода и формульных блоков `$$` таблицей не считаются.
+    """
+    bad = []
+    for root in roots:
+        for f in sorted(root.rglob("*.md*")):
+            code = display = False
+            for i, line in enumerate(f.read_text(encoding="utf-8").split("\n"), 1):
+                s = line.strip()
+                if s.startswith("```"):
+                    code = not code
+                    continue
+                if not code and s == "$$":
+                    display = not display
+                    continue
+                if code or display or not s.startswith("|"):
+                    continue
+                for m in INLINE_MATH.finditer(line):
+                    if re.search(r"(?<!\\)\|", m.group(1)):
+                        bad.append((f, i, m.group(1)[:60]))
+    return bad
+
+
 def fence_nesting(docs: pathlib.Path):
     """ПРЕДПОЛЁТ ПО ИСХОДНИКУ: вложенная врезка тем же числом двоеточий.
 
@@ -154,6 +189,13 @@ def main() -> int:
         print(f"  {f.relative_to(ROOT)}:{i}: {why}")
     if nesting:
         print("  правило: внешняя врезка — больше двоеточий, чем внутренняя; иначе фенс уходит в текст")
+        return 1
+    pipes = pipe_in_table_math((DOCS, RU_DOCS))
+    print(f"черта внутри формулы в строке таблицы (по исходнику, обе локали): нарушений {len(pipes)}")
+    for f, i, body in pipes[:10]:
+        print(f"  {f.relative_to(ROOT)}:{i}: ${body}$")
+    if pipes:
+        print("  правило: модуль в таблице — \\lvert…\\rvert; черта делит ячейку раньше формулы")
         return 1
     if not BUILD.exists():
         print("СБОРКИ НЕТ: каталог build/docs отсутствует")
