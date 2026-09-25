@@ -375,7 +375,9 @@ Let a self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\al
 
 What does fix the anchor is the frame group read at the level where it is compatible with life.
 
-:::tip Theorem T-334 (The collineation anchor, derived up to gauge) [T] {#t-334}
+<span id="t-334"></span>
+
+:::tip Theorem T-334 (The collineation anchor, derived up to gauge) [T]
 Let the self-model have the replacement form $\varphi(\Gamma) = k\,\mathcal{P}_\alpha(\Gamma) + R\,\rho_a$ with a $\Gamma$-independent anchor, and let the isolated holon evolve by the gated dynamics with the Fano dissipator ([evolution](/docs/core/dynamics/evolution#теорема-живой-аттрактор-в-окне)); $c = (1 - \alpha)/3$.
 
 1. **Frame covariance and life.** $\varphi$ is $\Gamma_{\mathrm{oct}}$-covariant, or $\mathcal{P}_\alpha \circ \varphi$ is ($\alpha \lt 1$), only for $\rho_a = I/7$, which is dead. The atomic reading $\mathcal{P}_{\mathrm{base}} \circ \varphi$ is $\Gamma_{\mathrm{oct}}$-covariant if and only if $\mathrm{diag}\,\rho_a = I/7$; the stationary diagonal at $H = 0$ then is $I/7$ as well, so $\sigma_k = 0$ on every axis.
