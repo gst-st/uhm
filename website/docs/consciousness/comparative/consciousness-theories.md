@@ -526,7 +526,7 @@ Mapping of the five theses:
 |---|---|---|
 | FPR | **forced** | [T-186](/docs/proofs/categorical/cohesive-closure) (Cohesive Closure): $F \cong \&\|_\mathcal{D}$ |
 | NS | **conventional** | [T-215](/docs/proofs/categorical/fundamental-closures#t-215): choice $\iota_\mathrm{min}$ vs $\iota_\mathrm{max}$ |
-| OW | **derived, unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
+| OW | **derived at T-120 [C], unique** | [T-120](/docs/proofs/physics/emergent-manifold) + [T-173](/docs/proofs/categorical/uniqueness-theorem) |
 | NF | **definitional** | [T-211](/docs/proofs/categorical/fundamental-closures#t-211): Giraud axioms, descent |
 | NR | **replaced by NR$_\text{site}$** | Facts are ∞-sheaf sections indexed by the internal site $\mathcal C_7 \in \mathfrak{T}$ |
 
@@ -1085,7 +1085,7 @@ Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exp
 - Temporal structure: spectral gap $\Lambda$ defines timescales
 
 ### What CC does better
-- Derivation of spacetime from first principles ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- Derivation of spacetime from first principles, conditional on an aperiodic clock and the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 - Formal thresholds instead of correlation measures
 - Unified dynamics (Lindblad + $\mathcal{R}$) instead of a set of metrics
 
@@ -1267,7 +1267,7 @@ Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{I
 |--------|-----|-----|
 | Central object | Operational modules (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
 | Connectivity | Operational synchrony OS | Coherences $\gamma_{ij}$ |
-| Space-time | BOST (operational) | Emergent $M^4$ [T] (T-120) |
+| Space-time | BOST (operational) | Emergent $M^4$ [C] (T-120: an aperiodic clock, the open reconstruction axioms of T-119) |
 | Hierarchy | Simple → Complex OM | L0 → L4 |
 
 ### What CC borrows
@@ -2115,7 +2115,7 @@ PWT's mathematical ingredient is the action of the projective group $PGL(4,\math
 | Physical substrate | Thalamus / insect central body | Substrate-independent (categorical) |
 | Consciousness threshold | None | $P > 2/7$, $R \geq 1/3$, $\Phi \geq 1$, $D_{\mathrm{diff}} \geq 2$ (T-160, T-40b, T-129, T-151 [T]) |
 | Numerical predictions | None | 23 predictions with falsification criteria |
-| Derivation of physics | None | GR + QM + Standard Model from $\Gamma$ (T-117–T-121, T-186 [H]) |
+| Derivation of physics | None | GR on an emergent $M^4$ (T-117–T-121, [C] beyond T-117); quantum mechanics postulated, not derived ([QM reduction](/docs/physics/quantum-mechanics/qm-reduction)); Standard-Model colour from $G_2$ [T], electroweak [C at (FE)], finite space imported from Connes (T-186 [H]) |
 | Group structure | $PGL(4,\mathbb{R})$ (projective) | $G_2 = \mathrm{Aut}(\mathbb{O})$ (exceptional, finite-dim) |
 | Falsification | Wave not found in brain | $\beta \neq 1/4$; zombie at $N < 7$; $\mathrm{SAD} \geq 4$; etc. |
 | Scope relative to UHM | Candidate neural *implementation* of the coarse-grained geometric sector $\{A,S,D\}$ of $\Gamma$ | Foundational theory of which PWT may be a brain-level projection |

@@ -88,7 +88,7 @@ The Gap functional integral $Z_N$ is finite for any $N$ (compactness of $(S^1)^{
 :::
 
 :::note Separation of two tasks
-Derivation of the manifold $M^4$ from the categorical structure — **[T]** ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)): commutativity of the macro-algebra + Gelfand–Connes reconstruction. Non-perturbative continuum limit of the partition function $\lim_{N\to\infty} Z_N$ — a separate task, remaining **[P]** (§7 below).
+Derivation of the manifold $M^4$ from the categorical structure — **[C]** ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек), at an aperiodic clock and the open reconstruction axioms of T-119): commutativity of the macro-algebra + Gelfand–Connes reconstruction. (An earlier version marked it [T]; lowered 2026-09-25.) Non-perturbative continuum limit of the partition function $\lim_{N\to\infty} Z_N$ — a separate task, remaining **[P]** (§7 below).
 :::
 
 ### Equivalence with Quantum Gravity
@@ -96,7 +96,7 @@ Derivation of the manifold $M^4$ from the categorical structure — **[T]** ([T-
 #### Theorem (Full spectral action of UHM) [T] {#теорема-полное-спектральное-действие}
 
 ::::tip Theorem 2.2 (Low-energy limit → Einstein–Hilbert action) [T]
-**Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), satisfies Connes' axioms for spectral geometry. The manifold $M^4$ is **derived** from the categorical structure [T] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)). The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
+**Status [T]:** The full spectral triple $(A, H, D) = (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4, S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})$, where $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is the finite triple from [T-53 [T]](/docs/core/foundations/spacetime#теорема-спектральная-тройка), satisfies Connes' axioms for spectral geometry. The manifold $M^4$ is assembled from the categorical structure only at T-120 [C] ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек): an aperiodic clock and the open reconstruction axioms of T-119); the Einstein–Hilbert term below holds on the product with any four-dimensional base. The spectral action $S = \mathrm{Tr}(f(D_A/\Lambda)) + \frac{1}{2}\langle J\psi, D_A\psi\rangle$ reproduces the Einstein–Hilbert action + Standard Model.
 
 :::warning Honest status of the Standard-Model part (2026-09-25)
 The Einstein–Hilbert term is not affected: it comes from the heat-kernel coefficient $a_2$ and sees the internal space only through $\mathrm{Tr}(I_{H_{\text{int}}}) = 7$ (Step 3). The words "+ Standard Model" are weaker than the [T] above, for three reasons.
@@ -300,7 +300,7 @@ $$
 
 Newton's constant: $G_N = \frac{3\pi}{7 f_2 \Lambda^2}$, where the moment $a_2 = \mathrm{Tr}(D_{\text{int}}^{-2})$ is computed from the spectrum of the internal Dirac operator [T].
 
-**(b) Lovelock theorem (additional argument).** In 4D the unique covariant, metric, quasi-linear-in-second-derivatives action is the Einstein–Hilbert action with $\Lambda$-term [T as standard theorem]. Applicability to the emergent metric from coherences — **[C under T-120]**: T-120 [T] derives $M^4$ as a smooth 4-manifold with diffeoinvariance and metric tensor, which is precisely the condition of the Lovelock theorem.
+**(b) Lovelock theorem (additional argument).** In 4D the unique covariant, metric, quasi-linear-in-second-derivatives action is the Einstein–Hilbert action with $\Lambda$-term [T as standard theorem]. Applicability to the emergent metric from coherences — **[C under T-120]**: T-120 [C] assembles $M^4$ as a smooth 4-manifold with diffeoinvariance and metric tensor — at an aperiodic clock and the open reconstruction axioms of T-119 — which is precisely the condition of the Lovelock theorem.
 
 **Summary:** The spectral argument is **unconditional** (finite spectral triple T-53 [T]).
 

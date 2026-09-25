@@ -49,7 +49,7 @@ UHM generates the following commutative diagram of categories:
     DensityMat ────────────────▶ ClassMech
                     ℏ→0
        │
-       │ π_Space [Т] (T-119, T-120)
+       │ π_Space [C] (T-119, T-120)
        ▼
     Riem (M⁴ = ℝ × Σ³)
 ```
@@ -64,7 +64,7 @@ where:
 - $\mathbf{QM}$ — category of quantum-mechanical systems
 - $\mathbf{DensityMat}$ — category of [density matrices](/docs/core/dynamics/coherence-matrix)
 - $\mathbf{ClassMech}$ — category of classical mechanical systems
-- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ derived, T-120 [T])
+- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ assembled at T-120 [C]: an aperiodic clock and the open reconstruction axioms of T-119)
 
 ### 1.2 Forgetful Functor
 
@@ -353,12 +353,12 @@ where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L
 
 ### 4.4 Emergent Dimensionality
 
-**[T] Theorem (Dimension 3+1, T-119 + T-120).**
+**[C] Theorem (Dimension 3+1, T-119 + T-120).**
 
-The dimension of macroscopic space is **derived**:
-- $\dim(\Sigma^3) = 3$ — from the spectral dimension of the $\{A,S,D\}$-sector (T-119 [C])
-- Lorentzian signature $(+,-,-,-)$ — $(1,3)$-split [T] (PW time + $S^3$); Lorentzian sign [T at reflection positivity] (bounded-below PW generator / Osterwalder–Schrader; KO-dim 6 fixes the grading, not the signature; Krein route) (T-53 [T]+[T at r.p.])
-- Product $M^4 = \mathbb{R} \times \Sigma^3$ — from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])
+The dimension of macroscopic space is derived under named conditions (the heading read [T] until 2026-09-25):
+- $\dim(\Sigma^3) = 3$ — from the rank count of T-119, Step 2c′ (T-119 [C]); the axis triple $\{A,S,D\}$ is not an $SU(3)$ sector (row 48a, retracted), and reading the colour triplet as space is [I]
+- Lorentzian signature $(+,-,-,-)$ — [C] (registry row T-53): one time direction [T] (PW clock), three spatial directions at T-119 ($S^3$), the sign at reflection positivity (bounded-below PW generator / Osterwalder–Schrader; Krein route). KO-dimension does not fix the signature, and the KO-dimension-6 claim for $\mathbb{C}^7$ is retracted
+- Product $M^4 = \mathbb{R} \times \Sigma^3$ — T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119 (an earlier line derived it "from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])"; the axis-labelled decomposition is retracted, row 48a)
 
 See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
@@ -366,20 +366,20 @@ See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
 ## 5. Connection to General Relativity {#5-связь-с-общей-теорией-относительности}
 
-:::tip Status: fully formalized [T]
-The connection to GR is fully proven: the manifold $M^4$ is derived (T-120 [T]), the Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]).
+:::tip Status: Einstein equations [T] on the product triple; the derivation of $M^4$ [C]
+The Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]); the manifold $M^4$ on which they live is assembled from the categorical structure only under two conditions — an aperiodic clock and the open reconstruction axioms of T-119 (T-120 [C]). An earlier version read "fully formalized [T] … the manifold $M^4$ is derived (T-120 [T])"; retracted with the status of T-120.
 :::
 
 ### 5.1 Emergent Manifold
 
-**[T] Theorem (Product of spectral triples, T-120).**
+**[C] Theorem (Product of spectral triples, T-120)** — at an aperiodic clock (T-118) and the open reconstruction axioms of T-119; the heading read [T] until 2026-09-25.
 In the thermodynamic limit the effective spectral triple factorizes:
 
 $$
 (C^\infty(M^4) \otimes A_{\text{int}},\; L^2(M^4,S) \otimes H_{\text{int}},\; D_{M^4} \otimes 1 + \gamma_5 \otimes D_{\text{int}})
 $$
 
-where $M^4 = \mathbb{R} \times \Sigma^3$ is **derived** from the categorical structure, not postulated. See [Emergent Manifold](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек).
+where $M^4 = \mathbb{R} \times \Sigma^3$ is assembled from the categorical structure under these conditions, not postulated. See [Emergent Manifold](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек).
 
 ### 5.2 Einstein Equations
 
@@ -394,14 +394,14 @@ with $G_N = 3\pi/(7 f_2 \Lambda^2)$. Details: [Einstein Equations](/docs/physics
 
 ### 5.3 Cosmological Constant
 
-**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b [T]). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
+**[T]** The cosmological constant is computed from the Gap of the O-sector: $\Lambda_{\text{Gap}} > 0$ (T-71 [T]), which determines the vacuum topology $\Sigma^3 \cong S^3$ (T-120b [C], inheriting T-119). Details: [Cosmological Constant](/docs/physics/gravity/cosmological-constant).
 
 ---
 
 ## 6. Gauge Symmetries and the Standard Model {#6-калибровочные-симметрии-и-стандартная-модель}
 
 :::info Section Status
-The gauge group $SU(3) \times SU(2) \times U(1)$ is **derived** from $G_2 = \mathrm{Aut}(\mathbb{O})$ via the sector decomposition and spectral triple [T]. Specific parameters (masses, mixing angles) — partially derived, partially remain [P].
+$SU(3)_C$ is the stabiliser of the $O$-direction in $G_2 = \mathrm{Aut}(\mathbb{O})$ [T]; the electroweak factor $SU(2)_L \times U(1)_Y$ comes from the Fano-electroweak construction [C at (FE)], and its uniqueness is [H]. The former sentence — the whole group $SU(3) \times SU(2) \times U(1)$ "derived from $G_2$ via the sector decomposition and spectral triple [T]" — is retracted [✗]: $\mathrm{rank}\,G_2 = 2 < 4$ (registry row T-275), and the axis-labelled decomposition is retracted (row 48a). Specific parameters (masses, mixing angles) — partially derived, partially remain [P].
 :::
 
 ### 6.1 Symmetries of the Coherence Matrix
@@ -419,13 +419,15 @@ is isomorphic to the stabilizer of $\Gamma$ in $U(7)$.
 
 ### 6.2 Gauge Group from $G_2$
 
-**[T] Theorem (Gauge group, T-53 + sector decomposition).**
+**Gauge group: $SU(3)_C$ [T]; $SU(2)_L \times U(1)_Y$ [C at (FE)]; the former theorem is retracted [✗] (2026-09-25).**
 
-From $G_2 = \mathrm{Aut}(\mathbb{O})$ and the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$:
+Former statement, "[T] Theorem (Gauge group, T-53 + sector decomposition)": from $G_2 = \mathrm{Aut}(\mathbb{O})$ and the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$,
 
 $$
 G_2 \supset SU(3) \xrightarrow{\text{Gap hierarchy}} SU(3)_C \times SU(2)_L \times U(1)_Y
 $$
+
+Retracted: symmetry breaking leads from a group to a subgroup, and $SU(3)$ (rank 2) has no subgroup $SU(3) \times SU(2) \times U(1)$ (rank 4); neither has $G_2$, since $\mathrm{rank}\,G_2 = 2 < 4$ (I. Todorov, M. Dubois-Violette, *Int. J. Mod. Phys. A* **33**, 1850118 (2018), eq. (4.2); registry row T-275). What holds: $SU(3)_C = \mathrm{Stab}_{G_2}(e_O) \subset G_2$ [T]; $SU(2)_L \times U(1)_Y$ from the Fano-electroweak construction on the Page–Wootters system factor [C at (FE)], acting on a different tensor factor, so that the ranks add to $2 + 2 = 4$; the uniqueness of this group is [H].
 
 Details: [$G_2$-structure](/docs/physics/gauge-symmetry/g2-structure), [Standard Model](/docs/physics/gauge-symmetry/standard-model).
 
@@ -606,11 +608,11 @@ An earlier version stated as a theorem that the nonlinear regenerative term prov
 | **No-signalling of the full dynamics** | Holds in the non-selective reading only; fails with the Lüders update (§8.5) | [C] | §8.5 |
 | **Ensemble independence** | The evolution map is a function of $\Gamma$; the physical reading "same $\Gamma$, same evolution" is retracted | [D] | §8.5 |
 | **Computational bound** | Retracted; open question | [H] | §8.6 |
-| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [T] Proven | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
+| **Space** | $\Sigma^3$ from Gelfand–Connes, $M^4 = \mathbb{R} \times \Sigma^3$ | [C] (T-119: first-order condition, Poincaré duality; T-120: also an aperiodic clock) | [T-119, T-120](/docs/proofs/physics/emergent-manifold) |
 | **Time** | Cyclic clock τ ∈ ℤ₇ via modality ▷ on Ω [T]; the aperiodic parameter of the dynamics is assumed [C] (T-53b) | [T] / [C] | [emergent-time.md](/docs/proofs/dynamics/emergent-time) |
 | **Discreteness of time** | $\tau \in \mathbb{Z}_7$ from the structure of Ω | [T] Corollary | §3.6 |
 | **GR / Einstein** | Spectral action → $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ | [T] Proven | [T-65](/docs/physics/gravity/einstein-equations) |
-| **Standard Model** | $G_2 \supset SU(3) \to SU(3)_C \times SU(2)_L \times U(1)_Y$ | [T] Structure derived | [SM](/docs/physics/gauge-symmetry/standard-model) |
+| **Standard Model** | $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$; $SU(2)_L \times U(1)_Y$ from (FE); the former "$G_2 \supset SU(3) \to SU(3)_C \times SU(2)_L \times U(1)_Y$" is retracted (rank) | [T] / [C at (FE)]; uniqueness [H] | [SM](/docs/physics/gauge-symmetry/standard-model) |
 
 ---
 
@@ -637,9 +639,9 @@ This means: **physics is a consequence of the structure of logical distinctions*
 7. **Marginal identity:** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of $A$ does not change $B$'s unconditioned marginal; no-signalling of the full dynamics is [C] (§8.5)
 8. **Ensemble independence:** the evolution map is defined on $\Gamma$ [D]; the earlier claim that this resolves the Gisin problem is retracted (§8.5)
 9. **Computational bound:** retracted; whether $\mathcal{R}$ gives a speed-up beyond BQP is open [H] (§8.6)
-10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ derived from categorical structure (T-117—T-120)
+10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ assembled from categorical structure (T-117—T-120) — conditional [C] on an aperiodic clock and the open reconstruction axioms of T-119
 11. **Einstein equations:** The spectral action reproduces $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ (T-65)
-12. **Gauge group:** $SU(3)_C \times SU(2)_L \times U(1)_Y$ from $G_2 = \mathrm{Aut}(\mathbb{O})$ (T-53)
+12. **Gauge group:** $SU(3)_C$ from $G_2 = \mathrm{Aut}(\mathbb{O})$ [T]; $SU(2)_L \times U(1)_Y$ from (FE) [C at (FE)]. The former item — the whole group from $G_2$ (T-53) — is retracted (rank $G_2 = 2 < 4$)
 
 ### Open Directions
 

@@ -18,7 +18,7 @@ This chapter is one of the most remarkable in the theory. Space and time are **n
 - **Dimensionality** 6D = 7 - 1; the compactification to 3+1D "via sectoral decomposition" is **retracted [✗]** (2026-09-25) — the axis split $7=1_O\oplus3_{\{A,S,D\}}\oplus\bar{3}_{\{L,E,U\}}$ is not a decomposition under $\mathrm{SU}(3)$ ([details](#секторная-декомпозиция))
 - **Lorentzian signature** — $(1,3)$ **[C]** (registry row T-53): 1 time from Page–Wootters [T]; 3 space from $S^3$, which rests on T-119 [C]; the Lorentzian sign holds at reflection positivity (bounded-below $H_S$). The Krein–Lorentzian triple below is a consistency check, not a derivation of the sign
 - **Gravity** — from the full spectral action (Einstein equations as a consequence)
-- **Background independence** — $M^4$ derived algebraically via the Gel'fand–Naimark–Connes chain ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- **Background independence** — $M^4$ assembled algebraically via the Gel'fand–Naimark–Connes chain, **[C]** at an aperiodic clock and the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 
 This is a radical departure from standard physics, where spacetime is a given on which dynamics unfolds. In UHM dynamics *generates* spacetime.
 :::
@@ -29,7 +29,7 @@ This is a radical departure from standard physics, where spacetime is a given on
 - **Metric:** [T] Connes stratified metric $d_{strat}$
 - **Lorentzian signature:** $(1,3)$ **[C]** (registry row T-53) — the time count is [T]; the spatial slice $\Sigma^3$ rests on T-119 [C]; the sign holds at reflection positivity (bounded-below $H_S$). The [Krein–Lorentzian spectral triple](#теорема-крейнова-тройка) ($\beta=\gamma^0\otimes1$, $\mathcal D$ Krein-self-adjoint) realises the signature consistently but does not select it
 - **Gravity:** [T] Full spectral action from the finite triple
-- **Background independence:** [T] $M^4$ derived from categorical structure ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек))
+- **Background independence:** [C] $M^4$ assembled from categorical structure at an aperiodic clock (T-118) and the open reconstruction axioms of T-119 ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)); it read [T] until 2026-09-25
 :::
 
 ## Base space X = $|N(\mathcal{C})|$ {#базовое-пространство}
@@ -387,7 +387,7 @@ $\mathrm{Gap}(O,i)$ includes gravitational corrections via the metric $g_{\mu\nu
 :::info Section status
 - **Metric:** [T] Formalized via $d_{strat}$ (see [above](#метрика-конна))
 - **Dimensionality:** [T] 6D follows from $N = 7$ (dim = N - 1)
-- **Relation to GR:** [T] $M^4$ derived from categorical structure via the Gel'fand–Naimark–Connes chain ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек))
+- **Relation to GR:** [C] $M^4$ assembled from categorical structure via the Gel'fand–Naimark–Connes chain ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек), at an aperiodic clock and the open reconstruction axioms of T-119)
 :::
 
 ### Derived metric (not a hypothesis)
@@ -413,7 +413,7 @@ where $N = 7$ is the number of dimensions of the [Holon](../structure/holon).
 
 ### Relation to GR (program) {#связь-с-ото}
 
-:::tip Background independence [T]; sectoral decomposition retracted [✗]
+:::tip Background independence [C]; sectoral decomposition retracted [✗]
 The transition from 7D (= 6D + time) to the observable 3+1D was formalized via the sectoral decomposition $7 = 1_O \oplus 3_{\{A,S,D\}} \oplus \bar{3}_{\{L,E,U\}}$, with the masslessness of gluons (the $\{A,S,D\}$ "$\mathbf{3}$-sector") giving non-compact space and the massiveness of $W,Z$ (the $\{L,E,U\}$ "$\bar{\mathbf{3}}$-sector") a compactification at $v_{\text{EW}}$. This is **retracted [✗]** (2026-09-25): no three of the six non-$O$ axes span an $\mathrm{SU}(3)$-invariant subspace, so neither axis set is a sector. Details — [Sectoral decomposition](#секторная-декомпозиция).
 
 **Results:** The [finite spectral triple](#теорема-спектральная-тройка) $(A_{\text{int}}, H_{\text{int}}, D_{\text{int}})$ is written down (T-53; its KO-dimension-6 claim is retracted, see Step 6 there). The spectral action $S = \text{Tr}(f(D/\Lambda))$ gives $\int(a_0\Lambda^4 + a_2\Lambda^2 R + \ldots)\sqrt{g}\,d^4x$ [T] (T-65, [full spectral action](/docs/physics/gravity/quantum-gravity#теорема-полное-спектральное-действие)). The product of triples $M^4 \times F_{\text{int}}$ is obtained from the categorical structure along the chain of [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек): the macroscopic algebra is commutative in the thermodynamic limit (T-117 [T]), the Gel'fand–Connes reconstruction gives $\Sigma^3$ (T-119 [C]), and the product $M^4 = \mathbb{R} \times \Sigma^3$ is assembled from these (T-120); with T-118 and T-119 conditional, the chain is conditional too, so this page does not lean on T-120 as unconditional.
@@ -442,10 +442,10 @@ graph TD
  STRAT --> DSTRAT
  X --> TIME
  T_OBJ --> ARROW
- DSTRAT --> |"M⁴ derived #40;T-120#41;"| GR
+ DSTRAT --> |"M⁴ assembled #40;T-120, conditional#41;"| GR
 ```
 
-**Note:** The edge to "Gravity [T]" — $M^4$ is derived from categorical structure via the Gel'fand–Naimark–Connes chain ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)).
+**Note:** The edge to "Gravity [T]" — $M^4$ is assembled from categorical structure via the Gel'fand–Naimark–Connes chain ([T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек)) under two conditions, an aperiodic clock and the open reconstruction axioms of T-119, so the edge is [C]; the Einstein equations themselves (T-65) hold on the product triple.
 
 ## Non-locality
 
@@ -479,7 +479,7 @@ Violation of Bell inequalities is a consequence of non-zero coherences in the st
 | **Metric** | $d_{strat}$ (Connes on strata) | [T] [Formalized](#метрика-конна) |
 | **Dimensionality** | $\dim(X) = 6$ | [T] Consequence of $N = 7$ |
 | Energy | Eigenvalues of $H_{eff}$ | [T] Formalized |
-| Gravity | Compactification 6D → 4D | [T] [Derived](/docs/proofs/physics/emergent-manifold) (T-120) |
+| Gravity | Spectral action on $M^4 \times F_{\text{int}}$, $M^4$ assembled by T-120; the former entry "compactification 6D → 4D" is retracted [✗] with the sectoral decomposition | [C] [Emergent manifold](/docs/proofs/physics/emergent-manifold) (T-120) |
 | Topological charges | IC-cohomology of strata | [T] [Formalized](../../proofs/categorical/categorical-formalism#производные-категории) |
 
 ## Relation to other approaches
@@ -506,11 +506,11 @@ Violation of Bell inequalities is a consequence of non-zero coherences in the st
 | **Local-global dichotomy** | [T] Formalized | [H* = 0 globally, H*_loc ≠ 0 locally](#локально-глобальная-дихотомия) |
 | **Lorentzian signature** | signature $(1,3)$ [C] (T-53: time count [T], spatial slice T-119 [C], sign at reflection positivity) | [UHM spectral triple](#теорема-спектральная-тройка) |
 | **Compactification 7D → 3+1D** | retracted [✗] | [Sectoral decomposition](#секторная-декомпозиция): the axis split is not an $\mathrm{SU}(3)$ decomposition |
-| **Background independence ($M^4$ derived)** | [T] | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
+| **Background independence ($M^4$ assembled)** | [C] (aperiodic clock; open reconstruction axioms of T-119) | [T-120](/docs/proofs/physics/emergent-manifold#теорема-произведение-троек) |
 | **Einstein equations** | [T] | Spectral action from the full triple |
 
 :::info Progress
-The circularity problem of $\Gamma_A$ has been **resolved**: space is now derived from the categorical structure $\mathcal{C}$, not from a priori "points."
+The circularity problem of $\Gamma_A$ has been **resolved** conditionally: space is now assembled from the categorical structure $\mathcal{C}$, not from a priori "points" — under the conditions of T-119 and T-120 [C].
 :::
 
 ## Sectoral decomposition of dimension 7 = 1 + 3 + 3̄ {#секторная-декомпозиция}

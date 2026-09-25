@@ -488,9 +488,9 @@ Acknowledging boundaries is not a weakness, but a strength of a scientific theor
 
 | Question | Status | Comment |
 |--------|--------|-------------|
-| Einstein equations | **[T] Derived** | Spectral action (T-65); $M^4$ derived (T-120) |
-| Standard Model | Structure **[T]**, parameters partially | $G_2 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ [T]; specific masses — partially |
-| Spacetime dimensionality $3+1$ | **[T] Derived** | Sectoral decomposition + Connes reconstruction (T-119, T-120) |
+| Einstein equations | **[T]** on the product triple; $M^4$ itself **[C]** | Spectral action (T-65); $M^4$ assembled at T-120 [C] (an aperiodic clock, the open reconstruction axioms of T-119) |
+| Standard Model | Colour **[T]**; electroweak **[C at (FE)]**, uniqueness [H]; parameters partially | $SU(3)_C = \mathrm{Stab}_{G_2}(e_O)$ [T]; $SU(2)_L \times U(1)_Y$ from (FE); the former "$G_2 \to SU(3)_C \times SU(2)_L \times U(1)_Y$ [T]" is retracted ($\mathrm{rank}\,G_2 = 2 < 4$, row T-275); specific masses — partially |
+| Spacetime dimensionality $3+1$ | **[C]** | One time direction [T] (PW clock); three spatial ones at T-119 [C] (rank count, the colour triplet read as space [I]); the former "sectoral decomposition + Connes reconstruction [T]" is retracted with the axis-labelled split (row 48a) |
 | Constants $c$, $G$, $\hbar$ | $G$ **[T]** derived, $c$, $\hbar$ not explained | $G_N = 3\pi/(7f_2\Lambda^2)$ (T-65); $c$, $\hbar$ — fundamental |
 
 ### Phenomenal Boundaries (what is taken as axiom)

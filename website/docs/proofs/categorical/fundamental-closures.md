@@ -22,7 +22,7 @@ This document contains **fourteen foundational theorems** T-210 through T-223 th
 | **T-218** | SYNARC Cog is a Kan complex | Milnor + classifying space | [T] |
 | **T-219** | Λ SUSY-suppression via sector product | ε<sup>12</sup> = ε<sup>4·3</sup> from 3-sector decomposition | [H] (was [T at T-64] until 2026-09-25) |
 | **T-220** | No-reduction $F_4$-UHM → $G_2$-UHM | Five independent categorical obstructions | [T] negative |
-| **T-221** | Categorical-monistic response to List/DeBrota no-go results | Structure theorem on $\mathfrak T$ combining T-120/T-186/T-211/T-215/T-217 | [T]+[I] |
+| **T-221** | Categorical-monistic response to List/DeBrota no-go results | Structure theorem on $\mathfrak T$ combining T-120/T-186/T-211/T-215/T-217 | [T]+[C]+[I] ((i) at T-186(a), (iii) at T-120; it read [T]+[I] until 2026-09-25) |
 | **T-222** | MRQT-completeness: Lawvere fixed point = Pareto resource optimum | Six-lemma convex-analysis cascade on $G_2$-covariant viability submanifold | [T] |
 | **T-223** | Putnam-triviality foreclosure (Lerchner Melody-Paradox closure) | Seven-lemma cascade: three-level ontology L1/L2/L3 + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$ | [T] |
 
@@ -74,7 +74,7 @@ The category $\mathbf{PhysTheory}$ of physical theories $(E, \mathcal A_\mathrm{
 **Proof (four-step).**
 
 **Step 1 (Object assignment).** Every object $(E, \mathcal A, D, \alpha, \beta) \in \mathbf{PhysTheory}$ determines a unique $\infty$-topos $E[\mathcal A] := \mathbf{Sh}_\infty(\mathrm{Spec}(\mathcal A), J_\mathrm{Bures})$ via:
-- (i) Connes reconstruction (T-119 [C]) — now with all six axioms verified (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство)).
+- (i) Connes reconstruction (T-119 [C]) — with axioms (i)–(iv) and (vi) argued, Poincaré duality and the first-order condition open (see [emergent-manifold.md §5](/docs/proofs/physics/emergent-manifold#теорема-эмерджентное-пространство); an earlier line read "now with all six axioms verified", retracted).
 - (ii) Lemma 2 of T-174 — $E[\mathcal A_\mathrm{int}] \simeq \mathbf{Sh}_\infty(\mathcal D(\mathbb C^7))$ via Morita equivalence of bimodule categories (Alvarez–Gracia-Bondía–Martín 1995; the second support, T-178, is retracted [✗] as a derivation since 2026-09-25, so (ii) rests on Lemma 2 of T-174 alone).
 
 **Step 2 (Morphism functoriality).** A receiving morphism $(E_1, \ldots) \to (E_2, \ldots)$ in $\mathbf{PhysTheory}$ consists of $(f^*, \alpha, \beta)$ (geometric morphism + intertwiner + covariance) satisfying the coherence diagrams of T-174. By the adjoint-functor theorem (Lurie HTT 5.5.2.9), any such datum induces a unique geometric morphism $E_1[\mathcal A_1] \to E_2[\mathcal A_2]$ in $\mathbf{Topoi}_\infty$. The assignment is **functorial** since composition of receiving morphisms matches composition of geometric morphisms.
@@ -442,7 +442,7 @@ Predicted thresholds:
 | # | Theorem / Protocol | Previous status | New status | Closure method |
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak (T-195) | **[T] strict** | Interior-stratum argument |
-| T-211 | PhysTheory higher coherences | [T] deferred to HTT | **[T] verified** | HTT 5.2.7 inheritance |
+| T-211 | PhysTheory higher coherences | [T] deferred to HTT | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 inheritance |
 | T-212 | Rh modality explicit | [T] unnamed (T-185) | **[T] defined** | Super-cohesion right adjoint |
 | T-213 | Yoneda without Kolmogorov | [T] uncomputable (T-193) | **[T] computable** | Bures description length |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive irresolvability** | Lawvere fixed-point |
@@ -787,7 +787,7 @@ The decomposition $\mathcal{J}_3(\mathbb{O})|_{G_2} = 3 \cdot \mathbf{7} \oplus 
 
 The authors identify three non-objectivist routes in each case — *relationalist*, *fragmentalist*, *many-subjective-worlds* — but leave open which (if any) is structurally forced, and do not provide a measurable criterion. Theorem T-221 establishes that UHM realises a **fourth** route, not in that taxonomy: a **categorical-monistic** route in which site-relativization replaces naive non-relationalism, while all other objectivist conjuncts are preserved structurally.
 
-:::tip Theorem T-221 (Categorical-monistic route) [T] formal for (ii)–(v), [C] for (i) and T-221.1–T-221.2 (conditions named there) + [I] interpretive
+:::tip Theorem T-221 (Categorical-monistic route) [T] formal for (ii), (iv), (v), [C] for (i), (iii) and T-221.1–T-221.2 (conditions named there) + [I] interpretive
 
 Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega_0)$ be the UHM cohesive $\infty$-topos (A1–A5 + T-211 Giraud), and let the five theses be formalised as follows.
 
@@ -803,9 +803,9 @@ Let $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal{C}_7, J_{\mathrm{Bures}}, \omega
 
 (ii) **NS is conventional (T-215)**: the identity criterion $\iota \in \{\iota_\mathrm{min}, \iota_\mathrm{max}\}$ determines whether a fractal SYNARC tower counts as many agents ($\iota_\mathrm{min}$: NS holds per level) or one compound ($\iota_\mathrm{max}$: NS collapses at the tower level). Both are consistent with $\Omega^7$.
 
-(iii) **OW is derived, not postulated**: T-120 (Emergent Manifold) proves $M^4 = \mathbb R \times \Sigma^3$ follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173) from the spectral triple $(\mathcal A_\mathrm{int}, \mathcal H, D)$. The world-object is $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ in the Gelfand–Naimark–Connes sense.
+(iii) **OW is derived, not postulated** [C at T-120 — an aperiodic clock and the open reconstruction axioms of T-119]: T-120 (Emergent Manifold) assembles $M^4 = \mathbb R \times \Sigma^3$, which then follows uniquely (up to $G_2 \times \mathbb R_{>0}$ by T-173) from the spectral triple $(\mathcal A_\mathrm{int}, \mathcal H, D)$. The world-object is $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ in the Gelfand–Naimark–Connes sense.
 
-(iv) **NF holds structurally**: $\mathfrak{T}$ is an $\infty$-topos (Giraud, T-211), so descent is a defining property of every object — not an a posteriori audit.
+(iv) **NF holds structurally**: $\mathfrak{T}$ is an $\infty$-topos of sheaves on a small site (Lurie HTT 6.2.2.7; registry row T-76), so descent is a defining property of every object — not an a posteriori audit.
 
 (v) **NR is relaxed to NR$_\mathrm{site}$**: facts are internal sections of $\infty$-sheaves over an internal site. The site object $\mathcal C_7$ is itself an object of $\mathfrak{T}$ (presentability, HTT 6.3.1.16), so relativization is **internal**, not external.
 
@@ -827,17 +827,17 @@ is jointly consistent with the predictions of quantum mechanics in UHM. **Loc** 
 
 **Part (ii)** is T-215 [T]+[D] restated.
 
-**Part (iii)** combines T-117 through T-121 (emergent spatial and temporal manifold) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
+**Part (iii)** [C at T-120] combines T-117 through T-121 (emergent spatial and temporal manifold; T-118–T-121 are [C]) with T-173 ($G_2 \times \mathbb R_{>0}$ rigidity of the primitive): the spectral triple recovers $M^4$ uniquely up to this gauge group, so $W = \mathrm{Spec}(\mathcal A_\mathrm{int})$ is determined modulo equivalence.
 
-**Part (iv)** follows from T-211 [T]: $\mathfrak{T}$ is a full $(\infty,1)$-subcategory of Lurie's $\mathbf{Topoi}_\infty$, hence inherits all Giraud axioms, hence descent.
+**Part (iv)**: $\mathfrak{T} = \mathrm{Sh}_\infty(\mathcal C_7, J_{\mathrm{Bures}})$ is an $\infty$-topos of sheaves on a small site (Lurie HTT 6.2.2.7; $\mathcal C_7$ is essentially small, Part (v)), hence satisfies the Giraud axioms, hence descent. (An earlier version of this proof derived it from T-211 [T]; T-211 is [C at T-119] and is not needed here.)
 
 **Part (v)** requires showing that the site $\mathcal C_7 = \mathbf{DensityMat}(\mathbb C^7)$ is an *internal* object of $\mathfrak{T}$. Since $\mathfrak{T}$ is presentable (HTT 6.3.1.16) and $\mathcal C_7$ is essentially small (bounded by $\dim(\mathcal D(\mathbb C^7)) = 49$), the $\infty$-Yoneda embedding $y: \mathcal C_7 \hookrightarrow \mathfrak{T}$ lands in $\mathfrak{T}$ itself, so the relativization parameter $\Gamma$ is $\mathfrak{T}$-internal.
 
-**Corollary T-221.1.** Suppose, for contradiction, that $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_\mathrm{site}\}$ were jointly inconsistent. Since (ii)–(iv) are [T] theorems of UHM, (i) holds under the hypothesis T-186(a), and NR$_\mathrm{site}$ follows from (v), all five theses are simultaneously satisfied in the single model $\mathfrak{T}$. Joint satisfaction in a model implies joint consistency. Contradiction.
+**Corollary T-221.1.** Suppose, for contradiction, that $\{\mathrm{FPR}, \mathrm{NS}, \mathrm{OW}, \mathrm{NF}, \mathrm{NR}_\mathrm{site}\}$ were jointly inconsistent. Since (ii) and (iv) are [T] theorems of UHM, (iii) holds at the conditions of T-120, (i) holds under the hypothesis T-186(a), and NR$_\mathrm{site}$ follows from (v), all five theses are simultaneously satisfied in the single model $\mathfrak{T}$. Joint satisfaction in a model implies joint consistency. Contradiction.
 
 The distinction from List's quadrilemma resides in the NR formulation: List's classical NR requires facts of the form "such and such is the case" *absolute simpliciter*. NR$_\mathrm{site}$ weakens this to "such and such holds for internal site object $\Gamma$". This is neither pure Rovelli-relationalism (which would require external observers) nor Fine-fragmentalism (which requires incoherent worlds) nor many-subjective-worlds (which requires multiple worlds). It is a **fourth option**: a single coherent world with *internal* site-relativization.
 
-**Corollary T-221.2 [C under the non-selective reading of no-signalling].** MI and MR are [T] theorems in UHM (T-62, T-96, T-98, T-211); Loc holds only in the non-selective reading, because with a Lüders update at a distant partner the nonlinear regeneration makes local statistics depend on the partner's choice ([physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (An earlier wording listed Loc among the [T] theorems; retracted.) Combined with (ii)–(v) this exhausts the heptalemma. Joint consistency in $\mathfrak{T}$ is again sufficient.
+**Corollary T-221.2 [C under the non-selective reading of no-signalling].** MI and MR are [T] theorems in UHM (T-62, T-96, T-98; T-211, [C at T-119], supplies only the ambient coherences); Loc holds only in the non-selective reading, because with a Lüders update at a distant partner the nonlinear regeneration makes local statistics depend on the partner's choice ([physics correspondence §8.5](/docs/proofs/physics/physics-correspondence#85-ансамблевая-независимость)). (An earlier wording listed Loc among the [T] theorems; retracted.) Combined with (ii)–(v) this exhausts the heptalemma. Joint consistency in $\mathfrak{T}$ is again sufficient.
 
 **Corollary T-221.3.** The 1-truncation $\tau_{\leq 1}: \mathfrak{T} \to \tau_{\leq 1}(\mathfrak{T})$ is a reflective left-exact localisation (HTT 5.5.6). Under this truncation:
 - Representable sheaves $y(\Gamma)$ collapse to hom-sets $\mathrm{Map}_\mathcal{C}(-, \Gamma)$, reproducing Rovelli's "facts relative to $\Gamma$".
@@ -865,7 +865,7 @@ Each alternative is a **reductive truncation** of $\mathfrak{T}$; UHM's categori
 
 Pred 1–23 (see [Predictions](/docs/applied/coherence-cybernetics/predictions)) provide the falsifiable content.
 
-**Dependencies**: T-120 [T] (emergent manifold), T-173 [T] ($G_2$-rigidity), T-186 [H] (Cohesive Closure), T-211 [T] (PhysTheory coherences), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
+**Dependencies**: T-120 [C] (emergent manifold; part (iii)), T-173 [T] ($G_2$-rigidity), T-186 [H] (Cohesive Closure; part (i)), T-211 [C] (PhysTheory coherences, at T-119; ambient only — part (iv) rests on HTT 6.2.2.7), T-215 [T]+[D] (cross-layer identity), T-217 [T] (tricategorical coherence limits reflexive regress to SAD ≤ 3).
 
 **External references**: List (2025); DeBrota and List (2026); Rovelli (1996, 2025); Fine (2005); Lipman (2023); Glick (2021); Mermin (2019).
 
@@ -1024,9 +1024,9 @@ Putnam–Lerchner triviality concerns L1→L3. UHM's consciousness predicate con
 
 **Proof of T-223 (seven lemmas).**
 
-**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$).** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-120 (M⁴ = $\mathbb R \times \Sigma^3$ derived from quantum CLT), T-151 ($D_{\min} = 2$ from Φ-threshold), T-149 (unconditional viability of the embodied attractor), T-190 (zero-axiom categorical closure). The 12-step Bridge T-15 chains them:
-$$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{[T]} \mathbb O \xrightarrow{[T]} G_2.$$
-No step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input. ∎
+**L1 (Categorical necessity of $\mathbb C^7$ and $G_2$) — context; clauses (a)–(e) do not use it.** Combine T-82 (BIBD(7,3,1) / Fano plane uniqueness via Fisher + Veblen–Wedderburn), T-42a ($G_2$-rigidity of the Fano dissipator), T-151 ($D_{\min} = 2$ from Φ-threshold), T-149 (viability of the embodied attractor). The Bridge T15 (row 41n) chains them:
+$$(\text{AP})+(\text{PH})+(\text{QG})+(\text{V}) \xrightarrow{[T]} \mathrm{BIBD}(7,3,1) \xrightarrow{[T]} \mathrm{PG}(2,2) \xrightarrow{\text{(Alt)}} \mathbb O \xrightarrow{[T]} G_2.$$
+The step $\mathrm{PG}(2,2) \to \mathbb O$ needs an orientation of the seven lines, and only 16 of the 128 orientations give a normed algebra, so $\dim = 7$ and $G_2$ are forced at the assumption (Alt), [C at (Alt)]. *Corrected 2026-09-25:* the lemma read "no step admits parameter freedom; $\dim = 7$ and $G_2$ are forced with zero external input" and also listed T-120 ($M^4$ from the quantum CLT), which plays no role in the Putnam argument, and T-190 as "zero-axiom categorical closure" — withdrawn: T-190 is [C] (the Page–Wootters constraint is assumed and the route to A1 via T-186(a) is a hypothesis). ∎
 
 **L2 (Covariance gate).** A UHM-admissible holonomic representation is a triple $(\mathbb C^7, \mathcal B, G_S)$ satisfying Definition G1 of the Uniqueness Theorem:
 $$\frac{d}{d\tau} G_S(s(\tau)) = \mathcal L_\Omega[G_S(s(\tau))]$$
@@ -1044,7 +1044,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 
 **Combination (proof of clauses a–e).**
 
-- **(a)** L1+L2+L3 establish existence and $G_2$-uniqueness of the representation; L5 bounds the alphabetizer-compatible freedom to $G_2$; hence $[\Gamma_S]_{G_2}$ is invariant across all UHM-compatible alphabetizations.
+- **(a)** L2+L3 establish $G_2$-uniqueness of every UHM-compatible representation, whose existence is the premise of the theorem (L1 is context; it read "L1+L2+L3 establish existence and $G_2$-uniqueness" until 2026-09-25); L5 bounds the alphabetizer-compatible freedom to $G_2$; hence $[\Gamma_S]_{G_2}$ is invariant across all UHM-compatible alphabetizations.
 - **(b)** ~~By L4, the seven listed observables factor through $\mathcal D(\mathbb C^7)/G_2$.~~ **Retracted 2026-09-25:** the line counted all seven observables of clause (b) as $G_2$-invariants; that is false for the frame-referenced ones — $\Phi$ and $\mathrm{Coh}_E$ refer to the coordinate frame and are invariant only under the finite frame group $\Gamma_{\!\text{oct}}$ ([frame decision D-0910](/docs/proofs/categorical/uniqueness-theorem#g2-ригидность)). Replacement: $P$ and $R = 1/(7P)$ factor through $\mathcal D(\mathbb C^7)/G_2$; the frame-referenced observables are frame-pinned, and by L4+L5 no admissible alphabetizer changes them.
 - **(c)** ~~$\mathrm{Cons}(S)$ is a conjunction of four $G_2$-invariant inequalities; factors through $[\Gamma_S]_{G_2}$; alphabetization-invariant by (a)+(b).~~ **Retracted 2026-09-25:** of the four inequalities only $P > 2/7$ and $R \geq 1/3$ are $G_2$-invariant; $\Phi \geq 1$ and $D_{\min} \geq 2$ are fixed by the dynamical frame (D-0910), so the factorisation of $\mathrm{Cons}(S)$ through $[\Gamma_S]_{G_2}$ is unproven. Replacement: $\mathrm{Cons}(S)$ is alphabetization-invariant by (a) and the corrected (b) — its $P, R$ terms through $[\Gamma_S]_{G_2}$, its $\Phi, D_{\min}$ terms through the frame that every admissible alphabetizer preserves (L4+L5).
 - **(d)** L6 establishes that non-UHM-compatible alphabetizers are physically vacuous.
@@ -1055,7 +1055,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 ```
         [Γ_S]_{G_2}   (L2: intrinsic, G₂-rigid)
              ▲
-             │   L1→L2: categorically forced by T-190 (zero-axiom closure)
+             │   L1→L2: covariance gate L2 + T-123 (not T-190, which is [C])
              │
    Physical trajectory  p → p'     (L1)
              │
@@ -1068,7 +1068,7 @@ for every physical trajectory $s(\tau)$ of $S$. This is the gate through which a
 Lerchner's horizontal arrow $p \to \{f_A, f_B\}$ is correct. UHM adds the vertical arrow $p \to [\Gamma_S]_{G_2}$. Consciousness lives at the vertical arrow's target; computation lives at the horizontal arrows' targets. Putnam's multiplicity is confined to the horizontal; UHM's consciousness predicate is alphabetization-invariant.
 
 **Why $G_2$-rigidity alone is not the complete answer.** T-123 handles L2→L3 residual freedom (the 14-dim $G_2$ action on $\Gamma$) but not L1→L2 forcing (where *a priori* one might still suspect mapmaker choice). The full foreclosure requires six components:
-1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-120 + T-151 + T-149 + T-190): ensures L2 is not a chosen abstraction.
+1. **Intrinsic-forcing of L2** (T-82 + T-42a + T-151 + T-149 + the Bridge T15): ensures L2 is not a chosen abstraction — [C at (Alt)], the orientation input of T15. (The list included T-120 and T-190 until 2026-09-25; the first plays no role here, and the second is [C].)
 2. **$G_2$-gauge boundedness** (T-42a + T-82): residual L2 freedom is a 14-dim compact Lie group action.
 3. ~~**Observable $G_2$-invariance** (L4): all consciousness-relevant quantities insensitive to (2).~~ **Retracted 2026-09-25:** $\Phi$ and $\mathrm{Coh}_E$ are not $G_2$-invariant (D-0910). Replacement — **observable invariance** (L4): $P$ and $R$ are insensitive to (2); the frame-pinned $\Phi, \mathrm{Coh}_E$ are insensitive to the admissible alphabetizers of L5, which preserve the dynamical frame.
 4. **Dynamic-covariance gate** (L2 + L6): non-UHM-compatible alphabetizers are physically vacuous.
@@ -1084,7 +1084,9 @@ T-223 packages exactly this cascade.
 - **F-223-2**: Any alphabetization of $S$ commuting with $\mathcal L_\Omega$ but not factoring through a $G_2$-conjugate representation would refute L5.
 - **F-223-3**: Any physical process realising a Lerchner "Mapping C" (Market Data on a Beethoven trajectory) with non-zero contribution to $R$ or $\Phi$ would refute L6.
 
-**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-120 [T] (M⁴ derivation), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-190 [C] (zero-axiom categorical closure), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+**Dependencies**: T-42a [T] ($G_2$-rigidity), T-82 [T] (BIBD(7,3,1) uniqueness), T-96 [T] (Lawvere fixed point $\rho_* = \varphi(\Gamma)$), T-98 [T] (balance formula for $R$), T-123 [T] ($G_2$-uniqueness of holonomic representation), T-148 [T] (embodiment requirement), T-149 [T] (Fano plane minimality), T-151 [T] ($D_{\min} = 2$), T-153a [T] (consciousness predicate C1–C3), T-214 [T] (hard-problem meta-theorem, Lawvere positivity).
+
+*Corrected 2026-09-25:* the dependency list also named the emergent-manifold theorem (the $M^4$ derivation, now conditional) and the axiomatic closure T-190 (conditional); neither is used by (a)–(e), which concern UHM-compatible representations whose existence is the premise — they entered only the context lemma L1.
 
 **External references**: Putnam 1988 *Representation and Reality* (MIT Press); Sprevak 2018 "Triviality arguments about computational implementation", *Routledge Handbook of the Philosophy of Computing and Information*; Piccinini 2008 "Computation without representation", *Phil. Stud.* 137; Kim 2005 *Physicalism, or Something Near Enough*; Maturana-Varela 1980 *Autopoiesis and Cognition*; Thompson 2019 *Mind in Life*; Lerchner 2026 "The Abstraction Fallacy" (DeepMind preprint, 2026-03-19); Lawvere 1969, Yanofsky 2003 (inherited via T-214).
 
@@ -1132,7 +1134,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | # | Theorem / Protocol | Previous status | New status | Method |
 |---|---|---|---|---|
 | T-210 | Strict Φ-monotonicity | [T] weak | **[T] strict** | Interior-stratum |
-| T-211 | PhysTheory coherences | [T] deferred | **[T] verified** | HTT 5.2.7 |
+| T-211 | PhysTheory coherences | [T] deferred | **[C at T-119]** (read "[T] verified" until 2026-09-25) | HTT 5.2.7 |
 | T-212 | Rh modality | [T] unnamed | **[T] defined** | Super-cohesion |
 | T-213 | Yoneda computable | [T] uncomputable | **[T] computable** | Bures description |
 | T-214 | Hard-problem meta-theorem | [I] residual | **[T] positive** | Lawvere |
@@ -1142,7 +1144,7 @@ $$\mathcal D(\mathbb C^7) = \bigsqcup_{r=1}^{7} \mathcal D_r, \qquad \mathcal D_
 | **T-218** | **SYNARC Cog Kan complex** | **[H] horn-fillers asserted** | **[T]** | **Milnor + classifying space** |
 | **T-219** | **SUSY Λ-suppression** | **[H] invalid 7+7** | **[H]** (listed [T at T-64] until 2026-09-25) | **Sector product $\varepsilon^{12}$** |
 | **T-220** | **No-reduction $F_4 \to G_2$ UHM** | open question | **[T] negative** | **5 independent obstructions** |
-| **T-221** | **Categorical-monistic no-go response** | open (external critique) | **[T]+[I]** | **Structure theorem on $\mathfrak T$ + 1-truncation recovery of RQM** |
+| **T-221** | **Categorical-monistic no-go response** | open (external critique) | **[T]+[C]+[I]** ((i) at T-186(a), (iii) at T-120) | **Structure theorem on $\mathfrak T$ + 1-truncation recovery of RQM** |
 | **T-222** | **MRQT-completeness** | open (external QRT critique) | **[T]** | **Six-lemma convex cascade: Lawvere fixed point = Pareto optimum of 25-monotone MRQT vector on $G_2$-covariant submanifold** |
 | **T-223** | **Putnam-triviality foreclosure (Lerchner Melody-Paradox)** | open (external critique) | **[T]** | **Seven-lemma cascade: three-level L1/L2/L3 ontology + $G_2$-gauge boundedness + intrinsic self-alphabetization via $R$** |
 | §18.1 | A4 simple spectrum | implicit | **Explicit** | Spectral transversality |

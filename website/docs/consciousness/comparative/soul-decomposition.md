@@ -573,7 +573,7 @@ No — and the "no" is structural, not rhetorical. Pre-existence of *this* soul 
 
 ### 7.3 Is life māyā? {#майя}
 
-Not in the sense that dissolves the question. Spacetime and the emergent levels are derived, and derivation is not demotion: $M^4$ is a theorem (T-117–T-121, [emergent manifold](/docs/proofs/physics/emergent-manifold)), and the corpus's standing contrast with interface-idealism is explicit — the world is *emergent, not interfacial* ([panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#хоффман)). Māyā is right precisely where Śaṅkara used it carefully: nothing at the emergent level is *self-standing* (svataḥ-siddha). It is wrong wherever it means "unreal." An emergent subject really suffers, really chooses, really dies. That is rather the point of the whole register.
+Not in the sense that dissolves the question. Spacetime and the emergent levels are derived, and derivation is not demotion: $M^4$ is a conditional theorem (T-117–T-121, [emergent manifold](/docs/proofs/physics/emergent-manifold): an aperiodic clock and the open reconstruction axioms of T-119 are assumed), and the corpus's standing contrast with interface-idealism is explicit — the world is *emergent, not interfacial* ([panpsychism analysis](/docs/consciousness/comparative/panpsychism-analysis#хоффман)). Māyā is right precisely where Śaṅkara used it carefully: nothing at the emergent level is *self-standing* (svataḥ-siddha). It is wrong wherever it means "unreal." An emergent subject really suffers, really chooses, really dies. That is rather the point of the whole register.
 
 ### 7.4 Does the soul need a bigger mathematics? {#новая-математика}
 
