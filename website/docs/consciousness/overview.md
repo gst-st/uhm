@@ -303,7 +303,7 @@ The section is organized into 7 subsections, each revealing a specific aspect of
 
 | # | Document | Topic | Key result |
 |---|----------|-------|------------|
-| 21 | [36 theories of consciousness](./comparative/consciousness-theories) | Meta-analysis | UHM vs IIT, GNW, HOT, PWT, etc. |
+| 21 | [42 theories of consciousness](./comparative/consciousness-theories) | Meta-analysis | UHM vs IIT, GNW, HOT, PWT, the category theory of qualia, etc. |
 | 22 | [Panpsychism](./comparative/panpsychism-analysis) | Critical analysis | Solution to the combination problem |
 | 23 | [Cognitive hierarchy](./comparative/cognitive-hierarchy) | K1–K5 levels | Operationalization |
 

@@ -303,7 +303,7 @@ $$P \in \left(\frac{2}{7},\; \frac{3}{7}\right]$$
 
 | # | Документ | Тема | Ключевой результат |
 |---|----------|------|-------------------|
-| 21 | [35 теорий сознания](./comparative/consciousness-theories) | Мета-анализ | УГМ vs IIT, GNW, HOT и др. |
+| 21 | [42 теории сознания](./comparative/consciousness-theories) | Мета-анализ | УГМ vs IIT, GNW, HOT, PWT, теория категорий квалиа и др. |
 | 22 | [Панпсихизм](./comparative/panpsychism-analysis) | Критический анализ | Решение проблемы комбинации |
 | 23 | [Когнитивная иерархия](./comparative/cognitive-hierarchy) | K1–K5 уровни | Операционализация |
 

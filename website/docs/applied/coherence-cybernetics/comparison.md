@@ -11,7 +11,7 @@ description: "Systematic comparison of CC with IIT, FEP, GWT, autopoiesis, and o
 
 
 :::info Who This Chapter Is For
-A systematic comparison of CC with nine competing theories of consciousness: IIT, FEP, GWT, autopoiesis, Orch-OR, HOT, RPT, and AST.
+A systematic comparison of CC with eight competing theories of consciousness: IIT, FEP, GWT, autopoiesis, Orch-OR, HOT, RPT, and AST.
 :::
 
 In the previous chapter we explored the philosophical foundation of CC — unitary monism, the necessity of consciousness, the ethics of the threshold. All of this sounds impressive, but a scientific theory does not live in a vacuum. Its value is determined not only by internal beauty, but by *what it can do that others cannot*. It is time to place CC alongside its competitors — honestly, noting both the advantages and the limitations of each.
@@ -21,7 +21,7 @@ If you are a scientist working in one of these traditions, this section will sho
 :::info Chapter Roadmap
 In this chapter we:
 1. Sketch the **theoretical landscape** — a master table of 9 theories (section 1)
-2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 36 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
+2. Show **CC bridges to each theory** with compact comparisons (section 2). Extended analysis of all 42 theories: [Theories of Consciousness](/docs/consciousness/comparative/consciousness-theories)
 3. Consolidate everything into a **predictions table** (section 3) and honestly assess the **limitations of CC** (section 4)
 :::
 
@@ -72,7 +72,7 @@ These theories can be divided into three families:
 ## 2. Detailed Comparison with Each Theory {#детальное-сравнение}
 
 :::info Detailed Analysis
-Full analysis of 36 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 36 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
+Full analysis of 42 theories of consciousness (including the 8 below) with history, formalism, and critique: [Theories of Consciousness → 42 theories](/docs/consciousness/comparative/consciousness-theories). Here — **only the bridges** between each theory and CC.
 :::
 
 ### 2.1 IIT (Tononi) {#iit}
