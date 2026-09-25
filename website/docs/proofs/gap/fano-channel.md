@@ -397,6 +397,8 @@ The canonical $\varphi_{\text{base}}$ (decohering self-observation) is **incompa
 **(d)** Therefore, a living self-model **must** preserve coherences: a generalized $\varphi_{\text{coh}}$ is necessary.
 :::
 
+**Necessary, not sufficient (2026-09-25).** Preserving coherences does not keep an isolated holon alive. With the anchor $I/7$ the channel $\varphi_{\mathrm{coh}}$ is unital, and a unital self-model cannot raise purity: an isolated holon regenerating toward it converges to $I/7$ for every $\kappa$ ([dead isolation](/docs/core/dynamics/evolution#теорема-мёртвая-изоляция) [T]). A non-unital anchor is needed as well. The self-registering $\varphi_s$ ([φ operator](/docs/core/operators/phi-operator#phi-s)) supplies one, and its self-sustaining attractors lie near basis states — the localisation of item (c), now produced by the dynamics ([self-sustaining attractors](/docs/core/dynamics/evolution#теорема-самоподдерживающийся-аттрактор) [T]).
+
 ---
 
 ## 10. Equivalence of BIBD Channels [T] {#bibd-эквивалентность}
