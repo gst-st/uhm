@@ -377,7 +377,7 @@ The 14 Ward identities reduce 231 free parameters to 217 — these are **linear 
 :::
 
 :::info Practical Consequence [T]
-If $G_2$-symmetry is unbroken ($\alpha^* = 0$), the entire $21 \times 21$ correlation matrix is determined by **one number** $\alpha$. With partial breaking ($\alpha^* > 0$) corrections of order $\alpha^* \cdot \Delta_{\max}$ appear.
+For the $G_2$-symmetric reference dynamics the entire $21 \times 21$ correlation matrix would be determined by **one number** $\alpha$. The actual dynamics breaks $G_2$ at every Fano weight $\alpha^*$, including $\alpha^* = 0$: $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\,\Delta_{\max} \geq \tfrac23\Delta_{\max}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)), so corrections of that order are always present. (Corrected 2026-09-25: the reading "$\alpha^* = 0$ is unbroken" assumed the $G_2$-covariant Fano dissipator retracted on 2026-09-10.)
 :::
 
 ### 6.4 Reduction Cascade — From Chaos to Order
@@ -488,7 +488,7 @@ $$
 | $\Delta_{G_2}^{(\text{exp})}$ | Interpretation |
 |-------------------------------|----------------|
 | $\Delta \approx 0$ | Full $G_2$-symmetry confirmed |
-| $0 < \Delta \ll 1$ | Weak violation — $\Delta \propto \alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
+| $0 < \Delta \ll 1$ | Weak violation — the dynamics gives $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\Delta_{\max}$, affine in the Fano weight $\alpha^*$ (depth of [self-observation](/docs/physics/gauge-symmetry/g2-structure)) |
 | $\Delta \sim O(1)$ | Strong violation — $G_2$-reduction not applicable |
 ::::
 
@@ -497,7 +497,7 @@ $$
 :::warning Falsifiable Prediction [H]
 If the $G_2$-structure of octonions is fundamental to Gap-dynamics, then:
 
-1. Ward identities must hold with accuracy $\Delta \propto \alpha^* \approx 1 - 2/(7P)$
+1. Ward identities must hold with accuracy $\Delta_{G_2} = \tfrac{2+\alpha^*}{3}\Delta_{\max}$, with the Fano weight $\alpha^*$ not fixed by any proven principle (the value $\alpha^* \approx 1 - 2/(7P)$ is retracted — [Fano channel §4](/docs/proofs/gap/fano-channel#alpha-star))
 2. The decomposition $C = \alpha \cdot \mathbf{1} + \beta \cdot \mathbf{F} + \gamma \cdot \mathbf{F}^2$ with $\beta = -3\alpha/7$, $\gamma = 3\alpha/49$ must approximate the data well
 3. Systematic violation $\Delta \sim O(1)$ refutes the $G_2$-hypothesis
 

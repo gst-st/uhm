@@ -523,7 +523,7 @@ $$
 
 1. **Спектральная проекция**: $\rho_* = \sum_{k: \mathrm{Re}(\lambda_k)=0} \langle L_k | \Gamma \rangle R_k$ ([формализация φ](/docs/proofs/categorical/formalization-phi#27-спектральная-формула-для-φ-явное-вычисление))
 2. **Итерация**: $\rho_*^{(n)} := e^{n\Delta\tau\mathcal{L}_\Omega}[\Gamma_0]$ — сходимость экспоненциальная
-3. **Вариационная**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ ([FEP](/docs/proofs/dynamics/fep-derivation))
+3. ~~**Вариационная**: $\rho_* = \arg\min_{\psi \in \mathcal{CPTP}} [S_{vN}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$~~ — отозвано 2026-09-25 [✗]: этот argmin — проекция на старший собственный вектор $\Gamma$, а не $\rho_*$ ([FEP](/docs/proofs/dynamics/fep-derivation), врезка об отзыве)
 
 **См.:** [Формализация φ](/docs/proofs/categorical/formalization-phi#26-каноническая-форма-φ-для-угм), [Вывод формы ℛ](/docs/core/dynamics/evolution#вывод-формы-регенерации)
 :::

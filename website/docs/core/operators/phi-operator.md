@@ -154,7 +154,7 @@ Why the convex combination $\mathcal{P}_\alpha = \alpha\,\mathcal{P}_{\text{base
 3. **Convex combination**: $\mathcal{P}_\alpha$ is a CPTP channel (a convex combination of CPTP channels is CPTP)
 4. **At $\alpha = 0$**: pure Fano, maximum coherence preservation, but less accurate predictive model
 5. **At $\alpha = 1$**: pure atomic, ideal predictive accuracy, but the system dies
-6. **The variational principle** finds the optimum $\alpha^* \in (0,1)$ balancing accuracy and survivability
+6. **No proven principle fixes $\alpha$.** The variational principle was said to find an optimum $\alpha^* \in (0,1)$ balancing accuracy and survivability; that claim is retracted (2026-09-25; see the α* section below) — the functional it used is minimised at $\alpha = 0$
 
 ### Two types of classifier atoms
 
@@ -250,7 +250,7 @@ $$
 $$
 
 :::tip Theorem: Explicit coefficients $c_{mn}$
-The coefficients of the canonical $\varphi_{\text{coh}}$ are fully determined:
+The coefficients of the canonical $\varphi_{\text{coh}}$, given the Fano weight $\alpha$:
 
 $$
 c_{mn} = \begin{cases} \alpha^* k & m = n \text{ (atomic part)} \\ (1-\alpha^*) k / 3 & m \neq n,\, (m,n) \text{ on a common Fano line} \\ 0 & m \neq n,\, (m,n) \text{ not on a common Fano line} \end{cases}
@@ -258,7 +258,7 @@ $$
 
 The coefficients are determined through:
 - The [Fano structure](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ (algebraic geometry)
-- The variational principle ($\alpha^*$ via $P$ and $P_{\text{crit}}$)
+- The Fano weight $\alpha$ — a free parameter; its variational value $\alpha^* \approx 1 - 2/(7P)$ is retracted (see below)
 - The compression parameter $k$ (from [φ formalisation](/docs/proofs/categorical/formalization-phi))
 
 [Proof →](/docs/proofs/gap/fano-channel#phi-coh) | Status: **[T]**
@@ -272,7 +272,7 @@ Atomic operators (7 total): $K_m^{(\text{atom})} = \sqrt{\alpha^* k / 7} \cdot |
 
 ## Variational definition of α*
 
-:::tip Theorem: Variational definition of α*
+:::tip Theorem: Variational definition of α* — retracted 2026-09-25 [✗]
 The optimal parameter $\alpha^*$ is determined by the [variational principle](/docs/proofs/dynamics/fep-derivation):
 
 $$
@@ -291,11 +291,13 @@ $$
 | $P = 0.5$ | $\approx 0.43$ | Balance of atomic and Fano |
 | $P \to P_{\text{crit}}$ | $\to 0$ | Almost purely Fano (minimal coherence destruction) |
 
-[Proof →](/docs/proofs/gap/fano-channel#alpha-star) | Status: **[T]**
+[Proof →](/docs/proofs/gap/fano-channel#alpha-star) | Status: retracted [✗]
+
+**Why retracted.** $\mathcal{F}[\psi;\Gamma] = -\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ is linear in $\psi(\Gamma)$, and $\mathcal{P}_\alpha(\Gamma) = \Delta(\Gamma) + \tfrac{1-\alpha}{3}(\Gamma - \Delta(\Gamma))$, with $\Delta$ the diagonal part, is affine in $\alpha$. Hence $\mathcal{F}(\alpha) = \mathcal{F}(0) + \tfrac{\alpha}{3}\left[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)\right]$ for full-rank $\Gamma$: the minimum over $[0,1]$ is at $\alpha = 0$ (pure Fano) whenever $\Gamma$ has coherences, and there is no interior optimum $1 - 2/(7P)$. Checked on 400 random states with $P$ from $0.19$ to $0.91$: minimum at $\alpha = 0$ in all 400. The weight $\alpha$ of the canonical $\varphi_{\text{coh}}$ is therefore a free parameter; no principle in the corpus fixes it.
 :::
 
 :::info Physical meaning of the balance
-At $\alpha = 1$ (purely atomic channel) — maximum predictive accuracy, but complete destruction of coherences. At $\alpha = 0$ (purely Fano) — coherences preserved with coefficient $1/3$, but a less accurate predictive model. The optimum $\alpha^* \in (0,1)$ is a balance between predictive accuracy and structure preservation.
+At $\alpha = 1$ (purely atomic channel) — maximum predictive accuracy, but complete destruction of coherences. At $\alpha = 0$ (purely Fano) — coherences preserved with coefficient $1/3$, but a less accurate predictive model. The optimum $\alpha^* \in (0,1)$ is a balance between predictive accuracy and structure preservation. **[✗]** The functional of the box above has no such interior optimum; the trade-off is real, but it is not resolved by that functional.
 :::
 
 #### Sketch of the derivation of α* {#эскиз-вывода-alpha}
@@ -310,9 +312,11 @@ $$\alpha^* \approx 1 - \frac{P_{\text{crit}}}{P} = 1 - \frac{2}{7P}$$
 
 The formula is **approximate** — the exact solution requires numerical optimisation for arbitrary $\Gamma$.
 
+**[✗] Retracted sketch (2026-09-25):** $S_{\text{spec}} + D_{KL}$ is not the sum of a falling and a rising term here — it is affine in $\alpha$ with slope $\tfrac13[D_{KL}(\Gamma\|\Delta\Gamma) + D_{KL}(\Delta\Gamma\|\Gamma)] \geq 0$, so $\partial\mathcal{F}/\partial\alpha = 0$ has no solution unless $\Gamma$ is diagonal.
+
 ### Numerical example {#числовой-пример-phi}
 
-Let $\Gamma$ have purity $P = 0.4$ (a viable system). We compute:
+Let $\Gamma$ have purity $P = 0.4$ (a viable system). We compute (step 1 uses the retracted formula for $\alpha^*$, so the numbers below illustrate one choice of the free weight $\alpha$, not a derived value):
 
 1. **Parameter $\alpha^*$:** $\alpha^* \approx 1 - 2/(7 \times 0.4) = 1 - 0.714 = 0.286$
 2. **Reflexion measure:** $R = 1/(7P) = 1/2.8 \approx 0.357$
@@ -326,15 +330,15 @@ The self-model retains ~15% of each coherence amplitude — a "defocused" but no
 ## Unified theorem of self-observation {#единая-теорема-самонаблюдения}
 
 :::tip Theorem: Fano-coherent self-modelling (unified theorem)
-The canonical coherence-preserving self-modelling for UHM is determined **completely uniquely** (the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [T]) through:
+The canonical coherence-preserving self-modelling for UHM is determined up to the Fano weight $\alpha$ (the variational value of item (b) is retracted; the compression parameter $k = 1 - R$ is defined by the [reflexion measure](/docs/consciousness/foundations/self-observation#теорема-k-из-r) [T]) through:
 
 **(a)** **Algebraic structure:** The [Fano plane](/docs/physics/gauge-symmetry/fano-selection-rules) $PG(2,2)$ defines the composite atoms of the classifier $\Omega$, generating the Fano [Lindblad operators](/docs/core/operators/lindblad-operators) $L_p^{\text{Fano}}$.
 
-**(b)** **Variational principle:** The balance between atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\text{spec}} + D_{KL}$.
+**(b)** ~~**Variational principle:** The balance between atomic and Fano observation $\alpha^*$ minimises the functional $\mathcal{F} = S_{\text{spec}} + D_{KL}$.~~ **Retracted 2026-09-25 [✗]:** that functional is minimised at $\alpha = 0$; the weight $\alpha$ is a free parameter.
 
 **(c)** **Phase properties:** The canonical $\varphi_{\text{coh}}$ **preserves** the phases of coherences. The target Gap coincides with the current Gap.
 
-**(d)** **Symmetry:** [G₂-covariance](/docs/physics/gauge-symmetry/g2-structure) is partially broken by the atomic component. The degree of breaking $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ depends on purity $P$. The Fano dissipator is G₂-covariant; the atomic one is not.
+**(d)** **Symmetry (corrected):** $G_2$ is broken at every $\alpha$, by the Fano and the atomic components alike: $\Delta_{G_2}(\alpha) = \tfrac{2+\alpha}{3}\,\Delta_{\max} \geq \tfrac23\Delta_{\max}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность)). The earlier reading — "the Fano dissipator is G₂-covariant; the atomic one is not", with $\Delta_{G_2} = \alpha^* \cdot \Delta_{\max}$ — was retracted on 2026-09-10.
 
 **(e)** **Stationary Gap:** upon substitution $\theta_{ij}^{\text{target}} = \theta_{ij}$:
 
@@ -344,26 +348,26 @@ $$
 
 The stationary Gap is **shifted** relative to the current one by the angle $\arctan(\Delta\omega/(\Gamma_2 + \kappa))$ due to unitary rotation.
 
-[Proofs →](/docs/proofs/gap/fano-channel) | Status: **[T]**
+[Proofs →](/docs/proofs/gap/fano-channel) | Status: **[T]** for (a), (c), (e) and the corrected (d); (b) retracted [✗]
 :::
 
 ---
 
 ## Three definitions of φ and their equivalence {#три-определения}
 
-In the documentation φ appears in three forms. They do not contradict each other — each subsequent one is a **consequence** of the previous. Here all three definitions are collected with explicit references to the theorems linking them into a single chain.
+In the documentation φ appears in three forms. They were presented as a chain, each a **consequence** of the previous; the variational form (2) and both links through it are **retracted** (2026-09-25): the functional of (2) is minimised by a projection onto the top eigenvector of $\Gamma$, which is neither the categorical φ nor the replacement channel. Forms (1) and (3) stand on their own pages.
 
 ### Three forms
 
 | # | Name | Formula | Location |
 |---|------|---------|----------|
 | 1 | **Categorical φ** | $\varphi \dashv i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty(\mathcal{C})$ | [Axiom Ω⁷](/docs/core/foundations/axiom-omega), [FEP derivation](/docs/proofs/dynamics/fep-derivation#2-категориальные-основы) |
-| 2 | **Variational φ** | $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_\Gamma[S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ | [Theorem 3.1, FEP derivation](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) |
+| 2 | **Variational φ** — retracted 2026-09-25 [✗] | $\varphi = \arg\min_{\psi \in \mathcal{CPTP}} \mathbb{E}_\Gamma[S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)]$ | [Theorem 3.1, FEP derivation](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) |
 | 3 | **Replacement φ_k** | $\varphi_k(\Gamma) = (1-k)\Gamma + k\rho^*_{\mathrm{diss}},\ k = 1 - R$ | [Self-observation](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) |
 
 ### Connection (1) ↔ (2): Theorem 3.1
 
-:::tip Theorem 3.1 (Variational characterisation) [T]
+:::tip Theorem 3.1 (Variational characterisation) — retracted 2026-09-25 [✗]
 The categorically defined $\varphi$ (as the left adjoint to the inclusion $i: \mathrm{Sub}(\Gamma) \hookrightarrow \mathcal{E}$) **coincides** with the minimiser of the variational functional:
 
 $$
@@ -371,14 +375,14 @@ $$
 $$
 
 The invariant measure $\mu$ is unique by the primitivity of the linear part $\mathcal{L}_0$ [T-39a].
-[Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: **[T]**
+[Full proof →](/docs/proofs/dynamics/fep-derivation#32-центральная-теорема) | Status: retracted [✗] — the functional is the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$, minimised by a projection onto the top eigenvector of $\Gamma$
 :::
 
-Thus: the variational principle is **not an axiom**, but a **theorem** about the categorically defined φ.
+~~Thus: the variational principle is **not an axiom**, but a **theorem** about the categorically defined φ.~~ Retracted with Theorem 3.1: there is no variational principle for φ in the corpus.
 
 ### Connection (2) ↔ (3): the replacement channel as a minimiser
 
-:::tip Theorem (Replacement channel as CPTP-minimiser) [T]
+:::tip Theorem (Replacement channel as CPTP-minimiser) — retracted 2026-09-25 [✗]
 The minimiser of the functional $\mathcal{F}[\psi; \Gamma] = S_{\mathrm{spec}}(\psi(\Gamma)) + D_{KL}(\psi(\Gamma) \| \Gamma)$ over the class of CPTP channels on $\mathcal{D}(\mathbb{C}^7)$ is the replacement channel
 
 $$
@@ -390,7 +394,9 @@ $$
 2. **Form of the minimiser:** From the stationarity conditions (variation over $\psi$ under the CPTP constraint) the minimiser takes the form of a convex combination of $\mathrm{Id}$ and the constant channel $\mathcal{C}_{\rho^*}$, i.e. $\psi^*(\Gamma) = (1-k)\Gamma + k\rho^*$.
 3. **Value of $k$:** From the Banach principle (contracting mapping with constant $(1-k) < 1$) and the consistency condition with the reflexion measure: $k = 1 - R = 1 - 1/(7P)$.
 
-[Proof of physical realisation →](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) | [Parameter k from reflexion →](/docs/consciousness/foundations/self-observation#теорема-k-из-r) | Status: **[T]**
+[Proof of physical realisation →](/docs/consciousness/foundations/self-observation#физическая-реализация-phi) | [Parameter k from reflexion →](/docs/consciousness/foundations/self-observation#теорема-k-из-r) | Status: retracted [✗]
+
+**Why retracted.** Step 1 is false: $\mathcal{F}[\psi;\Gamma] = -\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ is linear in $\psi$, not strictly convex, and its minimum $-\log\lambda_{\max}(\Gamma)$ is reached by the channel onto the top eigenvector of $\Gamma$. The replacement channel $\varphi_k$ stays a well-defined CPTP channel with its own properties ([self-observation](/docs/consciousness/foundations/self-observation#физическая-реализация-phi)); it is not a minimiser of $\mathcal{F}$ — on 300 random states it lay above the minimum in all 300.
 :::
 
 ### Unified chain: φ_cat → φ_var → φ_k
@@ -400,13 +406,13 @@ $$
    — left adjoint to i: Sub(Γ) ↪ Sh_∞(C)
    — defined axiomatically through the structure of the ∞-topos
          |
-         | Theorem 3.1 [Т]
+         | Theorem 3.1 — retracted ✗
          ↓
 φ_var (variational)
    — argmin [S_spec + D_KL] over all CPTP channels
    — variational principle as a CONSEQUENCE, not an axiom
          |
-         | convexity + Banach principle [Т]
+         | convexity + Banach principle — retracted ✗
          ↓
 φ_k (replacement)
    — φ_k(Γ) = (1−k)Γ + k·ρ*_diss,  k = 1−R
@@ -455,5 +461,5 @@ The apparent "circularity" (φ defines $\rho^*$, and $\rho^*$ enters φ) is reso
 - **Used in:** [Self-observation](/docs/consciousness/foundations/self-observation), [Evolution](/docs/core/dynamics/evolution), [Gap dynamics](/docs/core/dynamics/gap-dynamics)
 - **Full formalisation:** [Formalisation of the φ operator](/docs/proofs/categorical/formalization-phi)
 - **Proofs of Fano theorems:** [Fano channel and Gap theorems](/docs/proofs/gap/fano-channel)
-- **Variational characterisation:** [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation)
-- **G₂ structure:** [G₂ = Aut(O)](/docs/physics/gauge-symmetry/g2-structure) — covariance of the Fano dissipator
+- **Variational characterisation (retracted 2026-09-25):** [FEP derivation from UHM](/docs/proofs/dynamics/fep-derivation)
+- **G₂ structure:** [G₂ = Aut(O)](/docs/physics/gauge-symmetry/g2-structure) — the Fano dissipator is covariant only under the frame group $\Gamma_{\!\text{oct}}$ ([Theorem 5.1b](/docs/proofs/gap/fano-channel#g2-ковариантность))

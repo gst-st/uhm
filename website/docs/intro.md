@@ -55,7 +55,7 @@ The **∞-topos $\mathrm{Sh}_\infty(\mathcal{C})$** is the sole primitive of UHM
 | 4 | **[Self-modeling](./core/foundations/axiom-omega#свойство-4)** | $\varphi \dashv i: \text{Sub}(\Gamma) \hookrightarrow \mathbf{Sh}_\infty$ (adjunction)* |
 | 5 | **[Stratification](./core/foundations/axiom-omega#свойство-5)** | $X = \bigsqcup_\alpha S_\alpha$, $S_0 = \{T\}$ |
 
-*The variational characterization $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ is a **theorem** about properties of the categorically defined φ.
+*The variational characterization $\varphi = \arg\min \mathbb{E}[S_{spec} + D_{KL}]$ was stated as a **theorem** about the categorically defined φ; it is **retracted** (2026-09-25): the functional equals the cross-entropy $-\mathrm{Tr}(\psi(\Gamma)\log\Gamma)$ and is minimised by a projection onto the top eigenvector of $\Gamma$, not by φ ([FEP derivation](./proofs/dynamics/fep-derivation), retraction box).
 
 :::note Connection to the Septicity Axiom
 The [Septicity Axiom](./core/foundations/axiom-septicity) (AP+PH+QG+V) is a set of **consequences** of Ω⁷ — operational requirements that any viable system must satisfy.
@@ -230,7 +230,7 @@ where:
 | **Topological protection of Gap vacuum** | $\pi_2(G_2/T^2) \cong \mathbb{Z}^2$; barrier $\geq 6\mu^2$; vacuum separated from $\text{Gap}=0$ | [T] | [Theorem](./core/dynamics/composite-systems#теорема-тополог-защита) |
 | **Canonical definition of $f_0$** | $f_0\Lambda^4 = \frac{1}{7}[V_{\text{Gap}}^{\min} + \frac{1}{2}\zeta'_{H_{\text{Gap}}}(0)]$; UV-finiteness + unique vacuum | [T] | [Theorem](./physics/particle-physics/higgs-sector#теорема-f0-канонический) |
 | **Structural necessity of $\Lambda > 0$** | Autopoiesis + local cohomology → $\rho_{\text{vac}} > 0$; Lawvere incompleteness | [T] | [Theorem](./core/foundations/consequences#теорема-лямбда-положительна) |
-| **CC-6: Scale invariance** | Bures contractivity of CPTP + CC-5 (nontriviality [T]) → structure preserved under aggregation | [T] | [Theorem](./applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) |
+| **CC-6: Scale invariance** (T-72) | Under (AGG) — the aggregation returns a part's state on uncoupled copies, and the coupling is weak ($\delta$ in Bures distance) — $P$, $R$, $\Phi$ and Gap of the aggregate stay within $O(\delta)$ of a part's; preservation under *any* CPTP aggregation is retracted (the depolarising channel gives $I/7$) | [C] | [Theorem](./applied/coherence-cybernetics/theorems#теорема-92-масштабная-инвариантность) |
 | **Gap = curvature of Serre fibration** | Spectral triple T-53 + NCG curvature → exact identification | [T] | [Theorem](./core/dynamics/gap-operator#теорема-gap-серра) |
 | **Internal theory** (T-54) | $\mathrm{Th}_{\mathrm{UHM}} = \mathrm{Sub}_{\mathrm{closed}}(\Omega)$ — φ-invariant predicates | [T] | [Theorem](./core/foundations/consequences#внутренняя-теория) |
 | **Lawvere incompleteness** (T-55) | $\mathrm{Th}_{\mathrm{UHM}} \subsetneq \Omega$ — from Cartesian closedness + nontriviality of φ | [T] | [Theorem](./core/foundations/consequences#неполнота-ловера) |
@@ -247,7 +247,7 @@ where:
 | **Stability radius** (T-104) | $r_{\text{stab}} \approx K\bigl(\sqrt{P-1/7}-\sqrt{1/7}\bigr)$, $K=\sqrt{35}\sqrt[4]{6}/10$ — Bures distance to $\{P=2/7\}$; the old $\sqrt{P-2/7}$ is [refuted](/docs/applied/coherence-cybernetics/stability#радиус-устойчивости); most dangerous channel is $h^{(D)}$ | [C] | [Theorem](./applied/coherence-cybernetics/stability#радиус-устойчивости) |
 | **Landauer energy balance** (T-105) | $\Delta F_{\min} = k_B T_{\text{eff}} \cdot \ln 2 \cdot \dot{S}_{\text{diss}}$; three metabolic regimes | [T] | [Theorem](./applied/coherence-cybernetics/stability#энергетический-баланс) |
 | **Information capacity of Enc** (T-107) | $C_{\text{Enc}} \leq \log_2 7 \approx 2.81$ bits/observation (Holevo bound + T-102) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#информационная-ёмкость) |
-| **Compositionality of Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ from T-100 + T-72 + T-58′ (section–retraction; the aggregation is a CPTP coarse-graining, not an equivalence) | [T] | [Theorem](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
+| **Compositionality of Enc/Dec** (T-108) | $\text{Enc}_{12} = \Phi_{\text{agg}} \circ (\text{Enc}_1 \otimes \text{Enc}_2)$ is CPTP for every CPTP aggregation (T-100 + closure of channels under $\otimes$ and $\circ$); that the diagnostics carry over across scales needs the assumption (AGG) of T-72; the uniqueness claim is retracted | [T]; transfer [C] | [Theorem](./applied/coherence-cybernetics/sensorimotor#композициональность-enc-dec) |
 | **Information learning bound** (T-109) | $n \geq \ln(1/(2\delta))/\xi_{\text{QCB}}$, $\xi_{\text{QCB}} \leq \ln 7$ (quantum Chernoff bound + T-107) | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-информационная-граница) |
 | **Optimal learning bound** (T-112) | $n_{\text{opt}} = \max(n_{\text{info}}, n_{\text{dyn}}, n_{\text{stab}})$ — three regimes | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-оптимальная-граница) |
 | **N=7 minimality for learning** (T-113) | Learning via regeneration is impossible for $N < 7$; $N = 7$ is Pareto-optimal | [T] | [Theorem](./applied/coherence-cybernetics/learning-bounds#теорема-минимальность-n7) |
@@ -285,6 +285,8 @@ where:
 
 :::info Minimality of the primitive
 UHM's primitive is **minimal** among all possible axiomatic choices: one axiom instead of two or three ([justification](/docs/consciousness/foundations/two-aspect-monism#минимальность-аксиомы)). From it are **derived**: the form of experiential content ([unique functor](/docs/consciousness/foundations/two-aspect-monism#теорема-единственность-фв)), identity of qualia ([Yoneda lemma](/docs/consciousness/foundations/two-aspect-monism#реляционная-идентичность)), immanence of description ([closure via φ](/docs/consciousness/foundations/two-aspect-monism#самореферентная-замкнутость)).
+
+The relational identity of qualia via the Yoneda lemma was proposed before UHM: Tsuchiya and Saigo stated it for a category of experiences in an April 2020 preprint (doi:10.31219/osf.io/68nhy) and in *Neurosci. Conscious.* 2021, niab034; the category-theoretic approach to consciousness goes back to Tsuchiya, Taguchi and Saigo (*Neurosci. Res.* 107, 1–7, 2016), and a graded (enriched-category) version is in Tsuchiya, Phillips and Saigo (*Conscious. Cogn.* 101, 103319, 2022). UHM applies the lemma to its own category of experiences — rays of $\mathbb{P}(\mathcal{H}_E)$ with Fubini–Study distances.
 :::
 
 ## Navigation

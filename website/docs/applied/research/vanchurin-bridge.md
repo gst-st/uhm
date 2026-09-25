@@ -105,7 +105,7 @@ The dictionary is exact on every line that matters:
 | VL object | UHM object | Status of the link |
 |---|---|---|
 | trainable state $q$ | coherence matrix $\Gamma\in\mathcal D(\mathbb C^7)$ | structural |
-| loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) |
+| loss $-\mathcal F$ | free-energy functional $\mathcal F[\varphi;\Gamma]$ | T-39e (variational $\varphi$) — retracted 2026-09-25: the functional is a cross-entropy and $\varphi$ is not its minimiser, so this row is a notational match only |
 | metric $g$ | **Bures/SLD metric** — *unique* monotone metric (Petz; T-187) | forced, not chosen |
 | noise covariance $\kappa$ | covariance of one-step Kraus increments of $\mathcal D_\Omega$ | forced by T-41/T-59, **relative to the canonical Kraus resolution** (§7.2) |
 | covariant descent $\dot q=g^{-1}\nabla\mathcal F$ | regeneration $\mathcal R$ toward $\rho_*$ | T-39f–h |

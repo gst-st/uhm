@@ -8,7 +8,7 @@ slug: /consciousness/subjects/pre-linguistic
 # Pre-linguistic Consciousness
 
 :::info Bridge from the previous chapter
-In the section [Comparison of theories](/docs/consciousness/comparative/consciousness-theories) we compared UHM with 35 alternative theories of consciousness and established that the $\Gamma$ formalism is the most complete. It is now time to ask a specific question: **who** can be a subject of consciousness? The first — and perhaps the most unexpected — answer is: consciousness does not require language. This document shows how the $\Gamma$ formalism accounts for the consciousness of infants, animals, and all beings lacking symbolic speech.
+In the section [Comparison of theories](/docs/consciousness/comparative/consciousness-theories) we compared UHM with 42 other theories of consciousness, reading each as a projection of $\Gamma$ onto one aspect; that the $\Gamma$ formalism is the most complete is stated there as an [interpretation [I]](/docs/consciousness/comparative/consciousness-theories#утверждение-о-полноте), not as a proven result. It is now time to ask a specific question: **who** can be a subject of consciousness? The first — and perhaps the most unexpected — answer is: consciousness does not require language. This document shows how the $\Gamma$ formalism accounts for the consciousness of infants, animals, and all beings lacking symbolic speech.
 :::
 
 ## Chapter roadmap

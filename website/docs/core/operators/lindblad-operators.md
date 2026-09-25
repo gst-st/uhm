@@ -384,12 +384,12 @@ Status: **[T]**
 
 ### Cascading Corollaries of Primitivity
 
-The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [T]:
+The proof of primitivity closes **5 conditional results**, upgrading their status from [C] to [T] (one of them, the variational characterisation of φ, was retracted on 2026-09-25):
 
 | Result | Old status | New status | Reason |
 |-----------|:---:|:---:|---|
 | Equivalence (1)⇔(2) for φ | [C] | **[T]** | Perron–Frobenius theorem applicable |
-| Variational characterisation of φ (Th.3.1 FEP) | [C] | **[T]** | Uniqueness of the stationary state |
+| Variational characterisation of φ (Th.3.1 FEP) | [C] | **[✗]** retracted 2026-09-25 | The functional is a cross-entropy, minimised by a projection onto the top eigenvector of Γ, not by φ |
 | Spectral formula for φ (Th.2.3) | [T] | **[T]** (multiplicity 1) | Unique zero mode |
 | Convergence $R \to 1$ (Th.4.2) | [T] | **[T]** (unconditionally) | Guaranteed for any initial state |
 | Uniqueness of the regeneration target | implicit | **[T]** | $\Gamma_{\text{target}} = \rho_*$ uniquely |
@@ -751,7 +751,7 @@ is **strictly positive for every** $\alpha\in[0,1]$:
 | $\alpha$ | Mode | $\Delta_{G_2}(\alpha)$ (dynamics) |
 |----------|-------|---------------------|
 | $0$ | Purely Fano | $\tfrac23\Delta_{\max} > 0$ (breaks $G_2$ to $\Gamma_{\!\text{oct}}$) |
-| $\alpha^* \in (0,1)$ | Mixed (optimal) | $\tfrac{2+\alpha^*}{3}\Delta_{\max}$ |
+| $\alpha \in (0,1)$ | Mixed (no proven optimum: the variational $\alpha^*$ is retracted) | $\tfrac{2+\alpha}{3}\Delta_{\max}$ |
 | $1$ | Purely atomic | $\Delta_{\max}$ |
 
 :::info Remark: kinematic $G_2$ vs. dynamical frame — the frame decision D-0910 [T]
