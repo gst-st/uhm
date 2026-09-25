@@ -749,7 +749,7 @@ $$
 
 **For the curious reader.** Turn it around: take the matrix algebra $M_2(\mathbb{C})$ (all $2 \times 2$ complex matrices). It is **noncommutative**: $AB \neq BA$ in general. Ask: “what space does it correspond to?” Gelfand’s answer: **none**—the theorem fails for noncommutative algebras. That is the crux: the quantum world is noncommutative, and ordinary geometry does not apply. To “see geometry” in noncommutative algebras took Connes.
 
-**Without Gelfand–Naimark** in the UHM: spacetime could not be derived from an algebra. $M^4$ would have to be **postulated**—as in the Standard Model and GR. A postulate is a degree of freedom, an arbitrary choice. In the UHM $M^4$ is not a postulate but a **conditional theorem**: T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119 (an earlier version read "a theorem: T-120 [T]"; corrected 2026-09-25).
+**Without Gelfand–Naimark** in the UHM: spacetime could not be derived from an algebra. $M^4$ would have to be **postulated**—as in the Standard Model and GR. A postulate is a degree of freedom, an arbitrary choice. In the UHM $M^4$ is not a postulate but a **conditional theorem**: T-120 [C], at the open reconstruction axioms of T-119 (an earlier version read "a theorem: T-120 [T]"; corrected 2026-09-25).
 
 Gelfand–Naimark works for **commutative** algebras—when $AB = BA$ for all observables. But quantum mechanics is intrinsically noncommutative: $\hat{x}\hat{p} \neq \hat{p}\hat{x}$. What then? We need geometry that works without commutativity. Connes built it.
 
@@ -1075,13 +1075,13 @@ Mathematical honesty requires stating what **is** in the foundations—and what 
 
 **The UHM does not use:**
 - **String theory.** No extra (compactified) dimensions, no supersymmetry as input, no landscape of vacua. The UHM’s seven dimensions are seven “semantic” directions in $\mathcal{D}(\mathbb{C}^7)$, not spatial ones.
-- **Loop quantum gravity.** No spin networks, no Planck-scale spatial discreteness as a postulate. Spacetime $M^4$ is a **consequence** (T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119), not an input.
+- **Loop quantum gravity.** No spin networks, no Planck-scale spatial discreteness as a postulate. Spacetime $M^4$ is a **consequence** (T-120 [C], at the open reconstruction axioms of T-119), not an input.
 - **A concrete model of quantum gravity.** Gravity comes from Connes’s spectral action (T-65 [T]), not from quantizing the metric.
 - **A neurobiological substrate.** The theory is substrate-independent (T-153): $\Gamma$ may be realized in neural nets, silicon, or any physical system satisfying the axioms.
 
 **The UHM does not assume:**
 - A specific Hamiltonian $H$—the Hamiltonian is **derived** from structure
-- A fixed spacetime dimension—$M^4$ is assembled (T-120 [C]: an aperiodic clock and the open reconstruction axioms of T-119)
+- A fixed spacetime dimension—$M^4$ is assembled (T-120 [C]: the open reconstruction axioms of T-119)
 - A fixed gauge group—$G_2$ follows from $\mathrm{Aut}(\mathbb{O})$
 - A specific neurobiological mechanism—the theory operates at the level of information architecture, not neurons
 - Classical vs. quantum nature of the substrate—it suffices that the substrate implements $\Gamma \in \mathcal{D}(\mathbb{C}^7)$

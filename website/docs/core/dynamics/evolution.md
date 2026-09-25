@@ -65,7 +65,7 @@ The arrow of time is the **progressive collapse of higher strata** toward termin
 ## Full equation of motion {#полное-уравнение-движения}
 
 :::info Emergent time
-The **cyclic clock** τ ∈ ℤ₇ is derived from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism. The equation below, with its dissipative and regenerative terms, runs in an aperiodic parameter that this clock does not supply: it holds on that assumption (T-53b, [C]). Of the carriers already in the corpus only an ideal clock register with an infinite environment supplies it, and $\mathcal{R}$ is then postulated in that parameter rather than derived from a clock ([emergent time, §11.3](../../proofs/dynamics/emergent-time#113-носители-апериодического-параметра)). An earlier version of this box said that time as such is derived and not an external parameter; that is retracted. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
+The **cyclic clock** τ ∈ ℤ₇ is derived from the structure of the category $\mathcal{C}$ via the Page–Wootters mechanism. The equation below, with its dissipative and regenerative terms, runs in the parameter $t$ of the Lindblad semigroup, which this clock does not supply (relative to a clock of period seven every dynamics is periodic). Its finite carrier is the [depth register](../../proofs/dynamics/emergent-time#114-регистр-глубины): $N+1$ readings ordered as a chain in the O-registers of $\lceil\log_7(N+1)\rceil$ holons, under a Feynman–Kitaev constraint with two holons as environment. One state-independent constraint gives the conditional states **exactly** $e^{n\Delta t\,\mathcal{L}}\rho_0$ at every reading, and each solution of the full equation with $\mathcal{R}$ is reproduced exactly by a constraint fitted to it (Theorems 11.1–11.4): **T-53b [T]** relative to the depth register (it was [C at an aperiodic time parameter] until 2026-09-25). What is not derived is the register from the axioms: the timeless form of the constraint is an assumption of A5, as for the O-clock. An earlier version of this box said that time as such is derived and not an external parameter without naming the carrier; that is retracted. See [Theorem on emergent time](../../proofs/dynamics/emergent-time).
 :::
 
 The evolution of $\Gamma$ is described by the **logical Liouvillian**:
@@ -81,7 +81,7 @@ $$
 $$
 
 where:
-- τ — the evolution parameter; for the dissipative and regenerative terms it must be aperiodic, which the conditional states relative to [O](../structure/dimension-o) do not provide (T-53b, [C])
+- τ — the evolution parameter; for the dissipative and regenerative terms it must be aperiodic, which the conditional states relative to [O](../structure/dimension-o) do not provide; the [depth register](../../proofs/dynamics/emergent-time#114-регистр-глубины) provides it (T-53b, [T])
 - $H_{eff}$ — effective Hamiltonian from the Page–Wootters constraint
 - $-i[H_{eff}, \Gamma]$ — unitary evolution (preserves $P$)
 - $\mathcal{D}_\Omega[\Gamma]$ — **logical dissipation** (operators L_k from Ω)
@@ -1018,7 +1018,7 @@ $$
 \rho^*_\Omega \approx \Gamma^*_{\mathrm{coh}} + \delta\Gamma, \quad \|\delta\Gamma\|_F = O(\bar{\varepsilon})
 $$
 
-where $\bar{\varepsilon} \approx 0.023$ is the characteristic coupling coherence ([T-61](/docs/core/dynamics/gap-thermodynamics#теорема-единственный-вакуум) [T]). The correction $\delta\Gamma$ is determined by the Hamiltonian $H_{\mathrm{eff}}$ and decreases with increasing dissipation rate.
+where $\bar{\varepsilon}$ is the characteristic coupling coherence, of order $10^{-2}$ under the hypothesis (SV) [H] — the root mean square over the 15 non-O pairs, $\approx 0.027$ at $\varepsilon_{33} = 0.06$ ([sector hierarchy](/docs/core/dynamics/gap-thermodynamics#теорема-секторная-иерархия-ε), [C at (SV)]; the value $0.023$ cited here with T-61 [T] until 2026-09-25 is retracted with the audit A-83, and the uniqueness of the vacuum in T-61 is [H]). The correction $\delta\Gamma$ is determined by the Hamiltonian $H_{\mathrm{eff}}$ and decreases with increasing dissipation rate.
 
 :::tip Elevation to [T] (T-157)
 By [T-157 [T]](/docs/proofs/consciousness/substrate-closure#t-157): $\|\rho^*_\Omega - \Gamma^*_{\mathrm{coh}}\|_F \leq \|H_{\mathrm{eff}}\|_{\mathrm{op}} / (\alpha + \kappa)$ — parametric bound. For an isolated vacuum: $\|H_{\mathrm{eff}}\| = O(\bar{\varepsilon})$. For embodied systems: $\|H_{\mathrm{eff}}^{\mathrm{embodied}}\|$ is determined by backbone, hedonic drive and learning gradient. C21 → **[T]**.

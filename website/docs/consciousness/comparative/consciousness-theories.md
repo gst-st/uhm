@@ -1085,7 +1085,7 @@ Northoff uses nonlinear dynamics, measures of scale-free activity (power-law exp
 - Temporal structure: spectral gap $\Lambda$ defines timescales
 
 ### What CC does better
-- Derivation of spacetime from first principles, conditional on an aperiodic clock and the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
+- Derivation of spacetime from first principles, conditional on the open reconstruction axioms of T-119 ([T-117–T-120](/docs/proofs/physics/emergent-manifold))
 - Formal thresholds instead of correlation measures
 - Unified dynamics (Lindblad + $\mathcal{R}$) instead of a set of metrics
 
@@ -1267,7 +1267,7 @@ Operational synchrony: $\text{OS}_{ij}(t) = \text{corr}(\text{ISS}_i(t), \text{I
 |--------|-----|-----|
 | Central object | Operational modules (OM) | $\Gamma \in \mathcal{D}(\mathbb{C}^7)$ |
 | Connectivity | Operational synchrony OS | Coherences $\gamma_{ij}$ |
-| Space-time | BOST (operational) | Emergent $M^4$ [C] (T-120: an aperiodic clock, the open reconstruction axioms of T-119) |
+| Space-time | BOST (operational) | Emergent $M^4$ [C] (T-120: the open reconstruction axioms of T-119) |
 | Hierarchy | Simple → Complex OM | L0 → L4 |
 
 ### What CC borrows

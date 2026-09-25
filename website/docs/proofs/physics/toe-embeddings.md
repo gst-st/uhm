@@ -81,7 +81,7 @@ as **formal power series** under the identification (a)-(d) from T-170.
 
 **Proof.**
 
-**Step 1 (Dimensional correspondence) [T].** M-theory: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). UHM: $M^4$ is the base of the product triple — assembled at T-120 [C] (aperiodic clock, open reconstruction axioms of T-119); the correspondence below uses only that the product has a four-dimensional base, not how it is obtained — and the 7D internal space is parametrized by $\mathcal{D}(\mathbb{C}^7)$. The former sentence "the spectral triple with KO-dim = 6 (T-53) upon supersymmetric extension gives KO-dim = 6 + 1 = 7 (standard $\mathbb{Z}_8$-shift)" is retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
+**Step 1 (Dimensional correspondence) [T].** M-theory: 11D = 4D ($M^4$) + 7D ($\mathcal{M}_7$). UHM: $M^4$ is the base of the product triple — assembled at T-120 [C] (open reconstruction axioms of T-119); the correspondence below uses only that the product has a four-dimensional base, not how it is obtained — and the 7D internal space is parametrized by $\mathcal{D}(\mathbb{C}^7)$. The former sentence "the spectral triple with KO-dim = 6 (T-53) upon supersymmetric extension gives KO-dim = 6 + 1 = 7 (standard $\mathbb{Z}_8$-shift)" is retracted [✗]: no real structure of KO-dimension 6 exists on $\mathbb{C}^7$ ([spacetime, Step 6](/docs/core/foundations/spacetime#теорема-спектральная-тройка)).
 
 **Step 2 (Gap moduli = $G_2$ moduli, formal level) [T].** The physical configuration space of UHM:
 
@@ -196,7 +196,7 @@ Hence: **if** a non-perturbative definition of M-theory exists, UHM agrees with 
 **Results used:**
 - T-53 [T] (spectral triple; its KO-dimension-6 claim is retracted [✗]);
 - T-65 [T] (Connes–Chamseddine spectral action);
-- T-120 [C] (emergent $M^4$, at an aperiodic clock and the open reconstruction axioms of T-119; used only for the four-dimensional base in Step 1);
+- T-120 [C] (emergent $M^4$, at the open reconstruction axioms of T-119; used only for the four-dimensional base in Step 1);
 - Joyce 1996 ($G_2$-manifolds with $b_3 = 21$);
 - Connes–Chamseddine 1997 (spectral action);
 - Acharya–Witten 2001 (M-theory on $G_2$);
@@ -574,7 +574,7 @@ $$
 \begin{pmatrix} j_1 & j_2 & j_3 \\ m_1 & m_2 & m_3 \end{pmatrix} \sim \frac{1}{\sqrt{24\pi V_{\text{tet}}}} \cos\left(S_{\text{Regge}} + \frac{\pi}{4}\right) \quad \text{(Ponzano-Regge 1968)},
 $$
 
-where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regge action. Convergence of $A_{\text{Fano}}$ to the Einstein-Hilbert action for $M^4$ (via T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119) requires proof of compatibility of the 7-line Fano structure with the 4-face simplex in Regge calculus — this is an **active research problem** in semi-classical LQG. Status: [С given Fano-Regge compatibility].
+where $V_{\text{tet}}$ is the tetrahedron volume, $S_{\text{Regge}}$ is the Regge action. Convergence of $A_{\text{Fano}}$ to the Einstein-Hilbert action for $M^4$ (via T-120 [C], at the open reconstruction axioms of T-119) requires proof of compatibility of the 7-line Fano structure with the 4-face simplex in Regge calculus — this is an **active research problem** in semi-classical LQG. Status: [С given Fano-Regge compatibility].
 
 **Results used:**
 - T-42a [T] ($G_2$-rigidity, connection to octonions);

@@ -407,7 +407,7 @@ Objectivity requires acknowledging the cognitome's strengths:
 
 **4. Falsifiability.** 22+ [predictions](/docs/applied/coherence-cybernetics/predictions) of CC — each can be refuted by a specific experiment. The cognitome at this stage does not generate testable numerical predictions.
 
-**5. Connection to physics.** CC obtains the Einstein equations from the spectral action (T-65) on a spacetime assembled from its own structure (T-120 [C]: an aperiodic clock and the open reconstruction axioms of T-119), and elements of the Standard Model (colour $SU(3)$ from $G_2$; the electroweak sector [C at (FE)]). The cognitome is a purely neurobiological theory with no extension into fundamental physics.
+**5. Connection to physics.** CC obtains the Einstein equations from the spectral action (T-65) on a spacetime assembled from its own structure (T-120 [C]: the open reconstruction axioms of T-119), and elements of the Standard Model (colour $SU(3)$ from $G_2$; the electroweak sector [C at (FE)]). The cognitome is a purely neurobiological theory with no extension into fundamental physics.
 
 **6. Resolving the circular trap.** CC answers all 5 of Tinbergen's questions within a unified formalism (see §6). The cognitome identifies the trap but offers only a partial way out — the cognitome is defined through cognitive properties, which are in turn defined through the cognitome.
 

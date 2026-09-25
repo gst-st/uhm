@@ -64,7 +64,7 @@ where:
 - $\mathbf{QM}$ — category of quantum-mechanical systems
 - $\mathbf{DensityMat}$ — category of [density matrices](/docs/core/dynamics/coherence-matrix)
 - $\mathbf{ClassMech}$ — category of classical mechanical systems
-- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ assembled at T-120 [C]: an aperiodic clock and the open reconstruction axioms of T-119)
+- $\mathbf{Riem}$ — category of Riemannian manifolds ($M^4$ assembled at T-120 [C]: the open reconstruction axioms of T-119)
 
 ### 1.2 Forgetful Functor
 
@@ -188,7 +188,7 @@ public pure fn lindblad_from_omega<const N: Int>(_gamma: &StaticMatrix<Complex, 
 | Quantum decoherence | Dissipation = logical uncertainty relative to Ω | [T] |
 | Second law of thermodynamics | $dS/dt \geq 0$ for the unital part $\mathcal{L}_0$ (Hermitian Lindblad operators); with regeneration the Lyapunov functional is the free energy (T-261) | [T] |
 | Measurement in QM | Reduction = projection onto atom χ_{S_k} | [T] |
-| Arrow of time | Monotone in the parameter $t$ of the dissipative semigroup; not supplied by the ▷-clock (T-53b) | [T] in $t$; [C] as emergent |
+| Arrow of time | Monotone in the parameter $t$ of the dissipative semigroup; not supplied by the ▷-clock, but by the depth register, along whose readings the purity of the unital primitive part falls strictly (T-53b, emergent time Theorems 11.1–11.2) | [T] in $t$ and as emergent (it read "[C] as emergent" until 2026-09-25) |
 
 ---
 
@@ -358,7 +358,7 @@ where $L_i$ are logarithmic derivatives: $\partial_i \rho = \frac{1}{2}\{\rho, L
 The dimension of macroscopic space is derived under named conditions (the heading read [T] until 2026-09-25):
 - $\dim(\Sigma^3) = 3$ — from the rank count of T-119, Step 2c′ (T-119 [C]); the axis triple $\{A,S,D\}$ is not an $SU(3)$ sector (row 48a, retracted), and reading the colour triplet as space is [I]
 - Lorentzian signature $(+,-,-,-)$ — [C] (registry row T-53): one time direction [T] (PW clock), three spatial directions at T-119 ($S^3$), the sign at reflection positivity (bounded-below PW generator / Osterwalder–Schrader; Krein route). KO-dimension does not fix the signature, and the KO-dimension-6 claim for $\mathbb{C}^7$ is retracted
-- Product $M^4 = \mathbb{R} \times \Sigma^3$ — T-120 [C], at an aperiodic clock and the open reconstruction axioms of T-119 (an earlier line derived it "from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])"; the axis-labelled decomposition is retracted, row 48a)
+- Product $M^4 = \mathbb{R} \times \Sigma^3$ — T-120 [C], at the open reconstruction axioms of T-119 (an earlier line derived it "from the sector decomposition $7 = 1_O \oplus 3 \oplus \bar{3}$ (T-120 [T])"; the axis-labelled decomposition is retracted, row 48a)
 
 See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 
@@ -367,12 +367,12 @@ See [Emergent Manifold](/docs/proofs/physics/emergent-manifold)
 ## 5. Connection to General Relativity {#5-связь-с-общей-теорией-относительности}
 
 :::tip Status: Einstein equations [T] on the product triple; the derivation of $M^4$ [C]
-The Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]); the manifold $M^4$ on which they live is assembled from the categorical structure only under two conditions — an aperiodic clock and the open reconstruction axioms of T-119 (T-120 [C]). An earlier version read "fully formalized [T] … the manifold $M^4$ is derived (T-120 [T])"; retracted with the status of T-120.
+The Einstein equations are obtained from the spectral action (T-65 [T]), and the cosmological constant is computed (T-65 [T]); the manifold $M^4$ on which they live is assembled from the categorical structure only under one condition — the open reconstruction axioms of T-119 (T-120 [C]); the aperiodic clock, a second condition until 2026-09-25, is the depth register (T-118 [T]). An earlier version read "fully formalized [T] … the manifold $M^4$ is derived (T-120 [T])"; retracted with the status of T-120.
 :::
 
 ### 5.1 Emergent Manifold
 
-**[C] Theorem (Product of spectral triples, T-120)** — at an aperiodic clock (T-118) and the open reconstruction axioms of T-119; the heading read [T] until 2026-09-25.
+**[C] Theorem (Product of spectral triples, T-120)** — at the open reconstruction axioms of T-119 (the aperiodic clock, T-118, named here until 2026-09-25, is the depth register, [T]); the heading read [T] until 2026-09-25.
 In the thermodynamic limit the effective spectral triple factorizes:
 
 $$
@@ -637,7 +637,7 @@ Witnesses: the segment law holds to $8 \cdot 10^{-16}$ for a random normalised-l
 
 **What the Rembieliński–Caban evolutions escape, and what they do not.** In their argument the weights of the branches change with $B$'s time: $\lambda \mapsto \bar\lambda(t) = \lambda\,\mathrm{Tr}\,\phi_t(\rho_a)/\mathrm{Tr}\,\phi_t(\rho)$ (J. Rembieliński, P. Caban, *Phys. Rev. Research* **2**, 012027 (2020), eqs. (20), (24); *Quantum* **5**, 420 (2021), eqs. (13), (17)). Their qubit example is a local filter, $\rho \mapsto A\rho A^\dagger/\mathrm{Tr}(A\rho A^\dagger)$ with $A = e^{gt\,\sigma\cdot e/2}$ (checked to $3 \cdot 10^{-17}$ against their eq. (14)), and $\bar\lambda(t)$ is the frequency of branch $a$ among the runs in which the filter succeeds. With $A$'s recorded frequencies held at $\tfrac12$, $B$'s Bloch component along $e$ at $gt = 1$ is $0.668$ when $e\cdot\zeta = \tfrac12$ against $0.762$ when $e\cdot\zeta = 0$ — Gisin's signal returns. Their no-signalling therefore holds either for a heralded, post-selected filter, which is linear quantum mechanics with post-selection, or in a reading in which the evolved weights are not $A$'s frequencies, which is a form of Option A. It is not an independent route for a deterministic law that acts in every run. A. Kent's construction ("Nonlinearity without superluminality", *Phys. Rev. A* **72**, 012108 (2005)) likewise changes which state of an entangled subsystem the nonlinear law acts on — a non-standard definition of that state — rather than the law; for UHM it is a variant of Option A.
 
-**Option A — non-selective reading** [T]: forced by the axioms (§8.8; the label was [C] before 2026-09-25). $\mathcal{R}$ stays as written: $\kappa$ and $g_V$ are evaluated on the unconditioned marginal, also after a remote measurement (NS2 without update). *What is proven:* no remote operation changes $B$'s marginal (Theorems 8.1, 8.2 [T], given the reading and no interaction term between $A$ and $B$). *Cost:* (i) the Lüders update of [measurement, Theorem 2.1, step 4](/docs/physics/quantum-mechanics/measurement#2-измерение-из-omega) cannot be applied to a system entangled with a holon before the holon's regeneration acts; selection becomes a readout of the final joint state, $\mathrm{Tr}[(\Pi_k \otimes Q)\,\Gamma_{AB}(t)]/p_k$, which differs from $\mathrm{Tr}[Q\,\Phi_t(\rho_k)]$; (ii) the rate at which a branch regenerates depends on the branches that did not occur — J. Polchinski's "Everett phone" (*Phys. Rev. Lett.* **66**, 397 (1991)); in the qutrit example of §8.5 each pure branch regenerates with $g_V = 1/3$, not $1$; (iii) a holon that has observed an outcome regenerates as if it had not, so a recorded outcome is not a fact for the holon's own dynamics — more exactly, if the record is held in the holon's own degrees of freedom, the regeneration acts on the whole record-bearing state, not branch by branch. *Kept:* the gate, the thresholds and the attractor results (T-96, T-98, T-125, T-127, T-148, T-149), and Corollary T-221.2 [C] as it stands.
+**Option A — non-selective reading** [T]: forced by the axioms (§8.8; the label was [C] before 2026-09-25). $\mathcal{R}$ stays as written: $\kappa$ and $g_V$ are evaluated on the unconditioned marginal, also after a remote measurement (NS2 without update). *What is proven:* no remote operation changes $B$'s marginal (Theorems 8.1, 8.2 [T], given the reading and no interaction term between $A$ and $B$). *Cost:* (i) the Lüders update of [measurement, Theorem 2.1, step 4](/docs/physics/quantum-mechanics/measurement#2-измерение-из-omega) cannot be applied to a system entangled with a holon before the holon's regeneration acts; selection becomes a readout of the final joint state, $\mathrm{Tr}[(\Pi_k \otimes Q)\,\Gamma_{AB}(t)]/p_k$, which differs from $\mathrm{Tr}[Q\,\Phi_t(\rho_k)]$; (ii) the rate at which a branch regenerates depends on the branches that did not occur — J. Polchinski's "Everett phone" (*Phys. Rev. Lett.* **66**, 397 (1991)); in the qutrit example of §8.5 each pure branch regenerates with $g_V = 1/3$, not $1$; (iii) a holon that has observed an outcome regenerates as if it had not, so a recorded outcome is not a fact for the holon's own dynamics — more exactly, if the record is held in the holon's own degrees of freedom, the regeneration acts on the whole record-bearing state, not branch by branch. *Kept:* the gate, the thresholds and the attractor results (T-96, T-98, T-125, T-127, T-148, T-149), and Corollary T-221.2, whose Loc becomes [T] (the corollary stays [C] only through OW, at T-120).
 
 **Option B — a modified $\mathcal{R}$ non-signalling in the selective reading** [✗] while the threshold is kept. By the two propositions, a modification is non-signalling in the selective reading only if it is affine, and an affine or normalised-linear term cannot close below $P = 2/7$ or keep the dead state $I/7$ and the living attractor both attracting. Making $\kappa$ and $g_V$ affine in $\Gamma$ does not help: an affine scalar times the linear field $\varphi(\Gamma) - \Gamma$ is quadratic. What survives of B is a term with state-independent rates, which is Option C.
 
@@ -651,7 +651,7 @@ Witnesses: the segment law holds to $8 \cdot 10^{-16}$ for a random normalised-l
 | Attractor results T-96, T-98, T-125, T-127 | kept | T-98 as a parameter condition; stability of the unique attractor |
 | Genesis T-148, T-149 | kept | through a non-unital environment only |
 | T-261 (direction, BKM gradient) | kept | kept with constant $\kappa_{\mathrm{eff}}$ |
-| Corollary T-221.2 (Loc) | [C] as now | Loc [T] |
+| Corollary T-221.2 (Loc) | Loc [T] (Theorem 8.5); the corollary [C] only through OW (T-120) | Loc [T] |
 | §8.6, speed-up beyond BQP | ideal dynamics: satisfiability in linear time [T] (Theorem 8.6); with noise open [H] | absent (linear CPTP) |
 
 One question remains open [Pr]: under A, a relativistic statement of "unconditioned" — relative to which hypersurface the marginal is taken — which Kent's construction suggests but which UHM would have to state on the spacetime it derives only conditionally (T-120 [C]). (Until 2026-09-25 a second open question was which of A and C the corpus adopts; §8.8 answers it.)
@@ -720,7 +720,7 @@ This means: **physics is a consequence of the structure of logical distinctions*
 7. **Marginal identity:** $\mathrm{Tr}_A[\tilde{\mathcal{R}}_A[\Gamma_{AB}]] = 0$ — regeneration of $A$ does not change $B$'s unconditioned marginal; no-signalling of the full dynamics is [C] (§8.5)
 8. **Ensemble independence:** the evolution map is defined on $\Gamma$ [D]; the earlier claim that this resolves the Gisin problem is retracted (§8.5)
 9. **Computational bound:** retracted; whether $\mathcal{R}$ gives a speed-up beyond BQP is open [H] (§8.6)
-10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ assembled from categorical structure (T-117—T-120) — conditional [C] on an aperiodic clock and the open reconstruction axioms of T-119
+10. **Emergent geometry:** $M^4 = \mathbb{R} \times \Sigma^3$ assembled from categorical structure (T-117—T-120) — conditional [C] on the open reconstruction axioms of T-119
 11. **Einstein equations:** The spectral action reproduces $G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}$ (T-65)
 12. **Gauge group:** $SU(3)_C$ from $G_2 = \mathrm{Aut}(\mathbb{O})$ [T]; $SU(2)_L \times U(1)_Y$ from (FE) [C at (FE)]. The former item — the whole group from $G_2$ (T-53) — is retracted (rank $G_2 = 2 < 4$)
 
